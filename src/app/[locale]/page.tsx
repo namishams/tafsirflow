@@ -30,6 +30,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMeta(locale, "", t("homeTitle"), t("homeDesc", { n: routing.locales.length }), t("keywords"));
 }
 
+const COURSES = [
+  { href: "/shams", key: "shams", ar: "شمس", desc: "tool_shamsD", badge: "method", bg: "linear-gradient(160deg,#3a2f12 0%,#14110a 100%)" },
+  { href: "/academy", key: "courses", ar: "أكاديمية", desc: "tool_academyD", badge: "course", bg: "linear-gradient(160deg,#0c4a37 0%,#06221a 100%)" },
+  { href: "/tajweed", key: "tajweed", ar: "تجويد", desc: "tool_tajweedD", badge: "course", bg: "linear-gradient(160deg,#3b1f2b 0%,#160b10 100%)" },
+  { href: "/plan", key: "plan", ar: "حفظ", desc: "planD", badge: "plan", bg: "linear-gradient(160deg,#1f2b44 0%,#0b101b 100%)" },
+  { href: "/vocab", key: "vocab", ar: "كلمات", desc: "tool_vocabD", badge: "course", bg: "linear-gradient(160deg,#2c3a1a 0%,#10160a 100%)" },
+  { href: "/radio", key: "radio", ar: "إذاعة", desc: "radioD", badge: "live", bg: "linear-gradient(160deg,#401c14 0%,#170a07 100%)" },
+  { href: "/duas", key: "duas", ar: "دعاء", desc: "duasD", badge: "library", bg: "linear-gradient(160deg,#173640 0%,#081418 100%)" },
+  { href: "/map", key: "map", ar: "خريطة", desc: "mapD", badge: "progress", bg: "linear-gradient(160deg,#30254a 0%,#100c19 100%)" },
+];
+
 export default async function Landing({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -64,30 +75,64 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
       </header>
 
       <main>
-        {/* 1 Hero */}
-        <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-12 sm:pt-20 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <p className="eyebrow">{t("app.name")}</p>
-            <h1 className="font-display mt-4 text-[40px] leading-[1.05] sm:text-7xl">{t("app.tagline")}</h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{t("seo.homeDesc", { n })}</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link href="/quran" className={btnP}>{t("landing.cta")}</Link>
-              <Link href="/account" className={btnS}>{t("landing.cta2")}</Link>
+        {/* 1 Hero – cinematic, with an animated verse player (words light up one after another) */}
+        <section className="relative overflow-hidden bg-[#0d0f12] text-[#eef0f3]">
+          <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 85% 15%, rgb(var(--gold) / .16) 0, transparent 40%), radial-gradient(circle at 10% 90%, rgb(var(--accent) / .22) 0, transparent 45%)" }} />
+          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{t("home2.heroKicker", { n })}</p>
+              <h1 className="font-display mt-5 text-[44px] leading-[1.02] sm:text-7xl">{t("home2.heroTitle")}</h1>
+              <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70 sm:text-lg">{t("home2.heroLead")}</p>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <Link href="/academy" className="inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-6 text-[15px] font-bold text-[#0d0f12] hover:brightness-110">{t("home2.heroCta")}</Link>
+                <Link href="/shams" className="inline-flex h-12 items-center rounded-md border border-white/30 px-6 text-[15px] font-bold hover:border-white">{t("home2.heroCta2")}</Link>
+              </div>
+              <ul className="mt-10 grid max-w-lg grid-cols-2 gap-px overflow-hidden rounded-md border border-white/10 bg-white/10 sm:grid-cols-4">
+                {[["114", "home2.statSurahs"], ["6.236", "home2.statVerses"], [String(n), "home2.statLanguages"], ["0 €", "home2.statFree"]].map(([v, k]) => (
+                  <li key={k} className="bg-[#0d0f12] px-4 py-3"><p className="font-display text-2xl">{v}</p><p className="text-xs text-white/55">{t(k)}</p></li>
+                ))}
+              </ul>
             </div>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-muted">
-              {["factSurahs", "factVerses", "factLanguages", "factFree"].map((k) => <li key={k} className="flex items-center gap-2"><span className="h-px w-4 bg-accent" />{t(`home2.${k}`, { n })}</li>)}
+            <figure aria-hidden className="rounded-xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl sm:p-8">
+              <div className="flex items-center justify-between text-xs text-white/50"><span>Al-Fatihah · 1</span><span>Mishary Alafasy</span></div>
+              <p className="hero-words font-arabic mt-6 flex flex-row-reverse flex-wrap justify-start gap-x-3 text-[2.6rem] leading-[1.9] sm:text-5xl">
+                <span>بِسْمِ</span><span>ٱللَّهِ</span><span>ٱلرَّحْمَـٰنِ</span><span>ٱلرَّحِيمِ</span>
+              </p>
+              <p className="mt-2 text-[15px] italic text-[rgb(var(--gold))]">Bismi llāhi r-raḥmāni r-raḥīm</p>
+              <p className="mt-1 text-sm text-white/60">{t("home2.heroVerse")}</p>
+              <div className="mt-7 flex items-center gap-3 border-t border-white/10 pt-5">
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-[rgb(var(--gold))] text-[#0d0f12]"><svg width="12" height="14" viewBox="0 0 12 14" fill="currentColor"><rect width="4" height="14" rx="1" /><rect x="8" width="4" height="14" rx="1" /></svg></span>
+                <span className="h-1 flex-1 overflow-hidden rounded-full bg-white/15"><span className="hero-progress block h-1 rounded-full bg-[rgb(var(--gold))]" /></span>
+                <span className="text-xs tabular-nums text-white/50">0:06</span>
+              </div>
+              <div className="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold text-white/70">
+                {["home2.chipWords", "home2.chipTafsir", "home2.chipHide", "home2.chipRepeat"].map((k) => <span key={k} className="rounded-full border border-white/15 px-2.5 py-1">{t(k)}</span>)}
+              </div>
+            </figure>
+          </div>
+        </section>
+
+        {/* 1b Courses – poster cards like a class catalogue */}
+        <section className="bg-[#0d0f12] pb-16 text-[#eef0f3] sm:pb-24">
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="flex items-end justify-between gap-4 border-t border-white/10 pt-10">
+              <h2 className="font-display text-3xl leading-tight sm:text-4xl">{t("home2.coursesTitle")}</h2>
+              <Link href="/academy" className="hidden shrink-0 text-sm font-bold text-[rgb(var(--gold))] hover:underline sm:inline">{t("home2.coursesAll")} →</Link>
+            </div>
+            <ul className="-mx-5 mt-6 flex snap-x gap-4 overflow-x-auto px-5 pb-2 lg:mx-0 lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-0">
+              {COURSES.map((c) => (
+                <li key={c.href} className="w-[72%] shrink-0 snap-start sm:w-[44%] lg:w-auto">
+                  <Link href={c.href} className="group relative flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-lg p-5" style={{ background: c.bg }}>
+                    <span aria-hidden className="font-arabic pointer-events-none absolute -end-2 top-2 text-[7rem] leading-none text-white/[0.09] transition duration-500 group-hover:scale-110" dir="rtl">{c.ar}</span>
+                    <span className="absolute start-5 top-5 rounded-sm bg-black/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white/80">{t(`home2.badge_${c.badge}`)}</span>
+                    <span className="font-display relative text-[26px] leading-tight text-white">{t(`nav.${c.key}`)}</span>
+                    <span className="relative mt-2 line-clamp-3 text-sm leading-relaxed text-white/75">{t(`home2.${c.desc}`)}</span>
+                    <span className="relative mt-4 text-xs font-bold uppercase tracking-[0.14em] text-[rgb(var(--gold))]">{t("home2.open")} →</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          <aside aria-hidden className="rounded-lg border border-line bg-surface p-7">
-            <p className="eyebrow">1:1</p>
-            <p className="font-arabic mt-5 text-4xl leading-[1.9] sm:text-5xl" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
-            <p className="mt-3 text-[15px] italic text-gold" lang="en">Bismi llāhi r-raḥmāni r-raḥīm</p>
-            <div className="mt-7 flex items-center gap-3 border-t border-line pt-5">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-accent text-white"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" /></svg></span>
-              <span className="h-1 flex-1 rounded-full bg-line"><span className="block h-1 w-1/3 rounded-full bg-accent" /></span>
-              <span className="text-xs tabular-nums text-muted">0:04</span>
-            </div>
-          </aside>
         </section>
 
         {/* 2 Verse of the day */}
@@ -95,23 +140,6 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
         {/* 2a Why the Quran comes first */}
         <WhyQuran locale={locale} />
-
-        {/* 2b Shams Method */}
-        <section className="mx-auto max-w-6xl px-5 pt-16 sm:pt-24">
-          <div className="grid gap-8 rounded-lg border border-line bg-surface p-6 sm:p-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div>
-              <p className="eyebrow text-gold">{t("shams.homeEyebrow")} · {t("shams.by")}</p>
-              <h2 className="font-display mt-3 text-4xl leading-[1.1] sm:text-5xl">{t("shams.homeTitle")}</h2>
-              <p className="mt-4 text-[17px] leading-relaxed text-muted">{t("shams.homeLead")}</p>
-              <Link href="/shams" className="mt-6 inline-flex h-12 items-center rounded-md bg-ink px-6 text-[15px] font-bold text-bg hover:opacity-90">{t("shams.homeCta")}</Link>
-            </div>
-            <ol className="grid gap-px overflow-hidden rounded-md border border-line bg-line text-[15px]">
-              {[1, 2, 3, 4, 5, 6, 7].map((n) => (
-                <li key={n} className="flex items-center gap-3 bg-surface px-4 py-3"><span className="w-5 text-sm font-extrabold text-gold tabular-nums">{n}</span><span className="font-semibold">{t(`shams.s${n}`)}</span></li>
-              ))}
-            </ol>
-          </div>
-        </section>
 
         {/* 3 Why */}
         <section className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">
@@ -154,22 +182,6 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
             ))}
           </ol>
           <p className="mt-10 max-w-3xl border-s-4 border-accent ps-5 text-[17px] leading-relaxed">{t("home2.methodOutro")}</p>
-        </section>
-
-        {/* 6 How it works */}
-        <section className="border-y border-line bg-surface">
-          <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
-            <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{t("landing.howTitle")}</h2>
-            <ol className="mt-10 grid gap-10 sm:grid-cols-3">
-              {["s1", "s2", "s3"].map((k, i) => (
-                <li key={k} className="border-t border-ink pt-5">
-                  <span className="eyebrow text-accent">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="font-display mt-2 text-3xl">{t(`landing.${k}t`)}</h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-muted">{t(`landing.${k}d`)}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
         </section>
 
         {/* 7 Features */}
@@ -359,7 +371,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         </div>
         <div className="border-t border-line py-5">
           <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 text-xs text-muted sm:flex-row sm:justify-between">
-            <p>{t("landing.footer")}</p>
+            <p>{t("home2.footerLine")}</p>
             <p>© {new Date().getFullYear()} {t("app.name")} · Proudly developed by Nami Shams in Dubai</p>
           </div>
         </div>
