@@ -27,6 +27,7 @@ export default function Player({ chapterId }: { chapterId: number }) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const [tafsir, setTafsir] = useState<TafsirResult | null | undefined>(undefined);
   const playsDone = useRef(0);
+  const wantPlay = useRef(false); // start playing as soon as the next verse file is ready
   const [useRemote, setUseRemote] = useState(false); // local file failed -> Quran.com audio
   const [timingsOk, setTimingsOk] = useState(true);
 
@@ -70,9 +71,9 @@ export default function Player({ chapterId }: { chapterId: number }) {
     playsDone.current = 0;
     setWaiting(false);
     setActiveWord(null);
+    wantPlay.current = autoplay;
     setIdx(i);
-    if (autoplay) setTimeout(play, 0);
-  }, [play]);
+  }, []);
 
   useEffect(() => { if (audioRef.current) audioRef.current.playbackRate = speed; }, [speed]);
 
@@ -175,7 +176,7 @@ export default function Player({ chapterId }: { chapterId: number }) {
             ))}
           </p>
           <p className="mt-3 text-stone-700">{verse.translation}</p>
-          <audio ref={audioRef} src={useRemote ? verse.remoteAudioUrl : verse.audioUrl} onLoadedMetadata={onMeta} onError={() => !useRemote && verse.remoteAudioUrl && setUseRemote(true)} onTimeUpdate={onTime} onEnded={onEnded} onPause={() => setPlaying(false)} onPlay={() => setPlaying(true)} preload="auto" />
+          <audio ref={audioRef} src={useRemote ? verse.remoteAudioUrl : verse.audioUrl} onLoadedMetadata={onMeta} onCanPlay={() => { if (wantPlay.current) { wantPlay.current = false; play(); } }} onError={() => !useRemote && verse.remoteAudioUrl && setUseRemote(true)} onTimeUpdate={onTime} onEnded={onEnded} onPause={() => setPlaying(false)} onPlay={() => setPlaying(true)} preload="auto" />
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <button className={btn} onClick={() => goTo(Math.max(0, idx - 1), false)} aria-label={t("prev")}>⏮</button>
             <button className={btnPrimary} onClick={() => (playing ? audioRef.current?.pause() : play())}>
