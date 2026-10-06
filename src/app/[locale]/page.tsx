@@ -7,6 +7,7 @@ import KidsToggle from "@/components/KidsToggle";
 import Logo from "@/components/Logo";
 import JsonLd from "@/components/JsonLd";
 import WhyQuran from "@/components/WhyQuran";
+import { getChapters } from "@/lib/quran";
 import VerseOfTheDay from "@/components/VerseOfTheDay";
 import { LOCALE_META } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
@@ -33,6 +34,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
   setRequestLocale(locale);
   const t = await getTranslations();
   const n = routing.locales.length;
+  const chapters = await getChapters(locale).catch(() => []);
   const btnP = "inline-flex h-12 items-center rounded-md bg-accent px-6 text-[15px] font-bold text-white transition hover:brightness-110";
   const btnS = "inline-flex h-12 items-center rounded-md border border-ink px-6 text-[15px] font-bold transition hover:bg-ink hover:text-bg";
   const faqText = (i: number, kind: "q" | "a") => (i <= 5 ? t(`landing.${kind}${i}`) : t(`home2.${kind}${i}`));
@@ -256,6 +258,40 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
             </dl>
           </div>
         </section>
+
+        {/* 12b Learning tools */}
+        <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+          <h2 className="font-display max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{t("home2.toolsTitle")}</h2>
+          <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+            {["academy", "shams", "tajweed", "vocab", "khatm", "guides"].map((k) => (
+              <Link key={k} href={`/${k}`} className="bg-surface p-6 hover:bg-bg">
+                <span className="block text-lg font-bold">{t(`home2.tool_${k}`)}</span>
+                <span className="mt-1 block text-[15px] leading-relaxed text-muted">{t(`home2.tool_${k}D`)}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* 12c All surahs */}
+        {chapters.length > 0 && (
+          <section className="border-y border-line bg-surface">
+            <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+              <h2 className="font-display max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{t("home2.allTitle")}</h2>
+              <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">{t("home2.allLead")}</p>
+              <ul className="mt-8 grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+                {chapters.map((c) => (
+                  <li key={c.id} className="border-b border-line">
+                    <Link href={`/surah/${c.id}`} className="flex items-center gap-3 py-3 hover:text-accent">
+                      <span className="w-8 shrink-0 text-sm font-bold tabular-nums text-gold">{c.id}</span>
+                      <span className="min-w-0 flex-1"><span className="block truncate text-[15px] font-semibold">{c.name_simple}</span><span className="block truncate text-xs text-muted">{c.translated_name.name} · {c.verses_count} {t("home.verses")}</span></span>
+                      <span className="font-arabic shrink-0 text-xl" dir="rtl">{c.name_arabic}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* 13 FAQ */}
         <section className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">

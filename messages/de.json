@@ -376,7 +376,22 @@
     "privacy": "Datenschutz",
     "terms": "Nutzungsbedingungen",
     "imprint": "Impressum",
-    "fLanguages": "Sprachen"
+    "fLanguages": "Sprachen",
+    "toolsTitle": "Alles, was du zum Koranlernen brauchst",
+    "tool_academy": "Academy",
+    "tool_academyD": "Ein Lernpfad durch alle 114 Suren mit Tests auf Zeit, Levels und Tagesziel.",
+    "tool_shams": "Shams-Methode",
+    "tool_shamsD": "Sieben Schritte pro Vers von Nami Shams – hören, rückwärts aufbauen, Eselsbrücken, abrufen.",
+    "tool_tajweed": "Tajweed-Kurs",
+    "tool_tajweedD": "Richtig rezitieren: die Regeln Schritt für Schritt mit Beispielen und Quiz.",
+    "tool_vocab": "Koran-Vokabeln",
+    "tool_vocabD": "Die häufigsten Wörter des Korans als Karteikarten.",
+    "tool_khatm": "Khatm-Planer",
+    "tool_khatmD": "Den ganzen Koran in 30 Tagen oder in deinem Tempo lesen.",
+    "tool_guides": "Ratgeber",
+    "tool_guidesD": "Wie man den Koran lernt, auswendig lernt, liest und versteht.",
+    "allTitle": "Alle 114 Suren des Korans",
+    "allLead": "Jede Sure mit Audio Vers für Vers, Lautschrift, Übersetzung, Wort-für-Wort-Bedeutung und klassischem Tafsir – kostenlos hören, lesen und auswendig lernen."
   },
   "legal": {
     "back": "Zurück zur Startseite",

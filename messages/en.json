@@ -376,7 +376,22 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "imprint": "Imprint",
-    "fLanguages": "Languages"
+    "fLanguages": "Languages",
+    "toolsTitle": "Everything you need to learn the Quran",
+    "tool_academy": "Academy",
+    "tool_academyD": "A learning path through all 114 surahs with timed tests, levels and a daily goal.",
+    "tool_shams": "Shams Method",
+    "tool_shamsD": "Seven steps per verse by Nami Shams – listen, build up backwards, memory hooks, recall.",
+    "tool_tajweed": "Tajweed course",
+    "tool_tajweedD": "Recite correctly: the rules step by step with examples and quizzes.",
+    "tool_vocab": "Quran vocabulary",
+    "tool_vocabD": "The most common words of the Quran as flashcards.",
+    "tool_khatm": "Khatm planner",
+    "tool_khatmD": "Read the whole Quran in 30 days or at your own pace.",
+    "tool_guides": "Guides",
+    "tool_guidesD": "How to learn, memorise, read and understand the Quran.",
+    "allTitle": "All 114 surahs of the Quran",
+    "allLead": "Every surah with audio verse by verse, transliteration, translation, word-by-word meaning and classical tafsir – free to listen, read and memorise."
   },
   "legal": {
     "back": "Back to home",

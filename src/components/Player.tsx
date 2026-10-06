@@ -632,7 +632,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                             <div className="mt-3 grid gap-2 text-sm">
                               {h.anchor && <p><span className="font-semibold">{ts("hAnchor")}:</span> <span className="font-arabic text-xl" dir="rtl">{h.anchor.text_uthmani}</span> – {h.anchor.translation?.text}</p>}
                               {h.rhymeWord && <p><span className="font-semibold">{ts("hRhyme")}:</span> <span className="font-arabic text-xl" dir="rtl">…{h.rhyme}</span> ({h.rhymeWord.transliteration?.text}) · {ts("hRhymeN", { n: sameRhyme, total: verses.length })}</p>}
-                              {h.bridge && h.bridge.from && h.bridge.to && <p><span className="font-semibold">{ts("hBridge")}:</span> <span className="font-arabic text-xl" dir="rtl">{h.bridge.from.text_uthmani} ← {h.bridge.to.text_uthmani}</span></p>}
+                              {h.bridge && h.bridge.from && h.bridge.to && <p><span className="font-semibold">{ts("hBridge")}:</span> <span className="font-arabic mt-1 block text-xl" dir="rtl">{h.bridge.from.text_uthmani} ← {h.bridge.to.text_uthmani}</span></p>}
                               <p><span className="font-semibold">{ts("hAcrostic")}:</span> <span className="font-arabic text-xl text-gold" dir="rtl">{h.acrostic}</span></p>
                               <label className="mt-1 grid gap-1"><span className="font-semibold">{ts("hOwn")}</span>
                                 <textarea rows={2} defaultValue={mnemos[v.verse_key] ?? ""} onBlur={(e) => saveMnemo(v.verse_key, e.target.value)} placeholder={ts("hOwnPh")} className="rounded-md border border-line bg-surface p-2 text-sm" />

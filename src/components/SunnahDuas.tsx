@@ -2,8 +2,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { SUNNAH_CATS, SUNNAH_DUAS, type SunnahCat } from "@/lib/sunnahDuas";
+import { SUNNAH_DUAS_2 } from "@/lib/sunnahDuas2";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { IconBookmark, IconCopy } from "./Icons";
+
+const ALL = [...SUNNAH_DUAS, ...SUNNAH_DUAS_2];
 
 // Duas of the Prophet ﷺ: filter by occasion, search, favourites and a tap counter for repeated adhkar
 export default function SunnahDuas() {
@@ -17,16 +20,16 @@ export default function SunnahDuas() {
   const [copied, setCopied] = useState("");
   useEffect(() => { setFav(readJSON<string[]>("tf:duafav", [])); }, []);
 
-  const meaning = (d: (typeof SUNNAH_DUAS)[number]) => (locale === "de" ? d.de : d.en);
+  const meaning = (d: (typeof ALL)[number]) => (locale === "de" ? d.de : d.en);
   const list = useMemo(() => {
     const s = q.trim().toLowerCase();
-    return SUNNAH_DUAS.filter((d) => (cat === "all" ? true : cat === "fav" ? fav.includes(d.id) : d.cat === cat))
+    return ALL.filter((d) => (cat === "all" ? true : cat === "fav" ? fav.includes(d.id) : d.cat === cat))
       .filter((d) => !s || [d.ar, d.tr, d.en, d.de, d.src].some((x) => x.toLowerCase().includes(s)));
   }, [cat, q, fav]);
 
   const toggleFav = (id: string) => { const n = fav.includes(id) ? fav.filter((x) => x !== id) : [...fav, id]; setFav(n); writeJSON("tf:duafav", n, true); };
   const tap = (id: string, max: number) => setCount((c) => ({ ...c, [id]: (c[id] ?? 0) >= max ? 0 : (c[id] ?? 0) + 1 }));
-  const copy = async (d: (typeof SUNNAH_DUAS)[number]) => {
+  const copy = async (d: (typeof ALL)[number]) => {
     try { await navigator.clipboard.writeText(`${d.ar}\n\n${d.tr}\n\n${meaning(d)}\n\n— ${d.src}`); setCopied(d.id); setTimeout(() => setCopied(""), 1800); } catch { /* clipboard blocked */ }
   };
   const chip = (on: boolean) => `h-9 shrink-0 rounded-md border px-3 text-sm font-semibold ${on ? "border-ink bg-ink text-bg" : "border-line bg-surface hover:border-ink"}`;
@@ -38,7 +41,7 @@ export default function SunnahDuas() {
         <label className="flex items-center gap-2 text-sm text-muted"><input type="checkbox" checked={showTr} onChange={(e) => setShowTr(e.target.checked)} />{t("translit")}</label>
       </div>
       <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1">
-        <button className={chip(cat === "all")} onClick={() => setCat("all")}>{t("all")} · {SUNNAH_DUAS.length}</button>
+        <button className={chip(cat === "all")} onClick={() => setCat("all")}>{t("all")} · {ALL.length}</button>
         <button className={chip(cat === "fav")} onClick={() => setCat("fav")}>★ {t("favs")}{fav.length ? ` · ${fav.length}` : ""}</button>
         {SUNNAH_CATS.map((c) => <button key={c} className={chip(cat === c)} onClick={() => setCat(c)}>{t(`c_${c}`)}</button>)}
       </div>
