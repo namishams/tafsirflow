@@ -16,7 +16,7 @@ export default function OgImage() {
           <span>Learn the Quran.</span>
           <span style={{ color: "#e9cf99" }}>Listen. Understand. Memorize.</span>
         </div>
-        <div style={{ fontSize: 28, color: "rgba(255,255,255,.7)" }}>Deutsch · English · العربية · Français · Español · 中文 · Bahasa · فارسی</div>
+        <div style={{ fontSize: 28, color: "rgba(255,255,255,.7)" }}>13 languages · Free · quranmasterclass.com</div>
       </div>
     ),
     size,
