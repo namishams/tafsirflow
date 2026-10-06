@@ -212,7 +212,10 @@
     "tajweed": "诵读规则",
     "khatm": "通读计划",
     "vocab": "词汇",
-    "signOut": "退出登录"
+    "signOut": "退出登录",
+    "prayer": "礼拜时间",
+    "radio": "电台",
+    "duas": "祈祷词"
   },
   "today": {
     "title": "今天",

@@ -5,6 +5,7 @@ const CLIENT_API = process.env.NEXT_PUBLIC_API_BASE ?? "/api/q";
 // Quran.com audio is only a fallback if a self-hosted file is missing. Set NEXT_PUBLIC_REMOTE_AUDIO_FALLBACK=0 to disable.
 const REMOTE_AUDIO = process.env.NEXT_PUBLIC_REMOTE_AUDIO_FALLBACK !== "0";
 
+// id = Quran.com recitation id when word timings exist for this reciter, otherwise 0 (audio only, no word highlighting)
 export type Reciter = { id: number; slug: string; name: string; folder: string };
 // Recitation ids with word timing segments. Self-hosted audio: /srv/tafsirflow/audio/<folder>/<SSSAAA>.mp3 (Nginx: /audio/)
 export const AUDIO_BASE = process.env.NEXT_PUBLIC_AUDIO_BASE ?? "/audio";
@@ -122,9 +123,19 @@ export function localAudioUrl(reciter: Reciter, chapter: number, verse: number):
   return `${AUDIO_BASE}/${reciter.folder}/${f}`;
 }
 
-export async function getVerses(chapter: number, locale: string, reciterId: number, translationId: number): Promise<Verse[]> {
-  const reciter = RECITERS.find((r) => r.id === reciterId) ?? RECITERS[0];
-  const q = `words=true&word_fields=text_uthmani&language=${locale}&fields=text_uthmani,page_number,juz_number,hizb_number&translations=${translationId}&audio=${reciterId}&per_page=300`;
+export async function getReciters(): Promise<Reciter[]> {
+  try {
+    const r = await fetch("/api/reciters");
+    const d = (await r.json()) as { reciters?: Reciter[] };
+    return d.reciters?.length ? d.reciters : RECITERS;
+  } catch {
+    return RECITERS;
+  }
+}
+
+export async function getVerses(chapter: number, locale: string, reciter: Reciter, translationId: number): Promise<Verse[]> {
+  const timed = reciter.id > 0; // word timings only exist for reciters known to Quran.com
+  const q = `words=true&word_fields=text_uthmani&language=${locale}&fields=text_uthmani,page_number,juz_number,hizb_number&translations=${translationId}&audio=${timed ? reciter.id : RECITERS[0].id}&per_page=300`;
   const data = await get<{ verses: any[] }>(`/verses/by_chapter/${chapter}?${q}`);
   return data.verses.map((v) => ({
     verse_key: v.verse_key,
@@ -137,8 +148,8 @@ export async function getVerses(chapter: number, locale: string, reciterId: numb
       .join(" "),
     translation: (v.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, ""),
     audioUrl: localAudioUrl(reciter, chapter, v.verse_number),
-    remoteAudioUrl: REMOTE_AUDIO && v.audio?.url ? absoluteAudioUrl(v.audio.url) : "",
-    segments: parseSegments(v.audio?.segments),
+    remoteAudioUrl: timed && REMOTE_AUDIO && v.audio?.url ? absoluteAudioUrl(v.audio.url) : "",
+    segments: timed ? parseSegments(v.audio?.segments) : [],
     page: Number(v.page_number) || 0,
     juz: Number(v.juz_number) || 0,
     hizb: Number(v.hizb_number) || 0,

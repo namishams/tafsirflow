@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { IconBook, IconCap, IconClose, IconGrid, IconKid, IconLock, IconLogout, IconMenu, IconRepeat, IconSearch, IconShield, IconUser } from "./Icons";
+import { IconBook, IconClock, IconHands, IconRadio, IconCap, IconClose, IconGrid, IconKid, IconLock, IconLogout, IconMenu, IconRepeat, IconSearch, IconShield, IconUser } from "./Icons";
 import { dueVerses } from "@/lib/learning";
 import { fetchMe, stopSync, type Me } from "@/lib/sync";
 
@@ -79,6 +79,9 @@ export default function TabBar() {
             </div>
             <div className="grid grid-cols-2 gap-2.5 p-3.5">
               <Link href={reviewHref} className={cell}><IconRepeat /><span className="flex-1">{t("review")}</span>{due > 0 && <span className="rounded bg-accent px-1.5 py-0.5 text-xs text-white">{due}</span>}</Link>
+              <Link href="/duas" className={cell}><IconHands /><span>{t("duas")}</span></Link>
+              <Link href="/radio" className={cell}><IconRadio /><span>{t("radio")}</span></Link>
+              <Link href="/prayer" className={cell}><IconClock /><span>{t("prayer")}</span></Link>
               <Link href="/account" className={cell}><IconUser /><span>{t("account")}</span></Link>
               <button onClick={() => { document.querySelector<HTMLButtonElement>("button[aria-pressed]")?.click(); setMore(false); }} className={cell}><IconKid /><span>{t("kids")}</span></button>
               {me?.role === "admin" && <Link href="/admin" className={cell}><IconShield /><span>{t("admin")}</span></Link>}

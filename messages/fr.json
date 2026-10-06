@@ -212,7 +212,10 @@
     "tajweed": "Tajwid",
     "khatm": "Planning de khatm",
     "vocab": "Vocabulaire",
-    "signOut": "Se déconnecter"
+    "signOut": "Se déconnecter",
+    "prayer": "Heures de prière",
+    "radio": "Radio",
+    "duas": "Invocations"
   },
   "today": {
     "title": "Aujourd'hui",

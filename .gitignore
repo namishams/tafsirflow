@@ -3,3 +3,6 @@ node_modules
 *.tsbuildinfo
 next-env.d.ts
 .env*
+
+# test audio is served by Nginx from /srv/tafsirflow/audio, never from the repo
+public/audio

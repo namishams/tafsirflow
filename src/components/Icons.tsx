@@ -24,3 +24,6 @@ export const IconCap = () => (<svg {...ln}><path d="M3 9l9-4 9 4-9 4-9-4z" /><pa
 export const IconShield = () => (<svg {...ln}><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" /><path d="M9 12l2.2 2.2L15.5 10" /></svg>);
 export const IconLogout = () => (<svg {...ln}><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" /><path d="M15 8l4 4-4 4M19 12H9" /></svg>);
 export const IconClose = () => (<svg {...ln}><path d="M6 6l12 12M18 6L6 18" /></svg>);
+export const IconClock = () => (<svg {...ln}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></svg>);
+export const IconRadio = () => (<svg {...ln}><rect x="3.5" y="8" width="17" height="11.5" rx="2" /><path d="M7 8l9.5-4.5" /><circle cx="9" cy="13.7" r="2.4" /><path d="M14.5 12.5h3.5M14.5 15h3.5" /></svg>);
+export const IconHands = () => (<svg {...ln}><path d="M12 20c-4.5 0-7.5-2.5-7.5-6 0-2 1-3.5 2.5-4.5L9 8.5C9.8 7 11 6 12 4c1 2 2.2 3 3 4.5l2 1c1.5 1 2.500 2.500 2.500 4.500 0 3.500-3 6-7.500 6z" /><path d="M12 11v8" /></svg>);

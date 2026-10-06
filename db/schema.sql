@@ -95,5 +95,21 @@ CREATE TABLE IF NOT EXISTS usage_verses (
   PRIMARY KEY (day, subject, verse_key)
 );
 
+-- reciters whose audio is on this server (folder = /srv/tafsirflow/audio/<folder>/<SSSAAA>.mp3)
+CREATE TABLE IF NOT EXISTS reciters (
+  folder   text PRIMARY KEY,
+  slug     text NOT NULL,
+  name     text NOT NULL,
+  qc_id    int,                         -- Quran.com recitation id (only these have word timings)
+  enabled  boolean NOT NULL DEFAULT true,
+  sort     int NOT NULL DEFAULT 100
+);
+INSERT INTO reciters (folder, slug, name, qc_id, sort) VALUES
+  ('Alafasy_128kbps', 'Alafasy', 'Mishary Alafasy', 7, 1),
+  ('Abdul_Basit_Murattal_192kbps', 'AbdulBaset', 'AbdulBaset AbdulSamad', 2, 2),
+  ('Husary_128kbps', 'Husary', 'Mahmoud Khalil Al-Husary', 6, 3),
+  ('Minshawy_Murattal_128kbps', 'Minshawi', 'Mohamed Siddiq Al-Minshawi', 9, 4)
+ON CONFLICT (folder) DO NOTHING;
+
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

@@ -10,8 +10,8 @@ import AuthGate from "./AuthGate";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume } from "./Icons";
 import {
-  LimitError, OWN_TAFSIR_ID, RECITERS, getChapter, getChapters, getOwnTafsir, getResources, getTafsir, getVerses, hasOwnTafsir, pickTranslation, tafsirOptionsFor,
-  type Chapter, type Resource, type TafsirResult, type Verse,
+  LimitError, OWN_TAFSIR_ID, RECITERS, getChapter, getChapters, getOwnTafsir, getReciters, getResources, getTafsir, getVerses, hasOwnTafsir, pickTranslation, tafsirOptionsFor,
+  type Chapter, type Reciter, type Resource, type TafsirResult, type Verse,
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { dueVerses, rate, type Rating } from "@/lib/learning";
@@ -65,7 +65,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [mode, setMode] = useState<Mode>("continuous");
   const [repeat, setRepeat] = useState(1);
   const [speed, setSpeed] = useState(1);
-  const [reciterId, setReciterId] = useState(RECITERS[0].id);
+  const [reciters, setReciters] = useState<Reciter[]>(RECITERS);
+  const [reciterFolder, setReciterFolder] = useState(RECITERS[0].folder);
+  const reciter = reciters.find((r) => r.folder === reciterFolder) ?? reciters[0];
   const [showTranslation, setShowTranslation] = useState(true);
   const [showWords, setShowWords] = useState(false);
   const [showTranslit, setShowTranslit] = useState(true);
@@ -103,6 +105,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   }, []);
 
   useEffect(() => { getChapters(locale).then(setChapters).catch(() => undefined); }, [locale]);
+  useEffect(() => {
+    getReciters().then((list) => {
+      setReciters(list);
+      const saved = readJSON<string>("tf:reciter", "");
+      if (saved && list.some((r) => r.folder === saved)) setReciterFolder(saved);
+    });
+  }, []);
   useEffect(() => { if (audioRef.current) audioRef.current.volume = vol; }, [vol]);
   useEffect(() => { setCur(0); setDur(0); }, [idx]);
 
@@ -130,7 +139,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (translationId === null) return;
     if (skipFirstLoad.current) { skipFirstLoad.current = false; return; } // data came with the page
     setError(false);
-    getVerses(chapterId, locale, reciterId, translationId)
+    getVerses(chapterId, locale, reciter, translationId)
       .then((v) => {
         setVerses(v);
         setIdx((cur) => (verses.length === 0 ? Math.min(Math.max(startVerse, 1), v.length) - 1 : Math.min(cur, v.length - 1)));
@@ -139,11 +148,11 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       .catch(() => setError(true));
     getChapter(chapterId, locale).then(setChapter).catch(() => undefined);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [chapterId, locale, reciterId, translationId]);
+  }, [chapterId, locale, reciter.folder, translationId]);
 
   const verse = verses[idx];
 
-  useEffect(() => { setUseRemote(false); setTimingsOk(true); setDbg(""); }, [verse, reciterId]);
+  useEffect(() => { setUseRemote(false); setTimingsOk(true); setDbg(""); }, [verse, reciter.folder]);
   useEffect(() => { setRevealed(false); }, [idx, hide]);
   useEffect(() => {
     if (!note) return;
@@ -368,8 +377,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             {settingsOpen && (
               <div className="mt-4 grid gap-4 text-sm sm:grid-cols-2">
                 <label className="grid gap-1"><span className="text-muted">{t("reciter")}</span>
-                  <select value={reciterId} onChange={(e) => setReciterId(Number(e.target.value))} className={field}>
-                    {RECITERS.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}
+                  <select value={reciter.folder} onChange={(e) => { setReciterFolder(e.target.value); writeJSON("tf:reciter", e.target.value, true); }} className={field}>
+                    {reciters.map((r) => <option key={r.folder} value={r.folder}>{r.name}</option>)}
                   </select>
                 </label>
                 <div className="grid gap-1"><span className="text-muted">{t("fontSize")}</span>

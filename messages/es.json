@@ -212,7 +212,10 @@
     "tajweed": "Tayuid",
     "khatm": "Planificador de jatma",
     "vocab": "Vocabulario",
-    "signOut": "Cerrar sesión"
+    "signOut": "Cerrar sesión",
+    "prayer": "Horarios de oración",
+    "radio": "Radio",
+    "duas": "Súplicas"
   },
   "today": {
     "title": "Hoy",

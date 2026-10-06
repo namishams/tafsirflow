@@ -212,7 +212,10 @@
     "tajweed": "Tajwid",
     "khatm": "Perencana khatam",
     "vocab": "Kosakata",
-    "signOut": "Keluar"
+    "signOut": "Keluar",
+    "prayer": "Waktu salat",
+    "radio": "Radio",
+    "duas": "Doa"
   },
   "today": {
     "title": "Hari ini",

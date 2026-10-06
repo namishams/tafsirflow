@@ -33,7 +33,7 @@ export default async function SurahPage({ params, searchParams }: { params: Prom
   try {
     const [chapter, res] = await Promise.all([getChapter(n, locale), getResources()]);
     const translationId = pickTranslation(locale, res.translations);
-    const verses = await getVerses(n, locale, RECITERS[0].id, translationId);
+    const verses = await getVerses(n, locale, RECITERS[0], translationId);
     initial = { chapter, verses, translationId };
   } catch {
     initial = undefined; // the player falls back to loading in the browser
