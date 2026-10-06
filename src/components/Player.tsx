@@ -129,7 +129,9 @@ export default function Player({ chapterId }: { chapterId: number }) {
     </div>
   );
 
-  const btn = "rounded-full border border-stone-300 bg-white px-3 py-2 text-sm hover:border-emerald-600";
+  const btnBase = "rounded-full border px-3 py-2 text-sm hover:border-emerald-600";
+  const btn = `${btnBase} border-stone-300 bg-white`;
+  const btnPrimary = `${btnBase} border-emerald-600 bg-emerald-600 text-white`;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-4 md:grid md:grid-cols-[1fr_22rem] md:gap-6">
@@ -176,7 +178,7 @@ export default function Player({ chapterId }: { chapterId: number }) {
           <audio ref={audioRef} src={useRemote ? verse.remoteAudioUrl : verse.audioUrl} onLoadedMetadata={onMeta} onError={() => !useRemote && verse.remoteAudioUrl && setUseRemote(true)} onTimeUpdate={onTime} onEnded={onEnded} onPause={() => setPlaying(false)} onPlay={() => setPlaying(true)} preload="auto" />
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <button className={btn} onClick={() => goTo(Math.max(0, idx - 1), false)} aria-label={t("prev")}>⏮</button>
-            <button className={`${btn} bg-emerald-600 text-white`} onClick={() => (playing ? audioRef.current?.pause() : play())}>
+            <button className={btnPrimary} onClick={() => (playing ? audioRef.current?.pause() : play())}>
               {playing ? `⏸ ${t("pause")}` : `▶ ${t("play")}`}
             </button>
             <button className={btn} onClick={() => goTo(Math.min(verses.length - 1, idx + 1), false)} aria-label={t("next")}>⏭</button>
@@ -185,7 +187,7 @@ export default function Player({ chapterId }: { chapterId: number }) {
           {waiting && (
             <div className="mt-3 flex items-center gap-3 rounded bg-amber-50 p-2 text-sm">
               <span>{t("learnHint")}</span>
-              <button className={`${btn} bg-emerald-600 text-white`} onClick={() => idx < verses.length - 1 && goTo(idx + 1)}>{t("continue")}</button>
+              <button className={btnPrimary} onClick={() => idx < verses.length - 1 && goTo(idx + 1)}>{t("continue")}</button>
             </div>
           )}
         </section>
