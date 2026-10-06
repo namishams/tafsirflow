@@ -104,7 +104,7 @@
     "home": "Inicio",
     "errInvalid": "Correo o contraseña incorrectos.",
     "errExists": "Este correo ya está registrado.",
-    "errWeak": "La contraseña debe tener al menos 8 caracteres.",
+    "errWeak": "La contraseña debe tener al menos 10 caracteres.",
     "errEmail": "Introduce un correo electrónico válido.",
     "errRate": "Demasiados intentos. Inténtalo más tarde.",
     "errInsecure": "El inicio de sesión está desactivado hasta que el sitio use HTTPS.",

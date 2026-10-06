@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { clientIp, isHttps, json, rateLimited, sameOrigin } from "@/lib/http";
+import { passwordProblem } from "@/lib/passwords";
 import crypto from "node:crypto";
 import { confirmVerification, currentUser, endSession, hashPassword, isAdminEmail, issueVerification, startSession, verifyPassword } from "@/lib/auth";
 import { mailConfigured, sendMail } from "@/lib/mail";
@@ -79,7 +80,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
 
   if (action === "reset") {
     const password = String(body.password ?? "");
-    if (password.length < 8 || password.length > 200) return json({ error: "weak" }, 400);
+    if (password.length < 10 || password.length > 200) return json({ error: "weak" }, 400);
     const h = crypto.createHash("sha256").update(String(body.token ?? "")).digest("hex");
     const r = (await p.query("DELETE FROM password_resets WHERE token_hash = $1 AND expires_at > now() RETURNING user_id", [h])).rows[0];
     if (!r) return json({ error: "token" }, 400);
@@ -94,7 +95,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
   if (password.length > 200) return json({ error: "invalid" }, 400);
 
   if (action === "register") {
-    if (password.length < 8) return json({ error: "weak" }, 400);
+    if (passwordProblem(password, email)) return json({ error: "weak" }, 400);
     const clean = (v: unknown, max: number) => String(v ?? "").replace(/\s+/g, " ").trim().slice(0, max);
     const firstName = clean(body.firstName, 60), lastName = clean(body.lastName, 60);
     if (!firstName || !lastName) return json({ error: "name" }, 400);
@@ -117,6 +118,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
     return json({ user: await currentUser() });
   }
 
+  // brute-force protection per account (in addition to the limit per IP address)
+  if (rateLimited(`login-acct:${email}`, 8, 15 * 60_000)) return json({ error: "rate" }, 429);
   // login: always run a hash comparison so timing does not reveal whether the account exists
   const r = await p.query("SELECT id, password_hash FROM users WHERE email = $1", [email]);
   const row = r.rows[0];

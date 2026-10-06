@@ -104,7 +104,7 @@
     "home": "首页",
     "errInvalid": "邮箱或密码错误。",
     "errExists": "该邮箱已注册。",
-    "errWeak": "密码至少需要 8 个字符。",
+    "errWeak": "密码至少需要 10 个字符。",
     "errEmail": "请输入有效的电子邮箱地址。",
     "errRate": "尝试次数过多，请稍后再试。",
     "errInsecure": "网站启用 HTTPS 之前，登录功能已关闭。",

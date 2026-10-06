@@ -104,7 +104,7 @@
     "home": "Ana sayfa",
     "errInvalid": "E-posta veya parola hatalı.",
     "errExists": "Bu e-posta zaten kayıtlı.",
-    "errWeak": "Parola en az 8 karakter olmalı.",
+    "errWeak": "Parola en az 10 karakter olmalı.",
     "errEmail": "Lütfen geçerli bir e-posta adresi girin.",
     "errRate": "Çok fazla deneme. Lütfen daha sonra tekrar deneyin.",
     "errInsecure": "Site HTTPS üzerinde çalışana kadar giriş kapalıdır.",

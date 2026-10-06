@@ -104,7 +104,7 @@
     "home": "Home",
     "errInvalid": "Wrong e-mail or password.",
     "errExists": "This e-mail is already registered.",
-    "errWeak": "Password must be at least 8 characters.",
+    "errWeak": "The password needs at least 10 characters and must not be easy to guess.",
     "errEmail": "Please enter a valid e-mail address.",
     "errRate": "Too many attempts. Please try again later.",
     "errInsecure": "Sign-in is disabled until the site runs on HTTPS.",

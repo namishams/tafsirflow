@@ -104,7 +104,7 @@
     "home": "Beranda",
     "errInvalid": "E-mail atau kata sandi salah.",
     "errExists": "E-mail ini sudah terdaftar.",
-    "errWeak": "Kata sandi minimal 8 karakter.",
+    "errWeak": "Kata sandi minimal 10 karakter.",
     "errEmail": "Masukkan alamat e-mail yang valid.",
     "errRate": "Terlalu banyak percobaan. Coba lagi nanti.",
     "errInsecure": "Login dinonaktifkan sampai situs memakai HTTPS.",
