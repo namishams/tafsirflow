@@ -8,6 +8,7 @@ import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText, reciterBio } 
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowNext, ArrowBack } from "@/components/Icons";
 import { CalligraphyDraw } from "@/components/Ornaments";
+import { QuranSeal } from "@/components/art/QuranArt";
 
 const LBL = {
   de: { all: "Alle Rezitatoren", country: "Land", life: "Lebensdaten", style: "Stil", listen: "Im Player anhören", known: "Bekannt für", learn: "Selbst rezitieren lernen", learnBody: "Von den ersten Buchstaben bis zur Idschaza – Schritt für Schritt.", path: "Der Weg zum Rezitator", bio: "Biografie" },
@@ -38,6 +39,7 @@ export default async function ReciterPage({ params }: { params: Promise<{ locale
   const L = LBL[langOf(locale)];
   const i = RECITER_BIOS.indexOf(r);
   const prev = RECITER_BIOS[i - 1], next = RECITER_BIOS[i + 1];
+  const initials = ar ? r.arabic.split(/\s+/).filter((w) => !["أبو", "عبد", "ابن"].includes(w)).slice(0, 2).map((w) => w[0]).join("") : r.name.split(/[\s-]+/).filter((w) => /^[A-Z]/.test(w) && !["Al", "Ash", "As", "Ar", "Ad", "At", "Az", "An", "Abu"].includes(w)).slice(0, 2).map((w) => w[0]).join("");
   const ld = { "@context": "https://schema.org", "@type": "Person", name: r.name, alternateName: r.arabic, nationality: r.country, ...(r.born ? { birthDate: r.born } : {}), ...(r.died ? { deathDate: r.died } : {}), description: t.short, url: abs(`/${locale}/reciters/${slug}`) };
   return (
     <div>
@@ -55,27 +57,31 @@ export default async function ReciterPage({ params }: { params: Promise<{ locale
             {(r.born || r.died) && <div><dt className="text-white/50">{L.life}</dt><dd className="font-semibold">{r.born ?? "?"}{r.died ? ` – ${r.died}` : ""}</dd></div>}
             <div><dt className="text-white/50">{L.style}</dt><dd className="font-semibold">{r.styles.map((s) => STYLE[s][langOf(locale)]).join(" · ")}</dd></div>
           </dl>
-          {r.playerSlug && <Link href={`/surah/1?reciter=${r.playerSlug}`} className="btn-gold mt-8 inline-flex h-12 items-center rounded-md px-6 text-[15px] font-bold">▶ {L.listen}</Link>}
+          {r.playerSlug && <Link href={`/surah/1?reciter=${r.playerSlug}`} className="btn-gold mt-8 inline-flex h-12 items-center gap-2 rounded-md px-6 text-[15px] font-bold"><svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>{L.listen}</Link>}
         </div>
+        <span aria-hidden className="q-arcade opacity-70" />
       </section>
-      <div className="mx-auto grid max-w-5xl gap-10 px-5 py-12 lg:grid-cols-[1fr_260px] [&>*]:min-w-0">
+      <div className="q-page"><div className="mx-auto grid max-w-5xl gap-10 px-5 py-12 lg:grid-cols-[1fr_260px] [&>*]:min-w-0">
         <article className="[&>div>h2:first-child]:mt-0"><Markdown text={t.body} /></article>
-        <aside>
-          <div className="rounded-lg border border-line bg-surface p-5">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">{L.known}</p>
-            <ul className="mt-3 grid gap-2 text-sm">{t.knownFor.map((k) => <li key={k} className="flex gap-2"><span className="text-gold">★</span>{k}</li>)}</ul>
+        <aside className="lg:sticky lg:top-24 lg:self-start">
+          <div className="callout overflow-hidden rounded-xl p-5">
+            <div className="flex items-center gap-3">
+              <QuranSeal className="!h-12 !w-12">{initials}</QuranSeal>
+              <p className="q-kicker text-[rgb(var(--q-ink-gold))]">{L.known}</p>
+            </div>
+            <ul className="q-known mt-4 grid gap-2.5 text-sm leading-relaxed">{t.knownFor.map((k) => <li key={k}>{k}</li>)}</ul>
           </div>
-          <div className="mt-4 rounded-lg border border-line bg-surface p-5 text-sm">
+          <Link href="/islam/reciter-path" className="q-tile mt-4 block p-5 text-sm">
             <p className="font-bold">{L.learn}</p>
             <p className="mt-1 text-muted">{L.learnBody}</p>
-            <Link href="/islam/reciter-path" className="mt-3 inline-block font-semibold text-accent hover:underline">{L.path} <ArrowNext /></Link>
-          </div>
+            <p className="mt-3 font-semibold text-accent">{L.path} <ArrowNext /></p>
+          </Link>
         </aside>
       </div>
       <nav className="mx-auto grid max-w-5xl gap-3 px-5 pb-16 sm:grid-cols-2">
-        {prev ? <Link href={`/reciters/${prev.slug}`} className="rounded-lg border border-line bg-surface p-4 hover:border-ink"><span className="text-xs text-muted"><ArrowBack /></span><span className="mt-1 block font-bold">{ar ? prev.arabic : prev.name}</span></Link> : <span />}
-        {next && <Link href={`/reciters/${next.slug}`} className="rounded-lg border border-line bg-surface p-4 text-end hover:border-ink"><span className="text-xs text-muted"><ArrowNext /></span><span className="mt-1 block font-bold">{ar ? next.arabic : next.name}</span></Link>}
-      </nav>
+        {prev ? <Link href={`/reciters/${prev.slug}`} className="q-tile flex items-center gap-3 p-4"><span className="text-[rgb(var(--gold))]"><ArrowBack /></span><span className="min-w-0"><span className={ar ? "font-callig block truncate text-[19px] leading-[1.5]" : "block truncate font-bold"}>{ar ? prev.arabic : prev.name}</span>{!ar && <span className="font-callig block truncate text-[16px] leading-[1.5] text-[rgb(var(--q-ink-gold))]" dir="rtl" lang="ar">{prev.arabic}</span>}</span></Link> : <span />}
+        {next && <Link href={`/reciters/${next.slug}`} className="q-tile flex items-center justify-end gap-3 p-4 text-end"><span className="min-w-0"><span className={ar ? "font-callig block truncate text-[19px] leading-[1.5]" : "block truncate font-bold"}>{ar ? next.arabic : next.name}</span>{!ar && <span className="font-callig block truncate text-[16px] leading-[1.5] text-[rgb(var(--q-ink-gold))]" dir="rtl" lang="ar">{next.arabic}</span>}</span><span className="text-[rgb(var(--gold))]"><ArrowNext /></span></Link>}
+      </nav></div>
     </div>
   );
 }

@@ -6,6 +6,8 @@ import { readGoal, type Goal } from "@/lib/coach";
 import { readSrs } from "@/lib/learning";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { SessionStart } from "./SessionStart";
+import { Rosette } from "./Ornaments";
+import { HomeStar, StarGlyph } from "./art/HomeOrnaments";
 
 type Read = Goal["read"]; type Aim = Goal["aim"];
 const MINUTES = [5, 10, 20, 30];
@@ -26,17 +28,26 @@ export default function Onboarding() {
   if (!show) return null;
 
   const save = (minutes: number) => { const g: Goal = { read: read!, aim: aim!, minutes, at: Date.now() }; writeJSON("tf:goal", g); setGoal(g); setStep(3); };
-  const opt = (on: boolean) => `w-full rounded-xl border p-4 text-start transition ${on ? "border-[rgb(var(--gold))] bg-[rgb(var(--gold))]/12" : "border-white/15 hover:border-white/40"}`;
+  const opt = (on: boolean) => `hm-opt w-full border px-4 pb-4 pt-5 text-start transition duration-300 ${on ? "border-[rgb(var(--gold))] bg-[rgb(var(--gold))]/12" : "border-[rgb(var(--gold))]/20 bg-white/[0.03] hover:border-[rgb(var(--gold))]/60 hover:bg-white/[0.06]"}`;
   const path = goal && (goal.read === "no" ? { href: "/arabic", key: "pRead" } : goal.read === "some" ? { href: "/arabic/placement", key: "pPlace" } : goal.aim === "hifz" ? { href: "/plan", key: "pHifz" } : goal.aim === "read" ? { href: "/khatm", key: "pKhatm" } : goal.aim === "understand" ? { href: "/surah/1", key: "pUnderstand" } : null);
 
   return (
-    <section className="stage girih relative mt-6 overflow-hidden rounded-2xl p-5 text-[#eef0f3] sm:p-7">
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[rgb(var(--gold))]">{t("kicker")} · {Math.min(step + 1, 3)}/3</p>
+    <section className="stage girih relative mt-6 overflow-hidden rounded-2xl p-6 text-[#eef0f3] sm:p-9">
+      <span aria-hidden className="illum-frame" />
+      {["start-1.5 top-1.5", "end-1.5 top-1.5", "bottom-1.5 start-1.5", "bottom-1.5 end-1.5"].map((c) => <Rosette key={c} size={20} className={`absolute ${c}`} />)}
+      <div className="relative flex items-center justify-between gap-3">
+        <p className="hm-k text-[rgb(var(--gold))]">{t("kicker")} · {Math.min(step + 1, 3)}/3</p>
         {step < 3 && <button onClick={() => { writeJSON("tf:onboardSkip", true); setShow(false); }} className="text-[13px] text-white/55 hover:text-white">{t("skip")}</button>}
       </div>
-      <div className="mt-3 flex gap-1" aria-hidden>{[0, 1, 2].map((i) => <span key={i} className={`h-1 flex-1 rounded-full transition-colors duration-500 ${i <= step ? "bg-[rgb(var(--gold))]" : "bg-white/15"}`} />)}</div>
-      <div key={step} className="step-in mt-5">
+      <div className="relative mt-4 flex items-center gap-1.5" aria-hidden>
+        {[0, 1, 2].map((i) => (
+          <span key={i} className="contents">
+            <StarGlyph size={14} className={`shrink-0 transition-colors duration-500 ${i <= step ? "text-[rgb(var(--gold))]" : "text-white/25"}`} />
+            {i < 2 && <span className={`h-px flex-1 transition-colors duration-500 ${i < step ? "bg-[rgb(var(--gold))]" : "bg-white/15"}`} />}
+          </span>
+        ))}
+      </div>
+      <div key={step} className="step-in relative mt-5">
         {step === 0 && (<>
           <h2 className="font-display text-2xl sm:text-3xl">{t("q1")}</h2>
           <div className="mt-4 grid gap-2 sm:grid-cols-3">{(["no", "some", "fluent"] as Read[]).map((r) => <button key={r} onClick={() => { setRead(r); setStep(1); }} className={opt(read === r)}><span className="font-semibold">{t(`r_${r}`)}</span><span className="mt-1 block text-[13px] text-white/60">{t(`r_${r}D`)}</span></button>)}</div>
@@ -47,7 +58,7 @@ export default function Onboarding() {
         </>)}
         {step === 2 && (<>
           <h2 className="font-display text-2xl sm:text-3xl">{t("q3")}</h2>
-          <div className="mt-4 grid grid-cols-4 gap-2">{MINUTES.map((m) => <button key={m} onClick={() => save(m)} className={`${opt(false)} text-center`}><span className="font-display block text-3xl">{m}</span><span className="text-[12px] text-white/60">{t("min")}</span></button>)}</div>
+          <div className="mt-5 grid grid-cols-4 gap-2">{MINUTES.map((m) => <button key={m} onClick={() => save(m)} className="group flex flex-col items-center gap-1.5 rounded-xl py-2 transition hover:bg-white/[0.05]"><HomeStar size={58} tone="dark" className="!text-[20px] transition group-hover:scale-105">{m}</HomeStar><span className="text-[12px] text-white/60">{t("min")}</span></button>)}</div>
           <p className="mt-3 text-[13px] text-white/55">{t("q3D")}</p>
         </>)}
         {step === 3 && goal && (<>
@@ -55,7 +66,7 @@ export default function Onboarding() {
           <h2 className="font-display mt-2 text-2xl sm:text-3xl">{t("ready")}</h2>
           <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-white/75">{path ? t(path.key) : t("pSession", { min: goal.minutes })}</p>
           <div className="mt-5 flex flex-wrap items-center gap-3">
-            {path ? <Link href={path.href} className="btn-gold inline-flex h-12 items-center rounded-full px-6 text-[15px] font-bold">{t("go")} →</Link> : <SessionStart />}
+            {path ? <Link href={path.href} className="btn-gold inline-flex h-12 items-center rounded-full px-6 text-[15px] font-bold">{t("go")} <span className="ms-1 inline-block rtl:-scale-x-100">→</span></Link> : <SessionStart />}
             <button onClick={() => setShow(false)} className="text-[13px] text-white/60 hover:text-white">{t("later")}</button>
           </div>
         </>)}

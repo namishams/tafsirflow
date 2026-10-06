@@ -6,6 +6,7 @@ import { dayPlan, learner, type DayPlan, type Learner } from "@/lib/coach";
 import { LESSONS as ARABIC_LESSONS, readArabic } from "@/lib/arabic";
 import { getChapters, type Chapter } from "@/lib/quran";
 import { ArrowNext } from "./Icons";
+import { HomeCorners, HomeRing, HomeStar, StarGlyph } from "./art/HomeOrnaments";
 
 // Reads the learner model on the device and refreshes it after a sync or when the tab gets focus
 function useCoach() {
@@ -38,7 +39,7 @@ function Forecast({ days, dark = false }: { days: number[]; dark?: boolean }) {
         return (
           <li key={i} className="flex min-w-0 flex-1 flex-col items-center gap-1">
             <span className={`text-[10px] tabular-nums ${dark ? "text-white/55" : "text-muted"}`}>{n || ""}</span>
-            <span className={`w-full rounded-t ${i === 0 ? "bg-[rgb(var(--gold))]" : dark ? "bg-white/25" : "bg-accent/60"}`} style={{ height: `${Math.max(3, (n / max) * 48)}px` }} />
+            <span className={`w-full max-w-[34px] rounded-t-full ${i === 0 ? "bg-gradient-to-b from-[#e9cf99] to-[#c6a65e] shadow-[0_6px_14px_-8px_rgb(150_116_52/.9)]" : dark ? "bg-white/25" : "bg-gradient-to-b from-accent/70 to-accent/40"}`} style={{ height: `${Math.max(4, (n / max) * 48)}px` }} />
             <span className={`text-[10px] ${dark ? "text-white/55" : "text-muted"}`}>{i === 0 ? t("todayShort") : d.toLocaleDateString(locale, { weekday: "narrow" })}</span>
           </li>
         );
@@ -57,23 +58,28 @@ export function CoachCard() {
   const first = plan.repair[0] ?? plan.reviews[0];
   const href = first ? verseHref(Number(first.split(":")[0]), Number(first.split(":")[1]), true) : verseHref(plan.next.surah, plan.next.verse);
   return (
-    <section className="rounded-xl border border-line bg-surface p-5">
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h2 className="font-display text-xl">{t("planTitle")}</h2>
-        <span className="text-sm tabular-nums text-muted">{t("planMinutes", { n: plan.minutes })}</span>
+    <section className="hm-card relative overflow-hidden p-5 sm:p-6">
+      <HomeCorners />
+      <span aria-hidden className="font-callig pointer-events-none absolute -top-3 end-4 text-[72px] leading-none text-[rgb(var(--hm-gold))]/[0.1]" dir="rtl">خطة</span>
+      <div className="relative flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="font-display flex items-center gap-2 text-xl"><StarGlyph size={14} className="text-[rgb(var(--hm-gold))]" />{t("planTitle")}</h2>
+        <span className="rounded-full border border-[rgb(var(--hm-gold))]/35 bg-[rgb(var(--hm-gold))]/10 px-2.5 py-0.5 text-[13px] font-semibold tabular-nums text-[rgb(var(--hm-gold-d))]">{t("planMinutes", { n: plan.minutes })}</span>
       </div>
       <p className="mt-1 text-[14px] leading-relaxed text-muted">{t(`reason_${plan.reason}`)}</p>
       <ul className="mt-4 grid grid-cols-3 gap-2 text-center">
-        <li className="rounded-lg bg-bg px-2 py-3"><p className="font-display text-2xl tabular-nums">{plan.reviews.length}</p><p className="text-[11px] text-muted">{t("planReviews")}</p></li>
-        <li className="rounded-lg bg-bg px-2 py-3"><p className="font-display text-2xl tabular-nums">{plan.repair.length}</p><p className="text-[11px] text-muted">{t("planRepair")}</p></li>
-        <li className="rounded-lg bg-bg px-2 py-3"><p className="font-display text-2xl tabular-nums">{plan.newVerses}</p><p className="text-[11px] text-muted">{t("planNew")}</p></li>
+        {([[plan.reviews.length, t("planReviews"), "light"], [plan.repair.length, t("planRepair"), "light"], [plan.newVerses, t("planNew"), "gold"]] as [number, string, "light" | "gold"][]).map(([n, l, tone]) => (
+          <li key={l} className="flex flex-col items-center rounded-lg border border-[rgb(var(--hm-gold))]/20 bg-[rgb(var(--hm-ivory))] px-2 pb-2.5 pt-3">
+            <HomeStar size={46} tone={tone} className="!text-[17px]">{n}</HomeStar>
+            <p className="mt-1.5 text-[11px] leading-tight text-muted">{l}</p>
+          </li>
+        ))}
       </ul>
       <p className="mt-3 text-[13px] text-muted">{t("nextBody", { surah: name(plan.next.surah), v: plan.next.verse })}</p>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <Link href={href} className="btn-gold inline-flex h-11 items-center rounded-full px-5 text-[14px] font-bold">{t("startPlan")} <ArrowNext /></Link>
         <Link href="/profile" className="text-[13px] font-semibold text-accent hover:underline">{t("title")} <ArrowNext /></Link>
       </div>
-      {L.learned > 0 && <div className="mt-5 border-t border-line pt-4"><p className="mb-2 text-xs font-semibold text-muted">{t("forecast")}</p><Forecast days={L.forecast} /></div>}
+      {L.learned > 0 && <div className="mt-5 border-t border-[rgb(var(--hm-gold))]/20 pt-4"><p className="mb-2 text-xs font-semibold text-muted">{t("forecast")}</p><Forecast days={L.forecast} /></div>}
     </section>
   );
 }
@@ -88,14 +94,12 @@ export default function ProgressPanel() {
   const { L } = c;
   const pct = L.percent * 100;
   const mem = L.memory < 0.85 ? "memLow" : L.memory > 1.3 ? "memHigh" : "memAvg";
-  const r = 40, circ = 2 * Math.PI * r;
   return (
-    <section id="progress" className="overflow-hidden rounded-xl border border-line bg-surface">
-      <div className="stage grid gap-6 p-5 text-[#eef0f3] sm:grid-cols-[auto_1fr] sm:items-center sm:p-6">
-        <div className="relative mx-auto h-28 w-28 shrink-0">
-          <svg viewBox="0 0 100 100" className="h-28 w-28 -rotate-90"><circle cx="50" cy="50" r={r} fill="none" stroke="rgba(255,255,255,.14)" strokeWidth="8" /><circle cx="50" cy="50" r={r} fill="none" stroke="rgb(var(--gold))" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${Math.max(L.learned ? 0.012 : 0, L.percent) * circ} ${circ}`} /></svg>
-          <span className="absolute inset-0 grid place-items-center text-center"><span><span className="font-display block text-2xl leading-none">{pct < 10 ? pct.toFixed(1) : Math.round(pct)} %</span><span className="text-[10px] text-white/60">{t("ofQuran")}</span></span></span>
-        </div>
+    <section id="progress" className="overflow-hidden rounded-xl border border-[rgb(var(--hm-gold))]/30 bg-surface">
+      <div className="stage girih relative grid gap-6 p-5 text-[#eef0f3] sm:grid-cols-[auto_1fr] sm:items-center sm:p-6">
+        <HomeRing id="pp-ring" value={Math.max(L.learned ? 0.012 : 0, L.percent)} size={124} stroke={7} className="mx-auto">
+          <span><span className="font-display block text-2xl leading-none">{pct < 10 ? pct.toFixed(1) : Math.round(pct)}&nbsp;%</span><span className="text-[10px] text-white/60">{t("ofQuran")}</span></span>
+        </HomeRing>
         <div className="min-w-0">
           <h2 className="font-display text-2xl">{t("title")}</h2>
           <p className="mt-1 text-[14px] text-white/70">{L.learned ? t("learnedN", { n: L.learned, solid: L.solid, done: L.complete.length }) : t("empty")}</p>
@@ -107,9 +111,9 @@ export default function ProgressPanel() {
       {L.learned > 0 && (
         <div className="grid gap-6 p-5 sm:p-6">
           <dl className="grid grid-cols-3 gap-2">
-            <div className="rounded-lg bg-bg p-3"><dt className="text-[11px] text-muted">{t("retention")}</dt><dd className="font-display mt-1 text-2xl tabular-nums">{L.retention === null ? "–" : `${Math.round(L.retention * 100)} %`}</dd></div>
-            <div className="rounded-lg bg-bg p-3"><dt className="text-[11px] text-muted">{t("memory")}</dt><dd className="font-display mt-1 text-2xl tabular-nums">{L.memory.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2, numberingSystem: "latn" } as Intl.NumberFormatOptions)}</dd></div>
-            <div className="rounded-lg bg-bg p-3"><dt className="text-[11px] text-muted">{t("pace")}</dt><dd className="font-display mt-1 text-2xl tabular-nums">{L.pace || "–"}</dd></div>
+            <div className="rounded-lg border border-[rgb(var(--hm-gold))]/20 bg-[rgb(var(--hm-ivory))] p-3"><dt className="text-[11px] text-muted">{t("retention")}</dt><dd className="font-display mt-1 text-2xl tabular-nums">{L.retention === null ? "–" : `${Math.round(L.retention * 100)} %`}</dd></div>
+            <div className="rounded-lg border border-[rgb(var(--hm-gold))]/20 bg-[rgb(var(--hm-ivory))] p-3"><dt className="text-[11px] text-muted">{t("memory")}</dt><dd className="font-display mt-1 text-2xl tabular-nums">{L.memory.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2, numberingSystem: "latn" } as Intl.NumberFormatOptions)}</dd></div>
+            <div className="rounded-lg border border-[rgb(var(--hm-gold))]/20 bg-[rgb(var(--hm-ivory))] p-3"><dt className="text-[11px] text-muted">{t("pace")}</dt><dd className="font-display mt-1 text-2xl tabular-nums">{L.pace || "–"}</dd></div>
           </dl>
           <p className="-mt-3 text-[13px] leading-relaxed text-muted">{t(mem)} {t("paceHint", { days: L.activeDays })}</p>
 
@@ -121,9 +125,9 @@ export default function ProgressPanel() {
               <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
                 {L.working.slice(0, 8).map((p) => (
                   <li key={p.id} className="min-w-0">
-                    <Link href={verseHref(p.id, p.next ?? 1)} className="block rounded-lg border border-line p-3 transition hover:border-accent/50">
+                    <Link href={verseHref(p.id, p.next ?? 1)} className="block rounded-lg border border-[rgb(var(--hm-gold))]/25 p-3 transition hover:border-[rgb(var(--hm-gold))]/70">
                       <span className="flex items-center justify-between gap-2 text-sm"><span className="truncate font-semibold">{p.id}. {name(p.id)}</span><span className="shrink-0 tabular-nums text-muted">{p.learned}/{p.total}</span></span>
-                      <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-line"><span className="block h-full rounded-full bg-accent" style={{ width: `${(p.learned / p.total) * 100}%` }} /></span>
+                      <span className="hm-bar mt-2.5"><i style={{ width: `${Math.round((p.learned / p.total) * 100)}%` }} /></span>
                       <span className="mt-1.5 block text-xs text-muted">{t("continueAt", { v: p.next ?? 1 })}</span>
                     </Link>
                   </li>
@@ -153,10 +157,10 @@ export default function ProgressPanel() {
         </div>
       )}
 
-      <div className="border-t border-line p-5 sm:p-6">
+      <div className="border-t border-[rgb(var(--hm-gold))]/20 p-5 sm:p-6">
         <Link href="/arabic" className="block">
           <span className="flex items-center justify-between text-sm"><span className="font-semibold">{t("arabic")}</span><span className="tabular-nums text-muted">{t("arabicHint", { done: c.arabic, total: ARABIC_LESSONS.length })}</span></span>
-          <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-line"><span className="block h-full rounded-full bg-[rgb(var(--gold))]" style={{ width: `${(c.arabic / Math.max(1, ARABIC_LESSONS.length)) * 100}%` }} /></span>
+          <span className="hm-bar is-gold mt-2.5"><i style={{ width: `${Math.round((c.arabic / Math.max(1, ARABIC_LESSONS.length)) * 100)}%` }} /></span>
         </Link>
       </div>
     </section>

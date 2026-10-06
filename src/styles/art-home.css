@@ -87,10 +87,10 @@ html[data-kids="1"] { --hm-ivory: 255 252 242; --hm-sand: 255 246 222; }
 .hm-arch-body { position: relative; background: rgb(var(--hm-ivory)); border: 1px solid rgb(var(--hm-gold) / .7); border-top: 0; border-radius: 0 0 16px 16px; }
 .hm-arch-body::before { content: ""; position: absolute; top: -1px; bottom: 8px; inset-inline: 2.5%; border: 1px solid rgb(var(--hm-gold) / .35); border-top: 0; border-radius: 0 0 10px 10px; pointer-events: none; }
 .hm-arch-fin { position: absolute; top: 0; left: 50%; transform: translate(-50%, -55%); color: rgb(var(--hm-gold)); pointer-events: none; }
-.hm-arch.is-dark .hm-arch-cap .f { fill: rgb(255 255 255 / .035); }
+.hm-arch.is-dark .hm-arch-cap .f { fill: rgb(7 33 26 / .86); }
 .hm-arch.is-dark .hm-arch-cap .l { stroke: rgb(var(--hm-gold-l) / .6); }
 .hm-arch.is-dark .hm-arch-cap .l2 { stroke: rgb(var(--hm-gold-l) / .28); }
-.hm-arch.is-dark .hm-arch-body { background: rgb(255 255 255 / .035); border-color: rgb(var(--hm-gold-l) / .6); }
+.hm-arch.is-dark .hm-arch-body { background: rgb(7 33 26 / .86); border-color: rgb(var(--hm-gold-l) / .6); }
 .hm-arch.is-dark .hm-arch-body::before { border-color: rgb(var(--hm-gold-l) / .28); }
 .hm-arch.is-dark .hm-arch-fin { color: rgb(var(--hm-gold-l)); }
 .hm-arch-shadow { filter: drop-shadow(0 26px 34px rgb(90 64 20 / .16)); }

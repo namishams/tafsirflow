@@ -58,7 +58,7 @@ const BIG_STAR = octagram(70, 200, 200);
 
 // Illuminated sun medallion: rays that turn slowly, a ring of verses, a scalloped gold band and a dark centre
 // in which "al-Qur'an al-Karim" is written in gold
-export function QuranShamsa({ ring, className = "" }: { ring: string; className?: string }) {
+export function QuranShamsa({ ring, lines = ["القرآن", "الكريم"], className = "" }: { ring: string; lines?: [string, string]; className?: string }) {
   return (
     <div aria-hidden className={`q-shamsa relative select-none ${className}`}>
       <span className="q-shamsa-glow" />
@@ -89,8 +89,8 @@ export function QuranShamsa({ ring, className = "" }: { ring: string; className?
         <circle cx="200" cy="200" r="99" fill="none" stroke="#e9cf99" strokeOpacity=".45" strokeWidth=".8" strokeDasharray="1 3" />
         <path d={BIG_STAR} fill="none" stroke="#e9cf99" strokeOpacity=".2" strokeWidth="1" className="q-shamsa-star" />
         <g className="q-shamsa-callig">
-          <text x="200" y="207" textAnchor="middle" fontSize="60" className="font-callig" fill="url(#qs-gold)" stroke="#f3e2b6">القرآن</text>
-          <text x="200" y="256" textAnchor="middle" fontSize="36" className="font-callig" fill="url(#qs-gold)" stroke="#f3e2b6">الكريم</text>
+          <text x="200" y="207" textAnchor="middle" fontSize="60" className="font-callig" fill="url(#qs-gold)" stroke="#f3e2b6">{lines[0]}</text>
+          <text x="200" y="256" textAnchor="middle" fontSize="36" className="font-callig" fill="url(#qs-gold)" stroke="#f3e2b6">{lines[1]}</text>
         </g>
         <path d="M200 116l3 7.2 7.2 3-7.2 3-3 7.2-3-7.2-7.2-3 7.2-3z" fill="url(#qs-gold)" opacity=".85" />
       </svg>
@@ -131,5 +131,41 @@ export function QuranInlay({ className = "" }: { className?: string }) {
         <circle cx="34" cy="128" r="2.2" fillOpacity=".4" /><circle cx="112" cy="70" r="2.2" fillOpacity=".4" /><circle cx="160" cy="150" r="2.2" fillOpacity=".4" />
       </g>
     </svg>
+  );
+}
+
+const SEAL = octagram(17.5, 30, 30);
+// Emerald seal in the shape of an eight-pointed star with a gold rim – for reciters' initials
+export function QuranSeal({ children, className = "", on = false }: { children: React.ReactNode; className?: string; on?: boolean }) {
+  return (
+    <span className={`q-seal relative grid shrink-0 place-items-center ${on ? "is-on" : ""} ${className}`}>
+      <svg aria-hidden viewBox="0 0 60 60" className="absolute inset-0 h-full w-full overflow-visible">
+        <circle cx="30" cy="30" r="28.5" className="q-seal-halo" />
+        <g className="q-seal-shape"><path d={SEAL} /></g>
+        <circle cx="30" cy="30" r="15.5" className="q-seal-inner" />
+      </svg>
+      <span className="q-seal-txt relative">{children}</span>
+    </span>
+  );
+}
+
+// Radio orb: the shamsa's rays and scalloped band around an emerald disc; it turns while the station is on air
+export function QuranOrb({ on = false, children, className = "" }: { on?: boolean; children?: React.ReactNode; className?: string }) {
+  return (
+    <div className={`q-orb relative grid aspect-square place-items-center ${on ? "is-on" : ""} ${className}`}>
+      <svg aria-hidden viewBox="0 0 400 400" className="absolute inset-0 h-full w-full overflow-visible">
+        <defs>
+          <radialGradient id="qo-disc" cx="50%" cy="35%" r="72%"><stop offset="0" stopColor="#16614a" /><stop offset=".6" stopColor="#0a3427" /><stop offset="1" stopColor="#04190f" /></radialGradient>
+          <linearGradient id="qo-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f6e7bf" /><stop offset=".45" stopColor="#d9b56c" /><stop offset=".7" stopColor="#f3e2b6" /><stop offset="1" stopColor="#b98f45" /></linearGradient>
+        </defs>
+        <g className="q-orb-rays"><path d={RAYS} className="q-shamsa-line" strokeWidth="1.2" />{DOTS.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="2" className="q-shamsa-dot" />)}</g>
+        <circle cx="200" cy="200" r="160" className="q-shamsa-line" strokeWidth="1" strokeDasharray="1.5 5" />
+        <g className="q-orb-lobes"><path d={LOBES} className="q-shamsa-lobes" /></g>
+        <circle cx="200" cy="200" r="106" fill="url(#qo-disc)" stroke="url(#qo-gold)" strokeWidth="2.5" />
+        <circle cx="200" cy="200" r="98" fill="none" stroke="#e9cf99" strokeOpacity=".4" strokeWidth=".9" strokeDasharray="1 3.5" />
+        <path d={BIG_STAR} fill="none" stroke="#e9cf99" strokeOpacity=".22" strokeWidth="1.2" className="q-orb-star" />
+      </svg>
+      <span className="relative">{children}</span>
+    </div>
   );
 }

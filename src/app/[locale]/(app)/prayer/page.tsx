@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import PrayerBoard from "@/components/PrayerBoard";
+import DonateCTA from "@/components/DonateCTA";
 import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -12,5 +13,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function PrayerPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <PrayerBoard />;
+  return (
+    <>
+      <PrayerBoard />
+      <div className="mx-auto max-w-4xl px-4 pb-16 sm:px-5 print:hidden"><DonateCTA variant="slim" /></div>
+    </>
+  );
 }

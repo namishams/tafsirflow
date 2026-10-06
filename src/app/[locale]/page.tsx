@@ -108,7 +108,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
                 <span>بِسْمِ</span><span>ٱللَّهِ</span><span>ٱلرَّحْمَـٰنِ</span><span>ٱلرَّحِيمِ</span>
               </p>
               {!ar && <p className="relative mt-2 text-[15px] italic text-[rgb(var(--gold))]">Bismi llāhi r-raḥmāni r-raḥīm</p>}
-              <p className="relative mt-1 text-sm text-white/60">{t("home2.heroVerse")}</p>
+              <p className={`relative text-sm text-white/60 ${ar ? "mt-3" : "mt-1"}`}>{t("home2.heroVerse")}</p>
               <div className="relative mt-7 flex items-center gap-3 border-t border-[rgb(var(--gold))]/20 pt-5">
                 <span className="relative grid h-11 w-11 shrink-0 place-items-center">
                   <svg viewBox="0 0 40 40" className="hm-spin absolute -inset-1.5 h-[calc(100%+12px)] w-[calc(100%+12px)] text-[rgb(var(--gold))]" aria-hidden><path d="M20 1l4.6 8.9 9.8-2.3-2.3 9.8L41 20l-8.9 4.6 2.3 9.8-9.8-2.3L20 39l-4.6-8.9-9.8 2.3 2.3-9.8L-1 20l8.9-4.6-2.3-9.8 9.8 2.3z" fill="none" stroke="currentColor" strokeOpacity=".45" strokeWidth=".8" /></svg>
@@ -271,7 +271,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         <section className="mx-auto grid max-w-6xl gap-4 px-5 py-16 sm:py-24 lg:grid-cols-2">
           <div className="hm-card flex flex-col p-6 sm:p-8">
             <HomeCorners />
-            <Sticker def={{ id: "hm-kids", icon: "star", tone: "sun", ar: "" }} size={72} />
+            <Sticker def={{ id: "hm-kids", icon: "crescent", tone: "sun", ar: "" }} size={72} />
             <h2 className="font-display mt-5 text-4xl leading-[1.1]">{t("home2.kidsTitle")}</h2>
             <p className="mt-4 flex-1 text-[17px] leading-relaxed text-muted">{t("home2.kidsBody")}</p>
             <Link href="/surah/112" className={`${btnS} mt-6 w-fit`}>{t("home2.kidsCta")}</Link>
@@ -292,9 +292,9 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
             <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">{t("home2.langsBody", { n })}</p>
             <HomeVerse text="وَٱخۡتِلَٰفُ أَلۡسِنَتِكُمۡ وَأَلۡوَٰنِكُمۡ" cite="30:22" className="mt-5 text-[22px] sm:text-[26px]" />
             <ul className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 sm:gap-x-7">
-              {Object.entries(LOCALE_META).map(([k, v], i) => (
-                <li key={k} className="flex items-center gap-5 sm:gap-7">
-                  {i > 0 && <StarGlyph size={10} className="text-[rgb(var(--hm-gold))]/80" />}
+              {Object.entries(LOCALE_META).map(([k, v]) => (
+                <li key={k} className="flex items-center gap-2.5 sm:gap-3">
+                  <StarGlyph size={10} className="shrink-0 text-[rgb(var(--hm-gold))]/80" />
                   <Link href="/" locale={k} hrefLang={k} className={`font-display text-3xl transition hover:text-accent sm:text-4xl ${k === locale ? "text-[rgb(var(--hm-gold-d))]" : "text-ink"}`}>{v.label}</Link>
                 </li>
               ))}
@@ -329,10 +329,10 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
                 <li key={k} className="min-w-0">
                   <Link href={`/${k}`} className="hm-card hm-lift hm-glow group flex h-full flex-col overflow-hidden p-6">
                     <HomeGlowLayer />
-                    <span aria-hidden className="font-callig pointer-events-none absolute -end-2 -top-2 text-[64px] leading-none text-[rgb(var(--hm-gold))]/[0.13] transition duration-700 group-hover:text-[rgb(var(--hm-gold))]/25" dir="rtl">{TILES[k === "academy" ? "courses" : k]?.ar}</span>
+                    <span aria-hidden className="font-callig pointer-events-none absolute -bottom-3 -end-1 text-[68px] leading-none text-[rgb(var(--hm-gold))]/[0.14] transition duration-700 group-hover:text-[rgb(var(--hm-gold))]/25" dir="rtl">{TILES[k === "academy" ? "courses" : k]?.ar}</span>
                     <span className="relative block text-lg font-bold">{t(`home2.tool_${k}`)}</span>
                     <span className="relative mt-1 block flex-1 text-[15px] leading-relaxed text-muted">{t(`home2.tool_${k}D`)}</span>
-                    <span aria-hidden className="relative mt-4 inline-flex items-center gap-2 text-[13px] font-bold text-accent"><StarGlyph size={9} className="text-[rgb(var(--hm-gold))]" /><span className="inline-block transition group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1">→</span></span>
+                    <span className="hm-k relative mt-4 inline-flex items-center gap-1.5 text-accent">{t("home2.open")} <span aria-hidden className="inline-block transition group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1">→</span></span>
                   </Link>
                 </li>
               ))}
@@ -364,7 +364,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         {/* 13 FAQ */}
         <section className="hm-warm">
           <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
+            <div className="lg:sticky lg:top-24 lg:self-start">
               <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{t("landing.faqTitle")}</h2>
               <HomeVerse text="فَسۡـَٔلُوٓاْ أَهۡلَ ٱلذِّكۡرِ إِن كُنتُمۡ لَا تَعۡلَمُونَ" cite="16:43" className="mt-6 text-[21px] sm:text-[24px]" />
             </div>
@@ -383,11 +383,11 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         </section>
 
         {/* 13b Voluntary support – one calm illuminated panel */}
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-20"><DonateCTA /></div>
+        <div className="mx-auto max-w-6xl px-4 sm:px-5"><DonateCTA className="my-14 sm:my-20" /></div>
 
         {/* 14 Final CTA – under the lattice dome, in a mihrab of light */}
         <section className="stage girih relative overflow-hidden text-[#eef0f3]">
-          <HomeDome id="home-dome" className="-top-[300px] w-[600px] sm:-top-[520px] sm:w-[1040px]" />
+          <HomeDome id="home-dome" className="-top-[300px] w-[600px] opacity-50 sm:-top-[520px] sm:w-[1040px]" />
           <HomeRain />
           <div className="relative mx-auto max-w-3xl px-4 py-16 sm:px-5 sm:py-24">
             <HomeArch dark ratio={0.3} lift={0.17}>

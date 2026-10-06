@@ -158,7 +158,7 @@ export default function PrayerBoard() {
         <div className="pa-arcade" />
       </section>
 
-      <main className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-5">
+      <main className="mx-auto max-w-6xl px-4 pb-12 pt-10 sm:px-5">
         <div className="grid gap-5 lg:grid-cols-3">
           {/* Qibla */}
           <section className={card}>

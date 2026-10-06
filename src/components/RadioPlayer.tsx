@@ -3,43 +3,46 @@ import { useLocale, useTranslations } from "next-intl";
 import { IconNext, IconPause, IconPlay, IconPrev } from "./Icons";
 import { STATIONS, useRadio } from "./RadioProvider";
 import { reciterName } from "@/lib/quran";
+import { QuranOrb, QuranSeal } from "./art/QuranArt";
 
+// jewel tones of Islamic art (emerald, lapis, garnet, Iznik turquoise, amber, aubergine, olive)
+const J = { emerald: "linear-gradient(165deg,#13644b 0%,#073024 55%,#04190f 100%)", lapis: "linear-gradient(165deg,#244a86 0%,#0e2348 55%,#070f22 100%)", garnet: "linear-gradient(165deg,#7a2433 0%,#3a0d16 55%,#1a0509 100%)", turquoise: "linear-gradient(165deg,#0f6b6c 0%,#06393b 55%,#031b1c 100%)", amber: "linear-gradient(165deg,#7c5617 0%,#3b2707 55%,#1c1203 100%)", aubergine: "linear-gradient(165deg,#4d2760 0%,#25102f 55%,#110616 100%)", olive: "linear-gradient(165deg,#4f5a22 0%,#262c0d 55%,#111405 100%)" };
 // station posters: calligraphy and colour per station
 const POSTER: Record<string, { ar: string; bg: string }> = {
-  quran: { ar: "القرآن", bg: "linear-gradient(160deg,#0c4a37 0%,#06221a 100%)" },
-  juzamma: { ar: "عمّ", bg: "linear-gradient(160deg,#3a2f12 0%,#14110a 100%)" },
-  kahf: { ar: "الكهف", bg: "linear-gradient(160deg,#1f2b44 0%,#0b101b 100%)" },
-  yasin: { ar: "يس", bg: "linear-gradient(160deg,#3b1f2b 0%,#160b10 100%)" },
-  rahman: { ar: "الرحمن", bg: "linear-gradient(160deg,#173640 0%,#081418 100%)" },
-  mulk: { ar: "الملك", bg: "linear-gradient(160deg,#30254a 0%,#100c19 100%)" },
-  random: { ar: "مفاجأة", bg: "linear-gradient(160deg,#401c14 0%,#170a07 100%)" },
-  quranmix: { ar: "أصوات", bg: "linear-gradient(160deg,#0d3b4a 0%,#06171d 100%)" },
-  randommix: { ar: "تنوع", bg: "linear-gradient(160deg,#4a2d0d 0%,#1a1006 100%)" },
-  juzammamix: { ar: "عمّ", bg: "linear-gradient(160deg,#2d0d4a 0%,#12061a 100%)" },
-  tabarak: { ar: "تبارك", bg: "linear-gradient(160deg,#30254a 0%,#100c19 100%)" },
-  kids: { ar: "أطفال", bg: "linear-gradient(160deg,#1d4a2a 0%,#0a1a0f 100%)" },
-  night: { ar: "الليل", bg: "linear-gradient(160deg,#141b3a 0%,#070914 100%)" },
-  friday: { ar: "الجمعة", bg: "linear-gradient(160deg,#4a3a0d 0%,#1a1406 100%)" },
-  prophets: { ar: "الأنبياء", bg: "linear-gradient(160deg,#3a1d14 0%,#160a07 100%)" },
-  beloved: { ar: "المحبوبة", bg: "linear-gradient(160deg,#4a0d2a 0%,#1a0610 100%)" },
-  dhikr: { ar: "الحفظ", bg: "linear-gradient(160deg,#0d4a44 0%,#061a18 100%)" },
-  waqiah: { ar: "الواقعة", bg: "linear-gradient(160deg,#173640 0%,#081418 100%)" },
-  baqarah: { ar: "البقرة", bg: "linear-gradient(160deg,#3a3012 0%,#14110a 100%)" },
-  maryam: { ar: "مريم", bg: "linear-gradient(160deg,#2a1f44 0%,#0e0b1b 100%)" },
-  yusuf: { ar: "يوسف", bg: "linear-gradient(160deg,#44331f 0%,#1b140b 100%)" },
-  juzday: { ar: "جزء", bg: "linear-gradient(160deg,#0f3b2e 0%,#05170f 100%)" },
-  juz28: { ar: "قد سمع", bg: "linear-gradient(160deg,#24324a 0%,#0a0f18 100%)" },
-  revelation: { ar: "اقرأ", bg: "linear-gradient(160deg,#3a2f12 0%,#14110a 100%)" },
-  ramadan: { ar: "رمضان", bg: "linear-gradient(160deg,#141b3a 0%,#070914 100%)" },
-  comfort: { ar: "الضحى", bg: "linear-gradient(160deg,#4a3a0d 0%,#1a1406 100%)" },
-  fath: { ar: "الفتح", bg: "linear-gradient(160deg,#0c4a37 0%,#06221a 100%)" },
-  hujurat: { ar: "الحجرات", bg: "linear-gradient(160deg,#2c3a1a 0%,#10160a 100%)" },
-  luqman: { ar: "لقمان", bg: "linear-gradient(160deg,#3a1d14 0%,#160a07 100%)" },
-  insan: { ar: "الإنسان", bg: "linear-gradient(160deg,#173640 0%,#081418 100%)" },
-  muzzammil: { ar: "المزمل", bg: "linear-gradient(160deg,#141b3a 0%,#070914 100%)" },
-  hashr: { ar: "الحشر", bg: "linear-gradient(160deg,#3b1f2b 0%,#160b10 100%)" },
-  taha: { ar: "طه", bg: "linear-gradient(160deg,#30254a 0%,#100c19 100%)" },
-  sajdah: { ar: "السجدة", bg: "linear-gradient(160deg,#20353a 0%,#091315 100%)" },
+  quran: { ar: "القرآن", bg: J.emerald },
+  juzamma: { ar: "عمّ", bg: J.amber },
+  kahf: { ar: "الكهف", bg: J.lapis },
+  yasin: { ar: "يس", bg: J.garnet },
+  rahman: { ar: "الرحمن", bg: J.turquoise },
+  mulk: { ar: "الملك", bg: J.aubergine },
+  random: { ar: "مفاجأة", bg: J.garnet },
+  quranmix: { ar: "أصوات", bg: J.turquoise },
+  randommix: { ar: "تنوع", bg: J.amber },
+  juzammamix: { ar: "عمّ", bg: J.aubergine },
+  tabarak: { ar: "تبارك", bg: J.lapis },
+  kids: { ar: "أطفال", bg: J.olive },
+  night: { ar: "الليل", bg: J.lapis },
+  friday: { ar: "الجمعة", bg: J.amber },
+  prophets: { ar: "الأنبياء", bg: J.garnet },
+  beloved: { ar: "المحبوبة", bg: J.aubergine },
+  dhikr: { ar: "الحفظ", bg: J.emerald },
+  waqiah: { ar: "الواقعة", bg: J.turquoise },
+  baqarah: { ar: "البقرة", bg: J.amber },
+  maryam: { ar: "مريم", bg: J.aubergine },
+  yusuf: { ar: "يوسف", bg: J.amber },
+  juzday: { ar: "جزء", bg: J.emerald },
+  juz28: { ar: "قد سمع", bg: J.lapis },
+  revelation: { ar: "اقرأ", bg: J.olive },
+  ramadan: { ar: "رمضان", bg: J.lapis },
+  comfort: { ar: "الضحى", bg: J.amber },
+  fath: { ar: "الفتح", bg: J.emerald },
+  hujurat: { ar: "الحجرات", bg: J.olive },
+  luqman: { ar: "لقمان", bg: J.garnet },
+  insan: { ar: "الإنسان", bg: J.turquoise },
+  muzzammil: { ar: "المزمل", bg: J.lapis },
+  hashr: { ar: "الحشر", bg: J.garnet },
+  taha: { ar: "طه", bg: J.aubergine },
+  sajdah: { ar: "السجدة", bg: J.turquoise },
 };
 const GROUPS = ["main", "mix", "theme", "surah"] as const;
 const initials = (name: string) => {
@@ -47,7 +50,6 @@ const initials = (name: string) => {
   if (/[\u0600-\u06FF]/.test(name)) return words.length > 1 ? `${words[0][0]}${words[words.length - 1][0]}` : words[0]?.[0] ?? ""; // Arabic names: first and last word
   return words.filter((w) => /^[A-Z]/.test(w)).slice(0, 2).map((w) => w[0]).join("");
 };
-const hue = (s: string) => { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) % 360; return h; };
 
 // Radio page: the engine lives in RadioProvider (above all pages), so playback continues when you leave this page
 export default function RadioPlayer() {
@@ -97,14 +99,14 @@ export default function RadioPlayer() {
             {r.started && <p className="mt-5 text-sm text-white/60"><span className="font-semibold text-white">{t("upNext")}:</span> {upNext.s}. {nameOf(upNext.s)} · {upNext.v}</p>}
           </div>
 
-          {/* reciter orb: rings pulse and the bars move while the station is on air */}
+          {/* reciter orb: the shamsa turns, rings pulse and the bars move while the station is on air */}
           <div className="flex justify-center">
-            <div className={`radio-orb relative grid aspect-square w-full max-w-[19rem] place-items-center ${playing ? "is-on" : ""}`}>
+            <div className={`radio-orb relative grid aspect-square w-full max-w-[17rem] place-items-center sm:max-w-[20rem] ${playing ? "is-on" : ""}`}>
               <span className="ring r1" /><span className="ring r2" /><span className="ring r3" />
-              <div className="relative grid h-40 w-40 place-items-center rounded-full text-4xl font-bold text-white shadow-2xl" style={{ background: `linear-gradient(140deg, hsl(${hue(r.reciter.name)} 45% 32%), hsl(${(hue(r.reciter.name) + 40) % 360} 50% 16%))` }}>
-                {initials(rn(r.reciter))}
-                <span className="bars absolute -bottom-3 flex h-8 items-end gap-1" aria-hidden>{Array.from({ length: 7 }, (_, i) => <i key={i} />)}</span>
-              </div>
+              <QuranOrb on={playing} className="w-full">
+                <span className="q-orb-txt block pb-2 text-[44px] leading-none sm:text-[54px]">{initials(rn(r.reciter))}</span>
+              </QuranOrb>
+              <span className="bars absolute bottom-[19%] flex h-8 items-end gap-1" aria-hidden>{Array.from({ length: 7 }, (_, i) => <i key={i} />)}</span>
             </div>
           </div>
         </div>
@@ -117,8 +119,8 @@ export default function RadioPlayer() {
               const on = x.folder === r.reciter.folder;
               return (
                 <li key={x.folder} className="min-w-0">
-                  <button onClick={() => r.changeReciter(x.folder)} className={`flex w-full flex-col items-center gap-2 rounded-lg p-3 text-center transition ${on ? "bg-white/10" : "hover:bg-white/5"}`} aria-pressed={on}>
-                    <span className={`grid h-16 w-16 place-items-center rounded-full text-lg font-bold text-white ${on ? "ring-2 ring-[rgb(var(--gold))] ring-offset-2 ring-offset-stage" : ""}`} style={{ background: `linear-gradient(140deg, hsl(${hue(x.name)} 45% 32%), hsl(${(hue(x.name) + 40) % 360} 50% 16%))` }}>{initials(rn(x))}</span>
+                  <button onClick={() => r.changeReciter(x.folder)} className={`flex w-full flex-col items-center gap-2 rounded-lg p-3 text-center transition ${on ? "bg-white/[0.07] shadow-[inset_0_0_0_1px_rgb(214_180_108/0.35)]" : "hover:bg-white/5"}`} aria-pressed={on}>
+                    <QuranSeal on={on} className="!h-16 !w-16">{initials(rn(x))}</QuranSeal>
                     <span className={`line-clamp-2 text-xs font-semibold leading-snug ${on ? "text-white" : "text-white/70"}`}>{rn(x)}</span>
                   </button>
                 </li>
@@ -126,6 +128,7 @@ export default function RadioPlayer() {
             })}
           </ul>
         </div>
+        <span aria-hidden className="q-arcade opacity-60" />
       </section>
 
       <main className="mx-auto max-w-6xl px-4 pb-24 pt-10">
@@ -148,11 +151,12 @@ export default function RadioPlayer() {
                 const p = POSTER[st.id] ?? POSTER.quran, on = station.id === st.id && playing;
                 return (
                   <li key={st.id} className="min-w-0">
-                    <button onClick={() => r.chooseStation(st)} className={`group relative flex aspect-[4/5] w-full flex-col justify-end overflow-hidden rounded-lg p-4 text-start ring-1 ring-inset ring-white/[0.06] sm:p-5 ${on ? "ring-2 ring-[rgb(var(--gold))]" : ""}`} style={{ background: p.bg }}>
-                      <span aria-hidden className="font-callig pointer-events-none absolute -end-1 top-3 text-[4.25rem] leading-none text-white/[0.08] transition duration-700 group-hover:text-white/[0.12] sm:text-[5.5rem]" dir="rtl">{p.ar}</span>
-                      <span className="absolute start-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-white/15 text-white">{on ? <span className="eq eq-on" aria-hidden><i /><i /><i /><i /></span> : <IconPlay />}</span>
-                      {st.mix && <span className="absolute end-4 top-5 rounded-sm bg-black/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white/80">{t("mixBadge")}</span>}
-                      <span className="font-display relative text-[19px] leading-tight text-white sm:text-2xl">{r.stationName(st.id)}</span>
+                    <button onClick={() => r.chooseStation(st)} aria-pressed={on} className={`q-poster group flex aspect-[4/5] w-full flex-col justify-end p-4 text-start sm:p-5 ${on ? "is-on" : ""}`} style={{ background: p.bg }}>
+                      <svg aria-hidden viewBox="0 0 100 110" preserveAspectRatio="none" className="q-poster-arch"><g fill="none" stroke="currentColor" strokeWidth=".8" vectorEffect="non-scaling-stroke"><path d="M4 110V48C4 24 26 9 50 2c24 7 46 22 46 46v62" /><path d="M11 110V50c0-20 19-33 39-39 20 6 39 19 39 39v60" strokeOpacity=".55" /></g></svg>
+                      <span aria-hidden className={`q-poster-word ${p.ar.length > 6 ? "text-[30px] sm:text-[38px]" : p.ar.length > 3 ? "text-[38px] sm:text-[50px]" : "text-[48px] sm:text-[62px]"}`} dir="rtl">{p.ar}</span>
+                      <span className="q-poster-play absolute start-4 top-4">{on ? <span className="eq eq-on" aria-hidden><i /><i /><i /><i /></span> : <IconPlay />}</span>
+                      {st.mix && <span className="absolute end-4 top-5 rounded-full border border-[rgb(233_207_153/0.45)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#f3e2b6] rtl:tracking-normal">{t("mixBadge")}</span>}
+                      <span className="font-display relative text-[18px] leading-tight text-white sm:text-[22px]">{r.stationName(st.id)}</span>
                       <span className="relative mt-1 line-clamp-2 text-[12.5px] leading-snug text-white/65 sm:text-sm">{t(`sd_${st.id}`)}</span>
                     </button>
                   </li>
@@ -164,8 +168,8 @@ export default function RadioPlayer() {
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
           {/* settings */}
-          <section className="rounded-lg border border-line bg-surface p-5 sm:p-6">
-            <h2 className="text-lg font-bold">{t("settings")}</h2>
+          <section className="callout rounded-xl p-5 sm:p-6">
+            <h2 className="q-kicker text-[rgb(var(--q-ink-gold))]">{t("settings")}</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <label className="grid gap-1 text-sm"><span className="text-muted">{t("sleep")}</span>
                 <select value={r.sleepLeft ? "on" : "0"} onChange={(e) => r.setSleepLeft(e.target.value === "0" ? 0 : Number(e.target.value) * 60)} className={field}>
@@ -198,11 +202,11 @@ export default function RadioPlayer() {
           </section>
 
           {/* recently played */}
-          <section className="rounded-lg border border-line bg-surface p-5 sm:p-6">
-            <h2 className="text-lg font-bold">{t("recent")}</h2>
+          <section className="callout rounded-xl p-5 sm:p-6">
+            <h2 className="q-kicker text-[rgb(var(--q-ink-gold))]">{t("recent")}</h2>
             {history.length > 1 ? (
-              <ul className="mt-3 divide-y divide-line text-sm">
-                {history.slice(1).map((h, i) => <li key={`${h.s}:${h.v}:${i}`} className="flex justify-between py-2.5"><span>{h.s}. {nameOf(h.s)}</span><span className="text-muted">{h.v}</span></li>)}
+              <ul className="mt-3 divide-y divide-[rgb(201_166_94/0.18)] text-sm">
+                {history.slice(1).map((h, i) => <li key={`${h.s}:${h.v}:${i}`} className="flex items-center gap-3 py-2.5"><span className="w-7 shrink-0 text-end text-[12px] font-semibold tabular-nums text-[rgb(var(--q-ink-gold))]">{h.s}</span><span className="min-w-0 flex-1 truncate">{nameOf(h.s)}</span><span className="tabular-nums text-muted">{h.v}</span></li>)}
               </ul>
             ) : <p className="mt-2 text-sm text-muted">{t("recentNone")}</p>}
           </section>

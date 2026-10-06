@@ -6,6 +6,12 @@ import "@/styles/art-islam.css";
 // numbered eight-pointed medallions, the lattice dome of light (Louvre Abu Dhabi) and the arcade edge of the heroes.
 // Pure SVG/CSS, server-safe.
 
+// "ﷺ" set in Amiri and gold, so the blessing reads as calligraphy on every device
+export function saw(text: string, k = "s"): React.ReactNode {
+  if (!text.includes("ﷺ")) return text;
+  return text.split("ﷺ").flatMap((part, i) => (i ? [<span key={`${k}${i}`} className="isl-saw">ﷺ</span>, part] : [part]));
+}
+
 // points of an n-pointed star
 export function starPath(cx: number, cy: number, R: number, r: number, n = 8, rot = -Math.PI / 2) {
   const pts: string[] = [];
@@ -110,7 +116,7 @@ export function IslamDome({ className = "", id = "dome" }: { className?: string;
         </radialGradient>
       </defs>
       <circle cx="200" cy="200" r="200" fill={`url(#${id}-sun)`} />
-      <g mask={`url(#${id}-k)`} opacity=".55">
+      <g mask={`url(#${id}-k)`} opacity=".42">
         <g className="l1"><rect x="-60" y="-60" width="520" height="520" fill={`url(#${id}-a)`} /></g>
         <g className="l2" opacity=".8"><rect x="-60" y="-60" width="520" height="520" fill={`url(#${id}-b)`} /></g>
       </g>

@@ -6,6 +6,8 @@ import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText } from "@/lib/
 import { abs, pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
 import { CalligraphyDraw } from "@/components/Ornaments";
+import DonateCTA from "@/components/DonateCTA";
+import { QuranSeal } from "@/components/art/QuranArt";
 
 const C = {
   de: { kicker: "Die Stimmen des Korans", title: "50 große Rezitatoren – ihre Geschichte, ihr Klang, ihr Vermächtnis", lead: "Von den Meistern aus Kairo, deren Aufnahmen seit Generationen um die Welt gehen, bis zu den Imamen der heiligen Moscheen in Mekka und Medina und den Stimmen aus den Emiraten. Lerne sie kennen – und lerne von ihnen: Wer einem großen Rezitator aufmerksam zuhört, lernt Aussprache, Rhythmus und Ehrfurcht.", listen: "Im Player anhören", read: "Biografie lesen", path: "Der Weg zum Rezitator", radio: "Koran-Radio" },
@@ -39,30 +41,35 @@ export default async function RecitersPage({ params }: { params: Promise<{ local
             <Link href="/radio" className="inline-flex h-12 items-center rounded-md border border-white/30 px-6 text-[15px] font-bold hover:border-white">{c.radio}</Link>
           </div>
         </div>
+        <span aria-hidden className="q-arcade opacity-70" />
       </section>
-      <section className="mx-auto max-w-6xl px-5 py-14">
+      <section className="q-page">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5">
         <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {RECITER_BIOS.map((r, i) => {
             const t = bioText(r, locale);
             const initials = locale === "ar" ? r.arabic.split(/\s+/).filter((w) => !["أبو", "عبد", "ابن"].includes(w)).slice(0, 2).map((w) => w[0]).join("") : r.name.split(/[\s-]+/).filter((w) => /^[A-Z]/.test(w) && !["Al", "Ash", "As", "Ar", "Ad", "At", "Az", "An", "Abu"].includes(w)).slice(0, 2).map((w) => w[0]).join("");
             return (
               <li key={r.slug} className="min-w-0">
-                <Link href={`/reciters/${r.slug}`} className="group flex h-full flex-col rounded-xl border border-line bg-surface p-5 transition hover:-translate-y-0.5 hover:border-[rgb(var(--gold))]">
+                <Link href={`/reciters/${r.slug}`} className="q-tile flex h-full flex-col p-5">
+                  <svg aria-hidden viewBox="0 0 110 120" className="q-rec-arch"><g fill="none" stroke="currentColor" strokeWidth="1"><path d="M8 120V52C8 26 32 10 55 3c23 7 47 23 47 49v68" /><path d="M18 120V54c0-20 19-33 37-39 18 6 37 19 37 39v66" /><path d="M55 22l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" /></g></svg>
                   <div className="flex items-center gap-4">
-                    <span className="stage grid h-14 w-14 shrink-0 place-items-center rounded-full font-display text-lg text-[rgb(var(--gold))]">{initials}</span>
+                    <QuranSeal>{initials}</QuranSeal>
                     <span className="min-w-0">
-                      <span className="block text-xs font-bold text-muted">{String(i + 1).padStart(2, "0")} · {locale === "de" ? COUNTRIES_DE[r.country] ?? r.country : locale === "ar" ? COUNTRIES_AR[r.country] ?? r.country : r.country}{r.born || r.died ? ` · ${r.born ?? "?"}${r.died ? `–${r.died}` : ""}` : ""}</span>
-                      {locale === "ar" ? <span className="font-arabic block truncate text-xl font-bold leading-snug" dir="rtl">{r.arabic}</span> : <><span className="block truncate text-lg font-bold">{r.name}</span>
-                      <span className="font-arabic block text-lg leading-snug text-accent" dir="rtl">{r.arabic}</span></>}
+                      <span className="block text-[11.5px] font-semibold tabular-nums text-[rgb(var(--q-ink-gold))]">{String(i + 1).padStart(2, "0")} · {locale === "de" ? COUNTRIES_DE[r.country] ?? r.country : locale === "ar" ? COUNTRIES_AR[r.country] ?? r.country : r.country}{r.born || r.died ? ` · ${r.born ?? "?"}${r.died ? `–${r.died}` : ""}` : ""}</span>
+                      {locale === "ar" ? <span className="font-callig block truncate text-[22px] leading-[1.5]" dir="rtl">{r.arabic}</span> : <><span className="mt-0.5 block truncate text-[17px] font-bold leading-snug">{r.name}</span>
+                      <span className="font-callig block truncate text-[19px] leading-[1.6] text-[rgb(var(--q-ink-gold))]" dir="rtl" lang="ar">{r.arabic}</span></>}
                     </span>
                   </div>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{t.short}</p>
-                  <p className="mt-3 flex flex-wrap gap-1.5">{r.styles.map((s) => <span key={s} className="rounded-full bg-bg px-2 py-0.5 text-[11px] font-semibold text-muted">{STYLE[s][locale === "de" ? "de" : locale === "ar" ? "ar" : "en"]}</span>)}{r.playerSlug && <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[11px] font-semibold text-accent">▶ {c.listen}</span>}</p>
+                  <p className="mt-4 flex flex-wrap gap-1.5">{r.styles.map((s) => <span key={s} className="q-pill">{STYLE[s][locale === "de" ? "de" : locale === "ar" ? "ar" : "en"]}</span>)}{r.playerSlug && <span className="q-pill is-play"><svg aria-hidden viewBox="0 0 24 24" className="h-3 w-3"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>{c.listen}</span>}</p>
                 </Link>
               </li>
             );
           })}
         </ol>
+        <DonateCTA variant="slim" className="mt-12" />
+        </div>
       </section>
       <MoreTiles keys={["radio", "shams", "tajweed", "courses"]} />
     </div>

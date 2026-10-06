@@ -7,6 +7,8 @@ import { readListen } from "@/lib/listen";
 import { HOUR_STICKERS, buildCtx, hoursOf, nextHourSticker } from "@/lib/stickers";
 import Sticker from "./Sticker";
 import { LevelSeal } from "./Rewards";
+import { Rosette } from "./Ornaments";
+import "@/styles/art-home.css";
 
 // Today: level, points, listening today and the next sticker
 export default function RewardsCard() {
@@ -31,7 +33,9 @@ export default function RewardsCard() {
   const m = Math.round(v.listen / 60);
   return (
     <section className="stage girih relative mt-8 overflow-hidden rounded-xl text-[#eef0f3]">
-      <div className="relative grid gap-5 p-5 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:p-6">
+      <span aria-hidden className="illum-frame" />
+      {["start-1.5 top-1.5", "end-1.5 top-1.5", "bottom-1.5 start-1.5", "bottom-1.5 end-1.5"].map((c) => <Rosette key={c} size={20} className={`absolute ${c}`} />)}
+      <div className="relative grid gap-5 p-6 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:p-8">
         <Link href="/stats" className="flex items-center gap-4" aria-label={t("toStats")}>
           <LevelSeal n={lvl.n} size={76} />
           <span className="min-w-0">
@@ -41,7 +45,7 @@ export default function RewardsCard() {
         </Link>
         <div className="min-w-0">
           <div className="flex justify-between gap-3 text-xs text-white/65"><span>{t("points", { n: nf(v.total) })}</span><span>{t("todayPts", { n: nf(v.today) })}</span></div>
-          <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-[rgb(var(--gold))] transition-[width] duration-1000" style={{ width: `${Math.round(lvl.pct * 100)}%` }} /></div>
+          <span className="hm-bar is-gold mt-2"><i style={{ width: `${Math.round(lvl.pct * 100)}%` }} /></span>
           <dl className="mt-4 grid grid-cols-3 gap-3 text-center sm:text-start">
             <div><dt className="font-display text-2xl text-[rgb(var(--gold))]">{m}</dt><dd className="text-[11px] leading-tight text-white/60">{t("minToday")}</dd></div>
             <div><dt className="font-display text-2xl text-[rgb(var(--gold))]">{nf(v.verses)}</dt><dd className="text-[11px] leading-tight text-white/60">{t("versesToday")}</dd></div>
@@ -49,13 +53,13 @@ export default function RewardsCard() {
           </dl>
         </div>
         {v.next && (
-          <Link href="/stats" className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.04] p-3 sm:flex-col sm:text-center">
+          <Link href="/stats" className="flex items-center gap-3 border border-[rgb(var(--gold))]/25 bg-white/[0.04] p-3 transition hover:border-[rgb(var(--gold))]/55 sm:flex-col sm:px-4 sm:pt-5 sm:text-center" style={{ borderRadius: "40px 40px 10px 10px / 26px 26px 10px 10px" }}>
             <Sticker def={v.next} size={64} locked pct={(v.hours - v.prevH) / (v.next.h - v.prevH)} />
             <span className="text-xs leading-snug text-white/70">{t("nextShort")}<b className="block text-sm text-white">{locale === "ar" ? v.next.ar : t(`s_${v.next.id}`)}</b>{t("hoursN", { n: nf(v.next.h) })}</span>
           </Link>
         )}
       </div>
-      <div className="relative flex flex-wrap gap-x-5 gap-y-2 border-t border-white/10 px-5 py-3 text-sm font-semibold sm:px-6">
+      <div className="relative mx-5 mb-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-[rgb(var(--gold))]/20 px-1 pt-3 text-sm font-semibold sm:mx-7">
         <Link href="/stats" className="text-[rgb(var(--gold))] hover:underline">{t("toStats")}</Link>
         <Link href="/ranking" className="text-white/80 hover:text-white hover:underline">{t("toRanking")}</Link>
       </div>

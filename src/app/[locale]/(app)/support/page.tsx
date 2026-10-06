@@ -6,6 +6,8 @@ import SupportZiina from "@/components/SupportZiina";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowNext, ArrowBack } from "@/components/Icons";
+import { Lantern } from "@/components/DonateCTA";
+import { PracticeStar, PracticeStarNum } from "@/components/art/PracticeArt";
 
 type C = {
   kicker: string; title: string; lead: string; free: string;
@@ -98,67 +100,82 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const c = content(locale);
   const ld = { "@context": "https://schema.org", "@type": "FAQPage", url: abs(`/${locale}/support`), mainEntity: c.faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
+  const hadithAr = ar.hadith.replace(/[«»]/g, "");
   return (
     <div>
       <JsonLd data={ld} />
 
-      <section className="stage girih text-[#eef0f3]">
-        <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 sm:py-16 lg:grid-cols-[1fr_minmax(0,26rem)] lg:items-start [&>*]:min-w-0">
-          <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
-            <h1 className="font-display mt-4 text-[36px] leading-[1.06] sm:text-5xl">{c.title}</h1>
-            <p className="mt-5 text-[17px] leading-relaxed text-white/75">{c.lead}</p>
-            <p className="mt-5 text-sm font-semibold text-[rgb(var(--gold))]">{c.free}</p>
+      {/* hero: a lantern hangs in the arch of light; below it the sadaqa card */}
+      <section className="stage girih relative overflow-hidden text-[#eef0f3]">
+        <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 50% 18%, rgb(240 200 106 / .18) 0, transparent 42%)" }} />
+        <div className="relative mx-auto max-w-3xl px-5 pb-36 text-center sm:pb-40">
+          <div className="mx-auto flex w-max flex-col items-center">
+            <span aria-hidden className="h-10 w-px bg-gradient-to-b from-transparent to-[rgb(214_180_108)] sm:h-14" />
+            <span className="rise -mt-1"><Lantern pct={null} size={92} /></span>
           </div>
-          <Suspense><SupportZiina /></Suspense>
+          <p className="rise mt-4 text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))] rtl:tracking-normal">{c.kicker}</p>
+          <h1 className="rise font-display mx-auto mt-3 max-w-2xl text-[34px] leading-[1.08] sm:text-5xl" style={{ animationDelay: "100ms" }}>{c.title}</h1>
+          <p className="rise mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-white/75" style={{ animationDelay: "200ms" }}>{c.lead}</p>
+          <p className="rise mx-auto mt-5 inline-flex max-w-xl items-center gap-2 rounded-full border border-[rgb(214_180_108)]/35 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-[rgb(233_207_153)]" style={{ animationDelay: "280ms" }}><PracticeStar size={10} />{c.free}</p>
         </div>
+        <div className="pa-arcade" />
       </section>
 
+      <div className="relative z-[1] mx-auto -mt-28 max-w-2xl px-4 sm:-mt-32 sm:px-5"><Suspense><SupportZiina /></Suspense></div>
+
       <main className="mx-auto max-w-5xl px-5 pb-16">
-        <figure className="mx-auto mt-12 max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">{c.hadithTitle}</p>
-          <blockquote className="font-display mt-4 text-[22px] leading-relaxed sm:text-2xl">{c.hadith}</blockquote>
-          <figcaption className="mt-3 text-sm text-muted">{c.hadithSrc}</figcaption>
+        {/* the hadith of the deed that keeps on giving */}
+        <figure className="pa-paper mx-auto mt-14 max-w-3xl px-6 pb-8 pt-10 text-center sm:px-10">
+          <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"><PracticeStarNum n="" size={34} filled /></span>
+          <p className="relative text-xs font-bold uppercase tracking-[0.18em] text-gold rtl:tracking-normal">{c.hadithTitle}</p>
+          {locale !== "ar" && <p className="font-arabic relative mx-auto mt-5 max-w-2xl text-[24px] leading-[2] sm:text-[27px]" dir="rtl" lang="ar">{hadithAr}</p>}
+          <blockquote className={`relative mx-auto mt-4 max-w-2xl leading-relaxed ${locale === "ar" ? "font-arabic text-[24px] leading-[2]" : "text-[18px] text-ink/85 sm:text-[19px]"}`}>{c.hadith}</blockquote>
+          <figcaption className="relative mt-4 text-sm font-semibold text-gold">{c.hadithSrc}</figcaption>
         </figure>
 
-        <section className="mt-14">
-          <h2 className="font-display text-3xl">{c.forTitle}</h2>
-          <ul className="mt-6 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2">
-            {c.forItems.map(([h, d], i) => <li key={h} className="bg-surface p-5"><p className="font-display text-2xl text-gold">0{i + 1}</p><h3 className="mt-1 font-bold">{h}</h3><p className="mt-1 text-[15px] leading-relaxed text-muted">{d}</p></li>)}
-          </ul>
-        </section>
-
-        <section className="mt-12 rounded-xl callout p-6">
-          <h2 className="font-display text-2xl">{c.promiseTitle}</h2>
-          <ul className="mt-4 grid gap-2 sm:grid-cols-2">{c.promises.map((p) => <li key={p} className="flex gap-2 text-[15px]"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />{p}</li>)}</ul>
-        </section>
-
-        <section className="mt-12">
-          <h2 className="font-display text-3xl">{c.waysTitle}</h2>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {c.ways.map(([h, d, href, cta]) => (
-              <li key={h} className="flex flex-col rounded-xl border border-line bg-surface p-5">
-                <h3 className="font-bold">{h}</h3>
-                <p className="mt-1 flex-1 text-sm leading-relaxed text-muted">{d}</p>
-                {href && (href.startsWith("mailto:") ? <a href={href} className="mt-3 text-sm font-bold text-accent hover:underline">{cta} <ArrowNext /></a> : <Link href={href} className="mt-3 text-sm font-bold text-accent hover:underline">{cta} <ArrowNext /></Link>)}
+        <section className="mt-16">
+          <h2 className="font-display text-3xl sm:text-4xl">{c.forTitle}</h2>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+            {c.forItems.map(([h, d], i) => (
+              <li key={h} className="pa-card flex gap-4 p-5 pt-6">
+                <PracticeStarNum n={i + 1} size={44} />
+                <span className="min-w-0"><span className="block text-[17px] font-bold">{h}</span><span className="mt-1 block text-[15px] leading-relaxed text-muted">{d}</span></span>
               </li>
             ))}
           </ul>
         </section>
 
-        <section className="mx-auto mt-14 max-w-3xl">
-          <h2 className="font-display text-3xl">{c.faqTitle}</h2>
-          <div className="mt-5 divide-y divide-line border-y border-line">
+        <section className="callout mt-12 rounded-xl p-6 sm:p-8">
+          <h2 className="font-display text-2xl">{c.promiseTitle}</h2>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2">{c.promises.map((p) => <li key={p} className="flex gap-3 text-[15px] leading-relaxed"><PracticeStar size={12} className="mt-1.5" />{p}</li>)}</ul>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="font-display text-3xl sm:text-4xl">{c.waysTitle}</h2>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {c.ways.map(([h, d, href, cta]) => (
+              <li key={h} className="pa-card pa-card-hover flex flex-col p-5 pt-6">
+                <h3 className="text-[17px] font-bold">{h}</h3>
+                <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{d}</p>
+                {href && (href.startsWith("mailto:") ? <a href={href} className="mt-4 text-sm font-bold text-accent hover:underline">{cta} <ArrowNext /></a> : <Link href={href} className="mt-4 text-sm font-bold text-accent hover:underline">{cta} <ArrowNext /></Link>)}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mx-auto mt-16 max-w-3xl">
+          <h2 className="font-display text-3xl sm:text-4xl">{c.faqTitle}</h2>
+          <div className="mt-6 grid gap-3">
             {c.faq.map(([q, a]) => (
-              <details key={q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-[17px] font-bold">{q}<span className="mt-1 text-muted transition group-open:rotate-45">+</span></summary>
+              <details key={q} className="pa-card pa-plain group px-5 py-4">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-[17px] font-bold">{q}<span aria-hidden className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-[rgb(var(--gold))]/50 text-gold transition group-open:rotate-45">+</span></summary>
                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <div className="mt-10 flex flex-col items-center gap-3 text-sm text-muted">
+        <div className="mt-12 flex flex-col items-center gap-3 text-sm text-muted">
           <p>{c.contact}</p>
           <Link href="/" className="font-semibold text-accent"><ArrowBack /> {c.back}</Link>
         </div>

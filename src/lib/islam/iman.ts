@@ -44,7 +44,7 @@ Dieser Glaube ist dem Menschen nicht fremd. Der Koran spricht von der **Fitra**,
 
 Allah ist erhaben über alles, und doch ist Er nah. „Wenn dich Meine Diener nach Mir fragen, so bin Ich nahe. Ich erhöre den Ruf des Bittenden, wenn er Mich ruft“ (2:186). „Wir sind ihm näher als seine Halsschlagader“ (50:16). „Er ist mit euch, wo immer ihr seid“ (57:4). Aus diesem Glauben wachsen Vertrauen (*Tawakkul*), Hoffnung und Liebe. Wer an Allah glaubt, muss nicht alles allein tragen.
 
-Die Namen Allahs – der Allerbarmer, der Vergebende, der Gerechte, der Liebevolle – sind wie Fenster, durch die wir Ihn ein wenig kennenlernen; mehr darüber im Kapitel [Die schönsten Namen Allahs](/islam/names). Und der gewaltigste Vers des Korans, der Thronvers (2:255), spricht ganz von Ihm: dem Lebendigen, dem Beständigen, den weder Schlummer noch Schlaf überkommt.
+Die Namen Allahs – der Allerbarmer, der Vergebende, der Gerechte, der Liebevolle – sind wie Fenster, durch die wir Ihn ein wenig kennenlernen; mehr darüber im Kapitel [Die schönsten Namen Allahs](/islam/names). Und der gewaltigste Vers des Korans, der Thronvers (2:255; Muslim), spricht ganz von Ihm: dem Lebendigen, dem Beständigen, den weder Schlummer noch Schlaf überkommt.
 
 ## Zweite Säule: Der Glaube an die Engel
 
@@ -181,7 +181,7 @@ Beten wir zum Schluss mit den Worten des Korans: „Unser Herr, lass unsere Herz
       "Koran 2:3, 2:97–98, 2:156, 2:177, 2:186, 2:255, 2:285–286, 3:3, 3:8, 3:173, 3:185, 3:190–191, 4:40, 4:136, 4:163–164, 5:46, 5:48, 8:2, 11:69–70, 13:11, 13:28, 15:9, 16:36, 16:90, 18:50, 19:17, 21:20, 21:47, 21:107, 23:100, 26:193–194, 30:30, 32:11, 32:17, 33:40, 33:43, 35:1, 36:78–79, 39:53, 39:68, 41:30, 42:11, 48:4, 49:14, 50:16–18, 54:49, 55:15, 57:4, 57:22–23, 59:23, 66:6, 74:31, 76:3, 82:10–12, 87:18–19, 91:9–10, 99:7–8, 112:1–4",
       "Sahih Muslim 8 (Hadith des Dschibril, überliefert von Umar ibn al-Khattab); Sahih al-Bukhari 50 (dieselbe Begebenheit, überliefert von Abu Huraira)",
       "Sahih al-Bukhari und Sahih Muslim (Fitra, Hadith Qudsi über das Paradies, „Wer an Allah und den Jüngsten Tag glaubt …“, Zweige des Glaubens, Süße des Glaubens, Liebe zum Bruder)",
-      "Sahih Muslim (Erschaffung der Engel aus Licht, Versammlung zum Koranstudium, Hanzala, die Sache des Gläubigen, „Das ist klarer Glaube“)",
+      "Sahih Muslim (Erschaffung der Engel aus Licht, Versammlung zum Koranstudium, Hanzala, die Sache des Gläubigen, „Das ist klarer Glaube“, der gewaltigste Vers des Korans)",
       "Dschami' at-Tirmidhi (Ibn Abbas, das Kamel anbinden, „O Du, der die Herzen wendet“, die Umkehrenden, der vertrauenswürdige Gläubige); Sunan an-Nasa'i (der vertrauenswürdige Gläubige)",
       "al-Kulaini: al-Kafi (Wort von Imam Dscha'far as-Sadiq über Zwang und Überlassung)",
     ],
@@ -226,7 +226,7 @@ This faith is not foreign to human beings. The Quran speaks of the **fitrah**, t
 
 Allah is exalted above all things, and yet He is near. "When My servants ask you about Me, I am near. I answer the call of the one who calls when he calls upon Me" (2:186). "We are closer to him than his jugular vein" (50:16). "He is with you wherever you are" (57:4). From this faith grow trust (*tawakkul*), hope and love. Whoever believes in Allah does not have to carry everything alone.
 
-The names of Allah – the Most Merciful, the Forgiving, the Just, the Loving – are like windows through which we come to know Him a little; you can read more in the chapter [The Most Beautiful Names of Allah](/islam/names). And the greatest verse of the Quran, the Verse of the Throne (2:255), speaks entirely of Him: the Ever-Living, the Sustainer, whom neither drowsiness nor sleep overtakes.
+The names of Allah – the Most Merciful, the Forgiving, the Just, the Loving – are like windows through which we come to know Him a little; you can read more in the chapter [The Most Beautiful Names of Allah](/islam/names). And the greatest verse of the Quran, the Verse of the Throne (2:255; Muslim), speaks entirely of Him: the Ever-Living, the Sustainer, whom neither drowsiness nor sleep overtakes.
 
 ## The second pillar: belief in the angels
 
@@ -363,7 +363,7 @@ Let us close with the words of the Quran: "Our Lord, do not let our hearts devia
       "Quran 2:3, 2:97–98, 2:156, 2:177, 2:186, 2:255, 2:285–286, 3:3, 3:8, 3:173, 3:185, 3:190–191, 4:40, 4:136, 4:163–164, 5:46, 5:48, 8:2, 11:69–70, 13:11, 13:28, 15:9, 16:36, 16:90, 18:50, 19:17, 21:20, 21:47, 21:107, 23:100, 26:193–194, 30:30, 32:11, 32:17, 33:40, 33:43, 35:1, 36:78–79, 39:53, 39:68, 41:30, 42:11, 48:4, 49:14, 50:16–18, 54:49, 55:15, 57:4, 57:22–23, 59:23, 66:6, 74:31, 76:3, 82:10–12, 87:18–19, 91:9–10, 99:7–8, 112:1–4",
       "Sahih Muslim 8 (hadith of Jibril, narrated by Umar ibn al-Khattab); Sahih al-Bukhari 50 (the same event, narrated by Abu Hurayrah)",
       "Sahih al-Bukhari and Sahih Muslim (the fitrah, hadith qudsi on Paradise, \"Whoever believes in Allah and the Last Day …\", the branches of faith, the sweetness of faith, love for one's brother)",
-      "Sahih Muslim (angels created from light, gathering to study the Quran, Hanzalah, the affair of the believer, \"That is clear faith\")",
+      "Sahih Muslim (angels created from light, gathering to study the Quran, Hanzalah, the affair of the believer, \"That is clear faith\", the greatest verse of the Quran)",
       "Jami' at-Tirmidhi (Ibn Abbas, tying the camel, \"O Turner of hearts\", those who repent, the trustworthy believer); Sunan an-Nasa'i (the trustworthy believer)",
       "al-Kulayni: al-Kafi (saying of Imam Ja'far as-Sadiq on compulsion and delegation)",
     ],

@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { IslamFloral, IslamNum, IslamStarMark, starPath } from "@/components/art/IslamArt";
+import { IslamFloral, IslamNum, IslamStarMark, saw, starPath } from "@/components/art/IslamArt";
 
 // Small Markdown renderer for our own content: ## / ### headings, - and 1. lists, > quotes, **bold**, [links](/path)
 // variant "plain" (default) keeps the compact look used in chats and side texts; variant "article" sets long chapters like an
@@ -67,18 +67,18 @@ function inlineArt(text: string, k: string, arabicDoc: boolean, dark: boolean): 
     const key = `${k}x${i++}`;
     if (m[11] !== undefined && (m[11].replace(/[^ء-ي]/g, "").length < 2)) continue; // a lone ﷺ or letter stays as it is
     if ((m[9] !== undefined && !hasRef(m[9])) || (m[10] !== undefined && !hasRef(m[10]))) continue;
-    if (m.index > last) parts.push(text.slice(last, m.index));
-    if (m[1] !== undefined) parts.push(!arabicDoc && isArabic(m[1]) ? <strong key={key} className="isl-ar" dir="rtl" lang="ar">{m[1]}</strong> : <strong key={key} className={`font-semibold ${strong}`}>{m[1]}</strong>);
+    if (m.index > last) parts.push(saw(text.slice(last, m.index), `${key}t`));
+    if (m[1] !== undefined) parts.push(!arabicDoc && isArabic(m[1]) ? <strong key={key} className="isl-ar" dir="rtl" lang="ar">{m[1]}</strong> : <strong key={key} className={`font-semibold ${strong}`}>{saw(m[1], `${key}s`)}</strong>);
     else if (m[4] !== undefined) parts.push(<em key={key}>{m[4]}</em>);
     else if (m[3] !== undefined) parts.push(m[3].startsWith("/")
       ? <Link key={key} href={m[3]} className={`font-semibold underline decoration-[rgb(var(--isl-gold-soft))]/50 decoration-1 underline-offset-[3px] hover:decoration-[rgb(var(--isl-gold-soft))] ${dark ? "text-[rgb(var(--gold))]" : "text-accent"}`}>{m[2]}</Link>
       : <a key={key} href={m[3]} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent underline decoration-[rgb(var(--isl-gold-soft))]/50 underline-offset-[3px]">{m[2]}</a>);
-    else if (m[5] !== undefined) parts.push(<span key={key}><span className="isl-qq">{m[5]}{m[6]}{m[7]}</span>{m[8]}{refParen(m[9], `${key}p`)}</span>);
+    else if (m[5] !== undefined) parts.push(<span key={key}><span className="isl-qq">{m[5]}{saw(m[6], `${key}q`)}{m[7]}</span>{m[8]}{refParen(m[9], `${key}p`)}</span>);
     else if (m[10] !== undefined) parts.push(refParen(m[10], key));
     else if (m[11] !== undefined) parts.push(<span key={key} className="isl-ar" dir="rtl" lang="ar">{m[11]}</span>);
     last = m.index + m[0].length;
   }
-  if (last < text.length) parts.push(text.slice(last));
+  if (last < text.length) parts.push(saw(text.slice(last), `${k}end`));
   return parts;
 }
 
