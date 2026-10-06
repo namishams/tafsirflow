@@ -2,6 +2,7 @@
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
+import SiteMenu from "./SiteMenu";
 import AccountLink from "./AccountLink";
 import KidsToggle from "./KidsToggle";
 import Logo from "./Logo";
@@ -60,7 +61,7 @@ export default function AppHeader() {
             </details>
           </nav>
         </div>
-        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2"><KidsToggle /><LanguageSwitcher /><AccountLink /></div>
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2"><KidsToggle /><LanguageSwitcher /><AccountLink /><span className="lg:hidden"><SiteMenu /></span></div>
       </div>
     </header>
   );

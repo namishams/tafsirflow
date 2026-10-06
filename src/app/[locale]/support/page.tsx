@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Logo from "@/components/Logo";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import SiteMenu from "@/components/SiteMenu";
 import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -21,7 +22,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
       <header className="border-b border-line bg-surface">
         <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2.5"><Logo size={28} /><span className="text-[15px] font-extrabold tracking-tight">Quran Masterclass</span></Link>
-          <LanguageSwitcher />
+          <LanguageSwitcher /><SiteMenu />
         </div>
       </header>
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-12">

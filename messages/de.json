@@ -265,7 +265,12 @@
     "changelog": "Änderungen",
     "about": "Über uns",
     "blog": "Blog",
-    "map": "Koran-Landkarte"
+    "map": "Koran-Landkarte",
+    "menu": "Menü",
+    "groupLearn": "Lernen",
+    "groupQuran": "Koran",
+    "groupMore": "Mehr",
+    "support": "Unterstützen"
   },
   "today": {
     "title": "Heute",

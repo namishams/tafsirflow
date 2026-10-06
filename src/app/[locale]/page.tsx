@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import SiteMenu from "@/components/SiteMenu";
 import AccountLink from "@/components/AccountLink";
 import KidsToggle from "@/components/KidsToggle";
 import Logo from "@/components/Logo";
@@ -58,7 +59,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
             <Logo size={30} />
             <span className="truncate text-[15px] font-extrabold tracking-tight">{t("app.name")}</span>
           </Link>
-          <div className="flex items-center gap-1.5 sm:gap-2"><KidsToggle /><LanguageSwitcher /><AccountLink /></div>
+          <div className="flex items-center gap-1.5 sm:gap-2"><KidsToggle /><LanguageSwitcher /><SiteMenu /><AccountLink /></div>
         </div>
       </header>
 

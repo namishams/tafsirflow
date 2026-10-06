@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
+import SiteMenu from "./SiteMenu";
 import Logo from "./Logo";
 
 // Two-panel sign-in layout: brand panel (hidden on phones) + form
@@ -24,7 +25,7 @@ export default async function AuthShell({ children }: { children: React.ReactNod
       <main className="flex flex-col px-5 py-6 sm:px-10">
         <header className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5 lg:invisible"><Logo size={28} /><span className="font-display text-base font-semibold">Quran Masterclass</span></Link>
-          <LanguageSwitcher />
+          <div className="flex items-center gap-2"><LanguageSwitcher /><SiteMenu /></div>
         </header>
         <div className="mx-auto flex w-full max-w-[400px] flex-1 flex-col justify-center py-10">{children}</div>
       </main>

@@ -265,7 +265,12 @@
     "changelog": "Changelog",
     "about": "About us",
     "blog": "Blog",
-    "map": "Quran map"
+    "map": "Quran map",
+    "menu": "Menu",
+    "groupLearn": "Learn",
+    "groupQuran": "Quran",
+    "groupMore": "More",
+    "support": "Support"
   },
   "today": {
     "title": "Today",
