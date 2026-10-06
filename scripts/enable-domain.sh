@@ -32,10 +32,11 @@ certbot --nginx -d "$DOMAIN" -d "www.$DOMAIN" --non-interactive --agree-tos -m "
 echo "==> Tell the app its address"
 touch "$ENV_APP"
 if grep -q '^SITE_URL=' "$ENV_APP"; then sed -i "s|^SITE_URL=.*|SITE_URL=https://$DOMAIN|" "$ENV_APP"; else echo "SITE_URL=https://$DOMAIN" >> "$ENV_APP"; fi
+if grep -q '^ALLOW_INDEXING=' "$ENV_APP"; then sed -i "s|^ALLOW_INDEXING=0\s*$|ALLOW_INDEXING=1|" "$ENV_APP"; else echo "ALLOW_INDEXING=1" >> "$ENV_APP"; fi
 chown tafsir:tafsir "$ENV_APP"
 sudo -u tafsir bash -c "cd /srv/tafsirflow/app && pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save"
 
 echo
 echo "Done: https://$DOMAIN"
-echo "Check it in the browser. When everything looks right, invite search engines:"
-echo "  edit $ENV_APP -> ALLOW_INDEXING=1, then:  sudo -u tafsir pm2 restart tafsirflow --update-env"
+echo "Search engines are invited (ALLOW_INDEXING=1). Run scripts/deploy.sh once so the build picks up the address,"
+echo "then submit https://$DOMAIN/sitemap.xml in Google Search Console."

@@ -49,8 +49,24 @@ ENVEOF
   chown tafsir:tafsir "$ENV_APP"
 fi
 
+# Once the domain has its HTTPS certificate the site is public: canonical address and search engines on.
+# (Set ALLOW_INDEXING=0 together with the comment "# keep" on that line to stay hidden on purpose.)
+DOMAIN=quranmasterclass.com
+if [ -d "/etc/letsencrypt/live/$DOMAIN" ] || ls -d /etc/letsencrypt/live/$DOMAIN-* >/dev/null 2>&1; then
+  if ! grep -q "^SITE_URL=https://$DOMAIN\s*$" "$ENV_APP"; then
+    if grep -q '^SITE_URL=' "$ENV_APP"; then sed -i "s|^SITE_URL=.*|SITE_URL=https://$DOMAIN|" "$ENV_APP"; else echo "SITE_URL=https://$DOMAIN" >> "$ENV_APP"; fi
+    echo "==> SITE_URL set to https://$DOMAIN"
+  fi
+  if grep -q '^ALLOW_INDEXING=0\s*$' "$ENV_APP"; then sed -i 's|^ALLOW_INDEXING=0\s*$|ALLOW_INDEXING=1|' "$ENV_APP"; echo "==> Search engines invited (ALLOW_INDEXING=1)"; fi
+  grep -q '^ALLOW_INDEXING=' "$ENV_APP" || echo "ALLOW_INDEXING=1" >> "$ENV_APP"
+fi
+# the build bakes these into static pages (robots meta, canonical links), so it must see the same values as the server
+env_val() { grep -m1 "^$1=" "$ENV_APP" | cut -d= -f2- | sed 's/\s*#.*$//; s/\s*$//'; }
+BUILD_ENV="SITE_URL='$(env_val SITE_URL)' ALLOW_INDEXING='$(env_val ALLOW_INDEXING)'"
+echo "==> Address: $(env_val SITE_URL) · indexing: $(env_val ALLOW_INDEXING)"
+
 echo "==> Build (into .next-build; the live site keeps running from .next)"
-sudo -u tafsir bash -c "cd $APP && rm -rf .next-build .next/types .next-old && npm ci && NEXT_DIST_DIR=.next-build npm run build" || {
+sudo -u tafsir bash -c "cd $APP && rm -rf .next-build .next/types .next-old && npm ci && $BUILD_ENV NEXT_DIST_DIR=.next-build npm run build" || {
   echo "BUILD FAILED – the site keeps running on the previous version."; exit 1; }
 
 echo "==> Switch to the new build and (re)start"

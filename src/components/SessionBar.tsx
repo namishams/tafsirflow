@@ -15,7 +15,7 @@ export default function SessionBar() {
   const cur = s.items[s.i];
   const pct = (s.i / Math.max(1, s.items.length)) * 100;
   return (
-    <div className="sticky top-14 z-30 -mx-4 mb-4 border-b border-line bg-surface/95 px-4 py-2.5 backdrop-blur" data-no-reveal>
+    <div data-top-bar className="sticky top-14 z-30 -mx-4 mb-4 border-b border-line bg-surface/95 px-4 py-2.5 backdrop-blur" data-no-reveal>
       <div className="flex items-center justify-between gap-3 text-[13px]">
         <span className="min-w-0 truncate"><span className="font-semibold text-gold">{t("title")}</span> · {t("of", { n: s.i + 1, total: s.items.length })} · {cur ? t(`k_${cur.kind}`) : ""}</span>
         <button onClick={() => { vp.stop(); endSession(); router.push("/today?session=done"); }} className="shrink-0 font-semibold text-muted hover:text-ink">{t("end")}</button>

@@ -38,7 +38,7 @@ export default function TabBar() {
           return (
             <li key={key} className="min-w-0">
               <Link href={href} aria-current={on ? "page" : undefined} className={`relative flex flex-col items-center gap-1 px-1 pb-2 pt-2.5 text-[10.5px] font-semibold ${on ? "text-accent" : "text-muted"}`}>
-                {on && <span className="absolute inset-x-5 top-0 h-[2px] rounded-full bg-accent" />}
+                {on && <span aria-hidden className="absolute inset-x-5 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[rgb(201_166_94)] to-transparent"><span className="absolute left-1/2 top-[-3px] h-2 w-2 -translate-x-1/2 rotate-45 border border-[rgb(201_166_94)] bg-surface" /></span>}
                 <span className="relative"><Icon />{key === "today" && due > 0 && <span className="absolute -end-1.5 -top-1 h-2 w-2 rounded-full bg-accent ring-2 ring-surface" />}</span>
                 <span className="max-w-full truncate">{t(key)}</span>
               </Link>

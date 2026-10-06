@@ -7,6 +7,7 @@ import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { MAX_STRIKES, aiReview, moderate } from "@/lib/moderation";
 import { getSettings } from "@/lib/settings";
 import { checkCaptcha } from "@/lib/captcha";
+import { myLikes, surahCounts } from "@/lib/community";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +46,17 @@ async function stats(key: string, userId?: number) {
 export async function GET(req: NextRequest, { params }: { params: Promise<{ action: string }> }) {
   const { action } = await params;
   if (!pool()) return json({ error: "unavailable" }, 503);
+  if (action === "surah") {
+    const n = Number(req.nextUrl.searchParams.get("n"));
+    if (!Number.isInteger(n) || n < 1 || n > 114) return json({ error: "bad request" }, 400);
+    const me = await currentUser();
+    try { return reply(await surahCounts(n, me?.id)); } catch { return json({ error: "server" }, 500); }
+  }
+  if (action === "mine") {
+    const me = await currentUser();
+    if (!me) return reply({ login: true, likes: [] }); // 200, so visitors see no error in the console
+    try { return reply({ likes: await myLikes(me.id) }); } catch { return json({ error: "server" }, 500); }
+  }
   const key = req.nextUrl.searchParams.get("key");
   if (!validKey(key)) return json({ error: "bad request" }, 400);
   const me = await currentUser();

@@ -5,6 +5,7 @@ import { LOCALE_META } from "@/i18n/locales";
 import Logo from "./Logo";
 import TrustStrip from "./TrustStrip";
 import MadeInDubai from "./MadeInDubai";
+import Skyline from "./Skyline";
 
 // The footer of every page: sections, languages, and one closing block – free for everyone, © and the Dubai signature
 export default async function SiteFooter() {
@@ -12,7 +13,8 @@ export default async function SiteFooter() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-line bg-surface">
-      <div className="mx-auto max-w-6xl px-5 pb-10 pt-12">
+      <div className="mx-auto max-w-6xl px-5 pt-10"><Skyline /></div>
+      <div className="mx-auto max-w-6xl px-5 pb-10 pt-10">
         <div className="grid gap-10 lg:grid-cols-[1.25fr_repeat(4,1fr)]">
           <div>
             <Link href="/" className="inline-flex items-center gap-2.5"><Logo size={26} /><span className="text-[15px] font-extrabold tracking-tight">Quran Masterclass</span></Link>

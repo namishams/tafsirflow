@@ -21,6 +21,7 @@ export default function SocialBar({ verseKey, shareUrl, shareText, trackView = t
   const [gate, setGate] = useState<"register" | "verify" | null>(null);
   const [open, setOpen] = useState(false);
   const [toast, setToast] = useState("");
+  const [burst, setBurst] = useState(0);
   const viewed = useRef("");
 
   useEffect(() => {
@@ -38,10 +39,15 @@ export default function SocialBar({ verseKey, shareUrl, shareText, trackView = t
   const flash = (m: string) => { setToast(m); setTimeout(() => setToast(""), 2500); };
   const needAuth = (status: number) => { if (status === 401) { setGate("register"); return true; } if (status === 403) { setGate("verify"); return true; } return false; };
 
+  // optimistic: the heart reacts at once, the server answer corrects it
   const like = async () => {
-    const r = await post("like", { key: verseKey });
-    if (needAuth(r.status)) return;
-    if (r.ok) setS(await r.json());
+    if (!s.signedIn) { setGate("register"); return; }
+    const was = s.liked;
+    setS((x) => ({ ...x, liked: !was, likes: Math.max(0, x.likes + (was ? -1 : 1)) }));
+    if (!was) setBurst(Date.now());
+    const r = await post("like", { key: verseKey }).catch(() => null);
+    if (r && needAuth(r.status)) { setS((x) => ({ ...x, liked: was, likes: Math.max(0, x.likes + (was ? 1 : -1)) })); return; }
+    if (r?.ok) setS(await r.json()); else setS((x) => ({ ...x, liked: was, likes: Math.max(0, x.likes + (was ? 1 : -1)) }));
   };
   const share = async () => {
     const url = shareUrl ?? `${location.origin}/${locale}/surah/${verseKey.split(":")[0]}?v=${verseKey.split(":")[1]}`;
@@ -57,7 +63,9 @@ export default function SocialBar({ verseKey, shareUrl, shareText, trackView = t
   return (
     <div className="mt-4" onClick={(e) => e.stopPropagation()}>
       <div className="flex flex-wrap items-center gap-2">
-        <button className={`${btn} ${s.liked ? "!border-accent !text-accent" : ""}`} onClick={like} aria-pressed={s.liked} aria-label={t("like")}><IconHeart filled={s.liked} />{n(s.likes)}</button>
+        <button className={`${btn} ${s.liked ? "!text-[#c9405a]" : ""}`} onClick={like} aria-pressed={s.liked} aria-label={t("like")}>
+          <span key={burst} className={`relative inline-grid ${burst ? "heart-pop" : ""}`}><IconHeart filled={s.liked} />{burst > 0 && s.liked && <span aria-hidden className="heart-burst" />}</span>{n(s.likes)}
+        </button>
         <button className={btn} onClick={() => setOpen(true)} aria-label={t("comments")}><IconComment />{n(s.comments)}</button>
         <button className={btn} onClick={share} aria-label={t("share")}><IconShare />{n(s.shares)}</button>
         <span className="ms-auto inline-flex items-center gap-1.5 text-[13px] text-muted" title={t("views")}><IconEye />{n(s.views)}</span>

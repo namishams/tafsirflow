@@ -12,7 +12,7 @@ export default function AppHeader() {
   const t = useTranslations("nav");
   const path = usePathname();
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/85">
+    <header data-top-bar className="header-gold sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/85">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-5">
         <div className="flex min-w-0 items-center gap-5">
           <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2.5" aria-label="Quran Masterclass">

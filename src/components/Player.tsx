@@ -260,6 +260,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (verse) writeJSON("tf:last", { chapter: chapterId, verse: verse.verse_number, at: Date.now() });
   }, [verse, chapterId]);
 
+  // Bring a card to the top of the screen, just below the header (and the session bar). The verse cards above may still
+  // change height while it scrolls (the previous verse folds), so the position is checked once more afterwards.
+  const alignTop = (el: HTMLElement) => {
+    const off = () => Math.max(0, ...Array.from(document.querySelectorAll<HTMLElement>("[data-top-bar]")).map((b) => b.getBoundingClientRect().bottom)) + 10;
+    const go = () => window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + window.scrollY - off()), behavior: "smooth" });
+    go();
+    window.setTimeout(() => { if (Math.abs(el.getBoundingClientRect().top - off()) > 6) go(); }, 700);
+  };
   // Keep the active verse in view. With the Shams coach the verse and its coach card are brought to the top after
   // every step (steps show/hide translation, words and cues for all verses, so in long surahs things would move away).
   const shamsOnRef = useRef(false);
@@ -268,16 +276,21 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     // opening a surah at its start keeps the title in view; a link to a verse (?v=) scrolls there
     if (firstScroll.current) { firstScroll.current = false; if (startVerse <= 1) return; }
     if (shamsOnRef.current) return;
-    document.getElementById(`v-${idx}`)?.scrollIntoView({ block: "center", behavior: "smooth" });
+    let raf = requestAnimationFrame(() => { raf = requestAnimationFrame(() => { const el = document.getElementById(`v-${idx}`); if (el) alignTop(el); }); });
+    return () => cancelAnimationFrame(raf);
   }, [idx]); // eslint-disable-line react-hooks/exhaustive-deps
+  const shamsVerse = useRef(-1);
   useEffect(() => {
     if (shams === null || shams < 0) return;
+    // a new verse always starts at the top of its card; later steps of the same verse bring the coach card up if the verse is tall
+    const newVerse = shamsVerse.current !== idx;
+    shamsVerse.current = idx;
     let raf = requestAnimationFrame(() => {
       raf = requestAnimationFrame(() => {
         const li = document.getElementById(`v-${idx}`), card = document.getElementById("shams-card");
         if (!li) return;
         const fits = li.getBoundingClientRect().height < window.innerHeight - 220;
-        (fits || !card ? li : card).scrollIntoView({ block: "start", behavior: "smooth" });
+        alignTop(newVerse || fits || !card ? li : card);
       });
     });
     return () => cancelAnimationFrame(raf);
@@ -741,7 +754,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               </p>
             </div>
           ) : (
-          <ol className="grid gap-3">
+          <ol className="grid grid-cols-[minmax(0,1fr)] gap-3">
             {verses.map((v, i) => {
               const active = i === idx;
               const words = v.words.filter((w) => w.char_type_name === "word");
@@ -750,15 +763,15 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               const markWord = (ok: boolean) => () => { const m = { ...testMarks, [testPos]: ok }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); };
               // Shams focus: only the verse being learned (and the one before it, for connecting) stays open – the rest fold into one quiet line
               if (shams !== null && i !== idx && i !== idx - 1) return (
-                <li key={v.verse_key} id={`v-${i}`} className="scroll-mt-20">
-                  <button onClick={() => goTo(i, false)} className="flex w-full items-center gap-3 rounded-xl border border-line/50 bg-surface/40 px-4 py-2 text-start text-muted transition hover:bg-surface">
+                <li key={v.verse_key} id={`v-${i}`} className="min-w-0 scroll-mt-20">
+                  <button onClick={() => goTo(i, false)} className="flex w-full min-w-0 items-center gap-3 overflow-hidden rounded-xl border border-line/50 bg-surface/40 px-4 py-2 text-start text-muted transition hover:bg-surface">
                     <span className="w-7 shrink-0 text-center text-[12px] tabular-nums">{v.verse_number}</span>
                     <span className="font-arabic min-w-0 flex-1 truncate text-lg leading-loose" dir="rtl">{v.text_uthmani}</span>
                   </button>
                 </li>
               );
               return (
-                <li key={v.verse_key} id={`v-${i}`} className="scroll-mt-20">
+                <li key={v.verse_key} id={`v-${i}`} className="min-w-0 scroll-mt-20">
                   <article
                     onClick={() => !active && goTo(i)}
                     className={`relative rounded-2xl border p-5 transition duration-500 ${celebrate === v.verse_key ? "glow-once" : ""} ${shams !== null && !active ? "opacity-60" : ""} ${active ? "verse-frame border-[rgb(var(--gold))]/35 bg-surface" : "cursor-pointer border-line/70 bg-surface/60 hover:bg-surface"}`}
@@ -991,7 +1004,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       )}
 
       {shams !== null && cardAway && (
-        <button onClick={() => document.getElementById("shams-card")?.scrollIntoView({ block: "start", behavior: "smooth" })} className="fixed bottom-[12.25rem] left-1/2 z-40 inline-flex -translate-x-1/2 items-center gap-2 rounded-full bg-[rgb(var(--stage))] px-4 py-2 text-[13px] font-semibold text-white shadow-lg ring-1 ring-[rgb(var(--gold))]/40 lg:bottom-[8.5rem]">
+        <button onClick={() => { const c = document.getElementById("shams-card"); if (c) alignTop(c); }} className="fixed bottom-[12.25rem] left-1/2 z-40 inline-flex -translate-x-1/2 items-center gap-2 rounded-full bg-[rgb(var(--stage))] px-4 py-2 text-[13px] font-semibold text-white shadow-lg ring-1 ring-[rgb(var(--gold))]/40 lg:bottom-[8.5rem]">
           <Sun className="h-3.5 w-3.5 text-[rgb(var(--gold))]" />{ts("title")} · {ts("stepOf", { n: stepPos + 1, total: plan?.steps.length ?? 7 })}<span aria-hidden>{cardAway === "up" ? "↑" : "↓"}</span>
         </button>
       )}

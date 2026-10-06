@@ -24,6 +24,7 @@ export const TILES: Record<string, Tile> = {
   how: { key: "how", href: "/how", ar: "منهج", desc: "howD", badge: "method", bg: "linear-gradient(160deg,#283a22 0%,#0c140a 100%)" },
   stats: { key: "stats", href: "/stats", ar: "إحصاء", desc: "statsD", badge: "progress", bg: "linear-gradient(160deg,#3a2f12 0%,#120e06 100%)" },
   ranking: { key: "ranking", href: "/ranking", ar: "تنافس", desc: "rankingD", badge: "social", bg: "linear-gradient(160deg,#402a1a 0%,#140c07 100%)" },
+  community: { key: "community", href: "/community", ar: "معًا", desc: "communityD", badge: "social", bg: "linear-gradient(160deg,#3b2a33 0%,#120b0f 100%)" },
   wudu: { key: "wudu", href: "/wudu", ar: "وضوء", desc: "wuduD", badge: "course", bg: "linear-gradient(160deg,#123a44 0%,#06161b 100%)" },
 };
 

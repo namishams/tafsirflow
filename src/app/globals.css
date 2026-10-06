@@ -262,8 +262,62 @@ a.group:active, .btn-gold:active { transform: scale(.985); }
 .sticker-shine::after { content: ""; position: absolute; inset: -40%; background: linear-gradient(115deg, transparent 40%, rgb(255 255 255 / .35) 50%, transparent 60%); transform: translateX(-60%); animation: shine 5s ease-in-out infinite; pointer-events: none; }
 @keyframes shine { 0%, 60% { transform: translateX(-60%); } 100% { transform: translateX(60%); } }
 
+/* like: the heart beats once and sends out a ring of small gold stars */
+.heart-pop { animation: heartPop .5s cubic-bezier(.2,.9,.3,1.4); }
+@keyframes heartPop { 0% { transform: scale(1); } 35% { transform: scale(1.35); } 100% { transform: scale(1); } }
+.heart-burst { position: absolute; inset: -9px; pointer-events: none; border-radius: 50%;
+  background: radial-gradient(circle, rgb(201 166 94) 1.6px, transparent 2.2px) 50% 0 / 6px 6px no-repeat, radial-gradient(circle, rgb(201 64 90) 1.6px, transparent 2.2px) 100% 50% / 6px 6px no-repeat,
+    radial-gradient(circle, rgb(201 166 94) 1.6px, transparent 2.2px) 50% 100% / 6px 6px no-repeat, radial-gradient(circle, rgb(201 64 90) 1.6px, transparent 2.2px) 0 50% / 6px 6px no-repeat,
+    radial-gradient(circle, rgb(201 166 94) 1.4px, transparent 2px) 85% 15% / 6px 6px no-repeat, radial-gradient(circle, rgb(201 166 94) 1.4px, transparent 2px) 15% 85% / 6px 6px no-repeat;
+  animation: heartBurst .7s ease-out forwards; }
+@keyframes heartBurst { from { transform: scale(.4); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
+
+/* ---------- Islamic art everywhere ---------- */
+/* a very fine girih tessellation in the page background (only where no section paints its own background) */
+body { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23c9a65e' stroke-opacity='.075' stroke-width='1'%3E%3Cpath d='M60 18l12 30 30 12-30 12-12 30-12-30-30-12 30-12z'/%3E%3Cpath d='M30 30h60v60H30z'/%3E%3Cpath d='M0 0l30 30M120 0L90 30M0 120l30-30M120 120L90 90'/%3E%3C/g%3E%3C/svg%3E"); background-size: 120px 120px; }
+
+/* section titles carry a small gold ornament: line, eight-pointed star, line */
+main h2.font-display:is([class*="text-3xl"], [class*="text-4xl"], [class*="text-5xl"], [class*="text-[3"], [class*="text-[4"])::after {
+  content: ""; display: block; width: 92px; height: 12px; margin-top: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='92' height='12' viewBox='0 0 92 12'%3E%3Cg fill='none' stroke='%23c9a65e' stroke-width='1'%3E%3Cpath d='M0 6h36M56 6h36' stroke-opacity='.7'/%3E%3Cpath d='M46 0.8l1.6 3.6 3.6 1.6-3.6 1.6L46 11.2l-1.6-3.6L40.8 6l3.6-1.6z' fill='%23c9a65e' fill-opacity='.35'/%3E%3Crect x='42.6' y='2.6' width='6.8' height='6.8' transform='rotate(45 46 6)'/%3E%3C/g%3E%3C/svg%3E") no-repeat;
+}
+main .text-center h2.font-display::after, main h2.font-display.text-center::after { margin-inline: auto; }
+[dir="rtl"] main h2.font-display::after { transform: scaleX(-1); }
+
+/* dark stages: a soft light follows the pointer, like sun through the lattice dome */
+@media (hover: hover) and (pointer: fine) {
+  .stage { background-image: radial-gradient(520px circle at var(--mx, 75%) var(--my, 10%), rgb(233 207 153 / .09), transparent 62%), radial-gradient(ellipse at 50% -20%, rgb(18 74 56 / 0.9), transparent 60%), linear-gradient(180deg, rgb(var(--stage)), rgb(5 28 21)); }
+}
+
+/* gold buttons catch the light */
+.btn-gold { position: relative; overflow: hidden; isolation: isolate; }
+.btn-gold::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(115deg, transparent 35%, rgb(255 255 255 / .45) 50%, transparent 65%); transform: translateX(-120%); transition: transform .9s cubic-bezier(.2,.7,.2,1); pointer-events: none; }
+.btn-gold:hover::after { transform: translateX(120%); }
+
+/* pages fade in (opacity only, so fixed bars inside are not moved) */
+.page-in { animation: pageIn .5s ease both; }
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* header: a gold hairline that fades out to both sides */
+.header-gold { border-bottom-color: transparent !important; }
+.header-gold::after { content: ""; position: absolute; inset-inline: 0; bottom: -1px; height: 1px; background: linear-gradient(90deg, transparent, rgb(201 166 94 / .7) 30%, rgb(201 166 94 / .9) 50%, rgb(201 166 94 / .7) 70%, transparent); }
+
+/* the skyline of the Emirates in the footer draws itself */
+.skyline path, .skyline ellipse, .skyline circle { stroke-dasharray: 1; stroke-dashoffset: 0; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .skyline path, .skyline ellipse, .skyline circle { stroke-dashoffset: 1; animation: skyDraw linear both; animation-timeline: view(); animation-range: entry 10% cover 45%; }
+  }
+}
+@keyframes skyDraw { to { stroke-dashoffset: 0; } }
+.skyline path.dots { stroke-dasharray: 1.5 5; stroke-dashoffset: 0; animation: none; }
+.skyline .twinkle { animation: twinkle 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes twinkle { 0%, 100% { opacity: .25; transform: scale(.8); } 50% { opacity: 1; transform: scale(1); } }
+
 @media (prefers-reduced-motion: reduce) {
   .girih::after, .callig-ring, .rise { animation: none; }
+  .page-in, .skyline .twinkle, .heart-pop, .heart-burst { animation: none; }
+  .btn-gold::after { display: none; }
   .points-pop, .sticker-pop, .sticker-rays, .sticker-shine::after { animation: none; }
   .side-callig text { animation: none; stroke: none; fill-opacity: 0; }
   .side-callig text:first-of-type { fill-opacity: .45; }
