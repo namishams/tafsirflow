@@ -57,7 +57,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
       { "@type": "FAQPage", mainEntity: c.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
   };
-  const dark = "bg-[#0d0f12] text-[#eef0f3]";
+  const dark = "stage text-[#eef0f3]";
 
   return (
     <div className="-mb-24">
@@ -73,7 +73,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70">{c.heroLead}</p>
             <p className="mt-5 text-sm font-semibold text-white/90">{c.heroBy}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/surah/1?shams=1" className="inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-6 text-[15px] font-bold text-[#0d0f12] hover:brightness-110">{t("cta")}</Link>
+              <Link href="/surah/1?shams=1" className="inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-6 text-[15px] font-bold text-[rgb(var(--stage))] hover:brightness-110">{t("cta")}</Link>
               <Link href="/plan" className="inline-flex h-12 items-center rounded-md border border-white/30 px-6 text-[15px] font-bold hover:border-white">{t("planCta")}</Link>
             </div>
           </div>
@@ -204,7 +204,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
           <h2 className="font-display max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{c.teachTitle}</h2>
           <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70">{c.teachLead}</p>
           <ol className="mt-10 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-            {c.teachPlan.map((s, i) => <li key={i} className="bg-[#0d0f12] p-6"><p className="text-xs font-semibold uppercase tracking-[0.14em] text-[rgb(var(--gold))]">{s.min}</p><h3 className="mt-2 text-lg font-bold">{s.t}</h3><p className="mt-2 text-[15px] leading-relaxed text-white/70">{s.d}</p></li>)}
+            {c.teachPlan.map((s, i) => <li key={i} className="bg-stage p-6"><p className="text-xs font-semibold uppercase tracking-[0.14em] text-[rgb(var(--gold))]">{s.min}</p><h3 className="mt-2 text-lg font-bold">{s.t}</h3><p className="mt-2 text-[15px] leading-relaxed text-white/70">{s.d}</p></li>)}
           </ol>
           <p className="mt-6 max-w-3xl text-[15px] text-white/70">{c.teachNote}</p>
         </div>
@@ -240,7 +240,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
         <div className="mx-auto max-w-3xl px-5 py-20 sm:py-28">
           <h2 className="font-display text-4xl leading-[1.1] sm:text-6xl">{c.finalTitle}</h2>
           <p className="mt-4 text-[17px] text-white/70">{c.finalLead}</p>
-          <Link href="/surah/1?shams=1" className="mt-8 inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-7 text-[15px] font-bold text-[#0d0f12] hover:brightness-110">{t("cta")}</Link>
+          <Link href="/surah/1?shams=1" className="mt-8 inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-7 text-[15px] font-bold text-[rgb(var(--stage))] hover:brightness-110">{t("cta")}</Link>
         </div>
       </section>
     </div>

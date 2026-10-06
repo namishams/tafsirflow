@@ -1225,7 +1225,12 @@
     "learnedOf": "{n} von {total} Versen gelernt",
     "tapVerse": "Tippe auf einen Vers: gelernte Verse öffnen sich im Auswendig-Modus, neue mit der Shams-Methode.",
     "todayTitle": "Deine Koran-Landkarte",
-    "todayLink": "Ganze Landkarte öffnen"
+    "todayLink": "Ganze Landkarte öffnen",
+    "demoTitle": "Beispielkarte.",
+    "demoBody": "So sieht deine Karte nach ein paar Wochen aus. Leg ein kostenloses Konto an – deine eigene Karte beginnt mit deinem ersten Vers.",
+    "demoSignedIn": "Du hast noch keinen Vers gelernt – lerne deinen ersten, dann erscheint hier deine eigene Karte.",
+    "demoStart": "Ersten Vers lernen",
+    "demoCta": "Kostenloses Konto anlegen"
   },
   "free": {
     "title": "Kostenlos für alle.",

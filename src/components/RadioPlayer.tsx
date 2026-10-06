@@ -42,7 +42,7 @@ export default function RadioPlayer() {
   return (
     <div className="-mb-24">
       {/* On-air stage */}
-      <section className="relative overflow-hidden bg-[#0d0f12] text-[#eef0f3]">
+      <section className="stage relative overflow-hidden text-[#eef0f3]">
         <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 75% 30%, rgb(var(--gold) / .14) 0, transparent 45%), radial-gradient(circle at 5% 95%, rgb(var(--accent) / .25) 0, transparent 45%)" }} />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-12 pt-8 sm:pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="min-w-0">
@@ -62,7 +62,7 @@ export default function RadioPlayer() {
             )}
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <button onClick={r.prevVerse} aria-label={t("prev")} className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><IconPrev /></button>
-              <button onClick={r.toggle} aria-label={playing ? t("pause") : t("play")} className="grid h-16 w-16 place-items-center rounded-full bg-[rgb(var(--gold))] text-[#0d0f12] shadow-lg hover:brightness-110">{playing ? <IconPause /> : <IconPlay />}</button>
+              <button onClick={r.toggle} aria-label={playing ? t("pause") : t("play")} className="grid h-16 w-16 place-items-center rounded-full bg-[rgb(var(--gold))] text-[rgb(var(--stage))] shadow-lg hover:brightness-110">{playing ? <IconPause /> : <IconPlay />}</button>
               <button onClick={r.skipVerse} aria-label={t("nextVerse")} className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><IconNext /></button>
               <button onClick={r.skipSurah} className="h-12 rounded-full border border-white/30 px-5 text-sm font-bold hover:border-white">{t("nextSurah")}</button>
               <label className="ms-auto flex items-center gap-2 text-sm text-white/60">
@@ -94,7 +94,7 @@ export default function RadioPlayer() {
               return (
                 <li key={x.folder} className="shrink-0">
                   <button onClick={() => r.changeReciter(x.folder)} className={`flex w-28 flex-col items-center gap-2 rounded-lg p-3 text-center transition ${on ? "bg-white/10" : "hover:bg-white/5"}`} aria-pressed={on}>
-                    <span className={`grid h-16 w-16 place-items-center rounded-full text-lg font-bold text-white ${on ? "ring-2 ring-[rgb(var(--gold))] ring-offset-2 ring-offset-[#0d0f12]" : ""}`} style={{ background: `linear-gradient(140deg, hsl(${hue(x.name)} 45% 32%), hsl(${(hue(x.name) + 40) % 360} 50% 16%))` }}>{initials(x.name)}</span>
+                    <span className={`grid h-16 w-16 place-items-center rounded-full text-lg font-bold text-white ${on ? "ring-2 ring-[rgb(var(--gold))] ring-offset-2 ring-offset-stage" : ""}`} style={{ background: `linear-gradient(140deg, hsl(${hue(x.name)} 45% 32%), hsl(${(hue(x.name) + 40) % 360} 50% 16%))` }}>{initials(x.name)}</span>
                     <span className={`line-clamp-2 text-xs font-semibold leading-snug ${on ? "text-white" : "text-white/70"}`}>{x.name}</span>
                   </button>
                 </li>

@@ -76,7 +76,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
       <main>
         {/* 1 Hero – cinematic, with an animated verse player (words light up one after another) */}
-        <section className="relative overflow-hidden bg-[#0d0f12] text-[#eef0f3]">
+        <section className="stage relative overflow-hidden text-[#eef0f3]">
           <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 85% 15%, rgb(var(--gold) / .16) 0, transparent 40%), radial-gradient(circle at 10% 90%, rgb(var(--accent) / .22) 0, transparent 45%)" }} />
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
@@ -84,13 +84,13 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
               <h1 className="font-display mt-5 text-[44px] leading-[1.02] sm:text-7xl">{t("home2.heroTitle")}</h1>
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70 sm:text-lg">{t("home2.heroLead")}</p>
               <div className="mt-9 flex flex-wrap gap-3">
-                <Link href="/academy" className="inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-6 text-[15px] font-bold text-[#0d0f12] hover:brightness-110">{t("home2.heroCta")}</Link>
+                <Link href="/academy" className="inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-6 text-[15px] font-bold text-[rgb(var(--stage))] hover:brightness-110">{t("home2.heroCta")}</Link>
                 <Link href="/shams" className="inline-flex h-12 items-center rounded-md border border-white/30 px-6 text-[15px] font-bold hover:border-white">{t("home2.heroCta2")}</Link>
               </div>
               <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[rgb(var(--gold))]/40 px-3 py-1 text-xs font-semibold text-[rgb(var(--gold))]">✓ {t("free.badge")}</p>
               <ul className="mt-6 grid max-w-lg grid-cols-2 gap-px overflow-hidden rounded-md border border-white/10 bg-white/10 sm:grid-cols-4">
                 {[["114", "home2.statSurahs"], ["6.236", "home2.statVerses"], [String(n), "home2.statLanguages"], ["0 €", "home2.statFree"]].map(([v, k]) => (
-                  <li key={k} className="bg-[#0d0f12] px-4 py-3"><p className="font-display text-2xl">{v}</p><p className="text-xs text-white/55">{t(k)}</p></li>
+                  <li key={k} className="bg-stage px-4 py-3"><p className="font-display text-2xl">{v}</p><p className="text-xs text-white/55">{t(k)}</p></li>
                 ))}
               </ul>
             </div>
@@ -102,7 +102,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
               <p className="mt-2 text-[15px] italic text-[rgb(var(--gold))]">Bismi llāhi r-raḥmāni r-raḥīm</p>
               <p className="mt-1 text-sm text-white/60">{t("home2.heroVerse")}</p>
               <div className="mt-7 flex items-center gap-3 border-t border-white/10 pt-5">
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-[rgb(var(--gold))] text-[#0d0f12]"><svg width="12" height="14" viewBox="0 0 12 14" fill="currentColor"><rect width="4" height="14" rx="1" /><rect x="8" width="4" height="14" rx="1" /></svg></span>
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-[rgb(var(--gold))] text-[rgb(var(--stage))]"><svg width="12" height="14" viewBox="0 0 12 14" fill="currentColor"><rect width="4" height="14" rx="1" /><rect x="8" width="4" height="14" rx="1" /></svg></span>
                 <span className="h-1 flex-1 overflow-hidden rounded-full bg-white/15"><span className="hero-progress block h-1 rounded-full bg-[rgb(var(--gold))]" /></span>
                 <span className="text-xs tabular-nums text-white/50">0:06</span>
               </div>
@@ -114,7 +114,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         </section>
 
         {/* 1b Courses – poster cards like a class catalogue */}
-        <section className="bg-[#0d0f12] pb-16 text-[#eef0f3] sm:pb-24">
+        <section className="stage pb-16 text-[#eef0f3] sm:pb-24">
           <div className="mx-auto max-w-6xl px-5">
             <div className="flex items-end justify-between gap-4 border-t border-white/10 pt-10">
               <h2 className="font-display text-3xl leading-tight sm:text-4xl">{t("home2.coursesTitle")}</h2>

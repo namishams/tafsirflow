@@ -5,7 +5,7 @@ import { CITIES, DEFAULT_SETTINGS, METHODS, PRAYERS, cityName, countdown, dayFor
 import { readJSON, writeJSON } from "@/lib/storage";
 import { adhanList, adhanUrl, pickAdhan, type AdhanFile } from "@/lib/adhan";
 
-const dark = "bg-[#0d0f12] text-[#eef0f3]";
+const dark = "stage text-[#eef0f3]";
 
 // Prayer times: live countdown, day arc, qibla, night times, reminders with adhan, settings and a monthly timetable
 export default function PrayerBoard() {
@@ -126,7 +126,7 @@ export default function PrayerBoard() {
           </div>
           <ul className="mt-10 grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-6">
             {PRAYERS.map((p) => (
-              <li key={p} className={`p-3 text-center sm:p-4 ${p === day.next ? "bg-[rgb(var(--gold))] text-[#0d0f12]" : p === current ? "bg-white/10" : "bg-[#0d0f12]"}`}>
+              <li key={p} className={`p-3 text-center sm:p-4 ${p === day.next ? "bg-[rgb(var(--gold))] text-[rgb(var(--stage))]" : p === current ? "bg-white/10" : "bg-stage"}`}>
                 <p className={`text-[12px] font-semibold ${p === day.next ? "" : "text-white/60"}`}>{t(p)}{p === current && p !== day.next ? ` · ${t("now")}` : ""}</p>
                 <p className="mt-1 text-xl font-bold tabular-nums" dir="ltr">{fmtTime(day.times[p], main.tz, locale)}</p>
               </li>

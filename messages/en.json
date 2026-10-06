@@ -1225,7 +1225,12 @@
     "learnedOf": "{n} of {total} verses learned",
     "tapVerse": "Tap a verse: learned verses open in memorise mode, new ones with the Shams Method.",
     "todayTitle": "Your Quran map",
-    "todayLink": "Open the full map"
+    "todayLink": "Open the full map",
+    "demoTitle": "Example map.",
+    "demoBody": "This is how your map will look after a few weeks. Create a free account and your own map starts with your first verse.",
+    "demoSignedIn": "You have not learned a verse yet – learn your first one and your own map appears here.",
+    "demoStart": "Learn first verse",
+    "demoCta": "Create free account"
   },
   "free": {
     "title": "Free for everyone.",

@@ -5,30 +5,32 @@
 :root {
   /* Design language shared with the Courier Portal: light grey canvas, white tiles, hairline borders, near-black ink.
      Brand accent: change --accent / --accent-soft / --hero-* to retheme everything (Courier Portal red is 197 50 44). */
-  --bg: 246 246 248;
-  --surface: 255 255 255;
-  --ink: 21 24 30;
-  --muted: 98 104 114;
-  --line: 225 228 233;
+  --bg: 248 245 237;
+  --surface: 255 253 248;
+  --ink: 14 34 27;
+  --muted: 94 104 98;
+  --line: 229 222 204;
   --accent: 6 108 78;
   --accent-soft: 230 242 236;
   --gold: 150 116 52;
   --hero-a: 7 74 56;
   --hero-b: 4 46 36;
+  --stage: 8 38 29;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: 11 13 17;
-    --surface: 20 23 29;
+    --bg: 7 22 17;
+    --surface: 13 33 26;
     --ink: 236 238 242;
     --muted: 140 147 158;
-    --line: 40 45 54;
+    --line: 33 56 47;
     --accent: 58 190 146;
     --accent-soft: 22 52 42;
     --gold: 214 178 106;
     --hero-a: 7 74 56;
     --hero-b: 4 40 32;
+    --stage: 7 33 26;
   }
 }
 
@@ -61,6 +63,14 @@ html[lang="zh"] .font-display { font-family: "Noto Sans SC Variable", sans-serif
 .tafsir-html h1, .tafsir-html h2, .tafsir-html h3 { @apply font-display font-semibold mt-4 mb-1 text-lg; }
 .tafsir-html [dir="rtl"], .tafsir-html .arabic { @apply font-arabic text-xl leading-9; }
 
+/* Dark green stage with gold, like the binding of a fine mushaf */
+.stage {
+  --gold: 214 180 108;
+  background-color: rgb(var(--stage));
+  background-image: radial-gradient(ellipse at 50% -20%, rgb(18 74 56 / 0.9), transparent 60%), linear-gradient(180deg, rgb(var(--stage)), rgb(5 28 21));
+  box-shadow: inset 0 1px 0 rgb(214 180 108 / 0.35), inset 0 -1px 0 rgb(214 180 108 / 0.35);
+}
+.stage .bg-stage, .bg-stage { --gold: 214 180 108; }
 .hero-bg { background: linear-gradient(135deg, rgb(var(--hero-a)), rgb(var(--hero-b))); }
 
 /* Kids mode: brighter palette, rounder shapes, bigger text */

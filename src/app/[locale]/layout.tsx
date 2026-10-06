@@ -17,7 +17,7 @@ import { RadioProvider } from "@/components/RadioProvider";
 import "../globals.css";
 
 export const metadata: Metadata = { title: "Quran Masterclass", description: "Quran verse by verse with tafsir" };
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0b7a5a" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#08261d" };
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
