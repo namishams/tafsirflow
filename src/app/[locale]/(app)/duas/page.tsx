@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import VerseAudio from "@/components/VerseAudio";
 import { RECITERS, getResources, getVerseByKey, localAudioUrl, pickTranslation, type SingleVerse } from "@/lib/quran";
 import { DUA_GROUPS } from "@/lib/duas";
+import SunnahDuas from "@/components/SunnahDuas";
 import { pageMeta } from "@/lib/site";
 
 export const revalidate = 86400;
@@ -26,12 +27,24 @@ export default async function DuasPage({ params }: { params: Promise<{ locale: s
     <main className="mx-auto max-w-3xl px-4 pb-20 pt-6">
       <h1 className="font-display text-[34px] leading-none">{t("title")}</h1>
       <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted">{t("lead")}</p>
-      <nav aria-label={t("title")} className="mt-6 flex flex-wrap gap-2">
+      <nav className="mt-6 flex flex-wrap gap-2 text-sm font-bold">
+        <a href="#sunnah" className="rounded-md bg-ink px-4 py-2 text-bg">{t("sunnahTitle")}</a>
+        <a href="#quran" className="rounded-md border border-line bg-surface px-4 py-2 hover:border-ink">{t("quranTitle")}</a>
+      </nav>
+
+      <section id="sunnah" className="mt-10 scroll-mt-20">
+        <h2 className="font-display text-3xl">{t("sunnahTitle")}</h2>
+        <p className="mt-2 text-[15px] text-muted">{t("sunnahLead")}</p>
+        <div className="mt-5"><SunnahDuas /></div>
+      </section>
+
+      <h2 id="quran" className="font-display mt-16 scroll-mt-20 text-3xl">{t("quranTitle")}</h2>
+      <nav aria-label={t("quranTitle")} className="mt-4 flex flex-wrap gap-2">
         {groups.map((g) => <a key={g.id} href={`#${g.id}`} className="rounded-md border border-line bg-surface px-3 py-1.5 text-sm font-semibold hover:border-ink">{t(g.id)}</a>)}
       </nav>
       {groups.map((g) => (
         <section key={g.id} id={g.id} className="mt-10 scroll-mt-20">
-          <h2 className="font-display text-3xl">{t(g.id)}</h2>
+          <h3 className="font-display text-2xl">{t(g.id)}</h3>
           <ul className="mt-4 grid gap-px overflow-hidden rounded-lg border border-line bg-line">
             {g.items.filter((i) => i.v).map(({ key, v }) => {
               const [s, a] = key.split(":").map(Number);
