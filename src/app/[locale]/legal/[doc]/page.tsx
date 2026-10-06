@@ -65,7 +65,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
             </section>
             <section>
               <h2 className="text-lg font-bold">{t("imprintContact")}</h2>
-              <p className="mt-2 text-muted">{e.LEGAL_EMAIL ?? "contact@namishams.com"}{e.LEGAL_PHONE ? ` · ${e.LEGAL_PHONE}` : ""}</p>
+              <p className="mt-2 text-muted">{e.LEGAL_EMAIL ?? "info@quranmasterclass.com"}{e.LEGAL_PHONE ? ` · ${e.LEGAL_PHONE}` : ""}</p>
             </section>
             <p className="text-sm text-muted">Proudly developed by Nami Shams in Dubai</p>
           </div>
