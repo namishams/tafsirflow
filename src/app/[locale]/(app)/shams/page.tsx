@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const STEPS = [1, 2, 3, 4, 5, 6, 7];
-const PRINCIPLES = [2, 8, 1, 3, 4, 5, 6, 7];
+const PRINCIPLES = [9, 10, 2, 8, 1, 3, 4, 5, 6, 7];
 const FAQ = [1, 2, 3, 4];
 
 export default async function ShamsPage({ params }: { params: Promise<{ locale: string }> }) {

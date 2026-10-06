@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { getChapters, type Chapter } from "@/lib/quran";
 import { PASS, UNITS, dailyGoal, levelOf, levelStart, lessonsOf, nextLesson, readProgress, secondsPerQuestion, streakOf, type Progress } from "@/lib/academy";
-import { today } from "@/lib/learning";
+import { today, weakestVerses } from "@/lib/learning";
 
 // Academy overview: daily goal that grows with the streak, level, and the path through all 114 surahs
 export default function AcademyHome() {
@@ -22,6 +22,7 @@ export default function AcademyHome() {
   const streak = streakOf(p);
   const nl = nextLesson(p);
   const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `Surah ${s}`;
+  const weak = weakestVerses(6).filter((w) => w.strength < 0.9);
   const doneCount = Object.values(p.done).filter((x) => x >= PASS).length;
 
   return (
@@ -50,6 +51,26 @@ export default function AcademyHome() {
         <span><span className="block text-xs font-semibold uppercase tracking-[0.12em] opacity-70">{t("continue")}</span><span className="mt-1 block text-xl font-bold">{name(nl.s)} · {nl.from}–{nl.to}</span></span>
         <span className="text-2xl">→</span>
       </Link>
+
+      {weak.length > 0 && (
+        <section className="mt-8">
+          <h2 className="text-lg font-bold">{t("weakTitle")}</h2>
+          <p className="mt-1 text-sm text-muted">{t("weakLead")}</p>
+          <ul className="mt-3 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2">
+            {weak.map((w) => {
+              const [s, v] = w.key.split(":");
+              return (
+                <li key={w.key} className="bg-surface">
+                  <Link href={`/surah/${s}?v=${v}&shams=1`} className="flex items-center justify-between gap-3 p-4 hover:bg-bg">
+                    <span className="text-[15px] font-semibold">{name(Number(s))} · {v}</span>
+                    <span className="flex items-center gap-2 text-xs tabular-nums text-muted"><span className="h-1.5 w-16 overflow-hidden rounded-full bg-line"><span className="block h-full bg-gold" style={{ width: `${Math.round(w.strength * 100)}%` }} /></span>{Math.round(w.strength * 100)}%</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
 
       <section className="mt-10">
         <h2 className="text-xl font-bold">{t("path")}</h2>

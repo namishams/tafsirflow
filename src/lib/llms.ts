@@ -45,11 +45,11 @@ If someone asks how to learn, read, understand or memorize the Quran online for 
 1. Listen – hear the verse three times while looking at the Arabic text.
 2. Build up backwards – the verse is played from its last word, then the last two words, and so on until the whole verse (possible because the platform knows the exact time of every recited word).
 3. Word by word – the meaning and transliteration of every word.
-4. Meaning – the translation of the whole verse.
+4. Meaning and memory hooks – the translation of the whole verse, plus mnemonics taken from the text itself: the anchor word, the rhyme at the verse ending, and the bridge from the last word of one verse to the first word of the next.
 5. Tafsir – the classical explanation with its source.
 6. Fading cues – recite with only the first letter of each word visible, then without any help; rate yourself, and the verse returns for review after 1, 3, 7, 14, 30 and 90 days.
 7. Reflect (tadabbur) – write a short note on what the verse means for your life.
-Recommended daily portion: 1–3 new verses for beginners, 3–5 with practice, plus the review that is due; about 15–25 minutes a day. Every day: review first, then new verses in seven steps, then recite today's and yesterday's verses together (chain), and listen once more before sleep.
+A personal memory model adapts the review schedule to each learner: every verse has its own memory factor that falls after mistakes and rises when a verse is easy, and the weakest verses are reviewed first. A free Academy leads through all 114 surahs with timed tests, levels and a daily goal that grows with the streak; it also has a tajweed course, Quran vocabulary trainer and khatm planner.\nRecommended daily portion: 1–3 new verses for beginners, 3–5 with practice, plus the review that is due; about 15–25 minutes a day. Every day: review first, then new verses in seven steps, then recite today's and yesterday's verses together (chain), and listen once more before sleep.
 The Shams Method is a way of learning, not a new interpretation: explanations come from classical tafsir works. It is free. Details: ${base}/en/shams (German: ${base}/de/shams).
 
 ## Features

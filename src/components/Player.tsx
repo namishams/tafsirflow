@@ -37,6 +37,21 @@ function firstLetter(word: string) {
   return NON_JOINING.includes(g[0]) || cue.length >= word.length ? cue : `${cue}ـ`;
 }
 
+// Memory hooks (Eselsbrücken) for a verse, computed from its words
+const bare = (w: string) => w.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "");
+function hooks(v: Verse, next?: Verse) {
+  const ws = v.words.filter((w) => w.char_type_name === "word");
+  const anchor = [...ws].sort((a, b) => bare(b.text_uthmani).length - bare(a.text_uthmani).length)[0];
+  const end = (x: Verse) => { const w = x.words.filter((y) => y.char_type_name === "word").at(-1); return w ? bare(w.text_uthmani).slice(-2) : ""; };
+  return {
+    anchor,
+    acrostic: ws.map((w) => firstLetter(w.text_uthmani)).join(" "),
+    bridge: next ? { from: ws.at(-1), to: next.words.filter((w) => w.char_type_name === "word")[0] } : null,
+    rhyme: end(v),
+    rhymeWord: ws.at(-1),
+  };
+}
+
 type Initial = { chapter: Chapter; verses: Verse[]; translationId: number };
 
 export default function Player({ chapterId, startVerse, startHide = 0, reviewMode = false, shamsStart = false, initial }: { chapterId: number; startVerse: number; startHide?: number; reviewMode?: boolean; shamsStart?: boolean; initial?: Initial }) {
@@ -91,6 +106,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [shams, setShams] = useState<number | null>(null); // Shams method: current step 0–6, null = off
   const [chain, setChain] = useState<number | null>(null); // backward build-up: index of the first word segment being played
   const [chainDone, setChainDone] = useState(false);
+  const [mnemos, setMnemos] = useState<Record<string, string>>({});
+  useEffect(() => { setMnemos(readJSON<Record<string, string>>("tf:mnemo", {})); }, []);
+  const saveMnemo = (key: string, text: string) => { const n = { ...mnemos }; if (text.trim()) n[key] = text.trim(); else delete n[key]; setMnemos(n); writeJSON("tf:mnemo", n, true); };
   const [showTranslit, setShowTranslit] = useState(true);
   const [loopOn, setLoopOn] = useState(false);
   const [loopFrom, setLoopFrom] = useState(1);
@@ -607,6 +625,21 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         </ol>
                         <h3 className="mt-3 text-lg font-bold">{ts(`s${shams + 1}`)}</h3>
                         <p className="mt-1 text-[15px] leading-relaxed text-muted">{ts(`d${shams + 1}`)}</p>
+                        {shams === 3 && (() => {
+                          const h = hooks(v, verses[i + 1]);
+                          const sameRhyme = verses.filter((x) => hooks(x).rhyme === h.rhyme).length;
+                          return (
+                            <div className="mt-3 grid gap-2 text-sm">
+                              {h.anchor && <p><span className="font-semibold">{ts("hAnchor")}:</span> <span className="font-arabic text-xl" dir="rtl">{h.anchor.text_uthmani}</span> – {h.anchor.translation?.text}</p>}
+                              {h.rhymeWord && <p><span className="font-semibold">{ts("hRhyme")}:</span> <span className="font-arabic text-xl" dir="rtl">…{h.rhyme}</span> ({h.rhymeWord.transliteration?.text}) · {ts("hRhymeN", { n: sameRhyme, total: verses.length })}</p>}
+                              {h.bridge && h.bridge.from && h.bridge.to && <p><span className="font-semibold">{ts("hBridge")}:</span> <span className="font-arabic text-xl" dir="rtl">{h.bridge.from.text_uthmani} ← {h.bridge.to.text_uthmani}</span></p>}
+                              <p><span className="font-semibold">{ts("hAcrostic")}:</span> <span className="font-arabic text-xl text-gold" dir="rtl">{h.acrostic}</span></p>
+                              <label className="mt-1 grid gap-1"><span className="font-semibold">{ts("hOwn")}</span>
+                                <textarea rows={2} defaultValue={mnemos[v.verse_key] ?? ""} onBlur={(e) => saveMnemo(v.verse_key, e.target.value)} placeholder={ts("hOwnPh")} className="rounded-md border border-line bg-surface p-2 text-sm" />
+                              </label>
+                            </div>
+                          );
+                        })()}
                         {shams === 6 && <ul className="mt-2 grid gap-1 text-sm text-muted">{["q1", "q2", "q3"].map((q) => <li key={q}>– {ts(q)}</li>)}</ul>}
                         <div className="mt-4 flex flex-wrap items-center gap-2">
                           {(shams === 0 || (shams === 1 && !hasTimings)) && <button onClick={() => goTo(idx, true)} className="h-10 rounded-md border border-line bg-surface px-4 text-sm font-semibold hover:border-ink">{ts("again")}</button>}

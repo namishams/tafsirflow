@@ -6,6 +6,7 @@ import AccountLink from "@/components/AccountLink";
 import KidsToggle from "@/components/KidsToggle";
 import Logo from "@/components/Logo";
 import JsonLd from "@/components/JsonLd";
+import WhyQuran from "@/components/WhyQuran";
 import VerseOfTheDay from "@/components/VerseOfTheDay";
 import { LOCALE_META } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
@@ -88,6 +89,9 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
         {/* 2 Verse of the day */}
         <VerseOfTheDay locale={locale} />
+
+        {/* 2a Why the Quran comes first */}
+        <WhyQuran locale={locale} />
 
         {/* 2b Shams Method */}
         <section className="mx-auto max-w-6xl px-5 pt-16 sm:pt-24">

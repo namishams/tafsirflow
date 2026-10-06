@@ -1035,5 +1035,495 @@ Wenn du so weit bist, verbinde das Lesen mit Verstehen und Auswendiglernen. Unse
     ],
     related: ["tajweed-for-beginners", "how-to-learn-the-quran", "learn-quranic-arabic-vocabulary"],
   },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "tajweed-for-beginners",
+    date: "2026-10-06",
+    title_en: "Tajweed for Beginners: The Main Rules Explained",
+    title_de: "Tajwid für Anfänger: Die wichtigsten Regeln erklärt",
+    desc_en: "Tajweed for beginners: articulation points, noon sakinah and tanween, meem sakinah, qalqalah, madd and heavy letters – explained simply, with practice tips.",
+    desc_de: "Tajwid für Anfänger: Artikulationsstellen, Nun Sakina und Tanwin, Mim Sakina, Qalqala, Madd und schwere Buchstaben – einfach erklärt, mit Übungstipps.",
+    keywords_en: "tajweed for beginners, tajweed rules, noon sakinah, qalqalah, madd, Quran recitation rules",
+    keywords_de: "Tajwid für Anfänger, Tajwid Regeln, Nun Sakina, Qalqala, Madd, Koran Rezitation Regeln",
+    body_en: `Tajweed means "making beautiful" or "doing well". In Quran recitation, it is the set of rules that ensures every letter is pronounced from its correct place, with its correct qualities, and that letters interact as they were recited by the Prophet ﷺ and passed on through generations of teachers. Allah says: "and recite the Quran with measured recitation (tartil)" (73:4).
+
+This guide gives you an overview of the main rules as they apply in the most widespread recitation, Hafs from 'Asim. It is a map, not a replacement for a teacher: tajweed is learned by listening and being corrected.
+
+## Why tajweed matters
+
+Scholars distinguish two kinds of mistakes:
+
+- **Clear mistakes (lahn jali)** – for example changing a letter or a vowel. These can change the meaning and must be avoided.
+- **Subtle mistakes (lahn khafi)** – for example not applying a nasal sound or a lengthening fully. These affect the beauty and precision of recitation.
+
+How strictly each rule applies is a question for qualified scholars and teachers. For a beginner, the practical point is simple: first make sure every letter and vowel is right, then refine the rules step by step.
+
+## 1. Articulation points (makharij)
+
+Every Arabic letter has its own place of articulation. They are usually grouped into five areas:
+
+- **The empty space of mouth and throat (al-jawf)** – the long vowels.
+- **The throat (al-halq)** – ء ه ع ح غ خ.
+- **The tongue (al-lisan)** – most letters, from the back of the tongue (ق ك) to its tip (ت د ط and others).
+- **The lips (ash-shafatan)** – ف ب م و.
+- **The nasal passage (al-khayshum)** – the nasal sound (ghunnah).
+
+The best way to learn makharij is to listen closely and imitate. Play a verse slowly, focus on one letter, and repeat.
+
+## 2. Heavy and light letters
+
+Some letters are always pronounced "heavy" (tafkhim), with a fuller, deeper sound. They are often memorised with the phrase **خُصَّ ضَغْطٍ قِظْ**: خ ص ض غ ط ق ظ.
+
+Two letters change depending on context:
+
+- **ر (ra)** – generally heavy with fatha or damma, light with kasra. There are further details your teacher will explain.
+- **The lam in the name Allah** – heavy after fatha or damma (as in "Allahu"), light after kasra (as in "bismillahi").
+
+## 3. Noon sakinah and tanween
+
+A noon without vowel (نْ) and tanween (ـً ـٍ ـٌ) follow four rules depending on the next letter.
+
+### Izhar – clear pronunciation
+
+Before the six throat letters ء ه ع ح غ خ, the noon is pronounced clearly, without extra nasalisation.
+
+### Idgham – merging
+
+Before the letters ي ر م ل و ن (often remembered as "yarmalun"), the noon merges into the next letter:
+
+- **With ghunnah** before ي ن م و – the merge carries a nasal sound.
+- **Without ghunnah** before ل ر – a complete merge.
+
+Exception: if the noon and the following letter are in the same word, idgham does not apply.
+
+### Iqlab – conversion
+
+Before ب, the noon becomes a hidden meem sound with ghunnah. The mushaf often marks this with a small meem.
+
+### Ikhfa – concealment
+
+Before the remaining fifteen letters, the noon is "hidden": pronounced lightly with ghunnah, between clear and merged.
+
+## 4. Meem sakinah
+
+A meem without vowel (مْ) has three cases:
+
+- **Ikhfa shafawi** before ب – the meem is hidden with ghunnah.
+- **Idgham shafawi** before another م – the two meems merge with ghunnah.
+- **Izhar shafawi** before all other letters – the meem is pronounced clearly.
+
+## 5. Ghunnah on doubled noon and meem
+
+Whenever noon or meem carries a shadda (نّ مّ), it is pronounced with a clear nasal sound held for about two counts. You will hear this very often, for example in the word "inna".
+
+## 6. Qalqalah – the echo
+
+The five letters **ق ط ب ج د** (remembered as "qutb jad") produce a slight bouncing echo when they carry a sukun. The echo is stronger when you stop on such a letter at the end of a verse – listen to the endings of [Al-Ikhlas](/surah/112) and [Al-Falaq](/surah/113).
+
+## 7. Madd – lengthening
+
+Madd means lengthening a vowel. The length is measured in counts (harakat).
+
+- **Natural madd (madd tabi'i)** – a long vowel without a following hamza or sukun: two counts.
+- **Connected madd (muttasil)** – a long vowel followed by hamza in the same word: typically four or five counts in Hafs.
+- **Separated madd (munfasil)** – a long vowel at the end of one word, hamza at the start of the next: lengths vary by the transmission you follow; your teacher will tell you which to use.
+- **Necessary madd (lazim)** – a long vowel followed by a permanent sukun or shadda: six counts.
+- **Madd due to stopping ('arid lis-sukun)** – when you stop on a word whose second-to-last letter is a long vowel: two, four or six counts.
+
+The mushaf marks most longer madds with a wavy line above the letter.
+
+## 8. Sun and moon letters
+
+After the definite article "al-":
+
+- With **moon letters** (qamariyyah), the lam is pronounced: al-qamar.
+- With **sun letters** (shamsiyyah), the lam is silent and the next letter is doubled: ash-shams.
+
+## 9. Stopping and starting (waqf and ibtida)
+
+When you stop at the end of a verse or at a pause mark, the last vowel usually becomes a sukun. Small symbols in the mushaf indicate where stopping is required, preferred, permitted or better avoided. Start again at a point that keeps the meaning intact.
+
+## How to practise tajweed with Quran Masterclass
+
+1. **Listen to one rule at a time.** Pick a short surah and listen only for ghunnah, or only for qalqalah.
+2. **Slow down.** Reduce playback speed to hear details.
+3. **Repeat a verse several times** using the repeat function.
+4. **Use the backward build-up** from the [Shams Method](/shams) – hearing the verse in growing pieces makes details stand out.
+5. **Recite to a teacher regularly.** A trained ear will catch what you cannot hear yourself.
+
+Good practice material are the short surahs of Juz Amma – see our [Juz Amma learning plan](/guides/juz-amma-learning-plan). If you are still learning the letters, start with our guide on [learning to read the Quran](/guides/learn-to-read-the-quran).
+
+## A word of encouragement
+
+Do not let the number of rules discourage you. Nobody learns them all at once. The Prophet ﷺ said that the one who recites the Quran with difficulty, stumbling over it, will have a double reward (Bukhari and Muslim). Every effort counts.`,
+    body_de: `Tajwid bedeutet wörtlich „verschönern“ oder „gut machen“. In der Koranrezitation sind damit die Regeln gemeint, die sicherstellen, dass jeder Buchstabe von seiner richtigen Stelle und mit seinen richtigen Eigenschaften gesprochen wird – und dass die Buchstaben so ineinandergreifen, wie der Prophet ﷺ rezitiert hat und wie es über Generationen von Lehrern weitergegeben wurde. Allah sagt: „und trage den Koran wohlgeordnet vor (Tartil)“ (73:4).
+
+Dieser Ratgeber gibt dir einen Überblick über die wichtigsten Regeln, wie sie in der am weitesten verbreiteten Lesart gelten: Hafs nach 'Asim. Er ist eine Landkarte, kein Ersatz für einen Lehrer – Tajwid lernt man durch Hören und Korrigiertwerden.
+
+## Warum Tajwid wichtig ist
+
+Die Gelehrten unterscheiden zwei Arten von Fehlern:
+
+- **Deutliche Fehler (Lahn Dschali)** – etwa einen Buchstaben oder Vokal vertauschen. Sie können die Bedeutung verändern und müssen vermieden werden.
+- **Feine Fehler (Lahn Khafi)** – etwa einen Nasallaut oder eine Dehnung nicht vollständig umsetzen. Sie betreffen Schönheit und Genauigkeit der Rezitation.
+
+Wie streng welche Regel gilt, beantworten qualifizierte Gelehrte und Lehrer. Für Anfänger ist der praktische Punkt einfach: Zuerst muss jeder Buchstabe und Vokal stimmen, dann verfeinerst du Schritt für Schritt die Regeln.
+
+## 1. Artikulationsstellen (Makharidsch)
+
+Jeder arabische Buchstabe hat seinen eigenen Bildungsort. Meist werden fünf Bereiche unterschieden:
+
+- **Der Hohlraum von Mund und Rachen (al-Dschauf)** – die langen Vokale.
+- **Der Rachen (al-Halq)** – ء ه ع ح غ خ.
+- **Die Zunge (al-Lisan)** – die meisten Buchstaben, vom Zungenrücken (ق ك) bis zur Zungenspitze (ت د ط und weitere).
+- **Die Lippen (asch-Schafatan)** – ف ب م و.
+- **Der Nasenraum (al-Khayschum)** – der Nasallaut (Ghunna).
+
+Am besten lernst du die Makharidsch durch genaues Hinhören und Nachahmen. Spiel einen Vers langsam ab, konzentrier dich auf einen Buchstaben und wiederhole.
+
+## 2. Schwere und leichte Buchstaben
+
+Einige Buchstaben werden immer „schwer“ (Tafkhim) gesprochen, mit vollerem, tieferem Klang. Man merkt sie sich oft mit dem Satz **خُصَّ ضَغْطٍ قِظْ**: خ ص ض غ ط ق ظ.
+
+Zwei Buchstaben ändern sich je nach Zusammenhang:
+
+- **ر (Ra)** – in der Regel schwer mit Fatha oder Damma, leicht mit Kasra. Weitere Feinheiten erklärt dir dein Lehrer.
+- **Das Lam im Namen Allah** – schwer nach Fatha oder Damma (wie in „Allahu“), leicht nach Kasra (wie in „bismillahi“).
+
+## 3. Nun Sakina und Tanwin
+
+Ein Nun ohne Vokal (نْ) und das Tanwin (ـً ـٍ ـٌ) folgen je nach nächstem Buchstaben vier Regeln.
+
+### Izhar – deutliches Aussprechen
+
+Vor den sechs Rachenbuchstaben ء ه ع ح غ خ wird das Nun klar und ohne zusätzliche Nasalierung gesprochen.
+
+### Idgham – Verschmelzen
+
+Vor den Buchstaben ي ر م ل و ن (Merkwort „yarmalun“) verschmilzt das Nun mit dem folgenden Buchstaben:
+
+- **Mit Ghunna** vor ي ن م و – die Verschmelzung trägt einen Nasallaut.
+- **Ohne Ghunna** vor ل ر – vollständige Verschmelzung.
+
+Ausnahme: Stehen Nun und folgender Buchstabe im selben Wort, gilt kein Idgham.
+
+### Iqlab – Umwandeln
+
+Vor ب wird das Nun zu einem verdeckten Mim-Laut mit Ghunna. Im Mushaf ist das oft mit einem kleinen Mim markiert.
+
+### Ikhfa – Verbergen
+
+Vor den übrigen fünfzehn Buchstaben wird das Nun „verborgen“: leicht und mit Ghunna gesprochen, zwischen deutlich und verschmolzen.
+
+## 4. Mim Sakina
+
+Ein Mim ohne Vokal (مْ) kennt drei Fälle:
+
+- **Ikhfa Schafawi** vor ب – das Mim wird mit Ghunna verborgen.
+- **Idgham Schafawi** vor einem weiteren م – beide Mims verschmelzen mit Ghunna.
+- **Izhar Schafawi** vor allen anderen Buchstaben – das Mim wird deutlich gesprochen.
+
+## 5. Ghunna bei verdoppeltem Nun und Mim
+
+Trägt ein Nun oder Mim eine Schadda (نّ مّ), wird es mit deutlichem Nasallaut gesprochen und etwa zwei Zählzeiten gehalten. Das hörst du sehr häufig, zum Beispiel im Wort „inna“.
+
+## 6. Qalqala – der Nachhall
+
+Die fünf Buchstaben **ق ط ب ج د** (Merkwort „qutb dschad“) erzeugen einen leichten, federnden Nachhall, wenn sie ein Sukun tragen. Beim Anhalten am Versende ist er stärker – hör dir die Versenden von [Al-Ikhlas](/surah/112) und [Al-Falaq](/surah/113) an.
+
+## 7. Madd – Dehnung
+
+Madd bedeutet, einen Vokal zu dehnen. Die Länge wird in Zählzeiten (Harakat) gemessen.
+
+- **Natürliche Dehnung (Madd Tabi'i)** – ein langer Vokal ohne folgendes Hamza oder Sukun: zwei Zählzeiten.
+- **Verbundene Dehnung (Muttasil)** – langer Vokal, gefolgt von Hamza im selben Wort: bei Hafs meist vier oder fünf Zählzeiten.
+- **Getrennte Dehnung (Munfasil)** – langer Vokal am Wortende, Hamza am Anfang des nächsten Wortes: Die Länge hängt vom Überlieferungsweg ab, dem du folgst; dein Lehrer sagt dir, welche du nimmst.
+- **Notwendige Dehnung (Lazim)** – langer Vokal, gefolgt von festem Sukun oder Schadda: sechs Zählzeiten.
+- **Dehnung beim Anhalten ('Arid lis-Sukun)** – wenn du auf einem Wort anhältst, dessen vorletzter Buchstabe ein langer Vokal ist: zwei, vier oder sechs Zählzeiten.
+
+Die meisten längeren Dehnungen sind im Mushaf mit einer Wellenlinie über dem Buchstaben markiert.
+
+## 8. Sonnen- und Mondbuchstaben
+
+Nach dem Artikel „al-“ gilt:
+
+- Bei **Mondbuchstaben** (Qamariyya) wird das Lam gesprochen: al-qamar.
+- Bei **Sonnenbuchstaben** (Schamsiyya) bleibt das Lam stumm und der folgende Buchstabe wird verdoppelt: asch-schams.
+
+## 9. Anhalten und Neubeginn (Waqf und Ibtida)
+
+Wenn du am Versende oder an einem Pausenzeichen anhältst, wird der letzte Vokal meist zum Sukun. Kleine Symbole im Mushaf zeigen, wo das Anhalten nötig, besser, erlaubt oder eher zu vermeiden ist. Setz an einer Stelle wieder ein, die den Sinn nicht zerreißt.
+
+## Tajwid üben mit Quran Masterclass
+
+1. **Hör auf eine Regel nach der anderen.** Nimm eine kurze Sure und achte nur auf Ghunna oder nur auf Qalqala.
+2. **Langsamer abspielen.** Mit reduzierter Geschwindigkeit hörst du Details.
+3. **Wiederhole einen Vers mehrmals** mit der Wiederholungsfunktion.
+4. **Nutze den Rückwärtsaufbau** der [Shams-Methode](/shams) – wer den Vers in wachsenden Stücken hört, nimmt Einzelheiten deutlicher wahr.
+5. **Trag regelmäßig einem Lehrer vor.** Ein geschultes Ohr hört, was dir selbst entgeht.
+
+Gutes Übungsmaterial sind die kurzen Suren von Juz Amma – siehe unseren [Lernplan für Juz Amma](/guides/juz-amma-learning-plan). Wenn du noch die Buchstaben lernst, beginne mit unserem Ratgeber [Koran lesen lernen](/guides/learn-to-read-the-quran).
+
+## Ein Wort zur Ermutigung
+
+Lass dich von der Zahl der Regeln nicht entmutigen. Niemand lernt sie alle auf einmal. Der Prophet ﷺ sagte, dass derjenige, der den Koran mühsam und stockend rezitiert, doppelten Lohn erhält (Bukhari und Muslim). Jede Mühe zählt.`,
+    faq: [
+      {
+        q_en: "Is tajweed obligatory?",
+        a_en: "Avoiding clear mistakes that change letters or meaning is required when reciting. How strictly each finer rule applies is discussed by scholars – please ask a qualified teacher or scholar for guidance.",
+        q_de: "Ist Tajwid Pflicht?",
+        a_de: "Deutliche Fehler, die Buchstaben oder Bedeutung verändern, sind beim Rezitieren zu vermeiden. Wie streng die feineren Regeln gelten, besprechen die Gelehrten – bitte frag einen qualifizierten Lehrer oder Gelehrten.",
+      },
+      {
+        q_en: "Which tajweed rule should I learn first?",
+        a_en: "Start with correct pronunciation of the letters and vowels, then learn noon sakinah and tanween, ghunnah and natural madd. These appear on almost every page.",
+        q_de: "Welche Tajwid-Regel sollte ich zuerst lernen?",
+        a_de: "Beginne mit der richtigen Aussprache der Buchstaben und Vokale, danach Nun Sakina und Tanwin, Ghunna und die natürliche Dehnung. Sie kommen auf fast jeder Seite vor.",
+      },
+      {
+        q_en: "Can I learn tajweed from an app alone?",
+        a_en: "An app helps you listen closely, slow down and repeat. Correct tajweed, however, is best learned by reciting to a qualified teacher who can correct you.",
+        q_de: "Kann ich Tajwid allein mit einer App lernen?",
+        a_de: "Eine App hilft beim genauen Hinhören, Verlangsamen und Wiederholen. Richtiges Tajwid lernt man aber am besten, indem man einem qualifizierten Lehrer vorträgt, der korrigiert.",
+      },
+    ],
+    related: ["learn-to-read-the-quran", "juz-amma-learning-plan", "how-to-learn-the-quran"],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "juz-amma-learning-plan",
+    date: "2026-10-06",
+    title_en: "Juz Amma Learning Plan: Memorise the 30th Part",
+    title_de: "Lernplan Juz Amma: Den 30. Teil auswendig lernen",
+    desc_en: "A realistic plan to memorise Juz Amma: 37 surahs and 564 verses in four phases. At three verses a day you finish in about six months, with daily review.",
+    desc_de: "Ein realistischer Plan für Juz Amma: 37 Suren, 564 Verse in vier Etappen. Mit drei Versen am Tag bist du in etwa sechs Monaten fertig – inklusive Wiederholung.",
+    keywords_en: "Juz Amma, memorize Juz Amma, Juz 30, short surahs, Quran memorization plan",
+    keywords_de: "Juz Amma, Juz Amma auswendig lernen, Juz 30, kurze Suren, Koran Lernplan",
+    body_en: `Juz Amma, the thirtieth and last part of the Quran, is where most people begin their memorisation journey. It contains the short surahs many Muslims recite in their daily prayers, and its powerful verses about creation, the Day of Judgement and the mercy of Allah stay with you for life.
+
+This plan breaks Juz Amma into four phases and shows how long each one takes at different daily amounts.
+
+## What is Juz Amma?
+
+The Quran is divided into thirty parts (ajza', singular juz') of roughly equal length. The thirtieth part is commonly called Juz Amma after its first word, "'Amma" – "About what…" – the opening of [Surah An-Naba'](/surah/78).
+
+Key facts:
+
+- **37 surahs**, from An-Naba' (78) to An-Nas (114)
+- **564 verses** in total
+- Mostly **Meccan surahs**: short, rhythmic verses about faith, the hereafter and the signs of Allah
+
+## Why start with Juz Amma?
+
+- **Short verses** – many contain only a few words, which makes them ideal for beginners.
+- **Daily use** – you can recite them in your prayers straight away.
+- **Quick milestones** – finishing a whole surah after a few days is very motivating.
+- **Foundation for more** – the vocabulary and themes appear throughout the Quran.
+
+## How long does it take?
+
+The answer depends on how many new verses you learn per day. With 564 verses:
+
+- **1 verse a day:** about 19 months
+- **2 verses a day:** about 9–10 months
+- **3 verses a day:** about 188 days – roughly **six months**
+- **5 verses a day:** about 4 months
+
+These figures count new learning days only. Plan in some rest days and a few days of pure review now and then. Learning speed also varies from person to person. What counts is that you stay with it.
+
+## Learn it backwards: from An-Nas to An-Naba'
+
+The traditional and most practical order is to start at the end of the Quran and work backwards. The shortest surahs come first, so you build confidence before the longer ones.
+
+### Phase 1: An-Nas (114) to Al-'Adiyat (100) – 90 verses
+
+At three verses a day: **about one month.**
+
+This phase includes [An-Nas](/surah/114), [Al-Falaq](/surah/113), [Al-Ikhlas](/surah/112), Al-Masad, An-Nasr, Al-Kafirun, Al-Kawthar, Al-Ma'un, Quraysh, Al-Fil, Al-Humazah, [Al-'Asr](/surah/103), At-Takathur, Al-Qari'ah and Al-'Adiyat.
+
+Many of these surahs are already familiar from prayer. Use this phase to perfect your pronunciation and get used to the daily routine.
+
+### Phase 2: Az-Zalzalah (99) to Al-Balad (90) – 123 verses
+
+At three verses a day: **about six weeks.**
+
+Az-Zalzalah, Al-Bayyinah, Al-Qadr, Al-'Alaq, At-Tin, Ash-Sharh, Ad-Duha, Al-Layl, Ash-Shams and Al-Balad. Here the surahs get a little longer, and some verses look similar. Pay attention to their endings.
+
+### Phase 3: Al-Fajr (89) to Al-Mutaffifin (83) – 175 verses
+
+At three verses a day: **about two months.**
+
+Al-Fajr, Al-Ghashiyah, Al-A'la, At-Tariq, Al-Buruj, Al-Inshiqaq and Al-Mutaffifin. These surahs have strong scenes of the Day of Judgement. Reading the tafsir helps you keep the order of the verses in mind.
+
+### Phase 4: Al-Infitar (82) to An-Naba' (78) – 176 verses
+
+At three verses a day: **about two months.**
+
+Al-Infitar, At-Takwir, 'Abasa, An-Nazi'at and An-Naba'. These are the longest surahs of Juz Amma. By now your routine is stable, and you can rely on the habits you built in the first phases.
+
+## The daily routine
+
+Each day follows the same four parts of the [Shams Method](/shams):
+
+1. **Review first (about 5 min).** Recite the verses that are due today from memory. Quran Masterclass schedules them after 1, 3, 7, 14, 30 and 90 days and shows them on your [Today page](/today).
+2. **New verses (about 4 min each).** Take your three new verses through the seven steps: listen, build up backwards, word by word, meaning, tafsir, fading cues, reflect.
+3. **Link the chain (about 3 min).** Recite today's verses together with yesterday's without looking.
+4. **Listen before sleep (about 2 min).** Play today's verses once more in the evening.
+
+That is about 20–25 minutes a day. Read more in our [daily Quran routine](/guides/daily-quran-routine).
+
+## Completing a surah
+
+When you have learned the last verse of a surah, add one extra step: recite the **whole surah** from memory in one go, then listen to it once with the reciter. Do this again on the next two days. It helps the verses connect into a flowing whole.
+
+## Weekly check
+
+Once a week, recite all surahs of the current phase from memory. Note any verses where you hesitate and bookmark them. Give them a little extra time in the following week.
+
+## Common challenges
+
+### Similar verses
+
+Several surahs in Juz Amma contain verses that sound alike. When you notice such a pair, compare them side by side and note the difference in a few words. The reflection note in the Shams Method is a good place for this.
+
+### Losing motivation in the longer surahs
+
+Phases 3 and 4 take longer. Break them into weekly goals – for example "the first 20 verses of Al-Fajr this week" – and celebrate each completed surah.
+
+### Missed days
+
+Life happens. If you miss a day, do not try to catch up with double portions. Start again with your review and continue at your normal pace.
+
+## Use what you learn
+
+Recite your new surahs in your prayers, listen to them on the way to work or on the [Quran radio](/radio), and read their meaning again from time to time. Verses that are part of your daily life stay with you.
+
+## Ready to start?
+
+Open [An-Nas](/surah/114), listen to the first verse three times and start the Shams Method. In about six months, insha'Allah, you can carry the whole of Juz Amma in your heart. For more on hifz in general, see our [guide to memorising the Quran](/guides/how-to-memorize-the-quran).`,
+    body_de: `Juz Amma, der dreißigste und letzte Teil des Korans, ist für die meisten der Einstieg ins Auswendiglernen. Er enthält die kurzen Suren, die viele Muslime täglich im Gebet sprechen – und seine eindringlichen Verse über die Schöpfung, den Tag des Gerichts und die Barmherzigkeit Allahs begleiten einen ein Leben lang.
+
+Dieser Plan teilt Juz Amma in vier Etappen und zeigt, wie lange jede bei unterschiedlichen Tagesmengen dauert.
+
+## Was ist Juz Amma?
+
+Der Koran ist in dreißig etwa gleich lange Teile (Adschza', Einzahl Juz') gegliedert. Der dreißigste Teil heißt nach seinem ersten Wort „'Amma“ – „Worüber …“ – meist Juz Amma. So beginnt [Sure An-Naba'](/surah/78).
+
+Die wichtigsten Fakten:
+
+- **37 Suren**, von An-Naba' (78) bis An-Nas (114)
+- **564 Verse** insgesamt
+- Überwiegend **mekkanische Suren**: kurze, rhythmische Verse über Glauben, Jenseits und die Zeichen Allahs
+
+## Warum mit Juz Amma beginnen?
+
+- **Kurze Verse** – viele bestehen nur aus wenigen Wörtern, ideal für Anfänger.
+- **Im Alltag nutzbar** – du kannst sie sofort im Gebet rezitieren.
+- **Schnelle Erfolgserlebnisse** – nach wenigen Tagen eine ganze Sure zu können, motiviert enorm.
+- **Grundlage für mehr** – Wortschatz und Themen ziehen sich durch den ganzen Koran.
+
+## Wie lange dauert es?
+
+Das hängt davon ab, wie viele neue Verse du pro Tag lernst. Bei 564 Versen:
+
+- **1 Vers am Tag:** etwa 19 Monate
+- **2 Verse am Tag:** etwa 9–10 Monate
+- **3 Verse am Tag:** etwa 188 Tage – rund **sechs Monate**
+- **5 Verse am Tag:** etwa 4 Monate
+
+Die Zahlen zählen nur Tage mit neuem Stoff. Plane Ruhetage und ab und zu reine Wiederholungstage ein. Außerdem lernt jeder unterschiedlich schnell. Entscheidend ist, dass du dranbleibst.
+
+## Rückwärts lernen: von An-Nas bis An-Naba'
+
+Die klassische und praktischste Reihenfolge beginnt am Ende des Korans und geht rückwärts. Die kürzesten Suren kommen zuerst – so wächst dein Selbstvertrauen, bevor die längeren kommen.
+
+### Etappe 1: An-Nas (114) bis Al-'Adiyat (100) – 90 Verse
+
+Bei drei Versen am Tag: **etwa ein Monat.**
+
+Dazu gehören [An-Nas](/surah/114), [Al-Falaq](/surah/113), [Al-Ikhlas](/surah/112), Al-Masad, An-Nasr, Al-Kafirun, Al-Kauthar, Al-Ma'un, Quraisch, Al-Fil, Al-Humaza, [Al-'Asr](/surah/103), At-Takathur, Al-Qari'a und Al-'Adiyat.
+
+Viele dieser Suren kennst du schon aus dem Gebet. Nutze die Etappe, um deine Aussprache zu verfeinern und dich an die tägliche Routine zu gewöhnen.
+
+### Etappe 2: Az-Zalzala (99) bis Al-Balad (90) – 123 Verse
+
+Bei drei Versen am Tag: **etwa sechs Wochen.**
+
+Az-Zalzala, Al-Bayyina, Al-Qadr, Al-'Alaq, At-Tin, Asch-Scharh, Ad-Duha, Al-Lail, Asch-Schams und Al-Balad. Die Suren werden etwas länger, und manche Verse ähneln sich. Achte besonders auf die Versenden.
+
+### Etappe 3: Al-Fadschr (89) bis Al-Mutaffifin (83) – 175 Verse
+
+Bei drei Versen am Tag: **etwa zwei Monate.**
+
+Al-Fadschr, Al-Ghaschiya, Al-A'la, At-Tariq, Al-Burudsch, Al-Inschiqaq und Al-Mutaffifin. Diese Suren enthalten eindrückliche Bilder vom Tag des Gerichts. Der Tafsir hilft dir, die Reihenfolge der Verse im Kopf zu behalten.
+
+### Etappe 4: Al-Infitar (82) bis An-Naba' (78) – 176 Verse
+
+Bei drei Versen am Tag: **etwa zwei Monate.**
+
+Al-Infitar, At-Takwir, 'Abasa, An-Nazi'at und An-Naba'. Das sind die längsten Suren von Juz Amma. Inzwischen steht deine Routine, und du kannst dich auf die Gewohnheiten aus den ersten Etappen verlassen.
+
+## Die tägliche Routine
+
+Jeder Tag folgt denselben vier Teilen der [Shams-Methode](/shams):
+
+1. **Zuerst wiederholen (ca. 5 Min.).** Die heute fälligen Verse aus dem Gedächtnis rezitieren. Quran Masterclass plant sie nach 1, 3, 7, 14, 30 und 90 Tagen ein und zeigt sie auf deiner [Heute-Seite](/today).
+2. **Neue Verse (ca. 4 Min. pro Vers).** Deine drei neuen Verse durch die sieben Schritte führen: zuhören, rückwärts aufbauen, Wort für Wort, Bedeutung, Tafsir, ausblenden, nachdenken.
+3. **Kette bilden (ca. 3 Min.).** Die heutigen Verse zusammen mit denen von gestern ohne Hinsehen rezitieren.
+4. **Vor dem Schlafen hören (ca. 2 Min.).** Die Verse des Tages abends noch einmal abspielen.
+
+Das sind etwa 20 bis 25 Minuten am Tag. Mehr dazu in unserer [täglichen Koran-Routine](/guides/daily-quran-routine).
+
+## Wenn eine Sure fertig ist
+
+Hast du den letzten Vers einer Sure gelernt, kommt ein Extraschritt dazu: Rezitiere die **ganze Sure** am Stück aus dem Gedächtnis und hör sie dir danach einmal mit dem Rezitator an. Wiederhole das an den nächsten beiden Tagen. So verbinden sich die Verse zu einem fließenden Ganzen.
+
+## Wöchentlicher Check
+
+Einmal pro Woche rezitierst du alle Suren der aktuellen Etappe aus dem Gedächtnis. Notiere Verse, bei denen du zögerst, und setz ein Lesezeichen. Gib ihnen in der folgenden Woche etwas mehr Zeit.
+
+## Typische Hürden
+
+### Ähnliche Verse
+
+In mehreren Suren von Juz Amma gibt es Verse, die ähnlich klingen. Wenn dir ein solches Paar auffällt, vergleiche beide nebeneinander und notiere den Unterschied in ein paar Worten. Die Notiz im Schritt „Nachdenken“ der Shams-Methode eignet sich gut dafür.
+
+### Motivationstief bei den längeren Suren
+
+Die Etappen 3 und 4 dauern länger. Teile sie in Wochenziele auf – etwa „die ersten 20 Verse von Al-Fadschr diese Woche“ – und freu dich über jede fertige Sure.
+
+### Verpasste Tage
+
+Das Leben kommt manchmal dazwischen. Wenn du einen Tag verpasst, versuch nicht, mit doppelten Portionen aufzuholen. Fang wieder mit der Wiederholung an und mach im gewohnten Tempo weiter.
+
+## Nutze, was du lernst
+
+Rezitiere deine neuen Suren im Gebet, hör sie auf dem Weg zur Arbeit oder im [Koran-Radio](/radio) und lies ihre Bedeutung ab und zu erneut. Verse, die Teil deines Alltags sind, bleiben bei dir.
+
+## Bereit?
+
+Öffne [An-Nas](/surah/114), hör dir den ersten Vers dreimal an und starte die Shams-Methode. In etwa sechs Monaten kannst du, so Allah will, ganz Juz Amma im Herzen tragen. Mehr zum Hifz allgemein findest du in unserem [Leitfaden zum Auswendiglernen](/guides/how-to-memorize-the-quran).`,
+    faq: [
+      {
+        q_en: "How many verses does Juz Amma have?",
+        a_en: "Juz Amma has 564 verses in 37 surahs, from An-Naba' (surah 78) to An-Nas (surah 114).",
+        q_de: "Wie viele Verse hat Juz Amma?",
+        a_de: "Juz Amma hat 564 Verse in 37 Suren, von An-Naba' (Sure 78) bis An-Nas (Sure 114).",
+      },
+      {
+        q_en: "How long does it take to memorise Juz Amma?",
+        a_en: "At three new verses a day, about 188 learning days – roughly six months. At one verse a day it takes around a year and a half. Choose a pace you can keep up.",
+        q_de: "Wie lange dauert es, Juz Amma auswendig zu lernen?",
+        a_de: "Bei drei neuen Versen am Tag etwa 188 Lerntage – rund sechs Monate. Bei einem Vers am Tag etwa anderthalb Jahre. Wähle ein Tempo, das du halten kannst.",
+      },
+      {
+        q_en: "Should I learn Juz Amma from the beginning or the end?",
+        a_en: "Most teachers recommend starting at the end with An-Nas and working backwards, because the shortest surahs come first.",
+        q_de: "Lerne ich Juz Amma von vorne oder von hinten?",
+        a_de: "Die meisten Lehrer empfehlen, am Ende mit An-Nas zu beginnen und rückwärts zu lernen, weil so die kürzesten Suren zuerst kommen.",
+      },
+    ],
+    related: ["how-to-memorize-the-quran", "quran-for-kids", "daily-quran-routine"],
+  },
   // @@NEXT@@
 ];

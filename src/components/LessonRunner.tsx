@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { RECITERS, getChapter, getResources, getVerses, pickTranslation, type Chapter, type Verse } from "@/lib/quran";
+import { noteMistake } from "@/lib/learning";
 import { PASS, PATH, levelOf, questionsFor, readProgress, saveResult, secondsPerQuestion } from "@/lib/academy";
 import { IconPlay } from "./Icons";
 
@@ -91,12 +92,12 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
   const q = qs[i];
   const answered = picked !== null;
 
-  const award = (ok: boolean) => { if (ok) { setCorrect((c) => c + 1); setXp((x) => x + 10 + Math.max(0, left)); } };
+  const award = (ok: boolean) => { if (!ok && q) noteMistake(q.key); if (ok) { setCorrect((c) => c + 1); setXp((x) => x + 10 + Math.max(0, left)); } };
 
   // countdown per question
   useEffect(() => {
     if (phase !== "quiz" || answered) return;
-    if (left <= 0) { setPicked(-1); return; }
+    if (left <= 0) { setPicked(-1); if (q) noteMistake(q.key); return; }
     const id = setTimeout(() => setLeft((l) => l - 1), 1000);
     return () => clearTimeout(id);
   }, [phase, left, answered]);
