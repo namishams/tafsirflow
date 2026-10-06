@@ -38,6 +38,9 @@ function firstLetter(word: string) {
   return NON_JOINING.includes(g[0]) || cue.length >= word.length ? cue : `${cue}ـ`;
 }
 
+// small deterministic hash for the random hide mode
+const hashOf = (x: string) => { let h = 2166136261; for (let i = 0; i < x.length; i++) h = Math.imul(h ^ x.charCodeAt(i), 16777619); return h >>> 0; };
+
 // Memory hooks (Eselsbrücken) for a verse, computed from its words
 const bare = (w: string) => w.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "");
 function hooks(v: Verse, next?: Verse) {
@@ -87,7 +90,10 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [useRemote, setUseRemote] = useState(false); // local file failed -> Quran.com audio
   const [timingsOk, setTimingsOk] = useState(true);
   const [dbg, setDbg] = useState("");
-  const [hide, setHide] = useState(startHide); // 0 show all, 1 hide every 2nd word, 2 hide all, 3 first letters only (cue)
+  const [hide, setHide] = useState(startHide); // 0 show all, 1 every 2nd word, 2 hard (all), 3 first letters (cue), 4 random, 5 soft (blurred), 6 test word by word
+  const [seed, setSeed] = useState(1); // random mode: reshuffle
+  const [testPos, setTestPos] = useState(0); // test mode: next word to check
+  const [testMarks, setTestMarks] = useState<Record<number, boolean>>({});
   const [revealed, setRevealed] = useState(false);
   const [note, setNote] = useState("");
   const [limitHit, setLimitHit] = useState(false);
@@ -198,7 +204,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const verse = verses[idx];
 
   useEffect(() => { setUseRemote(false); setTimingsOk(true); setDbg(""); }, [verse, reciter.folder]);
-  useEffect(() => { setRevealed(false); }, [idx, hide]);
+  useEffect(() => { setRevealed(false); setTestPos(0); setTestMarks({}); }, [idx, hide]);
   useEffect(() => {
     if (!note) return;
     const id = setTimeout(() => setNote(""), 2600);
@@ -592,12 +598,15 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {active ? (
                       <p className="ar-text flex flex-wrap justify-start gap-x-3 gap-y-2 font-arabic" dir="rtl">
                         {words.map((w, wi) => {
-                          const covered = (hide === 1 || hide === 2) && !revealed && (hide === 2 || wi % 2 === 1);
+                          const randomHidden = hide === 4 && ((hashOf(`${v.verse_key}:${seed}:${wi}`) % 100) < 45 || (words.length > 1 && wi === hashOf(`${v.verse_key}:${seed}`) % words.length));
+                          const covered = !revealed && (hide === 2 || (hide === 1 && wi % 2 === 1) || randomHidden || (hide === 6 && wi >= testPos));
+                          const soft = hide === 5 && !revealed;
                           const cueOnly = hide === 3 && !revealed;
+                          const mark = hide === 6 ? testMarks[wi] : undefined;
                           const outOfChain = chainFrom !== null && w.position < chainFrom;
                           return (
                           <span key={w.position} className="text-center">
-                            <span className={`block rounded-lg px-1.5 transition ${covered ? "select-none bg-line text-transparent blur-sm" : ""} ${cueOnly ? "text-gold" : ""} ${outOfChain ? "opacity-25" : ""} ${!covered && hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{cueOnly ? firstLetter(w.text_uthmani) : w.text_uthmani}</span>
+                            <span className={`block rounded-lg px-1.5 transition ${covered ? "select-none bg-line text-transparent blur-sm" : ""} ${soft ? "select-none opacity-40 blur-[3px]" : ""} ${mark === true ? "text-accent" : mark === false ? "text-red-600 underline decoration-2 underline-offset-8" : ""} ${hide === 6 && wi === testPos && !revealed ? "ring-2 ring-gold" : ""} ${cueOnly ? "text-gold" : ""} ${outOfChain ? "opacity-25" : ""} ${!covered && hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{cueOnly ? firstLetter(w.text_uthmani) : w.text_uthmani}</span>
                             {showWords && !covered && (
                               <span className="block font-sans text-[11px] leading-tight text-muted" dir="ltr">
                                 {showTranslit && <span className="block italic text-gold">{w.transliteration?.text}</span>}
@@ -660,12 +669,28 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         <span className="text-muted">🧠 {t("memorize")}</span>
                         <div className="inline-flex flex-wrap rounded-xl bg-bg p-1">
                           <button className={seg(hide === 0)} onClick={() => setHide(0)}>{t("hideNone")}</button>
+                          <button className={seg(hide === 5)} onClick={() => setHide(5)}>{t("hideSoft")}</button>
                           <button className={seg(hide === 1)} onClick={() => setHide(1)}>{t("hideHalf")}</button>
-                          <button className={seg(hide === 2)} onClick={() => setHide(2)}>{t("hideAll")}</button>
+                          <button className={seg(hide === 4)} onClick={() => { if (hide === 4) setSeed((x) => x + 1); setHide(4); }}>{t("hideRandom")}</button>
+                          <button className={seg(hide === 2)} onClick={() => setHide(2)}>{t("hideHard")}</button>
+                          <button className={seg(hide === 6)} onClick={() => setHide(6)}>{t("hideTest")}</button>
+                        </div>
+                        {hide === 4 && !revealed && <button className="text-sm font-semibold text-accent hover:underline" onClick={() => setSeed((x) => x + 1)}>↻ {t("shuffle")}</button>}
+                      </div>
+                    )}
+                    {active && hide === 6 && !revealed && (
+                      <div className="mt-3 rounded-xl bg-accent-soft p-3 text-sm" onClick={(e) => e.stopPropagation()}>
+                        <p className="font-medium">{t("testWord", { n: testPos + 1, total: words.length })}</p>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          <button className={primary} onClick={() => { const m = { ...testMarks, [testPos]: true }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); }}>✓ {t("knewWord")}</button>
+                          <button className="rounded-full border border-line bg-surface px-4 py-1.5 font-medium hover:border-accent" onClick={() => { const m = { ...testMarks, [testPos]: false }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); }}>✗ {t("missedWord")}</button>
                         </div>
                       </div>
                     )}
-                    {active && hide > 0 && !revealed && (
+                    {active && hide === 6 && revealed && words.length > 0 && (
+                      <p className="mt-3 text-sm font-semibold" onClick={(e) => e.stopPropagation()}>{t("testScore", { ok: Object.values(testMarks).filter(Boolean).length, total: words.length, pct: Math.round((Object.values(testMarks).filter(Boolean).length / words.length) * 100) })}</p>
+                    )}
+                    {active && hide > 0 && hide !== 6 && !revealed && (
                       <div className="mt-3 flex flex-wrap items-center gap-3 rounded-xl bg-accent-soft p-3 text-sm" onClick={(e) => e.stopPropagation()}>
                         <span>{t("tapToReveal")}</span>
                         <button className={primary} onClick={() => setRevealed(true)}>{t("reveal")}</button>

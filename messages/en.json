@@ -83,7 +83,16 @@
     "fontSize": "Arabic text size",
     "playVerse": "Play this verse",
     "volume": "Volume",
-    "goSurah": "Go to surah"
+    "goSurah": "Go to surah",
+    "hideSoft": "Soft",
+    "hideRandom": "Random",
+    "hideHard": "Hard",
+    "hideTest": "Test",
+    "shuffle": "Shuffle",
+    "testWord": "Word {n} of {total}: recite it, then check yourself",
+    "knewWord": "I knew it",
+    "missedWord": "Missed",
+    "testScore": "Result: {ok} of {total} words ({pct}%) – rate yourself below."
   },
   "language": {
     "label": "Language"

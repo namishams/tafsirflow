@@ -83,7 +83,16 @@
     "fontSize": "Größe der arabischen Schrift",
     "playVerse": "Diesen Vers abspielen",
     "volume": "Lautstärke",
-    "goSurah": "Zu Sure springen"
+    "goSurah": "Zu Sure springen",
+    "hideSoft": "Sanft",
+    "hideRandom": "Zufällig",
+    "hideHard": "Hart",
+    "hideTest": "Test",
+    "shuffle": "Neu mischen",
+    "testWord": "Wort {n} von {total}: Rezitiere es, dann prüfe dich",
+    "knewWord": "Gewusst",
+    "missedWord": "Nicht gewusst",
+    "testScore": "Ergebnis: {ok} von {total} Wörtern ({pct} %) – bewerte dich unten."
   },
   "language": {
     "label": "Sprache"
