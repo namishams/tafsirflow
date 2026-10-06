@@ -292,7 +292,8 @@
     "assistant": "Assistent",
     "how": "So funktioniert es",
     "world": "Muslime weltweit",
-    "main": "Hauptnavigation"
+    "main": "Hauptnavigation",
+    "secrets": "Geheimnisse des Quran"
   },
   "today": {
     "title": "Heute",
@@ -531,7 +532,8 @@
     "worldD": "Wo Muslime leben: Regionen, Länder und Anteile auf einen Blick.",
     "prayerD": "Gebetszeiten und islamisches Datum für deinen Ort, Mekka und Medina.",
     "howD": "Wie die Masterclass aufgebaut ist – vom ersten Buchstaben bis zur sicheren Rezitation.",
-    "badge_help": "Hilfe"
+    "badge_help": "Hilfe",
+    "secretsD": "Wie oft steht „Hab keine Angst“ im Quran? Zahlen nachgezählt, Behauptungen geprüft, Orte des Friedens."
   },
   "legal": {
     "back": "Zurück zur Startseite",

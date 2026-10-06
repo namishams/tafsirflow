@@ -292,7 +292,8 @@
     "assistant": "Asistente",
     "how": "Cómo funciona",
     "world": "Musulmanes en el mundo",
-    "main": "Navegación principal"
+    "main": "Navegación principal",
+    "secrets": "Secretos del Corán"
   },
   "today": {
     "title": "Hoy",
@@ -531,7 +532,8 @@
     "worldD": "Dónde viven los musulmanes: regiones, países y proporciones de un vistazo.",
     "prayerD": "Horarios de oración y fecha islámica para tu ubicación, La Meca y Medina.",
     "howD": "Cómo está construida la Masterclass – de la primera letra a una recitación segura.",
-    "badge_help": "Ayuda"
+    "badge_help": "Ayuda",
+    "secretsD": "¿Cuántas veces aparece «no temas» en el Corán? Cifras contadas de nuevo, afirmaciones comprobadas, lugares de paz."
   },
   "legal": {
     "back": "Volver al inicio",

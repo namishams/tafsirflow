@@ -292,7 +292,8 @@
     "assistant": "Assistant",
     "how": "Comment ça marche",
     "world": "Musulmans dans le monde",
-    "main": "Navigation principale"
+    "main": "Navigation principale",
+    "secrets": "Secrets du Coran"
   },
   "today": {
     "title": "Aujourd'hui",
@@ -531,7 +532,8 @@
     "worldD": "Où vivent les musulmans : régions, pays et proportions en un coup d’œil.",
     "prayerD": "Horaires de prière et date islamique pour ta ville, La Mecque et Médine.",
     "howD": "Comment la Masterclass est construite – de la première lettre à une récitation assurée.",
-    "badge_help": "Aide"
+    "badge_help": "Aide",
+    "secretsD": "Combien de fois « n’aie pas peur » apparaît-il dans le Coran ? Chiffres recomptés, affirmations vérifiées, lieux de paix."
   },
   "legal": {
     "back": "Retour à l'accueil",

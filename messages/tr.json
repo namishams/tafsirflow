@@ -292,7 +292,8 @@
     "assistant": "Asistan",
     "how": "Nasıl çalışır",
     "world": "Dünyada Müslümanlar",
-    "main": "Ana gezinme"
+    "main": "Ana gezinme",
+    "secrets": "Kur’an’ın sırları"
   },
   "today": {
     "title": "Bugün",
@@ -531,7 +532,8 @@
     "worldD": "Müslümanların yaşadığı yerler: bölgeler, ülkeler ve oranlar tek bakışta.",
     "prayerD": "Bulunduğun yer, Mekke ve Medine için namaz vakitleri ve hicrî tarih.",
     "howD": "Masterclass nasıl kurulu – ilk harften emin bir tilavete kadar.",
-    "badge_help": "Yardım"
+    "badge_help": "Yardım",
+    "secretsD": "“Korkma” Kur’an’da kaç kez geçer? Sayılar yeniden sayıldı, iddialar kontrol edildi, huzur bulunan yerler."
   },
   "legal": {
     "back": "Ana sayfaya dön",

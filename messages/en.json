@@ -292,7 +292,8 @@
     "assistant": "Assistant",
     "how": "How it works",
     "world": "Muslims worldwide",
-    "main": "Main navigation"
+    "main": "Main navigation",
+    "secrets": "Secrets of the Quran"
   },
   "today": {
     "title": "Today",
@@ -531,7 +532,8 @@
     "worldD": "Where Muslims live: regions, countries and shares at a glance.",
     "prayerD": "Prayer times and the Islamic date for your location, Makkah and Madinah.",
     "howD": "How the Masterclass is built – from the first letter to confident recitation.",
-    "badge_help": "Help"
+    "badge_help": "Help",
+    "secretsD": "How often does “do not fear” appear in the Quran? Numbers counted, claims checked, places of peace."
   },
   "legal": {
     "back": "Back to home",

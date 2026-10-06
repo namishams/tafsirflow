@@ -20,9 +20,10 @@ export const TILES: Record<string, Tile> = {
   world: { key: "world", href: "/world", ar: "الأمة", desc: "worldD", badge: "library", bg: "linear-gradient(160deg,#20353a 0%,#091315 100%)" },
   prayer: { key: "prayer", href: "/prayer", ar: "مواقيت", desc: "prayerD", badge: "live", bg: "linear-gradient(160deg,#2a2440 0%,#0d0b16 100%)" },
   guides: { key: "guides", href: "/guides", ar: "دليل", desc: "tool_guidesD", badge: "library", bg: "linear-gradient(160deg,#33301a 0%,#121108 100%)" },
+  secrets: { key: "secrets", href: "/secrets", ar: "أسرار", desc: "secretsD", badge: "library", bg: "linear-gradient(160deg,#3a2f12 0%,#0e1a14 100%)" },
   how: { key: "how", href: "/how", ar: "منهج", desc: "howD", badge: "method", bg: "linear-gradient(160deg,#283a22 0%,#0c140a 100%)" },
 };
 
-export const HOME_TILES = ["shams", "courses", "arabic", "salah", "islam", "tajweed", "plan", "vocab", "reciters", "radio", "duas", "map"];
+export const HOME_TILES = ["shams", "courses", "arabic", "salah", "islam", "secrets", "tajweed", "plan", "reciters", "radio", "duas", "map"];
 
 export const tileFor = (href: string) => Object.values(TILES).find((t) => t.href === href || href.startsWith(`${t.href}/`) || href.startsWith(`${t.href}?`));

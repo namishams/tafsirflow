@@ -292,7 +292,8 @@
     "assistant": "Pembantu",
     "how": "Cara ia berfungsi",
     "world": "Umat Islam sedunia",
-    "main": "Navigasi utama"
+    "main": "Navigasi utama",
+    "secrets": "Rahsia al-Quran"
   },
   "today": {
     "title": "Hari ini",
@@ -531,7 +532,8 @@
     "worldD": "Di mana umat Islam tinggal: rantau, negara dan peratusannya dalam sekali pandang.",
     "prayerD": "Waktu solat dan tarikh Hijrah untuk lokasi anda, Makkah dan Madinah.",
     "howD": "Bagaimana Masterclass dibina – dari huruf pertama hingga bacaan yang yakin.",
-    "badge_help": "Bantuan"
+    "badge_help": "Bantuan",
+    "secretsD": "Berapa kali “jangan takut” disebut dalam al-Quran? Angka dikira semula, dakwaan disemak, tempat-tempat yang menenangkan."
   },
   "legal": {
     "back": "Kembali ke laman utama",
