@@ -272,6 +272,24 @@ a.group:active, .btn-gold:active { transform: scale(.985); }
   animation: heartBurst .7s ease-out forwards; }
 @keyframes heartBurst { from { transform: scale(.4); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
 
+/* illuminated frame: a fine outer rule and a band of small eight-pointed stars inside */
+.illum-frame { position: absolute; inset: 0; pointer-events: none; }
+.illum-frame::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgb(201 166 94 / .45); border-radius: 12px; }
+.illum-frame::after { content: ""; position: absolute; inset: 12px; border-radius: 9px; padding: 7px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M7 1.5l1.3 3.2 3.2 1.3-3.2 1.3L7 10.5 5.7 7.3 2.5 6l3.2-1.3z' fill='%23c9a65e' fill-opacity='.55'/%3E%3C/svg%3E") 0 0 / 14px 14px;
+  box-shadow: inset 0 0 0 1px rgb(201 166 94 / .5);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
+
+/* player dock: the rosette around the play button turns slowly while recitation plays; a small equaliser */
+.play-rosette { transition: opacity .4s; opacity: .55; }
+.play-rosette-on { opacity: 1; animation: rosetteTurn 18s linear infinite; }
+@keyframes rosetteTurn { to { transform: rotate(360deg); } }
+.eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 14px; flex-shrink: 0; }
+.eq i { display: block; width: 2.5px; height: 4px; border-radius: 1px; background: rgb(201 166 94); opacity: .6; }
+.eq-on i { animation: eqBar 1s ease-in-out infinite; opacity: 1; }
+.eq-on i:nth-child(2) { animation-delay: -.3s; } .eq-on i:nth-child(3) { animation-delay: -.6s; } .eq-on i:nth-child(4) { animation-delay: -.15s; }
+@keyframes eqBar { 0%, 100% { height: 4px; } 50% { height: 14px; } }
+
 /* ---------- Islamic art everywhere ---------- */
 /* a very fine girih tessellation in the page background (only where no section paints its own background) */
 body { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23c9a65e' stroke-opacity='.075' stroke-width='1'%3E%3Cpath d='M60 18l12 30 30 12-30 12-12 30-12-30-30-12 30-12z'/%3E%3Cpath d='M30 30h60v60H30z'/%3E%3Cpath d='M0 0l30 30M120 0L90 30M0 120l30-30M120 120L90 90'/%3E%3C/g%3E%3C/svg%3E"); background-size: 120px 120px; }
@@ -316,10 +334,36 @@ main .text-center h2.font-display::after, main h2.font-display.text-center::afte
 
 @media (prefers-reduced-motion: reduce) {
   .girih::after, .callig-ring, .rise { animation: none; }
-  .page-in, .skyline .twinkle, .heart-pop, .heart-burst { animation: none; }
+  .page-in, .skyline .twinkle, .heart-pop, .heart-burst, .play-rosette-on, .eq-on i { animation: none; }
   .btn-gold::after { display: none; }
   .points-pop, .sticker-pop, .sticker-rays, .sticker-shine::after { animation: none; }
   .side-callig text { animation: none; stroke: none; fill-opacity: 0; }
   .side-callig text:first-of-type { fill-opacity: .45; }
   .callig-draw text { animation: none; fill: rgb(var(--gold) / .12); stroke: none; }
 }
+
+/* ---------- modern form controls everywhere (no system look) ---------- */
+select:not([multiple]) {
+  -webkit-appearance: none; appearance: none; cursor: pointer; border-radius: .75rem; padding-inline-end: 2.1rem !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238d939b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right .75rem center; background-size: 14px;
+}
+[dir="rtl"] select:not([multiple]) { background-position: left .75rem center; }
+input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="checkbox"]:not(.native) {
+  -webkit-appearance: none; appearance: none; flex-shrink: 0; width: 1.2rem; height: 1.2rem; margin: 0; cursor: pointer; vertical-align: middle;
+  border: 1.5px solid rgb(var(--muted) / .45); border-radius: .4rem; background: rgb(var(--surface)) center / 72% no-repeat; transition: background-color .2s, border-color .2s, box-shadow .2s;
+}
+input[type="checkbox"]:not(.native):hover { border-color: rgb(var(--accent)); }
+input[type="checkbox"]:not(.native):checked {
+  border-color: rgb(var(--accent)); background-color: rgb(var(--accent));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+}
+input[type="radio"]:not(.native) {
+  -webkit-appearance: none; appearance: none; flex-shrink: 0; width: 1.2rem; height: 1.2rem; margin: 0; cursor: pointer; vertical-align: middle;
+  border: 1.5px solid rgb(var(--muted) / .45); border-radius: 999px; background: rgb(var(--surface)); transition: border-color .2s, box-shadow .2s;
+}
+input[type="radio"]:not(.native):checked { border-color: rgb(var(--accent)); box-shadow: inset 0 0 0 4px rgb(var(--surface)), inset 0 0 0 10px rgb(var(--accent)); }
+select:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid rgb(201 166 94 / .75); outline-offset: 2px; }
+input[type="range"] { accent-color: rgb(201 166 94); }

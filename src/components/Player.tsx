@@ -8,7 +8,7 @@ import AccountLink from "./AccountLink";
 import AuthGate from "./AuthGate";
 import SocialBar from "./SocialBar";
 import SurahPicker from "./SurahPicker";
-import { Ink, SurahBanner } from "./Ornaments";
+import { Ink, Medallion, Rosette, SurahBanner } from "./Ornaments";
 import ReciteCheck from "./ReciteCheck";
 import SessionBar from "./SessionBar";
 import { completeItem, itemUrl } from "@/lib/session";
@@ -35,7 +35,27 @@ const menuItem = "flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm te
 const Sun = ({ className = "h-3.5 w-3.5" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" className={className} aria-hidden><circle cx="12" cy="12" r="5.5" fill="currentColor" /><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeOpacity=".55" /></svg>
 );
-const field = "rounded-lg border border-line bg-surface px-2 py-1.5 text-sm text-ink";
+const field = "h-10 rounded-xl border border-line bg-surface px-3 text-sm font-medium text-ink transition hover:border-ink/30";
+// a row with an on/off switch (instead of a bare checkbox)
+function Toggle({ on, onChange, label, compact = false }: { on: boolean; onChange: (v: boolean) => void; label: string; compact?: boolean }) {
+  return (
+    <button type="button" role="switch" aria-checked={on} onClick={() => onChange(!on)} className={`flex items-center justify-between gap-3 rounded-xl text-start font-medium transition ${compact ? "p-1" : "w-full px-3 py-2.5 hover:bg-bg"}`}>
+      <span className={compact ? "sr-only" : ""}>{label}</span>
+      <span className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${on ? "bg-accent" : "bg-line"}`}>
+        <span className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow-[0_1px_3px_rgba(0,0,0,.25)] transition-all duration-300 ${on ? "start-[1.375rem]" : "start-0.5"}`} />
+      </span>
+    </button>
+  );
+}
+// a small group of choices shown as pills
+function Chips<T extends number>({ value, options, onChange, fmtOpt }: { value: T; options: T[]; onChange: (v: T) => void; fmtOpt: (v: T) => string }) {
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {options.map((o) => <button key={o} type="button" aria-pressed={value === o} onClick={() => onChange(o)} className={`h-9 min-w-[3rem] rounded-full border px-3 text-[13px] font-semibold tabular-nums transition ${value === o ? "border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/15 text-ink" : "border-line bg-surface text-muted hover:border-ink/30 hover:text-ink"}`}>{fmtOpt(o)}</button>)}
+    </div>
+  );
+}
+const label = "text-[11px] font-semibold uppercase tracking-[0.14em] text-muted";
 
 // First letter of an Arabic word (with its vowel marks) as a memory cue; a tatweel keeps the joined initial form
 const NON_JOINING = "اأإآٱءدذرزوؤة";
@@ -635,19 +655,25 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   }, []);
   const primary = "btn-gold rounded-full px-5 py-2.5 text-sm font-bold";
   const withBismillah = chapterId !== 1 && chapterId !== 9;
-  const dockBtn = "grid h-11 w-11 place-items-center rounded-full text-ink transition hover:bg-accent-soft";
 
   return (
     <div className="pb-64 lg:pb-48" style={{ ["--ar-scale" as string]: arSize }}>
       <div className={`mx-auto px-4 ${kids ? "max-w-3xl" : "max-w-6xl lg:grid lg:grid-cols-[1fr_25rem] lg:gap-8"}`}>
         <main className="min-w-0">
           {sessionMode && <SessionBar />}
-          <section className="mb-8 mt-8 border-b border-line pb-8 text-center">
-            <p className="eyebrow">{th("surahLabel", { n: chapter.id })} · {chapter.verses_count} {th("verses")}</p>
-            <SurahBanner arabic={`سورة ${chapter.name_arabic}`} className="mt-4" />
-            <h1 className={locale === "ar" ? "sr-only" : "font-display mt-5 text-3xl leading-none sm:text-4xl"}>{chapter.name_simple}</h1>
-            {chapter.translated_name.name && <p className="mt-2 text-muted">{chapter.translated_name.name}</p>}
-            {withBismillah && <p className="font-arabic mt-7 text-[30px] leading-loose text-ink/85 sm:text-[34px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>}
+          {/* illuminated opening, like the first page of a surah in a fine mushaf */}
+          <section className="stage relative mb-8 mt-6 overflow-hidden rounded-2xl px-5 pb-8 pt-8 text-center text-[#eef0f3] sm:px-10">
+            <span aria-hidden className="illum-frame" />
+            {[["start-1.5 top-1.5"], ["end-1.5 top-1.5"], ["bottom-1.5 start-1.5"], ["bottom-1.5 end-1.5"]].map(([c]) => <Rosette key={c} size={26} className={`absolute ${c}`} />)}
+            <p className="relative text-[11px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{th("surahLabel", { n: chapter.id })} · {chapter.verses_count} {th("verses")}</p>
+            <div className="relative mt-4 flex items-center justify-center gap-1 sm:gap-3">
+              <Medallion className="hidden w-12 shrink-0 sm:block" />
+              <SurahBanner dark arabic={`سورة ${chapter.name_arabic}`} className="!mx-0 min-w-0" />
+              <Medallion flip className="hidden w-12 shrink-0 sm:block" />
+            </div>
+            <h1 className={locale === "ar" ? "sr-only" : "font-display relative mt-5 text-3xl leading-none sm:text-4xl"}>{chapter.name_simple}</h1>
+            {chapter.translated_name.name && <p className="relative mt-2 text-white/60">{chapter.translated_name.name}</p>}
+            {withBismillah && <p className="font-arabic relative mt-6 text-[30px] leading-loose text-[rgb(var(--gold))] sm:text-[36px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>}
           </section>
 
           <div className="mb-6">
@@ -658,7 +684,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             </div>
             <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-[13px] text-muted">
               {verse.page > 0 ? <span className="tabular-nums">{t("page")} {verse.page} · {t("juz")} {verse.juz} · {t("hizb")} {verse.hizb}</span> : <span />}
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center justify-end gap-2">
                 {!kids && shams !== null && <button onClick={stopShams} className="inline-flex h-8 items-center rounded-full border border-line px-3.5 text-[13px] font-semibold hover:border-ink">{ts("stop")}</button>}
                 <div className="inline-flex rounded-full bg-bg p-1">
                   <button className={seg(view === "verses")} onClick={() => setViewPref("verses")}>{t("viewVerses")}</button>
@@ -671,74 +697,76 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               </div>
             </div>
             {settingsOpen && (
-              <div className="mt-4 grid gap-4 rounded-xl border border-line bg-surface p-4 text-sm sm:grid-cols-2">
-                <label className="grid gap-1"><span className="text-muted">{t("reciter")}</span>
-                  <select value={reciter.folder} onChange={(e) => { setReciterFolder(e.target.value); writeJSON("tf:reciter", e.target.value, true); }} className={field}>
-                    {reciters.map((r) => <option key={r.folder} value={r.folder}>{reciterName(r, locale)}</option>)}
-                  </select>
-                </label>
-                <div className="grid gap-1"><span className="text-muted">{t("fontSize")}</span>
-                  <div className="inline-flex w-fit rounded-xl bg-bg p-1">
-                    {[0.85, 1, 1.2, 1.45].map((n, i) => (
-                      <button key={n} className={seg(arSize === n)} onClick={() => setSize(n)} aria-label={`${t("fontSize")} ${n}`}><span style={{ fontSize: `${0.8 + i * 0.12}rem` }}>أ</span></button>
-                    ))}
-                  </div>
-                </div>
-                {!kids && <div className="grid gap-1"><span className="text-muted">{t("mode")}</span>
-                  <div className="inline-flex w-fit rounded-xl bg-bg p-1">
-                    <button className={seg(mode === "learn")} onClick={() => setMode("learn")}>{t("modeLearn")}</button>
-                    <button className={seg(mode === "continuous")} onClick={() => setMode("continuous")}>{t("modeContinuous")}</button>
-                  </div>
-                </div>}
-                <label className="grid gap-1"><span className="text-muted">{t("repeat")}</span>
-                  <select value={repeat} onChange={(e) => setRepeat(Number(e.target.value))} className={field}>
-                    {[1, 2, 3, 5, 10].map((n) => <option key={n} value={n}>×{n}</option>)}
-                  </select>
-                </label>
-                <label className="grid gap-1"><span className="text-muted">{t("speed")}</span>
-                  <select value={speed} onChange={(e) => setSpeed(Number(e.target.value))} className={field}>
-                    {[0.5, 0.75, 1, 1.25, 1.5].map((n) => <option key={n} value={n}>{n}×</option>)}
-                  </select>
-                </label>
-                {!kids && <div className="grid gap-1 sm:col-span-2">
-                  <label className="flex items-center gap-2"><input type="checkbox" checked={loopOn} onChange={(e) => setLoopOn(e.target.checked)} /> {t("loop")}</label>
-                  <div className="flex items-center gap-2 text-muted">
-                    {t("loopFrom")}
-                    <select value={loopFrom} onChange={(e) => setLoopFrom(Number(e.target.value))} className={field}>
-                      {verses.map((v) => <option key={v.verse_key} value={v.verse_number}>{v.verse_number}</option>)}
+              <div className="step-in mt-4 overflow-hidden rounded-2xl border border-[rgb(201_166_94)]/30 bg-surface text-sm shadow-[0_10px_30px_rgba(3,25,18,0.08)]">
+                <div className="h-[2px] bg-gradient-to-r from-transparent via-[rgb(201_166_94)] to-transparent" />
+                <div className="grid gap-5 p-4 sm:grid-cols-2 sm:p-5">
+                  <label className="grid gap-2"><span className={label}>{t("reciter")}</span>
+                    <select value={reciter.folder} onChange={(e) => { setReciterFolder(e.target.value); writeJSON("tf:reciter", e.target.value, true); }} className={field}>
+                      {reciters.map((r) => <option key={r.folder} value={r.folder}>{reciterName(r, locale)}</option>)}
                     </select>
-                    {t("loopTo")}
-                    <select value={loopTo} onChange={(e) => setLoopTo(Number(e.target.value))} className={field}>
-                      {verses.map((v) => <option key={v.verse_key} value={v.verse_number}>{v.verse_number}</option>)}
-                    </select>
-                  </div>
-                </div>}
-                {offlineReady() && (() => {
-                  const key = `${chapterId}:${reciter.folder}`;
-                  const saved = offline.state === "saved" || (offline.state === "none" && savedSurahs()[key] !== undefined);
-                  const urls = verses.map((v) => v.audioUrl);
-                  const save = async () => {
-                    setOffline({ state: "saving", done: 0, bytes: 0 });
-                    try { const bytes = await saveSurah(chapterId, reciter.folder, urls, `/${locale}/surah/${chapterId}`, (done) => setOffline((o) => ({ ...o, done }))); setOffline({ state: "saved", done: urls.length, bytes }); }
-                    catch { setOffline((o) => ({ ...o, state: "error" })); }
-                  };
-                  return (
-                    <div className="grid gap-1 sm:col-span-2">
-                      <span className="text-muted">{t("offline")}</span>
-                      <div className="flex flex-wrap items-center gap-3">
-                        {offline.state === "saving"
-                          ? <span className="flex min-w-0 flex-1 items-center gap-3"><span className="h-1.5 flex-1 overflow-hidden rounded-full bg-line"><span className="block h-full bg-accent transition-all" style={{ width: `${(offline.done / Math.max(1, urls.length)) * 100}%` }} /></span><span className="tabular-nums text-muted">{offline.done}/{urls.length}</span></span>
-                          : saved
-                            ? <><span className="font-semibold text-accent">{t("offlineSaved", { mb: Math.max(0.1, Math.round(((offline.bytes || savedSurahs()[key] || 0) / 1048576) * 10) / 10) })}</span><button onClick={async () => { await removeSurah(chapterId, reciter.folder, urls); setOffline({ state: "none", done: 0, bytes: 0 }); }} className="text-muted underline-offset-2 hover:underline">{t("offlineRemove")}</button></>
-                            : <button onClick={save} className="rounded-full border border-line px-4 py-2 font-semibold hover:border-ink">{t("offlineSave")}</button>}
-                        {offline.state === "error" && <span className="text-red-600">{t("offlineError")}</span>}
-                      </div>
+                  </label>
+                  <div className="grid gap-2"><span className={label}>{t("fontSize")}</span>
+                    <div className="inline-flex w-fit rounded-full bg-bg p-1">
+                      {[0.85, 1, 1.2, 1.45].map((n, i) => (
+                        <button key={n} className={seg(arSize === n)} onClick={() => setSize(n)} aria-label={`${t("fontSize")} ${n}`}><span className="font-arabic" style={{ fontSize: `${0.85 + i * 0.14}rem` }}>أ</span></button>
+                      ))}
                     </div>
-                  );
-                })()}
-                {!kids && <><label className="flex items-center gap-2"><input type="checkbox" checked={showTranslit} onChange={(e) => setShowTranslit(e.target.checked)} /> {t("transliteration")}</label>
-                <label className="flex items-center gap-2"><input type="checkbox" checked={showTranslation} onChange={(e) => setShowTranslation(e.target.checked)} /> {t("translation")}</label>
-                <label className="flex items-center gap-2"><input type="checkbox" checked={showWords} onChange={(e) => setShowWords(e.target.checked)} /> {t("wordByWord")}</label></>}
+                  </div>
+                  {!kids && <div className="grid gap-2"><span className={label}>{t("mode")}</span>
+                    <div className="inline-flex w-fit rounded-full bg-bg p-1">
+                      <button className={seg(mode === "learn")} onClick={() => setMode("learn")}>{t("modeLearn")}</button>
+                      <button className={seg(mode === "continuous")} onClick={() => setMode("continuous")}>{t("modeContinuous")}</button>
+                    </div>
+                  </div>}
+                  <div className="grid gap-2"><span className={label}>{t("repeat")}</span>
+                    <Chips value={repeat} options={[1, 2, 3, 5, 10]} onChange={setRepeat} fmtOpt={(n) => `×${n}`} />
+                  </div>
+                  <div className="grid gap-2"><span className={label}>{t("speed")}</span>
+                    <Chips value={speed} options={[0.5, 0.75, 1, 1.25, 1.5]} onChange={setSpeed} fmtOpt={(n) => `${n}×`} />
+                  </div>
+                  {!kids && <div className="grid gap-2">
+                    <span className={label}>{t("loop")}</span>
+                    <div className="flex flex-wrap items-center gap-2 text-muted">
+                      <Toggle compact on={loopOn} onChange={setLoopOn} label={t("loop")} />
+                      <span className={loopOn ? "" : "opacity-50"}>{t("loopFrom")}</span>
+                      <select value={loopFrom} disabled={!loopOn} onChange={(e) => setLoopFrom(Number(e.target.value))} className={`${field} w-20 disabled:opacity-50`}>
+                        {verses.map((v) => <option key={v.verse_key} value={v.verse_number}>{v.verse_number}</option>)}
+                      </select>
+                      <span className={loopOn ? "" : "opacity-50"}>{t("loopTo")}</span>
+                      <select value={loopTo} disabled={!loopOn} onChange={(e) => setLoopTo(Number(e.target.value))} className={`${field} w-20 disabled:opacity-50`}>
+                        {verses.map((v) => <option key={v.verse_key} value={v.verse_number}>{v.verse_number}</option>)}
+                      </select>
+                    </div>
+                  </div>}
+                  {!kids && <div className="grid gap-1 rounded-xl border border-line p-1 sm:col-span-2 sm:grid-cols-3">
+                    <Toggle on={showTranslit} onChange={setShowTranslit} label={t("transliteration")} />
+                    <Toggle on={showTranslation} onChange={setShowTranslation} label={t("translation")} />
+                    <Toggle on={showWords} onChange={setShowWords} label={t("wordByWord")} />
+                  </div>}
+                  {offlineReady() && (() => {
+                    const key = `${chapterId}:${reciter.folder}`;
+                    const saved = offline.state === "saved" || (offline.state === "none" && savedSurahs()[key] !== undefined);
+                    const urls = verses.map((v) => v.audioUrl);
+                    const save = async () => {
+                      setOffline({ state: "saving", done: 0, bytes: 0 });
+                      try { const bytes = await saveSurah(chapterId, reciter.folder, urls, `/${locale}/surah/${chapterId}`, (done) => setOffline((o) => ({ ...o, done }))); setOffline({ state: "saved", done: urls.length, bytes }); }
+                      catch { setOffline((o) => ({ ...o, state: "error" })); }
+                    };
+                    return (
+                      <div className="grid gap-2 sm:col-span-2">
+                        <span className={label}>{t("offline")}</span>
+                        <div className="flex flex-wrap items-center gap-3">
+                          {offline.state === "saving"
+                            ? <span className="flex min-w-0 flex-1 items-center gap-3"><span className="h-1.5 flex-1 overflow-hidden rounded-full bg-line"><span className="block h-full bg-[rgb(201_166_94)] transition-all" style={{ width: `${(offline.done / Math.max(1, urls.length)) * 100}%` }} /></span><span className="tabular-nums text-muted">{offline.done}/{urls.length}</span></span>
+                            : saved
+                              ? <><span className="inline-flex items-center gap-2 font-semibold text-accent"><svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>{t("offlineSaved", { mb: Math.max(0.1, Math.round(((offline.bytes || savedSurahs()[key] || 0) / 1048576) * 10) / 10) })}</span><button onClick={async () => { await removeSurah(chapterId, reciter.folder, urls); setOffline({ state: "none", done: 0, bytes: 0 }); }} className="text-muted underline-offset-2 hover:underline">{t("offlineRemove")}</button></>
+                              : <button onClick={save} className="inline-flex h-10 items-center gap-2 rounded-full border border-[rgb(201_166_94)]/60 px-4 font-semibold transition hover:bg-[rgb(201_166_94)]/10"><svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>{t("offlineSave")}</button>}
+                          {offline.state === "error" && <span className="text-red-600">{t("offlineError")}</span>}
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
               </div>
             )}
           </div>
@@ -779,9 +807,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {active && <><span aria-hidden className="frame-corner start-2 top-2 border-s border-t" /><span aria-hidden className="frame-corner end-2 top-2 border-e border-t" /><span aria-hidden className="frame-corner bottom-2 start-2 border-b border-s" /><span aria-hidden className="frame-corner bottom-2 end-2 border-b border-e" /></>}
                     <div className="mb-3 flex items-center justify-between">
                       <span className="relative grid h-9 w-9 place-items-center" aria-label={`${t("verse")} ${v.verse_number}`}>
-                        <span className="absolute inset-1 rotate-45 rounded-[5px] bg-accent-soft" />
-                        <span className="absolute inset-1 rounded-[5px] bg-accent-soft" />
-                        <span className="relative text-xs font-semibold text-accent">{v.verse_number}</span>
+                        <span className={`absolute inset-1 rotate-45 rounded-[4px] border ${active ? "border-[rgb(var(--gold))]/70 bg-[rgb(var(--gold))]/15" : "border-[rgb(var(--gold))]/40 bg-surface"}`} />
+                        <span className={`absolute inset-1 rounded-[4px] border ${active ? "border-[rgb(var(--gold))]/70 bg-[rgb(var(--gold))]/15" : "border-[rgb(var(--gold))]/40 bg-surface"}`} />
+                        <span className="relative text-xs font-bold text-[rgb(var(--gold))]">{v.verse_number}</span>
                       </span>
                       {active ? (
                         <div className="relative flex items-center gap-0.5 text-muted" onClick={(e) => e.stopPropagation()}>
@@ -1009,29 +1037,37 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
         </button>
       )}
 
-      {/* Floating player dock */}
+      {/* Floating player dock: a dark-green jewel with gold, the play button inside a slowly turning rosette */}
       <div className="fixed inset-x-0 bottom-[4.5rem] z-40 px-3 lg:bottom-3">
-        <div dir="ltr" className="mx-auto max-w-xl overflow-hidden rounded-3xl border border-line bg-surface/95 shadow-[0_10px_40px_rgba(0,0,0,0.2)] backdrop-blur">
-          <div className="h-1 bg-line"><div className="h-1 bg-accent transition-all" style={{ width: `${((idx + 1) / verses.length) * 100}%` }} /></div>
-          <div className="flex items-center gap-2 px-4 pt-2.5 text-[11px] tabular-nums text-muted">
+        <div dir="ltr" className="stage mx-auto max-w-xl overflow-hidden rounded-3xl border border-[rgb(201_166_94)]/35 text-[#eef0f3] shadow-[0_14px_44px_rgba(3,25,18,0.45)]">
+          <div className="h-[3px] bg-white/10"><div className="h-full bg-gradient-to-r from-[rgb(201_166_94)]/60 via-[rgb(233_207_153)] to-[rgb(201_166_94)] transition-all duration-500" style={{ width: `${((idx + 1) / verses.length) * 100}%` }} /></div>
+          <div className="flex items-center gap-2 px-4 pt-2.5 text-[11px] tabular-nums text-white/55">
             <span className="w-8 text-end">{fmt(cur)}</span>
-            <input type="range" min={0} max={dur || 1} step={0.1} value={Math.min(cur, dur || 1)} onChange={(e) => { const a = audioRef.current; if (a) { a.currentTime = Number(e.target.value); setCur(a.currentTime); } }} className="h-1 min-w-0 flex-1 accent-[rgb(var(--accent))]" aria-label={t("seek")} />
+            <input type="range" min={0} max={dur || 1} step={0.1} value={Math.min(cur, dur || 1)} onChange={(e) => { const a = audioRef.current; if (a) { a.currentTime = Number(e.target.value); setCur(a.currentTime); } }} className="h-1 min-w-0 flex-1 accent-[rgb(201_166_94)]" aria-label={t("seek")} />
             <span className="w-8">{fmt(dur)}</span>
-            <button className="grid h-7 w-7 place-items-center rounded-full hover:text-ink" onClick={() => setVol(vol === 0 ? 1 : 0)} aria-label={t("volume")}><IconVolume muted={vol === 0} /></button>
+            <button className="grid h-7 w-7 place-items-center rounded-full hover:text-white" onClick={() => setVol(vol === 0 ? 1 : 0)} aria-label={t("volume")}><IconVolume muted={vol === 0} /></button>
           </div>
           <div className="flex items-center justify-between gap-2 px-3 pb-2.5 pt-1">
-            <span className="w-16 text-xs leading-tight text-muted">{t("verse")} {verse.verse_number}<br />{t("of")} {verses.length}</span>
+            <span className="flex w-20 min-w-0 items-center gap-2 text-xs leading-tight text-white/65">
+              <span aria-hidden className={`eq ${playing ? "eq-on" : ""}`}><i /><i /><i /><i /></span>
+              <span className="min-w-0"><span className="font-callig block truncate text-[15px] leading-none text-[rgb(var(--gold))]" dir="rtl" lang="ar">{chapter.name_arabic}</span>{verse.verse_number}/{verses.length}</span>
+            </span>
             <div className="flex items-center gap-1">
-              <button className={dockBtn} onClick={() => goTo(Math.max(0, idx - 1), false)} aria-label={t("prev")}><IconPrev /></button>
-              <button
-                className="grid h-14 w-14 place-items-center rounded-full bg-accent text-white shadow-card transition hover:opacity-90"
-                onClick={() => (playing ? audioRef.current?.pause() : play())}
-                aria-label={playing ? t("pause") : t("play")}
-              >{playing ? <IconPause /> : <IconPlay />}</button>
-              <button className={dockBtn} onClick={() => goTo(Math.min(verses.length - 1, idx + 1), false)} aria-label={t("next")}><IconNext /></button>
+              <button className="grid h-11 w-11 place-items-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white" onClick={() => goTo(Math.max(0, idx - 1), false)} aria-label={t("prev")}><IconPrev /></button>
+              <span className="relative grid h-16 w-16 place-items-center">
+                <svg aria-hidden viewBox="0 0 64 64" className={`play-rosette absolute inset-0 h-full w-full text-[rgb(201_166_94)] ${playing ? "play-rosette-on" : ""}`}>
+                  <path d={Array.from({ length: 32 }, (_, i) => { const a = (Math.PI / 16) * i - Math.PI / 2, r = i % 2 ? 27 : 31; return `${i ? "L" : "M"}${(32 + r * Math.cos(a)).toFixed(2)},${(32 + r * Math.sin(a)).toFixed(2)}`; }).join("") + "Z"} fill="none" stroke="currentColor" strokeWidth="1" strokeOpacity=".7" />
+                </svg>
+                <button
+                  className="btn-gold relative grid h-12 w-12 place-items-center rounded-full shadow-card"
+                  onClick={() => (playing ? audioRef.current?.pause() : play())}
+                  aria-label={playing ? t("pause") : t("play")}
+                >{playing ? <IconPause /> : <IconPlay />}</button>
+              </span>
+              <button className="grid h-11 w-11 place-items-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white" onClick={() => goTo(Math.min(verses.length - 1, idx + 1), false)} aria-label={t("next")}><IconNext /></button>
             </div>
-            <select value={idx} onChange={(e) => goTo(Number(e.target.value), false)} className={`${field} w-16`} aria-label={t("jump")}>
-              {verses.map((v, i) => <option key={v.verse_key} value={i}>{v.verse_number}</option>)}
+            <select value={idx} onChange={(e) => goTo(Number(e.target.value), false)} className="h-9 w-16 rounded-md border border-white/15 bg-white/5 px-2 text-sm text-white" aria-label={t("jump")}>
+              {verses.map((v, i) => <option key={v.verse_key} value={i} className="text-ink">{v.verse_number}</option>)}
             </select>
           </div>
         </div>
