@@ -30,6 +30,7 @@ const MORE = [
   { href: "/vocab", key: "vocab" },
   { href: "/khatm", key: "khatm" },
   { href: "/reciters", key: "reciters" },
+  { href: "/assistant", key: "assistant" },
   { href: "/guides", key: "guides" },
   { href: "/feedback", key: "feedback" },
   { href: "/about", key: "about" },

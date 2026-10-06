@@ -8,7 +8,7 @@ import { IconClose, IconMenu } from "./Icons";
 const GROUPS: { title: string; items: { href: string; key: string }[] }[] = [
   { title: "groupLearn", items: [{ href: "/today", key: "today" }, { href: "/arabic", key: "arabic" }, { href: "/salah", key: "salah" }, { href: "/academy", key: "courses" }, { href: "/shams", key: "shams" }, { href: "/plan", key: "plan" }, { href: "/map", key: "map" }, { href: "/tajweed", key: "tajweed" }, { href: "/vocab", key: "vocab" }] },
   { title: "groupQuran", items: [{ href: "/quran", key: "quran" }, { href: "/islam", key: "islam" }, { href: "/search", key: "search" }, { href: "/khatm", key: "khatm" }, { href: "/duas", key: "duas" }, { href: "/radio", key: "radio" }, { href: "/reciters", key: "reciters" }, { href: "/prayer", key: "prayer" }] },
-  { title: "groupMore", items: [{ href: "/guides", key: "guides" }, { href: "/feedback", key: "feedback" }, { href: "/changelog", key: "changelog" }, { href: "/about", key: "about" }, { href: "/support", key: "support" }, { href: "/profile", key: "profile" }] },
+  { title: "groupMore", items: [{ href: "/assistant", key: "assistant" }, { href: "/guides", key: "guides" }, { href: "/feedback", key: "feedback" }, { href: "/changelog", key: "changelog" }, { href: "/about", key: "about" }, { href: "/support", key: "support" }, { href: "/profile", key: "profile" }] },
 ];
 
 export default function SiteMenu() {
