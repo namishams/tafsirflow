@@ -22,7 +22,11 @@ import { ageProfile } from "@/lib/age";
 type Mode = "learn" | "continuous";
 
 const seg = (on: boolean) =>
-  `rounded-lg px-3 py-1.5 text-sm transition ${on ? "bg-accent text-white shadow-card" : "text-muted hover:text-ink"}`;
+  `shrink-0 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${on ? "bg-[rgb(var(--stage))] text-[rgb(var(--gold))] shadow-sm" : "text-muted hover:text-ink"}`;
+// small eight-pointed star used as the ornament of the learning tools
+const Star8 = ({ className = "h-3.5 w-3.5" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden><path d="M12 1.5l2.6 4.2 4.8-1.1-1.1 4.8 4.2 2.6-4.2 2.6 1.1 4.8-4.8-1.1L12 22.5l-2.6-4.2-4.8 1.1 1.1-4.8L1.5 12l4.2-2.6-1.1-4.8 4.8 1.1z" /></svg>
+);
 const field = "rounded-lg border border-line bg-surface px-2 py-1.5 text-sm text-ink";
 
 // First letter of an Arabic word (with its vowel marks) as a memory cue; a tatweel keeps the joined initial form
@@ -479,7 +483,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     </div>
   );
 
-  const primary = "rounded-full bg-accent px-5 py-2.5 font-semibold text-white shadow-card transition hover:opacity-90";
+  const showDebug = typeof window !== "undefined" && window.location.search.includes("debug");
+  const primary = "btn-gold rounded-full px-5 py-2.5 text-sm font-bold";
   const withBismillah = chapterId !== 1 && chapterId !== 9;
   const dockBtn = "grid h-11 w-11 place-items-center rounded-full text-ink transition hover:bg-accent-soft";
 
@@ -676,9 +681,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     )}
                     {active && !kids && shams === null && <SocialBar verseKey={v.verse_key} shareText={v.translation} />}
                     {active && shams === null && (
-                      <div className="mt-4 flex flex-wrap items-center gap-2 text-sm" onClick={(e) => e.stopPropagation()}>
-                        <span className="text-muted">🧠 {t("memorize")}</span>
-                        <div className="inline-flex flex-wrap rounded-xl bg-bg p-1">
+                      <div className="mt-5 rounded-xl border border-line bg-bg/60 p-3" onClick={(e) => e.stopPropagation()}>
+                        <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-gold"><Star8 />{t("memorize")}</p>
+                        <div className="-mx-1 mt-2 flex gap-1 overflow-x-auto px-1 pb-0.5">
                           <button className={seg(hide === 0)} onClick={() => setHide(0)}>{t("hideNone")}</button>
                           <button className={seg(hide === 5)} onClick={() => setHide(5)}>{t("hideSoft")}</button>
                           <button className={seg(hide === 1)} onClick={() => setHide(1)}>{t("hideHalf")}</button>
@@ -686,15 +691,15 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                           <button className={seg(hide === 2)} onClick={() => setHide(2)}>{t("hideHard")}</button>
                           <button className={seg(hide === 6)} onClick={() => setHide(6)}>{t("hideTest")}</button>
                         </div>
-                        {hide === 4 && !revealed && <button className="text-sm font-semibold text-accent hover:underline" onClick={() => setSeed((x) => x + 1)}>↻ {t("shuffle")}</button>}
+                        {hide === 4 && !revealed && <button className="mt-2 text-sm font-semibold text-accent hover:underline" onClick={() => setSeed((x) => x + 1)}>↻ {t("shuffle")}</button>}
                       </div>
                     )}
                     {active && hide === 6 && !revealed && (
-                      <div className="mt-3 rounded-xl bg-accent-soft p-3 text-sm" onClick={(e) => e.stopPropagation()}>
-                        <p className="font-medium">{t("testWord", { n: testPos + 1, total: words.length })}</p>
+                      <div className="mt-3 rounded-xl border border-gold/40 bg-gold/5 p-4 text-sm" onClick={(e) => e.stopPropagation()}>
+                        <p className="font-semibold">{t("testWord", { n: testPos + 1, total: words.length })}</p>
                         <div className="mt-2 flex flex-wrap gap-2">
                           <button className={primary} onClick={() => { const m = { ...testMarks, [testPos]: true }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); }}>✓ {t("knewWord")}</button>
-                          <button className="rounded-full border border-line bg-surface px-4 py-1.5 font-medium hover:border-accent" onClick={() => { const m = { ...testMarks, [testPos]: false }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); }}>✗ {t("missedWord")}</button>
+                          <button className="rounded-full border border-line bg-surface px-4 py-2 text-sm font-semibold hover:border-ink" onClick={() => { const m = { ...testMarks, [testPos]: false }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); }}>✗ {t("missedWord")}</button>
                         </div>
                       </div>
                     )}
@@ -702,14 +707,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                       <p className="mt-3 text-sm font-semibold" onClick={(e) => e.stopPropagation()}>{t("testScore", { ok: Object.values(testMarks).filter(Boolean).length, total: words.length, pct: Math.round((Object.values(testMarks).filter(Boolean).length / words.length) * 100) })}</p>
                     )}
                     {active && hide > 0 && hide !== 6 && !revealed && (
-                      <div className="mt-3 flex flex-wrap items-center gap-3 rounded-xl bg-accent-soft p-3 text-sm" onClick={(e) => e.stopPropagation()}>
-                        <span>{t("tapToReveal")}</span>
+                      <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gold/40 bg-gold/5 p-4 text-sm" onClick={(e) => e.stopPropagation()}>
+                        <span className="font-medium">{t("tapToReveal")}</span>
                         <button className={primary} onClick={() => setRevealed(true)}>{t("reveal")}</button>
                       </div>
                     )}
                     {active && hide > 0 && revealed && (
-                      <div className="mt-3 rounded-xl bg-accent-soft p-3 text-sm" onClick={(e) => e.stopPropagation()}>
-                        <p className="mb-2 font-medium">{t("rateQ")}</p>
+                      <div className="mt-3 rounded-xl border border-gold/40 bg-gold/5 p-4 text-sm" onClick={(e) => e.stopPropagation()}>
+                        <p className="mb-3 font-semibold">{t("rateQ")}</p>
                         {kids ? (
                           <div className="flex flex-wrap gap-2">
                             {([["again", "😕"], ["good", "🙂"], ["easy", "🤩"]] as const).map(([r, e]) => (
@@ -719,10 +724,10 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                             ))}
                           </div>
                         ) : (
-                        <div className="flex flex-wrap gap-2">
-                          <button className="rounded-full border border-line bg-surface px-4 py-1.5 font-medium hover:border-accent" onClick={() => onRate("again")}>↺ {t("again")}</button>
-                          <button className={primary} onClick={() => onRate("good")}>✓ {t("good")}</button>
-                          <button className="rounded-full border border-line bg-surface px-4 py-1.5 font-medium hover:border-accent" onClick={() => onRate("easy")}>★ {t("easy")}</button>
+                        <div className="grid grid-cols-3 gap-2">
+                          <button className="h-11 rounded-lg border border-red-300 bg-surface font-semibold text-red-700 transition hover:bg-red-50 dark:border-red-500/40 dark:text-red-300 dark:hover:bg-red-500/10" onClick={() => onRate("again")}>↺ {t("again")}</button>
+                          <button className="h-11 rounded-lg bg-accent font-bold text-white transition hover:brightness-110" onClick={() => onRate("good")}>✓ {t("good")}</button>
+                          <button className="btn-gold h-11 rounded-lg font-bold" onClick={() => onRate("easy")}>★ {t("easy")}</button>
                         </div>
                         )}
                       </div>
@@ -737,14 +742,15 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                       </div>
                     )}
                     {active && waiting && shams === null && (
-                      <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl bg-accent-soft p-3 text-sm">
-                        <span>{t("learnHint")}</span>
+                      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-line bg-bg/60 p-4 text-sm">
+                        <span className="font-medium">{t("learnHint")}</span>
                         <button className={primary} onClick={(e) => { e.stopPropagation(); advance(); }}>{t("continue")}</button>
                       </div>
                     )}
                     {active && !kids && (
-                      <button className="mt-4 rounded-full border border-accent/30 px-4 py-1.5 text-sm font-medium text-accent lg:hidden" onClick={(e) => { e.stopPropagation(); setSheetOpen(true); }}>
-                        📖 {t("tafsir")}
+                      <button className="mt-4 inline-flex h-10 items-center gap-2 rounded-full border border-line bg-surface px-4 text-sm font-semibold text-ink transition hover:border-gold lg:hidden" onClick={(e) => { e.stopPropagation(); setSheetOpen(true); }}>
+                        <svg viewBox="0 0 24 24" className="h-4 w-4 text-gold" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5zM12 6.5v13" /></svg>
+                        {t("tafsir")}
                       </button>
                     )}
                   </article>
@@ -753,7 +759,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             })}
           </ol>
           )}
-          <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>
+          {showDebug && <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>}
         </main>
 
         {!kids && <aside className="sticky top-20 my-5 hidden max-h-[calc(100vh-6rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">

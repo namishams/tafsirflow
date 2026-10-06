@@ -300,7 +300,8 @@ export function RadioProvider({ children }: { children: React.ReactNode }) {
   const path = usePathname();
   const v = useSyncExternalStore(vp.subscribe, vp.getSnapshot, () => vp.serverSnapshot);
   const verseOn = !!v.session && !v.attached;
-  const radioOn = r.started && !path.startsWith("/radio");
+  // one player at a time: on a surah page the page's own verse player is in charge, so a paused radio stays out of sight
+  const radioOn = r.started && !path.startsWith("/radio") && (r.playing || !path.startsWith("/surah"));
   // which voice the mini bar shows: whatever is playing, otherwise the radio, otherwise the verse session
   const kind: "verse" | "radio" | null = verseOn && v.playing ? "verse" : radioOn && r.playing ? "radio" : radioOn ? "radio" : verseOn ? "verse" : null;
   useEffect(() => {

@@ -53,7 +53,7 @@ export default function SocialBar({ verseKey, shareUrl, shareText, trackView = t
     } catch { /* cancelled */ }
   };
 
-  const btn = "inline-flex h-10 items-center gap-1.5 rounded-md border border-line px-3 text-[13px] font-semibold text-muted transition hover:border-ink hover:text-ink";
+  const btn = "inline-flex h-9 items-center gap-1.5 rounded-full px-3 text-[13px] font-semibold text-muted transition hover:bg-bg hover:text-ink";
   return (
     <div className="mt-4" onClick={(e) => e.stopPropagation()}>
       <div className="flex flex-wrap items-center gap-2">
