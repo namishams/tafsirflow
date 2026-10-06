@@ -343,6 +343,10 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           <nav aria-label={t("home2.fLegal")}>
             <p className="eyebrow">{t("home2.fLegal")}</p>
             <ul className="mt-3 grid gap-2 text-sm">
+              <li><Link href="/about" className="text-muted hover:text-ink">{t("nav.about")}</Link></li>
+              <li><Link href="/guides" className="text-muted hover:text-ink">{t("nav.blog")}</Link></li>
+              <li><Link href="/feedback" className="text-muted hover:text-ink">{t("nav.feedback")}</Link></li>
+              <li><Link href="/changelog" className="text-muted hover:text-ink">{t("nav.changelog")}</Link></li>
               <li><Link href="/support" className="text-muted hover:text-ink">{t("support.nav")}</Link></li>
               <li><Link href="/legal/privacy" className="text-muted hover:text-ink">{t("home2.privacy")}</Link></li>
               <li><Link href="/legal/terms" className="text-muted hover:text-ink">{t("home2.terms")}</Link></li>

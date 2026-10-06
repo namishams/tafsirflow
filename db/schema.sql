@@ -157,5 +157,24 @@ CREATE TABLE IF NOT EXISTS comment_reports (
   PRIMARY KEY (comment_id, user_id)
 );
 
+-- feedback board: feature and tafsir requests with votes (posts are reviewed before they appear)
+CREATE TABLE IF NOT EXISTS feedback_posts (
+  id         bigserial PRIMARY KEY,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  category   text NOT NULL CHECK (category IN ('feature','tafsir','translation','reciter','bug','content')),
+  title      text NOT NULL,
+  body       text NOT NULL DEFAULT '',
+  status     text NOT NULL DEFAULT 'review' CHECK (status IN ('review','planned','progress','done','declined')),
+  approved   boolean NOT NULL DEFAULT false,
+  flagged    text,
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS feedback_list ON feedback_posts(approved, category, created_at);
+CREATE TABLE IF NOT EXISTS feedback_votes (
+  post_id bigint NOT NULL REFERENCES feedback_posts(id) ON DELETE CASCADE,
+  user_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  PRIMARY KEY (post_id, user_id)
+);
+
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

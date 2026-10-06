@@ -41,7 +41,7 @@ export default function AdminPanel() {
   const locale = useLocale();
   const t = T[locale === "de" ? "de" : "en"];
   const [me, setMe] = useState<Me | null | undefined>(undefined);
-  const [tab, setTab] = useState<"overview" | "users" | "tafsir" | "moderation" | "settings">("overview");
+  const [tab, setTab] = useState<"overview" | "users" | "tafsir" | "moderation" | "feedback" | "settings">("overview");
 
   useEffect(() => { fetchMe().then((r) => setMe(r.user)); }, []);
 
@@ -54,7 +54,7 @@ export default function AdminPanel() {
       </main>
     );
 
-  const tabs = [["overview", t.overview], ["users", t.users], ["tafsir", t.tafsir], ["moderation", t.moderation], ["settings", t.settings]] as const;
+  const tabs = [["overview", t.overview], ["users", t.users], ["tafsir", t.tafsir], ["moderation", t.moderation], ["feedback", locale === "de" ? "Wünsche" : "Requests"], ["settings", t.settings]] as const;
   return (
     <main className="mx-auto max-w-5xl px-4 pb-16 pt-4">
       <header className="mb-6 flex items-center justify-between">
@@ -70,6 +70,7 @@ export default function AdminPanel() {
       {tab === "users" && <Users t={t} meId={me.id} />}
       {tab === "tafsir" && <TafsirEditor t={t} />}
       {tab === "moderation" && <Moderation de={locale === "de"} />}
+      {tab === "feedback" && <FeedbackAdmin />}
       {tab === "settings" && <SettingsTab t={t} />}
     </main>
   );
@@ -293,5 +294,32 @@ function TafsirEditor({ t }: { t: TT }) {
         ))}
       </ul>
     </div>
+  );
+}
+
+type Fb = { id: number; category: string; title: string; body: string; status: string; approved: boolean; email: string; votes: number; flagged: string | null; created_at: string };
+function FeedbackAdmin() {
+  const [list, setList] = useState<Fb[]>([]);
+  const load = useCallback(() => api<{ posts: Fb[] }>("/api/admin/feedback").then((d) => setList(d.posts)).catch(() => undefined), []);
+  useEffect(() => { load(); }, [load]);
+  const op = async (body: Record<string, unknown>) => { await api("/api/admin/feedback", "POST", body); load(); };
+  return (
+    <ul className="grid gap-3">
+      {list.length === 0 && <li className="text-sm text-muted">–</li>}
+      {list.map((p) => (
+        <li key={p.id} className={card}>
+          <div className="flex flex-wrap gap-3 text-xs text-muted"><b className="text-ink">{p.category}</b><span>{p.email}</span><span>▲ {p.votes}</span><span>{new Date(p.created_at).toLocaleString()}</span>{p.flagged && <span className="font-semibold text-gold">⚑ {p.flagged}</span>}{!p.approved && <span className="font-semibold text-red-600">nicht freigegeben</span>}</div>
+          <p className="mt-2 font-semibold">{p.title}</p>
+          {p.body && <p className="mt-1 whitespace-pre-wrap text-sm text-muted">{p.body}</p>}
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <button className={p.approved ? btn : btnP} onClick={() => op({ id: p.id, approved: !p.approved })}>{p.approved ? "Verbergen" : "Freigeben"}</button>
+            <select value={p.status} onChange={(e) => op({ id: p.id, status: e.target.value })} className={field + " !w-40"}>
+              {["review", "planned", "progress", "done", "declined"].map((s) => <option key={s} value={s}>{s}</option>)}
+            </select>
+            <button className={btn} onClick={() => op({ id: p.id, delete: true })}>Löschen</button>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 }

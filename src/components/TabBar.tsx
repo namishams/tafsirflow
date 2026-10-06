@@ -20,6 +20,9 @@ const LEARN = [
   { href: "/vocab", key: "vocab" },
   { href: "/khatm", key: "khatm" },
   { href: "/guides", key: "guides" },
+  { href: "/feedback", key: "feedback" },
+  { href: "/changelog", key: "changelog" },
+  { href: "/about", key: "about" },
 ] as const;
 
 // Bottom navigation for phones and tablets, plus the "More" sheet (same pattern as the Courier Portal)
