@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { IconBook, IconClock, IconHands, IconRadio, IconCap, IconClose, IconGrid, IconKid, IconLock, IconLogout, IconMenu, IconRepeat, IconSearch, IconShield, IconUser } from "./Icons";
+import { IconBook, IconClock, IconHands, IconRadio, IconCap, IconClose, IconGrid, IconKid, IconLogout, IconMenu, IconRepeat, IconSearch, IconShield, IconUser } from "./Icons";
 import { dueVerses } from "@/lib/learning";
 import { fetchMe, stopSync, type Me } from "@/lib/sync";
 
@@ -12,7 +12,14 @@ const TABS = [
   { href: "/search", key: "search", Icon: IconSearch },
 ] as const;
 
-const SOON = ["courses", "tajweed", "khatm", "vocab"] as const;
+const LEARN = [
+  { href: "/academy", key: "courses" },
+  { href: "/shams", key: "shams" },
+  { href: "/tajweed", key: "tajweed" },
+  { href: "/vocab", key: "vocab" },
+  { href: "/khatm", key: "khatm" },
+  { href: "/guides", key: "guides" },
+] as const;
 
 // Bottom navigation for phones and tablets, plus the "More" sheet (same pattern as the Courier Portal)
 export default function TabBar() {
@@ -85,11 +92,7 @@ export default function TabBar() {
               <Link href="/account" className={cell}><IconUser /><span>{t("account")}</span></Link>
               <button onClick={() => { document.querySelector<HTMLButtonElement>("button[aria-pressed]")?.click(); setMore(false); }} className={cell}><IconKid /><span>{t("kids")}</span></button>
               {me?.role === "admin" && <Link href="/admin" className={cell}><IconShield /><span>{t("admin")}</span></Link>}
-              {SOON.map((k) => (
-                <div key={k} className={`${cell} cursor-not-allowed bg-bg text-muted`} aria-disabled="true">
-                  <IconLock /><span className="flex-1">{t(k)}</span><span className="text-[11px] font-medium">{t("soon")}</span>
-                </div>
-              ))}
+              {LEARN.map((l) => <Link key={l.href} href={l.href} className={cell}><IconCap /><span>{t(l.key)}</span></Link>)}
             </div>
             {me && (
               <div className="mx-3.5 mb-3.5 rounded-md border border-line bg-surface p-3.5">

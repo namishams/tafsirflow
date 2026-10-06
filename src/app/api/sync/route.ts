@@ -4,7 +4,7 @@ import { currentUser } from "@/lib/auth";
 import { json, sameOrigin } from "@/lib/http";
 
 export const dynamic = "force-dynamic";
-const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes"]);
+const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm"]);
 
 export async function GET() {
   const u = await currentUser();

@@ -9,6 +9,8 @@ import Logo from "./Logo";
 export const NAV = [
   { href: "/today", key: "today" },
   { href: "/quran", key: "quran" },
+  { href: "/academy", key: "courses" },
+  { href: "/shams", key: "shams" },
   { href: "/duas", key: "duas" },
   { href: "/radio", key: "radio" },
   { href: "/prayer", key: "prayer" },
