@@ -13,7 +13,13 @@
     "noResults": "No surah found.",
     "feature1": "Verse-by-verse audio",
     "feature2": "Word highlighting",
-    "feature3": "Tafsir for every verse"
+    "feature3": "Tafsir for every verse",
+    "review": "Review",
+    "reviewDue": "{n} verses due today",
+    "reviewStart": "Start review",
+    "reviewNone": "Nothing due – rate verses with “Memorize” to build your plan.",
+    "streak": "{n}-day streak",
+    "todayCount": "Today: {n} verses practised"
   },
   "player": {
     "play": "Play",
@@ -48,7 +54,19 @@
     "settings": "Settings",
     "verse": "Verse",
     "of": "of",
-    "transliteration": "Transliteration"
+    "transliteration": "Transliteration",
+    "memorize": "Memorize",
+    "hideNone": "Show all",
+    "hideHalf": "Hide half",
+    "hideAll": "Hide all",
+    "reveal": "Show verse",
+    "tapToReveal": "Recite from memory, then reveal",
+    "rateQ": "How well did you know it?",
+    "again": "Again",
+    "good": "Good",
+    "easy": "Easy",
+    "saved": "Saved – next review in {days} days",
+    "savedToday": "Saved – you will see it again today"
   },
   "language": {
     "label": "Language"

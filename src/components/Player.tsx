@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { localeMeta } from "@/i18n/locales";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Logo from "./Logo";
@@ -11,6 +11,7 @@ import {
   type Chapter, type Resource, type TafsirResult, type Verse,
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
+import { dueVerses, rate, type Rating } from "@/lib/learning";
 
 type Mode = "learn" | "continuous";
 
@@ -18,7 +19,8 @@ const seg = (on: boolean) =>
   `rounded-lg px-3 py-1.5 text-sm transition ${on ? "bg-accent text-white shadow-card" : "text-muted hover:text-ink"}`;
 const field = "rounded-lg border border-line bg-surface px-2 py-1.5 text-sm text-ink";
 
-export default function Player({ chapterId, startVerse }: { chapterId: number; startVerse: number }) {
+export default function Player({ chapterId, startVerse, startHide = 0, reviewMode = false }: { chapterId: number; startVerse: number; startHide?: number; reviewMode?: boolean }) {
+  const router = useRouter();
   const t = useTranslations("player");
   const th = useTranslations("home");
   const locale = useLocale();
@@ -44,6 +46,9 @@ export default function Player({ chapterId, startVerse }: { chapterId: number; s
   const [useRemote, setUseRemote] = useState(false); // local file failed -> Quran.com audio
   const [timingsOk, setTimingsOk] = useState(true);
   const [dbg, setDbg] = useState("");
+  const [hide, setHide] = useState(startHide); // 0 show all, 1 hide every 2nd word, 2 hide all
+  const [revealed, setRevealed] = useState(false);
+  const [note, setNote] = useState("");
 
   const [mode, setMode] = useState<Mode>("continuous");
   const [repeat, setRepeat] = useState(1);
@@ -102,6 +107,12 @@ export default function Player({ chapterId, startVerse }: { chapterId: number; s
   const verse = verses[idx];
 
   useEffect(() => { setUseRemote(false); setTimingsOk(true); setDbg(""); }, [verse, reciterId]);
+  useEffect(() => { setRevealed(false); }, [idx, hide]);
+  useEffect(() => {
+    if (!note) return;
+    const id = setTimeout(() => setNote(""), 2600);
+    return () => clearTimeout(id);
+  }, [note]);
 
   // Remember where the learner stopped
   useEffect(() => {
@@ -181,6 +192,22 @@ export default function Player({ chapterId, startVerse }: { chapterId: number; s
   };
 
   const hasTimings = useMemo(() => !!verse && verse.segments.length > 0 && (useRemote || timingsOk), [verse, useRemote, timingsOk]);
+
+  const onRate = (r: Rating) => {
+    if (!verse) return;
+    const days = rate(verse.verse_key, r);
+    setNote(days ? t("saved", { days }) : t("savedToday"));
+    if (reviewMode) {
+      const next = dueVerses().find((k) => k !== verse.verse_key);
+      if (next) {
+        const [c, vn] = next.split(":").map(Number);
+        if (c === chapterId) goTo(vn - 1, false);
+        else router.push(`/surah/${c}?v=${vn}&m=2&r=1`);
+        return;
+      }
+    }
+    if (idx < verses.length - 1) goTo(idx + 1, false);
+  };
 
   const toggleMark = (key: string) => {
     const next = marks.includes(key) ? marks.filter((k) => k !== key) : [...marks, key];
@@ -318,25 +345,54 @@ export default function Player({ chapterId, startVerse }: { chapterId: number; s
                     </div>
                     {active ? (
                       <p className="flex flex-wrap justify-start gap-x-3 gap-y-2 font-arabic text-[2rem] leading-[2.3] sm:text-4xl" dir="rtl">
-                        {words.map((w) => (
+                        {words.map((w, wi) => {
+                          const covered = hide > 0 && !revealed && (hide === 2 || wi % 2 === 1);
+                          return (
                           <span key={w.position} className="text-center">
-                            <span className={`block rounded-lg px-1.5 transition ${hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{w.text_uthmani}</span>
-                            {showWords && (
+                            <span className={`block rounded-lg px-1.5 transition ${covered ? "select-none bg-line text-transparent blur-sm" : ""} ${!covered && hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{w.text_uthmani}</span>
+                            {showWords && !covered && (
                               <span className="block font-sans text-[11px] leading-tight text-muted" dir="ltr">
                                 {showTranslit && <span className="block italic text-gold">{w.transliteration?.text}</span>}
                                 {w.translation?.text}
                               </span>
                             )}
                           </span>
-                        ))}
+                          );
+                        })}
                       </p>
                     ) : (
                       <p className="font-arabic text-[1.7rem] leading-[2.1]" dir="rtl">{v.text_uthmani}</p>
                     )}
-                    {showTranslit && v.transliteration && (
+                    {showTranslit && v.transliteration && !(active && hide > 0 && !revealed) && (
                       <p className="mt-3 italic leading-relaxed text-gold" dir="ltr" lang="en">{v.transliteration}</p>
                     )}
                     {showTranslation && <p className="mt-2 leading-relaxed text-muted" dir={meta.dir}>{v.translation}</p>}
+                    {active && (
+                      <div className="mt-4 flex flex-wrap items-center gap-2 text-sm" onClick={(e) => e.stopPropagation()}>
+                        <span className="text-muted">🧠 {t("memorize")}</span>
+                        <div className="inline-flex rounded-xl bg-bg p-1">
+                          <button className={seg(hide === 0)} onClick={() => setHide(0)}>{t("hideNone")}</button>
+                          <button className={seg(hide === 1)} onClick={() => setHide(1)}>{t("hideHalf")}</button>
+                          <button className={seg(hide === 2)} onClick={() => setHide(2)}>{t("hideAll")}</button>
+                        </div>
+                      </div>
+                    )}
+                    {active && hide > 0 && !revealed && (
+                      <div className="mt-3 flex flex-wrap items-center gap-3 rounded-xl bg-accent-soft p-3 text-sm" onClick={(e) => e.stopPropagation()}>
+                        <span>{t("tapToReveal")}</span>
+                        <button className={primary} onClick={() => setRevealed(true)}>{t("reveal")}</button>
+                      </div>
+                    )}
+                    {active && hide > 0 && revealed && (
+                      <div className="mt-3 rounded-xl bg-accent-soft p-3 text-sm" onClick={(e) => e.stopPropagation()}>
+                        <p className="mb-2 font-medium">{t("rateQ")}</p>
+                        <div className="flex flex-wrap gap-2">
+                          <button className="rounded-full border border-line bg-surface px-4 py-1.5 font-medium hover:border-accent" onClick={() => onRate("again")}>↺ {t("again")}</button>
+                          <button className={primary} onClick={() => onRate("good")}>✓ {t("good")}</button>
+                          <button className="rounded-full border border-line bg-surface px-4 py-1.5 font-medium hover:border-accent" onClick={() => onRate("easy")}>★ {t("easy")}</button>
+                        </div>
+                      </div>
+                    )}
                     {active && waiting && (
                       <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl bg-accent-soft p-3 text-sm">
                         <span>{t("learnHint")}</span>
@@ -376,6 +432,12 @@ export default function Player({ chapterId, startVerse }: { chapterId: number; s
         onPlay={() => setPlaying(true)}
         preload="auto"
       />
+
+      {note && (
+        <div role="status" className="fixed inset-x-0 bottom-28 z-50 flex justify-center px-4">
+          <p className="rounded-full bg-ink px-4 py-2 text-sm text-bg shadow-card">{note}</p>
+        </div>
+      )}
 
       {/* Floating player dock */}
       <div className="fixed inset-x-0 bottom-3 z-40 px-3">

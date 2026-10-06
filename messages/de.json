@@ -13,7 +13,13 @@
     "noResults": "Keine Sure gefunden.",
     "feature1": "Audio Vers für Vers",
     "feature2": "Wort-Hervorhebung",
-    "feature3": "Tafsir zu jedem Vers"
+    "feature3": "Tafsir zu jedem Vers",
+    "review": "Wiederholen",
+    "reviewDue": "{n} Verse heute fällig",
+    "reviewStart": "Wiederholung starten",
+    "reviewNone": "Nichts fällig – bewerte Verse mit „Auswendig lernen“, dann entsteht dein Plan.",
+    "streak": "{n} Tage in Folge",
+    "todayCount": "Heute: {n} Verse geübt"
   },
   "player": {
     "play": "Abspielen",
@@ -48,7 +54,19 @@
     "settings": "Einstellungen",
     "verse": "Vers",
     "of": "von",
-    "transliteration": "Lautschrift"
+    "transliteration": "Lautschrift",
+    "memorize": "Auswendig lernen",
+    "hideNone": "Alles zeigen",
+    "hideHalf": "Hälfte verdecken",
+    "hideAll": "Alles verdecken",
+    "reveal": "Vers aufdecken",
+    "tapToReveal": "Aus dem Gedächtnis sprechen, dann aufdecken",
+    "rateQ": "Wie gut konntest du ihn?",
+    "again": "Nochmal",
+    "good": "Gut",
+    "easy": "Leicht",
+    "saved": "Gespeichert – nächste Wiederholung in {days} Tagen",
+    "savedToday": "Gespeichert – kommt heute nochmal dran"
   },
   "language": {
     "label": "Sprache"

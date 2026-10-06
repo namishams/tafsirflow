@@ -13,7 +13,13 @@
     "noResults": "Surah tidak ditemukan.",
     "feature1": "Audio ayat demi ayat",
     "feature2": "Sorotan kata",
-    "feature3": "Tafsir untuk setiap ayat"
+    "feature3": "Tafsir untuk setiap ayat",
+    "review": "Ulasan",
+    "reviewDue": "{n} ayat jatuh tempo hari ini",
+    "reviewStart": "Mulai ulasan",
+    "reviewNone": "Tidak ada yang jatuh tempo – nilai ayat lewat “Hafalan”.",
+    "streak": "{n} hari berturut-turut",
+    "todayCount": "Hari ini: {n} ayat dilatih"
   },
   "player": {
     "play": "Putar",
@@ -48,7 +54,19 @@
     "settings": "Pengaturan",
     "verse": "Ayat",
     "of": "dari",
-    "transliteration": "Transliterasi"
+    "transliteration": "Transliterasi",
+    "memorize": "Hafalan",
+    "hideNone": "Tampilkan semua",
+    "hideHalf": "Sembunyikan separuh",
+    "hideAll": "Sembunyikan semua",
+    "reveal": "Tampilkan ayat",
+    "tapToReveal": "Bacakan dari hafalan, lalu tampilkan",
+    "rateQ": "Seberapa lancar?",
+    "again": "Ulangi",
+    "good": "Baik",
+    "easy": "Mudah",
+    "saved": "Tersimpan – ulasan berikutnya {days} hari lagi",
+    "savedToday": "Tersimpan – muncul lagi hari ini"
   },
   "language": {
     "label": "Bahasa"

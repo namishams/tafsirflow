@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import type { Chapter } from "@/lib/quran";
 import { readJSON } from "@/lib/storage";
+import { dueVerses, stats } from "@/lib/learning";
 
 type Last = { chapter: number; verse: number };
 
@@ -12,10 +13,14 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
   const [q, setQ] = useState("");
   const [last, setLast] = useState<Last | null>(null);
   const [marks, setMarks] = useState<string[]>([]);
+  const [due, setDue] = useState<string[]>([]);
+  const [st, setSt] = useState({ streak: 0, todayCount: 0 });
 
   useEffect(() => {
     setLast(readJSON<Last | null>("tf:last", null));
     setMarks(readJSON<string[]>("tf:bookmarks", []));
+    setDue(dueVerses());
+    setSt(stats());
   }, []);
 
   const list = useMemo(() => {
@@ -28,6 +33,23 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
 
   return (
     <>
+      {(st.streak > 0 || due.length > 0) && (
+        <section className="mb-5 rounded-2xl border border-line bg-surface p-4 shadow-card">
+          <div className="mb-2 flex flex-wrap items-center gap-2 text-sm">
+            {st.streak > 0 && <span className="rounded-full bg-accent-soft px-3 py-1 font-semibold text-accent">🔥 {t("streak", { n: st.streak })}</span>}
+            {st.todayCount > 0 && <span className="rounded-full border border-line px-3 py-1 text-muted">{t("todayCount", { n: st.todayCount })}</span>}
+          </div>
+          {due.length > 0 ? (
+            <Link href={`/surah/${due[0].split(":")[0]}?v=${due[0].split(":")[1]}&m=2&r=1`} className="flex items-center justify-between rounded-xl bg-accent px-4 py-3 text-white">
+              <span><span className="block text-xs font-semibold uppercase tracking-wide opacity-80">{t("review")}</span><span className="font-display text-lg font-semibold">{t("reviewDue", { n: due.length })}</span></span>
+              <span className="font-semibold">{t("reviewStart")} →</span>
+            </Link>
+          ) : (
+            <p className="text-sm text-muted">{t("reviewNone")}</p>
+          )}
+        </section>
+      )}
+
       {lastChapter && last && (
         <Link href={`/surah/${last.chapter}?v=${last.verse}`} className="mb-5 flex items-center justify-between rounded-2xl border border-accent/30 bg-accent-soft p-4 shadow-card">
           <span>
