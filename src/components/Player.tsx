@@ -114,6 +114,11 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     });
   }, []);
   useEffect(() => { if (audioRef.current) audioRef.current.volume = vol; }, [vol]);
+  useEffect(() => {
+    const off = () => audioRef.current?.pause();
+    window.addEventListener("tf-radio-start", off);
+    return () => window.removeEventListener("tf-radio-start", off);
+  }, []);
   useEffect(() => { setCur(0); setDur(0); }, [idx]);
 
   // Kids mode: word-by-word with transliteration on by default, tafsir out of the way
@@ -571,7 +576,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
         onTimeUpdate={() => { onTime(); setCur(audioRef.current?.currentTime ?? 0); }}
         onEnded={() => { setDbg("ended"); onEnded(); }}
         onPause={() => setPlaying(false)}
-        onPlay={() => setPlaying(true)}
+        onPlay={() => { setPlaying(true); window.dispatchEvent(new Event("tf-audio-start")); }}
         preload="auto"
       />
 

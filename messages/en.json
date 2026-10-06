@@ -465,7 +465,13 @@
     "p_asr": "Asr",
     "p_maghrib": "Maghrib",
     "p_isha": "Isha",
-    "p_sunrise": "Sunrise"
+    "p_sunrise": "Sunrise",
+    "station": "Station",
+    "volume": "Volume",
+    "upNext": "Up next",
+    "recent": "Recently played",
+    "openRadio": "Open radio",
+    "stop": "Stop radio"
   },
   "duas": {
     "title": "Duas from the Quran",

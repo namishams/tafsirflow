@@ -13,6 +13,7 @@ import "@fontsource-variable/vazirmatn";
 import "@fontsource-variable/noto-sans-sc";
 import "@fontsource/amiri/400.css";
 import "@fontsource/amiri/700.css";
+import { RadioProvider } from "@/components/RadioProvider";
 import "../globals.css";
 
 export const metadata: Metadata = { title: "Quran Masterclass", description: "Quran verse by verse with tafsir" };
@@ -33,7 +34,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <script dangerouslySetInnerHTML={{ __html: "try{if(localStorage.getItem('tf:kids')==='1')document.documentElement.dataset.kids='1'}catch(e){}" }} />
       </head>
       <body className="min-h-screen">
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}><RadioProvider>{children}</RadioProvider></NextIntlClientProvider>
       </body>
     </html>
   );

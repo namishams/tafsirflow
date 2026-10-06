@@ -465,7 +465,13 @@
     "p_asr": "Asr",
     "p_maghrib": "Maghrib",
     "p_isha": "Ischa",
-    "p_sunrise": "Sonnenaufgang"
+    "p_sunrise": "Sonnenaufgang",
+    "station": "Sender",
+    "volume": "Lautstärke",
+    "upNext": "Gleich folgt",
+    "recent": "Zuletzt gespielt",
+    "openRadio": "Radio öffnen",
+    "stop": "Radio beenden"
   },
   "duas": {
     "title": "Duas aus dem Koran",

@@ -91,3 +91,13 @@ html[lang="ar"] .eyebrow, html[lang="fa"] .eyebrow, html[lang="ur"] .eyebrow, ht
 
 /* long words (German, Turkish …) must wrap instead of widening the page */
 h1, h2, h3, p, li, summary { overflow-wrap: anywhere; hyphens: auto; }
+
+/* radio equalizer bars */
+.eq { display: inline-flex; align-items: flex-end; gap: 3px; height: 18px; }
+.eq i { display: block; width: 3px; height: 4px; border-radius: 1px; background: currentColor; }
+.eq-on i { animation: eq 0.9s ease-in-out infinite; }
+.eq-on i:nth-child(2) { animation-delay: -0.3s; }
+.eq-on i:nth-child(3) { animation-delay: -0.6s; }
+.eq-on i:nth-child(4) { animation-delay: -0.15s; }
+@keyframes eq { 0%, 100% { height: 4px; } 50% { height: 18px; } }
+@media (prefers-reduced-motion: reduce) { .eq-on i { animation: none; height: 10px; } }
