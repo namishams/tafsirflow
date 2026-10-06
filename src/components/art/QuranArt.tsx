@@ -169,3 +169,22 @@ export function QuranOrb({ on = false, children, className = "" }: { on?: boolea
     </div>
   );
 }
+
+const RING_STAR = octagram(30, 60, 60);
+const TICKS = Array.from({ length: 32 }, (_, i) => `M${pt(i % 4 ? 49 : 47, i * 11.25 - 90, 60, 60)}L${pt(51, i * 11.25 - 90, 60, 60)}`).join("");
+// Large gold progress ring around an eight-pointed star (khatm and learning plans)
+export function QuranRing({ pct, children, className = "" }: { pct: number; children?: React.ReactNode; className?: string }) {
+  const p = Math.max(0, Math.min(100, pct));
+  return (
+    <div className={`q-ring relative grid shrink-0 place-items-center ${className}`}>
+      <svg aria-hidden viewBox="0 0 120 120" className="absolute inset-0 h-full w-full overflow-visible">
+        <defs><linearGradient id="qr-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#e9cf99" /><stop offset=".5" stopColor="#c9a65e" /><stop offset="1" stopColor="#a8803a" /></linearGradient></defs>
+        <path d={RING_STAR} className="q-ring-star" />
+        <path d={TICKS} className="q-ring-ticks" />
+        <circle cx="60" cy="60" r="56" className="q-ring-track" />
+        {p > 0 && <circle cx="60" cy="60" r="56" pathLength={100} strokeDasharray={`${Math.max(p, 1.5)} 100`} transform="rotate(-90 60 60)" className="q-ring-arc" />}
+      </svg>
+      <div className="relative flex flex-col items-center leading-none">{children}</div>
+    </div>
+  );
+}
