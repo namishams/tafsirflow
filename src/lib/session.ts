@@ -1,6 +1,7 @@
 import { readJSON, writeJSON } from "./storage";
 import { dayPlan, NOT_COUNTED } from "./coach";
 import { readSrs, today } from "./learning";
+import { award } from "./points";
 import { VERSE_COUNTS } from "./counts";
 
 // Today's guided session: one button runs the whole day – repairs, reviews (weakest first), then new verses with the
@@ -56,5 +57,6 @@ export function completeItem(key: string, ok: boolean): SessionItem | null {
 function finish(s: Session) {
   writeJSON(DONE, { day: s.day, done: s.items.length - s.requeued.length, fresh: s.items.filter((x) => x.kind === "new").length, again: s.again, minutes: Math.max(1, Math.round((Date.now() - s.startedAt) / 60000)) } satisfies SessionSummary);
   writeJSON(KEY, null);
+  if (s.i >= s.items.length) award("session");
 }
 export const endSession = () => { const s = readJSON<Session | null>(KEY, null); if (s) finish(s); };

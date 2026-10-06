@@ -1,6 +1,7 @@
 import { VERSE_COUNTS } from "./counts";
 import { readJSON, writeJSON } from "./storage";
 import { today } from "./learning";
+import { award } from "./points";
 
 // Learning path through all 114 surahs: short surahs first (as reciters teach children), then the beloved
 // longer surahs, then the rest in mushaf order. Every surah is split into lessons of up to five verses.
@@ -43,6 +44,7 @@ export const questionsFor = (lvl: number) => Math.min(14, 6 + lvl);
 
 export function saveResult(lesson: string, score: number, xp: number): Progress {
   const p = readProgress();
+  if (score >= PASS && (p.done[lesson] ?? 0) < PASS) award("lesson");
   p.done[lesson] = Math.max(p.done[lesson] ?? 0, score);
   p.xp += xp;
   p.days[today()] = (p.days[today()] ?? 0) + xp;

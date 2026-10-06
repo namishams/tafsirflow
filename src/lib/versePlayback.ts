@@ -1,4 +1,5 @@
 import { writeJSON } from "./storage";
+import { trackListen, trackVerseDone } from "./listen";
 
 // One audio element for verse-by-verse playback that outlives the surah page (SoundCloud-style).
 // While the Player component is mounted it receives the media events; when the visitor leaves the page the
@@ -75,12 +76,28 @@ function headlessEnded() {
 
 const EVENTS = ["loadedmetadata", "canplay", "error", "waiting", "stalled", "timeupdate", "ended", "pause", "play"] as const;
 
+// listening statistics: only time that really played counts (jumps and seeks are left out)
+let lastT = -1;
+function countListening(ev: string) {
+  const a = audio;
+  if (!a) return;
+  if (ev === "timeupdate" && !a.paused && session) {
+    const d = a.currentTime - lastT;
+    if (lastT >= 0 && d > 0 && d < 2) trackListen(d / (a.playbackRate || 1), session.chapterId, session.reciterName);
+    lastT = a.currentTime;
+  } else if (ev === "play" || ev === "loadedmetadata") lastT = a.currentTime;
+  else if (ev === "pause") lastT = -1;
+  else if (ev === "ended" && session) { trackVerseDone(session.chapterId, session.reciterName); lastT = -1; }
+}
+
 export function getAudio(): HTMLAudioElement {
   if (audio) return audio;
   audio = new Audio();
   audio.preload = "auto";
+  audio.addEventListener("seeking", () => { lastT = -1; });
   for (const ev of EVENTS) {
     audio.addEventListener(ev, (e) => {
+      countListening(ev);
       if (ev === "play") window.dispatchEvent(new Event("tf-audio-start"));
       if (attached) attached.current[ev]?.(e);
       else if (ev === "ended") headlessEnded();

@@ -1,4 +1,5 @@
 import { readJSON, writeJSON } from "./storage";
+import { award } from "./points";
 
 // Spaced repetition with FSRS (Free Spaced Repetition Scheduler, the memory model behind modern Anki): every verse has a
 // stability S (days until recall drops to 90 %) and a difficulty D (1–10). Each rating updates both, and the next review
@@ -58,6 +59,8 @@ export function rate(verseKey: string, rating: Rating): number {
   srs[verseKey] = { stage: stageOf(m.s), due: today() + gap, at: Date.now(), ease, lapses: (prev?.lapses ?? 0) + (rating === "again" ? 1 : 0), last: today(), n: (prev?.n ?? 0) + 1, first: prev?.first ?? today(), s: m.s, d: m.d };
   writeJSON(SRS_KEY, srs);
   logDay();
+  award("review");
+  if (!prev) award("new");
   return gap;
 }
 

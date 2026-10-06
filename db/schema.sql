@@ -176,5 +176,32 @@ CREATE TABLE IF NOT EXISTS feedback_votes (
   PRIMARY KEY (post_id, user_id)
 );
 
+
+-- listening statistics (anonymous totals: no user id, only surah, reciter, seconds and verses per day)
+CREATE TABLE IF NOT EXISTS listen_stats (
+  day     int    NOT NULL,                         -- days since 1970-01-01 (UTC)
+  surah   int    NOT NULL,
+  reciter text   NOT NULL DEFAULT '',
+  seconds bigint NOT NULL DEFAULT 0,
+  verses  bigint NOT NULL DEFAULT 0,
+  PRIMARY KEY (day, surah, reciter)
+);
+CREATE TABLE IF NOT EXISTS listen_people (         -- one row per visitor and day (hashed), for "listeners today"
+  day     int  NOT NULL,
+  subject text NOT NULL,
+  PRIMARY KEY (day, subject)
+);
+
+-- ranking: points per member and day, taken from the synced learning record (capped per day)
+CREATE TABLE IF NOT EXISTS user_points (
+  user_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  day     int    NOT NULL,
+  points  int    NOT NULL DEFAULT 0,
+  PRIMARY KEY (user_id, day)
+);
+CREATE INDEX IF NOT EXISTS user_points_day ON user_points(day);
+ALTER TABLE users ADD COLUMN IF NOT EXISTS rank_public boolean NOT NULL DEFAULT false;  -- show the name in the ranking (opt-in)
+
+-- keep last: the app user needs rights on every table above
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

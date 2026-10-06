@@ -65,7 +65,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         {/* 1 Hero – cinematic, with an animated verse player (words light up one after another) */}
         <section className="stage girih relative overflow-hidden text-[#eef0f3]">
           <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 85% 15%, rgb(var(--gold) / .16) 0, transparent 40%), radial-gradient(circle at 10% 90%, rgb(var(--accent) / .22) 0, transparent 45%)" }} />
-          <CalligraphyRing text="ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ ۞ وَقُل رَّبِّ زِدْنِى عِلْمًا ۞ ٱلرَّحْمَـٰنُ عَلَّمَ ٱلْقُرْءَانَ ۞" className="absolute -end-36 -top-36 w-[320px] opacity-50 sm:-end-16 sm:-top-16 sm:w-[560px] sm:opacity-50 lg:opacity-40" />
+          <CalligraphyRing text="ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ ۞ وَقُل رَّبِّ زِدْنِى عِلْمًا ۞ ٱلرَّحْمَـٰنُ عَلَّمَ ٱلْقُرْءَانَ ۞" className="absolute -end-36 -top-36 w-[320px] opacity-50 sm:-end-16 sm:-top-16 sm:w-[560px] sm:opacity-50 lg:opacity-40 min-[1400px]:hidden" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <p className="rise font-arabic mb-5 text-[26px] leading-none text-[rgb(var(--gold))] sm:text-[30px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>

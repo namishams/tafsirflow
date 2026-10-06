@@ -4,7 +4,7 @@ import { currentUser } from "@/lib/auth";
 import { json, sameOrigin } from "@/lib/http";
 
 export const dynamic = "force-dynamic";
-const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal"]);
+const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen"]);
 
 export async function GET() {
   const u = await currentUser();
@@ -27,6 +27,17 @@ export async function PUT(req: NextRequest) {
     await pool()!.query(
       "INSERT INTO user_data (user_id, key, value) VALUES ($1, $2, $3) ON CONFLICT (user_id, key) DO UPDATE SET value = $3, updated_at = now()",
       [u.id, k, JSON.stringify(v)],
+    );
+  }
+  // points per day for the ranking: only recent days, at most 1,500 a day, and a day never loses points
+  const d = (body["tf:points"] as { d?: Record<string, unknown> } | undefined)?.d;
+  if (d && typeof d === "object") {
+    const today = Math.floor(Date.now() / 86400000);
+    const rows = Object.entries(d).map(([k, v]) => [Number(k), Math.min(1500, Math.max(0, Math.round(Number(v) || 0)))] as const).filter(([k, v]) => Number.isInteger(k) && k >= today - 400 && k <= today + 1 && v > 0);
+    if (rows.length) await pool()!.query(
+      `INSERT INTO user_points (user_id, day, points) SELECT $1, d, p FROM unnest($2::int[], $3::int[]) AS x(d, p)
+       ON CONFLICT (user_id, day) DO UPDATE SET points = GREATEST(user_points.points, EXCLUDED.points)`,
+      [u.id, rows.map((r) => r[0]), rows.map((r) => r[1])],
     );
   }
   return json({ ok: true });

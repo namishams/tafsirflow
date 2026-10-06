@@ -16,6 +16,7 @@ import { CoachCard } from "./ProgressPanel";
 import { SessionDone, SessionStart } from "./SessionStart";
 import Onboarding from "./Onboarding";
 import Heatmap from "./Heatmap";
+import RewardsCard from "./RewardsCard";
 import PosterTiles from "./PosterTiles";
 import { IconCheckCircle, IconFlame } from "./Icons";
 
@@ -110,6 +111,7 @@ export default function TodayDashboard() {
       <div className="mx-auto max-w-4xl px-4">
         <SessionDone />
         <Onboarding />
+        <RewardsCard />
         {/* checklist */}
         <section className="mt-8">
           <h2 className="font-display text-2xl">{t("tasksTitle")}</h2>

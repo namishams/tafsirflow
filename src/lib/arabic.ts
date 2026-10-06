@@ -2,6 +2,7 @@
 // (letters → letter forms → short vowels → long vowels → tanwin → sukun → shadda → special signs → Quran words),
 // with short Babbel-style lessons: learn cards, then varied exercises, mistakes come back at the end.
 import { readJSON, writeJSON } from "./storage";
+import { award } from "./points";
 import { VERSES, verseOf, wordsOf, type Verse } from "./arabicQuran";
 
 export type L2 = { de: string; en: string; ar?: string };
@@ -444,6 +445,7 @@ export function saveArabic(id: string, pct: number, xp: number, wrongKeys: strin
   p.xp += xp;
   for (const k of wrongKeys) p.mistakes[k] = (p.mistakes[k] ?? 0) + 1;
   writeJSON(KEY, p);
+  if (pct >= PASS_PCT && (prev?.best ?? 0) < PASS_PCT) award("lesson");
   return p;
 }
 export const unlocked = (p: ArabicProgress, id: string) => {

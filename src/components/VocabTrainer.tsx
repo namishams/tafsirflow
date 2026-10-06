@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { vocabFor, type Deck, type Word } from "@/lib/vocab";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { today } from "@/lib/learning";
+import { award } from "@/lib/points";
 
 // Leitner boxes: a known word moves up a box and comes back later (1, 2, 4, 8, 16 days)
 type Box = Record<string, { box: number; due: number }>;
@@ -55,7 +56,7 @@ export default function VocabTrainer() {
     const b = boxes[cur.id]?.box ?? 0;
     const nb = ok ? Math.min(5, b + 1) : 1;
     const next = { ...boxes, [cur.id]: { box: nb, due: today() + GAP[nb] } };
-    setBoxes(next); writeJSON(KEY, next);
+    setBoxes(next); writeJSON(KEY, next); award("vocab");
     setScore((s) => ({ ok: s.ok + (ok ? 1 : 0), n: s.n + 1 }));
     setQueue((q) => (ok ? q.slice(1) : [...q.slice(1), cur])); // missed words come back at the end
     setFlip(false); setPick(null); // pick must reset here: a missed last word comes back as the same card and the options effect does not re-run

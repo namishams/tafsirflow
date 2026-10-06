@@ -15,7 +15,8 @@ export const PRIMARY: NavItem[] = [
 export const GROUPS: NavGroup[] = [
   { title: "groupLearn", items: [
     { href: "/today", key: "today" }, { href: "/academy", key: "courses" }, { href: "/shams", key: "shams" }, { href: "/arabic", key: "arabic" },
-    { href: "/salah", key: "salah" }, { href: "/tajweed", key: "tajweed" }, { href: "/vocab", key: "vocab" }, { href: "/plan", key: "plan" }, { href: "/map", key: "map" },
+    { href: "/salah", key: "salah" }, { href: "/wudu", key: "wudu" }, { href: "/tajweed", key: "tajweed" }, { href: "/vocab", key: "vocab" }, { href: "/plan", key: "plan" }, { href: "/map", key: "map" },
+    { href: "/stats", key: "stats" }, { href: "/ranking", key: "ranking" },
   ] },
   { title: "groupQuran", items: [
     { href: "/quran", key: "quran" }, { href: "/search", key: "search" }, { href: "/reciters", key: "reciters" }, { href: "/radio", key: "radio" },
