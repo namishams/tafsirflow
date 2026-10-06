@@ -3,7 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import ArabicHome from "@/components/ArabicHome";
-import { LESSONS, LETTERS, arName, forms } from "@/lib/arabic";
+import { LESSONS, LETTERS, UNITS, arName, forms } from "@/lib/arabic";
 import { abs, pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
 
@@ -11,14 +11,14 @@ const C = {
   de: {
     kicker: "Arabisch lesen lernen · für Anfänger", title: "Lies den Koran – auch wenn du heute noch keinen Buchstaben kennst",
     lead: "Dieser Kurs bringt dir das Lesen der Koranschrift bei, so wie es Koranschulen seit Generationen tun: erst die Buchstaben, dann ihre Formen, dann die Vokalzeichen – bis du Al-Fatiha und die kurzen Suren selbst liest. In kleinen Lektionen von fünf Minuten, mit Übungen, Paaren und Tests.",
-    stats: [`${LESSONS.length} Lektionen`, "6 Einheiten", "28 Buchstaben", "5 Min. pro Lektion"],
+    stats: [`${LESSONS.length} Lektionen`, `${UNITS.length} Einheiten`, "28 Buchstaben", "5 Min. pro Lektion"],
     pathTitle: "Dein Lernpfad", alphaTitle: "Das arabische Alphabet", alphaLead: "Alle Buchstaben mit Namen, Laut und ihren Formen am Wortanfang, in der Mitte und am Ende. Arabisch liest man von rechts nach links.",
     th: ["Buchstabe", "Name", "Laut", "Anfang · Mitte · Ende"],
     howTitle: "So lernst du hier", how: [
       ["Kurze Lektionen", "Jede Lektion dauert etwa fünf Minuten: erst Lernkarten, dann abwechslungsreiche Übungen."],
       ["Fehler kommen zurück", "Was du falsch beantwortest, kommt am Ende der Lektion noch einmal – so lange, bis es sitzt."],
       ["Laut mitsprechen", "Lesen lernt man mit dem Mund. Sprich jeden Laut mit – wo dein Gerät eine arabische Stimme hat, kannst du ihn anhören."],
-      ["Vom Buchstaben zum Koran", "In Einheit 6 liest du echte Koranwörter aus Al-Fatiha, Al-Ikhlas, Al-Falaq und An-Nas – mit Bedeutung."],
+      ["Vom Buchstaben zum Koran", "In Einheit 6 liest du echte Koranwörter aus Al-Fatiha, Al-Ikhlas, Al-Falaq und An-Nas – mit Bedeutung. Danach hörst du sie Wort für Wort in echter Rezitation und liest ganze Verse. Wer schon etwas lesen kann, startet mit dem Einstufungstest."],
     ],
     teacher: "Die Aussprache mancher Laute (ح ع ق ص ض ط ظ) lernt man am besten durch Zuhören und mit einem Lehrer. Hör im Player einem Rezitator zu und sprich nach – das ist der Weg, den auch Koranschulen gehen.",
     after: "Nach dem Kurs", afterBody: "Wenn du lesen kannst, beginnt das eigentliche Abenteuer: Mit der Shams-Methode lernst du Vers für Vers auswendig, im Tajwid-Kurs lernst du die Regeln der schönen Rezitation.",
@@ -27,14 +27,14 @@ const C = {
   en: {
     kicker: "Learn to read Arabic · for beginners", title: "Read the Quran – even if you don't know a single letter today",
     lead: "This course teaches you to read the Quranic script the way Quran schools have done for generations: first the letters, then their shapes, then the vowel signs – until you read Al-Fatiha and the short surahs yourself. In small five-minute lessons, with exercises, pairs and tests.",
-    stats: [`${LESSONS.length} lessons`, "6 units", "28 letters", "5 min per lesson"],
+    stats: [`${LESSONS.length} lessons`, `${UNITS.length} units`, "28 letters", "5 min per lesson"],
     pathTitle: "Your learning path", alphaTitle: "The Arabic alphabet", alphaLead: "Every letter with its name, sound and its shapes at the start, in the middle and at the end of a word. Arabic is read from right to left.",
     th: ["Letter", "Name", "Sound", "Start · middle · end"],
     howTitle: "How you learn here", how: [
       ["Short lessons", "Each lesson takes about five minutes: first learning cards, then varied exercises."],
       ["Mistakes come back", "Whatever you get wrong comes back at the end of the lesson – until it sticks."],
       ["Say it out loud", "You learn to read with your mouth. Say every sound – where your device has an Arabic voice you can listen to it."],
-      ["From letters to the Quran", "In unit 6 you read real Quran words from Al-Fatiha, Al-Ikhlas, Al-Falaq and An-Nas – with their meaning."],
+      ["From letters to the Quran", "In unit 6 you read real Quran words from Al-Fatiha, Al-Ikhlas, Al-Falaq and An-Nas – with their meaning. Then you hear them word by word in real recitation and read whole verses. If you can already read a little, start with the placement test."],
     ],
     teacher: "Some sounds (ح ع ق ص ض ط ظ) are best learned by listening and with a teacher. Listen to a reciter in the player and repeat – the same way Quran schools teach.",
     after: "After the course", afterBody: "Once you can read, the real adventure begins: with the Shams Method you memorise verse by verse, and the tajweed course teaches the rules of beautiful recitation.",
@@ -43,14 +43,14 @@ const C = {
   ar: {
     kicker: "تعلّم القراءة العربية · للمبتدئين", title: "اقرأ القرآن – ولو لم تكن تعرف اليوم حرفًا واحدًا",
     lead: "تعلّمك هذه الدورة قراءة الرسم القرآني كما دأبت مدارس تحفيظ القرآن جيلًا بعد جيل: الحروف أولًا، ثم أشكالها، ثم الحركات – حتى تقرأ الفاتحة والسور القصيرة بنفسك. في دروس صغيرة مدة كلٍّ منها خمس دقائق، مع تمارين وأزواج واختبارات.",
-    stats: [`${LESSONS.length} درسًا`, "6 وحدات", "28 حرفًا", "5 دقائق لكل درس"],
+    stats: [`${LESSONS.length} درسًا`, `${UNITS.length} وحدات`, "28 حرفًا", "5 دقائق لكل درس"],
     pathTitle: "مسار تعلّمك", alphaTitle: "الأبجدية العربية", alphaLead: "كل حرف باسمه ومخرجه وأشكاله في أول الكلمة ووسطها وآخرها. وتُقرأ العربية من اليمين إلى اليسار.",
     th: ["الحرف", "الاسم", "المخرج", "أول · وسط · آخر"],
     howTitle: "كيف تتعلّم هنا", how: [
       ["دروس قصيرة", "يستغرق كل درس نحو خمس دقائق: بطاقات تعليمية أولًا، ثم تمارين متنوعة."],
       ["الأخطاء تعود إليك", "كل ما أخطأت فيه يعود في آخر الدرس – حتى يثبت في ذهنك."],
       ["انطق بصوتك", "القراءة تُتعلَّم بالفم. انطق كل حرف بصوتك، وإن كان في جهازك صوت عربي فيمكنك الاستماع إليه."],
-      ["من الحرف إلى القرآن", "في الوحدة السادسة تقرأ كلمات قرآنية حقيقية من الفاتحة والإخلاص والفلق والناس – مع معانيها."],
+      ["من الحرف إلى القرآن", "في الوحدة السادسة تقرأ كلمات قرآنية حقيقية من الفاتحة والإخلاص والفلق والناس – مع معانيها. ثم تسمعها كلمةً كلمة بتلاوةٍ حقيقية، وتقرأ الآيات كاملة. ومن كان يقرأ شيئًا من قبل فليبدأ باختبار تحديد المستوى."],
     ],
     teacher: "إن مخارج بعض الحروف (ح ع ق ص ض ط ظ) تُتقَن بالسماع والتلقّي عن معلّم. استمع إلى قارئ في المشغّل ورَدِّد خلفه – فهذا هو الطريق الذي تسلكه مدارس القرآن.",
     after: "بعد الدورة", afterBody: "إذا صرت تقرأ فقد بدأت الرحلة الحقيقية: بمنهج شمس تحفظ آيةً آيةً، وفي دورة التجويد تتعلّم أحكام التلاوة الحسنة.",

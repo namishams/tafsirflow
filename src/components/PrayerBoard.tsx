@@ -196,7 +196,7 @@ export default function PrayerBoard() {
           </div>
           <div className="mt-4 overflow-x-auto rounded-lg border border-line">
             <table className="w-full min-w-[620px] text-sm">
-              <thead className="bg-bg text-left text-xs uppercase tracking-[0.06em] text-muted"><tr><th className="p-3">{t("date")}</th>{PRAYERS.map((p) => <th key={p} className="p-3">{t(p)}</th>)}</tr></thead>
+              <thead className="bg-bg text-start text-xs uppercase tracking-[0.06em] text-muted"><tr><th className="p-3">{t("date")}</th>{PRAYERS.map((p) => <th key={p} className="p-3">{t(p)}</th>)}</tr></thead>
               <tbody className="divide-y divide-line bg-surface tabular-nums">
                 {month.map((r) => {
                   const isToday = monthShift === 0 && r.date.getDate() === today.d;

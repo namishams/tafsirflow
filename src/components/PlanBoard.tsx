@@ -97,7 +97,7 @@ function MonthTable({ tr, months, monthRow, name, t, current }: { tr: Track; mon
       <h2 className="text-lg font-bold">{t("months", { name: t(tr.id) })}</h2>
       <div className="mt-3 overflow-hidden rounded-lg border border-line">
         <table className="w-full text-sm">
-          <thead className="bg-bg text-left text-xs uppercase tracking-[0.08em] text-muted"><tr><th className="p-3">{t("month")}</th><th className="p-3">{t("perDay")}</th><th className="p-3">{t("total")}</th><th className="hidden p-3 sm:table-cell">{t("reached")}</th></tr></thead>
+          <thead className="bg-bg text-start text-xs uppercase tracking-[0.08em] text-muted"><tr><th className="p-3">{t("month")}</th><th className="p-3">{t("perDay")}</th><th className="p-3">{t("total")}</th><th className="hidden p-3 sm:table-cell">{t("reached")}</th></tr></thead>
           <tbody className="divide-y divide-line bg-surface">
             {months.map((m) => {
               const r = monthRow(tr, m);

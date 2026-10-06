@@ -1,15 +1,21 @@
 "use client";
-import { IconFlame, IconSpeaker, IconStarBig, IconTrophy, ArrowNext } from "./Icons";
+import { IconFlame, IconPlay, IconSpeaker, IconStarBig, IconTrophy, ArrowNext } from "./Icons";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { LESSONS, PASS_PCT, buildLesson, saveArabic, starsFor, type Ex } from "@/lib/arabic";
+import { LESSONS, PASS_PCT, PLACEMENT_UNITS, UNITS, buildLesson, lessonById, nextArabic, placementResult, saveArabic, savePlacement, starsFor, verseAudioUrl, wordAudioUrl, type Ex, type PlacementResult } from "@/lib/arabic";
 import { logDay } from "@/lib/learning";
 
 const T = {
-  de: { check: "Prüfen", next: "Weiter", right: "Richtig!", wrong: "Nicht ganz – richtig ist:", listen: "Anhören", again: "Nochmal üben", overview: "Zur Kursübersicht", nextLesson: "Nächste Lektion", done: "Lektion geschafft!", notYet: "Fast geschafft!", needPass: `Ab ${PASS_PCT} % ist die nächste Lektion frei. Wiederhole die Lektion – die Fehler kommen gezielt zurück.`, score: "richtig beim ersten Versuch", xp: "XP", match: "Finde die Paare", review: "Wiederholung", quit: "Beenden", learn: "Neu", tip: "Sprich jeden Laut laut mit – Lesen lernt man mit dem Mund.", readQuran: "Jetzt im Koran lesen" },
-  ar: { check: "تحقّق", next: "متابعة", right: "أحسنت!", wrong: "ليس تمامًا – الصواب:", listen: "استمع", again: "تدرّب مرة أخرى", overview: "إلى صفحة الدورة", nextLesson: "الدرس التالي", done: "أتممت الدرس!", notYet: "اقتربت كثيرًا!", needPass: `يُفتح الدرس التالي عند ${PASS_PCT}٪، أعد الدرس وستعود إليك الأخطاء لتثبيتها.`, score: "صحيحة من المحاولة الأولى", xp: "نقطة", match: "طابِق الأزواج", review: "مراجعة", quit: "إنهاء", learn: "جديد", tip: "انطق كل صوت بصوت مسموع، فالقراءة تُتعلَّم باللسان.", readQuran: "اقرأ في المصحف الآن" },
-  en: { check: "Check", next: "Continue", right: "Correct!", wrong: "Not quite – the answer is:", listen: "Listen", again: "Practise again", overview: "Course overview", nextLesson: "Next lesson", done: "Lesson complete!", notYet: "Almost there!", needPass: `From ${PASS_PCT}% the next lesson unlocks. Repeat the lesson – your mistakes come back on purpose.`, score: "correct on the first try", xp: "XP", match: "Find the pairs", review: "Review", quit: "Quit", learn: "New", tip: "Say every sound out loud – you learn to read with your mouth.", readQuran: "Read it in the Quran now" },
+  de: { check: "Prüfen", next: "Weiter", right: "Richtig!", wrong: "Nicht ganz – richtig ist:", listen: "Anhören", again: "Nochmal üben", overview: "Zur Kursübersicht", nextLesson: "Nächste Lektion", done: "Lektion geschafft!", notYet: "Fast geschafft!", needPass: `Ab ${PASS_PCT} % ist die nächste Lektion frei. Wiederhole die Lektion – die Fehler kommen gezielt zurück.`, score: "richtig beim ersten Versuch", xp: "XP", match: "Finde die Paare", review: "Wiederholung", quit: "Beenden", learn: "Neu", tip: "Sprich jeden Laut laut mit – Lesen lernt man mit dem Mund.", readQuran: "Jetzt im Koran lesen",
+    hearHint: "Tippe auf den Knopf, um das Wort (nochmal) zu hören.", offline: "Die Aufnahme ist gerade nicht erreichbar.", wordIs: "Das Wort lautet:", voice: "Mit Gerätestimme anhören", verse: "Ganzen Vers anhören", tapOrder: "Tippe die Wörter der Reihe nach an – das erste steht rechts.", emptyRow: "Hier entsteht der Vers", reset: "Zurücksetzen", meaningLbl: "Bedeutung",
+    pLabel: "Einstufungstest", pHead: "Dein Einstieg", pFrom: "Du startest bei Einheit {n}.", pAll: "Du beherrschst die Grundlagen – weiter geht es mit Einheit 7: Hören und lesen.", pRight: "{a} von {b} richtig", pGo: "Weiter bei:", pRetry: "Test wiederholen", pNote: "Sicher gelöste Einheiten gelten als bestanden (1 Stern). Du kannst jede Lektion trotzdem jederzeit wiederholen.", unitWord: "Einheit", known: "sicher", open: "noch üben" },
+  ar: { check: "تحقّق", next: "متابعة", right: "أحسنت!", wrong: "ليس تمامًا – الصواب:", listen: "استمع", again: "تدرّب مرة أخرى", overview: "إلى صفحة الدورة", nextLesson: "الدرس التالي", done: "أتممت الدرس!", notYet: "اقتربت كثيرًا!", needPass: `يُفتح الدرس التالي عند ${PASS_PCT}٪، أعد الدرس وستعود إليك الأخطاء لتثبيتها.`, score: "صحيحة من المحاولة الأولى", xp: "نقطة", match: "طابِق الأزواج", review: "مراجعة", quit: "إنهاء", learn: "جديد", tip: "انطق كل صوت بصوت مسموع، فالقراءة تُتعلَّم باللسان.", readQuran: "اقرأ في المصحف الآن",
+    hearHint: "اضغط على الزر لتسمع الكلمة (مرةً أخرى).", offline: "التسجيل غير متاح الآن.", wordIs: "الكلمة هي:", voice: "استمع بصوت الجهاز", verse: "استمع إلى الآية كاملة", tapOrder: "اضغط على الكلمات بالترتيب – الكلمة الأولى عن اليمين.", emptyRow: "هنا تتكوّن الآية", reset: "إعادة", meaningLbl: "المعنى",
+    pLabel: "اختبار تحديد المستوى", pHead: "نقطة انطلاقك", pFrom: "تبدأ من الوحدة {n}.", pAll: "أنت تُتقن الأساسيات – تابع مع الوحدة 7: استمع واقرأ.", pRight: "{a} من {b} صحيحة", pGo: "تابع مع:", pRetry: "أعد الاختبار", pNote: "تُحسب الوحدات التي أجبتَ عنها بثقة منجَزة (نجمة واحدة)، ويمكنك إعادة أي درسٍ متى شئت.", unitWord: "الوحدة", known: "متقَنة", open: "للتدرّب" },
+  en: { check: "Check", next: "Continue", right: "Correct!", wrong: "Not quite – the answer is:", listen: "Listen", again: "Practise again", overview: "Course overview", nextLesson: "Next lesson", done: "Lesson complete!", notYet: "Almost there!", needPass: `From ${PASS_PCT}% the next lesson unlocks. Repeat the lesson – your mistakes come back on purpose.`, score: "correct on the first try", xp: "XP", match: "Find the pairs", review: "Review", quit: "Quit", learn: "New", tip: "Say every sound out loud – you learn to read with your mouth.", readQuran: "Read it in the Quran now",
+    hearHint: "Tap the button to hear the word (again).", offline: "The recording is not available right now.", wordIs: "The word is:", voice: "Listen with the device voice", verse: "Listen to the whole verse", tapOrder: "Tap the words one after another – the first one goes on the right.", emptyRow: "Your verse appears here", reset: "Reset", meaningLbl: "Meaning",
+    pLabel: "Placement test", pHead: "Where you start", pFrom: "You start at unit {n}.", pAll: "You already know the basics – continue with unit 7: Listen and read.", pRight: "{a} of {b} correct", pGo: "Continue with:", pRetry: "Repeat the test", pNote: "Units you solved confidently count as passed (1 star). You can repeat any lesson at any time.", unitWord: "Unit", known: "known", open: "to practise" },
 };
 
 // tiny feedback tones (no audio files needed)
@@ -40,11 +46,46 @@ function useArabicVoice() {
 
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
 
+// one recording at a time (word recordings from Quran.com, verse recordings from our own server); pauses the site radio first.
+// If the file cannot be loaded (offline, blocked, missing) the state becomes "error" and the UI shows a quiet hint instead.
+function useClip() {
+  const el = useRef<HTMLAudioElement | null>(null);
+  const [state, setState] = useState<"idle" | "loading" | "playing" | "error">("idle");
+  const stop = () => { const a = el.current; if (!a) return; a.onplaying = a.onended = a.onerror = null; try { a.pause(); } catch { /* ignore */ } };
+  const play = (url: string) => {
+    stop();
+    try {
+      const a = new Audio(url);
+      el.current = a;
+      a.onplaying = () => setState("playing");
+      a.onended = () => setState("idle");
+      a.onerror = () => setState("error");
+      window.dispatchEvent(new Event("tf-audio-start"));
+      setState("loading");
+      a.play().catch((e: unknown) => {
+        if (el.current !== a) return; // replaced by a newer clip
+        const name = (e as { name?: string } | null)?.name;
+        setState(name === "NotAllowedError" || name === "AbortError" ? "idle" : "error"); // autoplay blocked → the button is still there
+      });
+    } catch { setState("error"); }
+  };
+  useEffect(() => stop, []); // eslint-disable-line react-hooks/exhaustive-deps
+  return { state, play, stop };
+}
+
+// the options after a wrong answer come back in a new order (the exercise itself is re-queued once)
+const reshuffled = (ex: Ex): Ex => {
+  if (ex.t !== "choose" && ex.t !== "listen") return ex;
+  const order = shuffle((ex.options as unknown[]).map((_, i) => i));
+  return { ...ex, options: order.map((i) => ex.options[i]), answer: order.indexOf(ex.answer) } as Ex;
+};
+
 export default function ArabicLesson({ id }: { id: string }) {
   const locale = useLocale();
   const lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
   const t = T[lang];
-  const lesson = LESSONS.find((l) => l.id === id)!;
+  const lesson = lessonById(id)!;
+  const isPlacement = !!lesson.placement;
   const next = LESSONS[LESSONS.indexOf(lesson) + 1];
   const [seed, setSeed] = useState(0);
   const base = useMemo(() => buildLesson(lesson, lang), [lesson, lang, seed]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -56,8 +97,10 @@ export default function ArabicLesson({ id }: { id: string }) {
   const wrongKeys = useRef<string[]>([]);
   const retried = useRef(new Set<number>());
   const [finished, setFinished] = useState<null | { pct: number; xp: number }>(null);
+  const unitRes = useRef<Record<number, { ok: number; n: number }>>({}); // placement test: right answers per unit
+  const [placed, setPlaced] = useState<null | { res: PlacementResult; next: { id: string; title: string } | null }>(null);
   const { canSpeak, speak } = useArabicVoice();
-  useEffect(() => { setQueue(base); setPos(0); setPicked(null); setChecked(false); setStats({ first: 0, firstRight: 0, xp: 0, combo: 0 }); wrongKeys.current = []; retried.current = new Set(); setFinished(null); }, [base]);
+  useEffect(() => { setQueue(base); setPos(0); setPicked(null); setChecked(false); setStats({ first: 0, firstRight: 0, xp: 0, combo: 0 }); wrongKeys.current = []; retried.current = new Set(); unitRes.current = {}; setPlaced(null); setFinished(null); }, [base]);
 
   const ex = queue[pos];
   const total = queue.length;
@@ -65,6 +108,15 @@ export default function ArabicLesson({ id }: { id: string }) {
 
   const finish = (s = stats) => {
     const pct = s.first ? Math.round((s.firstRight / s.first) * 100) : 100;
+    if (isPlacement) {
+      // the placement test marks the units the learner already knows as done – it does not give XP or stars of its own
+      const res = placementResult(unitRes.current);
+      const nx = nextArabic(savePlacement(res, wrongKeys.current));
+      logDay();
+      setPlaced({ res, next: nx ? { id: nx.id, title: nx.title[lang] ?? nx.title.en } : null });
+      setFinished({ pct, xp: 0 });
+      return;
+    }
     const bonus = starsFor(pct) * 10;
     saveArabic(lesson.id, pct, s.xp + bonus, wrongKeys.current);
     logDay();
@@ -75,17 +127,53 @@ export default function ArabicLesson({ id }: { id: string }) {
   const grade = (ok: boolean, key: string) => {
     tone(ok);
     const s = { ...stats };
-    if (!isRetry) { s.first += 1; if (ok) s.firstRight += 1; }
+    if (!isRetry) {
+      s.first += 1; if (ok) s.firstRight += 1;
+      if (ex.u) { const r = (unitRes.current[ex.u] ??= { ok: 0, n: 0 }); r.n += 1; if (ok) r.ok += 1; }
+    }
     if (ok) { s.combo += 1; s.xp += isRetry ? 5 : 10 + Math.min(10, s.combo * 2); }
     else {
       s.combo = 0; wrongKeys.current.push(key);
-      // Babbel-style: a missed exercise comes back once at the end
-      if (!isRetry && ex.t !== "learn") { setQueue((q) => { retried.current.add(q.length); const again = ex.t === "choose" ? { ...ex, ...(() => { const order = shuffle(ex.options.map((_, i) => i)); return { options: order.map((i) => ex.options[i]), answer: order.indexOf(ex.answer) }; })() } : ex; return [...q, again]; }); }
+      // Babbel-style: a missed exercise comes back once at the end (not in the placement test – it must measure, not teach)
+      if (!isRetry && ex.t !== "learn" && !isPlacement) { setQueue((q) => { retried.current.add(q.length); return [...q, reshuffled(ex)]; }); }
     }
     setStats(s);
     return s;
   };
 
+  if (finished && isPlacement && placed) {
+    const { res } = placed;
+    return (
+      <div className="mx-auto max-w-xl py-10 text-center">
+        <p className="flex justify-center text-gold" aria-hidden>{res.passed.length ? <IconStarBig /> : <IconTrophy />}</p>
+        <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-gold">{t.pLabel}</p>
+        <h1 className="font-display mt-1 text-4xl">{t.pHead}</h1>
+        <p className="mt-4 text-[17px] leading-relaxed">{res.start > PLACEMENT_UNITS.length ? t.pAll : t.pFrom.replace("{n}", String(res.start))}</p>
+        <p className="mt-1 text-sm text-muted">{t.pRight.replace("{a}", String(res.correct)).replace("{b}", String(res.total))}</p>
+        <ul className="mt-6 divide-y divide-line overflow-hidden rounded-xl border border-line bg-surface text-start">
+          {PLACEMENT_UNITS.map((u) => {
+            const known = res.passed.includes(u);
+            const un = UNITS.find((x) => x.n === u)!;
+            return (
+              <li key={u} className="flex items-center gap-3 px-4 py-3">
+                <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-sm font-bold ${known ? "bg-accent text-white" : "bg-line/60 text-muted"}`} aria-hidden>{known ? "✓" : u}</span>
+                <span className="min-w-0 flex-1 truncate font-semibold">{t.unitWord} {u} · {un.title[lang] ?? un.title.en}</span>
+                <span className={`shrink-0 text-xs font-bold ${known ? "text-accent" : "text-muted"}`}>{known ? t.known : t.open}</span>
+              </li>
+            );
+          })}
+        </ul>
+        <p className="mt-4 text-sm text-muted">{t.pNote}</p>
+        <div className="mt-8 grid gap-3">
+          {placed.next
+            ? <Link href={`/arabic/${placed.next.id}`} className="btn-gold inline-flex h-12 items-center justify-center rounded-md px-4 text-[15px] font-bold"><span className="truncate">{t.pGo} {placed.next.title}</span> <ArrowNext /></Link>
+            : <Link href="/surah/1?shams=1" className="btn-gold inline-flex h-12 items-center justify-center rounded-md text-[15px] font-bold">{t.readQuran} <ArrowNext /></Link>}
+          <button onClick={() => setSeed((n) => n + 1)} className="h-12 rounded-md border border-line bg-surface text-[15px] font-bold hover:border-ink">{t.pRetry}</button>
+          <Link href="/arabic" className="text-sm font-semibold text-muted hover:text-ink">{t.overview}</Link>
+        </div>
+      </div>
+    );
+  }
   if (finished) {
     const stars = starsFor(finished.pct);
     const passed = finished.pct >= PASS_PCT;
@@ -110,6 +198,28 @@ export default function ArabicLesson({ id }: { id: string }) {
   }
   if (!ex) return null;
 
+  // answer buttons shared by "choose" and "listen": long words get a smaller size, long meanings (whole verses) one column
+  const letters = (s: string) => s.replace(/[ً-ٰٟـۖ-ۭ]/g, "").length;
+  const renderOptions = (opts: { ar?: string; text?: string }[], answer: number) => {
+    const small = opts.some((o) => letters(o.ar ?? "") > 6);
+    const wide = opts.some((o) => (o.text ?? "").length > 40);
+    return (
+      <div className={`mt-6 grid gap-3 ${wide ? "grid-cols-1" : "grid-cols-2"}`}>
+        {opts.map((o, i) => {
+          const state = checked ? (i === answer ? "right" : i === picked ? "wrong" : "idle") : i === picked ? "picked" : "idle";
+          return (
+            <button key={i} disabled={checked} onClick={() => setPicked(i)}
+              className={`min-h-[72px] rounded-xl border-2 px-3 py-2 text-center transition ${state === "right" ? "border-accent bg-accent-soft" : state === "wrong" ? "border-red-500 bg-red-500/10" : state === "picked" ? "border-gold bg-gold/10" : "border-line bg-surface hover:border-ink/40"}`}>
+              {o.ar ? <span className={`font-arabic leading-[1.7] ${small ? "text-[28px]" : "text-[34px]"}`} dir="rtl">{o.ar}</span> : <span className={`font-semibold ${wide ? "text-[15px] leading-snug" : "text-[16px]"}`}>{o.text}</span>}
+            </button>
+          );
+        })}
+      </div>
+    );
+  };
+  const choice = ex.t === "choose" || ex.t === "listen" ? ex : null;
+  const answerOpt = choice ? (choice.options[choice.answer] as { ar?: string; text?: string }) : null;
+
   return (
     <div className="mx-auto flex min-h-[70dvh] max-w-xl flex-col py-4">
       {/* progress */}
@@ -119,7 +229,11 @@ export default function ArabicLesson({ id }: { id: string }) {
         <span className="min-w-[3.5rem] text-end text-sm font-bold text-gold">{stats.xp} {t.xp}</span>
       </div>
       {stats.combo >= 3 && <p className="mt-2 text-center text-xs font-bold text-accent"><IconFlame /> {stats.combo}×</p>}
+      {isPlacement && <p className="mt-3 text-center text-xs font-bold uppercase tracking-[0.16em] text-gold">{t.pLabel} · {Math.min(pos + 1, total)}/{total}</p>}
 
+      {ex.t === "build" ? (
+        <BuildCard key={`${pos}-${ex.key}`} ex={ex} t={t} isRetry={isRetry} onGrade={(ok) => grade(ok, ex.key)} onNext={() => advance()} />
+      ) : (
       <div className="flex-1 pt-8">
         {ex.t === "learn" && <LearnCard ex={ex} t={t} canSpeak={canSpeak} speak={speak} />}
         {ex.t === "choose" && (
@@ -127,43 +241,131 @@ export default function ArabicLesson({ id }: { id: string }) {
             {isRetry && <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-gold">{t.review}</p>}
             <h2 className="text-xl font-bold leading-snug">{ex.q}</h2>
             {ex.ar && (
-              <div className="mt-6 flex items-center justify-center gap-4 rounded-xl border border-line bg-surface py-8">
-                <span className="font-arabic text-[64px] leading-[1.6]" dir="rtl">{ex.ar}</span>
+              <div className="mt-6 flex items-center justify-center gap-4 rounded-xl border border-line bg-surface px-3 py-8">
+                <span className={ex.ar.length > 14 ? "font-arabic text-center text-[34px] leading-[2]" : "font-arabic text-[64px] leading-[1.6]"} dir="rtl">{ex.ar}</span>
                 {canSpeak && ex.speak && <SpeakBtn label={t.listen} onClick={() => speak(ex.speak!)} />}
               </div>
             )}
             {!ex.ar && canSpeak && ex.speak && <div className="mt-4"><SpeakBtn label={t.listen} onClick={() => speak(ex.speak!)} wide /></div>}
-            <div className="mt-6 grid grid-cols-2 gap-3">
-              {ex.options.map((o, i) => {
-                const state = checked ? (i === ex.answer ? "right" : i === picked ? "wrong" : "idle") : i === picked ? "picked" : "idle";
-                return (
-                  <button key={i} disabled={checked} onClick={() => setPicked(i)}
-                    className={`min-h-[72px] rounded-xl border-2 px-3 py-2 text-center transition ${state === "right" ? "border-accent bg-accent-soft" : state === "wrong" ? "border-red-500 bg-red-500/10" : state === "picked" ? "border-gold bg-gold/10" : "border-line bg-surface hover:border-ink/40"}`}>
-                    {o.ar ? <span className="font-arabic text-[34px] leading-[1.7]" dir="rtl">{o.ar}</span> : <span className="text-[16px] font-semibold">{o.text}</span>}
-                  </button>
-                );
-              })}
-            </div>
+            {renderOptions(ex.options, ex.answer)}
+          </div>
+        )}
+        {ex.t === "listen" && (
+          <div>
+            <ListenCard key={`${pos}-${ex.key}`} ex={ex} t={t} isRetry={isRetry} canSpeak={canSpeak} speak={speak} />
+            {renderOptions(ex.options, ex.answer)}
           </div>
         )}
         {ex.t === "match" && <MatchCard key={`${pos}-${ex.key}`} ex={ex} t={t} onDone={(mistakes) => { const s = grade(mistakes <= 1, ex.key); setTimeout(() => advance(s), 700); }} />}
       </div>
+      )}
 
       {/* bottom bar */}
       {ex.t === "learn" && <button onClick={() => advance()} className="btn-gold mt-8 h-14 w-full rounded-xl text-[16px] font-bold">{t.next}</button>}
-      {ex.t === "choose" && (
-        <div className={`mt-8 rounded-xl p-4 ${checked ? (picked === ex.answer ? "bg-accent-soft" : "bg-red-500/10") : ""}`}>
+      {choice && answerOpt && (
+        <div className={`mt-8 rounded-xl p-4 ${checked ? (picked === choice.answer ? "bg-accent-soft" : "bg-red-500/10") : ""}`}>
           {checked && (
-            <p className={`mb-3 font-bold ${picked === ex.answer ? "text-accent" : "text-red-600"}`}>
-              {picked === ex.answer ? t.right : <>{t.wrong} <span className={ex.options[ex.answer].ar ? "font-arabic text-2xl" : ""}>{ex.options[ex.answer].ar ?? ex.options[ex.answer].text}</span></>}
-            </p>
+            <div className="mb-3">
+              <p className={`font-bold ${picked === choice.answer ? "text-accent" : "text-red-600"}`}>
+                {picked === choice.answer ? t.right : <>{t.wrong} <span className={answerOpt.ar ? "font-arabic text-2xl" : ""}>{answerOpt.ar ?? answerOpt.text}</span></>}
+              </p>
+              {choice.t === "listen" && <p className="mt-1 text-sm text-ink/80">{choice.info}</p>}
+            </div>
           )}
           {!checked
-            ? <button disabled={picked === null} onClick={() => { setChecked(true); grade(picked === ex.answer, ex.key); }} className="btn-gold h-14 w-full rounded-xl text-[16px] font-bold disabled:opacity-40">{t.check}</button>
-            : <button onClick={() => advance()} className={`h-14 w-full rounded-xl text-[16px] font-bold text-white ${picked === ex.answer ? "bg-accent" : "bg-red-600"}`}>{t.next}</button>}
+            ? <button disabled={picked === null} onClick={() => { setChecked(true); grade(picked === choice.answer, choice.key); }} className="btn-gold h-14 w-full rounded-xl text-[16px] font-bold disabled:opacity-40">{t.check}</button>
+            : <button onClick={() => advance()} className={`h-14 w-full rounded-xl text-[16px] font-bold text-white ${picked === choice.answer ? "bg-accent" : "bg-red-600"}`}>{t.next}</button>}
         </div>
       )}
     </div>
+  );
+}
+
+// "Which word do you hear?" – a real recording of one Quran word (Quran.com), started once when the card appears
+function ListenCard({ ex, t, isRetry, canSpeak, speak }: { ex: Extract<Ex, { t: "listen" }>; t: (typeof T)["de"]; isRetry: boolean; canSpeak: boolean; speak: (s: string) => void }) {
+  const clip = useClip();
+  const play = () => clip.play(wordAudioUrl(ex.ref));
+  useEffect(() => { play(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const word = ex.options[ex.answer].ar;
+  return (
+    <div>
+      {isRetry && <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-gold">{t.review}</p>}
+      <h2 className="text-xl font-bold leading-snug">{ex.q}</h2>
+      <div className="mt-6 flex flex-col items-center rounded-xl border border-line bg-surface px-4 py-8 text-center">
+        <button onClick={play} aria-label={t.listen} className="relative grid h-28 w-28 place-items-center rounded-full bg-accent text-white shadow-md transition active:scale-95">
+          {clip.state === "playing" && <span aria-hidden className="absolute inset-0 animate-ping rounded-full bg-accent/30" />}
+          <span className="relative scale-[1.7]">{clip.state === "playing" ? <IconSpeaker /> : <IconPlay />}</span>
+        </button>
+        {clip.state === "error" ? (
+          // the recording cannot be loaded: say so quietly and give the transliteration, so the exercise stays solvable
+          <div className="mt-4">
+            <p className="text-sm text-muted">{t.offline} {t.wordIs}</p>
+            <p className="mt-1 text-lg font-bold">{ex.tr}</p>
+            {canSpeak && <button onClick={() => speak(word)} className="mt-2 inline-flex h-10 items-center gap-2 rounded-full border border-line px-4 text-sm font-semibold hover:border-ink"><IconSpeaker />{t.voice}</button>}
+          </div>
+        ) : <p className="mt-4 text-sm text-muted">{t.hearHint}</p>}
+      </div>
+    </div>
+  );
+}
+
+// "Put the words in order" – tap the word tiles (Arabic, right to left); a tapped tile moves into the answer row, tapping it there moves it back
+function BuildCard({ ex, t, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "build" }>; t: (typeof T)["de"]; isRetry: boolean; onGrade: (ok: boolean) => void; onNext: () => void }) {
+  const order = useMemo(() => {
+    const idx = ex.tiles.map((_, i) => i);
+    let o = shuffle(idx);
+    for (let k = 0; k < 8 && o.every((v, i) => ex.tiles[v] === ex.tiles[i]); k++) o = shuffle(idx); // never start in the solved order
+    return o;
+  }, [ex]);
+  const [placed, setPlaced] = useState<number[]>([]); // slots of the tile pool, in the order they were tapped
+  const [checked, setChecked] = useState(false);
+  const clip = useClip();
+  const text = (slot: number) => ex.tiles[order[slot]];
+  const right = (slot: number, pos: number) => text(slot) === ex.tiles[pos];
+  const ok = placed.length === ex.tiles.length && placed.every(right);
+  const full = placed.length === ex.tiles.length;
+  const playVerse = () => clip.play(verseAudioUrl(ex.s, ex.a));
+  const check = () => { setChecked(true); onGrade(ok); if (ok) playVerse(); };
+  const tile = "min-h-[56px] rounded-xl border-2 px-4 font-arabic text-[28px] leading-[1.7] transition";
+  return (
+    <>
+      <div className="flex-1 pt-8">
+        {isRetry && <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-gold">{t.review}</p>}
+        <h2 className="text-xl font-bold leading-snug">{ex.q}</h2>
+        <p className="mt-3 rounded-lg border border-line border-s-4 border-s-gold bg-surface p-3 text-[15px] leading-snug"><span className="block text-[11px] font-bold uppercase tracking-[0.16em] text-gold">{t.meaningLbl}</span>{ex.hint}</p>
+
+        {/* answer row: first tapped tile sits on the right */}
+        <div dir="rtl" aria-label={t.emptyRow} className={`mt-5 flex min-h-[84px] flex-wrap content-start items-center gap-2 rounded-xl border-2 border-dashed p-3 ${checked ? (ok ? "border-accent bg-accent-soft" : "border-red-500/60 bg-red-500/5") : "border-line bg-surface"}`}>
+          {placed.length === 0 && <span dir="auto" className="w-full text-center text-sm text-muted">{t.emptyRow}</span>}
+          {placed.map((slot, i) => (
+            <button key={slot} disabled={checked} onClick={() => setPlaced(placed.filter((s) => s !== slot))}
+              className={`${tile} ${checked ? (right(slot, i) ? "border-accent bg-surface" : "border-red-500 bg-red-500/10") : "border-gold bg-gold/10 hover:border-ink/40"}`}>{text(slot)}</button>
+          ))}
+        </div>
+
+        {/* tile pool: placed tiles leave a dashed gap so nothing jumps around */}
+        <div dir="rtl" className="mt-4 flex flex-wrap justify-start gap-2">
+          {order.map((_, slot) => placed.includes(slot)
+            ? <span key={slot} aria-hidden className={`${tile} invisible border-transparent`}>{text(slot)}</span>
+            : <button key={slot} disabled={checked} onClick={() => setPlaced([...placed, slot])} className={`${tile} border-line bg-surface hover:border-ink/40`}>{text(slot)}</button>)}
+        </div>
+        {!checked && <p className="mt-4 flex items-center justify-between gap-3 text-sm text-muted"><span>{t.tapOrder}</span>{placed.length > 0 && <button onClick={() => setPlaced([])} className="shrink-0 font-semibold text-ink/70 underline underline-offset-2 hover:text-ink">{t.reset}</button>}</p>}
+      </div>
+
+      <div className={`mt-8 rounded-xl p-4 ${checked ? (ok ? "bg-accent-soft" : "bg-red-500/10") : ""}`}>
+        {checked && (
+          <div className="mb-3">
+            <p className={`font-bold ${ok ? "text-accent" : "text-red-600"}`}>{ok ? t.right : t.wrong}</p>
+            <p className="mt-1 font-arabic text-2xl leading-[1.9]" dir="rtl">{ex.tiles.join(" ")}</p>
+            <p className="text-sm text-ink/80">{ex.tr}</p>
+            {clip.state !== "error" && <button onClick={playVerse} className="mt-3 inline-flex h-10 items-center gap-2 rounded-full border border-line bg-surface px-4 text-sm font-semibold hover:border-ink"><IconSpeaker />{t.verse}</button>}
+          </div>
+        )}
+        {!checked
+          ? <button disabled={!full} onClick={check} className="btn-gold h-14 w-full rounded-xl text-[16px] font-bold disabled:opacity-40">{t.check}</button>
+          : <button onClick={onNext} className={`h-14 w-full rounded-xl text-[16px] font-bold text-white ${ok ? "bg-accent" : "bg-red-600"}`}>{t.next}</button>}
+      </div>
+    </>
   );
 }
 
@@ -172,11 +374,17 @@ function SpeakBtn({ label, onClick, wide = false }: { label: string; onClick: ()
 }
 
 function LearnCard({ ex, t, canSpeak, speak }: { ex: Extract<Ex, { t: "learn" }>; t: (typeof T)["de"]; canSpeak: boolean; speak: (s: string) => void }) {
+  const clip = useClip();
+  // a card with a word reference plays the real recording; without one (or if it cannot be loaded) the device's Arabic voice is used, if there is one
+  const real = !!ex.ref && clip.state !== "error";
+  const hasButton = real || (canSpeak && !!ex.speak);
+  const size = ex.ar.length > 18 ? "text-[40px] leading-[1.9]" : ex.ar.length > 9 ? "text-[54px] leading-[1.7]" : "text-[72px] leading-[1.6]";
   return (
     <div className="overflow-hidden rounded-2xl border border-line bg-surface">
-      <div className="stage flex min-h-[200px] items-center justify-center gap-4 px-4 py-8 text-[#eef0f3]">
-        <span className="font-arabic text-[72px] leading-[1.6] text-[rgb(var(--gold))]" dir="rtl">{ex.ar}</span>
-        {canSpeak && ex.speak && <button onClick={() => speak(ex.speak!)} aria-label={t.listen} className="grid h-12 w-12 place-items-center rounded-full bg-white/10 hover:bg-white/20"><IconSpeaker /></button>}
+      <div className="stage flex min-h-[200px] flex-wrap items-center justify-center gap-4 px-4 py-8 text-[#eef0f3]">
+        <span className={`font-arabic text-center text-[rgb(var(--gold))] ${size}`} dir="rtl">{ex.ar}</span>
+        {hasButton && <button onClick={() => (real ? clip.play(wordAudioUrl(ex.ref!)) : speak(ex.speak!))} aria-label={t.listen} className={`grid h-12 w-12 place-items-center rounded-full hover:bg-white/20 ${clip.state === "playing" ? "bg-white/25" : "bg-white/10"}`}><IconSpeaker /></button>}
+        {ex.ref && clip.state === "error" && !canSpeak && <p className="w-full text-center text-xs text-white/60">{t.offline}</p>}
       </div>
       <div className="p-6">
         <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-gold">{t.learn}</p>

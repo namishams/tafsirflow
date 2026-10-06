@@ -3,16 +3,17 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import ArabicLesson from "@/components/ArabicLesson";
 import RequireAccount from "@/components/RequireAccount";
-import { LESSONS } from "@/lib/arabic";
+import { LESSONS, PLACEMENT_ID, lessonById } from "@/lib/arabic";
 import { pageMeta } from "@/lib/site";
 
+// the placement test ("/arabic/placement") runs on the same page as the lessons
 export function generateStaticParams() {
-  return LESSONS.map((l) => ({ id: l.id }));
+  return [...LESSONS.map((l) => ({ id: l.id })), { id: PLACEMENT_ID }];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; id: string }> }): Promise<Metadata> {
   const { locale, id } = await params;
-  const l = LESSONS.find((x) => x.id === id);
+  const l = lessonById(id);
   if (!l) return {};
   const lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
   const title = l.title[lang] ?? l.title.en;
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function ArabicLessonPage({ params }: { params: Promise<{ locale: string; id: string }> }) {
   const { locale, id } = await params;
   setRequestLocale(locale);
-  const l = LESSONS.find((x) => x.id === id);
+  const l = lessonById(id);
   if (!l) notFound();
   const lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
   return (

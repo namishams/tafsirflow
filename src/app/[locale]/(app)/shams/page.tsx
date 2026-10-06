@@ -274,9 +274,9 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
           <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-muted">{c.compareLead}</p>
           <div className="mt-10 overflow-x-auto rounded-lg border border-line">
             <table className="w-full min-w-[640px] text-sm">
-              <thead className="bg-bg text-left"><tr><th className="p-4" />{c.compareCols.map((h, i) => <th key={i} className={`p-4 font-bold ${i === 3 ? "bg-ink text-bg" : ""}`}>{h}</th>)}</tr></thead>
+              <thead className="bg-bg text-start"><tr><th className="p-4" />{c.compareCols.map((h, i) => <th key={i} className={`p-4 font-bold ${i === 3 ? "bg-ink text-bg" : ""}`}>{h}</th>)}</tr></thead>
               <tbody className="divide-y divide-line">
-                {c.compareRows.map((r) => <tr key={r.label}><th className="p-4 text-left font-semibold">{r.label}</th>{r.cells.map((x, i) => <td key={i} className={`p-4 ${i === 3 ? "bg-accent-soft font-semibold" : "text-muted"}`}>{x}</td>)}</tr>)}
+                {c.compareRows.map((r) => <tr key={r.label}><th className="p-4 text-start font-semibold">{r.label}</th>{r.cells.map((x, i) => <td key={i} className={`p-4 ${i === 3 ? "bg-accent-soft font-semibold" : "text-muted"}`}>{x}</td>)}</tr>)}
               </tbody>
             </table>
           </div>
