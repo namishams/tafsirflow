@@ -9,6 +9,7 @@ import p6 from "./ar6";
 import p7 from "./ar7";
 import p8 from "./ar8";
 import p9 from "./ar9";
+import p10 from "./ar10";
 
-const AR_BIOS: Record<string, ReciterBioText> = { ...p1, ...p2, ...p3, ...p4, ...p5, ...p6, ...p7, ...p8, ...p9 };
+const AR_BIOS: Record<string, ReciterBioText> = { ...p1, ...p2, ...p3, ...p4, ...p5, ...p6, ...p7, ...p8, ...p9, ...p10 };
 export default AR_BIOS;

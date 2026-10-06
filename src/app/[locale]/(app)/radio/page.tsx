@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/site";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "radio" });
-  return pageMeta(locale, "/radio", `${t("title")} – Quran | Quran Masterclass`, t("lead"));
+  return pageMeta(locale, "/radio", `${t("title")} – ${locale === "ar" ? "القرآن الكريم" : "Quran"} | Quran Masterclass`, t("lead"));
 }
 
 export default async function RadioPage({ params }: { params: Promise<{ locale: string }> }) {

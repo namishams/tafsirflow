@@ -9,6 +9,7 @@ import AuthGate from "./AuthGate";
 import SocialBar from "./SocialBar";
 import SurahPicker from "./SurahPicker";
 import { Ink, SurahBanner } from "./Ornaments";
+import ReciteCheck from "./ReciteCheck";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume, IconFlame } from "./Icons";
 import {
@@ -111,6 +112,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [testPos, setTestPos] = useState(0); // test mode: next word to check
   const [testMarks, setTestMarks] = useState<Record<number, boolean>>({});
   const [revealed, setRevealed] = useState(false);
+  const [reciteScore, setReciteScore] = useState<number | null>(null); // result of "recite & check" (speech recognition)
   const [note, setNote] = useState("");
   const [limitHit, setLimitHit] = useState(false);
   const [needsVerify, setNeedsVerify] = useState(false);
@@ -228,7 +230,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const verse = verses[idx];
 
   useEffect(() => { setUseRemote(false); setTimingsOk(true); setDbg(""); }, [verse, reciter.folder]);
-  useEffect(() => { setRevealed(false); setTestPos(0); setTestMarks({}); }, [idx, hide]);
+  useEffect(() => { setRevealed(false); setTestPos(0); setTestMarks({}); setReciteScore(null); }, [idx, hide]);
   useEffect(() => {
     if (!note) return;
     const id = setTimeout(() => setNote(""), 2600);
@@ -849,16 +851,26 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                             <button className={primary} onClick={() => setRevealed(true)}>{t("reveal")}</button>
                           </div>
                         )}
+                        {!revealed && !kids && (
+                          <div className="mt-3">
+                            <ReciteCheck words={words.map((w) => w.text_uthmani)} onResult={(score) => { setReciteScore(score); setRevealed(true); }} onPlayReciter={() => goTo(idx, true)} pauseOthers={() => audioRef.current?.pause()} />
+                          </div>
+                        )}
                         {revealed && (
                           <div className="mt-3 rounded-xl border border-gold/40 bg-gold/5 p-3 text-sm">
                             <p className="mb-3 font-semibold">{t("rateQ")}</p>
-                            {(
-                              <div className={`grid grid-cols-3 gap-2 ${kids ? "text-base [&>button]:h-14" : ""}`}>
-                                <button className="h-11 rounded-lg border border-red-300 bg-surface font-semibold text-red-700 transition hover:bg-red-50 dark:border-red-500/40 dark:text-red-300 dark:hover:bg-red-500/10" onClick={() => onRate("again")}>↺ {t("again")}</button>
-                                <button className="h-11 rounded-lg bg-accent font-bold text-white transition hover:brightness-110" onClick={() => onRate("good")}>✓ {t("good")}</button>
-                                <button className="btn-gold h-11 rounded-lg font-bold" onClick={() => onRate("easy")}>★ {t("easy")}</button>
-                              </div>
-                            )}
+                            {(() => {
+                              // after "recite & check" the coach suggests a rating (the learner still decides)
+                              const tip = reciteScore === null ? null : reciteScore >= 0.95 ? "easy" : reciteScore >= 0.75 ? "good" : "again";
+                              const ring = (r: string) => (tip === r ? "ring-2 ring-offset-2 ring-[rgb(var(--gold))] ring-offset-surface" : "");
+                              return (
+                                <div className={`grid grid-cols-3 gap-2 ${kids ? "text-base [&>button]:h-14" : ""}`}>
+                                  <button className={`h-11 rounded-lg border border-red-300 bg-surface font-semibold text-red-700 transition hover:bg-red-50 dark:border-red-500/40 dark:text-red-300 dark:hover:bg-red-500/10 ${ring("again")}`} onClick={() => onRate("again")}>↺ {t("again")}</button>
+                                  <button className={`h-11 rounded-lg bg-accent font-bold text-white transition hover:brightness-110 ${ring("good")}`} onClick={() => onRate("good")}>✓ {t("good")}</button>
+                                  <button className={`btn-gold h-11 rounded-lg font-bold ${ring("easy")}`} onClick={() => onRate("easy")}>★ {t("easy")}</button>
+                                </div>
+                              );
+                            })()}
                           </div>
                         )}
                       </div>
