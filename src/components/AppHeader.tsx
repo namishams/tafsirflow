@@ -12,6 +12,7 @@ export const NAV = [
   { href: "/quran", key: "quran" },
   { href: "/academy", key: "courses" },
   { href: "/shams", key: "shams" },
+  { href: "/islam", key: "islam" },
   { href: "/duas", key: "duas", wide: true },
   { href: "/radio", key: "radio", wide: true },
   { href: "/prayer", key: "prayer", wide: true },

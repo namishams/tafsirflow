@@ -271,7 +271,8 @@
     "groupLearn": "Learn",
     "groupQuran": "Quran",
     "groupMore": "More",
-    "support": "Support"
+    "support": "Support",
+    "islam": "Islam"
   },
   "today": {
     "title": "Today",
@@ -488,7 +489,8 @@
     "radioD": "Quran radio around the clock, with the adhan at prayer time.",
     "duasD": "Supplications from the Quran and 109 from the Prophet ﷺ, with sources.",
     "mapD": "See at a glance which surahs sit firmly – and which need you.",
-    "footerLine": "Learn the Quran – free, in 13 languages."
+    "footerLine": "Learn the Quran – free, in 13 languages.",
+    "islamD": "Islam, the Quran, the Prophet ﷺ, holy cities, Sunni and Shia, prayer – explained clearly and respectfully."
   },
   "legal": {
     "back": "Back to home",
