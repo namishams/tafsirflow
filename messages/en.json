@@ -791,7 +791,8 @@
     "rej_contact": "Please do not share e-mail addresses or phone numbers.",
     "rej_length": "Comments must be between 2 and 500 characters.",
     "rej_caps": "Please do not write in capital letters only.",
-    "rej_repeat": "Please avoid repeated characters or text."
+    "rej_repeat": "Please avoid repeated characters or text.",
+    "rej_ai": "Our moderator did not approve this comment. Please stay respectful and on topic."
   },
   "shams": {
     "title": "Shams Method",

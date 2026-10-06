@@ -3,7 +3,7 @@ import { pool } from "@/lib/db";
 import { currentUser } from "@/lib/auth";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { checkCaptcha } from "@/lib/captcha";
-import { moderate } from "@/lib/moderation";
+import { aiReview, moderate } from "@/lib/moderation";
 
 export const dynamic = "force-dynamic";
 const CATS = ["feature", "tafsir", "translation", "reciter", "bug", "content"];
@@ -48,6 +48,10 @@ export async function POST(req: NextRequest) {
   if ((await checkCaptcha(b, "feedback", clientIp(req))) !== "ok") return json({ error: "captcha" }, 400);
   const v1 = await moderate(title), v2 = body ? await moderate(body.slice(0, 500)) : ({ ok: true, flagged: null } as const);
   if (!v1.ok || !v2.ok) return json({ error: "rejected" }, 422);
-  await p.query("INSERT INTO feedback_posts (user_id, category, title, body, flagged) VALUES ($1, $2, $3, $4, $5)", [me.id, b.category, title, body, v1.flagged ?? (v2.ok ? v2.flagged : null)]);
-  return json({ ok: true, pending: true }, 201);
+  const softFlag = v1.flagged ?? (v2.ok ? v2.flagged : null);
+  const ai = softFlag ? null : await aiReview(`${title}\n\n${body}`);
+  if (ai?.decision === "reject") return json({ error: "rejected" }, 422);
+  const live = ai?.decision === "approve";
+  await p.query("INSERT INTO feedback_posts (user_id, category, title, body, flagged, approved) VALUES ($1, $2, $3, $4, $5, $6)", [me.id, b.category, title, body, softFlag ?? (ai?.decision === "review" ? `ai: ${ai.reason}` : null), live]);
+  return json({ ok: true, pending: !live }, 201);
 }

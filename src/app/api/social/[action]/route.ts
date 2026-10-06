@@ -4,7 +4,7 @@ import { pool } from "@/lib/db";
 import { currentUser } from "@/lib/auth";
 import { anonCookie } from "@/lib/gate";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
-import { MAX_STRIKES, moderate } from "@/lib/moderation";
+import { MAX_STRIKES, aiReview, moderate } from "@/lib/moderation";
 import { getSettings } from "@/lib/settings";
 import { checkCaptcha } from "@/lib/captcha";
 
@@ -129,11 +129,17 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
       }
       const dup = await p.query("SELECT 1 FROM comments WHERE user_id = $1 AND verse_key = $2 AND body = $3 AND status <> 'rejected'", [me.id, b.key, b.body.trim()]);
       if (dup.rowCount) return json({ error: "duplicate" }, 409);
-      // nothing goes live on its own: held for review unless the admin explicitly switched auto-approve on and no soft flag hit
-      const auto = (await getSettings()).commentsAutoApprove && !v.flagged;
+      // second check by the AI moderator: clear violations are rejected, clean comments go live, anything unclear waits for a human
+      const ai = v.flagged ? null : await aiReview(b.body.trim());
+      if (ai?.decision === "reject") {
+        await p.query("INSERT INTO comments (user_id, verse_key, parent_id, body, status, reject_reason, reviewed_at) VALUES ($1,$2,$3,$4,'rejected',$5,now())", [me.id, b.key, parent, b.body.trim().slice(0, 500), `ai: ${ai.reason}`]);
+        return json({ error: "rejected", reason: "ai" }, 422);
+      }
+      const auto = !v.flagged && ((await getSettings()).commentsAutoApprove || ai?.decision === "approve");
+      const flag = v.flagged ?? (ai?.decision === "review" ? `ai: ${ai.reason}` : null);
       const ins = await p.query(
         "INSERT INTO comments (user_id, verse_key, parent_id, body, status, flagged, reviewed_at) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id",
-        [me.id, b.key, parent, b.body.trim(), auto ? "approved" : "pending", v.flagged, auto ? new Date() : null],
+        [me.id, b.key, parent, b.body.trim(), auto ? "approved" : "pending", flag, auto ? new Date() : null],
       );
       return reply({ ok: true, id: Number(ins.rows[0].id), pending: !auto }, 201);
     }

@@ -113,3 +113,40 @@ export async function moderate(raw: string): Promise<Verdict> {
 }
 
 export const MAX_STRIKES = 5;
+
+// Second opinion by an AI model (OpenAI) after the word filter. It decides whether a comment may go live by itself:
+// "approve" – respectful and fitting; "review" – unclear, a human moderator decides; "reject" – clearly against the rules.
+// Without OPENAI_API_KEY (or if the service fails) everything stays in the human review queue, as before.
+export type AiVerdict = { decision: "approve" | "review" | "reject"; reason: string };
+const AI_RULES = `You moderate comments on verses of the Quran on quranmasterclass.com, a respectful Islamic learning platform from the UAE.
+Decide for ONE comment and answer only with JSON: {"decision":"approve"|"review"|"reject","reason":"<max 12 words, English>"}.
+approve: respectful reflections, questions, du'a, thanks, personal lessons, short praise – in any language.
+review: unclear meaning, religious rulings stated as facts that may be wrong or disputed, debates between schools, anything you are unsure about.
+reject: insults or mockery of Allah, the Prophet ﷺ, the Quran, any prophet, Companions, Ahl al-Bayt, scholars, schools of thought, sects or religions; takfir; hate, harassment, sexual content, violence or extremism; politics and propaganda; advertising, spam, links or contact details; off-topic chatter; gibberish.
+When in doubt choose review, never approve.`;
+
+export async function aiReview(text: string): Promise<AiVerdict | null> {
+  const key = process.env.OPENAI_API_KEY;
+  if (!key) return null;
+  try {
+    const r = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: { authorization: `Bearer ${key}`, "content-type": "application/json" },
+      body: JSON.stringify({
+        model: process.env.OPENAI_MODERATION_MODEL || process.env.OPENAI_MODEL || "gpt-4o-mini",
+        temperature: 0,
+        max_tokens: 60,
+        response_format: { type: "json_object" },
+        messages: [{ role: "system", content: AI_RULES }, { role: "user", content: text.slice(0, 1500) }],
+      }),
+      signal: AbortSignal.timeout(12000),
+    });
+    if (!r.ok) return null;
+    const d = (await r.json()) as { choices?: { message?: { content?: string } }[] };
+    const v = JSON.parse(d.choices?.[0]?.message?.content ?? "{}") as Partial<AiVerdict>;
+    if (v.decision !== "approve" && v.decision !== "review" && v.decision !== "reject") return null;
+    return { decision: v.decision, reason: String(v.reason ?? "").slice(0, 120) };
+  } catch {
+    return null;
+  }
+}

@@ -791,7 +791,8 @@
     "rej_contact": "Bitte teile keine E-Mail-Adressen oder Telefonnummern.",
     "rej_length": "Kommentare müssen zwischen 2 und 500 Zeichen lang sein.",
     "rej_caps": "Bitte nicht nur in Großbuchstaben schreiben.",
-    "rej_repeat": "Bitte keine wiederholten Zeichen oder Texte."
+    "rej_repeat": "Bitte keine wiederholten Zeichen oder Texte.",
+    "rej_ai": "Unser Moderator hat den Kommentar nicht freigegeben. Bitte bleib respektvoll und beim Thema."
   },
   "shams": {
     "title": "Shams-Methode",
