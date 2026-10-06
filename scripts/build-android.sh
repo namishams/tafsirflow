@@ -35,9 +35,17 @@ if [ ! -x "$SDK/cmdline-tools/latest/bin/sdkmanager" ]; then
   mkdir -p "$SDK/cmdline-tools" && unzip -q "$TMP/tools.zip" -d "$TMP" && mv "$TMP/cmdline-tools" "$SDK/cmdline-tools/latest" && rm -rf "$TMP"
 fi
 export ANDROID_HOME=$SDK JAVA_HOME=$JDK
-yes | "$SDK/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null || true
-"$SDK/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-35" "build-tools;35.0.0" >/dev/null
+# Bubblewrap looks for <sdk>/bin/sdkmanager (layout of its own installer); the tools stay in their standard place
+[ -e "$SDK/bin" ] || ln -s cmdline-tools/latest/bin "$SDK/bin"
 command -v bubblewrap >/dev/null || npm install -g @bubblewrap/cli >/dev/null
+# install exactly the build-tools and platform this Bubblewrap version builds with
+BW=$(npm root -g)/@bubblewrap
+BT=$(grep -rhoE "BUILD_TOOLS_VERSION = '[0-9.]+'" "$BW" 2>/dev/null | head -1 | grep -oE "[0-9.]+" || true)
+API=$(grep -rhoE "compileSdkVersion [0-9]+" "$BW" 2>/dev/null | head -1 | grep -oE "[0-9]+" || true)
+BT=${BT:-36.1.0}; API=${API:-36}
+echo "    SDK: platform android-$API, build-tools $BT"
+yes | "$SDK/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$SDK" --licenses >/dev/null || true
+"$SDK/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$SDK" "platform-tools" "platforms;android-$API" "build-tools;$BT" >/dev/null
 mkdir -p ~/.bubblewrap && printf '{"jdkPath":"%s","androidSdkPath":"%s"}\n' "$JDK" "$SDK" > ~/.bubblewrap/config.json
 
 echo "==> Signing key"
