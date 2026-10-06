@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 import { Link } from "@/i18n/navigation";
-import Logo from "@/components/Logo";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
-import SiteMenu from "@/components/SiteMenu";
 import SupportZiina from "@/components/SupportZiina";
-import TrustStrip from "@/components/TrustStrip";
-import MadeInDubai from "@/components/MadeInDubai";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
 
@@ -103,14 +98,8 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
   const c = content(locale);
   const ld = { "@context": "https://schema.org", "@type": "FAQPage", url: abs(`/${locale}/support`), mainEntity: c.faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
   return (
-    <div className="min-h-screen">
+    <div>
       <JsonLd data={ld} />
-      <header className="border-b border-line bg-surface">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-2 px-4">
-          <Link href="/" className="flex items-center gap-2.5"><Logo size={28} /><span className="text-[15px] font-extrabold tracking-tight">Quran Masterclass</span></Link>
-          <div className="flex items-center gap-2"><LanguageSwitcher /><SiteMenu /></div>
-        </div>
-      </header>
 
       <section className="stage text-[#eef0f3]">
         <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 sm:py-16 lg:grid-cols-[1fr_minmax(0,26rem)] lg:items-start [&>*]:min-w-0">
@@ -168,10 +157,8 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
           </div>
         </section>
 
-        <div className="mt-14"><TrustStrip /></div>
         <div className="mt-10 flex flex-col items-center gap-3 text-sm text-muted">
           <p>{c.contact}</p>
-          <MadeInDubai />
           <Link href="/" className="font-semibold text-accent">← {c.back}</Link>
         </div>
       </main>

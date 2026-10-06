@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import MadeInDubai from "@/components/MadeInDubai";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import Logo from "@/components/Logo";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
-import SiteMenu from "@/components/SiteMenu";
 import { pageMeta } from "@/lib/site";
 
 const DOCS = ["privacy", "terms", "imprint"] as const;
@@ -45,13 +41,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
   const d = doc as Doc;
   const e = process.env;
   return (
-    <div className="min-h-screen">
-      <header className="border-b border-line bg-surface">
-        <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4">
-          <Link href="/" className="flex items-center gap-2.5"><Logo size={28} /><span className="text-[15px] font-extrabold tracking-tight">Quran Masterclass</span></Link>
-          <LanguageSwitcher /><SiteMenu />
-        </div>
-      </header>
+    <div>
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-10">
         <h1 className="font-display text-4xl leading-tight">{t(`${d}Title`)}</h1>
         {d !== "imprint" ? (
@@ -69,7 +59,6 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
               <h2 className="text-lg font-bold">{t("imprintContact")}</h2>
               <p className="mt-2 text-muted">{e.LEGAL_EMAIL ?? "info@quranmasterclass.com"}{e.LEGAL_PHONE ? ` · ${e.LEGAL_PHONE}` : ""}</p>
             </section>
-            <MadeInDubai className="text-sm text-muted" />
           </div>
         )}
         <p className="mt-12"><Link href="/" className="text-sm font-semibold text-accent">← {t("back")}</Link></p>

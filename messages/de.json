@@ -517,7 +517,14 @@
     "mapD": "Sieh auf einen Blick, welche Suren sitzen – und welche dich brauchen.",
     "footerLine": "Den Koran lernen – kostenlos, in 13 Sprachen.",
     "islamD": "Islam, Koran, Prophet ﷺ, heilige Städte, Sunniten und Schiiten, das Gebet – klar und respektvoll erklärt.",
-    "arabicD": "Lesen lernen von null: Buchstaben, Vokalzeichen, Koranwörter – wie in der Koranschule."
+    "arabicD": "Lesen lernen von null: Buchstaben, Vokalzeichen, Koranwörter – wie in der Koranschule.",
+    "salahD": "Das Gebet Schritt für Schritt mit Animation – Haltungen, Worte und Bedeutung, sunnitisch und schiitisch.",
+    "recitersD": "50 große Rezitatoren der Welt: Leben, Stil und wo man sie hört.",
+    "assistantD": "Fragen zu Koran und Islam – ruhig beantwortet, mit dem Hinweis auf Gelehrte, wo es nötig ist.",
+    "worldD": "Wo Muslime leben: Regionen, Länder und Anteile auf einen Blick.",
+    "prayerD": "Gebetszeiten und islamisches Datum für deinen Ort, Mekka und Medina.",
+    "howD": "Wie die Masterclass aufgebaut ist – vom ersten Buchstaben bis zur sicheren Rezitation.",
+    "badge_help": "Hilfe"
   },
   "legal": {
     "back": "Zurück zur Startseite",
@@ -1287,5 +1294,23 @@
     "captchaNotice": "Geschützt durch reCAPTCHA. Es gelten die <privacy>Datenschutzerklärung</privacy> und die <terms>Nutzungsbedingungen</terms> von Google.",
     "captchaChallenge": "Bitte bestätige kurz, dass du kein Roboter bist, und sende dann erneut.",
     "captchaFailed": "Die Sicherheitsprüfung hat nicht geklappt. Bitte lade die Seite neu und versuche es noch einmal."
+  },
+  "ziina": {
+    "title": "Unterstützen mit Ziina",
+    "lead": "Sicher bezahlen mit Apple Pay, Google Pay oder Karte – über Ziina, die Zahlungs-App aus den Emiraten.",
+    "custom": "Eigener Betrag",
+    "pay": "Mit Ziina unterstützen",
+    "link": "Zur Ziina-Zahlungsseite",
+    "soon": "Die Unterstützung über Ziina wird gerade eingerichtet.",
+    "thanks": "Jazāk Allāhu khayran – vielen Dank für deine Unterstützung! Möge Allah es als fortlaufende gute Tat annehmen.",
+    "err": "Das hat nicht geklappt. Bitte versuche es gleich noch einmal.",
+    "safe": "Deine Kartendaten gibst du nur bei Ziina ein – sie erreichen unseren Server nie.",
+    "how": "So einfach geht es",
+    "step1": "Ziina-Seite öffnen – am Handy direkt, am Computer über den QR-Code.",
+    "step2": "Betrag frei wählen, zum Beispiel 25, 50 oder 100 AED.",
+    "step3": "Mit Apple Pay, Google Pay oder Karte bestätigen – fertig.",
+    "scan": "Mit dem Handy scannen",
+    "copy": "Link kopieren",
+    "copied": "Kopiert"
   }
 }

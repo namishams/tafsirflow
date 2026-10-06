@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import type { Chapter } from "@/lib/quran";
@@ -31,8 +32,8 @@ export default function SurahPicker({ current, chapters }: { current: Chapter; c
         <span className="truncate">{current.id}. {current.name_simple}</span>
         <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-muted" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M6 9l6 6 6-6" /></svg>
       </button>
-      {open && (
-        <div className="fixed inset-0 z-[70]" role="dialog" aria-modal="true" aria-label={t("goSurah")}>
+      {open && createPortal(
+        <div className="fixed inset-0 z-[90]" role="dialog" aria-modal="true" aria-label={t("goSurah")}>
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
           <div className="absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col rounded-t-3xl bg-surface shadow-xl sm:inset-auto sm:left-1/2 sm:top-1/2 sm:w-[32rem] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-2xl">
             <div className="p-4 pb-2 sm:p-5">
@@ -57,7 +58,8 @@ export default function SurahPicker({ current, chapters }: { current: Chapter; c
               ))}
             </ol>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   );

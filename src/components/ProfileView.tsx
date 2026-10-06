@@ -24,6 +24,7 @@ const card = "rounded-lg border border-line bg-surface p-5 sm:p-6";
 // My profile: personal data, complete learning statistics, security and privacy controls
 export default function ProfileView() {
   const t = useTranslations("profile");
+  const n = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
   const [d, setD] = useState<Data | null>(null);
@@ -54,6 +55,7 @@ export default function ProfileView() {
     if (r.ok) setPw({ current: "", next: "" });
   };
   const logoutAll = async () => { await post({ action: "logout-all" }); stopSync(); router.push("/account"); };
+  const logout = async () => { await fetch("/api/auth/logout", { method: "POST" }); stopSync(); router.push("/account"); };
   const deleteAccount = async () => {
     if (!confirm(t("deleteConfirm"))) return;
     const r = await post({ action: "delete", current: del });
@@ -152,7 +154,10 @@ export default function ProfileView() {
         </div>
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-5">
           <p className="text-sm text-muted">{t("sessions", { n: d.sessions })}</p>
-          <button onClick={logoutAll} className="h-11 rounded-md border border-line px-5 text-sm font-bold hover:border-ink">{t("logoutAll")}</button>
+          <div className="flex flex-wrap gap-2">
+            <button onClick={logout} className="h-11 rounded-md border border-line px-5 text-sm font-bold hover:border-ink">{n("signOut")}</button>
+            <button onClick={logoutAll} className="h-11 rounded-md border border-line px-5 text-sm font-bold hover:border-ink">{t("logoutAll")}</button>
+          </div>
         </div>
       </section>
 

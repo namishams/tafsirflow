@@ -10,10 +10,28 @@ const ICONS = [
   "M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z", // star
 ];
 
-export default function TrustStrip({ dark = false, details = false }: { dark?: boolean; details?: boolean }) {
+export default function TrustStrip({ dark = false, details = false, compact = false }: { dark?: boolean; details?: boolean; compact?: boolean }) {
   const t = useTranslations("trust");
   const items = [t("data"), t("spam"), t("space"), t("master")];
   const sub = [t("dataD"), t("spamD"), t("spaceD"), t("masterD")];
+  if (compact)
+    return (
+      <div>
+        <ul className="grid gap-2 text-[13px] text-ink/80">
+          {items.map((it, i) => (
+            <li key={it} className="flex items-center gap-2.5" title={sub[i]}>
+              <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-[rgb(var(--gold))]" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" strokeLinecap="round" aria-hidden><path d={ICONS[i]} /></svg>
+              {it}
+            </li>
+          ))}
+        </ul>
+        <details className="mt-3 text-[13px] text-muted">
+          <summary className="cursor-pointer underline-offset-2 hover:text-ink hover:underline">{t("howTitle")}</summary>
+          <ul className="mt-2 grid gap-1 ps-4 [list-style:disc]">{t("how").split("\n").map((l) => <li key={l}>{l}</li>)}</ul>
+          <p className="mt-2">{t.rich("howMore", { privacy: (c) => <Link href="/legal/privacy" className="underline">{c}</Link> })}</p>
+        </details>
+      </div>
+    );
   return (
     <div>
       <ul className={`grid gap-3 sm:grid-cols-2 lg:grid-cols-4 ${dark ? "text-white" : ""}`}>

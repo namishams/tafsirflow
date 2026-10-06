@@ -1,68 +1,35 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
+import { PRIMARY, isActive } from "@/lib/nav";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SiteMenu from "./SiteMenu";
 import AccountLink from "./AccountLink";
 import Logo from "./Logo";
 
-export const NAV = [
-  { href: "/today", key: "today" },
-  { href: "/quran", key: "quran" },
-  { href: "/academy", key: "courses" },
-  { href: "/shams", key: "shams" },
-  { href: "/islam", key: "islam" },
-  { href: "/duas", key: "duas", wide: true },
-  { href: "/radio", key: "radio", wide: true },
-  { href: "/prayer", key: "prayer", wide: true },
-  { href: "/search", key: "search", wide: true },
-] as const;
-const MORE = [
-  { href: "/duas", key: "duas", wide: true },
-  { href: "/radio", key: "radio", wide: true },
-  { href: "/prayer", key: "prayer", wide: true },
-  { href: "/search", key: "search", wide: true },
-  { href: "/arabic", key: "arabic" },
-  { href: "/salah", key: "salah" },
-  { href: "/plan", key: "plan" },
-  { href: "/map", key: "map" },
-  { href: "/tajweed", key: "tajweed" },
-  { href: "/vocab", key: "vocab" },
-  { href: "/khatm", key: "khatm" },
-  { href: "/reciters", key: "reciters" },
-  { href: "/assistant", key: "assistant" },
-  { href: "/guides", key: "guides" },
-  { href: "/feedback", key: "feedback" },
-  { href: "/about", key: "about" },
-] as const;
-
-// App bar: logo, section links (desktop), kids / language / account
+// The header of every page: logo, main sections + "More" (desktop), language, account, menu (phones)
 export default function AppHeader() {
   const t = useTranslations("nav");
   const path = usePathname();
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-surface">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4">
-        <div className="flex min-w-0 items-center gap-6">
+    <header className="sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/85">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-5">
+        <div className="flex min-w-0 items-center gap-5">
           <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2.5" aria-label="Quran Masterclass">
-            <Logo size={30} />
+            <Logo size={28} />
             <span className="truncate text-[15px] font-extrabold tracking-tight lg:hidden xl:inline">Quran Masterclass</span>
           </Link>
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
-            {NAV.map((n) => {
-              const on = path === n.href || path.startsWith(`${n.href}/`) || (n.href === "/quran" && path.startsWith("/surah"));
+          <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main">
+            {PRIMARY.map((n, i) => {
+              const on = isActive(path, n.href);
               return (
-                <Link key={n.href} href={n.href} aria-current={on ? "page" : undefined} className={`${"wide" in n ? "hidden 2xl:inline-block" : ""} whitespace-nowrap rounded-md px-2.5 py-1.5 text-sm font-semibold transition ${on ? "bg-accent-soft text-accent" : "text-muted hover:text-ink"}`}>
+                <Link key={n.href} href={n.href} aria-current={on ? "page" : undefined} className={`${i >= 4 ? "hidden xl:inline-block" : ""} relative whitespace-nowrap rounded-md px-2.5 py-1.5 text-sm font-semibold transition ${on ? "text-ink" : "text-muted hover:text-ink"}`}>
                   {t(n.key)}
+                  {on && <span className="absolute inset-x-2.5 -bottom-[11px] h-[2px] rounded-full bg-[rgb(var(--gold))]" />}
                 </Link>
               );
             })}
-            <details key={path} className="relative">
-              <summary className="cursor-pointer list-none whitespace-nowrap rounded-md px-2.5 py-1.5 text-sm font-semibold text-muted hover:text-ink">{t("more")} ▾</summary>
-              <div className="absolute start-0 top-full z-50 mt-2 grid w-64 gap-0.5 rounded-lg border border-line bg-surface p-2 shadow-lg">
-                {MORE.map((m) => <Link key={m.href} href={m.href} className={`${"wide" in m ? "2xl:hidden" : ""} rounded-md px-3 py-2 text-sm font-semibold hover:bg-bg`}>{t(m.key)}</Link>)}
-              </div>
-            </details>
+            <SiteMenu variant="panel" />
           </nav>
         </div>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2"><LanguageSwitcher /><AccountLink /><span className="lg:hidden"><SiteMenu /></span></div>

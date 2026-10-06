@@ -1,13 +1,19 @@
 import { NextRequest } from "next/server";
+import QRCode from "qrcode";
 import { clientIp, isHttps, json, rateLimited, sameOrigin } from "@/lib/http";
 
 export const dynamic = "force-dynamic";
 
 // Voluntary support via Ziina (UAE). With ZIINA_API_KEY set, a payment intent is created for the chosen amount and the
-// visitor is sent to Ziina's secure checkout; otherwise the page shows the owner's Ziina payment link (SUPPORT_URL).
+// visitor is sent to Ziina's secure checkout; otherwise the page shows the owner's personal Ziina payment link
+// (SUPPORT_URL, default pay.ziina.com/icslfze) with a QR code for paying from the phone.
 // Keys live only in /srv/tafsirflow/.env.app. Card data never touches this server.
-export function GET() {
-  return json({ api: !!process.env.ZIINA_API_KEY, link: process.env.SUPPORT_URL ?? "" });
+const LINK = process.env.SUPPORT_URL || "https://pay.ziina.com/icslfze";
+let qr: Promise<string> | null = null;
+
+export async function GET() {
+  qr ??= QRCode.toString(LINK, { type: "svg", margin: 1, errorCorrectionLevel: "M", color: { dark: "#0e221b", light: "#ffffff" } }).catch(() => "");
+  return json({ api: !!process.env.ZIINA_API_KEY, link: LINK, qr: await qr });
 }
 
 export async function POST(req: NextRequest) {

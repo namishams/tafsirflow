@@ -517,7 +517,14 @@
     "mapD": "See at a glance which surahs sit firmly – and which need you.",
     "footerLine": "Learn the Quran – free, in 13 languages.",
     "islamD": "Islam, the Quran, the Prophet ﷺ, holy cities, Sunni and Shia, prayer – explained clearly and respectfully.",
-    "arabicD": "Learn to read from zero: letters, vowel signs, Quran words – like at a Quran school."
+    "arabicD": "Learn to read from zero: letters, vowel signs, Quran words – like at a Quran school.",
+    "salahD": "The prayer step by step with animation – postures, words and meaning, Sunni and Shia.",
+    "recitersD": "50 great reciters of the world: their lives, styles and where to listen.",
+    "assistantD": "Questions about the Quran and Islam – answered calmly, pointing to scholars where needed.",
+    "worldD": "Where Muslims live: regions, countries and shares at a glance.",
+    "prayerD": "Prayer times and the Islamic date for your location, Makkah and Madinah.",
+    "howD": "How the Masterclass is built – from the first letter to confident recitation.",
+    "badge_help": "Help"
   },
   "legal": {
     "back": "Back to home",
@@ -1287,5 +1294,23 @@
     "captchaNotice": "Protected by reCAPTCHA. The Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
     "captchaChallenge": "Please quickly confirm you are not a robot, then send again.",
     "captchaFailed": "The security check did not work. Please reload the page and try again."
+  },
+  "ziina": {
+    "title": "Support with Ziina",
+    "lead": "Pay securely with Apple Pay, Google Pay or card – through Ziina, the payment app from the Emirates.",
+    "custom": "Other amount",
+    "pay": "Support with Ziina",
+    "link": "Go to the Ziina payment page",
+    "soon": "Support via Ziina is being set up.",
+    "thanks": "Jazāk Allāhu khayran – thank you so much for your support! May Allah accept it as an ongoing good deed.",
+    "err": "That did not work. Please try again in a moment.",
+    "safe": "You enter your card details only at Ziina – they never reach our server.",
+    "how": "As simple as this",
+    "step1": "Open the Ziina page – directly on your phone, or via the QR code on a computer.",
+    "step2": "Choose any amount, for example 25, 50 or 100 AED.",
+    "step3": "Confirm with Apple Pay, Google Pay or card – done.",
+    "scan": "Scan with your phone",
+    "copy": "Copy link",
+    "copied": "Copied"
   }
 }

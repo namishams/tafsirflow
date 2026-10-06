@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import MadeInDubai from "@/components/MadeInDubai";
-import TrustStrip, { TrustLine } from "@/components/TrustStrip";
+import { TrustLine } from "@/components/TrustStrip";
+import PosterTiles from "@/components/PosterTiles";
+import { HOME_TILES } from "@/lib/tiles";
+import AppHeader from "@/components/AppHeader";
+import SiteFooter from "@/components/SiteFooter";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
-import SiteMenu from "@/components/SiteMenu";
-import AccountLink from "@/components/AccountLink";
-import Logo from "@/components/Logo";
 import JsonLd from "@/components/JsonLd";
 import WhyQuran from "@/components/WhyQuran";
 import { getChapters } from "@/lib/quran";
@@ -31,18 +30,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMeta(locale, "", t("homeTitle"), t("homeDesc", { n: routing.locales.length }), t("keywords"));
 }
 
-const COURSES = [
-  { href: "/shams", key: "shams", ar: "شمس", desc: "tool_shamsD", badge: "method", bg: "linear-gradient(160deg,#3a2f12 0%,#14110a 100%)" },
-  { href: "/academy", key: "courses", ar: "أكاديمية", desc: "tool_academyD", badge: "course", bg: "linear-gradient(160deg,#0c4a37 0%,#06221a 100%)" },
-  { href: "/arabic", key: "arabic", ar: "اقرأ", desc: "arabicD", badge: "course", bg: "linear-gradient(160deg,#1d3b2c 0%,#081a12 100%)" },
-  { href: "/islam", key: "islam", ar: "إسلام", desc: "islamD", badge: "library", bg: "linear-gradient(160deg,#0f3b2e 0%,#05170f 100%)" },
-  { href: "/tajweed", key: "tajweed", ar: "تجويد", desc: "tool_tajweedD", badge: "course", bg: "linear-gradient(160deg,#3b1f2b 0%,#160b10 100%)" },
-  { href: "/plan", key: "plan", ar: "حفظ", desc: "planD", badge: "plan", bg: "linear-gradient(160deg,#1f2b44 0%,#0b101b 100%)" },
-  { href: "/vocab", key: "vocab", ar: "كلمات", desc: "tool_vocabD", badge: "course", bg: "linear-gradient(160deg,#2c3a1a 0%,#10160a 100%)" },
-  { href: "/radio", key: "radio", ar: "إذاعة", desc: "radioD", badge: "live", bg: "linear-gradient(160deg,#401c14 0%,#170a07 100%)" },
-  { href: "/duas", key: "duas", ar: "دعاء", desc: "duasD", badge: "library", bg: "linear-gradient(160deg,#173640 0%,#081418 100%)" },
-  { href: "/map", key: "map", ar: "خريطة", desc: "mapD", badge: "progress", bg: "linear-gradient(160deg,#30254a 0%,#100c19 100%)" },
-];
 
 export default async function Landing({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -67,15 +54,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
   return (
     <div>
       <JsonLd data={ld} />
-      <header className="sticky top-0 z-30 border-b border-line bg-surface">
-        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-5">
-          <Link href="/" className="flex min-w-0 items-center gap-2.5">
-            <Logo size={30} />
-            <span className="truncate text-[15px] font-extrabold tracking-tight">{t("app.name")}</span>
-          </Link>
-          <div className="flex items-center gap-1.5 sm:gap-2"><LanguageSwitcher /><SiteMenu /><AccountLink /></div>
-        </div>
-      </header>
+      <AppHeader />
 
       <main>
         {/* 1 Hero – cinematic, with an animated verse player (words light up one after another) */}
@@ -122,21 +101,9 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           <div className="mx-auto max-w-6xl px-5">
             <div className="flex items-end justify-between gap-4 border-t border-white/10 pt-10">
               <h2 className="font-display text-3xl leading-tight sm:text-4xl">{t("home2.coursesTitle")}</h2>
-              <Link href="/academy" className="hidden shrink-0 text-sm font-bold text-[rgb(var(--gold))] hover:underline sm:inline">{t("home2.coursesAll")} →</Link>
+              <Link href="/academy" className="shrink-0 text-sm font-semibold text-[rgb(var(--gold))] hover:underline">{t("home2.coursesAll")} →</Link>
             </div>
-            <ul className="-mx-5 mt-6 flex snap-x gap-4 overflow-x-auto px-5 pb-2 lg:mx-0 lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-0">
-              {COURSES.map((c) => (
-                <li key={c.href} className="w-[72%] shrink-0 snap-start sm:w-[44%] lg:w-auto">
-                  <Link href={c.href} className="group relative flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-lg p-5" style={{ background: c.bg }}>
-                    <span aria-hidden className="font-arabic pointer-events-none absolute -end-2 top-2 text-[7rem] leading-none text-white/[0.09] transition duration-500 group-hover:scale-110" dir="rtl">{c.ar}</span>
-                    <span className="absolute start-5 top-5 rounded-sm bg-black/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white/80">{t(`home2.badge_${c.badge}`)}</span>
-                    <span className="font-display relative text-[26px] leading-tight text-white">{t(`nav.${c.key}`)}</span>
-                    <span className="relative mt-2 line-clamp-3 text-sm leading-relaxed text-white/75">{t(`home2.${c.desc}`)}</span>
-                    <span className="relative mt-4 text-xs font-bold uppercase tracking-[0.14em] text-[rgb(var(--gold))]">{t("home2.open")} →</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <PosterTiles keys={HOME_TILES} className="mt-6" />
           </div>
         </section>
 
@@ -342,46 +309,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         </section>
       </main>
 
-      <footer className="border-t border-line bg-bg">
-        <div className="mx-auto max-w-6xl px-5 pt-12"><TrustStrip details /></div>
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <Link href="/" className="flex items-center gap-2.5"><Logo size={28} /><span className="text-[15px] font-extrabold tracking-tight">{t("app.name")}</span></Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">{t("app.tagline")}</p>
-          </div>
-          <nav aria-label={t("home2.fPopular")}>
-            <p className="eyebrow">{t("home2.fPopular")}</p>
-            <ul className="mt-3 grid gap-2 text-sm">
-              {POPULAR.slice(0, 6).map(({ n: i, href }) => <li key={i}><Link href={href} className="text-muted hover:text-ink">{t(`home2.pop${i}`)}</Link></li>)}
-            </ul>
-          </nav>
-          <nav aria-label={t("home2.fLanguages")}>
-            <p className="eyebrow">{t("home2.fLanguages")}</p>
-            <ul className="mt-3 grid grid-cols-2 gap-2 text-sm">
-              {Object.entries(LOCALE_META).map(([k, v]) => <li key={k}><Link href="/" locale={k} hrefLang={k} className="text-muted hover:text-ink">{v.label}</Link></li>)}
-            </ul>
-          </nav>
-          <nav aria-label={t("home2.fLegal")}>
-            <p className="eyebrow">{t("home2.fLegal")}</p>
-            <ul className="mt-3 grid gap-2 text-sm">
-              <li><Link href="/about" className="text-muted hover:text-ink">{t("nav.about")}</Link></li>
-              <li><Link href="/guides" className="text-muted hover:text-ink">{t("nav.blog")}</Link></li>
-              <li><Link href="/feedback" className="text-muted hover:text-ink">{t("nav.feedback")}</Link></li>
-              <li><Link href="/changelog" className="text-muted hover:text-ink">{t("nav.changelog")}</Link></li>
-              <li><Link href="/support" className="text-muted hover:text-ink">{t("support.nav")}</Link></li>
-              <li><Link href="/legal/privacy" className="text-muted hover:text-ink">{t("home2.privacy")}</Link></li>
-              <li><Link href="/legal/terms" className="text-muted hover:text-ink">{t("home2.terms")}</Link></li>
-              <li><Link href="/legal/imprint" className="text-muted hover:text-ink">{t("home2.imprint")}</Link></li>
-            </ul>
-          </nav>
-        </div>
-        <div className="border-t border-line py-5">
-          <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 text-xs text-muted sm:flex-row sm:justify-between">
-            <p><span className="font-semibold text-ink">{t("free.title")}</span> {t("free.body")}</p>
-            <div className="flex flex-wrap items-center gap-x-2"><span>© {new Date().getFullYear()} {t("app.name")} · Nami Shams ·</span><MadeInDubai /></div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
