@@ -92,7 +92,14 @@
     "testWord": "Word {n} of {total}: recite it, then check yourself",
     "knewWord": "I knew it",
     "missedWord": "Missed",
-    "testScore": "Result: {ok} of {total} words ({pct}%) – rate yourself below."
+    "testScore": "Result: {ok} of {total} words ({pct}%) – rate yourself below.",
+    "toolRead": "Read",
+    "toolPractice": "Practise",
+    "toolTest": "Test",
+    "toolShams": "Shams Method",
+    "hideLabel": "Cover:",
+    "more": "More",
+    "todayCount": "Today: {n} verses"
   },
   "language": {
     "label": "Language"

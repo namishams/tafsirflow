@@ -15,7 +15,7 @@ import {
   type Chapter, type Reciter, type Resource, type TafsirResult, type Verse,
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
-import { dueVerses, rate, type Rating } from "@/lib/learning";
+import { dueVerses, rate, stats, type Rating } from "@/lib/learning";
 import * as vp from "@/lib/versePlayback";
 import { ageProfile } from "@/lib/age";
 
@@ -23,6 +23,8 @@ type Mode = "learn" | "continuous";
 
 const seg = (on: boolean) =>
   `shrink-0 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${on ? "bg-[rgb(var(--stage))] text-[rgb(var(--gold))] shadow-sm" : "text-muted hover:text-ink"}`;
+const IconDots = () => (<svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg>);
+const menuItem = "flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-ink hover:bg-bg";
 // small eight-pointed star used as the ornament of the learning tools
 const Star8 = ({ className = "h-3.5 w-3.5" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden><path d="M12 1.5l2.6 4.2 4.8-1.1-1.1 4.8 4.2 2.6-4.2 2.6 1.1 4.8-4.8-1.1L12 22.5l-2.6-4.2-4.8 1.1 1.1-4.8L1.5 12l4.2-2.6-1.1-4.8 4.8 1.1z" /></svg>
@@ -96,6 +98,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [dbg, setDbg] = useState("");
   const [hide, setHide] = useState(startHide); // 0 show all, 1 every 2nd word, 2 hard (all), 3 first letters (cue), 4 random, 5 soft (blurred), 6 test word by word
   const [seed, setSeed] = useState(1); // random mode: reshuffle
+  const [practiceHide, setPracticeHide] = useState(5); // last chosen cover level of the "practise" tool
+  const [menuFor, setMenuFor] = useState<string | null>(null); // verse whose "more" menu is open
+  useEffect(() => {
+    if (!menuFor) return;
+    const close = () => setMenuFor(null);
+    document.addEventListener("click", close);
+    return () => document.removeEventListener("click", close);
+  }, [menuFor]);
   const [testPos, setTestPos] = useState(0); // test mode: next word to check
   const [testMarks, setTestMarks] = useState<Record<number, boolean>>({});
   const [revealed, setRevealed] = useState(false);
@@ -484,6 +494,25 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   );
 
   const showDebug = typeof window !== "undefined" && window.location.search.includes("debug");
+  const learned = useMemo(() => stats(), [note, shams]); // eslint-disable-line react-hooks/exhaustive-deps
+  // keyboard: space = play/pause, R = reveal, Enter = next Shams step (never while typing)
+  const keys = useRef({ toggle: () => {}, reveal: () => {}, next: () => {} });
+  keys.current = {
+    toggle: () => (playing ? audioRef.current?.pause() : play()),
+    reveal: () => { if (hide > 0 && !revealed) setRevealed(true); },
+    next: () => { if (shams !== null && shams !== 5) nextShams(); },
+  };
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement | null;
+      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.tagName === "SELECT" || el.isContentEditable)) return;
+      if (e.key === " ") { e.preventDefault(); keys.current.toggle(); }
+      else if (e.key === "r" || e.key === "R") keys.current.reveal();
+      else if (e.key === "Enter") keys.current.next();
+    };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, []);
   const primary = "btn-gold rounded-full px-5 py-2.5 text-sm font-bold";
   const withBismillah = chapterId !== 1 && chapterId !== 9;
   const dockBtn = "grid h-11 w-11 place-items-center rounded-full text-ink transition hover:bg-accent-soft";
@@ -511,7 +540,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             </label>
             {verse.page > 0 && <span className="text-muted tabular-nums">{t("page")} {verse.page} · {t("juz")} {verse.juz} / {t("hizb")} {verse.hizb}</span>}
             {!kids && (shams === null
-              ? <button onClick={startShams} className="inline-flex h-9 items-center gap-2 rounded-md bg-ink px-3.5 text-[13px] font-bold text-bg hover:opacity-90"><span aria-hidden>☀</span>{ts("start")}</button>
+              ? <button onClick={startShams} className="btn-gold inline-flex h-9 items-center gap-2 rounded-full px-4 text-[13px] font-bold"><Star8 className="h-3 w-3" />{ts("start")}</button>
               : <button onClick={stopShams} className="inline-flex h-9 items-center rounded-md border border-line px-3.5 text-[13px] font-bold hover:border-ink">{ts("stop")}</button>)}
             <div className="inline-flex rounded-lg bg-surface p-1 ring-1 ring-line">
               <button className={seg(view === "verses")} onClick={() => setViewPref("verses")}>{t("viewVerses")}</button>
@@ -521,7 +550,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
           <section className="mb-5 rounded-2xl border border-line bg-surface p-4 shadow-card">
             <button className="flex w-full items-center justify-between text-sm font-semibold" onClick={() => setSettingsOpen((o) => !o)} aria-expanded={settingsOpen}>
-              <span>⚙ {t("settings")}</span><span className="text-muted">{settingsOpen ? "−" : "+"}</span>
+              <span className="inline-flex items-center gap-2"><svg viewBox="0 0 24 24" className="h-4 w-4 text-muted" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" /></svg>{t("settings")}</span><span className="text-muted">{settingsOpen ? "−" : "+"}</span>
             </button>
             {settingsOpen && (
               <div className="mt-4 grid gap-4 text-sm sm:grid-cols-2">
@@ -589,6 +618,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               const active = i === idx;
               const words = v.words.filter((w) => w.char_type_name === "word");
               const marked = marks.includes(v.verse_key);
+              const tool = hide === 0 ? "read" : hide === 6 ? "test" : "practice";
+              const markWord = (ok: boolean) => () => { const m = { ...testMarks, [testPos]: ok }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); };
               return (
                 <li key={v.verse_key} id={`v-${i}`} className="scroll-mt-20">
                   <article
@@ -601,15 +632,24 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         <span className="absolute inset-1 rounded-[5px] bg-accent-soft" />
                         <span className="relative text-xs font-semibold text-accent">{v.verse_number}</span>
                       </span>
-                      <div className="flex items-center gap-0.5 text-muted" onClick={(e) => e.stopPropagation()}>
-                        <button className="grid h-9 w-9 place-items-center rounded-full hover:bg-bg hover:text-ink" aria-label={t("playVerse")} title={t("playVerse")} onClick={() => goTo(i)}><IconPlaySm /></button>
-                        <button className={`grid h-9 w-9 place-items-center rounded-full hover:bg-bg ${marked ? "text-gold" : "hover:text-ink"}`} aria-label={marked ? t("bookmarked") : t("bookmark")} title={marked ? t("bookmarked") : t("bookmark")} onClick={() => toggleMark(v.verse_key)}><IconBookmark filled={marked} /></button>
-                        {!kids && <>
-                          <button className="grid h-9 w-9 place-items-center rounded-full hover:bg-bg hover:text-ink" aria-label={t("copy")} title={t("copy")} onClick={() => copyVerse(v)}><IconCopy /></button>
-                          <button className="grid h-9 w-9 place-items-center rounded-full hover:bg-bg hover:text-ink" aria-label={t("share")} title={t("share")} onClick={() => shareVerse(v)}><IconShare /></button>
-                          <button className={`grid h-9 w-9 place-items-center rounded-full hover:bg-bg ${notes[v.verse_key] ? "text-accent" : "hover:text-ink"}`} aria-label={t("note")} title={t("note")} onClick={() => setNoteOpen(noteOpen === v.verse_key ? null : v.verse_key)}><IconNote /></button>
-                        </>}
-                      </div>
+                      {active ? (
+                        <div className="relative flex items-center gap-0.5 text-muted" onClick={(e) => e.stopPropagation()}>
+                          <button className={`grid h-9 w-9 place-items-center rounded-full hover:bg-bg ${marked ? "text-gold" : "hover:text-ink"}`} aria-label={marked ? t("bookmarked") : t("bookmark")} title={marked ? t("bookmarked") : t("bookmark")} onClick={() => toggleMark(v.verse_key)}><IconBookmark filled={marked} /></button>
+                          {!kids && <button className={`grid h-9 w-9 place-items-center rounded-full hover:bg-bg ${notes[v.verse_key] ? "text-accent" : "hover:text-ink"}`} aria-label={t("note")} title={t("note")} onClick={() => setNoteOpen(noteOpen === v.verse_key ? null : v.verse_key)}><IconNote /></button>}
+                          {!kids && (
+                            <>
+                              <button className="grid h-9 w-9 place-items-center rounded-full hover:bg-bg hover:text-ink" aria-label={t("more")} aria-haspopup="menu" aria-expanded={menuFor === v.verse_key} onClick={() => setMenuFor(menuFor === v.verse_key ? null : v.verse_key)}><IconDots /></button>
+                              {menuFor === v.verse_key && (
+                                <div role="menu" className="absolute end-0 top-10 z-20 w-44 rounded-lg border border-line bg-surface p-1 shadow-card">
+                                  <button role="menuitem" className={menuItem} onClick={() => { copyVerse(v); setMenuFor(null); }}><IconCopy />{t("copy")}</button>
+                                  <button role="menuitem" className={menuItem} onClick={() => { shareVerse(v); setMenuFor(null); }}><IconShare />{t("share")}</button>
+                                  <button role="menuitem" className={menuItem} onClick={() => { goTo(i, true); setMenuFor(null); }}><IconPlaySm />{t("playVerse")}</button>
+                                </div>
+                              )}
+                            </>
+                          )}
+                        </div>
+                      ) : marked ? <span className="text-gold" aria-label={t("bookmarked")}><IconBookmark filled /></span> : null}
                     </div>
                     {active ? (
                       <p className="ar-text flex flex-wrap justify-start gap-x-3 gap-y-2 font-arabic" dir="rtl">
@@ -642,16 +682,20 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     )}
                     {showTranslation && <p className="mt-2 leading-relaxed text-muted" dir={meta.dir}>{v.translation}</p>}
                     {active && shams !== null && shams >= 0 && (
-                      <div className="mt-5 rounded-lg border border-line border-s-4 border-s-gold bg-bg p-4" onClick={(e) => e.stopPropagation()}>
+                      <div className="stage mt-5 rounded-xl p-4 text-[#eef0f3] sm:p-5" onClick={(e) => e.stopPropagation()}>
                         <div className="flex items-center justify-between gap-3">
-                          <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-gold">{ts("title")} · {ts("stepOf", { n: shams + 1, total: 7 })}</p>
-                          <Link href="/shams" className="text-xs text-muted underline-offset-2 hover:underline">{ts("about")}</Link>
+                          <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))]"><Star8 className="h-3 w-3" />{ts("title")} · {ts("stepOf", { n: shams + 1, total: 7 })}</p>
+                          <span className="flex items-center gap-3 text-xs text-white/60">
+                            {learned.todayCount > 0 && <span>{t("todayCount", { n: learned.todayCount })}</span>}
+                            {learned.streak > 1 && <span>🔥 {learned.streak}</span>}
+                            <Link href="/shams" className="underline-offset-2 hover:underline">{ts("about")}</Link>
+                          </span>
                         </div>
                         <ol className="mt-3 grid grid-cols-7 gap-1" aria-hidden>
-                          {[0, 1, 2, 3, 4, 5, 6].map((n) => <li key={n} className={`h-1 rounded-full ${n <= shams ? "bg-gold" : "bg-line"}`} />)}
+                          {[0, 1, 2, 3, 4, 5, 6].map((n) => <li key={n} className={`h-1.5 rounded-full transition-colors ${n <= shams ? "bg-[rgb(var(--gold))]" : "bg-white/15"}`} />)}
                         </ol>
-                        <h3 className="mt-3 text-lg font-bold">{ts(`s${shams + 1}`)}</h3>
-                        <p className="mt-1 text-[15px] leading-relaxed text-muted">{ts(`d${shams + 1}`)}</p>
+                        <h3 className="font-display mt-4 text-2xl leading-tight">{ts(`s${shams + 1}`)}</h3>
+                        <p className="mt-2 text-[15px] leading-relaxed text-white/75">{ts(`d${shams + 1}`)}</p>
                         {shams === 3 && (() => {
                           const h = hooks(v, verses[i + 1]);
                           const sameRhyme = verses.filter((x) => hooks(x).rhyme === h.rhyme).length;
@@ -662,76 +706,89 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                               {h.bridge && h.bridge.from && h.bridge.to && <p><span className="font-semibold">{ts("hBridge")}:</span> <span className="font-arabic mt-1 block text-xl" dir="rtl">{h.bridge.from.text_uthmani} ← {h.bridge.to.text_uthmani}</span></p>}
                               <p><span className="font-semibold">{ts("hAcrostic")}:</span> <span className="font-arabic text-xl text-gold" dir="rtl">{h.acrostic}</span></p>
                               <label className="mt-1 grid gap-1"><span className="font-semibold">{ts("hOwn")}</span>
-                                <textarea rows={2} defaultValue={mnemos[v.verse_key] ?? ""} onBlur={(e) => saveMnemo(v.verse_key, e.target.value)} placeholder={ts("hOwnPh")} className="rounded-md border border-line bg-surface p-2 text-sm" />
+                                <textarea rows={2} defaultValue={mnemos[v.verse_key] ?? ""} onBlur={(e) => saveMnemo(v.verse_key, e.target.value)} placeholder={ts("hOwnPh")} className="rounded-md border border-line bg-surface p-2 text-sm text-ink" />
                               </label>
                             </div>
                           );
                         })()}
-                        {shams === 6 && <ul className="mt-2 grid gap-1 text-sm text-muted">{["q1", "q2", "q3"].map((q) => <li key={q}>– {ts(q)}</li>)}</ul>}
-                        <div className="mt-4 flex flex-wrap items-center gap-2">
-                          {(shams === 0 || (shams === 1 && !hasTimings)) && <button onClick={() => goTo(idx, true)} className="h-10 rounded-md border border-line bg-surface px-4 text-sm font-semibold hover:border-ink">{ts("again")}</button>}
-                          {shams !== 5 && <button onClick={nextShams} className="h-10 rounded-md bg-ink px-5 text-sm font-bold text-bg hover:opacity-90">{shams === 6 ? ts("nextVerse") : ts("next")}</button>}
-                          {shams === 1 && hasTimings && <button onClick={startChain} className="h-10 rounded-md border border-line bg-surface px-4 text-sm font-semibold hover:border-ink">{ts("chainAgain")}</button>}
-                          {shams === 1 && chain !== null && <span className="text-sm text-muted">{ts("chainNow")}</span>}
-                          {shams === 1 && chainDone && <span className="text-sm font-semibold text-accent">{ts("chainDone")}</span>}
-                          {shams === 5 && hide === 3 && !revealed && <button onClick={() => setHide(2)} className="h-10 rounded-md bg-ink px-5 text-sm font-bold text-bg">{ts("noCues")}</button>}
-                          {shams === 5 && !revealed && <span className="text-sm text-muted">{hide === 3 ? ts("cueHint") : ts("recallHint")}</span>}
+                        {shams === 6 && <ul className="mt-2 grid gap-1 text-sm text-white/70">{["q1", "q2", "q3"].map((q) => <li key={q}>– {ts(q)}</li>)}</ul>}
+                        <div className="mt-5 flex flex-wrap items-center gap-2">
+                          {(shams === 0 || (shams === 1 && !hasTimings)) && <button onClick={() => goTo(idx, true)} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("again")}</button>}
+                          {shams !== 5 && <button onClick={nextShams} className="btn-gold h-11 rounded-full px-6 text-sm font-bold">{shams === 6 ? ts("nextVerse") : ts("next")}</button>}
+                          {shams === 1 && hasTimings && <button onClick={startChain} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("chainAgain")}</button>}
+                          {shams === 1 && chain !== null && <span className="text-sm text-white/70">{ts("chainNow")}</span>}
+                          {shams === 1 && chainDone && <span className="text-sm font-semibold text-[rgb(var(--gold))]">{ts("chainDone")}</span>}
+                          {shams === 5 && hide === 3 && !revealed && <button onClick={() => setHide(2)} className="btn-gold h-11 rounded-full px-6 text-sm font-bold">{ts("noCues")}</button>}
+                          {shams === 5 && !revealed && <span className="text-sm text-white/70">{hide === 3 ? ts("cueHint") : ts("recallHint")}</span>}
                         </div>
                       </div>
                     )}
-                    {active && !kids && shams === null && <SocialBar verseKey={v.verse_key} shareText={v.translation} />}
                     {active && shams === null && (
-                      <div className="mt-5 rounded-xl border border-line bg-bg/60 p-3" onClick={(e) => e.stopPropagation()}>
-                        <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-gold"><Star8 />{t("memorize")}</p>
-                        <div className="-mx-1 mt-2 flex gap-1 overflow-x-auto px-1 pb-0.5">
-                          <button className={seg(hide === 0)} onClick={() => setHide(0)}>{t("hideNone")}</button>
-                          <button className={seg(hide === 5)} onClick={() => setHide(5)}>{t("hideSoft")}</button>
-                          <button className={seg(hide === 1)} onClick={() => setHide(1)}>{t("hideHalf")}</button>
-                          <button className={seg(hide === 4)} onClick={() => { if (hide === 4) setSeed((x) => x + 1); setHide(4); }}>{t("hideRandom")}</button>
-                          <button className={seg(hide === 2)} onClick={() => setHide(2)}>{t("hideHard")}</button>
-                          <button className={seg(hide === 6)} onClick={() => setHide(6)}>{t("hideTest")}</button>
-                        </div>
-                        {hide === 4 && !revealed && <button className="mt-2 text-sm font-semibold text-accent hover:underline" onClick={() => setSeed((x) => x + 1)}>↻ {t("shuffle")}</button>}
-                      </div>
-                    )}
-                    {active && hide === 6 && !revealed && (
-                      <div className="mt-3 rounded-xl border border-gold/40 bg-gold/5 p-4 text-sm" onClick={(e) => e.stopPropagation()}>
-                        <p className="font-semibold">{t("testWord", { n: testPos + 1, total: words.length })}</p>
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          <button className={primary} onClick={() => { const m = { ...testMarks, [testPos]: true }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); }}>✓ {t("knewWord")}</button>
-                          <button className="rounded-full border border-line bg-surface px-4 py-2 text-sm font-semibold hover:border-ink" onClick={() => { const m = { ...testMarks, [testPos]: false }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); }}>✗ {t("missedWord")}</button>
-                        </div>
-                      </div>
-                    )}
-                    {active && hide === 6 && revealed && words.length > 0 && (
-                      <p className="mt-3 text-sm font-semibold" onClick={(e) => e.stopPropagation()}>{t("testScore", { ok: Object.values(testMarks).filter(Boolean).length, total: words.length, pct: Math.round((Object.values(testMarks).filter(Boolean).length / words.length) * 100) })}</p>
-                    )}
-                    {active && hide > 0 && hide !== 6 && !revealed && (
-                      <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gold/40 bg-gold/5 p-4 text-sm" onClick={(e) => e.stopPropagation()}>
-                        <span className="font-medium">{t("tapToReveal")}</span>
-                        <button className={primary} onClick={() => setRevealed(true)}>{t("reveal")}</button>
-                      </div>
-                    )}
-                    {active && hide > 0 && revealed && (
-                      <div className="mt-3 rounded-xl border border-gold/40 bg-gold/5 p-4 text-sm" onClick={(e) => e.stopPropagation()}>
-                        <p className="mb-3 font-semibold">{t("rateQ")}</p>
-                        {kids ? (
-                          <div className="flex flex-wrap gap-2">
-                            {([["again", "😕"], ["good", "🙂"], ["easy", "🤩"]] as const).map(([r, e]) => (
-                              <button key={r} className="grid h-20 w-20 place-items-center rounded-3xl border-2 border-line bg-surface text-4xl transition hover:scale-110 hover:border-accent" onClick={() => onRate(r)} aria-label={t(r)}>
-                                {e}<span className="text-xs font-semibold">{t(r)}</span>
-                              </button>
-                            ))}
+                      <div className="mt-5 border-t border-line pt-4" onClick={(e) => e.stopPropagation()}>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <div className="inline-flex rounded-full bg-bg p-1" role="tablist" aria-label={t("memorize")}>
+                            <button role="tab" aria-selected={tool === "read"} className={seg(tool === "read")} onClick={() => setHide(0)}>{t("toolRead")}</button>
+                            <button role="tab" aria-selected={tool === "practice"} className={seg(tool === "practice")} onClick={() => setHide(practiceHide)}>{t("toolPractice")}</button>
+                            <button role="tab" aria-selected={tool === "test"} className={seg(tool === "test")} onClick={() => setHide(6)}>{t("toolTest")}</button>
                           </div>
-                        ) : (
-                        <div className="grid grid-cols-3 gap-2">
-                          <button className="h-11 rounded-lg border border-red-300 bg-surface font-semibold text-red-700 transition hover:bg-red-50 dark:border-red-500/40 dark:text-red-300 dark:hover:bg-red-500/10" onClick={() => onRate("again")}>↺ {t("again")}</button>
-                          <button className="h-11 rounded-lg bg-accent font-bold text-white transition hover:brightness-110" onClick={() => onRate("good")}>✓ {t("good")}</button>
-                          <button className="btn-gold h-11 rounded-lg font-bold" onClick={() => onRate("easy")}>★ {t("easy")}</button>
+                          {!kids && <button onClick={startShams} className="btn-gold ms-auto inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-full px-4 text-[13px] font-bold sm:w-auto"><Star8 className="h-3 w-3" />{t("toolShams")}</button>}
                         </div>
+                        {tool === "practice" && (
+                          <div className="-mx-5 mt-3 flex items-center gap-2 overflow-x-auto px-5 pb-0.5 text-[13px]">
+                            <span className="shrink-0 text-muted">{t("hideLabel")}</span>
+                            <div className="inline-flex shrink-0 rounded-full bg-bg p-1">
+                              {([[5, "hideSoft"], [1, "hideHalf"], [4, "hideRandom"], [2, "hideHard"]] as const).map(([h, k]) => (
+                                <button key={h} className={seg(hide === h)} onClick={() => { if (h === 4 && hide === 4) setSeed((x) => x + 1); setHide(h); setPracticeHide(h); }}>{t(k)}</button>
+                              ))}
+                            </div>
+                            {hide === 4 && !revealed && <button className="shrink-0 font-semibold text-accent hover:underline" onClick={() => setSeed((x) => x + 1)}>↻ {t("shuffle")}</button>}
+                          </div>
                         )}
                       </div>
                     )}
+                    {active && ((shams === null && hide > 0) || shams === 5) && (
+                      <div onClick={(e) => e.stopPropagation()}>
+                        {hide === 6 && !revealed && (
+                          <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gold/40 bg-gold/5 p-3 text-sm">
+                            <p className="font-semibold">{t("testWord", { n: testPos + 1, total: words.length })}</p>
+                            <div className="flex gap-2">
+                              <button className={primary} onClick={markWord(true)}>✓ {t("knewWord")}</button>
+                              <button className="rounded-full border border-line bg-surface px-4 py-2 text-sm font-semibold hover:border-ink" onClick={markWord(false)}>✗ {t("missedWord")}</button>
+                            </div>
+                          </div>
+                        )}
+                        {hide === 6 && revealed && words.length > 0 && (
+                          <p className="mt-3 text-sm font-semibold">{t("testScore", { ok: Object.values(testMarks).filter(Boolean).length, total: words.length, pct: Math.round((Object.values(testMarks).filter(Boolean).length / words.length) * 100) })}</p>
+                        )}
+                        {hide !== 6 && !revealed && (
+                          <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gold/40 bg-gold/5 p-3 text-sm">
+                            <span className="font-medium">{t("tapToReveal")}</span>
+                            <button className={primary} onClick={() => setRevealed(true)}>{t("reveal")}</button>
+                          </div>
+                        )}
+                        {revealed && (
+                          <div className="mt-3 rounded-xl border border-gold/40 bg-gold/5 p-3 text-sm">
+                            <p className="mb-3 font-semibold">{t("rateQ")}</p>
+                            {kids ? (
+                              <div className="flex flex-wrap gap-2">
+                                {([["again", "😕"], ["good", "🙂"], ["easy", "🤩"]] as const).map(([r, e]) => (
+                                  <button key={r} className="grid h-20 w-20 place-items-center rounded-3xl border-2 border-line bg-surface text-4xl transition hover:scale-110 hover:border-accent" onClick={() => onRate(r)} aria-label={t(r)}>
+                                    {e}<span className="text-xs font-semibold">{t(r)}</span>
+                                  </button>
+                                ))}
+                              </div>
+                            ) : (
+                              <div className="grid grid-cols-3 gap-2">
+                                <button className="h-11 rounded-lg border border-red-300 bg-surface font-semibold text-red-700 transition hover:bg-red-50 dark:border-red-500/40 dark:text-red-300 dark:hover:bg-red-500/10" onClick={() => onRate("again")}>↺ {t("again")}</button>
+                                <button className="h-11 rounded-lg bg-accent font-bold text-white transition hover:brightness-110" onClick={() => onRate("good")}>✓ {t("good")}</button>
+                                <button className="btn-gold h-11 rounded-lg font-bold" onClick={() => onRate("easy")}>★ {t("easy")}</button>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    {active && !kids && shams === null && <div className="border-t border-line pt-1"><SocialBar verseKey={v.verse_key} shareText={v.translation} /></div>}
                     {(noteOpen === v.verse_key || notes[v.verse_key]) && (
                       <div className="mt-4 border-t border-line pt-4" onClick={(e) => e.stopPropagation()}>
                         {noteOpen === v.verse_key ? (

@@ -42,6 +42,32 @@ function Curve({ c }: { c: ReturnType<typeof shamsContent> }) {
   );
 }
 
+// The review ladder: the gaps a verse travels through when every review succeeds (days, log scale)
+function Ladder({ day }: { day: string }) {
+  const gaps = [1, 3, 7, 14, 30, 90];
+  const X = (d: number) => 40 + (Math.log(d + 1) / Math.log(91)) * 530;
+  return (
+    <svg viewBox="0 0 600 230" className="w-full" role="img" aria-label="1 · 3 · 7 · 14 · 30 · 90">
+      <line x1="30" y1="190" x2="590" y2="190" stroke="currentColor" strokeOpacity=".25" />
+      <g>
+        <line x1={X(0)} y1="190" x2={X(0)} y2="60" stroke="currentColor" strokeOpacity=".3" strokeDasharray="4 3" />
+        <text x={X(0)} y="208" textAnchor="middle" fontSize="12" fill="currentColor" fillOpacity=".6">{day} 0</text>
+      </g>
+      {gaps.map((d, i) => {
+        const h = 50 + i * 22;
+        return (
+          <g key={d}>
+            <rect x={X(d) - 14} y={190 - h} width="28" height={h} rx="4" fill="rgb(var(--gold))" fillOpacity={0.55 + i * 0.075} />
+            <text x={X(d)} y={190 - h - 8} textAnchor="middle" fontSize="13" fontWeight="700" fill="currentColor">{i + 1}.</text>
+            <text x={X(d)} y="208" textAnchor="middle" fontSize="12" fill="currentColor" fillOpacity=".7">{day} {d}</text>
+          </g>
+        );
+      })}
+      <path d={`M${X(0)} 175 ${gaps.map((d, i) => `L${X(d)} ${190 - (50 + i * 22) - 2}`).join(" ")}`} fill="none" stroke="currentColor" strokeOpacity=".35" strokeWidth="1.5" strokeDasharray="3 3" />
+    </svg>
+  );
+}
+
 export default async function ShamsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -141,6 +167,53 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
           <figcaption className="mt-2 text-xs text-muted">{c.curveNote}</figcaption>
         </figure>
       </section>
+
+      {/* Deep dive: spacing, non-stop repetition, 4-3-2, meaning */}
+      {c.spacing && (
+        <section className={`${dark}`}>
+          <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+            <h2 className="font-display max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{c.spacing.title}</h2>
+            <p className="mt-5 max-w-3xl text-[17px] leading-relaxed text-white/70">{c.spacing.lead}</p>
+            <ol className="mt-10 grid gap-4 md:grid-cols-2">
+              {c.spacing.points.map((p, i) => (
+                <li key={i} className="rounded-xl border border-white/10 bg-white/[0.03] p-5 sm:p-6">
+                  <p className="font-display text-3xl text-[rgb(var(--gold))]">0{i + 1}</p>
+                  <h3 className="mt-2 text-lg font-bold leading-snug">{p.t}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-white/75">{p.d}</p>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+              <figure className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+                <figcaption className="text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))]">{c.spacing.ladderTitle}</figcaption>
+                <p className="mt-2 text-sm text-white/70">{c.spacing.ladderLead}</p>
+                <div className="mt-4 text-white"><Ladder day={c.spacing.ladderDay} /></div>
+                <p className="mt-2 text-sm font-semibold text-white/85">{c.spacing.ladderNote}</p>
+              </figure>
+              <figure className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+                <figcaption className="text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))]">{c.spacing.fluencyTitle}</figcaption>
+                <p className="mt-2 text-sm text-white/70">{c.spacing.fluencyLead}</p>
+                <ol className="mt-4 grid gap-3">
+                  {c.spacing.fluencySteps.map((st, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <span className="h-10 shrink-0 rounded-md bg-[rgb(var(--gold))] text-[rgb(var(--stage))]" style={{ width: `${(4 - i) * 22}%` }} aria-hidden />
+                      <span className="min-w-0"><span className="block text-sm font-bold">{st.min}</span><span className="block text-xs leading-snug text-white/70">{st.d}</span></span>
+                    </li>
+                  ))}
+                </ol>
+                <p className="mt-4 text-sm text-white/75">{c.spacing.fluencyNote}</p>
+              </figure>
+            </div>
+            <div className="mt-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+              <div className="max-w-3xl">
+                <h3 className="font-display text-2xl">{c.spacing.meaningTitle}</h3>
+                <p className="mt-3 text-[16px] leading-relaxed text-white/75">{c.spacing.meaning}</p>
+              </div>
+              <p className="rounded-lg border border-[rgb(var(--gold))]/40 bg-[rgb(var(--gold))]/10 px-5 py-4 text-sm font-bold text-[rgb(var(--gold))]">{c.spacing.rule}</p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Adaptive */}
       <section className="border-y border-line bg-surface">

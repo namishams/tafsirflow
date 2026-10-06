@@ -8,6 +8,14 @@ export type ShamsContent = {
   stepsTitle: string; stepsLead: string; labels: { what: string; why: string; platform: string; time: string };
   steps: StepDetail[];
   curveTitle: string; curveLead: string; curveNote: string; curveAxis: { x: string; y: string; without: string; with: string };
+  spacing?: {
+    title: string; lead: string;
+    points: { t: string; d: string }[];
+    ladderTitle: string; ladderLead: string; ladderDay: string; ladderNote: string;
+    fluencyTitle: string; fluencyLead: string; fluencySteps: { min: string; d: string }[]; fluencyNote: string;
+    meaningTitle: string; meaning: string;
+    rule: string;
+  };
   adaptTitle: string; adapt: { t: string; d: string }[];
   compareTitle: string; compareLead: string; compareCols: string[]; compareRows: { label: string; cells: string[] }[]; compareNote: string;
   teachTitle: string; teachLead: string; teachPlan: { min: string; t: string; d: string }[]; teachNote: string;
@@ -47,6 +55,31 @@ const de: ShamsContent = {
   curveLead: "Ohne Wiederholung sinkt das Erinnern schnell. Jede Wiederholung zum richtigen Zeitpunkt flacht die Kurve ab – der Abstand bis zur nächsten Wiederholung wird größer. Die Shams-Methode wiederholt jeden Vers nach etwa 1, 3, 7, 14, 30 und 90 Tagen – und passt diese Abstände an dich an.",
   curveNote: "Schematische Darstellung des Prinzips, keine Messdaten.",
   curveAxis: { x: "Tage", y: "Erinnern", without: "ohne Wiederholung", with: "mit Wiederholung" },
+  spacing: {
+    title: "Vertiefung: Wie Wiederholung wirklich wirkt",
+    lead: "Die Kurve oben ist kein Trick, sondern eine der am besten belegten Beobachtungen der Gedächtnisforschung: Was wir lernen, verblasst nach einer vorhersagbaren Kurve – und jede Wiederholung im richtigen Moment macht die nächste Kurve flacher. Daraus folgen vier Dinge, die jeder Koranschüler kennen sollte.",
+    points: [
+      { t: "Am Stück wiederholen fühlt sich gut an – und hält am kürzesten", d: "Wer einen Vers an einem Abend fünfzigmal hintereinander rezitiert, kann ihn in dieser Stunde perfekt. Am nächsten Morgen ist ein großer Teil weg. Der Grund: Wiederholungen direkt hintereinander treffen auf eine Erinnerung, die noch ganz frisch ist. Das Gehirn muss sich nicht anstrengen, also speichert es nichts Neues. Forscher nennen das massiertes Lernen. Es erzeugt ein Gefühl von Sicherheit, aber wenig dauerhafte Spur." },
+      { t: "Die richtige Mühe: kurz bevor es weg ist", d: "Die stärkste Erinnerung entsteht, wenn du einen Vers abrufen musst, der schon fast verblasst ist – und es gerade noch schaffst. Diese kleine Anstrengung ist das Signal an dein Gehirn: „Das ist wichtig, bewahr es länger.“ Deshalb kommt bei uns jeder Vers nach etwa einem Tag zurück, dann nach drei, sieben, vierzehn, dreißig und neunzig Tagen. Jedes Mal, wenn du ihn schaffst, wird der Abstand länger; wenn du ihn verfehlst, wird er kürzer." },
+      { t: "Wo Dauer-Wiederholung trotzdem hingehört", d: "Nonstop-Wiederholung ist nicht nutzlos – sie hat nur eine andere Aufgabe: das erste Einprägen. In den ersten Minuten mit einem neuen Vers brauchst du Dichte: dreimal hören, rückwärts aufbauen, mit Hinweisen rezitieren. Genau das tut die Shams-Methode in den Schritten 1 bis 6. Und die Hifz-Schulen wissen seit Jahrhunderten, dass auf dieses dichte Einprägen eine tägliche Durchsicht des Alten folgen muss – Sabaq, Sabqi, Manzil: das Neue von heute, das Neue der letzten Tage, und ein Teil des Alten. Die Methode verbindet beides: dicht am Anfang, dann gestreckt." },
+      { t: "Verstehen, was gemeint ist, ist der stärkste Kleber", d: "Ein Vers, den du nur als Klangkette kennst, hat nur einen Weg in dein Gedächtnis. Ein Vers, dessen Wörter du kennst, dessen Zusammenhang du gelesen hast und über den du einen Satz nachgedacht hast, hat vier Wege – und wenn einer abreißt, tragen die anderen. Deshalb stehen Wort-für-Wort, Tafsir und Nachdenken mitten in der Methode und nicht als Zugabe am Ende. Wer versteht, vergisst langsamer, und wer vergisst, findet den Vers über die Bedeutung wieder." },
+    ],
+    ladderTitle: "Die Wiederholungsleiter",
+    ladderLead: "So wandert ein Vers, den du heute lernst, durch die kommenden Monate – wenn du ihn jedes Mal schaffst.",
+    ladderDay: "Tag",
+    ladderNote: "Sechs Wiederholungen in drei Monaten reichen, damit ein Vers sitzt – wenn sie zum richtigen Zeitpunkt kommen. Fünfzig Wiederholungen an einem Abend reichen nicht.",
+    fluencyTitle: "4 · 3 · 2 – flüssig werden",
+    fluencyLead: "Eine Technik aus dem Sprachunterricht, die sich für das Rezitieren eignet, sobald ein Abschnitt grundsätzlich sitzt: Rezitiere denselben Abschnitt dreimal hintereinander – und gib dir jedes Mal weniger Zeit.",
+    fluencySteps: [
+      { min: "4 Minuten", d: "Langsam, mit Mushaf oder Hinweisen, alles korrekt – Tadschwid vor Tempo." },
+      { min: "3 Minuten", d: "Denselben Abschnitt ohne Hilfe, Fehler kurz markieren, nicht stoppen." },
+      { min: "2 Minuten", d: "Noch einmal, im Tempo eines Rezitators. Jetzt trägt die Melodie den Text." },
+    ],
+    fluencyNote: "Die kürzer werdende Zeit zwingt dich, nicht mehr Wort für Wort zu denken, sondern in Sinnabschnitten – so, wie Rezitatoren es tun. Benutze dafür die Wiedergabe-Geschwindigkeit im Player: 0,75× beim ersten, 1× beim zweiten, 1,25× beim dritten Durchgang.",
+    meaningTitle: "Was „verstehen“ hier heißt",
+    meaning: "Nicht Gelehrter werden – sondern beim Rezitieren wissen, wovon der Vers spricht. Drei Fragen reichen: Wer spricht hier zu wem? Was wird versprochen, befohlen oder erzählt? Was ändert das heute an meinem Tag? Wenn du diese drei Fragen in einem Satz beantworten kannst, hast du den Vers verstanden – und du wirst ihn nicht mehr mit einem anderen verwechseln, der ähnlich klingt.",
+    rule: "Merksatz: Dicht lernen, gestreckt wiederholen, mit Bedeutung verankern.",
+  },
   adaptTitle: "Eine Methode, die dich kennenlernt",
   adapt: [
     { t: "Persönlicher Gedächtnisfaktor", d: "Jeder Vers bekommt seinen eigenen Faktor. Fällt er dir schwer, kommt er früher zurück; fällt er dir leicht, später. Keine zwei Lernenden haben denselben Plan." },
@@ -123,6 +156,31 @@ const en: ShamsContent = {
   curveLead: "Without review, remembering drops quickly. Every review at the right moment flattens the curve – and the gap until the next review grows. The Shams Method reviews every verse after about 1, 3, 7, 14, 30 and 90 days – and adapts these gaps to you.",
   curveNote: "Schematic illustration of the principle, not measured data.",
   curveAxis: { x: "days", y: "remembering", without: "without review", with: "with review" },
+  spacing: {
+    title: "Going deeper: how repetition really works",
+    lead: "The curve above is not a trick but one of the best-documented findings of memory research: what we learn fades along a predictable curve – and every review at the right moment makes the next curve flatter. Four things follow from this that every Quran student should know.",
+    points: [
+      { t: "Repeating non-stop feels good – and lasts the shortest", d: "Recite a verse fifty times in a row one evening and you will know it perfectly that hour. By next morning much of it is gone. The reason: repetitions right after each other meet a memory that is still completely fresh. The brain does not have to work, so it stores nothing new. Researchers call this massed practice. It creates a feeling of certainty but little lasting trace." },
+      { t: "The right effort: just before it is gone", d: "The strongest memory is formed when you have to recall a verse that has almost faded – and you just manage it. That small effort is the signal to your brain: “This matters, keep it longer.” That is why every verse here comes back after about a day, then after three, seven, fourteen, thirty and ninety days. Each time you succeed the gap grows; each time you miss, it shrinks." },
+      { t: "Where non-stop repetition still belongs", d: "Non-stop repetition is not useless – it simply has a different job: the first encoding. In the first minutes with a new verse you need density: listen three times, build it backwards, recite with cues. That is exactly what the Shams Method does in steps 1 to 6. And hifz schools have known for centuries that this dense encoding must be followed by a daily review of the old – sabaq, sabqi, manzil: today's new, the new of recent days, and a portion of the old. The method joins both: dense at the start, then stretched." },
+      { t: "Understanding what is meant is the strongest glue", d: "A verse you know only as a chain of sounds has one path into your memory. A verse whose words you know, whose context you have read and about which you have thought for one sentence has four paths – and if one breaks, the others hold. That is why word-by-word, tafsir and reflection sit in the middle of the method, not as an extra at the end. Whoever understands forgets more slowly, and whoever forgets finds the verse again through its meaning." },
+    ],
+    ladderTitle: "The review ladder",
+    ladderLead: "This is how a verse you learn today travels through the coming months – if you succeed each time.",
+    ladderDay: "day",
+    ladderNote: "Six reviews in three months are enough for a verse to sit firmly – if they come at the right time. Fifty repetitions in one evening are not.",
+    fluencyTitle: "4 · 3 · 2 – becoming fluent",
+    fluencyLead: "A technique from language teaching that suits recitation once a passage basically sits: recite the same passage three times in a row – and give yourself less time each round.",
+    fluencySteps: [
+      { min: "4 minutes", d: "Slowly, with the mushaf or cues, everything correct – tajweed before tempo." },
+      { min: "3 minutes", d: "The same passage without help, mark mistakes briefly, do not stop." },
+      { min: "2 minutes", d: "Once more, at a reciter's pace. Now the melody carries the text." },
+    ],
+    fluencyNote: "The shrinking time forces you to stop thinking word by word and to think in units of meaning – the way reciters do. Use the playback speed in the player: 0.75× for the first round, 1× for the second, 1.25× for the third.",
+    meaningTitle: "What “understanding” means here",
+    meaning: "Not becoming a scholar – but knowing, while you recite, what the verse is about. Three questions are enough: Who is speaking to whom? What is promised, commanded or told? What does it change about my day today? If you can answer these three in one sentence, you have understood the verse – and you will no longer confuse it with another that sounds similar.",
+    rule: "Rule of thumb: learn densely, review spaced out, anchor with meaning.",
+  },
   adaptTitle: "A method that gets to know you",
   adapt: [
     { t: "Personal memory factor", d: "Every verse gets its own factor. If it is hard for you, it comes back sooner; if it is easy, later. No two learners have the same plan." },

@@ -92,7 +92,14 @@
     "testWord": "Wort {n} von {total}: Rezitiere es, dann prüfe dich",
     "knewWord": "Gewusst",
     "missedWord": "Nicht gewusst",
-    "testScore": "Ergebnis: {ok} von {total} Wörtern ({pct} %) – bewerte dich unten."
+    "testScore": "Ergebnis: {ok} von {total} Wörtern ({pct} %) – bewerte dich unten.",
+    "toolRead": "Lesen",
+    "toolPractice": "Üben",
+    "toolTest": "Test",
+    "toolShams": "Shams-Methode",
+    "hideLabel": "Verdecken:",
+    "more": "Mehr",
+    "todayCount": "Heute: {n} Verse"
   },
   "language": {
     "label": "Sprache"

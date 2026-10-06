@@ -92,7 +92,14 @@
     "testWord": "الكلمة {n} من {total}: اقرأها ثم تحقّق من نفسك",
     "knewWord": "عرفتها",
     "missedWord": "فاتتني",
-    "testScore": "النتيجة: {ok} من {total} كلمة ({pct}%) – قيّم نفسك أدناه."
+    "testScore": "النتيجة: {ok} من {total} كلمة ({pct}%) – قيّم نفسك أدناه.",
+    "toolRead": "قراءة",
+    "toolPractice": "تدريب",
+    "toolTest": "اختبار",
+    "toolShams": "منهج شمس",
+    "hideLabel": "إخفاء:",
+    "more": "المزيد",
+    "todayCount": "اليوم: {n} آية"
   },
   "language": {
     "label": "اللغة"
