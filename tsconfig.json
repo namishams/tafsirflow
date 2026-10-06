@@ -8,5 +8,5 @@
     "paths": { "@/*": ["./src/*"] }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next-build/types/**/*.ts"],
-  "exclude": ["node_modules", ".next-old"]
+  "exclude": ["node_modules", ".next", ".next-old"]
 }
