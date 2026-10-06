@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# TafsirFlow – base setup for a fresh, plain Ubuntu 24.04 VPS.
+# TafsirFlow – base setup for a fresh, plain Ubuntu 24.04 / 26.04 VPS.
 # Run as root:  bash server-setup.sh
 # Safe to re-run. Does not delete anything.
 set -euo pipefail
@@ -13,7 +13,7 @@ echo "==> System update"
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -y
 apt-get upgrade -y
-apt-get install -y curl git ufw nginx postgresql postgresql-contrib certbot python3-certbot-nginx unzip htop fail2ban
+apt-get install -y sudo openssl curl git ufw nginx postgresql postgresql-contrib certbot python3-certbot-nginx unzip htop fail2ban
 
 echo "==> Firewall"
 ufw allow OpenSSH
@@ -22,8 +22,10 @@ ufw --force enable
 
 echo "==> Node.js 22 + PM2"
 if ! command -v node >/dev/null || ! node -v | grep -q '^v22'; then
-  curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
-  apt-get install -y nodejs
+  if curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && apt-get install -y nodejs; then :; else
+    echo "    NodeSource unavailable for this release, using Ubuntu's nodejs/npm"
+    apt-get install -y nodejs npm
+  fi
 fi
 npm install -g pm2
 
