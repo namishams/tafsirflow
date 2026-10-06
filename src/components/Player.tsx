@@ -319,6 +319,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     setActiveWord(null);
     if (playsDone.current < repeat) { play(); return; }
     setPlaying(false);
+    if (shams !== null) return; // Shams method: stay on this verse – the coach decides when to move on
     if (mode === "learn") { setWaiting(true); return; }
     advance();
   };
@@ -349,6 +350,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shams]);
   const startShams = () => setShams(0);
+  const shamsIdx = useRef(idx);
+  useEffect(() => {
+    if (shamsIdx.current === idx) return;
+    shamsIdx.current = idx;
+    if (shams !== null && shams > 0) setShams(0);
+  }, [idx]); // eslint-disable-line react-hooks/exhaustive-deps
   const shamsAuto = useRef(shamsStart);
   useEffect(() => { if (shamsAuto.current && verse) { shamsAuto.current = false; setShams(0); } }, [verse]);
   const stopShams = () => { setShams(null); setChain(null); setMode("continuous"); setRepeat(1); setSpeed(1); setShowWords(false); setShowTranslit(true); setShowTranslation(true); setHide(0); };
@@ -725,7 +732,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         )}
                       </div>
                     )}
-                    {active && waiting && (
+                    {active && waiting && shams === null && (
                       <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl bg-accent-soft p-3 text-sm">
                         <span>{t("learnHint")}</span>
                         <button className={primary} onClick={(e) => { e.stopPropagation(); advance(); }}>{t("continue")}</button>
