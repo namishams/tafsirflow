@@ -1,0 +1,13 @@
+{
+  "app": { "name": "TafsirFlow", "tagline": "Listen to the Quran verse by verse and study tafsir alongside." },
+  "home": { "surahs": "Surahs", "verses": "verses" },
+  "player": {
+    "play": "Play", "pause": "Pause", "next": "Next verse", "prev": "Previous verse", "continue": "Continue",
+    "modeLearn": "Learn", "modeContinuous": "Continuous", "repeat": "Repeat", "speed": "Speed",
+    "jump": "Jump to verse", "tafsir": "Tafsir", "closeTafsir": "Close", "source": "Source",
+    "covers": "covers verses {from}–{to}", "noTafsir": "No tafsir available for this verse.",
+    "loading": "Loading…", "error": "Could not load data. Please try again.", "back": "All surahs",
+    "learnHint": "Paused – press Continue for the next verse."
+  },
+  "language": { "label": "Language" }
+}

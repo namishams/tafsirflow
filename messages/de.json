@@ -1,0 +1,13 @@
+{
+  "app": { "name": "TafsirFlow", "tagline": "Den Koran Vers für Vers hören und dazu Tafsir studieren." },
+  "home": { "surahs": "Suren", "verses": "Verse" },
+  "player": {
+    "play": "Abspielen", "pause": "Pause", "next": "Nächster Vers", "prev": "Vorheriger Vers", "continue": "Weiter",
+    "modeLearn": "Lernen", "modeContinuous": "Durchgehend", "repeat": "Wiederholen", "speed": "Tempo",
+    "jump": "Zu Vers springen", "tafsir": "Tafsir", "closeTafsir": "Schließen", "source": "Quelle",
+    "covers": "gilt für Verse {from}–{to}", "noTafsir": "Für diesen Vers ist kein Tafsir verfügbar.",
+    "loading": "Lädt…", "error": "Daten konnten nicht geladen werden. Bitte erneut versuchen.", "back": "Alle Suren",
+    "learnHint": "Pausiert – „Weiter“ drücken für den nächsten Vers."
+  },
+  "language": { "label": "Sprache" }
+}
