@@ -61,12 +61,13 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
           <div className="mt-6 grid gap-6">
             <section>
               <h2 className="text-lg font-bold">{t("imprintProvider")}</h2>
-              <p className="mt-2 whitespace-pre-line text-muted">{e.LEGAL_NAME ? `${e.LEGAL_NAME}\n${e.LEGAL_ADDRESS ?? ""}` : t("imprintPending")}</p>
+              <p className="mt-2 whitespace-pre-line text-muted">{`${e.LEGAL_NAME ?? "Nami Shams"}\n${e.LEGAL_ADDRESS ?? "Al Gharbi Street 1\nDubai"}`}</p>
             </section>
             <section>
               <h2 className="text-lg font-bold">{t("imprintContact")}</h2>
               <p className="mt-2 text-muted">{e.LEGAL_EMAIL ?? "contact@namishams.com"}{e.LEGAL_PHONE ? ` · ${e.LEGAL_PHONE}` : ""}</p>
             </section>
+            <p className="text-sm text-muted">Proudly developed by Nami Shams in Dubai</p>
           </div>
         )}
         <p className="mt-12"><Link href="/" className="text-sm font-semibold text-accent">← {t("back")}</Link></p>

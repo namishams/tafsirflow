@@ -1,11 +1,12 @@
 "use client";
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { IconClose, IconNext, IconPause, IconPlay } from "./Icons";
 import { AUDIO_BASE, RECITERS, getChapters, getReciters, getResources, getVerses, pickTranslation, type Chapter, type Reciter, type Verse } from "@/lib/quran";
 import { countOf } from "@/lib/counts";
 import { readJSON, writeJSON } from "@/lib/storage";
+import * as vp from "@/lib/versePlayback";
 import { CITIES, PRAYERS, dayFor, type Prayer, type Spot } from "@/lib/prayer";
 
 // Adhan recordings are placed on the server by the owner (scripts/install-adhan.sh) – only recordings with a clear licence
@@ -227,16 +228,21 @@ export const useRadio = () => {
 export function RadioProvider({ children }: { children: React.ReactNode }) {
   const r = useEngine();
   const path = usePathname();
-  const showMini = r.started && !path.startsWith("/radio");
+  const v = useSyncExternalStore(vp.subscribe, vp.getSnapshot, () => vp.serverSnapshot);
+  const verseOn = !!v.session && !v.attached;
+  const radioOn = r.started && !path.startsWith("/radio");
+  // which voice the mini bar shows: whatever is playing, otherwise the radio, otherwise the verse session
+  const kind: "verse" | "radio" | null = verseOn && v.playing ? "verse" : radioOn && r.playing ? "radio" : radioOn ? "radio" : verseOn ? "verse" : null;
   useEffect(() => {
-    document.body.style.paddingBottom = showMini ? "4.5rem" : "";
+    document.body.style.paddingBottom = kind ? "4.5rem" : "";
     return () => { document.body.style.paddingBottom = ""; };
-  }, [showMini]);
+  }, [kind]);
   return (
     <Ctx.Provider value={r}>
       {children}
       {r.audios}
-      {showMini && <MiniBar />}
+      {kind === "radio" && <MiniBar />}
+      {kind === "verse" && v.session && <VerseMini s={v.session} playing={v.playing} />}
     </Ctx.Provider>
   );
 }
@@ -267,6 +273,31 @@ function MiniBar() {
         <button onClick={r.toggle} aria-label={r.playing ? t("pause") : t("play")} className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent text-white">{r.playing ? <IconPause /> : <IconPlay />}</button>
         <button onClick={r.skipVerse} aria-label={t("nextVerse")} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line"><IconNext /></button>
         <button onClick={r.stop} aria-label={t("stop")} className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-muted hover:text-ink"><IconClose /></button>
+      </div>
+    </div>
+  );
+}
+
+// Mini bar for a verse session that keeps playing after the visitor left the surah page
+function VerseMini({ s, playing }: { s: vp.Session; playing: boolean }) {
+  const t = useTranslations("radio");
+  const path = usePathname();
+  const withTabs = APP_PATHS.some((p) => path === p || path.startsWith(`${p}/`));
+  const pos = withTabs ? "bottom-[4.25rem] lg:bottom-3" : "bottom-3";
+  const a = vp.getAudio();
+  return (
+    <div className={`fixed inset-x-0 z-[45] px-3 ${pos}`}>
+      <div className="mx-auto flex max-w-3xl items-center gap-3 rounded-lg border border-line bg-surface p-2 pe-3 shadow-lg">
+        <Link href={`/surah/${s.chapterId}?v=${s.idx + 1}`} className="flex min-w-0 flex-1 items-center gap-3" aria-label={t("openSurah")}>
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-md bg-accent-soft text-accent"><span className="text-[11px] font-extrabold">{s.chapterId}</span></span>
+          <span className="min-w-0">
+            <span className="block truncate text-[14px] font-bold">{s.chapterName} · {s.idx + 1}</span>
+            <span className="block truncate text-xs text-muted">{s.reciterName}</span>
+          </span>
+        </Link>
+        <button onClick={() => (playing ? a.pause() : void a.play())} aria-label={playing ? t("pause") : t("play")} className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent text-white">{playing ? <IconPause /> : <IconPlay />}</button>
+        <button onClick={() => vp.step(1)} aria-label={t("nextVerse")} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line"><IconNext /></button>
+        <button onClick={vp.stop} aria-label={t("stop")} className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-muted hover:text-ink"><IconClose /></button>
       </div>
     </div>
   );

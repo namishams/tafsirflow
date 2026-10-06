@@ -16,6 +16,7 @@ import {
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { dueVerses, rate, type Rating } from "@/lib/learning";
+import * as vp from "@/lib/versePlayback";
 
 type Mode = "learn" | "continuous";
 
@@ -32,7 +33,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const ta = useTranslations("account");
   const locale = useLocale();
   const meta = localeMeta(locale);
-  const audioRef = useRef<HTMLAudioElement>(null);
+  // the audio element is shared and lives beyond this page (see lib/versePlayback.ts)
+  const audioRef = useMemo(() => ({ get current(): HTMLAudioElement | null { return typeof window === "undefined" ? null : vp.getAudio(); } }), []);
+  const handlers = useRef<vp.Handlers>({});
   const playsDone = useRef(0);
   const wantPlay = useRef(false); // start playing as soon as the next verse file is ready
   const tafsirCache = useRef(new Map<string, TafsirResult | null>());
@@ -115,9 +118,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   }, []);
   useEffect(() => { if (audioRef.current) audioRef.current.volume = vol; }, [vol]);
   useEffect(() => {
-    const off = () => audioRef.current?.pause();
-    window.addEventListener("tf-radio-start", off);
-    return () => window.removeEventListener("tf-radio-start", off);
+    vp.attach(handlers);
+    setPlaying(!vp.getAudio().paused); // coming back to a surah that keeps playing
+    return () => vp.detach(handlers, playsDone.current);
   }, []);
   useEffect(() => { setCur(0); setDur(0); }, [idx]);
 
@@ -259,6 +262,31 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (!a || useRemote || !last || !isFinite(a.duration)) return;
     setTimingsOk(Math.abs(a.duration * 1000 - last) <= 1500);
   };
+
+  // wire the shared audio element to this page
+  const audioUrl = verse ? (useRemote ? verse.remoteAudioUrl : verse.audioUrl) : "";
+  useEffect(() => { if (audioUrl) vp.setPlaybackSrc({ url: audioUrl, remote: "" }); }, [audioUrl]);
+  handlers.current = {
+    loadedmetadata: () => { onMeta(); setDur(vp.getAudio().duration ?? 0); },
+    canplay: () => { if (wantPlay.current) { wantPlay.current = false; play(); } },
+    error: () => { const m = vp.getAudio().error; setDbg(`audio error ${m?.code ?? "?"}: ${m?.message ?? ""}`); if (!useRemote && verse?.remoteAudioUrl) setUseRemote(true); },
+    waiting: () => setDbg("waiting for data"),
+    stalled: () => setDbg("stalled"),
+    timeupdate: () => { onTime(); setCur(vp.getAudio().currentTime ?? 0); },
+    ended: () => { setDbg("ended"); onEnded(); },
+    pause: () => setPlaying(false),
+    play: () => setPlaying(true),
+    next: () => goTo(Math.min(verses.length - 1, idx + 1)),
+    prev: () => goTo(Math.max(0, idx - 1)),
+  };
+  useEffect(() => {
+    if (!chapter || verses.length === 0) return;
+    vp.sync({
+      chapterId, chapterName: chapter.name_simple, reciterName: reciter.name,
+      items: verses.map((v) => ({ url: v.audioUrl, remote: v.remoteAudioUrl })), idx, repeat, playsDone: playsDone.current,
+      mode, loopOn, loopFrom, loopTo, speed,
+    });
+  }, [chapter, verses, idx, repeat, mode, loopOn, loopFrom, loopTo, speed, chapterId, reciter.name]);
 
   const hasTimings = useMemo(() => !!verse && verse.segments.length > 0 && (useRemote || timingsOk), [verse, useRemote, timingsOk]);
 
@@ -565,20 +593,6 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
         </aside>}
       </div>
 
-      <audio
-        ref={audioRef}
-        src={useRemote ? verse.remoteAudioUrl : verse.audioUrl}
-        onLoadedMetadata={() => { onMeta(); setDur(audioRef.current?.duration ?? 0); }}
-        onCanPlay={() => { if (wantPlay.current) { wantPlay.current = false; play(); } }}
-        onError={(e) => { const m = e.currentTarget.error; setDbg(`audio error ${m?.code ?? "?"}: ${m?.message ?? ""}`); if (!useRemote && verse.remoteAudioUrl) setUseRemote(true); }}
-        onWaiting={() => setDbg("waiting for data")}
-        onStalled={() => setDbg("stalled")}
-        onTimeUpdate={() => { onTime(); setCur(audioRef.current?.currentTime ?? 0); }}
-        onEnded={() => { setDbg("ended"); onEnded(); }}
-        onPause={() => setPlaying(false)}
-        onPlay={() => { setPlaying(true); window.dispatchEvent(new Event("tf-audio-start")); }}
-        preload="auto"
-      />
 
       {gateOpen && limitHit && <AuthGate mode={needsVerify ? "verify" : "register"} onClose={() => setGateOpen(false)} />}
 

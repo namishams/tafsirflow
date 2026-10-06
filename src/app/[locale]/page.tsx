@@ -296,7 +296,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         <div className="border-t border-line py-5">
           <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 text-xs text-muted sm:flex-row sm:justify-between">
             <p>{t("landing.footer")}</p>
-            <p>© {new Date().getFullYear()} {t("app.name")}</p>
+            <p>© {new Date().getFullYear()} {t("app.name")} · Proudly developed by Nami Shams in Dubai</p>
           </div>
         </div>
       </footer>
