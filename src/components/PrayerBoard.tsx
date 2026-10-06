@@ -5,6 +5,7 @@ import { CITIES, DEFAULT_SETTINGS, METHODS, PRAYERS, cityName, countdown, dayFor
 import { readJSON, writeJSON } from "@/lib/storage";
 import { adhanList, adhanUrl, pickAdhan, type AdhanFile } from "@/lib/adhan";
 import { ArrowNext, ArrowBack } from "./Icons";
+import { PracticeWindow, starPath } from "./art/PracticeArt";
 
 const dark = "stage text-[#eef0f3]";
 
@@ -90,9 +91,15 @@ export default function PrayerBoard() {
     }, true);
   };
 
-  if (!now) return <main className="mx-auto max-w-3xl px-4 pb-16 pt-6"><h1 className="font-display text-[34px] leading-none">{t("title")}</h1></main>;
+  if (!now) return (
+    <section className="stage girih relative min-h-[560px] overflow-hidden text-[#eef0f3]">
+      <div className="relative mx-auto max-w-6xl px-5 pt-10"><h1 className="font-display text-[34px] leading-none">{t("title")}</h1></div>
+    </section>
+  );
   const day = dayFor(main, now, st);
   const hijri = hijriDate(now, locale, main.tz);
+  let hijriAr = "";
+  try { hijriAr = new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura-nu-arab", { timeZone: main.tz, day: "numeric", month: "long", year: "numeric" }).format(now); } catch { /* calendar not supported */ }
   const greg = new Intl.DateTimeFormat(locale, { timeZone: main.tz, calendar: "gregory", numberingSystem: "latn", weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(now);
   const night = nightOf(main, now, st);
   const qibla = qiblaOf(main);
@@ -101,69 +108,81 @@ export default function PrayerBoard() {
   const mDate = new Date(today.y, today.m + monthShift, 1);
   const month = monthOf(main, mDate.getFullYear(), mDate.getMonth(), st);
   const methodOf = st.method === "auto" ? main.method : st.method;
+  // the countdown ring runs from the last prayer time to the next one
+  const past = PRAYERS.map((p) => day.times[p].getTime()).filter((x) => x <= now.getTime());
+  const prevAt = past.length ? Math.max(...past) : day.times.isha.getTime() - 86400000;
+  const frac = Math.min(1, Math.max(0, (now.getTime() - prevAt) / Math.max(1, day.nextAt.getTime() - prevAt)));
+  const ar = locale === "ar";
+  const card = "pa-card p-5 sm:p-6";
 
   return (
     <div>
-      {/* Hero: place, live clock, next prayer countdown and the arc of the day */}
+      {/* Hero: place, the next prayer in an arch with its countdown ring, the sun's path across the day */}
       <section className={`${dark} girih relative overflow-hidden`}>
-        <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 80% 10%, rgb(var(--gold) / .14) 0, transparent 40%)" }} />
-        <div className="relative mx-auto max-w-5xl px-4 pb-12 pt-8 sm:pb-16 sm:pt-12">
-          <div className="flex flex-wrap items-center gap-2">
-            <select value={main.id} onChange={(e) => pick(e.target.value)} aria-label={t("city")} className="h-11 rounded-md border border-white/20 bg-white/5 px-3 text-[15px] font-bold text-white">
-              {spots.map((s) => <option key={s.id} value={s.id} className="text-ink">{label(s)}</option>)}
-            </select>
-            <button onClick={locate} className="h-11 rounded-md border border-white/30 px-4 text-sm font-bold hover:border-white">{t("useLocation")}</button>
+        <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 22% 30%, rgb(var(--gold) / .13) 0, transparent 42%)" }} />
+        <div className="relative mx-auto max-w-6xl px-4 pb-10 pt-6 sm:px-5 sm:pb-14 sm:pt-10">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+            <div className="flex min-w-0 flex-wrap items-center gap-2">
+              <select value={main.id} onChange={(e) => pick(e.target.value)} aria-label={t("city")} className="h-11 max-w-full rounded-full border border-[rgb(214_180_108)]/40 bg-white/5 px-4 text-[15px] font-bold text-white">
+                {spots.map((s) => <option key={s.id} value={s.id} className="text-ink">{label(s)}</option>)}
+              </select>
+              <button onClick={locate} className="pa-chip pa-chip-dark h-11">{t("useLocation")}</button>
+            </div>
+            {hijriAr && <p className="font-kufi text-[22px] leading-none text-[rgb(var(--gold))] sm:text-[26px]" dir="rtl" lang="ar">{hijriAr}</p>}
           </div>
           {geoMsg && <p className="mt-2 text-sm text-white/60" role="status">{geoMsg}</p>}
-          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end">
-            <div>
-              <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[rgb(var(--gold))]">{t("nextPrayer")}</p>
-              <h1 className="font-display mt-2 text-6xl leading-none sm:text-7xl">{t(day.next)}</h1>
-              <p className="mt-3 text-2xl font-bold tabular-nums" dir="ltr">{fmtTime(day.nextAt, main.tz, locale)} <span className="text-white/50">·</span> <span className="text-[rgb(var(--gold))]">{countdown(day.nextAt, now)}</span></p>
-              <p className="mt-4 text-sm text-white/60">{greg}{hijri ? ` · ${hijri}` : ""}</p>
-              <p className="mt-1 text-sm text-white/60">{t("localTime")}: <span className="tabular-nums" dir="ltr">{fmtClock(now, main.tz)}</span></p>
+
+          <div className="mt-6 grid gap-8 lg:mt-8 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:items-center lg:gap-12">
+            <NextArch prayer={day.next} at={fmtTime(day.nextAt, main.tz, locale)} left={countdown(day.nextAt, now)} frac={frac} label={t("nextPrayer")} name={t(day.next)} ar={ar} />
+            <div className="min-w-0">
+              <p className="font-display text-[22px] leading-tight sm:text-3xl">{greg}</p>
+              {hijri && !ar && <p className="mt-1 text-[15px] text-white/60">{hijri}</p>}
+              <p className="mt-4 inline-flex items-baseline gap-3 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-sm text-white/65">{t("localTime")} <span className="font-display text-xl tabular-nums text-white" dir="ltr">{fmtClock(now, main.tz)}</span></p>
+              <div className="mt-6"><DayArc times={day.times} now={now} tz={main.tz} locale={locale} t={t} /></div>
             </div>
-            <DayArc times={day.times} now={now} tz={main.tz} locale={locale} t={t} />
           </div>
-          <ul className="mt-10 grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-6">
-            {PRAYERS.map((p) => (
-              <li key={p} className={`p-3 text-center sm:p-4 ${p === day.next ? "bg-[rgb(var(--gold))] text-[rgb(var(--stage))]" : p === current ? "bg-white/10" : "bg-stage"}`}>
-                <p className={`text-[12px] font-semibold ${p === day.next ? "" : "text-white/60"}`}>{t(p)}{p === current && p !== day.next ? ` · ${t("now")}` : ""}</p>
-                <p className="mt-1 text-xl font-bold tabular-nums" dir="ltr">{fmtTime(day.times[p], main.tz, locale)}</p>
-              </li>
-            ))}
+
+          <ul className="mt-8 grid grid-cols-3 gap-2 sm:mt-10 sm:grid-cols-6 sm:gap-3">
+            {PRAYERS.map((p) => {
+              const isNext = p === day.next, isNow = p === current && !isNext;
+              return (
+                <li key={p} className={`pa-arch-soft relative overflow-hidden border px-2 pb-3 pt-5 text-center transition ${isNext ? "border-transparent bg-gradient-to-b from-[#ecd7a2] to-[#c6a65e] text-[rgb(8_38_29)] shadow-[0_14px_30px_-16px_rgba(214,180,108,.8)]" : isNow ? "border-[rgb(214_180_108)]/60 bg-white/[0.07]" : "border-white/10 bg-white/[0.035]"}`}>
+                  {!ar && <p className={`font-callig text-[17px] leading-none ${isNext ? "text-[rgb(8_38_29)]/70" : "text-[rgb(var(--gold))]/80"}`} dir="rtl" lang="ar">{AR_NAME[p]}</p>}
+                  <p className={`mt-1.5 truncate text-[12px] font-semibold ${isNext ? "" : "text-white/65"}`}>{t(p)}{isNow ? ` · ${t("now")}` : ""}</p>
+                  <p className="mt-0.5 font-display text-[22px] tabular-nums leading-tight sm:text-2xl" dir="ltr">{fmtTime(day.times[p], main.tz, locale)}</p>
+                </li>
+              );
+            })}
           </ul>
         </div>
+        <div className="pa-arcade" />
       </section>
 
-      <main className="mx-auto max-w-5xl px-4 pb-24 pt-10">
-        <div className="grid gap-6 lg:grid-cols-3">
+      <main className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-5">
+        <div className="grid gap-5 lg:grid-cols-3">
           {/* Qibla */}
-          <section className="rounded-lg border border-line bg-surface p-5">
+          <section className={card}>
             <h2 className="text-lg font-bold">{t("qibla")}</h2>
             <div className="mt-4 flex items-center gap-5">
-              <div className="relative grid h-28 w-28 shrink-0 place-items-center rounded-full border-2 border-line" style={{ transform: heading !== null ? `rotate(${-heading}deg)` : undefined }}>
-                <span className="absolute top-1 text-[10px] font-bold text-muted">N</span>
-                <svg width="80" height="80" viewBox="0 0 80 80" style={{ transform: `rotate(${qibla}deg)` }} aria-hidden="true"><path d="M40 6 L48 40 L40 34 L32 40 Z" fill="rgb(var(--accent))" /><rect x="35" y="2" width="10" height="9" rx="1" fill="rgb(var(--ink))" /><circle cx="40" cy="40" r="3" fill="rgb(var(--ink))" /></svg>
-              </div>
-              <div><p className="font-display text-3xl tabular-nums">{Math.round(qibla)}°</p><p className="text-sm text-muted">{t("qiblaHint")}</p></div>
+              <Compass qibla={qibla} heading={heading} />
+              <div className="min-w-0"><p className="font-display text-4xl tabular-nums text-gold">{Math.round(qibla)}°</p><p className="mt-1 text-sm leading-snug text-muted">{t("qiblaHint")}</p></div>
             </div>
             <button onClick={startCompass} className="mt-4 text-sm font-semibold text-accent hover:underline">{heading !== null ? t("compassOn") : t("compass")}</button>
           </section>
 
           {/* Night and sunnah times */}
-          <section className="rounded-lg border border-line bg-surface p-5">
-            <h2 className="text-lg font-bold">{t("sunnahTitle")}</h2>
+          <section className={card}>
+            <h2 className="flex items-center gap-2 text-lg font-bold"><svg viewBox="0 0 24 24" className="h-5 w-5 text-gold" aria-hidden><path d="M15.5 3.5a8.5 8.5 0 1 0 5 15 7 7 0 1 1-5-15z" fill="currentColor" fillOpacity=".25" stroke="currentColor" strokeWidth="1.4" /></svg>{t("sunnahTitle")}</h2>
             <dl className="mt-4 grid gap-3 text-[15px]">
-              <div className="flex justify-between gap-3"><dt className="text-muted">{t("duha")}</dt><dd className="font-bold tabular-nums" dir="ltr">{fmtTime(night.duha, main.tz, locale)} – {fmtTime(new Date(day.times.dhuhr.getTime() - 10 * 60000), main.tz, locale)}</dd></div>
-              <div className="flex justify-between gap-3"><dt className="text-muted">{t("midnight")}</dt><dd className="font-bold tabular-nums" dir="ltr">{fmtTime(night.midnight, main.tz, locale)}</dd></div>
-              <div className="flex justify-between gap-3"><dt className="text-muted">{t("lastThird")}</dt><dd className="font-bold tabular-nums" dir="ltr">{fmtTime(night.lastThird, main.tz, locale)}</dd></div>
+              {[[t("duha"), `${fmtTime(night.duha, main.tz, locale)} – ${fmtTime(new Date(day.times.dhuhr.getTime() - 10 * 60000), main.tz, locale)}`], [t("midnight"), fmtTime(night.midnight, main.tz, locale)], [t("lastThird"), fmtTime(night.lastThird, main.tz, locale)]].map(([k, v]) => (
+                <div key={k} className="flex items-baseline gap-2"><dt className="text-muted">{k}</dt><span aria-hidden className="mb-1 min-w-4 flex-1 border-b border-dotted border-[rgb(var(--gold))]/40" /><dd className="font-bold tabular-nums" dir="ltr">{v}</dd></div>
+              ))}
             </dl>
-            <p className="mt-3 text-xs leading-relaxed text-muted">{t("sunnahNote")}</p>
+            <p className="mt-4 text-xs leading-relaxed text-muted">{t("sunnahNote")}</p>
           </section>
 
           {/* Reminders and adhan */}
-          <section className="rounded-lg border border-line bg-surface p-5">
+          <section className={card}>
             <h2 className="text-lg font-bold">{t("remindTitle")}</h2>
             <label className="mt-4 flex items-start gap-3 text-[15px]"><input type="checkbox" className="mt-1" checked={remind} onChange={toggleRemind} /><span>{t("remind")}</span></label>
             <label className="mt-3 flex items-start gap-3 text-[15px]"><input type="checkbox" className="mt-1" checked={autoAdhan} onChange={() => { setAutoAdhan(!autoAdhan); writeJSON("tf:prayerAutoAdhan", !autoAdhan, true); }} /><span>{t("autoAdhan")}</span></label>
@@ -184,25 +203,26 @@ export default function PrayerBoard() {
         </div>
 
         {/* Monthly timetable */}
-        <section className="mt-10">
+        <section className="mt-12">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="font-display text-3xl">{t("monthTitle", { place: label(main) })}</h2>
             <div className="flex items-center gap-2 print:hidden">
-              <button onClick={() => setMonthShift(monthShift - 1)} className="h-10 w-10 rounded-md border border-line hover:border-ink" aria-label={t("prevMonth")}><ArrowBack /></button>
+              <button onClick={() => setMonthShift(monthShift - 1)} className="grid h-10 w-10 place-items-center rounded-full border border-line hover:border-[rgb(var(--gold))]" aria-label={t("prevMonth")}><ArrowBack /></button>
               <span className="min-w-[9rem] text-center text-sm font-bold">{mDate.toLocaleDateString(locale, { calendar: "gregory", month: "long", year: "numeric" })}</span>
-              <button onClick={() => setMonthShift(monthShift + 1)} className="h-10 w-10 rounded-md border border-line hover:border-ink" aria-label={t("nextMonth")}><ArrowNext /></button>
-              <button onClick={() => window.print()} className="h-10 rounded-md border border-line px-3 text-sm font-semibold hover:border-ink">{t("print")}</button>
+              <button onClick={() => setMonthShift(monthShift + 1)} className="grid h-10 w-10 place-items-center rounded-full border border-line hover:border-[rgb(var(--gold))]" aria-label={t("nextMonth")}><ArrowNext /></button>
+              <button onClick={() => window.print()} className="pa-chip h-10">{t("print")}</button>
             </div>
           </div>
-          <div className="mt-4 overflow-x-auto rounded-lg border border-line">
-            <table className="w-full min-w-[620px] text-sm">
-              <thead className="bg-bg text-start text-xs uppercase tracking-[0.06em] text-muted"><tr><th className="p-3">{t("date")}</th>{PRAYERS.map((p) => <th key={p} className="p-3">{t(p)}</th>)}</tr></thead>
-              <tbody className="divide-y divide-line bg-surface tabular-nums">
+          <div className="pa-card pa-plain mt-5 overflow-x-auto">
+            <table className="relative w-full min-w-[620px] text-sm">
+              <thead className="text-start text-xs uppercase tracking-[0.06em] text-muted rtl:tracking-normal"><tr className="border-b border-[rgb(var(--gold))]/30"><th className="p-3 text-start">{t("date")}</th>{PRAYERS.map((p) => <th key={p} className="p-3 text-start">{t(p)}</th>)}</tr></thead>
+              <tbody className="divide-y divide-line tabular-nums">
                 {month.map((r) => {
                   const isToday = monthShift === 0 && r.date.getDate() === today.d;
+                  const fri = r.date.getDay() === 5;
                   return (
-                    <tr key={r.date.getDate()} className={isToday ? "bg-accent-soft font-bold" : ""}>
-                      <td className="p-3">{r.date.toLocaleDateString(locale, { calendar: "gregory", weekday: "short", day: "numeric" })}<span className="ms-2 text-xs font-normal text-muted">{hijriDate(new Date(r.date.getTime() + 12 * 3600000), locale, main.tz).replace(/\s*\d{4}.*$/, "")}</span></td>
+                    <tr key={r.date.getDate()} className={isToday ? "bg-[rgb(201_166_94)]/15 font-bold" : fri ? "bg-[rgb(var(--gold))]/[0.04]" : ""}>
+                      <td className="p-3"><span className="inline-flex items-center gap-1.5">{isToday && <svg viewBox="0 0 12 12" className="h-3 w-3 text-gold" aria-hidden><path d="M6 .5l1.4 3.1L10.5 5 7.4 6.4 6 9.5 4.6 6.4 1.5 5l3.1-1.4z" fill="currentColor" /></svg>}{r.date.toLocaleDateString(locale, { calendar: "gregory", weekday: "short", day: "numeric" })}</span><span className="ms-2 text-xs font-normal text-muted">{hijriDate(new Date(r.date.getTime() + 12 * 3600000), locale, main.tz).replace(/\s*\d{4}.*$/, "")}</span></td>
                       {PRAYERS.map((p) => <td key={p} className="p-3" dir="ltr">{fmtTime(r.times[p], main.tz, locale)}</td>)}
                     </tr>
                   );
@@ -213,23 +233,23 @@ export default function PrayerBoard() {
         </section>
 
         {/* Settings */}
-        <section className="mt-10 rounded-lg border border-line bg-surface p-5 sm:p-6 print:hidden">
+        <section className={`${card} mt-12 print:hidden`}>
           <h2 className="text-lg font-bold">{t("settings")}</h2>
           <p className="mt-1 text-sm text-muted">{t("settingsLead", { method: t(`m_${methodOf}`) })}</p>
           <div className="mt-4 grid gap-4 sm:grid-cols-3">
-            <label className="grid gap-1 text-sm"><span className="text-muted">{t("method")}</span>
-              <select value={st.method} onChange={(e) => saveSt({ ...st, method: e.target.value as PrayerSettings["method"] })} className="h-10 rounded-md border border-line bg-bg px-2">
+            <label className="grid min-w-0 gap-1 text-sm"><span className="text-muted">{t("method")}</span>
+              <select value={st.method} onChange={(e) => saveSt({ ...st, method: e.target.value as PrayerSettings["method"] })} className="h-10 min-w-0 rounded-md border border-line bg-bg px-2">
                 <option value="auto">{t("auto")} ({t(`m_${main.method}`)})</option>
                 {METHODS.map((m) => <option key={m} value={m}>{t(`m_${m}`)}</option>)}
               </select>
             </label>
-            <label className="grid gap-1 text-sm"><span className="text-muted">{t("asr")}</span>
-              <select value={st.madhab} onChange={(e) => saveSt({ ...st, madhab: e.target.value as PrayerSettings["madhab"] })} className="h-10 rounded-md border border-line bg-bg px-2">
+            <label className="grid min-w-0 gap-1 text-sm"><span className="text-muted">{t("asr")}</span>
+              <select value={st.madhab} onChange={(e) => saveSt({ ...st, madhab: e.target.value as PrayerSettings["madhab"] })} className="h-10 min-w-0 rounded-md border border-line bg-bg px-2">
                 <option value="auto">{t("auto")}</option><option value="shafi">{t("shafi")}</option><option value="hanafi">{t("hanafi")}</option>
               </select>
             </label>
-            <label className="grid gap-1 text-sm"><span className="text-muted">{t("highLat")}</span>
-              <select value={st.highLat} onChange={(e) => saveSt({ ...st, highLat: e.target.value as PrayerSettings["highLat"] })} className="h-10 rounded-md border border-line bg-bg px-2">
+            <label className="grid min-w-0 gap-1 text-sm"><span className="text-muted">{t("highLat")}</span>
+              <select value={st.highLat} onChange={(e) => saveSt({ ...st, highLat: e.target.value as PrayerSettings["highLat"] })} className="h-10 min-w-0 rounded-md border border-line bg-bg px-2">
                 <option value="auto">{t("auto")}</option><option value="middle">{t("hlMiddle")}</option><option value="seventh">{t("hlSeventh")}</option><option value="twilight">{t("hlTwilight")}</option>
               </select>
             </label>
@@ -237,8 +257,8 @@ export default function PrayerBoard() {
           <p className="mt-5 text-sm font-semibold">{t("adjust")}</p>
           <div className="mt-2 grid grid-cols-3 gap-2 sm:grid-cols-6">
             {PRAYERS.map((p) => (
-              <label key={p} className="grid gap-1 text-xs"><span className="text-muted">{t(p)}</span>
-                <input type="number" min={-30} max={30} value={st.adjust[p] ?? 0} onChange={(e) => saveSt({ ...st, adjust: { ...st.adjust, [p]: Number(e.target.value) } })} className="h-10 rounded-md border border-line bg-bg px-2 text-sm tabular-nums" />
+              <label key={p} className="grid min-w-0 gap-1 text-xs"><span className="truncate text-muted">{t(p)}</span>
+                <input type="number" min={-30} max={30} value={st.adjust[p] ?? 0} onChange={(e) => saveSt({ ...st, adjust: { ...st.adjust, [p]: Number(e.target.value) } })} className="h-10 min-w-0 rounded-md border border-line bg-bg px-2 text-sm tabular-nums" />
               </label>
             ))}
           </div>
@@ -246,16 +266,20 @@ export default function PrayerBoard() {
         </section>
 
         {/* World cities */}
-        <section className="mt-10 print:hidden">
+        <section className="mt-12 print:hidden">
           <h2 className="font-display text-3xl">{t("citiesTitle")}</h2>
-          <ul className="mt-4 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {CITIES.map((c) => {
               const d = dayFor(c, now, { ...st, method: "auto", madhab: "auto" });
+              const on = main.id === c.id;
               return (
-                <li key={c.id} className="bg-surface">
-                  <button onClick={() => { pick(c.id); window.scrollTo({ top: 0, behavior: "smooth" }); }} className={`w-full p-4 text-start hover:bg-bg ${main.id === c.id ? "bg-accent-soft" : ""}`}>
-                    <div className="flex items-baseline justify-between gap-2"><span className="font-bold">{cityName(c, locale)}</span><span className="text-xs tabular-nums text-muted" dir="ltr">{fmtClock(now, c.tz).slice(0, 5)}</span></div>
-                    <p className="mt-1 text-sm text-muted">{t(d.next)} · <span className="tabular-nums" dir="ltr">{fmtTime(d.nextAt, c.tz, locale)}</span></p>
+                <li key={c.id}>
+                  <button onClick={() => { pick(c.id); window.scrollTo({ top: 0, behavior: "smooth" }); }} className={`pa-card pa-plain pa-card-hover flex w-full items-center gap-3 p-4 text-start ${on ? "!border-[rgb(201_166_94)] shadow-[0_0_0_3px_rgb(201_166_94/0.14)]" : ""}`}>
+                    <svg viewBox="0 0 28 36" className={`h-9 w-7 shrink-0 ${on ? "text-gold" : "text-[rgb(var(--gold))]/55"}`} aria-hidden><path d="M3 35V15C3 8 8 4 14 1.5 20 4 25 8 25 15v20" fill="currentColor" fillOpacity={on ? ".18" : ".06"} stroke="currentColor" strokeWidth="1.3" /><path d="M14 13l1.3 2.8 2.8 1.3-2.8 1.3L14 21.2l-1.3-2.8-2.8-1.3 2.8-1.3z" fill="currentColor" /></svg>
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-baseline justify-between gap-2"><span className="truncate font-bold">{cityName(c, locale)}</span><span className="shrink-0 text-xs tabular-nums text-muted" dir="ltr">{fmtClock(now, c.tz).slice(0, 5)}</span></span>
+                      <span className="mt-0.5 block text-sm text-muted">{t(d.next)} · <span className="tabular-nums" dir="ltr">{fmtTime(d.nextAt, c.tz, locale)}</span></span>
+                    </span>
                   </button>
                 </li>
               );
@@ -269,7 +293,58 @@ export default function PrayerBoard() {
   );
 }
 
-// Arc of the day: the sun's path from sunrise to sunset (Dhuhr, Asr on it), Fajr and Isha below the horizon, a dot for "now"
+const AR_NAME: Record<Prayer, string> = { fajr: "الفجر", sunrise: "الشروق", dhuhr: "الظهر", asr: "العصر", maghrib: "المغرب", isha: "العشاء" };
+
+// The next prayer stands in a mihrab arch; a gold ring around it fills from the last prayer time to the next one
+function NextArch({ prayer, at, left, frac, label, name, ar }: { prayer: Prayer; at: string; left: string; frac: number; label: string; name: string; ar: boolean }) {
+  const r = 78, C = 2 * Math.PI * r, a = frac * Math.PI * 2 - Math.PI / 2;
+  const tip = { x: 120 + r * Math.cos(a), y: 196 + r * Math.sin(a) };
+  return (
+    <div className="relative mx-auto aspect-[3/4] w-full max-w-[340px]">
+      <PracticeWindow uid="pb-next" lamp className="absolute inset-0 h-full w-full" />
+      <svg viewBox="0 0 240 320" aria-hidden className="absolute inset-0 h-full w-full">
+        <defs><linearGradient id="pb-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f6e7bf" /><stop offset=".5" stopColor="#c9a65e" /><stop offset="1" stopColor="#efe2bf" /></linearGradient></defs>
+        <circle cx="120" cy="196" r="88" fill="rgb(5 28 21 / .55)" />
+        <circle cx="120" cy="196" r={r} fill="none" stroke="rgb(255 255 255 / .1)" strokeWidth="3" />
+        {Array.from({ length: 24 }, (_, i) => { const b = (Math.PI / 12) * i; return <path key={i} d={`M${(120 + 84 * Math.cos(b)).toFixed(1)} ${(196 + 84 * Math.sin(b)).toFixed(1)}L${(120 + (i % 2 ? 86 : 88) * Math.cos(b)).toFixed(1)} ${(196 + (i % 2 ? 86 : 88) * Math.sin(b)).toFixed(1)}`} stroke="#d6b46c" strokeOpacity=".5" strokeWidth=".8" />; })}
+        <circle cx="120" cy="196" r={r} fill="none" stroke="url(#pb-ring)" strokeWidth="3.5" strokeLinecap="round" strokeDasharray={`${(frac * C).toFixed(1)} ${C.toFixed(1)}`} transform="rotate(-90 120 196)" className="transition-[stroke-dasharray] duration-1000" />
+        <circle className="pa-pulse-dot" cx={tip.x} cy={tip.y} r="5" fill="#f3e2b6" />
+        <circle cx={tip.x} cy={tip.y} r="3.4" fill="#fff8e6" />
+      </svg>
+      <div className="absolute start-1/2 top-[61.25%] grid w-[60%] -translate-y-1/2 justify-items-center text-center ltr:-translate-x-1/2 rtl:translate-x-1/2">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[rgb(var(--gold))] rtl:text-[12px] rtl:tracking-normal sm:text-[11px]">{label}</p>
+        {!ar && <p className="font-callig mt-1 text-[22px] leading-none text-[rgb(var(--gold))] sm:text-[26px]" dir="rtl" lang="ar">{AR_NAME[prayer]}</p>}
+        <h1 className={`font-display mt-1 max-w-full leading-none ${name.length > 9 ? "text-[22px] sm:text-[26px]" : "text-[34px] sm:text-[40px]"}`}>{name}</h1>
+        <p className="mt-2 font-display text-[22px] tabular-nums leading-none text-[#f3e2b6] sm:text-[26px]" dir="ltr">{left}</p>
+        <p className="mt-1.5 text-[13px] tabular-nums text-white/60" dir="ltr">{at}</p>
+      </div>
+    </div>
+  );
+}
+
+// Compass: a gilded sixteen-point rose turns with the device; the needle points to the Kaaba
+function Compass({ qibla, heading }: { qibla: number; heading: number | null }) {
+  return (
+    <div className="relative grid h-32 w-32 shrink-0 place-items-center" style={{ transform: heading !== null ? `rotate(${-heading}deg)` : undefined }}>
+      <svg viewBox="0 0 120 120" className="absolute inset-0 h-full w-full" aria-hidden>
+        <path d={starPath(60, 60, 58, 50, 16)} fill="rgb(var(--gold) / .08)" stroke="rgb(var(--gold))" strokeOpacity=".55" strokeWidth=".8" />
+        <circle cx="60" cy="60" r="44" fill="rgb(var(--surface))" stroke="rgb(var(--gold))" strokeOpacity=".45" />
+        <circle cx="60" cy="60" r="38" fill="none" stroke="rgb(var(--gold))" strokeOpacity=".3" strokeDasharray="1 3" />
+        {Array.from({ length: 8 }, (_, i) => { const b = (Math.PI / 4) * i; return <path key={i} d={`M${(60 + 44 * Math.sin(b)).toFixed(1)} ${(60 - 44 * Math.cos(b)).toFixed(1)}L${(60 + 40 * Math.sin(b)).toFixed(1)} ${(60 - 40 * Math.cos(b)).toFixed(1)}`} stroke="rgb(var(--gold))" strokeWidth={i % 2 ? 0.8 : 1.4} />; })}
+        <text x="60" y="27" textAnchor="middle" fontSize="9" fontWeight="700" fill="rgb(var(--muted))">N</text>
+      </svg>
+      <svg viewBox="0 0 120 120" className="absolute inset-0 h-full w-full" style={{ transform: `rotate(${qibla}deg)` }} aria-hidden>
+        <path d="M60 24L66 60 60 55 54 60Z" fill="#c9a65e" />
+        <path d="M60 96L66 60 60 65 54 60Z" fill="rgb(var(--muted))" fillOpacity=".35" />
+        <g transform="translate(52 10)"><rect width="16" height="15" rx="1.5" fill="#111" /><rect y="4" width="16" height="2.2" fill="#d6b46c" /></g>
+        <circle cx="60" cy="60" r="4" fill="rgb(var(--surface))" stroke="#c9a65e" strokeWidth="1.5" />
+      </svg>
+    </div>
+  );
+}
+
+// Arc of the day: the sun's path from sunrise to sunset (Dhuhr and Asr on it), Fajr and Isha below the horizon.
+// The part of the path already travelled is gilded; the sun (or the crescent at night) marks "now".
 function DayArc({ times, now, tz, locale, t }: { times: Record<Prayer, Date>; now: Date; tz: string; locale: string; t: ReturnType<typeof useTranslations> }) {
   const W = 560, base = 150, L = 90, R = W - 90, rx = (R - L) / 2, ry = 110;
   const rise = times.sunrise.getTime(), set = times.maghrib.getTime();
@@ -278,23 +353,43 @@ function DayArc({ times, now, tz, locale, t }: { times: Record<Prayer, Date>; no
     fajr: { x: 28, y: base + 18, below: true }, sunrise: { x: L, y: base }, dhuhr: onArc(times.dhuhr.getTime()), asr: onArc(times.asr.getTime()), maghrib: { x: R, y: base }, isha: { x: W - 28, y: base + 18, below: true },
   };
   const n = now.getTime();
+  const isDay = n >= rise && n <= set;
   const nowP = n < rise ? { x: 28 + ((L - 28) * Math.max(0, n - (rise - 3 * 3600000))) / (3 * 3600000), y: base + 18 } : n > set ? { x: R + ((W - 28 - R) * Math.min(1, (n - set) / (3 * 3600000))), y: base + 18 } : onArc(n);
+  const travelled = n <= rise ? "" : `M${L} ${base} A ${rx} ${ry} 0 0 1 ${(n >= set ? R : nowP.x).toFixed(1)} ${(n >= set ? base : nowP.y).toFixed(1)}`;
   return (
     <svg viewBox={`0 0 ${W} ${base + 60}`} className="w-full" role="img" aria-label={t("arc")}>
-      <path d={`M${L} ${base} A ${rx} ${ry} 0 0 1 ${R} ${base}`} fill="none" stroke="rgb(255 255 255 / .2)" strokeWidth="2" strokeDasharray="4 6" />
-      <line x1="8" y1={base} x2={W - 8} y2={base} stroke="rgb(255 255 255 / .22)" />
+      <defs>
+        <linearGradient id="pb-horizon" x1="0" x2="1"><stop offset="0" stopColor="#d6b46c" stopOpacity="0" /><stop offset=".5" stopColor="#d6b46c" stopOpacity=".8" /><stop offset="1" stopColor="#d6b46c" stopOpacity="0" /></linearGradient>
+        <radialGradient id="pb-sky" cx="50%" cy="100%" r="70%"><stop offset="0" stopColor="#e9cf99" stopOpacity=".16" /><stop offset="1" stopColor="#e9cf99" stopOpacity="0" /></radialGradient>
+        <linearGradient id="pb-night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0b1631" stopOpacity=".45" /><stop offset="1" stopColor="#0b1631" stopOpacity="0" /></linearGradient>
+      </defs>
+      <path d={`M${L} ${base} A ${rx} ${ry} 0 0 1 ${R} ${base} Z`} fill="url(#pb-sky)" />
+      <rect x="8" y={base} width={W - 16} height="56" fill="url(#pb-night)" />
+      <path d={`M${L} ${base} A ${rx} ${ry} 0 0 1 ${R} ${base}`} fill="none" stroke="rgb(255 255 255 / .22)" strokeWidth="1.5" strokeDasharray="3 6" />
+      {travelled && <path d={travelled} fill="none" stroke="#d6b46c" strokeWidth="2.4" strokeLinecap="round" />}
+      <line x1="8" y1={base} x2={W - 8} y2={base} stroke="url(#pb-horizon)" />
       {PRAYERS.map((p) => {
         const q = pts[p], above = !q.below;
         return (
           <g key={p}>
-            <circle cx={q.x} cy={q.y} r="5" fill="rgb(var(--gold))" />
-            <text x={q.x} y={above ? q.y - 22 : q.y + 22} textAnchor="middle" fontSize="12" fontWeight="600" fill="rgb(255 255 255 / .8)">{t(p)}</text>
-            <text x={q.x} y={above ? q.y - 9 : q.y + 36} textAnchor="middle" fontSize="11" fill="rgb(255 255 255 / .5)">{fmtTime(times[p], tz, locale)}</text>
+            <path d={starPath(q.x, q.y, 6.5, 2.8)} fill="#d6b46c" />
+            <text x={q.x} y={above ? q.y - 24 : q.y + 24} textAnchor="middle" fontSize="12.5" fontWeight="600" fill="rgb(255 255 255 / .82)">{t(p)}</text>
+            <text x={q.x} y={above ? q.y - 10 : q.y + 38} textAnchor="middle" fontSize="11.5" fill="rgb(255 255 255 / .5)">{fmtTime(times[p], tz, locale)}</text>
           </g>
         );
       })}
-      <circle cx={nowP.x} cy={nowP.y} r="16" fill="#fff" fillOpacity=".15" />
-      <circle cx={nowP.x} cy={nowP.y} r="8" fill="#fff" />
+      {isDay ? (
+        <g>
+          <circle className="pa-sun-glow" cx={nowP.x} cy={nowP.y} r="24" fill="#ffe7a8" fillOpacity=".35" />
+          <path d={starPath(nowP.x, nowP.y, 14, 9, 12)} fill="#f3d58e" />
+          <circle cx={nowP.x} cy={nowP.y} r="8" fill="#fff4d6" />
+        </g>
+      ) : (
+        <g>
+          <circle className="pa-sun-glow" cx={nowP.x} cy={nowP.y} r="18" fill="#e3eaff" fillOpacity=".18" />
+          <path d={`M${nowP.x + 4} ${nowP.y - 11}a11 11 0 1 0 0 22 8.5 8.5 0 1 1 0-22z`} fill="#f3e2b6" />
+        </g>
+      )}
     </svg>
   );
 }

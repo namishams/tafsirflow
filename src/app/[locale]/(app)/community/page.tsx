@@ -8,6 +8,7 @@ import MyLikes from "@/components/MyLikes";
 import { pulse, recentComments, topVerses, type TopKind } from "@/lib/community";
 import { getChapters, getResources, getVerseByKey, pickTranslation, type SingleVerse } from "@/lib/quran";
 import { pageMeta } from "@/lib/site";
+import { getSettings } from "@/lib/settings";
 
 export const dynamic = "force-dynamic";
 const KINDS: TopKind[] = ["loved", "viewed", "shared", "discussed"];
@@ -23,6 +24,25 @@ export default async function CommunityPage({ params, searchParams }: { params: 
   setRequestLocale(locale);
   const sp = await searchParams;
   const t = await getTranslations({ locale, namespace: "community" });
+  const settings = await getSettings();
+  if (!settings.features.community) {
+    return (
+      <div>
+        <section className="stage girih relative overflow-hidden text-[#eef0f3]">
+          <CalligraphyDraw text={"معًا"} className="absolute -end-2 top-0 h-[150px] w-[520px] max-w-none sm:h-[250px] sm:w-[880px]" />
+          <div className="relative mx-auto max-w-6xl px-5 py-14 sm:py-20">
+            <p className="rise text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))] rtl:tracking-normal">{t("kicker")}</p>
+            <h1 className="rise font-display mt-3 max-w-3xl text-[42px] leading-[1.04] sm:text-6xl" style={{ animationDelay: "120ms" }}>{t("title")}</h1>
+            <p className="rise mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70" style={{ animationDelay: "240ms" }}>{t("lead")}</p>
+          </div>
+        </section>
+        <section className="mx-auto max-w-3xl px-5 py-14">
+          <p className="callout rounded-lg p-6 text-center text-[16px] leading-relaxed">{t("paused")}</p>
+        </section>
+        <MoreTiles keys={["ranking", "stats", "radio", "secrets"]} />
+      </div>
+    );
+  }
   const kind: TopKind = KINDS.includes(sp.tab as TopKind) ? (sp.tab as TopKind) : "loved";
   const week = sp.range !== "all" && (kind === "loved" || kind === "viewed");
   const [pl, top, heard, recent, chapters] = await Promise.all([pulse(), topVerses(kind, week), topVerses("heard", true, 8), recentComments(10), getChapters(locale).catch(() => [])]);

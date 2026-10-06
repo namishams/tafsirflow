@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { TILES } from "@/lib/tiles";
+import { HomeGlowLayer, StarGlyph } from "./art/HomeOrnaments";
+import HomeGlow from "./art/HomeGlow";
 
 // Poster card like a class catalogue: dark gradient, Arabic word as a watermark, label, title, short text
 export type PosterItem = { href: string; title: string; desc: string; badge: string; ar: string; bg: string; cta: string };
@@ -12,13 +14,18 @@ export const TONES = [
 
 export function Poster({ it, tall = true }: { it: PosterItem; tall?: boolean }) {
   return (
-    <Link href={it.href} className={`group relative flex ${tall ? "aspect-[4/5] sm:aspect-[3/4]" : "min-h-[11rem]"} flex-col justify-end overflow-hidden rounded-lg p-4 ring-1 ring-inset ring-white/[0.06] sm:p-5`} style={{ background: it.bg }}>
-      <span aria-hidden className="niche transition duration-700 group-hover:border-[rgb(233_207_153/0.32)]" />
-      <span aria-hidden className="font-callig pointer-events-none absolute -end-1 top-1 whitespace-nowrap text-[4.25rem] leading-none text-white/[0.08] transition duration-700 group-hover:text-white/[0.11] sm:-end-2 sm:top-2 sm:text-[6.5rem]" dir="rtl">{it.ar}</span>
-      <span className="absolute start-4 top-4 text-[9.5px] font-semibold uppercase tracking-[0.16em] text-white/55 sm:start-5 sm:top-5 sm:text-[10px]">{it.badge}</span>
+    <Link href={it.href} className={`hm-poster hm-glow group relative flex ${tall ? "aspect-[4/5] sm:aspect-[3/4]" : "min-h-[11rem]"} flex-col justify-end overflow-hidden rounded-lg p-4 ring-1 ring-inset ring-[rgb(233_207_153/0.1)] sm:p-5`} style={{ background: it.bg }}>
+      <HomeGlowLayer />
+      <span aria-hidden className="hm-p-sky" />
+      <span aria-hidden className="hm-p-lat" />
+      <span aria-hidden className="niche transition duration-700 group-hover:border-[rgb(233_207_153/0.36)]" />
+      <span aria-hidden className="hm-p-key"><StarGlyph size={13} /></span>
+      <span aria-hidden className="hm-p-ar font-callig pointer-events-none absolute -end-1 top-1 whitespace-nowrap text-[4.25rem] leading-none sm:-end-2 sm:top-2 sm:text-[6.5rem]" dir="rtl">{it.ar}</span>
+      <span className="hm-p-badge absolute start-4 top-4 max-w-[calc(100%-2rem)] truncate text-[9.5px] font-semibold uppercase tracking-[0.16em] text-white/60 sm:start-5 sm:top-5 sm:text-[10px]">{it.badge}</span>
       <span className="font-display relative text-[19px] leading-tight text-white sm:text-[24px]">{it.title}</span>
       <span className="relative mt-1.5 line-clamp-2 text-[12.5px] leading-snug text-white/65 sm:line-clamp-3 sm:text-sm sm:leading-relaxed">{it.desc}</span>
-      <span className="relative mt-3 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[rgb(var(--gold))]/90 sm:mt-4 sm:text-[11px]">{it.cta} <span className="inline-block transition group-hover:translate-x-0.5 rtl:-scale-x-100">→</span></span>
+      <span className="relative mt-3 inline-flex items-center gap-1.5 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[rgb(var(--gold))]/90 sm:mt-4 sm:text-[11px]">{it.cta} <span className="inline-block transition duration-500 group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1">→</span></span>
+      <span aria-hidden className="hm-p-line" />
     </Link>
   );
 }
@@ -29,9 +36,10 @@ export function PosterGrid({ items, title, more, className = "", tall = true }: 
       {(title || more) && (
         <div className="mb-5 flex items-end justify-between gap-4">
           {title && <h2 className="font-display text-[26px] leading-tight sm:text-3xl">{title}</h2>}
-          {more && <Link href={more.href} className="shrink-0 text-sm font-semibold text-accent hover:underline">{more.label} →</Link>}
+          {more && <Link href={more.href} className="group/m inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-accent hover:underline">{more.label} <span className="inline-block transition group-hover/m:translate-x-0.5 rtl:-scale-x-100">→</span></Link>}
         </div>
       )}
+      <HomeGlow />
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
         {items.map((it) => <li key={it.href} className="min-w-0"><Poster it={it} tall={tall} /></li>)}
       </ul>

@@ -7,7 +7,7 @@ export const mosques: IslamDoc = {
   de: {
     title: "Die schönsten und bedeutendsten Moscheen der Welt – und wie du sie besuchst",
     kicker: "Häuser Allahs, von Mekka bis Djenné",
-    lead: "Eine Moschee ist mehr als ein Gebäude: Sie ist ein Haus Allahs, ein Ort der Ruhe, des Wissens und der Begegnung. In diesem Kapitel besuchen wir gemeinsam die drei heiligen Moscheen, die Moscheen unserer Heimat, der Emirate, und einige der schönsten Gotteshäuser der Welt. Zum Schluss erfährst du, wie du eine Moschee mit Respekt und offenem Herzen betrittst.",
+    lead: "Eine Moschee ist mehr als ein Gebäude: Sie ist ein Haus Allahs, ein Ort der Ruhe, des Wissens und der Begegnung. In diesem Kapitel besuchen wir gemeinsam die drei heiligen Moscheen, die Moscheen unserer Heimat, der Emirate, und einige der schönsten Gotteshäuser der Welt. Dazu erfährst du, was Mihrab, Minbar und Minarett bedeuten – und wie du eine Moschee mit Respekt und offenem Herzen betrittst.",
     facts: [
       { n: "3", l: "Moscheen, zu denen man eigens reisen soll" },
       { n: "2007", l: "Eröffnung der Scheich-Zayid-Moschee in Abu Dhabi" },
@@ -40,6 +40,8 @@ Der Prophet ﷺ sagte: „Ein Gebet in dieser meiner Moschee ist besser als taus
 
 Die Aqsa-Moschee war die erste Qibla der Muslime und das Ziel der Nachtreise: „Preis sei Dem, der Seinen Diener bei Nacht von der Heiligen Moschee zur fernsten Moschee reisen ließ, deren Umgebung Wir gesegnet haben“ (17:1). Auf dem edlen Heiligtum stehen die Aqsa-Moschee mit ihrer Kuppel und der Felsendom mit seiner goldenen Kuppel. Sie erinnern an die lange Kette der Propheten, von Ibrahim bis Isa, Friede sei mit ihnen, und an den Propheten Muhammad ﷺ, der sie alle verband.
 
+Viele halten die goldene Kuppel für die Aqsa-Moschee. Tatsächlich ist es der **Felsendom**, unter dem Kalifen Abd al-Malik errichtet und um 691/692 vollendet – einer der ältesten erhaltenen Bauten islamischer Baukunst. Die Aqsa-Moschee selbst trägt eine dunklere, bleigraue Kuppel, und mit „al-Aqsa“ ist oft das ganze heilige Gelände gemeint.
+
 ### Die Quba-Moschee
 
 Die **Quba-Moschee** am Rand Medinas ist die erste Moschee, die der Prophet ﷺ nach seiner Ankunft gründete. Viele Gelehrte beziehen auf sie den Vers: „Eine Moschee, die vom ersten Tag an auf Gottesfurcht gegründet wurde, ist würdiger, dass du darin stehst. Darin sind Männer, die sich gern reinigen“ (9:108). Der Prophet ﷺ besuchte sie jeden Samstag, zu Fuß oder reitend, und betete dort (al-Bukhari, Muslim). Und er sagte: „Wer sich zu Hause reinigt, dann zur Quba-Moschee kommt und darin betet, hat einen Lohn wie für eine Umra“ (an-Nasa'i, Ibn Madscha).
@@ -56,9 +58,15 @@ Die Architektur verbindet Einflüsse aus vielen Teilen der islamischen Welt. Der
 
 Die Moschee ist für Besucher aller Religionen geöffnet, der Eintritt ist frei, und es gibt kostenlose Führungen, bei denen du alles über den Islam und die Moschee fragen darfst. Bescheidene Kleidung wird erwartet; Frauen tragen ein Kopftuch. Zur Gebetszeit hörst du vielleicht den Adhan über den Hof hallen – ein Moment, den viele Gäste nie vergessen.
 
+### Al Ain – die Scheich-Khalifa-Moschee
+
+Al Ain, die grüne Oasenstadt im Emirat Abu Dhabi, über der sich der Dschabal Hafit erhebt, ist eng mit Scheich Zayid verbunden: Hier wirkte er lange Jahre als Statthalter, bevor er Herrscher von Abu Dhabi wurde. Zu den großen Moscheen der Stadt gehört die **Scheich-Khalifa-bin-Zayid-Moschee**, eine der neueren großen Moscheen des Landes, benannt nach Scheich Khalifa bin Zayid Al Nahyan, dem zweiten Präsidenten der Emirate – möge Allah ihm gnädig sein. Mit ihrer großen Kuppel, ihren Minaretten und ihrem weiten Gebetssaal ist sie ein Ort, an dem sich die Stadt zum Gebet versammelt. Wenn du sie besuchen möchtest, erkundige dich vorher nach den Besuchszeiten.
+
 ### Dubai – offene Türen, offene Herzen
 
 In Dubai, wo unsere Plattform entsteht, ist die **Jumeirah-Moschee** ein Wahrzeichen der Begegnung. Ihr Stil ist an die mittelalterliche Architektur Kairos angelehnt, mit zwei schlanken Minaretten und fein gemeißeltem hellem Stein. Unter dem Motto **„Open Doors. Open Minds.“** lädt das Sheikh Mohammed Centre for Cultural Understanding Gäste ein, die Moschee zu besuchen, Fragen zu stellen und bei arabischem Kaffee und Datteln ins Gespräch zu kommen. Keine Frage ist zu einfach, keine zu kritisch – genau das ist die Idee.
+
+Mitten im alten Dubai, nahe dem Creek, dem Textilsouk und dem historischen Viertel Al Fahidi, steht die **Große Moschee von Bur Dubai** (Grand Mosque). Mit ihren sandfarbenen Mauern, ihren vielen Kuppeln und einem hohen, schlanken Minarett fügt sie sich in das Bild der Altstadt, als wäre sie immer schon da gewesen. An dieser Stelle wird seit langer Zeit gebetet; das heutige Gebäude ist jünger und im traditionellen Stil errichtet. Für geführte Besuche ist die Jumeirah-Moschee die bessere Adresse – hier erlebst du vor allem das Gebetsleben der Altstadt, am schönsten vom Wasser aus, wenn der Adhan über den Creek zieht.
 
 Im Stadtteil Al Safa steht die **Al-Faruq-Umar-bin-al-Khattab-Moschee**, benannt nach dem zweiten Kalifen. Ihre Kuppeln und Minarette erinnern an die großen osmanischen Moscheen Istanbuls, im Inneren verbinden sich Einflüsse aus verschiedenen Epochen islamischer Baukunst. Auch hier sind Besucher zu bestimmten Zeiten willkommen; erkundige dich am besten vorher.
 
@@ -72,7 +80,7 @@ Schardscha ist das Emirat, das sich der Kultur, den Büchern und der islamischen
 
 ### Fudschaira – die Al-Bidya-Moschee
 
-An der Ostküste, zwischen Hadschar-Gebirge und Indischem Ozean, steht ein kleines, schlichtes Gebäude aus Stein und Lehm: die **Al-Bidya-Moschee**. Sie gilt als die älteste bekannte Moschee der Emirate, die noch in Gebrauch ist. Ihr genaues Alter ist nicht sicher bekannt, doch sie ist mehrere Jahrhunderte alt. Vier kleine Kuppeln ruhen auf einem einzigen Mittelpfeiler. Wer hier betet, spürt, dass es für ein Haus Allahs weder Marmor noch Gold braucht – nur aufrichtige Herzen.
+An der Ostküste, zwischen Hadschar-Gebirge und Indischem Ozean, steht ein kleines, schlichtes Gebäude aus Stein und Lehm: die **Al-Bidya-Moschee**. Sie wird oft als die älteste Moschee der Emirate bezeichnet, die noch in Gebrauch ist. Wie alt sie genau ist, weiß man nicht; die Schätzungen gehen weit auseinander. Vier kleine Kuppeln ruhen auf einem einzigen Mittelpfeiler. Wer hier betet, spürt, dass es für ein Haus Allahs weder Marmor noch Gold braucht – nur aufrichtige Herzen.
 
 ## Bedeutende Moscheen der Welt
 
@@ -92,11 +100,19 @@ Hoch auf der Zitadelle thront die **Muhammad-Ali-Moschee** aus dem 19. Jahrhunde
 
 Ganz anders die **Ibn-Tulun-Moschee** aus dem 9. Jahrhundert: schlicht, gewaltig, mit einem riesigen Innenhof und einem Minarett mit einer außen herumführenden Wendeltreppe. Sie gilt als eine der ältesten Moscheen Kairos, die weitgehend in ihrer ursprünglichen Form erhalten ist. Ihre Ruhe ist überwältigend.
 
+### Die Sultan-Hasan-Moschee in Kairo
+
+Unterhalb der Zitadelle steht die **Moschee und Madrasa des Sultans Hasan** aus dem 14. Jahrhundert, ein Meisterwerk der Mamlukenzeit. Um ihren Hof öffnen sich vier hohe Hallen, und in jeder wurde eine der vier sunnitischen Rechtsschulen gelehrt – ein Bauwerk, das die Vielfalt der Schulen unter einem Dach vereint. Mehr über die Schulen erfährst du im Kapitel über [die Rechtsschulen](/islam/madhahib).
+
 ### Die Sultan-Ahmed-Moschee und die Süleymaniye in Istanbul
 
 Die **Sultan-Ahmed-Moschee**, Anfang des 17. Jahrhunderts erbaut, ist wegen ihrer blauen Iznik-Fliesen als „Blaue Moschee“ bekannt. Sie hat sechs Minarette und ist eine lebendige Gebetsstätte: Zu den Gebetszeiten bleibt sie Betenden vorbehalten, danach strömen Besucher wieder hinein.
 
 Die **Süleymaniye** entstand im 16. Jahrhundert für Sultan Süleyman nach Plänen des großen Baumeisters **Mimar Sinan**. Sie thront auf einem der Hügel über dem Goldenen Horn, umgeben von Schulen, einem Krankenhaus und Grabstätten – darunter die des Sultans und, ganz in der Nähe, die Sinans selbst. Viele halten sie für das Meisterwerk osmanischer Baukunst.
+
+### Die Selimiye in Edirne
+
+Für Sultan Selim II. baute Sinan im 16. Jahrhundert in Edirne die **Selimiye-Moschee**. Ihre gewaltige Kuppel scheint über dem Raum zu schweben, vier schlanke Minarette rahmen sie ein. Nach der Überlieferung nannte Sinan selbst sie sein Meisterwerk; heute gehört sie zum UNESCO-Welterbe.
 
 ### Die Mezquita von Córdoba
 
@@ -114,11 +130,19 @@ Die 1993 fertiggestellte **Hassan-II.-Moschee** steht teilweise auf einer Plattf
 
 Die Moschee in Kairouan im heutigen Tunesien geht auf die Gründung der Stadt durch Uqba ibn Nafi im 7. Jahrhundert zurück; ihre heutige Gestalt erhielt sie vor allem im 9. Jahrhundert. Ihr mächtiges, quadratisches Minarett gehört zu den ältesten der Welt, und ihr Grundriss wurde Vorbild für viele Moscheen in Nordafrika.
 
+### Die Große Moschee von Samarra
+
+Im 9. Jahrhundert ließ der abbasidische Kalif al-Mutawakkil in Samarra im heutigen Irak eine Moschee errichten, die zu den größten ihrer Zeit gehörte. Erhalten sind vor allem die mächtigen Außenmauern und das berühmte Minarett **al-Malwiya**, um das sich eine Rampe spiralförmig nach oben windet.
+
 ### Die Badshahi-Moschee und die Faisal-Moschee in Pakistan
 
 Die **Badshahi-Moschee** in Lahore ließ der Mogulkaiser Aurangzeb im 17. Jahrhundert errichten. Roter Sandstein, weiße Marmorkuppeln und ein riesiger Hof, in dem sich zu Festtagen unzählige Betende versammeln, machen sie zu einem der großen Bauwerke der Mogulzeit.
 
 Die **Faisal-Moschee** in Islamabad liegt am Fuß der Margalla-Berge. Ihr Entwurf des türkischen Architekten Vedat Dalokay erinnert an ein Beduinenzelt, ganz ohne klassische Kuppel. Benannt ist sie nach König Faisal von Saudi-Arabien.
+
+### Die Jama Masjid in Delhi
+
+Der Mogulkaiser Schah Dschahan, der auch das Tadsch Mahal errichten ließ, baute im 17. Jahrhundert die **Jama Masjid** in Delhi. Roter Sandstein und weißer Marmor, drei Kuppeln und ein weiter Hof machen sie zu einer der größten Moscheen Indiens. Zum Freitagsgebet und an den Festtagen füllt sich der Hof bis an den Rand.
 
 ### Die Imam-Moschee und die Scheich-Lotfollah-Moschee in Isfahan
 
@@ -128,6 +152,10 @@ Am weiten Naqsch-e-Dschahan-Platz in Isfahan stehen zwei Juwelen aus dem frühen
 
 In Maschhad im Nordosten Irans liegt das Grab von **Ali ibn Musa ar-Rida**, einem Nachfahren des Propheten ﷺ, den die Zwölfer-Schiiten als achten Imam ehren. Der weitläufige Komplex aus Höfen, Moscheen und Bibliotheken wird jedes Jahr von sehr vielen Pilgern besucht. Mehr über die verschiedenen Traditionen erfährst du im Kapitel über [Sunniten und Schiiten](/islam/sunni-shia).
 
+### Die Sultan-Qabus-Moschee in Maskat
+
+Im benachbarten Oman wurde 2001 die **Sultan-Qabus-Moschee** in Maskat eröffnet. Ihr Gebetssaal ist mit einem riesigen handgeknüpften Teppich ausgelegt, darüber hängt ein großer Kronleuchter, und die hellen Säulengänge laden zur Stille ein. Besucher sind zu festen Zeiten willkommen.
+
 ### Die Istiqlal-Moschee in Jakarta
 
 Die **Istiqlal-Moschee**, „Moschee der Unabhängigkeit“, ist die größte Moschee Südostasiens. Entworfen hat sie der Architekt Friedrich Silaban, ein Christ, und sie steht direkt gegenüber der Kathedrale von Jakarta – ein schönes Zeichen des Zusammenlebens. Besucher werden freundlich empfangen und oft von Ehrenamtlichen herumgeführt.
@@ -136,9 +164,32 @@ Die **Istiqlal-Moschee**, „Moschee der Unabhängigkeit“, ist die größte Mo
 
 In Bandar Seri Begawan erhebt sich eine goldene Kuppel über einer künstlichen Lagune. Die 1958 fertiggestellte Moschee spiegelt sich im Wasser, und in der Lagune liegt die Nachbildung eines königlichen Bootes. Am Abend, wenn die Lichter angehen, wirkt sie wie aus einem Traum.
 
+### Die Große Moschee von Xi'an
+
+In der alten Kaiserstadt Xi'an in China steht eine Moschee, die aussieht wie ein chinesischer Tempel: hölzerne Pavillons mit geschwungenen Ziegeldächern, stille Gärten, Steintafeln mit chinesischen und arabischen Inschriften. Ihre Gründung wird traditionell ins 8. Jahrhundert gelegt; die heutigen Bauten stammen größtenteils aus der Ming-Zeit. Sie zeigt, wie der Islam die Formensprache eines Ortes annehmen kann, ohne sich selbst zu verlieren.
+
 ### Die Große Moschee von Djenné in Mali
 
 Die **Große Moschee von Djenné** ist das größte Lehmbauwerk der Welt. Ihre heutige Form stammt aus dem Jahr 1907. Jedes Jahr kommt die ganze Stadt zusammen, um die Mauern mit frischem Lehm zu verputzen – ein Fest der Gemeinschaft, bei dem Jung und Alt mit anpacken. Besucher bewundern sie meist von außen, vom Marktplatz aus, der sich vor ihr ausbreitet.
+
+### Die Große Moschee von Paris und die Shah-Jahan-Moschee in Woking
+
+Auch Europa hat seine Moscheegeschichte. Die **Große Moschee von Paris** wurde 1926 eingeweiht, auch zum Gedenken an die muslimischen Soldaten, die im Ersten Weltkrieg für Frankreich gefallen waren. Ihr Garten, ihre grünen Ziegeldächer und ihr Minarett erinnern an die Moscheen Nordafrikas und Andalusiens. Noch älter ist die **Shah-Jahan-Moschee** im englischen Woking von 1889, das erste eigens als Moschee errichtete Gebäude Großbritanniens. Ihren Namen trägt sie nach Sultan Schah Dschahan, der Herrscherin von Bhopal, die den Bau großzügig unterstützte.
+
+## Die Elemente einer Moschee – ein kleiner Rundgang
+
+Eine Moschee braucht eigentlich nur einen sauberen Boden und eine Richtung. Und doch haben Muslime über Jahrhunderte eine eigene Formensprache entwickelt, in der jedes Element einem Zweck dient. Wenn du sie kennst, liest du jede Moschee wie ein Buch.
+
+- **Qibla-Wand:** die Wand, die nach Mekka zur Kaaba weist ([Koran 2:144](/surah/2?v=144)). Die Betenden stehen in geraden Reihen parallel zu ihr, Schulter an Schulter. Deshalb sind viele Gebetssäle breiter als tief.
+- **Mihrab:** die Nische in der Mitte der Qibla-Wand. Sie zeigt die Gebetsrichtung an, und der Imam steht davor. Das Wort kommt schon im Koran vor: Zakariyya betete „im Mihrab“, als die Engel ihn riefen ([Koran 3:39](/surah/3?v=39)) – dort bedeutet es einen Gebetsraum. Die Nische als fester Bauteil kam erst nach der Zeit des Propheten ﷺ auf und wurde zu einem der kostbarsten Orte islamischer Kunst, mit Kacheln, Stuck und Kalligrafie.
+- **Minbar:** die Kanzel mit Stufen, rechts neben dem Mihrab, von der die Freitagspredigt gehalten wird. Anfangs predigte der Prophet ﷺ an einen Palmstamm gelehnt. Als man ihm eine hölzerne Kanzel baute, weinte der Stamm wie ein Kind, bis der Prophet ﷺ zu ihm ging und ihn an sich drückte (al-Bukhari).
+- **Minarett:** der Turm, von dem der Gebetsruf erklingt. Zur Zeit des Propheten ﷺ rief Bilal den Adhan von einer erhöhten Stelle; Minarette als eigene Türme entstanden später und nahmen in jeder Region eine eigene Gestalt an – quadratisch in Kairouan, spiralförmig in Samarra, schlank wie ein Bleistift in Istanbul.
+- **Kuppel:** Sie ist keine Pflicht – die erste Moschee in Medina hatte keine. Doch die Kuppel weitet den Raum, trägt die Stimme des Rezitators und lässt den Blick nach oben wandern. Innen ist sie oft mit Sternmustern, Versen oder Muqarnas verziert, den wabenartigen Gewölben der islamischen Baukunst.
+- **Sahn:** der offene Innenhof, oft von Säulengängen umgeben, mit einem Brunnen in der Mitte. Er spendet Licht und Luft und wird an Freitagen und Festtagen zum Gebetsraum, wenn der Saal nicht reicht.
+- **Waschbereich:** Hier vollziehen Betende die Gebetswaschung, den Wudu: Gesicht, Hände und Unterarme, das Bestreichen des Kopfes und die Füße ([Koran 5:6](/surah/5?v=6)). In alten Moscheen ist es ein Brunnen im Hof, in neuen ein eigener Raum mit Sitzen und Wasserhähnen.
+- **Kalligrafie und Ornament:** In Gebetsräumen verzichtet die islamische Kunst auf Bilder von Lebewesen. An ihre Stelle treten Verse des Korans in kunstvoller Schrift, geometrische Sterne, die sich ins Unendliche fortsetzen, und Ranken ohne Ende. Viele sehen darin einen stillen Hinweis auf die Unendlichkeit Allahs.
+
+Wenn du das nächste Mal eine Moschee betrittst, such zuerst den Mihrab. Dann weißt du, wohin sich alle Herzen in diesem Raum wenden.
 
 ## Wie du eine Moschee mit Respekt besuchst
 
@@ -146,6 +197,7 @@ Ob du Muslim bist oder als Gast kommst: Mit ein paar einfachen Regeln fühlst du
 
 - **Kleidung:** Wähle locker sitzende Kleidung, die Arme und Beine bedeckt. Frauen tragen ein Kopftuch; große Moscheen wie die Scheich-Zayid-Moschee stellen bei Bedarf passende Kleidung bereit. Allah sagt: „O Kinder Adams, legt euren Schmuck bei jeder Gebetsstätte an“ (7:31).
 - **Schuhe:** Vor dem Gebetsraum ziehst du die Schuhe aus. Es gibt Regale oder Beutel dafür.
+- **Wudu:** Wer beten möchte, kommt mit Gebetswaschung oder vollzieht sie im Waschbereich der Moschee ([Koran 5:6](/surah/5?v=6)). Gäste, die nur schauen möchten, brauchen keine Waschung.
 - **Gebetszeiten:** Plane deinen Besuch außerhalb der Gebetszeiten, wenn du nur besichtigen möchtest. Viele Moscheen schließen für Besucher kurz vor und während des Gebets.
 - **Frauenbereiche:** Viele Moscheen haben eigene Bereiche oder Eingänge für Frauen. Der Prophet ﷺ sagte: „Hindert die Dienerinnen Allahs nicht an den Moscheen Allahs“ (al-Bukhari, Muslim).
 - **Fotografieren:** Frage vorher, fotografiere niemals Betende aus der Nähe und gehe nicht direkt vor jemandem vorbei, der gerade betet.
@@ -154,7 +206,7 @@ Ob du Muslim bist oder als Gast kommst: Mit ein paar einfachen Regeln fühlst du
 
 ### Tahiyyat al-Masdschid – die Begrüßung der Moschee
 
-Der Prophet ﷺ sagte: „Wenn einer von euch die Moschee betritt, soll er sich nicht setzen, bevor er zwei Rak'at gebetet hat“ (al-Bukhari, Muslim). Diese zwei Rak'at heißen **Tahiyyat al-Masdschid**, „Gruß an die Moschee“. Wie man sie betet, erklärt das Kapitel über [das Gebet](/islam/prayer-sunni).
+Der Prophet ﷺ sagte: „Wenn einer von euch die Moschee betritt, soll er zwei Rak'at beten, bevor er sich setzt“ (al-Bukhari 444, Muslim). Diese zwei Rak'at heißen **Tahiyyat al-Masdschid**, „Gruß an die Moschee“. Wie man sie betet, erklärt das Kapitel über [das Gebet](/islam/prayer-sunni).
 
 ### Bittgebete beim Betreten und Verlassen
 
@@ -169,11 +221,13 @@ Wenn du das nächste Mal an einer Moschee vorbeigehst, tritt ruhig ein. Du bist 
       { q: "Welche drei Moscheen sind im Islam besonders heilig?", a: "Die Heilige Moschee (Masdschid al-Haram) in Mekka, die Prophetenmoschee (Masdschid an-Nabawi) in Medina und die Aqsa-Moschee in Jerusalem. Der Prophet ﷺ nannte sie als die einzigen Moscheen, zu denen man sich eigens auf Reisen begeben soll (al-Bukhari, Muslim)." },
       { q: "Dürfen Nichtmuslime eine Moschee besuchen?", a: "Viele Moscheen heißen Gäste aller Religionen willkommen, etwa die Scheich-Zayid-Moschee in Abu Dhabi, die Jumeirah-Moschee in Dubai, die Al-Nur-Moschee in Schardscha oder die Hassan-II.-Moschee in Casablanca. Mekka ist allerdings Muslimen vorbehalten, und manche Moscheen erlauben Nichtmuslimen nur den Blick von außen." },
       { q: "Was ziehe ich beim Moscheebesuch an?", a: "Locker sitzende Kleidung, die Arme und Beine bedeckt; Frauen tragen ein Kopftuch. Vor dem Gebetsraum ziehst du die Schuhe aus. Große Moscheen stellen oft passende Kleidung bereit." },
-      { q: "Was ist Tahiyyat al-Masdschid?", a: "Zwei Rak'at, die man beim Betreten einer Moschee betet, bevor man sich setzt. Der Prophet ﷺ hat dazu angeleitet (al-Bukhari, Muslim)." },
+      { q: "Was ist Tahiyyat al-Masdschid?", a: "Zwei Rak'at, die man beim Betreten einer Moschee betet, bevor man sich setzt. Der Prophet ﷺ hat dazu angeleitet (al-Bukhari 444, Muslim)." },
+      { q: "Was ist der Unterschied zwischen Mihrab und Minbar?", a: "Der Mihrab ist die Nische in der Qibla-Wand, die die Gebetsrichtung nach Mekka anzeigt; davor steht der Imam beim Gebet. Der Minbar ist die Kanzel mit Stufen daneben, von der die Freitagspredigt gehalten wird." },
       { q: "Welches Bittgebet spricht man beim Betreten und Verlassen der Moschee?", a: "Beim Betreten: „Allahumma iftah li abwaba rahmatik“ (O Allah, öffne mir die Tore Deiner Barmherzigkeit). Beim Verlassen: „Allahumma inni as'aluka min fadlik“ (O Allah, ich bitte Dich um Deine Huld) (Muslim)." },
     ],
     sources: [
-      "Koran 2:144, 3:96, 7:31, 9:108, 17:1, 24:36, 62:9, 72:18",
+      "Koran 2:144, 3:39, 3:96, 5:6, 7:31, 9:108, 17:1, 24:36, 62:9, 72:18",
+      "Sahih al-Bukhari 444 (Tahiyyat al-Masdschid); Sahih al-Bukhari (der Palmstamm, der weinte, als der Minbar gebaut wurde)",
       "Sahih al-Bukhari (drei Moscheen, Gebet in der Prophetenmoschee, Rawda, Quba, Tahiyyat al-Masdschid, die Erde als Gebetsstätte, Moscheebau, Frauen in der Moschee, Knoblauch und Zwiebeln)",
       "Sahih Muslim (dieselben Überlieferungen; außerdem: die liebsten Orte bei Allah, Bittgebete beim Betreten und Verlassen der Moschee)",
       "Musnad Ahmad und Sunan Ibn Madscha (Gebet in der Heiligen Moschee); Sunan an-Nasa'i und Sunan Ibn Madscha (Gebet in der Quba-Moschee)",
@@ -183,7 +237,7 @@ Wenn du das nächste Mal an einer Moschee vorbeigehst, tritt ruhig ein. Du bist 
   en: {
     title: "The most beautiful and significant mosques in the world – and how to visit them",
     kicker: "Houses of Allah, from Makkah to Djenné",
-    lead: "A mosque is more than a building: it is a house of Allah, a place of calm, learning and meeting. In this chapter we visit together the three holy mosques, the mosques of our home, the Emirates, and some of the most beautiful houses of worship in the world. At the end you will learn how to enter a mosque with respect and an open heart.",
+    lead: "A mosque is more than a building: it is a house of Allah, a place of calm, learning and meeting. In this chapter we visit together the three holy mosques, the mosques of our home, the Emirates, and some of the most beautiful houses of worship in the world. You will also learn what mihrab, minbar and minaret mean – and how to enter a mosque with respect and an open heart.",
     facts: [
       { n: "3", l: "mosques worth setting out on a journey for" },
       { n: "2007", l: "opening of the Sheikh Zayed Grand Mosque in Abu Dhabi" },
@@ -216,6 +270,8 @@ The Prophet ﷺ said: "A prayer in this mosque of mine is better than a thousand
 
 Al-Aqsa Mosque was the first qibla of the Muslims and the destination of the Night Journey: "Glory be to Him who took His servant by night from the Sacred Mosque to the Farthest Mosque, whose surroundings We have blessed" (17:1). On the Noble Sanctuary stand al-Aqsa Mosque with its dome and the Dome of the Rock with its golden dome. They recall the long chain of prophets, from Ibrahim to Isa, peace be upon them, and the Prophet Muhammad ﷺ, who united them all.
 
+Many take the golden dome to be al-Aqsa Mosque. In fact it is the **Dome of the Rock**, built under the caliph Abd al-Malik and completed around 691/692 – one of the oldest surviving buildings of Islamic architecture. Al-Aqsa Mosque itself has a darker, lead-grey dome, and "al-Aqsa" is often used for the whole sacred compound.
+
 ### Quba Mosque
 
 **Quba Mosque** on the edge of Madinah is the first mosque the Prophet ﷺ founded after his arrival. Many scholars relate to it the verse: "A mosque founded on God-consciousness from the first day is more worthy for you to stand in. In it are men who love to purify themselves" (9:108). The Prophet ﷺ visited it every Saturday, walking or riding, and prayed there (al-Bukhari, Muslim). And he said: "Whoever purifies himself at home, then comes to Quba Mosque and prays in it, has a reward like that of an Umrah" (an-Nasa'i, Ibn Majah).
@@ -232,9 +288,15 @@ Its architecture brings together influences from many parts of the Muslim world.
 
 The mosque is open to visitors of all faiths, entry is free, and there are free guided tours where you may ask anything about Islam and the mosque. Modest dress is expected; women wear a headscarf. At prayer time you may hear the adhan echo across the courtyard, a moment many guests never forget.
 
+### Al Ain – Sheikh Khalifa Mosque
+
+Al Ain, the green oasis city in the emirate of Abu Dhabi, overlooked by Jebel Hafeet, is closely linked with Sheikh Zayed: he served here for many years as the ruler's representative before becoming Ruler of Abu Dhabi. Among the city's great mosques is the **Sheikh Khalifa bin Zayed Mosque**, one of the country's newer large mosques, named after Sheikh Khalifa bin Zayed Al Nahyan, the second President of the UAE – may Allah have mercy on him. With its great dome, its minarets and its wide prayer hall, it is a place where the city gathers to pray. If you would like to visit, check the visiting times beforehand.
+
 ### Dubai – open doors, open hearts
 
 In Dubai, where our platform is made, **Jumeirah Mosque** is a landmark of encounter. Its style draws on the medieval architecture of Cairo, with two slender minarets and finely carved pale stone. Under the motto **"Open Doors. Open Minds."** the Sheikh Mohammed Centre for Cultural Understanding invites guests to visit the mosque, ask questions and talk over Arabic coffee and dates. No question is too simple, none too critical: that is exactly the idea.
+
+In the heart of old Dubai, near the Creek, the textile souk and the historic Al Fahidi district, stands the **Grand Mosque of Bur Dubai**. With its sand-coloured walls, its many domes and a tall, slender minaret, it blends into the old town as if it had always been there. People have prayed on this spot for a long time; the present building is more recent and built in a traditional style. For guided visits Jumeirah Mosque is the better address – here you experience above all the prayer life of the old town, most beautifully from the water, when the adhan drifts across the Creek.
 
 In the Al Safa district stands the **Al Farooq Omar Bin Al Khattab Mosque**, named after the second caliph. Its domes and minarets recall the great Ottoman mosques of Istanbul, while inside, influences from different eras of Islamic architecture come together. Visitors are welcome here too at certain times; it is best to check ahead.
 
@@ -248,7 +310,7 @@ Sharjah is the emirate that has devoted itself especially to culture, books and 
 
 ### Fujairah – Al Bidya Mosque
 
-On the east coast, between the Hajar Mountains and the Indian Ocean, stands a small, simple building of stone and mud: **Al Bidya Mosque**. It is considered the oldest known mosque in the UAE still in use. Its exact age is not known for certain, but it is several centuries old. Four small domes rest on a single central pillar. Whoever prays here feels that a house of Allah needs neither marble nor gold, only sincere hearts.
+On the east coast, between the Hajar Mountains and the Indian Ocean, stands a small, simple building of stone and mud: **Al Bidya Mosque**. It is often called the oldest mosque in the UAE still in use. Its exact age is unknown, and estimates vary widely. Four small domes rest on a single central pillar. Whoever prays here feels that a house of Allah needs neither marble nor gold, only sincere hearts.
 
 ## Great mosques around the world
 
@@ -268,11 +330,19 @@ High on the Citadel stands the **Mosque of Muhammad Ali** from the 19th century,
 
 Quite different is the **Mosque of Ibn Tulun** from the 9th century: plain, monumental, with a vast courtyard and a minaret with an external spiral staircase. It is considered one of the oldest mosques in Cairo largely preserved in its original form. Its calm is overwhelming.
 
+### The Mosque of Sultan Hasan in Cairo
+
+Below the Citadel stands the **Mosque and Madrasa of Sultan Hasan** from the 14th century, a masterpiece of the Mamluk era. Four lofty halls open onto its courtyard, and in each one of the four Sunni schools of law was taught – a building that gathers the diversity of the schools under one roof. You can learn more about the schools in the chapter on [the schools of law](/islam/madhahib).
+
 ### The Sultan Ahmed Mosque and the Süleymaniye in Istanbul
 
 The **Sultan Ahmed Mosque**, built in the early 17th century, is known as the "Blue Mosque" for its blue Iznik tiles. It has six minarets and is a living place of prayer: at prayer times it is reserved for worshippers, and afterwards visitors stream back in.
 
 The **Süleymaniye** was built in the 16th century for Sultan Süleyman to the designs of the great architect **Mimar Sinan**. It crowns one of the hills above the Golden Horn, surrounded by schools, a hospital and tombs, among them the sultan's and, close by, Sinan's own. Many regard it as the masterpiece of Ottoman architecture.
+
+### The Selimiye in Edirne
+
+For Sultan Selim II, Sinan built the **Selimiye Mosque** in Edirne in the 16th century. Its immense dome seems to float above the hall, framed by four slender minarets. According to tradition, Sinan himself called it his masterpiece; today it is a UNESCO World Heritage Site.
 
 ### The Mezquita of Córdoba
 
@@ -290,11 +360,19 @@ Completed in 1993, the **Hassan II Mosque** stands partly on a platform over the
 
 The mosque of Kairouan in today's Tunisia goes back to the founding of the city by Uqba ibn Nafi in the 7th century; it received its present form mainly in the 9th century. Its massive square minaret is among the oldest in the world, and its plan became a model for many mosques in North Africa.
 
+### The Great Mosque of Samarra
+
+In the 9th century the Abbasid caliph al-Mutawakkil built a mosque in Samarra, in today's Iraq, that was among the largest of its time. What survives above all are its massive outer walls and the famous minaret **al-Malwiya**, around which a ramp spirals upwards.
+
 ### The Badshahi Mosque and the Faisal Mosque in Pakistan
 
 The **Badshahi Mosque** in Lahore was built in the 17th century by the Mughal emperor Aurangzeb. Red sandstone, white marble domes and a vast courtyard where countless worshippers gather on Eid make it one of the great buildings of the Mughal era.
 
 The **Faisal Mosque** in Islamabad lies at the foot of the Margalla Hills. Its design by the Turkish architect Vedat Dalokay recalls a Bedouin tent, without a classical dome. It is named after King Faisal of Saudi Arabia.
+
+### The Jama Masjid in Delhi
+
+The Mughal emperor Shah Jahan, who also built the Taj Mahal, built the **Jama Masjid** in Delhi in the 17th century. Red sandstone and white marble, three domes and a vast courtyard make it one of the largest mosques in India. For Friday prayer and on Eid the courtyard fills to its edges.
 
 ### The Imam Mosque and the Sheikh Lotfollah Mosque in Isfahan
 
@@ -304,6 +382,10 @@ On the wide Naqsh-e Jahan Square in Isfahan stand two jewels from the early 17th
 
 In Mashhad in north-eastern Iran lies the tomb of **Ali ibn Musa al-Rida**, a descendant of the Prophet ﷺ whom Twelver Shia Muslims honour as the eighth Imam. The extensive complex of courtyards, mosques and libraries is visited by a great many pilgrims every year. You can learn more about the different traditions in the chapter on [Sunni and Shia](/islam/sunni-shia).
 
+### The Sultan Qaboos Grand Mosque in Muscat
+
+In neighbouring Oman, the **Sultan Qaboos Grand Mosque** in Muscat opened in 2001. Its prayer hall is laid with an enormous hand-knotted carpet, a great chandelier hangs above it, and its bright colonnades invite stillness. Visitors are welcome at set times.
+
 ### The Istiqlal Mosque in Jakarta
 
 The **Istiqlal Mosque**, the "Mosque of Independence", is the largest mosque in Southeast Asia. It was designed by the architect Friedrich Silaban, a Christian, and stands directly opposite Jakarta Cathedral, a beautiful sign of living together. Visitors are warmly received and often shown around by volunteers.
@@ -312,9 +394,32 @@ The **Istiqlal Mosque**, the "Mosque of Independence", is the largest mosque in 
 
 In Bandar Seri Begawan a golden dome rises above an artificial lagoon. Completed in 1958, the mosque is mirrored in the water, and in the lagoon lies a replica of a royal barge.
 
+### The Great Mosque of Xi'an
+
+In the old imperial city of Xi'an in China stands a mosque that looks like a Chinese temple: wooden pavilions with curved tiled roofs, quiet gardens, stone tablets with Chinese and Arabic inscriptions. Its founding is traditionally dated to the 8th century; most of the present buildings date from the Ming period. It shows how Islam can take on the architectural language of a place without losing itself.
+
 ### The Great Mosque of Djenné in Mali
 
 The **Great Mosque of Djenné** is the largest mud-brick building in the world. Its present form dates from 1907. Every year the whole town comes together to replaster the walls with fresh mud, a festival of community in which young and old lend a hand. Visitors usually admire it from outside, from the market square that spreads out before it.
+
+### The Grand Mosque of Paris and the Shah Jahan Mosque in Woking
+
+Europe has its own mosque history too. The **Grand Mosque of Paris** was inaugurated in 1926, partly in memory of the Muslim soldiers who died for France in the First World War. Its garden, green-tiled roofs and minaret recall the mosques of North Africa and al-Andalus. Older still is the **Shah Jahan Mosque** in Woking, England, from 1889, the first purpose-built mosque in Britain. It is named after Sultan Shah Jahan, the ruler of Bhopal, who generously supported its construction.
+
+## The elements of a mosque – a short tour
+
+A mosque really needs nothing more than a clean floor and a direction. And yet over the centuries Muslims developed a language of forms of their own, in which every element serves a purpose. Once you know them, you can read any mosque like a book.
+
+- **Qibla wall:** the wall that faces the Kaaba in Makkah ([Quran 2:144](/surah/2?v=144)). Worshippers stand in straight rows parallel to it, shoulder to shoulder. That is why many prayer halls are wider than they are deep.
+- **Mihrab:** the niche in the middle of the qibla wall. It shows the direction of prayer, and the imam stands in front of it. The word already appears in the Quran: Zakariyya was praying "in the mihrab" when the angels called him ([Quran 3:39](/surah/3?v=39)) – there it means a prayer chamber. The niche as a fixed architectural feature only appeared after the time of the Prophet ﷺ and became one of the most precious places of Islamic art, with tiles, carved plaster and calligraphy.
+- **Minbar:** the pulpit with steps, to the right of the mihrab, from which the Friday sermon is given. At first the Prophet ﷺ preached leaning against a palm trunk. When a wooden pulpit was built for him, the trunk cried like a child until the Prophet ﷺ went to it and embraced it (al-Bukhari).
+- **Minaret:** the tower from which the call to prayer rings out. In the Prophet's ﷺ time Bilal called the adhan from a raised place; minarets as separate towers came later and took on a different shape in every region – square in Kairouan, spiralling in Samarra, slender as a pencil in Istanbul.
+- **Dome:** it is not required – the first mosque in Madinah had none. But a dome widens the space, carries the voice of the reciter and draws the eye upwards. Inside it is often decorated with star patterns, verses or muqarnas, the honeycomb vaults of Islamic architecture.
+- **Sahn:** the open courtyard, often surrounded by arcades, with a fountain in the middle. It gives light and air and becomes a prayer space on Fridays and Eid when the hall is full.
+- **Ablution area:** here worshippers perform wudu, the ablution before prayer: face, hands and forearms, wiping the head, and the feet ([Quran 5:6](/surah/5?v=6)). In old mosques it is a fountain in the courtyard, in new ones a room of its own with seats and taps.
+- **Calligraphy and ornament:** in prayer spaces Islamic art does without images of living beings. In their place come verses of the Quran in beautiful script, geometric stars that continue into infinity, and tendrils without end. Many see in this a quiet pointer to the infinity of Allah.
+
+The next time you enter a mosque, look for the mihrab first. Then you know where every heart in that room is turning.
 
 ## How to visit a mosque respectfully
 
@@ -322,6 +427,7 @@ Whether you are Muslim or come as a guest, a few simple guidelines will help you
 
 - **Dress:** Choose loose clothing that covers your arms and legs. Women wear a headscarf; large mosques such as the Sheikh Zayed Grand Mosque provide suitable clothing if needed. Allah says: "O children of Adam, take your adornment at every place of prayer" (7:31).
 - **Shoes:** Take off your shoes before the prayer hall. There are racks or bags for them.
+- **Wudu:** If you want to pray, come with wudu or perform it in the mosque's ablution area ([Quran 5:6](/surah/5?v=6)). Guests who only want to look around do not need to perform ablution.
 - **Prayer times:** If you only want to look around, plan your visit outside prayer times. Many mosques close to visitors shortly before and during the prayer.
 - **Women's sections:** Many mosques have their own areas or entrances for women. The Prophet ﷺ said: "Do not prevent the female servants of Allah from the mosques of Allah" (al-Bukhari, Muslim).
 - **Photography:** Ask first, never photograph worshippers up close, and do not walk directly in front of someone who is praying.
@@ -330,7 +436,7 @@ Whether you are Muslim or come as a guest, a few simple guidelines will help you
 
 ### Tahiyyat al-masjid – greeting the mosque
 
-The Prophet ﷺ said: "When one of you enters the mosque, let him not sit down until he has prayed two rak'at" (al-Bukhari, Muslim). These two rak'at are called **tahiyyat al-masjid**, "greeting the mosque". How to pray them is explained in the chapter on [prayer](/islam/prayer-sunni).
+The Prophet ﷺ said: "When one of you enters the mosque, let him pray two rak'at before he sits down" (al-Bukhari 444, Muslim). These two rak'at are called **tahiyyat al-masjid**, "greeting the mosque". How to pray them is explained in the chapter on [prayer](/islam/prayer-sunni).
 
 ### Supplications on entering and leaving
 
@@ -345,11 +451,13 @@ The next time you pass a mosque, feel free to step inside. You are welcome, as o
       { q: "Which three mosques are especially holy in Islam?", a: "The Sacred Mosque (Masjid al-Haram) in Makkah, the Prophet's Mosque (Masjid an-Nabawi) in Madinah and al-Aqsa Mosque in Jerusalem. The Prophet ﷺ named them as the only mosques worth setting out on a journey for (al-Bukhari, Muslim)." },
       { q: "Can non-Muslims visit a mosque?", a: "Many mosques welcome guests of all faiths, for example the Sheikh Zayed Grand Mosque in Abu Dhabi, Jumeirah Mosque in Dubai, Al Noor Mosque in Sharjah or the Hassan II Mosque in Casablanca. Makkah, however, is reserved for Muslims, and some mosques allow non-Muslims to view them only from outside." },
       { q: "What should I wear when visiting a mosque?", a: "Loose clothing that covers arms and legs; women wear a headscarf. Take off your shoes before the prayer hall. Large mosques often provide suitable clothing." },
-      { q: "What is tahiyyat al-masjid?", a: "Two rak'at that one prays on entering a mosque before sitting down. The Prophet ﷺ instructed this (al-Bukhari, Muslim)." },
+      { q: "What is tahiyyat al-masjid?", a: "Two rak'at that one prays on entering a mosque before sitting down. The Prophet ﷺ instructed this (al-Bukhari 444, Muslim)." },
+      { q: "What is the difference between the mihrab and the minbar?", a: "The mihrab is the niche in the qibla wall that shows the direction of prayer towards Makkah; the imam stands in front of it when leading the prayer. The minbar is the stepped pulpit beside it, from which the Friday sermon is given." },
       { q: "What supplication is said on entering and leaving the mosque?", a: "On entering: \"Allahumma iftah li abwaba rahmatik\" (O Allah, open for me the gates of Your mercy). On leaving: \"Allahumma inni as'aluka min fadlik\" (O Allah, I ask You of Your bounty) (Muslim)." },
     ],
     sources: [
-      "Quran 2:144, 3:96, 7:31, 9:108, 17:1, 24:36, 62:9, 72:18",
+      "Quran 2:144, 3:39, 3:96, 5:6, 7:31, 9:108, 17:1, 24:36, 62:9, 72:18",
+      "Sahih al-Bukhari 444 (tahiyyat al-masjid); Sahih al-Bukhari (the palm trunk that cried when the minbar was built)",
       "Sahih al-Bukhari (the three mosques, prayer in the Prophet's Mosque, the Rawdah, Quba, tahiyyat al-masjid, the earth as a place of prayer, building a mosque, women at the mosque, garlic and onions)",
       "Sahih Muslim (the same narrations; also: the places most beloved to Allah, supplications on entering and leaving the mosque)",
       "Musnad Ahmad and Sunan Ibn Majah (prayer in the Sacred Mosque); Sunan an-Nasa'i and Sunan Ibn Majah (prayer in Quba Mosque)",

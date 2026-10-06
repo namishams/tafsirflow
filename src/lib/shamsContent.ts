@@ -2,6 +2,11 @@
 export type StepDetail = { what: string; why: string; platform: string; time: string };
 export type ShamsContent = {
   heroKicker: string; heroTitle: string; heroLead: string; heroBy: string;
+  heroFacts?: { n: string; l: string }[];        // three honest key numbers under the hero
+  stepTags?: string[];                             // the learning principle behind each of the seven steps
+  principlesLead?: string;                         // intro of "Why it works"
+  heritage?: { title: string; lead: string; items: { ar: string; t: string; d: string }[] }; // roots in the hifz tradition
+  finalPoints?: string[];                          // three short reassurances at the final call to action
   name?: { title: string; body: string; verses: { ar: string; ref: string; meaning: string }[] };
   demoTitle: string; demoStages: string[];
   problemTitle: string; problems: { t: string; d: string }[];
@@ -30,6 +35,24 @@ const de: ShamsContent = {
   heroTitle: "Die Shams-Methode",
   heroLead: "Ein Weg, den Koran so zu lernen, dass er bleibt: Jeder Vers wird gehört, gesprochen, verstanden, erklärt, aus dem Gedächtnis abgerufen und mit deinem Leben verbunden – in sieben Schritten und etwa vier Minuten. Was die Sprachlern- und Gedächtnisforschung über das Behalten weiß, verbunden mit der Art, wie Koranlehrer seit Jahrhunderten unterrichten.",
   heroBy: "Entwickelt von Nami Shams in Dubai",
+  heroFacts: [
+    { n: "7", l: "Schritte für jeden Vers" },
+    { n: "≈ 4", l: "Minuten für einen neuen Vers" },
+    { n: "6", l: "geplante Wiederholungen in drei Monaten" },
+  ],
+  stepTags: ["Input vor Output", "Backchaining", "Chunking", "Duale Kodierung · Eselsbrücken", "Elaboration", "Abrufübung · verblassende Hinweise", "Tadabbur"],
+  principlesLead: "Die Shams-Methode erfindet das Lernen nicht neu. Sie ordnet bekannte, gut untersuchte Prinzipien der Lern- und Gedächtnisforschung so an, dass jeder Vers sie der Reihe nach durchläuft – vom ersten Hören bis zur Wiederholung Monate später.",
+  heritage: {
+    title: "Verwurzelt in der Tradition der Hifz-Schulen",
+    lead: "Keiner der sieben Schritte ist eine Laune. Jeder hat eine Wurzel in der Art, wie Muslime den Koran seit Jahrhunderten weitergeben – die Shams-Methode bringt sie in eine feste Reihenfolge und auf dein Telefon.",
+    items: [
+      { ar: "تَلَقِّي", t: "Talaqqi – zuerst hören", d: "Der Koran wird von Mund zu Ohr weitergegeben: Der Schüler hört den Vers vom Lehrer, bevor er ihn selbst spricht. Darum beginnt bei uns jeder Vers mit dreimaligem Hören – und darum empfehlen wir, zusätzlich bei einem Lehrer vorzutragen." },
+      { ar: "لَوْح", t: "Lauh – die Schreibtafel", d: "In vielen Koranschulen Westafrikas und des Maghreb schreiben Schüler ihren Abschnitt bis heute auf eine Holztafel, lernen ihn auswendig und waschen die Tafel dann ab. Der Text verschwindet, das Gedächtnis bleibt – derselbe Gedanke steckt in den verblassenden Hinweisen von Schritt 6." },
+      { ar: "سَبَق · سَبْقِي · مَنْزِل", t: "Sabaq, Sabqi, Manzil", d: "Viele Hifz-Schulen teilen jeden Tag in drei Teile: die neue Lektion (Sabaq), die Verse der letzten Tage (Sabqi) und die Wiederholung des älteren Bestands (Manzil). Das Gedächtnismodell der Shams-Methode plant dieselben drei Ebenen – und passt die Abstände an dich an." },
+      { ar: "عَشْرُ آيَات", t: "Zehn Verse – mit Wissen und Handeln", d: "Von Gefährten wie Ibn Mas'ud wird berichtet, dass sie vom Propheten ﷺ zehn Verse lernten und erst weitergingen, wenn sie wussten, was darin an Wissen und Handeln steckt (überliefert bei at-Tabari). Deshalb gehören Bedeutung, Tafsir und Nachdenken zu jedem Vers." },
+    ],
+  },
+  finalPoints: ["Nichts vorbereiten – die Plattform führt dich durch jeden Schritt.", "Lautschrift und Bedeutung stehen unter jedem Wort.", "Danach plant das Gedächtnismodell deine Wiederholungen."],
   name: {
     title: "Warum „Shams“?",
     body: "„Shams“ – شمس – ist das arabische Wort für die Sonne. Es ist zugleich der Familienname von Nami Shams, der die Methode entwickelt hat. Und es beschreibt, wie Lernen hier gemeint ist: Die Sonne geht jeden Morgen auf, nicht einmal im Jahr mit voller Kraft. Sie ist pünktlich, geduldig und beständig – und gerade deshalb lässt sie alles wachsen. So soll auch der Koran in dein Leben kommen: ein wenig Licht jeden Tag, zur richtigen Zeit, bis aus vielen Tagen ein ganzes Leben mit dem Wort Allahs wird. Der Koran selbst schwört bei der Sonne und nennt sie ein Licht, das Allah gemacht hat – eine Erinnerung daran, dass alles Licht von Ihm kommt, auch das Licht des Wissens.",
@@ -139,6 +162,24 @@ const en: ShamsContent = {
   heroTitle: "The Shams Method",
   heroLead: "A way to learn the Quran so that it stays: every verse is heard, spoken, understood, explained, recalled from memory and connected to your life – in seven steps and about four minutes. What language-learning and memory research knows about remembering, joined with the way Quran teachers have taught for centuries.",
   heroBy: "Developed by Nami Shams in Dubai",
+  heroFacts: [
+    { n: "7", l: "steps for every verse" },
+    { n: "≈ 4", l: "minutes for a new verse" },
+    { n: "6", l: "planned reviews in three months" },
+  ],
+  stepTags: ["Input before output", "Backchaining", "Chunking", "Dual coding · mnemonics", "Elaboration", "Retrieval practice · fading cues", "Tadabbur"],
+  principlesLead: "The Shams Method does not reinvent learning. It arranges well-known, well-studied principles of learning and memory research so that every verse passes through them in order – from the first listening to the review months later.",
+  heritage: {
+    title: "Rooted in the tradition of the hifz schools",
+    lead: "None of the seven steps is a whim. Each has a root in the way Muslims have passed on the Quran for centuries – the Shams Method puts them into a fixed order and onto your phone.",
+    items: [
+      { ar: "تَلَقِّي", t: "Talaqqi – listening first", d: "The Quran is passed on from mouth to ear: the student hears the verse from the teacher before speaking it. That is why every verse here begins with listening three times – and why we recommend reciting to a teacher as well." },
+      { ar: "لَوْح", t: "Lawh – the writing tablet", d: "In many Quran schools of West Africa and the Maghreb, students still write their passage on a wooden tablet, learn it by heart and then wash the tablet clean. The text disappears, the memory stays – the same idea lives in the fading cues of step 6." },
+      { ar: "سَبَق · سَبْقِي · مَنْزِل", t: "Sabaq, sabqi, manzil", d: "Many hifz schools divide each day into three parts: the new lesson (sabaq), the verses of the last few days (sabqi) and the review of older portions (manzil). The memory model of the Shams Method plans the same three levels – and adapts the gaps to you." },
+      { ar: "عَشْرُ آيَات", t: "Ten verses – with knowledge and action", d: "It is reported of Companions such as Ibn Mas'ud that they learned ten verses from the Prophet ﷺ and only moved on once they knew the knowledge and the action contained in them (narrated by at-Tabari). That is why meaning, tafsir and reflection belong to every verse." },
+    ],
+  },
+  finalPoints: ["Nothing to prepare – the platform guides you through every step.", "Transliteration and meaning appear under every word.", "Afterwards the memory model plans your reviews."],
   name: {
     title: "Why “Shams”?",
     body: "“Shams” – شمس – is the Arabic word for the sun. It is also the family name of Nami Shams, who developed the method. And it describes how learning is meant here: the sun rises every morning, not once a year with full force. It is punctual, patient and steady – and that is exactly why it makes everything grow. This is how the Quran should enter your life: a little light every day, at the right time, until many days become a whole life with the word of Allah. The Quran itself swears by the sun and calls it a light that Allah has made – a reminder that all light comes from Him, the light of knowledge too.",

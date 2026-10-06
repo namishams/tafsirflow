@@ -1,5 +1,5 @@
 "use client";
-import { IconStarBig, IconTrophy, ArrowBack } from "./Icons";
+import { ArrowBack } from "./Icons";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -8,6 +8,7 @@ import { noteMistake } from "@/lib/learning";
 import { ageProfile } from "@/lib/age";
 import { PASS, PATH, levelOf, questionsFor, readProgress, saveResult, secondsPerQuestion } from "@/lib/academy";
 import { IconPlay } from "./Icons";
+import { PracticeCelebrate, PracticeMedallion, PracticeStar, PracticeStarNum } from "./art/PracticeArt";
 
 type Q =
   | { kind: "next"; prompt: string[]; options: string[]; answer: number; key: string }
@@ -123,10 +124,10 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
 
   const score = qs.length ? Math.round((correct / qs.length) * 100) : 0;
   const optBtn = (n: number, ans: number) => {
-    const base = "w-full rounded-md border p-4 text-start transition";
-    if (!answered) return `${base} border-line bg-surface hover:border-ink`;
-    if (n === ans) return `${base} border-accent bg-accent-soft`;
-    if (n === picked) return `${base} border-red-500 bg-red-50 dark:bg-red-950`;
+    const base = "w-full rounded-xl border-2 p-4 text-start transition";
+    if (!answered) return `${base} border-line bg-surface hover:border-[rgb(201_166_94)]/60`;
+    if (n === ans) return `${base} pa-right border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/15`;
+    if (n === picked) return `${base} pa-shake border-[rgb(190_84_104)] bg-[rgb(190_84_104)]/10`;
     return `${base} border-line bg-surface opacity-60`;
   };
   const wasRight = useMemo(() => {
@@ -146,23 +147,23 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
       {phase === "intro" && (
         <>
           <p className="mt-3 text-[15px] leading-relaxed text-muted">{t("introLead")}</p>
-          <ol className="mt-6 grid gap-px overflow-hidden rounded-lg border border-line bg-line">
-            <li className="bg-surface p-5">
-              <p className="text-sm font-extrabold text-gold">1</p>
+          <ol className="mt-6 grid gap-4 sm:grid-cols-2">
+            <li className="pa-card p-5 pt-6">
+              <PracticeStarNum n={1} size={40} />
               <h2 className="mt-1 text-lg font-bold">{t("stepLearn")}</h2>
               <p className="mt-1 text-[15px] text-muted">{t("stepLearnD")}</p>
-              <Link href={`/surah/${s}?v=${lesson.from}&shams=1`} className="mt-4 inline-flex h-11 items-center rounded-md bg-ink px-5 text-sm font-bold text-bg">{t("learnShams")}</Link>
+              <Link href={`/surah/${s}?v=${lesson.from}&shams=1`} className="mt-4 inline-flex h-11 items-center rounded-full border border-line px-5 text-sm font-bold hover:border-[rgb(201_166_94)]">{t("learnShams")}</Link>
             </li>
-            <li className="bg-surface p-5">
-              <p className="text-sm font-extrabold text-gold">2</p>
+            <li className="pa-card p-5 pt-6">
+              <PracticeStarNum n={2} size={40} />
               <h2 className="mt-1 text-lg font-bold">{t("stepTest")}</h2>
               <p className="mt-1 text-[15px] text-muted">{t("stepTestD", { n: questionsFor(lvl), secs, pass: PASS })}</p>
-              <button onClick={start} className="mt-4 h-11 rounded-md bg-accent px-5 text-sm font-bold text-white">{t("startTest")}</button>
+              <button onClick={start} className="btn-gold mt-4 h-11 rounded-full px-5 text-sm font-bold">{t("startTest")}</button>
             </li>
           </ol>
           <div className="mt-6 grid gap-3">
             {verses.filter((v) => v.verse_number >= lesson.from && v.verse_number <= lesson.to).map((v) => (
-              <div key={v.verse_key} className="rounded-lg border border-line bg-surface p-4">
+              <div key={v.verse_key} className="pa-card pa-plain p-4">
                 <p className="font-arabic text-2xl leading-[2]" dir="rtl">{v.text_uthmani}</p>
                 <p className="mt-1 text-sm text-muted">{v.translation}</p>
               </div>
@@ -175,12 +176,12 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
         <section className="mt-5">
           <div className="flex items-center justify-between text-sm font-semibold text-muted">
             <span>{t("question", { n: i + 1, total: qs.length })}</span>
-            <span className={`tabular-nums ${left <= 5 && !answered ? "text-red-600" : ""}`}>⏱ {Math.max(0, left)}s</span>
+            <span className={`rounded-full border px-2.5 py-0.5 tabular-nums ${left <= 5 && !answered ? "border-[rgb(190_84_104)]/50 text-[rgb(190_84_104)]" : "border-line"}`}>{Math.max(0, left)}s</span>
           </div>
-          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-line"><div className="h-full bg-accent transition-all" style={{ width: `${(i / qs.length) * 100}%` }} /></div>
-          <div className="mt-1 h-1 overflow-hidden rounded-full bg-line"><div className="h-full bg-gold transition-all duration-1000 ease-linear" style={{ width: `${(Math.max(0, left) / secs) * 100}%` }} /></div>
+          <div className="mt-2 h-2 overflow-hidden rounded-full bg-line"><div className="h-full rounded-full bg-gradient-to-r from-[#c6a65e] to-[#ecd7a2] transition-all rtl:bg-gradient-to-l" style={{ width: `${(i / qs.length) * 100}%` }} /></div>
+          <div className="mt-1 h-1 overflow-hidden rounded-full bg-line"><div className="h-full bg-accent/60 transition-all duration-1000 ease-linear" style={{ width: `${(Math.max(0, left) / secs) * 100}%` }} /></div>
 
-          <div className="mt-6 rounded-lg border border-line bg-surface p-5">
+          <div className="pa-card mt-6 p-5">
             {q.kind === "next" && (<>
               <p className="text-sm font-semibold text-muted">{t("qNext")}</p>
               <p className="font-arabic mt-3 text-3xl leading-[2]" dir="rtl">{q.prompt.join(" ")} <span className="text-gold">…</span></p>
@@ -193,14 +194,14 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
             </>)}
             {q.kind === "listen" && (<>
               <p className="text-sm font-semibold text-muted">{t("qListen")}</p>
-              <button onClick={() => { if (!audio.current) audio.current = new Audio(); audio.current.src = q.audio; window.dispatchEvent(new Event("tf-audio-start")); void audio.current.play(); }} className="mt-3 inline-flex h-11 items-center gap-2 rounded-md bg-ink px-4 text-sm font-bold text-bg"><IconPlay />{t("play")}</button>
+              <button onClick={() => { if (!audio.current) audio.current = new Audio(); audio.current.src = q.audio; window.dispatchEvent(new Event("tf-audio-start")); void audio.current.play(); }} className="stage mt-3 inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-bold text-[#f3e2b6] ring-1 ring-[rgb(201_166_94)]/60"><IconPlay />{t("play")}</button>
               <div className="mt-4 grid gap-2">{q.options.map((o, n) => <button key={n} onClick={() => choose(n)} className={optBtn(n, q.answer)}><span className="font-arabic text-xl" dir="rtl">{o} …</span></button>)}</div>
             </>)}
             {q.kind === "order" && (<>
               <p className="text-sm font-semibold text-muted">{t("qOrder")}</p>
-              <p className="font-arabic mt-3 min-h-[3.5rem] rounded-md border border-dashed border-line p-2 text-2xl leading-[2]" dir="rtl">{order.map((n) => q.tiles[n]).join(" ")}</p>
+              <p className="font-arabic mt-3 min-h-[3.5rem] rounded-xl border-2 border-dashed border-[rgb(var(--gold))]/35 p-2 text-2xl leading-[2]" dir="rtl">{order.map((n) => q.tiles[n]).join(" ")}</p>
               <div className="mt-4 flex flex-wrap gap-2" dir="rtl">
-                {q.tiles.map((w, n) => <button key={n} disabled={order.includes(n) || answered} onClick={() => tapTile(n)} className="font-arabic rounded-md border border-line bg-bg px-3 py-1.5 text-2xl disabled:opacity-30">{w}</button>)}
+                {q.tiles.map((w, n) => <button key={n} disabled={order.includes(n) || answered} onClick={() => tapTile(n)} className="font-arabic rounded-xl border-2 border-line bg-surface px-3 py-1.5 text-2xl transition hover:border-[rgb(201_166_94)]/60 disabled:opacity-30">{w}</button>)}
               </div>
               {!answered && order.length > 0 && <button onClick={() => setOrder([])} className="mt-3 text-sm text-muted underline">{t("reset")}</button>}
               {answered && !wasRight && <p className="font-arabic mt-3 text-xl text-accent" dir="rtl">{q.solution.join(" ")}</p>}
@@ -208,23 +209,24 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
           </div>
 
           {answered && (
-            <div className={`mt-4 flex items-center justify-between gap-3 rounded-lg p-4 ${wasRight ? "bg-accent-soft" : "bg-bg"}`}>
-              <p className="font-bold">{wasRight ? t("right") : picked === -1 ? t("timeUp") : t("wrong")} <span className="text-sm font-normal text-muted">· {q.key}</span></p>
-              <button onClick={next} className="h-11 rounded-md bg-ink px-5 text-sm font-bold text-bg">{i + 1 >= qs.length ? t("finish") : t("next")}</button>
+            <div className={`step-in mt-4 flex items-center justify-between gap-3 rounded-xl border p-4 ${wasRight ? "border-[rgb(201_166_94)]/45 bg-[rgb(201_166_94)]/12" : "border-[rgb(190_84_104)]/30 bg-[rgb(190_84_104)]/[0.08]"}`}>
+              <p className={`flex flex-wrap items-center gap-2 font-bold ${wasRight ? "text-gold" : "text-[rgb(190_84_104)]"}`}>{wasRight && <PracticeStar size={15} />}{wasRight ? t("right") : picked === -1 ? t("timeUp") : t("wrong")} <span className="text-sm font-normal text-muted">· {q.key}</span></p>
+              <button onClick={next} className={`h-11 shrink-0 rounded-full px-5 text-sm font-bold ${wasRight ? "btn-gold" : "bg-ink text-bg"}`}>{i + 1 >= qs.length ? t("finish") : t("next")}</button>
             </div>
           )}
         </section>
       )}
 
       {phase === "result" && (
-        <section className="mt-6 rounded-lg border border-line bg-surface p-6 text-center">
-          <p className="flex justify-center text-gold">{score >= PASS ? <IconStarBig /> : <IconTrophy />}</p>
-          <h2 className="font-display mt-3 text-3xl">{score >= PASS ? t("passed") : t("almost")}</h2>
+        <section className="pa-card relative mt-6 overflow-hidden p-6 pt-8 text-center">
+          {score >= PASS && <PracticeCelebrate />}
+          <PracticeMedallion pct={score / 100} size={140} uid="lr-m" className="pa-medal-in mx-auto" turn={score >= PASS}><span className="font-display text-[28px] leading-none tabular-nums">{score}%</span></PracticeMedallion>
+          <h2 className="font-display mt-4 text-3xl">{score >= PASS ? t("passed") : t("almost")}</h2>
           <p className="mt-2 text-muted">{t("resultLine", { score, xp, pass: PASS })}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <button onClick={start} className="h-11 rounded-md border border-line px-5 text-sm font-bold hover:border-ink">{t("again")}</button>
-            {score >= PASS && nextL && <Link href={`/academy/${nextL.s}/${nextL.from}`} className="inline-flex h-11 items-center rounded-md bg-accent px-5 text-sm font-bold text-white">{t("nextLesson")}</Link>}
-            <Link href="/academy" className="inline-flex h-11 items-center rounded-md bg-ink px-5 text-sm font-bold text-bg">{t("overview")}</Link>
+            <button onClick={start} className="h-11 rounded-full border border-line px-5 text-sm font-bold hover:border-[rgb(201_166_94)]">{t("again")}</button>
+            {score >= PASS && nextL && <Link href={`/academy/${nextL.s}/${nextL.from}`} className="btn-gold inline-flex h-11 items-center rounded-full px-5 text-sm font-bold">{t("nextLesson")}</Link>}
+            <Link href="/academy" className="inline-flex h-11 items-center rounded-full bg-ink px-5 text-sm font-bold text-bg">{t("overview")}</Link>
           </div>
         </section>
       )}

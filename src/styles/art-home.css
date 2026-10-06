@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Modern Islamic art for Home, Quran index, Today and Academy (prefix hm-)
+   Warm ivory and sand next to emerald and gold: the white marble and gilded
+   inlays of Sheikh Zayed Grand Mosque, the lattice dome of the Louvre Abu Dhabi,
+   the illuminated frames of a fine mushaf. CSS and inline SVG only.
+   ========================================================================== */
+
+:root {
+  --hm-ivory: 252 249 241;
+  --hm-sand: 246 239 224;
+  --hm-sand-2: 236 224 198;
+  --hm-gold-l: 233 207 153;
+  --hm-gold: 201 166 94;
+  --hm-gold-d: 150 116 52;
+  --hm-terra: 190 98 76;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --hm-ivory: 15 35 28; --hm-sand: 19 40 32; --hm-sand-2: 33 55 44; --hm-gold-d: 214 178 106; }
+}
+html[data-kids="1"] { --hm-ivory: 255 252 242; --hm-sand: 255 246 222; }
+
+/* ---------- warm sections: ivory marble with a faint eight-fold rosette pattern ---------- */
+.hm-warm { position: relative; isolation: isolate;
+  background-color: rgb(var(--hm-ivory));
+  background-image:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgb(var(--hm-gold-l) / .16), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23c9a65e' stroke-opacity='.10' stroke-width='1'%3E%3Cpath d='M70 34l10.5 25.5L106 70 80.5 80.5 70 106 59.5 80.5 34 70l25.5-10.5z'/%3E%3Cpath d='M44.5 44.5h51v51h-51z'/%3E%3Ccircle cx='70' cy='70' r='12'/%3E%3Cpath d='M0 70h20M120 70h20M70 0v20M70 120v20'/%3E%3Cpath d='M0 0l22 22M140 0l-22 22M0 140l22-22M140 140l-22-22'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(180deg, rgb(var(--hm-ivory)), rgb(var(--hm-sand)));
+  background-size: 100% 100%, 140px 140px, 100% 100%;
+}
+.hm-warm::before, .hm-warm::after { content: ""; position: absolute; inset-inline: 0; height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgb(var(--hm-gold) / .55) 25%, rgb(var(--hm-gold) / .8) 50%, rgb(var(--hm-gold) / .55) 75%, transparent); }
+.hm-warm::before { top: 0; } .hm-warm::after { bottom: 0; }
+
+/* ---------- frieze: a band of eight-pointed stars and diamonds, like a carved marble border ---------- */
+.hm-frieze { height: 14px; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cg fill='%23c9a65e'%3E%3Cpath d='M0 .5h28M0 13.5h28' stroke='%23c9a65e' stroke-opacity='.5' stroke-width='.8'/%3E%3Cpath d='M14 2.6l1.3 3.1 3.1 1.3-3.1 1.3-1.3 3.1-1.3-3.1L9.6 7l3.1-1.3z' fill-opacity='.6'/%3E%3Cpath d='M-2 7l2-2 2 2-2 2zM26 7l2-2 2 2-2 2z' fill-opacity='.45'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 28px 14px repeat-x;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent); mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent); }
+
+/* ---------- crafted cards: marble white, a fine gold frame, a light gilded hairline on top ---------- */
+.hm-card { position: relative; border-radius: 12px; border: 1px solid rgb(var(--hm-gold) / .26);
+  background: linear-gradient(180deg, rgb(var(--hm-ivory)) 0%, rgb(var(--surface)) 72%);
+  box-shadow: 0 1px 0 rgb(255 255 255 / .55) inset, 0 18px 40px -34px rgb(90 64 20 / .55); }
+.hm-card::before { content: ""; position: absolute; top: -1px; inset-inline: 22px; height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgb(var(--hm-gold) / .95), transparent); }
+@media (prefers-color-scheme: dark) { .hm-card { box-shadow: 0 18px 40px -30px rgb(0 0 0 / .7); } }
+/* tiny eight-pointed stars in the four corners */
+.hm-corners { position: absolute; inset: 6px; pointer-events: none; --s: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 9 9'%3E%3Cpath d='M4.5 0l1.1 2.9 2.9 1.6-2.9 1.6L4.5 9 3.4 6.1.5 4.5l2.9-1.6z' fill='%23c9a65e' fill-opacity='.7'/%3E%3C/svg%3E");
+  background: var(--s) 0 0 / 9px no-repeat, var(--s) 100% 0 / 9px no-repeat, var(--s) 0 100% / 9px no-repeat, var(--s) 100% 100% / 9px no-repeat; }
+/* cards that lift and catch the light */
+.hm-lift { transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease, border-color .3s ease; }
+@media (hover: hover) {
+  .hm-lift:hover { transform: translateY(-3px); border-color: rgb(var(--hm-gold) / .55); box-shadow: 0 1px 0 rgb(255 255 255 / .5) inset, 0 22px 44px -26px rgb(90 64 20 / .55); }
+}
+/* light that follows the pointer inside a card (see HomeGlow) */
+.hm-glow { position: relative; overflow: hidden; isolation: isolate; }
+.hm-glow > .hm-glow-l { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .5s ease;
+  background: radial-gradient(240px circle at var(--hx, 50%) var(--hy, 0%), rgb(var(--hm-gold-l) / .22), transparent 70%); }
+.hm-glow:hover > .hm-glow-l { opacity: 1; }
+
+/* ---------- eight-pointed star medallion holding a number ---------- */
+.hm-star { position: relative; display: inline-grid; place-items: center; flex-shrink: 0; color: rgb(var(--hm-gold-d)); }
+.hm-star > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.hm-star .o { fill: rgb(var(--hm-ivory)); stroke: rgb(var(--hm-gold)); stroke-width: 1.1; }
+.hm-star .i { fill: none; stroke: rgb(var(--hm-gold) / .55); stroke-width: .7; }
+.hm-star .c { fill: rgb(var(--hm-gold) / .08); stroke: rgb(var(--hm-gold) / .45); stroke-width: .6; stroke-dasharray: 1 1.6; }
+.hm-star-n { position: relative; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: -.02em; }
+.hm-star.is-dark { color: rgb(var(--hm-gold-l)); }
+.hm-star.is-dark .o { fill: rgb(8 38 29 / .85); stroke: rgb(var(--hm-gold-l) / .8); }
+.hm-star.is-dark .i { stroke: rgb(var(--hm-gold-l) / .45); }
+.hm-star.is-gold { color: rgb(8 38 29); }
+.hm-star.is-gold .o { fill: rgb(218 190 128); stroke: rgb(150 116 52); }
+.hm-star.is-gold .i { stroke: rgb(255 255 255 / .55); }
+.hm-star.is-gold .c { fill: rgb(255 255 255 / .12); stroke: rgb(120 90 30 / .35); }
+.hm-star.is-emerald { color: rgb(var(--hm-gold-l)); }
+.hm-star.is-emerald .o { fill: rgb(var(--accent)); stroke: rgb(var(--hm-gold)); }
+.hm-star.is-emerald .i { stroke: rgb(var(--hm-gold-l) / .6); }
+@media (hover: hover) { a:hover .hm-star > svg, button:hover .hm-star > svg, .hm-star.hm-turn:hover > svg { transform: rotate(22.5deg); } }
+
+/* ---------- arch (mihrab) panels: a pointed arch cap above a framed body ---------- */
+.hm-arch { position: relative; padding-top: var(--cap, 30%); }
+.hm-arch-cap { position: absolute; top: 0; left: 0; width: 100%; height: auto; overflow: visible; pointer-events: none; }
+.hm-arch-body { display: flow-root; }
+.hm-arch-cap .f { fill: rgb(var(--hm-ivory)); }
+.hm-arch-cap .l { fill: none; stroke: rgb(var(--hm-gold) / .7); stroke-width: 1; }
+.hm-arch-cap .l2 { fill: none; stroke: rgb(var(--hm-gold) / .35); stroke-width: 1; }
+.hm-arch-body { position: relative; background: rgb(var(--hm-ivory)); border: 1px solid rgb(var(--hm-gold) / .7); border-top: 0; border-radius: 0 0 16px 16px; }
+.hm-arch-body::before { content: ""; position: absolute; top: -1px; bottom: 8px; inset-inline: 2.5%; border: 1px solid rgb(var(--hm-gold) / .35); border-top: 0; border-radius: 0 0 10px 10px; pointer-events: none; }
+.hm-arch-fin { position: absolute; top: 0; left: 50%; transform: translate(-50%, -55%); color: rgb(var(--hm-gold)); pointer-events: none; }
+.hm-arch.is-dark .hm-arch-cap .f { fill: rgb(255 255 255 / .035); }
+.hm-arch.is-dark .hm-arch-cap .l { stroke: rgb(var(--hm-gold-l) / .6); }
+.hm-arch.is-dark .hm-arch-cap .l2 { stroke: rgb(var(--hm-gold-l) / .28); }
+.hm-arch.is-dark .hm-arch-body { background: rgb(255 255 255 / .035); border-color: rgb(var(--hm-gold-l) / .6); }
+.hm-arch.is-dark .hm-arch-body::before { border-color: rgb(var(--hm-gold-l) / .28); }
+.hm-arch.is-dark .hm-arch-fin { color: rgb(var(--hm-gold-l)); }
+.hm-arch-shadow { filter: drop-shadow(0 26px 34px rgb(90 64 20 / .16)); }
+
+/* ---------- the lattice dome of light (after the Louvre Abu Dhabi): layers of stars turning against each other ---------- */
+.hm-dome { position: absolute; left: 50%; pointer-events: none; transform: translateX(-50%); aspect-ratio: 1; }
+.hm-dome > svg { position: absolute; inset: 0; width: 100%; height: 100%; will-change: transform; }
+.hm-dome .d1 { animation: hmTurn 260s linear infinite; }
+.hm-dome .d2 { animation: hmTurn 340s linear infinite reverse; }
+@keyframes hmTurn { to { transform: rotate(360deg); } }
+/* rain of light: soft specks drifting down through the lattice */
+.hm-rain { position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 60% 75% at 50% 0%, #000 0%, transparent 78%); mask-image: radial-gradient(ellipse 60% 75% at 50% 0%, #000 0%, transparent 78%); }
+.hm-rain::before, .hm-rain::after { content: ""; position: absolute; inset-inline: 0; top: -240px; height: calc(100% + 240px); will-change: transform;
+  background-image: radial-gradient(circle, rgb(255 236 190 / .55) 0 1px, transparent 1.7px), radial-gradient(circle, rgb(255 236 190 / .3) 0 .7px, transparent 1.3px), radial-gradient(1px 16px at 50% 50%, rgb(255 236 190 / .32), transparent);
+  background-size: 96px 120px, 52px 80px, 140px 120px; background-position: 13px 7px, 31px 43px, 70px 0; animation: hmRain 22s linear infinite; }
+.hm-rain::after { background-size: 150px 240px, 76px 120px, 210px 240px; background-position: 61px 90px, 5px 20px, 118px 30px; opacity: .7; animation-duration: 34s; }
+@keyframes hmRain { from { transform: translateY(0); } to { transform: translateY(240px); } }
+
+/* ---------- calligraphic watermark that drifts a little while scrolling ---------- */
+.hm-wm { position: absolute; pointer-events: none; user-select: none; white-space: nowrap; line-height: 1; color: rgb(var(--hm-gold) / .09); }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hm-wm { animation: hmDrift linear both; animation-timeline: view(); animation-range: cover; }
+  }
+}
+@keyframes hmDrift { from { transform: translateY(28px); } to { transform: translateY(-28px); } }
+
+/* Quran verse quoted on a page */
+.hm-verse { font-family: "Amiri", serif; color: rgb(var(--hm-gold-d)); line-height: 2; }
+.hm-verse .ref { font-family: inherit; font-size: .55em; opacity: .7; white-space: nowrap; unicode-bidi: isolate; }
+.stage .hm-verse, .hm-dark .hm-verse { color: rgb(var(--hm-gold-l)); }
+
+/* ---------- poster tiles ("courses and tools"): lattice light under the arch, a keystone star, gilded inscription ---------- */
+.hm-poster { isolation: isolate; box-shadow: inset 0 1px 0 rgb(255 255 255 / .06), 0 22px 40px -30px rgb(0 0 0 / .65); transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease; }
+.hm-poster > .hm-p-sky { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 60% at 50% 0%, rgb(255 236 190 / .10), transparent 62%), linear-gradient(0deg, rgb(0 0 0 / .28), transparent 45%); }
+.hm-poster > .hm-p-lat { position: absolute; inset: 0; pointer-events: none; opacity: .4; transition: opacity .8s ease, background-position 6s cubic-bezier(.2,.7,.2,1);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cg fill='none' stroke='%23e9cf99' stroke-opacity='.34' stroke-width='.8'%3E%3Cpath d='M18 6.5l3.4 8.1 8.1 3.4-8.1 3.4-3.4 8.1-3.4-8.1-8.1-3.4 8.1-3.4z'/%3E%3Cpath d='M0 0l6.5 6.5M36 0l-6.5 6.5M0 36l6.5-6.5M36 36l-6.5-6.5M18 0v6.5M18 29.5V36M0 18h6.5M29.5 18H36'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 36px 36px;
+  -webkit-mask-image: radial-gradient(ellipse 62% 46% at 50% 4%, #000 0%, rgb(0 0 0 / .4) 45%, transparent 75%); mask-image: radial-gradient(ellipse 62% 46% at 50% 4%, #000 0%, rgb(0 0 0 / .4) 45%, transparent 75%); }
+.hm-poster > .hm-p-key { position: absolute; top: 4px; left: 50%; width: 13px; height: 13px; transform: translateX(-50%); pointer-events: none; color: rgb(var(--hm-gold-l)); opacity: .55; transition: opacity .5s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+.hm-poster > .hm-p-ar { color: rgb(var(--hm-gold-l) / .13); transition: color .7s ease, transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.hm-poster > .hm-p-line { position: absolute; bottom: 0; inset-inline: 14%; height: 1px; pointer-events: none; opacity: .5; transform: scaleX(.35); transition: transform .7s cubic-bezier(.2,.7,.2,1), opacity .5s ease;
+  background: linear-gradient(90deg, transparent, rgb(var(--hm-gold-l)), transparent); }
+.hm-poster .hm-p-badge::before { content: ""; display: inline-block; width: 5px; height: 5px; margin-inline-end: 6px; vertical-align: .14em; transform: rotate(45deg); background: rgb(var(--hm-gold-l) / .75); }
+@media (hover: hover) {
+  .hm-poster:hover > .hm-p-lat { opacity: 1; background-position: 18px 18px; }
+  .hm-poster:hover > .hm-p-key { opacity: 1; transform: translateX(-50%) rotate(45deg); }
+  .hm-poster:hover > .hm-p-ar { color: rgb(var(--hm-gold-l) / .22); transform: translateY(-3px); }
+  .hm-poster:hover > .hm-p-line { opacity: 1; transform: none; }
+}
+
+/* ---------- Quran index: illuminated surah tiles ---------- */
+.hm-tile { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; height: 100%; border-radius: 14px; overflow: hidden; isolation: isolate;
+  border: 1px solid rgb(var(--hm-gold) / .3); background: linear-gradient(180deg, rgb(var(--surface)) 0%, rgb(var(--hm-ivory)) 100%);
+  box-shadow: 0 1px 0 rgb(255 255 255 / .6) inset, 0 16px 34px -30px rgb(90 64 20 / .6);
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease, border-color .3s ease; }
+.hm-tile::before { content: ""; position: absolute; inset: 5px; border: 1px solid rgb(var(--hm-gold) / .2); border-radius: 10px; pointer-events: none; transition: border-color .4s ease; }
+.hm-tile > .hm-t-lat { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5; transition: opacity .7s ease;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cg fill='none' stroke='%23c9a65e' stroke-opacity='.32' stroke-width='.7'%3E%3Cpath d='M15 5.5l2.8 6.7 6.7 2.8-6.7 2.8-2.8 6.7-2.8-6.7-6.7-2.8 6.7-2.8z'/%3E%3Cpath d='M0 0l5.5 5.5M30 0l-5.5 5.5M0 30l5.5-5.5M30 30l-5.5-5.5'/%3E%3C/g%3E%3C/svg%3E") 50% 0 / 30px 30px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 42% at 50% 0%, #000, transparent 80%); mask-image: radial-gradient(ellipse 60% 42% at 50% 0%, #000, transparent 80%); }
+.hm-tile .hm-t-ar { font-family: "Aref Ruqaa", "Amiri", serif; font-weight: 700; color: rgb(var(--ink)); line-height: 1.35; transition: color .4s ease; }
+.hm-tile .hm-t-pill { display: inline-flex; align-items: center; gap: 4px; }
+.hm-tile.is-last { border-color: rgb(var(--hm-gold) / .75); box-shadow: 0 0 0 3px rgb(var(--hm-gold) / .12), 0 18px 40px -26px rgb(150 116 52 / .7); }
+.hm-tile.is-last::before { border-color: rgb(var(--hm-gold) / .5); }
+@media (hover: hover) {
+  .hm-tile:hover { transform: translateY(-4px); border-color: rgb(var(--hm-gold) / .6); box-shadow: 0 1px 0 rgb(255 255 255 / .55) inset, 0 26px 44px -28px rgb(90 64 20 / .6); }
+  .hm-tile:hover > .hm-t-lat { opacity: 1; }
+  .hm-tile:hover .hm-t-ar { color: rgb(var(--accent)); }
+}
+@media (prefers-color-scheme: dark) {
+  .hm-tile { background: linear-gradient(180deg, rgb(var(--surface)), rgb(var(--hm-ivory))); box-shadow: 0 16px 34px -26px rgb(0 0 0 / .8); }
+}
+/* the medallion number with an optional progress ring (gold) */
+.hm-med { position: relative; display: grid; place-items: center; flex-shrink: 0; }
+.hm-med > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+
+/* segmented control (all / Meccan / Medinan) with a sliding gilded indicator */
+.hm-seg { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; padding: 4px; border-radius: 999px; border: 1px solid rgb(var(--hm-gold) / .35); background: rgb(var(--hm-ivory)); box-shadow: inset 0 1px 2px rgb(90 64 20 / .08); }
+.hm-seg-ind { position: absolute; top: 4px; bottom: 4px; inset-inline-start: calc(4px + var(--i, 0) * (100% - 8px) / var(--n, 3)); width: calc((100% - 8px) / var(--n, 3)); border-radius: 999px;
+  background: linear-gradient(180deg, rgb(18 74 56), rgb(8 38 29)); box-shadow: inset 0 0 0 1px rgb(var(--hm-gold-l) / .45), 0 6px 14px -8px rgb(8 38 29 / .8); transition: inset-inline-start .45s cubic-bezier(.2,.7,.2,1); }
+.hm-seg button { position: relative; z-index: 1; min-width: 0; height: 36px; padding-inline: 10px; border-radius: 999px; font-size: 13px; font-weight: 700; color: rgb(var(--muted)); transition: color .3s ease; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hm-seg button[aria-pressed="true"] { color: rgb(var(--hm-gold-l)); }
+/* juz strip: small star chips in a softly fading scroll row */
+.hm-strip { display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; padding: 4px 2px 6px; overscroll-behavior-x: contain;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 22px), transparent); mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 22px), transparent); }
+.hm-strip::-webkit-scrollbar { display: none; }
+.hm-chip { scroll-snap-align: start; flex-shrink: 0; height: 34px; min-width: 34px; padding-inline: 10px; border-radius: 999px; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums;
+  border: 1px solid rgb(var(--hm-gold) / .3); background: rgb(var(--surface)); color: rgb(var(--ink)); transition: background-color .3s, color .3s, border-color .3s, box-shadow .3s; }
+.hm-chip:hover { border-color: rgb(var(--hm-gold) / .7); }
+.hm-chip[aria-pressed="true"] { border-color: transparent; color: rgb(8 38 29); background: linear-gradient(180deg, #e3cb93, #c6a65e); box-shadow: inset 0 1px 0 rgb(255 255 255 / .4), 0 6px 14px -8px rgb(150 116 52 / .9); }
+/* the search field */
+.hm-search { border: 1px solid rgb(var(--hm-gold) / .32); background: rgb(var(--surface)); box-shadow: inset 0 1px 2px rgb(90 64 20 / .06), 0 14px 32px -26px rgb(90 64 20 / .6); transition: border-color .3s, box-shadow .3s; }
+.hm-search:focus-within { border-color: rgb(var(--hm-gold) / .8); box-shadow: 0 0 0 4px rgb(var(--hm-gold) / .12), 0 14px 32px -26px rgb(90 64 20 / .6); }
+
+/* ---------- small things ---------- */
+/* progress bar in gold with a star at its tip */
+.hm-bar { position: relative; display: block; height: 6px; border-radius: 999px; background: rgb(var(--hm-gold) / .14); box-shadow: inset 0 1px 1px rgb(90 64 20 / .1); }
+.hm-bar > i { position: absolute; inset-block: 0; inset-inline-start: 0; border-radius: 999px; background: linear-gradient(90deg, rgb(var(--accent)), rgb(var(--accent) / .75)); transition: width 1s cubic-bezier(.2,.7,.2,1); }
+.hm-bar.is-gold > i { background: linear-gradient(90deg, #c6a65e, #e3cb93); }
+.hm-bar > i::after { content: ""; position: absolute; inset-inline-end: -5px; top: 50%; width: 10px; height: 10px; transform: translateY(-50%) rotate(45deg); border-radius: 2px; background: rgb(var(--hm-gold)); box-shadow: 0 0 0 2px rgb(var(--surface)); }
+.hm-bar > i[style*="width: 0%"]::after, .hm-bar > i[style*="width:0%"]::after { display: none; }
+.stage .hm-bar, .hm-dark .hm-bar { background: rgb(255 255 255 / .12); box-shadow: none; }
+.stage .hm-bar > i::after { box-shadow: 0 0 0 2px rgb(8 38 29); }
+/* stat band on dark stages: numbers between gold hairlines with star separators */
+.hm-band { border-block: 1px solid rgb(var(--hm-gold-l) / .28); }
+.hm-band > li + li { border-inline-start: 1px solid rgb(var(--hm-gold-l) / .16); }
+/* details / FAQ */
+.hm-faq summary::-webkit-details-marker { display: none; }
+.hm-faq .hm-plus { transition: transform .35s cubic-bezier(.2,.7,.2,1), background-color .3s; }
+.hm-faq[open] .hm-plus { transform: rotate(45deg); background: rgb(var(--hm-gold) / .16); }
+.hm-faq[open] { background: linear-gradient(90deg, rgb(var(--hm-gold) / .07), transparent 70%); }
+[dir="rtl"] .hm-faq[open] { background: linear-gradient(270deg, rgb(var(--hm-gold) / .07), transparent 70%); }
+/* map teaser cells arrive one after another */
+.hm-cells > span { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+@media (hover: hover) { .hm-cells > span:hover { transform: scale(1.35); } }
+/* the gold ring of the Today hub fills when it appears */
+.hm-ring-p { transition: stroke-dasharray 1.2s cubic-bezier(.2,.7,.2,1); }
+/* gentle shine across the next task */
+.hm-next { position: relative; overflow: hidden; }
+.hm-next::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, rgb(var(--hm-gold-l) / .25) 50%, transparent 65%); transform: translateX(-120%); animation: hmShine 7s ease-in-out 1.2s infinite; }
+@keyframes hmShine { 0%, 70% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+/* option tiles in the first-visit questions: pointed niche tops */
+.hm-opt { border-radius: 22px 22px 10px 10px; }
+/* a slowly turning rosette behind numbers or play buttons */
+.hm-spin { animation: hmTurn 40s linear infinite; transform-origin: 50% 50%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hm-dome .d1, .hm-dome .d2, .hm-rain::before, .hm-rain::after, .hm-next::after, .hm-spin { animation: none !important; }
+  .hm-lift, .hm-tile, .hm-poster, .hm-poster > *, .hm-star > svg, .hm-seg-ind, .hm-bar > i, .hm-ring-p { transition: none !important; }
+  .hm-lift:hover, .hm-tile:hover { transform: none; }
+}
+@media print { .hm-dome, .hm-rain, .hm-wm { display: none !important; } }
+
+/* kicker line: small spaced capitals – never spaced in scripts that join their letters */
+.hm-k { font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
+html:is([lang="ar"], [lang="fa"], [lang="ur"], [lang="ps"], [lang="bn"], [lang="zh"]) .hm-k { letter-spacing: 0; text-transform: none; font-size: 12.5px; }

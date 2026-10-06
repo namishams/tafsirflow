@@ -1,11 +1,12 @@
 "use client";
-import { IconFlame, IconPlay, IconSpeaker, IconStarBig, IconTrophy, ArrowNext } from "./Icons";
+import { IconFlame, IconPlay, IconSpeaker, ArrowNext } from "./Icons";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { syncQuranText } from "@/lib/arabicQuran";
 import { LESSONS, PASS_PCT, PLACEMENT_UNITS, UNITS, buildLesson, lessonById, nextArabic, placementResult, saveArabic, savePlacement, starsFor, verseAudioUrl, wordAudioUrl, type Ex, type PlacementResult } from "@/lib/arabic";
 import { logDay } from "@/lib/learning";
+import { PracticeCelebrate, PracticeMedallion, PracticeStar, PracticeStarNum, PracticeWindow } from "./art/PracticeArt";
 
 const T = {
   de: { check: "Prüfen", next: "Weiter", right: "Richtig!", wrong: "Nicht ganz – richtig ist:", listen: "Anhören", again: "Nochmal üben", overview: "Zur Kursübersicht", nextLesson: "Nächste Lektion", done: "Lektion geschafft!", notYet: "Fast geschafft!", needPass: `Ab ${PASS_PCT} % ist die nächste Lektion frei. Wiederhole die Lektion – die Fehler kommen gezielt zurück.`, score: "richtig beim ersten Versuch", xp: "XP", match: "Finde die Paare", review: "Wiederholung", quit: "Beenden", learn: "Neu", tip: "Sprich jeden Laut laut mit – Lesen lernt man mit dem Mund.", readQuran: "Jetzt im Koran lesen",
@@ -156,21 +157,24 @@ export default function ArabicLesson({ id }: { id: string }) {
   if (finished && isPlacement && placed) {
     const { res } = placed;
     return (
-      <div className="mx-auto max-w-xl py-10 text-center">
-        <p className="flex justify-center text-gold" aria-hidden>{res.passed.length ? <IconStarBig /> : <IconTrophy />}</p>
-        <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-gold">{t.pLabel}</p>
+      <div className="relative mx-auto max-w-xl py-10 text-center">
+        {res.passed.length > 0 && <PracticeCelebrate />}
+        <PracticeMedallion pct={res.total ? res.correct / res.total : 0} size={136} uid="pl-m" className="pa-medal-in mx-auto" turn>
+          <span className="font-display text-[26px] leading-none tabular-nums">{res.correct}<span className="text-[15px] text-[#f3e2b6]/60">/{res.total}</span></span>
+        </PracticeMedallion>
+        <p className="mt-5 text-xs font-bold uppercase tracking-[0.16em] text-gold rtl:tracking-normal">{t.pLabel}</p>
         <h1 className="font-display mt-1 text-4xl">{t.pHead}</h1>
         <p className="mt-4 text-[17px] leading-relaxed">{res.start > PLACEMENT_UNITS.length ? t.pAll : t.pFrom.replace("{n}", String(res.start))}</p>
         <p className="mt-1 text-sm text-muted">{t.pRight.replace("{a}", String(res.correct)).replace("{b}", String(res.total))}</p>
-        <ul className="mt-6 divide-y divide-line overflow-hidden rounded-xl border border-line bg-surface text-start">
+        <ul className="pa-card pa-plain mt-6 divide-y divide-line overflow-hidden text-start">
           {PLACEMENT_UNITS.map((u) => {
             const known = res.passed.includes(u);
             const un = UNITS.find((x) => x.n === u)!;
             return (
               <li key={u} className="flex items-center gap-3 px-4 py-3">
-                <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-sm font-bold ${known ? "bg-accent text-white" : "bg-line/60 text-muted"}`} aria-hidden>{known ? "✓" : u}</span>
+                <span aria-hidden><PracticeStarNum n={known ? "✓" : u} size={34} filled={known} /></span>
                 <span className="min-w-0 flex-1 font-semibold leading-snug">{t.unitWord} {u} · {un.title[lang] ?? un.title.en}</span>
-                <span className={`shrink-0 text-xs font-bold ${known ? "text-accent" : "text-muted"}`}>{known ? t.known : t.open}</span>
+                <span className={`shrink-0 text-xs font-bold ${known ? "text-gold" : "text-muted"}`}>{known ? t.known : t.open}</span>
               </li>
             );
           })}
@@ -178,9 +182,9 @@ export default function ArabicLesson({ id }: { id: string }) {
         <p className="mt-4 text-sm text-muted">{t.pNote}</p>
         <div className="mt-8 grid gap-3">
           {placed.next
-            ? <Link href={`/arabic/${placed.next.id}`} className="btn-gold inline-flex h-12 items-center justify-center rounded-md px-4 text-[15px] font-bold"><span className="truncate">{t.pGo} {placed.next.title}</span> <ArrowNext /></Link>
-            : <Link href="/surah/1?shams=1" className="btn-gold inline-flex h-12 items-center justify-center rounded-md text-[15px] font-bold">{t.readQuran} <ArrowNext /></Link>}
-          <button onClick={() => setSeed((n) => n + 1)} className="h-12 rounded-md border border-line bg-surface text-[15px] font-bold hover:border-ink">{t.pRetry}</button>
+            ? <Link href={`/arabic/${placed.next.id}`} className="btn-gold inline-flex h-12 items-center justify-center rounded-full px-4 text-[15px] font-bold"><span className="truncate">{t.pGo} {placed.next.title}</span> <ArrowNext /></Link>
+            : <Link href="/surah/1?shams=1" className="btn-gold inline-flex h-12 items-center justify-center rounded-full text-[15px] font-bold">{t.readQuran} <ArrowNext /></Link>}
+          <button onClick={() => setSeed((n) => n + 1)} className="h-12 rounded-full border border-line bg-surface text-[15px] font-bold hover:border-[rgb(201_166_94)]">{t.pRetry}</button>
           <Link href="/arabic" className="text-sm font-semibold text-muted hover:text-ink">{t.overview}</Link>
         </div>
       </div>
@@ -190,19 +194,23 @@ export default function ArabicLesson({ id }: { id: string }) {
     const stars = starsFor(finished.pct);
     const passed = finished.pct >= PASS_PCT;
     return (
-      <div className="mx-auto max-w-xl py-10 text-center">
-        <p className="flex justify-center text-gold" aria-hidden>{passed ? <IconStarBig /> : <IconTrophy />}</p>
-        <h1 className="font-display mt-4 text-4xl">{passed ? t.done : t.notYet}</h1>
-        <p className="mt-6 flex justify-center gap-2 text-4xl" aria-label={`${stars}/3`}>{[1, 2, 3].map((n) => <span key={n} className={n <= stars ? "text-gold" : "text-line"}>★</span>)}</p>
+      <div className="relative mx-auto max-w-xl py-10 text-center">
+        {passed && <PracticeCelebrate />}
+        {passed && lang !== "ar" && <p className="font-callig text-[40px] leading-tight text-gold" dir="rtl" lang="ar">أحسنت</p>}
+        <PracticeMedallion pct={finished.pct / 100} size={150} uid="ls-m" className="pa-medal-in mx-auto mt-3" turn={passed}>
+          <span className="font-display text-[30px] leading-none tabular-nums">{finished.pct}%</span>
+        </PracticeMedallion>
+        <h1 className="font-display mt-5 text-4xl">{passed ? t.done : t.notYet}</h1>
+        <p className="mt-4 flex justify-center gap-3" aria-label={`${stars}/3`}>{[1, 2, 3].map((n) => <PracticeStar key={n} size={30} className={`${n <= stars ? "pa-medal-in" : "opacity-20"}`} />)}</p>
         <div className="mt-6 grid grid-cols-2 gap-3">
-          <div className="rounded-lg border border-line bg-surface p-4"><p className="font-display text-3xl">{finished.pct} %</p><p className="text-sm text-muted">{t.score}</p></div>
-          <div className="rounded-lg border border-line bg-surface p-4"><p className="font-display text-3xl text-gold">+{finished.xp}</p><p className="text-sm text-muted">{t.xp}</p></div>
+          <div className="pa-card pa-plain p-4"><p className="font-display text-3xl">{finished.pct} %</p><p className="text-sm text-muted">{t.score}</p></div>
+          <div className="pa-card pa-plain p-4"><p className="font-display text-3xl text-gold">+{finished.xp}</p><p className="text-sm text-muted">{t.xp}</p></div>
         </div>
         {!passed && <p className="mt-5 text-[15px] text-muted">{t.needPass}</p>}
         <div className="mt-8 grid gap-3">
-          {passed && next && <Link href={`/arabic/${next.id}`} className="btn-gold inline-flex h-12 items-center justify-center rounded-md text-[15px] font-bold">{t.nextLesson} <ArrowNext /></Link>}
-          {passed && !next && <Link href="/surah/1?shams=1" className="btn-gold inline-flex h-12 items-center justify-center rounded-md text-[15px] font-bold">{t.readQuran} <ArrowNext /></Link>}
-          <button onClick={() => setSeed((n) => n + 1)} className="h-12 rounded-md border border-line bg-surface text-[15px] font-bold hover:border-ink">{t.again}</button>
+          {passed && next && <Link href={`/arabic/${next.id}`} className="btn-gold inline-flex h-12 items-center justify-center rounded-full text-[15px] font-bold">{t.nextLesson} <ArrowNext /></Link>}
+          {passed && !next && <Link href="/surah/1?shams=1" className="btn-gold inline-flex h-12 items-center justify-center rounded-full text-[15px] font-bold">{t.readQuran} <ArrowNext /></Link>}
+          <button onClick={() => setSeed((n) => n + 1)} className="h-12 rounded-full border border-line bg-surface text-[15px] font-bold hover:border-[rgb(201_166_94)]">{t.again}</button>
           <Link href="/arabic" className="text-sm font-semibold text-muted hover:text-ink">{t.overview}</Link>
         </div>
       </div>
@@ -222,7 +230,7 @@ export default function ArabicLesson({ id }: { id: string }) {
           const state = checked ? (i === answer ? "right" : i === picked ? "wrong" : "idle") : i === picked ? "picked" : "idle";
           return (
             <button key={i} disabled={checked} onClick={() => setPicked(i)}
-              className={`min-h-[72px] rounded-xl border-2 px-3 py-2 text-center transition ${state === "right" ? "border-accent bg-accent-soft" : state === "wrong" ? "border-red-500 bg-red-500/10" : state === "picked" ? "border-gold bg-gold/10" : "border-line bg-surface hover:border-ink/40"}`}>
+              className={`min-h-[72px] rounded-xl border-2 px-3 py-2 text-center transition ${state === "right" ? "pa-right border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/15" : state === "wrong" ? "pa-shake border-[rgb(190_84_104)] bg-[rgb(190_84_104)]/10" : state === "picked" ? "border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/10 shadow-[0_0_0_3px_rgb(201_166_94/0.15)]" : "border-line bg-surface hover:border-[rgb(201_166_94)]/60"}`}>
               {o.ar ? <span className={`font-arabic leading-[1.7] ${small ? "text-[28px]" : "text-[34px]"}`} dir="rtl">{o.ar}</span> : <span className={`font-semibold ${wide ? "text-[15px] leading-snug" : "text-[16px]"}`}>{o.text}</span>}
             </button>
           );
@@ -237,11 +245,14 @@ export default function ArabicLesson({ id }: { id: string }) {
     <div className="mx-auto flex min-h-[70dvh] max-w-xl flex-col py-4">
       {/* progress */}
       <div className="flex items-center gap-3">
-        <Link href="/arabic" aria-label={t.quit} className="grid h-9 w-9 place-items-center rounded-full text-xl text-muted hover:bg-line/50">×</Link>
-        <div className="h-3 flex-1 overflow-hidden rounded-full bg-line/70"><div className="h-full rounded-full bg-accent transition-all duration-500" style={{ width: `${(pos / total) * 100}%` }} /></div>
-        <span className="min-w-[3.5rem] text-end text-sm font-bold text-gold">{stats.xp} {t.xp}</span>
+        <Link href="/arabic" aria-label={t.quit} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line text-xl text-muted transition hover:border-[rgb(201_166_94)] hover:text-ink">×</Link>
+        <div className="relative h-3 flex-1 rounded-full bg-line/70">
+          <div className="h-full rounded-full bg-gradient-to-r from-[#c6a65e] to-[#ecd7a2] transition-all duration-500 rtl:bg-gradient-to-l" style={{ width: `${(pos / total) * 100}%` }} />
+          <span aria-hidden className="absolute top-1/2 -translate-y-1/2 transition-all duration-500" style={{ insetInlineStart: `calc(${(pos / total) * 100}% - 9px)` }}><PracticeStar size={18} /></span>
+        </div>
+        <span className="shrink-0 rounded-full border border-[rgb(201_166_94)]/40 bg-[rgb(201_166_94)]/10 px-3 py-1 text-sm font-bold tabular-nums text-gold">{stats.xp} {t.xp}</span>
       </div>
-      {stats.combo >= 3 && <p className="mt-2 text-center text-xs font-bold text-accent"><IconFlame /> {stats.combo}×</p>}
+      {stats.combo >= 3 && <p className="mt-2 text-center text-xs font-bold text-gold"><IconFlame /> {stats.combo}×</p>}
       {isPlacement && <p className="mt-3 text-center text-xs font-bold uppercase tracking-[0.16em] text-gold">{t.pLabel} · {Math.min(pos + 1, total)}/{total}</p>}
 
       {ex.t === "build" ? (
@@ -254,7 +265,7 @@ export default function ArabicLesson({ id }: { id: string }) {
             {isRetry && <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-gold">{t.review}</p>}
             <h2 className="text-xl font-bold leading-snug">{ex.q}</h2>
             {ex.ar && (
-              <div className="mt-6 flex items-center justify-center gap-4 rounded-xl border border-line bg-surface px-3 py-8">
+              <div className="pa-card mt-6 flex items-center justify-center gap-4 px-3 py-8">
                 <span className={ex.ar.length > 14 ? "font-arabic text-center text-[34px] leading-[2]" : "font-arabic text-[64px] leading-[1.6]"} dir="rtl">{ex.ar}</span>
                 {canSpeak && ex.speak && <SpeakBtn label={t.listen} onClick={() => speak(ex.speak!)} />}
               </div>
@@ -276,10 +287,10 @@ export default function ArabicLesson({ id }: { id: string }) {
       {/* bottom bar */}
       {ex.t === "learn" && <button onClick={() => advance()} className="btn-gold mt-8 h-14 w-full rounded-xl text-[16px] font-bold">{t.next}</button>}
       {choice && answerOpt && (
-        <div ref={barRef} className={`mt-8 scroll-mb-28 rounded-xl p-4 ${checked ? (picked === choice.answer ? "bg-accent-soft" : "bg-red-500/10") : ""}`}>
+        <div ref={barRef} className={`step-in mt-8 scroll-mb-28 rounded-xl p-4 ${checked ? (picked === choice.answer ? "border border-[rgb(201_166_94)]/45 bg-[rgb(201_166_94)]/12" : "border border-[rgb(190_84_104)]/30 bg-[rgb(190_84_104)]/[0.08]") : ""}`}>
           {checked && (
             <div className="mb-3">
-              <p className={`font-bold ${picked === choice.answer ? "text-accent" : "text-red-600"}`}>
+              <p className={`flex flex-wrap items-center gap-2 font-bold ${picked === choice.answer ? "text-gold" : "text-[rgb(190_84_104)]"}`}>{picked === choice.answer && <PracticeStar size={16} />}
                 {picked === choice.answer ? t.right : <>{t.wrong} <span className={answerOpt.ar ? "font-arabic text-2xl" : ""}>{answerOpt.ar ?? answerOpt.text}</span></>}
               </p>
               {choice.t === "listen" && <p className="mt-1 text-sm text-ink/80">{choice.info}</p>}
@@ -287,7 +298,7 @@ export default function ArabicLesson({ id }: { id: string }) {
           )}
           {!checked
             ? <button disabled={picked === null} onClick={() => { setChecked(true); grade(picked === choice.answer, choice.key); }} className="btn-gold h-14 w-full rounded-xl text-[16px] font-bold disabled:opacity-40">{t.check}</button>
-            : <button onClick={() => advance()} className={`h-14 w-full rounded-xl text-[16px] font-bold text-white ${picked === choice.answer ? "bg-accent" : "bg-red-600"}`}>{t.next}</button>}
+            : <button onClick={() => advance()} className={`h-14 w-full rounded-xl text-[16px] font-bold ${picked === choice.answer ? "btn-gold" : "bg-[rgb(176_72_96)] text-white"}`}>{t.next}</button>}
         </div>
       )}
     </div>
@@ -304,9 +315,9 @@ function ListenCard({ ex, t, isRetry, canSpeak, speak }: { ex: Extract<Ex, { t: 
     <div>
       {isRetry && <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-gold">{t.review}</p>}
       <h2 className="text-xl font-bold leading-snug">{ex.q}</h2>
-      <div className="mt-5 flex flex-col items-center rounded-xl border border-line bg-surface px-4 py-6 text-center">
-        <button onClick={play} aria-label={t.listen} className="relative grid h-24 w-24 place-items-center rounded-full bg-accent text-white shadow-md transition active:scale-95">
-          {clip.state === "playing" && <span aria-hidden className="absolute inset-0 animate-ping rounded-full bg-accent/30" />}
+      <div className="pa-card mt-5 flex flex-col items-center px-4 py-7 text-center">
+        <button onClick={play} aria-label={t.listen} className="stage relative grid h-24 w-24 place-items-center rounded-full text-[#f3e2b6] shadow-[0_12px_28px_-12px_rgba(6,58,44,.9)] ring-2 ring-[rgb(201_166_94)]/70 ring-offset-4 ring-offset-[rgb(var(--surface))] transition active:scale-95">
+          {clip.state === "playing" && <span aria-hidden className="absolute inset-0 animate-ping rounded-full bg-[rgb(201_166_94)]/30" />}
           <span className="relative scale-[1.7]">{clip.state === "playing" ? <IconSpeaker /> : <IconPlay />}</span>
         </button>
         {clip.state === "error" ? (
@@ -349,11 +360,11 @@ function BuildCard({ ex, t, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "
         <p className="mt-3 rounded-lg callout p-3 text-[15px] leading-snug"><span className="block text-[11px] font-bold uppercase tracking-[0.16em] text-gold">{t.meaningLbl}</span>{ex.hint}</p>
 
         {/* answer row: first tapped tile sits on the right */}
-        <div dir="rtl" aria-label={t.emptyRow} className={`mt-5 flex min-h-[84px] flex-wrap content-start items-center gap-2 rounded-xl border-2 border-dashed p-3 ${checked ? (ok ? "border-accent bg-accent-soft" : "border-red-500/60 bg-red-500/5") : "border-line bg-surface"}`}>
+        <div dir="rtl" aria-label={t.emptyRow} className={`mt-5 flex min-h-[84px] flex-wrap content-start items-center gap-2 rounded-xl border-2 border-dashed p-3 ${checked ? (ok ? "pa-right border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/12" : "border-[rgb(190_84_104)]/60 bg-[rgb(190_84_104)]/5") : "border-[rgb(var(--gold))]/35 bg-surface"}`}>
           {placed.length === 0 && <span dir="auto" className="w-full text-center text-sm text-muted">{t.emptyRow}</span>}
           {placed.map((slot, i) => (
             <button key={slot} disabled={checked} onClick={() => setPlaced(placed.filter((s) => s !== slot))}
-              className={`${tile} ${checked ? (right(slot, i) ? "border-accent bg-surface" : "border-red-500 bg-red-500/10") : "border-gold bg-gold/10 hover:border-ink/40"}`}>{text(slot)}</button>
+              className={`${tile} ${checked ? (right(slot, i) ? "border-[rgb(201_166_94)] bg-surface" : "border-[rgb(190_84_104)] bg-[rgb(190_84_104)]/10") : "border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/10 hover:border-ink/40"}`}>{text(slot)}</button>
           ))}
         </div>
 
@@ -361,15 +372,15 @@ function BuildCard({ ex, t, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "
         <div dir="rtl" className="mt-4 flex flex-wrap justify-start gap-2">
           {order.map((_, slot) => placed.includes(slot)
             ? <span key={slot} aria-hidden className={`${tile} invisible border-transparent`}>{text(slot)}</span>
-            : <button key={slot} disabled={checked} onClick={() => setPlaced([...placed, slot])} className={`${tile} border-line bg-surface hover:border-ink/40`}>{text(slot)}</button>)}
+            : <button key={slot} disabled={checked} onClick={() => setPlaced([...placed, slot])} className={`${tile} border-line bg-surface hover:border-[rgb(201_166_94)]/60`}>{text(slot)}</button>)}
         </div>
         {!checked && <p className="mt-4 flex items-center justify-between gap-3 text-sm text-muted"><span>{t.tapOrder}</span>{placed.length > 0 && <button onClick={() => setPlaced([])} className="shrink-0 font-semibold text-ink/70 underline underline-offset-2 hover:text-ink">{t.reset}</button>}</p>}
       </div>
 
-      <div ref={barRef} className={`mt-8 scroll-mb-28 rounded-xl p-4 ${checked ? (ok ? "bg-accent-soft" : "bg-red-500/10") : ""}`}>
+      <div ref={barRef} className={`mt-8 scroll-mb-28 rounded-xl p-4 ${checked ? (ok ? "border border-[rgb(201_166_94)]/45 bg-[rgb(201_166_94)]/12" : "border border-[rgb(190_84_104)]/30 bg-[rgb(190_84_104)]/[0.08]") : ""}`}>
         {checked && (
           <div className="mb-3">
-            <p className={`font-bold ${ok ? "text-accent" : "text-red-600"}`}>{ok ? t.right : t.wrong}</p>
+            <p className={`flex items-center gap-2 font-bold ${ok ? "text-gold" : "text-[rgb(190_84_104)]"}`}>{ok && <PracticeStar size={16} />}{ok ? t.right : t.wrong}</p>
             <p className="mt-1 font-arabic text-2xl leading-[1.9]" dir="rtl">{ex.tiles.join(" ")}</p>
             <p className="text-sm text-ink/80">{ex.tr}</p>
             {clip.state !== "error" && <button onClick={playVerse} className="mt-3 inline-flex h-10 items-center gap-2 rounded-full border border-line bg-surface px-4 text-sm font-semibold hover:border-ink"><IconSpeaker />{t.verse}</button>}
@@ -377,7 +388,7 @@ function BuildCard({ ex, t, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "
         )}
         {!checked
           ? <button disabled={!full} onClick={check} className="btn-gold h-14 w-full rounded-xl text-[16px] font-bold disabled:opacity-40">{t.check}</button>
-          : <button onClick={onNext} className={`h-14 w-full rounded-xl text-[16px] font-bold text-white ${ok ? "bg-accent" : "bg-red-600"}`}>{t.next}</button>}
+          : <button onClick={onNext} className={`h-14 w-full rounded-xl text-[16px] font-bold ${ok ? "btn-gold" : "bg-[rgb(176_72_96)] text-white"}`}>{t.next}</button>}
       </div>
     </>
   );
@@ -394,14 +405,15 @@ function LearnCard({ ex, t, canSpeak, speak }: { ex: Extract<Ex, { t: "learn" }>
   const hasButton = real || (canSpeak && !!ex.speak);
   const size = ex.ar.length > 18 ? "text-[40px] leading-[1.9]" : ex.ar.length > 9 ? "text-[54px] leading-[1.7]" : "text-[72px] leading-[1.6]";
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-surface">
-      <div className="stage flex min-h-[200px] flex-wrap items-center justify-center gap-4 px-4 py-8 text-[#eef0f3]">
-        <span className={`font-arabic text-center text-[rgb(var(--gold))] ${size}`} dir="rtl">{ex.ar}</span>
-        {hasButton && <button onClick={() => (real ? clip.play(wordAudioUrl(ex.ref!)) : speak(ex.speak!))} aria-label={t.listen} className={`grid h-12 w-12 place-items-center rounded-full hover:bg-white/20 ${clip.state === "playing" ? "bg-white/25" : "bg-white/10"}`}><IconSpeaker /></button>}
+    <div className="overflow-hidden rounded-2xl border border-[rgb(var(--gold))]/30 bg-surface shadow-[0_24px_50px_-34px_rgba(201,166,94,.8)]">
+      <div className="stage girih relative flex min-h-[230px] flex-wrap items-center justify-center gap-4 px-4 pb-8 pt-12 text-[#eef0f3]">
+        {ex.ar.length <= 9 ? <PracticeWindow uid={`lc-${ex.ar.length}`} className="absolute left-1/2 top-3 h-[calc(100%-12px)] w-auto -translate-x-1/2 opacity-90" /> : <span aria-hidden className="illum-frame" />}
+        <span className={`relative font-arabic text-center text-[#f6e7bf] drop-shadow-[0_0_22px_rgba(233,207,153,.35)] ${size}`} dir="rtl">{ex.ar}</span>
+        {hasButton && <button onClick={() => (real ? clip.play(wordAudioUrl(ex.ref!)) : speak(ex.speak!))} aria-label={t.listen} className={`relative grid h-12 w-12 place-items-center rounded-full border border-[rgb(214_180_108)]/50 hover:bg-white/20 ${clip.state === "playing" ? "bg-white/25" : "bg-white/10"}`}><IconSpeaker /></button>}
         {ex.ref && clip.state === "error" && !canSpeak && <p className="w-full text-center text-xs text-white/60">{t.offline}</p>}
       </div>
       <div className="p-6">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-gold">{t.learn}</p>
+        <p className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-gold rtl:tracking-normal"><PracticeStar size={10} />{t.learn}</p>
         <h2 className="font-display mt-1 text-2xl">{ex.title}</h2>
         <p className="mt-3 text-[16px] leading-relaxed text-ink/85">{ex.body}</p>
         <p className="mt-4 text-sm text-muted">{t.tip}</p>
@@ -427,10 +439,10 @@ function MatchCard({ ex, t, onDone }: { ex: Extract<Ex, { t: "match" }>; t: (typ
       <h2 className="text-xl font-bold">{t.match}</h2>
       <div className="mt-6 grid grid-cols-2 gap-3">
         <div className="grid gap-3">
-          {left.map((l) => <button key={l.i} disabled={done.includes(l.i)} onClick={() => setSel(l.i)} className={`h-16 rounded-xl border-2 transition ${done.includes(l.i) ? "border-transparent bg-accent-soft opacity-40" : sel === l.i ? "border-gold bg-gold/10" : "border-line bg-surface"}`}><span className="font-arabic text-[30px] leading-[1.7]" dir="rtl">{l.v}</span></button>)}
+          {left.map((l) => <button key={l.i} disabled={done.includes(l.i)} onClick={() => setSel(l.i)} className={`h-16 rounded-xl border-2 transition ${done.includes(l.i) ? "border-transparent bg-[rgb(201_166_94)]/15 opacity-40" : sel === l.i ? "border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/10 shadow-[0_0_0_3px_rgb(201_166_94/0.15)]" : "border-line bg-surface hover:border-[rgb(201_166_94)]/60"}`}><span className="font-arabic text-[30px] leading-[1.7]" dir="rtl">{l.v}</span></button>)}
         </div>
         <div className="grid gap-3">
-          {right.map((r) => <button key={r.i} disabled={done.includes(r.i)} onClick={() => pickRight(r.i)} className={`h-16 rounded-xl border-2 px-2 text-[15px] font-semibold transition ${done.includes(r.i) ? "border-transparent bg-accent-soft opacity-40" : bad === r.i ? "border-red-500 bg-red-500/10" : "border-line bg-surface"}`}>{r.v}</button>)}
+          {right.map((r) => <button key={r.i} disabled={done.includes(r.i)} onClick={() => pickRight(r.i)} className={`h-16 rounded-xl border-2 px-2 text-[15px] font-semibold transition ${done.includes(r.i) ? "border-transparent bg-[rgb(201_166_94)]/15 opacity-40" : bad === r.i ? "pa-shake border-[rgb(190_84_104)] bg-[rgb(190_84_104)]/10" : "border-line bg-surface hover:border-[rgb(201_166_94)]/60"}`}>{r.v}</button>)}
         </div>
       </div>
     </div>
