@@ -26,7 +26,12 @@ export default function VocabTrainer() {
   const [pick, setPick] = useState<number | null>(null);
   const [opts, setOpts] = useState<string[]>([]);
   const [score, setScore] = useState({ ok: 0, n: 0 });
-  useEffect(() => { setBoxes(readJSON<Box>(KEY, {})); }, []);
+  useEffect(() => {
+    const load = () => setBoxes(readJSON<Box>(KEY, {}));
+    load();
+    window.addEventListener("tf-synced", load); // the account copy arrives after the first render on a new device
+    return () => window.removeEventListener("tf-synced", load);
+  }, []);
 
   const mean = (w: Word) => (de ? w.de : w.en);
   const known = (d: Deck) => d.words.filter((w) => (boxes[w.id]?.box ?? 0) >= 3).length;

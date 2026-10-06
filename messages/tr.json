@@ -104,7 +104,8 @@
     "offlineSave": "Sureyi çevrimdışı kaydet",
     "offlineSaved": "Çevrimdışı kaydedildi · {mb} MB",
     "offlineRemove": "Kaldır",
-    "offlineError": "Kaydetme yarıda kaldı – lütfen internete bağlanıp tekrar dene."
+    "offlineError": "Kaydetme yarıda kaldı – lütfen internete bağlanıp tekrar dene.",
+    "seek": "Ayetteki konum"
   },
   "language": {
     "label": "Dil"
@@ -290,7 +291,8 @@
     "reciters": "Kâriler",
     "assistant": "Asistan",
     "how": "Nasıl çalışır",
-    "world": "Dünyada Müslümanlar"
+    "world": "Dünyada Müslümanlar",
+    "main": "Ana gezinme"
   },
   "today": {
     "title": "Bugün",

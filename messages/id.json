@@ -104,7 +104,8 @@
     "offlineSave": "Simpan surah untuk offline",
     "offlineSaved": "Tersimpan offline · {mb} MB",
     "offlineRemove": "Hapus",
-    "offlineError": "Penyimpanan terputus – coba lagi saat tersambung ke internet."
+    "offlineError": "Penyimpanan terputus – coba lagi saat tersambung ke internet.",
+    "seek": "Posisi dalam ayat"
   },
   "language": {
     "label": "Bahasa"
@@ -290,7 +291,8 @@
     "reciters": "Para qari",
     "assistant": "Asisten",
     "how": "Cara kerjanya",
-    "world": "Muslim di dunia"
+    "world": "Muslim di dunia",
+    "main": "Navigasi utama"
   },
   "today": {
     "title": "Hari ini",

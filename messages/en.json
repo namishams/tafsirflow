@@ -104,7 +104,8 @@
     "offlineSave": "Save surah offline",
     "offlineSaved": "Saved offline · {mb} MB",
     "offlineRemove": "Remove",
-    "offlineError": "Saving was interrupted – please try again with a connection."
+    "offlineError": "Saving was interrupted – please try again with a connection.",
+    "seek": "Position in the verse"
   },
   "language": {
     "label": "Language"
@@ -290,7 +291,8 @@
     "reciters": "Reciters",
     "assistant": "Assistant",
     "how": "How it works",
-    "world": "Muslims worldwide"
+    "world": "Muslims worldwide",
+    "main": "Main navigation"
   },
   "today": {
     "title": "Today",

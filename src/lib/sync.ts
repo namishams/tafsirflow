@@ -15,6 +15,22 @@ export async function fetchMe(): Promise<{ user: Me | null; available: boolean; 
   }
 }
 
+const bestScores = (a: unknown, b: unknown) => {
+  const out: Record<string, number> = { ...((b as Record<string, number>) ?? {}) };
+  for (const [k, v] of Object.entries((a as Record<string, number>) ?? {})) out[k] = Math.max(out[k] ?? 0, v);
+  return out;
+};
+// Arabic course progress: per lesson the best score and stars, xp and mistake counters never go down when two devices meet
+type ArabicP = { done?: Record<string, { best: number; stars: number; at?: number }>; xp?: number; mistakes?: Record<string, number> };
+function mergeArabic(a: ArabicP | undefined, b: ArabicP | undefined) {
+  if (!a || !b) return a ?? b;
+  const done = { ...(b.done ?? {}) };
+  for (const [k, v] of Object.entries(a.done ?? {})) { const o = done[k]; done[k] = o ? { best: Math.max(o.best, v.best), stars: Math.max(o.stars, v.stars), at: Math.max(o.at ?? 0, v.at ?? 0) } : v; }
+  const mistakes = { ...(b.mistakes ?? {}) };
+  for (const [k, v] of Object.entries(a.mistakes ?? {})) mistakes[k] = Math.max(mistakes[k] ?? 0, v);
+  return { ...b, ...a, done, xp: Math.max(a.xp ?? 0, b.xp ?? 0), mistakes };
+}
+
 // Merge rules: bookmarks = union, srs/last = newest entry wins, days = highest count per day
 function merge(local: Record<string, unknown>, remote: Record<string, unknown>) {
   const bm = Array.from(new Set([...((local["tf:bookmarks"] as string[]) ?? []), ...((remote["tf:bookmarks"] as string[]) ?? [])]));
@@ -28,7 +44,7 @@ function merge(local: Record<string, unknown>, remote: Record<string, unknown>) 
   for (const [k, v] of Object.entries((local["tf:notes"] as Notes) ?? {})) if (!notes[k] || v.at >= notes[k].at) notes[k] = v;
   // academy progress and khatm plan: the newer copy wins
   const newer = (k: string) => { const x = local[k] as { at?: number } | null | undefined, y = remote[k] as { at?: number } | null | undefined; return (x?.at ?? 0) >= (y?.at ?? 0) ? x : y; };
-  return { "tf:bookmarks": bm, "tf:srs": srs, "tf:days": days, "tf:notes": notes, "tf:academy": newer("tf:academy") ?? undefined, "tf:khatm": newer("tf:khatm") ?? undefined, "tf:plan": newer("tf:plan") ?? undefined, "tf:mnemo": { ...((remote["tf:mnemo"] as object) ?? {}), ...((local["tf:mnemo"] as object) ?? {}) }, "tf:vocab": { ...((remote["tf:vocab"] as object) ?? {}), ...((local["tf:vocab"] as object) ?? {}) }, "tf:tajweed": { ...((remote["tf:tajweed"] as object) ?? {}), ...((local["tf:tajweed"] as object) ?? {}) }, "tf:duafav": Array.from(new Set([...((local["tf:duafav"] as string[]) ?? []), ...((remote["tf:duafav"] as string[]) ?? [])])), ...(last ? { "tf:last": last } : {}) } as Record<string, unknown>;
+  return { "tf:bookmarks": bm, "tf:srs": srs, "tf:days": days, "tf:notes": notes, "tf:academy": newer("tf:academy") ?? undefined, "tf:khatm": newer("tf:khatm") ?? undefined, "tf:plan": newer("tf:plan") ?? undefined, "tf:mnemo": { ...((remote["tf:mnemo"] as object) ?? {}), ...((local["tf:mnemo"] as object) ?? {}) }, "tf:vocab": { ...((remote["tf:vocab"] as object) ?? {}), ...((local["tf:vocab"] as object) ?? {}) }, "tf:tajweed": bestScores(local["tf:tajweed"], remote["tf:tajweed"]), "tf:arabic": mergeArabic(local["tf:arabic"] as ArabicP | undefined, remote["tf:arabic"] as ArabicP | undefined), "tf:duafav": Array.from(new Set([...((local["tf:duafav"] as string[]) ?? []), ...((remote["tf:duafav"] as string[]) ?? [])])), ...(last ? { "tf:last": last } : {}) } as Record<string, unknown>;
 }
 
 const KEYS = ["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic"] as const;
@@ -45,6 +61,7 @@ const snapshot = (): Record<string, unknown> => ({
   "tf:mnemo": readJSON<Record<string, string>>("tf:mnemo", {}),
   "tf:vocab": readJSON<Record<string, unknown>>("tf:vocab", {}),
   "tf:tajweed": readJSON<Record<string, number>>("tf:tajweed", {}),
+  "tf:arabic": readJSON<unknown>("tf:arabic", null) ?? undefined,
   "tf:duafav": readJSON<string[]>("tf:duafav", []),
 });
 

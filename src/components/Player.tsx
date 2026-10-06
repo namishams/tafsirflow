@@ -14,7 +14,7 @@ import { offlineReady, removeSurah, saveSurah, savedSurahs } from "@/lib/offline
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume, IconFlame } from "./Icons";
 import {
-  LimitError, OWN_TAFSIR_ID, RECITERS, getChapter, getChapters, getOwnTafsir, getReciters, getResources, getTafsir, getVerses, hasOwnTafsir, pickTranslation, tafsirOptionsFor,
+  LimitError, OWN_TAFSIR_ID, RECITERS, getChapter, reciterName, getChapters, getOwnTafsir, getReciters, getResources, getTafsir, getVerses, hasOwnTafsir, pickTranslation, tafsirOptionsFor,
   type Chapter, type Reciter, type Resource, type TafsirResult, type Verse,
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
@@ -646,7 +646,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               <div className="mt-4 grid gap-4 rounded-xl border border-line bg-surface p-4 text-sm sm:grid-cols-2">
                 <label className="grid gap-1"><span className="text-muted">{t("reciter")}</span>
                   <select value={reciter.folder} onChange={(e) => { setReciterFolder(e.target.value); writeJSON("tf:reciter", e.target.value, true); }} className={field}>
-                    {reciters.map((r) => <option key={r.folder} value={r.folder}>{r.name}</option>)}
+                    {reciters.map((r) => <option key={r.folder} value={r.folder}>{reciterName(r, locale)}</option>)}
                   </select>
                 </label>
                 <div className="grid gap-1"><span className="text-muted">{t("fontSize")}</span>
@@ -829,8 +829,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                           const sameRhyme = verses.filter((x) => hooks(x).rhyme === h.rhyme).length;
                           return (
                             <div className="mt-3 grid gap-2 text-sm">
-                              {h.anchor && <p><span className="font-semibold">{ts("hAnchor")}:</span> <span className="font-arabic text-xl" dir="rtl">{h.anchor.text_uthmani}</span> – {h.anchor.translation?.text}</p>}
-                              {h.rhymeWord && <p><span className="font-semibold">{ts("hRhyme")}:</span> <span className="font-arabic text-xl" dir="rtl">…{h.rhyme}</span> ({h.rhymeWord.transliteration?.text}) · {ts("hRhymeN", { n: sameRhyme, total: verses.length })}</p>}
+                              {h.anchor && <p><span className="font-semibold">{ts("hAnchor")}:</span> <span className="font-arabic text-xl" dir="rtl">{h.anchor.text_uthmani}</span>{h.anchor.translation?.text ? ` – ${h.anchor.translation.text}` : ""}</p>}
+                              {h.rhymeWord && <p><span className="font-semibold">{ts("hRhyme")}:</span> <span className="font-arabic text-xl" dir="rtl">…{h.rhyme}</span>{h.rhymeWord.transliteration?.text ? ` (${h.rhymeWord.transliteration.text})` : ""} · {ts("hRhymeN", { n: sameRhyme, total: verses.length })}</p>}
                               {h.bridge && h.bridge.from && h.bridge.to && <p><span className="font-semibold">{ts("hBridge")}:</span> <span className="font-arabic mt-1 block text-xl" dir="rtl">{h.bridge.from.text_uthmani} ← {h.bridge.to.text_uthmani}</span></p>}
                               <p><span className="font-semibold">{ts("hAcrostic")}:</span> <span className="font-arabic text-xl text-gold" dir="rtl">{h.acrostic}</span></p>
                               <label className="mt-1 grid gap-1"><span className="font-semibold">{ts("hOwn")}</span>
@@ -977,7 +977,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
           <div className="h-1 bg-line"><div className="h-1 bg-accent transition-all" style={{ width: `${((idx + 1) / verses.length) * 100}%` }} /></div>
           <div className="flex items-center gap-2 px-4 pt-2.5 text-[11px] tabular-nums text-muted">
             <span className="w-8 text-end">{fmt(cur)}</span>
-            <input type="range" min={0} max={dur || 1} step={0.1} value={Math.min(cur, dur || 1)} onChange={(e) => { const a = audioRef.current; if (a) { a.currentTime = Number(e.target.value); setCur(a.currentTime); } }} className="h-1 min-w-0 flex-1 accent-[rgb(var(--accent))]" aria-label="seek" />
+            <input type="range" min={0} max={dur || 1} step={0.1} value={Math.min(cur, dur || 1)} onChange={(e) => { const a = audioRef.current; if (a) { a.currentTime = Number(e.target.value); setCur(a.currentTime); } }} className="h-1 min-w-0 flex-1 accent-[rgb(var(--accent))]" aria-label={t("seek")} />
             <span className="w-8">{fmt(dur)}</span>
             <button className="grid h-7 w-7 place-items-center rounded-full hover:text-ink" onClick={() => setVol(vol === 0 ? 1 : 0)} aria-label={t("volume")}><IconVolume muted={vol === 0} /></button>
           </div>

@@ -73,6 +73,13 @@ function useClip() {
   return { state, play, stop };
 }
 
+// after "Check" the feedback and the continue button scroll into view (the tab bar covers the bottom of the screen)
+function useReveal(on: boolean) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  useEffect(() => { if (on) ref.current?.scrollIntoView({ block: "nearest", behavior: "smooth" }); }, [on]);
+  return ref;
+}
+
 // the options after a wrong answer come back in a new order (the exercise itself is re-queued once)
 const reshuffled = (ex: Ex): Ex => {
   if (ex.t !== "choose" && ex.t !== "listen") return ex;
@@ -100,6 +107,7 @@ export default function ArabicLesson({ id }: { id: string }) {
   const unitRes = useRef<Record<number, { ok: number; n: number }>>({}); // placement test: right answers per unit
   const [placed, setPlaced] = useState<null | { res: PlacementResult; next: { id: string; title: string } | null }>(null);
   const { canSpeak, speak } = useArabicVoice();
+  const barRef = useReveal(checked);
   useEffect(() => { setQueue(base); setPos(0); setPicked(null); setChecked(false); setStats({ first: 0, firstRight: 0, xp: 0, combo: 0 }); wrongKeys.current = []; retried.current = new Set(); unitRes.current = {}; setPlaced(null); setFinished(null); }, [base]);
 
   const ex = queue[pos];
@@ -157,7 +165,7 @@ export default function ArabicLesson({ id }: { id: string }) {
             return (
               <li key={u} className="flex items-center gap-3 px-4 py-3">
                 <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-sm font-bold ${known ? "bg-accent text-white" : "bg-line/60 text-muted"}`} aria-hidden>{known ? "✓" : u}</span>
-                <span className="min-w-0 flex-1 truncate font-semibold">{t.unitWord} {u} · {un.title[lang] ?? un.title.en}</span>
+                <span className="min-w-0 flex-1 font-semibold leading-snug">{t.unitWord} {u} · {un.title[lang] ?? un.title.en}</span>
                 <span className={`shrink-0 text-xs font-bold ${known ? "text-accent" : "text-muted"}`}>{known ? t.known : t.open}</span>
               </li>
             );
@@ -263,7 +271,7 @@ export default function ArabicLesson({ id }: { id: string }) {
       {/* bottom bar */}
       {ex.t === "learn" && <button onClick={() => advance()} className="btn-gold mt-8 h-14 w-full rounded-xl text-[16px] font-bold">{t.next}</button>}
       {choice && answerOpt && (
-        <div className={`mt-8 rounded-xl p-4 ${checked ? (picked === choice.answer ? "bg-accent-soft" : "bg-red-500/10") : ""}`}>
+        <div ref={barRef} className={`mt-8 scroll-mb-28 rounded-xl p-4 ${checked ? (picked === choice.answer ? "bg-accent-soft" : "bg-red-500/10") : ""}`}>
           {checked && (
             <div className="mb-3">
               <p className={`font-bold ${picked === choice.answer ? "text-accent" : "text-red-600"}`}>
@@ -291,8 +299,8 @@ function ListenCard({ ex, t, isRetry, canSpeak, speak }: { ex: Extract<Ex, { t: 
     <div>
       {isRetry && <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-gold">{t.review}</p>}
       <h2 className="text-xl font-bold leading-snug">{ex.q}</h2>
-      <div className="mt-6 flex flex-col items-center rounded-xl border border-line bg-surface px-4 py-8 text-center">
-        <button onClick={play} aria-label={t.listen} className="relative grid h-28 w-28 place-items-center rounded-full bg-accent text-white shadow-md transition active:scale-95">
+      <div className="mt-5 flex flex-col items-center rounded-xl border border-line bg-surface px-4 py-6 text-center">
+        <button onClick={play} aria-label={t.listen} className="relative grid h-24 w-24 place-items-center rounded-full bg-accent text-white shadow-md transition active:scale-95">
           {clip.state === "playing" && <span aria-hidden className="absolute inset-0 animate-ping rounded-full bg-accent/30" />}
           <span className="relative scale-[1.7]">{clip.state === "playing" ? <IconSpeaker /> : <IconPlay />}</span>
         </button>
@@ -319,6 +327,7 @@ function BuildCard({ ex, t, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "
   }, [ex]);
   const [placed, setPlaced] = useState<number[]>([]); // slots of the tile pool, in the order they were tapped
   const [checked, setChecked] = useState(false);
+  const barRef = useReveal(checked);
   const clip = useClip();
   const text = (slot: number) => ex.tiles[order[slot]];
   const right = (slot: number, pos: number) => text(slot) === ex.tiles[pos];
@@ -352,7 +361,7 @@ function BuildCard({ ex, t, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "
         {!checked && <p className="mt-4 flex items-center justify-between gap-3 text-sm text-muted"><span>{t.tapOrder}</span>{placed.length > 0 && <button onClick={() => setPlaced([])} className="shrink-0 font-semibold text-ink/70 underline underline-offset-2 hover:text-ink">{t.reset}</button>}</p>}
       </div>
 
-      <div className={`mt-8 rounded-xl p-4 ${checked ? (ok ? "bg-accent-soft" : "bg-red-500/10") : ""}`}>
+      <div ref={barRef} className={`mt-8 scroll-mb-28 rounded-xl p-4 ${checked ? (ok ? "bg-accent-soft" : "bg-red-500/10") : ""}`}>
         {checked && (
           <div className="mb-3">
             <p className={`font-bold ${ok ? "text-accent" : "text-red-600"}`}>{ok ? t.right : t.wrong}</p>

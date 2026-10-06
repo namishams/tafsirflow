@@ -15,7 +15,13 @@ export default function AcademyHome() {
   const [p, setP] = useState<Progress | null>(null);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [open, setOpen] = useState<string>("u1");
-  useEffect(() => { setP(readProgress()); getChapters(locale).then(setChapters).catch(() => undefined); }, [locale]);
+  useEffect(() => {
+    const load = () => setP(readProgress());
+    load();
+    window.addEventListener("tf-synced", load); // the account copy arrives after the first render on a new device
+    getChapters(locale).then(setChapters).catch(() => undefined);
+    return () => window.removeEventListener("tf-synced", load);
+  }, [locale]);
   if (!p) return null;
 
   const lvl = levelOf(p.xp);

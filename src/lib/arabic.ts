@@ -327,6 +327,9 @@ function otherMeanings(it: Item, pool: Item[], lang: Lang, n: number): Item[] {
 function listenExercises(items: Item[], pool: Item[], lang: Lang, n = { listen: 7, meaning: 3, read: 2, match: true }): Ex[] {
   const out: Ex[] = [];
   const say = (de: string, en: string, ar: string) => (lang === "de" ? de : lang === "ar" ? ar : en);
+  // the same word in two forms (أَحَدٌ / أَحَدٌۢ, مِن / مِنَ) is asked only once per lesson
+  const sk = new Set<string>();
+  items = items.filter((i) => { const k = skel(i.ar); if (sk.has(k)) return false; sk.add(k); return true; });
   const withRef = items.filter((i) => i.ref);
   for (const it of spread(withRef, n.listen)) {
     const opts = shuffle([it, ...otherWords(it, items, pool, 3)]);

@@ -19,7 +19,7 @@ export default function AppHeader() {
             <Logo size={28} />
             <span className="truncate text-[15px] font-extrabold tracking-tight lg:hidden xl:inline">Quran Masterclass</span>
           </Link>
-          <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main">
+          <nav className="hidden items-center gap-0.5 lg:flex" aria-label={t("main")}>
             {PRIMARY.map((n, i) => {
               const on = isActive(path, n.href);
               return (

@@ -104,7 +104,8 @@
     "offlineSave": "离线保存本章",
     "offlineSaved": "已离线保存 · {mb} MB",
     "offlineRemove": "移除",
-    "offlineError": "保存被中断——请在联网后重试。"
+    "offlineError": "保存被中断——请在联网后重试。",
+    "seek": "播放进度"
   },
   "language": {
     "label": "语言"
@@ -290,7 +291,8 @@
     "reciters": "诵读家",
     "assistant": "助手",
     "how": "如何运作",
-    "world": "全球穆斯林"
+    "world": "全球穆斯林",
+    "main": "主导航"
   },
   "today": {
     "title": "今天",

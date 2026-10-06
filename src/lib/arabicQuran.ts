@@ -38,7 +38,7 @@ const FI: W = ["فِى", "fī", "in", "in", "حرف جرّ"];
 const INNA: W = ["إِنَّ", "inna", "wahrlich", "indeed", "حرف توكيد"];
 const ALLADHINA: W = ["ٱلَّذِينَ", "alladhīna", "diejenigen, die", "those who", "اسم موصول للجمع"];
 const ALAYHIM: W = ["عَلَيْهِمْ", "ʿalayhim", "ihnen", "upon them", "على أولئك"];
-const WALAM: W = ["وَلَمْ", "wa-lam", "und nicht", "and not", "عطفٌ ونفي"];
+const WALAM: W = ["وَلَمْ", "wa-lam", "und nicht", "and not", "عطفٌ ونفيٌ بـ«لم»"];
 const TAWASAW: W = ["وَتَوَاصَوْا۟", "wa-tawāṣaw", "und sie ermahnten einander", "and advised each other", "وأوصى بعضهم بعضًا"];
 
 export const VERSES: Verse[] = [
@@ -55,7 +55,7 @@ export const VERSES: Verse[] = [
     L("Dir (allein) dienen wir, und Dich (allein) bitten wir um Hilfe.", "It is You we worship and You we ask for help.", "نخصّك وحدك بالعبادة، ونخصّك وحدك بطلب العون.")),
   V(1, 6, [["ٱهْدِنَا", "ihdinā", "leite uns", "guide us", "دُلَّنا ووفِّقنا"], ["ٱلصِّرَٰطَ", "aṣ-ṣirāṭa", "den Weg", "the path", "الطريق"], ["ٱلْمُسْتَقِيمَ", "al-mustaqīma", "den geraden", "the straight", "الذي لا عِوَج فيه"]],
     L("Leite uns den geraden Weg,", "Guide us to the straight path –", "دُلَّنا ووفِّقنا إلى الطريق المستقيم.")),
-  V(1, 7, [["صِرَٰطَ", "ṣirāṭa", "Weg (von)", "path (of)", "طريقَ"], ALLADHINA, ["أَنْعَمْتَ", "anʿamta", "du hast Gnade erwiesen", "You have blessed", "تفضَّلتَ وأحسنتَ"], ALAYHIM, ["غَيْرِ", "ghayri", "nicht (derer)", "not (those)", "لا (أولئك)"], ["ٱلْمَغْضُوبِ", "al-maghḍūbi", "derer, die Zorn erregt haben", "of those who earned anger", "الذين غضب الله عليهم"], ALAYHIM, ["وَلَا", "wa-lā", "und nicht", "and not", "ولا"], ["ٱلضَّآلِّينَ", "aḍ-ḍāllīna", "der Irregehenden", "of those who go astray", "التائهين عن الحق"]],
+  V(1, 7, [["صِرَٰطَ", "ṣirāṭa", "Weg (von)", "path (of)", "طريقَ"], ALLADHINA, ["أَنْعَمْتَ", "anʿamta", "du hast Gnade erwiesen", "You have blessed", "تفضَّلتَ وأحسنتَ"], ALAYHIM, ["غَيْرِ", "ghayri", "nicht (derer)", "not (those)", "بمعنى «لا» هنا"], ["ٱلْمَغْضُوبِ", "al-maghḍūbi", "derer, die Zorn erregt haben", "of those who earned anger", "الذين غضب الله عليهم"], ALAYHIM, ["وَلَا", "wa-lā", "und nicht", "and not", "عطفٌ ونفيٌ بـ«لا»"], ["ٱلضَّآلِّينَ", "aḍ-ḍāllīna", "der Irregehenden", "of those who go astray", "التائهين عن الحق"]],
     L("den Weg derjenigen, denen Du Gunst erwiesen hast, nicht derjenigen, die (Deinen) Zorn erregt haben, und nicht der Irregehenden.", "The path of those upon whom You have bestowed favor, not of those who have earned [Your] anger or of those who are astray.", "طريق الذين أنعمتَ عليهم، لا طريق المغضوب عليهم ولا الضالّين."),
     [{ to: 4, meaning: L("den Weg derjenigen, denen Du Gunst erwiesen hast,", "The path of those upon whom You have bestowed favor,", "طريق الذين أنعمتَ عليهم،") }, { to: 9, meaning: L("nicht derjenigen, die (Deinen) Zorn erregt haben, und nicht der Irregehenden.", "Not of those who have earned [Your] anger or of those who are astray.", "لا طريق المغضوب عليهم ولا الضالّين.") }]),
 

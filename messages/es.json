@@ -104,7 +104,8 @@
     "offlineSave": "Guardar la sura sin conexión",
     "offlineSaved": "Guardada sin conexión · {mb} MB",
     "offlineRemove": "Quitar",
-    "offlineError": "El guardado se interrumpió – inténtalo de nuevo con conexión a internet."
+    "offlineError": "El guardado se interrumpió – inténtalo de nuevo con conexión a internet.",
+    "seek": "Posición en la aleya"
   },
   "language": {
     "label": "Idioma"
@@ -290,7 +291,8 @@
     "reciters": "Recitadores",
     "assistant": "Asistente",
     "how": "Cómo funciona",
-    "world": "Musulmanes en el mundo"
+    "world": "Musulmanes en el mundo",
+    "main": "Navegación principal"
   },
   "today": {
     "title": "Hoy",

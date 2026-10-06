@@ -104,7 +104,8 @@
     "offlineSave": "Simpan surah untuk luar talian",
     "offlineSaved": "Disimpan untuk luar talian · {mb} MB",
     "offlineRemove": "Buang",
-    "offlineError": "Penyimpanan terhenti – sila cuba lagi dengan sambungan internet."
+    "offlineError": "Penyimpanan terhenti – sila cuba lagi dengan sambungan internet.",
+    "seek": "Kedudukan dalam ayat"
   },
   "language": {
     "label": "Bahasa"
@@ -290,7 +291,8 @@
     "reciters": "Qari",
     "assistant": "Pembantu",
     "how": "Cara ia berfungsi",
-    "world": "Umat Islam sedunia"
+    "world": "Umat Islam sedunia",
+    "main": "Navigasi utama"
   },
   "today": {
     "title": "Hari ini",

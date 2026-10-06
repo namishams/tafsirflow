@@ -104,7 +104,8 @@
     "offlineSave": "Sure offline speichern",
     "offlineSaved": "Offline gespeichert · {mb} MB",
     "offlineRemove": "Entfernen",
-    "offlineError": "Speichern unterbrochen – bitte mit Internet noch einmal versuchen."
+    "offlineError": "Speichern unterbrochen – bitte mit Internet noch einmal versuchen.",
+    "seek": "Position im Vers"
   },
   "language": {
     "label": "Sprache"
@@ -290,7 +291,8 @@
     "reciters": "Rezitatoren",
     "assistant": "Assistent",
     "how": "So funktioniert es",
-    "world": "Muslime weltweit"
+    "world": "Muslime weltweit",
+    "main": "Hauptnavigation"
   },
   "today": {
     "title": "Heute",

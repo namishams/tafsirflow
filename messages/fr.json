@@ -104,7 +104,8 @@
     "offlineSave": "Enregistrer la sourate hors ligne",
     "offlineSaved": "Enregistrée hors ligne · {mb} Mo",
     "offlineRemove": "Supprimer",
-    "offlineError": "L’enregistrement a été interrompu – réessaie avec une connexion internet."
+    "offlineError": "L’enregistrement a été interrompu – réessaie avec une connexion internet.",
+    "seek": "Position dans le verset"
   },
   "language": {
     "label": "Langue"
@@ -290,7 +291,8 @@
     "reciters": "Récitateurs",
     "assistant": "Assistant",
     "how": "Comment ça marche",
-    "world": "Musulmans dans le monde"
+    "world": "Musulmans dans le monde",
+    "main": "Navigation principale"
   },
   "today": {
     "title": "Aujourd'hui",

@@ -16,7 +16,13 @@ export default function PlanBoard() {
   const [due, setDue] = useState(0);
   const [rec, setRec] = useState<Track["id"] | null>(null);
   useEffect(() => { const a = ageProfile(); setRec(a.track); setChoice(a.track); }, []);
-  useEffect(() => { setPlan(readPlan()); setDue(dueVerses().length); getChapters(locale).then(setChapters).catch(() => undefined); }, [locale]);
+  useEffect(() => {
+    const load = () => { setPlan(readPlan()); setDue(dueVerses().length); };
+    load();
+    window.addEventListener("tf-synced", load); // the account copy arrives after the first render on a new device
+    getChapters(locale).then(setChapters).catch(() => undefined);
+    return () => window.removeEventListener("tf-synced", load);
+  }, [locale]);
   const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `${locale === "ar" ? "سورة" : "Surah"} ${s}`;
   const months = useMemo(() => Array.from({ length: 12 }, (_, m) => m + 1), []);
   if (plan === undefined) return null;
