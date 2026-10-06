@@ -84,7 +84,7 @@ export default function RadioPlayer() {
         </ul>
       </section>
 
-      <section className="mt-8 grid gap-4 rounded-lg border border-line bg-surface p-5 text-sm sm:grid-cols-2 lg:grid-cols-4">
+      <section className="mt-8 grid gap-4 rounded-lg border border-line bg-surface p-5 text-sm sm:grid-cols-2 lg:grid-cols-5">
         <label className="grid gap-1"><span className="text-muted">{t("reciter")}</span>
           <select value={r.reciter.folder} onChange={(e) => r.changeReciter(e.target.value)} className="h-10 rounded-md border border-line bg-bg px-2">
             {r.reciters.map((x) => <option key={x.folder} value={x.folder}>{x.name}</option>)}
@@ -104,6 +104,14 @@ export default function RadioPlayer() {
             <option value="mine">{t("adhanMine")}</option>
           </select>
         </label>
+        <label className="grid gap-1"><span className="text-muted">{t("adhanVoice")}</span>
+          <span className="flex gap-2">
+            <select value={r.voice} onChange={(e) => r.setVoice(e.target.value)} className="h-10 min-w-0 flex-1 rounded-md border border-line bg-bg px-2">
+              {r.voices.map((v) => <option key={v} value={v}>{t(`v_${v}`)}{r.adhanFiles[v] ? "" : ` (${t("notInstalled")})`}</option>)}
+            </select>
+            <button type="button" onClick={r.testAdhan} disabled={!Object.values(r.adhanFiles).some(Boolean)} className="h-10 shrink-0 rounded-md border border-line px-3 text-sm font-semibold hover:border-ink disabled:opacity-40">▶</button>
+          </span>
+        </label>
         <label className="flex items-center gap-2 self-end pb-2"><input type="checkbox" checked={r.showText} onChange={(e) => r.setShowText(e.target.checked)} /> {t("showText")}</label>
       </section>
 
@@ -116,7 +124,7 @@ export default function RadioPlayer() {
         </section>
       )}
 
-      {r.adhanMode !== "off" && !r.adhanFiles.makkah && !r.adhanFiles.dubai && !r.adhanFiles.default && <p className="mt-6 text-sm text-muted">{t("adhanMissing")}</p>}
+      {r.adhanMode !== "off" && !Object.values(r.adhanFiles).some(Boolean) && <p className="mt-6 text-sm text-muted">{t("adhanMissing")}</p>}
       {r.adhanCredit && <p className="mt-4 text-xs text-muted">{r.adhanCredit}</p>}
     </main>
   );

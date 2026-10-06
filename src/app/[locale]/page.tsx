@@ -192,11 +192,13 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
               <p className="eyebrow text-accent">{t("home2.mapSoon")}</p>
               <h2 className="font-display mt-3 text-4xl leading-[1.1] sm:text-5xl">{t("home2.mapTitle")}</h2>
               <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-muted">{t("home2.mapBody")}</p>
+              <Link href="/map" className={`${btnP} mt-6`}>{t("home2.mapCta")}</Link>
             </div>
-            <div aria-hidden className="grid grid-cols-[repeat(20,minmax(0,1fr))] gap-1">
-              {Array.from({ length: 120 }, (_, i) => {
-                const lvl = i < 30 ? 3 : i < 52 ? 2 : i < 70 ? 1 : 0;
-                return <span key={i} className={`aspect-square rounded-[2px] ${["bg-line", "bg-accent/30", "bg-accent/60", "bg-accent"][lvl]}`} />;
+            <div aria-hidden className="grid grid-cols-[repeat(19,minmax(0,1fr))] gap-1">
+              {Array.from({ length: 114 }, (_, i) => {
+                // illustration: the short surahs at the end are learned first
+                const lvl = i >= 100 ? 3 : i >= 92 ? (i % 3 ? 3 : 2) : i >= 84 ? (i % 4 === 0 ? 1 : 2) : i < 2 ? 3 : i === 66 || i === 35 ? 2 : 0;
+                return <span key={i} className={`aspect-square rounded-[2px] ${["bg-line", "bg-red-500/80", "bg-gold/70", "bg-accent"][lvl]}`} />;
               })}
             </div>
           </div>

@@ -264,7 +264,8 @@
     "feedback": "Feedback",
     "changelog": "Changelog",
     "about": "About us",
-    "blog": "Blog"
+    "blog": "Blog",
+    "map": "Quran map"
   },
   "today": {
     "title": "Today",
@@ -296,7 +297,39 @@
     "scheduleBody": "A verse comes back after 1, 3, 7, 14, 30 and 90 days – each time you know it, the gap grows.",
     "days": "days",
     "saveHint": "Create a free account to keep your streak, review plan and notes on every device.",
-    "saveCta": "Create account"
+    "saveCta": "Create account",
+    "hello": "Salam, {name}",
+    "surah": "Surah",
+    "nextPrayer": "Next prayer",
+    "dayProgress": "Today's progress",
+    "allDone": "Everything done – MashaAllah!",
+    "tasksLeft": "{n} tasks left",
+    "level": "Level",
+    "xpToday": "{n} XP today",
+    "tasksTitle": "Your tasks for today",
+    "taskReview": "Review {n} due verses",
+    "taskReviewD": "Recite from memory first – this is what keeps verses in your heart.",
+    "taskReviewDone": "No review due",
+    "taskReviewDoneD": "All your verses are fresh right now.",
+    "taskReviewEmpty": "Learn your first verse to start your review plan.",
+    "taskPlan": "Learn {n} new verses",
+    "taskNoPlan": "Choose your learning plan",
+    "taskNoPlanD": "From gentle to the hafiz track – the daily amount grows with you.",
+    "taskAcademy": "Reach your daily goal ({goal} XP)",
+    "taskAcademyD": "{xp} XP so far · next test: {lesson}",
+    "taskKhatm": "Read today's khatm portion",
+    "taskKhatmD": "{pct}% of the Quran read",
+    "start": "Start",
+    "open": "Open",
+    "learn": "Learn",
+    "choose": "Choose",
+    "test": "Test",
+    "read": "Read",
+    "again": "Again",
+    "done": "done",
+    "weakTitle": "Strengthen these verses",
+    "weakNone": "No weak verses – your memory model is happy.",
+    "tileKhatm": "Khatm"
   },
   "home2": {
     "factSurahs": "114 surahs",
@@ -335,9 +368,9 @@
     "f8d": "Switch between verse cards and a continuous reading view with verse markers, page, juz and hizb.",
     "f9t": "Search",
     "f9d": "Find any verse by a word – in Arabic or in the language you read.",
-    "mapTitle": "Your Quran, page by page",
-    "mapBody": "A map of all 604 pages that turns greener with every verse you secure is coming soon – so you can see your progress at a glance.",
-    "mapSoon": "Coming soon",
+    "mapTitle": "Your Quran map",
+    "mapBody": "Every surah is a box that shows how well you know it: green sits firmly, gold is wobbling, red is difficult. Tap a surah to see every verse – and know exactly what to review next.",
+    "mapSoon": "New",
     "popTitle": "Popular surahs and verses to learn",
     "popIntro": "Start with a short surah or a famous verse – each link opens it with audio, translation and tafsir.",
     "pop1": "Al-Fatihah – the opening",
@@ -420,7 +453,8 @@
     "tool_guides": "Guides",
     "tool_guidesD": "How to learn, memorise, read and understand the Quran.",
     "allTitle": "All 114 surahs of the Quran",
-    "allLead": "Every surah with audio verse by verse, transliteration, translation, word-by-word meaning and classical tafsir – free to listen, read and memorise."
+    "allLead": "Every surah with audio verse by verse, transliteration, translation, word-by-word meaning and classical tafsir – free to listen, read and memorise.",
+    "mapCta": "Open your map"
   },
   "legal": {
     "back": "Back to home",
@@ -468,7 +502,17 @@
     "isha": "Isha",
     "citiesTitle": "Cities of the Muslim world",
     "playAdhan": "Play the adhan",
-    "notice": "Times are calculated with the method commonly used in each city. Please compare with your local mosque, especially around sunrise and for your madhhab."
+    "notice": "Times are calculated with the method commonly used in each city. Please compare with your local mosque, especially around sunrise and for your madhhab.",
+    "v_makkah": "Makkah – Masjid al-Haram",
+    "v_madinah": "Madinah – Masjid an-Nabawi",
+    "v_dubai": "Dubai",
+    "v_tehran": "Tehran",
+    "v_aqsa": "Al-Aqsa – Jerusalem",
+    "v_default": "Standard",
+    "notInstalled": "not available yet",
+    "adhanVoice": "Adhan voice",
+    "adhanNone": "No adhan recording has been added yet.",
+    "playing": "Not available yet – playing: {name}"
   },
   "radio": {
     "title": "Quran Radio",
@@ -518,7 +562,16 @@
     "recent": "Recently played",
     "openRadio": "Open radio",
     "stop": "Stop radio",
-    "openSurah": "Open surah"
+    "openSurah": "Open surah",
+    "v_makkah": "Makkah – Masjid al-Haram",
+    "v_madinah": "Madinah – Masjid an-Nabawi",
+    "v_dubai": "Dubai",
+    "v_tehran": "Tehran",
+    "v_aqsa": "Al-Aqsa – Jerusalem",
+    "v_default": "Standard",
+    "notInstalled": "not available yet",
+    "adhanVoice": "Adhan voice",
+    "adhanNone": "No adhan recording has been added yet."
   },
   "duas": {
     "title": "Duas",
@@ -1037,5 +1090,19 @@
     "dubaiBody": "Quran Masterclass was built in Dubai, and we are deeply grateful for the opportunities this city and country give to everyone who lives here.\n\nWe thank **His Highness Sheikh Mohammed bin Rashid Al Maktoum**, Vice President and Prime Minister of the UAE and Ruler of Dubai, whose vision made Dubai a place where ideas can grow, and under whose patronage the **Dubai International Holy Quran Award** has honoured those who memorise the Quran since 1997. We thank **His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum**, Crown Prince of Dubai, and **His Highness Sheikh Mohamed bin Zayed Al Nahyan**, President of the United Arab Emirates.\n\nA safe home, tolerance between people from all over the world, and an environment that encourages innovation – these are the conditions in which a project like this can be born. May Allah reward them and protect this country.",
     "ctaShams": "Discover the Shams Method",
     "ctaFeedback": "Send us your ideas"
+  },
+  "map": {
+    "title": "Your Quran map",
+    "lead": "Every box is a surah – the colour shows how well you know it right now. Green sits firmly, gold is wobbling, red is difficult for you, grey is not learned yet. Tap a surah to see every single verse.",
+    "surah": "Surahs",
+    "juz": "Juz",
+    "strong": "firm",
+    "mid": "wobbling",
+    "weak": "difficult",
+    "none": "not learned",
+    "learnedOf": "{n} of {total} verses learned",
+    "tapVerse": "Tap a verse: learned verses open in memorise mode, new ones with the Shams Method.",
+    "todayTitle": "Your Quran map",
+    "todayLink": "Open the full map"
   }
 }

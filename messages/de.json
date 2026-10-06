@@ -264,7 +264,8 @@
     "feedback": "Feedback",
     "changelog": "Änderungen",
     "about": "Über uns",
-    "blog": "Blog"
+    "blog": "Blog",
+    "map": "Koran-Landkarte"
   },
   "today": {
     "title": "Heute",
@@ -296,7 +297,39 @@
     "scheduleBody": "Ein Vers kommt nach 1, 3, 7, 14, 30 und 90 Tagen wieder – jedes Mal, wenn du ihn kannst, wird der Abstand größer.",
     "days": "Tage",
     "saveHint": "Erstelle ein kostenloses Konto, damit Serie, Wiederholplan und Notizen auf jedem Gerät da sind.",
-    "saveCta": "Konto erstellen"
+    "saveCta": "Konto erstellen",
+    "hello": "Salam, {name}",
+    "surah": "Sure",
+    "nextPrayer": "Nächstes Gebet",
+    "dayProgress": "Fortschritt heute",
+    "allDone": "Alles erledigt – MashaAllah!",
+    "tasksLeft": "noch {n} Aufgaben",
+    "level": "Level",
+    "xpToday": "{n} XP heute",
+    "tasksTitle": "Deine Aufgaben für heute",
+    "taskReview": "{n} fällige Verse wiederholen",
+    "taskReviewD": "Zuerst aus dem Gedächtnis rezitieren – so bleiben die Verse im Herzen.",
+    "taskReviewDone": "Keine Wiederholung fällig",
+    "taskReviewDoneD": "Alle deine Verse sind gerade frisch.",
+    "taskReviewEmpty": "Lerne deinen ersten Vers, um deinen Wiederholungsplan zu starten.",
+    "taskPlan": "{n} neue Verse lernen",
+    "taskNoPlan": "Wähle deinen Lernplan",
+    "taskNoPlanD": "Von Sanft bis zum Hafiz-Track – die Tagesmenge wächst mit dir.",
+    "taskAcademy": "Tagesziel erreichen ({goal} XP)",
+    "taskAcademyD": "bisher {xp} XP · nächster Test: {lesson}",
+    "taskKhatm": "Heutige Khatm-Portion lesen",
+    "taskKhatmD": "{pct} % des Korans gelesen",
+    "start": "Starten",
+    "open": "Öffnen",
+    "learn": "Lernen",
+    "choose": "Wählen",
+    "test": "Test",
+    "read": "Lesen",
+    "again": "Nochmal",
+    "done": "erledigt",
+    "weakTitle": "Diese Verse stärken",
+    "weakNone": "Keine schwachen Verse – dein Gedächtnismodell ist zufrieden.",
+    "tileKhatm": "Khatm"
   },
   "home2": {
     "factSurahs": "114 Suren",
@@ -335,9 +368,9 @@
     "f8d": "Wechsle zwischen Vers-Karten und einer durchgehenden Lesen-Ansicht mit Versmarken, Seite, Juz und Hizb.",
     "f9t": "Suche",
     "f9d": "Finde jeden Vers über ein Wort – auf Arabisch oder in deiner Lesesprache.",
-    "mapTitle": "Dein Koran, Seite für Seite",
-    "mapBody": "Eine Karte aller 604 Seiten, die mit jedem gesicherten Vers grüner wird, kommt bald – damit du deinen Fortschritt auf einen Blick siehst.",
-    "mapSoon": "Bald verfügbar",
+    "mapTitle": "Deine Koran-Landkarte",
+    "mapBody": "Jede Sure ist ein Kästchen, das zeigt, wie gut du sie kannst: Grün sitzt, gold wackelt, rot fällt dir schwer. Tippe auf eine Sure, um jeden Vers zu sehen – und du weißt genau, was du als Nächstes wiederholen solltest.",
+    "mapSoon": "Neu",
     "popTitle": "Beliebte Suren und Verse zum Lernen",
     "popIntro": "Beginne mit einer kurzen Sure oder einem bekannten Vers – jeder Link öffnet ihn mit Audio, Übersetzung und Tafsir.",
     "pop1": "Al-Fatiha – die Eröffnung",
@@ -420,7 +453,8 @@
     "tool_guides": "Ratgeber",
     "tool_guidesD": "Wie man den Koran lernt, auswendig lernt, liest und versteht.",
     "allTitle": "Alle 114 Suren des Korans",
-    "allLead": "Jede Sure mit Audio Vers für Vers, Lautschrift, Übersetzung, Wort-für-Wort-Bedeutung und klassischem Tafsir – kostenlos hören, lesen und auswendig lernen."
+    "allLead": "Jede Sure mit Audio Vers für Vers, Lautschrift, Übersetzung, Wort-für-Wort-Bedeutung und klassischem Tafsir – kostenlos hören, lesen und auswendig lernen.",
+    "mapCta": "Landkarte öffnen"
   },
   "legal": {
     "back": "Zurück zur Startseite",
@@ -468,7 +502,17 @@
     "isha": "Ischa",
     "citiesTitle": "Städte der muslimischen Welt",
     "playAdhan": "Adhan abspielen",
-    "notice": "Die Zeiten werden mit der in der jeweiligen Stadt üblichen Methode berechnet. Bitte gleiche sie mit deiner örtlichen Moschee ab, besonders beim Sonnenaufgang und für deine Rechtsschule."
+    "notice": "Die Zeiten werden mit der in der jeweiligen Stadt üblichen Methode berechnet. Bitte gleiche sie mit deiner örtlichen Moschee ab, besonders beim Sonnenaufgang und für deine Rechtsschule.",
+    "v_makkah": "Mekka – Masjid al-Haram",
+    "v_madinah": "Medina – Masjid an-Nabawi",
+    "v_dubai": "Dubai",
+    "v_tehran": "Teheran",
+    "v_aqsa": "Al-Aqsa – Jerusalem",
+    "v_default": "Standard",
+    "notInstalled": "noch nicht verfügbar",
+    "adhanVoice": "Adhan-Stimme",
+    "adhanNone": "Es wurde noch keine Adhan-Aufnahme hinzugefügt.",
+    "playing": "Noch nicht verfügbar – es spielt: {name}"
   },
   "radio": {
     "title": "Quran-Radio",
@@ -518,7 +562,16 @@
     "recent": "Zuletzt gespielt",
     "openRadio": "Radio öffnen",
     "stop": "Radio beenden",
-    "openSurah": "Sure öffnen"
+    "openSurah": "Sure öffnen",
+    "v_makkah": "Mekka – Masjid al-Haram",
+    "v_madinah": "Medina – Masjid an-Nabawi",
+    "v_dubai": "Dubai",
+    "v_tehran": "Teheran",
+    "v_aqsa": "Al-Aqsa – Jerusalem",
+    "v_default": "Standard",
+    "notInstalled": "noch nicht verfügbar",
+    "adhanVoice": "Adhan-Stimme",
+    "adhanNone": "Es wurde noch keine Adhan-Aufnahme hinzugefügt."
   },
   "duas": {
     "title": "Duas",
@@ -1037,5 +1090,19 @@
     "dubaiBody": "Quran Masterclass ist in Dubai entstanden, und wir sind zutiefst dankbar für die Möglichkeiten, die diese Stadt und dieses Land allen geben, die hier leben.\n\nWir danken **Seiner Hoheit Scheich Mohammed bin Rashid Al Maktoum**, Vizepräsident und Premierminister der VAE und Herrscher von Dubai, dessen Vision Dubai zu einem Ort gemacht hat, an dem Ideen wachsen können, und unter dessen Schirmherrschaft der **Dubai International Holy Quran Award** seit 1997 Menschen ehrt, die den Koran auswendig lernen. Wir danken **Seiner Hoheit Scheich Hamdan bin Mohammed bin Rashid Al Maktoum**, Kronprinz von Dubai, und **Seiner Hoheit Scheich Mohamed bin Zayed Al Nahyan**, Präsident der Vereinigten Arabischen Emirate.\n\nEin sicheres Zuhause, Toleranz zwischen Menschen aus aller Welt und ein Umfeld, das Innovation fördert – das sind die Bedingungen, unter denen ein Projekt wie dieses entstehen kann. Möge Allah sie belohnen und dieses Land beschützen.",
     "ctaShams": "Die Shams-Methode entdecken",
     "ctaFeedback": "Schick uns deine Ideen"
+  },
+  "map": {
+    "title": "Deine Koran-Landkarte",
+    "lead": "Jedes Kästchen ist eine Sure – die Farbe zeigt, wie gut du sie gerade kannst. Grün sitzt, gold wackelt, rot fällt dir schwer, grau ist noch nicht gelernt. Tippe auf eine Sure, um jeden einzelnen Vers zu sehen.",
+    "surah": "Suren",
+    "juz": "Juz",
+    "strong": "sitzt",
+    "mid": "wackelt",
+    "weak": "schwierig",
+    "none": "noch nicht gelernt",
+    "learnedOf": "{n} von {total} Versen gelernt",
+    "tapVerse": "Tippe auf einen Vers: gelernte Verse öffnen sich im Auswendig-Modus, neue mit der Shams-Methode.",
+    "todayTitle": "Deine Koran-Landkarte",
+    "todayLink": "Ganze Landkarte öffnen"
   }
 }

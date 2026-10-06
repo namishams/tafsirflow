@@ -22,6 +22,7 @@ const MORE = [
   { href: "/prayer", key: "prayer", wide: true },
   { href: "/search", key: "search", wide: true },
   { href: "/plan", key: "plan" },
+  { href: "/map", key: "map" },
   { href: "/tajweed", key: "tajweed" },
   { href: "/vocab", key: "vocab" },
   { href: "/khatm", key: "khatm" },

@@ -15,6 +15,7 @@ const TABS = [
 const LEARN = [
   { href: "/academy", key: "courses" },
   { href: "/plan", key: "plan" },
+  { href: "/map", key: "map" },
   { href: "/shams", key: "shams" },
   { href: "/tajweed", key: "tajweed" },
   { href: "/vocab", key: "vocab" },

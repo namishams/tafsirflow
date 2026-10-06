@@ -4,6 +4,7 @@ import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LOCALE_META } from "@/i18n/locales";
 import { fetchMe, type Me } from "@/lib/sync";
+import { ADHAN_VOICES, adhanUrl, adhanCreditUrl } from "@/lib/adhan";
 
 // Admin is for the owner: German with English fallback (kept in one place, not in the public messages)
 const T = {
@@ -41,7 +42,7 @@ export default function AdminPanel() {
   const locale = useLocale();
   const t = T[locale === "de" ? "de" : "en"];
   const [me, setMe] = useState<Me | null | undefined>(undefined);
-  const [tab, setTab] = useState<"overview" | "users" | "tafsir" | "moderation" | "feedback" | "settings">("overview");
+  const [tab, setTab] = useState<"overview" | "users" | "tafsir" | "moderation" | "feedback" | "adhan" | "settings">("overview");
 
   useEffect(() => { fetchMe().then((r) => setMe(r.user)); }, []);
 
@@ -54,7 +55,7 @@ export default function AdminPanel() {
       </main>
     );
 
-  const tabs = [["overview", t.overview], ["users", t.users], ["tafsir", t.tafsir], ["moderation", t.moderation], ["feedback", locale === "de" ? "Wünsche" : "Requests"], ["settings", t.settings]] as const;
+  const tabs = [["overview", t.overview], ["users", t.users], ["tafsir", t.tafsir], ["moderation", t.moderation], ["feedback", locale === "de" ? "Wünsche" : "Requests"], ["adhan", "Adhan"], ["settings", t.settings]] as const;
   return (
     <main className="mx-auto max-w-5xl px-4 pb-16 pt-4">
       <header className="mb-6 flex items-center justify-between">
@@ -71,6 +72,7 @@ export default function AdminPanel() {
       {tab === "tafsir" && <TafsirEditor t={t} />}
       {tab === "moderation" && <Moderation de={locale === "de"} />}
       {tab === "feedback" && <FeedbackAdmin />}
+      {tab === "adhan" && <AdhanAdmin />}
       {tab === "settings" && <SettingsTab t={t} />}
     </main>
   );
@@ -321,5 +323,46 @@ function FeedbackAdmin() {
         </li>
       ))}
     </ul>
+  );
+}
+
+const VOICE_NAMES: Record<string, string> = { makkah: "Mekka (Masjid al-Haram)", madinah: "Medina (Masjid an-Nabawi)", dubai: "Dubai", tehran: "Teheran", aqsa: "Al-Aqsa (Jerusalem)", default: "Standard" };
+function AdhanAdmin() {
+  const [have, setHave] = useState<Record<string, boolean>>({});
+  const [credits, setCredits] = useState<Record<string, string>>({});
+  const [msg, setMsg] = useState<Record<string, string>>({});
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    ADHAN_VOICES.forEach((id) => {
+      fetch(adhanUrl(id), { method: "HEAD", cache: "no-store" }).then((r) => setHave((h) => ({ ...h, [id]: r.ok }))).catch(() => undefined);
+      fetch(adhanCreditUrl(id), { cache: "no-store" }).then((r) => (r.ok ? r.text() : "")).then((c) => setCredits((x) => ({ ...x, [id]: c }))).catch(() => undefined);
+    });
+  }, [tick]);
+  const upload = async (id: string, file: File | null) => {
+    const fd = new FormData(); fd.set("id", id); if (file) fd.set("file", file); fd.set("credit", credits[id] ?? "");
+    setMsg((m) => ({ ...m, [id]: "…" }));
+    const r = await fetch("/api/admin/adhan", { method: "POST", body: fd });
+    const e = r.ok ? "" : ((await r.json().catch(() => ({}))) as { error?: string }).error;
+    setMsg((m) => ({ ...m, [id]: r.ok ? "Gespeichert" : e === "format" ? "Nur MP3-Dateien" : e === "size" ? "Maximal 15 MB" : "Fehler" }));
+    setTick((x) => x + 1);
+  };
+  const remove = async (id: string) => { await fetch(`/api/admin/adhan?id=${id}`, { method: "DELETE" }); setTick((x) => x + 1); };
+  return (
+    <div className="grid gap-3">
+      <p className="max-w-2xl text-sm text-muted">Lade hier Adhan-Aufnahmen als MP3 hoch (max. 15 MB). Nutze nur Aufnahmen, für die du die Rechte oder eine Erlaubnis hast, und trage die Quelle als Nachweis ein – sie wird im Radio angezeigt. Nutzer wählen die Stimme im Radio und bei den Gebetszeiten.</p>
+      {ADHAN_VOICES.map((id) => (
+        <div key={id} className={card}>
+          <div className="flex flex-wrap items-center justify-between gap-2"><b>{VOICE_NAMES[id]}</b><span className={`text-xs font-semibold ${have[id] ? "text-accent" : "text-muted"}`}>{have[id] ? "✓ installiert" : "nicht installiert"}</span></div>
+          {have[id] && <audio key={tick} src={`${adhanUrl(id)}?v=${tick}`} controls preload="none" className="mt-3 w-full" />}
+          <input value={credits[id] ?? ""} onChange={(e) => setCredits({ ...credits, [id]: e.target.value })} placeholder="Quelle / Nachweis, z. B. „Adhan: Name des Muezzins, mit Erlaubnis von …“" className={field + " mt-3"} />
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <label className={btnP + " cursor-pointer"}>MP3 hochladen<input type="file" accept="audio/mpeg,.mp3" className="hidden" onChange={(e) => upload(id, e.target.files?.[0] ?? null)} /></label>
+            <button className={btn} onClick={() => upload(id, null)}>Quelle speichern</button>
+            {have[id] && <button className={btn} onClick={() => remove(id)}>Löschen</button>}
+            {msg[id] && <span className="text-sm text-accent">{msg[id]}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }

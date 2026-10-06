@@ -7,10 +7,10 @@ import { AUDIO_BASE, RECITERS, getChapters, getReciters, getResources, getVerses
 import { countOf } from "@/lib/counts";
 import { readJSON, writeJSON } from "@/lib/storage";
 import * as vp from "@/lib/versePlayback";
+import { ADHAN_VOICES, adhanAvailability, adhanCreditUrl, adhanUrl, pickVoice } from "@/lib/adhan";
 import { CITIES, PRAYERS, dayFor, type Prayer, type Spot } from "@/lib/prayer";
 
 // Adhan recordings are placed on the server by the owner (scripts/install-adhan.sh) – only recordings with a clear licence
-const ADHAN = (name: string) => `${AUDIO_BASE}/adhan/${name}.mp3`;
 type AdhanMode = "off" | "makkah" | "dubai" | "mine";
 
 type Mode = "full" | "range" | "single" | "random";
@@ -62,6 +62,7 @@ function useEngine() {
   const [adhanMode, setAdhanMode] = useState<AdhanMode>("makkah");
   const [adhanFiles, setAdhanFiles] = useState<Record<string, boolean>>({});
   const [adhanCredit, setAdhanCredit] = useState("");
+  const [voice, setVoiceState] = useState<string>("makkah");
   const [banner, setBanner] = useState<Prayer | null>(null);
   const [started, setStarted] = useState(false);
   const [vol, setVol] = useState(1);
@@ -87,8 +88,8 @@ function useEngine() {
 
   useEffect(() => {
     setAdhanMode(readJSON<AdhanMode>("tf:adhan", "makkah"));
-    for (const n of ["makkah", "dubai", "default"]) fetch(ADHAN(n), { method: "HEAD" }).then((r) => setAdhanFiles((f) => ({ ...f, [n]: r.ok }))).catch(() => undefined);
-    fetch(`${AUDIO_BASE}/adhan/makkah.credit.txt`).then((r) => (r.ok ? r.text() : "")).then(setAdhanCredit).catch(() => undefined);
+    setVoiceState(readJSON<string>("tf:adhanVoice", "makkah"));
+    adhanAvailability().then(setAdhanFiles);
   }, []);
 
   // Adhan at prayer time: pause the recitation, play the call to prayer, then continue
@@ -107,7 +108,8 @@ function useEngine() {
           fired.current.add(key);
           const cur = a.current[live.current];
           const resume = !!cur && !cur.paused;
-          const file = adhanFiles[spot.id] ? ADHAN(spot.id) : adhanFiles.default ? ADHAN("default") : null;
+          const v = pickVoice(voice, adhanFiles);
+          const file = v ? adhanUrl(v) : null;
           setBanner(p);
           const done = () => { setBanner(null); if (resume) cur.play().catch(() => undefined); };
           if (file && adhanEl.current) {
@@ -120,7 +122,7 @@ function useEngine() {
       }
     }, 1000);
     return () => clearInterval(id);
-  }, [adhanMode, adhanFiles, started]);
+  }, [adhanMode, adhanFiles, started, voice]);
 
   // text of the surah on air
   useEffect(() => {
@@ -202,6 +204,15 @@ function useEngine() {
   const sleepOptions = useMemo(() => [15, 30, 60], []);
   const stationName = (id: string) => t(`st_${id}`);
   const upNext = nextPos(now, station);
+  // credit line of the voice that will actually play
+  useEffect(() => {
+    const v = pickVoice(voice, adhanFiles);
+    if (!v) { setAdhanCredit(""); return; }
+    fetch(adhanCreditUrl(v)).then((r) => (r.ok ? r.text() : "")).then(setAdhanCredit).catch(() => setAdhanCredit(""));
+  }, [voice, adhanFiles]);
+  const setVoice = (v: string) => { setVoiceState(v); writeJSON("tf:adhanVoice", v, true); };
+  const testAdhan = () => { const v = pickVoice(voice, adhanFiles); if (v && adhanEl.current) { adhanEl.current.src = adhanUrl(v); adhanEl.current.onended = null; void adhanEl.current.play(); } };
+  const stopAdhan = () => adhanEl.current?.pause();
   const setAdhan = (v: AdhanMode) => { setAdhanMode(v); writeJSON("tf:adhan", v, true); };
   const changeReciter = (f: string) => { setFolder(f); writeJSON("tf:reciter", f, true); setTimeout(() => start(pos.current, playing), 0); };
 
@@ -213,7 +224,7 @@ function useEngine() {
       ))}
     </>
   );
-  return { station, playing, started, now, chapter, verse, upNext, history, chapters, reciter, reciters, changeReciter, sleepLeft, setSleepLeft, sleepOptions, adhanMode, setAdhanMode: setAdhan, adhanFiles, adhanCredit, banner, showText, setShowText, vol, setVolume, chooseStation, toggle, skipVerse, skipSurah, prevVerse, stop, stationName, audios };
+  return { station, playing, started, now, chapter, verse, upNext, history, chapters, reciter, reciters, changeReciter, sleepLeft, setSleepLeft, sleepOptions, adhanMode, setAdhanMode: setAdhan, adhanFiles, adhanCredit, voice, setVoice, voices: ADHAN_VOICES, testAdhan, stopAdhan, banner, showText, setShowText, vol, setVolume, chooseStation, toggle, skipVerse, skipSurah, prevVerse, stop, stationName, audios };
 }
 
 type Radio = ReturnType<typeof useEngine>;

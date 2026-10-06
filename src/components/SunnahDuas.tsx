@@ -40,7 +40,7 @@ export default function SunnahDuas() {
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t("search")} className="h-11 min-w-0 flex-1 rounded-md border border-line bg-surface px-3 text-[15px] focus:border-ink focus:outline-none" aria-label={t("search")} />
         <label className="flex items-center gap-2 text-sm text-muted"><input type="checkbox" checked={showTr} onChange={(e) => setShowTr(e.target.checked)} />{t("translit")}</label>
       </div>
-      <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1">
+      <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
         <button className={chip(cat === "all")} onClick={() => setCat("all")}>{t("all")} · {ALL.length}</button>
         <button className={chip(cat === "fav")} onClick={() => setCat("fav")}>★ {t("favs")}{fav.length ? ` · ${fav.length}` : ""}</button>
         {SUNNAH_CATS.map((c) => <button key={c} className={chip(cat === c)} onClick={() => setCat(c)}>{t(`c_${c}`)}</button>)}
