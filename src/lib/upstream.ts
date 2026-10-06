@@ -9,6 +9,7 @@ const ALLOWED = [
   /^\/verses\/by_chapter\/\d{1,3}$/,
   /^\/tafsirs\/\d{1,5}\/by_ayah\/\d{1,3}:\d{1,3}$/,
   /^\/search$/,
+  /^\/verses\/by_key\/\d{1,3}:\d{1,3}$/,
 ];
 
 export function isAllowed(path: string) {

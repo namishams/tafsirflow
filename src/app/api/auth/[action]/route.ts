@@ -2,10 +2,18 @@ import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { clientIp, isHttps, json, rateLimited, sameOrigin } from "@/lib/http";
 import crypto from "node:crypto";
-import { currentUser, endSession, hashPassword, isAdminEmail, startSession, verifyPassword } from "@/lib/auth";
-import { sendMail } from "@/lib/mail";
+import { confirmVerification, currentUser, endSession, hashPassword, isAdminEmail, issueVerification, startSession, verifyPassword } from "@/lib/auth";
+import { mailConfigured, sendMail } from "@/lib/mail";
+import { NextResponse } from "next/server";
+import { COUNTRY_CODES, GOALS } from "@/lib/countries";
 
 export const dynamic = "force-dynamic";
+
+async function sendVerification(req: NextRequest, userId: number, email: string, locale: string) {
+  const token = await issueVerification(userId);
+  const origin = process.env.SITE_URL ?? `${isHttps(req) ? "https" : "http"}://${req.headers.get("host")}`;
+  await sendMail(email, "Quran Masterclass – confirm your e-mail", `Confirm your e-mail address to unlock everything (valid for 2 days):\n${origin}/api/auth/verify?token=${token}&locale=${locale}\n\nIf you did not create an account, ignore this e-mail.`).catch(() => undefined);
+}
 
 const EMAIL = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
 
@@ -14,9 +22,16 @@ const EMAIL = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
 const insecure = (req: NextRequest) => process.env.NODE_ENV === "production" && !isHttps(req) && process.env.ALLOW_INSECURE_AUTH !== "1";
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ action: string }> }) {
-  if ((await params).action !== "me") return json({ error: "not found" }, 404);
+  const { action } = await params;
+  if (action === "verify") {
+    const loc = /^[a-z]{2}$/.test(req.nextUrl.searchParams.get("locale") ?? "") ? req.nextUrl.searchParams.get("locale") : "en";
+    const ok = pool() ? await confirmVerification(req.nextUrl.searchParams.get("token") ?? "").catch(() => false) : false;
+    const origin = process.env.SITE_URL ?? `${isHttps(req) ? "https" : "http"}://${req.headers.get("host")}`;
+    return NextResponse.redirect(`${origin}/${loc}/account?${ok ? "verified=1" : "verify=failed"}`);
+  }
+  if (action !== "me") return json({ error: "not found" }, 404);
   const user = await currentUser();
-  return json({ user, available: !!pool(), secure: !insecure(req) });
+  return json({ user, available: !!pool(), secure: !insecure(req), mailEnabled: mailConfigured() });
 }
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ action: string }> }) {
@@ -29,14 +44,21 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
     await endSession();
     return json({ ok: true });
   }
-  if (!["login", "register", "forgot", "reset"].includes(action)) return json({ error: "not found" }, 404);
+  if (!["login", "register", "forgot", "reset", "resend"].includes(action)) return json({ error: "not found" }, 404);
   if (insecure(req)) return json({ error: "insecure" }, 403);
 
   const ip = clientIp(req);
   if (rateLimited(`${action}:${ip}`, action === "login" ? 10 : 5, action === "login" ? 10 * 60_000 : 60 * 60_000)) return json({ error: "rate" }, 429);
   if (action === "forgot" || action === "reset") { /* shares the strict hourly limit above */ }
 
-  const body = (await req.json().catch(() => ({}))) as { email?: string; password?: string; name?: string; city?: string; token?: string; locale?: string };
+  const body = (await req.json().catch(() => ({}))) as { email?: string; password?: string; name?: string; firstName?: string; lastName?: string; country?: string; city?: string; goal?: string; marketing?: boolean; acceptTerms?: boolean; token?: string; locale?: string };
+
+  if (action === "resend") {
+    const me = await currentUser();
+    if (!me) return json({ error: "invalid" }, 401);
+    if (!me.emailVerified && mailConfigured()) await sendVerification(req, me.id, me.email, /^[a-z]{2}$/.test(String(body.locale)) ? String(body.locale) : "en");
+    return json({ ok: true });
+  }
 
   if (action === "forgot") {
     // Always answers "ok" so nobody can find out which e-mails have an account
@@ -49,7 +71,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
         await p.query("INSERT INTO password_resets (token_hash, user_id, expires_at) VALUES ($1, $2, now() + interval '1 hour')", [crypto.createHash("sha256").update(token).digest("hex"), u.id]);
         const loc = /^[a-z]{2}$/.test(String(body.locale)) ? body.locale : "en";
         const origin = process.env.SITE_URL ?? `${isHttps(req) ? "https" : "http"}://${req.headers.get("host")}`;
-        await sendMail(email, "TafsirFlow – password reset", `Reset your password (valid for 1 hour):\n${origin}/${loc}/account/reset?token=${token}\n\nIf you did not ask for this, ignore this e-mail.`).catch(() => undefined);
+        await sendMail(email, "Quran Masterclass – password reset", `Reset your password (valid for 1 hour):\n${origin}/${loc}/account/reset?token=${token}\n\nIf you did not ask for this, ignore this e-mail.`).catch(() => undefined);
       }
     }
     return json({ ok: true });
@@ -73,11 +95,21 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
 
   if (action === "register") {
     if (password.length < 8) return json({ error: "weak" }, 400);
-    const name = String(body.name ?? "").trim().slice(0, 60) || null;
-    const city = String(body.city ?? "").trim().slice(0, 80) || null;
+    const clean = (v: unknown, max: number) => String(v ?? "").replace(/\s+/g, " ").trim().slice(0, max);
+    const firstName = clean(body.firstName, 60), lastName = clean(body.lastName, 60);
+    if (!firstName || !lastName) return json({ error: "name" }, 400);
+    const country = String(body.country ?? "").toUpperCase();
+    if (!COUNTRY_CODES.includes(country)) return json({ error: "country" }, 400);
+    if (body.acceptTerms !== true) return json({ error: "terms" }, 400);
+    const goal = (GOALS as readonly string[]).includes(String(body.goal)) ? String(body.goal) : null;
+    const name = `${firstName} ${lastName}`;
+    const city = clean(body.city, 80) || null;
+    const loc = /^[a-z]{2}$/.test(String(body.locale)) ? String(body.locale) : null;
     try {
-      const r = await p.query("INSERT INTO users (email, password_hash, name, city, role) VALUES ($1, $2, $3, $4, $5) RETURNING id", [email, hashPassword(password), name, city, isAdminEmail(email) ? "admin" : "user"]);
-      await startSession(Number(r.rows[0].id), req);
+      const r = await p.query("INSERT INTO users (email, password_hash, name, first_name, last_name, country, city, goal, locale, marketing_opt_in, terms_accepted_at, role, email_verified) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, now(), $11, $12) RETURNING id", [email, hashPassword(password), name, firstName, lastName, country, city, goal, loc, body.marketing === true, isAdminEmail(email) ? "admin" : "user", !mailConfigured()]);
+      const uid = Number(r.rows[0].id);
+      await startSession(uid, req);
+      if (mailConfigured()) await sendVerification(req, uid, email, /^[a-z]{2}$/.test(String(body.locale)) ? String(body.locale) : "en");
     } catch (e) {
       if ((e as { code?: string }).code === "23505") return json({ error: "exists" }, 409);
       return json({ error: "generic" }, 500);
@@ -90,6 +122,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
   const row = r.rows[0];
   const ok = verifyPassword(password, row?.password_hash ?? "scrypt$00$00");
   if (!row || !ok) return json({ error: "invalid" }, 401);
+  await p.query("UPDATE users SET last_login_at = now() WHERE id = $1", [row.id]);
   await startSession(Number(row.id), req);
   return json({ user: await currentUser() });
 }

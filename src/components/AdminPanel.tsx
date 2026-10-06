@@ -13,18 +13,18 @@ const T = {
     limit: "Tafsir-Limit für Besucher ohne Konto (Verse pro Tag)", limitHelp: "Wer nicht angemeldet ist, darf pro Tag so viele verschiedene Verse mit Tafsir öffnen. Danach ist ein kostenloses Konto nötig. 0 = sofort Konto nötig.", save: "Speichern", saved: "Gespeichert",
     lang: "Sprache", surah: "Sure", from: "Vers von", to: "bis", source: "Quelle", content: "Text (HTML erlaubt: <p>, <b>, <i>, <h3>)", ai: "KI-generiert (muss vor Veröffentlichung geprüft werden)", status: "Status", draft: "Entwurf", approved: "Freigegeben",
     create: "Eintrag anlegen", update: "Änderung speichern", cancel: "Abbrechen", edit: "Bearbeiten", del: "Löschen", approve: "Freigeben", unapprove: "Zurück zu Entwurf", none: "Noch keine Einträge.", confirm: "Wirklich löschen?",
-    note: "Freigegebene Einträge erscheinen in der App unter „TafsirFlow“ als eigene Tafsir-Quelle in dieser Sprache." },
+    note: "Freigegebene Einträge erscheinen in der App unter „Quran Masterclass“ als eigene Tafsir-Quelle in dieser Sprache." },
   en: { admin: "Admin area", overview: "Overview", users: "Users", tafsir: "Tafsir editor", settings: "Settings", forbidden: "No access. Sign in with the admin account.", signIn: "Go to sign-in", home: "Back to app",
     users_n: "Total users", users_w: "New (7 days)", sessions: "Active sessions", cached: "Stored Quran.com items", entries: "Own tafsir entries", drafts: "Drafts to approve",
     email: "E-mail", name: "Name", role: "Role", plan: "Plan", since: "Since", makeAdmin: "Make admin", makeUser: "Remove admin", premium: "Premium", free: "Free",
     limit: "Tafsir limit for visitors without account (verses per day)", limitHelp: "Signed-out visitors may open tafsir for this many different verses per day, then a free account is needed. 0 = account needed at once.", save: "Save", saved: "Saved",
     lang: "Language", surah: "Surah", from: "Verse from", to: "to", source: "Source", content: "Text (HTML allowed: <p>, <b>, <i>, <h3>)", ai: "AI-generated (must be reviewed before publishing)", status: "Status", draft: "Draft", approved: "Approved",
     create: "Create entry", update: "Save changes", cancel: "Cancel", edit: "Edit", del: "Delete", approve: "Approve", unapprove: "Back to draft", none: "No entries yet.", confirm: "Really delete?",
-    note: "Approved entries appear in the app as the “TafsirFlow” tafsir source in that language." },
+    note: "Approved entries appear in the app as the “Quran Masterclass” tafsir source in that language." },
 } as const;
 
 type Entry = { id: number; language: string; source: string; surah: number; verse_from: number; verse_to: number; html: string; status: "draft" | "approved"; generated_by_ai: boolean };
-type Row = { id: number; email: string; name: string | null; role: string; plan: string; created_at: string };
+type Row = { id: number; email: string; first_name: string | null; last_name: string | null; name: string | null; country: string | null; city: string | null; goal: string | null; marketing_opt_in: boolean; email_verified: boolean; role: string; plan: string; created_at: string; last_login_at: string | null };
 
 async function api<T>(url: string, method = "GET", body?: unknown): Promise<T> {
   const r = await fetch(url, { method, headers: body ? { "content-type": "application/json" } : undefined, body: body ? JSON.stringify(body) : undefined });
@@ -98,24 +98,38 @@ function Users({ t, meId }: { t: TT; meId: number }) {
   useEffect(() => { load(); }, [load]);
   const patch = async (id: number, b: object) => { await api("/api/admin/users", "PATCH", { id, ...b }); load(); };
   return (
-    <div className={`${card} overflow-x-auto`}>
-      <table className="w-full text-sm">
-        <thead className="text-start text-muted"><tr><th className="p-2 text-start">{t.email}</th><th className="p-2 text-start">{t.name}</th><th className="p-2 text-start">{t.role}</th><th className="p-2 text-start">{t.plan}</th><th className="p-2 text-start">{t.since}</th><th /></tr></thead>
-        <tbody>
-          {rows.map((u) => (
-            <tr key={u.id} className="border-t border-line">
-              <td className="p-2">{u.email}</td><td className="p-2">{u.name ?? "–"}</td><td className="p-2">{u.role}</td>
-              <td className="p-2">
-                <select value={u.plan} onChange={(e) => patch(u.id, { plan: e.target.value })} className={field + " !w-auto"}>
-                  <option value="free">{t.free}</option><option value="premium">{t.premium}</option>
-                </select>
-              </td>
-              <td className="p-2 text-muted">{new Date(u.created_at).toLocaleDateString(undefined)}</td>
-              <td className="p-2 text-end">{u.id !== meId && <button className={btn} onClick={() => patch(u.id, { role: u.role === "admin" ? "user" : "admin" })}>{u.role === "admin" ? t.makeUser : t.makeAdmin}</button>}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="grid gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-sm text-muted">{rows.length} {t.users}</p>
+        <a href="/api/admin/users/export" className={btn}>CSV ↓</a>
+      </div>
+      <div className={`${card} overflow-x-auto`}>
+        <table className="w-full whitespace-nowrap text-sm">
+          <thead className="text-muted">
+            <tr>{[t.name, t.email, "Land", "Ort", "Ziel", "✓", "Mail", t.plan, t.since, ""].map((h, i) => <th key={i} className="p-2 text-start font-medium">{h}</th>)}</tr>
+          </thead>
+          <tbody>
+            {rows.map((u) => (
+              <tr key={u.id} className="border-t border-line">
+                <td className="p-2">{[u.first_name, u.last_name].filter(Boolean).join(" ") || u.name || "–"}</td>
+                <td className="p-2">{u.email}</td>
+                <td className="p-2">{u.country ?? "–"}</td>
+                <td className="p-2">{u.city ?? "–"}</td>
+                <td className="p-2">{u.goal ?? "–"}</td>
+                <td className="p-2" title="E-Mail bestätigt">{u.email_verified ? "✓" : "–"}</td>
+                <td className="p-2" title="Marketing-Einwilligung">{u.marketing_opt_in ? "ja" : "nein"}</td>
+                <td className="p-2">
+                  <select value={u.plan} onChange={(e) => patch(u.id, { plan: e.target.value })} className={field + " !w-auto"}>
+                    <option value="free">{t.free}</option><option value="premium">{t.premium}</option>
+                  </select>
+                </td>
+                <td className="p-2 text-muted">{new Date(u.created_at).toLocaleDateString(undefined)}</td>
+                <td className="p-2 text-end">{u.id !== meId && <button className={btn} onClick={() => patch(u.id, { role: u.role === "admin" ? "user" : "admin" })}>{u.role === "admin" ? t.makeUser : t.makeAdmin}</button>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
@@ -138,7 +152,7 @@ function SettingsTab({ t }: { t: TT }) {
   );
 }
 
-const blank = (lang: string): Partial<Entry> => ({ language: lang, source: "TafsirFlow", surah: 1, verse_from: 1, verse_to: 1, html: "", status: "draft", generated_by_ai: false });
+const blank = (lang: string): Partial<Entry> => ({ language: lang, source: "Quran Masterclass", surah: 1, verse_from: 1, verse_to: 1, html: "", status: "draft", generated_by_ai: false });
 
 function TafsirEditor({ t }: { t: TT }) {
   const locale = useLocale();

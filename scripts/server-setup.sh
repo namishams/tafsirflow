@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# TafsirFlow – base setup for a fresh, plain Ubuntu 24.04 / 26.04 VPS.
+# Quran Masterclass – base setup for a fresh, plain Ubuntu 24.04 / 26.04 VPS.
 # Run as root:  bash server-setup.sh
 # Safe to re-run. Does not delete anything.
 set -euo pipefail

@@ -1,4 +1,4 @@
-# TafsirFlow
+# Quran Masterclass
 
 Verse-by-verse Quran listening with tafsir (German / English, more languages later).
 

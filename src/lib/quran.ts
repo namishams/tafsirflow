@@ -55,7 +55,9 @@ export function parseSegments(raw: unknown[] | undefined): Segment[] {
     .map((s) => (s.length >= 4 ? { word: s[1], start: s[2], end: s[3] } : { word: s[0], start: s[1], end: s[2] }));
 }
 
-export class LimitError extends Error {}
+export class LimitError extends Error {
+  constructor(message: string, public needsVerify = false) { super(message); }
+}
 
 async function get<T>(path: string, headers?: Record<string, string>): Promise<T> {
   if (typeof window === "undefined") {
@@ -66,7 +68,10 @@ async function get<T>(path: string, headers?: Record<string, string>): Promise<T
     return data;
   }
   const res = await fetch(`${CLIENT_API}${path}`, { headers });
-  if (res.status === 402) throw new LimitError("daily tafsir limit");
+  if (res.status === 402) {
+    const d = (await res.json().catch(() => ({}))) as { needsVerify?: boolean };
+    throw new LimitError("daily tafsir limit", !!d.needsVerify);
+  }
   if (!res.ok) throw new Error(`API ${res.status}`);
   return res.json();
 }
@@ -156,7 +161,11 @@ export async function getTafsir(tafsirId: number, verseKey: string, primary = fa
 export const OWN_TAFSIR_ID = -1;
 
 export async function getOwnTafsir(locale: string, surah: number, verse: number): Promise<TafsirResult | null> {
-  const r = await fetch(`/api/entries?lang=${locale}&surah=${surah}&verse=${verse}`);
+  const r = await fetch(`/api/entries?lang=${locale}&surah=${surah}&verse=${verse}`, { headers: { "x-tf-primary": "1" } });
+  if (r.status === 402) {
+    const d = (await r.json().catch(() => ({}))) as { needsVerify?: boolean };
+    throw new LimitError("daily tafsir limit", !!d.needsVerify);
+  }
   if (!r.ok) return null;
   const { entry } = (await r.json()) as { entry: { html: string; verse_from: number; verse_to: number } | null };
   if (!entry) return null;
@@ -184,4 +193,15 @@ export async function searchVerses(q: string, locale: string): Promise<SearchHit
     text: String(r.text ?? ""),
     translation: String(r.translations?.[0]?.text ?? ""),
   }));
+}
+
+export type SingleVerse = { verse_key: string; text_uthmani: string; translation: string };
+
+export async function getVerseByKey(key: string, locale: string, translationId: number): Promise<SingleVerse> {
+  const d = await get<{ verse: any }>(`/verses/by_key/${key}?language=${locale}&words=false&translations=${translationId}&fields=text_uthmani`);
+  return {
+    verse_key: d.verse.verse_key,
+    text_uthmani: d.verse.text_uthmani,
+    translation: String(d.verse.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, ""),
+  };
 }

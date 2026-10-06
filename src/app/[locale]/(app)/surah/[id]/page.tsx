@@ -44,7 +44,7 @@ export default async function SurahPage({ params, searchParams }: { params: Prom
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "TafsirFlow", item: abs(`/${locale}`) },
+      { "@type": "ListItem", position: 1, name: "Quran Masterclass", item: abs(`/${locale}`) },
       { "@type": "ListItem", position: 2, name: t("surahs"), item: abs(`/${locale}/quran`) },
       { "@type": "ListItem", position: 3, name: initial.chapter.name_simple, item: abs(`/${locale}/surah/${n}`) },
     ],

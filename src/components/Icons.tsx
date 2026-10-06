@@ -10,3 +10,17 @@ export const IconShare = () => (<svg {...sm}><path d="M12 15V4M8 8l4-4 4 4" /><p
 export const IconNote = () => (<svg {...sm}><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z" /><path d="M13.5 6.5l4 4" /></svg>);
 export const IconBookmark = ({ filled }: { filled?: boolean }) => (<svg {...sm} fill={filled ? "currentColor" : "none"}><path d="M6 4h12v17l-6-4-6 4z" /></svg>);
 export const IconVolume = ({ muted }: { muted?: boolean }) => (<svg {...sm}><path d="M4 10v4h4l5 4V6L8 10z" />{muted ? <path d="M17 9l4 6M21 9l-4 6" /> : <path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" />}</svg>);
+
+const ln = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true } as const;
+export const IconGrid = () => (<svg {...ln}><rect x="4" y="4" width="6.5" height="6.5" rx="1.2" /><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.2" /><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.2" /><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.2" /></svg>);
+export const IconBook = () => (<svg {...ln}><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5z" /><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z" /></svg>);
+export const IconSearch = () => (<svg {...ln}><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4 4" /></svg>);
+export const IconMenu = () => (<svg {...ln}><path d="M4 7h16M4 12h16M4 17h16" /></svg>);
+export const IconLock = () => (<svg {...ln}><rect x="5" y="10.5" width="14" height="9.5" rx="2" /><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" /></svg>);
+export const IconRepeat = () => (<svg {...ln}><path d="M17 3l3 3-3 3" /><path d="M4 11V9a3 3 0 0 1 3-3h13" /><path d="M7 21l-3-3 3-3" /><path d="M20 13v2a3 3 0 0 1-3 3H4" /></svg>);
+export const IconUser = () => (<svg {...ln}><circle cx="12" cy="8.5" r="3.8" /><path d="M4.5 20c.8-3.6 3.8-5.5 7.5-5.5s6.7 1.9 7.5 5.5" /></svg>);
+export const IconKid = () => (<svg {...ln}><circle cx="12" cy="9" r="4" /><path d="M5 20c1-3.2 3.6-5 7-5s6 1.8 7 5" /><path d="M9.5 8.5c.6-1.6 4.4-1.6 5 0" /></svg>);
+export const IconCap = () => (<svg {...ln}><path d="M3 9l9-4 9 4-9 4-9-4z" /><path d="M7 11.5V16c0 1.2 2.2 2.5 5 2.5s5-1.3 5-2.5v-4.5" /></svg>);
+export const IconShield = () => (<svg {...ln}><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" /><path d="M9 12l2.2 2.2L15.5 10" /></svg>);
+export const IconLogout = () => (<svg {...ln}><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" /><path d="M15 8l4 4-4 4M19 12H9" /></svg>);
+export const IconClose = () => (<svg {...ln}><path d="M6 6l12 12M18 6L6 18" /></svg>);

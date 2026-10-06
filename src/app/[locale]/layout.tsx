@@ -5,8 +5,9 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { localeMeta } from "@/i18n/locales";
 import "@fontsource-variable/inter";
-import "@fontsource/instrument-serif/400.css";
-import "@fontsource/instrument-serif/400-italic.css";
+import "@fontsource-variable/plus-jakarta-sans";
+import "@fontsource-variable/noto-sans-arabic";
+import "@fontsource-variable/noto-sans-bengali";
 import "@fontsource-variable/nunito";
 import "@fontsource-variable/vazirmatn";
 import "@fontsource-variable/noto-sans-sc";
@@ -14,7 +15,7 @@ import "@fontsource/amiri/400.css";
 import "@fontsource/amiri/700.css";
 import "../globals.css";
 
-export const metadata: Metadata = { title: "TafsirFlow", description: "Quran verse by verse with tafsir" };
+export const metadata: Metadata = { title: "Quran Masterclass", description: "Quran verse by verse with tafsir" };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0b7a5a" };
 
 export function generateStaticParams() {

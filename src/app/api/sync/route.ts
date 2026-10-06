@@ -9,6 +9,7 @@ const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes"
 export async function GET() {
   const u = await currentUser();
   if (!u) return json({ error: "auth" }, 401);
+  if (!u.emailVerified) return json({ error: "verify" }, 403);
   const r = await pool()!.query("SELECT key, value FROM user_data WHERE user_id = $1", [u.id]);
   return json(Object.fromEntries(r.rows.map((x) => [x.key, x.value])));
 }
@@ -17,6 +18,7 @@ export async function PUT(req: NextRequest) {
   if (!sameOrigin(req)) return json({ error: "origin" }, 403);
   const u = await currentUser();
   if (!u) return json({ error: "auth" }, 401);
+  if (!u.emailVerified) return json({ error: "verify" }, 403);
   const raw = await req.text();
   if (raw.length > 400_000) return json({ error: "too large" }, 413);
   const body = JSON.parse(raw || "{}") as Record<string, unknown>;

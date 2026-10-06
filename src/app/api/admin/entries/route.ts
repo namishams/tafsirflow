@@ -28,7 +28,7 @@ function clean(b: Body) {
   const surah = Number(b.surah), from = Number(b.verse_from), to = Number(b.verse_to ?? b.verse_from);
   if (!/^[a-z]{2}$/.test(String(b.language)) || !(surah >= 1 && surah <= 114) || !(from >= 1) || !(to >= from) || !String(b.html ?? "").trim()) return null;
   return {
-    language: String(b.language), source: String(b.source || "TafsirFlow").slice(0, 120), surah, from, to,
+    language: String(b.language), source: String(b.source || "Quran Masterclass").slice(0, 120), surah, from, to,
     html: sanitizeHtml(String(b.html)), status: b.status === "approved" ? "approved" : "draft", ai: !!b.generated_by_ai,
   };
 }

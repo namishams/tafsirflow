@@ -6,6 +6,7 @@ import { localeMeta } from "@/i18n/locales";
 import LanguageSwitcher from "./LanguageSwitcher";
 import AccountLink from "./AccountLink";
 import KidsToggle from "./KidsToggle";
+import AuthGate from "./AuthGate";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume } from "./Icons";
 import {
@@ -56,6 +57,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [revealed, setRevealed] = useState(false);
   const [note, setNote] = useState("");
   const [limitHit, setLimitHit] = useState(false);
+  const [needsVerify, setNeedsVerify] = useState(false);
+  const [gateOpen, setGateOpen] = useState(false);
+  const [authTick, setAuthTick] = useState(0);
   const [kids, setKids] = useState(false);
 
   const [mode, setMode] = useState<Mode>("continuous");
@@ -93,7 +97,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     const readKids = () => setKids(document.documentElement.dataset.kids === "1");
     readKids();
     window.addEventListener("tf-kids", readKids);
-    return () => { mq.removeEventListener("change", on); window.removeEventListener("tf-kids", readKids); };
+    const onAuth = () => { setGateOpen(false); setLimitHit(false); tafsirCache.current.clear(); setAuthTick((n) => n + 1); };
+    window.addEventListener("tf-auth", onAuth);
+    return () => { mq.removeEventListener("change", on); window.removeEventListener("tf-kids", readKids); window.removeEventListener("tf-auth", onAuth); };
   }, []);
 
   useEffect(() => { getChapters(locale).then(setChapters).catch(() => undefined); }, [locale]);
@@ -109,7 +115,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       .then(([r, own]) => {
         setTranslationId(pickTranslation(locale, r.translations));
         const { options, hasLocal } = tafsirOptionsFor(locale, r.tafsirs);
-        const all: Resource[] = own ? [{ id: OWN_TAFSIR_ID, name: `TafsirFlow · ${meta.label}`, author_name: "", language_name: meta.resourceLang }, ...options] : options;
+        const all: Resource[] = own ? [{ id: OWN_TAFSIR_ID, name: `Quran Masterclass · ${meta.label}`, author_name: "", language_name: meta.resourceLang }, ...options] : options;
         setTafsirOpts(all);
         setHasLocalTafsir(hasLocal || own);
         setTafsirId(all[0]?.id ?? null);
@@ -163,8 +169,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     setLimitHit(false);
     (async () => {
       if (tafsirId === OWN_TAFSIR_ID) {
-        const r = await getOwnTafsir(locale, chapterId, verse.verse_number).catch(() => null);
-        if (!cancelled) setTafsir(r);
+        try {
+          const r = await getOwnTafsir(locale, chapterId, verse.verse_number);
+          if (!cancelled) setTafsir(r);
+        } catch (e) {
+          if (e instanceof LimitError && !cancelled) { setLimitHit(true); setNeedsVerify(e.needsVerify); setGateOpen(true); setTafsir(null); }
+          else if (!cancelled) setTafsir(null);
+        }
         return;
       }
       for (let n = verse.verse_number; n >= 1; n--) {
@@ -174,7 +185,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
           try {
             r = await getTafsir(tafsirId, `${chapterId}:${n}`, n === verse.verse_number);
           } catch (e) {
-            if (e instanceof LimitError && !cancelled) { setLimitHit(true); setTafsir(null); }
+            if (e instanceof LimitError && !cancelled) { setLimitHit(true); setNeedsVerify(e.needsVerify); setGateOpen(true); setTafsir(null); }
             else if (!cancelled) setTafsir(null);
             return;
           }
@@ -186,7 +197,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       if (!cancelled) setTafsir(null);
     })();
     return () => { cancelled = true; };
-  }, [verse, tafsirId, chapterId, isDesktop, sheetOpen, kids, locale]);
+  }, [verse, tafsirId, chapterId, isDesktop, sheetOpen, kids, locale, authTick]);
 
   const play = useCallback(() => {
     const a = audioRef.current;
@@ -295,7 +306,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       {limitHit && (
         <div className="rounded-xl bg-accent-soft p-4 text-sm">
           <p className="mb-3">{t("limitReached")}</p>
-          <Link href="/account" className="inline-block rounded-full bg-accent px-4 py-2 font-semibold text-white">{ta("register")}</Link>
+          <button onClick={() => setGateOpen(true)} className="inline-block rounded-lg bg-accent px-4 py-2 font-semibold text-white">{ta("register")}</button>
         </div>
       )}
       {tafsir === null && !limitHit && <p className="text-muted">{t("noTafsir")}</p>}
@@ -310,7 +321,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
           <div className="tafsir-html" dir={source?.language_name?.toLowerCase() === localeMeta(locale).resourceLang ? meta.dir : "ltr"} dangerouslySetInnerHTML={{ __html: tafsir.text }} />
           {source && (
             <p className="mt-4 border-t border-line pt-2 text-xs text-muted">
-              {t("source")}: {source.name}{source.author_name ? ` — ${source.author_name}` : ""} (Quran.com)
+              {t("source")}: {source.name}{source.author_name ? ` — ${source.author_name}` : ""}{source.id === OWN_TAFSIR_ID ? "" : " (Quran.com)"}
             </p>
           )}
         </>
@@ -323,17 +334,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const dockBtn = "grid h-11 w-11 place-items-center rounded-full text-ink transition hover:bg-accent-soft";
 
   return (
-    <div className="pb-48" style={{ ["--ar-scale" as string]: arSize }}>
-      <header className="sticky top-0 z-30 border-b border-line/70 bg-bg/85 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <Link href="/quran" className="flex items-center gap-2 text-sm font-medium text-accent" aria-label={t("back")}>
-            <span aria-hidden>←</span><Logo size={26} /><span className="hidden sm:inline">{t("back")}</span>
-          </Link>
-          <p className="hidden truncate font-display text-base font-semibold sm:block">{chapter.id}. {chapter.name_simple}</p>
-          <div className="flex min-w-0 items-center gap-1.5 sm:gap-2"><KidsToggle /><LanguageSwitcher /><AccountLink /></div>
-        </div>
-      </header>
-
+    <div className="pb-64 lg:pb-48" style={{ ["--ar-scale" as string]: arSize }}>
       <div className={`mx-auto px-4 ${kids ? "max-w-3xl" : "max-w-6xl lg:grid lg:grid-cols-[1fr_25rem] lg:gap-8"}`}>
         <main className="min-w-0">
           <section className="mb-8 mt-10 border-b border-line pb-8">
@@ -563,6 +564,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
         preload="auto"
       />
 
+      {gateOpen && limitHit && <AuthGate mode={needsVerify ? "verify" : "register"} onClose={() => setGateOpen(false)} />}
+
       {note && (
         <div role="status" className="fixed inset-x-0 bottom-28 z-50 flex justify-center px-4">
           <p className={`rounded-full bg-ink px-4 py-2 text-sm text-bg shadow-card ${kids ? "pop text-base" : ""}`}>{kids ? "🌟 " : ""}{note}</p>
@@ -570,7 +573,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       )}
 
       {/* Floating player dock */}
-      <div className="fixed inset-x-0 bottom-3 z-40 px-3">
+      <div className="fixed inset-x-0 bottom-[4.5rem] z-40 px-3 lg:bottom-3">
         <div dir="ltr" className="mx-auto max-w-xl overflow-hidden rounded-3xl border border-line bg-surface/95 shadow-[0_10px_40px_rgba(0,0,0,0.2)] backdrop-blur">
           <div className="h-1 bg-line"><div className="h-1 bg-accent transition-all" style={{ width: `${((idx + 1) / verses.length) * 100}%` }} /></div>
           <div className="flex items-center gap-2 px-4 pt-2.5 text-[11px] tabular-nums text-muted">

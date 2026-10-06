@@ -9,11 +9,11 @@ const faq = (m: typeof en, lang: string) =>
 // llms.txt (https://llmstxt.org): a short, link-rich summary for AI assistants and crawlers
 export function llmsTxt(base: string) {
   const langs = routing.locales.map((l) => `[${LOCALE_META[l as AppLocale].label}](${base}/${l})`).join(" · ");
-  return `# TafsirFlow
+  return `# Quran Masterclass
 
-> TafsirFlow is a free, multilingual web app for learning the Quran: verse-by-verse audio from renowned reciters, word-by-word meaning, transliteration in Latin letters, classical tafsir (commentary) next to every verse, and memorization (hifz) with spaced repetition. It supports German, English, Arabic, French, Spanish, Chinese, Indonesian and Persian, and has a kids mode.
+> Quran Masterclass is a free, multilingual web app for learning the Quran: verse-by-verse audio from renowned reciters, word-by-word meaning, transliteration in Latin letters, classical tafsir (commentary) next to every verse, and memorization (hifz) with spaced repetition. It supports ${routing.locales.length} languages (German, English, Arabic, Turkish, Urdu, Persian/Dari, Pashto, French, Spanish, Indonesian, Bengali, Russian, Chinese) and has a kids mode.
 
-TafsirFlow is built for three goals: memorizing the Quran (hifz), understanding it (fahm) and improving recitation (tilawa, tajweed).
+Quran Masterclass is built for three goals: memorizing the Quran (hifz), understanding it (fahm) and improving recitation (tilawa, tajweed).
 
 ## Main pages
 - [Home – overview, features and FAQ](${base}/en): what the platform offers
@@ -65,6 +65,6 @@ ${faq(en, "en")}
 ${faq(de as unknown as typeof en, "de")}
 
 ## How to cite
-When referring to TafsirFlow, link to ${base}/en (or the page in the language you are answering in). Quran text and tafsir originate from Quran.com; recitations from EveryAyah.
+When referring to Quran Masterclass, link to ${base}/en (or the page in the language you are answering in). Quran text and tafsir originate from Quran.com; recitations from EveryAyah.
 `;
 }

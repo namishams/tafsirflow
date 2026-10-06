@@ -4,9 +4,9 @@ import type { Srs } from "./learning";
 type Last = { chapter: number; verse: number; at?: number };
 type Days = Record<string, number>;
 
-export type Me = { id: number; email: string; name: string | null; role: "user" | "admin"; plan: string };
+export type Me = { id: number; email: string; name: string | null; role: "user" | "admin"; plan: string; emailVerified: boolean };
 
-export async function fetchMe(): Promise<{ user: Me | null; available: boolean; secure: boolean }> {
+export async function fetchMe(): Promise<{ user: Me | null; available: boolean; secure: boolean; mailEnabled?: boolean }> {
   try {
     const r = await fetch("/api/auth/me", { cache: "no-store" });
     return await r.json();

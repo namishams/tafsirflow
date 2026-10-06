@@ -15,7 +15,7 @@ export function alternates(locale: string, path: string) {
   return { canonical: abs(`/${locale}${path}`), languages };
 }
 
-const OG_LOCALE: Record<string, string> = { de: "de_DE", en: "en_US", ar: "ar_AR", fr: "fr_FR", es: "es_ES", zh: "zh_CN", id: "id_ID", fa: "fa_IR" };
+const OG_LOCALE: Record<string, string> = { de: "de_DE", en: "en_US", ar: "ar_AR", fr: "fr_FR", es: "es_ES", zh: "zh_CN", id: "id_ID", fa: "fa_IR", tr: "tr_TR", ru: "ru_RU", ur: "ur_PK", bn: "bn_BD", ps: "ps_AF" };
 
 export function pageMeta(locale: string, path: string, title: string, description: string, keywords?: string) {
   return {
@@ -26,7 +26,7 @@ export function pageMeta(locale: string, path: string, title: string, descriptio
     robots: INDEXABLE ? { index: true, follow: true } : { index: false, follow: false },
     openGraph: {
       type: "website" as const,
-      siteName: "TafsirFlow",
+      siteName: "Quran Masterclass",
       title,
       description,
       url: abs(`/${locale}${path}`),

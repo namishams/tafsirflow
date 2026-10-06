@@ -7,7 +7,7 @@ import { isHttps } from "./http";
 const COOKIE = "tf_session";
 const TTL_DAYS = 30;
 
-export type User = { id: number; email: string; name: string | null; role: "user" | "admin"; plan: string };
+export type User = { id: number; email: string; name: string | null; role: "user" | "admin"; plan: string; emailVerified: boolean };
 
 export function hashPassword(pw: string) {
   const salt = crypto.randomBytes(16);
@@ -49,15 +49,33 @@ export async function currentUser(): Promise<User | null> {
   if (!token) return null;
   try {
     const r = await p.query(
-      "SELECT u.id, u.email, u.name, u.role, u.plan FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token_hash = $1 AND s.expires_at > now()",
+      "SELECT u.id, u.email, u.name, u.role, u.plan, u.email_verified FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token_hash = $1 AND s.expires_at > now()",
       [sha(token)],
     );
     const u = r.rows[0];
     if (!u) return null;
-    return { ...u, id: Number(u.id), role: u.role === "admin" || isAdminEmail(u.email) ? "admin" : "user" };
+    const verified = !!u.email_verified;
+    // admin rights only for confirmed addresses, so nobody can claim the owner's e-mail before the owner confirms it
+    const admin = verified && (u.role === "admin" || isAdminEmail(u.email));
+    return { id: Number(u.id), email: u.email, name: u.name, plan: u.plan, emailVerified: verified, role: admin ? "admin" : "user" };
   } catch {
     return null;
   }
+}
+
+export async function issueVerification(userId: number): Promise<string> {
+  const token = crypto.randomBytes(32).toString("base64url");
+  const p = pool()!;
+  await p.query("DELETE FROM email_verifications WHERE user_id = $1", [userId]);
+  await p.query("INSERT INTO email_verifications (token_hash, user_id, expires_at) VALUES ($1, $2, now() + interval '2 days')", [sha(token), userId]);
+  return token;
+}
+
+export async function confirmVerification(token: string): Promise<boolean> {
+  const r = await pool()!.query("DELETE FROM email_verifications WHERE token_hash = $1 AND expires_at > now() RETURNING user_id", [sha(token)]);
+  if (!r.rows[0]) return false;
+  await pool()!.query("UPDATE users SET email_verified = true WHERE id = $1", [r.rows[0].user_id]);
+  return true;
 }
 
 export async function requireAdmin(): Promise<User | null> {

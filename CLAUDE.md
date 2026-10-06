@@ -1,4 +1,4 @@
-# TafsirFlow — project brief for Claude Code
+# Quran Masterclass (repo name: tafsirflow) — project brief for Claude Code
 
 Responsive web platform for listening to the Quran verse by verse and studying tafsir alongside the audio.
 Owner: Nami (contact@namishams.com). Working language with the owner: German.
@@ -12,7 +12,7 @@ Owner: Nami (contact@namishams.com). Working language with the owner: German.
 - **Accounts:** e-mail sign-up/login. Users get progress (last verse per surah), bookmarks, notes. Admin area for the owner.
 - **Freemium gate:** anonymous visitors can use tafsir up to a limit (default: 20 verses with tafsir per day, configurable in admin); after that, a free account is required. Later: paid premium tier (Stripe) — design the plan/entitlement model now, wire payments later.
 - **Responsive:** mobile-first; tafsir opens as a bottom sheet on phones (see prototype).
-- **Domain:** decided later. Suggested & available as of 2026-10-06: `tafsirflow.com` (+ `tafsirflow.de` redirect). Until then serve on the server IP.
+- **Domain & brand:** **quranmasterclass.com** (bought 2026-10-06), brand name "Quran Masterclass". Use `scripts/enable-domain.sh` to connect it (DNS A record → 186.240.158.226, then HTTPS).
 
 ### Open question to confirm with the owner
 - German tafsir source. No openly licensed classical German tafsir exists in the Quran.com API. Options presented: (a) AI-generated German explanations, clearly labelled as such and approved in the admin area before publishing; (b) owner/scholar writes German content in an admin editor; (c) license a published German tafsir. Build the content model so all three work (tafsir entries have `source`, `language`, `status: draft|approved`, `generated_by_ai: bool`).

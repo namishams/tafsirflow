@@ -28,6 +28,28 @@ CREATE INDEX IF NOT EXISTS sessions_user ON sessions(user_id);
 ALTER TABLE users ADD COLUMN IF NOT EXISTS city text;
 ALTER TABLE users ADD COLUMN IF NOT EXISTS country text;
 
+-- profile data collected at sign-up (GDPR: purpose = account, learning support; marketing only with separate opt-in)
+ALTER TABLE users ADD COLUMN IF NOT EXISTS first_name text;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS last_name text;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS country text;            -- ISO 3166-1 alpha-2
+ALTER TABLE users ADD COLUMN IF NOT EXISTS goal text;               -- hifz | fahm | tilawa | kids | all
+ALTER TABLE users ADD COLUMN IF NOT EXISTS locale text;             -- language chosen at sign-up
+ALTER TABLE users ADD COLUMN IF NOT EXISTS marketing_opt_in boolean NOT NULL DEFAULT false;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS terms_accepted_at timestamptz;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS last_login_at timestamptz;
+
+-- e-mail confirmation. Existing accounts (created before this column) count as confirmed once; new ones default to false.
+ALTER TABLE users ADD COLUMN IF NOT EXISTS email_verified boolean;
+UPDATE users SET email_verified = true WHERE email_verified IS NULL;
+ALTER TABLE users ALTER COLUMN email_verified SET DEFAULT false;
+ALTER TABLE users ALTER COLUMN email_verified SET NOT NULL;
+
+CREATE TABLE IF NOT EXISTS email_verifications (
+  token_hash text PRIMARY KEY,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  expires_at timestamptz NOT NULL
+);
+
 -- password reset links (token itself is only e-mailed; we keep its hash)
 CREATE TABLE IF NOT EXISTS password_resets (
   token_hash text PRIMARY KEY,
