@@ -46,7 +46,7 @@ export default function ArabicHome() {
 
       {/* placement test: for learners who can already read a bit (offered while units 1–6 are not finished) */}
       {nx && nx.unit <= 6 && (
-        <div className="mt-4 flex flex-wrap items-center gap-4 rounded-xl border border-line border-s-4 border-s-gold bg-surface p-5">
+        <div className="mt-4 flex flex-wrap items-center gap-4 rounded-xl callout p-5">
           <div className="min-w-0 flex-1 basis-60">
             <h3 className="font-display text-xl">{t.placeTitle}</h3>
             <p className="mt-1 text-sm leading-relaxed text-muted">{t.placeBody}</p>

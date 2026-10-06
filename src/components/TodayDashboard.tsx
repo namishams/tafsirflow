@@ -13,6 +13,9 @@ import { CITIES, dayFor, fmtTime, type Spot } from "@/lib/prayer";
 import { LESSONS as ARABIC_LESSONS, arabicPercent, nextArabic, readArabic } from "@/lib/arabic";
 import MemoryMap from "./MemoryMap";
 import { CoachCard } from "./ProgressPanel";
+import { SessionDone, SessionStart } from "./SessionStart";
+import Onboarding from "./Onboarding";
+import Heatmap from "./Heatmap";
 import PosterTiles from "./PosterTiles";
 import { IconCheckCircle, IconFlame } from "./Icons";
 
@@ -97,14 +100,16 @@ export default function TodayDashboard() {
               <Stat n={lvl} l={t("level")} sub={`${lvlPct} %`} />
             </dl>
           </div>
-          <div className="mt-7 flex flex-col gap-2 sm:flex-row">
-            <Link href={nextTask?.href ?? continueHref} className="btn-gold inline-flex h-12 items-center justify-center rounded-full px-6 text-[15px] font-bold">{nextTask ? nextTask.title : t("continueTitle", { surah: name(v.last?.chapter ?? 1), verse: v.last?.verse ?? 1 })} →</Link>
-            {v.last && nextTask && <Link href={continueHref} className="inline-flex h-12 items-center justify-center rounded-full border border-white/25 px-5 text-[14px] font-semibold hover:border-white">{t("continueTitle", { surah: name(v.last.chapter), verse: v.last.verse })}</Link>}
+          <div className="mt-7 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center">
+            <SessionStart />
+            {v.last && <Link href={continueHref} className="inline-flex h-12 items-center justify-center rounded-full border border-white/25 px-5 text-[14px] font-semibold hover:border-white">{t("continueTitle", { surah: name(v.last.chapter), verse: v.last.verse })}</Link>}
           </div>
         </div>
       </section>
 
       <div className="mx-auto max-w-4xl px-4">
+        <SessionDone />
+        <Onboarding />
         {/* checklist */}
         <section className="mt-8">
           <h2 className="font-display text-2xl">{t("tasksTitle")}</h2>
@@ -128,16 +133,8 @@ export default function TodayDashboard() {
         <div className="mt-8 grid gap-4 md:grid-cols-[0.9fr_1.1fr]">
           <section className="rounded-xl border border-line bg-surface p-5">
             <h2 className="text-[15px] font-bold">{t("weekTitle")}</h2>
-            <p className="text-xs text-muted">{t("weekHint", { n: v.week.reduce((a, d) => a + d.n, 0) })}</p>
-            <ol className="mt-4 flex h-28 items-end gap-2">
-              {v.week.map((d, i) => (
-                <li key={i} className="flex flex-1 flex-col items-center gap-1">
-                  <span className="text-[11px] tabular-nums text-muted">{d.n || ""}</span>
-                  <span className={`w-full rounded-t-md ${i === 6 ? "bg-gold" : "bg-accent/70"}`} style={{ height: `${Math.max(4, (d.n / weekMax) * 80)}px` }} />
-                  <span className="text-[11px] text-muted">{d.label}</span>
-                </li>
-              ))}
-            </ol>
+            <p className="mb-3 text-xs text-muted">{t("weekHint", { n: v.week.reduce((a, d) => a + d.n, 0) })}</p>
+            <Heatmap />
           </section>
           <section className="rounded-xl border border-line bg-surface p-5">
             <h2 className="text-[15px] font-bold">{t("pathsTitle")}</h2>
@@ -176,7 +173,7 @@ export default function TodayDashboard() {
         <div className="mt-10"><PosterTiles keys={["shams", "arabic", "salah", "tajweed", "vocab", "duas", "reciters", "islam"]} title={th("coursesTitle")} more={{ href: "/academy", label: th("coursesAll") }} /></div>
 
         {/* how the masterclass is built */}
-        <section className="mt-8 rounded-xl border border-line border-s-4 border-s-gold bg-surface p-5">
+        <section className="mt-8 rounded-xl callout p-5">
           <h2 className="font-display text-xl">{t("howTitle")}</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-muted">{t("howBody")}</p>
           <Link href="/how" className="mt-3 inline-block text-[14px] font-bold text-accent hover:underline">{t("howCta")} →</Link>

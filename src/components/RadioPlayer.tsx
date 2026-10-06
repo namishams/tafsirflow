@@ -130,7 +130,7 @@ export default function RadioPlayer() {
 
       <main className="mx-auto max-w-6xl px-4 pb-24 pt-10">
         {r.banner && (
-          <div role="status" className="mb-8 rounded-lg border border-line border-s-4 border-s-accent bg-surface p-4">
+          <div role="status" className="mb-8 rounded-lg callout p-4">
             <p className="text-[13px] font-bold text-accent">{t("adhanNow")}</p>
             <p className="font-display text-2xl">{t(`p_${r.banner}`)}</p>
             {r.adhanCredit && <p className="mt-1 text-xs text-muted">{r.adhanCredit}</p>}

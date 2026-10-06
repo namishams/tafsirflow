@@ -346,7 +346,7 @@ function BuildCard({ ex, t, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "
       <div className="flex-1 pt-8">
         {isRetry && <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-gold">{t.review}</p>}
         <h2 className="text-xl font-bold leading-snug">{ex.q}</h2>
-        <p className="mt-3 rounded-lg border border-line border-s-4 border-s-gold bg-surface p-3 text-[15px] leading-snug"><span className="block text-[11px] font-bold uppercase tracking-[0.16em] text-gold">{t.meaningLbl}</span>{ex.hint}</p>
+        <p className="mt-3 rounded-lg callout p-3 text-[15px] leading-snug"><span className="block text-[11px] font-bold uppercase tracking-[0.16em] text-gold">{t.meaningLbl}</span>{ex.hint}</p>
 
         {/* answer row: first tapped tile sits on the right */}
         <div dir="rtl" aria-label={t.emptyRow} className={`mt-5 flex min-h-[84px] flex-wrap content-start items-center gap-2 rounded-xl border-2 border-dashed p-3 ${checked ? (ok ? "border-accent bg-accent-soft" : "border-red-500/60 bg-red-500/5") : "border-line bg-surface"}`}>

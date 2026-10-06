@@ -9,6 +9,7 @@ export type SecretsContent = {
   claimsTitle: string; claimsLead: string; verdicts: Record<Verdict, string>;
   claims: { q: string; v: Verdict; a: string; key?: string }[];
   factsTitle: string; facts: { ar: string; title: string; body: string; src: string }[];
+  moreTitle?: string; more?: { ar: string; title: string; body: string; src: string }[];
   readTitle: string; readLead: string; hadith: { text: string; src: string }[];
   wealthTitle: string; wealthLead: string; promises: { ref: string; title: string; text: string }[]; wealthNote: string; wealthHadith: { text: string; src: string };
   placesTitle: string; placesLead: string; places: { ar: string; title: string; body: string; src: string; href?: string }[];
@@ -65,6 +66,22 @@ const de: SecretsContent = {
     { ar: "الدَّين", title: "Der längste Vers", body: "Der längste Vers ist der „Vers der Schuld“ (2:282): Er regelt, wie man Schulden schriftlich festhält – ein Zeichen, wie ernst der Quran Gerechtigkeit im Alltag nimmt.", src: "Quran 2:282" },
     { ar: "الكوثر", title: "Die kürzeste Sure", body: "Al-Kauthar (108) hat drei Verse und zehn Wörter. Die längste Sure, Al-Baqara, hat 286 Verse.", src: "Quran 108, 2" },
     { ar: "١١٤", title: "114 Suren, 6.236 Verse", body: "Der Quran hat 114 Suren und 6.236 Verse (Zählung nach Hafs), aufgeteilt in 30 Teile. In unserem Text sind es 77.429 Wörter – je nach Zählweise nennen andere leicht abweichende Zahlen.", src: "Uthmani-Text, König-Fahd-Komplex" },
+  ],
+  moreTitle: "Noch mehr Geheimnisse",
+  more: [
+    { ar: "التوبة", title: "Die Sure ohne Basmala", body: "At-Tauba (Sure 9) ist die einzige Sure, die nicht mit „Bismillāh ar-Raḥmān ar-Raḥīm“ beginnt. Die Gelehrten nennen dafür verschiedene Gründe – etwa, dass sie mit einer ernsten Aufkündigung beginnt.", src: "Quran 9:1" },
+    { ar: "النمل", title: "Die Sure mit zwei Basmalas", body: "An-Naml (Sure 27) hat die Basmala zweimal: am Anfang und in Vers 30, im Brief Sulaimans an die Königin von Saba.", src: "Quran 27:30" },
+    { ar: "المجادلة", title: "Allah in jedem Vers", body: "In Sure Al-Mudschādala (58) steht der Name „Allah“ in jedem ihrer 22 Verse – wir haben jeden einzelnen geprüft.", src: "Quran 58" },
+    { ar: "الرحمن", title: "31-mal dieselbe Frage", body: "In Sure Ar-Raḥmān (55) kehrt 31-mal die Frage wieder: „Welche der Wohltaten eures Herrn wollt ihr beide denn leugnen?“", src: "Quran 55:13" },
+    { ar: "المرسلات", title: "Zehnmal: „Wehe an jenem Tag …“", body: "Sure Al-Mursalāt (77) wiederholt zehnmal: „Wehe an jenem Tag den Leugnern!“", src: "Quran 77:15" },
+    { ar: "أبجد", title: "Alle 28 Buchstaben in einem Vers", body: "Nur zwei Verse enthalten jeden der 28 Buchstaben des arabischen Alphabets: 3:154 und 48:29, der Vers, der die Gefährten des Propheten ﷺ beschreibt.", src: "Quran 3:154, 48:29" },
+    { ar: "الم", title: "29 Suren mit rätselhaften Buchstaben", body: "29 Suren beginnen mit einzelnen Buchstaben wie Alif-Lām-Mīm, Yā-Sīn oder Qāf. Ihre Bedeutung kennt Allah allein – viele Gelehrte sehen in ihnen einen Hinweis, dass der Quran aus genau diesen Buchstaben besteht und doch unnachahmlich ist.", src: "z. B. Quran 2:1, 36:1, 50:1" },
+    { ar: "يونس", title: "Suren mit Namen von Propheten", body: "Sechs Suren tragen den Namen eines Propheten: Yūnus, Hūd, Yūsuf, Ibrāhīm, Muḥammad ﷺ und Nūḥ. Und eine Sure trägt den Namen einer Frau: Maryam.", src: "Quran 10, 11, 12, 14, 47, 71, 19" },
+    { ar: "مكية", title: "86 mekkanische, 28 medinensische Suren", body: "Nach der Einteilung im Madinah-Mushaf wurden 86 Suren in Mekka offenbart und 28 in Medina. Die mekkanischen sprechen vor allem vom Glauben, die medinensischen auch vom Zusammenleben der Gemeinschaft.", src: "Madinah-Mushaf" },
+    { ar: "سجدة", title: "Stellen der Niederwerfung", body: "An 15 Stellen ist im Madinah-Mushaf eine Niederwerfung beim Rezitieren markiert (Sudschūd at-Tilāwa). Die Rechtsschulen zählen 14 oder 15.", src: "z. B. Quran 7:206, 96:19" },
+    { ar: "العصر", title: "Drei Suren mit drei Versen", body: "Al-ʿAṣr, Al-Kauthar und An-Naṣr haben je nur drei Verse. Von Imam asch-Schāfiʿī wird überliefert: Hätten die Menschen nur über Al-ʿAṣr nachgedacht, sie hätte ihnen genügt.", src: "Quran 103, 108, 110; Tafsir Ibn Kathir" },
+    { ar: "فأسقيناكموه", title: "Eines der längsten Wörter", body: "„fa-asqaynākumūhu“ – „und Wir geben es euch zu trinken“ (15:22) – besteht aus elf Buchstaben und ist eines der längsten Wörter des Quran.", src: "Quran 15:22" },
+    { ar: "عمّ", title: "Der letzte Teil: 37 Suren", body: "Der dreißigste Teil, Dschuz ʿAmma, enthält 37 Suren (78–114) – die Suren, die die meisten Muslime als Erstes auswendig lernen.", src: "Quran 78–114" },
   ],
   readTitle: "Wer den Quran liest – was ihm verheißen ist",
   readLead: "Der Quran ist kein Buch, das man einmal liest und weglegt. Diese Worte des Propheten ﷺ sind authentisch überliefert:",
@@ -158,6 +175,22 @@ const en: SecretsContent = {
     { ar: "الكوثر", title: "The shortest surah", body: "Al-Kawthar (108) has three verses and ten words. The longest surah, Al-Baqarah, has 286 verses.", src: "Quran 108, 2" },
     { ar: "١١٤", title: "114 surahs, 6,236 verses", body: "The Quran has 114 surahs and 6,236 verses (Hafs count), divided into 30 parts. Our text has 77,429 words – depending on the way of counting, others give slightly different numbers.", src: "Uthmani text, King Fahd Complex" },
   ],
+  moreTitle: "More secrets",
+  more: [
+    { ar: "التوبة", title: "The surah without a basmala", body: "At-Tawbah (surah 9) is the only surah that does not begin with “Bismillāh ar-Raḥmān ar-Raḥīm”. Scholars give various reasons – for example that it opens with a solemn declaration of disassociation.", src: "Quran 9:1" },
+    { ar: "النمل", title: "The surah with two basmalas", body: "An-Naml (surah 27) has the basmala twice: at its beginning and in verse 30, in Sulayman’s letter to the Queen of Sheba.", src: "Quran 27:30" },
+    { ar: "المجادلة", title: "Allah in every verse", body: "In surah Al-Mujādilah (58) the name “Allah” appears in every one of its 22 verses – we checked each one.", src: "Quran 58" },
+    { ar: "الرحمن", title: "The same question 31 times", body: "In surah Ar-Raḥmān (55) one question returns 31 times: “So which of the favours of your Lord would you deny?”", src: "Quran 55:13" },
+    { ar: "المرسلات", title: "Ten times: “Woe, that Day …”", body: "Surah Al-Mursalāt (77) repeats ten times: “Woe, that Day, to the deniers!”", src: "Quran 77:15" },
+    { ar: "أبجد", title: "All 28 letters in one verse", body: "Only two verses contain every one of the 28 letters of the Arabic alphabet: 3:154 and 48:29, the verse that describes the companions of the Prophet ﷺ.", src: "Quran 3:154, 48:29" },
+    { ar: "الم", title: "29 surahs with mysterious letters", body: "29 surahs begin with single letters such as Alif-Lām-Mīm, Yā-Sīn or Qāf. Their meaning is known to Allah alone – many scholars see in them a sign that the Quran is made of exactly these letters and yet cannot be imitated.", src: "e.g. Quran 2:1, 36:1, 50:1" },
+    { ar: "يونس", title: "Surahs named after prophets", body: "Six surahs bear the name of a prophet: Yūnus, Hūd, Yūsuf, Ibrāhīm, Muḥammad ﷺ and Nūḥ. And one surah bears the name of a woman: Maryam.", src: "Quran 10, 11, 12, 14, 47, 71, 19" },
+    { ar: "مكية", title: "86 Makkan, 28 Madinan surahs", body: "According to the classification in the Madinah mushaf, 86 surahs were revealed in Makkah and 28 in Madinah. The Makkan surahs speak above all of faith, the Madinan ones also of life together as a community.", src: "Madinah mushaf" },
+    { ar: "سجدة", title: "Places of prostration", body: "In 15 places the Madinah mushaf marks a prostration during recitation (sujūd at-tilāwah). The schools of law count 14 or 15.", src: "e.g. Quran 7:206, 96:19" },
+    { ar: "العصر", title: "Three surahs with three verses", body: "Al-ʿAṣr, Al-Kawthar and An-Naṣr each have only three verses. Imam ash-Shāfiʿī is reported to have said: had people reflected only on Al-ʿAṣr, it would have sufficed them.", src: "Quran 103, 108, 110; Tafsir Ibn Kathir" },
+    { ar: "فأسقيناكموه", title: "One of the longest words", body: "“fa-asqaynākumūhu” – “and We gave it to you to drink” (15:22) – has eleven letters and is one of the longest words in the Quran.", src: "Quran 15:22" },
+    { ar: "عمّ", title: "The last part: 37 surahs", body: "The thirtieth part, Juz ʿAmma, contains 37 surahs (78–114) – the surahs most Muslims learn by heart first.", src: "Quran 78–114" },
+  ],
   readTitle: "Whoever reads the Quran – what is promised",
   readLead: "The Quran is not a book to read once and put away. These words of the Prophet ﷺ are authentically reported:",
   hadith: [
@@ -250,6 +283,22 @@ const ar: SecretsContent = {
     { ar: "الكوثر", title: "أقصر سورة", body: "سورة الكوثر (108) ثلاث آيات وعشر كلمات، وأطول السور البقرة بمئتين وست وثمانين آية.", src: "الكوثر، البقرة" },
     { ar: "١١٤", title: "114 سورة و6236 آية", body: "في القرآن 114 سورة و6236 آية بعدّ حفص، مقسّمة إلى ثلاثين جزءًا. وفي النص الذي عددنا فيه 77429 كلمة، وقد تختلف الأعداد قليلًا باختلاف طريقة العدّ.", src: "النص العثماني، مجمع الملك فهد" },
   ],
+  moreTitle: "مزيد من الأسرار",
+  more: [
+    { ar: "التوبة", title: "السورة التي لا تبدأ بالبسملة", body: "سورة التوبة (9) هي السورة الوحيدة التي لم تُفتتح بـ«بسم الله الرحمن الرحيم»، وذكر العلماء لذلك أسبابًا، منها أنها افتُتحت بإعلان البراءة.", src: "التوبة: 1" },
+    { ar: "النمل", title: "سورة فيها بسملتان", body: "في سورة النمل (27) بسملتان: في أولها، وفي الآية 30 في كتاب سليمان إلى ملكة سبأ.", src: "النمل: 30" },
+    { ar: "المجادلة", title: "لفظ الجلالة في كل آية", body: "في سورة المجادلة (58) ورد لفظ الجلالة «الله» في كل آية من آياتها الاثنتين والعشرين، وقد تحققنا من كل آية.", src: "سورة المجادلة" },
+    { ar: "الرحمن", title: "السؤال نفسه 31 مرة", body: "في سورة الرحمن (55) يتكرر قوله تعالى: ﴿فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ﴾ إحدى وثلاثين مرة.", src: "الرحمن: 13" },
+    { ar: "المرسلات", title: "عشر مرات: ﴿وَيْلٌ يَوْمَئِذٍ﴾", body: "تكرر في سورة المرسلات (77) قوله تعالى: ﴿وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ﴾ عشر مرات.", src: "المرسلات: 15" },
+    { ar: "أبجد", title: "الحروف الثمانية والعشرون في آية واحدة", body: "آيتان فقط جمعت كل منهما حروف الهجاء الثمانية والعشرين: آل عمران 154، والفتح 29 التي تصف أصحاب النبي ﷺ.", src: "آل عمران: 154، الفتح: 29" },
+    { ar: "الم", title: "29 سورة تبدأ بالحروف المقطعة", body: "تبدأ 29 سورة بحروف مقطعة مثل ﴿الم﴾ و﴿يس﴾ و﴿ق﴾، والله أعلم بمراده بها، ويرى كثير من العلماء فيها إشارة إلى أن القرآن مؤلَّف من هذه الحروف نفسها ومع ذلك لا يُستطاع الإتيان بمثله.", src: "مثل البقرة: 1، يس: 1، ق: 1" },
+    { ar: "يونس", title: "سور بأسماء الأنبياء", body: "ست سور تحمل أسماء أنبياء: يونس، وهود، ويوسف، وإبراهيم، ومحمد ﷺ، ونوح. وسورة واحدة تحمل اسم امرأة: مريم.", src: "السور 10، 11، 12، 14، 47، 71، 19" },
+    { ar: "مكية", title: "86 سورة مكية و28 مدنية", body: "بحسب تصنيف مصحف المدينة نزلت 86 سورة في مكة و28 في المدينة؛ تتحدث المكية في الغالب عن العقيدة، والمدنية أيضًا عن تنظيم حياة المجتمع.", src: "مصحف المدينة النبوية" },
+    { ar: "سجدة", title: "مواضع السجود", body: "في مصحف المدينة 15 موضعًا لسجود التلاوة، وتعدّها المذاهب الفقهية أربعة عشر أو خمسة عشر.", src: "مثل الأعراف: 206، العلق: 19" },
+    { ar: "العصر", title: "ثلاث سور في كل منها ثلاث آيات", body: "سور العصر والكوثر والنصر في كل منها ثلاث آيات فقط، ويُروى عن الإمام الشافعي: لو تدبّر الناس سورة العصر لكفتهم.", src: "السور 103، 108، 110؛ تفسير ابن كثير" },
+    { ar: "فأسقيناكموه", title: "من أطول كلمات القرآن", body: "كلمة ﴿فَأَسْقَيْنَاكُمُوهُ﴾ (الحجر: 22) من أحد عشر حرفًا، وهي من أطول كلمات القرآن.", src: "الحجر: 22" },
+    { ar: "عمّ", title: "الجزء الأخير: 37 سورة", body: "يضم الجزء الثلاثون، جزء عمّ، 37 سورة (78–114)، وهي السور التي يحفظها أكثر المسلمين أولًا.", src: "السور 78–114" },
+  ],
   readTitle: "ما وُعد به قارئ القرآن",
   readLead: "القرآن ليس كتابًا يُقرأ مرة ثم يُترك. وهذه أحاديث صحيحة عن النبي ﷺ:",
   hadith: [
@@ -295,5 +344,5 @@ export async function secretsContent(locale: string): Promise<SecretsContent> {
   if (locale === "de") return de;
   if (locale === "ar") return ar;
   if (locale === "en") return en;
-  try { return (await import(`../pagecontent/${locale}/secrets`)).default as SecretsContent; } catch { return en; }
+  try { return { ...en, ...((await import(`../pagecontent/${locale}/secrets`)).default as SecretsContent) }; } catch { return en; }
 }

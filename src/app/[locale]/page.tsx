@@ -161,7 +161,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
               </li>
             ))}
           </ol>
-          <p className="mt-10 max-w-3xl border-s-4 border-accent ps-5 text-[17px] leading-relaxed">{t("home2.methodOutro")}</p>
+          <p className="mt-10 max-w-3xl border-s border-[rgb(var(--gold))]/60 ps-5 text-[17px] leading-relaxed">{t("home2.methodOutro")}</p>
         </section>
 
         {/* 7 Features */}

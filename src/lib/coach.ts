@@ -130,6 +130,10 @@ export function learner(srs: Srs = readSrs()): Learner {
   };
 }
 
+// What the learner told us when starting (onboarding on the Today page)
+export type Goal = { read: "no" | "some" | "fluent"; aim: "read" | "juzamma" | "hifz" | "understand"; minutes: number; at: number };
+export const readGoal = () => readJSON<Goal | null>("tf:goal", null);
+
 export type DayPlan = { reviews: string[]; repair: string[]; newVerses: number; next: { surah: number; verse: number }; minutes: number; reason: "start" | "light" | "steady" | "consolidate" | "reviewOnly" };
 
 // Today's session: reviews first (weakest first), then repairs, then as many new verses as the learner can carry.
@@ -140,7 +144,9 @@ export function dayPlan(srs: Srs = readSrs()): DayPlan {
   const due = counted(srs).filter(([, e]) => e.due <= t).map(([k]) => k);
   const repair = due.filter((k) => (verseStrength(srs, k) ?? 0) < 0.4 || (srs[k].lapses ?? 0) >= 3);
   const reviews = due.filter((k) => !repair.includes(k)).sort((a, b) => (verseStrength(srs, a) ?? 0) - (verseStrength(srs, b) ?? 0));
-  const capacity = Math.max(6, Math.min(40, L.pace || 8));
+  // how much fits into a day: the learner's own minutes (onboarding) or the pace of the last two weeks
+  const goal = readGoal();
+  const capacity = Math.max(6, Math.min(40, goal?.minutes ? Math.round(goal.minutes * 1.2) : L.pace || 8));
   let newVerses: number, reason: DayPlan["reason"];
   if (L.learned === 0) { newVerses = 3; reason = "start"; }
   else if (due.length > capacity * 1.5) { newVerses = 0; reason = "reviewOnly"; }

@@ -128,7 +128,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
           </ul>
         </section>
 
-        <section className="mt-12 rounded-xl border border-line border-s-4 border-s-gold bg-surface p-6">
+        <section className="mt-12 rounded-xl callout p-6">
           <h2 className="font-display text-2xl">{c.promiseTitle}</h2>
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">{c.promises.map((p) => <li key={p} className="flex gap-2 text-[15px]"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />{p}</li>)}</ul>
         </section>

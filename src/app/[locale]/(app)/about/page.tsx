@@ -50,7 +50,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <div key={v.t} className="bg-surface p-6"><p className="font-display text-3xl text-[rgb(var(--gold))]">0{i + 1}</p><h3 className="mt-2 text-lg font-bold">{v.t}</h3><p className="mt-2 text-[15px] leading-relaxed text-muted">{v.d}</p></div>
           ))}
         </div>
-        <div className="mt-12 rounded-lg border border-line border-s-4 border-s-gold bg-surface p-6 sm:p-8">
+        <div className="mt-12 rounded-lg callout p-6 sm:p-8">
           <h2 className="font-display text-3xl leading-tight">{c.freeTitle}</h2>
           <Markdown text={c.free} />
         </div>

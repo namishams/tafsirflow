@@ -47,7 +47,7 @@ export default async function IslamHub({ params }: { params: Promise<{ locale: s
       </section>
 
       <section className="mx-auto max-w-6xl px-5 pb-16 sm:pb-24">
-        <div className="rounded-lg border border-line border-s-4 border-s-gold bg-surface p-6 sm:p-8">
+        <div className="rounded-lg callout p-6 sm:p-8">
           <h2 className="font-display text-3xl">{u.uaeTitle}</h2>
           <p className="mt-3 max-w-3xl text-[16px] leading-relaxed text-ink/90">{u.uae}</p>
           <p className="mt-4 text-sm text-muted">{u.note}</p>

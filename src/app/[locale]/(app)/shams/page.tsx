@@ -147,7 +147,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
             <div key={i} className="bg-surface p-6"><p className="font-display text-4xl text-[rgb(var(--gold))]">0{i + 1}</p><h3 className="mt-3 text-lg font-bold">{p.t}</h3><p className="mt-2 text-[15px] leading-relaxed text-muted">{p.d}</p></div>
           ))}
         </div>
-        <div className="mt-12 max-w-4xl border-s-4 border-[rgb(var(--gold))] ps-6">
+        <div className="mt-12 max-w-4xl border-s border-[rgb(var(--gold))]/60 ps-6">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">{c.solutionTitle}</p>
           <p className="font-display mt-3 text-2xl leading-snug sm:text-3xl">{c.solution}</p>
         </div>
@@ -325,7 +325,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
               </details>
             ))}
           </div>
-          <p className="mt-8 rounded-lg border border-line border-s-4 border-s-gold bg-bg p-4 text-sm leading-relaxed text-muted">{t("note")}</p>
+          <p className="mt-8 rounded-lg callout p-4 text-sm leading-relaxed text-muted">{t("note")}</p>
         </div>
       </section>
 

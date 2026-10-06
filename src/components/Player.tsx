@@ -10,6 +10,8 @@ import SocialBar from "./SocialBar";
 import SurahPicker from "./SurahPicker";
 import { Ink, SurahBanner } from "./Ornaments";
 import ReciteCheck from "./ReciteCheck";
+import SessionBar from "./SessionBar";
+import { completeItem, itemUrl } from "@/lib/session";
 import { offlineReady, removeSurah, saveSurah, savedSurahs } from "@/lib/offline";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume, IconFlame } from "./Icons";
@@ -68,7 +70,7 @@ function hooks(v: Verse, next?: Verse) {
 
 type Initial = { chapter: Chapter; verses: Verse[]; translationId: number };
 
-export default function Player({ chapterId, startVerse, startHide = 0, reviewMode = false, shamsStart = false, initial }: { chapterId: number; startVerse: number; startHide?: number; reviewMode?: boolean; shamsStart?: boolean; initial?: Initial }) {
+export default function Player({ chapterId, startVerse, startHide = 0, reviewMode = false, shamsStart = false, sessionMode = false, initial }: { chapterId: number; startVerse: number; startHide?: number; reviewMode?: boolean; shamsStart?: boolean; sessionMode?: boolean; initial?: Initial }) {
   const router = useRouter();
   const t = useTranslations("player");
   const th = useTranslations("home");
@@ -469,10 +471,18 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   }, [shams, idx]);
   const stepPos = plan && shams !== null ? plan.steps.indexOf(shams) : -1;
   const lastStep = !!plan && stepPos === plan.steps.length - 1;
+  // today's session: after a verse go to the next item (another verse, possibly another surah) or to the summary
+  const goSession = (ok: boolean) => {
+    if (!verse) return;
+    const next = completeItem(verse.verse_key, ok);
+    audioRef.current?.pause();
+    router.push(next ? itemUrl(next) : "/today?session=done");
+  };
   const nextShams = () => {
     if (shams === null || !plan) return;
     stopLink();
     if (!lastStep) { setShams(plan.steps[stepPos + 1]); return; }
+    if (sessionMode) { goSession(true); return; }
     if (idx < verses.length - 1) goTo(idx + 1, false); else stopShams();
   };
 
@@ -511,6 +521,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     const days = rate(verse.verse_key, r);
     setNote(days ? t("saved", { days }) : t("savedToday"));
     if (shams !== null) { if (r === "again" && plan) { beginPlan(idx); return; } nextShams(); return; }
+    if (sessionMode) { setTimeout(() => goSession(r !== "again"), 500); return; }
     if (reviewMode) {
       const next = dueVerses().find((k) => k !== verse.verse_key);
       if (next) {
@@ -617,6 +628,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     <div className="pb-64 lg:pb-48" style={{ ["--ar-scale" as string]: arSize }}>
       <div className={`mx-auto px-4 ${kids ? "max-w-3xl" : "max-w-6xl lg:grid lg:grid-cols-[1fr_25rem] lg:gap-8"}`}>
         <main className="min-w-0">
+          {sessionMode && <SessionBar />}
           <section className="mb-8 mt-8 border-b border-line pb-8 text-center">
             <p className="eyebrow">{th("surahLabel", { n: chapter.id })} · {chapter.verses_count} {th("verses")}</p>
             <SurahBanner arabic={`سورة ${chapter.name_arabic}`} className="mt-4" />
@@ -736,12 +748,22 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               const marked = marks.includes(v.verse_key);
               const tool = hide === 0 ? "read" : hide === 6 ? "test" : "practice";
               const markWord = (ok: boolean) => () => { const m = { ...testMarks, [testPos]: ok }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); };
+              // Shams focus: only the verse being learned (and the one before it, for connecting) stays open – the rest fold into one quiet line
+              if (shams !== null && i !== idx && i !== idx - 1) return (
+                <li key={v.verse_key} id={`v-${i}`} className="scroll-mt-20">
+                  <button onClick={() => goTo(i, false)} className="flex w-full items-center gap-3 rounded-xl border border-line/50 bg-surface/40 px-4 py-2 text-start text-muted transition hover:bg-surface">
+                    <span className="w-7 shrink-0 text-center text-[12px] tabular-nums">{v.verse_number}</span>
+                    <span className="font-arabic min-w-0 flex-1 truncate text-lg leading-loose" dir="rtl">{v.text_uthmani}</span>
+                  </button>
+                </li>
+              );
               return (
                 <li key={v.verse_key} id={`v-${i}`} className="scroll-mt-20">
                   <article
                     onClick={() => !active && goTo(i)}
-                    className={`rounded-2xl border p-5 transition ${celebrate === v.verse_key ? "glow-once" : ""} ${active ? "border-accent/30 border-s-4 border-s-accent bg-surface shadow-card" : "cursor-pointer border-line/70 bg-surface/60 hover:bg-surface"}`}
+                    className={`relative rounded-2xl border p-5 transition duration-500 ${celebrate === v.verse_key ? "glow-once" : ""} ${shams !== null && !active ? "opacity-60" : ""} ${active ? "verse-frame border-[rgb(var(--gold))]/35 bg-surface" : "cursor-pointer border-line/70 bg-surface/60 hover:bg-surface"}`}
                   >
+                    {active && <><span aria-hidden className="frame-corner start-2 top-2 border-s border-t" /><span aria-hidden className="frame-corner end-2 top-2 border-e border-t" /><span aria-hidden className="frame-corner bottom-2 start-2 border-b border-s" /><span aria-hidden className="frame-corner bottom-2 end-2 border-b border-e" /></>}
                     <div className="mb-3 flex items-center justify-between">
                       <span className="relative grid h-9 w-9 place-items-center" aria-label={`${t("verse")} ${v.verse_number}`}>
                         <span className="absolute inset-1 rotate-45 rounded-[5px] bg-accent-soft" />
@@ -759,7 +781,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                                 <div role="menu" className="absolute end-0 top-10 z-20 w-44 rounded-lg border border-line bg-surface p-1 shadow-card">
                                   <button role="menuitem" className={menuItem} onClick={() => { copyVerse(v); setMenuFor(null); }}><IconCopy />{t("copy")}</button>
                                   <button role="menuitem" className={menuItem} onClick={() => { shareVerse(v); setMenuFor(null); }}><IconShare />{t("share")}</button>
-                                  <button role="menuitem" className={menuItem} onClick={() => { goTo(i, true); setMenuFor(null); }}><IconPlaySm />{t("playVerse")}</button>
+                                  <button role="menuitem" className={menuItem} onClick={() => { if (i === idx) { const a = audioRef.current; if (a) { a.currentTime = 0; playsDone.current = 0; play(); } } else goTo(i, true); setMenuFor(null); }}><IconPlaySm />{t("playVerse")}</button>
                                 </div>
                               )}
                             </>

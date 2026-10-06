@@ -94,7 +94,7 @@ export default async function ArabicPage({ params }: { params: Promise<{ locale:
         <div className="mt-6 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {c.how.map(([h, d], i) => <div key={h} className="bg-surface p-5"><p className="font-display text-3xl text-gold">0{i + 1}</p><h3 className="mt-2 font-bold">{h}</h3><p className="mt-1 text-sm leading-relaxed text-muted">{d}</p></div>)}
         </div>
-        <p className="mt-5 rounded-lg border border-line border-s-4 border-s-gold bg-surface p-4 text-[15px] leading-relaxed">{c.teacher}</p>
+        <p className="mt-5 rounded-lg callout p-4 text-[15px] leading-relaxed">{c.teacher}</p>
       </section>
 
       <section className="mx-auto max-w-6xl px-5 pb-16">

@@ -89,13 +89,30 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
         </ul>
       </section>
 
+      {c.more && c.more.length > 0 && (
+        <section className="mx-auto max-w-6xl px-5 pb-14 sm:pb-20">
+          <h2 className="font-display text-3xl sm:text-4xl">{c.moreTitle}</h2>
+          <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+            {c.more.map((f, i) => (
+              <li key={f.title} className="relative overflow-hidden rounded-xl border border-line bg-surface p-5">
+                <span aria-hidden className="font-callig pointer-events-none absolute -end-1 -top-1 whitespace-nowrap text-[3.4rem] leading-none text-[rgb(var(--gold))] opacity-[0.12]" dir="rtl">{f.ar}</span>
+                <span className="relative text-[11px] font-semibold tabular-nums text-gold">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="font-display relative mt-1 text-[19px] leading-tight">{f.title}</h3>
+                <p className="relative mt-2 text-[14.5px] leading-relaxed text-muted">{f.body}</p>
+                <p className="relative mt-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-accent">{f.src}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       <section className="border-y border-line bg-surface">
         <div className="mx-auto max-w-4xl px-5 py-14 sm:py-20">
           <h2 className="font-display text-3xl sm:text-4xl">{c.readTitle}</h2>
           <p className="mt-3 text-[16px] leading-relaxed text-muted">{c.readLead}</p>
           <ul className="mt-8 grid gap-4">
             {c.hadith.map((h) => (
-              <li key={h.src} className="border-s-2 border-gold/60 ps-4">
+              <li key={h.src} className="border-s border-gold/60 ps-4">
                 <p className="text-[17px] leading-relaxed">{h.text}</p>
                 <p className="mt-1.5 text-[13px] font-semibold text-gold">{h.src}</p>
               </li>
