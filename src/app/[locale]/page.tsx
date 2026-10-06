@@ -89,6 +89,23 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         {/* 2 Verse of the day */}
         <VerseOfTheDay locale={locale} />
 
+        {/* 2b Shams Method */}
+        <section className="mx-auto max-w-6xl px-5 pt-16 sm:pt-24">
+          <div className="grid gap-8 rounded-lg border border-line bg-surface p-6 sm:p-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <div>
+              <p className="eyebrow text-gold">{t("shams.homeEyebrow")} · {t("shams.by")}</p>
+              <h2 className="font-display mt-3 text-4xl leading-[1.1] sm:text-5xl">{t("shams.homeTitle")}</h2>
+              <p className="mt-4 text-[17px] leading-relaxed text-muted">{t("shams.homeLead")}</p>
+              <Link href="/shams" className="mt-6 inline-flex h-12 items-center rounded-md bg-ink px-6 text-[15px] font-bold text-bg hover:opacity-90">{t("shams.homeCta")}</Link>
+            </div>
+            <ol className="grid gap-px overflow-hidden rounded-md border border-line bg-line text-[15px]">
+              {[1, 2, 3, 4, 5, 6, 7].map((n) => (
+                <li key={n} className="flex items-center gap-3 bg-surface px-4 py-3"><span className="w-5 text-sm font-extrabold text-gold tabular-nums">{n}</span><span className="font-semibold">{t(`shams.s${n}`)}</span></li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
         {/* 3 Why */}
         <section className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">
           <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{t("landing.whyTitle")}</h2>

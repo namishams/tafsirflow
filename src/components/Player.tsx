@@ -24,13 +24,27 @@ const seg = (on: boolean) =>
   `rounded-lg px-3 py-1.5 text-sm transition ${on ? "bg-accent text-white shadow-card" : "text-muted hover:text-ink"}`;
 const field = "rounded-lg border border-line bg-surface px-2 py-1.5 text-sm text-ink";
 
+// First letter of an Arabic word (with its vowel marks) as a memory cue; a tatweel keeps the joined initial form
+const NON_JOINING = "اأإآٱءدذرزوؤة";
+const MARKS = "[\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]*";
+function firstLetter(word: string) {
+  // the article al- carries no information: show it together with the first letter of the word itself
+  const art = word.match(new RegExp(`^[ٱا]${MARKS}ل${MARKS}`, "u"));
+  const rest = art ? word.slice(art[0].length) : word;
+  const m = rest.match(new RegExp(`^.${MARKS}`, "u"));
+  const g = m ? m[0] : rest.slice(0, 1);
+  const cue = (art ? art[0] : "") + g;
+  return NON_JOINING.includes(g[0]) || cue.length >= word.length ? cue : `${cue}ـ`;
+}
+
 type Initial = { chapter: Chapter; verses: Verse[]; translationId: number };
 
-export default function Player({ chapterId, startVerse, startHide = 0, reviewMode = false, initial }: { chapterId: number; startVerse: number; startHide?: number; reviewMode?: boolean; initial?: Initial }) {
+export default function Player({ chapterId, startVerse, startHide = 0, reviewMode = false, shamsStart = false, initial }: { chapterId: number; startVerse: number; startHide?: number; reviewMode?: boolean; shamsStart?: boolean; initial?: Initial }) {
   const router = useRouter();
   const t = useTranslations("player");
   const th = useTranslations("home");
   const ta = useTranslations("account");
+  const ts = useTranslations("shams");
   const locale = useLocale();
   const meta = localeMeta(locale);
   // the audio element is shared and lives beyond this page (see lib/versePlayback.ts)
@@ -57,7 +71,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [useRemote, setUseRemote] = useState(false); // local file failed -> Quran.com audio
   const [timingsOk, setTimingsOk] = useState(true);
   const [dbg, setDbg] = useState("");
-  const [hide, setHide] = useState(startHide); // 0 show all, 1 hide every 2nd word, 2 hide all
+  const [hide, setHide] = useState(startHide); // 0 show all, 1 hide every 2nd word, 2 hide all, 3 first letters only (cue)
   const [revealed, setRevealed] = useState(false);
   const [note, setNote] = useState("");
   const [limitHit, setLimitHit] = useState(false);
@@ -74,6 +88,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const reciter = reciters.find((r) => r.folder === reciterFolder) ?? reciters[0];
   const [showTranslation, setShowTranslation] = useState(true);
   const [showWords, setShowWords] = useState(false);
+  const [shams, setShams] = useState<number | null>(null); // Shams method: current step 0–6, null = off
+  const [chain, setChain] = useState<number | null>(null); // backward build-up: index of the first word segment being played
+  const [chainDone, setChainDone] = useState(false);
   const [showTranslit, setShowTranslit] = useState(true);
   const [loopOn, setLoopOn] = useState(false);
   const [loopFrom, setLoopFrom] = useState(1);
@@ -240,12 +257,39 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     setActiveWord(s ? s.word : null);
   };
 
+  // Backward build-up (Shams method): last word, last two words, … up to the whole verse, using the word timings
+  const chainSegs = useMemo(() => (verse ? [...verse.segments].sort((a, b) => a.start - b.start) : []), [verse]);
+  const chainStep = Math.max(1, Math.ceil(chainSegs.length / 6));
+  const playFrom = (k: number) => {
+    const a = audioRef.current;
+    if (!a || !chainSegs[k]) return;
+    a.currentTime = chainSegs[k].start / 1000;
+    a.playbackRate = speed;
+    a.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+  };
+  const startChain = () => {
+    setChainDone(false);
+    if (chainSegs.length < 2) { setChain(null); goTo(idx, true); return; } // no word timings: plain slow repetition
+    const k = Math.max(0, chainSegs.length - chainStep);
+    setChain(k);
+    playFrom(k);
+  };
+  const continueChain = () => {
+    if (chain === null) return;
+    if (chain === 0) { setChain(null); setChainDone(true); setPlaying(false); return; }
+    const k = Math.max(0, chain - chainStep);
+    setChain(k);
+    playFrom(k);
+  };
+  const chainFrom = chain !== null ? chainSegs[chain]?.word ?? 0 : null;
+
   const advance = () => {
     if (loopOn && idx >= loopTo - 1) { goTo(Math.max(0, loopFrom - 1)); return; }
     if (idx < verses.length - 1) goTo(idx + 1);
   };
 
   const onEnded = () => {
+    if (chain !== null) { continueChain(); return; }
     playsDone.current += 1;
     setActiveWord(null);
     if (playsDone.current < repeat) { play(); return; }
@@ -261,6 +305,31 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     const last = verse?.segments.reduce((m, s) => Math.max(m, s.end), 0) ?? 0;
     if (!a || useRemote || !last || !isFinite(a.duration)) return;
     setTimingsOk(Math.abs(a.duration * 1000 - last) <= 1500);
+  };
+
+  // Shams method: every step sets up the page for one learning activity
+  useEffect(() => {
+    if (shams === null) return;
+    const replay = () => goTo(idx, true);
+    switch (shams) {
+      case 0: setMode("learn"); setRepeat(3); setSpeed(1); setShowWords(false); setShowTranslit(false); setShowTranslation(false); setHide(0); setSheetOpen(false); replay(); break;
+      case 1: setRepeat(1); setSpeed(hasTimings ? 0.85 : 0.75); setShowTranslit(true); if (hasTimings) startChain(); else { setRepeat(3); replay(); } break;
+      case 2: setChain(null); setRepeat(1); setSpeed(1); setShowWords(true); setShowTranslit(true); break;
+      case 3: setShowWords(false); setShowTranslation(true); break;
+      case 4: if (!isDesktop) setSheetOpen(true); break;
+      case 5: setSheetOpen(false); setShowTranslation(false); setShowTranslit(false); setHide(3); break;
+      case 6: setHide(0); setShowTranslation(true); setNoteOpen(verse?.verse_key ?? null); break;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [shams]);
+  const startShams = () => setShams(0);
+  const shamsAuto = useRef(shamsStart);
+  useEffect(() => { if (shamsAuto.current && verse) { shamsAuto.current = false; setShams(0); } }, [verse]);
+  const stopShams = () => { setShams(null); setChain(null); setMode("continuous"); setRepeat(1); setSpeed(1); setShowWords(false); setShowTranslit(true); setShowTranslation(true); setHide(0); };
+  const nextShams = () => {
+    if (shams === null) return;
+    if (shams < 6) { setShams(shams + 1); return; }
+    if (idx < verses.length - 1) { goTo(idx + 1, false); setShams(-1); setTimeout(() => setShams(0), 0); } else stopShams();
   };
 
   // wire the shared audio element to this page
@@ -294,6 +363,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (!verse) return;
     const days = rate(verse.verse_key, r);
     setNote(days ? t("saved", { days }) : t("savedToday"));
+    if (shams !== null) { setShams(6); return; }
     if (reviewMode) {
       const next = dueVerses().find((k) => k !== verse.verse_key);
       if (next) {
@@ -398,6 +468,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               </select>
             </label>
             {verse.page > 0 && <span className="text-muted tabular-nums">{t("page")} {verse.page} · {t("juz")} {verse.juz} / {t("hizb")} {verse.hizb}</span>}
+            {!kids && (shams === null
+              ? <button onClick={startShams} className="inline-flex h-9 items-center gap-2 rounded-md bg-ink px-3.5 text-[13px] font-bold text-bg hover:opacity-90"><span aria-hidden>☀</span>{ts("start")}</button>
+              : <button onClick={stopShams} className="inline-flex h-9 items-center rounded-md border border-line px-3.5 text-[13px] font-bold hover:border-ink">{ts("stop")}</button>)}
             <div className="inline-flex rounded-lg bg-surface p-1 ring-1 ring-line">
               <button className={seg(view === "verses")} onClick={() => setViewPref("verses")}>{t("viewVerses")}</button>
               <button className={seg(view === "reading")} onClick={() => setViewPref("reading")}>{t("viewReading")}</button>
@@ -499,10 +572,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {active ? (
                       <p className="ar-text flex flex-wrap justify-start gap-x-3 gap-y-2 font-arabic" dir="rtl">
                         {words.map((w, wi) => {
-                          const covered = hide > 0 && !revealed && (hide === 2 || wi % 2 === 1);
+                          const covered = (hide === 1 || hide === 2) && !revealed && (hide === 2 || wi % 2 === 1);
+                          const cueOnly = hide === 3 && !revealed;
+                          const outOfChain = chainFrom !== null && w.position < chainFrom;
                           return (
                           <span key={w.position} className="text-center">
-                            <span className={`block rounded-lg px-1.5 transition ${covered ? "select-none bg-line text-transparent blur-sm" : ""} ${!covered && hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{w.text_uthmani}</span>
+                            <span className={`block rounded-lg px-1.5 transition ${covered ? "select-none bg-line text-transparent blur-sm" : ""} ${cueOnly ? "text-gold" : ""} ${outOfChain ? "opacity-25" : ""} ${!covered && hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{cueOnly ? firstLetter(w.text_uthmani) : w.text_uthmani}</span>
                             {showWords && !covered && (
                               <span className="block font-sans text-[11px] leading-tight text-muted" dir="ltr">
                                 {showTranslit && <span className="block italic text-gold">{w.transliteration?.text}</span>}
@@ -521,8 +596,31 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                       <p className="mt-3 italic leading-relaxed text-gold" dir="ltr" lang="en">{v.transliteration}</p>
                     )}
                     {showTranslation && <p className="mt-2 leading-relaxed text-muted" dir={meta.dir}>{v.translation}</p>}
-                    {active && !kids && <SocialBar verseKey={v.verse_key} shareText={v.translation} />}
-                    {active && (
+                    {active && shams !== null && shams >= 0 && (
+                      <div className="mt-5 rounded-lg border border-line border-s-4 border-s-gold bg-bg p-4" onClick={(e) => e.stopPropagation()}>
+                        <div className="flex items-center justify-between gap-3">
+                          <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-gold">{ts("title")} · {ts("stepOf", { n: shams + 1, total: 7 })}</p>
+                          <Link href="/shams" className="text-xs text-muted underline-offset-2 hover:underline">{ts("about")}</Link>
+                        </div>
+                        <ol className="mt-3 grid grid-cols-7 gap-1" aria-hidden>
+                          {[0, 1, 2, 3, 4, 5, 6].map((n) => <li key={n} className={`h-1 rounded-full ${n <= shams ? "bg-gold" : "bg-line"}`} />)}
+                        </ol>
+                        <h3 className="mt-3 text-lg font-bold">{ts(`s${shams + 1}`)}</h3>
+                        <p className="mt-1 text-[15px] leading-relaxed text-muted">{ts(`d${shams + 1}`)}</p>
+                        {shams === 6 && <ul className="mt-2 grid gap-1 text-sm text-muted">{["q1", "q2", "q3"].map((q) => <li key={q}>– {ts(q)}</li>)}</ul>}
+                        <div className="mt-4 flex flex-wrap items-center gap-2">
+                          {(shams === 0 || (shams === 1 && !hasTimings)) && <button onClick={() => goTo(idx, true)} className="h-10 rounded-md border border-line bg-surface px-4 text-sm font-semibold hover:border-ink">{ts("again")}</button>}
+                          {shams !== 5 && <button onClick={nextShams} className="h-10 rounded-md bg-ink px-5 text-sm font-bold text-bg hover:opacity-90">{shams === 6 ? ts("nextVerse") : ts("next")}</button>}
+                          {shams === 1 && hasTimings && <button onClick={startChain} className="h-10 rounded-md border border-line bg-surface px-4 text-sm font-semibold hover:border-ink">{ts("chainAgain")}</button>}
+                          {shams === 1 && chain !== null && <span className="text-sm text-muted">{ts("chainNow")}</span>}
+                          {shams === 1 && chainDone && <span className="text-sm font-semibold text-accent">{ts("chainDone")}</span>}
+                          {shams === 5 && hide === 3 && !revealed && <button onClick={() => setHide(2)} className="h-10 rounded-md bg-ink px-5 text-sm font-bold text-bg">{ts("noCues")}</button>}
+                          {shams === 5 && !revealed && <span className="text-sm text-muted">{hide === 3 ? ts("cueHint") : ts("recallHint")}</span>}
+                        </div>
+                      </div>
+                    )}
+                    {active && !kids && shams === null && <SocialBar verseKey={v.verse_key} shareText={v.translation} />}
+                    {active && shams === null && (
                       <div className="mt-4 flex flex-wrap items-center gap-2 text-sm" onClick={(e) => e.stopPropagation()}>
                         <span className="text-muted">🧠 {t("memorize")}</span>
                         <div className="inline-flex flex-wrap rounded-xl bg-bg p-1">
@@ -632,15 +730,16 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
       {/* Mobile: bottom sheet */}
       {sheetOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 z-[60] lg:hidden" role="dialog" aria-modal="true">
           <div className="absolute inset-0 bg-black/40" onClick={() => setSheetOpen(false)} />
-          <div className="absolute inset-x-0 bottom-0 max-h-[80vh] overflow-y-auto rounded-t-3xl bg-surface p-5 shadow-xl">
+          <div className="absolute inset-x-0 bottom-0 max-h-[85dvh] overflow-y-auto rounded-t-3xl bg-surface p-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] shadow-xl">
             <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-line" />
             <div className="mb-3 flex items-center justify-between">
               <h2 className="font-display font-semibold">{t("tafsir")} · {verse.verse_key}</h2>
               <button className="text-sm font-medium text-accent" onClick={() => setSheetOpen(false)}>{t("closeTafsir")}</button>
             </div>
             {tafsirBody}
+            {shams === 4 && <button onClick={() => { setSheetOpen(false); nextShams(); }} className="mt-5 h-11 w-full rounded-md bg-ink text-sm font-bold text-bg">{ts("next")}</button>}
           </div>
         </div>
       )}

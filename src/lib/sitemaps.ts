@@ -3,7 +3,7 @@ import { SITE, abs } from "./site";
 
 // Sitemap index -> one file per category and language, e.g. /sitemaps/surahs-de.xml
 export const CATEGORIES = {
-  pages: ["", "/quran", "/today", "/search", "/prayer", "/radio", "/duas", "/support"],
+  pages: ["", "/shams", "/quran", "/today", "/search", "/prayer", "/radio", "/duas", "/support"],
   legal: ["/legal/privacy", "/legal/terms", "/legal/imprint"],
   surahs: Array.from({ length: 114 }, (_, i) => `/surah/${i + 1}`),
 } as const;

@@ -21,9 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMeta(locale, `/surah/${n}`, t("surahTitle", vars), t("surahDesc", vars), t("keywords"));
 }
 
-export default async function SurahPage({ params, searchParams }: { params: Promise<{ locale: string; id: string }>; searchParams: Promise<{ v?: string; m?: string; r?: string }> }) {
+export default async function SurahPage({ params, searchParams }: { params: Promise<{ locale: string; id: string }>; searchParams: Promise<{ v?: string; m?: string; r?: string; shams?: string }> }) {
   const { locale, id } = await params;
-  const { v, m, r } = await searchParams;
+  const { v, m, r, shams } = await searchParams;
   setRequestLocale(locale);
   const n = valid(id);
   if (!n) notFound();
@@ -53,7 +53,7 @@ export default async function SurahPage({ params, searchParams }: { params: Prom
   return (
     <>
       {ld && <JsonLd data={ld} />}
-      <Player chapterId={n} startVerse={Math.max(1, Number(v) || 1)} startHide={m === "1" ? 1 : m === "2" ? 2 : 0} reviewMode={r === "1"} initial={initial} />
+      <Player chapterId={n} startVerse={Math.max(1, Number(v) || 1)} startHide={m === "1" ? 1 : m === "2" ? 2 : 0} reviewMode={r === "1"} shamsStart={shams === "1"} initial={initial} />
     </>
   );
 }
