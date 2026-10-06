@@ -33,11 +33,12 @@ ENVEOF
   chown tafsir:tafsir "$ENV_APP"
 fi
 
-echo "==> Build"
-sudo -u tafsir bash -c "cd $APP && npm ci && npm run build"
+echo "==> Build (into .next-build; the live site keeps running from .next)"
+sudo -u tafsir bash -c "cd $APP && rm -rf .next-build && npm ci && NEXT_DIST_DIR=.next-build npm run build" || {
+  echo "BUILD FAILED – the site keeps running on the previous version."; exit 1; }
 
-echo "==> (Re)start"
-sudo -u tafsir bash -c "cd $APP && pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save"
+echo "==> Switch to the new build and (re)start"
+sudo -u tafsir bash -c "cd $APP && rm -rf .next-old && { [ -d .next ] && mv .next .next-old || true; } && mv .next-build .next && pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save"
 
 echo
 echo "Done. Version now: $(sudo -u tafsir git -C "$APP" log --oneline -1)"
