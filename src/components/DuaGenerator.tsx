@@ -6,6 +6,7 @@ import { FRAME, NAMES, PLAN, TOPICS, WHO, guessTopic, type Topic, type Who } fro
 import { SUNNAH_DUAS, type SunnahDua } from "@/lib/sunnahDuas";
 import { SUNNAH_DUAS_2 } from "@/lib/sunnahDuas2";
 import { Rosette } from "./Ornaments";
+import { useConfig } from "@/lib/config";
 
 type QuranDua = { key: string; ar: string; tr: string };
 const ALL_SUNNAH: SunnahDua[] = [...SUNNAH_DUAS, ...SUNNAH_DUAS_2];
@@ -21,12 +22,12 @@ export default function DuaGenerator() {
   const [who, setWho] = useState<Who>("me");
   const [made, setMade] = useState<{ topic: Topic; text: string; who: Who; key: number } | null>(null);
   const [quran, setQuran] = useState<QuranDua[] | null>(null);
-  const [aiOn, setAiOn] = useState(false);
+  const cfg = useConfig();
+  const aiOn = cfg.ai && cfg.features.duaAi;
   const [ai, setAi] = useState<{ state: "idle" | "busy" | "err"; text: string; err?: string }>({ state: "idle", text: "" });
   const [copied, setCopied] = useState(false);
   const result = useRef<HTMLDivElement>(null);
 
-  useEffect(() => { fetch("/api/assistant").then((r) => r.json()).then((d) => setAiOn(!!d.enabled)).catch(() => undefined); }, []);
   const guessed = useMemo(() => (text.trim().length > 2 ? guessTopic(text) : null), [text]);
   const chosen = topic ?? guessed;
 

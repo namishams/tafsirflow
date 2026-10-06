@@ -3,9 +3,9 @@ import { currentUser } from "@/lib/auth";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { PLAN, TOPICS, type Topic } from "@/lib/duaGenerator";
 import { getResources, getVerseByKey, pickTranslation } from "@/lib/quran";
+import { getSettings } from "@/lib/settings";
 
 export const dynamic = "force-dynamic";
-const anonPerDay = () => Math.max(0, Number(process.env.ASSISTANT_ANON_PER_DAY ?? 5) || 0);
 
 // Quran duas for a concern (Arabic + translation in the reader's language)
 export async function GET(req: NextRequest) {
@@ -15,17 +15,18 @@ export async function GET(req: NextRequest) {
   let tr = 20;
   try { tr = pickTranslation(locale, (await getResources()).translations); } catch { /* default */ }
   const verses = await Promise.all(PLAN[topic].quran.map(async (k) => { try { const v = await getVerseByKey(k, locale, tr); return { key: k, ar: v.text_uthmani, tr: v.translation }; } catch { return null; } }));
-  return json({ quran: verses.filter(Boolean), ai: !!process.env.OPENAI_API_KEY }, 200, { "Cache-Control": "public, s-maxage=3600" });
+  return json({ quran: verses.filter(Boolean) }, 200, { "Cache-Control": "public, s-maxage=3600" });
 }
 
 // A personal dua in the reader's own language, phrased with care (optional; needs the server key)
 export async function POST(req: NextRequest) {
   if (!sameOrigin(req)) return json({ error: "origin" }, 403);
   const key = process.env.OPENAI_API_KEY;
-  if (!key) return json({ error: "off" }, 503);
+  const s = await getSettings();
+  if (!key || !s.features.duaAi) return json({ error: "off" }, 503);
   const me = await currentUser();
   if (!(me && me.emailVerified)) {
-    const n = anonPerDay();
+    const n = s.limits.duaAiAnonPerDay;
     if (!n || rateLimited(`dua:anon:${clientIp(req)}`, n, 24 * 60 * 60_000)) return json({ error: me ? "verify" : "login" }, me ? 403 : 401);
   } else if (rateLimited(`dua:day:${me.id}`, 30, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
   if (rateLimited(`dua:min:${clientIp(req)}`, 6, 60_000)) return json({ error: "rate" }, 429);

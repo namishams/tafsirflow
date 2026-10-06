@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { currentUser } from "@/lib/auth";
 import { json, sameOrigin } from "@/lib/http";
+import { getSettings } from "@/lib/settings";
 
 export const dynamic = "force-dynamic";
 const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen"]);
@@ -29,11 +30,12 @@ export async function PUT(req: NextRequest) {
       [u.id, k, JSON.stringify(v)],
     );
   }
-  // points per day for the ranking: only recent days, at most 1,500 a day, and a day never loses points
+  // points per day for the ranking: only recent days, at most the daily cap set by the admin (1,500 by default), and a day never loses points
   const d = (body["tf:points"] as { d?: Record<string, unknown> } | undefined)?.d;
   if (d && typeof d === "object") {
     const today = Math.floor(Date.now() / 86400000);
-    const rows = Object.entries(d).map(([k, v]) => [Number(k), Math.min(1500, Math.max(0, Math.round(Number(v) || 0)))] as const).filter(([k, v]) => Number.isInteger(k) && k >= today - 400 && k <= today + 1 && v > 0);
+    const cap = (await getSettings()).limits.rankingDailyCap;
+    const rows = Object.entries(d).map(([k, v]) => [Number(k), Math.min(cap, Math.max(0, Math.round(Number(v) || 0)))] as const).filter(([k, v]) => Number.isInteger(k) && k >= today - 400 && k <= today + 1 && v > 0);
     if (rows.length) await pool()!.query(
       `INSERT INTO user_points (user_id, day, points) SELECT $1, d, p FROM unnest($2::int[], $3::int[]) AS x(d, p)
        ON CONFLICT (user_id, day) DO UPDATE SET points = GREATEST(user_points.points, EXCLUDED.points)`,

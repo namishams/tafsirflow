@@ -1651,7 +1651,8 @@
     "s_explorer114": "All 114 surahs",
     "d_explorer114": "Heard from every surah of the Quran.",
     "s_fajr": "Voice of Fajr",
-    "d_fajr": "Heard 60 minutes of recitation between 4 and 7 in the morning."
+    "d_fajr": "Heard 60 minutes of recitation between 4 and 7 in the morning.",
+    "rankPaused": "The ranking is paused at the moment. Your points keep being counted."
   },
   "community": {
     "kicker": "Community",
@@ -1684,7 +1685,8 @@
     "mineLoginCta": "Sign in",
     "mineEmpty": "No favourite verses yet. Tap the heart below a verse in the player.",
     "ranking": "Who learns most diligently? Vie with one another in good:",
-    "rankingCta": "Open the global ranking"
+    "rankingCta": "Open the global ranking",
+    "paused": "The community page is paused at the moment. It will be back soon, in sha Allah."
   },
   "duagen": {
     "metaTitle": "Dua generator – your personal supplication",

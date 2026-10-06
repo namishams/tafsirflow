@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { LOUD, addActiveMinute, levelOf, totalPoints, type PointKind } from "@/lib/points";
+import { LOUD, addActiveMinute, levelOf, setRuleOverrides, totalPoints, type PointKind } from "@/lib/points";
+import { cachedConfig, loadConfig } from "@/lib/config";
 import { buildCtx, earnedIds, markSeen, readSeen, stickerById } from "@/lib/stickers";
 import { getSnapshot as verseSnapshot } from "@/lib/versePlayback";
 import { readJSON, writeJSON } from "@/lib/storage";
@@ -20,6 +21,21 @@ export default function Rewards() {
   const lastInput = useRef(Date.now());
   const media = useRef(new Set<EventTarget>());
   const check = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // switches from the admin dashboard: point rules, celebrations, side calligraphy
+  const celebrate = useRef(true);
+  useEffect(() => {
+    const apply = () => {
+      const c = cachedConfig();
+      setRuleOverrides(c.points);
+      celebrate.current = c.features.celebrations;
+      document.documentElement.toggleAttribute("data-no-side-art", !c.features.sideArt);
+    };
+    apply();
+    loadConfig().then(apply);
+    window.addEventListener("tf-config", apply);
+    return () => window.removeEventListener("tf-config", apply);
+  }, []);
 
   // active time: the tab is visible and the learner did something in the last 90 seconds, or recitation/radio is playing
   useEffect(() => {
@@ -62,12 +78,12 @@ export default function Rewards() {
       if (prevLvl !== lvl) writeJSON("tf:level", lvl, true);
       const moments: Moment[] = fresh.map((id) => ({ kind: "sticker" as const, id }));
       if (prevLvl > 0 && lvl > prevLvl) moments.unshift({ kind: "level", n: lvl });
-      if (moments.length) setQueue((q) => [...q, ...moments]);
+      if (moments.length && celebrate.current) setQueue((q) => [...q, ...moments]);
     };
     const later = () => { if (check.current) clearTimeout(check.current); check.current = setTimeout(run, 900); };
     const onPts = (e: Event) => {
       const d = (e as CustomEvent<{ pts: number; kind: PointKind }>).detail;
-      if (LOUD.includes(d.kind)) setGain((g) => ({ pts: (g && Date.now() - g.key < 1600 ? g.pts : 0) + d.pts, kind: d.kind, key: Date.now() }));
+      if (LOUD.includes(d.kind) && celebrate.current) setGain((g) => ({ pts: (g && Date.now() - g.key < 1600 ? g.pts : 0) + d.pts, kind: d.kind, key: Date.now() }));
       later();
     };
     window.addEventListener("tf-points", onPts);

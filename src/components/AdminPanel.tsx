@@ -42,7 +42,7 @@ export default function AdminPanel() {
   const locale = useLocale();
   const t = T[locale === "de" ? "de" : "en"];
   const [me, setMe] = useState<Me | null | undefined>(undefined);
-  const [tab, setTab] = useState<"overview" | "users" | "tafsir" | "moderation" | "feedback" | "adhan" | "settings">("overview");
+  const [tab, setTab] = useState<"overview" | "insights" | "control" | "ranking" | "users" | "tafsir" | "moderation" | "feedback" | "adhan">("overview");
 
   useEffect(() => { fetchMe().then((r) => setMe(r.user)); }, []);
 
@@ -55,7 +55,8 @@ export default function AdminPanel() {
       </main>
     );
 
-  const tabs = [["overview", t.overview], ["users", t.users], ["tafsir", t.tafsir], ["moderation", t.moderation], ["feedback", locale === "de" ? "Wünsche" : "Requests"], ["adhan", "Adhan"], ["settings", t.settings]] as const;
+  const de = locale === "de";
+  const tabs = [["overview", t.overview], ["insights", de ? "Statistik" : "Insights"], ["control", de ? "Steuerung" : "Controls"], ["ranking", "Ranking"], ["users", t.users], ["tafsir", t.tafsir], ["moderation", t.moderation], ["feedback", locale === "de" ? "Wünsche" : "Requests"], ["adhan", "Adhan"]] as const;
   return (
     <main className="mx-auto max-w-5xl px-4 pb-16 pt-4">
       <header className="mb-6 flex items-center justify-between">
@@ -68,12 +69,14 @@ export default function AdminPanel() {
         ))}
       </nav>
       {tab === "overview" && <Overview t={t} />}
+      {tab === "insights" && <Insights de={de} />}
+      {tab === "control" && <Control de={de} />}
+      {tab === "ranking" && <RankingAdmin de={de} />}
       {tab === "users" && <Users t={t} meId={me.id} />}
       {tab === "tafsir" && <TafsirEditor t={t} />}
       {tab === "moderation" && <Moderation de={locale === "de"} />}
       {tab === "feedback" && <FeedbackAdmin />}
       {tab === "adhan" && <AdhanAdmin />}
-      {tab === "settings" && <SettingsTab t={t} />}
     </main>
   );
 }
@@ -134,29 +137,6 @@ function Users({ t, meId }: { t: TT; meId: number }) {
           </tbody>
         </table>
       </div>
-    </div>
-  );
-}
-
-function SettingsTab({ t }: { t: TT }) {
-  const [limit, setLimit] = useState(20);
-  const [auto, setAuto] = useState(false);
-  const [msg, setMsg] = useState("");
-  useEffect(() => { api<{ anonTafsirLimit: number; commentsAutoApprove: boolean }>("/api/admin/settings").then((s) => { setLimit(s.anonTafsirLimit); setAuto(!!s.commentsAutoApprove); }).catch(() => undefined); }, []);
-  const save = async () => { await api("/api/admin/settings", "PUT", { anonTafsirLimit: limit, commentsAutoApprove: auto }); setMsg(t.saved); setTimeout(() => setMsg(""), 2000); };
-  return (
-    <div className={`${card} max-w-lg`}>
-      <label className="mb-1 block font-medium">{t.limit}</label>
-      <p className="mb-3 text-sm text-muted">{t.limitHelp}</p>
-      <div className="flex items-center gap-3">
-        <input type="number" min={0} max={10000} value={limit} onChange={(e) => setLimit(Number(e.target.value))} className={field + " !w-28"} />
-        <button className={btnP} onClick={save}>{t.save}</button>
-        {msg && <span className="text-sm text-accent">{msg}</span>}
-      </div>
-      <label className="mt-6 flex items-start gap-3 border-t border-line pt-5 text-sm">
-        <input type="checkbox" checked={auto} onChange={(e) => setAuto(e.target.checked)} className="mt-1" />
-        <span><b>{t.moderation}: auto-approve</b><br /><span className="text-muted">Off (recommended): every comment waits for your approval. On: comments that pass the word filter go live at once (soft-flagged ones still wait).</span></span>
-      </label>
     </div>
   );
 }
@@ -364,6 +344,186 @@ function AdhanAdmin() {
           <div className="mt-3 flex gap-2"><button className={btn} onClick={() => setForm({ id: f.id, label: f.label, credit: f.credit })}>Bearbeiten</button><button className={btn} onClick={() => remove(f.id)}>Löschen</button></div>
         </div>
       ))}
+    </div>
+  );
+}
+
+// ---------- Insights: what happens on the site ----------
+type Ins = { series: { day: number; listenSec: number; versesHeard: number; listeners: number; views: number; readers: number; learners: number; points: number; signups: number }[]; topSurahs: { surah: number; sec: number; verses: number }[]; topReciters: { reciter: string; sec: number }[]; totals: Record<string, number> };
+function Insights({ de }: { de: boolean }) {
+  const [d, setD] = useState<Ins | null>(null);
+  const [err, setErr] = useState(false);
+  useEffect(() => { api<Ins>("/api/admin/insights").then(setD).catch(() => setErr(true)); }, []);
+  if (err) return <p className="text-sm text-red-600">{de ? "Statistik nicht verfügbar." : "Insights unavailable."}</p>;
+  if (!d) return <div className="h-64 animate-pulse rounded-2xl bg-line/40" />;
+  const h = (sec: number) => Math.round((sec / 3600) * 10) / 10;
+  const sum = (k: keyof Ins["series"][number]) => d.series.reduce((a, x) => a + Number(x[k]), 0);
+  const T = d.totals;
+  const kpi: [string, string | number][] = [
+    [de ? "Stunden gehört (30 T.)" : "Hours listened (30 d)", h(sum("listenSec"))], [de ? "Stunden gehört (gesamt)" : "Hours listened (all)", h(T.listen_all ?? 0)],
+    [de ? "Hörer (30 T., Tagessumme)" : "Listeners (30 d, daily sum)", sum("listeners")], [de ? "Verse gehört (30 T.)" : "Verses heard (30 d)", sum("versesHeard")],
+    [de ? "Vers-Aufrufe (30 T.)" : "Verse views (30 d)", sum("views")], [de ? "Lernende mit Punkten (30 T., Tagessumme)" : "Learners with points (30 d, daily sum)", sum("learners")],
+    [de ? "Neue Konten (30 T.)" : "New accounts (30 d)", sum("signups")], [de ? "Konten gesamt / bestätigt" : "Accounts total / verified", `${T.users ?? 0} / ${T.verified ?? 0}`],
+    [de ? "Herzen / Kommentare" : "Hearts / comments", `${T.likes ?? 0} / ${T.comments ?? 0}`], [de ? "Kommentare zu prüfen" : "Comments to review", T.pending ?? 0],
+    [de ? "Teilen gesamt" : "Shares total", T.shares ?? 0], [de ? "Im Ranking (je gepunktet)" : "In ranking (ever scored)", T.rankers ?? 0],
+  ];
+  const Chart = ({ k, label, fmt = (n: number) => String(n) }: { k: keyof Ins["series"][number]; label: string; fmt?: (n: number) => string }) => {
+    const max = Math.max(1, ...d.series.map((x) => Number(x[k])));
+    return (
+      <div className={card}>
+        <p className="text-sm font-semibold">{label}</p>
+        <div className="mt-3 flex h-28 items-end gap-[3px]">
+          {d.series.map((x) => <div key={x.day} title={`${new Date(x.day * 86400000).toLocaleDateString()} · ${fmt(Number(x[k]))}`} className="min-w-0 flex-1 rounded-t-[2px] bg-accent/70" style={{ height: `${Math.max(2, (Number(x[k]) / max) * 100)}%`, opacity: Number(x[k]) ? 1 : 0.25 }} />)}
+        </div>
+        <p className="mt-1 text-xs text-muted">{de ? "letzte 30 Tage" : "last 30 days"} · max {fmt(max)}</p>
+      </div>
+    );
+  };
+  return (
+    <div className="grid gap-5">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        {kpi.map(([l, n]) => <div key={l} className={card}><p className="text-2xl font-bold">{n}</p><p className="mt-1 text-xs text-muted">{l}</p></div>)}
+      </div>
+      <div className="grid gap-4 md:grid-cols-2">
+        <Chart k="listenSec" label={de ? "Hörzeit pro Tag" : "Listening per day"} fmt={(n) => `${h(n)} h`} />
+        <Chart k="listeners" label={de ? "Hörer pro Tag" : "Listeners per day"} />
+        <Chart k="views" label={de ? "Vers-Aufrufe pro Tag" : "Verse views per day"} />
+        <Chart k="learners" label={de ? "Lernende mit Punkten pro Tag" : "Learners with points per day"} />
+        <Chart k="points" label={de ? "Punkte pro Tag" : "Points per day"} />
+        <Chart k="signups" label={de ? "Neue Konten pro Tag" : "New accounts per day"} />
+      </div>
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className={card}>
+          <p className="text-sm font-semibold">{de ? "Meistgehörte Suren (30 Tage)" : "Most heard surahs (30 days)"}</p>
+          <ol className="mt-3 grid gap-1.5 text-sm">{d.topSurahs.map((x) => <li key={x.surah} className="flex justify-between gap-3"><span>{de ? "Sure" : "Surah"} {x.surah}</span><span className="text-muted">{h(x.sec)} h · {x.verses} {de ? "Verse" : "verses"}</span></li>)}</ol>
+        </div>
+        <div className={card}>
+          <p className="text-sm font-semibold">{de ? "Rezitatoren (30 Tage)" : "Reciters (30 days)"}</p>
+          <ol className="mt-3 grid gap-1.5 text-sm">{d.topReciters.map((x) => <li key={x.reciter} className="flex justify-between gap-3"><span>{x.reciter}</span><span className="text-muted">{h(x.sec)} h</span></li>)}</ol>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------- Controls: switches, limits, point rules, announcement ----------
+type Feat = { ranking: boolean; community: boolean; likes: boolean; comments: boolean; assistant: boolean; duaAi: boolean; sideArt: boolean; celebrations: boolean };
+type Cfg = { anonTafsirLimit: number; commentsAutoApprove: boolean; features: Feat; limits: { assistantAnonPerDay: number; assistantPerUserPerDay: number; duaAiAnonPerDay: number; rankingDailyCap: number }; points: Record<string, { pts: number; cap?: number }>; announcement: { on: boolean; id: string; de: string; en: string; ar: string; href: string } };
+const POINT_DEFAULTS: Record<string, { pts: number; cap?: number }> = { time: { pts: 1, cap: 120 }, listen: { pts: 2, cap: 400 }, verse: { pts: 1, cap: 300 }, review: { pts: 5 }, new: { pts: 10 }, session: { pts: 30 }, lesson: { pts: 20 }, quiz: { pts: 10 }, vocab: { pts: 2, cap: 200 }, wudu: { pts: 25, cap: 25 } };
+function Control({ de }: { de: boolean }) {
+  const [c, setC] = useState<Cfg | null>(null);
+  const [msg, setMsg] = useState("");
+  useEffect(() => { api<Cfg>("/api/admin/settings").then(setC).catch(() => undefined); }, []);
+  if (!c) return <div className="h-64 animate-pulse rounded-2xl bg-line/40" />;
+  const save = async (patch: Partial<Cfg>) => { const n = await api<Cfg>("/api/admin/settings", "PUT", patch); setC(n); setMsg(de ? "Gespeichert – gilt sofort (Browser holen es beim nächsten Seitenaufruf)." : "Saved – applies at once (browsers pick it up on their next page view)."); setTimeout(() => setMsg(""), 3500); };
+  const F: [keyof Feat, string, string][] = de ? [
+    ["ranking", "Ranking", "Globales Ranking (Woche, Monat, gesamt, Länder)."], ["community", "Gemeinschafts-Seite", "Beliebte Verse, neueste Gedanken, Puls."],
+    ["likes", "Herzen für Verse", "Like-Knopf unter Versen."], ["comments", "Kommentare", "Kommentieren unter Versen (Moderation bleibt aktiv)."],
+    ["assistant", "Assistent", "Quran- und Islam-Assistent (braucht den OpenAI-Schlüssel)."], ["duaAi", "Dua-Formulierungshilfe", "„In schönere Worte fassen“ im Dua-Generator."],
+    ["sideArt", "Seiten-Kalligrafie", "Goldene Quran-Kalligrafie links und rechts auf großen Bildschirmen."], ["celebrations", "Punkte- und Sticker-Feiern", "„+n Punkte“, neue Level und Sticker als Einblendung."],
+  ] : [
+    ["ranking", "Ranking", "Global ranking (week, month, all time, countries)."], ["community", "Community page", "Loved verses, reflections, pulse."],
+    ["likes", "Hearts for verses", "Like button under verses."], ["comments", "Comments", "Comments under verses (moderation stays on)."],
+    ["assistant", "Assistant", "Quran and Islam assistant (needs the OpenAI key)."], ["duaAi", "Dua phrasing help", "“Phrase it more beautifully” in the dua generator."],
+    ["sideArt", "Side calligraphy", "Gold Quran calligraphy left and right on wide screens."], ["celebrations", "Point and sticker celebrations", "“+n points”, new levels and stickers as overlays."],
+  ];
+  const lim: [keyof Cfg["limits"], string][] = [
+    ["assistantAnonPerDay", de ? "Assistent: Fragen pro Tag ohne Konto" : "Assistant: questions per day without account"],
+    ["assistantPerUserPerDay", de ? "Assistent: Fragen pro Tag mit Konto" : "Assistant: questions per day with account"],
+    ["duaAiAnonPerDay", de ? "Dua-Hilfe: pro Tag ohne Konto" : "Dua help: per day without account"],
+    ["rankingDailyCap", de ? "Ranking: höchstens Punkte pro Tag und Person" : "Ranking: max points per day and person"],
+  ];
+  const P = de
+    ? { time: "Aktive Minute auf der Seite", listen: "Minute Rezitation", verse: "Vers bis zum Ende gehört", review: "Vers geübt", new: "Neuer Vers gelernt", session: "Tagessitzung", lesson: "Lektion bestanden", quiz: "Tadschwid-Quiz", vocab: "Vokabel geübt", wudu: "Wudu-Trainer" }
+    : { time: "Active minute on the site", listen: "Minute of recitation", verse: "Verse heard to the end", review: "Verse practised", new: "New verse learned", session: "Daily session", lesson: "Lesson passed", quiz: "Tajweed quiz", vocab: "Word practised", wudu: "Wudu trainer" };
+  const pt = (k: string) => c.points[k] ?? POINT_DEFAULTS[k];
+  const setPt = (k: string, v: { pts: number; cap?: number }) => setC({ ...c, points: { ...c.points, [k]: v } });
+  const A = c.announcement;
+  return (
+    <div className="grid gap-6">
+      {msg && <p className="rounded-lg bg-accent-soft px-4 py-2 text-sm font-semibold text-accent">{msg}</p>}
+      <section className={card}>
+        <h3 className="text-lg font-bold">{de ? "Funktionen" : "Features"}</h3>
+        <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+          {F.map(([k, l, h]) => (
+            <li key={k}><label className="flex cursor-pointer items-start gap-3 rounded-xl border border-line p-3 hover:border-accent/50">
+              <input type="checkbox" className="mt-0.5" checked={c.features[k]} onChange={(e) => save({ features: { ...c.features, [k]: e.target.checked } })} />
+              <span><b className="text-sm">{l}</b><span className="block text-xs text-muted">{h}</span></span>
+            </label></li>
+          ))}
+        </ul>
+      </section>
+      <section className={card}>
+        <h3 className="text-lg font-bold">{de ? "Limits" : "Limits"}</h3>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          <label className="grid gap-1 text-sm"><span>{de ? "Tafsir: Verse pro Tag ohne Konto" : "Tafsir: verses per day without account"}</span><input type="number" min={0} className={field} value={c.anonTafsirLimit} onChange={(e) => setC({ ...c, anonTafsirLimit: Number(e.target.value) })} /></label>
+          {lim.map(([k, l]) => <label key={k} className="grid gap-1 text-sm"><span>{l}</span><input type="number" min={0} className={field} value={c.limits[k]} onChange={(e) => setC({ ...c, limits: { ...c.limits, [k]: Number(e.target.value) } })} /></label>)}
+          <label className="flex items-start gap-3 text-sm sm:col-span-2"><input type="checkbox" className="mt-0.5" checked={c.commentsAutoApprove} onChange={(e) => setC({ ...c, commentsAutoApprove: e.target.checked })} /><span><b>{de ? "Kommentare automatisch freigeben" : "Auto-approve comments"}</b><span className="block text-xs text-muted">{de ? "Aus (empfohlen): jeder Kommentar wartet auf deine Freigabe." : "Off (recommended): every comment waits for your approval."}</span></span></label>
+        </div>
+        <button className={`${btnP} mt-4`} onClick={() => save({ anonTafsirLimit: c.anonTafsirLimit, limits: c.limits, commentsAutoApprove: c.commentsAutoApprove })}>{de ? "Limits speichern" : "Save limits"}</button>
+      </section>
+      <section className={card}>
+        <h3 className="text-lg font-bold">{de ? "Punkte-Regeln" : "Point rules"}</h3>
+        <p className="mt-1 text-xs text-muted">{de ? "Punkte pro Einheit und Höchstpunkte pro Tag (leer = ohne Grenze). Änderungen gelten für neue Punkte." : "Points per unit and maximum per day (empty = no limit). Changes apply to new points."}</p>
+        <div className="mt-3 grid gap-2">
+          {Object.keys(POINT_DEFAULTS).map((k) => (
+            <div key={k} className="grid grid-cols-[1fr_5rem_6rem] items-center gap-2 text-sm">
+              <span>{P[k as keyof typeof P]}</span>
+              <input type="number" min={0} aria-label="points" className={field} value={pt(k).pts} onChange={(e) => setPt(k, { ...pt(k), pts: Number(e.target.value) })} />
+              <input type="number" min={0} aria-label="cap" placeholder="∞" className={field} value={pt(k).cap ?? ""} onChange={(e) => setPt(k, { pts: pt(k).pts, ...(e.target.value === "" ? {} : { cap: Number(e.target.value) }) })} />
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <button className={btnP} onClick={() => save({ points: c.points })}>{de ? "Regeln speichern" : "Save rules"}</button>
+          <button className={btn} onClick={() => save({ points: {} })}>{de ? "Standard wiederherstellen" : "Restore defaults"}</button>
+        </div>
+      </section>
+      <section className={card}>
+        <h3 className="text-lg font-bold">{de ? "Ankündigung für alle Besucher" : "Announcement for all visitors"}</h3>
+        <p className="mt-1 text-xs text-muted">{de ? "Eine schmale Leiste ganz oben auf jeder Seite. Andere Sprachen sehen den englischen Text." : "A slim bar at the top of every page. Other languages see the English text."}</p>
+        <div className="mt-3 grid gap-2">
+          <input className={field} placeholder="Deutsch" value={A.de} onChange={(e) => setC({ ...c, announcement: { ...A, de: e.target.value } })} />
+          <input className={field} placeholder="English" value={A.en} onChange={(e) => setC({ ...c, announcement: { ...A, en: e.target.value } })} />
+          <input className={field} dir="rtl" placeholder="العربية" value={A.ar} onChange={(e) => setC({ ...c, announcement: { ...A, ar: e.target.value } })} />
+          <input className={field} placeholder={de ? "Link (optional), z. B. /dua-generator" : "Link (optional), e.g. /dua-generator"} value={A.href} onChange={(e) => setC({ ...c, announcement: { ...A, href: e.target.value } })} />
+          <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={A.on} onChange={(e) => setC({ ...c, announcement: { ...A, on: e.target.checked } })} />{de ? "Anzeigen" : "Show"}</label>
+        </div>
+        <button className={`${btnP} mt-4`} onClick={() => save({ announcement: { ...A, id: String(Date.now()) } })}>{de ? "Ankündigung speichern" : "Save announcement"}</button>
+      </section>
+    </div>
+  );
+}
+
+// ---------- Ranking: see everyone, hide someone ----------
+type RRow = { id: number; email: string; name: string; country: string | null; public: boolean; hidden: boolean; points: number; days: number; last: number };
+function RankingAdmin({ de }: { de: boolean }) {
+  const [range, setRange] = useState<"week" | "month" | "all">("week");
+  const [list, setList] = useState<RRow[] | null>(null);
+  const load = useCallback(() => api<{ list: RRow[] }>(`/api/admin/ranking?range=${range}`).then((d) => setList(d.list)).catch(() => setList([])), [range]);
+  useEffect(() => { load(); }, [load]);
+  const toggle = async (r: RRow) => { await api("/api/admin/ranking", "POST", { id: r.id, hidden: !r.hidden }); load(); };
+  return (
+    <div className="grid gap-4">
+      <div className="flex flex-wrap gap-2">
+        {(["week", "month", "all"] as const).map((k) => <button key={k} onClick={() => setRange(k)} className={`rounded-lg px-4 py-2 text-sm font-medium ${range === k ? "bg-ink text-bg" : "border border-line text-muted hover:text-ink"}`}>{de ? { week: "Woche", month: "Monat", all: "Gesamt" }[k] : { week: "Week", month: "Month", all: "All time" }[k]}</button>)}
+        <Link href="/ranking" className={btn}>{de ? "Öffentliches Ranking ansehen" : "View public ranking"}</Link>
+      </div>
+      <p className="text-xs text-muted">{de ? "Ausgeblendete Personen erscheinen nicht im öffentlichen Ranking; ihre Punkte bleiben erhalten. Namen sind öffentlich nur sichtbar, wenn die Person es erlaubt hat." : "Hidden members do not appear in the public ranking; their points are kept. Names are public only if the member allowed it."}</p>
+      {list === null ? <div className="h-40 animate-pulse rounded-2xl bg-line/40" /> : list.length === 0 ? <p className="text-sm text-muted">{de ? "Noch keine Punkte." : "No points yet."}</p> : (
+        <div className="overflow-x-auto rounded-2xl border border-line bg-surface">
+          <table className="w-full whitespace-nowrap text-sm">
+            <thead className="text-left text-xs text-muted"><tr><th className="p-3">#</th><th className="p-3">{de ? "Person" : "Member"}</th><th className="p-3">{de ? "Land" : "Country"}</th><th className="p-3">{de ? "Punkte" : "Points"}</th><th className="p-3">{de ? "Tage" : "Days"}</th><th className="p-3">{de ? "Name öffentlich" : "Name public"}</th><th className="p-3" /></tr></thead>
+            <tbody>{list.map((r, i) => (
+              <tr key={r.id} className={`border-t border-line ${r.hidden ? "opacity-50" : ""}`}>
+                <td className="p-3">{i + 1}</td><td className="p-3"><b>{r.name || "–"}</b><span className="block text-xs text-muted">{r.email}</span></td><td className="p-3">{r.country ?? ""}</td>
+                <td className="p-3 font-semibold tabular-nums">{r.points}</td><td className="p-3">{r.days}</td><td className="p-3">{r.public ? (de ? "ja" : "yes") : (de ? "nein" : "no")}</td>
+                <td className="p-3"><button className={btn} onClick={() => toggle(r)}>{r.hidden ? (de ? "Wieder zeigen" : "Show again") : (de ? "Ausblenden" : "Hide")}</button></td>
+              </tr>
+            ))}</tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

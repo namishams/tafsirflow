@@ -2,15 +2,16 @@ import { NextRequest } from "next/server";
 import { currentUser } from "@/lib/auth";
 import { ASSISTANT_LIMITS, ASSISTANT_RULES } from "@/lib/assistant";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
+import { getSettings } from "@/lib/settings";
 
 export const dynamic = "force-dynamic";
 
 // The OpenAI key lives only in the server environment (OPENAI_API_KEY in /srv/tafsirflow/.env.app) – never in the browser or the repository.
 // Visitors without a confirmed account get a few questions per day (ASSISTANT_ANON_PER_DAY, default 5, 0 = account only)
-const anonPerDay = () => Math.max(0, Number(process.env.ASSISTANT_ANON_PER_DAY ?? 5) || 0);
-
-export function GET() {
-  return json({ enabled: !!process.env.OPENAI_API_KEY, anon: anonPerDay() });
+// both can be changed in the admin dashboard (features.assistant, limits.assistantAnonPerDay / assistantPerUserPerDay)
+export async function GET() {
+  const s = await getSettings();
+  return json({ enabled: !!process.env.OPENAI_API_KEY && s.features.assistant, anon: s.limits.assistantAnonPerDay });
 }
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -18,14 +19,15 @@ type Msg = { role: "user" | "assistant"; content: string };
 export async function POST(req: NextRequest) {
   if (!sameOrigin(req)) return json({ error: "origin" }, 403);
   const key = process.env.OPENAI_API_KEY;
-  if (!key) return json({ error: "off" }, 503);
+  const s = await getSettings();
+  if (!key || !s.features.assistant) return json({ error: "off" }, 503);
   const me = await currentUser();
   const member = !!me && me.emailVerified;
   // cost and abuse protection: per account (or per IP for visitors) per day, per IP per minute
   if (!member) {
-    const n = anonPerDay();
+    const n = s.limits.assistantAnonPerDay;
     if (!n || rateLimited(`ai:anon:${clientIp(req)}`, n, 24 * 60 * 60_000)) return json({ error: me ? "verify" : "login" }, me ? 403 : 401);
-  } else if (rateLimited(`ai:day:${me.id}`, ASSISTANT_LIMITS.perUserPerDay, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
+  } else if (rateLimited(`ai:day:${me.id}`, s.limits.assistantPerUserPerDay || ASSISTANT_LIMITS.perUserPerDay, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
   if (rateLimited(`ai:min:${clientIp(req)}`, 8, 60_000)) return json({ error: "rate" }, 429);
 
   const b = (await req.json().catch(() => ({}))) as { messages?: Msg[]; locale?: string };

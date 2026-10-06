@@ -16,6 +16,14 @@ export const RULES: Record<PointKind, { pts: number; cap?: number }> = {
   streak: { pts: 1 }, // first activity of the day: 5 points per day of the current streak (max 50)
   wudu: { pts: 25, cap: 25 }, // wudu trainer completed
 };
+const BASE = Object.fromEntries(Object.entries(RULES).map(([k, v]) => [k, { ...v }])) as typeof RULES;
+// the admin can change points and daily caps per kind (admin dashboard → points); unknown kinds are ignored
+export function setRuleOverrides(o: Partial<Record<PointKind, { pts: number; cap?: number }>> | undefined) {
+  for (const k of Object.keys(BASE) as PointKind[]) {
+    const v = o?.[k];
+    RULES[k] = v ? { pts: v.pts, ...(v.cap !== undefined ? { cap: v.cap } : {}) } : { ...BASE[k] };
+  }
+}
 // kinds that show a small "+n" when earned; time and listening are counted quietly
 export const LOUD: PointKind[] = ["review", "new", "session", "lesson", "quiz", "streak", "wudu"];
 

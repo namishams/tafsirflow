@@ -202,6 +202,8 @@ CREATE TABLE IF NOT EXISTS user_points (
 CREATE INDEX IF NOT EXISTS user_points_day ON user_points(day);
 ALTER TABLE users ADD COLUMN IF NOT EXISTS rank_public boolean NOT NULL DEFAULT false;  -- show the name in the ranking (opt-in)
 
+ALTER TABLE users ADD COLUMN IF NOT EXISTS rank_hidden boolean NOT NULL DEFAULT false;  -- hidden from the ranking by the admin
+
 -- keep last: the app user needs rights on every table above
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

@@ -250,6 +250,7 @@ a.group:active, .btn-gold:active { transform: scale(.985); }
 }
 @keyframes sideDrift { from { transform: translateY(2.5%); } to { transform: translateY(-2.5%); } }
 @media print { .side-callig { display: none !important; } }
+[data-no-side-art] .side-callig { display: none !important; }
 
 /* rewards: "+n" floats in, a new sticker arrives with a turn and light rays behind it */
 .points-pop { animation: pointsPop 1.8s cubic-bezier(.2,.8,.2,1) both; }

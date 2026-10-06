@@ -109,7 +109,9 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
     if (!me) return json({ error: "login" }, 401);
     if (!me.emailVerified) return json({ error: "verify" }, 403);
 
+    const feat = (await getSettings()).features;
     if (action === "like") {
+      if (!feat.likes) return json({ error: "off" }, 403);
       if (!validKey(b.key)) return json({ error: "bad request" }, 400);
       if (rateLimited(`soc:like:${me.id}`, 60, 60_000)) return json({ error: "rate" }, 429);
       const del = await p.query("DELETE FROM verse_likes WHERE user_id = $1 AND verse_key = $2", [me.id, b.key]);
@@ -118,6 +120,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
     }
 
     if (action === "comment") {
+      if (!feat.comments) return json({ error: "off" }, 403);
       if (!validKey(b.key) || typeof b.body !== "string") return json({ error: "bad request" }, 400);
       const u = (await p.query("SELECT comment_banned FROM users WHERE id = $1", [me.id])).rows[0];
       if (u?.comment_banned) return json({ error: "banned" }, 403);

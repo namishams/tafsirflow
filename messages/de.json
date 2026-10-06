@@ -1651,7 +1651,8 @@
     "s_explorer114": "Alle 114 Suren",
     "d_explorer114": "Aus jeder Sure des Quran gehört.",
     "s_fajr": "Stimme des Fadschr",
-    "d_fajr": "60 Minuten Rezitation zwischen 4 und 7 Uhr morgens gehört."
+    "d_fajr": "60 Minuten Rezitation zwischen 4 und 7 Uhr morgens gehört.",
+    "rankPaused": "Das Ranking ist gerade pausiert. Deine Punkte werden weiter gezählt."
   },
   "community": {
     "kicker": "Gemeinschaft",
@@ -1684,7 +1685,8 @@
     "mineLoginCta": "Anmelden",
     "mineEmpty": "Noch keine Lieblingsverse. Tippe im Player unter einem Vers auf das Herz.",
     "ranking": "Wer lernt am fleißigsten? Wetteifern im Guten:",
-    "rankingCta": "Zum globalen Ranking"
+    "rankingCta": "Zum globalen Ranking",
+    "paused": "Die Gemeinschafts-Seite ist gerade pausiert. Bald geht es weiter, in sha Allah."
   },
   "duagen": {
     "metaTitle": "Dua-Generator – dein persönliches Bittgebet",

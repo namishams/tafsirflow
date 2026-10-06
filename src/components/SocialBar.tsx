@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { CaptchaNotice } from "./CaptchaBox";
 import { captchaToken, warmCaptcha } from "@/lib/captchaClient";
 import AuthGate from "./AuthGate";
+import { useConfig } from "@/lib/config";
 import { IconComment, IconEye, IconFlag, IconHeart, IconShare } from "./Icons";
 
 type Stats = { views: number; shares: number; likes: number; comments: number; liked: boolean; signedIn?: boolean; verified?: boolean };
@@ -16,6 +17,7 @@ const post = (action: string, body: unknown) =>
 export default function SocialBar({ verseKey, shareUrl, shareText, trackView = true }: { verseKey: string; shareUrl?: string; shareText?: string; trackView?: boolean }) {
   const t = useTranslations("social");
   const locale = useLocale();
+  const { features } = useConfig();
   const n = (x: number) => new Intl.NumberFormat(locale, { notation: "compact", numberingSystem: "latn" }).format(x);
   const [s, setS] = useState<Stats>({ views: 0, shares: 0, likes: 0, comments: 0, liked: false });
   const [gate, setGate] = useState<"register" | "verify" | null>(null);
@@ -63,10 +65,10 @@ export default function SocialBar({ verseKey, shareUrl, shareText, trackView = t
   return (
     <div className="mt-4" onClick={(e) => e.stopPropagation()}>
       <div className="flex flex-wrap items-center gap-2">
-        <button className={`${btn} ${s.liked ? "!text-[#c9405a]" : ""}`} onClick={like} aria-pressed={s.liked} aria-label={t("like")}>
+        {features.likes && <button className={`${btn} ${s.liked ? "!text-[#c9405a]" : ""}`} onClick={like} aria-pressed={s.liked} aria-label={t("like")}>
           <span key={burst} className={`relative inline-grid ${burst ? "heart-pop" : ""}`}><IconHeart filled={s.liked} />{burst > 0 && s.liked && <span aria-hidden className="heart-burst" />}</span>{n(s.likes)}
-        </button>
-        <button className={btn} onClick={() => setOpen(true)} aria-label={t("comments")}><IconComment />{n(s.comments)}</button>
+        </button>}
+        {features.comments && <button className={btn} onClick={() => setOpen(true)} aria-label={t("comments")}><IconComment />{n(s.comments)}</button>}
         <button className={btn} onClick={share} aria-label={t("share")}><IconShare />{n(s.shares)}</button>
         <span className="ms-auto inline-flex items-center gap-1.5 text-[13px] text-muted" title={t("views")}><IconEye />{n(s.views)}</span>
       </div>

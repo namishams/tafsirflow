@@ -6,7 +6,7 @@ import { fetchMe } from "@/lib/sync";
 import { levelOf } from "@/lib/points";
 
 type Entry = { place: number; points: number; total: number; country: string | null; me: boolean; name: string | null };
-type Data = { participants: number; list: Entry[]; me: { rank: number | null; points: number; public: boolean } | null };
+type Data = { participants: number; list: Entry[]; me: { rank: number | null; points: number; public: boolean } | null; disabled?: boolean };
 type Country = { country: string; points: number; people: number };
 const TABS = ["week", "month", "all", "countries"] as const;
 const MEDAL = ["#e9cf99", "#d9dee4", "#d49a6a"];
@@ -86,6 +86,7 @@ export default function Ranking() {
         )}
 
         {err && <p className="mt-8 text-sm text-muted">{t("rankError")}</p>}
+        {data?.disabled && <p className="callout mt-8 rounded-lg p-5 text-[15px]">{t("rankPaused")}</p>}
 
         {tab === "countries" ? (
           countries && (countries.length === 0 ? <p className="mt-8 text-sm text-muted">{t("rankEmpty")}</p> : (
@@ -100,7 +101,7 @@ export default function Ranking() {
               ))}
             </ol>
           ))
-        ) : !data ? (!err && <div className="mt-8 h-72 animate-pulse rounded-lg bg-line/40" />) : data.list.length === 0 ? (
+        ) : !data ? (!err && <div className="mt-8 h-72 animate-pulse rounded-lg bg-line/40" />) : data.disabled ? null : data.list.length === 0 ? (
           <p className="mt-8 text-sm text-muted">{t("rankEmpty")}</p>
         ) : (
           <>
