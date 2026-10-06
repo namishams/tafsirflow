@@ -1,4 +1,5 @@
 "use client";
+import { IconMoon } from "./Icons";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -59,7 +60,7 @@ export default function KhatmPlanner() {
 
       {finished ? (
         <section className="mt-4 rounded-lg border border-line bg-surface p-6 text-center">
-          <p className="text-4xl">🌙</p>
+          <p className="flex text-gold"><IconMoon /></p>
           <h2 className="font-display mt-2 text-3xl">{t("khatmDone")}</h2>
           <p className="mt-2 text-muted">{t("khatmDoneD")}</p>
           <button onClick={() => save({ startDay: today(), days: plan.days, pos: 0, log: {}, at: Date.now(), round: plan.round + 1 })} className="mt-5 h-11 rounded-md bg-accent px-5 text-sm font-bold text-white">{t("again")}</button>

@@ -283,7 +283,8 @@
     "arabic": "Read Arabic",
     "salah": "Learn to pray",
     "reciters": "Reciters",
-    "assistant": "Assistant"
+    "assistant": "Assistant",
+    "how": "How it works"
   },
   "today": {
     "title": "Today",
@@ -347,7 +348,20 @@
     "done": "done",
     "weakTitle": "Strengthen these verses",
     "weakNone": "No weak verses – your memory model is happy.",
-    "tileKhatm": "Khatm"
+    "tileKhatm": "Khatm",
+    "taskArabic": "Arabic lesson (5 min)",
+    "weekTitle": "Your week",
+    "weekHint": "{n} verses in the last 7 days",
+    "pathsTitle": "Your learning paths",
+    "pathArabic": "Read Arabic",
+    "pathAcademy": "Academy · level {lvl}",
+    "pathPlan": "365-day plan",
+    "pathKhatm": "Khatm",
+    "xpToNext": "{n} XP to the next level",
+    "planDay": "day {d} of {total}",
+    "howTitle": "How the Masterclass is built",
+    "howBody": "First learn to read, then to pray, then verse by verse with the Shams Method – the academy, plans and map keep you going; tajweed and the reciter's path lead to mastery.",
+    "howCta": "See the whole structure"
   },
   "home2": {
     "factSurahs": "114 surahs",

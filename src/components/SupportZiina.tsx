@@ -1,4 +1,5 @@
 "use client";
+import { IconLock } from "./Icons";
 import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
@@ -50,7 +51,7 @@ export default function SupportZiina() {
       ) : cfg.link ? (
         <a href={cfg.link} target="_blank" rel="noopener noreferrer" className="btn-gold mt-6 inline-flex h-14 w-full items-center justify-center rounded-xl text-[16px] font-bold sm:w-auto sm:px-8">{t.link} →</a>
       ) : <p className="mt-6 rounded-lg bg-white/[0.06] p-4 text-sm text-white/70">{t.soon}</p>}
-      <p className="mt-5 text-xs text-white/50">🔒 {t.safe}</p>
+      <p className="mt-5 text-xs text-white/50"><IconLock /> {t.safe}</p>
     </section>
   );
 }

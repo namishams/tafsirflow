@@ -1,4 +1,5 @@
 "use client";
+import { IconFlame } from "./Icons";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
@@ -83,7 +84,7 @@ export default function ProfileView() {
       <section>
         <h2 className="text-lg font-bold">{t("statsTitle")}</h2>
         <div className="mt-3 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line lg:grid-cols-4">
-          {tile(t("streak"), `${s.streak} 🔥`, t("streakHint", { n: s.todayCount }))}
+          {tile(t("streak"), <>{s.streak} <IconFlame /></>, t("streakHint", { n: s.todayCount }))}
           {tile(t("level"), s.level, t("xp", { n: s.xp }), "/academy")}
           {tile(t("lessons"), s.lessons, t("lessonsHint"), "/academy")}
           {tile(t("verses"), s.inReview, t("secured", { n: s.secured }), "/today")}

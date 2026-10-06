@@ -1,4 +1,5 @@
 "use client";
+import { IconFlame } from "./Icons";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -41,7 +42,7 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
       {(st.streak > 0 || due.length > 0) && (
         <section className="mb-5 rounded-2xl border border-line bg-surface p-4 shadow-card">
           <div className="mb-2 flex flex-wrap items-center gap-2 text-sm">
-            {st.streak > 0 && <span className="rounded-full bg-accent-soft px-3 py-1 font-semibold text-accent">🔥 {t("streak", { n: st.streak })}</span>}
+            {st.streak > 0 && <span className="rounded-full bg-accent-soft px-3 py-1 font-semibold text-accent">{t("streak", { n: st.streak })}</span>}
             {st.todayCount > 0 && <span className="rounded-full border border-line px-3 py-1 text-muted">{t("todayCount", { n: st.todayCount })}</span>}
           </div>
           {due.length > 0 ? (

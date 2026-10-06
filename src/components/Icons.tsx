@@ -31,3 +31,12 @@ export const IconHeart = ({ filled }: { filled?: boolean }) => (<svg {...sm} fil
 export const IconComment = () => (<svg {...sm}><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z" /></svg>);
 export const IconEye = () => (<svg {...sm}><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" /><circle cx="12" cy="12" r="2.8" /></svg>);
 export const IconFlag = () => (<svg {...sm}><path d="M6 21V4M6 5h11l-2 4 2 4H6" /></svg>);
+
+// Outline icons used instead of emojis (inherit the text colour)
+const o = { fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
+export const IconFlame = ({ className = "inline h-[1em] w-[1em] align-[-0.1em]" }: { className?: string }) => (<svg viewBox="0 0 24 24" className={className} {...o}><path d="M12 22c4 0 7-2.8 7-7 0-3.5-2.5-6-4-8-.3 2-1 3-2 3.5C13 8 12 5 9 2c0 4-3 6-3 11 0 5 2.7 9 6 9z" /></svg>);
+export const IconStarBig = ({ className = "h-16 w-16" }: { className?: string }) => (<svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden><path d="M12 1.5l2.6 4.2 4.8-1.1-1.1 4.8 4.2 2.6-4.2 2.6 1.1 4.8-4.8-1.1L12 22.5l-2.6-4.2-4.8 1.1 1.1-4.8L1.5 12l4.2-2.6-1.1-4.8 4.8 1.1z" /></svg>);
+export const IconTrophy = ({ className = "h-16 w-16" }: { className?: string }) => (<svg viewBox="0 0 24 24" className={className} {...o}><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 5M17 6h3a3 3 0 0 1-3 5" /></svg>);
+export const IconSpeaker = ({ className = "h-5 w-5" }: { className?: string }) => (<svg viewBox="0 0 24 24" className={className} {...o}><path d="M4 9v6h4l5 4V5L8 9zM16 8.5a5 5 0 0 1 0 7M19 6a9 9 0 0 1 0 12" /></svg>);
+export const IconMoon = ({ className = "h-10 w-10" }: { className?: string }) => (<svg viewBox="0 0 24 24" className={className} {...o}><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z" /></svg>);
+export const IconCheckCircle = ({ className = "h-6 w-6" }: { className?: string }) => (<svg viewBox="0 0 24 24" className={className} {...o}><circle cx="12" cy="12" r="9" /><path d="M8 12.5l2.5 2.5L16 9.5" /></svg>);

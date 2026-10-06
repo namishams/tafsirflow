@@ -283,7 +283,8 @@
     "arabic": "Arabisch lesen",
     "salah": "Gebet lernen",
     "reciters": "Rezitatoren",
-    "assistant": "Assistent"
+    "assistant": "Assistent",
+    "how": "So funktioniert es"
   },
   "today": {
     "title": "Heute",
@@ -347,7 +348,20 @@
     "done": "erledigt",
     "weakTitle": "Diese Verse stärken",
     "weakNone": "Keine schwachen Verse – dein Gedächtnismodell ist zufrieden.",
-    "tileKhatm": "Khatm"
+    "tileKhatm": "Khatm",
+    "taskArabic": "Arabisch-Lektion (5 Min.)",
+    "weekTitle": "Deine Woche",
+    "weekHint": "{n} Verse in den letzten 7 Tagen",
+    "pathsTitle": "Deine Lernpfade",
+    "pathArabic": "Arabisch lesen",
+    "pathAcademy": "Academy · Level {lvl}",
+    "pathPlan": "365-Tage-Plan",
+    "pathKhatm": "Khatm",
+    "xpToNext": "noch {n} XP bis zum nächsten Level",
+    "planDay": "Tag {d} von {total}",
+    "howTitle": "So ist die Masterclass aufgebaut",
+    "howBody": "Erst lesen lernen, dann beten, dann Vers für Vers mit der Shams-Methode – Academy, Pläne und Landkarte halten dich dran, Tajwid und der Rezitator-Weg bringen dich zur Meisterschaft.",
+    "howCta": "Den ganzen Aufbau ansehen"
   },
   "home2": {
     "factSurahs": "114 Suren",

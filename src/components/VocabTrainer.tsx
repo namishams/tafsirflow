@@ -1,4 +1,5 @@
 "use client";
+import { IconStarBig } from "./Icons";
 import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -65,7 +66,7 @@ export default function VocabTrainer() {
         <h2 className="font-display mt-2 text-3xl">{de ? deck.title_de : deck.title_en}</h2>
         {!cur ? (
           <div className="mt-6 rounded-lg border border-line bg-surface p-6 text-center">
-            <p className="text-4xl">🌟</p>
+            <p className="flex text-gold"><IconStarBig className="h-10 w-10" /></p>
             <p className="mt-2 text-lg font-bold">{t("roundDone", { ok: score.ok, n: score.n })}</p>
             <div className="mt-4 flex justify-center gap-3">
               <button onClick={() => begin(deck, mode)} className="h-11 rounded-md bg-ink px-5 text-sm font-bold text-bg">{t("again")}</button>

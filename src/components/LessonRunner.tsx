@@ -1,4 +1,5 @@
 "use client";
+import { IconStarBig, IconTrophy } from "./Icons";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -217,7 +218,7 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
 
       {phase === "result" && (
         <section className="mt-6 rounded-lg border border-line bg-surface p-6 text-center">
-          <p className="text-5xl">{score >= PASS ? "🌟" : "💪"}</p>
+          <p className="flex justify-center text-gold">{score >= PASS ? <IconStarBig /> : <IconTrophy />}</p>
           <h2 className="font-display mt-3 text-3xl">{score >= PASS ? t("passed") : t("almost")}</h2>
           <p className="mt-2 text-muted">{t("resultLine", { score, xp, pass: PASS })}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">

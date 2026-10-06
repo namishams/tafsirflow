@@ -1,4 +1,5 @@
 "use client";
+import { IconLock } from "./Icons";
 import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -55,7 +56,7 @@ export default function ArabicHome() {
                   const d = p.done[l.id]; const open = unlocked(p, l.id); const passed = (d?.best ?? 0) >= PASS_PCT; const current = nx?.id === l.id;
                   const inner = (
                     <>
-                      <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-full font-display text-lg ${passed ? "bg-accent text-white" : current ? "btn-gold" : open ? "bg-line/60" : "bg-line/40 text-muted"}`}>{passed ? "✓" : open ? (l.test ? "★" : LESSONS.indexOf(l) + 1) : "🔒"}</span>
+                      <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-full font-display text-lg ${passed ? "bg-accent text-white" : current ? "btn-gold" : open ? "bg-line/60" : "bg-line/40 text-muted"}`}>{passed ? "✓" : open ? (l.test ? "★" : LESSONS.indexOf(l) + 1) : <IconLock />}</span>
                       <span className="min-w-0 flex-1">
                         <span className="block truncate font-bold">{l.test ? `${t.test}: ` : ""}{tx(l.title)}</span>
                         <span className="block truncate text-xs text-muted">{open ? tx(l.goal) : t.locked}</span>

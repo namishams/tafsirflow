@@ -1,4 +1,5 @@
 "use client";
+import { IconFlame } from "./Icons";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -43,7 +44,7 @@ export default function AcademyHome() {
         </div>
         <div className="bg-surface p-5">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">{t("streak")}</p>
-          <p className="font-display mt-2 text-3xl tabular-nums">{streak} 🔥</p>
+          <p className="font-display mt-2 text-3xl tabular-nums">{streak} <IconFlame /></p>
           <p className="mt-2 text-xs text-muted">{t("streakHint", { n: doneCount })}</p>
         </div>
       </section>

@@ -133,7 +133,7 @@ export default function PrayerTrainer() {
             <div className="h-1 overflow-hidden rounded-full bg-white/10"><div className="h-full bg-[rgb(var(--gold))] transition-all" style={{ width: `${((i + 1) / steps.length) * 100}%` }} /></div>
             <div className="mt-4 flex items-center gap-2">
               <button onClick={() => { setAuto(false); setI((n) => Math.max(0, n - 1)); }} disabled={i === 0} className="h-12 rounded-md border border-white/20 px-4 text-sm font-bold disabled:opacity-30">{u.prev}</button>
-              <button onClick={() => (i >= steps.length - 1 ? (setI(0), setAuto(true)) : setAuto((a) => !a))} className="btn-gold h-12 flex-1 rounded-md text-sm font-bold">{i >= steps.length - 1 ? u.restart : auto ? `❚❚ ${u.pause}` : `▶ ${u.play}`}</button>
+              <button onClick={() => (i >= steps.length - 1 ? (setI(0), setAuto(true)) : setAuto((a) => !a))} className="btn-gold h-12 flex-1 rounded-md text-sm font-bold">{i >= steps.length - 1 ? u.restart : auto ? u.pause : u.play}</button>
               <button onClick={() => { setAuto(false); setI((n) => Math.min(steps.length - 1, n + 1)); }} disabled={i >= steps.length - 1} className="h-12 rounded-md border border-white/20 px-4 text-sm font-bold disabled:opacity-30">{u.next}</button>
             </div>
           </div>

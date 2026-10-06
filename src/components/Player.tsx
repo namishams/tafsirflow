@@ -5,11 +5,11 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { localeMeta } from "@/i18n/locales";
 import LanguageSwitcher from "./LanguageSwitcher";
 import AccountLink from "./AccountLink";
-import KidsToggle from "./KidsToggle";
 import AuthGate from "./AuthGate";
 import SocialBar from "./SocialBar";
+import SurahPicker from "./SurahPicker";
 import Logo from "./Logo";
-import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume } from "./Icons";
+import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume, IconFlame } from "./Icons";
 import {
   LimitError, OWN_TAFSIR_ID, RECITERS, getChapter, getChapters, getOwnTafsir, getReciters, getResources, getTafsir, getVerses, hasOwnTafsir, pickTranslation, tafsirOptionsFor,
   type Chapter, type Reciter, type Resource, type TafsirResult, type Verse,
@@ -22,7 +22,7 @@ import { ageProfile } from "@/lib/age";
 type Mode = "learn" | "continuous";
 
 const seg = (on: boolean) =>
-  `shrink-0 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${on ? "bg-[rgb(var(--stage))] text-[rgb(var(--gold))] shadow-sm" : "text-muted hover:text-ink"}`;
+  `shrink-0 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${on ? "bg-surface text-ink shadow-sm ring-1 ring-line" : "text-muted hover:text-ink"}`;
 const IconDots = () => (<svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg>);
 const menuItem = "flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-ink hover:bg-bg";
 // small eight-pointed star used as the ornament of the learning tools
@@ -531,29 +531,28 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             {withBismillah && <p className="font-arabic mt-8 text-center text-3xl text-muted" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>}
           </section>
 
-          <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-line pb-4 text-sm">
-            <label className="flex items-center gap-2">
-              <span className="sr-only">{t("goSurah")}</span>
-              <select value={chapterId} onChange={(e) => router.push(`/surah/${e.target.value}`)} className={`${field} max-w-[11rem] font-medium`} aria-label={t("goSurah")}>
-                {(chapters.length ? chapters : [chapter]).map((c) => <option key={c.id} value={c.id}>{c.id}. {c.name_simple}</option>)}
-              </select>
-            </label>
-            {verse.page > 0 && <span className="text-muted tabular-nums">{t("page")} {verse.page} · {t("juz")} {verse.juz} / {t("hizb")} {verse.hizb}</span>}
-            {!kids && (shams === null
-              ? <button onClick={startShams} className="btn-gold inline-flex h-9 items-center gap-2 rounded-full px-4 text-[13px] font-bold"><Star8 className="h-3 w-3" />{ts("start")}</button>
-              : <button onClick={stopShams} className="inline-flex h-9 items-center rounded-md border border-line px-3.5 text-[13px] font-bold hover:border-ink">{ts("stop")}</button>)}
-            <div className="inline-flex rounded-lg bg-surface p-1 ring-1 ring-line">
-              <button className={seg(view === "verses")} onClick={() => setViewPref("verses")}>{t("viewVerses")}</button>
-              <button className={seg(view === "reading")} onClick={() => setViewPref("reading")}>{t("viewReading")}</button>
+          <div className="mb-6">
+            <div className="flex items-center gap-2">
+              <button onClick={() => router.push(`/surah/${chapterId - 1}`)} disabled={chapterId <= 1} aria-label={t("prev")} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line bg-surface text-muted transition hover:border-ink/40 hover:text-ink disabled:opacity-30"><svg viewBox="0 0 24 24" className="h-4 w-4 rtl:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M15 6l-6 6 6 6" /></svg></button>
+              <div className="min-w-0 flex-1"><SurahPicker current={chapter} chapters={chapters} /></div>
+              <button onClick={() => router.push(`/surah/${chapterId + 1}`)} disabled={chapterId >= 114} aria-label={t("next")} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line bg-surface text-muted transition hover:border-ink/40 hover:text-ink disabled:opacity-30"><svg viewBox="0 0 24 24" className="h-4 w-4 rtl:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M9 6l6 6-6 6" /></svg></button>
             </div>
-          </div>
-
-          <section className="mb-5 rounded-2xl border border-line bg-surface p-4 shadow-card">
-            <button className="flex w-full items-center justify-between text-sm font-semibold" onClick={() => setSettingsOpen((o) => !o)} aria-expanded={settingsOpen}>
-              <span className="inline-flex items-center gap-2"><svg viewBox="0 0 24 24" className="h-4 w-4 text-muted" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" /></svg>{t("settings")}</span><span className="text-muted">{settingsOpen ? "−" : "+"}</span>
-            </button>
+            <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-[13px] text-muted">
+              {verse.page > 0 ? <span className="tabular-nums">{t("page")} {verse.page} · {t("juz")} {verse.juz} · {t("hizb")} {verse.hizb}</span> : <span />}
+              <div className="flex items-center gap-2">
+                {!kids && shams !== null && <button onClick={stopShams} className="inline-flex h-8 items-center rounded-full border border-line px-3.5 text-[13px] font-semibold hover:border-ink">{ts("stop")}</button>}
+                <div className="inline-flex rounded-full bg-bg p-1">
+                  <button className={seg(view === "verses")} onClick={() => setViewPref("verses")}>{t("viewVerses")}</button>
+                  <button className={seg(view === "reading")} onClick={() => setViewPref("reading")}>{t("viewReading")}</button>
+                </div>
+                <button className="inline-flex h-8 items-center gap-1.5 rounded-full px-2 font-semibold text-muted transition hover:text-ink" onClick={() => setSettingsOpen((o) => !o)} aria-expanded={settingsOpen}>
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" /></svg>
+                  {t("settings")}
+                </button>
+              </div>
+            </div>
             {settingsOpen && (
-              <div className="mt-4 grid gap-4 text-sm sm:grid-cols-2">
+              <div className="mt-4 grid gap-4 rounded-xl border border-line bg-surface p-4 text-sm sm:grid-cols-2">
                 <label className="grid gap-1"><span className="text-muted">{t("reciter")}</span>
                   <select value={reciter.folder} onChange={(e) => { setReciterFolder(e.target.value); writeJSON("tf:reciter", e.target.value, true); }} className={field}>
                     {reciters.map((r) => <option key={r.folder} value={r.folder}>{r.name}</option>)}
@@ -600,7 +599,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                 <label className="flex items-center gap-2"><input type="checkbox" checked={showWords} onChange={(e) => setShowWords(e.target.checked)} /> {t("wordByWord")}</label></>}
               </div>
             )}
-          </section>
+          </div>
 
           {view === "reading" ? (
             <div className="rounded-2xl border border-line bg-surface p-6 text-justify font-arabic sm:p-10" dir="rtl" style={{ textAlignLast: "center" }}>
@@ -687,7 +686,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                           <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))]"><Star8 className="h-3 w-3" />{ts("title")} · {ts("stepOf", { n: shams + 1, total: 7 })}</p>
                           <span className="flex items-center gap-3 text-xs text-white/60">
                             {learned.todayCount > 0 && <span>{t("todayCount", { n: learned.todayCount })}</span>}
-                            {learned.streak > 1 && <span>🔥 {learned.streak}</span>}
+                            {learned.streak > 1 && <span><IconFlame /> {learned.streak}</span>}
                             <Link href="/shams" className="underline-offset-2 hover:underline">{ts("about")}</Link>
                           </span>
                         </div>
@@ -769,16 +768,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         {revealed && (
                           <div className="mt-3 rounded-xl border border-gold/40 bg-gold/5 p-3 text-sm">
                             <p className="mb-3 font-semibold">{t("rateQ")}</p>
-                            {kids ? (
-                              <div className="flex flex-wrap gap-2">
-                                {([["again", "😕"], ["good", "🙂"], ["easy", "🤩"]] as const).map(([r, e]) => (
-                                  <button key={r} className="grid h-20 w-20 place-items-center rounded-3xl border-2 border-line bg-surface text-4xl transition hover:scale-110 hover:border-accent" onClick={() => onRate(r)} aria-label={t(r)}>
-                                    {e}<span className="text-xs font-semibold">{t(r)}</span>
-                                  </button>
-                                ))}
-                              </div>
-                            ) : (
-                              <div className="grid grid-cols-3 gap-2">
+                            {(
+                              <div className={`grid grid-cols-3 gap-2 ${kids ? "text-base [&>button]:h-14" : ""}`}>
                                 <button className="h-11 rounded-lg border border-red-300 bg-surface font-semibold text-red-700 transition hover:bg-red-50 dark:border-red-500/40 dark:text-red-300 dark:hover:bg-red-500/10" onClick={() => onRate("again")}>↺ {t("again")}</button>
                                 <button className="h-11 rounded-lg bg-accent font-bold text-white transition hover:brightness-110" onClick={() => onRate("good")}>✓ {t("good")}</button>
                                 <button className="btn-gold h-11 rounded-lg font-bold" onClick={() => onRate("easy")}>★ {t("easy")}</button>

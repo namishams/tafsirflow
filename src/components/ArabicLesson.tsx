@@ -1,4 +1,5 @@
 "use client";
+import { IconFlame, IconSpeaker, IconStarBig, IconTrophy } from "./Icons";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -90,7 +91,7 @@ export default function ArabicLesson({ id }: { id: string }) {
     const passed = finished.pct >= PASS_PCT;
     return (
       <div className="mx-auto max-w-xl py-10 text-center">
-        <p className="text-6xl" aria-hidden>{passed ? "🌟" : "💪"}</p>
+        <p className="flex justify-center text-gold" aria-hidden>{passed ? <IconStarBig /> : <IconTrophy />}</p>
         <h1 className="font-display mt-4 text-4xl">{passed ? t.done : t.notYet}</h1>
         <p className="mt-6 flex justify-center gap-2 text-4xl" aria-label={`${stars}/3`}>{[1, 2, 3].map((n) => <span key={n} className={n <= stars ? "text-gold" : "text-line"}>★</span>)}</p>
         <div className="mt-6 grid grid-cols-2 gap-3">
@@ -117,7 +118,7 @@ export default function ArabicLesson({ id }: { id: string }) {
         <div className="h-3 flex-1 overflow-hidden rounded-full bg-line/70"><div className="h-full rounded-full bg-accent transition-all duration-500" style={{ width: `${(pos / total) * 100}%` }} /></div>
         <span className="min-w-[3.5rem] text-end text-sm font-bold text-gold">{stats.xp} {t.xp}</span>
       </div>
-      {stats.combo >= 3 && <p className="mt-2 text-center text-xs font-bold text-accent">🔥 {stats.combo}×</p>}
+      {stats.combo >= 3 && <p className="mt-2 text-center text-xs font-bold text-accent"><IconFlame /> {stats.combo}×</p>}
 
       <div className="flex-1 pt-8">
         {ex.t === "learn" && <LearnCard ex={ex} t={t} canSpeak={canSpeak} speak={speak} />}
@@ -167,7 +168,7 @@ export default function ArabicLesson({ id }: { id: string }) {
 }
 
 function SpeakBtn({ label, onClick, wide = false }: { label: string; onClick: () => void; wide?: boolean }) {
-  return <button onClick={onClick} aria-label={label} className={`inline-flex h-12 items-center justify-center gap-2 rounded-full bg-accent px-4 text-sm font-bold text-white ${wide ? "w-full" : ""}`}>🔊 {wide && label}</button>;
+  return <button onClick={onClick} aria-label={label} className={`inline-flex h-12 items-center justify-center gap-2 rounded-full bg-accent px-4 text-sm font-bold text-white ${wide ? "w-full" : ""}`}><IconSpeaker />{wide && label}</button>;
 }
 
 function LearnCard({ ex, t, canSpeak, speak }: { ex: Extract<Ex, { t: "learn" }>; t: (typeof T)["de"]; canSpeak: boolean; speak: (s: string) => void }) {
@@ -175,7 +176,7 @@ function LearnCard({ ex, t, canSpeak, speak }: { ex: Extract<Ex, { t: "learn" }>
     <div className="overflow-hidden rounded-2xl border border-line bg-surface">
       <div className="stage flex min-h-[200px] items-center justify-center gap-4 px-4 py-8 text-[#eef0f3]">
         <span className="font-arabic text-[72px] leading-[1.6] text-[rgb(var(--gold))]" dir="rtl">{ex.ar}</span>
-        {canSpeak && ex.speak && <button onClick={() => speak(ex.speak!)} aria-label={t.listen} className="grid h-12 w-12 place-items-center rounded-full bg-white/10 text-xl hover:bg-white/20">🔊</button>}
+        {canSpeak && ex.speak && <button onClick={() => speak(ex.speak!)} aria-label={t.listen} className="grid h-12 w-12 place-items-center rounded-full bg-white/10 hover:bg-white/20"><IconSpeaker /></button>}
       </div>
       <div className="p-6">
         <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-gold">{t.learn}</p>
