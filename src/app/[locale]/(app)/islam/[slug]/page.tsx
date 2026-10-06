@@ -109,7 +109,7 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
         </aside>
       </div>
 
-      <MoreTiles keys={["salah", "arabic", "shams", "duas"]} />
+      <MoreTiles keys={["assistant", "salah", "arabic", "shams"]} />
 
       <section className="stage girih text-[#eef0f3]">
         <div className="mx-auto max-w-4xl px-5 py-14 text-center">

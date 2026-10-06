@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import AssistantChat from "@/components/AssistantChat";
-import RequireAccount from "@/components/RequireAccount";
 import { pageMeta } from "@/lib/site";
 
 const C = {
@@ -14,7 +13,7 @@ const content = (l: string) => (l === "de" ? C.de : l === "ar" ? C.ar : C.en);
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const c = content(locale);
-  return { ...pageMeta(locale, "/assistant", `${c.title} | Quran Masterclass`, c.lead), robots: { index: false, follow: true } };
+  return pageMeta(locale, "/assistant", `${c.title} | Quran Masterclass`, c.lead);
 }
 
 export default async function AssistantPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -26,7 +25,7 @@ export default async function AssistantPage({ params }: { params: Promise<{ loca
       <p className="eyebrow text-gold">{c.kicker}</p>
       <h1 className="font-display mt-2 text-4xl leading-tight sm:text-5xl">{c.title}</h1>
       <p className="mt-3 text-[16px] leading-relaxed text-muted">{c.lead}</p>
-      <div className="mt-6"><RequireAccount feature={c.feature}><AssistantChat /></RequireAccount></div>
+      <div className="mt-6"><AssistantChat /></div>
     </main>
   );
 }
