@@ -52,7 +52,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
   if (rateLimited(`${action}:${ip}`, action === "login" ? 10 : 5, action === "login" ? 10 * 60_000 : 60 * 60_000)) return json({ error: "rate" }, 429);
   if (action === "forgot" || action === "reset") { /* shares the strict hourly limit above */ }
 
-  const body = (await req.json().catch(() => ({}))) as { email?: string; password?: string; name?: string; firstName?: string; lastName?: string; country?: string; city?: string; goal?: string; marketing?: boolean; acceptTerms?: boolean; token?: string; locale?: string };
+  const body = (await req.json().catch(() => ({}))) as { email?: string; password?: string; name?: string; firstName?: string; lastName?: string; country?: string; city?: string; goal?: string; marketing?: boolean; acceptTerms?: boolean; token?: string; locale?: string; birthYear?: number };
 
   if (action === "resend") {
     const me = await currentUser();
@@ -102,12 +102,14 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
     const country = String(body.country ?? "").toUpperCase();
     if (!COUNTRY_CODES.includes(country)) return json({ error: "country" }, 400);
     if (body.acceptTerms !== true) return json({ error: "terms" }, 400);
+    const birthYear = Number(body.birthYear);
+    if (!Number.isInteger(birthYear) || birthYear < 1920 || birthYear > new Date().getFullYear() - 3) return json({ error: "age" }, 400);
     const goal = (GOALS as readonly string[]).includes(String(body.goal)) ? String(body.goal) : null;
     const name = `${firstName} ${lastName}`;
     const city = clean(body.city, 80) || null;
     const loc = /^[a-z]{2}$/.test(String(body.locale)) ? String(body.locale) : null;
     try {
-      const r = await p.query("INSERT INTO users (email, password_hash, name, first_name, last_name, country, city, goal, locale, marketing_opt_in, terms_accepted_at, role, email_verified) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, now(), $11, $12) RETURNING id", [email, hashPassword(password), name, firstName, lastName, country, city, goal, loc, body.marketing === true, isAdminEmail(email) ? "admin" : "user", !mailConfigured()]);
+      const r = await p.query("INSERT INTO users (email, password_hash, name, first_name, last_name, country, city, goal, locale, marketing_opt_in, terms_accepted_at, role, email_verified, birth_year) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, now(), $11, $12, $13) RETURNING id", [email, hashPassword(password), name, firstName, lastName, country, city, goal, loc, body.marketing === true, isAdminEmail(email) ? "admin" : "user", !mailConfigured(), birthYear]);
       const uid = Number(r.rows[0].id);
       await startSession(uid, req);
       if (mailConfigured()) await sendVerification(req, uid, email, /^[a-z]{2}$/.test(String(body.locale)) ? String(body.locale) : "en");

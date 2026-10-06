@@ -41,7 +41,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": abs("/#org"), name: "Quran Masterclass", url: abs("/"), logo: abs("/icon.svg") },
+      { "@type": "Organization", "@id": abs("/#org"), name: "Quran Masterclass", url: abs("/"), logo: abs("/icon-512.png") },
       { "@type": "WebSite", "@id": abs("/#site"), url: abs(`/${locale}`), name: "Quran Masterclass", inLanguage: routing.locales, publisher: { "@id": abs("/#org") } },
       { "@type": "SoftwareApplication", name: "Quran Masterclass", applicationCategory: "EducationalApplication", operatingSystem: "Web", description: t("seo.homeDesc", { n }), inLanguage: locale, offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" } },
       { "@type": "FAQPage", inLanguage: locale, mainEntity: FAQ.map((i) => ({ "@type": "Question", name: faqText(i, "q"), acceptedAnswer: { "@type": "Answer", text: faqText(i, "a") } })) },

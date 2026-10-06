@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { RECITERS, getChapter, getResources, getVerses, pickTranslation, type Chapter, type Verse } from "@/lib/quran";
 import { noteMistake } from "@/lib/learning";
+import { ageProfile } from "@/lib/age";
 import { PASS, PATH, levelOf, questionsFor, readProgress, saveResult, secondsPerQuestion } from "@/lib/academy";
 import { IconPlay } from "./Icons";
 
@@ -84,7 +85,7 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
     getResources().then((r) => getVerses(s, locale, RECITERS[0], pickTranslation(locale, r.translations))).then(setVerses).catch(() => setVerses([]));
   }, [s, locale]);
 
-  const secs = secondsPerQuestion(lvl);
+  const secs = secondsPerQuestion(lvl, ageProfile().testBonus);
   const start = () => {
     setQs(buildQuiz(verses, lesson.from, lesson.to, questionsFor(lvl)));
     setI(0); setCorrect(0); setXp(0); setPicked(null); setOrder([]); setLeft(secs); setPhase("quiz");

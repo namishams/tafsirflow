@@ -27,7 +27,7 @@ export default function SunnahDuas() {
       .filter((d) => !s || [d.ar, d.tr, d.en, d.de, d.src].some((x) => x.toLowerCase().includes(s)));
   }, [cat, q, fav]);
 
-  const toggleFav = (id: string) => { const n = fav.includes(id) ? fav.filter((x) => x !== id) : [...fav, id]; setFav(n); writeJSON("tf:duafav", n, true); };
+  const toggleFav = (id: string) => { const n = fav.includes(id) ? fav.filter((x) => x !== id) : [...fav, id]; setFav(n); writeJSON("tf:duafav", n); };
   const tap = (id: string, max: number) => setCount((c) => ({ ...c, [id]: (c[id] ?? 0) >= max ? 0 : (c[id] ?? 0) + 1 }));
   const copy = async (d: (typeof ALL)[number]) => {
     try { await navigator.clipboard.writeText(`${d.ar}\n\n${d.tr}\n\n${meaning(d)}\n\n— ${d.src}`); setCopied(d.id); setTimeout(() => setCopied(""), 1800); } catch { /* clipboard blocked */ }

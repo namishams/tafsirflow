@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { fetchMe, startSync, stopSync, type Me } from "@/lib/sync";
 import { GOALS, sortedCountries } from "@/lib/countries";
 
-const ERR: Record<string, string> = { invalid: "errInvalid", exists: "errExists", weak: "errWeak", email: "errEmail", rate: "errRate", insecure: "errInsecure", nodb: "errNoDb", token: "errToken", terms: "errTerms", name: "errName", country: "errCountry" };
+const ERR: Record<string, string> = { invalid: "errInvalid", exists: "errExists", weak: "errWeak", email: "errEmail", rate: "errRate", insecure: "errInsecure", nodb: "errNoDb", token: "errToken", terms: "errTerms", name: "errName", country: "errCountry", age: "errAge" };
 type Mode = "login" | "register" | "forgot";
 
 export function Field({ label, children }: { label: string; children: React.ReactNode }) {
@@ -48,6 +48,7 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
   const [lastName, setLastName] = useState("");
   const [country, setCountry] = useState("");
   const [goal, setGoal] = useState("");
+  const [birthYear, setBirthYear] = useState("");
   const [terms, setTerms] = useState(false);
   const [marketing, setMarketing] = useState(false);
   const countries = useMemo(() => sortedCountries(locale), [locale]);
@@ -70,7 +71,7 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
     setErr("");
     setInfo("");
     try {
-      const r = await fetch(`/api/auth/${mode}`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email, password, firstName, lastName, country, city, goal, marketing, acceptTerms: terms, locale }) });
+      const r = await fetch(`/api/auth/${mode}`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email, password, firstName, lastName, country, city, goal, birthYear: Number(birthYear), marketing, acceptTerms: terms, locale }) });
       const data = await r.json();
       if (!r.ok) { setErr(t(ERR[data.error] ?? "errGeneric")); return; }
       if (mode === "forgot") { setInfo(t("forgotSent")); return; }
@@ -110,6 +111,7 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
         )}
         {me.emailVerified && <p className="mt-5 border-t border-line pt-5 text-sm leading-relaxed text-muted">{t("syncOn")}</p>}
         <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/profile" className="inline-flex h-11 items-center rounded-lg bg-ink px-5 text-sm font-semibold text-bg">{t("myProfile")}</Link>
           <Link href="/quran" className="inline-flex h-11 items-center rounded-lg bg-accent px-5 text-sm font-semibold text-white">{t("home")}</Link>
           {me.role === "admin" && <Link href="/admin" className="inline-flex h-11 items-center rounded-lg border border-line px-5 text-sm font-semibold hover:border-ink">Admin</Link>}
           <button onClick={logout} className="inline-flex h-11 items-center rounded-lg border border-line px-5 text-sm font-semibold hover:border-ink">{t("signOut")}</button>
@@ -147,12 +149,21 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
             </Field>
             <Field label={`${t("city")} (${t("optional")})`}><input className={inputCls} value={city} onChange={(e) => setCity(e.target.value)} autoComplete="address-level2" maxLength={80} /></Field>
           </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+          <Field label={t("birthYear")}>
+            <select className={inputCls} required value={birthYear} onChange={(e) => setBirthYear(e.target.value)} autoComplete="bday-year">
+              <option value="">{t("birthYearPick")}</option>
+              {Array.from({ length: new Date().getFullYear() - 3 - 1920 + 1 }, (_, i) => new Date().getFullYear() - 3 - i).map((y) => <option key={y} value={y}>{y}</option>)}
+            </select>
+          </Field>
           <Field label={`${t("goal")} (${t("optional")})`}>
             <select className={inputCls} value={goal} onChange={(e) => setGoal(e.target.value)}>
               <option value="">–</option>
               {GOALS.map((g) => <option key={g} value={g}>{t(`goal${g[0].toUpperCase()}${g.slice(1)}`)}</option>)}
             </select>
           </Field>
+          </div>
+          <p className="-mt-2 text-xs text-muted">{t("birthYearHint")}</p>
         </>
       )}
       {mode !== "forgot" && (

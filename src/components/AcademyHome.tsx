@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { getChapters, type Chapter } from "@/lib/quran";
 import { PASS, UNITS, dailyGoal, levelOf, levelStart, lessonsOf, nextLesson, readProgress, secondsPerQuestion, streakOf, type Progress } from "@/lib/academy";
 import { today, weakestVerses } from "@/lib/learning";
+import { ageProfile } from "@/lib/age";
 
 // Academy overview: daily goal that grows with the streak, level, and the path through all 114 surahs
 export default function AcademyHome() {
@@ -38,7 +39,7 @@ export default function AcademyHome() {
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">{t("level")}</p>
           <p className="font-display mt-2 text-3xl tabular-nums">{lvl}</p>
           <div className="mt-3 h-2 overflow-hidden rounded-full bg-line"><div className="h-full bg-gold" style={{ width: `${(into / need) * 100}%` }} /></div>
-          <p className="mt-2 text-xs text-muted">{t("levelHint", { secs: secondsPerQuestion(lvl), xp: need - into })}</p>
+          <p className="mt-2 text-xs text-muted">{t("levelHint", { secs: secondsPerQuestion(lvl, ageProfile().testBonus), xp: need - into })}</p>
         </div>
         <div className="bg-surface p-5">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">{t("streak")}</p>

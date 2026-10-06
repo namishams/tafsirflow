@@ -112,6 +112,7 @@ INSERT INTO reciters (folder, slug, name, qc_id, sort) VALUES
 ON CONFLICT (folder) DO NOTHING;
 
 -- social layer: likes, views, shares, moderated comments
+ALTER TABLE users ADD COLUMN IF NOT EXISTS birth_year int;
 ALTER TABLE users ADD COLUMN IF NOT EXISTS comment_banned boolean NOT NULL DEFAULT false;
 ALTER TABLE users ADD COLUMN IF NOT EXISTS comment_strikes int NOT NULL DEFAULT 0;
 

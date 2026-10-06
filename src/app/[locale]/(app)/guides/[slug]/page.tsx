@@ -31,7 +31,7 @@ export default async function GuidePage({ params }: { params: Promise<{ locale: 
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Article", headline: title, description: de ? g.desc_de : g.desc_en, datePublished: g.date, dateModified: g.date, inLanguage: locale, author: { "@type": "Person", name: "Nami Shams" }, publisher: { "@type": "Organization", name: "Quran Masterclass", logo: abs("/icon.svg") }, mainEntityOfPage: abs(`/${locale}/guides/${slug}`) },
+      { "@type": "Article", headline: title, description: de ? g.desc_de : g.desc_en, datePublished: g.date, dateModified: g.date, inLanguage: locale, author: { "@type": "Person", name: "Nami Shams" }, publisher: { "@type": "Organization", name: "Quran Masterclass", logo: abs("/icon-512.png") }, mainEntityOfPage: abs(`/${locale}/guides/${slug}`) },
       { "@type": "FAQPage", inLanguage: locale, mainEntity: g.faq.map((f) => ({ "@type": "Question", name: de ? f.q_de : f.q_en, acceptedAnswer: { "@type": "Answer", text: de ? f.a_de : f.a_en } })) },
       { "@type": "BreadcrumbList", itemListElement: [
         { "@type": "ListItem", position: 1, name: "Quran Masterclass", item: abs(`/${locale}`) },

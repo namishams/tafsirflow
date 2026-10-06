@@ -17,6 +17,7 @@ import {
 import { readJSON, writeJSON } from "@/lib/storage";
 import { dueVerses, rate, type Rating } from "@/lib/learning";
 import * as vp from "@/lib/versePlayback";
+import { ageProfile } from "@/lib/age";
 
 type Mode = "learn" | "continuous";
 
@@ -108,7 +109,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [chainDone, setChainDone] = useState(false);
   const [mnemos, setMnemos] = useState<Record<string, string>>({});
   useEffect(() => { setMnemos(readJSON<Record<string, string>>("tf:mnemo", {})); }, []);
-  const saveMnemo = (key: string, text: string) => { const n = { ...mnemos }; if (text.trim()) n[key] = text.trim(); else delete n[key]; setMnemos(n); writeJSON("tf:mnemo", n, true); };
+  const saveMnemo = (key: string, text: string) => { const n = { ...mnemos }; if (text.trim()) n[key] = text.trim(); else delete n[key]; setMnemos(n); writeJSON("tf:mnemo", n); };
   const [showTranslit, setShowTranslit] = useState(true);
   const [loopOn, setLoopOn] = useState(false);
   const [loopFrom, setLoopFrom] = useState(1);
@@ -329,10 +330,11 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   useEffect(() => {
     if (shams === null) return;
     const replay = () => goTo(idx, true);
+    const ap = ageProfile(); // children and seniors: slower and more repetitions
     switch (shams) {
-      case 0: setMode("learn"); setRepeat(3); setSpeed(1); setShowWords(false); setShowTranslit(false); setShowTranslation(false); setHide(0); setSheetOpen(false); replay(); break;
-      case 1: setRepeat(1); setSpeed(hasTimings ? 0.85 : 0.75); setShowTranslit(true); if (hasTimings) startChain(); else { setRepeat(3); replay(); } break;
-      case 2: setChain(null); setRepeat(1); setSpeed(1); setShowWords(true); setShowTranslit(true); break;
+      case 0: setMode("learn"); setRepeat(ap.listen); setSpeed(ap.speed); setShowWords(false); setShowTranslit(false); setShowTranslation(false); setHide(0); setSheetOpen(false); replay(); break;
+      case 1: setRepeat(1); setSpeed(Math.min(ap.speed, hasTimings ? 0.85 : 0.75)); setShowTranslit(true); if (hasTimings) startChain(); else { setRepeat(3); replay(); } break;
+      case 2: setChain(null); setRepeat(1); setSpeed(ap.speed); setShowWords(true); setShowTranslit(true); break;
       case 3: setShowWords(false); setShowTranslation(true); break;
       case 4: if (!isDesktop) setSheetOpen(true); break;
       case 5: setSheetOpen(false); setShowTranslation(false); setShowTranslit(false); setHide(3); break;

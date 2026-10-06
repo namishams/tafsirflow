@@ -5,7 +5,7 @@ import { TAJWEED_LESSONS } from "./tajweed";
 
 // Sitemap index -> one file per category and language, e.g. /sitemaps/surahs-de.xml
 export const CATEGORIES = {
-  pages: ["", "/shams", "/academy", "/tajweed", "/vocab", "/khatm", "/guides", "/quran", "/today", "/search", "/prayer", "/radio", "/duas", "/support"],
+  pages: ["", "/shams", "/plan", "/academy", "/tajweed", "/vocab", "/khatm", "/guides", "/quran", "/today", "/search", "/prayer", "/radio", "/duas", "/support"],
   guides: [...GUIDES.map((g) => `/guides/${g.slug}`), ...TAJWEED_LESSONS.map((l) => `/tajweed/${l.id}`)],
   legal: ["/legal/privacy", "/legal/terms", "/legal/imprint"],
   surahs: Array.from({ length: 114 }, (_, i) => `/surah/${i + 1}`),

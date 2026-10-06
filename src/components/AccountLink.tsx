@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { fetchMe, startSync, type Me } from "@/lib/sync";
+import { writeJSON } from "@/lib/storage";
 
 export default function AccountLink() {
   const t = useTranslations("account");
@@ -12,6 +13,7 @@ export default function AccountLink() {
     fetchMe().then(async (r) => {
       if (!r.user) return;
       setMe(r.user);
+      if (r.user.birthYear) writeJSON("tf:age", r.user.birthYear, true);
       if (await startSync()) window.dispatchEvent(new Event("tf-synced"));
     });
   }, []);
@@ -24,7 +26,7 @@ export default function AccountLink() {
       </Link>
     );
   return (
-    <Link href="/account" aria-label={me.email} title={me.email} className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-accent text-sm font-bold text-white shadow-card">
+    <Link href="/profile" aria-label={me.email} title={me.email} className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-accent text-sm font-bold text-white shadow-card">
       {(me.name || me.email)[0].toUpperCase()}
     </Link>
   );

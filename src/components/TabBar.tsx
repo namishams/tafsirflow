@@ -14,6 +14,7 @@ const TABS = [
 
 const LEARN = [
   { href: "/academy", key: "courses" },
+  { href: "/plan", key: "plan" },
   { href: "/shams", key: "shams" },
   { href: "/tajweed", key: "tajweed" },
   { href: "/vocab", key: "vocab" },
@@ -89,7 +90,7 @@ export default function TabBar() {
               <Link href="/duas" className={cell}><IconHands /><span>{t("duas")}</span></Link>
               <Link href="/radio" className={cell}><IconRadio /><span>{t("radio")}</span></Link>
               <Link href="/prayer" className={cell}><IconClock /><span>{t("prayer")}</span></Link>
-              <Link href="/account" className={cell}><IconUser /><span>{t("account")}</span></Link>
+              <Link href={me ? "/profile" : "/account"} className={cell}><IconUser /><span>{me ? t("profile") : t("account")}</span></Link>
               <button onClick={() => { document.querySelector<HTMLButtonElement>("button[aria-pressed]")?.click(); setMore(false); }} className={cell}><IconKid /><span>{t("kids")}</span></button>
               {me?.role === "admin" && <Link href="/admin" className={cell}><IconShield /><span>{t("admin")}</span></Link>}
               {LEARN.map((l) => <Link key={l.href} href={l.href} className={cell}><IconCap /><span>{t(l.key)}</span></Link>)}

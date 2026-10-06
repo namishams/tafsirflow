@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import VocabTrainer from "@/components/VocabTrainer";
+import RequireAccount from "@/components/RequireAccount";
 import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -17,7 +18,7 @@ export default async function VocabPage({ params }: { params: Promise<{ locale: 
     <main className="mx-auto max-w-3xl px-4 pb-24 pt-8">
       <h1 className="font-display text-[40px] leading-[1.05] sm:text-5xl">{t("title")}</h1>
       <p className="mt-4 text-[17px] leading-relaxed text-muted">{t("lead")}</p>
-      <VocabTrainer />
+      <RequireAccount feature={t("title")}><VocabTrainer /></RequireAccount>
     </main>
   );
 }

@@ -16,7 +16,7 @@ export default function TajweedQuiz({ id }: { id: string }) {
   const next = () => {
     const right = ok + (pick === q.answer ? 1 : 0);
     setOk(right); setPick(null); setI(i + 1);
-    if (i + 1 >= l.quiz.length) { const r = readJSON<Record<string, number>>("tf:tajweed", {}); r[id] = Math.max(r[id] ?? 0, Math.round((right / l.quiz.length) * 100)); writeJSON("tf:tajweed", r, true); }
+    if (i + 1 >= l.quiz.length) { const r = readJSON<Record<string, number>>("tf:tajweed", {}); r[id] = Math.max(r[id] ?? 0, Math.round((right / l.quiz.length) * 100)); writeJSON("tf:tajweed", r); }
   };
   if (done) return (
     <div className="mt-4 rounded-lg border border-line bg-surface p-6 text-center">

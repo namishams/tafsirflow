@@ -47,7 +47,7 @@ export default function VocabTrainer() {
     const b = boxes[cur.id]?.box ?? 0;
     const nb = ok ? Math.min(5, b + 1) : 1;
     const next = { ...boxes, [cur.id]: { box: nb, due: today() + GAP[nb] } };
-    setBoxes(next); writeJSON(KEY, next, true);
+    setBoxes(next); writeJSON(KEY, next);
     setScore((s) => ({ ok: s.ok + (ok ? 1 : 0), n: s.n + 1 }));
     setQueue((q) => (ok ? q.slice(1) : [...q.slice(1), cur])); // missed words come back at the end
     setFlip(false);

@@ -38,7 +38,7 @@ export const levelStart = (lvl: number) => 60 * (lvl - 1) ** 2;
 // the daily goal grows with your streak – "a little more every day"
 export const dailyGoal = (p: Progress) => Math.min(250, 40 + 10 * streakOf(p));
 // fewer seconds per question the higher your level
-export const secondsPerQuestion = (lvl: number) => Math.max(8, 26 - 2 * lvl);
+export const secondsPerQuestion = (lvl: number, bonus = 0) => Math.max(8, 26 - 2 * lvl) + bonus; // bonus: extra time for children and seniors
 export const questionsFor = (lvl: number) => Math.min(14, 6 + lvl);
 
 export function saveResult(lesson: string, score: number, xp: number): Progress {
