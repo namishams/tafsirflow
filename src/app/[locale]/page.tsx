@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { TrustLine } from "@/components/TrustStrip";
 import PosterTiles from "@/components/PosterTiles";
 import { Divider, Ink } from "@/components/Ornaments";
+import CountUp from "@/components/CountUp";
 import { HOME_TILES } from "@/lib/tiles";
 import AppHeader from "@/components/AppHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -39,7 +40,6 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
   const t = await getTranslations();
   const n = routing.locales.length;
   // numbers in the hero strip follow the visitor's language (6.236 in German, 6,236 in English); Latin digits like the rest of the page
-  const verses = (6236).toLocaleString(`${locale}-u-nu-latn`);
   const free = (0).toLocaleString(`${locale}-u-nu-latn`, { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
   const chapters = await getChapters(locale).catch(() => []);
   const btnP = "inline-flex h-12 items-center rounded-md bg-accent px-6 text-[15px] font-bold text-white transition hover:brightness-110";
@@ -78,8 +78,8 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
               <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[rgb(var(--gold))]/40 px-3 py-1 text-xs font-semibold text-[rgb(var(--gold))]">✓ {t("free.badge")}</p>
               <TrustLine className="mt-3 flex text-white/70" />
               <ul className="mt-6 grid max-w-lg grid-cols-2 gap-px overflow-hidden rounded-md border border-white/10 bg-white/10 sm:grid-cols-4">
-                {[["114", "home2.statSurahs"], [verses, "home2.statVerses"], [String(n), "home2.statLanguages"], [free, "home2.statFree"]].map(([v, k]) => (
-                  <li key={k} className="bg-stage px-4 py-3"><p className="font-display text-2xl">{v}</p><p className="text-xs text-white/55">{t(k)}</p></li>
+                {([[114, "home2.statSurahs"], [6236, "home2.statVerses"], [n, "home2.statLanguages"], [free, "home2.statFree"]] as [number | string, string][]).map(([v, k]) => (
+                  <li key={k} className="bg-stage px-4 py-3"><p className="font-display text-2xl">{typeof v === "number" ? <CountUp to={v} locale={locale} /> : v}</p><p className="text-xs text-white/55">{t(k)}</p></li>
                 ))}
               </ul>
             </div>

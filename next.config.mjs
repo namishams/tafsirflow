@@ -14,7 +14,7 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://www.gstatic.com/recaptcha/",
   "font-src 'self' data:",
-  "media-src 'self' blob: https://verses.quran.com https://*.quran.com https://download.quranicaudio.com",
+  "media-src 'self' blob: https://verses.quran.com https://*.quran.com https://audio.qurancdn.com https://download.quranicaudio.com",
   `connect-src 'self' https://www.google.com/recaptcha/${prod ? "" : " ws: wss:"}`,
   "frame-ancestors 'none'",
   "base-uri 'self'",

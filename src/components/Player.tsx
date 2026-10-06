@@ -155,6 +155,20 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [cur, setCur] = useState(0);
   const [dur, setDur] = useState(0);
   const [vol, setVol] = useState(1);
+  // tap a word: hear it on its own (word-by-word recordings of Quran.com)
+  const wordAudio = useRef<HTMLAudioElement | null>(null);
+  const [wordOn, setWordOn] = useState<string | null>(null);
+  const playWord = (key: string, pos: number) => {
+    const [s, a] = key.split(":").map((n) => n.padStart(3, "0"));
+    audioRef.current?.pause();
+    wordAudio.current ??= new Audio();
+    const el = wordAudio.current;
+    el.src = `https://audio.qurancdn.com/wbw/${s}_${a}_${String(pos).padStart(3, "0")}.mp3`;
+    el.onended = () => setWordOn(null);
+    setWordOn(`${key}:${pos}`);
+    window.dispatchEvent(new Event("tf-audio-start"));
+    el.play().catch(() => setWordOn(null));
+  };
   const [offline, setOffline] = useState<{ state: "none" | "saving" | "saved" | "error"; done: number; bytes: number }>({ state: "none", done: 0, bytes: 0 });
 
   useEffect(() => {
@@ -757,8 +771,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                           const mark = hide === 6 ? testMarks[wi] : undefined;
                           const outOfChain = chainFrom !== null && w.position < chainFrom;
                           return (
-                          <span key={w.position} className="text-center">
-                            <span className={`block rounded-lg px-1.5 transition ${covered ? "select-none bg-line text-transparent blur-sm" : ""} ${soft ? "select-none opacity-40 blur-[3px]" : ""} ${mark === true ? "text-accent" : mark === false ? "text-red-600 underline decoration-2 underline-offset-8" : ""} ${hide === 6 && wi === testPos && !revealed ? "ring-2 ring-gold" : ""} ${cueOnly ? "text-gold" : ""} ${outOfChain ? "opacity-25" : ""} ${!covered && hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{cueOnly ? firstLetter(w.text_uthmani) : w.text_uthmani}</span>
+                          <span key={w.position} className="text-center" onClick={covered || soft || cueOnly ? undefined : (e) => { e.stopPropagation(); playWord(v.verse_key, w.position); }}>
+                            <span className={`block cursor-pointer rounded-lg px-1.5 transition ${wordOn === `${v.verse_key}:${w.position}` ? "bg-gold/15 text-gold" : ""} ${covered ? "select-none bg-line text-transparent blur-sm" : ""} ${soft ? "select-none opacity-40 blur-[3px]" : ""} ${mark === true ? "text-accent" : mark === false ? "text-red-600 underline decoration-2 underline-offset-8" : ""} ${hide === 6 && wi === testPos && !revealed ? "ring-2 ring-gold" : ""} ${cueOnly ? "text-gold" : ""} ${outOfChain ? "opacity-25" : ""} ${!covered && hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{cueOnly ? firstLetter(w.text_uthmani) : w.text_uthmani}</span>
                             {showWords && !covered && (
                               <span className="block font-sans text-[11px] leading-tight text-muted" dir="ltr">
                                 {showTranslit && <span className="block italic text-gold">{w.transliteration?.text}</span>}
@@ -796,8 +810,10 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                             {plan.kind !== "new" && !fullPath && <button onClick={() => { setFullPath(true); beginPlan(idx, true); }} className="ms-2 font-semibold text-[rgb(var(--gold))] underline-offset-2 hover:underline">{ts("fullPath")}</button>}
                           </p>
                         )}
-                        <h3 className="font-display mt-4 text-2xl leading-tight">{ts(`s${shams + 1}`)}</h3>
-                        <p className="mt-2 text-[15px] leading-relaxed text-white/75">{shams === 0 && plan ? ts("d1n", { n: plan.listen }) : ts(`d${shams + 1}`)}</p>
+                        <div key={`${v.verse_key}-${shams}`} className="step-in">
+                          <h3 className="font-display mt-4 text-2xl leading-tight">{ts(`s${shams + 1}`)}</h3>
+                          <p className="mt-2 text-[15px] leading-relaxed text-white/75">{shams === 0 && plan ? ts("d1n", { n: plan.listen }) : ts(`d${shams + 1}`)}</p>
+                        </div>
                         {shams === 7 && (
                           <div className="mt-3 rounded-lg border border-white/10 p-3">
                             {verses[i - 1] && <p className="font-arabic text-xl leading-loose text-white/60" dir="rtl">{verses[i - 1].text_uthmani}</p>}
