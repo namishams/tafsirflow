@@ -99,7 +99,12 @@
     "toolShams": "Shams-Methode",
     "hideLabel": "Verdecken:",
     "more": "Mehr",
-    "todayCount": "Heute: {n} Verse"
+    "todayCount": "Heute: {n} Verse",
+    "offline": "Offline lernen",
+    "offlineSave": "Sure offline speichern",
+    "offlineSaved": "Offline gespeichert · {mb} MB",
+    "offlineRemove": "Entfernen",
+    "offlineError": "Speichern unterbrochen – bitte mit Internet noch einmal versuchen."
   },
   "language": {
     "label": "Sprache"

@@ -99,7 +99,12 @@
     "toolShams": "Shams Method",
     "hideLabel": "Cover:",
     "more": "More",
-    "todayCount": "Today: {n} verses"
+    "todayCount": "Today: {n} verses",
+    "offline": "Learn offline",
+    "offlineSave": "Save surah offline",
+    "offlineSaved": "Saved offline · {mb} MB",
+    "offlineRemove": "Remove",
+    "offlineError": "Saving was interrupted – please try again with a connection."
   },
   "language": {
     "label": "Language"

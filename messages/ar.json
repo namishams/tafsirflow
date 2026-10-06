@@ -99,7 +99,12 @@
     "toolShams": "منهج شمس",
     "hideLabel": "إخفاء:",
     "more": "المزيد",
-    "todayCount": "اليوم: {n} آية"
+    "todayCount": "اليوم: {n} آية",
+    "offline": "التعلّم دون اتصال",
+    "offlineSave": "حفظ السورة للاستماع دون اتصال",
+    "offlineSaved": "محفوظة دون اتصال · {mb} ميغابايت",
+    "offlineRemove": "إزالة",
+    "offlineError": "توقّف الحفظ، حاول مرة أخرى مع الاتصال بالإنترنت."
   },
   "language": {
     "label": "اللغة"

@@ -10,6 +10,7 @@ import SocialBar from "./SocialBar";
 import SurahPicker from "./SurahPicker";
 import { Ink, SurahBanner } from "./Ornaments";
 import ReciteCheck from "./ReciteCheck";
+import { offlineReady, removeSurah, saveSurah, savedSurahs } from "@/lib/offline";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume, IconFlame } from "./Icons";
 import {
@@ -154,6 +155,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [cur, setCur] = useState(0);
   const [dur, setDur] = useState(0);
   const [vol, setVol] = useState(1);
+  const [offline, setOffline] = useState<{ state: "none" | "saving" | "saved" | "error"; done: number; bytes: number }>({ state: "none", done: 0, bytes: 0 });
 
   useEffect(() => {
     setMarks(readJSON<string[]>("tf:bookmarks", []));
@@ -666,6 +668,29 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     </select>
                   </div>
                 </div>}
+                {offlineReady() && (() => {
+                  const key = `${chapterId}:${reciter.folder}`;
+                  const saved = offline.state === "saved" || (offline.state === "none" && savedSurahs()[key] !== undefined);
+                  const urls = verses.map((v) => v.audioUrl);
+                  const save = async () => {
+                    setOffline({ state: "saving", done: 0, bytes: 0 });
+                    try { const bytes = await saveSurah(chapterId, reciter.folder, urls, `/${locale}/surah/${chapterId}`, (done) => setOffline((o) => ({ ...o, done }))); setOffline({ state: "saved", done: urls.length, bytes }); }
+                    catch { setOffline((o) => ({ ...o, state: "error" })); }
+                  };
+                  return (
+                    <div className="grid gap-1 sm:col-span-2">
+                      <span className="text-muted">{t("offline")}</span>
+                      <div className="flex flex-wrap items-center gap-3">
+                        {offline.state === "saving"
+                          ? <span className="flex min-w-0 flex-1 items-center gap-3"><span className="h-1.5 flex-1 overflow-hidden rounded-full bg-line"><span className="block h-full bg-accent transition-all" style={{ width: `${(offline.done / Math.max(1, urls.length)) * 100}%` }} /></span><span className="tabular-nums text-muted">{offline.done}/{urls.length}</span></span>
+                          : saved
+                            ? <><span className="font-semibold text-accent">{t("offlineSaved", { mb: Math.max(0.1, Math.round(((offline.bytes || savedSurahs()[key] || 0) / 1048576) * 10) / 10) })}</span><button onClick={async () => { await removeSurah(chapterId, reciter.folder, urls); setOffline({ state: "none", done: 0, bytes: 0 }); }} className="text-muted underline-offset-2 hover:underline">{t("offlineRemove")}</button></>
+                            : <button onClick={save} className="rounded-full border border-line px-4 py-2 font-semibold hover:border-ink">{t("offlineSave")}</button>}
+                        {offline.state === "error" && <span className="text-red-600">{t("offlineError")}</span>}
+                      </div>
+                    </div>
+                  );
+                })()}
                 {!kids && <><label className="flex items-center gap-2"><input type="checkbox" checked={showTranslit} onChange={(e) => setShowTranslit(e.target.checked)} /> {t("transliteration")}</label>
                 <label className="flex items-center gap-2"><input type="checkbox" checked={showTranslation} onChange={(e) => setShowTranslation(e.target.checked)} /> {t("translation")}</label>
                 <label className="flex items-center gap-2"><input type="checkbox" checked={showWords} onChange={(e) => setShowWords(e.target.checked)} /> {t("wordByWord")}</label></>}
