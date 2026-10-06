@@ -224,12 +224,20 @@ function useEngine() {
     navigator.mediaSession.setActionHandler("previoustrack", () => prevVerse());
   });
 
-  // single voice: when the verse player starts, the radio pauses
+  // single voice on the whole site: whatever else starts to play (verse player, verse of the day, prayer-page adhan,
+  // lesson audio) pauses the radio – and when the radio starts, everything else goes quiet
+  const ours = (el: EventTarget | null) => el === adhanEl.current || a.current.includes(el as HTMLAudioElement);
+  const quietOthers = () => {
+    window.dispatchEvent(new Event("tf-radio-start"));
+    document.querySelectorAll("audio, video").forEach((m) => { if (!ours(m) && !(m as HTMLMediaElement).paused) (m as HTMLMediaElement).pause(); });
+  };
   useEffect(() => {
     const off = () => { const cur = a.current[live.current]; if (cur && !cur.paused) cur.pause(); };
+    const onPlay = (e: Event) => { if (e.target instanceof HTMLMediaElement && !ours(e.target)) off(); };
     window.addEventListener("tf-audio-start", off);
-    return () => window.removeEventListener("tf-audio-start", off);
-  }, []);
+    document.addEventListener("play", onPlay, true); // media events don't bubble, so listen in the capture phase
+    return () => { window.removeEventListener("tf-audio-start", off); document.removeEventListener("play", onPlay, true); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // sleep timer
   useEffect(() => {
@@ -254,7 +262,7 @@ function useEngine() {
       <audio ref={adhanEl} preload="none" />
       {[0, 1].map((i) => (
         <audio key={i} ref={(el) => { if (el) a.current[i] = el; }} preload="auto" onEnded={() => { errors.current = 0; if (i === live.current) advance(); }}
-          onError={() => { if (i !== live.current || !startedRef.current) return; errors.current += 1; if (errors.current <= 8) setTimeout(() => advance(), 600); else { setPlaying(false); errors.current = 0; } }} onPause={() => { if (i === live.current && !a.current[i].ended) setPlaying(false); }} onPlay={() => { if (i === live.current) setPlaying(true); }} />
+          onError={() => { if (i !== live.current || !startedRef.current) return; errors.current += 1; if (errors.current <= 8) setTimeout(() => advance(), 600); else { setPlaying(false); errors.current = 0; } }} onPause={() => { if (i === live.current && !a.current[i].ended) setPlaying(false); }} onPlay={() => { if (i === live.current) { setPlaying(true); quietOthers(); } }} />
       ))}
     </>
   );

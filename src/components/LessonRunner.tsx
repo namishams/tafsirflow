@@ -192,7 +192,7 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
             </>)}
             {q.kind === "listen" && (<>
               <p className="text-sm font-semibold text-muted">{t("qListen")}</p>
-              <button onClick={() => { if (!audio.current) audio.current = new Audio(); audio.current.src = q.audio; void audio.current.play(); }} className="mt-3 inline-flex h-11 items-center gap-2 rounded-md bg-ink px-4 text-sm font-bold text-bg"><IconPlay />{t("play")}</button>
+              <button onClick={() => { if (!audio.current) audio.current = new Audio(); audio.current.src = q.audio; window.dispatchEvent(new Event("tf-audio-start")); void audio.current.play(); }} className="mt-3 inline-flex h-11 items-center gap-2 rounded-md bg-ink px-4 text-sm font-bold text-bg"><IconPlay />{t("play")}</button>
               <div className="mt-4 grid gap-2">{q.options.map((o, n) => <button key={n} onClick={() => choose(n)} className={optBtn(n, q.answer)}><span className="font-arabic text-xl" dir="rtl">{o} …</span></button>)}</div>
             </>)}
             {q.kind === "order" && (<>

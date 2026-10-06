@@ -2,10 +2,15 @@
 import type { IslamChapter, IslamDoc } from "./types";
 import { islam } from "./islam";
 import { quran } from "./quran";
+import { prophet } from "./prophet";
+import { cities } from "./cities";
+import { sunniShia } from "./sunni-shia";
+import { prayerSunni } from "./prayer-sunni";
+import { prayerShia } from "./prayer-shia";
+import { future } from "./future";
 
 export type { IslamChapter, IslamDoc };
-// further chapters (prophet, cities, sunni-shia, prayer-sunni, prayer-shia, future) are added as they are finished
-export const ISLAM: IslamDoc[] = [islam, quran];
+export const ISLAM: IslamDoc[] = [islam, quran, prophet, cities, sunniShia, prayerSunni, prayerShia, future];
 export const islamDoc = (slug: string) => ISLAM.find((d) => d.slug === slug);
 export const chapterOf = (d: IslamDoc, locale: string): IslamChapter => (locale === "de" ? d.de : d.en);
 
