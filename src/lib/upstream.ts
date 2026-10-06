@@ -1,6 +1,6 @@
 import { cacheGet, cacheSet } from "./db";
 
-const UPSTREAM = "https://api.quran.com/api/v4";
+const UPSTREAM = process.env.QURAN_UPSTREAM ?? "https://api.quran.com/api/v4";
 
 // Only these read-only paths may be served/fetched (this is not an open proxy).
 const ALLOWED = [

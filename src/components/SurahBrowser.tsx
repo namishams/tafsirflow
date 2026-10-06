@@ -29,12 +29,12 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
   return (
     <>
       {lastChapter && last && (
-        <Link href={`/surah/${last.chapter}?v=${last.verse}`} className="mb-6 flex items-center justify-between rounded-2xl bg-accent p-4 text-white shadow-card">
+        <Link href={`/surah/${last.chapter}?v=${last.verse}`} className="mb-5 flex items-center justify-between rounded-2xl border border-accent/30 bg-accent-soft p-4 shadow-card">
           <span>
-            <span className="block text-xs uppercase tracking-wide opacity-80">{t("resume")}</span>
-            <span className="text-lg font-semibold">{t("resumeAt", { surah: lastChapter.name_simple, verse: last.verse })}</span>
+            <span className="block text-xs font-semibold uppercase tracking-wide text-accent">{t("resume")}</span>
+            <span className="font-display text-lg font-semibold">{t("resumeAt", { surah: lastChapter.name_simple, verse: last.verse })}</span>
           </span>
-          <span aria-hidden className="text-2xl">▶</span>
+          <span aria-hidden className="grid h-10 w-10 place-items-center rounded-full bg-accent text-white">▶</span>
         </Link>
       )}
 
@@ -59,22 +59,23 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder={t("search")}
-        className="mb-4 w-full rounded-xl border border-line bg-surface px-4 py-3 shadow-card outline-none focus:border-accent"
+        className="mb-5 w-full rounded-2xl border border-line bg-surface px-5 py-3.5 shadow-[0_8px_30px_rgba(0,0,0,0.10)] outline-none focus:border-accent"
       />
 
       <ul className="grid gap-3 sm:grid-cols-2">
         {list.map((c) => (
           <li key={c.id}>
-            <Link href={`/surah/${c.id}`} className="flex items-center gap-4 rounded-2xl border border-line bg-surface p-3 shadow-card transition hover:border-accent">
+            <Link href={`/surah/${c.id}`} className="group flex items-center gap-4 rounded-2xl border border-line bg-surface p-3.5 shadow-card transition hover:-translate-y-0.5 hover:border-accent">
               <span className="relative grid h-11 w-11 shrink-0 place-items-center">
-                <span className="absolute inset-1 rotate-45 rounded-md bg-accent-soft" />
-                <span className="relative text-sm font-semibold text-accent">{c.id}</span>
+                <span className="absolute inset-1 rotate-45 rounded-md bg-accent-soft transition group-hover:bg-accent" />
+                <span className="absolute inset-1 rounded-md bg-accent-soft transition group-hover:bg-accent" />
+                <span className="relative text-sm font-semibold text-accent transition group-hover:text-white">{c.id}</span>
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block truncate font-semibold">{c.name_simple}</span>
                 <span className="block truncate text-xs text-muted">{c.translated_name.name} · {c.verses_count} {t("verses")}</span>
               </span>
-              <span className="font-arabic text-2xl text-ink" dir="rtl">{c.name_arabic}</span>
+              <span className="font-arabic text-3xl text-accent" dir="rtl">{c.name_arabic}</span>
             </Link>
           </li>
         ))}

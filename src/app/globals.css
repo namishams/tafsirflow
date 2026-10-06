@@ -3,32 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --bg: 250 248 243;
-  --surface: 255 255 255;
-  --ink: 28 36 32;
-  --muted: 107 122 114;
-  --line: 229 226 217;
-  --accent: 11 122 90;
-  --accent-soft: 217 242 232;
-  --gold: 184 137 59;
+  --bg: 247 244 236;
+  --surface: 255 253 249;
+  --ink: 24 33 29;
+  --muted: 104 116 109;
+  --line: 228 223 211;
+  --accent: 8 98 74;
+  --accent-soft: 222 240 231;
+  --gold: 168 120 40;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: 14 20 17;
-    --surface: 23 32 27;
-    --ink: 232 239 233;
-    --muted: 140 158 148;
-    --line: 42 56 49;
-    --accent: 52 190 145;
-    --accent-soft: 24 58 46;
-    --gold: 214 170 90;
+    --bg: 10 16 14;
+    --surface: 19 28 24;
+    --ink: 233 238 232;
+    --muted: 138 156 146;
+    --line: 38 52 46;
+    --accent: 62 196 152;
+    --accent-soft: 22 52 42;
+    --gold: 218 175 98;
   }
 }
 
 html { -webkit-text-size-adjust: 100%; }
-body { @apply bg-bg text-ink antialiased; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+body { @apply bg-bg text-ink antialiased; font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+html[lang="fa"] body { font-family: "Vazirmatn", "Inter", ui-sans-serif, system-ui, sans-serif; }
+.font-display { font-family: "Fraunces", Georgia, "Times New Roman", serif; }
+html[lang="fa"] .font-display { font-family: "Vazirmatn", serif; }
+
+/* subtle eight-point-star lattice used on hero banners */
+.pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 4l6 20 20 6-20 6-6 20-6-20-20-6 20-6z' fill='none' stroke='%23ffffff' stroke-opacity='.10' stroke-width='1'/%3E%3C/svg%3E");
+}
+.pattern > * { position: relative; }
+
 .tafsir-html { @apply text-[15px] leading-7; }
 .tafsir-html p { @apply mb-3; }
-.tafsir-html h1, .tafsir-html h2, .tafsir-html h3 { @apply font-semibold mt-4 mb-1; }
-.tafsir-html [dir="rtl"], .tafsir-html .arabic { @apply font-arabic text-lg; }
+.tafsir-html h1, .tafsir-html h2, .tafsir-html h3 { @apply font-display font-semibold mt-4 mb-1 text-lg; }
+.tafsir-html [dir="rtl"], .tafsir-html .arabic { @apply font-arabic text-xl leading-9; }

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { localeMeta } from "@/i18n/locales";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Logo from "./Logo";
+import { IconPlay, IconPause, IconPrev, IconNext } from "./Icons";
 import {
   RECITERS, getChapter, getResources, getTafsir, getVerses, pickTranslation, tafsirOptionsFor,
   type Chapter, type Resource, type TafsirResult, type Verse,
@@ -19,6 +20,7 @@ const field = "rounded-lg border border-line bg-surface px-2 py-1.5 text-sm text
 
 export default function Player({ chapterId, startVerse }: { chapterId: number; startVerse: number }) {
   const t = useTranslations("player");
+  const th = useTranslations("home");
   const locale = useLocale();
   const meta = localeMeta(locale);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -208,7 +210,7 @@ export default function Player({ chapterId, startVerse }: { chapterId: number; s
             </p>
           )}
           {/* HTML comes from the Quran.com API */}
-          <div className="tafsir-html" dangerouslySetInnerHTML={{ __html: tafsir.text }} />
+          <div className="tafsir-html" dir={source?.language_name?.toLowerCase() === localeMeta(locale).resourceLang ? meta.dir : "ltr"} dangerouslySetInnerHTML={{ __html: tafsir.text }} />
           {source && (
             <p className="mt-4 border-t border-line pt-2 text-xs text-muted">
               {t("source")}: {source.name}{source.author_name ? ` — ${source.author_name}` : ""} (Quran.com)
@@ -220,132 +222,145 @@ export default function Player({ chapterId, startVerse }: { chapterId: number; s
   );
 
   const primary = "rounded-full bg-accent px-5 py-2.5 font-semibold text-white shadow-card transition hover:opacity-90";
-  const round = "grid h-11 w-11 place-items-center rounded-full border border-line bg-surface text-lg shadow-card hover:border-accent";
+  const withBismillah = chapterId !== 1 && chapterId !== 9;
+  const dockBtn = "grid h-11 w-11 place-items-center rounded-full text-ink transition hover:bg-accent-soft";
 
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-32 pt-4 lg:grid lg:grid-cols-[1fr_24rem] lg:gap-6">
-      <main>
-        <header className="mb-4 flex items-center justify-between gap-2">
-          <Link href="/" className="flex items-center gap-2 text-sm font-medium text-accent">
-            <Logo size={24} /> ← {t("back")}
+    <div className="pb-36">
+      <header className="sticky top-0 z-30 border-b border-line/70 bg-bg/85 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+          <Link href="/" className="flex items-center gap-2 text-sm font-medium text-accent" aria-label={t("back")}>
+            <span aria-hidden>←</span><Logo size={26} /><span className="hidden sm:inline">TafsirFlow</span>
           </Link>
+          <p className="truncate font-display text-base font-semibold">{chapter.id}. {chapter.name_simple}</p>
           <LanguageSwitcher />
-        </header>
-
-        <div className="mb-4 flex items-end justify-between">
-          <h1 className="text-2xl font-bold">{chapter.id}. {chapter.name_simple}</h1>
-          <span className="font-arabic text-3xl" dir="rtl">{chapter.name_arabic}</span>
         </div>
+      </header>
 
-        <section className="mb-4 rounded-2xl border border-line bg-surface p-4 shadow-card">
-          <button className="flex w-full items-center justify-between text-sm font-semibold" onClick={() => setSettingsOpen((o) => !o)} aria-expanded={settingsOpen}>
-            <span>⚙ {t("settings")}</span><span className="text-muted">{settingsOpen ? "−" : "+"}</span>
-          </button>
-          {settingsOpen && (
-            <div className="mt-4 grid gap-4 text-sm sm:grid-cols-2">
-              <label className="grid gap-1"><span className="text-muted">{t("reciter")}</span>
-                <select value={reciterId} onChange={(e) => setReciterId(Number(e.target.value))} className={field}>
-                  {RECITERS.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}
-                </select>
-              </label>
-              <div className="grid gap-1"><span className="text-muted">{t("mode")}</span>
-                <div className="inline-flex w-fit rounded-xl bg-bg p-1">
-                  <button className={seg(mode === "learn")} onClick={() => setMode("learn")}>{t("modeLearn")}</button>
-                  <button className={seg(mode === "continuous")} onClick={() => setMode("continuous")}>{t("modeContinuous")}</button>
-                </div>
-              </div>
-              <label className="grid gap-1"><span className="text-muted">{t("repeat")}</span>
-                <select value={repeat} onChange={(e) => setRepeat(Number(e.target.value))} className={field}>
-                  {[1, 2, 3, 5, 10].map((n) => <option key={n} value={n}>×{n}</option>)}
-                </select>
-              </label>
-              <label className="grid gap-1"><span className="text-muted">{t("speed")}</span>
-                <select value={speed} onChange={(e) => setSpeed(Number(e.target.value))} className={field}>
-                  {[0.5, 0.75, 1, 1.25, 1.5].map((n) => <option key={n} value={n}>{n}×</option>)}
-                </select>
-              </label>
-              <div className="grid gap-1 sm:col-span-2">
-                <label className="flex items-center gap-2"><input type="checkbox" checked={loopOn} onChange={(e) => setLoopOn(e.target.checked)} /> {t("loop")}</label>
-                <div className="flex items-center gap-2 text-muted">
-                  {t("loopFrom")}
-                  <select value={loopFrom} onChange={(e) => setLoopFrom(Number(e.target.value))} className={field}>
-                    {verses.map((v) => <option key={v.verse_key} value={v.verse_number}>{v.verse_number}</option>)}
-                  </select>
-                  {t("loopTo")}
-                  <select value={loopTo} onChange={(e) => setLoopTo(Number(e.target.value))} className={field}>
-                    {verses.map((v) => <option key={v.verse_key} value={v.verse_number}>{v.verse_number}</option>)}
-                  </select>
-                </div>
-              </div>
-              <label className="flex items-center gap-2"><input type="checkbox" checked={showTranslit} onChange={(e) => setShowTranslit(e.target.checked)} /> {t("transliteration")}</label>
-              <label className="flex items-center gap-2"><input type="checkbox" checked={showTranslation} onChange={(e) => setShowTranslation(e.target.checked)} /> {t("translation")}</label>
-              <label className="flex items-center gap-2"><input type="checkbox" checked={showWords} onChange={(e) => setShowWords(e.target.checked)} /> {t("wordByWord")}</label>
-            </div>
-          )}
-        </section>
+      <div className="mx-auto max-w-6xl px-4 lg:grid lg:grid-cols-[1fr_25rem] lg:gap-8">
+        <main className="min-w-0">
+          <section className="pattern relative my-5 overflow-hidden rounded-3xl bg-gradient-to-br from-[#064e3b] via-[#065f46] to-[#0a3a30] px-6 py-8 text-center text-white shadow-card">
+            <p className="font-arabic text-5xl text-[#f3d9a0] sm:text-6xl" dir="rtl">{chapter.name_arabic}</p>
+            <h1 className="mt-2 font-display text-2xl font-semibold">{chapter.name_simple}</h1>
+            <p className="text-sm text-white/70">{chapter.translated_name.name} · {chapter.verses_count} {th("verses")}</p>
+            {withBismillah && <p className="mt-5 font-arabic text-3xl text-white/90" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>}
+          </section>
 
-        <ol className="grid gap-3">
-          {verses.map((v, i) => {
-            const active = i === idx;
-            const words = v.words.filter((w) => w.char_type_name === "word");
-            return (
-              <li key={v.verse_key} id={`v-${i}`}>
-                <article
-                  onClick={() => !active && goTo(i)}
-                  className={`rounded-2xl border p-4 shadow-card transition ${active ? "border-accent bg-surface ring-2 ring-accent/20" : "cursor-pointer border-line bg-surface/70 hover:border-accent"}`}
-                >
-                  <div className="mb-2 flex items-center justify-between text-xs text-muted">
-                    <span className="rounded-full bg-accent-soft px-2 py-0.5 font-semibold text-accent">{v.verse_key}</span>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); toggleMark(v.verse_key); }}
-                      aria-label={marks.includes(v.verse_key) ? t("bookmarked") : t("bookmark")}
-                      className={marks.includes(v.verse_key) ? "text-gold" : "hover:text-ink"}
-                    >{marks.includes(v.verse_key) ? "★" : "☆"}</button>
+          <section className="mb-5 rounded-2xl border border-line bg-surface p-4 shadow-card">
+            <button className="flex w-full items-center justify-between text-sm font-semibold" onClick={() => setSettingsOpen((o) => !o)} aria-expanded={settingsOpen}>
+              <span>⚙ {t("settings")}</span><span className="text-muted">{settingsOpen ? "−" : "+"}</span>
+            </button>
+            {settingsOpen && (
+              <div className="mt-4 grid gap-4 text-sm sm:grid-cols-2">
+                <label className="grid gap-1"><span className="text-muted">{t("reciter")}</span>
+                  <select value={reciterId} onChange={(e) => setReciterId(Number(e.target.value))} className={field}>
+                    {RECITERS.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}
+                  </select>
+                </label>
+                <div className="grid gap-1"><span className="text-muted">{t("mode")}</span>
+                  <div className="inline-flex w-fit rounded-xl bg-bg p-1">
+                    <button className={seg(mode === "learn")} onClick={() => setMode("learn")}>{t("modeLearn")}</button>
+                    <button className={seg(mode === "continuous")} onClick={() => setMode("continuous")}>{t("modeContinuous")}</button>
                   </div>
-                  {active ? (
-                    <p className="flex flex-wrap justify-start gap-x-3 gap-y-2 font-arabic text-3xl leading-[2.1] sm:text-4xl" dir="rtl">
-                      {words.map((w) => (
-                        <span key={w.position} className="text-center">
-                          <span className={`block rounded px-1 transition ${hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{w.text_uthmani}</span>
-                          {showWords && (
-                            <span className="block font-sans text-[11px] leading-tight text-muted" dir="ltr">
-                              {showTranslit && <span className="block italic">{w.transliteration?.text}</span>}
-                              {w.translation?.text}
-                            </span>
-                          )}
-                        </span>
-                      ))}
-                    </p>
-                  ) : (
-                    <p className="font-arabic text-2xl leading-[2]" dir="rtl">{v.text_uthmani}</p>
-                  )}
-                  {showTranslit && v.transliteration && (
-                    <p className="mt-2 italic leading-relaxed text-gold" dir="ltr" lang="en">{v.transliteration}</p>
-                  )}
-                  {showTranslation && <p className="mt-3 leading-relaxed text-muted" dir={meta.dir}>{v.translation}</p>}
-                  {active && waiting && (
-                    <div className="mt-3 flex items-center gap-3 rounded-xl bg-accent-soft p-3 text-sm">
-                      <span>{t("learnHint")}</span>
-                      <button className={primary} onClick={(e) => { e.stopPropagation(); advance(); }}>{t("continue")}</button>
-                    </div>
-                  )}
-                  {active && (
-                    <button className="mt-3 text-sm font-medium text-accent lg:hidden" onClick={(e) => { e.stopPropagation(); setSheetOpen(true); }}>
-                      📖 {t("tafsir")}
-                    </button>
-                  )}
-                </article>
-              </li>
-            );
-          })}
-        </ol>
-        <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>
-      </main>
+                </div>
+                <label className="grid gap-1"><span className="text-muted">{t("repeat")}</span>
+                  <select value={repeat} onChange={(e) => setRepeat(Number(e.target.value))} className={field}>
+                    {[1, 2, 3, 5, 10].map((n) => <option key={n} value={n}>×{n}</option>)}
+                  </select>
+                </label>
+                <label className="grid gap-1"><span className="text-muted">{t("speed")}</span>
+                  <select value={speed} onChange={(e) => setSpeed(Number(e.target.value))} className={field}>
+                    {[0.5, 0.75, 1, 1.25, 1.5].map((n) => <option key={n} value={n}>{n}×</option>)}
+                  </select>
+                </label>
+                <div className="grid gap-1 sm:col-span-2">
+                  <label className="flex items-center gap-2"><input type="checkbox" checked={loopOn} onChange={(e) => setLoopOn(e.target.checked)} /> {t("loop")}</label>
+                  <div className="flex items-center gap-2 text-muted">
+                    {t("loopFrom")}
+                    <select value={loopFrom} onChange={(e) => setLoopFrom(Number(e.target.value))} className={field}>
+                      {verses.map((v) => <option key={v.verse_key} value={v.verse_number}>{v.verse_number}</option>)}
+                    </select>
+                    {t("loopTo")}
+                    <select value={loopTo} onChange={(e) => setLoopTo(Number(e.target.value))} className={field}>
+                      {verses.map((v) => <option key={v.verse_key} value={v.verse_number}>{v.verse_number}</option>)}
+                    </select>
+                  </div>
+                </div>
+                <label className="flex items-center gap-2"><input type="checkbox" checked={showTranslit} onChange={(e) => setShowTranslit(e.target.checked)} /> {t("transliteration")}</label>
+                <label className="flex items-center gap-2"><input type="checkbox" checked={showTranslation} onChange={(e) => setShowTranslation(e.target.checked)} /> {t("translation")}</label>
+                <label className="flex items-center gap-2"><input type="checkbox" checked={showWords} onChange={(e) => setShowWords(e.target.checked)} /> {t("wordByWord")}</label>
+              </div>
+            )}
+          </section>
 
-      <aside className="sticky top-4 hidden max-h-[calc(100vh-2rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">
-        <h2 className="mb-3 text-lg font-bold">{t("tafsir")} · {verse.verse_key}</h2>
-        {tafsirBody}
-      </aside>
+          <ol className="grid gap-3">
+            {verses.map((v, i) => {
+              const active = i === idx;
+              const words = v.words.filter((w) => w.char_type_name === "word");
+              const marked = marks.includes(v.verse_key);
+              return (
+                <li key={v.verse_key} id={`v-${i}`} className="scroll-mt-20">
+                  <article
+                    onClick={() => !active && goTo(i)}
+                    className={`rounded-2xl border p-5 transition ${active ? "border-accent/30 border-s-4 border-s-accent bg-surface shadow-card" : "cursor-pointer border-line/70 bg-surface/60 hover:bg-surface"}`}
+                  >
+                    <div className="mb-3 flex items-center justify-between">
+                      <span className="relative grid h-9 w-9 place-items-center" aria-label={`${t("verse")} ${v.verse_number}`}>
+                        <span className="absolute inset-1 rotate-45 rounded-[5px] bg-accent-soft" />
+                        <span className="absolute inset-1 rounded-[5px] bg-accent-soft" />
+                        <span className="relative text-xs font-semibold text-accent">{v.verse_number}</span>
+                      </span>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); toggleMark(v.verse_key); }}
+                        aria-label={marked ? t("bookmarked") : t("bookmark")}
+                        className={`text-xl leading-none ${marked ? "text-gold" : "text-muted hover:text-ink"}`}
+                      >{marked ? "★" : "☆"}</button>
+                    </div>
+                    {active ? (
+                      <p className="flex flex-wrap justify-start gap-x-3 gap-y-2 font-arabic text-[2rem] leading-[2.3] sm:text-4xl" dir="rtl">
+                        {words.map((w) => (
+                          <span key={w.position} className="text-center">
+                            <span className={`block rounded-lg px-1.5 transition ${hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{w.text_uthmani}</span>
+                            {showWords && (
+                              <span className="block font-sans text-[11px] leading-tight text-muted" dir="ltr">
+                                {showTranslit && <span className="block italic text-gold">{w.transliteration?.text}</span>}
+                                {w.translation?.text}
+                              </span>
+                            )}
+                          </span>
+                        ))}
+                      </p>
+                    ) : (
+                      <p className="font-arabic text-[1.7rem] leading-[2.1]" dir="rtl">{v.text_uthmani}</p>
+                    )}
+                    {showTranslit && v.transliteration && (
+                      <p className="mt-3 italic leading-relaxed text-gold" dir="ltr" lang="en">{v.transliteration}</p>
+                    )}
+                    {showTranslation && <p className="mt-2 leading-relaxed text-muted" dir={meta.dir}>{v.translation}</p>}
+                    {active && waiting && (
+                      <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl bg-accent-soft p-3 text-sm">
+                        <span>{t("learnHint")}</span>
+                        <button className={primary} onClick={(e) => { e.stopPropagation(); advance(); }}>{t("continue")}</button>
+                      </div>
+                    )}
+                    {active && (
+                      <button className="mt-4 rounded-full border border-accent/30 px-4 py-1.5 text-sm font-medium text-accent lg:hidden" onClick={(e) => { e.stopPropagation(); setSheetOpen(true); }}>
+                        📖 {t("tafsir")}
+                      </button>
+                    )}
+                  </article>
+                </li>
+              );
+            })}
+          </ol>
+          <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>
+        </main>
+
+        <aside className="sticky top-20 my-5 hidden max-h-[calc(100vh-6rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">
+          <h2 className="mb-3 font-display text-lg font-semibold">{t("tafsir")} · {verse.verse_key}</h2>
+          {tafsirBody}
+        </aside>
+      </div>
 
       <audio
         ref={audioRef}
@@ -362,22 +377,26 @@ export default function Player({ chapterId, startVerse }: { chapterId: number; s
         preload="auto"
       />
 
-      {/* Player dock */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-surface/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <span className="min-w-16 text-sm text-muted">{t("verse")} {verse.verse_number} {t("of")} {verses.length}</span>
-          <div className="flex items-center gap-3">
-            <button className={round} onClick={() => goTo(Math.max(0, idx - 1), false)} aria-label={t("prev")}>⏮</button>
-            <button className={primary} onClick={() => (playing ? audioRef.current?.pause() : play())}>
-              {playing ? `⏸ ${t("pause")}` : `▶ ${t("play")}`}
-            </button>
-            <button className={round} onClick={() => goTo(Math.min(verses.length - 1, idx + 1), false)} aria-label={t("next")}>⏭</button>
+      {/* Floating player dock */}
+      <div className="fixed inset-x-0 bottom-3 z-40 px-3">
+        <div dir="ltr" className="mx-auto max-w-xl overflow-hidden rounded-3xl border border-line bg-surface/95 shadow-[0_10px_40px_rgba(0,0,0,0.2)] backdrop-blur">
+          <div className="h-1 bg-line"><div className="h-1 bg-accent transition-all" style={{ width: `${((idx + 1) / verses.length) * 100}%` }} /></div>
+          <div className="flex items-center justify-between gap-2 px-3 py-2.5">
+            <span className="w-16 text-xs leading-tight text-muted">{t("verse")} {verse.verse_number}<br />{t("of")} {verses.length}</span>
+            <div className="flex items-center gap-1">
+              <button className={dockBtn} onClick={() => goTo(Math.max(0, idx - 1), false)} aria-label={t("prev")}><IconPrev /></button>
+              <button
+                className="grid h-14 w-14 place-items-center rounded-full bg-accent text-white shadow-card transition hover:opacity-90"
+                onClick={() => (playing ? audioRef.current?.pause() : play())}
+                aria-label={playing ? t("pause") : t("play")}
+              >{playing ? <IconPause /> : <IconPlay />}</button>
+              <button className={dockBtn} onClick={() => goTo(Math.min(verses.length - 1, idx + 1), false)} aria-label={t("next")}><IconNext /></button>
+            </div>
+            <select value={idx} onChange={(e) => goTo(Number(e.target.value), false)} className={`${field} w-16`} aria-label={t("jump")}>
+              {verses.map((v, i) => <option key={v.verse_key} value={i}>{v.verse_number}</option>)}
+            </select>
           </div>
-          <select value={idx} onChange={(e) => goTo(Number(e.target.value), false)} className={`${field} w-20`} aria-label={t("jump")}>
-            {verses.map((v, i) => <option key={v.verse_key} value={i}>{v.verse_number}</option>)}
-          </select>
         </div>
-        <div className="h-1 bg-line"><div className="h-1 bg-accent transition-all" style={{ width: `${((idx + 1) / verses.length) * 100}%` }} /></div>
       </div>
 
       {/* Mobile: bottom sheet */}
@@ -387,7 +406,7 @@ export default function Player({ chapterId, startVerse }: { chapterId: number; s
           <div className="absolute inset-x-0 bottom-0 max-h-[80vh] overflow-y-auto rounded-t-3xl bg-surface p-5 shadow-xl">
             <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-line" />
             <div className="mb-3 flex items-center justify-between">
-              <h2 className="font-bold">{t("tafsir")} · {verse.verse_key}</h2>
+              <h2 className="font-display font-semibold">{t("tafsir")} · {verse.verse_key}</h2>
               <button className="text-sm font-medium text-accent" onClick={() => setSheetOpen(false)}>{t("closeTafsir")}</button>
             </div>
             {tafsirBody}
