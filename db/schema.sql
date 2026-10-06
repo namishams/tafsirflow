@@ -25,6 +25,16 @@ CREATE TABLE IF NOT EXISTS sessions (
 );
 CREATE INDEX IF NOT EXISTS sessions_user ON sessions(user_id);
 
+ALTER TABLE users ADD COLUMN IF NOT EXISTS city text;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS country text;
+
+-- password reset links (token itself is only e-mailed; we keep its hash)
+CREATE TABLE IF NOT EXISTS password_resets (
+  token_hash text PRIMARY KEY,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  expires_at timestamptz NOT NULL
+);
+
 -- per-user learning state synced from the browser: progress, bookmarks, spaced repetition, streak days
 CREATE TABLE IF NOT EXISTS user_data (
   user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,

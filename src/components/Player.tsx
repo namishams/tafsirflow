@@ -21,7 +21,9 @@ const seg = (on: boolean) =>
   `rounded-lg px-3 py-1.5 text-sm transition ${on ? "bg-accent text-white shadow-card" : "text-muted hover:text-ink"}`;
 const field = "rounded-lg border border-line bg-surface px-2 py-1.5 text-sm text-ink";
 
-export default function Player({ chapterId, startVerse, startHide = 0, reviewMode = false }: { chapterId: number; startVerse: number; startHide?: number; reviewMode?: boolean }) {
+type Initial = { chapter: Chapter; verses: Verse[]; translationId: number };
+
+export default function Player({ chapterId, startVerse, startHide = 0, reviewMode = false, initial }: { chapterId: number; startVerse: number; startHide?: number; reviewMode?: boolean; initial?: Initial }) {
   const router = useRouter();
   const t = useTranslations("player");
   const th = useTranslations("home");
@@ -33,16 +35,17 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const wantPlay = useRef(false); // start playing as soon as the next verse file is ready
   const tafsirCache = useRef(new Map<string, TafsirResult | null>());
 
-  const [chapter, setChapter] = useState<Chapter | null>(null);
-  const [verses, setVerses] = useState<Verse[]>([]);
+  const skipFirstLoad = useRef(!!initial);
+  const [chapter, setChapter] = useState<Chapter | null>(initial?.chapter ?? null);
+  const [verses, setVerses] = useState<Verse[]>(initial?.verses ?? []);
   const [error, setError] = useState(false);
-  const [translationId, setTranslationId] = useState<number | null>(null);
+  const [translationId, setTranslationId] = useState<number | null>(initial?.translationId ?? null);
   const [tafsirOpts, setTafsirOpts] = useState<Resource[]>([]);
   const [hasLocalTafsir, setHasLocalTafsir] = useState(true);
   const [tafsirId, setTafsirId] = useState<number | null>(null);
   const [tafsir, setTafsir] = useState<TafsirResult | null | undefined>(undefined);
 
-  const [idx, setIdx] = useState(0);
+  const [idx, setIdx] = useState(initial ? Math.min(Math.max(startVerse, 1), initial.verses.length) - 1 : 0);
   const [playing, setPlaying] = useState(false);
   const [waiting, setWaiting] = useState(false); // learn mode: paused until "Continue"
   const [activeWord, setActiveWord] = useState<number | null>(null);
@@ -64,7 +67,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [showTranslit, setShowTranslit] = useState(true);
   const [loopOn, setLoopOn] = useState(false);
   const [loopFrom, setLoopFrom] = useState(1);
-  const [loopTo, setLoopTo] = useState(1);
+  const [loopTo, setLoopTo] = useState(initial?.verses.length ?? 1);
   const [marks, setMarks] = useState<string[]>([]);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -104,6 +107,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
   useEffect(() => {
     if (translationId === null) return;
+    if (skipFirstLoad.current) { skipFirstLoad.current = false; return; } // data came with the page
     setError(false);
     getVerses(chapterId, locale, reciterId, translationId)
       .then((v) => {
@@ -296,11 +300,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
       <div className={`mx-auto px-4 ${kids ? "max-w-3xl" : "max-w-6xl lg:grid lg:grid-cols-[1fr_25rem] lg:gap-8"}`}>
         <main className="min-w-0">
-          <section className="pattern relative my-5 overflow-hidden rounded-3xl hero-bg px-6 py-8 text-center text-white shadow-card">
-            <p className="font-arabic text-5xl text-[#f3d9a0] sm:text-6xl" dir="rtl">{chapter.name_arabic}</p>
-            <h1 className="mt-2 font-display text-2xl font-semibold">{chapter.name_simple}</h1>
-            <p className="text-sm text-white/70">{chapter.translated_name.name} · {chapter.verses_count} {th("verses")}</p>
-            {withBismillah && <p className="mt-5 font-arabic text-3xl text-white/90" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>}
+          <section className="mb-8 mt-10 border-b border-line pb-8">
+            <p className="eyebrow">{th("surahLabel", { n: chapter.id })} · {chapter.verses_count} {th("verses")}</p>
+            <div className="mt-3 flex items-end justify-between gap-4">
+              <h1 className="font-display text-5xl leading-none sm:text-6xl">{chapter.name_simple}</h1>
+              <span className="font-arabic text-5xl leading-none sm:text-6xl" dir="rtl">{chapter.name_arabic}</span>
+            </div>
+            <p className="mt-3 text-muted">{chapter.translated_name.name}</p>
+            {withBismillah && <p className="font-arabic mt-8 text-center text-3xl text-muted" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>}
           </section>
 
           <section className="mb-5 rounded-2xl border border-line bg-surface p-4 shadow-card">

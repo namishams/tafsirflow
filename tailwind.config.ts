@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: { bg: c("bg"), surface: c("surface"), ink: c("ink"), muted: c("muted"), line: c("line"), accent: c("accent"), "accent-soft": c("accent-soft"), gold: c("gold") },
       fontFamily: { arabic: ["'Amiri'", "'Scheherazade New'", "serif"] },
-      boxShadow: { card: "0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.05)" },
+      boxShadow: { card: "0 1px 2px rgb(16 24 20 / 0.04)" },
     },
   },
   plugins: [],

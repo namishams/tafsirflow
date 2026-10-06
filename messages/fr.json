@@ -19,7 +19,8 @@
     "reviewStart": "Commencer la révision",
     "reviewNone": "Rien à réviser – évaluez des versets avec « Mémoriser » pour créer votre plan.",
     "streak": "{n} jours d'affilée",
-    "todayCount": "Aujourd'hui : {n} versets travaillés"
+    "todayCount": "Aujourd'hui : {n} versets travaillés",
+    "surahLabel": "Sourate {n}"
   },
   "player": {
     "play": "Lecture",
@@ -93,7 +94,26 @@
     "errRate": "Trop de tentatives. Réessayez plus tard.",
     "errInsecure": "La connexion est désactivée tant que le site n'est pas en HTTPS.",
     "errGeneric": "Une erreur s'est produite. Veuillez réessayer.",
-    "errNoDb": "Les comptes ne sont pas disponibles pour le moment."
+    "errNoDb": "Les comptes ne sont pas disponibles pour le moment.",
+    "city": "Ville",
+    "forgot": "Mot de passe oublié ?",
+    "forgotTitle": "Réinitialiser le mot de passe",
+    "forgotHint": "Saisissez votre e-mail. Si un compte existe, nous envoyons un lien pour choisir un nouveau mot de passe.",
+    "forgotSent": "Si un compte existe pour cet e-mail, un lien est en route. Il est valable une heure.",
+    "sendReset": "Envoyer le lien",
+    "backToLogin": "Retour à la connexion",
+    "resetTitle": "Choisir un nouveau mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "resetDone": "Mot de passe modifié. Vous pouvez vous connecter.",
+    "errToken": "Ce lien est invalide ou expiré. Demandez-en un nouveau.",
+    "panelTitle": "Votre parcours coranique, sur chaque appareil.",
+    "b1": "Progression, favoris et plan de révision enregistrés",
+    "b2": "Répétition espacée pour mémoriser",
+    "b3": "Gratuit pour commencer – sans carte",
+    "loginTitle": "Bon retour",
+    "registerTitle": "Créer votre compte",
+    "hideP": "Masquer",
+    "showP": "Afficher"
   },
   "landing": {
     "cta": "Commencer l'écoute",
@@ -122,6 +142,29 @@
     "footer": "Texte du Coran, traductions et tafsir via Quran.com · Récitations via EveryAyah",
     "kidsOn": "Mode enfants",
     "kidsOff": "Mode standard",
-    "openQuran": "Ouvrir le Coran"
+    "openQuran": "Ouvrir le Coran",
+    "whyTitle": "Une plateforme pour mémoriser, comprendre et réciter le Coran",
+    "whyP1": "TafsirFlow réunit l'audio verset par verset de récitateurs reconnus, le sens mot à mot, la translittération et le tafsir classique. Vous écoutez un verset, voyez chaque mot s'illuminer et lisez ce qu'il signifie et ce que les savants en ont expliqué – sur un seul écran, sur téléphone ou ordinateur.",
+    "whyP2": "Que vous souhaitiez mémoriser le Coran (hifz), en comprendre le sens (fahm) ou améliorer votre récitation (tilawa et tajwid), l'application s'adapte : masquez des mots et récitez de mémoire, répétez des versets ou des passages entiers, et laissez la répétition espacée vous indiquer quoi réviser aujourd'hui. Un mode enfants rend l'apprentissage simple et ludique.",
+    "faqTitle": "Questions fréquentes",
+    "q1": "Comment mémoriser le Coran avec TafsirFlow ?",
+    "a1": "Écoutez un verset, activez « Masquer la moitié » ou « Tout masquer » et récitez-le de mémoire. Affichez le verset et évaluez votre maîtrise. L'application planifie la prochaine révision après 1, 3, 7, 14, 30 et 90 jours pour ancrer les versets dans la mémoire à long terme.",
+    "q2": "Quelles langues et traductions sont disponibles ?",
+    "a2": "L'interface et la traduction du Coran existent en allemand, anglais, arabe, français, espagnol, chinois, indonésien et persan. La translittération en lettres latines vous aide à lire le texte arabe.",
+    "q3": "Existe-t-il un tafsir pour chaque verset ?",
+    "a3": "Des commentaires classiques comme Ibn Kathir (abrégé) sont affichés à côté du verset avec leur source. S'il n'existe pas de tafsir dans votre langue, des sources anglaises sont proposées.",
+    "q4": "TafsirFlow est-il gratuit ?",
+    "a4": "Oui. Écouter, lire et mémoriser est gratuit. Un compte gratuit enregistre votre progression, vos favoris et votre plan de révision sur tous vos appareils. Les visiteurs sans compte peuvent ouvrir le tafsir pour un nombre limité de versets par jour.",
+    "q5": "Y a-t-il un mode pour les enfants ?",
+    "a5": "Oui. Le mode enfants propose un grand texte, des couleurs vives, des boutons simples et des étoiles en récompense pour que les enfants écoutent, suivent mot à mot et s'exercent sur les sourates courtes."
+  },
+  "seo": {
+    "homeTitle": "TafsirFlow – Apprendre le Coran : écouter, comprendre et mémoriser verset par verset",
+    "homeDesc": "Apprenez le Coran en ligne : audio verset par verset, sens mot à mot, translittération, tafsir et mémorisation (hifz) par répétition espacée en 8 langues. Gratuit, avec mode enfants.",
+    "quranTitle": "Les 114 sourates du Coran – audio, traduction et tafsir | TafsirFlow",
+    "quranDesc": "Parcourez les 114 sourates du Coran. Écoutez verset par verset, lisez la translittération et la traduction, étudiez le tafsir et mémorisez avec un plan de révision.",
+    "surahTitle": "Sourate {name} ({arabic}) – audio, translittération, traduction et tafsir",
+    "surahDesc": "Écoutez la sourate {name} verset par verset, lisez {verses} versets avec translittération, traduction et tafsir, et mémorisez-la par répétition espacée. Gratuit.",
+    "keywords": "apprendre le Coran en ligne, mémoriser le Coran, hifz, tafsir, tajwid, récitation du Coran, Coran audio verset par verset, Coran pour enfants"
   }
 }

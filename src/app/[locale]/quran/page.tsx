@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -6,8 +7,15 @@ import KidsToggle from "@/components/KidsToggle";
 import Logo from "@/components/Logo";
 import SurahBrowser from "@/components/SurahBrowser";
 import { getChapters } from "@/lib/quran";
+import { pageMeta } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+  return pageMeta(locale, "/quran", t("quranTitle"), t("quranDesc"), t("keywords"));
+}
 
 export default async function QuranPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -24,12 +32,13 @@ export default async function QuranPage({ params }: { params: Promise<{ locale: 
         <div className="flex items-center gap-2"><KidsToggle /><LanguageSwitcher /><AccountLink /></div>
       </header>
 
-      <section className="pattern relative overflow-hidden rounded-3xl hero-bg px-6 pb-14 pt-8 text-center text-white shadow-card">
-        <p className="font-arabic text-4xl text-[#f3d9a0] sm:text-5xl" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-        <h1 className="mx-auto mt-4 max-w-xl font-display text-2xl font-semibold leading-tight sm:text-3xl">{t("home.surahs")}</h1>
+      <section className="border-b border-line pb-8 pt-10">
+        <p className="eyebrow">{t("app.name")}</p>
+        <h1 className="font-display mt-3 text-5xl leading-none sm:text-6xl">{t("home.surahs")}</h1>
+        <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">{t("seo.quranDesc")}</p>
       </section>
 
-      <div className="relative -mt-6 px-2">
+      <div className="pt-8">
         <SurahBrowser chapters={chapters} />
       </div>
     </main>

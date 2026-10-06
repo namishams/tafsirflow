@@ -19,7 +19,8 @@
     "reviewStart": "Start review",
     "reviewNone": "Nothing due – rate verses with “Memorize” to build your plan.",
     "streak": "{n}-day streak",
-    "todayCount": "Today: {n} verses practised"
+    "todayCount": "Today: {n} verses practised",
+    "surahLabel": "Surah {n}"
   },
   "player": {
     "play": "Play",
@@ -93,7 +94,26 @@
     "errRate": "Too many attempts. Please try again later.",
     "errInsecure": "Sign-in is disabled until the site runs on HTTPS.",
     "errGeneric": "Something went wrong. Please try again.",
-    "errNoDb": "Accounts are not available right now."
+    "errNoDb": "Accounts are not available right now.",
+    "city": "City",
+    "forgot": "Forgot password?",
+    "forgotTitle": "Reset your password",
+    "forgotHint": "Enter your e-mail. If an account exists, we send a link to choose a new password.",
+    "forgotSent": "If an account exists for this e-mail, a reset link is on its way. It is valid for one hour.",
+    "sendReset": "Send reset link",
+    "backToLogin": "Back to sign in",
+    "resetTitle": "Choose a new password",
+    "newPassword": "New password",
+    "resetDone": "Password changed. You can sign in now.",
+    "errToken": "This link is invalid or has expired. Please request a new one.",
+    "panelTitle": "Your Quran journey, on every device.",
+    "b1": "Progress, bookmarks and review plan saved",
+    "b2": "Spaced repetition for memorizing",
+    "b3": "Free to start – no card needed",
+    "loginTitle": "Welcome back",
+    "registerTitle": "Create your account",
+    "hideP": "Hide",
+    "showP": "Show"
   },
   "landing": {
     "cta": "Start listening",
@@ -122,6 +142,29 @@
     "footer": "Quran text, translations and tafsir via Quran.com · Recitations via EveryAyah",
     "kidsOn": "Kids mode",
     "kidsOff": "Standard mode",
-    "openQuran": "Open the Quran"
+    "openQuran": "Open the Quran",
+    "whyTitle": "A Quran learning platform for memorizing, understanding and reciting",
+    "whyP1": "TafsirFlow combines verse-by-verse audio from renowned reciters with word-by-word meaning, transliteration and classical tafsir. You hear a verse, see every word light up, and read what it means and what scholars explained about it – all on one screen, on your phone or computer.",
+    "whyP2": "Whether you want to memorize the Quran (hifz), understand its meaning (fahm) or improve your recitation (tilawa and tajweed), the app adapts: hide words and recite from memory, repeat verses or whole passages, and let spaced repetition show you what to review today. A kids mode makes learning simple and fun for children.",
+    "faqTitle": "Frequently asked questions",
+    "q1": "How can I memorize the Quran with TafsirFlow?",
+    "a1": "Listen to a verse, then switch on “Hide half” or “Hide all” and recite it from memory. Reveal the verse and rate how well you knew it. The app schedules your next review after 1, 3, 7, 14, 30 and 90 days, so verses move into long-term memory.",
+    "q2": "Which languages and translations are available?",
+    "a2": "The interface and the Quran translation are available in German, English, Arabic, French, Spanish, Chinese, Indonesian and Persian. Transliteration in Latin letters helps you read the Arabic text.",
+    "q3": "Is there a tafsir (Quran commentary) for every verse?",
+    "a3": "Classical commentaries such as Ibn Kathir (abridged) are shown next to the verse with their source. Where no tafsir exists in your language, English sources are shown instead.",
+    "q4": "Is TafsirFlow free?",
+    "a4": "Yes. You can listen, read and memorize for free. A free account saves your progress, bookmarks and review plan on all your devices. Visitors without an account can open tafsir for a limited number of verses per day.",
+    "q5": "Is there a mode for children?",
+    "a5": "Yes. Kids mode uses large text, bright colors, simple buttons and star rewards, so children can listen, follow word by word and practise short surahs."
+  },
+  "seo": {
+    "homeTitle": "TafsirFlow – Learn the Quran: listen, understand & memorize verse by verse",
+    "homeDesc": "Learn the Quran online: verse-by-verse audio, word-by-word meaning, transliteration, tafsir and spaced-repetition memorization (hifz) in 8 languages. Free, with a kids mode.",
+    "quranTitle": "All 114 Surahs of the Quran – audio, translation & tafsir | TafsirFlow",
+    "quranDesc": "Browse all 114 surahs of the Quran. Listen verse by verse, read transliteration and translation, study tafsir and memorize with a review plan.",
+    "surahTitle": "Surah {name} ({arabic}) – audio, transliteration, translation & tafsir",
+    "surahDesc": "Listen to Surah {name} verse by verse, read {verses} verses with transliteration, translation and tafsir, and memorize it with spaced repetition. Free.",
+    "keywords": "learn Quran online, memorize Quran, hifz, tafsir, tajweed, Quran recitation, Quran audio verse by verse, Quran transliteration, Quran for kids"
   }
 }

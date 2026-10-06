@@ -19,7 +19,8 @@
     "reviewStart": "Wiederholung starten",
     "reviewNone": "Nichts fällig – bewerte Verse mit „Auswendig lernen“, dann entsteht dein Plan.",
     "streak": "{n} Tage in Folge",
-    "todayCount": "Heute: {n} Verse geübt"
+    "todayCount": "Heute: {n} Verse geübt",
+    "surahLabel": "Sure {n}"
   },
   "player": {
     "play": "Abspielen",
@@ -93,7 +94,26 @@
     "errRate": "Zu viele Versuche. Bitte später erneut versuchen.",
     "errInsecure": "Die Anmeldung ist gesperrt, bis die Seite über HTTPS läuft.",
     "errGeneric": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
-    "errNoDb": "Konten sind gerade nicht verfügbar."
+    "errNoDb": "Konten sind gerade nicht verfügbar.",
+    "city": "Ort",
+    "forgot": "Passwort vergessen?",
+    "forgotTitle": "Passwort zurücksetzen",
+    "forgotHint": "Gib deine E-Mail ein. Gibt es ein Konto, schicken wir dir einen Link für ein neues Passwort.",
+    "forgotSent": "Falls zu dieser E-Mail ein Konto existiert, ist ein Link unterwegs. Er ist eine Stunde gültig.",
+    "sendReset": "Link senden",
+    "backToLogin": "Zurück zur Anmeldung",
+    "resetTitle": "Neues Passwort wählen",
+    "newPassword": "Neues Passwort",
+    "resetDone": "Passwort geändert. Du kannst dich jetzt anmelden.",
+    "errToken": "Dieser Link ist ungültig oder abgelaufen. Bitte fordere einen neuen an.",
+    "panelTitle": "Deine Koran-Reise, auf jedem Gerät.",
+    "b1": "Fortschritt, Lesezeichen und Wiederholplan gespeichert",
+    "b2": "Wiederholungsplan zum Auswendiglernen",
+    "b3": "Kostenlos starten – ohne Karte",
+    "loginTitle": "Willkommen zurück",
+    "registerTitle": "Konto erstellen",
+    "hideP": "Verbergen",
+    "showP": "Zeigen"
   },
   "landing": {
     "cta": "Jetzt hören",
@@ -122,6 +142,29 @@
     "footer": "Koran-Text, Übersetzungen und Tafsir über Quran.com · Rezitationen über EveryAyah",
     "kidsOn": "Kinder-Modus",
     "kidsOff": "Normaler Modus",
-    "openQuran": "Koran öffnen"
+    "openQuran": "Koran öffnen",
+    "whyTitle": "Eine Koran-Lernplattform zum Auswendiglernen, Verstehen und Rezitieren",
+    "whyP1": "TafsirFlow verbindet Audio Vers für Vers von bekannten Rezitatoren mit Wort-für-Wort-Bedeutung, Lautschrift und klassischem Tafsir. Du hörst einen Vers, siehst jedes Wort aufleuchten und liest, was er bedeutet und was Gelehrte dazu erklärt haben – alles auf einem Bildschirm, am Handy oder Computer.",
+    "whyP2": "Ob du den Koran auswendig lernen (Hifz), seine Bedeutung verstehen (Fahm) oder deine Rezitation verbessern willst (Tilawa und Tadschwid): Die App passt sich an. Verdecke Wörter und rezitiere aus dem Gedächtnis, wiederhole Verse oder ganze Abschnitte und lass dir von der Wiederholungsplanung zeigen, was heute dran ist. Ein Kinder-Modus macht das Lernen für Kinder einfach und spielerisch.",
+    "faqTitle": "Häufige Fragen",
+    "q1": "Wie kann ich den Koran mit TafsirFlow auswendig lernen?",
+    "a1": "Höre einen Vers, schalte dann „Hälfte verdecken“ oder „Alles verdecken“ ein und rezitiere ihn aus dem Gedächtnis. Decke den Vers auf und bewerte, wie gut du ihn konntest. Die App plant die nächste Wiederholung nach 1, 3, 7, 14, 30 und 90 Tagen, damit Verse im Langzeitgedächtnis bleiben.",
+    "q2": "Welche Sprachen und Übersetzungen gibt es?",
+    "a2": "Oberfläche und Koran-Übersetzung gibt es auf Deutsch, Englisch, Arabisch, Französisch, Spanisch, Chinesisch, Indonesisch und Persisch. Die Lautschrift in lateinischen Buchstaben hilft dir, den arabischen Text zu lesen.",
+    "q3": "Gibt es zu jedem Vers einen Tafsir (Koran-Kommentar)?",
+    "a3": "Klassische Kommentare wie Ibn Kathir (gekürzt) werden neben dem Vers mit Quellenangabe gezeigt. Gibt es in deiner Sprache keinen Tafsir, werden stattdessen englische Quellen angezeigt.",
+    "q4": "Ist TafsirFlow kostenlos?",
+    "a4": "Ja. Hören, Lesen und Auswendiglernen ist kostenlos. Ein kostenloses Konto speichert Fortschritt, Lesezeichen und Wiederholplan auf allen deinen Geräten. Besucher ohne Konto können Tafsir für eine begrenzte Zahl von Versen pro Tag öffnen.",
+    "q5": "Gibt es einen Modus für Kinder?",
+    "a5": "Ja. Der Kinder-Modus hat große Schrift, kräftige Farben, einfache Knöpfe und Sterne als Belohnung, damit Kinder zuhören, Wort für Wort mitlesen und kurze Suren üben können."
+  },
+  "seo": {
+    "homeTitle": "TafsirFlow – Koran lernen: hören, verstehen & auswendig lernen Vers für Vers",
+    "homeDesc": "Koran online lernen: Audio Vers für Vers, Wort-für-Wort-Bedeutung, Lautschrift, Tafsir und Auswendiglernen (Hifz) mit Wiederholungsplan in 8 Sprachen. Kostenlos, mit Kinder-Modus.",
+    "quranTitle": "Alle 114 Suren des Korans – Audio, Übersetzung & Tafsir | TafsirFlow",
+    "quranDesc": "Alle 114 Suren des Korans: Vers für Vers hören, Lautschrift und Übersetzung lesen, Tafsir studieren und mit Wiederholungsplan auswendig lernen.",
+    "surahTitle": "Sure {name} ({arabic}) – Audio, Lautschrift, Übersetzung & Tafsir",
+    "surahDesc": "Höre Sure {name} Vers für Vers, lies {verses} Verse mit Lautschrift, Übersetzung und Tafsir und lerne sie mit Wiederholungsplan auswendig. Kostenlos.",
+    "keywords": "Koran lernen online, Koran auswendig lernen, Hifz, Tafsir deutsch, Tadschwid, Koran Rezitation, Koran Audio Vers für Vers, Koran Lautschrift, Koran für Kinder"
   }
 }

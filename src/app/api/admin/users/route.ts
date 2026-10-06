@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   if (!(await requireAdmin())) return json({ error: "forbidden" }, 403);
-  const r = await pool()!.query("SELECT id, email, name, role, plan, created_at FROM users ORDER BY created_at DESC LIMIT 500");
+  const r = await pool()!.query("SELECT id, email, name, city, role, plan, created_at FROM users ORDER BY created_at DESC LIMIT 500");
   return json({ users: r.rows });
 }
 
