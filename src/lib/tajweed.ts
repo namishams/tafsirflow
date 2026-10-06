@@ -2307,3 +2307,18 @@ Nimm dich eine Woche lang täglich beim Rezitieren von al-Fatiha auf. Prüfe jed
     ],
   },
 ];
+
+// Arabic: the *_en fields are replaced by the Arabic texts, so every page that reads `de ? x_de : x_en` shows Arabic
+import AR_TAJWEED from "./pagecontent/ar/tajweed";
+export function tajweedFor(locale: string): Lesson[] {
+  if (locale !== "ar") return TAJWEED_LESSONS;
+  return TAJWEED_LESSONS.map((l) => {
+    const a = AR_TAJWEED[l.id];
+    if (!a) return l;
+    return {
+      ...l, title_en: a.title, summary_en: a.summary, body_en: a.body,
+      examples: l.examples.map((e, i) => ({ ...e, note_en: a.examples[i]?.note ?? e.note_en })),
+      quiz: l.quiz.map((q, i) => (a.quiz[i] ? { ...q, q_en: a.quiz[i].q, options_en: a.quiz[i].options, explain_en: a.quiz[i].explain } : q)),
+    };
+  });
+}

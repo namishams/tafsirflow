@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { TAJWEED_LESSONS } from "@/lib/tajweed";
+import { TAJWEED_LESSONS, tajweedFor } from "@/lib/tajweed";
 import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -20,7 +20,7 @@ export default async function TajweedPage({ params }: { params: Promise<{ locale
       <h1 className="font-display text-[40px] leading-[1.05] sm:text-5xl">{t("title")}</h1>
       <p className="mt-4 text-[17px] leading-relaxed text-muted">{t("lead")}</p>
       <ol className="mt-8 grid gap-px overflow-hidden rounded-lg border border-line bg-line">
-        {TAJWEED_LESSONS.map((l, i) => (
+        {tajweedFor(locale).map((l, i) => (
           <li key={l.id} className="bg-surface">
             <Link href={`/tajweed/${l.id}`} className="flex gap-4 p-5 hover:bg-bg">
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-ink text-sm font-extrabold text-bg">{i + 1}</span>

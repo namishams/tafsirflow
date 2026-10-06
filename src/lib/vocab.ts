@@ -377,3 +377,10 @@ export const VOCAB_DECKS: Deck[] = [
     ],
   },
 ];
+
+// Arabic: short Arabic glosses instead of English meanings
+import AR_VOCAB, { decks as AR_DECKS } from "./pagecontent/ar/vocab";
+export function vocabFor(locale: string): Deck[] {
+  if (locale !== "ar") return VOCAB_DECKS;
+  return VOCAB_DECKS.map((d) => ({ ...d, title_en: AR_DECKS[d.id]?.title ?? d.title_en, desc_en: AR_DECKS[d.id]?.desc ?? d.desc_en, words: d.words.map((w) => ({ ...w, en: AR_VOCAB[w.id] ?? w.en })) }));
+}

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { SUNNAH_CATS, SUNNAH_DUAS, type SunnahCat } from "@/lib/sunnahDuas";
 import { SUNNAH_DUAS_2 } from "@/lib/sunnahDuas2";
+import AR_DUAS from "@/lib/pagecontent/ar/duas";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { IconBookmark, IconCopy } from "./Icons";
 
@@ -20,7 +21,8 @@ export default function SunnahDuas() {
   const [copied, setCopied] = useState("");
   useEffect(() => { setFav(readJSON<string[]>("tf:duafav", [])); }, []);
 
-  const meaning = (d: (typeof ALL)[number]) => (locale === "de" ? d.de : d.en);
+  // Arabic readers read the dua itself; show only when to say it
+  const meaning = (d: (typeof ALL)[number]) => (locale === "de" ? d.de : locale === "ar" ? AR_DUAS[d.id]?.when ?? "" : d.en);
   const list = useMemo(() => {
     const s = q.trim().toLowerCase();
     return ALL.filter((d) => (cat === "all" ? true : cat === "fav" ? fav.includes(d.id) : d.cat === cat))

@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Markdown from "@/components/Markdown";
 import TajweedQuiz from "@/components/TajweedQuiz";
-import { TAJWEED_LESSONS } from "@/lib/tajweed";
+import { TAJWEED_LESSONS, tajweedFor } from "@/lib/tajweed";
 import { pageMeta } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -13,7 +13,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; id: string }> }): Promise<Metadata> {
   const { locale, id } = await params;
-  const l = TAJWEED_LESSONS.find((x) => x.id === id);
+  const l = tajweedFor(locale).find((x) => x.id === id);
   if (!l) return {};
   const de = locale === "de";
   return pageMeta(locale, `/tajweed/${id}`, `${de ? l.title_de : l.title_en} – Tajweed | Quran Masterclass`, de ? l.summary_de : l.summary_en);
@@ -24,7 +24,8 @@ export default async function TajweedLesson({ params }: { params: Promise<{ loca
   setRequestLocale(locale);
   const i = TAJWEED_LESSONS.findIndex((x) => x.id === id);
   if (i < 0) notFound();
-  const l = TAJWEED_LESSONS[i], next = TAJWEED_LESSONS[i + 1], prev = TAJWEED_LESSONS[i - 1];
+  const LS = tajweedFor(locale);
+  const l = LS[i], next = LS[i + 1], prev = LS[i - 1];
   const t = await getTranslations("tajweed");
   const de = locale === "de";
   return (

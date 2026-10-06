@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { VOCAB_DECKS, type Deck, type Word } from "@/lib/vocab";
+import { vocabFor, type Deck, type Word } from "@/lib/vocab";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { today } from "@/lib/learning";
 
@@ -14,7 +14,9 @@ const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i
 
 export default function VocabTrainer() {
   const t = useTranslations("vocab");
-  const de = useLocale() === "de";
+  const locale = useLocale();
+  const de = locale === "de";
+  const VOCAB_DECKS = useMemo(() => vocabFor(locale), [locale]);
   const [boxes, setBoxes] = useState<Box>({});
   const [deck, setDeck] = useState<Deck | null>(null);
   const [mode, setMode] = useState<"cards" | "quiz">("cards");
