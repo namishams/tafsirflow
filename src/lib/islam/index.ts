@@ -14,9 +14,12 @@ import { eid } from "./eid";
 import { hajj } from "./hajj";
 import { prophets } from "./prophets";
 import { names } from "./names";
+import { competition } from "./competition";
+import { reciterPath } from "./reciter-path";
+import { mosques } from "./mosques";
 
 export type { IslamChapter, IslamDoc };
-export const ISLAM: IslamDoc[] = [islam, quran, prophet, prophets, names, prayerSunni, prayerShia, zakat, ramadan, eid, hajj, cities, sunniShia, future];
+export const ISLAM: IslamDoc[] = [islam, quran, prophet, prophets, names, prayerSunni, prayerShia, zakat, ramadan, eid, hajj, reciterPath, competition, cities, mosques, sunniShia, future];
 export const islamDoc = (slug: string) => ISLAM.find((d) => d.slug === slug);
 // German and English live in the chapter files; every other language in src/lib/islam/i18n/<locale>/<slug>.ts (falls back to English)
 const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ps", "ru", "tr", "ur", "zh"];

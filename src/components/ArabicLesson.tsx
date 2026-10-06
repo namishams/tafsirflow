@@ -7,6 +7,7 @@ import { logDay } from "@/lib/learning";
 
 const T = {
   de: { check: "Prüfen", next: "Weiter", right: "Richtig!", wrong: "Nicht ganz – richtig ist:", listen: "Anhören", again: "Nochmal üben", overview: "Zur Kursübersicht", nextLesson: "Nächste Lektion", done: "Lektion geschafft!", notYet: "Fast geschafft!", needPass: `Ab ${PASS_PCT} % ist die nächste Lektion frei. Wiederhole die Lektion – die Fehler kommen gezielt zurück.`, score: "richtig beim ersten Versuch", xp: "XP", match: "Finde die Paare", review: "Wiederholung", quit: "Beenden", learn: "Neu", tip: "Sprich jeden Laut laut mit – Lesen lernt man mit dem Mund.", readQuran: "Jetzt im Koran lesen" },
+  ar: { check: "تحقّق", next: "متابعة", right: "أحسنت!", wrong: "ليس تمامًا – الصواب:", listen: "استمع", again: "تدرّب مرة أخرى", overview: "إلى صفحة الدورة", nextLesson: "الدرس التالي", done: "أتممت الدرس!", notYet: "اقتربت كثيرًا!", needPass: `يُفتح الدرس التالي عند ${PASS_PCT}٪، أعد الدرس وستعود إليك الأخطاء لتثبيتها.`, score: "صحيحة من المحاولة الأولى", xp: "نقطة", match: "طابِق الأزواج", review: "مراجعة", quit: "إنهاء", learn: "جديد", tip: "انطق كل صوت بصوت مسموع، فالقراءة تُتعلَّم باللسان.", readQuran: "اقرأ في المصحف الآن" },
   en: { check: "Check", next: "Continue", right: "Correct!", wrong: "Not quite – the answer is:", listen: "Listen", again: "Practise again", overview: "Course overview", nextLesson: "Next lesson", done: "Lesson complete!", notYet: "Almost there!", needPass: `From ${PASS_PCT}% the next lesson unlocks. Repeat the lesson – your mistakes come back on purpose.`, score: "correct on the first try", xp: "XP", match: "Find the pairs", review: "Review", quit: "Quit", learn: "New", tip: "Say every sound out loud – you learn to read with your mouth.", readQuran: "Read it in the Quran now" },
 };
 
@@ -40,7 +41,7 @@ const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i
 
 export default function ArabicLesson({ id }: { id: string }) {
   const locale = useLocale();
-  const lang = locale === "de" ? "de" : "en";
+  const lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
   const t = T[lang];
   const lesson = LESSONS.find((l) => l.id === id)!;
   const next = LESSONS[LESSONS.indexOf(lesson) + 1];

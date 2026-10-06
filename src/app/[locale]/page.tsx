@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import MadeInDubai from "@/components/MadeInDubai";
 import TrustStrip, { TrustLine } from "@/components/TrustStrip";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import SiteMenu from "@/components/SiteMenu";
 import AccountLink from "@/components/AccountLink";
-import KidsToggle from "@/components/KidsToggle";
 import Logo from "@/components/Logo";
 import JsonLd from "@/components/JsonLd";
 import WhyQuran from "@/components/WhyQuran";
@@ -73,7 +73,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
             <Logo size={30} />
             <span className="truncate text-[15px] font-extrabold tracking-tight">{t("app.name")}</span>
           </Link>
-          <div className="flex items-center gap-1.5 sm:gap-2"><KidsToggle /><LanguageSwitcher /><SiteMenu /><AccountLink /></div>
+          <div className="flex items-center gap-1.5 sm:gap-2"><LanguageSwitcher /><SiteMenu /><AccountLink /></div>
         </div>
       </header>
 
@@ -99,11 +99,11 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
               </ul>
             </div>
             <figure aria-hidden className="rounded-xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl sm:p-8">
-              <div className="flex items-center justify-between text-xs text-white/50"><span>Al-Fatihah · 1</span><span>Mishary Alafasy</span></div>
+              <div className="flex items-center justify-between text-xs text-white/50"><span>{locale === "ar" ? "الفاتحة · ١" : "Al-Fatihah · 1"}</span><span>{locale === "ar" ? "مشاري العفاسي" : "Mishary Alafasy"}</span></div>
               <p className="hero-words font-arabic mt-6 flex flex-row-reverse flex-wrap justify-start gap-x-3 text-[2.6rem] leading-[1.9] sm:text-5xl">
                 <span>بِسْمِ</span><span>ٱللَّهِ</span><span>ٱلرَّحْمَـٰنِ</span><span>ٱلرَّحِيمِ</span>
               </p>
-              <p className="mt-2 text-[15px] italic text-[rgb(var(--gold))]">Bismi llāhi r-raḥmāni r-raḥīm</p>
+              {locale !== "ar" && <p className="mt-2 text-[15px] italic text-[rgb(var(--gold))]">Bismi llāhi r-raḥmāni r-raḥīm</p>}
               <p className="mt-1 text-sm text-white/60">{t("home2.heroVerse")}</p>
               <div className="mt-7 flex items-center gap-3 border-t border-white/10 pt-5">
                 <span className="grid h-11 w-11 place-items-center rounded-full bg-[rgb(var(--gold))] text-[rgb(var(--stage))]"><svg width="12" height="14" viewBox="0 0 12 14" fill="currentColor"><rect width="4" height="14" rx="1" /><rect x="8" width="4" height="14" rx="1" /></svg></span>
@@ -303,7 +303,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
                   <li key={c.id} className="border-b border-line">
                     <Link href={`/surah/${c.id}`} className="flex items-center gap-3 py-3 hover:text-accent">
                       <span className="w-8 shrink-0 text-sm font-bold tabular-nums text-gold">{c.id}</span>
-                      <span className="min-w-0 flex-1"><span className="block truncate text-[15px] font-semibold">{c.name_simple}</span><span className="block truncate text-xs text-muted">{c.translated_name.name} · {c.verses_count} {t("home.verses")}</span></span>
+                      <span className="min-w-0 flex-1"><span className="block truncate text-[15px] font-semibold">{c.name_simple}</span><span className="block truncate text-xs text-muted">{[c.translated_name.name, `${c.verses_count} ${t("home.verses")}`].filter(Boolean).join(" · ")}</span></span>
                       <span className="font-arabic shrink-0 text-xl" dir="rtl">{c.name_arabic}</span>
                     </Link>
                   </li>
@@ -378,7 +378,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         <div className="border-t border-line py-5">
           <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 text-xs text-muted sm:flex-row sm:justify-between">
             <p><span className="font-semibold text-ink">{t("free.title")}</span> {t("free.body")}</p>
-            <p>© {new Date().getFullYear()} {t("app.name")} · Proudly developed by Nami Shams in Dubai</p>
+            <div className="flex flex-wrap items-center gap-x-2"><span>© {new Date().getFullYear()} {t("app.name")} · Nami Shams ·</span><MadeInDubai /></div>
           </div>
         </div>
       </footer>

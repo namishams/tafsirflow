@@ -6,11 +6,14 @@ import { LESSONS, PASS_PCT, UNITS, arabicPercent, nextArabic, readArabic, unlock
 
 const T = {
   de: { start: "Kurs beginnen", cont: "Weiterlernen", lessons: "Lektionen", unit: "Einheit", locked: "Erst die vorherige Lektion schaffen", done: "geschafft", xp: "XP", progress: "Kursfortschritt", allDone: "Kurs abgeschlossen – du kannst den Koran lesen! Weiter mit der Shams-Methode.", test: "Test" },
+  ar: { start: "ابدأ الدورة", cont: "تابع التعلّم", lessons: "دروس", unit: "الوحدة", locked: "أتمّ الدرس السابق أولًا", done: "تمّ", xp: "نقطة", progress: "تقدّمك في الدورة", allDone: "أتممت الدورة – صرت تقرأ القرآن! تابع مع منهج شمس.", test: "اختبار" },
   en: { start: "Start the course", cont: "Continue", lessons: "lessons", unit: "Unit", locked: "Pass the previous lesson first", done: "done", xp: "XP", progress: "Course progress", allDone: "Course complete – you can read the Quran! Continue with the Shams Method.", test: "Test" },
 };
 
 export default function ArabicHome() {
-  const lang = useLocale() === "de" ? "de" : "en";
+  const loc = useLocale();
+  const lang = loc === "de" ? "de" : loc === "ar" ? "ar" : "en";
+  const tx = (v: { de: string; en: string; ar?: string }) => v[lang] ?? v.en;
   const t = T[lang];
   const [p, setP] = useState<ArabicProgress | null>(null);
   useEffect(() => {
@@ -32,7 +35,7 @@ export default function ArabicHome() {
         </div>
         <div className="min-w-0 flex-1">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">{t.progress}</p>
-          <p className="font-display mt-1 text-xl">{nx ? nx.title[lang] : t.allDone}</p>
+          <p className="font-display mt-1 text-xl">{nx ? tx(nx.title) : t.allDone}</p>
           <p className="mt-1 text-sm text-muted">{p.xp} {t.xp} · {LESSONS.filter((l) => (p.done[l.id]?.best ?? 0) >= PASS_PCT).length}/{LESSONS.length} {t.lessons}</p>
         </div>
         <Link href={nx ? `/arabic/${nx.id}` : "/surah/1?shams=1"} className="btn-gold inline-flex h-12 w-full items-center justify-center rounded-md px-6 text-[15px] font-bold sm:w-auto">{Object.keys(p.done).length ? t.cont : t.start} →</Link>
@@ -45,8 +48,8 @@ export default function ArabicHome() {
           return (
             <section key={u.n}>
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">{t.unit} {u.n}</p>
-              <h3 className="font-display mt-1 text-2xl">{u.title[lang]}</h3>
-              <p className="mt-1 text-sm text-muted">{u.lead[lang]}</p>
+              <h3 className="font-display mt-1 text-2xl">{tx(u.title)}</h3>
+              <p className="mt-1 text-sm text-muted">{tx(u.lead)}</p>
               <ol className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {ls.map((l) => {
                   const d = p.done[l.id]; const open = unlocked(p, l.id); const passed = (d?.best ?? 0) >= PASS_PCT; const current = nx?.id === l.id;
@@ -54,8 +57,8 @@ export default function ArabicHome() {
                     <>
                       <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-full font-display text-lg ${passed ? "bg-accent text-white" : current ? "btn-gold" : open ? "bg-line/60" : "bg-line/40 text-muted"}`}>{passed ? "✓" : open ? (l.test ? "★" : LESSONS.indexOf(l) + 1) : "🔒"}</span>
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate font-bold">{l.test ? `${t.test}: ` : ""}{l.title[lang]}</span>
-                        <span className="block truncate text-xs text-muted">{open ? l.goal[lang] : t.locked}</span>
+                        <span className="block truncate font-bold">{l.test ? `${t.test}: ` : ""}{tx(l.title)}</span>
+                        <span className="block truncate text-xs text-muted">{open ? tx(l.goal) : t.locked}</span>
                         {d && <span className="mt-1 block text-sm text-gold" aria-label={`${d.stars}/3`}>{[1, 2, 3].map((n) => <span key={n} className={n <= d.stars ? "" : "text-line"}>★</span>)} <span className="text-xs text-muted">{d.best}%</span></span>}
                       </span>
                     </>

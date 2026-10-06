@@ -273,7 +273,9 @@
     "groupQuran": "قرآن",
     "groupMore": "بیشتر",
     "support": "پشتیبانی",
-    "arabic": "خواندن عربی"
+    "arabic": "خواندن عربی",
+    "salah": "آموزش نماز",
+    "reciters": "قاریان"
   },
   "today": {
     "title": "امروز",

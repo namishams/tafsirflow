@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MadeInDubai from "@/components/MadeInDubai";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -68,7 +69,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
               <h2 className="text-lg font-bold">{t("imprintContact")}</h2>
               <p className="mt-2 text-muted">{e.LEGAL_EMAIL ?? "info@quranmasterclass.com"}{e.LEGAL_PHONE ? ` · ${e.LEGAL_PHONE}` : ""}</p>
             </section>
-            <p className="text-sm text-muted">Proudly developed by Nami Shams in Dubai</p>
+            <MadeInDubai className="text-sm text-muted" />
           </div>
         )}
         <p className="mt-12"><Link href="/" className="text-sm font-semibold text-accent">← {t("back")}</Link></p>

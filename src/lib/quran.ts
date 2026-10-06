@@ -77,14 +77,22 @@ async function get<T>(path: string, headers?: Record<string, string>): Promise<T
   return res.json();
 }
 
+// Arabic-script languages show the surah's Arabic name instead of the Latin transliteration;
+// Arabic itself needs no "translated" name (the Arabic name is the name).
+const ARABIC_SCRIPT = ["ar", "fa", "ur", "ps"];
+function localName(c: Chapter, locale: string): Chapter {
+  if (!ARABIC_SCRIPT.includes(locale)) return c;
+  return { ...c, name_simple: c.name_arabic, translated_name: { name: locale === "ar" ? "" : c.translated_name?.name ?? "" } };
+}
+
 export async function getChapters(locale: string): Promise<Chapter[]> {
   const data = await get<{ chapters: Chapter[] }>(`/chapters?language=${locale}`);
-  return data.chapters;
+  return data.chapters.map((c) => localName(c, locale));
 }
 
 export async function getChapter(id: number, locale: string): Promise<Chapter> {
   const data = await get<{ chapter: Chapter }>(`/chapters/${id}?language=${locale}`);
-  return data.chapter;
+  return localName(data.chapter, locale);
 }
 
 let resourceCache: Promise<{ translations: Resource[]; tafsirs: Resource[] }> | null = null;
@@ -142,11 +150,12 @@ export async function getVerses(chapter: number, locale: string, reciter: Recite
     verse_number: v.verse_number,
     text_uthmani: v.text_uthmani,
     words: v.words,
-    transliteration: (v.words ?? [])
+    // Arabic readers read the original: no Latin transcription and no "translation" (Arabic tafsir is offered instead)
+    transliteration: locale === "ar" ? "" : (v.words ?? [])
       .filter((w: Word) => w.char_type_name === "word")
       .map((w: Word) => w.transliteration?.text ?? "")
       .join(" "),
-    translation: (v.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, ""),
+    translation: locale === "ar" ? "" : (v.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, ""),
     audioUrl: localAudioUrl(reciter, chapter, v.verse_number),
     remoteAudioUrl: timed && REMOTE_AUDIO && v.audio?.url ? absoluteAudioUrl(v.audio.url) : "",
     segments: timed ? parseSegments(v.audio?.segments) : [],
@@ -213,6 +222,6 @@ export async function getVerseByKey(key: string, locale: string, translationId: 
   return {
     verse_key: d.verse.verse_key,
     text_uthmani: d.verse.text_uthmani,
-    translation: String(d.verse.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, ""),
+    translation: locale === "ar" ? "" : String(d.verse.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, ""),
   };
 }

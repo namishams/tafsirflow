@@ -154,8 +154,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   useEffect(() => {
     getReciters().then((list) => {
       setReciters(list);
+      // ?reciter=<slug> (e.g. from a reciter biography) wins over the saved choice
+      const wanted = new URLSearchParams(window.location.search).get("reciter");
+      const fromUrl = wanted ? list.find((r) => r.slug === wanted) : undefined;
       const saved = readJSON<string>("tf:reciter", "");
-      if (saved && list.some((r) => r.folder === saved)) setReciterFolder(saved);
+      if (fromUrl) setReciterFolder(fromUrl.folder);
+      else if (saved && list.some((r) => r.folder === saved)) setReciterFolder(saved);
     });
   }, []);
   useEffect(() => { if (audioRef.current) audioRef.current.volume = vol; }, [vol]);

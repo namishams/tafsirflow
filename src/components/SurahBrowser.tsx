@@ -100,7 +100,7 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block truncate font-semibold">{c.name_simple}</span>
-                <span className="block truncate text-xs text-muted">{c.translated_name.name} · {c.verses_count} {t("verses")}</span>
+                <span className="block truncate text-xs text-muted">{[c.translated_name.name, `${c.verses_count} ${t("verses")}`].filter(Boolean).join(" · ")}</span>
               </span>
               <span className="shrink-0 font-arabic text-2xl text-accent" dir="rtl">{c.name_arabic}</span>
             </Link>

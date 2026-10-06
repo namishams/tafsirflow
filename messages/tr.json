@@ -273,7 +273,9 @@
     "groupQuran": "Kur'an",
     "groupMore": "Daha fazla",
     "support": "Destek",
-    "arabic": "Arapça okuma"
+    "arabic": "Arapça okuma",
+    "salah": "Namaz öğren",
+    "reciters": "Kâriler"
   },
   "today": {
     "title": "Bugün",

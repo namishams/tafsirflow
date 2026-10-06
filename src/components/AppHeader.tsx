@@ -4,7 +4,6 @@ import { Link, usePathname } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SiteMenu from "./SiteMenu";
 import AccountLink from "./AccountLink";
-import KidsToggle from "./KidsToggle";
 import Logo from "./Logo";
 
 export const NAV = [
@@ -24,11 +23,13 @@ const MORE = [
   { href: "/prayer", key: "prayer", wide: true },
   { href: "/search", key: "search", wide: true },
   { href: "/arabic", key: "arabic" },
+  { href: "/salah", key: "salah" },
   { href: "/plan", key: "plan" },
   { href: "/map", key: "map" },
   { href: "/tajweed", key: "tajweed" },
   { href: "/vocab", key: "vocab" },
   { href: "/khatm", key: "khatm" },
+  { href: "/reciters", key: "reciters" },
   { href: "/guides", key: "guides" },
   { href: "/feedback", key: "feedback" },
   { href: "/about", key: "about" },
@@ -63,7 +64,7 @@ export default function AppHeader() {
             </details>
           </nav>
         </div>
-        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2"><KidsToggle /><LanguageSwitcher /><AccountLink /><span className="lg:hidden"><SiteMenu /></span></div>
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2"><LanguageSwitcher /><AccountLink /><span className="lg:hidden"><SiteMenu /></span></div>
       </div>
     </header>
   );

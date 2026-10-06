@@ -273,7 +273,9 @@
     "groupQuran": "Coran",
     "groupMore": "Plus",
     "support": "Soutenir",
-    "arabic": "Lire l’arabe"
+    "arabic": "Lire l’arabe",
+    "salah": "Apprendre la prière",
+    "reciters": "Récitateurs"
   },
   "today": {
     "title": "Aujourd'hui",

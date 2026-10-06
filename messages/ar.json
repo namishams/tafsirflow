@@ -273,7 +273,9 @@
     "groupQuran": "القرآن",
     "groupMore": "المزيد",
     "support": "الدعم",
-    "arabic": "تعلم القراءة"
+    "arabic": "تعلم القراءة",
+    "salah": "تعلّم الصلاة",
+    "reciters": "القرّاء"
   },
   "today": {
     "title": "اليوم",

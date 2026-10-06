@@ -5,6 +5,8 @@ import Logo from "@/components/Logo";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import SiteMenu from "@/components/SiteMenu";
 import { pageMeta } from "@/lib/site";
+import { Suspense } from "react";
+import SupportZiina from "@/components/SupportZiina";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -17,7 +19,6 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const t = await getTranslations("support");
   const tf = await getTranslations("free");
-  const url = process.env.SUPPORT_URL; // payment link created by the owner (e.g. a Ziina payment link)
   return (
     <div className="min-h-screen">
       <header className="border-b border-line bg-surface">
@@ -36,14 +37,8 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
             {["w1", "w2", "w3", "w4"].map((k) => <li key={k} className="bg-surface p-4 text-[15px]">{t(k)}</li>)}
           </ul>
         </section>
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          {url ? (
-            <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center rounded-md bg-accent px-6 text-[15px] font-bold text-white hover:brightness-110">{t("cta")}</a>
-          ) : (
-            <p className="rounded-md border border-line bg-surface p-4 text-[15px] text-muted">{t("soon")}</p>
-          )}
-          <p className="text-sm text-muted">{t("free")}</p>
-        </div>
+        <div className="mt-10"><Suspense><SupportZiina /></Suspense></div>
+        <p className="mt-4 text-sm text-muted">{t("free")}</p>
         <p className="mt-12"><Link href="/" className="text-sm font-semibold text-accent">← {t("back")}</Link></p>
       </main>
     </div>

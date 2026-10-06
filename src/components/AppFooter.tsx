@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import TrustStrip from "./TrustStrip";
+import MadeInDubai from "./MadeInDubai";
 
 // Slim footer for all app pages: free, privately funded by Nami Shams, plus the most important links
 export default async function AppFooter() {
@@ -19,6 +20,7 @@ export default async function AppFooter() {
           <Link href="/legal/imprint" className="hover:text-ink">{t("imprint")}</Link>
         </nav>
       </div>
+      <div className="mx-auto max-w-6xl px-4 pb-6 text-xs text-muted"><MadeInDubai /></div>
     </footer>
   );
 }

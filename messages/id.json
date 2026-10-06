@@ -273,7 +273,9 @@
     "groupQuran": "Quran",
     "groupMore": "Lainnya",
     "support": "Dukungan",
-    "arabic": "Baca Arab"
+    "arabic": "Baca Arab",
+    "salah": "Belajar shalat",
+    "reciters": "Para qari"
   },
   "today": {
     "title": "Hari ini",

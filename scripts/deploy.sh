@@ -34,6 +34,9 @@ RECAPTCHA_V3_SITE_KEY=
 RECAPTCHA_V3_SECRET=
 RECAPTCHA_V2_SITE_KEY=
 RECAPTCHA_V2_SECRET=
+# Support via Ziina: API key (Ziina Business → Developers) for amount selection, or just a Ziina payment link
+ZIINA_API_KEY=
+SUPPORT_URL=
 ENVEOF
   chown tafsir:tafsir "$ENV_APP"
 fi

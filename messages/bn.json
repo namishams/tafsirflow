@@ -273,7 +273,9 @@
     "groupQuran": "কুরআন",
     "groupMore": "আরও",
     "support": "সহায়তা",
-    "arabic": "আরবি পড়া"
+    "arabic": "আরবি পড়া",
+    "salah": "নামাজ শিখুন",
+    "reciters": "কারীগণ"
   },
   "today": {
     "title": "আজ",
