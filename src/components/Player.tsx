@@ -30,6 +30,7 @@ export default function Player({ chapterId }: { chapterId: number }) {
   const wantPlay = useRef(false); // start playing as soon as the next verse file is ready
   const [useRemote, setUseRemote] = useState(false); // local file failed -> Quran.com audio
   const [timingsOk, setTimingsOk] = useState(true);
+  const [dbg, setDbg] = useState("");
 
   useEffect(() => {
     setError(false);
@@ -176,7 +177,7 @@ export default function Player({ chapterId }: { chapterId: number }) {
             ))}
           </p>
           <p className="mt-3 text-stone-700">{verse.translation}</p>
-          <audio ref={audioRef} src={useRemote ? verse.remoteAudioUrl : verse.audioUrl} onLoadedMetadata={onMeta} onCanPlay={() => { if (wantPlay.current) { wantPlay.current = false; play(); } }} onError={() => !useRemote && verse.remoteAudioUrl && setUseRemote(true)} onTimeUpdate={onTime} onEnded={onEnded} onPause={() => setPlaying(false)} onPlay={() => setPlaying(true)} preload="auto" />
+          <audio ref={audioRef} src={useRemote ? verse.remoteAudioUrl : verse.audioUrl} onLoadedMetadata={onMeta} onCanPlay={() => { if (wantPlay.current) { wantPlay.current = false; play(); } }} onError={(e) => { const m = e.currentTarget.error; setDbg(`audio error ${m?.code ?? "?"}: ${m?.message ?? ""}`); if (!useRemote && verse.remoteAudioUrl) setUseRemote(true); }} onWaiting={() => setDbg("waiting for data")} onStalled={() => setDbg("stalled")} onTimeUpdate={onTime} onEnded={() => { setDbg("ended"); onEnded(); }} onPause={() => setPlaying(false)} onPlay={() => setPlaying(true)} preload="auto" />
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <button className={btn} onClick={() => goTo(Math.max(0, idx - 1), false)} aria-label={t("prev")}>⏮</button>
             <button className={btnPrimary} onClick={() => (playing ? audioRef.current?.pause() : play())}>
@@ -185,6 +186,9 @@ export default function Player({ chapterId }: { chapterId: number }) {
             <button className={btn} onClick={() => goTo(Math.min(verses.length - 1, idx + 1), false)} aria-label={t("next")}>⏭</button>
             <button className={`${btn} md:hidden`} onClick={() => setSheetOpen(true)}>{t("tafsir")}</button>
           </div>
+          <p className="mt-2 break-all text-[11px] text-stone-400">
+            {useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}
+          </p>
           {waiting && (
             <div className="mt-3 flex items-center gap-3 rounded bg-amber-50 p-2 text-sm">
               <span>{t("learnHint")}</span>
