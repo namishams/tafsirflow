@@ -27,6 +27,8 @@ export default function Player({ chapterId }: { chapterId: number }) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const [tafsir, setTafsir] = useState<TafsirResult | null | undefined>(undefined);
   const playsDone = useRef(0);
+  const [useRemote, setUseRemote] = useState(false); // local file failed -> Quran.com audio
+  const [timingsOk, setTimingsOk] = useState(true);
 
   useEffect(() => {
     setError(false);
@@ -38,6 +40,8 @@ export default function Player({ chapterId }: { chapterId: number }) {
   }, [chapterId, locale, reciterId]);
 
   const verse = verses[idx];
+
+  useEffect(() => { setUseRemote(false); setTimingsOk(true); }, [verse, reciterId]);
 
   // Tafsir for current verse; empty entries belong to the nearest earlier non-empty one.
   useEffect(() => {
@@ -87,7 +91,16 @@ export default function Player({ chapterId }: { chapterId: number }) {
     if (idx < verses.length - 1) goTo(idx + 1);
   };
 
-  const hasTimings = useMemo(() => !!verse && verse.segments.length > 0, [verse]);
+  const hasTimings = useMemo(() => !!verse && verse.segments.length > 0 && (useRemote || timingsOk), [verse, useRemote, timingsOk]);
+
+  // Self-hosted files may be a different recording than the one the timings belong to:
+  // if the file length is far from the last segment end, turn word highlighting off.
+  const onMeta = () => {
+    const a = audioRef.current;
+    const last = verse?.segments.reduce((m, s) => Math.max(m, s.end), 0) ?? 0;
+    if (!a || useRemote || !last || !isFinite(a.duration)) return;
+    setTimingsOk(Math.abs(a.duration * 1000 - last) <= 1500);
+  };
   const wordsToShow = verse?.words.filter((w) => w.char_type_name === "word") ?? [];
 
   if (error) return <p className="p-6">{t("error")}</p>;
@@ -160,7 +173,7 @@ export default function Player({ chapterId }: { chapterId: number }) {
             ))}
           </p>
           <p className="mt-3 text-stone-700">{verse.translation}</p>
-          <audio ref={audioRef} src={verse.audioUrl} onTimeUpdate={onTime} onEnded={onEnded} onPause={() => setPlaying(false)} onPlay={() => setPlaying(true)} preload="auto" />
+          <audio ref={audioRef} src={useRemote ? verse.remoteAudioUrl : verse.audioUrl} onLoadedMetadata={onMeta} onError={() => !useRemote && verse.remoteAudioUrl && setUseRemote(true)} onTimeUpdate={onTime} onEnded={onEnded} onPause={() => setPlaying(false)} onPlay={() => setPlaying(true)} preload="auto" />
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <button className={btn} onClick={() => goTo(Math.max(0, idx - 1), false)} aria-label={t("prev")}>⏮</button>
             <button className={`${btn} bg-emerald-600 text-white`} onClick={() => (playing ? audioRef.current?.pause() : play())}>

@@ -3,13 +3,16 @@ const API = "https://api.quran.com/api/v4";
 // Quran.com translation ids (see CLAUDE.md)
 export const TRANSLATION_BY_LOCALE: Record<string, number> = { de: 27, en: 20 };
 
-export type Reciter = { id: number; slug: string; name: string };
+export type Reciter = { id: number; slug: string; name: string; folder: string };
+
+// Self-hosted audio: /srv/tafsirflow/audio/<folder>/<SSSAAA>.mp3, served by Nginx at /audio/
+export const AUDIO_BASE = process.env.NEXT_PUBLIC_AUDIO_BASE ?? "/audio";
 // Recitation ids with word timing segments
 export const RECITERS: Reciter[] = [
-  { id: 7, slug: "Alafasy", name: "Mishary Alafasy" },
-  { id: 2, slug: "AbdulBaset", name: "AbdulBaset AbdulSamad" },
-  { id: 6, slug: "Husary", name: "Mahmoud Khalil Al-Husary" },
-  { id: 9, slug: "Minshawi", name: "Mohamed Siddiq Al-Minshawi" },
+  { id: 7, slug: "Alafasy", name: "Mishary Alafasy", folder: "Alafasy_128kbps" },
+  { id: 2, slug: "AbdulBaset", name: "AbdulBaset AbdulSamad", folder: "Abdul_Basit_Murattal_192kbps" },
+  { id: 6, slug: "Husary", name: "Mahmoud Khalil Al-Husary", folder: "Husary_128kbps" },
+  { id: 9, slug: "Minshawi", name: "Mohamed Siddiq Al-Minshawi", folder: "Minshawy_Murattal_128kbps" },
 ];
 
 export type TafsirSource = { id: number; name: string; author: string };
@@ -29,7 +32,8 @@ export type Verse = {
   text_uthmani: string;
   words: Word[];
   translation: string;
-  audioUrl: string;
+  audioUrl: string; // self-hosted file
+  remoteAudioUrl: string; // Quran.com fallback
   segments: Segment[];
 };
 
@@ -64,7 +68,13 @@ export async function getChapter(id: number, locale: string): Promise<Chapter> {
   return data.chapter;
 }
 
+export function localAudioUrl(reciter: Reciter, chapter: number, verse: number): string {
+  const f = `${String(chapter).padStart(3, "0")}${String(verse).padStart(3, "0")}.mp3`;
+  return `${AUDIO_BASE}/${reciter.folder}/${f}`;
+}
+
 export async function getVerses(chapter: number, locale: string, reciterId: number): Promise<Verse[]> {
+  const reciter = RECITERS.find((r) => r.id === reciterId) ?? RECITERS[0];
   const tr = TRANSLATION_BY_LOCALE[locale] ?? 20;
   const q = `words=true&word_fields=text_uthmani&fields=text_uthmani&translations=${tr}&audio=${reciterId}&per_page=300`;
   const data = await get<{ verses: any[] }>(`/verses/by_chapter/${chapter}?${q}`);
@@ -74,7 +84,8 @@ export async function getVerses(chapter: number, locale: string, reciterId: numb
     text_uthmani: v.text_uthmani,
     words: v.words,
     translation: (v.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, ""),
-    audioUrl: v.audio?.url ? absoluteAudioUrl(v.audio.url) : "",
+    audioUrl: localAudioUrl(reciter, chapter, v.verse_number),
+    remoteAudioUrl: v.audio?.url ? absoluteAudioUrl(v.audio.url) : "",
     segments: parseSegments(v.audio?.segments),
   }));
 }
