@@ -12,6 +12,8 @@ import bn from "../../messages/bn.json";
 import ru from "../../messages/ru.json";
 import zh from "../../messages/zh.json";
 import { routing } from "@/i18n/routing";
+import { GUIDES } from "./guides";
+import { TAJWEED_LESSONS } from "./tajweed";
 import { LOCALE_META, type AppLocale } from "@/i18n/locales";
 
 const MSG = { en, de, ar, tr, ur, fa, ps, fr, es, id, bn, ru, zh } as unknown as Record<string, typeof en>;
@@ -80,7 +82,7 @@ ${routing.locales.map((l) => `- [${LOCALE_META[l as AppLocale].label}](${base}/l
 
 type Ch = { id: number; name_simple: string; name_arabic: string; verses_count: number; translated_name: { name: string } };
 
-const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
+const PAGES: [string, string][] = [["", "Home"], ["/shams", "The Shams Method – a learning method by Nami Shams"], ["/academy", "Academy – learning path through all 114 surahs"], ["/tajweed", "Tajweed course"], ["/vocab", "Quran vocabulary"], ["/khatm", "Khatm planner"], ["/guides", "Guides"], ["/quran", "All surahs"], ["/today", "Today (review plan and streak)"], ["/search", "Search"], ["/prayer", "Prayer times"], ["/radio", "Quran radio"], ["/duas", "Duas from the Quran"], ["/support", "Support"], ["/legal/privacy", "Privacy"], ["/legal/terms", "Terms"], ["/legal/imprint", "Imprint"]];
 
 export function llmsFullTxt(base: string, chapters: Ch[]) {
   const list = chapters
@@ -98,6 +100,12 @@ export function llmsFullTxt(base: string, chapters: Ch[]) {
 Each link opens the surah page in English; replace /en with another language code for that language.
 
 ${list}
+
+## Guides (English / German)
+${GUIDES.map((g) => `- [${g.title_en}](${base}/en/guides/${g.slug}) – ${g.desc_en} (German: ${base}/de/guides/${g.slug})`).join("\n")}
+
+## Tajweed course
+${TAJWEED_LESSONS.map((l, i) => `${i + 1}. [${l.title_en}](${base}/en/tajweed/${l.id}) – ${l.summary_en}`).join("\n")}
 
 ## All pages per language
 ${pages}

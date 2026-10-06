@@ -812,5 +812,34 @@
     "next": "Next",
     "roundDone": "Round done: {ok} of {n} right",
     "again": "Another round"
+  },
+  "tajweed": {
+    "title": "Tajweed course",
+    "lead": "Recite the Quran correctly – step by step from the basics to the most important rules (Hafs ʿan ʿĀsim). Every lesson with examples from the Quran and a short quiz.",
+    "seoTitle": "Tajweed course for beginners – free online | Quran Masterclass",
+    "seoDesc": "Learn tajweed online for free: articulation points, nun sakinah and tanwin, mim sakinah, qalqalah, madd, stopping signs. Lessons with Quran examples and quizzes.",
+    "seoKeywords": "tajweed course, learn tajweed online, tajweed rules, tajweed for beginners, nun sakinah, qalqalah, madd rules, Quran recitation course",
+    "levelN": "Level {n}",
+    "quizN": "{n} quiz questions",
+    "lessonN": "Lesson {n} of {total}",
+    "examples": "Examples from the Quran",
+    "listenIn": "Listen in {key}",
+    "quiz": "Quiz",
+    "qN": "Question {n} of {total}",
+    "next": "Next",
+    "result": "{ok} of {n} correct",
+    "again": "Repeat quiz"
+  },
+  "guides": {
+    "title": "Guides",
+    "lead": "Practical guides on learning, memorising, reading and understanding the Quran – with the Shams Method and a daily routine you can keep.",
+    "seoTitle": "Quran guides – how to learn, memorise and understand the Quran",
+    "seoDesc": "Free guides: how to learn the Quran, memorise it (hifz), read Arabic, tajweed basics, tafsir, a daily routine and the Shams Method by Nami Shams.",
+    "seoKeywords": "how to learn the Quran, how to memorize the Quran, learn to read Quran, Quran tips, hifz tips, Shams Method",
+    "by": "Quran Masterclass",
+    "faq": "Frequently asked questions",
+    "related": "Read next",
+    "ctaTitle": "Ready to start? Your first lesson takes five minutes.",
+    "cta": "Open the Academy"
   }
 }

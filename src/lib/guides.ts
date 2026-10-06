@@ -133,9 +133,9 @@ No app replaces a qualified teacher. Use Quran Masterclass for daily practice, l
 ## Your first step today
 
 Open [Al-Fatiha](/surah/1), listen to the first verse three times and then start the [Shams Method](/shams). It takes about four minutes per verse – and it is completely free.`,
-    body_de: `Den Koran zu lernen gehört zu den schönsten Vorhaben, die man sich als Muslim vornehmen kann – und es steht jedem offen, egal wie alt man ist oder wie viel Arabisch man schon kann. Der Prophet Muhammad ﷺ sagte: „Die Besten unter euch sind diejenigen, die den Koran lernen und ihn lehren" (Bukhari). Dieser Leitfaden zeigt dir, wo du anfängst, worauf du dich zuerst konzentrierst und wie du eine Routine aufbaust, die du wirklich durchhältst.
+    body_de: `Den Koran zu lernen gehört zu den schönsten Vorhaben, die man sich als Muslim vornehmen kann – und es steht jedem offen, egal wie alt man ist oder wie viel Arabisch man schon kann. Der Prophet Muhammad ﷺ sagte: „Die Besten unter euch sind diejenigen, die den Koran lernen und ihn lehren“ (Bukhari). Dieser Leitfaden zeigt dir, wo du anfängst, worauf du dich zuerst konzentrierst und wie du eine Routine aufbaust, die du wirklich durchhältst.
 
-## Was heißt eigentlich „Koran lernen"?
+## Was heißt eigentlich „Koran lernen“?
 
 Wer sagt, er möchte den Koran lernen, meint oft ganz Unterschiedliches. Es hilft, die Bereiche auseinanderzuhalten, denn jeder braucht einen etwas anderen Zugang:
 
@@ -174,7 +174,7 @@ Unser Ratgeber [Koran lesen lernen](/guides/learn-to-read-the-quran) erklärt Bu
 
 ## Schritt 4: Verstehen, was du rezitierst
 
-Der Koran lädt zum Nachdenken ein: „Denken sie denn nicht über den Koran nach?" (4:82). Verstehen beginnt bei den einzelnen Wörtern. Quran Masterclass zeigt unter jedem Vers eine Wort-für-Wort-Übersetzung, damit du siehst, welches arabische Wort welche Bedeutung trägt.
+Der Koran lädt zum Nachdenken ein: „Denken sie denn nicht über den Koran nach?“ (4:82). Verstehen beginnt bei den einzelnen Wörtern. Quran Masterclass zeigt unter jedem Vers eine Wort-für-Wort-Übersetzung, damit du siehst, welches arabische Wort welche Bedeutung trägt.
 
 Danach liest du die Übersetzung des ganzen Verses. Mit der Zeit merkst du, dass viele Wörter immer wiederkehren. Wer diese [Grundwörter und ihre Wurzeln](/guides/learn-quranic-arabic-vocabulary) kennt, dem fällt jede neue Sure leichter.
 
@@ -1296,7 +1296,7 @@ Lass dich von der Zahl der Regeln nicht entmutigen. Niemand lernt sie alle auf e
     title_en: "Juz Amma Learning Plan: Memorise the 30th Part",
     title_de: "Lernplan Juz Amma: Den 30. Teil auswendig lernen",
     desc_en: "A realistic plan to memorise Juz Amma: 37 surahs and 564 verses in four phases. At three verses a day you finish in about six months, with daily review.",
-    desc_de: "Ein realistischer Plan für Juz Amma: 37 Suren, 564 Verse in vier Etappen. Mit drei Versen am Tag bist du in etwa sechs Monaten fertig – inklusive Wiederholung.",
+    desc_de: "Ein realistischer Plan für Juz Amma: 37 Suren, 564 Verse in vier Etappen. Mit drei Versen am Tag bist du in etwa sechs Monaten fertig, samt Wiederholung.",
     keywords_en: "Juz Amma, memorize Juz Amma, Juz 30, short surahs, Quran memorization plan",
     keywords_de: "Juz Amma, Juz Amma auswendig lernen, Juz 30, kurze Suren, Koran Lernplan",
     body_en: `Juz Amma, the thirtieth and last part of the Quran, is where most people begin their memorisation journey. It contains the short surahs many Muslims recite in their daily prayers, and its powerful verses about creation, the Day of Judgement and the mercy of Allah stay with you for life.
@@ -1525,5 +1525,1020 @@ Rezitiere deine neuen Suren im Gebet, hör sie auf dem Weg zur Arbeit oder im [K
     ],
     related: ["how-to-memorize-the-quran", "quran-for-kids", "daily-quran-routine"],
   },
-  // @@NEXT@@
+  // ---------------------------------------------------------------------------
+  {
+    slug: "quran-for-kids",
+    date: "2026-10-06",
+    title_en: "Quran for Kids: How Children Learn the Quran",
+    title_de: "Koran für Kinder: So lernen Kinder den Koran",
+    desc_en: "How children learn the Quran with joy: short surahs, listening and repetition, small daily steps, kids mode and tips for parents for every age group.",
+    desc_de: "Wie Kinder den Koran mit Freude lernen: kurze Suren, Zuhören und Wiederholen, kleine tägliche Schritte, Kindermodus und Tipps für Eltern je nach Alter.",
+    keywords_en: "Quran for kids, teach children Quran, kids Quran app, short surahs for kids, Quran memorization for children",
+    keywords_de: "Koran für Kinder, Kindern den Koran beibringen, Koran App Kinder, kurze Suren für Kinder, Koran lernen Kinder",
+    body_en: `Children have a remarkable ability to absorb sounds, rhythms and melodies. Many Muslims carry the surahs they learned as children with them for the rest of their lives. This guide is for parents, grandparents and teachers who want to help children learn the Quran in a way that is joyful, gentle and lasting.
+
+## How children learn differently
+
+Children are not small adults. A few things are worth keeping in mind:
+
+- **They learn by listening.** Long before they can read, children pick up words and melodies just by hearing them often.
+- **They love repetition.** What feels boring to adults is comforting and fun for many children.
+- **Their attention span is short.** A few focused minutes work better than a long session.
+- **They learn through relationships.** A child who sees a parent reciting with love is more likely to want to join in.
+- **Emotions matter.** Learning that feels safe and positive sticks; pressure and fear do not.
+
+## Start with listening
+
+For young children, listening is the most natural first step. Play short surahs at home – during breakfast, in the car, before bedtime. You do not need to ask the child to repeat anything at first. The sound becomes familiar on its own.
+
+In Quran Masterclass you can play any surah verse by verse with well-known reciters, and the [Quran radio](/radio) is a simple way to have recitation in the background.
+
+## Which surahs first?
+
+Short surahs with clear rhythm are ideal. A common starting order:
+
+1. [Al-Fatiha](/surah/1) – the opening of the Quran, recited in every prayer
+2. [Al-Ikhlas](/surah/112) – four short verses about the oneness of Allah
+3. [Al-Falaq](/surah/113) and [An-Nas](/surah/114) – surahs of seeking protection
+4. [Al-Kawthar](/surah/108), [Al-'Asr](/surah/103) and An-Nasr – each only three verses
+
+From there you can continue through Juz Amma. Our [Juz Amma learning plan](/guides/juz-amma-learning-plan) gives a structure that works for older children too.
+
+## Learning by age
+
+These are rough orientations; every child is different.
+
+### Toddlers (about 2–4 years)
+
+- Listening only, without pressure.
+- Short phrases like "Bismillah" and "Alhamdulillah" in daily life.
+- Joining in with the last word of a verse when they are ready.
+
+### Young children (about 4–7 years)
+
+- One short verse at a time, repeated together with a parent.
+- Recite together, then let the child say the last word, then the last two words – the same backward build-up used in the [Shams Method](/shams).
+- Simple explanations: "This surah tells us that Allah is One."
+
+### School children (about 7–12 years)
+
+- Learning to read the Arabic letters – see [learning to read the Quran](/guides/learn-to-read-the-quran).
+- One to three new verses a day, plus short review.
+- Word-by-word meaning and simple stories from the tafsir.
+- Their own small goals, for example finishing a surah by the end of the month.
+
+### Teenagers
+
+- More independence: their own account, their own plan.
+- Deeper understanding: tafsir, reflection and questions.
+- The full Shams Method with spaced review.
+
+## Kids mode in Quran Masterclass
+
+Quran Masterclass has a kids mode that you can switch on with one tap in the top bar. It is designed to make learning simple and friendly:
+
+- **Large text** and bright, clear colours
+- **Simple buttons** that small hands can use
+- **Word-by-word meaning and transliteration** switched on by default
+- **Star rewards** for practising
+- **Tafsir out of the way,** so the screen stays calm and focused
+
+Kids mode is meant to be used together with a parent, especially for younger children. Sit next to your child, listen together and celebrate small successes.
+
+## A simple routine for families
+
+Ten to fifteen minutes a day are plenty for most children. For example:
+
+1. **Listen together (2–3 min).** Play the verse you are learning a few times.
+2. **Build it up (3–5 min).** Say the last word, then the last two, until the whole verse.
+3. **Review (3 min).** Recite yesterday's verse and one older surah.
+4. **Talk (2 min).** What does the verse mean? Ask one simple question.
+
+A fixed time helps – after Fajr, after school or before sleep. Playing the day's verse at bedtime is a calm way to end the day and helps it settle.
+
+## Motivation without pressure
+
+- **Praise effort, not only results.** "You practised so well today" means more than "You made no mistakes".
+- **Celebrate milestones.** A finished surah can be marked with a small family moment.
+- **Recite in prayer together.** When a child hears their newly learned surah in the family prayer, it becomes meaningful.
+- **Avoid comparisons** with siblings or other children.
+- **Keep it short on difficult days.** One verse listened to together still counts.
+
+## Understanding, not just repeating
+
+Even young children can understand simple meanings. Tell them in your own words what a surah is about. Short stories from the tafsir – for example about the elephant in [Al-Fil](/surah/105) – make verses come alive. For older children, our guide on [understanding the Quran with tafsir](/guides/understanding-the-quran-tafsir) is a good next step.
+
+## Find a teacher
+
+A qualified Quran teacher – at a mosque, a weekend school or online – is a great support for children's pronunciation and tajweed. Use the app at home to practise between lessons. For questions about religious matters, ask a qualified scholar.
+
+## Duas for children
+
+Alongside the Quran, children love short duas for everyday moments: before eating, before sleeping, when leaving the house. You will find them in our [duas collection](/duas).
+
+## Start today
+
+Choose one short surah, switch on kids mode and listen together. Small steps, taken every day with love, can lead a child a long way.`,
+    body_de: `Kinder haben eine erstaunliche Fähigkeit, Klänge, Rhythmen und Melodien aufzunehmen. Viele Muslime tragen die Suren, die sie als Kind gelernt haben, ihr Leben lang mit sich. Dieser Ratgeber ist für Eltern, Großeltern und Lehrkräfte, die Kindern helfen möchten, den Koran mit Freude, behutsam und nachhaltig zu lernen.
+
+## Kinder lernen anders
+
+Kinder sind keine kleinen Erwachsenen. Sie lernen mit allen Sinnen, brauchen Bewegung und Pausen und reagieren stark auf die Stimmung, in der gelernt wird. Ein paar Punkte sollte man deshalb im Blick haben:
+
+- **Sie lernen durch Zuhören.** Lange bevor sie lesen können, nehmen Kinder Wörter und Melodien auf, einfach weil sie sie oft hören.
+- **Sie lieben Wiederholung.** Was Erwachsene langweilt, ist für viele Kinder vertraut und schön.
+- **Ihre Aufmerksamkeit ist kurz.** Ein paar konzentrierte Minuten wirken besser als eine lange Einheit.
+- **Sie lernen über Beziehung.** Ein Kind, das sieht, wie Mama oder Papa mit Liebe rezitiert, möchte eher mitmachen.
+- **Gefühle zählen.** Was sich sicher und positiv anfühlt, bleibt. Druck und Angst bewirken das Gegenteil.
+
+## Mit dem Zuhören anfangen
+
+Für kleine Kinder ist Zuhören der natürlichste erste Schritt. Spiel kurze Suren zu Hause ab – beim Frühstück, im Auto, vor dem Schlafengehen. Am Anfang musst du gar nicht verlangen, dass das Kind etwas nachspricht. Der Klang wird ganz von selbst vertraut.
+
+Bei Quran Masterclass kannst du jede Sure Vers für Vers mit bekannten Rezitatoren abspielen, und das [Koran-Radio](/radio) ist eine einfache Möglichkeit, Rezitation im Hintergrund laufen zu lassen.
+
+## Welche Suren zuerst?
+
+Ideal sind kurze Suren mit klarem Rhythmus. Eine bewährte Reihenfolge:
+
+1. [Al-Fatiha](/surah/1) – die Eröffnung des Korans, in jedem Gebet rezitiert
+2. [Al-Ikhlas](/surah/112) – vier kurze Verse über die Einheit Allahs
+3. [Al-Falaq](/surah/113) und [An-Nas](/surah/114) – die Suren der Zuflucht
+4. [Al-Kauthar](/surah/108), [Al-'Asr](/surah/103) und An-Nasr – jeweils nur drei Verse
+
+Danach geht es weiter durch Juz Amma. Unser [Lernplan für Juz Amma](/guides/juz-amma-learning-plan) gibt eine Struktur, die auch für ältere Kinder passt.
+
+## Lernen nach Alter
+
+Das sind grobe Anhaltspunkte – jedes Kind ist anders.
+
+### Kleinkinder (etwa 2–4 Jahre)
+
+- Nur zuhören, ohne Druck.
+- Kurze Ausdrücke wie „Bismillah“ und „Alhamdulillah“ im Alltag.
+- Beim letzten Wort eines Verses mitsprechen, sobald das Kind möchte.
+
+### Kindergarten- und Vorschulkinder (etwa 4–7 Jahre)
+
+- Ein kurzer Vers nach dem anderen, gemeinsam mit einem Elternteil wiederholt.
+- Zusammen rezitieren, dann das Kind das letzte Wort sagen lassen, dann die letzten zwei – derselbe Rückwärtsaufbau wie in der [Shams-Methode](/shams).
+- Einfache Erklärungen: „Diese Sure sagt uns, dass Allah Einer ist.“
+
+### Schulkinder (etwa 7–12 Jahre)
+
+- Die arabischen Buchstaben lesen lernen – siehe [Koran lesen lernen](/guides/learn-to-read-the-quran).
+- Ein bis drei neue Verse am Tag, dazu kurze Wiederholung.
+- Wort-für-Wort-Bedeutung und einfache Geschichten aus dem Tafsir.
+- Eigene kleine Ziele, etwa eine Sure bis Monatsende.
+
+### Jugendliche
+
+- Mehr Selbstständigkeit: eigenes Konto, eigener Plan.
+- Tieferes Verständnis: Tafsir, Nachdenken und eigene Fragen.
+- Die vollständige Shams-Methode mit Wiederholung nach Plan.
+
+## Der Kindermodus bei Quran Masterclass
+
+Quran Masterclass hat einen Kindermodus, den du mit einem Tippen oben in der Leiste einschaltest. Er macht das Lernen einfach und freundlich:
+
+- **Große Schrift** und helle, klare Farben
+- **Einfache Schaltflächen**, die auch kleine Hände bedienen können
+- **Wort-für-Wort-Bedeutung und Umschrift** standardmäßig eingeschaltet
+- **Sterne als Belohnung** fürs Üben
+- **Tafsir ausgeblendet**, damit der Bildschirm ruhig und übersichtlich bleibt
+
+Der Kindermodus ist dafür gedacht, gemeinsam mit einem Elternteil genutzt zu werden, besonders bei jüngeren Kindern. Setz dich dazu, hört zusammen zu und freut euch über kleine Erfolge.
+
+## Eine einfache Routine für Familien
+
+Zehn bis fünfzehn Minuten am Tag reichen für die meisten Kinder völlig. Zum Beispiel:
+
+1. **Gemeinsam zuhören (2–3 Min.).** Den aktuellen Vers ein paar Mal abspielen.
+2. **Aufbauen (3–5 Min.).** Das letzte Wort sagen, dann die letzten zwei, bis zum ganzen Vers.
+3. **Wiederholen (3 Min.).** Den Vers von gestern und eine ältere Sure rezitieren.
+4. **Reden (2 Min.).** Was bedeutet der Vers? Eine einfache Frage stellen.
+
+Eine feste Zeit hilft – nach dem Fadschr, nach der Schule oder vor dem Schlafen. Den Vers des Tages abends noch einmal zu hören, ist ein ruhiger Tagesabschluss und hilft beim Festigen.
+
+## Motivation ohne Druck
+
+- **Lob die Mühe, nicht nur das Ergebnis.** „Du hast heute so schön geübt“ bedeutet mehr als „Du hast keinen Fehler gemacht“.
+- **Feiert Meilensteine.** Eine fertige Sure kann mit einem kleinen Familienmoment gewürdigt werden.
+- **Betet gemeinsam.** Wenn ein Kind seine neu gelernte Sure im Familiengebet hört, bekommt sie Bedeutung.
+- **Vermeide Vergleiche** mit Geschwistern oder anderen Kindern.
+- **An schwierigen Tagen kurz halten.** Auch ein gemeinsam gehörter Vers zählt.
+
+## Verstehen, nicht nur nachsprechen
+
+Schon kleine Kinder verstehen einfache Bedeutungen. Erzähl ihnen in eigenen Worten, worum es in einer Sure geht. Kurze Geschichten aus dem Tafsir – etwa vom Elefanten in [Al-Fil](/surah/105) – erwecken Verse zum Leben. Für ältere Kinder ist unser Ratgeber [Den Koran mit Tafsir verstehen](/guides/understanding-the-quran-tafsir) ein guter nächster Schritt.
+
+## Einen Lehrer finden
+
+Ein qualifizierter Koranlehrer – in der Moschee, in der Wochenendschule oder online – ist eine große Hilfe für Aussprache und Tajwid. Viele Kinder genießen außerdem das Lernen in einer Gruppe mit Gleichaltrigen, weil sie sich gegenseitig anspornen. Nutze die App zu Hause zum Üben zwischen den Stunden. Bei religiösen Fragen wende dich an einen qualifizierten Gelehrten.
+
+## Bittgebete für Kinder
+
+Neben dem Koran lieben Kinder kurze Bittgebete für den Alltag: vor dem Essen, vor dem Schlafen, beim Verlassen des Hauses. Du findest sie in unserer [Dua-Sammlung](/duas).
+
+## Heute anfangen
+
+Such dir eine kurze Sure aus, schalte den Kindermodus ein und hört gemeinsam zu. Kleine Schritte, jeden Tag mit Liebe gegangen, können ein Kind sehr weit bringen.`,
+    faq: [
+      {
+        q_en: "At what age can children start learning the Quran?",
+        a_en: "Children can start listening from a very young age. Repeating short verses often begins around four, and reading the Arabic letters usually a little later. Follow your child's pace.",
+        q_de: "Ab welchem Alter können Kinder den Koran lernen?",
+        a_de: "Zuhören können Kinder schon sehr früh. Kurze Verse nachsprechen beginnt oft um das vierte Lebensjahr, das Lesen der arabischen Buchstaben meist etwas später. Richte dich nach dem Tempo deines Kindes.",
+      },
+      {
+        q_en: "How long should children practise each day?",
+        a_en: "Ten to fifteen minutes are enough for most children. Short, regular and positive sessions work better than long ones.",
+        q_de: "Wie lange sollten Kinder täglich üben?",
+        a_de: "Zehn bis fünfzehn Minuten reichen für die meisten Kinder. Kurze, regelmäßige und positive Einheiten wirken besser als lange.",
+      },
+      {
+        q_en: "What does kids mode do?",
+        a_en: "Kids mode shows large text, bright colours and simple buttons, switches on word-by-word meaning and transliteration and keeps tafsir out of the way. Children earn stars for practising.",
+        q_de: "Was macht der Kindermodus?",
+        a_de: "Der Kindermodus zeigt große Schrift, helle Farben und einfache Schaltflächen, schaltet Wort-für-Wort-Bedeutung und Umschrift ein und blendet den Tafsir aus. Fürs Üben gibt es Sterne.",
+      },
+      {
+        q_en: "Which surah should my child learn first?",
+        a_en: "Most families start with Al-Fatiha, followed by short surahs like Al-Ikhlas, Al-Falaq and An-Nas.",
+        q_de: "Welche Sure sollte mein Kind zuerst lernen?",
+        a_de: "Die meisten Familien beginnen mit Al-Fatiha und danach mit kurzen Suren wie Al-Ikhlas, Al-Falaq und An-Nas.",
+      },
+    ],
+    related: ["juz-amma-learning-plan", "learn-to-read-the-quran", "how-to-learn-the-quran"],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "understanding-the-quran-tafsir",
+    date: "2026-10-06",
+    title_en: "Understanding the Quran with Tafsir: A Guide",
+    title_de: "Den Koran mit Tafsir verstehen: Ein Leitfaden",
+    desc_en: "What tafsir is, how the classical works of Ibn Kathir, al-Tabari and Ma'arif al-Qur'an differ, and how to read tafsir verse by verse with its source.",
+    desc_de: "Was Tafsir ist, worin sich klassische Werke wie Ibn Kathir, at-Tabari und Ma'arif al-Qur'an unterscheiden und wie du Tafsir Vers für Vers mit Quelle liest.",
+    keywords_en: "tafsir, Quran tafsir, Ibn Kathir, Ma'arif al-Qur'an, understand the Quran, Quran commentary",
+    keywords_de: "Tafsir, Koran Tafsir, Ibn Kathir, Koran verstehen, Koran Erklärung, Korankommentar",
+    body_en: `A translation tells you what a verse says. Tafsir helps you understand what it means – in its context, in the light of other verses and of the Sunnah, and as it was understood by the first generations of Muslims. Allah describes the Quran as "a blessed Book which We have revealed to you, that they might reflect upon its verses" (38:29). Tafsir is one of the most important tools for that reflection.
+
+## What is tafsir?
+
+The Arabic word tafsir comes from a root meaning "to uncover" or "to clarify". In Islamic scholarship, it is the discipline of explaining the meanings of the Quran.
+
+A tafsir typically covers:
+
+- **The meaning of words** and grammatical points
+- **The context:** when and why a verse was revealed (asbab an-nuzul), where this is known
+- **Connections** to other verses that explain or complement it
+- **Relevant hadith** of the Prophet ﷺ
+- **Statements of the companions** and the following generation
+- **Lessons and rulings** that scholars derived from the verse
+
+## The sources of tafsir
+
+Classical scholars followed a clear order of sources:
+
+1. **The Quran explaining itself.** Often one verse clarifies another.
+2. **The Sunnah.** The Prophet ﷺ explained the Quran through his words and actions.
+3. **The companions.** They witnessed the revelation and knew its circumstances. Ibn 'Abbas and Ibn Mas'ud are among those known for their knowledge of tafsir.
+4. **The following generation (tabi'un),** who learned from the companions.
+5. **The Arabic language** in which the Quran was revealed.
+
+Explanation based mainly on transmitted reports is called tafsir bil-ma'thur. Explanation that also uses sound scholarly reasoning, grounded in the language and the sources above, is called tafsir bir-ra'y. Scholars warned against interpreting the Quran by mere personal opinion without knowledge.
+
+## Classical and modern works
+
+Over the centuries, scholars wrote many works of tafsir. A few well-known ones:
+
+### Tafsir Ibn Kathir
+
+Written by Isma'il ibn Kathir (died 774 AH / 1373 CE) in Damascus. It is one of the most widely read tafsirs. Ibn Kathir explains verses first with other verses, then with hadith and the statements of the early generations. Quran Masterclass shows an abridged English version.
+
+### Tafsir at-Tabari
+
+Jami' al-Bayan by Muhammad ibn Jarir at-Tabari (died 310 AH / 923 CE) is one of the earliest comprehensive tafsirs. It collects a large number of reports from the early generations and became a key reference for later scholars.
+
+### Tafsir al-Qurtubi
+
+Al-Jami' li-Ahkam al-Qur'an by al-Qurtubi (died 671 AH / 1273 CE) is especially known for its detailed discussion of legal rulings.
+
+### Tafsir al-Jalalayn
+
+A concise tafsir begun by Jalal ad-Din al-Mahalli and completed by his student Jalal ad-Din as-Suyuti. It is valued for its brevity and is often used in teaching.
+
+### Ma'arif al-Qur'an
+
+Written in Urdu by Mufti Muhammad Shafi' in the twentieth century and translated into English. It combines classical explanation with guidance for daily life and is available in the app.
+
+### Tazkirul Quran
+
+A modern English commentary by Maulana Wahiduddin Khan, focused on the spiritual message and reflection. It is also shown in the app.
+
+## How to read tafsir
+
+Tafsir can feel overwhelming at first, especially the longer works. These steps help:
+
+1. **Read the verse first,** in Arabic and in translation.
+2. **Look at the key words.** Word-by-word meaning shows you which word carries which idea.
+3. **Read the tafsir slowly.** Focus on the main point, not every detail.
+4. **Note one lesson.** What does this verse teach about Allah, about people, about how to live?
+5. **Keep the source in mind.** Different scholars may emphasise different aspects. That is normal and part of a rich tradition.
+6. **Ask when unsure.** If a passage raises questions, especially about rulings, ask a qualified scholar.
+
+## Tafsir in Quran Masterclass
+
+In Quran Masterclass, the tafsir appears next to each verse while you listen. On a phone, it opens as a sheet from the bottom of the screen; on larger screens, it sits beside the text.
+
+A few things to know:
+
+- **The source is always shown** under the text, so you know whose explanation you are reading.
+- **You can switch between tafsirs,** for example from Ibn Kathir to Ma'arif al-Qur'an.
+- **One explanation often covers several verses.** Classical scholars sometimes explain a group of verses together. The app then shows which verses the commentary covers.
+- **Languages:** where no tafsir is available in your language yet, an English tafsir is shown.
+
+Tafsir is also step five of the [Shams Method](/shams), developed by Nami Shams. After listening, building up the verse and learning its word meanings, you read the classical explanation. Understanding why a verse was revealed and what it teaches makes it much easier to remember.
+
+## Tafsir and translation are not the same
+
+A translation is already a form of interpretation: the translator has to choose one word where Arabic may carry several shades of meaning. Reading tafsir alongside a translation shows you that depth. It also helps you avoid misunderstandings, for example when a verse refers to a specific historical event.
+
+## Where to begin
+
+A good place to start is with surahs you already recite:
+
+- [Al-Fatiha](/surah/1) – the opening of the Quran
+- [Al-Ikhlas](/surah/112) – the oneness of Allah
+- [Al-'Asr](/surah/103) – three verses that summarise success and loss
+- [Al-Mulk](/surah/67) – often recited in the evening
+
+Reading the tafsir of surahs you pray with every day can change the way you experience your prayer.
+
+## Build your understanding step by step
+
+Tafsir becomes easier as your vocabulary grows. Our guide to [Quranic Arabic vocabulary](/guides/learn-quranic-arabic-vocabulary) shows how a core set of words and roots opens many verses at once. And if you are just starting out, read our [complete beginner's guide](/guides/how-to-learn-the-quran).
+
+## A note of care
+
+The Quran is the word of Allah, and explaining it is a serious responsibility. Quran Masterclass is a learning platform, not a source of new interpretations: the tafsir shown is always labelled with its source. For personal questions and religious rulings, please turn to a qualified scholar.`,
+    body_de: `Eine Übersetzung sagt dir, was ein Vers sagt. Der Tafsir hilft dir zu verstehen, was er bedeutet – in seinem Zusammenhang, im Licht anderer Verse und der Sunna und so, wie ihn die ersten Generationen der Muslime verstanden haben. Allah beschreibt den Koran als „ein gesegnetes Buch, das Wir zu dir hinabgesandt haben, damit sie über seine Verse nachsinnen“ (38:29). Der Tafsir ist eines der wichtigsten Werkzeuge für dieses Nachsinnen.
+
+## Was ist Tafsir?
+
+Das arabische Wort Tafsir stammt von einer Wurzel mit der Bedeutung „aufdecken“ oder „klarmachen“. In der islamischen Gelehrsamkeit bezeichnet es die Wissenschaft der Koranerklärung.
+
+Ein Tafsir behandelt typischerweise:
+
+- **Die Bedeutung der Wörter** und grammatische Besonderheiten
+- **Den Zusammenhang:** wann und warum ein Vers offenbart wurde (Asbab an-Nuzul), sofern bekannt
+- **Bezüge** zu anderen Versen, die ihn erklären oder ergänzen
+- **Passende Hadithe** des Propheten ﷺ
+- **Aussagen der Gefährten** und der folgenden Generation
+- **Lehren und Urteile**, die Gelehrte aus dem Vers abgeleitet haben
+
+## Die Quellen des Tafsir
+
+Die klassischen Gelehrten folgten einer klaren Rangfolge:
+
+1. **Der Koran erklärt sich selbst.** Oft erläutert ein Vers einen anderen.
+2. **Die Sunna.** Der Prophet ﷺ hat den Koran durch seine Worte und Taten erklärt.
+3. **Die Gefährten.** Sie haben die Offenbarung miterlebt und kannten ihre Umstände. Ibn 'Abbas und Ibn Mas'ud gehören zu denen, die für ihr Wissen im Tafsir bekannt sind.
+4. **Die folgende Generation (Tabi'un),** die von den Gefährten lernte.
+5. **Die arabische Sprache,** in der der Koran offenbart wurde.
+
+Eine Erklärung, die sich vor allem auf Überlieferungen stützt, heißt Tafsir bil-Ma'thur. Eine Erklärung, die zusätzlich fundiertes gelehrtes Nachdenken einbezieht – verankert in Sprache und den genannten Quellen –, heißt Tafsir bir-Ra'y. Die Gelehrten warnten davor, den Koran nach bloßer persönlicher Meinung ohne Wissen auszulegen.
+
+## Klassische und moderne Werke
+
+Im Laufe der Jahrhunderte entstanden viele Tafsir-Werke. Einige bekannte:
+
+### Tafsir Ibn Kathir
+
+Verfasst von Isma'il ibn Kathir (gest. 774 n. H. / 1373 n. Chr.) in Damaskus. Er gehört zu den meistgelesenen Tafsiren. Ibn Kathir erklärt Verse zuerst mit anderen Versen, dann mit Hadithen und den Aussagen der frühen Generationen. Bei Quran Masterclass wird eine gekürzte englische Fassung angezeigt.
+
+### Tafsir at-Tabari
+
+Dschami' al-Bayan von Muhammad ibn Dscharir at-Tabari (gest. 310 n. H. / 923 n. Chr.) ist einer der frühesten umfassenden Tafsire. Er sammelt eine große Zahl von Überlieferungen der frühen Generationen und wurde zu einem zentralen Bezugswerk späterer Gelehrter.
+
+### Tafsir al-Qurtubi
+
+Al-Dschami' li-Ahkam al-Qur'an von al-Qurtubi (gest. 671 n. H. / 1273 n. Chr.) ist besonders für seine ausführliche Behandlung rechtlicher Fragen bekannt.
+
+### Tafsir al-Dschalalain
+
+Ein knapper Tafsir, begonnen von Dschalal ad-Din al-Mahalli und vollendet von seinem Schüler Dschalal ad-Din as-Suyuti. Er wird wegen seiner Kürze geschätzt und häufig im Unterricht verwendet.
+
+### Ma'arif al-Qur'an
+
+Im 20. Jahrhundert von Mufti Muhammad Schafi' auf Urdu verfasst und ins Englische übersetzt. Er verbindet klassische Erklärung mit Hinweisen für das tägliche Leben und ist in der App verfügbar.
+
+### Tazkirul Quran
+
+Ein moderner englischer Kommentar von Maulana Wahiduddin Khan mit Schwerpunkt auf der spirituellen Botschaft und dem Nachdenken. Auch er ist in der App zu finden.
+
+## Wie man Tafsir liest
+
+Gerade die umfangreichen Werke können anfangs überwältigend wirken. Diese Schritte helfen:
+
+1. **Lies zuerst den Vers,** auf Arabisch und in Übersetzung.
+2. **Schau dir die Schlüsselwörter an.** Die Wort-für-Wort-Bedeutung zeigt, welches Wort welchen Gedanken trägt.
+3. **Lies den Tafsir langsam.** Konzentrier dich auf die Hauptaussage, nicht auf jedes Detail.
+4. **Halte eine Lehre fest.** Was lehrt dieser Vers über Allah, über die Menschen, über das Leben?
+5. **Behalte die Quelle im Blick.** Verschiedene Gelehrte setzen unterschiedliche Schwerpunkte. Das ist normal und Teil einer reichen Tradition.
+6. **Frag nach, wenn du unsicher bist.** Wirft eine Stelle Fragen auf, besonders zu Urteilen, wende dich an einen qualifizierten Gelehrten.
+
+## Tafsir bei Quran Masterclass
+
+Bei Quran Masterclass erscheint der Tafsir neben jedem Vers, während du zuhörst. Auf dem Handy öffnet er sich als Fenster vom unteren Bildschirmrand, auf größeren Bildschirmen steht er neben dem Text.
+
+Gut zu wissen:
+
+- **Die Quelle steht immer** unter dem Text, damit du weißt, wessen Erklärung du liest.
+- **Du kannst zwischen Tafsiren wechseln,** zum Beispiel von Ibn Kathir zu Ma'arif al-Qur'an.
+- **Eine Erklärung umfasst oft mehrere Verse.** Klassische Gelehrte erläutern manchmal eine Versgruppe gemeinsam. Die App zeigt dann an, welche Verse der Kommentar abdeckt.
+- **Sprachen:** Wo es in deiner Sprache noch keinen Tafsir gibt, wird ein englischer angezeigt. Für Deutsch sind bislang kaum klassische Tafsir-Werke frei verfügbar.
+
+Der Tafsir ist auch Schritt fünf der [Shams-Methode](/shams), entwickelt von Nami Shams. Nach dem Zuhören, dem Aufbau des Verses und den Wortbedeutungen liest du die klassische Erklärung. Wer versteht, warum ein Vers offenbart wurde und was er lehrt, behält ihn deutlich leichter.
+
+## Tafsir und Übersetzung sind nicht dasselbe
+
+Jede Übersetzung ist bereits eine Form der Deutung: Der Übersetzer muss sich für ein Wort entscheiden, wo das Arabische mehrere Bedeutungsnuancen tragen kann. Wer den Tafsir neben der Übersetzung liest, erkennt diese Tiefe. Er hilft auch, Missverständnisse zu vermeiden – etwa wenn sich ein Vers auf ein bestimmtes historisches Ereignis bezieht.
+
+## Wo du anfangen kannst
+
+Am besten beginnst du mit Suren, die du ohnehin rezitierst:
+
+- [Al-Fatiha](/surah/1) – die Eröffnung des Korans
+- [Al-Ikhlas](/surah/112) – die Einheit Allahs
+- [Al-'Asr](/surah/103) – drei Verse über Erfolg und Verlust
+- [Al-Mulk](/surah/67) – wird oft am Abend rezitiert
+
+Den Tafsir der Suren zu lesen, mit denen du täglich betest, kann dein Gebet spürbar verändern.
+
+## Verständnis Schritt für Schritt aufbauen
+
+Tafsir wird leichter, je größer dein Wortschatz ist. Unser Ratgeber zum [Koran-Wortschatz](/guides/learn-quranic-arabic-vocabulary) zeigt, wie ein Grundwortschatz und die Wurzeln viele Verse auf einmal erschließen. Und wenn du gerade erst anfängst, lies unseren [kompletten Leitfaden für Anfänger](/guides/how-to-learn-the-quran).
+
+## Ein Wort der Sorgfalt
+
+Der Koran ist das Wort Allahs, und ihn zu erklären ist eine ernste Verantwortung. Quran Masterclass ist eine Lernplattform und keine Quelle neuer Auslegungen: Jeder angezeigte Tafsir ist mit seiner Quelle gekennzeichnet. Für persönliche Fragen und religiöse Urteile wende dich bitte an einen qualifizierten Gelehrten.`,
+    faq: [
+      {
+        q_en: "What is the difference between translation and tafsir?",
+        a_en: "A translation renders the meaning of a verse in another language. Tafsir explains it in depth: context, reasons of revelation, related verses and hadith, and the lessons scholars derived.",
+        q_de: "Was ist der Unterschied zwischen Übersetzung und Tafsir?",
+        a_de: "Eine Übersetzung gibt die Bedeutung eines Verses in einer anderen Sprache wieder. Der Tafsir erklärt sie ausführlich: Zusammenhang, Offenbarungsanlass, verwandte Verse und Hadithe sowie die Lehren der Gelehrten.",
+      },
+      {
+        q_en: "Which tafsir is good for beginners?",
+        a_en: "Many beginners start with an abridged Tafsir Ibn Kathir or a concise work like Tafsir al-Jalalayn. A teacher can recommend what suits your level.",
+        q_de: "Welcher Tafsir eignet sich für Anfänger?",
+        a_de: "Viele beginnen mit einer gekürzten Fassung von Ibn Kathir oder einem knappen Werk wie Tafsir al-Dschalalain. Ein Lehrer kann empfehlen, was zu deinem Stand passt.",
+      },
+      {
+        q_en: "Where does the tafsir in Quran Masterclass come from?",
+        a_en: "The app shows tafsir works such as Ibn Kathir (abridged), Ma'arif al-Qur'an and Tazkirul Quran, always with the source named. For religious rulings, please ask a qualified scholar.",
+        q_de: "Woher stammt der Tafsir bei Quran Masterclass?",
+        a_de: "Die App zeigt Tafsir-Werke wie Ibn Kathir (gekürzt), Ma'arif al-Qur'an und Tazkirul Quran und nennt immer die Quelle. Für religiöse Urteile wende dich bitte an einen qualifizierten Gelehrten.",
+      },
+      {
+        q_en: "Why does one tafsir entry cover several verses?",
+        a_en: "Classical scholars often explain a group of related verses together. The app then shows which verses the commentary covers.",
+        q_de: "Warum gilt ein Tafsir-Eintrag für mehrere Verse?",
+        a_de: "Klassische Gelehrte erklären oft eine zusammengehörige Versgruppe gemeinsam. Die App zeigt dann an, welche Verse der Kommentar umfasst.",
+      },
+    ],
+    related: ["shams-method", "learn-quranic-arabic-vocabulary", "how-to-learn-the-quran"],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "daily-quran-routine",
+    date: "2026-10-06",
+    title_en: "A Daily Quran Routine in 15–25 Minutes",
+    title_de: "Tägliche Koran-Routine in 15–25 Minuten",
+    desc_en: "A simple daily Quran routine for busy people: review first, new verses, link the chain and listen before sleep – in 15–25 minutes, with a plan for busy days.",
+    desc_de: "Eine einfache tägliche Koran-Routine für volle Tage: zuerst wiederholen, neue Verse, Kette bilden, abends hören – in 15–25 Minuten, mit Plan für Stresstage.",
+    keywords_en: "daily Quran routine, Quran habit, Quran every day, Quran study plan, how much Quran per day",
+    keywords_de: "tägliche Koran-Routine, Koran jeden Tag, Koran Gewohnheit, Koran Lernplan, wie viel Koran am Tag",
+    body_en: `Many Muslims wish they had a closer relationship with the Quran but struggle to fit it into busy days. The answer is rarely more time – it is a better structure. The Prophet ﷺ said that the deeds most beloved to Allah are those done consistently, even if they are small (Bukhari and Muslim). This guide gives you a routine of 15 to 25 minutes that you can keep up every day.
+
+## Why a short daily routine works
+
+- **Memory needs regular contact.** Verses you meet every day stay; verses you meet once a week fade.
+- **Habits reduce effort.** When the Quran has a fixed place in your day, you no longer have to decide each time.
+- **Small portions prevent overload.** You can always do a little more, but a plan that is too big is quickly abandoned.
+
+## The four parts of the routine
+
+This routine follows the daily structure of the [Shams Method](/shams), developed by Nami Shams. Every day has the same four parts.
+
+### 1. Review first (about 5 minutes)
+
+Start with the verses that are due today. Recite each one from memory, then reveal it and check yourself honestly.
+
+Why first? Because recalling verses before you learn anything new is what moves them into long-term memory – and because review is the part people skip when time runs out.
+
+In Quran Masterclass, your [Today page](/today) shows which verses are due. Each verse comes back after 1, 3, 7, 14, 30 and 90 days. If you know it, the gap grows; if you struggle, it starts again.
+
+### 2. New verses (about 4 minutes per verse)
+
+Take your daily portion through the seven steps of the Shams Method:
+
+1. Listen three times
+2. Build up backwards from the last word
+3. Word by word
+4. Meaning
+5. Tafsir
+6. Fading cues – first letters, then nothing
+7. Reflect – one or two sentences in your note
+
+How many? For beginners **one to three** new verses a day, with some practice **three to five**. The right amount is the one you can keep up.
+
+### 3. Link the chain (about 3 minutes)
+
+Recite today's new verses together with yesterday's, without looking. This connects single verses into a flowing passage – just as classical hifz teachers do with the sabaq (new lesson) and sabqi (recent lessons). Read more in our [hifz guide](/guides/how-to-memorize-the-quran).
+
+### 4. Listen before sleep (about 2 minutes)
+
+In the evening, play today's verses once more. What you go over shortly before sleep tends to be consolidated overnight. It is also a peaceful way to end the day.
+
+## Three versions for different days
+
+### The full routine – about 25 minutes
+
+- Review: 5–8 minutes
+- Three new verses: about 12 minutes
+- Link the chain: 3 minutes
+- Evening listening: 2 minutes
+
+### The short routine – about 15 minutes
+
+- Review: 5 minutes
+- One or two new verses: 4–8 minutes
+- Link the chain: 2 minutes
+
+### The minimum on difficult days – about 5 minutes
+
+- Review only the verses that are due.
+- No new verses.
+
+On days with illness, travel or family commitments, the minimum keeps your habit and your memory alive. Missing new verses for a day is fine; missing reviews for a week is what causes forgetting.
+
+## When to do it
+
+The best time is the one you can protect. Many people find it easiest to anchor the routine to a prayer:
+
+- **After Fajr:** the house is quiet and the mind is fresh.
+- **After Maghrib or 'Isha:** a natural pause at the end of the working day.
+- **In your lunch break:** for people with long commutes or young children.
+
+The [prayer times](/prayer) page shows the times for your location, which makes it easy to plan your Quran time around them.
+
+## Make listening part of your day
+
+Besides your focused routine, you can listen to the Quran in between:
+
+- On the way to work or school
+- While cooking or tidying up
+- On a walk
+
+Play your current surah, or use the [Quran radio](/radio) for continuous recitation. Listening does not replace active recall, but it keeps the verses close.
+
+## Tips for keeping it up
+
+- **Same place, same time.** A fixed corner and a fixed time make starting easier.
+- **Prepare the night before.** Know which verses come next so you do not lose time choosing.
+- **Track your streak.** The Today page counts the days in a row you have practised. Seeing the chain grow is motivating – but do not let a broken streak discourage you.
+- **Put your phone in focus mode** so notifications do not interrupt.
+- **Recite what you learn in prayer.** It is review and worship at the same time.
+- **Add a short dua.** Ask Allah for beneficial knowledge before you start. You can find duas in our [duas collection](/duas).
+
+## Weekly and monthly check-ins
+
+Once a week, take a few extra minutes to recite a whole surah you have learned from start to finish. Once a month, look back: Is the daily amount right? Do reviews take too long? If so, reduce new verses for a while. A routine should serve you, not overwhelm you.
+
+## Example: one week with Al-Mulk
+
+Suppose you want to learn [Surah Al-Mulk](/surah/67), which has 30 verses. At three new verses a day, you will have learned the whole surah in ten days, with reviews running alongside. After that, it continues to come back at growing intervals so it stays secure.
+
+## Start small, start today
+
+Pick a time, open the next verse and begin with review. If you are new, our [complete beginner's guide](/guides/how-to-learn-the-quran) shows where to start. Fifteen minutes today is better than an hour someday.`,
+    body_de: `Viele Muslime wünschen sich eine engere Beziehung zum Koran, finden im vollen Alltag aber kaum Platz dafür. Die Lösung ist selten mehr Zeit – sondern eine bessere Struktur. Der Prophet ﷺ sagte, dass Allah die Taten am meisten liebt, die beständig verrichtet werden, auch wenn sie klein sind (Bukhari und Muslim). Dieser Ratgeber gibt dir eine Routine von 15 bis 25 Minuten, die du jeden Tag durchhalten kannst.
+
+## Warum eine kurze tägliche Routine funktioniert
+
+- **Das Gedächtnis braucht regelmäßigen Kontakt.** Verse, denen du täglich begegnest, bleiben. Verse, die du einmal pro Woche siehst, verblassen.
+- **Gewohnheiten sparen Kraft.** Hat der Koran einen festen Platz in deinem Tag, musst du nicht jedes Mal neu entscheiden.
+- **Kleine Portionen verhindern Überforderung.** Mehr geht immer – aber ein zu großer Plan wird schnell aufgegeben.
+
+## Die vier Teile der Routine
+
+Die Routine folgt dem Tagesablauf der [Shams-Methode](/shams), entwickelt von Nami Shams. Jeder Tag hat dieselben vier Teile.
+
+### 1. Zuerst wiederholen (ca. 5 Minuten)
+
+Beginne mit den Versen, die heute fällig sind. Rezitiere jeden aus dem Gedächtnis, deck ihn dann auf und prüf dich ehrlich.
+
+Warum zuerst? Weil das Abrufen vor dem Neuen die Verse ins Langzeitgedächtnis bringt – und weil das Wiederholen genau der Teil ist, der bei Zeitmangel als Erstes wegfällt.
+
+Bei Quran Masterclass zeigt dir deine [Heute-Seite](/today), welche Verse fällig sind. Jeder Vers kommt nach 1, 3, 7, 14, 30 und 90 Tagen wieder. Sitzt er, wird der Abstand größer. Hakt es, geht es von vorn los.
+
+### 2. Neue Verse (ca. 4 Minuten pro Vers)
+
+Führe deine Tagesportion durch die sieben Schritte der Shams-Methode:
+
+1. Dreimal zuhören
+2. Rückwärts aufbauen, ab dem letzten Wort
+3. Wort für Wort
+4. Bedeutung
+5. Tafsir
+6. Ausblenden – erst Anfangsbuchstaben, dann nichts
+7. Nachdenken – ein, zwei Sätze in deiner Notiz
+
+Wie viele? Für Anfänger **ein bis drei** neue Verse am Tag, mit Übung **drei bis fünf**. Richtig ist die Menge, die du durchhältst.
+
+### 3. Kette bilden (ca. 3 Minuten)
+
+Rezitiere die neuen Verse von heute zusammen mit denen von gestern, ohne hinzusehen. So verbinden sich einzelne Verse zu einem fließenden Abschnitt – genau wie im klassischen Hifz mit Sabaq (neue Lektion) und Sabqi (letzte Lektionen). Mehr dazu im [Hifz-Ratgeber](/guides/how-to-memorize-the-quran).
+
+### 4. Vor dem Schlafen hören (ca. 2 Minuten)
+
+Spiel abends die Verse des Tages noch einmal ab. Was man kurz vor dem Einschlafen durchgeht, wird oft über Nacht gefestigt. Und es ist ein friedlicher Abschluss des Tages.
+
+## Drei Varianten für unterschiedliche Tage
+
+### Die volle Routine – ca. 25 Minuten
+
+- Wiederholen: 5–8 Minuten
+- Drei neue Verse: ca. 12 Minuten
+- Kette bilden: 3 Minuten
+- Abends hören: 2 Minuten
+
+### Die kurze Routine – ca. 15 Minuten
+
+- Wiederholen: 5 Minuten
+- Ein oder zwei neue Verse: 4–8 Minuten
+- Kette bilden: 2 Minuten
+
+### Das Minimum an schwierigen Tagen – ca. 5 Minuten
+
+- Nur die fälligen Verse wiederholen.
+- Keine neuen Verse.
+
+An Tagen mit Krankheit, Reisen oder Familienterminen hält das Minimum deine Gewohnheit und dein Gedächtnis lebendig. Einen Tag ohne neue Verse zu verbringen, ist kein Problem. Eine Woche ohne Wiederholung ist das, was zum Vergessen führt.
+
+## Wann am besten?
+
+Die beste Zeit ist die, die du dir freihalten kannst. Vielen fällt es am leichtesten, die Routine an ein Gebet zu knüpfen:
+
+- **Nach dem Fadschr:** Das Haus ist still, der Kopf frisch.
+- **Nach Maghrib oder 'Ischa:** eine natürliche Pause nach dem Arbeitstag.
+- **In der Mittagspause:** für alle mit langen Arbeitswegen oder kleinen Kindern.
+
+Auf der Seite [Gebetszeiten](/prayer) siehst du die Zeiten für deinen Ort. So kannst du deine Koranzeit leicht danach planen.
+
+## Zuhören in den Alltag einbauen
+
+Neben deiner konzentrierten Routine kannst du den Koran auch zwischendurch hören:
+
+- Auf dem Weg zur Arbeit oder zur Schule
+- Beim Kochen oder Aufräumen
+- Bei einem Spaziergang
+
+Spiel deine aktuelle Sure ab oder nutze das [Koran-Radio](/radio) für durchgehende Rezitation. Zuhören ersetzt das aktive Abrufen nicht, hält die Verse aber nah bei dir.
+
+## Tipps zum Dranbleiben
+
+- **Gleicher Ort, gleiche Zeit.** Eine feste Ecke und eine feste Uhrzeit erleichtern den Start.
+- **Am Vorabend vorbereiten.** Wisse, welche Verse als Nächstes kommen, damit du keine Zeit mit Suchen verlierst.
+- **Serie im Blick behalten.** Die Heute-Seite zählt, wie viele Tage du in Folge geübt hast. Eine wachsende Serie motiviert – eine gerissene sollte dich aber nicht entmutigen.
+- **Handy in den Fokusmodus.** So unterbrechen dich keine Benachrichtigungen.
+- **Gelerntes im Gebet rezitieren.** Das ist Wiederholung und Gottesdienst zugleich.
+- **Mit einem kurzen Bittgebet beginnen.** Bitte Allah um nützliches Wissen, bevor du startest. Passende Bittgebete findest du in unserer [Dua-Sammlung](/duas).
+
+## Wöchentlicher und monatlicher Rückblick
+
+Nimm dir einmal pro Woche ein paar Minuten extra, um eine ganze gelernte Sure von Anfang bis Ende zu rezitieren. Schau einmal im Monat zurück: Passt die Tagesmenge? Dauert das Wiederholen zu lange? Dann reduziere die neuen Verse eine Weile. Eine Routine soll dir dienen, nicht dich erdrücken.
+
+## Beispiel: eine Woche mit Al-Mulk
+
+Angenommen, du möchtest [Sure Al-Mulk](/surah/67) lernen, die 30 Verse hat. Mit drei neuen Versen am Tag hast du die ganze Sure in zehn Tagen gelernt, während die Wiederholungen nebenher laufen. Danach kommt sie in wachsenden Abständen zurück und bleibt sicher.
+
+## Klein anfangen – heute
+
+Such dir eine Uhrzeit aus, öffne den nächsten Vers und beginne mit dem Wiederholen. Wenn du neu bist, zeigt dir unser [kompletter Leitfaden für Anfänger](/guides/how-to-learn-the-quran), wo du startest. Fünfzehn Minuten heute sind besser als eine Stunde irgendwann.`,
+    faq: [
+      {
+        q_en: "How much Quran should I read or learn every day?",
+        a_en: "For memorisation, one to three new verses a day plus due reviews is a good start; with practice, three to five. The amount you can keep up every day is the right one.",
+        q_de: "Wie viel Koran sollte ich jeden Tag lesen oder lernen?",
+        a_de: "Zum Auswendiglernen sind ein bis drei neue Verse am Tag plus fällige Wiederholungen ein guter Start, mit Übung drei bis fünf. Richtig ist die Menge, die du jeden Tag durchhältst.",
+      },
+      {
+        q_en: "What is the best time of day for the Quran?",
+        a_en: "The best time is one you can keep free every day. Many people link their routine to a prayer, for example after Fajr or after 'Isha.",
+        q_de: "Welche Tageszeit ist am besten für den Koran?",
+        a_de: "Die beste Zeit ist die, die du dir jeden Tag freihalten kannst. Viele knüpfen ihre Routine an ein Gebet, etwa nach dem Fadschr oder nach 'Ischa.",
+      },
+      {
+        q_en: "What should I do if I miss a day?",
+        a_en: "Simply continue the next day, starting with review. Do not try to catch up with double portions – that often leads to giving up.",
+        q_de: "Was mache ich, wenn ich einen Tag verpasse?",
+        a_de: "Mach einfach am nächsten Tag weiter und beginne mit dem Wiederholen. Versuch nicht, mit doppelten Portionen aufzuholen – das führt oft dazu, dass man aufgibt.",
+      },
+    ],
+    related: ["shams-method", "how-to-memorize-the-quran", "juz-amma-learning-plan"],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "learn-quranic-arabic-vocabulary",
+    date: "2026-10-06",
+    title_en: "Learn Quranic Arabic Vocabulary: Core Words and Roots",
+    title_de: "Koran-Wortschatz lernen: Grundwörter und Wurzeln",
+    desc_en: "How a core vocabulary and the Arabic root system help you understand the Quran: frequent words, key roots, patterns and a simple way to learn them daily.",
+    desc_de: "Wie ein Grundwortschatz und das arabische Wurzelsystem dir helfen, den Koran zu verstehen: häufige Wörter, wichtige Wurzeln, Muster und tägliches Lernen.",
+    keywords_en: "Quranic Arabic vocabulary, Quran words, Arabic roots, understand Quran Arabic, word by word Quran",
+    keywords_de: "Koran Wortschatz, Koran Wörter, arabische Wurzeln, Koran auf Arabisch verstehen, Koran Wort für Wort",
+    body_en: `Imagine reciting Al-Fatiha in prayer and understanding every word as you say it. For many Muslims who did not grow up with Arabic, that is a real and reachable goal. You do not need to master Arabic grammar first. A core vocabulary and a basic understanding of how Arabic words are built will already open up a large part of what you recite.
+
+## Why vocabulary matters so much
+
+The Quran uses a rich language, but many words occur again and again: names and attributes of Allah, words for faith and guidance, for the hereafter, for people and their deeds, and a small set of everyday connecting words. Once you know these, every new surah contains fewer unknown words.
+
+Knowing the vocabulary also helps you:
+
+- **Concentrate in prayer** because you follow the meaning as you recite.
+- **Memorise more easily** because meaningful words stick better than unfamiliar sounds.
+- **Read tafsir with more benefit** because you recognise the key words being explained.
+
+## The secret of Arabic: roots
+
+Most Arabic words are built from a **root** of three consonants. The root carries a basic meaning, and different patterns of vowels and additional letters create related words.
+
+### Example: k-t-b – writing
+
+- **kataba** – he wrote
+- **kitab** – book
+- **kutiba** – it was prescribed (literally: it was written)
+- **maktub** – written
+
+### Example: '-l-m – knowledge
+
+- **'alima** – he knew
+- **'ilm** – knowledge
+- **'alim** – knowing, all-knowing
+- **al-'alamin** – the worlds (from the same root, as in Al-Fatiha)
+
+### Example: r-h-m – mercy
+
+- **rahma** – mercy
+- **ar-Rahman** – the Most Merciful
+- **ar-Rahim** – the Especially Merciful
+
+When you learn a root, you are not learning one word – you are learning a whole family. That is why vocabulary grows faster in Arabic than many learners expect.
+
+## Patterns: the shape of meaning
+
+Arabic also uses recurring **patterns**. Once you recognise them, you can often guess the type of word:
+
+- **fa'il** – the one who does something: 'alim (knower), kafir (one who disbelieves)
+- **maf'ul** – the one to whom something is done: maktub (written)
+- **fa''al** – someone who does something a lot: ghaffar (the Oft-Forgiving)
+
+You do not need the technical names. Simply noticing "this word looks like that one" is a powerful step.
+
+## Words to learn first
+
+### Small connecting words
+
+These appear in almost every verse:
+
+- **wa** – and
+- **fa** – so, then
+- **min** – from
+- **fi** – in
+- **'ala** – on, upon
+- **ila** – to, towards
+- **inna** – indeed
+- **la** – no, not
+- **ma** – what; also "not"
+- **alladhina** – those who
+- **qul** – say!
+
+### Key roots of faith
+
+- **'-m-n** – faith: iman (faith), mu'min (believer), alladhina amanu (those who believe)
+- **h-d-y** – guidance: huda (guidance), ihdina (guide us)
+- **'-b-d** – worship: 'abd (servant), na'budu (we worship)
+- **h-m-d** – praise: al-hamd (praise), Muhammad, Ahmad
+- **r-b-b** – lordship: rabb (Lord)
+- **q-w-l** – saying: qala (he said), qawl (speech)
+
+## Start with Al-Fatiha
+
+[Al-Fatiha](/surah/1) is the ideal starting point: you recite it in every unit of prayer, and its words appear throughout the Quran.
+
+Some of its words:
+
+- **bismi** – in the name of
+- **al-hamdu lillah** – all praise is for Allah
+- **rabb al-'alamin** – Lord of the worlds
+- **maliki yawm ad-din** – Master of the Day of Judgement
+- **iyyaka na'budu** – You alone we worship
+- **wa iyyaka nasta'in** – and You alone we ask for help
+- **ihdina as-sirat al-mustaqim** – guide us to the straight path
+
+Learn these words, and your prayer will feel different the very next time you stand for it.
+
+## How to learn vocabulary with Quran Masterclass
+
+### 1. Learn words from verses you recite
+
+Isolated word lists are hard to remember. Words you meet in a verse you already know have a context, a sound and a meaning attached. In the app, the word-by-word translation appears under each verse, and you can go through the words one at a time.
+
+### 2. Use the Shams Method
+
+Step three of the [Shams Method](/shams), developed by Nami Shams, is **word by word**: you look at each word and its meaning before reading the whole translation. Combined with listening and the backward build-up, this links sound and meaning – a principle known from research as dual coding.
+
+### 3. Group words by root
+
+When you meet a new word, ask: which root does it come from? Do I already know a relative? Keep a small list in your notes, ordered by root.
+
+### 4. Review at growing intervals
+
+Vocabulary follows the same rules as memorisation. Review new words after a day, a few days, a week and so on. Because verses in the app come back after 1, 3, 7, 14, 30 and 90 days, their words come back with them.
+
+### 5. Use search
+
+When you have learned a word, look for it in other verses using [search](/search). Seeing it in different contexts deepens your understanding.
+
+## A realistic plan
+
+- **Week 1–2:** the words of Al-Fatiha and the most common connecting words
+- **Week 3–6:** the words of the short surahs you recite in prayer
+- **Month 2–3:** the key roots of faith listed above, plus new words from your current memorisation
+- **Ongoing:** a few new words a day, always from verses you are studying
+
+Ten minutes a day are enough. Consistency matters more than volume.
+
+## Vocabulary is not a replacement for tafsir
+
+Knowing the words helps you understand what a verse says, but not always everything it means. Context, reasons of revelation and the explanation of the Prophet ﷺ and the scholars are just as important. Read our guide on [understanding the Quran with tafsir](/guides/understanding-the-quran-tafsir), and ask a qualified scholar when questions arise.
+
+## Next steps
+
+If you cannot read the Arabic script yet, start with our guide on [learning to read the Quran](/guides/learn-to-read-the-quran). If you can, open [Al-Fatiha](/surah/1) and go through it word by word today.`,
+    body_de: `Stell dir vor, du rezitierst Al-Fatiha im Gebet und verstehst jedes Wort, während du es sprichst. Für viele Muslime, die nicht mit Arabisch aufgewachsen sind, ist das ein echtes und erreichbares Ziel. Du musst dafür nicht erst die arabische Grammatik beherrschen. Ein Grundwortschatz und ein Grundverständnis dafür, wie arabische Wörter gebaut sind, erschließen schon einen großen Teil dessen, was du rezitierst.
+
+## Warum der Wortschatz so wichtig ist
+
+Der Koran hat eine reiche Sprache, aber viele Wörter kehren immer wieder: Namen und Eigenschaften Allahs, Wörter für Glauben und Rechtleitung, für das Jenseits, für Menschen und ihre Taten sowie eine kleine Gruppe alltäglicher Verbindungswörter. Wer diese kennt, findet in jeder neuen Sure weniger unbekannte Wörter.
+
+Der Wortschatz hilft dir außerdem:
+
+- **Im Gebet konzentriert zu bleiben,** weil du der Bedeutung beim Rezitieren folgst.
+- **Leichter auswendig zu lernen,** weil Wörter mit Bedeutung besser haften als fremde Laute.
+- **Mehr aus dem Tafsir mitzunehmen,** weil du die erklärten Schlüsselwörter wiedererkennst.
+
+## Das Geheimnis des Arabischen: Wurzeln
+
+Die meisten arabischen Wörter beruhen auf einer **Wurzel** aus drei Konsonanten. Die Wurzel trägt eine Grundbedeutung, und verschiedene Muster aus Vokalen und Zusatzbuchstaben bilden daraus verwandte Wörter.
+
+### Beispiel: k-t-b – schreiben
+
+- **kataba** – er schrieb
+- **kitab** – Buch
+- **kutiba** – es wurde vorgeschrieben (wörtlich: es wurde geschrieben)
+- **maktub** – geschrieben
+
+### Beispiel: '-l-m – Wissen
+
+- **'alima** – er wusste
+- **'ilm** – Wissen
+- **'alim** – wissend, allwissend
+- **al-'alamin** – die Welten (aus derselben Wurzel, wie in Al-Fatiha)
+
+### Beispiel: r-h-m – Barmherzigkeit
+
+- **rahma** – Barmherzigkeit
+- **ar-Rahman** – der Allerbarmer
+- **ar-Rahim** – der Barmherzige
+
+Wer eine Wurzel lernt, lernt nicht ein Wort, sondern eine ganze Familie. Deshalb wächst der Wortschatz im Arabischen schneller, als viele erwarten.
+
+## Muster: die Form der Bedeutung
+
+Das Arabische nutzt außerdem wiederkehrende **Muster**. Wer sie erkennt, kann oft erraten, um welche Art von Wort es sich handelt:
+
+- **fa'il** – wer etwas tut: 'alim (Wissender), kafir (Ungläubiger)
+- **maf'ul** – woran etwas getan wird: maktub (geschrieben)
+- **fa''al** – wer etwas oft oder in hohem Maß tut: ghaffar (der viel Vergebende)
+
+Die Fachbegriffe brauchst du nicht. Schon zu bemerken „dieses Wort sieht aus wie jenes“ ist ein großer Schritt.
+
+## Diese Wörter zuerst
+
+### Kleine Verbindungswörter
+
+Sie kommen in fast jedem Vers vor:
+
+- **wa** – und
+- **fa** – so, dann
+- **min** – von, aus
+- **fi** – in
+- **'ala** – auf, über
+- **ila** – zu, hin zu
+- **inna** – wahrlich
+- **la** – nein, nicht
+- **ma** – was; auch „nicht“
+- **alladhina** – diejenigen, die
+- **qul** – sprich!
+
+### Zentrale Wurzeln des Glaubens
+
+- **'-m-n** – Glaube: iman (Glaube), mu'min (Gläubiger), alladhina amanu (diejenigen, die glauben)
+- **h-d-y** – Rechtleitung: huda (Rechtleitung), ihdina (leite uns)
+- **'-b-d** – Dienen und Anbetung: 'abd (Diener), na'budu (wir dienen)
+- **h-m-d** – Lob: al-hamd (das Lob), Muhammad, Ahmad
+- **r-b-b** – Herrschaft: rabb (Herr)
+- **q-w-l** – sagen: qala (er sagte), qawl (Rede)
+
+## Mit Al-Fatiha anfangen
+
+[Al-Fatiha](/surah/1) ist der ideale Einstieg: Du sprichst sie in jeder Gebetseinheit, und ihre Wörter tauchen im ganzen Koran auf.
+
+Einige ihrer Wörter:
+
+- **bismi** – im Namen
+- **al-hamdu lillah** – alles Lob gebührt Allah
+- **rabb al-'alamin** – Herr der Welten
+- **maliki yawm ad-din** – Herrscher am Tag des Gerichts
+- **iyyaka na'budu** – Dir allein dienen wir
+- **wa iyyaka nasta'in** – und Dich allein bitten wir um Hilfe
+- **ihdina as-sirat al-mustaqim** – leite uns den geraden Weg
+
+Lerne diese Wörter, und dein nächstes Gebet wird sich anders anfühlen.
+
+## Wortschatz lernen mit Quran Masterclass
+
+### 1. Wörter aus Versen lernen, die du rezitierst
+
+Lose Wortlisten behält man schwer. Wörter aus einem Vers, den du schon kennst, haben einen Zusammenhang, einen Klang und eine Bedeutung. In der App steht die Wort-für-Wort-Übersetzung unter jedem Vers, und du kannst sie in Ruhe einzeln durchgehen.
+
+### 2. Die Shams-Methode nutzen
+
+Schritt drei der [Shams-Methode](/shams), entwickelt von Nami Shams, heißt **Wort für Wort**: Du schaust dir jedes Wort und seine Bedeutung an, bevor du die ganze Übersetzung liest. Zusammen mit dem Zuhören und dem Rückwärtsaufbau verknüpft das Klang und Bedeutung – ein Prinzip, das die Forschung als doppelte Kodierung kennt.
+
+### 3. Wörter nach Wurzeln ordnen
+
+Wenn dir ein neues Wort begegnet, frag dich: Aus welcher Wurzel stammt es? Kenne ich schon einen Verwandten? Führ in deinen Notizen eine kleine Liste, geordnet nach Wurzeln.
+
+### 4. In wachsenden Abständen wiederholen
+
+Für Vokabeln gelten dieselben Regeln wie fürs Auswendiglernen. Wiederhole neue Wörter nach einem Tag, nach ein paar Tagen, nach einer Woche und so weiter. Da Verse in der App nach 1, 3, 7, 14, 30 und 90 Tagen wiederkommen, kommen ihre Wörter gleich mit.
+
+### 5. Die Suche nutzen
+
+Hast du ein Wort gelernt, such es mit der [Suche](/search) in anderen Versen. Es in verschiedenen Zusammenhängen zu sehen, vertieft dein Verständnis.
+
+## Ein realistischer Plan
+
+- **Woche 1–2:** die Wörter von Al-Fatiha und die häufigsten Verbindungswörter
+- **Woche 3–6:** die Wörter der kurzen Suren, die du im Gebet rezitierst
+- **Monat 2–3:** die oben genannten zentralen Wurzeln, dazu neue Wörter aus deinem aktuellen Lernstoff
+- **Danach:** ein paar neue Wörter am Tag, immer aus Versen, mit denen du gerade arbeitest
+
+Zehn Minuten am Tag reichen. Beständigkeit zählt mehr als Menge.
+
+## Wortschatz ersetzt keinen Tafsir
+
+Die Wörter zu kennen hilft dir zu verstehen, was ein Vers sagt – aber nicht immer alles, was er bedeutet. Zusammenhang, Offenbarungsanlass und die Erklärungen des Propheten ﷺ und der Gelehrten sind genauso wichtig. Lies dazu unseren Ratgeber [Den Koran mit Tafsir verstehen](/guides/understanding-the-quran-tafsir) und frag einen qualifizierten Gelehrten, wenn Fragen auftauchen.
+
+## Nächste Schritte
+
+Wenn du die arabische Schrift noch nicht lesen kannst, beginne mit unserem Ratgeber [Koran lesen lernen](/guides/learn-to-read-the-quran). Wenn doch, öffne heute [Al-Fatiha](/surah/1) und geh sie Wort für Wort durch.`,
+    faq: [
+      {
+        q_en: "Do I need to learn Arabic grammar to understand the Quran?",
+        a_en: "Not at first. A core vocabulary and an awareness of roots already help you follow much of what you recite. Grammar can be added step by step later.",
+        q_de: "Muss ich arabische Grammatik lernen, um den Koran zu verstehen?",
+        a_de: "Nicht am Anfang. Ein Grundwortschatz und ein Gespür für Wurzeln helfen schon, vielem zu folgen, was du rezitierst. Grammatik kann später Schritt für Schritt dazukommen.",
+      },
+      {
+        q_en: "What is an Arabic root?",
+        a_en: "Most Arabic words are built from a root of three consonants that carries a basic meaning. For example, k-t-b relates to writing: kataba (he wrote), kitab (book), maktub (written).",
+        q_de: "Was ist eine arabische Wurzel?",
+        a_de: "Die meisten arabischen Wörter beruhen auf einer Wurzel aus drei Konsonanten mit einer Grundbedeutung. So steht k-t-b für Schreiben: kataba (er schrieb), kitab (Buch), maktub (geschrieben).",
+      },
+      {
+        q_en: "Which words should I learn first?",
+        a_en: "Start with the words of Al-Fatiha and the most common connecting words such as wa, min, fi, 'ala, inna and alladhina. Then learn the words of the surahs you recite in prayer.",
+        q_de: "Welche Wörter sollte ich zuerst lernen?",
+        a_de: "Beginne mit den Wörtern von Al-Fatiha und den häufigsten Verbindungswörtern wie wa, min, fi, 'ala, inna und alladhina. Danach die Wörter der Suren, die du im Gebet rezitierst.",
+      },
+    ],
+    related: ["understanding-the-quran-tafsir", "learn-to-read-the-quran", "shams-method"],
+  },
 ];

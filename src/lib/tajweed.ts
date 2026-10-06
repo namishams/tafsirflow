@@ -271,9 +271,9 @@ Nimm dir pro Tag einen Bereich vor. Sprich jeden Buchstaben mit Sukun nach einem
       {
         q_en: "How many main articulation areas are there?",
         q_de: "Wie viele Hauptbereiche der Artikulation gibt es?",
-        options_en: ["Three", "Five", "Seven", "Seventeen"],
-        options_de: ["Drei", "Fünf", "Sieben", "Siebzehn"],
-        answer: 1,
+        options_en: ["Three", "Seven", "Five", "Seventeen"],
+        options_de: ["Drei", "Sieben", "Fünf", "Siebzehn"],
+        answer: 2,
         explain_en: "The five areas are al-jawf, al-ḥalq, al-lisān, ash-shafatān and al-khayshūm.",
         explain_de: "Die fünf Bereiche sind Dschauf, Halq, Lisan, Schafatan und Chaischum.",
       },
@@ -289,9 +289,9 @@ Nimm dir pro Tag einen Bereich vor. Sprich jeden Buchstaben mit Sukun nach einem
       {
         q_en: "Where is the ghunnah produced?",
         q_de: "Wo entsteht die Ghunna?",
-        options_en: ["In the lips", "In the nasal cavity (khayshūm)", "In the throat", "At the tip of the tongue"],
-        options_de: ["In den Lippen", "Im Nasenraum (Chaischum)", "Im Rachen", "An der Zungenspitze"],
-        answer: 1,
+        options_en: ["In the lips", "In the throat", "At the tip of the tongue", "In the nasal cavity (khayshūm)"],
+        options_de: ["In den Lippen", "Im Rachen", "An der Zungenspitze", "Im Nasenraum (Chaischum)"],
+        answer: 3,
         explain_en: "The ghunnah, the nasal sound of ن and م, comes from the khayshūm.",
         explain_de: "Die Ghunna, der Nasalklang von ن und م, kommt aus dem Chaischum.",
       },
@@ -481,9 +481,9 @@ Lies Paare laut: سَ/صَ، تَ/طَ، دَ/ضَ، ذَ/ظَ، كَ/قَ، ه�
       {
         q_en: "How is the ra in رِجَال pronounced?",
         q_de: "Wie wird das Ra in رِجَال ausgesprochen?",
-        options_en: ["Heavy", "Light", "Either way"],
-        options_de: ["Schwer", "Leicht", "Beides möglich"],
-        answer: 1,
+        options_en: ["Heavy", "Either way", "Light"],
+        options_de: ["Schwer", "Beides möglich", "Leicht"],
+        answer: 2,
         explain_en: "A ra carrying kasra is always light.",
         explain_de: "Ein Ra mit Kasra ist immer leicht.",
       },
@@ -938,9 +938,9 @@ Schreib يَرْمَلُونَ auf eine Karte und teile es auf in يَنْمُو
       {
         q_en: "Which letters cause idgham WITH ghunnah?",
         q_de: "Welche Buchstaben bewirken Idgham MIT Ghunna?",
-        options_en: ["ل ر", "ي ن م و", "ء ه ع ح غ خ", "ب"],
-        options_de: ["ل ر", "ي ن م و", "ء ه ع ح غ خ", "ب"],
-        answer: 1,
+        options_en: ["ل ر", "ء ه ع ح غ خ", "ب", "ي ن م و"],
+        options_de: ["ل ر", "ء ه ع ح غ خ", "ب", "ي ن م و"],
+        answer: 3,
         explain_en: "The four letters of يَنْمُو take idgham with ghunnah.",
         explain_de: "Die vier Buchstaben von يَنْمُو bewirken Idgham mit Ghunna.",
       },
@@ -984,9 +984,9 @@ Schreib يَرْمَلُونَ auf eine Karte und teile es auf in يَنْمُو
       {
         q_en: "Which word is one of the four exceptions read with izhar?",
         q_de: "Welches Wort gehört zu den vier Ausnahmen mit Izhar?",
-        options_en: ["مِن وَالٍ", "صِنْوَانٌ", "مَن يَقُولُ", "مِن نِّعْمَةٍ"],
-        options_de: ["مِن وَالٍ", "صِنْوَانٌ", "مَن يَقُولُ", "مِن نِّعْمَةٍ"],
-        answer: 1,
+        options_en: ["مِن وَالٍ", "مَن يَقُولُ", "مِن نِّعْمَةٍ", "صِنْوَانٌ"],
+        options_de: ["مِن وَالٍ", "مَن يَقُولُ", "مِن نِّعْمَةٍ", "صِنْوَانٌ"],
+        answer: 3,
         explain_en: "صِنْوَانٌ has nun and waw inside one word, so it is read with izhar.",
         explain_de: "In صِنْوَانٌ stehen Nun und Waw in einem Wort, daher wird es mit Izhar gelesen.",
       },
@@ -1091,9 +1091,9 @@ Suche auf einer Seite von Sure al-Baqara das kleine Mim-Zeichen. Jedes Mal, wenn
       {
         q_en: "Which letter causes iqlab?",
         q_de: "Welcher Buchstabe bewirkt Iqlab?",
-        options_en: ["م", "ب", "ف", "و"],
-        options_de: ["م", "ب", "ف", "و"],
-        answer: 1,
+        options_en: ["م", "ف", "و", "ب"],
+        options_de: ["م", "ف", "و", "ب"],
+        answer: 3,
         explain_en: "Iqlab happens only before ب.",
         explain_de: "Iqlab gibt es nur vor ب.",
       },
@@ -1261,9 +1261,9 @@ Achte auch auf den Vokal vor dem Nun – aus „an“ darf kein „ang“ oder �
       {
         q_en: "Which phrase contains ikhfa'?",
         q_de: "Welcher Ausdruck enthält Ikhfa?",
-        options_en: ["مِنْ خَوْفٍ", "مِن جُوعٍ", "مَن يَقُولُ", "مِن بَعْدِ"],
-        options_de: ["مِنْ خَوْفٍ", "مِن جُوعٍ", "مَن يَقُولُ", "مِن بَعْدِ"],
-        answer: 1,
+        options_en: ["مِنْ خَوْفٍ", "مَن يَقُولُ", "مِن بَعْدِ", "مِن جُوعٍ"],
+        options_de: ["مِنْ خَوْفٍ", "مَن يَقُولُ", "مِن بَعْدِ", "مِن جُوعٍ"],
+        answer: 3,
         explain_en: "ج is an ikhfa' letter. The others are izhar (خ), idgham (ي) and iqlab (ب).",
         explain_de: "ج ist ein Ikhfa-Buchstabe. Die anderen sind Izhar (خ), Idgham (ي) und Iqlab (ب).",
       },
@@ -1419,9 +1419,9 @@ Lies Sure al-Fil und Sure Quraisch. Markiere jedes Mim Sakina in drei Farben: ei
       {
         q_en: "What is the rule for mim sakinah before ب?",
         q_de: "Welche Regel gilt für Mim Sakina vor ب?",
-        options_en: ["Izhar shafawi", "Ikhfa' shafawi", "Idgham shafawi", "Iqlab"],
-        options_de: ["Izhar schafawi", "Ikhfa schafawi", "Idgham schafawi", "Iqlab"],
-        answer: 1,
+        options_en: ["Izhar shafawi", "Idgham shafawi", "Ikhfa' shafawi", "Iqlab"],
+        options_de: ["Izhar schafawi", "Idgham schafawi", "Ikhfa schafawi", "Iqlab"],
+        answer: 2,
         explain_en: "Before ب the mim is hidden with a two-count ghunnah: ikhfa' shafawi.",
         explain_de: "Vor ب wird das Mim mit zwei Zählzeiten Ghunna verborgen: Ikhfa schafawi.",
       },
@@ -1593,9 +1593,9 @@ Rezitiere Sure an-Nas. Darin kommt النَّاسِ fünfmal vor, dazu الْخ�
       {
         q_en: "Which word contains a ghunnah mushaddadah?",
         q_de: "Welches Wort enthält eine Ghunna muschaddada?",
-        options_en: ["مِنْ", "ثُمَّ", "قُلْ", "أَحَدٌ"],
-        options_de: ["مِنْ", "ثُمَّ", "قُلْ", "أَحَدٌ"],
-        answer: 1,
+        options_en: ["مِنْ", "قُلْ", "أَحَدٌ", "ثُمَّ"],
+        options_de: ["مِنْ", "قُلْ", "أَحَدٌ", "ثُمَّ"],
+        answer: 3,
         explain_en: "ثُمَّ has a mim with shaddah, so it carries a full ghunnah.",
         explain_de: "ثُمَّ hat ein Mim mit Schadda und trägt daher eine volle Ghunna.",
       },
@@ -1770,5 +1770,540 @@ Rezitiere Sure al-Ichlas und Sure al-Falaq und halte an jedem Versende an. Fast 
       },
     ],
   },
-  // @@CONTINUE@@
+  // ───────────────────────────────────────────── 12
+  {
+    id: "madd",
+    level: 3,
+    title_en: "Madd – Natural and Secondary Lengthening",
+    title_de: "Madd – natürliche und abgeleitete Dehnung",
+    summary_en: "Long vowels are held for two counts by nature, and become longer when a hamza or a sukun follows them.",
+    summary_de: "Lange Vokale werden von Natur aus zwei Zählzeiten gehalten und länger, wenn ein Hamza oder ein Sukun folgt.",
+    body_en: `## The madd letters
+*Madd* means "lengthening". The three madd letters are:
+- ا with fatha before it, و sakinah with damma before it, ي sakinah with kasra before it.
+
+Lengths are measured in *ḥarakāt* (counts). One count is roughly the time of one short vowel; keep an even pace.
+
+## Madd tabi'i (natural madd) – 2 counts
+A madd letter with no hamza or sukun after it: قَالَ، يَقُولُ، قِيلَ. Without it, the word is wrong – so it is never shortened.
+
+## Madd far'i (secondary madd)
+The madd becomes longer because of a **hamza** or a **sukun**.
+
+**Caused by hamza:**
+- **Muttasil (connected)** – hamza in the same word: جَاءَ، السَّمَاءِ، سُوءَ. Obligatory lengthening: **4 or 5 counts**.
+- **Munfasil (separated)** – madd at the end of one word, hamza at the start of the next: إِنَّا أَعْطَيْنَاكَ، يَا أَيُّهَا. In the common path of Ḥafṣ: **4 or 5 counts**.
+- **Badal** – hamza comes **before** the madd letter: آمَنُوا، إِيمَانًا، أُوتُوا. **2 counts**.
+
+**Caused by sukun:**
+- **Lazim (necessary)** – a permanent sukun or shaddah after the madd letter: الضَّالِّينَ، الْحَاقَّةُ, and letters like the lam and mim in الم. Always **6 counts**.
+- **'Arid lis-sukun** – the sukun only appears because you stop: الْعَالَمِينَ → الْعَالَمِينْ، نَسْتَعِينُ → نَسْتَعِينْ. **2, 4 or 6 counts**.
+- **Lin** – و or ي sakinah after a fatha, when you stop on the next letter: خَوْفْ، الْبَيْتْ، قُرَيْشْ. **2, 4 or 6 counts** (only when stopping).
+
+**Madd 'iwad** – when stopping on a tanwin with fatha, it becomes an alif of **2 counts**: أَفْوَاجًا → أَفْوَاجَا. (Ta marbuta is an exception: رَحْمَةً → رَحْمَهْ.)
+
+## Be consistent
+Choose one length for each type (e.g. 4 for muttasil and munfasil, 4 for 'arid) and keep it throughout a recitation.
+
+## Typical mistakes
+- Shortening natural madd under time pressure.
+- Lengthening short vowels ("bismi-llāāh-i").
+- Changing lengths from verse to verse.
+- Making madd lazim shorter than 6 counts.
+
+## Practice tip
+Tap your finger for each count while reciting Surah an-Nasr: جَاءَ (muttasil), أَفْوَاجَا (ʿiwad at the stop), تَوَّابَا (ʿiwad).`,
+    body_de: `## Die Madd-Buchstaben
+*Madd* heißt „Dehnung“. Die drei Madd-Buchstaben sind:
+- ا mit Fatha davor, و mit Sukun und Damma davor, ي mit Sukun und Kasra davor.
+
+Gemessen wird in *Harakat* (Zählzeiten). Eine Zählzeit entspricht etwa der Dauer eines kurzen Vokals; halte ein gleichmäßiges Tempo.
+
+## Madd tabi'i (natürliche Dehnung) – 2 Zählzeiten
+Ein Madd-Buchstabe, auf den weder Hamza noch Sukun folgt: قَالَ، يَقُولُ، قِيلَ. Ohne diese Dehnung ist das Wort falsch – sie wird also nie verkürzt.
+
+## Madd far'i (abgeleitete Dehnung)
+Die Dehnung wird wegen eines **Hamza** oder eines **Sukun** länger.
+
+**Wegen Hamza:**
+- **Muttasil (verbunden)** – Hamza im selben Wort: جَاءَ، السَّمَاءِ، سُوءَ. Pflichtdehnung: **4 oder 5 Zählzeiten**.
+- **Munfasil (getrennt)** – Madd am Ende eines Wortes, Hamza am Anfang des nächsten: إِنَّا أَعْطَيْنَاكَ، يَا أَيُّهَا. Im verbreiteten Weg von Hafs: **4 oder 5 Zählzeiten**.
+- **Badal** – das Hamza steht **vor** dem Madd-Buchstaben: آمَنُوا، إِيمَانًا، أُوتُوا. **2 Zählzeiten**.
+
+**Wegen Sukun:**
+- **Lazim (notwendig)** – ein festes Sukun oder eine Schadda nach dem Madd-Buchstaben: الضَّالِّينَ، الْحَاقَّةُ sowie Buchstaben wie Lam und Mim in الم. Immer **6 Zählzeiten**.
+- **'Arid lis-sukun** – das Sukun entsteht nur durch das Anhalten: الْعَالَمِينَ → الْعَالَمِينْ، نَسْتَعِينُ → نَسْتَعِينْ. **2, 4 oder 6 Zählzeiten**.
+- **Lin** – و oder ي mit Sukun nach Fatha, wenn man auf dem folgenden Buchstaben anhält: خَوْفْ، الْبَيْتْ، قُرَيْشْ. **2, 4 oder 6 Zählzeiten** (nur beim Anhalten).
+
+**Madd 'iwad** – hält man auf einem Tanwin mit Fatha an, wird daraus ein Alif von **2 Zählzeiten**: أَفْوَاجًا → أَفْوَاجَا. (Ausnahme Ta marbuta: رَحْمَةً → رَحْمَهْ.)
+
+## Bleib einheitlich
+Wähle für jede Art eine Länge (z. B. 4 für Muttasil und Munfasil, 4 für 'Arid) und halte sie während der ganzen Rezitation bei.
+
+## Häufige Fehler
+- Den natürlichen Madd unter Zeitdruck verkürzen.
+- Kurze Vokale dehnen („bismi-llaah-i“).
+- Die Längen von Vers zu Vers wechseln.
+- Madd lazim kürzer als 6 Zählzeiten sprechen.
+
+## Übungstipp
+Tippe beim Rezitieren von Sure an-Nasr für jede Zählzeit mit dem Finger: جَاءَ (Muttasil), أَفْوَاجَا (ʿIwad beim Anhalten), تَوَّابَا (ʿIwad).`,
+    examples: [
+      {
+        ar: "إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
+        key: "110:1",
+        note_en: "جَاءَ: madd letter and hamza in the same word – madd muttasil, 4 or 5 counts.",
+        note_de: "جَاءَ: Madd-Buchstabe und Hamza im selben Wort – Madd muttasil, 4 oder 5 Zählzeiten.",
+      },
+      {
+        ar: "قُلْ يَا أَيُّهَا الْكَافِرُونَ",
+        key: "109:1",
+        note_en: "يَا أَيُّهَا: alif at the end of يَا, hamza at the start of the next word – madd munfasil. الْكَافِرُونَ at the stop – madd 'arid lis-sukun.",
+        note_de: "يَا أَيُّهَا: Alif am Ende von يَا, Hamza am Anfang des nächsten Wortes – Madd munfasil. الْكَافِرُونَ beim Anhalten – Madd 'arid lis-sukun.",
+      },
+      {
+        ar: "غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+        key: "1:7",
+        note_en: "الضَّالِّينَ: alif followed by a shaddah (permanent sukun) – madd lazim, 6 counts.",
+        note_de: "الضَّالِّينَ: Alif, gefolgt von einer Schadda (festes Sukun) – Madd lazim, 6 Zählzeiten.",
+      },
+      {
+        ar: "لِإِيلَافِ قُرَيْشٍ",
+        key: "106:1",
+        note_en: "Stopping on قُرَيْشْ: ya sakinah after fatha – madd lin, 2, 4 or 6 counts.",
+        note_de: "Anhalten auf قُرَيْشْ: Ya mit Sukun nach Fatha – Madd lin, 2, 4 oder 6 Zählzeiten.",
+      },
+      {
+        ar: "يُخَادِعُونَ اللَّهَ وَالَّذِينَ آمَنُوا",
+        key: "2:9",
+        note_en: "آمَنُوا: hamza before the madd letter – madd badal, 2 counts.",
+        note_de: "آمَنُوا: Hamza vor dem Madd-Buchstaben – Madd badal, 2 Zählzeiten.",
+      },
+      {
+        ar: "يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا",
+        key: "110:2",
+        note_en: "Stopping on أَفْوَاجًا → أَفْوَاجَا – madd 'iwad, 2 counts.",
+        note_de: "Anhalten auf أَفْوَاجًا → أَفْوَاجَا – Madd 'iwad, 2 Zählzeiten.",
+      },
+    ],
+    quiz: [
+      {
+        q_en: "How long is madd tabi'i?",
+        q_de: "Wie lang ist der Madd tabi'i?",
+        options_en: ["1 count", "2 counts", "4 counts", "6 counts"],
+        options_de: ["1 Zählzeit", "2 Zählzeiten", "4 Zählzeiten", "6 Zählzeiten"],
+        answer: 1,
+        explain_en: "The natural madd is always two counts.",
+        explain_de: "Die natürliche Dehnung dauert immer zwei Zählzeiten.",
+      },
+      {
+        q_en: "In جَاءَ, which madd is found?",
+        q_de: "Welcher Madd steckt in جَاءَ?",
+        options_en: ["Munfasil", "Badal", "Lin", "Muttasil"],
+        options_de: ["Munfasil", "Badal", "Lin", "Muttasil"],
+        answer: 3,
+        explain_en: "The madd letter and the hamza are in the same word – muttasil.",
+        explain_de: "Madd-Buchstabe und Hamza stehen im selben Wort – Muttasil.",
+      },
+      {
+        q_en: "How long is madd lazim?",
+        q_de: "Wie lang ist der Madd lazim?",
+        options_en: ["2 counts", "2, 4 or 6 counts", "Always 6 counts"],
+        options_de: ["2 Zählzeiten", "2, 4 oder 6 Zählzeiten", "Immer 6 Zählzeiten"],
+        answer: 2,
+        explain_en: "Madd lazim is fixed at six counts.",
+        explain_de: "Der Madd lazim ist fest auf sechs Zählzeiten.",
+      },
+      {
+        q_en: "Stopping on نَسْتَعِينُ creates which madd?",
+        q_de: "Welcher Madd entsteht beim Anhalten auf نَسْتَعِينُ?",
+        options_en: ["Madd 'arid lis-sukun", "Madd lazim", "Madd muttasil", "Madd badal"],
+        options_de: ["Madd 'arid lis-sukun", "Madd lazim", "Madd muttasil", "Madd badal"],
+        answer: 0,
+        explain_en: "The sukun on the nun only appears because of the stop, so the madd is 'arid (temporary): 2, 4 or 6 counts.",
+        explain_de: "Das Sukun auf dem Nun entsteht nur durch das Anhalten, daher ist es Madd 'arid: 2, 4 oder 6 Zählzeiten.",
+      },
+      {
+        q_en: "What happens when you stop on a word ending in tanwin with fatha (e.g. أَفْوَاجًا)?",
+        q_de: "Was passiert beim Anhalten auf einem Wort mit Tanwin-Fatha (z. B. أَفْوَاجًا)?",
+        options_en: [
+          "The tanwin is read as an alif of 2 counts",
+          "The nun is pronounced clearly",
+          "It is lengthened 6 counts",
+        ],
+        options_de: [
+          "Das Tanwin wird als Alif von 2 Zählzeiten gelesen",
+          "Das Nun wird deutlich gesprochen",
+          "Es wird 6 Zählzeiten gedehnt",
+        ],
+        answer: 0,
+        explain_en: "This is madd 'iwad: the tanwin is replaced by an alif of two counts.",
+        explain_de: "Das ist Madd 'iwad: Das Tanwin wird durch ein Alif von zwei Zählzeiten ersetzt.",
+      },
+      {
+        q_en: "Which word contains a madd badal?",
+        q_de: "Welches Wort enthält einen Madd badal?",
+        options_en: ["قَالَ", "آمَنُوا", "السَّمَاءِ", "الضَّالِّينَ"],
+        options_de: ["قَالَ", "آمَنُوا", "السَّمَاءِ", "الضَّالِّينَ"],
+        answer: 1,
+        explain_en: "In آمَنُوا the hamza comes before the madd letter – that is badal.",
+        explain_de: "In آمَنُوا steht das Hamza vor dem Madd-Buchstaben – das ist Badal.",
+      },
+    ],
+  },
+
+  // ───────────────────────────────────────────── 13
+  {
+    id: "waqf-ibtida",
+    level: 3,
+    title_en: "Waqf and Ibtida' – Stopping and Starting",
+    title_de: "Waqf und Ibtida – Anhalten und Neubeginnen",
+    summary_en: "Knowing where and how to stop and where to start again protects the meaning, and the small signs in the mushaf guide you.",
+    summary_de: "Wer weiß, wo und wie man anhält und wieder beginnt, bewahrt die Bedeutung – die kleinen Zeichen im Mushaf helfen dabei.",
+    body_en: `## Why stopping matters
+*Waqf* means stopping, *ibtidāʾ* means starting again. A stop in the wrong place can cut a sentence so that it seems to say the opposite. Example: stopping after لَا تَقْرَبُوا الصَّلَاةَ ("do not approach prayer") without the rest of the verse (4:43) distorts the meaning.
+
+## How to stop on a word
+- The last vowel becomes a **sukun**: الرَّحِيمِ → الرَّحِيمْ.
+- **Tanwin with fatha** becomes a long alif: عَلِيمًا → عَلِيمَا.
+- **Ta marbuta (ة)** becomes a ha with sukun: الْحُطَمَةِ → الْحُطَمَهْ.
+- A shaddah stays: ثُمَّ → ثُمّْ.
+- Then the rules of stopping apply: qalqalah kubra, madd 'arid, madd lin.
+
+## Signs in the mushaf
+- **مـ** – *lāzim*: stopping is strongly recommended, because continuing could change the meaning.
+- **لا** – do not stop here (and if you have to, go back and continue).
+- **ج** – *jāʾiz*: stopping and continuing are equally fine.
+- **صلى** – continuing is better.
+- **قلى** – stopping is better.
+- **∴ ∴** (three dots twice) – *muʿānaqah*: stop at one of the two places, not at both.
+- **۝** (verse end) – stopping at the end of a verse is good practice.
+
+## Saktah
+In Ḥafṣ there are four places marked with a small **س**: a short pause without taking a breath, e.g. عِوَجًا ۜ قَيِّمًا (18:1–2) and مَنْ ۜ رَاقٍ (75:27).
+
+## Starting again
+- Start from a word where the meaning is complete; if you stopped in the middle of a sentence, go back a few words.
+- If the word starts with a connecting hamza (ٱ): with ال read "a"; in verbs read "u" if the third letter has damma (ٱدْعُ → اُدْعُ), otherwise "i" (ٱهْدِنَا → اِهْدِنَا).
+
+## Typical mistakes
+- Stopping just because you ran out of breath in the middle of a phrase – and then continuing from the next word.
+- Ignoring the لا and مـ signs.
+- Keeping the vowel when stopping ("ar-raḥīmi" with a pause).
+
+## Practice tip
+Choose one page and plan your breaths before reciting: mark each place you will stop. Check that each stop follows the signs and that each new start makes sense.`,
+    body_de: `## Warum das Anhalten wichtig ist
+*Waqf* bedeutet Anhalten, *Ibtida* Neubeginnen. Ein Halt an der falschen Stelle kann einen Satz so zerschneiden, dass er scheinbar das Gegenteil sagt. Beispiel: Hält man nach لَا تَقْرَبُوا الصَّلَاةَ („nähert euch nicht dem Gebet“) an, ohne den Rest des Verses (4:43), wird die Bedeutung verfälscht.
+
+## Wie man auf einem Wort anhält
+- Der letzte Vokal wird zum **Sukun**: الرَّحِيمِ → الرَّحِيمْ.
+- **Tanwin mit Fatha** wird zu einem langen Alif: عَلِيمًا → عَلِيمَا.
+- **Ta marbuta (ة)** wird zu einem Ha mit Sukun: الْحُطَمَةِ → الْحُطَمَهْ.
+- Eine Schadda bleibt erhalten: ثُمَّ → ثُمّْ.
+- Danach greifen die Regeln des Anhaltens: Qalqala kubra, Madd 'arid, Madd lin.
+
+## Zeichen im Mushaf
+- **مـ** – *lazim*: Anhalten wird dringend empfohlen, weil Weiterlesen die Bedeutung verändern könnte.
+- **لا** – hier nicht anhalten (und wenn es doch passiert, zurückgehen und weiterlesen).
+- **ج** – *dscha'iz*: Anhalten und Weiterlesen sind gleichermaßen gut.
+- **صلى** – Weiterlesen ist besser.
+- **قلى** – Anhalten ist besser.
+- **∴ ∴** (zweimal drei Punkte) – *Mu'anaqa*: an einer der beiden Stellen anhalten, nicht an beiden.
+- **۝** (Versende) – am Versende anzuhalten ist gute Praxis.
+
+## Sakta
+Bei Hafs gibt es vier Stellen mit einem kleinen **س**: eine kurze Pause ohne Atemholen, z. B. عِوَجًا ۜ قَيِّمًا (18:1–2) und مَنْ ۜ رَاقٍ (75:27).
+
+## Neu beginnen
+- Beginne bei einem Wort, mit dem der Sinn vollständig ist; hast du mitten im Satz angehalten, geh ein paar Wörter zurück.
+- Beginnt das Wort mit einem Verbindungs-Hamza (ٱ): bei ال liest man „a“; bei Verben „u“, wenn der dritte Buchstabe ein Damma hat (ٱدْعُ → اُدْعُ), sonst „i“ (ٱهْدِنَا → اِهْدِنَا).
+
+## Häufige Fehler
+- Mitten in einer Wortgruppe anhalten, weil die Luft ausgeht – und dann einfach beim nächsten Wort weitermachen.
+- Die Zeichen لا und مـ übersehen.
+- Beim Anhalten den Vokal behalten („ar-rahimi“ mit Pause).
+
+## Übungstipp
+Wähle eine Seite und plane vor dem Rezitieren deine Atempausen: Markiere jede Stelle, an der du anhalten willst. Prüfe, ob jeder Halt zu den Zeichen passt und jeder Neubeginn sinnvoll ist.`,
+    examples: [
+      {
+        ar: "إِنَّمَا يَسْتَجِيبُ الَّذِينَ يَسْمَعُونَ ۘ وَالْمَوْتَىٰ يَبْعَثُهُمُ اللَّهُ",
+        key: "6:36",
+        note_en: "Waqf lazim (مـ) after يَسْمَعُونَ: continuing would wrongly join \"the dead\" to those who listen.",
+        note_de: "Waqf lazim (مـ) nach يَسْمَعُونَ: Beim Weiterlesen würden „die Toten“ fälschlich zu denen gezählt, die hören.",
+      },
+      {
+        ar: "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ",
+        key: "2:2",
+        note_en: "Mu'anaqa: stop either after لَا رَيْبَ or after فِيهِ – but not at both.",
+        note_de: "Mu'anaqa: entweder nach لَا رَيْبَ oder nach فِيهِ anhalten – aber nicht an beiden Stellen.",
+      },
+      {
+        ar: "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَقْرَبُوا الصَّلَاةَ وَأَنتُمْ سُكَارَىٰ",
+        key: "4:43",
+        note_en: "Do not stop after الصَّلَاةَ – the verse continues \"while you are intoxicated\", which completes the meaning.",
+        note_de: "Nicht nach الصَّلَاةَ anhalten – der Vers geht weiter mit „während ihr berauscht seid“, was die Bedeutung erst vervollständigt.",
+      },
+      {
+        ar: "كَلَّا ۖ لَيُنبَذَنَّ فِي الْحُطَمَةِ",
+        key: "104:4",
+        note_en: "Stopping on الْحُطَمَةِ: the ta marbuta becomes a ha with sukun – al-ḥuṭamah.",
+        note_de: "Anhalten auf الْحُطَمَةِ: Das Ta marbuta wird zu einem Ha mit Sukun – al-hutamah.",
+      },
+      {
+        ar: "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+        key: "1:6",
+        note_en: "Starting with اهْدِنَا: the connecting hamza is read with kasra (ihdinā) because the third letter has kasra.",
+        note_de: "Beginn mit اهْدِنَا: Das Verbindungs-Hamza wird mit Kasra gelesen (ihdina), weil der dritte Buchstabe ein Kasra hat.",
+      },
+    ],
+    quiz: [
+      {
+        q_en: "What does the sign مـ above a word mean?",
+        q_de: "Was bedeutet das Zeichen مـ über einem Wort?",
+        options_en: ["Do not stop", "Both are equal", "Pause without breath", "Stopping is strongly recommended (lazim)"],
+        options_de: ["Nicht anhalten", "Beides gleich gut", "Pause ohne Atemholen", "Anhalten wird dringend empfohlen (lazim)"],
+        answer: 3,
+        explain_en: "مـ marks waqf lazim, where continuing could change the meaning.",
+        explain_de: "مـ kennzeichnet Waqf lazim, wo Weiterlesen die Bedeutung verändern könnte.",
+      },
+      {
+        q_en: "How do you stop on a word ending in ta marbuta, like الْحُطَمَةِ?",
+        q_de: "Wie hält man auf einem Wort mit Ta marbuta an, z. B. الْحُطَمَةِ?",
+        options_en: ["With a ha sakinah: al-ḥuṭamah", "With ta and kasra: al-ḥuṭamati", "With an alif: al-ḥuṭamā"],
+        options_de: ["Mit Ha und Sukun: al-hutamah", "Mit Ta und Kasra: al-hutamati", "Mit Alif: al-hutama"],
+        answer: 0,
+        explain_en: "When stopping, ta marbuta is read as a ha with sukun.",
+        explain_de: "Beim Anhalten wird Ta marbuta als Ha mit Sukun gelesen.",
+      },
+      {
+        q_en: "What does the mu'anaqa sign (∴ ∴) tell you?",
+        q_de: "Was sagt dir das Mu'anaqa-Zeichen (∴ ∴)?",
+        options_en: [
+          "Stop at both places",
+          "Stop at one of the two places, not both",
+          "Never stop in this verse",
+        ],
+        options_de: [
+          "An beiden Stellen anhalten",
+          "An einer der beiden Stellen anhalten, nicht an beiden",
+          "In diesem Vers nie anhalten",
+        ],
+        answer: 1,
+        explain_en: "Mu'anaqa means you may stop at either place, but stopping at both would break the meaning.",
+        explain_de: "Mu'anaqa heißt: an einer der beiden Stellen anhalten – an beiden würde den Sinn zerreißen.",
+      },
+      {
+        q_en: "What is a saktah?",
+        q_de: "Was ist eine Sakta?",
+        options_en: [
+          "A long stop with a new breath",
+          "A short pause without taking a breath",
+          "Lengthening a vowel to six counts",
+        ],
+        options_de: [
+          "Ein langer Halt mit neuem Atem",
+          "Eine kurze Pause ohne Atemholen",
+          "Das Dehnen eines Vokals auf sechs Zählzeiten",
+        ],
+        answer: 1,
+        explain_en: "Saktah is a brief silence without breathing, at four places in Ḥafṣ.",
+        explain_de: "Sakta ist eine kurze Stille ohne Atemholen, bei Hafs an vier Stellen.",
+      },
+      {
+        q_en: "What should you do if you run out of breath in the middle of a phrase?",
+        q_de: "Was tust du, wenn dir mitten in einer Wortgruppe die Luft ausgeht?",
+        options_en: [
+          "Continue from the next word",
+          "Go back to a suitable earlier word and continue",
+          "Skip to the next verse",
+        ],
+        options_de: [
+          "Beim nächsten Wort weitermachen",
+          "Zu einem passenden früheren Wort zurückgehen und weiterlesen",
+          "Zum nächsten Vers springen",
+        ],
+        answer: 1,
+        explain_en: "Restart from a point where the meaning is complete, so the sentence stays intact.",
+        explain_de: "Beginne an einer Stelle neu, an der der Sinn vollständig ist, damit der Satz intakt bleibt.",
+      },
+    ],
+  },
+
+  // ───────────────────────────────────────────── 14
+  {
+    id: "fatihah-with-tajweed",
+    level: 3,
+    title_en: "Putting It Together – Al-Fatihah with Tajweed",
+    title_de: "Alles zusammen – Al-Fatiha mit Tajweed",
+    summary_en: "A verse-by-verse walk through Surah al-Fatihah that applies the rules from the whole course.",
+    summary_de: "Ein Durchgang durch Sure al-Fatiha, Vers für Vers, bei dem die Regeln des ganzen Kurses angewendet werden.",
+    body_en: `## Why al-Fatihah?
+Al-Fatihah is recited in every unit of prayer, so it is the surah most worth perfecting. It also contains many of the rules you have learned. Read each verse, then check the points below.
+
+## Verse 1–3
+- بِسْمِ اللَّهِ: the lam of Allah is **light** (after kasra).
+- الرَّحْمَٰنِ الرَّحِيمِ: **lam shamsiyya** twice; the ra has fatha, so it is **heavy**; the small alif in الرَّحْمَٰنِ is a natural madd of 2 counts.
+- الْحَمْدُ: **lam qamariyya**; a clear ح, not h.
+- لِلَّهِ: light lam of Allah. رَبِّ: heavy ra, doubled ب.
+- At the stops الرَّحِيمْ and الْعَالَمِينْ: **madd 'arid lis-sukun** (2, 4 or 6 – stay consistent).
+
+## Verse 4–5
+- مَالِكِ: natural madd on the mim (Ḥafṣ reads it with the alif).
+- الدِّينِ: lam shamsiyya.
+- إِيَّاكَ: the shaddah on ي must be clearly doubled – "iyyāka".
+- نَعْبُدُ: ب with sukun – **qalqalah sughra**. Also a clear ع.
+- نَسْتَعِينُ: at the stop, madd 'arid.
+
+## Verse 6
+- اهْدِنَا: when starting, the connecting hamza is read "i" – ihdinā. When continuing, the alif of نَا is not pronounced before الصِّرَاطَ.
+- الصِّرَاطَ: ص and ط are always heavy; the ra (fatha) is heavy too.
+- الْمُسْتَقِيمَ: lam qamariyya; heavy ق.
+
+## Verse 7
+- أَنْعَمْتَ: nun before ع – **izhar**; mim before ت – **izhar shafawi**.
+- عَلَيْهِمْ غَيْرِ and عَلَيْهِمْ وَلَا: mim sakinah stays clear (izhar shafawi), especially before و.
+- غَيْرِ: ra with kasra – **light**.
+- الْمَغْضُوبِ: heavy غ and ض; take care to pronounce ض correctly and not as د or ظ.
+- الضَّالِّينَ: **madd lazim**, 6 counts.
+
+After al-Fatihah it is sunnah to say "Āmīn", which is not part of the surah. Leave a short pause before it.
+
+## Typical mistakes in al-Fatihah
+- Reading إِيَّاكَ without the shaddah.
+- A light ص in الصِّرَاطَ (sounds like "sirāt").
+- Pronouncing ض like ظ or د.
+- Shortening الضَّالِّينَ.
+
+## Practice tip
+Record yourself reciting al-Fatihah once a day for a week. Each day, check only one verse against this list. Ideally, read it to a qualified teacher – this is how tajweed has always been passed on.`,
+    body_de: `## Warum al-Fatiha?
+Al-Fatiha wird in jeder Gebetseinheit rezitiert – keine Sure lohnt sich mehr, perfekt gelernt zu werden. Außerdem enthält sie viele der Regeln aus diesem Kurs. Lies jeden Vers und geh dann die Punkte durch.
+
+## Vers 1–3
+- بِسْمِ اللَّهِ: Das Lam von Allah ist **leicht** (nach Kasra).
+- الرَّحْمَٰنِ الرَّحِيمِ: zweimal **Lam Schamsiyya**; das Ra trägt Fatha und ist **schwer**; das kleine Alif in الرَّحْمَٰنِ ist ein natürlicher Madd von 2 Zählzeiten.
+- الْحَمْدُ: **Lam Qamariyya**; ein klares ح, kein h.
+- لِلَّهِ: leichtes Lam von Allah. رَبِّ: schweres Ra, verdoppeltes ب.
+- Beim Anhalten auf الرَّحِيمْ und الْعَالَمِينْ: **Madd 'arid lis-sukun** (2, 4 oder 6 – bleib einheitlich).
+
+## Vers 4–5
+- مَالِكِ: natürlicher Madd auf dem Mim (Hafs liest mit Alif).
+- الدِّينِ: Lam Schamsiyya.
+- إِيَّاكَ: Die Schadda auf dem ي muss deutlich verdoppelt werden – „iyyaka“.
+- نَعْبُدُ: ب mit Sukun – **Qalqala sughra**. Dazu ein klares ع.
+- نَسْتَعِينُ: beim Anhalten Madd 'arid.
+
+## Vers 6
+- اهْدِنَا: Beim Beginnen wird das Verbindungs-Hamza mit „i“ gelesen – ihdina. Beim Weiterlesen wird das Alif von نَا vor الصِّرَاطَ nicht gesprochen.
+- الصِّرَاطَ: ص und ط sind immer schwer; auch das Ra (Fatha) ist schwer.
+- الْمُسْتَقِيمَ: Lam Qamariyya; schweres ق.
+
+## Vers 7
+- أَنْعَمْتَ: Nun vor ع – **Izhar**; Mim vor ت – **Izhar schafawi**.
+- عَلَيْهِمْ غَيْرِ und عَلَيْهِمْ وَلَا: Das Mim Sakina bleibt deutlich (Izhar schafawi), besonders vor و.
+- غَيْرِ: Ra mit Kasra – **leicht**.
+- الْمَغْضُوبِ: schweres غ und ض; das ض sorgfältig bilden, nicht wie د oder ظ.
+- الضَّالِّينَ: **Madd lazim**, 6 Zählzeiten.
+
+Nach al-Fatiha ist es Sunna, „Amin“ zu sagen; es gehört nicht zur Sure. Mach davor eine kurze Pause.
+
+## Typische Fehler in al-Fatiha
+- إِيَّاكَ ohne Schadda lesen.
+- Ein leichtes ص in الصِّرَاطَ (klingt wie „sirat“).
+- ض wie ظ oder د aussprechen.
+- الضَّالِّينَ verkürzen.
+
+## Übungstipp
+Nimm dich eine Woche lang täglich beim Rezitieren von al-Fatiha auf. Prüfe jeden Tag nur einen Vers anhand dieser Liste. Am besten liest du sie einer qualifizierten Lehrkraft vor – so wurde Tajweed schon immer weitergegeben.`,
+    examples: [
+      {
+        ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+        key: "1:1",
+        note_en: "Light lam of Allah, lam shamsiyya before ر, heavy ra, madd 'arid when stopping on الرَّحِيمْ.",
+        note_de: "Leichtes Lam von Allah, Lam Schamsiyya vor ر, schweres Ra, Madd 'arid beim Anhalten auf الرَّحِيمْ.",
+      },
+      {
+        ar: "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+        key: "1:5",
+        note_en: "Doubled ي in إِيَّاكَ, qalqalah sughra on the ب of نَعْبُدُ, madd 'arid at the stop.",
+        note_de: "Verdoppeltes ي in إِيَّاكَ, Qalqala sughra auf dem ب von نَعْبُدُ, Madd 'arid beim Anhalten.",
+      },
+      {
+        ar: "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+        key: "1:6",
+        note_en: "Connecting hamza read \"i\" at the start; heavy ص ر ط; lam shamsiyya then lam qamariyya.",
+        note_de: "Verbindungs-Hamza am Anfang mit „i“; schweres ص ر ط; erst Lam Schamsiyya, dann Lam Qamariyya.",
+      },
+      {
+        ar: "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ",
+        key: "1:7",
+        note_en: "Izhar of nun before ع and izhar shafawi of mim before ت.",
+        note_de: "Izhar des Nun vor ع und Izhar schafawi des Mim vor ت.",
+      },
+      {
+        ar: "غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+        key: "1:7",
+        note_en: "Light ra in غَيْرِ, heavy غ and ض, clear mim before و, madd lazim (6 counts) in الضَّالِّينَ.",
+        note_de: "Leichtes Ra in غَيْرِ, schweres غ und ض, deutliches Mim vor و, Madd lazim (6 Zählzeiten) in الضَّالِّينَ.",
+      },
+    ],
+    quiz: [
+      {
+        q_en: "How is the lam of Allah pronounced in لِلَّهِ (1:2)?",
+        q_de: "Wie wird das Lam von Allah in لِلَّهِ (1:2) gesprochen?",
+        options_en: ["Heavy", "Light", "Silent"],
+        options_de: ["Schwer", "Leicht", "Stumm"],
+        answer: 1,
+        explain_en: "It follows a kasra, so it is light.",
+        explain_de: "Es folgt auf ein Kasra und ist daher leicht.",
+      },
+      {
+        q_en: "Which rule applies to the ب in نَعْبُدُ?",
+        q_de: "Welche Regel gilt für das ب in نَعْبُدُ?",
+        options_en: ["Iqlab", "Ikhfa' shafawi", "Ghunnah", "Qalqalah sughra"],
+        options_de: ["Iqlab", "Ikhfa schafawi", "Ghunna", "Qalqala sughra"],
+        answer: 3,
+        explain_en: "ب is a qalqalah letter with sukun in the middle of the word – minor qalqalah.",
+        explain_de: "ب ist ein Qalqala-Buchstabe mit Sukun mitten im Wort – kleine Qalqala.",
+      },
+      {
+        q_en: "Which madd is in الضَّالِّينَ and how long is it?",
+        q_de: "Welcher Madd steckt in الضَّالِّينَ und wie lang ist er?",
+        options_en: ["Madd tabi'i, 2 counts", "Madd munfasil, 4–5 counts", "Madd lazim, 6 counts"],
+        options_de: ["Madd tabi'i, 2 Zählzeiten", "Madd munfasil, 4–5 Zählzeiten", "Madd lazim, 6 Zählzeiten"],
+        answer: 2,
+        explain_en: "The alif is followed by a shaddah (permanent sukun) – madd lazim of six counts.",
+        explain_de: "Auf das Alif folgt eine Schadda (festes Sukun) – Madd lazim mit sechs Zählzeiten.",
+      },
+      {
+        q_en: "In أَنْعَمْتَ, what happens to the nun?",
+        q_de: "Was passiert in أَنْعَمْتَ mit dem Nun?",
+        options_en: ["Izhar – it is pronounced clearly", "Ikhfa' – it is hidden", "Idgham – it merges"],
+        options_de: ["Izhar – es wird deutlich gesprochen", "Ikhfa – es wird verborgen", "Idgham – es verschmilzt"],
+        answer: 0,
+        explain_en: "The nun is followed by the throat letter ع, so izhar applies.",
+        explain_de: "Auf das Nun folgt der Rachenbuchstabe ع, also gilt Izhar.",
+      },
+      {
+        q_en: "What is a common and serious mistake in إِيَّاكَ?",
+        q_de: "Welcher häufige und schwere Fehler passiert bei إِيَّاكَ?",
+        options_en: ["Reading it without the shaddah on ي", "Lengthening the alif", "Making the kaf light"],
+        options_de: ["Es ohne Schadda auf dem ي lesen", "Das Alif dehnen", "Das Kaf leicht sprechen"],
+        answer: 0,
+        explain_en: "Dropping the shaddah changes the word, so the ي must be clearly doubled.",
+        explain_de: "Ohne Schadda verändert sich das Wort, daher muss das ي deutlich verdoppelt werden.",
+      },
+      {
+        q_en: "How is the ra in غَيْرِ pronounced?",
+        q_de: "Wie wird das Ra in غَيْرِ ausgesprochen?",
+        options_en: ["Heavy, because غ is heavy", "Light, because it has kasra", "With qalqalah"],
+        options_de: ["Schwer, weil غ schwer ist", "Leicht, weil es Kasra trägt", "Mit Qalqala"],
+        answer: 1,
+        explain_en: "A ra with kasra is always light, regardless of the letters before it.",
+        explain_de: "Ein Ra mit Kasra ist immer leicht, unabhängig von den Buchstaben davor.",
+      },
+    ],
+  },
 ];

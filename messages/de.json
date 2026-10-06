@@ -812,5 +812,34 @@
     "next": "Weiter",
     "roundDone": "Runde geschafft: {ok} von {n} richtig",
     "again": "Noch eine Runde"
+  },
+  "tajweed": {
+    "title": "Tajweed-Kurs",
+    "lead": "Den Koran richtig rezitieren – Schritt für Schritt von den Grundlagen bis zu den wichtigsten Regeln (Hafs 'an 'Asim). Jede Lektion mit Beispielen aus dem Koran und einem kurzen Quiz.",
+    "seoTitle": "Tajweed-Kurs für Anfänger – kostenlos online | Quran Masterclass",
+    "seoDesc": "Lerne Tajweed kostenlos online: Artikulationsstellen, Nun Sakina und Tanwin, Mim Sakina, Qalqala, Madd, Haltezeichen. Lektionen mit Koranbeispielen und Quiz.",
+    "seoKeywords": "Tajweed Kurs, Tajweed lernen, Tajweed Regeln, Tadschwid, Koran richtig lesen, Nun Sakina, Qalqala, Madd Regeln, Koranrezitation lernen",
+    "levelN": "Stufe {n}",
+    "quizN": "{n} Quizfragen",
+    "lessonN": "Lektion {n} von {total}",
+    "examples": "Beispiele aus dem Koran",
+    "listenIn": "Anhören in {key}",
+    "quiz": "Quiz",
+    "qN": "Frage {n} von {total}",
+    "next": "Weiter",
+    "result": "{ok} von {n} richtig",
+    "again": "Quiz wiederholen"
+  },
+  "guides": {
+    "title": "Ratgeber",
+    "lead": "Praktische Ratgeber zum Lernen, Auswendiglernen, Lesen und Verstehen des Korans – mit der Shams-Methode und einer Tagesroutine, die du durchhältst.",
+    "seoTitle": "Koran-Ratgeber – Koran lernen, auswendig lernen und verstehen",
+    "seoDesc": "Kostenlose Ratgeber: wie man den Koran lernt, auswendig lernt (Hifz), Arabisch liest, Tajweed-Grundlagen, Tafsir, Tagesroutine und die Shams-Methode von Nami Shams.",
+    "seoKeywords": "Koran lernen, Koran auswendig lernen, Koran lesen lernen, Koran Tipps, Hifz Tipps, Shams-Methode",
+    "by": "Quran Masterclass",
+    "faq": "Häufige Fragen",
+    "related": "Weiterlesen",
+    "ctaTitle": "Bereit? Deine erste Lektion dauert fünf Minuten.",
+    "cta": "Zur Academy"
   }
 }
