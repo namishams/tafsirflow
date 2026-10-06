@@ -20,7 +20,8 @@
     "reviewNone": "Nichts fällig – bewerte Verse mit „Auswendig lernen“, dann entsteht dein Plan.",
     "streak": "{n} Tage in Folge",
     "todayCount": "Heute: {n} Verse geübt",
-    "surahLabel": "Sure {n}"
+    "surahLabel": "Sure {n}",
+    "searchVerses": "Verse durchsuchen…"
   },
   "player": {
     "play": "Abspielen",
@@ -68,7 +69,21 @@
     "easy": "Leicht",
     "saved": "Gespeichert – nächste Wiederholung in {days} Tagen",
     "savedToday": "Gespeichert – kommt heute nochmal dran",
-    "limitReached": "Du hast das kostenlose Tafsir-Limit für heute erreicht. Erstelle ein kostenloses Konto, um weiterzulesen."
+    "limitReached": "Du hast das kostenlose Tafsir-Limit für heute erreicht. Erstelle ein kostenloses Konto, um weiterzulesen.",
+    "page": "Seite",
+    "juz": "Juz",
+    "hizb": "Hizb",
+    "viewVerses": "Verse",
+    "viewReading": "Lesen",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "share": "Teilen",
+    "note": "Notiz",
+    "notePlaceholder": "Schreibe deine eigenen Gedanken zu diesem Vers…",
+    "fontSize": "Größe der arabischen Schrift",
+    "playVerse": "Diesen Vers abspielen",
+    "volume": "Lautstärke",
+    "goSurah": "Zu Sure springen"
   },
   "language": {
     "label": "Sprache"
@@ -166,5 +181,10 @@
     "surahTitle": "Sure {name} ({arabic}) – Audio, Lautschrift, Übersetzung & Tafsir",
     "surahDesc": "Höre Sure {name} Vers für Vers, lies {verses} Verse mit Lautschrift, Übersetzung und Tafsir und lerne sie mit Wiederholungsplan auswendig. Kostenlos.",
     "keywords": "Koran lernen online, Koran auswendig lernen, Hifz, Tafsir deutsch, Tadschwid, Koran Rezitation, Koran Audio Vers für Vers, Koran Lautschrift, Koran für Kinder"
+  },
+  "search": {
+    "title": "Koran durchsuchen",
+    "noResults": "Keine Verse gefunden.",
+    "go": "Suchen"
   }
 }

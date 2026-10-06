@@ -20,7 +20,8 @@
     "reviewNone": "Nada pendiente: valora aleyas con «Memorizar» para crear tu plan.",
     "streak": "{n} días seguidos",
     "todayCount": "Hoy: {n} aleyas practicadas",
-    "surahLabel": "Sura {n}"
+    "surahLabel": "Sura {n}",
+    "searchVerses": "Buscar aleyas…"
   },
   "player": {
     "play": "Reproducir",
@@ -68,7 +69,21 @@
     "easy": "Fácil",
     "saved": "Guardado: próximo repaso en {days} días",
     "savedToday": "Guardado: volverá a salir hoy",
-    "limitReached": "Has alcanzado el límite gratuito de tafsir de hoy. Crea una cuenta gratuita para seguir leyendo."
+    "limitReached": "Has alcanzado el límite gratuito de tafsir de hoy. Crea una cuenta gratuita para seguir leyendo.",
+    "page": "Página",
+    "juz": "Yuz",
+    "hizb": "Hizb",
+    "viewVerses": "Aleyas",
+    "viewReading": "Lectura",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "share": "Compartir",
+    "note": "Nota",
+    "notePlaceholder": "Escribe tu propia reflexión sobre esta aleya…",
+    "fontSize": "Tamaño del texto árabe",
+    "playVerse": "Reproducir esta aleya",
+    "volume": "Volumen",
+    "goSurah": "Ir a la sura"
   },
   "language": {
     "label": "Idioma"
@@ -166,5 +181,10 @@
     "surahTitle": "Sura {name} ({arabic}) – audio, transliteración, traducción y tafsir",
     "surahDesc": "Escucha la sura {name} aleya por aleya, lee {verses} aleyas con transliteración, traducción y tafsir, y memorízala con repetición espaciada. Gratis.",
     "keywords": "aprender el Corán en línea, memorizar el Corán, hifz, tafsir, tayuid, recitación del Corán, Corán audio aleya por aleya, Corán para niños"
+  },
+  "search": {
+    "title": "Buscar en el Corán",
+    "noResults": "No se encontraron aleyas.",
+    "go": "Buscar"
   }
 }

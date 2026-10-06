@@ -7,9 +7,9 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import AccountLink from "./AccountLink";
 import KidsToggle from "./KidsToggle";
 import Logo from "./Logo";
-import { IconPlay, IconPause, IconPrev, IconNext } from "./Icons";
+import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume } from "./Icons";
 import {
-  LimitError, OWN_TAFSIR_ID, RECITERS, getChapter, getOwnTafsir, getResources, getTafsir, getVerses, hasOwnTafsir, pickTranslation, tafsirOptionsFor,
+  LimitError, OWN_TAFSIR_ID, RECITERS, getChapter, getChapters, getOwnTafsir, getResources, getTafsir, getVerses, hasOwnTafsir, pickTranslation, tafsirOptionsFor,
   type Chapter, type Resource, type TafsirResult, type Verse,
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
@@ -72,9 +72,20 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [view, setView] = useState<"verses" | "reading">("verses");
+  const [arSize, setArSize] = useState(1);
+  const [notes, setNotes] = useState<Record<string, { text: string; at: number }>>({});
+  const [noteOpen, setNoteOpen] = useState<string | null>(null);
+  const [chapters, setChapters] = useState<Chapter[]>([]);
+  const [cur, setCur] = useState(0);
+  const [dur, setDur] = useState(0);
+  const [vol, setVol] = useState(1);
 
   useEffect(() => {
     setMarks(readJSON<string[]>("tf:bookmarks", []));
+    setNotes(readJSON("tf:notes", {}));
+    setView(readJSON<"verses" | "reading">("tf:view", "verses"));
+    setArSize(readJSON<number>("tf:arsize", 1));
     const mq = window.matchMedia("(min-width: 1024px)");
     const on = () => setIsDesktop(mq.matches);
     on();
@@ -84,6 +95,10 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     window.addEventListener("tf-kids", readKids);
     return () => { mq.removeEventListener("change", on); window.removeEventListener("tf-kids", readKids); };
   }, []);
+
+  useEffect(() => { getChapters(locale).then(setChapters).catch(() => undefined); }, [locale]);
+  useEffect(() => { if (audioRef.current) audioRef.current.volume = vol; }, [vol]);
+  useEffect(() => { setCur(0); setDur(0); }, [idx]);
 
   // Kids mode: word-by-word with transliteration on by default, tafsir out of the way
   useEffect(() => { if (kids) { setShowWords(true); setShowTranslit(true); } }, [kids]);
@@ -243,6 +258,27 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     writeJSON("tf:bookmarks", next);
   };
 
+  const saveNote = (key: string, text: string) => {
+    const n = { ...notes };
+    if (text.trim()) n[key] = { text: text.trim(), at: Date.now() };
+    else delete n[key];
+    setNotes(n);
+    writeJSON("tf:notes", n);
+  };
+  const setViewPref = (v: "verses" | "reading") => { setView(v); writeJSON("tf:view", v, true); };
+  const setSize = (n: number) => { setArSize(n); writeJSON("tf:arsize", n, true); };
+  const copyVerse = async (v: Verse) => {
+    const text = `${v.text_uthmani}\n\n${v.translation}\n\n— ${chapter?.name_simple ?? ""} ${v.verse_key}`;
+    try { await navigator.clipboard.writeText(text); setNote(t("copied")); } catch { /* clipboard blocked */ }
+  };
+  const shareVerse = async (v: Verse) => {
+    const url = `${location.origin}/${locale}/surah/${chapterId}?v=${v.verse_number}`;
+    if (navigator.share) { await navigator.share({ title: `${chapter?.name_simple ?? ""} ${v.verse_key}`, text: v.translation, url }).catch(() => undefined); return; }
+    try { await navigator.clipboard.writeText(url); setNote(t("copied")); } catch { /* clipboard blocked */ }
+  };
+  const fmt = (x: number) => (isFinite(x) ? `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, "0")}` : "0:00");
+  const toAr = (n: number) => String(n).replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
+
   if (error) return <p className="p-6">{t("error")}</p>;
   if (!verse || !chapter) return <p className="p-6 text-muted">{t("loading")}</p>;
 
@@ -287,7 +323,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const dockBtn = "grid h-11 w-11 place-items-center rounded-full text-ink transition hover:bg-accent-soft";
 
   return (
-    <div className="pb-36">
+    <div className="pb-48" style={{ ["--ar-scale" as string]: arSize }}>
       <header className="sticky top-0 z-30 border-b border-line/70 bg-bg/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
           <Link href="/quran" className="flex items-center gap-2 text-sm font-medium text-accent" aria-label={t("back")}>
@@ -310,6 +346,20 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             {withBismillah && <p className="font-arabic mt-8 text-center text-3xl text-muted" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>}
           </section>
 
+          <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-line pb-4 text-sm">
+            <label className="flex items-center gap-2">
+              <span className="sr-only">{t("goSurah")}</span>
+              <select value={chapterId} onChange={(e) => router.push(`/surah/${e.target.value}`)} className={`${field} max-w-[11rem] font-medium`} aria-label={t("goSurah")}>
+                {(chapters.length ? chapters : [chapter]).map((c) => <option key={c.id} value={c.id}>{c.id}. {c.name_simple}</option>)}
+              </select>
+            </label>
+            {verse.page > 0 && <span className="text-muted tabular-nums">{t("page")} {verse.page} · {t("juz")} {verse.juz} / {t("hizb")} {verse.hizb}</span>}
+            <div className="inline-flex rounded-lg bg-surface p-1 ring-1 ring-line">
+              <button className={seg(view === "verses")} onClick={() => setViewPref("verses")}>{t("viewVerses")}</button>
+              <button className={seg(view === "reading")} onClick={() => setViewPref("reading")}>{t("viewReading")}</button>
+            </div>
+          </div>
+
           <section className="mb-5 rounded-2xl border border-line bg-surface p-4 shadow-card">
             <button className="flex w-full items-center justify-between text-sm font-semibold" onClick={() => setSettingsOpen((o) => !o)} aria-expanded={settingsOpen}>
               <span>⚙ {t("settings")}</span><span className="text-muted">{settingsOpen ? "−" : "+"}</span>
@@ -321,6 +371,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {RECITERS.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}
                   </select>
                 </label>
+                <div className="grid gap-1"><span className="text-muted">{t("fontSize")}</span>
+                  <div className="inline-flex w-fit rounded-xl bg-bg p-1">
+                    {[0.85, 1, 1.2, 1.45].map((n, i) => (
+                      <button key={n} className={seg(arSize === n)} onClick={() => setSize(n)} aria-label={`${t("fontSize")} ${n}`}><span style={{ fontSize: `${0.8 + i * 0.12}rem` }}>أ</span></button>
+                    ))}
+                  </div>
+                </div>
                 {!kids && <div className="grid gap-1"><span className="text-muted">{t("mode")}</span>
                   <div className="inline-flex w-fit rounded-xl bg-bg p-1">
                     <button className={seg(mode === "learn")} onClick={() => setMode("learn")}>{t("modeLearn")}</button>
@@ -357,6 +414,17 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             )}
           </section>
 
+          {view === "reading" ? (
+            <div className="rounded-2xl border border-line bg-surface p-6 text-justify font-arabic sm:p-10" dir="rtl" style={{ textAlignLast: "center" }}>
+              <p className="ar-text" style={{ lineHeight: 2.6 }}>
+                {verses.map((v, i) => (
+                  <span key={v.verse_key} id={`v-${i}`} onClick={() => goTo(i)} className={`cursor-pointer rounded-lg px-1 transition ${i === idx ? "bg-accent-soft" : "hover:bg-bg"}`}>
+                    {v.text_uthmani} <span className="verse-end">﴿{toAr(v.verse_number)}﴾</span>{" "}
+                  </span>
+                ))}
+              </p>
+            </div>
+          ) : (
           <ol className="grid gap-3">
             {verses.map((v, i) => {
               const active = i === idx;
@@ -374,14 +442,18 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         <span className="absolute inset-1 rounded-[5px] bg-accent-soft" />
                         <span className="relative text-xs font-semibold text-accent">{v.verse_number}</span>
                       </span>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); toggleMark(v.verse_key); }}
-                        aria-label={marked ? t("bookmarked") : t("bookmark")}
-                        className={`text-xl leading-none ${marked ? "text-gold" : "text-muted hover:text-ink"}`}
-                      >{marked ? "★" : "☆"}</button>
+                      <div className="flex items-center gap-0.5 text-muted" onClick={(e) => e.stopPropagation()}>
+                        <button className="grid h-9 w-9 place-items-center rounded-full hover:bg-bg hover:text-ink" aria-label={t("playVerse")} title={t("playVerse")} onClick={() => goTo(i)}><IconPlaySm /></button>
+                        <button className={`grid h-9 w-9 place-items-center rounded-full hover:bg-bg ${marked ? "text-gold" : "hover:text-ink"}`} aria-label={marked ? t("bookmarked") : t("bookmark")} title={marked ? t("bookmarked") : t("bookmark")} onClick={() => toggleMark(v.verse_key)}><IconBookmark filled={marked} /></button>
+                        {!kids && <>
+                          <button className="grid h-9 w-9 place-items-center rounded-full hover:bg-bg hover:text-ink" aria-label={t("copy")} title={t("copy")} onClick={() => copyVerse(v)}><IconCopy /></button>
+                          <button className="grid h-9 w-9 place-items-center rounded-full hover:bg-bg hover:text-ink" aria-label={t("share")} title={t("share")} onClick={() => shareVerse(v)}><IconShare /></button>
+                          <button className={`grid h-9 w-9 place-items-center rounded-full hover:bg-bg ${notes[v.verse_key] ? "text-accent" : "hover:text-ink"}`} aria-label={t("note")} title={t("note")} onClick={() => setNoteOpen(noteOpen === v.verse_key ? null : v.verse_key)}><IconNote /></button>
+                        </>}
+                      </div>
                     </div>
                     {active ? (
-                      <p className="flex flex-wrap justify-start gap-x-3 gap-y-2 font-arabic text-[2rem] leading-[2.3] sm:text-4xl" dir="rtl">
+                      <p className="ar-text flex flex-wrap justify-start gap-x-3 gap-y-2 font-arabic" dir="rtl">
                         {words.map((w, wi) => {
                           const covered = hide > 0 && !revealed && (hide === 2 || wi % 2 === 1);
                           return (
@@ -396,9 +468,10 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                           </span>
                           );
                         })}
+                        <span className="verse-end self-center">﴿{toAr(v.verse_number)}﴾</span>
                       </p>
                     ) : (
-                      <p className="font-arabic text-[1.7rem] leading-[2.1]" dir="rtl">{v.text_uthmani}</p>
+                      <p className="ar-text-sm font-arabic" dir="rtl">{v.text_uthmani} <span className="verse-end">﴿{toAr(v.verse_number)}﴾</span></p>
                     )}
                     {showTranslit && v.transliteration && !(active && hide > 0 && !revealed) && (
                       <p className="mt-3 italic leading-relaxed text-gold" dir="ltr" lang="en">{v.transliteration}</p>
@@ -440,6 +513,15 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         )}
                       </div>
                     )}
+                    {(noteOpen === v.verse_key || notes[v.verse_key]) && (
+                      <div className="mt-4 border-t border-line pt-4" onClick={(e) => e.stopPropagation()}>
+                        {noteOpen === v.verse_key ? (
+                          <textarea autoFocus rows={3} defaultValue={notes[v.verse_key]?.text ?? ""} placeholder={t("notePlaceholder")} onBlur={(e) => { saveNote(v.verse_key, e.target.value); setNoteOpen(null); }} className="w-full rounded-lg border border-line bg-bg p-3 text-sm outline-none focus:border-accent" />
+                        ) : (
+                          <button className="block w-full text-start text-sm italic text-muted hover:text-ink" onClick={() => setNoteOpen(v.verse_key)}>“{notes[v.verse_key].text}”</button>
+                        )}
+                      </div>
+                    )}
                     {active && waiting && (
                       <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl bg-accent-soft p-3 text-sm">
                         <span>{t("learnHint")}</span>
@@ -456,6 +538,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               );
             })}
           </ol>
+          )}
           <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>
         </main>
 
@@ -468,12 +551,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       <audio
         ref={audioRef}
         src={useRemote ? verse.remoteAudioUrl : verse.audioUrl}
-        onLoadedMetadata={onMeta}
+        onLoadedMetadata={() => { onMeta(); setDur(audioRef.current?.duration ?? 0); }}
         onCanPlay={() => { if (wantPlay.current) { wantPlay.current = false; play(); } }}
         onError={(e) => { const m = e.currentTarget.error; setDbg(`audio error ${m?.code ?? "?"}: ${m?.message ?? ""}`); if (!useRemote && verse.remoteAudioUrl) setUseRemote(true); }}
         onWaiting={() => setDbg("waiting for data")}
         onStalled={() => setDbg("stalled")}
-        onTimeUpdate={onTime}
+        onTimeUpdate={() => { onTime(); setCur(audioRef.current?.currentTime ?? 0); }}
         onEnded={() => { setDbg("ended"); onEnded(); }}
         onPause={() => setPlaying(false)}
         onPlay={() => setPlaying(true)}
@@ -490,7 +573,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       <div className="fixed inset-x-0 bottom-3 z-40 px-3">
         <div dir="ltr" className="mx-auto max-w-xl overflow-hidden rounded-3xl border border-line bg-surface/95 shadow-[0_10px_40px_rgba(0,0,0,0.2)] backdrop-blur">
           <div className="h-1 bg-line"><div className="h-1 bg-accent transition-all" style={{ width: `${((idx + 1) / verses.length) * 100}%` }} /></div>
-          <div className="flex items-center justify-between gap-2 px-3 py-2.5">
+          <div className="flex items-center gap-2 px-4 pt-2.5 text-[11px] tabular-nums text-muted">
+            <span className="w-8 text-end">{fmt(cur)}</span>
+            <input type="range" min={0} max={dur || 1} step={0.1} value={Math.min(cur, dur || 1)} onChange={(e) => { const a = audioRef.current; if (a) { a.currentTime = Number(e.target.value); setCur(a.currentTime); } }} className="h-1 min-w-0 flex-1 accent-[rgb(var(--accent))]" aria-label="seek" />
+            <span className="w-8">{fmt(dur)}</span>
+            <button className="grid h-7 w-7 place-items-center rounded-full hover:text-ink" onClick={() => setVol(vol === 0 ? 1 : 0)} aria-label={t("volume")}><IconVolume muted={vol === 0} /></button>
+          </div>
+          <div className="flex items-center justify-between gap-2 px-3 pb-2.5 pt-1">
             <span className="w-16 text-xs leading-tight text-muted">{t("verse")} {verse.verse_number}<br />{t("of")} {verses.length}</span>
             <div className="flex items-center gap-1">
               <button className={dockBtn} onClick={() => goTo(Math.max(0, idx - 1), false)} aria-label={t("prev")}><IconPrev /></button>

@@ -76,3 +76,9 @@ html:not([data-kids="1"]) .rounded-2xl { border-radius: 12px; }
 html:not([data-kids="1"]) .rounded-3xl { border-radius: 16px; }
 .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(var(--muted)); }
 html[lang="ar"] .eyebrow, html[lang="fa"] .eyebrow, html[lang="zh"] .eyebrow { letter-spacing: 0; text-transform: none; }
+
+/* Arabic reading size (user setting scales it) */
+.ar-text { font-size: calc(2rem * var(--ar-scale, 1)); line-height: 2.2; }
+.ar-text-sm { font-size: calc(1.7rem * var(--ar-scale, 1)); line-height: 2.1; }
+@media (min-width: 640px) { .ar-text { font-size: calc(2.25rem * var(--ar-scale, 1)); } }
+.verse-end { font-family: "Amiri", serif; color: rgb(var(--gold)); font-size: 0.7em; white-space: nowrap; }

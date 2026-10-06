@@ -20,7 +20,8 @@
     "reviewNone": "Tidak ada yang jatuh tempo – nilai ayat lewat “Hafalan”.",
     "streak": "{n} hari berturut-turut",
     "todayCount": "Hari ini: {n} ayat dilatih",
-    "surahLabel": "Surah {n}"
+    "surahLabel": "Surah {n}",
+    "searchVerses": "Cari ayat…"
   },
   "player": {
     "play": "Putar",
@@ -68,7 +69,21 @@
     "easy": "Mudah",
     "saved": "Tersimpan – ulasan berikutnya {days} hari lagi",
     "savedToday": "Tersimpan – muncul lagi hari ini",
-    "limitReached": "Anda telah mencapai batas tafsir gratis hari ini. Buat akun gratis untuk terus membaca."
+    "limitReached": "Anda telah mencapai batas tafsir gratis hari ini. Buat akun gratis untuk terus membaca.",
+    "page": "Halaman",
+    "juz": "Juz",
+    "hizb": "Hizb",
+    "viewVerses": "Ayat",
+    "viewReading": "Membaca",
+    "copy": "Salin",
+    "copied": "Tersalin",
+    "share": "Bagikan",
+    "note": "Catatan",
+    "notePlaceholder": "Tulis refleksi Anda tentang ayat ini…",
+    "fontSize": "Ukuran teks Arab",
+    "playVerse": "Putar ayat ini",
+    "volume": "Volume",
+    "goSurah": "Ke surah"
   },
   "language": {
     "label": "Bahasa"
@@ -166,5 +181,10 @@
     "surahTitle": "Surah {name} ({arabic}) – audio, transliterasi, terjemahan & tafsir",
     "surahDesc": "Dengarkan Surah {name} ayat demi ayat, baca {verses} ayat dengan transliterasi, terjemahan, dan tafsir, lalu hafalkan dengan pengulangan berjarak. Gratis.",
     "keywords": "belajar Al-Qur'an online, hafalan Al-Qur'an, tafsir, tajwid, murottal, Al-Qur'an untuk anak"
+  },
+  "search": {
+    "title": "Cari di Al-Qur'an",
+    "noResults": "Ayat tidak ditemukan.",
+    "go": "Cari"
   }
 }

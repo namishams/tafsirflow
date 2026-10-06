@@ -35,6 +35,9 @@ export type Verse = {
   audioUrl: string; // self-hosted file
   remoteAudioUrl: string; // Quran.com fallback
   segments: Segment[];
+  page: number;
+  juz: number;
+  hizb: number;
 };
 
 export function absoluteAudioUrl(url: string): string {
@@ -116,7 +119,7 @@ export function localAudioUrl(reciter: Reciter, chapter: number, verse: number):
 
 export async function getVerses(chapter: number, locale: string, reciterId: number, translationId: number): Promise<Verse[]> {
   const reciter = RECITERS.find((r) => r.id === reciterId) ?? RECITERS[0];
-  const q = `words=true&word_fields=text_uthmani&language=${locale}&fields=text_uthmani&translations=${translationId}&audio=${reciterId}&per_page=300`;
+  const q = `words=true&word_fields=text_uthmani&language=${locale}&fields=text_uthmani,page_number,juz_number,hizb_number&translations=${translationId}&audio=${reciterId}&per_page=300`;
   const data = await get<{ verses: any[] }>(`/verses/by_chapter/${chapter}?${q}`);
   return data.verses.map((v) => ({
     verse_key: v.verse_key,
@@ -131,6 +134,9 @@ export async function getVerses(chapter: number, locale: string, reciterId: numb
     audioUrl: localAudioUrl(reciter, chapter, v.verse_number),
     remoteAudioUrl: REMOTE_AUDIO && v.audio?.url ? absoluteAudioUrl(v.audio.url) : "",
     segments: parseSegments(v.audio?.segments),
+    page: Number(v.page_number) || 0,
+    juz: Number(v.juz_number) || 0,
+    hizb: Number(v.hizb_number) || 0,
   }));
 }
 
@@ -166,4 +172,16 @@ export async function hasOwnTafsir(locale: string): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+export type SearchHit = { verse_key: string; text: string; translation: string };
+
+// Full-text search over the Quran (Arabic and the reader's translation language)
+export async function searchVerses(q: string, locale: string): Promise<SearchHit[]> {
+  const data = await get<{ search?: { results?: any[] } }>(`/search?q=${encodeURIComponent(q)}&size=20&language=${locale}`);
+  return (data.search?.results ?? []).map((r) => ({
+    verse_key: r.verse_key,
+    text: String(r.text ?? ""),
+    translation: String(r.translations?.[0]?.text ?? ""),
+  }));
 }

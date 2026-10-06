@@ -20,7 +20,8 @@
     "reviewNone": "Rien à réviser – évaluez des versets avec « Mémoriser » pour créer votre plan.",
     "streak": "{n} jours d'affilée",
     "todayCount": "Aujourd'hui : {n} versets travaillés",
-    "surahLabel": "Sourate {n}"
+    "surahLabel": "Sourate {n}",
+    "searchVerses": "Rechercher des versets…"
   },
   "player": {
     "play": "Lecture",
@@ -68,7 +69,21 @@
     "easy": "Facile",
     "saved": "Enregistré – prochaine révision dans {days} jours",
     "savedToday": "Enregistré – il reviendra aujourd'hui",
-    "limitReached": "Vous avez atteint la limite gratuite de tafsir pour aujourd'hui. Créez un compte gratuit pour continuer."
+    "limitReached": "Vous avez atteint la limite gratuite de tafsir pour aujourd'hui. Créez un compte gratuit pour continuer.",
+    "page": "Page",
+    "juz": "Juz",
+    "hizb": "Hizb",
+    "viewVerses": "Versets",
+    "viewReading": "Lecture",
+    "copy": "Copier",
+    "copied": "Copié",
+    "share": "Partager",
+    "note": "Note",
+    "notePlaceholder": "Écrivez votre propre réflexion sur ce verset…",
+    "fontSize": "Taille du texte arabe",
+    "playVerse": "Lire ce verset",
+    "volume": "Volume",
+    "goSurah": "Aller à la sourate"
   },
   "language": {
     "label": "Langue"
@@ -166,5 +181,10 @@
     "surahTitle": "Sourate {name} ({arabic}) – audio, translittération, traduction et tafsir",
     "surahDesc": "Écoutez la sourate {name} verset par verset, lisez {verses} versets avec translittération, traduction et tafsir, et mémorisez-la par répétition espacée. Gratuit.",
     "keywords": "apprendre le Coran en ligne, mémoriser le Coran, hifz, tafsir, tajwid, récitation du Coran, Coran audio verset par verset, Coran pour enfants"
+  },
+  "search": {
+    "title": "Rechercher dans le Coran",
+    "noResults": "Aucun verset trouvé.",
+    "go": "Rechercher"
   }
 }

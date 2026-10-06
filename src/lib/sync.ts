@@ -24,15 +24,19 @@ function merge(local: Record<string, unknown>, remote: Record<string, unknown>) 
   for (const [k, v] of Object.entries((local["tf:days"] as Days) ?? {})) days[k] = Math.max(days[k] ?? 0, v);
   const a = local["tf:last"] as Last | undefined, b = remote["tf:last"] as Last | undefined;
   const last = !a ? b : !b ? a : (a.at ?? 0) >= (b.at ?? 0) ? a : b;
-  return { "tf:bookmarks": bm, "tf:srs": srs, "tf:days": days, ...(last ? { "tf:last": last } : {}) } as Record<string, unknown>;
+  const notes: Notes = { ...((remote["tf:notes"] as Notes) ?? {}) };
+  for (const [k, v] of Object.entries((local["tf:notes"] as Notes) ?? {})) if (!notes[k] || v.at >= notes[k].at) notes[k] = v;
+  return { "tf:bookmarks": bm, "tf:srs": srs, "tf:days": days, "tf:notes": notes, ...(last ? { "tf:last": last } : {}) } as Record<string, unknown>;
 }
 
-const KEYS = ["tf:last", "tf:bookmarks", "tf:srs", "tf:days"] as const;
+const KEYS = ["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes"] as const;
+type Notes = Record<string, { text: string; at: number }>;
 const snapshot = (): Record<string, unknown> => ({
   "tf:last": readJSON<Last | null>("tf:last", null) ?? undefined,
   "tf:bookmarks": readJSON<string[]>("tf:bookmarks", []),
   "tf:srs": readJSON<Srs>("tf:srs", {}),
   "tf:days": readJSON<Days>("tf:days", {}),
+  "tf:notes": readJSON<Notes>("tf:notes", {}),
 });
 
 let timer: ReturnType<typeof setTimeout> | null = null;

@@ -3,3 +3,10 @@ export const IconPlay = () => (<svg {...base} width={26} height={26}><path d="M8
 export const IconPause = () => (<svg {...base} width={26} height={26}><rect x="6" y="5" width="4.2" height="14" rx="1.2" /><rect x="13.8" y="5" width="4.2" height="14" rx="1.2" /></svg>);
 export const IconPrev = () => (<svg {...base}><rect x="5" y="5" width="2.4" height="14" rx="1" /><path d="M19 6.2v11.6a.8.8 0 0 1-1.25.66L9.4 12.66a.8.8 0 0 1 0-1.32l8.35-5.8A.8.8 0 0 1 19 6.2Z" /></svg>);
 export const IconNext = () => (<svg {...base}><rect x="16.6" y="5" width="2.4" height="14" rx="1" /><path d="M5 6.2v11.6a.8.8 0 0 0 1.25.66l8.35-5.8a.8.8 0 0 0 0-1.32l-8.35-5.8A.8.8 0 0 0 5 6.2Z" /></svg>);
+const sm = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true } as const;
+export const IconPlaySm = () => (<svg {...sm}><path d="M8 5.5v13l11-6.5z" /></svg>);
+export const IconCopy = () => (<svg {...sm}><rect x="9" y="9" width="11" height="11" rx="2" /><path d="M5 15V6a2 2 0 0 1 2-2h9" /></svg>);
+export const IconShare = () => (<svg {...sm}><path d="M12 15V4M8 8l4-4 4 4" /><path d="M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" /></svg>);
+export const IconNote = () => (<svg {...sm}><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z" /><path d="M13.5 6.5l4 4" /></svg>);
+export const IconBookmark = ({ filled }: { filled?: boolean }) => (<svg {...sm} fill={filled ? "currentColor" : "none"}><path d="M6 4h12v17l-6-4-6 4z" /></svg>);
+export const IconVolume = ({ muted }: { muted?: boolean }) => (<svg {...sm}><path d="M4 10v4h4l5 4V6L8 10z" />{muted ? <path d="M17 9l4 6M21 9l-4 6" /> : <path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" />}</svg>);

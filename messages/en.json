@@ -20,7 +20,8 @@
     "reviewNone": "Nothing due – rate verses with “Memorize” to build your plan.",
     "streak": "{n}-day streak",
     "todayCount": "Today: {n} verses practised",
-    "surahLabel": "Surah {n}"
+    "surahLabel": "Surah {n}",
+    "searchVerses": "Search verses…"
   },
   "player": {
     "play": "Play",
@@ -68,7 +69,21 @@
     "easy": "Easy",
     "saved": "Saved – next review in {days} days",
     "savedToday": "Saved – you will see it again today",
-    "limitReached": "You have reached today's free tafsir limit. Create a free account to keep reading."
+    "limitReached": "You have reached today's free tafsir limit. Create a free account to keep reading.",
+    "page": "Page",
+    "juz": "Juz",
+    "hizb": "Hizb",
+    "viewVerses": "Verses",
+    "viewReading": "Reading",
+    "copy": "Copy",
+    "copied": "Copied",
+    "share": "Share",
+    "note": "Note",
+    "notePlaceholder": "Write your own reflection on this verse…",
+    "fontSize": "Arabic text size",
+    "playVerse": "Play this verse",
+    "volume": "Volume",
+    "goSurah": "Go to surah"
   },
   "language": {
     "label": "Language"
@@ -166,5 +181,10 @@
     "surahTitle": "Surah {name} ({arabic}) – audio, transliteration, translation & tafsir",
     "surahDesc": "Listen to Surah {name} verse by verse, read {verses} verses with transliteration, translation and tafsir, and memorize it with spaced repetition. Free.",
     "keywords": "learn Quran online, memorize Quran, hifz, tafsir, tajweed, Quran recitation, Quran audio verse by verse, Quran transliteration, Quran for kids"
+  },
+  "search": {
+    "title": "Search the Quran",
+    "noResults": "No verses found.",
+    "go": "Search"
   }
 }

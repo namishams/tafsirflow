@@ -3,6 +3,8 @@
 Responsive web platform for listening to the Quran verse by verse and studying tafsir alongside the audio.
 Owner: Nami (contact@namishams.com). Working language with the owner: German.
 
+> **Read `docs/BLUEPRINT.md` first** – it is the agreed overall picture (vision, signature idea, design rules, roadmap, open decisions). Build only what it describes; UI changes must pass the multi-size check.
+
 ## Product decisions (confirmed by the owner)
 - **Languages:** German + English UI and content at launch; architecture must allow adding more languages (i18n keys + per-language content tables, no hard-coded strings).
 - **Core flow:** verse-by-verse. Play a verse → highlight the current word (timing segments) → show tafsir for that verse. Modes: *Learn* (pause after each verse until "Continue") and *Continuous*. Repeat ×N, speed, jump to verse, all 114 surahs.

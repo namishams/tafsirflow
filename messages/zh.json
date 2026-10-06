@@ -20,7 +20,8 @@
     "reviewNone": "暂无待复习内容——用“背诵”为经文评分即可生成复习计划。",
     "streak": "已连续学习 {n} 天",
     "todayCount": "今天：练习了 {n} 节",
-    "surahLabel": "第 {n} 章"
+    "surahLabel": "第 {n} 章",
+    "searchVerses": "搜索经文…"
   },
   "player": {
     "play": "播放",
@@ -68,7 +69,21 @@
     "easy": "轻松",
     "saved": "已保存——{days} 天后复习",
     "savedToday": "已保存——今天还会再出现",
-    "limitReached": "你今天的免费经注额度已用完。创建免费账户即可继续阅读。"
+    "limitReached": "你今天的免费经注额度已用完。创建免费账户即可继续阅读。",
+    "page": "页",
+    "juz": "Juz",
+    "hizb": "Hizb",
+    "viewVerses": "逐节",
+    "viewReading": "阅读",
+    "copy": "复制",
+    "copied": "已复制",
+    "share": "分享",
+    "note": "笔记",
+    "notePlaceholder": "写下你对这节经文的感悟…",
+    "fontSize": "阿拉伯文字号",
+    "playVerse": "播放这一节",
+    "volume": "音量",
+    "goSurah": "跳转到章"
   },
   "language": {
     "label": "语言"
@@ -166,5 +181,10 @@
     "surahTitle": "第 {name}（{arabic}）章 – 音频、音译、译文与经注",
     "surahDesc": "逐节聆听 {name} 章，阅读 {verses} 节经文的音译、译文和经注，并用间隔复习背诵。免费。",
     "keywords": "在线学习古兰经, 背诵古兰经, 经注, 诵读规则, 古兰经音频, 儿童古兰经"
+  },
+  "search": {
+    "title": "搜索古兰经",
+    "noResults": "未找到经文。",
+    "go": "搜索"
   }
 }
