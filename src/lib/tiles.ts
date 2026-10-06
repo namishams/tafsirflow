@@ -24,10 +24,11 @@ export const TILES: Record<string, Tile> = {
   how: { key: "how", href: "/how", ar: "منهج", desc: "howD", badge: "method", bg: "linear-gradient(160deg,#283a22 0%,#0c140a 100%)" },
   stats: { key: "stats", href: "/stats", ar: "إحصاء", desc: "statsD", badge: "progress", bg: "linear-gradient(160deg,#3a2f12 0%,#120e06 100%)" },
   ranking: { key: "ranking", href: "/ranking", ar: "تنافس", desc: "rankingD", badge: "social", bg: "linear-gradient(160deg,#402a1a 0%,#140c07 100%)" },
+  duagen: { key: "duagen", href: "/dua-generator", ar: "دعاء", desc: "duagenD", badge: "help", bg: "linear-gradient(160deg,#2f2a44 0%,#0e0c18 100%)" },
   community: { key: "community", href: "/community", ar: "معًا", desc: "communityD", badge: "social", bg: "linear-gradient(160deg,#3b2a33 0%,#120b0f 100%)" },
   wudu: { key: "wudu", href: "/wudu", ar: "وضوء", desc: "wuduD", badge: "course", bg: "linear-gradient(160deg,#123a44 0%,#06161b 100%)" },
 };
 
-export const HOME_TILES = ["shams", "courses", "arabic", "salah", "wudu", "islam", "secrets", "tajweed", "plan", "reciters", "radio", "duas", "map", "stats", "ranking"];
+export const HOME_TILES = ["shams", "courses", "arabic", "salah", "wudu", "islam", "secrets", "tajweed", "plan", "reciters", "radio", "duas", "duagen", "map", "stats", "ranking"];
 
 export const tileFor = (href: string) => Object.values(TILES).find((t) => t.href === href || href.startsWith(`${t.href}/`) || href.startsWith(`${t.href}?`));

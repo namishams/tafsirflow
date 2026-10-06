@@ -7,7 +7,7 @@ import { RECITER_BIOS } from "./reciters";
 
 // Sitemap index -> one file per category and language, e.g. /sitemaps/surahs-de.xml
 export const CATEGORIES = {
-  pages: ["", "/shams", "/plan", "/academy", "/tajweed", "/vocab", "/khatm", "/guides", "/about", "/feedback", "/changelog", "/quran", "/islam", "/how", "/arabic", "/salah", "/reciters", "/world", "/secrets", "/app", "/today", "/map", "/search", "/prayer", "/radio", "/duas", "/support", "/wudu", "/community", "/ranking", "/assistant"],
+  pages: ["", "/shams", "/plan", "/academy", "/tajweed", "/vocab", "/khatm", "/guides", "/about", "/feedback", "/changelog", "/quran", "/islam", "/how", "/arabic", "/salah", "/reciters", "/world", "/secrets", "/app", "/today", "/map", "/search", "/prayer", "/radio", "/duas", "/support", "/wudu", "/community", "/ranking", "/assistant", "/dua-generator"],
   guides: [...ISLAM.map((d) => `/islam/${d.slug}`), ...RECITER_BIOS.map((r) => `/reciters/${r.slug}`), ...GUIDES.map((g) => `/guides/${g.slug}`), ...TAJWEED_LESSONS.map((l) => `/tajweed/${l.id}`)],
   legal: ["/legal/privacy", "/legal/terms", "/legal/imprint"],
   surahs: Array.from({ length: 114 }, (_, i) => `/surah/${i + 1}`),

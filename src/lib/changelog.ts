@@ -8,6 +8,7 @@ export const CHANGELOG: Release[] = [
     title_de: "Sticker, Ranking, Gemeinschaft und die Kunst des Mushaf",
     title_ar: "أوسمة وترتيب ومجتمع وفنّ المصحف",
     items_en: [
+      "Dua generator: choose your concern, write it in your own words and say who you pray for – a personal dua with praise, blessings on the Prophet ﷺ and the fitting names of Allah, together with the authentic duas of the Quran and the Sunnah.",
       "Points for steady learning: active time on the site, listening, verses heard, practice, daily sessions, lessons and quizzes – with daily limits, so it is about steadiness.",
       "Eight levels from Beginner to Companion of the Quran, and twelve stickers for your learning time from 1 to 10,000 hours: from a seed to a good tree (14:24), from the lamp (24:35) to the sun.",
       "Seventeen achievements (al-Fatiha, first surah, streaks, Arabic course, wudu, all 114 surahs heard, voice of Fajr …) with a small celebration when you earn one.",
@@ -20,6 +21,7 @@ export const CHANGELOG: Release[] = [
       "Search engines can now read the site and the sitemap once the domain is live.",
     ],
     items_de: [
+      "Dua-Generator: Anliegen wählen, in eigenen Worten schreiben und sagen, für wen du betest – ein persönliches Bittgebet mit Lob, Segen auf den Propheten ﷺ und den passenden Namen Allahs, dazu die authentischen Duas aus Quran und Sunnah.",
       "Punkte für beständiges Lernen: aktive Zeit auf der Seite, Zuhören, gehörte Verse, Üben, Tagessitzungen, Lektionen und Quizze – mit Tagesgrenzen, damit es um Beständigkeit geht.",
       "Acht Level von Anfänger bis Gefährte des Quran und zwölf Sticker für deine Lernzeit von 1 bis 10.000 Stunden: vom Samenkorn zum guten Baum (14:24), von der Lampe (24:35) bis zur Sonne.",
       "Siebzehn Abzeichen (al-Fatiha, erste Sure, Serien, Arabisch-Kurs, Wudu, alle 114 Suren gehört, Stimme des Fadschr …) mit einer kleinen Feier, wenn du eines erreichst.",
@@ -32,6 +34,7 @@ export const CHANGELOG: Release[] = [
       "Suchmaschinen können die Seite und die Sitemap jetzt lesen, sobald die Domain live ist.",
     ],
     items_ar: [
+      "صانع الدعاء: اختر حاجتك واكتبها بكلماتك وحدِّد لمن تدعو، فتحصل على دعاء شخصي بالحمد والصلاة على النبي ﷺ وأسماء الله الحسنى المناسبة، مع الأدعية الثابتة من القرآن والسنة.",
       "نقاط للتعلّم المنتظم: وقت النشاط في الموقع، والاستماع، والآيات المسموعة، والمراجعة، والجلسات اليومية، والدروس والاختبارات، مع حدود يومية لأن العبرة بالمداومة.",
       "ثمانية مستويات من مبتدئ إلى رفيق القرآن، واثنا عشر وسامًا لوقت تعلّمك من ساعة إلى عشرة آلاف ساعة: من البذرة إلى الشجرة الطيبة (14:24)، ومن المصباح (24:35) إلى الشمس.",
       "سبعة عشر إنجازًا (الفاتحة، أول سورة، السلاسل، دورة العربية، الوضوء، الاستماع إلى السور الـ114، صوت الفجر …) مع احتفال صغير عند تحقيق كل منها.",
