@@ -39,6 +39,10 @@ const security = [
 export default withNextIntl({
   distDir: process.env.NEXT_DIST_DIR || ".next",
   poweredByHeader: false,
+  // Android app ↔ domain verification (see src/app/api/assetlinks/route.ts)
+  async rewrites() {
+    return [{ source: "/.well-known/assetlinks.json", destination: "/api/assetlinks" }];
+  },
   async headers() {
     return [
       { source: "/:path*", headers: security },

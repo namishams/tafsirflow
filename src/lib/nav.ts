@@ -25,7 +25,7 @@ export const GROUPS: NavGroup[] = [
     { href: "/islam", key: "islam" }, { href: "/secrets", key: "secrets" }, { href: "/world", key: "world" }, { href: "/assistant", key: "assistant" }, { href: "/guides", key: "guides" },
   ] },
   { title: "groupMore", items: [
-    { href: "/how", key: "how" }, { href: "/about", key: "about" }, { href: "/support", key: "support" }, { href: "/feedback", key: "feedback" }, { href: "/changelog", key: "changelog" },
+    { href: "/how", key: "how" }, { href: "/app", key: "app" }, { href: "/about", key: "about" }, { href: "/support", key: "support" }, { href: "/feedback", key: "feedback" }, { href: "/changelog", key: "changelog" },
   ] },
 ];
 

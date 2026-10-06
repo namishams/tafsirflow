@@ -42,6 +42,9 @@ SUPPORT_URL=
 # Quran assistant (OpenAI): key from platform.openai.com – kept only here, never in git
 OPENAI_API_KEY=
 OPENAI_MODEL=gpt-4o-mini
+# Android app: written by scripts/build-android.sh; PLAY_STORE_URL once the app is on Google Play
+ANDROID_SHA256=
+PLAY_STORE_URL=
 ENVEOF
   chown tafsir:tafsir "$ENV_APP"
 fi
