@@ -4,7 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import Markdown from "@/components/Markdown";
-import { ISLAM, chapterOf, islamDoc, islamUi, readingMinutes } from "@/lib/islam";
+import { ISLAM, islamDoc, islamUi, loadChapter, loadChapters, readingMinutes } from "@/lib/islam";
 import { abs, pageMeta } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, slug } = await params;
   const d = islamDoc(slug);
   if (!d) return {};
-  const c = chapterOf(d, locale);
+  const c = await loadChapter(d, locale);
   const m = pageMeta(locale, `/islam/${slug}`, `${c.title} | Quran Masterclass`, c.lead.slice(0, 158));
   return { ...m, openGraph: { ...m.openGraph, type: "article" } };
 }
@@ -25,8 +25,9 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
   setRequestLocale(locale);
   const d = islamDoc(slug);
   if (!d) notFound();
-  const c = chapterOf(d, locale);
-  const u = islamUi(locale);
+  const c = await loadChapter(d, locale);
+  const u = await islamUi(locale);
+  const all = await loadChapters(locale);
   const i = ISLAM.indexOf(d);
   const prev = ISLAM[i - 1], next = ISLAM[i + 1];
   const toc = c.body.split("\n").filter((l) => l.startsWith("## ")).map((l) => l.slice(3).replace(/\*\*/g, ""));
@@ -83,8 +84,8 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
           </section>
 
           <nav className="mt-12 grid gap-3 sm:grid-cols-2">
-            {prev ? <Link href={`/islam/${prev.slug}`} className="rounded-lg border border-line bg-surface p-4 hover:border-ink"><span className="text-xs text-muted">← {u.prev}</span><span className="mt-1 block font-bold">{chapterOf(prev, locale).title}</span></Link> : <span />}
-            {next && <Link href={`/islam/${next.slug}`} className="rounded-lg border border-line bg-surface p-4 text-end hover:border-ink"><span className="text-xs text-muted">{u.next} →</span><span className="mt-1 block font-bold">{chapterOf(next, locale).title}</span></Link>}
+            {prev ? <Link href={`/islam/${prev.slug}`} className="rounded-lg border border-line bg-surface p-4 hover:border-ink"><span className="text-xs text-muted">← {u.prev}</span><span className="mt-1 block font-bold">{all[i - 1].title}</span></Link> : <span />}
+            {next && <Link href={`/islam/${next.slug}`} className="rounded-lg border border-line bg-surface p-4 text-end hover:border-ink"><span className="text-xs text-muted">{u.next} →</span><span className="mt-1 block font-bold">{all[i + 1].title}</span></Link>}
           </nav>
         </article>
 
@@ -99,7 +100,7 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">{u.chapters}</p>
               <ol className="mt-3 grid gap-1.5 text-sm">
-                {ISLAM.map((x, k) => <li key={x.slug}><Link href={`/islam/${x.slug}`} className={x.slug === slug ? "font-bold text-accent" : "text-muted hover:text-ink"}>{k + 1}. {chapterOf(x, locale).title}</Link></li>)}
+                {ISLAM.map((x, k) => <li key={x.slug}><Link href={`/islam/${x.slug}`} className={x.slug === slug ? "font-bold text-accent" : "text-muted hover:text-ink"}>{k + 1}. {all[k].title}</Link></li>)}
               </ol>
             </div>
           </div>

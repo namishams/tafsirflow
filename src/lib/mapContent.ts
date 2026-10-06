@@ -95,4 +95,10 @@ const en: MapContent = {
   finalLead: "Start today with a single verse. Tomorrow you will see it on your map – and in a year a whole landscape.",
 };
 
-export const mapContent = (locale: string): MapContent => (locale === "de" ? de : en);
+// other languages: src/lib/pagecontent/<locale>/map.ts (default export MapContent); missing ones fall back to English
+const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ps", "ru", "tr", "ur", "zh"];
+export async function mapContent(locale: string): Promise<MapContent> {
+  if (locale === "de") return de;
+  if (!OTHER.includes(locale)) return en;
+  try { return (await import(`./pagecontent/${locale}/map`)).default as MapContent; } catch { return en; }
+}

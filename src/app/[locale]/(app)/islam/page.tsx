@@ -2,21 +2,22 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
-import { ISLAM, chapterOf, islamUi, readingMinutes } from "@/lib/islam";
+import { ISLAM, islamUi, loadChapters, readingMinutes } from "@/lib/islam";
 import { abs, pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const u = islamUi(locale);
+  const u = await islamUi(locale);
   return pageMeta(locale, "/islam", `${u.kicker} | Quran Masterclass`, u.lead.slice(0, 158));
 }
 
 export default async function IslamHub({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const u = islamUi(locale);
+  const u = await islamUi(locale);
+  const chs = await loadChapters(locale);
   const ld = { "@context": "https://schema.org", "@type": "CollectionPage", name: u.title, description: u.lead, url: abs(`/${locale}/islam`), inLanguage: locale,
-    hasPart: ISLAM.map((d) => ({ "@type": "Article", headline: chapterOf(d, locale).title, url: abs(`/${locale}/islam/${d.slug}`) })) };
+    hasPart: ISLAM.map((d) => ({ "@type": "Article", headline: chs[ISLAM.indexOf(d)].title, url: abs(`/${locale}/islam/${d.slug}`) })) };
   return (
     <div>
       <JsonLd data={ld} />
@@ -34,7 +35,7 @@ export default async function IslamHub({ params }: { params: Promise<{ locale: s
         <h2 className="font-display text-4xl leading-tight">{u.chapters}</h2>
         <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {ISLAM.map((d, i) => {
-            const c = chapterOf(d, locale);
+            const c = chs[i];
             return (
               <li key={d.slug}>
                 <Link href={`/islam/${d.slug}`} className="group flex h-full flex-col rounded-lg border border-line bg-surface p-5 transition hover:-translate-y-0.5 hover:border-[rgb(var(--gold))]">

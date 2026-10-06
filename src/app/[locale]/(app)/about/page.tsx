@@ -16,7 +16,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("about");
-  const c = aboutContent(locale);
+  const c = await aboutContent(locale);
   const dark = "stage text-[#eef0f3]";
   const ld = { "@context": "https://schema.org", "@type": "AboutPage", url: abs(`/${locale}/about`), mainEntity: { "@type": "Organization", name: "Quran Masterclass", founder: { "@type": "Person", name: "Nami Shams" }, foundingLocation: "Dubai", email: "info@quranmasterclass.com", url: abs("/") } };
   return (

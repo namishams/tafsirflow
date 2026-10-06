@@ -12,7 +12,14 @@ import { future } from "./future";
 export type { IslamChapter, IslamDoc };
 export const ISLAM: IslamDoc[] = [islam, quran, prophet, cities, sunniShia, prayerSunni, prayerShia, future];
 export const islamDoc = (slug: string) => ISLAM.find((d) => d.slug === slug);
-export const chapterOf = (d: IslamDoc, locale: string): IslamChapter => (locale === "de" ? d.de : d.en);
+// German and English live in the chapter files; every other language in src/lib/islam/i18n/<locale>/<slug>.ts (falls back to English)
+const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ps", "ru", "tr", "ur", "zh"];
+export async function loadChapter(d: IslamDoc, locale: string): Promise<IslamChapter> {
+  if (locale === "de") return d.de;
+  if (locale === "en" || !OTHER.includes(locale)) return d.en;
+  try { return (await import(`./i18n/${locale}/${d.slug}`)).default as IslamChapter; } catch { return d.en; }
+}
+export const loadChapters = (locale: string) => Promise.all(ISLAM.map((d) => loadChapter(d, locale)));
 
 // texts of the hub page and the article frame
 const UI = {
@@ -35,5 +42,10 @@ const UI = {
     ctaTitle: "From understanding to learning", ctaBody: "The most beautiful way to get to know Islam is the Quran itself. Start with Al-Fatiha – verse by verse, with the Shams Method.", cta: "Learn Al-Fatiha",
   },
 };
-export const islamUi = (locale: string) => (locale === "de" ? UI.de : UI.en);
+export type IslamUi = typeof UI.en;
+export async function islamUi(locale: string): Promise<IslamUi> {
+  if (locale === "de") return UI.de;
+  if (locale === "en" || !OTHER.includes(locale)) return UI.en;
+  try { return (await import(`./i18n/${locale}/ui`)).default as IslamUi; } catch { return UI.en; }
+}
 export const readingMinutes = (text: string) => Math.max(3, Math.round(text.split(/\s+/).length / 200));

@@ -176,4 +176,10 @@ If this platform helps you, I ask only one thing: make du'a for everyone who con
   contact: "Questions, ideas, a mistake in the text, wishes for new tafsir sources or languages: write to **info@quranmasterclass.com** or use our [feedback page](/feedback). What we build is listed in the [changelog](/changelog).",
 };
 
-export const aboutContent = (locale: string): AboutContent => (locale === "de" ? de : en);
+// other languages: src/lib/pagecontent/<locale>/about.ts (default export AboutContent); missing ones fall back to English
+const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ps", "ru", "tr", "ur", "zh"];
+export async function aboutContent(locale: string): Promise<AboutContent> {
+  if (locale === "de") return de;
+  if (!OTHER.includes(locale)) return en;
+  try { return (await import(`./pagecontent/${locale}/about`)).default as AboutContent; } catch { return en; }
+}

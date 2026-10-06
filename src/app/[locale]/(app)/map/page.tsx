@@ -9,7 +9,7 @@ import { abs, pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const c = mapContent(locale);
+  const c = await mapContent(locale);
   return pageMeta(locale, "/map", `${c.title} | Quran Masterclass`, c.lead.slice(0, 158));
 }
 
@@ -18,7 +18,7 @@ const DOT: Record<string, string> = { strong: "bg-accent", mid: "bg-gold/70", we
 export default async function MapPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const c = mapContent(locale);
+  const c = await mapContent(locale);
   const dark = "stage text-[#eef0f3]";
   const ld = { "@context": "https://schema.org", "@type": "FAQPage", url: abs(`/${locale}/map`), mainEntity: c.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
