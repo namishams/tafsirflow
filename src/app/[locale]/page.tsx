@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const COURSES = [
   { href: "/shams", key: "shams", ar: "شمس", desc: "tool_shamsD", badge: "method", bg: "linear-gradient(160deg,#3a2f12 0%,#14110a 100%)" },
   { href: "/academy", key: "courses", ar: "أكاديمية", desc: "tool_academyD", badge: "course", bg: "linear-gradient(160deg,#0c4a37 0%,#06221a 100%)" },
+  { href: "/arabic", key: "arabic", ar: "اقرأ", desc: "arabicD", badge: "course", bg: "linear-gradient(160deg,#1d3b2c 0%,#081a12 100%)" },
   { href: "/islam", key: "islam", ar: "إسلام", desc: "islamD", badge: "library", bg: "linear-gradient(160deg,#0f3b2e 0%,#05170f 100%)" },
   { href: "/tajweed", key: "tajweed", ar: "تجويد", desc: "tool_tajweedD", badge: "course", bg: "linear-gradient(160deg,#3b1f2b 0%,#160b10 100%)" },
   { href: "/plan", key: "plan", ar: "حفظ", desc: "planD", badge: "plan", bg: "linear-gradient(160deg,#1f2b44 0%,#0b101b 100%)" },

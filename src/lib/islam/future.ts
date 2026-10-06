@@ -89,7 +89,7 @@ Das Entscheidende daran: Diese Toleranz kommt nicht trotz des Glaubens, sondern 
 
 Wie wird die Zukunft des Islam aussehen? Sie hängt nicht in erster Linie von Zahlen ab, sondern von Herzen. Der Prophet ﷺ sagte: „Die Besten unter euch sind diejenigen, die den Quran lernen und ihn lehren“ (al-Buchari). Und: „Wer einen Weg beschreitet, um Wissen zu suchen, dem erleichtert Allah damit einen Weg zum Paradies“ (Muslim).
 
-Genau dafür gibt es Quran Masterclass. Du kannst hier Vers für Vers hören, die Bedeutung verstehen und den Tafsir dazu lesen – kostenlos, auf Deutsch und Englisch. Lass dich von [Shams](/shams) begleiten, vertiefe dein Wissen in der [Akademie](/academy) und mach mit deinem persönlichen [Lernplan](/plan) aus guten Vorsätzen eine tägliche Gewohnheit.
+Genau dafür gibt es Quran Masterclass. Du kannst hier Vers für Vers hören, die Bedeutung verstehen und den Tafsir dazu lesen – kostenlos und in 13 Sprachen. Lass dich von [Shams](/shams) begleiten, vertiefe dein Wissen in der [Akademie](/academy) und mach mit deinem persönlichen [Lernplan](/plan) aus guten Vorsätzen eine tägliche Gewohnheit.
 
 Die Zukunft des Islam wird von denen geschrieben, die den Quran lernen und leben. Vielleicht beginnt ein Teil dieser Zukunft heute – mit dir und einem einzigen Vers.`,
     faq: [
@@ -195,7 +195,7 @@ What matters most is this: this tolerance does not come in spite of faith, but f
 
 What will the future of Islam look like? It depends less on numbers than on hearts. The Prophet ﷺ said: "The best of you are those who learn the Quran and teach it" (al-Bukhari). And: "Whoever takes a path in search of knowledge, Allah makes easy for him a path to Paradise" (Muslim).
 
-That is exactly why Quran Masterclass exists. Here you can listen verse by verse, understand the meaning and read the tafsir alongside it – free of charge, in German and English. Let [Shams](/shams) accompany you, deepen your knowledge in the [Academy](/academy), and turn good intentions into a daily habit with your personal [learning plan](/plan).
+That is exactly why Quran Masterclass exists. Here you can listen verse by verse, understand the meaning and read the tafsir alongside it – free of charge, in 13 languages. Let [Shams](/shams) accompany you, deepen your knowledge in the [Academy](/academy), and turn good intentions into a daily habit with your personal [learning plan](/plan).
 
 The future of Islam is written by those who learn and live the Quran. Perhaps part of that future begins today – with you and a single verse.`,
     faq: [

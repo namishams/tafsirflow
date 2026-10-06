@@ -272,7 +272,8 @@
     "groupQuran": "Quran",
     "groupMore": "More",
     "support": "Support",
-    "islam": "Islam"
+    "islam": "Islam",
+    "arabic": "Read Arabic"
   },
   "today": {
     "title": "Today",
@@ -490,7 +491,8 @@
     "duasD": "Supplications from the Quran and 109 from the Prophet ﷺ, with sources.",
     "mapD": "See at a glance which surahs sit firmly – and which need you.",
     "footerLine": "Learn the Quran – free, in 13 languages.",
-    "islamD": "Islam, the Quran, the Prophet ﷺ, holy cities, Sunni and Shia, prayer – explained clearly and respectfully."
+    "islamD": "Islam, the Quran, the Prophet ﷺ, holy cities, Sunni and Shia, prayer – explained clearly and respectfully.",
+    "arabicD": "Learn to read from zero: letters, vowel signs, Quran words – like at a Quran school."
   },
   "legal": {
     "back": "Back to home",

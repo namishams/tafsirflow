@@ -272,7 +272,8 @@
     "groupQuran": "Koran",
     "groupMore": "Mehr",
     "support": "Unterstützen",
-    "islam": "Islam"
+    "islam": "Islam",
+    "arabic": "Arabisch lesen"
   },
   "today": {
     "title": "Heute",
@@ -490,7 +491,8 @@
     "duasD": "Bittgebete aus dem Koran und 109 vom Propheten ﷺ, mit Quellen.",
     "mapD": "Sieh auf einen Blick, welche Suren sitzen – und welche dich brauchen.",
     "footerLine": "Den Koran lernen – kostenlos, in 13 Sprachen.",
-    "islamD": "Islam, Koran, Prophet ﷺ, heilige Städte, Sunniten und Schiiten, das Gebet – klar und respektvoll erklärt."
+    "islamD": "Islam, Koran, Prophet ﷺ, heilige Städte, Sunniten und Schiiten, das Gebet – klar und respektvoll erklärt.",
+    "arabicD": "Lesen lernen von null: Buchstaben, Vokalzeichen, Koranwörter – wie in der Koranschule."
   },
   "legal": {
     "back": "Zurück zur Startseite",
