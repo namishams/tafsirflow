@@ -18,7 +18,7 @@ export const RECITERS: Reciter[] = [
 
 export type Resource = { id: number; name: string; author_name: string; language_name: string };
 
-// Preferred translation per language (see CLAUDE.md); other languages use the first one Quran.com offers.
+// Preferred translation per language (see the project brief); other languages use the first one Quran.com offers.
 const PREFERRED_TRANSLATION: Record<string, number> = { de: 27, en: 20, id: 33 };
 // English tafsirs shown as fallback for languages without their own tafsir.
 const ENGLISH_FALLBACK_TAFSIRS = [169, 168, 817];

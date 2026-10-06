@@ -20,7 +20,10 @@ export default async function AppFooter() {
           <Link href="/legal/imprint" className="hover:text-ink">{t("imprint")}</Link>
         </nav>
       </div>
-      <div className="mx-auto max-w-6xl px-4 pb-6 text-xs text-muted"><MadeInDubai /></div>
+      <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <MadeInDubai />
+        <Link href="/islam/mosques" className="hover:text-ink">{t("visit")} →</Link>
+      </div>
     </footer>
   );
 }

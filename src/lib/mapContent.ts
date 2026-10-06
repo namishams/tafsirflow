@@ -96,7 +96,7 @@ const en: MapContent = {
 };
 
 // other languages: src/lib/pagecontent/<locale>/map.ts (default export MapContent); missing ones fall back to English
-const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ps", "ru", "tr", "ur", "zh"];
+const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ms", "ps", "ru", "tr", "ur", "zh"];
 export async function mapContent(locale: string): Promise<MapContent> {
   if (locale === "de") return de;
   if (!OTHER.includes(locale)) return en;

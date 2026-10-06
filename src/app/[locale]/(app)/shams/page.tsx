@@ -118,6 +118,26 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
+      {/* Why "Shams" */}
+      {c.name && (
+        <section className="mx-auto grid max-w-6xl gap-8 px-5 pt-16 sm:pt-24 lg:grid-cols-[auto_1fr] lg:items-center">
+          <p className="font-arabic text-center text-[120px] leading-none text-[rgb(var(--gold))] sm:text-[160px]" dir="rtl" aria-hidden>شمس</p>
+          <div>
+            <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{c.name.title}</h2>
+            <p className="mt-5 max-w-3xl text-[17px] leading-relaxed text-muted">{c.name.body}</p>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {c.name.verses.map((v) => (
+                <li key={v.ref} className="rounded-lg border border-line bg-surface p-4">
+                  <p className="font-arabic text-2xl leading-[1.9]" dir="rtl">{v.ar}</p>
+                  {v.meaning && <p className="mt-1 text-sm text-muted">{v.meaning}</p>}
+                  <p className="mt-1 text-xs font-semibold text-gold">{v.ref}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* Problem */}
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
         <h2 className="font-display max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{c.problemTitle}</h2>

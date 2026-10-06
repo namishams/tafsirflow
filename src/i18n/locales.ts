@@ -11,6 +11,7 @@ export const LOCALE_META = {
   fr: { label: "Français", dir: "ltr", resourceLang: "french" },
   es: { label: "Español", dir: "ltr", resourceLang: "spanish" },
   id: { label: "Bahasa Indonesia", dir: "ltr", resourceLang: "indonesian" },
+  ms: { label: "Bahasa Melayu", dir: "ltr", resourceLang: "malay" },
   bn: { label: "বাংলা", dir: "ltr", resourceLang: "bengali" },
   ru: { label: "Русский", dir: "ltr", resourceLang: "russian" },
   zh: { label: "中文", dir: "ltr", resourceLang: "chinese" },

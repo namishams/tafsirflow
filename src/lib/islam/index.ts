@@ -31,7 +31,7 @@ export type { IslamChapter, IslamDoc };
 export const ISLAM: IslamDoc[] = [islam, quran, prophet, prophets, names, prayerSunni, prayerShia, zakat, ramadan, eid, hajj, reciterPath, competition, cities, mosques, madhahib, hanafi, maliki, shafii, hanbali, jafari, zaydi, ibadi, zahiri, sunniShia, future];
 export const islamDoc = (slug: string) => ISLAM.find((d) => d.slug === slug);
 // German and English live in the chapter files; every other language in src/lib/islam/i18n/<locale>/<slug>.ts (falls back to English)
-const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ps", "ru", "tr", "ur", "zh"];
+const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ms", "ps", "ru", "tr", "ur", "zh"];
 export async function loadChapter(d: IslamDoc, locale: string): Promise<IslamChapter> {
   if (locale === "de") return d.de;
   if (locale === "en" || !OTHER.includes(locale)) return d.en;

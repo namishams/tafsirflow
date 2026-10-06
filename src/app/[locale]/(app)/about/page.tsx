@@ -83,6 +83,26 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <Markdown text={c.thanks} />
       </section>
 
+      {/* Honour: rulers and custodians of the holy places */}
+      {c.honour && (
+        <section className="mx-auto max-w-5xl px-5 pb-16 sm:pb-24">
+          <div className="rounded-2xl border border-line bg-surface p-6 sm:p-10">
+            <p className="eyebrow text-gold">{c.honour.eyebrow}</p>
+            <h2 className="font-display mt-2 text-3xl leading-tight sm:text-4xl">{c.honour.title}</h2>
+            <Markdown text={c.honour.body} />
+            <ul className="mt-8 grid gap-3 sm:grid-cols-3">
+              {c.honour.cities.map((ct) => (
+                <li key={ct.name} className="stage rounded-xl p-5 text-[#eef0f3]">
+                  {ct.ar && <p className="font-arabic text-2xl text-[rgb(var(--gold))]" dir="rtl">{ct.ar}</p>}
+                  <p className="mt-1 font-bold">{ct.name}</p>
+                  <p className="mt-1 text-sm text-white/70">{ct.d}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* Letter */}
       <section className="mx-auto max-w-3xl px-5 pb-16 sm:pb-24">
         <figure className="rounded-lg border border-line bg-surface p-6 sm:p-10">

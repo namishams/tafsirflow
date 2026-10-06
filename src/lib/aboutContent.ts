@@ -8,6 +8,7 @@ export type AboutContent = {
   dubaiEyebrow: string; dubaiTitle: string; dubaiLead: string; dubai: string;
   dubaiMoments: { t: string; d: string }[];
   thanksEyebrow: string; thanksTitle: string; thanks: string;
+  honour?: { eyebrow: string; title: string; body: string; cities: { name: string; ar: string; d: string }[] };
   letterTitle: string; letter: string; signature: string; signatureRole: string;
   contactTitle: string; contact: string;
 };
@@ -82,6 +83,24 @@ Wir danken **Seiner Hoheit Scheich Mohammed bin Rashid Al Maktoum**, Vizepräsid
 Wir danken **Seiner Hoheit Scheich Hamdan bin Mohammed bin Rashid Al Maktoum**, Kronprinz von Dubai, der die Zukunft dieser Stadt mitgestaltet, und **Seiner Hoheit Scheich Mohamed bin Zayed Al Nahyan**, Präsident der Vereinigten Arabischen Emirate. Und wir gedenken in Dankbarkeit **Scheich Zayed bin Sultan Al Nahyan** – möge Allah ihm barmherzig sein –, dem Gründervater der Emirate, der Glauben, Großzügigkeit und Offenheit zum Fundament dieses Landes gemacht hat.
 
 Ein sicheres Zuhause, Toleranz zwischen Menschen aus aller Welt, Achtung vor dem Glauben und ein Umfeld, das Innovation ermutigt – das sind die Bedingungen, unter denen ein Projekt wie dieses entstehen kann. Möge Allah sie belohnen, ihnen Gesundheit und Weisheit schenken und dieses Land und seine Menschen beschützen.`,
+  honour: {
+    eyebrow: "In Dankbarkeit",
+    title: "Für die, die dem Koran und den heiligen Stätten dienen",
+    body: `Wir danken **Seiner Hoheit Scheich Hamdan bin Mohammed bin Rashid Al Maktoum**, dem Kronprinzen von Dubai, den viele unter seinem Dichternamen **„Fazza“** kennen. Er steht für eine junge Generation, die ihre Wurzeln ehrt und mutig nach vorn schaut – genau diese Verbindung von Herkunft und Zukunft wünschen wir uns auch für das Lernen des Korans.
+
+Wir danken **Seiner Hoheit Scheich Mohamed bin Zayed Al Nahyan**, dem Präsidenten der Vereinigten Arabischen Emirate, und grüßen **Abu Dhabi**, wo die **Scheich-Zayed-Moschee** Menschen aller Herkunft willkommen heißt und das **Abrahamic Family House** für das friedliche Miteinander steht.
+
+Wir danken **Seiner Hoheit Scheich Dr. Sultan bin Muhammad Al Qasimi**, dem Herrscher von **Schardscha**, dessen Liebe zu Büchern, Bildung und islamischer Kultur das Emirat geprägt hat – Schardscha wurde 2014 zur Hauptstadt der islamischen Kultur ernannt.
+
+Und wir danken dem **Hüter der beiden Heiligen Moscheen, König Salman bin Abdulaziz Al Saud**, und **Seiner Königlichen Hoheit Kronprinz Mohammed bin Salman**, dem Premierminister des Königreichs Saudi-Arabien, für den Dienst an Mekka und Medina, an der Heiligen Moschee und der Moschee des Propheten ﷺ und an den Millionen Pilgern, die jedes Jahr zum Hadsch und zur Umra kommen.
+
+Möge Allah sie alle belohnen, sie rechtleiten und die Länder der Muslime in Frieden, Sicherheit und Wohlstand bewahren.`,
+    cities: [
+      { name: "Mekka", ar: "مكة المكرمة", d: "Die Kaaba, die Qibla aller Muslime – hier begann die Offenbarung." },
+      { name: "Medina", ar: "المدينة المنورة", d: "Die Stadt des Propheten ﷺ und seine Moschee." },
+      { name: "Al-Quds", ar: "القدس", d: "Die Al-Aqsa-Moschee, die erste Gebetsrichtung." },
+    ],
+  },
   letterTitle: "Ein paar Worte vom Gründer",
   letter: `Ich wünsche mir, dass niemand mehr sagen muss: „Ich würde gern Koran lernen, aber ich weiß nicht, wie.“
 
@@ -164,6 +183,24 @@ We thank **His Highness Sheikh Mohammed bin Rashid Al Maktoum**, Vice President 
 We thank **His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum**, Crown Prince of Dubai, who helps shape the future of this city, and **His Highness Sheikh Mohamed bin Zayed Al Nahyan**, President of the United Arab Emirates. And we remember with gratitude **Sheikh Zayed bin Sultan Al Nahyan** – may Allah have mercy on him – the founding father of the Emirates, who made faith, generosity and openness the foundation of this country.
 
 A safe home, tolerance between people from all over the world, respect for faith and an environment that encourages innovation – these are the conditions in which a project like this can be born. May Allah reward them, grant them health and wisdom, and protect this country and its people.`,
+  honour: {
+    eyebrow: "In gratitude",
+    title: "For those who serve the Quran and the holy places",
+    body: `We thank **His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum**, Crown Prince of Dubai, whom many know by his poet's name **“Fazza”**. He stands for a young generation that honours its roots and looks boldly ahead – the very bond of heritage and future we wish for learning the Quran.
+
+We thank **His Highness Sheikh Mohamed bin Zayed Al Nahyan**, President of the United Arab Emirates, and greet **Abu Dhabi**, where the **Sheikh Zayed Grand Mosque** welcomes people of every background and the **Abrahamic Family House** stands for living together in peace.
+
+We thank **His Highness Sheikh Dr. Sultan bin Muhammad Al Qasimi**, Ruler of **Sharjah**, whose love of books, education and Islamic culture has shaped the emirate – Sharjah was named Capital of Islamic Culture in 2014.
+
+And we thank the **Custodian of the Two Holy Mosques, King Salman bin Abdulaziz Al Saud**, and **His Royal Highness Crown Prince Mohammed bin Salman**, Prime Minister of the Kingdom of Saudi Arabia, for their service to Makkah and Madinah, to the Sacred Mosque and the Mosque of the Prophet ﷺ, and to the millions of pilgrims who come for Hajj and Umrah every year.
+
+May Allah reward them all, guide them and keep the lands of the Muslims in peace, security and prosperity.`,
+    cities: [
+      { name: "Makkah", ar: "مكة المكرمة", d: "The Kaaba, the qibla of all Muslims – where revelation began." },
+      { name: "Madinah", ar: "المدينة المنورة", d: "The city of the Prophet ﷺ and his mosque." },
+      { name: "Al-Quds", ar: "القدس", d: "Al-Aqsa Mosque, the first qibla." },
+    ],
+  },
   letterTitle: "A few words from the founder",
   letter: `I wish that no one would ever again have to say: "I would love to learn the Quran, but I don't know how."
 
@@ -177,7 +214,7 @@ If this platform helps you, I ask only one thing: make du'a for everyone who con
 };
 
 // other languages: src/lib/pagecontent/<locale>/about.ts (default export AboutContent); missing ones fall back to English
-const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ps", "ru", "tr", "ur", "zh"];
+const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ms", "ps", "ru", "tr", "ur", "zh"];
 export async function aboutContent(locale: string): Promise<AboutContent> {
   if (locale === "de") return de;
   if (!OTHER.includes(locale)) return en;

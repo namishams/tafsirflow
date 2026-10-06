@@ -2,6 +2,7 @@
 export type StepDetail = { what: string; why: string; platform: string; time: string };
 export type ShamsContent = {
   heroKicker: string; heroTitle: string; heroLead: string; heroBy: string;
+  name?: { title: string; body: string; verses: { ar: string; ref: string; meaning: string }[] };
   demoTitle: string; demoStages: string[];
   problemTitle: string; problems: { t: string; d: string }[];
   solutionTitle: string; solution: string;
@@ -29,6 +30,14 @@ const de: ShamsContent = {
   heroTitle: "Die Shams-Methode",
   heroLead: "Ein Weg, den Koran so zu lernen, dass er bleibt: Jeder Vers wird gehört, gesprochen, verstanden, erklärt, aus dem Gedächtnis abgerufen und mit deinem Leben verbunden – in sieben Schritten und etwa vier Minuten. Was die Sprachlern- und Gedächtnisforschung über das Behalten weiß, verbunden mit der Art, wie Koranlehrer seit Jahrhunderten unterrichten.",
   heroBy: "Entwickelt von Nami Shams in Dubai",
+  name: {
+    title: "Warum „Shams“?",
+    body: "„Shams“ – شمس – ist das arabische Wort für die Sonne. Es ist zugleich der Familienname von Nami Shams, der die Methode entwickelt hat. Und es beschreibt, wie Lernen hier gemeint ist: Die Sonne geht jeden Morgen auf, nicht einmal im Jahr mit voller Kraft. Sie ist pünktlich, geduldig und beständig – und gerade deshalb lässt sie alles wachsen. So soll auch der Koran in dein Leben kommen: ein wenig Licht jeden Tag, zur richtigen Zeit, bis aus vielen Tagen ein ganzes Leben mit dem Wort Allahs wird. Der Koran selbst schwört bei der Sonne und nennt sie ein Licht, das Allah gemacht hat – eine Erinnerung daran, dass alles Licht von Ihm kommt, auch das Licht des Wissens.",
+    verses: [
+      { ar: "وَالشَّمْسِ وَضُحَاهَا", ref: "91:1", meaning: "Bei der Sonne und ihrer Morgenhelle." },
+      { ar: "هُوَ الَّذِي جَعَلَ الشَّمْسَ ضِيَاءً وَالْقَمَرَ نُورًا", ref: "10:5", meaning: "Er ist es, der die Sonne zu einer Leuchte und den Mond zu einem Licht gemacht hat." },
+    ],
+  },
   demoTitle: "Ein Vers, vier Stufen",
   demoStages: ["Ganzer Vers", "Rückwärts aufbauen", "Nur Anfangsbuchstaben", "Aus dem Gedächtnis"],
   problemTitle: "Warum so viele das Koranlernen wieder aufgeben",
@@ -130,6 +139,14 @@ const en: ShamsContent = {
   heroTitle: "The Shams Method",
   heroLead: "A way to learn the Quran so that it stays: every verse is heard, spoken, understood, explained, recalled from memory and connected to your life – in seven steps and about four minutes. What language-learning and memory research knows about remembering, joined with the way Quran teachers have taught for centuries.",
   heroBy: "Developed by Nami Shams in Dubai",
+  name: {
+    title: "Why “Shams”?",
+    body: "“Shams” – شمس – is the Arabic word for the sun. It is also the family name of Nami Shams, who developed the method. And it describes how learning is meant here: the sun rises every morning, not once a year with full force. It is punctual, patient and steady – and that is exactly why it makes everything grow. This is how the Quran should enter your life: a little light every day, at the right time, until many days become a whole life with the word of Allah. The Quran itself swears by the sun and calls it a light that Allah has made – a reminder that all light comes from Him, the light of knowledge too.",
+    verses: [
+      { ar: "وَالشَّمْسِ وَضُحَاهَا", ref: "91:1", meaning: "By the sun and its morning brightness." },
+      { ar: "هُوَ الَّذِي جَعَلَ الشَّمْسَ ضِيَاءً وَالْقَمَرَ نُورًا", ref: "10:5", meaning: "It is He who made the sun a shining radiance and the moon a light." },
+    ],
+  },
   demoTitle: "One verse, four stages",
   demoStages: ["Whole verse", "Build up backwards", "First letters only", "From memory"],
   problemTitle: "Why so many people give up learning the Quran",
