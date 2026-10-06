@@ -6,13 +6,13 @@ import { pageMeta } from "@/lib/site";
 
 export const dynamic = "force-dynamic"; // PLAY_STORE_URL is read from the server environment at request time
 
-type C = { kicker: string; title: string; lead: string; buttons: { install: string; installed: string; apk: string; apkSoon: string; play: string };
+type C = { kicker: string; title: string; lead: string; buttons: { install: string; installed: string; apk: string; apkSoon: string; play: string; samsung: string };
   waysTitle: string; ways: { t: string; steps: string[] }[]; featuresTitle: string; features: [string, string][]; note: string };
 
 const de: C = {
   kicker: "Die App", title: "Quran Masterclass auf dein Handy",
   lead: "Die ganze Masterclass als App: Vollbild ohne Browserleiste, eigenes Symbol auf dem Startbildschirm, gespeicherte Suren auch offline – und jedes Update der Website ist sofort in der App.",
-  buttons: { install: "App installieren", installed: "Die App ist installiert", apk: "Android-App herunterladen (APK)", apkSoon: "Android-App: bald verfügbar", play: "Bei Google Play laden" },
+  buttons: { install: "App installieren", installed: "Die App ist installiert", apk: "Android-App herunterladen (APK)", apkSoon: "Android-App: bald verfügbar", play: "Bei Google Play laden", samsung: "Du nutzt Samsung Internet. Bitte installiere nicht über dessen Menü – Samsung baut dabei eine eigene Hülle für ein altes Android, die Google Play Protect blockiert. Öffne die Seite stattdessen in Chrome und wähle „App installieren“, oder lade die Android-App oben herunter." },
   waysTitle: "So installierst du sie",
   ways: [
     { t: "Android (Chrome)", steps: ["quranmasterclass.com in Chrome öffnen.", "Auf „App installieren“ tippen – oder im Menü ⋮ „App installieren“ wählen.", "Das Symbol erscheint auf dem Startbildschirm."] },
@@ -26,7 +26,7 @@ const de: C = {
 const en: C = {
   kicker: "The app", title: "Quran Masterclass on your phone",
   lead: "The whole Masterclass as an app: full screen without a browser bar, its own icon on the home screen, saved surahs even offline – and every update of the website is instantly in the app.",
-  buttons: { install: "Install the app", installed: "The app is installed", apk: "Download the Android app (APK)", apkSoon: "Android app: coming soon", play: "Get it on Google Play" },
+  buttons: { install: "Install the app", installed: "The app is installed", apk: "Download the Android app (APK)", apkSoon: "Android app: coming soon", play: "Get it on Google Play", samsung: "You are using Samsung Internet. Please do not install through its menu – Samsung builds its own wrapper for an old Android version, which Google Play Protect blocks. Open the page in Chrome instead and choose “Install app”, or download the Android app above." },
   waysTitle: "How to install it",
   ways: [
     { t: "Android (Chrome)", steps: ["Open quranmasterclass.com in Chrome.", "Tap “Install app” – or choose “Install app” in the ⋮ menu.", "The icon appears on your home screen."] },
@@ -40,7 +40,7 @@ const en: C = {
 const ar: C = {
   kicker: "التطبيق", title: "Quran Masterclass على هاتفك",
   lead: "المنصة كاملةً في تطبيق: شاشة كاملة دون شريط المتصفح، وأيقونة خاصة على الشاشة الرئيسية، وسور محفوظة تعمل دون اتصال، وكل تحديث للموقع يظهر فورًا في التطبيق.",
-  buttons: { install: "ثبّت التطبيق", installed: "التطبيق مثبَّت", apk: "تنزيل تطبيق أندرويد (APK)", apkSoon: "تطبيق أندرويد: قريبًا", play: "حمّله من Google Play" },
+  buttons: { install: "ثبّت التطبيق", installed: "التطبيق مثبَّت", apk: "تنزيل تطبيق أندرويد (APK)", apkSoon: "تطبيق أندرويد: قريبًا", play: "حمّله من Google Play", samsung: "أنت تستخدم متصفح سامسونج. لا تثبّت التطبيق من قائمته، فسامسونج تبني غلافًا خاصًّا لإصدار قديم من أندرويد يحظره Google Play Protect. افتح الصفحة في كروم واختر «تثبيت التطبيق»، أو نزّل تطبيق أندرويد من الأعلى." },
   waysTitle: "طريقة التثبيت",
   ways: [
     { t: "أندرويد (كروم)", steps: ["افتح quranmasterclass.com في كروم.", "اضغط «تثبيت التطبيق» أو اختره من القائمة ⋮.", "تظهر الأيقونة على الشاشة الرئيسية."] },
