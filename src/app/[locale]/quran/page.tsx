@@ -15,9 +15,9 @@ export default async function QuranPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations();
   const chapters = await getChapters(locale);
   return (
-    <main className="mx-auto max-w-3xl px-4 pb-20 pt-4">
+    <main className="mx-auto w-full max-w-3xl min-w-0 px-4 pb-20 pt-4">
       <header className="mb-4 flex items-center justify-between gap-2">
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex min-w-0 items-center gap-2.5">
           <Logo size={34} />
           <span className="font-display text-xl font-semibold tracking-tight">{t("app.name")}</span>
         </Link>

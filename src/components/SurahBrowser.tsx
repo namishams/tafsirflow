@@ -89,10 +89,10 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
         className="mb-5 w-full rounded-2xl border border-line bg-surface px-5 py-3.5 shadow-[0_8px_30px_rgba(0,0,0,0.10)] outline-none focus:border-accent"
       />
 
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {list.map((c) => (
-          <li key={c.id}>
-            <Link href={`/surah/${c.id}`} className="group flex items-center gap-4 rounded-2xl border border-line bg-surface p-3.5 shadow-card transition hover:-translate-y-0.5 hover:border-accent">
+          <li key={c.id} className="min-w-0">
+            <Link href={`/surah/${c.id}`} className="group flex min-w-0 items-center gap-3 rounded-2xl border border-line bg-surface p-3.5 shadow-card transition hover:-translate-y-0.5 hover:border-accent">
               <span className="relative grid h-11 w-11 shrink-0 place-items-center">
                 <span className="absolute inset-1 rotate-45 rounded-md bg-accent-soft transition group-hover:bg-accent" />
                 <span className="absolute inset-1 rounded-md bg-accent-soft transition group-hover:bg-accent" />
@@ -102,7 +102,7 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
                 <span className="block truncate font-semibold">{c.name_simple}</span>
                 <span className="block truncate text-xs text-muted">{c.translated_name.name} · {c.verses_count} {t("verses")}</span>
               </span>
-              <span className="font-arabic text-3xl text-accent" dir="rtl">{c.name_arabic}</span>
+              <span className="shrink-0 font-arabic text-2xl text-accent" dir="rtl">{c.name_arabic}</span>
             </Link>
           </li>
         ))}

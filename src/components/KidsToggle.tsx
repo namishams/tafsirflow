@@ -16,7 +16,7 @@ export default function KidsToggle() {
     window.dispatchEvent(new Event("tf-kids"));
   };
   return (
-    <button onClick={toggle} aria-pressed={on} title={on ? t("kidsOff") : t("kidsOn")} className="rounded-full border border-line bg-surface px-3 py-1.5 text-sm font-medium shadow-card hover:border-accent">
+    <button onClick={toggle} aria-pressed={on} title={on ? t("kidsOff") : t("kidsOn")} className="inline-flex shrink-0 items-center rounded-full border border-line bg-surface px-3 py-1.5 text-sm font-medium shadow-card hover:border-accent">
       {on ? "🎓" : "🧒"}<span className="ms-1.5 hidden sm:inline">{on ? t("kidsOff") : t("kidsOn")}</span>
     </button>
   );
