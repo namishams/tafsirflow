@@ -1,0 +1,56 @@
+{
+  "app": {
+    "name": "TafsirFlow",
+    "tagline": "Dengarkan Al-Qur'an ayat demi ayat dan pelajari tafsirnya."
+  },
+  "home": {
+    "surahs": "Surah",
+    "verses": "ayat",
+    "search": "Cari surah berdasarkan nama atau nomor…",
+    "resume": "Lanjutkan dari terakhir",
+    "resumeAt": "Surah {surah}, ayat {verse}",
+    "bookmarks": "Penanda",
+    "noResults": "Surah tidak ditemukan.",
+    "feature1": "Audio ayat demi ayat",
+    "feature2": "Sorotan kata",
+    "feature3": "Tafsir untuk setiap ayat"
+  },
+  "player": {
+    "play": "Putar",
+    "pause": "Jeda",
+    "next": "Ayat berikutnya",
+    "prev": "Ayat sebelumnya",
+    "continue": "Lanjut",
+    "modeLearn": "Belajar",
+    "modeContinuous": "Berkelanjutan",
+    "mode": "Mode",
+    "repeat": "Ulangi setiap ayat",
+    "speed": "Kecepatan",
+    "jump": "Lompat ke ayat",
+    "tafsir": "Tafsir",
+    "closeTafsir": "Tutup",
+    "source": "Sumber",
+    "reciter": "Qari",
+    "covers": "mencakup ayat {from}–{to}",
+    "noTafsir": "Tafsir untuk ayat ini tidak tersedia.",
+    "loading": "Memuat…",
+    "error": "Data tidak dapat dimuat. Silakan coba lagi.",
+    "back": "Semua surah",
+    "learnHint": "Dijeda – tekan Lanjut untuk ayat berikutnya.",
+    "translation": "Terjemahan",
+    "wordByWord": "Kata per kata",
+    "loop": "Ulangi rentang ayat",
+    "loopFrom": "dari",
+    "loopTo": "sampai",
+    "bookmark": "Tandai",
+    "bookmarked": "Ditandai",
+    "noLocalTafsir": "Belum ada tafsir dalam bahasa {language} di Quran.com – menampilkan sumber bahasa Inggris.",
+    "settings": "Pengaturan",
+    "verse": "Ayat",
+    "of": "dari",
+    "transliteration": "Transliterasi"
+  },
+  "language": {
+    "label": "Bahasa"
+  }
+}

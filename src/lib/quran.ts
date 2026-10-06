@@ -1,13 +1,13 @@
-const API = "https://api.quran.com/api/v4";
+import { localeMeta } from "@/i18n/locales";
 
-// Quran.com translation ids (see CLAUDE.md)
-export const TRANSLATION_BY_LOCALE: Record<string, number> = { de: 27, en: 20 };
+// The browser only talks to our own server (/api/q → database → Quran.com on first use).
+const CLIENT_API = process.env.NEXT_PUBLIC_API_BASE ?? "/api/q";
+// Quran.com audio is only a fallback if a self-hosted file is missing. Set NEXT_PUBLIC_REMOTE_AUDIO_FALLBACK=0 to disable.
+const REMOTE_AUDIO = process.env.NEXT_PUBLIC_REMOTE_AUDIO_FALLBACK !== "0";
 
 export type Reciter = { id: number; slug: string; name: string; folder: string };
-
-// Self-hosted audio: /srv/tafsirflow/audio/<folder>/<SSSAAA>.mp3, served by Nginx at /audio/
+// Recitation ids with word timing segments. Self-hosted audio: /srv/tafsirflow/audio/<folder>/<SSSAAA>.mp3 (Nginx: /audio/)
 export const AUDIO_BASE = process.env.NEXT_PUBLIC_AUDIO_BASE ?? "/audio";
-// Recitation ids with word timing segments
 export const RECITERS: Reciter[] = [
   { id: 7, slug: "Alafasy", name: "Mishary Alafasy", folder: "Alafasy_128kbps" },
   { id: 2, slug: "AbdulBaset", name: "AbdulBaset AbdulSamad", folder: "Abdul_Basit_Murattal_192kbps" },
@@ -15,16 +15,15 @@ export const RECITERS: Reciter[] = [
   { id: 9, slug: "Minshawi", name: "Mohamed Siddiq Al-Minshawi", folder: "Minshawy_Murattal_128kbps" },
 ];
 
-export type TafsirSource = { id: number; name: string; author: string };
-// English tafsirs from Quran.com; German source still open (see CLAUDE.md)
-export const TAFSIRS: TafsirSource[] = [
-  { id: 169, name: "Ibn Kathir (abridged)", author: "Hafiz Ibn Kathir" },
-  { id: 168, name: "Ma'arif al-Qur'an", author: "Mufti Muhammad Shafi" },
-  { id: 817, name: "Tazkirul Quran", author: "Maulana Wahiduddin Khan" },
-];
+export type Resource = { id: number; name: string; author_name: string; language_name: string };
+
+// Preferred translation per language (see CLAUDE.md); other languages use the first one Quran.com offers.
+const PREFERRED_TRANSLATION: Record<string, number> = { de: 27, en: 20, id: 33 };
+// English tafsirs shown as fallback for languages without their own tafsir.
+const ENGLISH_FALLBACK_TAFSIRS = [169, 168, 817];
 
 export type Chapter = { id: number; name_simple: string; name_arabic: string; verses_count: number; translated_name: { name: string } };
-export type Word = { position: number; text_uthmani: string; char_type_name: string };
+export type Word = { position: number; text_uthmani: string; char_type_name: string; translation?: { text: string }; transliteration?: { text: string } };
 export type Segment = { word: number; start: number; end: number };
 export type Verse = {
   verse_key: string;
@@ -32,6 +31,7 @@ export type Verse = {
   text_uthmani: string;
   words: Word[];
   translation: string;
+  transliteration: string; // Latin-letter reading aid, built from word data
   audioUrl: string; // self-hosted file
   remoteAudioUrl: string; // Quran.com fallback
   segments: Segment[];
@@ -53,8 +53,15 @@ export function parseSegments(raw: unknown[] | undefined): Segment[] {
 }
 
 async function get<T>(path: string): Promise<T> {
-  const res = await fetch(`${API}${path}`);
-  if (!res.ok) throw new Error(`Quran.com API ${res.status}`);
+  if (typeof window === "undefined") {
+    // server-side rendering: read the store directly
+    const { getContent } = await import("./upstream");
+    const data = (await getContent(path)) as T & { __missing?: boolean };
+    if (data.__missing) throw new Error("not found");
+    return data;
+  }
+  const res = await fetch(`${CLIENT_API}${path}`);
+  if (!res.ok) throw new Error(`API ${res.status}`);
   return res.json();
 }
 
@@ -68,24 +75,58 @@ export async function getChapter(id: number, locale: string): Promise<Chapter> {
   return data.chapter;
 }
 
+let resourceCache: Promise<{ translations: Resource[]; tafsirs: Resource[] }> | null = null;
+
+// Translations and tafsirs Quran.com offers; ids are discovered, not hard-coded, so new languages just work.
+export function getResources() {
+  resourceCache ??= Promise.all([
+    get<{ translations: Resource[] }>("/resources/translations"),
+    get<{ tafsirs: Resource[] }>("/resources/tafsirs"),
+  ])
+    .then(([a, b]) => ({ translations: a.translations, tafsirs: b.tafsirs }))
+    .catch((e) => {
+      resourceCache = null;
+      throw e;
+    });
+  return resourceCache;
+}
+
+export function pickTranslation(locale: string, translations: Resource[]): number {
+  const preferred = PREFERRED_TRANSLATION[locale];
+  if (preferred && translations.some((t) => t.id === preferred)) return preferred;
+  const lang = localeMeta(locale).resourceLang;
+  return translations.find((t) => t.language_name?.toLowerCase() === lang)?.id ?? PREFERRED_TRANSLATION.en;
+}
+
+export function tafsirOptionsFor(locale: string, tafsirs: Resource[]): { options: Resource[]; hasLocal: boolean } {
+  const lang = localeMeta(locale).resourceLang;
+  const local = tafsirs.filter((t) => t.language_name?.toLowerCase() === lang);
+  if (lang === "english") return { options: local, hasLocal: local.length > 0 };
+  const fallback = ENGLISH_FALLBACK_TAFSIRS.map((id) => tafsirs.find((t) => t.id === id)).filter((t): t is Resource => !!t);
+  return { options: [...local, ...fallback], hasLocal: local.length > 0 };
+}
+
 export function localAudioUrl(reciter: Reciter, chapter: number, verse: number): string {
   const f = `${String(chapter).padStart(3, "0")}${String(verse).padStart(3, "0")}.mp3`;
   return `${AUDIO_BASE}/${reciter.folder}/${f}`;
 }
 
-export async function getVerses(chapter: number, locale: string, reciterId: number): Promise<Verse[]> {
+export async function getVerses(chapter: number, locale: string, reciterId: number, translationId: number): Promise<Verse[]> {
   const reciter = RECITERS.find((r) => r.id === reciterId) ?? RECITERS[0];
-  const tr = TRANSLATION_BY_LOCALE[locale] ?? 20;
-  const q = `words=true&word_fields=text_uthmani&fields=text_uthmani&translations=${tr}&audio=${reciterId}&per_page=300`;
+  const q = `words=true&word_fields=text_uthmani&language=${locale}&fields=text_uthmani&translations=${translationId}&audio=${reciterId}&per_page=300`;
   const data = await get<{ verses: any[] }>(`/verses/by_chapter/${chapter}?${q}`);
   return data.verses.map((v) => ({
     verse_key: v.verse_key,
     verse_number: v.verse_number,
     text_uthmani: v.text_uthmani,
     words: v.words,
+    transliteration: (v.words ?? [])
+      .filter((w: Word) => w.char_type_name === "word")
+      .map((w: Word) => w.transliteration?.text ?? "")
+      .join(" "),
     translation: (v.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, ""),
     audioUrl: localAudioUrl(reciter, chapter, v.verse_number),
-    remoteAudioUrl: v.audio?.url ? absoluteAudioUrl(v.audio.url) : "",
+    remoteAudioUrl: REMOTE_AUDIO && v.audio?.url ? absoluteAudioUrl(v.audio.url) : "",
     segments: parseSegments(v.audio?.segments),
   }));
 }
@@ -93,9 +134,7 @@ export async function getVerses(chapter: number, locale: string, reciterId: numb
 export type TafsirResult = { text: string; verseKeys: string[] };
 
 export async function getTafsir(tafsirId: number, verseKey: string): Promise<TafsirResult | null> {
-  const data = await get<{ tafsir?: { text: string; verses?: Record<string, unknown> } }>(
-    `/tafsirs/${tafsirId}/by_ayah/${verseKey}`,
-  );
+  const data = await get<{ tafsir?: { text: string; verses?: Record<string, unknown> } }>(`/tafsirs/${tafsirId}/by_ayah/${verseKey}`);
   if (!data.tafsir?.text) return null;
   return { text: data.tafsir.text, verseKeys: Object.keys(data.tafsir.verses ?? {}) };
 }

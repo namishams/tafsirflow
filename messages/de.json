@@ -1,13 +1,56 @@
 {
-  "app": { "name": "TafsirFlow", "tagline": "Den Koran Vers für Vers hören und dazu Tafsir studieren." },
-  "home": { "surahs": "Suren", "verses": "Verse" },
-  "player": {
-    "play": "Abspielen", "pause": "Pause", "next": "Nächster Vers", "prev": "Vorheriger Vers", "continue": "Weiter",
-    "modeLearn": "Lernen", "modeContinuous": "Durchgehend", "repeat": "Wiederholen", "speed": "Tempo",
-    "jump": "Zu Vers springen", "tafsir": "Tafsir", "closeTafsir": "Schließen", "source": "Quelle",
-    "covers": "gilt für Verse {from}–{to}", "noTafsir": "Für diesen Vers ist kein Tafsir verfügbar.",
-    "loading": "Lädt…", "error": "Daten konnten nicht geladen werden. Bitte erneut versuchen.", "back": "Alle Suren",
-    "learnHint": "Pausiert – „Weiter“ drücken für den nächsten Vers."
+  "app": {
+    "name": "TafsirFlow",
+    "tagline": "Den Koran Vers für Vers hören und dazu Tafsir studieren."
   },
-  "language": { "label": "Sprache" }
+  "home": {
+    "surahs": "Suren",
+    "verses": "Verse",
+    "search": "Sure nach Name oder Nummer suchen…",
+    "resume": "Dort weitermachen, wo du aufgehört hast",
+    "resumeAt": "Sure {surah}, Vers {verse}",
+    "bookmarks": "Lesezeichen",
+    "noResults": "Keine Sure gefunden.",
+    "feature1": "Audio Vers für Vers",
+    "feature2": "Wort-Hervorhebung",
+    "feature3": "Tafsir zu jedem Vers"
+  },
+  "player": {
+    "play": "Abspielen",
+    "pause": "Pause",
+    "next": "Nächster Vers",
+    "prev": "Vorheriger Vers",
+    "continue": "Weiter",
+    "modeLearn": "Lernen",
+    "modeContinuous": "Durchgehend",
+    "mode": "Modus",
+    "repeat": "Jeden Vers wiederholen",
+    "speed": "Tempo",
+    "jump": "Zu Vers springen",
+    "tafsir": "Tafsir",
+    "closeTafsir": "Schließen",
+    "source": "Quelle",
+    "reciter": "Rezitator",
+    "covers": "gilt für Verse {from}–{to}",
+    "noTafsir": "Für diesen Vers ist kein Tafsir verfügbar.",
+    "loading": "Lädt…",
+    "error": "Daten konnten nicht geladen werden. Bitte erneut versuchen.",
+    "back": "Alle Suren",
+    "learnHint": "Pausiert – „Weiter“ drücken für den nächsten Vers.",
+    "translation": "Übersetzung",
+    "wordByWord": "Wort für Wort",
+    "loop": "Verse in Schleife",
+    "loopFrom": "von",
+    "loopTo": "bis",
+    "bookmark": "Lesezeichen setzen",
+    "bookmarked": "Gemerkt",
+    "noLocalTafsir": "Für {language} gibt es bei Quran.com noch keinen Tafsir – es werden englische Quellen gezeigt.",
+    "settings": "Einstellungen",
+    "verse": "Vers",
+    "of": "von",
+    "transliteration": "Lautschrift"
+  },
+  "language": {
+    "label": "Sprache"
+  }
 }

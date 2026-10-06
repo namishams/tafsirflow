@@ -11,11 +11,13 @@
   "dependencies": {
     "next": "^15",
     "next-intl": "^4",
+    "pg": "^8.23.1",
     "react": "^19",
     "react-dom": "^19"
   },
   "devDependencies": {
     "@types/node": "*",
+    "@types/pg": "^8.23.1",
     "@types/react": "*",
     "@types/react-dom": "*",
     "autoprefixer": "*",

@@ -45,6 +45,11 @@ if ! sudo -u postgres psql -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER'
   echo "    DB credentials written to $APP_DIR/.env.db"
 fi
 
+echo "==> Content tables"
+if [ -f "$(dirname "$0")/../db/schema.sql" ]; then
+  sudo -u postgres psql -d "$DB_NAME" -f "$(dirname "$0")/../db/schema.sql" || true
+fi
+
 echo "==> Nginx site (IP only until a domain is set)"
 cat > /etc/nginx/sites-available/tafsirflow <<'NGINX'
 server {

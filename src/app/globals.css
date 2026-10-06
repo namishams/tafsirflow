@@ -2,7 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: 250 248 243;
+  --surface: 255 255 255;
+  --ink: 28 36 32;
+  --muted: 107 122 114;
+  --line: 229 226 217;
+  --accent: 11 122 90;
+  --accent-soft: 217 242 232;
+  --gold: 184 137 59;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: 14 20 17;
+    --surface: 23 32 27;
+    --ink: 232 239 233;
+    --muted: 140 158 148;
+    --line: 42 56 49;
+    --accent: 52 190 145;
+    --accent-soft: 24 58 46;
+    --gold: 214 170 90;
+  }
+}
+
 html { -webkit-text-size-adjust: 100%; }
-body { @apply bg-stone-50 text-stone-900; }
+body { @apply bg-bg text-ink antialiased; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.tafsir-html { @apply text-[15px] leading-7; }
 .tafsir-html p { @apply mb-3; }
-.tafsir-html h1, .tafsir-html h2, .tafsir-html h3 { @apply font-semibold mt-3 mb-1; }
+.tafsir-html h1, .tafsir-html h2, .tafsir-html h3 { @apply font-semibold mt-4 mb-1; }
+.tafsir-html [dir="rtl"], .tafsir-html .arabic { @apply font-arabic text-lg; }

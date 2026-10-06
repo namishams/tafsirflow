@@ -2,6 +2,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { LOCALE_META, type AppLocale } from "@/i18n/locales";
 
 export default function LanguageSwitcher() {
   const t = useTranslations("language");
@@ -13,10 +14,10 @@ export default function LanguageSwitcher() {
       aria-label={t("label")}
       value={locale}
       onChange={(e) => router.replace(pathname, { locale: e.target.value })}
-      className="rounded border border-stone-300 bg-white px-2 py-1 text-sm"
+      className="rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-ink shadow-card"
     >
       {routing.locales.map((l) => (
-        <option key={l} value={l}>{l.toUpperCase()}</option>
+        <option key={l} value={l}>{LOCALE_META[l as AppLocale].label}</option>
       ))}
     </select>
   );

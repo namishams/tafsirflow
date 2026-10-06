@@ -1,0 +1,56 @@
+{
+  "app": {
+    "name": "TafsirFlow",
+    "tagline": "قرآن را آیه به آیه بشنوید و همراه آن تفسیر بخوانید."
+  },
+  "home": {
+    "surahs": "سوره‌ها",
+    "verses": "آیه",
+    "search": "جستجوی سوره با نام یا شماره…",
+    "resume": "ادامه از جایی که ماندید",
+    "resumeAt": "سوره {surah}، آیه {verse}",
+    "bookmarks": "نشانک‌ها",
+    "noResults": "سوره‌ای یافت نشد.",
+    "feature1": "صوت آیه به آیه",
+    "feature2": "نمایش کلمه‌به‌کلمه",
+    "feature3": "تفسیر برای هر آیه"
+  },
+  "player": {
+    "play": "پخش",
+    "pause": "توقف",
+    "next": "آیه بعدی",
+    "prev": "آیه قبلی",
+    "continue": "ادامه",
+    "modeLearn": "یادگیری",
+    "modeContinuous": "پیوسته",
+    "mode": "حالت",
+    "repeat": "تکرار هر آیه",
+    "speed": "سرعت",
+    "jump": "رفتن به آیه",
+    "tafsir": "تفسیر",
+    "closeTafsir": "بستن",
+    "source": "منبع",
+    "reciter": "قاری",
+    "covers": "شامل آیه‌های {from}–{to}",
+    "noTafsir": "تفسیری برای این آیه موجود نیست.",
+    "loading": "در حال بارگذاری…",
+    "error": "بارگذاری داده‌ها ممکن نشد. دوباره تلاش کنید.",
+    "back": "همه سوره‌ها",
+    "learnHint": "متوقف شد – برای آیه بعدی «ادامه» را بزنید.",
+    "translation": "ترجمه",
+    "wordByWord": "کلمه به کلمه",
+    "loop": "تکرار بازه آیات",
+    "loopFrom": "از",
+    "loopTo": "تا",
+    "bookmark": "نشانک",
+    "bookmarked": "نشانک شد",
+    "noLocalTafsir": "هنوز تفسیری به زبان {language} در Quran.com موجود نیست – منابع انگلیسی نمایش داده می‌شود.",
+    "settings": "تنظیمات",
+    "verse": "آیه",
+    "of": "از",
+    "transliteration": "آوانگاری"
+  },
+  "language": {
+    "label": "زبان"
+  }
+}
