@@ -7,14 +7,14 @@ import { fetchMe, type Me } from "@/lib/sync";
 
 // Admin is for the owner: German with English fallback (kept in one place, not in the public messages)
 const T = {
-  de: { admin: "Admin-Bereich", overview: "Übersicht", users: "Nutzer", tafsir: "Tafsir-Editor", settings: "Einstellungen", forbidden: "Kein Zugriff. Melde dich mit dem Admin-Konto an.", signIn: "Zur Anmeldung", home: "Zur App",
+  de: { admin: "Admin-Bereich", overview: "Übersicht", users: "Nutzer", tafsir: "Tafsir-Editor", settings: "Einstellungen", moderation: "Moderation", forbidden: "Kein Zugriff. Melde dich mit dem Admin-Konto an.", signIn: "Zur Anmeldung", home: "Zur App",
     users_n: "Nutzer gesamt", users_w: "Neu (7 Tage)", sessions: "Aktive Sitzungen", cached: "Gespeicherte Quran.com-Inhalte", entries: "Eigene Tafsir-Einträge", drafts: "Entwürfe zur Freigabe",
     email: "E-Mail", name: "Name", role: "Rolle", plan: "Tarif", since: "Seit", makeAdmin: "Zum Admin", makeUser: "Admin entziehen", premium: "Premium", free: "Free",
     limit: "Tafsir-Limit für Besucher ohne Konto (Verse pro Tag)", limitHelp: "Wer nicht angemeldet ist, darf pro Tag so viele verschiedene Verse mit Tafsir öffnen. Danach ist ein kostenloses Konto nötig. 0 = sofort Konto nötig.", save: "Speichern", saved: "Gespeichert",
     lang: "Sprache", surah: "Sure", from: "Vers von", to: "bis", source: "Quelle", content: "Text (HTML erlaubt: <p>, <b>, <i>, <h3>)", ai: "KI-generiert (muss vor Veröffentlichung geprüft werden)", status: "Status", draft: "Entwurf", approved: "Freigegeben",
     create: "Eintrag anlegen", update: "Änderung speichern", cancel: "Abbrechen", edit: "Bearbeiten", del: "Löschen", approve: "Freigeben", unapprove: "Zurück zu Entwurf", none: "Noch keine Einträge.", confirm: "Wirklich löschen?",
     note: "Freigegebene Einträge erscheinen in der App unter „Quran Masterclass“ als eigene Tafsir-Quelle in dieser Sprache." },
-  en: { admin: "Admin area", overview: "Overview", users: "Users", tafsir: "Tafsir editor", settings: "Settings", forbidden: "No access. Sign in with the admin account.", signIn: "Go to sign-in", home: "Back to app",
+  en: { admin: "Admin area", overview: "Overview", users: "Users", tafsir: "Tafsir editor", settings: "Settings", moderation: "Moderation", forbidden: "No access. Sign in with the admin account.", signIn: "Go to sign-in", home: "Back to app",
     users_n: "Total users", users_w: "New (7 days)", sessions: "Active sessions", cached: "Stored Quran.com items", entries: "Own tafsir entries", drafts: "Drafts to approve",
     email: "E-mail", name: "Name", role: "Role", plan: "Plan", since: "Since", makeAdmin: "Make admin", makeUser: "Remove admin", premium: "Premium", free: "Free",
     limit: "Tafsir limit for visitors without account (verses per day)", limitHelp: "Signed-out visitors may open tafsir for this many different verses per day, then a free account is needed. 0 = account needed at once.", save: "Save", saved: "Saved",
@@ -41,7 +41,7 @@ export default function AdminPanel() {
   const locale = useLocale();
   const t = T[locale === "de" ? "de" : "en"];
   const [me, setMe] = useState<Me | null | undefined>(undefined);
-  const [tab, setTab] = useState<"overview" | "users" | "tafsir" | "settings">("overview");
+  const [tab, setTab] = useState<"overview" | "users" | "tafsir" | "moderation" | "settings">("overview");
 
   useEffect(() => { fetchMe().then((r) => setMe(r.user)); }, []);
 
@@ -54,7 +54,7 @@ export default function AdminPanel() {
       </main>
     );
 
-  const tabs = [["overview", t.overview], ["users", t.users], ["tafsir", t.tafsir], ["settings", t.settings]] as const;
+  const tabs = [["overview", t.overview], ["users", t.users], ["tafsir", t.tafsir], ["moderation", t.moderation], ["settings", t.settings]] as const;
   return (
     <main className="mx-auto max-w-5xl px-4 pb-16 pt-4">
       <header className="mb-6 flex items-center justify-between">
@@ -69,6 +69,7 @@ export default function AdminPanel() {
       {tab === "overview" && <Overview t={t} />}
       {tab === "users" && <Users t={t} meId={me.id} />}
       {tab === "tafsir" && <TafsirEditor t={t} />}
+      {tab === "moderation" && <Moderation de={locale === "de"} />}
       {tab === "settings" && <SettingsTab t={t} />}
     </main>
   );
@@ -136,9 +137,10 @@ function Users({ t, meId }: { t: TT; meId: number }) {
 
 function SettingsTab({ t }: { t: TT }) {
   const [limit, setLimit] = useState(20);
+  const [auto, setAuto] = useState(false);
   const [msg, setMsg] = useState("");
-  useEffect(() => { api<{ anonTafsirLimit: number }>("/api/admin/settings").then((s) => setLimit(s.anonTafsirLimit)).catch(() => undefined); }, []);
-  const save = async () => { await api("/api/admin/settings", "PUT", { anonTafsirLimit: limit }); setMsg(t.saved); setTimeout(() => setMsg(""), 2000); };
+  useEffect(() => { api<{ anonTafsirLimit: number; commentsAutoApprove: boolean }>("/api/admin/settings").then((s) => { setLimit(s.anonTafsirLimit); setAuto(!!s.commentsAutoApprove); }).catch(() => undefined); }, []);
+  const save = async () => { await api("/api/admin/settings", "PUT", { anonTafsirLimit: limit, commentsAutoApprove: auto }); setMsg(t.saved); setTimeout(() => setMsg(""), 2000); };
   return (
     <div className={`${card} max-w-lg`}>
       <label className="mb-1 block font-medium">{t.limit}</label>
@@ -147,6 +149,73 @@ function SettingsTab({ t }: { t: TT }) {
         <input type="number" min={0} max={10000} value={limit} onChange={(e) => setLimit(Number(e.target.value))} className={field + " !w-28"} />
         <button className={btnP} onClick={save}>{t.save}</button>
         {msg && <span className="text-sm text-accent">{msg}</span>}
+      </div>
+      <label className="mt-6 flex items-start gap-3 border-t border-line pt-5 text-sm">
+        <input type="checkbox" checked={auto} onChange={(e) => setAuto(e.target.checked)} className="mt-1" />
+        <span><b>{t.moderation}: auto-approve</b><br /><span className="text-muted">Off (recommended): every comment waits for your approval. On: comments that pass the word filter go live at once (soft-flagged ones still wait).</span></span>
+      </label>
+    </div>
+  );
+}
+
+type Cm = { id: number; verse_key: string; body: string; status: string; flagged: string | null; reject_reason: string | null; created_at: string; user_id: number; email: string; first_name: string | null; last_name: string | null; country: string | null; comment_banned: boolean; comment_strikes: number; reports: number };
+
+function Moderation({ de }: { de: boolean }) {
+  const L = de
+    ? { pending: "Zu prüfen", reported: "Gemeldet", rejected: "Abgelehnt", approved: "Veröffentlicht", ok: "Freigeben", no: "Ablehnen", del: "Löschen", ban: "Sperren", unban: "Entsperren", dismiss: "Meldung verwerfen", empty: "Nichts zu tun.", words: "Wortfilter (eigene Ergänzungen)", hard: "Sofort blockieren (ein Wort/eine Phrase pro Zeile)", soft: "Markieren, aber zur Prüfung zulassen", save: "Wortlisten speichern", saved: "Gespeichert", flag: "Markiert", strikes: "Verstöße", note: "Eingebaut sind bereits Beleidigungen, Obszönes, Verspottung von Allah/Propheten/Koran, Hass/Takfir, Links, Telefon/E-Mail und Werbung in mehreren Sprachen." }
+    : { pending: "To review", reported: "Reported", rejected: "Rejected", approved: "Published", ok: "Approve", no: "Reject", del: "Delete", ban: "Ban", unban: "Unban", dismiss: "Dismiss report", empty: "Nothing to do.", words: "Word filter (your additions)", hard: "Block at once (one word/phrase per line)", soft: "Flag but allow into review", save: "Save word lists", saved: "Saved", flag: "Flagged", strikes: "Strikes", note: "Built in: insults, obscenity, mockery of Allah/Prophets/Quran, hate/takfir, links, phone/e-mail and advertising in many languages." };
+  const [view, setView] = useState<"pending" | "reported" | "rejected" | "approved">("pending");
+  const [list, setList] = useState<Cm[]>([]);
+  const [counts, setCounts] = useState({ pending: 0, reported: 0 });
+  const [block, setBlock] = useState("");
+  const [soft, setSoft] = useState("");
+  const [msg, setMsg] = useState("");
+  const load = useCallback(() => api<{ comments: Cm[]; counts: { pending: number; reported: number }; words: { block: string[]; soft: string[] } }>(`/api/admin/comments?view=${view}`).then((d) => { setList(d.comments); setCounts(d.counts); setBlock(d.words.block.join("\n")); setSoft(d.words.soft.join("\n")); }).catch(() => undefined), [view]);
+  useEffect(() => { load(); }, [load]);
+  const op = async (body: Record<string, unknown>) => { await api("/api/admin/comments", "POST", body); load(); };
+  const lines = (v: string) => v.split("\n").map((x) => x.trim()).filter(Boolean);
+  return (
+    <div className="grid gap-6">
+      <div className="flex flex-wrap gap-2">
+        {(["pending", "reported", "rejected", "approved"] as const).map((k) => (
+          <button key={k} onClick={() => setView(k)} className={`rounded-lg px-4 py-2 text-sm font-medium ${view === k ? "bg-ink text-bg" : "border border-line text-muted hover:text-ink"}`}>{L[k]}{k === "pending" ? ` (${counts.pending})` : k === "reported" ? ` (${counts.reported})` : ""}</button>
+        ))}
+      </div>
+      {list.length === 0 ? <p className="text-sm text-muted">{L.empty}</p> : (
+        <ul className="grid gap-3">
+          {list.map((c) => (
+            <li key={c.id} className={card}>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
+                <b className="text-ink">{[c.first_name, c.last_name].filter(Boolean).join(" ") || c.email}</b><span>{c.email}</span><span>{c.country}</span><span>Quran {c.verse_key}</span>
+                <span>{new Date(c.created_at).toLocaleString()}</span>
+                {c.reports > 0 && <span className="font-semibold text-red-600">⚑ {c.reports}</span>}
+                {c.flagged && <span className="font-semibold text-gold">{L.flag}: {c.flagged}</span>}
+                {c.reject_reason && <span>{c.reject_reason}</span>}
+                {c.comment_strikes > 0 && <span>{L.strikes}: {c.comment_strikes}</span>}
+              </div>
+              <p className="mt-2 whitespace-pre-wrap text-[15px]">{c.body}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {c.status !== "approved" && <button className={btnP} onClick={() => op({ op: "approve", id: c.id })}>{L.ok}</button>}
+                {c.status !== "rejected" && <button className={btn} onClick={() => op({ op: "reject", id: c.id })}>{L.no}</button>}
+                {c.reports > 0 && <button className={btn} onClick={() => op({ op: "dismiss", id: c.id })}>{L.dismiss}</button>}
+                <button className={btn} onClick={() => op({ op: "delete", id: c.id })}>{L.del}</button>
+                {c.comment_banned ? <button className={btn} onClick={() => op({ op: "unban", userId: c.user_id })}>{L.unban}</button> : <button className={btn} onClick={() => op({ op: "ban", userId: c.user_id })}>{L.ban}</button>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+      <div className={`${card} max-w-2xl`}>
+        <h3 className="font-semibold">{L.words}</h3>
+        <p className="mb-3 mt-1 text-sm text-muted">{L.note}</p>
+        <label className="text-sm font-medium">{L.hard}</label>
+        <textarea rows={4} value={block} onChange={(e) => setBlock(e.target.value)} className={field + " mb-3 mt-1"} />
+        <label className="text-sm font-medium">{L.soft}</label>
+        <textarea rows={4} value={soft} onChange={(e) => setSoft(e.target.value)} className={field + " mt-1"} />
+        <div className="mt-3 flex items-center gap-3">
+          <button className={btnP} onClick={async () => { await api("/api/admin/comments", "POST", { op: "words", block: lines(block), soft: lines(soft) }); setMsg(L.saved); setTimeout(() => setMsg(""), 2000); }}>{L.save}</button>
+          {msg && <span className="text-sm text-accent">{msg}</span>}
+        </div>
       </div>
     </div>
   );

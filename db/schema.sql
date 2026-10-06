@@ -111,5 +111,50 @@ INSERT INTO reciters (folder, slug, name, qc_id, sort) VALUES
   ('Minshawy_Murattal_128kbps', 'Minshawi', 'Mohamed Siddiq Al-Minshawi', 9, 4)
 ON CONFLICT (folder) DO NOTHING;
 
+-- social layer: likes, views, shares, moderated comments
+ALTER TABLE users ADD COLUMN IF NOT EXISTS comment_banned boolean NOT NULL DEFAULT false;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS comment_strikes int NOT NULL DEFAULT 0;
+
+CREATE TABLE IF NOT EXISTS verse_stats (
+  verse_key text PRIMARY KEY,
+  views     bigint NOT NULL DEFAULT 0,
+  shares    bigint NOT NULL DEFAULT 0
+);
+CREATE TABLE IF NOT EXISTS verse_likes (
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  verse_key  text   NOT NULL,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (user_id, verse_key)
+);
+CREATE INDEX IF NOT EXISTS verse_likes_key ON verse_likes(verse_key);
+CREATE TABLE IF NOT EXISTS verse_views (          -- one view per visitor, verse and day
+  day       int  NOT NULL,
+  subject   text NOT NULL,
+  verse_key text NOT NULL,
+  PRIMARY KEY (day, subject, verse_key)
+);
+-- every comment is held for review (status pending) unless the admin switches auto-approve on
+CREATE TABLE IF NOT EXISTS comments (
+  id            bigserial PRIMARY KEY,
+  user_id       bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  verse_key     text   NOT NULL,
+  parent_id     bigint REFERENCES comments(id) ON DELETE CASCADE,
+  body          text   NOT NULL,
+  status        text   NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')),
+  flagged       text,                              -- soft-filter note shown to the reviewer
+  reject_reason text,
+  created_at    timestamptz NOT NULL DEFAULT now(),
+  reviewed_at   timestamptz
+);
+CREATE INDEX IF NOT EXISTS comments_verse ON comments(verse_key, status, created_at);
+CREATE INDEX IF NOT EXISTS comments_queue ON comments(status, created_at);
+CREATE TABLE IF NOT EXISTS comment_reports (
+  comment_id bigint NOT NULL REFERENCES comments(id) ON DELETE CASCADE,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  reason     text,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (comment_id, user_id)
+);
+
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

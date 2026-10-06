@@ -7,6 +7,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import AccountLink from "./AccountLink";
 import KidsToggle from "./KidsToggle";
 import AuthGate from "./AuthGate";
+import SocialBar from "./SocialBar";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume } from "./Icons";
 import {
@@ -487,6 +488,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                       <p className="mt-3 italic leading-relaxed text-gold" dir="ltr" lang="en">{v.transliteration}</p>
                     )}
                     {showTranslation && <p className="mt-2 leading-relaxed text-muted" dir={meta.dir}>{v.translation}</p>}
+                    {active && !kids && <SocialBar verseKey={v.verse_key} shareText={v.translation} />}
                     {active && (
                       <div className="mt-4 flex flex-wrap items-center gap-2 text-sm" onClick={(e) => e.stopPropagation()}>
                         <span className="text-muted">🧠 {t("memorize")}</span>

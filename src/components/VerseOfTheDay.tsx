@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import VerseAudio from "./VerseAudio";
+import SocialBar from "./SocialBar";
 import { RECITERS, getChapter, getResources, getVerseByKey, localAudioUrl, pickTranslation } from "@/lib/quran";
 import { verseOfDayKey } from "@/lib/votd";
 
@@ -31,6 +32,7 @@ export default async function VerseOfTheDay({ locale }: { locale: string }) {
           <Link href={`/surah/${c}?v=${v}`} className="inline-flex h-12 items-center rounded-md border border-ink px-5 text-[15px] font-bold hover:bg-ink hover:text-bg">{t("votdHear")}</Link>
           <Link href={`/surah/${c}?v=${v}&m=2`} className="inline-flex h-12 items-center rounded-md border border-line px-5 text-[15px] font-bold hover:border-ink">{t("votdMemorize")}</Link>
         </div>
+        <div className="mt-6 max-w-md"><SocialBar verseKey={data.key} shareText={data.verse.translation?.replace(/<[^>]+>/g, "")} /></div>
       </div>
     </section>
   );
