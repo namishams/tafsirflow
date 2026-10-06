@@ -118,6 +118,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [idx, setIdx] = useState(initial ? Math.min(Math.max(startVerse, 1), initial.verses.length) - 1 : 0);
   const [playing, setPlaying] = useState(false);
   const [waiting, setWaiting] = useState(false); // learn mode: paused until "Continue"
+  // listening aids: a pause after each recitation to repeat it yourself (-1 = as long as the verse) and a sleep timer
+  const [gap, setGapState] = useState<number>(0);
+  const [sleep, setSleepState] = useState<{ mode: number; until: number }>({ mode: 0, until: 0 }); // mode: minutes, -1 = end of surah
+  const [turn, setTurn] = useState<{ ms: number; key: number } | null>(null); // "your turn" countdown during the pause
+  const gapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const setGap = (g: number) => { setGapState(g); writeJSON("tf:gap", g, true); };
+  const setSleep = (m: number) => setSleepState({ mode: m, until: m > 0 ? Date.now() + m * 60_000 : 0 });
+  const clearGap = () => { if (gapTimer.current) { clearTimeout(gapTimer.current); gapTimer.current = null; } setTurn(null); };
   const [activeWord, setActiveWord] = useState<number | null>(null);
   const [useRemote, setUseRemote] = useState(false); // local file failed -> Quran.com audio
   const [timingsOk, setTimingsOk] = useState(true);
@@ -223,6 +231,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     });
   }, []);
   useEffect(() => { if (audioRef.current) audioRef.current.volume = vol; }, [vol]);
+  useEffect(() => { setGapState(readJSON<number>("tf:gap", 0)); return () => { if (gapTimer.current) clearTimeout(gapTimer.current); }; }, []);
+  // sleep timer: also stops in the middle of a long verse
+  useEffect(() => {
+    if (sleep.mode <= 0) return;
+    const iv = setInterval(() => { if (Date.now() >= sleep.until) { audioRef.current?.pause(); clearGap(); setSleepState({ mode: 0, until: 0 }); } }, 5000);
+    return () => clearInterval(iv);
+  }, [sleep]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     vp.attach(handlers);
     setPlaying(!vp.getAudio().paused); // coming back to a surah that keeps playing
@@ -364,6 +379,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   }, [speed]);
 
   const goTo = useCallback((i: number, autoplay = true) => {
+    if (gapTimer.current) { clearTimeout(gapTimer.current); gapTimer.current = null; setTurn(null); }
     playsDone.current = 0;
     setWaiting(false);
     setActiveWord(null);
@@ -410,9 +426,19 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const chainFrom = chain !== null ? chainSegs[chain]?.word ?? 0 : null;
 
   const advance = () => {
-    if (loopOn && idx >= loopTo - 1) { goTo(Math.max(0, loopFrom - 1)); return; }
+    if (sleep.mode === -1 && idx >= verses.length - 1) { setSleepState({ mode: 0, until: 0 }); return; } // sleep timer: end of surah
+    if (loopOn && idx >= loopTo - 1 && sleep.mode !== -1) { goTo(Math.max(0, loopFrom - 1)); return; }
     if (idx < verses.length - 1) goTo(idx + 1);
   };
+  // after a recitation: wait (gap) so the listener can repeat it, then continue
+  const afterGap = (next: () => void) => {
+    const a = audioRef.current;
+    const ms = gap === -1 ? Math.round(((a && isFinite(a.duration) ? a.duration : 4) / (a?.playbackRate || 1)) * 1000) : gap * 1000;
+    if (!ms) { next(); return; }
+    setTurn({ ms, key: Date.now() });
+    gapTimer.current = setTimeout(() => { gapTimer.current = null; setTurn(null); next(); }, ms);
+  };
+  const sleeping = () => sleep.mode > 0 && Date.now() >= sleep.until;
 
   const onEnded = () => {
     if (linkQ.current.length) { wantPlay.current = true; vp.setPlaybackSrc({ url: linkQ.current.shift()!, remote: "" }); return; }
@@ -420,11 +446,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (chain !== null) { continueChain(); return; }
     playsDone.current += 1;
     setActiveWord(null);
-    if (playsDone.current < repeat) { play(); return; }
+    if (sleeping()) { setPlaying(false); setSleepState({ mode: 0, until: 0 }); return; } // sleep timer reached
+    if (playsDone.current < repeat) { if (shams !== null) play(); else afterGap(play); return; }
     setPlaying(false);
     if (shams !== null) { if (shams === 0) autoNext(0); return; } // Shams method: the coach decides when to move on
     if (mode === "learn") { setWaiting(true); return; }
-    advance();
+    afterGap(advance);
   };
 
   // Self-hosted files may be a different recording than the one the timings belong to:
@@ -723,6 +750,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                   </div>
                   <div className="grid gap-2"><span className={label}>{t("speed")}</span>
                     <Chips value={speed} options={[0.5, 0.75, 1, 1.25, 1.5]} onChange={setSpeed} fmtOpt={(n) => `${n}×`} />
+                  </div>
+                  {!kids && <div className="grid gap-2"><span className={label}>{t("gap")}</span>
+                    <Chips value={gap} options={[0, 2, 5, 10, -1]} onChange={setGap} fmtOpt={(n) => (n === 0 ? t("gapOff") : n === -1 ? t("gapVerse") : `${n} s`)} />
+                    <span className="text-xs text-muted">{t("gapHint")}</span>
+                  </div>}
+                  <div className="grid gap-2"><span className={label}>{t("sleep")}</span>
+                    <Chips value={sleep.mode} options={[0, 15, 30, 60, -1]} onChange={setSleep} fmtOpt={(n) => (n === 0 ? t("sleepOff") : n === -1 ? t("sleepEnd") : `${n} min`)} />
+                    {sleep.mode > 0 && <span className="text-xs text-muted">{t("sleepLeft", { m: Math.max(1, Math.ceil((sleep.until - Date.now()) / 60000)) })}</span>}
                   </div>
                   {!kids && <div className="grid gap-2">
                     <span className={label}>{t("loop")}</span>
@@ -1040,11 +1075,19 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       {/* Floating player dock: a dark-green jewel with gold, the play button inside a slowly turning rosette */}
       <div className="fixed inset-x-0 bottom-[4.5rem] z-40 px-3 lg:bottom-3">
         <div dir="ltr" className="stage mx-auto max-w-xl overflow-hidden rounded-3xl border border-[rgb(201_166_94)]/35 text-[#eef0f3] shadow-[0_14px_44px_rgba(3,25,18,0.45)]">
+          {turn && (
+            <div key={turn.key} className="flex items-center justify-center gap-2 bg-[rgb(201_166_94)]/15 px-4 py-1.5 text-[12px] font-semibold text-[rgb(233_207_153)]">
+              <span className="relative h-1.5 w-24 overflow-hidden rounded-full bg-white/10"><span className="turn-bar absolute inset-y-0 start-0 rounded-full bg-[rgb(201_166_94)]" style={{ animationDuration: `${turn.ms}ms` }} /></span>
+              {t("yourTurn")}
+              <button onClick={() => { clearGap(); advance(); }} className="ms-1 rounded-full border border-white/20 px-2 py-0.5 text-[11px] text-white/80 hover:border-white">{t("skip")}</button>
+            </div>
+          )}
           <div className="h-[3px] bg-white/10"><div className="h-full bg-gradient-to-r from-[rgb(201_166_94)]/60 via-[rgb(233_207_153)] to-[rgb(201_166_94)] transition-all duration-500" style={{ width: `${((idx + 1) / verses.length) * 100}%` }} /></div>
           <div className="flex items-center gap-2 px-4 pt-2.5 text-[11px] tabular-nums text-white/55">
             <span className="w-8 text-end">{fmt(cur)}</span>
             <input type="range" min={0} max={dur || 1} step={0.1} value={Math.min(cur, dur || 1)} onChange={(e) => { const a = audioRef.current; if (a) { a.currentTime = Number(e.target.value); setCur(a.currentTime); } }} className="h-1 min-w-0 flex-1 accent-[rgb(201_166_94)]" aria-label={t("seek")} />
             <span className="w-8">{fmt(dur)}</span>
+            {sleep.mode !== 0 && <span className="inline-flex items-center gap-1 text-[rgb(233_207_153)]" title={t("sleep")}><svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg>{sleep.mode > 0 ? Math.max(1, Math.ceil((sleep.until - Date.now()) / 60000)) : ""}</span>}
             <button className="grid h-7 w-7 place-items-center rounded-full hover:text-white" onClick={() => setVol(vol === 0 ? 1 : 0)} aria-label={t("volume")}><IconVolume muted={vol === 0} /></button>
           </div>
           <div className="flex items-center justify-between gap-2 px-3 pb-2.5 pt-1">
@@ -1060,7 +1103,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                 </svg>
                 <button
                   className="btn-gold relative grid h-12 w-12 place-items-center rounded-full shadow-card"
-                  onClick={() => (playing ? audioRef.current?.pause() : play())}
+                  onClick={() => { if (turn) { clearGap(); return; } if (playing) audioRef.current?.pause(); else play(); }}
                   aria-label={playing ? t("pause") : t("play")}
                 >{playing ? <IconPause /> : <IconPlay />}</button>
               </span>

@@ -4,6 +4,8 @@
     "tagline": "Listen to the Quran verse by verse and study tafsir alongside."
   },
   "home": {
+    "makki": "Meccan",
+    "madani": "Medinan",
     "surahs": "Surahs",
     "verses": "verses",
     "search": "Search surah by name or number…",
@@ -105,7 +107,17 @@
     "offlineSaved": "Saved offline · {mb} MB",
     "offlineRemove": "Remove",
     "offlineError": "Saving was interrupted – please try again with a connection.",
-    "seek": "Position in the verse"
+    "seek": "Position in the verse",
+    "gap": "Pause to repeat",
+    "gapOff": "Off",
+    "gapVerse": "Verse length",
+    "gapHint": "After each verse there is time to recite it yourself – “verse length” gives you exactly as long as the verse takes.",
+    "sleep": "Sleep timer",
+    "sleepOff": "Off",
+    "sleepEnd": "End of surah",
+    "sleepLeft": "Stops in {m} min",
+    "yourTurn": "Your turn",
+    "skip": "Skip"
   },
   "language": {
     "label": "Language"
@@ -1264,7 +1276,23 @@
     "delete": "Delete account",
     "deleteText": "Deletes your account, progress, plans, notes, comments and likes permanently. This cannot be undone.",
     "deleteBtn": "Delete my account",
-    "deleteConfirm": "Really delete your account and all your data permanently?"
+    "deleteConfirm": "Really delete your account and all your data permanently?",
+    "tab_overview": "Overview",
+    "tab_stats": "Statistics",
+    "tab_badges": "Badges",
+    "tab_ranking": "Ranking",
+    "tab_learning": "Progress",
+    "tab_account": "Account",
+    "pointsN": "{n} points",
+    "kStreak": "days in a row",
+    "kHours": "hours learned",
+    "kStickers": "stickers and badges",
+    "kRank": "place this week",
+    "latestStickers": "Your latest stickers",
+    "allStickers": "See all",
+    "goToday": "Learn today",
+    "goMap": "Your learning map",
+    "goCommunity": "Community"
   },
   "feedback": {
     "title": "Feedback & requests",

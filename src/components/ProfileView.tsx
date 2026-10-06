@@ -15,6 +15,16 @@ import { TOTAL_VERSES } from "@/lib/quranIndex";
 import { VOCAB_DECKS } from "@/lib/vocab";
 import { TAJWEED_LESSONS } from "@/lib/tajweed";
 import { stopSync } from "@/lib/sync";
+import StatsView from "./StatsView";
+import Ranking from "./Ranking";
+import RewardsCard from "./RewardsCard";
+import Sticker from "./Sticker";
+import { LevelSeal } from "./Rewards";
+import { levelOf as pointsLevel, readPoints, streakOf as pointsStreak, totalPoints } from "@/lib/points";
+import { buildCtx, earnedIds, hoursOf, stickerById } from "@/lib/stickers";
+
+const TABS = ["overview", "stats", "badges", "ranking", "learning", "account"] as const;
+type Tab = (typeof TABS)[number];
 
 type Profile = { email: string; birth_year: number | null; first_name: string | null; last_name: string | null; country: string | null; city: string | null; goal: string | null; locale: string | null; marketing_opt_in: boolean; email_verified: boolean; created_at: string; last_login_at: string | null; plan: string };
 type Data = { profile: Profile; sessions: number; social: { comments: number; likes: number } };
@@ -34,6 +44,19 @@ export default function ProfileView() {
   const [pw, setPw] = useState({ current: "", next: "" });
   const [del, setDel] = useState("");
   const [s, setS] = useState<ReturnType<typeof collect> | null>(null);
+  const [tab, setTabState] = useState<Tab>("overview");
+  const [me, setMe] = useState<{ points: number; level: ReturnType<typeof pointsLevel>; streak: number; hours: number; stickers: string[] } | null>(null);
+  const [rank, setRank] = useState<{ rank: number | null; participants: number } | null>(null);
+  // the tab lives in the address (#stats, #ranking …) so it can be linked and survives a reload
+  const setTab = (x: Tab) => { setTabState(x); try { history.replaceState(null, "", `#${x}`); } catch { /* ignore */ } };
+  useEffect(() => {
+    const fromHash = () => { const h = location.hash.slice(1) as Tab; if (TABS.includes(h)) setTabState(h); };
+    fromHash(); window.addEventListener("hashchange", fromHash);
+    const mine = () => { const p = readPoints(), c = buildCtx(); const total = totalPoints(p); setMe({ points: total, level: pointsLevel(total), streak: pointsStreak(p.d).current, hours: hoursOf(c), stickers: earnedIds(c) }); };
+    mine(); window.addEventListener("tf-points", mine); window.addEventListener("tf-synced", mine);
+    fetch("/api/ranking?range=week").then((r) => r.json()).then((x) => setRank({ rank: x.me?.rank ?? null, participants: x.participants ?? 0 })).catch(() => undefined);
+    return () => { window.removeEventListener("hashchange", fromHash); window.removeEventListener("tf-points", mine); window.removeEventListener("tf-synced", mine); };
+  }, []);
 
   const load = () => fetch("/api/account", { cache: "no-store" }).then((r) => r.json()).then((x: Data) => {
     setD(x);
@@ -75,18 +98,60 @@ export default function ProfileView() {
 
   return (
     <div className="mt-6 grid grid-cols-1 gap-6">
-      <section className={`${card} flex flex-wrap items-center gap-5`}>
-        <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-ink text-2xl font-bold text-bg">{name[0]?.toUpperCase()}</span>
-        <div className="min-w-0 flex-1">
-          <h2 className="font-display truncate text-3xl">{name}</h2>
-          <p className="truncate text-sm text-muted">{p.email} · {p.email_verified ? <span className="font-semibold text-accent">✓ {t("verified")}</span> : t("unverified")}</p>
-          <p className="mt-1 text-xs text-muted">{t("since", { date: date(p.created_at) })} · {t("lastLogin", { date: date(p.last_login_at) })}</p>
+      <section className="stage girih relative overflow-hidden rounded-2xl text-[#eef0f3]">
+        <span aria-hidden className="illum-frame" />
+        <div className="relative grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="flex min-w-0 items-center gap-4">
+            <span className="relative grid h-20 w-20 shrink-0 place-items-center">
+              <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full text-[rgb(201_166_94)]" aria-hidden><path d={Array.from({ length: 32 }, (_, i) => { const a = (Math.PI / 16) * i - Math.PI / 2, r = i % 2 ? 41 : 49; return `${i ? "L" : "M"}${(50 + r * Math.cos(a)).toFixed(2)},${(50 + r * Math.sin(a)).toFixed(2)}`; }).join("") + "Z"} fill="currentColor" fillOpacity=".18" stroke="currentColor" strokeWidth="1.2" /></svg>
+              <span className="font-kufi relative text-3xl text-[rgb(233_207_153)]">{name[0]?.toUpperCase()}</span>
+            </span>
+            <div className="min-w-0">
+              <h2 className="font-display truncate text-3xl">{name}</h2>
+              <p className="truncate text-sm text-white/65">{p.email} · {p.email_verified ? <span className="font-semibold text-[rgb(233_207_153)]">{t("verified")}</span> : t("unverified")}</p>
+              <p className="mt-1 text-xs text-white/50">{t("since", { date: date(p.created_at) })} · {t("lastLogin", { date: date(p.last_login_at) })}</p>
+            </div>
+          </div>
+          {me && (
+            <button onClick={() => setTab("badges")} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-3 text-start transition hover:border-white/30">
+              <LevelSeal n={me.level.n} size={64} />
+              <span><span className="font-callig block text-2xl leading-tight text-[rgb(var(--gold))]" dir="rtl" lang="ar">{me.level.ar}</span><span className="text-xs text-white/60">{t("pointsN", { n: me.points })}</span></span>
+            </button>
+          )}
         </div>
+        {me && (
+          <dl className="relative grid grid-cols-2 border-t border-white/10 sm:grid-cols-4">
+            {[[String(me.streak), t("kStreak")], [new Intl.NumberFormat(locale, { numberingSystem: "latn", maximumFractionDigits: 1 }).format(me.hours), t("kHours")], [String(me.stickers.length), t("kStickers")], [rank?.rank ? `#${rank.rank}` : "–", t("kRank")]].map(([v, l], i) => (
+              <div key={l} className={`px-5 py-4 ${i % 2 ? "border-s border-white/10" : ""} ${i >= 2 ? "border-t border-white/10 sm:border-t-0" : ""} ${i === 2 ? "sm:border-s" : ""}`}><dt className="font-display text-2xl text-[rgb(var(--gold))]">{v}</dt><dd className="text-xs text-white/55">{l}</dd></div>
+            ))}
+          </dl>
+        )}
       </section>
 
-      <ProgressPanel />
+      <nav aria-label={t("title")} className="flex flex-wrap gap-1.5 rounded-2xl border border-line bg-surface p-1.5">
+        {TABS.map((x) => <button key={x} onClick={() => setTab(x)} aria-current={tab === x ? "page" : undefined} className={`h-10 flex-1 rounded-xl px-3 text-sm font-semibold transition sm:flex-none sm:px-4 ${tab === x ? "bg-[rgb(var(--stage))] text-[rgb(233_207_153)] shadow-sm" : "text-muted hover:bg-bg hover:text-ink"}`}>{t(`tab_${x}`)}</button>)}
+      </nav>
 
-      <section>
+      {tab === "overview" && (
+        <div className="grid gap-6">
+          <RewardsCard />
+          {me && me.stickers.length > 0 && (
+            <section className="rounded-2xl border border-line bg-surface p-5 sm:p-6">
+              <div className="flex items-center justify-between gap-3"><h3 className="text-lg font-bold">{t("latestStickers")}</h3><button onClick={() => setTab("badges")} className="text-sm font-semibold text-accent hover:underline">{t("allStickers")}</button></div>
+              <ul className="mt-4 flex flex-wrap gap-4">{me.stickers.slice(-8).reverse().map((id) => { const def = stickerById(id); return def ? <li key={id}><Sticker def={def} size={64} /></li> : null; })}</ul>
+            </section>
+          )}
+          <ProgressPanel />
+          <section className="grid gap-3 sm:grid-cols-3">
+            {[["/today", t("goToday")], ["/map", t("goMap")], ["/community", t("goCommunity")]].map(([h, l]) => <Link key={h} href={h} className="callout rounded-xl p-4 text-[15px] font-semibold transition hover:-translate-y-0.5">{l}</Link>)}
+          </section>
+        </div>
+      )}
+      {tab === "stats" && <StatsView embedded only={["listen", "points", "learn"]} />}
+      {tab === "badges" && <StatsView embedded only={["level", "stickers", "badges"]} />}
+      {tab === "ranking" && <Ranking embedded />}
+
+      {tab === "learning" && <section>
         <h2 className="text-lg font-bold">{t("statsTitle")}</h2>
         <div className="mt-3 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line lg:grid-cols-4">
           {tile(t("streak"), <>{s.streak} <IconFlame /></>, t("streakHint", { n: s.todayCount }))}
@@ -105,8 +170,9 @@ export default function ProfileView() {
         {s.weak.length > 0 && (
           <p className="mt-3 text-sm text-muted">{t("weak")}{" "}{s.weak.map((w) => <Link key={w.key} href={`/surah/${w.key.split(":")[0]}?v=${w.key.split(":")[1]}&shams=1`} className="me-2 font-semibold text-accent hover:underline">{w.key}</Link>)}</p>
         )}
-      </section>
+      </section>}
 
+      {tab === "account" && <>
       <section className={card}>
         <h2 className="text-lg font-bold">{t("personal")}</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -181,6 +247,7 @@ export default function ProfileView() {
           </div>
         </div>
       </section>
+      </>}
     </div>
   );
 }

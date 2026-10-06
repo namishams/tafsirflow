@@ -11,7 +11,7 @@ type Country = { country: string; points: number; people: number };
 const TABS = ["week", "month", "all", "countries"] as const;
 const MEDAL = ["#e9cf99", "#d9dee4", "#d49a6a"];
 
-export default function Ranking() {
+export default function Ranking({ embedded = false }: { embedded?: boolean } = {}) {
   const t = useTranslations("rewards");
   const locale = useLocale();
   const nf = (n: number) => new Intl.NumberFormat(locale, { numberingSystem: "latn" }).format(n);
@@ -44,19 +44,21 @@ export default function Ranking() {
 
   return (
     <div>
-      <section className="stage girih relative overflow-hidden text-[#eef0f3]">
-        <div className="relative mx-auto max-w-6xl px-5 py-12 sm:py-16">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{t("rankKicker")}</p>
-          <h1 className="font-display mt-3 text-[40px] leading-[1.05] sm:text-6xl">{t("rankTitle")}</h1>
-          <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-white/70">{t("rankLead")}</p>
-          <figure className="mt-6 max-w-2xl border-t border-white/10 pt-4">
-            <p className="font-arabic text-2xl leading-loose text-[rgb(var(--gold))]" dir="rtl" lang="ar">وَفِي ذَٰلِكَ فَلْيَتَنَافَسِ الْمُتَنَافِسُونَ</p>
-            {locale !== "ar" && <figcaption className="mt-1 text-sm text-white/60">{t("verse83")} <span className="text-white/40">(83:26)</span></figcaption>}
-          </figure>
-        </div>
-      </section>
+      {!embedded && (
+        <section className="stage girih relative overflow-hidden text-[#eef0f3]">
+          <div className="relative mx-auto max-w-6xl px-5 py-12 sm:py-16">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{t("rankKicker")}</p>
+            <h1 className="font-display mt-3 text-[40px] leading-[1.05] sm:text-6xl">{t("rankTitle")}</h1>
+            <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-white/70">{t("rankLead")}</p>
+            <figure className="mt-6 max-w-2xl border-t border-white/10 pt-4">
+              <p className="font-arabic text-2xl leading-loose text-[rgb(var(--gold))]" dir="rtl" lang="ar">وَفِي ذَٰلِكَ فَلْيَتَنَافَسِ الْمُتَنَافِسُونَ</p>
+              {locale !== "ar" && <figcaption className="mt-1 text-sm text-white/60">{t("verse83")} <span className="text-white/40">(83:26)</span></figcaption>}
+            </figure>
+          </div>
+        </section>
+      )}
 
-      <section className="mx-auto max-w-4xl px-5 py-10">
+      <section className={embedded ? "" : "mx-auto max-w-4xl px-5 py-10"}>
         <div className="flex flex-wrap gap-1 rounded-md border border-line bg-surface p-1 text-sm font-semibold">
           {TABS.map((x) => <button key={x} onClick={() => setTab(x)} className={`flex-1 rounded px-3 py-2 ${tab === x ? "bg-ink text-bg" : "text-muted hover:text-ink"}`}>{t(`tab_${x}`)}</button>)}
         </div>

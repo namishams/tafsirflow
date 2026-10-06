@@ -4,6 +4,8 @@
     "tagline": "Den Koran Vers für Vers hören und dazu Tafsir studieren."
   },
   "home": {
+    "makki": "Mekka",
+    "madani": "Medina",
     "surahs": "Suren",
     "verses": "Verse",
     "search": "Sure nach Name oder Nummer suchen…",
@@ -105,7 +107,17 @@
     "offlineSaved": "Offline gespeichert · {mb} MB",
     "offlineRemove": "Entfernen",
     "offlineError": "Speichern unterbrochen – bitte mit Internet noch einmal versuchen.",
-    "seek": "Position im Vers"
+    "seek": "Position im Vers",
+    "gap": "Pause zum Nachsprechen",
+    "gapOff": "Aus",
+    "gapVerse": "Verslänge",
+    "gapHint": "Nach jedem Vers bleibt Zeit, ihn selbst zu sprechen – „Verslänge“ gibt dir genau so viel Zeit, wie der Vers dauert.",
+    "sleep": "Schlaf-Timer",
+    "sleepOff": "Aus",
+    "sleepEnd": "Sure-Ende",
+    "sleepLeft": "Stoppt in {m} Min.",
+    "yourTurn": "Jetzt du",
+    "skip": "Weiter"
   },
   "language": {
     "label": "Sprache"
@@ -1264,7 +1276,23 @@
     "delete": "Konto löschen",
     "deleteText": "Löscht dein Konto, Fortschritt, Pläne, Notizen, Kommentare und Likes endgültig. Das kann nicht rückgängig gemacht werden.",
     "deleteBtn": "Mein Konto löschen",
-    "deleteConfirm": "Konto und alle Daten wirklich endgültig löschen?"
+    "deleteConfirm": "Konto und alle Daten wirklich endgültig löschen?",
+    "tab_overview": "Übersicht",
+    "tab_stats": "Statistik",
+    "tab_badges": "Abzeichen",
+    "tab_ranking": "Ranking",
+    "tab_learning": "Lernstand",
+    "tab_account": "Konto",
+    "pointsN": "{n} Punkte",
+    "kStreak": "Tage in Folge",
+    "kHours": "Stunden gelernt",
+    "kStickers": "Sticker und Abzeichen",
+    "kRank": "Platz diese Woche",
+    "latestStickers": "Deine neuesten Sticker",
+    "allStickers": "Alle ansehen",
+    "goToday": "Heute lernen",
+    "goMap": "Deine Lern-Landkarte",
+    "goCommunity": "Gemeinschaft"
   },
   "feedback": {
     "title": "Feedback & Wünsche",
