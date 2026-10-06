@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import AcademyHome from "@/components/AcademyHome";
 import RequireAccount from "@/components/RequireAccount";
 import { pageMeta } from "@/lib/site";
+import { MoreTiles } from "@/components/PosterTiles";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -26,11 +27,12 @@ export default async function AcademyPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const t = await getTranslations("academy");
   return (
+    <>
     <main className="mx-auto max-w-4xl px-4 pb-24 pt-8">
       <p className="eyebrow">{t("eyebrow")}</p>
       <h1 className="font-display mt-2 text-[40px] leading-[1.05] sm:text-6xl">{t("title")}</h1>
       <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted">{t("lead")}</p>
-      <RequireAccount feature="Academy"><AcademyHome /></RequireAccount>
+      <RequireAccount feature={t("title")}><AcademyHome /></RequireAccount>
       <section className="mt-12">
         <h2 className="text-xl font-bold">{t("modules")}</h2>
         <div className="mt-4 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2">
@@ -43,5 +45,7 @@ export default async function AcademyPage({ params }: { params: Promise<{ locale
         </div>
       </section>
     </main>
+    <MoreTiles keys={["shams", "arabic", "salah", "tajweed"]} />
+    </>
   );
 }

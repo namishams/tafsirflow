@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { TrustLine } from "@/components/TrustStrip";
 import PosterTiles from "@/components/PosterTiles";
+import { Divider, Ink } from "@/components/Ornaments";
 import { HOME_TILES } from "@/lib/tiles";
 import AppHeader from "@/components/AppHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -13,6 +14,7 @@ import VerseOfTheDay from "@/components/VerseOfTheDay";
 import { LOCALE_META } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
 import { abs, pageMeta } from "@/lib/site";
+import { ArrowNext } from "@/components/Icons";
 
 export const revalidate = 3600; // the verse of the day changes daily; the page refreshes hourly
 
@@ -36,6 +38,9 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
   setRequestLocale(locale);
   const t = await getTranslations();
   const n = routing.locales.length;
+  // numbers in the hero strip follow the visitor's language (6.236 in German, 6,236 in English); Latin digits like the rest of the page
+  const verses = (6236).toLocaleString(`${locale}-u-nu-latn`);
+  const free = (0).toLocaleString(`${locale}-u-nu-latn`, { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
   const chapters = await getChapters(locale).catch(() => []);
   const btnP = "inline-flex h-12 items-center rounded-md bg-accent px-6 text-[15px] font-bold text-white transition hover:brightness-110";
   const btnS = "inline-flex h-12 items-center rounded-md border border-ink px-6 text-[15px] font-bold transition hover:bg-ink hover:text-bg";
@@ -58,10 +63,11 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
       <main>
         {/* 1 Hero – cinematic, with an animated verse player (words light up one after another) */}
-        <section className="stage relative overflow-hidden text-[#eef0f3]">
+        <section className="stage girih relative overflow-hidden text-[#eef0f3]">
           <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 85% 15%, rgb(var(--gold) / .16) 0, transparent 40%), radial-gradient(circle at 10% 90%, rgb(var(--accent) / .22) 0, transparent 45%)" }} />
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
+              <p className="font-arabic mb-5 text-[26px] leading-none text-[rgb(var(--gold))] sm:text-[30px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>
               <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{t("home2.heroKicker", { n })}</p>
               <h1 className="font-display mt-5 text-[44px] leading-[1.02] sm:text-7xl">{t("home2.heroTitle")}</h1>
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70 sm:text-lg">{t("home2.heroLead")}</p>
@@ -72,7 +78,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
               <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[rgb(var(--gold))]/40 px-3 py-1 text-xs font-semibold text-[rgb(var(--gold))]">✓ {t("free.badge")}</p>
               <TrustLine className="mt-3 flex text-white/70" />
               <ul className="mt-6 grid max-w-lg grid-cols-2 gap-px overflow-hidden rounded-md border border-white/10 bg-white/10 sm:grid-cols-4">
-                {[["114", "home2.statSurahs"], ["6.236", "home2.statVerses"], [String(n), "home2.statLanguages"], ["0 €", "home2.statFree"]].map(([v, k]) => (
+                {[["114", "home2.statSurahs"], [verses, "home2.statVerses"], [String(n), "home2.statLanguages"], [free, "home2.statFree"]].map(([v, k]) => (
                   <li key={k} className="bg-stage px-4 py-3"><p className="font-display text-2xl">{v}</p><p className="text-xs text-white/55">{t(k)}</p></li>
                 ))}
               </ul>
@@ -97,15 +103,17 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         </section>
 
         {/* 1b Courses – poster cards like a class catalogue */}
-        <section className="stage pb-16 text-[#eef0f3] sm:pb-24">
+        <section className="stage girih pb-16 text-[#eef0f3] sm:pb-24">
           <div className="mx-auto max-w-6xl px-5">
             <div className="flex items-end justify-between gap-4 border-t border-white/10 pt-10">
-              <h2 className="font-display text-3xl leading-tight sm:text-4xl">{t("home2.coursesTitle")}</h2>
-              <Link href="/academy" className="shrink-0 text-sm font-semibold text-[rgb(var(--gold))] hover:underline">{t("home2.coursesAll")} →</Link>
+              <h2 className="font-display text-3xl leading-tight sm:text-4xl">{locale !== "ar" && <span aria-hidden className="font-callig gold-sheen mb-1 block text-[28px] leading-snug sm:text-[34px]" dir="rtl">دورات وأدوات</span>}{t("home2.coursesTitle")}</h2>
+              <Link href="/academy" className="shrink-0 text-sm font-semibold text-[rgb(var(--gold))] hover:underline">{t("home2.coursesAll")} <ArrowNext /></Link>
             </div>
             <PosterTiles keys={HOME_TILES} className="mt-6" />
           </div>
         </section>
+
+        <Divider className="py-10" />
 
         {/* 2 Verse of the day */}
         <VerseOfTheDay locale={locale} />

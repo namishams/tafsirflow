@@ -14,8 +14,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, id } = await params;
   const l = LESSONS.find((x) => x.id === id);
   if (!l) return {};
-  const title = l.title[locale === "de" ? "de" : "en"];
-  return { ...pageMeta(locale, `/arabic/${id}`, `${title} | Quran Masterclass`, l.goal[locale === "de" ? "de" : "en"]), robots: { index: false, follow: true } };
+  const lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
+  const title = l.title[lang] ?? l.title.en;
+  return { ...pageMeta(locale, `/arabic/${id}`, `${title} | Quran Masterclass`, l.goal[lang] ?? l.goal.en), robots: { index: false, follow: true } };
 }
 
 export default async function ArabicLessonPage({ params }: { params: Promise<{ locale: string; id: string }> }) {
@@ -23,9 +24,10 @@ export default async function ArabicLessonPage({ params }: { params: Promise<{ l
   setRequestLocale(locale);
   const l = LESSONS.find((x) => x.id === id);
   if (!l) notFound();
+  const lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
   return (
     <main className="mx-auto max-w-3xl px-4 pb-24 pt-4">
-      <RequireAccount feature={l.title[locale === "de" ? "de" : "en"]}><ArabicLesson id={id} /></RequireAccount>
+      <RequireAccount feature={l.title[lang] ?? l.title.en}><ArabicLesson id={id} /></RequireAccount>
     </main>
   );
 }

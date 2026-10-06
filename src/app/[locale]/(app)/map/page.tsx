@@ -27,7 +27,7 @@ export default async function MapPage({ params }: { params: Promise<{ locale: st
       <JsonLd data={ld} />
 
       {/* Hero + the map itself */}
-      <section className={`${dark} relative overflow-hidden`}>
+      <section className={`${dark} girih relative overflow-hidden`}>
         <div className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle at 85% 10%, rgb(var(--gold)) 0, transparent 40%)" }} />
         <div className="relative mx-auto max-w-6xl px-5 pb-14 pt-12 sm:pb-20 sm:pt-20">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">

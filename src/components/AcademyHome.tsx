@@ -1,5 +1,5 @@
 "use client";
-import { IconFlame } from "./Icons";
+import { IconFlame, ArrowNext } from "./Icons";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -51,7 +51,7 @@ export default function AcademyHome() {
 
       <Link href={`/academy/${nl.s}/${nl.from}`} className="mt-4 flex items-center justify-between gap-4 rounded-lg bg-ink p-5 text-bg hover:opacity-95">
         <span><span className="block text-xs font-semibold uppercase tracking-[0.12em] opacity-70">{t("continue")}</span><span className="mt-1 block text-xl font-bold">{name(nl.s)} · {nl.from}–{nl.to}</span></span>
-        <span className="text-2xl">→</span>
+        <span className="text-2xl"><ArrowNext /></span>
       </Link>
 
       {weak.length > 0 && (

@@ -38,7 +38,7 @@ export default function FeedbackBoard() {
   return (
     <div className="mt-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
+        <div className="flex flex-wrap gap-2">
           <button className={chip(cat === "")} onClick={() => setCat("")}>{t("all")}</button>
           {CATS.map((c) => <button key={c} className={chip(cat === c)} onClick={() => setCat(c)}>{t(`c_${c}`)}</button>)}
         </div>

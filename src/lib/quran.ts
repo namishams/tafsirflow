@@ -16,6 +16,27 @@ export const RECITERS: Reciter[] = [
   { id: 9, slug: "Minshawi", name: "Mohamed Siddiq Al-Minshawi", folder: "Minshawy_Murattal_128kbps" },
 ];
 
+// Arabic UI: reciters are shown with their Arabic names (the data keeps the everyayah/Latin names). Unknown reciters keep their name.
+const AR_RECITERS: [RegExp, string][] = [
+  [/husar/, "محمود خليل الحصري"], [/minshaw/, "محمد صديق المنشاوي"], [/abdul ?bas|abdelbas|abdulbaset/, "عبد الباسط عبد الصمد"],
+  [/alafasy|afasy|mishar/, "مشاري راشد العفاسي"], [/sudais|sudays/, "عبد الرحمن السديس"], [/shuraim|shuraym/, "سعود الشريم"],
+  [/muaiqly|muaiqaly|maher/, "ماهر المعيقلي"], [/ghamadi|ghamdi/, "سعد الغامدي"], [/dussary|dosari|dosary|dossari|yasser/, "ياسر الدوسري"],
+  [/hudhaify|hudhayfi|hudhaifi/, "علي الحذيفي"], [/ajamy|ajmi|ajami/, "أحمد العجمي"], [/basfar/, "عبد الله بصفر"],
+  [/shaatree|shatri|shatree/, "أبو بكر الشاطري"], [/hani ?rifai|rifai/, "هاني الرفاعي"], [/ayyoub|ayyub|ayoub/, "محمد أيوب"],
+  [/jibreel|jibril/, "محمد جبريل"], [/bukhatir/, "صلاح بوخاطر"], [/juhany|juhani|juhaynee/, "عبد الله عواد الجهني"],
+  [/banna/, "محمود علي البنا"], [/ali ?jaber/, "علي جابر"], [/tablaw/, "محمد الطبلاوي"], [/mustafa ?ismail/, "مصطفى إسماعيل"],
+  [/akhdar|akhdhar/, "إبراهيم الأخضر"], [/qatami|qatamy/, "ناصر القطامي"], [/baleela|baleelah/, "بندر بليلة"],
+  [/fares ?abbad|abbad/, "فارس عباد"], [/abkar/, "إدريس أبكر"], [/rifat|refat/, "محمد رفعت"], [/shaashai|shaashaee/, "عبد الفتاح الشعشاعي"],
+  [/budair|bader/, "صلاح البدير"], [/tunaiji|tanaiji/, "خليفة الطنيجي"], [/qasim|qasem/, "عبد المحسن القاسم"], [/khayat|khayyat/, "عبد الله خياط"],
+];
+export function reciterName(r: { slug?: string; folder?: string; name: string }, locale: string): string {
+  if (locale !== "ar") return r.name;
+  const key = `${r.slug ?? ""} ${r.folder ?? ""} ${r.name}`.toLowerCase().replace(/[_\-]+/g, " ");
+  const hit = AR_RECITERS.find(([re]) => re.test(key));
+  if (!hit) return r.name;
+  return hit[1] + (/mujawwad/.test(key) ? " – مجوَّد" : "");
+}
+
 export type Resource = { id: number; name: string; author_name: string; language_name: string };
 
 // Preferred translation per language (see the project brief); other languages use the first one Quran.com offers.
@@ -118,12 +139,36 @@ export function pickTranslation(locale: string, translations: Resource[]): numbe
   return translations.find((t) => t.language_name?.toLowerCase() === lang)?.id ?? PREFERRED_TRANSLATION.en;
 }
 
+// Arabic UI: tafsir names and authors in Arabic (Quran.com lists them in English). Unknown ones keep Quran.com's name.
+const AR_TAFSIR: [RegExp, string, string][] = [
+  [/muyassar/i, "التفسير الميسر", "مجمع الملك فهد لطباعة المصحف الشريف"],
+  [/jalalayn|jalalain/i, "تفسير الجلالين", "جلال الدين المحلي وجلال الدين السيوطي"],
+  [/ibn kathir|ibn katheer|ibn kasir/i, "تفسير ابن كثير", "الحافظ ابن كثير"],
+  [/tabari|tabary/i, "تفسير الطبري", "الإمام الطبري"],
+  [/qurtubi|qurtabi/i, "تفسير القرطبي", "الإمام القرطبي"],
+  [/sa'?di|saadi|saddi|sa‘di/i, "تفسير السعدي", "الشيخ عبد الرحمن السعدي"],
+  [/baghawi|baghawy/i, "تفسير البغوي", "الإمام البغوي"],
+  [/wasit|waseet/i, "التفسير الوسيط", "الشيخ محمد سيد طنطاوي"],
+  [/razi/i, "مفاتيح الغيب", "الإمام فخر الدين الرازي"],
+  [/zamakhshari|kashsh?af/i, "الكشاف", "الإمام الزمخشري"],
+  [/ma'?arif/i, "معارف القرآن", "المفتي محمد شفيع"],
+  [/tazkir/i, "تذكير القرآن", "وحيد الدين خان"],
+];
+function localizeTafsir(t: Resource, locale: string): Resource {
+  if (locale !== "ar") return t;
+  const hit = AR_TAFSIR.find(([re]) => re.test(t.name));
+  if (!hit) return t;
+  const abridged = /abridged/i.test(t.name) ? " (مختصر)" : "";
+  const inEnglish = t.language_name?.toLowerCase() === "english" ? " – بالإنجليزية" : "";
+  return { ...t, name: `${hit[1]}${abridged}${inEnglish}`, author_name: hit[2] };
+}
+
 export function tafsirOptionsFor(locale: string, tafsirs: Resource[]): { options: Resource[]; hasLocal: boolean } {
   const lang = localeMeta(locale).resourceLang;
   const local = tafsirs.filter((t) => t.language_name?.toLowerCase() === lang);
   if (lang === "english") return { options: local, hasLocal: local.length > 0 };
   const fallback = ENGLISH_FALLBACK_TAFSIRS.map((id) => tafsirs.find((t) => t.id === id)).filter((t): t is Resource => !!t);
-  return { options: [...local, ...fallback], hasLocal: local.length > 0 };
+  return { options: [...local, ...fallback].map((t) => localizeTafsir(t, locale)), hasLocal: local.length > 0 };
 }
 
 export function localAudioUrl(reciter: Reciter, chapter: number, verse: number): string {
@@ -149,7 +194,8 @@ export async function getVerses(chapter: number, locale: string, reciter: Recite
     verse_key: v.verse_key,
     verse_number: v.verse_number,
     text_uthmani: v.text_uthmani,
-    words: v.words,
+    // Arabic: Quran.com's word-by-word meanings and transcriptions are English/Latin, so they are not passed on
+    words: locale === "ar" ? (v.words ?? []).map((w: Word) => ({ ...w, translation: undefined, transliteration: undefined })) : v.words,
     // Arabic readers read the original: no Latin transcription and no "translation" (Arabic tafsir is offered instead)
     transliteration: locale === "ar" ? "" : (v.words ?? [])
       .filter((w: Word) => w.char_type_name === "word")

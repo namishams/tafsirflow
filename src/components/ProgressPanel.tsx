@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { dayPlan, learner, type DayPlan, type Learner } from "@/lib/coach";
 import { LESSONS as ARABIC_LESSONS, readArabic } from "@/lib/arabic";
 import { getChapters, type Chapter } from "@/lib/quran";
+import { ArrowNext } from "./Icons";
 
 // Reads the learner model on the device and refreshes it after a sync or when the tab gets focus
 function useCoach() {
@@ -69,8 +70,8 @@ export function CoachCard() {
       </ul>
       <p className="mt-3 text-[13px] text-muted">{t("nextBody", { surah: name(plan.next.surah), v: plan.next.verse })}</p>
       <div className="mt-4 flex flex-wrap items-center gap-3">
-        <Link href={href} className="btn-gold inline-flex h-11 items-center rounded-full px-5 text-[14px] font-bold">{t("startPlan")} →</Link>
-        <Link href="/profile" className="text-[13px] font-semibold text-accent hover:underline">{t("title")} →</Link>
+        <Link href={href} className="btn-gold inline-flex h-11 items-center rounded-full px-5 text-[14px] font-bold">{t("startPlan")} <ArrowNext /></Link>
+        <Link href="/profile" className="text-[13px] font-semibold text-accent hover:underline">{t("title")} <ArrowNext /></Link>
       </div>
       {L.learned > 0 && <div className="mt-5 border-t border-line pt-4"><p className="mb-2 text-xs font-semibold text-muted">{t("forecast")}</p><Forecast days={L.forecast} /></div>}
     </section>
@@ -98,7 +99,7 @@ export default function ProgressPanel() {
         <div className="min-w-0">
           <h2 className="font-display text-2xl">{t("title")}</h2>
           <p className="mt-1 text-[14px] text-white/70">{L.learned ? t("learnedN", { n: L.learned, solid: L.solid, done: L.complete.length }) : t("empty")}</p>
-          <Link href={verseHref(L.next.surah, L.next.verse)} className="btn-gold mt-4 inline-flex h-11 items-center rounded-full px-5 text-[14px] font-bold">{t("nextBody", { surah: name(L.next.surah), v: L.next.verse })} →</Link>
+          <Link href={verseHref(L.next.surah, L.next.verse)} className="btn-gold mt-4 inline-flex h-11 items-center rounded-full px-5 text-[14px] font-bold">{t("nextBody", { surah: name(L.next.surah), v: L.next.verse })} <ArrowNext /></Link>
           <p className="mt-2 text-[11px] text-white/45">{t("noBasmala")}</p>
         </div>
       </div>

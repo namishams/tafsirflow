@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { pageMeta } from "@/lib/site";
+import { MoreTiles } from "@/components/PosterTiles";
+import { ArrowNext } from "@/components/Icons";
 
 // Rounded estimates for 2010 from the Pew Research Center ("The Future of the Global Muslim Population", 2011);
 // projection for 2050 from Pew ("The Future of World Religions", 2015). Shown as orientation, not as exact census data.
@@ -62,7 +64,7 @@ export default async function WorldPage({ params }: { params: Promise<{ locale: 
   const nf = new Intl.NumberFormat(locale, { maximumFractionDigits: 1 });
   return (
     <div>
-      <section className="stage text-[#eef0f3]">
+      <section className="stage girih text-[#eef0f3]">
         <div className="mx-auto max-w-5xl px-5 py-14 sm:py-20">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
           <h1 className="font-display mt-4 max-w-3xl text-[36px] leading-[1.06] sm:text-6xl">{c.title}</h1>
@@ -108,12 +110,13 @@ export default async function WorldPage({ params }: { params: Promise<{ locale: 
           <div>
             <h2 className="font-display text-2xl">{c.schools}</h2>
             <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-muted">{c.schoolsBody}</p>
-            <Link href="/islam/sunni-shia" className="mt-2 inline-block text-sm font-bold text-accent hover:underline">{c.schoolsLink} →</Link>
+            <Link href="/islam/sunni-shia" className="mt-2 inline-block text-sm font-bold text-accent hover:underline">{c.schoolsLink} <ArrowNext /></Link>
           </div>
           <Link href="/arabic" className="btn-gold inline-flex h-12 items-center justify-center rounded-full px-6 text-[15px] font-bold">{c.learn}</Link>
         </section>
         <p className="mt-10 text-xs leading-relaxed text-muted">{c.note}</p>
       </div>
+      <MoreTiles keys={["islam", "salah", "arabic", "assistant"]} />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Markdown from "@/components/Markdown";
 import JsonLd from "@/components/JsonLd";
 import { aboutContent } from "@/lib/aboutContent";
 import { abs, pageMeta } from "@/lib/site";
+import { MoreTiles } from "@/components/PosterTiles";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -24,7 +25,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <JsonLd data={ld} />
 
       {/* Hero */}
-      <section className={`${dark} relative overflow-hidden`}>
+      <section className={`${dark} girih relative overflow-hidden`}>
         <div className="pointer-events-none absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "radial-gradient(circle at 15% 0%, rgb(var(--gold)) 0, transparent 45%)" }} />
         <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.eyebrow}</p>
@@ -56,7 +57,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Dubai and the Quran */}
-      <section className={`${dark} relative overflow-hidden`}>
+      <section className={`${dark} girih relative overflow-hidden`}>
         <div className="pointer-events-none absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 90% 30%, rgb(var(--gold)) 0, transparent 40%)" }} />
         <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.dubaiEyebrow}</p>
@@ -117,6 +118,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <Link href="/feedback" className="inline-flex h-11 items-center rounded-md border border-line px-5 text-sm font-bold hover:border-ink">{t("ctaFeedback")}</Link>
         </div>
       </section>
+      <MoreTiles keys={["how", "shams", "courses", "islam"]} />
     </div>
   );
 }

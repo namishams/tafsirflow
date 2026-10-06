@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { pageMeta } from "@/lib/site";
+import { PosterGrid, TONES } from "@/components/PosterTiles";
+import { tileFor } from "@/lib/tiles";
+import { ArrowNext } from "@/components/Icons";
 
 type Step = { n: string; title: string; body: string; href: string; cta: string; time: string };
 type C = { kicker: string; title: string; lead: string; stepsTitle: string; steps: Step[]; toolsTitle: string; tools: [string, string, string][]; dayTitle: string; day: [string, string][]; start: string };
@@ -72,9 +75,11 @@ export default async function HowPage({ params }: { params: Promise<{ locale: st
   const { locale } = await params;
   setRequestLocale(locale);
   const c = content(locale);
+  const tr = await getTranslations("home2");
+  const tools = c.tools.map(([href, title, desc], i) => { const x = tileFor(href); return { href, title, desc, badge: tr(`badge_${x?.badge ?? "course"}`), ar: x?.ar ?? "علم", bg: x?.bg ?? TONES[i % TONES.length], cta: tr("open") }; });
   return (
     <div>
-      <section className="stage text-[#eef0f3]">
+      <section className="stage girih text-[#eef0f3]">
         <div className="mx-auto max-w-5xl px-5 py-14 sm:py-20">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
           <h1 className="font-display mt-4 max-w-3xl text-[38px] leading-[1.06] sm:text-6xl">{c.title}</h1>
@@ -90,7 +95,7 @@ export default async function HowPage({ params }: { params: Promise<{ locale: st
               <div className="min-w-0 flex-1 rounded-xl border border-line bg-surface p-4 sm:p-5">
                 <div className="flex flex-wrap items-baseline justify-between gap-2"><h3 className="text-lg font-bold">{s.title}</h3><span className="text-xs text-muted">{s.time}</span></div>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.body}</p>
-                <Link href={s.href} className="mt-3 inline-block text-sm font-bold text-accent hover:underline">{s.cta} →</Link>
+                <Link href={s.href} className="mt-3 inline-block text-sm font-bold text-accent hover:underline">{s.cta} <ArrowNext /></Link>
               </div>
             </li>
           ))}
@@ -102,11 +107,9 @@ export default async function HowPage({ params }: { params: Promise<{ locale: st
           {c.day.map(([m, d]) => <li key={m} className="bg-surface p-4"><p className="font-display text-2xl text-gold">{m}</p><p className="mt-1 text-sm leading-relaxed text-muted">{d}</p></li>)}
         </ol>
       </section>
-      <section className="mx-auto max-w-5xl px-5 pb-16">
+      <section className="mx-auto max-w-6xl px-5 pb-16">
         <h2 className="font-display text-3xl">{c.toolsTitle}</h2>
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {c.tools.map(([h, t, d]) => <li key={h}><Link href={h} className="block h-full rounded-xl border border-line bg-surface p-4 transition hover:border-gold/60"><p className="font-bold">{t}</p><p className="mt-1 text-sm text-muted">{d}</p></Link></li>)}
-        </ul>
+        <PosterGrid items={tools} className="mt-6" />
         <div className="mt-10 text-center"><Link href="/today" className="btn-gold inline-flex h-12 items-center rounded-full px-7 text-[15px] font-bold">{c.start}</Link></div>
       </section>
     </div>

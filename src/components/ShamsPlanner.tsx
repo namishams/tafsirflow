@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // How long a goal takes at a given daily amount (new verses per day; reviews come on top)
 const GOALS = [
@@ -14,6 +14,7 @@ const PER_DAY = [1, 3, 5, 10, 20];
 
 export default function ShamsPlanner() {
   const t = useTranslations("shams");
+  const locale = useLocale();
   const [goal, setGoal] = useState<(typeof GOALS)[number]["id"]>("juzamma");
   const [per, setPer] = useState(3);
   const g = GOALS.find((x) => x.id === goal)!;
@@ -28,7 +29,7 @@ export default function ShamsPlanner() {
       <p className="mt-5 text-sm font-semibold text-muted">{t("planPer")}</p>
       <div className="mt-2 flex flex-wrap gap-2">{PER_DAY.map((n) => <button key={n} onClick={() => setPer(n)} className={chip(per === n)}>{n}</button>)}</div>
       <div className="mt-6 grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-3">
-        <div className="bg-bg p-4"><p className="text-xs text-muted">{t("planVerses")}</p><p className="font-display mt-1 text-2xl">{g.verses.toLocaleString()}</p></div>
+        <div className="bg-bg p-4"><p className="text-xs text-muted">{t("planVerses")}</p><p className="font-display mt-1 text-2xl">{g.verses.toLocaleString(`${locale}-u-nu-latn`)}</p></div>
         <div className="bg-bg p-4"><p className="text-xs text-muted">{t("planTime")}</p><p className="font-display mt-1 text-2xl">{span}</p></div>
         <div className="bg-bg p-4"><p className="text-xs text-muted">{t("planDaily")}</p><p className="font-display mt-1 text-2xl">≈ {minutes} {t("min")}</p></div>
       </div>

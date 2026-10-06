@@ -6,6 +6,8 @@ import { RECITERS, getResources, getVerseByKey, localAudioUrl, pickTranslation, 
 import { DUA_GROUPS } from "@/lib/duas";
 import SunnahDuas from "@/components/SunnahDuas";
 import { pageMeta } from "@/lib/site";
+import { MoreTiles } from "@/components/PosterTiles";
+import { ArrowNext } from "@/components/Icons";
 
 export const revalidate = 86400;
 
@@ -24,6 +26,7 @@ export default async function DuasPage({ params }: { params: Promise<{ locale: s
   const load = async (k: string): Promise<SingleVerse | null> => { try { return await getVerseByKey(k, locale, tid); } catch { return null; } };
   const groups = await Promise.all(DUA_GROUPS.map(async (g) => ({ id: g.id, items: await Promise.all(g.verses.map(async (k) => ({ key: k, v: await load(k) }))) })));
   return (
+    <>
     <main className="mx-auto max-w-3xl px-4 pb-20 pt-6">
       <h1 className="font-display text-[34px] leading-none">{t("title")}</h1>
       <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted">{t("lead")}</p>
@@ -54,7 +57,7 @@ export default async function DuasPage({ params }: { params: Promise<{ locale: s
                   {v!.translation && <p className="mt-2 text-[15px] leading-relaxed text-muted">{v!.translation.replace(/<[^>]+>/g, "")}</p>}
                   <div className="mt-4 flex flex-wrap items-center gap-3">
                     <VerseAudio src={localAudioUrl(RECITERS[0], s, a)} label={t("listen")} />
-                    <Link href={`/surah/${s}?v=${a}`} className="text-sm font-bold text-accent hover:underline">{key} →</Link>
+                    <Link href={`/surah/${s}?v=${a}`} className="text-sm font-bold text-accent hover:underline">{key} <ArrowNext /></Link>
                   </div>
                 </li>
               );
@@ -64,5 +67,7 @@ export default async function DuasPage({ params }: { params: Promise<{ locale: s
       ))}
       <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted">{t("note")}</p>
     </main>
+    <MoreTiles keys={["salah", "prayer", "islam", "radio"]} />
+    </>
   );
 }

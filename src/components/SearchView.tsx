@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { searchVerses, type SearchHit } from "@/lib/quran";
@@ -12,12 +12,17 @@ export default function SearchView() {
   const [hits, setHits] = useState<SearchHit[] | null>(null);
   const [busy, setBusy] = useState(false);
 
-  const go = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (q.trim().length < 2) return;
+  const run = async (text: string) => {
+    if (text.trim().length < 2) return;
     setBusy(true);
-    try { setHits(await searchVerses(q.trim(), locale)); } catch { setHits([]); } finally { setBusy(false); }
+    try { setHits(await searchVerses(text.trim(), locale)); } catch { setHits([]); } finally { setBusy(false); }
   };
+  const go = (e: React.FormEvent) => { e.preventDefault(); void run(q); };
+  // /search?q=rahma runs the search right away
+  useEffect(() => {
+    const init = new URLSearchParams(window.location.search).get("q");
+    if (init) { setQ(init); void run(init); }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const strip = (s: string) => s.replace(/<[^>]+>/g, "");
 
   return (

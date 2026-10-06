@@ -1,10 +1,23 @@
 // What changed on Quran Masterclass – newest first. Add an entry with every release.
-export type Release = { date: string; title_en: string; title_de: string; items_en: string[]; items_de: string[] };
+// title_ar / items_ar: Arabic version (optional – a missing one falls back to English)
+export type Release = { date: string; title_en: string; title_de: string; items_en: string[]; items_de: string[]; title_ar?: string; items_ar?: string[] };
 export const CHANGELOG: Release[] = [
   {
     date: "2026-10-06",
     title_en: "Academy, Shams Method and account-first learning",
     title_de: "Academy, Shams-Methode und Lernen über das Konto",
+    title_ar: "الأكاديمية ومنهج شمس والتعلّم عبر الحساب",
+    items_ar: [
+      "منهج شمس: سبع خطوات موجَّهة لكل آية – الاستماع، والبناء من الآخر بحسب توقيت الكلمات، وكلمة بكلمة، والمعنى مع وسائل التذكّر، والتفسير، وتلاشي الحروف الأولى، والتدبّر.",
+      "الأكاديمية: مسار تعلّم عبر السور الـ114 كلها، باختبارات موقوتة ومستويات وسلاسل أيام وهدف يومي ينمو معك.",
+      "خطط لـ365 يومًا بمقادير يومية متدرّجة، من الخطة الهادئة حتى مسار الحافظ.",
+      "دورة تجويد من 14 درسًا، ومدرّب لمفردات القرآن، ومخطط للختمة، و10 أدلة موسّعة.",
+      "109 أدعية للنبي ﷺ مع مصادرها، إضافةً إلى أدعية القرآن الكريم.",
+      "صفحة الملف الشخصي مع الإحصاءات وتصدير البيانات وحذف الحساب؛ ويتكيّف المنهج مع عمرك.",
+      "تستمر الإذاعة وتشغيل الآيات أثناء تصفّحك، مع مشغّل مصغّر دائم.",
+      "التعليقات والإعجابات والمشاركة على الآيات – وكل تعليق يُراجَع قبل ظهوره.",
+      "أمان أقوى: ترويسات أمان، وكلمات مرور أشد، وحماية من تخمين كلمات المرور.",
+    ],
     items_en: [
       "The Shams Method: seven guided steps per verse – listen, build up backwards using word timings, word by word, meaning and memory hooks, tafsir, fading first-letter cues, reflection.",
       "Academy: a learning path through all 114 surahs with timed tests, levels, streaks and a daily goal that grows.",
@@ -32,6 +45,8 @@ export const CHANGELOG: Release[] = [
     date: "2026-10-05",
     title_en: "Prayer times, Quran radio and 13 languages",
     title_de: "Gebetszeiten, Koran-Radio und 13 Sprachen",
+    title_ar: "أوقات الصلاة وإذاعة القرآن و13 لغة",
+    items_ar: ["أوقات الصلاة لموقعك وللمدن الكبرى، مع التاريخ الهجري.", "إذاعة القرآن بمحطاتها ومؤقّت النوم والأذان عند دخول وقت الصلاة.", "واجهة بـ13 لغة، منها العربية والتركية والأردية والفارسية والبشتو والبنغالية."],
     items_en: ["Prayer times for your location and major cities, with Hijri date.", "Quran radio with stations, sleep timer and adhan at prayer time.", "Interface in 13 languages including Arabic, Turkish, Urdu, Persian, Pashto and Bengali."],
     items_de: ["Gebetszeiten für deinen Ort und große Städte, mit Hidschri-Datum.", "Koran-Radio mit Sendern, Einschlaf-Timer und Adhan zur Gebetszeit.", "Oberfläche in 13 Sprachen, darunter Arabisch, Türkisch, Urdu, Persisch, Paschtu und Bengalisch."],
   },

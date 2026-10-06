@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { PRAYERS, buildPrayer, type Posture, type Tradition } from "@/lib/salah";
+import { ArrowNext } from "./Icons";
 
 type Lang = "de" | "en" | "ar";
 type Tx = { de: string; en: string; ar?: string };
@@ -54,10 +55,10 @@ function usePoseAnimation(target: Posture) {
 }
 const line = (...pts: P[]) => pts.map((p) => p.join(",")).join(" ");
 
-function Figure({ posture, qibla }: { posture: Posture; qibla: string }) {
+function Figure({ posture, qibla, label }: { posture: Posture; qibla: string; label: string }) {
   const p = usePoseAnimation(posture);
   return (
-    <svg viewBox="0 0 240 230" className="h-full w-full" role="img" aria-label={posture}>
+    <svg viewBox="0 0 240 230" className="h-full w-full" role="img" aria-label={label}>
       <defs><linearGradient id="mat" x1="0" x2="1"><stop offset="0" stopColor="rgb(214 180 108 / 0.35)" /><stop offset="1" stopColor="rgb(214 180 108 / 0.15)" /></linearGradient></defs>
       {/* prayer mat and qibla */}
       <rect x="40" y="209" width="160" height="7" rx="2" fill="url(#mat)" />
@@ -92,7 +93,7 @@ export default function PrayerTrainer() {
   const [auto, setAuto] = useState(false);
   const [list, setList] = useState(false);
   useEffect(() => { setI(0); setAuto(false); }, [prayer, tradition]);
-  const step = steps[i];
+  const step = steps[Math.min(i, steps.length - 1)]; // i still points past the end for one render after switching to a shorter prayer
   const rakat = PRAYERS.find((p) => p.id === prayer)!.rakat;
   useEffect(() => {
     if (!auto) return;
@@ -110,7 +111,7 @@ export default function PrayerTrainer() {
         <div className="flex gap-2" role="tablist">
           {(["sunni", "shia"] as const).map((t) => <button key={t} role="tab" aria-selected={tradition === t} onClick={() => setTradition(t)} className={chip(tradition === t)}>{u[t]}</button>)}
         </div>
-        <div className="-mx-1 flex gap-2 overflow-x-auto px-1">
+        <div className="flex flex-wrap gap-2">
           {PRAYERS.map((p) => <button key={p.id} onClick={() => setPrayer(p.id)} className={chip(prayer === p.id)}>{tx(p.name)} · {p.rakat}</button>)}
         </div>
       </div>
@@ -118,7 +119,7 @@ export default function PrayerTrainer() {
       <div className="grid gap-0 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="relative border-b border-white/10 p-4 md:border-b-0 md:border-e">
           <div className="absolute start-4 top-4 rounded-full bg-white/10 px-3 py-1 text-xs font-bold">{u.rakah} {Math.min(step.rakah, rakat)} {u.of} {rakat}</div>
-          <div className="mx-auto aspect-square max-w-[360px] text-white"><Figure posture={step.posture} qibla={u.qibla} /></div>
+          <div className="mx-auto aspect-square max-w-[360px] text-white"><Figure posture={step.posture} qibla={u.qibla} label={tx(step.title)} /></div>
           <div className="mt-2 flex justify-center gap-1.5">{Array.from({ length: rakat }, (_, k) => <span key={k} className={`h-1.5 w-8 rounded-full ${k + 1 < step.rakah ? "bg-[rgb(var(--gold))]" : k + 1 === step.rakah ? "bg-white" : "bg-white/15"}`} />)}</div>
         </div>
 
@@ -147,7 +148,7 @@ export default function PrayerTrainer() {
             {steps.map((s, k) => <li key={k}><button onClick={() => { setAuto(false); setI(k); }} className={`w-full rounded px-2 py-1 text-start ${k === i ? "bg-white/15 font-bold" : "text-white/70 hover:bg-white/5"}`}>{k + 1}. {tx(s.title)} <span className="text-white/40">· {u.rakah} {Math.min(s.rakah, rakat)}</span></button></li>)}
           </ol>
         )}
-        <p className="mt-4 text-xs leading-relaxed text-white/55">{u.note} <Link href="/surah/1?shams=1" className="font-semibold text-[rgb(var(--gold))] underline-offset-2 hover:underline">{u.learnFatiha} →</Link></p>
+        <p className="mt-4 text-xs leading-relaxed text-white/55">{u.note} <Link href="/surah/1?shams=1" className="font-semibold text-[rgb(var(--gold))] underline-offset-2 hover:underline">{u.learnFatiha} <ArrowNext /></Link></p>
       </div>
     </div>
   );

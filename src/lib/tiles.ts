@@ -24,3 +24,5 @@ export const TILES: Record<string, Tile> = {
 };
 
 export const HOME_TILES = ["shams", "courses", "arabic", "salah", "islam", "tajweed", "plan", "vocab", "reciters", "radio", "duas", "map"];
+
+export const tileFor = (href: string) => Object.values(TILES).find((t) => t.href === href || href.startsWith(`${t.href}/`) || href.startsWith(`${t.href}?`));

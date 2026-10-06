@@ -4,8 +4,10 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import Markdown from "@/components/Markdown";
+import { MoreTiles } from "@/components/PosterTiles";
 import { ISLAM, islamDoc, islamUi, loadChapter, loadChapters, readingMinutes } from "@/lib/islam";
 import { abs, pageMeta } from "@/lib/site";
+import { ArrowNext, ArrowBack } from "@/components/Icons";
 
 export function generateStaticParams() {
   return ISLAM.map((d) => ({ slug: d.slug }));
@@ -47,10 +49,10 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
   return (
     <div>
       <JsonLd data={ld} />
-      <section className="stage relative overflow-hidden text-[#eef0f3]">
-        <p aria-hidden className="font-arabic pointer-events-none absolute -end-4 -top-4 select-none text-[140px] leading-none text-[rgb(var(--gold))] opacity-[0.08] sm:text-[220px]" dir="rtl">{d.arabic}</p>
+      <section className="stage girih relative overflow-hidden text-[#eef0f3]">
+        <p aria-hidden className="font-callig pointer-events-none absolute -end-4 -top-4 select-none text-[140px] leading-none text-[rgb(var(--gold))] opacity-[0.08] sm:text-[220px]" dir="rtl">{d.arabic}</p>
         <div className="relative mx-auto max-w-6xl px-5 py-14 sm:py-20">
-          <Link href="/islam" className="text-sm font-semibold text-white/60 hover:text-white">← {u.back}</Link>
+          <Link href="/islam" className="text-sm font-semibold text-white/60 hover:text-white"><ArrowBack /> {u.back}</Link>
           <p className="mt-6 text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{u.chapter} {i + 1} · {c.kicker}</p>
           <h1 className="font-display mt-3 max-w-4xl text-[40px] leading-[1.05] sm:text-6xl">{c.title}</h1>
           <p className="mt-5 max-w-2xl text-[18px] leading-relaxed text-white/70">{c.lead}</p>
@@ -84,8 +86,8 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
           </section>
 
           <nav className="mt-12 grid gap-3 sm:grid-cols-2">
-            {prev ? <Link href={`/islam/${prev.slug}`} className="rounded-lg border border-line bg-surface p-4 hover:border-ink"><span className="text-xs text-muted">← {u.prev}</span><span className="mt-1 block font-bold">{all[i - 1].title}</span></Link> : <span />}
-            {next && <Link href={`/islam/${next.slug}`} className="rounded-lg border border-line bg-surface p-4 text-end hover:border-ink"><span className="text-xs text-muted">{u.next} →</span><span className="mt-1 block font-bold">{all[i + 1].title}</span></Link>}
+            {prev ? <Link href={`/islam/${prev.slug}`} className="rounded-lg border border-line bg-surface p-4 hover:border-ink"><span className="text-xs text-muted"><ArrowBack /> {u.prev}</span><span className="mt-1 block font-bold">{all[i - 1].title}</span></Link> : <span />}
+            {next && <Link href={`/islam/${next.slug}`} className="rounded-lg border border-line bg-surface p-4 text-end hover:border-ink"><span className="text-xs text-muted">{u.next} <ArrowNext /></span><span className="mt-1 block font-bold">{all[i + 1].title}</span></Link>}
           </nav>
         </article>
 
@@ -107,7 +109,9 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
         </aside>
       </div>
 
-      <section className="stage text-[#eef0f3]">
+      <MoreTiles keys={["salah", "arabic", "shams", "duas"]} />
+
+      <section className="stage girih text-[#eef0f3]">
         <div className="mx-auto max-w-4xl px-5 py-14 text-center">
           <h2 className="font-display text-3xl sm:text-4xl">{u.ctaTitle}</h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/70">{u.ctaBody}</p>

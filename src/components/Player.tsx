@@ -8,6 +8,7 @@ import AccountLink from "./AccountLink";
 import AuthGate from "./AuthGate";
 import SocialBar from "./SocialBar";
 import SurahPicker from "./SurahPicker";
+import { Ink, SurahBanner } from "./Ornaments";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume, IconFlame } from "./Icons";
 import {
@@ -592,14 +593,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     <div className="pb-64 lg:pb-48" style={{ ["--ar-scale" as string]: arSize }}>
       <div className={`mx-auto px-4 ${kids ? "max-w-3xl" : "max-w-6xl lg:grid lg:grid-cols-[1fr_25rem] lg:gap-8"}`}>
         <main className="min-w-0">
-          <section className="mb-8 mt-10 border-b border-line pb-8">
+          <section className="mb-8 mt-8 border-b border-line pb-8 text-center">
             <p className="eyebrow">{th("surahLabel", { n: chapter.id })} · {chapter.verses_count} {th("verses")}</p>
-            <div className="mt-3 flex items-end justify-between gap-4">
-              <h1 className="font-display text-5xl leading-none sm:text-6xl">{chapter.name_simple}</h1>
-              <span className="font-arabic text-5xl leading-none sm:text-6xl" dir="rtl">{chapter.name_arabic}</span>
-            </div>
-            <p className="mt-3 text-muted">{chapter.translated_name.name}</p>
-            {withBismillah && <p className="font-arabic mt-8 text-center text-3xl text-muted" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>}
+            <SurahBanner arabic={`سورة ${chapter.name_arabic}`} className="mt-4" />
+            <h1 className={locale === "ar" ? "sr-only" : "font-display mt-5 text-3xl leading-none sm:text-4xl"}>{chapter.name_simple}</h1>
+            {chapter.translated_name.name && <p className="mt-2 text-muted">{chapter.translated_name.name}</p>}
+            {withBismillah && <p className="font-arabic mt-7 text-[30px] leading-loose text-ink/85 sm:text-[34px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>}
           </section>
 
           <div className="mb-6">
@@ -818,9 +817,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                           {!kids && <button onClick={startShams} className="btn-gold ms-auto inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-full px-4 text-[13px] font-bold sm:w-auto"><Sun className="h-3.5 w-3.5" />{t("toolShams")}</button>}
                         </div>
                         {tool === "practice" && (
-                          <div className="-mx-5 mt-3 flex items-center gap-2 overflow-x-auto px-5 pb-0.5 text-[13px]">
+                          <div className="mt-3 flex flex-wrap items-center gap-2 text-[13px]">
                             <span className="shrink-0 text-muted">{t("hideLabel")}</span>
-                            <div className="inline-flex shrink-0 rounded-full bg-bg p-1">
+                            <div className="inline-flex flex-wrap rounded-full bg-bg p-1">
                               {([[5, "hideSoft"], [1, "hideHalf"], [4, "hideRandom"], [2, "hideHard"]] as const).map(([h, k]) => (
                                 <button key={h} className={seg(hide === h)} onClick={() => { if (h === 4 && hide === 4) setSeed((x) => x + 1); setHide(h); setPracticeHide(h); }}>{t(k)}</button>
                               ))}

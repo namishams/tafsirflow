@@ -1,5 +1,5 @@
 "use client";
-import { IconFlame, IconSpeaker, IconStarBig, IconTrophy } from "./Icons";
+import { IconFlame, IconSpeaker, IconStarBig, IconTrophy, ArrowNext } from "./Icons";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -100,8 +100,8 @@ export default function ArabicLesson({ id }: { id: string }) {
         </div>
         {!passed && <p className="mt-5 text-[15px] text-muted">{t.needPass}</p>}
         <div className="mt-8 grid gap-3">
-          {passed && next && <Link href={`/arabic/${next.id}`} className="btn-gold inline-flex h-12 items-center justify-center rounded-md text-[15px] font-bold">{t.nextLesson} →</Link>}
-          {passed && !next && <Link href="/surah/1?shams=1" className="btn-gold inline-flex h-12 items-center justify-center rounded-md text-[15px] font-bold">{t.readQuran} →</Link>}
+          {passed && next && <Link href={`/arabic/${next.id}`} className="btn-gold inline-flex h-12 items-center justify-center rounded-md text-[15px] font-bold">{t.nextLesson} <ArrowNext /></Link>}
+          {passed && !next && <Link href="/surah/1?shams=1" className="btn-gold inline-flex h-12 items-center justify-center rounded-md text-[15px] font-bold">{t.readQuran} <ArrowNext /></Link>}
           <button onClick={() => setSeed((n) => n + 1)} className="h-12 rounded-md border border-line bg-surface text-[15px] font-bold hover:border-ink">{t.again}</button>
           <Link href="/arabic" className="text-sm font-semibold text-muted hover:text-ink">{t.overview}</Link>
         </div>

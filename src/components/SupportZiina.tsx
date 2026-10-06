@@ -1,5 +1,5 @@
 "use client";
-import { IconLock } from "./Icons";
+import { IconLock, ArrowNext } from "./Icons";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
@@ -57,7 +57,7 @@ export default function SupportZiina() {
               ))}
             </ol>
             <div className="mt-5 flex flex-wrap gap-2">
-              <a href={cfg.link} target="_blank" rel="noopener noreferrer" className="btn-gold inline-flex h-12 items-center justify-center rounded-lg px-6 text-[15px] font-bold max-sm:w-full">{t("link")} →</a>
+              <a href={cfg.link} target="_blank" rel="noopener noreferrer" className="btn-gold inline-flex h-12 items-center justify-center rounded-lg px-6 text-[15px] font-bold max-sm:w-full">{t("link")} <ArrowNext /></a>
               <button onClick={copy} className="inline-flex h-12 items-center rounded-lg border border-white/20 px-4 text-sm font-semibold text-white/80 hover:border-white/40 max-sm:w-full max-sm:justify-center">{copied ? t("copied") : t("copy")}</button>
             </div>
             <p className="mt-3 text-xs text-white/45" dir="ltr">{cfg.link.replace(/^https:\/\//, "")}</p>

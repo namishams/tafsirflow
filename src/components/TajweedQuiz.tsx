@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { TAJWEED_LESSONS } from "@/lib/tajweed";
+import { tajweedFor } from "@/lib/tajweed";
 import { readJSON, writeJSON } from "@/lib/storage";
 
 export default function TajweedQuiz({ id }: { id: string }) {
   const t = useTranslations("tajweed");
-  const de = useLocale() === "de";
-  const l = TAJWEED_LESSONS.find((x) => x.id === id)!;
+  const locale = useLocale();
+  const de = locale === "de";
+  const l = tajweedFor(locale).find((x) => x.id === id)!; // Arabic: the *_en fields carry the Arabic texts
   const [i, setI] = useState(0);
   const [pick, setPick] = useState<number | null>(null);
   const [ok, setOk] = useState(0);

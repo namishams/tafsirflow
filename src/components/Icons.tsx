@@ -40,3 +40,7 @@ export const IconTrophy = ({ className = "h-16 w-16" }: { className?: string }) 
 export const IconSpeaker = ({ className = "h-5 w-5" }: { className?: string }) => (<svg viewBox="0 0 24 24" className={className} {...o}><path d="M4 9v6h4l5 4V5L8 9zM16 8.5a5 5 0 0 1 0 7M19 6a9 9 0 0 1 0 12" /></svg>);
 export const IconMoon = ({ className = "h-10 w-10" }: { className?: string }) => (<svg viewBox="0 0 24 24" className={className} {...o}><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z" /></svg>);
 export const IconCheckCircle = ({ className = "h-6 w-6" }: { className?: string }) => (<svg viewBox="0 0 24 24" className={className} {...o}><circle cx="12" cy="12" r="9" /><path d="M8 12.5l2.5 2.5L16 9.5" /></svg>);
+
+// Direction arrows for links and buttons: they mirror in right-to-left languages (Arabic, Urdu, Persian, Pashto)
+export const ArrowNext = () => (<span aria-hidden className="inline-block rtl:-scale-x-100">→</span>);
+export const ArrowBack = () => (<span aria-hidden className="inline-block rtl:-scale-x-100">←</span>);

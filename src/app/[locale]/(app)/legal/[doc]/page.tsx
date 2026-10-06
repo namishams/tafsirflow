@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { pageMeta } from "@/lib/site";
+import { ArrowBack } from "@/components/Icons";
 
 const DOCS = ["privacy", "terms", "imprint"] as const;
 type Doc = (typeof DOCS)[number];
@@ -53,7 +54,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
           <div className="mt-6 grid gap-6">
             <section>
               <h2 className="text-lg font-bold">{t("imprintProvider")}</h2>
-              <p className="mt-2 whitespace-pre-line text-muted">{`${e.LEGAL_NAME ?? "Nami Shams"}\n${e.LEGAL_ADDRESS ?? "Al Gharbi Street 1\nDubai"}`}</p>
+              <p className="mt-2 whitespace-pre-line text-muted">{locale === "ar" ? `${e.LEGAL_NAME_AR ?? "نامي شمس"}\n${e.LEGAL_ADDRESS_AR ?? "شارع الغربي 1\nدبي"}` : `${e.LEGAL_NAME ?? "Nami Shams"}\n${e.LEGAL_ADDRESS ?? "Al Gharbi Street 1\nDubai"}`}</p>
             </section>
             <section>
               <h2 className="text-lg font-bold">{t("imprintContact")}</h2>
@@ -61,7 +62,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
             </section>
           </div>
         )}
-        <p className="mt-12"><Link href="/" className="text-sm font-semibold text-accent">← {t("back")}</Link></p>
+        <p className="mt-12"><Link href="/" className="text-sm font-semibold text-accent"><ArrowBack /> {t("back")}</Link></p>
       </main>
     </div>
   );

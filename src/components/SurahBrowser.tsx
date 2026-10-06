@@ -1,5 +1,5 @@
 "use client";
-import { IconFlame } from "./Icons";
+import { IconFlame, ArrowNext } from "./Icons";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -48,7 +48,7 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
           {due.length > 0 ? (
             <Link href={`/surah/${due[0].split(":")[0]}?v=${due[0].split(":")[1]}&m=2&r=1`} className="flex items-center justify-between rounded-xl bg-accent px-4 py-3 text-white">
               <span><span className="block text-xs font-semibold uppercase tracking-wide opacity-80">{t("review")}</span><span className="font-display text-lg font-semibold">{t("reviewDue", { n: due.length })}</span></span>
-              <span className="font-semibold">{t("reviewStart")} →</span>
+              <span className="font-semibold">{t("reviewStart")} <ArrowNext /></span>
             </Link>
           ) : (
             <p className="text-sm text-muted">{t("reviewNone")}</p>

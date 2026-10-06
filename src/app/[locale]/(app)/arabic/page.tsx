@@ -3,8 +3,9 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import ArabicHome from "@/components/ArabicHome";
-import { LESSONS, LETTERS, forms } from "@/lib/arabic";
+import { LESSONS, LETTERS, arName, forms } from "@/lib/arabic";
 import { abs, pageMeta } from "@/lib/site";
+import { MoreTiles } from "@/components/PosterTiles";
 
 const C = {
   de: {
@@ -39,8 +40,24 @@ const C = {
     after: "After the course", afterBody: "Once you can read, the real adventure begins: with the Shams Method you memorise verse by verse, and the tajweed course teaches the rules of beautiful recitation.",
     ctaShams: "Discover the Shams Method", ctaTajweed: "Tajweed course",
   },
+  ar: {
+    kicker: "تعلّم القراءة العربية · للمبتدئين", title: "اقرأ القرآن – ولو لم تكن تعرف اليوم حرفًا واحدًا",
+    lead: "تعلّمك هذه الدورة قراءة الرسم القرآني كما دأبت مدارس تحفيظ القرآن جيلًا بعد جيل: الحروف أولًا، ثم أشكالها، ثم الحركات – حتى تقرأ الفاتحة والسور القصيرة بنفسك. في دروس صغيرة مدة كلٍّ منها خمس دقائق، مع تمارين وأزواج واختبارات.",
+    stats: [`${LESSONS.length} درسًا`, "6 وحدات", "28 حرفًا", "5 دقائق لكل درس"],
+    pathTitle: "مسار تعلّمك", alphaTitle: "الأبجدية العربية", alphaLead: "كل حرف باسمه ومخرجه وأشكاله في أول الكلمة ووسطها وآخرها. وتُقرأ العربية من اليمين إلى اليسار.",
+    th: ["الحرف", "الاسم", "المخرج", "أول · وسط · آخر"],
+    howTitle: "كيف تتعلّم هنا", how: [
+      ["دروس قصيرة", "يستغرق كل درس نحو خمس دقائق: بطاقات تعليمية أولًا، ثم تمارين متنوعة."],
+      ["الأخطاء تعود إليك", "كل ما أخطأت فيه يعود في آخر الدرس – حتى يثبت في ذهنك."],
+      ["انطق بصوتك", "القراءة تُتعلَّم بالفم. انطق كل حرف بصوتك، وإن كان في جهازك صوت عربي فيمكنك الاستماع إليه."],
+      ["من الحرف إلى القرآن", "في الوحدة السادسة تقرأ كلمات قرآنية حقيقية من الفاتحة والإخلاص والفلق والناس – مع معانيها."],
+    ],
+    teacher: "إن مخارج بعض الحروف (ح ع ق ص ض ط ظ) تُتقَن بالسماع والتلقّي عن معلّم. استمع إلى قارئ في المشغّل ورَدِّد خلفه – فهذا هو الطريق الذي تسلكه مدارس القرآن.",
+    after: "بعد الدورة", afterBody: "إذا صرت تقرأ فقد بدأت الرحلة الحقيقية: بمنهج شمس تحفظ آيةً آيةً، وفي دورة التجويد تتعلّم أحكام التلاوة الحسنة.",
+    ctaShams: "تعرّف على منهج شمس", ctaTajweed: "دورة التجويد",
+  },
 };
-const content = (l: string) => (l === "de" ? C.de : C.en);
+const content = (l: string) => (l === "de" ? C.de : l === "ar" ? C.ar : C.en);
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -52,12 +69,12 @@ export default async function ArabicPage({ params }: { params: Promise<{ locale:
   const { locale } = await params;
   setRequestLocale(locale);
   const c = content(locale);
-  const lang = locale === "de" ? "de" : "en";
+  const lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
   const ld = { "@context": "https://schema.org", "@type": "Course", name: c.title, description: c.lead, url: abs(`/${locale}/arabic`), inLanguage: locale, isAccessibleForFree: true, provider: { "@type": "Organization", name: "Quran Masterclass", url: abs("/") }, hasCourseInstance: { "@type": "CourseInstance", courseMode: "online", courseWorkload: "PT5M" } };
   return (
     <div>
       <JsonLd data={ld} />
-      <section className="stage relative overflow-hidden text-[#eef0f3]">
+      <section className="stage girih relative overflow-hidden text-[#eef0f3]">
         <p aria-hidden className="font-arabic pointer-events-none absolute -end-4 top-4 select-none text-[160px] leading-none text-[rgb(var(--gold))] opacity-[0.08] sm:text-[240px]" dir="rtl">ا ب ت</p>
         <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
@@ -90,8 +107,8 @@ export default async function ArabicPage({ params }: { params: Promise<{ locale:
               {LETTERS.map((l) => { const f = forms(l); return (
                 <tr key={l.ch}>
                   <td className="px-4 py-2"><span className="font-arabic text-4xl leading-[1.6] text-accent">{l.ch}</span></td>
-                  <td className="px-4 py-2 font-bold">{l.name}</td>
-                  <td className="px-4 py-2 text-muted">{l.sound[lang]}</td>
+                  <td className="px-4 py-2 font-bold">{lang === "ar" ? arName(l.ch) : l.name}</td>
+                  <td className="px-4 py-2 text-muted">{l.sound[lang] ?? l.sound.en}</td>
                   <td className="px-4 py-2"><span className="font-arabic text-2xl leading-[1.8]" dir="rtl">{f.start}  {f.middle}  {f.end}</span></td>
                 </tr>); })}
             </tbody>
@@ -99,7 +116,7 @@ export default async function ArabicPage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
-      <section className="stage text-[#eef0f3]">
+      <section className="stage girih text-[#eef0f3]">
         <div className="mx-auto max-w-4xl px-5 py-14 text-center">
           <h2 className="font-display text-3xl sm:text-4xl">{c.after}</h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/70">{c.afterBody}</p>
@@ -109,6 +126,7 @@ export default async function ArabicPage({ params }: { params: Promise<{ locale:
           </div>
         </div>
       </section>
+      <MoreTiles keys={["salah", "tajweed", "vocab", "shams"]} />
     </div>
   );
 }

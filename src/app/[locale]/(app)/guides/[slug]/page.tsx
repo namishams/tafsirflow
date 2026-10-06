@@ -6,6 +6,7 @@ import Markdown from "@/components/Markdown";
 import JsonLd from "@/components/JsonLd";
 import { GUIDES, guideText } from "@/lib/guides";
 import { abs, pageMeta } from "@/lib/site";
+import { ArrowNext, ArrowBack } from "@/components/Icons";
 
 export function generateStaticParams() {
   return GUIDES.map((g) => ({ slug: g.slug }));
@@ -43,7 +44,7 @@ export default async function GuidePage({ params }: { params: Promise<{ locale: 
   return (
     <main className="mx-auto max-w-3xl px-4 pb-24 pt-8">
       <JsonLd data={ld} />
-      <Link href="/guides" className="text-sm font-semibold text-muted hover:text-ink">← {t("title")}</Link>
+      <Link href="/guides" className="text-sm font-semibold text-muted hover:text-ink"><ArrowBack /> {t("title")}</Link>
       <h1 className="font-display mt-4 text-4xl leading-tight sm:text-5xl">{title}</h1>
       <p className="mt-3 text-sm text-muted">{t("by")} · {new Date(g.date).toLocaleDateString(locale, { calendar: "gregory", numberingSystem: "latn", day: "numeric", month: "long", year: "numeric" })}</p>
       <article className="mt-4"><Markdown text={gt.body} /></article>
@@ -61,7 +62,7 @@ export default async function GuidePage({ params }: { params: Promise<{ locale: 
       <section className="mt-10">
         <h2 className="text-lg font-bold">{t("related")}</h2>
         <ul className="mt-3 grid gap-2">
-          {g.related.map((r) => GUIDES.find((x) => x.slug === r)).filter(Boolean).map((r) => <li key={r!.slug}><Link href={`/guides/${r!.slug}`} className="font-semibold text-accent hover:underline">{guideText(r!, locale).title} →</Link></li>)}
+          {g.related.map((r) => GUIDES.find((x) => x.slug === r)).filter(Boolean).map((r) => <li key={r!.slug}><Link href={`/guides/${r!.slug}`} className="font-semibold text-accent hover:underline">{guideText(r!, locale).title} <ArrowNext /></Link></li>)}
         </ul>
       </section>
       <div className="mt-10 rounded-lg bg-ink p-6 text-bg">

@@ -3,8 +3,9 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { IconClose, IconNext, IconPause, IconPlay } from "./Icons";
-import { AUDIO_BASE, RECITERS, getChapters, getReciters, getResources, getVerses, pickTranslation, type Chapter, type Reciter, type Verse } from "@/lib/quran";
+import { AUDIO_BASE, RECITERS, getChapters, getReciters, getResources, getVerses, pickTranslation, reciterName, type Chapter, type Reciter, type Verse } from "@/lib/quran";
 import { countOf } from "@/lib/counts";
+import { JUZ_START, indexOf, keyAt } from "@/lib/quranIndex";
 import { readJSON, writeJSON } from "@/lib/storage";
 import * as vp from "@/lib/versePlayback";
 import { adhanList, adhanUrl, pickAdhan, type AdhanFile } from "@/lib/adhan";
@@ -13,7 +14,7 @@ import { CITIES, PRAYERS, dayFor, type Prayer, type Spot } from "@/lib/prayer";
 // Adhan recordings are placed on the server by the owner (scripts/install-adhan.sh) – only recordings with a clear licence
 type AdhanMode = "off" | "makkah" | "dubai" | "mine";
 
-type Mode = "full" | "range" | "single" | "random" | "list";
+type Mode = "full" | "range" | "single" | "random" | "list" | "juzday";
 // mix: a different (random) reciter for every surah
 type Station = { id: string; mode: Mode; from: number; to: number; list?: number[]; mix?: boolean; group: "main" | "surah" | "theme" | "mix" };
 type Pos = { s: number; v: number };
@@ -26,12 +27,18 @@ export const STATIONS: Station[] = [
   { id: "juzamma", mode: "range", from: 78, to: 114, group: "main" },
   { id: "juzammamix", mode: "range", from: 78, to: 114, mix: true, group: "mix" },
   { id: "tabarak", mode: "range", from: 67, to: 77, group: "main" },
+  { id: "juzday", mode: "juzday", from: 1, to: 114, group: "main" },
+  { id: "juz28", mode: "range", from: 58, to: 66, group: "main" },
   { id: "kids", mode: "list", from: 1, to: 1, list: [1, 114, 113, 112, 111, 110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100, 99, 97, 95, 94, 93], group: "theme" },
   { id: "night", mode: "list", from: 32, to: 32, list: [32, 67, 112, 113, 114], group: "theme" },
   { id: "friday", mode: "list", from: 18, to: 18, list: [18, 62, 63, 87, 88], group: "theme" },
   { id: "prophets", mode: "list", from: 12, to: 12, list: [12, 19, 20, 21, 28, 71], group: "theme" },
   { id: "beloved", mode: "list", from: 36, to: 36, list: [36, 55, 56, 67, 18, 32, 48], group: "theme" },
   { id: "dhikr", mode: "list", from: 1, to: 1, list: [1, 2, 112, 113, 114], group: "theme" },
+  // the early surahs in the order of revelation of the widespread Egyptian (Azhar) count
+  { id: "revelation", mode: "list", from: 96, to: 96, list: [96, 68, 73, 74, 1, 111, 81, 87, 92, 89, 93, 94, 103, 100, 108, 102, 107, 109, 105, 113, 114, 112], group: "theme" },
+  { id: "ramadan", mode: "list", from: 2, to: 2, list: [2, 97, 44], group: "theme" },
+  { id: "comfort", mode: "list", from: 93, to: 93, list: [93, 94, 12], group: "theme" },
   { id: "kahf", mode: "single", from: 18, to: 18, group: "surah" },
   { id: "yasin", mode: "single", from: 36, to: 36, group: "surah" },
   { id: "rahman", mode: "single", from: 55, to: 55, group: "surah" },
@@ -40,6 +47,14 @@ export const STATIONS: Station[] = [
   { id: "baqarah", mode: "single", from: 2, to: 2, group: "surah" },
   { id: "maryam", mode: "single", from: 19, to: 19, group: "surah" },
   { id: "yusuf", mode: "single", from: 12, to: 12, group: "surah" },
+  { id: "fath", mode: "single", from: 48, to: 48, group: "surah" },
+  { id: "hujurat", mode: "single", from: 49, to: 49, group: "surah" },
+  { id: "luqman", mode: "single", from: 31, to: 31, group: "surah" },
+  { id: "insan", mode: "single", from: 76, to: 76, group: "surah" },
+  { id: "muzzammil", mode: "single", from: 73, to: 73, group: "surah" },
+  { id: "hashr", mode: "single", from: 59, to: 59, group: "surah" },
+  { id: "taha", mode: "single", from: 20, to: 20, group: "surah" },
+  { id: "sajdah", mode: "single", from: 32, to: 32, group: "surah" },
 ];
 
 const pad = (n: number) => String(n).padStart(3, "0");
@@ -47,14 +62,22 @@ const urlOf = (r: Reciter, p: Pos) => `${AUDIO_BASE}/${r.folder}/${pad(p.s)}${pa
 const randSurah = () => 1 + Math.floor(Math.random() * 114);
 
 // the station never ends: after the last surah it starts again (or picks the next random surah)
+// "Juz of the day": every day another of the 30 parts – in 30 days once through the Quran
+function juzToday(): [Pos, Pos] {
+  const j = Math.floor(Date.now() / 86400000) % 30;
+  const [s, v] = JUZ_START[j].split(":").map(Number);
+  const end = j < 29 ? keyAt(indexOf(...(JUZ_START[j + 1].split(":").map(Number) as [number, number])) - 1) : { s: 114, v: 6 };
+  return [{ s, v }, end];
+}
 function nextPos(p: Pos, st: Station): Pos {
+  if (st.mode === "juzday") { const [a, b] = juzToday(); if (p.s === b.s && p.v === b.v) return a; }
   if (p.v < countOf(p.s)) return { s: p.s, v: p.v + 1 };
   if (st.mode === "random") return { s: randSurah(), v: 1 };
   if (st.mode === "single") return { s: st.from, v: 1 };
   if (st.mode === "list" && st.list) { const i = st.list.indexOf(p.s); return { s: st.list[(i + 1) % st.list.length], v: 1 }; }
   return { s: p.s >= st.to ? st.from : p.s + 1, v: 1 };
 }
-const startOf = (st: Station): Pos => ({ s: st.mode === "random" ? randSurah() : st.mode === "list" && st.list ? st.list[0] : st.from, v: 1 });
+const startOf = (st: Station): Pos => (st.mode === "juzday" ? juzToday()[0] : { s: st.mode === "random" ? randSurah() : st.mode === "list" && st.list ? st.list[0] : st.from, v: 1 });
 
 function useEngine() {
   const t = useTranslations("radio");
@@ -163,8 +186,8 @@ function useEngine() {
   const meta = useCallback((p: Pos) => {
     if (typeof navigator === "undefined" || !("mediaSession" in navigator)) return;
     const ch = chapters.find((c) => c.id === p.s);
-    navigator.mediaSession.metadata = new MediaMetadata({ title: `${ch?.name_simple ?? `Surah ${p.s}`} · ${p.v}`, artist: reciterRef.current.name, album: "Quran Masterclass" });
-  }, [chapters]);
+    navigator.mediaSession.metadata = new MediaMetadata({ title: `${ch?.name_simple ?? `Surah ${p.s}`} · ${p.v}`, artist: reciterName(reciterRef.current, locale), album: "Quran Masterclass" });
+  }, [chapters, locale]);
 
   const start = useCallback((p: Pos, autoplay = true) => {
     pos.current = p; setNow(p);
@@ -318,14 +341,16 @@ export function RadioProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-const APP_PATHS = ["/today", "/quran", "/surah", "/search", "/prayer", "/radio", "/duas"];
+// Every page of the (app) layout carries the phone tab bar; only the home page, account and admin do not
+const hasTabBar = (path: string) => path !== "/" && !["/account", "/admin"].some((p) => path === p || path.startsWith(`${p}/`));
 
 // Persistent mini player: sits above the tab bar on phones, on top of the verse player's dock on surah pages
 function MiniBar() {
   const r = useRadio();
   const t = useTranslations("radio");
+  const locale = useLocale();
   const path = usePathname();
-  const withTabs = APP_PATHS.some((p) => path === p || path.startsWith(`${p}/`));
+  const withTabs = hasTabBar(path);
   const onSurah = path.startsWith("/surah");
   const pos = onSurah ? "top-[3.75rem]" : withTabs ? "bottom-[4.25rem] lg:bottom-3" : "bottom-3";
   return (
@@ -333,12 +358,12 @@ function MiniBar() {
       <div className="mx-auto flex max-w-3xl items-center gap-3 rounded-lg border border-line bg-surface p-2 pe-3 shadow-lg">
         <Link href="/radio" className="flex min-w-0 flex-1 items-center gap-3" aria-label={t("openRadio")}>
           <span className={`relative grid h-11 w-11 shrink-0 place-items-center rounded-md bg-ink text-bg ${r.playing ? "" : "opacity-70"}`}>
-            <span className="text-[10px] font-extrabold tracking-wider">{r.playing ? "LIVE" : "FM"}</span>
+            <span className="text-[10px] font-extrabold tracking-wider">{locale === "ar" ? (r.playing ? "مباشر" : "إذاعة") : r.playing ? "LIVE" : "FM"}</span>
             {r.playing && <span className="absolute -end-1 -top-1 h-2.5 w-2.5 animate-pulse rounded-full bg-red-500 ring-2 ring-surface" />}
           </span>
           <span className="min-w-0">
             <span className="block truncate text-[14px] font-bold">{r.chapter ? `${r.chapter.id}. ${r.chapter.name_simple}` : `${r.now.s}`} · {r.now.v}</span>
-            <span className="block truncate text-xs text-muted">{r.stationName(r.station.id)} · {r.reciter.name}</span>
+            <span className="block truncate text-xs text-muted">{r.stationName(r.station.id)} · {reciterName(r.reciter, locale)}</span>
           </span>
         </Link>
         <button onClick={r.toggle} aria-label={r.playing ? t("pause") : t("play")} className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent text-white">{r.playing ? <IconPause /> : <IconPlay />}</button>
@@ -352,8 +377,10 @@ function MiniBar() {
 // Mini bar for a verse session that keeps playing after the visitor left the surah page
 function VerseMini({ s, playing }: { s: vp.Session; playing: boolean }) {
   const t = useTranslations("radio");
+  const tn = useTranslations("nav");
+  const locale = useLocale();
   const path = usePathname();
-  const withTabs = APP_PATHS.some((p) => path === p || path.startsWith(`${p}/`));
+  const withTabs = hasTabBar(path);
   const pos = withTabs ? "bottom-[4.25rem] lg:bottom-3" : "bottom-3";
   const a = vp.getAudio();
   return (
@@ -363,12 +390,12 @@ function VerseMini({ s, playing }: { s: vp.Session; playing: boolean }) {
           <span className="grid h-11 w-11 shrink-0 place-items-center rounded-md bg-accent-soft text-accent"><span className="text-[11px] font-extrabold">{s.chapterId}</span></span>
           <span className="min-w-0">
             <span className="block truncate text-[14px] font-bold">{s.chapterName} · {s.idx + 1}</span>
-            <span className="block truncate text-xs text-muted">{s.reciterName}</span>
+            <span className="block truncate text-xs text-muted">{reciterName({ name: s.reciterName }, locale)}</span>
           </span>
         </Link>
         <button onClick={() => (playing ? a.pause() : void a.play())} aria-label={playing ? t("pause") : t("play")} className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent text-white">{playing ? <IconPause /> : <IconPlay />}</button>
         <button onClick={() => vp.step(1)} aria-label={t("nextVerse")} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line"><IconNext /></button>
-        <button onClick={vp.stop} aria-label={t("stop")} className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-muted hover:text-ink"><IconClose /></button>
+        <button onClick={vp.stop} aria-label={tn("close")} className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-muted hover:text-ink"><IconClose /></button>
       </div>
     </div>
   );

@@ -11,6 +11,8 @@ echo "==> Fetch latest code ($BRANCH)"
 cd "$APP"
 sudo -u tafsir git fetch origin "$BRANCH"
 sudo -u tafsir git reset --hard FETCH_HEAD
+# run the freshly fetched version of this script (bash would otherwise keep reading the old file)
+[ "${DEPLOY_REEXEC:-}" = 1 ] || DEPLOY_REEXEC=1 exec bash "$APP/scripts/deploy.sh" "$@"
 
 echo "==> Database tables"
 sudo -u postgres psql -v ON_ERROR_STOP=1 -q -d tafsirflow -f "$APP/db/schema.sql"
@@ -45,7 +47,7 @@ ENVEOF
 fi
 
 echo "==> Build (into .next-build; the live site keeps running from .next)"
-sudo -u tafsir bash -c "cd $APP && rm -rf .next-build && npm ci && NEXT_DIST_DIR=.next-build npm run build" || {
+sudo -u tafsir bash -c "cd $APP && rm -rf .next-build .next/types .next-old && npm ci && NEXT_DIST_DIR=.next-build npm run build" || {
   echo "BUILD FAILED – the site keeps running on the previous version."; exit 1; }
 
 echo "==> Switch to the new build and (re)start"

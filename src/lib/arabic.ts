@@ -41,7 +41,7 @@ export const LETTERS: Letter[] = [
 export const letter = (ch: string) => LETTERS.find((l) => l.ch === ch)!;
 // Arabic letter names (used only in the Arabic UI texts)
 const AR_NAME: Record<string, string> = { "ا": "الألف", "ب": "الباء", "ت": "التاء", "ث": "الثاء", "ج": "الجيم", "ح": "الحاء", "خ": "الخاء", "د": "الدال", "ذ": "الذال", "ر": "الراء", "ز": "الزاي", "س": "السين", "ش": "الشين", "ص": "الصاد", "ض": "الضاد", "ط": "الطاء", "ظ": "الظاء", "ع": "العين", "غ": "الغين", "ف": "الفاء", "ق": "القاف", "ك": "الكاف", "ل": "اللام", "م": "الميم", "ن": "النون", "ه": "الهاء", "و": "الواو", "ي": "الياء", "ء": "الهمزة" };
-const arName = (ch: string) => AR_NAME[ch] ?? letter(ch).name;
+export const arName = (ch: string) => AR_NAME[ch] ?? letter(ch).name;
 
 const FATHA = "َ", KASRA = "ِ", DAMMA = "ُ", SUKUN = "ْ", SHADDA = "ّ", TATWEEL = "ـ";
 export const forms = (l: Letter) => l.connects

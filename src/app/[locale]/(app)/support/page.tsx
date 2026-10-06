@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import SupportZiina from "@/components/SupportZiina";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
+import { ArrowNext, ArrowBack } from "@/components/Icons";
 
 type C = {
   kicker: string; title: string; lead: string; free: string;
@@ -101,7 +102,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
     <div>
       <JsonLd data={ld} />
 
-      <section className="stage text-[#eef0f3]">
+      <section className="stage girih text-[#eef0f3]">
         <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 sm:py-16 lg:grid-cols-[1fr_minmax(0,26rem)] lg:items-start [&>*]:min-w-0">
           <div>
             <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
@@ -139,7 +140,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
               <li key={h} className="flex flex-col rounded-xl border border-line bg-surface p-5">
                 <h3 className="font-bold">{h}</h3>
                 <p className="mt-1 flex-1 text-sm leading-relaxed text-muted">{d}</p>
-                {href && (href.startsWith("mailto:") ? <a href={href} className="mt-3 text-sm font-bold text-accent hover:underline">{cta} →</a> : <Link href={href} className="mt-3 text-sm font-bold text-accent hover:underline">{cta} →</Link>)}
+                {href && (href.startsWith("mailto:") ? <a href={href} className="mt-3 text-sm font-bold text-accent hover:underline">{cta} <ArrowNext /></a> : <Link href={href} className="mt-3 text-sm font-bold text-accent hover:underline">{cta} <ArrowNext /></Link>)}
               </li>
             ))}
           </ul>
@@ -159,7 +160,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
 
         <div className="mt-10 flex flex-col items-center gap-3 text-sm text-muted">
           <p>{c.contact}</p>
-          <Link href="/" className="font-semibold text-accent">← {c.back}</Link>
+          <Link href="/" className="font-semibold text-accent"><ArrowBack /> {c.back}</Link>
         </div>
       </main>
     </div>

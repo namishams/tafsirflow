@@ -13,6 +13,7 @@ import { CITIES, dayFor, fmtTime, type Spot } from "@/lib/prayer";
 import { LESSONS as ARABIC_LESSONS, arabicPercent, nextArabic, readArabic } from "@/lib/arabic";
 import MemoryMap from "./MemoryMap";
 import { CoachCard } from "./ProgressPanel";
+import PosterTiles from "./PosterTiles";
 import { IconCheckCircle, IconFlame } from "./Icons";
 
 type Last = { chapter: number; verse: number };
@@ -23,6 +24,7 @@ export default function TodayDashboard() {
   const t = useTranslations("today");
   const tp = useTranslations("prayer");
   const tm = useTranslations("map");
+  const th = useTranslations("home2");
   const locale = useLocale();
   const [me, setMe] = useState<Me | null | undefined>(undefined);
   const [chapters, setChapters] = useState<Chapter[]>([]);
@@ -74,7 +76,7 @@ export default function TodayDashboard() {
   return (
     <main className="pb-16">
       {/* stage */}
-      <section className="stage text-[#eef0f3]">
+      <section className="stage girih text-[#eef0f3]">
         <div className="mx-auto max-w-4xl px-4 pb-8 pt-7 sm:pt-10">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div className="min-w-0">
@@ -170,6 +172,8 @@ export default function TodayDashboard() {
             </div>
           </section>
         </div>
+
+        <div className="mt-10"><PosterTiles keys={["shams", "arabic", "salah", "tajweed", "vocab", "duas", "reciters", "islam"]} title={th("coursesTitle")} more={{ href: "/academy", label: th("coursesAll") }} /></div>
 
         {/* how the masterclass is built */}
         <section className="mt-8 rounded-xl border border-line border-s-4 border-s-gold bg-surface p-5">

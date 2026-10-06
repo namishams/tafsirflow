@@ -17,6 +17,12 @@ install_one() { # id src label credit
   if [[ "$SRC" =~ ^https?:// ]]; then
     curl -fsSL --max-time 120 -A "Mozilla/5.0" "$SRC" -o "$TMP/in" || { echo "SKIP $ID: download failed"; rm -rf "${TMP:?}"; return 0; }
   else cp "$SRC" "$TMP/in"; fi
+  # a web page instead of a file (e.g. an adhan page on assabile.com): take the first mp3 linked in it
+  if [ "$(file --brief --mime-type "$TMP/in")" = "text/html" ]; then
+    local MP3; MP3=$(grep -oE "https?://[^\"' <>]+\.mp3" "$TMP/in" | head -1 || true)
+    [ -n "$MP3" ] || { echo "SKIP $ID: no mp3 found on that page"; rm -rf "${TMP:?}"; return 0; }
+    curl -fsSL --max-time 120 -A "Mozilla/5.0" -e "$SRC" "$MP3" -o "$TMP/in" || { echo "SKIP $ID: download failed"; rm -rf "${TMP:?}"; return 0; }
+  fi
   case "$(file --brief --mime-type "$TMP/in")" in audio/*|video/*|application/ogg|application/octet-stream) ;; *) echo "SKIP $ID: not an audio file"; rm -rf "${TMP:?}"; return 0 ;; esac
   # normalise to 128 kbps mp3, at most 6 minutes, even loudness
   if ! ffmpeg -loglevel error -y -i "$TMP/in" -t 360 -vn -ac 2 -af loudnorm=I=-16:TP=-1.5 -b:a 128k "$TMP/out.mp3"; then echo "SKIP $ID: could not convert"; rm -rf "${TMP:?}"; return 0; fi

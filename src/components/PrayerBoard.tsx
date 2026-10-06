@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { CITIES, DEFAULT_SETTINGS, METHODS, PRAYERS, cityName, countdown, dayFor, fmtClock, fmtTime, hijriDate, monthOf, nightOf, qiblaOf, spotToday, type Prayer, type PrayerSettings, type Spot } from "@/lib/prayer";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { adhanList, adhanUrl, pickAdhan, type AdhanFile } from "@/lib/adhan";
+import { ArrowNext, ArrowBack } from "./Icons";
 
 const dark = "stage text-[#eef0f3]";
 
@@ -104,7 +105,7 @@ export default function PrayerBoard() {
   return (
     <div>
       {/* Hero: place, live clock, next prayer countdown and the arc of the day */}
-      <section className={`${dark} relative overflow-hidden`}>
+      <section className={`${dark} girih relative overflow-hidden`}>
         <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 80% 10%, rgb(var(--gold) / .14) 0, transparent 40%)" }} />
         <div className="relative mx-auto max-w-5xl px-4 pb-12 pt-8 sm:pb-16 sm:pt-12">
           <div className="flex flex-wrap items-center gap-2">
@@ -187,9 +188,9 @@ export default function PrayerBoard() {
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="font-display text-3xl">{t("monthTitle", { place: label(main) })}</h2>
             <div className="flex items-center gap-2 print:hidden">
-              <button onClick={() => setMonthShift(monthShift - 1)} className="h-10 w-10 rounded-md border border-line hover:border-ink" aria-label={t("prevMonth")}>←</button>
+              <button onClick={() => setMonthShift(monthShift - 1)} className="h-10 w-10 rounded-md border border-line hover:border-ink" aria-label={t("prevMonth")}><ArrowBack /></button>
               <span className="min-w-[9rem] text-center text-sm font-bold">{mDate.toLocaleDateString(locale, { calendar: "gregory", month: "long", year: "numeric" })}</span>
-              <button onClick={() => setMonthShift(monthShift + 1)} className="h-10 w-10 rounded-md border border-line hover:border-ink" aria-label={t("nextMonth")}>→</button>
+              <button onClick={() => setMonthShift(monthShift + 1)} className="h-10 w-10 rounded-md border border-line hover:border-ink" aria-label={t("nextMonth")}><ArrowNext /></button>
               <button onClick={() => window.print()} className="h-10 rounded-md border border-line px-3 text-sm font-semibold hover:border-ink">{t("print")}</button>
             </div>
           </div>

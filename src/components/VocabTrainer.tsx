@@ -1,5 +1,5 @@
 "use client";
-import { IconStarBig } from "./Icons";
+import { IconStarBig, ArrowBack } from "./Icons";
 import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -39,7 +39,7 @@ export default function VocabTrainer() {
   const cur = queue[0];
   useEffect(() => {
     if (!cur || !deck || mode !== "quiz") return;
-    const all = VOCAB_DECKS.flatMap((d) => d.words).filter((w) => w.id !== cur.id).map(mean);
+    const all = VOCAB_DECKS.flatMap((d) => d.words).filter((w) => w.id !== cur.id).map(mean).filter((m) => m !== mean(cur));
     setOpts(shuffle([mean(cur), ...shuffle(Array.from(new Set(all))).slice(0, 3)]));
     setPick(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,7 +53,7 @@ export default function VocabTrainer() {
     setBoxes(next); writeJSON(KEY, next);
     setScore((s) => ({ ok: s.ok + (ok ? 1 : 0), n: s.n + 1 }));
     setQueue((q) => (ok ? q.slice(1) : [...q.slice(1), cur])); // missed words come back at the end
-    setFlip(false);
+    setFlip(false); setPick(null); // pick must reset here: a missed last word comes back as the same card and the options effect does not re-run
   };
 
   const totalKnown = useMemo(() => VOCAB_DECKS.reduce((n, d) => n + known(d), 0), [boxes]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -62,7 +62,7 @@ export default function VocabTrainer() {
   if (deck) {
     return (
       <section className="mt-6">
-        <button onClick={() => setDeck(null)} className="text-sm font-semibold text-muted hover:text-ink">← {t("decks")}</button>
+        <button onClick={() => setDeck(null)} className="text-sm font-semibold text-muted hover:text-ink"><ArrowBack /> {t("decks")}</button>
         <h2 className="font-display mt-2 text-3xl">{de ? deck.title_de : deck.title_en}</h2>
         {!cur ? (
           <div className="mt-6 rounded-lg border border-line bg-surface p-6 text-center">

@@ -7,6 +7,7 @@ import ShamsPlanner from "@/components/ShamsPlanner";
 import { GUIDES, guideText } from "@/lib/guides";
 import { shamsContent } from "@/lib/shamsContent";
 import { abs, pageMeta } from "@/lib/site";
+import { MoreTiles } from "@/components/PosterTiles";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -90,7 +91,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
       <JsonLd data={ld} />
 
       {/* Hero */}
-      <section className={`${dark} relative overflow-hidden`}>
+      <section className={`${dark} girih relative overflow-hidden`}>
         <div className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, rgb(var(--gold)) 0, transparent 45%)" }} />
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-5 py-16 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center [&>*]:min-w-0">
           <div>
@@ -336,6 +337,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
           <Link href="/surah/1?shams=1" className="mt-8 inline-flex h-12 items-center rounded-md btn-gold px-7 text-[15px] font-bold">{t("cta")}</Link>
         </div>
       </section>
+      <MoreTiles keys={["courses", "plan", "map", "arabic"]} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-import { IconStarBig, IconTrophy } from "./Icons";
+import { IconStarBig, IconTrophy, ArrowBack } from "./Icons";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -140,7 +140,7 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
 
   return (
     <main className="mx-auto max-w-2xl px-4 pb-24 pt-6">
-      <Link href="/academy" className="text-sm font-semibold text-muted hover:text-ink">← {t("title")}</Link>
+      <Link href="/academy" className="text-sm font-semibold text-muted hover:text-ink"><ArrowBack /> {t("title")}</Link>
       <h1 className="font-display mt-3 text-3xl leading-tight sm:text-4xl">{title}</h1>
 
       {phase === "intro" && (

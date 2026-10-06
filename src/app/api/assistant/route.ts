@@ -6,8 +6,11 @@ import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 export const dynamic = "force-dynamic";
 
 // The OpenAI key lives only in the server environment (OPENAI_API_KEY in /srv/tafsirflow/.env.app) – never in the browser or the repository.
+// Visitors without a confirmed account get a few questions per day (ASSISTANT_ANON_PER_DAY, default 5, 0 = account only)
+const anonPerDay = () => Math.max(0, Number(process.env.ASSISTANT_ANON_PER_DAY ?? 5) || 0);
+
 export function GET() {
-  return json({ enabled: !!process.env.OPENAI_API_KEY });
+  return json({ enabled: !!process.env.OPENAI_API_KEY, anon: anonPerDay() });
 }
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -17,10 +20,12 @@ export async function POST(req: NextRequest) {
   const key = process.env.OPENAI_API_KEY;
   if (!key) return json({ error: "off" }, 503);
   const me = await currentUser();
-  if (!me) return json({ error: "login" }, 401);
-  if (!me.emailVerified) return json({ error: "verify" }, 403);
-  // cost and abuse protection: per account per day, per IP per minute
-  if (rateLimited(`ai:day:${me.id}`, ASSISTANT_LIMITS.perUserPerDay, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
+  const member = !!me && me.emailVerified;
+  // cost and abuse protection: per account (or per IP for visitors) per day, per IP per minute
+  if (!member) {
+    const n = anonPerDay();
+    if (!n || rateLimited(`ai:anon:${clientIp(req)}`, n, 24 * 60 * 60_000)) return json({ error: me ? "verify" : "login" }, me ? 403 : 401);
+  } else if (rateLimited(`ai:day:${me.id}`, ASSISTANT_LIMITS.perUserPerDay, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
   if (rateLimited(`ai:min:${clientIp(req)}`, 8, 60_000)) return json({ error: "rate" }, 429);
 
   const b = (await req.json().catch(() => ({}))) as { messages?: Msg[]; locale?: string };
@@ -39,7 +44,7 @@ export async function POST(req: NextRequest) {
         model: process.env.OPENAI_MODEL || "gpt-4o-mini",
         temperature: 0.3,
         max_tokens: 700,
-        user: `qm-${me.id}`,
+        user: me ? `qm-${me.id}` : "qm-visitor",
         messages: [{ role: "system", content: `${ASSISTANT_RULES}\n\nThe website language of this user is "${locale}".` }, ...history],
       }),
       signal: AbortSignal.timeout(45000),

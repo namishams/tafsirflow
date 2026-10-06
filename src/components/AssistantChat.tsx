@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import Markdown from "./Markdown";
 
 type Msg = { role: "user" | "assistant"; content: string };
 const T = {
-  de: { ph: "Frag etwas über den Koran oder den Islam …", send: "Senden", hello: "As-salāmu ʿalaykum! Ich beantworte Fragen zum Koran, zum Islam und zur Shams-Methode. Bei persönlichen religiösen Urteilen verweise ich dich an einen Gelehrten.", off: "Der Assistent wird gerade eingerichtet.", err: "Das hat nicht geklappt. Bitte versuch es gleich noch einmal.", limit: "Du hast das Tageslimit erreicht – morgen geht es weiter.", note: "KI-gestützter Assistent: Er kann sich irren und ersetzt keinen Gelehrten. Für Fatwas und persönliche Fragen wende dich an einen qualifizierten Gelehrten.", sugg: ["Was ist die Shams-Methode?", "Wie lerne ich Al-Fatiha am besten?", "Was bedeutet Ayat al-Kursi?", "Wie bereite ich mich auf Ramadan vor?"], thinking: "denkt nach …", clear: "Neues Gespräch" },
-  en: { ph: "Ask something about the Quran or Islam …", send: "Send", hello: "As-salāmu ʿalaykum! I answer questions about the Quran, Islam and the Shams Method. For personal religious rulings I will refer you to a scholar.", off: "The assistant is being set up.", err: "That did not work. Please try again in a moment.", limit: "You have reached today's limit – see you tomorrow.", note: "AI-based assistant: it can make mistakes and does not replace a scholar. For fatwas and personal questions, please ask a qualified scholar.", sugg: ["What is the Shams Method?", "How do I best learn Al-Fatiha?", "What does Ayat al-Kursi mean?", "How do I prepare for Ramadan?"], thinking: "thinking …", clear: "New conversation" },
-  ar: { ph: "اسأل عن القرآن أو الإسلام …", send: "إرسال", hello: "السلام عليكم! أجيب عن أسئلتك حول القرآن الكريم والإسلام ومنهج شمس، وفي المسائل الشرعية الشخصية أحيلك إلى أهل العلم.", off: "يجري الآن إعداد المساعد.", err: "لم تنجح العملية، حاول بعد قليل.", limit: "بلغت الحد اليومي، نلتقي غدًا بإذن الله.", note: "مساعد يعمل بالذكاء الاصطناعي، قد يخطئ ولا يغني عن العلماء. للفتوى والمسائل الشخصية ارجع إلى عالمٍ مؤهَّل.", sugg: ["ما هو منهج شمس؟", "كيف أحفظ سورة الفاتحة؟", "ما معنى آية الكرسي؟", "كيف أستعد لرمضان؟"], thinking: "يفكّر …", clear: "محادثة جديدة" },
+  de: { ph: "Frag etwas über den Koran oder den Islam …", send: "Senden", hello: "As-salāmu ʿalaykum! Ich beantworte Fragen zum Koran, zum Islam und zur Shams-Methode. Bei persönlichen religiösen Urteilen verweise ich dich an einen Gelehrten.", off: "Der Assistent wird gerade eingerichtet.", err: "Das hat nicht geklappt. Bitte versuch es gleich noch einmal.", limit: "Du hast das Tageslimit erreicht – morgen geht es weiter.", note: "KI-gestützter Assistent: Er kann sich irren und ersetzt keinen Gelehrten. Für Fatwas und persönliche Fragen wende dich an einen qualifizierten Gelehrten.", sugg: ["Was ist die Shams-Methode?", "Wie lerne ich Al-Fatiha am besten?", "Was bedeutet Ayat al-Kursi?", "Wie bereite ich mich auf Ramadan vor?"], thinking: "denkt nach …", clear: "Neues Gespräch", login: "Die freien Fragen für heute sind aufgebraucht. Mit einem kostenlosen Konto kannst du weiterfragen.", loginCta: "Kostenlos anmelden" },
+  en: { ph: "Ask something about the Quran or Islam …", send: "Send", hello: "As-salāmu ʿalaykum! I answer questions about the Quran, Islam and the Shams Method. For personal religious rulings I will refer you to a scholar.", off: "The assistant is being set up.", err: "That did not work. Please try again in a moment.", limit: "You have reached today's limit – see you tomorrow.", note: "AI-based assistant: it can make mistakes and does not replace a scholar. For fatwas and personal questions, please ask a qualified scholar.", sugg: ["What is the Shams Method?", "How do I best learn Al-Fatiha?", "What does Ayat al-Kursi mean?", "How do I prepare for Ramadan?"], thinking: "thinking …", clear: "New conversation", login: "Today's free questions are used up. With a free account you can keep asking.", loginCta: "Sign up for free" },
+  ar: { ph: "اسأل عن القرآن أو الإسلام …", send: "إرسال", hello: "السلام عليكم! أجيب عن أسئلتك حول القرآن الكريم والإسلام ومنهج شمس، وفي المسائل الشرعية الشخصية أحيلك إلى أهل العلم.", off: "يجري الآن إعداد المساعد.", err: "لم تنجح العملية، حاول بعد قليل.", limit: "بلغت الحد اليومي، نلتقي غدًا بإذن الله.", note: "مساعد يعمل بالذكاء الاصطناعي، قد يخطئ ولا يغني عن العلماء. للفتوى والمسائل الشخصية ارجع إلى عالمٍ مؤهَّل.", sugg: ["ما هو منهج شمس؟", "كيف أحفظ سورة الفاتحة؟", "ما معنى آية الكرسي؟", "كيف أستعد لرمضان؟"], thinking: "يفكّر …", clear: "محادثة جديدة", login: "انتهت الأسئلة المجانية لهذا اليوم. أنشئ حسابًا مجانيًا لتواصل السؤال.", loginCta: "سجّل مجانًا" },
 };
 
 export default function AssistantChat() {
@@ -19,6 +20,7 @@ export default function AssistantChat() {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const end = useRef<HTMLDivElement>(null);
+  // Enter sends, but not the Enter that confirms an IME word (Chinese, Japanese): see isComposing in the textarea below
   useEffect(() => { fetch("/api/assistant").then((r) => r.json()).then((d) => setEnabled(!!d.enabled)).catch(() => setEnabled(false)); }, []);
   useEffect(() => { end.current?.scrollIntoView({ behavior: "smooth", block: "end" }); }, [msgs, busy]);
 
@@ -31,7 +33,7 @@ export default function AssistantChat() {
       const r = await fetch("/api/assistant", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ messages: next, locale }) });
       const d = await r.json().catch(() => ({}));
       if (r.ok && d.answer) setMsgs([...next, { role: "assistant", content: d.answer }]);
-      else setErr(r.status === 429 ? t.limit : t.err);
+      else setErr(r.status === 429 ? t.limit : r.status === 401 || r.status === 403 ? "login" : t.err);
     } catch { setErr(t.err); } finally { setBusy(false); }
   };
 
@@ -57,12 +59,14 @@ export default function AssistantChat() {
           </div>
         ))}
         {busy && <p className="ps-12 text-sm text-muted">{t.thinking}</p>}
-        {err && <p role="alert" className="ps-12 text-sm text-red-600">{err}</p>}
+        {err === "login" ? (
+          <div role="alert" className="ms-12 rounded-xl border border-gold/40 bg-gold/5 p-4 text-sm"><p>{t.login}</p><Link href="/account" className="btn-gold mt-3 inline-flex h-10 items-center rounded-full px-4 text-[13px] font-bold">{t.loginCta}</Link></div>
+        ) : err && <p role="alert" className="ps-12 text-sm text-red-600">{err}</p>}
         <div ref={end} />
       </div>
       <form onSubmit={(e) => { e.preventDefault(); send(text); }} className="border-t border-line p-3 sm:p-4">
         <div className="flex gap-2">
-          <textarea value={text} onChange={(e) => setText(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(text); } }} maxLength={1200} rows={2} placeholder={t.ph} className="min-w-0 flex-1 resize-none rounded-xl border border-line bg-bg px-3 py-2 text-[15px] outline-none focus:border-[rgb(var(--gold))]" />
+          <textarea value={text} onChange={(e) => setText(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) { e.preventDefault(); send(text); } }} maxLength={1200} rows={2} placeholder={t.ph} className="min-w-0 flex-1 resize-none rounded-xl border border-line bg-bg px-3 py-2 text-[15px] outline-none focus:border-[rgb(var(--gold))]" />
           <button disabled={busy || !text.trim()} className="btn-gold h-auto rounded-xl px-5 text-sm font-bold disabled:opacity-40">{t.send}</button>
         </div>
         <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[11px] text-muted">

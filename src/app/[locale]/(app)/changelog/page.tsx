@@ -15,6 +15,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
   setRequestLocale(locale);
   const t = await getTranslations("feedback");
   const de = locale === "de";
+  const ar = locale === "ar";
   return (
     <main className="mx-auto max-w-3xl px-4 pb-24 pt-8">
       <h1 className="font-display text-[40px] leading-[1.05] sm:text-5xl">{t("changelog")}</h1>
@@ -24,8 +25,8 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
           <li key={r.date} className="mb-12">
             <span className="absolute -start-[5px] mt-2 h-2.5 w-2.5 rounded-full bg-accent" />
             <p className="text-sm font-semibold text-gold">{new Date(r.date).toLocaleDateString(locale, { calendar: "gregory", numberingSystem: "latn", day: "numeric", month: "long", year: "numeric" })}</p>
-            <h2 className="font-display mt-1 text-2xl leading-tight">{de ? r.title_de : r.title_en}</h2>
-            <ul className="mt-3 grid gap-2 text-[15px] leading-relaxed text-muted">{(de ? r.items_de : r.items_en).map((x, i) => <li key={i} className="flex gap-3"><span className="mt-2.5 h-px w-3 shrink-0 bg-gold" />{x}</li>)}</ul>
+            <h2 className="font-display mt-1 text-2xl leading-tight">{de ? r.title_de : (ar && r.title_ar) || r.title_en}</h2>
+            <ul className="mt-3 grid gap-2 text-[15px] leading-relaxed text-muted">{(de ? r.items_de : (ar && r.items_ar) || r.items_en).map((x, i) => <li key={i} className="flex gap-3"><span className="mt-2.5 h-px w-3 shrink-0 bg-gold" />{x}</li>)}</ul>
           </li>
         ))}
       </ol>

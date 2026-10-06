@@ -4,6 +4,8 @@ import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import PrayerTrainer from "@/components/PrayerTrainer";
 import { abs, pageMeta } from "@/lib/site";
+import { MoreTiles } from "@/components/PosterTiles";
+import { ArrowNext } from "@/components/Icons";
 
 const C = {
   de: {
@@ -39,6 +41,7 @@ export default async function SalahPage({ params }: { params: Promise<{ locale: 
   const c = content(locale);
   const ld = { "@context": "https://schema.org", "@type": "HowTo", name: c.title, description: c.lead, url: abs(`/${locale}/salah`), inLanguage: locale };
   return (
+    <>
     <main className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-5">
       <JsonLd data={ld} />
       <p className="eyebrow text-gold">{c.kicker}</p>
@@ -52,9 +55,11 @@ export default async function SalahPage({ params }: { params: Promise<{ locale: 
         </div>
         <div className="rounded-lg border border-line bg-surface p-5">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">{c.more}</p>
-          <ul className="mt-3 grid gap-2">{c.links.map(([h, l]) => <li key={h}><Link href={h} className="font-semibold text-accent hover:underline">{l} →</Link></li>)}</ul>
+          <ul className="mt-3 grid gap-2">{c.links.map(([h, l]) => <li key={h}><Link href={h} className="font-semibold text-accent hover:underline">{l} <ArrowNext /></Link></li>)}</ul>
         </div>
       </section>
     </main>
+    <MoreTiles keys={["arabic", "duas", "prayer", "islam"]} />
+    </>
   );
 }

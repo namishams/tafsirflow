@@ -9,6 +9,14 @@ import { IconBookmark, IconCopy } from "./Icons";
 
 const ALL = [...SUNNAH_DUAS, ...SUNNAH_DUAS_2];
 
+// Arabic readers see the hadith collections by their Arabic names, not the Latin ones used in the data
+const SRC_AR: [RegExp, string][] = [
+  [/Sahih al-Bukhari/g, "صحيح البخاري"], [/Sahih Muslim/g, "صحيح مسلم"], [/Sunan Abi Dawud/g, "سنن أبي داود"],
+  [/Jami[ʿ'’]? at-Tirmidhi/g, "جامع الترمذي"], [/Sunan an-Nasa[ʾ'’]?i/g, "سنن النسائي"], [/Sunan Ibn Majah/g, "سنن ابن ماجه"],
+  [/ten times:/g, "عشر مرات:"], [/;/g, "؛"], [/,/g, "،"],
+];
+const srcAr = (src: string) => SRC_AR.reduce((x, [re, to]) => x.replace(re, to), src);
+
 // Duas of the Prophet ﷺ: filter by occasion, search, favourites and a tap counter for repeated adhkar
 export default function SunnahDuas() {
   const t = useTranslations("duas");
@@ -31,8 +39,10 @@ export default function SunnahDuas() {
 
   const toggleFav = (id: string) => { const n = fav.includes(id) ? fav.filter((x) => x !== id) : [...fav, id]; setFav(n); writeJSON("tf:duafav", n); };
   const tap = (id: string, max: number) => setCount((c) => ({ ...c, [id]: (c[id] ?? 0) >= max ? 0 : (c[id] ?? 0) + 1 }));
+  const ar = locale === "ar";
+  const srcOf = (d: (typeof ALL)[number]) => (ar ? srcAr(d.src) : d.src);
   const copy = async (d: (typeof ALL)[number]) => {
-    try { await navigator.clipboard.writeText(`${d.ar}\n\n${d.tr}\n\n${meaning(d)}\n\n— ${d.src}`); setCopied(d.id); setTimeout(() => setCopied(""), 1800); } catch { /* clipboard blocked */ }
+    try { await navigator.clipboard.writeText([d.ar, ar ? "" : d.tr, meaning(d), `— ${srcOf(d)}`].filter(Boolean).join("\n\n")); setCopied(d.id); setTimeout(() => setCopied(""), 1800); } catch { /* clipboard blocked */ }
   };
   const chip = (on: boolean) => `h-9 shrink-0 rounded-md border px-3 text-sm font-semibold ${on ? "border-ink bg-ink text-bg" : "border-line bg-surface hover:border-ink"}`;
 
@@ -40,9 +50,9 @@ export default function SunnahDuas() {
     <div>
       <div className="flex flex-wrap items-center gap-3">
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t("search")} className="h-11 min-w-0 flex-1 rounded-md border border-line bg-surface px-3 text-[15px] focus:border-ink focus:outline-none" aria-label={t("search")} />
-        <label className="flex items-center gap-2 text-sm text-muted"><input type="checkbox" checked={showTr} onChange={(e) => setShowTr(e.target.checked)} />{t("translit")}</label>
+        {!ar && <label className="flex items-center gap-2 text-sm text-muted"><input type="checkbox" checked={showTr} onChange={(e) => setShowTr(e.target.checked)} />{t("translit")}</label>}
       </div>
-      <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
+      <div className="mt-3 flex flex-wrap gap-2">
         <button className={chip(cat === "all")} onClick={() => setCat("all")}>{t("all")} · {ALL.length}</button>
         <button className={chip(cat === "fav")} onClick={() => setCat("fav")}>★ {t("favs")}{fav.length ? ` · ${fav.length}` : ""}</button>
         {SUNNAH_CATS.map((c) => <button key={c} className={chip(cat === c)} onClick={() => setCat(c)}>{t(`c_${c}`)}</button>)}
@@ -62,10 +72,10 @@ export default function SunnahDuas() {
                   </div>
                 </div>
                 <p className="font-arabic mt-2 text-[1.7rem] leading-[2.1] sm:text-3xl" dir="rtl" lang="ar">{d.ar}</p>
-                {showTr && <p className="mt-3 text-[15px] italic leading-relaxed text-gold">{d.tr}</p>}
+                {showTr && !ar && <p className="mt-3 text-[15px] italic leading-relaxed text-gold">{d.tr}</p>}
                 <p className="mt-2 text-[15px] leading-relaxed text-muted">{meaning(d)}</p>
                 <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-3">
-                  <span className="text-xs font-semibold text-muted">{t("source")}: {d.src}</span>
+                  <span className="text-xs font-semibold text-muted">{t("source")}: {srcOf(d)}</span>
                   {d.n && d.n > 1 && (
                     <button onClick={() => tap(d.id, d.n!)} className={`inline-flex h-10 items-center gap-2 rounded-md border px-4 text-sm font-bold tabular-nums ${n >= d.n ? "border-accent bg-accent text-white" : "border-line hover:border-ink"}`} aria-label={t("counter")}>
                       {n >= d.n ? "✓ " : ""}{n} / {d.n}

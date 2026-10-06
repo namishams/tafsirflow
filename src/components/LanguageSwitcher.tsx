@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { LOCALE_META, type AppLocale } from "@/i18n/locales";
 
-// Shows a short code on phones and the full name from sm up; the native <select> sits invisibly on top so the system picker still opens.
+// Keeps the query string (?v=255, ?shams=1) when the language changes. Shows a short code on phones and the full name from sm up; the native <select> sits invisibly on top so the system picker still opens.
 export default function LanguageSwitcher() {
   const t = useTranslations("language");
   const locale = useLocale();
@@ -18,7 +18,7 @@ export default function LanguageSwitcher() {
       <select
         aria-label={t("label")}
         value={locale}
-        onChange={(e) => router.replace(pathname, { locale: e.target.value })}
+        onChange={(e) => router.replace(`${pathname}${window.location.search}`, { locale: e.target.value })}
         className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
       >
         {routing.locales.map((l) => (

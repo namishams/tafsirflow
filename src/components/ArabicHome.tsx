@@ -1,5 +1,5 @@
 "use client";
-import { IconLock } from "./Icons";
+import { IconLock, ArrowNext } from "./Icons";
 import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -39,7 +39,7 @@ export default function ArabicHome() {
           <p className="font-display mt-1 text-xl">{nx ? tx(nx.title) : t.allDone}</p>
           <p className="mt-1 text-sm text-muted">{p.xp} {t.xp} · {LESSONS.filter((l) => (p.done[l.id]?.best ?? 0) >= PASS_PCT).length}/{LESSONS.length} {t.lessons}</p>
         </div>
-        <Link href={nx ? `/arabic/${nx.id}` : "/surah/1?shams=1"} className="btn-gold inline-flex h-12 w-full items-center justify-center rounded-md px-6 text-[15px] font-bold sm:w-auto">{Object.keys(p.done).length ? t.cont : t.start} →</Link>
+        <Link href={nx ? `/arabic/${nx.id}` : "/surah/1?shams=1"} className="btn-gold inline-flex h-12 w-full items-center justify-center rounded-md px-6 text-[15px] font-bold sm:w-auto">{Object.keys(p.done).length ? t.cont : t.start} <ArrowNext /></Link>
       </div>
 
       {/* path */}

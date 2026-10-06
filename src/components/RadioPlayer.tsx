@@ -1,7 +1,8 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { IconNext, IconPause, IconPlay, IconPrev } from "./Icons";
 import { STATIONS, useRadio } from "./RadioProvider";
+import { reciterName } from "@/lib/quran";
 
 // station posters: calligraphy and colour per station
 const POSTER: Record<string, { ar: string; bg: string }> = {
@@ -26,15 +27,35 @@ const POSTER: Record<string, { ar: string; bg: string }> = {
   baqarah: { ar: "البقرة", bg: "linear-gradient(160deg,#3a3012 0%,#14110a 100%)" },
   maryam: { ar: "مريم", bg: "linear-gradient(160deg,#2a1f44 0%,#0e0b1b 100%)" },
   yusuf: { ar: "يوسف", bg: "linear-gradient(160deg,#44331f 0%,#1b140b 100%)" },
+  juzday: { ar: "جزء", bg: "linear-gradient(160deg,#0f3b2e 0%,#05170f 100%)" },
+  juz28: { ar: "قد سمع", bg: "linear-gradient(160deg,#24324a 0%,#0a0f18 100%)" },
+  revelation: { ar: "اقرأ", bg: "linear-gradient(160deg,#3a2f12 0%,#14110a 100%)" },
+  ramadan: { ar: "رمضان", bg: "linear-gradient(160deg,#141b3a 0%,#070914 100%)" },
+  comfort: { ar: "الضحى", bg: "linear-gradient(160deg,#4a3a0d 0%,#1a1406 100%)" },
+  fath: { ar: "الفتح", bg: "linear-gradient(160deg,#0c4a37 0%,#06221a 100%)" },
+  hujurat: { ar: "الحجرات", bg: "linear-gradient(160deg,#2c3a1a 0%,#10160a 100%)" },
+  luqman: { ar: "لقمان", bg: "linear-gradient(160deg,#3a1d14 0%,#160a07 100%)" },
+  insan: { ar: "الإنسان", bg: "linear-gradient(160deg,#173640 0%,#081418 100%)" },
+  muzzammil: { ar: "المزمل", bg: "linear-gradient(160deg,#141b3a 0%,#070914 100%)" },
+  hashr: { ar: "الحشر", bg: "linear-gradient(160deg,#3b1f2b 0%,#160b10 100%)" },
+  taha: { ar: "طه", bg: "linear-gradient(160deg,#30254a 0%,#100c19 100%)" },
+  sajdah: { ar: "السجدة", bg: "linear-gradient(160deg,#20353a 0%,#091315 100%)" },
 };
 const GROUPS = ["main", "mix", "theme", "surah"] as const;
-const initials = (name: string) => name.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).slice(0, 2).map((w) => w[0]).join("");
+const initials = (name: string) => {
+  const words = name.split(/\s+/).filter(Boolean);
+  if (/[\u0600-\u06FF]/.test(name)) return words.length > 1 ? `${words[0][0]}${words[words.length - 1][0]}` : words[0]?.[0] ?? ""; // Arabic names: first and last word
+  return words.filter((w) => /^[A-Z]/.test(w)).slice(0, 2).map((w) => w[0]).join("");
+};
 const hue = (s: string) => { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) % 360; return h; };
 
 // Radio page: the engine lives in RadioProvider (above all pages), so playback continues when you leave this page
 export default function RadioPlayer() {
   const t = useTranslations("radio");
+  const ts = useTranslations("social");
+  const locale = useLocale();
   const r = useRadio();
+  const rn = (x: { slug?: string; folder?: string; name: string }) => reciterName(x, locale);
   const { station, playing, now, chapter, verse, upNext, history, chapters } = r;
   const nameOf = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `Surah ${s}`;
   const field = "h-11 w-full min-w-0 rounded-md border border-line bg-bg px-3 text-[15px]";
@@ -42,7 +63,7 @@ export default function RadioPlayer() {
   return (
     <div>
       {/* On-air stage */}
-      <section className="stage relative overflow-hidden text-[#eef0f3]">
+      <section className="stage girih relative overflow-hidden text-[#eef0f3]">
         <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 75% 30%, rgb(var(--gold) / .14) 0, transparent 45%), radial-gradient(circle at 5% 95%, rgb(var(--accent) / .25) 0, transparent 45%)" }} />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-12 pt-8 sm:pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="min-w-0">
@@ -53,7 +74,7 @@ export default function RadioPlayer() {
               <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[rgb(var(--gold))]">{t("title")} · {r.stationName(station.id)}</span>
             </div>
             <h1 className="font-display mt-4 text-5xl leading-[1.02] sm:text-6xl">{chapter ? chapter.name_simple : `${now.s}`}<span className="text-white/40"> · {now.v}</span></h1>
-            <p className="mt-2 text-white/60">{r.reciter.name}</p>
+            <p className="mt-2 text-white/60">{rn(r.reciter)}</p>
             {r.showText && verse && (
               <div className="mt-6 rounded-lg border border-white/10 bg-white/[0.04] p-5">
                 <p className="font-arabic text-3xl leading-[2.1] sm:text-4xl" dir="rtl">{verse.text_uthmani}</p>
@@ -66,8 +87,8 @@ export default function RadioPlayer() {
               <button onClick={r.skipVerse} aria-label={t("nextVerse")} className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><IconNext /></button>
               <button onClick={r.skipSurah} className="h-12 rounded-full border border-white/30 px-5 text-sm font-bold hover:border-white">{t("nextSurah")}</button>
               {r.castable.airplay && <button onClick={r.airplay} aria-label="AirPlay" title="AirPlay" className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" /><path d="M12 15l5 6H7z" fill="currentColor" /></svg></button>}
-              {r.castable.cast && <button onClick={r.cast} aria-label="Cast" title="Chromecast / Android" className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" /><path d="M2 12a9 9 0 0 1 8 8M2 16a5 5 0 0 1 4 4" /><circle cx="2.5" cy="19.5" r="0.8" fill="currentColor" /></svg></button>}
-              <button onClick={() => r.shareRadio(`Quran Masterclass Radio – ${r.stationName}`)} aria-label="Share" title="Share" className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" /></svg></button>
+              {r.castable.cast && <button onClick={r.cast} aria-label="Chromecast" title="Chromecast" className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" /><path d="M2 12a9 9 0 0 1 8 8M2 16a5 5 0 0 1 4 4" /><circle cx="2.5" cy="19.5" r="0.8" fill="currentColor" /></svg></button>}
+              <button onClick={() => r.shareRadio(`${locale === "ar" ? "إذاعة Quran Masterclass" : "Quran Masterclass Radio"} – ${r.stationName(station.id)}`)} aria-label={ts("share")} title={ts("share")} className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" /></svg></button>
               <label className="ms-auto flex items-center gap-2 text-sm text-white/60">
                 <span className="sr-only sm:not-sr-only">{t("volume")}</span>
                 <input type="range" min={0} max={1} step={0.05} value={r.vol} onChange={(e) => r.setVolume(Number(e.target.value))} className="w-28 accent-[rgb(var(--gold))]" aria-label={t("volume")} />
@@ -81,7 +102,7 @@ export default function RadioPlayer() {
             <div className={`radio-orb relative grid aspect-square w-full max-w-[19rem] place-items-center ${playing ? "is-on" : ""}`}>
               <span className="ring r1" /><span className="ring r2" /><span className="ring r3" />
               <div className="relative grid h-40 w-40 place-items-center rounded-full text-4xl font-bold text-white shadow-2xl" style={{ background: `linear-gradient(140deg, hsl(${hue(r.reciter.name)} 45% 32%), hsl(${(hue(r.reciter.name) + 40) % 360} 50% 16%))` }}>
-                {initials(r.reciter.name)}
+                {initials(rn(r.reciter))}
                 <span className="bars absolute -bottom-3 flex h-8 items-end gap-1" aria-hidden>{Array.from({ length: 7 }, (_, i) => <i key={i} />)}</span>
               </div>
             </div>
@@ -91,14 +112,14 @@ export default function RadioPlayer() {
         {/* reciters strip */}
         <div className="relative mx-auto max-w-6xl px-4 pb-10">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">{t("reciters")}</p>
-          <ul className="-mx-4 mt-3 flex gap-3 overflow-x-auto px-4 pb-2">
+          <ul className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-8">
             {r.reciters.map((x) => {
               const on = x.folder === r.reciter.folder;
               return (
-                <li key={x.folder} className="shrink-0">
-                  <button onClick={() => r.changeReciter(x.folder)} className={`flex w-28 flex-col items-center gap-2 rounded-lg p-3 text-center transition ${on ? "bg-white/10" : "hover:bg-white/5"}`} aria-pressed={on}>
-                    <span className={`grid h-16 w-16 place-items-center rounded-full text-lg font-bold text-white ${on ? "ring-2 ring-[rgb(var(--gold))] ring-offset-2 ring-offset-stage" : ""}`} style={{ background: `linear-gradient(140deg, hsl(${hue(x.name)} 45% 32%), hsl(${(hue(x.name) + 40) % 360} 50% 16%))` }}>{initials(x.name)}</span>
-                    <span className={`line-clamp-2 text-xs font-semibold leading-snug ${on ? "text-white" : "text-white/70"}`}>{x.name}</span>
+                <li key={x.folder} className="min-w-0">
+                  <button onClick={() => r.changeReciter(x.folder)} className={`flex w-full flex-col items-center gap-2 rounded-lg p-3 text-center transition ${on ? "bg-white/10" : "hover:bg-white/5"}`} aria-pressed={on}>
+                    <span className={`grid h-16 w-16 place-items-center rounded-full text-lg font-bold text-white ${on ? "ring-2 ring-[rgb(var(--gold))] ring-offset-2 ring-offset-stage" : ""}`} style={{ background: `linear-gradient(140deg, hsl(${hue(x.name)} 45% 32%), hsl(${(hue(x.name) + 40) % 360} 50% 16%))` }}>{initials(rn(x))}</span>
+                    <span className={`line-clamp-2 text-xs font-semibold leading-snug ${on ? "text-white" : "text-white/70"}`}>{rn(x)}</span>
                   </button>
                 </li>
               );
@@ -122,17 +143,17 @@ export default function RadioPlayer() {
         {GROUPS.map((g) => (
           <section key={g} className="mt-8">
             <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">{t(`g_${g}`)}</h3>
-            <ul className="-mx-4 mt-3 flex snap-x gap-4 overflow-x-auto px-4 pb-2 lg:mx-0 lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-0">
+            <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
               {STATIONS.filter((st) => st.group === g).map((st) => {
                 const p = POSTER[st.id] ?? POSTER.quran, on = station.id === st.id && playing;
                 return (
-                  <li key={st.id} className="w-[62%] shrink-0 snap-start sm:w-[40%] lg:w-auto">
-                    <button onClick={() => r.chooseStation(st)} className={`group relative flex aspect-[4/5] w-full flex-col justify-end overflow-hidden rounded-lg p-5 text-start ${on ? "ring-2 ring-[rgb(var(--gold))]" : ""}`} style={{ background: p.bg }}>
-                      <span aria-hidden className="font-arabic pointer-events-none absolute -end-1 top-3 text-[5.5rem] leading-none text-white/[0.1] transition duration-500 group-hover:scale-110" dir="rtl">{p.ar}</span>
+                  <li key={st.id} className="min-w-0">
+                    <button onClick={() => r.chooseStation(st)} className={`group relative flex aspect-[4/5] w-full flex-col justify-end overflow-hidden rounded-lg p-4 text-start ring-1 ring-inset ring-white/[0.06] sm:p-5 ${on ? "ring-2 ring-[rgb(var(--gold))]" : ""}`} style={{ background: p.bg }}>
+                      <span aria-hidden className="font-callig pointer-events-none absolute -end-1 top-3 text-[4.25rem] leading-none text-white/[0.08] transition duration-700 group-hover:text-white/[0.12] sm:text-[5.5rem]" dir="rtl">{p.ar}</span>
                       <span className="absolute start-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-white/15 text-white">{on ? <span className="eq eq-on" aria-hidden><i /><i /><i /><i /></span> : <IconPlay />}</span>
                       {st.mix && <span className="absolute end-4 top-5 rounded-sm bg-black/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white/80">{t("mixBadge")}</span>}
-                      <span className="font-display relative text-2xl leading-tight text-white">{r.stationName(st.id)}</span>
-                      <span className="relative mt-1 text-sm text-white/70">{t(`sd_${st.id}`)}</span>
+                      <span className="font-display relative text-[19px] leading-tight text-white sm:text-2xl">{r.stationName(st.id)}</span>
+                      <span className="relative mt-1 line-clamp-2 text-[12.5px] leading-snug text-white/65 sm:text-sm">{t(`sd_${st.id}`)}</span>
                     </button>
                   </li>
                 );
