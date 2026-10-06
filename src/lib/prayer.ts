@@ -1,9 +1,10 @@
-import { CalculationMethod, Coordinates, Madhab, PrayerTimes } from "adhan";
+import { CalculationMethod, Coordinates, HighLatitudeRule, Madhab, PrayerTimes, Qibla, SunnahTimes } from "adhan";
 
 export const PRAYERS = ["fajr", "sunrise", "dhuhr", "asr", "maghrib", "isha"] as const;
 export type Prayer = (typeof PRAYERS)[number];
 
-type MethodKey = "UmmAlQura" | "Dubai" | "Tehran" | "Karachi" | "Turkey" | "Egyptian" | "Qatar" | "Kuwait" | "MuslimWorldLeague" | "Singapore";
+export const METHODS = ["MuslimWorldLeague", "UmmAlQura", "Dubai", "Egyptian", "Karachi", "Tehran", "Turkey", "Qatar", "Kuwait", "Singapore", "NorthAmerica", "MoonsightingCommittee"] as const;
+export type MethodKey = (typeof METHODS)[number];
 
 export type City = { id: string; lat: number; lon: number; tz: string; method: MethodKey; hanafi?: boolean; names: Record<string, string> };
 
@@ -35,9 +36,16 @@ export const cityName = (c: City, locale: string) => c.names[locale] ?? c.names.
 
 export type Spot = { id: string; lat: number; lon: number; tz: string; method: MethodKey; hanafi?: boolean };
 
-function paramsFor(s: Spot) {
-  const p = CalculationMethod[s.method]();
-  p.madhab = s.hanafi ? Madhab.Hanafi : Madhab.Shafi;
+// Personal settings (prayer page): method, Asr school, high-latitude rule and minute corrections per prayer
+export type PrayerSettings = { method: "auto" | MethodKey; madhab: "auto" | "shafi" | "hanafi"; highLat: "auto" | "middle" | "seventh" | "twilight"; adjust: Partial<Record<Prayer, number>> };
+export const DEFAULT_SETTINGS: PrayerSettings = { method: "auto", madhab: "auto", highLat: "auto", adjust: {} };
+
+function paramsFor(s: Spot, st: PrayerSettings = DEFAULT_SETTINGS) {
+  const p = CalculationMethod[st.method === "auto" ? s.method : st.method]();
+  p.madhab = (st.madhab === "auto" ? s.hanafi : st.madhab === "hanafi") ? Madhab.Hanafi : Madhab.Shafi;
+  const coords = new Coordinates(s.lat, s.lon);
+  p.highLatitudeRule = st.highLat === "middle" ? HighLatitudeRule.MiddleOfTheNight : st.highLat === "seventh" ? HighLatitudeRule.SeventhOfTheNight : st.highLat === "twilight" ? HighLatitudeRule.TwilightAngle : HighLatitudeRule.recommended(coords);
+  for (const k of PRAYERS) p.adjustments[k] = Math.max(-30, Math.min(30, Number(st.adjust[k] ?? 0)));
   return p;
 }
 
@@ -49,9 +57,9 @@ function localDate(now: Date, tz: string): Date {
 
 export type Day = { times: Record<Prayer, Date>; next: Prayer; nextAt: Date };
 
-export function dayFor(s: Spot, now: Date): Day {
+export function dayFor(s: Spot, now: Date, st?: PrayerSettings): Day {
   const coords = new Coordinates(s.lat, s.lon);
-  const params = paramsFor(s);
+  const params = paramsFor(s, st);
   const today = new PrayerTimes(coords, localDate(now, s.tz), params);
   const times = { fajr: today.fajr, sunrise: today.sunrise, dhuhr: today.dhuhr, asr: today.asr, maghrib: today.maghrib, isha: today.isha } as Record<Prayer, Date>;
   const upcoming = PRAYERS.find((p) => times[p].getTime() > now.getTime());
@@ -81,3 +89,26 @@ export function countdown(to: Date, now: Date): string {
   const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
 }
+
+// Qibla: direction to the Kaaba in degrees from true north
+export const qiblaOf = (s: Spot) => Qibla(new Coordinates(s.lat, s.lon));
+
+// Sunnah times of the coming night: Islamic midnight and the beginning of the last third (tahajjud)
+export function nightOf(s: Spot, now: Date, st?: PrayerSettings) {
+  const pt = new PrayerTimes(new Coordinates(s.lat, s.lon), localDate(now, s.tz), paramsFor(s, st));
+  const sn = new SunnahTimes(pt);
+  return { midnight: sn.middleOfTheNight, lastThird: sn.lastThirdOfTheNight, duha: new Date(pt.sunrise.getTime() + 20 * 60000) };
+}
+
+// Timetable for a whole month at the spot
+export function monthOf(s: Spot, year: number, month: number, st?: PrayerSettings) {
+  const coords = new Coordinates(s.lat, s.lon), params = paramsFor(s, st);
+  const days = new Date(year, month + 1, 0).getDate();
+  return Array.from({ length: days }, (_, i) => {
+    const d = new Date(year, month, i + 1);
+    const pt = new PrayerTimes(coords, d, params);
+    return { date: d, times: { fajr: pt.fajr, sunrise: pt.sunrise, dhuhr: pt.dhuhr, asr: pt.asr, maghrib: pt.maghrib, isha: pt.isha } as Record<Prayer, Date> };
+  });
+}
+// the local calendar day at the spot as y/m/d
+export function spotToday(now: Date, tz: string) { const d = localDate(now, tz); return { y: d.getFullYear(), m: d.getMonth(), d: d.getDate() }; }
