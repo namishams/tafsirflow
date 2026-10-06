@@ -3,7 +3,7 @@ import { readJSON, writeJSON } from "./storage";
 // Spaced repetition: a verse climbs through these review gaps (days). "Again" sends it back to the start.
 export const STAGES = [1, 3, 7, 14, 30, 90];
 
-export type Srs = Record<string, { stage: number; due: number }>; // key "2:255" -> next due day
+export type Srs = Record<string, { stage: number; due: number; at?: number }>; // key "2:255" -> next due day
 export type Rating = "again" | "good" | "easy";
 
 const SRS_KEY = "tf:srs";
@@ -21,7 +21,7 @@ export function rate(verseKey: string, rating: Rating): number {
   const cur = srs[verseKey]?.stage ?? -1;
   const stage = rating === "again" ? 0 : Math.min(STAGES.length - 1, cur + (rating === "easy" ? 2 : 1));
   const due = rating === "again" ? today() : today() + STAGES[stage];
-  srs[verseKey] = { stage, due };
+  srs[verseKey] = { stage, due, at: Date.now() };
   writeJSON(SRS_KEY, srs);
   logDay();
   return rating === "again" ? 0 : STAGES[stage];

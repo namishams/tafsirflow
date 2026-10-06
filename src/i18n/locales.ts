@@ -2,6 +2,10 @@
 export const LOCALE_META = {
   de: { label: "Deutsch", dir: "ltr", resourceLang: "german" },
   en: { label: "English", dir: "ltr", resourceLang: "english" },
+  ar: { label: "العربية", dir: "rtl", resourceLang: "arabic" },
+  fr: { label: "Français", dir: "ltr", resourceLang: "french" },
+  es: { label: "Español", dir: "ltr", resourceLang: "spanish" },
+  zh: { label: "中文", dir: "ltr", resourceLang: "chinese" },
   id: { label: "Bahasa Indonesia", dir: "ltr", resourceLang: "indonesian" },
   fa: { label: "فارسی", dir: "rtl", resourceLang: "persian" },
 } as const;

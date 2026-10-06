@@ -4,10 +4,12 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
 import { localeMeta } from "@/i18n/locales";
 import LanguageSwitcher from "./LanguageSwitcher";
+import AccountLink from "./AccountLink";
+import KidsToggle from "./KidsToggle";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext } from "./Icons";
 import {
-  RECITERS, getChapter, getResources, getTafsir, getVerses, pickTranslation, tafsirOptionsFor,
+  LimitError, OWN_TAFSIR_ID, RECITERS, getChapter, getOwnTafsir, getResources, getTafsir, getVerses, hasOwnTafsir, pickTranslation, tafsirOptionsFor,
   type Chapter, type Resource, type TafsirResult, type Verse,
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
@@ -23,6 +25,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const router = useRouter();
   const t = useTranslations("player");
   const th = useTranslations("home");
+  const ta = useTranslations("account");
   const locale = useLocale();
   const meta = localeMeta(locale);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -49,6 +52,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [hide, setHide] = useState(startHide); // 0 show all, 1 hide every 2nd word, 2 hide all
   const [revealed, setRevealed] = useState(false);
   const [note, setNote] = useState("");
+  const [limitHit, setLimitHit] = useState(false);
+  const [kids, setKids] = useState(false);
 
   const [mode, setMode] = useState<Mode>("continuous");
   const [repeat, setRepeat] = useState(1);
@@ -71,18 +76,25 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     const on = () => setIsDesktop(mq.matches);
     on();
     mq.addEventListener("change", on);
-    return () => mq.removeEventListener("change", on);
+    const readKids = () => setKids(document.documentElement.dataset.kids === "1");
+    readKids();
+    window.addEventListener("tf-kids", readKids);
+    return () => { mq.removeEventListener("change", on); window.removeEventListener("tf-kids", readKids); };
   }, []);
+
+  // Kids mode: word-by-word with transliteration on by default, tafsir out of the way
+  useEffect(() => { if (kids) { setShowWords(true); setShowTranslit(true); } }, [kids]);
 
   // Discover translation + tafsir sources for this UI language
   useEffect(() => {
-    getResources()
-      .then((r) => {
+    Promise.all([getResources(), hasOwnTafsir(locale)])
+      .then(([r, own]) => {
         setTranslationId(pickTranslation(locale, r.translations));
         const { options, hasLocal } = tafsirOptionsFor(locale, r.tafsirs);
-        setTafsirOpts(options);
-        setHasLocalTafsir(hasLocal);
-        setTafsirId(options[0]?.id ?? null);
+        const all: Resource[] = own ? [{ id: OWN_TAFSIR_ID, name: `TafsirFlow · ${meta.label}`, author_name: "", language_name: meta.resourceLang }, ...options] : options;
+        setTafsirOpts(all);
+        setHasLocalTafsir(hasLocal || own);
+        setTafsirId(all[0]?.id ?? null);
       })
       .catch(() => {
         setTranslationId(locale === "de" ? 27 : 20);
@@ -116,7 +128,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
   // Remember where the learner stopped
   useEffect(() => {
-    if (verse) writeJSON("tf:last", { chapter: chapterId, verse: verse.verse_number });
+    if (verse) writeJSON("tf:last", { chapter: chapterId, verse: verse.verse_number, at: Date.now() });
   }, [verse, chapterId]);
 
   // Keep the active verse in view
@@ -126,15 +138,27 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
   // Tafsir for the current verse; empty entries belong to the nearest earlier non-empty one.
   useEffect(() => {
-    if (!verse || tafsirId === null || !(isDesktop || sheetOpen)) return;
+    if (!verse || tafsirId === null || !(isDesktop || sheetOpen) || kids) return;
     let cancelled = false;
     setTafsir(undefined);
+    setLimitHit(false);
     (async () => {
+      if (tafsirId === OWN_TAFSIR_ID) {
+        const r = await getOwnTafsir(locale, chapterId, verse.verse_number).catch(() => null);
+        if (!cancelled) setTafsir(r);
+        return;
+      }
       for (let n = verse.verse_number; n >= 1; n--) {
         const key = `${tafsirId}:${chapterId}:${n}`;
         let r = tafsirCache.current.get(key);
         if (r === undefined) {
-          r = await getTafsir(tafsirId, `${chapterId}:${n}`).catch(() => null);
+          try {
+            r = await getTafsir(tafsirId, `${chapterId}:${n}`, n === verse.verse_number);
+          } catch (e) {
+            if (e instanceof LimitError && !cancelled) { setLimitHit(true); setTafsir(null); }
+            else if (!cancelled) setTafsir(null);
+            return;
+          }
           tafsirCache.current.set(key, r);
         }
         if (cancelled) return;
@@ -143,7 +167,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
       if (!cancelled) setTafsir(null);
     })();
     return () => { cancelled = true; };
-  }, [verse, tafsirId, chapterId, isDesktop, sheetOpen]);
+  }, [verse, tafsirId, chapterId, isDesktop, sheetOpen, kids, locale]);
 
   const play = useCallback(() => {
     const a = audioRef.current;
@@ -228,7 +252,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
         {tafsirOpts.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
       {tafsir === undefined && <p className="text-muted">{t("loading")}</p>}
-      {tafsir === null && <p className="text-muted">{t("noTafsir")}</p>}
+      {limitHit && (
+        <div className="rounded-xl bg-accent-soft p-4 text-sm">
+          <p className="mb-3">{t("limitReached")}</p>
+          <Link href="/account" className="inline-block rounded-full bg-accent px-4 py-2 font-semibold text-white">{ta("register")}</Link>
+        </div>
+      )}
+      {tafsir === null && !limitHit && <p className="text-muted">{t("noTafsir")}</p>}
       {tafsir && (
         <>
           {tafsir.verseKeys.length > 1 && (
@@ -256,17 +286,17 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     <div className="pb-36">
       <header className="sticky top-0 z-30 border-b border-line/70 bg-bg/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <Link href="/" className="flex items-center gap-2 text-sm font-medium text-accent" aria-label={t("back")}>
-            <span aria-hidden>←</span><Logo size={26} /><span className="hidden sm:inline">TafsirFlow</span>
+          <Link href="/quran" className="flex items-center gap-2 text-sm font-medium text-accent" aria-label={t("back")}>
+            <span aria-hidden>←</span><Logo size={26} /><span className="hidden sm:inline">{t("back")}</span>
           </Link>
-          <p className="truncate font-display text-base font-semibold">{chapter.id}. {chapter.name_simple}</p>
-          <LanguageSwitcher />
+          <p className="hidden truncate font-display text-base font-semibold sm:block">{chapter.id}. {chapter.name_simple}</p>
+          <div className="flex min-w-0 items-center gap-1.5 sm:gap-2"><KidsToggle /><LanguageSwitcher /><AccountLink /></div>
         </div>
       </header>
 
-      <div className="mx-auto max-w-6xl px-4 lg:grid lg:grid-cols-[1fr_25rem] lg:gap-8">
+      <div className={`mx-auto px-4 ${kids ? "max-w-3xl" : "max-w-6xl lg:grid lg:grid-cols-[1fr_25rem] lg:gap-8"}`}>
         <main className="min-w-0">
-          <section className="pattern relative my-5 overflow-hidden rounded-3xl bg-gradient-to-br from-[#064e3b] via-[#065f46] to-[#0a3a30] px-6 py-8 text-center text-white shadow-card">
+          <section className="pattern relative my-5 overflow-hidden rounded-3xl hero-bg px-6 py-8 text-center text-white shadow-card">
             <p className="font-arabic text-5xl text-[#f3d9a0] sm:text-6xl" dir="rtl">{chapter.name_arabic}</p>
             <h1 className="mt-2 font-display text-2xl font-semibold">{chapter.name_simple}</h1>
             <p className="text-sm text-white/70">{chapter.translated_name.name} · {chapter.verses_count} {th("verses")}</p>
@@ -284,12 +314,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {RECITERS.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}
                   </select>
                 </label>
-                <div className="grid gap-1"><span className="text-muted">{t("mode")}</span>
+                {!kids && <div className="grid gap-1"><span className="text-muted">{t("mode")}</span>
                   <div className="inline-flex w-fit rounded-xl bg-bg p-1">
                     <button className={seg(mode === "learn")} onClick={() => setMode("learn")}>{t("modeLearn")}</button>
                     <button className={seg(mode === "continuous")} onClick={() => setMode("continuous")}>{t("modeContinuous")}</button>
                   </div>
-                </div>
+                </div>}
                 <label className="grid gap-1"><span className="text-muted">{t("repeat")}</span>
                   <select value={repeat} onChange={(e) => setRepeat(Number(e.target.value))} className={field}>
                     {[1, 2, 3, 5, 10].map((n) => <option key={n} value={n}>×{n}</option>)}
@@ -300,7 +330,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {[0.5, 0.75, 1, 1.25, 1.5].map((n) => <option key={n} value={n}>{n}×</option>)}
                   </select>
                 </label>
-                <div className="grid gap-1 sm:col-span-2">
+                {!kids && <div className="grid gap-1 sm:col-span-2">
                   <label className="flex items-center gap-2"><input type="checkbox" checked={loopOn} onChange={(e) => setLoopOn(e.target.checked)} /> {t("loop")}</label>
                   <div className="flex items-center gap-2 text-muted">
                     {t("loopFrom")}
@@ -312,10 +342,10 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                       {verses.map((v) => <option key={v.verse_key} value={v.verse_number}>{v.verse_number}</option>)}
                     </select>
                   </div>
-                </div>
-                <label className="flex items-center gap-2"><input type="checkbox" checked={showTranslit} onChange={(e) => setShowTranslit(e.target.checked)} /> {t("transliteration")}</label>
+                </div>}
+                {!kids && <><label className="flex items-center gap-2"><input type="checkbox" checked={showTranslit} onChange={(e) => setShowTranslit(e.target.checked)} /> {t("transliteration")}</label>
                 <label className="flex items-center gap-2"><input type="checkbox" checked={showTranslation} onChange={(e) => setShowTranslation(e.target.checked)} /> {t("translation")}</label>
-                <label className="flex items-center gap-2"><input type="checkbox" checked={showWords} onChange={(e) => setShowWords(e.target.checked)} /> {t("wordByWord")}</label>
+                <label className="flex items-center gap-2"><input type="checkbox" checked={showWords} onChange={(e) => setShowWords(e.target.checked)} /> {t("wordByWord")}</label></>}
               </div>
             )}
           </section>
@@ -370,7 +400,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {active && (
                       <div className="mt-4 flex flex-wrap items-center gap-2 text-sm" onClick={(e) => e.stopPropagation()}>
                         <span className="text-muted">🧠 {t("memorize")}</span>
-                        <div className="inline-flex rounded-xl bg-bg p-1">
+                        <div className="inline-flex flex-wrap rounded-xl bg-bg p-1">
                           <button className={seg(hide === 0)} onClick={() => setHide(0)}>{t("hideNone")}</button>
                           <button className={seg(hide === 1)} onClick={() => setHide(1)}>{t("hideHalf")}</button>
                           <button className={seg(hide === 2)} onClick={() => setHide(2)}>{t("hideAll")}</button>
@@ -386,11 +416,21 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {active && hide > 0 && revealed && (
                       <div className="mt-3 rounded-xl bg-accent-soft p-3 text-sm" onClick={(e) => e.stopPropagation()}>
                         <p className="mb-2 font-medium">{t("rateQ")}</p>
+                        {kids ? (
+                          <div className="flex flex-wrap gap-2">
+                            {([["again", "😕"], ["good", "🙂"], ["easy", "🤩"]] as const).map(([r, e]) => (
+                              <button key={r} className="grid h-20 w-20 place-items-center rounded-3xl border-2 border-line bg-surface text-4xl transition hover:scale-110 hover:border-accent" onClick={() => onRate(r)} aria-label={t(r)}>
+                                {e}<span className="text-xs font-semibold">{t(r)}</span>
+                              </button>
+                            ))}
+                          </div>
+                        ) : (
                         <div className="flex flex-wrap gap-2">
                           <button className="rounded-full border border-line bg-surface px-4 py-1.5 font-medium hover:border-accent" onClick={() => onRate("again")}>↺ {t("again")}</button>
                           <button className={primary} onClick={() => onRate("good")}>✓ {t("good")}</button>
                           <button className="rounded-full border border-line bg-surface px-4 py-1.5 font-medium hover:border-accent" onClick={() => onRate("easy")}>★ {t("easy")}</button>
                         </div>
+                        )}
                       </div>
                     )}
                     {active && waiting && (
@@ -399,7 +439,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         <button className={primary} onClick={(e) => { e.stopPropagation(); advance(); }}>{t("continue")}</button>
                       </div>
                     )}
-                    {active && (
+                    {active && !kids && (
                       <button className="mt-4 rounded-full border border-accent/30 px-4 py-1.5 text-sm font-medium text-accent lg:hidden" onClick={(e) => { e.stopPropagation(); setSheetOpen(true); }}>
                         📖 {t("tafsir")}
                       </button>
@@ -412,10 +452,10 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
           <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>
         </main>
 
-        <aside className="sticky top-20 my-5 hidden max-h-[calc(100vh-6rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">
+        {!kids && <aside className="sticky top-20 my-5 hidden max-h-[calc(100vh-6rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">
           <h2 className="mb-3 font-display text-lg font-semibold">{t("tafsir")} · {verse.verse_key}</h2>
           {tafsirBody}
-        </aside>
+        </aside>}
       </div>
 
       <audio
@@ -435,7 +475,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
       {note && (
         <div role="status" className="fixed inset-x-0 bottom-28 z-50 flex justify-center px-4">
-          <p className="rounded-full bg-ink px-4 py-2 text-sm text-bg shadow-card">{note}</p>
+          <p className={`rounded-full bg-ink px-4 py-2 text-sm text-bg shadow-card ${kids ? "pop text-base" : ""}`}>{kids ? "🌟 " : ""}{note}</p>
         </div>
       )}
 

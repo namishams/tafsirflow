@@ -17,10 +17,15 @@ export default function SurahBrowser({ chapters }: { chapters: Chapter[] }) {
   const [st, setSt] = useState({ streak: 0, todayCount: 0 });
 
   useEffect(() => {
-    setLast(readJSON<Last | null>("tf:last", null));
-    setMarks(readJSON<string[]>("tf:bookmarks", []));
-    setDue(dueVerses());
-    setSt(stats());
+    const load = () => {
+      setLast(readJSON<Last | null>("tf:last", null));
+      setMarks(readJSON<string[]>("tf:bookmarks", []));
+      setDue(dueVerses());
+      setSt(stats());
+    };
+    load();
+    window.addEventListener("tf-synced", load); // account data arrived
+    return () => window.removeEventListener("tf-synced", load);
   }, []);
 
   const list = useMemo(() => {

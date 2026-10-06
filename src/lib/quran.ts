@@ -52,7 +52,9 @@ export function parseSegments(raw: unknown[] | undefined): Segment[] {
     .map((s) => (s.length >= 4 ? { word: s[1], start: s[2], end: s[3] } : { word: s[0], start: s[1], end: s[2] }));
 }
 
-async function get<T>(path: string): Promise<T> {
+export class LimitError extends Error {}
+
+async function get<T>(path: string, headers?: Record<string, string>): Promise<T> {
   if (typeof window === "undefined") {
     // server-side rendering: read the store directly
     const { getContent } = await import("./upstream");
@@ -60,7 +62,8 @@ async function get<T>(path: string): Promise<T> {
     if (data.__missing) throw new Error("not found");
     return data;
   }
-  const res = await fetch(`${CLIENT_API}${path}`);
+  const res = await fetch(`${CLIENT_API}${path}`, { headers });
+  if (res.status === 402) throw new LimitError("daily tafsir limit");
   if (!res.ok) throw new Error(`API ${res.status}`);
   return res.json();
 }
@@ -133,8 +136,34 @@ export async function getVerses(chapter: number, locale: string, reciterId: numb
 
 export type TafsirResult = { text: string; verseKeys: string[] };
 
-export async function getTafsir(tafsirId: number, verseKey: string): Promise<TafsirResult | null> {
-  const data = await get<{ tafsir?: { text: string; verses?: Record<string, unknown> } }>(`/tafsirs/${tafsirId}/by_ayah/${verseKey}`);
+// primary = the verse the reader actually opened (counts against the anonymous daily limit)
+export async function getTafsir(tafsirId: number, verseKey: string, primary = false): Promise<TafsirResult | null> {
+  const data = await get<{ tafsir?: { text: string; verses?: Record<string, unknown> } }>(
+    `/tafsirs/${tafsirId}/by_ayah/${verseKey}`,
+    primary ? { "x-tf-primary": "1" } : undefined,
+  );
   if (!data.tafsir?.text) return null;
   return { text: data.tafsir.text, verseKeys: Object.keys(data.tafsir.verses ?? {}) };
+}
+
+// Own tafsir written in the admin area (approved entries only)
+export const OWN_TAFSIR_ID = -1;
+
+export async function getOwnTafsir(locale: string, surah: number, verse: number): Promise<TafsirResult | null> {
+  const r = await fetch(`/api/entries?lang=${locale}&surah=${surah}&verse=${verse}`);
+  if (!r.ok) return null;
+  const { entry } = (await r.json()) as { entry: { html: string; verse_from: number; verse_to: number } | null };
+  if (!entry) return null;
+  const keys = [`${surah}:${entry.verse_from}`];
+  if (entry.verse_to !== entry.verse_from) keys.push(`${surah}:${entry.verse_to}`);
+  return { text: entry.html, verseKeys: keys };
+}
+
+export async function hasOwnTafsir(locale: string): Promise<boolean> {
+  try {
+    const r = await fetch(`/api/entries/summary?lang=${locale}`);
+    return ((await r.json()) as { count: number }).count > 0;
+  } catch {
+    return false;
+  }
 }
