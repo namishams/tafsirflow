@@ -40,7 +40,7 @@ export default function RadioPlayer() {
   const field = "h-11 w-full min-w-0 rounded-md border border-line bg-bg px-3 text-[15px]";
 
   return (
-    <div className="-mb-24">
+    <div>
       {/* On-air stage */}
       <section className="stage relative overflow-hidden text-[#eef0f3]">
         <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 75% 30%, rgb(var(--gold) / .14) 0, transparent 45%), radial-gradient(circle at 5% 95%, rgb(var(--accent) / .25) 0, transparent 45%)" }} />

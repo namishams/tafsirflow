@@ -3,13 +3,14 @@ import { Link } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SiteMenu from "./SiteMenu";
 import Logo from "./Logo";
+import { TrustLine } from "./TrustStrip";
 
 // Two-panel sign-in layout: brand panel (hidden on phones) + form
 export default async function AuthShell({ children }: { children: React.ReactNode }) {
   const t = await getTranslations("account");
   return (
     <div className="grid min-h-[100dvh] lg:grid-cols-[1fr_minmax(420px,520px)]">
-      <aside className="hero-bg pattern relative hidden flex-col justify-between p-12 text-white lg:flex">
+      <aside className="stage pattern relative hidden flex-col justify-between p-12 text-white lg:flex">
         <Link href="/" className="flex items-center gap-2.5"><Logo size={32} /><span className="font-display text-lg font-semibold">Quran Masterclass</span></Link>
         <div>
           <p className="font-arabic text-6xl leading-[1.5] text-[#e9cf99]" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
@@ -20,14 +21,14 @@ export default async function AuthShell({ children }: { children: React.ReactNod
             ))}
           </ul>
         </div>
-        <p className="text-xs text-white/50">© {new Date().getFullYear()} Quran Masterclass</p>
+        <div><TrustLine className="text-[#e9cf99]" /><p className="mt-3 text-xs text-white/50">© {new Date().getFullYear()} Quran Masterclass</p></div>
       </aside>
       <main className="flex flex-col px-5 py-6 sm:px-10">
         <header className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5 lg:invisible"><Logo size={28} /><span className="font-display text-base font-semibold">Quran Masterclass</span></Link>
           <div className="flex items-center gap-2"><LanguageSwitcher /><SiteMenu /></div>
         </header>
-        <div className="mx-auto flex w-full max-w-[400px] flex-1 flex-col justify-center py-10">{children}</div>
+        <div className="mx-auto flex w-full max-w-[400px] flex-1 flex-col justify-center py-10">{children}<TrustLine className="mt-8 text-muted lg:hidden" /></div>
       </main>
     </div>
   );

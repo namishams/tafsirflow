@@ -5,15 +5,17 @@ const prod = process.env.NODE_ENV === "production";
 const https = (process.env.SITE_URL ?? "").startsWith("https://");
 
 // Content Security Policy: only our own scripts, styles, fonts and data; audio may also come from Quran.com's CDN.
-// Inline scripts are needed by Next.js itself and by our JSON-LD; no third-party scripts are allowed at all.
+// Inline scripts are needed by Next.js itself and by our JSON-LD. The only third party is Google reCAPTCHA (bot protection),
+// which is loaded on protected forms only.
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${prod ? "" : " 'unsafe-eval'"}`,
+  `script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/${prod ? "" : " 'unsafe-eval'"}`,
+  "frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://www.gstatic.com/recaptcha/",
   "font-src 'self' data:",
   "media-src 'self' blob: https://verses.quran.com https://*.quran.com https://download.quranicaudio.com",
-  `connect-src 'self'${prod ? "" : " ws: wss:"}`,
+  `connect-src 'self' https://www.google.com/recaptcha/${prod ? "" : " ws: wss:"}`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

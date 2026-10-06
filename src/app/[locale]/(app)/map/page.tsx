@@ -23,7 +23,7 @@ export default async function MapPage({ params }: { params: Promise<{ locale: st
   const ld = { "@context": "https://schema.org", "@type": "FAQPage", url: abs(`/${locale}/map`), mainEntity: c.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
   return (
-    <div className="-mb-24">
+    <div>
       <JsonLd data={ld} />
 
       {/* Hero + the map itself */}
@@ -109,7 +109,7 @@ export default async function MapPage({ params }: { params: Promise<{ locale: st
           <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{c.finalTitle}</h2>
           <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70">{c.finalLead}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="/surah/1?shams=1" className="inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-6 text-[15px] font-bold text-[rgb(var(--stage))] hover:brightness-110">{c.ctaStart}</Link>
+            <Link href="/surah/1?shams=1" className="inline-flex h-12 items-center rounded-md btn-gold px-6 text-[15px] font-bold">{c.ctaStart}</Link>
             <Link href="/today" className="inline-flex h-12 items-center rounded-md border border-white/30 px-6 text-[15px] font-bold hover:border-white">{c.ctaToday}</Link>
           </div>
         </div>

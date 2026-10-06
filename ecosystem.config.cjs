@@ -1,7 +1,7 @@
 // pm2 startOrReload ecosystem.config.cjs --update-env   (run as user "tafsir"; scripts/deploy.sh does this)
 // Settings live OUTSIDE git, in two files on the server:
 //   /srv/tafsirflow/.env.db   DATABASE_URL (written by scripts/server-setup.sh)
-//   /srv/tafsirflow/.env.app  SITE_URL, ADMIN_EMAIL, ALLOW_INDEXING, SMTP_* (template created by scripts/deploy.sh)
+//   /srv/tafsirflow/.env.app  SITE_URL, ADMIN_EMAIL, ALLOW_INDEXING, SMTP_*, RECAPTCHA_* (template created by scripts/deploy.sh)
 const fs = require("fs");
 
 function load(file) {

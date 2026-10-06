@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TrustStrip, { TrustLine } from "@/components/TrustStrip";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -84,10 +85,11 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
               <h1 className="font-display mt-5 text-[44px] leading-[1.02] sm:text-7xl">{t("home2.heroTitle")}</h1>
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70 sm:text-lg">{t("home2.heroLead")}</p>
               <div className="mt-9 flex flex-wrap gap-3">
-                <Link href="/academy" className="inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-6 text-[15px] font-bold text-[rgb(var(--stage))] hover:brightness-110">{t("home2.heroCta")}</Link>
+                <Link href="/academy" className="inline-flex h-12 items-center rounded-md btn-gold px-6 text-[15px] font-bold">{t("home2.heroCta")}</Link>
                 <Link href="/shams" className="inline-flex h-12 items-center rounded-md border border-white/30 px-6 text-[15px] font-bold hover:border-white">{t("home2.heroCta2")}</Link>
               </div>
               <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[rgb(var(--gold))]/40 px-3 py-1 text-xs font-semibold text-[rgb(var(--gold))]">✓ {t("free.badge")}</p>
+              <TrustLine className="mt-3 flex text-white/70" />
               <ul className="mt-6 grid max-w-lg grid-cols-2 gap-px overflow-hidden rounded-md border border-white/10 bg-white/10 sm:grid-cols-4">
                 {[["114", "home2.statSurahs"], ["6.236", "home2.statVerses"], [String(n), "home2.statLanguages"], ["0 €", "home2.statFree"]].map(([v, k]) => (
                   <li key={k} className="bg-stage px-4 py-3"><p className="font-display text-2xl">{v}</p><p className="text-xs text-white/55">{t(k)}</p></li>
@@ -339,6 +341,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
       </main>
 
       <footer className="border-t border-line bg-bg">
+        <div className="mx-auto max-w-6xl px-5 pt-12"><TrustStrip details /></div>
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-2.5"><Logo size={28} /><span className="text-[15px] font-extrabold tracking-tight">{t("app.name")}</span></Link>

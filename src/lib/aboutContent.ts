@@ -44,7 +44,7 @@ Was wir nicht tun: Wir erfinden keine eigene Auslegung. Koran-Text, Übersetzung
   values: [
     { t: "Kostenlos für alle", d: "Der Koran gehört jedem Muslim. Niemand soll aufhören zu lernen, weil ein Abo zu teuer ist." },
     { t: "Authentische Quellen", d: "Text, Übersetzungen und Tafsir aus anerkannten Quellen – immer mit Angabe, woher sie stammen." },
-    { t: "Respekt vor deinen Daten", d: "Keine Werbung, kein Tracking, kein Verkauf von Daten. Passwörter verschlüsselt, Verbindungen verschlüsselt, Export und Löschung jederzeit." },
+    { t: "Respekt vor deinen Daten", d: "Keine Werbung, keine Analysedienste, kein Verkauf von Daten. Passwörter verschlüsselt, Verbindungen verschlüsselt, Export und Löschung jederzeit." },
     { t: "Würde im Miteinander", d: "Kommentare werden vor der Veröffentlichung geprüft. Was hier steht, soll einem Ort angemessen sein, an dem der Koran gelesen wird." },
     { t: "Für jedes Alter", d: "Vom ersten Kinder-Vers bis zum Hifz-Weg passt sich die Methode an dein Alter und dein Tempo an." },
     { t: "Ehrlichkeit", d: "Keine erfundenen Versprechen, keine aufgeblasenen Zahlen. Was noch fehlt, steht im Änderungsprotokoll – und wird gebaut." },
@@ -126,7 +126,7 @@ What we don't do: we don't invent our own interpretation. Quran text, translatio
   values: [
     { t: "Free for everyone", d: "The Quran belongs to every Muslim. No one should stop learning because a subscription is too expensive." },
     { t: "Authentic sources", d: "Text, translations and tafsir from recognised sources – always showing where they come from." },
-    { t: "Respect for your data", d: "No ads, no tracking, no selling of data. Passwords hashed, connections encrypted, export and deletion any time." },
+    { t: "Respect for your data", d: "No ads, no analytics services, no selling of data. Passwords hashed, connections encrypted, export and deletion any time." },
     { t: "Dignity together", d: "Comments are reviewed before they appear. What is written here should befit a place where the Quran is read." },
     { t: "For every age", d: "From a child's first verse to the hifz track, the method adapts to your age and your pace." },
     { t: "Honesty", d: "No invented promises, no inflated numbers. What is still missing is in the changelog – and being built." },

@@ -60,20 +60,20 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
   const dark = "stage text-[#eef0f3]";
 
   return (
-    <div className="-mb-24">
+    <div>
       <JsonLd data={ld} />
 
       {/* Hero */}
       <section className={`${dark} relative overflow-hidden`}>
         <div className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, rgb(var(--gold)) 0, transparent 45%)" }} />
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-5 py-16 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center [&>*]:min-w-0">
           <div>
             <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.heroKicker}</p>
             <h1 className="font-display mt-4 text-[46px] leading-[1.02] sm:text-7xl">{c.heroTitle}</h1>
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70">{c.heroLead}</p>
             <p className="mt-5 text-sm font-semibold text-white/90">{c.heroBy}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/surah/1?shams=1" className="inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-6 text-[15px] font-bold text-[rgb(var(--stage))] hover:brightness-110">{t("cta")}</Link>
+              <Link href="/surah/1?shams=1" className="inline-flex h-12 items-center rounded-md btn-gold px-6 text-[15px] font-bold">{t("cta")}</Link>
               <Link href="/plan" className="inline-flex h-12 items-center rounded-md border border-white/30 px-6 text-[15px] font-bold hover:border-white">{t("planCta")}</Link>
             </div>
           </div>
@@ -81,12 +81,12 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
           <figure className="rounded-lg border border-white/10 bg-white/[0.03] p-5 sm:p-6">
             <figcaption className="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">{c.demoTitle} · 1:2</figcaption>
             <ol className="mt-4 grid gap-3">
-              <li className="rounded-md bg-white/[0.04] p-4"><p className="text-[11px] font-bold text-[rgb(var(--gold))]">1 · {c.demoStages[0]}</p><p className="font-arabic mt-1 text-[28px] leading-[1.9]" dir="rtl">{W.join(" ")}</p></li>
-              <li className="rounded-md bg-white/[0.04] p-4"><p className="text-[11px] font-bold text-[rgb(var(--gold))]">2 · {c.demoStages[1]}</p>
+              <li className="min-w-0 overflow-hidden rounded-md bg-white/[0.04] p-4"><p className="text-[11px] font-bold text-[rgb(var(--gold))]">1 · {c.demoStages[0]}</p><p className="font-arabic mt-1 text-[28px] leading-[1.9]" dir="rtl">{W.join(" ")}</p></li>
+              <li className="min-w-0 overflow-hidden rounded-md bg-white/[0.04] p-4"><p className="text-[11px] font-bold text-[rgb(var(--gold))]">2 · {c.demoStages[1]}</p>
                 {[3, 2, 1].map((k) => <p key={k} className="font-arabic text-[22px] leading-[1.8]" dir="rtl">{W.map((w, i) => <span key={i} className={i < k ? "opacity-20" : ""}>{w} </span>)}</p>)}
               </li>
-              <li className="rounded-md bg-white/[0.04] p-4"><p className="text-[11px] font-bold text-[rgb(var(--gold))]">3 · {c.demoStages[2]}</p><p className="font-arabic mt-1 text-[28px] leading-[1.9] text-[rgb(var(--gold))]" dir="rtl">{CUES.join("  ")}</p></li>
-              <li className="rounded-md bg-white/[0.04] p-4"><p className="text-[11px] font-bold text-[rgb(var(--gold))]">4 · {c.demoStages[3]}</p><p className="mt-2 flex flex-row-reverse gap-2">{W.map((w, i) => <span key={i} className="h-7 rounded bg-white/15" style={{ width: `${w.length * 9}px` }} />)}</p></li>
+              <li className="min-w-0 overflow-hidden rounded-md bg-white/[0.04] p-4"><p className="text-[11px] font-bold text-[rgb(var(--gold))]">3 · {c.demoStages[2]}</p><p className="font-arabic mt-1 text-[28px] leading-[1.9] text-[rgb(var(--gold))]" dir="rtl">{CUES.join("  ")}</p></li>
+              <li className="min-w-0 overflow-hidden rounded-md bg-white/[0.04] p-4"><p className="text-[11px] font-bold text-[rgb(var(--gold))]">4 · {c.demoStages[3]}</p><p className="mt-2 flex flex-row-reverse flex-wrap gap-2">{W.map((w, i) => <span key={i} className="h-7 rounded bg-white/15" style={{ width: `${w.length * 9}px` }} />)}</p></li>
             </ol>
           </figure>
         </div>
@@ -240,7 +240,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
         <div className="mx-auto max-w-3xl px-5 py-20 sm:py-28">
           <h2 className="font-display text-4xl leading-[1.1] sm:text-6xl">{c.finalTitle}</h2>
           <p className="mt-4 text-[17px] text-white/70">{c.finalLead}</p>
-          <Link href="/surah/1?shams=1" className="mt-8 inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-7 text-[15px] font-bold text-[rgb(var(--stage))] hover:brightness-110">{t("cta")}</Link>
+          <Link href="/surah/1?shams=1" className="mt-8 inline-flex h-12 items-center rounded-md btn-gold px-7 text-[15px] font-bold">{t("cta")}</Link>
         </div>
       </section>
     </div>

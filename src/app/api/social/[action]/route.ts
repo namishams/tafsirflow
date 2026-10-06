@@ -6,6 +6,7 @@ import { anonCookie } from "@/lib/gate";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { MAX_STRIKES, moderate } from "@/lib/moderation";
 import { getSettings } from "@/lib/settings";
+import { checkCaptcha } from "@/lib/captcha";
 
 export const dynamic = "force-dynamic";
 
@@ -72,7 +73,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
   const p = pool();
   if (!p) return json({ error: "unavailable" }, 503);
   if (!sameOrigin(req)) return json({ error: "forbidden" }, 403);
-  const b = (await req.json().catch(() => ({}))) as { key?: string; body?: string; parentId?: number; id?: number; reason?: string };
+  const b = (await req.json().catch(() => ({}))) as { key?: string; body?: string; parentId?: number; id?: number; reason?: string; captcha?: string };
   const me = await currentUser();
   const ip = clientIp(req);
 
@@ -109,6 +110,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
       const u = (await p.query("SELECT comment_banned FROM users WHERE id = $1", [me.id])).rows[0];
       if (u?.comment_banned) return json({ error: "banned" }, 403);
       if (rateLimited(`soc:comment:${me.id}`, 5, 10 * 60_000)) return json({ error: "rate" }, 429);
+      if ((await checkCaptcha(b, "comment", ip)) !== "ok") return json({ error: "captcha" }, 400);
       let parent: number | null = null;
       if (b.parentId) {
         const pr = await p.query("SELECT id FROM comments WHERE id = $1 AND verse_key = $2 AND status = 'approved' AND parent_id IS NULL", [b.parentId, b.key]);

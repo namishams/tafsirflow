@@ -1,7 +1,8 @@
 import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { currentUser } from "@/lib/auth";
-import { json, rateLimited, sameOrigin } from "@/lib/http";
+import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
+import { checkCaptcha } from "@/lib/captcha";
 import { moderate } from "@/lib/moderation";
 
 export const dynamic = "force-dynamic";
@@ -33,7 +34,7 @@ export async function POST(req: NextRequest) {
   const me = await currentUser();
   if (!me) return json({ error: "login" }, 401);
   if (!me.emailVerified) return json({ error: "verify" }, 403);
-  const b = (await req.json().catch(() => ({}))) as { action?: string; id?: number; category?: string; title?: string; body?: string };
+  const b = (await req.json().catch(() => ({}))) as { action?: string; id?: number; category?: string; title?: string; body?: string; captcha?: string };
   if (b.action === "vote") {
     if (!b.id || rateLimited(`fbvote:${me.id}`, 60, 60_000)) return json({ error: "bad request" }, 400);
     const del = await p.query("DELETE FROM feedback_votes WHERE post_id = $1 AND user_id = $2", [b.id, me.id]);
@@ -44,6 +45,7 @@ export async function POST(req: NextRequest) {
   const title = String(b.title ?? "").trim(), body = String(b.body ?? "").trim();
   if (!CATS.includes(String(b.category)) || title.length < 6 || title.length > 120 || body.length > 1500) return json({ error: "invalid" }, 400);
   if (rateLimited(`fbpost:${me.id}`, 5, 60 * 60_000)) return json({ error: "rate" }, 429);
+  if ((await checkCaptcha(b, "feedback", clientIp(req))) !== "ok") return json({ error: "captcha" }, 400);
   const v1 = await moderate(title), v2 = body ? await moderate(body.slice(0, 500)) : ({ ok: true, flagged: null } as const);
   if (!v1.ok || !v2.ok) return json({ error: "rejected" }, 422);
   await p.query("INSERT INTO feedback_posts (user_id, category, title, body, flagged) VALUES ($1, $2, $3, $4, $5)", [me.id, b.category, title, body, v1.flagged ?? (v2.ok ? v2.flagged : null)]);

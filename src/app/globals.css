@@ -132,3 +132,10 @@ h1, h2, h3, p, li, summary { overflow-wrap: anywhere; hyphens: auto; }
 .radio-orb.is-on .bars i { animation: eq 1s ease-in-out infinite; }
 .radio-orb.is-on .bars i:nth-child(2n) { animation-delay: -.35s; } .radio-orb.is-on .bars i:nth-child(3n) { animation-delay: -.7s; }
 @media (prefers-reduced-motion: reduce) { .radio-orb .ring, .radio-orb .bars i { animation: none !important; } }
+
+/* the reCAPTCHA badge is replaced by the notice under each protected form (allowed by Google) */
+.grecaptcha-badge { visibility: hidden; }
+
+/* gold button like the gilding on a fine mushaf */
+.btn-gold { background: linear-gradient(180deg, #e6c77f, #c99f4c); color: rgb(8 38 29); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35), 0 1px 2px rgb(0 0 0 / 0.15); }
+.btn-gold:hover { filter: brightness(1.05); }

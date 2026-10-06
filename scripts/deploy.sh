@@ -29,6 +29,11 @@ SMTP_PORT=465
 SMTP_USER=
 SMTP_PASS=
 MAIL_FROM=Quran Masterclass <noreply@quranmasterclass.com>
+# Bot protection (Google reCAPTCHA) – easiest: bash scripts/set-recaptcha.sh <v3 keys> <v2 keys>
+RECAPTCHA_V3_SITE_KEY=
+RECAPTCHA_V3_SECRET=
+RECAPTCHA_V2_SITE_KEY=
+RECAPTCHA_V2_SECRET=
 ENVEOF
   chown tafsir:tafsir "$ENV_APP"
 fi

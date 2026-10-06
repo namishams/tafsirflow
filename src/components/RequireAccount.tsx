@@ -1,4 +1,5 @@
 "use client";
+import { TrustLine } from "./TrustStrip";
 import { useCallback, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import AccountForm from "./AccountForm";
@@ -28,6 +29,7 @@ export default function RequireAccount({ children, feature }: { children: React.
         <h2 className="font-display mt-2 text-3xl leading-tight">{me ? t("wallVerifyTitle") : t("wallTitle", { feature })}</h2>
         <p className="mt-3 text-[15px] leading-relaxed text-muted">{me ? t("wallVerifyBody") : t("wallBody")}</p>
         <p className="mt-3 text-sm font-semibold text-accent">✓ {tf("badge")}</p>
+        <TrustLine className="mt-2 text-muted" />
         <ul className="mt-4 grid gap-2 text-[15px]">{["wall1", "wall2", "wall3", "wall4"].map((k) => <li key={k} className="flex gap-3"><span className="mt-2.5 h-px w-4 shrink-0 bg-gold" />{t(k)}</li>)}</ul>
       </div>
       <div className="border-t border-line pt-6 lg:border-s lg:border-t-0 lg:ps-8 lg:pt-0"><AccountForm defaultMode="register" bare /></div>

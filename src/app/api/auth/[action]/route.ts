@@ -7,6 +7,7 @@ import { confirmVerification, currentUser, endSession, hashPassword, isAdminEmai
 import { mailConfigured, sendMail } from "@/lib/mail";
 import { NextResponse } from "next/server";
 import { COUNTRY_CODES, GOALS } from "@/lib/countries";
+import { checkCaptcha } from "@/lib/captcha";
 
 export const dynamic = "force-dynamic";
 
@@ -52,7 +53,13 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
   if (rateLimited(`${action}:${ip}`, action === "login" ? 10 : 5, action === "login" ? 10 * 60_000 : 60 * 60_000)) return json({ error: "rate" }, 429);
   if (action === "forgot" || action === "reset") { /* shares the strict hourly limit above */ }
 
-  const body = (await req.json().catch(() => ({}))) as { email?: string; password?: string; name?: string; firstName?: string; lastName?: string; country?: string; city?: string; goal?: string; marketing?: boolean; acceptTerms?: boolean; token?: string; locale?: string; birthYear?: number };
+  const body = (await req.json().catch(() => ({}))) as { email?: string; password?: string; name?: string; firstName?: string; lastName?: string; country?: string; city?: string; goal?: string; marketing?: boolean; acceptTerms?: boolean; token?: string; locale?: string; birthYear?: number; captcha?: string; captchaV2?: string };
+
+  // bot protection (Google reCAPTCHA) on the forms bots like to hammer
+  if (action === "login" || action === "register" || action === "forgot") {
+    const c = await checkCaptcha(body, action, ip);
+    if (c !== "ok") return json({ error: "captcha", challenge: c === "challenge" }, 403);
+  }
 
   if (action === "resend") {
     const me = await currentUser();

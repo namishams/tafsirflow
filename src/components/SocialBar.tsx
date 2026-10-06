@@ -1,6 +1,8 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { CaptchaNotice } from "./CaptchaBox";
+import { captchaToken, warmCaptcha } from "@/lib/captchaClient";
 import AuthGate from "./AuthGate";
 import { IconComment, IconEye, IconFlag, IconHeart, IconShare } from "./Icons";
 
@@ -69,6 +71,7 @@ export default function SocialBar({ verseKey, shareUrl, shareText, trackView = t
 
 function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: string; signedIn: boolean; onClose: () => void; onAuth: (status: number) => boolean; onCount: (n: number) => void }) {
   const t = useTranslations("social");
+  const tt = useTranslations("trust");
   const locale = useLocale();
   const [list, setList] = useState<Comment[] | null>(null);
   const [text, setText] = useState("");
@@ -80,7 +83,7 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
     const r = await fetch(`/api/social/comments?key=${verseKey}`);
     if (r.ok) { const d = (await r.json()) as { comments: Comment[] }; setList(d.comments); onCount(d.comments.filter((c) => !c.pending).length); } else setList([]);
   }, [verseKey, onCount]);
-  useEffect(() => { load(); }, [load]);
+  useEffect(() => { load(); warmCaptcha(); }, [load]);
   useEffect(() => {
     const k = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", k);
@@ -91,7 +94,7 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
   const send = async () => {
     setBusy(true); setMsg(null);
     try {
-      const r = await post("comment", { key: verseKey, body: text, parentId: reply?.id });
+      const r = await post("comment", { key: verseKey, body: text, parentId: reply?.id, captcha: await captchaToken("comment") });
       if (onAuth(r.status)) { onClose(); return; }
       const d = await r.json().catch(() => ({}));
       if (r.ok) { setText(""); setReply(null); setMsg({ kind: "ok", text: d.pending ? t("pendingNote") : t("posted") }); load(); }
@@ -99,6 +102,7 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
       else if (r.status === 429) setMsg({ kind: "err", text: t("rate") });
       else if (r.status === 403 && d.error === "banned") setMsg({ kind: "err", text: t("banned") });
       else if (r.status === 409) setMsg({ kind: "err", text: t("duplicate") });
+      else if (d.error === "captcha") setMsg({ kind: "err", text: tt("captchaFailed") });
       else setMsg({ kind: "err", text: t("error") });
     } finally { setBusy(false); }
   };
@@ -145,6 +149,7 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
         <div className="border-t border-line p-4">
           {reply && <p className="mb-2 flex items-center justify-between text-xs text-muted"><span>{t("replyTo", { name: reply.author })}</span><button onClick={() => setReply(null)} className="hover:text-ink">✕</button></p>}
           <textarea value={text} onChange={(e) => setText(e.target.value)} maxLength={500} rows={3} placeholder={t("placeholder")} className="w-full resize-none rounded-md border border-line bg-bg px-3 py-2 text-[15px] focus:border-ink focus:outline-none" />
+          <CaptchaNotice />
           <div className="mt-2 flex items-center justify-between gap-3">
             <span className="text-xs text-muted">{text.length}/500</span>
             <button disabled={busy || text.trim().length < 2} onClick={send} className="h-10 rounded-md bg-ink px-5 text-sm font-bold text-bg disabled:opacity-40">{t("send")}</button>

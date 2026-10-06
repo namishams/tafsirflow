@@ -102,7 +102,7 @@ export default function PrayerBoard() {
   const methodOf = st.method === "auto" ? main.method : st.method;
 
   return (
-    <div className="-mb-24">
+    <div>
       {/* Hero: place, live clock, next prayer countdown and the arc of the day */}
       <section className={`${dark} relative overflow-hidden`}>
         <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 80% 10%, rgb(var(--gold) / .14) 0, transparent 40%)" }} />

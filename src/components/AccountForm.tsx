@@ -5,8 +5,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { fetchMe, startSync, stopSync, type Me } from "@/lib/sync";
 import { GOALS, sortedCountries } from "@/lib/countries";
+import { captchaToken } from "@/lib/captchaClient";
+import CaptchaBox from "./CaptchaBox";
 
-const ERR: Record<string, string> = { invalid: "errInvalid", exists: "errExists", weak: "errWeak", email: "errEmail", rate: "errRate", insecure: "errInsecure", nodb: "errNoDb", token: "errToken", terms: "errTerms", name: "errName", country: "errCountry", age: "errAge" };
+const ERR: Record<string, string> = { invalid: "errInvalid", exists: "errExists", weak: "errWeak", email: "errEmail", rate: "errRate", insecure: "errInsecure", nodb: "errNoDb", token: "errToken", terms: "errTerms", name: "errName", country: "errCountry", age: "errAge", captcha: "errCaptcha" };
 type Mode = "login" | "register" | "forgot";
 
 export function Field({ label, children }: { label: string; children: React.ReactNode }) {
@@ -55,6 +57,9 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
   const [err, setErr] = useState("");
   const [info, setInfo] = useState("");
   const [busy, setBusy] = useState(false);
+  const [challenge, setChallenge] = useState(false);
+  const [captchaV2, setCaptchaV2] = useState("");
+  const [tries, setTries] = useState(0);
 
   useEffect(() => {
     fetchMe().then((r) => { setMe(r.user); setSecure(r.secure); setReady(true); });
@@ -71,9 +76,16 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
     setErr("");
     setInfo("");
     try {
-      const r = await fetch(`/api/auth/${mode}`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email, password, firstName, lastName, country, city, goal, birthYear: Number(birthYear), marketing, acceptTerms: terms, locale }) });
+      const captcha = captchaV2 ? "" : await captchaToken(mode);
+      const r = await fetch(`/api/auth/${mode}`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email, password, firstName, lastName, country, city, goal, birthYear: Number(birthYear), marketing, acceptTerms: terms, locale, captcha, captchaV2 }) });
       const data = await r.json();
-      if (!r.ok) { setErr(t(ERR[data.error] ?? "errGeneric")); return; }
+      if (captchaV2) { setCaptchaV2(""); setTries((n) => n + 1); } // a checkbox token works only once
+      if (!r.ok) {
+        if (data.error === "captcha") setChallenge(!!data.challenge);
+        if (!(data.error === "captcha" && data.challenge)) setErr(t(ERR[data.error] ?? "errGeneric"));
+        return;
+      }
+      setChallenge(false);
       if (mode === "forgot") { setInfo(t("forgotSent")); return; }
       setMe(data.user);
       setPassword("");
@@ -186,7 +198,8 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
       )}
       {err && <p role="alert" className="text-sm text-red-600">{err}</p>}
       {info && <p role="status" className="rounded-lg bg-accent-soft p-3 text-sm">{info}</p>}
-      <button disabled={busy || (!secure && mode !== "forgot")} className="h-12 rounded-lg bg-accent text-[15px] font-semibold text-white transition hover:brightness-110 disabled:opacity-50">
+      <CaptchaBox key={tries} challenge={challenge} onToken={setCaptchaV2} />
+      <button disabled={busy || (!secure && mode !== "forgot") || (challenge && !captchaV2)} className="btn-gold h-12 rounded-lg text-[15px] font-bold transition disabled:opacity-50">
         {mode === "login" ? t("signIn") : mode === "register" ? t("register") : t("sendReset")}
       </button>
       <p className="text-center text-sm text-muted">

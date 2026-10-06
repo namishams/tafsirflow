@@ -2,6 +2,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import AuthGate from "./AuthGate";
+import { CaptchaNotice } from "./CaptchaBox";
+import { captchaToken } from "@/lib/captchaClient";
 
 type Post = { id: number; category: string; title: string; body: string; status: string; approved: boolean; created_at: string; author: string; country: string | null; votes: number; voted: boolean; mine: boolean };
 const CATS = ["feature", "tafsir", "translation", "reciter", "bug", "content"] as const;
@@ -10,6 +12,7 @@ const STATUS_CLS: Record<string, string> = { review: "bg-line text-muted", plann
 // Feedback board: requests (features, tafsir, translations, reciters, bugs) with votes and status
 export default function FeedbackBoard() {
   const t = useTranslations("feedback");
+  const tt = useTranslations("trust");
   const locale = useLocale();
   const [posts, setPosts] = useState<Post[] | null>(null);
   const [cat, setCat] = useState<string>("");
@@ -25,10 +28,10 @@ export default function FeedbackBoard() {
   const auth = (s: number) => (s === 401 ? (setGate("register"), true) : s === 403 ? (setGate("verify"), true) : false);
   const vote = async (id: number) => { const r = await post({ action: "vote", id }); if (!auth(r.status)) load(); };
   const submit = async () => {
-    const r = await post(form);
+    const r = await post({ ...form, captcha: await captchaToken("feedback") });
     if (auth(r.status)) return;
     if (r.ok) { setMsg(t("thanks")); setForm({ category: form.category, title: "", body: "" }); setOpen(false); load(); }
-    else setMsg(r.status === 422 ? t("rejected") : r.status === 429 ? t("rate") : t("invalid"));
+    else setMsg(r.status === 422 ? t("rejected") : r.status === 429 ? t("rate") : (await r.json().catch(() => ({}))).error === "captcha" ? tt("captchaFailed") : t("invalid"));
   };
   const chip = (on: boolean) => `h-9 shrink-0 rounded-md border px-3 text-sm font-semibold ${on ? "border-ink bg-ink text-bg" : "border-line bg-surface hover:border-ink"}`;
 
@@ -54,6 +57,7 @@ export default function FeedbackBoard() {
           </select>
           <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} maxLength={120} placeholder={t("titlePh")} className="h-11 rounded-md border border-line bg-bg px-3 text-[15px]" />
           <textarea value={form.body} onChange={(e) => setForm({ ...form, body: e.target.value })} maxLength={1500} rows={4} placeholder={t("bodyPh")} className="rounded-md border border-line bg-bg p-3 text-[15px]" />
+          <CaptchaNotice />
           <div className="flex items-center justify-between gap-3"><p className="text-xs text-muted">{t("reviewNote")}</p><button disabled={form.title.trim().length < 6} onClick={submit} className="h-11 rounded-md bg-ink px-5 text-sm font-bold text-bg disabled:opacity-40">{t("send")}</button></div>
         </div>
       )}
