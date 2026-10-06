@@ -500,8 +500,11 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
   const hasTimings = useMemo(() => !!verse && verse.segments.length > 0 && (useRemote || timingsOk), [verse, useRemote, timingsOk]);
 
+  const [celebrate, setCelebrate] = useState<string | null>(null); // a short gold glow when a verse was recalled
+  useEffect(() => { if (!celebrate) return; const id = setTimeout(() => setCelebrate(null), 1700); return () => clearTimeout(id); }, [celebrate]);
   const onRate = (r: Rating) => {
     if (!verse) return;
+    if (r !== "again") { setCelebrate(verse.verse_key); try { navigator.vibrate?.(18); } catch { /* not supported */ } }
     const days = rate(verse.verse_key, r);
     setNote(days ? t("saved", { days }) : t("savedToday"));
     if (shams !== null) { if (r === "again" && plan) { beginPlan(idx); return; } nextShams(); return; }
@@ -734,7 +737,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                 <li key={v.verse_key} id={`v-${i}`} className="scroll-mt-20">
                   <article
                     onClick={() => !active && goTo(i)}
-                    className={`rounded-2xl border p-5 transition ${active ? "border-accent/30 border-s-4 border-s-accent bg-surface shadow-card" : "cursor-pointer border-line/70 bg-surface/60 hover:bg-surface"}`}
+                    className={`rounded-2xl border p-5 transition ${celebrate === v.verse_key ? "glow-once" : ""} ${active ? "border-accent/30 border-s-4 border-s-accent bg-surface shadow-card" : "cursor-pointer border-line/70 bg-surface/60 hover:bg-surface"}`}
                   >
                     <div className="mb-3 flex items-center justify-between">
                       <span className="relative grid h-9 w-9 place-items-center" aria-label={`${t("verse")} ${v.verse_number}`}>
