@@ -5,7 +5,8 @@ export const STAGES = [1, 3, 7, 14, 30, 90];
 
 // key "2:255" -> next due day. ease is the personal memory factor of that verse (Shams memory model):
 // it drops when you struggle and grows when a verse is easy for you, so every learner gets their own schedule.
-export type Srs = Record<string, { stage: number; due: number; at?: number; ease?: number; lapses?: number; last?: number }>;
+// n = number of ratings, first = day the verse was first learned (both used by the coach, see lib/coach.ts)
+export type Srs = Record<string, { stage: number; due: number; at?: number; ease?: number; lapses?: number; last?: number; n?: number; first?: number }>;
 export type Rating = "again" | "good" | "easy";
 
 const SRS_KEY = "tf:srs";
@@ -27,7 +28,7 @@ export function rate(verseKey: string, rating: Rating): number {
   if (rating === "easy") ease = Math.min(2.5, ease * 1.15);
   const stage = rating === "again" ? 0 : Math.min(STAGES.length - 1, cur + (rating === "easy" ? 2 : 1));
   const gap = rating === "again" ? 0 : Math.max(1, Math.round(STAGES[stage] * ease));
-  srs[verseKey] = { stage, due: today() + gap, at: Date.now(), ease, lapses: (prev?.lapses ?? 0) + (rating === "again" ? 1 : 0), last: today() };
+  srs[verseKey] = { stage, due: today() + gap, at: Date.now(), ease, lapses: (prev?.lapses ?? 0) + (rating === "again" ? 1 : 0), last: today(), n: (prev?.n ?? 0) + 1, first: prev?.first ?? today() };
   writeJSON(SRS_KEY, srs);
   logDay();
   return gap;
@@ -37,7 +38,7 @@ export function rate(verseKey: string, rating: Rating): number {
 export function noteMistake(verseKey: string) {
   const srs = readSrs();
   const prev = srs[verseKey];
-  srs[verseKey] = { stage: Math.max(0, (prev?.stage ?? 0) - 1), due: Math.min(prev?.due ?? Infinity, today() + 1), at: Date.now(), ease: Math.max(0.5, (prev?.ease ?? 1) * 0.9), lapses: (prev?.lapses ?? 0) + 1, last: prev?.last ?? today() };
+  srs[verseKey] = { ...prev, stage: Math.max(0, (prev?.stage ?? 0) - 1), due: Math.min(prev?.due ?? Infinity, today() + 1), at: Date.now(), ease: Math.max(0.5, (prev?.ease ?? 1) * 0.9), lapses: (prev?.lapses ?? 0) + 1, last: prev?.last ?? today(), first: prev?.first ?? today() };
   writeJSON(SRS_KEY, srs);
 }
 

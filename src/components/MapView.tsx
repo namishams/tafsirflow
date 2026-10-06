@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import MemoryMap from "./MemoryMap";
+import { MapInsights } from "./ProgressPanel";
 import { fetchMe } from "@/lib/sync";
 import { readSrs } from "@/lib/learning";
 
@@ -27,6 +28,7 @@ export default function MapView() {
         </div>
       )}
       <MemoryMap demo={mode === "demo"} dark />
+      {mode === "mine" && <MapInsights />}
     </div>
   );
 }

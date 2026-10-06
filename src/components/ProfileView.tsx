@@ -1,5 +1,6 @@
 "use client";
 import { IconFlame } from "./Icons";
+import ProgressPanel from "./ProgressPanel";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
@@ -82,6 +83,8 @@ export default function ProfileView() {
           <p className="mt-1 text-xs text-muted">{t("since", { date: date(p.created_at) })} · {t("lastLogin", { date: date(p.last_login_at) })}</p>
         </div>
       </section>
+
+      <ProgressPanel />
 
       <section>
         <h2 className="text-lg font-bold">{t("statsTitle")}</h2>

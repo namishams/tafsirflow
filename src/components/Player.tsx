@@ -15,7 +15,8 @@ import {
   type Chapter, type Reciter, type Resource, type TafsirResult, type Verse,
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
-import { dueVerses, rate, stats, type Rating } from "@/lib/learning";
+import { dueVerses, rate, readSrs, stats, type Rating } from "@/lib/learning";
+import { versePlan, type VersePlan } from "@/lib/coach";
 import * as vp from "@/lib/versePlayback";
 import { ageProfile } from "@/lib/age";
 
@@ -25,9 +26,9 @@ const seg = (on: boolean) =>
   `shrink-0 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${on ? "bg-surface text-ink shadow-sm ring-1 ring-line" : "text-muted hover:text-ink"}`;
 const IconDots = () => (<svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg>);
 const menuItem = "flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-ink hover:bg-bg";
-// small eight-pointed star used as the ornament of the learning tools
-const Star8 = ({ className = "h-3.5 w-3.5" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden><path d="M12 1.5l2.6 4.2 4.8-1.1-1.1 4.8 4.2 2.6-4.2 2.6 1.1 4.8-4.8-1.1L12 22.5l-2.6-4.2-4.8 1.1 1.1-4.8L1.5 12l4.2-2.6-1.1-4.8 4.8 1.1z" /></svg>
+// sun disc (shams = sun) used as the mark of the Shams method
+const Sun = ({ className = "h-3.5 w-3.5" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} aria-hidden><circle cx="12" cy="12" r="5.5" fill="currentColor" /><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeOpacity=".55" /></svg>
 );
 const field = "rounded-lg border border-line bg-surface px-2 py-1.5 text-sm text-ink";
 
@@ -124,7 +125,11 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const reciter = reciters.find((r) => r.folder === reciterFolder) ?? reciters[0];
   const [showTranslation, setShowTranslation] = useState(true);
   const [showWords, setShowWords] = useState(false);
-  const [shams, setShams] = useState<number | null>(null); // Shams method: current step 0–6, null = off
+  const [shams, setShams] = useState<number | null>(null); // Shams method: current step id (see lib/coach.ts), null = off
+  const [plan, setPlan] = useState<VersePlan | null>(null); // the coach's plan for the current verse
+  const [fullPath, setFullPath] = useState(false); // learner asked for all steps even on a known verse
+  const [linking, setLinking] = useState(false); // step "connect": previous + current verse are playing
+  const linkQ = useRef<string[]>([]);
   const [chain, setChain] = useState<number | null>(null); // backward build-up: index of the first word segment being played
   const [chainDone, setChainDone] = useState(false);
   const [mnemos, setMnemos] = useState<Record<string, string>>({});
@@ -234,10 +239,27 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (verse) writeJSON("tf:last", { chapter: chapterId, verse: verse.verse_number, at: Date.now() });
   }, [verse, chapterId]);
 
-  // Keep the active verse in view
+  // Keep the active verse in view. With the Shams coach the verse and its coach card are brought to the top after
+  // every step (steps show/hide translation, words and cues for all verses, so in long surahs things would move away).
+  const shamsOnRef = useRef(false);
   useEffect(() => {
+    if (shamsOnRef.current) return;
     document.getElementById(`v-${idx}`)?.scrollIntoView({ block: "center", behavior: "smooth" });
   }, [idx]);
+  useEffect(() => {
+    if (shams === null || shams < 0) return;
+    let raf = requestAnimationFrame(() => {
+      raf = requestAnimationFrame(() => {
+        const li = document.getElementById(`v-${idx}`), card = document.getElementById("shams-card");
+        if (!li) return;
+        const fits = li.getBoundingClientRect().height < window.innerHeight - 220;
+        (fits || !card ? li : card).scrollIntoView({ block: "start", behavior: "smooth" });
+      });
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [shams, idx]); // eslint-disable-line react-hooks/exhaustive-deps
+  // the coach card scrolled out of sight: a small button brings it back
+  const [cardAway, setCardAway] = useState<"up" | "down" | null>(null);
 
   // Tafsir for the current verse; empty entries belong to the nearest earlier non-empty one.
   useEffect(() => {
@@ -295,6 +317,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   useEffect(() => { if (audioRef.current) audioRef.current.playbackRate = speed; }, [speed]);
 
   const onTime = () => {
+    if (linkQ.current.length || linking) { setActiveWord(null); return; }
     const ms = (audioRef.current?.currentTime ?? 0) * 1000;
     const s = verse?.segments.find((x) => ms >= x.start && ms < x.end);
     setActiveWord(s ? s.word : null);
@@ -317,9 +340,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     setChain(k);
     playFrom(k);
   };
+  // smooth flow: after listening and after the backward build-up the coach moves on by itself
+  const shamsRef = useRef<number | null>(null);
+  const autoNext = (from: number) => setTimeout(() => { if (shamsRef.current === from) keys.current.next(); }, 1400);
   const continueChain = () => {
     if (chain === null) return;
-    if (chain === 0) { setChain(null); setChainDone(true); setPlaying(false); return; }
+    if (chain === 0) { setChain(null); setChainDone(true); setPlaying(false); if (shams === 1) autoNext(1); return; }
     const k = Math.max(0, chain - chainStep);
     setChain(k);
     playFrom(k);
@@ -332,12 +358,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   };
 
   const onEnded = () => {
+    if (linkQ.current.length) { wantPlay.current = true; vp.setPlaybackSrc({ url: linkQ.current.shift()!, remote: "" }); return; }
+    if (linking) { setLinking(false); setPlaying(false); return; }
     if (chain !== null) { continueChain(); return; }
     playsDone.current += 1;
     setActiveWord(null);
     if (playsDone.current < repeat) { play(); return; }
     setPlaying(false);
-    if (shams !== null) return; // Shams method: stay on this verse – the coach decides when to move on
+    if (shams !== null) { if (shams === 0) autoNext(0); return; } // Shams method: the coach decides when to move on
     if (mode === "learn") { setWaiting(true); return; }
     advance();
   };
@@ -357,30 +385,73 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     const replay = () => goTo(idx, true);
     const ap = ageProfile(); // children and seniors: slower and more repetitions
     switch (shams) {
-      case 0: setMode("learn"); setRepeat(ap.listen); setSpeed(ap.speed); setShowWords(false); setShowTranslit(false); setShowTranslation(false); setHide(0); setSheetOpen(false); replay(); break;
+      case 0: setMode("learn"); setRepeat(plan?.listen ?? ap.listen); setSpeed(ap.speed); setShowWords(false); setShowTranslit(false); setShowTranslation(false); setHide(0); setSheetOpen(false); replay(); break;
       case 1: setRepeat(1); setSpeed(Math.min(ap.speed, hasTimings ? 0.85 : 0.75)); setShowTranslit(true); if (hasTimings) startChain(); else { setRepeat(3); replay(); } break;
       case 2: setChain(null); setRepeat(1); setSpeed(ap.speed); setShowWords(true); setShowTranslit(true); break;
       case 3: setShowWords(false); setShowTranslation(true); break;
       case 4: if (!isDesktop) setSheetOpen(true); break;
       case 5: setSheetOpen(false); setShowTranslation(false); setShowTranslit(false); setHide(3); break;
       case 6: setHide(0); setShowTranslation(true); setNoteOpen(verse?.verse_key ?? null); break;
+      case 7: setHide(0); setShowTranslation(false); setShowTranslit(false); setSheetOpen(false); startLink(); break;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shams]);
-  const startShams = () => setShams(0);
+  // Step "connect": previous verse + this verse, twice, so the verses join into one recitation
+  const startLink = () => {
+    const prev = verses[idx - 1];
+    if (!prev || !verse) return;
+    const p = useRemote && prev.remoteAudioUrl ? prev.remoteAudioUrl : prev.audioUrl;
+    const c = useRemote && verse.remoteAudioUrl ? verse.remoteAudioUrl : verse.audioUrl;
+    linkQ.current = [c, p, c];
+    setLinking(true);
+    playsDone.current = 0;
+    wantPlay.current = true;
+    vp.setPlaybackSrc({ url: p, remote: "" });
+  };
+  const stopLink = () => { linkQ.current = []; if (linking) { setLinking(false); audioRef.current?.pause(); } };
+  // the coach plans every verse anew: new verses get the full path, known verses only what they need
+  const planFor = (i: number, full = fullPath): VersePlan | null => {
+    const v = verses[i];
+    if (!v) return null;
+    const words = v.words.filter((w) => w.char_type_name === "word").length;
+    const p = versePlan(v.verse_key, words, verses[i - 1]?.verse_key ?? null, readSrs());
+    return full && p.kind !== "new" ? { ...p, steps: [0, 1, 2, 3, 4, 5, ...(i > 0 ? [7] : []), 6] } : p;
+  };
+  const beginPlan = (i: number, full = fullPath) => {
+    const p = planFor(i, full);
+    if (!p) return;
+    stopLink();
+    setPlan(p);
+    setShams(-1);
+    setTimeout(() => setShams(p.steps[0]), 0);
+  };
+  const startShams = () => beginPlan(idx);
   const shamsIdx = useRef(idx);
   useEffect(() => {
     if (shamsIdx.current === idx) return;
     shamsIdx.current = idx;
-    if (shams !== null && shams > 0) setShams(0);
+    if (shams !== null) beginPlan(idx);
   }, [idx]); // eslint-disable-line react-hooks/exhaustive-deps
   const shamsAuto = useRef(shamsStart);
-  useEffect(() => { if (shamsAuto.current && verse) { shamsAuto.current = false; setShams(0); } }, [verse]);
-  const stopShams = () => { setShams(null); setChain(null); setMode("continuous"); setRepeat(1); setSpeed(1); setShowWords(false); setShowTranslit(true); setShowTranslation(true); setHide(0); };
+  useEffect(() => { if (shamsAuto.current && verse) { shamsAuto.current = false; beginPlan(idx); } }, [verse]); // eslint-disable-line react-hooks/exhaustive-deps
+  const stopShams = () => { stopLink(); setShams(null); setPlan(null); setFullPath(false); setChain(null); setMode("continuous"); setRepeat(1); setSpeed(1); setShowWords(false); setShowTranslit(true); setShowTranslation(true); setHide(0); };
+  shamsRef.current = shams;
+  shamsOnRef.current = shams !== null;
+  useEffect(() => {
+    if (shams === null) { setCardAway(null); return; }
+    const el = document.getElementById("shams-card");
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => setCardAway(e.isIntersecting ? null : e.boundingClientRect.top < 0 ? "up" : "down"), { rootMargin: "-56px 0px -190px 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [shams, idx]);
+  const stepPos = plan && shams !== null ? plan.steps.indexOf(shams) : -1;
+  const lastStep = !!plan && stepPos === plan.steps.length - 1;
   const nextShams = () => {
-    if (shams === null) return;
-    if (shams < 6) { setShams(shams + 1); return; }
-    if (idx < verses.length - 1) { goTo(idx + 1, false); setShams(-1); setTimeout(() => setShams(0), 0); } else stopShams();
+    if (shams === null || !plan) return;
+    stopLink();
+    if (!lastStep) { setShams(plan.steps[stepPos + 1]); return; }
+    if (idx < verses.length - 1) goTo(idx + 1, false); else stopShams();
   };
 
   // wire the shared audio element to this page
@@ -414,7 +485,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (!verse) return;
     const days = rate(verse.verse_key, r);
     setNote(days ? t("saved", { days }) : t("savedToday"));
-    if (shams !== null) { setShams(6); return; }
+    if (shams !== null) { if (r === "again" && plan) { beginPlan(idx); return; } nextShams(); return; }
     if (reviewMode) {
       const next = dueVerses().find((k) => k !== verse.verse_key);
       if (next) {
@@ -681,20 +752,33 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     )}
                     {showTranslation && <p className="mt-2 leading-relaxed text-muted" dir={meta.dir}>{v.translation}</p>}
                     {active && shams !== null && shams >= 0 && (
-                      <div className="stage mt-5 rounded-xl p-4 text-[#eef0f3] sm:p-5" onClick={(e) => e.stopPropagation()}>
+                      <div id="shams-card" className="stage mt-5 scroll-mt-20 rounded-xl p-4 text-[#eef0f3] sm:p-5" onClick={(e) => e.stopPropagation()}>
                         <div className="flex items-center justify-between gap-3">
-                          <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))]"><Star8 className="h-3 w-3" />{ts("title")} · {ts("stepOf", { n: shams + 1, total: 7 })}</p>
+                          <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))]"><Sun className="h-3.5 w-3.5" />{ts("title")} · {ts("stepOf", { n: stepPos + 1, total: plan?.steps.length ?? 7 })}</p>
                           <span className="flex items-center gap-3 text-xs text-white/60">
                             {learned.todayCount > 0 && <span>{t("todayCount", { n: learned.todayCount })}</span>}
                             {learned.streak > 1 && <span><IconFlame /> {learned.streak}</span>}
                             <Link href="/shams" className="underline-offset-2 hover:underline">{ts("about")}</Link>
                           </span>
                         </div>
-                        <ol className="mt-3 grid grid-cols-7 gap-1" aria-hidden>
-                          {[0, 1, 2, 3, 4, 5, 6].map((n) => <li key={n} className={`h-1.5 rounded-full transition-colors ${n <= shams ? "bg-[rgb(var(--gold))]" : "bg-white/15"}`} />)}
+                        <ol className="mt-3 flex gap-1" aria-hidden>
+                          {(plan?.steps ?? []).map((n, k) => <li key={n} className={`h-1 flex-1 rounded-full transition-colors duration-500 ${k <= stepPos ? "bg-[rgb(var(--gold))]" : "bg-white/15"}`} />)}
                         </ol>
+                        {plan && stepPos === 0 && (
+                          <p className="mt-3 rounded-lg bg-white/[0.06] px-3 py-2 text-[13px] leading-snug text-white/75">
+                            <span className="font-semibold text-white">{ts(`k_${plan.kind}`)}</span> · {ts(`w_${plan.kind}`, { n: plan.listen, words: plan.words, lapses: plan.lapses, pct: Math.round((plan.strength ?? 0) * 100) })}
+                            {plan.kind !== "new" && !fullPath && <button onClick={() => { setFullPath(true); beginPlan(idx, true); }} className="ms-2 font-semibold text-[rgb(var(--gold))] underline-offset-2 hover:underline">{ts("fullPath")}</button>}
+                          </p>
+                        )}
                         <h3 className="font-display mt-4 text-2xl leading-tight">{ts(`s${shams + 1}`)}</h3>
-                        <p className="mt-2 text-[15px] leading-relaxed text-white/75">{ts(`d${shams + 1}`)}</p>
+                        <p className="mt-2 text-[15px] leading-relaxed text-white/75">{shams === 0 && plan ? ts("d1n", { n: plan.listen }) : ts(`d${shams + 1}`)}</p>
+                        {shams === 7 && (
+                          <div className="mt-3 rounded-lg border border-white/10 p-3">
+                            {verses[i - 1] && <p className="font-arabic text-xl leading-loose text-white/60" dir="rtl">{verses[i - 1].text_uthmani}</p>}
+                            <p className="font-arabic text-xl leading-loose" dir="rtl">{v.text_uthmani}</p>
+                            <p className="mt-2 text-sm text-white/70">{linking ? ts("linkNow") : ts("linkRecite")}</p>
+                          </div>
+                        )}
                         {shams === 3 && (() => {
                           const h = hooks(v, verses[i + 1]);
                           const sameRhyme = verses.filter((x) => hooks(x).rhyme === h.rhyme).length;
@@ -713,7 +797,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         {shams === 6 && <ul className="mt-2 grid gap-1 text-sm text-white/70">{["q1", "q2", "q3"].map((q) => <li key={q}>– {ts(q)}</li>)}</ul>}
                         <div className="mt-5 flex flex-wrap items-center gap-2">
                           {(shams === 0 || (shams === 1 && !hasTimings)) && <button onClick={() => goTo(idx, true)} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("again")}</button>}
-                          {shams !== 5 && <button onClick={nextShams} className="btn-gold h-11 rounded-full px-6 text-sm font-bold">{shams === 6 ? ts("nextVerse") : ts("next")}</button>}
+                          {shams === 7 && !linking && <button onClick={startLink} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("linkAgain")}</button>}
+                          {shams !== 5 && <button onClick={nextShams} className="btn-gold h-11 rounded-full px-6 text-sm font-bold">{lastStep ? (idx < verses.length - 1 ? ts("nextVerse") : ts("finish")) : ts("next")}</button>}
                           {shams === 1 && hasTimings && <button onClick={startChain} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("chainAgain")}</button>}
                           {shams === 1 && chain !== null && <span className="text-sm text-white/70">{ts("chainNow")}</span>}
                           {shams === 1 && chainDone && <span className="text-sm font-semibold text-[rgb(var(--gold))]">{ts("chainDone")}</span>}
@@ -730,7 +815,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                             <button role="tab" aria-selected={tool === "practice"} className={seg(tool === "practice")} onClick={() => setHide(practiceHide)}>{t("toolPractice")}</button>
                             <button role="tab" aria-selected={tool === "test"} className={seg(tool === "test")} onClick={() => setHide(6)}>{t("toolTest")}</button>
                           </div>
-                          {!kids && <button onClick={startShams} className="btn-gold ms-auto inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-full px-4 text-[13px] font-bold sm:w-auto"><Star8 className="h-3 w-3" />{t("toolShams")}</button>}
+                          {!kids && <button onClick={startShams} className="btn-gold ms-auto inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-full px-4 text-[13px] font-bold sm:w-auto"><Sun className="h-3.5 w-3.5" />{t("toolShams")}</button>}
                         </div>
                         {tool === "practice" && (
                           <div className="-mx-5 mt-3 flex items-center gap-2 overflow-x-auto px-5 pb-0.5 text-[13px]">
@@ -823,6 +908,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
         <div role="status" className="fixed inset-x-0 bottom-28 z-50 flex justify-center px-4">
           <p className={`rounded-full bg-ink px-4 py-2 text-sm text-bg shadow-card ${kids ? "pop text-base" : ""}`}>{kids ? "🌟 " : ""}{note}</p>
         </div>
+      )}
+
+      {shams !== null && cardAway && (
+        <button onClick={() => document.getElementById("shams-card")?.scrollIntoView({ block: "start", behavior: "smooth" })} className="fixed bottom-[12.25rem] left-1/2 z-40 inline-flex -translate-x-1/2 items-center gap-2 rounded-full bg-[rgb(var(--stage))] px-4 py-2 text-[13px] font-semibold text-white shadow-lg ring-1 ring-[rgb(var(--gold))]/40 lg:bottom-[8.5rem]">
+          <Sun className="h-3.5 w-3.5 text-[rgb(var(--gold))]" />{ts("title")} · {ts("stepOf", { n: stepPos + 1, total: plan?.steps.length ?? 7 })}<span aria-hidden>{cardAway === "up" ? "↑" : "↓"}</span>
+        </button>
       )}
 
       {/* Floating player dock */}

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { VERSE_COUNTS } from "@/lib/counts";
 import { JUZ_START, indexOf, keyAt, TOTAL_VERSES } from "@/lib/quranIndex";
 import { readSrs, strength, type Srs } from "@/lib/learning";
+import { NOT_COUNTED } from "@/lib/coach";
 import { getChapters, type Chapter } from "@/lib/quran";
 
 // Quran map: every box is a surah, a juz or a verse; the colour shows how well you know it right now
@@ -63,7 +64,7 @@ export default function MemoryMap({ compact = false, demo = false, dark = false 
     return { id: i + 1, ...unit(from, to) };
   }), [srs]); // eslint-disable-line react-hooks/exhaustive-deps
   const totals = useMemo(() => {
-    const vals = Object.keys(srs).map((k) => levelOf(verseStrength(srs, k)));
+    const vals = Object.keys(srs).filter((k) => !NOT_COUNTED.has(k)).map((k) => levelOf(verseStrength(srs, k)));
     return { strong: vals.filter((x) => x === "strong").length, mid: vals.filter((x) => x === "mid").length, weak: vals.filter((x) => x === "weak").length };
   }, [srs]);
 

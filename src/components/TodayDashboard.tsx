@@ -12,6 +12,7 @@ import { TOTAL_VERSES } from "@/lib/quranIndex";
 import { CITIES, dayFor, fmtTime, type Spot } from "@/lib/prayer";
 import { LESSONS as ARABIC_LESSONS, arabicPercent, nextArabic, readArabic } from "@/lib/arabic";
 import MemoryMap from "./MemoryMap";
+import { CoachCard } from "./ProgressPanel";
 import { IconCheckCircle, IconFlame } from "./Icons";
 
 type Last = { chapter: number; verse: number };
@@ -107,10 +108,10 @@ export default function TodayDashboard() {
           <h2 className="font-display text-2xl">{t("tasksTitle")}</h2>
           <ol className="mt-4 grid gap-2">
             {tasks.map((task, i) => (
-              <li key={task.key} className={`flex items-center gap-3 rounded-xl border p-3.5 transition ${task.done ? "border-line/60 bg-surface/60" : nextTask?.key === task.key ? "border-gold/50 bg-gold/5" : "border-line bg-surface"}`}>
+              <li key={task.key} className={`flex min-w-0 items-center gap-3 rounded-xl border p-3.5 transition ${task.done ? "border-line/60 bg-surface/60" : nextTask?.key === task.key ? "border-gold/50 bg-gold/5" : "border-line bg-surface"}`}>
                 <span className={task.done ? "text-accent" : "text-line"}><IconCheckCircle className="h-7 w-7" /></span>
                 <span className="min-w-0 flex-1">
-                  <span className={`block text-[15px] font-bold ${task.done ? "text-muted line-through decoration-line" : ""}`}>{i + 1}. {task.title}</span>
+                  <span className={`block break-words text-[15px] font-bold ${task.done ? "text-muted line-through decoration-line" : ""}`}>{i + 1}. {task.title}</span>
                   <span className="block truncate text-[13px] text-muted">{task.detail}</span>
                 </span>
                 {!task.done && <Link href={task.href} className={`shrink-0 rounded-full px-4 py-2 text-[13px] font-bold ${nextTask?.key === task.key ? "btn-gold" : "border border-line hover:border-ink"}`}>{task.cta}</Link>}
@@ -118,6 +119,8 @@ export default function TodayDashboard() {
             ))}
           </ol>
         </section>
+
+        <div className="mt-8"><CoachCard /></div>
 
         {/* week + paths */}
         <div className="mt-8 grid gap-4 md:grid-cols-[0.9fr_1.1fr]">
