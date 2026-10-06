@@ -1850,5 +1850,41 @@
     "n_hamid": "der Lobenswerte",
     "nd_hamid": "Ihm gebührt alles Lob, in jeder Lage.",
     "ownWords": "O Allah, Du kennst mein Anliegen: „{text}“"
+  },
+  "featured": {
+    "title": "Heute und in diesem Monat",
+    "day": "Sure des Tages",
+    "dayLead": "Jeden Tag eine andere Sure – so lernst du nach und nach den ganzen Quran kennen.",
+    "friday": "Freitag: Viele lesen heute al-Kahf, eine weit verbreitete Sunna am Freitag.",
+    "month": "Sure des Monats · {month}",
+    "dua": "Dua des Monats · {month}",
+    "verses": "{n} Verse",
+    "listen": "Anhören",
+    "moreDuas": "Mehr Duas",
+    "genTitle": "Dein persönliches Bittgebet",
+    "genLead": "Wähle dein Anliegen – mit den passenden Namen Allahs und echten Duas aus Quran und Sunnah.",
+    "genCta": "Zum Dua-Generator"
+  },
+  "donate": {
+    "aria": "Quran Masterclass freiwillig unterstützen",
+    "kicker": "Sadaqa für das Wort Allahs",
+    "title": "Quran Masterclass bleibt frei – mit deiner Hilfe",
+    "lead": "Keine Gebühren, kein Abo, keine Werbung. Server, Rezitationen, Entwicklung und neue Kurse tragen sich allein durch freiwillige Spenden. Wenn du kannst und möchtest, hilf mit, damit dieses Projekt wachsen kann – für alle, die Allahs Wort lernen, verstehen und in sha Allah einmal schön rezitieren wollen.",
+    "cta": "Freiwillig unterstützen",
+    "later": "Später",
+    "free": "Spenden sind freiwillig. Alles bleibt für alle kostenlos – mit oder ohne Spende.",
+    "meter": "Diesen Monat: {raised} von {goal} {cur}",
+    "slimTitle": "Dieses Projekt lebt von freiwilligen Spenden.",
+    "slimLead": "Wenn du kannst, hilf mit – jeder Beitrag öffnet anderen den Weg zum Quran.",
+    "s1": "Wenn der Mensch stirbt, endet sein Werk – außer in dreien: einer fortlaufenden Sadaqa, einem Wissen, von dem man Nutzen hat, oder einem frommen Kind, das für ihn betet.",
+    "s1Src": "Der Prophet ﷺ · Muslim 1631",
+    "s2": "Die Sadaqa mindert den Besitz nicht.",
+    "s2Src": "Der Prophet ﷺ · Muslim 2588",
+    "s3": "Der Beste unter euch ist, wer den Quran lernt und ihn lehrt.",
+    "s3Src": "Der Prophet ﷺ · al-Bukhari 5027",
+    "s4": "Wer zu etwas Gutem hinführt, erhält den gleichen Lohn wie der, der es tut.",
+    "s4Src": "Der Prophet ﷺ · Muslim 1893",
+    "s5": "Allah sagt: Gib, o Sohn Adams, so wird dir gegeben.",
+    "s5Src": "Der Prophet ﷺ · al-Bukhari 5352, Muslim 993"
   }
 }

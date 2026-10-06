@@ -1850,5 +1850,41 @@
     "n_hamid": "the Praiseworthy",
     "nd_hamid": "All praise is His, in every state.",
     "ownWords": "O Allah, You know what is on my heart: “{text}”"
+  },
+  "featured": {
+    "title": "Today and this month",
+    "day": "Surah of the day",
+    "dayLead": "A different surah every day – step by step you get to know the whole Quran.",
+    "friday": "Friday: many read al-Kahf today, a widely kept Sunnah on Fridays.",
+    "month": "Surah of the month · {month}",
+    "dua": "Dua of the month · {month}",
+    "verses": "{n} verses",
+    "listen": "Listen",
+    "moreDuas": "More duas",
+    "genTitle": "Your personal dua",
+    "genLead": "Choose your concern – with the fitting names of Allah and real duas from the Quran and the Sunnah.",
+    "genCta": "Open the dua generator"
+  },
+  "donate": {
+    "aria": "Support Quran Masterclass voluntarily",
+    "kicker": "Sadaqa for the Word of Allah",
+    "title": "Quran Masterclass stays free – with your help",
+    "lead": "No fees, no subscription, no ads. Servers, recitations, development and new courses are carried by voluntary donations alone. If you can and wish to, help this project grow – for everyone who wants to learn and understand the Word of Allah and, in sha Allah, recite it beautifully one day.",
+    "cta": "Support voluntarily",
+    "later": "Later",
+    "free": "Donations are voluntary. Everything stays free for everyone – with or without a donation.",
+    "meter": "This month: {raised} of {goal} {cur}",
+    "slimTitle": "This project lives on voluntary donations.",
+    "slimLead": "If you can, help – every gift opens the way to the Quran for others.",
+    "s1": "When a person dies, his deeds come to an end except for three: an ongoing charity, knowledge that benefits, or a righteous child who prays for him.",
+    "s1Src": "The Prophet ﷺ · Muslim 1631",
+    "s2": "Charity does not decrease wealth.",
+    "s2Src": "The Prophet ﷺ · Muslim 2588",
+    "s3": "The best of you are those who learn the Quran and teach it.",
+    "s3Src": "The Prophet ﷺ · al-Bukhari 5027",
+    "s4": "Whoever guides someone to good has a reward like the one who does it.",
+    "s4Src": "The Prophet ﷺ · Muslim 1893",
+    "s5": "Allah says: Spend, O son of Adam, and I will spend on you.",
+    "s5Src": "The Prophet ﷺ · al-Bukhari 5352, Muslim 993"
   }
 }

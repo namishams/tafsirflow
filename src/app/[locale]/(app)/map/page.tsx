@@ -4,8 +4,28 @@ import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import Markdown from "@/components/Markdown";
 import MapView from "@/components/MapView";
+import LearningJourney, { JourneyLevelStrip } from "@/components/LearningJourney";
 import { mapContent } from "@/lib/mapContent";
 import { abs, pageMeta } from "@/lib/site";
+import { LESSONS as ARABIC_LESSONS, PASS_PCT } from "@/lib/arabic";
+import { tajweedFor } from "@/lib/tajweed";
+import { VOCAB_DECKS } from "@/lib/vocab";
+import { ISLAM } from "@/lib/islam";
+import type { JourneyCatalog } from "@/lib/journey";
+
+// What the learning journey needs from the courses – built here on the server, so the course modules stay out of the
+// browser bundle. Titles in the page language (Arabic pages get the Arabic titles).
+function journeyCatalog(locale: string): JourneyCatalog {
+  const lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
+  return {
+    arabic: ARABIC_LESSONS.map((l) => ({ id: l.id, title: (lang === "ar" ? l.title.ar : l.title[lang]) ?? l.title.en })),
+    arabicPass: PASS_PCT,
+    tajweed: tajweedFor(locale).map((l) => ({ id: l.id, title: lang === "de" ? l.title_de : l.title_en })),
+    tajweedPass: 70, // same threshold as the profile ("passed" = at least 70 % in the quiz)
+    vocabTotal: new Set(VOCAB_DECKS.flatMap((d) => d.words.map((w) => w.id))).size,
+    islamCount: ISLAM.length,
+  };
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -19,6 +39,7 @@ export default async function MapPage({ params }: { params: Promise<{ locale: st
   const { locale } = await params;
   setRequestLocale(locale);
   const c = await mapContent(locale);
+  const catalog = journeyCatalog(locale);
   const dark = "stage text-[#eef0f3]";
   const ld = { "@context": "https://schema.org", "@type": "FAQPage", url: abs(`/${locale}/map`), mainEntity: c.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
@@ -37,12 +58,20 @@ export default async function MapPage({ params }: { params: Promise<{ locale: st
               <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-white/70">{c.lead}</p>
             </div>
             <dl className="grid grid-cols-3 gap-4 lg:w-[360px]">
-              {c.stats.map((s) => <div key={s.l} className="border-s border-white/15 ps-3"><dt className="font-display text-3xl text-[rgb(var(--gold))]">{s.n}</dt><dd className="mt-1 text-xs leading-snug text-white/60">{s.l}</dd></div>)}
+              {c.stats.map((s) => <div key={s.l} className="border-s border-white/15 ps-3"><dt className="font-display text-[26px] text-[rgb(var(--gold))] min-[380px]:text-3xl">{s.n}</dt><dd className="mt-1 text-xs leading-snug text-white/60">{s.l}</dd></div>)}
             </dl>
           </div>
           <div className="mt-10 rounded-lg border border-white/10 bg-white/[0.03] p-4 sm:p-6">
             <MapView />
           </div>
+          <JourneyLevelStrip arabicTotal={catalog.arabic.length} />
+        </div>
+      </section>
+
+      {/* Learning journey: every learning area as a station, with real progress and the next step */}
+      <section id="journey" className="border-b border-line bg-surface">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+          <LearningJourney catalog={catalog} />
         </div>
       </section>
 

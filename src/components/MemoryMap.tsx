@@ -7,6 +7,8 @@ import { JUZ_START, indexOf, keyAt, TOTAL_VERSES } from "@/lib/quranIndex";
 import { readSrs, strength, type Srs } from "@/lib/learning";
 import { NOT_COUNTED } from "@/lib/coach";
 import { getChapters, type Chapter } from "@/lib/quran";
+import { fill, journeyText } from "@/lib/journey";
+import SurahQuiz from "./SurahQuiz";
 
 // Quran map: every box is a surah, a juz or a verse; the colour shows how well you know it right now
 type Level = "none" | "weak" | "mid" | "strong";
@@ -40,6 +42,8 @@ export default function MemoryMap({ compact = false, demo = false, dark = false 
   const [mode, setMode] = useState<"surah" | "juz">("surah");
   const [open, setOpen] = useState<number | null>(null);
   const [chapters, setChapters] = useState<Chapter[]>([]);
+  const [quiz, setQuiz] = useState(false);
+  const J = journeyText(locale).map;
   useEffect(() => {
     const load = () => setSrs(demo ? demoSrs() : readSrs());
     load();
@@ -75,6 +79,23 @@ export default function MemoryMap({ compact = false, demo = false, dark = false 
   };
   const list = mode === "surah" ? surahs : juz;
 
+  // the open surah: next verse to learn, weak and wobbling verses, learned verses (basmala of al-Fatiha excluded)
+  const detail = useMemo(() => {
+    if (open === null) return null;
+    const weak: number[] = [], mid: number[] = [], learned: number[] = [];
+    let next: number | null = null;
+    for (let v = 1; v <= VERSE_COUNTS[open - 1]; v++) {
+      const key = `${open}:${v}`;
+      if (NOT_COUNTED.has(key)) continue;
+      const lv = levelOf(verseStrength(srs, key));
+      if (lv === "none") { next ??= v; continue; }
+      learned.push(v);
+      if (lv === "weak") weak.push(v); else if (lv === "mid") mid.push(v);
+    }
+    return { weak, mid, learned, next };
+  }, [open, srs]);
+  const act = `inline-flex min-h-10 w-full items-center justify-center rounded-md border px-3.5 py-2 text-center text-sm font-semibold leading-snug transition sm:w-auto ${dark ? "border-white/15 hover:border-white/50" : "border-line bg-surface hover:border-ink"}`;
+
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -87,7 +108,7 @@ export default function MemoryMap({ compact = false, demo = false, dark = false 
       </div>
       <div className={`mt-4 grid gap-1 ${mode === "surah" ? "grid-cols-[repeat(auto-fill,minmax(1.6rem,1fr))]" : "grid-cols-6 sm:grid-cols-10"}`}>
         {list.map((u) => (
-          <button key={u.id} onClick={() => mode === "surah" && setOpen(open === u.id ? null : u.id)} title={mode === "surah" ? `${u.id}. ${name(u.id)} – ${u.learned}/${u.n}` : `Juz ${u.id} – ${u.learned}/${u.n}`}
+          <button key={u.id} data-surah={mode === "surah" ? u.id : undefined} onClick={() => { if (mode === "surah") { setOpen(open === u.id ? null : u.id); setQuiz(false); } }} title={mode === "surah" ? `${u.id}. ${name(u.id)} – ${u.learned}/${u.n}` : `Juz ${u.id} – ${u.learned}/${u.n}`}
             className={`relative aspect-square rounded-[4px] text-[10px] font-bold tabular-nums transition hover:scale-110 ${box(u)} ${open === u.id ? "ring-2 ring-ink ring-offset-1" : ""} ${levelOf(u.avg) === "none" ? (dark ? "bg-white/10 text-white/40" : "text-muted/60") : "text-white"}`}>
             {mode === "juz" || !compact ? u.id : ""}
           </button>
@@ -106,6 +127,23 @@ export default function MemoryMap({ compact = false, demo = false, dark = false 
             })}
           </div>
           <p className={`mt-3 text-xs ${dark ? "text-white/50" : "text-muted"}`}>{t("tapVerse")}</p>
+          {detail && (
+            <div className={`mt-4 border-t pt-4 ${dark ? "border-white/10" : "border-line"}`}>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[rgb(var(--gold))] rtl:tracking-normal">{J.actions}</p>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                {detail.next !== null
+                  ? <Link href={`/surah/${open}?v=${detail.next}&shams=1`} className="btn-gold inline-flex min-h-10 w-full items-center justify-center rounded-md px-4 py-2 text-center text-sm font-bold leading-snug sm:w-auto">{fill(J.learnNext, { key: `${open}:${detail.next}` })}</Link>
+                  : <span className={`inline-flex min-h-10 items-center text-sm font-semibold ${dark ? "text-[rgb(var(--gold))]" : "text-accent"}`}>{J.allLearned}</span>}
+                {detail.weak.length > 0
+                  ? <Link href={`/surah/${open}?v=${detail.weak[0]}&m=2`} className={act}>{fill(J.repeatWeak, { n: detail.weak.length })}</Link>
+                  : detail.mid.length > 0 && <Link href={`/surah/${open}?v=${detail.mid[0]}&m=2`} className={act}>{fill(J.refreshMid, { n: detail.mid.length })}</Link>}
+                <Link href={`/surah/${open}`} className={act}>{J.listen}</Link>
+                {!demo && detail.learned.length >= 3 && <button onClick={() => setQuiz(!quiz)} aria-expanded={quiz} className={`${act} ${quiz ? "border-[rgb(var(--gold))]/60" : ""}`}>{J.quiz}</button>}
+              </div>
+              {!demo && detail.learned.length > 0 && detail.learned.length < 3 && <p className={`mt-2 text-xs ${dark ? "text-white/50" : "text-muted"}`}>{J.quizNeed}</p>}
+              {quiz && !demo && <SurahQuiz key={open} surah={open} learned={detail.learned} dark={dark} onClose={() => setQuiz(false)} />}
+            </div>
+          )}
         </div>
       )}
     </div>
