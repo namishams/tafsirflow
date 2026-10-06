@@ -232,7 +232,8 @@ function letterExercises(chs: string[], pool: string[], lang: Lang): Ex[] {
   const say = (de: string, en: string, ar: string) => (lang === "de" ? de : lang === "ar" ? ar : en);
   for (const c of chs) {
     const l = letter(c);
-    const others = uniq([...(l.similar ?? []), ...shuffle(pool)]).filter((x) => x !== c).slice(0, 3);
+    // (ه lists ة as a look-alike, which is not one of the 29 letters of the course – it has no name to ask for)
+    const others = uniq([...(l.similar ?? []), ...shuffle(pool)]).filter((x) => x !== c && LETTERS.some((y) => y.ch === x)).slice(0, 3);
     const opts = shuffle([c, ...others]);
     out.push({ t: "choose", q: say(`Welcher Buchstabe ist „${l.name}“ (${l.tr})?`, `Which letter is “${l.name}” (${l.tr})?`, `أيُّ هذه الحروف هو «${arName(c)}»؟`), options: opts.map((o) => ({ ar: o })), answer: opts.indexOf(c), key: `L:${c}` });
     const names = shuffle([c, ...others]);
@@ -250,7 +251,7 @@ function formExercises(chs: string[], lang: Lang): Ex[] {
   for (const c of chs) {
     const p = pos[Math.floor(Math.random() * 3)];
     const f = forms(letter(c))[p];
-    const others = uniq([...(letter(c).similar ?? []), ...shuffle(LETTERS.map((x) => x.ch))]).filter((x) => x !== c).slice(0, 3);
+    const others = uniq([...(letter(c).similar ?? []), ...shuffle(LETTERS.map((x) => x.ch))]).filter((x) => x !== c && LETTERS.some((y) => y.ch === x)).slice(0, 3);
     const opts = shuffle([c, ...others]);
     out.push({ t: "choose", q: say(`Welcher Buchstabe steht hier ${posName[p]}?`, `Which letter is this, ${posName[p]}?`, `أيُّ حرفٍ هذا ${posName[p]}؟`), ar: f, options: opts.map((o) => ({ ar: o })), answer: opts.indexOf(c), key: `F:${c}` });
   }

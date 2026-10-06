@@ -3,6 +3,7 @@ import { IconFlame, IconPlay, IconSpeaker, IconStarBig, IconTrophy, ArrowNext } 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { syncQuranText } from "@/lib/arabicQuran";
 import { LESSONS, PASS_PCT, PLACEMENT_UNITS, UNITS, buildLesson, lessonById, nextArabic, placementResult, saveArabic, savePlacement, starsFor, verseAudioUrl, wordAudioUrl, type Ex, type PlacementResult } from "@/lib/arabic";
 import { logDay } from "@/lib/learning";
 
@@ -95,7 +96,10 @@ export default function ArabicLesson({ id }: { id: string }) {
   const isPlacement = !!lesson.placement;
   const next = LESSONS[LESSONS.indexOf(lesson) + 1];
   const [seed, setSeed] = useState(0);
-  const base = useMemo(() => buildLesson(lesson, lang), [lesson, lang, seed]); // eslint-disable-line react-hooks/exhaustive-deps
+  // units 7 and 8 read real verses: first load Quran.com's exact text, then build the exercises
+  const [qReady, setQReady] = useState(lesson.unit < 7);
+  useEffect(() => { if (!qReady) void syncQuranText().finally(() => setQReady(true)); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const base = useMemo(() => buildLesson(lesson, lang), [lesson, lang, seed, qReady]); // eslint-disable-line react-hooks/exhaustive-deps
   const [queue, setQueue] = useState<Ex[]>(base);
   const [pos, setPos] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
@@ -204,6 +208,7 @@ export default function ArabicLesson({ id }: { id: string }) {
       </div>
     );
   }
+  if (!qReady) return <div className="mx-auto mt-8 h-64 max-w-xl animate-pulse rounded-2xl bg-line/40" />;
   if (!ex) return null;
 
   // answer buttons shared by "choose" and "listen": long words get a smaller size, long meanings (whole verses) one column

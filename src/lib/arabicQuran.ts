@@ -119,3 +119,28 @@ export function wordsOf(refs: string[]): Item[] {
   const seen = new Set<string>();
   return refs.flatMap((r) => verseOf(r)?.words ?? []).filter((w) => !seen.has(w.ar) && !!seen.add(w.ar));
 }
+
+// The text above is the fallback. In the browser the course swaps in Quran.com's own text_uthmani (served through our
+// /api/q cache) word by word, so learners always read the exact mushaf text. A word is only replaced when the verse key
+// and word count match and the letters agree – the vowel signs may change, never the word itself.
+let synced: Promise<void> | null = null;
+export function syncQuranText(): Promise<void> {
+  if (typeof window === "undefined") return Promise.resolve();
+  synced ??= (async () => {
+    const { same } = await import("./recite");
+    await Promise.all([...new Set(VERSES.map((v) => v.s))].map(async (s) => {
+      try {
+        const r = await fetch(`/api/q/verses/by_chapter/${s}?words=true&word_fields=text_uthmani&per_page=300`);
+        if (!r.ok) return;
+        const d = (await r.json()) as { verses?: { verse_key: string; words?: { char_type_name: string; text_uthmani?: string }[] }[] };
+        for (const v of VERSES.filter((x) => x.s === s)) {
+          const api = d.verses?.find((x) => x.verse_key === `${v.s}:${v.a}`);
+          const ws = (api?.words ?? []).filter((w) => w.char_type_name === "word");
+          if (ws.length !== v.words.length) continue;
+          ws.forEach((w, i) => { if (w.text_uthmani && same(v.words[i].ar, w.text_uthmani)) v.words[i].ar = w.text_uthmani; });
+        }
+      } catch { /* offline: keep the fallback */ }
+    }));
+  })();
+  return synced;
+}
