@@ -8,6 +8,7 @@ import { MoreTiles, TONES } from "@/components/PosterTiles";
 import { secretsContent, type Verdict } from "@/lib/secrets/content";
 import { getVerseByKey } from "@/lib/quran";
 import { abs, pageMeta } from "@/lib/site";
+import { CalligraphyDraw } from "@/components/Ornaments";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -40,7 +41,7 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
     <div>
       <JsonLd data={ld} />
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
-        <p aria-hidden className="font-callig pointer-events-none absolute -end-4 -top-2 select-none text-[150px] leading-none text-[rgb(var(--gold))] opacity-[0.09] sm:text-[240px]" dir="rtl">أسرار</p>
+        <CalligraphyDraw text={"أسرار"} className="absolute -end-2 top-0 h-[150px] w-[520px] max-w-none sm:h-[250px] sm:w-[880px]" />
         <div className="relative mx-auto max-w-6xl px-5 py-14 sm:py-20">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
           <h1 className="font-display mt-4 max-w-3xl text-[40px] leading-[1.05] sm:text-6xl">{c.title}</h1>
@@ -80,6 +81,7 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
         <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {c.facts.map((f, i) => (
             <li key={f.title} className="relative flex min-h-[13rem] flex-col justify-end overflow-hidden rounded-lg p-5 text-white ring-1 ring-inset ring-white/[0.06]" style={{ background: TONES[i % TONES.length] }}>
+              <span aria-hidden className="niche" />
               <span aria-hidden className="font-callig pointer-events-none absolute -end-1 top-1 whitespace-nowrap text-[4.5rem] leading-none text-white/[0.08]" dir="rtl">{f.ar}</span>
               <span className="font-display relative text-[21px] leading-tight">{f.title}</span>
               <span className="relative mt-2 text-[13.5px] leading-relaxed text-white/75">{f.body}</span>
@@ -157,7 +159,7 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
                   {pl.src && <span className="relative mt-3 text-[11px] font-semibold text-[rgb(var(--gold))]">{pl.src}</span>}
                 </>
               );
-              const cls = "relative flex h-full min-h-[14rem] flex-col justify-end overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] p-5";
+              const cls = "arch relative flex h-full min-h-[16rem] flex-col justify-end overflow-hidden border border-white/10 bg-white/[0.04] p-5 pt-16";
               return <li key={pl.title} className="min-w-0">{pl.href ? <Link href={pl.href} className={`group ${cls} hover:border-white/30`}>{inner}</Link> : <div className={cls}>{inner}</div>}</li>;
             })}
           </ul>

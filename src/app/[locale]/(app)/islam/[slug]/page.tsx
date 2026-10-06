@@ -8,6 +8,7 @@ import { MoreTiles } from "@/components/PosterTiles";
 import { ISLAM, islamDoc, islamUi, loadChapter, loadChapters, readingMinutes } from "@/lib/islam";
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowNext, ArrowBack } from "@/components/Icons";
+import { CalligraphyDraw } from "@/components/Ornaments";
 
 export function generateStaticParams() {
   return ISLAM.map((d) => ({ slug: d.slug }));
@@ -50,7 +51,7 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
     <div>
       <JsonLd data={ld} />
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
-        <p aria-hidden className="font-callig pointer-events-none absolute -end-4 -top-4 select-none text-[140px] leading-none text-[rgb(var(--gold))] opacity-[0.08] sm:text-[220px]" dir="rtl">{d.arabic}</p>
+        <CalligraphyDraw text={d.arabic} className="absolute -end-2 top-0 h-[150px] w-[520px] max-w-none sm:h-[250px] sm:w-[880px]" />
         <div className="relative mx-auto max-w-6xl px-5 py-14 sm:py-20">
           <Link href="/islam" className="text-sm font-semibold text-white/60 hover:text-white"><ArrowBack /> {u.back}</Link>
           <p className="mt-6 text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{u.chapter} {i + 1} · {c.kicker}</p>

@@ -7,6 +7,7 @@ import Markdown from "@/components/Markdown";
 import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText, reciterBio } from "@/lib/reciters";
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowNext, ArrowBack } from "@/components/Icons";
+import { CalligraphyDraw } from "@/components/Ornaments";
 
 const LBL = {
   de: { all: "Alle Rezitatoren", country: "Land", life: "Lebensdaten", style: "Stil", listen: "Im Player anhören", known: "Bekannt für", learn: "Selbst rezitieren lernen", learnBody: "Von den ersten Buchstaben bis zur Idschaza – Schritt für Schritt.", path: "Der Weg zum Rezitator", bio: "Biografie" },
@@ -42,7 +43,7 @@ export default async function ReciterPage({ params }: { params: Promise<{ locale
     <div>
       <JsonLd data={ld} />
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
-        <p aria-hidden className="font-callig pointer-events-none absolute -end-4 top-2 select-none text-[110px] leading-none text-[rgb(var(--gold))] opacity-[0.08] sm:text-[170px]" dir="rtl">{r.arabic}</p>
+        <CalligraphyDraw text={r.arabic} className="absolute -end-2 top-0 h-[150px] w-[520px] max-w-none sm:h-[250px] sm:w-[880px]" />
         <div className="relative mx-auto max-w-5xl px-5 py-14 sm:py-20">
           <Link href="/reciters" className="text-sm font-semibold text-white/60 hover:text-white"><ArrowBack /> {L.all}</Link>
           {ar ? <h1 className="font-arabic mt-6 text-[44px] leading-[1.3] sm:text-6xl" dir="rtl">{r.arabic}</h1> : <>

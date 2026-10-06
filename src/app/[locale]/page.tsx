@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { TrustLine } from "@/components/TrustStrip";
 import PosterTiles from "@/components/PosterTiles";
-import { Divider, Ink } from "@/components/Ornaments";
+import { CalligraphyRing, Divider, Ink } from "@/components/Ornaments";
 import CountUp from "@/components/CountUp";
 import { HOME_TILES } from "@/lib/tiles";
 import AppHeader from "@/components/AppHeader";
@@ -65,11 +65,12 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         {/* 1 Hero – cinematic, with an animated verse player (words light up one after another) */}
         <section className="stage girih relative overflow-hidden text-[#eef0f3]">
           <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 85% 15%, rgb(var(--gold) / .16) 0, transparent 40%), radial-gradient(circle at 10% 90%, rgb(var(--accent) / .22) 0, transparent 45%)" }} />
+          <CalligraphyRing text="ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ ۞ وَقُل رَّبِّ زِدْنِى عِلْمًا ۞ ٱلرَّحْمَـٰنُ عَلَّمَ ٱلْقُرْءَانَ ۞" className="absolute -end-36 -top-36 w-[320px] opacity-50 sm:-end-16 sm:-top-16 sm:w-[560px] sm:opacity-50 lg:opacity-40" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <p className="font-arabic mb-5 text-[26px] leading-none text-[rgb(var(--gold))] sm:text-[30px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>
-              <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{t("home2.heroKicker", { n })}</p>
-              <h1 className="font-display mt-5 text-[44px] leading-[1.02] sm:text-7xl">{t("home2.heroTitle")}</h1>
+              <p className="rise font-arabic mb-5 text-[26px] leading-none text-[rgb(var(--gold))] sm:text-[30px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>
+              <p className="rise text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]" style={{ animationDelay: "120ms" }}>{t("home2.heroKicker", { n })}</p>
+              <h1 className="rise font-display mt-5 text-[44px] leading-[1.02] sm:text-7xl" style={{ animationDelay: "240ms" }}>{t("home2.heroTitle")}</h1>
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70 sm:text-lg">{t("home2.heroLead")}</p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link href="/academy" className="inline-flex h-12 items-center rounded-md btn-gold px-6 text-[15px] font-bold">{t("home2.heroCta")}</Link>

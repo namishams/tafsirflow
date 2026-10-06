@@ -13,6 +13,7 @@ export const TONES = [
 export function Poster({ it, tall = true }: { it: PosterItem; tall?: boolean }) {
   return (
     <Link href={it.href} className={`group relative flex ${tall ? "aspect-[4/5] sm:aspect-[3/4]" : "min-h-[11rem]"} flex-col justify-end overflow-hidden rounded-lg p-4 ring-1 ring-inset ring-white/[0.06] sm:p-5`} style={{ background: it.bg }}>
+      <span aria-hidden className="niche transition duration-700 group-hover:border-[rgb(233_207_153/0.32)]" />
       <span aria-hidden className="font-callig pointer-events-none absolute -end-1 top-1 whitespace-nowrap text-[4.25rem] leading-none text-white/[0.08] transition duration-700 group-hover:text-white/[0.11] sm:-end-2 sm:top-2 sm:text-[6.5rem]" dir="rtl">{it.ar}</span>
       <span className="absolute start-4 top-4 text-[9.5px] font-semibold uppercase tracking-[0.16em] text-white/55 sm:start-5 sm:top-5 sm:text-[10px]">{it.badge}</span>
       <span className="font-display relative text-[19px] leading-tight text-white sm:text-[24px]">{it.title}</span>

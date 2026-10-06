@@ -14,6 +14,7 @@ import "@fontsource-variable/noto-sans-sc";
 import "@fontsource/amiri/400.css";
 import "@fontsource/amiri/700.css";
 import "@fontsource/aref-ruqaa/arabic-700.css";
+import "@fontsource/reem-kufi/arabic-600.css";
 import { RadioProvider } from "@/components/RadioProvider";
 import ScrollReveal from "@/components/ScrollReveal";
 import Pwa from "@/components/Pwa";

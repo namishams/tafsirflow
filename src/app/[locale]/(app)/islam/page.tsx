@@ -5,6 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import { Poster, TONES } from "@/components/PosterTiles";
 import { ISLAM, islamUi, loadChapters, readingMinutes } from "@/lib/islam";
 import { abs, pageMeta } from "@/lib/site";
+import { CalligraphyDraw } from "@/components/Ornaments";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -23,7 +24,7 @@ export default async function IslamHub({ params }: { params: Promise<{ locale: s
     <div>
       <JsonLd data={ld} />
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
-        <p aria-hidden className="font-callig pointer-events-none absolute -end-6 -top-6 select-none text-[180px] leading-none text-[rgb(var(--gold))] opacity-[0.07] sm:text-[280px]">الإسلام</p>
+        <CalligraphyDraw text={"الإسلام"} className="absolute -end-2 top-0 h-[150px] w-[520px] max-w-none sm:h-[250px] sm:w-[880px]" />
         <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{u.kicker}</p>
           <h1 className="font-display mt-4 max-w-4xl text-[42px] leading-[1.04] sm:text-7xl">{u.title}</h1>

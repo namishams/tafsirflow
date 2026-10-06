@@ -5,6 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText } from "@/lib/reciters";
 import { abs, pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
+import { CalligraphyDraw } from "@/components/Ornaments";
 
 const C = {
   de: { kicker: "Die Stimmen des Korans", title: "50 große Rezitatoren – ihre Geschichte, ihr Klang, ihr Vermächtnis", lead: "Von den Meistern aus Kairo, deren Aufnahmen seit Generationen um die Welt gehen, bis zu den Imamen der heiligen Moscheen in Mekka und Medina und den Stimmen aus den Emiraten. Lerne sie kennen – und lerne von ihnen: Wer einem großen Rezitator aufmerksam zuhört, lernt Aussprache, Rhythmus und Ehrfurcht.", listen: "Im Player anhören", read: "Biografie lesen", path: "Der Weg zum Rezitator", radio: "Koran-Radio" },
@@ -28,7 +29,7 @@ export default async function RecitersPage({ params }: { params: Promise<{ local
     <div>
       <JsonLd data={ld} />
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
-        <p aria-hidden className="font-callig pointer-events-none absolute -end-6 -top-4 select-none text-[150px] leading-none text-[rgb(var(--gold))] opacity-[0.07] sm:text-[230px]" dir="rtl">القرّاء</p>
+        <CalligraphyDraw text={"القرّاء"} className="absolute -end-2 top-0 h-[150px] w-[520px] max-w-none sm:h-[250px] sm:w-[880px]" />
         <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
           <h1 className="font-display mt-4 max-w-4xl text-[40px] leading-[1.05] sm:text-6xl">{c.title}</h1>

@@ -36,3 +36,32 @@ export function SurahBanner({ arabic, className = "" }: { arabic: string; classN
 export function Ink({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return <span className={`ink inline-block ${className}`} style={{ animationDelay: `${delay}ms` }} dir="rtl">{children}</span>;
 }
+
+// Large Arabic word that writes itself (outline first, then a soft fill) – for page heroes
+export function CalligraphyDraw({ text, className = "", font = "font-callig" }: { text: string; className?: string; font?: string }) {
+  return (
+    <svg aria-hidden viewBox="0 0 1000 320" preserveAspectRatio="xMaxYMid meet" overflow="visible" className={`callig-draw pointer-events-none select-none ${className}`}>
+      <text x="985" y="240" textAnchor="end" fontSize="230" className={font}>{text}</text>
+    </svg>
+  );
+}
+
+// Verses around a slowly turning ring with a metallic gold-to-silver gradient, after the Museum of the Future
+export function CalligraphyRing({ text, className = "" }: { text: string; className?: string }) {
+  return (
+    <svg aria-hidden viewBox="0 0 400 400" className={`pointer-events-none select-none ${className}`}>
+      <defs>
+        <linearGradient id="ring-metal" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#f3e2b6" /><stop offset=".45" stopColor="#c9a65e" /><stop offset=".7" stopColor="#e9edf0" /><stop offset="1" stopColor="#b8924a" />
+        </linearGradient>
+        <path id="ring-path" d="M200,200 m-150,0 a150,150 0 1,1 300,0 a150,150 0 1,1 -300,0" />
+      </defs>
+      <circle cx="200" cy="200" r="172" fill="none" stroke="url(#ring-metal)" strokeOpacity=".35" strokeWidth="1" />
+      <circle cx="200" cy="200" r="128" fill="none" stroke="url(#ring-metal)" strokeOpacity=".25" strokeWidth="1" strokeDasharray="2 6" />
+      <g className="callig-ring">
+        <text fill="url(#ring-metal)" fontSize="23" className="font-arabic"><textPath href="#ring-path" startOffset="2%">{text}</textPath></text>
+      </g>
+      <g fill="none" stroke="url(#ring-metal)" strokeOpacity=".5" strokeWidth="1"><path d="M200 168l9 23 23 9-23 9-9 23-9-23-23-9 23-9z" /><rect x="180" y="180" width="40" height="40" transform="rotate(45 200 200)" /></g>
+    </svg>
+  );
+}
