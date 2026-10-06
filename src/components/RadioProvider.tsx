@@ -186,7 +186,7 @@ function useEngine() {
   const meta = useCallback((p: Pos) => {
     if (typeof navigator === "undefined" || !("mediaSession" in navigator)) return;
     const ch = chapters.find((c) => c.id === p.s);
-    navigator.mediaSession.metadata = new MediaMetadata({ title: `${ch?.name_simple ?? `Surah ${p.s}`} · ${p.v}`, artist: reciterName(reciterRef.current, locale), album: "Quran Masterclass" });
+    navigator.mediaSession.metadata = new MediaMetadata({ title: `${ch?.name_simple ?? `${locale === "ar" ? "سورة" : "Surah"} ${p.s}`} · ${p.v}`, artist: reciterName(reciterRef.current, locale), album: "Quran Masterclass" });
   }, [chapters, locale]);
 
   const start = useCallback((p: Pos, autoplay = true) => {

@@ -17,7 +17,7 @@ export default function PlanBoard() {
   const [rec, setRec] = useState<Track["id"] | null>(null);
   useEffect(() => { const a = ageProfile(); setRec(a.track); setChoice(a.track); }, []);
   useEffect(() => { setPlan(readPlan()); setDue(dueVerses().length); getChapters(locale).then(setChapters).catch(() => undefined); }, [locale]);
-  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `Surah ${s}`;
+  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `${locale === "ar" ? "سورة" : "Surah"} ${s}`;
   const months = useMemo(() => Array.from({ length: 12 }, (_, m) => m + 1), []);
   if (plan === undefined) return null;
 

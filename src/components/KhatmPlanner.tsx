@@ -21,7 +21,7 @@ export default function KhatmPlanner() {
   const [chapters, setChapters] = useState<Chapter[]>([]);
   useEffect(() => { setPlan(readJSON<Plan | null>(KEY, null)); getChapters(locale).then(setChapters).catch(() => undefined); }, [locale]);
   const save = (p: Plan | null) => { setPlan(p); writeJSON(KEY, p); };
-  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `Surah ${s}`;
+  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `${locale === "ar" ? "سورة" : "Surah"} ${s}`;
   if (plan === undefined) return null;
 
   if (!plan) {

@@ -23,7 +23,7 @@ export default function AcademyHome() {
   const goal = dailyGoal(p), todayXp = p.days[today()] ?? 0;
   const streak = streakOf(p);
   const nl = nextLesson(p);
-  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `Surah ${s}`;
+  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `${locale === "ar" ? "سورة" : "Surah"} ${s}`;
   const weak = weakestVerses(6).filter((w) => w.strength < 0.9);
   const doneCount = Object.values(p.done).filter((x) => x >= PASS).length;
 

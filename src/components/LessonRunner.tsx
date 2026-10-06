@@ -136,7 +136,7 @@ export default function LessonRunner({ s, from }: { s: number; from: number }) {
   }, [q, answered, picked, order]);
 
   if (!verses.length) return <main className="mx-auto max-w-2xl px-4 py-10 text-muted">{t("loading")}</main>;
-  const title = `${chapter?.name_simple ?? `Surah ${s}`} · ${lesson.from}–${lesson.to}`;
+  const title = `${chapter?.name_simple ?? `${locale === "ar" ? "سورة" : "Surah"} ${s}`} · ${lesson.from}–${lesson.to}`;
 
   return (
     <main className="mx-auto max-w-2xl px-4 pb-24 pt-6">

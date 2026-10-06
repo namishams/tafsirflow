@@ -57,7 +57,7 @@ export default function RadioPlayer() {
   const r = useRadio();
   const rn = (x: { slug?: string; folder?: string; name: string }) => reciterName(x, locale);
   const { station, playing, now, chapter, verse, upNext, history, chapters } = r;
-  const nameOf = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `Surah ${s}`;
+  const nameOf = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `${locale === "ar" ? "سورة" : "Surah"} ${s}`;
   const field = "h-11 w-full min-w-0 rounded-md border border-line bg-bg px-3 text-[15px]";
 
   return (
