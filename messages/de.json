@@ -512,7 +512,9 @@
     "notInstalled": "noch nicht verfügbar",
     "adhanVoice": "Adhan-Stimme",
     "adhanNone": "Es wurde noch keine Adhan-Aufnahme hinzugefügt.",
-    "playing": "Noch nicht verfügbar – es spielt: {name}"
+    "playing": "Noch nicht verfügbar – es spielt: {name}",
+    "random": "Zufällig – jedes Mal ein anderer Muezzin",
+    "another": "einen anderen"
   },
   "radio": {
     "title": "Quran-Radio",
@@ -571,7 +573,9 @@
     "v_default": "Standard",
     "notInstalled": "noch nicht verfügbar",
     "adhanVoice": "Adhan-Stimme",
-    "adhanNone": "Es wurde noch keine Adhan-Aufnahme hinzugefügt."
+    "adhanNone": "Es wurde noch keine Adhan-Aufnahme hinzugefügt.",
+    "random": "Zufällig – jedes Mal ein anderer Muezzin",
+    "another": "einen anderen"
   },
   "duas": {
     "title": "Duas",

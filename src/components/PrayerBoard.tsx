@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { CITIES, PRAYERS, cityName, countdown, dayFor, fmtClock, fmtTime, hijriDate, type Spot } from "@/lib/prayer";
 import { readJSON, writeJSON } from "@/lib/storage";
-import { ADHAN_VOICES, adhanAvailability, adhanUrl, pickVoice } from "@/lib/adhan";
+import { adhanList, adhanUrl, pickAdhan, type AdhanFile } from "@/lib/adhan";
 
 
 export default function PrayerBoard() {
@@ -13,16 +13,17 @@ export default function PrayerBoard() {
   const [cityId, setCityId] = useState("makkah");
   const [mine, setMine] = useState<Spot | null>(null);
   const [geoMsg, setGeoMsg] = useState("");
-  const [have, setHave] = useState<Record<string, boolean>>({});
-  const [voice, setVoice] = useState("makkah");
+  const [files, setFiles] = useState<AdhanFile[]>([]);
+  const [voice, setVoice] = useState("random");
+  const [playing, setPlaying] = useState<AdhanFile | null>(null);
 
   useEffect(() => {
     setNow(new Date());
     const id = setInterval(() => setNow(new Date()), 1000);
     setCityId(readJSON<string>("tf:city", "makkah"));
     setMine(readJSON<Spot | null>("tf:myspot", null));
-    adhanAvailability().then(setHave);
-    setVoice(readJSON<string>("tf:adhanVoice", "makkah"));
+    adhanList().then((f) => { setFiles(f); setPlaying(pickAdhan(readJSON<string>("tf:adhanVoice", "random"), f)); });
+    setVoice(readJSON<string>("tf:adhanVoice", "random"));
     return () => clearInterval(id);
   }, []);
 
@@ -89,12 +90,15 @@ export default function PrayerBoard() {
 
         <div className="mt-5 grid min-w-0 gap-2 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center">
           <label className="text-sm font-semibold text-muted" htmlFor="adhan-voice">{t("adhanVoice")}</label>
-          <select id="adhan-voice" value={voice} onChange={(e) => { setVoice(e.target.value); writeJSON("tf:adhanVoice", e.target.value, true); }} className="h-10 w-full min-w-0 rounded-md border border-line bg-bg px-2 text-sm">
-            {ADHAN_VOICES.map((v) => <option key={v} value={v}>{t(`v_${v}`)}{have[v] ? "" : ` (${t("notInstalled")})`}</option>)}
+          <select id="adhan-voice" value={voice} onChange={(e) => { setVoice(e.target.value); writeJSON("tf:adhanVoice", e.target.value, true); setPlaying(pickAdhan(e.target.value, files)); }} className="h-10 w-full min-w-0 rounded-md border border-line bg-bg px-2 text-sm">
+            <option value="random">{t("random")}</option>
+            {files.map((f) => <option key={f.id} value={f.id}>{f.label}</option>)}
           </select>
-          {pickVoice(voice, have) ? (
-            <>{pickVoice(voice, have) !== voice && <p className="text-xs text-muted sm:col-span-2">{t("playing", { name: t(`v_${pickVoice(voice, have)}`) })}</p>}
-            <audio key={pickVoice(voice, have)!} src={adhanUrl(pickVoice(voice, have)!)} preload="none" controls className="w-full sm:col-span-2" aria-label={t("playAdhan")} /></>
+          {playing ? (
+            <div className="grid gap-1 sm:col-span-2">
+              <audio key={playing.id} src={adhanUrl(playing.id)} preload="none" controls className="w-full" aria-label={t("playAdhan")} />
+              <p className="text-xs text-muted">{playing.label}{playing.credit ? ` · ${playing.credit}` : ""}{voice === "random" && files.length > 1 ? <> · <button className="font-semibold text-accent hover:underline" onClick={() => setPlaying(pickAdhan("random", files.filter((f) => f.id !== playing.id)))}>{t("another")}</button></> : null}</p>
+            </div>
           ) : (
             <p className="text-sm text-muted sm:col-span-2">{t("adhanNone")}</p>
           )}

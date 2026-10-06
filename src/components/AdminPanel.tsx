@@ -4,7 +4,7 @@ import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LOCALE_META } from "@/i18n/locales";
 import { fetchMe, type Me } from "@/lib/sync";
-import { ADHAN_VOICES, adhanUrl, adhanCreditUrl } from "@/lib/adhan";
+import { SUGGESTED, adhanUrl, resetAdhanCache, type AdhanFile } from "@/lib/adhan";
 
 // Admin is for the owner: German with English fallback (kept in one place, not in the public messages)
 const T = {
@@ -326,41 +326,42 @@ function FeedbackAdmin() {
   );
 }
 
-const VOICE_NAMES: Record<string, string> = { makkah: "Mekka (Masjid al-Haram)", madinah: "Medina (Masjid an-Nabawi)", dubai: "Dubai", tehran: "Teheran", aqsa: "Al-Aqsa (Jerusalem)", default: "Standard" };
+const VOICE_NAMES: Record<string, string> = { makkah: "Mekka (Masjid al-Haram)", madinah: "Medina (Masjid an-Nabawi)", dubai: "Dubai", tehran: "Teheran", aqsa: "Al-Aqsa (Jerusalem)" };
 function AdhanAdmin() {
-  const [have, setHave] = useState<Record<string, boolean>>({});
-  const [credits, setCredits] = useState<Record<string, string>>({});
-  const [msg, setMsg] = useState<Record<string, string>>({});
-  const [tick, setTick] = useState(0);
-  useEffect(() => {
-    ADHAN_VOICES.forEach((id) => {
-      fetch(adhanUrl(id), { method: "HEAD", cache: "no-store" }).then((r) => setHave((h) => ({ ...h, [id]: r.ok }))).catch(() => undefined);
-      fetch(adhanCreditUrl(id), { cache: "no-store" }).then((r) => (r.ok ? r.text() : "")).then((c) => setCredits((x) => ({ ...x, [id]: c }))).catch(() => undefined);
-    });
-  }, [tick]);
-  const upload = async (id: string, file: File | null) => {
-    const fd = new FormData(); fd.set("id", id); if (file) fd.set("file", file); fd.set("credit", credits[id] ?? "");
-    setMsg((m) => ({ ...m, [id]: "…" }));
+  const [files, setFiles] = useState<AdhanFile[]>([]);
+  const [form, setForm] = useState({ id: "", label: "", credit: "" });
+  const [msg, setMsg] = useState("");
+  const load = useCallback(() => fetch("/api/adhan", { cache: "no-store" }).then((r) => r.json()).then((d) => setFiles(d.files ?? [])).catch(() => undefined), []);
+  useEffect(() => { load(); }, [load]);
+  const send = async (id: string, label: string, credit: string, file: File | null) => {
+    const fd = new FormData(); fd.set("id", id); fd.set("label", label); fd.set("credit", credit); if (file) fd.set("file", file);
+    setMsg("…");
     const r = await fetch("/api/admin/adhan", { method: "POST", body: fd });
     const e = r.ok ? "" : ((await r.json().catch(() => ({}))) as { error?: string }).error;
-    setMsg((m) => ({ ...m, [id]: r.ok ? "Gespeichert" : e === "format" ? "Nur MP3-Dateien" : e === "size" ? "Maximal 15 MB" : "Fehler" }));
-    setTick((x) => x + 1);
+    setMsg(r.ok ? "Gespeichert" : e === "format" ? "Nur MP3-Dateien" : e === "size" ? "Maximal 15 MB" : e === "id" ? "Kennung: nur a–z, 0–9 und -" : "Fehler");
+    resetAdhanCache(); load();
   };
-  const remove = async (id: string) => { await fetch(`/api/admin/adhan?id=${id}`, { method: "DELETE" }); setTick((x) => x + 1); };
+  const remove = async (id: string) => { await fetch(`/api/admin/adhan?id=${id}`, { method: "DELETE" }); resetAdhanCache(); load(); };
   return (
-    <div className="grid gap-3">
-      <p className="max-w-2xl text-sm text-muted">Lade hier Adhan-Aufnahmen als MP3 hoch (max. 15 MB). Nutze nur Aufnahmen, für die du die Rechte oder eine Erlaubnis hast, und trage die Quelle als Nachweis ein – sie wird im Radio angezeigt. Nutzer wählen die Stimme im Radio und bei den Gebetszeiten.</p>
-      {ADHAN_VOICES.map((id) => (
-        <div key={id} className={card}>
-          <div className="flex flex-wrap items-center justify-between gap-2"><b>{VOICE_NAMES[id]}</b><span className={`text-xs font-semibold ${have[id] ? "text-accent" : "text-muted"}`}>{have[id] ? "✓ installiert" : "nicht installiert"}</span></div>
-          {have[id] && <audio key={tick} src={`${adhanUrl(id)}?v=${tick}`} controls preload="none" className="mt-3 w-full" />}
-          <input value={credits[id] ?? ""} onChange={(e) => setCredits({ ...credits, [id]: e.target.value })} placeholder="Quelle / Nachweis, z. B. „Adhan: Name des Muezzins, mit Erlaubnis von …“" className={field + " mt-3"} />
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            <label className={btnP + " cursor-pointer"}>MP3 hochladen<input type="file" accept="audio/mpeg,.mp3" className="hidden" onChange={(e) => upload(id, e.target.files?.[0] ?? null)} /></label>
-            <button className={btn} onClick={() => upload(id, null)}>Quelle speichern</button>
-            {have[id] && <button className={btn} onClick={() => remove(id)}>Löschen</button>}
-            {msg[id] && <span className="text-sm text-accent">{msg[id]}</span>}
-          </div>
+    <div className="grid gap-4">
+      <p className="max-w-2xl text-sm text-muted">Adhan-Aufnahmen als MP3 (max. 15 MB). Im Radio und bei den Gebetszeiten spielt standardmäßig zufällig eine davon; Nutzer können auch eine feste Stimme wählen. Nutze nur Aufnahmen, für die du die Rechte oder eine Erlaubnis hast, und trage die Quelle ein – sie wird angezeigt.</p>
+      <div className={card}>
+        <b>Neue Aufnahme</b>
+        <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          <input list="adhan-ids" value={form.id} onChange={(e) => setForm({ ...form, id: e.target.value.toLowerCase(), label: form.label || VOICE_NAMES[e.target.value] || "" })} placeholder="Kennung, z. B. dubai-2" className={field} />
+          <datalist id="adhan-ids">{SUGGESTED.map((x) => <option key={x} value={x} />)}</datalist>
+          <input value={form.label} onChange={(e) => setForm({ ...form, label: e.target.value })} placeholder="Anzeigename, z. B. Dubai – Muezzin …" className={field} />
+          <input value={form.credit} onChange={(e) => setForm({ ...form, credit: e.target.value })} placeholder="Quelle / Erlaubnis" className={field} />
+        </div>
+        <label className={btnP + " mt-3 inline-block cursor-pointer"}>MP3 auswählen und hochladen<input type="file" accept="audio/mpeg,.mp3" className="hidden" onChange={(e) => { if (form.id) send(form.id, form.label, form.credit, e.target.files?.[0] ?? null); else setMsg("Bitte zuerst eine Kennung eingeben"); }} /></label>
+        {msg && <span className="ms-3 text-sm text-accent">{msg}</span>}
+      </div>
+      {files.length === 0 ? <p className="text-sm text-muted">Noch keine Aufnahmen.</p> : files.map((f) => (
+        <div key={f.id} className={card}>
+          <div className="flex flex-wrap items-center justify-between gap-2"><b>{f.label}</b><span className="text-xs text-muted">{f.id}</span></div>
+          <audio src={adhanUrl(f.id)} controls preload="none" className="mt-3 w-full" />
+          {f.credit && <p className="mt-2 text-xs text-muted">{f.credit}</p>}
+          <div className="mt-3 flex gap-2"><button className={btn} onClick={() => setForm({ id: f.id, label: f.label, credit: f.credit })}>Bearbeiten</button><button className={btn} onClick={() => remove(f.id)}>Löschen</button></div>
         </div>
       ))}
     </div>

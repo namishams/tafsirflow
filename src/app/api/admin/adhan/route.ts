@@ -3,21 +3,21 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { requireAdmin } from "@/lib/auth";
 import { json, sameOrigin } from "@/lib/http";
-import { ADHAN_VOICES } from "@/lib/adhan";
+import { isSlug } from "@/lib/adhan";
 
 export const dynamic = "force-dynamic";
 const DIR = path.join(process.env.AUDIO_DIR ?? "/srv/tafsirflow/audio", "adhan");
 const MAX = 15 * 1024 * 1024;
+const line = (v: FormDataEntryValue | null, max: number) => String(v ?? "").replace(/[\r\n]+/g, " ").trim().slice(0, max);
 
-// Upload an adhan recording (MP3) for one voice slot, with an optional credit line
+// Add or update an adhan recording (MP3) with a label and a credit line
 export async function POST(req: NextRequest) {
   if (!(await requireAdmin()) || !sameOrigin(req)) return json({ error: "forbidden" }, 403);
   const form = await req.formData().catch(() => null);
-  const id = String(form?.get("id") ?? "");
-  const file = form?.get("file");
-  if (!(ADHAN_VOICES as readonly string[]).includes(id)) return json({ error: "voice" }, 400);
+  const id = line(form?.get("id") ?? null, 41).toLowerCase();
+  if (!isSlug(id)) return json({ error: "id" }, 400);
   await fs.mkdir(DIR, { recursive: true });
-  const credit = String(form?.get("credit") ?? "").replace(/[\r\n]+/g, " ").trim().slice(0, 300);
+  const file = form?.get("file");
   if (file instanceof File && file.size > 0) {
     if (file.size > MAX) return json({ error: "size" }, 400);
     const buf = Buffer.from(await file.arrayBuffer());
@@ -25,6 +25,8 @@ export async function POST(req: NextRequest) {
     if (!isMp3) return json({ error: "format" }, 400);
     await fs.writeFile(path.join(DIR, `${id}.mp3`), buf, { mode: 0o644 });
   }
+  const label = line(form?.get("label") ?? null, 80), credit = line(form?.get("credit") ?? null, 300);
+  if (label) await fs.writeFile(path.join(DIR, `${id}.label.txt`), label, { mode: 0o644 });
   if (credit) await fs.writeFile(path.join(DIR, `${id}.credit.txt`), credit, { mode: 0o644 });
   return json({ ok: true });
 }
@@ -32,8 +34,7 @@ export async function POST(req: NextRequest) {
 export async function DELETE(req: NextRequest) {
   if (!(await requireAdmin()) || !sameOrigin(req)) return json({ error: "forbidden" }, 403);
   const id = req.nextUrl.searchParams.get("id") ?? "";
-  if (!(ADHAN_VOICES as readonly string[]).includes(id)) return json({ error: "voice" }, 400);
-  await fs.rm(path.join(DIR, `${id}.mp3`), { force: true });
-  await fs.rm(path.join(DIR, `${id}.credit.txt`), { force: true });
+  if (!isSlug(id)) return json({ error: "id" }, 400);
+  for (const ext of [".mp3", ".label.txt", ".credit.txt"]) await fs.rm(path.join(DIR, `${id}${ext}`), { force: true });
   return json({ ok: true });
 }

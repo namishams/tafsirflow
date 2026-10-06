@@ -1,17 +1,19 @@
-// Adhan voices. The recordings are uploaded by the owner in the admin area (only recordings he has the right to use)
-// and served by Nginx from /srv/tafsirflow/audio/adhan/<id>.mp3; a <id>.credit.txt holds the credit line.
-export const ADHAN_VOICES = ["makkah", "madinah", "dubai", "tehran", "aqsa", "default"] as const;
-export type AdhanVoice = (typeof ADHAN_VOICES)[number];
+// Adhan recordings live in /srv/tafsirflow/audio/adhan/<id>.mp3 (served by Nginx), with <id>.label.txt and <id>.credit.txt.
+// The owner adds them in the admin area or with scripts/install-adhan.sh. Listeners pick one voice or "random".
+export type AdhanFile = { id: string; label: string; credit: string };
+export const SUGGESTED = ["makkah", "madinah", "dubai", "tehran", "aqsa"] as const;
 export const adhanUrl = (id: string) => `/audio/adhan/${id}.mp3`;
-export const adhanCreditUrl = (id: string) => `/audio/adhan/${id}.credit.txt`;
+export const isSlug = (id: string) => /^[a-z0-9][a-z0-9-]{0,40}$/.test(id);
 
-// availability of every voice (HEAD requests, cached for the page lifetime)
-let cache: Promise<Record<string, boolean>> | null = null;
-export function adhanAvailability(): Promise<Record<string, boolean>> {
-  if (typeof window === "undefined") return Promise.resolve({});
-  cache ??= Promise.all(ADHAN_VOICES.map((id) => fetch(adhanUrl(id), { method: "HEAD", cache: "no-store" }).then((r) => [id, r.ok] as const).catch(() => [id, false] as const))).then((x) => Object.fromEntries(x));
+let cache: Promise<AdhanFile[]> | null = null;
+export function adhanList(): Promise<AdhanFile[]> {
+  if (typeof window === "undefined") return Promise.resolve([]);
+  cache ??= fetch("/api/adhan", { cache: "no-store" }).then((r) => (r.ok ? r.json() : { files: [] })).then((d) => d.files as AdhanFile[]).catch(() => []);
   return cache;
 }
 export const resetAdhanCache = () => { cache = null; };
-// the chosen voice if installed, otherwise the first installed one
-export const pickVoice = (want: string, have: Record<string, boolean>) => (have[want] ? want : ADHAN_VOICES.find((v) => have[v]) ?? null);
+// "random" (default) picks a different recording each time; a missing choice falls back to random
+export function pickAdhan(want: string, files: AdhanFile[]): AdhanFile | null {
+  if (!files.length) return null;
+  return files.find((f) => f.id === want) ?? files[Math.floor(Math.random() * files.length)];
+}

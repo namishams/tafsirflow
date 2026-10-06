@@ -107,9 +107,10 @@ export default function RadioPlayer() {
         <label className="grid gap-1"><span className="text-muted">{t("adhanVoice")}</span>
           <span className="flex gap-2">
             <select value={r.voice} onChange={(e) => r.setVoice(e.target.value)} className="h-10 min-w-0 flex-1 rounded-md border border-line bg-bg px-2">
-              {r.voices.map((v) => <option key={v} value={v}>{t(`v_${v}`)}{r.adhanFiles[v] ? "" : ` (${t("notInstalled")})`}</option>)}
+              <option value="random">{t("random")}</option>
+              {r.adhanFiles.map((f) => <option key={f.id} value={f.id}>{f.label}</option>)}
             </select>
-            <button type="button" onClick={r.testAdhan} disabled={!Object.values(r.adhanFiles).some(Boolean)} className="h-10 shrink-0 rounded-md border border-line px-3 text-sm font-semibold hover:border-ink disabled:opacity-40">▶</button>
+            <button type="button" onClick={r.testAdhan} disabled={r.adhanFiles.length === 0} className="h-10 shrink-0 rounded-md border border-line px-3 text-sm font-semibold hover:border-ink disabled:opacity-40">▶</button>
           </span>
         </label>
         <label className="flex items-center gap-2 self-end pb-2"><input type="checkbox" checked={r.showText} onChange={(e) => r.setShowText(e.target.checked)} /> {t("showText")}</label>
@@ -124,7 +125,7 @@ export default function RadioPlayer() {
         </section>
       )}
 
-      {r.adhanMode !== "off" && !Object.values(r.adhanFiles).some(Boolean) && <p className="mt-6 text-sm text-muted">{t("adhanMissing")}</p>}
+      {r.adhanMode !== "off" && r.adhanFiles.length === 0 && <p className="mt-6 text-sm text-muted">{t("adhanMissing")}</p>}
       {r.adhanCredit && <p className="mt-4 text-xs text-muted">{r.adhanCredit}</p>}
     </main>
   );
