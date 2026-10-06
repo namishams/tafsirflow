@@ -23,8 +23,9 @@ export function cumulative(t: Track, day: number) {
 }
 export type MyPlan = { track: Track["id"]; startDay: number; done: Record<string, number>; at: number };
 const KEY = "tf:plan";
-export const readPlan = () => readJSON<MyPlan | null>(KEY, null);
-export const savePlan = (p: MyPlan | null) => writeJSON(KEY, p);
+// a deleted plan is stored as a dated marker ({ deleted, at }) so that syncing with the account cannot bring it back
+export const readPlan = () => { const p = readJSON<(MyPlan & { deleted?: boolean }) | null>(KEY, null); return p && !p.deleted ? p : null; };
+export const savePlan = (p: MyPlan | null) => writeJSON(KEY, p ?? { deleted: true, at: Date.now() });
 export const dayOfPlan = (p: MyPlan) => Math.max(1, today() - p.startDay + 1);
 
 // the slice of verses scheduled for a given plan day

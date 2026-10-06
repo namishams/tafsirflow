@@ -74,7 +74,7 @@ export default function ProfileView() {
   };
 
   return (
-    <div className="mt-6 grid gap-6">
+    <div className="mt-6 grid grid-cols-1 gap-6">
       <section className={`${card} flex flex-wrap items-center gap-5`}>
         <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-ink text-2xl font-bold text-bg">{name[0]?.toUpperCase()}</span>
         <div className="min-w-0 flex-1">
@@ -192,7 +192,8 @@ function collect() {
   const ac = readProgress();
   const plan = readPlan();
   const tr = plan ? TRACKS.find((x) => x.id === plan.track) : null;
-  const khatm = readJSON<{ pos: number } | null>("tf:khatm", null);
+  const k0 = readJSON<{ pos: number; deleted?: boolean } | null>("tf:khatm", null);
+  const khatm = k0 && !k0.deleted ? k0 : null;
   const vocab = readJSON<Record<string, { box: number }>>("tf:vocab", {});
   const taj = readJSON<Record<string, number>>("tf:tajweed", {});
   const tajVals = Object.values(taj);

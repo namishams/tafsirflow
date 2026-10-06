@@ -194,7 +194,7 @@ export default function TodayDashboard() {
 }
 
 function Stat({ n, l, sub }: { n: React.ReactNode; l: string; sub?: string }) {
-  return <div><dt className="font-display text-3xl leading-none sm:text-4xl">{n}</dt><dd className="mt-1 text-xs text-white/60">{l}{sub ? ` · ${sub}` : ""}</dd></div>;
+  return <div><dt className="font-display text-3xl leading-none sm:text-4xl">{n}</dt><dd className="mt-1 text-xs text-white/60">{l}{sub ? ` · ${sub.replace(" %", "\u00a0%")}` : ""}</dd></div>;
 }
 function Tile({ v, l }: { v: number; l: string }) {
   return <div className="rounded-lg bg-bg px-2 py-2"><p className="font-display text-xl text-ink">{v}</p><p>{l}</p></div>;
@@ -224,7 +224,8 @@ function collect(locale: string) {
   const ac = readProgress();
   const plan = readPlan();
   const tr = plan ? TRACKS.find((x) => x.id === plan.track) : null;
-  const khatm = readJSON<{ pos: number; log: Record<string, number> } | null>("tf:khatm", null);
+  const k0 = readJSON<{ pos: number; log: Record<string, number>; deleted?: boolean } | null>("tf:khatm", null);
+  const khatm = k0 && !k0.deleted ? k0 : null;
   const ar = readArabic();
   const d = today();
   // verses practised per day for the last 7 days ("tf:days" is kept by the learning module)

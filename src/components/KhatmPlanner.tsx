@@ -20,13 +20,13 @@ export default function KhatmPlanner() {
   const [days, setDays] = useState(30);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   useEffect(() => {
-    const load = () => setPlan(readJSON<Plan | null>(KEY, null));
+    const load = () => { const p = readJSON<(Plan & { deleted?: boolean }) | null>(KEY, null); setPlan(p && !p.deleted ? p : null); };
     load();
     window.addEventListener("tf-synced", load); // the account copy arrives after the first render on a new device
     getChapters(locale).then(setChapters).catch(() => undefined);
     return () => window.removeEventListener("tf-synced", load);
   }, [locale]);
-  const save = (p: Plan | null) => { setPlan(p); writeJSON(KEY, p); };
+  const save = (p: Plan | null) => { setPlan(p); writeJSON(KEY, p ?? { deleted: true, at: Date.now() }); }; // marker: see lib/plans.ts
   const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `${locale === "ar" ? "سورة" : "Surah"} ${s}`;
   if (plan === undefined) return null;
 

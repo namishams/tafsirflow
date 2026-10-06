@@ -261,10 +261,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   // Keep the active verse in view. With the Shams coach the verse and its coach card are brought to the top after
   // every step (steps show/hide translation, words and cues for all verses, so in long surahs things would move away).
   const shamsOnRef = useRef(false);
+  const firstScroll = useRef(true);
   useEffect(() => {
+    // opening a surah at its start keeps the title in view; a link to a verse (?v=) scrolls there
+    if (firstScroll.current) { firstScroll.current = false; if (startVerse <= 1) return; }
     if (shamsOnRef.current) return;
     document.getElementById(`v-${idx}`)?.scrollIntoView({ block: "center", behavior: "smooth" });
-  }, [idx]);
+  }, [idx]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (shams === null || shams < 0) return;
     let raf = requestAnimationFrame(() => {
