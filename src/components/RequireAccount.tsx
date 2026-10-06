@@ -9,6 +9,7 @@ import { writeJSON } from "@/lib/storage";
 // Signed-out visitors and unconfirmed e-mail addresses see the sign-up / confirmation panel instead.
 export default function RequireAccount({ children, feature }: { children: React.ReactNode; feature: string }) {
   const t = useTranslations("account");
+  const tf = useTranslations("free");
   const [me, setMe] = useState<Me | null | undefined>(undefined);
   const [available, setAvailable] = useState(true);
   const load = useCallback(() => fetchMe().then((r) => { setMe(r.user); setAvailable(r.available); if (r.user?.birthYear) writeJSON("tf:age", r.user.birthYear, true); if (r.user?.emailVerified) void startSync(); }), []);
@@ -26,6 +27,7 @@ export default function RequireAccount({ children, feature }: { children: React.
         <p className="eyebrow text-gold">{t("wallEyebrow")}</p>
         <h2 className="font-display mt-2 text-3xl leading-tight">{me ? t("wallVerifyTitle") : t("wallTitle", { feature })}</h2>
         <p className="mt-3 text-[15px] leading-relaxed text-muted">{me ? t("wallVerifyBody") : t("wallBody")}</p>
+        <p className="mt-3 text-sm font-semibold text-accent">✓ {tf("badge")}</p>
         <ul className="mt-4 grid gap-2 text-[15px]">{["wall1", "wall2", "wall3", "wall4"].map((k) => <li key={k} className="flex gap-3"><span className="mt-2.5 h-px w-4 shrink-0 bg-gold" />{t(k)}</li>)}</ul>
       </div>
       <div className="border-t border-line pt-6 lg:border-s lg:border-t-0 lg:ps-8 lg:pt-0"><AccountForm defaultMode="register" bare /></div>

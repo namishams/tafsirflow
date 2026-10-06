@@ -87,7 +87,8 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
                 <Link href="/academy" className="inline-flex h-12 items-center rounded-md bg-[rgb(var(--gold))] px-6 text-[15px] font-bold text-[#0d0f12] hover:brightness-110">{t("home2.heroCta")}</Link>
                 <Link href="/shams" className="inline-flex h-12 items-center rounded-md border border-white/30 px-6 text-[15px] font-bold hover:border-white">{t("home2.heroCta2")}</Link>
               </div>
-              <ul className="mt-10 grid max-w-lg grid-cols-2 gap-px overflow-hidden rounded-md border border-white/10 bg-white/10 sm:grid-cols-4">
+              <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[rgb(var(--gold))]/40 px-3 py-1 text-xs font-semibold text-[rgb(var(--gold))]">✓ {t("free.badge")}</p>
+              <ul className="mt-6 grid max-w-lg grid-cols-2 gap-px overflow-hidden rounded-md border border-white/10 bg-white/10 sm:grid-cols-4">
                 {[["114", "home2.statSurahs"], ["6.236", "home2.statVerses"], [String(n), "home2.statLanguages"], ["0 €", "home2.statFree"]].map(([v, k]) => (
                   <li key={k} className="bg-[#0d0f12] px-4 py-3"><p className="font-display text-2xl">{v}</p><p className="text-xs text-white/55">{t(k)}</p></li>
                 ))}
@@ -371,7 +372,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         </div>
         <div className="border-t border-line py-5">
           <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 text-xs text-muted sm:flex-row sm:justify-between">
-            <p>{t("home2.footerLine")}</p>
+            <p><span className="font-semibold text-ink">{t("free.title")}</span> {t("free.body")}</p>
             <p>© {new Date().getFullYear()} {t("app.name")} · Proudly developed by Nami Shams in Dubai</p>
           </div>
         </div>

@@ -111,3 +111,14 @@ h1, h2, h3, p, li, summary { overflow-wrap: anywhere; hyphens: auto; }
 .hero-progress { animation: heroProgress 6s linear infinite; }
 @keyframes heroProgress { from { width: 0; } to { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .hero-words span, .hero-progress { animation: none; } .hero-progress { width: 40%; } }
+
+/* radio: reciter orb with pulsing rings and moving bars while on air */
+.radio-orb .ring { position: absolute; inset: 12%; border-radius: 9999px; border: 1px solid rgb(var(--gold) / .35); opacity: .25; }
+.radio-orb .r2 { inset: 4%; } .radio-orb .r3 { inset: -4%; }
+.radio-orb.is-on .ring { animation: orbPulse 3s ease-out infinite; }
+.radio-orb.is-on .r2 { animation-delay: 1s; } .radio-orb.is-on .r3 { animation-delay: 2s; }
+@keyframes orbPulse { 0% { transform: scale(.85); opacity: .7; } 100% { transform: scale(1.12); opacity: 0; } }
+.radio-orb .bars i { display: block; width: 4px; height: 6px; border-radius: 2px; background: rgb(var(--gold)); }
+.radio-orb.is-on .bars i { animation: eq 1s ease-in-out infinite; }
+.radio-orb.is-on .bars i:nth-child(2n) { animation-delay: -.35s; } .radio-orb.is-on .bars i:nth-child(3n) { animation-delay: -.7s; }
+@media (prefers-reduced-motion: reduce) { .radio-orb .ring, .radio-orb .bars i { animation: none !important; } }

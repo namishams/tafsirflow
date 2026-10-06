@@ -13,31 +13,48 @@ import { CITIES, PRAYERS, dayFor, type Prayer, type Spot } from "@/lib/prayer";
 // Adhan recordings are placed on the server by the owner (scripts/install-adhan.sh) – only recordings with a clear licence
 type AdhanMode = "off" | "makkah" | "dubai" | "mine";
 
-type Mode = "full" | "range" | "single" | "random";
-type Station = { id: string; mode: Mode; from: number; to: number };
+type Mode = "full" | "range" | "single" | "random" | "list";
+// mix: a different (random) reciter for every surah
+type Station = { id: string; mode: Mode; from: number; to: number; list?: number[]; mix?: boolean; group: "main" | "surah" | "theme" | "mix" };
 type Pos = { s: number; v: number };
 
 export const STATIONS: Station[] = [
-  { id: "quran", mode: "full", from: 1, to: 114 },
-  { id: "juzamma", mode: "range", from: 78, to: 114 },
-  { id: "kahf", mode: "single", from: 18, to: 18 },
-  { id: "yasin", mode: "single", from: 36, to: 36 },
-  { id: "rahman", mode: "single", from: 55, to: 55 },
-  { id: "mulk", mode: "single", from: 67, to: 67 },
-  { id: "random", mode: "random", from: 1, to: 114 },
+  { id: "quran", mode: "full", from: 1, to: 114, group: "main" },
+  { id: "quranmix", mode: "full", from: 1, to: 114, mix: true, group: "mix" },
+  { id: "random", mode: "random", from: 1, to: 114, group: "main" },
+  { id: "randommix", mode: "random", from: 1, to: 114, mix: true, group: "mix" },
+  { id: "juzamma", mode: "range", from: 78, to: 114, group: "main" },
+  { id: "juzammamix", mode: "range", from: 78, to: 114, mix: true, group: "mix" },
+  { id: "tabarak", mode: "range", from: 67, to: 77, group: "main" },
+  { id: "kids", mode: "list", from: 1, to: 1, list: [1, 114, 113, 112, 111, 110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100, 99, 97, 95, 94, 93], group: "theme" },
+  { id: "night", mode: "list", from: 32, to: 32, list: [32, 67, 112, 113, 114], group: "theme" },
+  { id: "friday", mode: "list", from: 18, to: 18, list: [18, 62, 63, 87, 88], group: "theme" },
+  { id: "prophets", mode: "list", from: 12, to: 12, list: [12, 19, 20, 21, 28, 71], group: "theme" },
+  { id: "beloved", mode: "list", from: 36, to: 36, list: [36, 55, 56, 67, 18, 32, 48], group: "theme" },
+  { id: "dhikr", mode: "list", from: 1, to: 1, list: [1, 2, 112, 113, 114], group: "theme" },
+  { id: "kahf", mode: "single", from: 18, to: 18, group: "surah" },
+  { id: "yasin", mode: "single", from: 36, to: 36, group: "surah" },
+  { id: "rahman", mode: "single", from: 55, to: 55, group: "surah" },
+  { id: "waqiah", mode: "single", from: 56, to: 56, group: "surah" },
+  { id: "mulk", mode: "single", from: 67, to: 67, group: "surah" },
+  { id: "baqarah", mode: "single", from: 2, to: 2, group: "surah" },
+  { id: "maryam", mode: "single", from: 19, to: 19, group: "surah" },
+  { id: "yusuf", mode: "single", from: 12, to: 12, group: "surah" },
 ];
 
 const pad = (n: number) => String(n).padStart(3, "0");
 const urlOf = (r: Reciter, p: Pos) => `${AUDIO_BASE}/${r.folder}/${pad(p.s)}${pad(p.v)}.mp3`;
 const randSurah = () => 1 + Math.floor(Math.random() * 114);
 
+// the station never ends: after the last surah it starts again (or picks the next random surah)
 function nextPos(p: Pos, st: Station): Pos {
   if (p.v < countOf(p.s)) return { s: p.s, v: p.v + 1 };
   if (st.mode === "random") return { s: randSurah(), v: 1 };
   if (st.mode === "single") return { s: st.from, v: 1 };
+  if (st.mode === "list" && st.list) { const i = st.list.indexOf(p.s); return { s: st.list[(i + 1) % st.list.length], v: 1 }; }
   return { s: p.s >= st.to ? st.from : p.s + 1, v: 1 };
 }
-const startOf = (st: Station): Pos => ({ s: st.mode === "random" ? randSurah() : st.from, v: 1 });
+const startOf = (st: Station): Pos => ({ s: st.mode === "random" ? randSurah() : st.mode === "list" && st.list ? st.list[0] : st.from, v: 1 });
 
 function useEngine() {
   const t = useTranslations("radio");
@@ -68,9 +85,16 @@ function useEngine() {
   const [vol, setVol] = useState(1);
   const [history, setHistory] = useState<Pos[]>([]);
   const startedRef = useRef(false);
+  const errors = useRef(0); // missing files are skipped so the station keeps running
   const reciter = reciters.find((r) => r.folder === folder) ?? reciters[0];
   const reciterRef = useRef(reciter);
   reciterRef.current = reciter;
+  const recitersRef = useRef(reciters);
+  recitersRef.current = reciters;
+  const [mix, setMixState] = useState(false); // mix voices on every station
+  const mixRef = useRef(false);
+  mixRef.current = mix;
+  const setMix = (v: boolean) => { setMixState(v); writeJSON("tf:radio-mix", v, true); };
 
   useEffect(() => {
     getChapters(locale).then(setChapters).catch(() => undefined);
@@ -83,6 +107,7 @@ function useEngine() {
     const st = STATIONS.find((s) => s.id === sid);
     if (st) { stRef.current = st; setStation(st); }
     setVol(readJSON<number>("tf:radio-vol", 1));
+    setMixState(readJSON<boolean>("tf:radio-mix", false));
   }, []);
   useEffect(() => { a.current.forEach((e) => { if (e) e.volume = vol; }); }, [vol]);
 
@@ -156,15 +181,28 @@ function useEngine() {
   // gapless hand-over: the idle element already holds the next verse
   const advance = useCallback(() => {
     const next = nextPos(pos.current, stRef.current);
+    // mixed stations: a new surah gets a new voice (a random one of the installed reciters)
+    if (next.s !== pos.current.s && (stRef.current.mix || mixRef.current) && recitersRef.current.length > 1) {
+      const others = recitersRef.current.filter((r) => r.folder !== reciterRef.current.folder);
+      const pick = others[Math.floor(Math.random() * others.length)];
+      reciterRef.current = pick; setFolder(pick.folder);
+      start(next);
+      return;
+    }
     pos.current = next; setNow(next);
     setHistory((h) => [next, ...h].slice(0, 6));
     const old = a.current[live.current];
     live.current = 1 - live.current;
     const cur = a.current[live.current];
-    cur.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    cur.play().then(() => setPlaying(true)).catch(() => {
+      // the preloaded file is missing: skip it so the station keeps running
+      if (cur.error && errors.current < 8) { errors.current += 1; setTimeout(() => advanceRef.current(), 600); } else setPlaying(false);
+    });
     prepare(old, nextPos(next, stRef.current));
     meta(next);
-  }, [meta, prepare]);
+  }, [meta, prepare]); // eslint-disable-line react-hooks/exhaustive-deps
+  const advanceRef = useRef(advance);
+  advanceRef.current = advance;
 
   const chooseStation = (st: Station) => { stRef.current = st; setStation(st); writeJSON("tf:radio-station", st.id, true); start(startOf(st)); };
   const toggle = () => {
@@ -215,11 +253,12 @@ function useEngine() {
     <>
       <audio ref={adhanEl} preload="none" />
       {[0, 1].map((i) => (
-        <audio key={i} ref={(el) => { if (el) a.current[i] = el; }} preload="auto" onEnded={() => { if (i === live.current) advance(); }} onPause={() => { if (i === live.current && !a.current[i].ended) setPlaying(false); }} onPlay={() => { if (i === live.current) setPlaying(true); }} />
+        <audio key={i} ref={(el) => { if (el) a.current[i] = el; }} preload="auto" onEnded={() => { errors.current = 0; if (i === live.current) advance(); }}
+          onError={() => { if (i !== live.current || !startedRef.current) return; errors.current += 1; if (errors.current <= 8) setTimeout(() => advance(), 600); else { setPlaying(false); errors.current = 0; } }} onPause={() => { if (i === live.current && !a.current[i].ended) setPlaying(false); }} onPlay={() => { if (i === live.current) setPlaying(true); }} />
       ))}
     </>
   );
-  return { station, playing, started, now, chapter, verse, upNext, history, chapters, reciter, reciters, changeReciter, sleepLeft, setSleepLeft, sleepOptions, adhanMode, setAdhanMode: setAdhan, adhanFiles, adhanCredit, voice, setVoice, testAdhan, stopAdhan, banner, showText, setShowText, vol, setVolume, chooseStation, toggle, skipVerse, skipSurah, prevVerse, stop, stationName, audios };
+  return { mix, setMix, station, playing, started, now, chapter, verse, upNext, history, chapters, reciter, reciters, changeReciter, sleepLeft, setSleepLeft, sleepOptions, adhanMode, setAdhanMode: setAdhan, adhanFiles, adhanCredit, voice, setVoice, testAdhan, stopAdhan, banner, showText, setShowText, vol, setVolume, chooseStation, toggle, skipVerse, skipSurah, prevVerse, stop, stationName, audios };
 }
 
 type Radio = ReturnType<typeof useEngine>;
