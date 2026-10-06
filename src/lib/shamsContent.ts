@@ -168,4 +168,5 @@ const en: ShamsContent = {
   finalLead: "Start with Al-Fatihah. The platform guides you through every step.",
 };
 
-export const shamsContent = (locale: string) => (locale === "de" ? de : en);
+import ar from "./pagecontent/ar/shams";
+export const shamsContent = (locale: string): ShamsContent => (locale === "de" ? de : locale === "ar" ? ar : en);

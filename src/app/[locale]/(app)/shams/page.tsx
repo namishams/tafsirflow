@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import Markdown from "@/components/Markdown";
 import ShamsPlanner from "@/components/ShamsPlanner";
-import { GUIDES } from "@/lib/guides";
+import { GUIDES, guideText } from "@/lib/guides";
 import { shamsContent } from "@/lib/shamsContent";
 import { abs, pageMeta } from "@/lib/site";
 
@@ -215,7 +215,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
         <section className="mx-auto max-w-3xl px-5 py-16 sm:py-24">
           <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{c.deepTitle}</h2>
           <p className="mt-4 text-[17px] text-muted">{c.deepLead}</p>
-          <article className="mt-4"><Markdown text={de ? guide.body_de : guide.body_en} /></article>
+          <article className="mt-4"><Markdown text={guideText(guide, locale).body} /></article>
         </section>
       )}
 

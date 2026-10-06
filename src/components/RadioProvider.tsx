@@ -239,6 +239,23 @@ function useEngine() {
     return () => { window.removeEventListener("tf-audio-start", off); document.removeEventListener("play", onPlay, true); };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // send the radio to AirPlay (Safari / iOS) or Chromecast and other remote devices (Remote Playback API, Chrome / Android)
+  const [castable, setCastable] = useState({ airplay: false, cast: false, share: false });
+  useEffect(() => {
+    setCastable({
+      airplay: "WebKitPlaybackTargetAvailabilityEvent" in window,
+      cast: "remote" in HTMLMediaElement.prototype,
+      share: typeof navigator.share === "function",
+    });
+  }, []);
+  const airplay = () => { const el = a.current[live.current] as HTMLAudioElement & { webkitShowPlaybackTargetPicker?: () => void }; el?.webkitShowPlaybackTargetPicker?.(); };
+  const cast = () => { const el = a.current[live.current] as HTMLAudioElement & { remote?: { prompt: () => Promise<void> } }; el?.remote?.prompt().catch(() => undefined); };
+  const shareRadio = async (title: string) => {
+    const url = window.location.href;
+    if (navigator.share) { await navigator.share({ title, url }).catch(() => undefined); return; }
+    await navigator.clipboard?.writeText(url).catch(() => undefined);
+  };
+
   // sleep timer
   useEffect(() => {
     if (sleepLeft <= 0) return;
@@ -261,12 +278,12 @@ function useEngine() {
     <>
       <audio ref={adhanEl} preload="none" />
       {[0, 1].map((i) => (
-        <audio key={i} ref={(el) => { if (el) a.current[i] = el; }} preload="auto" onEnded={() => { errors.current = 0; if (i === live.current) advance(); }}
+        <audio key={i} ref={(el) => { if (el) a.current[i] = el; }} preload="auto" x-webkit-airplay="allow" onEnded={() => { errors.current = 0; if (i === live.current) advance(); }}
           onError={() => { if (i !== live.current || !startedRef.current) return; errors.current += 1; if (errors.current <= 8) setTimeout(() => advance(), 600); else { setPlaying(false); errors.current = 0; } }} onPause={() => { if (i === live.current && !a.current[i].ended) setPlaying(false); }} onPlay={() => { if (i === live.current) { setPlaying(true); quietOthers(); } }} />
       ))}
     </>
   );
-  return { mix, setMix, station, playing, started, now, chapter, verse, upNext, history, chapters, reciter, reciters, changeReciter, sleepLeft, setSleepLeft, sleepOptions, adhanMode, setAdhanMode: setAdhan, adhanFiles, adhanCredit, voice, setVoice, testAdhan, stopAdhan, banner, showText, setShowText, vol, setVolume, chooseStation, toggle, skipVerse, skipSurah, prevVerse, stop, stationName, audios };
+  return { mix, setMix, station, playing, started, now, chapter, verse, upNext, history, chapters, reciter, reciters, changeReciter, sleepLeft, setSleepLeft, sleepOptions, adhanMode, setAdhanMode: setAdhan, adhanFiles, adhanCredit, voice, setVoice, testAdhan, stopAdhan, banner, showText, setShowText, vol, setVolume, chooseStation, toggle, skipVerse, skipSurah, prevVerse, stop, stationName, audios, castable, airplay, cast, shareRadio };
 }
 
 type Radio = ReturnType<typeof useEngine>;

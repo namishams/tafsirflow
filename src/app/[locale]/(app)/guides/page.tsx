@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { GUIDES } from "@/lib/guides";
+import { GUIDES, guideText } from "@/lib/guides";
 import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -23,8 +23,8 @@ export default async function GuidesPage({ params }: { params: Promise<{ locale:
         {GUIDES.map((g) => (
           <li key={g.slug} className="bg-surface">
             <Link href={`/guides/${g.slug}`} className="block p-5 hover:bg-bg">
-              <span className="block text-[18px] font-bold leading-snug">{de ? g.title_de : g.title_en}</span>
-              <span className="mt-1 block text-[15px] text-muted">{de ? g.desc_de : g.desc_en}</span>
+              <span className="block text-[18px] font-bold leading-snug">{guideText(g, locale).title}</span>
+              <span className="mt-1 block text-[15px] text-muted">{guideText(g, locale).desc}</span>
             </Link>
           </li>
         ))}

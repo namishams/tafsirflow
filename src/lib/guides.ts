@@ -2542,3 +2542,12 @@ Wenn du die arabische Schrift noch nicht lesen kannst, beginne mit unserem Ratge
     related: ["understanding-the-quran-tafsir", "learn-to-read-the-quran", "shams-method"],
   },
 ];
+
+// Localised view of a guide: Arabic from src/lib/pagecontent/ar/guides.ts, German and English from the guide itself
+import AR_GUIDES from "./pagecontent/ar/guides";
+export type GuideText = { title: string; desc: string; keywords: string; body: string; faq: { q: string; a: string }[] };
+export function guideText(g: Guide, locale: string): GuideText {
+  if (locale === "ar" && AR_GUIDES[g.slug]) return AR_GUIDES[g.slug];
+  const de = locale === "de";
+  return { title: de ? g.title_de : g.title_en, desc: de ? g.desc_de : g.desc_en, keywords: de ? g.keywords_de : g.keywords_en, body: de ? g.body_de : g.body_en, faq: g.faq.map((f) => ({ q: de ? f.q_de : f.q_en, a: de ? f.a_de : f.a_en })) };
+}
