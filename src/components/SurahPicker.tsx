@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import type { Chapter } from "@/lib/quran";
+import { QuranStar } from "./art/QuranArt";
 
 // Surah switcher: a quiet pill that opens a searchable sheet with all 114 surahs (bottom sheet on phones, dialog on desktop)
 export default function SurahPicker({ current, chapters }: { current: Chapter; chapters: Chapter[] }) {
@@ -35,24 +36,25 @@ export default function SurahPicker({ current, chapters }: { current: Chapter; c
       {open && createPortal(
         <div className="fixed inset-0 z-[90]" role="dialog" aria-modal="true" aria-label={t("goSurah")}>
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <div className="absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col rounded-t-3xl bg-surface shadow-xl sm:inset-auto sm:left-1/2 sm:top-1/2 sm:w-[32rem] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-2xl">
+          <div className="absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col overflow-hidden rounded-t-3xl border-t border-[rgb(201_166_94/0.45)] bg-surface shadow-xl sm:inset-auto sm:left-1/2 sm:top-1/2 sm:w-[32rem] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-2xl sm:border">
+            <div aria-hidden className="h-[2px] shrink-0 bg-gradient-to-r from-transparent via-[rgb(201_166_94)] to-transparent" />
             <div className="p-4 pb-2 sm:p-5">
               <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-line sm:hidden" />
               <div className="flex items-center gap-2">
-                <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder={t("goSurah")} className="h-11 min-w-0 flex-1 rounded-full border border-line bg-bg px-4 text-[15px] outline-none focus:border-gold" />
+                <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder={t("goSurah")} className="h-11 min-w-0 flex-1 rounded-full border border-[rgb(201_166_94/0.4)] bg-bg px-4 text-[15px] outline-none focus:border-[rgb(201_166_94)]" />
                 <button onClick={() => setOpen(false)} className="h-11 rounded-full px-3 text-sm font-semibold text-muted hover:text-ink">{t("closeTafsir")}</button>
               </div>
             </div>
             <ol className="flex-1 overflow-y-auto px-2 pb-[calc(1rem+env(safe-area-inset-bottom))] sm:px-3">
               {list.map((c) => (
                 <li key={c.id}>
-                  <button onClick={() => go(c.id)} className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-start transition hover:bg-bg ${c.id === current.id ? "bg-bg" : ""}`}>
-                    <span className="w-8 shrink-0 text-end text-sm tabular-nums text-muted">{c.id}</span>
+                  <button onClick={() => go(c.id)} aria-current={c.id === current.id ? "true" : undefined} className={`flex w-full items-center gap-3 rounded-xl px-2.5 py-2 text-start transition hover:bg-[rgb(201_166_94/0.08)] ${c.id === current.id ? "bg-[rgb(201_166_94/0.12)] shadow-[inset_0_0_0_1px_rgb(201_166_94/0.45)]" : ""}`}>
+                    <QuranStar n={c.id} className="!h-10 !w-10" />
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate text-[15px] font-semibold">{c.name_simple}</span>
+                      <span className={locale === "ar" ? "font-callig block truncate text-[19px] leading-[1.5]" : "block truncate text-[15px] font-semibold"}>{c.name_simple}</span>
                       <span className="block truncate text-xs text-muted">{[c.translated_name?.name, `${c.verses_count} ${t("verse").toLowerCase()}`].filter(Boolean).join(" · ")}</span>
                     </span>
-                    <span className="font-arabic shrink-0 text-xl leading-none text-accent" dir="rtl">{locale === "ar" ? "" : c.name_arabic}</span>
+                    {locale !== "ar" && <span className="font-callig shrink-0 text-[20px] leading-[1.5] text-[rgb(var(--q-ink-gold))]" dir="rtl" lang="ar">{c.name_arabic}</span>}
                   </button>
                 </li>
               ))}
