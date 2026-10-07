@@ -204,6 +204,9 @@ ALTER TABLE users ADD COLUMN IF NOT EXISTS rank_public boolean NOT NULL DEFAULT 
 
 ALTER TABLE users ADD COLUMN IF NOT EXISTS rank_hidden boolean NOT NULL DEFAULT false;  -- hidden from the ranking by the admin
 
+-- baby names: how often families saved a name as favourite ("most loved by families" on /names)
+CREATE TABLE IF NOT EXISTS name_favs (name_id text PRIMARY KEY, n bigint NOT NULL DEFAULT 0);
+
 -- keep last: the app user needs rights on every table above
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
