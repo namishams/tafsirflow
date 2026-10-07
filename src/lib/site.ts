@@ -1,9 +1,14 @@
 import { routing } from "@/i18n/routing";
 
-// Public address of the site. Set SITE_URL once the domain exists (e.g. https://example.com).
-export const SITE = (process.env.SITE_URL ?? "http://localhost:3000").replace(/\/$/, "");
-// Search engines are only invited when the owner switches this on (avoids indexing the bare server IP).
-export const INDEXABLE = process.env.ALLOW_INDEXING === "1";
+// The public domain. A production build always uses it as canonical address, even if SITE_URL on the server
+// still holds the bare IP; SITE_URL only overrides it with another https address.
+export const DOMAIN = "quranmasterclass.com";
+export const PUBLIC_SITE = `https://${DOMAIN}`;
+const envSite = (process.env.SITE_URL ?? "").replace(/\/$/, "");
+export const SITE = envSite.startsWith("https://") ? envSite : process.env.NODE_ENV === "production" ? PUBLIC_SITE : envSite || "http://localhost:3000";
+// Search engines are invited on the public domain; anywhere else (IP address, test server) only with ALLOW_INDEXING=1
+export const INDEXABLE = process.env.ALLOW_INDEXING === "1" || SITE === PUBLIC_SITE;
+export const isPublicHost = (host: string | null | undefined) => (host ?? "").split(":")[0].toLowerCase().replace(/^www\./, "") === DOMAIN;
 
 export const abs = (path: string) => `${SITE}${path}`;
 

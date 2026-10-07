@@ -74,3 +74,7 @@ sudo -u tafsir bash -c "cd $APP && rm -rf .next-old && { [ -d .next ] && mv .nex
 
 echo
 echo "Done. Version now: $(sudo -u tafsir git -C "$APP" log --oneline -1)"
+# quick look at what search engines see (should start with "Allow: /" and name the sitemap)
+sleep 8
+echo "==> https://$DOMAIN/robots.txt"
+curl -fsS -m 20 "https://$DOMAIN/robots.txt" 2>/dev/null | sed 's/^/   /' || echo "   (not reachable yet – try again in a minute)"
