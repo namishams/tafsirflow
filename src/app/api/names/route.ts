@@ -18,14 +18,17 @@ export async function GET(req: NextRequest) {
   if (verses !== null) {
     const keys = verses.split(",").filter((k) => /^\d{1,3}:\d{1,3}$/.test(k) && NAME_VERSES[k]).slice(0, 8);
     const locale = /^[a-z]{2}$/.test(req.nextUrl.searchParams.get("locale") ?? "") ? req.nextUrl.searchParams.get("locale")! : "en";
-    let tid = 20;
-    if (locale !== "ar") { try { tid = pickTranslation(locale, (await getResources()).translations); } catch { /* default */ } }
-    const out = await Promise.all(keys.map(async (key) => {
-      let tr = "";
-      if (locale !== "ar") { try { tr = (await getVerseByKey(key, locale, tid)).translation.replace(/<[^>]+>/g, "").trim(); } catch { /* Arabic only */ } }
-      return { key, ar: NAME_VERSES[key], tr };
-    }));
-    return json({ verses: out }, 200, { "Cache-Control": "public, s-maxage=86400" });
+    // the Arabic is always there; the translation only if Quran.com answers in time
+    const translations = async () => {
+      if (locale === "ar") return {} as Record<string, string>;
+      let tid = 20;
+      try { tid = pickTranslation(locale, (await getResources()).translations); } catch { /* default */ }
+      const got = await Promise.all(keys.map(async (k) => { try { return [k, (await getVerseByKey(k, locale, tid)).translation.replace(/<[^>]+>/g, "").trim()]; } catch { return [k, ""]; } }));
+      return Object.fromEntries(got) as Record<string, string>;
+    };
+    const tr = await Promise.race([translations(), new Promise<null>((r) => setTimeout(() => r(null), 5000))]);
+    const out = keys.map((key) => ({ key, ar: NAME_VERSES[key], tr: tr?.[key] ?? "" }));
+    return json({ verses: out }, 200, { "Cache-Control": tr ? "public, s-maxage=86400" : "no-store" });
   }
   const p = pool();
   let top: { id: string; n: number }[] = [];
