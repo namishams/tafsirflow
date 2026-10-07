@@ -152,7 +152,7 @@ function Reader({ list, i, setI, close, showTr, meaning, srcOf, catLabel, source
     go((dx < 0) !== rtl ? i + 1 : i - 1);
   };
   return (
-    <div role="dialog" aria-modal="true" aria-label={ui.read} className="stage girih fixed inset-0 z-[80] flex flex-col text-[#eef0f3]" onTouchStart={(e) => { touch.current = e.touches[0].clientX; }} onTouchEnd={(e) => swipe(e.changedTouches[0].clientX)}>
+    <div role="dialog" aria-modal="true" aria-label={ui.read} className="stage fixed inset-0 z-[80] flex flex-col overflow-hidden text-[#eef0f3]" onTouchStart={(e) => { touch.current = e.touches[0].clientX; }} onTouchEnd={(e) => swipe(e.changedTouches[0].clientX)}>
       <PracticeWindow uid="dua-read" lamp className="pointer-events-none absolute left-1/2 top-1/2 h-[86vh] max-h-[760px] w-auto -translate-x-1/2 -translate-y-1/2 opacity-[0.16]" />
       <div className="relative flex items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[rgb(var(--gold))] rtl:tracking-normal"><PracticeStar size={10} />{catLabel(d.cat)}</span>

@@ -195,7 +195,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
             <span aria-hidden className="illum-frame" />
             <IslamSun word="" className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 opacity-25" id="sun-sol" />
             <figcaption className={`relative ${kicker}`}>{c.solutionTitle}</figcaption>
-            <blockquote className="isl-serif relative mx-auto mt-4 max-w-4xl text-[22px] leading-snug sm:text-[30px]">{c.solution}</blockquote>
+            <blockquote className="isl-serif relative mx-auto mt-4 max-w-4xl text-[22px] leading-snug rtl:leading-[1.8] sm:text-[30px]">{c.solution}</blockquote>
           </figure>
         </section>
       </div>

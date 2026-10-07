@@ -160,3 +160,32 @@ export function IslamMosque({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+// A pointed-arch window of coloured inlay (jewel tones of the poster cards): lattice that turns on hover, the Arabic word in gold
+const ARCH = "M34 300V158C34 92 118 46 200 14C282 46 366 92 366 158V300Z";
+const ARCH_OUT = "M22 300V156C22 84 110 34 200 0C290 34 378 84 378 156V300";
+// the jewel tones of the poster cards (emerald, amber, teal, lapis, garnet, olive, amethyst, carnelian)
+const JEWELS = [["#0c4a37", "#06221a"], ["#3a2f12", "#14110a"], ["#173640", "#081418"], ["#1f2b44", "#0b101b"], ["#3b1f2b", "#160b10"], ["#2c3a1a", "#10160a"], ["#30254a", "#100c19"], ["#401c14", "#170a07"]];
+export function IslamArchWindow({ i, ar, id = `w${i}` }: { i: number; ar: string; id?: string }) {
+  const [a, b] = JEWELS[i % JEWELS.length];
+  return (
+    <div className="isl-window">
+      <svg className="frame" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden>
+        <defs>
+          <linearGradient id={`${id}g`} x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stopColor={a} /><stop offset="1" stopColor={b} /></linearGradient>
+          <radialGradient id={`${id}l`} cx="50%" cy="18%" r="60%"><stop offset="0" stopColor="#ffe9b8" stopOpacity=".35" /><stop offset="1" stopColor="#ffe9b8" stopOpacity="0" /></radialGradient>
+          <pattern id={`${id}p`} width="50" height="50" patternUnits="userSpaceOnUse"><path d={starPath(25, 25, 21, 10)} fill="none" stroke="#e9cf99" strokeOpacity=".16" strokeWidth="1" /><circle cx="25" cy="25" r="4" fill="none" stroke="#e9cf99" strokeOpacity=".12" /></pattern>
+          <clipPath id={`${id}c`}><path d={ARCH} /></clipPath>
+        </defs>
+        <path d={ARCH} fill={`url(#${id}g)`} />
+        <g clipPath={`url(#${id}c)`}>
+          <g className="lattice"><rect x="-100" y="-100" width="600" height="500" fill={`url(#${id}p)`} /></g>
+          <rect className="glow" width="400" height="300" fill={`url(#${id}l)`} />
+        </g>
+        <path d={ARCH} fill="none" stroke="#d6b46c" strokeOpacity=".9" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
+        <path d={ARCH_OUT} fill="none" stroke="#c9a65e" strokeOpacity=".45" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+      </svg>
+      <span className="isl-window-ar" dir="rtl" aria-hidden style={{ fontSize: `clamp(17px, ${Math.min(17, 230 / Math.max(6, ar.length)).toFixed(1)}cqw, 60px)` }}>{ar}</span>
+    </div>
+  );
+}

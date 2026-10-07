@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
-import { TONES } from "@/components/PosterTiles";
 import { ISLAM, islamUi, loadChapters, readingMinutes } from "@/lib/islam";
 import { abs, pageMeta } from "@/lib/site";
 import { CalligraphyDraw } from "@/components/Ornaments";
-import { IslamArcadeLine, IslamCorners, IslamDome, IslamMosque, IslamNum, IslamRain, saw, starPath } from "@/components/art/IslamArt";
+import { IslamArcadeLine, IslamArchWindow, IslamCorners, IslamDome, IslamMosque, IslamNum, IslamRain, saw } from "@/components/art/IslamArt";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -14,35 +13,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMeta(locale, "/islam", `${u.kicker} | Quran Masterclass`, u.lead.slice(0, 158));
 }
 
-// a pointed arch in a 400×300 box (the window of each chapter card)
-const ARCH = "M34 300V158C34 92 118 46 200 14C282 46 366 92 366 158V300Z";
-const ARCH_OUT = "M22 300V156C22 84 110 34 200 0C290 34 378 84 378 156V300";
-const toneColors = (bg: string) => { const m = bg.match(/#[0-9a-f]{6}/gi) ?? []; return [m[0] ?? "#0c4a37", m[1] ?? "#06221a"]; };
-
 // A chapter as a marble card with a window of coloured inlay: the Arabic word in gold, a lattice that turns on hover
 function ChapterCard({ i, href, title, lead, kicker, ar, meta }: { i: number; href: string; title: string; lead: string; kicker: string; ar: string; meta: string }) {
-  const [a, b] = toneColors(TONES[i % TONES.length]);
-  const id = `w${i}`;
   return (
     <Link href={href} className="isl-card isl-card-hover group flex h-full flex-col overflow-hidden p-2.5 sm:p-3">
-      <div className="isl-window">
-        <svg className="frame" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden>
-          <defs>
-            <linearGradient id={`${id}g`} x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stopColor={a} /><stop offset="1" stopColor={b} /></linearGradient>
-            <radialGradient id={`${id}l`} cx="50%" cy="18%" r="60%"><stop offset="0" stopColor="#ffe9b8" stopOpacity=".35" /><stop offset="1" stopColor="#ffe9b8" stopOpacity="0" /></radialGradient>
-            <pattern id={`${id}p`} width="50" height="50" patternUnits="userSpaceOnUse"><path d={starPath(25, 25, 21, 10)} fill="none" stroke="#e9cf99" strokeOpacity=".16" strokeWidth="1" /><circle cx="25" cy="25" r="4" fill="none" stroke="#e9cf99" strokeOpacity=".12" /></pattern>
-            <clipPath id={`${id}c`}><path d={ARCH} /></clipPath>
-          </defs>
-          <path d={ARCH} fill={`url(#${id}g)`} />
-          <g clipPath={`url(#${id}c)`}>
-            <g className="lattice"><rect x="-100" y="-100" width="600" height="500" fill={`url(#${id}p)`} /></g>
-            <rect className="glow" width="400" height="300" fill={`url(#${id}l)`} />
-          </g>
-          <path d={ARCH} fill="none" stroke="#d6b46c" strokeOpacity=".9" strokeWidth="1.6" vectorEffect="non-scaling-stroke" />
-          <path d={ARCH_OUT} fill="none" stroke="#c9a65e" strokeOpacity=".45" strokeWidth="1" vectorEffect="non-scaling-stroke" />
-        </svg>
-        <span className="isl-window-ar" dir="rtl" aria-hidden style={{ fontSize: `clamp(17px, ${Math.min(17, 230 / Math.max(6, ar.length)).toFixed(1)}cqw, 60px)` }}>{ar}</span>
-      </div>
+      <IslamArchWindow i={i} ar={ar} />
       <div className="relative -mt-4 flex flex-1 flex-col items-center px-1.5 pb-2 text-center sm:px-2">
         <span className="rounded-full bg-[rgb(var(--isl-paper))] p-0.5"><IslamNum n={i + 1} className="!h-9 !w-9 !text-[12px]" /></span>
         <span className="mt-1.5 line-clamp-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-[rgb(var(--isl-gold))] rtl:tracking-normal">{kicker}</span>
