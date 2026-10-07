@@ -131,7 +131,7 @@ export default function PrayerTrainer() {
 
         <div className="flex min-h-[420px] flex-col p-5 sm:p-7">
           <div key={`${prayer}-${tradition}-${i}`} className="step-in">
-          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal"><PracticeStar size={10} />{i + 1} / {steps.length}{step.aloud !== undefined && step.ar ? ` · ${step.aloud ? u.aloud : u.silent}` : ""}</p>
+          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal"><PracticeStar size={10} /><span dir="ltr">{i + 1} / {steps.length}</span>{step.aloud !== undefined && step.ar ? ` · ${step.aloud ? u.aloud : u.silent}` : ""}</p>
           <h3 className="font-display mt-2 text-3xl leading-tight">{tx(step.title)}</h3>
           {step.ar && <p className="font-arabic mt-5 border-y border-[rgb(214_180_108)]/25 py-3 text-[26px] leading-[2] text-[#fbf3dc] sm:text-[30px]" dir="rtl">{step.ar}</p>}
           {step.tr && lang !== "ar" && <p className="mt-3 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]">{step.tr}</p>}

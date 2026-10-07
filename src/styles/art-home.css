@@ -227,3 +227,6 @@ html[data-kids="1"] { --hm-ivory: 255 252 242; --hm-sand: 255 246 222; }
 /* kicker line: small spaced capitals – never spaced in scripts that join their letters */
 .hm-k { font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
 html:is([lang="ar"], [lang="fa"], [lang="ur"], [lang="ps"], [lang="bn"], [lang="zh"]) .hm-k { letter-spacing: 0; text-transform: none; font-size: 12.5px; }
+
+/* academy lesson chips: small octagonal tiles, like a zellige panel */
+.hm-lesson { clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px); }

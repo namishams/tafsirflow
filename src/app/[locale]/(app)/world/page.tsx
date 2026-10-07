@@ -4,6 +4,8 @@ import { Link } from "@/i18n/navigation";
 import { pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
 import { ArrowNext } from "@/components/Icons";
+import { CalligraphyDraw } from "@/components/Ornaments";
+import { IslamArcadeLine, IslamCorners, IslamDome, IslamMosque, IslamNum, IslamRain, saw, starPath } from "@/components/art/IslamArt";
 
 // Rounded estimates for 2010 from the Pew Research Center ("The Future of the Global Muslim Population", 2011);
 // projection for 2050 from Pew ("The Future of World Religions", 2015). Shown as orientation, not as exact census data.
@@ -45,13 +47,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMeta(locale, "/world", `${c.title} | Quran Masterclass`, c.lead.slice(0, 158));
 }
 
-function Donut({ lang }: { lang: "de" | "en" | "ar" }) {
+// share of all Muslims by region as a gilded rosette: the ring of regions, a turning star in the middle
+function Donut({ lang, center }: { lang: "de" | "en" | "ar"; center: string }) {
   const r = 70, c = 2 * Math.PI * r;
   let off = 0;
   return (
-    <svg viewBox="0 0 180 180" className="h-48 w-48 shrink-0 -rotate-90" role="img" aria-label={REGIONS.map((x) => `${x[lang]} ${x.pct}%`).join(", ")}>
-      {REGIONS.map((x) => { const len = (x.pct / 100) * c; const el = <circle key={x.en} cx="90" cy="90" r={r} fill="none" stroke={x.color} strokeWidth="26" strokeDasharray={`${len} ${c - len}`} strokeDashoffset={-off} />; off += len; return el; })}
-    </svg>
+    <div className="relative grid h-56 w-56 shrink-0 place-items-center">
+      <svg viewBox="0 0 180 180" className="absolute inset-0 h-full w-full -rotate-90" role="img" aria-label={REGIONS.map((x) => `${x[lang]} ${x.pct}%`).join(", ")}>
+        <circle cx="90" cy="90" r="87" fill="none" stroke="rgb(var(--isl-gold-soft))" strokeOpacity=".5" />
+        <circle cx="90" cy="90" r="53" fill="none" stroke="rgb(var(--isl-gold-soft))" strokeOpacity=".5" />
+        {REGIONS.map((x) => { const len = (x.pct / 100) * c; const el = <circle key={x.en} cx="90" cy="90" r={r} fill="none" stroke={x.color} strokeWidth="26" strokeDasharray={`${Math.max(0, len - 1.2)} ${c - Math.max(0, len - 1.2)}`} strokeDashoffset={-off} />; off += len; return el; })}
+      </svg>
+      <svg viewBox="0 0 100 100" aria-hidden className="absolute h-[42%] w-[42%] text-[rgb(var(--isl-gold-soft))]">
+        <g className="isl-rosette-turn"><path d={starPath(50, 50, 48, 38, 16)} fill="currentColor" fillOpacity=".1" stroke="currentColor" strokeWidth="1" /></g>
+      </svg>
+      <span className="font-display relative text-center text-[17px] leading-tight text-[rgb(var(--isl-gold))]">{center}</span>
+    </div>
   );
 }
 
@@ -64,59 +75,75 @@ export default async function WorldPage({ params }: { params: Promise<{ locale: 
   const nf = new Intl.NumberFormat(locale, { maximumFractionDigits: 1 });
   return (
     <div>
-      <section className="stage girih text-[#eef0f3]">
-        <div className="mx-auto max-w-5xl px-5 py-14 sm:py-20">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
+      <section className="stage girih isl-arcade relative z-[1] overflow-hidden text-[#eef0f3]">
+        <IslamDome id="dome-world" className="-end-40 -top-44 w-[560px] sm:-end-24 sm:-top-48 sm:w-[780px]" />
+        <IslamRain fall={520} className="opacity-70" />
+        <CalligraphyDraw text={"الأمة"} className="absolute -end-2 top-0 h-[150px] w-[520px] max-w-none sm:h-[250px] sm:w-[880px]" />
+        <div className="relative mx-auto max-w-5xl px-5 pb-24 pt-14 sm:pb-32 sm:pt-20">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))] rtl:tracking-normal">{c.kicker}</p>
           <h1 className="font-display mt-4 max-w-3xl text-[36px] leading-[1.06] sm:text-6xl">{c.title}</h1>
           <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-white/75">{c.lead}</p>
-          <dl className="mt-10 grid grid-cols-3 gap-4">
-            {c.stats.map(([n, l]) => <div key={l} className="border-s border-white/15 ps-3"><dt className="font-display text-2xl text-[rgb(var(--gold))] sm:text-4xl">{n}</dt><dd className="mt-1 text-xs leading-snug text-white/60 sm:text-sm">{l}</dd></div>)}
+          <dl className="mt-10 grid grid-cols-3 gap-2.5 sm:gap-3">
+            {c.stats.map(([n, l]) => <div key={l} className="isl-fact"><dt className="font-display text-[20px] leading-tight text-[rgb(233_207_153)] sm:text-4xl">{n}</dt><dd className="mt-1.5 text-[11.5px] leading-snug text-white/65 sm:text-sm">{l}</dd></div>)}
           </dl>
         </div>
+        <IslamArcadeLine />
       </section>
 
-      <div className="mx-auto max-w-5xl px-5 py-12">
-        <section className="rounded-xl border border-line bg-surface p-5 sm:p-6">
-          <h2 className="font-display text-2xl">{c.regions}</h2>
-          <div className="mt-5 flex flex-col items-center gap-6 sm:flex-row">
-            <Donut lang={lang} />
-            <ul className="grid w-full gap-2">
-              {REGIONS.map((x) => <li key={x.en} className="flex items-center justify-between gap-3 text-[15px]"><span className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm" style={{ background: x.color }} />{x[lang]}</span><span className="font-bold tabular-nums">{nf.format(x.pct)} %</span></li>)}
-            </ul>
-          </div>
-        </section>
+      <div className="isl-marble isl-under">
+        <div className="mx-auto max-w-5xl px-5 pb-16 pt-14 sm:pt-20">
+          <section className="isl-card relative overflow-hidden px-5 pb-5 pt-9 sm:p-10">
+            <IslamCorners />
+            <h2 className="font-display relative px-4 text-center text-2xl sm:px-0 sm:text-start sm:text-3xl">{c.regions}</h2>
+            <div className="relative mt-6 flex flex-col items-center gap-8 sm:flex-row">
+              <Donut lang={lang} center={c.stats[0][0]} />
+              <ul className="grid w-full gap-2.5">
+                {REGIONS.map((x) => (
+                  <li key={x.en} className="flex items-center justify-between gap-3 border-b border-[rgb(var(--isl-gold-soft))]/15 pb-2 text-[15px] last:border-0">
+                    <span className="flex min-w-0 items-center gap-2.5"><span className="h-3.5 w-3.5 shrink-0 rotate-45 rounded-[2px] ring-1 ring-[rgb(var(--isl-gold-soft))]/50" style={{ background: x.color }} />{x[lang]}</span>
+                    <span className="font-bold tabular-nums">{nf.format(x.pct)} %</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
 
-        <section className="mt-8">
-          <h2 className="font-display text-3xl">{c.top}</h2>
-          <ol className="mt-6 grid gap-2">
-            {COUNTRIES.map((x, i) => (
-              <li key={x.id} className={`rounded-lg border p-3 ${x.id === "ae" ? "border-gold/60 bg-gold/5" : "border-line bg-surface"}`}>
-                <div className="flex items-baseline justify-between gap-3 text-[15px]">
-                  <span className="min-w-0 truncate font-semibold"><span className="me-2 text-xs tabular-nums text-muted">{x.id === "ae" ? "·" : i + 1}</span>{x[lang]}</span>
-                  <span className="shrink-0 tabular-nums"><b>{nf.format(x.m)}</b> {c.mio} · <span className="text-muted">{x.pct} %</span></span>
-                </div>
-                <div className="mt-2 grid grid-cols-[1fr_5rem] items-center gap-3">
-                  <span className="h-2 overflow-hidden rounded-full bg-line"><span className="block h-full rounded-full bg-accent" style={{ width: `${(x.m / max) * 100}%` }} /></span>
-                  <span className="h-2 overflow-hidden rounded-full bg-line" title={c.share}><span className="block h-full rounded-full bg-gold" style={{ width: `${x.pct}%` }} /></span>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <p className="mt-3 text-xs text-muted"><span className="me-3 inline-flex items-center gap-1"><span className="h-2 w-4 rounded-full bg-accent" />{c.mio}</span><span className="inline-flex items-center gap-1"><span className="h-2 w-4 rounded-full bg-gold" />{c.share}</span></p>
-          <p className="mt-4 rounded-lg border border-line bg-surface p-4 text-[15px]">{c.uae}</p>
-        </section>
+          <section className="mt-14">
+            <h2 className="font-display text-3xl">{c.top}</h2>
+            <ol className="mt-6 flex flex-col gap-2">
+              {COUNTRIES.map((x, i) => (
+                <li key={x.id} className={`rounded-xl border p-3 sm:p-4 ${x.id === "ae" ? "isl-card border-[rgb(var(--isl-gold-soft))]/70 shadow-[0_0_0_3px_rgb(201_166_94/0.12)]" : "border-[rgb(var(--isl-gold-soft))]/20 bg-surface/60"}`}>
+                  <div className="flex items-center justify-between gap-3 text-[15px]">
+                    <span className="flex min-w-0 items-center gap-2.5 font-semibold">{x.id === "ae" ? <IslamNum n="" className="!h-8 !w-8" /> : <IslamNum n={i + 1} className="!h-8 !w-8 !text-[11px]" />}<span className="truncate">{x[lang]}</span></span>
+                    <span className="shrink-0 tabular-nums"><b>{nf.format(x.m)}</b> {c.mio} · <span className="text-muted">{x.pct} %</span></span>
+                  </div>
+                  <div className="mt-2 grid grid-cols-[1fr_5rem] items-center gap-3 ps-[42px]">
+                    <span className="h-2 overflow-hidden rounded-full bg-[rgb(var(--isl-gold-soft))]/15"><span className="isl-grow block h-full rounded-full" style={{ width: `${(x.m / max) * 100}%`, background: "linear-gradient(90deg, rgb(var(--accent) / .7), rgb(var(--accent)))" }} /></span>
+                    <span className="h-2 overflow-hidden rounded-full bg-[rgb(var(--isl-gold-soft))]/15" title={c.share}><span className="isl-grow block h-full rounded-full" style={{ width: `${x.pct}%`, background: "linear-gradient(90deg, #c9a65e, #ecd6a2)" }} /></span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-3 text-xs text-muted"><span className="me-3 inline-flex items-center gap-1"><span className="h-2 w-4 rounded-full bg-accent" />{c.mio}</span><span className="inline-flex items-center gap-1"><span className="h-2 w-4 rounded-full bg-gold" />{c.share}</span></p>
+            <div className="isl-card relative mt-8 grid items-center gap-6 overflow-hidden px-6 py-8 sm:grid-cols-[1fr_220px] sm:px-10">
+              <IslamCorners />
+              <p className="isl-serif relative text-[19px] leading-relaxed text-ink/85 sm:text-[21px]">{c.uae}</p>
+              <IslamMosque className="relative mx-auto w-full max-w-[220px] text-[rgb(var(--isl-gold-soft))]" />
+            </div>
+          </section>
 
-        <section className="mt-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
-          <div>
-            <h2 className="font-display text-2xl">{c.schools}</h2>
-            <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-muted">{c.schoolsBody}</p>
-            <Link href="/islam/sunni-shia" className="mt-2 inline-block text-sm font-bold text-accent hover:underline">{c.schoolsLink} <ArrowNext /></Link>
-          </div>
-          <Link href="/arabic" className="btn-gold inline-flex h-12 items-center justify-center rounded-full px-6 text-[15px] font-bold">{c.learn}</Link>
-        </section>
-        <p className="mt-10 text-xs leading-relaxed text-muted">{c.note}</p>
+          <section className="mt-14 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+            <div>
+              <h2 className="font-display text-2xl sm:text-3xl">{c.schools}</h2>
+              <p className="mt-3 max-w-3xl text-[16px] leading-relaxed text-ink/75">{saw(c.schoolsBody)}</p>
+              <Link href="/islam/sunni-shia" className="mt-3 inline-block text-sm font-bold text-accent hover:underline">{c.schoolsLink} <ArrowNext /></Link>
+            </div>
+            <Link href="/arabic" className="btn-gold inline-flex h-12 items-center justify-center rounded-full px-6 text-[15px] font-bold">{c.learn}</Link>
+          </section>
+          <p className="mt-12 text-xs leading-relaxed text-muted">{c.note}</p>
+        </div>
       </div>
-      <MoreTiles keys={["islam", "salah", "arabic", "assistant"]} />
+      <MoreTiles keys={["islam", "salah", "arabic", "assistant"]} className="pt-14" />
     </div>
   );
 }

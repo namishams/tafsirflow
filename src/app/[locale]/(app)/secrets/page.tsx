@@ -73,8 +73,10 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
             {c.claims.map((x) => (
               <details key={x.q} className="isl-faq isl-card group p-0">
                 <summary className="flex cursor-pointer list-none items-start gap-3 p-4 sm:p-5">
-                  <span className={`mt-0.5 shrink-0 rounded-full border px-2.5 py-0.5 text-[11px] font-bold ${BADGE[x.v]}`}>{c.verdicts[x.v]}</span>
-                  <span className="min-w-0 flex-1 text-[16px] font-semibold leading-snug">{saw(x.q)}</span>
+                  <span className="min-w-0 flex-1">
+                    <span className={`mb-2 inline-block rounded-full border px-2.5 py-0.5 text-[11px] font-bold sm:mb-0 sm:me-3 ${BADGE[x.v]}`}>{c.verdicts[x.v]}</span>
+                    <span className="block text-[16px] font-semibold leading-snug sm:inline">{saw(x.q)}</span>
+                  </span>
                   <span aria-hidden className="isl-plus h-7 w-7 shrink-0 rounded-full border border-[rgb(var(--isl-gold-soft))]/50 text-[rgb(var(--isl-gold))]">+</span>
                 </summary>
                 <p className="px-4 pb-5 text-[15px] leading-relaxed text-muted sm:px-5">{saw(x.a)}</p>

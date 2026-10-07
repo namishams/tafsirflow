@@ -6,6 +6,7 @@ import WuduTrainer from "@/components/WuduTrainer";
 import { CalligraphyDraw, Divider } from "@/components/Ornaments";
 import { MoreTiles } from "@/components/PosterTiles";
 import { ArrowNext } from "@/components/Icons";
+import { PracticeStar } from "@/components/art/PracticeArt";
 import { getVerseByKey } from "@/lib/quran";
 import { WUDU } from "@/lib/wudu";
 import { abs, pageMeta } from "@/lib/site";
@@ -109,6 +110,7 @@ export default async function WuduPage({ params }: { params: Promise<{ locale: s
           <h1 className="font-display mt-4 max-w-3xl text-[40px] leading-[1.05] sm:text-6xl">{c.title}</h1>
           <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70">{c.lead}</p>
         </div>
+        <div className="pa-arcade" />
       </section>
 
       <main className="mx-auto max-w-6xl px-4 pb-16 pt-8 sm:px-5 sm:pt-10">
@@ -130,25 +132,25 @@ export default async function WuduPage({ params }: { params: Promise<{ locale: s
         </section>
 
         <section className="mt-14 grid gap-5 sm:mt-16 lg:grid-cols-2">
-          <div className="rounded-lg border border-line bg-surface p-5 sm:p-7">
+          <div className="pa-card p-5 pt-6 sm:p-7">
             <h2 className="font-display text-2xl leading-tight sm:text-3xl">{c.breaksTitle}</h2>
             <p className="mt-2 text-[15px] text-muted">{c.breaksLead}</p>
             <ul className="mt-4 grid gap-2.5">
               {c.breaks.map((b) => (
                 <li key={b} className="flex items-start gap-3 text-[16px] leading-snug">
-                  <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden><path d="M12 3l9 9-9 9-9-9z" fill="none" stroke="currentColor" strokeWidth="1.8" /></svg>
+                  <PracticeStar size={14} className="mt-1" />
                   <span>{b}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-5 border-t border-line pt-4 text-[14.5px] leading-relaxed text-muted">{c.breaksNote}</p>
+            <p className="mt-5 border-t border-[rgb(var(--gold))]/20 pt-4 text-[14.5px] leading-relaxed text-muted">{c.breaksNote}</p>
           </div>
-          <div className="rounded-lg border border-line bg-surface p-5 sm:p-7">
+          <div className="pa-card p-5 pt-6 sm:p-7">
             <h2 className="font-display text-2xl leading-tight sm:text-3xl">{c.tayTitle}</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-ink/90">{c.tay}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {[["/surah/5?v=6", "5:6"], ["/surah/4?v=43", "4:43"]].map(([h, l]) => (
-                <Link key={h} href={h} className="inline-flex h-10 items-center rounded-full border border-line px-4 text-sm font-semibold tabular-nums text-accent hover:border-accent">{lang === "ar" ? (l === "5:6" ? "المائدة: 6" : "النساء: 43") : `Quran ${l}`}</Link>
+                <Link key={h} href={h} className="pa-chip tabular-nums">{lang === "ar" ? (l === "5:6" ? "المائدة: 6" : "النساء: 43") : `Quran ${l}`}</Link>
               ))}
             </div>
           </div>
@@ -160,7 +162,7 @@ export default async function WuduPage({ params }: { params: Promise<{ locale: s
           <h2 className="font-display text-3xl leading-tight sm:text-4xl">{c.virtueTitle}</h2>
           <ul className="mt-7 grid gap-4 md:grid-cols-2">
             {c.virtues.map((v, k) => (
-              <li key={v.src} className={`flex flex-col rounded-lg border border-line bg-surface p-5 sm:p-6 ${k === 2 ? "md:col-span-2" : ""}`}>
+              <li key={v.src} className={`pa-card flex flex-col p-5 pt-7 sm:p-7 ${k === 2 ? "md:col-span-2" : ""}`}>
                 {lang === "ar" && v.text && <p className="text-[15px] leading-relaxed text-muted">{v.text}</p>}
                 <p className="font-arabic text-[23px] leading-[2] sm:text-[25px]" dir="rtl" lang="ar">{v.ar}</p>
                 {lang !== "ar" && <p className="mt-2 text-[15.5px] leading-relaxed text-ink/90">{v.text}</p>}
@@ -172,10 +174,10 @@ export default async function WuduPage({ params }: { params: Promise<{ locale: s
           </ul>
         </section>
 
-        <section className="mt-12 rounded-lg border border-line bg-surface p-5 sm:p-6">
+        <section className="pa-card mt-12 p-5 pt-6 sm:p-6">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted rtl:tracking-normal">{c.more}</p>
           <ul className="mt-3 grid gap-x-8 gap-y-1 sm:grid-cols-2">
-            {c.links.map(([h, l]) => <li key={h}><Link href={h} className="block py-2 font-semibold leading-snug text-accent hover:underline">{l} <ArrowNext /></Link></li>)}
+            {c.links.map(([h, l]) => <li key={h}><Link href={h} className="flex min-h-11 items-center gap-2.5 rounded-lg px-2 font-semibold leading-snug text-accent hover:bg-[rgb(var(--gold))]/10"><PracticeStar size={10} /><span className="min-w-0 flex-1">{l}</span><ArrowNext /></Link></li>)}
           </ul>
         </section>
       </main>

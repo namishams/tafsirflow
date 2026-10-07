@@ -28,9 +28,13 @@ import { zaydi } from "./zaydi";
 import { ibadi } from "./ibadi";
 import { zahiri } from "./zahiri";
 import { daily } from "./daily";
+import { iman } from "./iman";
+import { sahaba } from "./sahaba";
+import { art } from "./art";
+import { history } from "./history";
 
 export type { IslamChapter, IslamDoc };
-export const ISLAM: IslamDoc[] = [islam, quran, prophet, prophets, names, prayerSunni, prayerShia, daily, zakat, ramadan, eid, hajj, reciterPath, competition, cities, emirates, mosques, madhahib, hanafi, maliki, shafii, hanbali, jafari, zaydi, ibadi, zahiri, sunniShia, future];
+export const ISLAM: IslamDoc[] = [islam, iman, quran, prophet, sahaba, prophets, names, prayerSunni, prayerShia, daily, zakat, ramadan, eid, hajj, reciterPath, competition, cities, emirates, mosques, art, madhahib, hanafi, maliki, shafii, hanbali, jafari, zaydi, ibadi, zahiri, sunniShia, future, history];
 export const islamDoc = (slug: string) => ISLAM.find((d) => d.slug === slug);
 // German and English live in the chapter files; every other language in src/lib/islam/i18n/<locale>/<slug>.ts (falls back to English)
 const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ms", "ps", "ru", "tr", "ur", "zh"];

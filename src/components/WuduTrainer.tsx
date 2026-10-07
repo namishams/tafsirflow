@@ -5,7 +5,8 @@ import { Link } from "@/i18n/navigation";
 import { RULE, WUDU, WUDU_KEY, type L3, type Scene, type Tradition, type WuduDone, type WuduStep } from "@/lib/wudu";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { award } from "@/lib/points";
-import { ArrowNext, IconCheckCircle } from "./Icons";
+import { ArrowBack, ArrowNext, IconCheckCircle } from "./Icons";
+import { PracticeCelebrate, PracticeStar, PracticeWindow } from "./art/PracticeArt";
 
 type Lang = "de" | "en" | "ar";
 const UI: Record<Lang, Record<string, string>> = {
@@ -411,13 +412,14 @@ export default function WuduTrainer() {
   const goStep = (k: number) => { setAuto(false); setMode("learn"); setI(k); };
   const kindLabel = (s: WuduStep) => (tradition === "sunni" ? u[s.kind] : u[s.kind === "fard" ? "wajib" : "mustahabb"]);
   const byId = (id: string) => steps.find((s) => s.id === id)!;
-  const chip = (on: boolean) => `h-10 shrink-0 rounded-full border px-4 text-sm font-semibold transition ${on ? "border-[rgb(var(--gold))] bg-[rgb(var(--gold))] text-[rgb(var(--stage))]" : "border-white/20 text-white/80 hover:border-white/50"}`;
-  const ghost = "h-12 rounded-md border border-white/20 px-4 text-sm font-bold transition hover:border-white/45 disabled:opacity-30";
+  const chip = (on: boolean) => `pa-chip pa-chip-dark ${on ? "is-on" : ""}`;
+  const ghost = "h-12 rounded-full border border-white/25 px-5 text-sm font-bold transition hover:border-white/55 disabled:opacity-30";
+  const round = "grid h-12 w-12 shrink-0 place-items-center rounded-full border border-white/25 text-lg transition hover:border-white/60 disabled:opacity-30";
 
   return (
-    <div className="stage overflow-hidden rounded-2xl text-[#eef0f3]">
+    <div className="stage girih relative overflow-hidden rounded-2xl border border-[rgb(214_180_108)]/30 text-[#eef0f3] shadow-[0_40px_80px_-50px_rgba(4,30,22,.9)]">
       <style>{CSS}</style>
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 p-4 sm:p-5">
+      <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-[rgb(214_180_108)]/20 p-4 sm:p-5">
         <div className="flex flex-wrap gap-2" role="tablist">
           {(["sunni", "shia"] as const).map((t) => <button key={t} role="tab" aria-selected={tradition === t} onClick={() => chooseTradition(t)} className={chip(tradition === t)}>{u[t]}</button>)}
         </div>
@@ -428,39 +430,42 @@ export default function WuduTrainer() {
       </div>
 
       {mode === "learn" && (
-        <div className="grid gap-0 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-          <div className="relative border-b border-white/10 p-4 md:border-b-0 md:border-e">
-            <div className="mx-auto aspect-square max-w-[360px] text-white"><Stage scene={step.scene} tradition={tradition} label={tx(step.title)} /></div>
+        <div className="relative grid gap-0 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+          <div className="relative border-b border-[rgb(214_180_108)]/20 p-4 md:border-b-0 md:border-e">
+            <div className="relative mx-auto aspect-square max-w-[360px] text-white">
+              <PracticeWindow uid="wudu-w" className="absolute left-1/2 top-0 h-full w-auto -translate-x-1/2 opacity-40" />
+              <div className="relative h-full w-full"><Stage scene={step.scene} tradition={tradition} label={tx(step.title)} /></div>
+            </div>
             <div className="mt-2 flex flex-wrap justify-center gap-1.5" aria-hidden>
-              {steps.map((s, k) => <span key={s.id} className={`h-1.5 w-5 rounded-full transition ${k < i ? "bg-[rgb(var(--gold))]" : k === i ? "bg-white" : "bg-white/15"}`} />)}
+              {steps.map((s, k) => <span key={s.id} className={`h-1.5 rounded-full transition-all duration-500 ${k < i ? "w-5 bg-[rgb(var(--gold))]" : k === i ? "w-8 bg-gradient-to-r from-[#ecd7a2] to-[#c6a65e]" : "w-5 bg-white/15"}`} />)}
             </div>
           </div>
 
           <div className="flex min-h-[420px] flex-col p-5 sm:p-7">
             <div key={`${tradition}-${i}`} className="step-in">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal">{i + 1} / {steps.length}</p>
+                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal"><PracticeStar size={10} /><span dir="ltr">{i + 1} / {steps.length}</span></p>
                 <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${step.kind === "fard" ? "border-[rgb(var(--gold))]/70 text-[rgb(var(--gold))]" : "border-white/25 text-white/70"}`}>{kindLabel(step)}</span>
               </div>
               <h3 className="font-display mt-2 text-3xl leading-tight">{tx(step.title)}</h3>
               <p className="mt-3 text-[16px] leading-relaxed text-white/85">{tx(step.text)}</p>
               {step.times && <Counter key={`${tradition}-${step.id}`} times={step.times} sides={step.sides} u={u} lang={lang} />}
               {step.duas?.map((d) => (
-                <div key={d.ar} className="mt-5 border-t border-white/10 pt-4">
+                <div key={d.ar} className="mt-5 border-t border-[rgb(214_180_108)]/25 pt-4">
                   <p className="font-arabic text-[26px] leading-[2] sm:text-[30px]" dir="rtl" lang="ar">{d.ar}</p>
                   {lang !== "ar" && <p className="mt-2 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]">{d.tr}</p>}
                   {lang !== "ar" && <p className="mt-2 text-[15px] leading-relaxed text-white/80"><span className="font-semibold text-white">{u.meaning}: </span>{d.meaning[lang]}</p>}
                   {d.src && <p className="mt-1.5 text-xs font-semibold text-white/50">{tx(d.src)}</p>}
                 </div>
               ))}
-              {step.note && <p className="mt-4 rounded-lg bg-white/[0.06] p-3 text-sm leading-relaxed text-white/75">{tx(step.note)}</p>}
+              {step.note && <p className="mt-4 rounded-xl border border-[rgb(214_180_108)]/25 bg-white/[0.05] p-3 text-sm leading-relaxed text-white/75">{tx(step.note)}</p>}
             </div>
             <div className="mt-auto pt-6">
-              <div className="h-1 overflow-hidden rounded-full bg-white/10"><div className="h-full bg-[rgb(var(--gold))] transition-all" style={{ width: `${((i + 1) / steps.length) * 100}%` }} /></div>
+              <div className="h-1.5 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-gradient-to-r from-[#c6a65e] to-[#ecd7a2] transition-all duration-500 rtl:bg-gradient-to-l" style={{ width: `${((i + 1) / steps.length) * 100}%` }} /></div>
               <div className="mt-4 flex items-center gap-2">
-                <button onClick={() => { setAuto(false); setI((n) => Math.max(0, n - 1)); }} disabled={i === 0} className={ghost}>{u.prev}</button>
-                <button onClick={() => (last ? startQuiz() : setAuto((a) => !a))} className="btn-gold h-12 flex-1 rounded-md px-3 text-sm font-bold">{last ? u.toQuiz : auto ? u.pause : u.play}</button>
-                <button onClick={() => { setAuto(false); setI((n) => Math.min(steps.length - 1, n + 1)); }} disabled={last} className={ghost}>{u.next}</button>
+                <button onClick={() => { setAuto(false); setI((n) => Math.max(0, n - 1)); }} disabled={i === 0} aria-label={u.prev} title={u.prev} className={round}><ArrowBack /></button>
+                <button onClick={() => (last ? startQuiz() : setAuto((a) => !a))} className="btn-gold h-12 flex-1 rounded-full px-3 text-sm font-bold">{last ? u.toQuiz : auto ? u.pause : u.play}</button>
+                <button onClick={() => { setAuto(false); setI((n) => Math.min(steps.length - 1, n + 1)); }} disabled={last} aria-label={u.next} title={u.next} className={round}><ArrowNext /></button>
               </div>
             </div>
           </div>
@@ -468,8 +473,8 @@ export default function WuduTrainer() {
       )}
 
       {mode === "quiz" && (
-        <div className="p-5 sm:p-7">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal">{u.quiz} · {picked.length} / {order.length}</p>
+        <div className="relative p-5 sm:p-7">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal">{u.quiz} · <span dir="ltr">{picked.length} / {order.length}</span></p>
           <h3 className="font-display mt-2 text-3xl leading-tight">{u.quizTitle}</h3>
           <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-white/75">{u.quizLead}</p>
           <ul className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
@@ -499,19 +504,20 @@ export default function WuduTrainer() {
       )}
 
       {mode === "done" && (
-        <div className="rise relative px-5 py-12 text-center sm:py-16">
+        <div className="rise relative overflow-hidden px-5 py-12 text-center sm:py-16">
+          <PracticeCelebrate />
           <p className="font-callig star-burst mx-auto inline-block text-[52px] leading-tight text-[rgb(var(--gold))] sm:text-[64px]" dir="rtl" lang="ar">ما شاء الله</p>
           <h3 className="font-display mx-auto mt-4 max-w-xl text-2xl leading-tight sm:text-3xl">{u.doneTitle}</h3>
           <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-white/75">{u.doneText} {slips(miss, lang, u)}</p>
           <div className="mt-7 flex flex-wrap justify-center gap-2">
-            <Link href="/salah" className="btn-gold inline-flex h-12 items-center rounded-md px-5 text-sm font-bold">{u.toSalah} <span className="ms-1.5"><ArrowNext /></span></Link>
-            <Link href="/surah/5?v=6" className="inline-flex h-12 items-center rounded-md border border-white/25 px-5 text-sm font-bold hover:border-white/50">{u.toVerse}</Link>
+            <Link href="/salah" className="btn-gold inline-flex h-12 items-center rounded-full px-5 text-sm font-bold">{u.toSalah} <span className="ms-1.5"><ArrowNext /></span></Link>
+            <Link href="/surah/5?v=6" className="inline-flex h-12 items-center rounded-full border border-white/25 px-5 text-sm font-bold hover:border-white/50">{u.toVerse}</Link>
             <button onClick={() => startQuiz()} className={ghost}>{u.practise}</button>
           </div>
         </div>
       )}
 
-      <div className="border-t border-white/10 p-4 sm:p-5">
+      <div className="relative border-t border-[rgb(214_180_108)]/20 p-4 sm:p-5">
         <div className="flex flex-wrap items-center gap-x-4">
           <button onClick={() => setList((v) => !v)} aria-expanded={list} className="inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-white/80 hover:text-white">
             <svg viewBox="0 0 12 12" className={`h-3 w-3 transition rtl:-scale-x-100 ${list ? "rotate-90 rtl:-rotate-90" : ""}`} aria-hidden><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -523,7 +529,7 @@ export default function WuduTrainer() {
           <ol className="mt-2 grid gap-1 text-sm sm:grid-cols-2">
             {steps.map((s, k) => (
               <li key={s.id}>
-                <button onClick={() => goStep(k)} className={`flex min-h-10 w-full items-center gap-2 rounded px-2 py-1.5 text-start ${mode === "learn" && k === i ? "bg-white/15 font-bold" : "text-white/75 hover:bg-white/5"}`}>
+                <button onClick={() => goStep(k)} className={`flex min-h-10 w-full items-center gap-2 rounded-lg px-2 py-1.5 text-start ${mode === "learn" && k === i ? "bg-[rgb(214_180_108)]/15 font-bold text-white" : "text-white/75 hover:bg-white/5"}`}>
                   <span className="min-w-0 flex-1">{k + 1}. {tx(s.title)}</span>
                   <span className={`shrink-0 text-[11px] ${s.kind === "fard" ? "text-[rgb(var(--gold))]" : "text-white/40"}`}>{kindLabel(s).split(" · ")[0]}</span>
                 </button>

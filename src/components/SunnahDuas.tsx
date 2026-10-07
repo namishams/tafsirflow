@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
 import { SUNNAH_CATS, SUNNAH_DUAS, type SunnahCat } from "@/lib/sunnahDuas";
 import { SUNNAH_DUAS_2 } from "@/lib/sunnahDuas2";
@@ -120,7 +121,7 @@ function Tasbih({ n, max, onTap, label, dark = false }: { n: number; max: number
         </svg>
         <span className={`relative text-[15px] ${done ? "text-gold" : ""}`}>{done ? "✓" : n}</span>
       </span>
-      <span className={dark ? "text-white/70" : "text-muted"}>{n} / {max}</span>
+      <span className={dark ? "text-white/70" : "text-muted"} dir="ltr">{n} / {max}</span>
     </button>
   );
 }
@@ -151,12 +152,12 @@ function Reader({ list, i, setI, close, showTr, meaning, srcOf, catLabel, source
     const rtl = document.documentElement.dir === "rtl";
     go((dx < 0) !== rtl ? i + 1 : i - 1);
   };
-  return (
+  return createPortal(
     <div role="dialog" aria-modal="true" aria-label={ui.read} className="stage fixed inset-0 z-[80] flex flex-col overflow-hidden text-[#eef0f3]" onTouchStart={(e) => { touch.current = e.touches[0].clientX; }} onTouchEnd={(e) => swipe(e.changedTouches[0].clientX)}>
       <PracticeWindow uid="dua-read" lamp className="pointer-events-none absolute left-1/2 top-1/2 h-[86vh] max-h-[760px] w-auto -translate-x-1/2 -translate-y-1/2 opacity-[0.16]" />
       <div className="relative flex items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[rgb(var(--gold))] rtl:tracking-normal"><PracticeStar size={10} />{catLabel(d.cat)}</span>
-        <span className="text-sm tabular-nums text-white/60">{i + 1} / {list.length}</span>
+        <span className="text-sm tabular-nums text-white/60" dir="ltr">{i + 1} / {list.length}</span>
         <button onClick={close} aria-label={ui.close} className="grid h-11 w-11 place-items-center rounded-full border border-white/20 hover:border-white/50"><IconClose /></button>
       </div>
       <div className="relative h-px bg-white/10"><div className="h-full bg-[rgb(214_180_108)] transition-all duration-500" style={{ width: `${((i + 1) / list.length) * 100}%` }} /></div>
@@ -174,6 +175,7 @@ function Reader({ list, i, setI, close, showTr, meaning, srcOf, catLabel, source
         <span aria-hidden className="text-[rgb(214_180_108)]"><PracticeStar size={14} /></span>
         <button onClick={() => go(i + 1)} disabled={i >= list.length - 1} aria-label={ui.next} className="btn-gold grid h-14 w-14 place-items-center rounded-full text-xl disabled:opacity-40"><ArrowNext /></button>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

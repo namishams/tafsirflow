@@ -247,7 +247,8 @@ html[dir="rtl"] .isl-progress { transform-origin: 100% 50%; }
 @keyframes islGrow { from { transform: scaleX(0); } }
 
 /* floral inlay corners on panels */
-.isl-corner { position: absolute; width: 58px; height: 58px; pointer-events: none; color: rgb(var(--isl-gold-soft)); }
+.isl-corner { position: absolute; width: 36px; height: 36px; pointer-events: none; color: rgb(var(--isl-gold-soft)); }
+@media (min-width: 640px) { .isl-corner { width: 58px; height: 58px; } }
 .isl-corner.tl { top: 6px; inset-inline-start: 6px; }
 .isl-corner.tr { top: 6px; inset-inline-end: 6px; transform: scaleX(-1); }
 .isl-corner.bl { bottom: 6px; inset-inline-start: 6px; transform: scaleY(-1); }
