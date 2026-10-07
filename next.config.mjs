@@ -39,6 +39,11 @@ const security = [
 export default withNextIntl({
   distDir: process.env.NEXT_DIST_DIR || ".next",
   poweredByHeader: false,
+  // deploy builds always start from scratch, so a compiler cache would only use up disk space on the server
+  webpack(config, { dev }) {
+    if (!dev && process.env.NEXT_DIST_DIR) config.cache = false;
+    return config;
+  },
   // Android app ↔ domain verification (see src/app/api/assetlinks/route.ts)
   async rewrites() {
     return [{ source: "/.well-known/assetlinks.json", destination: "/api/assetlinks" }];

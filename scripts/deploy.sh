@@ -24,18 +24,12 @@ sudo -u tafsir pm2 flush >/dev/null 2>&1 || true
 journalctl --vacuum-size=200M >/dev/null 2>&1 || true
 apt-get clean >/dev/null 2>&1 || true
 find /srv/tafsirflow/audio -name '*.part' -delete 2>/dev/null || true
-NEED_GB=${NEED_GB:-3}
-echo "    free: $(free_gb) GB (a build needs about $NEED_GB GB)"
-if [ "$(free_gb)" -lt "$NEED_GB" ]; then
-  echo
-  echo "NOT ENOUGH SPACE – nothing was changed, the site keeps running. Largest folders:"
-  du -xh --max-depth=2 /srv /var /root /home /opt 2>/dev/null | sort -h | tail -12 | sed 's/^/   /'
-  echo "Recitation audio per reciter:"
-  du -sh /srv/tafsirflow/audio/* 2>/dev/null | sort -h | tail -20 | sed 's/^/   /'
-  echo
-  echo "Free a few GB, e.g. remove a reciter you need least:  bash $APP/scripts/import-reciters.sh --remove <FOLDER>"
-  echo "then run this script again."
-  exit 1
+echo "    free: $(free_gb) GB"
+if [ "$(free_gb)" -lt 2 ]; then
+  # no hard stop: the build is tried anyway; if it runs out of space, the site simply keeps running on the old version
+  echo "    Little space left – trying anyway. Largest folders:"
+  du -xh --max-depth=2 /srv /var /root /home /opt 2>/dev/null | sort -h | tail -8 | sed 's/^/      /'
+  echo "    (to free space: bash $APP/scripts/import-reciters.sh --remove <FOLDER>)"
 fi
 
 echo "==> Database tables"
