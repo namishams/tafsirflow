@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { localeMeta } from "@/i18n/locales";
+import { SITE } from "@/lib/site";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/plus-jakarta-sans";
 import "@fontsource-variable/noto-sans-arabic";
@@ -27,9 +28,10 @@ import "../globals.css";
 // default title/description for pages without their own metadata (account, lessons, profile): in the visitor's language
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) return { title: "Quran Masterclass" };
+  const metadataBase = new URL(SITE); // share images (og:image) as full https://quranmasterclass.com/... addresses
+  if (!hasLocale(routing.locales, locale)) return { metadataBase, title: "Quran Masterclass" };
   const t = await getTranslations({ locale, namespace: "seo" });
-  return { title: "Quran Masterclass", description: t("homeDesc", { n: routing.locales.length }) };
+  return { metadataBase, title: "Quran Masterclass", description: t("homeDesc", { n: routing.locales.length }) };
 }
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#08261d" };
 

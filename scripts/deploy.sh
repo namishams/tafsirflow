@@ -14,6 +14,30 @@ sudo -u tafsir git reset --hard FETCH_HEAD
 # run the freshly fetched version of this script (bash would otherwise keep reading the old file)
 [ "${DEPLOY_REEXEC:-}" = 1 ] || DEPLOY_REEXEC=1 exec bash "$APP/scripts/deploy.sh" "$@"
 
+echo "==> Disk space"
+free_gb() { df --output=avail -BG /srv/tafsirflow | tail -1 | tr -dc '0-9'; }
+# only leftovers and caches – never audio, database, settings or the running build
+rm -rf "$APP/.next-build" "$APP/.next-old" "$APP/.next/cache/webpack"
+sudo -u tafsir npm cache clean --force >/dev/null 2>&1 || true
+npm cache clean --force >/dev/null 2>&1 || true
+sudo -u tafsir pm2 flush >/dev/null 2>&1 || true
+journalctl --vacuum-size=200M >/dev/null 2>&1 || true
+apt-get clean >/dev/null 2>&1 || true
+find /srv/tafsirflow/audio -name '*.part' -delete 2>/dev/null || true
+NEED_GB=${NEED_GB:-3}
+echo "    free: $(free_gb) GB (a build needs about $NEED_GB GB)"
+if [ "$(free_gb)" -lt "$NEED_GB" ]; then
+  echo
+  echo "NOT ENOUGH SPACE – nothing was changed, the site keeps running. Largest folders:"
+  du -xh --max-depth=2 /srv /var /root /home /opt 2>/dev/null | sort -h | tail -12 | sed 's/^/   /'
+  echo "Recitation audio per reciter:"
+  du -sh /srv/tafsirflow/audio/* 2>/dev/null | sort -h | tail -20 | sed 's/^/   /'
+  echo
+  echo "Free a few GB, e.g. remove a reciter you need least:  bash $APP/scripts/import-reciters.sh --remove <FOLDER>"
+  echo "then run this script again."
+  exit 1
+fi
+
 echo "==> Database tables"
 sudo -u postgres psql -v ON_ERROR_STOP=1 -q -d tafsirflow -f "$APP/db/schema.sql"
 
@@ -71,6 +95,9 @@ sudo -u tafsir bash -c "cd $APP && rm -rf .next-build .next/types .next-old && n
 
 echo "==> Switch to the new build and (re)start"
 sudo -u tafsir bash -c "cd $APP && rm -rf .next-old && { [ -d .next ] && mv .next .next-old || true; } && mv .next-build .next && pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save"
+# the previous build and the compiler cache are not needed any more (each build starts fresh in .next-build)
+rm -rf "$APP/.next-old" "$APP/.next/cache/webpack"
+echo "    free disk now: $(free_gb) GB"
 
 echo
 echo "Done. Version now: $(sudo -u tafsir git -C "$APP" log --oneline -1)"

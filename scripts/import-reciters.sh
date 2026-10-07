@@ -4,6 +4,9 @@
 #   bash scripts/import-reciters.sh --list                 show the catalogue (name, folder, estimated size, installed?)
 #   bash scripts/import-reciters.sh Husary_128kbps ...     import specific folders
 #   bash scripts/import-reciters.sh --all [--max-gb 30]    import everything that fits (stops at the size limit)
+#   bash scripts/import-reciters.sh --remove FOLDER ...    switch a reciter off in the app and delete its audio (frees disk)
+#   bash scripts/import-reciters.sh --clean                delete half-downloaded reciters that are not switched on
+# Always leaves 8 GB free, because every update of the site (scripts/deploy.sh) needs a few GB to build.
 # Resumable: already downloaded files are skipped. A reciter is only switched on in the app when all 6,236 verse files are present.
 set -euo pipefail
 
@@ -18,12 +21,41 @@ while [ $# -gt 0 ]; do
     --all) MODE=all ;;
     --max-gb) MAX_GB=$2; shift ;;
     --force) FORCE=1 ;;
+    --remove) MODE=remove ;;
+    --clean) MODE=clean ;;
     -*) echo "unknown option $1"; exit 2 ;;
     *) FOLDERS+=("$1"); MODE=${MODE:-some} ;;
   esac
   shift
 done
-[ -n "$MODE" ] || { sed -n '2,9p' "$0"; exit 2; }
+[ -n "$MODE" ] || { sed -n '2,12p' "$0"; exit 2; }
+
+free_gb() { df --output=avail -BG "$AUDIO" | tail -1 | tr -dc '0-9'; }
+enabled_in_app() { # psql only fills in :'f' in input it reads, not in -c
+  local n; n=$(echo "SELECT count(*) FROM reciters WHERE folder = :'f' AND enabled;" | sudo -u postgres psql -tAq -d tafsirflow -v f="$1" 2>/dev/null || echo 0)
+  [ "${n:-0}" != 0 ]
+}
+
+if [ "$MODE" = remove ]; then
+  [ ${#FOLDERS[@]} -gt 0 ] || { echo "usage: --remove FOLDER ..."; exit 2; }
+  for folder in "${FOLDERS[@]}"; do
+    case "$folder" in ""|*/*|.|..|adhan) echo "SKIP $folder"; continue ;; esac
+    sudo -u postgres psql -q -d tafsirflow -v f="$folder" <<'SQL'
+UPDATE reciters SET enabled = false WHERE folder = :'f';
+SQL
+    [ -d "$AUDIO/$folder" ] && echo "REMOVED $folder ($(du -sh "$AUDIO/$folder" | cut -f1))" && rm -rf "${AUDIO:?}/$folder" || echo "SKIP $folder: no such folder"
+  done
+  echo "Free disk: $(free_gb) GB."; exit 0
+fi
+
+if [ "$MODE" = clean ]; then
+  for dir in "$AUDIO"/*/; do
+    folder=$(basename "$dir"); [ "$folder" = adhan ] && continue
+    n=$(find "$dir" -name '*.mp3' | wc -l)
+    if [ "$n" -lt 6236 ] && ! enabled_in_app "$folder"; then echo "REMOVED $folder: only $n of 6236 verses ($(du -sh "$dir" | cut -f1))"; rm -rf "${dir:?}"; fi
+  done
+  echo "Free disk: $(free_gb) GB."; exit 0
+fi
 
 TMP=$(mktemp -d); trap 'rm -rf "${TMP:?}"' EXIT
 echo "==> Reading the reciter catalogue from EveryAyah"
@@ -49,7 +81,6 @@ est_gb() { # rough size from the bitrate in the folder name (measured: 128 kbps 
   python3 -c "print(round($br/128*1.7,1))"
 }
 installed() { [ "$(find "$AUDIO/$1" -name '*.mp3' 2>/dev/null | wc -l)" -ge 6236 ]; }
-free_gb() { df --output=avail -BG "$AUDIO" | tail -1 | tr -dc '0-9'; }
 
 if [ "$MODE" = list ]; then
   printf "%-46s %-40s %8s  %s\n" FOLDER NAME "~GB" STATUS
@@ -76,8 +107,8 @@ for folder in "${FOLDERS[@]}"; do
   [ -n "$name" ] || { echo "SKIP $folder: not in the catalogue"; continue; }
   if installed "$folder"; then echo "OK   $folder already complete"; register "$folder" "$name"; continue; fi
   need=$(est_gb "$folder")
-  if [ "$FORCE" = 0 ] && python3 -c "import sys; sys.exit(0 if $need + 3 > $(free_gb) else 1)"; then
-    echo "STOP: $folder needs ~${need} GB but only $(free_gb) GB are free. Free space or use --force."; break
+  if [ "$FORCE" = 0 ] && python3 -c "import sys; sys.exit(0 if $need + 8 > $(free_gb) else 1)"; then
+    echo "STOP: $folder needs ~${need} GB, and 8 GB must stay free for site updates; only $(free_gb) GB are free."; break
   fi
   if [ "$MAX_GB" != 0 ] && python3 -c "import sys; sys.exit(0 if $used + $need > $MAX_GB else 1)"; then
     echo "STOP: --max-gb $MAX_GB would be exceeded."; break
