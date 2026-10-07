@@ -191,7 +191,7 @@ export default function TodayDashboard() {
 
         {/* how the masterclass is built */}
         <section className="relative mt-8 overflow-hidden rounded-xl callout p-5 sm:p-6">
-          <span aria-hidden className="font-callig pointer-events-none absolute -bottom-4 end-3 text-[84px] leading-none text-[rgb(var(--hm-gold))]/[0.12]" dir="rtl">منهج</span>
+          <span aria-hidden className="font-callig pointer-events-none absolute -bottom-4 end-3 text-[84px] leading-none text-[rgb(var(--hm-gold))]/[0.12]">منهج</span>
           <h2 className="font-display relative flex items-center gap-2 text-xl"><Rosette size={22} />{t("howTitle")}</h2>
           <p className="relative mt-2 text-[15px] leading-relaxed text-muted">{t("howBody")}</p>
           <Link href="/how" className="relative mt-3 inline-block text-[14px] font-bold text-accent hover:underline">{t("howCta")} <span className="inline-block rtl:-scale-x-100">→</span></Link>

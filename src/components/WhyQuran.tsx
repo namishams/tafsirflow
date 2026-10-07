@@ -9,7 +9,7 @@ export default async function WhyQuran({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "shams" });
   return (
     <section className="relative overflow-hidden">
-      <span aria-hidden className="hm-wm font-callig -end-6 top-10 text-[150px] sm:text-[240px]" dir="rtl">القرآن</span>
+      <span aria-hidden className="hm-wm font-callig -end-6 top-10 text-[150px] sm:text-[240px]">القرآن</span>
       <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
         <h2 className="font-display max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{t("whyTitle")}</h2>
         <p className="mt-5 max-w-3xl text-[17px] leading-relaxed text-muted">{t("whyLead")}</p>

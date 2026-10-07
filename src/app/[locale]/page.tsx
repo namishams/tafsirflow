@@ -149,7 +149,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
         {/* 3 Why */}
         <section className="hm-warm overflow-hidden">
-          <span aria-hidden className="hm-wm font-callig -start-4 bottom-0 text-[130px] sm:text-[220px]" dir="rtl">هدى</span>
+          <span aria-hidden className="hm-wm font-callig -start-4 bottom-0 text-[130px] sm:text-[220px]">هدى</span>
           <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{t("landing.whyTitle")}</h2>
@@ -329,7 +329,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
                 <li key={k} className="min-w-0">
                   <Link href={`/${k}`} className="hm-card hm-lift hm-glow group flex h-full flex-col overflow-hidden p-6">
                     <HomeGlowLayer />
-                    <span aria-hidden className="font-callig pointer-events-none absolute -bottom-3 -end-1 text-[68px] leading-none text-[rgb(var(--hm-gold))]/[0.14] transition duration-700 group-hover:text-[rgb(var(--hm-gold))]/25" dir="rtl">{TILES[k === "academy" ? "courses" : k]?.ar}</span>
+                    <span aria-hidden className="font-callig pointer-events-none absolute -bottom-3 -end-1 text-[68px] leading-none text-[rgb(var(--hm-gold))]/[0.14] transition duration-700 group-hover:text-[rgb(var(--hm-gold))]/25">{TILES[k === "academy" ? "courses" : k]?.ar}</span>
                     <span className="relative block text-lg font-bold">{t(`home2.tool_${k}`)}</span>
                     <span className="relative mt-1 block flex-1 text-[15px] leading-relaxed text-muted">{t(`home2.tool_${k}D`)}</span>
                     <span className="hm-k relative mt-4 inline-flex items-center gap-1.5 text-accent">{t("home2.open")} <span aria-hidden className="inline-block transition group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1">→</span></span>

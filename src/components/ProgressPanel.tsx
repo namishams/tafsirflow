@@ -60,7 +60,7 @@ export function CoachCard() {
   return (
     <section className="hm-card relative overflow-hidden p-5 sm:p-6">
       <HomeCorners />
-      <span aria-hidden className="font-callig pointer-events-none absolute -top-3 end-4 text-[72px] leading-none text-[rgb(var(--hm-gold))]/[0.1]" dir="rtl">خطة</span>
+      <span aria-hidden className="font-callig pointer-events-none absolute -top-3 end-4 text-[72px] leading-none text-[rgb(var(--hm-gold))]/[0.1]">خطة</span>
       <div className="relative flex flex-wrap items-baseline justify-between gap-2">
         <h2 className="font-display flex items-center gap-2 text-xl"><StarGlyph size={14} className="text-[rgb(var(--hm-gold))]" />{t("planTitle")}</h2>
         <span className="rounded-full border border-[rgb(var(--hm-gold))]/35 bg-[rgb(var(--hm-gold))]/10 px-2.5 py-0.5 text-[13px] font-semibold tabular-nums text-[rgb(var(--hm-gold-d))]">{t("planMinutes", { n: plan.minutes })}</span>
