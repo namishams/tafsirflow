@@ -6,6 +6,7 @@ import PrayerTrainer from "@/components/PrayerTrainer";
 import { abs, pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
 import { ArrowNext } from "@/components/Icons";
+import { PracticeHero, PracticeStar } from "@/components/art/PracticeArt";
 
 const C = {
   de: {
@@ -42,20 +43,18 @@ export default async function SalahPage({ params }: { params: Promise<{ locale: 
   const ld = { "@context": "https://schema.org", "@type": "HowTo", name: c.title, description: c.lead, url: abs(`/${locale}/salah`), inLanguage: locale };
   return (
     <>
-    <main className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-5">
-      <JsonLd data={ld} />
-      <p className="eyebrow text-gold">{c.kicker}</p>
-      <h1 className="font-display mt-2 max-w-4xl text-[38px] leading-[1.06] sm:text-6xl">{c.title}</h1>
-      <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">{c.lead}</p>
-      <div className="mt-8"><PrayerTrainer /></div>
-      <section className="mt-14 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-        <div>
+    <JsonLd data={ld} />
+    <PracticeHero uid="salah-h" word="الصلاة" kicker={c.kicker} title={c.title} lead={c.lead} />
+    <main className="mx-auto max-w-6xl px-4 pb-20 pt-10 sm:px-5 sm:pt-12">
+      <PrayerTrainer />
+      <section className="mt-16 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <figure className="pa-paper px-6 pb-7 pt-8 sm:px-8">
           <h2 className="font-display text-3xl">{c.whyTitle}</h2>
-          <p className="mt-3 text-[17px] leading-relaxed text-ink/90">{c.why}</p>
-        </div>
-        <div className="rounded-lg border border-line bg-surface p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">{c.more}</p>
-          <ul className="mt-3 grid gap-2">{c.links.map(([h, l]) => <li key={h}><Link href={h} className="font-semibold text-accent hover:underline">{l} <ArrowNext /></Link></li>)}</ul>
+          <p className="relative mt-4 text-[17px] leading-relaxed text-ink/90">{c.why}</p>
+        </figure>
+        <div className="pa-card p-5 pt-6">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted rtl:tracking-normal">{c.more}</p>
+          <ul className="mt-3 grid gap-1">{c.links.map(([h, l]) => <li key={h}><Link href={h} className="flex min-h-11 items-center gap-2.5 rounded-lg px-2 font-semibold text-accent hover:bg-[rgb(var(--gold))]/10"><PracticeStar size={10} /><span className="min-w-0 flex-1">{l}</span><ArrowNext /></Link></li>)}</ul>
         </div>
       </section>
     </main>

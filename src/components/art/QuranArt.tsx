@@ -58,7 +58,7 @@ const BIG_STAR = octagram(70, 200, 200);
 
 // Illuminated sun medallion: rays that turn slowly, a ring of verses, a scalloped gold band and a dark centre
 // in which "al-Qur'an al-Karim" is written in gold
-export function QuranShamsa({ ring, lines = ["القرآن", "الكريم"], className = "" }: { ring: string; lines?: [string, string]; className?: string }) {
+export function QuranShamsa({ ring, lines = ["القرآن", "الكريم"], size = 19, className = "" }: { ring: string; lines?: [string, string]; size?: number; className?: string }) {
   return (
     <div aria-hidden className={`q-shamsa relative select-none ${className}`}>
       <span className="q-shamsa-glow" />
@@ -80,7 +80,7 @@ export function QuranShamsa({ ring, lines = ["القرآن", "الكريم"], cl
         <circle cx="200" cy="200" r="168" className="q-shamsa-line" strokeWidth="1.3" />
         <circle cx="200" cy="200" r="163" className="q-shamsa-line" strokeWidth=".6" strokeDasharray="1.5 4" />
         <g className="q-shamsa-verse">
-          <text className="font-arabic q-shamsa-text" fontSize="19" direction="ltr"><textPath href="#qs-ring" startOffset="0">{ring}</textPath></text>
+          <text className="font-arabic q-shamsa-text" fontSize={size} direction="ltr"><textPath href="#qs-ring" startOffset="0">{ring}</textPath></text>
         </g>
         <circle cx="200" cy="200" r="134" className="q-shamsa-line" strokeWidth="1" />
         <path d={LOBES} className="q-shamsa-lobes" />

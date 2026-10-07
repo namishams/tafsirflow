@@ -145,3 +145,18 @@ export function IslamArcadeLine() {
 export function IslamBreak({ className = "" }: { className?: string }) {
   return <div aria-hidden className={`isl-break ${className}`}><IslamFloral /></div>;
 }
+
+// The Sheikh Zayed Grand Mosque in one gold line: arcade, three domes, four minarets
+export function IslamMosque({ className = "" }: { className?: string }) {
+  const minaret = (x: number) => `M${x} 120V40h7v80M${x - 2.5} 40h12M${x + 1} 40v-9h5v9M${x + 3.5} 31v-8`;
+  return (
+    <svg viewBox="0 0 240 128" aria-hidden className={className} fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d={minaret(14)} /><path d={minaret(52)} /><path d={minaret(180)} /><path d={minaret(218)} />
+      <path d="M66 120V86h108v34" />
+      <path d="M92 86a28 33 0 0 1 56 0M120 53v-8M117.5 45h5" />
+      <path d="M70 87a12 14 0 0 1 24 0M146 87a12 14 0 0 1 24 0" />
+      <path d="M74 120v-14a6 6 0 0 1 12 0v14M92 120v-14a6 6 0 0 1 12 0v14M112 120v-17a8 8 0 0 1 16 0v17M136 120v-14a6 6 0 0 1 12 0v14M154 120v-14a6 6 0 0 1 12 0v14" />
+      <path d="M0 120h240" strokeOpacity=".6" /><path d="M40 125h46M150 125h52" strokeOpacity=".35" />
+    </svg>
+  );
+}
