@@ -296,7 +296,6 @@
     "groupLearn": "Learn",
     "groupQuran": "Quran",
     "groupMore": "More",
-    "support": "Support",
     "islam": "Islam",
     "arabic": "Read Arabic",
     "salah": "Learn to pray",
@@ -570,21 +569,6 @@
     "imprintProvider": "Provider",
     "imprintContact": "Contact",
     "imprintPending": "Full provider details are added before the public launch."
-  },
-  "support": {
-    "nav": "Support the project",
-    "title": "Support Quran Masterclass",
-    "lead": "Quran Masterclass is free for everyone – the full Quran, audio, translation, tafsir and the learning tools. If it helps you, you can support it voluntarily. It helps us keep the service running, add reciters and languages and create new courses.",
-    "hadith": "Whoever helps a good cause shares in its reward – your support is voluntary and never required.",
-    "cta": "Support voluntarily",
-    "soon": "Support options will be available soon. Thank you for your interest.",
-    "what": "What your support pays for",
-    "w1": "Servers, storage and audio for all reciters",
-    "w2": "New languages and translations",
-    "w3": "Courses for memorizing, understanding and reciting",
-    "w4": "Scholarly review of explanations",
-    "free": "Everything stays free. Supporting is a gift, not a purchase.",
-    "back": "Back to home"
   },
   "prayer": {
     "title": "Prayer times",
@@ -1335,7 +1319,7 @@
     "lead": "Quran Masterclass is a free platform to listen to, understand, memorise and recite the Quran – in 13 languages, for children and adults, wherever they live.",
     "seoTitle": "About Quran Masterclass – free Quran learning, made in Dubai",
     "seoDesc": "Quran Masterclass was founded in Dubai: a free platform to learn the Quran with the Shams Method, in 13 languages. Our mission, values and team.",
-    "body": "## Our mission\nThe best of people, the Prophet ﷺ said, are those who learn the Quran and teach it. We want to make that possible for everyone – without fees, without ads, without a teacher nearby being the only way in. Learning the Quran should be as natural as using your phone every day.\n\n## How it started\nQuran Masterclass was founded in Dubai. The question was simple: why do language apps help millions learn every day, while learning the Quran often stays a plan for later? The answer became the [Shams Method](/shams) – seven steps per verse that combine what memory research knows with the way Quran teachers have always taught.\n\n## What we believe\n- **Free for everyone.** The Quran belongs to every Muslim. Voluntary support keeps the platform running.\n- **Authentic sources.** Quran text, translations and tafsir come from recognised sources and always show where they come from. We do not create new interpretations.\n- **Respect.** No ads, no tracking, no selling of data. Comments are reviewed before they appear.\n- **For every age.** From children's first surah to the hafiz track – the method adapts to you.\n\n## Get in touch\nWrite to info@quranmasterclass.com or send a request on our [feedback page](/feedback).",
+    "body": "## Our mission\nThe best of people, the Prophet ﷺ said, are those who learn the Quran and teach it. We want to make that possible for everyone – without fees, without ads, without a teacher nearby being the only way in. Learning the Quran should be as natural as using your phone every day.\n\n## How it started\nQuran Masterclass was founded in Dubai. The question was simple: why do language apps help millions learn every day, while learning the Quran often stays a plan for later? The answer became the [Shams Method](/shams) – seven steps per verse that combine what memory research knows with the way Quran teachers have always taught.\n\n## What we believe\n- **Free for everyone.** The Quran belongs to every Muslim.\n- **Authentic sources.** Quran text, translations and tafsir come from recognised sources and always show where they come from. We do not create new interpretations.\n- **Respect.** No ads, no tracking, no selling of data. Comments are reviewed before they appear.\n- **For every age.** From children's first surah to the hafiz track – the method adapts to you.\n\n## Get in touch\nWrite to info@quranmasterclass.com or send a request on our [feedback page](/feedback).",
     "dubaiEyebrow": "Thank you, Dubai",
     "dubaiTitle": "Gratitude to the leadership of Dubai and the United Arab Emirates",
     "dubaiBody": "Quran Masterclass was built in Dubai, and we are deeply grateful for the opportunities this city and country give to everyone who lives here.\n\nWe thank **His Highness Sheikh Mohammed bin Rashid Al Maktoum**, Vice President and Prime Minister of the UAE and Ruler of Dubai, whose vision made Dubai a place where ideas can grow, and under whose patronage the **Dubai International Holy Quran Award** has honoured those who memorise the Quran since 1997. We thank **His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum**, Crown Prince of Dubai, and **His Highness Sheikh Mohamed bin Zayed Al Nahyan**, President of the United Arab Emirates.\n\nA safe home, tolerance between people from all over the world, and an environment that encourages innovation – these are the conditions in which a project like this can be born. May Allah reward them and protect this country.",
@@ -1385,24 +1369,6 @@
     "captchaNotice": "Protected by reCAPTCHA. The Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
     "captchaChallenge": "Please quickly confirm you are not a robot, then send again.",
     "captchaFailed": "The security check did not work. Please reload the page and try again."
-  },
-  "ziina": {
-    "title": "Support with Ziina",
-    "lead": "Pay securely with Apple Pay, Google Pay or card – through Ziina, the payment app from the Emirates.",
-    "custom": "Other amount",
-    "pay": "Support with Ziina",
-    "link": "Go to the Ziina payment page",
-    "soon": "Support via Ziina is being set up.",
-    "thanks": "Jazāk Allāhu khayran – thank you so much for your support! May Allah accept it as an ongoing good deed.",
-    "err": "That did not work. Please try again in a moment.",
-    "safe": "You enter your card details only at Ziina – they never reach our server.",
-    "how": "As simple as this",
-    "step1": "Open the Ziina page – directly on your phone, or via the QR code on a computer.",
-    "step2": "Choose any amount, for example 25, 50 or 100 AED.",
-    "step3": "Confirm with Apple Pay, Google Pay or card – done.",
-    "scan": "Scan with your phone",
-    "copy": "Copy link",
-    "copied": "Copied"
   },
   "coach": {
     "title": "How far you are",
@@ -1864,27 +1830,5 @@
     "genTitle": "Your personal dua",
     "genLead": "Choose your concern – with the fitting names of Allah and real duas from the Quran and the Sunnah.",
     "genCta": "Open the dua generator"
-  },
-  "donate": {
-    "aria": "Support Quran Masterclass voluntarily",
-    "kicker": "Sadaqa for the Word of Allah",
-    "title": "Quran Masterclass stays free – with your help",
-    "lead": "No fees, no subscription, no ads. Servers, recitations, development and new courses are carried by voluntary donations alone. If you can and wish to, help this project grow – for everyone who wants to learn and understand the Word of Allah and, in sha Allah, recite it beautifully one day.",
-    "cta": "Support voluntarily",
-    "later": "Later",
-    "free": "Donations are voluntary. Everything stays free for everyone – with or without a donation.",
-    "meter": "This month: {raised} of {goal} {cur}",
-    "slimTitle": "This project lives on voluntary donations.",
-    "slimLead": "If you can, help – every gift opens the way to the Quran for others.",
-    "s1": "When a person dies, his deeds come to an end except for three: an ongoing charity, knowledge that benefits, or a righteous child who prays for him.",
-    "s1Src": "The Prophet ﷺ · Muslim 1631",
-    "s2": "Charity does not decrease wealth.",
-    "s2Src": "The Prophet ﷺ · Muslim 2588",
-    "s3": "The best of you are those who learn the Quran and teach it.",
-    "s3Src": "The Prophet ﷺ · al-Bukhari 5027",
-    "s4": "Whoever guides someone to good has a reward like the one who does it.",
-    "s4Src": "The Prophet ﷺ · Muslim 1893",
-    "s5": "Allah says: Spend, O son of Adam, and I will spend on you.",
-    "s5Src": "The Prophet ﷺ · al-Bukhari 5352, Muslim 993"
   }
 }

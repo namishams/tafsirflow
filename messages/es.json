@@ -297,7 +297,6 @@
     "groupLearn": "Aprender",
     "groupQuran": "Corán",
     "groupMore": "Más",
-    "support": "Apoyar",
     "arabic": "Leer árabe",
     "salah": "Aprende a rezar",
     "reciters": "Recitadores",
@@ -570,21 +569,6 @@
     "imprintProvider": "Titular",
     "imprintContact": "Contacto",
     "imprintPending": "Los datos completos del titular se añadirán antes del lanzamiento público."
-  },
-  "support": {
-    "nav": "Apoyar el proyecto",
-    "title": "Apoya Quran Masterclass",
-    "lead": "Quran Masterclass es gratuito para todos – el Corán completo, el audio, la traducción, el tafsir y las herramientas de aprendizaje. Si te resulta útil, puedes apoyarlo de forma voluntaria. Nos ayuda a mantener el servicio, añadir recitadores e idiomas y crear nuevos cursos.",
-    "hadith": "Quien ayuda a una buena causa participa de su recompensa – tu apoyo es voluntario y nunca obligatorio.",
-    "cta": "Apoyar voluntariamente",
-    "soon": "Las opciones de apoyo estarán disponibles pronto. Gracias por tu interés.",
-    "what": "Qué financia tu apoyo",
-    "w1": "Servidores, almacenamiento y audio para todos los recitadores",
-    "w2": "Nuevos idiomas y traducciones",
-    "w3": "Cursos para memorizar, comprender y recitar",
-    "w4": "Revisión de las explicaciones por parte de sabios",
-    "free": "Todo sigue siendo gratis. Apoyar es un regalo, no una compra.",
-    "back": "Volver al inicio"
   },
   "prayer": {
     "title": "Horarios de oración",
@@ -1352,7 +1336,7 @@
     "lead": "Quran Masterclass es una plataforma gratuita para escuchar, entender, memorizar y recitar el Corán – en 13 idiomas, para niños y adultos, vivan donde vivan.",
     "seoTitle": "Sobre Quran Masterclass – aprender el Corán gratis, hecho en Dubái",
     "seoDesc": "Quran Masterclass fue fundado en Dubái: una plataforma gratuita para aprender el Corán con el Método Shams, en 13 idiomas. Nuestra misión, valores y equipo.",
-    "body": "## Nuestra misión\nLas mejores personas, dijo el Profeta ﷺ, son quienes aprenden el Corán y lo enseñan. Queremos hacer eso posible para todos – sin cuotas, sin anuncios, sin que un maestro cercano sea la única puerta de entrada. Aprender el Corán debería ser tan natural como usar el móvil cada día.\n\n## Cómo empezó\nQuran Masterclass fue fundado en Dubái. La pregunta era sencilla: ¿por qué las aplicaciones de idiomas ayudan a millones de personas a aprender cada día, mientras que aprender el Corán a menudo se queda en un plan para más adelante? La respuesta se convirtió en el [Método Shams](/shams) – siete pasos por aleya que combinan lo que sabe la investigación sobre la memoria con la forma en que los maestros del Corán han enseñado siempre.\n\n## En qué creemos\n- **Gratis para todos.** El Corán pertenece a cada musulmán. El apoyo voluntario mantiene la plataforma en marcha.\n- **Fuentes auténticas.** El texto del Corán, las traducciones y el tafsir proceden de fuentes reconocidas y siempre indican su origen. No creamos nuevas interpretaciones.\n- **Respeto.** Sin anuncios, sin rastreo, sin venta de datos. Los comentarios se revisan antes de publicarse.\n- **Para todas las edades.** Desde la primera sura de los niños hasta la ruta de hafiz – el método se adapta a ti.\n\n## Contacto\nEscribe a info@quranmasterclass.com o envía una petición en nuestra [página de comentarios](/feedback).",
+    "body": "## Nuestra misión\nLas mejores personas, dijo el Profeta ﷺ, son quienes aprenden el Corán y lo enseñan. Queremos hacer eso posible para todos – sin cuotas, sin anuncios, sin que un maestro cercano sea la única puerta de entrada. Aprender el Corán debería ser tan natural como usar el móvil cada día.\n\n## Cómo empezó\nQuran Masterclass fue fundado en Dubái. La pregunta era sencilla: ¿por qué las aplicaciones de idiomas ayudan a millones de personas a aprender cada día, mientras que aprender el Corán a menudo se queda en un plan para más adelante? La respuesta se convirtió en el [Método Shams](/shams) – siete pasos por aleya que combinan lo que sabe la investigación sobre la memoria con la forma en que los maestros del Corán han enseñado siempre.\n\n## En qué creemos\n- **Gratis para todos.** El Corán pertenece a cada musulmán.\n- **Fuentes auténticas.** El texto del Corán, las traducciones y el tafsir proceden de fuentes reconocidas y siempre indican su origen. No creamos nuevas interpretaciones.\n- **Respeto.** Sin anuncios, sin rastreo, sin venta de datos. Los comentarios se revisan antes de publicarse.\n- **Para todas las edades.** Desde la primera sura de los niños hasta la ruta de hafiz – el método se adapta a ti.\n\n## Contacto\nEscribe a info@quranmasterclass.com o envía una petición en nuestra [página de comentarios](/feedback).",
     "dubaiEyebrow": "Gracias, Dubái",
     "dubaiTitle": "Gratitud a los dirigentes de Dubái y de los Emiratos Árabes Unidos",
     "dubaiBody": "Quran Masterclass se creó en Dubái, y estamos profundamente agradecidos por las oportunidades que esta ciudad y este país ofrecen a todos los que viven aquí.\n\nDamos las gracias a **Su Alteza el Jeque Mohammed bin Rashid Al Maktoum**, Vicepresidente y Primer Ministro de los EAU y Gobernante de Dubái, cuya visión hizo de Dubái un lugar donde las ideas pueden crecer, y bajo cuyo patrocinio el **Premio Internacional del Sagrado Corán de Dubái** honra desde 1997 a quienes memorizan el Corán. Damos las gracias a **Su Alteza el Jeque Hamdan bin Mohammed bin Rashid Al Maktoum**, Príncipe Heredero de Dubái, y a **Su Alteza el Jeque Mohamed bin Zayed Al Nahyan**, Presidente de los Emiratos Árabes Unidos.\n\nUn hogar seguro, la tolerancia entre personas de todo el mundo y un entorno que fomenta la innovación – estas son las condiciones en las que puede nacer un proyecto como este. Que Allah los recompense y proteja este país.",
@@ -1385,24 +1369,6 @@
     "imprint": "Aviso legal",
     "badge": "100 % gratis · financiado de forma privada",
     "visit": "¿Visitas los Emiratos? La Gran Mezquita del Jeque Zayed en Abu Dabi y la mezquita de Jumeirah en Dubái te dan la bienvenida"
-  },
-  "ziina": {
-    "title": "Apoyar con Ziina",
-    "lead": "Paga de forma segura con Apple Pay, Google Pay o tarjeta – a través de Ziina, la app de pagos de los Emiratos.",
-    "custom": "Otro importe",
-    "pay": "Apoyar con Ziina",
-    "link": "Ir a la página de pago de Ziina",
-    "soon": "El apoyo mediante Ziina se está preparando.",
-    "thanks": "Jazāk Allāhu khayran – ¡muchísimas gracias por tu apoyo! Que Allah lo acepte como una obra de bien continua.",
-    "err": "No ha funcionado. Inténtalo de nuevo en un momento.",
-    "safe": "Los datos de tu tarjeta solo los introduces en Ziina – nunca llegan a nuestro servidor.",
-    "how": "Así de sencillo",
-    "step1": "Abre la página de Ziina – directamente en el móvil, o con el código QR en el ordenador.",
-    "step2": "Elige el importe que quieras, por ejemplo 25, 50 o 100 AED.",
-    "step3": "Confirma con Apple Pay, Google Pay o tarjeta – listo.",
-    "scan": "Escanea con el móvil",
-    "copy": "Copiar enlace",
-    "copied": "Copiado"
   },
   "coach": {
     "title": "Hasta dónde has llegado",
@@ -1864,27 +1830,5 @@
     "genTitle": "Tu dua personal",
     "genLead": "Elige lo que te preocupa, con los nombres de Allah que corresponden y duas auténticas del Corán y de la Sunna.",
     "genCta": "Abrir el generador de duas"
-  },
-  "donate": {
-    "aria": "Apoyar voluntariamente a Quran Masterclass",
-    "kicker": "Sadaqa por la Palabra de Allah",
-    "title": "Quran Masterclass sigue siendo gratis – con tu ayuda",
-    "lead": "Sin cuotas, sin suscripción, sin anuncios. Los servidores, las recitaciones, el desarrollo y los nuevos cursos se sostienen únicamente con donaciones voluntarias. Si puedes y quieres, ayuda a que este proyecto crezca – para todos los que desean aprender y comprender la Palabra de Allah y, in sha Allah, recitarla algún día con belleza.",
-    "cta": "Apoyar voluntariamente",
-    "later": "Más tarde",
-    "free": "Las donaciones son voluntarias. Todo sigue siendo gratis para todos – con o sin donación.",
-    "meter": "Este mes: {raised} de {goal} {cur}",
-    "slimTitle": "Este proyecto vive de donaciones voluntarias.",
-    "slimLead": "Si puedes, ayuda – cada donación abre a otros el camino hacia el Corán.",
-    "s1": "Cuando el hombre muere, sus obras se interrumpen salvo tres: una caridad continua, un conocimiento del que otros se benefician o un hijo piadoso que ruega por él.",
-    "s1Src": "El Profeta ﷺ · Muslim 1631",
-    "s2": "La caridad no disminuye la riqueza.",
-    "s2Src": "El Profeta ﷺ · Muslim 2588",
-    "s3": "Los mejores de vosotros son quienes aprenden el Corán y lo enseñan.",
-    "s3Src": "El Profeta ﷺ · al-Bujari 5027",
-    "s4": "Quien guía a alguien hacia el bien obtiene una recompensa semejante a la de quien lo hace.",
-    "s4Src": "El Profeta ﷺ · Muslim 1893",
-    "s5": "Allah dice: Gasta, hijo de Adán, y Yo gastaré en ti.",
-    "s5Src": "El Profeta ﷺ · al-Bujari 5352, Muslim 993"
   }
 }

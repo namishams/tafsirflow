@@ -296,7 +296,6 @@
     "groupLearn": "Lernen",
     "groupQuran": "Koran",
     "groupMore": "Mehr",
-    "support": "Unterstützen",
     "islam": "Islam",
     "arabic": "Arabisch lesen",
     "salah": "Gebet lernen",
@@ -570,21 +569,6 @@
     "imprintProvider": "Anbieter",
     "imprintContact": "Kontakt",
     "imprintPending": "Die vollständigen Anbieterangaben werden vor dem öffentlichen Start ergänzt."
-  },
-  "support": {
-    "nav": "Projekt unterstützen",
-    "title": "Quran Masterclass unterstützen",
-    "lead": "Quran Masterclass ist für alle kostenlos – der ganze Koran, Audio, Übersetzung, Tafsir und die Lernwerkzeuge. Wenn es dir hilft, kannst du es freiwillig unterstützen. Das hilft uns, den Dienst zu betreiben, Rezitatoren und Sprachen hinzuzufügen und neue Kurse zu erstellen.",
-    "hadith": "Deine Unterstützung ist freiwillig und nie Voraussetzung.",
-    "cta": "Freiwillig unterstützen",
-    "soon": "Unterstützungsmöglichkeiten folgen bald. Danke für dein Interesse.",
-    "what": "Wofür deine Unterstützung verwendet wird",
-    "w1": "Server, Speicher und Audio für alle Rezitatoren",
-    "w2": "Neue Sprachen und Übersetzungen",
-    "w3": "Kurse zum Auswendiglernen, Verstehen und Rezitieren",
-    "w4": "Gelehrten-Prüfung der Erklärungen",
-    "free": "Alles bleibt kostenlos. Unterstützen ist ein Geschenk, kein Kauf.",
-    "back": "Zurück zur Startseite"
   },
   "prayer": {
     "title": "Gebetszeiten",
@@ -1335,7 +1319,7 @@
     "lead": "Quran Masterclass ist eine kostenlose Plattform, um den Koran zu hören, zu verstehen, auswendig zu lernen und zu rezitieren – in 13 Sprachen, für Kinder und Erwachsene, wo immer sie leben.",
     "seoTitle": "Über Quran Masterclass – kostenlos Koran lernen, entwickelt in Dubai",
     "seoDesc": "Quran Masterclass wurde in Dubai gegründet: eine kostenlose Plattform zum Koranlernen mit der Shams-Methode, in 13 Sprachen. Unsere Mission und Werte.",
-    "body": "## Unsere Mission\nDie Besten unter den Menschen, sagte der Prophet ﷺ, sind diejenigen, die den Koran lernen und lehren. Wir wollen das für alle möglich machen – ohne Gebühren, ohne Werbung, ohne dass ein Lehrer in der Nähe der einzige Weg ist. Koranlernen soll so selbstverständlich werden wie der tägliche Blick aufs Handy.\n\n## Wie es begann\nQuran Masterclass wurde in Dubai gegründet. Die Frage war einfach: Warum helfen Sprach-Apps Millionen Menschen, jeden Tag zu lernen, während das Koranlernen oft ein Plan für später bleibt? Die Antwort wurde die [Shams-Methode](/shams) – sieben Schritte pro Vers, die verbinden, was die Gedächtnisforschung weiß, mit der Art, wie Koranlehrer schon immer unterrichtet haben.\n\n## Woran wir glauben\n- **Kostenlos für alle.** Der Koran gehört jedem Muslim. Freiwillige Unterstützung hält die Plattform am Laufen.\n- **Authentische Quellen.** Korantext, Übersetzungen und Tafsir stammen aus anerkannten Quellen und zeigen immer, woher sie kommen. Wir erfinden keine neuen Auslegungen.\n- **Respekt.** Keine Werbung, kein Tracking, kein Verkauf von Daten. Kommentare werden geprüft, bevor sie erscheinen.\n- **Für jedes Alter.** Von der ersten Sure eines Kindes bis zum Hafiz-Track – die Methode passt sich dir an.\n\n## Kontakt\nSchreib an info@quranmasterclass.com oder sende einen Wunsch über unsere [Feedback-Seite](/feedback).",
+    "body": "## Unsere Mission\nDie Besten unter den Menschen, sagte der Prophet ﷺ, sind diejenigen, die den Koran lernen und lehren. Wir wollen das für alle möglich machen – ohne Gebühren, ohne Werbung, ohne dass ein Lehrer in der Nähe der einzige Weg ist. Koranlernen soll so selbstverständlich werden wie der tägliche Blick aufs Handy.\n\n## Wie es begann\nQuran Masterclass wurde in Dubai gegründet. Die Frage war einfach: Warum helfen Sprach-Apps Millionen Menschen, jeden Tag zu lernen, während das Koranlernen oft ein Plan für später bleibt? Die Antwort wurde die [Shams-Methode](/shams) – sieben Schritte pro Vers, die verbinden, was die Gedächtnisforschung weiß, mit der Art, wie Koranlehrer schon immer unterrichtet haben.\n\n## Woran wir glauben\n- **Kostenlos für alle.** Der Koran gehört jedem Muslim.\n- **Authentische Quellen.** Korantext, Übersetzungen und Tafsir stammen aus anerkannten Quellen und zeigen immer, woher sie kommen. Wir erfinden keine neuen Auslegungen.\n- **Respekt.** Keine Werbung, kein Tracking, kein Verkauf von Daten. Kommentare werden geprüft, bevor sie erscheinen.\n- **Für jedes Alter.** Von der ersten Sure eines Kindes bis zum Hafiz-Track – die Methode passt sich dir an.\n\n## Kontakt\nSchreib an info@quranmasterclass.com oder sende einen Wunsch über unsere [Feedback-Seite](/feedback).",
     "dubaiEyebrow": "Danke, Dubai",
     "dubaiTitle": "Dank an die Führung von Dubai und der Vereinigten Arabischen Emirate",
     "dubaiBody": "Quran Masterclass ist in Dubai entstanden, und wir sind zutiefst dankbar für die Möglichkeiten, die diese Stadt und dieses Land allen geben, die hier leben.\n\nWir danken **Seiner Hoheit Scheich Mohammed bin Rashid Al Maktoum**, Vizepräsident und Premierminister der VAE und Herrscher von Dubai, dessen Vision Dubai zu einem Ort gemacht hat, an dem Ideen wachsen können, und unter dessen Schirmherrschaft der **Dubai International Holy Quran Award** seit 1997 Menschen ehrt, die den Koran auswendig lernen. Wir danken **Seiner Hoheit Scheich Hamdan bin Mohammed bin Rashid Al Maktoum**, Kronprinz von Dubai, und **Seiner Hoheit Scheich Mohamed bin Zayed Al Nahyan**, Präsident der Vereinigten Arabischen Emirate.\n\nEin sicheres Zuhause, Toleranz zwischen Menschen aus aller Welt und ein Umfeld, das Innovation fördert – das sind die Bedingungen, unter denen ein Projekt wie dieses entstehen kann. Möge Allah sie belohnen und dieses Land beschützen.",
@@ -1385,24 +1369,6 @@
     "captchaNotice": "Geschützt durch reCAPTCHA. Es gelten die <privacy>Datenschutzerklärung</privacy> und die <terms>Nutzungsbedingungen</terms> von Google.",
     "captchaChallenge": "Bitte bestätige kurz, dass du kein Roboter bist, und sende dann erneut.",
     "captchaFailed": "Die Sicherheitsprüfung hat nicht geklappt. Bitte lade die Seite neu und versuche es noch einmal."
-  },
-  "ziina": {
-    "title": "Unterstützen mit Ziina",
-    "lead": "Sicher bezahlen mit Apple Pay, Google Pay oder Karte – über Ziina, die Zahlungs-App aus den Emiraten.",
-    "custom": "Eigener Betrag",
-    "pay": "Mit Ziina unterstützen",
-    "link": "Zur Ziina-Zahlungsseite",
-    "soon": "Die Unterstützung über Ziina wird gerade eingerichtet.",
-    "thanks": "Jazāk Allāhu khayran – vielen Dank für deine Unterstützung! Möge Allah es als fortlaufende gute Tat annehmen.",
-    "err": "Das hat nicht geklappt. Bitte versuche es gleich noch einmal.",
-    "safe": "Deine Kartendaten gibst du nur bei Ziina ein – sie erreichen unseren Server nie.",
-    "how": "So einfach geht es",
-    "step1": "Ziina-Seite öffnen – am Handy direkt, am Computer über den QR-Code.",
-    "step2": "Betrag frei wählen, zum Beispiel 25, 50 oder 100 AED.",
-    "step3": "Mit Apple Pay, Google Pay oder Karte bestätigen – fertig.",
-    "scan": "Mit dem Handy scannen",
-    "copy": "Link kopieren",
-    "copied": "Kopiert"
   },
   "coach": {
     "title": "Wie weit du bist",
@@ -1864,27 +1830,5 @@
     "genTitle": "Dein persönliches Bittgebet",
     "genLead": "Wähle dein Anliegen – mit den passenden Namen Allahs und echten Duas aus Quran und Sunnah.",
     "genCta": "Zum Dua-Generator"
-  },
-  "donate": {
-    "aria": "Quran Masterclass freiwillig unterstützen",
-    "kicker": "Sadaqa für das Wort Allahs",
-    "title": "Quran Masterclass bleibt frei – mit deiner Hilfe",
-    "lead": "Keine Gebühren, kein Abo, keine Werbung. Server, Rezitationen, Entwicklung und neue Kurse tragen sich allein durch freiwillige Spenden. Wenn du kannst und möchtest, hilf mit, damit dieses Projekt wachsen kann – für alle, die Allahs Wort lernen, verstehen und in sha Allah einmal schön rezitieren wollen.",
-    "cta": "Freiwillig unterstützen",
-    "later": "Später",
-    "free": "Spenden sind freiwillig. Alles bleibt für alle kostenlos – mit oder ohne Spende.",
-    "meter": "Diesen Monat: {raised} von {goal} {cur}",
-    "slimTitle": "Dieses Projekt lebt von freiwilligen Spenden.",
-    "slimLead": "Wenn du kannst, hilf mit – jeder Beitrag öffnet anderen den Weg zum Quran.",
-    "s1": "Wenn der Mensch stirbt, endet sein Werk – außer in dreien: einer fortlaufenden Sadaqa, einem Wissen, von dem man Nutzen hat, oder einem frommen Kind, das für ihn betet.",
-    "s1Src": "Der Prophet ﷺ · Muslim 1631",
-    "s2": "Die Sadaqa mindert den Besitz nicht.",
-    "s2Src": "Der Prophet ﷺ · Muslim 2588",
-    "s3": "Der Beste unter euch ist, wer den Quran lernt und ihn lehrt.",
-    "s3Src": "Der Prophet ﷺ · al-Bukhari 5027",
-    "s4": "Wer zu etwas Gutem hinführt, erhält den gleichen Lohn wie der, der es tut.",
-    "s4Src": "Der Prophet ﷺ · Muslim 1893",
-    "s5": "Allah sagt: Gib, o Sohn Adams, so wird dir gegeben.",
-    "s5Src": "Der Prophet ﷺ · al-Bukhari 5352, Muslim 993"
   }
 }

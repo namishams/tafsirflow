@@ -296,7 +296,6 @@
     "groupLearn": "Belajar",
     "groupQuran": "Quran",
     "groupMore": "Lagi",
-    "support": "Sokongan",
     "islam": "Islam",
     "arabic": "Baca bahasa Arab",
     "salah": "Belajar solat",
@@ -570,21 +569,6 @@
     "imprintProvider": "Penyedia",
     "imprintContact": "Hubungi kami",
     "imprintPending": "Butiran penuh penyedia akan ditambah sebelum pelancaran awam."
-  },
-  "support": {
-    "nav": "Sokong projek ini",
-    "title": "Sokong Quran Masterclass",
-    "lead": "Quran Masterclass percuma untuk semua orang – Quran lengkap, audio, terjemahan, tafsir dan alat pembelajaran. Jika ia membantu anda, anda boleh menyokongnya secara sukarela. Ia membantu kami meneruskan perkhidmatan ini, menambah qari dan bahasa serta mencipta kursus baharu.",
-    "hadith": "Sesiapa yang membantu satu kebaikan akan turut mendapat ganjarannya – sokongan anda adalah sukarela dan tidak pernah diwajibkan.",
-    "cta": "Sokong secara sukarela",
-    "soon": "Pilihan sokongan akan tersedia tidak lama lagi. Terima kasih atas minat anda.",
-    "what": "Untuk apa sokongan anda digunakan",
-    "w1": "Pelayan, storan dan audio untuk semua qari",
-    "w2": "Bahasa dan terjemahan baharu",
-    "w3": "Kursus untuk menghafaz, memahami dan membaca",
-    "w4": "Semakan ilmiah terhadap penerangan",
-    "free": "Semuanya kekal percuma. Memberi sokongan ialah hadiah, bukan pembelian.",
-    "back": "Kembali ke laman utama"
   },
   "prayer": {
     "title": "Waktu solat",
@@ -1335,7 +1319,7 @@
     "lead": "Quran Masterclass ialah platform percuma untuk mendengar, memahami, menghafaz dan membaca Quran – dalam 13 bahasa, untuk kanak-kanak dan orang dewasa, di mana sahaja mereka tinggal.",
     "seoTitle": "Tentang Quran Masterclass – belajar Quran percuma, dibuat di Dubai",
     "seoDesc": "Quran Masterclass diasaskan di Dubai: platform percuma untuk belajar Quran dengan Kaedah Shams, dalam 13 bahasa. Misi, nilai dan pasukan kami.",
-    "body": "## Misi kami\nSebaik-baik manusia, sabda Nabi ﷺ, ialah mereka yang mempelajari Quran dan mengajarkannya. Kami ingin menjadikannya mungkin bagi semua orang – tanpa yuran, tanpa iklan, tanpa bergantung semata-mata pada seorang guru yang berdekatan. Belajar Quran seharusnya semudah menggunakan telefon anda setiap hari.\n\n## Bagaimana ia bermula\nQuran Masterclass diasaskan di Dubai. Soalannya mudah: mengapa aplikasi bahasa membantu berjuta-juta orang belajar setiap hari, sedangkan belajar Quran sering kekal sebagai rancangan untuk kemudian? Jawapannya menjadi [Kaedah Shams](/shams) – tujuh langkah bagi setiap ayat yang menggabungkan apa yang diketahui oleh penyelidikan ingatan dengan cara guru-guru Quran mengajar sejak dahulu lagi.\n\n## Apa yang kami percayai\n- **Percuma untuk semua.** Quran milik setiap Muslim. Sokongan sukarela memastikan platform ini terus berjalan.\n- **Sumber yang sahih.** Teks Quran, terjemahan dan tafsir datang daripada sumber yang diiktiraf dan sentiasa menunjukkan asalnya. Kami tidak mencipta tafsiran baharu.\n- **Hormat.** Tiada iklan, tiada penjejakan, tiada penjualan data. Komen disemak sebelum dipaparkan.\n- **Untuk setiap peringkat umur.** Daripada surah pertama kanak-kanak hingga laluan hafiz – kaedah ini menyesuaikan diri dengan anda.\n\n## Hubungi kami\nTulis kepada info@quranmasterclass.com atau hantar permintaan di [halaman maklum balas](/feedback) kami.",
+    "body": "## Misi kami\nSebaik-baik manusia, sabda Nabi ﷺ, ialah mereka yang mempelajari Quran dan mengajarkannya. Kami ingin menjadikannya mungkin bagi semua orang – tanpa yuran, tanpa iklan, tanpa bergantung semata-mata pada seorang guru yang berdekatan. Belajar Quran seharusnya semudah menggunakan telefon anda setiap hari.\n\n## Bagaimana ia bermula\nQuran Masterclass diasaskan di Dubai. Soalannya mudah: mengapa aplikasi bahasa membantu berjuta-juta orang belajar setiap hari, sedangkan belajar Quran sering kekal sebagai rancangan untuk kemudian? Jawapannya menjadi [Kaedah Shams](/shams) – tujuh langkah bagi setiap ayat yang menggabungkan apa yang diketahui oleh penyelidikan ingatan dengan cara guru-guru Quran mengajar sejak dahulu lagi.\n\n## Apa yang kami percayai\n- **Percuma untuk semua.** Quran milik setiap Muslim.\n- **Sumber yang sahih.** Teks Quran, terjemahan dan tafsir datang daripada sumber yang diiktiraf dan sentiasa menunjukkan asalnya. Kami tidak mencipta tafsiran baharu.\n- **Hormat.** Tiada iklan, tiada penjejakan, tiada penjualan data. Komen disemak sebelum dipaparkan.\n- **Untuk setiap peringkat umur.** Daripada surah pertama kanak-kanak hingga laluan hafiz – kaedah ini menyesuaikan diri dengan anda.\n\n## Hubungi kami\nTulis kepada info@quranmasterclass.com atau hantar permintaan di [halaman maklum balas](/feedback) kami.",
     "dubaiEyebrow": "Terima kasih, Dubai",
     "dubaiTitle": "Penghargaan kepada pucuk pimpinan Dubai dan Emiriah Arab Bersatu",
     "dubaiBody": "Quran Masterclass dibina di Dubai, dan kami amat berterima kasih atas peluang yang diberikan oleh bandar dan negara ini kepada semua yang tinggal di sini.\n\nKami mengucapkan terima kasih kepada **Yang Amat Mulia Sheikh Mohammed bin Rashid Al Maktoum**, Naib Presiden dan Perdana Menteri UAE serta Pemerintah Dubai, yang wawasannya menjadikan Dubai tempat idea boleh berkembang, dan di bawah naungannya **Anugerah Al-Quran Antarabangsa Dubai** telah menghormati para penghafaz Quran sejak 1997. Kami mengucapkan terima kasih kepada **Yang Amat Mulia Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum**, Putera Mahkota Dubai, dan **Yang Amat Mulia Sheikh Mohamed bin Zayed Al Nahyan**, Presiden Emiriah Arab Bersatu.\n\nSebuah tempat tinggal yang selamat, toleransi antara orang dari seluruh dunia, dan persekitaran yang menggalakkan inovasi – inilah keadaan yang membolehkan projek seperti ini dilahirkan. Semoga Allah membalas jasa mereka dan melindungi negara ini.",
@@ -1385,24 +1369,6 @@
     "captchaNotice": "Dilindungi oleh reCAPTCHA. <privacy>Dasar Privasi</privacy> dan <terms>Terma Perkhidmatan</terms> Google terpakai.",
     "captchaChallenge": "Sila sahkan dengan pantas bahawa anda bukan robot, kemudian hantar semula.",
     "captchaFailed": "Semakan keselamatan tidak berjaya. Sila muat semula halaman dan cuba lagi."
-  },
-  "ziina": {
-    "title": "Sokong dengan Ziina",
-    "lead": "Bayar dengan selamat menggunakan Apple Pay, Google Pay atau kad – melalui Ziina, aplikasi pembayaran dari Emiriah.",
-    "custom": "Jumlah lain",
-    "pay": "Sokong dengan Ziina",
-    "link": "Pergi ke halaman pembayaran Ziina",
-    "soon": "Sokongan melalui Ziina sedang disediakan.",
-    "thanks": "Jazakallahu khairan – terima kasih banyak atas sokongan anda! Semoga Allah menerimanya sebagai amal jariah.",
-    "err": "Ia tidak berjaya. Sila cuba lagi sebentar nanti.",
-    "safe": "Anda hanya memasukkan butiran kad di Ziina – ia tidak pernah sampai ke pelayan kami.",
-    "how": "Semudah ini",
-    "step1": "Buka halaman Ziina – terus pada telefon anda, atau melalui kod QR pada komputer.",
-    "step2": "Pilih mana-mana jumlah, contohnya 25, 50 atau 100 AED.",
-    "step3": "Sahkan dengan Apple Pay, Google Pay atau kad – selesai.",
-    "scan": "Imbas dengan telefon anda",
-    "copy": "Salin pautan",
-    "copied": "Disalin"
   },
   "coach": {
     "title": "Setakat mana anda telah sampai",
@@ -1864,27 +1830,5 @@
     "genTitle": "Doa peribadi anda",
     "genLead": "Pilih apa yang membebani hati anda – dengan nama-nama Allah yang sesuai dan doa-doa sebenar daripada Quran dan Sunnah.",
     "genCta": "Buka penjana doa"
-  },
-  "donate": {
-    "aria": "Sokong Quran Masterclass secara sukarela",
-    "kicker": "Sedekah untuk Kalam Allah",
-    "title": "Quran Masterclass kekal percuma – dengan bantuan anda",
-    "lead": "Tiada yuran, tiada langganan, tiada iklan. Pelayan, bacaan qari, pembangunan dan kursus baharu ditanggung semata-mata oleh derma sukarela. Jika anda mampu dan sudi, bantulah projek ini berkembang – untuk semua yang ingin mempelajari dan memahami Kalam Allah dan, insya-Allah, suatu hari membacanya dengan indah.",
-    "cta": "Sokong secara sukarela",
-    "later": "Nanti",
-    "free": "Derma adalah sukarela. Semuanya kekal percuma untuk semua orang – dengan atau tanpa derma.",
-    "meter": "Bulan ini: {raised} daripada {goal} {cur}",
-    "slimTitle": "Projek ini hidup daripada derma sukarela.",
-    "slimLead": "Jika anda mampu, bantulah – setiap sumbangan membuka jalan kepada orang lain menuju Quran.",
-    "s1": "Apabila manusia meninggal dunia, terputuslah amalnya kecuali tiga perkara: sedekah jariah, ilmu yang bermanfaat, atau anak soleh yang mendoakannya.",
-    "s1Src": "Nabi ﷺ · Muslim 1631",
-    "s2": "Sedekah tidak mengurangkan harta.",
-    "s2Src": "Nabi ﷺ · Muslim 2588",
-    "s3": "Sebaik-baik kamu ialah orang yang mempelajari Quran dan mengajarkannya.",
-    "s3Src": "Nabi ﷺ · al-Bukhari 5027",
-    "s4": "Sesiapa yang menunjukkan kepada kebaikan, dia mendapat pahala seperti pahala orang yang melakukannya.",
-    "s4Src": "Nabi ﷺ · Muslim 1893",
-    "s5": "Allah berfirman: Berinfaklah, wahai anak Adam, nescaya Aku akan berinfak kepadamu.",
-    "s5Src": "Nabi ﷺ · al-Bukhari 5352, Muslim 993"
   }
 }

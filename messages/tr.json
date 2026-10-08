@@ -297,7 +297,6 @@
     "groupLearn": "Öğren",
     "groupQuran": "Kur'an",
     "groupMore": "Daha fazla",
-    "support": "Destek",
     "arabic": "Arapça okuma",
     "salah": "Namaz öğren",
     "reciters": "Kâriler",
@@ -570,21 +569,6 @@
     "imprintProvider": "Hizmet sağlayıcı",
     "imprintContact": "İletişim",
     "imprintPending": "Hizmet sağlayıcıya ilişkin tam bilgiler, herkese açık lansmandan önce eklenecektir."
-  },
-  "support": {
-    "nav": "Projeyi destekle",
-    "title": "Quran Masterclass'ı destekleyin",
-    "lead": "Quran Masterclass herkes için ücretsizdir – Kur'an'ın tamamı, ses kayıtları, meal, tefsir ve öğrenme araçları. Size faydalı oluyorsa gönüllü olarak destek olabilirsiniz. Bu, hizmeti sürdürmemize, yeni kurralar ve diller eklememize ve yeni kurslar hazırlamamıza yardımcı olur.",
-    "hadith": "Hayırlı bir işe yardım eden, onun sevabına ortak olur – desteğiniz gönüllüdür ve asla zorunlu değildir.",
-    "cta": "Gönüllü destek ol",
-    "soon": "Destek seçenekleri yakında sunulacak. İlginiz için teşekkür ederiz.",
-    "what": "Desteğiniz neye harcanır",
-    "w1": "Tüm kurralar için sunucular, depolama ve ses",
-    "w2": "Yeni diller ve mealler",
-    "w3": "Ezberleme, anlama ve okuma kursları",
-    "w4": "Açıklamaların âlimler tarafından incelenmesi",
-    "free": "Her şey ücretsiz kalır. Destek bir satın alma değil, bir hediyedir.",
-    "back": "Ana sayfaya dön"
   },
   "prayer": {
     "title": "Namaz vakitleri",
@@ -1352,7 +1336,7 @@
     "lead": "Quran Masterclass, Kur'an'ı dinlemek, anlamak, ezberlemek ve okumak için ücretsiz bir platformdur – 13 dilde, çocuklar ve yetişkinler için, nerede yaşarlarsa yaşasınlar.",
     "seoTitle": "Quran Masterclass hakkında – ücretsiz Kur'an öğrenimi, Dubai'de yapıldı",
     "seoDesc": "Quran Masterclass, Dubai'de kuruldu: Shams Metodu ile Kur'an öğrenmek için 13 dilde ücretsiz bir platform. Misyonumuz, değerlerimiz ve ekibimiz.",
-    "body": "## Misyonumuz\nPeygamber ﷺ, insanların en hayırlısının Kur'an'ı öğrenen ve öğreten olduğunu buyurdu. Bunu herkes için mümkün kılmak istiyoruz – ücret olmadan, reklam olmadan, yakındaki bir hocanın tek yol olmasına gerek kalmadan. Kur'an öğrenmek, her gün telefonunu kullanmak kadar doğal olmalı.\n\n## Nasıl başladı\nQuran Masterclass, Dubai'de kuruldu. Soru basitti: Dil uygulamaları milyonlarca insanın her gün öğrenmesine yardım ederken, Kur'an öğrenmek neden çoğu zaman sonraya bırakılan bir plan olarak kalıyor? Cevap [Shams Metodu](/shams) oldu – hafıza araştırmalarının bildiklerini Kur'an hocalarının her zaman öğrettiği yolla birleştiren, ayet başına yedi adım.\n\n## İnandıklarımız\n- **Herkes için ücretsiz.** Kur'an her Müslümana aittir. Gönüllü destek platformu ayakta tutar.\n- **Sahih kaynaklar.** Kur'an metni, mealler ve tefsir tanınmış kaynaklardan gelir ve her zaman nereden geldiklerini gösterir. Yeni yorumlar üretmiyoruz.\n- **Saygı.** Reklam yok, takip yok, veri satışı yok. Yorumlar görünmeden önce incelenir.\n- **Her yaş için.** Çocukların ilk suresinden hafızlık yoluna kadar – metot sana uyum sağlar.\n\n## İletişime geç\ninfo@quranmasterclass.com adresine yaz ya da [geri bildirim sayfamızdan](/feedback) bir istek gönder.",
+    "body": "## Misyonumuz\nPeygamber ﷺ, insanların en hayırlısının Kur'an'ı öğrenen ve öğreten olduğunu buyurdu. Bunu herkes için mümkün kılmak istiyoruz – ücret olmadan, reklam olmadan, yakındaki bir hocanın tek yol olmasına gerek kalmadan. Kur'an öğrenmek, her gün telefonunu kullanmak kadar doğal olmalı.\n\n## Nasıl başladı\nQuran Masterclass, Dubai'de kuruldu. Soru basitti: Dil uygulamaları milyonlarca insanın her gün öğrenmesine yardım ederken, Kur'an öğrenmek neden çoğu zaman sonraya bırakılan bir plan olarak kalıyor? Cevap [Shams Metodu](/shams) oldu – hafıza araştırmalarının bildiklerini Kur'an hocalarının her zaman öğrettiği yolla birleştiren, ayet başına yedi adım.\n\n## İnandıklarımız\n- **Herkes için ücretsiz.** Kur'an her Müslümana aittir.\n- **Sahih kaynaklar.** Kur'an metni, mealler ve tefsir tanınmış kaynaklardan gelir ve her zaman nereden geldiklerini gösterir. Yeni yorumlar üretmiyoruz.\n- **Saygı.** Reklam yok, takip yok, veri satışı yok. Yorumlar görünmeden önce incelenir.\n- **Her yaş için.** Çocukların ilk suresinden hafızlık yoluna kadar – metot sana uyum sağlar.\n\n## İletişime geç\ninfo@quranmasterclass.com adresine yaz ya da [geri bildirim sayfamızdan](/feedback) bir istek gönder.",
     "dubaiEyebrow": "Teşekkürler, Dubai",
     "dubaiTitle": "Dubai ve Birleşik Arap Emirlikleri yönetimine şükranlarımızla",
     "dubaiBody": "Quran Masterclass Dubai'de inşa edildi ve bu şehrin ve ülkenin burada yaşayan herkese sunduğu imkânlar için derinden minnettarız.\n\nBAE Devlet Başkan Yardımcısı, Başbakanı ve Dubai Emiri **Ekselansları Şeyh Muhammed bin Raşid Al Maktum**'a teşekkür ederiz; onun vizyonu Dubai'yi fikirlerin büyüyebildiği bir yer hâline getirdi ve onun himayesinde **Dubai Uluslararası Kur'an-ı Kerim Ödülü** 1997'den beri Kur'an'ı ezberleyenleri onurlandırmaktadır. Dubai Veliaht Prensi **Ekselansları Şeyh Hamdan bin Muhammed bin Raşid Al Maktum**'a ve Birleşik Arap Emirlikleri Devlet Başkanı **Ekselansları Şeyh Muhammed bin Zayed Al Nahyan**'a teşekkür ederiz.\n\nGüvenli bir yuva, dünyanın dört bir yanından gelen insanlar arasında hoşgörü ve yeniliği teşvik eden bir ortam – böyle bir projenin doğabileceği şartlar bunlardır. Allah onlardan razı olsun ve bu ülkeyi korusun.",
@@ -1385,24 +1369,6 @@
     "imprint": "Künye",
     "badge": "%100 ücretsiz · özel olarak finanse edilmektedir",
     "visit": "Birleşik Arap Emirlikleri’ni ziyaret mi ediyorsun? Abu Dabi’deki Şeyh Zayed Büyük Camii ve Dubai’deki Cumeyra Camii seni bekliyor"
-  },
-  "ziina": {
-    "title": "Ziina ile destek ol",
-    "lead": "Apple Pay, Google Pay veya kartla güvenle öde – Emirlikler’in ödeme uygulaması Ziina üzerinden.",
-    "custom": "Başka tutar",
-    "pay": "Ziina ile destek ol",
-    "link": "Ziina ödeme sayfasına git",
-    "soon": "Ziina ile destek şu anda hazırlanıyor.",
-    "thanks": "Allah razı olsun – desteğin için çok teşekkür ederiz! Allah onu sadaka-i câriye olarak kabul etsin.",
-    "err": "Olmadı. Lütfen birazdan tekrar dene.",
-    "safe": "Kart bilgilerini yalnızca Ziina’da girersin – sunucumuza asla ulaşmaz.",
-    "how": "Bu kadar kolay",
-    "step1": "Ziina sayfasını aç – telefonda doğrudan, bilgisayarda QR kod üzerinden.",
-    "step2": "Dilediğin tutarı seç, örneğin 25, 50 veya 100 AED.",
-    "step3": "Apple Pay, Google Pay veya kartla onayla – bu kadar.",
-    "scan": "Telefonunla tara",
-    "copy": "Bağlantıyı kopyala",
-    "copied": "Kopyalandı"
   },
   "coach": {
     "title": "Ne kadar ilerledin",
@@ -1864,27 +1830,5 @@
     "genTitle": "Sana özel dua",
     "genLead": "Derdini seç – Allah'ın uygun isimleri ve Kur'an ile Sünnet'ten gerçek dualarla birlikte.",
     "genCta": "Dua oluşturucuyu aç"
-  },
-  "donate": {
-    "aria": "Quran Masterclass'a gönüllü destek",
-    "kicker": "Allah'ın kelamı için sadaka",
-    "title": "Quran Masterclass ücretsiz kalıyor – sizin desteğinizle",
-    "lead": "Ücret yok, abonelik yok, reklam yok. Sunucular, tilavetler, geliştirme ve yeni kurslar yalnızca gönüllü bağışlarla ayakta duruyor. Gücünüz yeter ve isterseniz bu projenin büyümesine yardım edin – Allah'ın kelamını öğrenmek, anlamak ve inşallah bir gün güzel okumak isteyen herkes için.",
-    "cta": "Gönüllü destek ol",
-    "later": "Sonra",
-    "free": "Bağışlar gönüllüdür. Her şey herkes için ücretsiz kalır – bağışla da bağışsız da.",
-    "meter": "Bu ay: {raised} / {goal} {cur}",
-    "slimTitle": "Bu proje gönüllü bağışlarla yaşıyor.",
-    "slimLead": "Gücünüz yeterse destek olun – her bağış, başkalarının Kur'an'a giden yolunu açar.",
-    "s1": "İnsan öldüğünde ameli kesilir; ancak üç şey hariç: sürekli sadaka, faydalanılan ilim ya da kendisine dua eden hayırlı evlat.",
-    "s1Src": "Peygamber ﷺ · Müslim 1631",
-    "s2": "Sadaka malı eksiltmez.",
-    "s2Src": "Peygamber ﷺ · Müslim 2588",
-    "s3": "Sizin en hayırlınız, Kur'an'ı öğrenen ve öğretendir.",
-    "s3Src": "Peygamber ﷺ · Buhârî 5027",
-    "s4": "Kim bir hayra vesile olursa, onu yapan kimsenin sevabı gibi sevap alır.",
-    "s4Src": "Peygamber ﷺ · Müslim 1893",
-    "s5": "Allah şöyle buyurur: Ey Âdemoğlu, infak et ki Ben de sana infak edeyim.",
-    "s5Src": "Peygamber ﷺ · Buhârî 5352, Müslim 993"
   }
 }
