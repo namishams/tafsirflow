@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import SurahBrowser from "@/components/SurahBrowser";
 import CountUp from "@/components/CountUp";
-import DonateCTA from "@/components/DonateCTA";
 import { Divider } from "@/components/Ornaments";
 import { QuranInlay, QuranShamsa } from "@/components/art/QuranArt";
 import { getChapters } from "@/lib/quran";
@@ -62,7 +61,6 @@ export default async function QuranPage({ params }: { params: Promise<{ locale: 
       <div className="mx-auto w-full min-w-0 max-w-6xl px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
         <SurahBrowser chapters={chapters} />
         <Divider className="mt-14" />
-        <DonateCTA variant="slim" className="mt-10" />
       </div>
     </main>
   );

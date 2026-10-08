@@ -6,7 +6,6 @@ import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText } from "@/lib/
 import { abs, pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
 import { CalligraphyDraw } from "@/components/Ornaments";
-import DonateCTA from "@/components/DonateCTA";
 import { QuranSeal } from "@/components/art/QuranArt";
 
 const C = {
@@ -68,7 +67,6 @@ export default async function RecitersPage({ params }: { params: Promise<{ local
             );
           })}
         </ol>
-        <DonateCTA variant="slim" className="mt-12" />
         </div>
       </section>
       <MoreTiles keys={["radio", "shams", "tajweed", "courses"]} />

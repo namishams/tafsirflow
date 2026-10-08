@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import JsonLd from "@/components/JsonLd";
 import HijriCalendar from "@/components/HijriCalendar";
-import DonateCTA from "@/components/DonateCTA";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { MoreTiles } from "@/components/PosterTiles";
 import { calText } from "@/lib/hijri";
@@ -35,7 +34,6 @@ export default async function CalendarPage({ params }: { params: Promise<{ local
       </section>
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-5">
         <HijriCalendar />
-        <DonateCTA variant="slim" className="mt-12" />
       </div>
       <MoreTiles keys={["prayer", "islam", "khatm", "salah"]} />
     </div>

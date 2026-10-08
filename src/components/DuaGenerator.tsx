@@ -7,7 +7,6 @@ import { SUNNAH_DUAS, type SunnahDua } from "@/lib/sunnahDuas";
 import { SUNNAH_DUAS_2 } from "@/lib/sunnahDuas2";
 import { Rosette } from "./Ornaments";
 import { useConfig } from "@/lib/config";
-import DonateCTA from "./DonateCTA";
 
 type QuranDua = { key: string; ar: string; tr: string };
 const ALL_SUNNAH: SunnahDua[] = [...SUNNAH_DUAS, ...SUNNAH_DUAS_2];
@@ -164,7 +163,6 @@ export default function DuaGenerator() {
               <Link href="/duas" className="mt-4 inline-flex text-sm font-semibold text-accent hover:underline">{t("allDuas")}</Link>
             </section>
           )}
-          <DonateCTA variant="slim" className="mt-10" />
         </div>
       )}
     </div>

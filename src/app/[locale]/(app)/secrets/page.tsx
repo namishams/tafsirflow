@@ -4,7 +4,6 @@ import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import WordCounter from "@/components/WordCounter";
 import { MoreTiles } from "@/components/PosterTiles";
-import DonateCTA from "@/components/DonateCTA";
 import { secretsContent, type Verdict } from "@/lib/secrets/content";
 import { getVerseByKey } from "@/lib/quran";
 import { abs, pageMeta } from "@/lib/site";
@@ -193,7 +192,6 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-5 pt-12"><DonateCTA variant="slim" /></div>
       <MoreTiles keys={["shams", "islam", "arabic", "radio"]} className="pt-12" />
     </div>
   );

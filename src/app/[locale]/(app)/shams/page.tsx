@@ -11,7 +11,6 @@ import { MoreTiles } from "@/components/PosterTiles";
 import { IslamArcadeLine, IslamBreak, IslamCorners, IslamNum, IslamRain, IslamStarMark, starPath } from "@/components/art/IslamArt";
 import { IslamStepIcon, IslamSun, STEP_AR } from "@/components/art/IslamShams";
 import IslamShamsDemo from "@/components/art/IslamShamsDemo";
-import DonateCTA from "@/components/DonateCTA";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -116,7 +115,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "HowTo", name: c.heroTitle, description: c.heroLead, author: { "@type": "Person", name: "Nami Shams" }, url: abs(`/${locale}/shams`), totalTime: "PT4M",
+      { "@type": "HowTo", name: c.heroTitle, description: c.heroLead, author: { "@type": "Organization", name: "Quran Masterclass" }, url: abs(`/${locale}/shams`), totalTime: "PT4M",
         step: c.steps.map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: t(`s${i + 1}`), text: `${s.what} ${s.why}` })) },
       { "@type": "FAQPage", mainEntity: c.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ],
@@ -503,7 +502,6 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
           <Link href="/surah/1?shams=1" className="btn-gold mt-9 inline-flex h-12 items-center rounded-full px-7 text-[15px] font-bold">{t("cta")}</Link>
         </div>
       </section>
-      <div className="mx-auto max-w-6xl px-5 pt-12"><DonateCTA variant="slim" /></div>
       <MoreTiles keys={["courses", "plan", "map", "arabic"]} className="pt-12" />
     </div>
   );

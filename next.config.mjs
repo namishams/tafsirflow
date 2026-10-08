@@ -45,6 +45,10 @@ export default withNextIntl({
     return config;
   },
   // Android app ↔ domain verification (see src/app/api/assetlinks/route.ts)
+  // the support page was removed (2026-10): old links and search results land on the home page
+  async redirects() {
+    return [{ source: "/:locale(de|en|ar|fr|es|zh|id|ms|fa|tr|ru|ur|bn|ps)/support", destination: "/:locale", permanent: true }];
+  },
   async rewrites() {
     return [{ source: "/.well-known/assetlinks.json", destination: "/api/assetlinks" }];
   },

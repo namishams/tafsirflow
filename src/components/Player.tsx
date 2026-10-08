@@ -9,7 +9,6 @@ import AuthGate from "./AuthGate";
 import SocialBar from "./SocialBar";
 import SurahPicker from "./SurahPicker";
 import { Ink, Medallion, Rosette, SurahBanner } from "./Ornaments";
-import DonateCTA from "./DonateCTA";
 import ReciteCheck from "./ReciteCheck";
 import SessionBar from "./SessionBar";
 import { completeItem, itemUrl } from "@/lib/session";
@@ -1050,7 +1049,6 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
           </ol>
           )}
           {showDebug && <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>}
-          <DonateCTA variant="slim" className="mt-10" />
         </main>
 
         {!kids && <aside className="sticky top-20 my-5 hidden max-h-[calc(100vh-6rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">

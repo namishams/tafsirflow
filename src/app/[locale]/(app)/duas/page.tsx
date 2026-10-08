@@ -8,7 +8,6 @@ import SunnahDuas from "@/components/SunnahDuas";
 import { pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
 import { ArrowNext } from "@/components/Icons";
-import DonateCTA from "@/components/DonateCTA";
 import { PracticeHero, PracticeStar } from "@/components/art/PracticeArt";
 
 export const revalidate = 86400;
@@ -67,7 +66,6 @@ export default async function DuasPage({ params }: { params: Promise<{ locale: s
         </section>
       ))}
       <p className="mt-12 max-w-2xl text-sm leading-relaxed text-muted">{t("note")}</p>
-      <div className="mt-10"><DonateCTA variant="slim" /></div>
     </main>
     <MoreTiles keys={["salah", "prayer", "islam", "radio"]} />
     </>

@@ -42,7 +42,7 @@ export default async function SiteFooter() {
         <div className="mx-auto max-w-6xl px-5 py-7 text-center text-[13px] leading-relaxed text-muted">
           <p className="mx-auto max-w-2xl"><span className="font-semibold text-ink">{t("free.title")}</span> {t("free.body")}</p>
           <p className="mt-3 flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-            <span>© {year} Quran Masterclass · Nami Shams</span>
+            <span>© {year} Quran Masterclass</span>
             <span aria-hidden className="hidden sm:inline">·</span>
             <MadeInDubai />
           </p>

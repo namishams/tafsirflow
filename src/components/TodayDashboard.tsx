@@ -19,7 +19,6 @@ import Heatmap from "./Heatmap";
 import RewardsCard from "./RewardsCard";
 import PosterTiles from "./PosterTiles";
 import { IconFlame } from "./Icons";
-import DonateCTA from "./DonateCTA";
 import { CalligraphyDraw, Rosette } from "./Ornaments";
 import { HomeCorners, HomeRain, HomeRing, HomeStar, HomeVerse, StarGlyph } from "./art/HomeOrnaments";
 
@@ -197,7 +196,6 @@ export default function TodayDashboard() {
           <Link href="/how" className="relative mt-3 inline-block text-[14px] font-bold text-accent hover:underline">{t("howCta")} <span className="inline-block rtl:-scale-x-100">→</span></Link>
         </section>
 
-        <DonateCTA variant="slim" className="mt-6" />
 
         {me === null && (
           <section className="hm-card mt-6 flex flex-wrap items-center justify-between gap-4 p-5">

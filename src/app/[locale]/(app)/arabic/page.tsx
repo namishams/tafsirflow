@@ -8,7 +8,6 @@ import { PracticeStar, PracticeStarNum, PracticeWindow } from "@/components/art/
 import { PracticeAlphabetRing, PracticeLetterSheet } from "@/components/art/PracticeAlphabet";
 import { abs, pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
-import DonateCTA from "@/components/DonateCTA";
 
 const C = {
   de: {
@@ -244,7 +243,6 @@ export default async function ArabicPage({ params }: { params: Promise<{ locale:
           </div>
         </div>
       </section>
-      <div className="mx-auto max-w-4xl px-5 pt-12"><DonateCTA variant="slim" /></div>
       <MoreTiles keys={["salah", "tajweed", "vocab", "shams"]} />
     </div>
   );

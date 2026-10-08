@@ -294,11 +294,6 @@ a.group:active, .btn-gold:active { transform: scale(.985); }
 @keyframes turnFill { to { width: 100%; } }
 @keyframes eqBar { 0%, 100% { height: 4px; } 50% { height: 14px; } }
 
-/* donation lantern: a soft halo breathes, the light inside flickers very gently */
-.lantern-halo { animation: lanternHalo 5s ease-in-out infinite; transform-origin: 50% 52%; }
-@keyframes lanternHalo { 0%, 100% { opacity: .14; transform: scale(.96); } 50% { opacity: .26; transform: scale(1.04); } }
-.lantern-light { animation: lanternFlicker 3.2s ease-in-out infinite; }
-@keyframes lanternFlicker { 0%, 100% { opacity: .95; } 45% { opacity: .78; } 70% { opacity: .9; } }
 
 /* ---------- Islamic art everywhere ---------- */
 /* a very fine girih tessellation in the page background (only where no section paints its own background) */
@@ -344,7 +339,7 @@ main .text-center h2.font-display::after, main h2.font-display.text-center::afte
 
 @media (prefers-reduced-motion: reduce) {
   .girih::after, .callig-ring, .rise { animation: none; }
-  .page-in, .skyline .twinkle, .heart-pop, .heart-burst, .play-rosette-on, .eq-on i, .lantern-halo, .lantern-light { animation: none; }
+  .page-in, .skyline .twinkle, .heart-pop, .heart-burst, .play-rosette-on, .eq-on i { animation: none; }
   .btn-gold::after { display: none; }
   .points-pop, .sticker-pop, .sticker-rays, .sticker-shine::after { animation: none; }
   .side-callig text { animation: none; stroke: none; fill-opacity: 0; }
