@@ -12,7 +12,7 @@ Namun begitu banyak dari kita memiliki kisah yang sama: kita mencintai Quran, te
 
 Sementara itu, jutaan orang mempelajari bahasa baru setiap hari – di ponsel mereka, di kereta, lima menit sebelum tidur. Mereka bertahan karena aplikasinya dibangun dengan cerdas: langkah-langkah kecil, pengulangan pada saat yang tepat, kemajuan yang terlihat.
 
-Quran Masterclass lahir dari kontras itu. **Nami Shams** mendirikan platform ini di Dubai dengan satu pertanyaan sederhana: bagaimana jika belajar Quran dibangun sebaik aplikasi belajar terbaik di dunia – tetapi dengan rasa hormat, kedalaman, dan kesungguhan yang layak bagi Quran?
+Quran Masterclass lahir dari kontras itu. Kami mendirikan platform ini di Dubai dengan satu pertanyaan sederhana: bagaimana jika belajar Quran dibangun sebaik aplikasi belajar terbaik di dunia – tetapi dengan rasa hormat, kedalaman, dan kesungguhan yang layak bagi Quran?
 
 ## Mengapa tidak ada yang lebih penting
 
@@ -39,7 +39,7 @@ Apa yang tidak kami lakukan: kami tidak menciptakan penafsiran kami sendiri. Tek
   freeTitle: "Gratis – dan mengapa akan tetap begitu",
   free: `Quran Masterclass tidak memungutmu biaya apa pun. Tidak ada masa uji coba yang berakhir setelah tujuh hari. Tidak ada iklan di antara dua ayat. Tidak ada fitur yang baru terbuka setelah membayar.
 
-Platform ini **didanai secara pribadi oleh Nami Shams** – server, pengembangan, audio, semuanya. Ia dibangun karena Allah, dengan harapan agar setiap ayat yang dipelajari seseorang di sini menjadi amal kebaikan yang terus mengalir (sedekah jariyah).
+Platform ini **didanai secara pribadi** – server, pengembangan, audio, semuanya. Ia dibangun karena Allah, dengan harapan agar setiap ayat yang dipelajari seseorang di sini menjadi amal kebaikan yang terus mengalir (sedekah jariyah).
 
 Jika kamu ingin membantu, kamu bisa: dengan masukan, laporan kesalahan, terjemahan – dan dengan doa.`,
   dubaiEyebrow: "Dubai dan Quran",
@@ -69,14 +69,14 @@ Kami berterima kasih kepada **Yang Mulia Sheikh Mohammed bin Rashid Al Maktoum**
 Kami berterima kasih kepada **Yang Mulia Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum**, Putra Mahkota Dubai, yang turut membentuk masa depan kota ini, dan kepada **Yang Mulia Sheikh Mohamed bin Zayed Al Nahyan**, Presiden Uni Emirat Arab. Dan kami mengenang dengan penuh rasa syukur **Sheikh Zayed bin Sultan Al Nahyan** – semoga Allah merahmatinya – bapak pendiri Emirat, yang menjadikan iman, kedermawanan, dan keterbukaan sebagai fondasi negeri ini.
 
 Rumah yang aman, toleransi antara orang-orang dari seluruh dunia, penghormatan terhadap iman, dan lingkungan yang mendorong inovasi – inilah kondisi di mana proyek seperti ini dapat lahir. Semoga Allah membalas kebaikan mereka, menganugerahkan kesehatan dan kebijaksanaan kepada mereka, serta melindungi negeri ini dan rakyatnya.`,
-  letterTitle: "Beberapa kata dari pendiri",
-  letter: `Saya berharap tidak ada lagi orang yang harus berkata: "Saya ingin sekali belajar Quran, tetapi saya tidak tahu caranya."
+  letterTitle: "Beberapa kata dari kami",
+  letter: `Kami berharap tidak ada lagi orang yang harus berkata: "Saya ingin sekali belajar Quran, tetapi saya tidak tahu caranya."
 
-Saya berharap seorang anak di Hamburg, seorang nenek di Sarajevo, seorang mahasiswa di Jakarta, dan seorang sopir taksi di Dubai semuanya memiliki kesempatan yang sama – gratis, dalam bahasa mereka, sesuai tempo mereka. Agar mereka melangkah sedikit lebih jauh setiap hari. Dan agar suatu hari mereka membaca dalam shalat sebuah surah yang mereka pelajari di sini.
+Kami berharap seorang anak di Hamburg, seorang nenek di Sarajevo, seorang mahasiswa di Jakarta, dan seorang sopir taksi di Dubai semuanya memiliki kesempatan yang sama – gratis, dalam bahasa mereka, sesuai tempo mereka. Agar mereka melangkah sedikit lebih jauh setiap hari. Dan agar suatu hari mereka membaca dalam shalat sebuah surah yang mereka pelajari di sini.
 
-Jika platform ini membantumu, saya hanya meminta satu hal: doakanlah semua orang yang telah berkontribusi di dalamnya – dan ceritakan kepada orang lain yang ingin belajar.`,
-  signature: "Nami Shams",
-  signatureRole: "Pendiri Quran Masterclass · Dubai",
+Jika platform ini membantumu, kami hanya meminta satu hal: doakanlah semua orang yang telah berkontribusi di dalamnya – dan ceritakan kepada orang lain yang ingin belajar.`,
+  signature: "Quran Masterclass",
+  signatureRole: "Dubai",
   contactTitle: "Tulis kepada kami",
   contact: "Pertanyaan, ide, kesalahan dalam teks, keinginan akan sumber tafsir atau bahasa baru: tulis ke **info@quranmasterclass.com** atau gunakan [halaman masukan](/feedback) kami. Apa yang sedang kami bangun tercantum di [catatan perubahan](/changelog).",
 };

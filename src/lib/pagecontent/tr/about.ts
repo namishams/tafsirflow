@@ -12,7 +12,7 @@ Yine de birçoğumuzun hikâyesi aynıdır: Kur'an'ı severiz ama onu niyet etti
 
 Bu arada milyonlarca insan her gün yeni bir dil öğreniyor – telefonlarında, metroda, uyumadan beş dakika önce. Devam ederler, çünkü uygulamalar akıllıca tasarlanmıştır: küçük adımlar, doğru anda tekrarlar, görünür ilerleme.
 
-Quran Masterclass bu tezattan doğdu. **Nami Shams** platformu Dubai'de tek bir basit soruyla kurdu: Kur'an öğrenmek, dünyanın en iyi öğrenme uygulamaları kadar iyi tasarlanmış olsaydı – ama Kur'an'ın hak ettiği saygı, derinlik ve ciddiyetle?
+Quran Masterclass bu tezattan doğdu. Platformu Dubai'de tek bir basit soruyla kurduk: Kur'an öğrenmek, dünyanın en iyi öğrenme uygulamaları kadar iyi tasarlanmış olsaydı – ama Kur'an'ın hak ettiği saygı, derinlik ve ciddiyetle?
 
 ## Neden hiçbir şey daha önemli değil
 
@@ -39,7 +39,7 @@ Yapmadığımız şey: kendi yorumumuzu uydurmayız. Kur'an metni, mealler ve te
   freeTitle: "Ücretsiz – ve neden öyle kalacak",
   free: `Quran Masterclass sana hiçbir şeye mal olmaz. Yedi gün sonra biten bir deneme süresi yok. İki ayet arasında reklam yok. Yalnızca ödeme sonrası açılan bir özellik yok.
 
-Platform **Nami Shams tarafından özel olarak finanse edilmektedir** – sunucular, geliştirme, ses kayıtları, her şey. Allah rızası için, burada birinin öğrendiği her ayetin sadaka-i câriye olması umuduyla inşa edildi.
+Platform **özel olarak finanse edilmektedir** – sunucular, geliştirme, ses kayıtları, her şey. Allah rızası için, burada birinin öğrendiği her ayetin sadaka-i câriye olması umuduyla inşa edildi.
 
 Yardım etmek istersen edebilirsin: geri bildirimle, hata bildirimleriyle, çevirilerle – ve duayla.`,
   dubaiEyebrow: "Dubai ve Kur'an",
@@ -69,14 +69,14 @@ BAE Devlet Başkan Yardımcısı, Başbakanı ve Dubai Emiri **Ekselansları Şe
 Bu şehrin geleceğini şekillendirmeye yardım eden Dubai Veliaht Prensi **Ekselansları Şeyh Hamdan bin Muhammed bin Raşid Al Maktum**'a ve Birleşik Arap Emirlikleri Devlet Başkanı **Ekselansları Şeyh Muhammed bin Zayed Al Nahyan**'a teşekkür ederiz. Ve imanı, cömertliği ve açıklığı bu ülkenin temeli yapan Emirlikler'in kurucu babası **Şeyh Zayed bin Sultan Al Nahyan**'ı – Allah ona rahmet etsin – şükranla anıyoruz.
 
 Güvenli bir yuva, dünyanın dört bir yanından gelen insanlar arasında hoşgörü, imana saygı ve yeniliği teşvik eden bir ortam – böyle bir projenin doğabileceği şartlar bunlardır. Allah onlardan razı olsun, onlara sağlık ve hikmet versin, bu ülkeyi ve halkını korusun.`,
-  letterTitle: "Kurucudan birkaç söz",
-  letter: `Dilerim ki hiç kimse bir daha “Kur'an'ı öğrenmeyi çok isterdim ama nasıl yapacağımı bilmiyorum” demek zorunda kalmasın.
+  letterTitle: "Bizden birkaç söz",
+  letter: `Dileriz ki hiç kimse bir daha “Kur'an'ı öğrenmeyi çok isterdim ama nasıl yapacağımı bilmiyorum” demek zorunda kalmasın.
 
-Dilerim ki Hamburg'daki bir çocuk, Saraybosna'daki bir nine, Cakarta'daki bir öğrenci ve Dubai'deki bir taksi şoförü aynı şansa sahip olsun – ücretsiz, kendi dillerinde, kendi tempolarında. Her gün biraz daha ilerlesinler. Ve bir gün namazda, burada öğrendikleri bir sureyi okusunlar.
+Dileriz ki Hamburg'daki bir çocuk, Saraybosna'daki bir nine, Cakarta'daki bir öğrenci ve Dubai'deki bir taksi şoförü aynı şansa sahip olsun – ücretsiz, kendi dillerinde, kendi tempolarında. Her gün biraz daha ilerlesinler. Ve bir gün namazda, burada öğrendikleri bir sureyi okusunlar.
 
-Bu platform sana yardımcı oluyorsa senden tek bir şey istiyorum: ona katkıda bulunan herkes için dua et – ve öğrenmek isteyen bir başkasına da anlat.`,
-  signature: "Nami Shams",
-  signatureRole: "Quran Masterclass kurucusu · Dubai",
+Bu platform sana yardımcı oluyorsa senden tek bir şey istiyoruz: ona katkıda bulunan herkes için dua et – ve öğrenmek isteyen bir başkasına da anlat.`,
+  signature: "Quran Masterclass",
+  signatureRole: "Dubai",
   contactTitle: "Bize yaz",
   contact: "Sorular, fikirler, metinde bir hata, yeni tefsir kaynakları veya diller için istekler: **info@quranmasterclass.com** adresine yaz ya da [geri bildirim sayfamızı](/feedback) kullan. İnşa ettiklerimiz [değişiklik günlüğünde](/changelog) listelenir.",
 };

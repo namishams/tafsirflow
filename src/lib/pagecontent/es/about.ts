@@ -12,7 +12,7 @@ Y, sin embargo, muchos de nosotros compartimos la misma historia: amamos el Cor�
 
 Mientras tanto, millones de personas aprenden un nuevo idioma cada día – en el móvil, en el metro, cinco minutos antes de dormir. Siguen adelante porque las aplicaciones están bien pensadas: pasos pequeños, repasos en el momento adecuado, progreso visible.
 
-Quran Masterclass nació de ese contraste. **Nami Shams** fundó la plataforma en Dubái con una pregunta sencilla: ¿y si aprender el Corán estuviera tan bien construido como las mejores aplicaciones de aprendizaje del mundo – pero con el respeto, la profundidad y la seriedad que el Corán merece?
+Quran Masterclass nació de ese contraste. Fundamos la plataforma en Dubái con una pregunta sencilla: ¿y si aprender el Corán estuviera tan bien construido como las mejores aplicaciones de aprendizaje del mundo – pero con el respeto, la profundidad y la seriedad que el Corán merece?
 
 ## Por qué nada importa más
 
@@ -39,7 +39,7 @@ Lo que no hacemos: no inventamos nuestra propia interpretación. El texto del Co
   freeTitle: "Gratis – y por qué seguirá siéndolo",
   free: `Quran Masterclass no te cuesta nada. Ninguna prueba que termine a los siete días. Ningún anuncio entre dos aleyas. Ninguna función que solo se desbloquee tras pagar.
 
-La plataforma está **financiada de forma privada por Nami Shams** – servidores, desarrollo, audio, todo. Se construye por la causa de Allah, con la esperanza de que cada aleya que alguien aprenda aquí se convierta en una buena obra continua (sadaqa yariya).
+La plataforma está **financiada de forma privada** – servidores, desarrollo, audio, todo. Se construye por la causa de Allah, con la esperanza de que cada aleya que alguien aprenda aquí se convierta en una buena obra continua (sadaqa yariya).
 
 Si quieres ayudar, puedes hacerlo: con comentarios, avisos de errores, traducciones – y con du'a.`,
   dubaiEyebrow: "Dubái y el Corán",
@@ -69,14 +69,14 @@ Damos las gracias a **Su Alteza el Jeque Mohammed bin Rashid Al Maktoum**, Vicep
 Damos las gracias a **Su Alteza el Jeque Hamdan bin Mohammed bin Rashid Al Maktoum**, Príncipe Heredero de Dubái, que contribuye a dar forma al futuro de esta ciudad, y a **Su Alteza el Jeque Mohamed bin Zayed Al Nahyan**, Presidente de los Emiratos Árabes Unidos. Y recordamos con gratitud al **Jeque Zayed bin Sultan Al Nahyan** – que Allah tenga misericordia de él –, padre fundador de los Emiratos, que hizo de la fe, la generosidad y la apertura los cimientos de este país.
 
 Un hogar seguro, la tolerancia entre personas de todo el mundo, el respeto por la fe y un entorno que fomenta la innovación – estas son las condiciones en las que puede nacer un proyecto como este. Que Allah los recompense, les conceda salud y sabiduría, y proteja este país y a su gente.`,
-  letterTitle: "Unas palabras del fundador",
-  letter: `Deseo que nadie tenga que volver a decir nunca: "Me encantaría aprender el Corán, pero no sé cómo."
+  letterTitle: "Unas palabras de nuestra parte",
+  letter: `Deseamos que nadie tenga que volver a decir nunca: "Me encantaría aprender el Corán, pero no sé cómo."
 
-Deseo que un niño en Hamburgo, una abuela en Sarajevo, una estudiante en Yakarta y un taxista en Dubái tengan todos la misma oportunidad – gratis, en su idioma, a su ritmo. Que avancen un poco más cada día. Y que un día reciten en la oración una sura que aprendieron aquí.
+Deseamos que un niño en Hamburgo, una abuela en Sarajevo, una estudiante en Yakarta y un taxista en Dubái tengan todos la misma oportunidad – gratis, en su idioma, a su ritmo. Que avancen un poco más cada día. Y que un día reciten en la oración una sura que aprendieron aquí.
 
-Si esta plataforma te ayuda, solo te pido una cosa: haz du'a por todos los que han contribuido a ella – y cuéntaselo a alguien más que quiera aprender.`,
-  signature: "Nami Shams",
-  signatureRole: "Fundador de Quran Masterclass · Dubái",
+Si esta plataforma te ayuda, solo te pedimos una cosa: haz du'a por todos los que han contribuido a ella – y cuéntaselo a alguien más que quiera aprender.`,
+  signature: "Quran Masterclass",
+  signatureRole: "Dubái",
   contactTitle: "Escríbenos",
   contact: "Preguntas, ideas, un error en el texto, deseos de nuevas fuentes de tafsir o idiomas: escribe a **info@quranmasterclass.com** o usa nuestra [página de comentarios](/feedback). Lo que construimos aparece en las [novedades](/changelog).",
 };

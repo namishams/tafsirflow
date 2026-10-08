@@ -34,7 +34,7 @@ const de: ShamsContent = {
   heroKicker: "Quran Masterclass · Lernmethode",
   heroTitle: "Die Shams-Methode",
   heroLead: "Ein Weg, den Koran so zu lernen, dass er bleibt: Jeder Vers wird gehört, gesprochen, verstanden, erklärt, aus dem Gedächtnis abgerufen und mit deinem Leben verbunden – in sieben Schritten und etwa vier Minuten. Was die Sprachlern- und Gedächtnisforschung über das Behalten weiß, verbunden mit der Art, wie Koranlehrer seit Jahrhunderten unterrichten.",
-  heroBy: "Entwickelt von Nami Shams in Dubai",
+  heroBy: "In Dubai entwickelt",
   heroFacts: [
     { n: "7", l: "Schritte für jeden Vers" },
     { n: "≈ 4", l: "Minuten für einen neuen Vers" },
@@ -55,7 +55,7 @@ const de: ShamsContent = {
   finalPoints: ["Nichts vorbereiten – die Plattform führt dich durch jeden Schritt.", "Lautschrift und Bedeutung stehen unter jedem Wort.", "Danach plant das Gedächtnismodell deine Wiederholungen."],
   name: {
     title: "Warum „Shams“?",
-    body: "„Shams“ – شمس – ist das arabische Wort für die Sonne. Es ist zugleich der Familienname von Nami Shams, der die Methode entwickelt hat. Und es beschreibt, wie Lernen hier gemeint ist: Die Sonne geht jeden Morgen auf, nicht einmal im Jahr mit voller Kraft. Sie ist pünktlich, geduldig und beständig – und gerade deshalb lässt sie alles wachsen. So soll auch der Koran in dein Leben kommen: ein wenig Licht jeden Tag, zur richtigen Zeit, bis aus vielen Tagen ein ganzes Leben mit dem Wort Allahs wird. Der Koran selbst schwört bei der Sonne und nennt sie ein Licht, das Allah gemacht hat – eine Erinnerung daran, dass alles Licht von Ihm kommt, auch das Licht des Wissens.",
+    body: "„Shams“ – شمس – ist das arabische Wort für die Sonne. Und es beschreibt, wie Lernen hier gemeint ist: Die Sonne geht jeden Morgen auf, nicht einmal im Jahr mit voller Kraft. Sie ist pünktlich, geduldig und beständig – und gerade deshalb lässt sie alles wachsen. So soll auch der Koran in dein Leben kommen: ein wenig Licht jeden Tag, zur richtigen Zeit, bis aus vielen Tagen ein ganzes Leben mit dem Wort Allahs wird. Der Koran selbst schwört bei der Sonne und nennt sie ein Licht, das Allah gemacht hat – eine Erinnerung daran, dass alles Licht von Ihm kommt, auch das Licht des Wissens.",
     verses: [
       { ar: "وَالشَّمْسِ وَضُحَاهَا", ref: "91:1", meaning: "Bei der Sonne und ihrer Morgenhelle." },
       { ar: "هُوَ الَّذِي جَعَلَ الشَّمْسَ ضِيَاءً وَالْقَمَرَ نُورًا", ref: "10:5", meaning: "Er ist es, der die Sonne zu einer Leuchte und den Mond zu einem Licht gemacht hat." },
@@ -144,7 +144,7 @@ const de: ShamsContent = {
   deepTitle: "Die Methode ausführlich erklärt",
   deepLead: "Der vollständige Hintergrund: woher jeder Schritt kommt, wie er wirkt und wie du ihn in deinen Alltag bringst.",
   faq: [
-    { q: "Was ist die Shams-Methode?", a: "Eine Lernmethode in sieben Schritten pro Vers, entwickelt von Nami Shams: hören, rückwärts aufbauen, Wort für Wort, Bedeutung und Eselsbrücken, Tafsir, verblassende Hinweise und Nachdenken – mit einem Gedächtnismodell, das die Wiederholungen plant. Sie ist kostenlos bei Quran Masterclass." },
+    { q: "Was ist die Shams-Methode?", a: "Eine Lernmethode in sieben Schritten pro Vers: hören, rückwärts aufbauen, Wort für Wort, Bedeutung und Eselsbrücken, Tafsir, verblassende Hinweise und Nachdenken – mit einem Gedächtnismodell, das die Wiederholungen plant. Sie ist kostenlos bei Quran Masterclass." },
     { q: "Was ist daran neu?", a: "Die einzelnen Bausteine stammen aus der Sprachlern- und Gedächtnisforschung und der Hifz-Tradition. Neu ist ihre feste Reihenfolge pro Vers und die Umsetzung mit exakten Wortzeiten: der Rückwärts-Aufbau ab jedem Wort und das stufenweise Ausblenden bis zu den Anfangsbuchstaben – kombiniert mit einem persönlichen Wiederholungsplan." },
     { q: "Wie viele Verse sollte ich pro Tag lernen?", a: "Einsteiger ein bis drei neue Verse am Tag plus die fällige Wiederholung, mit Übung drei bis fünf. Im 365-Tage-Plan wächst die Menge Woche für Woche. Die richtige Menge ist die, die du jeden Tag durchhältst." },
     { q: "Muss ich Arabisch können?", a: "Nein. Lautschrift und Wort-für-Wort-Bedeutung helfen dir ab dem ersten Vers. Mit der Zeit erkennst du Buchstaben und Wörter von selbst – der Vokabeltrainer beschleunigt das." },
@@ -161,7 +161,7 @@ const en: ShamsContent = {
   heroKicker: "Quran Masterclass · learning method",
   heroTitle: "The Shams Method",
   heroLead: "A way to learn the Quran so that it stays: every verse is heard, spoken, understood, explained, recalled from memory and connected to your life – in seven steps and about four minutes. What language-learning and memory research knows about remembering, joined with the way Quran teachers have taught for centuries.",
-  heroBy: "Developed by Nami Shams in Dubai",
+  heroBy: "Developed in Dubai",
   heroFacts: [
     { n: "7", l: "steps for every verse" },
     { n: "≈ 4", l: "minutes for a new verse" },
@@ -182,7 +182,7 @@ const en: ShamsContent = {
   finalPoints: ["Nothing to prepare – the platform guides you through every step.", "Transliteration and meaning appear under every word.", "Afterwards the memory model plans your reviews."],
   name: {
     title: "Why “Shams”?",
-    body: "“Shams” – شمس – is the Arabic word for the sun. It is also the family name of Nami Shams, who developed the method. And it describes how learning is meant here: the sun rises every morning, not once a year with full force. It is punctual, patient and steady – and that is exactly why it makes everything grow. This is how the Quran should enter your life: a little light every day, at the right time, until many days become a whole life with the word of Allah. The Quran itself swears by the sun and calls it a light that Allah has made – a reminder that all light comes from Him, the light of knowledge too.",
+    body: "“Shams” – شمس – is the Arabic word for the sun. And it describes how learning is meant here: the sun rises every morning, not once a year with full force. It is punctual, patient and steady – and that is exactly why it makes everything grow. This is how the Quran should enter your life: a little light every day, at the right time, until many days become a whole life with the word of Allah. The Quran itself swears by the sun and calls it a light that Allah has made – a reminder that all light comes from Him, the light of knowledge too.",
     verses: [
       { ar: "وَالشَّمْسِ وَضُحَاهَا", ref: "91:1", meaning: "By the sun and its morning brightness." },
       { ar: "هُوَ الَّذِي جَعَلَ الشَّمْسَ ضِيَاءً وَالْقَمَرَ نُورًا", ref: "10:5", meaning: "It is He who made the sun a shining radiance and the moon a light." },
@@ -271,7 +271,7 @@ const en: ShamsContent = {
   deepTitle: "The method explained in depth",
   deepLead: "The full background: where each step comes from, how it works and how to bring it into your daily life.",
   faq: [
-    { q: "What is the Shams Method?", a: "A learning method with seven steps per verse, developed by Nami Shams: listen, build up backwards, word by word, meaning and memory hooks, tafsir, fading cues and reflection – with a memory model that plans the reviews. It is free at Quran Masterclass." },
+    { q: "What is the Shams Method?", a: "A learning method with seven steps per verse: listen, build up backwards, word by word, meaning and memory hooks, tafsir, fading cues and reflection – with a memory model that plans the reviews. It is free at Quran Masterclass." },
     { q: "What is new about it?", a: "The individual building blocks come from language-learning and memory research and from the hifz tradition. New is their fixed order per verse and the implementation with exact word timings: building up backwards from any word and fading the text in stages down to the first letters – combined with a personal review plan." },
     { q: "How many verses should I learn per day?", a: "Beginners one to three new verses a day plus the review that is due, with practice three to five. In the 365-day plan the amount grows week by week. The right amount is the one you can keep up every day." },
     { q: "Do I need to know Arabic?", a: "No. Transliteration and word-by-word meaning help you from the first verse. Over time you recognise letters and words on your own – the vocabulary trainer speeds this up." },

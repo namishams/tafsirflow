@@ -82,7 +82,7 @@ In the app, the tafsir of each verse appears next to the audio, always with the 
 
 Memorising is where many beginners give up – usually because they repeat a verse many times, feel confident, and find a week later that it has gone. Memory needs two things: **active recall** and **well-timed review**.
 
-This is why we developed the [Shams Method](/shams). Nami Shams designed it as a fixed path of seven short steps per verse:
+This is why we developed the [Shams Method](/shams). It is a fixed path of seven short steps per verse:
 
 1. **Listen** – hear the verse three times with your eyes on the text.
 2. **Build up backwards** – start with the last word, then the last two, and so on until the whole verse.
@@ -188,7 +188,7 @@ In der App erscheint der Tafsir zu jedem Vers direkt neben dem Audio, immer mit 
 
 Beim Auswendiglernen geben viele Anfänger auf. Meist liegt es daran, dass man einen Vers oft wiederholt, sich sicher fühlt – und eine Woche später ist er weg. Das Gedächtnis braucht zwei Dinge: **aktives Abrufen** und **gut getaktete Wiederholung**.
 
-Genau dafür gibt es die [Shams-Methode](/shams). Nami Shams hat sie als festen Weg aus sieben kurzen Schritten pro Vers entwickelt:
+Genau dafür gibt es die [Shams-Methode](/shams). Sie ist ein fester Weg aus sieben kurzen Schritten pro Vers:
 
 1. **Zuhören** – den Vers dreimal hören, die Augen auf dem Text.
 2. **Rückwärts aufbauen** – mit dem letzten Wort beginnen, dann die letzten zwei und so weiter bis zum ganzen Vers.
@@ -318,7 +318,7 @@ In Quran Masterclass, every verse you learn enters a review schedule. It comes b
 
 ## Learning a new verse: the Shams Method
 
-How you learn a verse in the first place matters as much as how you review it. The [Shams Method](/shams), developed by Nami Shams, takes every verse through seven short steps – about four minutes per verse:
+How you learn a verse in the first place matters as much as how you review it. The [Shams Method](/shams) takes every verse through seven short steps – about four minutes per verse:
 
 1. **Listen** three times while following the text. No translating yet.
 2. **Build up backwards.** Hear and repeat the last word, then the last two, then the last three – until the whole verse. Each repetition ends on familiar ground, which keeps the melody natural.
@@ -414,7 +414,7 @@ Bei Quran Masterclass kommt jeder gelernte Vers in einen Wiederholungsplan. Er e
 
 ## Einen neuen Vers lernen: die Shams-Methode
 
-Wie du einen Vers zum ersten Mal lernst, ist genauso wichtig wie das spätere Wiederholen. Die [Shams-Methode](/shams), entwickelt von Nami Shams, führt jeden Vers durch sieben kurze Schritte – etwa vier Minuten pro Vers:
+Wie du einen Vers zum ersten Mal lernst, ist genauso wichtig wie das spätere Wiederholen. Die [Shams-Methode](/shams) führt jeden Vers durch sieben kurze Schritte – etwa vier Minuten pro Vers:
 
 1. **Zuhören** – dreimal, die Augen auf dem Text. Noch nicht übersetzen.
 2. **Rückwärts aufbauen** – das letzte Wort hören und nachsprechen, dann die letzten zwei, dann drei, bis zum ganzen Vers. Jede Wiederholung endet auf vertrautem Boden, so bleibt die Melodie natürlich.
@@ -503,11 +503,11 @@ Manche Tage fühlen sich zäh an. Dann erinnere dich, warum du angefangen hast. 
     date: "2026-10-06",
     title_en: "The Shams Method: How It Works and Why",
     title_de: "Die Shams-Methode: So funktioniert sie und warum",
-    desc_en: "The Shams Method by Nami Shams: seven steps per verse built on learning science – listening first, backchaining, chunking, retrieval, spacing and reflection.",
-    desc_de: "Die Shams-Methode von Nami Shams: sieben Schritte pro Vers auf Basis der Lernforschung – erst hören, rückwärts aufbauen, abrufen, wiederholen, nachdenken.",
-    keywords_en: "Shams Method, Nami Shams, Quran memorization method, backchaining Quran, spaced repetition, retrieval practice",
-    keywords_de: "Shams-Methode, Nami Shams, Koran auswendig lernen Methode, Rückwärtsaufbau, Wiederholung, Abrufübung",
-    body_en: `The Shams Method is a way of learning the Quran verse by verse, developed by Nami Shams in Dubai. It brings together the hifz tradition and well-established findings from language learning and memory research into one fixed path: seven short steps per verse, about four minutes each, followed by spaced review.
+    desc_en: "The Shams Method: seven steps per verse built on learning science – listening first, backchaining, chunking, retrieval, spacing and reflection.",
+    desc_de: "Die Shams-Methode: sieben Schritte pro Vers auf Basis der Lernforschung – erst hören, rückwärts aufbauen, abrufen, wiederholen, nachdenken.",
+    keywords_en: "Shams Method, Quran memorization method, backchaining Quran, spaced repetition, retrieval practice",
+    keywords_de: "Shams-Methode, Koran auswendig lernen Methode, Rückwärtsaufbau, Wiederholung, Abrufübung",
+    body_en: `The Shams Method is a way of learning the Quran verse by verse, developed in Dubai. It brings together the hifz tradition and well-established findings from language learning and memory research into one fixed path: seven short steps per verse, about four minutes each, followed by spaced review.
 
 This article explains every step and the learning principle behind it. If you just want to try it, open [the Shams Method in the app](/shams) and start with [Al-Fatiha](/surah/1).
 
@@ -632,7 +632,7 @@ How much is right? Beginners: 1–3 new verses a day. With practice: 3–5. Inte
 ## Try it now
 
 Start with [Al-Fatiha](/surah/1), or [choose any surah](/quran). The method guides you through each step on screen, and it is completely free.`,
-    body_de: `Die Shams-Methode ist ein Weg, den Koran Vers für Vers zu lernen, entwickelt von Nami Shams in Dubai. Sie verbindet die Hifz-Tradition mit gut belegten Erkenntnissen aus Sprachlern- und Gedächtnisforschung zu einem festen Ablauf: sieben kurze Schritte pro Vers, jeweils etwa vier Minuten, gefolgt von Wiederholungen nach Plan.
+    body_de: `Die Shams-Methode ist ein in Dubai entwickelter Weg, den Koran Vers für Vers zu lernen. Sie verbindet die Hifz-Tradition mit gut belegten Erkenntnissen aus Sprachlern- und Gedächtnisforschung zu einem festen Ablauf: sieben kurze Schritte pro Vers, jeweils etwa vier Minuten, gefolgt von Wiederholungen nach Plan.
 
 Dieser Artikel erklärt jeden Schritt und das Lernprinzip dahinter. Wenn du es direkt ausprobieren möchtest, öffne [die Shams-Methode in der App](/shams) und beginne mit [Al-Fatiha](/surah/1).
 
@@ -760,9 +760,9 @@ Beginne mit [Al-Fatiha](/surah/1) oder [wähle eine beliebige Sure](/quran). Die
     faq: [
       {
         q_en: "Who developed the Shams Method?",
-        a_en: "The Shams Method was developed by Nami Shams in Dubai as the core learning path of Quran Masterclass.",
+        a_en: "The Shams Method was developed by Quran Masterclass in Dubai as the core learning path of the platform.",
         q_de: "Wer hat die Shams-Methode entwickelt?",
-        a_de: "Die Shams-Methode wurde von Nami Shams in Dubai als zentraler Lernweg von Quran Masterclass entwickelt.",
+        a_de: "Die Shams-Methode wurde von Quran Masterclass in Dubai als zentraler Lernweg der Plattform entwickelt.",
       },
       {
         q_en: "Why build a verse up backwards?",
@@ -1858,7 +1858,7 @@ A few things to know:
 - **One explanation often covers several verses.** Classical scholars sometimes explain a group of verses together. The app then shows which verses the commentary covers.
 - **Languages:** where no tafsir is available in your language yet, an English tafsir is shown.
 
-Tafsir is also step five of the [Shams Method](/shams), developed by Nami Shams. After listening, building up the verse and learning its word meanings, you read the classical explanation. Understanding why a verse was revealed and what it teaches makes it much easier to remember.
+Tafsir is also step five of the [Shams Method](/shams). After listening, building up the verse and learning its word meanings, you read the classical explanation. Understanding why a verse was revealed and what it teaches makes it much easier to remember.
 
 ## Tafsir and translation are not the same
 
@@ -1959,7 +1959,7 @@ Gut zu wissen:
 - **Eine Erklärung umfasst oft mehrere Verse.** Klassische Gelehrte erläutern manchmal eine Versgruppe gemeinsam. Die App zeigt dann an, welche Verse der Kommentar abdeckt.
 - **Sprachen:** Wo es in deiner Sprache noch keinen Tafsir gibt, wird ein englischer angezeigt. Für Deutsch sind bislang kaum klassische Tafsir-Werke frei verfügbar.
 
-Der Tafsir ist auch Schritt fünf der [Shams-Methode](/shams), entwickelt von Nami Shams. Nach dem Zuhören, dem Aufbau des Verses und den Wortbedeutungen liest du die klassische Erklärung. Wer versteht, warum ein Vers offenbart wurde und was er lehrt, behält ihn deutlich leichter.
+Der Tafsir ist auch Schritt fünf der [Shams-Methode](/shams). Nach dem Zuhören, dem Aufbau des Verses und den Wortbedeutungen liest du die klassische Erklärung. Wer versteht, warum ein Vers offenbart wurde und was er lehrt, behält ihn deutlich leichter.
 
 ## Tafsir und Übersetzung sind nicht dasselbe
 
@@ -2031,7 +2031,7 @@ Der Koran ist das Wort Allahs, und ihn zu erklären ist eine ernste Verantwortun
 
 ## The four parts of the routine
 
-This routine follows the daily structure of the [Shams Method](/shams), developed by Nami Shams. Every day has the same four parts.
+This routine follows the daily structure of the [Shams Method](/shams). Every day has the same four parts.
 
 ### 1. Review first (about 5 minutes)
 
@@ -2135,7 +2135,7 @@ Pick a time, open the next verse and begin with review. If you are new, our [com
 
 ## Die vier Teile der Routine
 
-Die Routine folgt dem Tagesablauf der [Shams-Methode](/shams), entwickelt von Nami Shams. Jeder Tag hat dieselben vier Teile.
+Die Routine folgt dem Tagesablauf der [Shams-Methode](/shams). Jeder Tag hat dieselben vier Teile.
 
 ### 1. Zuerst wiederholen (ca. 5 Minuten)
 
@@ -2360,7 +2360,7 @@ Isolated word lists are hard to remember. Words you meet in a verse you already 
 
 ### 2. Use the Shams Method
 
-Step three of the [Shams Method](/shams), developed by Nami Shams, is **word by word**: you look at each word and its meaning before reading the whole translation. Combined with listening and the backward build-up, this links sound and meaning – a principle known from research as dual coding.
+Step three of the [Shams Method](/shams) is **word by word**: you look at each word and its meaning before reading the whole translation. Combined with listening and the backward build-up, this links sound and meaning – a principle known from research as dual coding.
 
 ### 3. Group words by root
 
@@ -2489,7 +2489,7 @@ Lose Wortlisten behält man schwer. Wörter aus einem Vers, den du schon kennst,
 
 ### 2. Die Shams-Methode nutzen
 
-Schritt drei der [Shams-Methode](/shams), entwickelt von Nami Shams, heißt **Wort für Wort**: Du schaust dir jedes Wort und seine Bedeutung an, bevor du die ganze Übersetzung liest. Zusammen mit dem Zuhören und dem Rückwärtsaufbau verknüpft das Klang und Bedeutung – ein Prinzip, das die Forschung als doppelte Kodierung kennt.
+Schritt drei der [Shams-Methode](/shams) heißt **Wort für Wort**: Du schaust dir jedes Wort und seine Bedeutung an, bevor du die ganze Übersetzung liest. Zusammen mit dem Zuhören und dem Rückwärtsaufbau verknüpft das Klang und Bedeutung – ein Prinzip, das die Forschung als doppelte Kodierung kennt.
 
 ### 3. Wörter nach Wurzeln ordnen
 
