@@ -43,6 +43,24 @@ say "   ${meta:-(no robots meta = indexable)}"; say "   ${canon:-(no canonical)}
 echo "$meta" | grep -q noindex && bad "the pages say noindex – run scripts/deploy.sh"
 say "   http -> $(curl -sS -m 15 -o /dev/null -w '%{http_code} %{redirect_url}' "http://$DOMAIN/de")"
 
+say "== Has Google been here? (nginx access logs)"
+gb=$(zgrep -h 'Googlebot' /var/log/nginx/access.log* 2>/dev/null)
+if [ -z "$gb" ]; then
+  say "   -> Googlebot has not requested a single page yet: Google does not know the site – do the Search Console steps below"
+else
+  say "   Googlebot requests: $(echo "$gb" | wc -l) · last: $(grep -h 'Googlebot' /var/log/nginx/access.log /var/log/nginx/access.log.1 2>/dev/null | tail -1 | awk '{print substr($4,2)}')"
+  say "   status codes: $(echo "$gb" | awk '{print $9}' | sort | uniq -c | sort -rn | awk '{printf "%s x %s  ", $1, $2}')"
+  say "   sitemap fetched: $(echo "$gb" | grep -c 'GET /sitemap') times"
+  n429=$(echo "$gb" | awk '$9 == 429' | wc -l)
+  [ "$n429" -gt 0 ] && bad "Googlebot got $n429 x HTTP 429 from the nginx rate limit"
+  n5xx=$(echo "$gb" | awk '$9 ~ /^5/' | wc -l)
+  [ "$n5xx" -gt 0 ] && bad "Googlebot got $n5xx x a server error (5xx)"
+  banned=$(fail2ban-client status nginx-limit-req 2>/dev/null | sed -n 's/.*Banned IP list:[[:space:]]*//p')
+  for ip in $(echo "$gb" | awk '{print $1}' | sort -u); do
+    case " $banned " in *" $ip "*) bad "fail2ban has banned Googlebot's address $ip – unban: fail2ban-client set nginx-limit-req unbanip $ip";; esac
+  done
+fi
+
 echo
 if [ $ok = 1 ]; then
   say "All good on the server. In Google Search Console:"
