@@ -96,3 +96,20 @@ Product decisions agreed with the owner:
 - Religious accuracy: no invented hadith or numbers; mark scholar review where content is new.
 - Website texts exist in 14 locales; new keys need translations (the owner wants Sonnet agents for translations).
 - Never touch the LeadHero server 62.72.32.76.
+
+## Update 20.10.2026 (evening, Mac session)
+
+Decisions by the owner (supersede the points above where they differ):
+- **App = Quran Masterclass Pro, monthly subscription 4,99 €** (`com.quranmasterclass.app.pro.monthly`), plus **personal AI duas** as consumables (`com.quranmasterclass.app.dua` 0,99 €, `com.quranmasterclass.app.dua5` 3,99 €; Pro includes 5 per month). The website stays free; accounts sync.
+- Design: exactly the website (stage, gold, Plus Jakarta Sans, posters); tab bar icons only (like Instagram) on a floating Liquid Glass capsule. Kids mode (ages 6+). Everything of the website is in the app except the /app install page; the AI assistant is Pro-only in the app.
+- Company: **ICSL FZE, Sharjah, UAE**; Nami Shams as founder on the site; Ziina donations back on the website (not in the app – App Store 3.2.2).
+
+Where things are:
+- App code: `mobile/src/app` (routes = website paths), `mobile/src/features/*`, design system `mobile/src/lib/theme.ts`, `mobile/src/components/{brand,page,icons,form,TabBar}.tsx`. Website logic/content mirrored by `mobile/scripts/sync-web.mjs` into `mobile/src/web` (never edit by hand); more copy scripts: `sync-courses.mjs`, `sync-practice.mjs`. Parity table: `mobile/docs/website-parity.md`. Store texts: `mobile/store/listing.md`.
+- Server for the app: `src/app/api/iap/apple` (subscription with `users.pro_until`, consumables → `ai_credits`), `src/app/api/iap/apple/notifications` (App Store Server Notifications V2), `src/app/api/app/credits`, `src/lib/aiCredits.ts`, app requests without reCAPTCHA (`src/lib/appRequest.ts`), `GET /api/social/community`.
+- Expo project `@icslfze/quran-masterclass` (eas.json profiles development/preview/production).
+
+Before the first TestFlight / review:
+1. Deploy the website (`bash /srv/tafsirflow/app/scripts/deploy.sh`) and set in `/srv/tafsirflow/.env.app`: `IAP_ALLOW_SANDBOX=1` (TestFlight and App Review buy in the sandbox), `ZIINA_API_KEY` for donations; then `pm2 restart tafsirflow --update-env`.
+2. App Store Connect: create the app (bundle `com.quranmasterclass.app`), the subscription group "Quran Masterclass Pro" with the monthly product, the two consumables, App Store Server Notifications URL `https://quranmasterclass.com/api/iap/apple/notifications` (production + sandbox), App Privacy, review account.
+3. Adhan voices: none installed on the server yet (`/api/adhan` is empty). Install with `scripts/install-adhan.sh` (Sunni and Shia recordings with permission/credit).

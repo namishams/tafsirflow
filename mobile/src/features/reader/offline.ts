@@ -69,7 +69,9 @@ export function saveText(surah: number, folder: string, lang: string, data: unkn
   try {
     const dir = dirOf(folder);
     if (!dir.exists) dir.create({ intermediates: true, idempotent: true });
-    new File(dir, `${pad(surah)}.${lang}.json`).write(JSON.stringify(data));
+    const f = new File(dir, `${pad(surah)}.${lang}.json`);
+    if (!f.exists) f.create();
+    f.writeSync(JSON.stringify(data));
   } catch { /* the audio is what matters */ }
 }
 export async function loadText<T>(surah: number, folder: string, lang: string): Promise<T | null> {

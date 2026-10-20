@@ -110,7 +110,11 @@ export function VerseStar({ n, active, gold, surface, label }: { n: number; acti
     </View>
   );
 }
-const withAlpha = (rgb: string, a: number) => rgb.replace(/^rgb\(([^)]+)\)$/, `rgba($1,${a})`);
+// works for "rgb(r,g,b)" and the theme's "rgba(r,g,b,1)"
+const withAlpha = (c: string, a: number) => {
+  const m = c.match(/^rgba?\(\s*([\d.]+)[\s,]+([\d.]+)[\s,]+([\d.]+)/);
+  return m ? `rgba(${m[1]},${m[2]},${m[3]},${a})` : c;
+};
 
 /** the rosette around the play button: turns slowly while the recitation plays (static with reduced motion) */
 export function PlayRosette({ on, reduce, size = 64, children }: { on: boolean; reduce: boolean; size?: number; children: ReactNode }) {

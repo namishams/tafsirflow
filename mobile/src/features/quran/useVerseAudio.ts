@@ -24,6 +24,8 @@ export type VerseAudio = {
   play: (url: string, opts?: { fallback?: string; fromMs?: number; rate?: number; title?: string; artist?: string }) => void;
   /** play the current file again from a position */
   seekPlay: (fromMs: number) => void;
+  /** move to a position without changing play/pause */
+  seek: (ms: number) => void;
   pause: () => void;
   resume: () => void;
   stop: () => void;
@@ -101,12 +103,13 @@ export function useVerseAudio(): VerseAudio {
     void p.seekTo(fromMs / 1000).then(() => { p.setPlaybackRate(rate); p.play(); });
   }, [get]);
 
+  const seek = useCallback((ms: number) => { const p = player.current; if (p) void p.seekTo(Math.max(0, ms) / 1000); }, []);
   const pause = useCallback(() => player.current?.pause(), []);
   const resume = useCallback(() => { void ensureMode(); player.current?.play(); }, []);
   const stop = useCallback(() => { player.current?.pause(); setPlaying(false); }, []);
   const setRate = useCallback((r: number) => { if (current.current) current.current.rate = r; player.current?.setPlaybackRate(r); }, []);
 
-  return { playing, positionMs, durationMs, play, seekPlay, pause, resume, stop, setRate, onEnd };
+  return { playing, positionMs, durationMs, play, seekPlay, seek, pause, resume, stop, setRate, onEnd };
 }
 
 /** Arabic-Indic digits for verse numbers (the website's toAr) */
