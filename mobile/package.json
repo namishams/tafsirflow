@@ -4,15 +4,20 @@
   "main": "expo-router/entry",
   "dependencies": {
     "@expo-google-fonts/amiri": "^0.4.1",
+    "@expo-google-fonts/aref-ruqaa": "^0.4.1",
+    "@expo-google-fonts/plus-jakarta-sans": "^0.4.2",
     "@react-native-async-storage/async-storage": "2.2.0",
+    "adhan": "^4.4.6",
     "expo": "~58.0.16",
     "expo-audio": "~58.0.9",
     "expo-constants": "~58.0.12",
     "expo-file-system": "~58.0.10",
     "expo-font": "~58.0.9",
     "expo-iap": "^6.1.1",
+    "expo-linear-gradient": "~58.0.3",
     "expo-linking": "~58.0.13",
     "expo-localization": "~58.0.5",
+    "expo-location": "~58.0.18",
     "expo-router": "~58.0.24",
     "expo-secure-store": "~58.0.2",
     "expo-splash-screen": "~58.0.10",
@@ -26,6 +31,7 @@
     "react-native": "0.88.0",
     "react-native-safe-area-context": "~5.10.1",
     "react-native-screens": "~4.30.0",
+    "react-native-svg": "15.16.0",
     "react-native-web": "^0.21.4"
   },
   "devDependencies": {
@@ -38,7 +44,8 @@
     "android": "expo run:android",
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
-    "prebuild": "expo prebuild --clean"
+    "prebuild": "expo prebuild --clean",
+    "sync-web": "node scripts/sync-web.mjs"
   },
   "private": true
 }

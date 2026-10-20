@@ -1,33 +1,17 @@
-import { NativeTabs } from "expo-router/native-tabs";
+import { Tabs } from "expo-router/tabs";
+import TabBar from "@/components/TabBar";
 import { useT } from "@/i18n";
-import { useTheme } from "@/lib/theme";
 
-// Fixed tab bar: Overview, Quran, Learn, Library, Account
+// Five tabs like the website's bottom bar: Today, Quran, Masterclass, Discover, Account
 export default function TabsLayout() {
   const t = useT();
-  const theme = useTheme();
   return (
-    <NativeTabs tintColor={theme.tint}>
-      <NativeTabs.Trigger name="(home)">
-        <NativeTabs.Trigger.Label>{t("tabs.home")}</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon sf="sun.max" md="wb_sunny" />
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="quran">
-        <NativeTabs.Trigger.Label>{t("tabs.quran")}</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon sf="book" md="menu_book" />
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="learn">
-        <NativeTabs.Trigger.Label>{t("tabs.learn")}</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon sf="graduationcap" md="school" />
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="library">
-        <NativeTabs.Trigger.Label>{t("tabs.library")}</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon sf="books.vertical" md="local_library" />
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="account">
-        <NativeTabs.Trigger.Label>{t("tabs.account")}</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon sf="person.crop.circle" md="account_circle" />
-      </NativeTabs.Trigger>
-    </NativeTabs>
+    <Tabs tabBar={(props) => <TabBar {...props} />} screenOptions={{ headerShown: false }}>
+      <Tabs.Screen name="(home)" options={{ title: t("tabs.home") }} />
+      <Tabs.Screen name="quran" options={{ title: t("tabs.quran") }} />
+      <Tabs.Screen name="learn" options={{ title: t("tabs.learn") }} />
+      <Tabs.Screen name="library" options={{ title: t("tabs.library") }} />
+      <Tabs.Screen name="account" options={{ title: t("tabs.account") }} />
+    </Tabs>
   );
 }
