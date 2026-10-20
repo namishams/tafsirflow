@@ -199,7 +199,7 @@ function FrameLine({ ar, tr, small }: { ar: string; tr: string; small?: string }
 }
 
 type AiState = { state: "idle" | "busy" | "err"; text: string; err?: string };
-const FALLBACK = { one: "0,99 €", pack: "3,99 €" };
+const FALLBACK = { one: "", pack: "" }; // no fixed euro amounts: only Apple's price in the buyer's currency
 
 // The paid step: the server phrases the request in the person's own words (website POST /api/dua-generator).
 // Signed out → sign in; credits left → write; otherwise one dua or a pack of five through the store.

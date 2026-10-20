@@ -33,17 +33,28 @@ export async function buyPersonalDua(pack = false): Promise<boolean> {
   return purchaseConsumable(pack ? DUA_PACK_PRODUCT : DUA_PRODUCT);
 }
 
-/** the store price of one personal dua in the buyer's currency, 0,99 € until the store has answered */
-export function useDuaPrice(): string {
-  const [price, setPrice] = useState<string | null>(null);
-  useEffect(() => { duaPrices().then((p) => setPrice(p.one)).catch(() => undefined); }, []);
-  return price ?? "0,99 €";
+// Every price shown in the app is Apple's, in the buyer's own currency (Hamburg 4,99 €, Dubai AED 14.99). Until the
+// App Store has answered, or without a connection, no price is shown at all – never a fixed euro amount.
+let pricesOnce: Promise<import("./iap").StorePrices> | null = null;
+function storePrices() {
+  pricesOnce ??= import("./iap").then(({ loadPrices }) => loadPrices()).then((p) => { if (!p.pro && !p.dua) pricesOnce = null; return p; });
+  return pricesOnce;
 }
+function useStorePrice(pick: (p: import("./iap").StorePrices) => string | null): string | null {
+  const [price, setPrice] = useState<string | null>(null);
+  useEffect(() => { storePrices().then((p) => setPrice(pick(p))).catch(() => undefined); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  return price;
+}
+/** "Get Pro · AED 14.99 per month" when the price is known, else only the label */
+export const withPrice = (label: string, price: string | null) => (price ? `${label} · ${price}` : label);
 
-/** store prices for the dua products (null when the store is not reachable; then show 0,99 € / 3,99 €) */
+export const useProPrice = () => useStorePrice((p) => p.pro);
+/** the store price of one personal dua in the buyer's currency (null until the store has answered) */
+export const useDuaPrice = () => useStorePrice((p) => p.dua);
+
+/** store prices for the dua products (null when the store is not reachable; then no price is shown) */
 export async function duaPrices(): Promise<{ one: string | null; pack: string | null }> {
-  const { loadPrices } = await import("./iap");
-  const p = await loadPrices();
+  const p = await storePrices();
   return { one: p.dua, pack: p.duaPack };
 }
 
@@ -53,9 +64,5 @@ export async function buyNameReport(): Promise<boolean> {
   return purchaseConsumable(NAMES_PRODUCT);
 }
 
-/** the store price of one name report in the buyer's currency, 0,99 € until the store has answered */
-export function useNamesPrice(): string {
-  const [price, setPrice] = useState<string | null>(null);
-  useEffect(() => { import("./iap").then(({ loadPrices }) => loadPrices()).then((p) => setPrice(p.names)).catch(() => undefined); }, []);
-  return price ?? "0,99 €";
-}
+/** the store price of one name report in the buyer's currency (null until the store has answered) */
+export const useNamesPrice = () => useStorePrice((p) => p.names);

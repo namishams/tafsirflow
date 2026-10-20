@@ -4,10 +4,12 @@ import { Display, Eyebrow, GoldButton, SmallStar, Stage } from "@/components/bra
 import { Icon } from "@/components/icons";
 import { useT } from "@/i18n";
 import { openPro, usePro, type ProFeature } from "@/lib/pro";
+import { useProPrice, withPrice } from "@/lib/purchases";
 
 // The calm Pro card shown at natural moments (Today, Masterclass, end of free content). No pop-ups, no countdowns.
 export function ProPromo({ title, lead, feature = "general", compact }: { title?: string; lead?: string; feature?: ProFeature; compact?: boolean }) {
   const t = useT();
+  const price = useProPrice();
   const { pro } = usePro();
   if (pro) return null;
   const features = compact ? ["f_shams", "f_reciters", "f_courses"] : ["f_shams", "f_reciters", "f_radio", "f_courses", "f_tests", "f_offline"];
@@ -25,7 +27,7 @@ export function ProPromo({ title, lead, feature = "general", compact }: { title?
             </View>
           ))}
         </View>
-        <GoldButton title={`${t("pro.cta")} · ${t("pro.priceFallback")}`} onPress={() => openPro(feature)} style={{ marginTop: 18 }} />
+        <GoldButton title={withPrice(t("pro.cta"), price ? t("pro.price", { price }) : null)} onPress={() => openPro(feature)} style={{ marginTop: 18 }} />
       </View>
     </Stage>
   );

@@ -6,7 +6,7 @@ import { NAME_BY_KEY, THEME_LABEL, namesText, type Gender, type Lang, type Theme
 import { rankNames, type FinderInput } from "@/web/names/rules";
 import { api, ApiError, SITE } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
-import { buyNameReport, useAiCredits, useNamesPrice } from "@/lib/purchases";
+import { buyNameReport, useAiCredits, useNamesPrice, withPrice } from "@/lib/purchases";
 import { useStored, writeJSON } from "@/lib/store";
 import { useWebT } from "@/i18n/web";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, useTheme, AR_RIGHT } from "@/lib/theme";
@@ -100,7 +100,7 @@ export default function NameReport({ form, month, l, locale, rtl, t, favs }: { f
         <IllumFrame rosettes={18} />
         <View style={{ paddingHorizontal: 24, paddingTop: 36, paddingBottom: 28 }}>
           <View style={{ alignItems: "center" }}><Rosette size={30} color={stage.gold} /></View>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: l === "ar" ? 0 : 1.6, textTransform: "uppercase", color: stage.gold, textAlign: "center", marginTop: 12 }}>{tr("reportKicker")} · {price}</Text>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: l === "ar" ? 0 : 1.6, textTransform: "uppercase", color: stage.gold, textAlign: "center", marginTop: 12 }}>{withPrice(tr("reportKicker"), price)}</Text>
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 26, lineHeight: 32, color: stage.text, textAlign: "center", marginTop: 8 }}>{tr("reportTitle")}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: stage.textSoft, textAlign: "center", marginTop: 10 }}>{tr("reportLead")}</Text>
           <View style={{ gap: 10, marginTop: 20 }}>
@@ -132,7 +132,7 @@ export default function NameReport({ form, month, l, locale, rtl, t, favs }: { f
               </>
             ) : (
               <>
-                <GoldButton title={tr("reportBuy", { price })} busy={state === "buying"} disabled={state !== "idle"} onPress={() => void buy()} />
+                <GoldButton title={price ? tr("reportBuy", { price }) : tr("reportKicker")} busy={state === "buying"} disabled={state !== "idle"} onPress={() => void buy()} />
                 <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 18, color: stage.textMuted, textAlign: "center" }}>{tr("reportStoreNote")}</Text>
               </>
             )}

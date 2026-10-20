@@ -75,7 +75,7 @@ export function DailyMoment() {
             ) : null}
             <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: stage.textSoft, marginTop: 14 }}>{tx.lead}</Text>
             <View style={{ gap: 10, marginTop: 18 }}>
-              <GoldButton title={tx.dua.replace("{price}", duaPrice)} icon="hands" onPress={() => go("/dua-generator")} />
+              <GoldButton title={duaPrice ? tx.dua.replace("{price}", duaPrice) : tx.dua.replace(/\s*·\s*\{price\}/, "")} icon="hands" onPress={() => go("/dua-generator")} />
               <OutlineButton title={tx.verse} onStage onPress={() => { const [c, v] = verseOfDayKey().split(":"); go(`/quran/${c}?v=${v}`); }} />
             </View>
             {!reminder ? (

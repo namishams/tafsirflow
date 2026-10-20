@@ -42,7 +42,7 @@ export default function ProSheet() {
   const [busy, setBusy] = useState<"buy" | "restore" | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
   useEffect(() => { loadPrices().then((p) => setPrice(p.pro)).catch(() => undefined); }, []);
-  const shown = price ?? "4,99 €";
+  const shown = price; // Apple's price in the buyer's currency; nothing until the store has answered
   const why = f && ["shams", "reciters", "radio", "arabic", "tajweed", "academy", "offline", "vocab", "stats"].includes(f) ? f : "general";
 
   const buy = async () => {
@@ -65,7 +65,7 @@ export default function ProSheet() {
   };
   const openDoc = (doc: "terms" | "privacy") => WebBrowser.openBrowserAsync(`${SITE}/${lang}/legal/${doc}`);
   const duaPrice = useDuaPrice();
-  const cell = (k: string) => (k === "✓" || k === "–" ? k : tr(`pro.${k}`, { price: duaPrice }));
+  const cell = (k: string) => (k === "✓" || k === "–" ? k : (duaPrice || !k.includes("Free") ? tr(`pro.${k}`, { price: duaPrice ?? "" }) : "✓"));
 
   return (
     <View style={{ flex: 1, backgroundColor: t.bg }}>
@@ -84,7 +84,7 @@ export default function ProSheet() {
               <Display onStage style={{ marginTop: 10, textAlign: "center" }}>{tr(`pro.why_${why}`)}</Display>
               <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 24, color: stage.textSoft, marginTop: 12, textAlign: "center" }}>{tr("pro.lead")}</Text>
             </View>
-            {!pro ? <GoldButton title={user ? tr("pro.subscribe", { price: shown }) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 22 }} /> : null}
+            {!pro ? <GoldButton title={user ? (shown ? tr("pro.subscribe", { price: shown }) : tr("pro.cta")) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 22 }} /> : null}
             <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted, textAlign: "center", marginTop: 10 }}>{tr("pro.cancelAnytime")} · {tr("pro.noAds")}</Text>
           </View>
           <View style={{ marginTop: 14 }}><Arcade /></View>
@@ -141,13 +141,13 @@ export default function ProSheet() {
                   <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{tr("pro.summaryTerm")}</Text>
                 </View>
                 <View style={{ alignItems: "flex-end" }}>
-                  <Text style={{ fontFamily: FONT.display, fontSize: 24, color: t.ink }}>{shown}</Text>
+                  <Text style={{ fontFamily: FONT.display, fontSize: 24, color: t.ink }}>{shown ?? "…"}</Text>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{tr("pro.perMonth")}</Text>
                 </View>
               </View>
               <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, marginTop: 12 }}>{tr("pro.summaryCancel")}</Text>
               {!user ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink, backgroundColor: t.accentSoft, borderRadius: R.sm, padding: 12, marginTop: 12 }}>{tr("pro.signInFirst")}</Text> : null}
-              <GoldButton title={user ? tr("pro.subscribe", { price: shown }) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 14 }} />
+              <GoldButton title={user ? (shown ? tr("pro.subscribe", { price: shown }) : tr("pro.cta")) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 14 }} />
               <OutlineButton title={tr("pro.restore")} disabled={!!busy} onPress={doRestore} style={{ marginTop: 10 }} />
             </GoldCard>
           ) : null}
