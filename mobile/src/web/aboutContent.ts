@@ -26,7 +26,7 @@ Und doch geht es vielen von uns gleich: Wir lieben den Koran, aber wir lernen ih
 
 Gleichzeitig lernen Millionen Menschen jeden Tag eine neue Sprache – mit dem Handy, in der U-Bahn, fünf Minuten vor dem Schlafengehen. Sie bleiben dran, weil die Apps klug gebaut sind: kleine Schritte, Wiederholungen im richtigen Moment, sichtbarer Fortschritt.
 
-Aus diesem Widerspruch ist Quran Masterclass entstanden. Wir haben die Plattform in Dubai gegründet, mit einer einfachen Frage: Was wäre, wenn Koranlernen so gut gebaut wäre wie die besten Lern-Apps der Welt – aber mit dem Respekt, der Tiefe und der Ernsthaftigkeit, die der Koran verdient?
+Aus diesem Widerspruch ist Quran Masterclass entstanden. **Nami Shams** hat die Plattform in Dubai gegründet, mit einer einfachen Frage: Was wäre, wenn Koranlernen so gut gebaut wäre wie die besten Lern-Apps der Welt – aber mit dem Respekt, der Tiefe und der Ernsthaftigkeit, die der Koran verdient?
 
 ## Warum nichts wichtiger ist
 
@@ -53,7 +53,7 @@ Was wir nicht tun: Wir erfinden keine eigene Auslegung. Koran-Text, Übersetzung
   freeTitle: "Kostenlos – und warum das so bleibt",
   free: `Quran Masterclass kostet dich nichts. Keine Probephase, die nach sieben Tagen endet. Keine Werbung zwischen zwei Versen. Keine Funktion, die erst nach dem Bezahlen freigeschaltet wird.
 
-Die Plattform wird **privat getragen** – Server, Entwicklung, Audio, alles. Es ist ein Projekt, das um Allahs willen gebaut wird, in der Hoffnung, dass jeder Vers, den jemand hier lernt, eine fortlaufende gute Tat (Sadaqa Jariya) wird.
+Die Plattform wird **privat von Nami Shams getragen** – Server, Entwicklung, Audio, alles. Es ist ein Projekt, das um Allahs willen gebaut wird, in der Hoffnung, dass jeder Vers, den jemand hier lernt, eine fortlaufende gute Tat (Sadaqa Jariya) wird.
 
 Wer helfen möchte, kann das tun: mit Feedback, mit Fehlermeldungen, mit Übersetzungen – und mit Duʿāʾ.`,
   dubaiEyebrow: "Dubai und der Koran",
@@ -101,14 +101,14 @@ Möge Allah sie alle belohnen, sie rechtleiten und die Länder der Muslime in Fr
       { name: "Al-Quds", ar: "القدس", d: "Die Al-Aqsa-Moschee, die erste Gebetsrichtung." },
     ],
   },
-  letterTitle: "Ein paar Worte von uns",
-  letter: `Wir wünschen uns, dass niemand mehr sagen muss: „Ich würde gern Koran lernen, aber ich weiß nicht, wie.“
+  letterTitle: "Ein paar Worte vom Gründer",
+  letter: `Ich wünsche mir, dass niemand mehr sagen muss: „Ich würde gern Koran lernen, aber ich weiß nicht, wie.“
 
-Wir wünschen uns, dass ein Kind in Hamburg, eine Großmutter in Sarajevo, ein Student in Jakarta und ein Taxifahrer in Dubai dieselbe Möglichkeit haben – kostenlos, in ihrer Sprache, in ihrem Tempo. Dass sie jeden Tag ein Stück weiterkommen. Und dass sie eines Tages eine Sure im Gebet rezitieren, die sie hier gelernt haben.
+Ich wünsche mir, dass ein Kind in Hamburg, eine Großmutter in Sarajevo, ein Student in Jakarta und ein Taxifahrer in Dubai dieselbe Möglichkeit haben – kostenlos, in ihrer Sprache, in ihrem Tempo. Dass sie jeden Tag ein Stück weiterkommen. Und dass sie eines Tages eine Sure im Gebet rezitieren, die sie hier gelernt haben.
 
-Wenn dir diese Plattform hilft, dann bitten wir dich nur um eines: Mach Duʿāʾ für alle, die daran mitgewirkt haben – und erzähl jemandem davon, der auch lernen möchte.`,
-  signature: "Quran Masterclass",
-  signatureRole: "Dubai",
+Wenn dir diese Plattform hilft, dann bitte ich dich nur um eines: Mach Duʿāʾ für alle, die daran mitgewirkt haben – und erzähl jemandem davon, der auch lernen möchte.`,
+  signature: "Nami Shams",
+  signatureRole: "Gründer von Quran Masterclass · Dubai",
   contactTitle: "Schreib uns",
   contact: "Fragen, Ideen, Fehler im Text, Wünsche für neue Tafsir-Quellen oder Sprachen: Schreib an **info@quranmasterclass.com** oder nutze unsere [Feedback-Seite](/feedback). Was wir umsetzen, findest du im [Änderungsprotokoll](/changelog).",
 };
@@ -126,7 +126,7 @@ And yet so many of us share the same story: we love the Quran, but we don't lear
 
 Meanwhile, millions of people learn a new language every day – on their phones, on the metro, five minutes before sleep. They keep going because the apps are cleverly built: small steps, reviews at the right moment, visible progress.
 
-Quran Masterclass was born from that contrast. We founded the platform in Dubai with one simple question: what if learning the Quran were built as well as the best learning apps in the world – but with the respect, the depth and the seriousness the Quran deserves?
+Quran Masterclass was born from that contrast. **Nami Shams** founded the platform in Dubai with one simple question: what if learning the Quran were built as well as the best learning apps in the world – but with the respect, the depth and the seriousness the Quran deserves?
 
 ## Why nothing matters more
 
@@ -153,7 +153,7 @@ What we don't do: we don't invent our own interpretation. Quran text, translatio
   freeTitle: "Free – and why it stays that way",
   free: `Quran Masterclass costs you nothing. No trial that ends after seven days. No ads between two verses. No feature that unlocks only after payment.
 
-The platform is **privately funded** – servers, development, audio, everything. It is built for the sake of Allah, in the hope that every verse someone learns here becomes an ongoing good deed (sadaqa jariya).
+The platform is **privately funded by Nami Shams** – servers, development, audio, everything. It is built for the sake of Allah, in the hope that every verse someone learns here becomes an ongoing good deed (sadaqa jariya).
 
 If you would like to help, you can: with feedback, bug reports, translations – and with du'a.`,
   dubaiEyebrow: "Dubai and the Quran",
@@ -201,14 +201,14 @@ May Allah reward them all, guide them and keep the lands of the Muslims in peace
       { name: "Al-Quds", ar: "القدس", d: "Al-Aqsa Mosque, the first qibla." },
     ],
   },
-  letterTitle: "A few words from us",
-  letter: `We wish that no one would ever again have to say: "I would love to learn the Quran, but I don't know how."
+  letterTitle: "A few words from the founder",
+  letter: `I wish that no one would ever again have to say: "I would love to learn the Quran, but I don't know how."
 
-We wish that a child in Hamburg, a grandmother in Sarajevo, a student in Jakarta and a taxi driver in Dubai all had the same chance – free, in their language, at their pace. That they move a little further every day. And that one day they recite a surah in prayer that they learned here.
+I wish that a child in Hamburg, a grandmother in Sarajevo, a student in Jakarta and a taxi driver in Dubai all had the same chance – free, in their language, at their pace. That they move a little further every day. And that one day they recite a surah in prayer that they learned here.
 
-If this platform helps you, we ask only one thing: make du'a for everyone who contributed to it – and tell someone else who wants to learn.`,
-  signature: "Quran Masterclass",
-  signatureRole: "Dubai",
+If this platform helps you, I ask only one thing: make du'a for everyone who contributed to it – and tell someone else who wants to learn.`,
+  signature: "Nami Shams",
+  signatureRole: "Founder of Quran Masterclass · Dubai",
   contactTitle: "Write to us",
   contact: "Questions, ideas, a mistake in the text, wishes for new tafsir sources or languages: write to **info@quranmasterclass.com** or use our [feedback page](/feedback). What we build is listed in the [changelog](/changelog).",
 };
@@ -218,5 +218,24 @@ const OTHER = ["ar", "bn", "es", "fa", "fr", "id", "ms", "ps", "ru", "tr", "ur",
 export async function aboutContent(locale: string): Promise<AboutContent> {
   if (locale === "de") return de;
   if (!OTHER.includes(locale)) return en;
-  try { return (await Promise.reject(new Error("language not bundled"))) as AboutContent; } catch { return en; }
+  try { return __lang0(`./pagecontent/${locale}/about`).default as AboutContent; } catch { return en; }
+}
+
+// generated by scripts/sync-web.mjs: the other languages, required only when one is opened
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-require-imports
+function __lang0(p: string): any {
+  switch (p) {
+    case "./pagecontent/ar/about": return require("./pagecontent/ar/about");
+    case "./pagecontent/bn/about": return require("./pagecontent/bn/about");
+    case "./pagecontent/es/about": return require("./pagecontent/es/about");
+    case "./pagecontent/fa/about": return require("./pagecontent/fa/about");
+    case "./pagecontent/fr/about": return require("./pagecontent/fr/about");
+    case "./pagecontent/id/about": return require("./pagecontent/id/about");
+    case "./pagecontent/ps/about": return require("./pagecontent/ps/about");
+    case "./pagecontent/ru/about": return require("./pagecontent/ru/about");
+    case "./pagecontent/tr/about": return require("./pagecontent/tr/about");
+    case "./pagecontent/ur/about": return require("./pagecontent/ur/about");
+    case "./pagecontent/zh/about": return require("./pagecontent/zh/about");
+  }
+  throw new Error("language not bundled");
 }
