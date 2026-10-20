@@ -108,8 +108,10 @@ export default async function WorldPage({ params }: { params: Promise<{ locale: 
   };
   const max = Math.max(...COUNTRIES.map((x) => x.m));
   // Latin digits in the markup; LocalDigits turns them into the digits of Arabic, Persian, Urdu, Pashto and Bengali in the browser
-  const nf = new Intl.NumberFormat(locale, own ? { maximumFractionDigits: 1 } : { maximumFractionDigits: 1, numberingSystem: "latn" });
-  const pf = own ? null : new Intl.NumberFormat(locale, { style: "percent", maximumFractionDigits: 1, numberingSystem: "latn" });
+  // (Pashto formats numbers like Persian here: ICU's Pashto separators would differ from the "1.6" in the texts above)
+  const numLocale = locale === "ps" ? "fa" : locale;
+  const nf = new Intl.NumberFormat(numLocale, own ? { maximumFractionDigits: 1 } : { maximumFractionDigits: 1, numberingSystem: "latn" });
+  const pf = own ? null : new Intl.NumberFormat(numLocale, { style: "percent", maximumFractionDigits: 1, numberingSystem: "latn" });
   const pct = (n: number) => (pf ? pf.format(n / 100) : `${nf.format(n)} %`);
   return (
     <div>
