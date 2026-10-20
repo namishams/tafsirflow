@@ -57,8 +57,13 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
 
   // bot protection (Google reCAPTCHA) on the forms bots like to hammer
   if (action === "login" || action === "register" || action === "forgot") {
-    const c = await checkCaptcha(body, action, ip);
-    if (c !== "ok") return json({ error: "captcha", challenge: c === "challenge" }, 403);
+    if (req.headers.get("x-qmc-app")) {
+      // the native app cannot show reCAPTCHA: tighter limits per address instead (on top of the per-account limits)
+      if (rateLimited(`app-auth:${action}:${ip}`, action === "register" ? 4 : 20, 60 * 60_000)) return json({ error: "rate" }, 429);
+    } else {
+      const c = await checkCaptcha(body, action, ip);
+      if (c !== "ok") return json({ error: "captcha", challenge: c === "challenge" }, 403);
+    }
   }
 
   if (action === "resend") {
@@ -115,16 +120,17 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
     const name = `${firstName} ${lastName}`;
     const city = clean(body.city, 80) || null;
     const loc = /^[a-z]{2}$/.test(String(body.locale)) ? String(body.locale) : null;
+    let token = "";
     try {
       const r = await p.query("INSERT INTO users (email, password_hash, name, first_name, last_name, country, city, goal, locale, marketing_opt_in, terms_accepted_at, role, email_verified, birth_year) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, now(), $11, $12, $13) RETURNING id", [email, hashPassword(password), name, firstName, lastName, country, city, goal, loc, body.marketing === true, isAdminEmail(email) ? "admin" : "user", !mailConfigured(), birthYear]);
       const uid = Number(r.rows[0].id);
-      await startSession(uid, req);
+      token = await startSession(uid, req);
       if (mailConfigured()) await sendVerification(req, uid, email, /^[a-z]{2}$/.test(String(body.locale)) ? String(body.locale) : "en");
     } catch (e) {
       if ((e as { code?: string }).code === "23505") return json({ error: "exists" }, 409);
       return json({ error: "generic" }, 500);
     }
-    return json({ user: await currentUser() });
+    return json({ user: await currentUser(), ...(req.headers.get("x-qmc-app") ? { token } : {}) });
   }
 
   // brute-force protection per account (in addition to the limit per IP address)
@@ -135,6 +141,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
   const ok = verifyPassword(password, row?.password_hash ?? "scrypt$00$00");
   if (!row || !ok) return json({ error: "invalid" }, 401);
   await p.query("UPDATE users SET last_login_at = now() WHERE id = $1", [row.id]);
-  await startSession(Number(row.id), req);
-  return json({ user: await currentUser() });
+  const token = await startSession(Number(row.id), req);
+  // the mobile app (header x-qmc-app) keeps the token itself
+  return json({ user: await currentUser(), ...(req.headers.get("x-qmc-app") ? { token } : {}) });
 }

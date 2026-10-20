@@ -1,5 +1,5 @@
 import crypto from "node:crypto";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { NextRequest } from "next/server";
 import { pool } from "./db";
 import { isHttps } from "./http";
@@ -28,16 +28,24 @@ const sha = (s: string) => crypto.createHash("sha256").update(s).digest("hex");
 // The owner's e-mail (env ADMIN_EMAIL) is always an admin
 export const isAdminEmail = (email: string) => !!process.env.ADMIN_EMAIL && email.toLowerCase() === process.env.ADMIN_EMAIL.toLowerCase();
 
-export async function startSession(userId: number, req: NextRequest) {
+// returns the session token: the website keeps it in an httpOnly cookie, the mobile app stores it in the
+// device keychain and sends it as "Authorization: Bearer <token>"
+export async function startSession(userId: number, req: NextRequest): Promise<string> {
   const p = pool()!;
   const token = crypto.randomBytes(32).toString("base64url");
   await p.query("INSERT INTO sessions (token_hash, user_id, expires_at) VALUES ($1, $2, now() + $3::int * interval '1 day')", [sha(token), userId, TTL_DAYS]);
   (await cookies()).set(COOKIE, token, { httpOnly: true, sameSite: "lax", secure: isHttps(req), path: "/", maxAge: TTL_DAYS * 86400 });
+  return token;
+}
+
+async function bearer(): Promise<string | undefined> {
+  const h = (await headers()).get("authorization") ?? "";
+  return h.startsWith("Bearer ") ? h.slice(7).trim() || undefined : undefined;
 }
 
 export async function endSession() {
   const jar = await cookies();
-  const token = jar.get(COOKIE)?.value;
+  const token = jar.get(COOKIE)?.value ?? (await bearer());
   if (token) await pool()?.query("DELETE FROM sessions WHERE token_hash = $1", [sha(token)]).catch(() => undefined);
   jar.delete(COOKIE);
 }
@@ -45,7 +53,7 @@ export async function endSession() {
 export async function currentUser(): Promise<User | null> {
   const p = pool();
   if (!p) return null;
-  const token = (await cookies()).get(COOKIE)?.value;
+  const token = (await cookies()).get(COOKIE)?.value ?? (await bearer());
   if (!token) return null;
   try {
     const r = await p.query(
