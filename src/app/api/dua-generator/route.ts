@@ -5,6 +5,7 @@ import { PLAN, TOPICS, type Topic } from "@/lib/duaGenerator";
 import { getResources, getVerseByKey, pickTranslation } from "@/lib/quran";
 import { getSettings } from "@/lib/settings";
 import { refundDua, spendDua, type Spent } from "@/lib/aiCredits";
+import { localeMeta } from "@/i18n/locales";
 
 export const dynamic = "force-dynamic";
 
@@ -44,9 +45,10 @@ export async function POST(req: NextRequest) {
     spent = await spendDua(me!.id, me!.plan === "premium");
     if (!spent) return json({ error: "credits" }, 402);
   }
-  const system = `You help a Muslim put a personal supplication (dua) into words, in the language with code "${locale}".
+  const language = `${localeMeta(locale).resourceLang} (language code "${locale}"${locale === "fa" ? ", Dari Persian as spoken in Afghanistan" : ""})`;
+  const system = `You help a Muslim put a personal supplication (dua) into words, written entirely in ${language}.
 Rules: Write only the personal request part, 3 to 6 short sentences, warm, humble and sincere, addressed to Allah ("O Allah" in that language). You may call on these beautiful names of Allah: ${names || "Ar-Rahman, Ar-Rahim"}.
-Never quote or invent Quran verses or hadith, never invent rulings, promises or numbers, no Arabic script unless the language is Arabic, no emojis, no headings, no lists. Do not mention artificial intelligence.
+The authentic duas from the Quran and the Sunnah are shown separately from their sources; you never write them. Never quote, paraphrase or invent Quran verses or hadith, never attribute any words to the Prophet ﷺ, the Quran or a scholar, never invent rulings, promises, virtues or numbers. No Arabic script unless the language is Arabic, no emojis, no headings, no lists. Do not mention artificial intelligence.
 If the request asks for something harmful or for harm to others, write instead a short dua for guidance, patience and good for everyone.
 The person is praying for: ${b.who && b.who !== "me" ? b.who : "themselves"}.`;
   try {

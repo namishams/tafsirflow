@@ -24,6 +24,7 @@ import Rewards from "@/components/Rewards";
 import StageLight from "@/components/StageLight";
 import Announcement from "@/components/Announcement";
 import NativeBridge from "@/components/NativeBridge";
+import LocalDigits from "@/components/LocalDigits";
 import "../globals.css";
 
 // default title/description for pages without their own metadata (account, lessons, profile): in the visitor's language
@@ -51,7 +52,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <script dangerouslySetInnerHTML={{ __html: "try{if(localStorage.getItem('tf:kids')==='1')document.documentElement.dataset.kids='1'}catch(e){}" }} />
       </head>
       <body className="min-h-screen">
-        <NextIntlClientProvider messages={messages}><RadioProvider><Announcement />{children}<ScrollReveal /><Pwa /><Rewards /><StageLight /><NativeBridge /></RadioProvider></NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}><RadioProvider><Announcement />{children}<ScrollReveal /><Pwa /><Rewards /><StageLight /><NativeBridge /><LocalDigits locale={locale} /></RadioProvider></NextIntlClientProvider>
         <SideCalligraphy />
       </body>
     </html>
