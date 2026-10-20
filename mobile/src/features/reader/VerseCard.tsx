@@ -73,6 +73,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
 }) {
   const t = useTheme();
   const w = useWebT("player");
+  const wsh = useWebT("shams");
   const gold = t.gold;
   const words = v.words.filter((x) => x.char_type_name === "word");
   const { hide, revealed, seed, testPos, testMarks } = st;
@@ -156,7 +157,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
             <View style={{ gap: 8 }}>
               <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{w("hideLabel")}</Text>
               <Seg value={hide} label={w("hideLabel")} onChange={(x) => { if (x === 4 && hide === 4) h.shuffle(); h.setHide(x); }}
-                options={[[5, w("hideSoft")], [1, w("hideHalf")], [4, w("hideRandom")], [2, w("hideHard")]]} />
+                options={[[5, w("hideSoft")], [1, w("hideHalf")], [3, wsh("hAcrostic")], [4, w("hideRandom")], [2, w("hideHard")]]} />
               {hide === 4 && !revealed ? <Text onPress={h.shuffle} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.accent, paddingVertical: 4 }}>↻ {w("shuffle")}</Text> : null}
             </View>
           ) : null}

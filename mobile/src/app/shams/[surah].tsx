@@ -21,6 +21,7 @@ import { VerseWords, WordGrid, wordAt, type Hide } from "@/features/quran/VerseW
 import { TafsirPanel } from "@/features/quran/TafsirPanel";
 import { hooks } from "@/features/shams/memory";
 import { useShamsT } from "@/features/shams/texts";
+import { useLearnT } from "@/features/learn/texts";
 import { goBack } from "@/components/page";
 
 // The Shams Method, natively: one verse at a time, the coach plans the steps (lib/coach.ts versePlan), every step sets
@@ -380,8 +381,72 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
             <GoldButton title={lastStep ? (sessionMode || idx < verses.length - 1 ? ts("nextVerse") : ts("finish")) : ts("next")} onPress={nextStep} style={{ marginTop: 18 }} />
           </GoldCard>
         ) : null}
+
+        {/* why this step works (the website's principles of the method) and the way through the surah */}
+        {step !== null ? <StepWhy step={step} /> : null}
+        {step !== null ? (
+          <SurahPath chapter={chapter} verses={verses} idx={idx} srsVersion={learned.todayCount}
+            onPick={sessionMode ? undefined : (i) => { audio.stop(); setIdx(i); beginPlan(i, false); scroll.current?.scrollTo({ y: 0, animated: true }); }} />
+        ) : null}
       </ScrollView>
     </View>
+  );
+}
+
+// the principle behind each step (website shams page p1–p10): listen, backchaining, chunking, hooks, dual coding,
+// fading cues, reflection, linking
+const PRINCIPLE = [1, 2, 3, 10, 4, 8, 7, 5];
+function StepWhy({ step }: { step: number }) {
+  const t = useTheme();
+  const ts = useWebT("shams");
+  const n = PRINCIPLE[step] ?? 6;
+  return (
+    <GoldCard star={false}>
+      <Eyebrow style={{ marginBottom: 8 }}>{ts("why")}</Eyebrow>
+      <Text style={{ fontFamily: FONT.bold, fontSize: 17, lineHeight: 23, color: t.ink }}>{ts(`p${n}t`)}</Text>
+      <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.muted, marginTop: 6 }}>{ts(`p${n}d`)}</Text>
+      {n !== 6 ? (
+        <View style={{ marginTop: 14, paddingTop: 12, borderTopWidth: 1, borderTopColor: t.line }}>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{ts("p6t")}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, marginTop: 4 }}>{ts("p6d")}</Text>
+        </View>
+      ) : null}
+    </GoldCard>
+  );
+}
+
+// every verse of the surah: learned (gold), the current one (marked), still ahead; long surahs as a bar
+function SurahPath({ chapter, verses, idx, onPick, srsVersion }: { chapter: Chapter; verses: Verse[]; idx: number; onPick?: (i: number) => void; srsVersion: number }) {
+  const t = useTheme();
+  const lt = useLearnT();
+  const srs = useMemo(() => readSrs(), [srsVersion, idx]); // eslint-disable-line react-hooks/exhaustive-deps
+  const done = verses.filter((v) => srs[v.verse_key]).length;
+  return (
+    <GoldCard star={false}>
+      <Eyebrow style={{ marginBottom: 6 }}>{chapter.name_simple}</Eyebrow>
+      <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{lt("verses", { done, total: verses.length })}</Text>
+      {verses.length <= 60 ? (
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 14 }}>
+          {verses.map((v, i) => {
+            const learnedV = !!srs[v.verse_key];
+            const here = i === idx;
+            return (
+              <Pressable key={v.verse_key} disabled={!onPick || here} onPress={() => onPick?.(i)} accessibilityRole="button" accessibilityState={{ selected: here }}
+                accessibilityLabel={`${v.verse_number}`} hitSlop={2}
+                style={{ width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center",
+                  backgroundColor: here ? t.accent : learnedV ? "rgba(201,166,94,0.22)" : "transparent", borderWidth: 1, borderColor: here ? t.accent : learnedV ? goldButton.line : t.line }}>
+                <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: here ? "#fff" : learnedV ? t.gold : t.muted }}>{v.verse_number}</Text>
+              </Pressable>
+            );
+          })}
+        </View>
+      ) : (
+        <View style={{ marginTop: 14, height: 10, borderRadius: 5, backgroundColor: t.line, overflow: "hidden" }}>
+          <View style={{ width: `${Math.round((done / verses.length) * 100)}%`, height: "100%", backgroundColor: t.gold }} />
+          <View style={{ position: "absolute", top: 0, bottom: 0, start: `${Math.round((idx / verses.length) * 100)}%`, width: 3, backgroundColor: t.accent }} />
+        </View>
+      )}
+    </GoldCard>
   );
 }
 

@@ -34,8 +34,10 @@ import { loadText, localVerseUri, removeSurah, saveSurah, saveText, savedInfo } 
 // Test, self-rating, bookmark, note, share, Tafsir, Shams Method), the reading view, the settings sheet (reciter, size,
 // repeat, speed, sleep timer, what to show, saving the surah offline) and the floating jewel dock with a full player.
 // Playback continues verse after verse in the background and on the lock screen.
-type Prefs = { translit: boolean; translation: boolean; words: boolean; size: number; repeat: number; speed: number };
-const PREFS: Prefs = { translit: true, translation: true, words: false, size: 1, repeat: 1, speed: 1 };
+type Prefs = { translit: boolean; translation: boolean; words: boolean; size: number; repeat: number; speed: number; drill: Hide };
+const PREFS: Prefs = { translit: true, translation: true, words: false, size: 1, repeat: 1, speed: 1, drill: 0 };
+// hifz training for the whole surah: every verse covered the same way (the website's cover levels plus first letters)
+const DRILL: [Hide, string, string][] = [[0, "player", "hideNone"], [5, "player", "hideSoft"], [1, "player", "hideHalf"], [3, "shams", "hAcrostic"], [4, "player", "hideRandom"], [2, "player", "hideAll"]];
 type Notes = Record<string, { text: string; at: number }>;
 type Offline = { state: "none" | "saving" | "saved" | "error"; done: number; bytes: number };
 
@@ -73,6 +75,7 @@ export default function SurahReader() {
 function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; verses: Verse[]; start: number; openTafsir: boolean }) {
   const t = useTheme();
   const w = useWebT("player");
+  const wsh = useWebT("shams");
   const wh = useWebT("home");
   const { lang } = useLang();
   const tr = useT();
@@ -97,13 +100,15 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const [noteOpen, setNoteOpen] = useState<string | null>(null);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   // memorising tools of the active verse (website Player.tsx)
-  const [hide, setHideState] = useState<Hide>(0);
+  const [hide, setHideState] = useState<Hide>(prefs.drill ?? 0);
   const [practiceHide, setPracticeHide] = useState<Hide>(5);
   const [seed, setSeed] = useState(1);
   const [revealed, setRevealed] = useState(false);
   const [testPos, setTestPos] = useState(0);
   const [testMarks, setTestMarks] = useState<Record<number, boolean>>({});
   const [wordKey, setWordKey] = useState<string | null>(null);
+  const drill = prefs.drill ?? 0;
+  const setDrill = (d: Hide) => { setPref({ drill: d }); setHideState(d); if (d > 0) setPracticeHide(d); };
   const [toast, setToast] = useState("");
   const [offline, setOffline] = useState<Offline>(() => { const s = savedInfo(chapter.id, reciter.folder); return s ? { state: "saved", done: s.n, bytes: s.bytes } : { state: "none", done: 0, bytes: 0 }; });
   const abort = useRef<AbortController | null>(null);
@@ -203,13 +208,14 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
 
   const activeState = useMemo<CardState>(() => ({ hide, practiceHide, revealed, seed, testPos, testMarks, activeWord, playing: audio.playing, wordOn: wordKey }),
     [hide, practiceHide, revealed, seed, testPos, testMarks, activeWord, audio.playing, wordKey]);
+  const idleState = useMemo<CardState>(() => (drill ? { ...IDLE, hide: drill, seed } : IDLE), [drill, seed]);
   // the store hands out a fresh array on every read: key the bookmarks by their content
   const marksKey = marks.join("|");
   const markSet = useMemo(() => new Set(marksKey ? marksKey.split("|") : []), [marksKey]);
   const renderItem = useCallback(({ item: v, index: i }: { item: Verse; index: number }) => (
     <VerseCard v={v} i={i} active={i === idx} marked={markSet.has(v.verse_key)} note={notes[v.verse_key]?.text} noteOpen={noteOpen === v.verse_key}
-      translit={prefs.translit} translation={prefs.translation} words={prefs.words} scale={prefs.size} st={i === idx ? activeState : IDLE} h={handlers} />
-  ), [idx, markSet, notes, noteOpen, prefs.translit, prefs.translation, prefs.words, prefs.size, activeState, handlers]);
+      translit={prefs.translit} translation={prefs.translation} words={prefs.words} scale={prefs.size} st={i === idx ? activeState : idleState} h={handlers} />
+  ), [idx, markSet, notes, noteOpen, prefs.translit, prefs.translation, prefs.words, prefs.size, activeState, idleState, handlers]);
 
   // offline (Pro): every verse file of this surah for this reciter
   const saveOffline = async () => {
@@ -259,9 +265,27 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
             </Pressable>
           </View>
         </View>
+        {view === "verses" ? (
+          <View style={{ marginTop: 12, flexDirection: "row", alignItems: "center", gap: 8 }}>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{w("memorize")}</Text>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6, paddingEnd: 8 }} accessibilityRole="tablist" accessibilityLabel={w("hideLabel")}>
+              {DRILL.map(([d, ns, k]) => {
+                const on = drill === d;
+                const label = ns === "shams" ? wsh(k) : w(k);
+                return (
+                  <Pressable key={d} onPress={() => { if (d === 4 && on) setSeed((x) => x + 1); setDrill(d); }} accessibilityRole="tab" accessibilityState={{ selected: on }} accessibilityLabel={label}
+                    style={{ height: 32, paddingHorizontal: 13, justifyContent: "center", borderRadius: R.pill, borderWidth: 1, borderColor: on ? t.accent : t.line, backgroundColor: on ? t.accentSoft : t.surface }}>
+                    <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: on ? t.accent : t.ink }}>{label}</Text>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
+          </View>
+        ) : null}
+        {drill > 0 && view === "verses" ? <Text style={{ marginTop: 8, fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{w("tapToReveal")}</Text> : null}
       </View>
     </View>
-  ), [chapter, chapters, verse.page, verse.juz, verse.hizb, view, insets.top, reduce, t, w, wh, tr]);
+  ), [chapter, chapters, verse.page, verse.juz, verse.hizb, view, insets.top, reduce, t, w, wh, wsh, tr, drill]);
   const dockBottom = tabSpace - 4;
   const bottomSpace = tabSpace + 150;
 

@@ -8,10 +8,13 @@ const ARABIC = "٠١٢٣٤٥٦٧٨٩";
 const EXTENDED = "۰۱۲۳۴۵۶۷۸۹";
 const BENGALI = "০১২৩৪৫৬৭৮৯";
 let table: string | null = null;
+// Arabic letters join: letter-spacing (used for small uppercase labels) would tear the words apart
+let joined = false;
 
 /** called by the language provider whenever the app language changes */
 export function setDigitLanguage(lang: string) {
   table = lang === "ar" ? ARABIC : lang === "fa" || lang === "ur" || lang === "ps" ? EXTENDED : lang === "bn" ? BENGALI : null;
+  joined = lang === "ar" || lang === "fa" || lang === "ur" || lang === "ps";
 }
 
 /** "17:52" -> "١٧:٥٢" in Arabic; unchanged in Latin-script languages and for e-mail or web addresses */
@@ -23,6 +26,8 @@ export function localDigits(s: string): string {
   // Arabic-script number signs: decimal ٫ between digits, percent ٪
   return out.replace(/([٠-٩۰-۹])\.(?=[٠-٩۰-۹])/g, "$1٫").replace(/([٠-٩۰-۹])\s?%|%\s?(?=[٠-٩۰-۹])/g, (m, d) => (d ? `${d}٪` : "٪"));
 }
+
+const NO_SPACING = { letterSpacing: 0 };
 
 function convert(children: ReactNode): ReactNode {
   if (!table) return children;
@@ -40,7 +45,7 @@ export function installLocalDigits() {
     const RN = require("react-native");
     const Original = RN.Text;
     if (!Original || Original.__localDigits) return;
-    const DigitText = (props: any) => createElement(Original, props, convert(props.children));
+    const DigitText = (props: any) => createElement(Original, joined ? { ...props, style: [props.style, NO_SPACING] } : props, convert(props.children));
     DigitText.displayName = "Text";
     DigitText.__localDigits = true;
     Object.defineProperty(RN, "Text", { configurable: true, enumerable: true, get: () => DigitText });
