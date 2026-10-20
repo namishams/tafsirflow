@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8113D32EAB9CC3C6B7DAE56E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 375CED25841BB02092BF93D8 /* PrivacyInfo.xcprivacy */; };
+		8FFD7B7B1DA21CB069858066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893E8B14A5891C7CE7E727C /* Assets.xcassets */; };
+		9453AD90D5704FFAB9A58A43 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE42959AA313BCA7A4331F /* Site.swift */; };
+		AAFE4C9F4BF1E1F6561087FF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C2E5C3541B7FDEB38A3E6F /* Store.swift */; };
+		B5815571DF9AE9F6D215366E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0800EDE7BE6661A66A46ED /* AppDelegate.swift */; };
+		BC61982D1DD0F24C4FB487D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A7E7CE7868719DFE45EA7C6 /* Localizable.strings */; };
+		CC13A648AA0D81288CD5A76F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A9FD671C7A6A8DBAC464F /* WebViewController.swift */; };
+		DD5CCACF5A057D1C99F0A27C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C464F06EA7925CC68864D /* SceneDelegate.swift */; };
+		F337909C17DE097467E06B78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BD4145873D117701BBF1CFA /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08BFB55720B412B40D7C74B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1893E8B14A5891C7CE7E727C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		315C464F06EA7925CC68864D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		375CED25841BB02092BF93D8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		435464FBA926D6DEF4B827F7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		521A03C31FD3CA0C450525FF /* QuranMasterclass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuranMasterclass.entitlements; sourceTree = "<group>"; };
+		5BC631D0D7CFD106678905BE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		68C2E5C3541B7FDEB38A3E6F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		80DF3BD8A8903A6D839C540C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		88E4365D53F2EA80E193F2C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8D61F7E9DF0BF83A67D2C708 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		912306BD11092D3395C98745 /* QuranMasterclass.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = QuranMasterclass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0800EDE7BE6661A66A46ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A63A9FD671C7A6A8DBAC464F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C2AE42959AA313BCA7A4331F /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
+		E3CAEB0423D023040DB6D3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FDE9ACDB722FCD8D5F0ADFC9 /* Premium.storekit */ = {isa = PBXFileReference; path = Premium.storekit; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1B2047BC7FEFF91C0360C09E /* QuranMasterclass */ = {
+			isa = PBXGroup;
+			children = (
+				9D0800EDE7BE6661A66A46ED /* AppDelegate.swift */,
+				1893E8B14A5891C7CE7E727C /* Assets.xcassets */,
+				E3CAEB0423D023040DB6D3ED /* Info.plist */,
+				FDE9ACDB722FCD8D5F0ADFC9 /* Premium.storekit */,
+				375CED25841BB02092BF93D8 /* PrivacyInfo.xcprivacy */,
+				521A03C31FD3CA0C450525FF /* QuranMasterclass.entitlements */,
+				315C464F06EA7925CC68864D /* SceneDelegate.swift */,
+				C2AE42959AA313BCA7A4331F /* Site.swift */,
+				68C2E5C3541B7FDEB38A3E6F /* Store.swift */,
+				A63A9FD671C7A6A8DBAC464F /* WebViewController.swift */,
+				5BD4145873D117701BBF1CFA /* InfoPlist.strings */,
+				4A7E7CE7868719DFE45EA7C6 /* Localizable.strings */,
+			);
+			path = QuranMasterclass;
+			sourceTree = "<group>";
+		};
+		3D317148EE62BB611492BD61 = {
+			isa = PBXGroup;
+			children = (
+				1B2047BC7FEFF91C0360C09E /* QuranMasterclass */,
+				5447B95DBDFCE4CF36E40F76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5447B95DBDFCE4CF36E40F76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				912306BD11092D3395C98745 /* QuranMasterclass.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		927DEAFC059921685C8D6D20 /* QuranMasterclass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 794B0D8512C158F120E31A53 /* Build configuration list for PBXNativeTarget "QuranMasterclass" */;
+			buildPhases = (
+				DC7B8FEB8A0411C5A07BB3BD /* Sources */,
+				DDD66E0D6852CAA977E45986 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuranMasterclass;
+			packageProductDependencies = (
+			);
+			productName = QuranMasterclass;
+			productReference = 912306BD11092D3395C98745 /* QuranMasterclass.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C0F5F861D55A57FFA89A578 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					927DEAFC059921685C8D6D20 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3BBBD6560E671F20134CB861 /* Build configuration list for PBXProject "QuranMasterclass" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				ar,
+				de,
+				en,
+			);
+			mainGroup = 3D317148EE62BB611492BD61;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5447B95DBDFCE4CF36E40F76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				927DEAFC059921685C8D6D20 /* QuranMasterclass */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDD66E0D6852CAA977E45986 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FFD7B7B1DA21CB069858066 /* Assets.xcassets in Resources */,
+				F337909C17DE097467E06B78 /* InfoPlist.strings in Resources */,
+				BC61982D1DD0F24C4FB487D3 /* Localizable.strings in Resources */,
+				8113D32EAB9CC3C6B7DAE56E /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC7B8FEB8A0411C5A07BB3BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5815571DF9AE9F6D215366E /* AppDelegate.swift in Sources */,
+				DD5CCACF5A057D1C99F0A27C /* SceneDelegate.swift in Sources */,
+				9453AD90D5704FFAB9A58A43 /* Site.swift in Sources */,
+				AAFE4C9F4BF1E1F6561087FF /* Store.swift in Sources */,
+				CC13A648AA0D81288CD5A76F /* WebViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4A7E7CE7868719DFE45EA7C6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BC631D0D7CFD106678905BE /* ar */,
+				80DF3BD8A8903A6D839C540C /* de */,
+				88E4365D53F2EA80E193F2C5 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5BD4145873D117701BBF1CFA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				435464FBA926D6DEF4B827F7 /* ar */,
+				8D61F7E9DF0BF83A67D2C708 /* de */,
+				08BFB55720B412B40D7C74B6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CE9D516D1BAE6C51ED13B11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuranMasterclass/QuranMasterclass.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = NO;
+				INFOPLIST_FILE = QuranMasterclass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.quranmasterclass.app;
+				PRODUCT_NAME = QuranMasterclass;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		63EFF6E37EFEA31177502065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		71FB375CD416A2B89BD4DD97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuranMasterclass/QuranMasterclass.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = NO;
+				INFOPLIST_FILE = QuranMasterclass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.quranmasterclass.app;
+				PRODUCT_NAME = QuranMasterclass;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9AB3ECBFD00210FB87DE5CA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BBBD6560E671F20134CB861 /* Build configuration list for PBXProject "QuranMasterclass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63EFF6E37EFEA31177502065 /* Debug */,
+				9AB3ECBFD00210FB87DE5CA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		794B0D8512C158F120E31A53 /* Build configuration list for PBXNativeTarget "QuranMasterclass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE9D516D1BAE6C51ED13B11 /* Debug */,
+				71FB375CD416A2B89BD4DD97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C0F5F861D55A57FFA89A578 /* Project object */;
+}
