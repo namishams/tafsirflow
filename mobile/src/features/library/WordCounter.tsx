@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Animated, Easing, Pressable, ScrollView, Text, View } from "react-native";
+import { Animated, Easing, I18nManager, Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { Circle, Defs, Path, RadialGradient, Stop } from "react-native-svg";
 import { ARABIC_FONT, FONT } from "@/lib/theme";
 import { ALLAH, COUNTS } from "@/web/secrets/counts";
@@ -83,7 +83,7 @@ export function WordCounter({ words, times, spots, note, lang, initial = "fearNo
         {refs.length > 0 ? (
           <View>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: "rgba(255,255,255,0.85)" }}>{w.label}</Text>
-            <Text style={{ marginTop: 4, fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.7, textTransform: "uppercase", color: stageGold(0.8) }}>{Object.keys(per).length} {spots}</Text>
+            <Text style={{ marginTop: 4, fontFamily: FONT.semibold, fontSize: 12, letterSpacing: I18nManager.isRTL ? 0 : 1.7, textTransform: "uppercase", color: stageGold(0.8) }}>{Object.keys(per).length} {spots}</Text>
             <ScrollView style={{ marginTop: 12, maxHeight: 224 }} nestedScrollEnabled contentContainerStyle={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
               {Object.entries(per).map(([r, k]) => <RefChip key={r} label={`${r}${k > 1 ? ` ×${k}` : ""}`} onStage onPress={() => openRef(r)} />)}
             </ScrollView>

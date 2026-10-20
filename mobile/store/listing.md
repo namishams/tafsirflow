@@ -77,6 +77,7 @@ Nutzungsbedingungen: https://quranmasterclass.com/de/legal/terms · Datenschutz:
 | com.quranmasterclass.app.pro.monthly | Auto-renewable subscription (group "Quran Masterclass Pro", 1 month) | Pro monthly | 4,99 € (tier matching 4.99 USD) | Quran Masterclass Pro / Quran Masterclass Pro |
 | com.quranmasterclass.app.dua | Consumable | Personal dua | 0,99 € | Personal dua / Persönliche Dua |
 | com.quranmasterclass.app.dua5 | Consumable | Five personal duas | 3,99 € | Five personal duas / Fünf persönliche Duas |
+| com.quranmasterclass.app.names | Consumable | Personal name report | 0,99 € | Personal name report / Persönlicher Namensbericht |
 
 App Store Server Notifications V2 (production and sandbox): `https://quranmasterclass.com/api/iap/apple/notifications`
 
@@ -94,8 +95,9 @@ App Store Server Notifications V2 (production and sandbox): `https://quranmaster
 Sign in with the review account below (it is a normal free account, so the Pro purchase sheet is visible).
 - Pro: open Masterclass → any surah under "With Pro" (e.g. Al-Mulk) → "Get Pro" shows the summary (what, price, monthly renewal, how to cancel) before Apple's sheet. "Restore purchases" is on the same sheet and in Account.
 - Personal dua (consumable): Discover → Dua generator → choose a concern → "Personal dua".
+- Personal name report (consumable, not part of Pro): open the baby-name finder (Discover → Islam → "Names") → fill in the steps → "Find names". The free suggestions appear first; below them the card "Personal name report" buys one report and shows it right away. Bought reports that were not used yet are shown on the card ("1 report available"); a report that fails is credited back automatically. The report only chooses among names from our curated list (meanings and verses come from that list, not from the AI) and adds a short personal reason per name.
 - Account deletion: Account tab → "Delete account" (password confirmation).
 - Location is optional (prayer times can use a city from a list); the permission is requested only after tapping "Use my location".
 - Notifications are optional and only scheduled after the user turns them on.
-- The AI assistant (Pro) and personal duas use OpenAI on our server; no AI runs on the device.
+- The AI assistant (Pro), personal duas and the personal name report use OpenAI on our server; no AI runs on the device. For the name report only first names and the chosen wishes are sent, never the family name.
 Review account: (to be created on quranmasterclass.com before submission)

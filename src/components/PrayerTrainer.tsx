@@ -2,16 +2,26 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { PRAYERS, buildPrayer, type Posture, type Tradition } from "@/lib/salah";
+import { PRAYERS, buildPrayer, langOf, type L2, type Lang, type Posture, type Tradition } from "@/lib/salah";
 import { ArrowBack, ArrowNext } from "./Icons";
 import { PracticeStar, PracticeWindow, starPath } from "./art/PracticeArt";
 
-type Lang = "de" | "en" | "ar";
-type Tx = { de: string; en: string; ar?: string };
-const UI: Record<Lang, Record<string, string>> = {
+type UiKey = "sunni" | "shia" | "rakah" | "of" | "play" | "pause" | "prev" | "next" | "steps" | "aloud" | "silent" | "qibla" | "meaning" | "restart" | "note" | "learnFatiha";
+const UI: Record<Lang, Record<UiKey, string>> = {
   de: { sunni: "Sunnitisch", shia: "Schiitisch (Dscha'fari)", rakah: "Raka", of: "von", play: "Abspielen", pause: "Pause", prev: "Zurück", next: "Weiter", steps: "Alle Schritte", aloud: "laut", silent: "leise", qibla: "Qibla", meaning: "Bedeutung", restart: "Von vorn", note: "Dieser Trainer zeigt den üblichen Ablauf. Einzelheiten unterscheiden sich zwischen den Rechtsschulen – lerne das Gebet zusätzlich bei einem Lehrer deiner Schule.", learnFatiha: "Al-Fatiha Vers für Vers lernen" },
   en: { sunni: "Sunni", shia: "Shia (Ja'fari)", rakah: "Rak'ah", of: "of", play: "Play", pause: "Pause", prev: "Back", next: "Next", steps: "All steps", aloud: "aloud", silent: "silent", qibla: "Qibla", meaning: "Meaning", restart: "Start again", note: "This trainer shows the common sequence. Details differ between the schools – also learn the prayer with a teacher of your school.", learnFatiha: "Learn Al-Fatiha verse by verse" },
   ar: { sunni: "أهل السنة", shia: "الشيعة (المذهب الجعفري)", rakah: "الركعة", of: "من", play: "تشغيل", pause: "إيقاف", prev: "السابق", next: "التالي", steps: "كل الخطوات", aloud: "جهرًا", silent: "سرًّا", qibla: "القبلة", meaning: "المعنى", restart: "من البداية", note: "يعرض هذا المدرّب الترتيب المعتاد للصلاة، وتختلف بعض التفاصيل بين المذاهب، فتعلّم الصلاة أيضًا على يد معلّم من مذهبك.", learnFatiha: "تعلّم سورة الفاتحة آيةً آية" },
+  tr: { sunni: "Sünni", shia: "Şii (Caferî)", rakah: "Rekât", of: "/", play: "Oynat", pause: "Duraklat", prev: "Geri", next: "Sonraki", steps: "Tüm adımlar", aloud: "sesli", silent: "sessiz", qibla: "Kıble", meaning: "Anlam", restart: "Baştan başla", note: "Bu eğitim yaygın sırayı gösterir. Ayrıntılar mezhepler arasında farklılık gösterir – namazı ayrıca kendi mezhebinden bir hocayla da öğren.", learnFatiha: "Fâtiha'yı ayet ayet öğren" },
+  ur: { sunni: "سنی", shia: "شیعہ (جعفری)", rakah: "رکعت", of: "/", play: "چلائیں", pause: "روکیں", prev: "پیچھے", next: "اگلا", steps: "تمام مراحل", aloud: "بلند آواز", silent: "آہستہ", qibla: "قبلہ", meaning: "معنی", restart: "دوبارہ شروع کریں", note: "یہ مشق عام ترتیب دکھاتی ہے۔ تفصیلات مکاتب کے درمیان مختلف ہوتی ہیں – نماز اپنے مکتب کے کسی استاد سے بھی سیکھیں۔", learnFatiha: "سورۂ فاتحہ آیت بہ آیت سیکھیں" },
+  fa: { sunni: "اهل سنت", shia: "شیعه (جعفری)", rakah: "رکعت", of: "از", play: "پخش", pause: "توقف", prev: "قبلی", next: "بعدی", steps: "همه گام‌ها", aloud: "بلند", silent: "آهسته", qibla: "قبله", meaning: "معنا", restart: "از نو", note: "این تمرین ترتیب رایج را نشان می‌دهد. جزئیات میان مذاهب فرق می‌کند – نماز را علاوه بر این نزد معلمی از مذهب خودتان نیز بیاموزید.", learnFatiha: "آموختن فاتحه آیه به آیه" },
+  ps: { sunni: "سني", shia: "شیعه (جعفري)", rakah: "رکعت", of: "/", play: "غږول", pause: "ودرول", prev: "شاته", next: "بل", steps: "ټول ګامونه", aloud: "په لوړ غږ", silent: "په ټیټ غږ", qibla: "قبله", meaning: "معنا", restart: "له سره پیل", note: "دا تمرین عام ترتیب ښیي. جزئیات د مذهبونو ترمنځ توپیر لري – لمونځ د خپل مذهب له یوه ښوونکي سره هم زده کړئ.", learnFatiha: "الفاتحه آیت په آیت زده کړئ" },
+  fr: { sunni: "Sunnite", shia: "Chiite (ja'farite)", rakah: "Rak'a", of: "sur", play: "Lecture", pause: "Pause", prev: "Retour", next: "Suivant", steps: "Toutes les étapes", aloud: "à voix haute", silent: "à voix basse", qibla: "Qibla", meaning: "Sens", restart: "Recommencer", note: "Cet entraînement montre le déroulement courant. Les détails diffèrent d'une école à l'autre – apprends aussi la prière auprès d'un enseignant de ton école.", learnFatiha: "Apprendre Al-Fatiha verset par verset" },
+  es: { sunni: "Suní", shia: "Chií (yafarí)", rakah: "Rak'a", of: "de", play: "Reproducir", pause: "Pausa", prev: "Atrás", next: "Siguiente", steps: "Todos los pasos", aloud: "en voz alta", silent: "en silencio", qibla: "Qibla", meaning: "Significado", restart: "Empezar de nuevo", note: "Este entrenador muestra el desarrollo habitual. Los detalles difieren entre las escuelas; aprende también la oración con un maestro de tu escuela.", learnFatiha: "Aprender Al-Fatiha aleya por aleya" },
+  id: { sunni: "Sunni", shia: "Syiah (Ja'fari)", rakah: "Rakaat", of: "dari", play: "Putar", pause: "Jeda", prev: "Kembali", next: "Berikutnya", steps: "Semua langkah", aloud: "keras", silent: "pelan", qibla: "Kiblat", meaning: "Arti", restart: "Mulai dari awal", note: "Latihan ini menunjukkan urutan yang umum. Rinciannya berbeda antarmazhab – pelajari juga shalat bersama guru dari mazhabmu.", learnFatiha: "Pelajari Al-Fatihah ayat demi ayat" },
+  ms: { sunni: "Sunni", shia: "Syiah (Ja'fari)", rakah: "Rakaat", of: "daripada", play: "Main", pause: "Jeda", prev: "Kembali", next: "Seterusnya", steps: "Semua langkah", aloud: "kuat", silent: "perlahan", qibla: "Kiblat", meaning: "Maksud", restart: "Mulakan semula", note: "Latihan ini menunjukkan urutan yang lazim. Perincian berbeza antara mazhab – pelajari juga solat bersama guru daripada mazhab anda.", learnFatiha: "Pelajari Al-Fatihah ayat demi ayat" },
+  bn: { sunni: "সুন্নি", shia: "শিয়া (জাফরি)", rakah: "রাকাত", of: "/", play: "চালান", pause: "বিরতি", prev: "পিছনে", next: "পরবর্তী", steps: "সব ধাপ", aloud: "উচ্চস্বরে", silent: "নিচুস্বরে", qibla: "কিবলা", meaning: "অর্থ", restart: "আবার শুরু করুন", note: "এই প্রশিক্ষণ প্রচলিত ধারাক্রম দেখায়। মাযহাবভেদে খুঁটিনাটি ভিন্ন হয় – নামাজ আপনার মাযহাবের একজন শিক্ষকের কাছ থেকেও শিখুন।", learnFatiha: "আল-ফাতিহা আয়াত ধরে ধরে শিখুন" },
+  ru: { sunni: "Сунниты", shia: "Шииты (джафариты)", rakah: "Ракаат", of: "из", play: "Воспроизвести", pause: "Пауза", prev: "Назад", next: "Далее", steps: "Все шаги", aloud: "вслух", silent: "про себя", qibla: "Кибла", meaning: "Смысл", restart: "Начать заново", note: "Этот тренажёр показывает общепринятую последовательность. Детали различаются между школами – учи намаз также у наставника своей школы.", learnFatiha: "Учить Аль-Фатиху аят за аятом" },
+  zh: { sunni: "逊尼派", shia: "什叶派（贾法里）", rakah: "拉克尔提", of: "/", play: "播放", pause: "暂停", prev: "上一步", next: "下一步", steps: "全部步骤", aloud: "出声", silent: "低声", qibla: "基卜拉", meaning: "含义", restart: "重新开始", note: "本训练展示通行的礼拜顺序。各学派的细节有所不同——请再向你所属学派的老师学习礼拜。", learnFatiha: "逐节学习开端章" },
 };
 
 // ---------- the figure: a simple side view, drawn from joints so it can move smoothly between postures ----------
@@ -84,9 +94,9 @@ function Figure({ posture, qibla, label }: { posture: Posture; qibla: string; la
 
 export default function PrayerTrainer() {
   const locale = useLocale();
-  const lang: Lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
+  const lang = langOf(locale);
   const u = UI[lang];
-  const tx = (v?: Tx) => (v ? v[lang] ?? v.en : "");
+  const tx = (v?: L2) => (v ? v[lang] ?? v.en : "");
   const [tradition, setTradition] = useState<Tradition>("sunni");
   const [prayer, setPrayer] = useState<(typeof PRAYERS)[number]["id"]>("fajr");
   const steps = useMemo(() => buildPrayer(prayer, tradition), [prayer, tradition]);
@@ -99,7 +109,7 @@ export default function PrayerTrainer() {
   useEffect(() => {
     if (!auto) return;
     if (i >= steps.length - 1) { setAuto(false); return; }
-    const ms = Math.min(14000, 3500 + (step.tr?.length ?? 0) * 45);
+    const ms = Math.min(14000, 3500 + (step.translit?.length ?? 0) * 45);
     const id = setTimeout(() => setI((n) => n + 1), ms);
     return () => clearTimeout(id);
   }, [auto, i, steps.length, step]);
@@ -134,7 +144,7 @@ export default function PrayerTrainer() {
           <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal"><PracticeStar size={10} /><span dir="ltr">{i + 1} / {steps.length}</span>{step.aloud !== undefined && step.ar ? ` · ${step.aloud ? u.aloud : u.silent}` : ""}</p>
           <h3 className="font-display mt-2 text-3xl leading-tight">{tx(step.title)}</h3>
           {step.ar && <p className="font-arabic mt-5 border-y border-[rgb(214_180_108)]/25 py-3 text-[26px] leading-[2] text-[#fbf3dc] sm:text-[30px]" dir="rtl">{step.ar}</p>}
-          {step.tr && lang !== "ar" && <p className="mt-3 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]">{step.tr}</p>}
+          {step.translit && lang !== "ar" && <p className="mt-3 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]"><span dir="ltr">{step.translit}</span></p>}
           {step.meaning && lang !== "ar" && <p className="mt-3 text-[15px] leading-relaxed text-white/80"><span className="font-semibold text-white">{u.meaning}: </span>{tx(step.meaning)}</p>}
           {step.note && <p className="mt-4 rounded-xl border border-[rgb(214_180_108)]/25 bg-white/[0.05] p-3 text-sm leading-relaxed text-white/75">{tx(step.note)}</p>}
           </div>

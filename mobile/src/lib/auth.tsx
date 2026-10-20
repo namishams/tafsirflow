@@ -1,12 +1,17 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { api } from "./api";
 import { getToken, setToken } from "./storage";
+import { writeJSON } from "./store";
 
-export type User = { id: number; email: string; name: string | null; plan: string; emailVerified: boolean; role: "user" | "admin" };
+export type User = { id: number; email: string; name: string | null; plan: string; emailVerified: boolean; role: "user" | "admin"; birthYear?: number | null };
 export type RegisterInput = {
   email: string; password: string; firstName: string; lastName: string; country: string; birthYear: number;
-  acceptTerms: boolean; marketing: boolean; locale: string;
+  acceptTerms: boolean; marketing: boolean; locale: string; city?: string; goal?: string;
 };
+
+// the year of birth tunes the Shams Method (pace, repetitions, test time) on this device, as on the website
+// (RequireAccount / AccountLink write tf:age from the account)
+const rememberAge = (year: number | null | undefined) => { if (year && Number.isInteger(year)) writeJSON("tf:age", year, true); };
 
 type Ctx = {
   user: User | null;
@@ -29,22 +34,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const d = await api<{ user: User | null }>("/api/auth/me");
       setUser(d.user);
+      rememberAge(d.user?.birthYear);
       if (!d.user) await setToken(null); // session expired on the server
     } catch { /* offline: keep what we have */ }
   }, []);
 
   useEffect(() => { refresh().finally(() => setReady(true)); }, [refresh]);
 
-  const signIn = useCallback(async (path: string, body: unknown) => {
+  const signIn = useCallback(async (path: string, body: unknown, birthYear?: number) => {
     const d = await api<{ user: User; token?: string }>(path, { body });
     if (d.token) await setToken(d.token);
     setUser(d.user);
+    rememberAge(d.user?.birthYear ?? birthYear);
   }, []);
 
   const value = useMemo<Ctx>(() => ({
     user, ready, refresh,
     login: (email, password) => signIn("/api/auth/login", { email, password }),
-    register: (input) => signIn("/api/auth/register", input),
+    register: (input) => signIn("/api/auth/register", input, input.birthYear),
     logout: async () => {
       await api("/api/auth/logout", { body: {} }).catch(() => undefined);
       await setToken(null);

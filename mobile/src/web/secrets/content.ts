@@ -1,5 +1,6 @@
 // "Secrets of the Quran" (/secrets): verified counts, popular claims checked, facts with sources, what is promised to
-// those who read the Quran, and places of peace. German, English and Arabic; other languages fall back to English.
+// those who read the Quran, and places of peace. German, English and Arabic here; the other eleven languages in
+// lib/pagecontent/<lang>/secrets.ts (complete; a missing field would fall back to English).
 // Counts come from lib/secrets/counts.ts (computed from the full Uthmani text, method stated on the page).
 export type Verdict = "true" | "false" | "method";
 export type SecretsContent = {
@@ -14,7 +15,21 @@ export type SecretsContent = {
   wealthTitle: string; wealthLead: string; promises: { ref: string; title: string; text: string }[]; wealthNote: string; wealthHadith: { text: string; src: string };
   placesTitle: string; placesLead: string; places: { ar: string; title: string; body: string; src: string; href?: string }[];
   note: string; ctaTitle: string; ctaBody: string; cta: string;
+  // page navigation, verdict legend, link from a claim to its places in the counter, groups of "more", onward links
+  nav: { title: string } & Record<SectionId, string>;
+  verdictHelp: Record<Verdict, string>;
+  showPlaces: string;
+  moreGroups: string[];
+  next: { shams: { title: string; body: string; cta: string }; reader: { title: string; body: string; cta: string } };
 };
+
+// Sections of the page in order (ids of the anchors on the website, the table of contents in web and app)
+export const SECTIONS = ["counter", "claims", "facts", "more", "read", "wealth", "places", "next"] as const;
+export type SectionId = (typeof SECTIONS)[number];
+
+// "More secrets" in groups (indexes into `more`, the same order in every language; titles in `moreGroups`):
+// surahs and their openings · repetitions, letters, words · names · revelation and preservation · prayer and the night
+export const MORE_GROUPS: number[][] = [[0, 1, 6, 13, 14, 7, 10, 12, 8], [2, 3, 4, 5, 11], [15, 16, 17], [18, 19, 20, 21], [9, 22, 23, 24]];
 
 const de: SecretsContent = {
   kicker: "Geprüft, nicht geraten",
@@ -134,6 +149,14 @@ const de: SecretsContent = {
   ctaTitle: "Lass es nicht beim Staunen",
   ctaBody: "Jeder Buchstabe zählt zehnfach. Beginne heute mit einem Vers – die Shams-Methode führt dich Schritt für Schritt.",
   cta: "Ersten Vers lernen",
+  nav: { title: "Auf dieser Seite", counter: "Wortzähler", claims: "Behauptungen geprüft", facts: "Mit Quelle", more: "Mehr Geheimnisse", read: "Lohn des Lesens", wealth: "Segen und Versorgung", places: "Orte des Friedens", next: "Weiter lernen" },
+  verdictHelp: { true: "Unsere eigene Zählung im vollständigen Text bestätigt es.", false: "Unsere Zählung bestätigt es nicht – die tatsächliche Zahl steht in der Antwort.", method: "Stimmt nur mit der angegebenen Zählweise; andere Zählweisen kommen auf andere Zahlen." },
+  showPlaces: "Alle Stellen im Zähler zeigen",
+  moreGroups: ["Suren und ihre Anfänge", "Wiederholungen, Buchstaben, Wörter", "Namen im Quran", "Offenbarung und Bewahrung", "Für Gebet, Freitag und Nacht"],
+  next: {
+    shams: { title: "Die Shams-Methode", body: "Sieben Schritte pro Vers von Nami Shams – hören, rückwärts aufbauen, Merkhilfen, abrufen. So bleibt, was dich erstaunt hat, im Herzen.", cta: "Methode entdecken" },
+    reader: { title: "Den Quran lesen", body: "Alle 114 Suren: Vers für Vers anhören, Übersetzung und Tafsir lesen. Jede Stellenangabe auf dieser Seite öffnet sich dort.", cta: "Quran öffnen" },
+  },
 };
 
 const en: SecretsContent = {
@@ -254,6 +277,14 @@ const en: SecretsContent = {
   ctaTitle: "Don’t stop at amazement",
   ctaBody: "Every letter counts tenfold. Start today with one verse – the Shams Method guides you step by step.",
   cta: "Learn your first verse",
+  nav: { title: "On this page", counter: "Word counter", claims: "Claims checked", facts: "With sources", more: "More secrets", read: "Reward of reading", wealth: "Blessing and provision", places: "Places of peace", next: "Keep learning" },
+  verdictHelp: { true: "Our own count in the complete text confirms it.", false: "Our count does not confirm it – the actual number is in the answer.", method: "True only with the counting method stated; other methods arrive at other numbers." },
+  showPlaces: "Show every place in the counter",
+  moreGroups: ["Surahs and their openings", "Repetitions, letters, words", "Names in the Quran", "Revelation and preservation", "For prayer, Friday and the night"],
+  next: {
+    shams: { title: "The Shams Method", body: "Seven steps per verse by Nami Shams – listen, build up backwards, memory hooks, recall. So what amazed you stays in your heart.", cta: "Discover the method" },
+    reader: { title: "Read the Quran", body: "All 114 surahs: listen verse by verse, read translation and tafsir. Every reference on this page opens there.", cta: "Open the Quran" },
+  },
 };
 
 const ar: SecretsContent = {
@@ -374,6 +405,14 @@ const ar: SecretsContent = {
   ctaTitle: "لا تقف عند الإعجاب",
   ctaBody: "كل حرف بعشر حسنات. ابدأ اليوم بآية واحدة، ومنهج شمس يرافقك خطوة بخطوة.",
   cta: "احفظ أول آية",
+  nav: { title: "في هذه الصفحة", counter: "عدّاد الكلمات", claims: "ادعاءات مُراجَعة", facts: "حقائق بمصادرها", more: "أسرار أخرى", read: "فضل التلاوة", wealth: "البركة والرزق", places: "أماكن السكينة", next: "تابع التعلّم" },
+  verdictHelp: { true: "عدُّنا في النص الكامل يؤكده.", false: "عدُّنا لا يؤكده، والعدد الصحيح مذكور في الجواب.", method: "صحيح بطريقة العدّ المذكورة فقط، وطرق العدّ الأخرى تصل إلى أعداد أخرى." },
+  showPlaces: "اعرض كل المواضع في العدّاد",
+  moreGroups: ["السور وفواتحها", "تكرار وحروف وكلمات", "أسماء في القرآن", "النزول والحفظ", "للصلاة والجمعة والليل"],
+  next: {
+    shams: { title: "منهج شمس", body: "سبع خطوات لكل آية من نامي شمس: استماع، وبناء من الآخر، ومعينات للحفظ، واسترجاع؛ ليبقى ما أدهشك في قلبك.", cta: "تعرّف على المنهج" },
+    reader: { title: "اقرأ القرآن", body: "السور الـ114 كلها: استمع آية آية، واقرأ التفسير. وكل إحالة في هذه الصفحة تُفتح هناك.", cta: "افتح المصحف" },
+  },
 };
 
 export async function secretsContent(locale: string): Promise<SecretsContent> {

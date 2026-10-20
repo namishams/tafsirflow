@@ -1,4 +1,5 @@
-import { createContext, useCallback, useContext, useMemo, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, type ReactNode } from "react";
+import { AppState, Platform } from "react-native";
 import { router, type Href } from "expo-router";
 import { useAuth } from "./auth";
 import { useStored, writeJSON } from "./store";
@@ -35,6 +36,17 @@ const ProContext = createContext<Ctx>({ pro: false, until: null, setLocal: () =>
 export function ProProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth();
   const local = useStored<Entitlement>(LOCAL_KEY, null);
+  // store transactions that are not finished yet (Pro, dua credits) are confirmed by the server and finished: at
+  // start, after signing in (they are bound to the account) and whenever the app comes back to the foreground
+  const uid = user?.id;
+  useEffect(() => {
+    if (Platform.OS === "web") return;
+    let live = true;
+    const run = () => { void import("./iap").then((m) => { if (!live) return; void m.observePurchases(); void m.settlePending(); }).catch(() => undefined); };
+    run();
+    const sub = AppState.addEventListener("change", (s) => { if (s === "active") run(); });
+    return () => { live = false; sub.remove(); };
+  }, [uid]);
   const setLocal = useCallback((e: Entitlement) => writeJSON(LOCAL_KEY, e, true), []);
   const now = Date.now();
   const localOk = !!local && local.until > now;

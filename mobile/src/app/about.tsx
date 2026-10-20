@@ -26,6 +26,8 @@ function Eyebrow({ children }: { children: string }) {
 
 function About({ c }: { c: AboutContent }) {
   const t = useWebT("about");
+  const tc = useWebT("company");
+  const tl = useWebT("legal");
   const isl = useIsl();
   return (
     <IslScreen>
@@ -64,6 +66,8 @@ function About({ c }: { c: AboutContent }) {
             <Corners />
             <IslH2 size={30} style={{ lineHeight: 36 }}>{c.freeTitle}</IslH2>
             <Markdown text={c.free} />
+            {/* the website stays free; the app has Pro */}
+            <Text style={{ marginTop: 16, fontFamily: FONT.regular, fontSize: 15, lineHeight: 24.4, color: isl.muted }}>{t("appNote")}</Text>
           </IslCard>
         </View>
       </Marble>
@@ -134,6 +138,10 @@ function About({ c }: { c: AboutContent }) {
           </IslCard>
           <IslH2 size={30} style={{ marginTop: 56 }}>{c.contactTitle}</IslH2>
           <Markdown text={c.contact} />
+          <Text style={{ marginTop: 16, fontFamily: FONT.regular, fontSize: 15, lineHeight: 24.4, color: isl.muted }}>
+            {tc("operatedBy", { place: tc("place") })}{" "}
+            <Text onPress={() => openHref("/legal/imprint")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, color: isl.accent }}>{tl("imprintTitle")}</Text>
+          </Text>
           <View style={{ marginTop: 32, flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
             <GoldPill small title={t("ctaShams")} onPress={() => openHref("/shams")} />
             <OutlinePill title={t("ctaFeedback")} onPress={() => openHref("/feedback")} />

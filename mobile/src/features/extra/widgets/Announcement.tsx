@@ -12,7 +12,7 @@ import { openLink } from "../links";
 
 /**
  * The owner's short notice from the admin dashboard (website Announcement.tsx): a stage bar with a gold hairline,
- * the text in the reader's language (English as fallback), an optional link, and a close button that hides this
+ * the text in the reader's language (de / en / ar; English as fallback), an optional link, and a close button that hides this
  * notice until the owner writes a new one (tf:annClosed). No props; renders nothing without an announcement.
  * Place it at the very top of the Today tab (below the safe area).
  */
@@ -23,10 +23,11 @@ export function Announcement() {
   const closed = useStored<string>("tf:annClosed", "");
   const [hidden, setHidden] = useState(false);
   if (!a || hidden || closed === a.id) return null;
-  const text = (lang === "de" ? a.de : a.en) || a.en || a.de;
+  const text = (lang === "de" ? a.de : lang === "ar" ? a.ar : a.en) || a.en || a.de;
   if (!text) return null;
   const close = () => { writeJSON("tf:annClosed", a.id, true); setHidden(true); };
-  const body = <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 13, lineHeight: 18, color: stage.text }}>{text}</Text>;
+  const ar = lang === "ar" && text === a.ar;
+  const body = <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 13, lineHeight: 18, color: stage.text, ...(ar ? { writingDirection: "rtl" as const } : null) }}>{text}</Text>;
   return (
     <View accessibilityRole="alert" style={{ backgroundColor: stage.bg }}>
       <GoldHairline strength={1} />

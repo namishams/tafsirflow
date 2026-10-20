@@ -6,6 +6,8 @@ import { router, usePathname, type Href } from "expo-router";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { Icon } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
+import { isRTL, useLang } from "@/i18n";
+import { reciterName } from "@/lib/quran";
 import { currentReciter, radio, useRadio } from "./engine";
 import { useAppT } from "./strings";
 import { useLoop, useReduceMotion } from "./motion";
@@ -27,6 +29,7 @@ export function RadioMiniPlayer({ global = false, visible = true, bottomOffset }
   const r = useRadio();
   const t = useWebT("radio");
   const a = useAppT();
+  const { lang } = useLang();
   const th = useTheme();
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
@@ -52,7 +55,7 @@ export function RadioMiniPlayer({ global = false, visible = true, bottomOffset }
   const place = reader ? { top: insets.top + 56 } : { bottom };
   const ch = r.chapters.find((c) => c.id === r.now.s);
   const title = `${ch ? `${ch.id}. ${ch.name_simple}` : `${r.now.s}`} · ${r.now.v}`;
-  const sub = `${t(`st_${r.station.id}`)} · ${currentReciter(r).name}`;
+  const sub = `${t(`st_${r.station.id}`)} · ${reciterName(currentReciter(r), lang)}`;
   const dot = { opacity: r.playing && !reduce ? pulse.interpolate({ inputRange: [0, 0.5, 1], outputRange: [1, 0.35, 1] }) : 1 };
 
   return (
@@ -62,7 +65,7 @@ export function RadioMiniPlayer({ global = false, visible = true, bottomOffset }
         <Pressable onPress={() => router.push("/radio/now" as Href)} accessibilityRole="button" accessibilityLabel={`${a("openNowPlaying")}: ${title}, ${sub}`} accessibilityHint={t("openRadio")}
           style={{ flex: 1, minWidth: 0, flexDirection: "row", alignItems: "center", gap: 12 }}>
           <View style={{ width: 44, height: 44, borderRadius: R.sm, backgroundColor: th.ink, alignItems: "center", justifyContent: "center", opacity: r.playing ? 1 : 0.7 }}>
-            <Text style={{ fontFamily: FONT.display, fontSize: 10, letterSpacing: 1, color: th.bg }}>{r.playing ? "LIVE" : "FM"}</Text>
+            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.7} style={{ fontFamily: FONT.display, fontSize: 10, letterSpacing: isRTL(lang) ? 0 : 1, color: th.bg, paddingHorizontal: 3, textAlign: "center" }}>{r.playing ? t("onAir") : t("off")}</Text>
             {r.playing ? <Animated.View style={[{ position: "absolute", right: -4, top: -4, width: 10, height: 10, borderRadius: 5, backgroundColor: "rgb(239,68,68)", borderWidth: 2, borderColor: th.surface }, dot]} /> : null}
           </View>
           <View style={{ flex: 1, minWidth: 0 }}>

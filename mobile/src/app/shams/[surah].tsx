@@ -11,10 +11,10 @@ import { useWebT } from "@/i18n/web";
 import { FREE, usePro } from "@/lib/pro";
 import { readJSON, writeJSON } from "@/lib/store";
 import { getChapter, getVerses, type Chapter, type Verse } from "@/lib/quran";
-import { versePlan, surahProgress, type VersePlan } from "@/web/coach";
+import { versePlan, surahProgress, stepCount, type VersePlan } from "@/web/coach";
 import { rate, readSrs, stats, type Rating } from "@/web/learning";
 import { ageProfile } from "@/web/age";
-import { completeItem, readSummary, type SessionItem } from "@/web/session";
+import { completeItem, currentItem, readSession, readSummary, type SessionItem } from "@/web/session";
 import { useReciter } from "@/features/quran/reciter";
 import { useVerseAudio } from "@/features/quran/useVerseAudio";
 import { VerseWords, WordGrid, wordAt, type Hide } from "@/features/quran/VerseWords";
@@ -52,7 +52,32 @@ export default function ShamsSession() {
   }, [surah, lang, reciter]);
   useEffect(load, [load]);
 
-  if (!pro && !FREE.shamsSurah(surah)) {
+  const locked = !pro && !FREE.shamsSurah(surah);
+  const [skipEnded, setSkipEnded] = useState(false);
+  useEffect(() => {
+    if (!locked || !sessionMode) return;
+    // a session item behind the Pro gate: move on to the next allowed one, or end with the summary
+    const cur = currentItem(readSession());
+    if (!cur) { setSkipEnded(true); return; }
+    let next: SessionItem | null = completeItem(cur.key, true, true);
+    while (next && !FREE.shamsSurah(Number(next.key.split(":")[0]))) next = completeItem(next.key, true, true);
+    if (!next) { setSkipEnded(true); return; }
+    const [s, v] = next.key.split(":").map(Number);
+    router.replace(`/shams/${s}?v=${v}&session=1` as Href);
+  }, [locked, sessionMode, surah]);
+  if (locked && sessionMode && skipEnded) {
+    const sum = readSummary();
+    return (
+      <View style={{ flex: 1, backgroundColor: t.bg, paddingTop: insets.top + 8, paddingHorizontal: 24 }}>
+        <TopBar title="" onClose={() => goBack()} />
+        <Display size="title1" style={{ marginTop: 24 }}>{st("sessionDone")}</Display>
+        {sum ? <Text style={{ marginTop: 10, color: t.ink, fontFamily: FONT.regular, fontSize: 16 }}>{st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes })}</Text> : null}
+        <GoldButton title={st("toToday")} onPress={() => goBack()} style={{ marginTop: 16 }} />
+      </View>
+    );
+  }
+  if (locked && sessionMode) return <Loading />;
+  if (locked) {
     return (
       <View style={{ flex: 1, backgroundColor: t.bg, paddingTop: insets.top + 8 }}>
         <TopBar title={chapter?.name_simple ?? ""} onClose={() => goBack()} />
@@ -92,6 +117,7 @@ function TopBar({ title, sub, onClose, steps, pos }: { title: string; sub?: stri
 }
 
 function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapter; verses: Verse[]; startVerse: number; sessionMode: boolean }) {
+  const { pro } = usePro();
   const t = useTheme();
   const ts = useWebT("shams");
   const tp = useWebT("player");
@@ -207,10 +233,13 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
   const stepPos = plan && step !== null ? plan.steps.indexOf(step) : -1;
   const lastStep = !!plan && stepPos === plan.steps.length - 1;
 
+  const slipped = useRef<string | null>(null); // verse that was rated "again" during this pass
   const goNextVerse = (ok: boolean) => {
     audio.stop();
     if (sessionMode) {
-      const next: SessionItem | null = completeItem(verse.verse_key, ok);
+      let next: SessionItem | null = completeItem(verse.verse_key, ok && slipped.current !== verse.verse_key);
+      // free users: skip items in Pro-locked surahs instead of getting stuck behind the gate
+      while (next && !pro && !FREE.shamsSurah(Number(next.key.split(":")[0]))) next = completeItem(next.key, true, true);
       if (!next) { setFinished("session"); return; }
       const [s, v] = next.key.split(":").map(Number);
       router.replace(`/shams/${s}?v=${v}&session=1` as Href);
@@ -229,6 +258,7 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
   const onRate = (r: Rating) => {
     const days = rate(verse.verse_key, r);
     setSaved(days ? tp("saved", { days }) : tp("savedToday"));
+    if (r === "again") slipped.current = verse.verse_key;
     if (r === "again") { setTimeout(() => beginPlan(idx, fullPath), 700); return; }
     setTimeout(nextStep, 600);
   };
@@ -295,7 +325,7 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
               <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 7 }}>
                   <Icon name="sun" color={stage.gold} size={14} />
-                  <Text style={[{ fontFamily: FONT.bold, fontSize: 11, letterSpacing: 1.7, textTransform: "uppercase", color: stage.gold }]}>{ts("title")} · {ts("stepOf", { n: stepPos + 1, total: plan.steps.length })}</Text>
+                  <Text style={[{ fontFamily: FONT.bold, fontSize: 11, letterSpacing: 1.7, textTransform: "uppercase", color: stage.gold }]}>{ts("title")} · {ts("stepOf", stepCount(plan.steps, step as number))}</Text>
                 </View>
                 {learned.todayCount > 0 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: stage.textMuted }}>{tp("todayCount", { n: learned.todayCount })}</Text> : null}
               </View>

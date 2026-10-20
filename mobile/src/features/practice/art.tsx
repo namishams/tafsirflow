@@ -10,6 +10,7 @@ import { Arcade, GoldCard, Poster, PosterGrid, SmallStar, Stage, gradientColors 
 import { Icon } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
 import { TILES } from "@/web/tiles";
+import { hasAppRoute } from "@/lib/features";
 import { archPath, starPath } from "./web/practiceArt";
 import { goBack } from "@/components/page";
 
@@ -319,7 +320,7 @@ export function Hero({ kicker, title, lead, word, art = "callig", lamp, arabic, 
 export function MoreTiles({ keys }: { keys: string[] }) {
   const w = useWebT();
   const t = useTheme();
-  const items = keys.map((k) => TILES[k]).filter(Boolean);
+  const items = keys.map((k) => TILES[k]).filter((x) => !!x && hasAppRoute(x.href));
   return (
     <View style={{ paddingHorizontal: 16, marginTop: 40 }}>
       <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", gap: 16, marginBottom: 20 }}>

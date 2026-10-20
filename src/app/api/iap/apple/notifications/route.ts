@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { DUA_PRODUCTS, IOS_BUNDLE_ID, PRO_SUBSCRIPTION, verifyAppleJws } from "@/lib/appleIap";
+import { NAME_PRODUCTS } from "@/lib/aiCredits";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +28,14 @@ export async function POST(req: NextRequest) {
     if (type === "REFUND" && tx.transactionId) {
       const r = await p.query("UPDATE iap_consumables SET refunded_at = now() WHERE transaction_id = $1 AND refunded_at IS NULL RETURNING user_id, credits", [tx.transactionId]);
       if (r.rows[0]) await p.query("UPDATE ai_credits SET dua = GREATEST(0, dua - $2), updated_at = now() WHERE user_id = $1", [r.rows[0].user_id, r.rows[0].credits]);
+    }
+    return json({ ok: true });
+  }
+  // refunded name reports: the same for the name credits
+  if (tx.productId && tx.productId in NAME_PRODUCTS) {
+    if (type === "REFUND" && tx.transactionId) {
+      const r = await p.query("UPDATE iap_consumables SET refunded_at = now() WHERE transaction_id = $1 AND refunded_at IS NULL RETURNING user_id, credits", [tx.transactionId]);
+      if (r.rows[0]) await p.query("UPDATE ai_credits SET names = GREATEST(0, names - $2), updated_at = now() WHERE user_id = $1", [r.rows[0].user_id, r.rows[0].credits]);
     }
     return json({ ok: true });
   }

@@ -1,4 +1,5 @@
-import { Pressable, Text, View } from "react-native";
+import { useEffect, useRef } from "react";
+import { Animated, Easing, Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { CALLIG_FONT, FONT, goldButton } from "@/lib/theme";
 import { Stage } from "@/components/brand";
@@ -12,8 +13,11 @@ import { Eq, PlayRosette } from "./ornaments";
 // The floating player dock of the website (Player.tsx): a dark-green jewel with gold – how far through the surah, the
 // position in the verse, the surah's Arabic name and verse x/y beside a small equaliser, previous / next verse and the
 // gold play button inside a slowly turning rosette, and the verse picker. Tapping the name opens the full player.
-export function PlayerDock({ bottom, arabicName, verse, total, playing, positionMs, durationMs, sleepMin, reduce, onToggle, onPrev, onNext, onSeek, onJump, onOpen }: {
+// During the pause after a verse ("your turn") a gold countdown bar sits on top with a Skip button.
+export type Turn = { ms: number; key: number };
+export function PlayerDock({ bottom, arabicName, verse, total, playing, positionMs, durationMs, sleepMin, reduce, turn, onSkipTurn, onToggle, onPrev, onNext, onSeek, onJump, onOpen }: {
   bottom: number; arabicName: string; verse: number; total: number; playing: boolean; positionMs: number; durationMs: number; sleepMin: number | null; reduce: boolean;
+  turn: Turn | null; onSkipTurn: () => void;
   onToggle: () => void; onPrev: () => void; onNext: () => void; onSeek: (ms: number) => void; onJump: () => void; onOpen: () => void;
 }) {
   const w = useWebT("player");
@@ -23,6 +27,7 @@ export function PlayerDock({ bottom, arabicName, verse, total, playing, position
     <View pointerEvents="box-none" style={{ position: "absolute", left: 12, right: 12, bottom }}>
       <View style={{ borderRadius: 24, shadowColor: "rgb(3,25,18)", shadowOpacity: 0.45, shadowRadius: 22, shadowOffset: { width: 0, height: 14 }, elevation: 10 }}>
         <Stage rounded={24} hairlines={false} style={{ borderWidth: 1, borderColor: "rgba(201,166,94,0.35)" }}>
+          {turn ? <TurnBar turn={turn} reduce={reduce} label={w("yourTurn")} skip={w("skip")} onSkip={onSkipTurn} /> : null}
           {/* how far through the surah */}
           <View style={{ height: 3, backgroundColor: "rgba(255,255,255,0.1)" }}>
             <LinearGradient colors={["rgba(201,166,94,0.6)", "rgb(233,207,153)", "rgb(201,166,94)"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ height: 3, width: `${(verse / Math.max(1, total)) * 100}%` }} />
@@ -74,6 +79,29 @@ export function PlayerDock({ bottom, arabicName, verse, total, playing, position
           </View>
         </Stage>
       </View>
+    </View>
+  );
+}
+
+function TurnBar({ turn, reduce, label, skip, onSkip }: { turn: Turn; reduce: boolean; label: string; skip: string; onSkip: () => void }) {
+  const x = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    x.setValue(0);
+    if (reduce) return;
+    const a = Animated.timing(x, { toValue: 1, duration: turn.ms, easing: Easing.linear, useNativeDriver: false });
+    a.start();
+    return () => a.stop();
+  }, [turn.key, turn.ms, reduce, x]);
+  return (
+    <View style={{ flexDirection: "row", direction: "ltr", alignItems: "center", justifyContent: "center", gap: 8, paddingHorizontal: 16, paddingVertical: 6, backgroundColor: "rgba(201,166,94,0.15)" }} accessibilityLiveRegion="polite">
+      <View style={{ width: 96, height: 6, borderRadius: 3, backgroundColor: "rgba(255,255,255,0.1)", overflow: "hidden" }}>
+        <Animated.View style={{ height: 6, borderRadius: 3, backgroundColor: "rgb(201,166,94)", width: x.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] }) }} />
+      </View>
+      <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: "rgb(233,207,153)" }}>{label}</Text>
+      <Pressable onPress={onSkip} accessibilityRole="button" accessibilityLabel={skip} hitSlop={8}
+        style={({ pressed }) => ({ marginStart: 4, borderRadius: 999, borderWidth: 1, borderColor: pressed ? "#ffffff" : "rgba(255,255,255,0.2)", paddingHorizontal: 9, paddingVertical: 2 })}>
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 11, color: "rgba(255,255,255,0.8)" }}>{skip}</Text>
+      </Pressable>
     </View>
   );
 }

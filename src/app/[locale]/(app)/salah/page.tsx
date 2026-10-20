@@ -3,12 +3,14 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import PrayerTrainer from "@/components/PrayerTrainer";
+import { langOf, type Lang } from "@/lib/salah";
 import { abs, pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
 import { ArrowNext } from "@/components/Icons";
 import { PracticeHero, PracticeStar } from "@/components/art/PracticeArt";
 
-const C = {
+type Content = { kicker: string; title: string; lead: string; whyTitle: string; why: string; more: string; links: [string, string][] };
+const C: Record<Lang, Content> = {
   de: {
     kicker: "Gebet lernen · Schritt für Schritt", title: "So betest du – mit einem Trainer, der jede Bewegung zeigt",
     lead: "Wähle das Gebet und deine Tradition. Die Figur zeigt jede Haltung, dazu siehst du die arabischen Worte, die Umschrift und die Bedeutung. Spiele den Ablauf ab oder geh Schritt für Schritt – so oft du willst.",
@@ -27,8 +29,74 @@ const C = {
     whyTitle: "الصلاة أول ما يُحاسَب عليه العبد", why: "قال النبي ﷺ: «إنّ أوّل ما يُحاسَب به العبد يوم القيامة من عمله صلاته» (رواه الترمذي وأبو داود والنسائي). خمس مرات في اليوم تقف بين يدي الله بجسدك ولسانك وقلبك، ومن تعلّمها على وجهها الصحيح صحبته طوال عمره.",
     more: "شرح مفصّل", links: [["/islam/prayer-sunni", "صفة الصلاة عند أهل السنة"], ["/islam/prayer-shia", "صفة الصلاة في المذهب الجعفري"], ["/prayer", "مواقيت الصلاة والأذان"], ["/arabic", "تعلّم القراءة العربية"]],
   },
+  tr: {
+    kicker: "Namazı öğren · adım adım", title: "Namaz nasıl kılınır – her hareketi gösteren bir eğitimle",
+    lead: "Namazı ve mezhebini seç. Figür her duruşu, Arapça sözleri, okunuşu ve anlamıyla birlikte gösterir. Tüm sırayı oynat ya da adım adım ilerle – istediğin kadar.",
+    whyTitle: "Namaz – hakkında ilk sorulacağımız şey", why: "Peygamber ﷺ, kıyamet günü bir insanın hesaba çekileceği ilk amelin namaz olduğunu söylemiştir (at-Tirmidhi, Abu Dawud, an-Nasa'i). Günde beş kez Allah'ın huzuruna çıkarsın – bedenle, dille ve kalple. Onu bir kez doğru öğrendiğinde, ömür boyu seninle kalır.",
+    more: "Ayrıntılı anlatım", links: [["/islam/prayer-sunni", "Namaz nasıl kılınır – Sünni"], ["/islam/prayer-shia", "Namaz nasıl kılınır – Şii (Caferî)"], ["/prayer", "Namaz vakitleri ve ezan"], ["/arabic", "Arapça okumayı öğren"]],
+  },
+  ur: {
+    kicker: "نماز سیکھیں · قدم بہ قدم", title: "نماز کیسے پڑھیں – ایسی مشق کے ساتھ جو ہر حرکت دکھاتی ہے",
+    lead: "نماز اور اپنا مکتب منتخب کریں۔ شکل ہر ہیئت دکھاتی ہے، ساتھ عربی الفاظ، ان کا رومن تلفظ اور معنی بھی۔ پوری ترتیب چلائیں یا قدم بہ قدم آگے بڑھیں – جتنی بار چاہیں۔",
+    whyTitle: "نماز – وہ پہلی چیز جس کے بارے میں ہم سے پوچھا جائے گا", why: "نبی ﷺ نے فرمایا کہ قیامت کے دن انسان سے جس عمل کا سب سے پہلے حساب لیا جائے گا وہ نماز ہے (at-Tirmidhi, Abu Dawud, an-Nasa'i)۔ دن میں پانچ بار آپ اللہ کے حضور کھڑے ہوتے ہیں – جسم، زبان اور دل کے ساتھ۔ جب آپ اسے ٹھیک طرح سیکھ لیتے ہیں تو یہ عمر بھر آپ کے ساتھ رہتی ہے۔",
+    more: "تفصیل سے", links: [["/islam/prayer-sunni", "نماز کیسے پڑھیں – سنی"], ["/islam/prayer-shia", "نماز کیسے پڑھیں – شیعہ (جعفری)"], ["/prayer", "نماز کے اوقات اور اذان"], ["/arabic", "عربی پڑھنا سیکھیں"]],
+  },
+  fa: {
+    kicker: "آموزش نماز · گام به گام", title: "نماز را چگونه بخوانیم – با تمرینی که هر حرکت را نشان می‌دهد",
+    lead: "نماز و مذهب خود را انتخاب کنید. پیکر هر حالت را نشان می‌دهد، همراه با کلمات عربی، آوانگاری و معنا. کل ترتیب را پخش کنید یا گام‌به‌گام پیش بروید – هر چند بار که بخواهید.",
+    whyTitle: "نماز – نخستین چیزی که دربارهٔ آن پرسیده خواهیم شد", why: "پیامبر ﷺ فرمود که نماز نخستین عملی است که انسان در روز قیامت دربارهٔ آن به حساب کشیده می‌شود (at-Tirmidhi, Abu Dawud, an-Nasa'i). روزی پنج بار در پیشگاه الله می‌ایستید – با تن، زبان و دل. وقتی آن را درست آموختید، تا آخر عمر با شما می‌ماند.",
+    more: "توضیح کامل", links: [["/islam/prayer-sunni", "چگونه نماز بخوانیم – اهل سنت"], ["/islam/prayer-shia", "چگونه نماز بخوانیم – شیعه (جعفری)"], ["/prayer", "اوقات نماز و اذان"], ["/arabic", "خواندن عربی را بیاموزید"]],
+  },
+  ps: {
+    kicker: "لمونځ زده کړه · ګام په ګام", title: "لمونځ څنګه کوو – له داسې تمرین سره چې هره حرکت ښيي",
+    lead: "لمونځ او خپل مذهب وټاکئ. شکل هره حالت ښيي، له عربي ټکو، لاتیني تلفظ او معنا سره. ټوله ترتیب وغږوئ یا ګام په ګام مخکې ځئ – څومره چې وغواړئ.",
+    whyTitle: "لمونځ – لومړی شی چې له موږ به پوښتل کېږي", why: "پیغمبر ﷺ وفرمایل چې لمونځ لومړی عمل دی چې انسان به د قیامت په ورځ د هغه په اړه حساب ورکوي (at-Tirmidhi, Abu Dawud, an-Nasa'i). په ورځ کې پنځه ځله تاسو د الله مخې ته ودرېږئ – په بدن، ژبه او زړه. کله چې تاسو دا سم زده کړئ، تر ژوندانه به درسره پاتې شي.",
+    more: "په تفصیل سره", links: [["/islam/prayer-sunni", "لمونځ څنګه کوو – سني"], ["/islam/prayer-shia", "لمونځ څنګه کوو – شیعه (جعفري)"], ["/prayer", "د لمانځه وختونه او اذان"], ["/arabic", "عربي لوستل زده کړئ"]],
+  },
+  fr: {
+    kicker: "Apprendre la prière · pas à pas", title: "Comment prier – avec un entraînement qui montre chaque mouvement",
+    lead: "Choisis la prière et ta tradition. La figure montre chaque posture, avec les paroles en arabe, la translittération et le sens. Lance tout le déroulement ou avance pas à pas – autant de fois que tu veux.",
+    whyTitle: "La prière – la première chose dont nous serons interrogés", why: "Le Prophète ﷺ a dit que la prière est la première action dont une personne devra rendre compte le Jour de la Résurrection (at-Tirmidhi, Abu Dawud, an-Nasa'i). Cinq fois par jour, tu te tiens devant Allah – avec le corps, la langue et le cœur. Une fois que tu l'as bien apprise, elle t'accompagne toute la vie.",
+    more: "Expliqué en détail", links: [["/islam/prayer-sunni", "Comment prier – sunnite"], ["/islam/prayer-shia", "Comment prier – chiite (ja'farite)"], ["/prayer", "Heures de prière et adhan"], ["/arabic", "Apprendre à lire l'arabe"]],
+  },
+  es: {
+    kicker: "Aprende la oración · paso a paso", title: "Cómo orar – con un entrenador que muestra cada movimiento",
+    lead: "Elige la oración y tu tradición. La figura muestra cada postura, con las palabras en árabe, la transliteración y el significado. Reproduce toda la secuencia o avanza paso a paso, tantas veces como quieras.",
+    whyTitle: "La oración: lo primero sobre lo que se nos preguntará", why: "El Profeta ﷺ dijo que la oración es la primera acción de la que una persona deberá rendir cuentas el Día de la Resurrección (at-Tirmidhi, Abu Dawud, an-Nasa'i). Cinco veces al día te presentas ante Allah, con el cuerpo, la lengua y el corazón. Una vez que la has aprendido bien, te acompaña toda la vida.",
+    more: "Explicado en detalle", links: [["/islam/prayer-sunni", "Cómo orar – suní"], ["/islam/prayer-shia", "Cómo orar – chií (yafarí)"], ["/prayer", "Horarios de oración y adhan"], ["/arabic", "Aprende a leer árabe"]],
+  },
+  id: {
+    kicker: "Belajar shalat · langkah demi langkah", title: "Cara shalat – dengan latihan yang menunjukkan setiap gerakan",
+    lead: "Pilih shalatnya dan mazhabmu. Figur menunjukkan setiap sikap, lengkap dengan bacaan Arab, transliterasi, dan artinya. Putar seluruh urutan atau ikuti langkah demi langkah – sesering yang kamu mau.",
+    whyTitle: "Shalat – hal pertama yang akan kita ditanyai", why: "Nabi ﷺ bersabda bahwa shalat adalah amal pertama yang akan dihisab dari seseorang pada Hari Kiamat (at-Tirmidhi, Abu Dawud, an-Nasa'i). Lima kali sehari kamu berdiri di hadapan Allah – dengan tubuh, lisan, dan hati. Setelah kamu mempelajarinya dengan benar, ia akan menyertaimu seumur hidup.",
+    more: "Penjelasan lengkap", links: [["/islam/prayer-sunni", "Cara shalat – Sunni"], ["/islam/prayer-shia", "Cara shalat – Syiah (Ja'fari)"], ["/prayer", "Waktu shalat dan azan"], ["/arabic", "Belajar membaca bahasa Arab"]],
+  },
+  ms: {
+    kicker: "Belajar solat · langkah demi langkah", title: "Cara bersolat – dengan latihan yang menunjukkan setiap gerakan",
+    lead: "Pilih solat dan mazhab anda. Figura menunjukkan setiap postur, lengkap dengan bacaan Arab, transliterasi dan maksudnya. Mainkan keseluruhan urutan atau ikuti langkah demi langkah – seberapa kerap yang anda mahu.",
+    whyTitle: "Solat – perkara pertama yang akan kita ditanya", why: "Nabi ﷺ bersabda bahawa solat ialah amalan pertama yang akan dihisab ke atas seseorang pada Hari Kiamat (at-Tirmidhi, Abu Dawud, an-Nasa'i). Lima kali sehari anda berdiri di hadapan Allah – dengan jasad, lidah dan hati. Setelah anda mempelajarinya dengan betul, ia kekal bersama anda sepanjang hayat.",
+    more: "Penerangan lanjut", links: [["/islam/prayer-sunni", "Cara bersolat – Sunni"], ["/islam/prayer-shia", "Cara bersolat – Syiah (Ja'fari)"], ["/prayer", "Waktu solat dan azan"], ["/arabic", "Belajar membaca bahasa Arab"]],
+  },
+  bn: {
+    kicker: "নামাজ শিখুন · ধাপে ধাপে", title: "কীভাবে নামাজ পড়বেন – প্রতিটি নড়াচড়া দেখানো প্রশিক্ষণসহ",
+    lead: "নামাজ ও আপনার মাযহাব বেছে নিন। ফিগারটি প্রতিটি ভঙ্গি দেখায়, সঙ্গে আরবি শব্দ, উচ্চারণ ও অর্থ। পুরো ক্রম চালান অথবা ধাপে ধাপে এগোন – যতবার খুশি।",
+    whyTitle: "নামাজ – যে বিষয়ে আমাদের সবার আগে জিজ্ঞাসা করা হবে", why: "নবী ﷺ বলেছেন, কিয়ামতের দিন মানুষের যে আমলের হিসাব সবার আগে নেওয়া হবে তা হলো নামাজ (at-Tirmidhi, Abu Dawud, an-Nasa'i)। দিনে পাঁচবার আপনি আল্লাহর সামনে দাঁড়ান – শরীর, জিহ্বা ও হৃদয় নিয়ে। একবার ঠিকভাবে শিখে নিলে এটি সারাজীবন আপনার সঙ্গে থাকে।",
+    more: "বিস্তারিত ব্যাখ্যা", links: [["/islam/prayer-sunni", "কীভাবে নামাজ পড়বেন – সুন্নি"], ["/islam/prayer-shia", "কীভাবে নামাজ পড়বেন – শিয়া (জাফরি)"], ["/prayer", "নামাজের সময় ও আযান"], ["/arabic", "আরবি পড়তে শিখুন"]],
+  },
+  ru: {
+    kicker: "Учимся намазу · шаг за шагом", title: "Как совершать намаз – с тренажёром, который показывает каждое движение",
+    lead: "Выбери намаз и свою традицию. Фигура показывает каждое положение, а рядом – арабские слова, транслитерацию и смысл. Запусти всю последовательность или иди шаг за шагом – сколько угодно раз.",
+    whyTitle: "Намаз – то, о чём нас спросят в первую очередь", why: "Пророк ﷺ сказал, что намаз – это первое деяние, за которое человек будет держать ответ в День воскресения (at-Tirmidhi, Abu Dawud, an-Nasa'i). Пять раз в день ты стоишь перед Аллахом – телом, языком и сердцем. Если ты выучишь его как следует, он останется с тобой на всю жизнь.",
+    more: "Подробное объяснение", links: [["/islam/prayer-sunni", "Как совершать намаз – сунниты"], ["/islam/prayer-shia", "Как совершать намаз – шииты (джафариты)"], ["/prayer", "Время намаза и азан"], ["/arabic", "Учимся читать по-арабски"]],
+  },
+  zh: {
+    kicker: "学习礼拜 · 一步一步", title: "如何礼拜——用一个展示每个动作的训练",
+    lead: "选择礼拜和你所属的传统。人物会演示每个姿势，并配有阿拉伯语原文、音译和含义。可以播放整个流程，也可以一步一步来——次数不限。",
+    whyTitle: "礼拜——我们最先会被问到的事", why: "先知ﷺ说，礼拜是一个人在复生日最先被清算的功课（at-Tirmidhi, Abu Dawud, an-Nasa'i）。每天五次，你以身体、舌头和心灵站在安拉面前。一旦把它学好，它会伴随你一生。",
+    more: "详细讲解", links: [["/islam/prayer-sunni", "如何礼拜——逊尼派"], ["/islam/prayer-shia", "如何礼拜——什叶派（贾法里）"], ["/prayer", "礼拜时间与宣礼"], ["/arabic", "学习阅读阿拉伯语"]],
+  },
 };
-const content = (l: string) => (l === "de" ? C.de : l === "ar" ? C.ar : C.en);
+const content = (l: string) => C[langOf(l)];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

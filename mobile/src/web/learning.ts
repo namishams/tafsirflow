@@ -68,6 +68,7 @@ export function rate(verseKey: string, rating: Rating): number {
 export function noteMistake(verseKey: string) {
   const srs = readSrs();
   const prev = srs[verseKey];
+  if (!prev) return; // never learned: a test mistake creates no review entry
   const m = fsrs(prev, 1, prev?.last !== undefined ? today() - prev.last : 0);
   srs[verseKey] = { ...prev, stage: stageOf(m.s), due: Math.min(prev?.due ?? Infinity, today() + 1), at: Date.now(), ease: Math.max(0.5, (prev?.ease ?? 1) * 0.9), lapses: (prev?.lapses ?? 0) + 1, last: prev?.last ?? today(), first: prev?.first ?? today(), s: m.s, d: m.d };
   writeJSON(SRS_KEY, srs);
@@ -87,7 +88,7 @@ export function weakestVerses(n = 5, srs = readSrs()): { key: string; strength: 
 export function dueVerses(srs = readSrs()): string[] {
   const t = today();
   return Object.entries(srs)
-    .filter(([, v]) => v.due <= t)
+    .filter(([k, v]) => v.due <= t && k !== "1:1") // the basmala of al-Fatiha does not count (see coach NOT_COUNTED)
     .sort((a, b) => a[1].due - b[1].due)
     .map(([k]) => k);
 }

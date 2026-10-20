@@ -96,6 +96,7 @@ export default function PrayerBoard() {
 
   const day = dayFor(main, now, st);
   const hijri = hijriDate(now, locale, main.tz);
+  const ar = locale === "ar"; // Arabic readers see the Arabic names once (website: no Latin repetition)
   let hijriAr = "";
   try { hijriAr = new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura-nu-arab", { timeZone: main.tz, day: "numeric", month: "long", year: "numeric" }).format(now); } catch { /* calendar not supported */ }
   const greg = new Intl.DateTimeFormat(locale, { timeZone: main.tz, calendar: "gregory", numberingSystem: "latn", weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(now);
@@ -131,11 +132,11 @@ export default function PrayerBoard() {
           {geoMsg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 14, color: "rgba(255,255,255,0.6)", marginTop: 8 }}>{geoMsg}</Text> : null}
 
           <View style={{ marginTop: 24, alignItems: "center" }}>
-            <NextArch width={archW} prayer={day.next} at={fmtTime(day.nextAt, main.tz, locale)} left={countdown(day.nextAt, now)} frac={frac} label={t("nextPrayer")} name={t(day.next)} />
+            <NextArch width={archW} prayer={day.next} at={fmtTime(day.nextAt, main.tz, locale)} left={countdown(day.nextAt, now)} frac={frac} label={t("nextPrayer")} name={t(day.next)} ar={ar} />
           </View>
           <View style={{ marginTop: 32 }}>
             <Text style={{ fontFamily: FONT.display, fontSize: 22, lineHeight: 28, letterSpacing: -0.5, color: "#eef0f3" }}>{greg}</Text>
-            {hijri ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>{hijri}</Text> : null}
+            {hijri && !ar ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>{hijri}</Text> : null}
             <View style={{ marginTop: 16, alignSelf: "flex-start", flexDirection: "row", alignItems: "baseline", gap: 12, borderRadius: R.pill, borderWidth: 1, borderColor: "rgba(255,255,255,0.12)", backgroundColor: "rgba(255,255,255,0.04)", paddingHorizontal: 16, paddingVertical: 8 }}>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: "rgba(255,255,255,0.65)" }}>{t("localTime")}</Text>
               <Text style={{ fontFamily: FONT.display, fontSize: 20, color: "#ffffff", fontVariant: ["tabular-nums"] }}>{fmtClock(now, main.tz)}</Text>
@@ -148,7 +149,7 @@ export default function PrayerBoard() {
               const isNext = p === day.next, isNow = p === current && !isNext;
               const inner = (
                 <>
-                  <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 17, lineHeight: 24, color: isNext ? "rgba(8,38,29,0.7)" : "rgba(214,180,108,0.8)", writingDirection: "rtl" }}>{AR_NAME[p]}</Text>
+                  {!ar ? <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 17, lineHeight: 24, color: isNext ? "rgba(8,38,29,0.7)" : "rgba(214,180,108,0.8)", writingDirection: "rtl" }}>{AR_NAME[p]}</Text> : null}
                   <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 12, color: isNext ? goldButton.text : "rgba(255,255,255,0.65)", marginTop: 4 }}>{t(p)}{isNow ? ` · ${t("now")}` : ""}</Text>
                   <Text style={{ fontFamily: FONT.display, fontSize: 22, lineHeight: 27, color: isNext ? goldButton.text : "#eef0f3", fontVariant: ["tabular-nums"], marginTop: 2 }}>{fmtTime(day.times[p], main.tz, locale)}</Text>
                 </>
@@ -325,7 +326,7 @@ function CompassStatus({ compass, qibla }: { compass: ReturnType<typeof useHeadi
 }
 
 // The next prayer stands in a mihrab arch; a gold ring around it fills from the last prayer time to the next one
-function NextArch({ width, prayer, at, left, frac, label, name }: { width: number; prayer: Prayer; at: string; left: string; frac: number; label: string; name: string }) {
+function NextArch({ width, prayer, at, left, frac, label, name, ar }: { width: number; prayer: Prayer; at: string; left: string; frac: number; label: string; name: string; ar: boolean }) {
   const r = 78, C = 2 * Math.PI * r, a = frac * Math.PI * 2 - Math.PI / 2;
   const tip = { x: 120 + r * Math.cos(a), y: 196 + r * Math.sin(a) };
   const H = (width * 4) / 3, cy = H * 0.6125;
@@ -342,8 +343,8 @@ function NextArch({ width, prayer, at, left, frac, label, name }: { width: numbe
         <Circle cx={tip.x} cy={tip.y} r={3.4} fill="#fff8e6" />
       </Svg>
       <View style={{ position: "absolute", left: width * 0.2, width: width * 0.6, top: cy - width * 0.25, height: width * 0.5, alignItems: "center", justifyContent: "center" }}>
-        <Text style={{ fontFamily: FONT.semibold, fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: stage.gold, textAlign: "center" }}>{label}</Text>
-        <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 22, lineHeight: 32, color: stage.gold, marginTop: 2 }}>{AR_NAME[prayer]}</Text>
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 10, letterSpacing: ar ? 0 : 2, textTransform: "uppercase", color: stage.gold, textAlign: "center" }}>{label}</Text>
+        {!ar ? <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 22, lineHeight: 32, color: stage.gold, marginTop: 2 }}>{AR_NAME[prayer]}</Text> : null}
         <Text adjustsFontSizeToFit numberOfLines={1} style={{ fontFamily: FONT.display, fontSize: name.length > 9 ? 22 : 34, lineHeight: name.length > 9 ? 26 : 38, letterSpacing: -0.8, color: "#eef0f3", marginTop: 2 }}>{name}</Text>
         <Text style={{ fontFamily: FONT.display, fontSize: 22, lineHeight: 26, color: "#f3e2b6", fontVariant: ["tabular-nums"], marginTop: 8 }}>{left}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: "rgba(255,255,255,0.6)", fontVariant: ["tabular-nums"], marginTop: 6 }}>{at}</Text>

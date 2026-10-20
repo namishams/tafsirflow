@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
+import type { AppLocale } from "@/i18n/locales";
 import { SUNNAH_CATS, SUNNAH_DUAS, type SunnahCat } from "@/lib/sunnahDuas";
 import { SUNNAH_DUAS_2 } from "@/lib/sunnahDuas2";
 import AR_DUAS from "@/lib/pagecontent/ar/duas";
@@ -47,7 +48,7 @@ export default function SunnahDuas() {
   const copy = async (d: (typeof ALL)[number]) => {
     try { await navigator.clipboard.writeText([d.ar, ar ? "" : d.tr, meaning(d), `— ${srcOf(d)}`].filter(Boolean).join("\n\n")); setCopied(d.id); setTimeout(() => setCopied(""), 1800); } catch { /* clipboard blocked */ }
   };
-  const ui = UI[locale === "de" ? "de" : locale === "ar" ? "ar" : "en"];
+  const ui = UI[(locale in UI ? locale : "en") as AppLocale];
 
   return (
     <div>
@@ -101,10 +102,22 @@ export default function SunnahDuas() {
   );
 }
 
-const UI = {
+type UiText = { read: string; close: string; prev: string; next: string };
+const UI: Record<AppLocale, UiText> = {
   de: { read: "Lesemodus", close: "Schließen", prev: "Vorherige", next: "Nächste" },
   en: { read: "Reading mode", close: "Close", prev: "Previous", next: "Next" },
   ar: { read: "وضع القراءة", close: "إغلاق", prev: "السابق", next: "التالي" },
+  tr: { read: "Okuma modu", close: "Kapat", prev: "Önceki", next: "Sonraki" },
+  ur: { read: "مطالعہ موڈ", close: "بند کریں", prev: "پچھلی", next: "اگلی" },
+  fa: { read: "حالت مطالعه", close: "بستن", prev: "قبلی", next: "بعدی" },
+  ps: { read: "د لوستلو بڼه", close: "بندول", prev: "مخکینی", next: "راتلونکی" },
+  fr: { read: "Mode lecture", close: "Fermer", prev: "Précédente", next: "Suivante" },
+  es: { read: "Modo de lectura", close: "Cerrar", prev: "Anterior", next: "Siguiente" },
+  id: { read: "Mode baca", close: "Tutup", prev: "Sebelumnya", next: "Berikutnya" },
+  ms: { read: "Mod bacaan", close: "Tutup", prev: "Sebelumnya", next: "Seterusnya" },
+  bn: { read: "পড়ার মোড", close: "বন্ধ করুন", prev: "আগের", next: "পরবর্তী" },
+  ru: { read: "Режим чтения", close: "Закрыть", prev: "Предыдущее", next: "Следующее" },
+  zh: { read: "阅读模式", close: "关闭", prev: "上一条", next: "下一条" },
 };
 type Dua = (typeof ALL)[number];
 
@@ -129,7 +142,7 @@ function Tasbih({ n, max, onTap, label, dark = false }: { n: number; max: number
 // Reading mode: one dua at a time, large and calm, on the dark stage; arrows, swipe and the keyboard move on
 function Reader({ list, i, setI, close, showTr, meaning, srcOf, catLabel, sourceLbl, count, tap, counterLbl, ui }: {
   list: Dua[]; i: number; setI: (n: number) => void; close: () => void; showTr: boolean; meaning: (d: Dua) => string; srcOf: (d: Dua) => string; catLabel: (c: string) => string; sourceLbl: string;
-  count: Record<string, number>; tap: (id: string, max: number) => void; counterLbl: string; ui: (typeof UI)["de"];
+  count: Record<string, number>; tap: (id: string, max: number) => void; counterLbl: string; ui: UiText;
 }) {
   const d = list[i];
   const touch = useRef<number | null>(null);

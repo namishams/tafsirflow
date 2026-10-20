@@ -74,7 +74,7 @@ export default function PrayerTrainer() {
   useEffect(() => {
     if (!auto) return;
     if (i >= steps.length - 1) { setAuto(false); return; }
-    const ms = Math.min(14000, 3500 + (step.tr?.length ?? 0) * 45);
+    const ms = Math.min(14000, 3500 + (step.translit?.length ?? 0) * 45);
     const id = setTimeout(() => setI((n) => n + 1), ms);
     return () => clearTimeout(id);
   }, [auto, i, steps.length, step]);
@@ -119,7 +119,7 @@ export default function PrayerTrainer() {
               <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 52, color: "#fbf3dc", writingDirection: "rtl", textAlign: AR_RIGHT }}>{step.ar}</Text>
             </View>
           ) : null}
-          {step.tr && l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 12 }}>{step.tr}</Text> : null}
+          {step.translit && l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 12 }}>{step.translit}</Text> : null}
           {step.meaning && l !== "ar" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 12 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{u.meaning}: </Text>{tx(step.meaning)}</Text> : null}
           {step.note ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: "rgba(255,255,255,0.75)", marginTop: 16, borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.25)", backgroundColor: "rgba(255,255,255,0.05)", padding: 12, overflow: "hidden" }}>{tx(step.note)}</Text> : null}
         </View>

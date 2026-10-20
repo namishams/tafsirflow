@@ -28,6 +28,7 @@ import { ProPromo } from "@/features/learn/ProPromo";
 import { CoachCard, MapCard, RewardsCard, WeekCard } from "@/features/progress";
 import { PrayerSetupCard } from "@/features/practice";
 import { Onboarding } from "@/features/extra/Onboarding";
+import { Announcement } from "@/features/extra/widgets/Announcement";
 import { courseLang } from "@/features/arabic/lang";
 
 // "Today" (website TodayDashboard.tsx): the daily hub – the greeting stage with the ring of today's tasks and the next
@@ -124,6 +125,7 @@ export default function Today() {
           </View>
           <Arcade />
         </Stage>
+        <Announcement />
 
         <View style={{ paddingHorizontal: 16, gap: 28, marginTop: 24 }}>
           <Onboarding />

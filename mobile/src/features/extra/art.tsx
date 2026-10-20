@@ -7,6 +7,7 @@ import Svg, { Circle, Defs, G, Mask, Path, Pattern, RadialGradient, Rect, Stop }
 import { Arcade } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useLang } from "@/i18n";
+import { useX } from "./strings";
 import { getVerseByKey } from "@/lib/quran";
 import { ARABIC_FONT, FONT, type Theme, useTheme } from "@/lib/theme";
 import { goBack } from "@/components/page";
@@ -182,6 +183,7 @@ export function MarbleHero({ kicker, title, children, back }: { kicker?: string;
   const hm = useHm(t);
   const insets = useSafeAreaInsets();
   const canBack = back ?? router.canGoBack();
+  const x = useX();
   return (
     <View style={{ overflow: "hidden", borderBottomWidth: 1, borderBottomColor: alpha(GOLD, 0.45) }}>
       <LinearGradient colors={[hm.marbleA, hm.marbleB]} style={StyleSheet.absoluteFill} />
@@ -210,7 +212,7 @@ export function MarbleHero({ kicker, title, children, back }: { kicker?: string;
       </Svg>
       <View style={{ paddingHorizontal: 20, paddingTop: insets.top + (canBack ? 6 : 24), paddingBottom: 40 }}>
         {canBack ? (
-          <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6, marginBottom: 8 }}>
+          <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel={x.back} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6, marginBottom: 8 }}>
             <Icon name="chevronLeft" color={t.ink} size={24} />
           </Pressable>
         ) : null}

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Text, View } from "react-native";
 import { Redirect, router, useLocalSearchParams, type Href } from "expo-router";
 import Svg, { Path } from "react-native-svg";
-import { FONT, stage } from "@/lib/theme";
+import { BACK, FONT, stage } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { ISLAM, islamDoc, readingMinutes } from "@/web/islam";
 import { FactCartouche, HeroLead, HeroTitle, IslBreak, IslH2, IslHero, IslamNum, Marble, Rosette, StageBackPill, Rain, StageBackground, useSaw } from "@/features/library/art";
@@ -95,7 +95,7 @@ function Chapter({ slug }: { slug: string }) {
           <View style={{ paddingHorizontal: 20, paddingBottom: 64 }}>
             {prev ? (
               <Text onPress={() => router.replace(`/islam/${prev.slug}` as Href)} accessibilityRole="link" style={{ marginBottom: 20, textAlign: "center", fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: isl.muted }}>
-                ← {u.prev}: <Text style={{ fontFamily: FONT.semibold, color: isl.a("ink", 0.8) }}>{sw(all[i - 1].title)}</Text>
+                {BACK} {u.prev}: <Text style={{ fontFamily: FONT.semibold, color: isl.a("ink", 0.8) }}>{sw(all[i - 1].title)}</Text>
               </Text>
             ) : null}
             <Doorway label={door.label} ar={door.ar} title={door.title} lead={door.lead} meta={door.meta} onPress={door.go} />

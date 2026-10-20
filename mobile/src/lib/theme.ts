@@ -83,6 +83,8 @@ export const ARABIC_FONT = "Amiri_400Regular";
 export const AR_RIGHT = (I18nManager.isRTL ? "left" : "right") as "left" | "right";
 /** the "go on" arrow in the reading direction */
 export const FWD = I18nManager.isRTL ? "←" : "→";
+/** the "go back" arrow in the reading direction */
+export const BACK = I18nManager.isRTL ? "→" : "←";
 export const ARABIC_BOLD = "Amiri_700Bold";
 export const CALLIG_FONT = "ArefRuqaa_700Bold";
 

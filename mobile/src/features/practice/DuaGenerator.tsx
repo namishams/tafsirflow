@@ -16,6 +16,8 @@ import { Callout, IllumFrame, Label, LightChip, Niche, Rosette, StageButton, go,
 import { Field } from "./ui";
 import { useTx } from "./text";
 import { ETIQUETTE_HADITH } from "./web/duaEtiquette";
+import { useSiteConfig } from "@/features/extra/config";
+import { useX } from "@/features/extra/strings";
 
 type QuranDua = { key: string; ar: string; tr: string };
 const ALL_SUNNAH: SunnahDua[] = [...SUNNAH_DUAS, ...SUNNAH_DUAS_2];
@@ -32,6 +34,9 @@ export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => v
   const { lang } = useLang();
   const locale = lang;
   const ar = locale === "ar";
+  // the AI phrasing exists only while the owner has it switched on (admin: ai + features.duaAi)
+  const cfg = useSiteConfig();
+  const aiOn = cfg.ai && cfg.features.duaAi;
   const [topic, setTopic] = useState<Topic | null>(null);
   const [text, setText] = useState("");
   const [who, setWho] = useState<Who>("me");
@@ -118,7 +123,7 @@ export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => v
               </View>
               <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: 8, marginTop: 32 }}>
                 <StageButton title={t("share")} onPress={share} />
-                <StageButton gold title={t("aiRefine")} onPress={() => scrollTo?.(y.current.result + y.current.personal)} />
+                {aiOn ? <StageButton gold title={t("aiRefine")} onPress={() => scrollTo?.(y.current.result + y.current.personal)} /> : null}
               </View>
               <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 19, color: "rgba(255,255,255,0.5)", marginTop: 24, textAlign: "center", maxWidth: 520 }}>{t("note")}</Text>
             </View>
@@ -201,6 +206,7 @@ const FALLBACK = { one: "0,99 €", pack: "3,99 €" };
 function PersonalDua({ made, names, ai, setAi, goldRgb }: { made: Made; names: string[]; ai: AiState; setAi: (a: AiState) => void; goldRgb: string }) {
   const t = useWebT("duagen");
   const tx = useTx();
+  const xa = useX();
   const th = useTheme();
   const { lang } = useLang();
   const { user } = useAuth();
@@ -228,7 +234,7 @@ function PersonalDua({ made, names, ai, setAi, goldRgb }: { made: Made; names: s
     } catch (e) {
       if (!alive.current) return;
       const status = e instanceof ApiError ? e.status : 0;
-      setAi({ state: "err", text: "", err: status === 401 ? t("aiLogin") : status === 429 ? t("aiLimit") : status === 402 ? tx("noCredit") : t("aiError") });
+      setAi({ state: "err", text: "", err: status === 401 ? t("aiLogin") : status === 403 ? xa.verify : status === 429 ? t("aiLimit") : status === 402 ? tx("noCredit") : t("aiError") });
     }
     void refresh();
   };

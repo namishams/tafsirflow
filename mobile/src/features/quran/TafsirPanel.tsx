@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ActivityIndicator, Pressable, Text, View } from "react-native";
+import { ActivityIndicator, I18nManager, Pressable, Text, View } from "react-native";
 import { router } from "expo-router";
 import { ARABIC_FONT, FONT, R, useTheme, AR_RIGHT } from "@/lib/theme";
 import { useLang, langLabel } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { useAuth } from "@/lib/auth";
+import { api } from "@/lib/api";
 import { readJSON, writeJSON } from "@/lib/store";
 import { LimitError, OWN_TAFSIR_ID, getOwnTafsir, getResources, getTafsir, hasOwnTafsir, tafsirBlocks, tafsirOptionsFor, type Resource, type Tafsir } from "@/lib/quran";
 import { GoldButton } from "@/components/brand";
@@ -15,6 +16,10 @@ import { localeMeta } from "@/web/locales";
 // the nearest earlier verse. Source always shown under the text.
 const cache = new Map<string, Tafsir | null>();
 const TAFSIR_KEY = "qmc.tafsir";
+// tafsir languages written right to left (Quran.com language names and the own tafsir's resourceLang)
+const RTL_LANGS = ["arabic", "urdu", "persian", "farsi", "pashto", "kurdish", "sindhi", "uyghur", "hebrew", "dhivehi"];
+// visual left for left-to-right text (RN mirrors left/right in a right-to-left layout, see AR_RIGHT)
+const LTR_LEFT = (I18nManager.isRTL ? "right" : "left") as "left" | "right";
 
 export function useTafsirSources() {
   const { lang } = useLang();
@@ -46,6 +51,8 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
   const [id, setId] = useState<number | null>(() => readJSON<number | null>(TAFSIR_KEY, null));
   const [tafsir, setTafsir] = useState<Tafsir | null | undefined>(undefined);
   const [limit, setLimit] = useState(false);
+  const [needsVerify, setNeedsVerify] = useState(false);
+  const [resent, setResent] = useState(false);
   const [picking, setPicking] = useState(false);
   const tick = useRef(0);
 
@@ -55,7 +62,7 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
   useEffect(() => {
     if (active === null) return;
     const run = ++tick.current;
-    setTafsir(undefined); setLimit(false);
+    setTafsir(undefined); setLimit(false); setNeedsVerify(false);
     (async () => {
       try {
         if (active === OWN_TAFSIR_ID) { const r = await getOwnTafsir(lang, surah, verse); if (run === tick.current) setTafsir(r); return; }
@@ -69,14 +76,17 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
         if (run === tick.current) setTafsir(null);
       } catch (e) {
         if (run !== tick.current) return;
-        if (e instanceof LimitError) setLimit(true);
+        if (e instanceof LimitError) { setLimit(true); setNeedsVerify(e.needsVerify); }
         setTafsir(null);
       }
     })();
   }, [active, surah, verse, lang, user?.id]);
 
   const choose = (v: number) => { setId(v); writeJSON(TAFSIR_KEY, v, true); setPicking(false); };
-  const rtl = source?.language_name?.toLowerCase() === "arabic";
+  const rtl = RTL_LANGS.includes(source?.language_name?.toLowerCase() ?? "");
+  const align = rtl ? AR_RIGHT : LTR_LEFT;
+  // the e-mail still needs confirming (website AuthGate mode "verify"): send the link again
+  const resend = () => { setResent(true); void api("/api/auth/resend", { body: { locale: lang } }).catch(() => setResent(false)); };
   const blocks = useMemo(() => (tafsir ? tafsirBlocks(tafsir.html) : []), [tafsir]);
 
   return (
@@ -103,7 +113,14 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
         </View>
       ) : null}
       {tafsir === undefined ? <ActivityIndicator color={t.accent} style={{ marginVertical: 16 }} /> : null}
-      {limit ? (
+      {limit && needsVerify && user ? (
+        <View style={{ borderRadius: R.lg, backgroundColor: t.accentSoft, padding: 16, gap: 12 }} accessibilityRole="alert">
+          <Text style={{ fontFamily: FONT.bold, fontSize: 16, lineHeight: 22, color: t.ink }}>{wa("verifyGateTitle")}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink }}>{wa("verifyNeeded", { email: user.email })}</Text>
+          {resent ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: t.accent }}>{wa("resent")}</Text>
+            : <GoldButton title={wa("resend")} onPress={resend} compact />}
+        </View>
+      ) : limit ? (
         <View style={{ borderRadius: R.lg, backgroundColor: t.accentSoft, padding: 16, gap: 12 }}>
           <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink }}>{w("limitReached")}</Text>
           <GoldButton title={wa("register")} onPress={() => router.push("/register")} compact />
@@ -114,10 +131,10 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
         <View>
           {tafsir.verseKeys.length > 1 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted, marginBottom: 8 }}>{w("covers", { from: tafsir.verseKeys[0].split(":")[1], to: tafsir.verseKeys[tafsir.verseKeys.length - 1].split(":")[1] })}</Text> : null}
           {blocks.map((b, i) => b.kind === "h"
-            ? <Text key={i} style={{ fontFamily: FONT.display, fontSize: 18, lineHeight: 24, color: t.ink, marginTop: 14, marginBottom: 4, textAlign: rtl ? "right" : "left" }}>{b.text}</Text>
+            ? <Text key={i} style={{ fontFamily: FONT.display, fontSize: 18, lineHeight: 24, color: t.ink, marginTop: 14, marginBottom: 4, textAlign: align, writingDirection: rtl ? "rtl" : "ltr" }}>{b.text}</Text>
             : b.kind === "ar"
               ? <Text key={i} style={{ fontFamily: ARABIC_FONT, fontSize: 21, lineHeight: 38, color: t.ink, textAlign: AR_RIGHT, writingDirection: "rtl", marginBottom: 10 }}>{b.text}</Text>
-              : <Text key={i} selectable style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 26, color: t.ink, marginBottom: 12, textAlign: rtl ? "right" : "left", writingDirection: rtl ? "rtl" : "ltr" }}>{b.text}</Text>)}
+              : <Text key={i} selectable style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 26, color: t.ink, marginBottom: 12, textAlign: align, writingDirection: rtl ? "rtl" : "ltr" }}>{b.text}</Text>)}
           {source ? (
             <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: t.muted, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 8, marginTop: 6 }}>
               {w("source")}: {source.name}{source.author_name ? ` — ${source.author_name}` : ""}{source.id === OWN_TAFSIR_ID ? "" : " (Quran.com)"}

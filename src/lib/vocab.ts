@@ -9,7 +9,11 @@ export type Word = {
   en: string;
   de: string;
   type: "noun" | "verb" | "particle" | "name" | "pronoun" | "adjective";
+  /** the verse the word is learned from; `ar` is only a search hint, the trainer shows the verse from the Quran API */
   ex?: { key: string; ar: string };
+  /** meanings in the other languages (ar, tr, ur, fa, ps, fr, es, id, ms, bn, ru, zh), filled by vocabFor() in
+   *  vocabI18n.ts; read them with meaning(word, locale), which falls back to English */
+  meanings?: Partial<Record<"ar" | "tr" | "ur" | "fa" | "ps" | "fr" | "es" | "id" | "ms" | "bn" | "ru" | "zh", string>>;
 };
 
 export type Deck = {
@@ -378,9 +382,5 @@ export const VOCAB_DECKS: Deck[] = [
   },
 ];
 
-// Arabic: short Arabic glosses instead of English meanings
-import AR_VOCAB, { decks as AR_DECKS } from "./pagecontent/ar/vocab";
-export function vocabFor(locale: string): Deck[] {
-  if (locale !== "ar") return VOCAB_DECKS;
-  return VOCAB_DECKS.map((d) => ({ ...d, title_en: AR_DECKS[d.id]?.title ?? d.title_en, desc_en: AR_DECKS[d.id]?.desc ?? d.desc_en, words: d.words.map((w) => ({ ...w, en: AR_VOCAB[w.id] ?? w.en })) }));
-}
+// Meanings and deck titles in the other languages: vocabFor(locale), meaning(), deckTitle() in vocabI18n.ts
+// (kept apart so pages that only count the words do not load every language).

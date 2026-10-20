@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, FWD, R, stage, useTheme } from "@/lib/theme";
 import { GoldProgress, SmallStar, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
-import { Page, PageHero } from "@/components/page";
-import { useLang } from "@/i18n";
+import { Page, PageHero, useWide } from "@/components/page";
+import { isRTL, useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { FREE, usePro } from "@/lib/pro";
 import { useStoreVersion } from "@/lib/store";
@@ -15,9 +15,19 @@ import { today, weakestVerses } from "@/web/learning";
 import { ageProfile } from "@/web/age";
 import { GoldRing, StarBadge } from "@/features/today/art";
 import { SURAH_PREFIX } from "@/features/quran/arabic";
+import { HmCard, QuranQuote } from "@/features/extra/art";
+import { MoreTiles } from "@/features/practice/art";
+import { tileFor } from "@/web/tiles";
+
+// "More in the Academy" (website academy/page.tsx MODULES)
+const MODULES = [
+  { href: "/plan", key: "mPlan" }, { href: "/shams", key: "mShams" }, { href: "/tajweed", key: "mTajweed" }, { href: "/vocab", key: "mVocab" },
+  { href: "/khatm", key: "mKhatm" }, { href: "/guides", key: "mGuides" }, { href: "/duas", key: "mDuas" },
+];
 
 // Academy (website AcademyHome.tsx): daily goal, level, streak, the next lesson, weak verses and the path through all
-// 114 surahs in five units. Tests of surahs beyond al-Fātiḥa and Juz ʿAmma are part of Pro.
+// 114 surahs in five units, then the other modules of the academy and more courses. Tests of surahs beyond al-Fātiḥa
+// and Juz ʿAmma are part of Pro.
 export default function Academy() {
   const t = useTheme();
   const w = useWebT("academy");
@@ -43,7 +53,9 @@ export default function Academy() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back topInset eyebrow={w("eyebrow")} title={w("title")} lead={w("lead")} />
+        <PageHero back topInset eyebrow={w("eyebrow")} title={w("title")} lead={w("lead")}>
+          <QuranQuote verseKey="20:114" size={22} color="rgb(233,207,153)" citeColor="rgba(255,255,255,0.5)" center={false} />
+        </PageHero>
         <View style={{ padding: 16, gap: 14 }}>
           <View style={{ flexDirection: "row", gap: 10 }}>
             <Card>
@@ -141,9 +153,36 @@ export default function Academy() {
               </View>
             );
           })}
+
+          <Modules />
         </View>
+        <MoreTiles keys={["shams", "arabic", "salah", "tajweed"]} />
       </Page>
     </>
+  );
+}
+
+function Modules() {
+  const t = useTheme();
+  const w = useWebT("academy");
+  const wh = useWebT("home2");
+  const wide = useWide();
+  const { lang } = useLang();
+  return (
+    <View style={{ marginTop: 32 }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 9 }}><SmallStar size={15} color={t.gold} /><Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 23, color: t.ink }}>{w("modules")}</Text></View>
+      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
+        {MODULES.map((m) => (
+          <HmCard key={m.href} onPress={() => router.push(m.href as Href)} accessibilityLabel={`${w(m.key)}. ${w(`${m.key}D`)}`} style={{ width: wide ? "48.5%" : "100%", overflow: "hidden" }}>
+            <Text allowFontScaling={false} numberOfLines={1} style={{ position: "absolute", bottom: -24, end: 0, fontFamily: CALLIG_FONT, fontSize: 60, lineHeight: 96, color: "rgba(201,166,94,0.14)" }}
+              accessibilityElementsHidden importantForAccessibility="no">{tileFor(m.href)?.ar ?? ""}</Text>
+            <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{w(m.key)}</Text>
+            <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, marginTop: 4 }}>{w(`${m.key}D`)}</Text>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: isRTL(lang) ? 0 : 1.4, textTransform: "uppercase", color: t.accent, marginTop: 12 }}>{wh("open")} {FWD}</Text>
+          </HmCard>
+        ))}
+      </View>
+    </View>
   );
 }
 

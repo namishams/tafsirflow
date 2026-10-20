@@ -9,11 +9,15 @@ import type { Verse } from "@/lib/quran";
 import type { Rating } from "@/web/learning";
 import { firstLetter, hashOf } from "@/features/shams/memory";
 import { toAr } from "@/features/quran/useVerseAudio";
+import { SocialBar } from "@/features/extra/SocialBar";
+import { ReciteCheck } from "@/features/extra/ReciteCheck";
 import { FrameCorners, VerseStar } from "./ornaments";
 
 // One verse card of the website's Player.tsx: quiet and compact while inactive; the active verse is framed in gold with
 // corner brackets and carries the word-by-word text (the recited word lit), the Read / Practise / Test tools,
-// reveal and self-rating, bookmark, note, share, play, Tafsir and the Shams Method.
+// reveal and self-rating, recite & check, bookmark, note, copy, share, play, likes and comments, Tafsir and the Shams
+// Method. With the whole-surah cover practice (st.hide on quiet cards) every card is covered too; tapping uncovers it.
+// Kids mode (website Player.tsx): no note, copy, share, Shams Method, recite check, social bar or tafsir.
 export type Hide = 0 | 1 | 2 | 3 | 4 | 5 | 6; // 0 all, 1 every 2nd word, 2 hard, 3 first letters, 4 random, 5 soft, 6 test word by word
 export type CardHandlers = {
   goTo: (i: number) => void;
@@ -29,10 +33,16 @@ export type CardHandlers = {
   tafsir: (v: Verse) => void;
   shams: (v: Verse) => void;
   share: (v: Verse) => void;
+  copy: (v: Verse) => void;
   playWord: (key: string, pos: number) => void;
+  /** learn mode: next verse */
+  cont: () => void;
+  /** recite check: the reciter from the start / pause the reader */
+  replay: () => void;
+  pause: () => void;
 };
-export type CardState = { hide: Hide; practiceHide: Hide; revealed: boolean; seed: number; testPos: number; testMarks: Record<number, boolean>; activeWord: number | null; playing: boolean; wordOn: string | null };
-export const IDLE: CardState = { hide: 0, practiceHide: 5, revealed: false, seed: 1, testPos: 0, testMarks: {}, activeWord: null, playing: false, wordOn: null };
+export type CardState = { hide: Hide; practiceHide: Hide; revealed: boolean; seed: number; testPos: number; testMarks: Record<number, boolean>; activeWord: number | null; playing: boolean; wordOn: string | null; waiting: boolean };
+export const IDLE: CardState = { hide: 0, practiceHide: 5, revealed: false, seed: 1, testPos: 0, testMarks: {}, activeWord: null, playing: false, wordOn: null, waiting: false };
 
 const SunMark = ({ color, size = 14 }: { color: string; size?: number }) => (
   <Svg width={size} height={size} viewBox="0 0 24 24"><Circle cx={12} cy={12} r={5.5} fill={color} /><Circle cx={12} cy={12} r={9.5} fill="none" stroke={color} strokeWidth={1.6} strokeOpacity={0.55} /></Svg>
@@ -67,9 +77,9 @@ function ActionIcon({ icon, label, onPress, color, filled }: { icon: IconName; l
   );
 }
 
-export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, noteOpen, translit, translation, words: showWords, scale, st, h }: {
+export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, noteOpen, translit, translation, words: showWords, scale, kids, st, h }: {
   v: Verse; i: number; active: boolean; marked: boolean; note?: string; noteOpen: boolean;
-  translit: boolean; translation: boolean; words: boolean; scale: number; st: CardState; h: CardHandlers;
+  translit: boolean; translation: boolean; words: boolean; scale: number; kids: boolean; st: CardState; h: CardHandlers;
 }) {
   const t = useTheme();
   const w = useWebT("player");
@@ -81,6 +91,10 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
   const hasTimings = v.segments.length > 0;
   const size = Math.round(30 * scale);
   const [draft, setDraft] = useState<string | null>(null);
+  // whole-surah cover practice on a quiet card: covered until tapped (again after another cover level or a reshuffle)
+  const coverKey = `${hide}:${seed}`;
+  const [peek, setPeek] = useState("");
+  const covered = !active && hide > 0 && peek !== coverKey;
 
   const arabicActive = (
     <View style={{ flexDirection: "row", direction: "rtl", flexWrap: "wrap", columnGap: 10, rowGap: 6, alignItems: "flex-start" }} accessible={hide === 0} accessibilityLabel={hide === 0 ? v.text_uthmani : undefined} accessibilityLanguage="ar">
@@ -117,6 +131,25 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
     </View>
   );
 
+  // a quiet card in the cover practice: the same cover as the active verse, without word taps
+  const qsize = Math.round(27 * scale);
+  const coveredQuiet = covered ? (
+    <View style={{ flexDirection: "row", direction: "rtl", flexWrap: "wrap", columnGap: 8, rowGap: 4, alignItems: "flex-start" }} accessibilityLabel={w("tapToReveal")}>
+      {words.map((x, wi) => {
+        const randomHidden = hide === 4 && ((hashOf(`${v.verse_key}:${seed}:${wi}`) % 100) < 45 || (words.length > 1 && wi === hashOf(`${v.verse_key}:${seed}`) % words.length));
+        const hidden = hide === 2 || hide === 6 || (hide === 1 && wi % 2 === 1) || randomHidden;
+        const cue = hide === 3;
+        return (
+          <Text key={x.position} style={{ fontFamily: ARABIC_FONT, fontSize: qsize, lineHeight: Math.round(qsize * 2.05), writingDirection: "rtl", paddingHorizontal: 5, borderRadius: 8, overflow: "hidden",
+            color: hidden ? "transparent" : cue ? gold : t.arabic, backgroundColor: hidden ? t.line : "transparent", opacity: hide === 5 ? 0.4 : 1 }}>
+            {cue ? firstLetter(x.text_uthmani) : x.text_uthmani}
+          </Text>
+        );
+      })}
+      <Text style={{ fontFamily: ARABIC_FONT, fontSize: qsize * 0.7, lineHeight: Math.round(qsize * 2.05), color: gold, writingDirection: "rtl" }} accessibilityElementsHidden>﴿{toAr(v.verse_number)}﴾</Text>
+    </View>
+  ) : null;
+
   const card = (
     <View style={[{ borderRadius: 16, borderWidth: 1, padding: 20 },
       active
@@ -128,31 +161,34 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
         {active ? (
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ActionIcon icon="bookmark" label={marked ? w("bookmarked") : w("bookmark")} filled={marked} color={marked ? gold : t.muted} onPress={() => h.toggleMark(v.verse_key)} />
-            <ActionIcon icon="note" label={w("note")} color={note ? t.accent : t.muted} onPress={() => h.openNote(noteOpen ? null : v.verse_key)} />
-            <ActionIcon icon="share" label={w("share")} color={t.muted} onPress={() => h.share(v)} />
+            {kids ? null : <ActionIcon icon="note" label={w("note")} color={note ? t.accent : t.muted} onPress={() => h.openNote(noteOpen ? null : v.verse_key)} />}
+            {kids ? null : <ActionIcon icon="copy" label={w("copy")} color={t.muted} onPress={() => h.copy(v)} />}
+            {kids ? null : <ActionIcon icon="share" label={w("share")} color={t.muted} onPress={() => h.share(v)} />}
             <ActionIcon icon={st.playing ? "pause" : "playSm"} label={st.playing ? w("pause") : w("playVerse")} color={t.muted} onPress={() => h.playVerse(i)} />
           </View>
         ) : marked ? <View accessibilityLabel={w("bookmarked")}><Icon name="bookmark" color={gold} size={18} filled /></View> : null}
       </View>
 
-      {active ? arabicActive : (
+      {active ? arabicActive : covered ? coveredQuiet : (
         <Text style={{ fontFamily: ARABIC_FONT, fontSize: Math.round(27 * scale), lineHeight: Math.round(27 * scale * 2.1), color: t.arabic, writingDirection: "rtl", textAlign: AR_RIGHT }} accessibilityLanguage="ar">
           {v.text_uthmani} <Text style={{ color: gold, fontSize: Math.round(27 * scale * 0.7) }}>﴿{toAr(v.verse_number)}﴾</Text>
         </Text>
       )}
-      {translit && v.transliteration && !(active && hide > 0 && !revealed) ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: gold, marginTop: 10 }}>{v.transliteration}</Text> : null}
+      {translit && v.transliteration && !(active && hide > 0 && !revealed) && !covered ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: gold, marginTop: 10 }}>{v.transliteration}</Text> : null}
       {translation ? <Text selectable style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 25, color: t.muted, marginTop: 6 }}>{v.translation}</Text> : null}
 
       {active ? (
         <View style={{ marginTop: 18, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 16, gap: 12 }}>
           <Seg value={tool} label={w("memorize")} onChange={(x) => h.setHide(x === "read" ? 0 : x === "test" ? 6 : st.practiceHide)}
             options={[["read", w("toolRead")], ["practice", w("toolPractice")], ["test", w("toolTest")]]} />
-          <Pressable onPress={() => h.shams(v)} accessibilityRole="button" accessibilityLabel={w("toolShams")}>
-            <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ height: 40, borderRadius: R.pill, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7 }}>
-              <SunMark color={goldButton.text} />
-              <Text style={{ fontFamily: FONT.bold, fontSize: 13.5, color: goldButton.text }}>{w("toolShams")}</Text>
-            </LinearGradient>
-          </Pressable>
+          {kids ? null : (
+            <Pressable onPress={() => h.shams(v)} accessibilityRole="button" accessibilityLabel={w("toolShams")}>
+              <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ height: 40, borderRadius: R.pill, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7 }}>
+                <SunMark color={goldButton.text} />
+                <Text style={{ fontFamily: FONT.bold, fontSize: 13.5, color: goldButton.text }}>{w("toolShams")}</Text>
+              </LinearGradient>
+            </Pressable>
+          )}
           {tool === "practice" ? (
             <View style={{ gap: 8 }}>
               <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{w("hideLabel")}</Text>
@@ -197,6 +233,11 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
               </Pressable>
             </View>
           ) : null}
+          {!revealed && !kids ? (
+            <View style={{ marginTop: 12 }}>
+              <ReciteCheck words={words.map((x) => x.text_uthmani)} onResult={() => h.reveal()} onPlayReciter={h.replay} pauseOthers={h.pause} />
+            </View>
+          ) : null}
           {revealed ? (
             <View style={panel(t.dark)}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink, marginBottom: 10 }}>{w("rateQ")}</Text>
@@ -220,7 +261,9 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
         </View>
       ) : null}
 
-      {noteOpen || note ? (
+      {active && !kids ? <View style={{ marginTop: 14, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 4 }}><SocialBar verseKey={v.verse_key} shareText={v.translation} /></View> : null}
+
+      {(noteOpen || note) && !kids ? (
         <View style={{ marginTop: 16, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 14 }}>
           {noteOpen ? (
             <TextInput autoFocus multiline value={draft ?? note ?? ""} onChangeText={setDraft} placeholder={w("notePlaceholder")} placeholderTextColor={t.muted} accessibilityLabel={w("note")}
@@ -232,7 +275,18 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
         </View>
       ) : null}
 
-      {active ? (
+      {active && st.waiting ? (
+        <View style={[panel(t.dark), { marginTop: 16, flexDirection: "row", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 10, borderColor: t.line, backgroundColor: t.bg }]} accessibilityLiveRegion="polite">
+          <Text style={{ flexShrink: 1, fontFamily: FONT.medium, fontSize: 14, lineHeight: 20, color: t.ink }}>{w("learnHint")}</Text>
+          <Pressable onPress={h.cont} accessibilityRole="button" accessibilityLabel={w("continue")}>
+            <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ height: 40, borderRadius: R.pill, paddingHorizontal: 20, alignItems: "center", justifyContent: "center" }}>
+              <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: goldButton.text }}>{w("continue")}</Text>
+            </LinearGradient>
+          </Pressable>
+        </View>
+      ) : null}
+
+      {active && !kids ? (
         <Pressable onPress={() => h.tafsir(v)} accessibilityRole="button" accessibilityLabel={w("tafsir")}
           style={({ pressed }) => ({ alignSelf: "flex-start", marginTop: 16, height: 40, paddingHorizontal: 16, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? gold : t.line, backgroundColor: t.surface, flexDirection: "row", alignItems: "center", gap: 8 })}>
           <Icon name="book" color={gold} size={16} />
@@ -244,7 +298,8 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
 
   if (active) return <View style={{ marginHorizontal: 16, marginTop: 12 }}>{card}</View>;
   return (
-    <Pressable onPress={() => h.goTo(i)} accessibilityRole="button" accessibilityLabel={`${w("verse")} ${v.verse_number}. ${w("playVerse")}`} style={({ pressed }) => ({ marginHorizontal: 16, marginTop: 12, opacity: pressed ? 0.85 : 1 })}>
+    <Pressable onPress={() => (covered ? setPeek(coverKey) : h.goTo(i))} accessibilityRole="button" accessibilityLabel={`${w("verse")} ${v.verse_number}. ${covered ? w("reveal") : w("playVerse")}`}
+      style={({ pressed }) => ({ marginHorizontal: 16, marginTop: 12, opacity: pressed ? 0.85 : 1 })}>
       {card}
     </Pressable>
   );

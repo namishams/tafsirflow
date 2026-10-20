@@ -15,7 +15,10 @@ export default function ChangelogPage() {
   const t = useWebT("feedback");
   const theme = useTheme();
   const sw = useSaw();
-  const de = lang === "de";
+  const de = lang === "de", ar = lang === "ar";
+  // Arabic entries where the release has them (title_ar / items_ar), otherwise English, as on the website
+  const title = (r: (typeof CHANGELOG)[number]) => (de ? r.title_de : ar && r.title_ar ? r.title_ar : r.title_en);
+  const items = (r: (typeof CHANGELOG)[number]) => (de ? r.items_de : ar && r.items_ar?.length ? r.items_ar : r.items_en);
   return (
     <>
       <Stack.Screen options={{ headerShown: true, title: "" }} />
@@ -23,13 +26,13 @@ export default function ChangelogPage() {
         <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 40, lineHeight: 42, letterSpacing: -0.9, color: theme.ink }}>{t("changelog")}</Text>
         <Text style={{ marginTop: 16, fontFamily: FONT.regular, fontSize: 17, lineHeight: 27.6, color: theme.muted }}>{t("changelogLead")}</Text>
         <View style={{ marginTop: 40, marginStart: 5, borderStartWidth: 1, borderStartColor: theme.line, paddingStart: 24 }}>
-          {CHANGELOG.map((r) => (
-            <View key={r.date} style={{ marginBottom: 48 }}>
+          {CHANGELOG.map((r, n) => (
+            <View key={`${r.date}-${n}`} style={{ marginBottom: 48 }}>
               <View style={{ position: "absolute", left: -30, top: 8, width: 10, height: 10, borderRadius: 5, backgroundColor: theme.accent }} />
               <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: theme.gold }}>{longDate(r.date, lang)}</Text>
-              <Text accessibilityRole="header" style={{ marginTop: 4, fontFamily: FONT.display, fontSize: 24, lineHeight: 28, letterSpacing: -0.5, color: theme.ink }}>{de ? r.title_de : r.title_en}</Text>
+              <Text accessibilityRole="header" style={{ marginTop: 4, fontFamily: FONT.display, fontSize: 24, lineHeight: 28, letterSpacing: -0.5, color: theme.ink }}>{title(r)}</Text>
               <View style={{ marginTop: 12, gap: 8 }}>
-                {(de ? r.items_de : r.items_en).map((x, i) => (
+                {items(r).map((x, i) => (
                   <View key={i} style={{ flexDirection: "row", gap: 12 }}>
                     <View style={{ width: 12, height: 1, marginTop: 12, backgroundColor: theme.gold }} />
                     <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 15, lineHeight: 24.4, color: theme.muted }}>{sw(x)}</Text>

@@ -10,8 +10,10 @@ export const DUA_PRODUCT = "com.quranmasterclass.app.dua";
 export const DUA_PACK_PRODUCT = "com.quranmasterclass.app.dua5";
 export const DUA_PRODUCTS: Record<string, number> = { [DUA_PRODUCT]: 1, [DUA_PACK_PRODUCT]: 5 };
 export const PRO_DUAS_PER_MONTH = 5;
+/** a personal name report of the baby-name finder (consumable, 0,99 €; not part of Pro) */
+export const NAMES_PRODUCT = "com.quranmasterclass.app.names";
 
-export type AiCredits = { dua: number; proDuaLeft: number; assistantLeft: number | null };
+export type AiCredits = { dua: number; proDuaLeft: number; assistantLeft: number | null; names?: number };
 
 /** credits of the signed-in account (null while loading or signed out) */
 export function useAiCredits(): { credits: AiCredits | null; refresh: () => Promise<void> } {
@@ -43,4 +45,17 @@ export async function duaPrices(): Promise<{ one: string | null; pack: string | 
   const { loadPrices } = await import("./iap");
   const p = await loadPrices();
   return { one: p.dua, pack: p.duaPack };
+}
+
+/** buy one personal name report; resolves true when the server has added the credit */
+export async function buyNameReport(): Promise<boolean> {
+  const { purchaseConsumable } = await import("./iap");
+  return purchaseConsumable(NAMES_PRODUCT);
+}
+
+/** the store price of one name report in the buyer's currency, 0,99 € until the store has answered */
+export function useNamesPrice(): string {
+  const [price, setPrice] = useState<string | null>(null);
+  useEffect(() => { import("./iap").then(({ loadPrices }) => loadPrices()).then((p) => setPrice(p.names)).catch(() => undefined); }, []);
+  return price ?? "0,99 €";
 }

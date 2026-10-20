@@ -5,17 +5,58 @@ import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import Markdown from "@/components/Markdown";
 import { COUNTRIES_AR, COUNTRIES_DE, RECITER_BIOS, STYLE, bioText, reciterBio } from "@/lib/reciters";
+import type { AppLocale } from "@/i18n/locales";
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowNext, ArrowBack } from "@/components/Icons";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { QuranSeal } from "@/components/art/QuranArt";
 
-const LBL = {
+type Labels = { all: string; country: string; life: string; style: string; listen: string; known: string; learn: string; learnBody: string; path: string; bio: string };
+const LBL: Record<AppLocale, Labels> = {
   de: { all: "Alle Rezitatoren", country: "Land", life: "Lebensdaten", style: "Stil", listen: "Im Player anhören", known: "Bekannt für", learn: "Selbst rezitieren lernen", learnBody: "Von den ersten Buchstaben bis zur Idschaza – Schritt für Schritt.", path: "Der Weg zum Rezitator", bio: "Biografie" },
   en: { all: "All reciters", country: "Country", life: "Life", style: "Style", listen: "Listen in the player", known: "Known for", learn: "Learn to recite yourself", learnBody: "From the first letters to the ijazah – step by step.", path: "The path to becoming a reciter", bio: "Biography" },
   ar: { all: "جميع القرّاء", country: "البلد", life: "الحياة", style: "الأسلوب", listen: "استمع في المشغّل", known: "اشتُهر بـ", learn: "تعلّم التلاوة بنفسك", learnBody: "من الحروف الأولى حتى الإجازة – خطوةً خطوة.", path: "الطريق إلى أن تصبح قارئًا", bio: "السيرة" },
+  tr: { all: "Tüm kâriler", country: "Ülke", life: "Yaşam yılları", style: "Üslup", listen: "Oynatıcıda dinleyin", known: "Neyle tanınır", learn: "Kendiniz okumayı öğrenin", learnBody: "İlk harflerden icazete kadar – adım adım.", path: "Kâri olma yolu", bio: "Biyografi" },
+  ur: { all: "تمام قرّاء", country: "ملک", life: "زندگی", style: "اسلوب", listen: "پلیئر میں سنیں", known: "وجۂ شہرت", learn: "خود تلاوت کرنا سیکھیں", learnBody: "پہلے حروف سے لے کر اجازہ تک – قدم بہ قدم۔", path: "قاری بننے کا راستہ", bio: "سوانح" },
+  fa: { all: "همه قاریان", country: "کشور", life: "سال‌های زندگی", style: "سبک", listen: "شنیدن در پخش‌کننده", known: "شناخته‌شده برای", learn: "خودتان تلاوت را بیاموزید", learnBody: "از نخستین حروف تا اجازه – گام‌به‌گام.", path: "راه قاری شدن", bio: "زندگی‌نامه" },
+  ps: { all: "ټول قاریان", country: "هېواد", life: "د ژوند کلونه", style: "سبک", listen: "په پلیر کې واورئ", known: "په څه مشهور دی", learn: "پخپله تلاوت زده کړئ", learnBody: "له لومړیو توریو تر اجازې پورې – ګام په ګام.", path: "د قاري کېدو لار", bio: "ژوندلیک" },
+  fr: { all: "Tous les récitateurs", country: "Pays", life: "Dates de vie", style: "Style", listen: "Écouter dans le lecteur", known: "Connu pour", learn: "Apprendre à réciter soi-même", learnBody: "Des premières lettres à l'ijaza – pas à pas.", path: "Le chemin pour devenir récitateur", bio: "Biographie" },
+  es: { all: "Todos los recitadores", country: "País", life: "Vida", style: "Estilo", listen: "Escuchar en el reproductor", known: "Conocido por", learn: "Aprende a recitar tú mismo", learnBody: "De las primeras letras a la iyaza, paso a paso.", path: "El camino para ser recitador", bio: "Biografía" },
+  id: { all: "Semua qari", country: "Negara", life: "Masa hidup", style: "Gaya", listen: "Dengarkan di pemutar", known: "Dikenal karena", learn: "Belajar membaca Al-Qur'an sendiri", learnBody: "Dari huruf pertama hingga ijazah – selangkah demi selangkah.", path: "Jalan menjadi seorang qari", bio: "Biografi" },
+  ms: { all: "Semua qari", country: "Negara", life: "Tahun hayat", style: "Gaya", listen: "Dengar dalam pemain", known: "Terkenal kerana", learn: "Belajar membaca Quran sendiri", learnBody: "Daripada huruf pertama hingga ijazah – langkah demi langkah.", path: "Jalan menjadi seorang qari", bio: "Biografi" },
+  bn: { all: "সব ক্বারী", country: "দেশ", life: "জীবনকাল", style: "ধরন", listen: "প্লেয়ারে শুনুন", known: "যে কারণে পরিচিত", learn: "নিজে তিলাওয়াত করতে শিখুন", learnBody: "প্রথম হরফ থেকে ইজাযা পর্যন্ত – ধাপে ধাপে।", path: "ক্বারী হওয়ার পথ", bio: "জীবনী" },
+  ru: { all: "Все чтецы", country: "Страна", life: "Годы жизни", style: "Стиль", listen: "Слушать в плеере", known: "Чем известен", learn: "Научись читать Коран сам", learnBody: "От первых букв до иджазы – шаг за шагом.", path: "Путь к тому, чтобы стать чтецом", bio: "Биография" },
+  zh: { all: "全部诵读家", country: "国家", life: "生卒年", style: "风格", listen: "在播放器中收听", known: "代表成就", learn: "学会自己诵读", learnBody: "从最初的字母到获得传授资格（ijazah）——循序渐进。", path: "成为诵读者之路", bio: "生平" },
 };
-const langOf = (locale: string) => (locale === "de" ? "de" : locale === "ar" ? "ar" : "en");
+const labelsOf = (locale: string) => LBL[(locale in LBL ? locale : "en") as AppLocale];
+
+// Style labels: German, English and Arabic come from STYLE (lib/reciters); the technical terms stay as they are in Latin script
+type StyleKey = "murattal" | "mujawwad" | "imam" | "teacher";
+const STYLE_OTHER: Partial<Record<AppLocale, Record<StyleKey, string>>> = {
+  tr: { murattal: "Murattal", mujawwad: "Mujawwad", imam: "İmam", teacher: "Öğretmen" },
+  ur: { murattal: STYLE.murattal.ar, mujawwad: STYLE.mujawwad.ar, imam: "امام", teacher: "استاد" },
+  fa: { murattal: STYLE.murattal.ar, mujawwad: STYLE.mujawwad.ar, imam: "امام", teacher: "استاد" },
+  ps: { murattal: STYLE.murattal.ar, mujawwad: STYLE.mujawwad.ar, imam: "امام", teacher: "ښوونکی" },
+  fr: { murattal: "Murattal", mujawwad: "Mujawwad", imam: "Imam", teacher: "Enseignant" },
+  es: { murattal: "Murattal", mujawwad: "Mujawwad", imam: "Imán", teacher: "Maestro" },
+  id: { murattal: "Murattal", mujawwad: "Mujawwad", imam: "Imam", teacher: "Guru" },
+  ms: { murattal: "Murattal", mujawwad: "Mujawwad", imam: "Imam", teacher: "Guru" },
+  bn: { murattal: "Murattal", mujawwad: "Mujawwad", imam: "ইমাম", teacher: "শিক্ষক" },
+  ru: { murattal: "Murattal", mujawwad: "Mujawwad", imam: "Имам", teacher: "Учитель" },
+  zh: { murattal: "Murattal", mujawwad: "Mujawwad", imam: "伊玛目", teacher: "教师" },
+};
+const styleName = (s: StyleKey, locale: string) => STYLE_OTHER[locale as AppLocale]?.[s] ?? STYLE[s][locale === "de" ? "de" : locale === "ar" ? "ar" : "en"];
+
+// Country names (the data holds English names): German and Arabic from the tables of lib/reciters, every other language from Intl.DisplayNames
+const REGION: Record<string, string> = { Egypt: "EG", "Saudi Arabia": "SA", Kuwait: "KW", "United Arab Emirates": "AE", Yemen: "YE", Sudan: "SD", Somalia: "SO", Iraq: "IQ", Libya: "LY", Morocco: "MA", Qatar: "QA", Bahrain: "BH", Oman: "OM", Jordan: "JO", Syria: "SY", Pakistan: "PK", Indonesia: "ID", Algeria: "DZ", Tunisia: "TN", Palestine: "PS", Lebanon: "LB", Turkey: "TR", Malaysia: "MY", India: "IN", Bangladesh: "BD", Iran: "IR", Afghanistan: "AF", Nigeria: "NG" };
+function countryName(country: string, locale: string) {
+  if (locale === "en") return country;
+  if (locale === "de") return COUNTRIES_DE[country] ?? country;
+  if (locale === "ar") return COUNTRIES_AR[country] ?? country;
+  const code = REGION[country];
+  if (!code) return country;
+  try { return new Intl.DisplayNames(locale, { type: "region" }).of(code) ?? country; } catch { return country; }
+}
 
 export function generateStaticParams() {
   return RECITER_BIOS.map((r) => ({ slug: r.slug }));
@@ -25,7 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, slug } = await params;
   const r = reciterBio(slug);
   if (!r) return {};
-  return pageMeta(locale, `/reciters/${slug}`, `${locale === "ar" ? r.arabic : r.name} – ${LBL[langOf(locale)].bio} | Quran Masterclass`, bioText(r, locale).short);
+  return pageMeta(locale, `/reciters/${slug}`, `${locale === "ar" ? r.arabic : r.name} – ${labelsOf(locale).bio} | Quran Masterclass`, bioText(r, locale).short);
 }
 
 export default async function ReciterPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
@@ -34,9 +75,8 @@ export default async function ReciterPage({ params }: { params: Promise<{ locale
   const r = reciterBio(slug);
   if (!r) notFound();
   const t = bioText(r, locale);
-  const de = locale === "de";
   const ar = locale === "ar";
-  const L = LBL[langOf(locale)];
+  const L = labelsOf(locale);
   const i = RECITER_BIOS.indexOf(r);
   const prev = RECITER_BIOS[i - 1], next = RECITER_BIOS[i + 1];
   const initials = ar ? r.arabic.split(/\s+/).filter((w) => !["أبو", "عبد", "ابن"].includes(w)).slice(0, 2).map((w) => w[0]).join("") : r.name.split(/[\s-]+/).filter((w) => /^[A-Z]/.test(w) && !["Al", "Ash", "As", "Ar", "Ad", "At", "Az", "An", "Abu"].includes(w)).slice(0, 2).map((w) => w[0]).join("");
@@ -53,9 +93,9 @@ export default async function ReciterPage({ params }: { params: Promise<{ locale
           <p className="font-arabic mt-2 text-3xl text-[rgb(var(--gold))]" dir="rtl">{r.arabic}</p></>}
           <p className="mt-5 max-w-2xl text-[18px] leading-relaxed text-white/75">{t.short}</p>
           <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-            <div><dt className="text-white/50">{L.country}</dt><dd className="font-semibold">{de ? COUNTRIES_DE[r.country] ?? r.country : ar ? COUNTRIES_AR[r.country] ?? r.country : r.country}</dd></div>
+            <div><dt className="text-white/50">{L.country}</dt><dd className="font-semibold">{countryName(r.country, locale)}</dd></div>
             {(r.born || r.died) && <div><dt className="text-white/50">{L.life}</dt><dd className="font-semibold">{r.born ?? "?"}{r.died ? ` – ${r.died}` : ""}</dd></div>}
-            <div><dt className="text-white/50">{L.style}</dt><dd className="font-semibold">{r.styles.map((s) => STYLE[s][langOf(locale)]).join(" · ")}</dd></div>
+            <div><dt className="text-white/50">{L.style}</dt><dd className="font-semibold">{r.styles.map((s) => styleName(s, locale)).join(" · ")}</dd></div>
           </dl>
           {r.playerSlug && <Link href={`/surah/1?reciter=${r.playerSlug}`} className="btn-gold mt-8 inline-flex h-12 items-center gap-2 rounded-md px-6 text-[15px] font-bold"><svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>{L.listen}</Link>}
         </div>

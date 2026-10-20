@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
-import { TRANSLATION } from "@/lib/quran";
+import { translationFor } from "@/lib/quran";
 
-// Single verses by key from the website's own Quran store (/api/q/verses/by_key), with the same translation the
-// website picks (Bubenheim & Elyas for German, Saheeh International for English) and the same clean-up of the text.
+// Single verses by key from the website's own Quran store (/api/q/verses/by_key), with the translation the website
+// picks for the reader's language (translationFor: the preferred one, else the first Quran.com offers in it) and the
+// same clean-up of the text. Arabic readers read the original (no translation), as on the website.
 export type SingleVerse = { verse_key: string; text_uthmani: string; translation: string };
 
 const cache = new Map<string, Promise<SingleVerse>>();
@@ -11,12 +12,12 @@ export function getVerseByKey(key: string, lang: string): Promise<SingleVerse> {
   const id = `${lang}|${key}`;
   let p = cache.get(id);
   if (!p) {
-    p = api<{ verse: { verse_key: string; text_uthmani: string; translations?: { text?: string }[] } }>(
-      `/api/q/verses/by_key/${key}?language=${lang}&words=false&translations=${TRANSLATION[lang] ?? 20}&fields=text_uthmani`,
-    ).then((d) => ({
+    p = translationFor(lang).then((tid) => api<{ verse: { verse_key: string; text_uthmani: string; translations?: { text?: string }[] } }>(
+      `/api/q/verses/by_key/${key}?language=${lang}&words=false&translations=${tid}&fields=text_uthmani`,
+    )).then((d) => ({
       verse_key: d.verse.verse_key,
       text_uthmani: d.verse.text_uthmani,
-      translation: String(d.verse.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, "").replace(/<[^>]+>/g, "").trim(),
+      translation: lang === "ar" ? "" : String(d.verse.translations?.[0]?.text ?? "").replace(/<sup[^>]*>.*?<\/sup>/g, "").replace(/<[^>]+>/g, "").trim(),
     }));
     p.catch(() => cache.delete(id));
     cache.set(id, p);

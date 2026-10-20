@@ -47,12 +47,12 @@ function TodayCard({ today, locale, t, ev }: { today: number; locale: string; t:
       <IllumFrame />
       <View style={{ paddingHorizontal: 28, paddingVertical: 36, gap: 32 }}>
         <View style={{ alignItems: "center" }}>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2.4, textTransform: "uppercase", color: stage.gold, textAlign: "center" }}>{t("todayIs")} · {fmtGregorian(today, locale, { weekday: "long" })}</Text>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: locale === "ar" ? 0 : 2.4, textTransform: "uppercase", color: stage.gold, textAlign: "center" }}>{t("todayIs")} · {fmtGregorian(today, locale, { weekday: "long" })}</Text>
           <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "center", columnGap: 20, marginTop: 12 }}>
             <Text style={{ fontFamily: FONT.display, fontSize: 84, lineHeight: 88, letterSpacing: -2, color: "#eef0f3" }}>{h.d}</Text>
             <View style={{ paddingBottom: 8 }}>
               <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 44, lineHeight: 60, color: stage.gold, writingDirection: "rtl" }}>{HIJRI_MONTHS[h.m - 1].ar}</Text>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 18, color: "rgba(255,255,255,0.75)" }}>{`${hijriMonthName(h.m, locale)} ${h.y} AH`}</Text>
+              <Text style={{ fontFamily: FONT.regular, fontSize: 18, color: "rgba(255,255,255,0.75)", textAlign: "center" }}>{locale === "ar" ? `${h.y} هـ` : `${hijriMonthName(h.m, locale)} ${h.y} AH`}</Text>
             </View>
           </View>
           <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: "rgba(255,255,255,0.7)", marginTop: 16, textAlign: "center" }}>{fmtGregorian(today, locale, { day: "numeric", month: "long", year: "numeric" })}</Text>
@@ -60,7 +60,7 @@ function TodayCard({ today, locale, t, ev }: { today: number; locale: string; t:
         </View>
         {next ? (
           <View style={{ alignSelf: "center", width: "100%", maxWidth: 320, borderRadius: R.card, borderWidth: 1, borderColor: "rgba(255,255,255,0.1)", backgroundColor: "rgba(255,255,255,0.04)", padding: 20, alignItems: "center" }}>
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "rgba(255,255,255,0.5)", textAlign: "center" }}>{t("upcoming")}</Text>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: locale === "ar" ? 0 : 2, textTransform: "uppercase", color: "rgba(255,255,255,0.5)", textAlign: "center" }}>{t("upcoming")}</Text>
             <Text style={{ fontFamily: FONT.display, fontSize: 20, lineHeight: 26, color: "#eef0f3", marginTop: 8, textAlign: "center" }}>{ev(next.e.id).name}</Text>
             <Text style={{ fontFamily: FONT.display, fontSize: 36, lineHeight: 42, color: stage.gold, marginTop: 4 }}>{n === 0 ? t("todayCount") : n === 1 ? t("tomorrow") : t("days", { n })}</Text>
             <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>{fmtGregorian(next.o!.t, locale, { day: "numeric", month: "long", year: "numeric" })}</Text>
@@ -95,8 +95,8 @@ function MonthView({ today, view, setView, locale, t, ev }: { today: number; vie
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
         {round(-1)}
         <View style={{ flex: 1, alignItems: "center" }}>
-          <Text accessibilityRole="header" allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 34, lineHeight: 50, color: th.gold, writingDirection: "rtl" }}>{HIJRI_MONTHS[view.m - 1].ar}</Text>
-          <Text style={{ fontFamily: FONT.display, fontSize: 20, lineHeight: 25, color: th.ink }}>{hijriMonthName(view.m, locale)} {view.y}</Text>
+          <Text accessibilityRole="header" allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 34, lineHeight: 50, color: th.gold, writingDirection: "rtl" }}>{HIJRI_MONTHS[view.m - 1].ar}{locale === "ar" ? ` ${view.y}` : ""}</Text>
+          {locale !== "ar" ? <Text style={{ fontFamily: FONT.display, fontSize: 20, lineHeight: 25, color: th.ink }}>{hijriMonthName(view.m, locale)} {view.y}</Text> : null}
           <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: th.muted, marginTop: 4, textAlign: "center" }}>{span} · {t("days", { n: grid.len })}</Text>
         </View>
         {round(1)}

@@ -4,6 +4,7 @@ import { router, type Href } from "expo-router";
 import { Display, GoldButton, OutlineButton, Poster, PosterGrid, Stage, gradientColors } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
+import { LANGS } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { HOME_TILES, TILES } from "@/web/tiles";
@@ -190,11 +191,11 @@ export function HomeMethod() {
   );
 }
 
-/** 7 Everything in one place: the website's numbered features (without "{n} languages": the app speaks German and English) */
+/** 7 Everything in one place: the website's numbered features ("{n} languages" with the number of app languages) */
 export function HomeFeatures() {
   const t = useTheme();
   const w = useWebT();
-  const keys = ["f1", "f2", "f3", "f4", "f5", "f7", "f8", "f9"];
+  const keys = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9"];
   return (
     <View style={{ paddingHorizontal: 16, paddingVertical: 44 }}>
       <View style={{ paddingHorizontal: 4 }}><H2>{w("home2.featTitle")}</H2></View>
@@ -206,7 +207,7 @@ export function HomeFeatures() {
               <View style={{ flexDirection: "row", gap: 16 }}>
                 <HomeStar size={44}>{String(i + 1).padStart(2, "0")}</HomeStar>
                 <View style={{ flex: 1 }}>
-                  <Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink }}>{w(`${ns}.${k}t`)}</Text>
+                  <Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink }}>{w(`${ns}.${k}t`, { n: LANGS.length })}</Text>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.muted, marginTop: 4 }}>{w(`${ns}.${k}d`)}</Text>
                 </View>
               </View>

@@ -47,7 +47,9 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
   const insets = useSafeAreaInsets();
   const audio = useVerseAudio();
   const s = chapter.id;
-  const lesson = PATH.find((l) => l.s === s && l.from === from) ?? { s, from, to: Math.min(verses.length, from + 4), id: `${s}:${from}` };
+  // a start verse beyond the end of the surah (old or hand-made link) falls back to the lesson that holds the last verse
+  const f = Math.max(1, Math.min(from, verses.length));
+  const lesson = PATH.find((l) => l.s === s && l.from === f) ?? PATH.find((l) => l.s === s && l.from <= f && l.to >= f) ?? { s, from: f, to: Math.min(verses.length, f + 4), id: `${s}:${f}` };
   const nextL = PATH[PATH.findIndex((l) => l.id === lesson.id) + 1];
   const lvl = useMemo(() => levelOf(readProgress().xp), []);
   const secs = secondsPerQuestion(lvl, ageProfile().testBonus);
@@ -62,7 +64,7 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
   const q = qs[i];
   const answered = picked !== null;
 
-  const start = () => { setQs(buildQuiz(verses, lesson.from, lesson.to, questionsFor(lvl))); setI(0); setCorrect(0); setXp(0); setPicked(null); setOrder([]); setLeft(secs); setPhase("quiz"); };
+  const start = () => { const built = buildQuiz(verses, lesson.from, lesson.to, questionsFor(lvl)); if (!built.length) return; setQs(built); setI(0); setCorrect(0); setXp(0); setPicked(null); setOrder([]); setLeft(secs); setPhase("quiz"); };
   const award = (ok: boolean) => { if (!ok && q) noteMistake(q.key); if (ok) { setCorrect((c) => c + 1); setXp((x) => x + 10 + Math.max(0, left)); } };
 
   useEffect(() => {

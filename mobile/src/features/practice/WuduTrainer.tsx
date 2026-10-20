@@ -477,7 +477,7 @@ export default function WuduTrainer() {
               {step.duas?.map((d) => (
                 <View key={d.ar} style={{ marginTop: 20, borderTopWidth: 1, borderTopColor: "rgba(214,180,108,0.25)", paddingTop: 16 }}>
                   <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 52, color: "#ffffff", writingDirection: "rtl", textAlign: AR_RIGHT }}>{d.ar}</Text>
-                  {l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 8 }}>{d.tr}</Text> : null}
+                  {l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 8 }}>{d.translit}</Text> : null}
                   {l !== "ar" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 8 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{u.meaning}: </Text>{d.meaning[l]}</Text> : null}
                   {d.src ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: "rgba(255,255,255,0.5)", marginTop: 6 }}>{tx(d.src)}</Text> : null}
                 </View>

@@ -5,8 +5,9 @@ import {
 } from "expo-iap";
 import { api } from "./api";
 import { PRO_PRODUCT } from "./pro";
-import { DUA_PACK_PRODUCT, DUA_PRODUCT, DUA_PRODUCTS } from "./purchases";
+import { DUA_PACK_PRODUCT, DUA_PRODUCT, DUA_PRODUCTS, NAMES_PRODUCT } from "./purchases";
 import { writeJSON } from "./store";
+import { getToken } from "./storage";
 
 // Store purchases (StoreKit 2 on iOS, Google Play Billing on Android). Every purchase is checked by our server
 // (signature against Apple's root certificate) and bound to the signed-in account, so Pro and dua credits work on
@@ -19,18 +20,19 @@ function connect(): Promise<boolean> {
   return connection;
 }
 
-export type StorePrices = { pro: string | null; dua: string | null; duaPack: string | null };
+export type StorePrices = { pro: string | null; dua: string | null; duaPack: string | null; names: string | null };
 export async function loadPrices(): Promise<StorePrices> {
-  if (!(await connect())) return { pro: null, dua: null, duaPack: null };
-  const out: StorePrices = { pro: null, dua: null, duaPack: null };
+  if (!(await connect())) return { pro: null, dua: null, duaPack: null, names: null };
+  const out: StorePrices = { pro: null, dua: null, duaPack: null, names: null };
   try {
     const subs = (await fetchProducts({ skus: [PRO_PRODUCT], type: "subs" })) ?? [];
     out.pro = (subs as { id: string; displayPrice: string }[]).find((p) => p.id === PRO_PRODUCT)?.displayPrice ?? null;
   } catch { /* store not reachable */ }
   try {
-    const items = ((await fetchProducts({ skus: [DUA_PRODUCT, DUA_PACK_PRODUCT], type: "in-app" })) ?? []) as { id: string; displayPrice: string }[];
+    const items = ((await fetchProducts({ skus: [DUA_PRODUCT, DUA_PACK_PRODUCT, NAMES_PRODUCT], type: "in-app" })) ?? []) as { id: string; displayPrice: string }[];
     out.dua = items.find((p) => p.id === DUA_PRODUCT)?.displayPrice ?? null;
     out.duaPack = items.find((p) => p.id === DUA_PACK_PRODUCT)?.displayPrice ?? null;
+    out.names = items.find((p) => p.id === NAMES_PRODUCT)?.displayPrice ?? null;
   } catch { /* store not reachable */ }
   return out;
 }
@@ -50,19 +52,34 @@ async function verify(p: Purchase): Promise<Verified> {
   }
 }
 
+/** consumables: personal duas and personal name reports */
+const isConsumable = (sku: string) => sku in DUA_PRODUCTS || sku === NAMES_PRODUCT;
+const isOurs = (sku: string) => isConsumable(sku) || sku === PRO_PRODUCT;
+/** verify one store transaction with the server and finish it only then (finishing acknowledges it on Android, so
+ *  Google does not refund it after three days; a dua credit is booked once per transaction by the server) */
+async function settle(p: Purchase): Promise<boolean> {
+  if (!isOurs(p.productId) || p.purchaseState === "pending") return false;
+  const v = await verify(p);
+  if (!v.ok) return false; // stays unfinished: the store hands it over again (next launch / foreground)
+  await finishTransaction({ purchase: p, isConsumable: isConsumable(p.productId) }).catch(() => undefined);
+  return true;
+}
+
+// products a buy() call is waiting for: its own listener settles them, the app-wide one leaves them alone
+const buying = new Set<string>();
+
 /** one purchase: wait for the store's answer, let the server confirm, then finish the transaction */
 async function buy(sku: string, type: "subs" | "in-app"): Promise<BuyResult> {
   if (!(await connect())) return "unavailable";
+  buying.add(sku);
   return new Promise<BuyResult>((resolve) => {
     let done = false;
-    const finish = (r: BuyResult) => { if (done) return; done = true; up.remove(); err.remove(); resolve(r); };
+    const finish = (r: BuyResult) => { if (done) return; done = true; buying.delete(sku); up.remove(); err.remove(); resolve(r); };
     const up = purchaseUpdatedListener(async (p) => {
       if (p.productId !== sku) return;
-      if (p.purchaseState === "pending") { finish("pending"); return; }
-      const v = await verify(p);
-      if (!v.ok) { finish("failed"); return; } // stays unfinished: retried on the next launch (observeTransactions)
-      await finishTransaction({ purchase: p, isConsumable: type === "in-app" }).catch(() => undefined);
-      finish("ok");
+      if (p.purchaseState === "pending") { finish("pending"); return; } // approved later: the app-wide listener settles it
+      // not confirmed: stays unfinished and is retried by settlePending (launch / foreground)
+      finish((await settle(p)) ? "ok" : "failed");
     });
     const err = purchaseErrorListener((e) => finish(isUserCancelledError(e) ? "cancelled" : "failed"));
     const request = type === "subs"
@@ -95,17 +112,32 @@ export async function restore(): Promise<"restored" | "none" | "failed"> {
   }
 }
 
-/** transactions the store still holds (bought offline, app closed during the purchase): confirm them now */
-export async function settlePending(): Promise<void> {
-  if (!(await connect())) return;
-  try {
-    const list = (await getAvailablePurchases()) ?? [];
-    for (const p of list) {
-      if (!(p.productId in DUA_PRODUCTS) && p.productId !== PRO_PRODUCT) continue;
-      const v = await verify(p);
-      if (v.ok && p.productId in DUA_PRODUCTS) await finishTransaction({ purchase: p, isConsumable: true }).catch(() => undefined);
-    }
-  } catch { /* try again next launch */ }
+/** transactions the store still holds (bought offline, app closed during the purchase, not yet acknowledged):
+ *  confirm them with the server and finish them now. Called at app start, on sign-in and when the app returns to
+ *  the foreground (ProProvider). */
+let settling: Promise<void> | null = null;
+export function settlePending(): Promise<void> {
+  settling ??= (async () => {
+    if (!(await connect())) return;
+    try {
+      if (!(await getToken())) return; // bound to the account: wait until someone is signed in
+      const list = ((await getAvailablePurchases()) ?? []).filter((p) => isOurs(p.productId) && !buying.has(p.productId));
+      for (const p of list) if (isConsumable(p.productId)) await settle(p);
+      // Pro: the newest transaction carries the latest expiry; older renewals only need finishing once it is confirmed
+      const pro = list.filter((p) => p.productId === PRO_PRODUCT).sort((a, b) => (b.transactionDate ?? 0) - (a.transactionDate ?? 0));
+      if (pro[0] && (await settle(pro[0]))) for (const p of pro.slice(1)) await finishTransaction({ purchase: p, isConsumable: false }).catch(() => undefined);
+    } catch { /* try again next time */ }
+  })().finally(() => { settling = null; });
+  return settling;
+}
+
+/** app-wide listener for transactions that arrive outside a buy() call (Ask to Buy / pending payments approved
+ *  later, purchases interrupted by an app restart, promoted purchases, renewals): installed once */
+let observing = false;
+export async function observePurchases(): Promise<void> {
+  if (observing || !(await connect())) return;
+  observing = true;
+  purchaseUpdatedListener((p) => { if (!buying.has(p.productId)) void settle(p); });
 }
 
 export function manageSubscriptions() {

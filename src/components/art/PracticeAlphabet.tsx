@@ -1,16 +1,52 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
-import { LETTERS, arName, forms, type Letter } from "@/lib/arabic";
+import { LETTERS, arName, forms, type Lang, type Letter } from "@/lib/arabic";
 import { starPath } from "./PracticeArt";
 
-type Lang = "de" | "en" | "ar";
 const T: Record<Lang, { tap: string; hear: string; joins: string; alone: string; formsLbl: string }> = {
   de: { tap: "Tippe auf einen Buchstaben", hear: "Anhören", joins: "verbindet sich nach beiden Seiten", alone: "verbindet sich nur nach rechts", formsLbl: "Anfang · Mitte · Ende" },
   en: { tap: "Tap a letter", hear: "Listen", joins: "joins on both sides", alone: "joins only to the right", formsLbl: "Start · middle · end" },
   ar: { tap: "اضغط على حرفٍ لتتعرّف عليه", hear: "استمع", joins: "يتصل بما قبله وبما بعده", alone: "يتصل بما قبله فقط", formsLbl: "أول · وسط · آخر" },
+  tr: {
+    tap: "Bir harfe dokun", hear: "Dinle", joins: "iki yandan bağlanır", alone: "yalnızca sağdan bağlanır", formsLbl: "Baş · orta · son",
+  },
+  ur: {
+    tap: "کسی حرف پر ٹیپ کریں", hear: "سنیں", joins: "دونوں طرف سے جڑتا ہے", alone: "صرف دائیں طرف جڑتا ہے", formsLbl: "شروع · بیچ · آخر",
+  },
+  fa: {
+    tap: "روی یک حرف بزنید", hear: "گوش دادن", joins: "از هر دو طرف وصل می‌شود", alone: "فقط به راست وصل می‌شود", formsLbl: "آغاز · میان · پایان",
+  },
+  ps: {
+    tap: "پر یوه توري ټک وکړئ", hear: "واورئ", joins: "په دواړو خواوو نښلېږي", alone: "یوازې ښي خوا ته نښلېږي", formsLbl: "پیل · منځ · پای",
+  },
+  fr: {
+    tap: "Appuie sur une lettre", hear: "Écouter", joins: "se relie des deux côtés", alone: "se relie seulement à droite",
+    formsLbl: "Début · milieu · fin",
+  },
+  es: {
+    tap: "Toca una letra", hear: "Escuchar", joins: "se une por ambos lados", alone: "se une solo por la derecha", formsLbl: "Inicio · medio · final",
+  },
+  id: {
+    tap: "Ketuk sebuah huruf", hear: "Dengarkan", joins: "bersambung ke kedua sisi", alone: "hanya bersambung ke kanan",
+    formsLbl: "Awal · tengah · akhir",
+  },
+  ms: {
+    tap: "Ketik satu huruf", hear: "Dengar", joins: "bersambung pada kedua-dua belah", alone: "bersambung ke kanan sahaja",
+    formsLbl: "Permulaan · tengah · hujung",
+  },
+  bn: {
+    tap: "একটি হরফে ট্যাপ করুন", hear: "শুনুন", joins: "দুই পাশেই যুক্ত হয়", alone: "শুধু ডানদিকে যুক্ত হয়", formsLbl: "শুরু · মাঝ · শেষ",
+  },
+  ru: {
+    tap: "Нажми на букву", hear: "Послушать", joins: "соединяется с обеих сторон", alone: "соединяется только справа",
+    formsLbl: "Начало · середина · конец",
+  },
+  zh: {
+    tap: "点按一个字母", hear: "聆听", joins: "与两侧都相连", alone: "只与右侧相连", formsLbl: "词首 · 词中 · 词尾",
+  },
 };
-const langOf = (l: string): Lang => (l === "de" ? "de" : l === "ar" ? "ar" : "en");
+const langOf = (l: string): Lang => (l in T ? l : "en") as Lang; // the locale if the table has it, otherwise English
 
 // the device's Arabic voice (if there is one) says the letter's name – a pronunciation helper, not recitation
 function useArabicVoice() {

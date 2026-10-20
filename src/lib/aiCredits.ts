@@ -55,3 +55,34 @@ export async function refundDua(userId: number, spent: Spent) {
 export async function addDuaCredits(c: PoolClient, userId: number, n: number) {
   await c.query("INSERT INTO ai_credits (user_id, dua) VALUES ($1, $2) ON CONFLICT (user_id) DO UPDATE SET dua = ai_credits.dua + $2, updated_at = now()", [userId, n]);
 }
+
+// ---- personal name reports (baby-name finder in the app) ----
+// A separate credit: one bought report = one credit. Pro does not include name reports.
+/** consumable → number of name reports */
+export const NAME_PRODUCTS: Record<string, number> = { "com.quranmasterclass.app.names": 1 };
+
+export async function nameCredits(userId: number): Promise<number> {
+  const p = pool();
+  if (!p) return 0;
+  const r = await p.query("SELECT names FROM ai_credits WHERE user_id = $1", [userId]).catch(() => null);
+  return Number(r?.rows[0]?.names ?? 0);
+}
+
+/** takes one name-report credit; false when none is left */
+export async function spendName(userId: number): Promise<boolean> {
+  const p = pool();
+  if (!p) return false;
+  const r = await p.query("UPDATE ai_credits SET names = names - 1, updated_at = now() WHERE user_id = $1 AND names > 0 RETURNING names", [userId]).catch(() => null);
+  return !!r?.rowCount;
+}
+
+/** gives a name-report credit back when the report could not be made */
+export async function refundName(userId: number) {
+  const p = pool();
+  if (!p) return;
+  await p.query("INSERT INTO ai_credits (user_id, names) VALUES ($1, 1) ON CONFLICT (user_id) DO UPDATE SET names = ai_credits.names + 1, updated_at = now()", [userId]).catch(() => undefined);
+}
+
+export async function addNameCredits(c: PoolClient, userId: number, n: number) {
+  await c.query("INSERT INTO ai_credits (user_id, names) VALUES ($1, $2) ON CONFLICT (user_id) DO UPDATE SET names = ai_credits.names + $2, updated_at = now()", [userId, n]);
+}

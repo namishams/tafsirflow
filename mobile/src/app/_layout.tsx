@@ -20,6 +20,7 @@ import { stackOptions } from "@/components/page";
 import { useTheme } from "@/lib/theme";
 import { RewardsHost } from "@/features/progress";
 import { RadioMiniPlayer } from "@/features/radio/MiniPlayer";
+import { VerseMiniPlayer } from "@/features/reader/VerseMiniPlayer";
 import { NotificationsBridge } from "@/features/daily/NotificationsBridge";
 import { DailyMoment } from "@/features/daily/DailyMoment";
 
@@ -61,6 +62,7 @@ export default function RootLayout() {
               <RewardsHost>
                 <Routes />
                 <RadioMiniPlayer global />
+                <VerseMiniPlayer />
                 <NotificationsBridge />
                 <DailyMoment />
               </RewardsHost>

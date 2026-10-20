@@ -18,6 +18,7 @@ import { Icon } from "@/components/icons";
 import { Callout, H2, IllumFrame, Label, LightChip, Rosette, StageButton, go } from "../art";
 import { CheckRow, DateField, Field, SelectField } from "../ui";
 import { ABD_HADITH_AR, FAV_KEY, classicalName, hijriOfInput } from "../web/nameGenerator";
+import NameReport from "./NameReport";
 
 type Tx = ReturnType<typeof namesText>;
 type Verse = { key: string; ar: string; tr: string };
@@ -272,6 +273,8 @@ function Finder({ t, l, locale, rtl, favs, scrollTo }: { t: Tx; l: Lang; locale:
               ) : <Callout style={{ padding: 16 }}><Text style={{ fontFamily: FONT.regular, fontSize: 15, color: th.ink }}>{t("noPool")}</Text></Callout>}
             </View>
           ))}
+          {/* paid extra of the app: the personal name report (the free suggestions above stay as on the website) */}
+          <NameReport form={f} month={res.month} l={l} locale={locale} rtl={rtl} t={t} favs={favs} />
         </View>
       ) : null}
     </View>

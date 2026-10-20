@@ -15,7 +15,7 @@ const FILES = [
   "aboutContent", "academy", "adhan", "age", "arabic", "arabicQuran", "changelog", "coach", "counts", "countries", "duaGenerator",
   "duas", "featured", "guides", "hijri", "journey", "learning", "listen", "mapContent", "plans", "points", "prayer", "quranIndex",
   "recite", "salah", "session", "shamsContent", "stickers", "sunnahDuas", "sunnahDuas2", "tajweed", "tiles",
-  "vocab", "votd", "wudu",
+  "vocab", "vocabI18n", "vocabStudy", "votd", "wudu",
 ];
 // Folders copied whole, with the translations of every language the website speaks
 const DIRS = ["islam", "names", "reciters", "secrets", "pagecontent"];
@@ -30,6 +30,8 @@ const rewrite = (src, file) => {
   return src
     .replace(/^"use client";\n/, "")
     .replace(/from "@\/lib\//g, `from "${up}`)
+    // the website's language list is mirrored as web/locales.ts
+    .replace(/from "@\/i18n\/locales"/g, `from "${up}locales"`)
     // localStorage helpers -> the app's synchronous store (hydrated from AsyncStorage at start)
     .replace(/from "(\.\.?\/)+storage"/g, 'from "@/lib/store"')
     // dynamic imports of other languages: Metro cannot resolve template imports, so each one becomes a lookup in a

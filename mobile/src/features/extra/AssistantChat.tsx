@@ -7,6 +7,7 @@ import { useLang, useT } from "@/i18n";
 import { ApiError, api } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
 import { useAiCredits } from "@/lib/purchases";
+import { openPro } from "@/lib/pro";
 import { ARABIC_FONT, FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
 import { GOLD, alpha } from "./art";
 import { Markdown } from "./Markdown";
@@ -80,7 +81,9 @@ export function AssistantChat({ header }: { header?: ReactNode }) {
       void refresh();
     } catch (e) {
       const s = e instanceof ApiError ? e.status : 0;
-      setErr(s === 429 ? x.limit : s === 401 ? "login" : s === 403 ? "verify" : s === 0 ? xa.offline : x.err);
+      // 402 "pro": the assistant is part of Pro in the app – open the Pro sheet and offer it again below
+      if (s === 402) openPro("general");
+      setErr(s === 429 ? x.limit : s === 401 ? "login" : s === 402 ? "pro" : s === 403 ? "verify" : s === 0 ? xa.offline : x.err);
     } finally { setBusy(false); }
   };
 
@@ -123,10 +126,11 @@ export function AssistantChat({ header }: { header?: ReactNode }) {
                 </View>
               ))}
               {busy ? <Text style={{ paddingStart: 48, fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{x.thinking}</Text> : null}
-              {err === "login" || err === "verify" ? (
+              {err === "login" || err === "verify" || err === "pro" ? (
                 <View accessibilityRole="alert" style={{ marginStart: 48, borderRadius: R.lg, borderWidth: 1, borderColor: alpha(GOLD, 0.45), backgroundColor: alpha(GOLD, 0.06), padding: 16, gap: 12 }}>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.ink }}>{err === "login" ? x.login : xa.verify}</Text>
+                  <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.ink }}>{err === "login" ? x.login : err === "pro" ? x.proText : xa.verify}</Text>
                   {err === "login" && !user ? <GoldButton title={xa.signIn} compact onPress={() => router.push("/sign-in")} /> : null}
+                  {err === "pro" ? <GoldButton title={xa.pro.cta} compact onPress={() => openPro("general")} /> : null}
                 </View>
               ) : err ? <Text accessibilityRole="alert" style={{ paddingStart: 48, fontFamily: FONT.regular, fontSize: 14, color: t.danger }}>{err}</Text> : null}
             </>

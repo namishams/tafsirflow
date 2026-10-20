@@ -7,7 +7,7 @@ import { VERSE_COUNTS } from "./counts";
 // Today's guided session: one button runs the whole day – repairs, reviews (weakest first), then new verses with the
 // Shams method – verse after verse, across surahs, with a progress bar and a summary at the end. Kept on this device.
 export type SessionItem = { key: string; kind: "repair" | "review" | "new" };
-export type Session = { day: number; items: SessionItem[]; i: number; startedAt: number; ok: number; again: number; requeued: string[] };
+export type Session = { day: number; items: SessionItem[]; i: number; startedAt: number; ok: number; again: number; requeued: string[]; skipped?: string[] };
 export type SessionSummary = { day: number; done: number; fresh: number; again: number; minutes: number };
 const KEY = "tf:session";
 const DONE = "tf:sessionDone";
@@ -40,13 +40,15 @@ export const itemUrl = (it: SessionItem) => { const [s, v] = it.key.split(":"); 
 export const readSummary = () => { const d = readJSON<SessionSummary | null>(DONE, null); return d && d.day === today() ? d : null; };
 
 // The learner finished the current verse. "again" brings a review back once at the end of the session.
-export function completeItem(key: string, ok: boolean): SessionItem | null {
+// skip = the item cannot be practised here (e.g. locked for free users): it moves on without counting as done.
+export function completeItem(key: string, ok: boolean, skip = false): SessionItem | null {
   const s = readJSON<Session | null>(KEY, null);
   if (!s || s.day !== today()) return null;
   const cur = s.items[s.i];
   if (cur && cur.key === key) {
-    if (ok) s.ok++; else s.again++;
-    if (!ok && cur.kind !== "new" && !s.requeued.includes(key)) { s.items.push({ ...cur, kind: "repair" }); s.requeued.push(key); }
+    if (skip) s.skipped = [...(s.skipped ?? []), key];
+    else if (ok) s.ok++; else s.again++;
+    if (!skip && !ok && cur.kind !== "new" && !s.requeued.includes(key)) { s.items.push({ ...cur, kind: "repair" }); s.requeued.push(key); }
     s.i++;
   }
   if (s.i >= s.items.length) { finish(s); return null; }
@@ -55,7 +57,7 @@ export function completeItem(key: string, ok: boolean): SessionItem | null {
 }
 
 function finish(s: Session) {
-  writeJSON(DONE, { day: s.day, done: s.items.length - s.requeued.length, fresh: s.items.filter((x) => x.kind === "new").length, again: s.again, minutes: Math.max(1, Math.round((Date.now() - s.startedAt) / 60000)) } satisfies SessionSummary);
+  writeJSON(DONE, { day: s.day, done: new Set(s.items.slice(0, s.i).map((x) => x.key).filter((k) => !s.skipped?.includes(k))).size, fresh: s.items.slice(0, s.i).filter((x) => x.kind === "new" && !s.skipped?.includes(x.key)).length, again: s.again, minutes: Math.max(1, Math.round((Date.now() - s.startedAt) / 60000)) } satisfies SessionSummary);
   writeJSON(KEY, null);
   if (s.i >= s.items.length) award("session");
 }

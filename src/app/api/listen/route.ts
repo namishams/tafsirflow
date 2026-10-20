@@ -2,15 +2,17 @@ import crypto from "node:crypto";
 import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
+import { fromApp } from "@/lib/appRequest";
 
 export const dynamic = "force-dynamic";
 const day = () => Math.floor(Date.now() / 86400000);
 
-// anonymous listening totals from the verse player (sent every minute and when the page is left)
+// anonymous listening totals from the verse player (sent every minute and when the page is left); the native app
+// sends the same totals with the header x-qmc-app (its web preview runs on another origin)
 export async function POST(req: NextRequest) {
   const p = pool();
   if (!p) return json({ ok: false }, 503);
-  if (!sameOrigin(req)) return json({ error: "forbidden" }, 403);
+  if (!fromApp(req) && !sameOrigin(req)) return json({ error: "forbidden" }, 403);
   const ip = clientIp(req);
   if (rateLimited(`listen:${ip}`, 30, 60_000)) return json({ error: "rate" }, 429);
   const b = (await req.json().catch(() => ({}))) as { items?: { s?: unknown; r?: unknown; sec?: unknown; v?: unknown }[] };

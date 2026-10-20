@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Alert, Platform, Switch, Text, TextInput, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
-import * as WebBrowser from "expo-web-browser";
 import Constants from "expo-constants";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { Chip, GoldButton, OutlineButton, Segmented } from "@/components/brand";
@@ -9,14 +8,19 @@ import { readDaily, setDaily, type DailyReminder } from "@/lib/daily";
 import { LinkRow, Page, PageHero, ProBadge, RowGroup } from "@/components/page";
 import { intlLocale, langLabel, useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
-import { SITE, ApiError } from "@/lib/api";
+import { ApiError } from "@/lib/api";
+import { removeKey, storedKeys } from "@/lib/store";
+import { useWebT } from "@/i18n/web";
+import { request } from "@/features/extra/http";
+import { KidsToggle } from "@/features/extra/KidsToggle";
 import { useSettings } from "@/lib/settings";
 import { openPro, usePro } from "@/lib/pro";
 import { manageSubscriptions } from "@/lib/iap";
 import { ProPromo } from "@/features/learn/ProPromo";
 import type { AppearanceSetting } from "@/lib/theme";
 
-// Account: Pro, sign-in, appearance, language, learning progress, legal, report a problem, delete the account
+// Account: Pro, sign-in, confirm the e-mail, appearance, language, kids mode, learning progress, legal, report a
+// problem, delete the account
 export default function AccountScreen() {
   const t = useT();
   const theme = useTheme();
@@ -28,14 +32,24 @@ export default function AccountScreen() {
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const wa = useWebT("account");
+  const wn = useWebT("nav");
+  const [resent, setResent] = useState<"" | "busy" | "sent" | "error">("");
+  const resend = async () => {
+    setResent("busy");
+    try { const r = await request("/api/auth/resend", { locale: lang }); setResent(r.ok ? "sent" : "error"); } catch { setResent("error"); }
+  };
   const [daily, setDailyState] = useState<DailyReminder>(readDaily());
   const updateDaily = async (next: DailyReminder) => { const ok = await setDaily(next, lang); setDailyState(ok ? next : { ...next, on: false }); };
 
-  const open = (path: string) => WebBrowser.openBrowserAsync(`${SITE}/${lang}${path}`);
   const go = (href: string) => router.push(href as Href);
   const confirmDelete = async () => {
     setBusy(true); setError("");
-    try { await deleteAccount(password); setDeleting(false); setPassword(""); }
+    try {
+      await deleteAccount(password); setDeleting(false); setPassword("");
+      // the learning progress on this device belonged to the deleted account (as on the profile page)
+      for (const k of storedKeys()) if (k.startsWith("tf:")) removeKey(k);
+    }
     catch (e) { setError(e instanceof ApiError && e.code === "current" ? t("account.wrongPassword") : t("common.error")); }
     finally { setBusy(false); }
   };
@@ -54,7 +68,17 @@ export default function AccountScreen() {
         </PageHero>
 
         <View style={{ padding: 16, gap: 22 }}>
-          {user && !user.emailVerified ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.ink, backgroundColor: theme.accentSoft, padding: 12, borderRadius: R.sm }}>{t("auth.verifyHint")}</Text> : null}
+          {user && !user.emailVerified ? (
+            <View style={{ backgroundColor: theme.accentSoft, padding: 12, borderRadius: R.sm, gap: 10 }}>
+              <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.ink }}>{t("auth.verifyHint")}</Text>
+              {resent === "sent" ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: theme.accent }}>{wa("resent")}</Text> : (
+                <>
+                  {resent === "error" ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 13, color: theme.danger }}>{wa("errGeneric")}</Text> : null}
+                  <OutlineButton compact title={wa("resend")} icon="repeat" disabled={resent === "busy"} onPress={() => void resend()} style={{ alignSelf: "flex-start" }} />
+                </>
+              )}
+            </View>
+          ) : null}
 
           {pro ? (
             <RowGroup>
@@ -75,6 +99,9 @@ export default function AccountScreen() {
             <RowGroup>
               <LinkRow first title={setting === "system" ? `${t("account.languageSystem")} · ${langLabel(lang)}` : langLabel(setting)} icon="globe" onPress={() => go("/language")} />
             </RowGroup>
+          </Section>
+          <Section title={wn("kids")}>
+            <RowGroup><KidsToggle variant="row" /></RowGroup>
           </Section>
 
           <Section title={t("account.dailyTitle")}>
@@ -102,9 +129,9 @@ export default function AccountScreen() {
 
           <Section title={t("account.legal")}>
             <RowGroup>
-              <LinkRow first title={t("account.terms")} onPress={() => open("/legal/terms")} />
-              <LinkRow title={t("account.privacy")} onPress={() => open("/legal/privacy")} />
-              <LinkRow title={t("account.imprint")} onPress={() => open("/legal/imprint")} />
+              <LinkRow first title={t("account.terms")} onPress={() => go("/legal/terms")} />
+              <LinkRow title={t("account.privacy")} onPress={() => go("/legal/privacy")} />
+              <LinkRow title={t("account.imprint")} onPress={() => go("/legal/imprint")} />
               <LinkRow title={t("account.support")} onPress={() => go("/feedback")} />
               <LinkRow title={t("account.about")} onPress={() => go("/about")} />
               <LinkRow title={t("account.changelog")} onPress={() => go("/changelog")} />

@@ -59,7 +59,7 @@ export default function RadioScreen() {
   }, []);
   const pickReciter = useCallback((folder: string) => { if (!radio.changeReciter(folder)) openPro("reciters"); }, []);
   const share = () => {
-    const title = `Quran Masterclass Radio – ${stationTitle}`;
+    const title = `${t("title")} – ${stationTitle} | Quran Masterclass`;
     const url = `${SITE}/${lang}/radio`;
     shareLink(title, url);
   };
@@ -131,7 +131,7 @@ export default function RadioScreen() {
             ) : null}
 
             <View style={{ alignItems: "center", marginTop: 34 }} onLayout={(e) => { heroEnd.current = e.nativeEvent.layout.y; }}>
-              <Pressable onPress={() => router.push("/radio/now" as never)} accessibilityRole="button" accessibilityLabel={`${a("openNowPlaying")}: ${reciter.name}`}>
+              <Pressable onPress={() => router.push("/radio/now" as never)} accessibilityRole="button" accessibilityLabel={`${a("openNowPlaying")}: ${reciterName(reciter, lang)}`}>
                 <RadioOrb on={r.playing} size={orb} label={initials(reciter.name)} reduce={reduce} />
               </Pressable>
             </View>
@@ -142,7 +142,7 @@ export default function RadioScreen() {
             <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2.1, textTransform: "uppercase", color: "rgba(255,255,255,0.5)" }}>{t("reciters")}</Text>
             <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12, marginHorizontal: -4 }}>
               {r.reciters.map((x) => (
-                <ReciterButton key={x.folder} folder={x.folder} name={x.name} on={x.folder === r.folder} locked={!reciterAllowed(x, r.pro)} onPick={pickReciter} />
+                <ReciterButton key={x.folder} folder={x.folder} name={reciterName(x, lang)} mono={initials(x.name)} on={x.folder === r.folder} locked={!reciterAllowed(x, r.pro)} onPick={pickReciter} />
               ))}
             </View>
           </View>
@@ -244,12 +244,12 @@ export default function RadioScreen() {
 }
 
 /** a reciter in the strip on the stage: seal with initials, name; a gold lock when the voice is part of Pro */
-const ReciterButton = memo(function ReciterButton({ folder, name, on, locked, onPick }: { folder: string; name: string; on: boolean; locked: boolean; onPick: (folder: string) => void }) {
+const ReciterButton = memo(function ReciterButton({ folder, name, mono, on, locked, onPick }: { folder: string; name: string; mono: string; on: boolean; locked: boolean; onPick: (folder: string) => void }) {
   return (
     <View style={{ width: "33.333%", padding: 4 }}>
       <Pressable onPress={() => onPick(folder)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${name}${locked ? ", Pro" : ""}`}
         style={({ pressed }) => ({ alignItems: "center", gap: 8, padding: 10, borderRadius: R.lg, backgroundColor: on ? "rgba(255,255,255,0.07)" : pressed ? "rgba(255,255,255,0.05)" : "transparent", borderWidth: 1, borderColor: on ? "rgba(214,180,108,0.35)" : "transparent" })}>
-        <QuranSeal size={60} on={on} locked={locked}>{initials(name)}</QuranSeal>
+        <QuranSeal size={60} on={on} locked={locked}>{mono}</QuranSeal>
         <Text numberOfLines={2} style={{ fontFamily: FONT.semibold, fontSize: 12, lineHeight: 15.5, textAlign: "center", color: on ? "#ffffff" : "rgba(255,255,255,0.7)" }}>{name}</Text>
       </Pressable>
     </View>

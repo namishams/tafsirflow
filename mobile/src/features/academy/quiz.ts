@@ -15,6 +15,7 @@ const wordsOf = (v: Verse) => v.words.filter((w) => w.char_type_name === "word")
 // Builds a varied test from the lesson's verses (and the rest of the surah for distractors)
 export function buildQuiz(all: Verse[], from: number, to: number, count: number): Q[] {
   const lesson = all.filter((v) => v.verse_number >= from && v.verse_number <= to);
+  if (!lesson.length) return []; // a lesson outside the surah (e.g. a stale link): no questions instead of a crash
   const pool = all.flatMap((v) => wordsOf(v).map((w) => ({ ar: w.text_uthmani, tr: (w.translation?.text ?? "").trim() })));
   const uniqAr = Array.from(new Set(pool.map((p) => p.ar)));
   const uniqTr = Array.from(new Set(pool.map((p) => p.tr).filter(Boolean)));

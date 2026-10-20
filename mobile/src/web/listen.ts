@@ -75,6 +75,15 @@ function compact(all: Listen) {
   }
 }
 
+// Where the anonymous totals go. The website posts to its own /api/listen; the native app (which gets this file
+// through mobile/scripts/sync-web.mjs) sets the server's address and marks its requests with x-qmc-app.
+let endpoint = "/api/listen";
+let extraHeaders: Record<string, string> = {};
+export function configureListen(o: { base?: string; headers?: Record<string, string> }) {
+  endpoint = `${(o.base ?? "").replace(/\/+$/, "")}/api/listen`;
+  extraHeaders = { ...(o.headers ?? {}) };
+}
+
 // anonymous totals for the community statistics (no user id, only surah, reciter, seconds, verses)
 function send(beacon = false) {
   const items = Object.entries(server).filter(([, x]) => x.sec >= 1 || x.v > 0).map(([k, x]) => { const [s, r] = k.split("|"); return { s: Number(s), r, sec: Math.round(x.sec), v: x.v }; });
@@ -83,8 +92,9 @@ function send(beacon = false) {
   lastWrite = Date.now();
   const body = JSON.stringify({ items });
   try {
-    if (beacon && navigator.sendBeacon) navigator.sendBeacon("/api/listen", new Blob([body], { type: "application/json" }));
-    else void fetch("/api/listen", { method: "POST", headers: { "content-type": "application/json" }, body, keepalive: true }).catch(() => undefined);
+    // a beacon cannot carry extra headers: only the website (relative address, no headers) uses it
+    if (beacon && !Object.keys(extraHeaders).length && typeof navigator !== "undefined" && navigator.sendBeacon) navigator.sendBeacon(endpoint, new Blob([body], { type: "application/json" }));
+    else void fetch(endpoint, { method: "POST", headers: { "content-type": "application/json", ...extraHeaders }, body, keepalive: true }).catch(() => undefined);
   } catch { /* statistics are optional */ }
 }
 

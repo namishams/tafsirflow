@@ -1,14 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { ALLAH, COUNTS } from "@/lib/secrets/counts";
 import CountUp from "./CountUp";
 import { IslamStarMark, starPath } from "./art/IslamArt";
 
 // "How often does it appear?" – tap a word, see the verified count inside a slowly turning gilded rosette and every place
-// as a gold chip that opens the verse (see lib/secrets/counts.ts)
+// as a gold chip that opens the verse (see lib/secrets/counts.ts). A link to "#w-<key>" (from a checked claim) selects
+// that word and scrolls the counter into view.
 export default function WordCounter({ words, times, spots, note, locale, initial = "fearNot" }: { words: { key: string; ar: string; label: string }[]; times: string; spots: string; note: string; locale: string; initial?: string }) {
   const [sel, setSel] = useState(initial);
+  const box = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const pick = () => {
+      const k = decodeURIComponent(window.location.hash.replace(/^#w-/, ""));
+      if (!window.location.hash.startsWith("#w-") || !words.some((x) => x.key === k)) return;
+      setSel(k);
+      box.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    };
+    pick();
+    window.addEventListener("hashchange", pick);
+    return () => window.removeEventListener("hashchange", pick);
+  }, [words]);
   const w = words.find((x) => x.key === sel) ?? words[0];
   const refs = sel === "allah" ? [] : COUNTS[sel] ?? [];
   const n = sel === "allah" ? ALLAH : refs.length;
@@ -16,7 +29,7 @@ export default function WordCounter({ words, times, spots, note, locale, initial
   const per = refs.reduce<Record<string, number>>((m, r) => ((m[r] = (m[r] ?? 0) + 1), m), {});
   const rays = Array.from({ length: 32 }, (_, i) => { const a = (Math.PI * 2 * i) / 32, r1 = 84, r2 = i % 2 ? 92 : 98; return `M${(100 + r1 * Math.cos(a)).toFixed(1)} ${(100 + r1 * Math.sin(a)).toFixed(1)}L${(100 + r2 * Math.cos(a)).toFixed(1)} ${(100 + r2 * Math.sin(a)).toFixed(1)}`; }).join("");
   return (
-    <div>
+    <div ref={box} className="scroll-mt-28">
       <div className="flex flex-wrap gap-2">
         {words.map((x) => (
           <button key={x.key} onClick={() => setSel(x.key)} aria-pressed={sel === x.key}

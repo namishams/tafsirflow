@@ -19,8 +19,9 @@ export function appHref(webPath: string): string {
 export function openLink(href: string, lang: string) {
   if (href.startsWith("/")) { router.push(appHref(href) as Href); return; }
   if (/^https?:\/\//.test(href)) {
-    const own = href.startsWith(SITE) ? href.slice(SITE.length).replace(/^\/(de|en|ar)(?=\/|$)/, "") : null;
-    if (own !== null && own.startsWith("/") && !own.startsWith("/api")) { router.push(appHref(own) as Href); return; }
+    const own = href.startsWith(SITE) ? href.slice(SITE.length).replace(/^\/(de|en|ar|tr|ur|fa|ps|fr|es|id|ms|bn|ru|zh)(?=\/|$|\?)/, "") : null;
+    const path = own === null ? null : own === "" || own.startsWith("?") ? `/${own}` : own;
+    if (path !== null && path.startsWith("/") && !path.startsWith("/api")) { router.push(appHref(path) as Href); return; }
     void WebBrowser.openBrowserAsync(href);
     return;
   }

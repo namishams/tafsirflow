@@ -18,6 +18,9 @@ export default function WuduScreen() {
   const g = useGold();
   const v = useVerses(["5:6"], lang)["5:6"];
   const body = { fontFamily: FONT.regular, fontSize: 16, lineHeight: 26, color: th.ink };
+  const ar = lang === "ar";
+  // the translator line names the German and English translations; other languages read their own (translationFor)
+  const showTrBy = lang === "de" || lang === "en";
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -35,10 +38,10 @@ export default function WuduScreen() {
                 {v.text_uthmani} <Text style={{ color: th.gold, fontSize: 17 }}>{verseEnd(6)}</Text>
               </Text>
             ) : null}
-            {v?.translation ? <Text style={[body, { opacity: 0.9, marginTop: 16 }]}>{v.translation}</Text> : null}
+            {v?.translation && !ar ? <Text style={[body, { opacity: 0.9, marginTop: 16 }]}>{v.translation}</Text> : null}
             <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: 20, rowGap: 4, marginTop: 16 }}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: th.gold }}>{c.verseRef}</Text>
-              {v?.translation ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: th.muted }}>{c.trBy}</Text> : null}
+              {v?.translation && showTrBy && c.trBy ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: th.muted }}>{c.trBy}</Text> : null}
               <Text onPress={() => go("/surah/5?v=6")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: th.accent, paddingVertical: 8 }}>{c.listen} {FWD}</Text>
             </View>
           </Callout>
@@ -61,7 +64,7 @@ export default function WuduScreen() {
               <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 24, lineHeight: 29, color: th.ink }}>{c.tayTitle}</Text>
               <Text style={[body, { opacity: 0.9, marginTop: 12 }]}>{c.tay}</Text>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
-                {[["/surah/5?v=6", "5:6"], ["/surah/4?v=43", "4:43"]].map(([h, l]) => <LightChip key={h} label={`Quran ${l}`} onPress={() => go(h)} />)}
+                {[["/surah/5?v=6", "5:6"], ["/surah/4?v=43", "4:43"]].map(([h, l]) => <LightChip key={h} label={ar ? (l === "5:6" ? "المائدة: 6" : "النساء: 43") : `Quran ${l}`} onPress={() => go(h)} />)}
               </View>
             </GoldCard>
           </View>
@@ -72,8 +75,9 @@ export default function WuduScreen() {
           <View style={{ gap: 16, marginTop: 28 }}>
             {c.virtues.map((x) => (
               <GoldCard key={x.src} style={{ padding: 20, paddingTop: 28 }}>
+                {ar && x.text ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.muted, marginBottom: 4 }}>{x.text}</Text> : null}
                 <Text style={{ fontFamily: ARABIC_FONT, fontSize: 23, lineHeight: 46, color: th.arabic, writingDirection: "rtl", textAlign: AR_RIGHT }}>{x.ar}</Text>
-                <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 25, color: th.ink, opacity: 0.9, marginTop: 8 }}>{x.text}</Text>
+                {!ar ? <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 25, color: th.ink, opacity: 0.9, marginTop: 8 }}>{x.text}</Text> : null}
                 <Text onPress={x.href ? () => go(x.href!) : undefined} accessibilityRole={x.href ? "link" : "text"} style={{ fontFamily: FONT.semibold, fontSize: 13, color: th.gold, marginTop: 16 }}>{x.src}</Text>
               </GoldCard>
             ))}

@@ -2,14 +2,15 @@
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { RULE, WUDU, WUDU_KEY, type L3, type Scene, type Tradition, type WuduDone, type WuduStep } from "@/lib/wudu";
+import { RULE, WUDU, WUDU_KEY, langOf, type L3, type Lang, type Scene, type Tradition, type WuduDone, type WuduStep } from "@/lib/wudu";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { award } from "@/lib/points";
 import { ArrowBack, ArrowNext, IconCheckCircle } from "./Icons";
 import { PracticeCelebrate, PracticeStar, PracticeWindow } from "./art/PracticeArt";
 
-type Lang = "de" | "en" | "ar";
-const UI: Record<Lang, Record<string, string>> = {
+type UiKey = "sunni" | "shia" | "fard" | "sunnah" | "wajib" | "mustahabb" | "right" | "left" | "each" | "tapHint" | "again" | "count" | "play" | "pause" | "prev" | "next" | "steps" | "restart" | "toQuiz" | "quiz" | "back" | "meaning" | "passed" | "note" | "quizTitle" | "quizLead" | "wrong" | "hint" | "good" | "doneTitle" | "doneText" | "clean" | "slips1" | "slipsN" | "practise" | "toSalah" | "toVerse";
+type Ui = Record<UiKey, string>;
+const UI: Record<Lang, Ui> = {
   de: {
     sunni: "Sunnitisch", shia: "Schiitisch (Dscha'fari)", fard: "Fard · Pflicht", sunnah: "Sunna · empfohlen", wajib: "Wadschib · Pflicht", mustahabb: "Mustahabb · empfohlen",
     right: "rechts", left: "links", each: "je Seite", tapHint: "Tippe bei jedem Durchgang einmal – so behältst du den Überblick.", again: "Neu zählen", count: "Mitzählen",
@@ -42,6 +43,127 @@ const UI: Record<Lang, Record<string, string>> = {
     wrong: "ليس بعد – تأمّل قليلًا: ما الذي يأتي قبلها؟", hint: "تلميح: الخطوة المضيئة هي التالية.", good: "أحسنت.",
     doneTitle: "أحسنت، عرفتَ ترتيب الوضوء.", doneText: "أنت الآن مستعدّ للصلاة.", clean: "دون أي خطأ.", slips1: "مع خطأ صغير واحد، وهكذا يكون التعلّم.", slipsN: "مع {n} أخطاء صغيرة، وهكذا يكون التعلّم.",
     practise: "تدرّب مرّةً أخرى", toSalah: "إلى مدرّب الصلاة", toVerse: "استمع إلى آية الوضوء (المائدة: 6)",
+  },
+  tr: {
+    sunni: "Sünni", shia: "Şii (Caferî)", fard: "Farz · zorunlu", sunnah: "Sünnet · tavsiye edilen", wajib: "Vacip · zorunlu", mustahabb: "Müstehap · tavsiye edilen",
+    right: "sağ", left: "sol", each: "her taraf için", tapHint: "Her tur için bir kez dokun – sayıyı takip etmene yardımcı olur.", again: "Yeniden say", count: "Say",
+    play: "Oynat", pause: "Duraklat", prev: "Geri", next: "Sonraki", steps: "Tüm adımlar", restart: "Baştan başla", toQuiz: "Quize geç", quiz: "Sıra quizi", back: "Eğitime dön",
+    meaning: "Anlam", passed: "Quiz geçildi",
+    note: "Bu eğitim yaygın sırayı gösterir. Ayrıntılar mezhepler arasında farklılık gösterir – abdesti ayrıca kendi mezhebinden bir hocayla da öğren.",
+    quizTitle: "Hangi sırayla?", quizLead: "Adımların sırası karıştı. Onlara doğru sırayla dokun.",
+    wrong: "Henüz değil – öncesinde ne geldiğini bir an düşün.", hint: "Küçük bir ipucu: parlayan adım sırada.", good: "Doğru.",
+    doneTitle: "Abdestin sırasını biliyorsun.", doneText: "Artık namaza hazırsın.", clean: "Tek bir hata yapmadan.", slips1: "Küçük bir dolambaçla – tam da böyle öğreniriz.", slipsN: "{n} küçük dolambaçla – tam da böyle öğreniriz.",
+    practise: "Yeniden çalış", toSalah: "Namaz eğitimine geç", toVerse: "Abdest ayetini dinle (5:6)",
+  },
+  ur: {
+    sunni: "سنی", shia: "شیعہ (جعفری)", fard: "فرض · لازم", sunnah: "سنت · پسندیدہ", wajib: "واجب · لازم", mustahabb: "مستحب · پسندیدہ",
+    right: "دایاں", left: "بایاں", each: "ہر طرف", tapHint: "ہر مرتبہ کے لیے ایک بار ٹیپ کریں – اس سے گنتی یاد رکھنا آسان ہوتا ہے۔", again: "دوبارہ گنیں", count: "گنیں",
+    play: "چلائیں", pause: "روکیں", prev: "پیچھے", next: "اگلا", steps: "تمام مراحل", restart: "دوبارہ شروع کریں", toQuiz: "کوئز کی طرف", quiz: "ترتیب کا کوئز", back: "مشق کی طرف واپس",
+    meaning: "معنی", passed: "کوئز پاس ہو گیا",
+    note: "یہ مشق عام ترتیب دکھاتی ہے۔ تفصیلات مکاتب کے درمیان مختلف ہوتی ہیں – وضو اپنے مکتب کے کسی استاد سے بھی سیکھیں۔",
+    quizTitle: "کس ترتیب سے؟", quizLead: "مراحل کی ترتیب بگڑ گئی ہے۔ انہیں صحیح ترتیب سے ٹیپ کریں۔",
+    wrong: "ابھی نہیں – ذرا سوچیں کہ اس سے پہلے کیا آتا ہے۔", hint: "چھوٹا سا اشارہ: چمکتا ہوا مرحلہ اگلا ہے۔", good: "درست۔",
+    doneTitle: "آپ وضو کی ترتیب جانتے ہیں۔", doneText: "اب آپ نماز کے لیے تیار ہیں۔", clean: "ایک بھی غلطی کے بغیر۔", slips1: "ایک چھوٹے سے چکر کے ساتھ – سیکھنا ایسے ہی ہوتا ہے۔", slipsN: "{n} چھوٹے چکروں کے ساتھ – سیکھنا ایسے ہی ہوتا ہے۔",
+    practise: "دوبارہ مشق کریں", toSalah: "نماز کی مشق کی طرف", toVerse: "آیتِ وضو سنیں (5:6)",
+  },
+  fa: {
+    sunni: "اهل سنت", shia: "شیعه (جعفری)", fard: "فرض · الزامی", sunnah: "سنت · توصیه‌شده", wajib: "واجب · الزامی", mustahabb: "مستحب · توصیه‌شده",
+    right: "راست", left: "چپ", each: "برای هر طرف", tapHint: "برای هر دور یک بار بزنید – شمردن را آسان‌تر می‌کند.", again: "دوباره شمارش", count: "شمارش",
+    play: "پخش", pause: "توقف", prev: "قبلی", next: "بعدی", steps: "همه گام‌ها", restart: "از نو", toQuiz: "به سوی آزمون", quiz: "آزمون ترتیب", back: "بازگشت به تمرین",
+    meaning: "معنا", passed: "آزمون گذرانده شد",
+    note: "این تمرین ترتیب رایج را نشان می‌دهد. جزئیات میان مذاهب فرق می‌کند – وضو را علاوه بر این نزد معلمی از مذهب خودتان نیز بیاموزید.",
+    quizTitle: "به چه ترتیبی؟", quizLead: "ترتیب گام‌ها به هم ریخته است. آنها را به ترتیب درست لمس کنید.",
+    wrong: "هنوز نه – لحظه‌ای فکر کنید که پیش از آن چه می‌آید.", hint: "یک نکتهٔ کوچک: گام درخشان بعدی است.", good: "درست.",
+    doneTitle: "شما ترتیب وضو را می‌دانید.", doneText: "اکنون برای نماز آماده‌اید.", clean: "بدون حتی یک اشتباه.", slips1: "با یک انحراف کوچک – یادگیری دقیقاً همین‌گونه است.", slipsN: "با {n} انحراف کوچک – یادگیری دقیقاً همین‌گونه است.",
+    practise: "دوباره تمرین کنید", toSalah: "به تمرین نماز", toVerse: "آیهٔ وضو را بشنوید (5:6)",
+  },
+  ps: {
+    sunni: "سني", shia: "شیعه (جعفري)", fard: "فرض · لازم", sunnah: "سنت · سپارښتل شوی", wajib: "واجب · لازم", mustahabb: "مستحب · سپارښتل شوی",
+    right: "ښی", left: "کیڼ", each: "د هرې خوا لپاره", tapHint: "د هر دور لپاره یو ځل کېکاږئ – دا د شمېرنې په ساتلو کې مرسته کوي.", again: "بیا وشمېرئ", count: "وشمېرئ",
+    play: "غږول", pause: "ودرول", prev: "شاته", next: "بل", steps: "ټول ګامونه", restart: "له سره پیل", toQuiz: "پوښتنو ته", quiz: "د ترتیب پوښتنې", back: "تمرین ته بیرته",
+    meaning: "معنا", passed: "پوښتنې بریالۍ شوې",
+    note: "دا تمرین عام ترتیب ښیي. جزئیات د مذهبونو ترمنځ توپیر لري – اودس د خپل مذهب له یوه ښوونکي سره هم زده کړئ.",
+    quizTitle: "په کوم ترتیب؟", quizLead: "د ګامونو ترتیب ګډوډ شوی. هغوی په سم ترتیب کېکاږئ.",
+    wrong: "لا نه – یوه شېبه فکر وکړئ چې له دې مخکې څه راځي.", hint: "یوه وړه اشاره: روښانه ګام بل دی.", good: "سمه ده.",
+    doneTitle: "تاسو د اودس ترتیب پېژنئ.", doneText: "اوس تاسو د لمانځه لپاره چمتو یاست.", clean: "پرته له یوې تېروتنې.", slips1: "له یوې وړې ګرځېدنې سره – زده کړه همداسې ده.", slipsN: "له {n} وړو ګرځېدنو سره – زده کړه همداسې ده.",
+    practise: "بیا تمرین وکړئ", toSalah: "د لمانځه تمرین ته", toVerse: "د اودس آیت واورئ (5:6)",
+  },
+  fr: {
+    sunni: "Sunnite", shia: "Chiite (ja'farite)", fard: "Fard · obligatoire", sunnah: "Sunna · recommandé", wajib: "Wajib · obligatoire", mustahabb: "Mustahabb · recommandé",
+    right: "droite", left: "gauche", each: "par côté", tapHint: "Touche une fois à chaque passage – cela t'aide à garder le compte.", again: "Recompter", count: "Compter",
+    play: "Lecture", pause: "Pause", prev: "Retour", next: "Suivant", steps: "Toutes les étapes", restart: "Recommencer", toQuiz: "Vers le quiz", quiz: "Quiz sur l'ordre", back: "Retour à l'entraînement",
+    meaning: "Sens", passed: "Quiz réussi",
+    note: "Cet entraînement montre le déroulement courant. Les détails diffèrent d'une école à l'autre – apprends aussi les ablutions (wudu) auprès d'un enseignant de ton école.",
+    quizTitle: "Dans quel ordre ?", quizLead: "Les étapes ont été mélangées. Touche-les dans le bon ordre.",
+    wrong: "Pas encore – réfléchis un instant à ce qui vient avant.", hint: "Un petit indice : l'étape qui brille vient ensuite.", good: "Correct.",
+    doneTitle: "Tu connais l'ordre des ablutions (wudu).", doneText: "Tu peux maintenant passer à la prière.", clean: "Sans la moindre erreur.", slips1: "Avec un petit détour – c'est exactement ainsi qu'on apprend.", slipsN: "Avec {n} petits détours – c'est exactement ainsi qu'on apprend.",
+    practise: "S'exercer à nouveau", toSalah: "Vers l'entraînement à la prière", toVerse: "Écouter le verset des ablutions (5:6)",
+  },
+  es: {
+    sunni: "Suní", shia: "Chií (yafarí)", fard: "Fard · obligatorio", sunnah: "Sunna · recomendado", wajib: "Wajib · obligatorio", mustahabb: "Mustahabb · recomendado",
+    right: "derecha", left: "izquierda", each: "por lado", tapHint: "Toca una vez en cada pasada; te ayuda a llevar la cuenta.", again: "Contar de nuevo", count: "Contar",
+    play: "Reproducir", pause: "Pausa", prev: "Atrás", next: "Siguiente", steps: "Todos los pasos", restart: "Empezar de nuevo", toQuiz: "Al cuestionario", quiz: "Cuestionario del orden", back: "Volver al entrenador",
+    meaning: "Significado", passed: "Cuestionario superado",
+    note: "Este entrenador muestra el desarrollo habitual. Los detalles difieren entre las escuelas; aprende también el wudu con un maestro de tu escuela.",
+    quizTitle: "¿En qué orden?", quizLead: "Los pasos se han mezclado. Tócalos en el orden correcto.",
+    wrong: "Todavía no: piensa un momento qué viene antes.", hint: "Una pequeña pista: el paso que brilla es el siguiente.", good: "Correcto.",
+    doneTitle: "Conoces el orden del wudu.", doneText: "Ya puedes pasar a la oración.", clean: "Sin un solo error.", slips1: "Con un pequeño rodeo: así es exactamente como se aprende.", slipsN: "Con {n} pequeños rodeos: así es exactamente como se aprende.",
+    practise: "Practicar de nuevo", toSalah: "Al entrenador de la oración", toVerse: "Escuchar la aleya del wudu (5:6)",
+  },
+  id: {
+    sunni: "Sunni", shia: "Syiah (Ja'fari)", fard: "Fardu · diwajibkan", sunnah: "Sunnah · dianjurkan", wajib: "Wajib · diwajibkan", mustahabb: "Mustahab · dianjurkan",
+    right: "kanan", left: "kiri", each: "tiap sisi", tapHint: "Ketuk sekali setiap putaran – membantumu menghitung.", again: "Hitung ulang", count: "Hitung",
+    play: "Putar", pause: "Jeda", prev: "Kembali", next: "Berikutnya", steps: "Semua langkah", restart: "Mulai dari awal", toQuiz: "Ke kuis", quiz: "Kuis urutan", back: "Kembali ke latihan",
+    meaning: "Arti", passed: "Kuis lulus",
+    note: "Latihan ini menunjukkan urutan yang umum. Rinciannya berbeda antarmazhab – pelajari juga wudhu bersama guru dari mazhabmu.",
+    quizTitle: "Dalam urutan apa?", quizLead: "Langkah-langkahnya sudah tercampur. Ketuk sesuai urutan yang benar.",
+    wrong: "Belum – pikirkan sejenak apa yang datang sebelumnya.", hint: "Petunjuk kecil: langkah yang menyala adalah berikutnya.", good: "Benar.",
+    doneTitle: "Kamu sudah tahu urutan wudhu.", doneText: "Sekarang kamu siap untuk shalat.", clean: "Tanpa satu pun kesalahan.", slips1: "Dengan satu jalan memutar kecil – begitulah cara kita belajar.", slipsN: "Dengan {n} jalan memutar kecil – begitulah cara kita belajar.",
+    practise: "Berlatih lagi", toSalah: "Lanjut ke latihan shalat", toVerse: "Dengarkan ayat wudhu (5:6)",
+  },
+  ms: {
+    sunni: "Sunni", shia: "Syiah (Ja'fari)", fard: "Fardu · diwajibkan", sunnah: "Sunat · digalakkan", wajib: "Wajib · diwajibkan", mustahabb: "Mustahab · digalakkan",
+    right: "kanan", left: "kiri", each: "setiap sisi", tapHint: "Ketik sekali bagi setiap pusingan – ia membantu anda mengira.", again: "Kira semula", count: "Kira",
+    play: "Main", pause: "Jeda", prev: "Kembali", next: "Seterusnya", steps: "Semua langkah", restart: "Mulakan semula", toQuiz: "Ke kuiz", quiz: "Kuiz susunan", back: "Kembali ke latihan",
+    meaning: "Maksud", passed: "Kuiz lulus",
+    note: "Latihan ini menunjukkan urutan yang lazim. Perincian berbeza antara mazhab – pelajari juga wudhu bersama guru daripada mazhab anda.",
+    quizTitle: "Dalam susunan yang mana?", quizLead: "Langkah-langkah telah bercampur aduk. Ketik mengikut susunan yang betul.",
+    wrong: "Belum lagi – fikirkan seketika apa yang datang sebelumnya.", hint: "Petunjuk kecil: langkah yang bercahaya ialah yang seterusnya.", good: "Betul.",
+    doneTitle: "Anda tahu susunan wudhu.", doneText: "Kini anda bersedia untuk solat.", clean: "Tanpa satu pun kesilapan.", slips1: "Dengan satu lencongan kecil – begitulah cara kita belajar.", slipsN: "Dengan {n} lencongan kecil – begitulah cara kita belajar.",
+    practise: "Berlatih sekali lagi", toSalah: "Teruskan ke latihan solat", toVerse: "Dengar ayat wudhu (5:6)",
+  },
+  bn: {
+    sunni: "সুন্নি", shia: "শিয়া (জাফরি)", fard: "ফরজ · আবশ্যিক", sunnah: "সুন্নাহ · উৎসাহিত", wajib: "ওয়াজিব · আবশ্যিক", mustahabb: "মুস্তাহাব · উৎসাহিত",
+    right: "ডান", left: "বাম", each: "প্রতি পাশে", tapHint: "প্রতিবারের জন্য একবার ট্যাপ করুন – গণনা মনে রাখতে সাহায্য করবে।", again: "আবার গণনা করুন", count: "গণনা করুন",
+    play: "চালান", pause: "বিরতি", prev: "পিছনে", next: "পরবর্তী", steps: "সব ধাপ", restart: "আবার শুরু করুন", toQuiz: "কুইজে যান", quiz: "ক্রমের কুইজ", back: "প্রশিক্ষণে ফিরুন",
+    meaning: "অর্থ", passed: "কুইজ পাস",
+    note: "এই প্রশিক্ষণ প্রচলিত ধারাক্রম দেখায়। মাযহাবভেদে খুঁটিনাটি ভিন্ন হয় – ওযু আপনার মাযহাবের একজন শিক্ষকের কাছ থেকেও শিখুন।",
+    quizTitle: "কোন ক্রমে?", quizLead: "ধাপগুলো এলোমেলো হয়ে গেছে। সঠিক ক্রমে সেগুলোতে ট্যাপ করুন।",
+    wrong: "এখনও নয় – একটু ভাবুন, এর আগে কী আসে।", hint: "ছোট্ট ইঙ্গিত: জ্বলজ্বলে ধাপটি পরের।", good: "সঠিক।",
+    doneTitle: "আপনি ওযুর ক্রম জানেন।", doneText: "এখন আপনি নামাজের জন্য প্রস্তুত।", clean: "একটিও ভুল ছাড়া।", slips1: "একটি ছোট ঘুরপথে – ঠিক এভাবেই আমরা শিখি।", slipsN: "{n}টি ছোট ঘুরপথে – ঠিক এভাবেই আমরা শিখি।",
+    practise: "আবার অনুশীলন করুন", toSalah: "নামাজ প্রশিক্ষণে যান", toVerse: "ওযুর আয়াত শুনুন (5:6)",
+  },
+  ru: {
+    sunni: "Сунниты", shia: "Шииты (джафариты)", fard: "Фард · обязательно", sunnah: "Сунна · желательно", wajib: "Ваджиб · обязательно", mustahabb: "Мустахабб · желательно",
+    right: "правая", left: "левая", each: "на каждую сторону", tapHint: "Нажимай один раз за каждый проход – так легче вести счёт.", again: "Считать заново", count: "Считать",
+    play: "Воспроизвести", pause: "Пауза", prev: "Назад", next: "Далее", steps: "Все шаги", restart: "Начать заново", toQuiz: "К тесту", quiz: "Тест на порядок", back: "Назад к тренажёру",
+    meaning: "Смысл", passed: "Тест пройден",
+    note: "Этот тренажёр показывает общепринятую последовательность. Детали различаются между школами – учи омовение (вуду) также у наставника своей школы.",
+    quizTitle: "В каком порядке?", quizLead: "Шаги перемешались. Нажимай на них в правильном порядке.",
+    wrong: "Пока нет – подумай, что идёт перед этим.", hint: "Небольшая подсказка: светящийся шаг – следующий.", good: "Верно.",
+    doneTitle: "Ты знаешь порядок омовения (вуду).", doneText: "Теперь можно переходить к намазу.", clean: "Ни одной ошибки.", slips1: "С одним небольшим обходным путём – именно так и учатся.", slipsN: "Небольших обходных путей: {n} – именно так и учатся.",
+    practise: "Потренироваться ещё раз", toSalah: "К тренажёру намаза", toVerse: "Послушать аят об омовении (5:6)",
+  },
+  zh: {
+    sunni: "逊尼派", shia: "什叶派（贾法里）", fard: "主命 · 必须", sunnah: "圣行 · 建议", wajib: "义务 · 必须", mustahabb: "可嘉 · 建议",
+    right: "右", left: "左", each: "每侧", tapHint: "每完成一遍就点一下——这样便于计数。", again: "重新计数", count: "计数",
+    play: "播放", pause: "暂停", prev: "上一步", next: "下一步", steps: "全部步骤", restart: "重新开始", toQuiz: "去做测验", quiz: "顺序测验", back: "返回训练",
+    meaning: "含义", passed: "已通过测验",
+    note: "本训练展示通行的顺序。各学派的细节有所不同——请再向你所属学派的老师学习小净。",
+    quizTitle: "正确的顺序是？", quizLead: "步骤的顺序被打乱了。请按正确的顺序点击它们。",
+    wrong: "还不对——想一想前面应该是什么。", hint: "小提示：发光的那一步是下一步。", good: "正确。",
+    doneTitle: "你已经知道小净的顺序了。", doneText: "现在你可以准备礼拜了。", clean: "一个错误也没有。", slips1: "绕了一个小弯——我们正是这样学习的。", slipsN: "绕了{n}个小弯——我们正是这样学习的。",
+    practise: "再练一次", toSalah: "前往礼拜训练", toVerse: "收听小净经文（5:6）",
   },
 };
 const AR_TIMES = ["", "مرّة واحدة", "مرّتين", "ثلاث مرّات"];
@@ -300,7 +422,7 @@ function arc(r: number, a0: number, a1: number) {
   const p = (a: number) => [32 + r * Math.cos(a), 32 + r * Math.sin(a)].map((v) => v.toFixed(2)).join(" ");
   return `M${p(a0)}A${r} ${r} 0 ${a1 - a0 > Math.PI ? 1 : 0} 1 ${p(a1)}`;
 }
-function Counter({ times, sides, u, lang }: { times: number; sides?: boolean; u: Record<string, string>; lang: Lang }) {
+function Counter({ times, sides, u, lang }: { times: number; sides?: boolean; u: Ui; lang: Lang }) {
   const total = times * (sides ? 2 : 1);
   const [n, setN] = useState(0);
   const done = n >= total;
@@ -339,7 +461,7 @@ function Counter({ times, sides, u, lang }: { times: number; sides?: boolean; u:
 }
 
 // Arabic counts need dual and plural forms
-function slips(n: number, lang: Lang, u: Record<string, string>) {
+function slips(n: number, lang: Lang, u: Ui) {
   if (n === 0) return u.clean;
   if (n === 1) return u.slips1;
   if (lang === "ar") return n === 2 ? "مع خطأين صغيرين، وهكذا يكون التعلّم." : n <= 10 ? u.slipsN.replace("{n}", String(n)) : `مع ${n} خطأً صغيرًا، وهكذا يكون التعلّم.`;
@@ -354,7 +476,7 @@ function shuffle<T>(a: T[]): T[] {
 
 export default function WuduTrainer() {
   const locale = useLocale();
-  const lang: Lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
+  const lang = langOf(locale);
   const u = UI[lang];
   const tx = (v?: L3) => (v ? v[lang] : "");
   const [tradition, setTradition] = useState<Tradition>("sunni");
@@ -453,7 +575,7 @@ export default function WuduTrainer() {
               {step.duas?.map((d) => (
                 <div key={d.ar} className="mt-5 border-t border-[rgb(214_180_108)]/25 pt-4">
                   <p className="font-arabic text-[26px] leading-[2] sm:text-[30px]" dir="rtl" lang="ar">{d.ar}</p>
-                  {lang !== "ar" && <p className="mt-2 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]">{d.tr}</p>}
+                  {lang !== "ar" && <p className="mt-2 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]"><span dir="ltr">{d.translit}</span></p>}
                   {lang !== "ar" && <p className="mt-2 text-[15px] leading-relaxed text-white/80"><span className="font-semibold text-white">{u.meaning}: </span>{d.meaning[lang]}</p>}
                   {d.src && <p className="mt-1.5 text-xs font-semibold text-white/50">{tx(d.src)}</p>}
                 </div>

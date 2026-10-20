@@ -56,7 +56,7 @@ export default function NowPlaying() {
   const next = r.started ? radio.upNext() : null;
   const close = () => { if (router.canGoBack()) goBack(); else router.replace("/radio" as Href); };
   const share = () => {
-    const title = `Quran Masterclass Radio – ${t(`st_${r.station.id}`)}`;
+    const title = `${t("title")} – ${t(`st_${r.station.id}`)} | Quran Masterclass`;
     const url = `${SITE}/${lang}/radio`;
     shareLink(title, url);
   };
@@ -100,7 +100,7 @@ export default function NowPlaying() {
 
         {/* surah in calligraphy, verse counter, reciter */}
         <View style={{ alignItems: "center", marginTop: 22 }} accessible accessibilityRole="header"
-          accessibilityLabel={`${chapter ? `${chapter.id}. ${chapter.name_simple}` : r.now.s}, ${a("verseOf", { v: r.now.v, n: countOf(r.now.s) })}, ${reciter.name}`}>
+          accessibilityLabel={`${chapter ? `${chapter.id}. ${chapter.name_simple}` : r.now.s}, ${a("verseOf", { v: r.now.v, n: countOf(r.now.s) })}, ${reciterName(reciter, lang)}`}>
           {chapter?.name_arabic ? <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 40, lineHeight: 64, color: stage.gold, writingDirection: "rtl", textAlign: "center" }}>{chapter.name_arabic}</Text> : null}
           <Text style={{ fontFamily: FONT.display, fontSize: 24, lineHeight: 28, letterSpacing: -0.5, color: "#eef0f3", textAlign: "center" }}>
             {chapter ? `${chapter.id}. ${chapter.name_simple}` : `${r.now.s}`}

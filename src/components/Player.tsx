@@ -24,7 +24,7 @@ import {
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
 import { dueVerses, rate, readSrs, stats, type Rating } from "@/lib/learning";
-import { versePlan, type VersePlan } from "@/lib/coach";
+import { versePlan, stepCount, type VersePlan } from "@/lib/coach";
 import * as vp from "@/lib/versePlayback";
 import { ageProfile } from "@/lib/age";
 
@@ -119,6 +119,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [tafsir, setTafsir] = useState<TafsirResult | null | undefined>(undefined);
 
   const [idx, setIdx] = useState(initial ? Math.min(Math.max(startVerse, 1), initial.verses.length) - 1 : 0);
+  const idxRef = useRef(idx);
+  idxRef.current = idx;
   const [playing, setPlaying] = useState(false);
   const [waiting, setWaiting] = useState(false); // learn mode: paused until "Continue"
   // listening aids: a pause after each recitation to repeat it yourself (-1 = as long as the verse) and a sleep timer
@@ -389,8 +391,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     setWaiting(false);
     setActiveWord(null);
     wantPlay.current = autoplay;
+    // the verse is already loaded: no canplay will fire, so restart it directly
+    if (i === idxRef.current) {
+      const a = audioRef.current;
+      if (a && autoplay) { wantPlay.current = false; try { a.currentTime = 0; } catch { /* not seekable yet */ } play(); }
+      return;
+    }
     setIdx(i);
-  }, []);
+  }, [play]);
 
   useEffect(() => { if (audioRef.current) audioRef.current.playbackRate = speed; }, [speed]);
 
@@ -538,9 +546,10 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const stepPos = plan && shams !== null ? plan.steps.indexOf(shams) : -1;
   const lastStep = !!plan && stepPos === plan.steps.length - 1;
   // today's session: after a verse go to the next item (another verse, possibly another surah) or to the summary
+  const slipped = useRef<string | null>(null); // verse that was rated "again" during this pass
   const goSession = (ok: boolean) => {
     if (!verse) return;
-    const next = completeItem(verse.verse_key, ok);
+    const next = completeItem(verse.verse_key, ok && slipped.current !== verse.verse_key);
     audioRef.current?.pause();
     router.push(next ? itemUrl(next) : "/today?session=done");
   };
@@ -585,6 +594,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (!verse) return;
     if (r !== "again") { setCelebrate(verse.verse_key); try { navigator.vibrate?.(18); } catch { /* not supported */ } }
     const days = rate(verse.verse_key, r);
+    if (r === "again") slipped.current = verse.verse_key;
     setNote(days ? t("saved", { days }) : t("savedToday"));
     if (shams !== null) { if (r === "again" && plan) { beginPlan(idx); return; } nextShams(); return; }
     if (sessionMode) { setTimeout(() => goSession(r !== "again"), 500); return; }
@@ -627,6 +637,26 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const fmt = (x: number) => (isFinite(x) ? `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, "0")}` : "0:00");
   const toAr = (n: number) => String(n).replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
 
+  const showDebug = typeof window !== "undefined" && window.location.search.includes("debug");
+  const learned = useMemo(() => stats(), [note, shams]); // eslint-disable-line react-hooks/exhaustive-deps
+  // keyboard: space = play/pause, R = reveal, Enter = next Shams step (never while typing)
+  const keys = useRef({ toggle: () => {}, reveal: () => {}, next: () => {} });
+  keys.current = {
+    toggle: () => (playing ? audioRef.current?.pause() : play()),
+    reveal: () => { if (hide > 0 && !revealed) setRevealed(true); },
+    next: () => { if (shams !== null && shams !== 5) nextShams(); },
+  };
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement | null;
+      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.tagName === "SELECT" || el.isContentEditable)) return;
+      if (e.key === " ") { e.preventDefault(); keys.current.toggle(); }
+      else if (e.key === "r" || e.key === "R") keys.current.reveal();
+      else if (e.key === "Enter") keys.current.next();
+    };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, []);
   if (error) return <p className="p-6">{t("error")}</p>;
   if (!verse || !chapter) return <p className="p-6 text-muted">{t("loading")}</p>;
 
@@ -666,26 +696,6 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     </div>
   );
 
-  const showDebug = typeof window !== "undefined" && window.location.search.includes("debug");
-  const learned = useMemo(() => stats(), [note, shams]); // eslint-disable-line react-hooks/exhaustive-deps
-  // keyboard: space = play/pause, R = reveal, Enter = next Shams step (never while typing)
-  const keys = useRef({ toggle: () => {}, reveal: () => {}, next: () => {} });
-  keys.current = {
-    toggle: () => (playing ? audioRef.current?.pause() : play()),
-    reveal: () => { if (hide > 0 && !revealed) setRevealed(true); },
-    next: () => { if (shams !== null && shams !== 5) nextShams(); },
-  };
-  useEffect(() => {
-    const h = (e: KeyboardEvent) => {
-      const el = e.target as HTMLElement | null;
-      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.tagName === "SELECT" || el.isContentEditable)) return;
-      if (e.key === " ") { e.preventDefault(); keys.current.toggle(); }
-      else if (e.key === "r" || e.key === "R") keys.current.reveal();
-      else if (e.key === "Enter") keys.current.next();
-    };
-    window.addEventListener("keydown", h);
-    return () => window.removeEventListener("keydown", h);
-  }, []);
   const primary = "btn-gold rounded-full px-5 py-2.5 text-sm font-bold";
   const withBismillah = chapterId !== 1 && chapterId !== 9;
 
@@ -905,7 +915,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {active && shams !== null && shams >= 0 && (
                       <div id="shams-card" className="stage mt-5 scroll-mt-20 rounded-xl p-4 text-[#eef0f3] sm:p-5" onClick={(e) => e.stopPropagation()}>
                         <div className="flex items-center justify-between gap-3">
-                          <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))]"><Sun className="h-3.5 w-3.5" />{ts("title")} · {ts("stepOf", { n: stepPos + 1, total: plan?.steps.length ?? 7 })}</p>
+                          <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))]"><Sun className="h-3.5 w-3.5" />{ts("title")} · {ts("stepOf", plan && shams !== null ? stepCount(plan.steps, shams) : { n: 1, total: 7 })}</p>
                           <span className="flex items-center gap-3 text-xs text-white/60">
                             {learned.todayCount > 0 && <span>{t("todayCount", { n: learned.todayCount })}</span>}
                             {learned.streak > 1 && <span><IconFlame /> {learned.streak}</span>}
@@ -1077,7 +1087,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
       {shams !== null && cardAway && (
         <button onClick={() => { const c = document.getElementById("shams-card"); if (c) alignTop(c); }} className="fixed bottom-[12.25rem] left-1/2 z-40 inline-flex -translate-x-1/2 items-center gap-2 rounded-full bg-[rgb(var(--stage))] px-4 py-2 text-[13px] font-semibold text-white shadow-lg ring-1 ring-[rgb(var(--gold))]/40 lg:bottom-[8.5rem]">
-          <Sun className="h-3.5 w-3.5 text-[rgb(var(--gold))]" />{ts("title")} · {ts("stepOf", { n: stepPos + 1, total: plan?.steps.length ?? 7 })}<span aria-hidden>{cardAway === "up" ? "↑" : "↓"}</span>
+          <Sun className="h-3.5 w-3.5 text-[rgb(var(--gold))]" />{ts("title")} · {ts("stepOf", plan && shams !== null ? stepCount(plan.steps, shams) : { n: 1, total: 7 })}<span aria-hidden>{cardAway === "up" ? "↑" : "↓"}</span>
         </button>
       )}
 

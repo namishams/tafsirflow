@@ -3,7 +3,7 @@ import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput,
 import { Stack, router } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
 import { FONT, R, useTheme } from "@/lib/theme";
-import { Divider, GoldButton, GoldCard, SmallStar, TextLink } from "@/components/brand";
+import { Chip, Divider, GoldButton, GoldCard, SmallStar, TextLink } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { PageHero, goBack } from "@/components/page";
 import { CheckRow, FormError, LabeledField, SelectRow } from "@/components/form";
@@ -11,15 +11,22 @@ import { useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { ApiError, SITE } from "@/lib/api";
 import { countryList, countryName } from "@/lib/countries";
+import { useWebT } from "@/i18n/web";
+
+// learning goals of the website's registration form (src/lib/countries.ts GOALS), texts account.goal<Name>
+const GOALS = [["hifz", "goalHifz"], ["fahm", "goalFahm"], ["tilawa", "goalTilawa"], ["kids", "goalKids"], ["all", "goalAll"]] as const;
 
 // Create the account (the same account as on the website). Nothing is preselected: country and consent are chosen
-// by the learner; the year of birth lets the Shams Method adapt to children and seniors.
+// by the learner; the year of birth lets the Shams Method adapt to children and seniors. City and goal are optional,
+// as on the website.
 export default function Register() {
   const t = useT();
   const theme = useTheme();
   const { lang } = useLang();
   const { register } = useAuth();
-  const [f, setF] = useState({ firstName: "", lastName: "", email: "", password: "", birthYear: "", country: "" });
+  const wa = useWebT("account");
+  const [f, setF] = useState({ firstName: "", lastName: "", email: "", password: "", birthYear: "", country: "", city: "" });
+  const [goal, setGoal] = useState("");
   const [terms, setTerms] = useState(false);
   const [marketing, setMarketing] = useState(false);
   const [picking, setPicking] = useState(false);
@@ -40,7 +47,7 @@ export default function Register() {
     if (!terms) return setError(t("auth.errors.terms"));
     setBusy(true);
     try {
-      await register({ ...f, email: f.email.trim(), birthYear: Number(f.birthYear), acceptTerms: true, marketing, locale: lang });
+      await register({ ...f, email: f.email.trim(), city: f.city.trim() || undefined, goal: goal || undefined, birthYear: Number(f.birthYear), acceptTerms: true, marketing, locale: lang });
       goBack();
     } catch (e) {
       const code = e instanceof ApiError ? e.code : "";
@@ -88,7 +95,14 @@ export default function Register() {
               <LabeledField label={t("auth.email")} value={f.email} onChangeText={set("email")} keyboardType="email-address" autoCapitalize="none" autoComplete="email" textContentType="username" />
               <LabeledField label={t("auth.password")} secure value={f.password} onChangeText={set("password")} autoComplete="new-password" textContentType="newPassword" hint={t("auth.passwordHint")} />
               <SelectRow label={t("auth.country")} value={f.country ? countryName(f.country, lang) : undefined} placeholder={t("auth.chooseCountry")} onPress={() => setPicking(true)} />
+              <LabeledField label={`${wa("city")} (${wa("optional")})`} value={f.city} onChangeText={set("city")} autoComplete="postal-address-locality" textContentType="addressCity" maxLength={80} />
               <LabeledField label={t("auth.birthYear")} value={f.birthYear} onChangeText={(v) => set("birthYear")(v.replace(/\D/g, "").slice(0, 4))} keyboardType="number-pad" maxLength={4} />
+              <View style={{ gap: 8 }}>
+                <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: theme.ink }}>{wa("goal")} <Text style={{ fontFamily: FONT.regular, color: theme.muted }}>({wa("optional")})</Text></Text>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                  {GOALS.map(([id, key]) => <Chip key={id} label={wa(key)} selected={goal === id} onPress={() => setGoal(goal === id ? "" : id)} />)}
+                </View>
+              </View>
               <CheckRow checked={terms} onChange={setTerms} label={t("auth.terms")}>
                 <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: theme.ink }}>{t("auth.terms")}</Text>
                 <View style={{ flexDirection: "row", gap: 16, marginTop: 2 }}>

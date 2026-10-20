@@ -1,3 +1,5 @@
+import { AppState, Platform } from "react-native";
+
 // The website's learning modules (src/web) announce changes with window events ("tf-points", "tf-listen" …) and
 // listen for "pagehide"/"visibilitychange". React Native has a global `window` but no DOM events: this gives them a
 // small event bus so the same code runs unchanged. Screens can subscribe with onWebEvent().
@@ -17,6 +19,20 @@ if (typeof g.Event !== "function") g.Event = ShimEvent;
 if (typeof g.CustomEvent !== "function") g.CustomEvent = ShimEvent;
 if (typeof g.document !== "object" || g.document === null) {
   g.document = { visibilityState: "visible", addEventListener: () => undefined, removeEventListener: () => undefined };
+}
+
+// leaving the app is the native "pagehide": the website modules then save and send what is still pending
+// (e.g. web/listen.ts sends the listening totals); coming back makes the page visible again
+if (Platform.OS !== "web") {
+  AppState.addEventListener("change", (state) => {
+    try {
+      const doc = g.document as { visibilityState?: string };
+      if (state === "background") {
+        doc.visibilityState = "hidden";
+        (w.dispatchEvent as (e: unknown) => boolean)(new (g.Event as new (type: string) => unknown)("pagehide"));
+      } else if (state === "active") doc.visibilityState = "visible";
+    } catch { /* never break the app for statistics */ }
+  });
 }
 
 export function onWebEvent(type: string, fn: Handler): () => void {

@@ -241,6 +241,8 @@ CREATE TABLE IF NOT EXISTS ai_credits (
   dua        integer NOT NULL DEFAULT 0 CHECK (dua >= 0),
   updated_at timestamptz NOT NULL DEFAULT now()
 );
+-- personal name reports of the baby-name finder (app, consumable com.quranmasterclass.app.names); not part of Pro
+ALTER TABLE ai_credits ADD COLUMN IF NOT EXISTS names integer NOT NULL DEFAULT 0 CHECK (names >= 0);
 -- what Pro includes per month (personal duas); month = 'YYYY-MM'
 CREATE TABLE IF NOT EXISTS ai_usage (
   user_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,

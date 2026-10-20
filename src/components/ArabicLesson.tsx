@@ -4,21 +4,171 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { syncQuranText } from "@/lib/arabicQuran";
-import { LESSONS, PASS_PCT, PLACEMENT_UNITS, UNITS, buildLesson, lessonById, nextArabic, placementResult, saveArabic, savePlacement, starsFor, verseAudioUrl, wordAudioUrl, type Ex, type PlacementResult } from "@/lib/arabic";
+import { LESSONS, PASS_PCT, PLACEMENT_UNITS, UNITS, buildLesson, lessonById, nextArabic, placementResult, saveArabic, savePlacement, starsFor, verseAudioUrl, wordAudioUrl, type Ex, type Lang, type PlacementResult } from "@/lib/arabic";
 import { logDay } from "@/lib/learning";
 import { PracticeCelebrate, PracticeMedallion, PracticeStar, PracticeStarNum, PracticeWindow } from "./art/PracticeArt";
 
 const T = {
-  de: { check: "Prüfen", next: "Weiter", right: "Richtig!", wrong: "Nicht ganz – richtig ist:", listen: "Anhören", again: "Nochmal üben", overview: "Zur Kursübersicht", nextLesson: "Nächste Lektion", done: "Lektion geschafft!", notYet: "Fast geschafft!", needPass: `Ab ${PASS_PCT} % ist die nächste Lektion frei. Wiederhole die Lektion – die Fehler kommen gezielt zurück.`, score: "richtig beim ersten Versuch", xp: "XP", match: "Finde die Paare", review: "Wiederholung", quit: "Beenden", learn: "Neu", tip: "Sprich jeden Laut laut mit – Lesen lernt man mit dem Mund.", readQuran: "Jetzt im Koran lesen",
+  de: { check: "Prüfen", next: "Weiter", right: "Richtig!", wrong: "Nicht ganz – richtig ist:", listen: "Anhören", again: "Nochmal üben", overview: "Zur Kursübersicht", nextLesson: "Nächste Lektion", done: "Lektion geschafft!", notYet: "Fast geschafft!", needPass: "Ab {pass} % ist die nächste Lektion frei. Wiederhole die Lektion – die Fehler kommen gezielt zurück.", score: "richtig beim ersten Versuch", xp: "XP", match: "Finde die Paare", review: "Wiederholung", quit: "Beenden", learn: "Neu", tip: "Sprich jeden Laut laut mit – Lesen lernt man mit dem Mund.", readQuran: "Jetzt im Koran lesen",
     hearHint: "Tippe auf den Knopf, um das Wort (nochmal) zu hören.", offline: "Die Aufnahme ist gerade nicht erreichbar.", wordIs: "Das Wort lautet:", voice: "Mit Gerätestimme anhören", verse: "Ganzen Vers anhören", tapOrder: "Tippe die Wörter der Reihe nach an – das erste steht rechts.", emptyRow: "Hier entsteht der Vers", reset: "Zurücksetzen", meaningLbl: "Bedeutung",
     pLabel: "Einstufungstest", pHead: "Dein Einstieg", pFrom: "Du startest bei Einheit {n}.", pAll: "Du beherrschst die Grundlagen – weiter geht es mit Einheit 7: Hören und lesen.", pRight: "{a} von {b} richtig", pGo: "Weiter bei:", pRetry: "Test wiederholen", pNote: "Sicher gelöste Einheiten gelten als bestanden (1 Stern). Du kannst jede Lektion trotzdem jederzeit wiederholen.", unitWord: "Einheit", known: "sicher", open: "noch üben" },
-  ar: { check: "تحقّق", next: "متابعة", right: "أحسنت!", wrong: "ليس تمامًا – الصواب:", listen: "استمع", again: "تدرّب مرة أخرى", overview: "إلى صفحة الدورة", nextLesson: "الدرس التالي", done: "أتممت الدرس!", notYet: "اقتربت كثيرًا!", needPass: `يُفتح الدرس التالي عند ${PASS_PCT}٪، أعد الدرس وستعود إليك الأخطاء لتثبيتها.`, score: "صحيحة من المحاولة الأولى", xp: "نقطة", match: "طابِق الأزواج", review: "مراجعة", quit: "إنهاء", learn: "جديد", tip: "انطق كل صوت بصوت مسموع، فالقراءة تُتعلَّم باللسان.", readQuran: "اقرأ في المصحف الآن",
+  ar: { check: "تحقّق", next: "متابعة", right: "أحسنت!", wrong: "ليس تمامًا – الصواب:", listen: "استمع", again: "تدرّب مرة أخرى", overview: "إلى صفحة الدورة", nextLesson: "الدرس التالي", done: "أتممت الدرس!", notYet: "اقتربت كثيرًا!", needPass: "يُفتح الدرس التالي عند {pass}٪، أعد الدرس وستعود إليك الأخطاء لتثبيتها.", score: "صحيحة من المحاولة الأولى", xp: "نقطة", match: "طابِق الأزواج", review: "مراجعة", quit: "إنهاء", learn: "جديد", tip: "انطق كل صوت بصوت مسموع، فالقراءة تُتعلَّم باللسان.", readQuran: "اقرأ في المصحف الآن",
     hearHint: "اضغط على الزر لتسمع الكلمة (مرةً أخرى).", offline: "التسجيل غير متاح الآن.", wordIs: "الكلمة هي:", voice: "استمع بصوت الجهاز", verse: "استمع إلى الآية كاملة", tapOrder: "اضغط على الكلمات بالترتيب – الكلمة الأولى عن اليمين.", emptyRow: "هنا تتكوّن الآية", reset: "إعادة", meaningLbl: "المعنى",
     pLabel: "اختبار تحديد المستوى", pHead: "نقطة انطلاقك", pFrom: "تبدأ من الوحدة {n}.", pAll: "أنت تُتقن الأساسيات – تابع مع الوحدة 7: استمع واقرأ.", pRight: "{a} من {b} صحيحة", pGo: "تابع مع:", pRetry: "أعد الاختبار", pNote: "تُحسب الوحدات التي أجبتَ عنها بثقة منجَزة (نجمة واحدة)، ويمكنك إعادة أي درسٍ متى شئت.", unitWord: "الوحدة", known: "متقَنة", open: "للتدرّب" },
-  en: { check: "Check", next: "Continue", right: "Correct!", wrong: "Not quite – the answer is:", listen: "Listen", again: "Practise again", overview: "Course overview", nextLesson: "Next lesson", done: "Lesson complete!", notYet: "Almost there!", needPass: `From ${PASS_PCT}% the next lesson unlocks. Repeat the lesson – your mistakes come back on purpose.`, score: "correct on the first try", xp: "XP", match: "Find the pairs", review: "Review", quit: "Quit", learn: "New", tip: "Say every sound out loud – you learn to read with your mouth.", readQuran: "Read it in the Quran now",
+  en: { check: "Check", next: "Continue", right: "Correct!", wrong: "Not quite – the answer is:", listen: "Listen", again: "Practise again", overview: "Course overview", nextLesson: "Next lesson", done: "Lesson complete!", notYet: "Almost there!", needPass: "From {pass}% the next lesson unlocks. Repeat the lesson – your mistakes come back on purpose.", score: "correct on the first try", xp: "XP", match: "Find the pairs", review: "Review", quit: "Quit", learn: "New", tip: "Say every sound out loud – you learn to read with your mouth.", readQuran: "Read it in the Quran now",
     hearHint: "Tap the button to hear the word (again).", offline: "The recording is not available right now.", wordIs: "The word is:", voice: "Listen with the device voice", verse: "Listen to the whole verse", tapOrder: "Tap the words one after another – the first one goes on the right.", emptyRow: "Your verse appears here", reset: "Reset", meaningLbl: "Meaning",
     pLabel: "Placement test", pHead: "Where you start", pFrom: "You start at unit {n}.", pAll: "You already know the basics – continue with unit 7: Listen and read.", pRight: "{a} of {b} correct", pGo: "Continue with:", pRetry: "Repeat the test", pNote: "Units you solved confidently count as passed (1 star). You can repeat any lesson at any time.", unitWord: "Unit", known: "known", open: "to practise" },
-};
+  tr: {
+    check: "Kontrol et", next: "Devam et", right: "Doğru!", wrong: "Tam değil – doğru cevap:", listen: "Dinle", again: "Yeniden çalış",
+    overview: "Kurs genel bakışı", nextLesson: "Sonraki ders", done: "Ders tamamlandı!", notYet: "Az kaldı!",
+    needPass: "%{pass} ve üzerinde sonraki ders açılır. Dersi tekrarla – yanlışların bilerek yeniden karşına çıkar.", score: "ilk denemede doğru",
+    xp: "XP", match: "Çiftleri bul", review: "Tekrar", quit: "Çık", learn: "Yeni", tip: "Her sesi yüksek sesle söyle – okumayı ağzınla öğrenirsin.",
+    readQuran: "Şimdi Kur’an’da oku", hearHint: "Kelimeyi (tekrar) duymak için düğmeye dokun.", offline: "Kayıt şu anda kullanılamıyor.",
+    wordIs: "Kelime:", voice: "Cihazın sesiyle dinle", verse: "Ayetin tamamını dinle", tapOrder: "Kelimelere sırayla dokun – ilk kelime sağa gelir.",
+    emptyRow: "Ayetin burada görünecek", reset: "Sıfırla", meaningLbl: "Anlam", pLabel: "Seviye belirleme testi", pHead: "Başlangıç noktan",
+    pFrom: "{n}. üniteden başlıyorsun.", pAll: "Temelleri zaten biliyorsun – 7. üniteyle devam et: Dinleme ve okuma.", pRight: "{b} sorudan {a} doğru",
+    pGo: "Şununla devam et:", pRetry: "Testi tekrarla",
+    pNote: "Güvenle çözdüğün üniteler geçilmiş sayılır (1 yıldız). İstediğin zaman her dersi tekrarlayabilirsin.", unitWord: "Ünite",
+    known: "biliniyor", open: "çalışılacak",
+  },
+  ur: {
+    check: "جانچیں", next: "آگے بڑھیں", right: "درست!", wrong: "بالکل درست نہیں – جواب یہ ہے:", listen: "سنیں", again: "دوبارہ مشق کریں",
+    overview: "کورس کا جائزہ", nextLesson: "اگلا سبق", done: "سبق مکمل!", notYet: "بس تھوڑا سا اور!",
+    needPass: "{pass} % یا اس سے زیادہ پر اگلا سبق کھل جاتا ہے۔ سبق دہرائیں – آپ کی غلطیاں جان بوجھ کر دوبارہ آتی ہیں۔", score: "پہلی کوشش میں درست",
+    xp: "XP", match: "جوڑے تلاش کریں", review: "دہرائی", quit: "باہر نکلیں", learn: "نیا",
+    tip: "ہر آواز بلند آواز سے بولیں – پڑھنا منہ سے سیکھا جاتا ہے۔", readQuran: "اب اسے قرآن میں پڑھیں",
+    hearHint: "لفظ (دوبارہ) سننے کے لیے بٹن پر ٹیپ کریں۔", offline: "ریکارڈنگ فی الحال دستیاب نہیں۔", wordIs: "لفظ یہ ہے:",
+    voice: "آلے کی آواز میں سنیں", verse: "پوری آیت سنیں", tapOrder: "الفاظ کو ایک کے بعد ایک ٹیپ کریں – پہلا لفظ دائیں طرف جائے گا۔",
+    emptyRow: "آپ کی آیت یہاں نظر آئے گی", reset: "ری سیٹ", meaningLbl: "معنی", pLabel: "سطح جانچنے کا ٹیسٹ", pHead: "آپ کہاں سے شروع کریں گے",
+    pFrom: "آپ یونٹ {n} سے شروع کریں گے۔", pAll: "آپ بنیادی باتیں پہلے ہی جانتے ہیں – یونٹ 7 سے آگے بڑھیں: سنیں اور پڑھیں۔",
+    pRight: "{b} میں سے {a} درست", pGo: "آگے بڑھیں:", pRetry: "ٹیسٹ دہرائیں",
+    pNote: "جو یونٹس آپ نے اعتماد سے حل کیے وہ پاس شمار ہوتے ہیں (1 ستارہ)۔ آپ کسی بھی سبق کو کسی بھی وقت دہرا سکتے ہیں۔", unitWord: "یونٹ",
+    known: "آتا ہے", open: "مشق باقی ہے",
+  },
+  fa: {
+    check: "بررسی", next: "ادامه", right: "درست است!", wrong: "نه کاملاً – پاسخ این است:", listen: "گوش دادن", again: "تمرین دوباره",
+    overview: "نمای کلی دوره", nextLesson: "درس بعدی", done: "درس کامل شد!", notYet: "کم مانده است!",
+    needPass: "با {pass}٪ یا بیشتر، درس بعدی باز می‌شود. درس را تکرار کنید – اشتباه‌هایتان عمداً دوباره برمی‌گردند.", score: "درست در همان بار نخست",
+    xp: "XP", match: "جفت‌ها را پیدا کنید", review: "مرور", quit: "خروج", learn: "تازه",
+    tip: "هر صدا را بلند بگویید – خواندن را با دهان یاد می‌گیرید.", readQuran: "همین حالا آن را در قرآن بخوانید",
+    hearHint: "برای شنیدن (دوباره) کلمه، روی دکمه بزنید.", offline: "این صوت اکنون در دسترس نیست.", wordIs: "کلمه این است:",
+    voice: "گوش دادن با صدای دستگاه", verse: "شنیدن کل آیه", tapOrder: "کلمه‌ها را یکی‌یکی بزنید – نخستین کلمه سمت راست قرار می‌گیرد.",
+    emptyRow: "آیه شما اینجا ظاهر می‌شود", reset: "از نو", meaningLbl: "معنا", pLabel: "آزمون تعیین سطح", pHead: "نقطه شروع شما",
+    pFrom: "از بخش {n} شروع می‌کنید.", pAll: "مبانی را از قبل می‌دانید – با بخش 7 ادامه دهید: گوش دادن و خواندن.", pRight: "{a} از {b} درست",
+    pGo: "ادامه با:", pRetry: "تکرار آزمون",
+    pNote: "بخش‌هایی که با اطمینان حل کردید، گذرانده‌شده (1 ستاره) به حساب می‌آیند. هر درس را هر زمان می‌توانید تکرار کنید.", unitWord: "بخش",
+    known: "آموخته‌شده", open: "برای تمرین",
+  },
+  ps: {
+    check: "ځواب وګورئ", next: "ادامه", right: "سم دی!", wrong: "بشپړ سم نه دی – ځواب دا دی:", listen: "واورئ", again: "بیا تمرین وکړئ",
+    overview: "د کورس لنډیز", nextLesson: "بل درس", done: "درس بشپړ شو!", notYet: "نږدې یاست!",
+    needPass: "کله چې {pass} % ته ورسېږئ، بل درس پرانیستل کېږي. درس تکرار کړئ – ستاسو تېروتنې په قصد بېرته راځي.", score: "په لومړي ځل سم", xp: "XP",
+    match: "جوړې ومومئ", review: "تکرار", quit: "وتل", learn: "نوی", tip: "هر غږ په لوړ غږ ووایاست – لوستل په خوله زده کېږي.",
+    readQuran: "اوس یې په قرآن کې ولولئ", hearHint: "پر تڼۍ ټک وکړئ څو ټکی (بیا) واورئ.", offline: "ثبت شوی غږ اوس شتون نلري.", wordIs: "ټکی دا دی:",
+    voice: "د وسیلې په غږ واورئ", verse: "ټول آیت واورئ", tapOrder: "ټکي یو له بل پسې ټک کړئ – لومړی ټکی ښي لوري ته ځي.",
+    emptyRow: "ستاسو آیت دلته ښکاره کېږي", reset: "له سره", meaningLbl: "معنا", pLabel: "د کچې ازموینه", pHead: "ستاسو د پیل ځای",
+    pFrom: "تاسو له څپرکي {n} پیل کوئ.", pAll: "تاسو بنسټونه دمخه پېژنئ – ادامه ورکړئ له څپرکي 7: واورئ او ولولئ.", pRight: "{a} له {b} سم",
+    pGo: "ادامه ورکړئ له:", pRetry: "ازموینه تکرار کړئ",
+    pNote: "هغه څپرکي چې تاسو په ډاډ سره حل کړل، تېر شوي ګڼل کېږي (1 ستوری). هر درس تاسو هر وخت تکرارولای شئ.", unitWord: "څپرکی", known: "پېژندل شوی",
+    open: "د تمرین لپاره",
+  },
+  fr: {
+    check: "Vérifier", next: "Continuer", right: "Correct !", wrong: "Pas tout à fait – la réponse est :", listen: "Écouter",
+    again: "S’exercer encore", overview: "Vue d’ensemble du cours", nextLesson: "Leçon suivante", done: "Leçon terminée !", notYet: "Presque !",
+    needPass: "À partir de {pass} %, la leçon suivante se débloque. Refais la leçon – tes erreurs reviennent volontairement.",
+    score: "de bonnes réponses du premier coup", xp: "XP", match: "Trouve les paires", review: "Révision", quit: "Quitter", learn: "Nouveau",
+    tip: "Dis chaque son à voix haute – on apprend à lire avec la bouche.", readQuran: "Le lire maintenant dans le Coran",
+    hearHint: "Appuie sur le bouton pour (ré)écouter le mot.", offline: "L’enregistrement n’est pas disponible pour le moment.",
+    wordIs: "Le mot est :", voice: "Écouter avec la voix de l’appareil", verse: "Écouter le verset entier",
+    tapOrder: "Appuie sur les mots l’un après l’autre – le premier va à droite.", emptyRow: "Ton verset apparaît ici", reset: "Recommencer",
+    meaningLbl: "Sens", pLabel: "Test de niveau", pHead: "Ton point de départ", pFrom: "Tu commences à l’unité {n}.",
+    pAll: "Tu maîtrises déjà les bases – poursuis avec l’unité 7 : Écouter et lire.", pRight: "{a} sur {b} justes", pGo: "Poursuis avec :",
+    pRetry: "Refaire le test",
+    pNote: "Les unités réussies avec assurance comptent comme validées (1 étoile). Tu peux refaire n’importe quelle leçon à tout moment.",
+    unitWord: "Unité", known: "acquise", open: "à travailler",
+  },
+  es: {
+    check: "Comprobar", next: "Continuar", right: "¡Correcto!", wrong: "No exactamente – la respuesta es:", listen: "Escuchar",
+    again: "Practicar de nuevo", overview: "Resumen del curso", nextLesson: "Siguiente lección", done: "¡Lección completada!",
+    notYet: "¡Casi lo logras!",
+    needPass: "A partir del {pass} % se desbloquea la siguiente lección. Repite la lección: tus errores vuelven a propósito.",
+    score: "correcto a la primera", xp: "XP", match: "Encuentra las parejas", review: "Repaso", quit: "Salir", learn: "Nuevo",
+    tip: "Di cada sonido en voz alta: se aprende a leer con la boca.", readQuran: "Léelo ahora en el Corán",
+    hearHint: "Toca el botón para escuchar la palabra (otra vez).", offline: "La grabación no está disponible en este momento.",
+    wordIs: "La palabra es:", voice: "Escuchar con la voz del dispositivo", verse: "Escuchar la aleya completa",
+    tapOrder: "Toca las palabras una tras otra: la primera va a la derecha.", emptyRow: "Tu aleya aparece aquí", reset: "Restablecer",
+    meaningLbl: "Significado", pLabel: "Prueba de nivel", pHead: "Por dónde empiezas", pFrom: "Empiezas en la unidad {n}.",
+    pAll: "Ya dominas lo básico: continúa con la unidad 7: Escuchar y leer.", pRight: "{a} de {b} correctas", pGo: "Continúa con:",
+    pRetry: "Repetir la prueba",
+    pNote: "Las unidades que resolviste con seguridad cuentan como superadas (1 estrella). Puedes repetir cualquier lección en cualquier momento.",
+    unitWord: "Unidad", known: "conocida", open: "por practicar",
+  },
+  id: {
+    check: "Periksa", next: "Lanjut", right: "Benar!", wrong: "Belum tepat – jawabannya:", listen: "Dengarkan", again: "Berlatih lagi",
+    overview: "Ikhtisar kursus", nextLesson: "Pelajaran berikutnya", done: "Pelajaran selesai!", notYet: "Hampir berhasil!",
+    needPass: "Dengan nilai {pass} % atau lebih, pelajaran berikutnya terbuka. Ulangi pelajaran ini – kesalahanmu sengaja muncul lagi.",
+    score: "benar pada percobaan pertama", xp: "XP", match: "Cari pasangannya", review: "Ulasan", quit: "Keluar", learn: "Baru",
+    tip: "Ucapkan setiap bunyi dengan lantang – kamu belajar membaca dengan mulutmu.", readQuran: "Baca sekarang di Al-Qur’an",
+    hearHint: "Ketuk tombol untuk mendengar kata itu (lagi).", offline: "Rekaman sedang tidak tersedia.", wordIs: "Kata ini adalah:",
+    voice: "Dengarkan dengan suara perangkat", verse: "Dengarkan seluruh ayat",
+    tapOrder: "Ketuk kata-katanya satu per satu – kata pertama berada di sebelah kanan.", emptyRow: "Ayatmu muncul di sini", reset: "Mulai dari awal",
+    meaningLbl: "Arti", pLabel: "Tes penempatan", pHead: "Dari mana kamu mulai", pFrom: "Kamu mulai dari unit {n}.",
+    pAll: "Kamu sudah menguasai dasarnya – lanjutkan dengan unit 7: Mendengar dan membaca.", pRight: "{a} dari {b} benar", pGo: "Lanjutkan dengan:",
+    pRetry: "Ulangi tes", pNote: "Unit yang kamu kerjakan dengan yakin dihitung lulus (1 bintang). Kamu bisa mengulang pelajaran mana pun kapan saja.",
+    unitWord: "Unit", known: "dikuasai", open: "perlu dilatih",
+  },
+  ms: {
+    check: "Semak", next: "Teruskan", right: "Betul!", wrong: "Belum tepat – jawapannya ialah:", listen: "Dengar", again: "Berlatih lagi",
+    overview: "Gambaran keseluruhan kursus", nextLesson: "Pelajaran seterusnya", done: "Pelajaran selesai!", notYet: "Hampir berjaya!",
+    needPass: "Dengan {pass} % atau lebih, pelajaran seterusnya dibuka. Ulang pelajaran ini – kesilapan anda sengaja dimunculkan semula.",
+    score: "betul pada percubaan pertama", xp: "XP", match: "Cari pasangan", review: "Ulang kaji", quit: "Keluar", learn: "Baharu",
+    tip: "Sebut setiap bunyi dengan kuat – anda belajar membaca dengan mulut.", readQuran: "Baca dalam Quran sekarang",
+    hearHint: "Ketik butang untuk mendengar perkataan itu (sekali lagi).", offline: "Rakaman tidak tersedia buat masa ini.",
+    wordIs: "Perkataannya ialah:", voice: "Dengar dengan suara peranti", verse: "Dengar keseluruhan ayat",
+    tapOrder: "Ketik perkataan satu demi satu – yang pertama diletakkan di sebelah kanan.", emptyRow: "Ayat anda dipaparkan di sini",
+    reset: "Set semula", meaningLbl: "Makna", pLabel: "Ujian penempatan", pHead: "Tempat anda bermula", pFrom: "Anda bermula di unit {n}.",
+    pAll: "Anda sudah mengetahui asasnya – teruskan dengan unit 7: Dengar dan baca.", pRight: "{a} daripada {b} betul", pGo: "Teruskan dengan:",
+    pRetry: "Ulang ujian",
+    pNote: "Unit yang anda selesaikan dengan yakin dikira lulus (1 bintang). Anda boleh mengulang mana-mana pelajaran pada bila-bila masa.",
+    unitWord: "Unit", known: "dikuasai", open: "perlu dilatih",
+  },
+  bn: {
+    check: "যাচাই করুন", next: "চালিয়ে যান", right: "সঠিক!", wrong: "ঠিক হয়নি – উত্তর হলো:", listen: "শুনুন", again: "আবার অনুশীলন করুন",
+    overview: "কোর্স এক নজরে", nextLesson: "পরবর্তী পাঠ", done: "পাঠ সম্পন্ন!", notYet: "প্রায় হয়ে গেছে!",
+    needPass: "{pass}% বা তার বেশি পেলে পরবর্তী পাঠ খুলে যায়। পাঠটি আবার করুন – আপনার ভুলগুলো ইচ্ছা করেই ফিরে আসে।", score: "প্রথম চেষ্টায় সঠিক",
+    xp: "XP", match: "জোড়া মেলান", review: "পুনরাবৃত্তি", quit: "বের হোন", learn: "নতুন", tip: "প্রতিটি ধ্বনি জোরে বলুন – মুখ দিয়েই পড়া শেখা হয়।",
+    readQuran: "এখনই কুরআনে এটি পড়ুন", hearHint: "শব্দটি (আবার) শুনতে বোতামে ট্যাপ করুন।", offline: "রেকর্ডিংটি এখন পাওয়া যাচ্ছে না।",
+    wordIs: "শব্দটি হলো:", voice: "ডিভাইসের কণ্ঠে শুনুন", verse: "পুরো আয়াতটি শুনুন",
+    tapOrder: "শব্দগুলোতে একটির পর একটি ট্যাপ করুন – প্রথমটি ডানদিকে বসে।", emptyRow: "আপনার আয়াত এখানে দেখা যাবে", reset: "রিসেট",
+    meaningLbl: "অর্থ", pLabel: "স্তর-নির্ধারণী পরীক্ষা", pHead: "যেখান থেকে আপনি শুরু করবেন", pFrom: "আপনি ইউনিট {n} থেকে শুরু করবেন।",
+    pAll: "মৌলিক বিষয়গুলো আপনি আগেই জানেন – ইউনিট 7: শুনুন ও পড়ুন দিয়ে এগিয়ে যান।", pRight: "{b}টির মধ্যে {a}টি সঠিক",
+    pGo: "এখান থেকে চালিয়ে যান:", pRetry: "পরীক্ষা আবার দিন",
+    pNote: "যে ইউনিটগুলো আপনি আত্মবিশ্বাসের সাথে সমাধান করেছেন, সেগুলো উত্তীর্ণ হিসেবে গণ্য হয় (1 তারা)। যেকোনো পাঠ আপনি যখন খুশি আবার করতে পারেন।",
+    unitWord: "ইউনিট", known: "জানা", open: "অনুশীলন বাকি",
+  },
+  ru: {
+    check: "Проверить", next: "Далее", right: "Верно!", wrong: "Не совсем – правильный ответ:", listen: "Послушать", again: "Потренироваться ещё раз",
+    overview: "Обзор курса", nextLesson: "Следующий урок", done: "Урок пройден!", notYet: "Почти получилось!",
+    needPass: "При результате от {pass} % откроется следующий урок. Повтори урок – задания, в которых были ошибки, возвращаются специально.",
+    score: "верно с первой попытки", xp: "XP", match: "Найди пары", review: "Повторение", quit: "Выйти", learn: "Новое",
+    tip: "Произноси каждый звук вслух – читать учатся ртом.", readQuran: "Прочитать это в Коране",
+    hearHint: "Нажми на кнопку, чтобы (ещё раз) услышать слово.", offline: "Запись сейчас недоступна.", wordIs: "Слово звучит так:",
+    voice: "Прослушать голосом устройства", verse: "Прослушать аят целиком", tapOrder: "Нажимай на слова по порядку – первое слово встаёт справа.",
+    emptyRow: "Здесь появится аят", reset: "Сбросить", meaningLbl: "Значение", pLabel: "Вводный тест", pHead: "С чего ты начнёшь",
+    pFrom: "Ты начнёшь с раздела {n}.", pAll: "Основы ты уже знаешь – продолжай с раздела 7: Слушай и читай.", pRight: "Верно {a} из {b}",
+    pGo: "Продолжить:", pRetry: "Повторить тест",
+    pNote: "Уверенно решённые разделы засчитываются как пройденные (1 звезда). Любой урок можно повторить в любой момент.", unitWord: "Раздел",
+    known: "знакомо", open: "нужна практика",
+  },
+  zh: {
+    check: "检查", next: "继续", right: "正确！", wrong: "不太对——答案是：", listen: "聆听", again: "再练一次", overview: "课程概览", nextLesson: "下一课", done: "本课完成！",
+    notYet: "就差一点！", needPass: "得分达到 {pass}% 即可解锁下一课。请重做本课——你答错的题会特意再次出现。", score: "首次答对", xp: "XP", match: "找出配对", review: "复习", quit: "退出",
+    learn: "新内容", tip: "把每个音大声读出来——你是在用嘴巴学习阅读。", readQuran: "现在就到古兰经中读一读", hearHint: "点按按钮聆听这个词（再听一遍）。", offline: "录音暂时无法使用。", wordIs: "这个词是：",
+    voice: "用设备语音聆听", verse: "聆听整节经文", tapOrder: "依次点按这些词语——第一个放在右边。", emptyRow: "你的经文将出现在这里", reset: "重置", meaningLbl: "含义", pLabel: "水平测试",
+    pHead: "你的起点", pFrom: "你从第 {n} 单元开始。", pAll: "你已经掌握了基础——请继续学习第 7 单元：听与读。", pRight: "{b} 题中答对 {a} 题", pGo: "继续学习：", pRetry: "重做测试",
+    pNote: "你稳妥答对的单元算作已通过（1 颗星）。你随时可以重做任何一课。", unitWord: "单元", known: "已掌握", open: "待练习",
+  },
+} satisfies Record<Lang, unknown>;
 
 // tiny feedback tones (no audio files needed)
 function tone(ok: boolean) {
@@ -91,7 +241,7 @@ const reshuffled = (ex: Ex): Ex => {
 
 export default function ArabicLesson({ id }: { id: string }) {
   const locale = useLocale();
-  const lang = locale === "de" ? "de" : locale === "ar" ? "ar" : "en";
+  const lang = (locale in T ? locale : "en") as keyof typeof T; // the locale if the table has it, otherwise English
   const t = T[lang];
   const lesson = lessonById(id)!;
   const isPlacement = !!lesson.placement;
@@ -206,7 +356,7 @@ export default function ArabicLesson({ id }: { id: string }) {
           <div className="pa-card pa-plain p-4"><p className="font-display text-3xl">{finished.pct} %</p><p className="text-sm text-muted">{t.score}</p></div>
           <div className="pa-card pa-plain p-4"><p className="font-display text-3xl text-gold">+{finished.xp}</p><p className="text-sm text-muted">{t.xp}</p></div>
         </div>
-        {!passed && <p className="mt-5 text-[15px] text-muted">{t.needPass}</p>}
+        {!passed && <p className="mt-5 text-[15px] text-muted">{t.needPass.replace("{pass}", String(PASS_PCT))}</p>}
         <div className="mt-8 grid gap-3">
           {passed && next && <Link href={`/arabic/${next.id}`} className="btn-gold inline-flex h-12 items-center justify-center rounded-full text-[15px] font-bold">{t.nextLesson} <ArrowNext /></Link>}
           {passed && !next && <Link href="/surah/1?shams=1" className="btn-gold inline-flex h-12 items-center justify-center rounded-full text-[15px] font-bold">{t.readQuran} <ArrowNext /></Link>}

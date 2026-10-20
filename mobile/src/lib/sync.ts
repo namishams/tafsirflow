@@ -1,10 +1,13 @@
 import { useEffect } from "react";
-import { AppState } from "react-native";
-import { api } from "./api";
+import { AppState, Platform } from "react-native";
+import { SITE, api } from "./api";
 import { useAuth } from "./auth";
 import { readJSON, setWriteHook, writeJSON } from "./store";
 import { mergePoints, type Points } from "@/web/points";
-import { mergeListen, type Listen } from "@/web/listen";
+import { configureListen, mergeListen, type Listen } from "@/web/listen";
+
+// the verse player's anonymous listening totals (web/listen.ts) go to the website's server, marked as app requests
+configureListen({ base: SITE, headers: { "x-qmc-app": Platform.OS } });
 import type { Srs } from "@/web/learning";
 
 // Progress sync with the account, the same merge rules as the website (src/lib/sync.ts): what you learn in the app

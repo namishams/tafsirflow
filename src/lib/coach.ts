@@ -24,6 +24,14 @@ export type Kind = "new" | "repair" | "refresh" | "check";
 // 4 tafsir, 5 fading cues + self-rating, 6 reflection, 7 connect with the previous verse
 export type VersePlan = { kind: Kind; steps: number[]; listen: number; words: number; strength: number | null; lapses: number };
 
+// "Step n of total": the method has seven steps – connecting with the previous verse (id 7) is shown as the closing part of
+// step seven (reflection), not as an eighth step.
+export function stepCount(steps: number[], current: number): { n: number; total: number } {
+  const list = steps.filter((x) => x !== 7);
+  const at = list.indexOf(current === 7 ? 6 : current);
+  return { n: (at >= 0 ? at : list.length - 1) + 1, total: list.length };
+}
+
 // Personal memory factor: the average ease of all verses (1 = average, lower = verses slip more easily)
 export function memoryFactor(srs: Srs = readSrs()): number {
   const e = counted(srs).map(([, v]) => v.ease ?? 1);
@@ -34,7 +42,10 @@ export function memoryFactor(srs: Srs = readSrs()): number {
 // known verses skip what is already understood; a verse that was learned is linked to the one before it.
 export function versePlan(key: string, words: number, prevKey: string | null, srs: Srs = readSrs()): VersePlan {
   const e = srs[key];
-  const s = verseStrength(srs, key);
+  // a verse that slipped ("again") today is not known yet, however fresh the memory estimate looks
+  const slippedNow = !!e && (e.lapses ?? 0) > 0 && e.last === today() && e.due <= today();
+  const s0 = verseStrength(srs, key);
+  const s = slippedNow && s0 !== null ? Math.min(s0, 0.3) : s0;
   const lapses = e?.lapses ?? 0;
   const mf = memoryFactor(srs);
   const ap = ageProfile();
@@ -43,7 +54,7 @@ export function versePlan(key: string, words: number, prevKey: string | null, sr
   const link = !!prevKey && !NOT_COUNTED.has(prevKey) && !!srs[prevKey];
   let kind: Kind, steps: number[];
   if (!e) { kind = "new"; steps = [0, 1, 2, 3, 4, 5, ...(link ? [7] : []), 6]; }
-  else if ((s ?? 0) < 0.5 || lapses >= 3) { kind = "repair"; steps = [0, 1, 3, 5, ...(link ? [7] : [])]; }
+  else if (slippedNow || (s ?? 0) < 0.5 || lapses >= 3) { kind = "repair"; steps = [0, 1, 3, 5, ...(link ? [7] : [])]; }
   else if ((s ?? 0) < 0.8 || e.stage < 2) { kind = "refresh"; steps = [0, 5]; }
   else { kind = "check"; steps = [5]; }
   return { kind, steps, listen: kind === "refresh" ? Math.max(2, listen - 1) : listen, words, strength: s, lapses };
@@ -144,15 +155,21 @@ export function dayPlan(srs: Srs = readSrs()): DayPlan {
   const due = counted(srs).filter(([, e]) => e.due <= t).map(([k]) => k);
   const repair = due.filter((k) => (verseStrength(srs, k) ?? 0) < 0.4 || (srs[k].lapses ?? 0) >= 3);
   const reviews = due.filter((k) => !repair.includes(k)).sort((a, b) => (verseStrength(srs, a) ?? 0) - (verseStrength(srs, b) ?? 0));
-  // how much fits into a day: the learner's own minutes (onboarding) or the pace of the last two weeks
+  // how much fits into a day, in minutes: the learner's own minutes (onboarding) or the pace of the last two weeks
+  // (a new verse takes about 4 minutes, a review about 0.7, a repair about 2)
   const goal = readGoal();
-  const capacity = Math.max(6, Math.min(40, goal?.minutes ? Math.round(goal.minutes * 1.2) : L.pace || 8));
+  const capacity = Math.max(6, Math.min(60, goal?.minutes ? goal.minutes : Math.round((L.pace || 8) * 0.7)));
+  const used = reviews.length * 0.7 + repair.length * 2;
+  const room = (share: number) => Math.floor(Math.max(0, capacity - used) * share / 4);
+  // the method page recommends 1–3 new verses a day for beginners, 3–5 when practised, 5–10 when intensive
+  const maxNew = !L.learned || goal?.read === "no" ? 3 : goal?.aim === "hifz" && goal.minutes >= 30 ? 10 : goal?.aim === "hifz" || L.learned >= 30 || goal?.read === "fluent" ? 5 : 3;
+  const cap = (n: number) => Math.min(maxNew, n);
   let newVerses: number, reason: DayPlan["reason"];
   if (L.learned === 0) { newVerses = 3; reason = "start"; }
-  else if (due.length > capacity * 1.5) { newVerses = 0; reason = "reviewOnly"; }
-  else if (L.retention !== null && L.retention < 0.7) { newVerses = Math.max(1, Math.round((capacity - due.length) / 4)); reason = "consolidate"; }
-  else if (due.length > capacity * 0.7) { newVerses = Math.max(1, Math.round((capacity - due.length) / 2)); reason = "light"; }
-  else { newVerses = Math.max(2, Math.min(10, Math.round((capacity - due.length) / 2))); reason = "steady"; }
-  const minutes = Math.max(5, Math.round(reviews.length * 0.7 + repair.length * 2 + newVerses * 4));
+  else if (used > capacity * 1.5) { newVerses = 0; reason = "reviewOnly"; }
+  else if (L.retention !== null && L.retention < 0.7) { newVerses = cap(Math.max(1, room(0.5))); reason = "consolidate"; }
+  else if (used > capacity * 0.7) { newVerses = cap(Math.max(1, room(1))); reason = "light"; }
+  else { newVerses = cap(Math.max(1, room(1))); reason = "steady"; }
+  const minutes = Math.max(5, Math.round(used + newVerses * 4));
   return { reviews, repair, newVerses, next: L.next, minutes, reason };
 }

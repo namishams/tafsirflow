@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FlatList, Modal, Platform, Pressable, ScrollView, Share, Switch, Text, View } from "react-native";
-import { Stack, router, useLocalSearchParams, type Href } from "expo-router";
+import { Stack, router, useFocusEffect, useLocalSearchParams, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
@@ -13,11 +13,11 @@ import { useWebT } from "@/i18n/web";
 import { SITE } from "@/lib/api";
 import { openPro, usePro } from "@/lib/pro";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
-import { RECITERS, getChapter, getChapters, getVerses, type Chapter, type Verse, reciterName } from "@/lib/quran";
-import { trackListen, trackVerseDone } from "@/web/listen";
+import { getChapter, getChapters, getVerses, type Chapter, type Verse, reciterName } from "@/lib/quran";
 import { rate, type Rating } from "@/web/learning";
 import { useReciter, isFreeReciter } from "@/features/quran/reciter";
-import { toAr, useVerseAudio } from "@/features/quran/useVerseAudio";
+import { toAr, useEngine } from "@/features/quran/useVerseAudio";
+import { useKids } from "@/features/extra/kids";
 import { VerseWords, wordAt } from "@/features/quran/VerseWords";
 import { TafsirPanel } from "@/features/quran/TafsirPanel";
 import { useClip } from "@/features/coursekit/audio";
@@ -25,48 +25,69 @@ import { useReduceMotion } from "@/features/radio/motion";
 import { SurahOpening } from "@/features/reader/SurahOpening";
 import { SurahPicker } from "@/features/reader/SurahPicker";
 import { VerseCard, IDLE, type CardHandlers, type CardState, type Hide } from "@/features/reader/VerseCard";
-import { PlayerDock } from "@/features/reader/PlayerDock";
+import { PlayerDock, type Turn } from "@/features/reader/PlayerDock";
 import { ReaderNowPlaying } from "@/features/reader/ReaderNowPlaying";
 import { loadText, localVerseUri, removeSurah, saveSurah, saveText, savedInfo } from "@/features/reader/offline";
+import * as vp from "@/features/reader/versePlayback";
 
 // The surah reader with its player, presented like the website's Player.tsx: the illuminated opening of the surah,
 // the surah picker, compact verse cards with the active verse framed in gold (word highlighting, Read / Practise /
 // Test, self-rating, bookmark, note, share, Tafsir, Shams Method), the reading view, the settings sheet (reciter, size,
-// repeat, speed, sleep timer, what to show, saving the surah offline) and the floating jewel dock with a full player.
-// Playback continues verse after verse in the background and on the lock screen.
-type Prefs = { translit: boolean; translation: boolean; words: boolean; size: number; repeat: number; speed: number; drill: Hide };
-const PREFS: Prefs = { translit: true, translation: true, words: false, size: 1, repeat: 1, speed: 1, drill: 0 };
+// mode (continuous / learn), repeat, speed, pause to repeat ("your turn"), sleep timer, loop range, what to show, saving
+// the surah offline) and the floating jewel dock with a full player. Playback continues verse after verse in the
+// background, on the lock screen and after leaving the reader (features/reader/versePlayback.ts + the verse mini bar).
+// Kids mode (tf:kids) like the website: word by word with transliteration, no tafsir, notes, Shams Method, extras.
+type Prefs = { translit: boolean; translation: boolean; words: boolean; size: number; repeat: number; speed: number; drill: Hide; mode: vp.Mode };
+const PREFS: Prefs = { translit: true, translation: true, words: false, size: 1, repeat: 1, speed: 1, drill: 0, mode: "continuous" };
 // hifz training for the whole surah: every verse covered the same way (the website's cover levels plus first letters)
 const DRILL: [Hide, string, string][] = [[0, "player", "hideNone"], [5, "player", "hideSoft"], [1, "player", "hideHalf"], [3, "shams", "hAcrostic"], [4, "player", "hideRandom"], [2, "player", "hideAll"]];
 type Notes = Record<string, { text: string; at: number }>;
 type Offline = { state: "none" | "saving" | "saved" | "error"; done: number; bytes: number };
 
 export default function SurahReader() {
-  const params = useLocalSearchParams<{ surah: string; v?: string; tafsir?: string; m?: string; shams?: string }>();
+  const params = useLocalSearchParams<{ surah: string; v?: string; tafsir?: string; m?: string; shams?: string; reciter?: string }>();
   const surah = Math.max(1, Math.min(114, Number(params.surah) || 1));
   // website links: m=2 (practise / review) and shams=1 open the verse in the Shams Method
   useEffect(() => { if (params.m === "2" || params.shams === "1") router.replace(`/shams/${surah}${params.v ? `?v=${params.v}` : ""}` as Href); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const { lang } = useLang();
-  const [reciter] = useReciter();
-  const [chapter, setChapter] = useState<Chapter | null>(null);
-  const [verses, setVerses] = useState<Verse[] | null>(null);
+  const { pro } = usePro();
+  const [reciter, setReciter, all] = useReciter();
+  // ?reciter=<slug> (a reciter's page, website links) wins over the saved choice
+  const wanted = useRef(params.reciter ?? "");
+  useEffect(() => {
+    if (!wanted.current) return;
+    const r = all.find((x) => x.slug === wanted.current);
+    if (r) { wanted.current = ""; if (pro || isFreeReciter(r)) setReciter(r); }
+  }, [all, pro, setReciter]);
+  // another reciter keeps the reader (position, open sheet) on screen while the new verse files load;
+  // only another surah or language shows the loading state
+  const base = `${surah}:${lang}`;
+  const [data, setData] = useState<{ key: string; chapter: Chapter; verses: Verse[] } | null>(null);
   const [failed, setFailed] = useState(false);
+  const req = useRef(0);
+  const shown = useRef<string | null>(null);
+  shown.current = data?.key ?? null;
   const load = useCallback(() => {
-    setFailed(false); setVerses(null);
+    const n = ++req.current;
+    setFailed(false);
+    setData((d) => (d && d.key === base ? d : null));
     Promise.all([getChapter(surah, lang), getVerses(surah, lang, reciter)])
-      .then(([c, v]) => { setChapter(c); setVerses(v); })
+      .then(([c, v]) => { if (n === req.current) setData({ key: base, chapter: c, verses: v }); })
       .catch(async () => {
         // no connection: a surah saved offline still opens from its saved text
         const saved = await loadText<{ chapter: Chapter; verses: Verse[] }>(surah, reciter.folder, lang);
-        if (saved?.chapter && saved.verses?.length) { setChapter(saved.chapter); setVerses(saved.verses); } else setFailed(true);
+        if (n !== req.current) return;
+        if (saved?.chapter && saved.verses?.length) setData({ key: base, chapter: saved.chapter, verses: saved.verses });
+        else if (shown.current !== base) setFailed(true);
       });
-  }, [surah, lang, reciter]);
+  }, [surah, lang, reciter, base]);
   useEffect(load, [load]);
+  const ready = data && data.key === base ? data : null;
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      {failed ? <ErrorState retry={load} /> : !verses || !chapter ? <Loading /> : (
-        <Reader key={`${surah}:${reciter.slug}`} chapter={chapter} verses={verses} start={Number(params.v) || 0} openTafsir={params.tafsir === "1"} />
+      {failed ? <ErrorState retry={load} /> : !ready ? <Loading /> : (
+        <Reader key={surah} chapter={ready.chapter} verses={ready.verses} start={Number(params.v) || 0} openTafsir={params.tafsir === "1"} />
       )}
     </>
   );
@@ -82,19 +103,31 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
   const reduce = useReduceMotion();
-  const audio = useVerseAudio();
   const clip = useClip();
   const { pro } = usePro();
-  const [reciter, setReciter] = useReciter();
+  const [kids] = useKids();
+  const [reciter, setReciter, reciters] = useReciter();
   const prefs = { ...PREFS, ...useStored<Partial<Prefs>>("qmc.reader", {}) };
   const setPref = (p: Partial<Prefs>) => writeJSON("qmc.reader", { ...prefs, ...p }, true);
-  const [view, setView] = useState<"verses" | "reading">("verses");
+  // kids mode: word by word with transliteration, continuous, no pause to repeat (website Player.tsx)
+  const showWords = prefs.words || kids;
+  const showTranslit = prefs.translit || kids;
+  const mode: vp.Mode = kids ? "continuous" : prefs.mode ?? "continuous";
+  const gapPref = useStored<number>("tf:gap", 0);
+  const gap = kids ? 0 : gapPref;
+  const setGap = (g: number) => writeJSON("tf:gap", g, true);
+  const [view, setViewState] = useState<"verses" | "reading">(() => (readJSON<string>("tf:view", "verses") === "reading" ? "reading" : "verses"));
+  const setView = (v: "verses" | "reading") => { setViewState(v); writeJSON("tf:view", v, true); };
   const [idx, setIdx] = useState(Math.max(0, Math.min(verses.length - 1, (start || 1) - 1)));
-  const [tafsirFor, setTafsirFor] = useState<Verse | null>(openTafsir && start ? verses[start - 1] ?? null : null);
+  const [tafsirFor, setTafsirFor] = useState<Verse | null>(openTafsir && start && !kids ? verses[start - 1] ?? null : null);
   const [settings, setSettings] = useState(false);
   const [nowOpen, setNowOpen] = useState(false);
   const [jumpOpen, setJumpOpen] = useState(false);
   const [sleep, setSleep] = useState<{ mode: number; until: number }>({ mode: 0, until: 0 });
+  const [loop, setLoop] = useState({ on: false, from: 1, to: verses.length });
+  const [waiting, setWaiting] = useState(false); // learn mode: paused until "Continue"
+  const [turn, setTurn] = useState<Turn | null>(null); // "your turn" countdown during the pause after a verse
+  const gapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const marks = useStored<string[]>("tf:bookmarks", []);
   const [notes, setNotes] = useState<Notes>(() => readJSON<Notes>("tf:notes", {}));
   const [noteOpen, setNoteOpen] = useState<string | null>(null);
@@ -116,9 +149,51 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const plays = useRef(0);
   const verse = verses[idx];
 
+  // the reader's player is shared and outlives this screen (features/reader/versePlayback.ts)
+  const engine = vp.getEngine();
+  const audio = useEngine(engine);
+  const handlers = useRef<vp.Handlers>({});
+  const pb = vp.useVersePlayback();
+  const mine = pb.attached && vp.isAttached(handlers);
+  const playing = mine && audio.playing;
+  const positionMs = mine ? audio.positionMs : 0;
+  const durationMs = mine ? audio.durationMs : 0;
+  // what plays: a surah saved offline plays from the device
+  const items = useMemo<vp.Item[]>(() => verses.map((v) => ({ url: localVerseUri(chapter.id, reciter.folder, v.verse_number) ?? v.audioUrl, remote: v.remoteAudioUrl })),
+    [verses, chapter.id, reciter.folder, offline.state]); // eslint-disable-line react-hooks/exhaustive-deps
+  const live = useRef({ chapterId: chapter.id, folder: reciter.folder });
+  live.current = { chapterId: chapter.id, folder: reciter.folder };
+
   useEffect(() => { getChapters(lang).then(setChapters).catch(() => undefined); }, [lang]);
   useEffect(() => { if (start > 1) setTimeout(() => list.current?.scrollToIndex({ index: start - 1, viewPosition: 0.1, animated: false }), 300); }, []); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => () => { audio.stop(); abort.current?.abort(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => () => abort.current?.abort(), []);
+  // in charge of the shared player while this reader is on screen; leaving it lets a playing session carry on headless
+  useFocusEffect(useCallback(() => {
+    const s = vp.current();
+    const same = !!s && s.chapterId === live.current.chapterId && s.reciterFolder === live.current.folder;
+    // another surah is playing in the background: it keeps playing (mini bar) until this reader is played
+    if (!s || same || !engine.getSnapshot().playing) {
+      vp.attach(handlers);
+      if (s && same) {
+        plays.current = s.playsDone;
+        setIdx(s.idx);
+        setTimeout(() => list.current?.scrollToIndex({ index: s.idx, viewPosition: 0.12, animated: false }), 250);
+      }
+    }
+    return () => {
+      const pending = !!gapTimer.current;
+      if (gapTimer.current) { clearTimeout(gapTimer.current); gapTimer.current = null; }
+      setTurn(null);
+      vp.detach(handlers, plays.current);
+      if (pending) vp.advanceHeadless();
+    };
+  }, [engine]));
+  // the session the mini bar continues
+  useEffect(() => {
+    if (!mine) return;
+    vp.sync({ chapterId: chapter.id, chapterName: chapter.name_simple, reciterName: reciter.name, reciterFolder: reciter.folder, items, idx, repeat: prefs.repeat, playsDone: plays.current,
+      mode, loopOn: loop.on, loopFrom: loop.from, loopTo: loop.to, speed: prefs.speed });
+  }, [mine, chapter, reciter.name, reciter.folder, items, idx, prefs.repeat, mode, loop, prefs.speed]);
   // remember where the learner stopped
   useEffect(() => { writeJSON("tf:last", { chapter: chapter.id, verse: verses[idx].verse_number, at: Date.now() }); }, [idx]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { setRevealed(false); setTestPos(0); setTestMarks({}); }, [idx, hide]);
@@ -127,46 +202,84 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   // sleep timer: also stops in the middle of a long verse
   useEffect(() => {
     if (sleep.mode <= 0) return;
-    const iv = setInterval(() => { if (Date.now() >= sleep.until) { audio.pause(); setSleep({ mode: 0, until: 0 }); } }, 5000);
+    const iv = setInterval(() => { if (Date.now() >= sleep.until) { if (vp.isAttached(handlers)) audio.pause(); clearGap(); setSleep({ mode: 0, until: 0 }); } }, 5000);
     return () => clearInterval(iv);
   }, [sleep]); // eslint-disable-line react-hooks/exhaustive-deps
+  // another reciter: the offline state belongs to the voice, and a playing verse continues in the new voice
+  useEffect(() => { const s = savedInfo(chapter.id, reciter.folder); setOffline(s ? { state: "saved", done: s.n, bytes: s.bytes } : { state: "none", done: 0, bytes: 0 }); }, [reciter.folder]); // eslint-disable-line react-hooks/exhaustive-deps
+  const prevVerses = useRef(verses);
+  useEffect(() => {
+    if (prevVerses.current === verses) return;
+    const voice = prevVerses.current[0]?.audioUrl !== verses[0]?.audioUrl;
+    prevVerses.current = verses;
+    if (voice && mine && engine.getSnapshot().playing) playAt(idx);
+  }, [verses]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Self-hosted files may be a different recording than the one the timings belong to: if the file length is far from
+  // the last word's end, word highlighting is switched off for that verse (website onMeta).
+  const lastEnd = useMemo(() => verse.segments.reduce((m, s) => Math.max(m, s.end), 0), [verse]);
+  const timingsOk = !(mine && audio.loadedUrl === items[idx]?.url && !audio.fallback && audio.durationMs > 0 && lastEnd > 0 && Math.abs(audio.durationMs - lastEnd) > 1500);
+
+  const clearGap = () => { if (gapTimer.current) { clearTimeout(gapTimer.current); gapTimer.current = null; } setTurn(null); };
   const scrollTo = (i: number) => { if (view === "verses") list.current?.scrollToIndex({ index: i, viewPosition: 0.12, animated: true }); };
   const playAt = (i: number) => {
     const v = verses[i];
     if (!v) return;
+    clearGap(); setWaiting(false);
+    if (!vp.isAttached(handlers)) vp.attach(handlers);
     plays.current = 0;
     setIdx(i);
-    // a surah saved offline plays from the device
-    const local = localVerseUri(chapter.id, reciter.folder, v.verse_number);
-    audio.play(local ?? v.audioUrl, { fallback: v.remoteAudioUrl, rate: prefs.speed, title: `${chapter.name_simple} · ${v.verse_number}`, artist: reciterName(reciter, lang) });
+    audio.play(items[i]?.url ?? v.audioUrl, { fallback: v.remoteAudioUrl, rate: prefs.speed, title: `${chapter.name_simple} · ${v.verse_number}`, artist: reciterName(reciter, lang), track: { surah: chapter.id, reciter: reciter.name } });
     scrollTo(i);
   };
   const goTo = (i: number, autoplay: boolean) => {
     if (autoplay) { playAt(i); return; }
-    audio.stop(); plays.current = 0; setIdx(i); scrollTo(i);
+    clearGap(); setWaiting(false);
+    if (mine) audio.stop();
+    plays.current = 0; setIdx(i); scrollTo(i);
   };
-  audio.onEnd.current = () => {
-    trackListen(Math.round(audio.durationMs / 1000 / Math.max(0.5, prefs.speed)), chapter.id, reciter.slug);
-    plays.current += 1;
-    if (plays.current < prefs.repeat) { audio.seekPlay(0); return; }
-    trackVerseDone(chapter.id, reciter.slug);
-    if (sleep.mode > 0 && Date.now() >= sleep.until) { setSleep({ mode: 0, until: 0 }); return; }
+  // after a recitation: wait ("your turn", -1 = as long as the verse) so the listener can repeat it, then continue
+  const afterGap = (next: () => void) => {
+    const ms = gap === -1 ? Math.round((audio.durationMs || 4000) / Math.max(0.5, prefs.speed)) : gap * 1000;
+    if (!ms) { next(); return; }
+    setTurn({ ms, key: Date.now() });
+    gapTimer.current = setTimeout(() => { gapTimer.current = null; setTurn(null); next(); }, ms);
+  };
+  const advance = () => {
+    clearGap(); setWaiting(false);
+    if (sleep.mode === -1 && idx >= verses.length - 1) { setSleep({ mode: 0, until: 0 }); return; } // sleep timer: end of surah
+    if (loop.on && idx >= loop.to - 1 && sleep.mode !== -1) { playAt(Math.max(0, loop.from - 1)); return; }
     if (idx < verses.length - 1) playAt(idx + 1);
-    else if (sleep.mode === -1) setSleep({ mode: 0, until: 0 });
   };
-  const toggle = () => (audio.playing ? audio.pause() : audio.positionMs > 0 && audio.durationMs > 0 ? audio.resume() : playAt(idx));
+  handlers.current.ended = () => {
+    plays.current += 1;
+    if (sleep.mode > 0 && Date.now() >= sleep.until) { setSleep({ mode: 0, until: 0 }); return; } // sleep timer reached
+    if (plays.current < prefs.repeat) { afterGap(() => audio.seekPlay(0)); return; }
+    if (mode === "learn") { setWaiting(true); return; } // learn mode waits for "Continue"
+    afterGap(advance);
+  };
+  const toggle = () => {
+    if (turn) { clearGap(); return; } // stop the pause after a verse
+    if (playing) { audio.pause(); return; }
+    if (mine && !audio.ended && audio.positionMs > 0 && audio.durationMs > 0 && engine.url === items[idx]?.url) { audio.resume(); return; }
+    playAt(idx);
+  };
   const toggleMark = (k: string) => writeJSON("tf:bookmarks", marks.includes(k) ? marks.filter((x) => x !== k) : [...marks, k]);
   const saveNote = (k: string, text: string) => { const n = { ...notes }; if (text.trim()) n[k] = { text: text.trim(), at: Date.now() }; else delete n[k]; setNotes(n); writeJSON("tf:notes", n); };
-  const setSpeed = (n: number) => { setPref({ speed: n }); audio.setRate(n); };
+  const setSpeed = (n: number) => { setPref({ speed: n }); if (mine) audio.setRate(n); };
   const setSleepMode = (n: number) => setSleep({ mode: n, until: n > 0 ? Date.now() + n * 60000 : 0 });
-  const activeWord = audio.playing ? wordAt(verse, audio.positionMs) : null;
+  const activeWord = playing && timingsOk ? wordAt(verse, positionMs) : null;
   const sleepMin = sleep.mode > 0 ? Math.max(1, Math.ceil((sleep.until - Date.now()) / 60000)) : sleep.mode === -1 ? 0 : null;
+  const seekTo = (ms: number) => { if (!mine) return; if (audio.playing) audio.seekPlay(ms); else audio.seek(ms); };
+  const pickReciter = (r: (typeof reciters)[number]) => {
+    if (!pro && !isFreeReciter(r)) { setSettings(false); setTimeout(() => openPro("reciters"), 350); return; }
+    setReciter(r);
+  };
 
   // everything a verse card can do, behind stable functions so the quiet cards do not redraw while a verse plays
   const impl = {
     goTo: (i: number) => goTo(i, true),
-    playVerse: (i: number) => (i === idx && audio.playing ? audio.pause() : i === idx && audio.positionMs > 0 ? audio.seekPlay(0) : playAt(i)),
+    playVerse: (i: number) => (i === idx && playing ? audio.pause() : playAt(i)),
     toggleMark,
     openNote: (k: string | null) => setNoteOpen(k),
     saveNote,
@@ -185,37 +298,46 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
       if (idx < verses.length - 1) goTo(idx + 1, false);
     },
     tafsir: (v: Verse) => setTafsirFor(v),
-    shams: (v: Verse) => { audio.stop(); router.push(`/shams/${chapter.id}?v=${v.verse_number}` as Href); },
+    shams: (v: Verse) => { if (mine) audio.stop(); router.push(`/shams/${chapter.id}?v=${v.verse_number}` as Href); },
     share: (v: Verse) => {
       const title = `${chapter.name_simple} ${v.verse_key}`;
       const url = `${SITE}/${lang}/surah/${chapter.id}?v=${v.verse_number}`;
       void Share.share(Platform.OS === "ios" ? { title, message: `${v.translation}\n— ${title}`, url } : { title, message: `${v.translation}\n— ${title}\n${url}` }).catch(() => undefined);
     },
+    // copy (website copyVerse): the Arabic, the translation and the reference; the share sheet carries "Copy"
+    copy: (v: Verse) => {
+      const message = [v.text_uthmani, v.translation, `— ${chapter.name_simple} ${v.verse_key}`].filter(Boolean).join("\n\n");
+      void Share.share({ message }).catch(() => undefined);
+    },
     // tap a word: hear it on its own (Quran.com word recordings, like the website)
     playWord: (key: string, pos: number) => {
       const [s, a] = key.split(":").map((n) => n.padStart(3, "0"));
-      audio.pause();
+      if (mine) audio.pause();
+      clearGap();
       setWordKey(`${key}:${pos}`);
       clip.play(`https://audio.qurancdn.com/wbw/${s}_${a}_${String(pos).padStart(3, "0")}.mp3`);
     },
+    cont: () => advance(),
+    replay: () => playAt(idx),
+    pause: () => { clearGap(); if (mine) audio.pause(); },
   } satisfies CardHandlers;
-  const live = useRef(impl);
-  live.current = impl;
-  const handlers = useMemo<CardHandlers>(() => {
-    const keys = Object.keys(live.current) as (keyof CardHandlers)[];
-    return Object.fromEntries(keys.map((k) => [k, (...args: unknown[]) => (live.current[k] as (...a: unknown[]) => void)(...args)])) as CardHandlers;
+  const liveImpl = useRef(impl);
+  liveImpl.current = impl;
+  const cardHandlers = useMemo<CardHandlers>(() => {
+    const keys = Object.keys(liveImpl.current) as (keyof CardHandlers)[];
+    return Object.fromEntries(keys.map((k) => [k, (...args: unknown[]) => (liveImpl.current[k] as (...a: unknown[]) => void)(...args)])) as CardHandlers;
   }, []);
 
-  const activeState = useMemo<CardState>(() => ({ hide, practiceHide, revealed, seed, testPos, testMarks, activeWord, playing: audio.playing, wordOn: wordKey }),
-    [hide, practiceHide, revealed, seed, testPos, testMarks, activeWord, audio.playing, wordKey]);
+  const activeState = useMemo<CardState>(() => ({ hide, practiceHide, revealed, seed, testPos, testMarks, activeWord, playing, wordOn: wordKey, waiting: waiting && mode === "learn" }),
+    [hide, practiceHide, revealed, seed, testPos, testMarks, activeWord, playing, wordKey, waiting, mode]);
   const idleState = useMemo<CardState>(() => (drill ? { ...IDLE, hide: drill, seed } : IDLE), [drill, seed]);
   // the store hands out a fresh array on every read: key the bookmarks by their content
   const marksKey = marks.join("|");
   const markSet = useMemo(() => new Set(marksKey ? marksKey.split("|") : []), [marksKey]);
   const renderItem = useCallback(({ item: v, index: i }: { item: Verse; index: number }) => (
     <VerseCard v={v} i={i} active={i === idx} marked={markSet.has(v.verse_key)} note={notes[v.verse_key]?.text} noteOpen={noteOpen === v.verse_key}
-      translit={prefs.translit} translation={prefs.translation} words={prefs.words} scale={prefs.size} st={i === idx ? activeState : idleState} h={handlers} />
-  ), [idx, markSet, notes, noteOpen, prefs.translit, prefs.translation, prefs.words, prefs.size, activeState, idleState, handlers]);
+      translit={showTranslit} translation={prefs.translation} words={showWords} scale={prefs.size} kids={kids} st={i === idx ? activeState : idleState} h={cardHandlers} />
+  ), [idx, markSet, notes, noteOpen, showTranslit, prefs.translation, showWords, prefs.size, kids, activeState, idleState, cardHandlers]);
 
   // offline (Pro): every verse file of this surah for this reciter
   const saveOffline = async () => {
@@ -325,14 +447,14 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
         </View>
       ) : null}
 
-      <PlayerDock bottom={dockBottom} arabicName={chapter.name_arabic} verse={verse.verse_number} total={verses.length} playing={audio.playing}
-        positionMs={audio.positionMs} durationMs={audio.durationMs} sleepMin={sleepMin} reduce={reduce}
+      <PlayerDock bottom={dockBottom} arabicName={chapter.name_arabic} verse={verse.verse_number} total={verses.length} playing={playing}
+        positionMs={positionMs} durationMs={durationMs} sleepMin={sleepMin} reduce={reduce} turn={turn} onSkipTurn={advance}
         onToggle={toggle} onPrev={() => goTo(Math.max(0, idx - 1), false)} onNext={() => goTo(Math.min(verses.length - 1, idx + 1), false)}
-        onSeek={(ms) => (audio.playing ? audio.seekPlay(ms) : audio.seek(ms))} onJump={() => setJumpOpen(true)} onOpen={() => setNowOpen(true)} />
+        onSeek={seekTo} onJump={() => setJumpOpen(true)} onOpen={() => setNowOpen(true)} />
 
-      <ReaderNowPlaying open={nowOpen} onClose={() => setNowOpen(false)} chapter={chapter} verse={verse} total={verses.length} reciterName={reciterName(reciter, lang)} timed={verse.segments.length > 0}
-        playing={audio.playing} positionMs={audio.positionMs} durationMs={audio.durationMs} reduce={reduce} speed={prefs.speed} repeat={prefs.repeat} sleepMode={sleep.mode} sleepMin={sleepMin}
-        onToggle={toggle} onPrev={() => playAt(Math.max(0, idx - 1))} onNext={() => playAt(Math.min(verses.length - 1, idx + 1))} onSeek={(ms) => (audio.playing ? audio.seekPlay(ms) : audio.seek(ms))}
+      <ReaderNowPlaying open={nowOpen} onClose={() => setNowOpen(false)} chapter={chapter} verse={verse} total={verses.length} reciterName={reciterName(reciter, lang)} timed={verse.segments.length > 0 && timingsOk}
+        playing={playing} positionMs={positionMs} durationMs={durationMs} reduce={reduce} speed={prefs.speed} repeat={prefs.repeat} sleepMode={sleep.mode} sleepMin={sleepMin}
+        onToggle={toggle} onPrev={() => playAt(Math.max(0, idx - 1))} onNext={() => playAt(Math.min(verses.length - 1, idx + 1))} onSeek={seekTo}
         onSpeed={setSpeed} onRepeat={(n) => setPref({ repeat: n })} onSleep={setSleepMode} />
 
       {/* verse picker of the dock */}
@@ -385,11 +507,11 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
           <ScrollView contentContainerStyle={{ padding: 16, gap: 22, paddingBottom: 40 }}>
             <Setting label={w("reciter")}>
               <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, overflow: "hidden", backgroundColor: t.surface }}>
-                {RECITERS.map((r, i) => {
+                {reciters.map((r, i) => {
                   const locked = !pro && !isFreeReciter(r);
-                  const on = r.slug === reciter.slug;
+                  const on = r.folder === reciter.folder;
                   return (
-                    <Pressable key={r.slug} onPress={() => (locked ? openPro("reciters") : setReciter(r))} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${r.name}${locked ? ", Pro" : ""}`}
+                    <Pressable key={r.folder} onPress={() => pickReciter(r)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${r.name}${locked ? ", Pro" : ""}`}
                       style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 14, paddingVertical: 13, borderTopWidth: i ? 1 : 0, borderTopColor: t.line, backgroundColor: on ? t.accentSoft : t.surface }}>
                       <Text style={{ fontFamily: on ? FONT.bold : FONT.regular, fontSize: 15, color: t.ink, flex: 1 }}>{reciterName(r, lang)}</Text>
                       {locked ? <ProBadge /> : on ? <Icon name="check" color={t.accent} size={18} /> : null}
@@ -408,26 +530,52 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
                 ))}
               </View>
             </Setting>
+            {kids ? null : (
+              <Setting label={w("mode")}>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                  {([["learn", w("modeLearn")], ["continuous", w("modeContinuous")]] as const).map(([k, l]) => <Chip key={k} label={l} selected={mode === k} onPress={() => { setPref({ mode: k }); if (k === "continuous" && waiting) setWaiting(false); }} />)}
+                </View>
+              </Setting>
+            )}
             <Setting label={w("repeat")}>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>{[1, 2, 3, 5, 10].map((n) => <Chip key={n} label={`×${n}`} selected={prefs.repeat === n} onPress={() => setPref({ repeat: n })} />)}</View>
             </Setting>
             <Setting label={w("speed")}>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>{[0.5, 0.75, 1, 1.25, 1.5].map((n) => <Chip key={n} label={`${n}×`} selected={prefs.speed === n} onPress={() => setSpeed(n)} />)}</View>
             </Setting>
+            {kids ? null : (
+              <Setting label={w("gap")}>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                  {[0, 2, 5, 10, -1].map((n) => <Chip key={n} label={n === 0 ? w("gapOff") : n === -1 ? w("gapVerse") : `${n} s`} selected={gap === n} onPress={() => setGap(n)} />)}
+                </View>
+                <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: t.muted }}>{w("gapHint")}</Text>
+              </Setting>
+            )}
             <Setting label={w("sleep")}>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
                 {[0, 15, 30, 60, -1].map((n) => <Chip key={n} label={n === 0 ? w("sleepOff") : n === -1 ? w("sleepEnd") : `${n} min`} selected={sleep.mode === n} onPress={() => setSleepMode(n)} />)}
               </View>
               {sleep.mode > 0 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{w("sleepLeft", { m: sleepMin ?? 1 })}</Text> : null}
             </Setting>
-            <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
+            {kids ? null : (
+              <Setting label={w("loop")}>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: 10, rowGap: 8 }}>
+                  <Switch value={loop.on} onValueChange={(on) => setLoop((l) => ({ ...l, on }))} trackColor={{ true: t.accent }} accessibilityLabel={w("loop")} />
+                  <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, opacity: loop.on ? 1 : 0.5 }}>{w("loopFrom")}</Text>
+                  <Stepper value={loop.from} min={1} max={loop.to} disabled={!loop.on} label={`${w("loop")} ${w("loopFrom")}`} onChange={(n) => setLoop((l) => ({ ...l, from: n }))} />
+                  <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, opacity: loop.on ? 1 : 0.5 }}>{w("loopTo")}</Text>
+                  <Stepper value={loop.to} min={loop.from} max={verses.length} disabled={!loop.on} label={`${w("loop")} ${w("loopTo")}`} onChange={(n) => setLoop((l) => ({ ...l, to: n }))} />
+                </View>
+              </Setting>
+            )}
+            {kids ? null : <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
               {([["translit", w("transliteration")], ["translation", w("translation")], ["words", w("wordByWord")]] as [keyof Prefs, string][]).map(([k, label], i) => (
                 <View key={k} style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 14, paddingVertical: 10, borderTopWidth: i ? 1 : 0, borderTopColor: t.line }}>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.ink, flex: 1 }}>{label}</Text>
                   <Switch value={!!prefs[k]} onValueChange={(on) => setPref({ [k]: on } as Partial<Prefs>)} trackColor={{ true: t.accent }} accessibilityLabel={label} />
                 </View>
               ))}
-            </View>
+            </View>}
             <Setting label={w("offline")}>
               {offline.state === "saving" ? (
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: verses.length, now: offline.done }}>
@@ -466,6 +614,27 @@ const go = (id: number) => router.replace(`/quran/${id}` as Href);
 function Setting({ label, children }: { label: string; children: React.ReactNode }) {
   const t = useTheme();
   return <View style={{ gap: 8 }}><Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.5, textTransform: "uppercase", color: t.muted }}>{label}</Text>{children}</View>;
+}
+
+// a number with minus / plus (loop range); hold to move by ten
+function Stepper({ value, min, max, onChange, label, disabled }: { value: number; min: number; max: number; onChange: (n: number) => void; label: string; disabled?: boolean }) {
+  const t = useTheme();
+  const set = (n: number) => onChange(Math.max(min, Math.min(max, n)));
+  const btn = (txt: string, d: number) => (
+    <Pressable onPress={() => set(value + d)} onLongPress={() => set(value + d * 10)} disabled={disabled || (d < 0 ? value <= min : value >= max)} hitSlop={4} accessibilityElementsHidden importantForAccessibility="no"
+      style={({ pressed }) => ({ width: 34, height: 36, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? t.bg : "transparent", opacity: (d < 0 ? value <= min : value >= max) ? 0.35 : 1 })}>
+      <Text style={{ fontFamily: FONT.bold, fontSize: 18, color: t.ink }}>{txt}</Text>
+    </Pressable>
+  );
+  return (
+    <View accessible accessibilityRole="adjustable" accessibilityLabel={label} accessibilityValue={{ min, max, now: value }} accessibilityState={{ disabled: !!disabled }}
+      accessibilityActions={[{ name: "increment" }, { name: "decrement" }]} onAccessibilityAction={(e) => set(value + (e.nativeEvent.actionName === "increment" ? 1 : -1))}
+      style={{ flexDirection: "row", direction: "ltr", alignItems: "center", borderRadius: R.pill, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, opacity: disabled ? 0.5 : 1 }}>
+      {btn("−", -1)}
+      <Text style={{ minWidth: 30, textAlign: "center", fontFamily: FONT.semibold, fontSize: 14, color: t.ink, fontVariant: ["tabular-nums"] }}>{value}</Text>
+      {btn("+", 1)}
+    </View>
+  );
 }
 
 function CircleButton({ icon, label, onPress, disabled }: { icon: "chevronLeft" | "chevronRight"; label: string; onPress: () => void; disabled?: boolean }) {

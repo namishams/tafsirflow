@@ -3,14 +3,14 @@ import { currentUser } from "@/lib/auth";
 import { pool } from "@/lib/db";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { DUA_PRODUCTS, IOS_BUNDLE_ID, PREMIUM_PRODUCT, PRO_SUBSCRIPTION, verifyAppleTransaction } from "@/lib/appleIap";
-import { addDuaCredits, duaCredits } from "@/lib/aiCredits";
+import { NAME_PRODUCTS, addDuaCredits, addNameCredits, duaCredits, nameCredits } from "@/lib/aiCredits";
 
 export const dynamic = "force-dynamic";
 
 // Links a purchase from the iOS app to the signed-in account, so it works on every device:
 // - Pro (monthly subscription): users.plan = 'premium' until the transaction's expiry (renewals arrive here again and
 //   through the App Store Server Notifications, see ./notifications)
-// - personal duas (consumables): each transaction adds its credits exactly once
+// - personal duas and personal name reports (consumables): each transaction adds its credits exactly once
 // - the first one-time Premium: lasting Premium
 // Test purchases (Sandbox, TestFlight, App Review) only count for the admin or with IAP_ALLOW_SANDBOX=1.
 export async function POST(req: NextRequest) {
@@ -23,21 +23,23 @@ export async function POST(req: NextRequest) {
   const b = (await req.json().catch(() => ({}))) as { jws?: unknown };
   if (typeof b.jws !== "string" || b.jws.length > 20000) return json({ error: "input" }, 400);
   const tx = verifyAppleTransaction(b.jws);
-  const known = tx && (tx.productId === PREMIUM_PRODUCT || tx.productId === PRO_SUBSCRIPTION || tx.productId in DUA_PRODUCTS);
+  const known = tx && (tx.productId === PREMIUM_PRODUCT || tx.productId === PRO_SUBSCRIPTION || tx.productId in DUA_PRODUCTS || tx.productId in NAME_PRODUCTS);
   if (!tx || tx.bundleId !== IOS_BUNDLE_ID || !known) return json({ error: "invalid" }, 400);
   if (tx.revocationDate) return json({ error: "revoked" }, 400);
   if (tx.environment !== "Production" && me.role !== "admin" && process.env.IAP_ALLOW_SANDBOX !== "1") return json({ premium: me.plan === "premium", sandbox: true });
 
-  // personal duas: a transaction id is credited once, whoever sends it
-  if (tx.productId in DUA_PRODUCTS) {
+  // personal duas and name reports: a transaction id is credited once, whoever sends it
+  if (tx.productId in DUA_PRODUCTS || tx.productId in NAME_PRODUCTS) {
+    const names = tx.productId in NAME_PRODUCTS;
+    const n = names ? NAME_PRODUCTS[tx.productId] : DUA_PRODUCTS[tx.productId];
     const c = await p.connect();
     try {
       await c.query("BEGIN");
       const r = await c.query(
         `INSERT INTO iap_consumables (transaction_id, user_id, product_id, credits, environment) VALUES ($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING RETURNING transaction_id`,
-        [tx.transactionId, me.id, tx.productId, DUA_PRODUCTS[tx.productId], tx.environment],
+        [tx.transactionId, me.id, tx.productId, n, tx.environment],
       );
-      if (r.rowCount) await addDuaCredits(c, me.id, DUA_PRODUCTS[tx.productId]);
+      if (r.rowCount) await (names ? addNameCredits(c, me.id, n) : addDuaCredits(c, me.id, n));
       await c.query("COMMIT");
     } catch {
       await c.query("ROLLBACK").catch(() => undefined);
@@ -45,8 +47,8 @@ export async function POST(req: NextRequest) {
     } finally {
       c.release();
     }
-    const cr = await duaCredits(me.id, me.plan === "premium");
-    return json({ premium: me.plan === "premium", dua: cr.dua });
+    const [cr, nm] = await Promise.all([duaCredits(me.id, me.plan === "premium"), nameCredits(me.id)]);
+    return json({ premium: me.plan === "premium", dua: cr.dua, names: nm });
   }
 
   // a subscription belongs to the account it was first confirmed for (no sharing one Apple ID across accounts)

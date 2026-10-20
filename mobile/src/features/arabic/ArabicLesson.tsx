@@ -75,9 +75,9 @@ function LessonProWall({ lesson }: { lesson: Lesson }) {
         <CloseButton />
         <View style={{ alignItems: "center", marginTop: 24 }}>
           <PracticeStarNum n={LESSONS.indexOf(lesson) + 1} size={58} />
-          <Text style={{ marginTop: 14, fontFamily: FONT.bold, fontSize: 12, letterSpacing: 1.9, textTransform: "uppercase", color: t.gold }}>{unit ? `${LESSON_T[lang].unitWord} ${unit.n} · ${unit.title[lang]}` : ""}</Text>
-          <Text style={{ marginTop: 8, fontFamily: FONT.display, fontSize: 30, lineHeight: 35, color: t.ink, textAlign: "center" }}>{lesson.title[lang]}</Text>
-          <Text style={{ marginTop: 10, fontFamily: FONT.regular, fontSize: 16, lineHeight: 25, color: t.muted, textAlign: "center" }}>{lesson.goal[lang]}</Text>
+          <Text style={{ marginTop: 14, fontFamily: FONT.bold, fontSize: 12, letterSpacing: lang === "ar" ? 0 : 1.9, textTransform: "uppercase", color: t.gold }}>{unit ? `${LESSON_T[lang].unitWord} ${unit.n} · ${unit.title[lang] ?? unit.title.en}` : ""}</Text>
+          <Text style={{ marginTop: 8, fontFamily: FONT.display, fontSize: 30, lineHeight: 35, color: t.ink, textAlign: "center" }}>{lesson.title[lang] ?? lesson.title.en}</Text>
+          <Text style={{ marginTop: 10, fontFamily: FONT.regular, fontSize: 16, lineHeight: 25, color: t.muted, textAlign: "center" }}>{lesson.goal[lang] ?? lesson.goal.en}</Text>
         </View>
         <ProCard feature="arabic" title={ct("lessonLocked")} text={ct("arabicProText", { n: FREE.arabicLessons, total: LESSONS.length })} style={{ marginTop: 28 }} />
       </ScrollView>
