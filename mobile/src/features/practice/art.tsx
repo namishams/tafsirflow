@@ -11,6 +11,7 @@ import { Icon } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
 import { TILES } from "@/web/tiles";
 import { archPath, starPath } from "./web/practiceArt";
+import { goBack } from "@/components/page";
 
 export { archPath, starPath };
 
@@ -277,7 +278,7 @@ export function StageButton({ title, onPress, gold = false, disabled, icon }: { 
 /** back arrow at the top of a pushed screen's hero */
 export function HeroBack() {
   return (
-    <Pressable onPress={() => router.back()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
+    <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
       <Icon name="chevronLeft" color="#ffffff" size={24} />
     </Pressable>
   );

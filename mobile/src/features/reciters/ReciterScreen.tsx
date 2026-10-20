@@ -18,6 +18,7 @@ import { useReciter } from "@/features/quran/reciter";
 import { LBL } from "./texts";
 import { Markdown } from "./Markdown";
 import { CalligraphyBackdrop, QPageWash, QTile, bioInitials, countryName } from "./common";
+import { goBack } from "@/components/page";
 
 // /reciters/[slug] – the website's reciter biography: hero with country, life and style, "listen in the player",
 // the biography, "known for" and the way to recite yourself, previous / next reciter. Free to read.
@@ -64,7 +65,7 @@ export default function ReciterScreen() {
         <Stage hairlines={false}>
           <CalligraphyBackdrop text={r.arabic} />
           <View style={{ paddingTop: insets.top + 6, paddingHorizontal: 20, paddingBottom: 52 }}>
-            <Pressable onPress={() => (router.canGoBack() ? router.back() : router.replace("/reciters" as Href))} accessibilityRole="link" accessibilityLabel={L.all} hitSlop={10}
+            <Pressable onPress={() => (router.canGoBack() ? goBack() : router.replace("/reciters" as Href))} accessibilityRole="link" accessibilityLabel={L.all} hitSlop={10}
               style={{ flexDirection: "row", alignItems: "center", gap: 4, alignSelf: "flex-start", paddingVertical: 8 }}>
               <Icon name="chevronLeft" color="rgba(255,255,255,0.6)" size={16} />
               <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: "rgba(255,255,255,0.6)" }}>{L.all}</Text>

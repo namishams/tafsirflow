@@ -1,5 +1,6 @@
 import { Platform } from "react-native";
 import { monthOf, fmtTime, spotToday, type Prayer, type PrayerSettings, type Spot } from "@/web/prayer";
+import { PRAYERS as SALAH_PRAYERS } from "@/web/salah";
 import { readJSON } from "@/lib/store";
 import de from "@/web/messages/de.json";
 import en from "@/web/messages/en.json";
@@ -13,6 +14,21 @@ export const ALERT_PRAYERS = ["fajr", "dhuhr", "asr", "maghrib", "isha"] as cons
 export type AlertPrayer = (typeof ALERT_PRAYERS)[number];
 export type Alerts = Partial<Record<AlertPrayer, boolean>>;
 const TAG = "qmc-prayer";
+
+// The answers of the guided prayer setup (local only). combine = Ja'fari practice of praying Dhuhr with Asr and
+// Maghrib with Isha: then there are three reminders (Fajr, Dhuhr, Maghrib), the latter two naming both prayers.
+export const SETUP_KEY = "qmc.prayerSetup";
+export type Tradition = "sunni" | "shia" | "unsure";
+export type PrayerSetup = { tradition?: Tradition; combine?: boolean; minutesBefore?: 0 | 5 | 10 | 15; sound?: "adhan" | "soft"; done?: boolean; declined?: boolean; at?: number };
+export const COMBINED_PRAYERS = ["fajr", "dhuhr", "maghrib"] as const satisfies readonly AlertPrayer[];
+/** the prayers a reminder at p stands for (Dhuhr → Dhuhr and Asr when combined) */
+export const remindsOf = (p: AlertPrayer, combine: boolean): AlertPrayer[] => (combine && p === "dhuhr" ? ["dhuhr", "asr"] : combine && p === "maghrib" ? ["maghrib", "isha"] : [p]);
+/** the prayers that can have a reminder in this mode */
+export const alertPrayers = (combine: boolean): readonly AlertPrayer[] => (combine ? COMBINED_PRAYERS : ALERT_PRAYERS);
+/** prayer names as the prayer trainer writes them (Fadschr, Dhuhr, Asr …), for "Dhuhr und Asr" */
+export const prayerName = (p: AlertPrayer, lang: "de" | "en") => SALAH_PRAYERS.find((x) => x.id === p)?.name[lang] ?? p;
+const AND = { de: "und", en: "and" };
+const SOON = { de: "In {n} Minuten:", en: "In {n} minutes:" };
 const CHANNEL = "prayer-times";
 const DAYS = 7;
 
@@ -62,7 +78,10 @@ export function reschedulePrayerAlerts(lang: "de" | "en"): Promise<number> {
     if (!n) return 0;
     await cancelOurs(n);
     const alerts = readJSON<Alerts>(ALERTS_KEY, {});
-    const chosen = ALERT_PRAYERS.filter((p) => alerts[p]);
+    const setup = readJSON<PrayerSetup>(SETUP_KEY, {});
+    const combine = !!setup.combine;
+    const before = Math.max(0, Math.min(60, Number(setup.minutesBefore ?? 0))) * 60000;
+    const chosen = alertPrayers(combine).filter((p) => alerts[p]);
     if (!chosen.length) return 0;
     const perm = await n.getPermissionsAsync().catch(() => null);
     if (!perm?.granted && perm?.ios?.status !== n.IosAuthorizationStatus.PROVISIONAL) return 0;
@@ -77,12 +96,17 @@ export function reschedulePrayerAlerts(lang: "de" | "en"): Promise<number> {
     for (const day of upcomingTimes(main, settings)) {
       for (const p of chosen) {
         const at = day.times[p];
-        if (at.getTime() <= now + 30000 || at.getTime() > until) continue;
+        const fire = at.getTime() - before;
+        if (fire <= now + 30000 || at.getTime() > until) continue;
         const time = fmtTime(at, main.tz, lang);
+        const group = remindsOf(p, combine);
+        // one prayer: the website's own words ("Zeit für Dhuhr – Berlin"); combined: "Zeit für Dhuhr und Asr – Berlin"
+        const name = group.length > 1 ? group.map((x) => prayerName(x, lang)).join(` ${AND[lang]} `) : tr[p];
+        const lead = before ? SOON[lang].replace("{n}", String(before / 60000)) : tr.timeFor;
         await n.scheduleNotificationAsync({
           identifier: `${TAG}-${p}-${at.getTime()}`,
-          content: { title: `${tr[p]} · ${time}`, body: `${tr.timeFor} ${tr[p]} – ${place}`, sound: "default", data: { tag: TAG, prayer: p, at: at.getTime() } },
-          trigger: { type: n.SchedulableTriggerInputTypes.DATE, date: at, ...(Platform.OS === "android" ? { channelId: CHANNEL } : {}) },
+          content: { title: `${name} · ${time}`, body: `${lead} ${name} – ${place}`, sound: "default", data: { tag: TAG, prayer: p, at: at.getTime() } },
+          trigger: { type: n.SchedulableTriggerInputTypes.DATE, date: new Date(fire), ...(Platform.OS === "android" ? { channelId: CHANNEL } : {}) },
         }).then(() => { count++; }).catch(() => undefined);
       }
     }
@@ -91,4 +115,11 @@ export function reschedulePrayerAlerts(lang: "de" | "en"): Promise<number> {
   const p = queue.then(run, run);
   queue = p.catch(() => undefined);
   return p;
+}
+
+/** the adhan recording that fits the tradition (ids as in /api/adhan: "tehran" for Shia, Makkah/Madinah for Sunni) */
+export function adhanForTradition<F extends { id: string }>(tradition: Tradition | undefined, files: F[]): F | null {
+  if (!tradition || !files.length) return null;
+  if (tradition === "shia") return files.find((f) => /tehran/i.test(f.id)) ?? null;
+  return files.find((f) => /makkah|madinah/i.test(f.id)) ?? files.find((f) => !/tehran/i.test(f.id)) ?? null;
 }

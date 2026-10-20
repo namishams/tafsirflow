@@ -25,6 +25,9 @@ import { tile, routeOf } from "@/lib/features";
 import { VerseOfTheDay } from "@/features/today/VerseOfTheDay";
 import { TODAY_VERSE, TODAY_WORD } from "@/features/today/arabic";
 import { ProPromo } from "@/features/learn/ProPromo";
+import { CoachCard, MapCard, RewardsCard, WeekCard } from "@/features/progress";
+import { PrayerSetupCard } from "@/features/practice";
+import { Onboarding } from "@/features/extra/Onboarding";
 
 // "Today" (website TodayDashboard.tsx): the daily hub – the greeting stage with the ring of today's tasks and the next
 // prayer, one big button for today's guided session, the checklist that ticks itself off, verse of the day, paths,
@@ -122,6 +125,8 @@ export default function Today() {
         </Stage>
 
         <View style={{ paddingHorizontal: 16, gap: 28, marginTop: 24 }}>
+          <Onboarding />
+          <RewardsCard />
           {/* checklist */}
           <View>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 9, marginBottom: 12 }}><SmallStar size={15} color={t.gold} /><Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 23, color: t.ink }}>{w("tasksTitle")}</Text></View>
@@ -144,7 +149,11 @@ export default function Today() {
             </View>
           </View>
 
+          <CoachCard />
           <VerseOfTheDay />
+          <PrayerSetupCard />
+          <WeekCard />
+          <MapCard />
 
           {/* learning paths */}
           <Tile style={{ padding: 18 }}>

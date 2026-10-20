@@ -10,6 +10,7 @@ import { ProTeaser } from "@/features/extra/widgets/ProTeaser";
 import { SiteFooter } from "@/features/extra/widgets/SiteFooter";
 import { WhyQuran } from "@/features/extra/widgets/WhyQuran";
 import { useTheme } from "@/lib/theme";
+import { goBack } from "@/components/page";
 
 // The website's home page (quranmasterclass.com) as one native screen: everything the landing page explains, in the
 // same order. The Today tab stays the daily hub; this is the "what is Quran Masterclass" page (Discover, onboarding).
@@ -42,7 +43,7 @@ export default function Welcome() {
         <SiteFooter />
       </ScrollView>
       {router.canGoBack() ? (
-        <Pressable onPress={() => router.back()} accessibilityRole="button" accessibilityLabel={x.back} hitSlop={10}
+        <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel={x.back} hitSlop={10}
           style={{ position: "absolute", top: insets.top + 6, left: 12, width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(5,28,21,0.55)" }}>
           <Icon name="chevronLeft" color="#ffffff" size={22} />
         </Pressable>

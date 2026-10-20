@@ -69,7 +69,7 @@ export function Sticker({ def, size = 96, locked = false, pct = 0, style }: { de
       <Svg width={size} height={size} viewBox="0 0 100 100" style={[StyleSheet.absoluteFill, locked && { opacity: 0.3 }]}>
         <Defs>
           <RadialGradient id="e" cx="35%" cy="30%" r="85%"><Stop offset="0" stopColor={a} /><Stop offset="1" stopColor={b} /></RadialGradient>
-          <LinearGradient id="m" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor={m[0]} /><Stop offset=".45" stopColor={m[1]} /><Stop offset=".7" stopColor={m[2]} /><Stop offset="1" stopColor={m[3]} /></LinearGradient>
+          <LinearGradient id="m" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor={m[0]} /><Stop offset="0.45" stopColor={m[1]} /><Stop offset="0.7" stopColor={m[2]} /><Stop offset="1" stopColor={m[3]} /></LinearGradient>
         </Defs>
         <Path d={starPolygon(50, 50, 49, 41, 8)} fill="url(#m)" />
         <Path d={starPolygon(50, 50, 46, 39, 8)} transform="rotate(22.5 50 50)" fill="url(#m)" opacity={0.8} />

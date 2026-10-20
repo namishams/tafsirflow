@@ -89,13 +89,7 @@ const de = {
     body: "Die Shams-Methode für alle 114 Suren, alle Rezitatoren, die vollständigen Kurse und der Assistent. Koran, Übersetzung und Tafsir bleiben für alle frei.",
     cta: "Pro ansehen",
   },
-  welcome: {
-    title: "Quran Masterclass entdecken",
-    faq: "Häufige Fragen",
-    allSurahs: "Alle 114 Suren öffnen",
-  },
-  featured: { loading: "Wird geladen …" },
-  footer: { rights: "© {year} Quran Masterclass" },
+  welcome: { title: "Quran Masterclass entdecken" },
 };
 
 const en: typeof de = {
@@ -184,13 +178,7 @@ const en: typeof de = {
     body: "The Shams Method for all 114 surahs, every reciter, the complete courses and the assistant. The Quran, translation and tafsir stay free for everyone.",
     cta: "See Pro",
   },
-  welcome: {
-    title: "Discover Quran Masterclass",
-    faq: "Frequently asked questions",
-    allSurahs: "Open all 114 surahs",
-  },
-  featured: { loading: "Loading …" },
-  footer: { rights: "© {year} Quran Masterclass" },
+  welcome: { title: "Discover Quran Masterclass" },
 };
 
 export const EXTRA = { de, en };

@@ -12,13 +12,14 @@ import { useWebT } from "@/i18n/web";
 import { CALLIG_FONT, FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
 import { Arcade, GoldCard, SmallStar, Stage, TextLink } from "@/components/brand";
 import { Icon } from "@/components/icons";
-import { DarkChip, HeroBack, PageScroll, PracticeWindow, go, starPath, useGold } from "../art";
+import { DarkChip, HeroBack, LightChip, PageScroll, PracticeWindow, go, starPath, useGold } from "../art";
 import { CardTitle, CheckRow, SelectField, Stepper, SwitchRow } from "../ui";
 import { useSimpleAudio } from "../audio";
 import { useTx } from "../text";
 import { AR_NAME } from "../web/prayerBoard";
 import { usePrayerPlace } from "./place";
-import { ALERTS_KEY, ALERT_PRAYERS, alertsAvailable, ensurePermission, reschedulePrayerAlerts, type AlertPrayer, type Alerts } from "./alerts";
+import { ALERTS_KEY, SETUP_KEY, adhanForTradition, alertPrayers, alertsAvailable, ensurePermission, prayerName, remindsOf, reschedulePrayerAlerts, type AlertPrayer, type Alerts, type PrayerSetup } from "./alerts";
+import { PrayerSetupCard } from "./setup/PrayerSetupCard";
 import { Degrees, QiblaDial, turnBy, useHeading } from "./Compass";
 
 type T = (key: string, params?: Record<string, string | number>) => string;
@@ -44,7 +45,11 @@ export default function PrayerBoard() {
   const [playing, setPlaying] = useState<AdhanFile | null>(null);
   const audio = useSimpleAudio();
   useEffect(() => {
-    api<{ files?: AdhanFile[] }>("/api/adhan").then((d) => { const f = d.files ?? []; setFiles(f); setPlaying(pickAdhan(voice, f)); }).catch(() => undefined);
+    api<{ files?: AdhanFile[] }>("/api/adhan").then((d) => {
+      const f = d.files ?? []; setFiles(f);
+      // no voice chosen yet: the recording that fits the tradition from the setup (e.g. "tehran" for Shia)
+      setPlaying((voice === "random" ? adhanForTradition(setup.tradition, f) : null) ?? pickAdhan(voice, f));
+    }).catch(() => undefined);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const urlOf = (f: AdhanFile) => `${SITE}${adhanUrl(f.id)}`;
 
@@ -53,10 +58,13 @@ export default function PrayerBoard() {
 
   // reminders: chosen prayers (local only), planned again whenever place, settings or the choice change
   const alerts = useStored<Alerts>(ALERTS_KEY, {});
+  const setup = useStored<PrayerSetup>(SETUP_KEY, {});
+  const combine = !!setup.combine;
+  const saveSetup = (p: Partial<PrayerSetup>) => writeJSON(SETUP_KEY, { ...setup, ...p }, true);
   const [alertMsg, setAlertMsg] = useState<"" | "denied" | "unavailable">("");
   const [canAlert, setCanAlert] = useState(true);
   useEffect(() => { alertsAvailable().then(setCanAlert).catch(() => setCanAlert(false)); }, []);
-  const planKey = `${main.id}|${main.lat},${main.lon}|${JSON.stringify(st)}|${JSON.stringify(alerts)}|${lang}`;
+  const planKey = `${main.id}|${main.lat},${main.lon}|${JSON.stringify(st)}|${JSON.stringify(alerts)}|${combine}|${setup.minutesBefore ?? 0}|${lang}`;
   useEffect(() => {
     const id = setTimeout(() => { void reschedulePrayerAlerts(lang); }, 500);
     return () => clearTimeout(id);
@@ -80,7 +88,7 @@ export default function PrayerBoard() {
       const at = day.times[p].getTime(), key = `${main.id}-${p}-${day.times[p].toDateString()}`;
       if (now.getTime() >= at && now.getTime() - at < 60_000 && !fired.current.has(key)) {
         fired.current.add(key);
-        const f = pickAdhan(voice, files);
+        const f = (voice === "random" ? adhanForTradition(setup.tradition, files) : null) ?? pickAdhan(voice, files);
         if (f) { setPlaying(f); audio.play(urlOf(f)); }
       }
     }
@@ -160,6 +168,7 @@ export default function PrayerBoard() {
       </Stage>
 
       <View style={{ paddingHorizontal: 16, paddingTop: 40, gap: 20 }}>
+        <PrayerSetupCard />
         {/* Qibla */}
         <GoldCard>
           <CardTitle>{t("qibla")}</CardTitle>
@@ -200,7 +209,16 @@ export default function PrayerBoard() {
           <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: th.muted, marginTop: 4 }}>{canAlert ? tx("alertsLead") : tx("alertsUnavailable")}</Text>
           {canAlert ? (
             <View style={{ marginTop: 8 }}>
-              {ALERT_PRAYERS.map((p) => <SwitchRow key={p} label={t(p)} sub={fmtTime(day.times[p], main.tz, locale)} value={!!alerts[p]} onChange={(v) => void toggleAlert(p, v)} />)}
+              {alertPrayers(combine).map((p) => {
+                const group = remindsOf(p, combine);
+                const label = group.length > 1 ? group.map((x) => prayerName(x, lang)).join(lang === "de" ? " und " : " and ") : t(p);
+                return <SwitchRow key={p} label={label} sub={group.map((x) => fmtTime(day.times[x], main.tz, locale)).join(" · ")} value={!!alerts[p]} onChange={(v) => void toggleAlert(p, v)} />;
+              })}
+              {setup.tradition === "shia" ? <SwitchRow label={tx("combineSwitch")} value={combine} onChange={(v) => saveSetup({ combine: v })} /> : null}
+              <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: th.muted, marginTop: 10, marginBottom: 8 }}>{tx("reminderWhen")}</Text>
+              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                {([0, 5, 10, 15] as const).map((m) => <LightChip key={m} label={m === 0 ? tx("atTime") : tx("minutesBefore", { n: m })} on={(setup.minutesBefore ?? 0) === m} onPress={() => saveSetup({ minutesBefore: m })} />)}
+              </View>
             </View>
           ) : null}
           {alertMsg === "denied" ? (
@@ -209,8 +227,9 @@ export default function PrayerBoard() {
               <TextLink title={tx("openSettings")} onPress={() => void Linking.openSettings()} style={{ fontSize: 14 }} />
             </View>
           ) : alertMsg === "unavailable" ? <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, color: th.muted, marginTop: 8 }}>{tx("alertsUnavailable")}</Text> : null}
-          {canAlert && ALERT_PRAYERS.some((p) => alerts[p]) ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 18, color: th.muted, marginTop: 6 }}>{tx("alertsFor", { place: label(main) })}</Text> : null}
+          {canAlert && alertPrayers(combine).some((p) => alerts[p]) ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 18, color: th.muted, marginTop: 6 }}>{tx("alertsFor", { place: label(main) })}</Text> : null}
 
+          <TextLink title={tx("setupAgain")} onPress={() => go("/prayer-setup")} style={{ fontSize: 14 }} />
           <View style={{ height: 1, backgroundColor: th.line, marginVertical: 16 }} />
           <CheckRow label={t("autoAdhan")} value={autoAdhan} onChange={(v) => writeJSON("tf:prayerAutoAdhan", v, true)} />
           <SelectField style={{ marginTop: 16 }} label={t("adhanVoice")} value={files.some((f) => f.id === voice) ? voice : "random"}

@@ -16,6 +16,7 @@ import { buildQuiz, type Q } from "@/features/academy/quiz";
 import { useVerseAudio } from "@/features/quran/useVerseAudio";
 import { GoldRing, StarBadge } from "@/features/today/art";
 import { useShamsT } from "@/features/shams/texts";
+import { goBack } from "@/components/page";
 
 // One academy lesson (website LessonRunner.tsx): learn the verses with the Shams Method, then a test on time with four
 // kinds of questions; 70 % passes, mistakes make the verse come back sooner.
@@ -190,7 +191,7 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
               <View style={{ alignSelf: "stretch", gap: 10, marginTop: 18 }}>
                 {score >= PASS && nextL ? <GoldButton title={w("nextLesson")} onPress={() => router.replace(`/academy/${nextL.s}/${nextL.from}` as Href)} /> : null}
                 <OutlineButton title={w("again")} onPress={start} />
-                <OutlineButton title={w("overview")} onPress={() => router.back()} />
+                <OutlineButton title={w("overview")} onPress={() => goBack()} />
               </View>
             </GoldCard>
           ) : null}

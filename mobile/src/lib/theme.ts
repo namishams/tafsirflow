@@ -1,4 +1,5 @@
 import { Appearance, Platform, useColorScheme } from "react-native";
+import { readJSON, useStored } from "./store";
 
 // The colours of quranmasterclass.com (src/app/globals.css): light grey canvas, white tiles, hairline borders,
 // near-black ink, deep green accent, and the dark green "stage" with gold like the binding of a fine mushaf.
@@ -49,8 +50,16 @@ export const TONES: [string, string][] = [
   ["#3b1f2b", "#160b10"], ["#2c3a1a", "#10160a"], ["#30254a", "#100c19"], ["#401c14", "#170a07"],
 ];
 
+// Kids mode (website html[data-kids="1"], key tf:kids): brighter palette, Nunito, rounder shapes; light mode only.
+// The stage, gold buttons and posters keep their colours.
+export const kids = make(false, { bg: "255 249 232", surface: "255 255 255", ink: "30 41 59", muted: "71 85 105", line: "250 222 160", accent: "37 99 235", accentSoft: "219 234 254", gold: "194 90 0" });
+const kidsOn = () => readJSON<unknown>("tf:kids", "0") === "1";
+
 export function useTheme(): Theme {
-  return useColorScheme() === "dark" ? dark : light;
+  const scheme = useColorScheme();
+  const k = useStored<unknown>("tf:kids", "0") === "1";
+  if (scheme === "dark") return dark;
+  return k ? kids : light;
 }
 
 export type AppearanceSetting = "system" | "light" | "dark";
@@ -59,32 +68,43 @@ export function applyAppearance(a: AppearanceSetting) {
   Appearance.setColorScheme(a === "system" ? "unspecified" : a);
 }
 
-// Plus Jakarta Sans like the website; font-display = ExtraBold with tight letter spacing
+// Plus Jakarta Sans like the website (Nunito in kids mode); font-display = ExtraBold with tight letter spacing.
+// Getters, so a screen that re-renders after the kids switch picks up the other face.
 export const FONT = {
-  regular: "PlusJakartaSans_400Regular", medium: "PlusJakartaSans_500Medium", semibold: "PlusJakartaSans_600SemiBold",
-  bold: "PlusJakartaSans_700Bold", display: "PlusJakartaSans_800ExtraBold", italic: "PlusJakartaSans_400Regular_Italic",
+  get regular() { return kidsOn() ? "Nunito_400Regular" : "PlusJakartaSans_400Regular"; },
+  get medium() { return kidsOn() ? "Nunito_600SemiBold" : "PlusJakartaSans_500Medium"; },
+  get semibold() { return kidsOn() ? "Nunito_700Bold" : "PlusJakartaSans_600SemiBold"; },
+  get bold() { return kidsOn() ? "Nunito_800ExtraBold" : "PlusJakartaSans_700Bold"; },
+  get display() { return kidsOn() ? "Nunito_800ExtraBold" : "PlusJakartaSans_800ExtraBold"; },
+  get italic() { return kidsOn() ? "Nunito_400Regular" : "PlusJakartaSans_400Regular_Italic"; },
 };
 export const ARABIC_FONT = "Amiri_400Regular";
 export const ARABIC_BOLD = "Amiri_700Bold";
 export const CALLIG_FONT = "ArefRuqaa_700Bold";
 
-// Text styles (sizes follow Dynamic Type automatically through allowFontScaling)
+// Text styles (sizes follow Dynamic Type automatically through allowFontScaling); kids mode reads 12.5 % larger
+const k = (n: number) => (kidsOn() ? Math.round(n * 1.125) : n);
+const tight = (n: number) => (kidsOn() ? 0 : n);
 export const type = {
-  display: { fontFamily: FONT.display, fontSize: 34, lineHeight: 38, letterSpacing: -0.85 },
-  largeTitle: { fontFamily: FONT.display, fontSize: 30, lineHeight: 34, letterSpacing: -0.75 },
-  title1: { fontFamily: FONT.display, fontSize: 26, lineHeight: 31, letterSpacing: -0.6 },
-  title2: { fontFamily: FONT.display, fontSize: 22, lineHeight: 27, letterSpacing: -0.5 },
-  title3: { fontFamily: FONT.bold, fontSize: 18, lineHeight: 24 },
-  headline: { fontFamily: FONT.bold, fontSize: 16, lineHeight: 22 },
-  body: { fontFamily: FONT.regular, fontSize: 16, lineHeight: 24 },
-  callout: { fontFamily: FONT.regular, fontSize: 15, lineHeight: 23 },
-  subhead: { fontFamily: FONT.regular, fontSize: 14, lineHeight: 20 },
-  footnote: { fontFamily: FONT.regular, fontSize: 13, lineHeight: 18 },
-  caption: { fontFamily: FONT.semibold, fontSize: 11, lineHeight: 14 },
-  eyebrow: { fontFamily: FONT.semibold, fontSize: 11.5, lineHeight: 15, letterSpacing: 1.8, textTransform: "uppercase" as const },
-  button: { fontFamily: FONT.bold, fontSize: 15, lineHeight: 20 },
+  get display() { return { fontFamily: FONT.display, fontSize: k(34), lineHeight: k(38), letterSpacing: tight(-0.85) }; },
+  get largeTitle() { return { fontFamily: FONT.display, fontSize: k(30), lineHeight: k(34), letterSpacing: tight(-0.75) }; },
+  get title1() { return { fontFamily: FONT.display, fontSize: k(26), lineHeight: k(31), letterSpacing: tight(-0.6) }; },
+  get title2() { return { fontFamily: FONT.display, fontSize: k(22), lineHeight: k(27), letterSpacing: tight(-0.5) }; },
+  get title3() { return { fontFamily: FONT.bold, fontSize: k(18), lineHeight: k(24) }; },
+  get headline() { return { fontFamily: FONT.bold, fontSize: k(16), lineHeight: k(22) }; },
+  get body() { return { fontFamily: FONT.regular, fontSize: k(16), lineHeight: k(24) }; },
+  get callout() { return { fontFamily: FONT.regular, fontSize: k(15), lineHeight: k(23) }; },
+  get subhead() { return { fontFamily: FONT.regular, fontSize: k(14), lineHeight: k(20) }; },
+  get footnote() { return { fontFamily: FONT.regular, fontSize: k(13), lineHeight: k(18) }; },
+  get caption() { return { fontFamily: FONT.semibold, fontSize: k(11), lineHeight: k(14) }; },
+  get eyebrow() { return { fontFamily: FONT.semibold, fontSize: k(11.5), lineHeight: k(15), letterSpacing: kidsOn() ? 1 : 1.8, textTransform: "uppercase" as const }; },
+  get button() { return { fontFamily: FONT.bold, fontSize: k(15), lineHeight: k(20) }; },
 };
 
 // The website rounds calmly: rounded-lg/xl 6px, 2xl 8px, 3xl 10px, cards 12px, buttons fully round
 export const radius = 8;
-export const R = { sm: 6, md: 8, lg: 10, card: 12, pill: 999 };
+// kids mode: rounder (rounded-2xl 22px, rounded-3xl 28px on the website)
+export const R = {
+  get sm() { return kidsOn() ? 12 : 6; }, get md() { return kidsOn() ? 16 : 8; }, get lg() { return kidsOn() ? 22 : 10; },
+  get card() { return kidsOn() ? 22 : 12; }, pill: 999,
+};

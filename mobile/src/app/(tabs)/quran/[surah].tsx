@@ -18,6 +18,7 @@ import { toAr, useVerseAudio } from "@/features/quran/useVerseAudio";
 import { VerseWords, WordGrid, wordAt } from "@/features/quran/VerseWords";
 import { TafsirPanel } from "@/features/quran/TafsirPanel";
 import { BISMILLAH, SURAH_PREFIX } from "@/features/quran/arabic";
+import { goBack } from "@/components/page";
 
 // The surah reader with its player (website Player.tsx): stage header with the surah cartouche, verse cards with word
 // highlighting, transliteration and translation, tafsir in a sheet, reading view, settings (reciter, size, repeat,
@@ -107,7 +108,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
       <Stage hairlines={false}>
         <View style={{ paddingTop: insets.top + 6, paddingHorizontal: 16, paddingBottom: 6, alignItems: "center" }}>
           <View style={{ alignSelf: "stretch", flexDirection: "row", justifyContent: "space-between" }}>
-            <RoundButton icon="chevronLeft" label="Back" onPress={() => router.back()} dark />
+            <RoundButton icon="chevronLeft" label="Back" onPress={() => goBack()} dark />
             <View style={{ flexDirection: "row", gap: 8 }}>
               <RoundButton icon="chevronRight" label={`${wh("surahLabel", { n: chapter.id - 1 })}`} onPress={() => chapter.id > 1 && router.replace(`/quran/${chapter.id - 1}` as Href)} dark flip disabled={chapter.id <= 1} />
               <RoundButton icon="chevronRight" label={`${wh("surahLabel", { n: chapter.id + 1 })}`} onPress={() => chapter.id < 114 && router.replace(`/quran/${chapter.id + 1}` as Href)} dark disabled={chapter.id >= 114} />

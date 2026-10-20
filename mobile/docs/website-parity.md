@@ -48,6 +48,8 @@ Shams, Academy, Pro, purchases, account), **radio**, **islam**, **daily**, **cou
 | `/assistant` (AssistantChat) | `app/assistant.tsx` → `extra/AssistantChat` (Pro only, ProGate) | extra | done |
 | `/feedback` (FeedbackBoard) | `app/feedback.tsx` → `extra/FeedbackBoard`, `reportProblem()` | extra | done (sending needs server change, see below) |
 | `/legal/[doc]` | `app/legal/[doc].tsx` (privacy/terms native from messages, imprint read from the website) | extra | done |
+| `/support` (donations, SupportZiina – new on the website, in progress) | – | – | n/a in the app: donations only outside the app (App Store 3.2.2, the website hides DonateCTA in the iOS shell too) |
+| password-reset link `/account/reset?token=` (opens the app through the universal link) | `app/reset-password.tsx` (native form, POST `/api/auth/reset`) + `app/+native-intent.tsx` | extra | done |
 | `/app` (install page) | – | – | n/a inside the app |
 | `/admin` | – (owner uses the website) | – | n/a |
 | 404 / `[...rest]` | `app/+not-found.tsx` → `extra/NotFound` | extra | done |
@@ -91,6 +93,7 @@ Shams, Academy, Pro, purchases, account), **radio**, **islam**, **daily**, **cou
 | PrayerBoard, PrayerTrainer, WuduTrainer, SunnahDuas, DuaGenerator, NameGenerator, HijriCalendar, art/Practice* | `features/practice` | daily | in progress |
 | ArabicHome, ArabicLesson, TajweedQuiz, VocabTrainer | `features/arabic`, `tajweed`, `vocab`, `coursekit` | courses | in progress |
 | AdminPanel | – | – | n/a |
+| DonateCTA, SupportZiina (new on the website) | – | – | n/a in the app (App Store 3.2.2) |
 | Home page sections (hero, courses, why, paths, method, features, map teaser, popular, kids + tajweed, glossary, tools, FAQ, final call) | `extra/widgets/Home` (`HomeHero` … `HomeFinalCta`) | extra | done |
 
 ## Exported widgets (extra) and their props
@@ -139,8 +142,10 @@ same key in its store (`useKids()`).
    Needed before App Store review (EULA / privacy).
 4. Texts that contradict Pro in the app and are therefore not used there: `free.title/body`, `home2.heroKicker`,
    `home2.statFree`, `shams.whyClose`, `landing.f6t` ({n} languages – the app has 2). FAQ `landing.a4` still says "free".
-5. Universal links: website paths carry a locale prefix (`/en/surah/2?v=255`). A `src/app/+native-intent.tsx`
-   (`redirectSystemPath`) should strip `/de|/en|/ar…` before routing; `/surah/N` is already redirected by `app/surah/[id].tsx`.
+5. Universal links: website paths carry a locale prefix (`/en/surah/2?v=255`), and the AASA sends every path except
+   `/api`, `/audio`, `/admin` into the app – including the password-reset mail link. Done in extra: `app/+native-intent.tsx`
+   strips the locale and maps `/account/reset` → `app/reset-password.tsx`; `/surah/N` → `app/surah/[id].tsx` → `/quran/N`.
+   Lead: please check it against `_layout.tsx` (it is a root-level router file).
 6. `app.json`: microphone permission (`expo-audio` plugin `microphonePermission`) for ReciteCheck; for the word check
    a speech module (e.g. `expo-speech-recognition`) – not installed.
 7. Discover tab (`lib/features.ts`): add Search, Assistant (Pro), Feedback / Report a problem, About, Changelog, Legal,

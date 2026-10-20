@@ -19,6 +19,7 @@ import { GoldSlider } from "./Slider";
 import { VerseArabic, wordAt } from "./VerseText";
 import { useAppT } from "./strings";
 import { useReduceMotion } from "./motion";
+import { goBack } from "@/components/page";
 
 // Full-screen "now playing" (app): the reciter orb, the surah in calligraphy, the verse being recited with the word
 // lit in gold and its translation, position in the verse, previous/next verse and surah, speed, repeat and sleep timer.
@@ -52,7 +53,7 @@ export default function NowPlaying() {
   const active = reciter.id > 0 && r.started ? wordAt(verse, p.t * 1000) : null;
   const orb = Math.min(width - 140, 230);
   const next = r.started ? radio.upNext() : null;
-  const close = () => { if (router.canGoBack()) router.back(); else router.replace("/radio" as Href); };
+  const close = () => { if (router.canGoBack()) goBack(); else router.replace("/radio" as Href); };
   const share = () => {
     const title = `Quran Masterclass Radio – ${t(`st_${r.station.id}`)}`;
     const url = `${SITE}/${lang}/radio`;

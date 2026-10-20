@@ -22,6 +22,7 @@ import { go } from "./links";
 import { Rays, StickerPop } from "./motion";
 import { dayLabel } from "./format";
 import { Card, GoldPill, Grid, H2, HairStat, InkSegmented, OutlinePill, ProLock, StageBox, useCols } from "./ui";
+import { goBack } from "@/components/page";
 
 const RANGES = [7, 30, 365, 0] as const; // 0 = all time
 type Range = (typeof RANGES)[number];
@@ -97,7 +98,7 @@ export function StatsView({ only, embedded = false, hero = false }: StatsViewPro
         <Stage hairlines={false} rounded={embedded ? 16 : 0}>
           <View style={[pad, hero && { paddingTop: insets.top + 8 }]}>
             {hero ? (
-              <Pressable onPress={() => router.back()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6, marginBottom: 12 }}>
+              <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6, marginBottom: 12 }}>
                 <Icon name="chevronLeft" color="#ffffff" size={24} />
               </Pressable>
             ) : null}

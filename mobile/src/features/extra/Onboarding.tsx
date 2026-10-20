@@ -11,6 +11,7 @@ import { readSrs } from "@/web/learning";
 import { HomeStar, IllumFrame, StarGlyph, alpha } from "./art";
 import { KidsToggle } from "./KidsToggle";
 import { useX } from "./strings";
+import { goBack } from "@/components/page";
 
 type Read = Goal["read"]; type Aim = Goal["aim"]; type Age = "child" | "teen" | "adult" | "senior";
 const MINUTES = [5, 10, 20, 30];
@@ -39,7 +40,7 @@ export function pathFor(g: Goal): { href: string; key: string } | null {
  * Writes tf:goal like the website (synced with the account). Props:
  * - force: show even when shouldOnboard() is false (the /onboarding route)
  * - fullScreen: fill the screen (route) instead of a rounded card (Today tab)
- * - onClose: "Skip" / "Later" (default: router.back() in full screen, otherwise just hide)
+ * - onClose: "Skip" / "Later" (default: goBack() in full screen, otherwise just hide)
  * - onStartSession: the Juz ʿAmma path starts today's session (default: the Today tab)
  */
 export function Onboarding({ force = false, fullScreen = false, onClose, onStartSession, style }: {
@@ -60,7 +61,7 @@ export function Onboarding({ force = false, fullScreen = false, onClose, onStart
 
   const total = askAge ? 4 : 3;
   const qIndex = askAge ? step : step + 1; // 0 age, 1 read, 2 aim, 3 minutes, 4 ready
-  const close = () => { setShow(false); if (onClose) onClose(); else if (fullScreen && router.canGoBack()) router.back(); };
+  const close = () => { setShow(false); if (onClose) onClose(); else if (fullScreen && router.canGoBack()) goBack(); };
   const skip = () => { writeJSON("tf:onboardSkip", true); close(); };
   const chooseAge = (a: Age) => {
     setAge(a);

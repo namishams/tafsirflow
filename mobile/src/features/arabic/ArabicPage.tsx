@@ -16,6 +16,7 @@ import { useReduceMotion } from "../coursekit/motion";
 import { AlphabetRing, LetterSheet } from "./Alphabet";
 import { ArabicHome } from "./ArabicHome";
 import { PAGE_C, SIGN_LESSONS } from "./texts";
+import { goBack } from "@/components/page";
 
 // /arabic – the website's "Read the Quran" page (src/app/[locale]/(app)/arabic/page.tsx): the alphabet on a ring of
 // light, the learning path, how you learn, the signs of the script, where the sounds come from, every letter at a
@@ -156,7 +157,7 @@ function HeroText({ c, onPath }: { c: (typeof PAGE_C)["en"]; onPath: () => void 
   const tr = useT();
   return (
     <View style={{ paddingHorizontal: 20, paddingTop: insets.top + 8, paddingBottom: 32 }}>
-      <Pressable onPress={() => (router.canGoBack() ? router.back() : router.replace("/" as Href))} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={12}
+      <Pressable onPress={() => (router.canGoBack() ? goBack() : router.replace("/" as Href))} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={12}
         style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
         <Icon name="chevronLeft" color="#ffffff" size={24} />
       </Pressable>

@@ -80,7 +80,7 @@ export function Medallion({ id, state, pct, size = 64 }: { id: StationId; state:
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100">
       <Defs>
-        <LinearGradient id="m" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor="#f6e7bf" /><Stop offset=".45" stopColor="#c9a65e" /><Stop offset=".7" stopColor="#efe2bf" /><Stop offset="1" stopColor="#8f7238" /></LinearGradient>
+        <LinearGradient id="m" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor="#f6e7bf" /><Stop offset="0.45" stopColor="#c9a65e" /><Stop offset="0.7" stopColor="#efe2bf" /><Stop offset="1" stopColor="#8f7238" /></LinearGradient>
         <RadialGradient id="e" cx="38%" cy="32%" r="80%"><Stop offset="0" stopColor="#1d5640" /><Stop offset="1" stopColor="#0b261b" /></RadialGradient>
       </Defs>
       <Circle cx={50} cy={50} r={46} fill="none" stroke={t.line} strokeWidth={2} />

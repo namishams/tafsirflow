@@ -13,6 +13,7 @@ import { usePro, type ProFeature } from "@/lib/pro";
 import { SITE } from "@/lib/api";
 import { TILES } from "@/web/tiles";
 import { loadPrices, manageSubscriptions, purchasePro, restore } from "@/lib/iap";
+import { goBack } from "@/components/page";
 
 // The Pro sheet: what Pro brings (gold medallions), Free and Pro side by side, and a clear price card with the summary
 // Apple asks for (what, price, term, how to cancel) before Apple's own purchase sheet. Purchases belong to the account.
@@ -71,7 +72,7 @@ export default function ProSheet() {
         <Stage hairlines={false}>
           <Text allowFontScaling={false} style={{ position: "absolute", right: -10, top: 30, fontFamily: CALLIG_FONT, fontSize: 120, lineHeight: 190, color: "rgba(214,180,108,0.12)" }}>{TILES.shams.ar}</Text>
           <View style={{ paddingHorizontal: 20, paddingTop: 16, paddingBottom: 8 }}>
-            <Pressable onPress={() => router.back()} accessibilityRole="button" accessibilityLabel={tr("common.close")} hitSlop={10}
+            <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel={tr("common.close")} hitSlop={10}
               style={{ alignSelf: "flex-end", width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.1)" }}>
               <Icon name="close" color="#fff" size={17} />
             </Pressable>

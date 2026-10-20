@@ -33,16 +33,23 @@ export function Page({ children, style, padded = false, ...rest }: { children: R
   );
 }
 
+/** back, or to Today when the screen was opened directly (a link, a notification) */
+export function goBack() {
+  if (router.canGoBack()) router.back();
+  else router.replace("/");
+}
+
 /** the stage hero at the top of a page: eyebrow, big title, lead, optional Arabic line and actions, arcade below */
 export function PageHero({ eyebrow, title, lead, arabic, children, topInset = false, arcade = true, back = false }: {
   eyebrow?: string; title: string; lead?: string; arabic?: string; children?: ReactNode; topInset?: boolean; arcade?: boolean; back?: boolean;
 }) {
   const insets = useSafeAreaInsets();
+  const tr = useT();
   return (
     <Stage hairlines={false}>
       <View style={{ paddingHorizontal: 20, paddingTop: (topInset ? insets.top : 0) + (back ? 8 : 28), paddingBottom: arcade ? 8 : 28 }}>
         {back ? (
-          <Pressable onPress={() => router.back()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginBottom: 12, marginLeft: -6 }}>
+          <Pressable onPress={goBack} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginBottom: 12, marginLeft: -6 }}>
             <Icon name="chevronLeft" color="#ffffff" size={24} />
           </Pressable>
         ) : null}

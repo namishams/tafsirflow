@@ -16,6 +16,7 @@ import { PlanBoard } from "./PlanBoard";
 import { RequireAccount } from "./RequireAccount";
 import { Markdown } from "./Markdown";
 import { inkGold, khatam } from "./art";
+import { goBack } from "@/components/page";
 
 /** /stats – level, stickers, achievements, listening, points, learning (website: stats/page.tsx) */
 export function StatsScreen() {
@@ -39,7 +40,7 @@ export function RankingScreen() {
 
 function BackButton({ color }: { color: string }) {
   return (
-    <Pressable onPress={() => (router.canGoBack() ? router.back() : router.navigate("/"))} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12}
+    <Pressable onPress={() => (router.canGoBack() ? goBack() : router.navigate("/"))} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12}
       style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
       <Icon name="chevronLeft" color={color} size={24} />
     </Pressable>

@@ -21,6 +21,7 @@ import { VerseWords, WordGrid, wordAt, type Hide } from "@/features/quran/VerseW
 import { TafsirPanel } from "@/features/quran/TafsirPanel";
 import { hooks } from "@/features/shams/memory";
 import { useShamsT } from "@/features/shams/texts";
+import { goBack } from "@/components/page";
 
 // The Shams Method, natively: one verse at a time, the coach plans the steps (lib/coach.ts versePlan), every step sets
 // up the verse for one learning activity – exactly the flow of the website's Player in Shams mode.
@@ -53,7 +54,7 @@ export default function ShamsSession() {
   if (!pro && !FREE.shamsSurah(surah)) {
     return (
       <View style={{ flex: 1, backgroundColor: t.bg, paddingTop: insets.top + 8 }}>
-        <TopBar title={chapter?.name_simple ?? ""} onClose={() => router.back()} />
+        <TopBar title={chapter?.name_simple ?? ""} onClose={() => goBack()} />
         <ProGate feature="shams" title={st("lockedTitle")} text={st("lockedText")} />
       </View>
     );
@@ -245,7 +246,7 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
     const sum = readSummary();
     return (
       <View style={{ flex: 1, backgroundColor: t.bg, paddingTop: insets.top + 8 }}>
-        <TopBar title={chapter.name_simple} onClose={() => router.back()} />
+        <TopBar title={chapter.name_simple} onClose={() => goBack()} />
         <Stage rounded={R.card} style={{ margin: 16 }}>
           <View style={{ padding: 22, gap: 12 }}>
             <SurahBanner arabic={chapter.name_arabic} />
@@ -253,7 +254,7 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
             <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: stage.textSoft }}>
               {finished === "session" && sum ? st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes }) : st("doneLead")}
             </Text>
-            <GoldButton title={finished === "session" ? st("toToday") : st("backToCourse")} onPress={() => router.back()} style={{ marginTop: 8 }} />
+            <GoldButton title={finished === "session" ? st("toToday") : st("backToCourse")} onPress={() => goBack()} style={{ marginTop: 8 }} />
             {finished === "surah" ? <OutlineButton title={st("again")} onStage onPress={() => { setFinished(null); setIdx(0); beginPlan(0, fullPath); }} /> : null}
           </View>
         </Stage>
@@ -268,7 +269,7 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
 
   return (
     <View style={{ flex: 1, backgroundColor: t.bg, paddingTop: insets.top + 4 }}>
-      <TopBar title={`${chapter.id}. ${chapter.name_simple}`} sub={st("verseOf", { n: verse.verse_number, total: verses.length })} onClose={() => { audio.stop(); router.back(); }} />
+      <TopBar title={`${chapter.id}. ${chapter.name_simple}`} sub={st("verseOf", { n: verse.verse_number, total: verses.length })} onClose={() => { audio.stop(); goBack(); }} />
       <ScrollView ref={scroll} contentContainerStyle={{ padding: 16, paddingBottom: insets.bottom + 40, gap: 16 }} keyboardShouldPersistTaps="handled">
         {/* the verse card */}
         <GoldCard>

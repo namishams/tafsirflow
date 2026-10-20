@@ -18,6 +18,7 @@ import { openVerse } from "../coursekit/links";
 import { useCourseT } from "../coursekit/strings";
 import { ChipButton, CourseHero, ProCard } from "../coursekit/ui";
 import { TajweedQuiz } from "./TajweedQuiz";
+import { goBack } from "@/components/page";
 
 // /tajweed and /tajweed/[id]: the website's tajweed course (src/app/[locale]/(app)/tajweed): every lesson with its
 // rule as an illuminated text, examples from the Quran and a short quiz. The first lessons are free; the rest carry a
@@ -129,7 +130,7 @@ function LessonBody({ i, locked }: { i: number; locked: boolean }) {
           <Girih />
           <PracticeWindow word={WORD} height={220} opacity={0.25} style={{ position: "absolute", right: -40, top: insets.top + 16 }} />
           <View style={{ paddingHorizontal: 20, paddingTop: insets.top + 8, paddingBottom: 48 }}>
-            <Pressable onPress={() => (router.canGoBack() ? router.back() : router.replace("/tajweed" as Href))} accessibilityRole="button" hitSlop={8}
+            <Pressable onPress={() => (router.canGoBack() ? goBack() : router.replace("/tajweed" as Href))} accessibilityRole="button" hitSlop={8}
               style={{ minHeight: 40, flexDirection: "row", alignItems: "center", gap: 6, alignSelf: "flex-start" }}>
               <Icon name="chevronLeft" size={16} color="rgba(255,255,255,0.7)" />
               <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: "rgba(255,255,255,0.7)" }}>{w("title")}</Text>

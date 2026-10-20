@@ -41,7 +41,7 @@ export function starPolygon(cx: number, cy: number, R: number, r: number, n: num
   return `M${pts.join("L")}Z`;
 }
 
-const MEDAL_STOPS = [["0", "#f6e7bf"], [".45", "#c9a65e"], [".7", "#efe2bf"], ["1", "#8f7238"]] as const;
+const MEDAL_STOPS = [["0", "#f6e7bf"], ["0.45", "#c9a65e"], ["0.7", "#efe2bf"], ["1", "#8f7238"]] as const;
 
 /** level seal: a gilded 24-point rosette with the level number (Rewards.tsx LevelSeal) */
 export function LevelSeal({ n, size = 148 }: { n: number; size?: number }) {
@@ -81,7 +81,7 @@ export function HomeRing({ value, size = 96, dark = true, stroke = 6, children }
     <View style={{ width: size, height: size, alignItems: "center", justifyContent: "center" }}>
       <Svg width={size} height={size} viewBox="0 0 100 100" style={StyleSheet.absoluteFill}>
         <Defs>
-          <SvgGradient id="ring" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor="#f3e2b6" /><Stop offset=".5" stopColor="#c9a65e" /><Stop offset="1" stopColor="#e9cf99" /></SvgGradient>
+          <SvgGradient id="ring" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor="#f3e2b6" /><Stop offset="0.5" stopColor="#c9a65e" /><Stop offset="1" stopColor="#e9cf99" /></SvgGradient>
         </Defs>
         <G fill={dark ? "#e9cf99" : "#c9a65e"} fillOpacity={dark ? 0.35 : 0.45}>
           {Array.from({ length: 16 }, (_, i) => { const a = (Math.PI / 8) * i; return <Path key={i} d={khatam(50 + 48 * Math.sin(a), 50 - 48 * Math.cos(a), i % 2 ? 1.4 : 2.2)} />; })}
@@ -126,7 +126,7 @@ export function QuranRing({ pct, size = 128, children }: { pct: number; size?: n
     <View style={{ width: size, height: size, alignItems: "center", justifyContent: "center" }}>
       <Svg width={size} height={size} viewBox="0 0 120 120" style={StyleSheet.absoluteFill}>
         <Defs>
-          <SvgGradient id="qr" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor="#e9cf99" /><Stop offset=".5" stopColor="#c9a65e" /><Stop offset="1" stopColor="#a8803a" /></SvgGradient>
+          <SvgGradient id="qr" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor="#e9cf99" /><Stop offset="0.5" stopColor="#c9a65e" /><Stop offset="1" stopColor="#a8803a" /></SvgGradient>
         </Defs>
         <Path d={RING_STAR} fill="rgba(201,166,94,0.07)" stroke="rgba(201,166,94,0.35)" strokeWidth={0.8} />
         <Path d={TICKS} fill="none" stroke={t.gold} strokeOpacity={0.5} strokeWidth={0.8} />
@@ -178,7 +178,7 @@ export function StarGlyph({ size = 12, color }: { size?: number; color: string }
 export function ProSeal({ size = 16 }: { size?: number }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100">
-      <Defs><SvgGradient id="seal" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor="#f6e7bf" /><Stop offset=".45" stopColor="#c9a65e" /><Stop offset=".75" stopColor="#efe2bf" /><Stop offset="1" stopColor="#8f7238" /></SvgGradient></Defs>
+      <Defs><SvgGradient id="seal" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor="#f6e7bf" /><Stop offset="0.45" stopColor="#c9a65e" /><Stop offset="0.75" stopColor="#efe2bf" /><Stop offset="1" stopColor="#8f7238" /></SvgGradient></Defs>
       <Path d={starPolygon(50, 50, 48, 38, 8)} fill="url(#seal)" />
       <Circle cx={50} cy={50} r={27} fill="#0f2d20" />
       <Path d="M50 33l4.5 9.5 10.5 1.4-7.6 7.3 1.9 10.4L50 56.6l-9.3 5 1.9-10.4-7.6-7.3 10.5-1.4z" fill="url(#seal)" />

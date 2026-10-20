@@ -22,6 +22,7 @@ import { BigButton, Callout, ProCard } from "../coursekit/ui";
 import { useArabicVoice } from "../coursekit/voice";
 import { isProLesson } from "./ArabicHome";
 import { LESSON_T, WELL_DONE } from "./texts";
+import { goBack } from "@/components/page";
 
 // ArabicLesson.tsx: a short Babbel-style lesson – learning cards, then varied exercises (choose, listen, match, put the
 // verse in order); a missed exercise comes back once at the end; stars, XP and the result are saved in "tf:arabic"
@@ -37,7 +38,7 @@ const reshuffled = (ex: Ex): Ex => {
   return { ...ex, options: order.map((i) => ex.options[i]), answer: order.indexOf(ex.answer) } as Ex;
 };
 
-const leave = () => (router.canGoBack() ? router.back() : router.replace("/arabic" as Href));
+const leave = () => (router.canGoBack() ? goBack() : router.replace("/arabic" as Href));
 
 export function ArabicLessonScreen({ id }: { id: string }) {
   const { pro } = usePro();

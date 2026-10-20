@@ -9,6 +9,7 @@ import { Icon } from "@/components/icons";
 import { useLang } from "@/i18n";
 import { getVerseByKey } from "@/lib/quran";
 import { ARABIC_FONT, FONT, type Theme, useTheme } from "@/lib/theme";
+import { goBack } from "@/components/page";
 
 // The ornaments of the website's Home / Quran pages (components/art/HomeOrnaments.tsx, Ornaments.tsx,
 // styles/art-home.css, styles/art-quran.css) drawn with react-native-svg for the extra screens and widgets.
@@ -209,7 +210,7 @@ export function MarbleHero({ kicker, title, children, back }: { kicker?: string;
       </Svg>
       <View style={{ paddingHorizontal: 20, paddingTop: insets.top + (canBack ? 6 : 24), paddingBottom: 40 }}>
         {canBack ? (
-          <Pressable onPress={() => router.back()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6, marginBottom: 8 }}>
+          <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6, marginBottom: 8 }}>
             <Icon name="chevronLeft" color={t.ink} size={24} />
           </Pressable>
         ) : null}

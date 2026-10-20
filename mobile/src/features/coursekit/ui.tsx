@@ -9,6 +9,7 @@ import { openPro, type ProFeature } from "@/lib/pro";
 import { useT } from "@/i18n";
 import { FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
 import { Girih, PracticeWindow, goldA } from "./art";
+import { goBack } from "@/components/page";
 
 // Buttons and frames shared by the course screens, in the website's shapes: btn-gold, the rose "continue" after a
 // wrong answer, pa-chip, the callout, the practice hero and the Pro card.
@@ -81,7 +82,7 @@ export function CourseHero({ kicker, title, lead, word, children, back, backLabe
       <PracticeWindow word={word} height={230} opacity={windowOpacity} style={{ position: "absolute", right: -40, top: (topInset ? insets.top : 0) + 16 }} />
       <View style={{ paddingHorizontal: 20, paddingTop: (topInset ? insets.top : 0) + (back ? 8 : 40), paddingBottom: 40 }}>
         {back ? (
-          <Pressable onPress={() => (router.canGoBack() ? router.back() : router.replace("/" as Href))} accessibilityRole="button" accessibilityLabel={backLabel ?? tr("common.back")} hitSlop={10}
+          <Pressable onPress={() => (router.canGoBack() ? goBack() : router.replace("/" as Href))} accessibilityRole="button" accessibilityLabel={backLabel ?? tr("common.back")} hitSlop={10}
             style={{ minHeight: 40, flexDirection: "row", alignItems: "center", gap: 6, alignSelf: "flex-start", marginBottom: 12 }}>
             <Icon name="chevronLeft" color="rgba(255,255,255,0.7)" size={18} />
             {backLabel ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: "rgba(255,255,255,0.7)" }}>{backLabel}</Text> : null}
