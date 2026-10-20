@@ -53,6 +53,8 @@ const ar: C = {
 };
 const content = (l: string) => (l === "de" ? de : l === "ar" ? ar : en);
 
+const APP_STORE_LABEL: Record<string, string> = { de: "Im App Store laden", en: "Download on the App Store", ar: "حمّله من App Store" };
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const c = content(locale);
@@ -71,7 +73,7 @@ export default async function AppPage({ params }: { params: Promise<{ locale: st
             <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
             <h1 className="font-display mt-4 text-[38px] leading-[1.06] sm:text-6xl">{c.title}</h1>
             <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70">{c.lead}</p>
-            <div className="mt-8"><AppInstall t={c.buttons} playUrl={process.env.PLAY_STORE_URL ?? ""} /></div>
+            <div className="mt-8"><AppInstall t={{ ...c.buttons, appStore: APP_STORE_LABEL[locale] ?? APP_STORE_LABEL.en }} playUrl={process.env.PLAY_STORE_URL ?? ""} appStoreUrl={process.env.APP_STORE_URL ?? ""} /></div>
           </div>
           <div aria-hidden className="mx-auto grid h-56 w-32 place-items-center rounded-[2rem] border-4 border-white/15 bg-[rgb(var(--stage))] shadow-2xl sm:h-72 sm:w-40">
             <Logo size={72} />

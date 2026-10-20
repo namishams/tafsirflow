@@ -8,10 +8,12 @@ export type Features = {
 };
 export type Limits = { assistantAnonPerDay: number; assistantPerUserPerDay: number; duaAiAnonPerDay: number; rankingDailyCap: number };
 export type PointRules = Partial<Record<PointKind, { pts: number; cap?: number }>>;
+// Masterclass Premium (In-App Purchase in the iOS app): what stays free, and whether the web asks for Premium too
+export type Premium = { gateWeb: boolean; freeOffline: number; assistantPerDay: number };
 export type Announcement = { on: boolean; id: string; de: string; en: string; ar: string; href: string };
 export type Settings = {
   anonTafsirLimit: number; commentsAutoApprove: boolean;
-  features: Features; limits: Limits; points: PointRules; announcement: Announcement;
+  features: Features; limits: Limits; points: PointRules; announcement: Announcement; premium: Premium;
 };
 
 const envAnon = () => { const n = Number(process.env.ASSISTANT_ANON_PER_DAY); return Number.isFinite(n) && process.env.ASSISTANT_ANON_PER_DAY !== undefined ? Math.max(0, n) : 5; };
@@ -22,6 +24,7 @@ export const defaults = (): Settings => ({
   limits: { assistantAnonPerDay: envAnon(), assistantPerUserPerDay: 40, duaAiAnonPerDay: envAnon(), rankingDailyCap: 1500 },
   points: {},
   announcement: { on: false, id: "", de: "", en: "", ar: "", href: "" },
+  premium: { gateWeb: false, freeOffline: 3, assistantPerDay: 200 },
 });
 export const DEFAULTS = defaults();
 
@@ -34,6 +37,7 @@ const merge = (v: Partial<Settings> | undefined): Settings => {
     limits: { ...d.limits, ...(v.limits ?? {}) },
     points: { ...(v.points ?? {}) },
     announcement: { ...d.announcement, ...(v.announcement ?? {}) },
+    premium: { ...d.premium, ...(v.premium ?? {}) },
   };
 };
 
@@ -47,7 +51,7 @@ export async function getSettings(): Promise<Settings> {
 }
 
 // what the browser may know (no limits, nothing secret)
-export const publicConfig = (s: Settings) => ({ features: s.features, points: s.points, announcement: s.announcement.on && (s.announcement.de || s.announcement.en || s.announcement.ar) ? s.announcement : null });
+export const publicConfig = (s: Settings) => ({ features: s.features, points: s.points, announcement: s.announcement.on && (s.announcement.de || s.announcement.en || s.announcement.ar) ? s.announcement : null, premium: { gateWeb: s.premium.gateWeb, freeOffline: s.premium.freeOffline } });
 export type PublicConfig = ReturnType<typeof publicConfig>;
 
 // cleans an update from the admin dashboard
@@ -65,6 +69,7 @@ export function sanitize(input: unknown, current: Settings): Settings {
     if (p && Number.isFinite(Number(p.pts))) points[k] = { pts: int(p.pts, 0, 1000, 0), ...(p.cap !== undefined && p.cap !== null && String(p.cap) !== "" ? { cap: int(p.cap, 0, 100000, 0) } : {}) };
   }
   const a = b.announcement ?? current.announcement;
+  const pr = { ...current.premium, ...(b.premium ?? {}) };
   const href = str(a.href, 200);
   return {
     anonTafsirLimit: b.anonTafsirLimit !== undefined ? int(b.anonTafsirLimit, 0, 10000, current.anonTafsirLimit) : current.anonTafsirLimit,
@@ -82,5 +87,6 @@ export function sanitize(input: unknown, current: Settings): Settings {
       de: str(a.de, 300), en: str(a.en, 300), ar: str(a.ar, 300),
       href: href.startsWith("/") || href.startsWith("https://") ? href : "",
     },
+    premium: { gateWeb: pr.gateWeb === true, freeOffline: int(pr.freeOffline, 0, 114, 3), assistantPerDay: int(pr.assistantPerDay, 1, 10000, 200) },
   };
 }

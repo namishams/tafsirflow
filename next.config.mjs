@@ -50,7 +50,10 @@ export default withNextIntl({
     return [{ source: "/:locale(de|en|ar|fr|es|zh|id|ms|fa|tr|ru|ur|bn|ps)/support", destination: "/:locale", permanent: true }];
   },
   async rewrites() {
-    return [{ source: "/.well-known/assetlinks.json", destination: "/api/assetlinks" }];
+    return [
+      { source: "/.well-known/assetlinks.json", destination: "/api/assetlinks" },
+      { source: "/.well-known/apple-app-site-association", destination: "/api/aasa" }, // iOS app ↔ domain (src/app/api/aasa/route.ts)
+    ];
   },
   async headers() {
     return [

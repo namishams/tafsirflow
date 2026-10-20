@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
   if (!member) {
     const n = s.limits.assistantAnonPerDay;
     if (!n || rateLimited(`ai:anon:${clientIp(req)}`, n, 24 * 60 * 60_000)) return json({ error: me ? "verify" : "login" }, me ? 403 : 401);
-  } else if (rateLimited(`ai:day:${me.id}`, s.limits.assistantPerUserPerDay || ASSISTANT_LIMITS.perUserPerDay, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
+  } else if (rateLimited(`ai:day:${me.id}`, me.plan === "premium" ? s.premium.assistantPerDay : s.limits.assistantPerUserPerDay || ASSISTANT_LIMITS.perUserPerDay, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
   if (rateLimited(`ai:min:${clientIp(req)}`, 8, 60_000)) return json({ error: "rate" }, 429);
 
   const b = (await req.json().catch(() => ({}))) as { messages?: Msg[]; locale?: string };

@@ -13,6 +13,8 @@ import ReciteCheck from "./ReciteCheck";
 import SessionBar from "./SessionBar";
 import { completeItem, itemUrl } from "@/lib/session";
 import { offlineReady, removeSurah, saveSurah, savedSurahs } from "@/lib/offline";
+import { freeShams, lockedNow, usePremium } from "@/lib/premium";
+import PremiumLock from "./PremiumLock";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume, IconFlame } from "./Icons";
 import {
@@ -160,6 +162,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [showTranslation, setShowTranslation] = useState(true);
   const [showWords, setShowWords] = useState(false);
   const [shams, setShams] = useState<number | null>(null); // Shams method: current step id (see lib/coach.ts), null = off
+  const prem = usePremium();
+  const [lock, setLock] = useState<"shams" | "offline" | null>(null); // Premium hint (iOS app, or web if the owner switches it on)
   const [plan, setPlan] = useState<VersePlan | null>(null); // the coach's plan for the current verse
   const [fullPath, setFullPath] = useState(false); // learner asked for all steps even on a known verse
   const [linking, setLinking] = useState(false); // step "connect": previous + current verse are playing
@@ -502,6 +506,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     return full && p.kind !== "new" ? { ...p, steps: [0, 1, 2, 3, 4, 5, ...(i > 0 ? [7] : []), 6] } : p;
   };
   const beginPlan = (i: number, full = fullPath) => {
+    if (!prem.premium && !freeShams(chapterId) && lockedNow(prem.gateWeb)) { setLock("shams"); return; }
     const p = planFor(i, full);
     if (!p) return;
     stopLink();
@@ -783,6 +788,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     const saved = offline.state === "saved" || (offline.state === "none" && savedSurahs()[key] !== undefined);
                     const urls = verses.map((v) => v.audioUrl);
                     const save = async () => {
+                      if (!prem.premium && lockedNow(prem.gateWeb) && Object.keys(savedSurahs()).length >= prem.freeOffline) { setLock("offline"); return; }
                       setOffline({ state: "saving", done: 0, bytes: 0 });
                       try { const bytes = await saveSurah(chapterId, reciter.folder, urls, `/${locale}/surah/${chapterId}`, (done) => setOffline((o) => ({ ...o, done }))); setOffline({ state: "saved", done: urls.length, bytes }); }
                       catch { setOffline((o) => ({ ...o, state: "error" })); }
@@ -1049,6 +1055,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
           </ol>
           )}
           {showDebug && <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>}
+          {lock && <PremiumLock kind={lock} freeOffline={prem.freeOffline} onClose={() => setLock(null)} />}
         </main>
 
         {!kids && <aside className="sticky top-20 my-5 hidden max-h-[calc(100vh-6rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">

@@ -408,7 +408,7 @@ function Insights({ de }: { de: boolean }) {
 
 // ---------- Controls: switches, limits, point rules, announcement ----------
 type Feat = { ranking: boolean; community: boolean; likes: boolean; comments: boolean; assistant: boolean; duaAi: boolean; sideArt: boolean; celebrations: boolean };
-type Cfg = { anonTafsirLimit: number; commentsAutoApprove: boolean; features: Feat; limits: { assistantAnonPerDay: number; assistantPerUserPerDay: number; duaAiAnonPerDay: number; rankingDailyCap: number }; points: Record<string, { pts: number; cap?: number }>; announcement: { on: boolean; id: string; de: string; en: string; ar: string; href: string } };
+type Cfg = { anonTafsirLimit: number; commentsAutoApprove: boolean; features: Feat; limits: { assistantAnonPerDay: number; assistantPerUserPerDay: number; duaAiAnonPerDay: number; rankingDailyCap: number }; points: Record<string, { pts: number; cap?: number }>; announcement: { on: boolean; id: string; de: string; en: string; ar: string; href: string }; premium: { gateWeb: boolean; freeOffline: number; assistantPerDay: number } };
 const POINT_DEFAULTS: Record<string, { pts: number; cap?: number }> = { time: { pts: 1, cap: 120 }, listen: { pts: 2, cap: 400 }, verse: { pts: 1, cap: 300 }, review: { pts: 5 }, new: { pts: 10 }, session: { pts: 30 }, lesson: { pts: 20 }, quiz: { pts: 10 }, vocab: { pts: 2, cap: 200 }, wudu: { pts: 25, cap: 25 } };
 function Control({ de }: { de: boolean }) {
   const [c, setC] = useState<Cfg | null>(null);
@@ -478,6 +478,16 @@ function Control({ de }: { de: boolean }) {
           <button className={btnP} onClick={() => save({ points: c.points })}>{de ? "Regeln speichern" : "Save rules"}</button>
           <button className={btn} onClick={() => save({ points: {} })}>{de ? "Standard wiederherstellen" : "Restore defaults"}</button>
         </div>
+      </section>
+      <section className={card}>
+        <h3 className="text-lg font-bold">Masterclass Premium</h3>
+        <p className="mt-1 text-xs text-muted">{de ? "Einmaliger In-App-Kauf in der iPhone-App (Preis in App Store Connect). Frei bleiben Quran, Rezitation, Übersetzung, Tafsir und die Shams-Methode für al-Fātiḥa und Juz ʿAmma. Premium: der ganze Shams-Kurs, mehr Offline-Suren, mehr Assistenten-Fragen. Einzelnen Nutzern gibst du Premium im Tab „Nutzer“." : "One-time In-App Purchase in the iPhone app (price set in App Store Connect). Free: Quran, recitation, translation, tafsir and the Shams Method for al-Fātiḥa and Juz ʿAmma. Premium: the full Shams course, more offline surahs, more assistant questions. Give single users Premium in the Users tab."}</p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          <label className="grid gap-1 text-sm"><span>{de ? "Offline-Suren ohne Premium" : "Offline surahs without Premium"}</span><input type="number" min={0} max={114} className={field} value={c.premium.freeOffline} onChange={(e) => setC({ ...c, premium: { ...c.premium, freeOffline: Number(e.target.value) } })} /></label>
+          <label className="grid gap-1 text-sm"><span>{de ? "Assistent: Fragen pro Tag mit Premium" : "Assistant: questions per day with Premium"}</span><input type="number" min={1} className={field} value={c.premium.assistantPerDay} onChange={(e) => setC({ ...c, premium: { ...c.premium, assistantPerDay: Number(e.target.value) } })} /></label>
+          <label className="flex items-center gap-2 text-sm sm:col-span-2"><input type="checkbox" checked={c.premium.gateWeb} onChange={(e) => setC({ ...c, premium: { ...c.premium, gateWeb: e.target.checked } })} />{de ? "Premium auch auf der Website verlangen (sonst nur in der iPhone-App) – erst einschalten, wenn es im Web eine Kaufmöglichkeit gibt" : "Ask for Premium on the website too (otherwise only in the iPhone app) – switch on only once the web has a way to buy"}</label>
+        </div>
+        <button className={`${btnP} mt-4`} onClick={() => save({ premium: c.premium })}>{de ? "Speichern" : "Save"}</button>
       </section>
       <section className={card}>
         <h3 className="text-lg font-bold">{de ? "Ankündigung für alle Besucher" : "Announcement for all visitors"}</h3>

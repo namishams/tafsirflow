@@ -20,6 +20,8 @@ import Ranking from "./Ranking";
 import RewardsCard from "./RewardsCard";
 import Sticker from "./Sticker";
 import { LevelSeal } from "./Rewards";
+import { Seal } from "./PremiumPanel";
+import { usePremium } from "@/lib/premium";
 import { levelOf as pointsLevel, readPoints, streakOf as pointsStreak, totalPoints } from "@/lib/points";
 import { buildCtx, earnedIds, hoursOf, stickerById } from "@/lib/stickers";
 
@@ -35,6 +37,8 @@ const card = "rounded-lg border border-line bg-surface p-5 sm:p-6";
 // My profile: personal data, complete learning statistics, security and privacy controls
 export default function ProfileView() {
   const t = useTranslations("profile");
+  const tp = useTranslations("premium");
+  const prem = usePremium();
   const n = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
@@ -110,6 +114,8 @@ export default function ProfileView() {
               <h2 className="font-display truncate text-3xl">{name}</h2>
               <p className="truncate text-sm text-white/65">{p.email} · {p.email_verified ? <span className="font-semibold text-[rgb(233_207_153)]">{t("verified")}</span> : t("unverified")}</p>
               <p className="mt-1 text-xs text-white/50">{t("since", { date: date(p.created_at) })} · {t("lastLogin", { date: date(p.last_login_at) })}</p>
+              {(prem.premium || p.plan === "premium") ? <p className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[rgb(var(--gold))]/40 px-2.5 py-1 text-xs font-bold text-[rgb(233_207_153)]"><Seal size={16} />{tp("seal")}</p>
+                : prem.gated && <Link href="/premium" className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-white/20 px-2.5 py-1 text-xs font-semibold text-white/75 hover:border-white/50"><Seal size={16} />{tp("kicker")}</Link>}
             </div>
           </div>
           {me && (

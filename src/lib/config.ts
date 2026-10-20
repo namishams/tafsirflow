@@ -7,10 +7,10 @@ import type { PublicConfig } from "./settings";
 export type ClientConfig = PublicConfig & { ai: boolean };
 export const FALLBACK: ClientConfig = {
   features: { ranking: true, community: true, likes: true, comments: true, assistant: true, duaAi: true, sideArt: true, celebrations: true },
-  points: {}, announcement: null, ai: false,
+  points: {}, announcement: null, premium: { gateWeb: false, freeOffline: 3 }, ai: false,
 };
 let inflight: Promise<ClientConfig> | null = null;
-export const cachedConfig = (): ClientConfig => { const c = readJSON<Partial<ClientConfig>>("tf:cfg", {}); return { ...FALLBACK, ...c, features: { ...FALLBACK.features, ...(c.features ?? {}) } }; };
+export const cachedConfig = (): ClientConfig => { const c = readJSON<Partial<ClientConfig>>("tf:cfg", {}); return { ...FALLBACK, ...c, features: { ...FALLBACK.features, ...(c.features ?? {}) }, premium: { ...FALLBACK.premium, ...(c.premium ?? {}) } }; };
 
 export function loadConfig(): Promise<ClientConfig> {
   inflight ??= fetch("/api/config")

@@ -207,6 +207,17 @@ ALTER TABLE users ADD COLUMN IF NOT EXISTS rank_hidden boolean NOT NULL DEFAULT 
 -- baby names: how often families saved a name as favourite ("most loved by families" on /names)
 CREATE TABLE IF NOT EXISTS name_favs (name_id text PRIMARY KEY, n bigint NOT NULL DEFAULT 0);
 
+-- Premium bought in the iOS app (StoreKit), linked to the account it was confirmed for (users.plan = 'premium')
+CREATE TABLE IF NOT EXISTS iap_purchases (
+  original_transaction_id text NOT NULL,
+  user_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  product_id  text NOT NULL,
+  environment text NOT NULL,
+  purchased_at timestamptz,
+  created_at  timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (original_transaction_id, user_id)
+);
+
 -- keep last: the app user needs rights on every table above
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
