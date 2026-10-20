@@ -1,0 +1,4 @@
+"CFBundleDisplayName" = "Masterclass";
+"NSMicrophoneUsageDescription" = "لتتحقق من تلاوتك وتسجّل صوتك وتقارنه بصوت القارئ.";
+"NSSpeechRecognitionUsageDescription" = "لمقارنة تلاوتك بالآية أثناء حفظها.";
+"NSLocationWhenInUseUsageDescription" = "لعرض مواقيت الصلاة في مكانك.";

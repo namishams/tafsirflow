@@ -1,0 +1,21 @@
+{
+  "identifier" : "4C1B7E0A",
+  "nonRenewingSubscriptions" : [ ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : true,
+      "internalID" : "6739000001",
+      "localizations" : [
+        { "description" : "The full Shams course for all 114 surahs, unlimited offline surahs and more.", "displayName" : "Masterclass Premium", "locale" : "en_US" },
+        { "description" : "Der ganze Shams-Kurs für alle 114 Suren, unbegrenzt offline und mehr.", "displayName" : "Masterclass Premium", "locale" : "de" }
+      ],
+      "productID" : "com.quranmasterclass.app.premium",
+      "referenceName" : "Masterclass Premium",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : { "_failTransactionsEnabled" : false, "_storeKitErrors" : [ ] },
+  "subscriptionGroups" : [ ],
+  "version" : { "major" : 3, "minor" : 0 }
+}

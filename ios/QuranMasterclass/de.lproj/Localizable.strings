@@ -1,0 +1,5 @@
+"offline.title" = "Keine Internetverbindung";
+"offline.body" = "Offline gespeicherte Suren kannst du weiter hören. Alles andere ist wieder da, sobald du online bist.";
+"offline.retry" = "Erneut versuchen";
+"ok" = "OK";
+"cancel" = "Abbrechen";

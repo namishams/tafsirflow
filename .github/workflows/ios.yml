@@ -1,0 +1,25 @@
+# Checks that the iOS app compiles (simulator build, no signing). Publishing is done on a Mac: scripts/build-ios.sh
+name: iOS app
+on:
+  push:
+    paths: ["ios/**", ".github/workflows/ios.yml"]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: XcodeGen
+        run: brew install xcodegen
+      - name: Generate project
+        working-directory: ios
+        run: IOS_TEAM_ID="" IOS_BUILD_NUMBER="${{ github.run_number }}" xcodegen generate
+      - name: Build for the simulator
+        working-directory: ios
+        run: |
+          xcodebuild -version
+          xcodebuild -project QuranMasterclass.xcodeproj -scheme QuranMasterclass -configuration Release \
+            -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO build 2>&1 | tee build.log | grep -E "error:|warning: .*Swift|BUILD (SUCCEEDED|FAILED)" || true
+          grep -q "BUILD SUCCEEDED" build.log

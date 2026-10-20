@@ -1,0 +1,5 @@
+"offline.title" = "No internet connection";
+"offline.body" = "Surahs you saved for offline listening keep playing. Everything else returns as soon as you are online again.";
+"offline.retry" = "Try again";
+"ok" = "OK";
+"cancel" = "Cancel";

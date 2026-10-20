@@ -1,0 +1,4 @@
+"CFBundleDisplayName" = "Masterclass";
+"NSMicrophoneUsageDescription" = "Damit du deine Rezitation prüfen, dich aufnehmen und mit dem Rezitator vergleichen kannst.";
+"NSSpeechRecognitionUsageDescription" = "Damit deine Rezitation beim Lernen mit dem Vers verglichen werden kann.";
+"NSLocationWhenInUseUsageDescription" = "Damit die Gebetszeiten für deinen Ort angezeigt werden.";

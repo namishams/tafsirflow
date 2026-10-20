@@ -1,0 +1,49 @@
+# Xcode project for the iOS app, generated with XcodeGen (https://github.com/yonaskolb/XcodeGen).
+# Do not edit the .xcodeproj by hand: change this file and run  bash scripts/build-ios.sh  on a Mac.
+name: QuranMasterclass
+options:
+  bundleIdPrefix: com.quranmasterclass
+  deploymentTarget:
+    iOS: "15.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+settings:
+  base:
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "${IOS_BUILD_NUMBER}"
+    DEVELOPMENT_TEAM: "${IOS_TEAM_ID}"
+    SWIFT_VERSION: "5.0"
+targets:
+  QuranMasterclass:
+    type: application
+    platform: iOS
+    sources:
+      - path: QuranMasterclass
+        excludes:
+          - "Info.plist"
+          - "QuranMasterclass.entitlements"
+          - "Premium.storekit"
+          - "PrivacyInfo.xcprivacy"
+      - path: QuranMasterclass/PrivacyInfo.xcprivacy
+        buildPhase: resources
+      - path: QuranMasterclass/Info.plist
+        buildPhase: none
+      - path: QuranMasterclass/QuranMasterclass.entitlements
+        buildPhase: none
+      - path: QuranMasterclass/Premium.storekit
+        buildPhase: none
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.quranmasterclass.app
+        PRODUCT_NAME: QuranMasterclass
+        INFOPLIST_FILE: QuranMasterclass/Info.plist
+        CODE_SIGN_ENTITLEMENTS: QuranMasterclass/QuranMasterclass.entitlements
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: NO
+        SUPPORTS_MACCATALYST: NO
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+    scheme:
+      storeKitConfiguration: QuranMasterclass/Premium.storekit

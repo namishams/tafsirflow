@@ -1,0 +1,4 @@
+"CFBundleDisplayName" = "Masterclass";
+"NSMicrophoneUsageDescription" = "To check your recitation and to record yourself and compare with the reciter.";
+"NSSpeechRecognitionUsageDescription" = "To compare your recitation with the verse while you learn it.";
+"NSLocationWhenInUseUsageDescription" = "To show the prayer times for the place where you are.";
