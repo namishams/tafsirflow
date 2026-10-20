@@ -218,6 +218,38 @@ CREATE TABLE IF NOT EXISTS iap_purchases (
   PRIMARY KEY (original_transaction_id, user_id)
 );
 
+-- Quran Masterclass Pro (monthly subscription in the app): Pro is active while pro_until lies in the future;
+-- plan = 'premium' with pro_until NULL is a lasting Premium (first one-time purchase or set by the admin)
+ALTER TABLE users ADD COLUMN IF NOT EXISTS pro_until timestamptz;
+ALTER TABLE iap_purchases ADD COLUMN IF NOT EXISTS transaction_id text;
+ALTER TABLE iap_purchases ADD COLUMN IF NOT EXISTS expires_at timestamptz;
+ALTER TABLE iap_purchases ADD COLUMN IF NOT EXISTS revoked_at timestamptz;
+ALTER TABLE iap_purchases ADD COLUMN IF NOT EXISTS updated_at timestamptz NOT NULL DEFAULT now();
+
+-- personal duas written with AI, bought in the app (consumables): every transaction counts once
+CREATE TABLE IF NOT EXISTS iap_consumables (
+  transaction_id text PRIMARY KEY,
+  user_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  product_id  text NOT NULL,
+  credits     integer NOT NULL,
+  environment text NOT NULL,
+  refunded_at timestamptz,
+  created_at  timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS ai_credits (
+  user_id    bigint PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  dua        integer NOT NULL DEFAULT 0 CHECK (dua >= 0),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+-- what Pro includes per month (personal duas); month = 'YYYY-MM'
+CREATE TABLE IF NOT EXISTS ai_usage (
+  user_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind    text NOT NULL,
+  month   text NOT NULL,
+  n       integer NOT NULL DEFAULT 0,
+  PRIMARY KEY (user_id, kind, month)
+);
+
 -- keep last: the app user needs rights on every table above
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

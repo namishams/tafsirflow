@@ -57,7 +57,8 @@ export async function currentUser(): Promise<User | null> {
   if (!token) return null;
   try {
     const r = await p.query(
-      "SELECT u.id, u.email, u.name, u.role, u.plan, u.email_verified, u.birth_year FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token_hash = $1 AND s.expires_at > now()",
+      // a Pro subscription counts while pro_until lies in the future; plan 'premium' without pro_until is a lasting Premium
+      "SELECT u.id, u.email, u.name, u.role, CASE WHEN u.plan = 'premium' AND (u.pro_until IS NULL OR u.pro_until > now()) THEN 'premium' ELSE 'free' END AS plan, u.email_verified, u.birth_year FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token_hash = $1 AND s.expires_at > now()",
       [sha(token)],
     );
     const u = r.rows[0];

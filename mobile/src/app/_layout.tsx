@@ -5,6 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts, Amiri_400Regular, Amiri_700Bold } from "@expo-google-fonts/amiri";
 import { ArefRuqaa_700Bold } from "@expo-google-fonts/aref-ruqaa";
+import { Fraunces_400Regular, Fraunces_400Regular_Italic, Fraunces_600SemiBold } from "@expo-google-fonts/fraunces";
 import { PlusJakartaSans_400Regular, PlusJakartaSans_400Regular_Italic, PlusJakartaSans_500Medium, PlusJakartaSans_600SemiBold, PlusJakartaSans_700Bold, PlusJakartaSans_800ExtraBold } from "@expo-google-fonts/plus-jakarta-sans";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { LangProvider, useT } from "@/i18n";
@@ -15,6 +16,10 @@ import { hydrateStore } from "@/lib/store";
 import { SyncBridge } from "@/lib/sync";
 import { stackOptions } from "@/components/page";
 import { useTheme } from "@/lib/theme";
+import { RewardsHost } from "@/features/progress";
+import { RadioMiniPlayer } from "@/features/radio/MiniPlayer";
+import { NotificationsBridge } from "@/features/daily/NotificationsBridge";
+import { DailyMoment } from "@/features/daily/DailyMoment";
 
 SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
@@ -28,13 +33,14 @@ function Routes() {
       <Stack.Screen name="register" options={{ presentation: "modal", title: t("auth.registerTitle") }} />
       <Stack.Screen name="pro" options={{ presentation: "modal", headerShown: false }} />
       <Stack.Screen name="shams/[surah]" options={{ headerShown: false, gestureEnabled: false }} />
+      <Stack.Screen name="radio/now" options={{ presentation: "fullScreenModal", headerShown: false, animation: "slide_from_bottom" }} />
     </Stack>
   );
 }
 
 export default function RootLayout() {
   const [fonts] = useFonts({
-    Amiri_400Regular, Amiri_700Bold, ArefRuqaa_700Bold,
+    Amiri_400Regular, Amiri_700Bold, ArefRuqaa_700Bold, Fraunces_400Regular, Fraunces_400Regular_Italic, Fraunces_600SemiBold,
     PlusJakartaSans_400Regular, PlusJakartaSans_400Regular_Italic, PlusJakartaSans_500Medium, PlusJakartaSans_600SemiBold, PlusJakartaSans_700Bold, PlusJakartaSans_800ExtraBold,
   });
   const [store, setStore] = useState(false);
@@ -50,7 +56,12 @@ export default function RootLayout() {
             <ProProvider>
               <SyncBridge />
               <StatusBar style="auto" />
-              <Routes />
+              <RewardsHost>
+                <Routes />
+                <RadioMiniPlayer global />
+                <NotificationsBridge />
+                <DailyMoment />
+              </RewardsHost>
             </ProProvider>
           </AuthProvider>
         </LangProvider>

@@ -1,90 +1,143 @@
 import { useState } from "react";
-import { Alert, Platform, Text, View } from "react-native";
-import { router } from "expo-router";
+import { Alert, Platform, Switch, Text, TextInput, View } from "react-native";
+import { Stack, router, type Href } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
 import Constants from "expo-constants";
-import { Field, Notice, Row, Screen, Section, PrimaryButton } from "@/components/ui";
+import { FONT, R, useTheme } from "@/lib/theme";
+import { Chip, GoldButton, OutlineButton, Segmented } from "@/components/brand";
+import { readDaily, setDaily, type DailyReminder } from "@/lib/daily";
+import { LinkRow, Page, PageHero, ProBadge, RowGroup } from "@/components/page";
 import { useLang, useT, type LangSetting } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { SITE, ApiError } from "@/lib/api";
 import { useSettings } from "@/lib/settings";
-import { type, useTheme, type AppearanceSetting } from "@/lib/theme";
+import { openPro, usePro } from "@/lib/pro";
+import { manageSubscriptions } from "@/lib/iap";
+import { ProPromo } from "@/features/learn/ProPromo";
+import type { AppearanceSetting } from "@/lib/theme";
 
+// Account: Pro, sign-in, appearance, language, learning progress, legal, report a problem, delete the account
 export default function AccountScreen() {
   const t = useT();
   const theme = useTheme();
   const { lang, setting, setSetting } = useLang();
   const { appearance, setAppearance } = useSettings();
   const { user, logout, deleteAccount } = useAuth();
+  const { pro, until } = usePro();
   const [deleting, setDeleting] = useState(false);
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [daily, setDailyState] = useState<DailyReminder>(readDaily());
+  const updateDaily = async (next: DailyReminder) => { const ok = await setDaily(next, lang); setDailyState(ok ? next : { ...next, on: false }); };
 
   const open = (path: string) => WebBrowser.openBrowserAsync(`${SITE}/${lang}${path}`);
-  const appearances: [AppearanceSetting, string][] = [["system", t("account.system")], ["light", t("account.light")], ["dark", t("account.dark")]];
-  const languages: [LangSetting, string][] = [["system", t("account.languageSystem")], ["de", t("account.german")], ["en", t("account.english")]];
-
+  const go = (href: string) => router.push(href as Href);
   const confirmDelete = async () => {
     setBusy(true); setError("");
-    try {
-      await deleteAccount(password);
-      setDeleting(false); setPassword("");
-    } catch (e) {
-      setError(e instanceof ApiError && e.code === "current" ? t("account.wrongPassword") : t("common.error"));
-    } finally { setBusy(false); }
+    try { await deleteAccount(password); setDeleting(false); setPassword(""); }
+    catch (e) { setError(e instanceof ApiError && e.code === "current" ? t("account.wrongPassword") : t("common.error")); }
+    finally { setBusy(false); }
   };
 
   return (
-    <Screen>
-      {user ? (
-        <Section footer={user.emailVerified ? undefined : t("auth.verifyHint")}>
-          <Row title={user.name ?? user.email} subtitle={t("account.signedInAs", { email: user.email })} icon={{ ios: "person.crop.circle", android: "account_circle" }} />
-        </Section>
-      ) : (
-        <Section footer={t("account.notSignedIn")}>
-          <Row title={t("account.signIn")} icon={{ ios: "person.crop.circle", android: "account_circle" }} accessory="chevron" onPress={() => router.push("/sign-in")} />
-          <Row title={t("account.createAccount")} icon={{ ios: "person.badge.plus", android: "person_add" }} accessory="chevron" onPress={() => router.push("/register")} />
-        </Section>
-      )}
+    <>
+      <Stack.Screen options={{ headerShown: false }} />
+      <Page>
+        <PageHero topInset eyebrow="Quran Masterclass" title={user ? user.name ?? user.email : t("account.title")} lead={user ? t("account.signedInAs", { email: user.email }) : t("account.notSignedIn")}>
+          {!user ? (
+            <>
+              <GoldButton title={t("account.createAccount")} onPress={() => go("/register")} />
+              <OutlineButton title={t("account.signIn")} onStage onPress={() => go("/sign-in")} />
+            </>
+          ) : null}
+        </PageHero>
 
-      <Section header={t("account.appearance")}>
-        {appearances.map(([v, label]) => <Row key={v} title={label} accessory={appearance === v ? "check" : "none"} onPress={() => setAppearance(v)} />)}
-      </Section>
+        <View style={{ padding: 16, gap: 22 }}>
+          {user && !user.emailVerified ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.ink, backgroundColor: theme.accentSoft, padding: 12, borderRadius: R.sm }}>{t("auth.verifyHint")}</Text> : null}
 
-      <Section header={t("account.language")}>
-        {languages.map(([v, label]) => <Row key={v} title={label} accessory={setting === v ? "check" : "none"} onPress={() => setSetting(v)} />)}
-      </Section>
+          {pro ? (
+            <RowGroup>
+              <LinkRow first title={t("pro.active")} subtitle={until ? t("pro.activeUntil", { date: new Date(until).toLocaleDateString(lang === "de" ? "de-DE" : "en-GB") }) : t("pro.name")} icon="sun" right={<ProBadge />} />
+              <LinkRow title={t("pro.manage")} onPress={manageSubscriptions} />
+            </RowGroup>
+          ) : (
+            <>
+              <ProPromo compact />
+              <RowGroup><LinkRow first title={t("pro.restore")} onPress={() => openPro("general")} /></RowGroup>
+            </>
+          )}
 
-      <Section header={t("account.legal")}>
-        <Row title={t("account.terms")} accessory="chevron" onPress={() => open("/legal/terms")} />
-        <Row title={t("account.privacy")} accessory="chevron" onPress={() => open("/legal/privacy")} />
-        <Row title={t("account.imprint")} accessory="chevron" onPress={() => open("/legal/imprint")} />
-        <Row title={t("account.support")} accessory="chevron" onPress={() => open("/feedback")} />
-      </Section>
-
-      {user ? (
-        <Section>
-          <Row title={t("account.signOut")} onPress={() => void logout()} />
-          {user.role !== "admin" ? <Row title={t("account.deleteAccount")} destructive onPress={() => { setDeleting(true); setError(""); }} /> : null}
-        </Section>
-      ) : null}
-
-      {user && deleting ? (
-        <>
-          <Section header={t("account.deleteTitle")} footer={t("account.deleteBody")}>
-            <Field label={t("account.currentPassword")} value={password} onChangeText={setPassword} secureTextEntry autoComplete="current-password" textContentType="password" />
+          <Section title={t("account.appearance")}>
+            <Segmented<AppearanceSetting> value={appearance} options={[["system", t("account.system")], ["light", t("account.light")], ["dark", t("account.dark")]]} onChange={setAppearance} />
           </Section>
-          {error ? <Notice text={error} tone="error" /> : null}
-          <View style={{ marginHorizontal: 16, marginTop: 16, gap: 12 }}>
-            <PrimaryButton title={t("account.deleteConfirm")} busy={busy} disabled={!password} onPress={() =>
-              Platform.OS === "web" ? void confirmDelete() :
-              Alert.alert(t("account.deleteTitle"), t("account.deleteBody"), [{ text: t("common.cancel"), style: "cancel" }, { text: t("account.deleteConfirm"), style: "destructive", onPress: () => void confirmDelete() }])} />
-          </View>
-        </>
-      ) : null}
+          <Section title={t("account.language")}>
+            <Segmented<LangSetting> value={setting} options={[["system", t("account.languageSystem")], ["de", t("account.german")], ["en", t("account.english")]]} onChange={setSetting} />
+          </Section>
 
-      <Text style={[type.footnote, { color: theme.tertiary, textAlign: "center", marginTop: 24 }]}>{t("account.version", { v: Constants.expoConfig?.version ?? "1.0.0" })}</Text>
-    </Screen>
+          <Section title={lang === "de" ? "Tägliche Erinnerung" : "Daily reminder"}>
+            <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 14, gap: 12 }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: theme.ink }}>{lang === "de" ? "Heute schon an Allah gedacht?" : "Have you remembered Allah today?"}</Text>
+                  <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: theme.muted, marginTop: 2 }}>{lang === "de" ? "Eine Mitteilung pro Tag, auch mit Hinweisen auf persönliche Duas." : "One notification a day, including suggestions for personal duas."}</Text>
+                </View>
+                <Switch value={daily.on} onValueChange={(on) => void updateDaily({ ...daily, on })} trackColor={{ true: theme.accent }} accessibilityLabel={lang === "de" ? "Tägliche Erinnerung" : "Daily reminder"} />
+              </View>
+              {daily.on ? (
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                  {[6, 8, 12, 18, 21].map((h) => <Chip key={h} label={`${String(h).padStart(2, "0")}:00`} selected={daily.hour === h} onPress={() => void updateDaily({ ...daily, hour: h, minute: 0 })} />)}
+                </View>
+              ) : null}
+            </View>
+          </Section>
+
+          <RowGroup>
+            <LinkRow first title={lang === "de" ? "Mein Profil und Auszeichnungen" : "My profile and achievements"} icon="user" onPress={() => go("/profile")} />
+            <LinkRow title={lang === "de" ? "Statistik" : "Statistics"} icon="list" onPress={() => go("/stats")} />
+            <LinkRow title={lang === "de" ? "Koran-Landkarte" : "Quran map"} icon="map" onPress={() => go("/map")} />
+          </RowGroup>
+
+          <Section title={t("account.legal")}>
+            <RowGroup>
+              <LinkRow first title={t("account.terms")} onPress={() => open("/legal/terms")} />
+              <LinkRow title={t("account.privacy")} onPress={() => open("/legal/privacy")} />
+              <LinkRow title={t("account.imprint")} onPress={() => open("/legal/imprint")} />
+              <LinkRow title={t("account.support")} onPress={() => go("/feedback")} />
+              <LinkRow title={lang === "de" ? "Über uns" : "About us"} onPress={() => go("/about")} />
+              <LinkRow title={lang === "de" ? "Änderungen" : "Changelog"} onPress={() => go("/changelog")} />
+            </RowGroup>
+          </Section>
+
+          {user ? (
+            <RowGroup>
+              <LinkRow first title={t("account.signOut")} icon="logout" onPress={() => void logout()} />
+              {user.role !== "admin" ? <LinkRow title={t("account.deleteAccount")} onPress={() => { setDeleting(true); setError(""); }} /> : null}
+            </RowGroup>
+          ) : null}
+
+          {user && deleting ? (
+            <View style={{ gap: 12, borderRadius: R.lg, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 16 }}>
+              <Text style={{ fontFamily: FONT.display, fontSize: 18, color: theme.ink }}>{t("account.deleteTitle")}</Text>
+              <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.muted }}>{t("account.deleteBody")}</Text>
+              <TextInput value={password} onChangeText={setPassword} secureTextEntry autoComplete="current-password" textContentType="password" placeholder={t("account.currentPassword")} placeholderTextColor={theme.muted} accessibilityLabel={t("account.currentPassword")}
+                style={{ height: 48, borderRadius: R.md, borderWidth: 1, borderColor: theme.line, paddingHorizontal: 14, fontFamily: FONT.regular, fontSize: 16, color: theme.ink, backgroundColor: theme.bg }} />
+              {error ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: theme.danger }} accessibilityLiveRegion="polite">{error}</Text> : null}
+              <OutlineButton title={t("account.deleteConfirm")} disabled={!password || busy} onPress={() =>
+                Platform.OS === "web" ? void confirmDelete() :
+                Alert.alert(t("account.deleteTitle"), t("account.deleteBody"), [{ text: t("common.cancel"), style: "cancel" }, { text: t("account.deleteConfirm"), style: "destructive", onPress: () => void confirmDelete() }])} />
+              <OutlineButton title={t("common.cancel")} onPress={() => setDeleting(false)} />
+            </View>
+          ) : null}
+
+          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: theme.muted, textAlign: "center" }}>{t("account.version", { v: Constants.expoConfig?.version ?? "1.0.0" })}</Text>
+        </View>
+      </Page>
+    </>
   );
+}
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  const t = useTheme();
+  return <View style={{ gap: 10 }}><Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.6, textTransform: "uppercase", color: t.muted }}>{title}</Text>{children}</View>;
 }

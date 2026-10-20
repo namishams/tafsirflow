@@ -27,7 +27,7 @@ export function stackOptions(t: Theme) {
 export function Page({ children, style, padded = false, ...rest }: { children: ReactNode; style?: StyleProp<ViewStyle>; padded?: boolean } & ScrollViewProps) {
   const t = useTheme();
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={[{ paddingBottom: 40 }, padded && { paddingHorizontal: 16, paddingTop: 16 }, style]} keyboardShouldPersistTaps="handled" {...rest}>
+    <ScrollView style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={[{ paddingBottom: 130 }, padded && { paddingHorizontal: 16, paddingTop: 16 }, style]} keyboardShouldPersistTaps="handled" {...rest}>
       {children}
     </ScrollView>
   );

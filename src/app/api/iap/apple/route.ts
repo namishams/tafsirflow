@@ -2,15 +2,20 @@ import { NextRequest } from "next/server";
 import { currentUser } from "@/lib/auth";
 import { pool } from "@/lib/db";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
-import { IOS_BUNDLE_ID, PREMIUM_PRODUCT, verifyAppleTransaction } from "@/lib/appleIap";
+import { DUA_PRODUCTS, IOS_BUNDLE_ID, PREMIUM_PRODUCT, PRO_SUBSCRIPTION, verifyAppleTransaction } from "@/lib/appleIap";
+import { addDuaCredits, duaCredits } from "@/lib/aiCredits";
 
 export const dynamic = "force-dynamic";
 
-// Links a Premium purchase from the iOS app to the signed-in account, so Premium also works on the web and other devices.
+// Links a purchase from the iOS app to the signed-in account, so it works on every device:
+// - Pro (monthly subscription): users.plan = 'premium' until the transaction's expiry (renewals arrive here again and
+//   through the App Store Server Notifications, see ./notifications)
+// - personal duas (consumables): each transaction adds its credits exactly once
+// - the first one-time Premium: lasting Premium
 // Test purchases (Sandbox, TestFlight, App Review) only count for the admin or with IAP_ALLOW_SANDBOX=1.
 export async function POST(req: NextRequest) {
   if (!sameOrigin(req)) return json({ error: "origin" }, 403);
-  if (rateLimited(`iap:${clientIp(req)}`, 20, 60 * 60_000)) return json({ error: "rate" }, 429);
+  if (rateLimited(`iap:${clientIp(req)}`, 30, 60 * 60_000)) return json({ error: "rate" }, 429);
   const me = await currentUser();
   if (!me) return json({ error: "login" }, 401);
   const p = pool();
@@ -18,14 +23,52 @@ export async function POST(req: NextRequest) {
   const b = (await req.json().catch(() => ({}))) as { jws?: unknown };
   if (typeof b.jws !== "string" || b.jws.length > 20000) return json({ error: "input" }, 400);
   const tx = verifyAppleTransaction(b.jws);
-  if (!tx || tx.bundleId !== IOS_BUNDLE_ID || tx.productId !== PREMIUM_PRODUCT) return json({ error: "invalid" }, 400);
+  const known = tx && (tx.productId === PREMIUM_PRODUCT || tx.productId === PRO_SUBSCRIPTION || tx.productId in DUA_PRODUCTS);
+  if (!tx || tx.bundleId !== IOS_BUNDLE_ID || !known) return json({ error: "invalid" }, 400);
   if (tx.revocationDate) return json({ error: "revoked" }, 400);
-  if (tx.environment !== "Production" && me.role !== "admin" && process.env.IAP_ALLOW_SANDBOX !== "1") return json({ premium: false, sandbox: true });
+  if (tx.environment !== "Production" && me.role !== "admin" && process.env.IAP_ALLOW_SANDBOX !== "1") return json({ premium: me.plan === "premium", sandbox: true });
+
+  // personal duas: a transaction id is credited once, whoever sends it
+  if (tx.productId in DUA_PRODUCTS) {
+    const c = await p.connect();
+    try {
+      await c.query("BEGIN");
+      const r = await c.query(
+        `INSERT INTO iap_consumables (transaction_id, user_id, product_id, credits, environment) VALUES ($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING RETURNING transaction_id`,
+        [tx.transactionId, me.id, tx.productId, DUA_PRODUCTS[tx.productId], tx.environment],
+      );
+      if (r.rowCount) await addDuaCredits(c, me.id, DUA_PRODUCTS[tx.productId]);
+      await c.query("COMMIT");
+    } catch {
+      await c.query("ROLLBACK").catch(() => undefined);
+      return json({ error: "db" }, 500);
+    } finally {
+      c.release();
+    }
+    const cr = await duaCredits(me.id, me.plan === "premium");
+    return json({ premium: me.plan === "premium", dua: cr.dua });
+  }
+
+  // a subscription belongs to the account it was first confirmed for (no sharing one Apple ID across accounts)
+  const owner = await p.query("SELECT user_id FROM iap_purchases WHERE original_transaction_id = $1 ORDER BY created_at LIMIT 1", [tx.originalTransactionId]);
+  if (owner.rows[0] && Number(owner.rows[0].user_id) !== me.id) return json({ error: "other_account" }, 409);
+
+  const expires = tx.productId === PRO_SUBSCRIPTION ? tx.expiresDate ?? null : null;
   await p.query(
-    `INSERT INTO iap_purchases (original_transaction_id, user_id, product_id, environment, purchased_at)
-     VALUES ($1, $2, $3, $4, to_timestamp($5 / 1000.0)) ON CONFLICT DO NOTHING`,
-    [tx.originalTransactionId, me.id, tx.productId, tx.environment, tx.purchaseDate],
+    `INSERT INTO iap_purchases (original_transaction_id, user_id, product_id, environment, purchased_at, transaction_id, expires_at)
+     VALUES ($1, $2, $3, $4, to_timestamp($5 / 1000.0), $6, CASE WHEN $7::bigint IS NULL THEN NULL ELSE to_timestamp($7::bigint / 1000.0) END)
+     ON CONFLICT (original_transaction_id, user_id) DO UPDATE SET transaction_id = EXCLUDED.transaction_id, expires_at = GREATEST(iap_purchases.expires_at, EXCLUDED.expires_at), updated_at = now()`,
+    [tx.originalTransactionId, me.id, tx.productId, tx.environment, tx.purchaseDate, tx.transactionId, expires],
   );
-  await p.query("UPDATE users SET plan = 'premium' WHERE id = $1", [me.id]);
-  return json({ premium: true });
+  if (tx.productId === PRO_SUBSCRIPTION) {
+    if (!expires || expires <= Date.now()) return json({ premium: me.plan === "premium", expired: true });
+    // a lasting Premium stays lasting; otherwise Pro runs until the subscription's expiry
+    await p.query(
+      `UPDATE users SET plan = 'premium', pro_until = CASE WHEN plan = 'premium' AND pro_until IS NULL THEN NULL ELSE GREATEST(COALESCE(pro_until, to_timestamp(0)), to_timestamp($2 / 1000.0)) END WHERE id = $1`,
+      [me.id, expires],
+    );
+    return json({ premium: true, until: expires });
+  }
+  await p.query("UPDATE users SET plan = 'premium', pro_until = NULL WHERE id = $1", [me.id]);
+  return json({ premium: true, until: null });
 }

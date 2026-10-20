@@ -1,0 +1,13 @@
+// Copied verbatim from the website (src/app/[locale]/(app)/reciters/page.tsx: C and the hero calligraphy,
+// reciters/[slug]/page.tsx: LBL). Do not edit by hand.
+export const C = {
+  de: { kicker: "Die Stimmen des Korans", title: "50 große Rezitatoren – ihre Geschichte, ihr Klang, ihr Vermächtnis", lead: "Von den Meistern aus Kairo, deren Aufnahmen seit Generationen um die Welt gehen, bis zu den Imamen der heiligen Moscheen in Mekka und Medina und den Stimmen aus den Emiraten. Lerne sie kennen – und lerne von ihnen: Wer einem großen Rezitator aufmerksam zuhört, lernt Aussprache, Rhythmus und Ehrfurcht.", listen: "Im Player anhören", read: "Biografie lesen", path: "Der Weg zum Rezitator", radio: "Koran-Radio" },
+  en: { kicker: "The voices of the Quran", title: "50 great reciters – their story, their sound, their legacy", lead: "From the masters of Cairo whose recordings have travelled the world for generations, to the imams of the holy mosques of Makkah and Madinah and the voices of the Emirates. Get to know them – and learn from them: whoever listens attentively to a great reciter learns pronunciation, rhythm and reverence.", listen: "Listen in the player", read: "Read the biography", path: "The path to becoming a reciter", radio: "Quran radio" },
+  ar: { kicker: "أصوات القرآن", title: "50 قارئًا من كبار القرّاء – قصصهم وأصواتهم وإرثهم", lead: "من أساتذة القاهرة الذين طافت تسجيلاتهم العالم جيلًا بعد جيل، إلى أئمة الحرمين الشريفين في مكة المكرمة والمدينة المنورة وأصوات الإمارات. تعرّف إليهم – وتعلّم منهم: فمن أصغى بانتباه إلى قارئ كبير تعلّم النطق والإيقاع والخشوع.", listen: "استمع في المشغّل", read: "اقرأ السيرة", path: "الطريق إلى أن تصبح قارئًا", radio: "إذاعة القرآن" },
+};
+export const LBL = {
+  de: { all: "Alle Rezitatoren", country: "Land", life: "Lebensdaten", style: "Stil", listen: "Im Player anhören", known: "Bekannt für", learn: "Selbst rezitieren lernen", learnBody: "Von den ersten Buchstaben bis zur Idschaza – Schritt für Schritt.", path: "Der Weg zum Rezitator", bio: "Biografie" },
+  en: { all: "All reciters", country: "Country", life: "Life", style: "Style", listen: "Listen in the player", known: "Known for", learn: "Learn to recite yourself", learnBody: "From the first letters to the ijazah – step by step.", path: "The path to becoming a reciter", bio: "Biography" },
+  ar: { all: "جميع القرّاء", country: "البلد", life: "الحياة", style: "الأسلوب", listen: "استمع في المشغّل", known: "اشتُهر بـ", learn: "تعلّم التلاوة بنفسك", learnBody: "من الحروف الأولى حتى الإجازة – خطوةً خطوة.", path: "الطريق إلى أن تصبح قارئًا", bio: "السيرة" },
+};
+export const HERO_CALLIGRAPHY = "القرّاء";

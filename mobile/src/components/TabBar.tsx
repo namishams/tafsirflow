@@ -1,48 +1,59 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Platform, Pressable, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { BottomTabBarProps } from "expo-router/tabs";
-import { LinearGradient } from "expo-linear-gradient";
-import { FONT, useTheme } from "@/lib/theme";
+import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
+import { BlurView } from "expo-blur";
+import { useTheme } from "@/lib/theme";
 import { Icon, type IconName } from "./icons";
 
-// Bottom navigation exactly like the website's TabBar.tsx: white bar with a hairline on top, outline icons,
-// the active tab in the accent colour with a gold hairline and a small gold diamond above it.
+// The tab bar: icons only, like Instagram, on a floating capsule of Apple's Liquid Glass (blur on systems without it).
+// The active tab is drawn heavier in the accent colour inside a small glass lens; names stay for VoiceOver.
 const ICONS: Record<string, IconName> = { "(home)": "grid", quran: "book", learn: "cap", library: "compass", account: "user" };
+export const TAB_BAR_HEIGHT = 62;
+/** space a screen leaves at the bottom so nothing hides behind the floating tab bar */
+export const useTabBarSpace = () => TAB_BAR_HEIGHT + Math.max(useSafeAreaInsets().bottom, 12) + 12;
 
 export default function TabBar({ state, descriptors, navigateToTab }: BottomTabBarProps) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
-  return (
-    <View style={[s.bar, { backgroundColor: t.dark ? "rgba(13,33,26,0.97)" : "rgba(255,255,255,0.97)", borderTopColor: t.line, paddingBottom: Math.max(insets.bottom, 8) }]} accessibilityRole="tablist">
+  const glass = Platform.OS === "ios" && isLiquidGlassAvailable();
+  const bar = (
+    <View style={s.row}>
       {state.routes.map((route, i) => {
         const on = state.index === i;
         const { options } = descriptors[route.key];
         const label = typeof options.title === "string" ? options.title : route.name;
-        const color = on ? t.accent : t.muted;
+        const name = ICONS[route.name] ?? "grid";
         return (
           <Pressable key={route.key} accessibilityRole="tab" accessibilityState={{ selected: on }} accessibilityLabel={label}
-            onPress={() => { if (!on) navigateToTab(route.key); }}
-            style={s.tab}>
-            {on ? (
-              <View style={s.mark} pointerEvents="none">
-                <LinearGradient colors={["transparent", "rgb(201,166,94)", "transparent"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={s.markLine} />
-                <View style={[s.diamond, { backgroundColor: t.surface }]} />
-              </View>
-            ) : null}
-            <Icon name={ICONS[route.name] ?? "grid"} color={color} />
-            <Text numberOfLines={1} style={[s.label, { color }]}>{label}</Text>
+            onPress={() => { if (!on) navigateToTab(route.key); }} style={s.tab} hitSlop={4}>
+            {on ? (glass
+              ? <GlassView glassEffectStyle="clear" tintColor={t.dark ? "rgba(58,190,146,0.18)" : "rgba(6,108,78,0.10)"} style={s.lens} />
+              : <View style={[s.lens, { backgroundColor: t.dark ? "rgba(58,190,146,0.16)" : "rgba(6,108,78,0.08)" }]} />) : null}
+            <Icon name={name} size={25} color={on ? t.accent : t.dark ? "rgba(236,238,242,0.78)" : "rgba(13,31,25,0.72)"} weight={on ? 2.2 : 1.6} filled={on && name !== "compass" && name !== "grid"} />
           </Pressable>
         );
       })}
     </View>
   );
+  return (
+    <View pointerEvents="box-none" style={[s.wrap, { bottom: Math.max(insets.bottom - 6, 12) }]}>
+      {glass ? (
+        <GlassView glassEffectStyle="regular" isInteractive style={s.capsule}>{bar}</GlassView>
+      ) : (
+        <View style={[s.capsule, { borderWidth: StyleSheet.hairlineWidth, borderColor: t.line }]}>
+          <BlurView intensity={70} tint={t.dark ? "systemChromeMaterialDark" : "systemChromeMaterialLight"} style={StyleSheet.absoluteFill} />
+          {bar}
+        </View>
+      )}
+    </View>
+  );
 }
 
 const s = StyleSheet.create({
-  bar: { flexDirection: "row", borderTopWidth: StyleSheet.hairlineWidth },
-  tab: { flex: 1, alignItems: "center", gap: 4, paddingTop: 10, paddingBottom: 2, paddingHorizontal: 2 },
-  label: { fontFamily: FONT.semibold, fontSize: 10.5 },
-  mark: { position: "absolute", top: 0, left: 18, right: 18, alignItems: "center" },
-  markLine: { height: 2, alignSelf: "stretch", borderRadius: 1 },
-  diamond: { position: "absolute", top: -3, width: 8, height: 8, transform: [{ rotate: "45deg" }], borderWidth: 1, borderColor: "rgb(201,166,94)" },
+  wrap: { position: "absolute", left: 18, right: 18, alignItems: "stretch" },
+  capsule: { height: TAB_BAR_HEIGHT, borderRadius: TAB_BAR_HEIGHT / 2, overflow: "hidden", shadowColor: "#000", shadowOpacity: 0.12, shadowRadius: 18, shadowOffset: { width: 0, height: 6 } },
+  row: { flex: 1, flexDirection: "row", alignItems: "center", paddingHorizontal: 6 },
+  tab: { flex: 1, height: TAB_BAR_HEIGHT, alignItems: "center", justifyContent: "center" },
+  lens: { position: "absolute", width: 56, height: 44, borderRadius: 22 },
 });

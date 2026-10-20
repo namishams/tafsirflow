@@ -4,6 +4,7 @@ import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { PLAN, TOPICS, type Topic } from "@/lib/duaGenerator";
 import { getResources, getVerseByKey, pickTranslation } from "@/lib/quran";
 import { getSettings } from "@/lib/settings";
+import { refundDua, spendDua, type Spent } from "@/lib/aiCredits";
 
 export const dynamic = "force-dynamic";
 
@@ -25,16 +26,24 @@ export async function POST(req: NextRequest) {
   const s = await getSettings();
   if (!key || !s.features.duaAi) return json({ error: "off" }, 503);
   const me = await currentUser();
-  if (!(me && me.emailVerified)) {
+  // in the app a personal dua is paid (a bought credit or one of the duas Pro includes each month)
+  const app = !!req.headers.get("x-qmc-app");
+  if (app && !me) return json({ error: "login" }, 401);
+  if (!app && !(me && me.emailVerified)) {
     const n = s.limits.duaAiAnonPerDay;
     if (!n || rateLimited(`dua:anon:${clientIp(req)}`, n, 24 * 60 * 60_000)) return json({ error: me ? "verify" : "login" }, me ? 403 : 401);
-  } else if (rateLimited(`dua:day:${me.id}`, 30, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
+  } else if (rateLimited(`dua:day:${me!.id}`, 30, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
   if (rateLimited(`dua:min:${clientIp(req)}`, 6, 60_000)) return json({ error: "rate" }, 429);
   const b = (await req.json().catch(() => ({}))) as { text?: string; topic?: string; who?: string; locale?: string; names?: string[] };
   const text = String(b.text ?? "").replace(/\s+/g, " ").trim().slice(0, 300);
   const locale = /^[a-z]{2}$/.test(String(b.locale)) ? String(b.locale) : "en";
   if (text.length < 3 && !TOPICS.includes(b.topic as Topic)) return json({ error: "empty" }, 400);
   const names = (Array.isArray(b.names) ? b.names : []).slice(0, 3).map((n) => String(n).slice(0, 30)).join(", ");
+  let spent: Spent = null;
+  if (app) {
+    spent = await spendDua(me!.id, me!.plan === "premium");
+    if (!spent) return json({ error: "credits" }, 402);
+  }
   const system = `You help a Muslim put a personal supplication (dua) into words, in the language with code "${locale}".
 Rules: Write only the personal request part, 3 to 6 short sentences, warm, humble and sincere, addressed to Allah ("O Allah" in that language). You may call on these beautiful names of Allah: ${names || "Ar-Rahman, Ar-Rahim"}.
 Never quote or invent Quran verses or hadith, never invent rulings, promises or numbers, no Arabic script unless the language is Arabic, no emojis, no headings, no lists. Do not mention artificial intelligence.
@@ -49,9 +58,10 @@ The person is praying for: ${b.who && b.who !== "me" ? b.who : "themselves"}.`;
     });
     const d = (await r.json().catch(() => ({}))) as { choices?: { message?: { content?: string } }[] };
     const out = d.choices?.[0]?.message?.content?.trim();
-    if (!r.ok || !out) return json({ error: "ai" }, 502);
+    if (!r.ok || !out) { if (app) await refundDua(me!.id, spent); return json({ error: "ai" }, 502); }
     return json({ text: out.slice(0, 1200) });
   } catch {
+    if (app) await refundDua(me!.id, spent);
     return json({ error: "ai" }, 502);
   }
 }

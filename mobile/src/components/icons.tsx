@@ -62,13 +62,13 @@ function shape(name: IconName) {
 }
 
 /** outline icon from the website; colour and size like the text around it */
-export function Icon({ name, size, color, filled }: { name: IconName; size?: number; color: string; filled?: boolean }) {
+export function Icon({ name, size, color, filled, weight }: { name: IconName; size?: number; color: string; filled?: boolean; weight?: number }) {
   const kind = KIND[name];
   const s = size ?? (kind === "sm" ? 18 : 22);
   const line = kind !== "fill";
   return (
     <Svg width={s} height={s} viewBox="0 0 24 24" color={color} fill={line ? (filled ? color : "none") : color} stroke={line ? color : "none"}
-      strokeWidth={kind === "sm" ? 1.8 : 1.7} strokeLinecap="round" strokeLinejoin="round">
+      strokeWidth={weight ?? (kind === "sm" ? 1.8 : 1.7)} strokeLinecap="round" strokeLinejoin="round">
       {shape(name)}
     </Svg>
   );

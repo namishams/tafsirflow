@@ -2,9 +2,10 @@ import { Children, Fragment, isValidElement, type ReactNode } from "react";
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View, type TextInputProps, type ViewStyle } from "react-native";
 import { SymbolView } from "expo-symbols";
 import type { SFSymbol } from "sf-symbols-typescript";
-import { radius, type, useTheme } from "@/lib/theme";
+import { FONT, R, radius, type, useTheme } from "@/lib/theme";
+import { GoldButton, OutlineButton } from "./brand";
 
-// Building blocks in the style of Apple's own apps: grouped lists, one clear primary action, quiet colours.
+// Form building blocks (sign-in, registration) in the website's look: white tiles with hairline borders, gold main action.
 
 export type IconName = { ios: SFSymbol; android: string };
 
@@ -91,25 +92,13 @@ export function Field(props: TextInputProps & { label: string }) {
   );
 }
 
-/** the one main action of a screen: full width, always the same height */
+/** the one main action of a screen: the website's gold button, full width */
 export function PrimaryButton({ title, onPress, busy, disabled }: { title: string; onPress: () => void; busy?: boolean; disabled?: boolean }) {
-  const t = useTheme();
-  return (
-    <Pressable onPress={onPress} disabled={disabled || busy} accessibilityRole="button" accessibilityLabel={title} accessibilityState={{ disabled: !!(disabled || busy), busy: !!busy }}
-      style={({ pressed }) => [styles.button, { backgroundColor: t.tint, opacity: disabled ? 0.4 : pressed ? 0.85 : 1 }]}>
-      {busy ? <ActivityIndicator color={t.tintText} /> : <Text style={[type.headline, { color: t.tintText }]}>{title}</Text>}
-    </Pressable>
-  );
+  return <GoldButton title={title} onPress={onPress} busy={busy} disabled={disabled} />;
 }
 
 export function SecondaryButton({ title, onPress, disabled }: { title: string; onPress: () => void; disabled?: boolean }) {
-  const t = useTheme();
-  return (
-    <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={title}
-      style={({ pressed }) => [styles.button, { backgroundColor: t.tintSoft, opacity: disabled ? 0.4 : pressed ? 0.7 : 1 }]}>
-      <Text style={[type.headline, { color: t.tint }]}>{title}</Text>
-    </Pressable>
-  );
+  return <OutlineButton title={title} onPress={onPress} disabled={disabled} />;
 }
 
 export function Notice({ text, tone = "neutral" }: { text: string; tone?: "neutral" | "error" }) {
@@ -134,9 +123,9 @@ export function ErrorState({ text, retry, retryLabel }: { text: string; retry: (
 
 export const styles = StyleSheet.create({
   section: { marginTop: 24, marginHorizontal: 16 },
-  sectionHeader: { textTransform: "none", marginLeft: 16, marginBottom: 7 },
-  sectionFooter: { marginHorizontal: 16, marginTop: 7 },
-  card: { borderRadius: radius, overflow: "hidden" },
+  sectionHeader: { fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.5, textTransform: "uppercase", marginLeft: 4, marginBottom: 8 },
+  sectionFooter: { marginHorizontal: 4, marginTop: 8 },
+  card: { borderRadius: R.lg, overflow: "hidden", borderWidth: 1, borderColor: "rgba(120,130,125,0.25)" },
   separator: { height: StyleSheet.hairlineWidth, marginLeft: 16 },
   row: { minHeight: 44, flexDirection: "row", alignItems: "center", paddingHorizontal: 16, paddingVertical: 11 },
   rowIcon: { width: 28, marginRight: 12, alignItems: "center" },

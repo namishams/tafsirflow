@@ -22,6 +22,8 @@ export async function POST(req: NextRequest) {
   const s = await getSettings();
   if (!key || !s.features.assistant) return json({ error: "off" }, 503);
   const me = await currentUser();
+  // in the app the assistant is part of Pro (AI costs money per question)
+  if (req.headers.get("x-qmc-app") && me?.plan !== "premium") return json({ error: me ? "pro" : "login" }, me ? 402 : 401);
   const member = !!me && me.emailVerified;
   // cost and abuse protection: per account (or per IP for visitors) per day, per IP per minute
   if (!member) {

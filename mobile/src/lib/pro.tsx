@@ -18,8 +18,8 @@ export const FREE = {
   reciterIds: [7, 6] as number[],
   /** radio stations (by position in the station list) that everyone can play */
   radioStations: 2,
-  /** Arabic reading course: the first unit */
-  arabicLessons: 6,
+  /** Arabic reading course: the whole first unit (8 lessons incl. its unit test) */
+  arabicLessons: 8,
   /** tajweed course: the first lessons */
   tajweedLessons: 3,
   /** vocabulary trainer: words per day */
