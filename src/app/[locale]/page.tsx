@@ -13,10 +13,12 @@ import WhyQuran from "@/components/WhyQuran";
 import { getChapters } from "@/lib/quran";
 import VerseOfTheDay from "@/components/VerseOfTheDay";
 import Featured from "@/components/Featured";
+import DonateCTA from "@/components/DonateCTA";
 import Sticker from "@/components/Sticker";
 import { LOCALE_META } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
 import { abs, pageMeta } from "@/lib/site";
+import { organizationLd } from "@/lib/company";
 import { ArrowNext } from "@/components/Icons";
 import { HomeArch, HomeCorners, HomeDome, HomeFrieze, HomeGlowLayer, HomeRain, HomeStar, HomeVerse, StarGlyph } from "@/components/art/HomeOrnaments";
 import HomeGlow from "@/components/art/HomeGlow";
@@ -57,7 +59,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": abs("/#org"), name: "Quran Masterclass", url: abs("/"), logo: abs("/icon-512.png") },
+      organizationLd(abs),
       { "@type": "WebSite", "@id": abs("/#site"), url: abs(`/${locale}`), name: "Quran Masterclass", inLanguage: routing.locales, publisher: { "@id": abs("/#org") } },
       { "@type": "SoftwareApplication", name: "Quran Masterclass", applicationCategory: "EducationalApplication", operatingSystem: "Web", description: t("seo.homeDesc", { n }), inLanguage: locale, offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" } },
       { "@type": "FAQPage", inLanguage: locale, mainEntity: FAQ.map((i) => ({ "@type": "Question", name: faqText(i, "q"), acceptedAnswer: { "@type": "Answer", text: faqText(i, "a") } })) },
@@ -381,6 +383,8 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           </div>
         </section>
 
+        {/* 13b Voluntary support – one calm illuminated panel */}
+        <div className="mx-auto max-w-6xl px-4 sm:px-5"><DonateCTA className="my-14 sm:my-20" /></div>
 
         {/* 14 Final CTA – under the lattice dome, in a mihrab of light */}
         <section className="stage girih relative overflow-hidden text-[#eef0f3]">

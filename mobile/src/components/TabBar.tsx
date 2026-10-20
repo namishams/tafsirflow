@@ -1,4 +1,4 @@
-import { Platform, Pressable, StyleSheet, View } from "react-native";
+import { Platform, Pressable, StyleSheet, View, useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { BottomTabBarProps } from "expo-router/tabs";
 import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
@@ -17,6 +17,8 @@ export default function TabBar({ state, descriptors, navigateToTab }: BottomTabB
   const t = useTheme();
   const insets = useSafeAreaInsets();
   const glass = Platform.OS === "ios" && isLiquidGlassAvailable();
+  const { width } = useWindowDimensions();
+  const capsuleWidth = Math.min(width - 36, 460); // a capsule, also on iPad and the unfolded iPhone
   const bar = (
     <View style={s.row}>
       {state.routes.map((route, i) => {
@@ -39,9 +41,9 @@ export default function TabBar({ state, descriptors, navigateToTab }: BottomTabB
   return (
     <View pointerEvents="box-none" style={[s.wrap, { bottom: Math.max(insets.bottom - 6, 12) }]}>
       {glass ? (
-        <GlassView glassEffectStyle="regular" isInteractive style={s.capsule}>{bar}</GlassView>
+        <GlassView glassEffectStyle="regular" isInteractive style={[s.capsule, { width: capsuleWidth }]}>{bar}</GlassView>
       ) : (
-        <View style={[s.capsule, { borderWidth: StyleSheet.hairlineWidth, borderColor: t.line }]}>
+        <View style={[s.capsule, { width: capsuleWidth, borderWidth: StyleSheet.hairlineWidth, borderColor: t.line }]}>
           <BlurView intensity={70} tint={t.dark ? "systemChromeMaterialDark" : "systemChromeMaterialLight"} style={StyleSheet.absoluteFill} />
           {bar}
         </View>
@@ -51,8 +53,8 @@ export default function TabBar({ state, descriptors, navigateToTab }: BottomTabB
 }
 
 const s = StyleSheet.create({
-  wrap: { position: "absolute", left: 18, right: 18, alignItems: "stretch" },
-  capsule: { height: TAB_BAR_HEIGHT, borderRadius: TAB_BAR_HEIGHT / 2, overflow: "hidden", shadowColor: "#000", shadowOpacity: 0.12, shadowRadius: 18, shadowOffset: { width: 0, height: 6 } },
+  wrap: { position: "absolute", left: 0, right: 0, alignItems: "center" },
+  capsule: { height: TAB_BAR_HEIGHT, borderRadius: TAB_BAR_HEIGHT / 2, overflow: "hidden" },
   row: { flex: 1, flexDirection: "row", alignItems: "center", paddingHorizontal: 6 },
   tab: { flex: 1, height: TAB_BAR_HEIGHT, alignItems: "center", justifyContent: "center" },
   lens: { position: "absolute", width: 56, height: 44, borderRadius: 22 },

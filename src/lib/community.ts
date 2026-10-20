@@ -1,4 +1,5 @@
 import { pool } from "./db";
+import { getSettings } from "./settings";
 
 // Server-side figures for the community page and the social API
 const today = () => Math.floor(Date.now() / 86400000);
@@ -60,6 +61,18 @@ export async function recentComments(limit = 12): Promise<RecentComment[]> {
         WHERE c.status = 'approved' AND c.parent_id IS NULL ORDER BY c.created_at DESC LIMIT $1`, [limit]);
     return r.rows.map((c) => ({ id: Number(c.id), key: c.verse_key, body: c.body, author: display(c), country: c.country, at: new Date(c.created_at).toISOString() }));
   } catch { return []; }
+}
+
+// Everything the community page shows, in one place: used by the page (/community) and by the app's read-only
+// endpoint GET /api/social/community. tab/range work like the page's ?tab=…&range=all.
+export const TOP_KINDS = ["loved", "viewed", "shared", "discussed"] as const;
+export type CommunityOverview = { on: boolean; kind: TopKind; week: boolean; pulse: Pulse | null; top: TopRow[]; heard: TopRow[]; recent: RecentComment[] };
+export async function communityOverview(tab?: string | null, range?: string | null): Promise<CommunityOverview> {
+  const kind: TopKind = (TOP_KINDS as readonly string[]).includes(tab ?? "") ? (tab as TopKind) : "loved";
+  const week = range !== "all" && (kind === "loved" || kind === "viewed");
+  if (!(await getSettings()).features.community) return { on: false, kind, week, pulse: null, top: [], heard: [], recent: [] };
+  const [pl, top, heard, recent] = await Promise.all([pulse(), topVerses(kind, week), topVerses("heard", true, 8), recentComments(10)]);
+  return { on: true, kind, week, pulse: pl, top, heard, recent };
 }
 
 // likes, views and comments for every verse of one surah (for small counters in the player)

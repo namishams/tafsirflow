@@ -15,6 +15,7 @@ import { completeItem, itemUrl } from "@/lib/session";
 import { offlineReady, removeSurah, saveSurah, savedSurahs } from "@/lib/offline";
 import { freeShams, lockedNow, usePremium } from "@/lib/premium";
 import PremiumLock from "./PremiumLock";
+import DonateCTA from "./DonateCTA";
 import Logo from "./Logo";
 import { IconPlay, IconPause, IconPrev, IconNext, IconPlaySm, IconCopy, IconShare, IconNote, IconBookmark, IconVolume, IconFlame } from "./Icons";
 import {
@@ -1055,7 +1056,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
           </ol>
           )}
           {showDebug && <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>}
-          {lock && <PremiumLock kind={lock} freeOffline={prem.freeOffline} onClose={() => setLock(null)} />}
+          <DonateCTA variant="slim" className="mt-10" />
+          {lock &&<PremiumLock kind={lock} freeOffline={prem.freeOffline} onClose={() => setLock(null)} />}
         </main>
 
         {!kids && <aside className="sticky top-20 my-5 hidden max-h-[calc(100vh-6rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">

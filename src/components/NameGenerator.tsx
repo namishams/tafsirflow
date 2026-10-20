@@ -11,6 +11,7 @@ import {
 } from "@/lib/names";
 import { MONTH_LINKS, bestPool, pickRandom, rankNames, verseFor, type LetterPref, type OriginPick, type Scored } from "@/lib/names/rules";
 import { Rosette } from "./Ornaments";
+import DonateCTA from "./DonateCTA";
 
 const FAV_KEY = "tf:nameFav";
 type Verse = { key: string; ar: string; tr: string };
@@ -66,6 +67,7 @@ export default function NameGenerator() {
   const t = namesText(locale);
   const favs = useFavs();
   const [tab, setTab] = useState<"finder" | "all">("finder");
+  const [hasResult, setHasResult] = useState(false);
   const [loved, setLoved] = useState<{ id: string; n: number }[] | null>(null);
   useEffect(() => { fetch("/api/names").then((r) => r.json()).then((d) => setLoved(Array.isArray(d.top) ? d.top : [])).catch(() => setLoved([])); }, []);
 
@@ -81,12 +83,13 @@ export default function NameGenerator() {
       <p className="mt-3 text-center text-xs text-muted">{t("boysN", { n: COUNTS.b })} · {t("girlsN", { n: COUNTS.g })}</p>
 
       <div className="mt-6">
-        {tab === "finder" ? <Finder t={t} l={l} locale={locale} favs={favs} /> : <Browse t={t} l={l} favs={favs} />}
+        {tab === "finder" ? <Finder t={t} l={l} locale={locale} favs={favs} onResult={setHasResult} /> : <Browse t={t} l={l} favs={favs} />}
       </div>
 
       <FavList t={t} l={l} locale={locale} favs={favs} />
       <Loved t={t} l={l} loved={loved} />
       <Notes t={t} l={l} />
+      {!(tab === "finder" && hasResult) && <DonateCTA variant="slim" className="mt-10" />}
     </div>
   );
 }
@@ -102,7 +105,7 @@ function hijriOfInput(date: string) {
   return toHijri(Date.UTC(+m[1], +m[2] - 1, +m[3]));
 }
 
-function Finder({ t, l, locale, favs }: { t: Tx; l: Lang; locale: string; favs: Favs }) {
+function Finder({ t, l, locale, favs, onResult }: { t: Tx; l: Lang; locale: string; favs: Favs; onResult: (b: boolean) => void }) {
   const [f, setF] = useState<Form>(EMPTY);
   const [step, setStep] = useState(1);
   const [res, setRes] = useState<Result | null>(null);
@@ -126,6 +129,7 @@ function Finder({ t, l, locale, favs }: { t: Tx; l: Lang; locale: string; favs: 
       shown[g] = pickRandom(pool, 3, new Set((prev?.shown[g] ?? []).map((s) => s.n.key)));
     }
     setRes({ pools, shown, month, n: (prev?.n ?? 0) + 1 });
+    onResult(true);
     go(4);
   };
 
@@ -274,6 +278,8 @@ function Finder({ t, l, locale, favs }: { t: Tx; l: Lang; locale: string; favs: 
               ) : <p className="callout rounded-lg p-4 text-[15px]">{t("noPool")}</p>}
             </section>
           ))}
+          <p className="mx-auto mt-10 max-w-2xl text-center text-[16px] leading-relaxed text-ink">{t("donateLine")}</p>
+          <DonateCTA className="mt-5" />
         </div>
       )}
     </div>

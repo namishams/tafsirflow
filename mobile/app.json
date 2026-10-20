@@ -17,8 +17,14 @@
       ],
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
-        "CFBundleAllowMixedLocalizations": true
-      }
+        "CFBundleAllowMixedLocalizations": true,
+        "CFBundleDevelopmentRegion": "en",
+        "CFBundleLocalizations": [
+          "en",
+          "de"
+        ]
+      },
+      "buildNumber": "1"
     },
     "android": {
       "package": "com.quranmasterclass.app",
@@ -27,7 +33,16 @@
         "monochromeImage": "./assets/android-icon-monochrome.png",
         "backgroundColor": "#08261D"
       },
-      "predictiveBackGestureEnabled": true
+      "predictiveBackGestureEnabled": true,
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "output": "single",
@@ -38,7 +53,8 @@
       [
         "expo-audio",
         {
-          "enableBackgroundPlayback": true
+          "enableBackgroundPlayback": true,
+          "microphonePermission": "Quran Masterclass uses the microphone only when you start the recitation check. Your recording stays on this device and is not uploaded."
         }
       ],
       "expo-secure-store",
@@ -51,16 +67,16 @@
         {
           "image": "./assets/splash-icon.png",
           "imageWidth": 120,
-          "backgroundColor": "#F2F2F7",
+          "backgroundColor": "#F5F7F6",
           "dark": {
-            "backgroundColor": "#000000"
+            "backgroundColor": "#071611"
           }
         }
       ],
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "Quran Masterclass uses your location only to calculate prayer times and the Qibla direction for where you are. It is not stored or shared."
+          "locationWhenInUsePermission": "Quran Masterclass uses your location only on this device to calculate prayer times and the Qibla direction for where you are. It is not stored or sent anywhere."
         }
       ],
       [
@@ -72,6 +88,21 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "owner": "icslfze",
+    "locales": {
+      "de": "./locales/de.json",
+      "en": "./locales/en.json"
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "ead86b27-d37e-4815-acc1-d9e6fd85d9c8"
+      }
     }
   }
 }

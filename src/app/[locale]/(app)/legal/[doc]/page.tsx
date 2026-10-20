@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { pageMeta } from "@/lib/site";
+import { COMPANY, founderName } from "@/lib/company";
 import { ArrowBack } from "@/components/Icons";
 
 const DOCS = ["privacy", "terms", "imprint"] as const;
@@ -19,17 +20,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMeta(locale, `/legal/${doc}`, `${t(`${doc as Doc}Title`)} | Quran Masterclass`, t(`${doc as Doc}Title`));
 }
 
-// Very small markdown subset: "## heading", "**bold**" and blank-line separated paragraphs
+// Very small markdown subset: "## heading", "**bold**" and blank-line separated paragraphs.
+// A heading line may be followed directly by its first paragraph ("## 1. Title\nText …"): only the first line is the heading.
+const para = (text: string, key: string) => (
+  <p key={key} className="mt-3 leading-relaxed text-muted" dangerouslySetInnerHTML={{ __html: text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\*\*(.+?)\*\*/g, '<strong class="text-ink">$1</strong>') }} />
+);
 function Body({ text }: { text: string }) {
   return (
     <>
-      {text.split("\n\n").map((block, i) =>
-        block.startsWith("## ") ? (
-          <h2 key={i} className="mt-8 text-lg font-bold">{block.slice(3)}</h2>
-        ) : (
-          <p key={i} className="mt-3 leading-relaxed text-muted" dangerouslySetInnerHTML={{ __html: block.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\*\*(.+?)\*\*/g, '<strong class="text-ink">$1</strong>') }} />
-        ),
-      )}
+      {text.split("\n\n").flatMap((block, i) => {
+        if (!block.startsWith("## ")) return [para(block, `p${i}`)];
+        const [head, ...rest] = block.split("\n");
+        const body = rest.join("\n").trim();
+        return [<h2 key={`h${i}`} className="mt-8 text-lg font-bold">{head.slice(3)}</h2>, ...(body ? [para(body, `p${i}`)] : [])];
+      })}
     </>
   );
 }
@@ -39,8 +43,8 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
   if (!DOCS.includes(doc as Doc)) notFound();
   const t = await getTranslations("legal");
+  const tc = await getTranslations("company");
   const d = doc as Doc;
-  const e = process.env;
   return (
     <div>
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-10">
@@ -52,13 +56,18 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
           </>
         ) : (
           <div className="mt-6 grid gap-6">
+            {/* company details: src/lib/company.ts (only what is on record; licence number and street address still missing) */}
             <section>
               <h2 className="text-lg font-bold">{t("imprintProvider")}</h2>
-              <p className="mt-2 whitespace-pre-line text-muted">{locale === "ar" ? `${e.LEGAL_NAME_AR ?? "نامي شمس"}\n${e.LEGAL_ADDRESS_AR ?? "شارع الغربي 1\nدبي"}` : `${e.LEGAL_NAME ?? "Nami Shams"}\n${e.LEGAL_ADDRESS ?? "Al Gharbi Street 1\nDubai"}`}</p>
+              <p className="mt-2 whitespace-pre-line text-muted"><span dir="ltr">{COMPANY.legalName}</span>{`\n${tc("place")}`}</p>
+            </section>
+            <section>
+              <h2 className="text-lg font-bold">{tc("founder")}</h2>
+              <p className="mt-2 text-muted">{founderName(locale)}</p>
             </section>
             <section>
               <h2 className="text-lg font-bold">{t("imprintContact")}</h2>
-              <p className="mt-2 text-muted">{e.LEGAL_EMAIL ?? "info@quranmasterclass.com"}{e.LEGAL_PHONE ? ` · ${e.LEGAL_PHONE}` : ""}</p>
+              <p className="mt-2 text-muted"><a href={`mailto:${COMPANY.email}`} className="hover:text-ink" dir="ltr">{COMPANY.email}</a></p>
             </section>
           </div>
         )}

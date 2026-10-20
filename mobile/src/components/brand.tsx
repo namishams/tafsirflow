@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { ActivityIndicator, Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
+import { ActivityIndicator, Pressable, StyleSheet, Text, View, useWindowDimensions, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, G, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, TONES, goldButton, stage, type, useTheme } from "@/lib/theme";
@@ -226,13 +226,15 @@ export function gradientColors(css: string): [string, string] {
   return [m[0] ?? TONES[0][0], m[1] ?? TONES[0][1]];
 }
 
-/** two posters per row, like the website's PosterGrid */
+/** posters in a grid like the website's PosterGrid: two per row on phones, three on wide screens */
 export function PosterGrid({ children }: { children: ReactNode[] }) {
+  const { width } = useWindowDimensions();
+  const cols = width >= 700 ? 3 : 2;
   const rows: ReactNode[][] = [];
-  children.forEach((c, i) => { if (i % 2 === 0) rows.push([]); rows[rows.length - 1].push(c); });
+  children.forEach((c, i) => { if (i % cols === 0) rows.push([]); rows[rows.length - 1].push(c); });
   return (
     <View style={{ gap: 12 }}>
-      {rows.map((r, i) => <View key={i} style={{ flexDirection: "row", gap: 12 }}>{r}{r.length === 1 ? <View style={{ flex: 1 }} /> : null}</View>)}
+      {rows.map((r, i) => <View key={i} style={{ flexDirection: "row", gap: 12 }}>{r}{Array.from({ length: cols - r.length }, (_, k) => <View key={`f${k}`} style={{ flex: 1 }} />)}</View>)}
     </View>
   );
 }

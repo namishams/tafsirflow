@@ -5,6 +5,7 @@ import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
 import { Chip, GoldButton, GoldProgress, StarNumber } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { ErrorState, Loading, PageHero } from "@/components/page";
+import { useWindowDimensions } from "react-native";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { useStored } from "@/lib/store";
@@ -25,6 +26,7 @@ export default function QuranIndex() {
   const [failed, setFailed] = useState(false);
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
+  const wide = useWindowDimensions().width > 900;
   const last = useStored<{ chapter: number; verse: number } | null>("tf:last", null);
   const marks = useStored<string[]>("tf:bookmarks", []);
   const srs = useStored("tf:srs", {});
@@ -59,7 +61,7 @@ export default function QuranIndex() {
         data={shown}
         keyExtractor={(c) => String(c.id)}
         keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{ paddingBottom: 130 }}
+        contentContainerStyle={[{ paddingBottom: 130 }, wide && { width: 860, alignSelf: "center" }]}
         ListHeaderComponent={
           <View>
             <PageHero topInset eyebrow="Quran Masterclass" title={wn("quran")} arcade>

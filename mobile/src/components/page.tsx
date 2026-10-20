@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { ActivityIndicator, Pressable, ScrollView, Text, View, type ScrollViewProps, type StyleProp, type ViewStyle } from "react-native";
+import { ActivityIndicator, Pressable, ScrollView, Text, View, useWindowDimensions, type ScrollViewProps, type StyleProp, type ViewStyle } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, type Theme, type, useTheme } from "@/lib/theme";
@@ -24,10 +24,19 @@ export function stackOptions(t: Theme) {
 }
 
 /** scrolling page on the canvas */
+/** reading width on wide screens (iPad, Pro Max in landscape, the unfolded iPhone): content stays centred */
+export const READ_WIDTH = 860;
+export function useWide() {
+  const { width } = useWindowDimensions();
+  return width >= 700;
+}
+
 export function Page({ children, style, padded = false, ...rest }: { children: ReactNode; style?: StyleProp<ViewStyle>; padded?: boolean } & ScrollViewProps) {
   const t = useTheme();
+  const { width } = useWindowDimensions();
+  const wide = width > READ_WIDTH + 40;
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={[{ paddingBottom: 130 }, padded && { paddingHorizontal: 16, paddingTop: 16 }, style]} keyboardShouldPersistTaps="handled" {...rest}>
+    <ScrollView style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={[{ paddingBottom: 130 }, wide && { width: READ_WIDTH, alignSelf: "center" }, padded && { paddingHorizontal: 16, paddingTop: 16 }, style]} keyboardShouldPersistTaps="handled" {...rest}>
       {children}
     </ScrollView>
   );

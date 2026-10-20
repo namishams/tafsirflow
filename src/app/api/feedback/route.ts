@@ -3,6 +3,7 @@ import { pool } from "@/lib/db";
 import { currentUser } from "@/lib/auth";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { checkCaptcha } from "@/lib/captcha";
+import { appRateLimited, fromApp } from "@/lib/appRequest";
 import { aiReview, moderate } from "@/lib/moderation";
 
 export const dynamic = "force-dynamic";
@@ -45,7 +46,10 @@ export async function POST(req: NextRequest) {
   const title = String(b.title ?? "").trim(), body = String(b.body ?? "").trim();
   if (!CATS.includes(String(b.category)) || title.length < 6 || title.length > 120 || body.length > 1500) return json({ error: "invalid" }, 400);
   if (rateLimited(`fbpost:${me.id}`, 5, 60 * 60_000)) return json({ error: "rate" }, 429);
-  if ((await checkCaptcha(b, "feedback", clientIp(req))) !== "ok") return json({ error: "captcha" }, 400);
+  if (fromApp(req)) {
+    // the native app cannot show reCAPTCHA: signed in with a confirmed e-mail (checked above) and stricter limits instead
+    if (appRateLimited("feedback", me.id, clientIp(req))) return json({ error: "rate" }, 429);
+  } else if ((await checkCaptcha(b, "feedback", clientIp(req))) !== "ok") return json({ error: "captcha" }, 400);
   const v1 = await moderate(title), v2 = body ? await moderate(body.slice(0, 500)) : ({ ok: true, flagged: null } as const);
   if (!v1.ok || !v2.ok) return json({ error: "rejected" }, 422);
   const softFlag = v1.flagged ?? (v2.ok ? v2.flagged : null);

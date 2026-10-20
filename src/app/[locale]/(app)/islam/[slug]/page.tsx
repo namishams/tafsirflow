@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import Markdown, { mdHeadings } from "@/components/Markdown";
 import { MoreTiles } from "@/components/PosterTiles";
+import DonateCTA from "@/components/DonateCTA";
 import { ISLAM, islamDoc, islamUi, loadChapter, loadChapters, readingMinutes } from "@/lib/islam";
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowBack } from "@/components/Icons";
@@ -133,6 +134,7 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
           </aside>
         </div>
 
+        <div className="mx-auto max-w-6xl px-5 pb-12"><DonateCTA /></div>
 
         {/* the doorway to the next chapter */}
         <nav className="mx-auto max-w-3xl px-5 pb-16 sm:pb-24">

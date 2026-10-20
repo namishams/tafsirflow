@@ -4,6 +4,7 @@ import { IconNext, IconPause, IconPlay, IconPrev } from "./Icons";
 import { STATIONS, useRadio } from "./RadioProvider";
 import { reciterName } from "@/lib/quran";
 import { QuranOrb, QuranSeal } from "./art/QuranArt";
+import DonateCTA from "./DonateCTA";
 
 // jewel tones of Islamic art (emerald, lapis, garnet, Iznik turquoise, amber, aubergine, olive)
 const J = { emerald: "linear-gradient(165deg,#13644b 0%,#073024 55%,#04190f 100%)", lapis: "linear-gradient(165deg,#244a86 0%,#0e2348 55%,#070f22 100%)", garnet: "linear-gradient(165deg,#7a2433 0%,#3a0d16 55%,#1a0509 100%)", turquoise: "linear-gradient(165deg,#0f6b6c 0%,#06393b 55%,#031b1c 100%)", amber: "linear-gradient(165deg,#7c5617 0%,#3b2707 55%,#1c1203 100%)", aubergine: "linear-gradient(165deg,#4d2760 0%,#25102f 55%,#110616 100%)", olive: "linear-gradient(165deg,#4f5a22 0%,#262c0d 55%,#111405 100%)" };
@@ -211,6 +212,7 @@ export default function RadioPlayer() {
             ) : <p className="mt-2 text-sm text-muted">{t("recentNone")}</p>}
           </section>
         </div>
+        <DonateCTA variant="slim" className="mt-12" />
       </main>
     </div>
   );

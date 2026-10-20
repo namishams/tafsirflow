@@ -45,10 +45,6 @@ export default withNextIntl({
     return config;
   },
   // Android app ↔ domain verification (see src/app/api/assetlinks/route.ts)
-  // the support page was removed (2026-10): old links and search results land on the home page
-  async redirects() {
-    return [{ source: "/:locale(de|en|ar|fr|es|zh|id|ms|fa|tr|ru|ur|bn|ps)/support", destination: "/:locale", permanent: true }];
-  },
   async rewrites() {
     return [
       { source: "/.well-known/assetlinks.json", destination: "/api/assetlinks" },
@@ -58,8 +54,9 @@ export default withNextIntl({
   async headers() {
     return [
       { source: "/:path*", headers: security },
-      // personal data is never cached by browsers or proxies
-      { source: "/api/:path*", headers: [{ key: "Cache-Control", value: "private, no-store" }] },
+      // personal data is never cached by browsers or proxies – except the public, read-only community figures for the
+      // app, which set their own Cache-Control (a header here would override the route's own)
+      { source: "/api/:path((?!social/community$).*)", headers: [{ key: "Cache-Control", value: "private, no-store" }] },
     ];
   },
 });

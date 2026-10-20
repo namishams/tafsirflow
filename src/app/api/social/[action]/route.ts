@@ -7,6 +7,7 @@ import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { MAX_STRIKES, aiReview, moderate } from "@/lib/moderation";
 import { getSettings } from "@/lib/settings";
 import { checkCaptcha } from "@/lib/captcha";
+import { appRateLimited, fromApp } from "@/lib/appRequest";
 import { myLikes, surahCounts } from "@/lib/community";
 
 export const dynamic = "force-dynamic";
@@ -125,7 +126,10 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
       const u = (await p.query("SELECT comment_banned FROM users WHERE id = $1", [me.id])).rows[0];
       if (u?.comment_banned) return json({ error: "banned" }, 403);
       if (rateLimited(`soc:comment:${me.id}`, 5, 10 * 60_000)) return json({ error: "rate" }, 429);
-      if ((await checkCaptcha(b, "comment", ip)) !== "ok") return json({ error: "captcha" }, 400);
+      if (fromApp(req)) {
+        // the native app cannot show reCAPTCHA: signed in with a confirmed e-mail (checked above) and stricter limits instead
+        if (appRateLimited("comment", me.id, ip)) return json({ error: "rate" }, 429);
+      } else if ((await checkCaptcha(b, "comment", ip)) !== "ok") return json({ error: "captcha" }, 400);
       let parent: number | null = null;
       if (b.parentId) {
         const pr = await p.query("SELECT id FROM comments WHERE id = $1 AND verse_key = $2 AND status = 'approved' AND parent_id IS NULL", [b.parentId, b.key]);

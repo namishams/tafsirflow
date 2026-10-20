@@ -24,6 +24,7 @@ import { Seal } from "./PremiumPanel";
 import { usePremium } from "@/lib/premium";
 import { levelOf as pointsLevel, readPoints, streakOf as pointsStreak, totalPoints } from "@/lib/points";
 import { buildCtx, earnedIds, hoursOf, stickerById } from "@/lib/stickers";
+import DonateCTA from "./DonateCTA";
 
 const TABS = ["overview", "stats", "badges", "ranking", "learning", "account"] as const;
 type Tab = (typeof TABS)[number];
@@ -151,6 +152,7 @@ export default function ProfileView() {
           <section className="grid gap-3 sm:grid-cols-3">
             {[["/today", t("goToday")], ["/map", t("goMap")], ["/community", t("goCommunity")]].map(([h, l]) => <Link key={h} href={h} className="callout rounded-xl p-4 text-[15px] font-semibold transition hover:-translate-y-0.5">{l}</Link>)}
           </section>
+          <DonateCTA />
         </div>
       )}
       {tab === "stats" && <StatsView embedded only={["listen", "points", "learn"]} />}

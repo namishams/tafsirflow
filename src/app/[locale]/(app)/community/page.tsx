@@ -5,13 +5,12 @@ import CountUp from "@/components/CountUp";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { MoreTiles } from "@/components/PosterTiles";
 import MyLikes from "@/components/MyLikes";
-import { pulse, recentComments, topVerses, type TopKind } from "@/lib/community";
+import { TOP_KINDS, communityOverview, type TopKind } from "@/lib/community";
 import { getChapters, getResources, getVerseByKey, pickTranslation, type SingleVerse } from "@/lib/quran";
 import { pageMeta } from "@/lib/site";
-import { getSettings } from "@/lib/settings";
 
 export const dynamic = "force-dynamic";
-const KINDS: TopKind[] = ["loved", "viewed", "shared", "discussed"];
+const KINDS: readonly TopKind[] = TOP_KINDS;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -24,8 +23,9 @@ export default async function CommunityPage({ params, searchParams }: { params: 
   setRequestLocale(locale);
   const sp = await searchParams;
   const t = await getTranslations({ locale, namespace: "community" });
-  const settings = await getSettings();
-  if (!settings.features.community) {
+  // the same figures the app reads from GET /api/social/community
+  const [ov, chapters] = await Promise.all([communityOverview(sp.tab, sp.range), getChapters(locale).catch(() => [])]);
+  if (!ov.on) {
     return (
       <div>
         <section className="stage girih relative overflow-hidden text-[#eef0f3]">
@@ -43,9 +43,7 @@ export default async function CommunityPage({ params, searchParams }: { params: 
       </div>
     );
   }
-  const kind: TopKind = KINDS.includes(sp.tab as TopKind) ? (sp.tab as TopKind) : "loved";
-  const week = sp.range !== "all" && (kind === "loved" || kind === "viewed");
-  const [pl, top, heard, recent, chapters] = await Promise.all([pulse(), topVerses(kind, week), topVerses("heard", true, 8), recentComments(10), getChapters(locale).catch(() => [])]);
+  const { kind, week, pulse: pl, top, heard, recent } = ov;
   let tr = 20;
   try { tr = pickTranslation(locale, (await getResources()).translations); } catch { /* default */ }
   const verses = new Map<string, SingleVerse>();

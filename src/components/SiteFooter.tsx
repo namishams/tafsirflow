@@ -7,7 +7,8 @@ import TrustStrip from "./TrustStrip";
 import MadeInDubai from "./MadeInDubai";
 import Skyline from "./Skyline";
 
-// The footer of every page: sections, languages, and one closing block – free for everyone, © and the Dubai signature
+// The footer of every page: sections, languages, and one closing block – free for everyone, © with the founder,
+// the Dubai signature and the operating company (src/lib/company.ts)
 export default async function SiteFooter() {
   const t = await getTranslations();
   const year = new Date().getFullYear();
@@ -42,10 +43,11 @@ export default async function SiteFooter() {
         <div className="mx-auto max-w-6xl px-5 py-7 text-center text-[13px] leading-relaxed text-muted">
           <p className="mx-auto max-w-2xl"><span className="font-semibold text-ink">{t("free.title")}</span> {t("free.body")}</p>
           <p className="mt-3 flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-            <span>© {year} Quran Masterclass</span>
+            <span>© {year} Quran Masterclass · Nami Shams</span>
             <span aria-hidden className="hidden sm:inline">·</span>
             <MadeInDubai />
           </p>
+          <p className="mt-2 text-xs">{t("company.operatedBy", { place: t("company.place") })}</p>
           <p className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs">
             <Link href="/legal/privacy" className="hover:text-ink">{t("free.privacy")}</Link>
             <Link href="/legal/terms" className="hover:text-ink">{t("home2.terms")}</Link>

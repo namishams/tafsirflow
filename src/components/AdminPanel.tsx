@@ -407,8 +407,9 @@ function Insights({ de }: { de: boolean }) {
 }
 
 // ---------- Controls: switches, limits, point rules, announcement ----------
-type Feat = { ranking: boolean; community: boolean; likes: boolean; comments: boolean; assistant: boolean; duaAi: boolean; sideArt: boolean; celebrations: boolean };
-type Cfg = { anonTafsirLimit: number; commentsAutoApprove: boolean; features: Feat; limits: { assistantAnonPerDay: number; assistantPerUserPerDay: number; duaAiAnonPerDay: number; rankingDailyCap: number }; points: Record<string, { pts: number; cap?: number }>; announcement: { on: boolean; id: string; de: string; en: string; ar: string; href: string }; premium: { gateWeb: boolean; freeOffline: number; assistantPerDay: number } };
+type Feat = { ranking: boolean; community: boolean; likes: boolean; comments: boolean; assistant: boolean; duaAi: boolean; sideArt: boolean; celebrations: boolean; donateCta: boolean };
+type Donation = { on: boolean; goal: number; raised: number; currency: string; label: string };
+type Cfg = { anonTafsirLimit: number; commentsAutoApprove: boolean; features: Feat; limits: { assistantAnonPerDay: number; assistantPerUserPerDay: number; duaAiAnonPerDay: number; rankingDailyCap: number }; points: Record<string, { pts: number; cap?: number }>; announcement: { on: boolean; id: string; de: string; en: string; ar: string; href: string }; premium: { gateWeb: boolean; freeOffline: number; assistantPerDay: number }; donation: Donation };
 const POINT_DEFAULTS: Record<string, { pts: number; cap?: number }> = { time: { pts: 1, cap: 120 }, listen: { pts: 2, cap: 400 }, verse: { pts: 1, cap: 300 }, review: { pts: 5 }, new: { pts: 10 }, session: { pts: 30 }, lesson: { pts: 20 }, quiz: { pts: 10 }, vocab: { pts: 2, cap: 200 }, wudu: { pts: 25, cap: 25 } };
 function Control({ de }: { de: boolean }) {
   const [c, setC] = useState<Cfg | null>(null);
@@ -420,12 +421,12 @@ function Control({ de }: { de: boolean }) {
     ["ranking", "Ranking", "Globales Ranking (Woche, Monat, gesamt, Länder)."], ["community", "Gemeinschafts-Seite", "Beliebte Verse, neueste Gedanken, Puls."],
     ["likes", "Herzen für Verse", "Like-Knopf unter Versen."], ["comments", "Kommentare", "Kommentieren unter Versen (Moderation bleibt aktiv)."],
     ["assistant", "Assistent", "Quran- und Islam-Assistent (braucht den OpenAI-Schlüssel)."], ["duaAi", "Dua-Formulierungshilfe", "„In schönere Worte fassen“ im Dua-Generator."],
-    ["sideArt", "Seiten-Kalligrafie", "Goldene Quran-Kalligrafie links und rechts auf großen Bildschirmen."], ["celebrations", "Punkte- und Sticker-Feiern", "„+n Punkte“, neue Level und Sticker als Einblendung."],
+    ["sideArt", "Seiten-Kalligrafie", "Goldene Quran-Kalligrafie links und rechts auf großen Bildschirmen."], ["celebrations", "Punkte- und Sticker-Feiern", "„+n Punkte“, neue Level und Sticker als Einblendung."], ["donateCta", "Spenden-Einladungen", "Die ruhigen Einladungen zur freiwilligen Unterstützung (Laterne) auf den Seiten. Die Seite /support bleibt immer erreichbar."],
   ] : [
     ["ranking", "Ranking", "Global ranking (week, month, all time, countries)."], ["community", "Community page", "Loved verses, reflections, pulse."],
     ["likes", "Hearts for verses", "Like button under verses."], ["comments", "Comments", "Comments under verses (moderation stays on)."],
     ["assistant", "Assistant", "Quran and Islam assistant (needs the OpenAI key)."], ["duaAi", "Dua phrasing help", "“Phrase it more beautifully” in the dua generator."],
-    ["sideArt", "Side calligraphy", "Gold Quran calligraphy left and right on wide screens."], ["celebrations", "Point and sticker celebrations", "“+n points”, new levels and stickers as overlays."],
+    ["sideArt", "Side calligraphy", "Gold Quran calligraphy left and right on wide screens."], ["celebrations", "Point and sticker celebrations", "“+n points”, new levels and stickers as overlays."], ["donateCta", "Donation invitations", "The quiet invitations to voluntary support (lantern) on the pages. The /support page always stays reachable."],
   ];
   const lim: [keyof Cfg["limits"], string][] = [
     ["assistantAnonPerDay", de ? "Assistent: Fragen pro Tag ohne Konto" : "Assistant: questions per day without account"],
@@ -501,7 +502,39 @@ function Control({ de }: { de: boolean }) {
         </div>
         <button className={`${btnP} mt-4`} onClick={() => save({ announcement: { ...A, id: String(Date.now()) } })}>{de ? "Ankündigung speichern" : "Save announcement"}</button>
       </section>
+      <DonationAdmin de={de} d={c.donation} set={(d) => setC({ ...c, donation: d })} save={() => save({ donation: c.donation })} />
     </div>
+  );
+}
+
+// Voluntary support (sadaqa): payment status of Ziina and the optional monthly meter of the lantern
+function DonationAdmin({ de, d, set, save }: { de: boolean; d: Donation; set: (d: Donation) => void; save: () => void }) {
+  const [z, setZ] = useState<{ api: boolean; link: string } | null>(null);
+  useEffect(() => { fetch("/api/support").then((r) => r.json()).then((s) => setZ({ api: !!s.api, link: String(s.link ?? "") })).catch(() => setZ({ api: false, link: "" })); }, []);
+  const ok = "rounded-lg bg-accent-soft px-3 py-2 text-xs font-semibold text-accent";
+  const warn = "rounded-lg border border-[rgb(var(--gold))]/50 bg-[rgb(var(--gold))]/10 px-3 py-2 text-xs font-semibold text-ink";
+  return (
+    <section className={card}>
+      <h3 className="text-lg font-bold">{de ? "Spenden (Sadaqa) über Ziina" : "Donations (sadaqa) via Ziina"}</h3>
+      {z === null ? <div className="mt-3 h-9 animate-pulse rounded-lg bg-line/40" /> : z.api ? (
+        <p className={`mt-3 ${ok}`}>{de ? "Ziina ist eingerichtet: Besucher wählen auf /support einen Betrag und zahlen bei Ziina." : "Ziina is set up: visitors choose an amount on /support and pay at Ziina."}</p>
+      ) : (
+        <p className={`mt-3 ${warn}`}>
+          {de ? "Kein Ziina-API-Schlüssel auf dem Server. Trage ZIINA_API_KEY in /srv/tafsirflow/.env.app ein und starte die Seite neu (pm2 restart tafsirflow --update-env). " : "No Ziina API key on the server. Add ZIINA_API_KEY to /srv/tafsirflow/.env.app and restart the site (pm2 restart tafsirflow --update-env). "}
+          {z.link ? (de ? `Bis dahin sehen Besucher den Ziina-Zahlungslink ${z.link.replace(/^https:\/\//, "")}.` : `Until then visitors see the Ziina payment link ${z.link.replace(/^https:\/\//, "")}.`) : (de ? "Bis dahin steht auf /support nur der Hinweis, dass die Unterstützung eingerichtet wird." : "Until then /support only says that support is being set up.")}
+        </p>
+      )}
+      <h4 className="mt-5 text-sm font-bold">{de ? "Laterne (Monatsziel)" : "Lantern (monthly goal)"}</h4>
+      <p className="mt-1 text-xs text-muted">{de ? "Optional: Wenn du ein Monatsziel und den bisher erhaltenen Betrag einträgst, füllt sich die goldene Laterne in den Spenden-Einladungen sichtbar. Nur echte Zahlen eintragen. Ausgeschaltet: die Laterne leuchtet ohne Zahlen." : "Optional: enter a monthly goal and the amount received so far and the gold lantern in the donation invitations fills visibly. Real numbers only. Off: the lantern glows without numbers."}</p>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        <label className="grid gap-1 text-sm"><span>{de ? "Monatsziel" : "Monthly goal"}</span><input type="number" min={0} className={field} value={d.goal} onChange={(e) => set({ ...d, goal: Number(e.target.value) })} /></label>
+        <label className="grid gap-1 text-sm"><span>{de ? "Bisher erhalten" : "Received so far"}</span><input type="number" min={0} className={field} value={d.raised} onChange={(e) => set({ ...d, raised: Number(e.target.value) })} /></label>
+        <label className="grid gap-1 text-sm"><span>{de ? "Währung" : "Currency"}</span><input className={field} value={d.currency} onChange={(e) => set({ ...d, currency: e.target.value })} /></label>
+        <label className="grid gap-1 text-sm"><span>{de ? "Hinweis (optional), z. B. „Serverkosten Oktober“" : "Note (optional), e.g. “Server costs October”"}</span><input className={field} value={d.label} onChange={(e) => set({ ...d, label: e.target.value })} /></label>
+        <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={d.on} onChange={(e) => set({ ...d, on: e.target.checked })} />{de ? "Füllstand anzeigen" : "Show the meter"}</label>
+      </div>
+      <button className={`${btnP} mt-4`} onClick={save}>{de ? "Speichern" : "Save"}</button>
+    </section>
   );
 }
 

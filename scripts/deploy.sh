@@ -54,6 +54,12 @@ RECAPTCHA_V3_SITE_KEY=
 RECAPTCHA_V3_SECRET=
 RECAPTCHA_V2_SITE_KEY=
 RECAPTCHA_V2_SECRET=
+# Voluntary support (/support) via Ziina: API key (Ziina Business → Developers) for the amount selection – kept only here.
+# Without a key the page shows the Ziina payment link (SUPPORT_URL, default pay.ziina.com/icslfze; "off" hides it).
+# ZIINA_TEST=1 only while testing with a test key.
+ZIINA_API_KEY=
+SUPPORT_URL=
+ZIINA_TEST=
 # Quran assistant (OpenAI): key from platform.openai.com – kept only here, never in git
 OPENAI_API_KEY=
 OPENAI_MODEL=gpt-4o-mini

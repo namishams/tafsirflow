@@ -5,6 +5,7 @@ import Markdown from "@/components/Markdown";
 import JsonLd from "@/components/JsonLd";
 import { aboutContent } from "@/lib/aboutContent";
 import { abs, pageMeta } from "@/lib/site";
+import { organizationLd } from "@/lib/company";
 import { MoreTiles } from "@/components/PosterTiles";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { IslamArcadeLine, IslamBreak, IslamCorners, IslamMosque, IslamNum, IslamRain } from "@/components/art/IslamArt";
@@ -21,7 +22,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations("about");
   const c = await aboutContent(locale);
   const dark = "stage text-[#eef0f3]";
-  const ld = { "@context": "https://schema.org", "@type": "AboutPage", url: abs(`/${locale}/about`), mainEntity: { "@type": "Organization", name: "Quran Masterclass", foundingLocation: "Dubai", email: "info@quranmasterclass.com", url: abs("/") } };
+  const tc = await getTranslations("company");
+  const tn = await getTranslations("nav");
+  const tl = await getTranslations("legal");
+  const ld = { "@context": "https://schema.org", "@type": "AboutPage", url: abs(`/${locale}/about`), inLanguage: locale, mainEntity: organizationLd(abs) };
   return (
     <div>
       <JsonLd data={ld} />
@@ -61,6 +65,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <IslamCorners />
           <h2 className="font-display relative text-3xl leading-tight">{c.freeTitle}</h2>
           <div className="relative"><Markdown text={c.free} /></div>
+          {/* the website stays free; the app has Pro (messages → about.appNote) */}
+          <p className="relative mt-4 text-[15px] leading-relaxed text-muted">{t("appNote")}</p>
         </div>
       </section>
       </div>
@@ -128,9 +134,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </figure>
         <h2 className="font-display mt-14 text-3xl">{c.contactTitle}</h2>
         <Markdown text={c.contact} />
+        <p className="mt-4 text-[15px] leading-relaxed text-muted">{tc("operatedBy", { place: tc("place") })} <Link href="/legal/imprint" className="font-semibold text-accent hover:underline">{tl("imprintTitle")}</Link></p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/shams" className="btn-gold inline-flex h-11 items-center rounded-full px-5 text-sm font-bold">{t("ctaShams")}</Link>
           <Link href="/feedback" className="inline-flex h-11 items-center rounded-full border border-[rgb(var(--isl-gold-soft))]/50 px-5 text-sm font-bold hover:border-[rgb(var(--isl-gold-soft))]">{t("ctaFeedback")}</Link>
+          <Link href="/support" className="inline-flex h-11 items-center rounded-full border border-[rgb(var(--isl-gold-soft))]/50 px-5 text-sm font-bold hover:border-[rgb(var(--isl-gold-soft))]">{tn("support")}</Link>
         </div>
       </section>
       </div>
