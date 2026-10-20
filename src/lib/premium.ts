@@ -4,9 +4,10 @@ import { useConfig } from "./config";
 import { fetchMe } from "./sync";
 import { readJSON, writeJSON } from "./storage";
 
-// Masterclass Premium – a one-time In-App Purchase in the iOS app. The Quran, recitations, translations and tafsir stay
-// free for everyone. Premium unlocks the Shams course beyond al-Fatiha and Juz 'Amma, unlimited offline surahs and more
-// assistant questions. The web asks for Premium only if the owner switches it on (admin: premium.gateWeb).
+// Quran Masterclass Pro – a monthly subscription in the app (App Store / Google Play); an earlier one-time Premium stays
+// valid (users.plan = 'premium'). The Quran, recitation, translations and tafsir stay free for everyone, and the website
+// stays free. Pro unlocks the Shams course beyond al-Fatiha and Juz 'Amma, unlimited offline surahs and more assistant
+// questions. The web asks for Pro only if the owner switches it on (admin: premium.gateWeb – keep it off).
 
 /** al-Fatiha and Juz 'Amma (surahs 78–114) can be learned with the Shams Method by everyone */
 export const freeShams = (surah: number) => surah === 1 || surah >= 78;

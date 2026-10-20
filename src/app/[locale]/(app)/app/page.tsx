@@ -21,7 +21,7 @@ const de: C = {
   ],
   featuresTitle: "Was die App kann",
   features: [["Offline lernen", "Suren in den Einstellungen einer Sure speichern – sie spielen auch ohne Internet."], ["Ein Fortschritt", "Mit deinem Konto sind App, Handy-Browser und Computer immer auf demselben Stand."], ["Schnellzugriff", "Lange auf das Symbol drücken: direkt zu Heute, Koran, Shams-Methode oder Radio."], ["Immer aktuell", "Neue Kurse und Verbesserungen kommen ohne Update aus dem Store."]],
-  note: "Die App ist kostenlos, ohne Werbung und ohne versteckte Kosten – wie die Website.",
+  note: "Als Web-App von der Website installiert bleibt alles kostenlos und ohne Werbung – wie die Website. Die App aus dem App Store und von Google Play ist kostenlos und ohne Werbung; für alle, die mehr wollen, gibt es dort Quran Masterclass Pro – monatlich kündbar, im App Store bzw. bei Google Play.",
 };
 const en: C = {
   kicker: "The app", title: "Quran Masterclass on your phone",
@@ -35,7 +35,7 @@ const en: C = {
   ],
   featuresTitle: "What the app can do",
   features: [["Learn offline", "Save surahs in a surah’s settings – they play without internet."], ["One progress", "With your account, the app, your phone’s browser and your computer are always in sync."], ["Quick access", "Long-press the icon: straight to Today, Quran, Shams Method or Radio."], ["Always up to date", "New courses and improvements arrive without a store update."]],
-  note: "The app is free, without ads and without hidden costs – just like the website.",
+  note: "Installed from the website as a web app, everything stays free and without ads – just like the website. The app from the App Store and Google Play is free and without ads; for everyone who wants more it offers Quran Masterclass Pro – monthly, cancel any time, in the App Store or on Google Play.",
 };
 const ar: C = {
   kicker: "التطبيق", title: "Quran Masterclass على هاتفك",
@@ -49,7 +49,7 @@ const ar: C = {
   ],
   featuresTitle: "ما يقدّمه التطبيق",
   features: [["التعلّم دون اتصال", "احفظ السور من إعدادات السورة لتعمل دون إنترنت."], ["تقدّم واحد", "بحسابك يبقى التطبيق والمتصفح والحاسوب على المستوى نفسه دائمًا."], ["وصول سريع", "اضغط مطوّلًا على الأيقونة لتنتقل مباشرة إلى اليوم أو القرآن أو منهج شمس أو الإذاعة."], ["محدَّث دائمًا", "تصل الدورات الجديدة والتحسينات دون تحديث من المتجر."]],
-  note: "التطبيق مجاني بلا إعلانات ولا تكاليف خفية، تمامًا كالموقع.",
+  note: "عند تثبيته من الموقع كتطبيق ويب يبقى كل شيء مجانيًا بلا إعلانات، تمامًا كالموقع. والتطبيق من App Store وGoogle Play مجاني بلا إعلانات، وفيه لمن أراد المزيد اشتراك Quran Masterclass Pro الشهري الذي يمكن إلغاؤه في أي وقت عبر App Store أو Google Play.",
 };
 const content = (l: string) => (l === "de" ? de : l === "ar" ? ar : en);
 

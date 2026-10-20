@@ -4,9 +4,12 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { accountPlan, usePremium } from "@/lib/premium";
 
-// Buy / restore Premium. In the iOS app the purchase runs through Apple (StoreKit); on the web Premium shows as active
-// when the account has it, otherwise the panel points to the app.
-export default function PremiumPanel({ appStoreUrl }: { appStoreUrl: string }) {
+// Quran Masterclass Pro (monthly subscription in the app, App Store / Google Play). The website stays free.
+// - Pro (or an earlier one-time Premium) on the account: shown as active.
+// - Inside the old iOS web shell (window.QMCApp): no purchase from here any more – Pro is sold by the new app version;
+//   "Restore purchases" stays for people who bought the earlier one-time Premium.
+// - On the website: where Pro is available, with links to the stores.
+export default function PremiumPanel({ appStoreUrl, playStoreUrl = "" }: { appStoreUrl: string; playStoreUrl?: string }) {
   const t = useTranslations("premium");
   const { premium, app } = usePremium();
   const [busy, setBusy] = useState(false);
@@ -34,23 +37,26 @@ export default function PremiumPanel({ appStoreUrl }: { appStoreUrl: string }) {
       </div>
     );
   }
-  if (!app) {
+  if (app) {
     return (
       <div className="grid gap-3">
-        <p className="text-[15px] text-white/75">{t("webOnly")}</p>
-        {appStoreUrl && <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="btn-gold inline-flex h-12 w-fit items-center rounded-full px-7 text-[15px] font-bold">{t("appStore")}</a>}
+        <p className="max-w-md text-[15px] leading-relaxed text-white/80">{t("shellUpdate")}</p>
+        <button disabled={busy} onClick={() => { setBusy(true); setMsg(""); app.restore(); }} className="w-fit text-sm font-semibold text-white/75 underline-offset-2 hover:underline">{t("restore")}</button>
+        {msg && <p role="status" className="text-sm text-[rgb(233_207_153)]">{msg}</p>}
       </div>
     );
   }
+  const store = "inline-flex h-12 w-fit items-center rounded-full px-6 text-[15px] font-bold";
   return (
     <div className="grid gap-3">
-      <button disabled={busy} onClick={() => { setBusy(true); setMsg(""); app.buy(); }} className="btn-gold inline-flex h-14 w-full max-w-sm items-center justify-center rounded-full px-7 text-[16px] font-bold disabled:opacity-60">
-        {busy ? "…" : app.price ? t("buy", { price: app.price }) : t("buyNoPrice")}
-      </button>
-      <p className="text-[13px] text-white/60">{t("once")}</p>
-      <button disabled={busy} onClick={() => { setBusy(true); setMsg(""); app.restore(); }} className="w-fit text-sm font-semibold text-white/75 underline-offset-2 hover:underline">{t("restore")}</button>
-      {msg && <p role="status" className="text-sm text-[rgb(233_207_153)]">{msg}</p>}
-      <p className="max-w-md text-[12px] leading-relaxed text-white/45">{t("terms")}</p>
+      <p className="text-[15px] text-white/80">{t("getApp")}</p>
+      <p className="text-[13px] text-white/60">{t("plan")}</p>
+      {(appStoreUrl || playStoreUrl) && (
+        <div className="mt-1 flex flex-wrap gap-2.5">
+          {appStoreUrl && <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className={`btn-gold ${store}`}>{t("appStore")}</a>}
+          {playStoreUrl && <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" className={`${store} border border-white/25 text-white/90 hover:border-white/50`}>{t("playStore")}</a>}
+        </div>
+      )}
     </div>
   );
 }

@@ -4,8 +4,9 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Seal } from "./PremiumPanel";
 
-// Shown when a Premium part is opened without Premium: the Shams course beyond al-Fatiha and Juz 'Amma, or more offline surahs.
-// Reading, listening and tafsir always stay open behind it.
+// Shown when a Pro part is opened without Pro (Quran Masterclass Pro, the app's monthly subscription): the Shams course
+// beyond al-Fatiha and Juz 'Amma, or more offline surahs. Reading, listening and tafsir always stay open behind it.
+// On the website this appears only if the owner switches premium.gateWeb on; otherwise only in the old iOS web shell.
 export default function PremiumLock({ kind, freeOffline = 3, onClose }: { kind: "shams" | "offline"; freeOffline?: number; onClose: () => void }) {
   const t = useTranslations("premium");
   if (typeof document === "undefined") return null;

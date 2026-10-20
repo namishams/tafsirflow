@@ -10,7 +10,7 @@ export type Features = {
 export type Donation = { on: boolean; goal: number; raised: number; currency: string; label: string };
 export type Limits = { assistantAnonPerDay: number; assistantPerUserPerDay: number; duaAiAnonPerDay: number; rankingDailyCap: number };
 export type PointRules = Partial<Record<PointKind, { pts: number; cap?: number }>>;
-// Masterclass Premium (In-App Purchase in the iOS app): what stays free, and whether the web asks for Premium too
+// Quran Masterclass Pro (subscription in the app; earlier one-time Premium stays valid): what stays free, and whether the web asks for Pro too
 export type Premium = { gateWeb: boolean; freeOffline: number; assistantPerDay: number };
 export type Announcement = { on: boolean; id: string; de: string; en: string; ar: string; href: string };
 export type Settings = {
