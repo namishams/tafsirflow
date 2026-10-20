@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { router, type Href } from "expo-router";
 import { FONT, useTheme } from "@/lib/theme";
-import { Arabic, Eyebrow, GoldButton, GoldCard, OutlineButton } from "@/components/brand";
+import { ActionRow, Arabic, Eyebrow, GoldButton, GoldCard, OutlineButton } from "@/components/brand";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { RECITERS, audioUrl, getChapter, getVerseByKey, type SingleVerse } from "@/lib/quran";
@@ -29,12 +29,14 @@ export function VerseOfTheDay() {
     <GoldCard>
       <Eyebrow style={{ color: t.gold, marginBottom: 12 }}>{w("votdTitle")}</Eyebrow>
       <Arabic size={26} center>{verse.text_uthmani}</Arabic>
-      <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 24, color: t.muted, textAlign: "center", marginTop: 6 }}>{verse.translation}</Text>
+      {verse.translation ? <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 24, color: t.muted, textAlign: "center", marginTop: 6 }}>{verse.translation}</Text> : null}
       <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.gold, textAlign: "center", marginTop: 8 }}>{surahName} · {key}</Text>
       <View style={{ gap: 10, marginTop: 16 }}>
         <GoldButton title={w("votdPlay")} icon={audio.playing ? "pause" : "play"} onPress={() => (audio.playing ? audio.pause() : audio.play(audioUrl(RECITERS[0], c, v), { title: `${surahName} · ${v}` }))} />
-        <OutlineButton title={w("votdTafsir")} icon="book" onPress={() => router.push(`/quran/${c}?v=${v}&tafsir=1` as Href)} />
-        <OutlineButton title={w("votdMemorize")} icon="sun" onPress={() => router.push(`/shams/${c}?v=${v}` as Href)} />
+        <ActionRow>
+          <OutlineButton title={w("votdTafsir")} icon="book" onPress={() => router.push(`/quran/${c}?v=${v}&tafsir=1` as Href)} style={{ flex: 1 }} />
+          <OutlineButton title={w("votdMemorize")} icon="sun" onPress={() => router.push(`/shams/${c}?v=${v}` as Href)} style={{ flex: 1 }} />
+        </ActionRow>
       </View>
     </GoldCard>
   );

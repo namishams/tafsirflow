@@ -24,7 +24,7 @@ export function localDigits(s: string): string {
   const out = s.replace(/[0-9]/g, (d) => t[d.charCodeAt(0) - 48]);
   if (t === BENGALI) return out;
   // Arabic-script number signs: decimal ٫ between digits, percent ٪
-  return out.replace(/([٠-٩۰-۹])\.(?=[٠-٩۰-۹])/g, "$1٫").replace(/([٠-٩۰-۹])\s?%|%\s?(?=[٠-٩۰-۹])/g, (m, d) => (d ? `${d}٪` : "٪"));
+  return out.replace(/([٠-٩۰-۹])\.(?=[٠-٩۰-۹])/g, "$1٫").replace(/([٠-٩۰-۹])\s?%|%\s?(?=[٠-٩۰-۹])/g, (m, d) => (d ? `${d}٪` : "٪")).replace(/%/g, "٪");
 }
 
 const NO_SPACING = { letterSpacing: 0 };
@@ -33,7 +33,11 @@ function convert(children: ReactNode): ReactNode {
   if (!table) return children;
   if (typeof children === "string") return localDigits(children);
   if (typeof children === "number") return localDigits(String(children));
-  if (Array.isArray(children)) return children.map(convert);
+  if (Array.isArray(children)) {
+    // "{n}%" arrives as ["0", "%"]: plain pieces are joined so the number signs come out right
+    if (children.every((c) => typeof c === "string" || typeof c === "number")) return localDigits(children.join(""));
+    return children.map(convert);
+  }
   return children;
 }
 

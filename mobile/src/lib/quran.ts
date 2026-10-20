@@ -162,8 +162,8 @@ export function tafsirOptionsFor(lang: string, tafsirs: Resource[]): { options: 
 }
 
 const verseCache = new Map<string, Promise<Verse[]>>();
-export function getVerses(chapter: number, lang: string, reciter: Reciter, translationId?: number): Promise<Verse[]> {
-  const tid = translationId ?? PREFERRED_TRANSLATION[lang] ?? 20;
+export async function getVerses(chapter: number, lang: string, reciter: Reciter, translationId?: number): Promise<Verse[]> {
+  const tid = translationId ?? (await translationFor(lang));
   const key = `${chapter}:${lang}:${reciter.id}:${reciter.folder}:${tid}`;
   let p = verseCache.get(key);
   if (!p) {
@@ -233,10 +233,22 @@ export async function searchVerses(q: string, lang: string): Promise<SearchHit[]
 }
 
 export type SingleVerse = { verse_key: string; text_uthmani: string; translation: string };
+// the translation in the reader's language (preferred one, else the first Quran.com offers in it), found once
+const translationIds = new Map<string, Promise<number>>();
+export function translationFor(lang: string): Promise<number> {
+  let p = translationIds.get(lang);
+  if (!p) {
+    p = getResources().then((r) => pickTranslation(lang, r.translations)).catch(() => PREFERRED_TRANSLATION[lang] ?? PREFERRED_TRANSLATION.en);
+    translationIds.set(lang, p);
+  }
+  return p;
+}
+
 export async function getVerseByKey(key: string, lang: string, translationId?: number): Promise<SingleVerse> {
-  const tid = translationId ?? PREFERRED_TRANSLATION[lang] ?? 20;
+  const tid = translationId ?? (await translationFor(lang));
   const d = await get<{ verse: any }>(`/verses/by_key/${key}?language=${lang}&words=false&translations=${tid}&fields=text_uthmani`); // eslint-disable-line @typescript-eslint/no-explicit-any
-  return { verse_key: d.verse.verse_key, text_uthmani: d.verse.text_uthmani, translation: stripFootnotes(String(d.verse.translations?.[0]?.text ?? "")) };
+  // Arabic readers read the original: no translation (website rule)
+  return { verse_key: d.verse.verse_key, text_uthmani: d.verse.text_uthmani, translation: lang === "ar" ? "" : stripFootnotes(String(d.verse.translations?.[0]?.text ?? "")) };
 }
 
 /** reciters offered by the server (falls back to the built-in four) */

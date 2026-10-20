@@ -44,6 +44,14 @@ else
   install_one "${1:?usage: install-adhan.sh <id> <url-or-file> [label] [credit]}" "${2:?url or file missing}" "${3:-}" "${4:-}"
 fi
 
+# the phone's prayer notification: iOS plays at most 30 seconds, as WAV/CAF – the opening of every recording, faded out
+for MP3 in "$DIR"/*.mp3; do
+  [ -e "$MP3" ] || continue
+  N="${MP3%.mp3}.notify.wav"
+  [ -s "$N" ] && [ "$N" -nt "$MP3" ] && continue
+  ffmpeg -loglevel error -y -i "$MP3" -t 29 -ac 1 -ar 22050 -af "afade=t=out:st=26.5:d=2.5" -c:a pcm_s16le "$N" || echo "     (no notification clip for $(basename "$MP3"))"
+done
+
 chown -R tafsir:tafsir "$DIR" 2>/dev/null || true
 chmod o+rx /srv/tafsirflow /srv/tafsirflow/audio "$DIR"
 echo "Installed recordings: $(ls "$DIR"/*.mp3 2>/dev/null | wc -l) – the radio and the prayer page play them (random by default)."

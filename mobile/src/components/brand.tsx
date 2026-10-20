@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
-import { ActivityIndicator, Pressable, StyleSheet, Text, View, useWindowDimensions, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
+import { ActivityIndicator, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
+import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, G, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, TONES, goldButton, stage, type, useTheme } from "@/lib/theme";
@@ -74,20 +75,40 @@ export function GoldButton({ title, onPress, busy, disabled, icon, compact, styl
   );
 }
 
-/** quiet second action: hairline outline (white on the stage) */
+/** quiet second action: a Liquid Glass capsule on current iOS (Apple's secondary button), a hairline capsule elsewhere */
+const GLASS = Platform.OS === "ios" && isLiquidGlassAvailable();
 export function OutlineButton({ title, onPress, onStage, disabled, icon, compact, style }: { title: string; onPress: () => void; onStage?: boolean; disabled?: boolean; icon?: IconName; compact?: boolean; style?: StyleProp<ViewStyle> }) {
   const t = useTheme();
   const color = onStage ? "#ffffff" : t.ink;
+  const row = (
+    <View style={s.buttonRow}>
+      {icon ? <Icon name={icon} size={16} color={color} /> : null}
+      <Text style={[type.button, { color }]} numberOfLines={1}>{title}</Text>
+    </View>
+  );
+  if (GLASS) {
+    return (
+      <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={title}
+        style={({ pressed }) => [{ opacity: disabled ? 0.45 : 1, transform: [{ scale: pressed ? 0.97 : 1 }] }, compact ? { alignSelf: "flex-start" } : null, style]}>
+        <GlassView glassEffectStyle={onStage || t.dark ? "clear" : "regular"} isInteractive tintColor={onStage ? "rgba(4,32,24,0.35)" : t.dark ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.55)"}
+          style={[s.button, compact && s.compact, { borderWidth: StyleSheet.hairlineWidth, borderColor: onStage ? "rgba(255,255,255,0.22)" : t.line }]}>
+          {row}
+        </GlassView>
+      </Pressable>
+    );
+  }
   return (
     <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={title}
       style={({ pressed }) => [s.button, compact && s.compact, compact ? { alignSelf: "flex-start" } : null,
-        { borderWidth: 1, borderColor: onStage ? (pressed ? "#ffffff" : "rgba(255,255,255,0.35)") : pressed ? goldButton.line : t.line, backgroundColor: onStage ? "rgba(255,255,255,0.03)" : t.surface, opacity: disabled ? 0.45 : 1 }, style]}>
-      <View style={s.buttonRow}>
-        {icon ? <Icon name={icon} size={16} color={color} /> : null}
-        <Text style={[type.button, { color }]} numberOfLines={1}>{title}</Text>
-      </View>
+        { borderWidth: 1, borderColor: onStage ? (pressed ? "#ffffff" : "rgba(255,255,255,0.3)") : pressed ? goldButton.line : t.line, backgroundColor: onStage ? "rgba(255,255,255,0.06)" : t.surface, opacity: disabled ? 0.45 : 1 }, style]}>
+      {row}
     </Pressable>
   );
+}
+
+/** two or three actions side by side (Apple's button row) instead of a stack of full-width buttons */
+export function ActionRow({ children, style }: { children: ReactNode; style?: StyleProp<ViewStyle> }) {
+  return <View style={[{ flexDirection: "row", gap: 10 }, style]}>{children}</View>;
 }
 
 /** text link in the accent colour */
@@ -335,7 +356,7 @@ export function GoldProgress({ value, track }: { value: number; track?: string }
 }
 
 const s = StyleSheet.create({
-  button: { height: 52, borderRadius: R.md, alignItems: "center", justifyContent: "center", paddingHorizontal: 22, overflow: "hidden" },
+  button: { height: 52, borderRadius: R.pill, alignItems: "center", justifyContent: "center", paddingHorizontal: 22, overflow: "hidden" },
   compact: { height: 44, borderRadius: R.pill, paddingHorizontal: 20 },
   buttonRow: { flexDirection: "row", alignItems: "center", gap: 8 },
   goldHighlight: { position: "absolute", top: 0, left: 0, right: 0, height: 1, backgroundColor: "rgba(255,255,255,0.3)" },

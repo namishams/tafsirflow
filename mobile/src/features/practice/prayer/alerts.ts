@@ -5,6 +5,7 @@ import { readJSON } from "@/lib/store";
 import { webTree } from "@/i18n/web";
 import { moduleText } from "@/i18n/app";
 import { placeLabel, storedPlace } from "./place";
+import { adhanNotificationSound } from "./adhanSound";
 
 // Prayer reminders as local notifications: one per chosen prayer for the next 7 days, computed on the device with
 // the website's own calculation (lib/prayer.ts, adhan). Nothing is preselected; the permission is asked when the
@@ -94,6 +95,8 @@ export function reschedulePrayerAlerts(lang: string): Promise<number> {
     if (!perm?.granted && perm?.ios?.status !== n.IosAuthorizationStatus.PROVISIONAL) return 0;
     const tr = { ...(webTree("en").prayer as Record<string, string>), ...(webTree(lang).prayer as Record<string, string> | undefined) };
     const tx = moduleText("alerts", TX, lang);
+    // the adhan itself as the notification sound when the learner chose it (else the gentle system tone)
+    const sound = setup.sound === "adhan" ? (await adhanNotificationSound()) ?? "default" : "default";
     const { main, settings } = storedPlace();
     const place = placeLabel(main, lang, tr.yourPlace);
     if (Platform.OS === "android") {
@@ -113,7 +116,7 @@ export function reschedulePrayerAlerts(lang: string): Promise<number> {
         const lead = before ? tx.soon.replace("{n}", String(before / 60000)) : tr.timeFor;
         await n.scheduleNotificationAsync({
           identifier: `${TAG}-${p}-${at.getTime()}`,
-          content: { title: `${name} · ${time}`, body: `${lead} ${name} – ${place}`, sound: "default", data: { tag: TAG, prayer: p, at: at.getTime() } },
+          content: { title: `${name} · ${time}`, body: `${lead} ${name} – ${place}`, sound, data: { tag: TAG, prayer: p, at: at.getTime() } },
           trigger: { type: n.SchedulableTriggerInputTypes.DATE, date: new Date(fire), ...(Platform.OS === "android" ? { channelId: CHANNEL } : {}) },
         }).then(() => { count++; }).catch(() => undefined);
       }
