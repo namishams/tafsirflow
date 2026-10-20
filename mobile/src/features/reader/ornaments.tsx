@@ -91,10 +91,10 @@ export function FrameCorners({ color = "rgba(201,166,94,0.7)", inset = 8, size =
   const c = { position: "absolute" as const, width: size, height: size, borderColor: color, borderRadius: 2 };
   return (
     <>
-      <View pointerEvents="none" style={[c, { top: inset, left: inset, borderTopWidth: 1, borderLeftWidth: 1 }]} />
-      <View pointerEvents="none" style={[c, { top: inset, right: inset, borderTopWidth: 1, borderRightWidth: 1 }]} />
-      <View pointerEvents="none" style={[c, { bottom: inset, left: inset, borderBottomWidth: 1, borderLeftWidth: 1 }]} />
-      <View pointerEvents="none" style={[c, { bottom: inset, right: inset, borderBottomWidth: 1, borderRightWidth: 1 }]} />
+      <View pointerEvents="none" style={[c, { top: inset, start: inset, borderTopWidth: 1, borderStartWidth: 1 }]} />
+      <View pointerEvents="none" style={[c, { top: inset, end: inset, borderTopWidth: 1, borderEndWidth: 1 }]} />
+      <View pointerEvents="none" style={[c, { bottom: inset, start: inset, borderBottomWidth: 1, borderStartWidth: 1 }]} />
+      <View pointerEvents="none" style={[c, { bottom: inset, end: inset, borderBottomWidth: 1, borderEndWidth: 1 }]} />
     </>
   );
 }

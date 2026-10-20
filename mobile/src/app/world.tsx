@@ -10,6 +10,7 @@ import { SERIF, useIsl } from "@/features/library/palette";
 import { useReducedMotion } from "@/features/library/motion";
 import { openHref } from "@/features/library/links";
 import { COUNTRIES, REGIONS, worldContent } from "@/features/library/content/world";
+import { countryName } from "@/lib/countries";
 
 // /world – "Muslims around the world": share of all Muslims by region as a gilded rosette, the countries with the most
 // Muslims as bars, Sunni and Shia (website: src/app/[locale]/(app)/world/page.tsx; figures: Pew Research Center).
@@ -21,7 +22,7 @@ function useRegionColor() {
   return (css: string) => (css === "rgb(var(--accent))" ? t.accent : css === "rgb(var(--gold))" ? t.gold : css);
 }
 
-function Donut({ lang, center }: { lang: "de" | "en"; center: string }) {
+function Donut({ lang, center }: { lang: "de" | "en" | "ar"; center: string }) {
   const isl = useIsl();
   const color = useRegionColor();
   const reduce = useReducedMotion();
@@ -56,6 +57,7 @@ function Donut({ lang, center }: { lang: "de" | "en"; center: string }) {
 
 export default function WorldPage() {
   const { lang } = useLang();
+  const wl = lang === "de" ? "de" : lang === "ar" ? "ar" : "en"; // the world page speaks German, Arabic and English (website rule)
   const isl = useIsl();
   const sw = useSaw();
   const color = useRegionColor();
@@ -80,13 +82,13 @@ export default function WorldPage() {
             <Corners />
             <IslH2 size={24} style={{ textAlign: "center", paddingHorizontal: 16, lineHeight: 30 }}>{c.regions}</IslH2>
             <View style={{ marginTop: 24, alignItems: "center", gap: 32 }}>
-              <Donut lang={lang} center={c.stats[0][0]} />
+              <Donut lang={wl} center={c.stats[0][0]} />
               <View style={{ alignSelf: "stretch", gap: 10 }}>
                 {REGIONS.map((x, i) => (
                   <View key={x.en} style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 12, paddingBottom: 8, borderBottomWidth: i < REGIONS.length - 1 ? 1 : 0, borderBottomColor: isl.a("goldSoft", 0.15) }}>
                     <View style={{ flexDirection: "row", alignItems: "center", gap: 10, flex: 1 }}>
                       <View style={{ width: 14, height: 14, borderRadius: 2, backgroundColor: color(x.color), borderWidth: 1, borderColor: isl.a("goldSoft", 0.5), transform: [{ rotate: "45deg" }] }} />
-                      <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 15, color: isl.ink }}>{x[lang]}</Text>
+                      <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 15, color: isl.ink }}>{x[wl]}</Text>
                     </View>
                     <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: isl.ink, fontVariant: ["tabular-nums"] }}>{nf(x.pct)} %</Text>
                   </View>
@@ -104,13 +106,13 @@ export default function WorldPage() {
                   <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
                     <View style={{ flexDirection: "row", alignItems: "center", gap: 10, flex: 1, minWidth: 0 }}>
                       <IslamNum n={ae ? "" : i + 1} size={32} fontSize={11} />
-                      <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 15, color: isl.ink }}>{x[lang]}</Text>
+                      <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 15, color: isl.ink }}>{wl === "en" ? countryName(x.id, lang) : x[wl]}</Text>
                     </View>
                     <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: isl.ink, fontVariant: ["tabular-nums"] }}>
                       <Text style={{ fontFamily: FONT.bold }}>{nf(x.m)}</Text> {c.mio} · <Text style={{ color: isl.muted }}>{x.pct} %</Text>
                     </Text>
                   </View>
-                  <View style={{ marginTop: 8, paddingLeft: 42, flexDirection: "row", alignItems: "center", gap: 12 }}>
+                  <View style={{ marginTop: 8, paddingStart: 42, flexDirection: "row", alignItems: "center", gap: 12 }}>
                     <View style={{ flex: 1, height: 8, borderRadius: 4, overflow: "hidden", backgroundColor: isl.a("goldSoft", 0.15) }}>
                       <View style={{ height: 8, borderRadius: 4, width: `${(x.m / max) * 100}%`, backgroundColor: isl.accent, opacity: 0.9 }} />
                     </View>

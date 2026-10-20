@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 import { Stack } from "expo-router";
-import { useLang } from "@/i18n";
+import { useLang, pick } from "@/i18n";
 import { FONT, useTheme } from "@/lib/theme";
 import PrayerTrainer from "@/features/practice/PrayerTrainer";
 import { Hero, PageScroll, LinkList, MoreTiles, Paper } from "@/features/practice/art";
@@ -10,7 +10,7 @@ import { C } from "@/features/practice/web/salahPage";
 // /salah – learn the prayer step by step (website: app/[locale]/(app)/salah)
 export default function SalahScreen() {
   const { lang } = useLang();
-  const c = lang === "de" ? C.de : C.en;
+  const c = pick(C, lang);
   const th = useTheme();
   return (
     <>

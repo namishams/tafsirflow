@@ -27,7 +27,7 @@ export function PlanBoard() {
   const tr = useWebT("plan");
   const ta = useT();
   const tx = useText();
-  const name = useChapterNames((s) => `Surah ${s}`);
+  const name = useChapterNames((s) => String(s));
   const rec = useMemo(() => ageProfile().track, []);
   const [choice, setChoice] = useState<Track["id"]>(rec);
   const { plan, due } = useLive(() => ({ plan: readPlan(), due: dueVerses().length }));
@@ -52,7 +52,7 @@ export function PlanBoard() {
               <Pressable key={x.id} onPress={() => setChoice(x.id)} accessibilityRole="radio" accessibilityState={{ selected: on }}
                 style={({ pressed }) => ({ flex: 1, borderRadius: 12, borderWidth: on ? 2 : 1, borderColor: on ? HM_GOLD : pressed ? alpha(HM_GOLD, 0.65) : alpha(HM_GOLD, 0.28), backgroundColor: t.surface, padding: on ? 17 : 18 })}>
                 {on ? <View style={{ position: "absolute", top: 13, right: 13 }}><Svg width={12} height={12} viewBox="0 0 12 12"><Path d="M6 0L7.44 4.56 12 6 7.44 7.44 6 12 4.56 7.44 0 6 4.56 4.56z" fill={t.gold} /></Svg></View> : null}
-                <View style={{ paddingRight: 20 }}><QKicker>{tr(`${x.id}For`)}{rec === x.id ? ` · ${tr("recommended")}` : ""}</QKicker></View>
+                <View style={{ paddingEnd: 20 }}><QKicker>{tr(`${x.id}For`)}{rec === x.id ? ` · ${tr("recommended")}` : ""}</QKicker></View>
                 <Text style={{ fontFamily: FONT.bold, fontSize: 18, color: t.ink, marginTop: 4 }}>{tr(x.id)}</Text>
                 <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.muted, marginTop: 4 }}>{tr("ramp", { start: x.start, cap: x.cap, every: x.every, step: x.step })}</Text>
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: t.ink, marginTop: 8 }}>{tr("yearResult", { n: cumulative(x, PLAN_DAYS), pct: Math.round((cumulative(x, PLAN_DAYS) / ORDER.length) * 100) })}</Text>
@@ -157,7 +157,7 @@ function MonthTable({ tr0, months, monthRow, name, current }: { tr0: Track; mont
           const r = monthRow(tr0, m);
           const now = current === m;
           return (
-            <View key={m} style={{ flexDirection: "row", gap: 8, padding: 12, backgroundColor: now ? "rgba(201,166,94,0.12)" : t.surface, borderTopWidth: 1, borderTopColor: "rgba(201,166,94,0.16)", borderLeftWidth: now ? 3 : 0, borderLeftColor: t.gold, paddingLeft: now ? 9 : 12 }}
+            <View key={m} style={{ flexDirection: "row", gap: 8, padding: 12, backgroundColor: now ? "rgba(201,166,94,0.12)" : t.surface, borderTopWidth: 1, borderTopColor: "rgba(201,166,94,0.16)", borderStartWidth: now ? 3 : 0, borderStartColor: t.gold, paddingStart: now ? 9 : 12 }}
               accessibilityLabel={`${tr("month")} ${m}: ${r.perDay} ${tr("perDay")}, ${r.end}`}>
               <Text style={{ flex: 0.7, fontFamily: FONT.semibold, fontSize: 14, color: inkGold(t) }}>{m}</Text>
               <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 14, color: t.ink }}>{r.perDay}</Text>

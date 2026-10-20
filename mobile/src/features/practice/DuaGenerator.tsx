@@ -10,7 +10,7 @@ import { useAuth } from "@/lib/auth";
 import { buyPersonalDua, duaPrices, useAiCredits } from "@/lib/purchases";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { OutlineButton, Stage } from "@/components/brand";
 import { Callout, IllumFrame, Label, LightChip, Niche, Rosette, StageButton, go, useGold } from "./art";
 import { Field } from "./ui";
@@ -23,13 +23,15 @@ type Made = { topic: Topic; text: string; who: Who; key: number };
 
 // Dua generator (website DuaGenerator.tsx + lib/duaGenerator.ts): for a concern it builds a personal dua – praise,
 // blessings on the Prophet ﷺ, the fitting names of Allah, the request, closing – and shows the authentic duas of the
-// Quran and the Sunnah. Free, no AI. A personal dua written by the server (AI) is a paid extra in the app.
+// Quran and the Sunnah (Arabic readers get no translation lines). Free, no AI. A personal dua written by the server (AI)
+// is a paid extra in the app.
 export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => void }) {
   const t = useWebT("duagen");
   const th = useTheme();
   const g = useGold();
   const { lang } = useLang();
   const locale = lang;
+  const ar = locale === "ar";
   const [topic, setTopic] = useState<Topic | null>(null);
   const [text, setText] = useState("");
   const [who, setWho] = useState<Who>("me");
@@ -57,9 +59,9 @@ export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => v
   const sunnah = plan ? plan.sunnah.map((id) => ALL_SUNNAH.find((d) => d.id === id)).filter(Boolean) as SunnahDua[] : [];
 
   const plain = () => made ? [
-    FRAME.praise, t("praiseTr"), "", FRAME.salawat, t("salawatTr"), "",
+    FRAME.praise, ar ? "" : t("praiseTr"), "", FRAME.salawat, ar ? "" : t("salawatTr"), "",
     names.map((n) => n.voc).join("، "), "", request, made.who !== "me" ? t("forWho", { who: t(`wf_${made.who}`) }) : "", "",
-    FRAME.close, t("closeTr"), FRAME.end, "", "quranmasterclass.com",
+    FRAME.close, ar ? "" : t("closeTr"), FRAME.end, "", "quranmasterclass.com",
   ].filter((l, i, a) => !(l === "" && a[i - 1] === "")).join("\n") : "";
   const share = () => { void Share.share({ title: t("title"), message: plain() }).catch(() => undefined); };
 
@@ -100,18 +102,18 @@ export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => v
             <View style={{ paddingHorizontal: 24, paddingVertical: 36, alignItems: "center" }}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2.4, textTransform: "uppercase", color: stage.gold, textAlign: "center" }}>{t("yourDua")} · {t(`t_${made.topic}`)}</Text>
               <View style={{ marginTop: 24, gap: 20, width: "100%", maxWidth: 640 }}>
-                <FrameLine ar={FRAME.praise} tr={t("praiseTr")} />
-                <FrameLine ar={FRAME.salawat} tr={t("salawatTr")} />
+                <FrameLine ar={FRAME.praise} tr={ar ? "" : t("praiseTr")} />
+                <FrameLine ar={FRAME.salawat} tr={ar ? "" : t("salawatTr")} />
                 <View style={{ alignItems: "center" }}>
                   <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 34, lineHeight: 52, color: stage.gold, writingDirection: "rtl", textAlign: "center" }}>{names.map((n) => n.voc).join("، ")}</Text>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: "rgba(255,255,255,0.6)", marginTop: 4, textAlign: "center" }}>{names.map((n) => t(`n_${n.id}`)).join(" · ")}</Text>
+                  {!ar ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: "rgba(255,255,255,0.6)", marginTop: 4, textAlign: "center" }}>{names.map((n) => t(`n_${n.id}`)).join(" · ")}</Text> : null}
                 </View>
                 <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: "rgba(255,255,255,0.1)", backgroundColor: "rgba(255,255,255,0.04)", paddingHorizontal: 20, paddingVertical: 20 }}>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 18, lineHeight: 29, color: "rgba(255,255,255,0.9)", textAlign: "center" }}>{request}</Text>
+                  <Text style={{ fontFamily: ar ? ARABIC_FONT : FONT.regular, fontSize: ar ? 22 : 18, lineHeight: ar ? 40 : 29, color: "rgba(255,255,255,0.9)", textAlign: "center", writingDirection: ar ? "rtl" : undefined }}>{request}</Text>
                   {made.who !== "me" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: "rgba(255,255,255,0.7)", marginTop: 8, textAlign: "center" }}>{t("forWho", { who: t(`wf_${made.who}`) })}</Text> : null}
                   {ai.text ? <Text style={{ fontFamily: FONT.regular, fontSize: 11, letterSpacing: 1.6, textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginTop: 12, textAlign: "center" }}>{t("aiLabel")}</Text> : null}
                 </View>
-                <FrameLine ar={FRAME.close} tr={t("closeTr")} small="2:201" />
+                <FrameLine ar={FRAME.close} tr={ar ? "" : t("closeTr")} small="2:201" />
                 <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 40, color: stage.gold, writingDirection: "rtl", textAlign: "center" }}>{FRAME.end}</Text>
               </View>
               <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: 8, marginTop: 32 }}>
@@ -128,7 +130,7 @@ export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => v
               <View key={n.id} style={{ borderRadius: R.card, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface, padding: 20, alignItems: "center", overflow: "hidden" }}>
                 <Niche color="rgba(201,166,94,0.25)" />
                 <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 36, lineHeight: 54, color: th.gold, writingDirection: "rtl" }}>{n.ar}</Text>
-                <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: th.ink, marginTop: 8, textAlign: "center" }}>{t(`n_${n.id}`)}</Text>
+                {!ar ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: th.ink, marginTop: 8, textAlign: "center" }}>{t(`n_${n.id}`)}</Text> : null}
                 <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 20, color: th.muted, marginTop: 4, textAlign: "center" }}>{t(`nd_${n.id}`)}</Text>
               </View>
             ))}
@@ -142,7 +144,7 @@ export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => v
                 const [s, v] = q.key.split(":");
                 return (
                   <View key={q.key} style={{ borderRadius: R.card, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface, padding: 20 }}>
-                    <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 50, color: th.arabic, writingDirection: "rtl", textAlign: "right" }}>{q.ar}</Text>
+                    <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 50, color: th.arabic, writingDirection: "rtl", textAlign: AR_RIGHT }}>{q.ar}</Text>
                     {q.tr ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.muted, marginTop: 8 }}>{q.tr.replace(/<sup[^>]*>.*?<\/sup>/g, "").replace(/<[^>]+>/g, "")}</Text> : null}
                     <Text onPress={() => go(`/surah/${s}?v=${v}`)} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: th.accent, marginTop: 12, alignSelf: "flex-start" }}>{t("quranRef", { ref: q.key })}</Text>
                   </View>
@@ -158,9 +160,9 @@ export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => v
               <View style={{ gap: 12, marginTop: 20 }}>
                 {sunnah.map((d) => (
                   <View key={d.id} style={{ borderRadius: R.card, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface, padding: 20 }}>
-                    <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 46, color: th.arabic, writingDirection: "rtl", textAlign: "right" }}>{d.ar}</Text>
-                    <Text style={{ fontFamily: FONT.italic, fontSize: 14, lineHeight: 22, color: th.gold, marginTop: 8 }}>{d.tr}</Text>
-                    <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.muted, marginTop: 8 }}>{locale === "de" ? d.de : d.en}</Text>
+                    <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 46, color: th.arabic, writingDirection: "rtl", textAlign: AR_RIGHT }}>{d.ar}</Text>
+                    {!ar ? <Text style={{ fontFamily: FONT.italic, fontSize: 14, lineHeight: 22, color: th.gold, marginTop: 8 }}>{d.tr}</Text> : null}
+                    {!ar ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.muted, marginTop: 8 }}>{locale === "de" ? d.de : d.en}</Text> : null}
                     <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: th.muted, marginTop: 12 }}>{d.src}{d.n ? ` · ${d.n}×` : ""}</Text>
                   </View>
                 ))}

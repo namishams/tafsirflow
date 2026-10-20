@@ -2,12 +2,12 @@ import { useCallback, useEffect, useState } from "react";
 import { Pressable, Switch, Text, View } from "react-native";
 import { router } from "expo-router";
 import { PageHero } from "@/components/page";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { api } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
-import { COUNTRIES } from "@/lib/countries";
+import { countryName } from "@/lib/countries";
 import { getVerseByKey } from "@/lib/quran";
 import { levelOf } from "@/web/points";
 import { Callout, Medal, alpha } from "./art";
@@ -28,8 +28,7 @@ const MEDAL = ["#e9cf99", "#d9dee4", "#d49a6a"];
 
 export function regionName(code: string | null, lang: string) {
   if (!code) return "";
-  const n = COUNTRIES[code.toUpperCase()];
-  return n ? n[lang === "de" ? 1 : 0] : code;
+  return countryName(code, lang);
 }
 
 /** the verse above the ranking (83:26), from the server like every Quran text in the app */
@@ -45,7 +44,7 @@ function CompeteVerse() {
   if (!v) return null;
   return (
     <View style={{ borderTopWidth: 1, borderTopColor: "rgba(255,255,255,0.1)", paddingTop: 16 }}>
-      <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 48, color: stage.gold, writingDirection: "rtl", textAlign: "right" }}>{v.text}</Text>
+      <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 48, color: stage.gold, writingDirection: "rtl", textAlign: AR_RIGHT }}>{v.text}</Text>
       <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>{tr("verse83")} <Text style={{ color: "rgba(255,255,255,0.4)" }}>({v.key})</Text></Text>
     </View>
   );

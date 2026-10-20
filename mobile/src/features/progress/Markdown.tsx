@@ -56,7 +56,7 @@ export function Markdown({ text, dark = false }: { text: string; dark?: boolean 
         if (b.kind === "h2") return <Text key={bi} accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 24, lineHeight: 29, color: dark ? "#eef0f3" : t.ink, marginTop: bi ? 40 : 0 }}>{inline(b.text, strong)}</Text>;
         if (b.kind === "h3") return <Text key={bi} accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 18, color: dark ? "#eef0f3" : t.ink, marginTop: bi ? 32 : 0 }}>{inline(b.text, strong)}</Text>;
         if (b.kind === "p") return <Text key={bi} style={[body, { marginTop: bi ? 16 : 0 }]}>{inline(b.text, strong)}</Text>;
-        if (b.kind === "quote") return <Text key={bi} style={[body, { marginTop: 16, borderLeftWidth: 2, borderLeftColor: alpha(gold, 0.6), paddingLeft: 16, fontFamily: FONT.italic }]}>{inline(b.text, strong)}</Text>;
+        if (b.kind === "quote") return <Text key={bi} style={[body, { marginTop: 16, borderStartWidth: 2, borderStartColor: alpha(gold, 0.6), paddingStart: 16, fontFamily: FONT.italic }]}>{inline(b.text, strong)}</Text>;
         return (
           <View key={bi} style={{ marginTop: bi ? 16 : 0, gap: 8 }}>
             {b.items.map((it, li) => (

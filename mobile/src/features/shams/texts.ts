@@ -1,4 +1,5 @@
 import { useLang } from "@/i18n";
+import { moduleText } from "@/i18n/app";
 
 // App-only texts of the Shams screens (everything the website also says comes from its messages via useWebT)
 const T = {
@@ -22,6 +23,6 @@ const T = {
 
 export function useShamsT() {
   const { lang } = useLang();
-  const d = T[lang] ?? T.en;
+  const d = moduleText("shams", T, lang);
   return (k: keyof typeof T.en, p?: Record<string, string | number>) => (p ? d[k].replace(/\{(\w+)\}/g, (_, x: string) => String(p[x] ?? "")) : d[k]);
 }

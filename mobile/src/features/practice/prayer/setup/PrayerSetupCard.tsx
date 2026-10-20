@@ -14,7 +14,7 @@ export function PrayerSetupCard({ style, always = false }: { style?: StyleProp<V
   return (
     <Stage rounded={R.card} style={[{ borderWidth: 1, borderColor: "rgba(214,180,108,0.3)" }, style]}>
       <PracticeWindow uid="setup-card" lamp height={150} style={{ position: "absolute", right: -18, top: 8, opacity: 0.35 }} />
-      <View style={{ padding: 20, paddingRight: 96, gap: 10 }}>
+      <View style={{ padding: 20, paddingEnd: 96, gap: 10 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
           <SmallStar size={10} color={stage.gold} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 2, textTransform: "uppercase", color: stage.gold }}>{tx("setupKicker")}</Text>

@@ -5,6 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Icon } from "@/components/icons";
 import { GoldButton, GoldCard, OutlineButton, Stage, Arcade } from "@/components/brand";
+import { courseLang } from "./lang";
 import { useLang, useT } from "@/i18n";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
 import { LESSONS } from "@/web/arabic";
@@ -24,9 +25,9 @@ import { goBack } from "@/components/page";
 
 export function ArabicPage() {
   const t = useTheme();
-  const { lang } = useLang();
+  const lang = courseLang(useLang().lang);
   const c = PAGE_C[lang];
-  const tx = (v: { de: string; en: string }) => v[lang] ?? v.en;
+  const tx = (v: { de: string; en: string; ar?: string }) => v[lang] ?? v.en;
   const scroll = useRef<ScrollViewInstance>(null);
   const pathY = useRef(0);
   const reduce = useReduceMotion();
@@ -137,7 +138,7 @@ export function ArabicPage() {
 }
 
 function Hero({ onPath }: { onPath: () => void }) {
-  const { lang } = useLang();
+  const lang = courseLang(useLang().lang);
   const c = PAGE_C[lang];
   return (
     <Stage hairlines={false} pattern={false}>
@@ -158,7 +159,7 @@ function HeroText({ c, onPath }: { c: (typeof PAGE_C)["en"]; onPath: () => void 
   return (
     <View style={{ paddingHorizontal: 20, paddingTop: insets.top + 8, paddingBottom: 32 }}>
       <Pressable onPress={() => (router.canGoBack() ? goBack() : router.replace("/" as Href))} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={12}
-        style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
+        style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6 }}>
         <Icon name="chevronLeft" color="#ffffff" size={24} />
       </Pressable>
       <Text style={{ fontFamily: FONT.semibold, fontSize: 12, lineHeight: 17, letterSpacing: 2.6, textTransform: "uppercase", color: stage.gold, marginTop: 12 }}>{c.kicker}</Text>

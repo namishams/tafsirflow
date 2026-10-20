@@ -28,7 +28,7 @@ export function SurahPicker({ current, chapters, onPick }: { current: Chapter; c
   return (
     <>
       <Pressable onPress={() => setOpen(true)} accessibilityRole="button" accessibilityLabel={`${t("goSurah")}: ${current.id}. ${current.name_simple}`}
-        style={({ pressed }) => ({ height: 40, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? th.ink : th.line, backgroundColor: th.surface, paddingLeft: 16, paddingRight: 12, flexDirection: "row", alignItems: "center", gap: 8 })}>
+        style={({ pressed }) => ({ height: 40, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? th.ink : th.line, backgroundColor: th.surface, paddingStart: 16, paddingEnd: 12, flexDirection: "row", alignItems: "center", gap: 8 })}>
         <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14, color: th.ink }}>{current.id}. {current.name_simple}</Text>
         <Icon name="chevronDown" color={th.muted} size={16} />
       </Pressable>

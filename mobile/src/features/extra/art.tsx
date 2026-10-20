@@ -210,7 +210,7 @@ export function MarbleHero({ kicker, title, children, back }: { kicker?: string;
       </Svg>
       <View style={{ paddingHorizontal: 20, paddingTop: insets.top + (canBack ? 6 : 24), paddingBottom: 40 }}>
         {canBack ? (
-          <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6, marginBottom: 8 }}>
+          <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6, marginBottom: 8 }}>
             <Icon name="chevronLeft" color={t.ink} size={24} />
           </Pressable>
         ) : null}
@@ -251,8 +251,8 @@ export function Arch({ children, dark = false, ratio = 0.3, style }: { children:
         </Svg>
         <View style={{ position: "absolute", top: -12, left: 0, right: 0, alignItems: "center" }}><StarGlyph size={22} color={dark ? GOLD_L : GOLD} /></View>
       </View>
-      <View style={{ backgroundColor: fill, borderLeftWidth: 1.2, borderRightWidth: 1.2, borderBottomWidth: 1.2, borderColor: line, borderBottomLeftRadius: 4, borderBottomRightRadius: 4, marginTop: -1 }}>
-        <View style={{ position: "absolute", top: 0, left: 9, right: 9, bottom: 9, borderLeftWidth: 0.8, borderRightWidth: 0.8, borderBottomWidth: 0.8, borderColor: alpha(GOLD, dark ? 0.3 : 0.4) }} pointerEvents="none" />
+      <View style={{ backgroundColor: fill, borderStartWidth: 1.2, borderEndWidth: 1.2, borderBottomWidth: 1.2, borderColor: line, borderBottomLeftRadius: 4, borderBottomRightRadius: 4, marginTop: -1 }}>
+        <View style={{ position: "absolute", top: 0, left: 9, right: 9, bottom: 9, borderStartWidth: 0.8, borderEndWidth: 0.8, borderBottomWidth: 0.8, borderColor: alpha(GOLD, dark ? 0.3 : 0.4) }} pointerEvents="none" />
         {children}
       </View>
     </View>

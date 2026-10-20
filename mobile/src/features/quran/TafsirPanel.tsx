@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Pressable, Text, View } from "react-native";
 import { router } from "expo-router";
-import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
-import { useLang } from "@/i18n";
+import { ARABIC_FONT, FONT, R, useTheme, AR_RIGHT } from "@/lib/theme";
+import { useLang, langLabel } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { useAuth } from "@/lib/auth";
 import { readJSON, writeJSON } from "@/lib/store";
 import { LimitError, OWN_TAFSIR_ID, getOwnTafsir, getResources, getTafsir, hasOwnTafsir, tafsirBlocks, tafsirOptionsFor, type Resource, type Tafsir } from "@/lib/quran";
 import { GoldButton } from "@/components/brand";
+import { localeMeta } from "@/web/locales";
 
 // Tafsir for one verse, like the website's tafsir sheet: the own Quran Masterclass tafsir first (if written for this
 // language), then Quran.com tafsirs of the reader's language, English classics as fallback. Empty entries belong to
@@ -25,7 +26,7 @@ export function useTafsirSources() {
       .then(([r, own]) => {
         if (off) return;
         const { options, hasLocal: local } = tafsirOptionsFor(lang, r.tafsirs);
-        const all: Resource[] = own ? [{ id: OWN_TAFSIR_ID, name: `Quran Masterclass · ${lang === "de" ? "Deutsch" : "English"}`, author_name: "", language_name: lang === "de" ? "german" : "english" }, ...options] : options;
+        const all: Resource[] = own ? [{ id: OWN_TAFSIR_ID, name: `Quran Masterclass · ${langLabel(lang)}`, author_name: "", language_name: localeMeta(lang).resourceLang }, ...options] : options;
         setOpts(all);
         setHasLocal(local || own);
       })
@@ -80,7 +81,7 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
 
   return (
     <View>
-      {!hasLocal ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.ink, backgroundColor: t.accentSoft, padding: 10, borderRadius: R.sm, marginBottom: 12 }}>{w("noLocalTafsir", { language: lang === "de" ? "Deutsch" : "English" })}</Text> : null}
+      {!hasLocal ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.ink, backgroundColor: t.accentSoft, padding: 10, borderRadius: R.sm, marginBottom: 12 }}>{w("noLocalTafsir", { language: langLabel(lang) })}</Text> : null}
       {opts.length > 1 ? (
         <View style={{ marginBottom: 12 }}>
           <Pressable onPress={() => setPicking(!picking)} accessibilityRole="button" accessibilityLabel={`${w("source")}: ${source?.name ?? ""}`}
@@ -115,7 +116,7 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
           {blocks.map((b, i) => b.kind === "h"
             ? <Text key={i} style={{ fontFamily: FONT.display, fontSize: 18, lineHeight: 24, color: t.ink, marginTop: 14, marginBottom: 4, textAlign: rtl ? "right" : "left" }}>{b.text}</Text>
             : b.kind === "ar"
-              ? <Text key={i} style={{ fontFamily: ARABIC_FONT, fontSize: 21, lineHeight: 38, color: t.ink, textAlign: "right", writingDirection: "rtl", marginBottom: 10 }}>{b.text}</Text>
+              ? <Text key={i} style={{ fontFamily: ARABIC_FONT, fontSize: 21, lineHeight: 38, color: t.ink, textAlign: AR_RIGHT, writingDirection: "rtl", marginBottom: 10 }}>{b.text}</Text>
               : <Text key={i} selectable style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 26, color: t.ink, marginBottom: 12, textAlign: rtl ? "right" : "left", writingDirection: rtl ? "rtl" : "ltr" }}>{b.text}</Text>)}
           {source ? (
             <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: t.muted, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 8, marginTop: 6 }}>

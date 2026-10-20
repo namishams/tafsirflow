@@ -22,6 +22,7 @@ import { RadioMiniPlayer, MINI_SPACE } from "./MiniPlayer";
 import { useAppT } from "./strings";
 import { useReduceMotion } from "./motion";
 import { VerseArabic } from "./VerseText";
+import { reciterName } from "@/lib/quran";
 
 // /radio – the website's RadioPlayer.tsx: the on-air stage with the verse on screen, the reciter orb and the reciters,
 // the stations as posters, settings (sleep timer, adhan, mixed voices, text) and what was played recently.
@@ -40,7 +41,7 @@ export default function RadioScreen() {
   const { verses } = useSurahText(r.now.s, lang, reciter);
   const verse = verses?.find((v) => v.verse_number === r.now.v);
   const chapter = r.chapters.find((c) => c.id === r.now.s);
-  const nameOf = (s: number) => r.chapters.find((c) => c.id === s)?.name_simple ?? `Surah ${s}`;
+  const nameOf = (s: number) => r.chapters.find((c) => c.id === s)?.name_simple ?? String(s);
   const upNext = r.started ? radio.upNext() : null;
   const [past, setPast] = useState(false);
   const pastRef = useRef(false);
@@ -80,7 +81,7 @@ export default function RadioScreen() {
             <Rect width="100%" height="100%" fill="url(#rg2)" />
           </Svg>
           <View style={{ paddingTop: insets.top + 6, paddingHorizontal: 18 }}>
-            <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel={a("back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
+            <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel={a("back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6 }}>
               <Icon name="chevronLeft" color="#ffffff" size={24} />
             </Pressable>
             <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 10, marginTop: 6 }}>
@@ -94,7 +95,7 @@ export default function RadioScreen() {
             <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 44, lineHeight: 47, letterSpacing: -1, color: "#eef0f3", marginTop: 16 }}>
               {chapter ? chapter.name_simple : `${r.now.s}`}<Text style={{ color: "rgba(255,255,255,0.4)" }}> · {r.now.v}</Text>
             </Text>
-            <Text style={{ fontFamily: FONT.regular, fontSize: 16, color: "rgba(255,255,255,0.6)", marginTop: 8 }}>{reciter.name}</Text>
+            <Text style={{ fontFamily: FONT.regular, fontSize: 16, color: "rgba(255,255,255,0.6)", marginTop: 8 }}>{reciterName(reciter, lang)}</Text>
 
             {r.showText && verse ? (
               <View style={{ marginTop: 22, borderRadius: R.md, borderWidth: 1, borderColor: "rgba(255,255,255,0.1)", backgroundColor: "rgba(255,255,255,0.04)", padding: 18 }}>
@@ -110,7 +111,7 @@ export default function RadioScreen() {
               </View>
             ) : null}
 
-            <View style={{ marginTop: 26, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 12 }}>
+            <View style={{ marginTop: 26, flexDirection: "row", direction: "ltr", flexWrap: "wrap", alignItems: "center", gap: 12 }}>
               <RoundButton icon="prev" label={t("prev")} onPress={radio.prevVerse} />
               <GoldPlay playing={r.playing} onPress={radio.toggle} labels={[t("pause"), t("play")]} />
               <RoundButton icon="next" label={t("nextVerse")} onPress={radio.skipVerse} />

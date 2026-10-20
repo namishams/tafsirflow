@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
 import { Text, View, type StyleProp, type TextStyle } from "react-native";
 import { useLang } from "@/i18n";
-import { ARABIC_FONT, FONT, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, FONT, useTheme, AR_RIGHT } from "@/lib/theme";
 import { GOLD, StarGlyph, useHm } from "./art";
 import { openLink } from "./links";
 
@@ -52,7 +52,7 @@ export function Markdown({ text, size = 15, color, style }: { text: string; size
   const body = color ?? t.ink;
   const base: TextStyle = { fontFamily: FONT.regular, fontSize: size, lineHeight: Math.round(size * 1.6), color: body };
   const para = (s: string, k: string) => isArabic(s)
-    ? <Text key={k} style={{ fontFamily: ARABIC_FONT, fontSize: size + 6, lineHeight: (size + 6) * 1.9, color: t.ink, writingDirection: "rtl", textAlign: "right" }}>{s.replace(/\*\*/g, "")}</Text>
+    ? <Text key={k} style={{ fontFamily: ARABIC_FONT, fontSize: size + 6, lineHeight: (size + 6) * 1.9, color: t.ink, writingDirection: "rtl", textAlign: AR_RIGHT }}>{s.replace(/\*\*/g, "")}</Text>
     : <Text key={k} style={[base, style]}>{inline(s, k, t.ink, t.accent, lang)}</Text>;
   return (
     <View style={{ gap: 10 }}>
@@ -61,7 +61,7 @@ export function Markdown({ text, size = 15, color, style }: { text: string; size
         if (b.kind === "h2") return <Text key={k} accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: size + 3, lineHeight: Math.round((size + 3) * 1.35), color: t.ink, marginTop: i ? 10 : 0 }}>{b.lines[0]}</Text>;
         if (b.kind === "h3") return <Text key={k} accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: size + 1, color: t.ink, marginTop: i ? 6 : 0 }}>{b.lines[0]}</Text>;
         if (b.kind === "quote") return (
-          <View key={k} style={{ borderLeftWidth: 2, borderLeftColor: GOLD, paddingLeft: 12, gap: 6 }}>
+          <View key={k} style={{ borderStartWidth: 2, borderStartColor: GOLD, paddingStart: 12, gap: 6 }}>
             {b.lines.map((l, j) => para(l, `${k}q${j}`))}
           </View>
         );

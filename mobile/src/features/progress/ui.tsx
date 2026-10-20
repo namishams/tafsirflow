@@ -117,7 +117,7 @@ export function ArrowLink({ title, onPress, color, size = 14, style }: { title: 
 export function HairStat({ value, label, onStage = true, size = 30 }: { value: string; label: string; onStage?: boolean; size?: number }) {
   const t = useTheme();
   return (
-    <View style={{ borderLeftWidth: 1, borderLeftColor: onStage ? "rgba(255,255,255,0.15)" : t.line, paddingLeft: 12 }} accessible accessibilityLabel={`${value} ${label}`}>
+    <View style={{ borderStartWidth: 1, borderStartColor: onStage ? "rgba(255,255,255,0.15)" : t.line, paddingStart: 12 }} accessible accessibilityLabel={`${value} ${label}`}>
       <Text style={{ fontFamily: FONT.display, fontSize: size, lineHeight: size * 1.15, color: onStage ? stage.gold : t.gold }}>{value}</Text>
       <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 16, color: onStage ? "rgba(255,255,255,0.6)" : t.muted, marginTop: 4 }}>{label}</Text>
     </View>

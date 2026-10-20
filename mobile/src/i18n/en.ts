@@ -4,7 +4,7 @@ const en = {
   common: {
     cancel: "Cancel", done: "Done", save: "Save", retry: "Try again", close: "Close", continue: "Continue",
     loading: "Loading…", offline: "No connection. Please check your internet connection and try again.",
-    error: "Something went wrong. Please try again.", free: "Free", locked: "Pro", back: "Back",
+    error: "Something went wrong. Please try again.", free: "Free", locked: "Pro", back: "Back", and: "and",
   },
   pro: {
     cta: "Get Pro", name: "Quran Masterclass Pro", price: "{price} per month", priceFallback: "4,99 € per month",
@@ -30,7 +30,7 @@ const en = {
     c_reciters: "Reciters", c_recitersFree: "2", c_recitersPro: "all", c_radio: "Radio stations", c_radioFree: "2", c_radioPro: "all",
     c_arabic: "Arabic course", c_arabicFree: "unit 1", c_tajweed: "Tajweed course", c_tajweedFree: "3 lessons", c_full: "complete",
     c_vocab: "Vocabulary", c_vocabFree: "10 a day", c_vocabPro: "unlimited", c_tests: "Academy tests", c_testsFree: "38 surahs",
-    c_ai: "AI assistant", c_duas: "Personal duas", c_duasFree: "0,99 € each", c_duasPro: "5 a month included",
+    c_ai: "AI assistant", c_duas: "Personal duas", c_duasFree: "{price} each", c_duasPro: "5 a month included",
     c_prayer: "Prayer times, Qibla, duas, Islam library", c_progress: "Progress, map, achievements",
     priceTitle: "Quran Masterclass Pro", perMonth: "per month", cancelAnytime: "Cancel any time",
     noAds: "No advertising, no tracking. Pro keeps the Masterclass independent.",
@@ -51,11 +51,13 @@ const en = {
     support: "Report a problem", deleteAccount: "Delete account",
     deleteTitle: "Delete account", deleteBody: "Your account, progress, notes and bookmarks will be deleted permanently. A running Pro subscription is cancelled in your App Store settings; deleting the account does not end it automatically.",
     deleteConfirm: "Delete permanently", currentPassword: "Current password", wrongPassword: "The password is not correct.",
-    version: "Version {v}",
+    version: "Version {v}", chooseLanguage: "Choose language",
+    dailyTitle: "Daily reminder", dailyQuestion: "Have you remembered Allah today?", dailyLead: "One notification a day, including suggestions for personal duas.",
+    profile: "My profile and achievements", stats: "Statistics", map: "Quran map", about: "About us", changelog: "Changelog",
   },
   auth: {
     email: "Email", password: "Password", firstName: "First name", lastName: "Last name", country: "Country",
-    birthYear: "Year of birth", chooseCountry: "Choose country",
+    birthYear: "Year of birth", chooseCountry: "Choose country", passwordHint: "At least 10 characters",
     terms: "I accept the terms of use and the privacy policy.", marketing: "Send me news about new courses (optional).",
     signInTitle: "Sign in", registerTitle: "Create account", noAccount: "No account yet?", haveAccount: "Already have an account?",
     forgot: "Forgot password?", forgotSent: "If an account exists for this address, you will receive an email with a link.",

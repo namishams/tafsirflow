@@ -1,0 +1,7 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Quran Masterclass",
+    "NSLocationWhenInUseUsageDescription": "يستخدم Quran Masterclass موقعك على هذا الجهاز فقط لحساب أوقات الصلاة واتجاه القبلة بحسب مكانك. لا يُخزَّن موقعك ولا يُرسَل إلى أي جهة.",
+    "NSMicrophoneUsageDescription": "يستخدم Quran Masterclass الميكروفون فقط عند بدئك فحص التلاوة. يبقى تسجيلك على هذا الجهاز ولا يُرفع إلى أي مكان."
+  }
+}

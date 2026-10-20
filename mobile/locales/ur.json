@@ -1,0 +1,7 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Quran Masterclass",
+    "NSLocationWhenInUseUsageDescription": "Quran Masterclass آپ کا مقام صرف اسی آلے پر استعمال کرتا ہے، تاکہ آپ کے مقام کے لیے نماز کے اوقات اور قبلے کی سمت معلوم کی جا سکے۔ یہ نہ کہیں محفوظ کیا جاتا ہے اور نہ کہیں بھیجا جاتا ہے۔",
+    "NSMicrophoneUsageDescription": "Quran Masterclass مائیکروفون صرف اس وقت استعمال کرتا ہے جب آپ تلاوت کی جانچ شروع کرتے ہیں۔ آپ کی ریکارڈنگ اسی آلے پر رہتی ہے اور اپ لوڈ نہیں کی جاتی۔"
+  }
+}

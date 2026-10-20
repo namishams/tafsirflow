@@ -414,7 +414,7 @@ export default function ShamsPage() {
           <Text style={{ marginTop: 16, fontFamily: FONT.regular, fontSize: 17, lineHeight: 26, color: "rgba(255,255,255,0.75)", textAlign: "center" }}>{c.finalLead}</Text>
           <View style={{ marginTop: 32, flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: 6, rowGap: 8 }}>
             {[1, 2, 3, 4, 5, 6, 7].map((n) => (
-              <View key={n} style={{ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 999, borderWidth: 1, borderColor: stageGold(0.25), backgroundColor: "rgba(255,255,255,0.04)", paddingVertical: 4, paddingLeft: 4, paddingRight: 12 }}>
+              <View key={n} style={{ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 999, borderWidth: 1, borderColor: stageGold(0.25), backgroundColor: "rgba(255,255,255,0.04)", paddingVertical: 4, paddingStart: 4, paddingEnd: 12 }}>
                 <IslamNum n={n} size={24} fontSize={10} color={STAGE_GOLD} paper={stage.bg} />
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: "rgba(255,255,255,0.8)" }}>{t(`s${n}`)}</Text>
               </View>

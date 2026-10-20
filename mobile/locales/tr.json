@@ -1,0 +1,7 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Quran Masterclass",
+    "NSLocationWhenInUseUsageDescription": "Quran Masterclass konumunu yalnızca bu cihazda, bulunduğun yer için namaz vakitlerini ve kıble yönünü hesaplamak üzere kullanır. Konum saklanmaz ve hiçbir yere gönderilmez.",
+    "NSMicrophoneUsageDescription": "Quran Masterclass mikrofonu yalnızca tilavet kontrolünü başlattığında kullanır. Kaydın bu cihazda kalır ve yüklenmez."
+  }
+}

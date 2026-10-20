@@ -5,7 +5,7 @@ const de: Dict = {
   common: {
     cancel: "Abbrechen", done: "Fertig", save: "Sichern", retry: "Erneut versuchen", close: "Schließen", continue: "Weiter",
     loading: "Wird geladen …", offline: "Keine Verbindung. Bitte prüfe die Internetverbindung und versuche es erneut.",
-    error: "Etwas ist schiefgelaufen. Bitte versuche es erneut.", free: "Kostenlos", locked: "Pro", back: "Zurück",
+    error: "Etwas ist schiefgelaufen. Bitte versuche es erneut.", free: "Kostenlos", locked: "Pro", back: "Zurück", and: "und",
   },
   pro: {
     cta: "Pro holen", name: "Quran Masterclass Pro", price: "{price} im Monat", priceFallback: "4,99 € im Monat",
@@ -31,7 +31,7 @@ const de: Dict = {
     c_reciters: "Rezitatoren", c_recitersFree: "2", c_recitersPro: "alle", c_radio: "Radiosender", c_radioFree: "2", c_radioPro: "alle",
     c_arabic: "Arabischkurs", c_arabicFree: "Einheit 1", c_tajweed: "Tadschwid-Kurs", c_tajweedFree: "3 Lektionen", c_full: "komplett",
     c_vocab: "Wortschatz", c_vocabFree: "10 am Tag", c_vocabPro: "unbegrenzt", c_tests: "Academy-Tests", c_testsFree: "38 Suren",
-    c_ai: "KI-Assistent", c_duas: "Persönliche Duas", c_duasFree: "je 0,99 €", c_duasPro: "5 im Monat inklusive",
+    c_ai: "KI-Assistent", c_duas: "Persönliche Duas", c_duasFree: "je {price}", c_duasPro: "5 im Monat inklusive",
     c_prayer: "Gebetszeiten, Qibla, Duas, Islam-Bibliothek", c_progress: "Fortschritt, Landkarte, Auszeichnungen",
     priceTitle: "Quran Masterclass Pro", perMonth: "im Monat", cancelAnytime: "Jederzeit kündbar",
     noAds: "Keine Werbung, kein Tracking. Pro hält die Masterclass unabhängig.",
@@ -52,11 +52,13 @@ const de: Dict = {
     support: "Problem melden", deleteAccount: "Konto löschen",
     deleteTitle: "Konto löschen", deleteBody: "Dein Konto, dein Fortschritt, deine Notizen und Lesezeichen werden endgültig gelöscht. Ein laufendes Pro-Abo kündigst du in den App-Store-Einstellungen; es wird mit dem Konto nicht automatisch beendet.",
     deleteConfirm: "Endgültig löschen", currentPassword: "Aktuelles Passwort", wrongPassword: "Das Passwort ist nicht korrekt.",
-    version: "Version {v}",
+    version: "Version {v}", chooseLanguage: "Sprache wählen",
+    dailyTitle: "Tägliche Erinnerung", dailyQuestion: "Heute schon an Allah gedacht?", dailyLead: "Eine Mitteilung pro Tag, auch mit Hinweisen auf persönliche Duas.",
+    profile: "Mein Profil und Auszeichnungen", stats: "Statistik", map: "Koran-Landkarte", about: "Über uns", changelog: "Änderungen",
   },
   auth: {
     email: "E-Mail", password: "Passwort", firstName: "Vorname", lastName: "Nachname", country: "Land",
-    birthYear: "Geburtsjahr", chooseCountry: "Land auswählen",
+    birthYear: "Geburtsjahr", chooseCountry: "Land auswählen", passwordHint: "Mindestens 10 Zeichen",
     terms: "Ich akzeptiere die Nutzungsbedingungen und die Datenschutzerklärung.", marketing: "Neuigkeiten zu neuen Kursen per E-Mail (optional).",
     signInTitle: "Anmelden", registerTitle: "Konto erstellen", noAccount: "Noch kein Konto?", haveAccount: "Bereits ein Konto?",
     forgot: "Passwort vergessen?", forgotSent: "Falls ein Konto zu dieser Adresse besteht, bekommst du eine E-Mail mit einem Link.",

@@ -1,6 +1,6 @@
 import { Fragment, type ReactNode } from "react";
 import { Linking, Text, View } from "react-native";
-import { ARABIC_FONT, FONT, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, FONT, useTheme, AR_RIGHT } from "@/lib/theme";
 import { goldA } from "./art";
 import { openWebsitePath } from "./links";
 
@@ -88,7 +88,7 @@ export function Markdown({ text, dark = false }: { text: string; dark?: boolean 
   const base = { fontFamily: FONT.regular, fontSize: 16, lineHeight: 28, color: body, opacity: dark ? 1 : 0.9 };
   const inl = (s: string, k: string) => <Inline text={s} k={k} size={16} ink={ink} accent={dark ? t.gold : t.accent} />;
   const arabicBlock = (s: string, k: string) => (
-    <Text key={k} style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 46, color: ink, writingDirection: "rtl", textAlign: "right" }}>{s.replace(/\*\*/g, "")}</Text>
+    <Text key={k} style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 46, color: ink, writingDirection: "rtl", textAlign: AR_RIGHT }}>{s.replace(/\*\*/g, "")}</Text>
   );
   return (
     <View>
@@ -98,14 +98,14 @@ export function Markdown({ text, dark = false }: { text: string; dark?: boolean 
         if (b.kind === "h3") return <Text key={bi} accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 18, lineHeight: 26, color: ink, marginTop: first ? 8 : 32 }}>{inl(b.text, `h${bi}`)}</Text>;
         if (b.kind === "p") return isArabic(b.text) ? <View key={bi} style={{ marginTop: 16 }}>{arabicBlock(b.text, `p${bi}`)}</View> : <Text key={bi} style={[base, { marginTop: 16 }]}>{inl(b.text, `p${bi}`)}</Text>;
         if (b.kind === "quote") return (
-          <View key={bi} style={{ marginTop: 16, borderLeftWidth: 2, borderLeftColor: goldA(t, 0.6), paddingLeft: 16 }}>
+          <View key={bi} style={{ marginTop: 16, borderStartWidth: 2, borderStartColor: goldA(t, 0.6), paddingStart: 16 }}>
             <Text style={[base, { fontFamily: FONT.italic }]}>{inl(b.text, `q${bi}`)}</Text>
           </View>
         );
         if (b.kind === "ul") return (
           <View key={bi} style={{ marginTop: 16, gap: 8 }}>
             {b.items.map((it, li) => (
-              <View key={li} style={{ flexDirection: "row", gap: 12, marginLeft: it.sub ? 24 : 0 }}>
+              <View key={li} style={{ flexDirection: "row", gap: 12, marginStart: it.sub ? 24 : 0 }}>
                 <View style={{ width: 12, height: 1, backgroundColor: t.gold, marginTop: 14 }} />
                 <View style={{ flex: 1 }}>{isArabic(it.text) ? arabicBlock(it.text, `u${bi}${li}`) : <Text style={base}>{inl(it.text, `u${bi}${li}`)}</Text>}</View>
               </View>
@@ -116,7 +116,7 @@ export function Markdown({ text, dark = false }: { text: string; dark?: boolean 
         return (
           <View key={bi} style={{ marginTop: 16, gap: 8 }}>
             {b.items.map((it, li) => (
-              <View key={li} style={{ flexDirection: "row", gap: 8, marginLeft: it.sub ? 24 : 0 }}>
+              <View key={li} style={{ flexDirection: "row", gap: 8, marginStart: it.sub ? 24 : 0 }}>
                 <Text style={[base, { fontFamily: FONT.bold, color: t.gold, minWidth: 18 }]}>{it.sub ? "·" : `${++n}.`}</Text>
                 <Text style={[base, { flex: 1 }]}>{inl(it.text, `o${bi}${li}`)}</Text>
               </View>

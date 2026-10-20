@@ -11,7 +11,7 @@ import { Doorway, FaqItem, GoldPill, MoreTiles } from "@/features/library/ui";
 import { IslScreen } from "@/features/library/screen";
 import { ReadingBar, useReader } from "@/features/library/reader";
 import { STAGE_GOLD, stageGold, useIsl } from "@/features/library/palette";
-import { chaptersOf, chapterOf, useIslamUi } from "@/features/library/content";
+import { useChapters, useIslamUi } from "@/features/library/content";
 import { openHref } from "@/features/library/links";
 
 // /islam/[slug] – one chapter, set like an illuminated book: hero with the key facts, the article with numbered
@@ -30,9 +30,9 @@ function Chapter({ slug }: { slug: string }) {
   const isl = useIsl();
   const sw = useSaw();
   const d = islamDoc(slug)!;
-  const c = chapterOf(d, lang);
-  const all = chaptersOf(lang);
+  const all = useChapters();
   const i = ISLAM.indexOf(d);
+  const c = all[i];
   const prev = ISLAM[i - 1], next = ISLAM[i + 1];
   const toc = mdHeadings(c.body);
   const reader = useReader(toc.length);

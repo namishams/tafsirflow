@@ -28,7 +28,7 @@ export function PlayerDock({ bottom, arabicName, verse, total, playing, position
             <LinearGradient colors={["rgba(201,166,94,0.6)", "rgb(233,207,153)", "rgb(201,166,94)"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ height: 3, width: `${(verse / Math.max(1, total)) * 100}%` }} />
           </View>
           {/* position in the verse */}
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 8, paddingHorizontal: 16, paddingTop: 6 }}>
+          <View style={{ flexDirection: "row", direction: "ltr", alignItems: "center", gap: 8, paddingHorizontal: 16, paddingTop: 6 }}>
             <Text style={timeStyle}>{fmtTime(positionMs / 1000)}</Text>
             <View style={{ flex: 1 }}>
               <GoldSlider value={pos} height={24} step={0.1} label={w("seek")} valueText={a("elapsed", { a: fmtTime(positionMs / 1000), b: fmtTime(durationMs / 1000) })}
@@ -51,7 +51,7 @@ export function PlayerDock({ bottom, arabicName, verse, total, playing, position
                 <Text style={{ fontFamily: FONT.medium, fontSize: 12, color: "rgba(255,255,255,0.65)", fontVariant: ["tabular-nums"] }}>{verse}/{total}</Text>
               </View>
             </Pressable>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 2 }}>
+            <View style={{ flexDirection: "row", direction: "ltr", alignItems: "center", gap: 2 }}>
               <Pressable onPress={onPrev} accessibilityRole="button" accessibilityLabel={w("prev")} style={({ pressed }) => ({ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? "rgba(255,255,255,0.1)" : "transparent" })}>
                 <Icon name="prev" color="rgba(255,255,255,0.85)" size={20} />
               </Pressable>

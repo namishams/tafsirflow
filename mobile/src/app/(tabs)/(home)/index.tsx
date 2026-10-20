@@ -8,7 +8,7 @@ import { CALLIG_FONT, FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
 import { Arabic, Arcade, GoldButton, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, SmallStar, Stage, Tile, gradientColors } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { Page } from "@/components/page";
-import { useLang } from "@/i18n";
+import { intlLocale, useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { useAuth } from "@/lib/auth";
 import { readJSON, useStoreVersion } from "@/lib/store";
@@ -28,6 +28,7 @@ import { ProPromo } from "@/features/learn/ProPromo";
 import { CoachCard, MapCard, RewardsCard, WeekCard } from "@/features/progress";
 import { PrayerSetupCard } from "@/features/practice";
 import { Onboarding } from "@/features/extra/Onboarding";
+import { courseLang } from "@/features/arabic/lang";
 
 // "Today" (website TodayDashboard.tsx): the daily hub – the greeting stage with the ring of today's tasks and the next
 // prayer, one big button for today's guided session, the checklist that ticks itself off, verse of the day, paths,
@@ -52,8 +53,8 @@ export default function Today() {
   useEffect(() => { const s = AppState.addEventListener("change", (st) => st === "active" && setNow(new Date())); return () => s.remove(); }, []);
 
   const v = useMemo(() => collect(lang), [lang, now]); // eslint-disable-line react-hooks/exhaustive-deps
-  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `${w("surah")} ${s}`;
-  const loc = lang === "de" ? "de-DE" : "en-GB";
+  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? String(s);
+  const loc = intlLocale(lang);
   const dateText = now.toLocaleDateString(loc, { weekday: "long", day: "numeric", month: "long" });
   const hijri = (() => { try { return new Intl.DateTimeFormat(`${lang}-u-ca-islamic-umalqura`, { day: "numeric", month: "long", year: "numeric", numberingSystem: "latn" }).format(now); } catch { return ""; } })();
   const cityId = readJSON<string>("tf:city", "makkah");
@@ -73,7 +74,7 @@ export default function Today() {
     const r = ranges(v.plan.portion);
     tasks.push({ key: "plan", title: w("taskPlan", { n: v.plan.perDay }), detail: r.map((x) => `${name(x.s)} ${x.from}${x.to > x.from ? `–${x.to}` : ""}`).join(", "), href: r[0] ? `/shams/${r[0].s}?v=${r[0].from}` : "/plan", cta: w("learn"), done: v.plan.doneToday });
   } else tasks.push({ key: "plan", title: w("taskNoPlan"), detail: w("taskNoPlanD"), href: "/plan", cta: w("choose"), done: false });
-  if (v.arabicNext) tasks.push({ key: "arabic", title: w("taskArabic"), detail: v.arabicNext.title[lang === "de" ? "de" : "en"] ?? v.arabicNext.title.en, href: `/arabic/${v.arabicNext.id}`, cta: w("learn"), done: v.arabicDoneToday });
+  if (v.arabicNext) tasks.push({ key: "arabic", title: w("taskArabic"), detail: v.arabicNext.title[courseLang(lang)] ?? v.arabicNext.title.en, href: `/arabic/${v.arabicNext.id}`, cta: w("learn"), done: v.arabicDoneToday });
   tasks.push({ key: "academy", title: w("taskAcademy", { goal: v.goal }), detail: w("taskAcademyD", { xp: v.todayXp, lesson: `${name(v.next.s)} ${v.next.from}–${v.next.to}` }), href: `/academy/${v.next.s}/${v.next.from}`, cta: w("test"), done: v.todayXp >= v.goal });
   if (v.khatm) tasks.push({ key: "khatm", title: w("taskKhatm"), detail: w("taskKhatmD", { pct: v.khatm.pct }), href: "/khatm", cta: w("read"), done: v.khatm.readToday });
   const doneCount = tasks.filter((x) => x.done).length;
@@ -159,7 +160,7 @@ export default function Today() {
           <Tile style={{ padding: 18 }}>
             <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: t.ink }}>{w("pathsTitle")}</Text>
             <View style={{ gap: 14, marginTop: 12 }}>
-              <PathRow label={w("pathArabic")} pct={v.arabicPct} hint={v.arabicNext ? (v.arabicNext.title[lang === "de" ? "de" : "en"] ?? v.arabicNext.title.en) : w("done")} onPress={() => go("/arabic")} />
+              <PathRow label={w("pathArabic")} pct={v.arabicPct} hint={v.arabicNext ? (v.arabicNext.title[courseLang(lang)] ?? v.arabicNext.title.en) : w("done")} onPress={() => go("/arabic")} />
               <PathRow label={w("pathAcademy", { lvl })} pct={lvlPct} hint={w("xpToNext", { n: Math.max(0, lvlTo - v.xp) })} onPress={() => go("/academy")} />
               <PathRow label={w("pathPlan")} pct={v.plan ? Math.round((v.plan.day / PLAN_DAYS) * 100) : 0} hint={v.plan ? w("planDay", { d: v.plan.day, total: PLAN_DAYS }) : w("taskNoPlan")} onPress={() => go("/plan")} />
               <PathRow label={w("pathKhatm")} pct={v.khatm?.pct ?? 0} hint={v.khatm ? `${v.khatm.pct} %` : w("tileKhatm")} onPress={() => go("/khatm")} />
@@ -238,7 +239,7 @@ function Ring({ value, label }: { value: number; label: string }) {
 
 function HeroStat({ n, l, border }: { n: string; l: string; border?: boolean }) {
   return (
-    <View style={{ flex: 1, paddingHorizontal: 8, borderLeftWidth: border ? 1 : 0, borderLeftColor: "rgba(214,180,108,0.2)" }} accessible accessibilityLabel={`${n} ${l}`}>
+    <View style={{ flex: 1, paddingHorizontal: 8, borderStartWidth: border ? 1 : 0, borderStartColor: "rgba(214,180,108,0.2)" }} accessible accessibilityLabel={`${n} ${l}`}>
       <Text style={{ fontFamily: FONT.display, fontSize: 27, color: "#fff" }}>{n}</Text>
       <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, color: "rgba(255,255,255,0.6)", marginTop: 3 }} numberOfLines={2}>{l}</Text>
     </View>

@@ -1,8 +1,8 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { Pressable, Text, View } from "react-native";
 import { DAY, EVENTS, HIJRI_MONTHS, addMonths, calText, daysBetween, fmtGregorian, fmtHijri, fromHijri, hijriMonthName, monthGrid, monthLength, nextOccurrence, toHijri, todayUtc } from "@/web/hijri";
-import { useLang } from "@/i18n";
-import { CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
+import { intlLocale, useLang } from "@/i18n";
+import { CALLIG_FONT, FONT, R, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { Callout, H2, IllumFrame, Label, Niche, go } from "./art";
@@ -208,7 +208,7 @@ function Converter({ today, locale, t }: { today: number; locale: string; t: T }
   const gh = gt !== null && inRange ? toHijri(gt) : null;
   const ht = fromHijri(hd.y, hd.m, hd.d);
   const len = monthLength(hd.y, hd.m);
-  const monthNames = (m: number) => new Intl.DateTimeFormat(locale === "de" ? "de-DE" : "en-GB", { month: "long", timeZone: "UTC" }).format(new Date(Date.UTC(2001, m - 1, 1)));
+  const monthNames = (m: number) => new Intl.DateTimeFormat(intlLocale(locale), { month: "long", timeZone: "UTC" }).format(new Date(Date.UTC(2001, m - 1, 1)));
   const card = { borderRadius: R.card, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface, padding: 20 };
   return (
     <View>
@@ -222,7 +222,7 @@ function Converter({ today, locale, t }: { today: number; locale: string; t: T }
             {gh ? (
               <>
                 <Text style={{ fontFamily: FONT.display, fontSize: 24, lineHeight: 30, color: th.gold }}>{fmtHijri(gh, locale)}</Text>
-                <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 24, lineHeight: 38, color: th.ink, writingDirection: "rtl", textAlign: "right" }}>{gh.d} {HIJRI_MONTHS[gh.m - 1].ar} {gh.y}</Text>
+                <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 24, lineHeight: 38, color: th.ink, writingDirection: "rtl", textAlign: AR_RIGHT }}>{gh.d} {HIJRI_MONTHS[gh.m - 1].ar} {gh.y}</Text>
               </>
             ) : null}
           </View>

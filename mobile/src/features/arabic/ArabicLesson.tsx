@@ -5,9 +5,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { GoldCard, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
+import { courseLang } from "./lang";
 import { useLang } from "@/i18n";
 import { FREE, openPro, usePro } from "@/lib/pro";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, useTheme, AR_RIGHT, FWD } from "@/lib/theme";
 import {
   LESSONS, PASS_PCT, PLACEMENT_UNITS, UNITS, buildLesson, lessonById, nextArabic, placementResult, saveArabic, savePlacement, starsFor,
   verseAudioUrl, wordAudioUrl, type Ex, type Lesson, type PlacementResult,
@@ -64,7 +65,7 @@ function Missing() {
 function LessonProWall({ lesson }: { lesson: Lesson }) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
-  const { lang } = useLang();
+  const lang = courseLang(useLang().lang);
   const ct = useCourseT();
   const unit = UNITS.find((u) => u.n === lesson.unit);
   return (
@@ -86,7 +87,7 @@ function LessonProWall({ lesson }: { lesson: Lesson }) {
 
 function CloseButton() {
   const t = useTheme();
-  const T = LESSON_T[useLang().lang];
+  const T = LESSON_T[courseLang(useLang().lang)];
   return (
     <Pressable onPress={leave} accessibilityRole="button" accessibilityLabel={T.quit} hitSlop={6}
       style={({ pressed }) => ({ width: 40, height: 40, borderRadius: 20, borderWidth: 1, borderColor: pressed ? solidGoldA(1) : t.line, alignItems: "center", justifyContent: "center" })}>
@@ -98,7 +99,7 @@ function CloseButton() {
 function LessonRun({ lesson }: { lesson: Lesson }) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
-  const { lang } = useLang();
+  const lang = courseLang(useLang().lang);
   const { pro } = usePro();
   const T = LESSON_T[lang];
   const isPlacement = !!lesson.placement;
@@ -201,8 +202,8 @@ function LessonRun({ lesson }: { lesson: Lesson }) {
         <Text style={{ marginTop: 16, fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, textAlign: "center" }}>{T.pNote}</Text>
         <View style={{ marginTop: 32, gap: 12 }}>
           {placed.next
-            ? <BigButton title={`${T.pGo} ${placed.next.title[lang] ?? placed.next.title.en}  →`} height={48} radius={R.pill} onPress={() => goLesson(placed.next!)} />
-            : <BigButton title={`${T.readQuran}  →`} height={48} radius={R.pill} onPress={() => router.push("/shams/1" as Href)} />}
+            ? <BigButton title={`${T.pGo} ${placed.next.title[lang] ?? placed.next.title.en}  ${FWD}`} height={48} radius={R.pill} onPress={() => goLesson(placed.next!)} />
+            : <BigButton title={`${T.readQuran}  ${FWD}`} height={48} radius={R.pill} onPress={() => router.push("/shams/1" as Href)} />}
           <BigButton variant="outline" title={T.pRetry} height={48} radius={R.pill} onPress={() => setSeed((n) => n + 1)} />
           <Text onPress={leave} accessibilityRole="link" style={{ alignSelf: "center", paddingVertical: 10, fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{T.overview}</Text>
         </View>
@@ -241,8 +242,8 @@ function LessonRun({ lesson }: { lesson: Lesson }) {
         </View>
         {!passed ? <Text style={{ marginTop: 20, fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.muted, textAlign: "center" }}>{T.needPass}</Text> : null}
         <View style={{ marginTop: 32, gap: 12 }}>
-          {passed && next ? <BigButton title={`${T.nextLesson}  →`} height={48} radius={R.pill} onPress={() => goLesson(next)} /> : null}
-          {passed && !next ? <BigButton title={`${T.readQuran}  →`} height={48} radius={R.pill} onPress={() => router.push("/shams/1" as Href)} /> : null}
+          {passed && next ? <BigButton title={`${T.nextLesson}  ${FWD}`} height={48} radius={R.pill} onPress={() => goLesson(next)} /> : null}
+          {passed && !next ? <BigButton title={`${T.readQuran}  ${FWD}`} height={48} radius={R.pill} onPress={() => router.push("/shams/1" as Href)} /> : null}
           <BigButton variant="outline" title={T.again} height={48} radius={R.pill} onPress={() => setSeed((n) => n + 1)} />
           <Text onPress={leave} accessibilityRole="link" style={{ alignSelf: "center", paddingVertical: 10, fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{T.overview}</Text>
         </View>
@@ -613,7 +614,7 @@ function BuildCard({ ex, T, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "
 
           {/* answer row: the first tapped tile sits on the right */}
           <View accessibilityLabel={T.emptyRow}
-            style={{ marginTop: 20, minHeight: 84, borderRadius: R.sm, borderWidth: 2, borderStyle: checked ? "solid" : "dashed", padding: 12, flexDirection: "row-reverse", flexWrap: "wrap", alignItems: "center", gap: 8,
+            style={{ marginTop: 20, minHeight: 84, borderRadius: R.sm, borderWidth: 2, borderStyle: checked ? "solid" : "dashed", padding: 12, flexDirection: "row", direction: "rtl", flexWrap: "wrap", alignItems: "center", gap: 8,
               borderColor: checked ? (ok ? "rgb(201,166,94)" : roseA(0.6)) : goldA(t, 0.35), backgroundColor: checked ? (ok ? solidGoldA(0.12) : roseA(0.05)) : t.surface }}>
             {placed.length === 0 ? <Text style={{ width: "100%", textAlign: "center", fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{T.emptyRow}</Text> : null}
             {placed.map((slot, i) => (
@@ -628,7 +629,7 @@ function BuildCard({ ex, T, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "
           </View>
 
           {/* tile pool: placed tiles leave an empty place so nothing jumps around */}
-          <View style={{ marginTop: 16, flexDirection: "row-reverse", flexWrap: "wrap", gap: 8 }}>
+          <View style={{ marginTop: 16, flexDirection: "row", direction: "rtl", flexWrap: "wrap", gap: 8 }}>
             {order.map((_, slot) => placed.includes(slot)
               ? <View key={slot} style={[tileStyle, { borderColor: "transparent", opacity: 0 }]} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden><Text allowFontScaling={false} style={tileText}>{text(slot)}</Text></View>
               : (
@@ -654,7 +655,7 @@ function BuildCard({ ex, T, isRetry, onGrade, onNext }: { ex: Extract<Ex, { t: "
               {ok ? <PracticeStar size={16} color={t.gold} /> : null}
               <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: ok ? t.gold : ROSE }}>{ok ? T.right : T.wrong}</Text>
             </View>
-            <Text allowFontScaling={false} style={{ marginTop: 4, fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 46, color: t.ink, writingDirection: "rtl", textAlign: "right" }}>{ex.tiles.join(" ")}</Text>
+            <Text allowFontScaling={false} style={{ marginTop: 4, fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 46, color: t.ink, writingDirection: "rtl", textAlign: AR_RIGHT }}>{ex.tiles.join(" ")}</Text>
             <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.ink, opacity: 0.8 }}>{ex.tr}</Text>
             {clip.state !== "error" ? (
               <Pressable onPress={playVerse} accessibilityRole="button" accessibilityLabel={T.verse}

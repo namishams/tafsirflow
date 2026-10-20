@@ -10,7 +10,7 @@ import { Icon } from "@/components/icons";
 import { useAuth } from "@/lib/auth";
 import { getChapters, type Chapter } from "@/lib/quran";
 import { useStored, writeJSON } from "@/lib/store";
-import { useLang } from "@/i18n";
+import { intlLocale, useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { TOTAL_VERSES, juzOf, keyAt } from "@/web/quranIndex";
 import { today } from "@/web/learning";
@@ -61,7 +61,7 @@ export default function KhatmScreen() {
           </Svg>
           <Inlay />
           <View style={{ paddingTop: insets.top + 6, paddingHorizontal: 16, paddingBottom: 54 }}>
-            <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel={a("back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
+            <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel={a("back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6 }}>
               <Icon name="chevronLeft" color={th.ink} size={24} />
             </Pressable>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 12, marginTop: 6 }}>
@@ -107,10 +107,10 @@ function Planner() {
   const [chapters, setChapters] = useState<Chapter[]>([]);
   useEffect(() => { getChapters(lang).then(setChapters).catch(() => undefined); }, [lang]);
   const save = (p: Plan | null) => writeJSON(KEY, p ?? { deleted: true, at: Date.now() }); // marker: see lib/plans.ts
-  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `Surah ${s}`;
+  const name = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? String(s);
   const pick = (d: number) => { setDays(d); setCustom(String(d)); };
   // numbers in messages are formatted for the language, like next-intl does on the website
-  const num = (n: number) => n.toLocaleString(lang === "de" ? "de-DE" : "en-US");
+  const num = (n: number) => n.toLocaleString(intlLocale(lang));
   const hint = !user ? (
     <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: th.muted, marginTop: 14 }}>
       {a("syncHint")} <Text onPress={() => router.push("/sign-in" as Href)} accessibilityRole="link" style={{ fontFamily: FONT.semibold, color: th.accent }}>{a("signIn")}</Text>

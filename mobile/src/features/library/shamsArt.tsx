@@ -293,7 +293,7 @@ export function ShamsDemo({ words, cues, stages, title }: { words: string[]; cue
           <Text style={{ fontFamily: ARABIC_FONT, fontSize: 28, lineHeight: 56, color: gold, textAlign: "center", writingDirection: "rtl" }}>{cues.join("   ")}</Text>
         ) : null}
         {stageN === 3 ? (
-          <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", justifyContent: "center", gap: 10, paddingVertical: 12 }}>
+          <View style={{ flexDirection: "row", direction: "rtl", flexWrap: "wrap", justifyContent: "center", gap: 10, paddingVertical: 12 }}>
             {words.map((w, i) => <View key={i} style={{ height: 32, width: w.length * 10, borderRadius: 6, backgroundColor: i <= local - 2 ? stageGold(0.35) : "rgba(255,255,255,0.12)" }} />)}
           </View>
         ) : null}

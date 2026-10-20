@@ -6,16 +6,17 @@ import { RULE, WUDU, WUDU_KEY, type L3, type Scene, type Tradition, type WuduDon
 import { award } from "@/web/points";
 import { readJSON, writeJSON } from "@/lib/store";
 import { useLang } from "@/i18n";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, AR_RIGHT } from "@/lib/theme";
 import { Stage as StageBg } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { DarkChip, PracticeWindow, RoundButton, StageButton, go, useClock, useReducedMotion } from "./art";
-import { ARM, DONE_AR as DONE_AR_TEXT, DROP, EAR, FACE, FOOT, GOLD, HAIR, HAND, HEAD, INSTEP, LIPS, NOSE, UI, WATER, arc, shuffle, slips } from "./web/wuduTrainer";
+import { AR_TIMES, ARM, DONE_AR as DONE_AR_TEXT, DROP, EAR, FACE, FOOT, GOLD, HAIR, HAND, HEAD, INSTEP, LIPS, NOSE, UI, WATER, arc, shuffle, slips, type Lang } from "./web/wuduTrainer";
 
-type Lang = "de" | "en";
 const goldC = GOLD.replace(/rgb\((\d+) (\d+) (\d+)\)/, "rgb($1,$2,$3)");
 const waterC = WATER.replace(/rgb\((\d+) (\d+) (\d+)\)/, "rgb($1,$2,$3)");
 const ink = "#ffffff";
+// <span dir="ltr"> of the website: "3 / 12" keeps its order inside right-to-left text
+const ltr = (s: string) => `\u2066${s}\u2069`;
 
 // ---------- motion: every animated part is a pure function of the scene clock (seconds) ----------
 const easeInOut = (p: number) => (p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2);
@@ -273,7 +274,7 @@ function Scene({ scene, tradition, label }: { scene: Scene; tradition: Tradition
 }
 
 // ---------- tap counter: a ring of segments, one per round ----------
-function Counter({ times, sides, u }: { times: number; sides?: boolean; u: Record<string, string> }) {
+function Counter({ times, sides, u, lang }: { times: number; sides?: boolean; u: Record<string, string>; lang: Lang }) {
   const total = times * (sides ? 2 : 1);
   const [n, setN] = useState(0);
   const done = n >= total;
@@ -281,7 +282,8 @@ function Counter({ times, sides, u }: { times: number; sides?: boolean; u: Recor
   const inSide = done ? times : n - (onLeft ? times : 0);
   const gap = total > 1 ? 0.22 : 0;
   const seg = (Math.PI * 2) / total;
-  const label = `${times}×${sides ? ` ${u.each}` : ""}`;
+  // Arabic says the count in words (مرّتين), the others "2×"
+  const label = lang === "ar" ? `${AR_TIMES[times] ?? times}${sides ? ` ${u.each}` : ""}` : `${times}×${sides ? ` ${u.each}` : ""}`;
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: 16, marginTop: 20 }}>
       <Pressable onPress={() => setN(done ? 0 : n + 1)} accessibilityRole="button" accessibilityLabel={`${done ? u.again : u.count}: ${n} / ${total}`}
@@ -367,8 +369,8 @@ function Celebrate() {
 // Wudu trainer (website WuduTrainer.tsx): every step drawn and explained, obligatory and recommended marked, a tap
 // counter for the rounds, and an order quiz at the end (progress tf:wudu, points "wudu")
 export default function WuduTrainer() {
-  const { lang } = useLang();
-  const l: Lang = lang === "de" ? "de" : "en";
+  const { lang, rtl } = useLang();
+  const l: Lang = lang === "de" ? "de" : lang === "ar" ? "ar" : "en";
   const u = UI[l];
   const tx = (v?: L3) => (v ? v[l] : "");
   const [tradition, setTradition] = useState<Tradition>("sunni");
@@ -463,7 +465,7 @@ export default function WuduTrainer() {
               <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: 12, rowGap: 8 }}>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
                   <Svg width={10} height={10} viewBox="0 0 12 12"><Path d="M6 .5l1.4 3.1L10.5 5 7.4 6.4 6 9.5 4.6 6.4 1.5 5l3.1-1.4z" fill={stage.gold} /></Svg>
-                  <Text style={{ fontFamily: FONT.bold, fontSize: 12, letterSpacing: 1.9, color: stage.gold }}>{i + 1} / {steps.length}</Text>
+                  <Text style={{ fontFamily: FONT.bold, fontSize: 12, letterSpacing: rtl ? 0 : 1.9, color: stage.gold }}>{ltr(`${i + 1} / ${steps.length}`)}</Text>
                 </View>
                 <View style={{ borderRadius: R.pill, borderWidth: 1, paddingHorizontal: 10, paddingVertical: 2, borderColor: step.kind === "fard" ? "rgba(214,180,108,0.7)" : "rgba(255,255,255,0.25)" }}>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 11, color: step.kind === "fard" ? stage.gold : "rgba(255,255,255,0.7)" }}>{kindLabel(step)}</Text>
@@ -471,12 +473,12 @@ export default function WuduTrainer() {
               </View>
               <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 35, letterSpacing: -0.7, color: "#eef0f3", marginTop: 8 }}>{tx(step.title)}</Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 26, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>{tx(step.text)}</Text>
-              {step.times ? <Counter key={`${tradition}-${step.id}`} times={step.times} sides={step.sides} u={u} /> : null}
+              {step.times ? <Counter key={`${tradition}-${step.id}`} times={step.times} sides={step.sides} u={u} lang={l} /> : null}
               {step.duas?.map((d) => (
                 <View key={d.ar} style={{ marginTop: 20, borderTopWidth: 1, borderTopColor: "rgba(214,180,108,0.25)", paddingTop: 16 }}>
-                  <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 52, color: "#ffffff", writingDirection: "rtl", textAlign: "right" }}>{d.ar}</Text>
-                  <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 8 }}>{d.tr}</Text>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 8 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{u.meaning}: </Text>{d.meaning[l]}</Text>
+                  <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 52, color: "#ffffff", writingDirection: "rtl", textAlign: AR_RIGHT }}>{d.ar}</Text>
+                  {l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 8 }}>{d.tr}</Text> : null}
+                  {l !== "ar" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 8 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{u.meaning}: </Text>{d.meaning[l]}</Text> : null}
                   {d.src ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: "rgba(255,255,255,0.5)", marginTop: 6 }}>{tx(d.src)}</Text> : null}
                 </View>
               ))}
@@ -501,7 +503,7 @@ export default function WuduTrainer() {
 
       {mode === "quiz" ? (
         <View style={{ padding: 20 }}>
-          <Text style={{ fontFamily: FONT.bold, fontSize: 12, letterSpacing: 1.9, textTransform: "uppercase", color: stage.gold }}>{u.quiz} · {picked.length} / {order.length}</Text>
+          <Text style={{ fontFamily: FONT.bold, fontSize: 12, letterSpacing: rtl ? 0 : 1.9, textTransform: "uppercase", color: stage.gold }}>{u.quiz} · {ltr(`${picked.length} / ${order.length}`)}</Text>
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 35, letterSpacing: -0.7, color: "#eef0f3", marginTop: 8 }}>{u.quizTitle}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.75)", marginTop: 8 }}>{u.quizLead}</Text>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 24 }}>
@@ -524,7 +526,7 @@ export default function WuduTrainer() {
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 24, lineHeight: 30, color: "#eef0f3", textAlign: "center", marginTop: 16, maxWidth: 520 }}>{u.doneTitle}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.75)", textAlign: "center", marginTop: 12, maxWidth: 520 }}>{u.doneText} {slips(miss, l, u)}</Text>
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: 8, marginTop: 28 }}>
-            <StageButton gold title={`${u.toSalah} →`} onPress={() => go("/salah")} />
+            <StageButton gold title={`${u.toSalah} ${rtl ? "←" : "→"}`} onPress={() => go("/salah")} />
             <StageButton title={u.toVerse} onPress={() => go("/surah/5?v=6")} />
             <StageButton title={u.practise} onPress={() => startQuiz()} />
           </View>
@@ -534,7 +536,7 @@ export default function WuduTrainer() {
       <View style={{ padding: 16, borderTopWidth: 1, borderTopColor: hair }}>
         <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: 16 }}>
           <Pressable onPress={() => setList((v) => !v)} accessibilityRole="button" accessibilityState={{ expanded: list }} style={{ minHeight: 40, flexDirection: "row", alignItems: "center", gap: 6 }}>
-            <View style={{ transform: [{ rotate: list ? "90deg" : "0deg" }] }}><Icon name="chevronRight" color="rgba(255,255,255,0.8)" size={13} /></View>
+            <View style={{ transform: [{ rotate: list ? "90deg" : rtl ? "180deg" : "0deg" }] }}><Icon name="chevronRight" color="rgba(255,255,255,0.8)" size={13} /></View>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: "rgba(255,255,255,0.8)" }}>{u.steps}</Text>
           </Pressable>
           {i > 0 || mode !== "learn" ? <Text onPress={() => goStep(0)} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 14, color: "rgba(255,255,255,0.6)", paddingVertical: 10 }}>{u.restart}</Text> : null}

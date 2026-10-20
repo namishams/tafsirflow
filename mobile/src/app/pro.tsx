@@ -7,13 +7,14 @@ import Svg, { Circle, G, Path } from "react-native-svg";
 import { CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
 import { Arcade, Display, Eyebrow, GoldButton, GoldCard, LogoMark, OutlineButton, SmallStar, Stage, TextLink } from "@/components/brand";
 import { Icon, type IconName } from "@/components/icons";
-import { useLang, useT } from "@/i18n";
+import { intlLocale, useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { usePro, type ProFeature } from "@/lib/pro";
 import { SITE } from "@/lib/api";
 import { TILES } from "@/web/tiles";
 import { loadPrices, manageSubscriptions, purchasePro, restore } from "@/lib/iap";
 import { goBack } from "@/components/page";
+import { useDuaPrice } from "@/lib/purchases";
 
 // The Pro sheet: what Pro brings (gold medallions), Free and Pro side by side, and a clear price card with the summary
 // Apple asks for (what, price, term, how to cancel) before Apple's own purchase sheet. Purchases belong to the account.
@@ -63,7 +64,8 @@ export default function ProSheet() {
     else setMsg(r === "none" ? tr("pro.nothingToRestore") : tr("pro.unavailable"));
   };
   const openDoc = (doc: "terms" | "privacy") => WebBrowser.openBrowserAsync(`${SITE}/${lang}/legal/${doc}`);
-  const cell = (k: string) => (k === "✓" || k === "–" ? k : tr(`pro.${k}`));
+  const duaPrice = useDuaPrice();
+  const cell = (k: string) => (k === "✓" || k === "–" ? k : tr(`pro.${k}`, { price: duaPrice }));
 
   return (
     <View style={{ flex: 1, backgroundColor: t.bg }}>
@@ -92,7 +94,7 @@ export default function ProSheet() {
           {pro ? (
             <GoldCard>
               <Text style={{ fontFamily: FONT.display, fontSize: 21, color: t.ink }}>{tr("pro.active")}</Text>
-              {until ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, marginTop: 4 }}>{tr("pro.activeUntil", { date: new Date(until).toLocaleDateString(lang === "de" ? "de-DE" : "en-GB") })}</Text> : null}
+              {until ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, marginTop: 4 }}>{tr("pro.activeUntil", { date: new Date(until).toLocaleDateString(intlLocale(lang)) })}</Text> : null}
               <OutlineButton title={tr("pro.manage")} onPress={manageSubscriptions} style={{ marginTop: 14 }} />
             </GoldCard>
           ) : null}

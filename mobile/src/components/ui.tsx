@@ -55,7 +55,7 @@ export function Row({ title, subtitle, value, icon, accessory = "none", onPress,
         <Text style={[type.body, { color: destructive ? t.danger : t.text }]}>{title}</Text>
         {subtitle ? <Text style={[type.subhead, { color: t.secondary, marginTop: 2 }]}>{subtitle}</Text> : null}
       </View>
-      {value ? <Text style={[type.body, { color: t.secondary, marginLeft: 8 }]} numberOfLines={1}>{value}</Text> : null}
+      {value ? <Text style={[type.body, { color: t.secondary, marginStart: 8 }]} numberOfLines={1}>{value}</Text> : null}
       {right}
       {accessory === "chevron" ? <View style={styles.accessory}><Icon name={{ ios: "chevron.right", android: "chevron_right" }} size={13} color={t.tertiary} /></View> : null}
       {accessory === "check" ? <View style={styles.accessory}><Icon name={{ ios: "checkmark", android: "check" }} size={16} color={t.tint} /></View> : null}
@@ -123,13 +123,13 @@ export function ErrorState({ text, retry, retryLabel }: { text: string; retry: (
 
 export const styles = StyleSheet.create({
   section: { marginTop: 24, marginHorizontal: 16 },
-  sectionHeader: { fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.5, textTransform: "uppercase", marginLeft: 4, marginBottom: 8 },
+  sectionHeader: { fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.5, textTransform: "uppercase", marginStart: 4, marginBottom: 8 },
   sectionFooter: { marginHorizontal: 4, marginTop: 8 },
   card: { borderRadius: R.lg, overflow: "hidden", borderWidth: 1, borderColor: "rgba(120,130,125,0.25)" },
-  separator: { height: StyleSheet.hairlineWidth, marginLeft: 16 },
+  separator: { height: StyleSheet.hairlineWidth, marginStart: 16 },
   row: { minHeight: 44, flexDirection: "row", alignItems: "center", paddingHorizontal: 16, paddingVertical: 11 },
-  rowIcon: { width: 28, marginRight: 12, alignItems: "center" },
+  rowIcon: { width: 28, marginEnd: 12, alignItems: "center" },
   rowText: { flex: 1 },
-  accessory: { marginLeft: 8 },
+  accessory: { marginStart: 8 },
   button: { height: 50, borderRadius: 12, alignItems: "center", justifyContent: "center", paddingHorizontal: 20 },
 });

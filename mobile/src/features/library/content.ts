@@ -1,4 +1,4 @@
-import { ISLAM, islamUi, type IslamChapter, type IslamDoc, type IslamUi } from "@/web/islam";
+import { ISLAM, islamUi, loadChapters, type IslamChapter, type IslamUi } from "@/web/islam";
 import { guideText, type Guide, type GuideText } from "@/web/guides";
 import { secretsContent, type SecretsContent } from "@/web/secrets/content";
 import { aboutContent, type AboutContent } from "@/web/aboutContent";
@@ -7,8 +7,16 @@ import { useAsyncValue } from "./motion";
 
 // The website's own content modules (mirrored in src/web): German and English live in the chapter files themselves
 // (d.de / d.en, guide.title_de …), exactly as loadChapter() and guideText() return them on the website.
-export const chapterOf = (d: IslamDoc, lang: string): IslamChapter => (lang === "de" ? d.de : d.en);
-export const chaptersOf = (lang: string) => ISLAM.map((d) => chapterOf(d, lang));
+// German and English live in the chapter files themselves; every other language is the website's translation in
+// web/islam/i18n, read with its own loadChapters() the first time the language is opened.
+const chapters = new Map<string, IslamChapter[]>([["de", ISLAM.map((d) => d.de)], ["en", ISLAM.map((d) => d.en)]]);
+/** every chapter of the Islam library in the reader's language (English until a translation has been read) */
+export function useChapters(): IslamChapter[] {
+  const { lang } = useLang();
+  const hit = chapters.get(lang);
+  const loaded = useAsyncValue(() => (hit ? Promise.resolve(hit) : loadChapters(lang).then((cs) => { chapters.set(lang, cs); return cs; })), [lang]);
+  return hit ?? loaded ?? chapters.get("en")!;
+}
 export const guideOf = (g: Guide, lang: string): GuideText => guideText(g, lang);
 
 // The website's loaders for the hub texts, "Secrets" and "About" are async (other languages are imported on demand);

@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, ClipPath, Defs, G, LinearGradient as SvgLinear, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
 import { router, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, useTheme, AR_RIGHT, FWD } from "@/lib/theme";
 import { Arcade, GoldCard, Poster, PosterGrid, SmallStar, Stage, gradientColors } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
@@ -278,7 +278,7 @@ export function StageButton({ title, onPress, gold = false, disabled, icon }: { 
 /** back arrow at the top of a pushed screen's hero */
 export function HeroBack() {
   return (
-    <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
+    <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6 }}>
       <Icon name="chevronLeft" color="#ffffff" size={24} />
     </Pressable>
   );
@@ -303,7 +303,7 @@ export function Hero({ kicker, title, lead, word, art = "callig", lamp, arabic, 
         <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: art === "window" ? 38 : 40, lineHeight: art === "window" ? 40 : 42, letterSpacing: -1, color: "#eef0f3", marginTop: kicker ? 12 : 20 }}>{title}</Text>
         {lead ? <Text style={{ fontFamily: FONT.regular, fontSize: 17, lineHeight: 28, color: "rgba(255,255,255,0.7)", marginTop: 20 }}>{lead}</Text> : null}
         {arabic ? (
-          <Text style={{ marginTop: 24, writingDirection: "rtl", textAlign: "right" }}>
+          <Text style={{ marginTop: 24, writingDirection: "rtl", textAlign: AR_RIGHT }}>
             <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 46, color: stage.gold }}>{arabic}</Text>
             {arabicRef ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: "rgba(255,255,255,0.45)" }}>{"  "}{arabicRef}</Text> : null}
           </Text>
@@ -324,7 +324,7 @@ export function MoreTiles({ keys }: { keys: string[] }) {
     <View style={{ paddingHorizontal: 16, marginTop: 40 }}>
       <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", gap: 16, marginBottom: 20 }}>
         <Text accessibilityRole="header" style={{ flex: 1, fontFamily: FONT.display, fontSize: 26, lineHeight: 31, letterSpacing: -0.6, color: t.ink }}>{w("home2.coursesTitle")}</Text>
-        <Text onPress={() => go("/academy")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent, paddingBottom: 3 }}>{w("home2.coursesAll")} →</Text>
+        <Text onPress={() => go("/academy")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent, paddingBottom: 3 }}>{w("home2.coursesAll")} {FWD}</Text>
       </View>
       <PosterGrid>
         {items.map((it) => (

@@ -2,7 +2,7 @@ import { memo, useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle } from "react-native-svg";
-import { ARABIC_FONT, FONT, R, goldButton, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, FONT, R, goldButton, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Icon, type IconName } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
 import type { Verse } from "@/lib/quran";
@@ -82,7 +82,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
   const [draft, setDraft] = useState<string | null>(null);
 
   const arabicActive = (
-    <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", columnGap: 10, rowGap: 6, alignItems: "flex-start" }} accessible={hide === 0} accessibilityLabel={hide === 0 ? v.text_uthmani : undefined} accessibilityLanguage="ar">
+    <View style={{ flexDirection: "row", direction: "rtl", flexWrap: "wrap", columnGap: 10, rowGap: 6, alignItems: "flex-start" }} accessible={hide === 0} accessibilityLabel={hide === 0 ? v.text_uthmani : undefined} accessibilityLanguage="ar">
       {words.map((x, wi) => {
         const randomHidden = hide === 4 && ((hashOf(`${v.verse_key}:${seed}:${wi}`) % 100) < 45 || (words.length > 1 && wi === hashOf(`${v.verse_key}:${seed}`) % words.length));
         const covered = !revealed && (hide === 2 || (hide === 1 && wi % 2 === 1) || randomHidden || (hide === 6 && wi >= testPos));
@@ -135,7 +135,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
       </View>
 
       {active ? arabicActive : (
-        <Text style={{ fontFamily: ARABIC_FONT, fontSize: Math.round(27 * scale), lineHeight: Math.round(27 * scale * 2.1), color: t.arabic, writingDirection: "rtl", textAlign: "right" }} accessibilityLanguage="ar">
+        <Text style={{ fontFamily: ARABIC_FONT, fontSize: Math.round(27 * scale), lineHeight: Math.round(27 * scale * 2.1), color: t.arabic, writingDirection: "rtl", textAlign: AR_RIGHT }} accessibilityLanguage="ar">
           {v.text_uthmani} <Text style={{ color: gold, fontSize: Math.round(27 * scale * 0.7) }}>﴿{toAr(v.verse_number)}﴾</Text>
         </Text>
       )}

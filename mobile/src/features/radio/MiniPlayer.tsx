@@ -57,7 +57,7 @@ export function RadioMiniPlayer({ global = false, visible = true, bottomOffset }
 
   return (
     <View pointerEvents="box-none" style={[{ position: "absolute", left: 12, right: 12 }, place]}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: 10, padding: 8, paddingRight: 10, borderRadius: R.lg, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface,
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 10, padding: 8, paddingEnd: 10, borderRadius: R.lg, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface,
         shadowColor: "#000", shadowOpacity: th.dark ? 0.5 : 0.16, shadowRadius: 16, shadowOffset: { width: 0, height: 8 }, elevation: 8 }}>
         <Pressable onPress={() => router.push("/radio/now" as Href)} accessibilityRole="button" accessibilityLabel={`${a("openNowPlaying")}: ${title}, ${sub}`} accessibilityHint={t("openRadio")}
           style={{ flex: 1, minWidth: 0, flexDirection: "row", alignItems: "center", gap: 12 }}>

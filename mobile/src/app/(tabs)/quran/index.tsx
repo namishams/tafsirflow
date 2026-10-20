@@ -102,7 +102,7 @@ export default function QuranIndex() {
           const p = progress[c.id - 1];
           return (
             <Pressable onPress={() => router.push(`/quran/${c.id}` as Href)} accessibilityRole="button" accessibilityLabel={`${c.id}. ${c.name_simple}, ${c.translated_name.name}, ${c.verses_count} ${w("verses")}`}
-              style={({ pressed }) => [{ marginHorizontal: 16, flexDirection: "row", alignItems: "center", gap: 14, paddingHorizontal: 14, paddingVertical: 12, backgroundColor: pressed ? t.bg : t.surface, borderLeftWidth: 1, borderRightWidth: 1, borderBottomWidth: 1, borderColor: t.line },
+              style={({ pressed }) => [{ marginHorizontal: 16, flexDirection: "row", alignItems: "center", gap: 14, paddingHorizontal: 14, paddingVertical: 12, backgroundColor: pressed ? t.bg : t.surface, borderStartWidth: 1, borderEndWidth: 1, borderBottomWidth: 1, borderColor: t.line },
                 index === 0 && { borderTopWidth: 1, borderTopLeftRadius: R.lg, borderTopRightRadius: R.lg },
                 index === shown.length - 1 && { borderBottomLeftRadius: R.lg, borderBottomRightRadius: R.lg }]}>
               <StarNumber n={c.id} size={36} active={!!p?.learned} />

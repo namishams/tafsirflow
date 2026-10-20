@@ -8,12 +8,12 @@ import { useTabBarSpace } from "@/components/TabBar";
 import { Chip, GoldCard } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { ErrorState, Loading, ProBadge, goBack } from "@/components/page";
-import { useLang, useT } from "@/i18n";
+import { intlLocale, useLang, useT } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { SITE } from "@/lib/api";
 import { openPro, usePro } from "@/lib/pro";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
-import { RECITERS, getChapter, getChapters, getVerses, type Chapter, type Verse } from "@/lib/quran";
+import { RECITERS, getChapter, getChapters, getVerses, type Chapter, type Verse, reciterName } from "@/lib/quran";
 import { trackListen, trackVerseDone } from "@/web/listen";
 import { rate, type Rating } from "@/web/learning";
 import { useReciter, isFreeReciter } from "@/features/quran/reciter";
@@ -134,7 +134,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
     setIdx(i);
     // a surah saved offline plays from the device
     const local = localVerseUri(chapter.id, reciter.folder, v.verse_number);
-    audio.play(local ?? v.audioUrl, { fallback: v.remoteAudioUrl, rate: prefs.speed, title: `${chapter.name_simple} · ${v.verse_number}`, artist: reciter.name });
+    audio.play(local ?? v.audioUrl, { fallback: v.remoteAudioUrl, rate: prefs.speed, title: `${chapter.name_simple} · ${v.verse_number}`, artist: reciterName(reciter, lang) });
     scrollTo(i);
   };
   const goTo = (i: number, autoplay: boolean) => {
@@ -225,7 +225,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
     }
   };
   const removeOffline = () => { removeSurah(chapter.id, reciter.folder, verses.length); setOffline({ state: "none", done: 0, bytes: 0 }); };
-  const mb = (bytes: number) => Math.max(0.1, Math.round((bytes / 1048576) * 10) / 10).toLocaleString(lang === "de" ? "de-DE" : "en-US");
+  const mb = (bytes: number) => Math.max(0.1, Math.round((bytes / 1048576) * 10) / 10).toLocaleString(intlLocale(lang));
 
   const header = useMemo(() => (
     <View>
@@ -306,7 +306,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
         onToggle={toggle} onPrev={() => goTo(Math.max(0, idx - 1), false)} onNext={() => goTo(Math.min(verses.length - 1, idx + 1), false)}
         onSeek={(ms) => (audio.playing ? audio.seekPlay(ms) : audio.seek(ms))} onJump={() => setJumpOpen(true)} onOpen={() => setNowOpen(true)} />
 
-      <ReaderNowPlaying open={nowOpen} onClose={() => setNowOpen(false)} chapter={chapter} verse={verse} total={verses.length} reciterName={reciter.name} timed={verse.segments.length > 0}
+      <ReaderNowPlaying open={nowOpen} onClose={() => setNowOpen(false)} chapter={chapter} verse={verse} total={verses.length} reciterName={reciterName(reciter, lang)} timed={verse.segments.length > 0}
         playing={audio.playing} positionMs={audio.positionMs} durationMs={audio.durationMs} reduce={reduce} speed={prefs.speed} repeat={prefs.repeat} sleepMode={sleep.mode} sleepMin={sleepMin}
         onToggle={toggle} onPrev={() => playAt(Math.max(0, idx - 1))} onNext={() => playAt(Math.min(verses.length - 1, idx + 1))} onSeek={(ms) => (audio.playing ? audio.seekPlay(ms) : audio.seek(ms))}
         onSpeed={setSpeed} onRepeat={(n) => setPref({ repeat: n })} onSleep={setSleepMode} />
@@ -367,7 +367,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
                   return (
                     <Pressable key={r.slug} onPress={() => (locked ? openPro("reciters") : setReciter(r))} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${r.name}${locked ? ", Pro" : ""}`}
                       style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 14, paddingVertical: 13, borderTopWidth: i ? 1 : 0, borderTopColor: t.line, backgroundColor: on ? t.accentSoft : t.surface }}>
-                      <Text style={{ fontFamily: on ? FONT.bold : FONT.regular, fontSize: 15, color: t.ink, flex: 1 }}>{r.name}</Text>
+                      <Text style={{ fontFamily: on ? FONT.bold : FONT.regular, fontSize: 15, color: t.ink, flex: 1 }}>{reciterName(r, lang)}</Text>
                       {locked ? <ProBadge /> : on ? <Icon name="check" color={t.accent} size={18} /> : null}
                     </Pressable>
                   );

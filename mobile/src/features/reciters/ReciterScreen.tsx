@@ -2,13 +2,13 @@ import { Pressable, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Stack, router, useLocalSearchParams, type Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { ARABIC_FONT, CALLIG_FONT, FONT, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Arcade, GoldButton, OutlineButton, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { ErrorState } from "@/components/page";
 import { openPro, usePro } from "@/lib/pro";
 import { RECITERS } from "@/lib/quran";
-import { useLang } from "@/i18n";
+import { useLang, pick } from "@/i18n";
 import { RECITER_BIOS, STYLE, bioText, reciterBio } from "@/web/reciters";
 import { Callout, Kicker, QuranSeal, StarBullet, useQ } from "@/features/radio/art";
 import { isFreeReciter, radio, useRadioSelect } from "@/features/radio/engine";
@@ -37,7 +37,7 @@ export default function ReciterScreen() {
   if (!r) return <><Stack.Screen options={{ headerShown: true, title: "" }} /><ErrorState retry={() => router.replace("/reciters" as Href)} /></>;
 
   const tx = bioText(r, lang);
-  const L = lang === "de" ? LBL.de : LBL.en;
+  const L = pick(LBL, lang);
   const i = RECITER_BIOS.indexOf(r);
   const prev = RECITER_BIOS[i - 1], next = RECITER_BIOS[i + 1];
   const player = r.playerSlug ? RECITERS.find((x) => x.slug === r.playerSlug) : undefined;
@@ -76,7 +76,7 @@ export default function ReciterScreen() {
             <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: 30, rowGap: 12, marginTop: 26 }}>
               <Fact label={L.country} value={countryName(r, lang)} />
               {life ? <Fact label={L.life} value={life} /> : null}
-              <Fact label={L.style} value={r.styles.map((s) => STYLE[s][lang === "de" ? "de" : "en"]).join(" · ")} />
+              <Fact label={L.style} value={r.styles.map((s) => pick(STYLE[s], lang)).join(" · ")} />
             </View>
             {player ? (
               <View style={{ marginTop: 28, gap: 12 }}>
@@ -136,7 +136,7 @@ export default function ReciterScreen() {
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
                   <View style={{ flex: 1, minWidth: 0, alignItems: "flex-end" }}>
                     <Text numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 15, color: th.ink, textAlign: "right" }}>{next.name}</Text>
-                    <Text numberOfLines={1} allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 16, lineHeight: 26, color: q.inkGold, writingDirection: "rtl", textAlign: "right" }}>{next.arabic}</Text>
+                    <Text numberOfLines={1} allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 16, lineHeight: 26, color: q.inkGold, writingDirection: "rtl", textAlign: AR_RIGHT }}>{next.arabic}</Text>
                   </View>
                   <Icon name="chevronRight" color={th.gold} size={18} />
                 </View>

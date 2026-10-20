@@ -7,7 +7,7 @@ import { ArchWindow, Corners, HeroKicker, HeroLead, HeroTitle, IslCard, IslH2, I
 import { GoldPill } from "@/features/library/ui";
 import { IslScreen } from "@/features/library/screen";
 import { SERIF, useIsl } from "@/features/library/palette";
-import { chaptersOf, useIslamUi } from "@/features/library/content";
+import { useChapters, useIslamUi } from "@/features/library/content";
 
 // /islam – "Understanding Islam": the hub with every chapter as a marble card with a window of coloured inlay
 // (website: src/app/[locale]/(app)/islam/page.tsx)
@@ -16,7 +16,7 @@ export default function IslamHub() {
   const u = useIslamUi();
   const isl = useIsl();
   const sw = useSaw();
-  const chs = chaptersOf(lang);
+  const chs = useChapters();
   if (!u) return <IslScreen><View /></IslScreen>;
   const rows: number[][] = [];
   ISLAM.forEach((_, i) => { if (i % 2 === 0) rows.push([]); rows[rows.length - 1].push(i); });

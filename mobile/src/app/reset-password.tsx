@@ -42,7 +42,7 @@ export default function ResetPassword() {
           ) : (
             <>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{w("newPassword")}</Text>
-              <View style={{ flexDirection: "row", alignItems: "center", height: 52, borderRadius: R.md, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, paddingLeft: 14 }}>
+              <View style={{ flexDirection: "row", alignItems: "center", height: 52, borderRadius: R.md, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, paddingStart: 14 }}>
                 <TextInput value={pw} onChangeText={setPw} secureTextEntry={!show} autoComplete="new-password" textContentType="newPassword" autoCapitalize="none" accessibilityLabel={w("newPassword")}
                   style={{ flex: 1, height: 50, fontFamily: FONT.regular, fontSize: 16, color: t.ink }} />
                 <Pressable onPress={() => setShow(!show)} accessibilityRole="button" style={{ paddingHorizontal: 14, height: 50, justifyContent: "center" }}>

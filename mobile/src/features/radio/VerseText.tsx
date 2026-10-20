@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Text, type StyleProp, type TextStyle } from "react-native";
-import { ARABIC_FONT } from "@/lib/theme";
+import { ARABIC_FONT, AR_RIGHT } from "@/lib/theme";
 import type { Verse } from "@/lib/quran";
 
 // The verse on air in the Quran face. With word timings, the word being recited is lit in gold. The words are only
@@ -10,7 +10,7 @@ export const VerseArabic = memo(function VerseArabic({ verse, activeWord, size =
 }) {
   const words = verse.words.filter((w) => w.char_type_name === "word");
   const exact = words.length > 0 && words.map((w) => w.text_uthmani).join(" ") === verse.text_uthmani;
-  const base: StyleProp<TextStyle> = [{ fontFamily: ARABIC_FONT, fontSize: size, lineHeight: size * 2.05, color, writingDirection: "rtl", textAlign: "right" }, style];
+  const base: StyleProp<TextStyle> = [{ fontFamily: ARABIC_FONT, fontSize: size, lineHeight: size * 2.05, color, writingDirection: "rtl", textAlign: AR_RIGHT }, style];
   if (!exact || !activeWord) return <Text style={base} accessibilityLanguage="ar">{verse.text_uthmani}</Text>;
   return (
     <Text style={base} accessibilityLanguage="ar" accessibilityLabel={verse.text_uthmani}>

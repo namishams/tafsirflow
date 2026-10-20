@@ -21,6 +21,7 @@ import { useChapterNames, useLive, useNf } from "./hooks";
 import { go } from "./links";
 import { Pulse, useReduceMotion } from "./motion";
 import { ArrowLink, Kicker } from "./ui";
+import { courseLang } from "@/features/arabic/lang";
 
 // The learning journey (website: LearningJourney.tsx + lib/journey.ts): every learning area as a station on one path,
 // with the learner's real progress and the single best next step. On phones the path runs straight down.
@@ -30,7 +31,7 @@ const catalogs: Record<string, JourneyCatalog> = {};
 /** the course catalogue in the reader's language (same as the website's map page builds on the server) */
 export function journeyCatalog(lang: string): JourneyCatalog {
   return (catalogs[lang] ??= {
-    arabic: ARABIC_LESSONS.map((l) => ({ id: l.id, title: (lang === "de" ? l.title.de : l.title.en) ?? l.title.en })),
+    arabic: ARABIC_LESSONS.map((l) => ({ id: l.id, title: l.title[courseLang(lang)] ?? l.title.en })),
     arabicPass: PASS_PCT,
     tajweed: tajweedFor(lang).map((l) => ({ id: l.id, title: lang === "de" ? l.title_de : l.title_en })),
     tajweedPass: 70, // same threshold as the profile ("passed" = at least 70 % in the quiz)

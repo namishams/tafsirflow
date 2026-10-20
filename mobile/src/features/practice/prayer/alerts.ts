@@ -2,8 +2,8 @@ import { Platform } from "react-native";
 import { monthOf, fmtTime, spotToday, type Prayer, type PrayerSettings, type Spot } from "@/web/prayer";
 import { PRAYERS as SALAH_PRAYERS } from "@/web/salah";
 import { readJSON } from "@/lib/store";
-import de from "@/web/messages/de.json";
-import en from "@/web/messages/en.json";
+import { webTree } from "@/i18n/web";
+import { moduleText } from "@/i18n/app";
 import { placeLabel, storedPlace } from "./place";
 
 // Prayer reminders as local notifications: one per chosen prayer for the next 7 days, computed on the device with
@@ -26,9 +26,16 @@ export const remindsOf = (p: AlertPrayer, combine: boolean): AlertPrayer[] => (c
 /** the prayers that can have a reminder in this mode */
 export const alertPrayers = (combine: boolean): readonly AlertPrayer[] => (combine ? COMBINED_PRAYERS : ALERT_PRAYERS);
 /** prayer names as the prayer trainer writes them (Fadschr, Dhuhr, Asr …), for "Dhuhr und Asr" */
-export const prayerName = (p: AlertPrayer, lang: "de" | "en") => SALAH_PRAYERS.find((x) => x.id === p)?.name[lang] ?? p;
-const AND = { de: "und", en: "and" };
-const SOON = { de: "In {n} Minuten:", en: "In {n} minutes:" };
+export const prayerName = (p: AlertPrayer, lang: string) => {
+  const name = SALAH_PRAYERS.find((x) => x.id === p)?.name as ({ en: string } & Record<string, string | undefined>) | undefined;
+  return name ? name[lang] ?? (webTree(lang).prayer as Record<string, string> | undefined)?.[p] ?? name.en : p;
+};
+// the app's own words in the notifications ("Dhuhr and Asr", "In 10 minutes:"), other languages in src/i18n/app/*.json
+const TX = {
+  de: { and: "und", soon: "In {n} Minuten:", channel: "Gebetszeiten" },
+  en: { and: "and", soon: "In {n} minutes:", channel: "Prayer times" },
+};
+export const andWord = (lang: string) => moduleText("alerts", TX, lang).and;
 const CHANNEL = "prayer-times";
 const DAYS = 7;
 
@@ -72,7 +79,7 @@ export function upcomingTimes(spot: Spot, st: PrayerSettings, now = new Date()) 
 
 let queue: Promise<unknown> = Promise.resolve();
 /** cancels our scheduled reminders and plans them again from what is stored (place, settings, chosen prayers) */
-export function reschedulePrayerAlerts(lang: "de" | "en"): Promise<number> {
+export function reschedulePrayerAlerts(lang: string): Promise<number> {
   const run = async () => {
     const n = await notifications();
     if (!n) return 0;
@@ -85,11 +92,12 @@ export function reschedulePrayerAlerts(lang: "de" | "en"): Promise<number> {
     if (!chosen.length) return 0;
     const perm = await n.getPermissionsAsync().catch(() => null);
     if (!perm?.granted && perm?.ios?.status !== n.IosAuthorizationStatus.PROVISIONAL) return 0;
-    const tr = (lang === "de" ? de : en).prayer as Record<string, string>;
+    const tr = { ...(webTree("en").prayer as Record<string, string>), ...(webTree(lang).prayer as Record<string, string> | undefined) };
+    const tx = moduleText("alerts", TX, lang);
     const { main, settings } = storedPlace();
     const place = placeLabel(main, lang, tr.yourPlace);
     if (Platform.OS === "android") {
-      await n.setNotificationChannelAsync(CHANNEL, { name: lang === "de" ? "Gebetszeiten" : "Prayer times", importance: n.AndroidImportance.HIGH, sound: "default" }).catch(() => undefined);
+      await n.setNotificationChannelAsync(CHANNEL, { name: tx.channel, importance: n.AndroidImportance.HIGH, sound: "default" }).catch(() => undefined);
     }
     const now = Date.now(), until = now + DAYS * 86400000;
     let count = 0;
@@ -101,8 +109,8 @@ export function reschedulePrayerAlerts(lang: "de" | "en"): Promise<number> {
         const time = fmtTime(at, main.tz, lang);
         const group = remindsOf(p, combine);
         // one prayer: the website's own words ("Zeit für Dhuhr – Berlin"); combined: "Zeit für Dhuhr und Asr – Berlin"
-        const name = group.length > 1 ? group.map((x) => prayerName(x, lang)).join(` ${AND[lang]} `) : tr[p];
-        const lead = before ? SOON[lang].replace("{n}", String(before / 60000)) : tr.timeFor;
+        const name = group.length > 1 ? group.map((x) => prayerName(x, lang)).join(` ${tx.and} `) : tr[p];
+        const lead = before ? tx.soon.replace("{n}", String(before / 60000)) : tr.timeFor;
         await n.scheduleNotificationAsync({
           identifier: `${TAG}-${p}-${at.getTime()}`,
           content: { title: `${name} · ${time}`, body: `${lead} ${name} – ${place}`, sound: "default", data: { tag: TAG, prayer: p, at: at.getTime() } },

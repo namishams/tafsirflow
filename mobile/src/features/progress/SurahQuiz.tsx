@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Pressable, Text, View } from "react-native";
-import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, FONT, R, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { RECITERS, getVerses, type Verse } from "@/lib/quran";
 import { noteMistake } from "@/web/learning";
@@ -96,7 +96,7 @@ export function SurahQuiz({ surah, learned, dark = false, onClose }: { surah: nu
           <Kicker color={stage.gold}>{T.title}</Kicker>
           {q && !doneAll ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: sub, marginTop: 4 }}>{fill(T.of, { i: nf(i + 1), n: nf(qs.length) })}</Text> : null}
         </View>
-        <Pressable onPress={onClose} accessibilityRole="button" hitSlop={8} style={{ paddingHorizontal: 8, paddingVertical: 4, marginTop: -4, marginRight: -8 }}>
+        <Pressable onPress={onClose} accessibilityRole="button" hitSlop={8} style={{ paddingHorizontal: 8, paddingVertical: 4, marginTop: -4, marginEnd: -8 }}>
           <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: sub }}>{T.close}</Text>
         </Pressable>
       </View>
@@ -108,7 +108,7 @@ export function SurahQuiz({ surah, learned, dark = false, onClose }: { surah: nu
         <StepIn key={`${round}-${i}`}>
           {i === 0 && picked === null ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: sub, marginTop: 8 }}>{T.lead}</Text> : null}
           <View style={{ marginTop: 12, borderRadius: R.sm, borderWidth: 1, borderColor: "rgba(214,180,108,0.25)", backgroundColor: "rgba(214,180,108,0.06)", paddingHorizontal: 16, paddingVertical: 10 }}>
-            <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 46, writingDirection: "rtl", textAlign: "right", color: ink }}>
+            <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 46, writingDirection: "rtl", textAlign: AR_RIGHT, color: ink }}>
               {q.cut ? "… " : ""}{q.prompt} <Text style={{ color: t.gold }}>﴿{nf(q.v)}﴾</Text>
             </Text>
           </View>
@@ -117,7 +117,7 @@ export function SurahQuiz({ surah, learned, dark = false, onClose }: { surah: nu
             {q.options.map((o, n) => (
               <Pressable key={n} onPress={() => choose(n)} disabled={picked !== null} accessibilityRole="button" accessibilityLabel={o.text}
                 style={[{ borderRadius: R.sm, borderWidth: 1, paddingHorizontal: 16, paddingVertical: 8 }, optStyle(n)]}>
-                <Text style={{ fontFamily: ARABIC_FONT, fontSize: 20, lineHeight: 40, writingDirection: "rtl", textAlign: "right", color: ink }}>{o.text}</Text>
+                <Text style={{ fontFamily: ARABIC_FONT, fontSize: 20, lineHeight: 40, writingDirection: "rtl", textAlign: AR_RIGHT, color: ink }}>{o.text}</Text>
               </Pressable>
             ))}
           </View>

@@ -2,7 +2,7 @@ import { useState, type ReactNode } from "react";
 import { LayoutAnimation, Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Defs, LinearGradient as SvgLinear, Path, Stop } from "react-native-svg";
-import { CALLIG_FONT, FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
+import { CALLIG_FONT, FONT, R, goldButton, stage, useTheme, FWD } from "@/lib/theme";
 import { Poster, PosterGrid, gradientColors } from "@/components/brand";
 import { useWebT } from "@/i18n/web";
 import { APP_TILES } from "@/lib/features";
@@ -38,7 +38,7 @@ export function OutlinePill({ title, onPress, onStage, style }: { title: string;
 /** a text link with an arrow in the accent colour */
 export function ArrowLink({ title, onPress, onStage, style }: { title: string; onPress: () => void; onStage?: boolean; style?: StyleProp<TextStyle> }) {
   const isl = useIsl();
-  return <Text onPress={onPress} accessibilityRole="link" style={[{ fontFamily: FONT.bold, fontSize: 14, color: onStage ? stage.gold : isl.accent, paddingVertical: 6 }, style]}>{title} →</Text>;
+  return <Text onPress={onPress} accessibilityRole="link" style={[{ fontFamily: FONT.bold, fontSize: 14, color: onStage ? stage.gold : isl.accent, paddingVertical: 6 }, style]}>{title} {FWD}</Text>;
 }
 
 /** the + that turns into × (.isl-plus) */
@@ -69,7 +69,7 @@ export function FaqItem({ q, a, star = true, badge }: { q: string; a: string; st
         </View>
         <Plus open={open} />
       </Pressable>
-      {open ? <Text style={{ paddingLeft: star ? 44 : 16, paddingRight: 16, paddingBottom: 20, fontFamily: FONT.regular, fontSize: 15, lineHeight: 24.4, color: isl.muted }}>{sw(a)}</Text> : null}
+      {open ? <Text style={{ paddingStart: star ? 44 : 16, paddingEnd: 16, paddingBottom: 20, fontFamily: FONT.regular, fontSize: 15, lineHeight: 24.4, color: isl.muted }}>{sw(a)}</Text> : null}
     </IslCard>
   );
 }
@@ -100,7 +100,7 @@ export function MoreTiles({ keys, style }: { keys: string[]; style?: StyleProp<V
     <View style={[{ paddingHorizontal: 20, paddingTop: 48, paddingBottom: 56, backgroundColor: theme.bg }, style]}>
       <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", gap: 16, marginBottom: 20 }}>
         <IslH2 size={26}>{w("home2.coursesTitle")}</IslH2>
-        <Text onPress={() => openHref("/academy")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: isl.accent, paddingBottom: 3 }}>{w("home2.coursesAll")} →</Text>
+        <Text onPress={() => openHref("/academy")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: isl.accent, paddingBottom: 3 }}>{w("home2.coursesAll")} {FWD}</Text>
       </View>
       <PosterGrid>
         {tiles.map((x) => (
@@ -131,7 +131,7 @@ export function Doorway({ label, ar, title, lead, meta, onPress }: { label: stri
       <StageBackground>
         {w ? <Dome size={420} opacity={0.7} style={{ top: -120, left: w / 2 - 210 }} /> : null}
         <View style={{ paddingHorizontal: 24, paddingTop: 80, paddingBottom: 40, alignItems: "center" }}>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2.6, textTransform: "uppercase", color: stage.gold, textAlign: "center" }}>{label} →</Text>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2.6, textTransform: "uppercase", color: stage.gold, textAlign: "center" }}>{label} {FWD}</Text>
           <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 46, lineHeight: 64, color: STAGE_GOLD, marginTop: 12, textAlign: "center", writingDirection: "rtl" }}>{ar}</Text>
           <Text style={{ fontFamily: FONT.display, fontSize: 26, lineHeight: 31, letterSpacing: -0.5, color: STAGE_TEXT, marginTop: 8, textAlign: "center" }}>{sw(title)}</Text>
           <Text numberOfLines={3} style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.65)", marginTop: 12, textAlign: "center" }}>{sw(lead)}</Text>

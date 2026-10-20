@@ -4,10 +4,11 @@ import { router, type Href } from "expo-router";
 import Svg, { Path } from "react-native-svg";
 import { GoldButton, GoldCard, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
+import { courseLang, type CourseLang } from "./lang";
 import { useLang } from "@/i18n";
 import { FREE, openPro, usePro } from "@/lib/pro";
 import { useStoreVersion } from "@/lib/store";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, useTheme, FWD } from "@/lib/theme";
 import { LESSONS, PASS_PCT, UNITS, arabicPercent, nextArabic, readArabic, unlocked, type ArabicProgress, type Lesson } from "@/web/arabic";
 import { Gate, IllumFrame, MedalText, PracticeMedallion, PracticeStar, PracticeStarNum, Rail } from "../coursekit/art";
 import { ChipButton, ProCard } from "../coursekit/ui";
@@ -30,7 +31,7 @@ export function useOpenLesson() {
 
 export function ArabicHome() {
   const t = useTheme();
-  const { lang } = useLang();
+  const lang = courseLang(useLang().lang);
   const T = HOME_T[lang];
   const ct = useCourseT();
   const { pro } = usePro();
@@ -42,7 +43,7 @@ export function ArabicHome() {
   const passedN = LESSONS.filter((l) => (p.done[l.id]?.best ?? 0) >= PASS_PCT).length;
   const nxUnit = nx ? UNITS.find((u) => u.n === nx.unit)! : null;
   const started = Object.keys(p.done).length > 0;
-  const tx = (v: { de: string; en: string }) => v[lang] ?? v.en;
+  const tx = (v: { de: string; en: string; ar?: string }) => v[lang] ?? v.en;
   const lastFreeUnit = LESSONS[FREE.arabicLessons - 1]?.unit ?? 1;
   const ctx: GateCtx = { p, nx, pro, started, T, lang, openLesson };
 
@@ -60,7 +61,7 @@ export function ArabicHome() {
           {p.placement && p.placement.units > 0 ? (
             <Text style={{ marginTop: 4, fontFamily: FONT.regular, fontSize: 12, color: "rgba(255,255,255,0.5)", textAlign: "center" }}>{`${T.placeNote}: ${T.unit} 1${p.placement.units > 1 ? `–${p.placement.units}` : ""}`}</Text>
           ) : null}
-          <GoldButton compact title={`${started ? T.cont : T.start}  →`} style={{ alignSelf: "stretch", marginTop: 22 }}
+          <GoldButton compact title={`${started ? T.cont : T.start}  ${FWD}`} style={{ alignSelf: "stretch", marginTop: 22 }}
             onPress={() => (nx ? openLesson(nx) : router.push("/shams/1" as Href))} />
         </View>
       </Stage>
@@ -93,7 +94,7 @@ export function ArabicHome() {
           ls.forEach((l, k) => { if (k % 2 === 0) rows.push([]); rows[rows.length - 1].push(l); });
           return (
             <View key={u.n}>
-              <View style={{ paddingLeft: 60 }}>
+              <View style={{ paddingStart: 60 }}>
                 {ui < UNITS.length - 1 ? <Rail left={23} /> : null}
                 <View style={{ position: "absolute", left: 0, top: 0 }}><PracticeStarNum n={all ? "✓" : u.n} size={48} filled={all} /></View>
                 <Text style={{ fontFamily: FONT.bold, fontSize: 12, letterSpacing: 1.9, textTransform: "uppercase", color: t.gold }}>
@@ -122,13 +123,13 @@ export function ArabicHome() {
   );
 }
 
-type GateCtx = { p: ArabicProgress; nx: Lesson | null; pro: boolean; started: boolean; T: (typeof HOME_T)["en"]; lang: "de" | "en"; openLesson: (l: Lesson) => void };
+type GateCtx = { p: ArabicProgress; nx: Lesson | null; pro: boolean; started: boolean; T: (typeof HOME_T)["en"]; lang: CourseLang; openLesson: (l: Lesson) => void };
 
 function LessonGate({ l, c }: { l: Lesson; c: GateCtx }) {
   const t = useTheme();
   const ct = useCourseT();
   const { p, nx, pro, started, T, lang, openLesson } = c;
-  const tx = (v: { de: string; en: string }) => v[lang] ?? v.en;
+  const tx = (v: { de: string; en: string; ar?: string }) => v[lang] ?? v.en;
   const d = p.done[l.id];
   const open = unlocked(p, l.id);
   const passed = (d?.best ?? 0) >= PASS_PCT;
@@ -151,7 +152,7 @@ function LessonGate({ l, c }: { l: Lesson; c: GateCtx }) {
           <Text numberOfLines={2} style={{ fontFamily: FONT.bold, fontSize: 13.5, lineHeight: 18, color: t.ink, textAlign: "center" }}>{`${l.test ? `${T.test}: ` : ""}${tx(l.title)}`}</Text>
           <View style={{ marginTop: 6, flexDirection: "row", alignItems: "center", gap: 2 }}>
             {[1, 2, 3].map((n) => <PracticeStar key={n} size={11} dim={n > stars} />)}
-            {d ? <Text style={{ marginLeft: 6, fontFamily: FONT.regular, fontSize: 11, color: t.muted }}>{`${d.best}%`}</Text> : null}
+            {d ? <Text style={{ marginStart: 6, fontFamily: FONT.regular, fontSize: 11, color: t.muted }}>{`${d.best}%`}</Text> : null}
           </View>
           {current ? (
             <LinearGradient colors={["#ecd7a2", "#c6a65e"]} style={{ marginTop: 8, borderRadius: R.pill, paddingHorizontal: 12, paddingVertical: 2 }}>

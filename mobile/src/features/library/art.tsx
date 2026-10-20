@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router, type Href } from "expo-router";
 import Svg, { Circle, ClipPath, Defs, G, LinearGradient as SvgLinear, Mask, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
-import { ARABIC_FONT, CALLIG_FONT, FONT, stage } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, stage, AR_RIGHT } from "@/lib/theme";
 import { Icon } from "@/components/icons";
 import { STAGE_GOLD, STAGE_TEXT, stageGold, useIsl } from "./palette";
 import { useReducedMotion } from "./motion";
@@ -325,7 +325,7 @@ export function HeroCalligraphy({ text, top = 0 }: { text: string; top?: number 
   }, [reduce, o]);
   return (
     <Animated.View pointerEvents="none" style={{ position: "absolute", right: -1, top, width: 1200, height: 150, opacity: o }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
-      <Text numberOfLines={1} allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 108, lineHeight: 150, color: "rgba(214,180,108,0.16)", textAlign: "right", writingDirection: "rtl", textShadowColor: "rgba(214,180,108,0.22)", textShadowRadius: 1, textShadowOffset: { width: 0, height: 0 } }}>{text}</Text>
+      <Text numberOfLines={1} allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 108, lineHeight: 150, color: "rgba(214,180,108,0.16)", textAlign: AR_RIGHT, writingDirection: "rtl", textShadowColor: "rgba(214,180,108,0.22)", textShadowRadius: 1, textShadowOffset: { width: 0, height: 0 } }}>{text}</Text>
     </Animated.View>
   );
 }
@@ -460,7 +460,7 @@ export function IslHero({ callig, dome = false, domeTop = -176, fall = 420, rain
       {callig ? <HeroCalligraphy text={callig} top={insets.top} /> : null}
       <View style={{ paddingTop: insets.top + (back ? 6 : paddingTop), paddingHorizontal: 20, paddingBottom: paddingBottom ?? (arcade ? 72 : 48) }}>
         {back ? (
-          <Pressable onPress={goBack} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6, marginBottom: paddingTop - 12 }}>
+          <Pressable onPress={goBack} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6, marginBottom: paddingTop - 12 }}>
             <Icon name="chevronLeft" color="#ffffff" size={24} />
           </Pressable>
         ) : null}
@@ -572,7 +572,7 @@ export function RefChip({ label, onPress, onStage, size = 12.5 }: { label: strin
   const isl = useIsl();
   const color = onStage ? STAGE_GOLD : isl.gold;
   const body = (pressed: boolean) => (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingLeft: 7, paddingRight: 9, paddingVertical: 2, borderRadius: 999, borderWidth: 1,
+    <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingStart: 7, paddingEnd: 9, paddingVertical: 2, borderRadius: 999, borderWidth: 1,
       borderColor: onStage ? stageGold(0.4) : isl.a("goldSoft", 0.45), backgroundColor: pressed ? (onStage ? stageGold(0.25) : isl.a("goldSoft", 0.3)) : onStage ? stageGold(0.1) : isl.a("goldSoft", 0.12) }}>
       <StarMark size={size * 0.95} color={color} center={onStage ? stage.bg : isl.paper} />
       <Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: size, lineHeight: size * 1.5, color, fontVariant: ["tabular-nums"] }}>{label}</Text>

@@ -165,7 +165,7 @@ export function CommentsSheet({ visible, verseKey, onClose, onCount }: { visible
 
   const roots = (list ?? []).filter((c) => !c.parentId);
   const Item = ({ c, child }: { c: Comment; child?: boolean }) => (
-    <View style={[{ paddingVertical: 12 }, child && { marginLeft: 20, paddingLeft: 14, borderLeftWidth: 1, borderLeftColor: t.line }]}>
+    <View style={[{ paddingVertical: 12 }, child && { marginStart: 20, paddingStart: 14, borderStartWidth: 1, borderStartColor: t.line }]}>
       <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>
         <Text style={{ fontFamily: FONT.semibold, color: t.ink }}>{c.author}</Text>
         {c.country ? ` · ${c.country}` : ""} · {new Date(c.at).toLocaleDateString(lang, { day: "numeric", month: "short" })}

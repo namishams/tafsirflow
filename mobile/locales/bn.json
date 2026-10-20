@@ -1,0 +1,7 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Quran Masterclass",
+    "NSLocationWhenInUseUsageDescription": "Quran Masterclass আপনার অবস্থান শুধু এই ডিভাইসেই ব্যবহার করে, যাতে আপনি যেখানে আছেন সেখানের নামাজের সময় ও কিবলার দিক হিসাব করা যায়। এটি কোথাও সংরক্ষণ বা পাঠানো হয় না।",
+    "NSMicrophoneUsageDescription": "আপনি তিলাওয়াত যাচাই শুরু করলেই Quran Masterclass মাইক্রোফোন ব্যবহার করে। আপনার রেকর্ডিং এই ডিভাইসেই থাকে, আপলোড করা হয় না।"
+  }
+}

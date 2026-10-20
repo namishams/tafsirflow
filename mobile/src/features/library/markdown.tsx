@@ -130,7 +130,7 @@ function InlineChip({ label, s, v, ctx }: { label: string; s: string; v: string;
   return (
     <Pressable onPress={() => openVerse(s, v)} accessibilityRole="link" accessibilityLabel={label} hitSlop={6} style={{ transform: [{ translateY: ctx.size * 0.2 }] }}>
       {({ pressed }) => (
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 3, marginHorizontal: 2, paddingLeft: 5, paddingRight: 7, borderRadius: 999, borderWidth: 1,
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 3, marginHorizontal: 2, paddingStart: 5, paddingEnd: 7, borderRadius: 999, borderWidth: 1,
           borderColor: ctx.dark ? "rgba(233,207,153,0.4)" : ctx.isl.a("goldSoft", 0.45), backgroundColor: pressed ? ctx.isl.a("goldSoft", 0.35) : ctx.dark ? "rgba(233,207,153,0.1)" : ctx.isl.a("goldSoft", 0.12) }}>
           <StarMark size={fs * 0.95} color={color} center={ctx.dark ? stage.bg : ctx.isl.paper} />
           <Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: fs, lineHeight: fs * 1.4, color, fontVariant: ["tabular-nums"] }}>{label}</Text>
@@ -232,7 +232,7 @@ function ArabicPanel({ text, size }: { text: string; size: number }) {
 function DropCap({ letter, size }: { letter: string; size: number }) {
   const id = useSvgId("dc");
   return (
-    <View style={{ width: 64, height: 78, borderRadius: 6, overflow: "hidden", alignItems: "center", justifyContent: "center", marginTop: size * 0.36, marginRight: 13 }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+    <View style={{ width: 64, height: 78, borderRadius: 6, overflow: "hidden", alignItems: "center", justifyContent: "center", marginTop: size * 0.36, marginEnd: 13 }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
       <Svg style={StyleSheet.absoluteFill} viewBox="0 0 100 100" preserveAspectRatio="none">
         <Defs>
           <RadialGradient id={`${id}r`} cx="30%" cy="20%" r="90%"><Stop offset="0" stopColor="rgb(18,92,68)" /><Stop offset="1" stopColor="rgb(6,40,30)" /></RadialGradient>
@@ -413,7 +413,7 @@ export function Article({ text, numbered = true, onHeading }: { text: string; nu
       out.push(
         <View key={bi} style={{ marginTop: gap, gap: SIZE * 0.55 }}>
           {b.items.map((it, li) => (
-            <View key={li} style={{ flexDirection: "row", gap: SIZE * 0.75, marginLeft: it.sub ? SIZE * 1.6 : 0 }}>
+            <View key={li} style={{ flexDirection: "row", gap: SIZE * 0.75, marginStart: it.sub ? SIZE * 1.6 : 0 }}>
               {it.sub
                 ? <View style={{ width: 6, height: 6, marginTop: SIZE * 0.72 + 4, borderWidth: 1, borderColor: isl.goldSoft, transform: [{ rotate: "45deg" }] }} />
                 : <View style={{ width: 13, height: 13, marginTop: SIZE * 0.62 + 2, alignItems: "center", justifyContent: "center", borderRadius: 2, backgroundColor: isl.a("goldSoft", 0.12), transform: [{ rotate: "45deg" }] }}>
@@ -430,7 +430,7 @@ export function Article({ text, numbered = true, onHeading }: { text: string; nu
     out.push(
       <View key={bi} style={{ marginTop: gap, gap: SIZE * 0.7 }}>
         {b.items.map((it, li) => (
-          <View key={li} style={{ flexDirection: "row", alignItems: "flex-start", gap: SIZE * 0.7, marginLeft: it.sub ? SIZE * 2.2 : 0 }}>
+          <View key={li} style={{ flexDirection: "row", alignItems: "flex-start", gap: SIZE * 0.7, marginStart: it.sub ? SIZE * 2.2 : 0 }}>
             {it.sub
               ? <View style={{ width: 6, height: 6, marginTop: SIZE * 0.7 + 4, borderWidth: 1, borderColor: isl.goldSoft, transform: [{ rotate: "45deg" }] }} />
               : <View style={{ marginTop: 2 }}><IslamNum n={++n} size={25.3} fontSize={11.5} /></View>}
@@ -478,11 +478,11 @@ export function Markdown({ text, dark = false, style, size = 16, color, family }
         if (b.kind === "h2") return <Text key={bi} accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 24, lineHeight: 30, letterSpacing: -0.5, color: dark ? "#ffffff" : t.ink, marginTop: 40 }}>{inl(b.text)}</Text>;
         if (b.kind === "h3") return <Text key={bi} accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 18, lineHeight: 26, color: dark ? "#ffffff" : t.ink, marginTop: 32 }}>{inl(b.text)}</Text>;
         if (b.kind === "p") return <Text key={bi} style={[base, { marginTop: 16 }]}>{inl(b.text)}</Text>;
-        if (b.kind === "quote") return <View key={bi} style={{ marginTop: 16, borderLeftWidth: 2, borderLeftColor: dark ? "rgba(214,180,108,0.6)" : t.dark ? "rgba(214,178,106,0.6)" : "rgba(150,116,52,0.6)", paddingLeft: 16 }}><Text style={[base, family ? { fontStyle: "italic" } : { fontFamily: FONT.italic }]}>{inl(b.text)}</Text></View>;
+        if (b.kind === "quote") return <View key={bi} style={{ marginTop: 16, borderStartWidth: 2, borderStartColor: dark ? "rgba(214,180,108,0.6)" : t.dark ? "rgba(214,178,106,0.6)" : "rgba(150,116,52,0.6)", paddingStart: 16 }}><Text style={[base, family ? { fontStyle: "italic" } : { fontFamily: FONT.italic }]}>{inl(b.text)}</Text></View>;
         if (b.kind === "ul") return (
           <View key={bi} style={{ marginTop: 16, gap: 8 }}>
             {b.items.map((it, li) => (
-              <View key={li} style={{ flexDirection: "row", gap: 12, marginLeft: it.sub ? 24 : 0 }}>
+              <View key={li} style={{ flexDirection: "row", gap: 12, marginStart: it.sub ? 24 : 0 }}>
                 <View style={{ width: 12, height: 1, marginTop: size * 0.875, backgroundColor: gold }} />
                 <Text style={[base, { flex: 1 }]}>{inl(it.text)}</Text>
               </View>
@@ -490,7 +490,7 @@ export function Markdown({ text, dark = false, style, size = 16, color, family }
           </View>
         );
         return (
-          <View key={bi} style={{ marginTop: 16, gap: 8, paddingLeft: 4 }}>
+          <View key={bi} style={{ marginTop: 16, gap: 8, paddingStart: 4 }}>
             {b.items.map((it, li) => (
               <View key={li} style={{ flexDirection: "row", gap: 8 }}>
                 <Text style={[base, { fontFamily: FONT.bold, color: gold, minWidth: 18, textAlign: "right" }]}>{li + 1}.</Text>

@@ -1,4 +1,5 @@
 // Generated from the website's src/components/Icons.tsx: the same outline icons, drawn with react-native-svg
+import { I18nManager } from "react-native";
 import Svg, { Circle, Path, Rect } from "react-native-svg";
 
 export type IconName = "play" | "pause" | "prev" | "next" | "playSm" | "copy" | "share" | "note" | "bookmark" | "volume" | "grid" | "book" | "search" | "menu" | "lock" | "repeat" | "user" | "kid" | "cap" | "shield" | "logout" | "close" | "clock" | "radio" | "hands" | "heart" | "comment" | "eye" | "flag" | "flame" | "starBig" | "trophy" | "speaker" | "moon" | "checkCircle" | "chevronRight" | "chevronLeft" | "chevronDown" | "check" | "plus" | "sun" | "map" | "compass" | "calendar" | "download" | "settings" | "globe" | "mosque" | "list" | "pen" | "speed" | "stop";
@@ -62,12 +63,14 @@ function shape(name: IconName) {
 }
 
 /** outline icon from the website; colour and size like the text around it */
-export function Icon({ name, size, color, filled, weight }: { name: IconName; size?: number; color: string; filled?: boolean; weight?: number }) {
+export function Icon({ name, size, color, filled, weight, fixed }: { name: IconName; size?: number; color: string; filled?: boolean; weight?: number; fixed?: boolean }) {
   const kind = KIND[name];
   const s = size ?? (kind === "sm" ? 18 : 22);
   const line = kind !== "fill";
+  // arrows point the reading way: mirrored in a right-to-left layout (media controls stay as they are, as on iOS)
+  const mirror = !fixed && I18nManager.isRTL && (name === "chevronRight" || name === "chevronLeft" || name === "logout");
   return (
-    <Svg width={s} height={s} viewBox="0 0 24 24" color={color} fill={line ? (filled ? color : "none") : color} stroke={line ? color : "none"}
+    <Svg width={s} height={s} viewBox="0 0 24 24" color={color} style={mirror ? { transform: [{ scaleX: -1 }] } : undefined} fill={line ? (filled ? color : "none") : color} stroke={line ? color : "none"}
       strokeWidth={weight ?? (kind === "sm" ? 1.8 : 1.7)} strokeLinecap="round" strokeLinejoin="round">
       {shape(name)}
     </Svg>

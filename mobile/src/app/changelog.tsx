@@ -22,7 +22,7 @@ export default function ChangelogPage() {
       <Page style={{ paddingHorizontal: 16, paddingTop: 16, paddingBottom: 96 }}>
         <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 40, lineHeight: 42, letterSpacing: -0.9, color: theme.ink }}>{t("changelog")}</Text>
         <Text style={{ marginTop: 16, fontFamily: FONT.regular, fontSize: 17, lineHeight: 27.6, color: theme.muted }}>{t("changelogLead")}</Text>
-        <View style={{ marginTop: 40, marginLeft: 5, borderLeftWidth: 1, borderLeftColor: theme.line, paddingLeft: 24 }}>
+        <View style={{ marginTop: 40, marginStart: 5, borderStartWidth: 1, borderStartColor: theme.line, paddingStart: 24 }}>
           {CHANGELOG.map((r) => (
             <View key={r.date} style={{ marginBottom: 48 }}>
               <View style={{ position: "absolute", left: -30, top: 8, width: 10, height: 10, borderRadius: 5, backgroundColor: theme.accent }} />

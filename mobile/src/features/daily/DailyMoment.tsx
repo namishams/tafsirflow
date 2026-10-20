@@ -10,6 +10,8 @@ import { readDaily, setDaily } from "@/lib/daily";
 import { today } from "@/web/learning";
 import { getVerseByKey, type SingleVerse } from "@/lib/quran";
 import { verseOfDayKey } from "@/web/votd";
+import { moduleText } from "@/i18n/app";
+import { useDuaPrice } from "@/lib/purchases";
 
 // The daily moment: once a day (never on the first day of use), a calm sheet asks "Have you remembered Allah today?"
 // with verse 13:28 and offers a personal dua for one's concern. One tap closes it; it can also open from the reminder.
@@ -19,12 +21,12 @@ type Seen = { first: number; last: number };
 const T = {
   de: {
     title: "Heute schon an Allah gedacht?", lead: "Nimm dir eine Minute: ein Vers, ein stilles Gedenken – und wenn du magst, eine persönliche Dua, geschrieben für dein Anliegen.",
-    dua: "Persönliche Dua · 0,99 €", verse: "Vers des Tages öffnen", later: "Jetzt nicht",
+    dua: "Persönliche Dua · {price}", verse: "Vers des Tages öffnen", later: "Jetzt nicht",
     remind: "Jeden Tag daran erinnern", remindHint: "Eine Mitteilung am Morgen, auch mit Hinweisen auf persönliche Duas. Jederzeit im Konto abschaltbar.", reminded: "Erinnerung ist eingeschaltet",
   },
   en: {
     title: "Have you remembered Allah today?", lead: "Take one minute: a verse, a quiet remembrance – and if you like, a personal dua written for your concern.",
-    dua: "Personal dua · 0,99 €", verse: "Open the verse of the day", later: "Not now",
+    dua: "Personal dua · {price}", verse: "Open the verse of the day", later: "Not now",
     remind: "Remind me every day", remindHint: "A notification in the morning, including suggestions for personal duas. Turn it off any time in your account.", reminded: "Reminder is on",
   },
 };
@@ -35,7 +37,8 @@ export function DailyMoment() {
   const [open, setOpen] = useState(false);
   const [reminder, setReminder] = useState(readDaily().on);
   const [verse, setVerse] = useState<SingleVerse | null>(null);
-  const tx = T[lang];
+  const tx = moduleText("daily", T, lang);
+  const duaPrice = useDuaPrice();
   // 13:28 – "by the remembrance of Allah hearts are assured" – text and translation from the server
   useEffect(() => { if (open) getVerseByKey("13:28", lang).then(setVerse).catch(() => undefined); }, [open, lang]);
 
@@ -63,7 +66,7 @@ export function DailyMoment() {
               <Icon name="close" color="#fff" size={16} />
             </Pressable>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><SmallStar size={11} color={stage.gold} /><Eyebrow onStage>Quran Masterclass</Eyebrow></View>
-            <Display size="title1" onStage style={{ marginTop: 12, paddingRight: 30 }}>{tx.title}</Display>
+            <Display size="title1" onStage style={{ marginTop: 12, paddingEnd: 30 }}>{tx.title}</Display>
             {verse ? (
               <>
                 <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 44, color: "rgb(233,207,153)", textAlign: "center", writingDirection: "rtl", marginTop: 14 }}>{verse.text_uthmani}</Text>
@@ -72,7 +75,7 @@ export function DailyMoment() {
             ) : null}
             <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: stage.textSoft, marginTop: 14 }}>{tx.lead}</Text>
             <View style={{ gap: 10, marginTop: 18 }}>
-              <GoldButton title={tx.dua} icon="hands" onPress={() => go("/dua-generator")} />
+              <GoldButton title={tx.dua.replace("{price}", duaPrice)} icon="hands" onPress={() => go("/dua-generator")} />
               <OutlineButton title={tx.verse} onStage onPress={() => { const [c, v] = verseOfDayKey().split(":"); go(`/quran/${c}?v=${v}`); }} />
             </View>
             {!reminder ? (

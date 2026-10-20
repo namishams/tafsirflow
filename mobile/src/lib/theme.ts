@@ -1,4 +1,4 @@
-import { Appearance, Platform, useColorScheme } from "react-native";
+import { Appearance, I18nManager, Platform, useColorScheme } from "react-native";
 import { readJSON, useStored } from "./store";
 
 // The colours of quranmasterclass.com (src/app/globals.css): light grey canvas, white tiles, hairline borders,
@@ -79,6 +79,10 @@ export const FONT = {
   get italic() { return kidsOn() ? "Nunito_400Regular" : "PlusJakartaSans_400Regular_Italic"; },
 };
 export const ARABIC_FONT = "Amiri_400Regular";
+/** right-aligned Arabic script in both layouts: React Native swaps "left" and "right" in a right-to-left layout */
+export const AR_RIGHT = (I18nManager.isRTL ? "left" : "right") as "left" | "right";
+/** the "go on" arrow in the reading direction */
+export const FWD = I18nManager.isRTL ? "←" : "→";
 export const ARABIC_BOLD = "Amiri_700Bold";
 export const CALLIG_FONT = "ArefRuqaa_700Bold";
 

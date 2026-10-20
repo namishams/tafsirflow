@@ -1,11 +1,8 @@
-import de from "@/web/messages/de.json";
-import en from "@/web/messages/en.json";
 import { useLang } from "@/i18n";
+import { webTree, type Tree } from "@/i18n/web";
 
 // The website's texts with their rich-text tags kept (<privacy>…</privacy>, <terms>…</terms>), which useWebT() strips:
 // the app turns those parts into links itself.
-type Tree = { [k: string]: string | Tree };
-const DICTS: Record<string, Tree> = { de: de as Tree, en: en as Tree };
 function lookup(tree: Tree, path: string[]): string | undefined {
   let v: string | Tree | undefined = tree;
   for (const k of path) v = typeof v === "object" ? v[k] : undefined;
@@ -15,7 +12,7 @@ function lookup(tree: Tree, path: string[]): string | undefined {
 /** raw text of a website key ("trust.howMore") in the current language */
 export function useWebRaw() {
   const { lang } = useLang();
-  return (key: string) => lookup(DICTS[lang], key.split(".")) ?? lookup(DICTS.en, key.split(".")) ?? key;
+  return (key: string) => lookup(webTree(lang), key.split(".")) ?? lookup(webTree("en"), key.split(".")) ?? key;
 }
 
 /** "All details: <privacy>privacy policy</privacy>." -> [["text", "All details: "], ["privacy", "privacy policy"], ["text", "."]] */

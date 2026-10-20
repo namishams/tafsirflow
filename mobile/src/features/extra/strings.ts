@@ -1,4 +1,5 @@
 import { useLang } from "@/i18n";
+import { moduleText } from "@/i18n/app";
 
 // App-only texts of the extra screens (search, assistant, feedback, legal, onboarding, kids mode, social, widgets).
 // Texts the website already has are read with useWebT(); the assistant and the 404 page keep their texts in the
@@ -187,7 +188,7 @@ export type ExtraStrings = typeof de;
 /** the app-only texts in the current language */
 export function useX(): ExtraStrings {
   const { lang } = useLang();
-  return lang === "de" ? de : en;
+  return moduleText("extra", { de, en }, lang);
 }
 
 /** "{n} questions" -> "3 questions" */

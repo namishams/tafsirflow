@@ -18,7 +18,7 @@ import { useSimpleAudio } from "../audio";
 import { useTx } from "../text";
 import { AR_NAME } from "../web/prayerBoard";
 import { usePrayerPlace } from "./place";
-import { ALERTS_KEY, SETUP_KEY, adhanForTradition, alertPrayers, alertsAvailable, ensurePermission, prayerName, remindsOf, reschedulePrayerAlerts, type AlertPrayer, type Alerts, type PrayerSetup } from "./alerts";
+import { ALERTS_KEY, SETUP_KEY, adhanForTradition, alertPrayers, alertsAvailable, andWord, ensurePermission, prayerName, remindsOf, reschedulePrayerAlerts, type AlertPrayer, type Alerts, type PrayerSetup } from "./alerts";
 import { PrayerSetupCard } from "./setup/PrayerSetupCard";
 import { Degrees, QiblaDial, turnBy, useHeading } from "./Compass";
 
@@ -211,7 +211,7 @@ export default function PrayerBoard() {
             <View style={{ marginTop: 8 }}>
               {alertPrayers(combine).map((p) => {
                 const group = remindsOf(p, combine);
-                const label = group.length > 1 ? group.map((x) => prayerName(x, lang)).join(lang === "de" ? " und " : " and ") : t(p);
+                const label = group.length > 1 ? group.map((x) => prayerName(x, lang)).join(` ${andWord(lang)} `) : t(p);
                 return <SwitchRow key={p} label={label} sub={group.map((x) => fmtTime(day.times[x], main.tz, locale)).join(" · ")} value={!!alerts[p]} onChange={(v) => void toggleAlert(p, v)} />;
               })}
               {setup.tradition === "shia" ? <SwitchRow label={tx("combineSwitch")} value={combine} onChange={(v) => saveSetup({ combine: v })} /> : null}
@@ -238,7 +238,7 @@ export default function PrayerBoard() {
           {playing ? (
             <View style={{ marginTop: 12, gap: 6 }}>
               <Pressable onPress={() => audio.toggle(urlOf(playing))} accessibilityRole="button" accessibilityLabel={t("playAdhan")}
-                style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? goldButton.line : th.line, backgroundColor: th.bg, padding: 6, paddingRight: 16 })}>
+                style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? goldButton.line : th.line, backgroundColor: th.bg, padding: 6, paddingEnd: 16 })}>
                 <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center" }}>
                   <Icon name={audio.playing && audio.url === urlOf(playing) ? "pause" : "play"} color={goldButton.text} size={18} />
                 </LinearGradient>

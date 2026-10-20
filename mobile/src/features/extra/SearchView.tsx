@@ -8,7 +8,7 @@ import { Page } from "@/components/page";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { getChapters, searchVerses, type Chapter, type SearchHit } from "@/lib/quran";
-import { ARABIC_FONT, FONT, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, FONT, useTheme, AR_RIGHT } from "@/lib/theme";
 import { GOLD, GoldHairline, HomeStar, MarbleHero, QKey, alpha, useHm } from "./art";
 import { openVerse } from "./links";
 import { fill, useX } from "./strings";
@@ -73,11 +73,11 @@ export function SearchView({ initial }: { initial?: string }) {
     <Page>
       <MarbleHero kicker={wa("name")} title={ws("title")}>
         <View style={{ flexDirection: "row", gap: 8 }}>
-          <View style={{ flex: 1, height: 52, borderRadius: 12, borderWidth: 1, borderColor: alpha(GOLD, 0.45), backgroundColor: t.surface, flexDirection: "row", alignItems: "center", paddingLeft: 16, gap: 10 }}>
+          <View style={{ flex: 1, height: 52, borderRadius: 12, borderWidth: 1, borderColor: alpha(GOLD, 0.45), backgroundColor: t.surface, flexDirection: "row", alignItems: "center", paddingStart: 16, gap: 10 }}>
             <Icon name="search" color={hm.goldD} size={18} />
             <TextInput value={q} onChangeText={(v) => { setQ(v); setHint(""); }} onSubmitEditing={() => void run(q)} placeholder={wh("searchVerses")} placeholderTextColor={t.muted}
               returnKeyType="search" autoCorrect={false} autoCapitalize="none" clearButtonMode="while-editing" accessibilityLabel={wh("searchVerses")}
-              style={{ flex: 1, height: 50, fontFamily: FONT.regular, fontSize: 16, color: t.ink, paddingRight: 12 }} />
+              style={{ flex: 1, height: 50, fontFamily: FONT.regular, fontSize: 16, color: t.ink, paddingEnd: 12 }} />
           </View>
           <GoldButton title={ws("go")} onPress={() => void run(q)} busy={busy} style={{ width: 104 }} />
         </View>
@@ -119,7 +119,7 @@ export function SearchView({ initial }: { initial?: string }) {
               <QKey>{h.verse_key}</QKey>
               <LinearGradient colors={[alpha(GOLD, 0.45), "transparent"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ flex: 1, height: 1 }} />
             </View>
-            <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 48, color: t.ink, writingDirection: "rtl", textAlign: "right", marginTop: 10 }}>
+            <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 48, color: t.ink, writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 10 }}>
               <Highlighted html={h.text} mark={mark} />
             </Text>
             {h.translation ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.muted, marginTop: 6 }}><Highlighted html={h.translation} mark={mark} /></Text> : null}

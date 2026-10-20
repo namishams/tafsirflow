@@ -44,10 +44,10 @@ export function ReaderNowPlaying({ open, onClose, chapter, verse, total, reciter
         </Svg>
         <ScrollView contentContainerStyle={{ paddingTop: insets.top + 4, paddingBottom: insets.bottom + 36, paddingHorizontal: 20 }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Pressable onPress={onClose} accessibilityRole="button" accessibilityLabel={a("close")} hitSlop={10} style={{ width: 44, height: 44, justifyContent: "center", marginLeft: -8 }}>
+            <Pressable onPress={onClose} accessibilityRole="button" accessibilityLabel={a("close")} hitSlop={10} style={{ width: 44, height: 44, justifyContent: "center", marginStart: -8 }}>
               <Icon name="chevronDown" color="#ffffff" size={26} />
             </Pressable>
-            <View style={{ flex: 1, alignItems: "center", marginRight: 36 }}>
+            <View style={{ flex: 1, alignItems: "center", marginEnd: 36 }}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: stage.gold }}>{a("nowPlaying")}</Text>
               <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13, color: "rgba(255,255,255,0.75)", marginTop: 2 }}>{reciterName}</Text>
             </View>
@@ -73,13 +73,13 @@ export function ReaderNowPlaying({ open, onClose, chapter, verse, total, reciter
           <View style={{ marginTop: 18 }}>
             <GoldSlider value={pos} label={w("seek")} step={0.1} valueText={a("elapsed", { a: fmtTime(positionMs / 1000), b: fmtTime(durationMs / 1000) })}
               onChange={() => undefined} onDone={(x) => { if (durationMs > 0) onSeek(x * durationMs); }} />
-            <View style={{ flexDirection: "row", justifyContent: "space-between" }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+            <View style={{ flexDirection: "row", direction: "ltr", justifyContent: "space-between" }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
               <Text style={timeStyle}>{fmtTime(positionMs / 1000)}</Text>
               <Text style={timeStyle}>{durationMs > 0 ? fmtTime(durationMs / 1000) : "–:––"}</Text>
             </View>
           </View>
 
-          <View style={{ marginTop: 14, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 22 }}>
+          <View style={{ marginTop: 14, flexDirection: "row", direction: "ltr", alignItems: "center", justifyContent: "center", gap: 22 }}>
             <RoundButton icon="prev" label={w("prev")} onPress={onPrev} size={52} />
             <GoldPlay playing={playing} onPress={onToggle} labels={[w("pause"), w("play")]} size={78} />
             <RoundButton icon="next" label={w("next")} onPress={onNext} size={52} />

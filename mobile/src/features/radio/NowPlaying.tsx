@@ -8,7 +8,7 @@ import { CALLIG_FONT, FONT, R, stage } from "@/lib/theme";
 import { OutlineButton, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { SITE } from "@/lib/api";
-import { useLang } from "@/i18n";
+import { intlLocale, useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { countOf } from "@/web/counts";
 import { currentReciter, initials, radio, useRadio, type Repeat, type Sleep } from "./engine";
@@ -20,6 +20,7 @@ import { VerseArabic, wordAt } from "./VerseText";
 import { useAppT } from "./strings";
 import { useReduceMotion } from "./motion";
 import { goBack } from "@/components/page";
+import { reciterName } from "@/lib/quran";
 
 // Full-screen "now playing" (app): the reciter orb, the surah in calligraphy, the verse being recited with the word
 // lit in gold and its translation, position in the verse, previous/next verse and surah, speed, repeat and sleep timer.
@@ -59,7 +60,7 @@ export default function NowPlaying() {
     const url = `${SITE}/${lang}/radio`;
     shareLink(title, url);
   };
-  const dec = (n: number) => (lang === "de" ? String(n).replace(".", ",") : String(n));
+  const dec = (n: number) => { try { return n.toLocaleString(intlLocale(lang)); } catch { return String(n); } };
   const speeds: [number, string][] = [[0.75, `${dec(0.75)}×`], [1, "1×"], [1.25, `${dec(1.25)}×`]];
   const repeats: [Repeat, string][] = [["off", a("repeatOff")], ["verse", a("repeatVerse")], ["surah", a("repeatSurah")]];
   const sleeps: [Sleep, string][] = [[0, t("off")], [15, `15 ${t("min")}`], [30, `30 ${t("min")}`], [60, `60 ${t("min")}`], ["eos", a("sleepEnd")]];
@@ -80,14 +81,14 @@ export default function NowPlaying() {
       <ScrollView contentContainerStyle={{ paddingTop: insets.top + 4, paddingBottom: insets.bottom + 36, paddingHorizontal: 20 }}>
         {/* top bar */}
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-          <Pressable onPress={close} accessibilityRole="button" accessibilityLabel={a("close")} hitSlop={10} style={{ width: 44, height: 44, justifyContent: "center", marginLeft: -8 }}>
+          <Pressable onPress={close} accessibilityRole="button" accessibilityLabel={a("close")} hitSlop={10} style={{ width: 44, height: 44, justifyContent: "center", marginStart: -8 }}>
             <Icon name="chevronDown" color="#ffffff" size={26} />
           </Pressable>
           <View style={{ flex: 1, alignItems: "center" }}>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: stage.gold }}>{a("nowPlaying")}</Text>
             <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13, color: "rgba(255,255,255,0.75)", marginTop: 2 }}>{t("title")} · {t(`st_${r.station.id}`)}</Text>
           </View>
-          <Pressable onPress={share} accessibilityRole="button" accessibilityLabel={a("shareRadio")} hitSlop={10} style={{ width: 44, height: 44, alignItems: "flex-end", justifyContent: "center", marginRight: -6 }}>
+          <Pressable onPress={share} accessibilityRole="button" accessibilityLabel={a("shareRadio")} hitSlop={10} style={{ width: 44, height: 44, alignItems: "flex-end", justifyContent: "center", marginEnd: -6 }}>
             <Icon name="share" color="#ffffff" size={20} />
           </Pressable>
         </View>
@@ -108,7 +109,7 @@ export default function NowPlaying() {
             <View style={{ borderRadius: R.pill, borderWidth: 1, borderColor: stage.goldSoft, paddingHorizontal: 10, paddingVertical: 3 }}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: "#f3e2b6" }}>{a("verseOf", { v: r.now.v, n: countOf(r.now.s) })}</Text>
             </View>
-            <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.regular, fontSize: 13.5, color: "rgba(255,255,255,0.6)" }}>{reciter.name}</Text>
+            <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.regular, fontSize: 13.5, color: "rgba(255,255,255,0.6)" }}>{reciterName(reciter, lang)}</Text>
           </View>
         </View>
 
@@ -145,18 +146,18 @@ export default function NowPlaying() {
         <View style={{ marginTop: 18 }}>
           <GoldSlider value={pos} label={a("seek")} valueText={a("elapsed", { a: fmtTime(pos * p.d), b: fmtTime(p.d) })} step={0.1}
             onChange={(x) => setDrag(x)} onDone={(x) => { setDrag(null); if (p.d > 0) radio.seek(x * p.d); }} />
-          <View style={{ flexDirection: "row", justifyContent: "space-between" }} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
+          <View style={{ flexDirection: "row", direction: "ltr", justifyContent: "space-between" }} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
             <Text style={{ fontFamily: FONT.medium, fontSize: 12, color: "rgba(255,255,255,0.55)", fontVariant: ["tabular-nums"] }}>{fmtTime(pos * p.d)}</Text>
             <Text style={{ fontFamily: FONT.medium, fontSize: 12, color: "rgba(255,255,255,0.55)", fontVariant: ["tabular-nums"] }}>{p.d > 0 ? fmtTime(p.d) : "–:––"}</Text>
           </View>
         </View>
 
         {/* transport */}
-        <View style={{ marginTop: 14, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+        <View style={{ marginTop: 14, flexDirection: "row", direction: "ltr", alignItems: "center", justifyContent: "space-between" }}>
           <RoundButton icon="prev" label={a("prevSurah")} onPress={radio.prevSurah} size={44} />
-          <RoundButton icon="chevronLeft" label={t("prev")} onPress={radio.prevVerse} size={52} />
+          <RoundButton icon="chevronLeft" fixed label={t("prev")} onPress={radio.prevVerse} size={52} />
           <GoldPlay playing={r.playing} onPress={radio.toggle} labels={[t("pause"), t("play")]} size={78} />
-          <RoundButton icon="chevronRight" label={t("nextVerse")} onPress={radio.skipVerse} size={52} />
+          <RoundButton icon="chevronRight" fixed label={t("nextVerse")} onPress={radio.skipVerse} size={52} />
           <RoundButton icon="next" label={a("nextSurah")} onPress={radio.skipSurah} size={44} />
         </View>
         {next ? (

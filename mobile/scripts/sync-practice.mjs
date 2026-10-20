@@ -99,8 +99,8 @@ write("wuduTrainer", decls(comp("WuduTrainer"), ["Lang", "UI", "AR_TIMES", "GOLD
   + `\nexport const DONE_AR = ${JSON.stringify(arabicJsx(comp("WuduTrainer"))[0])};`);
 // prayer board: the Arabic names of the prayer times
 write("prayerBoard", `import type { Prayer } from "@/web/prayer";\n${decls(comp("PrayerBoard"), ["AR_NAME"])}`);
-// sunnah duas: reading-mode texts
-write("sunnahDuas", decls(comp("SunnahDuas"), ["UI"]));
+// sunnah duas: reading-mode texts, the Arabic names of the hadith collections for Arabic readers
+write("sunnahDuas", decls(comp("SunnahDuas"), ["UI", "SRC_AR", "srcAr"]));
 // name finder: the "father" line of a classical name, the Hijri month of a birth date, the hadith on the most beloved names
 {
   const ar = arabicJsx(comp("NameGenerator"));

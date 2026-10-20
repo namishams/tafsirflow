@@ -175,7 +175,7 @@ export const audioUrlOf = (folder: string, p: Pos) => `${SITE}/audio/${folder}/$
 const src = (it: Item) => ({ uri: audioUrlOf(it.folder, it.pos) });
 
 function chapterName(s: number) {
-  return state.chapters.find((c) => c.id === s)?.name_simple ?? `Surah ${s}`;
+  return state.chapters.find((c) => c.id === s)?.name_simple ?? String(s);
 }
 function meta(p: Pos, folder: string): AudioMetadata {
   return { title: `${chapterName(p.s)} · ${p.v}`, artist: reciterOf(folder)?.name ?? "", albumTitle: "Quran Masterclass", artworkUrl: `${SITE}/icon-512.png` };

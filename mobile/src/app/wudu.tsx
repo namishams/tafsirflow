@@ -1,7 +1,7 @@
 import { Text, View } from "react-native";
 import { Stack } from "expo-router";
-import { useLang } from "@/i18n";
-import { ARABIC_FONT, FONT, useTheme } from "@/lib/theme";
+import { useLang, pick } from "@/i18n";
+import { ARABIC_FONT, FONT, useTheme, AR_RIGHT, FWD } from "@/lib/theme";
 import { Divider, Eyebrow, GoldCard } from "@/components/brand";
 import WuduTrainer from "@/features/practice/WuduTrainer";
 import { Callout, Hero, PageScroll, LightChip, LinkList, MoreTiles, PStar, go, useGold } from "@/features/practice/art";
@@ -13,7 +13,7 @@ import { C } from "@/features/practice/web/wuduPage";
 // Quran store, what breaks wudu, tayammum, the virtue of wudu with its sources
 export default function WuduScreen() {
   const { lang } = useLang();
-  const c = lang === "de" ? C.de : C.en;
+  const c = pick(C, lang);
   const th = useTheme();
   const g = useGold();
   const v = useVerses(["5:6"], lang)["5:6"];
@@ -31,7 +31,7 @@ export default function WuduScreen() {
             <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 35, letterSpacing: -0.6, color: th.ink, marginTop: 8 }}>{c.verseTitle}</Text>
             <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 25, color: th.muted, marginTop: 12 }}>{c.verseLead}</Text>
             {v?.text_uthmani ? (
-              <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 52, color: th.arabic, writingDirection: "rtl", textAlign: "right", marginTop: 24 }}>
+              <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 52, color: th.arabic, writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 24 }}>
                 {v.text_uthmani} <Text style={{ color: th.gold, fontSize: 17 }}>{verseEnd(6)}</Text>
               </Text>
             ) : null}
@@ -39,7 +39,7 @@ export default function WuduScreen() {
             <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: 20, rowGap: 4, marginTop: 16 }}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: th.gold }}>{c.verseRef}</Text>
               {v?.translation ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: th.muted }}>{c.trBy}</Text> : null}
-              <Text onPress={() => go("/surah/5?v=6")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: th.accent, paddingVertical: 8 }}>{c.listen} →</Text>
+              <Text onPress={() => go("/surah/5?v=6")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: th.accent, paddingVertical: 8 }}>{c.listen} {FWD}</Text>
             </View>
           </Callout>
 
@@ -72,7 +72,7 @@ export default function WuduScreen() {
           <View style={{ gap: 16, marginTop: 28 }}>
             {c.virtues.map((x) => (
               <GoldCard key={x.src} style={{ padding: 20, paddingTop: 28 }}>
-                <Text style={{ fontFamily: ARABIC_FONT, fontSize: 23, lineHeight: 46, color: th.arabic, writingDirection: "rtl", textAlign: "right" }}>{x.ar}</Text>
+                <Text style={{ fontFamily: ARABIC_FONT, fontSize: 23, lineHeight: 46, color: th.arabic, writingDirection: "rtl", textAlign: AR_RIGHT }}>{x.ar}</Text>
                 <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 25, color: th.ink, opacity: 0.9, marginTop: 8 }}>{x.text}</Text>
                 <Text onPress={x.href ? () => go(x.href!) : undefined} accessibilityRole={x.href ? "link" : "text"} style={{ fontFamily: FONT.semibold, fontSize: 13, color: th.gold, marginTop: 16 }}>{x.src}</Text>
               </GoldCard>

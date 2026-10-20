@@ -1,0 +1,7 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Quran Masterclass",
+    "NSLocationWhenInUseUsageDescription": "Quran Masterclass usa tu ubicación solo en este dispositivo, para calcular los horarios de oración y la dirección de la qibla del lugar donde estás. No se guarda ni se envía a ningún sitio.",
+    "NSMicrophoneUsageDescription": "Quran Masterclass usa el micrófono solo cuando inicias la comprobación de recitación. Tu grabación se queda en este dispositivo y no se sube."
+  }
+}

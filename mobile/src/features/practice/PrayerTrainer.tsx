@@ -4,14 +4,15 @@ import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, G, Line, LinearGradient as SvgLinear, Path, Polyline, Rect, Stop, Text as SvgText } from "react-native-svg";
 import { PRAYERS, buildPrayer, type Posture, type Tradition } from "@/web/salah";
 import { useLang } from "@/i18n";
-import { ARABIC_FONT, FONT, R, goldButton, stage } from "@/lib/theme";
+import { ARABIC_FONT, FONT, R, goldButton, stage, AR_RIGHT } from "@/lib/theme";
 import { Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { DarkChip, PracticeWindow, RoundButton, go, starPath, useReducedMotion } from "./art";
-import { POSES, UI, ease, lerpPose, type Pose, type Tx } from "./web/prayerTrainer";
+import { POSES, UI, ease, lerpPose, type Lang, type Pose, type Tx } from "./web/prayerTrainer";
 
-type Lang = "de" | "en";
 const pts = (...p: [number, number][]) => p.map((x) => x.join(",")).join(" ");
+// <span dir="ltr"> of the website: "1 / 12" keeps its order inside right-to-left text
+const ltr = (s: string) => `\u2066${s}\u2069`;
 
 // the figure moves smoothly from one posture to the next (750 ms), or jumps when the system asks for less motion
 function usePoseAnimation(target: Posture, reduce: boolean) {
@@ -55,10 +56,10 @@ function Figure({ posture, qibla, label }: { posture: Posture; qibla: string; la
 }
 
 // Prayer trainer (website PrayerTrainer.tsx): the five daily prayers step by step, Sunni and Ja'fari, with the figure,
-// the Arabic words, transliteration and meaning; play the sequence or go step by step
+// the Arabic words, transliteration and meaning (Arabic readers get the Arabic words only); play the sequence or go step by step
 export default function PrayerTrainer() {
-  const { lang } = useLang();
-  const l: Lang = lang === "de" ? "de" : "en";
+  const { lang, rtl } = useLang();
+  const l: Lang = lang === "de" ? "de" : lang === "ar" ? "ar" : "en";
   const u = UI[l];
   const tx = (v?: Tx) => (v ? v[l] ?? v.en : "");
   const [tradition, setTradition] = useState<Tradition>("sunni");
@@ -110,16 +111,16 @@ export default function PrayerTrainer() {
         <View key={`${prayer}-${tradition}-${i}`}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
             <Svg width={10} height={10} viewBox="0 0 12 12"><Path d="M6 .5l1.4 3.1L10.5 5 7.4 6.4 6 9.5 4.6 6.4 1.5 5l3.1-1.4z" fill={stage.gold} /></Svg>
-            <Text style={{ fontFamily: FONT.bold, fontSize: 12, letterSpacing: 1.9, textTransform: "uppercase", color: stage.gold }}>{i + 1} / {steps.length}{step.aloud !== undefined && step.ar ? ` · ${step.aloud ? u.aloud : u.silent}` : ""}</Text>
+            <Text style={{ fontFamily: FONT.bold, fontSize: 12, letterSpacing: rtl ? 0 : 1.9, textTransform: "uppercase", color: stage.gold }}>{ltr(`${i + 1} / ${steps.length}`)}{step.aloud !== undefined && step.ar ? ` · ${step.aloud ? u.aloud : u.silent}` : ""}</Text>
           </View>
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 35, letterSpacing: -0.7, color: "#eef0f3", marginTop: 8 }}>{tx(step.title)}</Text>
           {step.ar ? (
             <View style={{ marginTop: 20, borderTopWidth: 1, borderBottomWidth: 1, borderColor: "rgba(214,180,108,0.25)", paddingVertical: 12 }}>
-              <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 52, color: "#fbf3dc", writingDirection: "rtl", textAlign: "right" }}>{step.ar}</Text>
+              <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 52, color: "#fbf3dc", writingDirection: "rtl", textAlign: AR_RIGHT }}>{step.ar}</Text>
             </View>
           ) : null}
-          {step.tr ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 12 }}>{step.tr}</Text> : null}
-          {step.meaning ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 12 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{u.meaning}: </Text>{tx(step.meaning)}</Text> : null}
+          {step.tr && l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 12 }}>{step.tr}</Text> : null}
+          {step.meaning && l !== "ar" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 12 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{u.meaning}: </Text>{tx(step.meaning)}</Text> : null}
           {step.note ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: "rgba(255,255,255,0.75)", marginTop: 16, borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.25)", backgroundColor: "rgba(255,255,255,0.05)", padding: 12, overflow: "hidden" }}>{tx(step.note)}</Text> : null}
         </View>
         <View style={{ flex: 1, minHeight: 24 }} />
@@ -139,7 +140,7 @@ export default function PrayerTrainer() {
 
       <View style={{ padding: 16, borderTopWidth: 1, borderTopColor: hair }}>
         <Pressable onPress={() => setList((v) => !v)} accessibilityRole="button" accessibilityState={{ expanded: list }} style={{ minHeight: 40, flexDirection: "row", alignItems: "center", gap: 6, alignSelf: "flex-start" }}>
-          <View style={{ transform: [{ rotate: list ? "90deg" : "0deg" }] }}><Icon name="chevronRight" color="rgba(255,255,255,0.8)" size={13} /></View>
+          <View style={{ transform: [{ rotate: list ? "90deg" : rtl ? "180deg" : "0deg" }] }}><Icon name="chevronRight" color="rgba(255,255,255,0.8)" size={13} /></View>
           <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: "rgba(255,255,255,0.8)" }}>{u.steps}</Text>
         </Pressable>
         {list ? (
@@ -153,7 +154,7 @@ export default function PrayerTrainer() {
           </View>
         ) : null}
         <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 19, color: "rgba(255,255,255,0.55)", marginTop: 16 }}>
-          {u.note} <Text onPress={() => go("/surah/1?shams=1")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, color: stage.gold }}>{u.learnFatiha} →</Text>
+          {u.note} <Text onPress={() => go("/surah/1?shams=1")} accessibilityRole="link" style={{ fontFamily: FONT.semibold, color: stage.gold }}>{u.learnFatiha} {rtl ? "←" : "→"}</Text>
         </Text>
       </View>
     </Stage>

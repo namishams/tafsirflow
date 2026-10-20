@@ -4,22 +4,21 @@ import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Path } from "react-native-svg";
 import { fmtHijri, hijriMonthName } from "@/web/hijri";
 import {
-  COUNTS, NAMES, NAME_BY_KEY, ORIGIN_FILTERS, ORIGIN_LABEL, THEMES, THEME_LABEL,
-  hasArabic, latinOf, lengthOf, letterOf, matchesOrigin, meaningOf, namesText, normArabic, normLatin,
-  type BabyName, type Gender, type OriginFilter, type Theme,
+  AR_ALPHABET, COUNTS, NAMES, NAME_BY_KEY, ORIGIN_FILTERS, ORIGIN_LABEL, THEMES, THEME_LABEL,
+  hasArabic, langOf, latinOf, lengthOf, letterOf, matchesOrigin, meaningOf, namesText, normArabic, normLatin,
+  type BabyName, type Gender, type Lang, type OriginFilter, type Theme,
 } from "@/web/names";
 import { MONTH_LINKS, bestPool, pickRandom, rankNames, verseFor, type LetterPref, type OriginPick, type Scored } from "@/web/names/rules";
 import { api, SITE } from "@/lib/api";
 import { useStored, writeJSON } from "@/lib/store";
-import { useLang } from "@/i18n";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
+import { intlLocale, useLang } from "@/i18n";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { Callout, H2, IllumFrame, Label, LightChip, Rosette, StageButton, go } from "../art";
 import { CheckRow, DateField, Field, SelectField } from "../ui";
 import { ABD_HADITH_AR, FAV_KEY, classicalName, hijriOfInput } from "../web/nameGenerator";
 
-type Lang = "de" | "en";
 type Tx = ReturnType<typeof namesText>;
 type Verse = { key: string; ar: string; tr: string };
 type ScrollTo = (y: number) => void;
@@ -61,9 +60,9 @@ function OriginBadges({ n, l, dark = false }: { n: BabyName; l: Lang; dark?: boo
 
 // Muslim names with meanings (website NameGenerator.tsx + lib/names): a guided finder and the full list
 export default function NameGenerator({ scrollTo }: { scrollTo?: ScrollTo }) {
-  const { lang } = useLang();
-  const l: Lang = lang === "de" ? "de" : "en";
-  const t = namesText(l);
+  const { lang, rtl } = useLang();
+  const l = langOf(lang);
+  const t = namesText(lang);
   const th = useTheme();
   const favs = useFavs();
   const [tab, setTab] = useState<"finder" | "all">("finder");
@@ -92,12 +91,12 @@ export default function NameGenerator({ scrollTo }: { scrollTo?: ScrollTo }) {
       <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: th.muted, textAlign: "center", marginTop: 12 }}>{t("boysN", { n: COUNTS.b })} · {t("girlsN", { n: COUNTS.g })}</Text>
 
       <View style={{ marginTop: 24 }} onLayout={(e) => { bodyY.current = e.nativeEvent.layout.y; }}>
-        {tab === "finder" ? <Finder t={t} l={l} favs={favs} scrollTo={inner} /> : <Browse t={t} l={l} favs={favs} scrollTo={inner} />}
+        {tab === "finder" ? <Finder t={t} l={l} locale={lang} rtl={rtl} favs={favs} scrollTo={inner} /> : <Browse t={t} l={l} favs={favs} scrollTo={inner} />}
       </View>
 
-      <FavList t={t} l={l} favs={favs} />
+      <FavList t={t} l={l} locale={lang} favs={favs} />
       <Loved t={t} l={l} loved={loved} />
-      <Notes t={t} />
+      <Notes t={t} l={l} />
     </View>
   );
 }
@@ -107,7 +106,7 @@ type Form = { father: string; mother: string; family: string; gender: Gender | "
 const EMPTY: Form = { father: "", mother: "", family: "", gender: "both", date: "", siblings: "", letter: "any", themes: [], origins: [], maxLen: 0, easy: false };
 type Result = { pools: Partial<Record<Gender, Scored[]>>; shown: Partial<Record<Gender, Scored[]>>; month: number | null; n: number };
 
-function Finder({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo: ScrollTo }) {
+function Finder({ t, l, locale, rtl, favs, scrollTo }: { t: Tx; l: Lang; locale: string; rtl: boolean; favs: Favs; scrollTo: ScrollTo }) {
   const th = useTheme();
   const [f, setF] = useState<Form>(EMPTY);
   const [step, setStep] = useState(1);
@@ -138,16 +137,16 @@ function Finder({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
     if (!res) return;
     const keys = [...new Set(Object.values(res.shown).flat().map((s) => verseFor(s.n).key))].filter((k) => !(k in verses));
     if (!keys.length) return;
-    api<{ verses?: Verse[] }>(`/api/names?verses=${keys.join(",")}&locale=${l}`).then((d) => {
+    api<{ verses?: Verse[] }>(`/api/names?verses=${keys.join(",")}&locale=${locale}`).then((d) => {
       const got: Record<string, Verse | null> = Object.fromEntries(keys.map((k) => [k, null]));
       for (const v of d.verses ?? []) got[v.key] = v;
       setVerses((x) => ({ ...x, ...got }));
     }).catch(() => setVerses((x) => ({ ...x, ...Object.fromEntries(keys.map((k) => [k, null])) })));
-  }, [res, l]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [res, locale]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const monthLink = res?.month ? MONTH_LINKS[res.month] : undefined;
   const pct = Math.min(step, 4) / 4;
-  const monthName = (m: number) => new Intl.DateTimeFormat(l === "de" ? "de-DE" : "en-GB", { month: "long", timeZone: "UTC" }).format(new Date(Date.UTC(2001, m - 1, 1)));
+  const monthName = (m: number) => new Intl.DateTimeFormat(intlLocale(locale), { month: "long", timeZone: "UTC" }).format(new Date(Date.UTC(2001, m - 1, 1)));
   const year = new Date().getFullYear();
 
   return (
@@ -165,7 +164,7 @@ function Finder({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
       {step < 4 ? (
         <Callout key={step} radius={16} style={{ padding: 20 }}>
           <View style={{ position: "absolute", right: 12, top: 12, opacity: 0.7 }}><Rosette size={22} /></View>
-          <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 24, lineHeight: 30, color: th.ink, paddingRight: 32 }}>{steps[step - 1]}</Text>
+          <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 24, lineHeight: 30, color: th.ink, paddingEnd: 32 }}>{steps[step - 1]}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: th.muted, marginTop: 4 }}>{t(`s${step}d`)}</Text>
 
           {step === 1 ? (
@@ -187,7 +186,7 @@ function Finder({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
               <View style={{ gap: 8 }}>
                 <Label>{t("date")}</Label>
                 <DateField label={t("date")} value={f.date} onChange={(v) => set("date", v)} minYear={year - 30} maxYear={year + 1} monthName={monthName} allowEmpty />
-                {h ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: th.gold }}>{t("hijriIs", { date: fmtHijri(h, l) })}</Text> : null}
+                {h ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: th.gold }}>{t("hijriIs", { date: fmtHijri(h, locale) })}</Text> : null}
               </View>
               <View style={{ gap: 8 }}>
                 <Label>{t("siblings")}</Label>
@@ -260,7 +259,7 @@ function Finder({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
           </View>
           {monthLink && res.month ? (
             <Callout style={{ padding: 16, marginTop: 20 }}>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.ink }}><Text style={{ fontFamily: FONT.bold }}>{t("monthNote", { month: hijriMonthName(res.month, l) })}</Text> {monthLink.note[l]}</Text>
+              <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.ink }}><Text style={{ fontFamily: FONT.bold }}>{t("monthNote", { month: hijriMonthName(res.month, locale) })}</Text> {monthLink.note[l]}</Text>
             </Callout>
           ) : null}
           {(["b", "g"] as const).filter((g) => res.shown[g]).map((g) => (
@@ -268,7 +267,7 @@ function Finder({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
               {f.gender === "both" ? <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 20, lineHeight: 26, color: th.ink, marginBottom: 12 }}>{t(g === "b" ? "forBoy" : "forGirl")}</Text> : null}
               {res.shown[g]!.length ? (
                 <View style={{ gap: 16 }}>
-                  {res.shown[g]!.map((s) => <ResultCard key={s.n.key} n={s.n} f={f} t={t} l={l} favs={favs} verse={verses[verseFor(s.n).key]} />)}
+                  {res.shown[g]!.map((s) => <ResultCard key={s.n.key} n={s.n} f={f} t={t} l={l} locale={locale} rtl={rtl} favs={favs} verse={verses[verseFor(s.n).key]} />)}
                 </View>
               ) : <Callout style={{ padding: 16 }}><Text style={{ fontFamily: FONT.regular, fontSize: 15, color: th.ink }}>{t("noPool")}</Text></Callout>}
             </View>
@@ -279,16 +278,17 @@ function Finder({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
   );
 }
 
-function ResultCard({ n, f, t, l, favs, verse }: { n: BabyName; f: Form; t: Tx; l: Lang; favs: Favs; verse: Verse | null | undefined }) {
+function ResultCard({ n, f, t, l, locale, rtl, favs, verse }: { n: BabyName; f: Form; t: Tx; l: Lang; locale: string; rtl: boolean; favs: Favs; verse: Verse | null | undefined }) {
+  const ar = l === "ar";
   const v = verseFor(n);
   const [s, a] = v.key.split(":");
   const cl = classicalName(n, f.father);
   const fam = f.family.trim();
-  const famLine = fam ? `${latinOf(n)} ${fam}` : null;
+  const famLine = fam ? (ar ? (hasArabic(fam) ? `${n.ar} ${fam}` : null) : `${latinOf(n)} ${fam}`) : null;
   const kind = v.kind === "theme" ? t("v_theme", { theme: THEME_LABEL[l][v.theme!] }) : t(`v_${v.kind}`);
   const on = favs.has(n.key);
   const share = () => {
-    const lines = [`${n.ar} – ${latinOf(n)}`, meaningOf(n, l), cl?.latin, `${kind}: ${t("verseRef", { ref: v.key })}`, `${SITE}/${l}/names`].filter(Boolean);
+    const lines = [ar ? n.ar : `${n.ar} – ${latinOf(n)}`, meaningOf(n, l), ar ? cl?.arabic : cl?.latin, `${kind}: ${t("verseRef", { ref: v.key })}`, `${SITE}/${locale}/names`].filter(Boolean);
     shareText(t("title"), lines.join("\n"));
   };
   return (
@@ -297,14 +297,14 @@ function ResultCard({ n, f, t, l, favs, verse }: { n: BabyName; f: Form; t: Tx; 
       <View style={{ paddingHorizontal: 22, paddingBottom: 24, paddingTop: 36, alignItems: "center" }}>
         <OriginBadges n={n} l={l} dark />
         <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 46, lineHeight: 70, color: stage.gold, writingDirection: "rtl", marginTop: 12 }}>{n.ar}</Text>
-        <Text style={{ fontFamily: FONT.display, fontSize: 26, lineHeight: 30, color: "#eef0f3", textAlign: "center" }}>{latinOf(n)}</Text>
-        {n.tr.length > 1 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: "rgba(255,255,255,0.5)", marginTop: 2, textAlign: "center" }}>{n.tr.slice(1).join(" · ")}</Text> : null}
-        <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 12, textAlign: "center" }}>{meaningOf(n, l)}</Text>
+        {!ar ? <Text style={{ fontFamily: FONT.display, fontSize: 26, lineHeight: 30, color: "#eef0f3", textAlign: "center" }}>{latinOf(n)}</Text> : null}
+        {!ar && n.tr.length > 1 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: "rgba(255,255,255,0.5)", marginTop: 2, textAlign: "center" }}>{n.tr.slice(1).join(" · ")}</Text> : null}
+        <Text style={{ fontFamily: ar ? ARABIC_FONT : FONT.regular, fontSize: ar ? 19 : 15, lineHeight: ar ? 34 : 24, color: "rgba(255,255,255,0.8)", marginTop: 12, textAlign: "center" }}>{meaningOf(n, l)}</Text>
 
         {cl?.latin || cl?.arabic || famLine ? (
           <View style={{ alignSelf: "stretch", marginTop: 20, borderRadius: R.card, borderWidth: 1, borderColor: "rgba(255,255,255,0.1)", backgroundColor: "rgba(255,255,255,0.04)", paddingHorizontal: 16, paddingVertical: 12, alignItems: "center" }}>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 10.5, letterSpacing: 1.7, textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>{t("classical")}</Text>
-            {cl?.latin ? <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: "#eef0f3", marginTop: 4, textAlign: "center" }}>{cl.latin}</Text> : null}
+            {!ar && cl?.latin ? <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: "#eef0f3", marginTop: 4, textAlign: "center" }}>{cl.latin}</Text> : null}
             {cl?.arabic ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 40, color: stage.gold, writingDirection: "rtl", marginTop: 4 }}>{cl.arabic}</Text> : null}
             {famLine ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: "rgba(255,255,255,0.7)", marginTop: 4 }}>{famLine}</Text> : null}
           </View>
@@ -314,12 +314,12 @@ function ResultCard({ n, f, t, l, favs, verse }: { n: BabyName; f: Form; t: Tx; 
           <Text style={{ fontFamily: FONT.semibold, fontSize: 10.5, letterSpacing: 1.7, textTransform: "uppercase", color: stage.gold }}>{kind}</Text>
           {verse === undefined ? <View style={{ height: 64, borderRadius: R.md, backgroundColor: "rgba(255,255,255,0.1)", marginTop: 12 }} /> : verse ? (
             <>
-              <Text style={{ fontFamily: ARABIC_FONT, fontSize: 20, lineHeight: 42, color: "#ffffff", writingDirection: "rtl", textAlign: "right", marginTop: 8 }}>{verse.ar}</Text>
-              {verse.tr ? <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 21, color: "rgba(255,255,255,0.65)", marginTop: 8 }}>{verse.tr}</Text> : null}
+              <Text style={{ fontFamily: ARABIC_FONT, fontSize: 20, lineHeight: 42, color: "#ffffff", writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 8 }}>{verse.ar}</Text>
+              {!ar && verse.tr ? <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 21, color: "rgba(255,255,255,0.65)", marginTop: 8 }}>{verse.tr}</Text> : null}
             </>
           ) : null}
           <Pressable onPress={() => go(`/surah/${s}?v=${a}`)} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: 8, marginTop: 12, alignSelf: "flex-start", paddingVertical: 4 }}>
-            <Icon name="playSm" color={stage.gold} size={16} filled />
+            <View style={{ transform: [{ scaleX: rtl ? -1 : 1 }] }}><Icon name="playSm" color={stage.gold} size={16} filled /></View>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.gold }}>{t("listen")} · {t("verseRef", { ref: v.key })}</Text>
           </Pressable>
         </View>
@@ -336,6 +336,7 @@ function ResultCard({ n, f, t, l, favs, verse }: { n: BabyName; f: Form; t: Tx; 
 // ---------------------------------------------------------------- browse all names
 function Browse({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo: ScrollTo }) {
   const th = useTheme();
+  const ar = l === "ar";
   const [g, setG] = useState<Gender | "all">("all");
   const [theme, setTheme] = useState<Theme | "">("");
   const [origin, setOrigin] = useState<OriginFilter | "">("");
@@ -347,7 +348,10 @@ function Browse({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
   const groupY = useRef<Record<string, number>>({});
 
   const byGender = useMemo(() => NAMES.filter((n) => g === "all" || n.g === g), [g]);
-  const letters = useMemo(() => [...new Set(byGender.map((n) => letterOf(n, l)))].sort(), [byGender, l]);
+  const letters = useMemo(() => {
+    const set = new Set(byGender.map((n) => letterOf(n, l)));
+    return ar ? AR_ALPHABET.filter((c) => set.has(c)) : [...set].sort();
+  }, [byGender, l, ar]);
   const list = useMemo(() => {
     const qq = q.trim();
     const qa = hasArabic(qq) ? normArabic(qq) : "";
@@ -361,13 +365,13 @@ function Browse({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
       if (qa) return normArabic(n.ar).includes(qa) || normArabic(n.arM).includes(qa);
       if (ql) return (qn && n.tr.some((x) => normLatin(x).includes(qn))) || meaningOf(n, l).toLowerCase().includes(ql);
       return true;
-    }).sort((a, b) => normLatin(latinOf(a)).localeCompare(normLatin(latinOf(b))));
-  }, [byGender, theme, origin, letter, maxLen, q, l]);
+    }).sort((a, b) => (ar ? normArabic(a.ar).localeCompare(normArabic(b.ar), "ar") : normLatin(latinOf(a)).localeCompare(normLatin(latinOf(b)))));
+  }, [byGender, theme, origin, letter, maxLen, q, l, ar]);
   const groups = useMemo(() => {
     const m = new Map<string, BabyName[]>();
     for (const n of list) { const k = letterOf(n, l); m.set(k, [...(m.get(k) ?? []), n]); }
-    return [...m.entries()].sort((a, b) => a[0].localeCompare(b[0]));
-  }, [list, l]);
+    return ar ? AR_ALPHABET.filter((c) => m.has(c)).map((c) => [c, m.get(c)!] as const) : [...m.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+  }, [list, l, ar]);
 
   return (
     <View>
@@ -414,8 +418,8 @@ function Browse({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
           <View style={{ paddingHorizontal: 20, paddingVertical: 36, alignItems: "center" }}>
             <OriginBadges n={surprise} l={l} dark />
             <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 56, lineHeight: 84, color: stage.gold, writingDirection: "rtl", marginTop: 12 }}>{surprise.ar}</Text>
-            <Text style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 35, color: "#eef0f3", textAlign: "center" }}>{latinOf(surprise)}</Text>
-            <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 25, color: "rgba(255,255,255,0.8)", marginTop: 12, textAlign: "center", maxWidth: 420 }}>{meaningOf(surprise, l)}</Text>
+            {!ar ? <Text style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 35, color: "#eef0f3", textAlign: "center" }}>{latinOf(surprise)}</Text> : null}
+            <Text style={{ fontFamily: ar ? ARABIC_FONT : FONT.regular, fontSize: ar ? 20 : 16, lineHeight: ar ? 36 : 25, color: "rgba(255,255,255,0.8)", marginTop: 12, textAlign: "center", maxWidth: 420 }}>{meaningOf(surprise, l)}</Text>
             <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: 8, marginTop: 24 }}>
               <StageButton gold={favs.has(surprise.key)} title={favs.has(surprise.key) ? t("saved") : t("save")} icon={<Heart on={favs.has(surprise.key)} color={favs.has(surprise.key) ? goldButton.text : "#ffffff"} />} onPress={() => favs.toggle(surprise.key)} />
               {surprise.q ? <StageButton title={t("verseRef", { ref: surprise.q })} onPress={() => { const [s, v] = surprise.q!.split(":"); go(`/surah/${s}?v=${v}`); }} /> : null}
@@ -448,22 +452,23 @@ function Browse({ t, l, favs, scrollTo }: { t: Tx; l: Lang; favs: Favs; scrollTo
 
 const Row = memo(function Row({ n, t, l, on, toggle }: { n: BabyName; t: Tx; l: Lang; on: boolean; toggle: (k: string) => void }) {
   const th = useTheme();
+  const ar = l === "ar";
   return (
     <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 12, borderBottomWidth: 1, borderBottomColor: th.line, paddingVertical: 12 }}>
       <View style={{ flex: 1, minWidth: 0 }}>
         <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "baseline", columnGap: 8, rowGap: 4 }}>
-          <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: th.ink }}>{latinOf(n)}</Text>
-          {n.tr.length > 1 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: th.muted }}>{n.tr.slice(1).join(" · ")}</Text> : null}
+          {ar ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 40, color: th.gold }}>{n.ar}</Text> : <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: th.ink }}>{latinOf(n)}</Text>}
+          {!ar && n.tr.length > 1 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: th.muted }}>{n.tr.slice(1).join(" · ")}</Text> : null}
           <View style={{ borderRadius: R.pill, backgroundColor: th.fill, paddingHorizontal: 8, paddingVertical: 1 }}><Text style={{ fontFamily: FONT.semibold, fontSize: 10.5, color: th.muted }}>{t(`g_${n.g}`)}</Text></View>
         </View>
-        <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: th.muted, marginTop: 2 }}>{meaningOf(n, l)}</Text>
+        <Text style={{ fontFamily: ar ? ARABIC_FONT : FONT.regular, fontSize: ar ? 17 : 14, lineHeight: ar ? 30 : 22, color: th.muted, marginTop: 2 }}>{meaningOf(n, l)}</Text>
         <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 8, marginTop: 4 }}>
           <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: th.gold }}>{n.o.slice(0, 2).map((o) => ORIGIN_LABEL[l][o]).join(" · ")}</Text>
           {n.q ? <Text onPress={() => go(`/surah/${n.q!.split(":")[0]}?v=${n.q!.split(":")[1]}`)} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 12, color: th.accent }}>{t("verseRef", { ref: n.q })}</Text> : null}
         </View>
       </View>
-      <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 40, color: th.gold, writingDirection: "rtl" }}>{n.ar}</Text>
-      <Pressable onPress={() => toggle(n.key)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${on ? t("favRemove") : t("favAdd")}: ${latinOf(n)}`}
+      {!ar ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 40, color: th.gold, writingDirection: "rtl" }}>{n.ar}</Text> : null}
+      <Pressable onPress={() => toggle(n.key)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${on ? t("favRemove") : t("favAdd")}: ${ar ? n.ar : latinOf(n)}`}
         style={{ width: 40, height: 40, borderRadius: 20, borderWidth: 1, borderColor: on ? "rgb(201,166,94)" : th.line, alignItems: "center", justifyContent: "center" }}>
         <Heart on={on} color={on ? th.gold : th.muted} />
       </Pressable>
@@ -472,10 +477,11 @@ const Row = memo(function Row({ n, t, l, on, toggle }: { n: BabyName; t: Tx; l: 
 });
 
 // ---------------------------------------------------------------- favourites, most loved, notes
-function FavList({ t, l, favs }: { t: Tx; l: Lang; favs: Favs }) {
+function FavList({ t, l, locale, favs }: { t: Tx; l: Lang; locale: string; favs: Favs }) {
   const th = useTheme();
+  const ar = l === "ar";
   const names = favs.list.map((k) => NAME_BY_KEY.get(k)).filter(Boolean) as BabyName[];
-  const text = () => [...names.map((n) => `${latinOf(n)} (${n.ar}) – ${meaningOf(n, l)}`), "", `${SITE}/${l}/names`].join("\n");
+  const text = () => [...names.map((n) => (ar ? `${n.ar} – ${n.arM}` : `${latinOf(n)} (${n.ar}) – ${meaningOf(n, l)}`)), "", `${SITE}/${locale}/names`].join("\n");
   return (
     <View style={{ marginTop: 48 }}>
       <H2>{t("favTitle")}</H2>
@@ -486,10 +492,10 @@ function FavList({ t, l, favs }: { t: Tx; l: Lang; favs: Favs }) {
               <View key={n.key} style={{ flexDirection: "row", alignItems: "center", gap: 12, borderRadius: R.card, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface, paddingHorizontal: 16, paddingVertical: 12 }}>
                 <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 40, color: th.gold, writingDirection: "rtl" }}>{n.ar}</Text>
                 <View style={{ flex: 1, minWidth: 0 }}>
-                  <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: th.ink }}>{latinOf(n)}</Text>
-                  <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 13, color: th.muted }}>{meaningOf(n, l)}</Text>
+                  {!ar ? <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: th.ink }}>{latinOf(n)}</Text> : null}
+                  <Text numberOfLines={1} style={{ fontFamily: ar ? ARABIC_FONT : FONT.regular, fontSize: ar ? 16 : 13, lineHeight: ar ? 28 : undefined, color: th.muted }}>{meaningOf(n, l)}</Text>
                 </View>
-                <Pressable onPress={() => favs.toggle(n.key)} accessibilityRole="button" accessibilityLabel={`${t("favRemove")}: ${latinOf(n)}`} style={{ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center" }}>
+                <Pressable onPress={() => favs.toggle(n.key)} accessibilityRole="button" accessibilityLabel={`${t("favRemove")}: ${ar ? n.ar : latinOf(n)}`} style={{ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center" }}>
                   <Heart on color={th.gold} />
                 </Pressable>
               </View>
@@ -508,6 +514,7 @@ function FavList({ t, l, favs }: { t: Tx; l: Lang; favs: Favs }) {
 
 function Loved({ t, l, loved }: { t: Tx; l: Lang; loved: { id: string; n: number }[] | null }) {
   const th = useTheme();
+  const ar = l === "ar";
   const items = (loved ?? []).map((x) => ({ n: NAME_BY_KEY.get(x.id), c: x.n })).filter((x): x is { n: BabyName; c: number } => !!x.n);
   return (
     <View style={{ marginTop: 48 }}>
@@ -524,7 +531,7 @@ function Loved({ t, l, loved }: { t: Tx; l: Lang; loved: { id: string; n: number
               </View>
               <View style={{ flex: 1, minWidth: 0 }}>
                 <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 36, color: th.gold, writingDirection: "rtl", textAlign: "left" }}>{n.ar}</Text>
-                <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13, color: th.ink }}>{latinOf(n)} <Text style={{ fontFamily: FONT.regular, color: th.muted }}>· {t(`g_${n.g}`)}</Text></Text>
+                {!ar ? <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13, color: th.ink }}>{latinOf(n)} <Text style={{ fontFamily: FONT.regular, color: th.muted }}>· {t(`g_${n.g}`)}</Text></Text> : null}
               </View>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
                 <Heart on size={14} color={th.gold} />
@@ -538,8 +545,9 @@ function Loved({ t, l, loved }: { t: Tx; l: Lang; loved: { id: string; n: number
   );
 }
 
-function Notes({ t }: { t: Tx }) {
+function Notes({ t, l }: { t: Tx; l: Lang }) {
   const th = useTheme();
+  const ar = l === "ar";
   const head = { fontFamily: FONT.display, fontSize: 20, lineHeight: 26, color: th.ink };
   const card = { borderRadius: R.md, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface, padding: 20 };
   return (
@@ -547,8 +555,8 @@ function Notes({ t }: { t: Tx }) {
       <Callout style={{ padding: 20 }}>
         <Text accessibilityRole="header" style={head}>{t("abdTitle")}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 8 }}>{t("abdText")}</Text>
-        <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: th.gold, writingDirection: "rtl", textAlign: "right", marginTop: 12 }}>{ABD_HADITH_AR}</Text>
-        <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 8 }}>{t("abdHadith")}</Text>
+        {!ar ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: th.gold, writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 12 }}>{ABD_HADITH_AR}</Text> : null}
+        <Text style={ar ? { fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: th.gold, marginTop: 8 } : { fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 8 }}>{t("abdHadith")}</Text>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: th.muted, marginTop: 4 }}>{t("abdSrc")}</Text>
       </Callout>
       <Callout style={{ padding: 20 }}>

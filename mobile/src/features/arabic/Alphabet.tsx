@@ -3,6 +3,7 @@ import { Animated, Easing, Pressable, StyleSheet, Text, View, useWindowDimension
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, LinearGradient as SvgLinear, Path, RadialGradient, Stop } from "react-native-svg";
 import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
+import { courseLang, type CourseLang } from "./lang";
 import { useLang } from "@/i18n";
 import { LETTERS, arName, forms, type Letter } from "@/web/arabic";
 import { GoldRing, useReduceMotion, useTurn } from "../coursekit/motion";
@@ -18,7 +19,7 @@ import { ALPHA_T } from "./texts";
 const letterName = (ch: string) => arName(ch).replace(/^\u0627\u0644/, "");
 
 export function AlphabetRing() {
-  const { lang } = useLang();
+  const lang = courseLang(useLang().lang);
   const T = ALPHA_T[lang];
   const { width } = useWindowDimensions();
   const size = Math.min(width - 40, 460);
@@ -91,7 +92,7 @@ export function AlphabetRing() {
 
 /** every letter with its name, sound and its forms at the start, in the middle and at the end of a word */
 export function LetterSheet() {
-  const { lang } = useLang();
+  const lang = courseLang(useLang().lang);
   const T = ALPHA_T[lang];
   const rows: Letter[][] = [];
   LETTERS.forEach((l, k) => { if (k % 2 === 0) rows.push([]); rows[rows.length - 1].push(l); });
@@ -107,7 +108,7 @@ export function LetterSheet() {
   );
 }
 
-function LetterCard({ l, k, T, lang }: { l: Letter; k: number; T: (typeof ALPHA_T)["en"]; lang: "de" | "en" }) {
+function LetterCard({ l, k, T, lang }: { l: Letter; k: number; T: (typeof ALPHA_T)["en"]; lang: CourseLang }) {
   const t = useTheme();
   const [on, setOn] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);

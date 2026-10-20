@@ -7,7 +7,7 @@ import { SectionTitle, Stage } from "@/components/brand";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { getChapter, getVerseByKey, type Chapter, type SingleVerse } from "@/lib/quran";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { DUA_OF_MONTH, SURAH_OF_MONTH, hijriMonth, surahOfDay } from "@/web/featured";
 import { hijriMonthName } from "@/web/hijri";
 import { SUNNAH_DUAS } from "@/web/sunnahDuas";
@@ -74,16 +74,17 @@ export function Featured({ layout = "carousel", title = true }: { layout?: "caro
 
   const sDua = dua.sunnah ? [...SUNNAH_DUAS, ...SUNNAH_DUAS_2].find((d) => d.id === dua.sunnah) : undefined;
   const duaAr = qDua?.text_uthmani ?? sDua?.ar ?? "";
-  const duaTr = qDua?.translation ?? (sDua ? (lang === "de" ? sDua.de : sDua.en) : "");
+  // website rule: de | ar | en; Arabic readers get no translation line and no Latin surah name
+  const L = lang === "de" ? "de" : lang === "ar" ? "ar" : "en";
+  const duaTr = L === "ar" ? "" : qDua?.translation ?? (sDua ? (L === "de" ? sDua.de : sDua.en) : "");
   const duaSrc = dua.quran ? `Quran ${dua.quran}` : sDua?.src ?? "";
-  const L = lang === "de" ? "de" : "en";
 
   const cardW = layout === "carousel" ? Math.min(300, width - 64) : undefined;
   const kicker = (s: string, color: string) => <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.9, textTransform: "uppercase", color }}>{s}</Text>;
   const chapterLines = (c: Chapter | null, n: number) => (
     <>
       <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 32, lineHeight: 54, color: hm.goldD, writingDirection: "rtl", textAlign: "left", marginTop: 8 }}>{c ? `سورة ${c.name_arabic}` : " "}</Text>
-      <Text style={{ fontFamily: FONT.bold, fontSize: 19, color: t.ink }}>{n}. {c?.name_simple ?? ""}</Text>
+      {L !== "ar" ? <Text style={{ fontFamily: FONT.bold, fontSize: 19, color: t.ink }}>{n}. {c?.name_simple ?? ""}</Text> : null}
       <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, color: t.muted, marginTop: 2 }}>{c ? `${c.translated_name.name} · ${w("verses", { n: c.verses_count })}` : " "}</Text>
     </>
   );
@@ -116,7 +117,7 @@ export function Featured({ layout = "carousel", title = true }: { layout?: "caro
       <IllumFrame rosettes={false} />
       <View style={{ padding: 22, flex: 1 }}>
         {kicker(w("dua", { month: monthName }), stage.gold)}
-        <Text numberOfLines={4} style={{ fontFamily: ARABIC_FONT, fontSize: 20, lineHeight: 38, color: GOLD_L, writingDirection: "rtl", textAlign: "right", marginTop: 12 }}>{duaAr}</Text>
+        <Text numberOfLines={4} style={{ fontFamily: ARABIC_FONT, fontSize: 20, lineHeight: 38, color: GOLD_L, writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 12 }}>{duaAr}</Text>
         {duaTr ? <Text numberOfLines={3} style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: "rgba(255,255,255,0.7)", marginTop: 8 }}>{duaTr}</Text> : null}
         <Text numberOfLines={3} style={{ flex: 1, fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: "rgba(255,255,255,0.5)", marginTop: 10 }}>{dua.reason[L]} · {duaSrc}</Text>
         <Text onPress={() => (dua.quran ? openVerse(dua.quran) : router.push("/duas" as Href))} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 14, color: stage.gold, marginTop: 14 }}>{dua.quran ? w("listen") : w("moreDuas")}</Text>

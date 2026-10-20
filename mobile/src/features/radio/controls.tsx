@@ -8,11 +8,11 @@ import { Icon, type IconName } from "@/components/icons";
 // Buttons and small form controls of the radio in the website's style.
 
 /** round button on the stage: hairline ring, white icon (h-12 w-12 rounded-full border-white/20) */
-export function RoundButton({ icon, label, onPress, size = 48, disabled }: { icon: IconName; label: string; onPress: () => void; size?: number; disabled?: boolean }) {
+export function RoundButton({ icon, label, onPress, size = 48, disabled, fixed }: { icon: IconName; label: string; onPress: () => void; size?: number; disabled?: boolean; fixed?: boolean }) {
   return (
     <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityLabel={label} hitSlop={4}
       style={({ pressed }) => ({ width: size, height: size, borderRadius: size / 2, borderWidth: 1, borderColor: pressed ? "#ffffff" : "rgba(255,255,255,0.22)", alignItems: "center", justifyContent: "center", opacity: disabled ? 0.4 : 1 })}>
-      <Icon name={icon} color="#ffffff" size={size * 0.4} />
+      <Icon name={icon} color="#ffffff" size={size * 0.4} fixed={fixed} />
     </Pressable>
   );
 }

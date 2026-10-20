@@ -98,7 +98,7 @@ export function StatsView({ only, embedded = false, hero = false }: StatsViewPro
         <Stage hairlines={false} rounded={embedded ? 16 : 0}>
           <View style={[pad, hero && { paddingTop: insets.top + 8 }]}>
             {hero ? (
-              <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6, marginBottom: 12 }}>
+              <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6, marginBottom: 12 }}>
                 <Icon name="chevronLeft" color="#ffffff" size={24} />
               </Pressable>
             ) : null}
@@ -347,7 +347,7 @@ function StickerDialog({ open, onClose }: { open: { def: StickerDef; have: boole
           <Pressable onPress={() => undefined} style={{ width: "100%", maxWidth: 384 }} accessibilityViewIsModal>
             <Stage rounded={16} style={{ borderWidth: 1, borderColor: "rgba(214,180,108,0.3)" }}>
               <View style={{ padding: 28, alignItems: "center" }}>
-                {open.have ? <Rays size={400} style={{ top: 100 - 200, left: "50%", marginLeft: -200 }} /> : null}
+                {open.have ? <Rays size={400} style={{ top: 100 - 200, left: "50%", marginStart: -200 }} /> : null}
                 <StickerPop key={def.id}><Sticker def={def} size={140} locked={!open.have} /></StickerPop>
                 <Text style={{ fontFamily: CALLIG_FONT, fontSize: 36, lineHeight: 54, color: stage.gold, marginTop: 16 }}>{def.ar}</Text>
                 <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 24, color: "#eef0f3", marginTop: 4, textAlign: "center" }}>{tr(`s_${def.id}`)}</Text>

@@ -71,7 +71,7 @@ export function Markdown({ text }: { text: string }) {
         if (b.kind === "p") return <Text key={bi} style={[body, { marginTop: first ? 0 : 14 }]}>{inl(b.text, `p${bi}`)}</Text>;
         if (b.kind === "quote") {
           return (
-            <View key={bi} style={{ marginTop: 14, borderLeftWidth: 2, borderLeftColor: "rgba(201,166,94,0.6)", paddingLeft: 14 }}>
+            <View key={bi} style={{ marginTop: 14, borderStartWidth: 2, borderStartColor: "rgba(201,166,94,0.6)", paddingStart: 14 }}>
               <Text style={[body, { fontFamily: FONT.italic }]}>{inl(b.text, `q${bi}`)}</Text>
             </View>
           );
@@ -80,7 +80,7 @@ export function Markdown({ text }: { text: string }) {
           return (
             <View key={bi} style={{ marginTop: 14, gap: 8 }}>
               {b.items.map((it, li) => (
-                <View key={li} style={{ flexDirection: "row", gap: 12, marginLeft: it.sub ? 24 : 0 }}>
+                <View key={li} style={{ flexDirection: "row", gap: 12, marginStart: it.sub ? 24 : 0 }}>
                   <View style={{ width: 12, height: 1, backgroundColor: t.gold, marginTop: 14 }} />
                   <Text style={[body, { flex: 1 }]}>{inl(it.text, `u${bi}${li}`)}</Text>
                 </View>
@@ -92,7 +92,7 @@ export function Markdown({ text }: { text: string }) {
         return (
           <View key={bi} style={{ marginTop: 14, gap: 8 }}>
             {b.items.map((it, li) => (
-              <View key={li} style={{ flexDirection: "row", gap: 10, marginLeft: it.sub ? 24 : 0 }}>
+              <View key={li} style={{ flexDirection: "row", gap: 10, marginStart: it.sub ? 24 : 0 }}>
                 <Text style={[body, { fontFamily: FONT.bold, color: t.gold, minWidth: 18 }]}>{it.sub ? "·" : `${++n}.`}</Text>
                 <Text style={[body, { flex: 1 }]}>{inl(it.text, `o${bi}${li}`)}</Text>
               </View>

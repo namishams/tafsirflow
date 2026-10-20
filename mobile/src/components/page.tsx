@@ -58,7 +58,7 @@ export function PageHero({ eyebrow, title, lead, arabic, children, topInset = fa
     <Stage hairlines={false}>
       <View style={{ paddingHorizontal: 20, paddingTop: (topInset ? insets.top : 0) + (back ? 8 : 28), paddingBottom: arcade ? 8 : 28 }}>
         {back ? (
-          <Pressable onPress={goBack} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginBottom: 12, marginLeft: -6 }}>
+          <Pressable onPress={goBack} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginBottom: 12, marginStart: -6 }}>
             <Icon name="chevronLeft" color="#ffffff" size={24} />
           </Pressable>
         ) : null}

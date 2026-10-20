@@ -1,4 +1,5 @@
 import { useLang } from "@/i18n";
+import { moduleText } from "@/i18n/app";
 
 // App-only texts of the radio, reciter and khatm screens (everything else comes from the website's messages via useWebT).
 const S = {
@@ -76,7 +77,7 @@ export type AppKey = keyof typeof S.en;
 export function useAppT() {
   const { lang } = useLang();
   return (key: AppKey, params?: Record<string, string | number>) => {
-    const s = (S[lang] ?? S.en)[key] ?? S.en[key];
+    const s = moduleText("radio", S, lang)[key] ?? S.en[key];
     return params ? s.replace(/\{(\w+)\}/g, (_, p: string) => String(params[p] ?? `{${p}}`)) : s;
   };
 }

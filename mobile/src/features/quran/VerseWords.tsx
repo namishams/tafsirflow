@@ -17,7 +17,7 @@ export function VerseWords({ verse, activeWord, hide = 0, revealed = false, seed
   const words = verse.words.filter((w) => w.char_type_name === "word");
   const lineHeight = Math.round(size * 2.05);
   return (
-    <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", alignItems: "center", columnGap: size * 0.28 }} accessible accessibilityLabel={verse.text_uthmani} accessibilityLanguage="ar">
+    <View style={{ flexDirection: "row", direction: "rtl", flexWrap: "wrap", alignItems: "center", columnGap: size * 0.28 }} accessible accessibilityLabel={verse.text_uthmani} accessibilityLanguage="ar">
       {words.map((w, wi) => {
         const randomHidden = hide === 4 && ((hashOf(`${verse.verse_key}:${seed}:${wi}`) % 100) < 45 || (words.length > 1 && wi === hashOf(`${verse.verse_key}:${seed}`) % words.length));
         const covered = !revealed && (hide === 2 || (hide === 1 && wi % 2 === 1) || randomHidden);
@@ -45,7 +45,7 @@ export function WordGrid({ verse, activeWord, onWord }: { verse: Verse; activeWo
   const t = useTheme();
   const words = verse.words.filter((w) => w.char_type_name === "word");
   return (
-    <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 8 }}>
+    <View style={{ flexDirection: "row", direction: "rtl", flexWrap: "wrap", gap: 8 }}>
       {words.map((w) => {
         const on = activeWord === w.position;
         return (

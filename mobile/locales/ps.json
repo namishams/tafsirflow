@@ -1,0 +1,7 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Quran Masterclass",
+    "NSLocationWhenInUseUsageDescription": "Quran Masterclass ستاسو موقعیت یوازې په همدې وسیله کې کاروي، ترڅو ستاسو د ځای لپاره د لمانځه وختونه او د قبلې لوری محاسبه کړي. دا نه خوندي کېږي او نه هېڅ ځای لېږل کېږي.",
+    "NSMicrophoneUsageDescription": "Quran Masterclass مایکروفون یوازې هغه مهال کاروي چې تاسو د تلاوت ازموینه پیل کړئ. ستاسو ثبت په همدې وسیله کې پاتې کېږي او نه پورته کېږي."
+  }
+}

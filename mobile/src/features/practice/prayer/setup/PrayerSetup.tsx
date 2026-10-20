@@ -10,7 +10,7 @@ import { CITIES, METHODS, cityName, type MethodKey, type PrayerSettings, type Sp
 import type { AdhanFile } from "@/web/adhan";
 import { api } from "@/lib/api";
 import { writeJSON } from "@/lib/store";
-import { useLang } from "@/i18n";
+import { intlLocale, useLang, pick } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { FONT, R, goldButton, stage } from "@/lib/theme";
 import { GoldButton, SmallStar, Stage } from "@/components/brand";
@@ -20,7 +20,7 @@ import { OptionSheet } from "../../ui";
 import { useTx } from "../../text";
 import { UI as TRAINER_UI } from "../../web/prayerTrainer";
 import { CITY_KEY, SETTINGS_KEY, SPOT_KEY, placeLabel, storedPlace } from "../place";
-import { ALERTS_KEY, SETUP_KEY, adhanForTradition, alertPrayers, ensurePermission, prayerName, remindsOf, reschedulePrayerAlerts, type AlertPrayer, type Alerts, type PrayerSetup as Setup, type Tradition } from "../alerts";
+import { ALERTS_KEY, SETUP_KEY, adhanForTradition, alertPrayers, andWord, ensurePermission, prayerName, remindsOf, reschedulePrayerAlerts, type AlertPrayer, type Alerts, type PrayerSetup as Setup, type Tradition } from "../alerts";
 import { asrPassage, combinePassage, samePrayerPassage, type Passage } from "./chapters";
 
 type StepId = "place" | "city" | "tradition" | "unsure" | "combine" | "asr" | "method" | "alerts" | "summary" | "declined";
@@ -55,15 +55,15 @@ export default function PrayerSetup() {
   useEffect(() => { api<{ files?: AdhanFile[] }>("/api/adhan").then((d) => setFiles(d.files ?? [])).catch(() => setFiles([])); }, []);
 
   const spot: Spot | null = a.place ? (a.place.kind === "location" ? a.place.spot : CITIES.find((c) => c.id === (a.place as { id: string }).id) ?? null) : null;
-  const place = spot ? placeLabel(spot, l, t("yourPlace")) : "";
+  const place = spot ? placeLabel(spot, lang, t("yourPlace")) : "";
   const shia = a.tradition === "shia";
   const combine = shia && !!a.combine;
   const suggested: MethodKey = shia ? "Tehran" : spot?.method ?? "MuslimWorldLeague";
   const methodOf = a.method === undefined ? null : a.method === "auto" ? (spot?.method ?? "MuslimWorldLeague") : a.method;
   const hasAdhan = !!files && files.length > 0;
-  const fmt = (n: number) => new Intl.NumberFormat(l === "de" ? "de-DE" : "en-GB", { maximumFractionDigits: 1 }).format(n);
+  const fmt = (n: number) => new Intl.NumberFormat(intlLocale(lang), { maximumFractionDigits: 1 }).format(n);
   const tehran = useMemo(() => CalculationMethod.Tehran(), []);
-  const groupName = (p: AlertPrayer) => remindsOf(p, combine).map((x) => (remindsOf(p, combine).length > 1 ? prayerName(x, l) : t(x))).join(l === "de" ? " und " : " and ");
+  const groupName = (p: AlertPrayer) => remindsOf(p, combine).map((x) => (remindsOf(p, combine).length > 1 ? prayerName(x, lang) : t(x))).join(` ${andWord(lang)} `);
 
   const locate = async () => {
     setBusy(true);
@@ -113,7 +113,7 @@ export default function PrayerSetup() {
     const setup: Setup = declined ? { done: true, declined: true, at: Date.now() }
       : { tradition: a.tradition, combine, minutesBefore: a.minutes ?? 0, sound: a.sound ?? "soft", done: true, at: Date.now() };
     writeJSON(SETUP_KEY, setup, true);
-    await reschedulePrayerAlerts(l).catch(() => 0);
+    await reschedulePrayerAlerts(lang).catch(() => 0);
     setBusy(false);
     router.back();
   };
@@ -141,8 +141,8 @@ export default function PrayerSetup() {
   } else if (step === "tradition") {
     body = (
       <Q kicker={tx("setupKicker")} title={tx("qTradition")} lead={tx("qTraditionLead")}>
-        <Choice title={TRAINER_UI[l].sunni} onPress={() => { set({ tradition: "sunni", combine: false }); goTo("asr"); }} />
-        <Choice title={TRAINER_UI[l].shia} onPress={() => { set({ tradition: "shia", madhab: undefined, prayers: [] }); goTo("combine"); }} />
+        <Choice title={pick(TRAINER_UI, lang).sunni} onPress={() => { set({ tradition: "sunni", combine: false }); goTo("asr"); }} />
+        <Choice title={pick(TRAINER_UI, lang).shia} onPress={() => { set({ tradition: "shia", madhab: undefined, prayers: [] }); goTo("combine"); }} />
         <Choice title={tx("unsure")} quiet onPress={() => { set({ tradition: "unsure", combine: false, madhab: "auto" }); goTo("unsure"); }} />
       </Q>
     );
@@ -157,18 +157,18 @@ export default function PrayerSetup() {
   } else if (step === "combine") {
     const p = combinePassage(l);
     body = (
-      <Q kicker={TRAINER_UI[l].shia} title={tx("qCombine")}>
+      <Q kicker={pick(TRAINER_UI, lang).shia} title={tx("qCombine")}>
         {p ? <Quote p={p} /> : null}
-        <Choice title={tx("combine3")} sub={(["fajr", "dhuhr", "maghrib"] as const).map((x) => remindsOf(x, true).map((y) => prayerName(y, l)).join(l === "de" ? " und " : " and ")).join(" · ")}
+        <Choice title={tx("combine3")} sub={(["fajr", "dhuhr", "maghrib"] as const).map((x) => remindsOf(x, true).map((y) => prayerName(y, lang)).join(` ${andWord(lang)} `)).join(" · ")}
           onPress={() => { set({ combine: true, prayers: [] }); goTo("method"); }} />
-        <Choice title={tx("combine5")} sub={(["fajr", "dhuhr", "asr", "maghrib", "isha"] as const).map((x) => prayerName(x, l)).join(" · ")}
+        <Choice title={tx("combine5")} sub={(["fajr", "dhuhr", "asr", "maghrib", "isha"] as const).map((x) => prayerName(x, lang)).join(" · ")}
           onPress={() => { set({ combine: false, prayers: [] }); goTo("method"); }} />
       </Q>
     );
   } else if (step === "asr") {
     const p = asrPassage(l);
     body = (
-      <Q kicker={TRAINER_UI[l].sunni} title={tx("qAsr")}>
+      <Q kicker={pick(TRAINER_UI, lang).sunni} title={tx("qAsr")}>
         {p ? <Quote p={p} /> : null}
         <Choice title={tx("asrShafi")} sub={tx("asrShafiSub")} onPress={() => { set({ madhab: "shafi" }); goTo("method"); }} />
         <Choice title={tx("asrHanafi")} sub={tx("asrHanafiSub")} onPress={() => { set({ madhab: "hanafi" }); goTo("method"); }} />
@@ -221,7 +221,7 @@ export default function PrayerSetup() {
       </Q>
     );
   } else if (step === "summary") {
-    const tradLabel = a.tradition === "shia" ? TRAINER_UI[l].shia : a.tradition === "sunni" ? TRAINER_UI[l].sunni : tx("unsure");
+    const tradLabel = a.tradition === "shia" ? pick(TRAINER_UI, lang).shia : a.tradition === "sunni" ? pick(TRAINER_UI, lang).sunni : tx("unsure");
     const asrLabel = shia ? null : a.madhab === "shafi" ? `${tx("asrShafi")} · ${tx("asrShafiSub")}` : a.madhab === "hanafi" ? `${tx("asrHanafi")} · ${tx("asrHanafiSub")}` : tx("asrUnsureSub");
     const rem = a.prayers.length
       ? `${prayersInMode.filter((p) => a.prayers.includes(p)).map(groupName).join(" · ")}\n${a.minutes ? tx("minutesBefore", { n: a.minutes }) : tx("atTime")} · ${a.sound === "adhan" ? tx("soundAdhan") : tx("soundSoft")}`
@@ -315,7 +315,7 @@ function Choice({ title, sub, icon, onPress, quiet, busy, compact }: { title: st
 function Quote({ p }: { p: Passage }) {
   const tx = useTx();
   return (
-    <View style={{ borderLeftWidth: 2, borderLeftColor: "rgba(214,180,108,0.6)", paddingLeft: 14, paddingVertical: 2, marginBottom: 8 }}>
+    <View style={{ borderStartWidth: 2, borderStartColor: "rgba(214,180,108,0.6)", paddingStart: 14, paddingVertical: 2, marginBottom: 8 }}>
       <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 23, color: "rgba(255,255,255,0.82)" }}>{p.text}</Text>
       <Text onPress={() => go(p.href)} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 12.5, lineHeight: 18, color: stage.gold, marginTop: 8 }}>{tx("fromChapter", { chapter: p.chapter })} →</Text>
     </View>

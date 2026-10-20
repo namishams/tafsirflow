@@ -1,4 +1,5 @@
 import { useLang } from "@/i18n";
+import { moduleText } from "@/i18n/app";
 
 // The few strings the website does not have (app dialogs). Everything else comes from the website's messages through
 // useWebT() and from the website's own text modules (journey.ts, mapContent.ts).
@@ -16,5 +17,5 @@ export type ProgressText = typeof TEXT.en;
 
 export function useText(): ProgressText {
   const { lang } = useLang();
-  return lang === "de" ? TEXT.de : TEXT.en;
+  return moduleText("progress", TEXT, lang);
 }

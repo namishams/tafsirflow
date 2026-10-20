@@ -124,7 +124,7 @@ export function RewardsHost({ children }: { children?: ReactNode }) {
             <Pressable onPress={() => undefined} style={{ width: "100%", maxWidth: 384 }} accessibilityViewIsModal>
               <Stage rounded={16} style={{ borderWidth: 1, borderColor: "rgba(214,180,108,0.3)" }}>
                 <View style={{ padding: 28, alignItems: "center" }}>
-                  <Rays size={420} style={{ top: 110 - 210, left: "50%", marginLeft: -210 }} />
+                  <Rays size={420} style={{ top: 110 - 210, left: "50%", marginStart: -210 }} />
                   <Text style={{ fontFamily: FONT.bold, fontSize: 11, letterSpacing: 2.2, textTransform: "uppercase", color: stage.gold }}>{m.kind === "level" ? tr("newLevel") : tr("newSticker")}</Text>
                   <StickerPop key={m.kind === "level" ? `l${m.n}` : m.id} style={{ marginTop: 16 }}>
                     {def ? <Sticker def={def} size={148} /> : <LevelSeal n={m.kind === "level" ? m.n : 1} />}

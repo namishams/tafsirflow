@@ -18,7 +18,7 @@ export function ProTeaser({ feature = "general", title, body, compact = false, s
   if (compact) {
     return (
       <Stage rounded={R.card} style={style}>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, paddingLeft: 18 }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, paddingStart: 18 }}>
           <SmallStar size={12} color={stage.gold} />
           <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14, lineHeight: 19, color: "#ffffff" }} numberOfLines={2}>{title ?? x.title}</Text>
           <OutlineButton title={x.cta} onStage compact onPress={() => openPro(feature)} />

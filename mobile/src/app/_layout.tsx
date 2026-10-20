@@ -1,3 +1,4 @@
+import "@/lib/digits-install";
 import "@/lib/webshim";
 import { useEffect, useState } from "react";
 import { Stack } from "expo-router";

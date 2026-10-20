@@ -7,7 +7,7 @@ import { FONT, R, useTheme } from "@/lib/theme";
 import { Chip, GoldButton, OutlineButton, Segmented } from "@/components/brand";
 import { readDaily, setDaily, type DailyReminder } from "@/lib/daily";
 import { LinkRow, Page, PageHero, ProBadge, RowGroup } from "@/components/page";
-import { useLang, useT, type LangSetting } from "@/i18n";
+import { intlLocale, langLabel, useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { SITE, ApiError } from "@/lib/api";
 import { useSettings } from "@/lib/settings";
@@ -20,7 +20,7 @@ import type { AppearanceSetting } from "@/lib/theme";
 export default function AccountScreen() {
   const t = useT();
   const theme = useTheme();
-  const { lang, setting, setSetting } = useLang();
+  const { lang, setting } = useLang();
   const { appearance, setAppearance } = useSettings();
   const { user, logout, deleteAccount } = useAuth();
   const { pro, until } = usePro();
@@ -58,7 +58,7 @@ export default function AccountScreen() {
 
           {pro ? (
             <RowGroup>
-              <LinkRow first title={t("pro.active")} subtitle={until ? t("pro.activeUntil", { date: new Date(until).toLocaleDateString(lang === "de" ? "de-DE" : "en-GB") }) : t("pro.name")} icon="sun" right={<ProBadge />} />
+              <LinkRow first title={t("pro.active")} subtitle={until ? t("pro.activeUntil", { date: new Date(until).toLocaleDateString(intlLocale(lang)) }) : t("pro.name")} icon="sun" right={<ProBadge />} />
               <LinkRow title={t("pro.manage")} onPress={manageSubscriptions} />
             </RowGroup>
           ) : (
@@ -72,17 +72,19 @@ export default function AccountScreen() {
             <Segmented<AppearanceSetting> value={appearance} options={[["system", t("account.system")], ["light", t("account.light")], ["dark", t("account.dark")]]} onChange={setAppearance} />
           </Section>
           <Section title={t("account.language")}>
-            <Segmented<LangSetting> value={setting} options={[["system", t("account.languageSystem")], ["de", t("account.german")], ["en", t("account.english")]]} onChange={setSetting} />
+            <RowGroup>
+              <LinkRow first title={setting === "system" ? `${t("account.languageSystem")} · ${langLabel(lang)}` : langLabel(setting)} icon="globe" onPress={() => go("/language")} />
+            </RowGroup>
           </Section>
 
-          <Section title={lang === "de" ? "Tägliche Erinnerung" : "Daily reminder"}>
+          <Section title={t("account.dailyTitle")}>
             <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 14, gap: 12 }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
                 <View style={{ flex: 1 }}>
-                  <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: theme.ink }}>{lang === "de" ? "Heute schon an Allah gedacht?" : "Have you remembered Allah today?"}</Text>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: theme.muted, marginTop: 2 }}>{lang === "de" ? "Eine Mitteilung pro Tag, auch mit Hinweisen auf persönliche Duas." : "One notification a day, including suggestions for personal duas."}</Text>
+                  <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: theme.ink }}>{t("account.dailyQuestion")}</Text>
+                  <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: theme.muted, marginTop: 2 }}>{t("account.dailyLead")}</Text>
                 </View>
-                <Switch value={daily.on} onValueChange={(on) => void updateDaily({ ...daily, on })} trackColor={{ true: theme.accent }} accessibilityLabel={lang === "de" ? "Tägliche Erinnerung" : "Daily reminder"} />
+                <Switch value={daily.on} onValueChange={(on) => void updateDaily({ ...daily, on })} trackColor={{ true: theme.accent }} accessibilityLabel={t("account.dailyTitle")} />
               </View>
               {daily.on ? (
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
@@ -93,9 +95,9 @@ export default function AccountScreen() {
           </Section>
 
           <RowGroup>
-            <LinkRow first title={lang === "de" ? "Mein Profil und Auszeichnungen" : "My profile and achievements"} icon="user" onPress={() => go("/profile")} />
-            <LinkRow title={lang === "de" ? "Statistik" : "Statistics"} icon="list" onPress={() => go("/stats")} />
-            <LinkRow title={lang === "de" ? "Koran-Landkarte" : "Quran map"} icon="map" onPress={() => go("/map")} />
+            <LinkRow first title={t("account.profile")} icon="user" onPress={() => go("/profile")} />
+            <LinkRow title={t("account.stats")} icon="list" onPress={() => go("/stats")} />
+            <LinkRow title={t("account.map")} icon="map" onPress={() => go("/map")} />
           </RowGroup>
 
           <Section title={t("account.legal")}>
@@ -104,8 +106,8 @@ export default function AccountScreen() {
               <LinkRow title={t("account.privacy")} onPress={() => open("/legal/privacy")} />
               <LinkRow title={t("account.imprint")} onPress={() => open("/legal/imprint")} />
               <LinkRow title={t("account.support")} onPress={() => go("/feedback")} />
-              <LinkRow title={lang === "de" ? "Über uns" : "About us"} onPress={() => go("/about")} />
-              <LinkRow title={lang === "de" ? "Änderungen" : "Changelog"} onPress={() => go("/changelog")} />
+              <LinkRow title={t("account.about")} onPress={() => go("/about")} />
+              <LinkRow title={t("account.changelog")} onPress={() => go("/changelog")} />
             </RowGroup>
           </Section>
 

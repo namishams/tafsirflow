@@ -5,3 +5,9 @@ export const UI = {
   en: { read: "Reading mode", close: "Close", prev: "Previous", next: "Next" },
   ar: { read: "وضع القراءة", close: "إغلاق", prev: "السابق", next: "التالي" },
 };
+export const SRC_AR: [RegExp, string][] = [
+  [/Sahih al-Bukhari/g, "صحيح البخاري"], [/Sahih Muslim/g, "صحيح مسلم"], [/Sunan Abi Dawud/g, "سنن أبي داود"],
+  [/Jami[ʿ'’]? at-Tirmidhi/g, "جامع الترمذي"], [/Sunan an-Nasa[ʾ'’]?i/g, "سنن النسائي"], [/Sunan Ibn Majah/g, "سنن ابن ماجه"],
+  [/ten times:/g, "عشر مرات:"], [/;/g, "؛"], [/,/g, "،"],
+];
+export const srcAr = (src: string) => SRC_AR.reduce((x, [re, to]) => x.replace(re, to), src);

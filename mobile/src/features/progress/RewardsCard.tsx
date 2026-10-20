@@ -57,7 +57,7 @@ export function RewardsCard({ marginTop = 0 }: { marginTop?: number }) {
         </View>
         {v.next ? (
           <Pressable onPress={() => go("/stats")} accessibilityRole="link"
-            style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, borderWidth: 1, borderColor: pressed ? "rgba(214,180,108,0.55)" : "rgba(214,180,108,0.25)", backgroundColor: "rgba(255,255,255,0.04)", padding: 12, borderTopLeftRadius: 40, borderTopRightRadius: 40, borderBottomLeftRadius: 10, borderBottomRightRadius: 10, paddingLeft: 18 })}>
+            style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, borderWidth: 1, borderColor: pressed ? "rgba(214,180,108,0.55)" : "rgba(214,180,108,0.25)", backgroundColor: "rgba(255,255,255,0.04)", padding: 12, borderTopLeftRadius: 40, borderTopRightRadius: 40, borderBottomLeftRadius: 10, borderBottomRightRadius: 10, paddingStart: 18 })}>
             <Sticker def={v.next} size={64} locked pct={(v.hours - v.prevH) / (v.next.h - v.prevH)} />
             <View style={{ flex: 1 }}>
               <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: "rgba(255,255,255,0.7)" }}>{tr("nextShort")}</Text>

@@ -1,5 +1,6 @@
 import { useLang } from "@/i18n";
 import { formatWeb } from "@/i18n/web";
+import { moduleText } from "@/i18n/app";
 
 // App-only texts of the courses (everything else comes from the website). German uses "du", like the website.
 const S = {
@@ -38,5 +39,5 @@ export type CourseKey = keyof (typeof S)["en"];
 
 export function useCourseT() {
   const { lang } = useLang();
-  return (key: CourseKey, params?: Record<string, string | number>) => formatWeb(S[lang][key] ?? S.en[key], params);
+  return (key: CourseKey, params?: Record<string, string | number>) => formatWeb(moduleText("coursekit", S, lang)[key] ?? S.en[key], params);
 }

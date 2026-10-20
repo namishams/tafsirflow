@@ -34,7 +34,7 @@ export default function Academy() {
   const streak = streakOf(p);
   const nl = nextLesson(p);
   const ch = (id: number) => chapters.find((c) => c.id === id);
-  const name = (s: number) => ch(s)?.name_simple ?? `Surah ${s}`;
+  const name = (s: number) => ch(s)?.name_simple ?? String(s);
   const weak = weakestVerses(6).filter((x) => x.strength < 0.9);
   const doneCount = Object.values(p.done).filter((x) => x >= PASS).length;
   const go = (s: number, from: number) => router.push(`/academy/${s}/${from}` as Href);

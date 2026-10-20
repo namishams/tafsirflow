@@ -41,7 +41,7 @@ export function RankingScreen() {
 function BackButton({ color }: { color: string }) {
   return (
     <Pressable onPress={() => (router.canGoBack() ? goBack() : router.navigate("/"))} accessibilityRole="button" accessibilityLabel="Back" hitSlop={12}
-      style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
+      style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6 }}>
       <Icon name="chevronLeft" color={color} size={24} />
     </Pressable>
   );

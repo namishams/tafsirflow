@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { useLang } from "@/i18n";
+import { moduleText } from "@/i18n/app";
 
 // Texts that exist only in the app (phone notifications, the live compass, the purchase of a personal dua, native
 // pickers). Everything the website already says comes from the website (useWebT, the synced modules, ./web/*).
@@ -232,7 +233,7 @@ const en: Dict = {
 export function useTx() {
   const { lang } = useLang();
   return useCallback((key: keyof Dict, params?: Record<string, string | number>) => {
-    const s = (lang === "de" ? de : en)[key];
+    const s = moduleText("practice", { de, en }, lang)[key] ?? en[key];
     return params ? s.replace(/\{(\w+)\}/g, (_, p: string) => String(params[p] ?? `{${p}}`)) : s;
   }, [lang]);
 }

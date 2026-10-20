@@ -2,11 +2,12 @@ import { type ReactNode } from "react";
 import { Animated, Pressable, StyleSheet, Text, View, type StyleProp, type ViewStyle } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
-import { CALLIG_FONT, FONT, R, useTheme } from "@/lib/theme";
+import { CALLIG_FONT, FONT, R, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Poster, PosterGrid, SectionTitle, gradientColors } from "@/components/brand";
 import { useWebT } from "@/i18n/web";
 import { TILES } from "@/web/tiles";
 import { COUNTRIES_DE, type ReciterBio } from "@/web/reciters";
+import { COUNTRIES, countryName as countryOf } from "@/lib/countries";
 import { useFadeIn, useReduceMotion } from "@/features/radio/motion";
 import { useQ } from "@/features/radio/art";
 
@@ -19,7 +20,7 @@ export function CalligraphyBackdrop({ text }: { text: string }) {
   const o = useFadeIn(reduce, 2400);
   return (
     <Animated.View pointerEvents="none" style={{ position: "absolute", top: -6, right: -6, left: 40, alignItems: "flex-end", opacity: o }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
-      <Text allowFontScaling={false} numberOfLines={1} adjustsFontSizeToFit style={{ fontFamily: CALLIG_FONT, fontSize: 108, lineHeight: 170, color: "rgba(214,180,108,0.12)", writingDirection: "rtl", textAlign: "right" }}>{text}</Text>
+      <Text allowFontScaling={false} numberOfLines={1} adjustsFontSizeToFit style={{ fontFamily: CALLIG_FONT, fontSize: 108, lineHeight: 170, color: "rgba(214,180,108,0.12)", writingDirection: "rtl", textAlign: AR_RIGHT }}>{text}</Text>
     </Animated.View>
   );
 }
@@ -57,7 +58,12 @@ export function QTile({ children, onPress, style, label }: { children: ReactNode
 /** initials on the seal, like the website (Latin names without Al-/Ash-/Abu …) */
 export const bioInitials = (r: ReciterBio) =>
   r.name.split(/[\s-]+/).filter((w) => /^[A-Z]/.test(w) && !["Al", "Ash", "As", "Ar", "Ad", "At", "Az", "An", "Abu"].includes(w)).slice(0, 2).map((w) => w[0]).join("");
-export const countryName = (r: ReciterBio, lang: string) => (lang === "de" ? COUNTRIES_DE[r.country] ?? r.country : r.country);
+// the reciter's country (an English name on the website) in the reader's language
+const CODE_BY_NAME = new Map(Object.entries(COUNTRIES).map(([code, n]) => [n.en, code]));
+export const countryName = (r: ReciterBio, lang: string) => {
+  const code = CODE_BY_NAME.get(r.country);
+  return code ? countryOf(code, lang) : lang === "de" ? COUNTRIES_DE[r.country] ?? r.country : r.country;
+};
 
 /** "Courses and tools" posters at the end of a page (PosterTiles.tsx MoreTiles) */
 export function MoreTiles({ keys }: { keys: string[] }) {

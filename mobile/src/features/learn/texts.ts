@@ -1,4 +1,5 @@
 import { useLang } from "@/i18n";
+import { moduleText } from "@/i18n/app";
 
 const T = {
   de: {
@@ -27,6 +28,6 @@ const T = {
 
 export function useLearnT() {
   const { lang } = useLang();
-  const d = T[lang] ?? T.en;
+  const d = moduleText("learn", T, lang);
   return (k: keyof typeof T.en, p?: Record<string, string | number>) => (p ? d[k].replace(/\{(\w+)\}/g, (_, x: string) => String(p[x] ?? "")) : d[k]);
 }

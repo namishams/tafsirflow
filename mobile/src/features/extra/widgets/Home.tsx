@@ -5,7 +5,7 @@ import { Display, GoldButton, OutlineButton, Poster, PosterGrid, Stage, gradient
 import { Icon } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
 import { useAuth } from "@/lib/auth";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { HOME_TILES, TILES } from "@/web/tiles";
 import { Arch, GOLD, GOLD_L, HmCard, HomeStar, IllumFrame, QuranQuote, StarGlyph, WarmSection, alpha, useHm, useVerseText } from "../art";
 import { KidsToggle } from "../KidsToggle";
@@ -59,7 +59,7 @@ export function HomeHero({ topInset = 0 }: { topInset?: number }) {
         </View>
         <View style={{ flexDirection: "row", marginTop: 26, borderTopWidth: 1, borderBottomWidth: 1, borderColor: "rgba(214,180,108,0.15)" }}>
           {([[114, "statSurahs"], [6236, "statVerses"]] as [number, string][]).map(([v, k], i) => (
-            <View key={k} style={{ flex: 1, paddingVertical: 14, paddingHorizontal: 12, borderLeftWidth: i ? 1 : 0, borderLeftColor: "rgba(214,180,108,0.15)" }}>
+            <View key={k} style={{ flex: 1, paddingVertical: 14, paddingHorizontal: 12, borderStartWidth: i ? 1 : 0, borderStartColor: "rgba(214,180,108,0.15)" }}>
               <CountUp to={v} style={{ fontFamily: FONT.display, fontSize: 24, color: "#ffffff" }} />
               <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginTop: 4 }}><StarGlyph size={8} color={stage.gold} /><Text style={{ fontFamily: FONT.regular, fontSize: 12, color: "rgba(255,255,255,0.6)" }}>{w(k)}</Text></View>
             </View>
@@ -71,7 +71,7 @@ export function HomeHero({ topInset = 0 }: { topInset?: number }) {
             <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: "rgba(255,255,255,0.55)" }}>Al-Fatihah · 1</Text>
             <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: "rgba(255,255,255,0.55)" }}>Mishary Alafasy</Text>
           </View>
-          <Text style={{ fontFamily: ARABIC_FONT, fontSize: 34, lineHeight: 66, color: "#ffffff", writingDirection: "rtl", textAlign: "right", marginTop: 12 }}>
+          <Text style={{ fontFamily: ARABIC_FONT, fontSize: 34, lineHeight: 66, color: "#ffffff", writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 12 }}>
             {words.map((wd, i) => <Text key={i} style={i === lit && !reduced ? { color: stage.gold } : null}>{wd}{i < words.length - 1 ? " " : ""}</Text>)}
           </Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>{w("heroVerse")}</Text>
@@ -127,7 +127,7 @@ export function HomeWhy() {
       <View style={{ paddingHorizontal: 20, paddingVertical: 44 }}>
         <H2>{w("whyTitle")}</H2>
         <View style={{ marginTop: 18 }}><QuranQuote verseKey="17:9" size={22} color={hm.goldD} center={false} /></View>
-        <View style={{ gap: 14, marginTop: 18, borderLeftWidth: 1, borderLeftColor: alpha(GOLD, 0.3), paddingLeft: 16 }}>
+        <View style={{ gap: 14, marginTop: 18, borderStartWidth: 1, borderStartColor: alpha(GOLD, 0.3), paddingStart: 16 }}>
           <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 25, color: t.muted }}>{w("whyP1")}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 25, color: t.muted }}>{w("whyP2")}</Text>
         </View>
@@ -338,7 +338,7 @@ export function HomeTools() {
             <HmCard key={k} corners={false} onPress={() => go(`/${k}`)} accessibilityLabel={w(`tool_${k}`)} style={{ padding: 22, overflow: "hidden" }}>
               <Text allowFontScaling={false} style={{ position: "absolute", right: 0, bottom: -18, fontFamily: CALLIG_FONT, fontSize: 64, lineHeight: 100, color: alpha(GOLD, 0.14) }}>{TILES[k === "academy" ? "courses" : k]?.ar}</Text>
               <Text style={{ fontFamily: FONT.bold, fontSize: 18, color: t.ink }}>{w(`tool_${k}`)}</Text>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.muted, marginTop: 4, paddingRight: 40 }}>{w(`tool_${k}D`)}</Text>
+              <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.muted, marginTop: 4, paddingEnd: 40 }}>{w(`tool_${k}D`)}</Text>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.6, textTransform: "uppercase", color: t.accent, marginTop: 14 }}>{w("open")}</Text>
             </HmCard>
           ))}

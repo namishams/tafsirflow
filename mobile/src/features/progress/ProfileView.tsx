@@ -242,7 +242,7 @@ export function ProfileView({ initialTab = "overview" }: { initialTab?: ProfileT
         <View style={{ borderTopWidth: 1, borderTopColor: "rgba(255,255,255,0.1)" }}>
           <Grid cols={headerCols} gap={0}>
             {[[String(me.streak), tr("kStreak")], [nf(me.hours, 1), tr("kHours")], [String(me.stickers.length), tr("kStickers")], [rank?.rank ? `#${rank.rank}` : "–", tr("kRank")]].map(([v, l], i) => (
-              <View key={l} style={{ paddingHorizontal: 20, paddingVertical: 16, borderLeftWidth: i % 2 ? 1 : 0, borderTopWidth: i >= 2 ? 1 : 0, borderColor: "rgba(255,255,255,0.1)" }} accessible accessibilityLabel={`${v} ${l}`}>
+              <View key={l} style={{ paddingHorizontal: 20, paddingVertical: 16, borderStartWidth: i % 2 ? 1 : 0, borderTopWidth: i >= 2 ? 1 : 0, borderColor: "rgba(255,255,255,0.1)" }} accessible accessibilityLabel={`${v} ${l}`}>
                 <Text style={{ fontFamily: FONT.display, fontSize: 24, color: stage.gold }}>{v}</Text>
                 <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: "rgba(255,255,255,0.55)" }}>{l}</Text>
               </View>

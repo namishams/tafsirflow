@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 import { router, type Href } from "expo-router";
-import { FONT } from "@/lib/theme";
+import { FONT, FWD } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { GUIDES } from "@/web/guides";
@@ -34,7 +34,7 @@ export default function GuidesPage() {
                     <Text style={{ fontFamily: FONT.bold, fontSize: 17.5, lineHeight: 24, color: isl.ink }}>{sw(gt.title)}</Text>
                     <Text style={{ marginTop: 6, fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 23.5, color: isl.muted }}>{sw(gt.desc)}</Text>
                   </View>
-                  <Text style={{ marginTop: 4, fontFamily: FONT.semibold, fontSize: 16, color: isl.gold }}>→</Text>
+                  <Text style={{ marginTop: 4, fontFamily: FONT.semibold, fontSize: 16, color: isl.gold }}>{FWD}</Text>
                 </View>
               </IslCard>
             );

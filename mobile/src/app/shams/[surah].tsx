@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Pressable, ScrollView, Text, TextInput, View, type ScrollViewInstance } from "react-native";
 import { router, useLocalSearchParams, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ARABIC_FONT, FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, FONT, R, goldButton, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Display, Eyebrow, GoldButton, GoldCard, OutlineButton, Stage, StarNumber, SurahBanner } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { ErrorState, Loading, ProGate } from "@/components/page";
@@ -389,7 +389,7 @@ function HookLine({ label, arabic, text, gold }: { label: string; arabic: string
   return (
     <View>
       <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: "#fff" }}>{label}</Text>
-      <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 36, color: gold ? stage.gold : "#fff", textAlign: "right", writingDirection: "rtl" }}>{arabic}</Text>
+      <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 36, color: gold ? stage.gold : "#fff", textAlign: AR_RIGHT, writingDirection: "rtl" }}>{arabic}</Text>
       {text ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: stage.textSoft }}>{text}</Text> : null}
     </View>
   );

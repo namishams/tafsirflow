@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { Stack, router, useLocalSearchParams, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, FONT, R, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Display, GoldButton, GoldCard, GoldProgress, OutlineButton } from "@/components/brand";
 import { ErrorState, Loading, PageHero, ProGate } from "@/components/page";
 import { useLang } from "@/i18n";
@@ -121,7 +121,7 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
               </GoldCard>
               {verses.filter((v) => v.verse_number >= lesson.from && v.verse_number <= lesson.to).map((v) => (
                 <View key={v.verse_key} style={{ borderRadius: R.card, borderWidth: 1, borderColor: "rgba(150,116,52,0.26)", backgroundColor: t.surface, padding: 16 }}>
-                  <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 48, color: t.arabic, textAlign: "right", writingDirection: "rtl" }}>{v.text_uthmani}</Text>
+                  <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 48, color: t.arabic, textAlign: AR_RIGHT, writingDirection: "rtl" }}>{v.text_uthmani}</Text>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, marginTop: 4 }}>{v.translation}</Text>
                 </View>
               ))}
@@ -142,8 +142,8 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
               <GoldCard>
                 {q.kind === "next" ? (<>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{w("qNext")}</Text>
-                  <Text style={{ fontFamily: ARABIC_FONT, fontSize: 28, lineHeight: 56, color: t.arabic, textAlign: "right", writingDirection: "rtl", marginTop: 6 }}>{q.prompt.join(" ")} <Text style={{ color: t.gold }}>…</Text></Text>
-                  <View style={{ gap: 8, marginTop: 10 }}>{q.options.map((o, n) => <Pressable key={n} onPress={() => choose(n)} accessibilityRole="button" style={optStyle(n, q.answer)}><Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, color: t.arabic, textAlign: "right" }}>{o}</Text></Pressable>)}</View>
+                  <Text style={{ fontFamily: ARABIC_FONT, fontSize: 28, lineHeight: 56, color: t.arabic, textAlign: AR_RIGHT, writingDirection: "rtl", marginTop: 6 }}>{q.prompt.join(" ")} <Text style={{ color: t.gold }}>…</Text></Text>
+                  <View style={{ gap: 8, marginTop: 10 }}>{q.options.map((o, n) => <Pressable key={n} onPress={() => choose(n)} accessibilityRole="button" style={optStyle(n, q.answer)}><Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, color: t.arabic, textAlign: AR_RIGHT }}>{o}</Text></Pressable>)}</View>
                 </>) : null}
                 {q.kind === "meaning" ? (<>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{w("qMeaning")}</Text>
@@ -153,14 +153,14 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
                 {q.kind === "listen" ? (<>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{w("qListen")}</Text>
                   <GoldButton compact icon="play" title={w("play")} onPress={() => audio.play(q.audio)} style={{ marginTop: 10 }} />
-                  <View style={{ gap: 8, marginTop: 12 }}>{q.options.map((o, n) => <Pressable key={n} onPress={() => choose(n)} accessibilityRole="button" style={optStyle(n, q.answer)}><Text style={{ fontFamily: ARABIC_FONT, fontSize: 21, color: t.arabic, textAlign: "right" }}>{o} …</Text></Pressable>)}</View>
+                  <View style={{ gap: 8, marginTop: 12 }}>{q.options.map((o, n) => <Pressable key={n} onPress={() => choose(n)} accessibilityRole="button" style={optStyle(n, q.answer)}><Text style={{ fontFamily: ARABIC_FONT, fontSize: 21, color: t.arabic, textAlign: AR_RIGHT }}>{o} …</Text></Pressable>)}</View>
                 </>) : null}
                 {q.kind === "order" ? (<>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{w("qOrder")}</Text>
                   <View style={{ minHeight: 60, borderRadius: R.lg, borderWidth: 2, borderStyle: "dashed", borderColor: "rgba(150,116,52,0.35)", padding: 8, marginTop: 10 }}>
-                    <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 46, color: t.arabic, textAlign: "right", writingDirection: "rtl" }}>{order.map((n) => q.tiles[n]).join(" ")}</Text>
+                    <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 46, color: t.arabic, textAlign: AR_RIGHT, writingDirection: "rtl" }}>{order.map((n) => q.tiles[n]).join(" ")}</Text>
                   </View>
-                  <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 8, marginTop: 12 }}>
+                  <View style={{ flexDirection: "row", direction: "rtl", flexWrap: "wrap", gap: 8, marginTop: 12 }}>
                     {q.tiles.map((x, n) => (
                       <Pressable key={n} disabled={order.includes(n) || answered} onPress={() => tapTile(n)} accessibilityRole="button" style={{ borderRadius: R.lg, borderWidth: 2, borderColor: t.line, backgroundColor: t.surface, paddingHorizontal: 12, paddingVertical: 4, opacity: order.includes(n) ? 0.3 : 1 }}>
                         <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 44, color: t.arabic }}>{x}</Text>
@@ -168,7 +168,7 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
                     ))}
                   </View>
                   {!answered && order.length > 0 ? <Text onPress={() => setOrder([])} style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, textDecorationLine: "underline", marginTop: 10 }}>{w("reset")}</Text> : null}
-                  {answered && !wasRight ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 21, lineHeight: 40, color: t.accent, textAlign: "right", marginTop: 10 }}>{q.solution.join(" ")}</Text> : null}
+                  {answered && !wasRight ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 21, lineHeight: 40, color: t.accent, textAlign: AR_RIGHT, marginTop: 10 }}>{q.solution.join(" ")}</Text> : null}
                 </>) : null}
               </GoldCard>
 

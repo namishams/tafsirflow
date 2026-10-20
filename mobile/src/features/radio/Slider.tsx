@@ -46,7 +46,7 @@ export function GoldSlider({ value, onChange, onDone, label, valueText, step = 0
       onResponderRelease={() => { const x = last.current; last.current = null; setDrag(null); if (x !== null) onDone?.(x); }}
       onResponderTerminate={() => setDrag(null)}
       hitSlop={{ top: 8, bottom: 8 }}
-      style={{ height, justifyContent: "center" }}
+      style={{ height, justifyContent: "center", direction: "ltr" }}
     >
       <View style={{ height: 4, borderRadius: 2, backgroundColor: track, overflow: "hidden" }}>
         <LinearGradient colors={["#b98f45", "#f3e2b6"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ height: 4, width: `${v * 100}%` }} />

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Text, View } from "react-native";
 import { Redirect, router, useLocalSearchParams, type Href } from "expo-router";
-import { FONT } from "@/lib/theme";
+import { FONT, FWD } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { GUIDES } from "@/web/guides";
@@ -70,7 +70,7 @@ function Guide({ slug }: { slug: string }) {
                     <IslCard key={r!.slug} onPress={() => router.replace(`/guides/${r!.slug}` as Href)} accessibilityLabel={guideOf(r!, lang).title}>
                       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 12, paddingHorizontal: 16, paddingVertical: 12 }}>
                         <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 15, lineHeight: 21, color: isl.ink }}>{sw(guideOf(r!, lang).title)}</Text>
-                        <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: isl.gold }}>→</Text>
+                        <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: isl.gold }}>{FWD}</Text>
                       </View>
                     </IslCard>
                   ))}

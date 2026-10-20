@@ -6,7 +6,7 @@ import { DUA_GROUPS } from "@/web/duas";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { RECITERS, audioUrl } from "@/lib/quran";
-import { ARABIC_FONT, FONT, R, goldButton, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, FONT, R, goldButton, useTheme, AR_RIGHT, FWD } from "@/lib/theme";
 import { GoldCard } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import SunnahDuas from "@/features/practice/duas/SunnahDuas";
@@ -71,7 +71,7 @@ export default function DuasScreen() {
                     <GoldCard key={k} style={{ paddingHorizontal: 20, paddingBottom: 20, paddingTop: 24 }}>
                       {v === undefined ? <View style={{ height: 120, borderRadius: R.md, backgroundColor: th.line, opacity: 0.4 }} /> : (
                         <>
-                          <Text style={{ fontFamily: ARABIC_FONT, fontSize: 29, lineHeight: 62, color: th.arabic, writingDirection: "rtl", textAlign: "right" }}>{v.text_uthmani}</Text>
+                          <Text style={{ fontFamily: ARABIC_FONT, fontSize: 29, lineHeight: 62, color: th.arabic, writingDirection: "rtl", textAlign: AR_RIGHT }}>{v.text_uthmani}</Text>
                           {v.translation ? <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 25, color: th.ink, opacity: 0.8, marginTop: 12 }}>{v.translation}</Text> : null}
                         </>
                       )}
@@ -82,7 +82,7 @@ export default function DuasScreen() {
                             <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: goldButton.text }}>{t("listen")}</Text>
                           </LinearGradient>
                         </Pressable>
-                        <LightChip label={`${k} →`} onPress={() => go(`/surah/${s}?v=${a}`)} style={{ minHeight: 44 }} />
+                        <LightChip label={`${k} ${FWD}`} onPress={() => go(`/surah/${s}?v=${a}`)} style={{ minHeight: 44 }} />
                       </View>
                     </GoldCard>
                   );

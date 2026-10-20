@@ -10,7 +10,7 @@ import { CheckRow, FormError, LabeledField, SelectRow } from "@/components/form"
 import { useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { ApiError, SITE } from "@/lib/api";
-import { COUNTRIES, countryList } from "@/lib/countries";
+import { countryList, countryName } from "@/lib/countries";
 
 // Create the account (the same account as on the website). Nothing is preselected: country and consent are chosen
 // by the learner; the year of birth lets the Shams Method adapt to children and seniors.
@@ -86,8 +86,8 @@ export default function Register() {
                 <View style={{ flex: 1 }}><LabeledField label={t("auth.lastName")} value={f.lastName} onChangeText={set("lastName")} autoComplete="family-name" textContentType="familyName" /></View>
               </View>
               <LabeledField label={t("auth.email")} value={f.email} onChangeText={set("email")} keyboardType="email-address" autoCapitalize="none" autoComplete="email" textContentType="username" />
-              <LabeledField label={t("auth.password")} secure value={f.password} onChangeText={set("password")} autoComplete="new-password" textContentType="newPassword" hint={lang === "de" ? "Mindestens 10 Zeichen" : "At least 10 characters"} />
-              <SelectRow label={t("auth.country")} value={f.country ? COUNTRIES[f.country]?.[lang === "de" ? 1 : 0] : undefined} placeholder={t("auth.chooseCountry")} onPress={() => setPicking(true)} />
+              <LabeledField label={t("auth.password")} secure value={f.password} onChangeText={set("password")} autoComplete="new-password" textContentType="newPassword" hint={t("auth.passwordHint")} />
+              <SelectRow label={t("auth.country")} value={f.country ? countryName(f.country, lang) : undefined} placeholder={t("auth.chooseCountry")} onPress={() => setPicking(true)} />
               <LabeledField label={t("auth.birthYear")} value={f.birthYear} onChangeText={(v) => set("birthYear")(v.replace(/\D/g, "").slice(0, 4))} keyboardType="number-pad" maxLength={4} />
               <CheckRow checked={terms} onChange={setTerms} label={t("auth.terms")}>
                 <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: theme.ink }}>{t("auth.terms")}</Text>

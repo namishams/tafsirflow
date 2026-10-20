@@ -3,12 +3,12 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Stack, router, type Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import Svg, { G, Path } from "react-native-svg";
-import { CALLIG_FONT, FONT, stage, useTheme } from "@/lib/theme";
+import { CALLIG_FONT, FONT, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Arcade, GoldButton, OutlineButton, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { usePro } from "@/lib/pro";
 import { RECITERS } from "@/lib/quran";
-import { useLang } from "@/i18n";
+import { useLang, pick } from "@/i18n";
 import { RECITER_BIOS, STYLE, bioText } from "@/web/reciters";
 import { Pill, QuranSeal, useQ } from "@/features/radio/art";
 import { isFreeReciter, useRadioSelect } from "@/features/radio/engine";
@@ -27,7 +27,7 @@ export default function RecitersScreen() {
   const started = useRadioSelect((s) => s.started);
   const a = useAppT();
   const insets = useSafeAreaInsets();
-  const c = lang === "de" ? C.de : C.en;
+  const c = pick(C, lang);
 
   return (
     <View style={{ flex: 1, backgroundColor: th.bg }}>
@@ -37,7 +37,7 @@ export default function RecitersScreen() {
         <Stage hairlines={false}>
           <CalligraphyBackdrop text={HERO_CALLIGRAPHY} />
           <View style={{ paddingTop: insets.top + 6, paddingHorizontal: 20, paddingBottom: 56 }}>
-            <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel={a("back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginLeft: -6 }}>
+            <Pressable onPress={() => goBack()} accessibilityRole="button" accessibilityLabel={a("back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6 }}>
               <Icon name="chevronLeft" color="#ffffff" size={24} />
             </Pressable>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2.6, textTransform: "uppercase", color: stage.gold, marginTop: 18 }}>{c.kicker}</Text>
@@ -74,12 +74,12 @@ export default function RecitersScreen() {
                     <View style={{ flex: 1, minWidth: 0 }}>
                       <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 11.5, color: q.inkGold, fontVariant: ["tabular-nums"] }}>{String(i + 1).padStart(2, "0")} · {countryName(r, lang)}{years}</Text>
                       <Text numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 17, lineHeight: 22, color: th.ink, marginTop: 2 }}>{r.name}</Text>
-                      <Text numberOfLines={1} allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 19, lineHeight: 30, color: q.inkGold, writingDirection: "rtl", textAlign: "right" }}>{r.arabic}</Text>
+                      <Text numberOfLines={1} allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 19, lineHeight: 30, color: q.inkGold, writingDirection: "rtl", textAlign: AR_RIGHT }}>{r.arabic}</Text>
                     </View>
                   </View>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: th.muted, marginTop: 12 }}>{tx.short}</Text>
                   <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 14 }}>
-                    {r.styles.map((s) => <Pill key={s} label={STYLE[s][lang === "de" ? "de" : "en"]} />)}
+                    {r.styles.map((s) => <Pill key={s} label={pick(STYLE[s], lang)} />)}
                     {r.playerSlug ? <Pill play locked={locked} label={c.listen} /> : null}
                   </View>
                 </QTile>

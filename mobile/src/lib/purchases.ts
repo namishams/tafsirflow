@@ -31,6 +31,13 @@ export async function buyPersonalDua(pack = false): Promise<boolean> {
   return purchaseConsumable(pack ? DUA_PACK_PRODUCT : DUA_PRODUCT);
 }
 
+/** the store price of one personal dua in the buyer's currency, 0,99 € until the store has answered */
+export function useDuaPrice(): string {
+  const [price, setPrice] = useState<string | null>(null);
+  useEffect(() => { duaPrices().then((p) => setPrice(p.one)).catch(() => undefined); }, []);
+  return price ?? "0,99 €";
+}
+
 /** store prices for the dua products (null when the store is not reachable; then show 0,99 € / 3,99 €) */
 export async function duaPrices(): Promise<{ one: string | null; pack: string | null }> {
   const { loadPrices } = await import("./iap");

@@ -107,7 +107,7 @@ export function AssistantChat({ header }: { header?: ReactNode }) {
                   <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.ink }}>{x.hello}</Text>
                 </View>
               </View>
-              {msgs.length === 0 ? <View style={{ paddingLeft: 48 }}><AssistantSuggestions onPick={(s) => void send(s)} /></View> : null}
+              {msgs.length === 0 ? <View style={{ paddingStart: 48 }}><AssistantSuggestions onPick={(s) => void send(s)} /></View> : null}
               {msgs.map((m, i) => m.role === "user" ? (
                 <View key={i} style={{ alignItems: "flex-end" }}>
                   <View style={{ maxWidth: "85%", borderRadius: 16, borderTopRightRadius: 4, backgroundColor: t.accent, paddingHorizontal: 16, paddingVertical: 12 }}>
@@ -122,13 +122,13 @@ export function AssistantChat({ header }: { header?: ReactNode }) {
                   </View>
                 </View>
               ))}
-              {busy ? <Text style={{ paddingLeft: 48, fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{x.thinking}</Text> : null}
+              {busy ? <Text style={{ paddingStart: 48, fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{x.thinking}</Text> : null}
               {err === "login" || err === "verify" ? (
-                <View accessibilityRole="alert" style={{ marginLeft: 48, borderRadius: R.lg, borderWidth: 1, borderColor: alpha(GOLD, 0.45), backgroundColor: alpha(GOLD, 0.06), padding: 16, gap: 12 }}>
+                <View accessibilityRole="alert" style={{ marginStart: 48, borderRadius: R.lg, borderWidth: 1, borderColor: alpha(GOLD, 0.45), backgroundColor: alpha(GOLD, 0.06), padding: 16, gap: 12 }}>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.ink }}>{err === "login" ? x.login : xa.verify}</Text>
                   {err === "login" && !user ? <GoldButton title={xa.signIn} compact onPress={() => router.push("/sign-in")} /> : null}
                 </View>
-              ) : err ? <Text accessibilityRole="alert" style={{ paddingLeft: 48, fontFamily: FONT.regular, fontSize: 14, color: t.danger }}>{err}</Text> : null}
+              ) : err ? <Text accessibilityRole="alert" style={{ paddingStart: 48, fontFamily: FONT.regular, fontSize: 14, color: t.danger }}>{err}</Text> : null}
             </>
           ) : null}
         </View>
