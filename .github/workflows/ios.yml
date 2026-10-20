@@ -1,9 +1,12 @@
-# Checks that the iOS app compiles (simulator build, no signing). Publishing is done on a Mac: scripts/build-ios.sh
+# iOS app: keeps the Xcode project (ios/QuranMasterclass.xcodeproj) in git up to date with ios/project.yml
+# and checks that the app compiles (simulator build, no signing). Publishing is done on a Mac: scripts/build-ios.sh
 name: iOS app
 on:
   push:
     paths: ["ios/**", ".github/workflows/ios.yml"]
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: macos-15
@@ -12,9 +15,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: XcodeGen
         run: brew install xcodegen
-      - name: Generate project
+      - name: Generate the Xcode project
         working-directory: ios
-        run: IOS_TEAM_ID="" IOS_BUILD_NUMBER="${{ github.run_number }}" xcodegen generate
+        run: xcodegen generate
+      - name: Commit the Xcode project if it changed
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        run: |
+          git add -A ios/QuranMasterclass.xcodeproj
+          if git diff --cached --quiet; then echo "Xcode project unchanged"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "iOS: regenerate the Xcode project from ios/project.yml"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
       - name: Build for the simulator
         working-directory: ios
         run: |

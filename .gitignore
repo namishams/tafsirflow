@@ -9,7 +9,8 @@ public/audio
 .next-build
 .next-old
 
-# iOS: the Xcode project is generated from ios/project.yml (scripts/build-ios.sh)
-ios/QuranMasterclass.xcodeproj
+# iOS: personal Xcode state and build output (the project itself is in git)
+ios/QuranMasterclass.xcodeproj/xcuserdata
+ios/QuranMasterclass.xcodeproj/project.xcworkspace/xcuserdata
 ios/build
 ios/.team-id
