@@ -148,7 +148,7 @@ function Ceremony({ tree, step, reduce, onPlanted, onWatered, onDone }: { tree: 
       </View>
       <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: stage.textSoft, textAlign: "center" }}>{tx.ceremonyLead}</Text>
       {step === "water" ? <Dua /> : null}
-      {step === "done" ? <Text style={{ fontFamily: FONT.semibold, fontSize: 16, lineHeight: 23, color: "#f3e2b6", textAlign: "center" }}>{ending}</Text> : null}
+      {step === "done" && ending ? <Text style={{ fontFamily: FONT.semibold, fontSize: 16, lineHeight: 23, color: "#f3e2b6", textAlign: "center" }}>{ending}</Text> : null}
       {step === "done" ? <Text style={{ fontFamily: FONT.italic, fontSize: 14, lineHeight: 20, color: stage.gold, textAlign: "center" }}>{story.sabr}</Text> : null}
       {step === "water" ? <GoldButton title={tx.waterFirst} onPress={water} style={{ alignSelf: "stretch" }} /> : null}
       {step === "done" ? <GoldButton title={tx.cont} onPress={onDone} style={{ alignSelf: "stretch" }} /> : null}

@@ -390,7 +390,7 @@ export const Terrace = memo(function Terrace({ width, level, night, still, fount
   const [rip, setRip] = useState<{ id: number; x: number }[]>([]);
   const chY = 70, chH = 18, FACE = 94;
   const n = useFollow(night, still);
-  const lanterns = level >= UNLOCK.lanterns ? Math.max(2, Math.round(width / 150)) : 0;
+  const lanterns = level >= UNLOCK.lanterns ? 2 * Math.max(1, Math.round(width / 300)) : 0; // even, so none stands in front of a tree
   const jets = level >= UNLOCK.fountains ? Math.max(1, Math.round(width / 300)) : 0;
   const floor = useMemo(() => (
     <Svg width={width} height={TERRACE_H} style={{ position: "absolute" }}>

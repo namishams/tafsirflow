@@ -10,6 +10,7 @@ export const BANK_FILES: (() => { QS: RawQ[] })[] = [
   () => require("./fiqh-taharah-salah"),
   () => require("./hadith-books"),
   () => require("./hadith-terms"),
+  () => require("./nahw-irab"),
   () => require("./nahw-theory"),
   () => require("./prophets"),
   () => require("./qiraat"),

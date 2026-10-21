@@ -4,7 +4,7 @@ import { VERSE_COUNTS } from "@/web/counts";
 import { JUZ_START, TOTAL_VERSES, indexOf } from "@/web/quranIndex";
 import { GAMIFY_KEY, levelOf, mondayOf, type Gamify } from "@/features/feed/gamify";
 import { dayNum, longestStreak, statsNow, streakOf } from "@/features/feed/statsStore";
-import { activeTree, readGarden, stageOf } from "@/features/garden/garden";
+import { activeTree, readGarden, treeStage } from "@/features/garden/garden";
 import { CATALOG_KEY, CATALOG_SIZE, SERIES, SERIES_SIZE, rarityOf, seriesOwned, totalOwned } from "@/features/garden/catalog";
 import { readSrsState } from "@/features/srs/store";
 import { knownVerses } from "@/features/shams2/qualityModel";
@@ -95,7 +95,7 @@ export function buildSummary(pro: boolean): Summary {
     level: { xp, level: levelOf(xp).level },
     rank: { stage, rank: adv ? "mutaqaddim" : "talib", overall: overall === null ? null : Math.round(overall * 100) },
     hifz: { grade: gr.grade || 1, verses: known.size, tests: (gr.tests ?? []).filter((x) => x.pass).length, quality: null },
-    tree: tree ? { type: tree.type, stage: stageOf(tree.gp, pro), trees: g.trees.length, fruits: g.trees.reduce((a, x) => a + (x.harvested ?? 0), 0), name: (tree.name ?? "").slice(0, 30), days: Math.max(0, now - (tree.planted ?? now)) }
+    tree: tree ? { type: tree.type, stage: treeStage(tree, pro), trees: g.trees.length, fruits: g.trees.reduce((a, x) => a + (x.harvested ?? 0), 0), name: (tree.name ?? "").slice(0, 30), days: Math.max(0, now - (tree.planted ?? now)) }
       : { type: "", stage: 0, trees: 0, fruits: 0, name: "", days: 0 },
     stickers: {
       total: safe(() => totalOwned(), owned.length), catalog: CATALOG_SIZE, feed: Object.keys(gm.stickers ?? {}).length,
