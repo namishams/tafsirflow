@@ -20,6 +20,7 @@ import { openPro, usePro } from "@/lib/pro";
 import { manageSubscriptions } from "@/lib/iap";
 import { ProPromo } from "@/features/learn/ProPromo";
 import type { AppearanceSetting } from "@/lib/theme";
+import { FeedStatsRow } from "@/features/feed/FeedStats";
 
 // Account: Pro, sign-in, confirm the e-mail, appearance, language, kids mode, learning progress, legal, report a
 // problem, delete the account
@@ -71,6 +72,7 @@ export default function AccountScreen() {
         </PageHero>
 
         <View style={{ padding: 16, gap: 22 }}>
+          <FeedStatsRow />
           {user && !user.emailVerified ? (
             <View style={{ backgroundColor: theme.accentSoft, padding: 12, borderRadius: R.sm, gap: 10 }}>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.ink }}>{t("auth.verifyHint")}</Text>

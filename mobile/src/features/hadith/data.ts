@@ -238,7 +238,7 @@ export function nahjItem(p: NahjPassage): HadithItem {
 /** the shape the Quran feed renders (features/feed/hadith.ts: HadithFeedItem) plus the full item */
 export type HadithFeedItem = { id: string; arabic?: string; text: string; source: string; narrator?: string; grade?: string; item: HadithItem };
 export type HadithFeedPage = { items: HadithFeedItem[]; cursor: string | null };
-const feedItem = (h: HadithItem): HadithFeedItem => ({
+export const toFeedItem = (h: HadithItem): HadithFeedItem => ({
   id: h.id, arabic: h.arabic, text: h.text, source: h.reference, item: h,
   grade: h.grades.length ? h.grades.map((g) => `${g.by}: ${g.grade}`).join(" · ") : undefined,
 });
@@ -263,7 +263,7 @@ export async function hadithFeedItems(lang: string, tradition: TraditionChoice |
     return pickOne(p, hash(seed, i), lang).catch(() => null);
   });
   const got = (await Promise.all(jobs)).filter((x): x is HadithItem => !!x);
-  return { items: got.map(feedItem), cursor: `${seed}:${i0 + size}:${k}:${nahjSeed}` };
+  return { items: got.map(toFeedItem), cursor: `${seed}:${i0 + size}:${k}:${nahjSeed}` };
 }
 
 // --- saved -----------------------------------------------------------------------------------------------------------

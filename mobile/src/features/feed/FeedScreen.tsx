@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FlatList, Modal, Pressable, ScrollView, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
-import { useFocusEffect, useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { Icon } from "@/components/icons";
@@ -10,10 +10,10 @@ import { SITE } from "@/lib/api";
 import { ARABIC_FONT, FONT, R, stage } from "@/lib/theme";
 import { readJSON, writeJSON } from "@/lib/store";
 import { getChapters, reciterName, type Chapter } from "@/lib/quran";
-import { useReciter } from "@/features/quran/reciter";
 import { VerseEngine } from "@/features/quran/useVerseAudio";
 import { useReducedMotionX } from "@/features/extra/motion";
 import { VERSE_COUNTS } from "@/web/counts";
+import { readTradition } from "@/lib/tradition";
 import { useStories, useStoryQuota } from "@/features/prophet/useStories";
 import { useProphetText } from "@/features/prophet/texts";
 import { StoryShareCard } from "@/features/prophet/StoryShareCard";
@@ -27,6 +27,7 @@ import { DiscoverFeed, FEED_CATS, keyOfItem, preloadSurah, surahKeys, validKey, 
 import { countShare } from "./useLike";
 import { useFeedText } from "./texts";
 import { VerseShareCard } from "./VerseShareCard";
+import { ReciterSheet, useFeedAudioGuard, useFeedVoice } from "./voice";
 
 // The Quran Feed: an endless, full-screen vertical feed like Instagram Reels. Discover ("For you") mixes verses with
 // word-of-the-verse cards, names of Allah and story cards (prophet, reciters, Islam then and now, tips, secrets);
@@ -39,7 +40,9 @@ const STORY_MS = 8000; // story cards in "For you" stay about 8 s
 const MUTED_VERSE_MS = 10000; // a muted verse (no recitation to wait for)
 type ShareItem = { kind: "verse"; v: FeedVerse } | { kind: "story"; s: Story } | { kind: "name"; n: AllahName };
 
-export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
+/** `start`: an item to open first (Explore / Saved), with its hadith data when it is one; `bottomSpace`: room for the
+ *  floating tab bar when the feed lives in the Feed tab */
+export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { onHome?: () => void; start?: string; startHadith?: HadithFeedItem; bottomSpace?: number } = {}) {
   const params = useLocalSearchParams<{ mode?: string; s?: string; v?: string; key?: string; cat?: string }>();
   const tx = useFeedText();
   const pt = useProphetText();
@@ -47,7 +50,8 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const reduce = useReducedMotionX();
-  const [reciter] = useReciter(); // the allowed voice: without Pro always a free reciter
+  const voice = useFeedVoice(); // the allowed voice(s): without Pro always a free reciter
+  const reciter = voice.reciter;
   const [engine] = useState(() => new VerseEngine());
   useEffect(() => () => engine.dispose(), [engine]);
   const stories = useStories();
@@ -62,7 +66,7 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
   const [active, setActive] = useState(0);
   const [pageH, setPageH] = useState(0);
   const [muted, setMuted] = useState(() => readJSON<boolean>(MUTE_KEY, false));
-  const [focused, setFocused] = useState(true);
+  const [voices, setVoices] = useState(false);
   const [share, setShare] = useState<ShareItem | null>(null);
   const [picker, setPicker] = useState(false);
   const [chapters, setChapters] = useState<Chapter[]>([]);
@@ -70,9 +74,10 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
   const discover = useRef<DiscoverFeed | null>(null);
   const loadedSurahs = useRef(new Set<number>());
   const initialIndex = useRef(0);
+  const startUsed = useRef(false);
   const activeRef = useRef(0);
   activeRef.current = active;
-  const hadith = useRef<{ byId: Map<string, HadithFeedItem>; cursor: string | null }>({ byId: new Map(), cursor: null });
+  const hadith = useRef<{ byId: Map<string, HadithFeedItem>; cursor: string | null; loading: boolean; gen: number }>({ byId: new Map(), cursor: null, loading: false, gen: 0 });
   const latest = useRef({ stories, quota });
   latest.current = { stories, quota };
 
@@ -80,16 +85,23 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
   const nameOf = useCallback((s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `${s}`, [chapters]);
 
   // pause when another screen (reader, Shams, Pro) opens on top; play again when the feed is visible
-  useFocusEffect(useCallback(() => { setFocused(true); return () => { setFocused(false); engine.pause(); }; }, [engine]));
+  // also stops on tab switch, back gesture, app background and unmount
+  const focused = useFeedAudioGuard(engine);
 
   // the hadith stream (features/hadith via ./hadith): loops – when the source is through it starts again
   const nextHadith = useCallback((): string[] => {
     const h = hadith.current;
-    let page = hadithFeedItems(lang, "all", h.cursor);
-    if (!page.items.length && h.cursor !== null) page = hadithFeedItems(lang, "all", null);
-    h.cursor = page.cursor;
-    const round = h.byId.size;
-    return page.items.map((it, i) => { const id = `h:${round + i}`; h.byId.set(id, it); return id; });
+    if (h.loading) return [];
+    h.loading = true;
+    const gen = h.gen;
+    void hadithFeedItems(lang, readTradition(), h.cursor).then((page) => {
+      if (gen !== hadith.current.gen) return;
+      h.cursor = page.cursor;
+      const round = h.byId.size;
+      const add = page.items.map((it, i) => { const id = `h:${round + i}`; h.byId.set(id, it); return id; });
+      if (add.length) setKeys((k) => [...k, ...add]);
+    }).catch(() => undefined).finally(() => { h.loading = false; });
+    return [];
   }, [lang]);
 
   const newDiscover = useCallback((c: FeedCat, first?: string) => {
@@ -102,13 +114,23 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
   useEffect(() => {
     loadedSurahs.current = new Set();
     if (mode === "hadith") {
-      hadith.current = { byId: new Map(), cursor: null };
+      hadith.current = { byId: new Map(), cursor: null, loading: false, gen: hadith.current.gen + 1 };
       initialIndex.current = 0;
-      setKeys(nextHadith());
+      setKeys([]);
+      nextHadith();
     } else if (mode === "discover") {
-      discover.current = newDiscover(cat, cat === "foryou" || cat === "verses" ? (params.key && validKey(params.key) ? params.key : undefined) : undefined);
+      const startKey = start && /^[vw]:/.test(start) && !startUsed.current ? start.slice(2) : params.key;
+      if (startKey === start?.slice(2)) startUsed.current = true;
+      discover.current = newDiscover(cat, cat === "foryou" || cat === "verses" ? (startKey && validKey(startKey) ? startKey : undefined) : undefined);
       initialIndex.current = 0;
-      setKeys(discover.current.next(10, latest.current.quota.left));
+      const first = discover.current.next(10, latest.current.quota.left);
+      // opened from Explore / Saved: that item first (a verse already comes first through the DiscoverFeed)
+      if (start && !startUsed.current && cat === "foryou" && !/^[vw]:/.test(start)) {
+        startUsed.current = true;
+        if (start.startsWith("h:") && startHadith) { hadith.current.byId.set(start, startHadith); first.unshift(start); }
+        else if (!start.startsWith("h:")) first.unshift(start);
+      }
+      setKeys(first);
     } else {
       const v = surah === startS ? Math.min(VERSE_COUNTS[surah - 1], Math.max(1, Number(params.v) || 1)) : 1;
       loadedSurahs.current.add(surah);
@@ -118,10 +140,10 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
     }
     setActive(initialIndex.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, cat, surah, lang, reciter.folder]);
+  }, [mode, cat, surah, lang, voice.sig]);
 
   const more = useCallback(() => {
-    if (mode === "hadith") { const add = nextHadith(); if (add.length) setKeys((k) => [...k, ...add]); return; }
+    if (mode === "hadith") { nextHadith(); return; }
     if (mode === "discover") {
       const d = discover.current;
       if (d) {
@@ -193,15 +215,14 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
 
   const activeKey = keyOfItem(keys[active] ?? "");
   const activeSurah = activeKey ? Number(activeKey.split(":")[0]) : surah;
-  const reciterLabel = reciterName(reciter, lang);
-  const chrome = mode === "discover" ? 40 : 0; // the category chips need room
+    const chrome = mode === "discover" ? 40 : 0; // the category chips need room
 
   const renderItem = useCallback(({ item, index }: { item: string; index: number }) => {
-    const common = { width, height: pageH, active: index === active, topInset: insets.top + chrome, bottomInset: insets.bottom, reduce, engine, lang };
+    const common = { width, height: pageH, active: index === active, topInset: insets.top + chrome, bottomInset: insets.bottom + bottomSpace, reduce, engine, lang };
     if (item.startsWith("v:") || item.startsWith("w:")) {
       const key = item.slice(2);
       return <FeedPage {...common} verseKey={key} variant={item[0] === "w" ? "word" : "verse"} near={Math.abs(index - active) <= 2}
-        sound={focused && !muted} reciter={reciter} reciterLabel={reciterLabel} surahName={nameOf(Number(key.split(":")[0]))}
+        sound={focused && !muted} reciter={voice.voiceFor(item)} reciterLabel={reciterName(voice.voiceFor(item), lang)} surahName={nameOf(Number(key.split(":")[0]))}
         onShare={(v) => setShare({ kind: "verse", v })} />;
     }
     if (item.startsWith("s:")) {
@@ -219,7 +240,7 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
       return h ? <HadithPage {...common} item={h} /> : <View style={{ width, height: pageH }} />;
     }
     return <ProPage {...common} onLater={later} />;
-  }, [width, pageH, active, focused, muted, lang, reciter, reciterLabel, nameOf, insets.top, insets.bottom, chrome, reduce, engine, stories, quota, later]);
+  }, [width, pageH, active, focused, muted, lang, voice, nameOf, insets.top, insets.bottom, bottomSpace, chrome, reduce, engine, stories, quota, later]);
 
   // what the share sheet shares
   const sh = useMemo(() => {
@@ -276,12 +297,13 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
       {/* top bar over the feed */}
       <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: 0, paddingTop: insets.top + 8 }}>
         <View pointerEvents="box-none" style={{ paddingHorizontal: 12, flexDirection: "row", alignItems: "center", gap: 10 }}>
-          <RoundButton label={onHome ? tx.home : tx.close} onPress={() => (onHome ? onHome() : goBack())}><Icon name="chevronLeft" color="#fff" size={22} /></RoundButton>
+          <RoundButton label={onHome ? tx.home : tx.close} onPress={() => { engine.stop(); if (onHome) onHome(); else goBack(); }}><Icon name="chevronLeft" color="#fff" size={22} /></RoundButton>
           <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", gap: 6 }}>
             <Pill label={pt.catForYou} selected={mode === "discover"} onPress={() => switchMode("discover")} />
             <Pill label={mode === "surah" ? nameOf(activeSurah) : tx.surah} selected={mode === "surah"} onPress={() => switchMode("surah")} hint={tx.chooseSurah} chevron={mode === "surah"} />
             {HADITH_AVAILABLE ? <Pill label={tx.hadith} selected={mode === "hadith"} onPress={() => switchMode("hadith")} /> : null}
           </View>
+          <RoundButton label={tx.reciters} onPress={() => setVoices(true)}><Icon name="radio" color={voice.rotate ? stage.gold : "#fff"} size={20} /></RoundButton>
           <RoundButton label={tx.autoplay} selected={autoplay} onPress={toggleAuto}><Icon name="repeat" color={autoplay ? stage.gold : "rgba(255,255,255,0.6)"} size={20} /></RoundButton>
           <RoundButton label={muted ? tx.unmute : tx.mute} selected={!muted} onPress={toggleMute}><SpeakerIcon muted={muted} color="#fff" /></RoundButton>
         </View>
@@ -295,6 +317,7 @@ export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
       <ShareSheet visible={!!sh} onClose={() => setShare(null)} link={sh?.link ?? SITE} message={sh?.message ?? ""} onShared={sh?.onShared} video={sh?.video}
         renderCard={(f) => sh?.card(f) ?? null} />
 
+      <ReciterSheet visible={voices} onClose={() => setVoices(false)} dark />
       <SurahPicker visible={picker} chapters={chapters} current={activeSurah} onPick={pickSurah} onClose={() => setPicker(false)} />
     </View>
   );

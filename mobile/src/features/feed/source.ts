@@ -1,6 +1,7 @@
 import { getVerses, type Reciter, type Segment, type Word } from "@/lib/quran";
 import { VERSES_OF_THE_DAY } from "@/web/votd";
 import { VERSE_COUNTS } from "@/web/counts";
+import { wasSeen } from "./seen";
 
 // Where the feed's pages come from. Every Quran text comes from the Quran API helpers (lib/quran.ts); every story
 // from the vetted library content (features/prophet/stories.ts). This file only decides what follows what:
@@ -28,7 +29,8 @@ function randomKey(): string {
   return `${s}:${1 + Math.floor(Math.random() * VERSE_COUNTS[s - 1])}`;
 }
 
-/** an endless source of verse keys: two curated verses, then a random one; curated ones reshuffled each round */
+/** an endless source of verse keys: two curated verses, then a random one of all 6236 (not seen in the last days);
+ *  curated ones reshuffled each round */
 class VerseKeys {
   private pool: string[] = [];
   private seen = new Set<string>();
@@ -40,6 +42,8 @@ class VerseKeys {
       if (this.n % 3 === 0) k = randomKey();
       else { if (!this.pool.length) this.pool = shuffle(VERSES_OF_THE_DAY); k = this.pool.pop()!; }
       if (this.seen.has(k) && (this.n % 3 === 0 || this.seen.size < VERSES_OF_THE_DAY.length)) continue;
+      // the whole Quran is the pool: random verses shown in the last days are skipped (curated ones may come back)
+      if (this.n % 3 === 0 && guard < 40 && wasSeen(`v:${k}`)) continue;
       this.seen.add(k);
       return k;
     }
@@ -53,7 +57,12 @@ export type StoryPools = Partial<Record<"prophet" | "reciters" | "islam" | "tips
 class Rotation {
   private queue: string[] = [];
   constructor(private all: string[]) {}
-  next(): string | null { if (!this.all.length) return null; if (!this.queue.length) this.queue = shuffle(this.all); return this.queue.pop()!; }
+  // a fresh round puts stories not seen in the last days first
+  next(): string | null {
+    if (!this.all.length) return null;
+    if (!this.queue.length) { const s = shuffle(this.all); this.queue = [...s.filter((id) => wasSeen(`s:${id}`)), ...s.filter((id) => !wasSeen(`s:${id}`))]; }
+    return this.queue.pop()!;
+  }
 }
 
 /** the item sequence of Discover for one category */

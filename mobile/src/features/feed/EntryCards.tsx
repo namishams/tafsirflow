@@ -33,7 +33,7 @@ export function FeedSpotlight() {
   const { width } = useWindowDimensions();
   return (
     <View style={{ flexDirection: width >= 640 ? "row" : "column", gap: 12 }}>
-      <Spot title={f.title} lead={f.lead} cta={f.open} arabic="آية" colors={[stage.bg, stage.deep]} onPress={() => router.push("/feed" as Href)} />
+      <Spot title={f.title} lead={f.lead} cta={f.open} arabic="آية" colors={[stage.bg, stage.deep]} onPress={() => router.navigate("/foryou" as Href)} />
       <Spot title={p.title} lead={p.lead} cta={p.open} arabic="محمد ﷺ" colors={TONES[1]} onPress={() => router.push("/prophet-stories" as Href)} />
     </View>
   );
@@ -43,7 +43,7 @@ export function FeedSpotlight() {
 export function FeedButton() {
   const f = useFeedText();
   return (
-    <Pressable onPress={() => router.push("/feed" as Href)} accessibilityRole="button" accessibilityLabel={f.title}
+    <Pressable onPress={() => router.navigate("/foryou" as Href)} accessibilityRole="button" accessibilityLabel={f.title}
       style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, height: 44, borderRadius: R.pill, borderWidth: 1, borderColor: stage.goldSoft, backgroundColor: pressed ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.04)" })}>
       <Icon name="play" color={stage.gold} size={16} />
       <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: "#fff" }}>{f.title}</Text>

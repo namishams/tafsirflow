@@ -15,6 +15,9 @@ import { shamsContent } from "@/web/shamsContent";
 import { tile, routeOf } from "@/lib/features";
 import { ProPromo } from "@/features/learn/ProPromo";
 import { useLearnT } from "@/features/learn/texts";
+import { useFeedText } from "@/features/feed/texts";
+import { I18nManager } from "react-native";
+const isRTL = I18nManager.isRTL;
 
 // The Masterclass tab: learning the tafsir of the Quran with the Shams Method – hero like the website's /shams page,
 // "continue learning", the course path (free: al-Fātiḥa and Juz ʿAmma; Pro: every surah), courses and tools.
@@ -24,6 +27,7 @@ const PRO_PATH = [67, 36, 18, 55, 56, 32, 2, 12, 19, 25, 24, 49];
 export default function Masterclass() {
   const t = useTheme();
   const lt = useLearnT();
+  const ft = useFeedText();
   const w = useWebT();
   const { lang } = useLang();
   const { pro } = usePro();
@@ -106,6 +110,17 @@ export default function Masterclass() {
               ))}
             </PosterGrid>
           </View>
+
+          {/* Discover has no tab button of its own any more (the Feed took its place): every course and tool from here */}
+          <Pressable onPress={() => router.navigate("/library" as Href)} accessibilityRole="button" accessibilityLabel={`${ft.discoverAll}. ${ft.discoverAllLead}`}
+            style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 14, padding: 16, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: pressed ? t.accentSoft : t.surface })}>
+            <Icon name="compass" color={t.accent} size={26} />
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: t.ink }}>{ft.discoverAll}</Text>
+              <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.muted }}>{ft.discoverAllLead}</Text>
+            </View>
+            <Icon name={isRTL ? "chevronLeft" : "chevronRight"} color={t.muted} size={18} />
+          </Pressable>
         </View>
       </Page>
     </>

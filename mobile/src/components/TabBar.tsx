@@ -8,7 +8,9 @@ import { Icon, type IconName } from "./icons";
 
 // The tab bar: icons only, like Instagram, on a floating capsule of Apple's Liquid Glass (blur on systems without it).
 // The active tab is drawn heavier in the accent colour inside a small glass lens; names stay for VoiceOver.
-const ICONS: Record<string, IconName> = { "(home)": "grid", quran: "book", learn: "cap", library: "compass", account: "user" };
+const ICONS: Record<string, IconName> = { "(home)": "grid", quran: "book", learn: "cap", library: "compass", account: "user", foryou: "reels" };
+/** routes that are tabs (keep their stack and URL) without a button in the bar */
+const HIDDEN = new Set(["library"]);
 export const TAB_BAR_HEIGHT = 62;
 /** space a screen leaves at the bottom so nothing hides behind the floating tab bar */
 export const useTabBarSpace = () => TAB_BAR_HEIGHT + Math.max(useSafeAreaInsets().bottom, 12) + 12;
@@ -22,6 +24,7 @@ export default function TabBar({ state, descriptors, navigateToTab }: BottomTabB
   const bar = (
     <View style={s.row}>
       {state.routes.map((route, i) => {
+        if (HIDDEN.has(route.name)) return null;
         const on = state.index === i;
         const { options } = descriptors[route.key];
         const label = typeof options.title === "string" ? options.title : route.name;
