@@ -131,7 +131,7 @@ export default function AccountScreen() {
           </Section>
 
           <RowGroup>
-            <LinkRow first title={t("tabs.home")} icon="sun" onPress={() => go("/(tabs)/(home)")} />
+            <LinkRow first title={t("tabs.home")} icon="sun" onPress={() => go("/today")} />
             <LinkRow title={t("account.profile")} icon="user" onPress={() => go("/profile")} />
             <LinkRow title={t("account.stats")} icon="list" onPress={() => go("/stats")} />
             <LinkRow title={t("account.map")} icon="map" onPress={() => go("/map")} />

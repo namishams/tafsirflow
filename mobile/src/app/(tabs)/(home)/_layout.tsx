@@ -7,6 +7,7 @@ export default function Layout() {
   return (
     <Stack screenOptions={stackOptions(theme)}>
       <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="today" options={{ headerShown: false }} />
     </Stack>
   );
 }

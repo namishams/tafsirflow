@@ -8,9 +8,9 @@ import { Icon, type IconName } from "./icons";
 
 // The tab bar: icons only, like Instagram, on a floating capsule of Apple's Liquid Glass (blur on systems without it).
 // The active tab is drawn heavier in the accent colour inside a small glass lens; names stay for VoiceOver.
-const ICONS: Record<string, IconName> = { "(home)": "grid", quran: "book", learn: "cap", library: "compass", account: "user", foryou: "reels", explore: "compass" };
+const ICONS: Record<string, IconName> = { "(home)": "reels", quran: "book", learn: "cap", library: "compass", account: "user", foryou: "reels", explore: "compass" };
 /** routes that are tabs (keep their stack and URL) without a button in the bar */
-const HIDDEN = new Set(["library", "(home)"]);
+const HIDDEN = new Set(["library"]);
 export const TAB_BAR_HEIGHT = 62;
 /** space a screen leaves at the bottom so nothing hides behind the floating tab bar */
 export const useTabBarSpace = () => TAB_BAR_HEIGHT + Math.max(useSafeAreaInsets().bottom, 12) + 12;

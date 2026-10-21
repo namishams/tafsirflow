@@ -15,7 +15,7 @@ export default function ExploreTab() {
   return (
     <View style={{ flex: 1, backgroundColor: t.bg, paddingBottom: space - 24 }}>
       <Stack.Screen options={{ headerShown: false }} />
-      <ExploreBody active={focused} top={insets.top} onOpen={(item, hadith) => { openInFeed(item, hadith); router.navigate("/foryou" as Href); }} />
+      <ExploreBody active={focused} top={insets.top} onOpen={(item, hadith) => { openInFeed(item, hadith); router.navigate("/" as Href); }} />
     </View>
   );
 }
