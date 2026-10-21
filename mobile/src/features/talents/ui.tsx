@@ -42,7 +42,8 @@ export function TalentAvatar({ name, size = 52, uri, badge }: { name: string; si
     <View accessible={false} importantForAccessibility="no-hide-descendants"
       style={{ width: size, height: size, borderRadius: size / 2, backgroundColor: "rgb(8,58,44)", borderWidth: rim, borderColor: strong ? "#E2C77F" : goldButton.line, alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
       {uri && !failed ? (
-        <Image source={{ uri: `${SITE}${uri}` }} onError={() => setFailed(true)} style={{ width: size - rim * 2, height: size - rim * 2, borderRadius: size / 2 }} />
+        // server avatars are paths (/api/community/avatar/…); a photo still waiting on the device is a file URI
+        <Image source={{ uri: uri.startsWith("/") ? `${SITE}${uri}` : uri }} onError={() => setFailed(true)} style={{ width: size - rim * 2, height: size - rim * 2, borderRadius: size / 2 }} />
       ) : (
         <DefaultAvatar size={size - rim * 2} />
       )}

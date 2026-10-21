@@ -340,6 +340,22 @@ export function giveSticker(id: string, unique: boolean, pro: boolean): GiftResu
   save();
   return { gp, trait, up };
 }
+/** today's room for sticker growth and what a row of gifts would bring, in this order (the same rule as giveSticker,
+ *  read only: nothing is spent). `bases` are the growth values before the daily decline (stickerGp / RARITY_GP). */
+export type GiftOutlook = { cap: number; used: number; room: number; givenToday: number; gps: number[]; total: number; fits: number };
+export function giftOutlook(s: Garden, bases: number[]): GiftOutlook {
+  const d = dayNum();
+  const used = s.capDay === d ? Math.min(CAPS.stickers, s.capped?.stickers ?? 0) : 0;
+  const givenToday = s.giftDay === d ? (s.giftsToday ?? 0) : 0;
+  let left = CAPS.stickers - used, n = givenToday, total = 0, fits = 0;
+  const gps = bases.map((b) => {
+    if (left <= 0) return 0;
+    const gp = Math.max(1, Math.min(left, Math.round(b / (1 + n))));
+    left -= gp; n++; total += gp; fits++;
+    return gp;
+  });
+  return { cap: CAPS.stickers, used, room: CAPS.stickers - used, givenToday, gps, total, fits };
+}
 
 /** finished sticker series: a big growth burst and a decoration, once per series */
 export type SeriesReward = { series: Series; gp: number; trait: Trait | null };

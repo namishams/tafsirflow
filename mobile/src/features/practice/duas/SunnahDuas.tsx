@@ -26,7 +26,8 @@ const ltr = (s: string) => `\u2066${s}\u2069`;
 
 // Duas of the Prophet ﷺ (website SunnahDuas.tsx): filter by occasion, search, favourites (tf:duafav, synced with the
 // account), a tap counter for repeated adhkar and a calm reading mode
-export default function SunnahDuas() {
+/** `initialCat`: /duas?cat=travel (travel mode, owner 21.10.2026) opens one category */
+export default function SunnahDuas({ initialCat }: { initialCat?: string } = {}) {
   const t = useWebT("duas");
   const w = useWebT();
   const th = useTheme();
@@ -34,7 +35,7 @@ export default function SunnahDuas() {
   const { lang, rtl } = useLang();
   const ar = lang === "ar";
   const ui = UI[lang === "de" ? "de" : ar ? "ar" : "en"];
-  const [cat, setCat] = useState<SunnahCat | "all" | "fav">("all");
+  const [cat, setCat] = useState<SunnahCat | "all" | "fav">(() => ((SUNNAH_CATS as readonly string[]).includes(initialCat ?? "") ? (initialCat as SunnahCat) : "all"));
   const [q, setQ] = useState("");
   const fav = useStored<string[]>(FAV_KEY, []);
   const [count, setCount] = useState<Record<string, number>>({});

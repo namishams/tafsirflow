@@ -45,7 +45,7 @@ const compact = (n: number, lang: string) => {
 };
 
 /** the generated card of one achievement (grid tile and feed poster share it) */
-function MomentArt({ m, size, big }: { m: Moment; size: number; big?: boolean }) {
+function MomentArt({ m, size, big, edge }: { m: Moment; size: number; big?: boolean; /** edge-to-edge grid tile: no inner frame */ edge?: boolean }) {
   const pt = usePT();
   const text = useMomentText();
   const fig = figure(m);
@@ -55,7 +55,7 @@ function MomentArt({ m, size, big }: { m: Moment; size: number; big?: boolean })
     <LinearGradient colors={leg ? ["#4a3a12", "#120e06"] : TONE[m.kind]} start={{ x: 0.1, y: 0 }} end={{ x: 0.9, y: 1 }}
       style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: big ? 28 : 8, gap: big ? 14 : 5 }}>
       {/* hairline gold frame */}
-      <View pointerEvents="none" style={{ position: "absolute", top: big ? 14 : 5, left: big ? 14 : 5, right: big ? 14 : 5, bottom: big ? 14 : 5, borderRadius: big ? R.card : 4, borderWidth: 1, borderColor: leg ? goldButton.from : "rgba(214,180,108,0.45)" }} />
+      {edge ? null : <View pointerEvents="none" style={{ position: "absolute", top: big ? 14 : 5, left: big ? 14 : 5, right: big ? 14 : 5, bottom: big ? 14 : 5, borderRadius: big ? R.card : 4, borderWidth: 1, borderColor: leg ? goldButton.from : "rgba(214,180,108,0.45)" }} />}
       <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: big ? 14 : 9.5, letterSpacing: 0.3, color: stage.gold }}>
         {leg ? pt("legendary") : pt(`kind_${m.kind}` as PKey)}
       </Text>
@@ -73,22 +73,28 @@ function MomentArt({ m, size, big }: { m: Moment; size: number; big?: boolean })
   );
 }
 
-/** Instagram grid: 3 columns, 4:5 tiles, heart + MashaAllah count on each */
-export function MomentGrid({ moments, onOpen, empty, width }: { moments: Moment[] | null; onOpen: (index: number) => void; empty: React.ReactNode; width: number }) {
+/** Instagram grid: 3 columns, 4:5 tiles, heart + MashaAllah count on each. `edge` (TikTok profile): edge to edge,
+ * 1 px gaps, square corners, 3:4 tiles; the heart and the count sit bottom-left like TikTok's view count */
+export function MomentGrid({ moments, onOpen, empty, width, edge }: { moments: Moment[] | null; onOpen: (index: number) => void; empty: React.ReactNode; width: number; edge?: boolean }) {
   const pt = usePT();
   const text = useMomentText();
   const { lang } = useLang();
   if (!moments) return <Loading />;
   if (!moments.length) return <>{empty}</>;
-  const w = Math.floor((width - 4) / 3);
+  const gap = edge ? 1 : 2;
+  const w = Math.floor((width - gap * 2) / 3);
+  // the third column takes the rest, so an edge-to-edge grid has no gap at the right
+  const wOf = (i: number) => (edge && i % 3 === 2 ? width - gap * 2 - w * 2 : w);
+  const h = Math.round(w * (edge ? 4 / 3 : 1.25));
   return (
-    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2 }}>
+    <View style={{ flexDirection: "row", flexWrap: "wrap", gap }}>
       {moments.map((m, i) => {
         const n = maOf(m);
         return (
           <Pressable key={m.id} onPress={() => onOpen(i)} accessibilityRole="button" accessibilityLabel={`${text(m)}, ${pt("maCount", { n })}`}
-            style={({ pressed }) => ({ width: w, height: Math.round(w * 1.25), borderRadius: 3, overflow: "hidden", opacity: pressed ? 0.85 : 1 })}>
-            <MomentArt m={m} size={w} />
+            style={({ pressed }) => ({ width: wOf(i), height: h, borderRadius: edge ? 0 : 3, overflow: "hidden", opacity: pressed ? 0.85 : 1 })}>
+            <MomentArt m={m} size={w} edge={edge} />
+            {edge ? <LinearGradient pointerEvents="none" colors={["rgba(0,0,0,0)", "rgba(0,0,0,0.45)"]} style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 38 }} /> : null}
             <View style={{ position: "absolute", left: 7, bottom: 6, flexDirection: "row", alignItems: "center", gap: 3 }}>
               <Icon name="heart" filled={n > 0 || isMa(m.mine)} color={n > 0 || isMa(m.mine) ? goldButton.from : "#fff"} size={12} />
               <Text style={{ fontFamily: FONT.bold, fontSize: 11.5, color: "#fff", textShadowColor: "rgba(0,0,0,0.6)", textShadowRadius: 3 }}>{compact(n, lang)}</Text>
@@ -204,15 +210,16 @@ function FeedItem({ m, width, height, top, bottom, label, onChange }: { m: Momen
       </Pressable>
 
       {/* author and date */}
-      <Pressable onPress={() => router.push(`/talents/u/${m.author.username}` as Href)} accessibilityRole="link" accessibilityLabel={m.author.name}
+      <Pressable onPress={() => router.push(`/talents/u/${m.author.username}` as Href)} disabled={!m.author.username} accessibilityRole={m.author.username ? "link" : "text"} accessibilityLabel={m.author.name}
         style={{ position: "absolute", left: 16, right: 96, bottom: bottom + 22, flexDirection: "row", alignItems: "center", gap: 10 }}>
         <TalentAvatar name={m.author.name} size={40} uri={m.author.avatar} badge={m.author.badge} />
         <View style={{ flex: 1 }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 5 }}>
-            <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 15, color: "#fff" }}>@{m.author.username}</Text>
+            <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 15, color: "#fff" }}>{m.author.username ? `@${m.author.username}` : m.author.name}</Text>
             <BadgeButton badge={m.author.badge} size={14} />
           </View>
-          <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted }}>{new Date(m.at).toLocaleDateString(lang, { day: "numeric", month: "long", year: "numeric" })}</Text>
+          {/* achievements of this device (no community profile yet) have no date */}
+          {m.at ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted }}>{new Date(m.at).toLocaleDateString(lang, { day: "numeric", month: "long", year: "numeric" })}</Text> : null}
           {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: stage.cream }}>{msg}</Text> : null}
         </View>
       </Pressable>

@@ -38,6 +38,7 @@ import { allowedReciter, isFreeReciter } from "@/features/quran/reciter";
 import { lastVisit, markSeen, touchVisit, wasSeen } from "./seen";
 import { ExploreSheet, SavedSheet, type OpenItem } from "./Explore";
 import { usePT } from "@/features/talents/profileText";
+import { TravelFeedBanner } from "@/features/talents/TravelCard";
 import { hadithFeedItems, type HadithFeedItem } from "./hadith";
 import { ReciterSheet, useFeedAudioGuard, useFeedVoice } from "./voice";
 import { SAVED_KEY as HADITH_SAVED_KEY, toggleSaved as toggleSavedHadith, type HadithItem } from "@/features/hadith/data";
@@ -494,6 +495,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         })}
       </ScrollView>
       <View style={{ paddingHorizontal: 14 }}><SharePromptCard /></View>
+      {/* travel mode (owner, 21.10.2026): travel duas and, for Makkah or Madinah, Umrah and Hajj */}
+      <TravelFeedBanner />
       {showUpdate ? (
         <View style={{ marginHorizontal: 14, marginTop: 12, padding: 14, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, gap: 6 }}>
           <Text accessibilityRole="header" style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{tx.updateTitle}</Text>

@@ -1,4 +1,5 @@
 import { DoneShare } from "@/features/share/SharePrompt";
+import { TravelPrayerCard } from "@/features/talents/TravelCard";
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Linking, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type ScrollViewInstance } from "react-native";
@@ -175,6 +176,8 @@ export default function PrayerBoard() {
 
       <View style={{ paddingHorizontal: 16, paddingTop: 40, gap: 20 }}>
         <PrayerSetupCard />
+        {/* travel mode (owner, 21.10.2026): the note on praying while travelling, travel duas, Umrah and Hajj */}
+        <TravelPrayerCard hanafi={st.madhab === "hanafi" || (st.madhab === "auto" && !!main.hanafi)} />
         {/* Qibla */}
         <GoldCard>
           <CardTitle>{t("qibla")}</CardTitle>

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Pressable, Text, View, type ScrollViewInstance } from "react-native";
-import { Stack } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { DUA_GROUPS } from "@/web/duas";
 import { useLang } from "@/i18n";
@@ -19,6 +19,8 @@ import { HEROES } from "@/features/practice/web/heroes";
 // loaded by verse key from the Quran store; recitation by Mishary Alafasy as on the website.
 export default function DuasScreen() {
   const t = useWebT("duas");
+  // ?cat=travel (travel mode) opens the Sunnah duas of one category
+  const { cat } = useLocalSearchParams<{ cat?: string }>();
   const th = useTheme();
   const g = useGold();
   const { lang } = useLang();
@@ -45,7 +47,7 @@ export default function DuasScreen() {
           <View onLayout={at("sunnah")}>
             <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 36, letterSpacing: -0.6, color: th.ink }}>{t("sunnahTitle")}</Text>
             <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.muted, marginTop: 12 }}>{t("sunnahLead")}</Text>
-            <View style={{ marginTop: 24 }}><SunnahDuas /></View>
+            <View style={{ marginTop: 24 }}><SunnahDuas initialCat={typeof cat === "string" ? cat : undefined} /></View>
           </View>
 
           <View onLayout={at("quran")} style={{ marginTop: 80 }}>

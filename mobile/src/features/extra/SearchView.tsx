@@ -12,6 +12,8 @@ import { ARABIC_FONT, FONT, useTheme, AR_RIGHT } from "@/lib/theme";
 import { GOLD, GoldHairline, HomeStar, MarbleHero, QKey, alpha, useHm } from "./art";
 import { openVerse } from "./links";
 import { fill, useX } from "./strings";
+import { useT } from "@/i18n";
+import { usePT } from "@/features/talents/profileText";
 
 /** keeps the <em> highlight of the search API, drops every other tag (SearchView.tsx Highlighted) */
 function Highlighted({ html, mark }: { html: string; mark: string }) {
@@ -32,6 +34,8 @@ export function SearchView({ initial }: { initial?: string }) {
   const wh = useWebT("home");
   const wa = useWebT("app");
   const x = useX();
+  const tr = useT();
+  const tpp = usePT();
   const [q, setQ] = useState(initial ?? "");
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [hits, setHits] = useState<SearchHit[] | null>(null);
@@ -72,6 +76,15 @@ export function SearchView({ initial }: { initial?: string }) {
   return (
     <Page>
       <MarbleHero kicker={wa("name")} title={ws("title")}>
+        {/* owner 21.10.2026 (app and website 1:1): the Quran search next to the account search (Accounts · Top) */}
+        <View accessibilityRole="tablist" style={{ flexDirection: "row", gap: 8, marginBottom: 14 }}>
+          {([["quran", tr("tabs.quran")], ["accounts", tpp("tabAccounts")], ["top", tpp("tabTop")]] as const).map(([k, label]) => (
+            <Pressable key={k} onPress={k === "quran" ? undefined : () => router.push(`/talents/search${k === "top" ? "?tab=top" : ""}` as Href)} accessibilityRole="tab" accessibilityState={{ selected: k === "quran" }}
+              style={({ pressed }) => ({ height: 34, paddingHorizontal: 14, borderRadius: 999, justifyContent: "center", borderWidth: 1, borderColor: k === "quran" ? t.ink : t.line, backgroundColor: k === "quran" ? t.ink : "transparent", opacity: pressed ? 0.7 : 1 })}>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: k === "quran" ? t.bg : t.ink }}>{label}</Text>
+            </Pressable>
+          ))}
+        </View>
         <View style={{ flexDirection: "row", gap: 8 }}>
           <View style={{ flex: 1, height: 52, borderRadius: 12, borderWidth: 1, borderColor: alpha(GOLD, 0.45), backgroundColor: t.surface, flexDirection: "row", alignItems: "center", paddingStart: 16, gap: 10 }}>
             <Icon name="search" color={hm.goldD} size={18} />

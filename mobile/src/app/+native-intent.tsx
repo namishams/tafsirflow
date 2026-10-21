@@ -13,9 +13,14 @@ export function redirectSystemPath({ path }: { path: string; initial: boolean })
     if (p === "/account") return "/account";
     // Quran Talents: website profiles /talents/<username>(/followers|/following) open the app's profile screens
     const tal = /^\/talents\/([a-z0-9_.]{3,20})(?:\/(followers|following))?\/?$/.exec(p);
-    const APP_TALENT_ROUTES = new Set(["me", "record", "player", "badges", "notifications", "blocked", "settings", "list", "requests", "messages", "guidelines", "admin", "invite"]);
+    const APP_TALENT_ROUTES = new Set(["me", "record", "player", "badges", "notifications", "blocked", "settings", "list", "requests", "messages", "guidelines", "admin", "invite", "search"]);
     if (tal && !APP_TALENT_ROUTES.has(tal[1])) return tal[2] ? `/talents/list?u=${tal[1]}&kind=${tal[2]}` : `/talents/u/${tal[1]}`;
-    if (p === "/talents/me") return "/talents";
+    // own profile (21.10.2026: the Account tab is the own profile) and its edit view
+    if (p === "/talents/me") return "/account";
+    if (p === "/talents/me/edit") return "/community/me";
+    // short profile links quranmasterclass.com/u/<username>
+    const short = /^\/u\/([a-z0-9_.]{3,20})\/?$/i.exec(p);
+    if (short) return `/talents/u/${short[1].toLowerCase()}`;
     return `${p}${url.search}`;
   } catch {
     return path;

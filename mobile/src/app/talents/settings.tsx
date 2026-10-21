@@ -59,7 +59,7 @@ export default function TalentSettings() {
               <LinkRow icon="flag" title={tt("guidelines")} onPress={() => router.push("/talents/guidelines" as Href)} />
             </RowGroup>
             <RowGroup>
-              <LinkRow first icon="logout" title={tt("deleteAccount")} subtitle={tt("deleteAccountHint")} onPress={() => router.push("/account" as Href)} />
+              <LinkRow first icon="logout" title={tt("deleteAccount")} subtitle={tt("deleteAccountHint")} onPress={() => router.push("/account/settings" as Href)} />
             </RowGroup>
             <SafetyBar />
           </View>

@@ -26,7 +26,12 @@ export type TalentProfile = TalentCard & {
   followsMe?: boolean;
   /** public profile link and its QR code (rows of 0/1) */
   shareUrl?: string; shareQr?: string[];
+  /** learning goals, city, travel – what this viewer may see (owner, 21.10.2026) */
+  extras?: ProfileExtras;
 };
+export type ProfileExtras = { goals?: string[]; city?: string; travel?: { on: boolean; city: string } };
+export type Audience = "everyone" | "followers" | "me";
+export type OwnExtras = { goals: string[]; city: string; travel: { on: boolean; city: string }; privacy: { goals: Audience; city: Audience; travel: Audience } };
 export type Post = {
   id: string; type: "story" | "post"; verseKey: string | null; durationMs: number | null; hasVideo: boolean; waveform: number[]; caption: string;
   at: string; expiresAt: string | null; likes: number; liked: boolean; comments: number; saved: boolean; media: string | null;
@@ -111,7 +116,19 @@ export const T = {
   answerFollow: (name: string, action: "accept" | "decline") => api(`/api/community/follow-requests/${u(name)}`, { method: "POST", body: { action } }),
   deleteAvatar: () => api<{ avatar: null }>("/api/community/avatar", { method: "DELETE" }),
   redeem: (code: string) => api<{ level: Level; verified: boolean }>("/api/community/invite", { method: "POST", body: { code } }),
+  /** own profile extras (goals, city, travel and who sees them) */
+  extras: () => api<{ extras: OwnExtras }>("/api/community/profile-extras"),
+  saveExtras: (body: Partial<OwnExtras>) => api<{ extras: OwnExtras }>("/api/community/profile-extras", { method: "PUT", body }),
+  /** remove a member from the own followers (Instagram "Remove"; the member is not notified) */
+  removeFollower: (name: string) => api<{ ok: boolean; followers: number }>(`/api/community/followers/${u(name)}`, { method: "DELETE" }),
+  /** account search as you type: exact @username, badges, mutual follows, then followers first */
+  search: (q: string) => api<{ talents: SearchCard[] }>(`/api/community/search?q=${u(q)}`).catch((e: unknown) => {
+    // a server without the search endpoint yet: the Discover list filtered by name or @username
+    if (!(e instanceof ApiError) || e.status !== 404) throw e;
+    return T.talents({ q }).then((d) => ({ talents: d.talents.map((x) => ({ ...x, followed: !!x.followed, followsMe: !!x.followsMe, requested: false })) }));
+  }),
 };
+export type SearchCard = TalentCard & { followed: boolean; followsMe: boolean; requested: boolean };
 
 // admin (moderation) – the server checks the role on every call
 export type AdminReport = { id: string; reason: string; category: string; type: string; status: string; at: string; reported: string | null; reportedName: string | null; suspended: boolean; reporter: string | null; total: number; message: { text: string | null; removed: boolean } | null; post: { id: string; verseKey: string | null; status: string; media: string | null } | null };

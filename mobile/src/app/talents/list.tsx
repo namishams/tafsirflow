@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { View } from "react-native";
+import { Alert, Platform, View } from "react-native";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { Page, PageHero } from "@/components/page";
 import { OutlineButton } from "@/components/brand";
@@ -9,7 +9,8 @@ import { BadgeSheetHost } from "@/features/talents/badges";
 import { AccessGate, ListBox, Muted, SafetyBar, SmallButton, TalentRow, useTalentAccess, useTalentErr } from "@/features/talents/ui";
 import { usePT } from "@/features/talents/profileText";
 
-// /talents/list?u=<username>&kind=followers|following – with Follow / Follow back / Following on every row
+// /talents/list?u=<username>&kind=followers|following – with Follow / Follow back / Following on every row; the own
+// followers list also has Remove
 export default function FollowList() {
   const tt = useTT();
   const err = useTalentErr();
@@ -26,10 +27,28 @@ export default function FollowList() {
     try { const d = await T.follow(c.username, !c.followed); setList((l) => l?.map((x) => (x.username === c.username ? { ...x, followed: d.followed || !!d.requested } : x)) ?? null); }
     catch (e) { setMsg(err(e)); } finally { setBusy(null); }
   };
+  // own followers list (Instagram / TikTok): Follow back or Following, and Remove (the member is not notified)
+  const own = !!u && a.me?.profile?.username === u && kind === "followers";
+  const remove = (c: TalentCard) => {
+    const go = async () => {
+      setBusy(c.username);
+      try { await T.removeFollower(c.username); setList((l) => l?.filter((x) => x.username !== c.username) ?? null); }
+      catch (e) { setMsg(err(e)); } finally { setBusy(null); }
+    };
+    if (Platform.OS === "web") { void go(); return; }
+    Alert.alert(pt("removeTitle"), pt("removeBody", { u: c.username }), [{ text: tt("cancel"), style: "cancel" }, { text: pt("remove"), style: "destructive", onPress: () => void go() }]);
+  };
   const right = (c: TalentCard) => {
     if (c.mine) return undefined;
     const label = c.followed ? tt("followingBtn") : c.followsMe ? pt("followBack") : tt("follow");
-    return <SmallButton title={label} tone={c.followed ? "plain" : "gold"} disabled={busy === c.username} onPress={() => void follow(c)} label={`${label}, ${c.name}`} />;
+    const main = <SmallButton title={label} tone={c.followed ? "plain" : "gold"} disabled={busy === c.username} onPress={() => void follow(c)} label={`${label}, ${c.name}`} />;
+    if (!own) return main;
+    return (
+      <View style={{ flexDirection: "row", gap: 6 }}>
+        {main}
+        <SmallButton title={pt("remove")} disabled={busy === c.username} onPress={() => remove(c)} label={`${pt("remove")}, ${c.name}`} />
+      </View>
+    );
   };
   const load = useCallback(async (cursor?: string) => {
     if (!u) return;

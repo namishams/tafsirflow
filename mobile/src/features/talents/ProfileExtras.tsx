@@ -24,14 +24,24 @@ const HL_ICON: Record<Moment["kind"], IconName> = {
   certificate: "starBig", exam: "checkCircle", level: "trophy", hifz: "trophy", juz: "book", tree: "sun", sticker: "grid", streak: "flame", course: "cap",
 };
 
-/** highlight circles: one per kind of achievement the member shows; tap opens the full-screen feed of that kind */
-export function Highlights({ moments, onOpen }: { moments: Moment[]; onOpen: (ids: string[]) => void }) {
+/** highlight circles: one per kind of achievement the member shows; tap opens the full-screen feed of that kind.
+ * `onNew` (own profile, Instagram): a dashed "New" circle first, shown even before there are two kinds */
+export function Highlights({ moments, onOpen, onNew, inset = 2 }: { moments: Moment[]; onOpen: (ids: string[]) => void; onNew?: () => void; inset?: number }) {
   const t = useTheme();
   const pt = usePT();
+  const tt = useTT();
   const groups = HL_ORDER.map((k) => ({ k, list: moments.filter((m) => m.kind === k) })).filter((g) => g.list.length);
-  if (groups.length < 2) return null;
+  if (groups.length < 2 && !onNew) return null;
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 14, paddingVertical: 2, paddingHorizontal: 2 }}>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 14, paddingVertical: 2, paddingHorizontal: inset }}>
+      {onNew ? (
+        <Pressable onPress={onNew} accessibilityRole="button" accessibilityLabel={tt("newHighlight")} style={({ pressed }) => ({ alignItems: "center", gap: 5, width: 72, opacity: pressed ? 0.7 : 1 })}>
+          <View style={{ width: 66, height: 66, borderRadius: 33, borderWidth: 1.5, borderColor: t.line, alignItems: "center", justifyContent: "center" }}>
+            <Icon name="plus" color={t.ink} size={26} weight={1.8} />
+          </View>
+          <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 12, color: t.ink }}>{tt("newHighlight")}</Text>
+        </Pressable>
+      ) : null}
       {groups.map(({ k, list }) => {
         const label = pt(`hl_${k}` as PKey);
         const ma = list.reduce((a, m) => a + maOf(m), 0);
@@ -78,8 +88,9 @@ export function FollowedBy({ p }: { p: TalentProfile }) {
   );
 }
 
-/** horizontal rail of suggested profiles with a follow button on each card */
-export function Suggested({ exclude }: { exclude?: string }) {
+/** horizontal rail of suggested profiles with a follow button on each card; `seeAll` (TikTok profile arrow) adds
+ * "See all" to Discover talents and keeps the header even when there are no suggestions */
+export function Suggested({ exclude, seeAll, inset = 0 }: { exclude?: string; seeAll?: boolean; inset?: number }) {
   const t = useTheme();
   const tt = useTT();
   const pt = usePT();
@@ -87,7 +98,7 @@ export function Suggested({ exclude }: { exclude?: string }) {
   const [list, setList] = useState<(TalentCard & { done?: boolean })[] | null>(null);
   const [msg, setMsg] = useState("");
   useEffect(() => { T.suggested().then((d) => setList(d.talents.filter((x) => x.username !== exclude))).catch(() => setList([])); }, [exclude]);
-  if (!list?.length) return null;
+  if (!list?.length && !seeAll) return null;
   const follow = async (c: TalentCard & { done?: boolean }) => {
     setMsg("");
     try { const d = await T.follow(c.username, !c.done); setList((l) => l?.map((x) => (x.username === c.username ? { ...x, done: d.followed || !!d.requested } : x)) ?? null); }
@@ -95,8 +106,22 @@ export function Suggested({ exclude }: { exclude?: string }) {
   };
   return (
     <View style={{ gap: 8 }}>
-      <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 15, color: t.ink }}>{pt("suggested")}</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10, paddingVertical: 2 }}>
+      <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: inset }}>
+        <Text accessibilityRole="header" style={{ flex: 1, fontFamily: FONT.bold, fontSize: 15, color: t.ink }}>{seeAll ? pt("suggestedAccounts") : pt("suggested")}</Text>
+        {seeAll ? (
+          <Pressable onPress={() => router.push("/talents" as Href)} accessibilityRole="link" accessibilityLabel={`${pt("seeAll")}, ${tt("discoverTitle")}`} hitSlop={8} style={{ minHeight: 36, justifyContent: "center" }}>
+            <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: t.gold }}>{pt("seeAll")}</Text>
+          </Pressable>
+        ) : null}
+      </View>
+      {!list ? null : !list.length ? (
+        <Pressable onPress={() => router.push("/talents" as Href)} accessibilityRole="link" style={{ marginHorizontal: inset, minHeight: 48, flexDirection: "row", alignItems: "center", gap: 10 }}>
+          <Icon name="search" color={t.muted} size={18} />
+          <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{tt("discoverTitle")}</Text>
+          <Icon name="chevronRight" color={t.muted} size={16} />
+        </Pressable>
+      ) : (
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10, paddingVertical: 2, paddingHorizontal: inset }}>
         {list.map((c) => (
           <View key={c.username} style={{ width: 148, borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 12, alignItems: "center", gap: 6 }}>
             <Pressable onPress={() => router.push(`/talents/u/${c.username}` as Href)} accessibilityRole="link" accessibilityLabel={`${c.name}, @${c.username}`} style={{ alignItems: "center", gap: 5 }}>
@@ -110,12 +135,13 @@ export function Suggested({ exclude }: { exclude?: string }) {
             <Pressable onPress={() => void follow(c)} accessibilityRole="button" accessibilityState={{ selected: !!c.done }}
               style={({ pressed }) => ({ alignSelf: "stretch", minHeight: 34, borderRadius: R.md, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.7 : 1,
                 backgroundColor: c.done ? t.surface : goldButton.to, borderWidth: 1, borderColor: c.done ? t.line : goldButton.line })}>
-              <Text style={{ fontFamily: FONT.bold, fontSize: 13, color: c.done ? t.ink : goldButton.text }}>{c.done ? tt("followingBtn") : tt("follow")}</Text>
+              <Text style={{ fontFamily: FONT.bold, fontSize: 13, color: c.done ? t.ink : goldButton.text }}>{c.done ? tt("followingBtn") : c.followsMe ? pt("followBack") : tt("follow")}</Text>
             </Pressable>
           </View>
         ))}
       </ScrollView>
-      {msg ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{msg}</Text> : null}
+      )}
+      {msg ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted, paddingHorizontal: inset }}>{msg}</Text> : null}
     </View>
   );
 }

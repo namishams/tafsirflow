@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Alert, FlatList, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router, useLocalSearchParams, type Href } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
@@ -12,13 +12,11 @@ import { FONT, R, stage as stageC, useTheme } from "@/lib/theme";
 import { openPro, usePro } from "@/lib/pro";
 import { useProPrice, withPrice } from "@/lib/purchases";
 import { useLang } from "@/i18n";
-import { STICKERS, stickerDupes, useGamify } from "@/features/feed/gamify";
-import { StickerArt } from "@/features/feed/Sticker";
 import { BrandFoot, CARD_SIZE, ShareSheet, type ShareFormat } from "@/features/feed/share";
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
-import { MAX_STAGE, SRCS, treeStage, type Tree, holdCelebrations, STICKER_GP_HINT, activeTree, canPlant, giveSticker, harvest, plotsOf, PLOT_STAGES, progressOf, resting, seasonNow, setActive, shamsRun, useGarden, weekGrowth, type Garden, type HistKind } from "./garden";
-import { CATALOG_SIZE, RARITY_GP, SERIES, SERIES_SIZE, countOf, dailyPackReady, duplicates, isGiven, itemAt, openDailyPack, rarityOf, seriesOwned, totalOwned, useCatalog } from "./catalog";
+import { MAX_STAGE, SRCS, treeStage, type Tree, activeTree, canPlant, harvest, plotsOf, PLOT_STAGES, progressOf, resting, seasonNow, setActive, shamsRun, useGarden, weekGrowth, type Garden, type HistKind } from "./garden";
+import { CATALOG_SIZE, dailyPackReady, openDailyPack, totalOwned, useCatalog } from "./catalog";
 import { CatalogArt } from "./CatalogArt";
 import { Petals, Zellige } from "./Scene";
 import { scheduleOnRN } from "react-native-worklets";
@@ -26,7 +24,8 @@ import { Fronds, Heavens, Motes, NearSand, setSkyPlace, useSkyPlace, Panorama, S
 import { Plaque, TREE_H, TREE_W, TreeArt, geom } from "./Tree";
 import { PlantFlow } from "./PlantFlow";
 import { GardenNotifySetting, ProgressBar, StageCinematic, chime, useGardenTick } from "./widgets";
-import { GIFT_FULL, fillG, skyLabel, useAgeText, useGardenText, useSkyText } from "./texts";
+import { fillG, skyLabel, useAgeText, useGardenText, useSkyText } from "./texts";
+import { GiftFlow, NourishButton, StickerBag } from "./GiftFlow";
 
 const SCENE_H = 520;
 
@@ -139,6 +138,10 @@ export default function GardenScreen() {
             <Fronds width={width} height={H} px={frondX} />
           </View>
         </GestureDetector>
+            {/* the sticker bag beside the tree: opens the gift flow (outside the gestures, like the top bar) */}
+            <View style={{ position: "absolute", bottom: TERRACE_H + 14, left: width / 2 + Math.min(plotW * 0.36, 118) }}>
+              <StickerBag onPress={() => setGift(true)} />
+            </View>
             {/* top bar: outside the scene's gestures, whose double tap would swallow the buttons' taps */}
             <View style={{ position: "absolute", top: insets.top + 6, left: 12, right: 12, flexDirection: "row", alignItems: "center", gap: 8 }}>
               <RoundBtn icon="chevronLeft" label="Back" onPress={() => goBack()} />
@@ -170,8 +173,8 @@ export default function GardenScreen() {
 
           <Harvest treeId={tree.id} fruits={tree.fruits} stage={p.stage} reduce={reduce} />
 
-          <View style={{ flexDirection: "row", gap: 10 }}>
-            <View style={{ flex: 1 }}><GoldButton title={tx.feed} icon="heart" onPress={() => setGift(true)} /></View>
+          <NourishButton onPress={() => setGift(true)} />
+          <View style={{ flexDirection: "row" }}>
             <DailyPack />
           </View>
 
@@ -196,7 +199,7 @@ export default function GardenScreen() {
           </View>
         </View>
       </ScrollView>
-      {gift ? <GiftSheet onClose={() => setGift(false)} /> : null}
+      {gift ? <GiftFlow onClose={() => setGift(false)} /> : null}
       {__DEV__ && params.cine ? <StageCinematic ev={{ tree, stage: Number(params.cine) || 1 }} onClose={() => router.setParams({ cine: undefined })} /> : null}
       {share ? <ShareSheet visible noDecoration onClose={() => setShare(false)} link="https://quranmasterclass.com/app" message={`${tx.shareMsg}: ${tree.name}, ${tx[`s${p.stage}` as "s0"]}`} renderCard={(f) => <GardenCard format={f} />} /> : null}
     </GestureHandlerRootView>
@@ -425,72 +428,6 @@ function History({ s, treeId }: { s: Garden; treeId: string }) {
         </View>
       ))}
     </View>
-  );
-}
-
-/** "Give stickers": duplicates first, then (with confirmation) single stickers from the album */
-function GiftSheet({ onClose }: { onClose: () => void }) {
-  const tx = useGardenText();
-  const t = useTheme();
-  const insets = useSafeAreaInsets();
-  const { pro } = usePro();
-  const gm = useGamify();
-  const s = useGarden();
-  useCatalog();
-  const [tab, setTab] = useState<"dupes" | "unique">("dupes");
-  const [msg, setMsg] = useState<string | null>(null);
-  const { lang } = useLang();
-  useEffect(() => holdCelebrations(), []); // stage-up celebration only after the sheet has closed
-  const dupFeed = Object.entries(stickerDupes()).filter(([, n]) => n > 0).map(([id]) => id);
-  const dupCat = duplicates();
-  const uniqueFeed = STICKERS.filter((x) => gm.stickers[x.id] && !s.given.includes(x.id)).map((x) => x.id);
-  const uniqueCat = useMemo(() => {
-    const out: string[] = [];
-    for (const se of SERIES) { if (seriesOwned(se) === 0) continue; for (let i = 0; i < SERIES_SIZE[se] && out.length < 400; i++) { const id = itemAt(se, i).id; if (countOf(id) === 1 && !isGiven(id)) out.push(id); } }
-    return out;
-  }, [tab]); // eslint-disable-line react-hooks/exhaustive-deps
-  const list = tab === "dupes" ? [...dupFeed, ...dupCat] : [...uniqueFeed, ...uniqueCat];
-  const give = (id: string, unique: boolean) => {
-    const run = () => {
-      const r = giveSticker(id, unique, pro);
-      if (!r) return;
-      if (r.full) { setMsg(GIFT_FULL[lang] ?? GIFT_FULL.en); return; }
-      tick(); if (r.trait) chime();
-      setMsg(`${fillG(tx.gp, { n: r.gp })}${r.trait ? ` · ${fillG(tx.traitNew, { t: tx[`tr_${r.trait}` as "tr_star"] })}` : ""}`);
-    };
-    if (unique) Alert.alert(tx.confirmTitle, tx.confirmBody, [{ text: tx.cancel, style: "cancel" }, { text: tx.give, onPress: run }]);
-    else run();
-  };
-  const gpOf = (id: string, unique: boolean) => { const f = STICKERS.find((x) => x.id === id); return f ? STICKER_GP_HINT(f, unique) : RARITY_GP[rarityOf(id)] * (unique ? 2 : 1); };
-  return (
-    <Modal visible animationType="slide" transparent onRequestClose={onClose}>
-      <Pressable style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.45)" }} onPress={onClose} accessibilityLabel={tx.close} />
-      <View style={{ maxHeight: "78%", backgroundColor: t.bg, borderTopLeftRadius: 18, borderTopRightRadius: 18, padding: 16, paddingBottom: insets.bottom + 16, gap: 10 }}>
-        <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 21, color: t.ink }}>{tx.feed}</Text>
-        <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.muted }}>{tx.feedLead}</Text>
-        <View style={{ flexDirection: "row", gap: 8 }}>
-          {(["dupes", "unique"] as const).map((k) => (
-            <Pressable key={k} onPress={() => setTab(k)} accessibilityRole="tab" accessibilityState={{ selected: tab === k }} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: 999, backgroundColor: tab === k ? t.accent : t.surface, borderWidth: 1, borderColor: t.line }}>
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: tab === k ? t.onAccent : t.ink }}>{k === "dupes" ? tx.dupes : tx.unique}</Text>
-            </Pressable>
-          ))}
-        </View>
-        {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.gold }}>{msg}</Text> : null}
-        {list.length === 0 ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, paddingVertical: 20 }}>{tab === "dupes" ? tx.noDupes : tx.missing}</Text> : (
-          <FlatList data={list} keyExtractor={(x) => x} numColumns={4} initialNumToRender={16} windowSize={5} removeClippedSubviews
-            renderItem={({ item }) => {
-              const f = STICKERS.find((x) => x.id === item);
-              const n = f ? (tab === "dupes" ? stickerDupes()[item] : 1) : tab === "dupes" ? countOf(item) - 1 : 1;
-              return (
-                <Pressable onPress={() => give(item, tab === "unique")} accessibilityRole="button" accessibilityLabel={`${tx.give}, ${fillG(tx.gp, { n: gpOf(item, tab === "unique") })}`} style={{ flex: 1 / 4, alignItems: "center", padding: 4 }}>
-                  {f ? <StickerArt def={f} size={64} /> : <CatalogArt id={item} size={64} />}
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 11, color: t.muted }}>{tab === "dupes" ? `×${n}` : ""} +{gpOf(item, tab === "unique")}</Text>
-                </Pressable>
-              );
-            }} />
-        )}
-      </View>
-    </Modal>
   );
 }
 

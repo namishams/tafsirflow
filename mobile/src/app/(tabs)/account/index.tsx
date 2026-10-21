@@ -1,193 +1,54 @@
-import { useState } from "react";
-import { Alert, Platform, Switch, Text, TextInput, View } from "react-native";
-import { Stack, router, type Href } from "expo-router";
-import Constants from "expo-constants";
-import { FONT, R, useTheme } from "@/lib/theme";
-import { Chip, GoldButton, OutlineButton, Segmented } from "@/components/brand";
-import { readDaily, setDaily, type DailyReminder } from "@/lib/daily";
-import { LinkRow, Page, PageHero, ProBadge, RowGroup } from "@/components/page";
-import { intlLocale, langLabel, useLang, useT } from "@/i18n";
+import { useCallback, useEffect, useState } from "react";
+import { Stack, useFocusEffect, useGlobalSearchParams } from "expo-router";
+import { useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
-import { ApiError } from "@/lib/api";
-import { removeKey, storedKeys } from "@/lib/store";
-import { useWebT } from "@/i18n/web";
-import { request } from "@/features/extra/http";
-import { TraditionSetting } from "@/features/hadith/cards";
-import { useHadithText } from "@/features/hadith/texts";
-import { useSettings } from "@/lib/settings";
-import { openPro, usePro } from "@/lib/pro";
-import { manageSubscriptions } from "@/lib/iap";
-import { ProPromo } from "@/features/learn/ProPromo";
-import type { AppearanceSetting } from "@/lib/theme";
-import { FeedLinks, FeedStatsRow } from "@/features/feed/FeedStats";
-import { GardenNotifySetting, GardenWidget } from "@/features/garden/widgets";
-import { ShareCounter, SharePromptSetting } from "@/features/share/SharePrompt";
-import { SharerBadge } from "@/features/share/SharerUI";
-import { useMySharer } from "@/features/share/sharer";
-import { useSchoolT } from "@/features/school/texts";
-import { TalentsAccount } from "@/features/talents/AccountSection";
+import { T } from "@/features/talents/api";
+import { syncPendingProfile } from "@/features/talents/pendingProfile";
+import { ProfileScreenView, useProfileData } from "@/features/talents/ProfileScreen";
+import { clearOwnCache, readOwnCache } from "@/features/talents/localProfile";
 
-// Account: Pro, sign-in, confirm the e-mail, appearance, language, learning progress, legal, report a
-// problem, delete the account
-export default function AccountScreen() {
+// The Account tab is the own profile (owner, 21.10.2026: "on Instagram the last tab IS your profile"): the same
+// TikTok-style layout as every talent profile (features/talents/ProfileScreen.tsx) with the Instagram top bar – name
+// with a chevron, "+" to share the profile with its QR code, and the menu that opens /account/settings, where
+// everything this tab showed before lives unchanged. Signed out or without a community profile it shows the data of
+// this device with "Create your profile"; offline the last loaded profile. Pull to refresh.
+type Me = { username: string | null; checked: boolean; interact: boolean };
+
+export default function AccountTab() {
   const t = useT();
-  const theme = useTheme();
-  const { lang, setting } = useLang();
-  const { appearance, setAppearance } = useSettings();
-  const hx = useHadithText();
-  const { user, logout, deleteAccount } = useAuth();
-  const sharer = useMySharer();
-  const { pro, until } = usePro();
-  const [deleting, setDeleting] = useState(false);
-  const [password, setPassword] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
-  const wa = useWebT("account");
-  const wn = useWebT("nav");
-  const [resent, setResent] = useState<"" | "busy" | "sent" | "error">("");
-  const resend = async () => {
-    setResent("busy");
-    try { const r = await request("/api/auth/resend", { locale: lang }); setResent(r.ok ? "sent" : "error"); } catch { setResent("error"); }
-  };
-  const [daily, setDailyState] = useState<DailyReminder>(readDaily());
-  const updateDaily = async (next: DailyReminder) => { const ok = await setDaily(next, lang); setDailyState(ok ? next : { ...next, on: false }); };
+  const { user, ready } = useAuth();
+  const [me, setMe] = useState<Me>({ username: null, checked: false, interact: false });
+  const [requests, setRequests] = useState(0);
 
-  const go = (href: string) => router.push(href as Href);
-  const sct = useSchoolT();
-  const confirmDelete = async () => {
-    setBusy(true); setError("");
+  const loadMe = useCallback(async () => {
+    if (!ready) return;
+    if (!user) { setMe({ username: null, checked: true, interact: false }); setRequests(0); return; }
     try {
-      await deleteAccount(password); setDeleting(false); setPassword("");
-      // the learning progress on this device belonged to the deleted account (as on the profile page)
-      for (const k of storedKeys()) if (k.startsWith("tf:")) removeKey(k);
+      await syncPendingProfile(); // a profile set up in the onboarding before sign-in
+      const d = await T.me();
+      setMe({ username: d.profile?.username ?? null, checked: true, interact: !!d.talent?.canInteract });
+      if (d.profile?.private) T.followRequests().then((r) => setRequests(r.requests.length)).catch(() => undefined);
+      else setRequests(0);
+    } catch {
+      // offline: the username of the last loaded own profile, so the cached profile shows
+      setMe({ username: readOwnCache(user.id)?.p.username ?? null, checked: true, interact: false });
     }
-    catch (e) { setError(e instanceof ApiError && e.code === "current" ? t("account.wrongPassword") : t("common.error")); }
-    finally { setBusy(false); }
-  };
+  }, [user, ready]);
+
+  // signed out or the account deleted: the cached profile of that account leaves the device
+  useEffect(() => { if (ready && !user) clearOwnCache(); }, [ready, user]);
+
+  // development only: `?demo=own|other` shows the signed-in layouts with sample counters (screenshot audits)
+  const { demo } = useGlobalSearchParams<{ demo?: string }>();
+  const d = useProfileData(me.username, { enabled: me.checked, own: { user, fallbackName: t("account.title") }, demo: __DEV__ ? demo : undefined });
+  useFocusEffect(useCallback(() => { void loadMe(); }, [loadMe]));
+  // every check of the account (focus, pull to refresh) reloads the profile with the current username
+  useEffect(() => { if (me.checked) void d.load(); }, [me, demo]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <Page>
-        <PageHero topInset eyebrow="Quran Masterclass" title={user ? user.name ?? user.email : t("account.title")} lead={user ? t("account.signedInAs", { email: user.email }) : t("account.notSignedIn")}>
-          {!user ? (
-            <>
-              <GoldButton title={t("account.createAccount")} onPress={() => go("/register")} />
-              <OutlineButton title={t("account.signIn")} onStage onPress={() => go("/sign-in")} />
-            </>
-          ) : sharer.tier > 0 ? <SharerBadge tier={sharer.tier} onStage /> : null}
-        </PageHero>
-
-        <View style={{ padding: 16, gap: 22 }}>
-          <FeedStatsRow />
-          <GardenWidget />
-          <GardenNotifySetting />
-          <ShareCounter />
-          <FeedLinks />
-          {user && !user.emailVerified ? (
-            <View style={{ backgroundColor: theme.accentSoft, padding: 12, borderRadius: R.sm, gap: 10 }}>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.ink }}>{t("auth.verifyHint")}</Text>
-              {resent === "sent" ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: theme.accent }}>{wa("resent")}</Text> : (
-                <>
-                  {resent === "error" ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 13, color: theme.danger }}>{wa("errGeneric")}</Text> : null}
-                  <OutlineButton compact title={wa("resend")} icon="repeat" disabled={resent === "busy"} onPress={() => void resend()} style={{ alignSelf: "flex-start" }} />
-                </>
-              )}
-            </View>
-          ) : null}
-
-          {pro ? (
-            <RowGroup>
-              <LinkRow first title={t("pro.active")} subtitle={until ? t("pro.activeUntil", { date: new Date(until).toLocaleDateString(intlLocale(lang)) }) : t("pro.name")} icon="sun" right={<ProBadge />} />
-              <LinkRow title={t("pro.manage")} onPress={manageSubscriptions} />
-            </RowGroup>
-          ) : (
-            <>
-              <ProPromo compact />
-              <RowGroup><LinkRow first title={t("pro.restore")} onPress={() => openPro("general")} /></RowGroup>
-            </>
-          )}
-
-          <Section title={t("account.appearance")}>
-            <Segmented<AppearanceSetting> value={appearance} options={[["system", t("account.system")], ["light", t("account.light")], ["dark", t("account.dark")]]} onChange={setAppearance} />
-          </Section>
-          <Section title={t("account.language")}>
-            <RowGroup>
-              <LinkRow first title={setting === "system" ? `${t("account.languageSystem")} · ${langLabel(lang)}` : langLabel(setting)} icon="globe" onPress={() => go("/language")} />
-            </RowGroup>
-          </Section>
-          <Section title={hx.tradTitle}>
-            <TraditionSetting />
-          </Section>
-
-          <Section title={t("account.dailyTitle")}>
-            <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 14, gap: 12 }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: theme.ink }}>{t("account.dailyQuestion")}</Text>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: theme.muted, marginTop: 2 }}>{t("account.dailyLead")}</Text>
-                </View>
-                <Switch value={daily.on} onValueChange={(on) => void updateDaily({ ...daily, on })} trackColor={{ true: theme.accent }} accessibilityLabel={t("account.dailyTitle")} />
-              </View>
-              {daily.on ? (
-                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-                  {[6, 8, 12, 18, 21].map((h) => <Chip key={h} label={`${String(h).padStart(2, "0")}:00`} selected={daily.hour === h} onPress={() => void updateDaily({ ...daily, hour: h, minute: 0 })} />)}
-                </View>
-              ) : null}
-            </View>
-          </Section>
-          <View style={{ marginBottom: 16 }}><SharePromptSetting /></View>
-
-          <TalentsAccount />
-
-          <RowGroup>
-            <LinkRow first title={t("tabs.home")} icon="sun" onPress={() => go("/today")} />
-            <LinkRow title={t("account.profile")} icon="user" onPress={() => go("/profile")} />
-            <LinkRow title={t("account.stats")} icon="list" onPress={() => go("/stats")} />
-            <LinkRow title={sct("title")} subtitle={sct("certificates")} icon="cap" onPress={() => go("/school")} />
-            <LinkRow title={t("account.map")} icon="map" onPress={() => go("/map")} />
-          </RowGroup>
-
-          <Section title={t("account.legal")}>
-            <RowGroup>
-              <LinkRow first title={t("account.terms")} onPress={() => go("/legal/terms")} />
-              <LinkRow title={t("account.privacy")} onPress={() => go("/legal/privacy")} />
-              <LinkRow title={t("account.imprint")} onPress={() => go("/legal/imprint")} />
-              <LinkRow title={t("account.support")} onPress={() => go("/feedback")} />
-              <LinkRow title={t("account.about")} onPress={() => go("/about")} />
-              <LinkRow title={t("account.changelog")} onPress={() => go("/changelog")} />
-            </RowGroup>
-          </Section>
-
-          {user ? (
-            <RowGroup>
-              <LinkRow first title={t("account.signOut")} icon="logout" onPress={() => void logout()} />
-              {user.role !== "admin" ? <LinkRow title={t("account.deleteAccount")} onPress={() => { setDeleting(true); setError(""); }} /> : null}
-            </RowGroup>
-          ) : null}
-
-          {user && deleting ? (
-            <View style={{ gap: 12, borderRadius: R.lg, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 16 }}>
-              <Text style={{ fontFamily: FONT.display, fontSize: 18, color: theme.ink }}>{t("account.deleteTitle")}</Text>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.muted }}>{t("account.deleteBody")}</Text>
-              <TextInput value={password} onChangeText={setPassword} secureTextEntry autoComplete="current-password" textContentType="password" placeholder={t("account.currentPassword")} placeholderTextColor={theme.muted} accessibilityLabel={t("account.currentPassword")}
-                style={{ height: 48, borderRadius: R.md, borderWidth: 1, borderColor: theme.line, paddingHorizontal: 14, fontFamily: FONT.regular, fontSize: 16, color: theme.ink, backgroundColor: theme.bg }} />
-              {error ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: theme.danger }} accessibilityLiveRegion="polite">{error}</Text> : null}
-              <OutlineButton title={t("account.deleteConfirm")} disabled={!password || busy} onPress={() =>
-                Platform.OS === "web" ? void confirmDelete() :
-                Alert.alert(t("account.deleteTitle"), t("account.deleteBody"), [{ text: t("common.cancel"), style: "cancel" }, { text: t("account.deleteConfirm"), style: "destructive", onPress: () => void confirmDelete() }])} />
-              <OutlineButton title={t("common.cancel")} onPress={() => setDeleting(false)} />
-            </View>
-          ) : null}
-
-          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: theme.muted, textAlign: "center" }}>{t("account.version", { v: Constants.expoConfig?.version ?? "1.0.0" })}</Text>
-        </View>
-      </Page>
+      <ProfileScreenView d={d} variant="tab" title={user?.name ?? t("account.title")} canInteract={me.interact} signedIn={!!user} requests={__DEV__ && demo === "own" ? 3 : requests} onRefresh={loadMe} />
     </>
   );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  const t = useTheme();
-  return <View style={{ gap: 10 }}><Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.6, textTransform: "uppercase", color: t.muted }}>{title}</Text>{children}</View>;
 }

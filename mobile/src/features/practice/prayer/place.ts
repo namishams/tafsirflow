@@ -11,9 +11,15 @@ export const CITY_KEY = "tf:city";
 export const SPOT_KEY = "tf:myspot";
 export const SETTINGS_KEY = "tf:prayerSettings";
 
+// Travel mode (owner, 21.10.2026; features/talents/travel.ts): a destination the city list does not have is kept as
+// the spot "travel" (rounded, on this device only) and listed first while travelling
+const TRAVEL_SPOT_KEY = "qmc.travel.spot.v1";
+const TRAVEL_KEY = "qmc.travel.v1";
+
 export function storedPlace() {
   const mine = readJSON<Spot | null>(SPOT_KEY, null);
-  const spots: Spot[] = mine ? [mine, ...CITIES] : CITIES;
+  const trip = readJSON<{ on?: boolean } | null>(TRAVEL_KEY, null)?.on ? readJSON<Spot | null>(TRAVEL_SPOT_KEY, null) : null;
+  const spots: Spot[] = [...(trip ? [trip] : []), ...(mine ? [mine] : []), ...CITIES];
   const id = readJSON<string>(CITY_KEY, "makkah");
   const main = spots.find((s) => s.id === id) ?? CITIES[0];
   const settings: PrayerSettings = { ...DEFAULT_SETTINGS, ...readJSON<Partial<PrayerSettings>>(SETTINGS_KEY, {}) };
@@ -23,6 +29,7 @@ export function storedPlace() {
 /** the place's name: a city in the reader's language, or "My location" */
 export function placeLabel(s: Spot, lang: string, yourPlace: string) {
   if (s.id === "mine") return yourPlace;
+  if (s.id === "travel") return readJSON<{ city?: string } | null>(TRAVEL_KEY, null)?.city || yourPlace;
   const c = CITIES.find((x) => x.id === s.id);
   return c ? cityName(c, lang) : yourPlace;
 }
@@ -35,11 +42,14 @@ export function usePrayerPlace() {
   const { lang } = useLang();
   const cityId = useStored<string>(CITY_KEY, "makkah");
   const mine = useStored<Spot | null>(SPOT_KEY, null);
+  const trip = useStored<Spot | null>(TRAVEL_SPOT_KEY, null);
+  const travelling = !!useStored<{ on?: boolean } | null>(TRAVEL_KEY, null)?.on;
   const rawSt = useStored<Partial<PrayerSettings>>(SETTINGS_KEY, {});
   const stKey = JSON.stringify(rawSt);
   const st: PrayerSettings = useMemo(() => ({ ...DEFAULT_SETTINGS, ...rawSt }), [stKey]); // eslint-disable-line react-hooks/exhaustive-deps
   const mineKey = mine ? `${mine.lat},${mine.lon},${mine.tz}` : "";
-  const spots: Spot[] = useMemo(() => (mine ? [mine, ...CITIES] : CITIES), [mineKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  const tripKey = travelling && trip ? `${trip.lat},${trip.lon},${trip.tz}` : "";
+  const spots: Spot[] = useMemo(() => [...(tripKey && trip ? [trip] : []), ...(mine ? [mine] : []), ...CITIES], [mineKey, tripKey]); // eslint-disable-line react-hooks/exhaustive-deps
   const main = spots.find((s) => s.id === cityId) ?? CITIES[0];
   const [geoMsg, setGeoMsg] = useState("");
   const label = useCallback((s: Spot) => placeLabel(s, lang, t("yourPlace")), [lang, t]);

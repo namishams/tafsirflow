@@ -129,17 +129,22 @@ type ExTopic = "all" | "verses" | "names" | "stories" | "hadith" | Exclude<LibTo
 const EX_TOPICS: ExTopic[] = ["all", "verses", "tafsir", "hadith", "duas", "stories", "prayer", "seerah", "quran", "holy", "names", "scholars", "history", "art", ...KNOW_SUBJECTS.map((s): SubTopic => `sub:${s}`)];
 const isLibTopic = (t: ExTopic): t is Exclude<LibTopic, "hadith"> => (LIB_TOPICS as string[]).includes(t) && t !== "hadith";
 
-export function ExploreSheet({ visible, onClose, onOpen }: { visible: boolean; onClose: () => void; onOpen: OpenItem }) {
+export function ExploreSheet({ visible, onClose, onOpen, onSearch }: { visible: boolean; onClose: () => void; onOpen: OpenItem; /** the search bar opens the full search screen */ onSearch?: () => void }) {
   const tx = useFeedText();
   return (
     <Sheet visible={visible} title={tx.explore} onClose={onClose}>
-      {visible ? <ExploreBody active onOpen={(i, h) => { onClose(); onOpen(i, h); }} /> : null}
+      {visible ? <ExploreBody active onOpen={(i, h) => { onClose(); onOpen(i, h); }} onSearch={onSearch ? () => { onClose(); onSearch(); } : undefined} /> : null}
     </Sheet>
   );
 }
 
 /** the Explore grid with a search field and topic chips (the Explore tab and the sheet of the Home feed) */
-export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOpen: OpenItem; top?: number }) {
+export function ExploreBody({ active, onOpen, top = 0, onSearch, initialQuery }: {
+  active: boolean; onOpen: OpenItem; top?: number;
+  /** owner, 21.10.2026 (Instagram / TikTok): the empty search bar opens the full search screen (accounts and content);
+   * a query that comes back from there ("Posts about … in Explore") filters the grid here as before */
+  onSearch?: () => void; initialQuery?: string;
+}) {
   const tx = useFeedText();
   const pt = useProphetText();
   const t = useTheme();
@@ -151,7 +156,8 @@ export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOp
   const label: Record<ExTopic, string> = { all: tx.topicAll, verses: pt.catVerses, names: tx.topicNames, stories: tx.topicStories, hadith: tx.hadith,
     ...(Object.fromEntries(LIB_TOPICS.filter((x) => x !== "hadith").map((x) => [x, libTopicLabel(tx, x)])) as Record<Exclude<LibTopic, "hadith">, string>),
     ...(Object.fromEntries(KNOW_SUBJECTS.map((s) => [`sub:${s}`, subLabel(s)])) as Record<SubTopic, string>) };
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery ?? "");
+  useEffect(() => { if (initialQuery !== undefined) setQuery(initialQuery); }, [initialQuery]);
   const lib = useRef<LibScheduler | null>(null);
   const quota = useStoryQuota();
   const [data, setData] = useState<Entry[]>([]);
@@ -246,11 +252,13 @@ export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOp
 
   return (
     <View style={{ flex: 1, paddingTop: top }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginHorizontal: 14, marginTop: 10, height: 40, borderRadius: 12, paddingHorizontal: 12, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line }}>
+      <Pressable onPress={onSearch && !query ? onSearch : undefined} disabled={!onSearch || !!query} accessibilityRole={onSearch && !query ? "search" : undefined} accessibilityLabel={onSearch && !query ? tx.exploreSearch : undefined}
+        style={{ flexDirection: "row", alignItems: "center", gap: 8, marginHorizontal: 14, marginTop: 10, height: 40, borderRadius: 12, paddingHorizontal: 12, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line }}>
         <Icon name="search" color={t.muted} size={16} />
         <TextInput value={query} onChangeText={setQuery} placeholder={tx.exploreSearch} placeholderTextColor={t.muted} accessibilityLabel={tx.exploreSearch} returnKeyType="search" autoCorrect={false} clearButtonMode="while-editing"
+          editable={!onSearch || !!query} pointerEvents={onSearch && !query ? "none" : "auto"}
           style={{ flex: 1, fontFamily: FONT.regular, fontSize: 15, color: t.ink, paddingVertical: 0 }} />
-      </View>
+      </Pressable>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flexGrow: 0 }} accessibilityRole="tablist" contentContainerStyle={{ gap: 8, paddingHorizontal: 14, paddingVertical: 10 }}>
         {EX_TOPICS.map((k) => {
           const on = topic === k;
