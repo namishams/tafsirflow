@@ -27,6 +27,7 @@ import { hooks } from "@/features/shams/memory";
 import { useShamsT } from "@/features/shams/texts";
 import { useLearnT } from "@/features/learn/texts";
 import { goBack } from "@/components/page";
+import { ContinueNext } from "@/features/shams2/Continue";
 
 // The Shams Method, natively: one verse at a time, the coach plans the steps (lib/coach.ts versePlan), every step sets
 // up the verse for one learning activity – exactly the flow of the website's Player in Shams mode.
@@ -297,6 +298,7 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
             <DoneShare kind="lessonDone" onStage arabic={chapter.name_arabic} title={chapter.name_simple}
               body={finished === "session" && sum ? st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes }) : st("doneLead")} />
             {finished === "surah" ? <OutlineButton title={st("again")} onStage onPress={() => { setFinished(null); setIdx(0); beginPlan(0, fullPath); }} /> : null}
+            <ContinueNext onStage surah={chapter.id} />
           </View>
         </Stage>
       </View>
@@ -508,9 +510,9 @@ function RateButton({ label, kind, onPress }: { label: string; kind: Rating; onP
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label}
       style={({ pressed }) => [base, kind === "again"
-        ? { borderWidth: 1, borderColor: "rgba(232,140,160,0.55)", backgroundColor: pressed ? "rgba(190,84,104,0.2)" : "rgba(190,84,104,0.1)" }
+        ? { borderWidth: 1, borderColor: "rgba(214,130,118,0.55)", backgroundColor: pressed ? "rgba(160,58,52,0.2)" : "rgba(160,58,52,0.1)" }
         : { backgroundColor: pressed ? "rgb(5,90,65)" : "rgb(6,108,78)" }]}>
-      <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: kind === "again" ? "rgb(244,190,200)" : "#fff" }}>{label}</Text>
+      <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: kind === "again" ? "rgb(236,200,190)" : "#fff" }}>{label}</Text>
     </Pressable>
   );
 }

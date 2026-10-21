@@ -19,6 +19,7 @@ import { openHref } from "@/features/library/links";
 import { Curve, DayIcon, Ladder, PrincipleIcon, ShamsDemo, ShamsPlanner, StepIcon, Sun } from "@/features/library/shamsArt";
 import { CUES, W } from "@/features/library/content/shams";
 import { ShamsEntries } from "@/features/courses/Shams";
+import { Shams2Entry } from "@/features/shams2/Hub";
 import { ReciterPathCard } from "@/features/reciter-path/Screens";
 
 // /shams – the Shams Method: hero with the sun over the arcade, why "Shams", problems and solution, the seven steps as
@@ -71,7 +72,7 @@ export default function ShamsPage() {
           </View>
         ) : null}
       </IslHero>
-      <View style={{ paddingHorizontal: 16, paddingBottom: 8 }}><ShamsEntries /></View>
+      <View style={{ paddingHorizontal: 16, paddingBottom: 8 }}><Shams2Entry /><ShamsEntries /></View>
       <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 14 }}><GardenWidget lead={gtx.shamsCard} /><ReciterPathCard /></View>
 
       <Marble>

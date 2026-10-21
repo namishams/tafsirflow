@@ -20,6 +20,7 @@ import { MoreTiles } from "@/features/practice/art";
 import { tileFor } from "@/web/tiles";
 import { CoursesEntry } from "@/features/courses/Screens";
 import { ShamsEntries } from "@/features/courses/Shams";
+import { Shams2Entry } from "@/features/shams2/Hub";
 import { VocabDecksEntry } from "@/features/courses/Vocab";
 
 // "More in the Academy" (website academy/page.tsx MODULES)
@@ -159,6 +160,7 @@ export default function Academy() {
 
           <Modules />
           <CoursesEntry />
+          <Shams2Entry />
           <ShamsEntries />
           <VocabDecksEntry />
         </View>
