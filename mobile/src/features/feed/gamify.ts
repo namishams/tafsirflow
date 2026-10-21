@@ -76,11 +76,12 @@ function addXp(n: number) {
 
 // ---------- quests ----------
 const POOL: [QuestKind, number][] = [["verses", 5], ["words", 3], ["hadith", 1], ["posts", 10], ["quiz", 2], ["dua", 1], ["share", 1], ["name", 2], ["verses", 3], ["posts", 15], ["words", 5]];
-const hash = (n: number) => { let x = (n * 2654435761) >>> 0; x ^= x >>> 15; return x; };
+const hash = (n: number) => { let x = (n * 2654435761) >>> 0; x ^= x >>> 15; return x >>> 0; }; // unsigned: a negative index made POOL[i] undefined and threw
 function ensureDay() {
   const s = g();
   const d = dayNum();
-  if (s.day === d) return;
+  // an empty list on the same day is a record left behind by the old negative-index crash: pick again
+  if (s.day === d && s.today.length) return;
   s.day = d; s.rewarded = false;
   const picked: Quest[] = [];
   for (let i = 0; picked.length < 3 && i < 40; i++) {
