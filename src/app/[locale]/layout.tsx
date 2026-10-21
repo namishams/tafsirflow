@@ -1,3 +1,4 @@
+import { APP_STORE_ID } from "@/lib/appstore";
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -31,9 +32,9 @@ import "../globals.css";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const metadataBase = new URL(SITE); // share images (og:image) as full https://quranmasterclass.com/... addresses
-  if (!hasLocale(routing.locales, locale)) return { metadataBase, title: "Quran Masterclass" };
+  if (!hasLocale(routing.locales, locale)) return { metadataBase, itunes: { appId: APP_STORE_ID }, title: "Quran Masterclass" };
   const t = await getTranslations({ locale, namespace: "seo" });
-  return { metadataBase, title: "Quran Masterclass", description: t("homeDesc", { n: routing.locales.length }) };
+  return { metadataBase, itunes: { appId: APP_STORE_ID }, title: "Quran Masterclass", description: t("homeDesc", { n: routing.locales.length }) };
 }
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#08261d" };
 

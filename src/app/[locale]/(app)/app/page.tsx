@@ -3,6 +3,8 @@ import { setRequestLocale } from "next-intl/server";
 import AppInstall from "@/components/AppInstall";
 import Logo from "@/components/Logo";
 import { pageMeta } from "@/lib/site";
+import AppShowcase from "@/components/AppShowcase";
+import { appStoreUrl } from "@/lib/appstore";
 
 export const dynamic = "force-dynamic"; // PLAY_STORE_URL is read from the server environment at request time
 
@@ -73,13 +75,14 @@ export default async function AppPage({ params }: { params: Promise<{ locale: st
             <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
             <h1 className="font-display mt-4 text-[38px] leading-[1.06] sm:text-6xl">{c.title}</h1>
             <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70">{c.lead}</p>
-            <div className="mt-8"><AppInstall t={{ ...c.buttons, appStore: APP_STORE_LABEL[locale] ?? APP_STORE_LABEL.en }} playUrl={process.env.PLAY_STORE_URL ?? ""} appStoreUrl={process.env.APP_STORE_URL ?? ""} /></div>
+            <div className="mt-8"><AppInstall t={{ ...c.buttons, appStore: APP_STORE_LABEL[locale] ?? APP_STORE_LABEL.en }} playUrl={process.env.PLAY_STORE_URL ?? ""} appStoreUrl={appStoreUrl()} /></div>
           </div>
           <div aria-hidden className="mx-auto grid h-56 w-32 place-items-center rounded-[2rem] border-4 border-white/15 bg-[rgb(var(--stage))] shadow-2xl sm:h-72 sm:w-40">
             <Logo size={72} />
           </div>
         </div>
       </section>
+      <div className="border-t border-white/10"><AppShowcase locale={locale} showMore={false} /></div>
       <section className="mx-auto max-w-5xl px-5 py-14">
         <h2 className="font-display text-3xl">{c.waysTitle}</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">

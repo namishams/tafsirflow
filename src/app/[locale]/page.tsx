@@ -10,6 +10,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import WhyQuran from "@/components/WhyQuran";
+import AppShowcase from "@/components/AppShowcase";
 import { getChapters } from "@/lib/quran";
 import VerseOfTheDay from "@/components/VerseOfTheDay";
 import Featured from "@/components/Featured";
@@ -147,6 +148,9 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
         {/* 2a Why the Quran comes first */}
         <WhyQuran locale={locale} />
+
+        {/* 2b The iOS app */}
+        <AppShowcase locale={locale} />
 
         {/* 3 Why */}
         <section className="hm-warm overflow-hidden">
