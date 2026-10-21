@@ -30,8 +30,11 @@ function EqBar({ i, on, color }: { i: number; on: boolean; color: string }) {
   return <Animated.View style={{ width: 3, height: 18, borderRadius: 1, backgroundColor: color, transform: [{ translateY }, { scaleY }] }} />;
 }
 
-export const StationPoster = memo(function StationPoster({ id, title, desc, word, bg, on, mix, mixLabel, locked, reduce, onChoose, label }: {
-  id: string; title: string; desc: string; word: string; bg: string; on: boolean; mix?: boolean; mixLabel: string; locked: boolean; reduce: boolean; onChoose: (id: string) => void; label: string;
+/** the garnet of the live mark (as on the radio stage, the mini player and the player) */
+export const LIVE = "rgb(160,58,52)";
+
+export const StationPoster = memo(function StationPoster({ id, title, desc, word, bg, on, mix, mixLabel, liveLabel, locked, reduce, onChoose, label }: {
+  id: string; title: string; desc: string; word: string; bg: string; on: boolean; mix?: boolean; mixLabel: string; liveLabel?: string; locked?: boolean; reduce: boolean; onChoose: (id: string) => void; label: string;
 }) {
   const g = cssStops(bg);
   const wordSize = word.length > 6 ? 30 : word.length > 3 ? 38 : 48;
@@ -80,7 +83,13 @@ export const StationPoster = memo(function StationPoster({ id, title, desc, word
             </View>
           )}
         </View>
-        <View style={{ position: "absolute", right: 16, top: 20, flexDirection: "row", alignItems: "center", gap: 6 }}>
+        <View style={{ position: "absolute", right: 16, top: 20, alignItems: "flex-end", gap: 6 }}>
+          {on && liveLabel ? (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 5, borderRadius: 3, paddingHorizontal: 6, paddingVertical: 2, backgroundColor: LIVE }}>
+              <View style={{ width: 5, height: 5, borderRadius: 2.5, backgroundColor: "#ffffff" }} />
+              <Text allowFontScaling={false} style={{ fontFamily: FONT.display, fontSize: 9.5, letterSpacing: 1, color: "#ffffff" }}>{liveLabel}</Text>
+            </View>
+          ) : null}
           {mix ? (
             <View style={{ borderRadius: R.pill, borderWidth: 1, borderColor: "rgba(233,207,153,0.45)", paddingHorizontal: 8, paddingVertical: 2 }}>
               <Text style={{ fontFamily: FONT.bold, fontSize: 9.5, letterSpacing: 1.1, textTransform: "uppercase", color: "#f3e2b6" }}>{mixLabel}</Text>

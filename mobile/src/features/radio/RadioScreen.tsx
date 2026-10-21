@@ -1,5 +1,5 @@
 import { memo, useCallback, useRef, useState } from "react";
-import { Animated, Pressable, ScrollView, StyleSheet, Text, View, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
+import { Animated, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Stack, router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -13,8 +13,10 @@ import { useWebT } from "@/i18n/web";
 import { GROUPS, POSTER, STATIONS } from "./stations";
 import { currentReciter, initials, radio, useBackToLive, useRadio, type Sleep } from "./engine";
 import { useSurahText } from "./useSurahText";
-import { Callout, Kicker, QuranSeal, useQ } from "./art";
+import { Callout, Kicker, QuranSeal, RadioOrb, useQ } from "./art";
+import { LIVE, StationPoster } from "./StationPoster";
 import { Check, Choices, FieldLabel, GoldPlay, RoundButton, StagePill, goBack, shareLink } from "./controls";
+import { GoldSlider } from "./Slider";
 import { RadioMiniPlayer, MINI_SPACE } from "./MiniPlayer";
 import { useAppT } from "./strings";
 import { useLoop, useReduceMotion } from "./motion";
@@ -22,7 +24,7 @@ import { VerseArabic } from "./VerseText";
 import { reciterName } from "@/lib/quran";
 
 // /radio – the website's RadioPlayer.tsx: the on-air stage with the verse on screen, the reciter orb and the reciters,
-// the stations as posters, settings (sleep timer, adhan, mixed voices, text) and what was played recently.
+// the stations as posters (all free), settings (sleep timer, adhan, mixed voices, text) and what was played recently.
 export default function RadioScreen() {
   const r = useRadio();
   const t = useWebT("radio");
@@ -34,11 +36,13 @@ export default function RadioScreen() {
   const reduce = useReduceMotion();
   const back = useBackToLive();
   const insets = useSafeAreaInsets();
+  const { width } = useWindowDimensions();
   const reciter = currentReciter(r);
   const { verses } = useSurahText(r.now.s, lang, reciter);
   const verse = verses?.find((v) => v.verse_number === r.now.v);
   const chapter = r.chapters.find((c) => c.id === r.now.s);
   const nameOf = (s: number) => r.chapters.find((c) => c.id === s)?.name_simple ?? String(s);
+  const upNext = r.started ? radio.upNext() : null;
   const [past, setPast] = useState(false);
   const pastRef = useRef(false);
   const heroEnd = useRef(600);
@@ -46,12 +50,13 @@ export default function RadioScreen() {
     const p = e.nativeEvent.contentOffset.y > heroEnd.current;
     if (p !== pastRef.current) { pastRef.current = p; setPast(p); }
   };
+  const orb = Math.min(width - 72, 272);
   const stationTitle = t(`st_${r.station.id}`);
 
-  const [more, setMore] = useState(false);
+  // the radio is free for everyone: every station and every voice, no Pro gate
   const choose = useCallback((id: string) => {
     const st = STATIONS.find((s) => s.id === id)!;
-    // one tap: a new station starts at once, the current one pauses / resumes
+    // a new station starts at once (and is remembered as the last one); a tap on the current one pauses / resumes it
     if (st.id === r.station.id && r.started) radio.toggle(); else radio.chooseStation(st);
   }, [r.station.id, r.started]);
   const pickReciter = useCallback((folder: string) => { radio.changeReciter(folder); }, []);
@@ -82,7 +87,7 @@ export default function RadioScreen() {
               <Icon name="chevronLeft" color="#ffffff" size={24} />
             </Pressable>
             <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 10, marginTop: 6 }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 3, paddingHorizontal: 8, paddingVertical: 3, backgroundColor: "rgb(160,58,52)" }}
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 3, paddingHorizontal: 8, paddingVertical: 3, backgroundColor: LIVE }}
                 accessibilityLabel={t("onAir")}>
                 <LiveDot on={r.playing && !reduce} />
                 <Text style={{ fontFamily: FONT.display, fontSize: 11, letterSpacing: 1.2, color: "#ffffff" }}>{t("onAir")}</Text>
@@ -109,17 +114,41 @@ export default function RadioScreen() {
               </View>
             ) : null}
 
-            {/* one big play / pause */}
-            <View style={{ alignItems: "center", marginTop: 30 }} onLayout={(e) => { heroEnd.current = e.nativeEvent.layout.y + e.nativeEvent.layout.height; }}>
-              <GoldPlay playing={r.playing} onPress={radio.toggle} labels={[t("pause"), t("play")]} size={104} />
-              <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: 10, marginTop: 22 }}>
-                <StagePill title={t("nextSurah")} onPress={radio.skipSurah} />
-                <StagePill title={a("nowPlaying")} onPress={() => router.push("/radio/now" as never)} />
-                <RoundButton icon="send" label={ts("share")} onPress={share} />
+            <View style={{ marginTop: 26, flexDirection: "row", direction: "ltr", flexWrap: "wrap", alignItems: "center", gap: 12 }}>
+              <RoundButton icon="prev" label={t("prev")} onPress={radio.prevVerse} />
+              <GoldPlay playing={r.playing} onPress={radio.toggle} labels={[t("pause"), t("play")]} />
+              <RoundButton icon="next" label={t("nextVerse")} onPress={radio.skipVerse} />
+              <StagePill title={t("nextSurah")} onPress={radio.skipSurah} />
+              <RoundButton icon="send" label={ts("share")} onPress={share} />
+            </View>
+            <View style={{ marginTop: 14, flexDirection: "row", alignItems: "center", gap: 12 }} onLayout={(e) => { heroEnd.current = e.nativeEvent.layout.y + e.nativeEvent.layout.height; }}>
+              <Icon name="volume" color="rgba(255,255,255,0.6)" size={18} />
+              <View style={{ flex: 1, maxWidth: 260 }}>
+                <GoldSlider value={r.vol} onChange={(v) => radio.setVolume(v, false)} onDone={(v) => radio.setVolume(v)} label={t("volume")} valueText={`${Math.round(r.vol * 100)} %`} />
               </View>
             </View>
+            {upNext ? (
+              <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: "rgba(255,255,255,0.6)", marginTop: 14 }}>
+                <Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{t("upNext")}:</Text> {upNext.s}. {nameOf(upNext.s)} · {upNext.v}
+              </Text>
+            ) : null}
+
+            <View style={{ alignItems: "center", marginTop: 34 }}>
+              <Pressable onPress={() => router.push("/radio/now" as never)} accessibilityRole="button" accessibilityLabel={`${a("openNowPlaying")}: ${reciterName(reciter, lang)}`}>
+                <RadioOrb on={r.playing} size={orb} label={initials(reciter.name)} reduce={reduce} />
+              </Pressable>
+            </View>
           </View>
-          <View style={{ height: 30 }} />
+
+          {/* reciters strip */}
+          <View style={{ paddingHorizontal: 16, paddingTop: 30, paddingBottom: 34 }}>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2.1, textTransform: "uppercase", color: "rgba(255,255,255,0.5)" }}>{t("reciters")}</Text>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12, marginHorizontal: -4 }}>
+              {r.reciters.map((x) => (
+                <ReciterButton key={x.folder} folder={x.folder} name={reciterName(x, lang)} mono={initials(x.name)} on={x.folder === r.folder} onPick={pickReciter} />
+              ))}
+            </View>
+          </View>
           <View style={{ opacity: 0.6 }}><Arcade /></View>
         </Stage>
 
@@ -134,35 +163,36 @@ export default function RadioScreen() {
             </Callout>
           ) : null}
 
-          {/* stations: one clear list, one tap to switch; every station is live and free */}
+          {/* stations as posters, grouped */}
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 34, letterSpacing: -0.7, color: th.ink }}>{t("stations")}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: th.muted, marginTop: 8 }}>{t("stationsLead", { n: STATIONS.length })}</Text>
-          {GROUPS.map((g) => (
-            <View key={g} style={{ marginTop: 26 }}>
-              <Text accessibilityRole="header" style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.9, textTransform: "uppercase", color: th.muted }}>{t(`g_${g}`)}</Text>
-              <View style={{ gap: 8, marginTop: 10 }}>
-                {STATIONS.filter((x) => x.group === g).map((x) => {
-                  const p = POSTER[x.id] ?? POSTER.quran;
-                  const title = t(`st_${x.id}`), desc = t(`sd_${x.id}`);
-                  return <StationRow key={x.id} id={x.id} title={title} desc={desc} word={p.ar} bg={p.bg} current={r.station.id === x.id} playing={r.station.id === x.id && r.playing}
-                    onAir={t("onAir")} reduce={reduce} onChoose={choose} />;
-                })}
+          {GROUPS.map((g) => {
+            const list = STATIONS.filter((st) => st.group === g);
+            const rows: (typeof list)[] = [];
+            list.forEach((st, i) => { if (i % 2 === 0) rows.push([]); rows[rows.length - 1].push(st); });
+            return (
+              <View key={g} style={{ marginTop: 30 }}>
+                <Text accessibilityRole="header" style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.9, textTransform: "uppercase", color: th.muted }}>{t(`g_${g}`)}</Text>
+                <View style={{ gap: 12, marginTop: 12 }}>
+                  {rows.map((row, i) => (
+                    <View key={i} style={{ flexDirection: "row", gap: 12 }}>
+                      {row.map((st) => {
+                        const p = POSTER[st.id] ?? POSTER.quran;
+                        const on = r.station.id === st.id && r.playing;
+                        const title = t(`st_${st.id}`), desc = t(`sd_${st.id}`);
+                        return (
+                          <StationPoster key={st.id} id={st.id} title={title} desc={desc} word={p.ar} bg={p.bg} on={on} mix={st.mix} mixLabel={t("mixBadge")} liveLabel={t("onAir")} reduce={reduce}
+                            label={`${title}. ${desc}${on ? `. ${t("onAir")}` : ""}`} onChoose={choose} />
+                        );
+                      })}
+                      {row.length === 1 ? <View style={{ flex: 1 }} /> : null}
+                    </View>
+                  ))}
+                </View>
               </View>
-            </View>
-          ))}
+            );
+          })}
 
-          {/* everything else, folded away */}
-          <Pressable onPress={() => setMore((m) => !m)} accessibilityRole="button" accessibilityState={{ expanded: more }}
-            style={{ marginTop: 32, flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingVertical: 14, borderTopWidth: 1, borderBottomWidth: more ? 0 : 1, borderColor: th.line }}>
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: th.ink }}>{t("settings")} · {t("reciters")}</Text>
-            <View style={{ transform: [{ rotate: more ? "180deg" : "0deg" }] }}><Icon name="chevronDown" color={th.muted} size={20} /></View>
-          </Pressable>
-          {more ? (<>
-          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 6, marginHorizontal: -4 }}>
-            {r.reciters.map((x) => (
-              <ReciterButton key={x.folder} folder={x.folder} name={reciterName(x, lang)} mono={initials(x.name)} on={x.folder === r.folder} onPick={pickReciter} ink={th.ink} />
-            ))}
-          </View>
           {/* settings */}
           <Callout style={{ marginTop: 36 }}>
             <Kicker>{t("settings")}</Kicker>
@@ -208,7 +238,6 @@ export default function RadioScreen() {
               </View>
             ) : <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: th.muted, marginTop: 8 }}>{t("recentNone")}</Text>}
           </Callout>
-          </>) : null}
         </View>
       </ScrollView>
       <RadioMiniPlayer visible={past} />
@@ -216,41 +245,16 @@ export default function RadioScreen() {
   );
 }
 
-/** a reciter: seal with initials and name (on the radio every voice is free) */
-const ReciterButton = memo(function ReciterButton({ folder, name, mono, on, onPick, ink }: { folder: string; name: string; mono: string; on: boolean; onPick: (folder: string) => void; ink: string }) {
+/** a reciter in the strip on the stage: seal with initials and name (every voice on the radio is free) */
+const ReciterButton = memo(function ReciterButton({ folder, name, mono, on, onPick }: { folder: string; name: string; mono: string; on: boolean; onPick: (folder: string) => void }) {
   return (
     <View style={{ width: "33.333%", padding: 4 }}>
       <Pressable onPress={() => onPick(folder)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={name}
-        style={({ pressed }) => ({ alignItems: "center", gap: 8, padding: 10, borderRadius: R.lg, opacity: pressed ? 0.7 : 1, borderWidth: 1, borderColor: on ? "rgba(214,180,108,0.6)" : "transparent" })}>
-        <QuranSeal size={56} on={on}>{mono}</QuranSeal>
-        <Text numberOfLines={2} style={{ fontFamily: FONT.semibold, fontSize: 12, lineHeight: 15.5, textAlign: "center", color: ink }}>{name}</Text>
+        style={({ pressed }) => ({ alignItems: "center", gap: 8, padding: 10, borderRadius: R.lg, backgroundColor: on ? "rgba(255,255,255,0.07)" : pressed ? "rgba(255,255,255,0.05)" : "transparent", borderWidth: 1, borderColor: on ? "rgba(214,180,108,0.35)" : "transparent" })}>
+        <QuranSeal size={60} on={on}>{mono}</QuranSeal>
+        <Text numberOfLines={2} style={{ fontFamily: FONT.semibold, fontSize: 12, lineHeight: 15.5, textAlign: "center", color: on ? "#ffffff" : "rgba(255,255,255,0.7)" }}>{name}</Text>
       </Pressable>
     </View>
-  );
-});
-
-/** a station in the list: colour seal with its Arabic word, title, description and a live badge (red and pulsing while heard) */
-const StationRow = memo(function StationRow({ id, title, desc, word, bg, current, playing, onAir, reduce, onChoose }: {
-  id: string; title: string; desc: string; word: string; bg: string; current: boolean; playing: boolean; onAir: string; reduce: boolean; onChoose: (id: string) => void;
-}) {
-  const th = useTheme();
-  return (
-    <Pressable onPress={() => onChoose(id)} accessibilityRole="button" accessibilityState={{ selected: current }} accessibilityLabel={`${title}. ${desc}${playing ? `. ${onAir}` : ""}`}
-      style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 14, padding: 12, borderRadius: R.lg, borderWidth: 1,
-        borderColor: current ? "rgba(214,180,108,0.7)" : th.line, backgroundColor: current ? "rgba(214,180,108,0.08)" : th.card, opacity: pressed ? 0.8 : 1 })}>
-      <View style={{ width: 52, height: 52, borderRadius: 14, backgroundColor: bg, alignItems: "center", justifyContent: "center" }}>
-        <Text style={{ fontSize: 20, color: "#f3e2b6" }} numberOfLines={1}>{word}</Text>
-      </View>
-      <View style={{ flex: 1, minWidth: 0 }}>
-        <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 16, color: th.ink }}>{title}</Text>
-        <Text numberOfLines={2} style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: th.muted, marginTop: 2 }}>{desc}</Text>
-      </View>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: 5, borderRadius: 3, paddingHorizontal: 7, paddingVertical: 3,
-        backgroundColor: playing ? "rgb(160,58,52)" : "transparent", borderWidth: 1, borderColor: playing ? "rgb(160,58,52)" : "rgba(160,58,52,0.55)" }}>
-        {playing ? <LiveDot on={!reduce} /> : null}
-        <Text style={{ fontFamily: FONT.display, fontSize: 10, letterSpacing: 1.1, color: playing ? "#ffffff" : "rgb(160,58,52)" }}>{onAir}</Text>
-      </View>
-    </Pressable>
   );
 });
 
