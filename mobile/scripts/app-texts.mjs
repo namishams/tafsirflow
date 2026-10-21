@@ -20,6 +20,7 @@ export const MODULES = {
   daily: ["src/features/daily/DailyMoment.tsx", "T", "en"],
   alerts: ["src/features/practice/prayer/alerts.ts", "TX", "en"],
   dailyReminder: ["src/lib/daily.ts", "TEXTS", "en"],
+  reader: ["src/features/reader/texts.ts", "T", "en"],
 };
 
 function english(file, variable, prop) {

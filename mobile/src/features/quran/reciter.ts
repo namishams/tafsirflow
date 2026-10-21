@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useSyncExternalStore } from "react";
-import { usePro, FREE } from "@/lib/pro";
+import { usePro, FREE, openPro } from "@/lib/pro";
 import { readJSON, removeKey, useStored, writeJSON } from "@/lib/store";
 import { RECITERS, getReciters, type Reciter } from "@/lib/quran";
 import { registerReciters } from "./useVerseAudio";
+import { setPlaybackPro } from "@/features/reader/versePlayback";
 
 // The chosen reciter, shared with the radio and the website: "tf:reciter" holds the reciter's folder (like the
 // website's Player.tsx and RadioProvider.tsx). The full list comes from /api/reciters (22 voices); without Pro only the
@@ -42,12 +43,35 @@ export function useReciterList(): Reciter[] {
   return useSyncExternalStore((f) => { subs.add(f); return () => { subs.delete(f); }; }, () => list);
 }
 
+/**
+ * The one place that decides which voice may play (every player goes through here): without Pro a Pro voice saved in
+ * "tf:reciter" (chosen on the website, in the radio, on a reciter page or via ?reciter=) falls back to the first free
+ * reciter (FREE.reciterIds). Used by the reader, Shams, the focus mode and – via setPlaybackPro – the background verse
+ * session of the mini player, so a voice never outlives an expired Pro subscription.
+ */
+export function allowedReciter(chosen: Reciter | undefined, pro: boolean, all: Reciter[] = list): Reciter {
+  const pool = all.length ? all : RECITERS;
+  if (chosen && (pro || isFreeReciter(chosen))) return chosen;
+  return pool.find(isFreeReciter) ?? RECITERS.find(isFreeReciter) ?? RECITERS[0];
+}
+/** the first free voice (for background sessions whose Pro ended) */
+export const freeReciter = () => allowedReciter(undefined, false);
+
 export function useReciter(): [Reciter, (r: Reciter) => void, Reciter[]] {
   const { pro } = usePro();
   const all = useReciterList();
   const folder = useStored<string>(KEY, "");
-  const chosen = all.find((r) => r.folder === folder) ?? all[0];
-  const reciter = pro || isFreeReciter(chosen) ? chosen : all.find(isFreeReciter) ?? all[0];
-  const set = useCallback((r: Reciter) => writeJSON(KEY, r.folder, true), []);
+  const reciter = allowedReciter(all.find((r) => r.folder === folder) ?? all[0], pro, all);
+  useEffect(() => { setPlaybackPro(pro); }, [pro]);
+  // picking a locked voice anywhere opens the Pro sheet instead of switching
+  const set = useCallback((r: Reciter) => { if (!pro && !isFreeReciter(r)) { openPro("reciters"); return; } writeJSON(KEY, r.folder, true); }, [pro]);
   return [reciter, set, all];
+}
+/** the allowed voice (alias, for players that do not pick a voice themselves) */
+export const useAllowedReciter = () => useReciter()[0];
+
+/** keeps the background verse session in step with Pro; mount once (root layout / now-playing bar) */
+export function useReciterGuard() {
+  const { pro } = usePro();
+  useEffect(() => { setPlaybackPro(pro); }, [pro]);
 }

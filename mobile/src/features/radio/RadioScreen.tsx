@@ -1,5 +1,5 @@
 import { memo, useCallback, useRef, useState } from "react";
-import { Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
+import { Animated, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Stack, router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -12,7 +12,7 @@ import { openPro } from "@/lib/pro";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { GROUPS, POSTER, STATIONS } from "./stations";
-import { currentReciter, initials, radio, reciterAllowed, stationAllowed, useRadio, type Sleep } from "./engine";
+import { currentReciter, initials, radio, useBackToLive, reciterAllowed, stationAllowed, useRadio, type Sleep } from "./engine";
 import { useSurahText } from "./useSurahText";
 import { Callout, Kicker, QuranSeal, RadioOrb, useQ } from "./art";
 import { StationPoster } from "./StationPoster";
@@ -20,7 +20,7 @@ import { Check, Choices, FieldLabel, GoldPlay, RoundButton, StagePill, goBack, s
 import { GoldSlider } from "./Slider";
 import { RadioMiniPlayer, MINI_SPACE } from "./MiniPlayer";
 import { useAppT } from "./strings";
-import { useReduceMotion } from "./motion";
+import { useLoop, useReduceMotion } from "./motion";
 import { VerseArabic } from "./VerseText";
 import { reciterName } from "@/lib/quran";
 
@@ -35,6 +35,7 @@ export default function RadioScreen() {
   const q = useQ();
   const { lang } = useLang();
   const reduce = useReduceMotion();
+  const back = useBackToLive();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const reciter = currentReciter(r);
@@ -85,12 +86,13 @@ export default function RadioScreen() {
               <Icon name="chevronLeft" color="#ffffff" size={24} />
             </Pressable>
             <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 10, marginTop: 6 }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 3, paddingHorizontal: 8, paddingVertical: 3, backgroundColor: r.playing ? "rgb(220,38,38)" : "rgba(255,255,255,0.1)" }}
-                accessibilityLabel={r.playing ? t("onAir") : t("off")}>
-                {r.playing ? <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: "#ffffff" }} /> : null}
-                <Text style={{ fontFamily: FONT.display, fontSize: 11, letterSpacing: 1.2, color: r.playing ? "#ffffff" : "rgba(255,255,255,0.6)" }}>{r.playing ? t("onAir") : t("off")}</Text>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 3, paddingHorizontal: 8, paddingVertical: 3, backgroundColor: "rgb(220,38,38)" }}
+                accessibilityLabel={t("onAir")}>
+                <LiveDot on={r.playing && !reduce} />
+                <Text style={{ fontFamily: FONT.display, fontSize: 11, letterSpacing: 1.2, color: "#ffffff" }}>{t("onAir")}</Text>
               </View>
               <Text style={{ flexShrink: 1, fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2.2, textTransform: "uppercase", color: stage.gold }}>{t("title")} · {stationTitle}</Text>
+              {back ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: "#ffffff" }}>{a("backToLive")}</Text> : null}
             </View>
             <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 44, lineHeight: 47, letterSpacing: -1, color: "#eef0f3", marginTop: 16 }}>
               {chapter ? chapter.name_simple : `${r.now.s}`}<Text style={{ color: "rgba(255,255,255,0.4)" }}> · {r.now.v}</Text>
@@ -255,3 +257,10 @@ const ReciterButton = memo(function ReciterButton({ folder, name, mono, on, lock
     </View>
   );
 });
+
+/** the small white dot of the on-air badge: pulses while the station is heard, stands still otherwise (and with Reduce Motion) */
+function LiveDot({ on }: { on: boolean }) {
+  const v = useLoop(on, 1600);
+  const opacity = on ? v.interpolate({ inputRange: [0, 0.5, 1], outputRange: [1, 0.3, 1] }) : 1;
+  return <Animated.View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: "#ffffff", opacity }} />;
+}

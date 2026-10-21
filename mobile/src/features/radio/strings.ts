@@ -36,6 +36,8 @@ const S = {
     volumeDown: "Leiser",
     on: "an",
     off: "aus",
+    backToLive: "Zurück zu live",
+    closePlayer: "Wiedergabe schließen",
   },
   en: {
     nowPlaying: "Now playing",
@@ -70,6 +72,8 @@ const S = {
     volumeDown: "Quieter",
     on: "on",
     off: "off",
+    backToLive: "Back to live",
+    closePlayer: "Close player",
   },
 };
 export type AppKey = keyof typeof S.en;

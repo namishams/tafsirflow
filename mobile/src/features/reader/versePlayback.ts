@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from "react";
 import { writeJSON } from "@/lib/store";
 import { VerseEngine } from "@/features/quran/useVerseAudio";
+import { audioUrl } from "@/lib/quran";
 
 // One verse player for the reader that outlives the surah screen (the website's lib/versePlayback.ts, SoundCloud-style).
 // While a reader is attached it decides what happens after a verse; when the learner leaves the reader the session
@@ -11,6 +12,8 @@ export type Session = {
   chapterId: number; chapterName: string; reciterName: string; reciterFolder: string;
   items: Item[]; idx: number; repeat: number; playsDone: number;
   mode: Mode; loopOn: boolean; loopFrom: number; loopTo: number; speed: number;
+  /** the session needs Pro (a Pro voice or offline files); without Pro it continues in the free voice */
+  locked?: boolean; free?: { id: number; folder: string; name: string; slug: string };
 };
 export type Handlers = { ended?: () => void };
 type Snap = { session: Session | null; playing: boolean; attached: boolean };
@@ -18,6 +21,7 @@ type Snap = { session: Session | null; playing: boolean; attached: boolean };
 let engine: VerseEngine | null = null;
 let session: Session | null = null;
 let attached: { current: Handlers } | null = null;
+let pro = false;
 let snap: Snap = { session: null, playing: false, attached: false };
 const subs = new Set<() => void>();
 
@@ -46,8 +50,18 @@ export function step(d: number, play = true) {
   if (!session) return;
   go(Math.min(Math.max(session.idx + d, 0), session.items.length - 1), play);
 }
+/** Pro as the app knows it (features/quran/reciter.ts keeps it current); a background session never outlives it */
+export function setPlaybackPro(p: boolean) { pro = p; }
+/** Pro ended while a Pro voice or offline files played: from the next verse on, the free voice streams */
+function guard(s: Session) {
+  if (pro || !s.locked || !s.free) return;
+  const f = s.free;
+  s.items = s.items.map((_, k) => ({ url: audioUrl(f, s.chapterId, k + 1), remote: "" }));
+  s.reciterFolder = f.folder; s.reciterName = f.name; s.locked = false;
+}
 function go(i: number, play = true) {
   if (!session) return;
+  guard(session);
   session.idx = i; session.playsDone = 0;
   const it = session.items[i];
   writeJSON("tf:last", { chapter: session.chapterId, verse: i + 1, at: Date.now() });
@@ -59,7 +73,8 @@ function headlessEnded() {
   const s = session;
   if (!s) return;
   s.playsDone += 1;
-  if (s.playsDone < s.repeat) { getEngine().seekPlay(0); return; }
+  if (s.playsDone < s.repeat && (pro || !s.locked)) { getEngine().seekPlay(0); return; }
+  if (s.playsDone < s.repeat) { const n = s.playsDone; go(s.idx); s.playsDone = n; return; }
   if (s.mode === "learn") return; // learn mode waits for the learner
   if (s.loopOn && s.idx >= s.loopTo - 1) { go(Math.max(0, s.loopFrom - 1)); return; }
   if (s.idx < s.items.length - 1) go(s.idx + 1);
@@ -69,7 +84,7 @@ function headlessEnded() {
 export function advanceHeadless() {
   const s = session;
   if (!s || attached) return;
-  if (s.playsDone > 0 && s.playsDone < s.repeat) { getEngine().seekPlay(0); return; }
+  if (s.playsDone > 0 && s.playsDone < s.repeat) { if (pro || !s.locked) getEngine().seekPlay(0); else { const n = s.playsDone; go(s.idx); s.playsDone = n; } return; }
   if (s.loopOn && s.idx >= s.loopTo - 1) { go(Math.max(0, s.loopFrom - 1)); return; }
   if (s.idx < s.items.length - 1) go(s.idx + 1);
 }
@@ -80,7 +95,7 @@ export function toggle() {
   const st = e.getSnapshot();
   if (st.playing) { e.pause(); return; }
   if (!session) return;
-  if (!st.ended && st.positionMs > 0 && e.url) e.resume(); else go(session.idx);
+  if (!st.ended && st.positionMs > 0 && e.url && (pro || !session.locked)) e.resume(); else go(session.idx);
 }
 
 export function attach(h: { current: Handlers }) { getEngine(); attached = h; publish(); }

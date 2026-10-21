@@ -11,7 +11,7 @@ import { SITE } from "@/lib/api";
 import { intlLocale, useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { countOf } from "@/web/counts";
-import { currentReciter, initials, radio, useRadio, type Repeat, type Sleep } from "./engine";
+import { currentReciter, initials, radio, useBackToLive, useRadio, type Repeat, type Sleep } from "./engine";
 import { useSurahText } from "./useSurahText";
 import { RadioOrb } from "./art";
 import { Choices, GoldPlay, RoundButton, fmtTime, shareLink } from "./controls";
@@ -45,6 +45,7 @@ export default function NowPlaying() {
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const reduce = useReduceMotion();
+  const back = useBackToLive();
   const reciter = currentReciter(r);
   const { verses, failed, retry } = useSurahText(r.now.s, lang, reciter);
   const verse = verses?.find((v) => v.verse_number === r.now.v);
@@ -85,8 +86,14 @@ export default function NowPlaying() {
             <Icon name="chevronDown" color="#ffffff" size={26} />
           </Pressable>
           <View style={{ flex: 1, alignItems: "center" }}>
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: stage.gold }}>{a("nowPlaying")}</Text>
-            <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13, color: "rgba(255,255,255,0.75)", marginTop: 2 }}>{t("title")} · {t(`st_${r.station.id}`)}</Text>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
+              <View accessibilityLabel={t("onAir")} style={{ flexDirection: "row", alignItems: "center", gap: 5, borderRadius: 3, paddingHorizontal: 6, paddingVertical: 2, backgroundColor: "rgb(220,38,38)" }}>
+                <View style={{ width: 5, height: 5, borderRadius: 2.5, backgroundColor: "#ffffff", opacity: r.playing ? 1 : 0.6 }} />
+                <Text style={{ fontFamily: FONT.display, fontSize: 10, letterSpacing: 1, color: "#ffffff" }}>{t("onAir")}</Text>
+              </View>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: stage.gold }}>{a("nowPlaying")}</Text>
+            </View>
+            <Text numberOfLines={1} accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13, color: back ? "#ffffff" : "rgba(255,255,255,0.75)", marginTop: 2 }}>{back ? a("backToLive") : `${t("title")} · ${t(`st_${r.station.id}`)}`}</Text>
           </View>
           <Pressable onPress={share} accessibilityRole="button" accessibilityLabel={a("shareRadio")} hitSlop={10} style={{ width: 44, height: 44, alignItems: "flex-end", justifyContent: "center", marginEnd: -6 }}>
             <Icon name="share" color="#ffffff" size={20} />

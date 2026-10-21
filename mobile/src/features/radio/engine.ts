@@ -1,4 +1,4 @@
-import { useEffect, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { createAudioPlayer, createAudioPlaylist, setAudioModeAsync, type AudioMetadata, type AudioPlayer, type AudioPlaylist, type AudioPlaylistStatus, type AudioStatus } from "expo-audio";
 import { api, SITE } from "@/lib/api";
 import { RECITERS, getChapters, type Chapter, type Reciter } from "@/lib/quran";
@@ -54,6 +54,8 @@ export type RadioState = {
   voice: string;
   banner: Prayer | null;
   pro: boolean;
+  /** when the listener last came back to the live point after a pause (0: never) – the "Back to live" notice */
+  rejoinedAt: number;
 };
 
 // ---------- stations (RadioProvider.tsx) ----------
@@ -67,6 +69,34 @@ function juzToday(): [Pos, Pos] {
   const end = j < 29 ? keyAt(indexOf(...(JUZ_START[j + 1].split(":").map(Number) as [number, number])) - 1) : { s: 114, v: 6 };
   return [{ s, v }, end];
 }
+// ---------- on air (app) ----------
+// A station is live: it runs whether anyone listens or not. The website has no clock for this (it starts a station at its
+// first verse and resumes a paused element where it stopped); the app keeps a broadcast schedule instead, so tuning in
+// lands where the station is now and resuming after a pause jumps back to live (like Apple Music radio).
+// The schedule runs on an estimated verse length (verse durations are not known before the files load): every station
+// walks its verse sequence from a fixed point in time (Unix epoch; Juz of the day: the start of the UTC day).
+const AIR_VERSE_S = 12;
+const cycles = new Map<string, Pos[]>();
+function cycleOf(st: Station): Pos[] {
+  const key = st.mode === "juzday" ? `${st.id}-${Math.floor(Date.now() / 86400000)}` : st.id;
+  const hit = cycles.get(key);
+  if (hit) return hit;
+  const first = startOf(st);
+  const seq: Pos[] = [first];
+  let p = nextPos(first, st);
+  while (!(p.s === first.s && p.v === first.v) && seq.length < 7000) { seq.push(p); p = nextPos(p, st); }
+  if (st.mode === "juzday") for (const k of [...cycles.keys()]) if (k.startsWith(`${st.id}-`)) cycles.delete(k);
+  cycles.set(key, seq);
+  return seq;
+}
+/** where the station is on air right now */
+export function livePos(st: Station, at = Date.now()): Pos {
+  if (st.mode === "random") return startOf(st);
+  const seq = cycleOf(st);
+  const since = st.mode === "juzday" ? at % 86400000 : at;
+  return seq[Math.floor(since / 1000 / AIR_VERSE_S) % seq.length];
+}
+
 // the station never ends: after the last surah it starts again (or picks the next random surah)
 export function nextPos(p: Pos, st: Station): Pos {
   if (st.mode === "juzday") { const [a, b] = juzToday(); if (p.s === b.s && p.v === b.v) return a; }
@@ -96,7 +126,7 @@ export const stationAllowed = (st: Station, pro: boolean) => pro || STATIONS.ind
 let state: RadioState = {
   station: STATIONS[0], reciters: RECITERS, folder: RECITERS[0].folder, playing: false, started: false, now: { s: 1, v: 1 },
   history: [], chapters: [], sleep: 0, sleepLeft: 0, mix: false, vol: 1, rate: 1, repeat: "off", showText: true, offline: false,
-  adhanMode: "makkah", adhanFiles: [], adhanCredit: "", voice: "random", banner: null, pro: false,
+  adhanMode: "makkah", adhanFiles: [], adhanCredit: "", voice: "random", banner: null, pro: false, rejoinedAt: 0,
 };
 const listeners = new Set<() => void>();
 function set(patch: Partial<RadioState>) {
@@ -115,13 +145,11 @@ function effectiveFolder(folder = state.folder): string {
 }
 
 let inited = false;
-let resumable = false;
 function init() {
   if (inited) return;
   inited = true;
   const sid = readJSON<string>("tf:radio-station", "");
   const station = STATIONS.find((s) => s.id === sid) ?? STATIONS[0];
-  const last = readJSON<Last | null>("qmc.radio.last", null);
   state = {
     ...state,
     station,
@@ -132,10 +160,7 @@ function init() {
     voice: readJSON<string>("tf:adhanVoice", "random"),
     folder: readJSON<string>("tf:reciter", "") || RECITERS[0].folder,
   };
-  if (last && last.station === station.id && last.s >= 1 && last.s <= 114 && last.v >= 1 && last.v <= countOf(last.s)) {
-    state.now = { s: last.s, v: last.v };
-    resumable = true;
-  }
+  state.now = livePos(station);
   // reciters whose complete audio is on the server (the website's /api/reciters)
   api<{ reciters?: Reciter[] }>("/api/reciters").then((d) => {
     if (!d.reciters?.length) return;
@@ -147,6 +172,7 @@ function init() {
   fetch(`${SITE}/api/adhan`).then((r) => (r.ok ? r.json() : { files: [] })).then((d: { files?: AdhanFile[] }) => set({ adhanFiles: d.files ?? [] })).catch(() => undefined);
   // single voice in the app: whatever else starts to play (Quran reader, lessons) pauses the radio
   onWebEvent("tf-audio-start", () => { if (state.playing) pause(); });
+
 }
 
 // ---------- audio ----------
@@ -170,6 +196,11 @@ let stall = 0, extPause = 0, errors = 0, ticks = 0;
 let lastRemain = 99;
 let ticker: ReturnType<typeof setInterval> | null = null;
 let sleepUntil = 0;
+// the listener left the live point: where and when (a paused station keeps running)
+type Held = { at: number; pos: Pos; folder: string; t: number; d: number; notice: boolean };
+let held: Held | null = null;
+let avgVerse = AIR_VERSE_S; // seconds of audio per verse, measured while listening
+let verseSince = 0;         // when the verse on air started (0: unknown, e.g. after a pause)
 
 export const audioUrlOf = (folder: string, p: Pos) => `${SITE}/audio/${folder}/${pad(p.s)}${pad(p.v)}.mp3`;
 const src = (it: Item) => ({ uri: audioUrlOf(it.folder, it.pos) });
@@ -233,6 +264,7 @@ function start(p: Pos, autoplay = true, folderOverride?: string) {
   const folder = folderOverride ?? effectiveFolder();
   teardown();
   queue = [{ pos: p, folder }];
+  held = null; verseSince = 0;
   idx = 0; capped = false; ended = false; stall = 0; extPause = 0; lastRemain = 99;
   while (queue.length <= AHEAD) {
     const it = nextItem(queue[queue.length - 1]);
@@ -246,7 +278,6 @@ function start(p: Pos, autoplay = true, folderOverride?: string) {
     list.addListener("trackChanged", (e: { currentIndex: number }) => onIndex(e.currentIndex)),
     list.addListener("playlistStatusUpdate", (st: AudioPlaylistStatus) => onStatus(st)),
   ];
-  resumable = true;
   set({ now: p, folder, started: true, offline: false, history: state.history[0]?.s === p.s && state.history[0]?.v === p.v ? state.history : [p, ...state.history].slice(0, 6) });
   persistLast(p, folder);
   try { list.setActiveForLockScreen(true, meta(p, folder), { showNextTrack: true, showPreviousTrack: true }); } catch { /* not supported here */ }
@@ -258,6 +289,12 @@ function start(p: Pos, autoplay = true, folderOverride?: string) {
 
 function onIndex(ci: number) {
   if (!pl || ci === idx || ci < 0 || ci >= queue.length) return;
+  const nowMs = Date.now();
+  if (verseSince && state.playing && ci === idx + 1) {
+    const sec = ((nowMs - verseSince) / 1000) * state.rate;
+    if (sec > 2 && sec < 180) avgVerse = avgVerse * 0.8 + sec * 0.2;
+  }
+  verseSince = state.playing ? nowMs : 0;
   idx = ci; errors = 0; stall = 0;
   const it = queue[idx];
   set({ now: it.pos, folder: it.folder, history: [it.pos, ...state.history].slice(0, 6) });
@@ -272,7 +309,7 @@ function onStatus(st: AudioPlaylistStatus & { error?: unknown }) {
   if (typeof st.currentIndex === "number") onIndex(st.currentIndex);
   if (st.playing && Date.now() - pausedAt > 800) {
     stall = 0; extPause = 0; errors = 0;
-    if (!state.playing || !wantPlay) { wantPlay = true; set({ playing: true }); }
+    if (!state.playing || !wantPlay) { wantPlay = true; held = null; set({ playing: true }); }
     if (state.offline) set({ offline: false });
   }
   if (st.error) void recover();
@@ -283,6 +320,7 @@ function finishQueue() {
   if (capped) {
     // sleep "end of surah": stop here; play continues with the next surah
     wantPlay = false; ended = true;
+    holdHere(true, true);
     set({ playing: false, sleep: 0, sleepLeft: 0 });
     return;
   }
@@ -347,12 +385,12 @@ function tick() {
   if (last) { try { t = pl.currentTime; d = pl.duration; } catch { /* ignore */ } }
   if (playing) {
     stall = 0; extPause = 0;
-    if (!state.playing && now - pausedAt > 800) { wantPlay = true; set({ playing: true }); }
+    if (!state.playing && now - pausedAt > 800) { wantPlay = true; held = null; set({ playing: true }); }
   } else if (wantPlay && !adhanBusy) {
     let loaded = false, buffering = false;
     try { loaded = pl.isLoaded; buffering = pl.isBuffering; } catch { /* ignore */ }
     if (last && lastRemain < 1.5) finishQueue();
-    else if (loaded && !buffering) { if (++extPause >= 3) { wantPlay = false; set({ playing: false }); } } // paused from the lock screen, a call, headphones out
+    else if (loaded && !buffering) { if (++extPause >= 3) { wantPlay = false; holdHere(true); set({ playing: false }); } } // paused from the lock screen, a call, headphones out
     else if (++stall >= 24) { stall = 0; void recover(); } // 12 s without sound
   }
   lastRemain = last && d > 0 ? d - t : 99;
@@ -404,47 +442,88 @@ function adhanTick() {
       const pick = pickAdhan(state.voice, state.adhanFiles); // "random": a different muezzin each time
       set({ adhanCredit: pick ? `${pick.label}${pick.credit ? ` · ${pick.credit}` : ""}` : "", banner: p });
       const done = () => { set({ banner: null }); if (resume) play(); };
-      if (pick) { if (resume) pause(); playAdhan(pick.id, done); }
+      if (pick) { if (resume) pause(false); playAdhan(pick.id, done); }
       else setTimeout(done, 15_000); // no recording installed: show the notice only
     }
   }
 }
 
 // ---------- actions ----------
-function play() {
-  if (!pl) { start(resumePos()); return; }
+/** remember where the listener left the live point */
+function holdHere(notice: boolean, atEnd = false) {
+  const it = queue[idx];
+  if (!pl || !it || held) return;
+  let t = 0, d = 0;
+  try { t = pl.currentTime || 0; d = pl.duration || 0; } catch { /* ignore */ }
+  held = { at: Date.now(), pos: it.pos, folder: it.folder, t: atEnd ? d : t, d, notice };
+  verseSince = 0;
+}
+
+/** back to where the station is now: the same verse a little later, or the verse it has reached meanwhile */
+function rejoin(h: Held) {
+  held = null;
+  const e = ((Date.now() - h.at) / 1000) * state.rate; // seconds of audio the station played meanwhile
+  const notice = () => { if (h.notice && e >= 2) set({ rejoinedAt: Date.now() }); };
+  // a day or more away: tune in by the schedule
+  if (e > 86400) { start(livePos(state.station)); notice(); return; }
+  const left = h.d > 0 ? Math.max(0, h.d - h.t) : 0;
+  if (pl && !ended && h.d > 0 && e < left - 0.5) {
+    if (e >= 2) { void pl.seekTo(h.t + e).catch(() => undefined); notice(); }
+    resumeHere();
+    return;
+  }
+  if (state.repeat === "verse") { start(h.pos, true, h.folder); notice(); return; }
+  let it: Item = { pos: h.pos, folder: h.folder };
+  const steps = 1 + Math.floor(Math.max(0, e - left) / Math.max(2, avgVerse));
+  for (let i = 0; i < steps && i < 7000; i++) { const n = nextItem(it); if (!n) break; it = n; }
+  start(it.pos, true, it.folder);
+  notice();
+}
+
+function resumeHere() {
+  if (!pl) return;
   (globalThis as unknown as { window: { dispatchEvent: (e: Event) => void } }).window.dispatchEvent(new Event("tf-radio-start"));
   void ensureMode();
   wantPlay = true; stall = 0; extPause = 0;
   try { pl.play(); } catch { /* ignore */ }
+  verseSince = 0;
   set({ playing: true, offline: false });
 }
-function pause() {
+function play() {
+  if (!pl) { start(livePos(state.station)); return; }
+  if (held) { rejoin(held); return; }
+  resumeHere();
+}
+/** a live station: pausing means leaving it; play comes back to live (`notice`: say so, not after the adhan) */
+function pause(notice = true) {
+  if (state.playing || wantPlay) holdHere(notice);
   wantPlay = false;
   pausedAt = Date.now();
   try { pl?.pause(); } catch { /* ignore */ }
   set({ playing: false });
 }
-function resumePos(): Pos {
-  return resumable ? state.now : startOf(state.station);
-}
 
 export const radio = {
   play,
-  pause,
+  pause: () => pause(),
   toggle() {
     if (!pl || !state.started) {
-      if (!stationAllowed(state.station, state.pro)) { set({ station: STATIONS[0] }); resumable = false; }
-      start(resumePos());
+      if (!stationAllowed(state.station, state.pro)) set({ station: STATIONS[0] });
+      start(livePos(state.station));
       return;
     }
-    if (ended) { ended = false; start(following(queue[idx].pos), true, queue[idx].folder); return; }
+    if (ended) {
+      const h = held ?? { at: Date.now(), pos: queue[idx].pos, folder: queue[idx].folder, t: 0, d: 0, notice: false };
+      ended = false;
+      rejoin(h);
+      return;
+    }
     if (state.playing) pause(); else play();
   },
   stop() {
     teardown();
     stopTicker();
-    wantPlay = false; sleepUntil = 0;
+    wantPlay = false; sleepUntil = 0; held = null; verseSince = 0;
     set({ started: false, playing: false, sleep: 0, sleepLeft: 0, banner: null, offline: false });
   },
   /** false when the station is part of Pro */
@@ -452,12 +531,12 @@ export const radio = {
     if (!stationAllowed(st, state.pro)) return false;
     set({ station: st });
     writeJSON("tf:radio-station", st.id, true);
-    start(startOf(st));
+    start(livePos(st));
     return true;
   },
   skipVerse() {
     if (!pl || !state.started) { radio.toggle(); return; }
-    if (idx < queue.length - 1) { try { pl.next(); } catch { /* ignore */ } play(); }
+    if (idx < queue.length - 1) { held = null; try { pl.next(); } catch { /* ignore */ } resumeHere(); }
     else start(following(queue[idx].pos), true, queue[idx].folder);
   },
   prevVerse() {
@@ -477,8 +556,8 @@ export const radio = {
     if (!r || !reciterAllowed(r, state.pro)) return false;
     set({ folder });
     writeJSON("tf:reciter", folder, true);
-    if (!stationAllowed(state.station, state.pro)) { set({ station: STATIONS[0] }); resumable = false; }
-    start(state.started ? state.now : resumePos(), true, folder);
+    if (!stationAllowed(state.station, state.pro)) set({ station: STATIONS[0] });
+    start(state.started ? state.now : livePos(state.station), true, folder);
     return true;
   },
   seek(seconds: number) {
@@ -542,7 +621,7 @@ export const radio = {
   stopAdhan() { try { adhanPlayer?.pause(); } catch { /* ignore */ } finishAdhan(); },
   retry() {
     set({ offline: false });
-    start(state.started ? state.now : resumePos(), true, state.started ? state.folder : undefined);
+    start(state.started ? state.now : livePos(state.station), true, state.started ? state.folder : undefined);
   },
   setLang(lang: string) {
     getChapters(lang).then((chapters) => {
@@ -560,15 +639,14 @@ export const radio = {
       const st = STATIONS.find((x) => x.id === readJSON<string>("tf:radio-station", ""));
       if (st && st !== state.station) {
         patch.station = st;
-        const last = readJSON<Last | null>("qmc.radio.last", null);
-        if (last && last.station === st.id && last.s >= 1 && last.s <= 114 && last.v >= 1 && last.v <= countOf(last.s)) { patch.now = { s: last.s, v: last.v }; resumable = true; }
+        patch.now = livePos(st);
       }
       const saved = readJSON<string>("tf:reciter", "");
       if (saved && reciterOf(saved)) patch.folder = saved;
       if (Object.keys(patch).length) set(patch);
       return;
     }
-    if (!stationAllowed(state.station, pro)) { patch.station = STATIONS[0]; resumable = false; }
+    if (!stationAllowed(state.station, pro)) { patch.station = STATIONS[0]; patch.now = livePos(STATIONS[0]); }
     const folder = effectiveFolder();
     if (folder !== state.folder) patch.folder = folder;
     if (Object.keys(patch).length) set(patch);
@@ -583,6 +661,8 @@ export function useRadio(): RadioState {
   const { lang } = useLang();
   useEffect(() => { radio.setPro(pro); }, [pro]);
   useEffect(() => { if (lang !== lastLang) { lastLang = lang; radio.setLang(lang); } }, [lang]);
+  // before the listener tunes in, the screens show what is on air now
+  useEffect(() => { if (!state.started && state.station.mode !== "random") { const p = livePos(state.station); if (p.s !== state.now.s || p.v !== state.now.v) set({ now: p }); } }, []);
   return useSyncExternalStore(subscribe, () => state, () => state);
 }
 
@@ -601,3 +681,16 @@ export const initials = (name: string) => {
   if (/[؀-ۿ]/.test(name)) return words.length > 1 ? `${words[0][0]}${words[words.length - 1][0]}` : words[0]?.[0] ?? "";
   return words.filter((w) => /^[A-Z]/.test(w)).slice(0, 2).map((w) => w[0]).join("");
 };
+
+/** true for a few seconds after the radio came back to the live point (the "Back to live" notice) */
+export function useBackToLive(ms = 3200): boolean {
+  const at = useRadioSelect((s) => s.rejoinedAt);
+  const [, tick] = useState(0);
+  const on = at > 0 && Date.now() - at < ms;
+  useEffect(() => {
+    if (!on) return;
+    const id = setTimeout(() => tick((n) => n + 1), Math.max(0, ms - (Date.now() - at)) + 20);
+    return () => clearTimeout(id);
+  }, [on, at, ms]);
+  return on;
+}

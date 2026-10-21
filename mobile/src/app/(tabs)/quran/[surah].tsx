@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ComponentRef } from "react";
 import { FlatList, Modal, Platform, Pressable, ScrollView, Share, Switch, Text, View } from "react-native";
 import { Stack, router, useFocusEffect, useLocalSearchParams, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -15,7 +15,7 @@ import { openPro, usePro } from "@/lib/pro";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { getChapter, getChapters, getVerses, type Chapter, type Verse, reciterName } from "@/lib/quran";
 import { rate, type Rating } from "@/web/learning";
-import { useReciter, isFreeReciter } from "@/features/quran/reciter";
+import { useReciter, isFreeReciter, freeReciter } from "@/features/quran/reciter";
 import { toAr, useEngine } from "@/features/quran/useVerseAudio";
 import { useKids } from "@/features/extra/kids";
 import { VerseWords, wordAt } from "@/features/quran/VerseWords";
@@ -24,7 +24,12 @@ import { useClip } from "@/features/coursekit/audio";
 import { useReduceMotion } from "@/features/radio/motion";
 import { SurahOpening } from "@/features/reader/SurahOpening";
 import { SurahPicker } from "@/features/reader/SurahPicker";
-import { VerseCard, IDLE, type CardHandlers, type CardState, type Hide } from "@/features/reader/VerseCard";
+import { VerseCard, IDLE, type CardHandlers, type CardState, type TestDone } from "@/features/reader/VerseCard";
+import { MemoControls } from "@/features/reader/MemoControls";
+import { FocusMode } from "@/features/reader/FocusMode";
+import { ReaderTopBar, TOP_BAR_H } from "@/features/reader/ReaderTopBar";
+import { useReaderT } from "@/features/reader/texts";
+import { KIDS_TOOLS, drillOf, hideOf, ratingOfScore, readMemo, type Level, type Memo, type Tool } from "@/features/reader/memo";
 import { PlayerDock, type Turn } from "@/features/reader/PlayerDock";
 import { ReaderNowPlaying } from "@/features/reader/ReaderNowPlaying";
 import { loadText, localVerseUri, removeSurah, saveSurah, saveText, savedInfo } from "@/features/reader/offline";
@@ -37,10 +42,12 @@ import * as vp from "@/features/reader/versePlayback";
 // the surah offline) and the floating jewel dock with a full player. Playback continues verse after verse in the
 // background, on the lock screen and after leaving the reader (features/reader/versePlayback.ts + the verse mini bar).
 // Kids mode (tf:kids) like the website: word by word with transliteration, no tafsir, notes, Shams Method, extras.
-type Prefs = { translit: boolean; translation: boolean; words: boolean; size: number; repeat: number; speed: number; drill: Hide; mode: vp.Mode };
+// memo: the memorising mode and practise level (features/reader/memo.ts), remembered per user; drill: the earlier
+// whole-surah cover value, read once to carry an old choice over
+type Prefs = { translit: boolean; translation: boolean; words: boolean; size: number; repeat: number; speed: number; drill: number; mode: vp.Mode; memo?: Memo };
 const PREFS: Prefs = { translit: true, translation: true, words: false, size: 1, repeat: 1, speed: 1, drill: 0, mode: "continuous" };
-// hifz training for the whole surah: every verse covered the same way (the website's cover levels plus first letters)
-const DRILL: [Hide, string, string][] = [[0, "player", "hideNone"], [5, "player", "hideSoft"], [1, "player", "hideHalf"], [3, "shams", "hAcrostic"], [4, "player", "hideRandom"], [2, "player", "hideAll"]];
+// auto-follow pauses this long after the learner scrolled by hand (like Apple Music lyrics)
+const FOLLOW_PAUSE_MS = 5000;
 type Notes = Record<string, { text: string; at: number }>;
 type Offline = { state: "none" | "saving" | "saved" | "error"; done: number; bytes: number };
 
@@ -96,8 +103,9 @@ export default function SurahReader() {
 function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; verses: Verse[]; start: number; openTafsir: boolean }) {
   const t = useTheme();
   const w = useWebT("player");
-  const wsh = useWebT("shams");
   const wh = useWebT("home");
+  const wn = useWebT("nav");
+  const rt = useReaderT();
   const { lang } = useLang();
   const tr = useT();
   const insets = useSafeAreaInsets();
@@ -109,12 +117,21 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const [reciter, setReciter, reciters] = useReciter();
   const prefs = { ...PREFS, ...useStored<Partial<Prefs>>("qmc.reader", {}) };
   const setPref = (p: Partial<Prefs>) => writeJSON("qmc.reader", { ...prefs, ...p }, true);
+  // the memorising mode (Read · Practise · Test · Listen & repeat · Random check), the same in the card and the surah bar
+  const memoKey = JSON.stringify(prefs.memo ?? null);
+  const memo = useMemo(() => {
+    const m = readMemo(prefs.memo, prefs.drill);
+    return kids && !KIDS_TOOLS.includes(m.tool) ? { ...m, tool: "read" as const } : m; // kids: only Read and Listen & repeat
+  }, [memoKey, prefs.drill, kids]); // eslint-disable-line react-hooks/exhaustive-deps
+  const setMemo = (p: Partial<Memo>) => setPref({ memo: { ...memo, ...p }, drill: 0 });
+  const listen = memo.tool === "listen";
   // kids mode: word by word with transliteration, continuous, no pause to repeat (website Player.tsx)
   const showWords = prefs.words || kids;
   const showTranslit = prefs.translit || kids;
-  const mode: vp.Mode = kids ? "continuous" : prefs.mode ?? "continuous";
+  const mode: vp.Mode = kids || listen ? "continuous" : prefs.mode ?? "continuous";
   const gapPref = useStored<number>("tf:gap", 0);
-  const gap = kids ? 0 : gapPref;
+  // Listen & repeat: after every recitation a pause as long as the verse ("your turn")
+  const gap = listen ? -1 : kids ? 0 : gapPref;
   const setGap = (g: number) => writeJSON("tf:gap", g, true);
   const [view, setViewState] = useState<"verses" | "reading">(() => (readJSON<string>("tf:view", "verses") === "reading" ? "reading" : "verses"));
   const setView = (v: "verses" | "reading") => { setViewState(v); writeJSON("tf:view", v, true); };
@@ -133,19 +150,21 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const [noteOpen, setNoteOpen] = useState<string | null>(null);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   // memorising tools of the active verse (website Player.tsx)
-  const [hide, setHideState] = useState<Hide>(prefs.drill ?? 0);
-  const [practiceHide, setPracticeHide] = useState<Hide>(5);
+  const hide = hideOf(memo, kids);
+  const drill = drillOf(memo, kids);
   const [seed, setSeed] = useState(1);
   const [revealed, setRevealed] = useState(false);
+  const [shown, setShown] = useState<number[]>([]); // single words revealed by a tap
   const [testPos, setTestPos] = useState(0);
   const [testMarks, setTestMarks] = useState<Record<number, boolean>>({});
+  const [testDone, setTestDone] = useState<TestDone | null>(null);
   const [wordKey, setWordKey] = useState<string | null>(null);
-  const drill = prefs.drill ?? 0;
-  const setDrill = (d: Hide) => { setPref({ drill: d }); setHideState(d); if (d > 0) setPracticeHide(d); };
+  const [focusOpen, setFocusOpen] = useState(false);
   const [toast, setToast] = useState("");
   const [offline, setOffline] = useState<Offline>(() => { const s = savedInfo(chapter.id, reciter.folder); return s ? { state: "saved", done: s.n, bytes: s.bytes } : { state: "none", done: 0, bytes: 0 }; });
   const abort = useRef<AbortController | null>(null);
   const list = useRef<FlatList<Verse>>(null);
+  const readRef = useRef<ComponentRef<typeof ScrollView>>(null);
   const plays = useRef(0);
   const verse = verses[idx];
 
@@ -159,13 +178,14 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const positionMs = mine ? audio.positionMs : 0;
   const durationMs = mine ? audio.durationMs : 0;
   // what plays: a surah saved offline plays from the device
-  const items = useMemo<vp.Item[]>(() => verses.map((v) => ({ url: localVerseUri(chapter.id, reciter.folder, v.verse_number) ?? v.audioUrl, remote: v.remoteAudioUrl })),
-    [verses, chapter.id, reciter.folder, offline.state]); // eslint-disable-line react-hooks/exhaustive-deps
+  // (offline files are part of Pro: when Pro has ended the verses stream again)
+  const items = useMemo<vp.Item[]>(() => verses.map((v) => ({ url: (pro ? localVerseUri(chapter.id, reciter.folder, v.verse_number) : null) ?? v.audioUrl, remote: v.remoteAudioUrl })),
+    [verses, chapter.id, reciter.folder, offline.state, pro]); // eslint-disable-line react-hooks/exhaustive-deps
   const live = useRef({ chapterId: chapter.id, folder: reciter.folder });
   live.current = { chapterId: chapter.id, folder: reciter.folder };
 
   useEffect(() => { getChapters(lang).then(setChapters).catch(() => undefined); }, [lang]);
-  useEffect(() => { if (start > 1) setTimeout(() => list.current?.scrollToIndex({ index: start - 1, viewPosition: 0.1, animated: false }), 300); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (start > 1) setTimeout(() => scrollTo(start - 1, true, false), 300); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => () => abort.current?.abort(), []);
   // in charge of the shared player while this reader is on screen; leaving it lets a playing session carry on headless
   useFocusEffect(useCallback(() => {
@@ -177,7 +197,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
       if (s && same) {
         plays.current = s.playsDone;
         setIdx(s.idx);
-        setTimeout(() => list.current?.scrollToIndex({ index: s.idx, viewPosition: 0.12, animated: false }), 250);
+        setTimeout(() => scrollTo(s.idx, true, false), 250);
       }
     }
     return () => {
@@ -191,12 +211,15 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   // the session the mini bar continues
   useEffect(() => {
     if (!mine) return;
+    // a Pro voice or offline files: the background session falls back to the free voice if Pro ends while it plays
+    const locked = !isFreeReciter(reciter) || items.some((x, k) => x.url !== verses[k]?.audioUrl);
     vp.sync({ chapterId: chapter.id, chapterName: chapter.name_simple, reciterName: reciter.name, reciterFolder: reciter.folder, items, idx, repeat: prefs.repeat, playsDone: plays.current,
-      mode, loopOn: loop.on, loopFrom: loop.from, loopTo: loop.to, speed: prefs.speed });
-  }, [mine, chapter, reciter.name, reciter.folder, items, idx, prefs.repeat, mode, loop, prefs.speed]);
+      mode, loopOn: loop.on, loopFrom: loop.from, loopTo: loop.to, speed: prefs.speed, locked, free: freeReciter() });
+  }, [mine, chapter, reciter, items, idx, prefs.repeat, mode, loop, prefs.speed]); // eslint-disable-line react-hooks/exhaustive-deps
   // remember where the learner stopped
   useEffect(() => { writeJSON("tf:last", { chapter: chapter.id, verse: verses[idx].verse_number, at: Date.now() }); }, [idx]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => { setRevealed(false); setTestPos(0); setTestMarks({}); }, [idx, hide]);
+  useEffect(() => { setRevealed(false); setTestPos(0); setTestMarks({}); setTestDone(null); setShown([]); }, [idx, hide]);
+  useEffect(() => { setShown([]); }, [seed]);
   useEffect(() => { if (!toast) return; const id = setTimeout(() => setToast(""), 2600); return () => clearTimeout(id); }, [toast]);
   useEffect(() => { if (clip.state === "idle" || clip.state === "error") setWordKey(null); }, [clip.state]);
   // sleep timer: also stops in the middle of a long verse
@@ -221,8 +244,86 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const timingsOk = !(mine && audio.loadedUrl === items[idx]?.url && !audio.fallback && audio.durationMs > 0 && lastEnd > 0 && Math.abs(audio.durationMs - lastEnd) > 1500);
 
   const clearGap = () => { if (gapTimer.current) { clearTimeout(gapTimer.current); gapTimer.current = null; } setTurn(null); };
-  const scrollTo = (i: number) => { if (view === "verses") list.current?.scrollToIndex({ index: i, viewPosition: 0.12, animated: true }); };
-  const playAt = (i: number) => {
+  // ── auto-follow ──────────────────────────────────────────────────────────────────────────────────────────────────
+  // The playing verse is aligned with its top just below the pinned top bar (safe area + bar + a small margin), so its
+  // Arabic line can be read along. The cards change size when a verse becomes active (tools, social bar) and the one
+  // before shrinks, so the card is aligned again after its layout settled (onLayout of the active card + a late check).
+  // Scrolling by hand pauses the follow for a few seconds and offers a "back to the current verse" pill.
+  const topOffset = insets.top + TOP_BAR_H + 4;
+  const follow = useRef<{ i: number; until: number; tries: number } | null>(null);
+  const dragging = useRef(false);
+  const pausedUntil = useRef(0);
+  const [manual, setManual] = useState(false);
+  const [visible, setVisible] = useState<number[]>([]);
+  const viewRef = useRef(view);
+  viewRef.current = view;
+  const reduceRef = useRef(reduce);
+  reduceRef.current = reduce;
+  const alignActive = (i: number, animated = true) => {
+    if (dragging.current) return;
+    try { list.current?.scrollToIndex({ index: i, viewPosition: 0, viewOffset: topOffset, animated: animated && !reduceRef.current }); } catch { /* not measured yet: onScrollToIndexFailed */ }
+  };
+  const scrollTo = (i: number, force = false, animated = true) => {
+    if (!force && (dragging.current || Date.now() < pausedUntil.current)) return;
+    if (force) pausedUntil.current = 0;
+    setManual(false);
+    if (viewRef.current === "reading") { setTimeout(() => readingFollow(i, force), 60); return; }
+    follow.current = { i, until: Date.now() + 1600, tries: 0 };
+    // first after the new layout (the card grows, the one before shrinks), then once more when everything settled
+    setTimeout(() => { if (follow.current?.i === i) alignActive(i, animated); }, 140);
+    setTimeout(() => { if (follow.current?.i === i) alignActive(i, animated); }, 520);
+  };
+  const onActiveLayout = (i: number) => {
+    const f = follow.current;
+    if (!f || f.i !== i || Date.now() > f.until) return;
+    setTimeout(() => alignActive(i, true), 40);
+  };
+  const onDragStart = () => { dragging.current = true; follow.current = null; setManual(true); };
+  const onDragEnd = () => { dragging.current = false; pausedUntil.current = Date.now() + FOLLOW_PAUSE_MS; };
+  const viewability = useRef({ itemVisiblePercentThreshold: 20 }).current;
+  const onViewable = useRef(({ viewableItems }: { viewableItems: { index?: number | null }[] }) => {
+    setVisible(viewableItems.map((x) => x.index ?? -1).filter((x) => x >= 0));
+  }).current;
+  // the reading (mushaf) view: one justified text, so the line of the highlighted verse comes from onTextLayout
+  const reading = useRef({ cardY: 0, lines: [] as { y: number; height: number; text: string }[], h: 0 });
+  const scrollY = useRef(0);
+  const verseStarts = useMemo(() => {
+    let n = 0;
+    return verses.map((v) => { const at = n; n += `${v.text_uthmani} ﴿${toAr(v.verse_number)}﴾ `.length; return at; });
+  }, [verses]);
+  const lineOf = (i: number) => {
+    const { lines } = reading.current;
+    let n = 0;
+    for (const l of lines) { if (n + l.text.length > verseStarts[i]) return l; n += l.text.length; }
+    return lines[lines.length - 1];
+  };
+  const readingFollow = (i: number, force: boolean) => {
+    const l = lineOf(i);
+    if (!l) return;
+    const y = reading.current.cardY + 22 + l.y;
+    const top = scrollY.current + topOffset;
+    const bottom = scrollY.current + reading.current.h - (tabSpace + 140);
+    if (force || y < top || y + l.height > bottom) readRef.current?.scrollTo({ y: Math.max(0, y - topOffset - 8), animated: !reduceRef.current });
+  };
+  const [readingVisible, setReadingVisible] = useState(true);
+  const checkReadingVisible = () => {
+    const l = lineOf(idx);
+    if (!l) return;
+    const y = reading.current.cardY + 22 + l.y;
+    const ok = y + l.height > scrollY.current + topOffset && y < scrollY.current + reading.current.h - (tabSpace + 140);
+    if (ok !== readingVisible) setReadingVisible(ok);
+  };
+  // the top bar turns to glass once the surah banner has scrolled under it
+  const bannerEnd = useRef(0);
+  const [solid, setSolid] = useState(false);
+  const onScroll = (y: number) => {
+    scrollY.current = y;
+    const s = bannerEnd.current > 0 && y > bannerEnd.current - topOffset;
+    if (s !== solid) setSolid(s);
+    if (viewRef.current === "reading" && manual) checkReadingVisible();
+  };
+
+  const playAt = (i: number, auto = false) => {
     const v = verses[i];
     if (!v) return;
     clearGap(); setWaiting(false);
@@ -230,13 +331,25 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
     plays.current = 0;
     setIdx(i);
     audio.play(items[i]?.url ?? v.audioUrl, { fallback: v.remoteAudioUrl, rate: prefs.speed, title: `${chapter.name_simple} · ${v.verse_number}`, artist: reciterName(reciter, lang), track: { surah: chapter.id, reciter: reciter.name } });
-    scrollTo(i);
+    scrollTo(i, !auto);
   };
   const goTo = (i: number, autoplay: boolean) => {
     if (autoplay) { playAt(i); return; }
     clearGap(); setWaiting(false);
     if (mine) audio.stop();
-    plays.current = 0; setIdx(i); scrollTo(i);
+    plays.current = 0; setIdx(i); scrollTo(i, true);
+  };
+  // Random check: another verse of the surah (not the current one), fully covered
+  const startCheck = () => {
+    if (verses.length < 2) { setRevealed(false); return; }
+    let n = idx;
+    while (n === idx) n = Math.floor(Math.random() * verses.length);
+    goTo(n, false);
+  };
+  const setTool = (tool: Tool) => {
+    setMemo({ tool });
+    if (tool === "check") startCheck();
+    if (tool === "listen") playAt(idx);
   };
   // after a recitation: wait ("your turn", -1 = as long as the verse) so the listener can repeat it, then continue
   const afterGap = (next: () => void) => {
@@ -248,8 +361,8 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const advance = () => {
     clearGap(); setWaiting(false);
     if (sleep.mode === -1 && idx >= verses.length - 1) { setSleep({ mode: 0, until: 0 }); return; } // sleep timer: end of surah
-    if (loop.on && idx >= loop.to - 1 && sleep.mode !== -1) { playAt(Math.max(0, loop.from - 1)); return; }
-    if (idx < verses.length - 1) playAt(idx + 1);
+    if (loop.on && idx >= loop.to - 1 && sleep.mode !== -1) { playAt(Math.max(0, loop.from - 1), true); return; }
+    if (idx < verses.length - 1) playAt(idx + 1, true);
   };
   handlers.current.ended = () => {
     plays.current += 1;
@@ -283,18 +396,39 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
     toggleMark,
     openNote: (k: string | null) => setNoteOpen(k),
     saveNote,
-    setHide: (h: Hide) => { setHideState(h); if (h !== 0 && h !== 6) setPracticeHide(h); },
+    setTool,
+    setLevel: (l: Level) => setMemo({ tool: "practice", level: l }),
     shuffle: () => setSeed((x) => x + 1),
     reveal: () => setRevealed(true),
+    // tap a covered word: only this word is revealed, and heard
+    revealWord: (wi: number, pos: number) => {
+      setShown((s) => (s.includes(wi) ? s : [...s, wi]));
+      liveImpl.current.playWord(verse.verse_key, pos);
+    },
+    // Test: word by word; the final score goes into the spaced-repetition schedule (web/learning rate())
     markWord: (ok: boolean) => {
       const n = verse.words.filter((x) => x.char_type_name === "word").length;
-      setTestMarks((m) => ({ ...m, [testPos]: ok }));
-      if (testPos + 1 >= n) setRevealed(true);
+      if (testPos >= n || testDone) return;
+      const marks = { ...testMarks, [testPos]: ok };
+      setTestMarks(marks);
       setTestPos(testPos + 1);
+      if (testPos + 1 >= n) {
+        setRevealed(true);
+        const good = Object.values(marks).filter(Boolean).length;
+        const pct = Math.round((good / Math.max(1, n)) * 100);
+        const days = rate(verse.verse_key, ratingOfScore(pct));
+        setTestDone({ ok: good, total: n, pct, days });
+      }
     },
+    testAgain: () => { setRevealed(false); setTestPos(0); setTestMarks({}); setTestDone(null); },
+    next: () => { if (idx < verses.length - 1) goTo(idx + 1, false); },
+    nextCheck: () => startCheck(),
+    focus: () => setFocusOpen(true),
+    layout: (i: number) => onActiveLayout(i),
     rate: (r: Rating) => {
       const days = rate(verse.verse_key, r);
       setToast(days ? w("saved", { days }) : w("savedToday"));
+      if (memo.tool === "check" && !kids) { startCheck(); return; }
       if (idx < verses.length - 1) goTo(idx + 1, false);
     },
     tafsir: (v: Verse) => setTafsirFor(v),
@@ -328,9 +462,11 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
     return Object.fromEntries(keys.map((k) => [k, (...args: unknown[]) => (liveImpl.current[k] as (...a: unknown[]) => void)(...args)])) as CardHandlers;
   }, []);
 
-  const activeState = useMemo<CardState>(() => ({ hide, practiceHide, revealed, seed, testPos, testMarks, activeWord, playing, wordOn: wordKey, waiting: waiting && mode === "learn" }),
-    [hide, practiceHide, revealed, seed, testPos, testMarks, activeWord, playing, wordKey, waiting, mode]);
-  const idleState = useMemo<CardState>(() => (drill ? { ...IDLE, hide: drill, seed } : IDLE), [drill, seed]);
+  const activeState = useMemo<CardState>(() => ({ hide, memo, revealed, seed, testPos, testMarks, shown, activeWord, playing, wordOn: wordKey, waiting: waiting && mode === "learn", turn: !!turn, testDone, reduce }),
+    [hide, memo, revealed, seed, testPos, testMarks, shown, activeWord, playing, wordKey, waiting, mode, turn, testDone, reduce]);
+  const idleState = useMemo<CardState>(() => ({ ...IDLE, hide: drill, seed: drill ? seed : 1, reduce }), [drill, seed, reduce]);
+  const setAll = useRef((on: boolean) => undefined as void);
+  setAll.current = (on: boolean) => setMemo({ all: on });
   // the store hands out a fresh array on every read: key the bookmarks by their content
   const marksKey = marks.join("|");
   const markSet = useMemo(() => new Set(marksKey ? marksKey.split("|") : []), [marksKey]);
@@ -357,12 +493,11 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
 
   const header = useMemo(() => (
     <View>
-      <View style={{ paddingTop: insets.top + 4, paddingHorizontal: 12, flexDirection: "row", alignItems: "center" }}>
-        <Pressable onPress={goBack} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={10} style={{ width: 44, height: 44, justifyContent: "center" }}>
-          <Icon name="chevronLeft" color={t.ink} size={24} />
-        </Pressable>
+      {/* room for the pinned top bar */}
+      <View style={{ height: insets.top + TOP_BAR_H - 6 }} />
+      <View onLayout={(e) => { bannerEnd.current = e.nativeEvent.layout.y + e.nativeEvent.layout.height; }}>
+        <SurahOpening chapter={chapter} reduce={reduce} />
       </View>
-      <SurahOpening chapter={chapter} reduce={reduce} />
       <View style={{ paddingHorizontal: 16, marginTop: 20, marginBottom: 6 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
           <CircleButton icon="chevronLeft" label={wh("surahLabel", { n: chapter.id - 1 })} disabled={chapter.id <= 1} onPress={() => go(chapter.id - 1)} />
@@ -374,52 +509,47 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
           <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
             <View style={{ flexDirection: "row", backgroundColor: t.bg, borderRadius: R.pill, padding: 4, borderWidth: 1, borderColor: t.line }} accessibilityRole="tablist">
               {([["verses", w("viewVerses")], ["reading", w("viewReading")]] as const).map(([k, l]) => (
-                <Pressable key={k} onPress={() => setView(k)} accessibilityRole="tab" accessibilityState={{ selected: view === k }} accessibilityLabel={l}
-                  style={{ paddingHorizontal: 13, height: 30, justifyContent: "center", borderRadius: R.pill, backgroundColor: view === k ? t.surface : "transparent", borderWidth: view === k ? 1 : 0, borderColor: t.line }}>
+                <Pressable key={k} onPress={() => setView(k)} accessibilityRole="tab" accessibilityState={{ selected: view === k }} accessibilityLabel={l} hitSlop={{ top: 4, bottom: 4 }}
+                  style={{ paddingHorizontal: 13, height: 36, justifyContent: "center", borderRadius: R.pill, backgroundColor: view === k ? t.surface : "transparent", borderWidth: view === k ? 1 : 0, borderColor: t.line }}>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: view === k ? t.ink : t.muted }}>{l}</Text>
                 </Pressable>
               ))}
             </View>
-            <Pressable onPress={() => setSettings(true)} accessibilityRole="button" accessibilityLabel={w("settings")} hitSlop={6}
-              style={{ height: 32, flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: 6 }}>
+            <Pressable onPress={() => setSettings(true)} accessibilityRole="button" accessibilityLabel={w("settings")}
+              style={{ height: 44, flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: 6 }}>
               <Icon name="settings" color={t.muted} size={17} />
               <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{w("settings")}</Text>
             </Pressable>
           </View>
         </View>
         {view === "verses" ? (
-          <View style={{ marginTop: 12, flexDirection: "row", alignItems: "center", gap: 8 }}>
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{w("memorize")}</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6, paddingEnd: 8 }} accessibilityRole="tablist" accessibilityLabel={w("hideLabel")}>
-              {DRILL.map(([d, ns, k]) => {
-                const on = drill === d;
-                const label = ns === "shams" ? wsh(k) : w(k);
-                return (
-                  <Pressable key={d} onPress={() => { if (d === 4 && on) setSeed((x) => x + 1); setDrill(d); }} accessibilityRole="tab" accessibilityState={{ selected: on }} accessibilityLabel={label}
-                    style={{ height: 32, paddingHorizontal: 13, justifyContent: "center", borderRadius: R.pill, borderWidth: 1, borderColor: on ? t.accent : t.line, backgroundColor: on ? t.accentSoft : t.surface }}>
-                    <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: on ? t.accent : t.ink }}>{label}</Text>
-                  </Pressable>
-                );
-              })}
-            </ScrollView>
+          <View style={{ marginTop: 14, borderRadius: 16, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 14, gap: 8 }}>
+            <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.5, textTransform: "uppercase", color: t.muted }} accessibilityRole="header">{w("memorize")}</Text>
+            <MemoControls memo={memo} kids={kids} onTool={cardHandlers.setTool} onLevel={cardHandlers.setLevel} onShuffle={cardHandlers.shuffle} onAll={(on) => setAll.current(on)} />
+            {drill > 0 ? <Text maxFontSizeMultiplier={1.8} style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{w("tapToReveal")}</Text> : null}
           </View>
         ) : null}
-        {drill > 0 && view === "verses" ? <Text style={{ marginTop: 8, fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{w("tapToReveal")}</Text> : null}
       </View>
     </View>
-  ), [chapter, chapters, verse.page, verse.juz, verse.hizb, view, insets.top, reduce, t, w, wh, wsh, tr, drill]);
+  ), [chapter, chapters, verse.page, verse.juz, verse.hizb, view, insets.top, reduce, t, w, wh, drill, memo, kids, cardHandlers]);
+  const shownSet = useMemo(() => new Set(shown), [shown]);
   const dockBottom = tabSpace - 4;
   const bottomSpace = tabSpace + 150;
 
   return (
     <View style={{ flex: 1, backgroundColor: t.bg }}>
       {view === "reading" ? (
-        <ScrollView contentContainerStyle={{ paddingBottom: bottomSpace }}>
+        <ScrollView ref={readRef} contentContainerStyle={{ paddingBottom: bottomSpace }} scrollEventThrottle={32}
+          onLayout={(e) => { reading.current.h = e.nativeEvent.layout.height; }}
+          onScroll={(e) => onScroll(e.nativeEvent.contentOffset.y)}
+          onScrollBeginDrag={onDragStart} onScrollEndDrag={onDragEnd} onMomentumScrollEnd={onDragEnd}>
           {header}
-          <View style={{ margin: 16, borderRadius: 16, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 22 }}>
-            <Text style={{ fontFamily: ARABIC_FONT, fontSize: 30 * prefs.size * 0.95, lineHeight: 30 * prefs.size * 2.5, color: t.arabic, textAlign: "justify", writingDirection: "rtl" }} accessibilityLanguage="ar">
+          <View onLayout={(e) => { reading.current.cardY = e.nativeEvent.layout.y; }}
+            style={{ margin: 16, borderRadius: 16, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 22 }}>
+            <Text maxFontSizeMultiplier={1.5} onTextLayout={(e) => { reading.current.lines = e.nativeEvent.lines.map((l) => ({ y: l.y, height: l.height, text: l.text })); }}
+              style={{ fontFamily: ARABIC_FONT, fontSize: Math.round(30 * prefs.size * 0.95), lineHeight: Math.round(30 * prefs.size * 2.5), color: t.arabic, textAlign: "justify", writingDirection: "rtl" }} accessibilityLanguage="ar">
               {verses.map((v, i) => (
-                <Text key={v.verse_key} onPress={() => goTo(i, true)} style={{ backgroundColor: i === idx ? t.accentSoft : "transparent" }}>
+                <Text key={v.verse_key} onPress={() => goTo(i, true)} accessibilityRole="button" style={{ backgroundColor: i === idx ? t.accentSoft : "transparent", color: i === idx ? t.accent : t.arabic }}>
                   {v.text_uthmani} <Text style={{ color: t.gold, fontSize: 30 * prefs.size * 0.65 }}>﴿{toAr(v.verse_number)}﴾</Text>{" "}
                 </Text>
               ))}
@@ -437,9 +567,35 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
           initialNumToRender={8}
           windowSize={9}
           contentContainerStyle={{ paddingBottom: bottomSpace }}
-          onScrollToIndexFailed={(e) => setTimeout(() => list.current?.scrollToIndex({ index: e.index, viewPosition: 0.1, animated: false }), 250)}
+          scrollEventThrottle={32}
+          onScroll={(e) => onScroll(e.nativeEvent.contentOffset.y)}
+          onScrollBeginDrag={onDragStart} onScrollEndDrag={onDragEnd} onMomentumScrollEnd={onDragEnd}
+          viewabilityConfig={viewability} onViewableItemsChanged={onViewable}
+          // a verse far away has not been measured yet: jump near it, then align it once it is rendered
+          onScrollToIndexFailed={(e) => {
+            const f = follow.current;
+            if (f && f.i === e.index) { f.tries += 1; f.until = Date.now() + 1600; if (f.tries > 4) return; }
+            list.current?.scrollToOffset({ offset: Math.max(0, e.averageItemLength * e.index), animated: false });
+            setTimeout(() => alignActive(e.index, false), 120);
+          }}
         />
       )}
+
+      <ReaderTopBar top={insets.top} solid={solid} reduce={reduce} arabicName={chapter.name_arabic} brand={wn("menuTitle")}
+        backLabel={tr("common.back")} focusLabel={rt("focusOpen")} searchLabel={wn("search")}
+        onBack={goBack} onFocus={() => setFocusOpen(true)} onSearch={() => router.push("/search" as Href)} />
+
+      {/* auto-follow paused by a manual scroll: back to the verse being recited */}
+      {manual && (playing || !!turn || waiting) && (view === "verses" ? !visible.includes(idx) : !readingVisible) ? (
+        <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: topOffset + 6, alignItems: "center" }}>
+          <Pressable onPress={() => scrollTo(idx, true)} accessibilityRole="button" accessibilityLabel={rt("backToVerse")}
+            style={({ pressed }) => ({ minHeight: 44, paddingHorizontal: 16, borderRadius: R.pill, flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: t.accent, opacity: pressed ? 0.9 : 1,
+              shadowColor: "#000", shadowOpacity: 0.2, shadowRadius: 10, shadowOffset: { width: 0, height: 4 }, elevation: 6 })}>
+            <Icon name="chevronDown" color={t.dark ? t.onAccent : "#ffffff"} size={14} />
+            <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.dark ? t.onAccent : "#ffffff" }}>{rt("backToVerse")} · {verse.verse_number}</Text>
+          </Pressable>
+        </View>
+      ) : null}
 
       {toast ? (
         <View pointerEvents="none" style={{ position: "absolute", left: 16, right: 16, bottom: dockBottom + 128, alignItems: "center" }} accessibilityLiveRegion="polite">
@@ -450,7 +606,12 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
       <PlayerDock bottom={dockBottom} arabicName={chapter.name_arabic} verse={verse.verse_number} total={verses.length} playing={playing}
         positionMs={positionMs} durationMs={durationMs} sleepMin={sleepMin} reduce={reduce} turn={turn} onSkipTurn={advance}
         onToggle={toggle} onPrev={() => goTo(Math.max(0, idx - 1), false)} onNext={() => goTo(Math.min(verses.length - 1, idx + 1), false)}
-        onSeek={seekTo} onJump={() => setJumpOpen(true)} onOpen={() => setNowOpen(true)} />
+        onSeek={seekTo} onJump={() => setJumpOpen(true)} onOpen={() => setNowOpen(true)} onFocus={() => setFocusOpen(true)} focusLabel={rt("focusOpen")} />
+
+      <FocusMode open={focusOpen} onClose={() => setFocusOpen(false)} chapter={chapter} verse={verse} total={verses.length} activeWord={activeWord} timed={verse.segments.length > 0 && timingsOk}
+        playing={playing} repeat={prefs.repeat} onRepeat={(n) => setPref({ repeat: n })} hide={hide} revealed={revealed} seed={seed} shown={shownSet} testPos={testPos} reduce={reduce} arabicUi={lang === "ar"}
+        onToggle={toggle} onPrev={() => goTo(Math.max(0, idx - 1), playing)} onNext={() => goTo(Math.min(verses.length - 1, idx + 1), playing)}
+        onRevealWord={(wi, pos) => cardHandlers.revealWord(wi, pos)} onPlayWord={(pos) => cardHandlers.playWord(verse.verse_key, pos)} />
 
       <ReaderNowPlaying open={nowOpen} onClose={() => setNowOpen(false)} chapter={chapter} verse={verse} total={verses.length} reciterName={reciterName(reciter, lang)} timed={verse.segments.length > 0 && timingsOk}
         playing={playing} positionMs={positionMs} durationMs={durationMs} reduce={reduce} speed={prefs.speed} repeat={prefs.repeat} sleepMode={sleep.mode} sleepMin={sleepMin}
@@ -502,7 +663,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
           <LinearGradient colors={["rgba(201,166,94,0)", "rgb(201,166,94)", "rgba(201,166,94,0)"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ height: 2 }} />
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 16, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: t.line, backgroundColor: t.surface }}>
             <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{w("settings")}</Text>
-            <Pressable onPress={() => setSettings(false)} accessibilityRole="button" hitSlop={10}><Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.accent }}>{w("closeTafsir")}</Text></Pressable>
+            <Pressable onPress={() => setSettings(false)} accessibilityRole="button" accessibilityLabel={w("closeTafsir")} hitSlop={10} style={{ minHeight: 44, justifyContent: "center" }}><Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.accent }}>{w("closeTafsir")}</Text></Pressable>
           </View>
           <ScrollView contentContainerStyle={{ padding: 16, gap: 22, paddingBottom: 40 }}>
             <Setting label={w("reciter")}>
