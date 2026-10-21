@@ -15,7 +15,7 @@ export function FeedStatsRow() {
   const n = todayWords(useStored<FeedStats>(FEED_STATS_KEY, { day: 0, words: 0 }));
   if (!n) return null;
   return (
-    <Pressable onPress={() => router.navigate("/foryou" as Href)} accessibilityRole="button"
+    <Pressable onPress={() => router.navigate("/" as Href)} accessibilityRole="button"
       style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: pressed ? t.accentSoft : t.surface })}>
       <Icon name="reels" color={t.accent} size={22} />
       <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14.5, color: t.ink }}>{fillText(tx.statsToday, { n: Intl.NumberFormat(lang).format(n) })}</Text>

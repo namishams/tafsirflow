@@ -44,9 +44,12 @@ import { HeartBurst, useTapGestures } from "./ui";
 import { LIB_TOPICS, LibScheduler, isLibId, onLibData, takeRemoteNew, type LibTopic } from "./library";
 import { flagOn, loadRemoteConfig, updateAvailable, useRemoteConfig } from "./remote";
 import Constants from "expo-constants";
-import { statLike, statPost, statSave, statVerse, kindOfItem, useFeedTimer } from "./statsStore";
+import { statListen, statLike, statPost, statSave, statVerse, kindOfItem, useFeedTimer } from "./statsStore";
 import { LIB } from "./library";
 import { TodayRings } from "./Rings";
+import { Celebrations } from "./Celebrate";
+import { initGamify } from "./gamify";
+import { AdSlotCap, AdSlot } from "./adSlots";
 import { AccountNudge, PromoCap, PromoPost, nudgeAccount } from "./Promo";
 import { MomentCard, MonetizeCap, OfferWrap, PaywallCard, PremiumPost, markShareMoment, usePurchaseAttribution } from "./monetize";
 import { dwell, engaged, isBored } from "./interest";
@@ -160,6 +163,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   const promo = useRef(new PromoCap());
   // Pro posts, the paywall card and the celebration cards (monetize.tsx)
   const mon = useRef(new MonetizeCap());
+  // future ad posts: placeholder slots, off unless the server config enables them (adSlots.ts)
+  const adSlots = useRef(new AdSlotCap());
   const keysLenRef = useRef(0);
   const proRef = useRef(false);
   proRef.current = voice.pro;
@@ -214,7 +219,9 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       // the content libraries: about every second post (as far as their pages have arrived)
       if (rand() < 0.5) out.push(...(lib.current?.take(1) ?? []));
       const ad = promo.current.at(keysLenRef.current + out.length, proRef.current);
+      const slot = ad ? null : adSlots.current.at(keysLenRef.current + out.length, proRef.current);
       if (ad) out.push(ad);
+      else if (slot) out.push(slot);
       else { const m = mon.current.at(keysLenRef.current + out.length, proRef.current); if (m) out.push(m); }
       if (out.length % (HADITH_EVERY + 1) === HADITH_EVERY && hq.current.queue.length) out.push(hq.current.queue.shift()!);
     }
@@ -295,7 +302,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     shownAt.current = activeItem ? { item: activeItem, at: Date.now() } : null;
     if (!activeItem) return;
     markSeen(activeItem);
-    statPost(kindOfItem(activeItem, LIB.get(activeItem)?.kind));
+    if (!activeItem.startsWith("ad:")) statPost(kindOfItem(activeItem, LIB.get(activeItem)?.kind), activeItem);
     if (isBored() && lib.current) {
       lib.current.bored();
       const at = activeRef.current + 1;
@@ -308,10 +315,12 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   }, [activeItem]); // eslint-disable-line react-hooks/exhaustive-deps
   // statistics: time while the Home view is on screen; a verse counts as heard after a few seconds with sound
   useFeedTimer(focused && tab === "home");
+  useEffect(() => { initGamify(); }, []);
   useEffect(() => {
     if (!/^[vw]:/.test(activeItem) || !focused || muted || tab !== "home") return;
     const id = setTimeout(statVerse, 4000);
-    return () => clearTimeout(id);
+    const from = Date.now();
+    return () => { clearTimeout(id); statListen(Date.now() - from); };
   }, [activeItem, focused, muted, tab]);
   // "New for you": items not seen before, counted when a batch is built; the pill after returning a while later
   const freshCount = useMemo(() => keys.filter((k) => !wasSeen(k)).length, [keys]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -424,6 +433,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     if (item.startsWith("pp:")) return <PremiumPost item={item} width={colW} pro={voice.pro} />;
     if (item.startsWith("pw:")) return voice.pro ? <View style={{ height: 1 }} /> : <PaywallCard width={colW} />;
     if (item.startsWith("mo:")) return <MomentCard item={item} width={colW} />;
+    if (item.startsWith("ad:")) return <AdSlot item={item} width={colW} />;
     if (isLibId(item)) return <LibraryPost id={item} width={colW} reduce={reduce} />;
     if (item.startsWith("r:")) return <RecitersPost {...ex} voices={voices} engine={engine} active={index === active && tab === "home"} sound={focused && tab === "home"} />;
     if (item.startsWith("t:")) return <TranslitPost {...ex} />;
@@ -588,6 +598,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       <AccountNudge />
       <CommentsSheet visible={!!comments} verseKey={comments ?? "1:1"} onClose={() => setComments(null)} />
       <StoryViewer groups={viewerGroups} start={viewer ? { group: viewer.group + Math.floor(viewer.group / PROMO_EVERY) * (voice.pro ? 0 : 1), story: viewer.story } : null} onClose={() => setViewer(null)} />
+      <Celebrations />
       <ShareSheet visible={!!sh && share?.kind !== "hadith"} onClose={() => setShare(null)} link={sh?.link ?? SITE} message={sh?.message ?? ""} onShared={sh?.onShared} video={sh?.video} renderCard={(f) => sh?.card(f) ?? null} />
     </View>
   );

@@ -31,6 +31,8 @@ export type FeedConfig = {
   flags: Record<string, boolean>;
   announcements: { id: string; title: string; image?: string; deeplink?: string; startsAt: string; endsAt: string }[];
   monetize?: FeedMonetize;
+  /** placeholder slots for future ad posts (adSlots.tsx); missing = off */
+  adSlots?: { enabled?: boolean; everyNItems?: number; firstAfter?: number; maxPerSession?: number; provider?: string };
 };
 /** see the website's FeedMonetize; every field optional, local defaults in monetize.tsx */
 export type FeedMonetize = {

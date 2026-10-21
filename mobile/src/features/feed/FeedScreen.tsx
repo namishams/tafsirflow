@@ -193,7 +193,7 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
   const firstPage = useRef(true);
   useEffect(() => {
     const it = keys[active];
-    if (it) statPost(kindOfItem(it, LIB.get(it)?.kind));
+    if (it) statPost(kindOfItem(it, LIB.get(it)?.kind), it);
     if (firstPage.current) { firstPage.current = false; return; }
     tick();
   }, [active]); // eslint-disable-line react-hooks/exhaustive-deps

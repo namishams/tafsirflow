@@ -477,5 +477,12 @@
       "words": 20,
       "saves": 5
     }
+  },
+  "adSlots": {
+    "enabled": false,
+    "everyNItems": 12,
+    "firstAfter": 8,
+    "maxPerSession": 3,
+    "provider": "none"
   }
 }

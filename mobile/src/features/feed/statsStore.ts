@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { AppState } from "react-native";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
+import { gEvent, isFrozen } from "./gamify";
 
 // Local statistics of the feed (this device only, never uploaded): time in the feed (counted only while a feed
 // screen is focused and the app is active), posts seen, verses heard, words learned, what was read per kind, likes,
@@ -9,7 +10,7 @@ export const STATS2_KEY = "qmc.feed-stats2";
 const KEEP_DAYS = 120;
 export const dayNum = (t = Date.now()) => Math.floor((t - new Date(t).getTimezoneOffset() * 60000) / 86400000);
 
-export type DayStats = { ms: number; posts: number; verses: number; words: number; likes: number; saves: number; shares: number; kinds: Record<string, number> };
+export type DayStats = { ms: number; posts: number; verses: number; words: number; likes: number; saves: number; shares: number; kinds: Record<string, number>; xp?: number; listen?: number; quiz?: number };
 export type Stats = { days: Record<string, DayStats>; total: DayStats; longestMs: number; firstDay: number };
 const emptyDay = (): DayStats => ({ ms: 0, posts: 0, verses: 0, words: 0, likes: 0, saves: 0, shares: 0, kinds: {} });
 const empty = (): Stats => ({ days: {}, total: emptyDay(), longestMs: 0, firstDay: dayNum() });
@@ -40,12 +41,19 @@ export function kindOfItem(item: string, libKind?: string): string {
   const p = item.split(":")[0];
   return ({ v: "verse", w: "word", q: "quiz", c: "carousel", m: "memorise", r: "reciters", t: "transliteration", d: "word", n: "name", s: "story", h: "hadith", p: "prayer", k: "chapters", cal: "calendar" } as Record<string, string>)[p] ?? p;
 }
-export const statPost = (kind: string) => bump((d) => { d.posts++; d.kinds[kind] = (d.kinds[kind] ?? 0) + 1; });
-export const statVerse = () => bump((d) => { d.verses++; });
-export const statWords = (n: number) => bump((d) => { d.words += n; });
+export const statPost = (kind: string, item?: string) => { bump((d) => { d.posts++; d.kinds[kind] = (d.kinds[kind] ?? 0) + 1; }); gEvent({ t: "post", kind, item }); };
+export const statVerse = () => { bump((d) => { d.verses++; }); gEvent({ t: "verse" }); };
+export const statWords = (n: number) => { bump((d) => { d.words += n; }); gEvent({ t: "words", n }); };
+/** a quiz answer (XP and quests only for right ones) */
+export const statQuiz = (right: boolean) => { if (right) bump((d) => { d.quiz = (d.quiz ?? 0) + 1; }); gEvent({ t: "quiz", right }); };
+/** time with recitation playing on a verse post ("listening" in the time breakdown), at most 2 minutes per post */
+export const statListen = (ms: number) => { if (ms > 0) bump((d) => { d.listen = (d.listen ?? 0) + Math.min(ms, 120000); }); };
+/** low-level access for gamify.ts */
+export const statBump = (f: (d: DayStats) => void) => bump(f);
+export const statsNow = (): Stats => load();
 export const statLike = () => bump((d) => { d.likes++; });
 export const statSave = () => bump((d) => { d.saves++; });
-export const statShare = () => bump((d) => { d.shares++; });
+export const statShare = () => { bump((d) => { d.shares++; }); gEvent({ t: "share" }); };
 function statTime(ms: number, sessionMs: number) {
   bump((d) => { d.ms += ms; });
   const s = load();
@@ -81,13 +89,14 @@ export function streakOf(s: Stats): number {
   let d = dayNum();
   if (!dayOf(s, d).posts) d--;
   let n = 0;
-  while (dayOf(s, d).posts > 0) { n++; d--; }
+  // a day kept by a streak freeze (gamify.ts) does not break the streak and does not count
+  while (dayOf(s, d).posts > 0 || isFrozen(d)) { if (dayOf(s, d).posts > 0) n++; d--; }
   return n;
 }
 export function longestStreak(s: Stats): number {
   const ds = Object.keys(s.days).map(Number).filter((d) => s.days[String(d)].posts > 0).sort((a, b) => a - b);
   let best = 0, run = 0, prev = -2;
-  for (const d of ds) { run = d === prev + 1 ? run + 1 : 1; best = Math.max(best, run); prev = d; }
+  for (const d of ds) { run = d === prev + 1 || (d === prev + 2 && isFrozen(d - 1)) ? run + 1 : 1; best = Math.max(best, run); prev = d; }
   return best;
 }
 

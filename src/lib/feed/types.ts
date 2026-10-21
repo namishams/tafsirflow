@@ -20,6 +20,21 @@ export type FeedConfig = {
   announcements: { id: string; title: string; image?: string; deeplink?: string; startsAt: string; endsAt: string }[];
   /** monetisation of the feed (optional; the app falls back to its local defaults for every missing field) */
   monetize?: FeedMonetize;
+  /** placeholder slots for future ad posts in the app's Home stream (no ad SDK yet); off by default */
+  adSlots?: FeedAdSlots;
+};
+
+/** Ad slots: the app reserves a position in the stream when `enabled`; until an ad provider is wired in the slot stays
+ * empty. Never for Pro users; the app enforces at least 6 posts between slots and none in the first 5 posts. */
+export type FeedAdSlots = {
+  enabled: boolean;
+  /** one slot per N posts (min 6) */
+  everyNItems?: number;
+  /** no slot before this post index of a session (min 5) */
+  firstAfter?: number;
+  maxPerSession?: number;
+  /** the ad provider once one is chosen; "none" until then */
+  provider?: string;
 };
 
 /** Offers in the feed. Only real store prices are shown (the app reads them from the store); no countdowns, no discounts. */

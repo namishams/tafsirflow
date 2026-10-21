@@ -19,3 +19,11 @@ export function tick() {
     if (Platform.OS === "android") Vibration.vibrate(10);
   } catch { /* haptics are optional */ }
 }
+/** a stronger "success" pattern for level-ups and new stickers */
+export function success() {
+  try {
+    const h = load() as (H & { notificationAsync?: (s: unknown) => Promise<void>; NotificationFeedbackType?: { Success: unknown } }) | null;
+    if (h?.notificationAsync && h.NotificationFeedbackType) { void h.notificationAsync(h.NotificationFeedbackType.Success).catch(() => undefined); return; }
+    if (Platform.OS === "android") Vibration.vibrate([0, 20, 60, 30]);
+  } catch { /* haptics are optional */ }
+}

@@ -22,6 +22,7 @@ import { calText, countdown, fmtHijri, toHijri, todayUtc } from "@/web/hijri";
 import { readTradition } from "@/lib/tradition";
 import { livePos, radio, useRadioSelect } from "@/features/radio/engine";
 import { STATIONS } from "@/features/radio/stations";
+import { statQuiz } from "./statsStore";
 
 // More post kinds of the Home feed, built only from data the app already has: the Quran API's verses and word data
 // (quiz, carousel, memorise) and the prayer times of the app's own calculation (web/prayer.ts). Nothing typed by hand.
@@ -89,6 +90,7 @@ export const QuizPost = memo(function QuizPost(p: Common) {
     tick();
     setPick(i);
     writeJSON(STREAK_KEY, i === q.answer ? readJSON<number>(STREAK_KEY, 0) + 1 : 0, true);
+    statQuiz(i === q.answer);
     if (i === q.answer) addLearnedWords(1);
   };
   const tone = toneOf(`quiz:${key}`);

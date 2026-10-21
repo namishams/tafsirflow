@@ -11,6 +11,9 @@ import { Icon, type IconName } from "@/components/icons";
 import { FONT, R, stage } from "@/lib/theme";
 import { useFeedText } from "./texts";
 import { statShare } from "./statsStore";
+import { STICKER, STICKERS, useGamify } from "./gamify";
+import { useGameText } from "./gamifyTexts";
+import { StickerArt, stickerName } from "./Sticker";
 
 // The share sheet of every feed post (verses, hadith, stories, names), laid out like Instagram's: a bottom sheet with a
 // drag handle, a search field, a row of round app targets (only the apps installed on this phone, checked with
@@ -62,8 +65,10 @@ async function installedTargets(): Promise<Set<TargetId>> {
   return out;
 }
 
-export function ShareSheet({ visible, onClose, renderCard, link, message, onShared, video }: {
+export function ShareSheet({ visible, onClose, renderCard, link, message, onShared, video, noDecoration }: {
   visible: boolean; onClose: () => void;
+  /** no sticker picker (the card is a sticker itself) */
+  noDecoration?: boolean;
   /** verses only: offer a video (verse card + recitation, made on the server) for Reels / Stories */
   video?: { key: string; lang: string };
   /** the image content at CARD_SIZE[format] (no scaling inside) */
@@ -83,10 +88,15 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
   const [query, setQuery] = useState("");
   const [apps, setApps] = useState<Set<TargetId>>(installed ?? new Set());
   const shot = useRef<ComponentRef<typeof View>>(null);
+  // collected stickers as decoration on the image (gamify.ts)
+  const gm = useGamify();
+  const gt = useGameText();
+  const owned = noDecoration ? [] : STICKERS.filter((x) => gm.stickers[x.id]).sort((a, b) => gm.stickers[b.id] - gm.stickers[a.id]).slice(0, 30);
+  const [deco, setDeco] = useState<string | null>(null);
 
   useEffect(() => {
     if (!visible) return;
-    setErr(""); setNote(""); setQuery(""); setStoryMode(false); setFormat("post"); drag.setValue(0);
+    setErr(""); setNote(""); setQuery(""); setStoryMode(false); setFormat("post"); setDeco(null); drag.setValue(0);
     void installedTargets().then(setApps);
   }, [visible]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -237,6 +247,11 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
             <View style={{ width: size.w, height: size.h, transform: [{ translateX: (size.w / 2) * (scale - 1) }, { translateY: (size.h / 2) * (scale - 1) }, { scale }] }}>
               <View ref={shot} collapsable={false} style={{ width: size.w, height: size.h }}>
                 {renderCard(format)}
+                {deco && STICKER.get(deco) ? (
+                  <View pointerEvents="none" style={{ position: "absolute", top: format === "story" ? 70 : 18, end: 18, transform: [{ rotate: "8deg" }] }}>
+                    <StickerArt def={STICKER.get(deco)!} size={Math.round(size.w * 0.24)} />
+                  </View>
+                ) : null}
               </View>
             </View>
           </View>
@@ -247,6 +262,22 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
             </View>
           ) : null}
         </View>
+
+        {owned.length ? (
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingHorizontal: 16, paddingTop: 12, alignItems: "center" }}>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: stage.textMuted }}>{gt.decorate}</Text>
+            <Pressable onPress={() => setDeco(null)} accessibilityRole="button" accessibilityLabel={gt.none} accessibilityState={{ selected: !deco }}
+              style={{ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center", borderWidth: 1.5, borderColor: !deco ? stage.gold : "rgba(255,255,255,0.2)" }}>
+              <Icon name="close" color={stage.textMuted} size={16} />
+            </Pressable>
+            {owned.map((x) => (
+              <Pressable key={x.id} onPress={() => setDeco(x.id)} accessibilityRole="button" accessibilityLabel={stickerName(x.id, gt, tx, (n) => String(n))} accessibilityState={{ selected: deco === x.id }}
+                style={{ padding: 2, borderRadius: 22, borderWidth: 1.5, borderColor: deco === x.id ? stage.gold : "transparent" }}>
+                <StickerArt def={x} size={36} />
+              </Pressable>
+            ))}
+          </ScrollView>
+        ) : null}
 
         {storyMode ? (
           <View style={{ flexDirection: "row", gap: 10, paddingHorizontal: 16, marginTop: 14 }}>
