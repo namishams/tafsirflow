@@ -18,6 +18,7 @@ import { openVerse } from "../coursekit/links";
 import { useCourseT } from "../coursekit/strings";
 import { ChipButton, CourseHero, ProCard } from "../coursekit/ui";
 import { TajweedQuiz } from "./TajweedQuiz";
+import { TajweedPracticeEntry } from "../courses/TajweedPractice";
 import { goBack } from "@/components/page";
 
 // /tajweed and /tajweed/[id]: the website's tajweed course (src/app/[locale]/(app)/tajweed): every lesson with its
@@ -51,6 +52,7 @@ export function TajweedListPage() {
       <Stack.Screen options={{ headerShown: false }} />
       <ScrollView style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={{ paddingBottom: 48 }}>
         <CourseHero back word={WORD} title={w("title")} lead={w("lead")} />
+        <TajweedPracticeEntry />
         <View style={{ paddingHorizontal: 16, paddingTop: 48 }}>
           <View>
             <Rail left={27} top={32} bottom={32} />

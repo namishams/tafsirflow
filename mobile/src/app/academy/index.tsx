@@ -18,6 +18,9 @@ import { SURAH_PREFIX } from "@/features/quran/arabic";
 import { HmCard, QuranQuote } from "@/features/extra/art";
 import { MoreTiles } from "@/features/practice/art";
 import { tileFor } from "@/web/tiles";
+import { CoursesEntry } from "@/features/courses/Screens";
+import { ShamsEntries } from "@/features/courses/Shams";
+import { VocabDecksEntry } from "@/features/courses/Vocab";
 
 // "More in the Academy" (website academy/page.tsx MODULES)
 const MODULES = [
@@ -155,6 +158,9 @@ export default function Academy() {
           })}
 
           <Modules />
+          <CoursesEntry />
+          <ShamsEntries />
+          <VocabDecksEntry />
         </View>
         <MoreTiles keys={["shams", "arabic", "salah", "tajweed"]} />
       </Page>

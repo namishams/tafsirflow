@@ -1,3 +1,4 @@
+import { VocabDecksEntry } from "../courses/Vocab";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Animated, Easing, Pressable, ScrollView, Switch, Text, View, useWindowDimensions } from "react-native";
 import { Stack } from "expo-router";
@@ -92,6 +93,7 @@ export function VocabPage() {
       <Stack.Screen options={{ headerShown: false }} />
       <ScrollView style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={{ paddingBottom: 56 }} keyboardShouldPersistTaps="handled">
         <CourseHero back word={TILES.vocab.ar} title={w("title")} lead={w("lead")} />
+        <VocabDecksEntry />
         <View style={{ paddingHorizontal: 16, paddingTop: 16 }}>
           <VocabTrainer />
         </View>
