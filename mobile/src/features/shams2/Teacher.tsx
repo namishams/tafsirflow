@@ -11,6 +11,7 @@ import { useSurahNames } from "./names";
 import { readLog, readSettings, saveSettings, wirdStreak } from "./store";
 import { addLink, addStudent, encodeSnapshot, makeSnapshot, removeLink, removeStudent, useTeacher, type Snapshot } from "./teacherModel";
 import { useS2 } from "./text";
+import { LiveLinkCard } from "@/features/teacher/LiveLinkCard";
 import { Btn, Card, SourceNote, Term, onScore, scoreColor } from "./ui";
 
 // /shams/teacher – the teacher (ustādh / shaykh) sees a student's wird, quality and streak, read-only. Student side:
@@ -42,6 +43,7 @@ export function TeacherScreen() {
       <Page>
         <PageHero back topInset eyebrow={s("eyebrow")} arabic="الشَّيْخ والطّالِب" title={s("teacherTitle")} lead={s("teacherLead")} />
         <View style={{ padding: 16, gap: 14 }}>
+          <LiveLinkCard />
           <Segmented value={tab} options={[["student", s("iAmStudent")], ["teacher", s("iAmTeacher")]]} onChange={setTab} />
           {tab === "student" ? (
             <>
@@ -107,7 +109,7 @@ export function TeacherScreen() {
   );
 }
 
-function StudentView({ snap, onRemove }: { snap: Snapshot; onRemove: () => void }) {
+export function StudentView({ snap, onRemove }: { snap: Snapshot; onRemove: () => void }) {
   const t = useTheme();
   const { s, nf } = useS2();
   const { name } = useSurahNames();

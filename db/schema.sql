@@ -861,3 +861,40 @@ CREATE TABLE IF NOT EXISTS season_results (
 CREATE INDEX IF NOT EXISTS season_results_user ON season_results(user_id);
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- live teacher–student link (Shams 2.0): the student invites an accepted connection / mentoring master as teacher and
+-- consents to sharing an aggregate snapshot (plan, darajat, itqan per juz/surah, last 28 days, weak-spot counts; no
+-- recordings, no answers). Revoking deletes the row and with it the server copy. 16+ or with the parental-consent flag.
+CREATE TABLE IF NOT EXISTS teacher_shares (
+  id            bigserial PRIMARY KEY,
+  student_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  teacher_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  status        text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','active')),
+  consent_at    timestamptz NOT NULL DEFAULT now(),
+  consent_ver   integer NOT NULL DEFAULT 1,
+  parental      boolean NOT NULL DEFAULT false,
+  snapshot      jsonb,
+  synced_at     timestamptz,
+  created_at    timestamptz NOT NULL DEFAULT now(),
+  accepted_at   timestamptz,
+  UNIQUE (student_id, teacher_id),
+  CHECK (student_id <> teacher_id)
+);
+CREATE INDEX IF NOT EXISTS teacher_shares_teacher ON teacher_shares(teacher_id, status);
+CREATE INDEX IF NOT EXISTS teacher_shares_student ON teacher_shares(student_id, status);
+-- gentle nudges (preset encouragement) and suggested portions; no free text
+CREATE TABLE IF NOT EXISTS teacher_suggestions (
+  id           bigserial PRIMARY KEY,
+  share_id     bigint NOT NULL REFERENCES teacher_shares(id) ON DELETE CASCADE,
+  kind         text NOT NULL CHECK (kind IN ('nudge','assign')),
+  preset       text CHECK (preset IN ('keep_going','well_done','gentle_reminder','take_your_time')),
+  surah        integer CHECK (surah BETWEEN 1 AND 114),
+  from_verse   integer CHECK (from_verse BETWEEN 1 AND 286),
+  to_verse     integer CHECK (to_verse BETWEEN 1 AND 286),
+  status       text NOT NULL DEFAULT 'open' CHECK (status IN ('open','accepted','dismissed','done')),
+  created_at   timestamptz NOT NULL DEFAULT now(),
+  responded_at timestamptz,
+  CHECK (kind <> 'assign' OR (surah IS NOT NULL AND from_verse IS NOT NULL AND to_verse >= from_verse)),
+  CHECK (kind <> 'nudge' OR preset IS NOT NULL)
+);
+CREATE INDEX IF NOT EXISTS teacher_suggestions_share ON teacher_suggestions(share_id, status, created_at DESC);

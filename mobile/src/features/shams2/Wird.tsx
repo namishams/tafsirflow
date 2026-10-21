@@ -21,6 +21,7 @@ import { Btn, Card, SourceNote, Term } from "./ui";
 import { ContinueNext } from "./Continue";
 import { DueChecks } from "./Darajat";
 import { Briefing } from "./Tadabbur";
+import { TeacherAssigned } from "@/features/teacher/Inbox";
 
 // /shams/wird – today's wird: sabaq (new), sabqi (recent), manzil (long term), one tap opens the existing Shams session
 // or the reader at the right verse; after reciting, a self-assessment (tathbīt) updates the verse reviews.
@@ -109,6 +110,7 @@ export function WirdScreen() {
           </View>
           <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.gold, textAlign: "left" }}>{s("wirdGrade", { g: grade.tr, m: nf(grade.minutesMin), d: nf(settings.manzilDays || grade.manzilDays) })}</Text>
           <DueChecks />
+          <TeacherAssigned />
           {wird.gated ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.gold, textAlign: "left" }}>{s("gatedLead")}</Text> : null}
           {reasonKey ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, textAlign: "left" }}>{s(reasonKey)}</Text> : null}
           {(["sabaq", "sabqi", "manzil"] as const).map((k, i) => (
