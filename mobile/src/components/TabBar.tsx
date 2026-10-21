@@ -10,7 +10,7 @@ import { Icon, type IconName } from "./icons";
 // The active tab is drawn heavier in the accent colour inside a small glass lens; names stay for VoiceOver.
 const ICONS: Record<string, IconName> = { "(home)": "reels", quran: "book", learn: "cap", library: "compass", account: "user", foryou: "reels", explore: "compass" };
 /** routes that are tabs (keep their stack and URL) without a button in the bar */
-const HIDDEN = new Set(["library"]);
+const HIDDEN = new Set(["explore"]);
 export const TAB_BAR_HEIGHT = 62;
 /** space a screen leaves at the bottom so nothing hides behind the floating tab bar */
 export const useTabBarSpace = () => TAB_BAR_HEIGHT + Math.max(useSafeAreaInsets().bottom, 12) + 12;
