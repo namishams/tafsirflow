@@ -15,10 +15,18 @@ export const adultEnough = (birthYear: number | null) => !!birthYear && new Date
 
 export type Row = {
   username: string; display_name: string; bio: string; country: string | null; role: CRole; style: string; has_ijaza: boolean; public: boolean;
+  shares_total?: number;
 };
+
+/** sharer ("Verbreiter") tiers, same thresholds as the app (mobile/src/features/share/sharer.ts) */
+export const SHARER_TIERS = [3, 10, 25, 50, 100, 250, 500, 1000];
+export const sharerTier = (shares: number) => SHARER_TIERS.filter((n) => shares >= n).length;
+/** day number of this week's Monday (UTC days, like the ranking) */
+export const mondayDay = () => { const d = Math.floor(Date.now() / 86400000); return d - ((d + 3) % 7); };
 export const shape = (r: Row & { followers?: number; following?: number }) => ({
   username: r.username, name: r.display_name, bio: r.bio, country: r.country, role: r.role, style: r.style, ijaza: r.has_ijaza, public: r.public,
   followers: Number(r.followers ?? 0), following: Number(r.following ?? 0),
+  shares: Number(r.shares_total ?? 0), sharerTier: sharerTier(Number(r.shares_total ?? 0)),
 });
 
 /** common gate: DB, same origin, signed in, confirmed e-mail, rate limit per account. Returns the user or a response. */
@@ -40,6 +48,6 @@ export async function badText(text: string): Promise<string | null> {
 }
 
 export async function findByName(username: string) {
-  const r = await pool()!.query("SELECT user_id, username, display_name, bio, country, role, style, has_ijaza, public FROM community_profiles WHERE username = $1", [username.toLowerCase()]);
+  const r = await pool()!.query("SELECT user_id, username, display_name, bio, country, role, style, has_ijaza, public, shares_total FROM community_profiles WHERE username = $1", [username.toLowerCase()]);
   return r.rows[0] as (Row & { user_id: string }) | undefined;
 }

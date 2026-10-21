@@ -10,15 +10,13 @@ import { useStored, writeJSON } from "./store";
 export const PRO_PRODUCT = "com.quranmasterclass.app.pro.monthly";
 
 export type ProFeature =
-  | "shams" | "reciters" | "radio" | "arabic" | "tajweed" | "academy" | "offline" | "vocab" | "stats" | "general";
+  | "shams" | "reciters" | "radio" /* legacy: radio is free */ | "arabic" | "tajweed" | "academy" | "offline" | "vocab" | "stats" | "general";
 
 export const FREE = {
   /** Shams Method course: al-Fatiha and Juz 'Amma (78–114) for everyone */
   shamsSurah: (surah: number) => surah === 1 || surah >= 78,
   /** Quran.com recitation ids that everyone can choose (Alafasy, Husary) */
   reciterIds: [7, 6] as number[],
-  /** radio stations (by position in the station list) that everyone can play */
-  radioStations: 2,
   /** Arabic reading course: the whole first unit (8 lessons incl. its unit test) */
   arabicLessons: 8,
   /** tajweed course: the first lessons */

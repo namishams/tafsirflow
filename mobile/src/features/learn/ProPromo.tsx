@@ -12,7 +12,7 @@ export function ProPromo({ title, lead, feature = "general", compact }: { title?
   const price = useProPrice();
   const { pro } = usePro();
   if (pro) return null;
-  const features = compact ? ["f_shams", "f_reciters", "f_courses"] : ["f_shams", "f_reciters", "f_radio", "f_courses", "f_tests", "f_offline"];
+  const features = compact ? ["f_shams", "f_reciters", "f_courses"] : ["f_shams", "f_reciters", "f_courses", "f_tests", "f_offline"];
   return (
     <Stage rounded={R.card}>
       <View style={{ padding: 20 }}>

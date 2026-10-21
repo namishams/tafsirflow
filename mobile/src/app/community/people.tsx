@@ -1,3 +1,4 @@
+import { SharerBadge, SharerRing, TopSharers } from "@/features/share/SharerUI";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import { Stack, router, useFocusEffect, type Href } from "expo-router";
@@ -74,6 +75,7 @@ export default function People() {
                 );
               })}
             </View>
+            <TopSharers />
             {err && !list ? <ErrorState text={err} retry={load} /> : null}
             {err && list ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.danger }}>{err}</Text> : null}
             {list && list.length === 0 ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.muted, textAlign: "center", paddingVertical: 24 }}>{c("empty")}</Text> : null}
@@ -82,11 +84,11 @@ export default function People() {
                 <View key={p.username} style={[{ flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 14, paddingVertical: 12 }, i > 0 && { borderTopWidth: 1, borderTopColor: t.line }]}>
                   <Pressable onPress={() => router.push(`/community/u/${p.username}` as Href)} accessibilityRole="button" accessibilityLabel={`${p.name}, @${p.username}${p.role !== "learner" ? `, ${c(p.role)}` : ""}`}
                     style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 12, minHeight: 56 }}>
-                    <Avatar name={p.name} />
+                    <SharerRing tier={p.sharerTier ?? 0} size={52}><Avatar name={p.name} /></SharerRing>
                     <View style={{ flex: 1, gap: 3 }}>
                       <Text numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 15.5, color: t.ink }}>{p.name}</Text>
                       <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted, textAlign: "left", writingDirection: "ltr" }}>@{p.username}</Text>
-                      <RoleBadge role={p.role} />
+                      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}><RoleBadge role={p.role} /><SharerBadge tier={p.sharerTier ?? 0} compact /></View>
                     </View>
                   </Pressable>
                   <FollowButton followed={!!p.followed} busy={busy === p.username} name={p.name} onPress={() => toggle(p)} />

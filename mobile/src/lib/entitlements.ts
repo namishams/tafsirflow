@@ -50,7 +50,7 @@ function proFeatureOf(f: EntitlementFeature): ProFeature {
   if (typeof f === "string") {
     if (f === "cards" || f === "srs") return "vocab";
     if (f === "arabicReading") return "arabic";
-    const known: string[] = ["shams", "reciters", "radio", "arabic", "tajweed", "academy", "offline", "vocab", "stats"];
+    const known: string[] = ["shams", "reciters", "arabic", "tajweed", "academy", "offline", "vocab", "stats"];
     return (known.includes(f) ? f : "general") as ProFeature;
   }
   if ("shamsSurah" in f) return "shams";

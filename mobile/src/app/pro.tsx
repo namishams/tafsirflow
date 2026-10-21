@@ -19,13 +19,13 @@ import { useDuaPrice } from "@/lib/purchases";
 // The Pro sheet: what Pro brings (gold medallions), Free and Pro side by side, and a clear price card with the summary
 // Apple asks for (what, price, term, how to cancel) before Apple's own purchase sheet. Purchases belong to the account.
 const BENEFITS: [IconName, string, string][] = [
-  ["sun", "f_shams", "d_shams"], ["speaker", "f_reciters", "d_reciters"], ["radio", "f_radio", "d_radio"],
+  ["sun", "f_shams", "d_shams"], ["speaker", "f_reciters", "d_reciters"],
   ["cap", "f_courses", "d_courses"], ["checkCircle", "f_tests", "d_tests"], ["hands", "f_ai", "d_ai"],
   ["list", "f_stats", "d_stats"], ["download", "f_offline", "d_offline"],
 ];
 const COMPARE: [string, string, string][] = [
   ["c_quran", "✓", "✓"], ["c_prayer", "✓", "✓"], ["c_progress", "✓", "✓"],
-  ["c_shams", "c_shamsFree", "c_shamsPro"], ["c_reciters", "c_recitersFree", "c_recitersPro"], ["c_radio", "c_radioFree", "c_radioPro"],
+  ["c_shams", "c_shamsFree", "c_shamsPro"], ["c_reciters", "c_recitersFree", "c_recitersPro"],
   ["c_arabic", "c_arabicFree", "c_full"], ["c_tajweed", "c_tajweedFree", "c_full"], ["c_vocab", "c_vocabFree", "c_vocabPro"],
   ["c_tests", "c_testsFree", "c_shamsPro"], ["c_ai", "–", "✓"], ["c_duas", "c_duasFree", "c_duasPro"],
 ];
@@ -43,7 +43,7 @@ export default function ProSheet() {
   const [msg, setMsg] = useState<string | null>(null);
   useEffect(() => { loadPrices().then((p) => setPrice(p.pro)).catch(() => undefined); }, []);
   const shown = price; // Apple's price in the buyer's currency; nothing until the store has answered
-  const why = f && ["shams", "reciters", "radio", "arabic", "tajweed", "academy", "offline", "vocab", "stats"].includes(f) ? f : "general";
+  const why = f && ["shams", "reciters", "arabic", "tajweed", "academy", "offline", "vocab", "stats"].includes(f) ? f : "general";
 
   const buy = async () => {
     if (!user) { router.push("/sign-in"); return; }

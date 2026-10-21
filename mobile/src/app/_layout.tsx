@@ -1,3 +1,4 @@
+import { SharerCelebration } from "@/features/share/SharerUI";
 import "@/lib/digits-install";
 import "@/lib/webshim";
 import { useEffect, useState } from "react";
@@ -62,6 +63,7 @@ export default function RootLayout() {
                 <NowPlayingBar />
                 <NotificationsBridge />
                 <DailyMoment />
+                <SharerCelebration />
               </RewardsHost>
             </ProProvider>
           </AuthProvider>

@@ -266,6 +266,11 @@ CREATE TABLE IF NOT EXISTS community_profiles (
   created_at   timestamptz NOT NULL DEFAULT now()
 );
 CREATE UNIQUE INDEX IF NOT EXISTS community_profiles_username ON community_profiles(username);
+-- sharer ("Verbreiter") status: shares counted in the app, sent by the member (status only, unlocks nothing)
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS shares_total integer NOT NULL DEFAULT 0 CHECK (shares_total >= 0);
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS shares_week integer NOT NULL DEFAULT 0 CHECK (shares_week >= 0);
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS shares_week_day integer NOT NULL DEFAULT 0;
+CREATE INDEX IF NOT EXISTS community_profiles_shares_week ON community_profiles(shares_week_day, shares_week DESC);
 CREATE TABLE IF NOT EXISTS community_follows (
   follower_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   followee_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,

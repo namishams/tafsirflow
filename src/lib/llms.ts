@@ -69,7 +69,7 @@ The Shams Method is a way of learning, not a new interpretation: explanations co
 - Founded by ${COMPANY.founder}, who also developed the Shams Method.
 - Operated by ${COMPANY.legalName}, ${COMPANY.city}, United Arab Emirates. Contact: ${COMPANY.email}. Details: [Imprint](${base}/en/legal/imprint), [About](${base}/en/about).
 - The website is free – no subscription, no ads, no paywall. It is privately funded; voluntary donations (sadaqa jariya) through Ziina are welcome but unlock nothing: [Support](${base}/en/support).
-- The app for iPhone, iPad and Android offers Quran Masterclass Pro, a monthly subscription that can be cancelled any time in the App Store or on Google Play (Shams Method for all 114 surahs, all reciters and radio stations, the complete Arabic and Tajweed courses, Academy tests, statistics, AI assistant and personal duas, surahs offline): [Pro](${base}/en/premium).
+- The app for iPhone, iPad and Android offers Quran Masterclass Pro, a monthly subscription that can be cancelled any time in the App Store or on Google Play (Shams Method for all 114 surahs, all reciters (the Quran radio is free for everyone), the complete Arabic and Tajweed courses, Academy tests, statistics, AI assistant and personal duas, surahs offline): [Pro](${base}/en/premium).
 
 ## Content sources and attribution
 - Quran text, translations, word data and tafsir: Quran.com

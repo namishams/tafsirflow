@@ -8,6 +8,8 @@ import { useCT, type CKey } from "./text";
 export type Profile = {
   username: string; name: string; bio: string; country: string | null; role: "learner" | "reciter" | "teacher"; style: string; ijaza: boolean;
   public: boolean; followers: number; following: number; followed?: boolean; mine?: boolean; blocked?: boolean;
+  /** sharer ("Verbreiter") status: shares counted in the app and the tier from them */
+  shares?: number; sharerTier?: number;
 };
 
 export const initials = (n: string) => (n.trim().split(/\s+/).slice(0, 2).map((w) => Array.from(w)[0] ?? "").join("") || "?").toUpperCase();

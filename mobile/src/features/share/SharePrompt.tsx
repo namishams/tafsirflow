@@ -1,3 +1,7 @@
+import { fillText } from "@/features/feed/texts";
+import { SharerBadge } from "./SharerUI";
+import { useMySharer } from "./sharer";
+import { useSharerText } from "./sharerTexts";
 import { useState } from "react";
 import { Pressable, Switch, Text, View } from "react-native";
 import { Icon } from "@/components/icons";
@@ -130,13 +134,16 @@ export function ShareCounter() {
   const nf = (n: number) => Intl.NumberFormat(lang).format(n);
   const streak = shareStreakOf(st).now;
   const week = weekShares(st);
+  const me = useMySharer();
+  const sx = useSharerText();
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
       <Icon name="send" color={t.accent} size={22} />
       <View style={{ flex: 1 }}>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: t.ink }}>{`${gt.sharesLabel}: ${nf(st.total.shares)}`}</Text>
+        {me.tier > 0 ? <View style={{ marginTop: 4 }}><SharerBadge tier={me.tier} compact /></View> : null}
         <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted, marginTop: 2 }}>
-          {[week ? gt.weekShared.replace("{n}", nf(week)) : "", streak > 1 ? gt.shareStreakNow.replace("{n}", nf(streak)) : ""].filter(Boolean).join(" · ") || gt.sShare1}
+          {[me.next ? fillText(sx.toNext, { n: nf(me.next.left), l: nf(me.next.tier) }) : "", week ? gt.weekShared.replace("{n}", nf(week)) : "", streak > 1 ? gt.shareStreakNow.replace("{n}", nf(streak)) : ""].filter(Boolean).join(" · ") || gt.sShare1}
         </Text>
       </View>
     </View>

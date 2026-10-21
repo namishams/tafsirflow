@@ -21,6 +21,8 @@ import { ProPromo } from "@/features/learn/ProPromo";
 import type { AppearanceSetting } from "@/lib/theme";
 import { FeedLinks, FeedStatsRow } from "@/features/feed/FeedStats";
 import { ShareCounter, SharePromptSetting } from "@/features/share/SharePrompt";
+import { SharerBadge } from "@/features/share/SharerUI";
+import { useMySharer } from "@/features/share/sharer";
 
 // Account: Pro, sign-in, confirm the e-mail, appearance, language, learning progress, legal, report a
 // problem, delete the account
@@ -31,6 +33,7 @@ export default function AccountScreen() {
   const { appearance, setAppearance } = useSettings();
   const hx = useHadithText();
   const { user, logout, deleteAccount } = useAuth();
+  const sharer = useMySharer();
   const { pro, until } = usePro();
   const [deleting, setDeleting] = useState(false);
   const [password, setPassword] = useState("");
@@ -68,7 +71,7 @@ export default function AccountScreen() {
               <GoldButton title={t("account.createAccount")} onPress={() => go("/register")} />
               <OutlineButton title={t("account.signIn")} onStage onPress={() => go("/sign-in")} />
             </>
-          ) : null}
+          ) : sharer.tier > 0 ? <SharerBadge tier={sharer.tier} onStage /> : null}
         </PageHero>
 
         <View style={{ padding: 16, gap: 22 }}>

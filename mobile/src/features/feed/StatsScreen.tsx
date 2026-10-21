@@ -1,3 +1,5 @@
+import { SharerBadge } from "@/features/share/SharerUI";
+import { useMySharer } from "@/features/share/sharer";
 import { ShareCounter } from "@/features/share/SharePrompt";
 import { useState } from "react";
 import { I18nManager, Pressable, Text, View } from "react-native";
@@ -34,6 +36,7 @@ export default function StatsScreen() {
   const s = useFeedStats();
   const [share, setShare] = useState<null | "today" | "week" | "month">(null);
   const gt = useGameText();
+  const sharer = useMySharer();
   const gm = useGamify();
   const [resetNote, setResetNote] = useState(false);
   useEffect(() => { const id = setTimeout(nudgeAccount, 1500); return () => clearTimeout(id); }, []);
@@ -85,7 +88,10 @@ export default function StatsScreen() {
           </View>
         ))}
       </View>
-      {p.top ? <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.gold, textAlign: "center" }}>{gt.topTopic}: {topicLabel(p.top, tx)}</Text> : <View />}
+      <View style={{ alignItems: "center", gap: 8 }}>
+        {p.top ? <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.gold, textAlign: "center" }}>{gt.topTopic}: {topicLabel(p.top, tx)}</Text> : null}
+        <View style={{ alignSelf: "center" }}><SharerBadge tier={sharer.tier} onStage /></View>
+      </View>
       <BrandFoot />
     </LinearGradient>
   );
@@ -112,6 +118,7 @@ export default function StatsScreen() {
           </View>
         ))}
         {streak ? <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.gold, textAlign: "center" }}>{tx.statsStreak}: {fillText(tx.statsDays, { n: nf(streak) })}</Text> : null}
+        <View style={{ alignSelf: "center" }}><SharerBadge tier={sharer.tier} onStage /></View>
       </View>
       <BrandFoot />
     </LinearGradient>

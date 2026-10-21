@@ -1,3 +1,4 @@
+import { SharerBadge, SharerRing } from "@/features/share/SharerUI";
 import { useCallback, useEffect, useState } from "react";
 import { Alert, Pressable, Text, View } from "react-native";
 import { Stack, router, useLocalSearchParams, type Href } from "expo-router";
@@ -67,7 +68,7 @@ export default function UserProfile() {
         ) : (
           <View style={{ padding: 16, gap: 16 }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 20 }}>
-              <Avatar name={p.name} size={84} />
+              <SharerRing tier={p.sharerTier ?? 0} size={84}><Avatar name={p.name} size={84} /></SharerRing>
               <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-around" }}>
                 {stat(p.followers, c("followers"))}
                 {stat(p.following, c("followingN"))}
@@ -78,6 +79,7 @@ export default function UserProfile() {
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, textAlign: "left", writingDirection: "ltr" }}>@{p.username}</Text>
               <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap" }}>
                 <RoleBadge role={p.role} />
+                <SharerBadge tier={p.sharerTier ?? 0} />
                 {p.ijaza ? <View style={{ paddingHorizontal: 9, paddingVertical: 3, borderRadius: 999, backgroundColor: t.accentSoft }}><Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: t.accent }}>{c("ijazaLong")}</Text></View> : null}
               </View>
               {p.style ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{p.style}</Text> : null}

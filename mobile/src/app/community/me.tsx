@@ -1,3 +1,5 @@
+import { SharerBadge, SharerRing } from "@/features/share/SharerUI";
+import { syncSharer, useMySharer } from "@/features/share/sharer";
 import { useEffect, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
@@ -17,6 +19,7 @@ export default function MyProfile() {
   const t = useTheme();
   const c = useCT();
   const { user } = useAuth();
+  const sharer = useMySharer();
   const [ready, setReady] = useState(false);
   const [exists, setExists] = useState(false);
   const [username, setUsername] = useState("");
@@ -44,6 +47,7 @@ export default function MyProfile() {
     try {
       await api("/api/community/me", { method: "PUT", body: { username: username.trim().toLowerCase(), name, bio, role, style, ijaza, public: isPublic } });
       setExists(true); setOk(true);
+      void syncSharer();
     } catch (e) { setErr(errText(e, c)); } finally { setBusy(false); }
   };
 
@@ -60,7 +64,10 @@ export default function MyProfile() {
           </View>
         ) : (
           <View style={{ padding: 16, gap: 16 }}>
-            <View style={{ alignItems: "center" }}><Avatar name={name || username || "?"} size={84} /></View>
+            <View style={{ alignItems: "center", gap: 8 }}>
+              <SharerRing tier={sharer.tier} size={84}><Avatar name={name || username || "?"} size={84} /></SharerRing>
+              <View style={{ alignSelf: "center" }}><SharerBadge tier={sharer.tier} /></View>
+            </View>
             <LabeledField label={c("username")} hint={c("usernameHint")} value={username} onChangeText={(v) => setUsername(v.toLowerCase().replace(/[^a-z0-9_.]/g, ""))}
               autoCapitalize="none" autoCorrect={false} maxLength={20} style={{ textAlign: "left", writingDirection: "ltr" }} />
             <LabeledField label={c("name")} value={name} onChangeText={setName} maxLength={40} />

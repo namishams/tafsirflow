@@ -119,8 +119,9 @@ function prevSurahPos(p: Pos, st: Station, history: Pos[]): Pos {
 
 // ---------- Free and Pro ----------
 export const isFreeReciter = (r: Reciter) => r.id > 0 && FREE.reciterIds.includes(r.id);
-export const reciterAllowed = (r: Reciter, pro: boolean) => pro || isFreeReciter(r);
-export const stationAllowed = (st: Station, pro: boolean) => pro || STATIONS.indexOf(st) < FREE.radioStations;
+// the radio is free for everyone: every station and every voice on the radio, no Pro gating
+export const reciterAllowed = (_r: Reciter, _pro: boolean) => true;
+export const stationAllowed = (_st: Station, _pro: boolean) => true;
 
 // ---------- state ----------
 let state: RadioState = {

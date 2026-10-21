@@ -55,7 +55,16 @@ export const statBump = (f: (d: DayStats) => void) => bump(f);
 export const statsNow = (): Stats => load();
 export const statLike = () => bump((d) => { d.likes++; });
 export const statSave = () => bump((d) => { d.saves++; });
-export const statShare = () => { bump((d) => { d.shares++; }); gEvent({ t: "share" }); };
+const shareListeners = new Set<(before: number, after: number) => void>();
+/** listen to every new share (sharer tiers); returns the unsubscribe */
+export const onShare = (f: (before: number, after: number) => void) => { shareListeners.add(f); return () => { shareListeners.delete(f); }; };
+export const statShare = () => {
+  const before = load().total.shares;
+  bump((d) => { d.shares++; });
+  gEvent({ t: "share" });
+  const after = load().total.shares;
+  shareListeners.forEach((f) => { try { f(before, after); } catch { /* ignore */ } });
+};
 function statTime(ms: number, sessionMs: number) {
   bump((d) => { d.ms += ms; });
   const s = load();

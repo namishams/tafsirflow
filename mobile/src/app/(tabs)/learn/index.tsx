@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
-import { GoldButton, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, StarNumber, SurahBanner, gradientColors } from "@/components/brand";
+import { GoldButton, GoldCard, GoldProgress, OutlineButton, SectionTitle, StarNumber, SurahBanner } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { Page, PageHero, ProBadge } from "@/components/page";
 import { useLang } from "@/i18n";
@@ -12,16 +12,13 @@ import { useStoreVersion } from "@/lib/store";
 import { getChapters, type Chapter } from "@/lib/quran";
 import { learner, surahProgress, type SurahProgress } from "@/web/coach";
 import { shamsContent } from "@/web/shamsContent";
-import { tile, routeOf } from "@/lib/features";
 import { ProPromo } from "@/features/learn/ProPromo";
 import { TodayPlanCard } from "@/features/plan/TodayPlanCard";
 import { SrsEntryCard } from "@/features/srs";
 import { ReciterPathCard } from "@/features/reciter-path/Screens";
 import { QaidaCard } from "@/features/qaida/Screens";
 import { useLearnT } from "@/features/learn/texts";
-import { useFeedText } from "@/features/feed/texts";
-import { I18nManager } from "react-native";
-const isRTL = I18nManager.isRTL;
+import { DiscoverRows, DiscoverStream, useDiscoverStream } from "@/features/library/Discover";
 
 // The Masterclass tab: learning the tafsir of the Quran with the Shams Method – hero like the website's /shams page,
 // "continue learning", the course path (free: al-Fātiḥa and Juz ʿAmma; Pro: every surah), courses and tools.
@@ -31,7 +28,7 @@ const PRO_PATH = [67, 36, 18, 55, 56, 32, 2, 12, 19, 25, 24, 49];
 export default function Masterclass() {
   const t = useTheme();
   const lt = useLearnT();
-  const ft = useFeedText();
+  const stream = useDiscoverStream();
   const w = useWebT();
   const { lang } = useLang();
   const { pro } = usePro();
@@ -51,7 +48,7 @@ export default function Masterclass() {
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <Page>
+      <Page onScroll={stream.onScroll} scrollEventThrottle={200}>
         <PageHero topInset eyebrow={c.heroKicker} title={c.heroTitle} lead={c.heroLead}>
           {c.heroFacts ? (
             <View style={{ flexDirection: "row", gap: 8, marginBottom: 6 }}>
@@ -110,27 +107,10 @@ export default function Masterclass() {
 
           <ProPromo title={lt("proCardTitle")} lead={lt("proCardLead")} feature="shams" />
 
-          <View>
-            <SectionTitle title={lt("toolsTitle")} />
-            <PosterGrid>
-              {["courses", "arabic", "tajweed", "vocab", "salah", "wudu", "plan", "map"].map((k) => tile(k)).filter((x) => !!x).map((x) => (
-                <Poster key={x!.key} title={w(`nav.${x!.key}`)} desc={w(`home2.${x!.desc}`)} badge={w(`home2.badge_${x!.badge}`)} arabic={x!.ar}
-                  colors={gradientColors(x!.bg)} cta={w("home2.open")} onPress={() => router.push(routeOf(x!) as Href)} />
-              ))}
-            </PosterGrid>
-          </View>
-
-          {/* Discover has no tab button of its own any more (the Feed took its place): every course and tool from here */}
-          <Pressable onPress={() => router.navigate("/library" as Href)} accessibilityRole="button" accessibilityLabel={`${ft.discoverAll}. ${ft.discoverAllLead}`}
-            style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 14, padding: 16, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: pressed ? t.accentSoft : t.surface })}>
-            <Icon name="compass" color={t.accent} size={26} />
-            <View style={{ flex: 1 }}>
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: t.ink }}>{ft.discoverAll}</Text>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.muted }}>{ft.discoverAllLead}</Text>
-            </View>
-            <Icon name={isRTL ? "chevronLeft" : "chevronRight"} color={t.muted} size={18} />
-          </Pressable>
         </View>
+        {/* every course, tool and section directly, then the endless discovery stream (no "more" button) */}
+        <View style={{ marginTop: 32 }}><DiscoverRows /></View>
+        <DiscoverStream s={stream} />
       </Page>
     </>
   );
