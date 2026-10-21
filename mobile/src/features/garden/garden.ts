@@ -41,11 +41,30 @@ export type Garden = {
   shamsDay?: number; shamsRun?: number; shamsToday?: number;
   /** last stage-up not yet announced by a notification */
   notifyStage?: number;
+  /** growth scale of the saved points (2 = since build 14) */
+  scale?: number;
+  /** stickers given today (diminishing growth) */
+  giftDay?: number; giftsToday?: number;
 };
-const empty = (): Garden => ({ trees: [], active: null, traits: [], given: [], learn: -1, harvestXp: 0, learnDay: 0, learnToday: 0, watered: 0, lastActive: 0, at: 0 });
+const empty = (): Garden => ({ scale: SCALE, trees: [], active: null, traits: [], given: [], learn: -1, harvestXp: 0, learnDay: 0, learnToday: 0, watered: 0, lastActive: 0, at: 0 });
 
-// 13 stages (0 = seed … 12 = ancient tree); at the daily maximum stage 12 takes about three months, usually much longer
-export const STAGES = [0, 30, 80, 160, 280, 450, 700, 1000, 1400, 1900, 2600, 3500, 4600];
+// 13 stages (0 = seed … 12 = ancient tree). Thresholds grow by about 1.5x per stage: an active free learner
+// (about 35 a day) reaches stage 6 after five to six weeks, an active Pro learner (60 to 90 a day) stage 12 after
+// six to twelve months.
+export const STAGES = [0, 60, 140, 270, 460, 750, 1200, 1850, 2850, 4300, 6500, 9900, 15000];
+/** the thresholds before build 14 (growth was far too fast); saved trees are moved to the new scale once */
+const OLD_STAGES = [0, 30, 80, 160, 280, 450, 700, 1000, 1400, 1900, 2600, 3500, 4600];
+const SCALE = 2;
+function rescale(gp: number): number {
+  let k = 0; while (k < OLD_STAGES.length - 1 && gp >= OLD_STAGES[k + 1]) k++;
+  if (k >= OLD_STAGES.length - 1) return STAGES[STAGES.length - 1] + Math.round((gp - OLD_STAGES[k]) * (STAGES[k] / OLD_STAGES[k]));
+  const f = (gp - OLD_STAGES[k]) / (OLD_STAGES[k + 1] - OLD_STAGES[k]);
+  return Math.round(STAGES[k] + f * (STAGES[k + 1] - STAGES[k])); // same stage, same progress within it
+}
+function migrate<T extends Partial<Garden>>(x: T): T {
+  if (x.scale === SCALE) return x;
+  return { ...x, scale: SCALE, trees: Array.isArray(x.trees) ? x.trees.map((t) => ({ ...t, gp: rescale(t.gp ?? 0) })) : x.trees };
+}
 export const MAX_STAGE = STAGES.length - 1;
 /** without Pro the tree grows to a young tree (stage 6) and stays healthy there; growth keeps counting for later */
 export const FREE_STAGE = 6;
@@ -59,16 +78,16 @@ export function progressOf(gp: number, pro = proNow): { stage: number; frac: num
   return { stage: s, frac: (gp - STAGES[s]) / (STAGES[s + 1] - STAGES[s]), left: STAGES[s + 1] - gp, held: false };
 }
 /** 4 feed XP make 1 growth point, at most 40 a day from learning; watering adds 15 */
-const WATER_GP = 15, FRUIT_XP = 10;
-const CAPS: Record<Src, number> = { shams: 160, learn: 40, listen: 15, quests: 30, stickers: 9999, feed: 6 };
+const WATER_GP = 5, FRUIT_XP = 10;
+const CAPS: Record<Src, number> = { shams: 60, learn: 15, listen: 6, quests: 10, stickers: 12, feed: 2 };
 export const FRUIT_STAGE = 5;
 export const PLOT_STAGES = [6, 9, 12];
 export const STICKER_GP_HINT = (d: StickerDef, unique: boolean) => stickerGp(d, unique);
-export const stickerGp = (d: StickerDef, unique: boolean) => (d.rare ? 50 : d.tone === "gold" ? 20 : d.tone === "night" ? 12 : 8) * (unique ? 2 : 1);
+export const stickerGp = (d: StickerDef, unique: boolean) => (d.rare ? 8 : d.tone === "gold" ? 4 : d.tone === "night" ? 3 : 2) * (unique ? 2 : 1);
 
 let cache: Garden | null = null;
 function g(): Garden {
-  if (!cache) { const r = readJSON<Partial<Garden>>(GARDEN_KEY, {}); cache = { ...empty(), ...r, trees: Array.isArray(r.trees) ? r.trees : [], traits: r.traits ?? [], given: r.given ?? [] }; }
+  if (!cache) { const r = migrate(readJSON<Partial<Garden>>(GARDEN_KEY, {})); cache = { ...empty(), ...r, trees: Array.isArray(r.trees) ? r.trees : [], traits: r.traits ?? [], given: r.given ?? [] }; }
   return cache;
 }
 function save() { const s = g(); s.at = Date.now(); for (const t of s.trees) t.hist = t.hist.slice(-60); writeJSON(GARDEN_KEY, s); }
@@ -87,6 +106,22 @@ export const fruitCap = (s: Garden) => (s.traits.includes("fruits") ? 5 : 3);
 export type StageUp = { tree: Tree; stage: number };
 const subs = new Set<(e: StageUp) => void>();
 export const onStageUp = (f: (e: StageUp) => void) => { subs.add(f); return () => { subs.delete(f); }; };
+// iOS cannot present the full-screen celebration while another modal (the gift sheet, its confirmation alert) is
+// up: the celebration modal then never appears but still blocks every touch, so the app seems frozen. Screens
+// with a modal hold the celebrations; the latest one is shown once the modal has closed.
+let held = 0;
+let pendingUp: StageUp | null = null, pendingSeries: SeriesReward | null = null;
+function emitStageUp(e: StageUp) { if (held) pendingUp = e; else setTimeout(() => subs.forEach((f) => f(e)), 0); }
+function emitSeries(r: SeriesReward) { if (held) pendingSeries = r; else setTimeout(() => seriesSubs.forEach((f) => f(r)), 0); }
+export function holdCelebrations(): () => void {
+  held++;
+  return () => {
+    held = Math.max(0, held - 1);
+    if (held) return;
+    const e = pendingUp, r = pendingSeries; pendingUp = null; pendingSeries = null;
+    if (e || r) setTimeout(() => { if (e) subs.forEach((f) => f(e)); if (r) seriesSubs.forEach((f) => f(r)); }, 600); // after the sheet's slide-out
+  };
+}
 /** Ramadan doubles all growth; Fridays and the first ten days of Dhul-Hijjah add a quarter */
 export function growthBoost(): number {
   try { const h = toHijri(todayUtc()); if (h.m === 9) return 2; if (h.m === 12 && h.d <= 10) return 1.25; } catch { /* no calendar */ }
@@ -102,7 +137,7 @@ function grow(t: Tree, gp0: number, src: Src) {
   burst += Math.round(gp);
   const after = stageOf(t.gp);
   for (let k = before + 1; k <= after; k++) t.hist.push({ d: dayNum(), k: "stage", n: k });
-  if (after > before) { s.notifyStage = after; const e = { tree: t, stage: after }; setTimeout(() => subs.forEach((f) => f(e)), 0); }
+  if (after > before) { s.notifyStage = after; emitStageUp({ tree: t, stage: after }); }
   return after > before;
 }
 /** growth gained since the last call (the "+N" burst on completion screens) */
@@ -122,8 +157,8 @@ export function weekGrowth(s: Garden): { now: number; before: number; by: Record
 }
 
 /** Shams Method: every verse grows the tree, a finished session or surah more, a run of Shams days adds a bonus.
- *  Its own daily cap (80) on top of the learning cap, so the method is the fastest way to grow. */
-const SHAMS_GP = { verse: 3, session: 15, surah: 20 } as const, SHAMS_CAP = 80;
+ *  Its own daily cap (30, Pro 60) on top of the learning cap, so the method is the fastest way to grow. */
+const SHAMS_GP = { verse: 1, session: 6, surah: 10 } as const, SHAMS_CAP = 30;
 export function shamsGrow(kind: keyof typeof SHAMS_GP, pro: boolean): number {
   const s = g();
   const t = activeTree(s, pro);
@@ -131,7 +166,7 @@ export function shamsGrow(kind: keyof typeof SHAMS_GP, pro: boolean): number {
   const d = dayNum();
   if (s.shamsDay !== d) { s.shamsRun = s.shamsDay === d - 1 ? (s.shamsRun ?? 0) + 1 : 1; s.shamsDay = d; s.shamsToday = 0; }
   let gp: number = SHAMS_GP[kind];
-  if (kind !== "verse" && (s.shamsRun ?? 0) >= 3) gp += Math.min(20, (s.shamsRun ?? 0) * 2);
+  if (kind !== "verse" && (s.shamsRun ?? 0) >= 3) gp += Math.min(6, s.shamsRun ?? 0);
   if (pro) gp *= 2; // Pro: twice the growth from the Shams Method
   gp = Math.min(gp, (pro ? 2 : 1) * SHAMS_CAP - (s.shamsToday ?? 0));
   if (gp <= 0) return 0;
@@ -183,9 +218,9 @@ export function tickGarden(xp: number, questsDone: boolean, pro: boolean, names:
   const feedActs: Partial<Record<Act, number>> = { hadith: dk("hadith"), dua: dk("dua"), holy: dk("holy"), seerah: dk("seerah"), names: dk("names"), share: dk("share") };
   const dl = { lesson: dx("lesson"), quiz: dx("quiz"), vocab: dx("vocab"), wudu: dx("wudu"), listen: dx("listen"), verse: dx("verse"), xp: dx("xp") };
   const raw: Partial<Record<Src, number>> = {
-    learn: dl.lesson * 12 + dl.quiz * 6 + dl.vocab * 0.5 + dl.wudu * 6,
-    listen: dl.listen * 0.6 + dl.verse * 0.3,
-    feed: dl.xp / 20,
+    learn: dl.lesson * 4 + dl.quiz * 2 + dl.vocab * 0.2 + dl.wudu * 2,
+    listen: dl.listen * 0.3 + dl.verse * 0.1,
+    feed: dl.xp / 40,
   };
   const acts: Partial<Record<Act, number>> = { lesson: dl.lesson, quiz: dl.quiz, cards: Math.floor(dl.vocab / 5), wudu: dl.wudu, listen: Math.floor(dl.listen / 3), verse: Math.floor(dl.verse / 3), feed: Math.floor(dl.xp / 20), ...feedActs, ...(extra ?? {}) };
   if (Object.values(acts).some((v) => (v ?? 0) > 0)) activityDrops(acts, seasonNow() === "ramadan");
@@ -201,7 +236,7 @@ export function tickGarden(xp: number, questsDone: boolean, pro: boolean, names:
   if (questsDone && s.watered !== d) { s.watered = d; s.lastActive = d; t.hist.push({ d, k: "water" }); up = grow(t, WATER_GP, "quests") || up; changed = true; openPack(2, "quest"); }
   if (!seasonDone) { seasonDone = true; seasonalDrops(); }
   claimSeries(t);
-  if (!s.traits.includes("garland") && ramadanComplete()) { s.traits.push("garland"); grow(t, 300, "stickers"); changed = true; }
+  if (!s.traits.includes("garland") && ramadanComplete()) { s.traits.push("garland"); grow(t, 100, "stickers"); changed = true; }
   // fruits: one a day per tree from stage 6 (two with the "fruits" decoration), none while resting
   for (const tr of s.trees) {
     if (tr.fruitDay >= d) continue;
@@ -225,7 +260,9 @@ export function harvest(id: string): number {
   return xp;
 }
 
-export type GiftResult = { gp: number; trait: Trait | null; up: boolean } | null;
+export type GiftResult = { gp: number; trait: Trait | null; up: boolean; full?: boolean } | null;
+/** today's sticker growth: each further sticker counts less (1, 1/2, 1/3 …), at most CAPS.stickers a day */
+function stickerRoom(s: Garden): number { const d = dayNum(); if (s.capDay !== d) { s.capDay = d; s.capped = {}; } return CAPS.stickers - (s.capped?.stickers ?? 0); }
 const TRAIT_ORDER: Trait[] = ["blossoms", "lanterns", "bench", "fountain", "plaque", "crescent", "star", "fruits"];
 const nextTrait = (s: Garden) => TRAIT_ORDER.find((x) => !s.traits.includes(x)) ?? null;
 /** gives a sticker to the active tree: a duplicate, or (unique, after confirmation) a collected sticker once.
@@ -234,6 +271,7 @@ export function giveSticker(id: string, unique: boolean, pro: boolean): GiftResu
   const s = g();
   const t = activeTree(s, pro);
   if (!t) return null;
+  if (stickerRoom(s) <= 0) return { gp: 0, trait: null, up: false, full: true }; // nothing spent: the tree is full for today
   const def = STICKER.get(id);
   let gp: number, trait: Trait | null = null;
   if (def) {
@@ -249,6 +287,10 @@ export function giveSticker(id: string, unique: boolean, pro: boolean): GiftResu
     if (RARE_TRAIT[id] && !s.traits.includes(RARE_TRAIT[id])) trait = RARE_TRAIT[id];
     else if (r === "legendary") trait = nextTrait(s);
   }
+  const n = s.giftDay === dayNum() ? (s.giftsToday ?? 0) : 0;
+  s.giftDay = dayNum(); s.giftsToday = n + 1;
+  gp = Math.max(1, Math.min(stickerRoom(s), Math.round(gp / (1 + n))));
+  s.capped = { ...(s.capped ?? {}), stickers: (s.capped?.stickers ?? 0) + gp };
   const up = grow(t, gp, "stickers");
   t.hist.push({ d: dayNum(), k: "gift" });
   if (trait) s.traits.push(trait);
@@ -268,7 +310,7 @@ function claimSeries(t: Tree) {
     grow(t, gp, "stickers");
     if (trait) s.traits.push(trait);
     const r = { series: se, gp, trait };
-    setTimeout(() => seriesSubs.forEach((f) => f(r)), 0);
+    emitSeries(r);
   }
 }
 
@@ -293,7 +335,8 @@ export function useGardenRing(pro: boolean): { planted: boolean; stage: number; 
 }
 
 // ---------- account sync ----------
-export function mergeGarden(a: Garden | undefined, b: Garden | undefined): Garden | undefined {
+export function mergeGarden(a0: Garden | undefined, b0: Garden | undefined): Garden | undefined {
+  const a = a0 && migrate(a0), b = b0 && migrate(b0);
   if (!a || !b) return a ?? b;
   const newer = (a.at ?? 0) >= (b.at ?? 0) ? a : b;
   const byId = new Map<string, Tree>();

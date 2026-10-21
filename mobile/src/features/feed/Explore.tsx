@@ -50,7 +50,7 @@ const Tile = memo(function Tile({ e, size, onPress, big }: { e: Entry; size: num
   else if (isLibId(e.item)) { const lp = LIB.get(e.item); const f = lp?.items[0]; if (lp && f) { label = libTopicLabel(tx, kindTopic(lp.kind)); ar = (f as { arabic?: string }).arabic ?? ""; body = f.title; tone = toneOf(f.id); img = (f as { image?: string }).image ?? ""; } }
   else if (e.hadith) { label = e.hadith.source; ar = e.hadith.arabic ?? ""; body = ar ? "" : e.hadith.text; tone = toneOf(`hadith:${e.hadith.source}`); }
   return (
-    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={[label, body].filter(Boolean).join(". ")} style={({ pressed }) => ({ width: size, height: size, padding: 1, opacity: pressed && reduce ? 0.8 : 1, transform: pressed && !reduce ? [{ scale: 0.97 }] : undefined })}>
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={[label, body].filter(Boolean).join(". ")} style={({ pressed }) => ({ width: size, height: size, padding: 1, opacity: pressed && reduce ? 0.8 : 1, transform: [{ scale: pressed && !reduce ? 0.97 : 1 }] })}>
       <LinearGradient colors={tone} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={{ flex: 1, padding: 8, justifyContent: "space-between", overflow: "hidden" }}>
         {img ? <Image source={{ uri: img }} resizeMode="cover" style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }} accessibilityIgnoresInvertColors /> : null}
         <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 9.5, letterSpacing: 1, textTransform: "uppercase", color: stage.gold }}>{label}</Text>
@@ -244,7 +244,7 @@ export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOp
           const on = topic === k;
           return (
             <Pressable key={k} onPress={() => setTopic(k)} accessibilityRole="tab" accessibilityState={{ selected: on }}
-              style={({ pressed }) => ({ height: 32, paddingHorizontal: 14, justifyContent: "center", borderRadius: R.pill, backgroundColor: on ? t.ink : "transparent", borderWidth: 1, borderColor: on ? t.ink : t.line, transform: pressed ? [{ scale: 0.97 }] : undefined })}>
+              style={({ pressed }) => ({ height: 32, paddingHorizontal: 14, justifyContent: "center", borderRadius: R.pill, backgroundColor: on ? t.ink : "transparent", borderWidth: 1, borderColor: on ? t.ink : t.line, transform: [{ scale: pressed ? 0.97 : 1 }] })}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: on ? t.bg : t.ink }}>{label[k]}</Text>
             </Pressable>
           );

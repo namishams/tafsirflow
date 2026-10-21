@@ -13,7 +13,7 @@ import { useLang } from "@/i18n";
 import { useGamify } from "@/features/feed/gamify";
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
-import { FREE_STAGE, MAX_STAGE, activeTree, markFlourishSeen, onSeriesReward, onStageUp, progressOf, readGarden, resting, seasonNow, shamsGrow, takeBurst, tickGarden, useGarden, type SeriesReward, type StageUp } from "./garden";
+import { FREE_STAGE, MAX_STAGE, activeTree, markFlourishSeen, onSeriesReward, onStageUp, progressOf, readGarden, resting, stageOf, seasonNow, shamsGrow, takeBurst, tickGarden, useGarden, type SeriesReward, type StageUp } from "./garden";
 import { onDrops, type Drop } from "./catalog";
 import { readGardenNotify, rescheduleGarden, setGardenNotify } from "./notify";
 import { TreeArt } from "./Tree";
@@ -241,8 +241,9 @@ export function GardenNotifySetting() {
 /** the tree's expected stage at the end of each plan week (shown in the 30-day plan) */
 export function PlanMilestones({ minutes }: { minutes: number }) {
   const tx = useGardenText();
-  const per = minutes >= 20 ? 1.4 : minutes >= 10 ? 1 : 0.7;
-  const stages = [1, 2, 3, 4].map((w) => Math.min(FREE_STAGE, Math.round(1 + w * per)));
+  // a realistic day of growth for the daily minutes (free, without stickers), on the same scale as the garden
+  const perDay = minutes >= 30 ? 45 : minutes >= 20 ? 35 : minutes >= 10 ? 25 : 15;
+  const stages = [1, 2, 3, 4].map((w) => Math.min(FREE_STAGE, stageOf(w * 7 * perDay, false)));
   return (
     <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.3)", backgroundColor: "rgba(255,255,255,0.04)", padding: 16, gap: 10 }}>
       <Text style={{ fontFamily: FONT.bold, fontSize: 11.5, letterSpacing: 1.6, textTransform: "uppercase", color: stageC.gold }}>{tx.milestones}</Text>

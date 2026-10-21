@@ -67,7 +67,7 @@ export function Funnel() {
   };
   const back = () => { tick(); if (step > 0) setStep(step - 1); else leave(); };
   const leave = () => { writeJSON("tf:onboardSkip", true); writeDraft(null); if (router.canGoBack()) goBack(); else router.replace("/" as Href); };
-  const done = () => { router.replace("/learn" as Href); };
+  const done = () => { router.replace("/" as Href); };
   const afterPlan = () => {
     const cfg = remoteConfig()?.monetize?.paywall?.day1;
     if (pro || cfg?.enabled === false) done(); else setPhase("paywall");

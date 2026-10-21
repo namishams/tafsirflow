@@ -90,7 +90,7 @@ export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item
     <>
       {rings.map((r) => (
         <Pressable key={r.id} onPress={r.on} accessibilityRole="button" accessibilityLabel={[r.label, r.value].filter(Boolean).join(", ")}
-          style={({ pressed }) => ({ width: 78, alignItems: "center", gap: 5, transform: pressed ? [{ scale: 0.97 }] : undefined })}>
+          style={({ pressed }) => ({ width: 78, alignItems: "center", gap: 5, transform: [{ scale: pressed ? 0.97 : 1 }] })}>
           {r.progress !== undefined ? (
             <View style={{ width: 72, height: 72 }}>
               <Svg width={72} height={72} style={{ position: "absolute" }}>

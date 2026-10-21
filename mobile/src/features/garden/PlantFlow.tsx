@@ -36,7 +36,7 @@ export function PlantFlow({ minutes, onDone, onLater }: { minutes?: number; onDo
   };
   return (
     <Stage hairlines={false} style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={{ padding: 22, paddingTop: insets.top + 28, paddingBottom: insets.bottom + 28, flexGrow: 1 }} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={{ padding: 22, paddingTop: insets.top + 28, paddingBottom: insets.bottom + 28, flexGrow: 1 }} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         {step === "mission" ? (
           <Animated.View entering={reduce ? undefined : FadeInDown.duration(500)} style={{ gap: 14, flex: 1 }}>
             <Text style={kicker}>{tx.missionKicker}</Text>

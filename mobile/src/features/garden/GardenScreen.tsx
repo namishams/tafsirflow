@@ -17,14 +17,14 @@ import { StickerArt } from "@/features/feed/Sticker";
 import { BrandFoot, CARD_SIZE, ShareSheet, type ShareFormat } from "@/features/feed/share";
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
-import { MAX_STAGE, SRCS, STICKER_GP_HINT, activeTree, canPlant, giveSticker, harvest, plotsOf, PLOT_STAGES, progressOf, resting, seasonNow, setActive, shamsRun, useGarden, weekGrowth, type Garden, type HistKind } from "./garden";
+import { MAX_STAGE, SRCS, holdCelebrations, STICKER_GP_HINT, activeTree, canPlant, giveSticker, harvest, plotsOf, PLOT_STAGES, progressOf, resting, seasonNow, setActive, shamsRun, useGarden, weekGrowth, type Garden, type HistKind } from "./garden";
 import { CATALOG_SIZE, RARITY_GP, SERIES, SERIES_SIZE, countOf, dailyPackReady, duplicates, isGiven, itemAt, openDailyPack, rarityOf, seriesOwned, totalOwned, useCatalog } from "./catalog";
 import { CatalogArt } from "./CatalogArt";
 import { Celestial, Courtyard, FarLayer, Parallax, Petals, Sky, Zellige, phaseNow, skyInk } from "./Scene";
 import { Plaque, TreeArt } from "./Tree";
 import { PlantFlow } from "./PlantFlow";
 import { GardenNotifySetting, ProgressBar, chime, useGardenTick } from "./widgets";
-import { fillG, useGardenText } from "./texts";
+import { GIFT_FULL, fillG, useGardenText } from "./texts";
 
 const SCENE_H = 470;
 
@@ -75,8 +75,9 @@ export default function GardenScreen() {
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: t.bg }}>
       <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 40 }} bounces={false}>
         {/* ---------- the scene ---------- */}
+        <View style={{ height: SCENE_H + insets.top, overflow: "hidden" }}>
         <GestureDetector gesture={gesture}>
-          <View style={{ height: SCENE_H + insets.top, overflow: "hidden" }} accessibilityLabel={tx.zoomHint}>
+          <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} accessibilityLabel={tx.zoomHint}>
             <Sky phase={phase} />
             <Celestial phase={phase} width={width} height={SCENE_H} />
             <Parallax x={px} factor={0.25} style={{ position: "absolute", left: -width * 0.15, top: insets.top + 150 }}><FarLayer width={width} phase={phase} /></Parallax>
@@ -100,7 +101,9 @@ export default function GardenScreen() {
                 })}
               </View>
             </Animated.View>
-            {/* top bar */}
+          </View>
+        </GestureDetector>
+            {/* top bar: outside the scene's gestures, whose double tap would swallow the buttons' taps */}
             <View style={{ position: "absolute", top: insets.top + 6, left: 12, right: 12, flexDirection: "row", alignItems: "center", gap: 8 }}>
               <RoundBtn icon="chevronLeft" label="Back" onPress={() => goBack()} />
               <View style={{ flex: 1 }}>
@@ -110,8 +113,7 @@ export default function GardenScreen() {
               <RoundBtn icon="grid" label={tx.album} onPress={() => router.push("/sticker-collection" as Href)} />
               <RoundBtn icon="send" label={tx.share} onPress={() => setShare(true)} />
             </View>
-          </View>
-        </GestureDetector>
+        </View>
 
         {/* ---------- the tree: stage, next stage, water, fruits ---------- */}
         <View style={{ padding: 16, gap: 14 }}>
@@ -297,6 +299,8 @@ function GiftSheet({ onClose }: { onClose: () => void }) {
   useCatalog();
   const [tab, setTab] = useState<"dupes" | "unique">("dupes");
   const [msg, setMsg] = useState<string | null>(null);
+  const { lang } = useLang();
+  useEffect(() => holdCelebrations(), []); // stage-up celebration only after the sheet has closed
   const dupFeed = Object.entries(stickerDupes()).filter(([, n]) => n > 0).map(([id]) => id);
   const dupCat = duplicates();
   const uniqueFeed = STICKERS.filter((x) => gm.stickers[x.id] && !s.given.includes(x.id)).map((x) => x.id);
@@ -310,6 +314,7 @@ function GiftSheet({ onClose }: { onClose: () => void }) {
     const run = () => {
       const r = giveSticker(id, unique, pro);
       if (!r) return;
+      if (r.full) { setMsg(GIFT_FULL[lang] ?? GIFT_FULL.en); return; }
       tick(); if (r.trait) chime();
       setMsg(`${fillG(tx.gp, { n: r.gp })}${r.trait ? ` · ${fillG(tx.traitNew, { t: tx[`tr_${r.trait}` as "tr_star"] })}` : ""}`);
     };

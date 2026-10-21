@@ -77,7 +77,7 @@ export default function StickerAlbum() {
             </Text>
             {gm.stickers[sel.id] ? (
               <Pressable onPress={() => setShare(sel.id)} accessibilityRole="button"
-                style={({ pressed }) => ({ height: 44, paddingHorizontal: 20, borderRadius: R.pill, justifyContent: "center", backgroundColor: t.accent, transform: pressed ? [{ scale: 0.97 }] : undefined })}>
+                style={({ pressed }) => ({ height: 44, paddingHorizontal: 20, borderRadius: R.pill, justifyContent: "center", backgroundColor: t.accent, transform: [{ scale: pressed ? 0.97 : 1 }] })}>
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.onAccent }}>{gt.shareSticker}</Text>
               </Pressable>
             ) : null}

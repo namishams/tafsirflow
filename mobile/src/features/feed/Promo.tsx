@@ -86,7 +86,7 @@ export const PromoPost = memo(function PromoPost({ item, width }: { item: string
           <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{tx.promoLabel}</Text>
         </View>
       </View>
-      <Pressable onPress={open} accessibilityRole="button" accessibilityLabel={`${text.title}. ${tx.promoLabel}`} style={({ pressed }) => ({ marginHorizontal: 12, transform: pressed ? [{ scale: 0.97 }] : undefined })}>
+      <Pressable onPress={open} accessibilityRole="button" accessibilityLabel={`${text.title}. ${tx.promoLabel}`} style={({ pressed }) => ({ marginHorizontal: 12, transform: [{ scale: pressed ? 0.97 : 1 }] })}>
         <LinearGradient colors={m.tone} style={{ borderRadius: R.card, padding: 24, gap: 14, alignItems: "center" }}>
           <Icon name={m.icon} color={stage.gold} size={40} />
           <Text style={{ fontFamily: FONT.display, fontSize: 22, color: "#fff", textAlign: "center" }}>{text.title}</Text>
@@ -104,7 +104,7 @@ function RemotePromo({ title, label, onPress, width }: { title: string; label: s
   const tone: [string, string] = ["#0b3d2e", "#1d6b52"];
   return (
     <View style={{ width, alignSelf: "center", paddingBottom: 16, paddingHorizontal: 12 }}>
-      <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${title}. ${label}`} style={({ pressed }) => ({ transform: pressed ? [{ scale: 0.97 }] : undefined })}>
+      <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${title}. ${label}`} style={({ pressed }) => ({ transform: [{ scale: pressed ? 0.97 : 1 }] })}>
         <LinearGradient colors={tone} style={{ borderRadius: R.card, padding: 24, gap: 10, alignItems: "center" }}>
           <Icon name="starBig" color={stage.gold} size={36} />
           <Text style={{ fontFamily: FONT.display, fontSize: 22, color: "#fff", textAlign: "center" }}>{title}</Text>

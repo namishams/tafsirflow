@@ -709,3 +709,8 @@ export const fillG = (s: string, v: Record<string, string | number>) => s.replac
 
 
 
+/** the daily sticker limit of the tree (English fallback for languages without a translation yet) */
+export const GIFT_FULL: Record<string, string> = {
+  en: "Your tree has had enough stickers for today. Give more tomorrow; learning still makes it grow.",
+  de: "Ihr Baum hat für heute genug Sticker bekommen. Morgen können Sie wieder schenken; Lernen lässt ihn weiter wachsen.",
+};

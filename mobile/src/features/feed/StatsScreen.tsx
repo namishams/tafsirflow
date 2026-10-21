@@ -259,7 +259,7 @@ export default function StatsScreen() {
             <Stat label={tx.statsPosts} value={nf(td.posts)} />
             <Stat label={tx.statsStreak} value={fillText(tx.statsDays, { n: nf(streak) })} />
           </View>
-          <Pressable onPress={() => setShare("today")} accessibilityRole="button" style={({ pressed }) => ({ height: 46, borderRadius: R.pill, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", backgroundColor: t.accent, transform: pressed ? [{ scale: 0.97 }] : undefined })}>
+          <Pressable onPress={() => setShare("today")} accessibilityRole="button" style={({ pressed }) => ({ height: 46, borderRadius: R.pill, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", backgroundColor: t.accent, transform: [{ scale: pressed ? 0.97 : 1 }] })}>
             <Icon name="send" color={t.onAccent} size={18} />
             <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.onAccent }}>{tx.shareTitle}</Text>
           </Pressable>

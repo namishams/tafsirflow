@@ -14,7 +14,7 @@ export const CATALOG_KEY = "qmc.stickers2";
 export type Series = "ayah" | "surah" | "juz" | "names" | "prophets" | "months" | "letters" | "roots" | "tajweed" | "places" | "scholars" | "seasonal";
 export const SERIES: Series[] = ["ayah", "surah", "juz", "names", "prophets", "months", "letters", "roots", "tajweed", "places", "scholars", "seasonal"];
 export type Rarity = "common" | "rare" | "epic" | "legendary";
-export const RARITY_GP: Record<Rarity, number> = { common: 6, rare: 15, epic: 35, legendary: 80 };
+export const RARITY_GP: Record<Rarity, number> = { common: 2, rare: 4, epic: 8, legendary: 15 };
 
 export const SURAHS = ["Al-Fatihah", "Al-Baqarah", "Al Imran", "An-Nisa", "Al-Ma'idah", "Al-An'am", "Al-A'raf", "Al-Anfal", "At-Tawbah", "Yunus", "Hud", "Yusuf", "Ar-Ra'd", "Ibrahim", "Al-Hijr", "An-Nahl", "Al-Isra", "Al-Kahf", "Maryam", "Ta-Ha", "Al-Anbiya", "Al-Hajj", "Al-Mu'minun", "An-Nur", "Al-Furqan", "Ash-Shu'ara", "An-Naml", "Al-Qasas", "Al-'Ankabut", "Ar-Rum", "Luqman", "As-Sajdah", "Al-Ahzab", "Saba", "Fatir", "Ya-Sin", "As-Saffat", "Sad", "Az-Zumar", "Ghafir", "Fussilat", "Ash-Shura", "Az-Zukhruf", "Ad-Dukhan", "Al-Jathiyah", "Al-Ahqaf", "Muhammad", "Al-Fath", "Al-Hujurat", "Qaf", "Adh-Dhariyat", "At-Tur", "An-Najm", "Al-Qamar", "Ar-Rahman", "Al-Waqi'ah", "Al-Hadid", "Al-Mujadila", "Al-Hashr", "Al-Mumtahanah", "As-Saff", "Al-Jumu'ah", "Al-Munafiqun", "At-Taghabun", "At-Talaq", "At-Tahrim", "Al-Mulk", "Al-Qalam", "Al-Haqqah", "Al-Ma'arij", "Nuh", "Al-Jinn", "Al-Muzzammil", "Al-Muddaththir", "Al-Qiyamah", "Al-Insan", "Al-Mursalat", "An-Naba", "An-Nazi'at", "'Abasa", "At-Takwir", "Al-Infitar", "Al-Mutaffifin", "Al-Inshiqaq", "Al-Buruj", "At-Tariq", "Al-A'la", "Al-Ghashiyah", "Al-Fajr", "Al-Balad", "Ash-Shams", "Al-Layl", "Ad-Duha", "Ash-Sharh", "At-Tin", "Al-'Alaq", "Al-Qadr", "Al-Bayyinah", "Az-Zalzalah", "Al-'Adiyat", "Al-Qari'ah", "At-Takathur", "Al-'Asr", "Al-Humazah", "Al-Fil", "Quraysh", "Al-Ma'un", "Al-Kawthar", "Al-Kafirun", "An-Nasr", "Al-Masad", "Al-Ikhlas", "Al-Falaq", "An-Nas"];
 const NAMES = "Ar-Rahman Ar-Rahim Al-Malik Al-Quddus As-Salam Al-Mu'min Al-Muhaymin Al-'Aziz Al-Jabbar Al-Mutakabbir Al-Khaliq Al-Bari' Al-Musawwir Al-Ghaffar Al-Qahhar Al-Wahhab Ar-Razzaq Al-Fattah Al-'Alim Al-Qabid Al-Basit Al-Khafid Ar-Rafi' Al-Mu'izz Al-Mudhill As-Sami' Al-Basir Al-Hakam Al-'Adl Al-Latif Al-Khabir Al-Halim Al-'Azim Al-Ghafur Ash-Shakur Al-'Aliyy Al-Kabir Al-Hafiz Al-Muqit Al-Hasib Al-Jalil Al-Karim Ar-Raqib Al-Mujib Al-Wasi' Al-Hakim Al-Wadud Al-Majid Al-Ba'ith Ash-Shahid Al-Haqq Al-Wakil Al-Qawiyy Al-Matin Al-Waliyy Al-Hamid Al-Muhsi Al-Mubdi' Al-Mu'id Al-Muhyi Al-Mumit Al-Hayy Al-Qayyum Al-Wajid Al-Majid Al-Wahid Al-Ahad As-Samad Al-Qadir Al-Muqtadir Al-Muqaddim Al-Mu'akhkhir Al-Awwal Al-Akhir Az-Zahir Al-Batin Al-Wali Al-Muta'ali Al-Barr At-Tawwab Al-Muntaqim Al-'Afuww Ar-Ra'uf Malik-ul-Mulk Dhul-Jalali-wal-Ikram Al-Muqsit Al-Jami' Al-Ghaniyy Al-Mughni Al-Mani' Ad-Darr An-Nafi' An-Nur Al-Hadi Al-Badi' Al-Baqi Al-Warith Ar-Rashid As-Sabur".split(" ");
@@ -224,7 +224,7 @@ export function newlyCompleted(): Series[] {
   if (out.length) save();
   return out;
 }
-export const completionGp = (se: Series) => Math.min(1500, 120 + SERIES_SIZE[se] * 4);
+export const completionGp = (se: Series) => Math.min(400, 40 + SERIES_SIZE[se]);
 
 // ---------- account sync: union of verse bits, max counts ----------
 export function mergeCatalog(a: Cat | undefined, b: Cat | undefined): Cat | undefined {

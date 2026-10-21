@@ -364,7 +364,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   }, [lang]);
   useEffect(() => { if (!/^[vwr]:/.test(activeItem) || tab !== "home") engine.pause(); }, [activeItem, tab, engine]);
   const close = useCallback(() => { engine.stop(); goBack(); }, [engine]);
-  const toggleMute = useCallback(() => { setMuted((m) => { const n = !m; writeJSON(MUTE_KEY, n, true); if (n) engine.pause(); return n; }); }, [engine]);
+  // side effects outside the state updater: writeJSON notifies other components, which must not happen during render
+  const toggleMute = useCallback(() => { const n = !muted; setMuted(n); writeJSON(MUTE_KEY, n, true); if (n) engine.pause(); }, [engine, muted]);
   const toTop = useCallback(() => list.current?.scrollToOffset({ offset: 0, animated: !reduce }), [reduce]);
 
   // the bar hides when scrolling down and shows again when scrolling up (diffClamp over the scroll offset)
@@ -532,7 +533,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         style={{ opacity: fade }}
         data={keys}
         keyExtractor={(k: Item, i: number) => `${k}-${i + trimmed.current}`}
-        maintainVisibleContentPosition={{ minIndexForVisible: 0 }}
+        maintainVisibleContentPosition={{ minIndexForVisible: 0, autoscrollToTopThreshold: 24 }} // at the top: a dismissed header card must not leave a gap
         renderItem={render as never}
         extraData={`${active}|${muted}|${focused}|${tab}`}
         ListHeaderComponent={header}

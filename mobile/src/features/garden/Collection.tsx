@@ -88,7 +88,6 @@ export default function Collection() {
     <View style={{ flex: 1, backgroundColor: t.bg, paddingTop: insets.top + 8 }}>
       <FlatList data={ids} key={cols} numColumns={cols} keyExtractor={(x) => x} ListHeaderComponent={header} contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: insets.bottom + 30 }}
         initialNumToRender={cols * 6} maxToRenderPerBatch={cols * 4} windowSize={7} removeClippedSubviews
-        getItemLayout={(_, i) => ({ length: cell + 22, offset: (cell + 22) * Math.floor(i / cols), index: i })}
         renderItem={({ item }) => <Cell id={item} size={cell} onPress={() => setSel(item)} />} />
       {sel ? <Detail id={sel} onClose={() => setSel(null)} /> : null}
     </View>
