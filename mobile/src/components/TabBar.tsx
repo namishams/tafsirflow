@@ -35,7 +35,7 @@ export default function TabBar({ state, descriptors, navigateToTab, emitter }: B
             {on ? (glass
               ? <GlassView glassEffectStyle="clear" tintColor={t.dark ? "rgba(58,190,146,0.18)" : "rgba(6,108,78,0.10)"} style={s.lens} />
               : <View style={[s.lens, { backgroundColor: t.dark ? "rgba(58,190,146,0.16)" : "rgba(6,108,78,0.08)" }]} />) : null}
-            <Icon name={name} size={25} color={on ? t.accent : t.dark ? "rgba(236,238,242,0.78)" : "rgba(13,31,25,0.72)"} weight={on ? 2.2 : 1.6} filled={on && name !== "compass" && name !== "grid"} />
+            <Icon name={name} size={25} color={on ? t.accent : t.dark ? "rgba(236,238,242,0.78)" : "rgba(13,31,25,0.72)"} weight={on ? 2.2 : 1.6} filled={on && name !== "compass" && name !== "grid" && name !== "reels"} />
           </Pressable>
         );
       })}
