@@ -163,6 +163,35 @@ export const EVENTS: HEvent[] = [
   { id: "adha", m: 12, d: 10, link: "/islam/eid" },
 ];
 
+// ---- tradition-specific days (dates standard in the respective tradition; all depend on moon sighting, ±1 day) ----
+export type Tradition = "sunni" | "shia" | "both" | null | undefined;
+const E = (id: string, m: number, d: number): HEvent => ({ id, m, d });
+const SHIA_ONLY: HEvent[] = [E("ghadir", 12, 18), E("arbaeen", 2, 20), E("mubahala", 12, 24), E("aliBirth", 7, 13), E("fatimiyya", 6, 3)];
+const SHIA_REPLACED = new Set(["ashura", "mawlid", "lastten", "qadr"]);
+/** the days one mode shows: Sunni = common set; Shia = common set with the Shia forms of Ashura, Mawlid (17 Rabi' al-Awwal)
+ *  and Laylat al-Qadr (19/21/23 Ramadan) plus the Shia-only days; both (or not chosen) = everything, each date once */
+export function eventsFor(trad: Tradition): HEvent[] {
+  const byDate = (a: HEvent, b: HEvent) => a.m - b.m || a.d - b.d;
+  if (trad === "sunni") return EVENTS;
+  const shiaForms = [E("ashuraShia", 1, 10), E("mawlidShia", 3, 17), E("qadr19", 9, 19), E("qadr21", 9, 21), E("qadr23", 9, 23)];
+  if (trad === "shia") return [...EVENTS.filter((e) => !SHIA_REPLACED.has(e.id)), ...shiaForms, ...SHIA_ONLY].sort(byDate);
+  return [...EVENTS, ...shiaForms.filter((e) => e.id !== "ashuraShia" && e.id !== "qadr21"), ...SHIA_ONLY].sort(byDate);
+}
+
+/** the next `count` days from `from` with the progress (0..1) between the previous day of the same set and the next one */
+export function countdown(trad: Tradition, from: number, count = 5) {
+  const evs = eventsFor(trad);
+  const list = evs.map((e) => ({ e, o: nextOccurrence(e.m, e.d, from) })).filter((x): x is { e: HEvent; o: { t: number; y: number } } => !!x.o).sort((a, b) => a.o.t - b.o.t);
+  const next = list[0];
+  if (!next) return null;
+  const h = toHijri(from);
+  let prev = -Infinity;
+  for (const e of evs) for (const y of [h.y - 1, h.y]) { const t = fromHijri(y, e.m, e.d) ?? fromHijri(y, e.m, e.d - 1); if (t !== null && t < from && t > prev) prev = t; }
+  const span = next.o.t - prev;
+  const progress = Number.isFinite(span) && span > 0 ? Math.min(1, Math.max(0, (from - prev) / span)) : 0;
+  return { next, list: list.slice(0, count), progress, days: daysBetween(from, next.o.t) };
+}
+
 type Ev = { name: string; desc: string; note?: string };
 type CalText = { [k: string]: string | Record<string, Ev>; ev: Record<string, Ev> };
 const CAL: Record<AppLocale, CalText> = {
@@ -201,6 +230,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "Jahr",
     invalid: "Diesen Tag gibt es in diesem Monat nicht.",
     days: "{n} Tage",
+    cdNext: "Als Nächstes",
+    cdApprox: "Die Daten hängen von der Mondsichtung ab (±1 Tag).",
+    notifDays: "{name} in {n} Tagen",
+    notifTomorrow: "{name} ist morgen",
     ev: {
       newyear: { name: "Islamisches Neujahr", desc: "1. Muharram – Beginn des Hidschri-Jahres, gezählt ab der Auswanderung des Propheten ﷺ nach Medina." },
       ashura: { name: "ʿAschura", desc: "10. Muharram – der Tag, an dem Allah Musa und sein Volk errettete. Viele fasten an diesem Tag, dazu auch am 9." },
@@ -213,6 +246,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "Eid al-Fitr", desc: "1. Schawwal – das Fest des Fastenbrechens." },
       arafah: { name: "Tag von Arafa", desc: "9. Dhul-Hiddscha – der Höhepunkt der Pilgerfahrt; wer nicht pilgert, fastet gern an diesem Tag." },
       adha: { name: "Eid al-Adha", desc: "10. Dhul-Hiddscha – das Opferfest." },
+      ashuraShia: { name: "ʿAschura (schiitisch)", desc: "Der Tag, an dem Imam al-Husain, der Enkel des Propheten ﷺ, im Jahr 61 n. H. bei Kerbela getötet wurde. Schiiten begehen ihn als Trauertag." },
+      mawlidShia: { name: "Geburt des Propheten ﷺ (17. Rabiʿ al-Awwal)", desc: "Das Datum der Geburt des Propheten ﷺ in der schiitischen Überlieferung; viele Sunniten begehen den 12. Rabiʿ al-Awwal." },
+      qadr19: { name: "Laylat al-Qadr (19. Ramadan)", desc: "Eine der Nächte, in denen die schiitische Überlieferung Laylat al-Qadr sucht: die Nächte zum 19., 21. und 23. Ramadan." },
+      qadr21: { name: "Laylat al-Qadr (21. Ramadan)", desc: "Eine der Nächte, in denen die schiitische Überlieferung Laylat al-Qadr sucht: die Nächte zum 19., 21. und 23. Ramadan." },
+      qadr23: { name: "Laylat al-Qadr (23. Ramadan)", desc: "Eine der Nächte, in denen die schiitische Überlieferung Laylat al-Qadr sucht: die Nächte zum 19., 21. und 23. Ramadan." },
+      ghadir: { name: "Eid al-Ghadir", desc: "Erinnert an das Ereignis von Ghadir Chumm nach der Abschiedspilgerfahrt, bei dem der Prophet ﷺ nach schiitischem Glauben Ali als Nachfolger einsetzte.", note: "Sunniten teilen dieses Verständnis des Ereignisses nicht." },
+      arbaeen: { name: "Arbaʿin", desc: "Der vierzigste Tag nach Aschura, an dem man Imam al-Husain gedenkt. Viele pilgern zu Fuß nach Kerbela." },
+      mubahala: { name: "Tag der Mubahala", desc: "Erinnert an die Mubahala mit den Christen von Nadschran (Koran 3:61), zu der der Prophet ﷺ mit Ali, Fatima, Hasan und Husain kam." },
+      aliBirth: { name: "Geburt von Imam Ali", desc: "Geburtstag von Ali ibn Abi Talib, Vetter und Schwiegersohn des Propheten ﷺ, nach schiitischer Überlieferung." },
+      fatimiyya: { name: "Fatimiyya", desc: "Jahrestag des Todes von Fatima az-Zahra, der Tochter des Propheten ﷺ, wie ihn viele Schiiten begehen. Es werden auch andere Daten genannt." },
     },
   },
   en: {
@@ -250,6 +293,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "Year",
     invalid: "This day does not exist in that month.",
     days: "{n} days",
+    cdNext: "Next",
+    cdApprox: "Dates depend on moon sighting (±1 day).",
+    notifDays: "{name} in {n} days",
+    notifTomorrow: "{name} is tomorrow",
     ev: {
       newyear: { name: "Islamic New Year", desc: "1 Muharram – the start of the Hijri year, counted from the Prophet's ﷺ emigration to Madinah." },
       ashura: { name: "Ashura", desc: "10 Muharram – the day Allah saved Musa and his people. Many fast on this day, together with the 9th." },
@@ -262,6 +309,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "Eid al-Fitr", desc: "1 Shawwal – the festival of breaking the fast." },
       arafah: { name: "Day of Arafah", desc: "9 Dhul-Hijjah – the high point of the Hajj; those not on Hajj like to fast this day." },
       adha: { name: "Eid al-Adha", desc: "10 Dhul-Hijjah – the festival of sacrifice." },
+      ashuraShia: { name: "Ashura (Shia)", desc: "The day Imam al-Husayn, the grandson of the Prophet ﷺ, was killed at Karbala in 61 AH. Shia Muslims mark it as a day of mourning." },
+      mawlidShia: { name: "Birth of the Prophet ﷺ (17 Rabiʿ al-Awwal)", desc: "The date of the Prophet's ﷺ birth in the Shia tradition; many Sunni Muslims mark 12 Rabiʿ al-Awwal." },
+      qadr19: { name: "Laylat al-Qadr (19 Ramadan)", desc: "One of the nights on which Shia tradition seeks Laylat al-Qadr: the nights of 19, 21 and 23 Ramadan." },
+      qadr21: { name: "Laylat al-Qadr (21 Ramadan)", desc: "One of the nights on which Shia tradition seeks Laylat al-Qadr: the nights of 19, 21 and 23 Ramadan." },
+      qadr23: { name: "Laylat al-Qadr (23 Ramadan)", desc: "One of the nights on which Shia tradition seeks Laylat al-Qadr: the nights of 19, 21 and 23 Ramadan." },
+      ghadir: { name: "Eid al-Ghadir", desc: "Remembers the event at Ghadir Khumm after the Farewell Pilgrimage, where, in Shia belief, the Prophet ﷺ appointed Ali as his successor.", note: "Sunni Muslims do not share this understanding of the event." },
+      arbaeen: { name: "Arbaʿeen", desc: "The fortieth day after Ashura, remembering Imam al-Husayn. Many walk to Karbala." },
+      mubahala: { name: "Day of Mubahala", desc: "Remembers the Mubahala with the Christians of Najran (Quran 3:61), to which the Prophet ﷺ came with Ali, Fatima, Hasan and Husayn." },
+      aliBirth: { name: "Birth of Imam Ali", desc: "Birthday of Ali ibn Abi Talib, cousin and son-in-law of the Prophet ﷺ, according to Shia tradition." },
+      fatimiyya: { name: "Fatimiyya", desc: "Anniversary of the passing of Fatima al-Zahra, daughter of the Prophet ﷺ, as commemorated by many Shia. Other dates are also given." },
     },
   },
   ar: {
@@ -299,6 +356,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "السنة",
     invalid: "هذا اليوم غير موجود في ذلك الشهر.",
     days: "{n} يومًا",
+    cdNext: "التالي",
+    cdApprox: "تعتمد التواريخ على رؤية الهلال (±يوم).",
+    notifDays: "{name} بعد {n} أيام",
+    notifTomorrow: "{name} غدًا",
     ev: {
       newyear: { name: "رأس السنة الهجرية", desc: "1 محرم: بداية العام الهجري، ويُؤرَّخ بهجرة النبي ﷺ إلى المدينة." },
       ashura: { name: "عاشوراء", desc: "10 محرم: اليوم الذي نجّى الله فيه موسى وقومه. يصومه كثيرون ومعه التاسع." },
@@ -311,6 +372,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "عيد الفطر", desc: "1 شوال: عيد الفطر المبارك." },
       arafah: { name: "يوم عرفة", desc: "9 ذو الحجة: ركن الحج الأعظم، ويُستحب صيامه لغير الحاج." },
       adha: { name: "عيد الأضحى", desc: "10 ذو الحجة: عيد الأضحى المبارك." },
+      ashuraShia: { name: "عاشوراء (عند الشيعة)", desc: "اليوم الذي قُتل فيه الإمام الحسين، سبط النبي ﷺ، في كربلاء سنة 61 هـ. يُحييه الشيعة يومَ حزن." },
+      mawlidShia: { name: "مولد النبي ﷺ (17 ربيع الأول)", desc: "تاريخ مولد النبي ﷺ عند الشيعة؛ ويحيي كثير من أهل السنة الثاني عشر من ربيع الأول." },
+      qadr19: { name: "ليلة القدر (19 رمضان)", desc: "إحدى الليالي التي تُطلب فيها ليلة القدر عند الشيعة: ليالي 19 و21 و23 من رمضان." },
+      qadr21: { name: "ليلة القدر (21 رمضان)", desc: "إحدى الليالي التي تُطلب فيها ليلة القدر عند الشيعة: ليالي 19 و21 و23 من رمضان." },
+      qadr23: { name: "ليلة القدر (23 رمضان)", desc: "إحدى الليالي التي تُطلب فيها ليلة القدر عند الشيعة: ليالي 19 و21 و23 من رمضان." },
+      ghadir: { name: "عيد الغدير", desc: "ذكرى حادثة غدير خم بعد حجة الوداع، وفيها نصّب النبي ﷺ عليًّا خليفةً له بحسب اعتقاد الشيعة.", note: "لا يشارك أهل السنة هذا الفهم للحادثة." },
+      arbaeen: { name: "الأربعين", desc: "اليوم الأربعون بعد عاشوراء، ذكرى الإمام الحسين. يمشي كثيرون إلى كربلاء." },
+      mubahala: { name: "يوم المباهلة", desc: "ذكرى المباهلة مع نصارى نجران (آل عمران 3:61)، وقد خرج إليها النبي ﷺ مع علي وفاطمة والحسن والحسين." },
+      aliBirth: { name: "مولد الإمام علي", desc: "ميلاد علي بن أبي طالب، ابن عم النبي ﷺ وصهره، بحسب الرواية الشيعية." },
+      fatimiyya: { name: "الفاطمية", desc: "ذكرى وفاة فاطمة الزهراء، ابنة النبي ﷺ، كما يحييها كثير من الشيعة. وتُذكر تواريخ أخرى أيضًا." },
     },
   },
   tr: {
@@ -348,6 +419,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "Yıl",
     invalid: "Bu ayda böyle bir gün yok.",
     days: "{n} gün",
+    cdNext: "Sıradaki",
+    cdApprox: "Tarihler hilalin görülmesine bağlıdır (±1 gün).",
+    notifDays: "{name} {n} gün sonra",
+    notifTomorrow: "{name} yarın",
     ev: {
       newyear: { name: "Hicrî yılbaşı", desc: "1 Muharrem – Hicrî yılın başlangıcı; yıllar Peygamber'in ﷺ Medine'ye hicretinden itibaren sayılır." },
       ashura: { name: "Âşûrâ", desc: "10 Muharrem – Allah'ın Musa'yı ve kavmini kurtardığı gün. Birçok kişi bu günde, 9. günle birlikte oruç tutar." },
@@ -360,6 +435,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "Ramazan Bayramı (Fıtır)", desc: "1 Şevval – orucun bitişini kutlayan bayram." },
       arafah: { name: "Arefe (Arafat günü)", desc: "9 Zilhicce – haccın zirvesi; hacda olmayanlar bu günde oruç tutmayı sever." },
       adha: { name: "Kurban Bayramı (Adha)", desc: "10 Zilhicce – kurban bayramı." },
+      ashuraShia: { name: "Âşûrâ (Şii)", desc: "Peygamber'in ﷺ torunu İmam Hüseyin'in 61 H. yılında Kerbela'da öldürüldüğü gün. Şiiler bu günü yas günü olarak anar." },
+      mawlidShia: { name: "Peygamber'in ﷺ doğumu (17 Rebiülevvel)", desc: "Şii geleneğinde Peygamber'in ﷺ doğum tarihi; birçok Sünni 12 Rebiülevvel'i anar." },
+      qadr19: { name: "Kadir Gecesi (19 Ramazan)", desc: "Şii geleneğinde Kadir Gecesi'nin arandığı gecelerden biri: Ramazan'ın 19., 21. ve 23. geceleri." },
+      qadr21: { name: "Kadir Gecesi (21 Ramazan)", desc: "Şii geleneğinde Kadir Gecesi'nin arandığı gecelerden biri: Ramazan'ın 19., 21. ve 23. geceleri." },
+      qadr23: { name: "Kadir Gecesi (23 Ramazan)", desc: "Şii geleneğinde Kadir Gecesi'nin arandığı gecelerden biri: Ramazan'ın 19., 21. ve 23. geceleri." },
+      ghadir: { name: "Gadir-i Hum Bayramı", desc: "Veda Haccı'nın ardından Gadir-i Hum'da yaşanan olayı anar; Şii inancına göre Peygamber ﷺ bu olayda Ali'yi halefi olarak belirlemiştir.", note: "Sünniler olayı bu şekilde anlamaz." },
+      arbaeen: { name: "Erbain", desc: "Âşûrâ'dan sonraki kırkıncı gün; İmam Hüseyin anılır. Birçok kişi Kerbela'ya yürür." },
+      mubahala: { name: "Mübahele Günü", desc: "Necran Hristiyanları ile yapılan mübaheleyi anar (Âl-i İmrân 3:61); Peygamber ﷺ Ali, Fatıma, Hasan ve Hüseyin ile birlikte gelmiştir." },
+      aliBirth: { name: "İmam Ali'nin doğumu", desc: "Şii geleneğine göre Peygamber'in ﷺ amcaoğlu ve damadı Ali b. Ebû Tâlib'in doğum günü." },
+      fatimiyya: { name: "Fatımiyye", desc: "Peygamber'in ﷺ kızı Fatıma'nın vefatının yıl dönümü; birçok Şii tarafından anılır. Başka tarihler de verilir." },
     },
   },
   ur: {
@@ -397,6 +482,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "سال",
     invalid: "اس مہینے میں یہ دن نہیں ہوتا۔",
     days: "{n} دن",
+    cdNext: "اگلا",
+    cdApprox: "تاریخیں چاند نظر آنے پر منحصر ہیں (±1 دن)۔",
+    notifDays: "{name} {n} دن میں",
+    notifTomorrow: "{name} کل ہے",
     ev: {
       newyear: { name: "اسلامی نیا سال", desc: "1 محرم – ہجری سال کا آغاز، جو نبی ﷺ کی مدینہ کی طرف ہجرت سے گنا جاتا ہے۔" },
       ashura: { name: "یومِ عاشوراء", desc: "10 محرم – وہ دن جب اللہ نے موسیٰ اور ان کی قوم کو نجات دی۔ بہت سے لوگ اس دن اور اس کے ساتھ 9 محرم کا روزہ رکھتے ہیں۔" },
@@ -409,6 +498,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "عید الفطر", desc: "1 شوال – روزے کھولنے کا تہوار۔" },
       arafah: { name: "یومِ عرفہ", desc: "9 ذوالحجہ – حج کا عروج؛ جو حج پر نہیں ہوتے وہ اس دن روزہ رکھنا پسند کرتے ہیں۔" },
       adha: { name: "عید الاضحیٰ", desc: "10 ذوالحجہ – قربانی کا تہوار۔" },
+      ashuraShia: { name: "عاشورہ (شیعہ)", desc: "وہ دن جب نبی ﷺ کے نواسے امام حسینؑ 61 ہجری میں کربلا میں شہید ہوئے۔ شیعہ مسلمان اسے یومِ غم کے طور پر مناتے ہیں۔" },
+      mawlidShia: { name: "ولادتِ نبی ﷺ (17 ربیع الاول)", desc: "شیعہ روایت میں نبی ﷺ کی ولادت کی تاریخ؛ بہت سے سنی مسلمان 12 ربیع الاول مناتے ہیں۔" },
+      qadr19: { name: "لیلۃ القدر (19 رمضان)", desc: "ان راتوں میں سے ایک جن میں شیعہ روایت لیلۃ القدر تلاش کرتی ہے: رمضان کی 19، 21 اور 23 کی راتیں۔" },
+      qadr21: { name: "لیلۃ القدر (21 رمضان)", desc: "ان راتوں میں سے ایک جن میں شیعہ روایت لیلۃ القدر تلاش کرتی ہے: رمضان کی 19، 21 اور 23 کی راتیں۔" },
+      qadr23: { name: "لیلۃ القدر (23 رمضان)", desc: "ان راتوں میں سے ایک جن میں شیعہ روایت لیلۃ القدر تلاش کرتی ہے: رمضان کی 19، 21 اور 23 کی راتیں۔" },
+      ghadir: { name: "عیدِ غدیر", desc: "حجۃ الوداع کے بعد غدیرِ خم کے واقعے کی یاد، جس میں شیعہ عقیدے کے مطابق نبی ﷺ نے علیؑ کو اپنا جانشین مقرر فرمایا۔", note: "سنی مسلمان اس واقعے کو اس طرح نہیں سمجھتے۔" },
+      arbaeen: { name: "اربعین", desc: "عاشورہ کے بعد چالیسواں دن، امام حسینؑ کی یاد۔ بہت سے لوگ کربلا پیدل جاتے ہیں۔" },
+      mubahala: { name: "یومِ مباہلہ", desc: "نجران کے عیسائیوں سے مباہلے کی یاد (آلِ عمران 3:61)، جس کے لیے نبی ﷺ علیؑ، فاطمہؑ، حسنؑ اور حسینؑ کے ساتھ تشریف لائے۔" },
+      aliBirth: { name: "ولادتِ امام علیؑ", desc: "شیعہ روایت کے مطابق نبی ﷺ کے چچازاد اور داماد علی بن ابی طالب کی ولادت کا دن۔" },
+      fatimiyya: { name: "فاطمیہ", desc: "نبی ﷺ کی صاحبزادی فاطمہ زہراؑ کی وفات کی برسی، جیسا کہ بہت سے شیعہ مناتے ہیں۔ دوسری تاریخیں بھی بیان کی جاتی ہیں۔" },
     },
   },
   fa: {
@@ -446,6 +545,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "سال",
     invalid: "این روز در آن ماه وجود ندارد.",
     days: "{n} روز",
+    cdNext: "بعدی",
+    cdApprox: "تاریخ‌ها به رؤیت هلال بستگی دارند (±۱ روز).",
+    notifDays: "{name} تا {n} روز دیگر",
+    notifTomorrow: "{name} فردا است",
     ev: {
       newyear: { name: "آغاز سال هجری", desc: "1 محرم – آغاز سال هجری که از هجرت پیامبر ﷺ به مدینه شمرده می‌شود." },
       ashura: { name: "عاشورا", desc: "10 محرم – روزی که خداوند موسی و قومش را نجات داد. بسیاری در این روز و همراه با روز نهم روزه می‌گیرند." },
@@ -458,6 +561,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "عید فطر", desc: "1 شوال – جشن پایان روزه." },
       arafah: { name: "روز عرفه", desc: "9 ذی‌الحجه – اوج حج؛ کسانی که در حج نیستند دوست دارند این روز را روزه بگیرند." },
       adha: { name: "عید قربان", desc: "10 ذی‌الحجه – جشن قربانی." },
+      ashuraShia: { name: "عاشورا (شیعه)", desc: "روزی که امام حسین، نوه پیامبر ﷺ، در سال ۶۱ هجری در کربلا کشته شد. شیعیان آن را روز عزا می‌دانند." },
+      mawlidShia: { name: "ولادت پیامبر ﷺ (۱۷ ربیع‌الاول)", desc: "تاریخ ولادت پیامبر ﷺ در روایت شیعه؛ بسیاری از اهل سنت ۱۲ ربیع‌الاول را گرامی می‌دارند." },
+      qadr19: { name: "شب قدر (19 رمضان)", desc: "یکی از شب‌هایی که در روایت شیعه شب قدر در آن جست‌وجو می‌شود: شب‌های ۱۹، ۲۱ و ۲۳ رمضان." },
+      qadr21: { name: "شب قدر (21 رمضان)", desc: "یکی از شب‌هایی که در روایت شیعه شب قدر در آن جست‌وجو می‌شود: شب‌های ۱۹، ۲۱ و ۲۳ رمضان." },
+      qadr23: { name: "شب قدر (23 رمضان)", desc: "یکی از شب‌هایی که در روایت شیعه شب قدر در آن جست‌وجو می‌شود: شب‌های ۱۹، ۲۱ و ۲۳ رمضان." },
+      ghadir: { name: "عید غدیر", desc: "یادآور واقعه غدیر خم پس از حجة‌الوداع که به باور شیعه پیامبر ﷺ در آن علی را جانشین خود معرفی کرد.", note: "اهل سنت این واقعه را چنین نمی‌فهمند." },
+      arbaeen: { name: "اربعین", desc: "چهلمین روز پس از عاشورا، یاد امام حسین. بسیاری پیاده به کربلا می‌روند." },
+      mubahala: { name: "روز مباهله", desc: "یاد مباهله با مسیحیان نجران (آل‌عمران ۳:۶۱) که پیامبر ﷺ همراه علی، فاطمه، حسن و حسین به آن آمد." },
+      aliBirth: { name: "ولادت امام علی", desc: "زادروز علی بن ابی‌طالب، پسرعمو و داماد پیامبر ﷺ، بنا بر روایت شیعه." },
+      fatimiyya: { name: "فاطمیه", desc: "سالروز درگذشت فاطمه زهرا، دختر پیامبر ﷺ، چنان‌که بسیاری از شیعیان یاد می‌کنند. تاریخ‌های دیگری نیز گفته شده است." },
     },
   },
   ps: {
@@ -495,6 +608,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "کال",
     invalid: "دا ورځ په هغه میاشت کې نشته.",
     days: "{n} ورځې",
+    cdNext: "راتلونکی",
+    cdApprox: "نیټې د سپوږمۍ په لیدلو پورې اړه لري (±۱ ورځ).",
+    notifDays: "{name} په {n} ورځو کې",
+    notifTomorrow: "{name} سبا دی",
     ev: {
       newyear: { name: "اسلامي نوی کال", desc: "1 محرم – د هجري کال پیل، چې د پیغمبر ﷺ له مدینې ته د هجرت راهیسې شمېرل کېږي." },
       ashura: { name: "عاشورا", desc: "10 محرم – هغه ورځ چې الله موسی او د هغه قوم وژغورل. ډېری خلک پدې ورځ، له نهمې سره، روژه نیسي." },
@@ -507,6 +624,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "کوچنی اختر (عید الفطر)", desc: "1 شوال – د روژې ماتولو اختر." },
       arafah: { name: "د عرفې ورځ", desc: "9 ذوالحجه – د حج لوړه څوکه؛ څوک چې په حج نه وي پدې ورځ روژه نیول خوښوي." },
       adha: { name: "لوی اختر (عید الاضحی)", desc: "10 ذوالحجه – د قربانۍ اختر." },
+      ashuraShia: { name: "عاشورا (شیعه)", desc: "هغه ورځ چې امام حسین، د پیغمبر ﷺ لمسی، په ۶۱ هجري کال کې په کربلا کې ووژل شو. شیعه مسلمانان یې د ماتم ورځ بولي." },
+      mawlidShia: { name: "د پیغمبر ﷺ زېږدنه (۱۷ ربیع الاول)", desc: "په شیعه روایت کې د پیغمبر ﷺ د زېږېدو نیټه؛ ډېر سنیان ۱۲ ربیع الاول لمانځي." },
+      qadr19: { name: "د قدر شپه (19 رمضان)", desc: "له هغو شپو یوه چې په شیعه روایت کې د قدر شپه پکې لټول کېږي: د رمضان د ۱۹، ۲۱ او ۲۳ شپې." },
+      qadr21: { name: "د قدر شپه (21 رمضان)", desc: "له هغو شپو یوه چې په شیعه روایت کې د قدر شپه پکې لټول کېږي: د رمضان د ۱۹، ۲۱ او ۲۳ شپې." },
+      qadr23: { name: "د قدر شپه (23 رمضان)", desc: "له هغو شپو یوه چې په شیعه روایت کې د قدر شپه پکې لټول کېږي: د رمضان د ۱۹، ۲۱ او ۲۳ شپې." },
+      ghadir: { name: "د غدیر اختر", desc: "د وداع له حج وروسته د غدیر خم پېښه یادوي، چې د شیعه باور له مخې پیغمبر ﷺ پکې علي خپل ځای ناستی وټاکه.", note: "سنیان دا پېښه داسې نه پوهیږي." },
+      arbaeen: { name: "اربعین", desc: "له عاشورا وروسته څلوېښتمه ورځ، د امام حسین یادونه. ډېر خلک پلي کربلا ته ځي." },
+      mubahala: { name: "د مباهلې ورځ", desc: "د نجران له عیسویانو سره د مباهلې یادونه (آل عمران ۳:۶۱)، چې پیغمبر ﷺ له علي، فاطمې، حسن او حسین سره ورغی." },
+      aliBirth: { name: "د امام علي زېږدنه", desc: "د شیعه روایت له مخې د پیغمبر ﷺ د تره زوی او زوم علي بن ابي طالب د زېږېدو ورځ." },
+      fatimiyya: { name: "فاطمیه", desc: "د پیغمبر ﷺ لور فاطمه زهرا د وفات کلیزه، لکه څنګه چې ډېر شیعه یې یادوي. نورې نیټې هم ویل کېږي." },
     },
   },
   fr: {
@@ -544,6 +671,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "Année",
     invalid: "Ce jour n'existe pas dans ce mois.",
     days: "{n} jours",
+    cdNext: "Prochain",
+    cdApprox: "Les dates dépendent de l'observation de la lune (±1 jour).",
+    notifDays: "{name} dans {n} jours",
+    notifTomorrow: "{name} est demain",
     ev: {
       newyear: { name: "Nouvel An hégirien", desc: "1 Mouharram – début de l'année de l'Hégire, comptée à partir de l'émigration du Prophète ﷺ à Médine." },
       ashura: { name: "Achoura", desc: "10 Mouharram – le jour où Allah a sauvé Moussa et son peuple. Beaucoup jeûnent ce jour-là, avec le 9." },
@@ -556,6 +687,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "Aïd al-Fitr", desc: "1 Chawwal – la fête de la rupture du jeûne." },
       arafah: { name: "Jour d'Arafat", desc: "9 Dhou al-hijja – le point culminant du Hajj ; ceux qui ne sont pas en pèlerinage aiment jeûner ce jour-là." },
       adha: { name: "Aïd al-Adha", desc: "10 Dhou al-hijja – la fête du sacrifice." },
+      ashuraShia: { name: "Achoura (chiite)", desc: "Le jour où l'imam al-Hussein, petit-fils du Prophète ﷺ, fut tué à Kerbala en 61 de l'Hégire. Les chiites le vivent comme un jour de deuil." },
+      mawlidShia: { name: "Naissance du Prophète ﷺ (17 Rabi' al-Awwal)", desc: "La date de naissance du Prophète ﷺ dans la tradition chiite ; de nombreux sunnites célèbrent le 12 Rabi' al-Awwal." },
+      qadr19: { name: "Laylat al-Qadr (19 ramadan)", desc: "L'une des nuits où la tradition chiite cherche Laylat al-Qadr : les nuits des 19, 21 et 23 ramadan." },
+      qadr21: { name: "Laylat al-Qadr (21 ramadan)", desc: "L'une des nuits où la tradition chiite cherche Laylat al-Qadr : les nuits des 19, 21 et 23 ramadan." },
+      qadr23: { name: "Laylat al-Qadr (23 ramadan)", desc: "L'une des nuits où la tradition chiite cherche Laylat al-Qadr : les nuits des 19, 21 et 23 ramadan." },
+      ghadir: { name: "Aïd al-Ghadir", desc: "Commémore l'événement de Ghadir Khumm après le pèlerinage d'adieu, où, selon la croyance chiite, le Prophète ﷺ désigna Ali comme successeur.", note: "Les sunnites ne partagent pas cette compréhension de l'événement." },
+      arbaeen: { name: "Arbaïn", desc: "Le quarantième jour après Achoura, en mémoire de l'imam al-Hussein. Beaucoup marchent vers Kerbala." },
+      mubahala: { name: "Jour de la Mubahala", desc: "Commémore la Mubahala avec les chrétiens de Najran (Coran 3:61), à laquelle le Prophète ﷺ vint avec Ali, Fatima, Hassan et Hussein." },
+      aliBirth: { name: "Naissance de l'imam Ali", desc: "Anniversaire d'Ali ibn Abi Talib, cousin et gendre du Prophète ﷺ, selon la tradition chiite." },
+      fatimiyya: { name: "Fatimiyya", desc: "Anniversaire du décès de Fatima az-Zahra, fille du Prophète ﷺ, tel que de nombreux chiites le commémorent. D'autres dates sont aussi données." },
     },
   },
   es: {
@@ -593,6 +734,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "Año",
     invalid: "Ese día no existe en ese mes.",
     days: "{n} días",
+    cdNext: "Próximo",
+    cdApprox: "Las fechas dependen de la observación de la luna (±1 día).",
+    notifDays: "{name} en {n} días",
+    notifTomorrow: "{name} es mañana",
     ev: {
       newyear: { name: "Año Nuevo islámico", desc: "1 Muharram: comienzo del año hegiriano, que se cuenta desde la emigración del Profeta ﷺ a Medina." },
       ashura: { name: "Áshura", desc: "10 Muharram: el día en que Allah salvó a Musa y a su pueblo. Muchos ayunan ese día, junto con el 9." },
@@ -605,6 +750,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "Eid al-Fitr", desc: "1 Shawwal: la fiesta de la ruptura del ayuno." },
       arafah: { name: "Día de Arafat", desc: "9 Du-l-Hiyya: el punto culminante de la peregrinación; quienes no la realizan suelen ayunar ese día." },
       adha: { name: "Eid al-Adha", desc: "10 Du-l-Hiyya: la fiesta del sacrificio." },
+      ashuraShia: { name: "Áshura (chií)", desc: "El día en que el imán al-Husáin, nieto del Profeta ﷺ, fue muerto en Kerbala en el año 61 de la Hégira. Los chiíes lo guardan como día de duelo." },
+      mawlidShia: { name: "Nacimiento del Profeta ﷺ (17 de Rabi' al-Awwal)", desc: "La fecha del nacimiento del Profeta ﷺ en la tradición chií; muchos suníes conmemoran el 12 de Rabi' al-Awwal." },
+      qadr19: { name: "Laylat al-Qadr (19 de Ramadán)", desc: "Una de las noches en que la tradición chií busca Laylat al-Qadr: las noches del 19, 21 y 23 de Ramadán." },
+      qadr21: { name: "Laylat al-Qadr (21 de Ramadán)", desc: "Una de las noches en que la tradición chií busca Laylat al-Qadr: las noches del 19, 21 y 23 de Ramadán." },
+      qadr23: { name: "Laylat al-Qadr (23 de Ramadán)", desc: "Una de las noches en que la tradición chií busca Laylat al-Qadr: las noches del 19, 21 y 23 de Ramadán." },
+      ghadir: { name: "Eid al-Gadir", desc: "Recuerda el suceso de Gadir Jum tras la Peregrinación de Despedida, en el que, según la creencia chií, el Profeta ﷺ designó a Ali como sucesor.", note: "Los suníes no comparten esta comprensión del suceso." },
+      arbaeen: { name: "Arbaín", desc: "El cuadragésimo día tras Áshura, en memoria del imán al-Husáin. Muchos caminan hasta Kerbala." },
+      mubahala: { name: "Día de la Mubahala", desc: "Recuerda la Mubahala con los cristianos de Najrán (Corán 3:61), a la que el Profeta ﷺ acudió con Ali, Fátima, Hasán y Husáin." },
+      aliBirth: { name: "Nacimiento del imán Ali", desc: "Natalicio de Ali ibn Abi Talib, primo y yerno del Profeta ﷺ, según la tradición chií." },
+      fatimiyya: { name: "Fatimiyya", desc: "Aniversario del fallecimiento de Fátima az-Zahra, hija del Profeta ﷺ, tal como lo conmemoran muchos chiíes. También se mencionan otras fechas." },
     },
   },
   id: {
@@ -642,6 +797,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "Tahun",
     invalid: "Tanggal ini tidak ada pada bulan tersebut.",
     days: "{n} hari",
+    cdNext: "Berikutnya",
+    cdApprox: "Tanggal bergantung pada rukyat hilal (±1 hari).",
+    notifDays: "{name} dalam {n} hari",
+    notifTomorrow: "{name} besok",
     ev: {
       newyear: { name: "Tahun Baru Hijriah", desc: "1 Muharram – awal tahun Hijriah, dihitung sejak hijrah Nabi ﷺ ke Madinah." },
       ashura: { name: "Asyura", desc: "10 Muharram – hari ketika Allah menyelamatkan Musa dan kaumnya. Banyak orang berpuasa pada hari ini, bersama tanggal 9." },
@@ -654,6 +813,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "Idul Fitri", desc: "1 Syawal – hari raya berakhirnya puasa." },
       arafah: { name: "Hari Arafah", desc: "9 Zulhijah – puncak ibadah haji; yang tidak berhaji suka berpuasa pada hari ini." },
       adha: { name: "Idul Adha", desc: "10 Zulhijah – hari raya kurban." },
+      ashuraShia: { name: "Asyura (Syiah)", desc: "Hari ketika Imam Husain, cucu Nabi ﷺ, gugur di Karbala pada tahun 61 H. Muslim Syiah memperingatinya sebagai hari duka." },
+      mawlidShia: { name: "Kelahiran Nabi ﷺ (17 Rabiul Awal)", desc: "Tanggal kelahiran Nabi ﷺ dalam tradisi Syiah; banyak Muslim Sunni memperingati 12 Rabiul Awal." },
+      qadr19: { name: "Lailatul Qadar (19 Ramadan)", desc: "Salah satu malam yang dicari sebagai Lailatul Qadar dalam tradisi Syiah: malam 19, 21 dan 23 Ramadan." },
+      qadr21: { name: "Lailatul Qadar (21 Ramadan)", desc: "Salah satu malam yang dicari sebagai Lailatul Qadar dalam tradisi Syiah: malam 19, 21 dan 23 Ramadan." },
+      qadr23: { name: "Lailatul Qadar (23 Ramadan)", desc: "Salah satu malam yang dicari sebagai Lailatul Qadar dalam tradisi Syiah: malam 19, 21 dan 23 Ramadan." },
+      ghadir: { name: "Idul Ghadir", desc: "Mengenang peristiwa Ghadir Khum setelah Haji Wada', yang menurut keyakinan Syiah di dalamnya Nabi ﷺ menunjuk Ali sebagai penerusnya.", note: "Muslim Sunni tidak memahami peristiwa ini demikian." },
+      arbaeen: { name: "Arbain", desc: "Hari keempat puluh setelah Asyura, mengenang Imam Husain. Banyak orang berjalan kaki ke Karbala." },
+      mubahala: { name: "Hari Mubahalah", desc: "Mengenang mubahalah dengan kaum Nasrani Najran (Al-Qur'an 3:61), yang dihadiri Nabi ﷺ bersama Ali, Fatimah, Hasan dan Husain." },
+      aliBirth: { name: "Kelahiran Imam Ali", desc: "Hari lahir Ali bin Abi Thalib, sepupu dan menantu Nabi ﷺ, menurut tradisi Syiah." },
+      fatimiyya: { name: "Fatimiyah", desc: "Peringatan wafatnya Fatimah az-Zahra, putri Nabi ﷺ, sebagaimana diperingati banyak Muslim Syiah. Tanggal lain juga disebutkan." },
     },
   },
   ms: {
@@ -691,6 +860,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "Tahun",
     invalid: "Hari ini tidak wujud dalam bulan itu.",
     days: "{n} hari",
+    cdNext: "Seterusnya",
+    cdApprox: "Tarikh bergantung pada pencerapan anak bulan (±1 hari).",
+    notifDays: "{name} dalam {n} hari",
+    notifTomorrow: "{name} esok",
     ev: {
       newyear: { name: "Awal Muharram (Maal Hijrah)", desc: "1 Muharram – permulaan tahun Hijrah, dikira sejak hijrah Nabi ﷺ ke Madinah." },
       ashura: { name: "Asyura", desc: "10 Muharram – hari Allah menyelamatkan Musa dan kaumnya. Ramai yang berpuasa pada hari ini, bersama hari ke-9." },
@@ -703,6 +876,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "Aidilfitri", desc: "1 Syawal – hari raya berakhirnya puasa." },
       arafah: { name: "Hari Arafah", desc: "9 Zulhijjah – kemuncak haji; mereka yang tidak mengerjakan haji gemar berpuasa pada hari ini." },
       adha: { name: "Aidiladha", desc: "10 Zulhijjah – hari raya korban." },
+      ashuraShia: { name: "Asyura (Syiah)", desc: "Hari Imam Husain, cucu Nabi ﷺ, syahid di Karbala pada tahun 61 H. Muslim Syiah memperingatinya sebagai hari berkabung." },
+      mawlidShia: { name: "Kelahiran Nabi ﷺ (17 Rabiulawal)", desc: "Tarikh kelahiran Nabi ﷺ dalam tradisi Syiah; ramai Muslim Sunni memperingati 12 Rabiulawal." },
+      qadr19: { name: "Lailatul Qadar (19 Ramadan)", desc: "Salah satu malam yang dicari sebagai Lailatul Qadar dalam tradisi Syiah: malam 19, 21 dan 23 Ramadan." },
+      qadr21: { name: "Lailatul Qadar (21 Ramadan)", desc: "Salah satu malam yang dicari sebagai Lailatul Qadar dalam tradisi Syiah: malam 19, 21 dan 23 Ramadan." },
+      qadr23: { name: "Lailatul Qadar (23 Ramadan)", desc: "Salah satu malam yang dicari sebagai Lailatul Qadar dalam tradisi Syiah: malam 19, 21 dan 23 Ramadan." },
+      ghadir: { name: "Aidil Ghadir", desc: "Mengenang peristiwa Ghadir Khum selepas Haji Wada', yang menurut kepercayaan Syiah Nabi ﷺ melantik Ali sebagai pengganti.", note: "Muslim Sunni tidak memahami peristiwa ini sedemikian." },
+      arbaeen: { name: "Arbain", desc: "Hari keempat puluh selepas Asyura, mengenang Imam Husain. Ramai berjalan kaki ke Karbala." },
+      mubahala: { name: "Hari Mubahalah", desc: "Mengenang mubahalah dengan penganut Kristian Najran (Al-Qur'an 3:61), yang dihadiri Nabi ﷺ bersama Ali, Fatimah, Hasan dan Husain." },
+      aliBirth: { name: "Kelahiran Imam Ali", desc: "Hari lahir Ali bin Abi Talib, sepupu dan menantu Nabi ﷺ, menurut tradisi Syiah." },
+      fatimiyya: { name: "Fatimiyah", desc: "Ulang tahun kewafatan Fatimah az-Zahra, puteri Nabi ﷺ, seperti yang diperingati ramai Syiah. Tarikh lain juga disebut." },
     },
   },
   bn: {
@@ -740,6 +923,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "বছর",
     invalid: "এই মাসে এই দিনটি নেই।",
     days: "{n} দিন",
+    cdNext: "পরবর্তী",
+    cdApprox: "তারিখ চাঁদ দেখার উপর নির্ভর করে (±১ দিন)।",
+    notifDays: "{name} {n} দিন পরে",
+    notifTomorrow: "{name} আগামীকাল",
     ev: {
       newyear: { name: "ইসলামি নববর্ষ", desc: "1 মুহাররম – হিজরি বছরের শুরু, যা নবী ﷺ-এর মদিনায় হিজরত থেকে গণনা করা হয়।" },
       ashura: { name: "আশুরা", desc: "10 মুহাররম – যেদিন আল্লাহ মুসা ও তাঁর কওমকে রক্ষা করেছিলেন। অনেকে এই দিনে এবং তার সঙ্গে 9 তারিখেও রোজা রাখেন।" },
@@ -752,6 +939,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "ঈদুল ফিতর", desc: "1 শাওয়াল – রোজা ভাঙার উৎসব।" },
       arafah: { name: "আরাফার দিন", desc: "9 জিলহজ – হজের শীর্ষ মুহূর্ত; যাঁরা হজে নেই, তাঁরা এই দিনে রোজা রাখতে ভালোবাসেন।" },
       adha: { name: "ঈদুল আজহা", desc: "10 জিলহজ – কোরবানির উৎসব।" },
+      ashuraShia: { name: "আশুরা (শিয়া)", desc: "যে দিন নবী ﷺ-এর নাতি ইমাম হুসাইন ৬১ হিজরিতে কারবালায় শহীদ হন। শিয়া মুসলমানরা এটি শোকের দিন হিসেবে পালন করেন।" },
+      mawlidShia: { name: "নবী ﷺ-এর জন্ম (১৭ রবিউল আউয়াল)", desc: "শিয়া ঐতিহ্যে নবী ﷺ-এর জন্মতারিখ; অনেক সুন্নি মুসলমান ১২ রবিউল আউয়াল পালন করেন।" },
+      qadr19: { name: "লাইলাতুল কদর (19 রমজান)", desc: "যেসব রাতে শিয়া ঐতিহ্যে লাইলাতুল কদর খোঁজা হয় তার একটি: রমজানের ১৯, ২১ ও ২৩ তারিখের রাত।" },
+      qadr21: { name: "লাইলাতুল কদর (21 রমজান)", desc: "যেসব রাতে শিয়া ঐতিহ্যে লাইলাতুল কদর খোঁজা হয় তার একটি: রমজানের ১৯, ২১ ও ২৩ তারিখের রাত।" },
+      qadr23: { name: "লাইলাতুল কদর (23 রমজান)", desc: "যেসব রাতে শিয়া ঐতিহ্যে লাইলাতুল কদর খোঁজা হয় তার একটি: রমজানের ১৯, ২১ ও ২৩ তারিখের রাত।" },
+      ghadir: { name: "ঈদে গাদির", desc: "বিদায় হজের পর গাদিরে খুমের ঘটনা স্মরণ, যেখানে শিয়া বিশ্বাস অনুযায়ী নবী ﷺ আলীকে উত্তরসূরি নিযুক্ত করেন।", note: "সুন্নি মুসলমানরা ঘটনাটিকে এভাবে বোঝেন না।" },
+      arbaeen: { name: "আরবাইন", desc: "আশুরার চল্লিশতম দিন, ইমাম হুসাইনের স্মরণ। অনেকে হেঁটে কারবালায় যান।" },
+      mubahala: { name: "মুবাহালার দিন", desc: "নাজরানের খ্রিস্টানদের সঙ্গে মুবাহালার স্মরণ (আলে ইমরান ৩:৬১), যেখানে নবী ﷺ আলী, ফাতিমা, হাসান ও হুসাইনকে নিয়ে এসেছিলেন।" },
+      aliBirth: { name: "ইমাম আলীর জন্ম", desc: "শিয়া ঐতিহ্য অনুযায়ী নবী ﷺ-এর চাচাতো ভাই ও জামাতা আলী ইবনে আবি তালিবের জন্মদিন।" },
+      fatimiyya: { name: "ফাতিমিয়া", desc: "নবী ﷺ-এর কন্যা ফাতিমা আয-যাহরার ইন্তেকালের বার্ষিকী, যেভাবে অনেক শিয়া পালন করেন। অন্য তারিখও বলা হয়।" },
     },
   },
   ru: {
@@ -789,6 +986,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "Год",
     invalid: "Такого дня в этом месяце нет.",
     days: "{n} дн.",
+    cdNext: "Далее",
+    cdApprox: "Даты зависят от наблюдения луны (±1 день).",
+    notifDays: "{name} через {n} дн.",
+    notifTomorrow: "{name} завтра",
     ev: {
       newyear: { name: "Исламский Новый год", desc: "1 Мухаррам – начало года по хиджре, который отсчитывается от переселения Пророка ﷺ в Медину." },
       ashura: { name: "Ашура", desc: "10 Мухаррам – день, когда Аллах спас Мусу и его народ. Многие постятся в этот день вместе с 9-м." },
@@ -801,6 +1002,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "Ураза-байрам (Ид аль-Фитр)", desc: "1 Шавваль – праздник разговения." },
       arafah: { name: "День Арафа", desc: "9 Зуль-хиджа – вершина хаджа; те, кто не совершает хадж, охотно постятся в этот день." },
       adha: { name: "Курбан-байрам (Ид аль-Адха)", desc: "10 Зуль-хиджа – праздник жертвоприношения." },
+      ashuraShia: { name: "Ашура (шииты)", desc: "День, когда имам Хусейн, внук Пророка ﷺ, был убит в Кербеле в 61 г. х. Шииты отмечают его как день траура." },
+      mawlidShia: { name: "Рождение Пророка ﷺ (17 раби аль-авваль)", desc: "Дата рождения Пророка ﷺ в шиитской традиции; многие сунниты отмечают 12 раби аль-авваль." },
+      qadr19: { name: "Ляйлят аль-Кадр (19 рамадана)", desc: "Одна из ночей, в которые шиитская традиция ищет Ляйлят аль-Кадр: ночи на 19, 21 и 23 рамадана." },
+      qadr21: { name: "Ляйлят аль-Кадр (21 рамадана)", desc: "Одна из ночей, в которые шиитская традиция ищет Ляйлят аль-Кадр: ночи на 19, 21 и 23 рамадана." },
+      qadr23: { name: "Ляйлят аль-Кадр (23 рамадана)", desc: "Одна из ночей, в которые шиитская традиция ищет Ляйлят аль-Кадр: ночи на 19, 21 и 23 рамадана." },
+      ghadir: { name: "Ид аль-Гадир", desc: "Память о событии у Гадир-Хумм после Прощального паломничества, когда, по убеждению шиитов, Пророк ﷺ назначил Али своим преемником.", note: "Сунниты не разделяют такого понимания этого события." },
+      arbaeen: { name: "Арбаин", desc: "Сороковой день после Ашуры, память об имаме Хусейне. Многие идут пешком в Кербелу." },
+      mubahala: { name: "День мубахалы", desc: "Память о мубахале с христианами Наджрана (Коран 3:61), на которую Пророк ﷺ пришёл с Али, Фатимой, Хасаном и Хусейном." },
+      aliBirth: { name: "Рождение имама Али", desc: "День рождения Али ибн Аби Талиба, двоюродного брата и зятя Пророка ﷺ, по шиитской традиции." },
+      fatimiyya: { name: "Фатимия", desc: "Годовщина кончины Фатимы аз-Захры, дочери Пророка ﷺ, как её отмечают многие шииты. Называют и другие даты." },
     },
   },
   zh: {
@@ -838,6 +1049,10 @@ const CAL: Record<AppLocale, CalText> = {
     year: "年",
     invalid: "该月没有这一天。",
     days: "{n} 天",
+    cdNext: "下一个",
+    cdApprox: "日期取决于见月（±1 天）。",
+    notifDays: "{name}还有 {n} 天",
+    notifTomorrow: "{name}明天",
     ev: {
       newyear: { name: "伊斯兰新年", desc: "穆哈兰姆月 1 日——回历年的开始，从先知ﷺ迁往麦地那（希吉拉）起算。" },
       ashura: { name: "阿舒拉日", desc: "穆哈兰姆月 10 日——安拉拯救穆萨及其族人的日子。许多人在这一天斋戒，并同时斋戒第 9 日。" },
@@ -850,6 +1065,16 @@ const CAL: Record<AppLocale, CalText> = {
       fitr: { name: "开斋节", desc: "绍瓦鲁月 1 日——斋戒结束的节日。" },
       arafah: { name: "阿拉法特日", desc: "都尔黑哲月 9 日——朝觐的高潮；未朝觐者喜欢在这一天斋戒。" },
       adha: { name: "宰牲节", desc: "都尔黑哲月 10 日——宰牲的节日。" },
+      ashuraShia: { name: "阿舒拉日（什叶派）", desc: "先知ﷺ的外孙侯赛因伊玛目于回历 61 年在卡尔巴拉殉难之日。什叶派穆斯林视其为哀悼日。" },
+      mawlidShia: { name: "先知ﷺ诞辰（赖比尔·敖外鲁月 17 日）", desc: "什叶派传统中的先知ﷺ诞辰日期；许多逊尼派穆斯林纪念 12 日。" },
+      qadr19: { name: "盖德尔夜（斋月 19 日）", desc: "什叶派传统中寻找盖德尔夜的夜晚之一：斋月 19、21、23 日之夜。" },
+      qadr21: { name: "盖德尔夜（斋月 21 日）", desc: "什叶派传统中寻找盖德尔夜的夜晚之一：斋月 19、21、23 日之夜。" },
+      qadr23: { name: "盖德尔夜（斋月 23 日）", desc: "什叶派传统中寻找盖德尔夜的夜晚之一：斋月 19、21、23 日之夜。" },
+      ghadir: { name: "古迪尔节", desc: "纪念辞朝之后的古迪尔·胡姆事件；按什叶派信仰，先知ﷺ在此指定阿里为继任者。", note: "逊尼派穆斯林不这样理解该事件。" },
+      arbaeen: { name: "阿尔巴因", desc: "阿舒拉之后的第四十天，纪念侯赛因伊玛目。许多人步行前往卡尔巴拉。" },
+      mubahala: { name: "互诅日", desc: "纪念与奈季兰基督徒的互诅（古兰经 3:61），先知ﷺ偕阿里、法蒂玛、哈桑和侯赛因前往。" },
+      aliBirth: { name: "阿里伊玛目诞辰", desc: "按什叶派传统，为先知ﷺ的堂弟兼女婿阿里·本·艾布·塔利卜的诞辰。" },
+      fatimiyya: { name: "法蒂米耶", desc: "许多什叶派穆斯林纪念先知ﷺ之女法蒂玛·扎赫拉逝世的周年。另有其他说法。" },
     },
   },
 };

@@ -1,14 +1,16 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { Pressable, Text, View } from "react-native";
-import { DAY, EVENTS, HIJRI_MONTHS, addMonths, calText, daysBetween, fmtGregorian, fmtHijri, fromHijri, hijriMonthName, monthGrid, monthLength, nextOccurrence, toHijri, todayUtc } from "@/web/hijri";
+import { DAY, eventsFor, HIJRI_MONTHS, addMonths, calText, daysBetween, fmtGregorian, fmtHijri, fromHijri, hijriMonthName, monthGrid, monthLength, nextOccurrence, toHijri, todayUtc } from "@/web/hijri";
 import { intlLocale, useLang } from "@/i18n";
 import { CALLIG_FONT, FONT, R, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { Callout, H2, IllumFrame, Label, Niche, go } from "./art";
 import { DateField, SelectField } from "./ui";
+import { IslamicCountdown } from "./IslamicCountdown";
+import { useTradition } from "@/lib/tradition";
 
-const NIGHTS = new Set(["lastten", "qadr"]);
+const NIGHTS = new Set(["lastten", "qadr", "qadr19", "qadr21", "qadr23"]);
 const toIso = (t: number) => new Date(t).toISOString().slice(0, 10);
 const fromIso = (s: string) => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s); return m ? Date.UTC(+m[1], +m[2] - 1, +m[3]) : null; };
 type T = ReturnType<typeof calText>["t"];
@@ -25,6 +27,7 @@ export default function HijriCalendar() {
   const th = useTheme();
   return (
     <View style={{ gap: 48 }}>
+      <IslamicCountdown full />
       <TodayCard today={today} locale={locale} t={t} ev={ev} />
       <MonthView today={today} view={view} setView={setView} locale={locale} t={t} ev={ev} />
       <Upcoming today={today} locale={locale} t={t} ev={ev} />
@@ -40,7 +43,8 @@ export default function HijriCalendar() {
 
 function TodayCard({ today, locale, t, ev }: { today: number; locale: string; t: T; ev: Ev }) {
   const h = toHijri(today);
-  const next = useMemo(() => EVENTS.map((e) => ({ e, o: nextOccurrence(e.m, e.d, today) })).filter((x) => x.o).sort((a, b) => a.o!.t - b.o!.t)[0], [today]);
+  const { tradition } = useTradition();
+  const next = useMemo(() => eventsFor(tradition).map((e) => ({ e, o: nextOccurrence(e.m, e.d, today) })).filter((x) => x.o).sort((a, b) => a.o!.t - b.o!.t)[0], [today, tradition]);
   const n = next ? daysBetween(today, next.o!.t) : 0;
   return (
     <Stage rounded={16} hairlines={false}>
@@ -77,7 +81,8 @@ function MonthView({ today, view, setView, locale, t, ev }: { today: number; vie
   const grid = useMemo(() => monthGrid(view.y, view.m, weekStart), [view.y, view.m, weekStart]);
   const thy = toHijri(today);
   const isCurrent = thy.y === view.y && thy.m === view.m;
-  const evs = EVENTS.filter((e) => e.m === view.m);
+  const { tradition } = useTradition();
+  const evs = eventsFor(tradition).filter((e) => e.m === view.m);
   const last = grid.first + (grid.len - 1) * DAY;
   const span = `${fmtGregorian(grid.first, locale, { day: "numeric", month: "short" })} – ${fmtGregorian(last, locale, { day: "numeric", month: "short", year: "numeric" })}`;
   const wd = Array.from({ length: 7 }, (_, i) => { const d = (weekStart + i) % 7; return { d, s: fmtGregorian(Date.UTC(1970, 0, 4 + d), locale, { weekday: "short" }) }; });
@@ -166,7 +171,8 @@ function Legend({ swatch, text }: { swatch: ReactNode; text: string }) {
 
 function Upcoming({ today, locale, t, ev }: { today: number; locale: string; t: T; ev: Ev }) {
   const th = useTheme();
-  const list = useMemo(() => EVENTS.map((e) => ({ e, o: nextOccurrence(e.m, e.d, today) })).filter((x) => x.o).sort((a, b) => a.o!.t - b.o!.t), [today]);
+  const { tradition } = useTradition();
+  const list = useMemo(() => eventsFor(tradition).map((e) => ({ e, o: nextOccurrence(e.m, e.d, today) })).filter((x) => x.o).sort((a, b) => a.o!.t - b.o!.t), [today, tradition]);
   return (
     <View>
       <H2>{t("upcoming")}</H2>

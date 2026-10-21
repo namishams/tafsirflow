@@ -27,6 +27,7 @@ import { TODAY_VERSE, TODAY_WORD } from "@/features/today/arabic";
 import { ProPromo } from "@/features/learn/ProPromo";
 import { CoachCard, MapCard, RewardsCard, WeekCard } from "@/features/progress";
 import { PrayerSetupCard } from "@/features/practice";
+import { IslamicCountdown } from "@/features/practice/IslamicCountdown";
 import { Onboarding } from "@/features/extra/Onboarding";
 import { HadithOfTheDay, HowToPrayCard, NahjCard, TraditionAsk } from "@/features/hadith/cards";
 import { CommunityCard } from "@/features/community/ui";
@@ -135,6 +136,7 @@ export default function Today() {
           <FeedSpotlight />
           <Onboarding />
           <TraditionAsk />
+          <IslamicCountdown onPress={() => go("/calendar")} />
           <HowToPrayCard />
           <RewardsCard />
           {/* checklist */}
