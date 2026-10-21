@@ -470,12 +470,22 @@
       ]
     },
     "paywall": {
-      "maxPerSession": 1
+      "maxPerSession": 1,
+      "day1": {
+        "enabled": true,
+        "variant": "plan",
+        "defaultPlan": "yearly",
+        "showCompare": true
+      }
     },
     "moments": {
       "streakDays": 7,
       "words": 20,
       "saves": 5
+    },
+    "limits": {
+      "cardsPerDay": 10,
+      "testsPerDay": 1
     }
   },
   "adSlots": {

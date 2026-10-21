@@ -289,6 +289,17 @@ CREATE TABLE IF NOT EXISTS community_reports (
   created_at  timestamptz NOT NULL DEFAULT now()
 );
 
+-- feed offer funnel from the app (anonymous daily aggregates: no user id, only variant, offer and counts per day)
+CREATE TABLE IF NOT EXISTS feed_offer_stats (
+  day     date   NOT NULL,
+  variant text   NOT NULL,
+  offer   text   NOT NULL,
+  imp     bigint NOT NULL DEFAULT 0,
+  tap     bigint NOT NULL DEFAULT 0,
+  buy     bigint NOT NULL DEFAULT 0,
+  PRIMARY KEY (day, variant, offer)
+);
+
 -- keep last: the app user needs rights on every table above
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

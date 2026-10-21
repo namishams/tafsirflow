@@ -5,7 +5,9 @@ import { json, sameOrigin } from "@/lib/http";
 import { getSettings } from "@/lib/settings";
 
 export const dynamic = "force-dynamic";
-const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen", "tf:jv"]);
+const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen", "tf:jv",
+  // feed data of the app (saves, likes, stats, gamification, stickers); merged on the device, bounded there
+  "tf:story-saves", "qmc.hadithSaved", "tf:feed-likes", "tf:stickers", "qmc.feed-gamify", "qmc.feed-stats2"]);
 
 export async function GET() {
   const u = await currentUser();

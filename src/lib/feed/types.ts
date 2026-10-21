@@ -50,10 +50,33 @@ export type FeedMonetize = {
   context?: { everyNItems?: number; maxPerSession?: number };
   /** Pro-only posts: one per N posts, at most this many per session; free users may open `freePerDay` of them per day */
   premium?: { everyNItems?: number; maxPerSession?: number; freePerDay?: number; kinds?: string[] };
-  /** the paywall card after the free premium posts of the day are used up; trialDays only if the store offers that trial */
-  paywall?: { maxPerSession?: number; trialDays?: number };
+  /** the paywall card after the free premium posts of the day are used up; trialDays only if the store offers that trial.
+   *  `day1`: the app's paywall right after the onboarding plan (every field optional; missing = app defaults).
+   *  Prices and trials always come from the store; this only chooses layout and order. */
+  paywall?: { maxPerSession?: number; trialDays?: number; day1?: FeedDay1Paywall };
+  /** free limits in the app (missing = the app's local defaults in mobile/src/lib/entitlements.ts) */
+  limits?: FeedFreeLimits;
   /** thresholds of the celebration cards (each shown once per install) */
   moments?: { streakDays?: number; words?: number; saves?: number };
+};
+
+/** Day-1 paywall after the onboarding plan. */
+export type FeedDay1Paywall = {
+  /** false = skip the paywall after the plan (default true) */
+  enabled?: boolean;
+  /** layout variant: "plan" (benefits from the personal plan first) or "compact" (prices first) */
+  variant?: "plan" | "compact";
+  /** the plan preselected when a yearly product exists (default "yearly") */
+  defaultPlan?: "yearly" | "monthly";
+  /** show the Free / Pro comparison rows (default true) */
+  showCompare?: boolean;
+};
+/** Daily limits for free users in the app; Pro has none. */
+export type FeedFreeLimits = {
+  /** new review / flash cards per day (vocabulary, SRS) */
+  cardsPerDay?: number;
+  /** unit tests / quizzes per day */
+  testsPerDay?: number;
 };
 
 export type FeedItemKind = "editorial" | "announcement" | "verse-of-day" | "hadith-of-day" | "islamic-date" | "featured-surah";
