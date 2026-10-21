@@ -26,7 +26,14 @@ export type FeedConfig = {
   posting?: FeedPosting;
   /** Sijill (achievement showcase): moments in the main feed (off by default), leaderboards and compare switches */
   sijill?: FeedSijill;
+  /** the server corpus behind /api/feed/page (feed_items); every field optional */
+  corpus?: FeedCorpusConfig;
 };
+
+/** The server corpus (scripts/feed-corpus.mjs → feed_items → /api/feed/page). `share`: the part of the app's library posts
+ *  taken from the corpus when items are ready (0–0.9, app default 0.35); `kindWeights`: relative weight per corpus kind
+ *  (0 = off; missing = the server defaults in src/lib/feed/corpus.ts). */
+export type FeedCorpusConfig = { share?: number; kindWeights?: Partial<Record<FeedCorpusKind, number>> };
 
 export type FeedSijill = { momentsInFeed?: boolean; leaderboards?: boolean; compare?: boolean };
 
@@ -94,7 +101,20 @@ export type FeedFreeLimits = {
   testsPerDay?: number;
 };
 
-export type FeedItemKind = "editorial" | "announcement" | "verse-of-day" | "hadith-of-day" | "islamic-date" | "featured-surah";
+export type FeedItemKind = "editorial" | "announcement" | "verse-of-day" | "hadith-of-day" | "islamic-date" | "featured-surah"
+  /** a corpus post (only for clients that send v=2); `postKind` is the FeedCorpusKind, `ref` the reference */
+  | "corpus";
+
+/** Kinds of the server corpus. Older app builds (no v=2) only get verse and hadith posts as "editorial" items. */
+export type FeedCorpusKind = "verse" | "word" | "tafsir" | "hadith" | "shia-hadith" | "name" | "quiz" | "course" | "wiki" | "lemma" | "mutashabihat" | "maqasid" | "dua";
+/** The reference of a corpus post, per kind (never text; the client loads the text from the source):
+ *  verse {k}, word {k, w} (1-based word position), tafsir {k, t} (Quran.com tafsir id), hadith {c, n} (hadith-api
+ *  collection and number), shia-hadith {b, n} (Thaqalayn bookId and id), name {i, v} (index 0–98 of the app's list,
+ *  variant lesson | verse | quiz), quiz {q} (qbank id), course {c, l} (Academy course and lesson) or {kit, l}
+ *  (abrahamic | haramain lesson), wiki {x, t} (the app's extra kind and the English Wikipedia title), lemma {l, r, n, k}
+ *  (Quranic Arabic Corpus lemma, root, occurrences, first verse), mutashabihat {g, keys}, maqasid {s, f?} (surah,
+ *  first verse of the section), dua {h, i} (Hisnul Muslim chapter, index) or {f, i} (fitrahive category, index). */
+export type FeedRef = Record<string, string | number | string[]>;
 export type FeedItem = {
   /** stable id, de-duplicate by it */
   id: string;
@@ -117,6 +137,9 @@ export type FeedItem = {
   surah?: number;
   hijri?: { y: number; m: number; d: number; monthName: string; event?: string; daysToEvent?: number };
   deeplink?: string;
+  /** corpus posts (v=2): the reference (see FeedRef) and the app topic; older clients ignore both */
+  ref?: FeedRef;
+  topic?: string;
 };
 
 export type FeedNewResponse = { items: FeedItem[]; generatedAt: string };

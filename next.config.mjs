@@ -54,9 +54,10 @@ export default withNextIntl({
   async headers() {
     return [
       { source: "/:path*", headers: security },
-      // personal data is never cached by browsers or proxies – except the public, read-only community figures for the
-      // app, which set their own Cache-Control (a header here would override the route's own)
-      { source: "/api/:path((?!social/community$).*)", headers: [{ key: "Cache-Control", value: "private, no-store" }] },
+      // personal data is never cached by browsers or proxies – except the public, read-only community figures and the
+      // public feed (config, new, page, web: no personal data), which set their own Cache-Control (a header here would
+      // override the route's own)
+      { source: "/api/:path((?!social/community$|feed/config$|feed/new$|feed/page$|feed/web$).*)", headers: [{ key: "Cache-Control", value: "private, no-store" }] },
     ];
   },
 });

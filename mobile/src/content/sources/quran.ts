@@ -103,6 +103,17 @@ export async function surahInfoItems(lang: string, page: number, size: number, s
 // Word-by-word translation languages offered by Quran.com
 const WBW = new Set(["en", "ur", "bn", "id", "tr", "fa", "hi", "ta", "ms", "ml"]);
 
+type VWordRow = { ar: string; tr: string; tl: string; pos: number };
+/** the words of a verse with word-by-word translation (Quran.com; cached per verse and language) */
+const verseWords = (key: string, wl: string) =>
+  cachedFetch<VWordRow[]>(`${QC}/verses/by_key/${key}?words=true&language=${wl}&word_fields=text_uthmani`, {
+    ttlMs: 30 * DAY,
+    transform: (raw) =>
+      ((raw?.verse?.words ?? []) as any[])
+        .filter((w) => w.char_type_name === "word")
+        .map((w) => ({ ar: w.text_uthmani, tr: w.translation?.text ?? "", tl: w.transliteration?.text ?? "", pos: w.position })),
+  });
+
 export async function wordOfDayItems(lang: string, page: number, size: number, seed: string): Promise<SourceItem[]> {
   const chs = await chapters();
   const wl = WBW.has(lang) ? lang : "en";
@@ -112,16 +123,7 @@ export async function wordOfDayItems(lang: string, page: number, size: number, s
     const pickF = r();
     return async (): Promise<SourceItem | null> => {
       const key = `${s}:${a}`;
-      const words = await cachedFetch<{ ar: string; tr: string; tl: string; pos: number }[]>(
-        `${QC}/verses/by_key/${key}?words=true&language=${wl}&word_fields=text_uthmani`,
-        {
-          ttlMs: 30 * DAY,
-          transform: (raw) =>
-            ((raw?.verse?.words ?? []) as any[])
-              .filter((w) => w.char_type_name === "word")
-              .map((w) => ({ ar: w.text_uthmani, tr: w.translation?.text ?? "", tl: w.transliteration?.text ?? "", pos: w.position })),
-        },
-      );
+      const words = await verseWords(key, wl);
       const good = words.filter((w) => w.ar && w.tr && [...w.ar].length >= 4);
       if (!good.length) return null;
       const w = good[Math.floor(pickF * good.length)];
@@ -133,6 +135,65 @@ export async function wordOfDayItems(lang: string, page: number, size: number, s
     };
   });
   return settle(tasks);
+}
+
+// ---- single items by reference (the server corpus of /api/feed/page names verse keys, tafsir ids and word positions) ----
+
+/** one word of a verse by its 1-based position, as a word-of-the-day card; null when the verse has no such word */
+export async function wordByRef(key: string, pos: number, lang: string): Promise<SourceItem | null> {
+  if (!/^\d{1,3}:\d{1,3}$/.test(key) || !Number.isInteger(pos)) return null;
+  const wl = WBW.has(lang) ? lang : "en";
+  const [chs, words] = await Promise.all([chapters(), verseWords(key, wl)]);
+  const w = words.find((x) => x.pos === pos);
+  if (!w?.ar || !w.tr) return null;
+  const ch = chs.find((c) => c.id === Number(key.split(":")[0]));
+  return {
+    id: `word:${key}:${w.pos}:${wl}`, kind: "word-of-day", title: w.tl ? `${w.tl} – ${w.tr}` : w.tr, arabic: w.ar,
+    body: `${w.tr}\n${ch?.name ?? ""} ${key}, word ${w.pos}`.trim(), lang: wl, source: "Quran.com word-by-word",
+    sourceUrl: `https://quran.com/${key}`, tradition: "all", tags: [key],
+  };
+}
+
+/** the passage of a Quran.com tafsir work for a verse (the API answers with the passage of the verse's group); the
+ *  item and its link carry the group's first verse, so a group is shown once in the seen window */
+export async function tafsirByRef(tafsirId: number, key: string): Promise<SourceItem | null> {
+  if (!/^\d{1,3}:\d{1,3}$/.test(key)) return null;
+  const [list, chs] = await Promise.all([tafsirList(), chapters()]);
+  const t = list.find((x) => x.id === tafsirId);
+  if (!t) return null;
+  const data = await cachedFetch<{ text: string; keys: string[] } | null>(`${QC}/tafsirs/${t.id}/by_ayah/${key}`, {
+    key: `tafsir-ref:${t.id}:${key}`,
+    ttlMs: 30 * DAY,
+    transform: (raw) => {
+      const txt = stripHtml(String(raw?.tafsir?.text ?? ""));
+      const keys = Object.keys(raw?.tafsir?.verses ?? {}).filter((k) => /^\d+:\d+$/.test(k)).sort((x, y) => Number(x.split(":")[1]) - Number(y.split(":")[1]));
+      return txt ? { text: excerpt(txt, 700), keys } : null;
+    },
+  });
+  if (!data) return null;
+  const first = data.keys[0] ?? key, last = data.keys[data.keys.length - 1] ?? key;
+  const ch = chs.find((c) => c.id === Number(first.split(":")[0]));
+  const range = first === last ? first : `${first}–${last.split(":")[1]}`;
+  return {
+    id: `tafsir:${t.id}:${first}`, kind: "tafsir", title: `${t.name} – ${ch ? `${ch.name} ` : ""}${range}`, body: data.text, lang: LANG_CODE[t.lang] ?? "en",
+    source: `Quran.com – ${t.name} (${t.author})`, sourceUrl: `https://quran.com/${first}/tafsirs/${t.slug}`, tradition: "sunni", tags: [t.slug, first],
+  };
+}
+
+/** a lemma of the Quranic Arabic Corpus with its root and count (all from the server reference, nothing is loaded) */
+export function lemmaItem(ref: { l?: unknown; r?: unknown; n?: unknown; k?: unknown }, lang: string): SourceItem | null {
+  const lemma = typeof ref.l === "string" ? ref.l : "", root = typeof ref.r === "string" ? ref.r : "", n = Number(ref.n), key = typeof ref.k === "string" ? ref.k : "";
+  if (!lemma || !root || !Number.isInteger(n) || n < 1 || !/^\d{1,3}:\d{1,3}$/.test(key)) return null;
+  const spaced = [...root].join(" ");
+  const de = lang === "de";
+  return {
+    id: `lemma:${lemma}`, kind: "word-root", title: `${lemma}: ${n}×`, arabic: lemma,
+    body: de
+      ? `Das Wort ${lemma} (Wurzel ${spaced}) kommt ${n}-mal im Koran vor. Erstes Vorkommen: ${key}.`
+      : `The word ${lemma} (root ${spaced}) appears ${n} times in the Quran. First occurrence: ${key}.`,
+    lang: de ? "de" : "en", source: "Quranic Arabic Corpus (GPL), via quran-morphology",
+    sourceUrl: `https://corpus.quran.com/qurandictionary.jsp?q=${encodeURIComponent(root)}`, tradition: "all", tags: [root, key],
+  };
 }
 
 // Quranic Arabic Corpus morphology (GPL), mirrored by mustafa0x/quran-morphology. Downloaded once (~6 MB),

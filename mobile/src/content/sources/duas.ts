@@ -114,3 +114,36 @@ export async function duaItems(lang: string, page: number, size: number, seed: s
   });
   return settle(tasks);
 }
+
+/** one dua by the server corpus reference: Hisnul Muslim {h: chapter, i: index} or fitrahive {f: category, i: index} */
+export async function duaByRef(ref: { h?: unknown; f?: unknown; i?: unknown }, lang: string): Promise<SourceItem | null> {
+  const i = Number(ref.i);
+  if (!Number.isInteger(i) || i < 0) return null;
+  if (typeof ref.f === "string") {
+    const c = FH_CATS.find((x) => x.slug === ref.f);
+    if (!c) return null;
+    const fl: "en" | "id" = lang === "id" ? "id" : "en";
+    const d = (await fhList(c.slug, fl))[i];
+    if (!d || (!d.arabic && !d.translation)) return null;
+    return {
+      id: `dua:fh:${c.slug}:${i}:${fl}`, kind: "dua", title: d.title, arabic: d.arabic,
+      body: [d.latin, d.translation, d.notes].filter(Boolean).join("\n\n"), lang: fl,
+      source: `${d.source ? d.source + " – " : ""}fitrahive/dua-dhikr`, sourceUrl: "https://github.com/fitrahive/dua-dhikr",
+      tradition: "all", timeOfDay: c.time, tags: [c.slug],
+    };
+  }
+  const id = Number(ref.h);
+  if (!Number.isInteger(id)) return null;
+  const hl: "en" | "ar" = lang === "ar" ? "ar" : "en";
+  const [chs, en] = await Promise.all([hmChapters(hl), hl === "ar" ? hmChapters("en").catch(() => []) : Promise.resolve([] as HmChapter[])]);
+  const c = chs.find((x) => x.id === id);
+  if (!c) return null;
+  const d = (await hmDuas(hl, id))[i];
+  if (!d || (!d.ar && !d.tr)) return null;
+  const body = [hl === "ar" ? "" : d.tr, d.repeat > 1 ? `(${d.repeat}×)` : ""].filter(Boolean).join("\n\n");
+  return {
+    id: `dua:hm:${id}:${i}:${hl}`, kind: "dua", title: c.title, arabic: d.ar || undefined, body: body || d.ar,
+    lang: hl, source: "Hisnul Muslim (Sa'id al-Qahtani) – hisnmuslim.com", sourceUrl: "https://www.hisnmuslim.com",
+    tradition: "sunni", timeOfDay: timeOfDayFor((en.find((x) => x.id === id) ?? c).title), tags: [`hisn:${id}`],
+  };
+}

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-10-21",
   "minAppBuild": 1,
   "kindWeights": {
@@ -637,5 +637,9 @@
     "momentsInFeed": false,
     "leaderboards": true,
     "compare": true
+  },
+  "corpus": {
+    "share": 0.35,
+    "kindWeights": { "verse": 1.2, "word": 0.9, "tafsir": 1.2, "hadith": 1.4, "shia-hadith": 1.4, "name": 0.6, "quiz": 1, "course": 0.8, "wiki": 1, "lemma": 0.6, "mutashabihat": 0.4, "maqasid": 0.8, "dua": 1 }
   }
 }

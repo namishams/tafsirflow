@@ -898,3 +898,28 @@ CREATE TABLE IF NOT EXISTS teacher_suggestions (
   CHECK (kind <> 'nudge' OR preset IS NOT NULL)
 );
 CREATE INDEX IF NOT EXISTS teacher_suggestions_share ON teacher_suggestions(share_id, status, created_at DESC);
+
+-- Server feed corpus (owner request 21.10.2026): 100,000+ feed posts as REFERENCES only (verse keys, hadith
+-- collection:number, tafsir id + verse key, name index, qbank question id, course lesson id, Wikipedia catalog title,
+-- lemma, dua id, mutashabihat group, maqasid section). No Quran, hadith, tafsir or article text is stored; the clients
+-- load every text from its source. Filled by scripts/feed-corpus.mjs (idempotent), served by /api/feed/page.
+--   stream: kind plus bucket ("hadith:bukhari", "tafsir:en"); kseq is dense 0..n-1 inside a stream, so the API can
+--   walk a per-install shuffled order with a permutation instead of ORDER BY random().
+--   lang_tags: app locales that can show the item ('*' = all); tradition: all | sunni | shia.
+CREATE TABLE IF NOT EXISTS feed_items (
+  id         text PRIMARY KEY,
+  kind       text NOT NULL,
+  ref        jsonb NOT NULL,
+  lang_tags  text[] NOT NULL DEFAULT '{*}',
+  tradition  text NOT NULL DEFAULT 'all' CHECK (tradition IN ('all','sunni','shia')),
+  topic      text NOT NULL DEFAULT '',
+  weight     real NOT NULL DEFAULT 1,
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+ALTER TABLE feed_items ADD COLUMN IF NOT EXISTS stream text;
+ALTER TABLE feed_items ADD COLUMN IF NOT EXISTS kseq integer;
+ALTER TABLE feed_items ADD COLUMN IF NOT EXISTS updated_at timestamptz NOT NULL DEFAULT now();
+CREATE INDEX IF NOT EXISTS feed_items_stream_seq ON feed_items(stream, kseq);
+CREATE INDEX IF NOT EXISTS feed_items_kind ON feed_items(kind);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

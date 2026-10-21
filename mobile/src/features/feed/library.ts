@@ -7,7 +7,7 @@ import { markSeen, wasSeen } from "./seen";
 const servedUrls = new Set<string>();
 const urlSeen = (u: string) => !!u && (servedUrls.has(u) || wasSeen(`u:${u}`));
 import { interestOf, takeBoredom } from "./interest";
-import { fetchFeedNew, fetchFeedPage, flagOn, remoteConfig, resolveAll } from "./remote";
+import { fetchCorpusPage, fetchFeedNew, flagOn, remoteConfig, resolveAll, saveCorpusCursor, savedCorpusCursor, type RemotePost } from "./remote";
 import { KNOW_KINDS, isKnowKind, knowVisible, type KnowKind, type KnowSubject } from "./knowKinds";
 import type { KnowItem } from "./knowledge";
 /** the knowledge builders load on first use (they import courses and the Madrasa, which import gamify.ts) */
@@ -32,7 +32,7 @@ export const isSubTopic = (t: string): t is SubTopic => t.startsWith("sub:");
 
 /** the known kinds per topic; any other kind (new EXTRA_KINDS) is placed by its name in topicOfKind */
 const TOPIC_KINDS: Record<LibTopic, string[]> = {
-  tafsir: ["tafsir", "surah-info", "word-root", "word-of-day", "kn-tadabbur", "kn-grammar"],
+  tafsir: ["tafsir", "surah-info", "word-root", "word-of-day", "kn-tadabbur", "kn-grammar", "verse-of-day", "featured-surah"],
   hadith: ["hadith", "hadith-of-day", "shia-hadith", "kn-nahj"],
   duas: ["dua", "asma", "phrases", "akhlaq", "kn-names"],
   prayer: ["salah", "pillars", "pillars-hajj", "islamic-months"],
@@ -97,33 +97,72 @@ function remoteEnabled(k: string) {
 }
 const weightOf = (k: string) => remoteConfig()?.kindWeights?.[k] ?? WEIGHT[k as LibKind] ?? 1;
 
-// ---- the server as one more source (website /api/feed): /new and /page items, resolved to library items ----
-// They join the pool; they never replace the local libraries. De-duplicated by server id.
-const remoteState = { lang: "", items: [] as LibItem[], cursor: null as string | null, done: false, loading: false, known: new Set<string>(), retryAt: 0 };
+// ---- the server as one more source (website /api/feed): /new and the corpus of /page, resolved to feed posts ----
+// They join the pool; they never replace the local libraries. De-duplicated by server id and by the 7-day seen window.
+// The corpus is endless (the server wraps every stream with a new order); its cursor is kept per language and
+// tradition, so the next session continues where this one stopped. The buffer is refilled ahead of the reader.
+const REMOTE_LOW = 8;
+const remoteState = { key: "", lang: "", items: [] as RemotePost[], cursor: null as string | null, done: false, loading: false, known: new Set<string>(), retryAt: 0, fails: 0, empty: 0 };
 function remoteFor(lang: string) {
-  if (remoteState.lang !== lang) Object.assign(remoteState, { lang, items: [], cursor: null, done: false, loading: false, known: new Set<string>(), retryAt: 0 });
+  const key = `${lang}|${tradition()}`;
+  if (remoteState.key !== key) Object.assign(remoteState, { key, lang, items: [], cursor: savedCorpusCursor(key), done: false, loading: false, known: new Set<string>(), retryAt: 0, fails: 0, empty: 0 });
   return remoteState;
 }
+/** an article shown in several kinds, or a tafsir passage that covers several verses: once per seen window */
+const postUrlSeen = (p: RemotePost) => !!p.items?.some((i) => urlSeen(i.sourceUrl));
 function fetchRemotePage(lang: string) {
   const r = remoteFor(lang);
-  if (r.loading || r.done || r.items.length >= 4 || Date.now() < r.retryAt || !flagOn("serverPage")) return;
+  if (r.loading || r.items.length >= REMOTE_LOW || Date.now() < r.retryAt || !flagOn("serverPage")) return;
+  // an older server ends its page walk (nextCursor null): start again from the top after a pause
+  if (r.done) { r.done = false; r.cursor = null; }
   r.loading = true;
-  void fetchFeedPage(lang, r.cursor).then(async (p) => {
-    if (!p) { r.retryAt = Date.now() + 60000; return; }
-    r.cursor = p.nextCursor; r.done = !p.nextCursor;
-    const got = (await resolveAll(p.items, lang, r.known)).filter((i) => !wasSeen(`x:${i.id}`));
-    if (remoteState !== r || r.lang !== lang) return;
+  const key = r.key, cursor = r.cursor;
+  void fetchCorpusPage(lang, cursor).then(async (res) => {
+    if (!res.ok) {
+      r.fails++;
+      // a cursor the server no longer accepts starts the stream again; offline: wait a little longer each time
+      if (res.badCursor) { r.cursor = null; saveCorpusCursor(key, null); }
+      r.retryAt = Date.now() + Math.min(300000, 10000 * r.fails);
+      return;
+    }
+    const p = res.page;
+    r.fails = 0;
+    r.cursor = p.nextCursor;
+    if (p.nextCursor?.startsWith("c2.")) saveCorpusCursor(key, p.nextCursor);
+    if (!p.nextCursor) { r.done = true; r.retryAt = Date.now() + 300000; }
+    const got = (await resolveAll(p.items, lang, r.known)).filter((x) => !wasSeen(x.feedId) && !postUrlSeen(x) && !LIB.has(x.feedId));
+    if (r.key !== key) return;
     r.items.push(...got);
-    if (got.length) listeners.forEach((f) => f()); else if (!r.done) setTimeout(() => fetchRemotePage(lang), 0);
-  }).catch(() => { r.retryAt = Date.now() + 60000; }).finally(() => { r.loading = false; });
+    r.empty = got.length ? 0 : r.empty + 1;
+    if (got.length) listeners.forEach((f) => f());
+    // prefetch: keep the buffer filled while the reader scrolls (an all-seen page simply loads the next one); several
+    // pages in a row without anything new (texts offline) pause the stream for a minute
+    if (r.empty >= 4) { r.empty = 0; r.retryAt = Date.now() + 60000; }
+    else if (r.items.length < REMOTE_LOW && !r.done) setTimeout(() => fetchRemotePage(lang), 0);
+  }).catch(() => { r.fails++; r.retryAt = Date.now() + Math.min(300000, 10000 * r.fails); }).finally(() => { r.loading = false; });
+}
+/** the part of library posts taken from the server corpus when it has posts ready (remote config corpus.share) */
+function corpusShare() {
+  const v = remoteConfig()?.corpus?.share;
+  const base = typeof v === "number" && v >= 0 ? Math.min(0.9, v) : 0.35;
+  return Math.max(base, Math.min(0.5, weightOf("editorial") / 12));
+}
+/** registers a server post and returns its feed id */
+function registerRemote(p: RemotePost): string {
+  if (p.items?.length) LIB.set(p.feedId, { id: p.feedId, kind: p.kind as LibKind, items: p.items });
+  markUrls(p.items ?? []);
+  return p.feedId;
 }
 /** /new: resolves the newest server items and returns their feed ids (registered as posts); unseen ones first */
 export async function takeRemoteNew(lang: string, since?: string): Promise<string[]> {
   const res = await fetchFeedNew(lang, since);
   if (!res) return [];
   const got = await resolveAll(res.items, lang, remoteFor(lang).known);
-  const ids = got.map((i) => { const id = `x:${i.id}`; LIB.set(id, { id, kind: i.kind, items: [i] }); return id; });
+  const ids = got.map((p) => { if (p.items?.length) LIB.set(p.feedId, { id: p.feedId, kind: p.kind as LibKind, items: p.items }); return p.feedId; });
   return [...ids.filter((id) => !wasSeen(id)), ...ids.filter((id) => wasSeen(id))];
+}
+function markUrls(items: LibItem[]) {
+  for (const i of items) if (i.sourceUrl && !/^https?:\/\/(www\.)?quranmasterclass/.test(i.sourceUrl) && i.sourceUrl.split("/").length > 4) { servedUrls.add(i.sourceUrl); markSeen(`u:${i.sourceUrl}`); }
 }
 
 // Endless: the sources page through their catalogs and wrap around; items not seen in the last 7 days come first, and
@@ -190,18 +229,36 @@ export class LibScheduler {
     return out;
   }
 
-  private one(): string | null {
-    // the server's items: with the weight of "editorial" against the local kinds, when they fit the topic
-    fetchRemotePage(this.lang);
+  /** the next server post that fits the topic (a different kind than the last post when possible), or -1 */
+  private remoteIndex(): number {
+    if (this.subject) return -1;
     const r = remoteFor(this.lang);
-    const ri = this.subject ? -1 : r.items.findIndex((i) => this.topic === "all" || topicOfKind(i.kind) === this.topic);
-    if (ri >= 0 && rand() < Math.min(0.5, weightOf("editorial") / 12)) {
-      const [it] = r.items.splice(ri, 1);
-      const id = `x:${it.id}`;
-      LIB.set(id, { id, kind: it.kind, items: [it] });
-      this.recent.push(it.kind);
-      return id;
+    const last = this.recent[this.recent.length - 1];
+    let at = -1;
+    for (let k = 0; k < r.items.length; k++) {
+      const p = r.items[k];
+      if (wasSeen(p.feedId) || LIB.has(p.feedId) || postUrlSeen(p)) { r.items.splice(k--, 1); continue; }
+      if (this.topic !== "all" && topicOfKind(p.kind) !== this.topic) continue;
+      if (at < 0) at = k;
+      if (p.kind !== last) { at = k; break; }
     }
+    return at;
+  }
+  private takeRemote(at: number): string {
+    const r = remoteFor(this.lang);
+    const [p] = r.items.splice(at, 1);
+    this.recent.push(p.kind as LibKind);
+    if (this.recent.length > 12) this.recent.shift();
+    this.lastText = true;
+    if (r.items.length < REMOTE_LOW) fetchRemotePage(this.lang);
+    return registerRemote(p);
+  }
+
+  private one(): string | null {
+    // the server's corpus: about corpusShare() of the posts when it has posts ready that fit the topic
+    fetchRemotePage(this.lang);
+    const ri = this.remoteIndex();
+    if (ri >= 0 && rand() < corpusShare()) return this.takeRemote(ri);
     const kinds = kindsOf(this.topic);
     const sub = !!this.subject;
     kinds.forEach((k) => fetchKind(k, this.lang, sub));
@@ -212,7 +269,11 @@ export class LibScheduler {
     // knowledge posts between the others: at most KNOW_MAX_IN_5 of the last five posts (not inside a subject filter)
     if (!sub && this.recent.slice(-5).filter(isKnowKind).length >= KNOW_MAX_IN_5) { const rest = pool.filter((k) => !isKnowKind(k)); if (rest.length) pool = rest; }
     if (!pool.length && ready.length && (new Set(kinds).size <= 2 || sub)) pool = ready;
-    if (!pool.length) return null;
+    if (!pool.length) {
+      // nothing local is ready yet (first pages loading, offline libraries): a server post rather than an empty feed
+      const at = this.remoteIndex();
+      return at >= 0 ? this.takeRemote(at) : null;
+    }
     // personal interest × base weight, mixed with 15 % uniform exploration; every ~8th post a surprise (a kind seen
     // rarely); after fast skips (boredom) or after a text card: an image post when one is ready (format rotation)
     this.count++;
@@ -260,7 +321,7 @@ export class LibScheduler {
     this.recent.push(kind);
     if (this.recent.length > 12) this.recent.shift();
     this.shown.add(kind);
-    for (const i of items) if (i.sourceUrl && !/^https?:\/\/(www\.)?quranmasterclass/.test(i.sourceUrl) && i.sourceUrl.split("/").length > 4) { servedUrls.add(i.sourceUrl); markSeen(`u:${i.sourceUrl}`); }
+    markUrls(items);
     const id = `${items.length > 1 ? "xc" : "x"}:${items[0].id}`;
     LIB.set(id, { id, kind, items });
     return id;

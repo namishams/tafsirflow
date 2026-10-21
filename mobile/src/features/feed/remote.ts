@@ -4,12 +4,22 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import Constants from "expo-constants";
 import { router, type Href } from "expo-router";
 import { SITE } from "@/lib/api";
+import { readJSON, writeJSON } from "@/lib/store";
 import { readTradition } from "@/lib/tradition";
 import { getVerseByKey } from "@/lib/quran";
 import { calText, hijriMonthName } from "@/web/hijri";
 import { shiaHadith, sunniHadith } from "@/features/hadith/data";
 import type { SourceItem } from "@/content/sources";
+import { sunniHadith as sunniSource } from "@/content/sources/hadith";
+import { lemmaItem, tafsirByRef, wordByRef } from "@/content/sources/quran";
+import { duaByRef } from "@/content/sources/duas";
+import { extraItemsFor, isExtraKind } from "@/content/extra";
+import { knowText } from "./knowTexts";
+import { validKey } from "./source";
 import type { LibItem, LibKind } from "./library";
+/** the knowledge builders load on first use (see library.ts) */
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const knowledge = () => require("./knowledge") as typeof import("./knowledge");
 
 // The server-driven part of the feed (website /api/feed/*, contracts in src/lib/feed/types.ts of the website).
 // Every answer is cached with its ETag in AsyncStorage; offline the last good answer is used, without one the local
@@ -37,6 +47,8 @@ export type FeedConfig = {
   sijill?: { momentsInFeed?: boolean; leaderboards?: boolean; compare?: boolean };
   /** placeholder slots for future ad posts (adSlots.tsx); missing = off */
   adSlots?: { enabled?: boolean; everyNItems?: number; firstAfter?: number; maxPerSession?: number; provider?: string };
+  /** the server corpus (/api/feed/page): the part of library posts taken from it (default 0.35) */
+  corpus?: { share?: number; kindWeights?: Record<string, number> };
 };
 /** see the website's FeedMonetize; every field optional, local defaults in monetize.tsx */
 export type FeedMonetize = {
@@ -48,7 +60,7 @@ export type FeedMonetize = {
   limits?: { cardsPerDay?: number; testsPerDay?: number };
   moments?: { streakDays?: number; words?: number; saves?: number };
 };
-export type FeedItemKind = "editorial" | "announcement" | "verse-of-day" | "hadith-of-day" | "islamic-date" | "featured-surah";
+export type FeedItemKind = "editorial" | "announcement" | "verse-of-day" | "hadith-of-day" | "islamic-date" | "featured-surah" | "corpus";
 export type FeedItem = {
   id: string;
   kind: FeedItemKind;
@@ -67,6 +79,9 @@ export type FeedItem = {
   surah?: number;
   hijri?: { y: number; m: number; d: number; monthName: string; event?: string; daysToEvent?: number };
   deeplink?: string;
+  /** corpus posts (kind "corpus", postKind = the corpus kind): the reference, see the website's FeedRef */
+  ref?: Record<string, unknown>;
+  topic?: string;
 };
 export type FeedNewResponse = { items: FeedItem[]; generatedAt: string };
 export type FeedPageResponse = { items: FeedItem[]; nextCursor: string | null; day: string };
@@ -109,6 +124,44 @@ const base = (lang: string) => ({ locale: lang, tradition: tradition() });
 export const fetchFeedConfig = (lang: string) => getFeed<FeedConfig>("config", base(lang), `config|${lang}|${tradition()}`);
 export const fetchFeedNew = (lang: string, since?: string) => getFeed<FeedNewResponse>("new", { ...base(lang), since }, `new|${lang}|${tradition()}`);
 export const fetchFeedPage = (lang: string, cursor: string | null) => getFeed<FeedPageResponse>("page", { ...base(lang), cursor: cursor ?? undefined }, `page|${lang}|${tradition()}|${cursor ?? "0"}`);
+
+// ---- the server corpus (/api/feed/page?v=2): an endless, per-install shuffled stream ----
+const SEED_KEY = "qmc.feed-seed";
+const CURSOR_KEY = "qmc.feed-corpus-cursor";
+/** a random id of this install for the server's shuffle (no account, nothing personal); created once */
+export function installSeed(): string {
+  const have = readJSON<string>(SEED_KEY, "");
+  if (/^[A-Za-z0-9_-]{4,32}$/.test(have)) return have;
+  const seed = Array.from({ length: 12 }, () => "abcdefghijklmnopqrstuvwxyz0123456789"[Math.floor(Math.random() * 36)]).join("");
+  writeJSON(SEED_KEY, seed, true);
+  return seed;
+}
+/** where the corpus stream stopped, per language and tradition (the next session continues there) */
+export const savedCorpusCursor = (key: string): string | null => readJSON<Record<string, string>>(CURSOR_KEY, {})[key] ?? null;
+export function saveCorpusCursor(key: string, cursor: string | null) {
+  const all = readJSON<Record<string, string>>(CURSOR_KEY, {});
+  if (cursor) all[key] = cursor; else delete all[key];
+  writeJSON(CURSOR_KEY, all, true);
+}
+export type CorpusPage = { ok: true; page: FeedPageResponse } | { ok: false; badCursor: boolean };
+/** one corpus page; the first page (no cursor) is kept for offline starts, later pages are not stored */
+export async function fetchCorpusPage(lang: string, cursor: string | null): Promise<CorpusPage> {
+  if (!cursor) {
+    const p = await getFeed<FeedPageResponse>("page", { ...base(lang), v: "2", seed: installSeed(), limit: "12" }, `page2|${lang}|${tradition()}`);
+    return p && Array.isArray(p.items) ? { ok: true, page: p } : { ok: false, badCursor: false };
+  }
+  try {
+    const q = Object.entries({ ...base(lang), v: "2", limit: "12", cursor }).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 10000);
+    const res = await fetch(`${SITE}/api/feed/page?${q}`, { headers: { Accept: "application/json", "x-qmc-app": Platform.OS }, signal: ctrl.signal }).finally(() => clearTimeout(timer));
+    if (!res.ok) return { ok: false, badCursor: res.status === 400 };
+    const page = (await res.json()) as FeedPageResponse;
+    return Array.isArray(page?.items) ? { ok: true, page } : { ok: false, badCursor: false };
+  } catch {
+    return { ok: false, badCursor: false };
+  }
+}
 
 // ---- the current config (null = offline without cache: local defaults) ----
 let config: FeedConfig | null = null;
@@ -197,10 +250,61 @@ export async function resolveItem(i: FeedItem, lang: string): Promise<(LibItem &
   return { ...out, kind: out.kind, remote: true, deeplink: i.deeplink } as LibItem & { remote: true; deeplink?: string };
 }
 
+/** a resolved server item as a feed post: a library post ("x:<item id>", registered in LIB by the scheduler) or a
+ *  native post of the feed ("v:<verse key>": the verse post renders and plays the verse itself) */
+export type RemotePost = { feedId: string; kind: string; items?: LibItem[] };
+const asPost = (it: LibItem | null | undefined): RemotePost | null => (it ? { feedId: `x:${it.id}`, kind: it.kind, items: [it] } : null);
+
+/**
+ * A corpus post (kind "corpus") with the app's own renderers: verse → the verse post, word → word of the day,
+ * tafsir / hadith / dua / lemma → library cards, wiki → the encyclopedia posts, name / quiz / course / maqasid /
+ * mutashabihat → knowledge posts. Item ids are the libraries' own ids, so the 7-day seen window covers both the local
+ * libraries and the server. Kinds this build does not know are left out (null). Never throws.
+ */
+async function resolveCorpus(i: FeedItem, lang: string): Promise<RemotePost | null> {
+  const ref = i.ref ?? {};
+  const s = (v: unknown) => (typeof v === "string" ? v : typeof v === "number" ? String(v) : "");
+  try {
+    switch (i.postKind) {
+      case "verse": { const k = i.verseKey ?? s(ref.k); return validKey(k) ? { feedId: `v:${k}`, kind: "verse-of-day" } : null; }
+      case "word": return asPost(await wordByRef(s(ref.k), Number(ref.w), lang));
+      case "tafsir": return asPost(await tafsirByRef(Number(ref.t), s(ref.k)));
+      case "lemma": return asPost(lemmaItem(ref, lang));
+      case "hadith": { const n = Number(ref.n); return Number.isInteger(n) ? asPost(await sunniSource(s(ref.c), n, lang)) : null; }
+      case "shia-hadith": {
+        const b = s(ref.b), n = Number(ref.n);
+        const h = b && Number.isInteger(n) ? await shiaHadith(b, n, lang).catch(() => null) : null;
+        if (!h) return null;
+        const grade = h.grades[0] ? `\n\n${h.grades[0].by}: ${h.grades[0].grade}` : "";
+        return asPost({
+          id: `shia:${b}:${n}`, kind: "shia-hadith", title: `${h.collectionName}, ${h.number}`, body: [h.chapter ? `${h.chapter}\n` : "", h.text, h.text ? grade : ""].join(""),
+          arabic: h.arabic, lang: h.textLang, source: h.reference, sourceUrl: h.url || "https://thaqalayn.net", tradition: "shia", tags: [b],
+        } as SourceItem as LibItem);
+      }
+      case "dua": return asPost(await duaByRef(ref, lang));
+      case "wiki": {
+        const kind = s(ref.x), title = s(ref.t);
+        if (!isExtraKind(kind) || !title) return null;
+        return asPost((await extraItemsFor(kind, [title], lang))[0]);
+      }
+      case "name": case "quiz": case "course": case "maqasid": case "mutashabihat":
+        return asPost((await knowledge().knowledgeByRef(i.postKind, ref, lang, knowText(lang))) as LibItem | null);
+      default: {
+        // a corpus kind of a newer server: what carries a verse key or hadith id still works, the rest is left out
+        if (i.verseKey && validKey(i.verseKey)) return { feedId: `v:${i.verseKey}`, kind: "verse-of-day" };
+        if (i.hadithId) return asPost(await resolveItem({ ...i, kind: "editorial" }, lang));
+        return null;
+      }
+    }
+  } catch {
+    return null;
+  }
+}
+
 /** resolves a list, dropping unresolvable items and duplicates (by server id) */
-export async function resolveAll(items: FeedItem[], lang: string, known: Set<string>) {
-  const fresh = items.filter((i) => !known.has(i.id));
+export async function resolveAll(items: FeedItem[], lang: string, known: Set<string>): Promise<RemotePost[]> {
+  const fresh = items.filter((i) => i && typeof i.id === "string" && !known.has(i.id));
   fresh.forEach((i) => known.add(i.id));
-  const got = await Promise.all(fresh.map((i) => resolveItem(i, lang)));
-  return got.filter((x): x is NonNullable<typeof x> => !!x);
+  const got = await Promise.all(fresh.map((i) => (i.kind === "corpus" ? resolveCorpus(i, lang) : resolveItem(i, lang).then(asPost).catch(() => null))));
+  return got.filter((x): x is RemotePost => !!x);
 }

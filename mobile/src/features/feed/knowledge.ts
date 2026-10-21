@@ -5,7 +5,10 @@ import { islamDoc, loadChapter } from "@/web/islam";
 import { allahNames } from "@/features/prophet/stories";
 import { maqasidOf } from "@/features/shams2/maqasid";
 import { getChapters } from "@/lib/quran";
-import { allQuestions, locOf, qLangOf, type Q } from "@/features/qbank/bank";
+import { allQuestions, locOf, qLangOf, questionById, type Q } from "@/features/qbank/bank";
+import { MUT_GROUPS } from "@/features/shams2/mutData";
+import { S2_TEXT } from "@/features/shams2/text";
+import { courseText } from "@/features/courses/texts";
 import { drawAdaptive, poolOf } from "@/features/qbank/engine";
 import type { QSubject } from "@/features/qbank/types";
 import { CURRICULUM, FACULTIES, DEPARTMENTS, SUBJECT_PLACE, SUBJECTS, hrefOf, stateOf, timetable, titleOf, type FacultyId, type SubjectId } from "@/features/school/model";
@@ -108,10 +111,22 @@ const courses: Builder = (lang, kt) => COURSES.filter((c) => c.id !== "names").f
   };
 })).filter((i) => i.body.length > 40);
 
+/** the 99 names in the reader's language (the library chapter "names"), loaded once per language */
+const nameLists = new Map<string, Promise<ReturnType<typeof allahNames>>>();
+function nameList(lang: string) {
+  let p = nameLists.get(lang);
+  if (!p) {
+    const d = islamDoc("names");
+    p = d ? loadChapter(d, lang).then(allahNames) : Promise.resolve([]);
+    p.catch(() => nameLists.delete(lang));
+    nameLists.set(lang, p);
+  }
+  return p;
+}
+
 const names: Builder = async (lang, kt) => {
-  const d = islamDoc("names");
-  if (!d) return [];
-  const list = allahNames(await loadChapter(d, lang));
+  const list = await nameList(lang);
+  if (!list.length) return [];
   const course = COURSES.find((c) => c.id === "names");
   return list.map((n, i): KnowItem => ({
     id: `kn:names:${i}`, kind: "kn-names", lang, title: n.latin, body: n.meaning, arabic: n.ar, verse: nameRefs(list, i)[0],
@@ -310,6 +325,76 @@ const BUILD: Record<Exclude<KnowKind, "kn-exam" | "kn-moment">, Builder> = {
 const VOLATILE = new Set<KnowKind>(["kn-next"]);
 const cache = new Map<string, KnowItem[]>();
 
+/** the full list of a kind in this language (cached like the pages; "your next step" is rebuilt) */
+async function listOf(kind: Exclude<KnowKind, "kn-exam" | "kn-moment">, lang: string, kt: KnowText): Promise<KnowItem[]> {
+  const ck = `${kind}|${lang}`;
+  let all = VOLATILE.has(kind) ? undefined : cache.get(ck);
+  if (!all) {
+    all = shuffleBy(await BUILD[kind](lang, kt), hash(`${kind}:${day()}`));
+    if (!VOLATILE.has(kind)) cache.set(ck, all);
+  }
+  return all;
+}
+
+/**
+ * One knowledge post for a reference of the server corpus (/api/feed/page, see the website's src/lib/feed/types.ts
+ * FeedRef): name {i, v}, quiz {q}, course {c, l} or {kit, l}, maqasid {s, f?}, mutashabihat {g, keys}. Built from the
+ * app's own content like every other knowledge post; null when the item is unknown here or hidden (tradition, Nahj).
+ * Never throws.
+ */
+export async function knowledgeByRef(kind: string, ref: Record<string, unknown>, lang: string, kt: KnowText): Promise<KnowItem | null> {
+  try {
+    const find = async (k: Exclude<KnowKind, "kn-exam" | "kn-moment">, id: string) => (knowVisible(k) ? (await listOf(k, lang, kt)).find((x) => x.id === id) ?? null : null);
+    switch (kind) {
+      case "quiz": {
+        const q = typeof ref.q === "string" ? questionById(ref.q) : undefined;
+        return q ? examItem(q, lang, kt) : null;
+      }
+      case "course":
+        if (ref.kit === "abrahamic" || ref.kit === "haramain") return find(ref.kit === "abrahamic" ? "kn-abrahamic" : "kn-haramain", `kn:kn-${ref.kit}:${String(ref.l)}`);
+        return find("kn-course", `kn:course:${String(ref.c)}:${String(ref.l)}`);
+      case "maqasid":
+        return find("kn-tadabbur", ref.f !== undefined ? `kn:tadabbur:${Number(ref.s)}:${Number(ref.f)}` : `kn:tadabbur:${Number(ref.s)}`);
+      case "name": {
+        const i = Number(ref.i);
+        const base = Number.isInteger(i) ? await find("kn-names", `kn:names:${i}`) : null;
+        if (!base) return null;
+        if (ref.v === "verse") {
+          // the same name with its next place in the Quran (only when there is a second one)
+          const second = nameRefs(await nameList(lang), i)[1];
+          return second ? { ...base, id: `kn:names:${i}:verse`, verse: second } : null;
+        }
+        if (ref.v === "quiz") {
+          const list = await nameList(lang);
+          const others = shuffleBy(list.map((n, k) => ({ n, k })).filter((x) => x.k !== i && x.n.meaning && x.n.meaning !== list[i]?.meaning), hash(`name-quiz:${i}`)).slice(0, 3);
+          if (others.length < 3 || !list[i]?.meaning) return null;
+          const order = shuffleBy([0, 1, 2, 3], hash(`name-order:${i}`));
+          const opts = [list[i].meaning, ...others.map((x) => x.n.meaning)];
+          return {
+            ...base, id: `kn:names:${i}:quiz`, title: courseText(lang, "nameQ"), body: "", verse: undefined, eyebrow: `${base.eyebrow ?? ""} · ${list[i].latin}`,
+            quiz: { options: order.map((k) => opts[k]), answer: order.indexOf(0), explain: `${list[i].latin}: ${list[i].meaning}`, level: 1 },
+          };
+        }
+        return base;
+      }
+      case "mutashabihat": {
+        const g = MUT_GROUPS.find((x) => x.id === ref.g);
+        if (!g) return null;
+        const cl = cl3(lang);
+        return {
+          id: `kn:mut:${g.id}`, kind: "kn-tadabbur", lang, title: g.topic[cl] || g.topic.en, body: "", bullets: g.keys.map((k) => `Quran ${k}`),
+          eyebrow: `${S2_TEXT[cl].mutTitle} · ${g.keys.join(" · ")}`, subject: "quran", href: "/shams/mutashabihat", cta: "ctaShams", verse: g.keys[0],
+          review: true, source: `${BRAND} · Shams 2.0`, sourceUrl: "",
+        };
+      }
+      default:
+        return null;
+    }
+  } catch {
+    return null;
+  }
+}
+
 const momentCursor = new Map<string, string | null>();
 /**
  * One page of a knowledge kind (PAGE items). Order: a fixed shuffle per day (the word of the day is the first word of
@@ -337,12 +422,7 @@ export async function knowledgeFeedItems(kind: KnowKind, lang: string, page: num
         href: "/talents/friends", cta: "ctaMoment", moment: m, source: BRAND, sourceUrl: "",
       }));
     }
-    const ck = `${kind}|${lang}`;
-    let all = VOLATILE.has(kind) ? undefined : cache.get(ck);
-    if (!all) {
-      all = shuffleBy(await BUILD[kind](lang, kt), hash(`${kind}:${day()}`));
-      if (!VOLATILE.has(kind)) cache.set(ck, all);
-    }
+    const all = await listOf(kind, lang, kt);
     return all.slice(page * PAGE, page * PAGE + PAGE);
   } catch {
     return [];
