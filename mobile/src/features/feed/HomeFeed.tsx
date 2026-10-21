@@ -415,7 +415,7 @@ const Post = memo(function Post(p: PostProps) {
               </View>
               <View style={{ gap: 12 * k }}>
                 {media.arabic ? (
-                  <Text allowFontScaling={false} accessibilityLanguage="ar" numberOfLines={media.big ? 2 : undefined}
+                  <Text allowFontScaling={false} accessibilityLanguage="ar" numberOfLines={media.big ? 2 : 14} adjustsFontSizeToFit minimumFontScale={0.45}
                     style={{ fontFamily: ARABIC_FONT, fontSize: (media.big ? 30 : arabicSize(media.arabic.length)) * k, lineHeight: (media.big ? 30 : arabicSize(media.arabic.length)) * k * 1.85, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{media.arabic}</Text>
                 ) : !media.big ? <Text style={{ alignSelf: "center", fontFamily: FONT.regular, fontSize: 13, color: stage.textMuted }}>{tx.loading}</Text> : null}
                 {media.body ? (
