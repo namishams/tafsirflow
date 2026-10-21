@@ -37,6 +37,7 @@ import { CalendarPost, CarouselPost, ChaptersPost, LearnLink, MemoPost, PrayerPo
 import { allowedReciter, isFreeReciter } from "@/features/quran/reciter";
 import { lastVisit, markSeen, touchVisit, wasSeen } from "./seen";
 import { ExploreSheet, SavedSheet, type OpenItem } from "./Explore";
+import { usePT } from "@/features/talents/profileText";
 import { hadithFeedItems, type HadithFeedItem } from "./hadith";
 import { ReciterSheet, useFeedAudioGuard, useFeedVoice } from "./voice";
 import { SAVED_KEY as HADITH_SAVED_KEY, toggleSaved as toggleSavedHadith, type HadithItem } from "@/features/hadith/data";
@@ -93,6 +94,7 @@ function useLocalFlag(storageKey: string, id: string) {
 
 export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: "home" | "reels"; onTab: (t: "home" | "reels") => void; inTab?: boolean; bottomSpace?: number; onOpen?: OpenItem }) {
   const tx = useFeedText();
+  const tpp = usePT();
   const pt = useProphetText();
   const t = useTheme();
   const { lang } = useLang();
@@ -560,6 +562,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
             <Wordmark variant="stacked" height={32} />
           </Pressable>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
+            {/* search (owner, 21.10.2026): accounts and learning content, like Instagram / TikTok */}
+            <HeadBtn label={tpp("searchLabel")} onPress={() => router.push("/talents/search" as Href)}><Icon name="search" color={t.ink} size={22} /></HeadBtn>
             <HeadBtn label={tx.explore} onPress={() => setSheet("explore")}><Icon name="compass" color={t.ink} size={23} /></HeadBtn>
             <HeadBtn label={tx.saved} onPress={() => setSheet("saved")}><Icon name="bookmark" color={t.ink} size={22} /></HeadBtn>
             <HeadBtn label={tx.statsOpen} onPress={() => router.push("/feed-stats" as Href)}><Icon name="trophy" color={t.ink} size={22} /></HeadBtn>
@@ -568,11 +572,13 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
           </View>
         </View>
         <View accessibilityRole="tablist" style={{ height: TABS_H, flexDirection: "row" }}>
-          {(["home", "reels"] as const).map((k) => {
+          {(["home", "reels", "explore"] as const).map((k) => {
             const on = tab === k;
+            // Explore opens the full-screen Explore grid (same as the compass), like Instagram's third view
+            const press = () => (k === "explore" ? setSheet("explore") : on ? toTop() : onTab(k));
             return (
-              <Pressable key={k} onPress={() => (on ? toTop() : onTab(k))} accessibilityRole="tab" accessibilityState={{ selected: on }} style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-                <Text style={{ fontFamily: on ? FONT.semibold : FONT.medium, fontSize: 14, letterSpacing: 0.3, color: on ? t.ink : t.muted }}>{k === "home" ? tx.home : tx.reels}</Text>
+              <Pressable key={k} onPress={press} accessibilityRole="tab" accessibilityState={{ selected: on }} style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+                <Text style={{ fontFamily: on ? FONT.semibold : FONT.medium, fontSize: 14, letterSpacing: 0.3, color: on ? t.ink : t.muted }}>{k === "home" ? tx.home : k === "reels" ? tx.reels : tx.explore}</Text>
                 {/* the selected view: a fine gold rule with a small lozenge, like a mushaf divider */}
                 {on ? <View style={{ position: "absolute", bottom: 0, alignItems: "center", justifyContent: "center", width: 64, height: 7 }}>
                   <LinearGradient colors={["rgba(214,180,108,0)", "rgb(201,166,94)", "rgba(214,180,108,0)"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ position: "absolute", left: 0, right: 0, height: 1.5 }} />
@@ -596,7 +602,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         </View>
       ) : null}
       <PostMenu item={menu} onClose={() => setMenu(null)} stories={stories} onShare={(s) => { setMenu(null); setShare(s); }} onVoices={() => { setMenu(null); setSheet("voices"); }} />
-      <ExploreSheet visible={sheet === "explore"} onClose={() => setSheet(null)} onOpen={openItem} />
+      <ExploreSheet visible={sheet === "explore"} onClose={() => setSheet(null)} onOpen={openItem} onSearch={() => router.push("/talents/search" as Href)} />
       <SavedSheet visible={sheet === "saved"} onClose={() => { setSheet(null); setTimeout(nudgeAccount, 500); }} onOpen={openItem} />
       <ReciterSheet visible={sheet === "voices"} onClose={() => setSheet(null)} />
       <AccountNudge />
