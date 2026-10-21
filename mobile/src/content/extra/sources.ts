@@ -4,6 +4,7 @@ import { meaning } from "@/web/vocabI18n";
 import { ART, HISTORY, MOSQUES, RECITER_ARTICLES, SCHOLARS, SEERAH, WORKS, SPREAD, GOLDEN_AGE, TRADITIONS, WOMEN, PROPHETS, CALLIGRAPHY, ARCHITECTURE, MONTHS, PILLARS, type CatalogEntry } from "./catalog";
 import { SALAH, PILLARS_FAITH, HOLY_PLACES, SAUDI_HERITAGE, QURAN_FACTS, UNSEEN, ETHICS, FAMILY, BATTLES, FINANCE, HALAL, PHRASES } from "./catalog2";
 import { ISLAM_IN } from "./countries";
+import { ABRAHAMIC_PLACES, ABRAHAMIC_PROPHETS, ABRAHAMIC_RELIGIONS, INTERFAITH_HISTORY } from "./abrahamic";
 import type { ExtraItem, ExtraKind } from "./types";
 import { WIKI_LICENSE, WIKI_LICENSE_URL, cached, claimDate, claimItem, claimYear, commonsImages, getJSON, label, wikiPages, wikidataEntities } from "./wiki";
 
@@ -17,7 +18,7 @@ const slice = <T,>(a: T[], page: number) => (a.length ? a.slice((page * PAGE_SIZ
 const wikiSource = (lang: string) => (lang === "de" ? "Wikipedia (Autorinnen und Autoren)" : "Wikipedia contributors");
 
 /** Wikipedia items for a catalog slice, with a free Commons image when the article has one */
-async function wikiItems(kind: ExtraKind, entries: CatalogEntry[], lang: string, extra?: (e: CatalogEntry) => Partial<ExtraItem>): Promise<ExtraItem[]> {
+export async function wikiItems(kind: ExtraKind, entries: CatalogEntry[], lang: string, extra?: (e: CatalogEntry) => Partial<ExtraItem>): Promise<ExtraItem[]> {
   const pages = await wikiPages(entries.map((e) => e.title), lang);
   const imgs = await commonsImages([...pages.values()].map((p) => p.imageFile).filter((f): f is string => !!f)).catch(() => new Map());
   const out: ExtraItem[] = [];
@@ -225,5 +226,9 @@ export async function loadKind(kind: ExtraKind, lang: string, page: number): Pro
     case "islamic-finance": return simple(kind, FINANCE, lang, page);
     case "halal-culture": return simple(kind, HALAL, lang, page);
     case "phrases": return simple(kind, PHRASES, lang, page);
+    case "abrahamic-prophets": return simple(kind, ABRAHAMIC_PROPHETS, lang, page);
+    case "abrahamic-religions": return simple(kind, ABRAHAMIC_RELIGIONS, lang, page);
+    case "abrahamic-places": return simple(kind, ABRAHAMIC_PLACES, lang, page);
+    case "interfaith-history": return simple(kind, INTERFAITH_HISTORY, lang, page);
   }
 }

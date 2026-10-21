@@ -87,6 +87,26 @@
         "deeplink": "quranmasterclass://reciter-path"
       },
       {
+        "id": "abrahamic",
+        "title": {
+          "de": "Abraham und die abrahamitischen Religionen",
+          "en": "Abraham and the Abrahamic religions",
+          "ar": "إبراهيم والأديان الإبراهيمية",
+          "tr": "Hz. İbrahim ve İbrahimî dinler",
+          "ur": "حضرت ابراہیم اور ابراہیمی مذاہب",
+          "fa": "ابراهیم و ادیان ابراهیمی",
+          "ps": "ابراهیم او ابراهیمي دینونه",
+          "fr": "Abraham et les religions abrahamiques",
+          "es": "Abraham y las religiones abrahámicas",
+          "id": "Ibrahim dan agama-agama Abrahamik",
+          "ms": "Ibrahim dan agama-agama Abrahamik",
+          "bn": "ইব্রাহিম ও আব্রাহামীয় ধর্মসমূহ",
+          "ru": "Авраам и авраамические религии",
+          "zh": "亚伯拉罕与亚伯拉罕诸宗教"
+        },
+        "deeplink": "quranmasterclass://abrahamic"
+      },
+      {
         "id": "pro",
         "title": {
           "de": "Pro freischalten",

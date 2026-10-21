@@ -1,7 +1,8 @@
 // Extra feed content beyond Quran and hadith: reciters, mosques, art, scholars, seerah, history, Arabic words.
 // Every item carries source + license (+ image credit); show them with the item. See types.ts for the shape.
 import { readTradition, type TraditionChoice } from "@/lib/tradition";
-import { loadKind, PAGE_SIZE } from "./sources";
+import { loadKind, PAGE_SIZE, wikiItems } from "./sources";
+import { cached } from "./wiki";
 import { EXTRA_KINDS, type ExtraItem, type ExtraKind } from "./types";
 
 export { EXTRA_KINDS, PAGE_SIZE };
@@ -28,3 +29,15 @@ function safeTradition(): TraditionChoice | null {
 }
 
 export const isExtraKind = (k: string): k is ExtraKind => (EXTRA_KINDS as readonly string[]).includes(k);
+
+/** Wikipedia items (with attribution and free Commons image) for given English titles, e.g. the encyclopedia items of a course unit */
+export async function extraItemsFor(kind: ExtraKind, titles: string[], lang: string): Promise<ExtraItem[]> {
+  try {
+    return await cachedTitles(kind, titles, (lang || "en").toLowerCase().split(/[-_]/)[0]);
+  } catch {
+    return [];
+  }
+}
+
+const cachedTitles = (kind: ExtraKind, titles: string[], lang: string) =>
+  cached(`v1.titles.${kind}.${lang}.${titles.join("|")}`, () => wikiItems(kind, titles.map((title) => ({ title, tradition: "all" as const })), lang));

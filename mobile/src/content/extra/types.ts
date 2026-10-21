@@ -35,6 +35,10 @@ export const EXTRA_KINDS = [
   "islamic-finance", // finance concepts
   "halal-culture", // halal, food culture
   "phrases", // greetings and phrases (Bismillah, InshaAllah, ...)
+  "abrahamic-prophets", // prophets shared with Judaism and Christianity: the figure in Islam and the general article
+  "abrahamic-religions", // Abrahamic religions, People of the Book, the revealed books, Hanif, Millat Ibrahim
+  "abrahamic-places", // Hebron, Jerusalem, Sinai, Mecca, Zamzam, Abrahamic Family House (Abu Dhabi)
+  "interfaith-history", // neutral history of Muslim relations with Jews and Christians, Amman Message, A Common Word, Human Fraternity
   "arabic-word", // Arabic word and root of the day from the app's own vocabulary
 ] as const;
 export type ExtraKind = (typeof EXTRA_KINDS)[number];
