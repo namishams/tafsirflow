@@ -168,7 +168,7 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ),
     quiz: [
       q(["Which verse did the Prophet recite while removing the idols?", "Welchen Vers rezitierte der Prophet beim Entfernen der Götzen?", "أي آية قرأها النبي ﷺ عند إزالة الأصنام؟"],
-        [["The truth has come and falsehood has vanished", "Die Wahrheit ist gekommen, das Falsche vergangen", "جاء الحق وزهق الباطل"], ["Read in the name of your Lord", "Lies im Namen deines Herrn", "اقرأ باسم ربك"], ["Say: He is God, One", "Sprich: Er ist Gott, ein Einziger", "قل هو الله أحد"]], 0),
+        [["The truth has come and falsehood has vanished", "Die Wahrheit ist gekommen, das Falsche vergangen", "جاء الحق وزهق الباطل"], ["Read in the name of your Lord", "Lesen Sie im Namen Ihres Herrn", "اقرأ باسم ربك"], ["Say: He is God, One", "Sprechen Sie: Er ist Gott, ein Einziger", "قل هو الله أحد"]], 0),
       q(["How did the Prophet treat the people of Mecca?", "Wie behandelte der Prophet die Mekkaner?", "كيف عامل النبي ﷺ أهل مكة؟"],
         [["General amnesty", "Allgemeine Amnestie", "عفو عام"], ["Exile", "Verbannung", "النفي"], ["Heavy tribute", "Hoher Tribut", "جزية ثقيلة"]], 0),
     ],

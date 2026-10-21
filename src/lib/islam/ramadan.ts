@@ -6,7 +6,7 @@ export const ramadan: IslamDoc = {
   de: {
     title: "Ramadan und das Fasten",
     kicker: "Der Monat des Korans",
-    lead: "Ramadan ist der neunte Monat des islamischen Kalenders – der Monat, in dem der Koran herabgesandt wurde, und der Monat, in dem Muslime von der Morgendämmerung bis zum Sonnenuntergang fasten. Er ist eine Zeit der Stille und der Gemeinschaft, der Geduld und der Großzügigkeit. Hier erfährst du, wie das Fasten funktioniert, wie du gesund durch den Monat kommst, was die letzten zehn Nächte so besonders macht und wie du dir mit einem sanften 30-Tage-Plan eigene Ziele mit dem Koran setzt.",
+    lead: "Ramadan ist der neunte Monat des islamischen Kalenders – der Monat, in dem der Koran herabgesandt wurde, und der Monat, in dem Muslime von der Morgendämmerung bis zum Sonnenuntergang fasten. Er ist eine Zeit der Stille und der Gemeinschaft, der Geduld und der Großzügigkeit. Hier erfahren Sie, wie das Fasten funktioniert, wie Sie gesund durch den Monat kommen, was die letzten zehn Nächte so besonders macht und wie Sie sich mit einem sanften 30-Tage-Plan eigene Ziele mit dem Koran setzt.",
     facts: [
       { n: "2:185", l: "Der Monat, in dem der Koran herabgesandt wurde" },
       { n: "29–30", l: "Tage, je nach Sichtung des Neumonds" },
@@ -50,7 +50,7 @@ Das Fasten wird gebrochen durch:
 - absichtlich herbeigeführtes **Erbrechen**,
 - den Eintritt von **Menstruation oder Wochenbettblutung**.
 
-Wer dagegen *aus Vergessen* isst oder trinkt, dessen Fasten bleibt gültig. Der Prophet ﷺ sagte: „Wer vergisst, dass er fastet, und isst oder trinkt, der soll sein Fasten vollenden, denn Allah hat ihn gespeist und getränkt“ (al-Bukhari und Muslim). Auch Duschen, Zähneputzen mit dem Miswak oder unbeabsichtigtes Schlucken von Speichel brechen das Fasten nicht. Bei medizinischen Fragen – Tabletten, Spritzen, Inhalatoren – sprich am besten mit einem Gelehrten und mit deinem Arzt; hier gibt es Einzelheiten, die man nicht pauschal beantworten sollte.
+Wer dagegen *aus Vergessen* isst oder trinkt, dessen Fasten bleibt gültig. Der Prophet ﷺ sagte: „Wer vergisst, dass er fastet, und isst oder trinkt, der soll sein Fasten vollenden, denn Allah hat ihn gespeist und getränkt“ (al-Bukhari und Muslim). Auch Duschen, Zähneputzen mit dem Miswak oder unbeabsichtigtes Schlucken von Speichel brechen das Fasten nicht. Bei medizinischen Fragen – Tabletten, Spritzen, Inhalatoren – sprechen Sie am besten mit einem Gelehrten und mit Ihrem Arzt; hier gibt es Einzelheiten, die man nicht pauschal beantworten sollte.
 
 ## Suhur und Iftar
 
@@ -58,14 +58,14 @@ Der Tag des Fastenden hat zwei besondere Mahlzeiten. Die erste ist der **Suhur**
 
 Die zweite ist der **Iftar**, das Fastenbrechen bei Sonnenuntergang. Der Prophet ﷺ sagte: „Die Menschen bleiben im Guten, solange sie das Fastenbrechen nicht hinauszögern“ (al-Bukhari und Muslim). Er brach sein Fasten mit frischen Datteln, und wenn es keine gab, mit getrockneten, und wenn es auch die nicht gab, mit ein paar Schlucken Wasser (überliefert bei Abu Dawud und at-Tirmidhi). Es wird überliefert, dass er dabei sagte: *Dhahaba az-zama'u wabtallatil-'uruqu wa thabatal-adschru in scha'a Allah* – „Der Durst ist vergangen, die Adern sind wieder feucht, und der Lohn ist gewiss, so Allah will“ (Abu Dawud). Danach folgt das Abendgebet, und erst dann die eigentliche Mahlzeit – oft im Kreis der Familie, mit Nachbarn und Gästen.
 
-Nutze auch die Minuten vor dem Fastenbrechen: Es wird überliefert, dass das Bittgebet des Fastenden nicht zurückgewiesen wird, bis er sein Fasten bricht (at-Tirmidhi). In der dschafaritischen Rechtsschule der Schiiten wird das Fasten übrigens einige Minuten später gebrochen, wenn nach Sonnenuntergang die Röte am östlichen Himmel verschwunden ist.
+Nutzen Sie auch die Minuten vor dem Fastenbrechen: Es wird überliefert, dass das Bittgebet des Fastenden nicht zurückgewiesen wird, bis er sein Fasten bricht (at-Tirmidhi). In der dschafaritischen Rechtsschule der Schiiten wird das Fasten übrigens einige Minuten später gebrochen, wenn nach Sonnenuntergang die Röte am östlichen Himmel verschwunden ist.
 
 ## Gesund durch den Ramadan
 
-Das Fasten soll dir nicht schaden – „Allah will für euch Erleichterung“ (Koran 2:185). Diese allgemeinen Hinweise helfen vielen; sie ersetzen aber keinen ärztlichen Rat:
+Das Fasten sollen Sie sich nicht schaden – „Allah will für euch Erleichterung“ (Koran 2:185). Diese allgemeinen Hinweise helfen vielen; sie ersetzen aber keinen ärztlichen Rat:
 
 - **Genug trinken, aber verteilt.** Trink zwischen Iftar und Suhur regelmäßig Wasser, lieber Glas für Glas als alles auf einmal. In heißen Monaten ist das besonders wichtig.
-- **Sanft beginnen.** Brich das Fasten mit Datteln und Wasser, bete Maghrib und iss danach in Ruhe. Wer nach einem langen Tag zu schnell und zu viel isst, fühlt sich oft schwer und müde.
+- **Sanft beginnen.** Brich das Fasten mit Datteln und Wasser, beten Sie Maghrib und iss danach in Ruhe. Wer nach einem langen Tag zu schnell und zu viel isst, fühlt sich oft schwer und müde.
 - **Ausgewogen essen.** Beim Suhur halten Vollkorn, Haferflocken, Eier, Joghurt, Obst und Gemüse oft länger vor. Beim Iftar tun Suppe, Salat, Gemüse und etwas Eiweiß gut; Frittiertes, sehr Süßes und sehr Salziges besser in Maßen.
 - **Maß halten.** Es wird überliefert, dass der Prophet ﷺ empfahl, den Magen zu einem Drittel mit Essen, zu einem Drittel mit Trinken und zu einem Drittel mit Atem zu füllen (at-Tirmidhi).
 - **Schlaf einplanen.** Ein kurzer Mittagsschlaf kann helfen, die kürzeren Nächte auszugleichen.
@@ -79,7 +79,7 @@ Nach dem Nachtgebet ('Ischa) versammeln sich die Gläubigen zum **Tarawih**-Gebe
 
 ## Die letzten zehn Nächte
 
-Aischa berichtet: Wenn die letzten zehn Nächte begannen, band der Prophet ﷺ sein Gewand fest, verbrachte die Nacht im Gebet und weckte seine Familie (al-Bukhari und Muslim). Diese Tage sind der Höhepunkt des Monats – lass ihnen Raum in deinem Kalender.
+Aischa berichtet: Wenn die letzten zehn Nächte begannen, band der Prophet ﷺ sein Gewand fest, verbrachte die Nacht im Gebet und weckte seine Familie (al-Bukhari und Muslim). Diese Tage sind der Höhepunkt des Monats – lassen Sie ihnen Raum in Ihrem Kalender.
 
 ### Laylat al-Qadr – die Nacht der Bestimmung
 
@@ -91,7 +91,7 @@ Schiitische Muslime verbringen besonders die Nächte zum 19., 21. und 23. Ramada
 
 ### I'tikaf – Rückzug in die Moschee
 
-In den letzten zehn Tagen des Ramadan zog sich der Prophet ﷺ jedes Jahr in die Moschee zurück, bis Allah ihn zu sich nahm (al-Bukhari und Muslim). Dieser **I'tikaf** ist eine Zeit des Gebets, des Korans und des Gedenkens, fern vom Alltag. Wer nicht zehn Tage freinehmen kann, verbringt vielleicht einige Nächte oder Stunden in der Moschee – auch das ist ein Schritt auf demselben Weg. Auch in den Emiraten bieten viele Moscheen in den letzten zehn Nächten I'tikaf an; frag am besten vorher bei deiner Moschee, wie es dort geregelt ist.
+In den letzten zehn Tagen des Ramadan zog sich der Prophet ﷺ jedes Jahr in die Moschee zurück, bis Allah ihn zu sich nahm (al-Bukhari und Muslim). Dieser **I'tikaf** ist eine Zeit des Gebets, des Korans und des Gedenkens, fern vom Alltag. Wer nicht zehn Tage freinehmen kann, verbringt vielleicht einige Nächte oder Stunden in der Moschee – auch das ist ein Schritt auf demselben Weg. Auch in den Emiraten bieten viele Moscheen in den letzten zehn Nächten I'tikaf an; frag am besten vorher bei Ihrer Moschee, wie es dort geregelt ist.
 
 ## Der Monat des Gebens
 
@@ -117,36 +117,36 @@ Bei uns in den Emiraten verändert der Ramadan das ganze Land. Schon Tage vorher
 - **Majlis und Ghabga:** Nach dem Tarawih öffnen Familien ihre Majlis. Die *Ghabga*, ein spätes Beisammensein mit Essen zwischen Iftar und Suhur, ist eine alte Tradition am Golf. Auf dem Tisch stehen oft *Luqaimat*, kleine frittierte Teigbällchen mit Dattelsirup, und *Harees*.
 - **Der Koran im Mittelpunkt:** In Dubai findet jedes Jahr im Ramadan der **Dubai International Holy Quran Award** statt, ein internationaler Wettbewerb im Auswendiglernen des Korans, zu dem junge Hafiz aus vielen Ländern anreisen. Wer die Rezitationen hört, versteht, warum der Ramadan der Monat des Korans genannt wird.
 
-## Deine Koranziele im Ramadan
+## Ihre Koranziele im Ramadan
 
-Der Koran hat in der üblichen Medina-Ausgabe 604 Seiten. Nicht jeder muss ihn im Ramadan ganz lesen – wichtiger ist ein Ziel, das zu dir passt und das du ehrlich durchhältst:
+Der Koran hat in der üblichen Medina-Ausgabe 604 Seiten. Nicht jeder muss ihn im Ramadan ganz lesen – wichtiger ist ein Ziel, das zu Ihnen pasen und das Sie ehrlich durchhalten:
 
 - **Ein ganzer Koran (Khatm):** etwa **20 Seiten am Tag**, ein Dschuz'. Am leichtesten mit **vier Seiten nach jedem der fünf Gebete**.
 - **Ein halber Koran:** etwa 10 Seiten am Tag – zwei Seiten nach jedem Gebet.
 - **Verstehen statt Menge:** jeden Tag eine kurze Passage mit Übersetzung und Tafsir. Lieber weniger mit Herz als viel ohne Verständnis.
 - **Auswendiglernen:** eine kurze Sure pro Woche, etwa aus dem letzten Teil des Korans, Schritt für Schritt mit der [Shams-Methode](/shams).
-- **Hören:** Auf dem Weg zur Arbeit oder beim Kochen kannst du die Rezitation hören und Vers für Vers mitverfolgen.
+- **Hören:** Auf dem Weg zur Arbeit oder beim Kochen können Sie die Rezitation hören und Vers für Vers mitverfolgen.
 
-Fang am besten schon einige Tage vor dem Ramadan an oder lies an ruhigen Tagen etwas mehr, damit du in den letzten zehn Nächten Luft für Gebet und Bittgebete hast. Mit unserem [Khatm-Planer](/khatm) verteilst du den ganzen Koran auf 30 Tage und verfolgst deinen Fortschritt; wer langfristig auswendig lernen möchte, findet im [Memorierplan](/plan) einen Plan Monat für Monat. Den Koran selbst findest du mit Rezitation, Übersetzung und Tafsir auf unserer [Koran](/quran)-Seite.
+Fangen Sie am besten schon einige Tage vor dem Ramadan an oder lesen Sie an ruhigen Tagen etwas mehr, damit Sie in den letzten zehn Nächten Luft für Gebet und Bittgebete haben. Mit unserem [Khatm-Planer](/khatm) verteilen Sie den ganzen Koran auf 30 Tage und verfolgen Ihren Fortschritt; wer langfristig auswendig lernen möchte, findet im [Memorierplan](/plan) einen Plan Monat für Monat. Den Koran selbst finden Sie mit Rezitation, Übersetzung und Tafsir auf unserer [Koran](/quran)-Seite.
 
 ## Ein sanfter 30-Tage-Plan
 
-Kein Programm, das dich unter Druck setzt, sondern ein Geländer, an dem du dich festhalten kannst. Nimm dir, was zu dir passt.
+Kein Programm, das Sie unter Druck setzt, sondern ein Geländer, an dem Sie sich festhalten können. Nehmen Sie sich, was zu Ihnen pasen.
 
-**Vorher, im Scha'ban:** verpasste Fastentage nachholen, deine Ziele aufschreiben, Koffein langsam verringern und im [Khatm-Planer](/khatm) dein tägliches Pensum festlegen.
+**Vorher, im Scha'ban:** verpasste Fastentage nachholen, Ihre Ziele aufschreiben, Koffein langsam verringern und im [Khatm-Planer](/khatm) Ihr tägliches Pensum festlegen.
 
 **Tage 1–10 – ankommen:**
 
 - die fünf Gebete pünktlich beten, wenn möglich in Gemeinschaft,
-- jeden Tag deinen Koranabschnitt lesen, auch wenn er klein ist,
-- jeden Tag ein kurzes Bittgebet lernen – Anregungen findest du bei unseren [Duas](/duas),
+- jeden Tag Ihren Koranabschnitt lesen, auch wenn er klein ist,
+- jeden Tag ein kurzes Bittgebet lernen – Anregungen finden Sie bei unseren [Duas](/duas),
 - den Suhur nicht auslassen und beim Iftar maßvoll bleiben.
 
 **Tage 11–20 – vertiefen:**
 
-- zu deinem Tagesabschnitt einige Verse mit Tafsir lesen,
+- zu Ihrem Tagesabschnitt einige Verse mit Tafsir lesen,
 - jede Woche jemanden zum Iftar einladen oder ein Essen spenden,
-- deine persönlichen Anliegen sammeln: Mit dem [Dua-Generator](/dua-generator) stellst du dir ein Bittgebet in deinen eigenen Worten zusammen,
+- Ihre persönlichen Anliegen sammeln: Mit dem [Dua-Generator](/dua-generator) stellen Sie sich ein Bittgebet in Ihren eigenen Worten zusammen,
 - eine Gewohnheit bewusst ablegen – zum Beispiel das Handy beim Iftar weglegen.
 
 **Tage 21–30 – die letzten zehn Nächte:**
@@ -157,27 +157,27 @@ Kein Programm, das dich unter Druck setzt, sondern ein Geländer, an dem du dich
 - jeden Abend eine kleine Spende geben, damit die Nacht der Bestimmung, wann immer sie ist, nicht ohne Sadaqa vergeht,
 - die Zakat al-Fitr rechtzeitig vor dem Eid-Gebet entrichten.
 
-**Danach:** Behalte wenigstens eine Gewohnheit aus dem Ramadan bei – und vielleicht die sechs Fastentage im Schawwal.
+**Danach:** Behalten Sie wenigstens eine Gewohnheit aus dem Ramadan bei – und vielleicht die sechs Fastentage im Schawwal.
 
 ## Tipps für Familien und Berufstätige
 
-**Für Kinder:** Lass sie stufenweise beginnen – zuerst bis zum Mittag, dann bis zum Nachmittag, später einen ganzen Tag am Wochenende. Lass sie beim Iftar helfen, den Tisch decken, Datteln an Nachbarn verteilen. Ein Ramadan-Kalender, in dem sie jeden Tag eine kurze Sure, eine gute Tat oder ein Bittgebet abhaken, macht den Monat greifbar. Und lob sie viel – die Liebe zum Ramadan entsteht durch Freude, nicht durch Druck.
+**Für Kinder:** Lassen Sie sie stufenweise beginnen – zuerst bis zum Mittag, dann bis zum Nachmittag, später einen ganzen Tag am Wochenende. Lassen Sie sie beim Iftar helfen, den Tisch decken, Datteln an Nachbarn verteilen. Ein Ramadan-Kalender, in dem sie jeden Tag eine kurze Sure, eine gute Tat oder ein Bittgebet abhaken, macht den Monat greifbar. Und lob sie viel – die Liebe zum Ramadan entsteht durch Freude, nicht durch Druck.
 
 **Für Berufstätige:**
 
 - Iss beim Suhur etwas Nahrhaftes und trink zwischen Iftar und Suhur ausreichend Wasser.
-- Lege anspruchsvolle Aufgaben, wenn möglich, in die Vormittagsstunden.
-- Nutze die Mittagspause für ein kurzes Nickerchen oder ein paar Seiten Koran.
-- Sei geduldig mit dir und anderen. Der Prophet ﷺ lehrte: Wenn dich jemand beschimpft, so sag: „Ich faste“ (al-Bukhari und Muslim).
+- Legen Sie anspruchsvolle Aufgaben, wenn möglich, in die Vormittagsstunden.
+- Nutzen Sie die Mittagspause für ein kurzes Nickerchen oder ein paar Seiten Koran.
+- Sei geduldig mit Ihnen und anderen. Der Prophet ﷺ lehrte: Wenn Sie jemand beschimpft, so sag: „Ich faste“ (al-Bukhari und Muslim).
 
-Und ganz gleich, wie voll dein Tag ist: Ein Ramadan, in dem du jeden Tag ein wenig Koran liest, gut zu deiner Familie bist und dein Fasten ehrlich hältst, ist ein gesegneter Ramadan. Am Ende des Monats folgt das Fest des Fastenbrechens – mehr dazu im Kapitel [Die wichtigen Tage des islamischen Jahres](/islam/eid).`,
+Und ganz gleich, wie voll Ihr Tag ist: Ein Ramadan, in dem Sie jeden Tag ein wenig Koran lesen, gut zu Ihrer Familie sind und Ihr Fasten ehrlich halten, ist ein gesegneter Ramadan. Am Ende des Monats folgt das Fest des Fastenbrechens – mehr dazu im Kapitel [Die wichtigen Tage des islamischen Jahres](/islam/eid).`,
     faq: [
       { q: "Von wann bis wann wird im Ramadan gefastet?", a: "Von der Morgendämmerung, also dem Beginn der Zeit des Morgengebets, bis zum Sonnenuntergang. In dieser Zeit verzichtet man auf Essen, Trinken und ehelichen Verkehr (Koran 2:187)." },
       { q: "Bricht es das Fasten, wenn ich aus Versehen etwas esse?", a: "Nein. Wer vergisst, dass er fastet, und isst oder trinkt, fastet einfach weiter – der Prophet ﷺ sagte, Allah habe ihn gespeist und getränkt (al-Bukhari und Muslim)." },
-      { q: "Ich bin krank – muss ich fasten?", a: "Nein, wenn das Fasten dir schadet. Kranke und Reisende holen die Tage später nach (Koran 2:184). Wer dauerhaft nicht fasten kann, gibt eine Fidya: Für jeden Tag wird ein Bedürftiger gespeist. Sprich bei Vorerkrankungen vor dem Ramadan mit deinem Arzt." },
-      { q: "Wie bleibe ich beim Fasten gesund?", a: "Trink zwischen Iftar und Suhur verteilt genug Wasser, lass den Suhur nicht aus, brich das Fasten sanft mit Datteln und Wasser und iss ausgewogen statt üppig. Ein kurzer Mittagsschlaf und leichte Bewegung am Abend helfen vielen. Das sind allgemeine Hinweise, kein ärztlicher Rat." },
+      { q: "Ich bin krank – muss ich fasten?", a: "Nein, wenn das Fastenen Sie sich schadet. Kranke und Reisende holen die Tage später nach (Koran 2:184). Wer dauerhaft nicht fasten kann, gibt eine Fidya: Für jeden Tag wird ein Bedürftiger gespeist. Sprechen Sie bei Vorerkrankungen vor dem Ramadan mit Ihrem Arzt." },
+      { q: "Wie bleibe ich beim Fasten gesund?", a: "Trink zwischen Iftar und Suhur verteilt genug Wasser, lassen Sie den Suhur nicht aus, brich das Fasten sanft mit Datteln und Wasser und iss ausgewogen statt üppig. Ein kurzer Mittagsschlaf und leichte Bewegung am Abend helfen vielen. Das sind allgemeine Hinweise, kein ärztlicher Rat." },
       { q: "Wann ist Laylat al-Qadr?", a: "Ihr genaues Datum ist nicht bekannt. Der Prophet ﷺ empfahl, sie in den ungeraden Nächten der letzten zehn Nächte des Ramadan zu suchen (al-Bukhari). Schiitische Muslime legen besonderen Wert auf die Nächte zum 19., 21. und 23. Ramadan." },
-      { q: "Wie schaffe ich den ganzen Koran im Ramadan?", a: "Mit etwa 20 Seiten am Tag, also einem Dschuz' – zum Beispiel vier Seiten nach jedem Gebet. Unser Khatm-Planer (/khatm) verteilt den Koran auf 30 Tage. Wenn dir das zu viel ist, ist ein halber Koran oder eine tägliche Passage mit Tafsir ein ebenso gutes Ziel." },
+      { q: "Wie schaffe ich den ganzen Koran im Ramadan?", a: "Mit etwa 20 Seiten am Tag, also einem Dschuz' – zum Beispiel vier Seiten nach jedem Gebet. Unser Khatm-Planer (/khatm) verteilt den Koran auf 30 Tage. Wenn Ihnen das zu viel ist, ist ein halber Koran oder eine tägliche Passage mit Tafsir ein ebenso gutes Ziel." },
     ],
     sources: [
       "Koran 2:183–185, 2:187, 2:261, 44:3, 97:1–5",

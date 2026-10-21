@@ -30,7 +30,7 @@ export const UNITS_A: Unit[] = [
       },
       {
         id: "u1-pron",
-        title: X("I, you, he, she", "Ich, du, er, sie", "الضمائر المنفصلة", "Ben, sen, o", "میں، تم، وہ", "Aku, kamu, dia", "Je, tu, il, elle"),
+        title: X("I, you, he, she", "Ich, Sie, er, sie", "الضمائر المنفصلة", "Ben, sen, o", "میں، تم، وہ", "Aku, kamu, dia", "Je, tu, il, elle"),
         expl: X(
           "Arabic has separate pronouns for a man and a woman even for “you”: anta to a man, anti to a woman. The pronoun can begin a sentence on its own, because Arabic needs no word for “is” in the present.",
           "Das Arabische unterscheidet sogar beim „du“ zwischen Mann und Frau: anta zu einem Mann, anti zu einer Frau. Ein Pronomen kann allein einen Satz beginnen, denn für „ist“ braucht das Arabische im Präsens kein Wort.",
@@ -211,7 +211,7 @@ export const UNITS_A: Unit[] = [
   {
     n: 3, level: "A1",
     title: X("Belonging: iḍāfa and pronouns", "Zugehörigkeit: Iḍāfa und Pronomen", "الإضافة والضمائر المتصلة", "Tamlama ve iyelik", "اضافت اور ضمائر متصلہ", "Idhafah dan kepemilikan", "L'annexion et la possession"),
-    lead: X("“The house of …”, my and your, prepositions, time and a first story.", "„Das Haus von …“, mein und dein, Präpositionen, Zeit und eine erste Geschichte.", "الإضافة والضمائر وحروف الجر والوقت وقصة أولى.", "Tamlama, iyelik, edatlar, zaman ve ilk hikâye.", "اضافت، ضمائر، حروف جار، وقت اور پہلی کہانی۔", "Idhafah, kata depan, waktu dan cerita pertama.", "Annexion, prépositions, temps et première histoire."),
+    lead: X("“The house of …”, my and your, prepositions, time and a first story.", "„Das Haus von …“, mein und Ihr, Präpositionen, Zeit und eine erste Geschichte.", "الإضافة والضمائر وحروف الجر والوقت وقصة أولى.", "Tamlama, iyelik, edatlar, zaman ve ilk hikâye.", "اضافت، ضمائر، حروف جار، وقت اور پہلی کہانی۔", "Idhafah, kata depan, waktu dan cerita pertama.", "Annexion, prépositions, temps et première histoire."),
     lessons: [
       {
         id: "u3-idafa",
@@ -231,7 +231,7 @@ export const UNITS_A: Unit[] = [
       },
       {
         id: "u3-suffix",
-        title: X("My, your, his: attached pronouns", "Mein, dein, sein: angehängte Pronomen", "الضمائر المتصلة", "Bitişik zamirler", "ضمائر متصلہ", "Kata ganti melekat", "Les pronoms suffixes"),
+        title: X("My, your, his: attached pronouns", "Mein, Ihr, sein: angehängte Pronomen", "الضمائر المتصلة", "Bitişik zamirler", "ضمائر متصلہ", "Kata ganti melekat", "Les pronoms suffixes"),
         expl: X("Possession is a short ending on the noun: kitābī (my book), kitābuka (your book, to a man), kitābuhu (his book), kitābunā (our book). The same endings attach to prepositions and verbs.", "Besitz ist eine kurze Endung am Nomen: kitābī (mein Buch), kitābuka (Ihr Buch, zu einem Mann), kitābuhu (sein Buch), kitābunā (unser Buch). Dieselben Endungen hängen auch an Präpositionen und Verben.", "الضمير المتصل يدل على الملكية: كتابي، كتابك.", "İyelik ekle gösterilir: kitābī, kitābuka.", "ملکیت ضمیر متصل سے: كتابي، كتابك۔", "Kepemilikan dengan akhiran: kitābī, kitābuka.", "La possession par suffixe : kitābī, kitābuka."),
         conj: { title: X("kitāb with endings", "kitāb mit Endungen"), rows: [["أَنَا", "كِتَابِي", "kitābī"], ["أَنْتَ", "كِتَابُكَ", "kitābuka"], ["أَنْتِ", "كِتَابُكِ", "kitābuki"], ["هُوَ", "كِتَابُهُ", "kitābuhu"], ["هِيَ", "كِتَابُهَا", "kitābuhā"], ["نَحْنُ", "كِتَابُنَا", "kitābunā"], ["أَنْتُمْ", "كِتَابُكُمْ", "kitābukum"], ["هُمْ", "كِتَابُهُمْ", "kitābuhum"]] },
         items: [
@@ -416,7 +416,7 @@ export const UNITS_A: Unit[] = [
       {
         id: "u5-pres1",
         title: X("He writes: the present", "Er schreibt: die Gegenwart", "المضارع", "Yazıyor: muzari", "وہ لکھتا ہے: مضارع", "Ia menulis: mudhari'", "Il écrit : le présent"),
-        expl: X("The present (muḍāriʿ) adds prefixes: ya-ktubu (he writes), ta-ktubu (she writes / you write), a-ktubu (I write), na-ktubu (we write). The vowel in the middle (u, a or i) belongs to each verb and is learned with it.", "Die Gegenwart (muḍāriʿ) setzt Vorsilben: ya-ktubu (er schreibt), ta-ktubu (sie schreibt / du schreibst), a-ktubu (ich schreibe), na-ktubu (wir schreiben). Der Vokal in der Mitte (u, a oder i) gehört zum Verb und wird mit ihm gelernt.", "المضارع بأحرف «أنيت».", "Muzari önekleri: a-, na-, ya-, ta-.", "مضارع کے سابقے: أ، ن، ي، ت۔", "Mudhari' memakai awalan a-, na-, ya-, ta-.", "Le présent prend des préfixes : a-, na-, ya-, ta-."),
+        expl: X("The present (muḍāriʿ) adds prefixes: ya-ktubu (he writes), ta-ktubu (she writes / you write), a-ktubu (I write), na-ktubu (we write). The vowel in the middle (u, a or i) belongs to each verb and is learned with it.", "Die Gegenwart (muḍāriʿ) setzt Vorsilben: ya-ktubu (er schreibt), ta-ktubu (sie schreibt / Sie schreiben), a-ktubu (ich schreibe), na-ktubu (wir schreiben). Der Vokal in der Mitte (u, a oder i) gehört zum Verb und wird mit ihm gelernt.", "المضارع بأحرف «أنيت».", "Muzari önekleri: a-, na-, ya-, ta-.", "مضارع کے سابقے: أ، ن، ي، ت۔", "Mudhari' memakai awalan a-, na-, ya-, ta-.", "Le présent prend des préfixes : a-, na-, ya-, ta-."),
         conj: { title: X("yaktubu – to write (present)", "yaktubu – schreiben (Gegenwart)"), rows: [["أَنَا", "أَكْتُبُ", "aktubu"], ["أَنْتَ", "تَكْتُبُ", "taktubu"], ["أَنْتِ", "تَكْتُبِينَ", "taktubīna"], ["هُوَ", "يَكْتُبُ", "yaktubu"], ["هِيَ", "تَكْتُبُ", "taktubu"], ["نَحْنُ", "نَكْتُبُ", "naktubu"], ["أَنْتُمْ", "تَكْتُبُونَ", "taktubūna"], ["هُمْ", "يَكْتُبُونَ", "yaktubūna"]] },
         items: [
           I("يَكْتُبُ", "yaktubu", "he writes", "er schreibt"), I("يَذْهَبُ", "yadhhabu", "he goes", "er geht"),
@@ -458,7 +458,7 @@ export const UNITS_A: Unit[] = [
         conj: { title: X("Imperative of kataba", "Imperativ von kataba"), rows: [["أَنْتَ", "اُكْتُبْ", "uktub"], ["أَنْتِ", "اُكْتُبِي", "uktubī"], ["أَنْتُمْ", "اُكْتُبُوا", "uktubū"]] },
         items: [
           I("اِقْرَأْ", "iqraʾ", "read!", "lies!"), I("اُكْتُبْ", "uktub", "write!", "schreib!"),
-          I("اِجْلِسْ", "ijlis", "sit!", "setz dich!"), I("اِسْمَعْ", "ismaʿ", "listen!", "hör zu!"),
+          I("اِجْلِسْ", "ijlis", "sit!", "setzen Sie sich!"), I("اِسْمَعْ", "ismaʿ", "listen!", "hör zu!"),
           I("قُلْ", "qul", "say!", "sag!"), I("اُدْخُلُوا", "udkhulū", "enter! (plural)", "tretet ein!"),
         ],
         spot: [

@@ -12,7 +12,8 @@ export const dynamic = "force-dynamic";
 //   through the App Store Server Notifications, see ./notifications)
 // - personal duas and personal name reports (consumables): each transaction adds its credits exactly once
 // - the first one-time Premium: lasting Premium
-// Test purchases (Sandbox, TestFlight, App Review) only count for the admin or with IAP_ALLOW_SANDBOX=1.
+// Test purchases (Sandbox, TestFlight, App Review) count as well, so App Review can complete and verify every purchase
+// (Apple: a production server must accept sandbox transactions). IAP_ALLOW_SANDBOX=0 switches that off again (admin only).
 export async function POST(req: NextRequest) {
   if (!sameOrigin(req)) return json({ error: "origin" }, 403);
   if (rateLimited(`iap:${clientIp(req)}`, 30, 60 * 60_000)) return json({ error: "rate" }, 429);
@@ -26,7 +27,7 @@ export async function POST(req: NextRequest) {
   const known = tx && (tx.productId === PREMIUM_PRODUCT || tx.productId === PRO_SUBSCRIPTION || tx.productId in DUA_PRODUCTS || tx.productId in NAME_PRODUCTS);
   if (!tx || tx.bundleId !== IOS_BUNDLE_ID || !known) return json({ error: "invalid" }, 400);
   if (tx.revocationDate) return json({ error: "revoked" }, 400);
-  if (tx.environment !== "Production" && me.role !== "admin" && process.env.IAP_ALLOW_SANDBOX !== "1") return json({ premium: me.plan === "premium", sandbox: true });
+  if (tx.environment !== "Production" && me.role !== "admin" && process.env.IAP_ALLOW_SANDBOX === "0") return json({ premium: me.plan === "premium", sandbox: true });
 
   // personal duas and name reports: a transaction id is credited once, whoever sends it
   if (tx.productId in DUA_PRODUCTS || tx.productId in NAME_PRODUCTS) {

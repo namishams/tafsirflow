@@ -90,7 +90,7 @@ Wer zum ersten Mal Sunniten und Schiiten nebeneinander beten sieht, bemerkt viel
 - **Zusammenlegen von Gebeten:** Schiiten verbinden häufig Mittags- und Nachmittagsgebet sowie Abend- und Nachtgebet und beten so zu drei Zeiten am Tag – weiterhin fünf Gebete. Sunniten beten in der Regel zu fünf getrennten Zeiten und legen Gebete vor allem auf Reisen oder aus besonderen Gründen zusammen.
 - **Niederwerfung auf Erde (Turba):** Schiiten werfen sich auf natürlichem Material wie Erde, Stein oder Pflanzen nieder und verwenden dafür oft ein kleines Täfelchen aus gebranntem Lehm. Sunniten beten auch auf Teppichen.
 
-Ausführliche Anleitungen findest du bei uns: [Das Gebet nach sunnitischer Praxis](/islam/prayer-sunni) und [Das Gebet nach schiitischer Praxis](/islam/prayer-shia).
+Ausführliche Anleitungen finden Sie bei uns: [Das Gebet nach sunnitischer Praxis](/islam/prayer-sunni) und [Das Gebet nach schiitischer Praxis](/islam/prayer-shia).
 
 ## Die Amman-Botschaft
 
@@ -124,7 +124,7 @@ Bei Quran Masterclass hören Sunniten und Schiiten dieselben Verse, in derselben
       { q: "Haben Sunniten und Schiiten einen anderen Quran?", a: "Nein. Beide lesen denselben Quran mit denselben 114 Suren. Unterschiede gibt es in der Auslegung einzelner Stellen und in den Hadith-Sammlungen, auf die sich die Traditionen stützen, nicht im Text des Quran." },
       { q: "Worin liegt der Ursprung der Unterscheidung?", a: "In der Frage, wer die Gemeinschaft nach dem Tod des Propheten ﷺ im Jahr 632 führen sollte. Sunniten sehen die vier rechtgeleiteten Kalifen in ihrer Reihenfolge, Schiiten sehen Ali ibn Abi Talib und die Imame aus seiner Nachkommenschaft als rechtmäßige Führer." },
       { q: "Warum fasten Sunniten an Aschura, während Schiiten trauern?", a: "Sunniten fasten nach der Sunna, weil Allah an diesem Tag Musa (Friede sei mit ihm) errettete (al-Buchari, Muslim). Schiiten gedenken an diesem Tag besonders des Martyriums Husains bei Kerbela im Jahr 61 n. H. Beide Bedeutungen verdienen Respekt." },
-      { q: "Darf ein Sunnit hinter einem Schiiten beten und umgekehrt?", a: "Viele Gelehrte beider Seiten erlauben das, und in Mekka und Medina beten Muslime aller Traditionen gemeinsam. Für Einzelheiten deiner Rechtsschule frage am besten einen Gelehrten, dem du vertraust." },
+      { q: "Darf ein Sunnit hinter einem Schiiten beten und umgekehrt?", a: "Viele Gelehrte beider Seiten erlauben das, und in Mekka und Medina beten Muslime aller Traditionen gemeinsam. Für Einzelheiten Ihrer Rechtsschule frage am besten einen Gelehrten, dem Sie vertrauen." },
       { q: "Was ist die Amman-Botschaft?", a: "Eine Erklärung von 2004, bestätigt 2005 von Gelehrten aus vielen Ländern. Sie erkennt acht Rechtsschulen an, darunter die dscha'faritische und die zaiditische, und verbietet, Anhänger dieser Schulen zu Ungläubigen zu erklären." },
     ],
     sources: [

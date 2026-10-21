@@ -15,9 +15,9 @@ export const future: IslamDoc = {
     ],
     body: `## Was der Islam für den einzelnen Menschen bedeutet
 
-Jeder Mensch stellt sich irgendwann die großen Fragen: Woher komme ich? Wozu lebe ich? Wohin gehe ich? Der Islam gibt darauf eine klare und zugleich tröstende Antwort. Du bist nicht zufällig hier. Allah hat dich erschaffen, Er kennt dich, und dein Leben hat ein Ziel: Ihn zu erkennen, Ihm zu dienen und Gutes in die Welt zu tragen.
+Jeder Mensch stellt sich irgendwann die großen Fragen: Woher komme ich? Wozu lebe ich? Wohin gehe ich? Der Islam gibt darauf eine klare und zugleich tröstende Antwort. Sie sind nicht zufällig hier. Allah hat Sie erschaffen, Er kennt Sie, und Ihr Leben hat ein Ziel: Ihn zu erkennen, Ihm zu dienen und Gutes in die Welt zu tragen.
 
-Diese Antwort wird im Alltag lebendig. Fünfmal am Tag unterbricht das Gebet den Lauf der Dinge. Du legst ab, was dich beschäftigt, wendest dich der Kaaba zu und stehst vor deinem Herrn. Wer das erlebt, weiß: Das Gebet ist keine Last, sondern eine Atempause für die Seele.
+Diese Antwort wird im Alltag lebendig. Fünfmal am Tag unterbricht das Gebet den Lauf der Dinge. Sie legen ab, was Sie beschäftigt, wenden Sie der Kaaba zu und stehen vor Ihrem Herrn. Wer das erlebt, weiß: Das Gebet ist keine Last, sondern eine Atempause für die Seele.
 
 Allah sagt: „Diejenigen, die glauben und deren Herzen im Gedenken Allahs Ruhe finden – ja, im Gedenken Allahs finden die Herzen Ruhe“ (13:28). In einer Zeit voller Lärm, Druck und Unruhe ist dieser innere Frieden ein kostbares Geschenk.
 
@@ -31,7 +31,7 @@ Der Islam ist kein Glaube für die Einsamkeit. Er baut Brücken zwischen Mensche
 - **Barmherzigkeit:** Der Prophet ﷺ wurde „als Barmherzigkeit für die Welten“ gesandt (21:107). Barmherzigkeit ist das Gesicht, mit dem der Islam den Menschen begegnet.
 - **Gerechtigkeit:** Allah gebietet Gerechtigkeit, auch wenn sie gegen einen selbst oder die eigenen Verwandten ausfällt (4:135).
 - **Zakat und Wohltätigkeit:** Die Zakat ist eine der Säulen des Islam. Sie verbindet Arme und Reiche, und freiwillige Spenden (Sadaqa) machen Großzügigkeit zur Gewohnheit.
-- **Sorge für Waisen:** Der Prophet ﷺ sagte, er und wer sich um eine Waise kümmert, werden im Paradies so nah beieinander sein wie zwei Finger einer Hand (al-Buchari).
+- **Sorgen Sie für Waisen:** Der Prophet ﷺ sagte, er und wer sich um eine Waise kümmert, werden im Paradies so nah beieinander sein wie zwei Finger einer Hand (al-Buchari).
 - **Nachbarschaft:** Der Prophet ﷺ sagte, Dschibril habe ihm den Nachbarn so oft ans Herz gelegt, dass er dachte, er würde ihn zum Erben machen (al-Buchari, Muslim).
 
 Ein Hadith fasst diese Haltung wunderbar zusammen: „Keiner von euch glaubt wirklich, bis er für seinen Bruder liebt, was er für sich selbst liebt“ (al-Buchari, Muslim).
@@ -61,7 +61,7 @@ Das Pew Research Center hat 2015 eine vielbeachtete **Projektion** veröffentlic
 
 ### Junge Muslime und digitales Lernen
 
-Diese junge Generation lernt anders als ihre Großeltern. Sie hört Rezitationen auf dem Smartphone, liest Übersetzungen in ihrer eigenen Sprache und stellt Fragen, die frühere Generationen so nicht gestellt haben. Das ist eine große Chance: Noch nie war es so leicht, den Quran zu hören, zu verstehen und zu lernen – egal, ob du in Dubai, Berlin, Jakarta oder Toronto lebst. Der Quran spricht heute buchstäblich in jeder Sprache zu den Menschen, während sein arabischer Wortlaut unverändert bewahrt bleibt.
+Diese junge Generation lernt anders als ihre Großeltern. Sie hört Rezitationen auf dem Smartphone, liest Übersetzungen in ihrer eigenen Sprache und stellt Fragen, die frühere Generationen so nicht gestellt haben. Das ist eine große Chance: Noch nie war es so leicht, den Quran zu hören, zu verstehen und zu lernen – egal, ob Sie in Dubai, Berlin, Jakarta oder Toronto leben. Der Quran spricht heute buchstäblich in jeder Sprache zu den Menschen, während sein arabischer Wortlaut unverändert bewahrt bleibt.
 
 ## Die Herausforderungen
 
@@ -89,15 +89,15 @@ Das Entscheidende daran: Diese Toleranz kommt nicht trotz des Glaubens, sondern 
 
 Wie wird die Zukunft des Islam aussehen? Sie hängt nicht in erster Linie von Zahlen ab, sondern von Herzen. Der Prophet ﷺ sagte: „Die Besten unter euch sind diejenigen, die den Quran lernen und ihn lehren“ (al-Buchari). Und: „Wer einen Weg beschreitet, um Wissen zu suchen, dem erleichtert Allah damit einen Weg zum Paradies“ (Muslim).
 
-Genau dafür gibt es Quran Masterclass. Du kannst hier Vers für Vers hören, die Bedeutung verstehen und den Tafsir dazu lesen – kostenlos und in 13 Sprachen. Lass dich von [Shams](/shams) begleiten, vertiefe dein Wissen in der [Akademie](/academy) und mach mit deinem persönlichen [Lernplan](/plan) aus guten Vorsätzen eine tägliche Gewohnheit.
+Genau dafür gibt es Quran Masterclass. Sie können hier Vers für Vers hören, die Bedeutung verstehen und den Tafsir dazu lesen – kostenlos und in 13 Sprachen. Lassen Sie sich von [Shams](/shams) begleiten, vertiefen Sie Ihr Wissen in der [Akademie](/academy) und machen Sie mit Ihrem persönlichen [Lernplan](/plan) aus guten Vorsätzen eine tägliche Gewohnheit.
 
-Die Zukunft des Islam wird von denen geschrieben, die den Quran lernen und leben. Vielleicht beginnt ein Teil dieser Zukunft heute – mit dir und einem einzigen Vers.`,
+Die Zukunft des Islam wird von denen geschrieben, die den Quran lernen und leben. Vielleicht beginnt ein Teil dieser Zukunft heute – mit Ihnen und einem einzigen Vers.`,
     faq: [
       { q: "Warum ist der Islam für so viele Menschen bedeutsam?", a: "Weil er Antworten auf die großen Lebensfragen gibt, durch das Gebet inneren Frieden schenkt (13:28) und ein klares Fundament für Familie, Gerechtigkeit und Barmherzigkeit legt." },
       { q: "Wie viele Muslime gibt es?", a: "Fast ein Viertel der Menschheit bekennt sich zum Islam. Das Pew Research Center hat 2015 projiziert, dass die Zahl der Muslime bis 2050 schneller wächst als die Weltbevölkerung und fast die Zahl der Christen erreichen könnte – eine Projektion, keine Gewissheit." },
       { q: "Was sagt der Islam zu Extremismus?", a: "Er lehnt ihn ab. Wer ein unschuldiges Leben nimmt, ist, als hätte er die ganze Menschheit getötet (5:32), und die Muslime sind eine Gemeinschaft der Mitte (2:143). Mäßigung, Barmherzigkeit und Wissen sind der Weg." },
       { q: "Was ist das Dokument über die Brüderlichkeit aller Menschen?", a: "Eine gemeinsame Erklärung, die Papst Franziskus und der Großimam der al-Azhar, Scheich Ahmad at-Tayyib, im Februar 2019 in Abu Dhabi unterzeichnet haben. Sie ruft zu Frieden, gegenseitigem Respekt und Zusammenleben auf." },
-      { q: "Wie kann ich selbst zur Zukunft des Islam beitragen?", a: "Indem du lernst und lebst, was du lernst: täglich ein paar Verse mit Bedeutung, gutes Verhalten gegenüber Familie und Nachbarn und Respekt vor allen Menschen. Ein Lernplan auf Quran Masterclass hilft dir, dranzubleiben." },
+      { q: "Wie kann ich selbst zur Zukunft des Islam beitragen?", a: "Indem Sie lernen und leben, was Sie lernen: täglich ein paar Verse mit Bedeutung, gutes Verhalten gegenüber Familie und Nachbarn und Respekt vor allen Menschen. Ein Lernplan auf Quran Masterclass hilft Ihnen, dranzubleiben." },
     ],
     sources: [
       "Quran 2:30, 2:143, 4:135, 5:32, 7:31, 13:28, 20:114, 21:107, 49:13, 96:1",

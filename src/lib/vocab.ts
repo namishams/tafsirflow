@@ -110,7 +110,7 @@ export const VOCAB_DECKS: Deck[] = [
     title_en: "Pronouns and Pointing Words",
     title_de: "Pronomen und Hinweiswörter",
     desc_en: "He, they, you, we, this, that: the words that tell you who is meant.",
-    desc_de: "Er, sie, du, wir, dies, jenes: Wörter, die zeigen, wer gemeint ist.",
+    desc_de: "Er, sie, Sie, wir, dies, jenes: Wörter, die zeigen, wer gemeint ist.",
     words: [
       w("pronouns-huwa", "هُوَ", "huwa", null, "he, it", "er, es", "pronoun", ["112:1", "قُلْ هُوَ اللَّهُ"]),
       w("pronouns-hiya", "هِيَ", "hiya", null, "she, it", "sie, es", "pronoun"),
@@ -129,7 +129,7 @@ export const VOCAB_DECKS: Deck[] = [
       w("pronouns-tilka", "تِلْكَ", "tilka", null, "that (f.)", "jene", "pronoun", ["12:1", "تِلْكَ آيَاتُ الْكِتَابِ"]),
       w("pronouns-ulaika", "أُولَٰئِكَ", "ulāʾika", null, "those", "jene, diese", "pronoun", ["2:5", "أُولَٰئِكَ عَلَىٰ هُدًى"]),
       w("pronouns-allati", "ٱلَّتِي", "allatī", null, "who, which (f.)", "die, welche", "pronoun", ["2:24", "النَّارَ الَّتِي وَقُودُهَا النَّاسُ"]),
-      w("pronouns-ka", "ـكَ", "-ka", null, "you, your (m.)", "dich, dein", "pronoun"),
+      w("pronouns-ka", "ـكَ", "-ka", null, "you, your (m.)", "Sie, Ihr", "pronoun"),
       w("pronouns-kum", "ـكُمْ", "-kum", null, "you, your (pl.)", "euch, euer", "pronoun", ["109:6", "لَكُمْ دِينُكُمْ"]),
       w("pronouns-hu", "ـهُ", "-hu", null, "him, his", "ihn, sein", "pronoun"),
       w("pronouns-ha", "ـهَا", "-hā", null, "her, its", "sie, ihr", "pronoun"),

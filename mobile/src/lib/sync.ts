@@ -12,7 +12,9 @@ import type { Srs } from "@/web/learning";
 import { FEED_SYNC_KEYS, feedSnapshot, mergeFeed, reloadFeedCaches } from "@/features/feed/feedSync";
 import { sendOfferStats } from "@/features/feed/statsStore";
 import { GARDEN_KEY, mergeGarden, reloadGarden, type Garden } from "@/features/garden/garden";
+import { EXTRA_KEYS, EXTRA_MERGE, mergeCourses } from "./syncExtra";
 import { CATALOG_KEY, mergeCatalog, reloadCatalog } from "@/features/garden/catalog";
+import { JOURNEY_KEY, mergeJourney } from "@/features/journey/store";
 
 // Progress sync with the account, the same merge rules as the website (src/lib/sync.ts): what you learn in the app
 // shows up on quranmasterclass.com and the other way round.
@@ -49,7 +51,18 @@ function merge(local: Record<string, unknown>, remote: Record<string, unknown>) 
   return { "tf:bookmarks": bm, "tf:srs": srs, "tf:days": days, "tf:notes": notes, "tf:academy": newer("tf:academy") ?? undefined, "tf:khatm": newer("tf:khatm") ?? undefined, "tf:plan": newer("tf:plan") ?? undefined, "tf:goal": newer("tf:goal") ?? undefined, "tf:wudu": newer("tf:wudu") ?? undefined, "tf:jv": { ...((remote["tf:jv"] as object) ?? {}), ...((local["tf:jv"] as object) ?? {}) }, "tf:points": mergePoints(local["tf:points"] as Points | undefined, remote["tf:points"] as Points | undefined), "tf:listen": mergeListen(local["tf:listen"] as Listen | undefined, remote["tf:listen"] as Listen | undefined), "tf:mnemo": { ...((remote["tf:mnemo"] as object) ?? {}), ...((local["tf:mnemo"] as object) ?? {}) }, "tf:vocab": { ...((remote["tf:vocab"] as object) ?? {}), ...((local["tf:vocab"] as object) ?? {}) }, "tf:tajweed": bestScores(local["tf:tajweed"], remote["tf:tajweed"]), "tf:arabic": mergeArabic(local["tf:arabic"] as ArabicP | undefined, remote["tf:arabic"] as ArabicP | undefined), "tf:duafav": Array.from(new Set([...((local["tf:duafav"] as string[]) ?? []), ...((remote["tf:duafav"] as string[]) ?? [])])), ...(last ? { "tf:last": last } : {}) } as Record<string, unknown>;
 }
 
-export const SYNC_KEYS = ["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen", "tf:jv", ...FEED_SYNC_KEYS, GARDEN_KEY, CATALOG_KEY] as const;
+export const SYNC_KEYS = ["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen", "tf:jv", ...FEED_SYNC_KEYS, GARDEN_KEY, CATALOG_KEY, "qmc.courses.v1", ...EXTRA_KEYS, JOURNEY_KEY] as const;
+// Shams 2.0, question bank, Nahj course and the academy courses: rules in syncExtra.ts (identical to the website copy)
+const extraMerge = (local: Record<string, unknown>, remote: Record<string, unknown>) => {
+  const out: Record<string, unknown> = {};
+  const rules: Record<string, (a: unknown, b: unknown) => unknown> = { ...EXTRA_MERGE, "qmc.courses.v1": mergeCourses };
+  for (const [k, f] of Object.entries(rules)) {
+    const a = local[k], b = remote[k];
+    if (a === undefined && b === undefined) continue;
+    try { out[k] = a === undefined ? b : b === undefined ? a : f(a, b); } catch { out[k] = a ?? b; }
+  }
+  return out;
+};
 const snapshot = (): Record<string, unknown> => {
   const out: Record<string, unknown> = {};
   for (const k of SYNC_KEYS) { const v = readJSON<unknown>(k, undefined); if (v !== undefined && v !== null) out[k] = v; }
@@ -59,14 +72,25 @@ const snapshot = (): Record<string, unknown> => {
 };
 
 let timer: ReturnType<typeof setTimeout> | null = null;
-const push = () => api("/api/sync", { method: "PUT", body: snapshot() }).catch(() => undefined);
+// the server accepts at most 400 KB per request: the snapshot goes out in parts below 300 KB (a large question bank alone can come close)
+const push = async () => {
+  const snap = snapshot();
+  const parts: Record<string, unknown>[] = [{}];
+  let size = 0;
+  for (const [k, v] of Object.entries(snap)) {
+    const len = JSON.stringify(v).length;
+    if (size + len > 300_000 && size > 0) { parts.push({}); size = 0; }
+    parts[parts.length - 1][k] = v; size += len;
+  }
+  for (const body of parts) await api("/api/sync", { method: "PUT", body }).catch(() => undefined);
+};
 
 export async function startSync(): Promise<boolean> {
   try {
     const remote = await api<Record<string, unknown>>("/api/sync");
     const local = snapshot();
     // the garden: max growth per tree, union of decorations; the sticker collection: union of verses, max counts
-    const merged: Record<string, unknown> = { ...merge(local, remote), ...mergeFeed(local, remote), [GARDEN_KEY]: mergeGarden(local[GARDEN_KEY] as Garden | undefined, remote[GARDEN_KEY] as Garden | undefined), [CATALOG_KEY]: mergeCatalog(local[CATALOG_KEY] as Parameters<typeof mergeCatalog>[0], remote[CATALOG_KEY] as Parameters<typeof mergeCatalog>[0]) };
+    const merged: Record<string, unknown> = { ...merge(local, remote), ...extraMerge(local, remote), ...mergeFeed(local, remote), [GARDEN_KEY]: mergeGarden(local[GARDEN_KEY] as Garden | undefined, remote[GARDEN_KEY] as Garden | undefined), [CATALOG_KEY]: mergeCatalog(local[CATALOG_KEY] as Parameters<typeof mergeCatalog>[0], remote[CATALOG_KEY] as Parameters<typeof mergeCatalog>[0]), [JOURNEY_KEY]: mergeJourney(local[JOURNEY_KEY], remote[JOURNEY_KEY]) };
     for (const k of SYNC_KEYS) if (merged[k] !== undefined) writeJSON(k, merged[k], true);
     reloadFeedCaches(); reloadGarden(); reloadCatalog();
     await push();

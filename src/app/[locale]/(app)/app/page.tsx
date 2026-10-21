@@ -18,17 +18,17 @@ type C = { kicker: string; title: string; lead: string; buttons: { install: stri
   waysTitle: string; ways: { t: string; steps: string[] }[]; featuresTitle: string; features: [string, string][]; note: string };
 
 const de: C = {
-  kicker: "Die App", title: "Quran Masterclass auf dein Handy",
+  kicker: "Die App", title: "Quran Masterclass auf Ihr Handy",
   lead: "Die ganze Masterclass als App: Vollbild ohne Browserleiste, eigenes Symbol auf dem Startbildschirm, gespeicherte Suren auch offline – und jedes Update der Website ist sofort in der App.",
-  buttons: { install: "App installieren", installed: "Die App ist installiert", apk: "Android-App herunterladen (APK)", apkSoon: "Android-App: bald verfügbar", play: "Bei Google Play laden", samsung: "Du nutzt Samsung Internet. Bitte installiere nicht über dessen Menü – Samsung baut dabei eine eigene Hülle für ein altes Android, die Google Play Protect blockiert. Öffne die Seite stattdessen in Chrome und wähle „App installieren“, oder lade die Android-App oben herunter." },
-  waysTitle: "So installierst du sie",
+  buttons: { install: "App installieren", installed: "Die App ist installiert", apk: "Android-App herunterladen (APK)", apkSoon: "Android-App: bald verfügbar", play: "Bei Google Play laden", samsung: "Sie nutzt Samsung Internet. Bitte installiere nicht über dessen Menü – Samsung baut dabei eine eigene Hülle für ein altes Android, die Google Play Protect blockiert. Öffnen Sie die Seite stattdessen in Chrome und wählen Sie „App installieren“, oder lade die Android-App oben herunter." },
+  waysTitle: "So installieren Sie sie",
   ways: [
     { t: "Android (Chrome)", steps: ["quranmasterclass.com in Chrome öffnen.", "Auf „App installieren“ tippen – oder im Menü ⋮ „App installieren“ wählen.", "Das Symbol erscheint auf dem Startbildschirm."] },
     { t: "iPhone und iPad (Safari)", steps: ["quranmasterclass.com in Safari öffnen.", "Auf das Teilen-Symbol tippen.", "„Zum Home-Bildschirm“ wählen."] },
     { t: "Computer (Chrome, Edge)", steps: ["Die Seite öffnen.", "In der Adressleiste auf das Installieren-Symbol klicken.", "Die Masterclass öffnet sich als eigenes Fenster."] },
   ],
   featuresTitle: "Was die App kann",
-  features: [["Offline lernen", "Suren in den Einstellungen einer Sure speichern – sie spielen auch ohne Internet."], ["Ein Fortschritt", "Mit deinem Konto sind App, Handy-Browser und Computer immer auf demselben Stand."], ["Schnellzugriff", "Lange auf das Symbol drücken: direkt zu Heute, Koran, Shams-Methode oder Radio."], ["Immer aktuell", "Neue Kurse und Verbesserungen kommen ohne Update aus dem Store."]],
+  features: [["Offline lernen", "Suren in den Einstellungen einer Sure speichern – sie spielen auch ohne Internet."], ["Ein Fortschritt", "Mit Ihrem Konto sind App, Handy-Browser und Computer immer auf demselben Stand."], ["Schnellzugriff", "Lange auf das Symbol drücken: direkt zu Heute, Koran, Shams-Methode oder Radio."], ["Immer aktuell", "Neue Kurse und Verbesserungen kommen ohne Update aus dem Store."]],
   note: "Als Web-App von der Website installiert bleibt alles kostenlos und ohne Werbung – wie die Website. Die App aus dem App Store und von Google Play ist kostenlos und ohne Werbung; für alle, die mehr wollen, gibt es dort Quran Masterclass Pro – monatlich kündbar, im App Store bzw. bei Google Play.",
 };
 const en: C = {

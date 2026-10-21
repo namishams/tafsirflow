@@ -23,11 +23,11 @@ Es gibt Rezitatoren, die man wegen ihrer Kraft bewundert, und es gibt Rezitatore
 
 Al-Luhaidan liest im ruhigen **Murattal**-Stil, ohne kunstvolle Ausschmückungen. Seine Stimme hat einen gedämpften, fast traurigen Klang, und gerade bei Versen über das Jenseits, über Reue und über die Barmherzigkeit Allahs spürt man eine Ergriffenheit, die nicht gespielt wirkt. Er verweilt nicht, um zu beeindrucken, sondern liest so, als spräche er die Verse zuerst zu sich selbst. Viele Zuhörer berichten, dass sie bei ihm zum ersten Mal wirklich auf die Bedeutung geachtet haben.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Chuschu' (Demut) hören:** Achte darauf, wie er bei warnenden und tröstenden Versen den Ton verändert. Das zeigt dir, dass Tadschwid und Gefühl kein Gegensatz sind.
+- **Chuschu' (Demut) hören:** Achten Sie darauf, wie er bei warnenden und tröstenden Versen den Ton verändert. Das zeigt Ihnen, dass Tadschwid und Gefühl kein Gegensatz sind.
 - **Langsam lesen lernen:** Sein ruhiges Tempo eignet sich gut, um einzelne Verse mitzusprechen und die Aussprache nachzuahmen.
-- **Mit Tafsir verbinden:** Höre einen Abschnitt, lies dann die Erklärung und höre ihn erneut. Du wirst merken, wie viel mehr dich die Rezitation dann erreicht.
+- **Mit Tafsir verbinden:** Hören Sie einen Abschnitt, lesen Sie dann die Erklärung und hören Sie ihn erneut. Sie werden merken, wie viel mehren Sie sich die Rezitation dann erreicht.
 
 ## Ein Vermächtnis der Stille
 
@@ -88,9 +88,9 @@ Scheich Al-Budair ist nicht nur Rezitator, sondern auch ein Mann der Wissenschaf
 
 Al-Budair liest im **Murattal**-Stil, gemessen, klar und mit einer tiefen, warmen Stimme. Typisch ist eine gewisse Feierlichkeit: Er gibt jedem Vers Raum, ohne ihn zu dehnen, und setzt die Pausen so, dass die Bedeutung hörbar wird. Seine Rezitation ist ruhig, aber nie flach – gerade in längeren Gebeten trägt sie die Gemeinde mit einer stillen Kraft.
 
-## Wie du von ihm lernen kannst
+## Wie Sie von ihm lernen können
 
-- **Waqf und Ibtida' (Anhalten und Wiederbeginnen):** Achte darauf, wo er innehält und wo er neu ansetzt. Das ist eine hervorragende Schule für sinnvolle Pausen.
+- **Waqf und Ibtida' (Anhalten und Wiederbeginnen):** Achten Sie darauf, wo er innehält und wo er neu ansetzt. Das ist eine hervorragende Schule für sinnvolle Pausen.
 - **Deutliche Aussprache:** Seine Buchstaben sind sauber artikuliert, ideal zum Nachsprechen.
 - **Atmosphäre von Medina:** Gebetsaufnahmen aus der Prophetenmoschee helfen vielen, auch zu Hause die Ruhe und Andacht dieses Ortes zu spüren.
 
@@ -157,9 +157,9 @@ Besonders geschätzt wird er für sein Wissen über die **Qira'at**, die überli
 
 Seine Lesung ist **Murattal** in einem klassischen, hidschazischen Klang: ruhig, mit präzisen Dehnungen und sehr sauberen Buchstaben. Er verzichtet auf Effekte. Gerade deshalb eignet sich seine Rezitation hervorragend als Vorbild – man hört, wie Tadschwid klingt, wenn er nicht Schmuck ist, sondern selbstverständlich.
 
-## Was du von ihm lernen kannst
+## Was Sie von ihm lernen können
 
-- **Genauigkeit:** Achte auf die exakte Länge der Dehnungen (Madd) und auf die Ghunna (Nasalierung). Er ist hier sehr konsequent.
+- **Genauigkeit:** Achten Sie auf die exakte Länge der Dehnungen (Madd) und auf die Ghunna (Nasalierung). Er ist hier sehr konsequent.
 - **Respekt vor der Überlieferung:** Sein Weg zeigt, dass der Qur'an von Mensch zu Mensch weitergegeben wird – ein schöner Anstoß, sich selbst einen Lehrer zu suchen.
 - **Ruhiges Wiederholen:** Seine Aufnahmen eignen sich gut, um einen Abschnitt mehrmals zu hören und mitzusprechen.
 
@@ -226,7 +226,7 @@ Neben seinem Amt in der Moschee ist Scheich Ath-Thubaity ein Mann der Lehre, der
 
 Ath-Thubaity liest **Murattal** mit einer sanften, gleichmäßigen Stimme. Er setzt nicht auf große Sprünge in der Tonhöhe, sondern auf einen ruhigen Fluss, in dem die Verse nacheinander ihren Platz finden. Seine Aussprache ist klar, das Tempo angenehm, die Pausen natürlich. Gerade in langen Gebeten wirkt das wohltuend: Man kann zuhören, ohne müde zu werden, und bleibt bei der Bedeutung.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
 - **Gleichmäßigkeit:** Er zeigt, dass eine schöne Rezitation nicht laut oder dramatisch sein muss. Für Anfänger ist das ermutigend.
 - **Mitlesen:** Sein angenehmes Tempo eignet sich, um im Mushaf oder in unserem Player Wort für Wort mitzulesen.
@@ -291,10 +291,10 @@ Bukhatirs Lesung ist hell, klar und freundlich. Er liest in einem mittleren Temp
 
 Dass eine solche Stimme aus den Emiraten kommt, ist kein Zufall. Das Land pflegt seit seiner Gründung eine große Liebe zum Qur'an: In unzähligen Zentren lernen Kinder und Erwachsene das Auswendiglernen und das richtige Lesen, und mit dem **Dubai International Holy Quran Award**, der seit 1997 vergeben wird, kommen jedes Jahr junge Hafiz aus aller Welt nach Dubai. Auch Quran Masterclass ist in Dubai entstanden – in dieser Atmosphäre, in der der Qur'an im Alltag selbstverständlich präsent ist.
 
-## Wie du von ihm profitieren kannst
+## Wie Sie von ihm profitieren können
 
 - **Für den Einstieg:** Seine klare Aussprache und das angenehme Tempo machen ihn ideal für Anfänger.
-- **Zum Auswendiglernen:** Die eingängige Melodie hilft, sich Verse und Übergänge zu merken. Wiederhole einen Vers mehrmals und sprich mit.
+- **Zum Auswendiglernen:** Die eingängige Melodie hilft, sich Verse und Übergänge zu merken. Wiederholen Sie einen Vers mehrmals und sprechen Sie mit.
 - **Für die ganze Familie:** Seine Aufnahmen sind ein schöner Weg, Kinder spielerisch an den Klang des Qur'an heranzuführen.
 
 ## Ein Geschenk für viele
@@ -356,9 +356,9 @@ Al-Tunaiji liest im **Murattal**-Stil mit einer ausgewogenen, warmen Stimme. Sei
 
 Rezitatoren wie Scheich Khalifa sind Teil einer schönen Tradition in den Emiraten. Schon der Gründervater des Landes, Scheich Zayed bin Sultan Al Nahyan – möge Allah ihm barmherzig sein –, hat die Pflege des Qur'an und der Moscheen gefördert. Heute gibt es im ganzen Land Qur'an-Zentren, in denen Kinder und Erwachsene lernen, und mit Wettbewerben wie dem **Dubai International Holy Quran Award** ehren die Emirate jedes Jahr junge Menschen, die das Buch Allahs auswendig gelernt haben. Aus dieser Umgebung heraus ist auch Quran Masterclass in Dubai entstanden.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Geduld beim Lesen:** Achte darauf, wie gleichmäßig er auch bei langen Versen bleibt. Das ist eine gute Übung für die eigene Atemführung.
+- **Geduld beim Lesen:** Achten Sie darauf, wie gleichmäßig er auch bei langen Versen bleibt. Das ist eine gute Übung für die eigene Atemführung.
 - **Klare Grundlagen:** Seine saubere Aussprache macht ihn zu einem guten Vorbild für Makharidsch (Artikulationsstellen) und Tadschwid-Grundregeln.
 - **Regelmäßiges Hören:** Seine ruhige Art lädt dazu ein, jeden Tag ein kleines Stück zu hören – vielleicht ein Hizb oder eine kurze Sure.
 
@@ -421,9 +421,9 @@ Al-Matrouds Stimme ist voll und klangvoll, mit einer melodischen Färbung, die g
 
 Seine Rezitation verbindet zwei Dinge, die nicht immer zusammenkommen: Sie ist schön genug, um gerne und lange zuzuhören, und schlicht genug, um nicht vom Inhalt abzulenken. Deshalb wird er häufig zum Nachdenken gehört – nicht nur im Ramadan, sondern auch in stillen Momenten des Alltags, auf langen Autofahrten oder am Abend, wenn der Tag zur Ruhe kommt.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Stimmung und Bedeutung:** Höre einen Abschnitt mit wechselnden Themen (zum Beispiel aus Surat Qaf oder Surat Al-Waqi'a) und achte darauf, wie sich sein Ton mit dem Inhalt verändert. Lies danach den Tafsir dazu.
+- **Stimmung und Bedeutung:** Hören Sie einen Abschnitt mit wechselnden Themen (zum Beispiel aus Surat Qaf oder Surat Al-Waqi'a) und achten Sie darauf, wie sich sein Ton mit dem Inhalt verändert. Lesen Sie danach den Tafsir dazu.
 - **Melodie mit Maß:** Er zeigt, dass eine schöne Melodie die Regeln des Tadschwid nicht verdrängen muss. Seine Dehnungen und Pausen bleiben korrekt.
 - **Hören als Gewohnheit:** Viele nutzen seine Aufnahme, um den Qur'an regelmäßig ganz durchzuhören – ein schönes Ziel für jeden Monat.
 
@@ -492,9 +492,9 @@ Al-Tablawis Rezitation erkennt man oft schon nach wenigen Sekunden. Seine Stimme
 
 In seinen späteren Jahren wurde Scheich Al-Tablawi zum Oberhaupt der Vereinigung der Rezitatoren Ägyptens (Naqib al-Qurra') gewählt – ein Ausdruck des großen Respekts, den ihm seine Kollegen entgegenbrachten. Er blieb bis ins hohe Alter aktiv und starb 2020.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Atemführung:** Höre, wie er lange Passagen gestaltet, und achte darauf, wo er Luft holt. Für eigene längere Abschnitte ist das sehr lehrreich.
+- **Atemführung:** Hören Sie, wie er lange Passagen gestaltet, und achten Sie darauf, wo er Luft holt. Für eigene längere Abschnitte ist das sehr lehrreich.
 - **Maqamat entdecken:** Wer sich für die melodische Seite der Rezitation interessiert, findet bei ihm ein reiches Anschauungsbeispiel.
 - **Die ägyptische Schule verstehen:** Gemeinsam mit seinen Zeitgenossen prägte er den Klang, den viele Menschen mit Qur'an-Rezitation verbinden.
 
@@ -566,10 +566,10 @@ Scheich Naina wurde in Ägypten zu einem gefragten Rezitator bei offiziellen und
 
 Im **Mujawwad**, dem ausgedehnten, melodisch reichen Vortrag, entfaltet sich seine Kunst am deutlichsten. Er nimmt sich Zeit, wiederholt Verse in unterschiedlichen Melodien und lässt so ihre Bedeutung von mehreren Seiten aufleuchten. Dabei bleibt sein Tadschwid präzise – ein schönes Beispiel dafür, dass Kunst und Regeltreue zusammengehören.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Hören mit Geduld:** Mujawwad-Aufnahmen sind langsamer als Murattal. Nimm dir einen kurzen Abschnitt und höre ihn ganz – du wirst merken, wie viel in einem einzelnen Vers steckt.
-- **Wiederholung als Auslegung:** Achte darauf, welche Verse er wiederholt. Oft sind es Stellen mit besonderer Bedeutung; schlage dazu den Tafsir nach.
+- **Hören mit Geduld:** Mujawwad-Aufnahmen sind langsamer als Murattal. Nehmen Sie sich einen kurzen Abschnitt und hören Sie ihn ganz – Sie werden merken, wie viel in einem einzelnen Vers steckt.
+- **Wiederholung als Auslegung:** Achten Sie darauf, welche Verse er wiederholt. Oft sind es Stellen mit besonderer Bedeutung; schlage dazu den Tafsir nach.
 - **Feinheit in der Aussprache:** Seine sorgfältige Gestaltung einzelner Laute ist ein gutes Vorbild für fortgeschrittene Lernende.
 
 ## Ein lebendiges Bindeglied
@@ -639,10 +639,10 @@ Weit über Ägypten hinaus bekannt sind auch seine **Bittgebete** (Du'a), insbes
 
 Neben seiner Arbeit in Kairo wurde Scheich Jibreel in viele Länder eingeladen, um Gebete zu leiten und zu rezitieren. Seine vollständige Murattal-Aufnahme des Qur'an ist weit verbreitet und wird gern zum Mitlesen und Wiederholen genutzt.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
 - **Gefühl und Klarheit:** Er zeigt, dass eine emotionale Rezitation trotzdem deutlich und regelgerecht sein kann.
-- **Du'a mit Herz:** Höre seine Bittgebete nicht nur als Klang, sondern achte auf die Worte – viele davon stammen aus dem Qur'an und der Sunna und eignen sich gut für dein eigenes Gebet.
+- **Sie'a mit Herz:** Hören Sie seine Bittgebete nicht nur als Klang, sondern achten Sie auf die Worte – viele davon stammen aus dem Qur'an und der Sunna und eignen sich gut für Ihr eigenes Gebet.
 - **Gemeinschaft erleben:** Seine Tarawih-Aufnahmen vermitteln das Gefühl, mit Tausenden gemeinsam zu beten – eine schöne Motivation für den eigenen Ramadan.
 
 ## Was bleibt
@@ -708,11 +708,11 @@ Anders als die Rezitatoren früherer Generationen, die über das Radio oder Kass
 
 Al-Kurdis Rezitation ist **Murattal** mit einer ausgeprägt melodischen Note. Seine Stimme ist weich und klar, mit einem leicht wehmütigen Klang. Er liest in ruhigem Tempo und lässt die Melodie sanft fließen, ohne den Text zu überdecken. Viele Hörer beschreiben seine Lesung als tröstlich – als etwas, das man nach einem schweren Tag hört, um wieder zu sich zu kommen.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Ein sanfter Einstieg:** Wenn du gerade erst beginnst, regelmäßig Qur'an zu hören, kann seine weiche Stimme ein guter Anfang sein.
-- **Melodie bewusst hören:** Achte darauf, wie er die Melodie am Ende eines Verses abrundet. Das hilft dir, eigene Pausen schöner zu gestalten.
-- **Vom Klang zur Bedeutung:** Nutze die Begeisterung für den Klang als Tür. Höre einen Vers, der dich berührt, und lies dann seine Erklärung im Tafsir – so wird aus Gefühl Verständnis.
+- **Ein sanfter Einstieg:** Wenn Sie gerade erst beginnen, regelmäßig Qur'an zu hören, kann seine weiche Stimme ein guter Anfang sein.
+- **Melodie bewusst hören:** Achten Sie darauf, wie er die Melodie am Ende eines Verses abrundet. Das hilft Ihnen, eigene Pausen schöner zu gestalten.
+- **Vom Klang zur Bedeutung:** Nutzen Sie die Begeisterung für den Klang als Tür. Hören Sie einen Vers, der Sie berührt, und lesen Sie dann seine Erklärung im Tafsir – so wird aus Gefühl Verständnis.
 
 ## Ein Zeichen unserer Zeit
 
@@ -773,15 +773,15 @@ Islam Sobhi gehört zu einer jungen Generation ägyptischer Rezitatoren, die ihr
 
 Seine Stimme ist warm, ruhig und etwas zurückgenommen. Er liest ohne Hast, mit klaren Pausen und einer leicht melancholischen Färbung. Gerade die Schlichtheit macht seine Rezitation so zugänglich: Man muss nichts über Maqamat wissen, um sich von ihr berührt zu fühlen. Viele hören ihn beim Lernen, vor dem Schlafen oder in Momenten, in denen sie Ruhe brauchen.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
 - **Ruhiges Tempo:** Sein langsames Lesen eignet sich gut, um mitzusprechen und die eigene Aussprache zu verbessern.
-- **Kurze Abschnitte vertiefen:** Nimm dir eine seiner kurzen Aufnahmen, höre sie mehrmals und lies dann den Tafsir zu diesen Versen. So wird aus einem schönen Moment echtes Lernen.
+- **Kurze Abschnitte vertiefen:** Nehmen Sie sich eine seiner kurzen Aufnahmen, hören Sie sie mehrmals und lesen Sie dann den Tafsir zu diesen Versen. So wird aus einem schönen Moment echtes Lernen.
 - **Einen eigenen Ton finden:** Er zeigt, dass man in der Rezitation nicht laut oder kunstvoll sein muss. Für viele Lernende ist das eine Ermutigung, sich selbst an das Lesen zu wagen.
 
 ## Ein Wort zum Hören im Internet
 
-Kurze Clips können ein wunderbarer Anfang sein – sie sind aber nur ein Anfang. Der größte Gewinn liegt darin, ganze Suren zu hören, sie zu verstehen und Stück für Stück selbst zu lesen. Genau dabei möchte Quran Masterclass dich begleiten: Vers für Vers, mit Übersetzung und Tafsir.
+Kurze Clips können ein wunderbarer Anfang sein – sie sind aber nur ein Anfang. Der größte Gewinn liegt darin, ganze Suren zu hören, sie zu verstehen und Stück für Stück selbst zu lesen. Genau dabei möchte Quran Masterclassen Sie sich begleiten: Vers für Vers, mit Übersetzung und Tafsir.
 
 ## Was bleibt
 
@@ -851,10 +851,10 @@ Neben dem Imamat übernahm er große Verantwortung: Er leitete über viele Jahre
 
 As-Subayyils Lesung ist **Murattal** im klassischen Stil der Heiligen Moschee: ruhig, würdevoll, ohne Effekte. Seine Stimme ist ernst und zugleich sanft, mit einem leicht nadschdischen Klang. Man hört einen Gelehrten, der die Verse versteht und sie mit Ehrfurcht vorträgt – nicht um zu beeindrucken, sondern um die Gemeinde ins Gebet zu führen.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
 - **Würde und Einfachheit:** Seine Rezitation zeigt, dass Schlichtheit eine eigene Schönheit hat.
-- **Historische Aufnahmen:** Ältere Gebetsaufnahmen aus Mekka lassen dich eine Epoche miterleben, in der viele heutige Imame ihre Vorbilder fanden.
+- **Historische Aufnahmen:** Ältere Gebetsaufnahmen aus Mekka lassenen Sie sich eine Epoche miterleben, in der viele heutige Imame ihre Vorbilder fanden.
 - **Wissen und Rezitation verbinden:** Sein Leben ermutigt dazu, nicht nur zu lesen, sondern auch zu lernen, was man liest.
 
 ## Vermächtnis
@@ -924,10 +924,10 @@ In der Prophetenmoschee zu beten, bedeutet, an dem Ort zu stehen, an dem der Pro
 
 Al-Qasims Rezitation ist **Murattal** in einem ruhigen, gleichmäßigen Tempo. Seine Stimme ist tief und deutlich; er artikuliert jedes Wort sorgfältig und setzt die Pausen so, dass der Sinn klar hervortritt. Auf große melodische Wendungen verzichtet er weitgehend. Dadurch wirkt seine Lesung sachlich und doch andächtig – man hat den Eindruck, einem Lehrer zuzuhören, der den Text Satz für Satz erschließt.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
 - **Deutliche Artikulation:** Seine sorgfältige Aussprache ist ein gutes Vorbild für Makharidsch und Sifat (Eigenschaften der Buchstaben).
-- **Sinnvolle Pausen:** Höre darauf, wo er anhält. Das schult dein Gespür für Waqf und Ibtida'.
+- **Sinnvolle Pausen:** Hören Sie darauf, wo er anhält. Das schult Ihr Gespür für Waqf und Ibtida'.
 - **Verstehen beim Hören:** Seine Lesung ist ideal, um parallel die Übersetzung mitzulesen – das Tempo lässt dafür Raum.
 
 ## Was bleibt
@@ -997,9 +997,9 @@ Scheich Khayyat war nicht nur Rezitator, sondern auch Pädagoge. Er wirkte im Bi
 
 Seine Lesung ist **Murattal** im alten hidschazisch-mekkanischen Stil: ruhig, klar, mit schlichter Melodie und großer Würde. Man hört keine Effekte, sondern einen Gelehrten, der das Wort Allahs mit Ehrfurcht vorträgt. Für heutige Ohren klingt sie vielleicht ungewohnt zurückhaltend – doch gerade darin liegt ihre Schönheit.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Tradition hören:** Seine Aufnahmen lassen dich erleben, wie in Mekka vor Jahrzehnten rezitiert wurde, und zeigen, wie viel Kontinuität es in der Rezitation gibt.
+- **Tradition hören:** Seine Aufnahmen lassenen Sie sich erleben, wie in Mekka vor Jahrzehnten rezitiert wurde, und zeigen, wie viel Kontinuität es in der Rezitation gibt.
 - **Würde statt Effekt:** Er erinnert daran, dass die Schönheit der Rezitation aus dem Text selbst kommt.
 - **Wissen als Fundament:** Sein Leben zeigt, dass Imamat und Lernen untrennbar sind.
 
@@ -1072,7 +1072,7 @@ Ali Mahmoud beschäftigte sich nicht nur mit dem Tadschwid, sondern auch mit der
 
 Sein Einfluss reicht weit über seine eigenen Aufnahmen hinaus, von denen leider nur sehr wenige erhalten sind. Zu seinen bekanntesten Schülern gehört Scheich Taha Al-Fashni, der in seiner Gruppe begann und später selbst ein Meister wurde. Die sogenannte goldene Ära der ägyptischen Rezitation im 20. Jahrhundert ist ohne Ali Mahmoud kaum zu verstehen: Viele ihrer Stimmen standen in seiner Schule oder ließen sich von ihr inspirieren.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
 - **Wurzeln kennen:** Wer verstehen möchte, warum ägyptische Rezitation so klingt, wie sie klingt, findet bei ihm einen Ursprung.
 - **Kunst im Dienst des Textes:** Sein Weg zeigt, dass Melodie dem Qur'an dienen soll – eine wichtige Haltung für jeden, der schön rezitieren möchte.
@@ -1147,10 +1147,10 @@ Al-Fashni war beides: ein Rezitator des Qur'an und ein Meister der religiösen H
 
 Seine Stimme hatte etwas Strahlendes. Er konnte eine Melodie langsam aufbauen, sie in die Höhe tragen und dann sanft wieder zurückführen, ohne dass die Klarheit der Worte verloren ging. Dabei blieb er stets dem Text verpflichtet. Wer seine Aufnahmen hört, versteht, warum viele Ägypter seine Zeit als goldene Ära bezeichnen.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
 - **Die Verbindung von Rezitation und Hymne:** Seine Ibtihalat zeigen, wie religiöse Sprache und Melodie zusammenfinden. Für die Rezitation gilt dabei immer: Tadschwid geht vor Melodie.
-- **Hören, wie Stimmen wachsen:** Achte darauf, wie er einen Vers aufbaut. Das schärft dein Ohr für die Gestaltung längerer Passagen.
+- **Hören, wie Stimmen wachsen:** Achten Sie darauf, wie er einen Vers aufbaut. Das schärft Ihr Ohr für die Gestaltung längerer Passagen.
 - **Geschichte erleben:** Seine Aufnahmen sind ein Fenster in eine Zeit, in der das Radio die Rezitation in jedes Haus brachte.
 
 ## Vermächtnis
@@ -1222,9 +1222,9 @@ Scheich Shahat war ein Rezitator des **Mujawwad**, des ausgedehnten, melodisch r
 
 Sein Erbe lebt auch in seiner Familie weiter: Sein Sohn [Mahmoud Shahat Anwar](/reciters/mahmoud-shahat-anwar) ist heute selbst ein bekannter Rezitator und trägt den Stil seines Vaters in eine neue Generation.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Emotion und Bedeutung:** Achte darauf, wie er den Ton an den Inhalt anpasst. Lies danach den Tafsir zu einem Abschnitt, den er gestaltet – du wirst Verbindungen entdecken.
+- **Emotion und Bedeutung:** Achten Sie darauf, wie er den Ton an den Inhalt anpasst. Lesen Sie danach den Tafsir zu einem Abschnitt, den er gestaltet – Sie werden Verbindungen entdecken.
 - **Mujawwad verstehen:** Seine Aufnahmen sind ein guter Einstieg in diese Form der Rezitation, die viel Geduld beim Zuhören verlangt und belohnt.
 - **Tradition als Kette:** Vater und Sohn zeigen, wie Rezitation von Generation zu Generation weitergegeben wird.
 
@@ -1295,9 +1295,9 @@ Die Qira'at sind keine verschiedenen Texte, sondern überlieferte Varianten der 
 
 Scheich Sufi liest im **Murattal**-Stil, klar und gleichmäßig, mit einer ruhigen, angenehmen Stimme. Gerade bei den selteneren Lesarten ist diese Klarheit wichtig, denn so lassen sich die Besonderheiten jeder Überlieferung gut heraushören.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Den Horizont erweitern:** Höre eine bekannte Sure einmal in Hafs und einmal in einer anderen Lesart. Achte auf die Unterschiede – aber lerne selbst zunächst in einer Lesart, am besten mit einem Lehrer.
+- **Den Horizont erweitern:** Hören Sie eine bekannte Sure einmal in Hafs und einmal in einer anderen Lesart. Achten Sie auf die Unterschiede – aber lernen Sie selbst zunächst in einer Lesart, am besten mit einem Lehrer.
 - **Respekt vor der Überlieferung:** Seine Aufnahmen zeigen, wie genau der Qur'an über Jahrhunderte weitergegeben wurde.
 - **Klarheit als Vorbild:** Seine deutliche Aussprache ist auch für Hafs-Lernende hilfreich.
 
@@ -1364,10 +1364,10 @@ Auch wenn man in seiner Stimme die Schule des Vaters hört, hat Mahmoud Shahat A
 
 Scheich Mahmoud liest im **Mujawwad**-Stil, dem ausgedehnten, kunstvollen Vortrag, für den Ägypten berühmt ist. Seine Stimme ist kräftig, mit großer Reichweite in die Höhe, und er bewegt sich sicher durch die Maqamat. Wie sein Vater gestaltet er lange Bögen und verleiht den Versen starken Ausdruck. Gleichzeitig klingt bei ihm etwas Frisches mit, das zeigt: Die alte Schule ist lebendig und entwickelt sich weiter.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Vater und Sohn vergleichen:** Höre eine Aufnahme des Vaters und eine des Sohnes nacheinander. Achte auf Gemeinsamkeiten und Unterschiede – so lernst du, was eine „Schule“ der Rezitation ausmacht.
-- **Mujawwad mit Geduld:** Wähle einen kurzen Abschnitt, etwa aus den letzten Suren, und höre ihn vollständig. Lies anschließend den Tafsir, um zu verstehen, was er durch seine Gestaltung hervorhebt.
+- **Vater und Sohn vergleichen:** Hören Sie eine Aufnahme des Vaters und eine des Sohnes nacheinander. Achten Sie auf Gemeinsamkeiten und Unterschiede – so lernen Sie, was eine „Schule“ der Rezitation ausmacht.
+- **Mujawwad mit Geduld:** Wählen Sie einen kurzen Abschnitt, etwa aus den letzten Suren, und hören Sie ihn vollständig. Lesen Sie anschließend den Tafsir, um zu verstehen, was er durch seine Gestaltung hervorhebt.
 - **Inspiration für junge Lernende:** Er zeigt, dass die klassische Rezitation auch heute junge Menschen begeistern kann.
 
 ## Was bleibt
@@ -1435,10 +1435,10 @@ Im Laufe seines langen Lebens reiste Scheich Shuaysha in zahlreiche Länder der 
 
 Shuayshas Rezitation verbindet Kraft und Wärme. Im **Mujawwad** gestaltete er die Verse mit großen, ruhig aufgebauten Melodiebögen; seine Stimme hatte einen vollen, leicht rauen Klang, der sofort wiederzuerkennen ist. Dabei blieb er immer klar in der Aussprache und genau im Tadschwid. Seine Aufnahmen strahlen eine Ruhe aus, die aus jahrzehntelanger Vertrautheit mit dem Qur'an kommt.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Die frühe Radio-Ära hören:** Seine Aufnahmen verbinden dich mit den Anfängen der Rezitation im Rundfunk und mit dem Klang einer ganzen Generation.
-- **Melodie mit Geduld:** Achte darauf, wie langsam und bewusst er Melodien aufbaut. Das lehrt, dass Schönheit Zeit braucht.
+- **Die frühe Radio-Ära hören:** Seine Aufnahmen verbindenen Sie sich mit den Anfängen der Rezitation im Rundfunk und mit dem Klang einer ganzen Generation.
+- **Melodie mit Geduld:** Achten Sie darauf, wie langsam und bewusst er Melodien aufbaut. Das lehrt, dass Schönheit Zeit braucht.
 - **Lebenslange Hingabe:** Über sieben Jahrzehnte hat er dem Qur'an gedient – ein Vorbild für Beständigkeit.
 
 ## Vermächtnis
@@ -1504,10 +1504,10 @@ Al-Jalils Stimme ist tief, voll und von einer ernsten, nachdenklichen Färbung. 
 
 Wie viele saudische Imame sieht Scheich Al-Jalil seine Aufgabe vor allem darin, die Gemeinde im Gebet zu führen. Seine Bekanntheit verdankt er nicht großen Auftritten, sondern Nächten in der Moschee, in denen Menschen gemeinsam stehen, zuhören und beten. Diese Atmosphäre ist auch in seinen Aufnahmen spürbar: Man hört nicht nur einen Rezitator, sondern eine betende Gemeinschaft.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Mit dem Herzen hören:** Wähle einen Abschnitt über das Jenseits, etwa aus Surat Al-Qiyama oder Surat An-Naba', und höre ihn in seiner Rezitation. Lies anschließend den Tafsir und höre noch einmal.
-- **Tiefe Stimme, klare Buchstaben:** Achte darauf, wie deutlich er trotz der tiefen Stimmlage artikuliert – hilfreich für alle, deren Stimme eher tief ist.
+- **Mit dem Herzen hören:** Wählen Sie einen Abschnitt über das Jenseits, etwa aus Surat Al-Qiyama oder Surat An-Naba', und hören Sie ihn in seiner Rezitation. Lesen Sie anschließend den Tafsir und hören Sie noch einmal.
+- **Tiefe Stimme, klare Buchstaben:** Achten Sie darauf, wie deutlich er trotz der tiefen Stimmlage artikuliert – hilfreich für alle, deren Stimme eher tief ist.
 - **Den Ramadan vorbereiten:** Seine Tarawih-Aufnahmen können helfen, sich innerlich auf die Nachtgebete einzustimmen.
 
 ## Was bleibt
@@ -1573,9 +1573,9 @@ Seine Lesung ist **Murattal**, ruhig und gleichmäßig, mit einer warmen, sanfte
 
 Die Überlieferung Ad-Duri von Abu Amr gehört zu den anerkannten Lesarten, die über lückenlose Ketten von Lehrern bis zum Propheten ﷺ zurückreichen. Sie unterscheidet sich von Hafs in Einzelheiten der Aussprache, etwa bei manchen Dehnungen, bei der Behandlung des Hamza und bei einigen Vokalen. Der Text ist derselbe Qur'an – nur in einer anderen, ebenso authentischen Art zu lesen.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Die Vielfalt der Lesarten erleben:** Höre eine bekannte Sure bei ihm und vergleiche sie mit einer Hafs-Aufnahme. Lerne selbst aber zunächst in einer Lesart, am besten mit einem Lehrer.
+- **Die Vielfalt der Lesarten erleben:** Hören Sie eine bekannte Sure bei ihm und vergleichen Sie sie mit einer Hafs-Aufnahme. Lernen Sie selbst aber zunächst in einer Lesart, am besten mit einem Lehrer.
 - **Natürlichkeit als Vorbild:** Seine ruhige, unaufgeregte Art zeigt, dass Rezitation nicht kunstvoll sein muss, um zu berühren.
 - **Afrikas Qur'an-Erbe entdecken:** Durch ihn öffnet sich ein Fenster zu einer reichen, oft übersehenen Tradition.
 
@@ -1642,10 +1642,10 @@ Scheich Ghalwash wurde in den 1960er-Jahren beim ägyptischen Radio als Rezitato
 
 Ghalwashs Stimme war tief, voll und kraftvoll – eine Stimme, die einen großen Raum mühelos füllen konnte. Im **Mujawwad** gestaltete er die Verse mit Würde und Ernst; er beherrschte die Maqamat und setzte sie mit Bedacht ein, ohne die Klarheit der Worte zu opfern. Viele Hörer schätzten an ihm, dass seine Rezitation gleichzeitig feierlich und bodenständig war: kunstvoll, aber nie abgehoben. Auch seine Murattal-Aufnahmen werden noch gehört.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Die tiefe Stimmlage:** Wenn deine Stimme eher tief ist, kann er dir zeigen, wie viel Schönheit und Ausdruck in einer tiefen Lage möglich ist.
-- **Feierlichkeit:** Achte darauf, wie er bei Versen über die Größe Allahs Ruhe und Gewicht in die Stimme legt.
+- **Die tiefe Stimmlage:** Wenn Ihre Stimme eher tief ist, kann er Ihnen zeigen, wie viel Schönheit und Ausdruck in einer tiefen Lage möglich ist.
+- **Feierlichkeit:** Achten Sie darauf, wie er bei Versen über die Größe Allahs Ruhe und Gewicht in die Stimme legt.
 - **Die ägyptische Schule kennenlernen:** Er ist eine wichtige Stimme der Generation nach den großen Meistern – hilfreich, um die Entwicklung der ägyptischen Rezitation zu verstehen.
 
 ## Vermächtnis
@@ -1713,10 +1713,10 @@ In den 1950er-Jahren wurde Scheich Al-Bahtimi als Rezitator beim ägyptischen Ra
 
 Al-Bahtimis Stimme war kraftvoll, hell und sehr beweglich. Im **Mujawwad** liebte er reiche melodische Verzierungen und kunstvolle Übergänge zwischen den Maqamat, ohne dabei die Genauigkeit des Tadschwid aufzugeben. Seine Rezitation hat etwas Leuchtendes und Lebendiges; man spürt die Freude an der Schönheit des Wortes Allahs. Wer seine Aufnahmen hört, versteht, warum die Menschen damals in Scharen kamen, um ihn zu hören.
 
-## Was du als Lernende oder Lernender mitnehmen kannst
+## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Die Vielfalt der goldenen Ära:** Höre ihn im Wechsel mit seinen Zeitgenossen. Du wirst merken, wie unterschiedlich und doch verwandt ihre Stimmen sind – ohne dass einer den anderen übertreffen müsste.
-- **Verzierung mit Maß:** Achte darauf, wie er trotz reicher Melodik die Buchstaben und Dehnungen korrekt hält.
+- **Die Vielfalt der goldenen Ära:** Hören Sie ihn im Wechsel mit seinen Zeitgenossen. Sie werden merken, wie unterschiedlich und doch verwandt ihre Stimmen sind – ohne dass einer den anderen übertreffen müsste.
+- **Verzierung mit Maß:** Achten Sie darauf, wie er trotz reicher Melodik die Buchstaben und Dehnungen korrekt hält.
 - **Freude am Qur'an:** Seine Rezitation erinnert daran, dass der Qur'an auch Freude und Staunen wecken darf.
 
 ## Vermächtnis

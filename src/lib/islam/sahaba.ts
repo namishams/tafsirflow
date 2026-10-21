@@ -7,7 +7,7 @@ export const sahaba: IslamDoc = {
   de: {
     title: "Die Gefährten und die Familie des Propheten ﷺ",
     kicker: "Sahaba und Ahl al-Bait",
-    lead: "Um den Propheten ﷺ versammelten sich Menschen, deren Namen Muslime bis heute mit Liebe aussprechen: seine Familie, die Ahl al-Bait, und seine Gefährten, die Sahaba. Sie haben den Koran bewahrt, seine Sunna weitergegeben und mit ihrem Leben gezeigt, was Glaube bedeutet. In diesem Kapitel begegnest du den vier rechtgeleiteten Kalifen, Khadidscha und Aischa, Fatima, al-Hasan und al-Husain und vielen weiteren Gefährtinnen und Gefährten – Reichen und ehemals Versklavten, aus Mekka und Medina, aus Abessinien und Persien.",
+    lead: "Um den Propheten ﷺ versammelten sich Menschen, deren Namen Muslime bis heute mit Liebe aussprechen: seine Familie, die Ahl al-Bait, und seine Gefährten, die Sahaba. Sie haben den Koran bewahrt, seine Sunna weitergegeben und mit ihrem Leben gezeigt, was Glaube bedeutet. In diesem Kapitel begegnen Sie den vier rechtgeleiteten Kalifen, Khadidscha und Aischa, Fatima, al-Hasan und al-Husain und vielen weiteren Gefährtinnen und Gefährten – Reichen und ehemals Versklavten, aus Mekka und Medina, aus Abessinien und Persien.",
     facts: [
       { n: "4", l: "rechtgeleitete Kalifen nach sunnitischer Zählung" },
       { n: "9:100", l: "„Allah hat Wohlgefallen an ihnen, und sie an Ihm“" },
@@ -50,7 +50,7 @@ Umar baute die Verwaltung des jungen Staates auf: Register für die Unterstützu
 
 Uthman gehörte zu den ersten Muslimen. Er war mit **Ruqayya**, einer Tochter des Propheten ﷺ, verheiratet und wanderte mit ihr nach Abessinien aus; nach ihrem Tod heiratete er ihre Schwester **Umm Kulthum**. Darum nennt man ihn **Dhu n-Nurain**, „den mit den zwei Lichtern“. Er war wohlhabend und freigebig: Er kaufte in Medina den Brunnen Ruma und stellte ihn allen Muslimen zur Verfügung (al-Bukhari, at-Tirmidhi), und er rüstete einen großen Teil des Heeres für den schweren Feldzug nach Tabuk aus (at-Tirmidhi). Bekannt war er für seine Schamhaftigkeit; der Prophet ﷺ sagte über ihn: „Soll ich mich nicht vor einem Mann schämen, vor dem sich sogar die Engel schämen?“ (Muslim).
 
-Sein größtes Vermächtnis ist der **einheitliche Mushaf**: Weil sich in den neuen Provinzen Unterschiede in der Rezitation zeigten, ließ er auf der Grundlage der unter Abu Bakr gesammelten Blätter, die bei Hafsa aufbewahrt wurden, Abschriften anfertigen und in die großen Städte senden (al-Bukhari). Jeder Mushaf, den du heute in der Hand hältst, geht auf diese Arbeit zurück. Im Jahr 35 nach der Hidschra (656) wurde Uthman von Aufständischen in seinem Haus in Medina getötet – nach den Berichten, während er im Koran las.
+Sein größtes Vermächtnis ist der **einheitliche Mushaf**: Weil sich in den neuen Provinzen Unterschiede in der Rezitation zeigten, ließ er auf der Grundlage der unter Abu Bakr gesammelten Blätter, die bei Hafsa aufbewahrt wurden, Abschriften anfertigen und in die großen Städte senden (al-Bukhari). Jeder Mushaf, den Sie heute in der Hand halten, geht auf diese Arbeit zurück. Im Jahr 35 nach der Hidschra (656) wurde Uthman von Aufständischen in seinem Haus in Medina getötet – nach den Berichten, während er im Koran las.
 
 ### Ali ibn Abi Talib (656–661)
 
@@ -88,7 +88,7 @@ Als Fatima ihren Vater um eine Dienerin bat, weil die Hausarbeit sie erschöpfte
 
 Die beiden Enkel waren dem Propheten ﷺ unendlich lieb. Er nannte sie „meine beiden Basilikumzweige in dieser Welt“ (al-Bukhari) und sagte: „Al-Hasan und al-Husain sind die Herren der Jugend des Paradieses“ (at-Tirmidhi). Über al-Husain sagte er: „Husain ist von mir, und ich bin von Husain“ (at-Tirmidhi).
 
-Im Jahr 61 nach der Hidschra (680) wurde **al-Husain** mit Angehörigen seiner Familie und Gefährten bei **Kerbela** getötet. Für alle Muslime ist das ein schmerzliches Ereignis; für die Schiiten, für die er der dritte Imam ist, steht es im Zentrum ihres Gedenkens. Seine Schwester **Zainab** überlebte Kerbela und wurde mit ihrer Standhaftigkeit und ihren Worten selbst zu einem Vorbild. Mehr über Aschura erfährst du im Kapitel [Sunniten und Schiiten](/islam/sunni-shia).
+Im Jahr 61 nach der Hidschra (680) wurde **al-Husain** mit Angehörigen seiner Familie und Gefährten bei **Kerbela** getötet. Für alle Muslime ist das ein schmerzliches Ereignis; für die Schiiten, für die er der dritte Imam ist, steht es im Zentrum ihres Gedenkens. Seine Schwester **Zainab** überlebte Kerbela und wurde mit ihrer Standhaftigkeit und ihren Worten selbst zu einem Vorbild. Mehr über Aschura erfahren Sie im Kapitel [Sunniten und Schiiten](/islam/sunni-shia).
 
 ### Die Mütter der Gläubigen
 
@@ -172,7 +172,7 @@ Die Gefährten und die Familie des Propheten ﷺ waren keine Heiligenbilder, son
 - **Mut zum Frieden** – wie al-Hasan.
 - **Standhaftigkeit für das Rechte** – wie al-Husain und Zainab.
 
-In der ganzen Welt nennen Eltern ihre Kinder nach ihnen: Ali und Umar, Fatima und Aischa, Hasan und Husain, Khadidscha und Bilal. Auch in den Emiraten tragen Moscheen ihre Namen, wie die Al-Farooq-Omar-bin-Al-Khattab-Moschee in Dubai. Wenn du ihre Geschichten im Koran wiederfinden möchtest, beginne mit [Sure at-Tauba](/surah/9) und [Sure al-Fath](/surah/48) – und lies über den, um den sie sich versammelten, im Kapitel [Der Prophet Muhammad ﷺ](/islam/prophet).`,
+In der ganzen Welt nennen Eltern ihre Kinder nach ihnen: Ali und Umar, Fatima und Aischa, Hasan und Husain, Khadidscha und Bilal. Auch in den Emiraten tragen Moscheen ihre Namen, wie die Al-Farooq-Omar-bin-Al-Khattab-Moschee in Dubai. Wenn Sie ihre Geschichten im Koran wiederfinden möchten, beginnen Sie mit [Sure at-Tauba](/surah/9) und [Sure al-Fath](/surah/48) – und lesen Sie über den, um den sie sich versammelten, im Kapitel [Der Prophet Muhammad ﷺ](/islam/prophet).`,
     faq: [
       { q: "Wer zählt als Sahabi, als Gefährte des Propheten ﷺ?", a: "Nach der verbreiteten Definition, die etwa Ibn Hadschar al-Asqalani verwendet, jeder Mensch, der dem Propheten ﷺ begegnet ist, an ihn geglaubt hat und als Muslim gestorben ist – Männer, Frauen und Kinder." },
       { q: "Wer sind die Ahl al-Bait?", a: "Die Familie des Propheten ﷺ. Der Kern sind die fünf „Leute des Umhangs“: der Prophet ﷺ, Ali, Fatima, al-Hasan und al-Husain (Muslim; vgl. 33:33). Viele sunnitische Gelehrte zählen auch die Ehefrauen des Propheten ﷺ und weitere Angehörige der Banu Haschim dazu; schiitische Gelehrte beziehen den Begriff vor allem auf die Leute des Umhangs und die Imame aus der Nachkommenschaft al-Husains." },
@@ -304,7 +304,7 @@ Abu Hurayrah came from the tribe of Daws in the south of Arabia and arrived in M
 
 ### Abdullah ibn Abbas
 
-Ibn Abbas, a cousin of the Prophet ﷺ, was still a boy when the Prophet ﷺ passed away. The Prophet ﷺ had prayed for him: "O Allah, teach him the Book" (al-Bukhari), and asked that he be given understanding of the religion (al-Bukhari). He became the *Turjuman al-Qur'an*, the "interpreter of the Quran". He sought out the older Companions, waited patiently at their doors and learned. He was close to Ali and served under him as governor of Basra; later he taught in Makkah, and his students, such as Mujahid, Ikrimah and Sa'id ibn Jubayr, shaped the science of Quranic interpretation.
+Ibn Abbas, a cousin of the Prophet ﷺ, was still a boy when the Prophet ﷺ passed away. The Prophet ﷺ had prayed for him: "O Allah, teach him the Book" (al-Bukhari), and asked that he be given understanding of the religion (al-Bukhari). He became the *Turjuman al-Qur'an*, the "interpreter of the Quran". He sought out the older Companions, waited patiently at their doors and learned. He was close to Ali and served under him as governor of Basra; later he taught in Makkah, and his students, suchen Sie as Mujahid, Ikrimah and Sa'id ibn Jubayr, shaped the science of Quranic interpretation.
 
 ### Abdullah ibn Mas'ud
 
@@ -340,8 +340,8 @@ The list could go on for a long time:
 Sunni and Shia Muslims love the Prophet ﷺ and his family and honour the Companions who stood by him faithfully. At the same time they see parts of early history differently. We place both views side by side without passing judgement:
 
 - **In Sunni tradition** all the Companions are regarded as trustworthy in passing on the religion. One does not speak ill of them, citing the words of the Prophet ﷺ: "Do not revile my Companions" (al-Bukhari, Muslim). Most Sunni scholars see an order of merit in the sequence Abu Bakr, Umar, Uthman and Ali.
-- **In Shia tradition** the Companions are honoured according to their faith and their deeds. Especially loved are those who stood faithfully by Ali, such as Salman, Abu Dharr, al-Miqdad and Ammar. For the transmission of the religion, Shia scholars rely above all on the Imams of the Prophet's ﷺ family.
-- **The internal conflicts** after Uthman's death, such as the Battle of the Camel and Siffin, are mourned by both sides. Many Sunni scholars hold that Ali was in the right while refraining from judging the others involved; Shia scholars judge more clearly here. It is one of the points where the views diverge.
+- **In Shia tradition** the Companions are honoured according to their faith and their deeds. Especially loved are those who stood faithfully by Ali, suchen Sie as Salman, Abu Dharr, al-Miqdad and Ammar. For the transmission of the religion, Shia scholars rely above all on the Imams of the Prophet's ﷺ family.
+- **The internal conflicts** after Uthman's death, suchen Sie as the Battle of the Camel and Siffin, are mourned by both sides. Many Sunni scholars hold that Ali was in the right while refraining from judging the others involved; Shia scholars judge more clearly here. It is one of the points where the views diverge.
 
 Leading scholars of both traditions have declared it forbidden to revile what the other side holds sacred, including the wives of the Prophet ﷺ and the Companions, and the family of the Prophet ﷺ is honoured by all. The Amman Message of 2004/2005 set down the mutual recognition of the schools of law; more in the chapter [The Schools of Law in Islam](/islam/madhahib). And sometimes a family tree alone shows how close everything is: Imam Ja'far as-Sadiq, a great-grandson of al-Husayn, was through his mother Umm Farwah also a descendant of Abu Bakr (see [the Ja'fari school](/islam/jafari)).
 
@@ -358,7 +358,7 @@ The Companions and the family of the Prophet ﷺ were not icons but human beings
 - **The courage to make peace** – like al-Hasan.
 - **Steadfastness for what is right** – like al-Husayn and Zaynab.
 
-All over the world parents name their children after them: Ali and Umar, Fatimah and Aishah, Hasan and Husayn, Khadijah and Bilal. In the Emirates, too, mosques bear their names, such as the Al Farooq Omar Bin Al Khattab Mosque in Dubai. If you would like to find their stories in the Quran, start with [Surah at-Tawbah](/surah/9) and [Surah al-Fath](/surah/48), and read about the one around whom they gathered in the chapter [The Prophet Muhammad ﷺ](/islam/prophet).`,
+All over the world parents name their children after them: Ali and Umar, Fatimah and Aishah, Hasan and Husayn, Khadijah and Bilal. In the Emirates, too, mosques bear their names, suchen Sie as the Al Farooq Omar Bin Al Khattab Mosque in Dubai. If you would like to find their stories in the Quran, start with [Surah at-Tawbah](/surah/9) and [Surah al-Fath](/surah/48), and read about the one around whom they gathered in the chapter [The Prophet Muhammad ﷺ](/islam/prophet).`,
     faq: [
       { q: "Who counts as a sahabi, a Companion of the Prophet ﷺ?", a: "According to the widely used definition found for example in Ibn Hajar al-Asqalani, anyone who met the Prophet ﷺ, believed in him and died as a Muslim: men, women and children." },
       { q: "Who are the Ahl al-Bayt?", a: "The family of the Prophet ﷺ. At its heart are the five \"People of the Cloak\": the Prophet ﷺ, Ali, Fatimah, al-Hasan and al-Husayn (Muslim; compare 33:33). Many Sunni scholars also include the Prophet's ﷺ wives and other members of the Banu Hashim; Shia scholars relate the term above all to the People of the Cloak and the Imams descended from al-Husayn." },

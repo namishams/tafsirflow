@@ -13,13 +13,13 @@ type Ui = Record<UiKey, string>;
 const UI: Record<Lang, Ui> = {
   de: {
     sunni: "Sunnitisch", shia: "Schiitisch (Dscha'fari)", fard: "Fard · Pflicht", sunnah: "Sunna · empfohlen", wajib: "Wadschib · Pflicht", mustahabb: "Mustahabb · empfohlen",
-    right: "rechts", left: "links", each: "je Seite", tapHint: "Tippe bei jedem Durchgang einmal – so behältst du den Überblick.", again: "Neu zählen", count: "Mitzählen",
+    right: "rechts", left: "links", each: "je Seite", tapHint: "Tippen Sie bei jedem Durchgang einmal – so behalten Sie den Überblick.", again: "Neu zählen", count: "Mitzählen",
     play: "Abspielen", pause: "Pause", prev: "Zurück", next: "Weiter", steps: "Alle Schritte", restart: "Von vorn", toQuiz: "Zum Quiz", quiz: "Reihenfolge-Quiz", back: "Zurück zum Trainer",
     meaning: "Bedeutung", passed: "Quiz bestanden",
-    note: "Dieser Trainer zeigt den üblichen Ablauf. Einzelheiten unterscheiden sich zwischen den Rechtsschulen – lerne die Gebetswaschung zusätzlich bei einem Lehrer deiner Schule.",
-    quizTitle: "In welcher Reihenfolge?", quizLead: "Die Schritte sind durcheinandergeraten. Tippe sie in der richtigen Reihenfolge an.",
+    note: "Dieser Trainer zeigt den üblichen Ablauf. Einzelheiten unterscheiden sich zwischen den Rechtsschulen – lernen Sie die Gebetswaschung zusätzlich bei einem Lehrer Ihrer Schule.",
+    quizTitle: "In welcher Reihenfolge?", quizLead: "Die Schritte sind durcheinandergeraten. Tippen Sie sie in der richtigen Reihenfolge an.",
     wrong: "Noch nicht – überleg kurz, was davor kommt.", hint: "Kleiner Tipp: Der leuchtende Schritt kommt als Nächstes.", good: "Richtig.",
-    doneTitle: "Du kennst die Reihenfolge der Gebetswaschung.", doneText: "Jetzt bist du bereit für das Gebet.", clean: "Ganz ohne Fehler.", slips1: "Mit einem kleinen Umweg – genau so lernt man.", slipsN: "Mit {n} kleinen Umwegen – genau so lernt man.",
+    doneTitle: "Sie kennen die Reihenfolge der Gebetswaschung.", doneText: "Jetzt sind Sie bereit für das Gebet.", clean: "Ganz ohne Fehler.", slips1: "Mit einem kleinen Umweg – genau so lernt man.", slipsN: "Mit {n} kleinen Umwegen – genau so lernt man.",
     practise: "Noch einmal üben", toSalah: "Weiter zum Gebetstrainer", toVerse: "Den Wudu-Vers hören (5:6)",
   },
   en: {

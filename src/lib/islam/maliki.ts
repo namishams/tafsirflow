@@ -15,13 +15,13 @@ export const maliki: IslamDoc = {
     ],
     body: `## Ein Gelehrter, der Medina nie verlassen wollte
 
-Stell dir Medina im zweiten Jahrhundert nach der Hidschra vor. Die Gefährten des Propheten ﷺ sind verstorben, doch ihre Kinder und Schüler leben noch in denselben Gassen, beten in derselben Moschee und erinnern sich daran, wie ihre Väter gebetet, gehandelt und geurteilt haben. In dieser Stadt wächst ein Junge namens **Malik ibn Anas** heran. Er wird später einer der größten Gelehrten der islamischen Geschichte, und die Schule, die seinen Namen trägt, wird bis heute von vielen Millionen Menschen befolgt.
+Stellen Sie sich Medina im zweiten Jahrhundert nach der Hidschra vor. Die Gefährten des Propheten ﷺ sind verstorben, doch ihre Kinder und Schüler leben noch in denselben Gassen, beten in derselben Moschee und erinnern sich daran, wie ihre Väter gebetet, gehandelt und geurteilt haben. In dieser Stadt wächst ein Junge namens **Malik ibn Anas** heran. Er wird später einer der größten Gelehrten der islamischen Geschichte, und die Schule, die seinen Namen trägt, wird bis heute von vielen Millionen Menschen befolgt.
 
 Imam Malik, möge Allah ihm barmherzig sein, wurde in Medina geboren, verbrachte dort sein ganzes Leben und starb dort im Jahr 179 nach der Hidschra (795 n. Chr.). Außer zur Pilgerfahrt hat er die Stadt kaum verlassen. Das war keine Bequemlichkeit, sondern Liebe und Ehrfurcht: Er wollte in der Nähe des Propheten ﷺ leben und sterben. Überliefert wird, dass er in Medina aus Respekt vor dem Ort, an dem der Prophet ﷺ begraben liegt, nicht ritt.
 
 ### Lernen bei den Erben der Gefährten
 
-Seine Mutter soll ihm, als er zum Lernen ging, die Kleidung der Gelehrten angelegt und gesagt haben: Geh zu Rabi'a und lerne von ihm zuerst sein Benehmen, dann sein Wissen. Dieser Satz begleitet die malikitische Tradition bis heute: **Adab kommt vor 'Ilm** – gutes Benehmen vor Wissen.
+Seine Mutter soll ihm, als er zum Lernen ging, die Kleidung der Gelehrten angelegt und gesagt haben: Gehen Sie zu Rabi'a und lernen Sie von ihm zuerst sein Benehmen, dann sein Wissen. Dieser Satz begleitet die malikitische Tradition bis heute: **Adab kommt vor 'Ilm** – gutes Benehmen vor Wissen.
 
 Zu seinen Lehrern gehörten große Namen Medinas:
 
@@ -139,11 +139,11 @@ Heute ist die Schule vor allem verbreitet in:
 
 ### Ein Erbe in den Emiraten und am Golf
 
-Wenn du in den Emiraten lebst, ist dir die malikitische Schule vielleicht näher, als du denkst. Viele Familien am Golf haben ihre Religion über Generationen nach dieser Schule gelernt: wie man die Waschung vollzieht, wie man betet, wie man fastet. Die Großeltern, die einem Kind das Gebet beibrachten, gaben oft genau dieses Erbe weiter, ohne den Namen der Schule groß zu erwähnen. Es war einfach „unser Gebet“.
+Wenn Sie in den Emiraten leben, ist Ihnen die malikitische Schule vielleicht näher, als Sie denken. Viele Familien am Golf haben ihre Religion über Generationen nach dieser Schule gelernt: wie man die Waschung vollzieht, wie man betet, wie man fastet. Die Großeltern, die einem Kind das Gebet beibrachten, gaben oft genau dieses Erbe weiter, ohne den Namen der Schule groß zu erwähnen. Es war einfach „unser Gebet“.
 
-Zugleich ist das Land ein Ort, an dem Menschen aus aller Welt leben, die anderen Schulen folgen. Hier zeigt sich etwas, das ganz im Geist Imam Maliks liegt: die eigene Tradition zu lieben und zugleich die anderen zu achten. Erinnere dich daran, wie er den Kalifen bat, nicht allen Menschen sein Buch aufzuzwingen. Diese Haltung – **Wasatiyya**, Mäßigung und Ausgewogenheit – passt zu der Gemeinschaft, die Allah im Quran beschreibt: „So haben Wir euch zu einer Gemeinschaft der Mitte gemacht“ (2:143).
+Zugleich ist das Land ein Ort, an dem Menschen aus aller Welt leben, die anderen Schulen folgen. Hier zeigt sich etwas, das ganz im Geist Imam Maliks liegt: die eigene Tradition zu lieben und zugleich die anderen zu achten. Erinneren Sie sich daran, wie er den Kalifen bat, nicht allen Menschen sein Buch aufzuzwingen. Diese Haltung – **Wasatiyya**, Mäßigung und Ausgewogenheit – passt zu der Gemeinschaft, die Allah im Quran beschreibt: „So haben Wir euch zu einer Gemeinschaft der Mitte gemacht“ (2:143).
 
-## Was dir im Alltag auffallen kann
+## Was Ihnen im Alltag auffallen kann
 
 Wer zum ersten Mal Malikiten beten sieht, bemerkt manchmal kleine Unterschiede. Sie sind kein Grund zur Verwunderung oder gar zur Trennung, sondern das Ergebnis sorgfältiger Gelehrsamkeit, die auf Überlieferungen und der Praxis Medinas beruht.
 
@@ -152,7 +152,7 @@ Wer zum ersten Mal Malikiten beten sieht, bemerkt manchmal kleine Unterschiede. 
 - **Der Friedensgruß:** Wer allein betet oder vorbetet, beendet das Gebet traditionell mit einem einzigen Friedensgruß, mit einer leichten Wendung nach rechts.
 - **Das Bittgebet im Morgengebet:** Das Qunut im Morgengebet wird in der Schule als empfohlen angesehen und leise gesprochen.
 
-Solche Einzelheiten zeigen, wie genau die Gelehrten hingeschaut haben. Wenn du hinter einem Imam einer anderen Schule betest oder ein Malikit neben dir anders steht als du, dann denk daran: Alle suchen dieselbe Sunna, alle wenden sich derselben Kaaba zu.
+Solche Einzelheiten zeigen, wie genau die Gelehrten hingeschaut haben. Wenn Sie hinter einem Imam einer anderen Schule beten oder ein Malikit nebenen Sie sich anders steht als Sie, dann denken Sie daran: Alle suchen dieselbe Sunna, alle wenden sich derselben Kaaba zu.
 
 ## Der Beitrag zur islamischen Zivilisation
 
@@ -164,13 +164,13 @@ Und vielleicht ihr schönstes Geschenk: die Verbindung von Wissen und Benehmen. 
 
 Der Prophet ﷺ sagte: „Wem Allah Gutes will, dem schenkt Er Verständnis in der Religion“ (al-Buchari und Muslim). Imam Malik hat sein ganzes Leben diesem Verständnis gewidmet, in der Stadt, die er so sehr liebte. Die malikitische Schule ist eine der Schulen, die Muslime auf der ganzen Welt als Teil ihres gemeinsamen Erbes anerkennen – neben den Hanafiten, Schafiiten und Hanbaliten und den weiteren Schulen, die die Amman-Botschaft nennt: Dscha'fari, Zaiditen, Ibaditen und Zahiriten.
 
-Ob du selbst Malikit bist oder einer anderen Schule folgst: Wenn du das nächste Mal in den Emiraten, in Fes oder in Dakar einen Imam die Fatiha rezitieren hörst, dann hörst du ein Echo Medinas. Möge Allah Imam Malik und alle Imame reich belohnen, ihnen barmherzig sein und uns zu Menschen machen, die das Wissen mit Liebe suchen und mit Demut tragen.`,
+Ob Sie selbst Malikit sind oder einer anderen Schule folgen: Wenn Sie das nächste Mal in den Emiraten, in Fes oder in Dakar einen Imam die Fatiha rezitieren hören, dann hören Sie ein Echo Medinas. Möge Allah Imam Malik und alle Imame reich belohnen, ihnen barmherzig sein und uns zu Menschen machen, die das Wissen mit Liebe suchen und mit Demut tragen.`,
     faq: [
       { q: "Wer war Imam Malik?", a: "Malik ibn Anas (möge Allah ihm barmherzig sein) war ein großer Gelehrter Medinas, der dort lebte, lehrte und im Jahr 179 n. H. (795 n. Chr.) starb. Er verfasste das Muwatta' und ist der Namensgeber der malikitischen Rechtsschule." },
       { q: "Was bedeutet „'amal ahl al-Madina“?", a: "Die überlieferte Praxis der Leute Medinas. Weil der Prophet ﷺ dort lebte und die Stadt seine Lebensweise Generation um Generation weitertrug, sah Imam Malik in dieser gemeinsamen Praxis eine besonders starke Form der Überlieferung der Sunna." },
       { q: "Warum beten manche Malikiten mit herabhängenden Armen?", a: "Diese Haltung (Sadl) ist in Teilen der Schule verbreitet und stützt sich auf Berichte aus Medina und auf die Lehre, wie sie in der Mudawwana überliefert ist. Andere Malikiten legen die Hände übereinander. Beides wird innerhalb der Schule mit Gründen vertreten und ist kein Anlass für Streit." },
       { q: "Wo ist die malikitische Schule heute verbreitet?", a: "Vor allem in Nordafrika, in West- und Zentralafrika, in Teilen Ägyptens und des Sudan sowie in der Golfregion, wo sie eine lange Tradition hat, auch in den Vereinigten Arabischen Emiraten. Historisch prägte sie auch Andalusien." },
-      { q: "Mit welchem Buch fange ich an, wenn ich die Schule kennenlernen möchte?", a: "Viele beginnen mit kurzen Lehrtexten und später mit der Risala von Ibn Abi Zaid al-Qairawani. Am besten lernst du sie mit einem qualifizierten Lehrer, der dir die Texte erklärt und dich begleitet." },
+      { q: "Mit welchem Buch fange ich an, wenn ich die Schule kennenlernen möchte?", a: "Viele beginnen mit kurzen Lehrtexten und später mit der Risala von Ibn Abi Zaid al-Qairawani. Am besten lernen Sie sie mit einem qualifizierten Lehrer, der Ihnen die Texte erklärt und Sie begleitet." },
     ],
     sources: [
       "Quran 2:143",
@@ -268,9 +268,9 @@ Alongside these come further principles that the Malikis use especially widely:
 
 ### Why the practice of Madinah matters so much
 
-For Imam Malik, Madinah was not a city like any other. Here the Prophet ﷺ had lived for ten years, praying, teaching and judging. What the whole city did together, generation after generation – such as the form of the call to prayer or certain measures and weights – was for him like a living transmission, carried not by a single narrator but by thousands.
+For Imam Malik, Madinah was not a city like any other. Here the Prophet ﷺ had lived for ten years, praying, teaching and judging. What the whole city did together, generation after generation – suchen Sie as the form of the call to prayer or certain measures and weights – was for him like a living transmission, carried not by a single narrator but by thousands.
 
-That is why, in certain cases, the transmitted practice of Madinah could weigh more heavily in the Maliki school than a single hadith narrated by only a few people. This does not mean the Malikis held the hadith in low regard – quite the opposite: they understood the practice of Madinah as the most visible form of the Sunnah. Other scholars, including Imam ash-Shafi'i, saw it differently and discussed the matter respectfully with the Malikis. Such discussions are not quarrels; they are part of the rich heritage of this ummah.
+That is why, in certain cases, the transmitted practice of Madinah could weigh more heavily in the Maliki school than a single hadith narrated by only a few people. This does not mean the Malikis held the hadith in low regard – quite the opposite: they understood the practice of Madinah as the most visible form of the Sunnah. Other scholars, including Imam ash-Shafi'i, saw it differently and discussed the matter respectfully with the Malikis. Suchen Sie discussions are not quarrels; they are part of the rich heritage of this ummah.
 
 ### The aims of the Shari'ah
 

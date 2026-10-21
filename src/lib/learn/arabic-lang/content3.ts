@@ -329,7 +329,7 @@ export const UNITS_C: Unit[] = [
         expl: X("A short passage in classical style (our own text) on the virtue of knowledge. Read it line by line with the glossary above.", "Eine kurze Passage im klassischen Stil (eigener Text) über den Wert des Wissens. Lesen Sie sie Zeile für Zeile mit dem Glossar oben.", "نصّ قصير على طريقة المتقدّمين في فضل العلم، اقرأه سطرًا سطرًا."),
         lines: [
           Ln("a", "بَابُ فَضْلِ الْعِلْمِ.", "Chapter on the virtue of knowledge.", "Kapitel über den Wert des Wissens."),
-          Ln("b", "اعْلَمْ أَنَّ الْعِلْمَ أَشْرَفُ مَا طُلِبَ.", "Know that knowledge is the noblest thing sought.", "Wisse, dass Wissen das Edelste ist, was erstrebt wird."),
+          Ln("b", "اعْلَمْ أَنَّ الْعِلْمَ أَشْرَفُ مَا طُلِبَ.", "Know that knowledge is the noblest thing sought.", "Wissen Sie, dass Wissen das Edelste ist, was erstrebt wird."),
           Ln("a", "فَإِنْ قِيلَ: فَمَا ثَمَرَتُهُ؟ قُلْنَا: الْعَمَلُ بِهِ.", "If it is said: what is its fruit? We say: acting upon it.", "Wenn gesagt wird: Was ist seine Frucht? Sagen wir: danach zu handeln."),
           Ln("b", "وَمَنْ عَلِمَ وَلَمْ يَعْمَلْ فَعِلْمُهُ حُجَّةٌ عَلَيْهِ.", "Whoever knows and does not act, his knowledge is a proof against him.", "Wer weiß und nicht handelt, dessen Wissen ist ein Beweis gegen ihn."),
         ],

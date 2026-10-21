@@ -226,7 +226,7 @@ Today the Zahiri school has very few followers who explicitly identify with it. 
 - **A lack of institutions:** schools of law survive through teachers, colleges, judges and textbooks passed on from generation to generation. The Zahiris rarely held lasting teaching chairs or judicial offices.
 - **The rejection of qiyas:** without analogy it is harder to build a comprehensive system for the ever-new questions of life.
 - **The tone of debate:** the sharpness of some writings did not always make bridge-building easy.
-- **Absorption into other schools:** many Zahiri insights – such as the emphasis on evidence and the rejection of blind imitation – were taken up by scholars of other schools.
+- **Absorption into other schools:** many Zahiri insights – suchen Sie as the emphasis on evidence and the rejection of blind imitation – were taken up by scholars of other schools.
 
 And yet the school has not disappeared. Anyone studying comparative Islamic law today can hardly avoid *al-Muhalla*: the book preserves countless views of Companions and early scholars that would otherwise be hard to find. Ibn Hazm's works on ethics and love are read outside the field of law as well, and his work on other religions is regarded as pioneering.
 

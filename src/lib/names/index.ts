@@ -1509,25 +1509,25 @@ ahmad|le plus digne de louange
 mahmud|loué, digne de louange
 mustafa|l'élu
 abdullah|serviteur d'Allah
-abdurrahman|serviteur du Tout Miséricordieux
-abdurrahim|serviteur du Particulièrement Miséricordieux
-abdulaziz|serviteur du Tout-Puissant
-abdulmalik|serviteur du Roi
-abdulkarim|serviteur du Très Généreux
-abdulhamid|serviteur du Digne de louange
+abdurrahman|serviteur Sie Tout Miséricordieux
+abdurrahim|serviteur Sie Particulièrement Miséricordieux
+abdulaziz|serviteur Sie Tout-Puissant
+abdulmalik|serviteur Sie Roi
+abdulkarim|serviteur Sie Très Généreux
+abdulhamid|serviteur Sie Digne de louange
 abdulqadir|serviteur de Celui qui peut tout
 abdussalam|serviteur de la Source de paix
-abdulwahhab|serviteur du Dispensateur
+abdulwahhab|serviteur Sie Dispensateur
 abdulghani|serviteur de l'Autosuffisant
-abdullatif|serviteur du Subtil, du Bienveillant
-abdulhadi|serviteur du Guide
+abdullatif|serviteur Sie Subtil, Sie Bienveillant
+abdulhadi|serviteur Sie Guide
 abdulbasit|serviteur de Celui qui étend les biens
 abdulwahid|serviteur de l'Unique
 abdulfattah|serviteur de Celui qui ouvre
-abdulmajid|serviteur du Glorieux
-abdulhayy|serviteur du Vivant éternel
+abdulmajid|serviteur Sie Glorieux
+abdulhayy|serviteur Sie Vivant éternel
 abdulwadud|serviteur de l'Affectueux
-abdulghafur|serviteur du Pardonneur
+abdulghafur|serviteur Sie Pardonneur
 ibrahim|le prophète Abraham, l'ami proche d'Allah
 ismail|le prophète Ismaël ; « Dieu entend »
 ishaq|le prophète Isaac ; « il rit »
@@ -1553,16 +1553,16 @@ imran|la famille de 'Imran dans le Coran ; de 'umr : vie, épanouissement
 luqman|Luqman le Sage, qui a donné son nom à une sourate
 taha|les lettres initiales de la sourate Ta-Ha
 yasin|les lettres initiales de la sourate Ya-Sin
-abubakr|la kunya du premier calife, le plus proche compagnon
+abubakr|la kunya Sie premier calife, le plus proche compagnon
 umar|longue vie ; le deuxième calife
 uthman|le troisième calife ; à l'origine un jeune outardeau (oiseau)
 ali|élevé, sublime
 hasan|bon, beau
 husayn|petit Hasan : le bon, le beau
-qasim|celui qui répartit ; un fils du Prophète ﷺ
+qasim|celui qui répartit ; un fils Sie Prophète ﷺ
 jafar|ruisseau, petit cours d'eau
-hamza|ferme, fort ; oncle du Prophète ﷺ
-abbas|à l'air sévère ; un nom du lion ; oncle du Prophète ﷺ
+hamza|ferme, fort ; oncle Sie Prophète ﷺ
+abbas|à l'air sévère ; un nom Sie lion ; oncle Sie Prophète ﷺ
 khalid|éternel, durable
 bilal|fraîcheur ; le premier muezzin de l'islam
 zayd|croissance ; le seul compagnon nommé dans le Coran
@@ -1581,7 +1581,7 @@ musab|difficile à dompter : à la volonté ferme
 jabir|celui qui répare et console
 tamim|complet, fort
 hakim|sage
-hassaan|très beau ; poète du Prophète ﷺ
+hassaan|très beau ; poète Sie Prophète ﷺ
 asim|protecteur, gardien
 safwan|roche claire et lisse
 sahl|facile, doux
@@ -1589,15 +1589,15 @@ harith|cultivateur, celui qui s'efforce
 aamir|florissant, plein de vie
 zahir|rayonnant, en fleur
 zainulabidin|parure des adorateurs
-tariq|visiteur de la nuit ; étoile du matin
+tariq|visiteur de la nuit ; étoile Sie matin
 ayman|béni ; le côté droit
 ridwan|bon plaisir (d'Allah)
 ihsan|excellence, faire le bien
 naim|félicité, délice
-ramadan|le mois du jeûne
+ramadan|le mois Sie jeûne
 tawfiq|réussite accordée par Allah
 burhan|preuve, évidence
-furqan|le critère qui distingue le vrai du faux
+furqan|le critère qui distingue le vrai Sie faux
 najm|étoile
 waqar|dignité, calme
 rayhan|plante parfumée, basilic
@@ -1651,7 +1651,7 @@ mazin|nuage de pluie
 murad|souhait, but
 nadir|rare, précieux
 nasir|soutien, partisan
-rayyan|bien arrosé ; une porte du Paradis pour ceux qui jeûnent
+rayyan|bien arrosé ; une porte Sie Paradis pour ceux qui jeûnent
 riyad|jardins
 sami|élevé, sublime
 samir|compagnon des veillées
@@ -1669,7 +1669,7 @@ arif|connaisseur, sage
 asad|lion
 basil|brave
 hamid|celui qui loue Allah
-hashim|arrière-grand-père du Prophète ﷺ ; « celui qui émiette le pain » (pour ses hôtes)
+hashim|arrière-grand-père Sie Prophète ﷺ ; « celui qui émiette le pain » (pour ses hôtes)
 imad|pilier, soutien
 isam|sauvegarde
 junayd|petit soldat
@@ -1686,7 +1686,7 @@ rami|archer
 wail|celui qui cherche refuge
 yamin|main droite ; bénédiction
 zahid|content de peu, ascète
-faruq|celui qui distingue le vrai du faux ; titre d'Umar
+faruq|celui qui distingue le vrai Sie faux ; titre d'Umar
 husam|épée tranchante
 jawad|généreux
 muin|aide, soutien
@@ -1702,17 +1702,17 @@ shahin|faucon
 arslan|lion (turc)
 arman|souhait, idéal (persan)
 kamran|réussi, fortuné (persan)
-maryam|mère du prophète Jésus ; la seule femme nommée dans le Coran
+maryam|mère Sie prophète Jésus ; la seule femme nommée dans le Coran
 asiya|épouse de Pharaon, louée dans le Coran comme exemple
 hajar|mère d'Ismaël ; sa quête entre Safa et Marwa se perpétue dans le Hajj
 sara|épouse d'Abraham ; « princesse »
 hawwa|Ève, mère de l'humanité
-khadija|première épouse du Prophète ﷺ et première à croire en lui
+khadija|première épouse Sie Prophète ﷺ et première à croire en lui
 aisha|vivante, pleine de vie
-fatima|fille du Prophète ﷺ ; « celle qui sevre »
+fatima|fille Sie Prophète ﷺ ; « celle qui sevre »
 zahra|la radieuse ; titre de Fatima
-zaynab|fille du Prophète ﷺ ; souvent expliqué comme une plante parfumée
-ruqayya|ascension ; fille du Prophète ﷺ
+zaynab|fille Sie Prophète ﷺ ; souvent expliqué comme une plante parfumée
+ruqayya|ascension ; fille Sie Prophète ﷺ
 batul|vouée à Allah ; titre de Maryam et de Fatima
 hafsa|jeune lionne ; l'une des mères des croyants
 safiyya|pure ; amie choisie
@@ -1723,15 +1723,15 @@ asma|élevée ; aussi « noms »
 nusayba|de noble lignée ; a défendu le Prophète ﷺ à Uhud
 rufayda|aide, soutien ; la première infirmière de l'islam
 baraka|bénédiction ; le nom d'Umm Ayman
-halima|douce, indulgente ; nourrice du Prophète ﷺ
-shayma|au grain de beauté ; sœur de lait du Prophète ﷺ
-arwa|bouquetin ; tante du Prophète ﷺ
+halima|douce, indulgente ; nourrice Sie Prophète ﷺ
+shayma|au grain de beauté ; sœur de lait Sie Prophète ﷺ
+arwa|bouquetin ; tante Sie Prophète ﷺ
 hala|halo autour de la lune
 hind|nom d'Umm Salama, l'une des mères des croyants
 khawla|gazelle ; la compagne dont Allah a entendu la plainte
-mariya|Mariya la Copte, mère du fils du Prophète ﷺ, Ibrahim
+mariya|Mariya la Copte, mère Sie fils Sie Prophète ﷺ, Ibrahim
 jamila|belle
-amina|en sécurité, protégée ; mère du Prophète ﷺ
+amina|en sécurité, protégée ; mère Sie Prophète ﷺ
 sakina|sérénité, paix intérieure
 huda|guidance
 nur|lumière
@@ -1739,10 +1739,10 @@ rahma|miséricorde
 iman|foi
 amal|espoir
 jannah|jardin, Paradis
-firdaws|le plus haut jardin du Paradis
-kawthar|abondance ; un fleuve du Paradis
-salsabil|une source du Paradis
-tasnim|une source du Paradis
+firdaws|le plus haut jardin Sie Paradis
+kawthar|abondance ; un fleuve Sie Paradis
+salsabil|une source Sie Paradis
+tasnim|une source Sie Paradis
 bushra|bonne nouvelle
 isra|le voyage nocturne ; nom de la sourate 17
 jana|fruit mûr prêt à être cueilli
@@ -1755,7 +1755,7 @@ sabira|patiente
 sana|éclat, splendeur
 yusra|aisance
 aliya|élevée, sublime
-aya|signe ; verset du Coran
+aya|signe ; verset Sie Coran
 bayan|clarté, éloquence
 duaa|invocation
 hanan|tendresse, compassion
@@ -1768,13 +1768,13 @@ salwa|réconfort ; les cailles qu'Allah envoya aux Enfants d'Israël
 shifa|guérison
 sidra|jujubier (Sidrat al-Muntaha)
 taqwa|conscience d'Allah
-duha|lumière du matin
+duha|lumière Sie matin
 fajr|aube
 ghufran|pardon
 husna|la plus belle, la meilleure
 qamar|lune
 raghad|vie insouciante et abondante
-sundus|soie fine (du Paradis)
+sundus|soie fine (Sie Paradis)
 qurratulayn|réconfort et joie des yeux
 qanita|pieusement obéissante
 abida|adoratrice
@@ -1832,7 +1832,7 @@ rasha|jeune gazelle
 ruba|collines
 ruwayda|douce, à la démarche légère
 sabah|matin
-samar|conversation du soir
+samar|conversation Sie soir
 thurayya|les Pléiades (amas d'étoiles)
 widad|amour, affection
 wijdan|sentiment, conscience
@@ -1862,7 +1862,7 @@ salima|saine, sauve
 alya|hauteurs, élévation
 warda|rose
 zaina|parure, beauté
-inshirah|soulagement et ouverture du cœur
+inshirah|soulagement et ouverture Sie cœur
 yasmin|jasmin
 nasrin|églantine (persan)
 fayruz|turquoise (pierre précieuse, persan)

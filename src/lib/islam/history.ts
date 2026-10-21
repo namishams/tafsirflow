@@ -111,7 +111,7 @@ Die Wissenschaft dieser Jahrhunderte wurde in vielen Städten gemacht, von Bucha
 - **13.–15. Jahrhundert** – das Emirat der Nasriden in Granada; Bau der Alhambra
 - **1492** – Granada, das letzte muslimische Reich in Spanien, ergibt sich
 
-Fast acht Jahrhunderte lang war al-Andalus eine Brücke zwischen Orient und Okzident. Muslime, Juden und Christen lebten hier – nicht immer spannungsfrei, aber oft in fruchtbarem Austausch. Córdoba hatte Bibliotheken, Bäder und beleuchtete Straßen. Aus al-Andalus stammen der Philosoph und Richter Ibn Ruschd, der Gelehrte Ibn Hazm, der Korankommentator al-Qurtubi und der jüdische Gelehrte Maimonides, der 1138 in Córdoba geboren wurde. Mehr über Córdoba und die Alhambra findest du in den Kapiteln über [die Städte des Islam](/islam/cities) und [islamische Kunst](/islam/art).
+Fast acht Jahrhunderte lang war al-Andalus eine Brücke zwischen Orient und Okzident. Muslime, Juden und Christen lebten hier – nicht immer spannungsfrei, aber oft in fruchtbarem Austausch. Córdoba hatte Bibliotheken, Bäder und beleuchtete Straßen. Aus al-Andalus stammen der Philosoph und Richter Ibn Ruschd, der Gelehrte Ibn Hazm, der Korankommentator al-Qurtubi und der jüdische Gelehrte Maimonides, der 1138 in Córdoba geboren wurde. Mehr über Córdoba und die Alhambra finden Sie in den Kapiteln über [die Städte des Islam](/islam/cities) und [islamische Kunst](/islam/art).
 
 ## Fatimiden, Ayyubiden und Salah ad-Din
 
@@ -202,7 +202,7 @@ Wer auf vierzehn Jahrhunderte blickt, erkennt einige Muster:
 - **Gerechtigkeit ist das Fundament.** Herrscher wie Umar, Umar ibn Abd al-Aziz und Salah ad-Din werden bis heute wegen ihrer Gerechtigkeit erinnert, nicht wegen ihrer Paläste.
 - **Veränderung beginnt innen.** „Allah ändert den Zustand eines Volkes nicht, bis sie das ändern, was in ihnen selbst ist“ (13:11).
 
-Die Geschichte des Islam ist nicht abgeschlossen. Sie wird jeden Tag weitergeschrieben – auch von dir, wenn du den Koran liest, lernst und weitergibst. Beginne dort, wo alles begann: mit [Sure al-Alaq](/surah/96), den ersten offenbarten Versen.`,
+Die Geschichte des Islam ist nicht abgeschlossen. Sie wird jeden Tag weitergeschrieben – auch von Ihnen, wenn Sie den Koran lesen, lernen und weitergeben. Beginnen Sie dort, wo alles begann: mit [Sure al-Alaq](/surah/96), den ersten offenbarten Versen.`,
     faq: [
       { q: "Warum beginnt die islamische Zeitrechnung mit der Hidschra?", a: "Nach den Geschichtsquellen beriet sich Umar ibn al-Khattab als Kalif mit den Gefährten, und man wählte die Auswanderung nach Medina als Beginn, weil mit ihr die muslimische Gemeinschaft entstand. Das Jahr 1 n. H. beginnt im Jahr 622. Da das islamische Jahr ein Mondjahr ist, ist es etwa elf Tage kürzer als das Sonnenjahr." },
       { q: "Was war das Haus der Weisheit?", a: "Eine Einrichtung der Gelehrsamkeit im abbasidischen Bagdad, die unter al-Ma'mun (813–833) ihre Blüte erlebte. Dort wurden Werke aus dem Griechischen, Persischen und Indischen ins Arabische übersetzt und weiterentwickelt, etwa in Mathematik, Astronomie und Medizin." },
@@ -244,7 +244,7 @@ A note on the dates: we give years in the Common Era and, where it is customary,
 - **around 619** – the "Year of Sorrow": death of Khadijah and Abu Talib
 - **621 and 622** – the pledges of Aqabah with Muslims from Yathrib, later Madinah
 
-For thirteen years the Prophet ﷺ called people in Makkah to faith in the One God, to justice and to mercy. The response of the powerful was mockery, boycott and persecution; the weak and the enslaved, such as Bilal and Sumayyah, suffered most. The Night Journey to Jerusalem (17:1) also falls in this period. The chapter [The Prophet Muhammad ﷺ](/islam/prophet) tells more about these years.
+For thirteen years the Prophet ﷺ called people in Makkah to faith in the One God, to justice and to mercy. The response of the powerful was mockery, boycott and persecution; the weak and the enslaved, suchen Sie as Bilal and Sumayyah, suffered most. The Night Journey to Jerusalem (17:1) also falls in this period. The chapter [The Prophet Muhammad ﷺ](/islam/prophet) tells more about these years.
 
 ## Madinah: a community is born (622–632)
 

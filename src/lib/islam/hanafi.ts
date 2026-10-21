@@ -6,7 +6,7 @@ export const hanafi: IslamDoc = {
   de: {
     title: "Die hanafitische Rechtsschule",
     kicker: "Imam Abu Hanifa und seine Schüler",
-    lead: "Die hanafitische Schule ist die am weitesten verbreitete Rechtsschule der muslimischen Welt – von Istanbul bis Sarajevo, von Buchara bis Lahore. Sie geht auf Imam Abu Hanifa an-Nu'man ibn Thabit zurück, möge Allah ihm barmherzig sein, der in Kufa lehrte und von späteren Generationen „der größte Imam“ genannt wurde. In diesem Kapitel lernst du ihn, seine großen Schüler, seine Methode und die Spuren seiner Schule in der Geschichte kennen.",
+    lead: "Die hanafitische Schule ist die am weitesten verbreitete Rechtsschule der muslimischen Welt – von Istanbul bis Sarajevo, von Buchara bis Lahore. Sie geht auf Imam Abu Hanifa an-Nu'man ibn Thabit zurück, möge Allah ihm barmherzig sein, der in Kufa lehrte und von späteren Generationen „der größte Imam“ genannt wurde. In diesem Kapitel lernen Sie ihn, seine großen Schüler, seine Methode und die Spuren seiner Schule in der Geschichte kennen.",
     facts: [
       { n: "150 n. H.", l: "Tod von Imam Abu Hanifa in Bagdad (767 n. Chr.)" },
       { n: "Kufa", l: "Stadt, in der er lebte, lernte und lehrte" },
@@ -127,7 +127,7 @@ Wer mit Hanafiten betet, bemerkt kleine Unterschiede zu anderen Schulen. Sie sin
 - **Die Gebetszeiten:** Das Nachmittagsgebet beginnt nach der Lehre Abu Hanifas etwas später als in anderen Schulen; viele Gebetskalender zeigen deshalb eine eigene „hanafitische“ Asr-Zeit. Das Morgengebet wird gerne gebetet, wenn es schon etwas heller geworden ist.
 - **Die Gebetswaschung:** Fließendes Blut aus einer Wunde hebt sie auf; die bloße Berührung einer Frau dagegen nicht.
 
-Für die genauen Regeln deines eigenen Gebets frag einen Gelehrten deiner Schule.
+Für die genauen Regeln Ihres eigenen Gebets frag einen Gelehrten Ihrer Schule.
 
 ## Der Beitrag zur islamischen Zivilisation
 
@@ -139,13 +139,13 @@ Imam asch-Schafi'i, möge Allah ihm barmherzig sein, soll gesagt haben: „Die M
 
 Abu Hanifa war ein Händler, der ehrlich wog, ein Gelehrter, der tief nachdachte, und ein Diener Allahs, der lieber ins Gefängnis ging, als ein ungerechtes Urteil zu sprechen. Seine Schüler trugen sein Wissen weiter, und heute folgen Hunderte Millionen Muslime seiner Schule – meist, ohne es zu wissen, in jeder Bewegung ihres Gebets.
 
-Möge Allah ihm, Abu Yusuf, Muhammad asch-Schaibani und allen Gelehrten dieser Schule barmherzig sein. Und möge Er uns lehren, von allen Imamen mit Liebe zu lernen. Mehr über die anderen Schulen erfährst du im Überblick über die [Rechtsschulen des Islam](/islam/madhahib) und im Kapitel über die [Malikiten](/islam/maliki).`,
+Möge Allah ihm, Abu Yusuf, Muhammad asch-Schaibani und allen Gelehrten dieser Schule barmherzig sein. Und möge Er uns lehren, von allen Imamen mit Liebe zu lernen. Mehr über die anderen Schulen erfahren Sie im Überblick über die [Rechtsschulen des Islam](/islam/madhahib) und im Kapitel über die [Malikiten](/islam/maliki).`,
     faq: [
       { q: "Warum heißt Abu Hanifa „der größte Imam“?", a: "Der Ehrentitel *al-Imam al-A'zam* drückt die Hochachtung seiner Schüler und Anhänger aus: Er gehört zur frühesten Generation der großen Rechtsgelehrten, und seine Schule wurde zur am weitesten verbreiteten. Er ist kein Urteil über andere Imame, die alle ihren eigenen hohen Rang haben." },
       { q: "Haben die Hanafiten weniger auf Hadithe geachtet?", a: "Nein. Abu Hanifa stellte den Quran und die Sunna an die erste Stelle. Er prüfte Einzelüberlieferungen allerdings besonders sorgfältig auf ihre Übereinstimmung mit gesicherten Grundsätzen. Seine Schüler Abu Yusuf und asch-Schaibani waren auch bedeutende Hadith-Kenner, und große Hadith-Gelehrte wie at-Tahawi waren Hanafiten." },
       { q: "Was ist al-Hidaya?", a: "Ein Lehrbuch des hanafitischen Fiqh von Burhan ad-Din al-Marghinani (gest. 593 n. H.). Es wurde zu einem der meistgelehrten und meistkommentierten Werke der Schule und wird bis heute in vielen Medresen unterrichtet." },
       { q: "Wo wird die hanafitische Schule heute befolgt?", a: "Unter anderem in der Türkei, auf dem Balkan, in Zentralasien, in Pakistan, Indien, Bangladesch und Afghanistan, bei den Muslimen in Russland und China, in Teilen der arabischen Welt sowie in vielen Gemeinden in Europa und Nordamerika." },
-      { q: "Darf ein Hanafit hinter einem Imam einer anderen Schule beten?", a: "Ja. Muslime verschiedener Schulen beten seit jeher hintereinander, in Mekka und Medina ebenso wie in den Moscheen der Emirate. Für Einzelfragen zu deiner eigenen Situation frag einen Gelehrten deiner Schule." },
+      { q: "Darf ein Hanafit hinter einem Imam einer anderen Schule beten?", a: "Ja. Muslime verschiedener Schulen beten seit jeher hintereinander, in Mekka und Medina ebenso wie in den Moscheen der Emirate. Für Einzelfragen zu Ihrer eigenen Situation frag einen Gelehrten Ihrer Schule." },
     ],
     sources: [
       "Muhammad ibn al-Hasan asch-Schaibani: al-Asl, al-Dschami' as-Saghir, al-Dschami' al-Kabir, az-Ziyadat, as-Siyar al-Kabir",

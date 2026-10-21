@@ -11,7 +11,7 @@ const BLOCK: string[] = [
   // profanity / sexual (en)
   "fuck", "shit", "bitch", "bastard", "asshole", "dick", "pussy", "cunt", "whore", "slut", "porn", "nude", "sex", "horny", "nigger", "faggot", "retard",
   // de
-  "scheisse", "scheiße", "arschloch", "fotze", "hurensohn", "wichser", "schlampe", "ficken", "fick dich", "nutte", "schwuchtel", "missgeburt", "fotze",
+  "scheisse", "scheiße", "arschloch", "fotze", "hurensohn", "wichser", "schlampe", "ficken", "ficken Sie sich", "nutte", "schwuchtel", "missgeburt", "fotze",
   // fr / es / tr / ru / ur transliterations
   "merde", "putain", "salope", "connard", "encule", "enculé", "puta", "mierda", "cabron", "cabrón", "pendejo", "joder", "coño",
   "orospu", "siktir", "amk", "piç", "gerizekalı", "yarrak", "göt", "bokuntu",

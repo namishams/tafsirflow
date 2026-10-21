@@ -74,7 +74,7 @@ Der Koran wurde mit einer bestimmten Lesart offenbart und von Lehrer zu Schüler
 ## Warum ist das wichtig?
 - Manche Fehler verändern die Bedeutung, etwa wenn man ه und ح verwechselt oder einen kurzen Vokal lang liest. Man nennt sie *offensichtliche Fehler* (Lahn dschali).
 - Andere Fehler ändern die Bedeutung nicht, nehmen der Rezitation aber ihre Schönheit, z. B. eine fehlende Ghunna. Das sind *versteckte Fehler* (Lahn chafi).
-- Tajweed lernt man vor allem durch **Hören und Nachsprechen**. Die Regeln helfen dir zu verstehen, was du hörst.
+- Tajweed lernt man vor allem durch **Hören und Nachsprechen**. Die Regeln helfenen Sie sich zu verstehen, was Sie hören.
 
 ## Isti'adha – Zuflucht suchen
 Vor dem Rezitieren sagen wir:
@@ -94,15 +94,15 @@ Am Anfang einer Sure gibt es vier erlaubte Möglichkeiten:
 - Isti'adha und Basmala verbinden, dann anhalten und den Vers beginnen,
 - alles in einem Atemzug verbinden.
 
-Zwischen zwei Suren solltest du nicht das Ende der einen Sure mit der Basmala verbinden und dann anhalten – sonst klingt es, als gehöre die Basmala zur vorherigen Sure.
+Zwischen zwei Suren sollten Sie nicht das Ende der einen Sure mit der Basmala verbinden und dann anhalten – sonst klingt es, als gehöre die Basmala zur vorherigen Sure.
 
 ## Übungstipp
-Hör dir eine kurze Sure von einem bekannten Rezitator dreimal an, nimm dich dann selbst auf und vergleiche. Beginne mit Isti'adha und Basmala und sprich beides langsam und ruhig.`,
+Hören Sie sich eine kurze Sure von einem bekannten Rezitator dreimal an, nehmen Sie sich dann selbst auf und vergleichen Sie. Beginnen Sie mit Isti'adha und Basmala und sprechen Sie beides langsam und ruhig.`,
     examples: [
       {
         ar: "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
         note_en: "The isti'adha, said before starting to recite. Notice the clear ع in أَعُوذُ and the heavy ط in الشَّيْطَانِ.",
-        note_de: "Die Isti'adha vor Beginn der Rezitation. Achte auf das deutliche ع in أَعُوذُ und das schwere ط in الشَّيْطَانِ.",
+        note_de: "Die Isti'adha vor Beginn der Rezitation. Achten Sie auf das deutliche ع in أَعُوذُ und das schwere ط in الشَّيْطَانِ.",
       },
       {
         ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
@@ -114,7 +114,7 @@ Hör dir eine kurze Sure von einem bekannten Rezitator dreimal an, nimm dich dan
         ar: "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
         key: "1:2",
         note_en: "A simple verse to practise calm, clear articulation: distinguish the ح in الْحَمْدُ from a normal h.",
-        note_de: "Ein einfacher Vers zum Üben ruhiger, klarer Aussprache: Unterscheide das ح in الْحَمْدُ von einem gewöhnlichen h.",
+        note_de: "Ein einfacher Vers zum Üben ruhiger, klarer Aussprache: Unterscheiden Sie das ح in الْحَمْدُ von einem gewöhnlichen h.",
       },
       {
         ar: "قُلْ هُوَ اللَّهُ أَحَدٌ",
@@ -217,7 +217,7 @@ Take one area per day. Say each letter with sukun after a hamza (أَحْ، أَ
     body_de: `## Was ist ein Machradsch?
 Ein *Machradsch* (Plural *Machaaridsch*) ist die Stelle, an der ein Buchstabe gebildet wird. Verlässt ein Buchstabe seine Stelle, wird er zu einem anderen Buchstaben – etwa bei س und ص oder bei ك und ق. Die Artikulationsstellen sind deshalb das Fundament des gesamten Tajweed.
 
-## So findest du die Stelle eines Buchstabens
+## So finden Sie die Stelle eines Buchstabens
 Setze ein Sukun auf den Buchstaben und stelle ein Hamza mit Vokal davor: أَبْ، أَقْ، أَعْ. Dort, wo der Klang endet, liegt sein Machradsch.
 
 ## Die fünf Bereiche
@@ -237,12 +237,12 @@ Setze ein Sukun auf den Buchstaben und stelle ein Hamza mit Vokal davor: أَب�
 - Bei ف die Lippen runden.
 
 ## Übungstipp
-Nimm dir pro Tag einen Bereich vor. Sprich jeden Buchstaben mit Sukun nach einem Hamza (أَحْ، أَعْ) vor dem Spiegel und spüre, wo der Klang endet. Vergleiche dann Paare: ه/ح, ء/ع, س/ص, ت/ط, د/ض, ذ/ظ.`,
+Nehmen Sie sich pro Tag einen Bereich vor. Sprechen Sie jeden Buchstaben mit Sukun nach einem Hamza (أَحْ، أَعْ) vor dem Spiegel und spüre, wo der Klang endet. Vergleichen Sie dann Paare: ه/ح, ء/ع, س/ص, ت/ط, د/ض, ذ/ظ.`,
     examples: [
       {
         ar: "أَعْ – أَحْ – أَخْ",
         note_en: "Throat letters from the middle (ع ح) and the upper throat (خ). Say them after a hamza to feel the makhraj.",
-        note_de: "Rachenbuchstaben aus der Mitte (ع ح) und dem oberen Rachen (خ). Sprich sie nach einem Hamza, um die Stelle zu spüren.",
+        note_de: "Rachenbuchstaben aus der Mitte (ع ح) und dem oberen Rachen (خ). Sprechen Sie sie nach einem Hamza, um die Stelle zu spüren.",
       },
       {
         ar: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
@@ -402,7 +402,7 @@ Alle anderen Lams sind immer leicht.
 - Das Ra in رَبِّ leicht oder das Lam in بِسْمِ اللَّهِ schwer lesen.
 
 ## Übungstipp
-Lies Paare laut: سَ/صَ، تَ/طَ، دَ/ضَ، ذَ/ظَ، كَ/قَ، هَ/حَ. Lies dann Sure al-Ichlas und markiere vor dem Rezitieren jedes Lam von Allah als schwer oder leicht.`,
+Lesen Sie Paare laut: سَ/صَ، تَ/طَ، دَ/ضَ، ذَ/ظَ، كَ/قَ، هَ/حَ. Lesen Sie dann Sure al-Ichlas und markieren Sie vor dem Rezitieren jedes Lam von Allah als schwer oder leicht.`,
     examples: [
       {
         ar: "هُوَ اللَّهُ",
@@ -558,7 +558,7 @@ Die meisten Sonnenbuchstaben werden mit der Zungenspitze oder dem vorderen Zunge
 - Dem Mond-Lam einen Vokal anhängen („ala-qamar“).
 
 ## Übungstipp
-Geh Sure al-Fatiha und Sure an-Nas durch und unterstreiche jedes ال. Entscheide jeweils: Sonne oder Mond? Rezitiere dann und hör genau hin, ob du die Sonnenbuchstaben verdoppelt hast.`,
+Gehen Sie Sure al-Fatiha und Sure an-Nas durch und unterstreiche jedes ال. Entscheiden Sie jeweils: Sonne oder Mond? Rezitieren Sie dann und hören Sie genau hin, ob Sie die Sonnenbuchstaben verdoppelt haben.`,
     examples: [
       {
         ar: "الْحَمْدُ لِلَّهِ",
@@ -706,7 +706,7 @@ Izhar gibt es innerhalb eines Wortes (يَنْأَوْنَ، مِنْهُمْ) u
 Die Rachenbuchstaben liegen weit entfernt von der Zungenspitze, an der das Nun entsteht. Wegen dieses Abstands gibt es keinen Grund, das Nun zu verschmelzen oder zu verbergen.
 
 ## Wie klingt es?
-Berühre mit der Zungenspitze den Gaumen hinter den oberen Zähnen, sprich ein kurzes, sauberes „n“ und gehe direkt zum Rachenbuchstaben über. Die natürliche Grund-Ghunna jedes Nun bleibt, wird aber nicht gedehnt.
+Berühren Sie mit der Zungenspitze den Gaumen hinter den oberen Zähnen, sprechen Sie ein kurzes, sauberes „n“ und gehen Sie direkt zum Rachenbuchstaben über. Die natürliche Grund-Ghunna jedes Nun bleibt, wird aber nicht gedehnt.
 
 ## Häufige Fehler
 - Die Ghunna dehnen („minnnn h…“), als wäre es Ikhfa.
@@ -715,7 +715,7 @@ Berühre mit der Zungenspitze den Gaumen hinter den oberen Zähnen, sprich ein k
 - Schwache Rachenbuchstaben nach dem Nun, besonders bei ع und ح.
 
 ## Übungstipp
-Lies langsam: مِنْ خَوْفٍ – عَذَابٌ أَلِيمٌ – مَنْ آمَنَ. Leg einen Finger an die Nase: Bei Izhar spürst du nur ein kurzes Vibrieren, kein langes Summen.`,
+Lesen Sie langsam: مِنْ خَوْفٍ – عَذَابٌ أَلِيمٌ – مَنْ آمَنَ. Legen Sie einen Finger an die Nase: Bei Izhar spüren Sie nur ein kurzes Vibrieren, kein langes Summen.`,
     examples: [
       {
         ar: "مَنْ آمَنَ",
@@ -895,7 +895,7 @@ Außerdem liest man bei Hafs das Nun in يس ۚ وَالْقُرْآنِ und ن 
 - Idgham bei الدُّنْيَا anwenden („ad-duyya“).
 
 ## Übungstipp
-Schreib يَرْمَلُونَ auf eine Karte und teile es auf in يَنْمُو (mit Ghunna) und لر (ohne). Lies Sure al-Ichlas und Sure az-Zalzala und markiere jedes Idgham, das du findest.`,
+Schreiben Sie يَرْمَلُونَ auf eine Karte und teile es auf in يَنْمُو (mit Ghunna) und لر (ohne). Lesen Sie Sure al-Ichlas und Sure az-Zalzala und markieren Sie jedes Idgham, das Sie finden.`,
     examples: [
       {
         ar: "وَمِنَ النَّاسِ مَن يَقُولُ",
@@ -1040,7 +1040,7 @@ Nur ein einziger Buchstabe:
 
 Iqlab gibt es sowohl **innerhalb eines Wortes** (أَنبِئْهُم، لَيُنبَذَنَّ) als auch **zwischen zwei Wörtern** (مِن بَعْدِ، سَمِيعٌ بَصِيرٌ).
 
-## So erkennst du es im Mushaf
+## So erkennen Sie es im Mushaf
 In den meisten gedruckten Mushafs steht ein kleines **Mim (ۢ)** über dem Nun bzw. neben dem Tanwin, und das Nun hat kein Sukun. Das heißt: nicht n, sondern m lesen.
 
 ## Warum Iqlab?
@@ -1060,7 +1060,7 @@ Das Nun mit seiner klaren Zungenartikulation und das ب mit geschlossenen Lippen
 - Manche Lehrer erlauben einen ganz kleinen Spalt zwischen den Lippen – entscheidend ist, dass das n verschwindet und die Ghunna hörbar bleibt.
 
 ## Übungstipp
-Suche auf einer Seite von Sure al-Baqara das kleine Mim-Zeichen. Jedes Mal, wenn du es siehst, summst du das m zwei Zählzeiten lang, bevor du das ب sprichst. Eine Aufnahme hilft dir zu hören, ob das n wirklich verschwunden ist.`,
+Suche auf einer Seite von Sure al-Baqara das kleine Mim-Zeichen. Jedes Mal, wenn Sie es sehen, summen Sie das m zwei Zählzeiten lang, bevor Sie das ب sprechen. Eine Aufnahme hilft Ihnen zu hören, ob das n wirklich verschwunden ist.`,
     examples: [
       {
         ar: "مِن بَعْدِ مِيثَاقِهِ",
@@ -1207,7 +1207,7 @@ Die Ghunna übernimmt die Klangfarbe des **folgenden** Buchstabens:
 - Den Klang zwei Zählzeiten in der Nase halten.
 - Dann den nächsten Buchstaben deutlich sprechen.
 
-Achte auch auf den Vokal vor dem Nun – aus „an“ darf kein „ang“ oder „aun“ werden.
+Achten Sie auch auf den Vokal vor dem Nun – aus „an“ darf kein „ang“ oder „aun“ werden.
 
 ## Häufige Fehler
 - Ein deutliches n mit fest aufgesetzter Zunge (klingt wie Izhar).
@@ -1216,7 +1216,7 @@ Achte auch auf den Vokal vor dem Nun – aus „an“ darf kein „ang“ oder �
 - Vor einem leichten Buchstaben eine schwere Ghunna sprechen.
 
 ## Übungstipp
-Übe das Paar aus Sure Quraisch, Vers 4: مِنْ خَوْفٍ (Izhar) und مِن جُوعٍ (Ikhfa). Spür den Unterschied: Beim ersten setzt die Zunge fest auf, beim zweiten schwebt sie.`,
+Üben Sie das Paar aus Sure Quraisch, Vers 4: مِنْ خَوْفٍ (Izhar) und مِن جُوعٍ (Ikhfa). Spür den Unterschied: Beim ersten setzt die Zunge fest auf, beim zweiten schwebt sie.`,
     examples: [
       {
         ar: "مِن شَرِّ مَا خَلَقَ",
@@ -1240,7 +1240,7 @@ Achte auch auf den Vokal vor dem Nun – aus „an“ darf kein „ang“ oder �
         ar: "أَنْعَمْتَ عَلَيْهِمْ",
         key: "1:7",
         note_en: "Contrast: here the nun is before ع, so it is izhar – no ikhfa'. Compare with the hidden nun before ت in كُنتُمْ.",
-        note_de: "Zum Vergleich: Hier steht das Nun vor ع, also Izhar – kein Ikhfa. Vergleiche mit dem verborgenen Nun vor ت in كُنتُمْ.",
+        note_de: "Zum Vergleich: Hier steht das Nun vor ع, also Izhar – kein Ikhfa. Vergleichen Sie mit dem verborgenen Nun vor ت in كُنتُمْ.",
       },
       {
         ar: "يَنصُرُكُمْ",
@@ -1382,7 +1382,7 @@ Ein Mim mit Schadda (ثُمَّ، عَمَّ) hat immer eine volle Ghunna – da
 - Mit einem harten Lippen-„Plopp“ ins nächste Wort gehen.
 
 ## Übungstipp
-Lies Sure al-Fil und Sure Quraisch. Markiere jedes Mim Sakina in drei Farben: eine für ب, eine für م, eine für alles andere. Rezitiere dann und prüfe jede Farbe.`,
+Lesen Sie Sure al-Fil und Sure Quraisch. Markieren Sie jedes Mim Sakina in drei Farben: eine für ب, eine für م, eine für alles andere. Rezitieren Sie dann und prüfen Sie jede Farbe.`,
     examples: [
       {
         ar: "تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ",
@@ -1506,7 +1506,7 @@ A shaddah means two letters: the first has a sukun and the second has a vowel. F
 ## Practice tip
 Recite Surah an-Nas. It contains النَّاسِ five times, plus الْخَنَّاسِ and الْجِنَّةِ. Count "one, two" in your head every time you reach a نّ.`,
     body_de: `## Was ist Ghunna?
-*Ghunna* ist der Nasalklang, der im *Chaischum*, dem Nasenraum, entsteht. Jedes Nun und Mim hat von Natur aus eine kleine Ghunna, doch in manchen Fällen wird sie lang und deutlich hörbar. Teste es: Halte dir beim Sprechen einer Ghunna die Nase zu – der Klang bricht ab.
+*Ghunna* ist der Nasalklang, der im *Chaischum*, dem Nasenraum, entsteht. Jedes Nun und Mim hat von Natur aus eine kleine Ghunna, doch in manchen Fällen wird sie lang und deutlich hörbar. Testen Sie es: Halten Sie sich beim Sprechen einer Ghunna die Nase zu – der Klang bricht ab.
 
 ## Die Regel
 Immer wenn **ن** oder **م** eine **Schadda** trägt, wird die Ghunna in voller Stärke gesprochen und **zwei Zählzeiten** gehalten:
@@ -1538,7 +1538,7 @@ Eine Schadda steht für zwei Buchstaben: Der erste hat ein Sukun, der zweite ein
 - Eine dunkle, schwere Ghunna sprechen, wo der Buchstabe leicht ist – Nun und Mim selbst sind leichte Buchstaben.
 
 ## Übungstipp
-Rezitiere Sure an-Nas. Darin kommt النَّاسِ fünfmal vor, dazu الْخَنَّاسِ und الْجِنَّةِ. Zähle bei jedem نّ innerlich „eins, zwei“.`,
+Rezitieren Sie Sure an-Nas. Darin kommt النَّاسِ fünfmal vor, dazu الْخَنَّاسِ und الْجِنَّةِ. Zählen Sie bei jedem نّ innerlich „eins, zwei“.`,
     examples: [
       {
         ar: "إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
@@ -1681,7 +1681,7 @@ Qalqala gibt es nur, wenn diese Buchstaben **sakin** sind – entweder mit gesch
 - Qalqala bei Buchstaben wie ك oder ت anwenden, die nicht dazugehören.
 
 ## Übungstipp
-Rezitiere Sure al-Ichlas und Sure al-Falaq und halte an jedem Versende an. Fast alle Verse enden auf einem Qalqala-Buchstaben (أَحَدْ، الصَّمَدْ، يُولَدْ، الْفَلَقْ، خَلَقْ، وَقَبْ، الْعُقَدْ، حَسَدْ). Hör einem Rezitator zu und ahme das Nachfedern genau nach.`,
+Rezitieren Sie Sure al-Ichlas und Sure al-Falaq und halten Sie an jedem Versende an. Fast alle Verse enden auf einem Qalqala-Buchstaben (أَحَدْ، الصَّمَدْ، يُولَدْ، الْفَلَقْ، خَلَقْ، وَقَبْ، الْعُقَدْ، حَسَدْ). Hören Sie einem Rezitator zu und ahme das Nachfedern genau nach.`,
     examples: [
       {
         ar: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
@@ -1837,8 +1837,8 @@ Die Dehnung wird wegen eines **Hamza** oder eines **Sukun** länger.
 
 **Madd 'iwad** – hält man auf einem Tanwin mit Fatha an, wird daraus ein Alif von **2 Zählzeiten**: أَفْوَاجًا → أَفْوَاجَا. (Ausnahme Ta marbuta: رَحْمَةً → رَحْمَهْ.)
 
-## Bleib einheitlich
-Wähle für jede Art eine Länge (z. B. 4 für Muttasil und Munfasil, 4 für 'Arid) und halte sie während der ganzen Rezitation bei.
+## Bleiben Sie einheitlich
+Wählen Sie für jede Art eine Länge (z. B. 4 für Muttasil und Munfasil, 4 für 'Arid) und halten Sie sie während der ganzen Rezitation bei.
 
 ## Häufige Fehler
 - Den natürlichen Madd unter Zeitdruck verkürzen.
@@ -1847,7 +1847,7 @@ Wähle für jede Art eine Länge (z. B. 4 für Muttasil und Munfasil, 4 für 'Ar
 - Madd lazim kürzer als 6 Zählzeiten sprechen.
 
 ## Übungstipp
-Tippe beim Rezitieren von Sure an-Nasr für jede Zählzeit mit dem Finger: جَاءَ (Muttasil), أَفْوَاجَا (ʿIwad beim Anhalten), تَوَّابَا (ʿIwad).`,
+Tippen Sie beim Rezitieren von Sure an-Nasr für jede Zählzeit mit dem Finger: جَاءَ (Muttasil), أَفْوَاجَا (ʿIwad beim Anhalten), تَوَّابَا (ʿIwad).`,
     examples: [
       {
         ar: "إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
@@ -2016,7 +2016,7 @@ Choose one page and plan your breaths before reciting: mark each place you will 
 Bei Hafs gibt es vier Stellen mit einem kleinen **س**: eine kurze Pause ohne Atemholen, z. B. عِوَجًا ۜ قَيِّمًا (18:1–2) und مَنْ ۜ رَاقٍ (75:27).
 
 ## Neu beginnen
-- Beginne bei einem Wort, mit dem der Sinn vollständig ist; hast du mitten im Satz angehalten, geh ein paar Wörter zurück.
+- Beginnen Sie bei einem Wort, mit dem der Sinn vollständig ist; haben Sie mitten im Satz angehalten, gehen Sie ein paar Wörter zurück.
 - Beginnt das Wort mit einem Verbindungs-Hamza (ٱ): bei ال liest man „a“; bei Verben „u“, wenn der dritte Buchstabe ein Damma hat (ٱدْعُ → اُدْعُ), sonst „i“ (ٱهْدِنَا → اِهْدِنَا).
 
 ## Häufige Fehler
@@ -2025,7 +2025,7 @@ Bei Hafs gibt es vier Stellen mit einem kleinen **س**: eine kurze Pause ohne At
 - Beim Anhalten den Vokal behalten („ar-rahimi“ mit Pause).
 
 ## Übungstipp
-Wähle eine Seite und plane vor dem Rezitieren deine Atempausen: Markiere jede Stelle, an der du anhalten willst. Prüfe, ob jeder Halt zu den Zeichen passt und jeder Neubeginn sinnvoll ist.`,
+Wählen Sie eine Seite und plane vor dem Rezitieren Ihre Atempausen: Markieren Sie jede Stelle, an der Sie anhalten wollen. Prüfen Sie, ob jeder Halt zu den Zeichen passt und jeder Neubeginn sinnvoll ist.`,
     examples: [
       {
         ar: "إِنَّمَا يَسْتَجِيبُ الَّذِينَ يَسْمَعُونَ ۘ وَالْمَوْتَىٰ يَبْعَثُهُمُ اللَّهُ",
@@ -2079,7 +2079,7 @@ Wähle eine Seite und plane vor dem Rezitieren deine Atempausen: Markiere jede S
       },
       {
         q_en: "What does the mu'anaqa sign (∴ ∴) tell you?",
-        q_de: "Was sagt dir das Mu'anaqa-Zeichen (∴ ∴)?",
+        q_de: "Was sagt Ihnen das Mu'anaqa-Zeichen (∴ ∴)?",
         options_en: [
           "Stop at both places",
           "Stop at one of the two places, not both",
@@ -2113,7 +2113,7 @@ Wähle eine Seite und plane vor dem Rezitieren deine Atempausen: Markiere jede S
       },
       {
         q_en: "What should you do if you run out of breath in the middle of a phrase?",
-        q_de: "Was tust du, wenn dir mitten in einer Wortgruppe die Luft ausgeht?",
+        q_de: "Was tun Sie, wenn Ihnen mitten in einer Wortgruppe die Luft ausgeht?",
         options_en: [
           "Continue from the next word",
           "Go back to a suitable earlier word and continue",
@@ -2126,7 +2126,7 @@ Wähle eine Seite und plane vor dem Rezitieren deine Atempausen: Markiere jede S
         ],
         answer: 1,
         explain_en: "Restart from a point where the meaning is complete, so the sentence stays intact.",
-        explain_de: "Beginne an einer Stelle neu, an der der Sinn vollständig ist, damit der Satz intakt bleibt.",
+        explain_de: "Beginnen Sie an einer Stelle neu, an der der Sinn vollständig ist, damit der Satz intakt bleibt.",
       },
     ],
   },
@@ -2179,14 +2179,14 @@ After al-Fatihah it is sunnah to say "Āmīn", which is not part of the surah. L
 ## Practice tip
 Record yourself reciting al-Fatihah once a day for a week. Each day, check only one verse against this list. Ideally, read it to a qualified teacher – this is how tajweed has always been passed on.`,
     body_de: `## Warum al-Fatiha?
-Al-Fatiha wird in jeder Gebetseinheit rezitiert – keine Sure lohnt sich mehr, perfekt gelernt zu werden. Außerdem enthält sie viele der Regeln aus diesem Kurs. Lies jeden Vers und geh dann die Punkte durch.
+Al-Fatiha wird in jeder Gebetseinheit rezitiert – keine Sure lohnt sich mehr, perfekt gelernt zu werden. Außerdem enthält sie viele der Regeln aus diesem Kurs. Lesen Sie jeden Vers und gehen Sie dann die Punkte durch.
 
 ## Vers 1–3
 - بِسْمِ اللَّهِ: Das Lam von Allah ist **leicht** (nach Kasra).
 - الرَّحْمَٰنِ الرَّحِيمِ: zweimal **Lam Schamsiyya**; das Ra trägt Fatha und ist **schwer**; das kleine Alif in الرَّحْمَٰنِ ist ein natürlicher Madd von 2 Zählzeiten.
 - الْحَمْدُ: **Lam Qamariyya**; ein klares ح, kein h.
 - لِلَّهِ: leichtes Lam von Allah. رَبِّ: schweres Ra, verdoppeltes ب.
-- Beim Anhalten auf الرَّحِيمْ und الْعَالَمِينْ: **Madd 'arid lis-sukun** (2, 4 oder 6 – bleib einheitlich).
+- Beim Anhalten auf الرَّحِيمْ und الْعَالَمِينْ: **Madd 'arid lis-sukun** (2, 4 oder 6 – bleiben Sie einheitlich).
 
 ## Vers 4–5
 - مَالِكِ: natürlicher Madd auf dem Mim (Hafs liest mit Alif).
@@ -2207,7 +2207,7 @@ Al-Fatiha wird in jeder Gebetseinheit rezitiert – keine Sure lohnt sich mehr, 
 - الْمَغْضُوبِ: schweres غ und ض; das ض sorgfältig bilden, nicht wie د oder ظ.
 - الضَّالِّينَ: **Madd lazim**, 6 Zählzeiten.
 
-Nach al-Fatiha ist es Sunna, „Amin“ zu sagen; es gehört nicht zur Sure. Mach davor eine kurze Pause.
+Nach al-Fatiha ist es Sunna, „Amin“ zu sagen; es gehört nicht zur Sure. Machen Sie davor eine kurze Pause.
 
 ## Typische Fehler in al-Fatiha
 - إِيَّاكَ ohne Schadda lesen.
@@ -2216,7 +2216,7 @@ Nach al-Fatiha ist es Sunna, „Amin“ zu sagen; es gehört nicht zur Sure. Mac
 - الضَّالِّينَ verkürzen.
 
 ## Übungstipp
-Nimm dich eine Woche lang täglich beim Rezitieren von al-Fatiha auf. Prüfe jeden Tag nur einen Vers anhand dieser Liste. Am besten liest du sie einer qualifizierten Lehrkraft vor – so wurde Tajweed schon immer weitergegeben.`,
+Nehmen Sie sich eine Woche lang täglich beim Rezitieren von al-Fatiha auf. Prüfen Sie jeden Tag nur einen Vers anhand dieser Liste. Am besten lesen Sie sie einer qualifizierten Lehrkraft vor – so wurde Tajweed schon immer weitergegeben.`,
     examples: [
       {
         ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",

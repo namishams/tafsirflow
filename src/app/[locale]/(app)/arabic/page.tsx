@@ -19,22 +19,22 @@ type Content = {
 
 const C: Record<Lang, Content> = {
   de: {
-    kicker: "Arabisch lesen lernen · für Anfänger", title: "Lies den Koran – auch wenn du heute noch keinen Buchstaben kennst",
-    lead: "Dieser Kurs bringt dir das Lesen der Koranschrift bei, so wie es Koranschulen seit Generationen tun: erst die Buchstaben, dann ihre Formen, dann die Vokalzeichen – bis du Al-Fatiha und die kurzen Suren selbst liest. In kleinen Lektionen von fünf Minuten, mit Übungen, Paaren und Tests.",
+    kicker: "Arabisch lesen lernen · für Anfänger", title: "Lesen Sie den Koran – auch wenn Sie heute noch keinen Buchstaben kennen",
+    lead: "Dieser Kurs bringt Ihnen das Lesen der Koranschrift bei, so wie es Koranschulen seit Generationen tun: erst die Buchstaben, dann ihre Formen, dann die Vokalzeichen – bis Sie Al-Fatiha und die kurzen Suren selbst lesen. In kleinen Lektionen von fünf Minuten, mit Übungen, Paaren und Tests.",
     stats: [`${LESSONS.length} Lektionen`, `${UNITS.length} Einheiten`, "28 Buchstaben", "5 Min. pro Lektion"],
-    pathTitle: "Dein Lernpfad", alphaTitle: "Das arabische Alphabet",
-    howTitle: "So lernst du hier", how: [
+    pathTitle: "Ihr Lernpfad", alphaTitle: "Das arabische Alphabet",
+    howTitle: "So lernen Sie hier", how: [
       ["Kurze Lektionen", "Jede Lektion dauert etwa fünf Minuten: erst Lernkarten, dann abwechslungsreiche Übungen."],
-      ["Fehler kommen zurück", "Was du falsch beantwortest, kommt am Ende der Lektion noch einmal – so lange, bis es sitzt."],
-      ["Laut mitsprechen", "Lesen lernt man mit dem Mund. Sprich jeden Laut mit – wo dein Gerät eine arabische Stimme hat, kannst du ihn anhören."],
-      ["Vom Buchstaben zum Koran", "In Einheit 6 liest du echte Koranwörter aus Al-Fatiha, Al-Ikhlas, Al-Falaq und An-Nas – mit Bedeutung. Danach hörst du sie Wort für Wort in echter Rezitation und liest ganze Verse. Wer schon etwas lesen kann, startet mit dem Einstufungstest."],
+      ["Fehler kommen zurück", "Was Sie falsch beantworten, kommt am Ende der Lektion noch einmal – so lange, bis es sitzt."],
+      ["Laut mitsprechen", "Lesen lernt man mit dem Mund. Sprechen Sie jeden Laut mit – wo Ihr Gerät eine arabische Stimme hat, können Sie ihn anhören."],
+      ["Vom Buchstaben zum Koran", "In Einheit 6 lesen Sie echte Koranwörter aus Al-Fatiha, Al-Ikhlas, Al-Falaq und An-Nas – mit Bedeutung. Danach hören Sie sie Wort für Wort in echter Rezitation und lesen ganze Verse. Wer schon etwas lesen kann, startet mit dem Einstufungstest."],
     ],
-    teacher: "Die Aussprache mancher Laute (ح ع ق ص ض ط ظ) lernt man am besten durch Zuhören und mit einem Lehrer. Hör im Player einem Rezitator zu und sprich nach – das ist der Weg, den auch Koranschulen gehen.",
-    after: "Nach dem Kurs", afterBody: "Wenn du lesen kannst, beginnt das eigentliche Abenteuer: Mit der Shams-Methode lernst du Vers für Vers auswendig, im Tajwid-Kurs lernst du die Regeln der schönen Rezitation.",
+    teacher: "Die Aussprache mancher Laute (ح ع ق ص ض ط ظ) lernt man am besten durch Zuhören und mit einem Lehrer. Hören Sie im Player einem Rezitator zu und sprechen Sie nach – das ist der Weg, den auch Koranschulen gehen.",
+    after: "Nach dem Kurs", afterBody: "Wenn Sie lesen können, beginnt das eigentliche Abenteuer: Mit der Shams-Methode lernen Sie Vers für Vers auswendig, im Tajwid-Kurs lernen Sie die Regeln der schönen Rezitation.",
     ctaPath: "Zum Lernpfad", ctaPlace: "Einstufungstest",
-    signsTitle: "Die Zeichen der Koranschrift", signsLead: "Vokale, Dehnung, Verdopplung und die Besonderheiten des Mushaf – jedes Zeichen mit einem Beispiel. In den Einheiten 3 bis 5 übst du sie alle.",
+    signsTitle: "Die Zeichen der Koranschrift", signsLead: "Vokale, Dehnung, Verdopplung und die Besonderheiten des Mushaf – jedes Zeichen mit einem Beispiel. In den Einheiten 3 bis 5 üben Sie sie alle.",
     sheetTitle: "Alle Buchstaben auf einen Blick", sheetLead: "Name, Laut und die drei verbundenen Formen. Arabisch liest man von rechts nach links – die Form am Wortanfang steht rechts.",
-    makhTitle: "Woher die Laute kommen", makhLead: "In der Tajwid-Lehre hat jeder Buchstabe seinen Austrittsort (Machradsch). Diese vier Gruppen helfen dir am Anfang besonders:",
+    makhTitle: "Woher die Laute kommen", makhLead: "In der Tajwid-Lehre hat jeder Buchstabe seinen Austrittsort (Machradsch). Diese vier Gruppen helfenen Sie sich am Anfang besonders:",
     makh: [
       ["Aus der Kehle", "ء ه ع ح غ خ", "Sechs Buchstaben kommen aus der Kehle: ء und ه ganz aus der Tiefe, ع und ح aus der Mitte, غ und خ aus dem oberen Teil."],
       ["Mit den Lippen", "ف ب م و", "Vier Buchstaben bilden die Lippen: ف mit der Unterlippe und den oberen Schneidezähnen, ب und م mit geschlossenen Lippen, و mit gerundeten Lippen."],
@@ -42,10 +42,10 @@ const C: Record<Lang, Content> = {
       ["Die Dehnungsbuchstaben", "ا و ي", "ا, و und ي verlängern den Vokal davor, wenn sie selbst keinen Vokal tragen: das lange ā, ū und ī. Ihr Austrittsort ist der Hohlraum von Mund und Kehle (al-Dschauf)."],
     ] as [string, string, string][],
     faqTitle: "Häufige Fragen", faq: [
-      ["Wie lange dauert der Kurs?", `${LESSONS.length} kurze Lektionen von etwa fünf Minuten in ${UNITS.length} Einheiten. Mit einer Lektion am Tag liest du nach wenigen Wochen ganze Verse – wer mehr Zeit hat, kommt schneller voran.`],
-      ["Muss ich Arabisch verstehen?", "Nein. Der Kurs bringt dir das Lesen der Schrift bei. Die Bedeutung vieler Koranwörter lernst du nebenbei – für mehr Wortschatz gibt es den Vokabeltrainer."],
-      ["Welche Schrift lerne ich?", "Die Schrift des Korans mit allen Vokal- und Lesezeichen, wie im Mushaf – mit ihren Besonderheiten wie dem kleinen Alif und dem Wasla-Zeichen. Ab Einheit 6 liest du echte Wörter und Verse aus dem Koran."],
-      ["Brauche ich ein Konto?", "Ja, ein kostenloses. Darin wird dein Fortschritt gespeichert – Lektionen, Sterne und die Wörter, die du wiederholen solltest – und auf allen deinen Geräten synchronisiert."],
+      ["Wie lange dauert der Kurs?", `${LESSONS.length} kurze Lektionen von etwa fünf Minuten in ${UNITS.length} Einheiten. Mit einer Lektion am Tag lesen Sie nach wenigen Wochen ganze Verse – wer mehr Zeit hat, kommt schneller voran.`],
+      ["Muss ich Arabisch verstehen?", "Nein. Der Kurs bringt Ihnen das Lesen der Schrift bei. Die Bedeutung vieler Koranwörter lernen Sie nebenbei – für mehr Wortschatz gibt es den Vokabeltrainer."],
+      ["Welche Schrift lerne ich?", "Die Schrift des Korans mit allen Vokal- und Lesezeichen, wie im Mushaf – mit ihren Besonderheiten wie dem kleinen Alif und dem Wasla-Zeichen. Ab Einheit 6 lesen Sie echte Wörter und Verse aus dem Koran."],
+      ["Brauche ich ein Konto?", "Ja, ein kostenloses. Darin wird Ihr Fortschritt gespeichert – Lektionen, Sterne und die Wörter, die Sie wiederholen sollten – und auf allen Ihren Geräten synchronisiert."],
       ["Ist der Kurs für Kinder geeignet?", "Ja. Die Lektionen sind kurz und spielerisch. Am schönsten ist es, wenn Eltern sie gemeinsam mit ihren Kindern machen und jeden Laut zusammen aussprechen."],
     ] as [string, string][],
     ctaShams: "Zur Shams-Methode", ctaTajweed: "Zum Tajwid-Kurs",

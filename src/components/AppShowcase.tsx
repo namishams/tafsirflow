@@ -22,15 +22,15 @@ const en: C = {
 };
 const de: C = {
   kicker: "Quran Masterclass für iPhone und iPad",
-  title: "Die Masterclass in deiner Tasche",
-  lead: "Kostenlos laden, dasselbe Konto wie auf der Website. Dein Fortschritt ist auf Handy, Tablet und Computer immer gleich.",
+  title: "Die Masterclass in Ihrer Tasche",
+  lead: "Kostenlos laden, dasselbe Konto wie auf der Website. Ihr Fortschritt ist auf Handy, Tablet und Computer immer gleich.",
   cta: "Im App Store laden", more: "Mehr zur App",
   alt: ["Die Shams-Methode in der App", "Surenübersicht in der App", "Heute-Ansicht in der App"],
   features: [
-    ["Shams-Methode", "Jeder Vers in kurzen Schritten: gehört, gesprochen, verstanden, abgerufen und mit deinem Leben verbunden."],
-    ["Wort für Wort", "Tippe auf ein Wort für Bedeutung und Umschrift, während die Rezitation mitläuft."],
+    ["Shams-Methode", "Jeder Vers in kurzen Schritten: gehört, gesprochen, verstanden, abgerufen und mit Ihrem Leben verbunden."],
+    ["Wort für Wort", "Tippen Sie auf ein Wort für Bedeutung und Umschrift, während die Rezitation mitläuft."],
     ["Fokusmodus", "Ein Vers, sonst nichts auf dem Bildschirm – zum Auswendiglernen ohne Ablenkung."],
-    ["Vers-Feed", "Wische durch Verse wie durch Reels, jeweils mit Rezitation und Übersetzung."],
+    ["Vers-Feed", "Wischen Sie durch Verse wie durch Reels, jeweils mit Rezitation und Übersetzung."],
     ["Koran-Radio", "Durchgehende Rezitation bekannter Rezitatoren, auch im Hintergrund."],
     ["Hadith", "Ausgewählte Hadithe mit Quelle, zum Lesen neben dem Koran."],
     ["Countdown zu Feiertagen", "Ramadan, Eid und die anderen islamischen Tage nach dem Hidschra-Kalender."],

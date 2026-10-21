@@ -23,22 +23,22 @@ Bevor wir auf Besonderheiten eingehen, das Wichtigste zuerst: Das Gebet der Schi
 - **Dieselben Bedingungen:** rituelle Reinheit, saubere Kleidung und sauberer Ort, Bedeckung, die richtige Zeit und die Absicht.
 - **Dieselben Säulen:** Eröffnungs-Takbir, Stehen, die Fatiha, Verbeugung (Ruku'), zwei Niederwerfungen (Sudschud) in jeder Raka, Glaubenszeugnis und Friedensgruß.
 
-Allah sagt: „Und verrichtet das Gebet und entrichtet die Zakah und verneigt euch mit den sich Verneigenden“ ([2:43](/surah/2)), und: „Wahrlich, das Gebet hält ab von Schändlichem und Verwerflichem“ ([29:45](/surah/29)). Diese Verse gelten für alle Muslime gleichermaßen. Die sunnitische Darstellung findest du unter [Wie man betet – im sunnitischen Islam](/islam/prayer-sunni).
+Allah sagt: „Und verrichtet das Gebet und entrichtet die Zakah und verneigt euch mit den sich Verneigenden“ ([2:43](/surah/2)), und: „Wahrlich, das Gebet hält ab von Schändlichem und Verwerflichem“ ([29:45](/surah/29)). Diese Verse gelten für alle Muslime gleichermaßen. Die sunnitische Darstellung finden Sie unter [Wie man betet – im sunnitischen Islam](/islam/prayer-sunni).
 
 ## Die Gebetszeiten und das Zusammenlegen
 
-In der Dscha'fari-Schule ist es erlaubt, Dhuhr und Asr nacheinander zu beten und ebenso Maghrib und Isha – auch ohne Reise oder besonderen Grund. Man betet also alle fünf Gebete, aber oft zu drei Zeiten: morgens Fajr, mittags Dhuhr und Asr, abends Maghrib und Isha. Grundlage ist unter anderem die Überlieferung von Ibn Abbas, dass der Prophet ﷺ in Medina Dhuhr mit Asr und Maghrib mit Isha zusammenlegte, ohne dass Furcht oder Reise vorlag (Sahih Muslim). Viele Gelehrte der Schule halten es für vorzüglicher, jedes Gebet zu seiner eigenen bevorzugten Zeit zu verrichten; das Zusammenlegen bleibt erlaubt. Die Reihenfolge ist Pflicht: Dhuhr vor Asr, Maghrib vor Isha. Aktuelle Zeiten findest du unter [Gebetszeiten](/prayer).
+In der Dscha'fari-Schule ist es erlaubt, Dhuhr und Asr nacheinander zu beten und ebenso Maghrib und Isha – auch ohne Reise oder besonderen Grund. Man betet also alle fünf Gebete, aber oft zu drei Zeiten: morgens Fajr, mittags Dhuhr und Asr, abends Maghrib und Isha. Grundlage ist unter anderem die Überlieferung von Ibn Abbas, dass der Prophet ﷺ in Medina Dhuhr mit Asr und Maghrib mit Isha zusammenlegte, ohne dass Furcht oder Reise vorlag (Sahih Muslim). Viele Gelehrte der Schule halten es für vorzüglicher, jedes Gebet zu seiner eigenen bevorzugten Zeit zu verrichten; das Zusammenlegen bleibt erlaubt. Die Reihenfolge ist Pflicht: Dhuhr vor Asr, Maghrib vor Isha. Aktuelle Zeiten finden Sie unter [Gebetszeiten](/prayer).
 
 ## Die Gebetswaschung (Wudu)
 
 Der Quranvers zur Gebetswaschung ist für alle derselbe ([5:6](/surah/5)). Die Dscha'fari-Schule versteht das Bestreichen des Kopfes und der Füße als Wischen (Mash) mit der verbliebenen Feuchtigkeit. So wird Wudu verrichtet:
 
-1. **Absicht:** Fasse im Herzen die Absicht, Wudu für Allah zu verrichten. Empfohlen ist, vorher die Hände zu waschen und Mund und Nase zu spülen.
-2. **Gesicht:** Wasche das Gesicht von oben nach unten – vom Haaransatz bis zum Kinn, in der Breite zwischen ausgestrecktem Mittelfinger und Daumen.
-3. **Rechter Arm:** Wasche ihn vom Ellenbogen abwärts bis zu den Fingerspitzen – also von oben nach unten.
+1. **Absicht:** Fassen Sie im Herzen die Absicht, Wudu für Allah zu verrichten. Empfohlen ist, vorher die Hände zu waschen und Mund und Nase zu spülen.
+2. **Gesicht:** Waschen Sie das Gesicht von oben nach unten – vom Haaransatz bis zum Kinn, in der Breite zwischen ausgestrecktem Mittelfinger und Daumen.
+3. **Rechter Arm:** Waschen Sie ihn vom Ellenbogen abwärts bis zu den Fingerspitzen – also von oben nach unten.
 4. **Linker Arm:** ebenso, vom Ellenbogen bis zu den Fingerspitzen.
-5. **Kopf:** Wische mit der Feuchtigkeit, die noch an der rechten Hand ist, über den vorderen Teil des Kopfes – ohne neues Wasser zu nehmen.
-6. **Füße:** Wische mit der verbliebenen Feuchtigkeit über den Fußrücken, von den Zehenspitzen bis zum Gelenk – den rechten Fuß mit der rechten Hand, den linken mit der linken.
+5. **Kopf:** Wischen Sie mit der Feuchtigkeit, die noch an der rechten Hand ist, über den vorderen Teil des Kopfes – ohne neues Wasser zu nehmen.
+6. **Füße:** Wischen Sie mit der verbliebenen Feuchtigkeit über den Fußrücken, von den Zehenspitzen bis zum Gelenk – den rechten Fuß mit der rechten Hand, den linken mit der linken.
 
 Das einmalige Waschen von Gesicht und Armen ist Pflicht, ein zweites Mal ist erlaubt, mehr wird nicht getan. Reihenfolge (Tartib) und zügige Abfolge (Muwalat) sind Pflicht.
 
@@ -67,23 +67,23 @@ Die **Iqama** ist kürzer: *Allahu akbar* (2×), die beiden Zeugnisse (je 2×), 
 
 Am Beispiel eines Gebets mit zwei Rakat (Fajr):
 
-1. **Absicht (Niyya):** Stelle dich zur Qibla und fasse im Herzen die Absicht, z. B. „Ich bete das Fajr-Gebet, zwei Rakat, um Allah näherzukommen.“
-2. **Eröffnungs-Takbir (Takbirat al-Ihram):** Hebe die Hände bis in Höhe der Ohren und sprich *Allahu akbar* (الله أكبر) – „Allah ist größer“.
+1. **Absicht (Niyya):** Stellen Sie sich zur Qibla und fassen Sie im Herzen die Absicht, z. B. „Ich bete das Fajr-Gebet, zwei Rakat, um Allah näherzukommen.“
+2. **Eröffnungs-Takbir (Takbirat al-Ihram):** Heben Sie die Hände bis in Höhe der Ohren und sprechen Sie *Allahu akbar* (الله أكبر) – „Allah ist größer“.
 3. **Stehen (Qiyam):** Die Arme hängen ruhig seitlich herab, die Hände liegen auf den Oberschenkeln. Die Hände werden nicht vor dem Körper verschränkt. Der Blick ruht auf dem Platz der Niederwerfung.
-4. **Al-Fatiha:** Rezitiere die [Eröffnungssure](/surah/1), beginnend mit *Bismillahi r-Rahmani r-Rahim*. Nach der Fatiha wird kein *Amin* gesagt; nach der Dscha'fari-Lehre soll es im Gebet nicht gesprochen werden.
+4. **Al-Fatiha:** Rezitieren Sie die [Eröffnungssure](/surah/1), beginnend mit *Bismillahi r-Rahmani r-Rahim*. Nach der Fatiha wird kein *Amin* gesagt; nach der Dscha'fari-Lehre soll es im Gebet nicht gesprochen werden.
 5. **Eine vollständige Sure:** In den ersten beiden Rakat folgt eine ganze weitere Sure mit ihrer Basmala, z. B. [Al-Ikhlas](/surah/112) oder al-Qadr.
 6. **Qunut (in der zweiten Raka):** Nach der Sure und vor der Verbeugung hebt man die Hände mit den Handflächen nach oben vor das Gesicht und spricht ein Bittgebet, z. B. *Rabbana atina fi d-dunya hasanah, wa fi l-achirati hasanah, wa qina 'adhaba n-nar* – „Unser Herr, gib uns im Diesseits Gutes und im Jenseits Gutes und bewahre uns vor der Strafe des Feuers“ ([2:201](/surah/2)). Der Qunut ist stark empfohlen.
-7. **Verbeugung (Ruku'):** *Allahu akbar*, verbeuge dich, Hände auf die Knie, und sprich *Subhana Rabbiyal-'Azimi wa bihamdih* (سبحان ربي العظيم وبحمده) – „Gepriesen sei mein Herr, der Gewaltige, und Ihm gebührt das Lob“.
-8. **Aufrichten:** Richte dich ganz auf und stehe einen Moment ruhig. Empfohlen ist *Sami'a llahu liman hamidah* – „Allah hört den, der Ihn lobt“.
-9. **Niederwerfung (Sudschud):** *Allahu akbar* und wirf dich nieder auf sieben Körperteile: Stirn, beide Handflächen, beide Knie und die großen Zehen. Die Stirn liegt auf Erde oder auf etwas, das aus der Erde wächst und weder gegessen noch als Kleidung getragen wird – meist auf einer Turba. Sprich *Subhana Rabbiyal-A'la wa bihamdih* (سبحان ربي الأعلى وبحمده) – „Gepriesen sei mein Herr, der Höchste, und Ihm gebührt das Lob“.
-10. **Sitzen zwischen den Niederwerfungen:** *Allahu akbar*, setze dich ruhig auf. Empfohlen ist *Astaghfirullaha Rabbi wa atubu ilaih* – „Ich bitte Allah, meinen Herrn, um Vergebung und wende mich Ihm reuig zu“.
+7. **Verbeugung (Ruku'):** *Allahu akbar*, verbeugen Sie sich, Hände auf die Knie, und sprechen Sie *Subhana Rabbiyal-'Azimi wa bihamdih* (سبحان ربي العظيم وبحمده) – „Gepriesen sei mein Herr, der Gewaltige, und Ihm gebührt das Lob“.
+8. **Aufrichten:** Richten Sie sich ganz auf und stehe einen Moment ruhig. Empfohlen ist *Sami'a llahu liman hamidah* – „Allah hört den, der Ihn lobt“.
+9. **Niederwerfung (Sudschud):** *Allahu akbar* und werfen Sie sich nieder auf sieben Körperteile: Stirn, beide Handflächen, beide Knie und die großen Zehen. Die Stirn liegt auf Erde oder auf etwas, das aus der Erde wächst und weder gegessen noch als Kleidung getragen wird – meist auf einer Turba. Sprechen Sie *Subhana Rabbiyal-A'la wa bihamdih* (سبحان ربي الأعلى وبحمده) – „Gepriesen sei mein Herr, der Höchste, und Ihm gebührt das Lob“.
+10. **Sitzen zwischen den Niederwerfungen:** *Allahu akbar*, setzen Sie sich ruhig auf. Empfohlen ist *Astaghfirullaha Rabbi wa atubu ilaih* – „Ich bitte Allah, meinen Herrn, um Vergebung und wende mich Ihm reuig zu“.
 11. **Zweite Niederwerfung:** *Allahu akbar*, wie zuvor, mit demselben Lobpreis.
-12. **Aufstehen zur zweiten Raka:** Beim Aufstehen ist empfohlen: *Bihaulillahi wa quwwatihi aqumu wa aq'ud* – „Durch Allahs Macht und Kraft stehe ich auf und setze mich“. In der zweiten Raka wiederholst du die Schritte 4 bis 11, mit dem Qunut (Schritt 6).
-13. **Taschahhud:** Nach der zweiten Niederwerfung bleibst du sitzen und sprichst: *Aschhadu an la ilaha illallahu wahdahu la scharika lah, wa aschhadu anna Muhammadan 'abduhu wa rasuluh. Allahumma salli 'ala Muhammadin wa ali Muhammad* – „Ich bezeuge, dass es keinen Gott gibt außer Allah, dem Einen ohne Partner, und ich bezeuge, dass Muhammad Sein Diener und Gesandter ist. O Allah, segne Muhammad und die Familie Muhammads.“
+12. **Aufstehen zur zweiten Raka:** Beim Aufstehen ist empfohlen: *Bihaulillahi wa quwwatihi aqumu wa aq'ud* – „Durch Allahs Macht und Kraft stehe ich auf und setze mich“. In der zweiten Raka wiederholen Sie die Schritte 4 bis 11, mit dem Qunut (Schritt 6).
+13. **Taschahhud:** Nach der zweiten Niederwerfung bleiben Sie sitzen und sprechen: *Aschhadu an la ilaha illallahu wahdahu la scharika lah, wa aschhadu anna Muhammadan 'abduhu wa rasuluh. Allahumma salli 'ala Muhammadin wa ali Muhammad* – „Ich bezeuge, dass es keinen Gott gibt außer Allah, dem Einen ohne Partner, und ich bezeuge, dass Muhammad Sein Diener und Gesandter ist. O Allah, segne Muhammad und die Familie Muhammads.“
 14. **Salam:** *As-salamu 'alaika ayyuha n-nabiyyu wa rahmatullahi wa barakatuh. As-salamu 'alaina wa 'ala 'ibadillahi s-salihin. As-salamu 'alaikum wa rahmatullahi wa barakatuh* – „Friede sei mit dir, o Prophet, und die Barmherzigkeit Allahs und Sein Segen. Friede sei mit uns und mit den rechtschaffenen Dienern Allahs. Friede sei mit euch und die Barmherzigkeit Allahs und Sein Segen.“ Damit ist das Gebet beendet.
 15. **Drei Takbir zum Abschluss:** Empfohlen ist, danach dreimal *Allahu akbar* zu sagen und dabei jedes Mal die Hände bis zu den Ohren zu heben.
 
-**Bei drei oder vier Rakat:** Nach der zweiten Raka sprichst du nur den Taschahhud (Schritt 13) und stehst dann auf. In der dritten und vierten Raka rezitierst du leise entweder die Fatiha oder die „vier Lobpreisungen“ (at-Tasbihat al-arba'a): *Subhanallahi wa l-hamdu lillahi wa la ilaha illallahu wallahu akbar* – „Gepriesen sei Allah, alles Lob gebührt Allah, es gibt keinen Gott außer Allah, und Allah ist größer“. Sie werden üblicherweise dreimal gesprochen. Im letzten Sitzen folgen Taschahhud und Salam.
+**Bei drei oder vier Rakat:** Nach der zweiten Raka sprechen Sie nur den Taschahhud (Schritt 13) und stehen dann auf. In der dritten und vierten Raka rezitieren Sie leise entweder die Fatiha oder die „vier Lobpreisungen“ (at-Tasbihat al-arba'a): *Subhanallahi wa l-hamdu lillahi wa la ilaha illallahu wallahu akbar* – „Gepriesen sei Allah, alles Lob gebührt Allah, es gibt keinen Gott außer Allah, und Allah ist größer“. Sie werden üblicherweise dreimal gesprochen. Im letzten Sitzen folgen Taschahhud und Salam.
 
 ## Warum auf Erde niederwerfen?
 
@@ -91,11 +91,11 @@ Der Prophet ﷺ sagte: „Die Erde ist mir zur Gebetsstätte und zum Mittel der 
 
 ## Nach dem Gebet: der Tasbih der Fatima
 
-Nach dem Gebet sprechen viele den **Tasbih der Fatima az-Zahra (عليها السلام)**: 34× *Allahu akbar*, 33× *Alhamdulillah* und 33× *Subhanallah*. Diese Lobpreisung lehrte der Prophet ﷺ seiner Tochter Fatima und Ali (عليه السلام); die Überlieferung findet sich auch in Sahih al-Bukhari und Sahih Muslim. Weitere Bittgebete findest du unter [Duas](/duas).
+Nach dem Gebet sprechen viele den **Tasbih der Fatima az-Zahra (عليها السلام)**: 34× *Allahu akbar*, 33× *Alhamdulillah* und 33× *Subhanallah*. Diese Lobpreisung lehrte der Prophet ﷺ seiner Tochter Fatima und Ali (عليه السلام); die Überlieferung findet sich auch in Sahih al-Bukhari und Sahih Muslim. Weitere Bittgebete finden Sie unter [Duas](/duas).
 
 ## Reisende, Frauen und Kranke
 
-**Reisende** müssen die Vier-Rakat-Gebete auf zwei verkürzen (Qasr, [4:101](/surah/4)), wenn die Reise eine bestimmte Mindeststrecke erreicht (rund 44 km, nach den Angaben deines Mardscha'). Fajr und Maghrib bleiben unverändert. **Frauen** beten auf dieselbe Weise; während Menstruation und Wochenbett entfällt das Gebet und wird nicht nachgeholt. **Kranke** beten, wie sie können – im Sitzen oder Liegen; Allah belastet niemanden über sein Vermögen ([2:286](/surah/2)). Das **Freitagsgebet** ([62:9](/surah/62)) wird in vielen schiitischen Gemeinden gehalten; zu seinem genauen Status folgt man dem eigenen Mardscha'.
+**Reisende** müssen die Vier-Rakat-Gebete auf zwei verkürzen (Qasr, [4:101](/surah/4)), wenn die Reise eine bestimmte Mindeststrecke erreicht (rund 44 km, nach den Angaben Ihres Mardscha'). Fajr und Maghrib bleiben unverändert. **Frauen** beten auf dieselbe Weise; während Menstruation und Wochenbett entfällt das Gebet und wird nicht nachgeholt. **Kranke** beten, wie sie können – im Sitzen oder Liegen; Allah belastet niemanden über sein Vermögen ([2:286](/surah/2)). Das **Freitagsgebet** ([62:9](/surah/62)) wird in vielen schiitischen Gemeinden gehalten; zu seinem genauen Status folgt man dem eigenen Mardscha'.
 
 ## Gemeinsame Quellen und gegenseitiger Respekt
 
@@ -105,15 +105,15 @@ Die **Amman-Botschaft** (2004), bestätigt 2005 von einer internationalen Konfer
 
 In den Vereinigten Arabischen Emiraten beten Muslime aller Schulen Seite an Seite: in Moscheen, am Arbeitsplatz, auf Reisen. Wer neben jemandem steht, der die Hände anders hält oder auf einer Turba betet, steht neben einem Bruder oder einer Schwester im Gebet.
 
-## Lerne bei einem Lehrer deiner Schule
+## Lernen Sie bei einem Lehrer Ihrer Schule
 
-Dieses Kapitel gibt einen sorgfältigen Überblick über die Dscha'fari-Praxis, ersetzt aber keinen Unterricht. Die genauen Regeln findest du in den praktischen Rechtsbüchern (Tawdih al-Masa'il) der Gelehrten. Lerne die Einzelheiten bei einem qualifizierten Lehrer deiner Gemeinde und folge den Rechtsgutachten deines Mardscha'. Möge Allah dein Gebet annehmen.`,
+Dieses Kapitel gibt einen sorgfältigen Überblick über die Dscha'fari-Praxis, ersetzt aber keinen Unterricht. Die genauen Regeln finden Sie in den praktischen Rechtsbüchern (Tawdih al-Masa'il) der Gelehrten. Lernen Sie die Einzelheiten bei einem qualifizierten Lehrer Ihrer Gemeinde und folgen Sie den Rechtsgutachten Ihres Mardscha'. Möge Allah Ihr Gebet annehmen.`,
     faq: [
       { q: "Beten Schiiten nur dreimal am Tag?", a: "Nein. Sie beten alle fünf Pflichtgebete mit insgesamt 17 Rakat. Nach der Dscha'fari-Schule dürfen Dhuhr und Asr sowie Maghrib und Isha zusammengelegt werden, sodass die fünf Gebete zu drei Zeitpunkten verrichtet werden können." },
       { q: "Was ist eine Turba?", a: "Eine kleine Tafel aus reinem Ton, auf die man in der Niederwerfung die Stirn legt. Sie stellt sicher, dass die Stirn auf Erde liegt, wie es die Dscha'fari-Schule verlangt. Sie wird nicht angebetet; jede reine Erde, Stein oder ein Palmblatt erfüllen denselben Zweck." },
       { q: "Ist das Zeugnis über Ali Teil des Adhan?", a: "Die meisten schiitischen Gelehrten betrachten „Aschhadu anna 'Aliyyan waliyyullah“ als empfohlenen Zusatz, aber nicht als Teil des verpflichtenden Adhan." },
       { q: "Warum werden die Hände im Stehen nicht verschränkt?", a: "Nach den Überlieferungen, auf die sich die Dscha'fari-Schule stützt, stehen die Betenden mit seitlich herabhängenden Armen, die Hände auf den Oberschenkeln. Auch viele Malikiten beten mit herabhängenden Händen." },
-      { q: "Darf ich als Schiit hinter einem sunnitischen Imam beten oder umgekehrt?", a: "Gemeinsames Beten ist in vielen Moscheen gelebter Alltag, auch in den Emiraten. Zu den genauen Regeln der Gültigkeit befragst du am besten deinen Mardscha' bzw. deinen Gelehrten vor Ort." },
+      { q: "Darf ich als Schiit hinter einem sunnitischen Imam beten oder umgekehrt?", a: "Gemeinsames Beten ist in vielen Moscheen gelebter Alltag, auch in den Emiraten. Zu den genauen Regeln der Gültigkeit befragen Sie am besten Ihren Mardscha' bzw. Ihren Gelehrten vor Ort." },
     ],
     sources: [
       "Quran 2:43, 2:201, 2:286, 4:43, 4:101, 5:6, 29:45, 62:9",
@@ -207,7 +207,7 @@ Using a two-rak'ah prayer (Fajr) as the example:
 
 ## Why prostrate on earth?
 
-The Prophet ﷺ said: "The earth has been made for me a place of prostration and a means of purification" (Sahih al-Bukhari, Sahih Muslim). From this and from reports of the Imams (عليهم السلام), the Ja'fari school derives that the forehead in prostration should rest on natural earth, or on what grows from it and is not eaten or worn – such as stone, sand, wood or palm leaves. Carpets and clothing do not count. That is why many use a **turbah**, a small tablet of pure clay: it is simply a clean piece of earth that can be carried anywhere. The turbah is not worshipped; one prostrates on it, not to it. Many cherish clay from Karbala out of love for Imam Husayn (عليه السلام), but any pure earth is valid.
+The Prophet ﷺ said: "The earth has been made for me a place of prostration and a means of purification" (Sahih al-Bukhari, Sahih Muslim). From this and from reports of the Imams (عليهم السلام), the Ja'fari school derives that the forehead in prostration should rest on natural earth, or on what grows from it and is not eaten or worn – suchen Sie as stone, sand, wood or palm leaves. Carpets and clothing do not count. That is why many use a **turbah**, a small tablet of pure clay: it is simply a clean piece of earth that can be carried anywhere. The turbah is not worshipped; one prostrates on it, not to it. Many cherish clay from Karbala out of love for Imam Husayn (عليه السلام), but any pure earth is valid.
 
 ## After the prayer: the tasbih of Fatimah
 

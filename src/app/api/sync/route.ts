@@ -12,7 +12,11 @@ const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes"
   "qmc.garden", "qmc.stickers2",
   // the learning courses (website src/lib/learn/sync.ts merges them; same keys as the app)
   "qmc.courses.v1", "qmc.qaida", "qmc.arabicLang.v1", "qmc.reciterPath", "qmc.srs.v1", "qmc.srs.tests",
-  "qmc.abrahamic.course.v1", "qmc.haramain.course.v1", "qmc.haramain.guide.v1", "qmc.school.v1"]);
+  "qmc.abrahamic.course.v1", "qmc.haramain.course.v1", "qmc.haramain.guide.v1", "qmc.school.v1",
+  // Shams Method 2.0, question bank, Nahj course (merged on the device by both clients, rules in src/lib/learn/syncExtra.ts)
+  "qmc.shams2.settings.v1", "qmc.shams2.log.v1", "qmc.shams2.words.v1", "qmc.shams2.checks.v1", "qmc.shams2.mut.v1", "qmc.shams2.grade.v1", "qmc.shams2.weeks.v1", "qmc.qbank.v1", "qmc.nahjCourse.v1",
+  // the long path of the app (journey seals, endless daily plans, qirāʾāt marks); merged on the device (mobile/src/features/journey/store.ts)
+  "qmc.journey"]);
 
 export async function GET() {
   const u = await currentUser();

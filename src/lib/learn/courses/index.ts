@@ -24,7 +24,7 @@ export const NAMES: Course = {
   id: "names", word: "الأسماء الحسنى", free: NAMES_FREE,
   title: L3("The 99 Names of Allah", "Die 99 Namen Allahs", "أسماء الله الحسنى"),
   lead: L3("One name per lesson: its meaning, where it appears in the Quran, and a short quiz.", "Ein Name pro Lektion: seine Bedeutung, wo er im Koran vorkommt, und ein kurzes Quiz.", "اسم في كل درس: معناه، ومواضعه في القرآن، واختبار قصير."),
-  note: L3("The common list follows the narration in at-Tirmidhi (3507); scholars have compiled other lists from the Quran and Sunnah.", "Die verbreitete Liste folgt der Überlieferung bei at-Tirmidhi (3507); Gelehrte haben aus Koran und Sunna auch andere Listen zusammengestellt.", "القائمة المشهورة على رواية الترمذي (3507)، وقد جمع العلماء قوائم أخرى من القرآن والسنة."),
+  note: L3("The saying that Allah has ninety-nine names is in al-Bukhari (6410). The common list of the names follows the narration in at-Tirmidhi (3507), which several hadith scholars grade as weak; scholars have also compiled other lists from the Quran and Sunnah.", "Dass Allah neunundneunzig Namen hat, steht bei al-Buchari (6410). Die verbreitete Liste der Namen folgt der Überlieferung bei at-Tirmidhi (3507), die mehrere Hadithgelehrte als schwach einstufen; Gelehrte haben aus Koran und Sunna auch andere Listen zusammengestellt.", "ورد أن لله تسعة وتسعين اسمًا في صحيح البخاري (6410). والقائمة المشهورة للأسماء على رواية الترمذي (3507)، وقد ضعّفها عدد من علماء الحديث، وقد جمع العلماء قوائم أخرى من القرآن والسنة."),
   lessons: Array.from({ length: NAMES_COUNT }, (_, i) => ({ id: nameLessonId(i), title: L3("", "", ""), body: L3("", "", ""), quiz: [] })),
 };
 

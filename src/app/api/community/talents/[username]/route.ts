@@ -5,6 +5,7 @@ import { shape } from "@/lib/communityProfiles";
 import { MIN_POST_AGE, NO_STORE, PROFILE_COLS, ageOf, birthYearOf, talentGate } from "@/lib/talents";
 import { refreshBadges } from "@/lib/talentBadges";
 import { postingEnabled } from "@/lib/talentPosting";
+import { NO_MOMENTS, followedBy, profileMoments, profileShare } from "@/lib/profileMoments";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +28,9 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ user
   let followed = false;
   let canMessage = false;
   let requested = false;
+  let followsMe = false;
   if (!mine) {
+    followsMe = !!(await p.query("SELECT 1 FROM community_follows WHERE follower_id = $2 AND followee_id = $1", [g.me.id, id])).rows[0];
     const [f, cn] = await Promise.all([
       p.query("SELECT 1 FROM community_follows WHERE follower_id = $1 AND followee_id = $2", [g.me.id, id]),
       p.query(
@@ -58,11 +61,21 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ user
   const badges = mine ? await refreshBadges(id) : null;
   if (badges) c.badge = (await p.query("SELECT badge FROM community_profiles WHERE user_id = $1", [id])).rows[0]?.badge ?? c.badge;
   const s = shape(c);
+  // achievement "posts" (moments) with per-moment reaction counts and the MashaAllah total (gold hearts + "MashaAllah")
+  const restricted = !mine && !!c.private && !followed;
+  const locale = (req.nextUrl.searchParams.get("locale") ?? "en").slice(0, 2);
+  const [ach, mutual] = await Promise.all([
+    iBlocked || restricted ? NO_MOMENTS : profileMoments(g.me.id, id, mine, locale),
+    mine || iBlocked ? null : followedBy(g.me.id, id),
+  ]);
+  const shareLink = profileShare(c.username, locale);
   return json({
     profile: {
       ...s, followed, mine, blocked: iBlocked, connection, canMessage,
       ...(badges ? { badges } : {}),
-      requested, restricted: !mine && !!c.private && !followed,
+      requested, restricted,
+      mashaallahTotal: ach.mashaallah, momentCount: ach.count, moments: ach.moments, momentsMore: ach.more,
+      followedBy: mutual, followsMe, shareUrl: shareLink.url, shareQr: shareLink.qr,
       posts: Number(st.posts), likes: Number(st.likes), liveStory: postingEnabled() && !!story.live, postingEnabled: postingEnabled(), reciterLevel: mine ? Number(c.reciter_level ?? 0) : undefined,
       // the member's own view also shows the progress setting when it is off
       progress: s.progress ?? (mine ? { treeStage: 0, treeType: "", certJuz: [], hidden: true } : null),

@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/site";
 
 type Text = { kicker: string; title: string; lead: string; feature: string };
 const C: Record<AppLocale, Text> = {
-  de: { kicker: "Frag nach", title: "Der Quran-Masterclass-Assistent", lead: "Fragen zum Koran, zum Islam und zur Shams-Methode – rund um die Uhr. Der Assistent antwortet nur zu diesen Themen und verweist dich bei persönlichen religiösen Fragen an einen Gelehrten.", feature: "den Assistenten" },
+  de: { kicker: "Fragen Sie nach", title: "Der Quran-Masterclass-Assistent", lead: "Fragen zum Koran, zum Islam und zur Shams-Methode – rund um die Uhr. Der Assistent antwortet nur zu diesen Themen und verweist Sie bei persönlichen religiösen Fragen an einen Gelehrten.", feature: "den Assistenten" },
   en: { kicker: "Ask", title: "The Quran Masterclass Assistant", lead: "Questions about the Quran, Islam and the Shams Method – any time. The assistant only answers on these topics and refers you to a scholar for personal religious questions.", feature: "the assistant" },
   ar: { kicker: "اسأل", title: "مساعد Quran Masterclass", lead: "أسئلتك عن القرآن الكريم والإسلام ومنهج شمس في أي وقت. يجيب المساعد في هذه الموضوعات فقط، ويحيلك إلى أهل العلم في المسائل الشرعية الشخصية.", feature: "المساعد" },
   tr: { kicker: "Sorun", title: "Quran Masterclass Asistanı", lead: "Kur'an, İslam ve Shams Metodu hakkında sorular – günün her saati. Asistan yalnızca bu konularda yanıt verir; kişisel dinî sorularda sizi bir âlime yönlendirir.", feature: "asistanı" },

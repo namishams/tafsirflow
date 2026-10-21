@@ -22,7 +22,7 @@ export const ABRAHAMIC_LESSONS: Lesson[] = [
       q(["Why does Ibrahim turn away from the star, moon and sun?", "Warum wendet sich Ibrahim von Stern, Mond und Sonne ab?", "لماذا أعرض إبراهيم عن الكوكب والقمر والشمس؟"],
         [["Because they set and disappear", "Weil sie untergehen und verschwinden", "لأنها تأفل وتغيب"], ["Because his father forbade it", "Weil sein Vater es verbot", "لأن أباه نهاه"], ["Because they were too small", "Weil sie zu klein waren", "لأنها صغيرة"]], 0),
       q(["What did God say to the fire?", "Was sprach Gott zum Feuer?", "ماذا قال الله للنار؟"],
-        [["Burn brighter", "Brenne heller", "اشتعلي"], ["Be coolness and safety for Ibrahim", "Sei Kühle und Unversehrtheit für Ibrahim", "كوني بردًا وسلامًا على إبراهيم"], ["Go out at night", "Erlösche in der Nacht", "انطفئي ليلًا"]], 1, ["Surah al-Anbiya 21:69.", "Sure al-Anbiya 21:69.", "سورة الأنبياء 21:69."]),
+        [["Burn brighter", "Brenne heller", "اشتعلي"], ["Be coolness and safety for Ibrahim", "Sei Kühle und Unversehrtheit für Ibrahim", "كوني بردًا وسلامًا على إبراهيم"], ["Go out at night", "Erlöschen Sie in der Nacht", "انطفئي ليلًا"]], 1, ["Surah al-Anbiya 21:69.", "Sure al-Anbiya 21:69.", "سورة الأنبياء 21:69."]),
     ],
   },
   {
@@ -38,7 +38,7 @@ export const ABRAHAMIC_LESSONS: Lesson[] = [
       "لم يسمِّ القرآن الابن هنا. وجمهور العلماء من السنة والشيعة على أنه إسماعيل لأن البشارة بإسحاق جاءت بعدها (37:112)، وذهب بعض المتقدمين إلى أنه إسحاق. وفي سفر التكوين 22 هو إسحاق. ويرى التفسير الشيعي في 2:124 أصلًا للإمامة."),
     quiz: [
       q(["What did the son answer his father?", "Was antwortete der Sohn seinem Vater?", "بماذا أجاب الابن أباه؟"],
-        [["Let me flee", "Lass mich fliehen", "دعني أهرب"], ["Father, do what you are commanded", "Vater, tu, was dir befohlen wird", "يا أبتِ افعل ما تؤمر"], ["Ask again tomorrow", "Frag morgen noch einmal", "اسأل غدًا"]], 1),
+        [["Let me flee", "Lass mich fliehen", "دعني أهرب"], ["Father, do what you are commanded", "Vater, tu, was Ihnen befohlen wird", "يا أبتِ افعل ما تؤمر"], ["Ask again tomorrow", "Frag morgen noch einmal", "اسأل غدًا"]], 1),
       q(["Which festival commemorates this event?", "Welches Fest erinnert an dieses Ereignis?", "أي عيد يذكّر بهذا الحدث؟"],
         [["Eid al-Fitr", "Ramadanfest", "عيد الفطر"], ["Eid al-Adha", "Opferfest", "عيد الأضحى"], ["Mawlid", "Maulid", "المولد"]], 1),
     ],
@@ -237,7 +237,7 @@ export const ABRAHAMIC_LESSONS: Lesson[] = [
     ),
     quiz: [
       q(["How did Ayyub call upon God?", "Wie rief Ayyub Gott an?", "كيف دعا أيوب ربه؟"],
-        [["Harm has touched me, and You are the Most Merciful", "Mich hat Schaden getroffen, und Du bist der Barmherzigste", "مسّني الضرّ وأنت أرحم الراحمين"], ["Why me?", "Warum ich?", "لماذا أنا؟"], ["Give me a kingdom", "Gib mir ein Königreich", "هب لي ملكًا"]], 0),
+        [["Harm has touched me, and You are the Most Merciful", "Mich hat Schaden getroffen, und Du bist der Barmherzigste", "مسّني الضرّ وأنت أرحم الراحمين"], ["Why me?", "Warum ich?", "لماذا أنا؟"], ["Give me a kingdom", "Geben Sie mir ein Königreich", "هب لي ملكًا"]], 0),
       q(["How does God describe Ayyub?", "Wie beschreibt Gott Ayyub?", "بماذا وصف الله أيوب؟"],
         [["Patient, an excellent servant", "Geduldig, ein vortrefflicher Diener", "صابرًا نِعم العبد"], ["Rich", "Reich", "غنيًّا"], ["A warrior", "Ein Krieger", "محاربًا"]], 0),
     ],
@@ -269,7 +269,7 @@ export const ABRAHAMIC_LESSONS: Lesson[] = [
     note: L3("Muslims and Christians share the virgin birth and the title Messiah; they differ on Isa's divinity and on the crucifixion (4:157). This lesson states the Quranic view without comparing or ranking.", "Muslime und Christen teilen die Jungfrauengeburt und den Titel Messias; sie unterscheiden sich in der Frage der Göttlichkeit Isas und der Kreuzigung (4:157). Diese Lektion gibt die koranische Sicht wieder, ohne zu vergleichen oder zu werten.", "يتفق المسلمون والمسيحيون على الولادة العذراوية ولقب المسيح، ويختلفون في ألوهية عيسى والصلب (4:157). يعرض هذا الدرس الرؤية القرآنية دون مقارنة أو مفاضلة."),
     quiz: [
       q(["What did the infant Isa say in the cradle?", "Was sagte das Kind Isa in der Wiege?", "ماذا قال عيسى في المهد؟"],
-        [["I am the servant of God", "Ich bin der Diener Gottes", "إني عبد الله"], ["I am a king", "Ich bin ein König", "أنا ملك"], ["Feed me", "Gib mir zu essen", "أطعموني"]], 0),
+        [["I am the servant of God", "Ich bin der Diener Gottes", "إني عبد الله"], ["I am a king", "Ich bin ein König", "أنا ملك"], ["Feed me", "Geben Sie mir zu essen", "أطعموني"]], 0),
       q(["Which woman is named in the Quran?", "Welche Frau wird im Koran namentlich genannt?", "أي امرأة سُمّيت في القرآن؟"],
         [["Hajar", "Hadschar", "هاجر"], ["Asiya", "Asiya", "آسية"], ["Maryam", "Maryam", "مريم"]], 2),
     ],

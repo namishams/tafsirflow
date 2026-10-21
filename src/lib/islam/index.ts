@@ -52,9 +52,9 @@ const UI = {
     lead: "Was glauben Muslime? Was ist der Koran, wer war der Prophet Muhammad ﷺ, welche Städte sind uns heilig, was unterscheidet Sunniten und Schiiten – und wie betet man? Kapitel für Kapitel, geschrieben im Geist der Emirate: mit Respekt vor jeder Schule, mit Mäßigung und mit der Gastfreundschaft, mit der man bei uns jeden Fragenden empfängt.",
     start: "Mit Kapitel 1 beginnen", chapters: "Alle Kapitel", read: "Lesen", min: "Min. Lesezeit",
     uaeTitle: "Im Geist der Emirate", uae: "Die Vereinigten Arabischen Emirate stehen für einen Islam der Mitte: tief im Glauben verwurzelt, offen gegenüber den Menschen, respektvoll gegenüber jeder Rechtsschule und jeder Religion. In Abu Dhabi wurde 2019 das Dokument über die Brüderlichkeit aller Menschen unterzeichnet, 2023 öffnete das Abrahamic Family House. Diesem Geist folgen auch diese Seiten.",
-    note: "Diese Seiten geben einen Überblick. Für religiöse Fragen deines Alltags wende dich an einen qualifizierten Gelehrten deiner Rechtsschule.",
+    note: "Diese Seiten geben einen Überblick. Für religiöse Fragen Ihres Alltags wenden Sie sich an einen qualifizierten Gelehrten Ihrer Rechtsschule.",
     faq: "Häufige Fragen", sources: "Quellen", back: "Islam verstehen", prev: "Vorheriges Kapitel", next: "Nächstes Kapitel", chapter: "Kapitel",
-    ctaTitle: "Vom Verstehen zum Lernen", ctaBody: "Der schönste Weg, den Islam kennenzulernen, ist der Koran selbst. Beginne mit Al-Fatiha – Vers für Vers, mit der Shams-Methode.", cta: "Al-Fatiha lernen",
+    ctaTitle: "Vom Verstehen zum Lernen", ctaBody: "Der schönste Weg, den Islam kennenzulernen, ist der Koran selbst. Beginnen Sie mit Al-Fatiha – Vers für Vers, mit der Shams-Methode.", cta: "Al-Fatiha lernen",
   },
   en: {
     kicker: "Understanding Islam", title: "Islam – explained clearly, warmly and honestly",

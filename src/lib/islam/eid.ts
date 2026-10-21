@@ -70,7 +70,7 @@ Später sagte er: „Wenn ich bis zum nächsten Jahr lebe, werde ich auch den ne
 
 Für schiitische Muslime ist Aschura vor allem der Tag, an dem **Imam Husain ibn Ali**, der Enkel des Propheten ﷺ, im Jahr 61 nach der Hidschra (680 n. Chr.) bei **Kerbela** im heutigen Irak zusammen mit Mitgliedern seiner Familie und Gefährten getötet wurde. In den ersten zehn Tagen des Muharram kommen sie zu Trauerversammlungen zusammen, erzählen seine Geschichte, rezitieren Trauergedichte und reichen allen, die kommen, Wasser und Essen – auch in Erinnerung an den Durst, den Husain und die Seinen litten. Sie verbinden diesen Tag mit Werten wie Standhaftigkeit, Opferbereitschaft und dem Einsatz für Gerechtigkeit. Vierzig Tage später folgt **Arba'in**, an dem viele zu Fuß nach Kerbela pilgern.
 
-Der Tod Husains ist für alle Muslime schmerzlich – er war der geliebte Enkel des Propheten ﷺ. Mehr über Kerbela erfährst du im Kapitel [Die heiligen Städte](/islam/cities), mehr über die beiden Traditionen im Kapitel über [Sunniten und Schiiten](/islam/sunni-shia).
+Der Tod Husains ist für alle Muslime schmerzlich – er war der geliebte Enkel des Propheten ﷺ. Mehr über Kerbela erfahren Sie im Kapitel [Die heiligen Städte](/islam/cities), mehr über die beiden Traditionen im Kapitel über [Sunniten und Schiiten](/islam/sunni-shia).
 
 ## Radschab und die Nachtreise (al-Isra' wal-Mi'radsch)
 
@@ -92,7 +92,7 @@ Gemeinsam ist allen: Jede Nacht ist eine gute Nacht, um Allah um Vergebung zu bi
 
 ## Ramadan und die Nacht der Bestimmung
 
-Der neunte Monat ist der Höhepunkt des Jahres: „Der Monat Ramadan ist es, in dem der Koran als Rechtleitung für die Menschen herabgesandt wurde“ (Koran 2:185). Einen Monat lang fasten Muslime von der Morgendämmerung bis zum Sonnenuntergang, beten in den Nächten und lesen mehr Koran als sonst. In seinen letzten zehn Nächten liegt die **Laylat al-Qadr**, die Nacht der Bestimmung, die „besser ist als tausend Monate“ (Koran 97:3). Alles über das Fasten, die Nächte und den Ramadan in den Emiraten findest du im Kapitel [Ramadan und das Fasten](/islam/ramadan).
+Der neunte Monat ist der Höhepunkt des Jahres: „Der Monat Ramadan ist es, in dem der Koran als Rechtleitung für die Menschen herabgesandt wurde“ (Koran 2:185). Einen Monat lang fasten Muslime von der Morgendämmerung bis zum Sonnenuntergang, beten in den Nächten und lesen mehr Koran als sonst. In seinen letzten zehn Nächten liegt die **Laylat al-Qadr**, die Nacht der Bestimmung, die „besser ist als tausend Monate“ (Koran 97:3). Alles über das Fasten, die Nächte und den Ramadan in den Emiraten finden Sie im Kapitel [Ramadan und das Fasten](/islam/ramadan).
 
 ## Eid al-Fitr – das Fest des Fastenbrechens
 
@@ -162,13 +162,13 @@ Ob und wie man den Mawlid feiert, darüber denken Muslime unterschiedlich – un
 - **Viele Muslime feiern ihn**, in vielen Ländern seit Jahrhunderten: mit Versammlungen, in denen Koran rezitiert, aus seinem Leben erzählt und Lobgedichte wie die *Burda* von al-Busiri vorgetragen werden, mit Segenswünschen für ihn und mit Essen für Nachbarn und Bedürftige. Viele Gelehrte sehen darin eine gute Form, die Liebe zu ihm zu zeigen.
 - **Andere feiern ihn nicht**, weil der Prophet ﷺ und seine Gefährten diesen Tag nicht als Fest begangen haben. Sie zeigen ihre Liebe, indem sie seiner Sunna an jedem Tag des Jahres folgen – manche auch durch das Fasten am Montag.
 
-Wir urteilen hier nicht. Wenn du unsicher bist, frag einen Gelehrten deines Vertrauens, und begegne denen, die es anders halten, mit Respekt. In den Emiraten ist der Geburtstag des Propheten ﷺ ein gesetzlicher Feiertag. Mehr über sein Leben im Kapitel [Der Prophet Muhammad ﷺ](/islam/prophet).
+Wir urteilen hier nicht. Wenn Sie unsicher sind, fragen Sie einen Gelehrten Ihres Vertrauens, und begegne denen, die es anders halten, mit Respekt. In den Emiraten ist der Geburtstag des Propheten ﷺ ein gesetzlicher Feiertag. Mehr über sein Leben im Kapitel [Der Prophet Muhammad ﷺ](/islam/prophet).
 
 ## Der Freitag – das Fest jeder Woche
 
 Neben den zwei großen Festen hat jede Woche ihren eigenen Festtag. Der Prophet ﷺ nannte den Freitag den besten Tag, an dem die Sonne aufgeht (Muslim), und es wird überliefert, dass er ihn einen Festtag nannte, den Allah den Muslimen gegeben hat (Ibn Madscha). Allah sagt: „O ihr, die ihr glaubt, wenn am Freitag zum Gebet gerufen wird, dann eilt zum Gedenken Allahs und lasst das Geschäft ruhen“ (Koran 62:9).
 
-Zum Freitag gehören das Ghusl, gute Kleidung und Duft, der frühe Weg zur Moschee, das stille Zuhören bei der Predigt und die Stunde, in der Bittgebete erhört werden (al-Bukhari und Muslim). Es wird außerdem überliefert, dass man am Freitag viele Segenswünsche auf den Propheten ﷺ sprechen soll (Abu Dawud), und viele lesen die Sure al-Kahf. Wie du deinen Freitag gestalten kannst, liest du im Kapitel [Islamischer Lebensstil](/islam/daily).
+Zum Freitag gehören das Ghusl, gute Kleidung und Duft, der frühe Weg zur Moschee, das stille Zuhören bei der Predigt und die Stunde, in der Bittgebete erhört werden (al-Bukhari und Muslim). Es wird außerdem überliefert, dass man am Freitag viele Segenswünsche auf den Propheten ﷺ sprechen soll (Abu Dawud), und viele lesen die Sure al-Kahf. Wie Sie Ihren Freitag gestalten können, lesen Sie im Kapitel [Islamischer Lebensstil](/islam/daily).
 
 In den Emiraten ist das offizielle Wochenende seit 2022 Samstag und Sonntag; der Freitag ist für viele ein kürzerer Arbeitstag, damit Zeit für das Freitagsgebet bleibt.
 
@@ -200,17 +200,17 @@ Um die Mitte des Scha'ban ziehen in vielen Vierteln Kinder in traditioneller Kle
 
 ## Glückwünsche zum Fest
 
-Der bekannteste Gruß ist **„Eid Mubarak“** – „gesegnetes Fest“. Von den Prophetengefährten ist überliefert, dass sie sich am Festtag sagten: **„Taqabbal Allahu minna wa minkum“** – „Möge Allah es von uns und von euch annehmen.“ Ein schöner Wunsch, denn er erinnert daran, worum es geht: dass Allah unser Fasten, unser Gebet und unser Opfer annimmt. Bei uns hörst du auch oft *„Kull 'am wa antum bi-khair“* – „Möget ihr jedes Jahr wohlauf sein“ – und auf Emiratisch *„'Asakum min 'awwadah“* – „Möget ihr zu denen gehören, die es wiedererleben.“
+Der bekannteste Gruß ist **„Eid Mubarak“** – „gesegnetes Fest“. Von den Prophetengefährten ist überliefert, dass sie sich am Festtag sagten: **„Taqabbal Allahu minna wa minkum“** – „Möge Allah es von uns und von euch annehmen.“ Ein schöner Wunsch, denn er erinnert daran, worum es geht: dass Allah unser Fasten, unser Gebet und unser Opfer annimmt. Bei uns hören Sie auch oft *„Kull 'am wa antum bi-khair“* – „Möget ihr jedes Jahr wohlauf sein“ – und auf Emiratisch *„'Asakum min 'awwadah“* – „Möget ihr zu denen gehören, die es wiedererleben.“
 
 ## Ein Gedanke zum Schluss
 
-Die besonderen Tage des Islam sind kurz, aber sie tragen weit. Sie verbinden die Freude mit der Dankbarkeit, das Essen mit dem Teilen und den Einzelnen mit der ganzen Gemeinschaft – auch dort, wo Muslime sie auf verschiedene Weise begehen. Wenn du dich auf den nächsten dieser Tage vorbereiten möchtest, beginne beim Ramadan im Kapitel [Ramadan und das Fasten](/islam/ramadan) – oder mit den Versen über Ibrahim in Sure as-Saffat auf unserer [Koran](/quran)-Seite.`,
+Die besonderen Tage des Islam sind kurz, aber sie tragen weit. Sie verbinden die Freude mit der Dankbarkeit, das Essen mit dem Teilen und den Einzelnen mit der ganzen Gemeinschaft – auch dort, wo Muslime sie auf verschiedene Weise begehen. Wenn Sie sich auf den nächsten dieser Tage vorbereiten möchten, beginnen Sie beim Ramadan im Kapitel [Ramadan und das Fasten](/islam/ramadan) – oder mit den Versen über Ibrahim in Sure as-Saffat auf unserer [Koran](/quran)-Seite.`,
     faq: [
       { q: "Wie viele Feste gibt es im Islam?", a: "Zwei große Feste: Eid al-Fitr am 1. Schawwal nach dem Ramadan und Eid al-Adha am 10. Dhul-Hiddscha (Abu Dawud, überliefert von Anas). Dazu kommt der Freitag als wöchentlicher Festtag. Weitere Tage wie Aschura, der Tag von Arafa oder der Geburtstag des Propheten ﷺ werden auf unterschiedliche Weise begangen." },
       { q: "Warum feiern nicht alle Muslime Eid am selben Tag?", a: "Weil jeder Monat mit der Sichtung der Mondsichel beginnt und Gemeinschaften dies unterschiedlich umsetzen: nach der örtlichen Sichtung, nach der Sichtung in einem anderen Land oder nach astronomischer Berechnung. Alle Wege haben Gelehrte auf ihrer Seite. Viele raten, sich der eigenen Gemeinschaft anzuschließen." },
       { q: "Soll ich an Aschura fasten?", a: "Nach der Sunna ist es ein empfohlenes, freiwilliges Fasten; der Prophet ﷺ hoffte, dass es das vergangene Jahr sühnt (Muslim 1162). Viele Gelehrte empfehlen, den 9. Muharram dazuzunehmen (Muslim 1134). Für schiitische Muslime ist Aschura vor allem ein Tag der Trauer um Imam Husain." },
       { q: "Wann genau war die Nachtreise (Isra' und Mi'radsch)?", a: "Das genaue Datum ist nicht sicher überliefert. Weit verbreitet ist der 27. Radschab, doch Historiker und Gelehrte nennen auch andere Daten. Sicher ist das Ereignis selbst, von dem der Koran berichtet (Koran 17:1)." },
-      { q: "Darf man den Geburtstag des Propheten ﷺ feiern?", a: "Darüber denken Muslime unterschiedlich. Viele feiern ihn mit Koran, Lobgedichten, Segenswünschen und Essen für Bedürftige; andere feiern ihn nicht, weil er in der ersten Generation nicht als Fest begangen wurde. Beide handeln aus Liebe zu ihm. Frag im Zweifel einen Gelehrten deines Vertrauens." },
+      { q: "Darf man den Geburtstag des Propheten ﷺ feiern?", a: "Darüber denken Muslime unterschiedlich. Viele feiern ihn mit Koran, Lobgedichten, Segenswünschen und Essen für Bedürftige; andere feiern ihn nicht, weil er in der ersten Generation nicht als Fest begangen wurde. Beide handeln aus Liebe zu ihm. Fragen Sie im Zweifel einen Gelehrten Ihres Vertrauens." },
       { q: "Sollte ich am Tag von Arafa fasten?", a: "Wer nicht auf der Pilgerfahrt ist, dem wird das Fasten am Tag von Arafa sehr empfohlen. Der Prophet ﷺ hoffte, dass es das vergangene und das kommende Jahr sühnt (Muslim 1162). Die Pilger selbst fasten an diesem Tag nicht." },
     ],
     sources: [
@@ -264,7 +264,7 @@ The Prophet ﷺ said: "Fast when you see it and end the fast when you see it. An
 How this instruction is applied today varies – and each practice has scholars behind it:
 
 - **Local sighting:** a country or region follows the sighting in its own sky.
-- **Sighting elsewhere:** some communities follow the sighting of another country, such as Saudi Arabia, or any confirmed sighting worldwide.
+- **Sighting elsewhere:** some communities follow the sighting of another country, suchen Sie as Saudi Arabia, or any confirmed sighting worldwide.
 - **Astronomical calculation:** others fix the months in advance by calculation, often combined with the question of whether the crescent can be seen at all.
 
 So it can happen that Ramadan or Eid begins on different days in two countries – sometimes even in two mosques of the same city. That is no reason to quarrel. It is reported that the Prophet ﷺ said: "The fast is the day you fast, the breaking of the fast is the day you break it, and al-Adha is the day you sacrifice" (at-Tirmidhi). Many scholars therefore advise joining your own community and not blaming others. In the Emirates an official moon-sighting committee meets on the evening of the 29th, and its decision applies to the whole country.

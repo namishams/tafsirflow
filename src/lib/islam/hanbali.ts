@@ -105,7 +105,7 @@ Die **Amman-Botschaft** von 2004, die 2005 von Gelehrten aus vielen Ländern bes
 
 Vielleicht ist das größte Erbe von Imam Ahmad nicht ein einzelnes Rechtsurteil, sondern eine Haltung. Er liebte die Worte des Propheten ﷺ so sehr, dass er sein Leben lang reiste, um sie zu hören. Er blieb bescheiden, obwohl die Menschen ihn verehrten. Er blieb standhaft, ohne zu hassen. Und er verzieh.
 
-Der Prophet ﷺ sagte: *„Wem Allah Gutes will, dem gibt Er Verständnis in der Religion“* (al-Buchari, Muslim). Wenn du die hanbalitische Schule studierst – oder einfach mit Hanbaliten zusammen betest –, dann begegnest du diesem Verständnis in einer seiner schönsten Formen. Und du erkennst, dass die verschiedenen Schulen keine Mauern sind, sondern Wege, die alle zum selben Ziel führen: Allah aufrichtig zu dienen und dem Vorbild Seines Gesandten ﷺ zu folgen.
+Der Prophet ﷺ sagte: *„Wem Allah Gutes will, dem gibt Er Verständnis in der Religion“* (al-Buchari, Muslim). Wenn Sie die hanbalitische Schule studieren – oder einfach mit Hanbaliten zusammen beten –, dann begegnen Sie diesem Verständnis in einer seiner schönsten Formen. Und Sie erkennen, dass die verschiedenen Schulen keine Mauern sind, sondern Wege, die alle zum selben Ziel führen: Allah aufrichtig zu dienen und dem Vorbild Seines Gesandten ﷺ zu folgen.
 
 Möge Allah Imam Ahmad und alle Imame der Umma mit Seiner Barmherzigkeit umfangen, und möge Er unsere Herzen in Liebe zueinander vereinen.`,
     faq: [
@@ -150,7 +150,7 @@ This love of knowledge never left Ahmad. He was once asked how much longer he in
 
 ### The Musnad
 
-The great work of his life is the **Musnad**, one of the most extensive hadith collections ever compiled. The word *musnad* describes its arrangement: the hadith are not ordered by topic, such as prayer or fasting, but by the Companions who narrated them. First come the narrations of Abu Bakr, then those of Umar, Uthman and Ali, may Allah be pleased with them, followed by those of many other Companions, men and women alike.
+The great work of his life is the **Musnad**, one of the most extensive hadith collections ever compiled. The word *musnad* describes its arrangement: the hadith are not ordered by topic, suchen Sie as prayer or fasting, but by the Companions who narrated them. First come the narrations of Abu Bakr, then those of Umar, Uthman and Ali, may Allah be pleased with them, followed by those of many other Companions, men and women alike.
 
 Ahmad selected from an enormous number of narrations he had heard, and he worked on it for many years. His son **Abdullah** transmitted the Musnad after him and added material of his own, which scholars still know as "the additions of Abdullah". For Ahmad, the Musnad was more than a book: it was meant to be a collection the Muslims could turn to when they wanted to know what had been narrated from the Prophet ﷺ.
 
@@ -218,7 +218,7 @@ The differences between the schools of law concern details, not foundations. If 
 - According to Hanbali teaching, eating **camel meat** breaks ritual ablution (wudu'). The basis is a hadith in *Sahih Muslim* in which the Prophet ﷺ was asked whether one should renew ablution after eating camel meat and answered yes. Other schools understand this hadith differently – a fine example of how sincere scholars can read the same text in different ways.
 - In contracts, Hanbalis are often open to conditions agreed upon by the parties.
 
-Such differences are no reason for division. The Companions themselves prayed together even though they acted differently in some details. And the great imams respected one another: Ahmad studied with al-Shafi'i, al-Shafi'i studied with Malik, and all of them loved the Prophet ﷺ.
+Suchen Sie differences are no reason for division. The Companions themselves prayed together even though they acted differently in some details. And the great imams respected one another: Ahmad studied with al-Shafi'i, al-Shafi'i studied with Malik, and all of them loved the Prophet ﷺ.
 
 ## The school today
 

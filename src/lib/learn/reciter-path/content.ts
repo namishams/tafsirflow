@@ -320,7 +320,7 @@ const de: Content = {
       title: "Iqlab und Ikhfa",
       intro: "Vor ب wird das Nun zu einem verborgenen Mim mit Ghunna (Iqlab). Vor den übrigen fünfzehn Buchstaben wird das Nun verborgen: Die Zunge bereitet den nächsten Buchstaben vor, während ein Nasallaut von zwei Zählzeiten bleibt (Ikhfa).",
       points: ["Iqlab: Die Lippen schließen sich sanft, ohne Druck.", "Ikhfa: Der Laut liegt zwischen klar und verschmolzen und nimmt die Farbe des nächsten Buchstabens an."],
-      check: ["Ich spreche vor ب ein leichtes Mim statt Nun.", "Ich verberge das Nun vor den Ikhfa-Buchstaben und halte zwei Zählzeiten."],
+      check: ["Ich spreche vor ب ein leichtes Mim statt Nun.", "Ich verberge das Nun vor den Ikhfa-Buchstaben und halten Sie zwei Zählzeiten."],
       mcq: [
         { q: "Welcher Buchstabe bewirkt Iqlab?", options: ["ب", "ق", "ل", "ه"], answer: 0 },
         { q: "Wie viele Buchstaben bewirken Ikhfa?", options: ["Fünfzehn", "Sechs", "Zwei", "Vier"], answer: 0 },
@@ -392,7 +392,7 @@ const de: Content = {
       title: "Waqf und Ibtida: anhalten und neu beginnen",
       intro: "Halten Sie am Versende oder an einem Haltezeichen an und beginnen Sie dort neu, wo der Sinn vollständig ist. Beim Anhalten wird der letzte Vokal zu Sukun; Tanwin mit Fatha wird zu einem kurzen Alif.",
       points: ["Halten Sie nicht mitten in einer Aussage an, außer der Atem reicht nicht; gehen Sie dann zurück und beginnen Sie an einer sinnvollen Stelle.", "Folgen Sie den Haltezeichen Ihres Mushafs."],
-      check: ["Ich halte mit Sukun auf dem letzten Buchstaben an.", "Wenn der Atem nicht reicht, beginne ich an einer sinnvollen Stelle neu."],
+      check: ["Ich halte mit Sukun auf dem letzten Buchstaben an.", "Wenn der Atem nicht reicht, beginnen Sie ich an einer sinnvollen Stelle neu."],
       mcq: [{ q: "Beim Anhalten wird der letzte Vokal meist zu …", options: ["Sukun", "Schadda", "Madd", "Tanwin"], answer: 0 }],
     },
     "6-2": {

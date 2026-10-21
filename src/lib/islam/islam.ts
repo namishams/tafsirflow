@@ -6,7 +6,7 @@ export const islam: IslamDoc = {
   de: {
     title: "Was ist der Islam?",
     kicker: "Grundlagen",
-    lead: "Islam bedeutet, sich Allah, dem Einen, in Frieden hinzugeben – und aus dieser Hingabe heraus barmherzig, gerecht und maßvoll zu leben. Auf dieser Seite erklären wir dir in Ruhe, woran Muslime glauben, wie sie ihren Glauben leben, welche Ziele die Scharia verfolgt und was der Koran über das Miteinander der Menschen sagt. Ganz gleich, ob du Muslim bist, gerade neugierig geworden bist oder einfach verstehen möchtest: Du bist herzlich willkommen.",
+    lead: "Islam bedeutet, sich Allah, dem Einen, in Frieden hinzugeben – und aus dieser Hingabe heraus barmherzig, gerecht und maßvoll zu leben. Auf dieser Seite erklären wir Ihnen in Ruhe, woran Muslime glauben, wie sie ihren Glauben leben, welche Ziele die Scharia verfolgt und was der Koran über das Miteinander der Menschen sagt. Ganz gleich, ob Sie Muslim sind, gerade neugierig geworden sind oder einfach verstehen möchten: Sie sind herzlich willkommen.",
     facts: [
       { n: "1", l: "Gott – der Kern des Glaubens (Tauhid)" },
       { n: "5", l: "Säulen des Islam" },
@@ -21,13 +21,13 @@ Dieselbe Wurzel trägt noch weitere Bedeutungen: *Salama* ist Sicherheit und Unv
 
 Im Koran hat das Wort eine weite und eine engere Bedeutung. Im weiten Sinn ist Islam die eine Religion aller Propheten: „Gewiss, die Religion bei Allah ist der Islam“ (Koran 3:19). Als Allah zu Abraham sagte: „Ergib dich“, antwortete er: „Ich ergebe mich dem Herrn der Welten“ (Koran 2:131). Im engeren Sinn ist Islam der Weg, den der letzte Gesandte, Muhammad ﷺ, gelehrt hat, mit dem Koran als seinem Buch. Für Muslime sind beide Bedeutungen eine einzige, fortlaufende Geschichte.
 
-Bei uns in den Emiraten hörst du den Friedensgruß überall: in der Moschee, auf dem Markt, im Büro. Er ist mehr als eine Höflichkeit. Er ist ein kleines Versprechen: Von mir hast du nichts zu befürchten.
+Bei uns in den Emiraten hören Sie den Friedensgruß überall: in der Moschee, auf dem Markt, im Büro. Er ist mehr als eine Höflichkeit. Er ist ein kleines Versprechen: Von mir haben Sie nichts zu befürchten.
 
 ## Tauhid – der Glaube an den Einen
 
 Im Zentrum des Islam steht der **Tauhid**, der Glaube an die Einheit Allahs. Allah ist der Eine, der Schöpfer der Himmel und der Erde, Er hat keinen Teilhaber, und nichts ist Ihm gleich: „Nichts ist Ihm gleich, und Er ist der Allhörende, der Allsehende“ (Koran 42:11). Die kurze Sure al-Ikhlas fasst das so schön zusammen, dass der Prophet ﷺ sie einem Drittel des Korans gleichgestellt hat: „Sag: Er ist Allah, ein Einziger, Allah, der Absolute. Er hat nicht gezeugt und ist nicht gezeugt worden, und niemand ist Ihm gleich“ (Koran 112:1–4).
 
-Die Gelehrten haben den Tauhid auf unterschiedliche Weise erklärt, im Kern sind sie sich aber einig. Viele sunnitische Lehrer sprechen heute von drei Aspekten: Allah allein ist der Herr, der erschafft und erhält; Allah allein gebührt die Anbetung; und Allah allein hat die vollkommenen Namen und Eigenschaften, die wir so bejahen, wie Er sich selbst beschrieben hat, ohne Ihn mit Seiner Schöpfung zu vergleichen. Die Theologen der ascharitischen und maturiditischen Schule, die einen großen Teil der traditionellen sunnitischen Gelehrsamkeit geprägt haben, erklären denselben Glauben als Einheit Allahs in Seinem Wesen, in Seinen Eigenschaften und in Seinen Taten. Die schiitische Theologie spricht von der Einheit im Wesen, in den Eigenschaften, in den Handlungen und in der Anbetung. Die Worte unterscheiden sich, die Überzeugung ist dieselbe: Es gibt keinen Gott außer Allah. Kennenlernen kannst du Ihn durch Seine Namen in unserem Kapitel über die [99 Namen Allahs](/islam/names).
+Die Gelehrten haben den Tauhid auf unterschiedliche Weise erklärt, im Kern sind sie sich aber einig. Viele sunnitische Lehrer sprechen heute von drei Aspekten: Allah allein ist der Herr, der erschafft und erhält; Allah allein gebührt die Anbetung; und Allah allein hat die vollkommenen Namen und Eigenschaften, die wir so bejahen, wie Er sich selbst beschrieben hat, ohne Ihn mit Seiner Schöpfung zu vergleichen. Die Theologen der ascharitischen und maturiditischen Schule, die einen großen Teil der traditionellen sunnitischen Gelehrsamkeit geprägt haben, erklären denselben Glauben als Einheit Allahs in Seinem Wesen, in Seinen Eigenschaften und in Seinen Taten. Die schiitische Theologie spricht von der Einheit im Wesen, in den Eigenschaften, in den Handlungen und in der Anbetung. Die Worte unterscheiden sich, die Überzeugung ist dieselbe: Es gibt keinen Gott außer Allah. Kennenlernen können Sie Ihn durch Seine Namen in unserem Kapitel über die [99 Namen Allahs](/islam/names).
 
 Das Gegenteil des Tauhid heißt **Schirk**: jemandem oder etwas einen Anteil an dem zu geben, was allein Allah zusteht. Luqman ermahnt im Koran seinen Sohn: „Gewiss, die Beigesellung ist fürwahr ein gewaltiges Unrecht“ (Koran 31:13).
 
@@ -41,7 +41,7 @@ Wer Muslim wird, spricht die **Schahada**, das Glaubensbekenntnis: „Ich bezeug
 
 Der Prophet ﷺ sagte: „Der Islam ist auf fünf Dingen erbaut: dem Bezeugen, dass es keinen Gott gibt außer Allah und dass Muhammad der Gesandte Allahs ist, dem Verrichten des Gebets, dem Entrichten der Zakat, der Pilgerfahrt und dem Fasten im Ramadan“ (al-Bukhari 8, Muslim 16). Man stellt sie sich gern wie die Säulen eines Hauses vor. Ein Haus braucht mehr als Säulen – Wände, ein Dach, Wärme –, aber ohne Säulen kann es nicht stehen.
 
-In schiitischen Hadithsammlungen wie dem *al-Kafi* von al-Kulaini überliefert Imam Muhammad al-Baqir ebenfalls, dass der Islam auf fünf Dingen erbaut ist, und nennt das Gebet, die Zakat, das Fasten, die Pilgerfahrt und die *Wilaya*, die Treue zur Familie des Propheten und zu den Imamen. Die schiitische Gelehrsamkeit ordnet den Glauben außerdem oft in fünf „Wurzeln“ (die Einheit Gottes, die göttliche Gerechtigkeit, das Prophetentum, das Imamat und den Jüngsten Tag) und mehrere praktische „Zweige“, darunter Gebet, Fasten, Zakat, Khums und Hadsch. Mehr dazu findest du in unserem Kapitel über [Sunniten und Schiiten](/islam/sunni-shia).
+In schiitischen Hadithsammlungen wie dem *al-Kafi* von al-Kulaini überliefert Imam Muhammad al-Baqir ebenfalls, dass der Islam auf fünf Dingen erbaut ist, und nennt das Gebet, die Zakat, das Fasten, die Pilgerfahrt und die *Wilaya*, die Treue zur Familie des Propheten und zu den Imamen. Die schiitische Gelehrsamkeit ordnet den Glauben außerdem oft in fünf „Wurzeln“ (die Einheit Gottes, die göttliche Gerechtigkeit, das Prophetentum, das Imamat und den Jüngsten Tag) und mehrere praktische „Zweige“, darunter Gebet, Fasten, Zakat, Khums und Hadsch. Mehr dazu finden Sie in unserem Kapitel über [Sunniten und Schiiten](/islam/sunni-shia).
 
 ### Schahada – das Bekenntnis
 
@@ -51,7 +51,7 @@ Die Schahada wird nicht nur einmal gesprochen, sie ist ein Kompass für das ganz
 
 Fünfmal am Tag stehen Muslime vor Allah: in der Morgendämmerung (*Fadschr*), am Mittag (*Dhuhr*), am Nachmittag (*Asr*), bei Sonnenuntergang (*Maghrib*) und in der Nacht (*Ischa*). Vor dem Gebet vollzieht man die rituelle Waschung, den *Wudu*, und wendet sich zur Kaaba in Mekka, der *Qibla* (Koran 2:144). Das Gebet selbst ist eine Folge von Stehen, Rezitation des Korans, Verbeugung, Niederwerfung und Sitzen und wird auf Arabisch gesprochen. Allah sagt: „Verrichte das Gebet zu Meinem Gedenken“ (Koran 20:14), und: „Gewiss, das Gebet hält ab von Schändlichem und Verwerflichem“ (Koran 29:45).
 
-Der Prophet ﷺ verglich die fünf Gebete mit einem Fluss vor der Haustür, in dem man sich fünfmal am Tag wäscht – bliebe dann noch Schmutz an einem? „So ist es mit den fünf Gebeten: Durch sie tilgt Allah die Verfehlungen“ (al-Bukhari und Muslim). Am Freitag versammelt sich die Gemeinde zum Freitagsgebet mit seiner Predigt (Koran 62:9). Sunniten verrichten die fünf Gebete meist zu fünf getrennten Zeiten; viele Schiiten legen das Mittags- und das Nachmittagsgebet sowie das Abend- und das Nachtgebet zusammen und beten so fünf Gebete zu drei Tageszeiten – eine Praxis, die auch einige sunnitische Schulen auf Reisen und in bestimmten Situationen erlauben. Lerne das Gebet Schritt für Schritt auf unseren Seiten zum [Gebet](/salah) und zum [Wudu](/wudu), lies die ausführlichen Kapitel zum [sunnitischen Gebet](/islam/prayer-sunni) und zum [schiitischen Gebet](/islam/prayer-shia) und finde die Zeiten für deinen Ort unter [Gebetszeiten](/prayer).
+Der Prophet ﷺ verglich die fünf Gebete mit einem Fluss vor der Haustür, in dem man sich fünfmal am Tag wäscht – bliebe dann noch Schmutz an einem? „So ist es mit den fünf Gebeten: Durch sie tilgt Allah die Verfehlungen“ (al-Bukhari und Muslim). Am Freitag versammelt sich die Gemeinde zum Freitagsgebet mit seiner Predigt (Koran 62:9). Sunniten verrichten die fünf Gebete meist zu fünf getrennten Zeiten; viele Schiiten legen das Mittags- und das Nachmittagsgebet sowie das Abend- und das Nachtgebet zusammen und beten so fünf Gebete zu drei Tageszeiten – eine Praxis, die auch einige sunnitische Schulen auf Reisen und in bestimmten Situationen erlauben. Lernen Sie das Gebet Schritt für Schritt auf unseren Seiten zum [Gebet](/salah) und zum [Wudu](/wudu), lesen Sie die ausführlichen Kapitel zum [sunnitischen Gebet](/islam/prayer-sunni) und zum [schiitischen Gebet](/islam/prayer-shia) und finden Sie die Zeiten für Ihren Ort unter [Gebetszeiten](/prayer).
 
 ### Zakat – die reinigende Abgabe
 
@@ -104,7 +104,7 @@ Die Sunna erklärt den Koran, entfaltet ihn und lebt ihn vor. Der Koran gebietet
 
 Bekannt ist die Sunna durch den **Hadith**, die Berichte, die die Gefährten und die Generationen nach ihnen weitergegeben haben. Die Gelehrten entwickelten eine sorgfältige Wissenschaft, um jede Überliefererkette und jeden Text zu prüfen. Sunniten stützen sich vor allem auf Sammlungen wie *Sahih al-Bukhari* und *Sahih Muslim*; Schiiten auf ihre eigenen Sammlungen, allen voran die „Vier Bücher“ – *al-Kafi* von al-Kulaini, *Man la yahduruhu al-faqih* von Ibn Babawaih (asch-Schaich as-Saduq) sowie *Tahdhib al-ahkam* und *al-Istibsar* von Schaich at-Tusi –, die die Sunna vor allem über die Imame aus der Familie des Propheten überliefern. Beide Traditionen sind sich einig, dass man den Koran ohne die Sunna nicht verstehen kann.
 
-Noch ein Hinweis: In den Rechtsbüchern kann „Sunna“ auch eine Handlung bezeichnen, die empfohlen, aber nicht verpflichtend ist – etwa zusätzliche Gebete vor oder nach den Pflichtgebeten. Wenn jemand sagt „das ist Sunna“, lohnt es sich also nachzufragen, welche Bedeutung gemeint ist. Mehr über das Leben des Propheten und die Hadithwissenschaft liest du im Kapitel über den [Propheten Muhammad ﷺ](/islam/prophet).
+Noch ein Hinweis: In den Rechtsbüchern kann „Sunna“ auch eine Handlung bezeichnen, die empfohlen, aber nicht verpflichtend ist – etwa zusätzliche Gebete vor oder nach den Pflichtgebeten. Wenn jemand sagt „das ist Sunna“, lohnt es sich also nachzufragen, welche Bedeutung gemeint ist. Mehr über das Leben des Propheten und die Hadithwissenschaft lesen Sie im Kapitel über den [Propheten Muhammad ﷺ](/islam/prophet).
 
 ## Die Scharia und ihre Ziele
 
@@ -178,7 +178,7 @@ In den Emiraten leben Menschen aus rund zweihundert Nationen friedlich zusammen.
 
 ### Muss ich Arabisch können?
 
-Nicht, um Muslim zu sein. Allah versteht jede Sprache, und deine persönlichen Bittgebete (*Du'a*) kannst du in deiner eigenen sprechen. Für das rituelle Gebet lernst du nach und nach die Fatiha und einige kurze Sätze auf Arabisch; bis dahin, so lehren die Gelehrten, darf ein Anfänger einfache Worte des Gedenkens sprechen wie *subhan Allah*, *al-hamdu lillah* und *Allahu akbar* (gestützt auf einen Hadith bei Abu Dawud und an-Nasa'i). Viele verlieben sich später in die Sprache selbst – unser [Arabischkurs](/arabic) ist ein sanfter Anfang.
+Nicht, um Muslim zu sein. Allah versteht jede Sprache, und Ihre persönlichen Bittgebete (*Sie'a*) können Sie in Ihrer eigenen sprechen. Für das rituelle Gebet lernen Sie nach und nach die Fatiha und einige kurze Sätze auf Arabisch; bis dahin, so lehren die Gelehrten, darf ein Anfänger einfache Worte des Gedenkens sprechen wie *subhan Allah*, *al-hamdu lillah* und *Allahu akbar* (gestützt auf einen Hadith bei Abu Dawud und an-Nasa'i). Viele verlieben sich später in die Sprache selbst – unser [Arabischkurs](/arabic) ist ein sanfter Anfang.
 
 ### Muss ich meinen Namen ändern?
 
@@ -186,11 +186,11 @@ Nein. Die meisten Gefährten behielten die Namen, die sie vor dem Islam getragen
 
 ### Was ist mit meiner Familie, die nicht muslimisch ist?
 
-Die Güte zu den Eltern bleibt eine Pflicht, auch wenn sie deinen Glauben nicht teilen. Der Koran sagt über Eltern, die anders glauben: „Doch geh mit ihnen im Diesseits in rechtlicher Weise um“ (Koran 31:15). Als Asma, die Tochter Abu Bakrs, fragte, ob sie ihre Mutter, die keine Muslimin war, freundlich empfangen solle, antwortete der Prophet ﷺ: „Ja, pflege die Verbindung zu deiner Mutter“ (al-Bukhari und Muslim). Den Islam anzunehmen ist kein Grund, die eigene Familie zu verlassen; oft ist es ein Grund, sie noch mehr zu lieben.
+Die Güte zu den Eltern bleibt eine Pflicht, auch wenn sie Ihren Glauben nicht teilen. Der Koran sagt über Eltern, die anders glauben: „Doch geh mit ihnen im Diesseits in rechtlicher Weise um“ (Koran 31:15). Als Asma, die Tochter Abu Bakrs, fragte, ob sie ihre Mutter, die keine Muslimin war, freundlich empfangen solle, antwortete der Prophet ﷺ: „Ja, pflege die Verbindung zu deiner Mutter“ (al-Bukhari und Muslim). Den Islam anzunehmen ist kein Grund, die eigene Familie zu verlassen; oft ist es ein Grund, sie noch mehr zu lieben.
 
 ### Muss ich alles auf einmal tun?
 
-Nein. Auch der Koran wurde Schritt für Schritt offenbart. Aischa erklärte, dass zuerst Suren offenbart wurden, die vom Paradies und vom Feuer sprechen, und erst als die Herzen der Menschen im Islam Ruhe gefunden hatten, kamen die Regeln über Erlaubtes und Verbotenes; „wäre als Erstes offenbart worden: Trinkt keinen Wein, hätten sie gesagt: Wir lassen den Wein niemals“ (al-Bukhari). Lerne zuerst das Wesentliche – das Bekenntnis, das Gebet, Ehrlichkeit, Freundlichkeit – und wachse von dort aus weiter.
+Nein. Auch der Koran wurde Schritt für Schritt offenbart. Aischa erklärte, dass zuerst Suren offenbart wurden, die vom Paradies und vom Feuer sprechen, und erst als die Herzen der Menschen im Islam Ruhe gefunden hatten, kamen die Regeln über Erlaubtes und Verbotenes; „wäre als Erstes offenbart worden: Trinkt keinen Wein, hätten sie gesagt: Wir lassen den Wein niemals“ (al-Bukhari). Lernen Sie zuerst das Wesentliche – das Bekenntnis, das Gebet, Ehrlichkeit, Freundlichkeit – und wachse von dort aus weiter.
 
 ### Was ist mit meiner Vergangenheit?
 
@@ -198,7 +198,7 @@ Der Islam beginnt mit einer neuen Seite. Zu Amr ibn al-As, der aus Sorge um sein
 
 ### Sunnit oder Schiit?
 
-Du nimmst den Islam an, keine Partei. Sunniten und Schiiten glauben an denselben Gott, denselben Propheten ﷺ, denselben Koran und beten zur selben Qibla. Mit der Zeit lernst du die Schulen und Traditionen kennen und findest deinen Platz, meist über die Gemeinde und die Lehrer in deiner Nähe. Unsere Kapitel über [Sunniten und Schiiten](/islam/sunni-shia) und über die [Rechtsschulen](/islam/madhahib) erklären die Unterschiede fair.
+Sie nehmen den Islam an, keine Partei. Sunniten und Schiiten glauben an denselben Gott, denselben Propheten ﷺ, denselben Koran und beten zur selben Qibla. Mit der Zeit lernen Sie die Schulen und Traditionen kennen und finden Ihren Platz, meist über die Gemeinde und die Lehrer in Ihrer Nähe. Unsere Kapitel über [Sunniten und Schiiten](/islam/sunni-shia) und über die [Rechtsschulen](/islam/madhahib) erklären die Unterschiede fair.
 
 ## Wie jemand Muslim wird
 
@@ -210,26 +210,26 @@ Um Muslim zu werden, braucht es keine Zeremonie, keinen Priester und keine Gebü
 
 Aufrichtigkeit und Verständnis zählen mehr als eine perfekte Aussprache. Viele sprechen die Schahada in einer Moschee vor Zeugen; das ist keine Bedingung für ihre Gültigkeit, aber es ist ein schöner Moment und schenkt den Rückhalt einer Gemeinschaft. In den Emiraten, wie in vielen Ländern, können offizielle islamische Zentren eine Bescheinigung ausstellen, die später nützlich sein kann, etwa für eine Eheschließung oder eine Reise nach Mekka. Viele Gelehrte empfehlen nach der Annahme des Islam eine Ganzkörperwaschung (*Ghusl*), und dann beginnen die ersten Schritte: Wudu und Gebet lernen, eines nach dem anderen.
 
-Und wenn du noch nicht bereit bist, ist das völlig in Ordnung. Glaube kann nicht erzwungen werden (Koran 2:256), und niemand sollte dich drängen. Du bist willkommen, weiterzulesen, zu fragen und zu besuchen, in deinem eigenen Tempo. Viele Menschen brauchen Monate oder Jahre – und jede ehrliche Frage ist Teil des Weges.
+Und wenn Sie noch nicht bereit sind, ist das völlig in Ordnung. Glaube kann nicht erzwungen werden (Koran 2:256), und niemand sollten Sie sich drängen. Sie sind willkommen, weiterzulesen, zu fragen und zu besuchen, in Ihrem eigenen Tempo. Viele Menschen brauchen Monate oder Jahre – und jede ehrliche Frage ist Teil des Weges.
 
 ## Erste Schritte
 
-Wenn du mehr erfahren möchtest, beginne einfach – und beginne mit dem Koran selbst:
+Wenn Sie mehr erfahren möchten, beginnen Sie einfach – und beginnen Sie mit dem Koran selbst:
 
-- Höre und lies den Koran Vers für Vers mit Übersetzung und Tafsir unter [Koran](/quran). Viele beginnen mit der Eröffnungssure al-Fatiha und den kurzen Suren am Ende des Korans. Wie der Koran aufgebaut ist und bewahrt wurde, erklärt unser Kapitel über den [Koran](/islam/quran).
-- Lerne Verse auswendig mit der [Shams-Methode](/shams) – Schritt für Schritt, in deinem Tempo.
-- Lerne das Gebet kennen unter [Gebet](/salah) und finde die Gebetszeiten für deinen Ort unter [Gebetszeiten](/prayer).
-- Vertiefe die Glaubensartikel im Kapitel über den [Iman](/islam/iman) und lerne die ersten Worte Arabisch im [Arabischkurs](/arabic).
-- Sprich mit Menschen in einer Moschee in deiner Nähe. Fragen sind dort willkommen, und eine Tasse Tee oder Kaffee findet sich fast immer.
+- Hören Sie und lesen Sie den Koran Vers für Vers mit Übersetzung und Tafsir unter [Koran](/quran). Viele beginnen mit der Eröffnungssure al-Fatiha und den kurzen Suren am Ende des Korans. Wie der Koran aufgebaut ist und bewahrt wurde, erklärt unser Kapitel über den [Koran](/islam/quran).
+- Lernen Sie Verse auswendig mit der [Shams-Methode](/shams) – Schritt für Schritt, in Ihrem Tempo.
+- Lernen Sie das Gebet kennen unter [Gebet](/salah) und finden Sie die Gebetszeiten für Ihren Ort unter [Gebetszeiten](/prayer).
+- Vertiefen Sie die Glaubensartikel im Kapitel über den [Iman](/islam/iman) und lernen Sie die ersten Worte Arabisch im [Arabischkurs](/arabic).
+- Sprechen Sie mit Menschen in einer Moschee in Ihrer Nähe. Fragen sind dort willkommen, und eine Tasse Tee oder Kaffee findet sich fast immer.
 
-Nimm dir Zeit. Der Islam wurde über dreiundzwanzig Jahre offenbart, Schritt für Schritt. Auch dein Weg darf in Ruhe wachsen.`,
+Nehmen Sie sich Zeit. Der Islam wurde über dreiundzwanzig Jahre offenbart, Schritt für Schritt. Auch Ihr Weg darf in Ruhe wachsen.`,
     faq: [
       { q: "Was bedeutet das Wort „Islam“?", a: "Islam bedeutet „Hingabe“ an Allah und ist sprachlich mit „Salam“, Frieden, verwandt. Ein Muslim ist jemand, der sich Allah hingibt." },
       { q: "Glauben Muslime an denselben Gott wie Juden und Christen?", a: "Muslime glauben an den einen Gott Abrahams, den Schöpfer aller Dinge. Der Koran sagt im Gespräch mit den Leuten der Schrift: „Unser Gott und euer Gott ist einer“ (Koran 29:46)." },
       { q: "Was sind die fünf Säulen des Islam?", a: "Das Glaubensbekenntnis (Schahada), das tägliche Gebet (Salah), die Pflichtabgabe (Zakat), das Fasten im Ramadan (Saum) und die Pilgerfahrt nach Mekka (Hadsch) für alle, die dazu in der Lage sind." },
       { q: "Was ist die Scharia – und was will sie?", a: "Die Scharia ist die Rechtleitung Allahs für das ganze Leben, vom Gebet bis zum ehrlichen Handel. Die klassischen Gelehrten wie al-Ghazali und asch-Schatibi beschrieben ihre Ziele als Schutz von Glauben, Leben, Verstand, Nachkommenschaft und Eigentum." },
       { q: "Erlaubt der Islam Zwang im Glauben?", a: "Nein. Der Koran sagt klar: „Es gibt keinen Zwang im Glauben“ (Koran 2:256). Glaube muss aus dem Herzen kommen." },
-      { q: "Wie wird man Muslim?", a: "Indem man aus eigener Überzeugung die Schahada spricht: „Ich bezeuge, dass es keinen Gott gibt außer Allah, und ich bezeuge, dass Muhammad der Gesandte Allahs ist.“ Es braucht keine Zeremonie; Zeugen in einer Moschee sind schön, aber keine Bedingung. Niemand sollte dich drängen – nimm dir die Zeit, die du brauchst." },
+      { q: "Wie wird man Muslim?", a: "Indem man aus eigener Überzeugung die Schahada spricht: „Ich bezeuge, dass es keinen Gott gibt außer Allah, und ich bezeuge, dass Muhammad der Gesandte Allahs ist.“ Es braucht keine Zeremonie; Zeugen in einer Moschee sind schön, aber keine Bedingung. Niemand sollten Sie sich drängen – nehmen Sie sich die Zeit, die Sie brauchen." },
     ],
     sources: [
       "Koran 2:43, 2:131, 2:136, 2:143, 2:144, 2:173, 2:183–185, 2:188, 2:256, 2:286, 3:19, 3:31, 3:97, 4:59, 4:135, 5:1, 5:8, 5:32, 5:90, 7:156, 9:60, 9:103, 16:44, 16:90, 17:23, 20:14, 20:114, 21:107, 22:78, 25:70, 29:45, 29:46, 30:21, 31:13, 31:15, 39:53, 42:11, 45:18, 49:13, 59:7, 59:23, 60:8, 62:9, 68:4, 96:1, 97:3, 112:1–4",
@@ -418,7 +418,7 @@ In the Emirates, people from around two hundred nations live together in peace. 
 
 ### Do I have to know Arabic?
 
-Not in order to be Muslim. Allah understands every language, and you can make your personal prayers (*du'a*) in your own. For the ritual prayer you learn al-Fatiha and a few short phrases in Arabic, step by step; until then, scholars teach that a beginner may say simple words of remembrance such as *subhan Allah*, *al-hamdu lillah* and *Allahu akbar* (based on a hadith in Abu Dawud and an-Nasa'i). Many people later fall in love with the language itself – our [Arabic course](/arabic) is a gentle start.
+Not in order to be Muslim. Allah understands every language, and you can make your personal prayers (*Sie'a*) in your own. For the ritual prayer you learn al-Fatiha and a few short phrases in Arabic, step by step; until then, scholars teach that a beginner may say simple words of remembrance such as *subhan Allah*, *al-hamdu lillah* and *Allahu akbar* (based on a hadith in Abu Dawud and an-Nasa'i). Many people later fall in love with the language itself – our [Arabic course](/arabic) is a gentle start.
 
 ### Do I have to change my name?
 

@@ -16,7 +16,7 @@ export const iman: IslamDoc = {
     ],
     body: `## Was bedeutet Iman?
 
-Das arabische Wort **Iman** stammt von der Wurzel a-m-n, aus der auch *amn* (Sicherheit) und *amana* (anvertrautes Gut) kommen. Glauben heißt in diesem Sinn: sich bei Allah sicher wissen, Ihm vertrauen und selbst vertrauenswürdig werden. Einer der schönen Namen Allahs ist *al-Mu'min* (59:23), der Sicherheit schenkt. Und der Prophet ﷺ beschrieb den Gläubigen als den, dem die Menschen ihr Leben und ihr Gut anvertrauen können (at-Tirmidhi, an-Nasa'i). Glaube ist also nicht nur eine Überzeugung im Kopf. Er verändert, wie du mit anderen umgehst.
+Das arabische Wort **Iman** stammt von der Wurzel a-m-n, aus der auch *amn* (Sicherheit) und *amana* (anvertrautes Gut) kommen. Glauben heißt in diesem Sinn: sich bei Allah sicher wissen, Ihm vertrauen und selbst vertrauenswürdig werden. Einer der schönen Namen Allahs ist *al-Mu'min* (59:23), der Sicherheit schenkt. Und der Prophet ﷺ beschrieb den Gläubigen als den, dem die Menschen ihr Leben und ihr Gut anvertrauen können (at-Tirmidhi, an-Nasa'i). Glaube ist also nicht nur eine Überzeugung im Kopf. Er verändert, wie Sie mit anderen umgehen.
 
 Die Gelehrten beschreiben den Iman meist auf drei Ebenen: die **Bestätigung mit dem Herzen**, das **Bekenntnis mit der Zunge** und das **Handeln mit den Gliedern**. Das Herz ist der Ort des Glaubens, die Worte machen ihn hörbar, und die Taten sind seine Früchte. Gleich zu Beginn beschreibt der Koran die Gottesfürchtigen als diejenigen, „die an das Verborgene glauben, das Gebet verrichten und von dem ausgeben, womit Wir sie versorgt haben“ (2:3). Glaube, Gebet und Großzügigkeit stehen in einem Atemzug.
 
@@ -32,7 +32,7 @@ In diesem Hadith stecken drei Stufen, die aufeinander aufbauen:
 
 1. **Islam** – die sichtbare Hingabe: Bekenntnis, Gebet, Fasten, Zakat und Pilgerfahrt. Mehr dazu im Kapitel [Was ist der Islam?](/islam/islam)
 2. **Iman** – der Glaube im Herzen mit seinen sechs Inhalten, um die es in diesem Kapitel geht.
-3. **Ihsan** – die Vollendung: Allah so zu dienen, als würdest du Ihn sehen.
+3. **Ihsan** – die Vollendung: Allah so zu dienen, als würden Sie Ihn sehen.
 
 Der Koran selbst nennt die Inhalte des Glaubens mehrmals. „Der Gesandte glaubt an das, was ihm von seinem Herrn herabgesandt worden ist, und ebenso die Gläubigen. Alle glauben an Allah, Seine Engel, Seine Bücher und Seine Gesandten. Wir machen keinen Unterschied zwischen einem Seiner Gesandten“ (2:285). Und: „O ihr, die ihr glaubt, glaubt an Allah und Seinen Gesandten und an das Buch, das Er Seinem Gesandten herabgesandt hat, und an das Buch, das Er zuvor herabgesandt hat. Wer nicht an Allah glaubt, an Seine Engel, Seine Bücher, Seine Gesandten und den Jüngsten Tag, der ist weit in die Irre gegangen“ (4:136). Auch der große Vers über die wahre Frömmigkeit (2:177) beginnt mit dem Glauben an Allah, den Jüngsten Tag, die Engel, die Schrift und die Propheten – und führt dann ohne Umweg zur Großzügigkeit gegenüber Verwandten, Waisen, Bedürftigen und Reisenden.
 
@@ -59,7 +59,7 @@ Einige Engel kennen wir mit Namen oder Aufgabe:
 - **Die edlen Schreiber**: „Über euch sind Hüter eingesetzt, edle, die aufschreiben; sie wissen, was ihr tut“ (82:10–12; vgl. 50:17–18).
 - **Die Schutzengel**, die den Menschen von vorn und von hinten auf Allahs Geheiß behüten (13:11).
 
-Der Glaube an die Engel ist zutiefst tröstlich. Allah selbst segnet die Gläubigen, und Seine Engel tun es auch, um sie aus den Finsternissen ins Licht zu führen (33:43). Zu denen, die sagen „Unser Herr ist Allah“ und dann standhaft bleiben, kommen die Engel herab: „Fürchtet euch nicht und seid nicht traurig“ (41:30). Und der Prophet ﷺ sagte, dass Menschen, die sich in einem Haus Allahs versammeln, um den Koran zu lesen und miteinander zu studieren, von Ruhe erfüllt, von Barmherzigkeit bedeckt und von Engeln umgeben werden (Muslim). Wenn du mit anderen den Koran lernst, bist du nie allein.
+Der Glaube an die Engel ist zutiefst tröstlich. Allah selbst segnet die Gläubigen, und Seine Engel tun es auch, um sie aus den Finsternissen ins Licht zu führen (33:43). Zu denen, die sagen „Unser Herr ist Allah“ und dann standhaft bleiben, kommen die Engel herab: „Fürchtet euch nicht und seid nicht traurig“ (41:30). Und der Prophet ﷺ sagte, dass Menschen, die sich in einem Haus Allahs versammeln, um den Koran zu lesen und miteinander zu studieren, von Ruhe erfüllt, von Barmherzigkeit bedeckt und von Engeln umgeben werden (Muslim). Wenn Sie mit anderen den Koran lernen, sind Sie nie allein.
 
 Von den Engeln zu unterscheiden sind die **Dschinn**, die Allah „aus einer rauchlosen Feuerflamme“ erschuf (55:15) und die wie die Menschen einen freien Willen haben. Iblis, der sich weigerte, sich vor Adam niederzuwerfen, „gehörte zu den Dschinn“ (18:50); nach Auffassung der meisten Gelehrten war er also kein Engel.
 
@@ -75,7 +75,7 @@ Allah hat die Menschen nie ohne Rechtleitung gelassen. Zu verschiedenen Zeiten s
 
 „Er hat dir das Buch mit der Wahrheit herabgesandt, als Bestätigung dessen, was vor ihm war, und Er hat die Tora und das Evangelium herabgesandt“ (3:3). Der Koran beschreibt sich als Bestätigung und zugleich als **Hüter** (*muhaimin*) über die früheren Schriften (5:48). Darum begegnen Muslime Juden und Christen als *Ahl al-Kitab*, als Leuten der Schrift, mit denen sie eine lange gemeinsame Geschichte verbindet. Zugleich glauben sie, dass der Koran unverändert bewahrt bleibt, so wie Allah es zugesagt hat: „Wir haben die Ermahnung herabgesandt, und Wir werden sie gewiss bewahren“ (15:9).
 
-Der Glaube an die Bücher ist kein Wissen, das man nur abhakt. Er bedeutet, den Koran ernst zu nehmen: ihn zu lesen, zu hören, zu verstehen und nach ihm zu leben. Genau dafür ist diese Plattform da. In unserem [Koran-Bereich](/quran) kannst du jeden Vers hören und lesen, und im Kapitel [Der Koran](/islam/quran) erfährst du mehr über seine Offenbarung und Bewahrung.
+Der Glaube an die Bücher ist kein Wissen, das man nur abhakt. Er bedeutet, den Koran ernst zu nehmen: ihn zu lesen, zu hören, zu verstehen und nach ihm zu leben. Genau dafür ist diese Plattform da. In unserem [Koran-Bereich](/quran) können Sie jeden Vers hören und lesen, und im Kapitel [Der Koran](/islam/quran) erfahren Sie mehr über seine Offenbarung und Bewahrung.
 
 ## Vierte Säule: Der Glaube an die Gesandten
 
@@ -104,11 +104,11 @@ Der Glaube an den Jüngsten Tag ist kein Glaube der Angst, sondern der Verantwor
 3. **Wille** (*Maschi'a*): Nichts geschieht, ohne dass Allah es will.
 4. **Erschaffung** (*Khalq*): Allah ist der Schöpfer aller Dinge.
 
-Bedeutet das, dass der Mensch keine Wahl hat? Nein. Der Koran betont ebenso deutlich die Verantwortung des Menschen: „Wir haben ihm den Weg gezeigt, ob er nun dankbar ist oder undankbar“ (76:3). „Erfolgreich ist, wer sie (die Seele) läutert, und enttäuscht ist, wer sie verkommen lässt“ (91:9–10). „Allah erlegt keiner Seele mehr auf, als sie zu tragen vermag“ (2:286), und „Allah ändert den Zustand eines Volkes nicht, bis sie das ändern, was in ihnen selbst ist“ (13:11). Du triffst deine Entscheidungen wirklich, und du wirst für sie zur Rechenschaft gezogen.
+Bedeutet das, dass der Mensch keine Wahl hat? Nein. Der Koran betont ebenso deutlich die Verantwortung des Menschen: „Wir haben ihm den Weg gezeigt, ob er nun dankbar ist oder undankbar“ (76:3). „Erfolgreich ist, wer sie (die Seele) läutert, und enttäuscht ist, wer sie verkommen lässt“ (91:9–10). „Allah erlegt keiner Seele mehr auf, als sie zu tragen vermag“ (2:286), und „Allah ändert den Zustand eines Volkes nicht, bis sie das ändern, was in ihnen selbst ist“ (13:11). Sie treffen Ihre Entscheidungen wirklich, und Sie werden für sie zur Rechenschaft gezogen.
 
 Wie sich Allahs allumfassender Wille und die Wahl des Menschen zueinander verhalten, haben die Theologen verschiedener Schulen unterschiedlich erklärt. Sunnitische Gelehrte der asch'aritischen und maturiditischen Schule sprechen vom „Erwerb“ (*Kasb*) der Taten durch den Menschen. In der schiitischen Überlieferung ist ein Wort von Imam Dscha'far as-Sadiq berühmt: „Weder Zwang noch völlige Überlassung, sondern etwas zwischen beidem“ (al-Kulaini, al-Kafi). In den Kernpunkten sind sich alle einig: Allah ist gerecht, nichts entgeht Seinem Wissen, und der Mensch trägt Verantwortung für sein Tun.
 
-Im Leben schenkt der Glaube an den Qadar vor allem **Ruhe**. Der Koran sagt, dass jedes Unglück verzeichnet ist, „damit ihr nicht betrübt seid über das, was euch entgangen ist, und nicht übermütig über das, was Er euch gegeben hat“ (57:23). Der Prophet ﷺ sagte: „Wie wunderbar ist die Sache des Gläubigen! Alles ist gut für ihn. Trifft ihn Freude, ist er dankbar, und das ist gut für ihn. Trifft ihn Leid, ist er geduldig, und das ist gut für ihn“ (Muslim). Und er lehrte den jungen Ibn Abbas: Wenn sich die ganze Gemeinschaft versammelte, um dir zu nützen, könnte sie dir nur mit dem nützen, was Allah für dich bereits bestimmt hat (at-Tirmidhi).
+Im Leben schenkt der Glaube an den Qadar vor allem **Ruhe**. Der Koran sagt, dass jedes Unglück verzeichnet ist, „damit ihr nicht betrübt seid über das, was euch entgangen ist, und nicht übermütig über das, was Er euch gegeben hat“ (57:23). Der Prophet ﷺ sagte: „Wie wunderbar ist die Sache des Gläubigen! Alles ist gut für ihn. Trifft ihn Freude, ist er dankbar, und das ist gut für ihn. Trifft ihn Leid, ist er geduldig, und das ist gut für ihn“ (Muslim). Und er lehrte den jungen Ibn Abbas: Wenn sich die ganze Gemeinschaft versammelte, um Ihnen zu nützen, könnte sie Ihnen nur mit dem nützen, was Allah für Sie bereits bestimmt hat (at-Tirmidhi).
 
 Qadar ist keine Ausrede für Untätigkeit. Als ein Mann fragte, ob er sein Kamel anbinden oder auf Allah vertrauen solle, sagte der Prophet ﷺ: „Binde es an und vertraue auf Allah“ (at-Tirmidhi). Wir tun unser Bestes – und überlassen das Ergebnis Allah.
 
@@ -116,7 +116,7 @@ Qadar ist keine Ausrede für Untätigkeit. Als ein Mann fragte, ob er sein Kamel
 
 Der Iman ist kein fester Besitz, sondern lebendig wie eine Pflanze. Über die Gläubigen sagt der Koran: „Wenn ihnen Seine Verse verlesen werden, mehren sie ihren Glauben“ (8:2). Allah sandte Ruhe in die Herzen der Gläubigen, „damit sie an Glauben zu ihrem Glauben hinzugewinnen“ (48:4; vgl. 3:173 und 74:31). Darum sagten viele Gelehrte: Der Glaube nimmt durch Gehorsam zu und durch Ungehorsam ab. Imam Abu Hanifa und die maturiditische Schule betonten, dass die innere Bestätigung selbst unteilbar ist, während ihre Stärke, ihr Licht und ihre Früchte sehr wohl wachsen und schwinden; viele Gelehrte sehen darin eher einen Unterschied der Begriffe als der Sache.
 
-Der Prophet ﷺ sagte: „Der Glaube hat über siebzig – oder über sechzig – Zweige. Der höchste ist das Wort ‚Es gibt keinen Gott außer Allah‘, der niedrigste ist, etwas Schädliches vom Weg zu räumen, und die Schamhaftigkeit ist ein Zweig des Glaubens“ (al-Bukhari, Muslim). Glaube zeigt sich also im Großen wie im Kleinen, bis hin zu dem Stein, den du vom Gehweg räumst.
+Der Prophet ﷺ sagte: „Der Glaube hat über siebzig – oder über sechzig – Zweige. Der höchste ist das Wort ‚Es gibt keinen Gott außer Allah‘, der niedrigste ist, etwas Schädliches vom Weg zu räumen, und die Schamhaftigkeit ist ein Zweig des Glaubens“ (al-Bukhari, Muslim). Glaube zeigt sich also im Großen wie im Kleinen, bis hin zu dem Stein, den Sie vom Gehweg räumen.
 
 Auch die Gefährten kannten Schwankungen. **Hanzala**, einer von ihnen, fürchtete, ein Heuchler zu sein: Beim Propheten ﷺ fühle er sich, als sähe er Paradies und Hölle vor Augen, doch zu Hause, bei Frau, Kindern und Arbeit, vergesse er vieles davon. Der Prophet ﷺ antwortete: Würdet ihr immer in dem Zustand bleiben, in dem ihr bei mir seid, dann würden euch die Engel auf euren Wegen die Hand reichen – „aber, Hanzala, eine Stunde so und eine Stunde so“ (Muslim). Schwankungen sind menschlich. Wichtig ist, immer wieder zurückzukehren.
 
@@ -126,9 +126,9 @@ Was den Glauben stärkt:
 - **Das Gedenken Allahs** (*Dhikr*): „Wahrlich, im Gedenken Allahs finden die Herzen Ruhe“ (13:28).
 - **Das Gebet**, pünktlich und mit gegenwärtigem Herzen.
 - **Nachdenken über die Schöpfung**: Der Koran lobt jene, die über die Erschaffung der Himmel und der Erde nachsinnen (3:190–191).
-- **Gute Gesellschaft**: Menschen, die dich an Allah erinnern.
+- **Gute Gesellschaft**: Menschen, die Sie an Allah erinnern.
 - **Dienst an anderen**: Wer anderen hilft, spürt den Glauben in seinen Händen.
-- **Wissen**: Je mehr du über Allah, Seinen Gesandten und den Koran weißt, desto tiefer wird die Liebe.
+- **Wissen**: Je mehr Sie über Allah, Seinen Gesandten und den Koran wissen, desto tiefer wird die Liebe.
 - **Bittgebet**: Der Prophet ﷺ betete oft: „O Du, der die Herzen wendet, festige mein Herz in Deiner Religion“ (at-Tirmidhi).
 
 Was den Glauben schwächt, sind Nachlässigkeit, Sünden und ein Leben ohne Innehalten. Doch die Tür der Umkehr steht immer offen: „Alle Kinder Adams machen Fehler, und die besten unter denen, die Fehler machen, sind die, die umkehren“ (at-Tirmidhi).
@@ -137,7 +137,7 @@ Was den Glauben schwächt, sind Nachlässigkeit, Sünden und ein Leben ohne Inne
 
 Der Prophet ﷺ sprach von einer **Süße des Glaubens**, die man schmecken kann: „Drei Dinge – wer sie in sich trägt, findet die Süße des Glaubens: dass Allah und Sein Gesandter ihm lieber sind als alles andere; dass er einen Menschen nur um Allahs willen liebt; und dass er es verabscheut, zum Unglauben zurückzukehren, so wie er es verabscheuen würde, ins Feuer geworfen zu werden“ (al-Bukhari, Muslim).
 
-Und er verband den Glauben untrennbar mit den Mitmenschen: „Keiner von euch glaubt wirklich, bis er für seinen Bruder liebt, was er für sich selbst liebt“ (al-Bukhari, Muslim). Glaube macht weich, großzügig und ehrlich. Wenn dein Glaube wächst, sollten die Menschen um dich herum es spüren.
+Und er verband den Glauben untrennbar mit den Mitmenschen: „Keiner von euch glaubt wirklich, bis er für seinen Bruder liebt, was er für sich selbst liebt“ (al-Bukhari, Muslim). Glaube macht weich, großzügig und ehrlich. Wenn Ihr Glaube wachsen, sollten die Menschen um Sie herum es spüren.
 
 ## Die schiitische Darstellung: Usul ad-Din
 
@@ -155,13 +155,13 @@ Hinter den unterschiedlichen Gliederungen steht ein gemeinsamer Glaube. Beide Tr
 
 ## Iman im Alltag
 
-Glaube zeigt sich nicht nur in der Moschee. Er zeigt sich, wenn du am Morgen „Bismillah“ sagst, wenn du ehrlich bleibst, obwohl es dich etwas kostet, wenn du bei einer schweren Nachricht sagst: „Wir gehören Allah, und zu Ihm kehren wir zurück“ (2:156), wenn du deinen Eltern hilfst oder einem Fremden den Weg zeigst. Das Kapitel [Islam im Alltag](/islam/daily) zeigt, wie ein ganzer Tag vom Glauben getragen sein kann.
+Glaube zeigt sich nicht nur in der Moschee. Er zeigt sich, wenn Sie am Morgen „Bismillah“ sagen, wenn Sie ehrlich bleiben, obwohl es Sie etwas kostet, wenn Sie bei einer schweren Nachricht sagen: „Wir gehören Allah, und zu Ihm kehren wir zurück“ (2:156), wenn Sie Ihren Eltern helfen oder einem Fremden den Weg zeigen. Das Kapitel [Islam im Alltag](/islam/daily) zeigt, wie ein ganzer Tag vom Glauben getragen sein kann.
 
 Einige kleine Schritte für den Anfang:
 
-1. Lerne den Thronvers (2:255) und die letzten beiden Verse der Sure al-Baqara (2:285–286); beide fassen den Glauben wunderbar zusammen. Du kannst sie bei uns [Vers für Vers hören](/surah/2).
-2. Wähle jede Woche einen der schönen Namen Allahs und achte darauf, wo er dir im Alltag begegnet.
-3. Sprich morgens und abends ein kurzes Gedenken und nimm dir einen Moment der Stille.
+1. Lernen Sie den Thronvers (2:255) und die letzten beiden Verse der Sure al-Baqara (2:285–286); beide fassen den Glauben wunderbar zusammen. Sie können sie bei uns [Vers für Vers hören](/surah/2).
+2. Wählen Sie jede Woche einen der schönen Namen Allahs und achten Sie darauf, wo er Ihnen im Alltag begegnet.
+3. Sprechen Sie morgens und abends ein kurzes Gedenken und nehmen Sie sich einen Moment der Stille.
 4. Tu jeden Tag eine kleine gute Tat im Verborgenen – nur für Allah.
 
 ## Zum Abschluss
@@ -173,8 +173,8 @@ Beten wir zum Schluss mit den Worten des Korans: „Unser Herr, lass unsere Herz
       { q: "Was ist der Unterschied zwischen Islam, Iman und Ihsan?", a: "Im Hadith des Dschibril (Muslim 8) beschreibt der Prophet ﷺ drei Stufen: Islam ist die sichtbare Hingabe mit den fünf Säulen, Iman der Glaube im Herzen mit seinen sechs Inhalten, und Ihsan bedeutet, Allah so zu dienen, als würde man Ihn sehen. Der Koran unterscheidet ebenfalls zwischen der äußeren Hingabe und dem Glauben, der ins Herz eingezogen ist (49:14)." },
       { q: "Warum gibt es sechs Säulen des Glaubens, aber fünf Säulen des Islam?", a: "Die fünf Säulen des Islam sind Handlungen, die man sieht: Bekenntnis, Gebet, Fasten, Zakat und Pilgerfahrt. Die sechs Säulen des Glaubens sind Inhalte, die das Herz bejaht. Beide gehören zusammen wie die Wurzeln und die Zweige eines Baumes." },
       { q: "Glauben schiitische Muslime an die sechs Säulen?", a: "Ja, sie glauben an Allah, die Engel, die Bücher, die Gesandten, den Jüngsten Tag und Allahs Bestimmung. In der schiitischen Theologie werden die Grundlagen aber meist als fünf Usul ad-Din geordnet: Tauhid, 'Adl (Gerechtigkeit Allahs), Nubuwwa (Prophetentum), Imama (Führung durch die Imame) und Ma'ad (Rückkehr zu Allah)." },
-      { q: "Wenn alles vorherbestimmt ist, bin ich dann für meine Taten verantwortlich?", a: "Ja. Der Koran sagt: „Wir haben ihm den Weg gezeigt, ob er nun dankbar ist oder undankbar“ (76:3), und Allah erlegt keiner Seele mehr auf, als sie tragen kann (2:286). Allah weiß alles, doch du entscheidest wirklich. Der Prophet ﷺ sagte: „Binde es an und vertraue auf Allah“ (at-Tirmidhi) – handeln und vertrauen gehören zusammen." },
-      { q: "Ist es schlimm, wenn ich Zweifel habe?", a: "Beunruhigende Gedanken sind menschlich. Als einige Gefährten dem Propheten ﷺ klagten, ihnen kämen Gedanken, die sie kaum auszusprechen wagten, sagte er: „Das ist klarer Glaube“ (Muslim) – denn gerade dass sie darunter litten, zeigte ihren Glauben. Suche Wissen, sprich mit vertrauenswürdigen Gelehrten und bitte Allah um Festigkeit." },
+      { q: "Wenn alles vorherbestimmt ist, bin ich dann für meine Taten verantwortlich?", a: "Ja. Der Koran sagt: „Wir haben ihm den Weg gezeigt, ob er nun dankbar ist oder undankbar“ (76:3), und Allah erlegt keiner Seele mehr auf, als sie tragen kann (2:286). Allah weiß alles, doch Sie entscheiden wirklich. Der Prophet ﷺ sagte: „Binde es an und vertraue auf Allah“ (at-Tirmidhi) – handeln und vertrauen gehören zusammen." },
+      { q: "Ist es schlimm, wenn ich Zweifel habe?", a: "Beunruhigende Gedanken sind menschlich. Als einige Gefährten dem Propheten ﷺ klagten, ihnen kämen Gedanken, die sie kaum auszusprechen wagten, sagte er: „Das ist klarer Glaube“ (Muslim) – denn gerade dass sie darunter litten, zeigte ihren Glauben. Suche Wissen, sprechen Sie mit vertrauenswürdigen Gelehrten und bitte Allah um Festigkeit." },
       { q: "Kann man Engel sehen?", a: "Normalerweise nicht, denn sie gehören zur verborgenen Welt. Der Koran berichtet aber, dass Engel auf Allahs Geheiß in menschlicher Gestalt erschienen, etwa bei Maryam (19:17) und bei Ibrahim (11:69–70). Auch im Hadith des Dschibril kam der Engel in Gestalt eines Mannes." },
     ],
     sources: [

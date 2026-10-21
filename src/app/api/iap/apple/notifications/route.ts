@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
   const tx = verifyAppleJws<Tx>(n.data.signedTransactionInfo);
   const p = pool();
   if (!tx || !p) return json({ ok: false }, 400);
-  if (tx.environment !== "Production" && process.env.IAP_ALLOW_SANDBOX !== "1") return json({ ok: true, ignored: "sandbox" });
+  if (tx.environment !== "Production" && process.env.IAP_ALLOW_SANDBOX === "0") return json({ ok: true, ignored: "sandbox" });
   const type = n.notificationType ?? "";
 
   // refunded personal duas: mark the transaction and take the credits back (never below zero)

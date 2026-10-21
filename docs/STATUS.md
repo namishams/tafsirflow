@@ -1,0 +1,16 @@
+# Status der Wünsche (lebende Checkliste)
+
+Stand: 21.10.2026. Stati: erledigt, in Arbeit, offen, wartet auf Inhaber. Bei jedem Abschluss hier nachziehen.
+
+| Wunsch | Status | Anmerkung |
+|---|---|---|
+| Mishary-Strecke (Reciter Path) | in Arbeit | Eigener Bereich eines anderen Agenten (`features/reciter-path`). Die Inhaltstexte (`reciterPathContent`: Stufen, Regeln, Einheiten) haben noch keine Übersetzungen in den zwölf Sprachen und fallen auf Englisch zurück; nach Abschluss der Strecke nachziehen. |
+| Website in Sie-Form | erledigt (Nachprüfung offen) | `messages/de.json` und deutsche Texte in `src/lib/*.ts` und Komponenten umgestellt (Schlüssel unverändert). Unverändert gelassen: Zitate in „…“ (Koran, Hadith), Bittgebete und Dua-Dateien (Anrede Allahs), `arabicQuran.ts`, fremdsprachige Blöcke. Stichprobenartig lesen lassen; einzelne Imperative ohne Pronomen können übrig sein. |
+| Website auf Stand der App (Shams 2.0, Garten, Feed, Rangliste, Profile) | in Arbeit | Rangliste, Garten/Schule/Journey und Talent-Profile haben eigene Bearbeiter. Shams 2.0 und Feed auf der Website: offen. |
+| Übersetzungen (zwölf Sprachen) | teilweise erledigt | Nachgetragen in `mobile/src/i18n/app/<lang>.json`: `campus` (78 Schlüssel), `plan.s_arabicLang`, `radio.backToLive`, `radio.closePlayer`, höfliche Anrede. Offen: `talentsProfile` (neue Schlüssel des Profil-Bearbeiters), `reciterPathContent`, die 30 Lernweisheiten in `campus/wisdom.ts` (nur de/en, Auswahl wartet auf Prüfung durch Gelehrte), kopierte Web-Seiten (`features/practice/web/*`, nur de/en/ar wie auf der Website). Alle anderen Module sind vollständig (Prüfung per Schlüsselabgleich). |
+| Shams 2.0 im Konto-Sync | erledigt (nicht ausgeliefert) | App: `mobile/src/lib/sync.ts` (`SYNC_KEYS`, Aufteilung in Pakete unter 300 KB), Regeln in `mobile/src/lib/syncExtra.ts`. Website: `src/app/api/sync/route.ts` (Erlaubnisliste), `src/lib/learn/sync.ts`, Regeln in `src/lib/learn/syncExtra.ts` (beide Kopien identisch halten). Schlüssel: `qmc.shams2.settings/log/words/checks/mut/grade/weeks.v1`, `qmc.qbank.v1`, `qmc.nahjCourse.v1`, `qmc.courses.v1` (neu in der App). Bewusst nicht synchronisiert: `qmc.shams2.teacher.v1` (Lehrer-Verknüpfungen, Daten fremder Schüler), `qmc.shams2.pages.v1` (Cache), `qmc.shams2.onboarded.v1`. Regel: Zähler Maximum, Mengen Vereinigung, Einträge mit Zeitstempel der neuere, Zertifikate der frühere. |
+| Lehreransicht über das Talent-Netzwerk | offen | Verknüpfung „über Talente“ ist im Datenmodell (`TeacherLink.via = "talents"`) vorgesehen; Oberfläche und Server fehlen. |
+| Neue App-Store-Screenshots inkl. iPad | offen | Nach Abschluss der laufenden Bildschirme (Profile, Rangliste, Strecke) erstellen; iPad-Größen nicht vergessen. |
+| Jahresabo und Testzeitraum | wartet auf Inhaber | Produkt, Preis und Einführungsangebot müssen in App Store Connect angelegt werden; danach in `src/lib/pro.tsx` und `iap.ts` anbinden. |
+| Google-OAuth-Schlüssel für das offizielle Abzeichen | wartet auf Inhaber | Client-ID und Secret aus der Google Cloud Console nötig; erst dann Anmeldung/Abzeichen umsetzen. |
+| SMS-Anbieter | wartet auf Inhaber | Anbieter wählen und Zugangsdaten bereitstellen (Telefon-Bestätigung). |

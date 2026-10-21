@@ -6,7 +6,7 @@ export const names: IslamDoc = {
   de: {
     title: "Die schönsten Namen Allahs",
     kicker: "Al-Asma' al-Husna",
-    lead: "Wie lernt man jemanden kennen, den man nicht sehen kann? Allah hat Sich uns durch Seine Namen vorgestellt – der Allerbarmer, der Allvergebende, der Versorger, das Licht. Wer diese Namen kennt, betet anders, vertraut anders und sieht die Welt mit anderen Augen. Hier findest du die bekannte Liste der 99 Namen mit ihrer Bedeutung und Anregungen, wie du mit ihnen lebst.",
+    lead: "Wie lernt man jemanden kennen, den man nicht sehen kann? Allah hat Sich uns durch Seine Namen vorgestellt – der Allerbarmer, der Allvergebende, der Versorger, das Licht. Wer diese Namen kennt, betet anders, vertraut anders und sieht die Welt mit anderen Augen. Hier finden Sie die bekannte Liste der 99 Namen mit ihrer Bedeutung und Anregungen, wie Sie mit ihnen leben.",
     facts: [
       { n: "99", l: "Namen in der bekannten Liste" },
       { n: "7:180", l: "„Allah gehören die schönsten Namen“" },
@@ -40,7 +40,7 @@ Die Liste der 99 Namen, die heute in Moscheen, Schulen und auf Kalligrafien in a
 
 Darum sind Gelehrte auch den umgekehrten Weg gegangen: Sie haben die Namen direkt aus dem Koran und der gesicherten Sunna gesammelt. Ibn Hadschar al-'Asqalani etwa stellte in *Fath al-Bari*, seinem Kommentar zu al-Bukhari, neunundneunzig Namen zusammen, die alle im Koran stehen. In solchen Listen erscheinen Namen wie **ar-Rabb** (der Herr), **al-Akram** (der Edelmütigste, Koran 96:3), **al-A'la** (der Höchste, Koran 87:1) oder **al-Qarib** (der Nahe, Koran 11:61), die in der bekannten Liste fehlen. Umgekehrt enthält die bekannte Liste Namen wie al-Khafid oder ad-Darr, die im Koran nicht als Namen vorkommen, sondern aus Allahs Handeln abgeleitet sind. Auch in der schiitischen Überlieferung findet sich der Hadith über die neunundneunzig Namen mit einer eigenen Liste, etwa bei Schaich as-Saduq in seinem *Kitab at-Tauhid*.
 
-Für dich bedeutet das: Die folgende Liste ist eine bewährte, über Jahrhunderte gelehrte Hilfe, um Allahs Namen kennenzulernen. Sie ist kein abgeschlossener Katalog, und welche neunundneunzig Namen genau gemeint sind, weiß Allah am besten. Die Namen selbst beschreiben Allah so, wie Er im Koran und in der Sunna beschrieben wird.
+Für Sie bedeutet das: Die folgende Liste ist eine bewährte, über Jahrhunderte gelehrte Hilfe, um Allahs Namen kennenzulernen. Sie ist kein abgeschlossener Katalog, und welche neunundneunzig Namen genau gemeint sind, weiß Allah am besten. Die Namen selbst beschreiben Allah so, wie Er im Koran und in der Sunna beschrieben wird.
 
 ### Wie die Gelehrten die Namen verstehen
 
@@ -154,7 +154,7 @@ Hier sind die neunundneunzig Namen in der verbreiteten Reihenfolge. Die deutsche
 
 ## Die Namen in Gruppen
 
-Eine Liste von neunundneunzig Namen kann erschlagen. Leichter wird es, wenn man die Namen nach ihrer Bedeutung ordnet. Die folgenden Gruppen sind keine feste Einteilung der Gelehrten, sondern eine Lernhilfe. Zu jedem Namen steht ein Vers, in dem er vorkommt – du kannst ihn bei uns hören und den Tafsir dazu lesen.
+Eine Liste von neunundneunzig Namen kann erschlagen. Leichter wird es, wenn man die Namen nach ihrer Bedeutung ordnet. Die folgenden Gruppen sind keine feste Einteilung der Gelehrten, sondern eine Lernhilfe. Zu jedem Namen steht ein Vers, in dem er vorkommt – Sie können ihn bei uns hören und den Tafsir dazu lesen.
 
 ### Barmherzigkeit und Liebe
 
@@ -261,7 +261,7 @@ Zwei Verse geben die Grundlage. Der erste: „Allah gehören die schönsten Name
 
 1. **Mit dem Lob Allahs beginnen.** Der Prophet ﷺ hörte einen Mann bitten, ohne Allah zu loben und ohne den Segen auf den Propheten zu sprechen, und sagte: „Dieser hat sich beeilt.“ Dann lehrte er, zuerst Allah zu loben, dann den Segen auf ihn zu sprechen und danach zu bitten, worum man will (Abu Dawud und at-Tirmidhi).
 2. **Den passenden Namen wählen.** Der Name öffnet die Bitte: *Ya Rahman, irhamni* – „O Allerbarmer, erbarme Dich meiner“; *Ya Razzaq, urzuqni* – „O Versorger, versorge mich“; *Ya Tawwab, tub 'alayya* – „O Reue-Annehmender, nimm meine Reue an“; *Ya Hadi, ihdini* – „O Rechtleitender, leite mich recht“.
-3. **Die eigene Bitte aussprechen** – in deinen eigenen Worten und in jeder Sprache. Allah versteht jede Sprache und auch das Schweigen.
+3. **Die eigene Bitte aussprechen** – in Ihren eigenen Worten und in jeder Sprache. Allah versteht jede Sprache und auch das Schweigen.
 4. **Mit dem Segen auf den Propheten ﷺ schließen** – und mit dem Vertrauen, dass Allah hört: „Ruft Mich an, so erhöre Ich euch“ (Koran 40:60).
 
 ### Wie die Propheten gebetet haben
@@ -276,7 +276,7 @@ Die Propheten haben ihre Bittgebete oft mit dem passenden Namen verbunden. Als I
 
 Jedes Mal passt der Name genau zur Not: Der Kranke ruft die Barmherzigkeit an, der Kinderlose den Erben, der Schuldige die Vergebung, der Bedürftige die Versorgung.
 
-So kannst du es auch tun: Wenn du um Vergebung bittest, rufe *Ya Ghafur*. Wenn du um Versorgung bittest, *Ya Razzaq*. Wenn du Rechtleitung brauchst, *Ya Hadi*. Aischa fragte den Propheten ﷺ, was sie sagen solle, wenn sie die Nacht der Bestimmung erlebe. Er lehrte sie: *Allahumma innaka 'afuwwun tuhibbul-'afwa fa'fu 'anni* – „O Allah, Du bist der Verzeihende, Du liebst das Verzeihen, so verzeih mir“ (at-Tirmidhi). Weitere Bittgebete findest du bei unseren [Duas](/duas). Und wenn du Hilfe beim Formulieren suchst: Unser [Dua-Generator](/dua-generator) stellt dir ein persönliches Bittgebet zusammen – mit dem Lob Allahs, dem Segen auf den Propheten ﷺ und den schönen Namen, die zu deinem Anliegen passen.
+So können Sie es auch tun: Wenn Sie um Vergebung bitten, rufe *Ya Ghafur*. Wenn Sie um Versorgung bitten, *Ya Razzaq*. Wenn Sie Rechtleitung brauchen, *Ya Hadi*. Aischa fragte den Propheten ﷺ, was sie sagen solle, wenn sie die Nacht der Bestimmung erlebe. Er lehrte sie: *Allahumma innaka 'afuwwun tuhibbul-'afwa fa'fu 'anni* – „O Allah, Du bist der Verzeihende, Du liebst das Verzeihen, so verzeih mir“ (at-Tirmidhi). Weitere Bittgebete finden Sie bei unseren [Duas](/duas). Und wenn Sie Hilfe beim Formulieren suchen: Unser [Dua-Generator](/dua-generator) stellt Ihnen ein persönliches Bittgebet zusammen – mit dem Lob Allahs, dem Segen auf den Propheten ﷺ und den schönen Namen, die zu Ihrem Anliegen passen.
 
 ### Der „größte Name“
 
@@ -284,19 +284,19 @@ In mehreren Überlieferungen ist vom *größten Namen* Allahs (*al-ism al-a'zam*
 
 ## Mit den Namen leben
 
-Die Namen Allahs sind kein Stoff zum Abhaken. Sie verändern, wie du betest und wie du lebst.
+Die Namen Allahs sind kein Stoff zum Abhaken. Sie verändern, wie Sie beten und wie Sie leben.
 
 ### Über die Namen nachdenken
 
-Nimm dir jede Woche einen Namen vor. Lies, wo er im Koran vorkommt, und frag dich, was er für dein Leben bedeutet:
+Nehmen Sie sich jede Woche einen Namen vor. Lesen Sie, wo er im Koran vorkommt, und fragen Sie sich, was er für Ihr Leben bedeutet:
 
-- **Ar-Razzaq**, der Versorger: Deine Versorgung ist bei Allah. Das nimmt dir nicht die Arbeit ab, aber die Angst.
+- **Ar-Razzaq**, der Versorger: Ihre Versorgung ist bei Allah. Das nimmt Ihnen nicht die Arbeit ab, aber die Angst.
 - **As-Sami'**, der Allhörende: Er hört jedes Wort – das Gebet in der Nacht und das harte Wort im Streit.
-- **Al-Latif**, der Feinfühlige: Er lenkt Dinge auf eine Weise, die du erst später verstehst – wie im Leben Yusufs, der sagte: „Mein Herr ist feinfühlig in dem, was Er will“ (Koran 12:100).
+- **Al-Latif**, der Feinfühlige: Er lenkt Dinge auf eine Weise, die Sie erst später verstehen – wie im Leben Yusufs, der sagte: „Mein Herr ist feinfühlig in dem, was Er will“ (Koran 12:100).
 - **Al-Wadud**, der Liebevolle: „Und Er ist der Allvergebende, der Liebevolle“ (Koran 85:14). Allah vergibt nicht nur – Er liebt die, die zu Ihm zurückkehren.
 - **As-Sabur**, der Geduldige: Er gibt uns Zeit, immer wieder. Das lehrt uns, auch mit anderen geduldig zu sein.
 
-Ein guter Weg, das zu üben: Achte beim Hören des Korans auf die Versenden. Sehr viele Verse schließen mit einem Namenspaar – „Allah ist allvergebend und barmherzig“, „Er ist der Allmächtige, der Allweise“. Diese Enden sind kein Zufall: Sie fassen zusammen, was der Vers gerade gezeigt hat. Hör zum Beispiel [Sure al-Hadid](/surah/57) Vers für Vers und achte darauf, mit welchem Namen jeder Gedanke schließt.
+Ein guter Weg, das zu üben: Achten Sie beim Hören des Korans auf die Versenden. Sehr viele Verse schließen mit einem Namenspaar – „Allah ist allvergebend und barmherzig“, „Er ist der Allmächtige, der Allweise“. Diese Enden sind kein Zufall: Sie fassen zusammen, was der Vers gerade gezeigt hat. Hören Sie zum Beispiel [Sure al-Hadid](/surah/57) Vers für Vers und achten Sie darauf, mit welchem Namen jeder Gedanke schließt.
 
 ### Was die Namen aus uns machen
 
@@ -318,7 +318,7 @@ Der Koran stellt beides oft nebeneinander: „Tu Meinen Dienern kund, dass Ich d
 
 ## Ayat al-Kursi
 
-Der Thronvers (Koran 2:255) ist der gewaltigste Vers im Buch Allahs. So bestätigte es der Prophet ﷺ dem Gefährten Ubayy ibn Ka'b (Muslim 810). Er beginnt mit zwei der größten Namen: „Allah – es gibt keinen Gott außer Ihm, dem Lebendigen, dem Beständigen“ – **al-Hayy al-Qayyum**. Ihn überkommt weder Schlummer noch Schlaf. Und er endet: „Und Er ist der Erhabene, der Gewaltige“ – **al-'Aliyy al-'Azim**. Viele Muslime sprechen ihn nach jedem Pflichtgebet und vor dem Schlafen. Höre ihn bei uns: [Ayat al-Kursi](/surah/2?v=255).
+Der Thronvers (Koran 2:255) ist der gewaltigste Vers im Buch Allahs. So bestätigte es der Prophet ﷺ dem Gefährten Ubayy ibn Ka'b (Muslim 810). Er beginnt mit zwei der größten Namen: „Allah – es gibt keinen Gott außer Ihm, dem Lebendigen, dem Beständigen“ – **al-Hayy al-Qayyum**. Ihn überkommt weder Schlummer noch Schlaf. Und er endet: „Und Er ist der Erhabene, der Gewaltige“ – **al-'Aliyy al-'Azim**. Viele Muslime sprechen ihn nach jedem Pflichtgebet und vor dem Schlafen. Hören Sie ihn bei uns: [Ayat al-Kursi](/surah/2?v=255).
 
 ## Das Ende der Sure al-Haschr
 
@@ -326,7 +326,7 @@ Kaum eine Stelle im Koran reiht so viele Namen aneinander wie die letzten drei V
 
 „Er ist Allah, außer dem es keinen Gott gibt, der Kenner des Verborgenen und des Offenbaren. Er ist der Allerbarmer, der Barmherzige. Er ist Allah, außer dem es keinen Gott gibt, der König, der Heilige, der Frieden, der Gewährer der Sicherheit, der über alles Wachende, der Allmächtige, der Gewaltige, der in Seiner Größe Erhabene. Preis sei Allah! Erhaben ist Er über das, was sie Ihm beigesellen. Er ist Allah, der Schöpfer, der Urheber, der Gestalter. Ihm gehören die schönsten Namen. Ihn preist, was in den Himmeln und auf der Erde ist, und Er ist der Allmächtige, der Allweise“ (Koran 59:22–24).
 
-Lies diese Verse langsam und höre sie Vers für Vers in [Sure al-Haschr](/surah/59). Du wirst merken, dass die Liste oben mit genau diesen Namen beginnt.
+Lesen Sie diese Verse langsam und hören Sie sie Vers für Vers in [Sure al-Haschr](/surah/59). Sie werden merken, dass die Liste oben mit genau diesen Namen beginnt.
 
 ## Eine Liebe, viele Traditionen
 
@@ -334,21 +334,21 @@ Die schönsten Namen verbinden alle Muslime. In Moscheen hängen sie als Kalligr
 
 ## Ein Anfang für heute
 
-Du musst nicht alle neunundneunzig Namen auf einmal lernen. Beginne mit zehn. Sprich sie langsam, lerne ihre Bedeutung und rufe Allah heute Abend mit einem von ihnen an. Ein möglicher Plan für den ersten Monat:
+Sie müssen nicht alle neunundneunzig Namen auf einmal lernen. Beginnen Sie mit zehn. Sprechen Sie sie langsam, lernen Sie ihre Bedeutung und rufe Allah heute Abend mit einem von ihnen an. Ein möglicher Plan für den ersten Monat:
 
 - **Woche 1:** ar-Rahman, ar-Rahim, al-Ghafur und at-Tawwab – die Namen der Barmherzigkeit und der Rückkehr.
 - **Woche 2:** al-Hayy, al-Qayyum, al-'Aliyy und al-'Azim – die Namen aus Ayat al-Kursi (Koran 2:255).
 - **Woche 3:** die Namen aus dem Ende der Sure al-Haschr (Koran 59:22–24).
 - **Woche 4:** al-Ahad und as-Samad aus Sure al-Ikhlas (Koran 112:1–2) und die vier Namen aus Koran 57:3.
 
-Mit jedem Namen, den du wirklich kennenlernst, lernst du Allah ein wenig besser kennen – und das ist der Anfang aller Liebe zu Ihm.`,
+Mit jedem Namen, den Sie wirklich kennenlernen, lernen Sie Allah ein wenig besser kennen – und das ist der Anfang aller Liebe zu Ihm.`,
     faq: [
       { q: "Hat Allah nur 99 Namen?", a: "Nein. Der Hadith bei al-Bukhari (2736) und Muslim (2677) nennt neunundneunzig Namen mit einem besonderen Versprechen, aber in einem von Ahmad überlieferten Bittgebet spricht der Prophet ﷺ auch von Namen, die Allah im Wissen des Verborgenen bei Sich behalten hat." },
       { q: "Woher stammt die bekannte Liste?", a: "Aus einer Überlieferung bei at-Tirmidhi (3507). Viele Hadithgelehrte halten die Aufzählung für eine Erläuterung eines Überlieferers und nicht für Worte des Propheten ﷺ; darum gibt es Listen, die in einigen Namen abweichen, etwa die von Ibn Hadschar aus dem Koran gesammelte." },
       { q: "Was bedeutet es, die Namen zu „erfassen“?", a: "Nach den Gelehrten gehört dazu, sie zu lernen, ihre Bedeutung zu verstehen, Allah mit ihnen anzurufen und das eigene Leben von ihnen prägen zu lassen." },
       { q: "Was ist der „größte Name“ Allahs?", a: "In Überlieferungen bei Abu Dawud, at-Tirmidhi und anderen ist von einem größten Namen die Rede, mit dem Bitten besonders erhört werden. Welcher es ist, darüber sind sich die Gelehrten nicht einig; oft genannt werden „Allah“ und al-Hayy al-Qayyum. Rufe Allah aufrichtig mit all Seinen Namen an." },
       { q: "Darf ich meinem Kind einen dieser Namen geben?", a: "Ja, in Verbindung mit 'Abd („Diener“), etwa 'Abdur-Rahman oder 'Abdullah. Einige Namen, die auch Menschen tragen können, wie Karim oder Rashid, werden ohne Artikel auch allein verwendet; bei Namen, die nur Allah zustehen, wie ar-Rahman, ist das nicht üblich." },
-      { q: "Wie fange ich am besten an?", a: "Mit wenigen Namen. Lerne zuerst die Namen aus dem Ende der Sure al-Haschr (Koran 59:22–24) und aus Ayat al-Kursi (Koran 2:255), und rufe Allah in deinen Bittgebeten mit ihnen an. Der Dua-Generator hilft dir, den passenden Namen für dein Anliegen zu finden." },
+      { q: "Wie fange ich am besten an?", a: "Mit wenigen Namen. Lernen Sie zuerst die Namen aus dem Ende der Sure al-Haschr (Koran 59:22–24) und aus Ayat al-Kursi (Koran 2:255), und rufe Allah in Ihren Bittgebeten mit ihnen an. Der Dua-Generator hilft Ihnen, den passenden Namen für Ihr Anliegen zu finden." },
     ],
     sources: [
       "Koran 2:32, 2:37, 2:117, 2:127–128, 2:143, 2:186, 2:209, 2:255, 2:257, 2:261, 2:263, 3:2, 3:8–9, 3:18, 3:26, 3:173, 4:1, 4:6, 4:85, 4:149, 5:8, 5:114, 6:114, 7:155–156, 7:180, 11:57, 11:61, 11:90, 12:39, 12:100–101, 13:9, 15:49–50, 17:1, 17:110, 21:83, 21:89, 24:22, 24:25, 24:35, 25:31, 30:50, 33:43, 34:26, 35:15, 40:16, 40:60, 42:11, 51:58, 52:28, 54:55, 55:1–2, 55:27, 57:3, 59:22–24, 64:17, 65:3, 67:14, 71:10, 82:6, 85:9, 85:14, 87:1, 96:3, 112:1–2",
@@ -397,7 +397,7 @@ Allah's names are not limited to ninety-nine. In a well-known supplication repor
 
 The list of 99 names found today in mosques, schools and calligraphy all over the world comes from a narration recorded by **at-Tirmidhi** in his *Jami'* (at-Tirmidhi 3507). At-Tirmidhi himself called it *gharib*, meaning it is known through only a single line of transmission. Hadith scholars have examined its chain closely. Many of them hold that the enumeration of the individual names does not come from the Prophet ﷺ himself but was added by one of the narrators as an explanation. The various versions of the list in at-Tirmidhi also differ slightly, and Ibn Majah records a list that differs in quite a number of names.
 
-That is why scholars also took the opposite route: they gathered the names directly from the Quran and the authentic Sunnah. Ibn Hajar al-'Asqalani, for example, compiled in *Fath al-Bari*, his commentary on al-Bukhari, ninety-nine names that all occur in the Quran. Such lists include names like **ar-Rabb** (the Lord), **al-Akram** (the Most Generous, Quran 96:3), **al-A'la** (the Most High, Quran 87:1) or **al-Qarib** (the Near, Quran 11:61), which are missing from the well-known list. Conversely, the well-known list contains names such as al-Khafid or ad-Darr, which do not occur in the Quran as names but are derived from Allah's actions. The hadith of the ninety-nine names is also found in Shia tradition with its own list, for example in Shaykh as-Saduq's *Kitab at-Tawhid*.
+That is why scholars also took the opposite route: they gathered the names directly from the Quran and the authentic Sunnah. Ibn Hajar al-'Asqalani, for example, compiled in *Fath al-Bari*, his commentary on al-Bukhari, ninety-nine names that all occur in the Quran. Suchen Sie lists include names like **ar-Rabb** (the Lord), **al-Akram** (the Most Generous, Quran 96:3), **al-A'la** (the Most High, Quran 87:1) or **al-Qarib** (the Near, Quran 11:61), which are missing from the well-known list. Conversely, the well-known list contains names such as al-Khafid or ad-Darr, which do not occur in the Quran as names but are derived from Allah's actions. The hadith of the ninety-nine names is also found in Shia tradition with its own list, for example in Shaykh as-Saduq's *Kitab at-Tawhid*.
 
 For you this means: the following list is a trusted aid, taught for centuries, for getting to know the names of Allah. It is not a closed catalogue, and Allah knows best which ninety-nine names exactly are meant. The names themselves describe Allah as He is described in the Quran and the Sunnah.
 
@@ -618,7 +618,7 @@ Two verses lay the foundation. The first: "To Allah belong the most beautiful na
 
 ### How a supplication can be built
 
-1. **Begin with the praise of Allah.** The Prophet ﷺ heard a man making du'a without praising Allah and without sending blessings on the Prophet, and said: "This man has been hasty." Then he taught to praise Allah first, then to send blessings on him, and then to ask for whatever one wishes (Abu Dawud and at-Tirmidhi).
+1. **Begin with the praise of Allah.** The Prophet ﷺ heard a man making Sie'a without praising Allah and without sending blessings on the Prophet, and said: "This man has been hasty." Then he taught to praise Allah firen, then to send blessings on him, and then to ask for whatever one wishes (Abu Dawud and at-Tirmidhi).
 2. **Choose the fitting name.** The name opens the request: *Ya Rahman, irhamni* – "O Most Gracious, have mercy on me"; *Ya Razzaq, urzuqni* – "O Provider, provide for me"; *Ya Tawwab, tub 'alayya* – "O Accepter of Repentance, accept my repentance"; *Ya Hadi, ihdini* – "O Guide, guide me".
 3. **Speak your own request** – in your own words and in any language. Allah understands every language, and silence too.
 4. **Close with blessings on the Prophet ﷺ** – and with trust that Allah hears: "Call upon Me; I will respond to you" (Quran 40:60).
@@ -667,11 +667,11 @@ Scholars speak of the human being having a "share" in many of the names. In his 
 - **Purity in earning:** Because Allah is good and accepts only what is good, the believer makes sure that his income is lawful and honestly earned (Muslim 1015).
 - **Justice:** Whoever knows al-'Adl and al-Muqsit is just – even towards people he does not like: "Do not let the hatred of a people prevent you from being just. Be just; that is nearer to righteousness" (Quran 5:8).
 - **Trust:** Whoever knows al-Wakil plans, works – and leaves the outcome to Allah: "And whoever relies upon Allah – then He is sufficient for him" (Quran 65:3).
-- **Humility:** Some names belong to Allah alone, such as al-Mutakabbir, the Supreme in Greatness. Here the human share is not imitation but its opposite: humility. The Prophet ﷺ warned: "No one who has an atom's weight of arrogance in his heart will enter Paradise." When a man asked whether fine clothing was arrogance, he replied: "Allah is beautiful and loves beauty. Arrogance is rejecting the truth and looking down on people" (Muslim 91).
+- **Humility:** Some names belong to Allah alone, suchen Sie as al-Mutakabbir, the Supreme in Greatness. Here the human share is not imitation but its opposite: humility. The Prophet ﷺ warned: "No one who has an atom's weight of arrogance in his heart will enter Paradise." When a man asked whether fine clothing was arrogance, he replied: "Allah is beautiful and loves beauty. Arrogance is rejecting the truth and looking down on people" (Muslim 91).
 
 ### Hope and awe
 
-Some names describe Allah's power and justice, such as al-Qahhar or al-Muntaqim. They also belong to the picture: Allah is merciful, but He does not let injustice go unseen. And some names are best understood in pairs: the Withholder and the Extender, the First and the Last, the Manifest and the Hidden.
+Some names describe Allah's power and justice, suchen Sie as al-Qahhar or al-Muntaqim. They also belong to the picture: Allah is merciful, but He does not let injustice go unseen. And some names are best understood in pairs: the Withholder and the Extender, the First and the Last, the Manifest and the Hidden.
 
 The Quran often places both side by side: "Inform My servants that it is I who am the Forgiving, the Merciful, and that it is My punishment which is the painful punishment" (Quran 15:49–50). Ibn al-Qayyim compared the heart on its way to Allah to a bird: love is its head, and hope and fear are its two wings. With only one wing it cannot fly.
 
@@ -689,7 +689,7 @@ Read these verses slowly and listen to them verse by verse in [Surah al-Hashr](/
 
 ## One love, many traditions
 
-The most beautiful names unite all Muslims. In mosques they hang on the walls as calligraphy, children learn them by heart with melodies, and in many Sufi circles Allah is praised by His names in dhikr. In the Shia tradition the supplication **Jawshan al-Kabir** is especially well known: in a hundred sections it calls upon Allah by a thousand names and attributes, and it is recited above all in the Nights of Decree in Ramadan. In the supplications handed down from the Imams of the Ahl al-Bayt, such as the *Sahifa Sajjadiyya*, Allah is likewise called upon by His names again and again. However different the traditions are, they call upon the same One, by the same most beautiful names.
+The most beautiful names unite all Muslims. In mosques they hang on the walls as calligraphy, children learn them by heart with melodies, and in many Sufi circles Allah is praised by His names in dhikr. In the Shia tradition the supplication **Jawshan al-Kabir** is especially well known: in a hundred sections it calls upon Allah by a thousand names and attributes, and it is recited above all in the Nights of Decree in Ramadan. In the supplications handed down from the Imams of the Ahl al-Bayt, suchen Sie as the *Sahifa Sajjadiyya*, Allah is likewise called upon by His names again and again. However different the traditions are, they call upon the same One, by the same most beautiful names.
 
 ## A beginning for today
 

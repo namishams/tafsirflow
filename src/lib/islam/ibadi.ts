@@ -72,7 +72,7 @@ Diese Gemeinschaften sind oft für ihre Ehrlichkeit im Handel, ihren Gemeinschaf
 
 ## Die Kette des Wissens
 
-Wenn Ibaditen von der Herkunft ihres Wissens sprechen, zeichnen sie eine Kette nach, die du dir leicht merken kannst:
+Wenn Ibaditen von der Herkunft ihres Wissens sprechen, zeichnen sie eine Kette nach, die Sie sich leicht merken können:
 
 1. **Der Prophet ﷺ** lehrte seine Gefährten.
 2. **Abdullah ibn Abbas und Aischa**, möge Allah mit ihnen zufrieden sein, gehörten zu den gelehrtesten unter ihnen. Ibn Abbas wird oft als „Gelehrter der Umma“ und Ausleger des Quran bezeichnet, und Aischa war eine der wichtigsten Quellen für das Leben des Propheten ﷺ in seinem Haus.
@@ -84,7 +84,7 @@ Diese Kette ist den Ibaditen sehr wichtig. Sie zeigt, dass sie ihre Schule nicht
 
 ## Bedeutende Gelehrte und Werke
 
-Einige Namen, die du kennen solltest:
+Einige Namen, die Sie kennen sollten:
 
 - **Dschabir ibn Zaid**, der Begründer, dessen Rechtsauffassungen in späteren Werken gesammelt wurden.
 - **ar-Rabi' ibn Habib**, auf den die wichtigste ibaditische Hadith-Sammlung zurückgeht.
@@ -112,8 +112,8 @@ Die **Amman-Botschaft** (2004, bestätigt 2005) nennt die ibaditische Schule aus
 
 Über kleinere Gemeinschaften wird oft mehr geredet als mit ihnen. Darum ein paar Gedanken, die für jede Schule gelten, ganz besonders aber für die ibaditische:
 
-- **Lies, was sie selbst schreiben.** Die Werke ibaditischer Gelehrter sind heute gedruckt und vielfach zugänglich. Sie sagen dir mehr über diese Schule als die Urteile ihrer historischen Gegner.
-- **Unterscheide zwischen Geschichte und Gegenwart.** Ereignisse aus dem ersten Jahrhundert der Hidschra erklären die Entstehung einer Schule, aber sie beschreiben nicht die Menschen, die heute neben dir beten.
+- **Lesen Sie, was sie selbst schreiben.** Die Werke ibaditischer Gelehrter sind heute gedruckt und vielfach zugänglich. Sie sagen sich mehr über diese Schule als die Urteile ihrer historischen Gegner.
+- **Unterscheiden Sie zwischen Geschichte und Gegenwart.** Ereignisse aus dem ersten Jahrhundert der Hidschra erklären die Entstehung einer Schule, aber sie beschreiben nicht die Menschen, die heute nebenen Sie sich beten.
 - **Frage Gelehrte, nicht Gerüchte.** Wer etwas über eine Schule wissen möchte, fragt am besten jemanden, der sie gründlich studiert hat.
 
 Das ist die Haltung, die die Amman-Botschaft von allen Muslimen erbittet, und es ist auch die Haltung, die wir bei Quran Masterclass leben möchten.

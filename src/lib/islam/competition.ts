@@ -4,9 +4,9 @@ export const competition: IslamDoc = {
   slug: "competition",
   arabic: "جائزة دبي الدولية للقرآن الكريم",
   de: {
-    title: "Der Koranwettbewerb in Dubai – und wie du dich vorbereitest",
+    title: "Der Koranwettbewerb in Dubai – und wie Sie sich vorbereiten",
     kicker: "Wettbewerb & Vorbereitung",
-    lead: "Jedes Jahr im Ramadan kommen junge Huffaz aus vielen Ländern nach Dubai, um vor einer Jury den Koran aus dem Gedächtnis vorzutragen. Die Dubai International Holy Quran Award wurde 1997 unter der Schirmherrschaft Seiner Hoheit Scheich Mohammed bin Rashid Al Maktoum ins Leben gerufen und ist heute weltweit bekannt. Hier erfährst du, was die Auszeichnung ist, worauf Jurys achten – und wie du dich Schritt für Schritt, mit Geduld und aufrichtiger Absicht, vorbereiten kannst.",
+    lead: "Jedes Jahr im Ramadan kommen junge Huffaz aus vielen Ländern nach Dubai, um vor einer Jury den Koran aus dem Gedächtnis vorzutragen. Die Dubai International Holy Quran Award wurde 1997 unter der Schirmherrschaft Seiner Hoheit Scheich Mohammed bin Rashid Al Maktoum ins Leben gerufen und ist heute weltweit bekannt. Hier erfahren Sie, was die Auszeichnung ist, worauf Jurys achten – und wie Sie sich Schritt für Schritt, mit Geduld und aufrichtiger Absicht, vorbereiten können.",
     facts: [
       { n: "1997", l: "Gründung der Auszeichnung" },
       { n: "Ramadan", l: "Zeit des internationalen Wettbewerbs" },
@@ -29,37 +29,37 @@ Wie viele Kategorien es in einem bestimmten Jahr gibt, welche Altersgrenzen gelt
 
 ## Worauf eine Jury achtet
 
-Jede Jury hat ihre eigenen Bewertungsbögen, und die genauen Punkte sind Sache der Veranstalter. Aber in Koranwettbewerben weltweit tauchen immer dieselben Bereiche auf. Wenn du sie kennst, weißt du, worauf du hinarbeitest.
+Jede Jury hat ihre eigenen Bewertungsbögen, und die genauen Punkte sind Sache der Veranstalter. Aber in Koranwettbewerben weltweit tauchen immer dieselben Bereiche auf. Wenn Sie sie kennen, wissen Sie, worauf Sie hinarbeiten.
 
 ### 1. Hifz – die Genauigkeit des Auswendiglernens
 
-Die Jury nennt den Anfang eines Verses, oft irgendwo im Koran, und du setzt fort. Bewertet wird, ob du sofort und ohne Zögern weiterweißt, ob du kein Wort auslässt, vertauschst oder hinzufügst und ob du dich bei ähnlichen Versen nicht in eine andere Sure „verirrst“. Kleine Stockungen, die du selbst korrigierst, kosten meist weniger als ein Fehler, den die Jury verbessern muss.
+Die Jury nennt den Anfang eines Verses, oft irgendwo im Koran, und Sie setzt fort. Bewertet wird, ob Sie sofort und ohne Zögern weiterwissen, ob Sie kein Wort auslassen, vertauschen oder hinzufügen und ob Sie sich bei ähnlichen Versen nicht in eine andere Sure „verirrst“. Kleine Stockungen, die Sie selbst korrigieren, kosten meist weniger als ein Fehler, den die Jury verbessern muss.
 
 ### 2. Tadschwid – die Regeln der Rezitation
 
-Hier geht es um die korrekte Aussprache jedes Buchstabens aus seinem Artikulationsort (*Makhradsch*) mit seinen Eigenschaften (*Sifat*), um Ghunna, Idgham, Ikhfa', die Längen der Madd, Qalqala und alles, was du im [Tadschwid-Kurs](/tajweed) lernst. Die Längen müssen gleichmäßig sein – wer einen Madd einmal vier und einmal sechs Zählzeiten lang zieht, fällt auf.
+Hier geht es um die korrekte Aussprache jedes Buchstabens aus seinem Artikulationsort (*Makhradsch*) mit seinen Eigenschaften (*Sifat*), um Ghunna, Idgham, Ikhfa', die Längen der Madd, Qalqala und alles, was Sie im [Tadschwid-Kurs](/tajweed) lernen. Die Längen müssen gleichmäßig sein – wer einen Madd einmal vier und einmal sechs Zählzeiten lang zieht, fällt auf.
 
 ### 3. Ada' – Stimme und Vortrag
 
 Gemeint ist nicht, wer die „schönste“ Stimme hat, sondern wer den Koran ruhig, würdevoll, gleichmäßig und mit Ehrfurcht vorträgt. Atemführung, ein angemessenes Tempo (*Tartil*), eine saubere Stimmführung und eine Rezitation, die zur Bedeutung passt, gehören dazu. Allah sagt: „Und trage den Koran langsam und deutlich vor“ (Koran 73:4).
 
-### 4. Waqf und Ibtida' – wo du anhältst und wo du neu ansetzt
+### 4. Waqf und Ibtida' – wo Sie anhalten und wo Sie neu ansetzt
 
-Wer mitten in einem Sinnzusammenhang anhält oder an einer Stelle neu beginnt, die die Bedeutung verändert, verliert Punkte. Eine gute Jury hört genau, ob du verstehst, was du rezitierst. Deshalb gehören Bedeutung und Tafsir zur Vorbereitung dazu – nicht nur das Gedächtnis.
+Wer mitten in einem Sinnzusammenhang anhält oder an einer Stelle neu beginnt, die die Bedeutung verändert, verliert Punkte. Eine gute Jury hört genau, ob Sie verstehen, was Sie rezitieren. Deshalb gehören Bedeutung und Tafsir zur Vorbereitung dazu – nicht nur das Gedächtnis.
 
-## Die innere Grundlage: Warum du das machst
+## Die innere Grundlage: Warum Sie das machen
 
-Bevor wir über Pläne sprechen: Ein Wettbewerb ist ein Mittel, kein Ziel. Allah sagt über die Wonnen des Paradieses: „Und darum sollen die Wetteifernden wetteifern“ (Koran 83:26). Das ist der eigentliche Wettbewerb. Der Prophet ﷺ sagte: „Die Taten werden nur nach den Absichten beurteilt“ (al-Bukhari und Muslim). Erneuere deine Absicht immer wieder: Du lernst für Allah, um Seinem Buch nahe zu sein – und wenn Er dir dabei eine Bühne schenkt, ist das eine Gnade und eine Prüfung zugleich.
+Bevor wir über Pläne sprechen: Ein Wettbewerb ist ein Mittel, kein Ziel. Allah sagt über die Wonnen des Paradieses: „Und darum sollen die Wetteifernden wetteifern“ (Koran 83:26). Das ist der eigentliche Wettbewerb. Der Prophet ﷺ sagte: „Die Taten werden nur nach den Absichten beurteilt“ (al-Bukhari und Muslim). Erneueren Sie Ihre Absicht immer wieder: Sie lernen für Allah, um Seinem Buch nahe zu sein – und wenn Er Ihnen dabei eine Bühne schenkt, ist das eine Gnade und eine Prüfung zugleich.
 
 ## Der Jahresplan
 
-Ein internationaler Wettbewerb setzt voraus, dass der ganze Koran bereits fest sitzt. Dieser Plan ist für jemanden gedacht, der den Koran (oder den geforderten Teil) schon auswendig kann und ihn nun wettbewerbsfest machen will. Passe die Mengen mit deinem Lehrer an dich an.
+Ein internationaler Wettbewerb setzt voraus, dass der ganze Koran bereits fest sitzt. Dieser Plan ist für jemanden gedacht, der den Koran (oder den geforderten Teil) schon auswendig kann und ihn nun wettbewerbsfest machen will. Passen Sie die Mengen mit Ihrem Lehrer an Sie an.
 
 ### Monate 1–3: Fundament prüfen
 
-- **Ehrliche Bestandsaufnahme**: Rezitiere jeden Dschuz' einmal vor deinem Lehrer und markiere schwache Stellen. Unsere [Hifz-Karte](/map) hilft dir, den Überblick zu behalten, was stark, mittel oder schwach ist.
+- **Ehrliche Bestandsaufnahme**: Rezitieren Sie jeden Dschuz' einmal vor Ihrem Lehrer und markieren Sie schwache Stellen. Unsere [Hifz-Karte](/map) hilft Ihnen, den Überblick zu behalten, was stark, mittel oder schwach ist.
 - **Täglich**: etwa ein Dschuz' Wiederholung (*Muradscha'a*) aus dem Gedächtnis, dazu die schwachen Seiten des Vortags noch einmal.
-- **Tadschwid**: einmal pro Woche eine Regel gezielt vertiefen und in deiner eigenen Rezitation suchen.
+- **Tadschwid**: einmal pro Woche eine Regel gezielt vertiefen und in Ihrer eigenen Rezitation suchen.
 
 ### Monate 4–6: Festigen
 
@@ -69,8 +69,8 @@ Ein internationaler Wettbewerb setzt voraus, dass der ganze Koran bereits fest s
 
 ### Monate 7–9: Wettbewerbsform
 
-- **Ein vollständiger Durchgang (Khatma) aus dem Gedächtnis** in einem festen Rhythmus, etwa alle zwei bis vier Wochen, je nach deinem Niveau.
-- **Zufallsprüfungen** durch Lehrer, Eltern oder Freunde: Jemand nennt einen beliebigen Versanfang, du setzt fort.
+- **Ein vollständiger Durchgang (Khatma) aus dem Gedächtnis** in einem festen Rhythmus, etwa alle zwei bis vier Wochen, je nach Ihrem Niveau.
+- **Zufallsprüfungen** durch Lehrer, Eltern oder Freunde: Jemand nennt einen beliebigen Versanfang, Sie setzt fort.
 - **Aufnahmen**: einmal pro Woche eine längere Passage aufnehmen und kritisch anhören.
 
 ### Monate 10–12: Feinschliff
@@ -81,9 +81,9 @@ Jetzt beginnt der 90-Tage-Plan.
 
 ### Tage 1–30: Breite
 
-- Täglich zwei bis drei Adschza' Wiederholung, sodass du in rund zehn bis fünfzehn Tagen einen ganzen Durchgang schaffst.
+- Täglich zwei bis drei Adschza' Wiederholung, sodass Sie in rund zehn bis fünfzehn Tagen einen ganzen Durchgang schaffen.
 - Jeden Tag mindestens zehn Zufallsfragen aus dem ganzen Koran.
-- Eine Liste deiner „Problemverse“ führen und täglich lesen.
+- Eine Liste Ihrer „Problemverse“ führen und täglich lesen.
 
 ### Tage 31–60: Tiefe
 
@@ -93,42 +93,42 @@ Jetzt beginnt der 90-Tage-Plan.
 
 ### Tage 61–90: Ruhe und Sicherheit
 
-- Keine großen neuen Baustellen mehr. Du festigst, was du hast.
+- Keine großen neuen Baustellen mehr. Sie festigen, was Sie haben.
 - Die Wiederholung bleibt täglich, wird aber ruhiger: lieber langsam und sicher als schnell und unsauber.
 - In den letzten Tagen vor dem Wettbewerb: genug Schlaf, leichte Mahlzeiten, Stimme schonen, viel Du'a.
 
 ## Mutaschabihat – die ähnlichen Verse
 
-Viele Fehler in Wettbewerben passieren nicht, weil jemand vergessen hat, sondern weil zwei Verse sich fast gleichen. Ein Wort ist anders, eine Reihenfolge vertauscht, und schon rezitiert man in der falschen Sure weiter. So trainierst du sie:
+Viele Fehler in Wettbewerben passieren nicht, weil jemand vergessen hat, sondern weil zwei Verse sich fast gleichen. Ein Wort ist anders, eine Reihenfolge vertauscht, und schon rezitiert man in der falschen Sure weiter. So trainieren Sie sie:
 
-1. **Sammle sie**: Wenn du beim Wiederholen stolperst, weil dir ein ähnlicher Vers „dazwischenkommt“, notiere beide Stellen nebeneinander.
-2. **Finde den Unterschied**: Unterstreiche genau das Wort, das sich unterscheidet, und sprich laut aus, wo welcher Vers steht.
-3. **Verankere ihn in der Bedeutung**: Warum steht hier dieses Wort und dort jenes? Ein Blick in den Tafsir hilft oft, und die Unterscheidung bleibt besser haften.
-4. **Übe sie im Paar**: Rezitiere beide Stellen direkt hintereinander, dann einzeln aus der Mitte heraus.
-5. **Wiederhole die Liste** jeden Tag ein paar Minuten lang.
+1. **Sammlen Sie sie**: Wenn Sie beim Wiederholen stolpern, weil Ihnen ein ähnlicher Vers „dazwischenkommt“, notieren Sie beide Stellen nebeneinander.
+2. **Finden Sie den Unterschied**: Unterstreiche genau das Wort, das sich unterscheidet, und sprechen Sie laut aus, wo welcher Vers steht.
+3. **Verankeren Sie ihn in der Bedeutung**: Warum steht hier dieses Wort und dort jenes? Ein Blick in den Tafsir hilft oft, und die Unterscheidung bleibt besser haften.
+4. **Üben Sie sie im Paar**: Rezitieren Sie beide Stellen direkt hintereinander, dann einzeln aus der Mitte heraus.
+5. **Wiederholen Sie die Liste** jeden Tag ein paar Minuten lang.
 
 ## Aufnehmen, vortragen, prüfen lassen
 
-- **Nimm dich auf**: Höre mit dem Mushaf mit. Du wirst Dinge hören, die dir beim Rezitieren nicht auffallen – zu kurze Madd, verschluckte Endungen, unruhigen Atem.
-- **Vor einem Lehrer rezitieren**: Kein Programm ersetzt einen Lehrer, der dein Ohr schult und deine Fehler kennt. So wurde der Koran seit jeher weitergegeben – von Mund zu Ohr.
-- **Vor Publikum rezitieren**: in der Familie, in der Moschee, in deiner Koranschule. Das Lampenfieber wird kleiner, je öfter du es erlebst.
-- **Probewettbewerbe** mit zufälligen Fragen, wie eine Jury sie stellt: Jemand schlägt den Mushaf irgendwo auf, liest einen Versanfang vor, und du fährst fort, bis „genug“ gesagt wird. Wechselt euch ab, nehmt die Zeit, bewertet ehrlich.
+- **Nehmen Sie sich auf**: Hören Sie mit dem Mushaf mit. Sie werden Dinge hören, die Ihnen beim Rezitieren nicht auffallen – zu kurze Madd, verschluckte Endungen, unruhigen Atem.
+- **Vor einem Lehrer rezitieren**: Kein Programm ersetzt einen Lehrer, der Ihr Ohr schult und Ihre Fehler kennt. So wurde der Koran seit jeher weitergegeben – von Mund zu Ohr.
+- **Vor Publikum rezitieren**: in der Familie, in der Moschee, in Ihrer Koranschule. Das Lampenfieber wird kleiner, je öfter Sie es erleben.
+- **Probewettbewerbe** mit zufälligen Fragen, wie eine Jury sie stellt: Jemand schlägt den Mushaf irgendwo auf, lesen einen Versanfang vor, und Sie fahren fort, bis „genug“ gesagt wird. Wechselt euch ab, nehmt die Zeit, bewertet ehrlich.
 
 ## Stimme, Körper und Herz
 
-- **Stimmpflege**: ausreichend Wasser, nicht schreien, kein Rezitieren bis zur Heiserkeit. Eine Stimme braucht Pausen wie jeder Muskel. Wenn du eine Weile ein wenig heiser bist, lass sie ruhen und frag bei anhaltenden Beschwerden einen Arzt.
-- **Atem**: Übe, ruhig aus dem Bauch zu atmen, und plane, wo du in langen Versen sinnvoll anhältst.
+- **Stimmpflege**: ausreichend Wasser, nicht schreien, kein Rezitieren bis zur Heiserkeit. Eine Stimme braucht Pausen wie jeder Muskel. Wenn Sie eine Weile ein wenig heiser sind, lassen Sie sie ruhen und fragen Sie bei anhaltenden Beschwerden einen Arzt.
+- **Atem**: Üben Sie, ruhig aus dem Bauch zu atmen, und plane, wo Sie in langen Versen sinnvoll anhalten.
 - **Schlaf**: Das Gedächtnis festigt sich im Schlaf. Nächtelanges Lernen kurz vor dem Wettbewerb schadet oft mehr, als es nützt.
-- **Nervosität**: Sie ist normal und zeigt, dass dir die Sache wichtig ist. Bereite dich so vor, dass dein Wissen auch dann trägt, wenn du nervös bist – das ist der Sinn der Probewettbewerbe. Vor dem Vortrag: Wudu', zwei ruhige Atemzüge, Ta'awwudh, und dann nur noch an den Vers denken, nicht an die Jury.
-- **Du'a**: Bitte Allah um Festigkeit. Musa (Friede sei mit ihm) bat: „Mein Herr, weite mir meine Brust, erleichtere mir meine Aufgabe und löse den Knoten von meiner Zunge, damit sie meine Worte verstehen“ (Koran 20:25–28).
+- **Nervosität**: Sie ist normal und zeigt, dass Ihnen die Sache wichtig ist. Bereiten Sie sich so vor, dass Ihr Wissen auch dann trägt, wenn Sie nervös sind – das ist der Sinn der Probewettbewerbe. Vor dem Vortrag: Wudu', zwei ruhige Atemzüge, Ta'awwudh, und dann nur noch an den Vers denken, nicht an die Jury.
+- **Sie'a**: Bitte Allah um Festigkeit. Musa (Friede sei mit ihm) bat: „Mein Herr, weite mir meine Brust, erleichtere mir meine Aufgabe und löse den Knoten von meiner Zunge, damit sie meine Worte verstehen“ (Koran 20:25–28).
 
-## Wie dir diese Plattform hilft
+## Wie Ihnen diese Plattform hilft
 
-- Mit der [Shams-Methode](/shams) lernst du neue Abschnitte in kleinen, wiederholten Schritten.
-- Der [365-Tage-Plan](/plan) gibt dir einen festen täglichen Rhythmus.
-- Auf der [Hifz-Karte](/map) siehst du, welche Teile sitzen und welche Wiederholung brauchen.
-- Im [Tadschwid-Kurs](/tajweed) frischst du Regeln gezielt auf.
-- In der [Akademie](/academy) gehst du Sure für Sure mit Bedeutung und Tafsir durch – wichtig für Waqf und Ibtida'.
+- Mit der [Shams-Methode](/shams) lernen Sie neue Abschnitte in kleinen, wiederholten Schritten.
+- Der [365-Tage-Plan](/plan) gibt Ihnen einen festen täglichen Rhythmus.
+- Auf der [Hifz-Karte](/map) sehen Sie, welche Teile sitzen und welche Wiederholung brauchen.
+- Im [Tadschwid-Kurs](/tajweed) frischen Sie Regeln gezielt auf.
+- In der [Akademie](/academy) gehen Sie Sure für Sure mit Bedeutung und Tafsir durch – wichtig für Waqf und Ibtida'.
 - Und wer noch am Anfang steht, beginnt mit den [arabischen Buchstaben](/arabic).
 
 ## Wie Kinder anfangen können
@@ -136,7 +136,7 @@ Viele Fehler in Wettbewerben passieren nicht, weil jemand vergessen hat, sondern
 Die meisten Huffaz, die heute auf Wettbewerbsbühnen stehen, haben als Kinder begonnen – aber nicht mit Druck, sondern mit Liebe.
 
 - **Klein anfangen**: mit al-Fatiha und den kurzen Suren am Ende des Korans. Wenige Minuten am Tag genügen.
-- **Zuhören**: Kinder lernen viel über das Ohr. Lass sie täglich eine ruhige, deutliche Rezitation hören.
+- **Zuhören**: Kinder lernen viel über das Ohr. Lassen Sie sie täglich eine ruhige, deutliche Rezitation hören.
 - **Loben statt vergleichen**: Ein Kind soll den Koran mit Geborgenheit verbinden, nicht mit Angst.
 - **Ein guter Lehrer**: In den Emiraten gibt es in jeder Stadt Koranzentren, oft auch für Kinder von Residents.
 - **Kinderwettbewerbe** in der Moschee, der Schule oder auf nationaler Ebene sind eine schöne erste Erfahrung, lange bevor ein internationaler Wettbewerb ein Thema ist.
@@ -152,14 +152,14 @@ Daneben gibt es viele nationale und internationale Wettbewerbe in anderen Lände
 
 ## Wichtig: Die Regeln ändern sich
 
-Teilnahmebedingungen, Altersgrenzen, Kategorien, Anmeldefristen und das Nominierungsverfahren können sich von Jahr zu Jahr ändern. Für den internationalen Wettbewerb in Dubai werden die Teilnehmenden in der Regel über offizielle nationale Stellen ihres Landes entsandt – frag bei den zuständigen Behörden für religiöse Angelegenheiten, deiner Moschee oder deinem Koranzentrum nach. Verlasse dich nicht auf ältere Informationen, auch nicht auf diesen Text: Prüfe alles auf der **offiziellen Website der Auszeichnung** und über die offiziellen Kanäle deines Landes.
+Teilnahmebedingungen, Altersgrenzen, Kategorien, Anmeldefristen und das Nominierungsverfahren können sich von Jahr zu Jahr ändern. Für den internationalen Wettbewerb in Dubai werden die Teilnehmenden in der Regel über offizielle nationale Stellen ihres Landes entsandt – fragen Sie bei den zuständigen Behörden für religiöse Angelegenheiten, Ihrer Moschee oder Ihrem Koranzentrum nach. Verlassen Sie sich nicht auf ältere Informationen, auch nicht auf diesen Text: Prüfen Sie alles auf der **offiziellen Website der Auszeichnung** und über die offiziellen Kanäle Ihres Landes.
 
 ## Zum Schluss
 
-Der Prophet ﷺ sagte: „Der Beste von euch ist, wer den Koran lernt und ihn lehrt“ (al-Bukhari). Ob du jemals auf einer Bühne in Dubai stehst oder nicht: Jede Stunde, die du in deinen Hifz steckst, ist nicht verloren. Allah sagt: „Und Wir haben den Koran ja leicht zum Bedenken gemacht. Gibt es also jemanden, der bedenkt?“ (Koran 54:17). Fang heute an – mit einem Vers, mit einer Seite, mit einer ehrlichen Absicht.`,
+Der Prophet ﷺ sagte: „Der Beste von euch ist, wer den Koran lernt und ihn lehrt“ (al-Bukhari). Ob Sie jemals auf einer Bühne in Dubai stehen oder nicht: Jede Stunde, die Sie in Ihren Hifz stecken, ist nicht verloren. Allah sagt: „Und Wir haben den Koran ja leicht zum Bedenken gemacht. Gibt es also jemanden, der bedenkt?“ (Koran 54:17). Fangen Sie heute an – mit einem Vers, mit einer Seite, mit einer ehrlichen Absicht.`,
     faq: [
       { q: "Seit wann gibt es die Dubai International Holy Quran Award?", a: "Seit 1997. Sie wurde unter der Schirmherrschaft Seiner Hoheit Scheich Mohammed bin Rashid Al Maktoum gegründet und findet jedes Jahr im Ramadan in Dubai statt." },
-      { q: "Kann ich mich selbst für den internationalen Wettbewerb anmelden?", a: "In der Regel werden Teilnehmende über offizielle nationale Stellen ihres Landes nominiert. Die genauen Wege und Bedingungen ändern sich; prüfe sie auf der offiziellen Website der Auszeichnung und bei den zuständigen Stellen in deinem Land." },
+      { q: "Kann ich mich selbst für den internationalen Wettbewerb anmelden?", a: "In der Regel werden Teilnehmende über offizielle nationale Stellen ihres Landes nominiert. Die genauen Wege und Bedingungen ändern sich; prüfe sie auf der offiziellen Website der Auszeichnung und bei den zuständigen Stellen in Ihrem Land." },
       { q: "Was ist wichtiger: schöne Stimme oder genaues Auswendiglernen?", a: "Die Genauigkeit des Hifz und der korrekte Tadschwid stehen an erster Stelle. Ein ruhiger, würdevoller Vortrag kommt hinzu – aber eine schöne Stimme kann Fehler im Text nicht ausgleichen." },
       { q: "Was sind Mutaschabihat?", a: "Verse, die einander sehr ähneln und sich nur in einem Wort oder in der Reihenfolge unterscheiden. Sie sind die häufigste Ursache für Fehler in Wettbewerben und brauchen eigenes, gezieltes Training." },
       { q: "Ab welchem Alter kann ein Kind mit dem Hifz beginnen?", a: "Es gibt kein festes Alter. Viele Kinder beginnen spielerisch mit al-Fatiha und kurzen Suren, sobald sie gut nachsprechen können. Wichtiger als das Alter ist, dass das Lernen mit Freude und ohne Druck geschieht." },
@@ -192,7 +192,7 @@ Anyone who has sat in the hall on one of those Ramadan nights does not forget it
 
 - **The international memorisation competition**: the heart of the Award. Participants from many countries are examined on their hifz, their tajweed and their recitation.
 - **The Islamic Personality of the Year**: an honour for a person or institution that has rendered outstanding service to the Quran and to Islam.
-- **Further competitions and programmes**: among them a Quran competition for women that bears the name of **Sheikha Hind bint Maktoum**, as well as further competitions and events around the Quran, such as lectures during Ramadan.
+- **Further competitions and programmes**: among them a Quran competition for women that bears the name of **Sheikha Hind bint Maktoum**, as well as further competitions and events around the Quran, suchen Sie as lectures during Ramadan.
 
 How many categories there are in a given year, which age limits apply and how nominations work can change. More on that at the end of this chapter.
 
@@ -264,7 +264,7 @@ This is where the 90-day plan begins.
 
 - No big new projects any more. You consolidate what you have.
 - Revision stays daily, but becomes calmer: better slow and sure than fast and sloppy.
-- In the last days before the competition: enough sleep, light meals, rest your voice, plenty of du'a.
+- In the last days before the competition: enough sleep, light meals, rest your voice, plenty of Sie'a.
 
 ## Mutashabihat – the similar verses
 
@@ -289,7 +289,7 @@ Many mistakes in competitions do not happen because someone forgot, but because 
 - **Breath**: practise calm breathing from the belly, and plan where you can meaningfully pause in long verses.
 - **Sleep**: memory is consolidated during sleep. Studying through the night just before the competition often does more harm than good.
 - **Nerves**: they are normal and show that this matters to you. Prepare so that your knowledge holds even when you are nervous – that is the point of the mock competitions. Before you recite: wudu', two calm breaths, the ta'awwudh, and then think only of the verse, not of the jury.
-- **Du'a**: ask Allah for steadfastness. Musa (peace be upon him) prayed: "My Lord, expand for me my breast, ease for me my task, and untie the knot from my tongue, that they may understand my speech" (Quran 20:25–28).
+- **Sie'a**: ask Allah for steadfastness. Musa (peace be upon him) prayed: "My Lord, expand for me my breast, ease for me my task, and untie the knot from my tongue, that they may understand my speech" (Quran 20:25–28).
 
 ## How this platform helps
 

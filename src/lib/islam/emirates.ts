@@ -8,7 +8,7 @@ export const emirates: IslamDoc = {
   de: {
     title: "Warum die Emirate ein wunderbarer Ort sind, um den Islam zu leben – mitten in der Moderne",
     kicker: "Glaube und Fortschritt unter einem Himmel",
-    lead: "Fünfmal am Tag ruft der Adhan über Hochhäuser und Wüste, im Einkaufszentrum wartet ein Gebetsraum, beim Essen ist halal die Regel – und ein paar Kilometer weiter steht das Museum der Zukunft. In den Emiraten gehören Glaube und Fortschritt zusammen. In diesem Kapitel erzählen wir, warum so viele Muslime hier gern leben, was Menschen aller Religionen an diesem Land schätzen, wie du dich als Gast respektvoll verhältst – und warum am Ende doch dein eigenes Herz entscheidet.",
+    lead: "Fünfmal am Tag ruft der Adhan über Hochhäuser und Wüste, im Einkaufszentrum wartet ein Gebetsraum, beim Essen ist halal die Regel – und ein paar Kilometer weiter steht das Museum der Zukunft. In den Emiraten gehören Glaube und Fortschritt zusammen. In diesem Kapitel erzählen wir, warum so viele Muslime hier gern leben, was Menschen aller Religionen an diesem Land schätzen, wie Sie sich als Gast respektvoll verhalten – und warum am Ende doch Ihr eigenes Herz entscheidet.",
     facts: [
       { n: "5×", l: "am Tag ruft der Adhan aus unzähligen Moscheen" },
       { n: "1975", l: "Dubai Islamic Bank – gilt als erste islamische Geschäftsbank" },
@@ -19,11 +19,11 @@ export const emirates: IslamDoc = {
 
 Wer zum ersten Mal in den Emiraten aufwacht, hört es noch vor dem Wecker: den **Adhan** zum Fajr. Fünfmal am Tag ruft er aus unzähligen Moscheen – zwischen den Hochhäusern von Dubai, über den Dattelgärten von Al Ain, an der Küste von Fudschaira. Der Tag hat hier einen Rhythmus, den nicht der Terminkalender vorgibt, sondern das Gebet.
 
-Wie du einen ganzen Tag mit dem Koran und der Sunnah gestaltest, vom Aufwachen bis zum Einschlafen, erfährst du im Kapitel [Islam im Alltag](/islam/daily). Hier geht es um etwas anderes: um den Ort, an dem ein solcher Tag leichtfällt.
+Wie Sie einen ganzen Tag mit dem Koran und der Sunnah gestalten, vom Aufwachen bis zum Einschlafen, erfahren Sie im Kapitel [Islam im Alltag](/islam/daily). Hier geht es um etwas anderes: um den Ort, an dem ein solcher Tag leichtfällt.
 
-### Gebetsräume, wo immer du bist
+### Gebetsräume, wo immer Sie sind
 
-In Einkaufszentren, Bürotürmen, Krankenhäusern, an Flughäfen und an vielen Tankstellen findest du einen **Gebetsraum** mit Waschgelegenheit, meist getrennt für Männer und Frauen. In Hotelzimmern zeigt oft ein kleiner Pfeil die Qibla. Wer im Büro für ein paar Minuten zum Gebet geht, muss sich nicht erklären – es ist ganz normal. Und in fast jedem Wohnviertel steht eine Moschee in Gehweite.
+In Einkaufszentren, Bürotürmen, Krankenhäusern, an Flughäfen und an vielen Tankstellen finden Sie einen **Gebetsraum** mit Waschgelegenheit, meist getrennt für Männer und Frauen. In Hotelzimmern zeigt oft ein kleiner Pfeil die Qibla. Wer im Büro für ein paar Minuten zum Gebet geht, muss sich nicht erklären – es ist ganz normal. Und in fast jedem Wohnviertel steht eine Moschee in Gehweite.
 
 ### Der Freitag
 
@@ -35,7 +35,7 @@ Viele Moscheen laden ausdrücklich Besucher ein, auch Menschen anderer Religione
 
 ## Halal als Selbstverständlichkeit
 
-„O ihr Menschen, esst von dem, was es auf der Erde an Erlaubtem und Gutem gibt“ (Koran 2:168). In den Emiraten musst du danach nicht lange suchen.
+„O ihr Menschen, esst von dem, was es auf der Erde an Erlaubtem und Gutem gibt“ (Koran 2:168). In den Emiraten müssen Sie danach nicht lange suchen.
 
 ### Essen ohne Rätselraten
 
@@ -51,19 +51,19 @@ Ehrlich bleibt aber auch: Gelehrte beurteilen manche Finanzprodukte unterschiedl
 
 ### Dubai und die islamische Wirtschaft
 
-Dubai hat sich das Ziel gesetzt, eine Hauptstadt der islamischen Wirtschaft zu werden: von Halal-Lebensmitteln und islamischen Finanzen bis zu Mode, Reisen und Bildung, die zu muslimischen Werten passen. Dahinter steht ein Gedanke, den der Islam von Anfang an kennt: Ehrlicher Handel ist eine gute Tat. Der Prophet ﷺ selbst war Kaufmann, bevor die Offenbarung begann. Was Koran und Sunnah über Ehrlichkeit im Geschäft sagen, liest du im Kapitel [Islam im Alltag](/islam/daily).
+Dubai hat sich das Ziel gesetzt, eine Hauptstadt der islamischen Wirtschaft zu werden: von Halal-Lebensmitteln und islamischen Finanzen bis zu Mode, Reisen und Bildung, die zu muslimischen Werten passen. Dahinter steht ein Gedanke, den der Islam von Anfang an kennt: Ehrlicher Handel ist eine gute Tat. Der Prophet ﷺ selbst war Kaufmann, bevor die Offenbarung begann. Was Koran und Sunnah über Ehrlichkeit im Geschäft sagen, lesen Sie im Kapitel [Islam im Alltag](/islam/daily).
 
 ## Ramadan, Eid und der Weg nach Mekka
 
 ### Ramadan – das ganze Land fastet mit
 
-„Allah will für euch Erleichterung; Er will für euch nicht Erschwernis“ (Koran 2:185). Im Ramadan spürst du diesen Vers im ganzen Land. Die Arbeitszeiten werden gesetzlich verkürzt – in der Privatwirtschaft um zwei Stunden am Tag –, und Schulen und Behörden passen ihre Zeiten an. Kurz vor Sonnenuntergang werden die Straßen still, und an manchen Orten verkündet noch eine traditionelle Kanone das Fastenbrechen.
+„Allah will für euch Erleichterung; Er will für euch nicht Erschwernis“ (Koran 2:185). Im Ramadan spüren Sie diesen Vers im ganzen Land. Die Arbeitszeiten werden gesetzlich verkürzt – in der Privatwirtschaft um zwei Stunden am Tag –, und Schulen und Behörden passen ihre Zeiten an. Kurz vor Sonnenuntergang werden die Straßen still, und an manchen Orten verkündet noch eine traditionelle Kanone das Fastenbrechen.
 
 Moscheen, Familien und Wohltätigkeitsorganisationen laden in **Iftar-Zelte** und zu gemeinsamen Mahlzeiten ein, oft Arbeiter, Reisende und Nachbarn, die sie gar nicht kennen. Der Prophet ﷺ sagte: „Wer einem Fastenden das Fastenbrechen gibt, erhält den gleichen Lohn wie er, ohne dass vom Lohn des Fastenden etwas gemindert wird“ (at-Tirmidhi). Dazu kommen große Spendenkampagnen, in denen das Land Mahlzeiten und Hilfe für Bedürftige in vielen Ländern sammelt. Nach dem Ischa füllen sich die Moscheen zum Tarawih, und in den letzten zehn Nächten kommt das Nachtgebet hinzu. Wie der Ramadan selbst gelebt wird, erklärt das Kapitel [Ramadan und das Fasten](/islam/ramadan).
 
 ### Eid – Feiertage für alle
 
-Die beiden Feste, **Eid al-Fitr** und **Eid al-Adha**, sind gesetzliche Feiertage, ebenso der Tag von Arafat, das islamische Neujahr und der Geburtstag des Propheten ﷺ. Am Morgen des Eid strömen Familien in festlicher Kleidung zum Gebet, danach besucht man Eltern und Verwandte, und die Kinder freuen sich auf die *Eidiya*, kleine Geldgeschenke der Erwachsenen. Mehr über die Feste findest du im Kapitel [Eid al-Fitr, Eid al-Adha und der islamische Kalender](/islam/eid).
+Die beiden Feste, **Eid al-Fitr** und **Eid al-Adha**, sind gesetzliche Feiertage, ebenso der Tag von Arafat, das islamische Neujahr und der Geburtstag des Propheten ﷺ. Am Morgen des Eid strömen Familien in festlicher Kleidung zum Gebet, danach besucht man Eltern und Verwandte, und die Kinder freuen sich auf die *Eidiya*, kleine Geldgeschenke der Erwachsenen. Mehr über die Feste finden Sie im Kapitel [Eid al-Fitr, Eid al-Adha und der islamische Kalender](/islam/eid).
 
 ### Hadsch und Umra – Mekka liegt nah
 
@@ -73,7 +73,7 @@ Von den Emiraten aus sind Mekka und Medina nur einen kurzen Flug entfernt. Viele
 
 ### Koranzentren und Wettbewerbe
 
-In jeder Stadt gibt es **Koranzentren**, in denen Kinder und Erwachsene lesen lernen, Tadschwid üben und auswendig lernen, oft am Nachmittag nach der Schule, auch in eigenen Kursen für Frauen. Seit 1997 ehrt die **Dubai International Holy Quran Award** jedes Jahr im Ramadan junge Huffaz aus aller Welt; wie sie funktioniert und wie du dich vorbereiten kannst, liest du im Kapitel über [den Koranwettbewerb in Dubai](/islam/competition). Daneben finden im ganzen Land Koranwettbewerbe für Schülerinnen, Schüler und junge Menschen statt.
+In jeder Stadt gibt es **Koranzentren**, in denen Kinder und Erwachsene lesen lernen, Tadschwid üben und auswendig lernen, oft am Nachmittag nach der Schule, auch in eigenen Kursen für Frauen. Seit 1997 ehrt die **Dubai International Holy Quran Award** jedes Jahr im Ramadan junge Huffaz aus aller Welt; wie sie funktioniert und wie Sie sich vorbereiten können, lesen Sie im Kapitel über [den Koranwettbewerb in Dubai](/islam/competition). Daneben finden im ganzen Land Koranwettbewerbe für Schülerinnen, Schüler und junge Menschen statt.
 
 ### Islamische Bildung in der Schule
 
@@ -81,13 +81,13 @@ Muslimische Kinder haben in den Emiraten an allen Schulen **Islamische Erziehung
 
 ### Gelehrte statt Ratespiel
 
-Für religiöse Fragen gibt es in den Emiraten verlässliche Ansprechpartner. 2017 wurde der **UAE Council for Fatwa** (Madschlis al-Imarat lil-Ifta' asch-Schar'i) unter dem Vorsitz von Scheich Abdullah bin Bayyah gegründet; er ordnet die Fatwa-Arbeit im Land. Dazu kommen die offiziellen Fatwa-Dienste der Behörden für islamische Angelegenheiten, bei denen du Gelehrten telefonisch oder online Fragen stellen kannst.
+Für religiöse Fragen gibt es in den Emiraten verlässliche Ansprechpartner. 2017 wurde der **UAE Council for Fatwa** (Madschlis al-Imarat lil-Ifta' asch-Schar'i) unter dem Vorsitz von Scheich Abdullah bin Bayyah gegründet; er ordnet die Fatwa-Arbeit im Land. Dazu kommen die offiziellen Fatwa-Dienste der Behörden für islamische Angelegenheiten, bei denen Sie Gelehrten telefonisch oder online Fragen stellen können.
 
-Traditionell folgen viele Emiratis der malikitischen Rechtsschule, und zugleich leben hier Muslime aller Rechtsschulen zusammen, Sunniten wie Schiiten. Mehr darüber erfährst du im Kapitel über [die Rechtsschulen des Islam](/islam/madhahib). Auf diesen Seiten geben wir bewusst keine Rechtsgutachten: Für deine persönlichen Fragen wende dich an einen qualifizierten Gelehrten.
+Traditionell folgen viele Emiratis der malikitischen Rechtsschule, und zugleich leben hier Muslime aller Rechtsschulen zusammen, Sunniten wie Schiiten. Mehr darüber erfahren Sie im Kapitel über [die Rechtsschulen des Islam](/islam/madhahib). Auf diesen Seiten geben wir bewusst keine Rechtsgutachten: Für Ihre persönlichen Fragen wenden Sie sich an einen qualifizierten Gelehrten.
 
 ## Familie, Gastfreundschaft und Gemeinschaft
 
-Im Herzen der emiratischen Gesellschaft steht die **Familie**. Eltern und Großeltern werden geehrt, Kinder wachsen mit vielen Cousins und Cousinen auf, und am Wochenende kommt die große Familie zusammen. Der Prophet ﷺ sagte: „Wer sich nicht der Jüngeren unter uns erbarmt und die Älteren unter uns nicht achtet, gehört nicht zu uns“ (at-Tirmidhi). Diese Achtung siehst du im Alltag: Man steht auf, wenn ein älterer Mensch den Raum betritt, man begrüßt zuerst die Ältesten und lässt ihnen den Vortritt.
+Im Herzen der emiratischen Gesellschaft steht die **Familie**. Eltern und Großeltern werden geehrt, Kinder wachsen mit vielen Cousins und Cousinen auf, und am Wochenende kommt die große Familie zusammen. Der Prophet ﷺ sagte: „Wer sich nicht der Jüngeren unter uns erbarmt und die Älteren unter uns nicht achtet, gehört nicht zu uns“ (at-Tirmidhi). Diese Achtung sehen Sie im Alltag: Man steht auf, wenn ein älterer Mensch den Raum betritt, man begrüßt zuerst die Ältesten und lassen ihnen den Vortritt.
 
 ### Gahwa, Datteln und der Madschlis
 
@@ -131,7 +131,7 @@ Seit 2022 steht in Dubai das **Museum of the Future**, ein silbern glänzender R
 
 ### Die Sonde Hope
 
-Im Februar 2021 erreichte die emiratische Sonde **Hope** (al-Amal, „die Hoffnung“) die Umlaufbahn des Mars – die erste interplanetare Mission der arabischen Welt. Sie erforscht die Atmosphäre und das Wetter des Roten Planeten; entwickelt hat sie ein junges emiratisches Team aus Ingenieurinnen und Ingenieuren gemeinsam mit internationalen Partnern. Wenn du nachts in der Wüste den Sternenhimmel betrachtest, verstehst du den Vers: „Schauen sie denn nicht auf die Kamele, wie sie erschaffen worden sind, und auf den Himmel, wie er emporgehoben worden ist, und auf die Berge, wie sie aufgerichtet worden sind, und auf die Erde, wie sie flach ausgebreitet worden ist?“ (Koran 88:17–20).
+Im Februar 2021 erreichte die emiratische Sonde **Hope** (al-Amal, „die Hoffnung“) die Umlaufbahn des Mars – die erste interplanetare Mission der arabischen Welt. Sie erforscht die Atmosphäre und das Wetter des Roten Planeten; entwickelt hat sie ein junges emiratisches Team aus Ingenieurinnen und Ingenieuren gemeinsam mit internationalen Partnern. Wenn Sie nachts in der Wüste den Sternenhimmel betrachten, verstehen Sie den Vers: „Schauen sie denn nicht auf die Kamele, wie sie erschaffen worden sind, und auf den Himmel, wie er emporgehoben worden ist, und auf die Berge, wie sie aufgerichtet worden sind, und auf die Erde, wie sie flach ausgebreitet worden ist?“ (Koran 88:17–20).
 
 ### Louvre Abu Dhabi
 
@@ -139,7 +139,7 @@ Seit 2017 zeigt der **Louvre Abu Dhabi** unter seiner großen Kuppel Kunst aus d
 
 ### Smarte Verwaltung und Nachhaltigkeit
 
-Viele Behördengänge erledigst du hier per App, von der Aufenthaltsgenehmigung bis zum Führerschein. Und mit **Masdar City** in Abu Dhabi entsteht ein Stadtviertel, das auf erneuerbare Energie und einen sparsamen Umgang mit Ressourcen setzt. Auch das passt zum Islam: Der Mensch ist auf der Erde ein Treuhänder, kein Verschwender – „esst und trinkt, aber seid nicht maßlos“ (Koran 7:31). Der Prophet ﷺ sagte: „Wenn die Stunde anbricht und einer von euch hat einen Palmsetzling in der Hand, und er kann ihn noch pflanzen, bevor sie anbricht, dann soll er ihn pflanzen“ (Ahmad; al-Bukhari in al-Adab al-Mufrad). In einem Land der Dattelpalmen versteht man diesen Satz sofort.
+Viele Behördengänge erledigen Sie hier per App, von der Aufenthaltsgenehmigung bis zum Führerschein. Und mit **Masdar City** in Abu Dhabi entsteht ein Stadtviertel, das auf erneuerbare Energie und einen sparsamen Umgang mit Ressourcen setzt. Auch das passt zum Islam: Der Mensch ist auf der Erde ein Treuhänder, kein Verschwender – „esst und trinkt, aber seid nicht maßlos“ (Koran 7:31). Der Prophet ﷺ sagte: „Wenn die Stunde anbricht und einer von euch hat einen Palmsetzling in der Hand, und er kann ihn noch pflanzen, bevor sie anbricht, dann soll er ihn pflanzen“ (Ahmad; al-Bukhari in al-Adab al-Mufrad). In einem Land der Dattelpalmen versteht man diesen Satz sofort.
 
 ## Was Neuankömmlinge besonders schätzen
 
@@ -148,48 +148,48 @@ Wer als Muslim in die Emirate zieht, erzählt oft dasselbe:
 - **Beten ohne Umstände:** Gebetsräume bei der Arbeit, im Einkaufszentrum, am Flughafen – und Kollegen, die das selbstverständlich finden.
 - **Halal überall:** kein Etikettenlesen beim Einkaufen, keine langen Fragen im Restaurant.
 - **Islamische Feiertage sind Feiertage:** Eid al-Fitr, der Tag von Arafat, Eid al-Adha, das islamische Neujahr und der Geburtstag des Propheten ﷺ.
-- **Arabisch und Englisch überall:** Schilder, Formulare und Behörden sprechen beide Sprachen, und du hörst jeden Tag Arabisch – eine schöne Gelegenheit, die Sprache des Korans zu lernen ([Arabisch lernen](/arabic)).
+- **Arabisch und Englisch überall:** Schilder, Formulare und Behörden sprechen beide Sprachen, und Sie hören jeden Tag Arabisch – eine schöne Gelegenheit, die Sprache des Korans zu lernen ([Arabisch lernen](/arabic)).
 - **Gemeinschaft:** Moscheen, Koranzentren und Iftars, bei denen Menschen aus vielen Ländern zusammensitzen.
 - **Kinder wachsen mit dem Islam auf:** in der Schule, in der Moschee und mit den Festen des Jahres.
 
 ## Respektvoll zu Gast
 
-Wenn du die Emirate besuchst, gleich welcher Religion, helfen ein paar einfache Gesten:
+Wenn Sie die Emirate besuchen, gleich welcher Religion, helfen ein paar einfache Gesten:
 
-- **Kleidung:** An öffentlichen Orten wie Einkaufszentren und Behörden ist schlichte Kleidung angemessen. In Moscheen bedecken Männer und Frauen Schultern und Knie, Frauen auch das Haar; in großen Moscheen bekommst du passende Kleidung oft vor Ort.
+- **Kleidung:** An öffentlichen Orten wie Einkaufszentren und Behörden ist schlichte Kleidung angemessen. In Moscheen bedecken Männer und Frauen Schultern und Knie, Frauen auch das Haar; in großen Moscheen bekommen Sie passende Kleidung oft vor Ort.
 - **Im Ramadan:** Nicht-Muslime fasten nicht, aber es ist eine freundliche Geste, tagsüber in der Öffentlichkeit nicht demonstrativ zu essen, zu trinken oder zu rauchen.
-- **Beim Gebet:** Geh nicht direkt vor einem betenden Menschen vorbei, und mach die Musik leiser, wenn der Adhan ruft – viele tun das ganz von selbst.
-- **Begegnungen:** Ob Männer und Frauen einander die Hand geben, ist unterschiedlich; warte einfach ab, ob dir die Hand gereicht wird. Eine Hand auf dem Herzen ist ein ebenso herzlicher Gruß.
-- **Fotos:** Frag, bevor du Menschen fotografierst, besonders Frauen und Familien.
-- **Gahwa:** Nimm die Tasse mit der rechten Hand – und schwenke sie leicht, wenn du genug hast.
+- **Beim Gebet:** Gehen Sie nicht direkt vor einem betenden Menschen vorbei, und machen Sie die Musik leiser, wenn der Adhan ruft – viele tun das ganz von selbst.
+- **Begegnungen:** Ob Männer und Frauen einander die Hand geben, ist unterschiedlich; warte einfach ab, ob Ihnen die Hand gereicht wird. Eine Hand auf dem Herzen ist ein ebenso herzlicher Gruß.
+- **Fotos:** Fragen Sie, bevor Sie Menschen fotografieren, besonders Frauen und Familien.
+- **Gahwa:** Nehmen Sie die Tasse mit der rechten Hand – und schwenke sie leicht, wenn Sie genug haben.
 
 ## Ein ehrliches Wort: Der Ort hilft, das Herz entscheidet
 
-So schön es hier ist – kein Land nimmt dir dein eigenes Bemühen ab. Auch in Dubai musst du den Wecker für das Fajr stellen, und auch hier kann das Leben zwischen Arbeit, Einkaufszentren und Bildschirmen so voll werden, dass das Gebet nach hinten rutscht. Ein guter Ort ist eine Hilfe, kein Ersatz. Allah sagt: „Gewiss, Allah ändert nicht den Zustand eines Volkes, bis sie das ändern, was in ihnen selbst ist“ (Koran 13:11). Und der Prophet ﷺ sagte: „Allah schaut nicht auf eure Gestalt und euren Besitz, sondern Er schaut auf eure Herzen und eure Taten“ (Muslim).
+So schön es hier ist – kein Land nimmt Ihnen Ihr eigenes Bemühen ab. Auch in Dubai müssen Sie den Wecker für das Fajr stellen, und auch hier kann das Leben zwischen Arbeit, Einkaufszentren und Bildschirmen so voll werden, dass das Gebet nach hinten rutscht. Ein guter Ort ist eine Hilfe, kein Ersatz. Allah sagt: „Gewiss, Allah ändert nicht den Zustand eines Volkes, bis sie das ändern, was in ihnen selbst ist“ (Koran 13:11). Und der Prophet ﷺ sagte: „Allah schaut nicht auf eure Gestalt und euren Besitz, sondern Er schaut auf eure Herzen und eure Taten“ (Muslim).
 
-Ebenso wichtig: Den Islam kann man überall leben, in Berlin wie in Jakarta, in Toronto wie in Kairo. Muslime auf der ganzen Welt bewahren ihren Glauben mit Liebe und Geduld. Die Emirate sind nicht der einzige gute Ort – aber ein Ort, an dem vieles leichter fällt. Was du daraus machst, entscheidet dein Herz: „Diejenigen aber, die sich um Unsertwillen abmühen, werden Wir ganz gewiss Unsere Wege leiten. Und Allah ist wahrlich mit den Gutes Tuenden“ (Koran 29:69).
+Ebenso wichtig: Den Islam kann man überall leben, in Berlin wie in Jakarta, in Toronto wie in Kairo. Muslime auf der ganzen Welt bewahren ihren Glauben mit Liebe und Geduld. Die Emirate sind nicht der einzige gute Ort – aber ein Ort, an dem vieles leichter fällt. Was Sie daraus machen, entscheidet Ihr Herz: „Diejenigen aber, die sich um Unsertwillen abmühen, werden Wir ganz gewiss Unsere Wege leiten. Und Allah ist wahrlich mit den Gutes Tuenden“ (Koran 29:69).
 
 ## Eine Einladung
 
-Ob du hier lebst, zu Besuch kommst oder einfach neugierig bist: Herzlich willkommen. Komm in eine Moschee, trink einen Kaffee im Madschlis, frag, was dich bewegt. Und nimm den Geist dieses Landes mit nach Hause – Glaube, Wissen und Gastfreundschaft, zusammen mit der Moderne.
+Ob Sie hier leben, zu Besuch kommen oder einfach neugierig sind: Herzlich willkommen. Kommen Sie in eine Moschee, trink einen Kaffee im Madschlis, fragen Sie, was Sie bewegt. Und nimm den Geist dieses Landes mit nach Hause – Glaube, Wissen und Gastfreundschaft, zusammen mit der Moderne.
 
-Wenn du weiterlesen möchtest:
+Wenn Sie weiterlesen möchten:
 
 - [Die wichtigsten Städte des Islam](/islam/cities) – von Mekka bis Schardscha
 - [Die schönsten Moscheen der Welt](/islam/mosques) – auch die der Emirate
 - [Islam im Alltag](/islam/daily) – ein Tag mit dem Koran und der Sunnah
 - [Ramadan und das Fasten](/islam/ramadan) – der Monat des Korans
-- [Gebetszeiten](/prayer) – für deinen Ort
-- [Dua-Generator](/dua-generator) – dein persönliches Bittgebet
+- [Gebetszeiten](/prayer) – für Ihren Ort
+- [Dua-Generator](/dua-generator) – Ihr persönliches Bittgebet
 
-Der Prophet ﷺ sagte: „Erleichtert und erschwert nicht, verkündet frohe Botschaft und schreckt nicht ab“ (al-Bukhari und Muslim). In diesem Geist laden wir dich ein: Fang heute an – mit einem Vers.`,
+Der Prophet ﷺ sagte: „Erleichtert und erschwert nicht, verkündet frohe Botschaft und schreckt nicht ab“ (al-Bukhari und Muslim). In diesem Geist laden wir Sie ein: Fangen Sie heute an – mit einem Vers.`,
     faq: [
-      { q: "Kann man den Islam in den Emiraten gut leben?", a: "Ja, in vieler Hinsicht. Der Adhan ruft fünfmal am Tag, es gibt Gebetsräume in Einkaufszentren, Büros und Flughäfen, halal ist beim Essen die Regel, und die islamischen Feste sind gesetzliche Feiertage. Das eigene Bemühen nimmt dir aber kein Ort ab: Für das Fajr musst du trotzdem aufstehen, und das Herz braucht überall Pflege." },
+      { q: "Kann man den Islam in den Emiraten gut leben?", a: "Ja, in vieler Hinsicht. Der Adhan ruft fünfmal am Tag, es gibt Gebetsräume in Einkaufszentren, Büros und Flughäfen, halal ist beim Essen die Regel, und die islamischen Feste sind gesetzliche Feiertage. Das eigene Bemühen nimmt Ihnen aber kein Ort ab: Für das Fajr müssen Sie trotzdem aufstehen, und das Herz braucht überall Pflege." },
       { q: "Müssen Nicht-Muslime im Ramadan fasten?", a: "Nein. Das Fasten ist eine Pflicht für erwachsene, gesunde Muslime. Nicht-Muslime sind beim Iftar herzlich willkommen; es ist eine freundliche Geste, tagsüber in der Öffentlichkeit nicht demonstrativ zu essen, zu trinken oder zu rauchen." },
       { q: "Ist in den Emiraten alles Essen halal?", a: "Halal ist die Regel: Fleisch in Restaurants und Supermärkten ist normalerweise halal, und ein nationaler Halal-Standard regelt die Zertifizierung. In manchen Supermärkten gibt es eine eigene, deutlich gekennzeichnete Abteilung für Nicht-Muslime, und Alkohol wird in lizenzierten Lokalen ausgeschenkt. Wer unsicher ist, achtet auf die Kennzeichnung und fragt nach." },
-      { q: "Wie passen Islam und Moderne zusammen?", a: "Der Koran lädt dazu ein, über die Schöpfung nachzudenken (Koran 3:190–191), und lehrt das Bittgebet „Mein Herr, lasse mich an Wissen zunehmen“ (Koran 20:114). In den Emiraten siehst du das: eine Sonde am Mars, ein Museum der Zukunft mit arabischer Kalligrafie auf der Fassade – und über allem der Adhan. Wissen und Glaube gehören zusammen." },
+      { q: "Wie passen Islam und Moderne zusammen?", a: "Der Koran lädt dazu ein, über die Schöpfung nachzudenken (Koran 3:190–191), und lehrt das Bittgebet „Mein Herr, lasse mich an Wissen zunehmen“ (Koran 20:114). In den Emiraten sehen Sie das: eine Sonde am Mars, ein Museum der Zukunft mit arabischer Kalligrafie auf der Fassade – und über allem der Adhan. Wissen und Glaube gehören zusammen." },
       { q: "Welche islamischen Feiertage sind in den Emiraten frei?", a: "Eid al-Fitr, der Tag von Arafat, Eid al-Adha, das islamische Neujahr und der Geburtstag des Propheten ﷺ. Die Daten richten sich nach dem islamischen Mondkalender und werden jedes Jahr offiziell bekannt gegeben." },
-      { q: "Wo bekomme ich verlässliche Antworten auf religiöse Fragen?", a: "Bei den offiziellen Fatwa-Diensten der Behörden für islamische Angelegenheiten, beim Imam deiner Moschee und bei qualifizierten Gelehrten deiner Rechtsschule. Seit 2017 ordnet der UAE Council for Fatwa die Fatwa-Arbeit im Land. Diese Seiten geben einen Überblick, keine Rechtsgutachten." },
+      { q: "Wo bekomme ich verlässliche Antworten auf religiöse Fragen?", a: "Bei den offiziellen Fatwa-Diensten der Behörden für islamische Angelegenheiten, beim Imam Ihrer Moschee und bei qualifizierten Gelehrten Ihrer Rechtsschule. Seit 2017 ordnet der UAE Council for Fatwa die Fatwa-Arbeit im Land. Diese Seiten geben einen Überblick, keine Rechtsgutachten." },
     ],
     sources: [
       "Koran 2:143, 2:168, 2:185, 2:256, 2:275, 3:190–191, 7:31, 13:11, 20:114, 29:69, 49:13, 60:8, 88:17–20",

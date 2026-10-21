@@ -6,33 +6,33 @@ export const reciterPath: IslamDoc = {
   de: {
     title: "Der Weg zum Rezitator – von den ersten Buchstaben bis zur Idschaza",
     kicker: "Lernweg",
-    lead: "Niemand wird als Qari' geboren. Jeder große Rezitator hat einmal mit Alif, Ba, Ta begonnen – mit einem Lehrer, viel Geduld und einer Absicht, die er immer wieder erneuert hat. Dieses Kapitel zeigt dir den Weg in neun Stufen, so wie eine gute Koranschule ihn aufbaut: mit Ziel, ehrlicher Zeitspanne, Tagesroutine, Prüfstein und den typischen Stolpersteinen jeder Stufe.",
+    lead: "Niemand wird als Qari' geboren. Jeder große Rezitator hat einmal mit Alif, Ba, Ta begonnen – mit einem Lehrer, viel Geduld und einer Absicht, die er immer wieder erneuert hat. Dieses Kapitel zeigt Ihnen den Weg in neun Stufen, so wie eine gute Koranschule ihn aufbaut: mit Ziel, ehrlicher Zeitspanne, Tagesroutine, Prüfstein und den typischen Stolpersteinen jeder Stufe.",
     facts: [
       { n: "9", l: "Stufen vom Alphabet bis zum Lehren" },
       { n: "28", l: "Buchstaben des arabischen Alphabets" },
       { n: "604", l: "Seiten im verbreiteten Medina-Mushaf" },
       { n: "1", l: "Lückenlose Kette (Sanad) bis zum Propheten ﷺ" },
     ],
-    body: `## Bevor du losgehst
+    body: `## Bevor Sie losgehen
 
 Allah sagt: „Und Wir haben den Koran ja leicht zum Bedenken gemacht. Gibt es also jemanden, der bedenkt?“ (Koran 54:17). Der Weg zum Rezitator ist lang, aber er ist gangbar – für Kinder und Erwachsene, für Araber und Nichtaraber. Der Prophet ﷺ sagte: „Wer im Koran geübt ist, ist bei den edlen, gehorsamen Schreibern (den Engeln). Und wer den Koran liest und dabei stockt, weil es ihm schwerfällt, erhält doppelten Lohn“ (al-Bukhari und Muslim). Das heißt: Schon der Anfang wird belohnt.
 
-Die Zeitangaben unten sind ehrliche Spannen. Sie hängen davon ab, wie viel Zeit du täglich hast, ob du einen Lehrer hast, wie alt du bist und welche Begabung Allah dir gegeben hat. Vergleiche dich nicht mit anderen – vergleiche dich mit dir von gestern.
+Die Zeitangaben unten sind ehrliche Spannen. Sie hängen davon ab, wie viel Zeit Sie täglich haben, ob Sie einen Lehrer haben, wie alt Sie sind und welche Begabung Allah Ihnen gegeben hat. Vergleichen Sie sich nicht mit anderen – vergleichen Sie sich mit Ihnen von gestern.
 
 ## Stufe 1: Die Buchstaben lesen
 
 - **Ziel**: alle 28 Buchstaben in ihren Formen (allein, am Anfang, in der Mitte, am Ende) erkennen und aus dem richtigen Artikulationsort aussprechen.
 - **Dauer**: etwa zwei bis acht Wochen, je nach Zeit und Vorkenntnissen.
-- **Tagesroutine**: 15–20 Minuten: einige neue Buchstaben, hören, nachsprechen, schreiben; dazu die bisherigen wiederholen. Unser [Arabisch-Kurs](/arabic) führt dich Schritt für Schritt.
-- **Prüfstein**: Du liest eine Zufallsreihe von Buchstaben ohne Zögern und unterscheidest ähnliche Laute wie ح und ه, ع und ء, س und ص.
+- **Tagesroutine**: 15–20 Minuten: einige neue Buchstaben, hören, nachsprechen, schreiben; dazu die bisherigen wiederholen. Unser [Arabisch-Kurs](/arabic) führt Sie Schritt für Schritt.
+- **Prüfstein**: Sie lesen eine Zufallsreihe von Buchstaben ohne Zögern und unterscheiden ähnliche Laute wie ح und ه, ع und ء, س und ص.
 - **Typische Fehler**: zu schnell weitergehen; schwierige Laute durch ähnliche aus der eigenen Sprache ersetzen; nur lesen, aber nie laut sprechen.
 
 ## Stufe 2: Flüssig lesen mit Harakat
 
 - **Ziel**: Wörter und ganze Verse mit Vokalzeichen (Fatha, Kasra, Damma), Sukun, Schadda und Tanwin flüssig lesen.
 - **Dauer**: etwa ein bis sechs Monate.
-- **Tagesroutine**: 20–30 Minuten: kurze Leseübungen, dann eine Seite aus dem Mushaf langsam lesen, während du eine Rezitation mithörst.
-- **Prüfstein**: Du liest eine unbekannte Seite des Mushafs langsam, aber ohne Buchstabieren, mit wenigen Fehlern.
+- **Tagesroutine**: 20–30 Minuten: kurze Leseübungen, dann eine Seite aus dem Mushaf langsam lesen, während Sie eine Rezitation mithören.
+- **Prüfstein**: Sie lesen eine unbekannte Seite des Mushafs langsam, aber ohne Buchstabieren, mit wenigen Fehlern.
 - **Typische Fehler**: lange und kurze Vokale verwechseln; Schadda überlesen; vom Hören abhängig werden, statt selbst zu lesen.
 
 ## Stufe 3: Grundlagen des Tadschwid
@@ -40,7 +40,7 @@ Die Zeitangaben unten sind ehrliche Spannen. Sie hängen davon ab, wie viel Zeit
 - **Ziel**: die wichtigsten Regeln kennen und anwenden: Nun sakina und Tanwin (Izhar, Idgham, Iqlab, Ikhfa'), Mim sakina, Ghunna, Qalqala, die Arten des Madd und die Grundlagen von Waqf.
 - **Dauer**: etwa zwei bis sechs Monate für die Grundlagen.
 - **Tagesroutine**: eine Regel lernen, Beispiele im Mushaf suchen, eine kurze Sure mit Blick auf diese Regel rezitieren. Unser [Tadschwid-Kurs](/tajweed) ist genau dafür gemacht.
-- **Prüfstein**: Du rezitierst al-Fatiha und einige kurze Suren vor einem Lehrer ohne klare Fehler (*Lahn dschali*), also ohne Fehler, die Buchstaben, Vokale oder Bedeutung verändern.
+- **Prüfstein**: Sie rezitieren al-Fatiha und einige kurze Suren vor einem Lehrer ohne klare Fehler (*Lahn dschali*), also ohne Fehler, die Buchstaben, Vokale oder Bedeutung verändern.
 - **Typische Fehler**: Regeln auswendig kennen, aber nicht hören; Tadschwid nur aus Büchern lernen, ohne Lehrer; übertriebene Ghunna und Längen.
 
 ## Stufe 4: Kurze Suren mit der Shams-Methode
@@ -48,7 +48,7 @@ Die Zeitangaben unten sind ehrliche Spannen. Sie hängen davon ab, wie viel Zeit
 - **Ziel**: die kurzen Suren am Ende des Korans sicher und mit Tadschwid auswendig können.
 - **Dauer**: etwa ein bis drei Monate.
 - **Tagesroutine**: mit der [Shams-Methode](/shams) einen kleinen Abschnitt: hören, mitlesen, Vers für Vers wiederholen, Verse verbinden, aus dem Gedächtnis rezitieren. Dann die Suren der Vortage im Gebet rezitieren.
-- **Prüfstein**: Du rezitierst die Suren von an-Nas rückwärts bis zu einem vereinbarten Punkt ohne Mushaf, und jemand kann dich an beliebiger Stelle unterbrechen und neu ansetzen lassen.
+- **Prüfstein**: Sie rezitieren die Suren von an-Nas rückwärts bis zu einem vereinbarten Punkt ohne Mushaf, und jemand kannen Sie sich an beliebiger Stelle unterbrechen und neu ansetzen lassen.
 - **Typische Fehler**: neue Suren lernen und alte vergessen; nur leise im Kopf wiederholen; die Bedeutung ganz auslassen.
 
 ## Stufe 5: Dschuz' 'Amma und Dschuz' Tabarak
@@ -56,7 +56,7 @@ Die Zeitangaben unten sind ehrliche Spannen. Sie hängen davon ab, wie viel Zeit
 - **Ziel**: den 30. Teil (*'Amma*) und den 29. Teil (*Tabarak*) fest auswendig können.
 - **Dauer**: etwa vier bis zwölf Monate für beide Teile.
 - **Tagesroutine**: täglich eine kleine neue Portion (zum Beispiel fünf bis zehn Verse), dazu Wiederholung der letzten Tage und eine Runde älteren Stoffs.
-- **Prüfstein**: Du rezitierst jeden der beiden Teile in einer Sitzung vor deinem Lehrer mit nur wenigen kleinen Fehlern.
+- **Prüfstein**: Sie rezitieren jeden der beiden Teile in einer Sitzung vor Ihrem Lehrer mit nur wenigen kleinen Fehlern.
 - **Typische Fehler**: das Tempo zu schnell steigern; die Wiederholung vernachlässigen, sobald es „gut läuft“; die ähnlichen Versanfänge in Tabarak nicht gezielt üben.
 
 ## Stufe 6: Der ganze Koran – Hifz mit System
@@ -67,29 +67,29 @@ Die Zeitangaben unten sind ehrliche Spannen. Sie hängen davon ab, wie viel Zeit
   - **Neues** (*Sabaq*): eine feste Menge, etwa ein paar Zeilen bis eine Seite.
   - **Nahes** (*Sabqi*): die Portionen der letzten Tage.
   - **Altes** (*Manzil*): eine feste Menge älteren Stoffs, sodass alles regelmäßig wiederkommt.
-- **Hilfen**: Der [365-Tage-Plan](/plan) gibt dir einen festen Rhythmus, und auf der [Hifz-Karte](/map) siehst du, welche Teile sitzen und welche Wiederholung brauchen.
-- **Prüfstein**: Dein Lehrer prüft dich aus allen 30 Teilen mit zufälligen Fragen, und du setzt jeweils sicher fort.
+- **Hilfen**: Der [365-Tage-Plan](/plan) gibt Ihnen einen festen Rhythmus, und auf der [Hifz-Karte](/map) sehen Sie, welche Teile sitzen und welche Wiederholung brauchen.
+- **Prüfstein**: Ihr Lehrer prüft Sie aus allen 30 Teilen mit zufälligen Fragen, und Sie setzt jeweils sicher fort.
 - **Typische Fehler**: zu viel Neues, zu wenig Wiederholung. Der Prophet ﷺ sagte: „Bleibt beständig beim Koran. Bei Dem, in Dessen Hand meine Seele ist, er entgleitet schneller als Kamele aus ihren Fesseln“ (al-Bukhari und Muslim). Viele Lehrer sagen: Wer den Koran lernt, muss mehr Zeit mit Wiederholen verbringen als mit Neuem.
 
 ## Stufe 7: Tadschwid in der Tiefe und die Maqamat
 
 - **Ziel**: den Tadschwid nicht nur kennen, sondern beherrschen: Sifat der Buchstaben, Tafkhim und Tarqiq, feine Fehler (*Lahn khafi*), Waqf und Ibtida' nach der Bedeutung, gleichmäßige Längen. Viele lernen hier ein klassisches Lehrgedicht wie die *Dschazariyya* von Ibn al-Dschazari.
 - **Dauer**: etwa ein bis drei Jahre, oft parallel zu Stufe 6.
-- **Tagesroutine**: Rezitation vor dem Lehrer, Aufnahmen von dir selbst, Hören großer Rezitatoren, Studium der Regeln mit Begründung.
-- **Prüfstein**: Dein Lehrer hört keine klaren Fehler mehr und nur noch selten feine.
+- **Tagesroutine**: Rezitation vor dem Lehrer, Aufnahmen von Ihnen selbst, Hören großer Rezitatoren, Studium der Regeln mit Begründung.
+- **Prüfstein**: Ihr Lehrer hört keine klaren Fehler mehr und nur noch selten feine.
 - **Typische Fehler**: Melodie vor Regel stellen; einen Rezitator imitieren, ohne seine Präzision zu übernehmen.
 
 ### Die Maqamat – neutral erklärt
 
 *Maqamat* (Singular *Maqam*) sind melodische Modi, nach denen viele Rezitatoren ihre Stimme führen, zum Beispiel Bayati, Saba, Hidschaz, Nahawand, Rast, Sika oder 'Adscham. Sie gehören zur Stimmkunst, nicht zum Tadschwid. Der Prophet ﷺ sagte: „Schmückt den Koran mit euren Stimmen“ (Abu Dawud, an-Nasa'i und Ibn Madscha). Und über Abu Musa al-Asch'ari sagte er, ihm sei „eine der Flöten der Familie Dawuds“ gegeben worden, also eine wunderschöne Stimme (al-Bukhari und Muslim).
 
-Zugleich gilt: Die Bedeutung und der korrekte Tadschwid stehen immer an erster Stelle. Keine Melodie darf einen Madd verlängern oder verkürzen, einen Buchstaben verändern oder die Würde des Vortrags verletzen. Unter Gelehrten gibt es verschiedene Ansichten darüber, wie weit man sich bewusst mit melodischen Modi beschäftigen sollte: Manche empfehlen es als Hilfe für einen schönen, ruhigen Vortrag, andere raten zur Zurückhaltung, damit die Rezitation nicht zur Darbietung wird. Beide Seiten sind sich einig, dass eine natürliche, schöne Stimme ohne Verstoß gegen die Regeln gut ist. Folge hier deinem Lehrer.
+Zugleich gilt: Die Bedeutung und der korrekte Tadschwid stehen immer an erster Stelle. Keine Melodie darf einen Madd verlängern oder verkürzen, einen Buchstaben verändern oder die Würde des Vortrags verletzen. Unter Gelehrten gibt es verschiedene Ansichten darüber, wie weit man sich bewusst mit melodischen Modi beschäftigen sollte: Manche empfehlen es als Hilfe für einen schönen, ruhigen Vortrag, andere raten zur Zurückhaltung, damit die Rezitation nicht zur Darbietung wird. Beide Seiten sind sich einig, dass eine natürliche, schöne Stimme ohne Verstoß gegen die Regeln gut ist. Folgen Sie hier Ihrem Lehrer.
 
 ## Stufe 8: Vor einem Scheich rezitieren – die Idschaza
 
 - **Ziel**: den ganzen Koran vor einem anerkannten Lehrer (*Scheich* oder *Muqri'*) rezitieren und eine **Idschaza** erhalten.
-- **Was ist eine Idschaza?** Eine Erlaubnis, in der ein Lehrer bezeugt, dass du den Koran vollständig und korrekt vor ihm rezitiert hast, und dir erlaubt, ihn so weiterzugeben. Sie enthält einen **Sanad**: die Kette von Lehrern, von deinem Lehrer über dessen Lehrer und so weiter bis zum Propheten ﷺ. Für die Lesart Hafs 'an 'Asim führt die Kette unter anderem über Hafs, seinen Lehrer 'Asim, Abu 'Abd ar-Rahman as-Sulami und Gefährten wie 'Uthman, 'Ali, Ibn Mas'ud, Ubayy ibn Ka'b und Zaid ibn Thabit zum Propheten ﷺ – und der Prophet ﷺ empfing ihn von Dschibril.
-- **Wie es abläuft**: Meist rezitierst du über Wochen oder Monate hinweg den ganzen Koran, oft aus dem Gedächtnis, in festen Sitzungen. Der Lehrer korrigiert jeden Fehler. Die Bedingungen unterscheiden sich von Lehrer zu Lehrer: manche geben die Idschaza für eine Lesart, andere für mehrere.
+- **Was ist eine Idschaza?** Eine Erlaubnis, in der ein Lehrer bezeugt, dass Sie den Koran vollständig und korrekt vor ihm rezitiert haben, und Ihnen erlaubt, ihn so weiterzugeben. Sie enthält einen **Sanad**: die Kette von Lehrern, von Ihrem Lehrer über dessen Lehrer und so weiter bis zum Propheten ﷺ. Für die Lesart Hafs 'an 'Asim führt die Kette unter anderem über Hafs, seinen Lehrer 'Asim, Abu 'Abd ar-Rahman as-Sulami und Gefährten wie 'Uthman, 'Ali, Ibn Mas'ud, Ubayy ibn Ka'b und Zaid ibn Thabit zum Propheten ﷺ – und der Prophet ﷺ empfing ihn von Dschibril.
+- **Wie es abläuft**: Meist rezitieren Sie über Wochen oder Monate hinweg den ganzen Koran, oft aus dem Gedächtnis, in festen Sitzungen. Der Lehrer korrigiert jeden Fehler. Die Bedingungen unterscheiden sich von Lehrer zu Lehrer: manche geben die Idschaza für eine Lesart, andere für mehrere.
 - **Warum es wichtig ist**: Der Koran wurde nie nur über Bücher weitergegeben, sondern von Mund zu Ohr. Selbst der Prophet ﷺ rezitierte den Koran jedes Jahr im Ramadan vor Dschibril (al-Bukhari), und er bat Ibn Mas'ud: „Rezitiere mir vor“, worauf dieser aus Sura an-Nisa' las (al-Bukhari und Muslim). Die Idschaza hält diese lebendige Kette.
 - **Dauer**: die Rezitation selbst oft einige Monate; die Vorbereitung darauf sind die Stufen davor.
 - **Prüfstein**: die Idschaza in der Hand – und das Bewusstsein, dass sie ein Anfang ist, kein Ende.
@@ -100,40 +100,40 @@ Zugleich gilt: Die Bedeutung und der korrekte Tadschwid stehen immer an erster S
 - **Ziel**: das Empfangene weitergeben – zuerst Kindern oder Anfängern, später auch Fortgeschrittenen.
 - **Dauer**: ein Leben lang.
 - **Tagesroutine**: eigene Wiederholung nie aufgeben; Unterricht vorbereiten; geduldig zuhören.
-- **Prüfstein**: Deine Schüler lesen korrekt und lieben den Koran.
+- **Prüfstein**: Ihre Schüler lesen korrekt und lieben den Koran.
 - **Typische Fehler**: Ungeduld mit Anfängern; Strenge ohne Wärme; eigene Wiederholung vernachlässigen, weil man „nur noch lehrt“.
 
 Der Prophet ﷺ sagte: „Der Beste von euch ist, wer den Koran lernt und ihn lehrt“ (al-Bukhari).
 
 ## Einen guten Lehrer finden
 
-Auf fast jeder Stufe ist ein Lehrer der wichtigste Schritt nach vorn. Achte bei der Wahl weniger auf Bekanntheit als auf Sorgfalt: Hört er dir wirklich zu? Korrigiert er auch kleine Fehler, geduldig und ohne Bloßstellen? Hat er selbst bei einem Lehrer gelernt, und rezitiert er sauber? In den Emiraten bieten Moscheen und Koranzentren in jeder Stadt Unterricht an, oft für Kinder und Erwachsene, für Männer und Frauen getrennt. Auch Online-Unterricht kann gut funktionieren, wenn der Lehrer dich live hört. Zwischen den Stunden übst du mit dieser Plattform – im Unterricht lässt du dich prüfen.
+Auf fast jeder Stufe ist ein Lehrer der wichtigste Schritt nach vorn. Achten Sie bei der Wahl weniger auf Bekanntheit als auf Sorgfalt: Hört er Ihnen wirklich zu? Korrigiert er auch kleine Fehler, geduldig und ohne Bloßstellen? Hat er selbst bei einem Lehrer gelernt, und rezitiert er sauber? In den Emiraten bieten Moscheen und Koranzentren in jeder Stadt Unterricht an, oft für Kinder und Erwachsene, für Männer und Frauen getrennt. Auch Online-Unterricht kann gut funktionieren, wenn der Lehreren Sie sich live hört. Zwischen den Stunden üben Sie mit dieser Plattform – im Unterricht lassen Sie sich prüfen.
 
 ## Vorbilder
 
-Höre die großen Rezitatoren, um dein Ohr zu schulen: **Mahmud Khalil al-Husari**, dessen klare, lehrende Rezitation vielen Generationen als Maßstab für Tadschwid diente; **Muhammad Siddiq al-Minschawi** mit seiner tiefen, ergreifenden Stimme; **'Abd al-Basit 'Abd as-Samad**, weltbekannt für seinen Atem und seine Tilawa; und **Mischari Raschid al-'Afasi**, dessen ruhige Rezitation viele Lernende begleitet, oder **'Abd ar-Rahman as-Sudais**, Imam der Heiligen Moschee in Mekka. Viele von ihnen findest du bei unseren [Rezitatoren](/reciters). Lerne von jedem etwas – aber werde du selbst.
+Hören Sie die großen Rezitatoren, um Ihr Ohr zu schulen: **Mahmud Khalil al-Husari**, dessen klare, lehrende Rezitation vielen Generationen als Maßstab für Tadschwid diente; **Muhammad Siddiq al-Minschawi** mit seiner tiefen, ergreifenden Stimme; **'Abd al-Basit 'Abd as-Samad**, weltbekannt für seinen Atem und seine Tilawa; und **Mischari Raschid al-'Afasi**, dessen ruhige Rezitation viele Lernende begleitet, oder **'Abd ar-Rahman as-Sudais**, Imam der Heiligen Moschee in Mekka. Viele von ihnen finden Sie bei unseren [Rezitatoren](/reciters). Lernen Sie von jedem etwas – aber werde Sie selbst.
 
-## Was dich ein Leben lang begleitet
+## Was Sie ein Leben lang begleitet
 
 ### Ikhlas – Aufrichtigkeit
 
-Der Prophet ﷺ berichtete von einem Mann, der am Tag der Auferstehung gefragt wird, was er mit seinem Wissen getan hat. Er sagt, er habe den Koran gelernt und gelehrt – und es wird ihm gesagt, dass er es tat, damit man ihn einen Qari' nennt (Muslim). Diese Überlieferung soll uns nicht entmutigen, sondern wach halten. Frage dich immer wieder: Für wen rezitiere ich? Allah sagt: „Und ihnen wurde nur befohlen, Allah zu dienen und dabei Ihm gegenüber aufrichtig in der Religion zu sein“ (Koran 98:5).
+Der Prophet ﷺ berichtete von einem Mann, der am Tag der Auferstehung gefragt wird, was er mit seinem Wissen getan hat. Er sagt, er habe den Koran gelernt und gelehrt – und es wird ihm gesagt, dass er es tat, damit man ihn einen Qari' nennt (Muslim). Diese Überlieferung soll uns nicht entmutigen, sondern wach halten. Fragen Sie sich immer wieder: Für wen rezitiere ich? Allah sagt: „Und ihnen wurde nur befohlen, Allah zu dienen und dabei Ihm gegenüber aufrichtig in der Religion zu sein“ (Koran 98:5).
 
 ### Adab mit dem Koran
 
-Rezitiere in Reinheit, wenn du den Mushaf berührst, beginne mit der Zuflucht bei Allah, setz dich würdevoll, rezitiere ohne Hast. Allah sagt: „Und trage den Koran langsam und deutlich vor“ (Koran 73:4). Respektiere deine Lehrer, und sei bescheiden gegenüber denen, die weniger wissen.
+Rezitieren Sie in Reinheit, wenn Sie den Mushaf berühren, beginnen Sie mit der Zuflucht bei Allah, setzen Sie sich würdevoll, rezitieren Sie ohne Haben. Allah sagt: „Und trage den Koran langsam und deutlich vor“ (Koran 73:4). Respektieren Sie Ihre Lehrer, und sei bescheiden gegenüber denen, die weniger wissen.
 
 ### Danach handeln
 
 Der Koran ist nicht nur zum Vortragen da, sondern zum Leben. Allah lobt „diejenigen, die das Buch Allahs verlesen, das Gebet verrichten und von dem, womit Wir sie versorgt haben, heimlich und offen ausgeben“, die auf einen Handel hoffen, der nicht zugrunde geht, „damit Er ihnen ihren Lohn in vollem Maß zukommen lässt und ihnen von Seiner Huld noch mehr gibt“ (Koran 35:29–30). Ein Rezitator, dessen Charakter dem Koran gleicht, ist die schönste Rezitation.
 
-Möge Allah dich zu den Leuten des Korans machen.`,
+Möge Allah Sie zu den Leuten des Korans machen.`,
     faq: [
       { q: "Wie lange dauert es, den ganzen Koran auswendig zu lernen?", a: "Das ist sehr unterschiedlich: Vollzeitschüler schaffen es manchmal in ein bis drei Jahren, wer nebenbei lernt, braucht oft deutlich länger. Entscheidend ist die Beständigkeit und eine gute Wiederholung." },
-      { q: "Kann ich ohne Lehrer Rezitator werden?", a: "Lesen, Grundlagen und vieles Hören kannst du mit Hilfsmitteln wie dieser Plattform lernen. Für einen sauberen Tadschwid und erst recht für eine Idschaza brauchst du aber einen Lehrer, der dich hört und korrigiert." },
-      { q: "Was ist eine Idschaza?", a: "Eine Bestätigung eines anerkannten Lehrers, dass du den Koran vollständig und korrekt vor ihm rezitiert hast, mit einer Kette von Lehrern (Sanad), die bis zum Propheten ﷺ zurückreicht." },
+      { q: "Kann ich ohne Lehrer Rezitator werden?", a: "Lesen, Grundlagen und vieles Hören können Sie mit Hilfsmitteln wie dieser Plattform lernen. Für einen sauberen Tadschwid und erst recht für eine Idschaza brauchen Sie aber einen Lehrer, der Sie hört und korrigiert." },
+      { q: "Was ist eine Idschaza?", a: "Eine Bestätigung eines anerkannten Lehrers, dass Sie den Koran vollständig und korrekt vor ihm rezitiert haben, mit einer Kette von Lehrern (Sanad), die bis zum Propheten ﷺ zurückreicht." },
       { q: "Muss ich Maqamat lernen?", a: "Nein. Maqamat gehören zur Stimmkunst, nicht zum Tadschwid. Gelehrte haben unterschiedliche Ansichten darüber, wie sehr man sich damit beschäftigen sollte. Bedeutung und korrekte Regeln kommen immer zuerst." },
-      { q: "Bin ich als Erwachsener zu alt für den Hifz?", a: "Nein. Viele Gefährten lernten den Koran als Erwachsene. Es geht vielleicht langsamer als bei Kindern, aber mit Verständnis und Beständigkeit kommst du weit – und schon die Mühe wird belohnt." },
+      { q: "Bin ich als Erwachsener zu alt für den Hifz?", a: "Nein. Viele Gefährten lernten den Koran als Erwachsene. Es geht vielleicht langsamer als bei Kindern, aber mit Verständnis und Beständigkeit kommen Sie weit – und schon die Mühe wird belohnt." },
     ],
     sources: [
       "Koran 35:29–30, 54:17, 73:4, 98:5",
@@ -214,7 +214,7 @@ The time ranges below are honest estimates. They depend on how much time you hav
 
 ## Stage 7: Tajweed in depth and the maqamat
 
-- **Goal**: not just know tajweed but master it: the characteristics of the letters, tafkhim and tarqiq, subtle errors (*lahn khafi*), waqf and ibtida' according to meaning, consistent lengths. Many study a classical teaching poem at this stage, such as the *Jazariyyah* of Ibn al-Jazari.
+- **Goal**: not just know tajweed but master it: the characteristics of the letters, tafkhim and tarqiq, subtle errors (*lahn khafi*), waqf and ibtida' according to meaning, consistent lengths. Many study a classical teaching poem at this stage, suchen Sie as the *Jazariyyah* of Ibn al-Jazari.
 - **Duration**: roughly one to three years, often alongside stage 6.
 - **Daily routine**: recitation to your teacher, recordings of yourself, listening to great reciters, studying the rules with their reasons.
 - **Checkpoint**: your teacher no longer hears clear mistakes and only rarely subtle ones.

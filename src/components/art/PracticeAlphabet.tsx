@@ -5,7 +5,7 @@ import { LETTERS, arName, forms, type Lang, type Letter } from "@/lib/arabic";
 import { starPath } from "./PracticeArt";
 
 const T: Record<Lang, { tap: string; hear: string; joins: string; alone: string; formsLbl: string }> = {
-  de: { tap: "Tippe auf einen Buchstaben", hear: "Anhören", joins: "verbindet sich nach beiden Seiten", alone: "verbindet sich nur nach rechts", formsLbl: "Anfang · Mitte · Ende" },
+  de: { tap: "Tippen Sie auf einen Buchstaben", hear: "Anhören", joins: "verbindet sich nach beiden Seiten", alone: "verbindet sich nur nach rechts", formsLbl: "Anfang · Mitte · Ende" },
   en: { tap: "Tap a letter", hear: "Listen", joins: "joins on both sides", alone: "joins only to the right", formsLbl: "Start · middle · end" },
   ar: { tap: "اضغط على حرفٍ لتتعرّف عليه", hear: "استمع", joins: "يتصل بما قبله وبما بعده", alone: "يتصل بما قبله فقط", formsLbl: "أول · وسط · آخر" },
   tr: {
