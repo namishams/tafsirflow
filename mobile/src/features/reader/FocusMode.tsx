@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AccessibilityInfo, Animated, Modal, PanResponder, Pressable, ScrollView, Text, View, useWindowDimensions } from "react-native";
+import { AccessibilityInfo, Animated, Modal, type ScrollViewInstance, PanResponder, Pressable, ScrollView, Text, View, useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, useTheme } from "@/lib/theme";
@@ -64,10 +64,22 @@ export function FocusMode({ open, onClose, chapter, verse, total, activeWord, ti
   };
   const stepRef = useRef(step);
   stepRef.current = step;
+  // swipe up = next verse, swipe down = previous verse
+  const verseRef = useRef({ next: onNext, prev: onPrev });
+  verseRef.current = { next: onNext, prev: onPrev };
+
+  // word-by-word grid: remember each chip's row and keep the active one in view
+  const gridRef = useRef<ScrollViewInstance>(null);
+  const chipY = useRef<number[]>([]);
+  const gridH = useRef(0);
+  useEffect(() => { chipY.current = []; gridRef.current?.scrollTo({ y: 0, animated: false }); }, [verse.verse_key]);
   // swipe: in Arabic the next word lies to the left, so the words move to the right (like turning a mushaf page)
   const pan = useMemo(() => PanResponder.create({
-    onMoveShouldSetPanResponderCapture: (_, g) => Math.abs(g.dx) > 18 && Math.abs(g.dx) > Math.abs(g.dy),
-    onPanResponderRelease: (_, g) => { if (Math.abs(g.dx) > 40) stepRef.current(g.dx > 0 ? 1 : -1); },
+    onMoveShouldSetPanResponderCapture: (_, g) => Math.max(Math.abs(g.dx), Math.abs(g.dy)) > 18,
+    onPanResponderRelease: (_, g) => {
+      if (Math.abs(g.dx) >= Math.abs(g.dy)) { if (Math.abs(g.dx) > 40) stepRef.current(g.dx > 0 ? 1 : -1); }
+      else if (Math.abs(g.dy) > 50) (g.dy < 0 ? verseRef.current.next : verseRef.current.prev)();
+    },
   }), []);
 
   // a calm fade when the word changes (none with Reduce Motion)
@@ -82,6 +94,12 @@ export function FocusMode({ open, onClose, chapter, verse, total, activeWord, ti
 
   const big = Math.min(120, Math.max(72, Math.round(Math.min(width, 700) * 0.26)));
   const maxW = Math.min(width - 32, 820);
+  useEffect(() => {
+    const y = chipY.current[wi];
+    if (y == null) return;
+    gridRef.current?.scrollTo({ y: Math.max(0, y - gridH.current / 3), animated: !reduce });
+  }, [wi, reduce]);
+  const progress = total > 0 ? verse.verse_number / total : 0;
   const nextRepeat = REPEATS[(REPEATS.indexOf(repeat) + 1) % REPEATS.length] ?? 1;
   const meaning = !arabicUi && word && !hiddenNow ? word.translation?.text : undefined;
   const translit = !arabicUi && word && !hiddenNow ? word.transliteration?.text : undefined;
@@ -106,8 +124,15 @@ export function FocusMode({ open, onClose, chapter, verse, total, activeWord, ti
           )}
         </View>
 
-        {/* top half: the verse */}
-        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 12, alignItems: "center" }}>
+        {/* surah progress */}
+        <View accessible accessibilityRole="progressbar" accessibilityLabel={r("verseProgress", { n: verse.verse_number, total })}
+          accessibilityValue={{ min: 0, max: total, now: verse.verse_number }}
+          style={{ height: 3, marginHorizontal: 16, borderRadius: 2, backgroundColor: t.line, overflow: "hidden", flexDirection: "row", direction: "rtl" }}>
+          <View style={{ width: `${Math.round(progress * 1000) / 10}%`, backgroundColor: "rgb(201,166,94)" }} />
+        </View>
+
+        {/* top: the verse */}
+        <ScrollView style={{ flexGrow: 0, maxHeight: height * 0.3 }} contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 12, alignItems: "center" }}>
           <View style={{ width: maxW }}>
             <VerseWords verse={verse} activeWord={word?.position ?? null} hide={hide} revealed={revealed} seed={seed} shown={new Set([...shown, ...heard])} testPos={testPos} reduce={reduce}
               size={height < 700 ? 26 : 30}
@@ -119,8 +144,40 @@ export function FocusMode({ open, onClose, chapter, verse, total, activeWord, ti
           </View>
         </ScrollView>
 
-        {/* bottom half: the magnifier */}
-        <View style={{ flex: 1, borderTopWidth: 1, borderTopColor: "rgba(201,166,94,0.35)", backgroundColor: t.surface, alignItems: "center" }}>
+        {/* middle: word by word */}
+        <View style={{ flex: 1, alignItems: "center" }}>
+          <Text maxFontSizeMultiplier={1} style={{ width: maxW, fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.6, textTransform: "uppercase", color: t.muted, marginBottom: 6 }}>{r("wordGrid")}</Text>
+          <ScrollView ref={gridRef} style={{ alignSelf: "stretch" }} onLayout={(e) => { gridH.current = e.nativeEvent.layout.height; }}
+            contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 12, alignItems: "center" }}>
+            <View style={{ width: maxW, flexDirection: "row", flexWrap: "wrap", direction: "rtl", gap: 8 }}>
+              {words.map((x, i) => {
+                const active = i === wi;
+                const c: Cover = coverOf(hide, verse.verse_key, seed, i, words.length, { revealed, shown, testPos });
+                const hid = c !== "none" && !heard.has(i);
+                const tr = !arabicUi && !hid ? x.transliteration?.text : undefined;
+                const mn = !arabicUi && !hid ? x.translation?.text : undefined;
+                return (
+                  <Pressable key={x.position} onLayout={(e) => { chipY.current[i] = e.nativeEvent.layout.y; }}
+                    onPress={() => setCursor(i)} accessibilityRole="button" accessibilityState={{ selected: active }}
+                    accessibilityLabel={hid ? r("coveredWord") : x.text_uthmani} accessibilityLanguage={hid ? undefined : "ar"}
+                    accessibilityValue={{ text: `${r("wordOf", { n: i + 1, total: words.length })}${mn ? `, ${mn}` : ""}` }} accessibilityHint={r("chipHint")}
+                    style={({ pressed }) => ({ minWidth: 64, maxWidth: maxW / 2.6, minHeight: 44, paddingHorizontal: 10, paddingVertical: 6, borderRadius: R.md, alignItems: "center",
+                      borderWidth: active ? 1.5 : 1, borderColor: active ? "rgb(201,166,94)" : pressed ? t.ink : t.line,
+                      backgroundColor: active ? "rgba(201,166,94,0.15)" : t.surface })}>
+                    <Text maxFontSizeMultiplier={1.3} style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 40, color: hid ? t.muted : active ? t.accent : t.arabic, writingDirection: "rtl", textAlign: "center" }}>
+                      {hid ? "?" : x.text_uthmani}
+                    </Text>
+                    {tr ? <Text numberOfLines={1} maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.italic, fontSize: 11, color: t.gold, textAlign: "center" }}>{tr}</Text> : null}
+                    {mn ? <Text numberOfLines={2} maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.regular, fontSize: 11, color: t.muted, textAlign: "center" }}>{mn}</Text> : null}
+                  </Pressable>
+                );
+              })}
+            </View>
+          </ScrollView>
+        </View>
+
+        {/* bottom: the magnifier */}
+        <View style={{ flex: 1.3, borderTopWidth: 1, borderTopColor: "rgba(201,166,94,0.35)", backgroundColor: t.surface, alignItems: "center" }}>
           <LinearGradient colors={["rgba(201,166,94,0)", "rgb(201,166,94)", "rgba(201,166,94,0)"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ height: 2, alignSelf: "stretch" }} />
           <View style={{ flex: 1, width: maxW, flexDirection: "row", direction: "ltr", alignItems: "center" }}>
             {/* Arabic order: the next word is on the left, the previous on the right */}
@@ -129,7 +186,7 @@ export function FocusMode({ open, onClose, chapter, verse, total, activeWord, ti
               <Pressable onPress={() => (hiddenNow && word ? onRevealWord(wi, word.position) : following ? undefined : step(1))}
                 accessible accessibilityRole="adjustable" accessibilityLabel={hiddenNow ? r("coveredWord") : word?.text_uthmani ?? ""} accessibilityLanguage={hiddenNow ? undefined : "ar"}
                 accessibilityValue={{ text: `${r("wordOf", { n: wi + 1, total: words.length })}${meaning ? `, ${meaning}` : ""}` }}
-                accessibilityHint={following ? undefined : r("stepHint")}
+                accessibilityHint={following ? r("verseSwipeHint") : `${r("stepHint")} ${r("verseSwipeHint")}`}
                 accessibilityActions={[{ name: "increment" }, { name: "decrement" }, { name: "activate" }]}
                 onAccessibilityAction={(e) => { const n = e.nativeEvent.actionName; if (n === "increment") step(1); else if (n === "decrement") step(-1); else if (word) (hiddenNow ? onRevealWord(wi, word.position) : onPlayWord(word.position)); }}
                 style={{ alignSelf: "stretch", alignItems: "center", paddingVertical: 8 }}>
