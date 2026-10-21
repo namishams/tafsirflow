@@ -22,6 +22,7 @@ import { TodayPlanCard } from "@/features/plan/TodayPlanCard";
 import { SrsEntryCard } from "@/features/srs";
 import { ReciterPathCard } from "@/features/reciter-path/Screens";
 import { SchoolEntryCard } from "@/features/school/Screens";
+import { JourneyEntryCard } from "@/features/journey/JourneyScreen";
 import { QbankEntryCard } from "@/features/qbank/Screens";
 import { QaidaCard } from "@/features/qaida/Screens";
 import { LangCourseCard } from "@/features/arabic-lang/Screens";
@@ -93,6 +94,7 @@ export default function Masterclass() {
           <PersonaliseCard />
           <QaidaCard />
           <SchoolEntryCard />
+          <JourneyEntryCard />
           <LangCourseCard />
           <ReciterPathCard />
           {next && nextChapter ? (
