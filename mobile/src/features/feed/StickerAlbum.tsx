@@ -8,7 +8,8 @@ import { useLang } from "@/i18n";
 import { SITE } from "@/lib/api";
 import { FONT, R, stage, useTheme } from "@/lib/theme";
 import { StickerPop } from "@/features/progress/motion";
-import { BrandFoot, CARD_SIZE, ShareSheet, type ShareFormat } from "./share";
+import { ShareSheet, type ShareFormat, type ShareOpts } from "./share";
+import { StickerTemplate } from "@/features/share/ShareTemplates";
 import { STICKERS, STICKER, markStickersSeen, useGamify } from "./gamify";
 import { useGameText } from "./gamifyTexts";
 import { StickerArt, stickerName } from "./Sticker";
@@ -36,16 +37,10 @@ export default function StickerAlbum() {
   const sel = open ? STICKER.get(open) : undefined;
   const regular = STICKERS.filter((s) => !s.rare);
   const rare = STICKERS.filter((s) => s.rare);
-  const card = (f: ShareFormat) => {
+  // the share image: the sticker template (five designs, story / portrait / square)
+  const card = (f: ShareFormat, o: ShareOpts) => {
     const d = share ? STICKER.get(share) : undefined;
-    return (
-      <LinearGradient colors={[stage.bg, stage.deep]} style={{ width: CARD_SIZE[f].w, height: CARD_SIZE[f].h, padding: 28, alignItems: "center", justifyContent: "space-between" }}>
-        <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: stage.gold, textAlign: "center" }}>{gt.album}</Text>
-        {d ? <StickerArt def={d} size={Math.min(CARD_SIZE[f].w - 80, 240)} /> : <View />}
-        <Text allowFontScaling={false} style={{ fontFamily: FONT.display, fontSize: 24, color: "#fff", textAlign: "center" }}>{share ? stickerName(share, gt, tx, nf) : ""}</Text>
-        <BrandFoot />
-      </LinearGradient>
-    );
+    return d ? <StickerTemplate format={f} opts={o} kicker={gt.album} def={d} name={stickerName(d.id, gt, tx, nf)} sub={d.rare ? gt.rare : undefined} /> : null;
   };
   const tile = (id: string) => {
     const d = STICKER.get(id)!;
@@ -103,7 +98,7 @@ export default function StickerAlbum() {
         <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", rowGap: 6 }}>{rare.map((s) => tile(s.id))}</View>
         <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted, textAlign: "center" }}>{tx.statsLocal}</Text>
       </View>
-      <ShareSheet visible={!!share} onClose={() => setShare(null)} link={SITE} message={share ? `${gt.stickerNew}: ${stickerName(share, gt, tx, nf)}` : ""} renderCard={card} noDecoration />
+      <ShareSheet visible={!!share} onClose={() => setShare(null)} link={SITE} message={share ? `${gt.stickerNew}: ${stickerName(share, gt, tx, nf)}` : ""} renderCard={card} noDecoration templated seed={share ? `sticker:${share}` : undefined} />
     </Page>
   );
 }

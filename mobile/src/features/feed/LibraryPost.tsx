@@ -14,6 +14,8 @@ import { toneOf } from "./art";
 import { LIB, topicOfKind, type LibItem, type LibKind, type LibTopic } from "./library";
 import { fillText, useFeedText, type FeedText } from "./texts";
 import { KnowledgePost, knowItemOf } from "./KnowledgePost";
+import { PostShareButtons, libSpec, useShareCtx } from "@/features/share/feedShare";
+import { PostPanel } from "@/features/share/ShareTemplates";
 
 // The posts of the content libraries: image posts (mosques, art, Met objects) with the image credit and licence link
 // always shown, text cards with the Arabic on top (hadith, tafsir, duas, names, words), carousels (scholar timeline,
@@ -81,15 +83,12 @@ function LibImage({ item, w, h, reduce }: { item: ExtraItem; w: number; h: numbe
 
 function Card({ item, w, tall }: { item: LibItem; w: number; tall?: boolean }) {
   const ar = src(item).arabic;
-  const tone = toneOf(item.id);
   return (
-    <LinearGradient colors={tone} style={{ width: w, minHeight: tall ? w * 1.1 : undefined, padding: 22, gap: 12, justifyContent: "center", overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+    <PostPanel seed={item.id} style={{ width: w, minHeight: tall ? w * 1.1 : undefined, padding: 24, paddingVertical: 28, gap: 12, justifyContent: "center" }}>
       {ar ? <Text accessibilityLanguage="ar" numberOfLines={tall ? 10 : 7} adjustsFontSizeToFit minimumFontScale={0.6} style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{ar}</Text> : null}
-      <Text style={{ fontFamily: FONT.display, fontSize: 18, color: stage.gold, textAlign: "center" }}>{item.title}</Text>
+      <Text style={{ fontFamily: "Fraunces_600SemiBold", fontSize: 19, lineHeight: 25, color: stage.cream, textAlign: "center" }}>{item.title}</Text>
       {item.body ? <Text numberOfLines={tall ? 14 : 9} style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 22, color: "rgba(255,255,255,0.9)", textAlign: "center" }}>{item.body}</Text> : null}
-    </LinearGradient>
+    </PostPanel>
   );
 }
 
@@ -104,6 +103,7 @@ function LibraryPostInner({ id, width, reduce, onDark }: { id: string; width: nu
   const tx = useFeedText();
   const p = LIB.get(id);
   const [page, setPage] = useState(0);
+  const shareCtx = useShareCtx();
   if (!p) return <View style={{ height: 1 }} />;
   const first = p.items[0];
   const topic = kindTopic(p.kind);
@@ -119,6 +119,7 @@ function LibraryPostInner({ id, width, reduce, onDark }: { id: string; width: nu
           <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 14, color: profile ? t.accent : t.ink }}>{p.items.length > 1 ? topicLabel(tx, topic) : first.title}</Text>
           <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{ex(first).onThisDay ? tx.onThisDay : topicLabel(tx, topic)}</Text>
         </Pressable>
+        <PostShareButtons get={() => libSpec(shareCtx, p.items[page] ?? first, topicLabel(tx, topic))} onDark={onDark} />
         {profile ? <Pressable onPress={() => router.push(profile)} accessibilityRole="button" hitSlop={6} style={{ height: 32, paddingHorizontal: 12, borderRadius: R.pill, justifyContent: "center", borderWidth: 1, borderColor: t.line }}><Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.accent }}>{tx.reciterProfile}</Text></Pressable> : null}
       </View>
       {p.items.length > 1 ? (

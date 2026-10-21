@@ -20,6 +20,8 @@ import type { KnowItem, KnowKind } from "./knowledge";
 import { loadVerse, type FeedVerse } from "./source";
 import { statQuiz } from "./statsStore";
 import { useKnowText, type KnowText } from "./knowTexts";
+import { PostShareButtons, knowSpec, useShareCtx } from "@/features/share/feedShare";
+import { PostPanel } from "@/features/share/ShareTemplates";
 import { useFeedVoice } from "./voice";
 
 // The knowledge posts (knowledge.ts) in the feed's emerald and gold: a card in Home (header, framed card, CTA, source)
@@ -189,6 +191,15 @@ function Body({ it, full, active }: { it: KnowItem; full?: boolean; active: bool
 function Header({ it, light }: { it: KnowItem; light?: boolean }) {
   const t = useTheme();
   const kt = useKnowText();
+  const ctx = useShareCtx();
+  const { reciter } = useFeedVoice();
+  // the share image: the post's template (quiz with its answer, name, insight; the verse text from the Quran data)
+  const getShare = async () => {
+    const v = it.verse ? await loadVerse(it.verse, ctx.lang, reciter).catch(() => null) : null;
+    engaged(it.kind, "share");
+    return knowSpec(ctx, it, knowKindLabel(kt, it.kind), v ? { arabic: v.arabic, translation: v.translation } : null);
+  };
+  const shareable = it.kind !== "kn-moment" || !!it.moment?.own;
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 12, height: 56 }}>
       <LinearGradient colors={toneOf(`lib:${it.kind}`)} style={{ width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: stage.goldSoft }}>
@@ -198,6 +209,7 @@ function Header({ it, light }: { it: KnowItem; light?: boolean }) {
         <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 14, color: light ? "#fff" : t.ink }}>{knowKindLabel(kt, it.kind)}</Text>
         {it.eyebrow ? <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: light ? "rgba(255,255,255,0.65)" : t.muted }}>{it.eyebrow}</Text> : null}
       </View>
+      {shareable ? <PostShareButtons get={getShare} onDark={light} /> : null}
     </View>
   );
 }
@@ -217,18 +229,13 @@ function Foot({ it, light }: { it: KnowItem; light?: boolean }) {
 export const KnowledgePost = memo(function KnowledgePost({ id, width, onDark, active = true }: { id: string; width: number; onDark?: boolean; active?: boolean }) {
   const it = knowItemOf(id);
   if (!it) return <View style={{ height: 1 }} />;
-  const tone = toneOf(it.id);
   return (
     <View style={{ width, alignSelf: "center", paddingBottom: 16 }}>
       <Header it={it} light={onDark} />
-      <View style={{ marginHorizontal: 12, borderRadius: R.card, overflow: "hidden" }}>
-        <LinearGradient colors={tone} style={{ padding: 20, paddingVertical: 24, overflow: "hidden" }}>
-          <StarLattice opacity={0.05} />
-          <GoldFrame inset={7} />
-          <Body it={it} active={active} />
-          {it.kind !== "kn-moment" ? <Cta it={it} /> : null}
-        </LinearGradient>
-      </View>
+      <PostPanel seed={it.id} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 22, paddingVertical: 26 }}>
+        <Body it={it} active={active} />
+        {it.kind !== "kn-moment" ? <Cta it={it} /> : null}
+      </PostPanel>
       {it.kind === "kn-moment" ? <Cta it={it} /> : null}
       <Foot it={it} light={onDark} />
     </View>

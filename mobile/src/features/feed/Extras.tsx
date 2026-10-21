@@ -2,8 +2,6 @@ import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { router, type Href } from "expo-router";
 import { FlatList, Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { GoldFrame } from "./ornament";
-import { StarLattice } from "@/components/brand";
 import { Icon, type IconName } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
@@ -25,6 +23,8 @@ import { readTradition } from "@/lib/tradition";
 import { livePos, radio, useRadioSelect } from "@/features/radio/engine";
 import { STATIONS } from "@/features/radio/stations";
 import { statQuiz } from "./statsStore";
+import { PostShareButtons, quizSpec, useShareCtx, verseSpec, type ShareSpec } from "@/features/share/feedShare";
+import { PostPanel } from "@/features/share/ShareTemplates";
 
 // More post kinds of the Home feed, built only from data the app already has: the Quran API's verses and word data
 // (quiz, carousel, memorise) and the prayer times of the app's own calculation (web/prayer.ts). Nothing typed by hand.
@@ -32,7 +32,9 @@ import { statQuiz } from "./statsStore";
 
 type Common = { item: string; width: number; lang: string; reciter: Reciter; nameOf: (s: number) => string; reduce: boolean };
 
-function Frame({ icon, title, sub, children, width, tone, learn }: { icon: IconName; title: string; sub?: string; children: React.ReactNode; width: number; tone: [string, string]; learn?: string }) {
+function Frame({ icon, title, sub, children, width, tone, learn, share }: { icon: IconName; title: string; sub?: string; children: React.ReactNode; width: number; tone: [string, string]; learn?: string;
+  /** the post's share image (features/share/feedShare.tsx); shows the Story pill and the paper plane */
+  share?: () => ShareSpec | null | Promise<ShareSpec | null> }) {
   const t = useTheme();
   const tx = useFeedText();
   return (
@@ -45,6 +47,7 @@ function Frame({ icon, title, sub, children, width, tone, learn }: { icon: IconN
           <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{title}</Text>
           {sub ? <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{sub}</Text> : null}
         </View>
+        {share ? <PostShareButtons get={share} /> : null}
         {learn ? <LearnLink href={learn} label={tx.learnThis} /> : null}
       </View>
       {children}
@@ -96,12 +99,12 @@ export const QuizPost = memo(function QuizPost(p: Common) {
     if (i === q.answer) addLearnedWords(1);
   };
   const tone = toneOf(`quiz:${key}`);
+  const ctx = useShareCtx();
   if (v && v2 && !q) return <View style={{ height: 1 }} />;
+  const share = () => (q ? quizSpec(ctx, { question: tx.quizTitle, arabic: q.word, options: q.options, answer: q.answer, explain: `${p.nameOf(s)} · ${key}`, seed: key }) : null);
   return (
-    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="cap" title={tx.quizTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone}>
-      <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 18, gap: 14, overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="cap" title={tx.quizTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone} share={share}>
+      <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 18, gap: 14 }}>
         <Text accessibilityLanguage="ar" style={{ fontFamily: ARABIC_FONT, fontSize: 40, lineHeight: 76, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{q?.word ?? " "}</Text>
         {q?.options.map((o, i) => {
           const done = pick !== null;
@@ -119,7 +122,7 @@ export const QuizPost = memo(function QuizPost(p: Common) {
             {pick === q.answer ? tx.quizRight : tx.quizWrong} · {fillText(tx.quizStreak, { n: streak })}
           </Text>
         ) : null}
-      </LinearGradient>
+      </PostPanel>
       <Text style={{ fontFamily: FONT.regular, fontSize: 10.5, letterSpacing: 0.8, textTransform: "uppercase", color: t.muted, marginTop: 10, paddingHorizontal: 14 }}>{tx.quizTitle}</Text>
     </Frame>
   );
@@ -135,8 +138,10 @@ export const CarouselPost = memo(function CarouselPost(p: Common) {
   const [page, setPage] = useState(0);
   const W = p.width;
   const tone = toneOf(`car:${s}:${a}`);
+  const ctx = useShareCtx();
+  const share = async () => { const d = await loadVerse(keys[page] ?? keys[0], p.lang, p.reciter); return verseSpec(ctx, d, p.nameOf(d.s)); };
   return (
-    <Frame learn={`/shams/${s}?v=${a}`} icon="book" title={`${p.nameOf(s)} · ${s}:${a}–${a + keys.length - 1}`} sub={tx.carouselTitle} width={W} tone={tone}>
+    <Frame learn={`/shams/${s}?v=${a}`} icon="book" title={`${p.nameOf(s)} · ${s}:${a}–${a + keys.length - 1}`} sub={tx.carouselTitle} width={W} tone={tone} share={share}>
       <FlatList
         horizontal pagingEnabled showsHorizontalScrollIndicator={false} data={keys} keyExtractor={(k) => k}
         onMomentumScrollEnd={(e) => setPage(Math.round(e.nativeEvent.contentOffset.x / W))}
@@ -152,19 +157,18 @@ export const CarouselPost = memo(function CarouselPost(p: Common) {
 function Slide({ k, w, lang, reciter, tone }: { k: string; w: number; lang: string; reciter: Reciter; tone: [string, string] }) {
   const v = useVerse(k, lang, reciter);
   return (
-    <LinearGradient colors={tone} style={{ width: w, height: w, padding: 22, justifyContent: "center", gap: 14, overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+    <PostPanel seed={tone.join("")} style={{ width: w, height: w, padding: 22, justifyContent: "center", gap: 14 }}>
       <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2, color: stage.gold, textAlign: "center" }}>{k}</Text>
       <Text accessibilityLanguage="ar" numberOfLines={9} adjustsFontSizeToFit minimumFontScale={0.5} style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 44, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{v?.arabic ?? ""}</Text>
       <Text numberOfLines={6} style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: "rgba(255,255,255,0.86)", textAlign: "center" }}>{v?.translation ?? ""}</Text>
-    </LinearGradient>
+    </PostPanel>
   );
 }
 
 // ---------- memorise: words covered, tap to reveal ----------
 export const MemoPost = memo(function MemoPost(p: Common) {
   const tx = useFeedText();
+  const shareCtx = useShareCtx();
   const key = p.item.slice(2);
   const [s] = key.split(":").map(Number);
   const v = useVerse(key, p.lang, p.reciter);
@@ -174,10 +178,8 @@ export const MemoPost = memo(function MemoPost(p: Common) {
   const counted = useRef(false);
   const tone = toneOf(`memo:${key}`);
   return (
-    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="eye" title={tx.memoTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone}>
-      <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 18, gap: 12, overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="eye" title={tx.memoTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone} share={v ? () => verseSpec(shareCtx, v, p.nameOf(s)) : undefined}>
+      <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 18, gap: 12 }}>
         <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", justifyContent: "center", gap: 8 }}>
           {words.map((w, i) => {
             const on = shown.has(i);
@@ -193,7 +195,7 @@ export const MemoPost = memo(function MemoPost(p: Common) {
           <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: stage.gold }}>{all ? tx.memoHide : tx.memoReveal}</Text>
         </Pressable>
         {all && v ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: "rgba(255,255,255,0.86)", textAlign: "center" }}>{v.translation}</Text> : null}
-      </LinearGradient>
+      </PostPanel>
     </Frame>
   );
 });
@@ -224,16 +226,14 @@ export const PrayerPost = memo(function PrayerPost({ item, width, lang, onOpen }
   const tone = toneOf(`prayer:${prayer}`);
   return (
     <Frame icon="mosque" title={wp(prayer)} sub={at ? fmtTime(at, spotNow().tz, lang) : undefined} width={width} tone={tone}>
-      <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 22, gap: 12, alignItems: "center", overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+      <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 22, gap: 12, alignItems: "center" }}>
         <Icon name="mosque" color={stage.gold} size={34} />
         <Text style={{ fontFamily: FONT.display, fontSize: 20, color: "#fff", textAlign: "center" }}>{fillText(tx.prayerTitle, { prayer: wp(prayer) })}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: "rgba(255,255,255,0.86)", textAlign: "center" }}>{tx.prayerLead}</Text>
         <Pressable onPress={onOpen} accessibilityRole="button" style={{ marginTop: 4, height: 44, paddingHorizontal: 20, borderRadius: R.pill, justifyContent: "center", borderWidth: 1, borderColor: stage.goldSoft }}>
           <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: stage.gold }}>{tx.prayerOpen}</Text>
         </Pressable>
-      </LinearGradient>
+      </PostPanel>
     </Frame>
   );
 });
@@ -256,6 +256,7 @@ const hashOf = (x: string) => { let h = 0; for (let i = 0; i < x.length; i++) h 
 /** "r:S:A" the same verse by 2–3 voices; `voices` are already passed through allowedReciter by the feed */
 export const RecitersPost = memo(function RecitersPost(p: Common & { voices: Reciter[]; engine: VerseEngine; active: boolean; sound: boolean }) {
   const tx = useFeedText();
+  const shareCtx = useShareCtx();
   const key = p.item.slice(2);
   const [s] = key.split(":").map(Number);
   const picks = useMemo(() => {
@@ -275,10 +276,8 @@ export const RecitersPost = memo(function RecitersPost(p: Common & { voices: Rec
   const tone = toneOf(`rec:${key}`);
   if (picks.length < 2) return <View style={{ height: 1 }} />;
   return (
-    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="radio" title={tx.recitersTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone}>
-      <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 18, gap: 12, overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="radio" title={tx.recitersTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone} share={v ? () => verseSpec(shareCtx, v, p.nameOf(s)) : undefined}>
+      <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 18, gap: 12 }}>
         <Text accessibilityLanguage="ar" numberOfLines={6} adjustsFontSizeToFit minimumFontScale={0.6} style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 44, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{v?.arabic ?? " "}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: "rgba(255,255,255,0.75)", textAlign: "center" }}>{tx.recitersLead}</Text>
         {picks.map((r) => {
@@ -291,7 +290,7 @@ export const RecitersPost = memo(function RecitersPost(p: Common & { voices: Rec
             </Pressable>
           );
         })}
-      </LinearGradient>
+      </PostPanel>
     </Frame>
   );
 });
@@ -299,6 +298,7 @@ export const RecitersPost = memo(function RecitersPost(p: Common & { voices: Rec
 /** "t:S:A" the verse with the word-by-word transliteration of the Quran API */
 export const TranslitPost = memo(function TranslitPost(p: Common) {
   const tx = useFeedText();
+  const shareCtx = useShareCtx();
   const key = p.item.slice(2);
   const [s] = key.split(":").map(Number);
   const v = useVerse(key, p.lang, p.reciter);
@@ -306,14 +306,12 @@ export const TranslitPost = memo(function TranslitPost(p: Common) {
   const tone = toneOf(`tr:${key}`);
   if (v && !tr) return <View style={{ height: 1 }} />;
   return (
-    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="book" title={tx.translitTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone}>
-      <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 20, gap: 14, overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="book" title={tx.translitTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone} share={v ? () => verseSpec(shareCtx, v, p.nameOf(s)) : undefined}>
+      <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 20, gap: 14 }}>
         <Text accessibilityLanguage="ar" style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 46, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{v?.arabic ?? " "}</Text>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, lineHeight: 23, color: stage.gold, textAlign: "center", fontStyle: "italic" }}>{tr}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: "rgba(255,255,255,0.86)", textAlign: "center" }}>{v?.translation ?? ""}</Text>
-      </LinearGradient>
+      </PostPanel>
     </Frame>
   );
 });
@@ -321,6 +319,7 @@ export const TranslitPost = memo(function TranslitPost(p: Common) {
 /** "d:S:A" one word of the verse in depth: Arabic, transliteration, meaning, its place in the verse */
 export const WordPost = memo(function WordPost(p: Common) {
   const tx = useFeedText();
+  const shareCtx = useShareCtx();
   const key = p.item.slice(2);
   const [s] = key.split(":").map(Number);
   const v = useVerse(key, p.lang, p.reciter);
@@ -332,17 +331,15 @@ export const WordPost = memo(function WordPost(p: Common) {
   if (v && !w) return <View style={{ height: 1 }} />;
   const pos = w ? words.indexOf(w) + 1 : 0;
   return (
-    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="cap" title={tx.wordDeepTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone}>
+    <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="cap" title={tx.wordDeepTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone} share={v ? () => verseSpec(shareCtx, v, p.nameOf(s)) : undefined}>
       <Pressable onPress={() => { if (!counted.current && w) { counted.current = true; addLearnedWords(1); tick(); } }} accessibilityRole="button">
-        <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 22, gap: 10, alignItems: "center", overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+        <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 22, gap: 10, alignItems: "center" }}>
           <Text accessibilityLanguage="ar" style={{ fontFamily: ARABIC_FONT, fontSize: 48, lineHeight: 90, color: "#fff", writingDirection: "rtl" }}>{w?.text_uthmani ?? " "}</Text>
           {w?.transliteration?.text ? <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: stage.gold, fontStyle: "italic" }}>{w.transliteration.text}</Text> : null}
           <Text style={{ fontFamily: FONT.display, fontSize: 20, color: "#fff", textAlign: "center" }}>{w?.translation?.text ?? ""}</Text>
           {w ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: "rgba(255,255,255,0.7)" }}>{fillText(tx.wordOf, { n: pos, total: words.length })}</Text> : null}
           <Text accessibilityLanguage="ar" numberOfLines={3} style={{ fontFamily: ARABIC_FONT, fontSize: 18, lineHeight: 34, color: "rgba(255,255,255,0.7)", textAlign: "center", writingDirection: "rtl", marginTop: 6 }}>{v?.arabic ?? ""}</Text>
-        </LinearGradient>
+        </PostPanel>
       </Pressable>
     </Frame>
   );
@@ -355,9 +352,7 @@ export const ChaptersPost = memo(function ChaptersPost({ group, width, onOpen }:
   const tone = toneOf(`chap:${group.id}`);
   return (
     <Frame icon="list" title={group.title} sub={tx.chaptersTitle} width={width} tone={tone}>
-      <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 16, gap: 8, overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+      <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 16, gap: 8 }}>
         {group.arabic ? <Text accessibilityLanguage="ar" style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: stage.gold, textAlign: "center" }}>{group.arabic}</Text> : null}
         {group.stories.slice(0, 6).map((st, i) => (
           <Pressable key={st.id} onPress={() => { tick(); onOpen(i); }} accessibilityRole="button" accessibilityLabel={`${fillText(tx.chapterN, { n: i + 1 })}: ${st.title}`}
@@ -368,7 +363,7 @@ export const ChaptersPost = memo(function ChaptersPost({ group, width, onOpen }:
           </Pressable>
         ))}
         {group.stories.length > 6 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted, textAlign: "center" }}>+{group.stories.length - 6}</Text> : null}
-      </LinearGradient>
+      </PostPanel>
     </Frame>
   );
 });
@@ -389,9 +384,7 @@ export const CalendarPost = memo(function CalendarPost({ width, lang }: { width:
   return (
     <Frame icon="calendar" title={tx.calendarTitle} width={width} tone={tone}>
       <Pressable onPress={() => router.push("/calendar" as Href)} accessibilityRole="button">
-        <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 24, gap: 12, alignItems: "center", overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+        <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 24, gap: 12, alignItems: "center" }}>
           <Icon name="moon" color={stage.gold} size={32} />
           <Text style={{ fontFamily: FONT.display, fontSize: 26, color: "#fff", textAlign: "center" }}>{info.date}</Text>
           {info.next ? (
@@ -399,7 +392,7 @@ export const CalendarPost = memo(function CalendarPost({ width, lang }: { width:
               {info.next.days === 0 ? fillText(tx.calendarToday, { name: info.next.name }) : fillText(tx.calendarNext, { name: info.next.name, n: info.next.days })}
             </Text>
           ) : null}
-        </LinearGradient>
+        </PostPanel>
       </Pressable>
     </Frame>
   );
@@ -427,9 +420,7 @@ export const RadioPost = memo(function RadioPost({ width, active, sound, nameOf,
   const tone = toneOf("radio");
   return (
     <Frame icon="radio" title={tx.radioTitle} sub={fillText(tx.radioNow, { surah: nameOf(pos.s), v: pos.v })} width={width} tone={tone}>
-      <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 24, gap: 14, alignItems: "center", overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+      <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 24, gap: 14, alignItems: "center" }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: 10, height: 26, borderRadius: R.pill, backgroundColor: "rgb(150,52,52)" }}>
           <View style={{ width: 7, height: 7, borderRadius: 4, backgroundColor: "#fff" }} />
           <Text style={{ fontFamily: FONT.bold, fontSize: 11.5, letterSpacing: 1, textTransform: "uppercase", color: "#fff" }}>{tx.onAir}</Text>
@@ -440,7 +431,7 @@ export const RadioPost = memo(function RadioPost({ width, active, sound, nameOf,
           <Icon name={playing ? "stop" : "play"} color={stage.bg} size={16} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.bg }}>{playing ? tx.radioStop : tx.radioListen}</Text>
         </Pressable>
-      </LinearGradient>
+      </PostPanel>
     </Frame>
   );
 });
@@ -454,9 +445,7 @@ export const ProgressPost = memo(function ProgressPost({ width, lang }: { width:
   const tone = toneOf("progress");
   return (
     <Frame icon="trophy" title={tx.progressTitle} width={width} tone={tone}>
-      <LinearGradient colors={tone} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 22, gap: 12, overflow: "hidden" }}>
-        <StarLattice opacity={0.05} />
-        <GoldFrame inset={7} />
+      <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 22, gap: 12 }}>
         {words || streak ? (
           <View style={{ flexDirection: "row", gap: 12 }}>
             {[[tx.progressWords, words, "cap"], [tx.progressStreak, streak, "flame"]].map(([l, n, ic]) => (
@@ -468,7 +457,7 @@ export const ProgressPost = memo(function ProgressPost({ width, lang }: { width:
             ))}
           </View>
         ) : <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: "rgba(255,255,255,0.88)", textAlign: "center" }}>{tx.progressStart}</Text>}
-      </LinearGradient>
+      </PostPanel>
     </Frame>
   );
 });

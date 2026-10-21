@@ -11,7 +11,7 @@ import { goBack } from "@/components/page";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { SITE } from "@/lib/api";
-import { ARABIC_FONT, CALLIG_FONT, FONT, GOLD_RING, R, stage, useTheme } from "@/lib/theme";
+import { ARABIC_BOLD, ARABIC_FONT, CALLIG_FONT, FONT, GOLD_RING, R, stage, useTheme } from "@/lib/theme";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { getChapters, reciterName, type Chapter, type Reciter } from "@/lib/quran";
 import { VerseEngine } from "@/features/quran/useVerseAudio";
@@ -22,15 +22,16 @@ import { VERSES_OF_THE_DAY } from "@/web/votd";
 import { StoryViewer } from "@/features/prophet/StoryViewer";
 import { SAVED_KEY, SEEN_KEY, toggleSavedStory, useStories, useStoryQuota } from "@/features/prophet/useStories";
 import { useProphetText } from "@/features/prophet/texts";
-import { StoryShareCard } from "@/features/prophet/StoryShareCard";
 import type { AllahName, Story, StoryGroup } from "@/features/prophet/stories";
-import { FeedBackdrop, SpeakerIcon, toneOf } from "./art";
+import { SpeakerIcon, toneOf } from "./art";
 import { tick } from "./haptics";
-import { BrandFoot, ShareSheet } from "./share";
+import { SpecShareSheet, StoryGlyph, hadithSpec, nameSpec, storySpec, useShareCtx, verseSpec } from "@/features/share/feedShare";
+import { useTemplateText } from "@/features/share/templateTexts";
+import { PALETTES, paletteFor } from "@/features/share/formats";
+import { LAYOUT, OrnamentRule, ShareFrame, ShareGround } from "@/features/share/ShareTemplates";
 import { DiscoverFeed, loadVerse, rand, shuffle, type FeedVerse } from "./source";
 import { countShare, useVerseLike } from "./useLike";
 import { fillText, useFeedText } from "./texts";
-import { VerseShareCard } from "./VerseShareCard";
 import { SharePromptCard } from "@/features/share/SharePrompt";
 import { CalendarPost, CarouselPost, ChaptersPost, LearnLink, MemoPost, PrayerPost, ProgressPost, QuizPost, RadioPost, RecitersPost, TranslitPost, WordPost, prayerNow } from "./Extras";
 import { allowedReciter, isFreeReciter } from "@/features/quran/reciter";
@@ -38,7 +39,6 @@ import { lastVisit, markSeen, touchVisit, wasSeen } from "./seen";
 import { ExploreSheet, SavedSheet, type OpenItem } from "./Explore";
 import { hadithFeedItems, type HadithFeedItem } from "./hadith";
 import { ReciterSheet, useFeedAudioGuard, useFeedVoice } from "./voice";
-import { HadithShare } from "@/features/hadith/ui";
 import { SAVED_KEY as HADITH_SAVED_KEY, toggleSaved as toggleSavedHadith, type HadithItem } from "@/features/hadith/data";
 import { readTradition } from "@/lib/tradition";
 import { HeartBurst, useTapGestures } from "./ui";
@@ -55,7 +55,7 @@ import { AccountNudge, PromoCap, PromoPost, nudgeAccount } from "./Promo";
 import { MomentCard, MonetizeCap, OfferWrap, PaywallCard, PremiumPost, markShareMoment, usePurchaseAttribution } from "./monetize";
 import { dwell, engaged, isBored } from "./interest";
 import { LibraryPost, topicLabel as libTopicLabel } from "./LibraryPost";
-import { GoldFrame, Rule } from "./ornament";
+import { Rule } from "./ornament";
 
 // The Instagram home-feed view of /feed: logo bar, a stories rail, then one post after the other. A post is a square
 // card (the verse or story drawn like the share image) with a slow Ken Burns zoom; the recitation of the post that is
@@ -114,7 +114,9 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   const hintSeen = useStored<boolean>(HINT_KEY, false);
   const [sheet, setSheet] = useState<"explore" | "saved" | "voices" | null>(null);
   const [refreshing, setRefreshing] = useState(false);
-  const [share, setShare] = useState<ShareItem | null>(null);
+  const [share, setShareRaw] = useState<ShareItem | null>(null);
+  const [quickShare, setQuickShare] = useState(false);
+  const setShare = useCallback((s: ShareItem | null, quick = false) => { setQuickShare(quick); setShareRaw(s); }, []);
   const [comments, setComments] = useState<string | null>(null);
   const [menu, setMenu] = useState<Item | null>(null);
   const [viewer, setViewer] = useState<{ group: number; story: number } | null>(null);
@@ -456,22 +458,15 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   // contextual offers (personal dua, name report, Shams lesson, more reciters) under fitting posts
   const render = useCallback((a: { item: Item; index: number }) => <OfferWrap item={a.item} pro={voice.pro} width={colW}>{renderPost(a)}</OfferWrap>, [renderPost, voice.pro, colW]);
 
+  // what the share sheet shares: the share templates (features/share/feedShare.tsx); `quick` = the one-tap story pill
+  const shareCtx = useShareCtx();
   const sh = useMemo(() => {
     if (!share) return null;
-    if (share.kind === "verse") {
-      const v = share.v;
-      return { link: `${SITE}/${lang}/surah/${v.s}?v=${v.v}`, message: `${v.translation ? `${v.translation}\n\n` : ""}Quran ${v.key}`, onShared: () => countShare(v.key), video: { key: v.key, lang },
-        card: (f: "story" | "post") => <VerseShareCard format={f} arabic={v.arabic} translation={v.translation} reference={`${nameOf(v.s)} · ${v.key}`} tone={toneOf(v.key)} /> };
-    }
-    if (share.kind === "story") {
-      const s = share.s;
-      return { link: `${SITE}/${lang}${s.webPath}`, message: `${s.title}\n${s.groupTitle}`, card: (f: "story" | "post") => <StoryShareCard story={s} format={f} /> };
-    }
-    if (share.kind === "hadith") return null;
-    const n = share.n;
-    const fake: Story = { id: "name", cat: "islam", group: `name:${n.latin}`, groupTitle: tx.nameTitle, arabic: "", title: n.latin, paragraphs: [], truncated: false, sources: [tx.nameSource], href: "/islam/names", webPath: "/islam/names" };
-    return { link: `${SITE}/${lang}/islam/names`, message: `${n.ar} – ${n.latin}: ${n.meaning}`, card: (f: "story" | "post") => <StoryShareCard story={fake} format={f} lines={{ title: `${n.ar}\n${n.latin}`, body: n.meaning, arabic: n.ar }} /> };
-  }, [share, lang, nameOf, tx.nameTitle, tx.nameSource]);
+    if (share.kind === "verse") { const v = share.v; return verseSpec(shareCtx, v, nameOf(v.s), { onShared: () => countShare(v.key) }); }
+    if (share.kind === "story") return storySpec(shareCtx, share.s);
+    if (share.kind === "hadith") return { ...hadithSpec(shareCtx, share.h), onShared: markShareMoment };
+    return nameSpec(shareCtx, share.n);
+  }, [share, nameOf, shareCtx.lang, shareCtx.tt, shareCtx.stx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const topicLabel: Record<Topic, string> = { all: tx.topicAll, verses: pt.catVerses, names: tx.topicNames, stories: tx.topicStories, hadith: tx.hadith,
     ...(Object.fromEntries(LIB_TOPICS.filter((x) => x !== "hadith").map((x) => [x, libTopicLabel(tx, x)])) as Record<Exclude<LibTopic, "hadith">, string>),
@@ -605,12 +600,11 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       <ExploreSheet visible={sheet === "explore"} onClose={() => setSheet(null)} onOpen={openItem} />
       <SavedSheet visible={sheet === "saved"} onClose={() => { setSheet(null); setTimeout(nudgeAccount, 500); }} onOpen={openItem} />
       <ReciterSheet visible={sheet === "voices"} onClose={() => setSheet(null)} />
-      {share?.kind === "hadith" ? <HadithShare item={share.h.item} onClose={() => { markShareMoment(); setShare(null); }} /> : null}
       <AccountNudge />
       <CommentsSheet visible={!!comments} verseKey={comments ?? "1:1"} onClose={() => setComments(null)} />
       <StoryViewer groups={viewerGroups} start={viewer ? { group: viewer.group + Math.floor(viewer.group / PROMO_EVERY) * (voice.pro ? 0 : 1), story: viewer.story } : null} onClose={() => setViewer(null)} />
       <Celebrations />
-      <ShareSheet visible={!!sh && share?.kind !== "hadith"} onClose={() => setShare(null)} link={sh?.link ?? SITE} message={sh?.message ?? ""} onShared={sh?.onShared} video={sh?.video} renderCard={(f) => sh?.card(f) ?? null} />
+      {sh ? <SpecShareSheet spec={sh} quick={quickShare} onClose={() => setShare(null)} /> : null}
     </View>
   );
 }
@@ -669,9 +663,10 @@ function PostSkeleton({ width, reduce }: { width: number; reduce: boolean }) {
 type PostProps = {
   item: Item; index: number; width: number; active: boolean; sound: boolean; muted: boolean; onMute: () => void; engine: VerseEngine; lang: string;
   reciter: Reciter; nameOf: (s: number) => string; reduce: boolean; stories: ReturnType<typeof useStories>; quota: ReturnType<typeof useStoryQuota>;
-  onShare: (s: ShareItem) => void; onComments: (key: string) => void; onMenu: (item: Item) => void;
+  onShare: (s: ShareItem, quick?: boolean) => void; onComments: (key: string) => void; onMenu: (item: Item) => void;
 };
 
+const toArDigits = (n: string) => n.replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
 function arabicSize(n: number) { return n < 70 ? 28 : n < 160 ? 23 : n < 320 ? 18 : n < 520 ? 14.5 : 12; }
 
 /** what the media square shows */
@@ -682,6 +677,7 @@ const Post = memo(function Post(p: PostProps) {
   const pt = useProphetText();
   const ws = useWebT("social");
   const wp = useWebT("player");
+  const ttx = useTemplateText();
   const t = useTheme();
   const isVerse = /^[vw]:/.test(p.item);
   const verseKey = isVerse ? p.item.slice(2) : "";
@@ -777,13 +773,16 @@ const Post = memo(function Post(p: PostProps) {
     media = { tone, label: hadith.source, arabic: hadith.arabic ? clip(hadith.arabic, 420) : undefined, body: clip(hadith.text, hadith.arabic ? 200 : 360), big: false };
   }
   const [open, setOpen] = useState(false);
+  // the design of the post and of its share image (features/share/formats.ts paletteFor, same seed as feedShare.tsx)
+  const palSeed = verseKey || (story ? story.group : name ? `name:${name.latin}` : hadith ? `hadith:${hadith.item.collection}` : p.item);
+  const pal = PALETTES[paletteFor(palSeed)];
   if (!media) return <View style={{ height: 1 }} />;
   const count = verseKey ? like.count : null;
   const n = Intl.NumberFormat(p.lang).format(count ?? 0);
   const likeLine = count === null ? "" : liked && count > 1 ? fillText(tx.likedByYou, { n: Intl.NumberFormat(p.lang).format(count - 1) }) : count === 1 ? tx.like1 : fillText(tx.likesN, { n });
   const W = p.width; const k = W / 360;
   const long = caption.length > 110;
-  const onShare = () => { engaged(kindOfItem(p.item), "share"); if (verseKey && data) p.onShare({ kind: "verse", v: data }); else if (story) p.onShare({ kind: "story", s: story }); else if (name) p.onShare({ kind: "name", n: name }); else if (hadith) p.onShare({ kind: "hadith", h: hadith }); };
+  const onShare = (quick = false) => { engaged(kindOfItem(p.item), "share"); if (verseKey && data) p.onShare({ kind: "verse", v: data }, quick); else if (story) p.onShare({ kind: "story", s: story }, quick); else if (name) p.onShare({ kind: "name", n: name }, quick); else if (hadith) p.onShare({ kind: "hadith", h: hadith }, quick); };
   const label = [account, media.label, media.body ?? ""].filter(Boolean).join(". ");
 
   return (
@@ -813,24 +812,28 @@ const Post = memo(function Post(p: PostProps) {
       <View style={{ width: W, height: W, overflow: "hidden", backgroundColor: stage.deep }}>
         <Pressable {...gestures} accessible accessibilityRole="image" accessibilityLabel={label} accessibilityHint={verseKey ? tx.hint : undefined} style={{ flex: 1 }}>
           <Animated.View style={{ flex: 1, transform: p.reduce ? undefined : [{ scale: zoom.interpolate({ inputRange: [0, 1], outputRange: [1, 1.08] }) }, { translateX: zoom.interpolate({ inputRange: [0, 1], outputRange: [0, -6 * k] }) }] }}>
-            <FeedBackdrop tone={media.tone} width={W} height={W} still />
-            <GoldFrame inset={10 * k} />
-            <View style={{ flex: 1, paddingHorizontal: 28 * k, paddingTop: 26 * k, paddingBottom: 20 * k, justifyContent: "space-between" }}>
-              <View style={{ alignItems: "center", gap: 7 }}>
-                <Rule width={64 * k} />
-                <Text allowFontScaling={false} numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 10.5 * k, letterSpacing: 2.4, textTransform: "uppercase", color: stage.gold }}>{media.label}</Text>
+            {/* the post in its design (the same as its share image): ground, girih, gold frame with khatam corners */}
+            <ShareGround p={pal} w={W} h={W} seed={palSeed} />
+            <ShareFrame p={pal} w={W} h={W} l={LAYOUT.square} />
+            <View style={{ flex: 1, paddingHorizontal: 30 * k, paddingTop: 30 * k, paddingBottom: 22 * k, justifyContent: "space-between" }}>
+              <View style={{ alignItems: "center", gap: 6 }}>
+                <Text allowFontScaling={false} numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 11 * k, letterSpacing: 1.8, color: pal.accent }}>{media.label}</Text>
+                <OrnamentRule p={pal} width={104 * k} />
               </View>
-              <View style={{ gap: 12 * k }}>
+              <View style={{ gap: 8 * k, alignItems: "center", flexShrink: 1, overflow: "hidden" }}>
                 {media.arabic ? (
                   <Text allowFontScaling={false} accessibilityLanguage="ar" numberOfLines={media.big ? 2 : 14} adjustsFontSizeToFit minimumFontScale={0.45}
-                    style={{ fontFamily: ARABIC_FONT, fontSize: (media.big ? 30 : arabicSize(media.arabic.length)) * k, lineHeight: (media.big ? 30 : arabicSize(media.arabic.length)) * k * 1.85, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{media.arabic}</Text>
-                ) : !media.big ? <Text style={{ alignSelf: "center", fontFamily: FONT.regular, fontSize: 13, color: stage.textMuted }}>{tx.loading}</Text> : null}
+                    style={{ fontFamily: media.big ? ARABIC_BOLD : ARABIC_FONT, fontSize: (media.big ? 34 : arabicSize(media.arabic.length)) * k, lineHeight: (media.big ? 34 : arabicSize(media.arabic.length)) * k * 1.85, color: pal.arabic, textAlign: "center", writingDirection: "rtl" }}>
+                    {media.arabic}{verseKey ? <Text style={{ color: pal.accent, fontSize: arabicSize(media.arabic.length) * k * 0.78 }}>{` \uFD3F${toArDigits(verseKey.split(":")[1])}\uFD3E`}</Text> : null}
+                  </Text>
+                ) : !media.big ? <Text style={{ alignSelf: "center", fontFamily: FONT.regular, fontSize: 13, color: pal.muted }}>{tx.loading}</Text> : null}
+                {media.arabic && media.body ? <OrnamentRule p={pal} width={56 * k} /> : null}
                 {media.body ? (
-                  <Text allowFontScaling={false} numberOfLines={media.big ? 6 : (media.arabic?.length ?? 0) > 320 ? 2 : 5}
-                    style={{ fontFamily: FONT.regular, fontSize: (media.big ? 14 : 13.5) * k, lineHeight: (media.big ? 14 : 13.5) * k * 1.55, letterSpacing: 0.1, color: "rgba(243,226,182,0.88)", textAlign: "center" }}>{media.body}</Text>
+                  <Text allowFontScaling={false} numberOfLines={media.big ? 6 : (media.arabic?.length ?? 0) > 320 ? 2 : (media.arabic?.length ?? 0) > 160 ? 3 : 4} adjustsFontSizeToFit minimumFontScale={0.8}
+                    style={{ fontFamily: verseKey || hadith ? "Fraunces_400Regular_Italic" : FONT.regular, fontSize: (media.big ? 14.5 : 14) * k, lineHeight: (media.big ? 14.5 : 14) * k * 1.5, color: pal.soft, textAlign: "center" }}>{media.body}</Text>
                 ) : null}
               </View>
-              <BrandFoot />
+              <View style={{ alignItems: "center" }}><Wordmark tone={pal.wordmark} height={18 * k} /></View>
             </View>
           </Animated.View>
           <HeartBurst n={burst} reduce={p.reduce} />
@@ -847,8 +850,14 @@ const Post = memo(function Post(p: PostProps) {
       <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 8, height: 46 }}>
         <IconBtn label={ws("like")} selected={liked} onPress={doLike} scale={pop}><Icon name="heart" filled={liked} color={liked ? HEART : t.ink} size={25} /></IconBtn>
         {verseKey ? <IconBtn label={tx.viewComments} onPress={() => p.onComments(verseKey)}><Icon name="comment" color={t.ink} size={24} /></IconBtn> : null}
-        <IconBtn label={ws("share")} onPress={onShare} disabled={!!verseKey && !data}><Icon name="send" color={t.ink} size={24} /></IconBtn>
+        <IconBtn label={ws("share")} onPress={() => onShare()} disabled={!!verseKey && !data}><Icon name="send" color={t.ink} size={24} /></IconBtn>
         <View style={{ flex: 1 }} />
+        {/* one tap: the post as a story image (the share template) straight to the system sheet */}
+        <Pressable onPress={() => onShare(true)} disabled={!!verseKey && !data} accessibilityRole="button" accessibilityLabel={ttx.shareStory} hitSlop={4}
+          style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 7, height: 34, paddingHorizontal: 13, marginEnd: 2, borderRadius: R.pill, borderWidth: 1, borderColor: t.gold, backgroundColor: t.dark ? "rgba(214,178,106,0.12)" : "rgba(150,116,52,0.08)", opacity: !!verseKey && !data ? 0.4 : pressed ? 0.7 : 1 })}>
+          <StoryGlyph color={t.gold} />
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.ink }}>{ttx.story}</Text>
+        </Pressable>
         <IconBtn label={saved ? wp("bookmarked") : wp("bookmark")} selected={saved} onPress={doSave} scale={popSave}><Icon name="bookmark" filled={saved} color={saved ? stage.gold : t.ink} size={24} /></IconBtn>
       </View>
 

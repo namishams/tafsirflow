@@ -1,18 +1,18 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { Pressable, Text, View, type StyleProp, type ViewStyle } from "react-native";
+import { Pressable, Text, type StyleProp, type ViewStyle } from "react-native";
 import { Icon } from "@/components/icons";
-import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
+import { FONT, R, useTheme } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { SITE } from "@/lib/api";
-import { BrandFoot, CARD_SIZE, ShareSheet, type ShareFormat } from "@/features/feed/share";
-import { FeedBackdrop, toneOf } from "@/features/feed/art";
-import { VerseShareCard } from "@/features/feed/VerseShareCard";
+import { ShareSheet } from "@/features/feed/share";
+import { DEFAULT_OPTS, paletteFor, type ShareFormat, type ShareOpts } from "./formats";
+import { AchievementTemplate, TextTemplate, VerseTemplate } from "./ShareTemplates";
 import { loadVerse } from "@/features/srs/verse";
 import { getChapters } from "@/lib/quran";
 import { useShareText } from "./texts";
 
 // Reusable sharing for every screen: a branded image card drawn from data (kicker, optional Arabic, title, body,
-// big number), the paper-plane button that opens the Instagram-style ShareSheet, and a verse share that loads the
+// big number) in the share templates (ShareTemplates.tsx: five designs, story / portrait / square), the paper-plane button that opens the Instagram-style ShareSheet, and a verse share that loads the
 // verse text from the Quran API (never typed by hand).
 
 export type CardData = {
@@ -27,39 +27,21 @@ export type CardData = {
   seed?: string;
 };
 
-export function BrandCard({ format, data }: { format: ShareFormat; data: CardData }) {
-  const { w, h } = CARD_SIZE[format];
-  const story = format === "story";
-  const ar = data.arabic ?? "";
-  const arSize = Math.round((ar.length < 30 ? 40 : ar.length < 90 ? 28 : ar.length < 200 ? 22 : 17) * (story ? 1 : 0.86));
+export function BrandCard({ format, data, opts }: { format: ShareFormat; data: CardData; opts?: ShareOpts }) {
+  const o = opts ?? { ...DEFAULT_OPTS, palette: paletteFor(data.seed ?? data.kicker) };
+  const seed = data.seed ?? data.kicker;
+  // a figure (score, level, days) is an achievement; everything else a text card
+  if (data.big) return <AchievementTemplate format={format} opts={o} kicker={data.kicker} big={data.big} title={data.title} sub={[data.body, data.footer].filter(Boolean).join(" · ") || undefined} seed={seed} />;
   const body = data.body ?? "";
-  const bSize = body.length < 120 ? 16 : body.length < 300 ? 13.5 : 11.5;
-  return (
-    <View style={{ width: w, height: h, overflow: "hidden" }}>
-      <FeedBackdrop tone={toneOf(data.seed ?? data.kicker)} width={w} height={h} still />
-      <View style={{ flex: 1, paddingHorizontal: 26, paddingTop: story ? 64 : 32, paddingBottom: story ? 44 : 22, justifyContent: "space-between" }}>
-        <View style={{ alignItems: "center", gap: 6 }}>
-          <View style={{ width: 40, height: 1, backgroundColor: stage.goldSoft }} />
-          <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2.2, textTransform: "uppercase", color: stage.gold, textAlign: "center" }}>{data.kicker}</Text>
-        </View>
-        <View style={{ gap: 14, alignItems: "center" }}>
-          {ar ? <Text allowFontScaling={false} style={{ fontFamily: ARABIC_FONT, fontSize: arSize, lineHeight: arSize * 1.8, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{ar}</Text> : null}
-          {data.big ? <Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: story ? 56 : 46, color: stage.cream, textAlign: "center" }}>{data.big}</Text> : null}
-          {data.title ? <Text allowFontScaling={false} numberOfLines={3} style={{ fontFamily: FONT.bold, fontSize: 22, lineHeight: 29, color: "#fff", textAlign: "center" }}>{data.title}</Text> : null}
-          {body ? <Text allowFontScaling={false} numberOfLines={story ? 14 : 8} style={{ fontFamily: FONT.regular, fontSize: bSize, lineHeight: bSize * 1.5, color: "rgba(255,255,255,0.86)", textAlign: "center" }}>{body}</Text> : null}
-          {data.footer ? <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 11.5, color: stage.gold, textAlign: "center" }}>{data.footer}</Text> : null}
-        </View>
-        <BrandFoot />
-      </View>
-    </View>
-  );
+  const max = format === "story" ? 560 : format === "post" ? 360 : 220;
+  return <TextTemplate format={format} opts={o} kicker={data.kicker} seed={seed} arabic={data.arabic} title={data.title} body={body.length > max ? `${body.slice(0, body.lastIndexOf(" ", max))} …` : body} source={data.footer} quote={!!data.arabic && !data.title} />;
 }
 
 const messageOf = (d: CardData) => [d.kicker, d.title, d.big, d.arabic, d.body && (d.body.length > 400 ? `${d.body.slice(0, 400)} …` : d.body), d.footer].filter(Boolean).join("\n");
 
 /** the share sheet for a branded data card */
 export function CardShareSheet({ data, visible, onClose, link = SITE, onShared }: { data: CardData; visible: boolean; onClose: () => void; link?: string; onShared?: () => void }) {
-  return <ShareSheet visible={visible} onClose={onClose} link={link} message={messageOf(data)} onShared={onShared} renderCard={(f) => <BrandCard format={f} data={data} />} />;
+  return <ShareSheet visible={visible} onClose={onClose} link={link} message={messageOf(data)} onShared={onShared} templated seed={data.seed ?? data.kicker} renderCard={(f, o) => <BrandCard format={f} data={data} opts={o} />} />;
 }
 
 /** the paper-plane button: icon only (default), or a pill with the label */
@@ -106,8 +88,8 @@ export function VerseShare({ verseKey, onClose, onShared, kicker }: { verseKey: 
   if (!v) return null;
   return (
     <ShareSheet visible onClose={onClose} onShared={onShared} link={`${SITE}/quran/${verseKey.split(":")[0]}`} message={`${v.arabic}\n${v.translation}\n— ${v.reference}`}
-      video={{ key: verseKey, lang }}
-      renderCard={(f) => <VerseShareCard format={f} arabic={v.arabic} translation={v.translation} reference={v.reference} tone={toneOf(verseKey)} />} />
+      video={{ key: verseKey, lang }} templated seed={verseKey}
+      renderCard={(f, o) => <VerseTemplate format={f} opts={o} arabic={v.arabic} translation={v.translation} reference={v.reference} verseKey={verseKey} />} />
   );
 }
 

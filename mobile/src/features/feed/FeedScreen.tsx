@@ -6,7 +6,6 @@ import { StatusBar } from "expo-status-bar";
 import { Icon } from "@/components/icons";
 import { goBack } from "@/components/page";
 import { useLang } from "@/i18n";
-import { SITE } from "@/lib/api";
 import { ARABIC_FONT, FONT, R, stage } from "@/lib/theme";
 import { readJSON, writeJSON } from "@/lib/store";
 import { getChapters, reciterName, type Chapter } from "@/lib/quran";
@@ -16,13 +15,12 @@ import { VERSE_COUNTS } from "@/web/counts";
 import { readTradition } from "@/lib/tradition";
 import { useStories, useStoryQuota } from "@/features/prophet/useStories";
 import { useProphetText } from "@/features/prophet/texts";
-import { StoryShareCard } from "@/features/prophet/StoryShareCard";
 import type { AllahName, Story } from "@/features/prophet/stories";
-import { SpeakerIcon, toneOf } from "./art";
+import { SpeakerIcon } from "./art";
 import { FeedPage } from "./FeedPage";
 import { HadithPage, NamePage, ProPage, StoryPage } from "./StoryPage";
 import { HADITH_AVAILABLE, hadithFeedItems, type HadithFeedItem } from "./hadith";
-import { ShareSheet } from "./share";
+import { SpecShareSheet, nameSpec, storySpec, useShareCtx, verseSpec } from "@/features/share/feedShare";
 import { tick } from "./haptics";
 import { LibScheduler, isLibId, takeRemoteNew } from "./library";
 import { loadRemoteConfig } from "./remote";
@@ -35,7 +33,6 @@ import { rand } from "./source";
 import { DiscoverFeed, FEED_CATS, keyOfItem, loadVerse, preloadSurah, surahKeys, validKey, type FeedCat, type FeedMode, type FeedVerse } from "./source";
 import { countShare } from "./useLike";
 import { useFeedText } from "./texts";
-import { VerseShareCard } from "./VerseShareCard";
 import { ReciterSheet, useFeedAudioGuard, useFeedVoice } from "./voice";
 import { ClipPlayer } from "@/features/talents/Player";
 import { T } from "@/features/talents/api";
@@ -303,24 +300,14 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
     return <ProPage {...common} onLater={later} />;
   }, [width, pageH, active, focused, muted, lang, voice, nameOf, insets.top, insets.bottom, bottomSpace, chrome, reduce, engine, stories, quota, later]);
 
-  // what the share sheet shares
+  // what the share sheet shares: the share templates (features/share/feedShare.tsx)
+  const shareCtx = useShareCtx();
   const sh = useMemo(() => {
     if (!share) return null;
-    if (share.kind === "verse") {
-      const v = share.v;
-      return {
-        link: `${SITE}/${lang}/surah/${v.s}?v=${v.v}`, message: `${v.translation ? `${v.translation}\n\n` : ""}Quran ${v.key}`, onShared: () => countShare(v.key), video: { key: v.key, lang },
-        card: (f: "story" | "post") => <VerseShareCard format={f} arabic={v.arabic} translation={v.translation} reference={`${nameOf(v.s)} · ${v.key}`} tone={toneOf(v.key)} />,
-      };
-    }
-    if (share.kind === "story") {
-      const s = share.s;
-      return { link: `${SITE}/${lang}${s.webPath}`, message: `${s.title}\n${s.groupTitle}`, card: (f: "story" | "post") => <StoryShareCard story={s} format={f} /> };
-    }
-    const n = share.n;
-    const fake: Story = { id: "name", cat: "islam", group: `name:${n.latin}`, groupTitle: tx.nameTitle, arabic: "", title: n.latin, paragraphs: [], truncated: false, sources: [tx.nameSource], href: "/islam/names", webPath: "/islam/names" };
-    return { link: `${SITE}/${lang}/islam/names`, message: `${n.ar} – ${n.latin}: ${n.meaning}`, card: (f: "story" | "post") => <StoryShareCard story={fake} format={f} lines={{ title: `${n.ar}\n${n.latin}`, body: n.meaning, arabic: n.ar }} /> };
-  }, [share, lang, nameOf, tx.nameTitle, tx.nameSource]);
+    if (share.kind === "verse") { const v = share.v; return verseSpec(shareCtx, v, nameOf(v.s), { onShared: () => countShare(v.key) }); }
+    if (share.kind === "story") return storySpec(shareCtx, share.s);
+    return nameSpec(shareCtx, share.n);
+  }, [share, nameOf, shareCtx.lang, shareCtx.tt, shareCtx.stx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const catLabel: Record<FeedCat, string> = { foryou: pt.catForYou, verses: pt.catVerses, prophet: pt.catProphet, reciters: pt.catReciters, islam: pt.catIslam, tips: pt.catTips };
 
@@ -389,8 +376,7 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
         ) : null}
       </View>
 
-      <ShareSheet visible={!!sh} onClose={() => setShare(null)} link={sh?.link ?? SITE} message={sh?.message ?? ""} onShared={sh?.onShared} video={sh?.video}
-        renderCard={(f) => sh?.card(f) ?? null} />
+      {sh ? <SpecShareSheet spec={sh} onClose={() => setShare(null)} /> : null}
 
       <ReciterSheet visible={voices} onClose={() => setVoices(false)} dark />
       <SurahPicker visible={picker} chapters={chapters} current={activeSurah} onPick={pickSurah} onClose={() => setPicker(false)} />
