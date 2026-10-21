@@ -10,10 +10,13 @@ export const BANK_FILES: (() => { QS: RawQ[] })[] = [
   () => require("./fiqh-taharah-salah"),
   () => require("./hadith-books"),
   () => require("./hadith-terms"),
+  () => require("./history"),
   () => require("./nahw-irab"),
   () => require("./nahw-theory"),
   () => require("./prophets"),
   () => require("./qiraat"),
+  () => require("./scholar-qiraat"),
+  () => require("./scholar-tajweed"),
   () => require("./seerah-mecca"),
   () => require("./seerah-medina"),
   () => require("./tafsir-long"),
@@ -22,5 +25,6 @@ export const BANK_FILES: (() => { QS: RawQ[] })[] = [
   () => require("./tajweed-rules"),
   () => require("./ulum-compilation"),
   () => require("./ulum-revelation"),
+  () => require("./vocab"),
 ];
 /* eslint-enable @typescript-eslint/no-require-imports */

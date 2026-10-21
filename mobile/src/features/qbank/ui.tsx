@@ -6,6 +6,7 @@ import { ARABIC_FONT, FONT, GARNET, R, stage as ST, useTheme } from "@/lib/theme
 import { useVerse, wordsOf } from "@/features/reciter-path/useVerse";
 import { subjectMeta, type QLang, type Q } from "./bank";
 import { reportQuestion, toggleBookmark } from "./engine";
+import { CareNote } from "@/components/CareNote";
 import { useQbankT } from "./text";
 
 // The visible parts shared by the centre's screens: verse with the highlighted word, question and options, the
@@ -68,16 +69,19 @@ export function OptionButton({ index, text, state, rtl, disabled, onPress }: { i
   );
 }
 
+/** report a question as a possible mistake (asks first on a phone) */
+export function confirmReport(id: string, qt: ReturnType<typeof useQbankT>, onChange?: () => void) {
+  const go = () => { reportQuestion(id, "user"); onChange?.(); if (Platform.OS !== "web") Alert.alert(qt("reported")); };
+  if (Platform.OS === "web") { go(); return; }
+  Alert.alert(qt("reportTitle"), qt("reportBody"), [{ text: qt("cancel"), style: "cancel" }, { text: qt("send"), onPress: go }]);
+}
+
 /** subject · tier · tradition chips above a question, with bookmark and report */
 export function QuestionMeta({ q, bookmarked, onChange }: { q: Q; bookmarked: boolean; onChange?: () => void }) {
   const t = useTheme();
   const qt = useQbankT();
   const meta = subjectMeta(q.s);
-  const report = () => {
-    const go = () => { reportQuestion(q.id, "user"); onChange?.(); if (Platform.OS !== "web") Alert.alert(qt("reported")); };
-    if (Platform.OS === "web") { go(); return; }
-    Alert.alert(qt("reportTitle"), qt("reportBody"), [{ text: qt("cancel"), style: "cancel" }, { text: qt("send"), onPress: go }]);
-  };
+  const report = () => confirmReport(q.id, qt, onChange);
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
       <Pill icon={meta?.icon} text={qt(`s_${q.s}`)} />
@@ -123,10 +127,12 @@ export function Explanation({ q, lang, ok, picked, correctText }: { q: Q; lang: 
       <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.4, textTransform: "uppercase", color: t.gold }}>{qt("explanation")}</Text>
       <Text style={[{ fontFamily: rtl ? ARABIC_FONT : FONT.regular, fontSize: rtl ? 17 : 14.5, lineHeight: rtl ? 30 : 22, color: t.ink }, dir]}>{loc[2]}</Text>
       <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{`${qt("source")}: ${q.src}`}</Text>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
-        <Icon name="shield" size={13} color={q.review === "reviewed" ? t.accent : t.gold} />
-        <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, color: q.review === "reviewed" ? t.accent : t.gold }}>{qt(`review_${q.review}`)}</Text>
-      </View>
+      {q.review === "needs_review" ? <CareNote onReport={() => confirmReport(q.id, qt)} /> : (
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+          <Icon name="shield" size={13} color={q.review === "reviewed" ? t.accent : t.gold} />
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, color: q.review === "reviewed" ? t.accent : t.gold }}>{qt(`review_${q.review}`)}</Text>
+        </View>
+      )}
     </View>
   );
 }

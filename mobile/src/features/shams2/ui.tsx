@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Pressable, Text, View, type StyleProp, type ViewStyle } from "react-native";
+import { CareNote } from "@/components/CareNote";
 import { Icon } from "@/components/icons";
 import { ARABIC_FONT, FONT, R, useTheme, type Theme } from "@/lib/theme";
 import { SOURCES, TERMS, termOf, type Review, type SourceRef } from "./sources";
@@ -53,9 +54,10 @@ export function SourceNote({ src, review, style }: { src: SourceRef[]; review?: 
   const t = useTheme();
   const { s } = useS2();
   const [open, setOpen] = useState(false);
-  const status = !review ? "" : review.status === "reviewed" ? s("reviewedBy", { by: review.by, at: review.at }) : s("draftReview");
+  const status = !review ? "" : review.status === "reviewed" ? s("reviewedBy", { by: review.by, at: review.at }) : "";
   return (
-    <Pressable onPress={() => setOpen(!open)} accessibilityRole="button" accessibilityState={{ expanded: open }} accessibilityLabel={`${s("sources")}. ${status}`} style={[{ gap: 4 }, style]}>
+    <View style={[{ gap: 4 }, style]}>
+    <Pressable onPress={() => setOpen(!open)} accessibilityRole="button" accessibilityState={{ expanded: open }} accessibilityLabel={`${s("sources")}. ${status}`} style={{ gap: 4 }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
         <Icon name="book" size={12} color={t.muted} />
         <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, color: t.muted }}>{s("sources")}</Text>
@@ -64,6 +66,8 @@ export function SourceNote({ src, review, style }: { src: SourceRef[]; review?: 
       </View>
       {open ? src.map((k) => <Text key={k} style={{ fontFamily: FONT.regular, fontSize: 11.5, lineHeight: 16, color: t.muted, textAlign: "left" }}>{`– ${SOURCES[k].label}`}</Text>) : null}
     </Pressable>
+    {review?.status === "draft" ? <CareNote /> : null}
+    </View>
   );
 }
 

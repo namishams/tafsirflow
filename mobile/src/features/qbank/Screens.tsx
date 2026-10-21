@@ -16,6 +16,7 @@ import {
   weakestTopics, weaknessDrill, type Mode, type QbankStore,
 } from "./engine";
 import { Results, Runner, saveRun, useQLang, useQbankRewards, type Answer } from "./Runner";
+import { CareNote } from "@/components/CareNote";
 import { useQbankT } from "./text";
 import { Bar, Explanation, Panel, Pill, StatTile, pctText } from "./ui";
 import type { QStage, QSubject } from "./types";
@@ -119,8 +120,7 @@ export function QbankHome() {
           <View style={{ flexDirection: "row", gap: 10, padding: 14, borderRadius: R.lg, borderWidth: 1, borderColor: t.gold, backgroundColor: t.surface }}>
             <Icon name="shield" size={18} color={t.gold} />
             <View style={{ flex: 1, gap: 3 }}>
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: t.ink }}>{qt("reviewTitle")}</Text>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted }}>{qt("reviewNote")}</Text>
+              <CareNote size={13} />
             </View>
           </View>
 
@@ -506,7 +506,7 @@ export function QbankStatsScreen() {
   const weak = weakestTopics(s, 6);
   const strong = [...tags].sort((a, b) => (b.acc ?? 0) - (a.acc ?? 0) || b.n - a.n).slice(0, 5);
   if (!ent.allowed) return (
-    <Page><PageHero topInset back title={qt("statsTitle")} /><View style={{ padding: 16 }}><GoldCard><GoldButton title={qt("unlock")} icon="lock" onPress={ent.upsell} /></GoldCard></View></Page>
+    <><Stack.Screen options={{ headerShown: false }} /><Page><PageHero topInset back eyebrow={qt("title")} title={qt("statsTitle")} /><View style={{ padding: 16 }}><GoldCard><GoldButton title={qt("unlock")} icon="lock" onPress={ent.upsell} /></GoldCard></View></Page></>
   );
   return (
     <>

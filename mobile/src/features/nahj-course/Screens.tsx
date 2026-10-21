@@ -4,6 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Redirect, Stack, router, type Href } from "expo-router";
 import { Page, PageHero } from "@/components/page";
 import { Eyebrow, GoldButton, GoldCard, OutlineButton, Segmented, StarLattice, TextLink } from "@/components/brand";
+import { CareNote } from "@/components/CareNote";
 import { Icon } from "@/components/icons";
 import { isRTL, useLang } from "@/i18n";
 import { FONT, R, stage, useTheme } from "@/lib/theme";
@@ -201,7 +202,7 @@ function PassageBlock({ p, ed, open: initial = false }: { p: NahjPassage; ed: Na
               <Text lang={ed} style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.ink, writingDirection: rtl ? "rtl" : "ltr" }}>{study.e}</Text>
               <Eyebrow>{x.reflect}</Eyebrow>
               {study.r.map((q, i) => <Text key={i} lang={ed} style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 22, color: t.ink, writingDirection: rtl ? "rtl" : "ltr" }}>{`• ${q}`}</Text>)}
-              <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, color: t.muted }}>{x.studyAid}</Text>
+              <CareNote />
             </View>
           ) : null}
         </View>

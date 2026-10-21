@@ -1,7 +1,7 @@
-import { type ReactNode } from "react";
-import { ActivityIndicator, Pressable, ScrollView, Text, View, useWindowDimensions, type ScrollViewProps, type StyleProp, type ViewStyle } from "react-native";
+import { useEffect, useRef, type ReactNode } from "react";
+import { ActivityIndicator, Pressable, ScrollView, Text, View, useWindowDimensions, type ScrollViewInstance, type ScrollViewProps, type StyleProp, type ViewStyle } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { router } from "expo-router";
+import { router, useGlobalSearchParams } from "expo-router";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, type Theme, type, useTheme } from "@/lib/theme";
 import { Arcade, Display, Eyebrow, GoldButton, OutlineButton, SmallStar, Stage, Wordmark } from "./brand";
 import { Icon, type IconName } from "./icons";
@@ -35,8 +35,16 @@ export function Page({ children, style, padded = false, ...rest }: { children: R
   const t = useTheme();
   const { width } = useWindowDimensions();
   const wide = width > READ_WIDTH + 40;
+  // development only: `?auditY=1800` in a deep link scrolls the page, for screenshot audits of a headless simulator
+  const ref = useRef<ScrollViewInstance>(null);
+  const { auditY } = useGlobalSearchParams<{ auditY?: string }>();
+  useEffect(() => {
+    if (!__DEV__ || !auditY) return;
+    const id = setTimeout(() => ref.current?.scrollTo({ y: Number(auditY) || 0, animated: false }), 1200);
+    return () => clearTimeout(id);
+  }, [auditY]);
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={[{ paddingBottom: 130 }, wide && { width: READ_WIDTH, alignSelf: "center" }, padded && { paddingHorizontal: 16, paddingTop: 16 }, style]} keyboardShouldPersistTaps="handled" {...rest}>
+    <ScrollView ref={ref} style={{ flex: 1, backgroundColor: t.bg }} contentContainerStyle={[{ paddingBottom: 130 }, wide && { width: READ_WIDTH, alignSelf: "center" }, padded && { paddingHorizontal: 16, paddingTop: 16 }, style]} keyboardShouldPersistTaps="handled" {...rest}>
       {children}
     </ScrollView>
   );

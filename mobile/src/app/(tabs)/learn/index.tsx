@@ -4,10 +4,12 @@ import { useEffect, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
-import { GoldButton, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, StarNumber, SurahBanner, gradientColors } from "@/components/brand";
+import { Eyebrow, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, gradientColors } from "@/components/brand";
+import { CampusRails, MadrasaHero } from "@/features/campus/Campus";
+import { Shams2Entry } from "@/features/shams2/Hub";
 import { tile, routeOf } from "@/lib/features";
 import { Icon } from "@/components/icons";
-import { Page, PageHero, ProBadge } from "@/components/page";
+import { Page, ProBadge } from "@/components/page";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { FREE, openPro, usePro } from "@/lib/pro";
@@ -54,35 +56,50 @@ export default function Masterclass() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero topInset eyebrow={c.heroKicker} title={c.heroTitle} lead={c.heroLead}>
-          {c.heroFacts ? (
-            <View style={{ flexDirection: "row", gap: 8, marginBottom: 6 }}>
-              {c.heroFacts.map((f) => (
-                <View key={f.l} style={{ flex: 1, borderRadius: R.lg, borderWidth: 1, borderColor: "rgba(233,207,153,0.22)", backgroundColor: "rgba(255,255,255,0.04)", padding: 12 }}>
-                  <Text style={{ fontFamily: FONT.display, fontSize: 24, color: "rgb(233,207,153)" }}>{f.n}</Text>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, lineHeight: 15, color: stage.textMuted, marginTop: 6 }}>{f.l}</Text>
-                </View>
-              ))}
-            </View>
-          ) : null}
-          <GoldButton title={next ? lt("continue") : w("shams.cta")} icon="sun" onPress={() => (next ? open(next.surah, next.verse) : open(1))} />
-          <OutlineButton title={lt("about")} onStage onPress={() => router.push("/shams" as Href)} />
-        </PageHero>
+        {/* the Madrasa leads: stage, next step, today's wird, faculties and records */}
+        <MadrasaHero />
 
         <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 28 }}>
           <GardenWidget />
+          {/* the Shams Method (the former page hero) with the Shams Method 2.0 hub */}
+          <Stage rounded={R.card} hairlines={false} style={{ borderWidth: 1, borderColor: "rgba(214,180,108,0.45)" }}>
+            <View style={{ padding: 20, gap: 12 }}>
+              <Eyebrow onStage>{c.heroKicker}</Eyebrow>
+              <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 28, lineHeight: 32, color: "#fff" }}>{c.heroTitle}</Text>
+              <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 22, color: stage.textSoft }}>{c.heroLead}</Text>
+              {c.heroFacts ? (
+                <View style={{ flexDirection: "row", gap: 8 }}>
+                  {c.heroFacts.map((f) => (
+                    <View key={f.l} style={{ flex: 1, borderRadius: R.lg, borderWidth: 1, borderColor: "rgba(233,207,153,0.22)", backgroundColor: "rgba(255,255,255,0.04)", padding: 12 }}>
+                      <Text style={{ fontFamily: FONT.display, fontSize: 22, color: "rgb(233,207,153)" }}>{f.n}</Text>
+                      <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, lineHeight: 15, color: stage.textMuted, marginTop: 6 }}>{f.l}</Text>
+                    </View>
+                  ))}
+                </View>
+              ) : null}
+              <OutlineButton title={next ? lt("continue") : w("shams.cta")} icon="sun" onStage onPress={() => (next ? open(next.surah, next.verse) : open(1))} />
+              <OutlineButton title={lt("about")} onStage onPress={() => router.push("/shams" as Href)} />
+              <Shams2Entry />
+            </View>
+          </Stage>
           <TodayPlanCard />
+          <QbankEntryCard />
+        </View>
+
+        {/* every course and tool by faculty, with progress, and what is in progress first */}
+        <View style={{ marginTop: 32 }}><CampusRails /></View>
+
+        <View style={{ paddingHorizontal: 16, marginTop: 32, gap: 28 }}>
           <PersonaliseCard />
           <QaidaCard />
           <SchoolEntryCard />
-          <QbankEntryCard />
           <LangCourseCard />
           <ReciterPathCard />
           {next && nextChapter ? (
             <GoldCard>
               <SurahBanner arabic={nextChapter.name_arabic} onStage={false} />
               <Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink, marginTop: 12, textAlign: "center" }}>{lt("continueAt", { surah: `${nextChapter.id}. ${nextChapter.name_simple}`, verse: next.verse })}</Text>
-              <GoldButton title={lt("continue")} onPress={() => open(next.surah, next.verse)} style={{ marginTop: 14 }} />
+              <OutlineButton title={lt("continue")} onPress={() => open(next.surah, next.verse)} style={{ marginTop: 14 }} />
             </GoldCard>
           ) : null}
 

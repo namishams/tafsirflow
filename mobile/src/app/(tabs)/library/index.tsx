@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
-import { Page, PageHero } from "@/components/page";
+import { Page } from "@/components/page";
+import { CampusRails, MadrasaHero, StudyWisdom } from "@/features/campus/Campus";
 import { useWebT } from "@/i18n/web";
 import { FeedSpotlight } from "@/features/feed/EntryCards";
 import { StoryRails } from "@/features/prophet/Rails";
@@ -29,8 +30,15 @@ export default function Discover() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero topInset eyebrow="Quran Masterclass" title={w("home2.toolsTitle") === "home2.toolsTitle" ? w("nav.more") : w("home2.toolsTitle")} />
-        <View style={{ marginTop: 20, gap: 20 }}>
+        {/* the Madrasa first: stage, next step, today's wird, faculties and records */}
+        <MadrasaHero eyebrow="Quran Masterclass" />
+        <View style={{ marginTop: 28 }}><StudyWisdom /></View>
+        {/* every faculty, course and tool with the learner's progress */}
+        <View style={{ marginTop: 32 }}><CampusRails /></View>
+        <View style={{ paddingHorizontal: 16, marginTop: 36 }}>
+          <SectionTitle title={w("home2.toolsTitle") === "home2.toolsTitle" ? w("nav.more") : w("home2.toolsTitle")} style={{ marginBottom: 0 }} />
+        </View>
+        <View style={{ marginTop: 16, gap: 20 }}>
           <View style={{ paddingHorizontal: 16 }}><FeedSpotlight /></View>
           <View style={{ paddingHorizontal: 16 }}><HadithSpotlight /></View>
           <View style={{ paddingHorizontal: 16 }}><TalentsCard /></View>

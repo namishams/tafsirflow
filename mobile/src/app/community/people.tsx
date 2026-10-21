@@ -48,7 +48,7 @@ export default function People() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} eyebrow="Quran Masterclass" title={c("title")} lead={c("lead")}>
+        <PageHero back topInset arcade={false} eyebrow="Quran Masterclass" title={c("title")} lead={c("lead")}>
           {user ? <OutlineButton onStage compact icon="user" title={c("myProfile")} onPress={() => router.push("/community/me" as Href)} /> : null}
         </PageHero>
         {!user ? (

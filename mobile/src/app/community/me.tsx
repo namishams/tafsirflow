@@ -96,7 +96,7 @@ export default function MyProfile() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} title={exists ? c("edit") : c("create")} lead={c("lead")} />
+        <PageHero back topInset arcade={false} title={exists ? c("edit") : c("create")} lead={c("lead")} />
         {!user ? (
           <View style={{ padding: 20, gap: 14 }}>
             <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.ink }}>{c("signIn")}</Text>

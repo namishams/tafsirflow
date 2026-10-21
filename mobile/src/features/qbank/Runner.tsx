@@ -15,8 +15,9 @@ import { takeBurst, tickGarden } from "@/features/garden/garden";
 import { shuffleWith } from "@/features/exam/integrity";
 import { SUBJECTS, locOf, qLangOf, type Q, type QLang } from "./bank";
 import { QBANK_KEY, consumeFreeQ, recordAnswer, recordSession, type Hist, type Mode, type QbankStore } from "./engine";
+import { CareNote } from "@/components/CareNote";
 import { useQbankT } from "./text";
-import { Bar, Explanation, OptionButton, Panel, QuestionMeta, StatTile, VerseCard, pctText } from "./ui";
+import { Bar, Explanation, OptionButton, confirmReport, Panel, QuestionMeta, StatTile, VerseCard, pctText } from "./ui";
 import type { QStage, QSubject } from "./types";
 
 // One run through a list of questions. Feedback modes (practice, drill, daily, bookmarks, repetition) show the
@@ -160,7 +161,7 @@ export function Runner({ questions, mode, deferred, questionSec, questionLeft, r
       {revealed ? <Explanation q={q} lang={lang} ok={picked !== null && order[picked] === 0} picked={picked === null ? undefined : loc[1][order[picked]]} correctText={loc[1][0]} /> : null}
       {revealed ? <GoldButton title={i + 1 >= n ? qt("finish") : qt("next")} icon={i + 1 >= n ? "checkCircle" : "chevronRight"} onPress={advance} />
         : deferred ? <GoldButton title={i + 1 >= n ? qt("finish") : qt("next")} icon="chevronRight" disabled={picked === null} onPress={() => { commit(picked); advance(); }} /> : null}
-      {mode !== "mock" ? <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, color: t.muted }}>{qt("review_needs_review")}</Text> : null}
+      {mode !== "mock" && q.review === "needs_review" ? <CareNote onReport={() => confirmReport(q.id, qt)} /> : null}
     </View>
   );
 }

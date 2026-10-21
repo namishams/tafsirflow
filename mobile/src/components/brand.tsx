@@ -1,4 +1,4 @@
-import { useId, type ReactNode } from "react";
+import { cloneElement, isValidElement, useId, type ReactElement, type ReactNode } from "react";
 import { ActivityIndicator, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
 import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
 import { LinearGradient } from "expo-linear-gradient";
@@ -261,7 +261,8 @@ export function PosterGrid({ children }: { children: ReactNode[] }) {
   children.forEach((c, i) => { if (i % cols === 0) rows.push([]); rows[rows.length - 1].push(c); });
   return (
     <View style={{ gap: 12 }}>
-      {rows.map((r, i) => <View key={i} style={{ flexDirection: "row", gap: 12 }}>{r}{Array.from({ length: cols - r.length }, (_, k) => <View key={`f${k}`} style={{ flex: 1 }} />)}</View>)}
+      {/* a short last row is never padded with empty cells: its posters widen into banners (no white holes) */}
+      {rows.map((r, i) => <View key={i} style={{ flexDirection: "row", gap: 12 }}>{r.length < cols ? r.map((c) => (isValidElement(c) && c.type === Poster ? cloneElement(c as ReactElement<{ tall?: boolean }>, { tall: false }) : c)) : r}</View>)}
     </View>
   );
 }

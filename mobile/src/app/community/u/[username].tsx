@@ -57,7 +57,7 @@ export default function UserProfile() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} title={`@${username ?? ""}`} />
+        <PageHero back topInset arcade={false} title={`@${username ?? ""}`} />
         {!user ? (
           <View style={{ padding: 20, gap: 14 }}>
             <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.ink }}>{c("signIn")}</Text>
