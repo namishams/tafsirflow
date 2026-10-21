@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { Platform, Pressable, ScrollView, Text, View } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import * as WebBrowser from "expo-web-browser";
@@ -15,6 +15,11 @@ import { TILES } from "@/web/tiles";
 import { loadPrices, manageSubscriptions, purchasePro, restore } from "@/lib/iap";
 import { goBack } from "@/components/page";
 import { useDuaPrice } from "@/lib/purchases";
+import { fmt, usePlanT } from "@/features/plan/texts";
+
+// iOS: Pro can be bought without an account (App Review 5.1.1); signing in later binds it to the account.
+const GUEST_PURCHASE = Platform.OS === "ios";
+const STORE = Platform.OS === "ios" ? "App Store" : "Google Play";
 
 // The Pro sheet: what Pro brings (gold medallions), Free and Pro side by side, and a clear price card with the summary
 // Apple asks for (what, price, term, how to cancel) before Apple's own purchase sheet. Purchases belong to the account.
@@ -45,22 +50,24 @@ export default function ProSheet() {
   const shown = price; // Apple's price in the buyer's currency; nothing until the store has answered
   const why = f && ["shams", "reciters", "arabic", "tajweed", "academy", "offline", "vocab", "stats"].includes(f) ? f : "general";
 
+  const pt = usePlanT();
+  const canBuy = !!user || GUEST_PURCHASE;
   const buy = async () => {
-    if (!user) { router.push("/sign-in"); return; }
+    if (!canBuy) { router.push("/sign-in"); return; }
     setBusy("buy"); setMsg(null);
     const r = await purchasePro();
     setBusy(null);
-    if (r === "ok") { await refresh(); setMsg(tr("pro.thanks")); }
+    if (r === "ok") { await refresh(); setMsg(tr(user ? "pro.thanks" : "pro.thanksGuest")); }
     else if (r === "pending") setMsg(tr("pro.pending"));
     else if (r === "failed") setMsg(tr("pro.failed"));
     else if (r === "unavailable") setMsg(tr("pro.unavailable"));
   };
   const doRestore = async () => {
-    if (!user) { router.push("/sign-in"); return; }
+    if (!canBuy) { router.push("/sign-in"); return; }
     setBusy("restore"); setMsg(null);
     const r = await restore();
     setBusy(null);
-    if (r === "restored") { await refresh(); setMsg(tr("pro.thanks")); }
+    if (r === "restored") { await refresh(); setMsg(tr(user ? "pro.thanks" : "pro.thanksGuest")); }
     else setMsg(r === "none" ? tr("pro.nothingToRestore") : tr("pro.unavailable"));
   };
   const openDoc = (doc: "terms" | "privacy") => WebBrowser.openBrowserAsync(`${SITE}/${lang}/legal/${doc}`);
@@ -84,7 +91,7 @@ export default function ProSheet() {
               <Display onStage style={{ marginTop: 10, textAlign: "center" }}>{tr(`pro.why_${why}`)}</Display>
               <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 24, color: stage.textSoft, marginTop: 12, textAlign: "center" }}>{tr("pro.lead")}</Text>
             </View>
-            {!pro ? <GoldButton title={user ? (shown ? tr("pro.subscribe", { price: shown }) : tr("pro.cta")) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 22 }} /> : null}
+            {!pro ? <GoldButton title={canBuy ? (shown ? tr("pro.subscribe", { price: shown }) : tr("pro.cta")) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 22 }} /> : null}
             <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted, textAlign: "center", marginTop: 10 }}>{tr("pro.cancelAnytime")} · {tr("pro.noAds")}</Text>
           </View>
           <View style={{ marginTop: 14 }}><Arcade /></View>
@@ -145,9 +152,9 @@ export default function ProSheet() {
                   <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{tr("pro.perMonth")}</Text>
                 </View>
               </View>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, marginTop: 12 }}>{tr("pro.summaryCancel")}</Text>
-              {!user ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink, backgroundColor: t.accentSoft, borderRadius: R.sm, padding: 12, marginTop: 12 }}>{tr("pro.signInFirst")}</Text> : null}
-              <GoldButton title={user ? (shown ? tr("pro.subscribe", { price: shown }) : tr("pro.cta")) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 14 }} />
+              <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, marginTop: 12 }}>{shown ? fmt(pt.renew, { price: shown, per: tr("pro.perMonth"), store: STORE }) : tr("pro.summaryCancel")}</Text>
+              {!user ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink, backgroundColor: t.accentSoft, borderRadius: R.sm, padding: 12, marginTop: 12 }}>{tr(GUEST_PURCHASE ? "pro.guestNote" : "pro.signInFirst")}</Text> : null}
+              <GoldButton title={canBuy ? (shown ? tr("pro.subscribe", { price: shown }) : tr("pro.cta")) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 14 }} />
               <OutlineButton title={tr("pro.restore")} disabled={!!busy} onPress={doRestore} style={{ marginTop: 10 }} />
             </GoldCard>
           ) : null}

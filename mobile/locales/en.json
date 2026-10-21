@@ -2,6 +2,10 @@
   "ios": {
     "CFBundleDisplayName": "Quran Masterclass",
     "NSLocationWhenInUseUsageDescription": "Quran Masterclass uses your location only on this device to calculate prayer times and the Qibla direction for where you are. It is not stored or sent anywhere.",
-    "NSMicrophoneUsageDescription": "Quran Masterclass uses the microphone only when you start the recitation check. Your recording stays on this device and is not uploaded."
+    "NSMicrophoneUsageDescription": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. A recording stays on this device unless you choose to send or publish it.",
+    "NSSpeechRecognitionUsageDescription": "Quran Masterclass recognises the Arabic words you recite on this device, in exercises, tests and the word check, to show which words were heard. It is not a tajweed assessment and nothing is uploaded.",
+    "NSCameraUsageDescription": "Quran Masterclass uses the camera only when you take a profile picture or, where offered, switch on video for a recitation clip. Nothing is recorded until you start.",
+    "NSPhotoLibraryUsageDescription": "Quran Masterclass opens your photos only when you choose a profile picture. Only the picture you pick is uploaded, without its location data.",
+    "NSPhotoLibraryAddUsageDescription": "Quran Masterclass saves the verse images and videos you choose to your photo library."
   }
 }

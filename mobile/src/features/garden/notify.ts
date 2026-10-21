@@ -8,10 +8,11 @@ import { fillG, gardenText } from "./texts";
 
 // Gentle local reminders from the tree: at most one a day (one identifier, replaced on every reschedule), only between
 // 9:00 and 20:00, never within 30 minutes of a prayer time, never shaming. Kinds by priority: a stage reached, ripe
-// fruits, a little water. Off with the setting; asks for permission only when the user turns it on.
+// fruits, a little water. Off until the user turns it on; asks for permission only then.
 const KEY = "qmc.garden-notify";
 const ID = "qmc-garden";
-export const readGardenNotify = () => readJSON<{ on: boolean }>(KEY, { on: true });
+// off until the user switches it on (opt-in, App Review 4.5.4 / 5.6); a stored choice is kept
+export const readGardenNotify = () => readJSON<{ on: boolean }>(KEY, { on: false });
 
 export async function setGardenNotify(on: boolean, g: Garden, pro: boolean, lang: string): Promise<boolean> {
   if (on) {

@@ -286,7 +286,17 @@ export const PaywallCard = memo(function PaywallCard({ width }: { width: number 
   const price = useProPrice();
   const [restoreMsg, setRestoreMsg] = useState<string | null>(null);
   useEffect(() => { offerImp("paywall"); }, []);
-  const trial = cfg().paywall.trialDays;
+  // a free trial is only mentioned when the store offers one to this buyer (never from the server config alone)
+  const [trial, setTrial] = useState(0);
+  useEffect(() => {
+    if (Platform.OS === "web" || !(cfg().paywall.trialDays > 0)) return;
+    let live = true;
+    import("@/lib/iap").then((m) => m.loadProPlans()).then((l) => {
+      const o = l.find((x) => x.period === "month")?.intro;
+      if (live && o?.mode === "free-trial" && (o.unit === "day" || o.unit === "week")) setTrial(o.unit === "week" ? o.count * 7 : o.count);
+    }).catch(() => undefined);
+    return () => { live = false; };
+  }, []);
   const priceLine = price ? (trial > 0 ? fillText(tx.paywallTrial, { n: trial, price }) : fillText(tx.paywallPrice, { price })) : null;
   const doc = (d: "terms" | "privacy") => void WebBrowser.openBrowserAsync(`${SITE}/${lang}/legal/${d}`);
   const restore = async () => {

@@ -84,11 +84,22 @@ export async function loadPrices(): Promise<StorePrices> {
   return out;
 }
 
-type Verified = { ok: boolean; pro?: boolean; until?: number | null; dua?: number };
+type Verified = { ok: boolean; pro?: boolean; until?: number | null; dua?: number; guest?: boolean };
 /** send the signed transaction to the server; returns what the account has now */
 async function verify(p: Purchase): Promise<Verified> {
   const token = p.purchaseToken;
   if (!token) return { ok: false };
+  // Pro without an account (iOS, App Review 5.1.1): the server only checks Apple's signature and expiry and Pro is
+  // active on this device; after signing in, settlePending binds the same transaction to the account.
+  if (Platform.OS === "ios" && isPro(p.productId) && !(await getToken())) {
+    try {
+      const d = await api<{ premium?: boolean; until?: number | null }>("/api/iap/apple/check", { body: { jws: token } });
+      if (d.premium && d.until) writeJSON("qmc.pro", { until: d.until, source: "apple" }, true);
+      return { ok: true, pro: !!d.premium, until: d.until ?? null, guest: true };
+    } catch {
+      return { ok: false };
+    }
+  }
   try {
     const path = Platform.OS === "ios" ? "/api/iap/apple" : "/api/iap/google";
     const d = await api<{ premium?: boolean; until?: number | null; dua?: number }>(path, { body: Platform.OS === "ios" ? { jws: token } : { token, productId: p.productId } });
@@ -168,7 +179,14 @@ export function settlePending(): Promise<void> {
   settling ??= (async () => {
     if (!(await connect())) return;
     try {
-      if (!(await getToken())) return; // bound to the account: wait until someone is signed in
+      if (!(await getToken())) {
+        // without an account only Pro on iOS: refresh this device's entitlement from the newest transaction (renewals)
+        if (Platform.OS === "ios") {
+          const pro = ((await getAvailablePurchases()) ?? []).filter((p) => isPro(p.productId)).sort((a, b) => (b.transactionDate ?? 0) - (a.transactionDate ?? 0));
+          if (pro[0]) await verify(pro[0]);
+        }
+        return; // everything else is bound to the account: wait until someone is signed in
+      }
       const list = ((await getAvailablePurchases()) ?? []).filter((p) => isOurs(p.productId) && !buying.has(p.productId));
       for (const p of list) if (isConsumable(p.productId)) await settle(p);
       // Pro: the newest transaction carries the latest expiry; older renewals only need finishing once it is confirmed

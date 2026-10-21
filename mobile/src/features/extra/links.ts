@@ -12,6 +12,8 @@ export function appHref(webPath: string): string {
   if (path === "" || path === "/" || path === "/today") return `/${q}`;
   if (path === "/blog") return "/guides";
   if (path === "/premium") return "/pro";
+  // voluntary support on the website goes through a web payment: never offered inside the app (App Review 3.1.1)
+  if (path === "/support" || path.startsWith("/support/")) return "/about";
   return `${path}${q}`;
 }
 

@@ -2,6 +2,10 @@
   "ios": {
     "CFBundleDisplayName": "Quran Masterclass",
     "NSLocationWhenInUseUsageDescription": "Quran Masterclass hanya menggunakan lokasimu di perangkat ini untuk menghitung waktu salat dan arah kiblat sesuai tempatmu. Lokasi tidak disimpan atau dikirim ke mana pun.",
-    "NSMicrophoneUsageDescription": "Quran Masterclass hanya menggunakan mikrofon saat kamu memulai pemeriksaan bacaan. Rekamanmu tetap di perangkat ini dan tidak diunggah."
+    "NSMicrophoneUsageDescription": "Quran Masterclass menggunakan mikrofon hanya saat Anda memulai rekaman, pemeriksaan bacaan, atau pemeriksaan kata. Rekaman tetap di perangkat ini kecuali Anda memilih untuk mengirim atau memublikasikannya.",
+    "NSSpeechRecognitionUsageDescription": "Quran Masterclass mengenali kata-kata Arab yang Anda baca di perangkat ini, dalam latihan, tes, dan pemeriksaan kata, untuk menunjukkan kata mana yang terdengar. Ini bukan penilaian tajwid dan tidak ada yang diunggah.",
+    "NSCameraUsageDescription": "Quran Masterclass menggunakan kamera hanya saat Anda mengambil foto profil atau, jika tersedia, menyalakan video untuk klip bacaan. Tidak ada yang direkam sebelum Anda memulai.",
+    "NSPhotoLibraryUsageDescription": "Quran Masterclass membuka foto Anda hanya saat Anda memilih foto profil. Hanya foto yang Anda pilih yang diunggah, tanpa data lokasi.",
+    "NSPhotoLibraryAddUsageDescription": "Quran Masterclass menyimpan gambar dan video ayat yang Anda pilih ke galeri foto Anda."
   }
 }

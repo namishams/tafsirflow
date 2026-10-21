@@ -1,7 +1,7 @@
 # App Store / Google Play – Quran Masterclass
 
 Bundle ID / package: `com.quranmasterclass.app` · SKU: `quranmasterclass-ios` · Primary language: English (U.S.), German added.
-Category: Education (secondary: Reference). Age rating: 4+ (no objectionable content; AI answers are religious explanations, no user-to-user chat except moderated verse comments → answer "Infrequent/Mild" for none; check the questionnaire).
+Category: Education (secondary: Reference). Age rating: see `docs/app-store-compliance.md` (the Talents network has user profiles and 1:1 messages, so the questionnaire must answer user-generated content and messaging with Yes; expected result 13+).
 Support URL: https://quranmasterclass.com/en/feedback · Marketing URL: https://quranmasterclass.com · Privacy: https://quranmasterclass.com/en/legal/privacy · Terms (EULA): Apple standard EULA + https://quranmasterclass.com/en/legal/terms
 
 ## Name and subtitle (max. 30 characters each)
@@ -37,7 +37,7 @@ Today's plan, the Quran map, statistics, achievements – synced with your accou
 
 FREE AND PRO
 Free forever: the whole Quran with translation and tafsir, the Shams Method for al-Fātiḥa and Juz ʿAmma, prayer times, Qibla, duas and much more.
-Quran Masterclass Pro unlocks the Shams Method for all 114 surahs, all reciters and radio stations, the complete Arabic and Tajweed courses, Academy tests for every surah, detailed statistics, the AI assistant and five personal duas a month.
+Quran Masterclass Pro unlocks the Shams Method for all 114 surahs, all reciters, the complete Arabic and Tajweed courses, Academy tests for every surah, detailed statistics, the AI assistant and five personal duas a month.
 
 Pro is a monthly auto-renewable subscription. Payment is charged to your Apple ID at confirmation. It renews automatically unless cancelled at least 24 hours before the end of the current period; manage or cancel it in your App Store account settings. Personal duas can also be bought one at a time.
 
@@ -64,7 +64,7 @@ Der Tagesplan, die Koran-Landkarte, Statistik und Auszeichnungen – synchron mi
 
 KOSTENLOS UND PRO
 Für immer kostenlos: der ganze Koran mit Übersetzung und Tafsir, die Shams-Methode für al-Fātiḥa und Juz ʿAmma, Gebetszeiten, Qibla, Duas und vieles mehr.
-Quran Masterclass Pro schaltet die Shams-Methode für alle 114 Suren frei, alle Rezitatoren und Radiosender, den ganzen Arabisch- und Tadschwid-Kurs, Academy-Tests für jede Sure, die ausführliche Statistik, den KI-Assistenten und fünf persönliche Duas im Monat.
+Quran Masterclass Pro schaltet die Shams-Methode für alle 114 Suren frei, alle Rezitatoren, den ganzen Arabisch- und Tadschwid-Kurs, Academy-Tests für jede Sure, die ausführliche Statistik, den KI-Assistenten und fünf persönliche Duas im Monat.
 
 Pro ist ein monatliches Abo, das sich automatisch verlängert. Die Zahlung wird bei Bestätigung über deine Apple-ID abgerechnet. Das Abo verlängert sich, wenn es nicht spätestens 24 Stunden vor Ende des Zeitraums gekündigt wird; verwalten und kündigen kannst du es in den Einstellungen deines App-Store-Kontos. Persönliche Duas gibt es auch einzeln.
 

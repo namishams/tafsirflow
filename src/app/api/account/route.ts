@@ -1,3 +1,4 @@
+import { promises as fs } from "node:fs";
 import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { currentUser, endSession, hashPassword, verifyPassword } from "@/lib/auth";
@@ -80,6 +81,9 @@ export async function POST(req: NextRequest) {
     if (!checkCurrent()) return json({ error: "current" }, 403);
     if (me.role === "admin") return json({ error: "admin" }, 400); // the owner account cannot delete itself by accident
     await deleteUserMedia(me.id); // Quran Talents: clips, samples and avatar in MEDIA_DIR (rows go with the cascade)
+    // certificate recordings sent for review (absolute paths outside the web root; the rows go with the cascade)
+    const recs = await p.query("SELECT q.recording_path AS f FROM review_queue q JOIN certificates c ON c.id = q.certificate_id WHERE c.user_id = $1 AND q.recording_path IS NOT NULL", [me.id]).catch(() => ({ rows: [] as { f: string }[] }));
+    for (const r of recs.rows) await fs.unlink(r.f).catch(() => undefined);
     await p.query("DELETE FROM users WHERE id = $1", [me.id]); // sessions, data, comments, likes are removed with it (ON DELETE CASCADE)
     await endSession();
     return json({ ok: true });

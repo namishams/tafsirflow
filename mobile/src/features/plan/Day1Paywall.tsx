@@ -28,6 +28,8 @@ import { joinList, useGoalLabel } from "./Onboard2";
 // next to the button, restore, terms and privacy, and "Continue for free" that is always visible. No countdowns,
 // no invented discounts. Layout options come from the feed config (monetize.paywall.day1); prices never do.
 const STORE = Platform.OS === "ios" ? "App Store" : "Google Play";
+// iOS: Pro can be bought without an account (App Review 5.1.1); signing in later binds it to the account.
+const GUEST_PURCHASE = Platform.OS === "ios";
 const COMPARE: [string, string, string][] = [
   ["c_shams", "c_shamsFree", "c_shamsPro"], ["c_arabic", "c_arabicFree", "c_full"], ["c_tajweed", "c_tajweedFree", "c_full"], ["c_reciters", "c_recitersFree", "c_recitersPro"],
 ];
@@ -84,9 +86,10 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
     return out;
   }, [plan, p]);
 
+  const canBuy = !!user || GUEST_PURCHASE;
   const buy = async () => {
     if (!chosen) return;
-    if (!user) { router.push("/sign-in"); return; }
+    if (!canBuy) { router.push("/sign-in"); return; }
     tick(); setBusy("buy"); setMsg(null);
     const { purchasePro } = await import("@/lib/iap");
     const r = await purchasePro(chosen.sku);
@@ -97,7 +100,7 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
     else if (r === "unavailable") setMsg(tr("pro.unavailable"));
   };
   const doRestore = async () => {
-    if (!user) { router.push("/sign-in"); return; }
+    if (!canBuy) { router.push("/sign-in"); return; }
     setBusy("restore"); setMsg(null);
     const { restore } = await import("@/lib/iap");
     const r = await restore();
@@ -184,9 +187,9 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
         </View>
         {compact ? priceCards : benefitList}
         {compact ? benefitList : priceCards}
-        {!user ? <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: "#ffffff", backgroundColor: "rgba(255,255,255,0.08)", borderRadius: R.sm, padding: 12 }}>{tr("pro.signInFirst")}</Text> : null}
+        {!user ? <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: "#ffffff", backgroundColor: "rgba(255,255,255,0.08)", borderRadius: R.sm, padding: 12 }}>{tr(GUEST_PURCHASE ? "pro.guestNote" : "pro.signInFirst")}</Text> : null}
         <View style={{ gap: 10 }}>
-          <GoldButton title={!user ? tr("account.signIn") : chosen?.intro?.mode === "free-trial" ? p.ctaTrial : p.cta} busy={busy === "buy"} disabled={!!busy || !chosen} onPress={buy} />
+          <GoldButton title={!canBuy ? tr("account.signIn") : chosen?.intro?.mode === "free-trial" ? p.ctaTrial : p.cta} busy={busy === "buy"} disabled={!!busy || !chosen} onPress={buy} />
           {chosen ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: stage.textMuted, textAlign: "center" }}>{fmt(p.renew, { price: chosen.price, per: per(chosen), store: STORE })}</Text> : null}
           <OutlineButton title={p.continueFree} onStage onPress={free} />
         </View>

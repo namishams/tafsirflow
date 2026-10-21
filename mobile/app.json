@@ -57,7 +57,115 @@
           "barcelona"
         ]
       },
-      "buildNumber": "19"
+      "buildNumber": "19",
+      "privacyManifests": {
+        "NSPrivacyTracking": false,
+        "NSPrivacyTrackingDomains": [],
+        "NSPrivacyAccessedAPITypes": [
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "CA92.1"
+            ]
+          },
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "C617.1",
+              "0A2A.1",
+              "3B52.1"
+            ]
+          },
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategorySystemBootTime",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "35F9.1"
+            ]
+          },
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryDiskSpace",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "E174.1",
+              "85F4.1"
+            ]
+          }
+        ],
+        "NSPrivacyCollectedDataTypes": [
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeEmailAddress",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+            ]
+          },
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeName",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+            ]
+          },
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeUserID",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+            ]
+          },
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypePurchaseHistory",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+            ]
+          },
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypePhotosorVideos",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+            ]
+          },
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeAudioData",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+            ]
+          },
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeOtherUserContent",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+            ]
+          },
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeProductInteraction",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality",
+              "NSPrivacyCollectedDataTypePurposeAnalytics"
+            ]
+          },
+          {
+            "NSPrivacyCollectedDataType": "NSPrivacyCollectedDataTypeOtherDataTypes",
+            "NSPrivacyCollectedDataTypeLinked": true,
+            "NSPrivacyCollectedDataTypeTracking": false,
+            "NSPrivacyCollectedDataTypePurposes": [
+              "NSPrivacyCollectedDataTypePurposeAppFunctionality"
+            ]
+          }
+        ]
+      }
     },
     "android": {
       "package": "com.quranmasterclass.app",
@@ -88,10 +196,15 @@
         "expo-audio",
         {
           "enableBackgroundPlayback": true,
-          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. Recordings stay on this device unless you choose to publish a recitation clip or send a verification sample."
+          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. A recording stays on this device unless you choose to send or publish it."
         }
       ],
-      "expo-secure-store",
+      [
+        "expo-secure-store",
+        {
+          "faceIDPermission": false
+        }
+      ],
       "expo-localization",
       "expo-iap",
       "expo-font",
@@ -110,7 +223,11 @@
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "Quran Masterclass uses your location only on this device to calculate prayer times and the Qibla direction for where you are. It is not stored or sent anywhere."
+          "locationWhenInUsePermission": "Quran Masterclass uses your location only on this device to calculate prayer times and the Qibla direction for where you are. It is not stored or sent anywhere.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "locationFullAccuracyPermission": false,
+          "motionUsagePermission": false
         }
       ],
       [
@@ -123,7 +240,7 @@
       [
         "expo-media-library",
         {
-          "photosPermission": "Quran Masterclass saves the verse images and videos you choose to your photo library. Nothing else is read or uploaded.",
+          "photosPermission": "Quran Masterclass opens your photos only when you choose a profile picture. Only the picture you pick is uploaded, without its location data.",
           "savePhotosPermission": "Quran Masterclass saves the verse images and videos you choose to your photo library.",
           "isAccessMediaLocationEnabled": false,
           "granularPermissions": [
@@ -135,16 +252,16 @@
       [
         "expo-speech-recognition",
         {
-          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. Recordings stay on this device unless you choose to publish a recitation clip or send a verification sample.",
-          "speechRecognitionPermission": "The word check in the Reciter Path recognises the words you recite on this device to show which words were heard. It is not a tajweed assessment and nothing is uploaded."
+          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. A recording stays on this device unless you choose to send or publish it.",
+          "speechRecognitionPermission": "Quran Masterclass recognises the Arabic words you recite on this device, in exercises, tests and the word check, to show which words were heard. It is not a tajweed assessment and nothing is uploaded."
         }
       ],
       "expo-video",
       [
         "expo-camera",
         {
-          "cameraPermission": "Quran Masterclass uses the camera only when you switch on video for a recitation clip. Nothing is recorded until you start, and the clip is only published if you choose to.",
-          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. Recordings stay on this device unless you choose to publish a recitation clip or send a verification sample.",
+          "cameraPermission": "Quran Masterclass uses the camera only when you take a profile picture or, where offered, switch on video for a recitation clip. Nothing is recorded until you start.",
+          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. A recording stays on this device unless you choose to send or publish it.",
           "recordAudioAndroid": true
         }
       ],
@@ -152,7 +269,7 @@
         "expo-image-picker",
         {
           "photosPermission": "Quran Masterclass opens your photos only when you choose a profile picture. Only the picture you pick is uploaded, without its location data.",
-          "cameraPermission": "Quran Masterclass uses the camera only when you take a profile picture or switch on video for a recitation clip.",
+          "cameraPermission": "Quran Masterclass uses the camera only when you take a profile picture or, where offered, switch on video for a recitation clip. Nothing is recorded until you start.",
           "microphonePermission": false
         }
       ]
