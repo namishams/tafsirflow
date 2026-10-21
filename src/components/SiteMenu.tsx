@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { GROUPS, isActive } from "@/lib/nav";
 import { IconClose, IconMenu } from "./Icons";
+import Wordmark from "./Wordmark";
 
 // The one menu of the site. variant "panel": "More" button in the desktop header that opens all sections below
 // the header; variant "sheet": round menu button for phones that opens the same sections full screen.
@@ -65,7 +66,7 @@ export default function SiteMenu({ variant = "sheet" }: { variant?: "sheet" | "p
       {open && createPortal(
         <div className="fixed inset-0 z-[90] flex flex-col bg-surface" role="dialog" aria-modal="true" aria-label={t("menu")}>
           <div className="flex h-14 shrink-0 items-center justify-between border-b border-line px-5">
-            <p className="text-[15px] font-extrabold tracking-tight">Quran Masterclass</p>
+            <Wordmark height={24} />
             <button onClick={() => setOpen(false)} aria-label={t("close")} className="grid h-9 w-9 place-items-center rounded-full hover:bg-bg"><IconClose /></button>
           </div>
           <nav className="flex-1 overflow-y-auto px-5 pb-[calc(2rem+env(safe-area-inset-bottom))] pt-6">

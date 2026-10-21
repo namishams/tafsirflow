@@ -5,9 +5,9 @@ import { PRIMARY, isActive } from "@/lib/nav";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SiteMenu from "./SiteMenu";
 import AccountLink from "./AccountLink";
-import Logo from "./Logo";
+import Wordmark from "./Wordmark";
 
-// The header of every page: logo, main sections + "More" (desktop), language, account, menu (phones)
+// The header of every page: gold wordmark, main sections + "More" (desktop), language, account, menu (phones)
 export default function AppHeader() {
   const t = useTranslations("nav");
   const path = usePathname();
@@ -16,8 +16,7 @@ export default function AppHeader() {
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-5">
         <div className="flex min-w-0 items-center gap-5">
           <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2.5" aria-label="Quran Masterclass">
-            <Logo size={28} />
-            <span className="truncate text-[15px] font-extrabold tracking-tight lg:hidden xl:inline">Quran Masterclass</span>
+            <Wordmark height={30} svgClassName="h-[24px] w-auto sm:h-[30px] lg:h-[22px] xl:h-[28px]" />
           </Link>
           <nav className="hidden items-center gap-0.5 lg:flex" aria-label={t("main")}>
             {PRIMARY.map((n, i) => {

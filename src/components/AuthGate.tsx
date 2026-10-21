@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import AccountForm from "./AccountForm";
-import Logo from "./Logo";
+import Wordmark from "./Wordmark";
 
 // Blocking sign-up wall shown when the free tafsir limit is reached (or the e-mail still needs confirming)
 export default function AuthGate({ mode, onClose }: { mode: "register" | "verify"; onClose: () => void }) {
@@ -17,7 +17,7 @@ export default function AuthGate({ mode, onClose }: { mode: "register" | "verify
   return (
     <div className="fixed inset-0 z-[60] grid place-items-end bg-ink/50 backdrop-blur-sm sm:place-items-center" role="dialog" aria-modal="true" aria-labelledby="gate-title">
       <div className="max-h-[92dvh] w-full overflow-y-auto rounded-t-2xl bg-surface p-6 shadow-xl sm:max-w-md sm:rounded-2xl sm:p-8">
-        <div className="mb-5 flex items-center gap-2.5"><Logo size={28} /><span className="text-[15px] font-semibold">Quran Masterclass</span></div>
+        <div className="mb-5 flex items-center"><Wordmark height={26} /></div>
         {mode === "register" ? (
           <>
             <h2 id="gate-title" className="font-display text-[28px] leading-tight">{t("limitTitle")}</h2>

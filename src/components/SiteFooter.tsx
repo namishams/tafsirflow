@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { GROUPS } from "@/lib/nav";
 import { LOCALE_META } from "@/i18n/locales";
-import Logo from "./Logo";
+import Wordmark from "./Wordmark";
 import TrustStrip from "./TrustStrip";
 import MadeInDubai from "./MadeInDubai";
 import Skyline from "./Skyline";
@@ -18,7 +18,7 @@ export default async function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 pb-10 pt-10">
         <div className="grid gap-10 lg:grid-cols-[1.25fr_repeat(4,1fr)]">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2.5"><Logo size={26} /><span className="text-[15px] font-extrabold tracking-tight">Quran Masterclass</span></Link>
+            <Link href="/" className="inline-flex items-center" aria-label="Quran Masterclass"><Wordmark height={30} /></Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">{t("app.tagline")}</p>
             <div className="mt-6"><TrustStrip compact /></div>
           </div>

@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SiteMenu from "./SiteMenu";
-import Logo from "./Logo";
+import Wordmark from "./Wordmark";
 import { TrustLine } from "./TrustStrip";
 
 // Two-panel sign-in layout: brand panel (hidden on phones) + form
@@ -11,7 +11,7 @@ export default async function AuthShell({ children }: { children: React.ReactNod
   return (
     <div className="grid min-h-[100dvh] lg:grid-cols-[1fr_minmax(420px,520px)]">
       <aside className="stage pattern relative hidden flex-col justify-between p-12 text-white lg:flex">
-        <Link href="/" className="flex items-center gap-2.5"><Logo size={32} /><span className="font-display text-lg font-semibold">Quran Masterclass</span></Link>
+        <Link href="/" className="flex items-center" aria-label="Quran Masterclass"><Wordmark height={34} tone="gold" /></Link>
         <div>
           <p className="font-arabic text-6xl leading-[1.5] text-[#e9cf99]" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
           <h1 className="mt-8 max-w-md font-display text-4xl font-semibold leading-[1.15]">{t("panelTitle")}</h1>
@@ -25,7 +25,7 @@ export default async function AuthShell({ children }: { children: React.ReactNod
       </aside>
       <main className="flex flex-col px-5 py-6 sm:px-10">
         <header className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 lg:invisible"><Logo size={28} /><span className="font-display text-base font-semibold">Quran Masterclass</span></Link>
+          <Link href="/" className="flex items-center lg:invisible" aria-label="Quran Masterclass"><Wordmark height={26} /></Link>
           <div className="flex items-center gap-2"><LanguageSwitcher /><SiteMenu /></div>
         </header>
         <div className="mx-auto flex w-full max-w-[400px] flex-1 flex-col justify-center py-10">{children}<TrustLine className="mt-8 text-muted lg:hidden" /></div>
