@@ -77,7 +77,7 @@ const END_DUAS: Dua[] = [
     ar: "اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ، وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ",
     translit: "Allāhumma jʿalnī mina t-tawwābīn, wajʿalnī mina l-mutaṭahhirīn.",
     meaning: M(
-      "O Allah, lassen Sie mich zu denen gehören, die reumütig zu Dir umkehren, und lassen Sie mich zu denen gehören, die sich reinigen.",
+      "O Allah, lass mich zu denen gehören, die reumütig zu Dir umkehren, und lass mich zu denen gehören, die sich reinigen.",
       "O Allah, make me one of those who turn to You in repentance, and make me one of those who purify themselves.",
       {
         tr: "Allah'ım, beni sana tövbe ederek dönenlerden ve kendilerini arındıranlardan eyle.",
@@ -220,7 +220,7 @@ const ending = (shia: boolean): WuduStep => ({
   title: L("Das Bittgebet danach", "The du'a afterwards", "الدعاء بعد الوضوء", {
     tr: "Ardından dua", ur: "اس کے بعد کی دعا", fa: "دعای پس از وضو", ps: "وروسته دعا", fr: "L'invocation (du'a) qui suit", es: "La súplica (du'a) posterior", id: "Doa setelahnya", ms: "Doa selepasnya", bn: "এরপরের দোয়া", ru: "Мольба (дуа) после омовения", zh: "之后的祈祷（du'a）",
   }),
-  text: L("Wenn Sie fertig sind, bezeuge die Einheit Allahs und bitte Ihn, Sie zu den Reinen zu zählen.",
+  text: L("Wenn Sie fertig sind, bezeugen Sie die Einheit Allahs und bitten Sie Ihn, Sie zu den Reinen zu zählen.",
     "When you have finished, bear witness to the oneness of Allah and ask Him to count you among those who purify themselves.",
     "إذا فرغت من وضوئك فاشهد لله بالتوحيد، واسأله أن يجعلك من التوّابين والمتطهّرين.", {
       tr: "Bitirdiğinde Allah'ın birliğine şahitlik et ve O'ndan seni kendilerini arındıranlardan saymasını dile.",
@@ -299,7 +299,7 @@ const SUNNI: WuduStep[] = [
   {
     id: "mouth", scene: "mouth", kind: "sunnah", times: 3, quiz: true,
     title: TITLE_MOUTH,
-    text: L("Nehmen Sie mit der rechten Hand Wasser in den Mund, spülen Sie ihn gut aus und spucke das Wasser wieder aus.",
+    text: L("Nehmen Sie mit der rechten Hand Wasser in den Mund, spülen Sie ihn gut aus und spucken Sie das Wasser wieder aus.",
       "Take water into your mouth with your right hand, rinse it well and spit the water out.",
       "خذ الماء بيدك اليمنى إلى فمك، وأدِره فيه، ثم مُجَّه.", {
         tr: "Sağ elinle ağzına su al, iyice çalkala ve suyu tükür.",
@@ -319,7 +319,7 @@ const SUNNI: WuduStep[] = [
   {
     id: "nose", scene: "nose", kind: "sunnah", times: 3, quiz: true,
     title: TITLE_NOSE_SUNNI,
-    text: L("Zieh etwas Wasser in die Nase und schnäuze es wieder aus.",
+    text: L("Ziehen Sie etwas Wasser in die Nase und schnäuzen Sie es wieder aus.",
       "Draw a little water into your nose and blow it out again.",
       "اجذب الماء بنَفَسك إلى أنفك، ثم انثره.", {
         tr: "Burnuna biraz su çek ve tekrar sümkürerek at.",
@@ -510,7 +510,7 @@ const SHIA: WuduStep[] = [
   {
     id: "nose", scene: "nose", kind: "sunnah", quiz: true,
     title: TITLE_NOSE_SHIA,
-    text: L("Zieh etwas Wasser in die Nase und lassen Sie es wieder heraus.", "Draw a little water into your nose and let it out again.", "اجذب الماء إلى أنفك ثم أخرجه.", {
+    text: L("Ziehen Sie etwas Wasser in die Nase und lassen Sie es wieder heraus.", "Draw a little water into your nose and let it out again.", "اجذب الماء إلى أنفك ثم أخرجه.", {
       tr: "Burnuna biraz su çek ve tekrar dışarı bırak.",
       ur: "ناک میں تھوڑا پانی کھینچیں اور پھر نکال دیں۔",
       fa: "اندکی آب به بینی بکشید و دوباره بیرون بدهید.",

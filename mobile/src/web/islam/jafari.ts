@@ -6,7 +6,7 @@ export const jafari: IslamDoc = {
   de: {
     title: "Die Dscha'fari-Rechtsschule",
     kicker: "Die Schule von Imam Dscha'far as-Sadiq",
-    lead: "Die Dscha'fari-Rechtsschule trägt den Namen von Imam Dscha'far as-Sadiq (Friede sei mit ihm), einem Urenkel von Husain und einem der großen Lehrer Medinas im zweiten Jahrhundert nach der Hidschra. Sie ist die Rechtsschule der Zwölfer-Schiiten und wird von der Amman-Botschaft ausdrücklich als eine der acht anerkannten Schulen des Islam genannt. In diesem Kapitel lernst du sie so kennen, wie ihre Anhänger sie selbst verstehen – ruhig, genau und mit Respekt.",
+    lead: "Die Dscha'fari-Rechtsschule trägt den Namen von Imam Dscha'far as-Sadiq (Friede sei mit ihm), einem Urenkel von Husain und einem der großen Lehrer Medinas im zweiten Jahrhundert nach der Hidschra. Sie ist die Rechtsschule der Zwölfer-Schiiten und wird von der Amman-Botschaft ausdrücklich als eine der acht anerkannten Schulen des Islam genannt. In diesem Kapitel lernen Sie sie so kennen, wie ihre Anhänger sie selbst verstehen – ruhig, genau und mit Respekt.",
     facts: [
       { n: "148 n. H.", l: "Todesjahr von Imam Dscha'far as-Sadiq in Medina (765 n. Chr.)" },
       { n: "4", l: "klassische Hadith-Werke: al-Kafi, Man la yahduruhu al-faqih, Tahdhib al-Ahkam, al-Istibsar" },
@@ -15,7 +15,7 @@ export const jafari: IslamDoc = {
     ],
     body: `## Ein Lehrer in Medina
 
-Stell dir Medina im zweiten Jahrhundert nach der Hidschra vor. Die Stadt des Propheten ﷺ ist ein Ort des Lernens: In der Moschee des Propheten sitzen Gelehrte im Kreis, Schüler aus Kufa, Basra, Ägypten und Chorasan reisen an, um Hadithe zu hören, Fragen zu stellen und Antworten aufzuschreiben. In dieser Welt lehrte **Dscha'far ibn Muhammad**, den die Muslime bis heute *as-Sadiq* nennen – „der Wahrhaftige“.
+Stellen Sie sich Medina im zweiten Jahrhundert nach der Hidschra vor. Die Stadt des Propheten ﷺ ist ein Ort des Lernens: In der Moschee des Propheten sitzen Gelehrte im Kreis, Schüler aus Kufa, Basra, Ägypten und Chorasan reisen an, um Hadithe zu hören, Fragen zu stellen und Antworten aufzuschreiben. In dieser Welt lehrte **Dscha'far ibn Muhammad**, den die Muslime bis heute *as-Sadiq* nennen – „der Wahrhaftige“.
 
 Sein Vater war **Muhammad al-Baqir**, sein Großvater **Ali Zain al-Abidin**, und dessen Vater war **Husain ibn Ali**, der Enkel des Propheten ﷺ. Über seine Mutter, Umm Farwa, war Imam Dscha'far zugleich ein Nachfahre von Abu Bakr as-Siddiq, denn sie war eine Enkelin von al-Qasim ibn Muhammad ibn Abi Bakr, einem der bekannten Rechtsgelehrten Medinas. In seiner Person begegnen sich also zwei Linien, die beide Traditionen des Islam lieben.
 
@@ -96,7 +96,7 @@ Wichtig zu wissen: Die Dscha'fari-Gelehrten der Usuli-Richtung betrachten nicht 
 
 ## Große Gelehrte
 
-Die Geschichte der Schule ist reich an Gelehrten, die weit über ihre eigene Gemeinschaft hinaus wirkten. Einige Namen, die du kennen solltest:
+Die Geschichte der Schule ist reich an Gelehrten, die weit über ihre eigene Gemeinschaft hinaus wirkten. Einige Namen, die Sie kennen sollten:
 
 - **asch-Schaich al-Mufid** (gest. 413 n. H.) in Bagdad, Lehrer einer ganzen Generation.
 - **asch-Scharif al-Murtada** (gest. 436 n. H.), ein bedeutender Theologe und Rechtsgelehrter, Bruder von asch-Scharif ar-Radi.
@@ -117,7 +117,7 @@ Der Unterricht folgt einem alten Weg: zuerst arabische Grammatik, Logik und Grun
 
 ## Was einem im Alltag auffällt
 
-Wenn du neben einem Dscha'fari-Muslim betest, wirst du vielleicht kleine Unterschiede bemerken. Sie sind keine Abweichung vom Islam, sondern Ergebnis anderer Überlieferungen und Rechtsauslegungen. Ähnliche Unterschiede gibt es auch zwischen den sunnitischen Schulen.
+Wenn Sie neben einem Dscha'fari-Muslim beten, werden Sie vielleicht kleine Unterschiede bemerken. Sie sind keine Abweichung vom Islam, sondern Ergebnis anderer Überlieferungen und Rechtsauslegungen. Ähnliche Unterschiede gibt es auch zwischen den sunnitischen Schulen.
 
 - **Die Hände im Gebet:** Sie werden meist seitlich herabhängend gehalten, wie es auch viele Malikiten tun.
 - **Die Turba:** Viele Schiiten legen beim Niederwerfen die Stirn auf ein kleines Stück Erde oder Ton, die *Turba*. Der Grund liegt im Recht: Nach dieser Schule soll die Niederwerfung auf Erde oder auf etwas geschehen, das aus der Erde wächst und weder gegessen noch als Kleidung getragen wird. Man wirft sich also *auf* die Erde nieder, nicht *vor* ihr – die Anbetung gilt allein Allah. Oft stammt die Erde aus Kerbela, aus Liebe zum Ort, an dem Husain starb.
@@ -137,7 +137,7 @@ Die **Amman-Botschaft** von 2004, die 2005 von Gelehrten aus vielen Ländern bes
 
 ## Zum Abschluss
 
-Wer die Dscha'fari-Schule kennenlernt, begegnet einer Tradition voller Ernsthaftigkeit: einer tiefen Liebe zur Familie des Propheten ﷺ, einer langen Kette von Gelehrten und einer Rechtstheorie, die zu den feinsten der islamischen Geistesgeschichte gehört. Du musst ihr nicht folgen, um sie zu achten. Und du musst nicht jede ihrer Ansichten teilen, um von ihr zu lernen.
+Wer die Dscha'fari-Schule kennenlernt, begegnet einer Tradition voller Ernsthaftigkeit: einer tiefen Liebe zur Familie des Propheten ﷺ, einer langen Kette von Gelehrten und einer Rechtstheorie, die zu den feinsten der islamischen Geistesgeschichte gehört. Sie müssen ihr nicht folgen, um sie zu achten. Und Sie müssen nicht jede ihrer Ansichten teilen, um von ihr zu lernen.
 
 Allah sagt: „O ihr Menschen, Wir haben euch aus einem Mann und einer Frau erschaffen und euch zu Völkern und Stämmen gemacht, damit ihr einander kennenlernt“ (Sure 49:13). Kennenlernen ist der erste Schritt zu Verständnis. Imam Dscha'far as-Sadiq hat in Medina Schüler aus vielen Richtungen unterrichtet. Vielleicht ist das die schönste Art, sein Erbe zu ehren: gemeinsam zu lernen, mit offenem Herzen und gutem Benehmen.`,
     faq: [

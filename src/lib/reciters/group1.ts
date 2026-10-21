@@ -30,7 +30,7 @@ Was Al-Husary auszeichnet, ist seine Klarheit. Jeder Buchstabe kommt aus seiner 
 
 ## Was Sie von ihm lernen können
 
-Wenn Sie Tajwid lernen, ist Al-Husary ein wunderbarer Begleiter. Hören Sie einen Vers, halten Sie an und sprechen Sie ihn nach – achten Sie dabei auf die Länge der Vokale, auf Idgham und Ikhfa', auf die Pausen. Sein gleichmäßiges Tempo lassen Ihnen Zeit, jedes Wort mitzulesen. Viele Lehrer empfehlen seine Aufnahmen bis heute als erste Wahl für Anfänger, und wer einmal mit ihm gelernt hat, behält seine Melodie oft ein Leben lang im Ohr.
+Wenn Sie Tajwid lernen, ist Al-Husary ein wunderbarer Begleiter. Hören Sie einen Vers, halten Sie an und sprechen Sie ihn nach – achten Sie dabei auf die Länge der Vokale, auf Idgham und Ikhfa', auf die Pausen. Sein gleichmäßiges Tempo lässt Ihnen Zeit, jedes Wort mitzulesen. Viele Lehrer empfehlen seine Aufnahmen bis heute als erste Wahl für Anfänger, und wer einmal mit ihm gelernt hat, behält seine Melodie oft ein Leben lang im Ohr.
 
 Er verstarb 1980. Sein Vermächtnis lebt in jedem Kind weiter, das mit seiner Stimme die ersten Suren gelernt hat. Möge Allah ihn reichlich dafür belohnen.`,
       knownFor: [
@@ -48,7 +48,7 @@ Sheikh Mahmoud Khalil Al-Husary, may Allah have mercy on him, was born in 1917 i
 
 ## His work
 
-Al-Husary became one of the defining voices of Egyptian radio. Yet his lasting gift to the Ummah is something else: he was the first reciter to record the entire Qur'an in the calm murattal style in the reading of Hafs from 'Asim. That recording, made in 1961, became a benchmark that countless people have followed. Recordings in other transmissions, suchen Sie as Warsh from Nafi', came later.
+Al-Husary became one of the defining voices of Egyptian radio. Yet his lasting gift to the Ummah is something else: he was the first reciter to record the entire Qur'an in the calm murattal style in the reading of Hafs from 'Asim. That recording, made in 1961, became a benchmark that countless people have followed. Recordings in other transmissions, such as Warsh from Nafi', came later.
 
 He held the honoured title of sheikh of the reciters of Egypt and travelled to many countries to recite. Especially valuable for learners is his *Mushaf Mu'allim*, the "teaching mushaf": he recites a passage, and after a pause children repeat the same words. It lets you practise at home in the rhythm of a master.
 
@@ -96,7 +96,7 @@ Wer Al-Minshawi zum ersten Mal hört, spürt sofort etwas: eine stille Traurigke
 
 ## Was Sie von ihm mitnehmen können
 
-Al-Minshawi lehrt nicht nur, *wie* man liest, sondern auch, *mit welchem Herzen*. Hören Sie ihn, wenn Sie sich auf die Bedeutung eines Verses einlassen möchten: Lesen Sie die Übersetzung mit, lassen Sie seine Pausen wirken und achten Sie darauf, wie er den Klang dem Inhalt anpasen. Sein Murattal eignet sich gut zum Mitlesen und Wiederholen; sein Mujawwad ist ideal für stille Momente, in denen man einfach zuhören will.
+Al-Minshawi lehrt nicht nur, *wie* man liest, sondern auch, *mit welchem Herzen*. Hören Sie ihn, wenn Sie sich auf die Bedeutung eines Verses einlassen möchten: Lesen Sie die Übersetzung mit, lassen Sie seine Pausen wirken und achten Sie darauf, wie er den Klang dem Inhalt anpasst. Sein Murattal eignet sich gut zum Mitlesen und Wiederholen; sein Mujawwad ist ideal für stille Momente, in denen man einfach zuhören will.
 
 Viele Menschen erzählen, dass sie durch seine Stimme zum ersten Mal beim Qur'an geweint haben. Möge Allah ihn dafür mit dem Paradies belohnen.`,
       knownFor: [
@@ -747,7 +747,7 @@ Gleichzeitig ist sein Tajwid sorgfältig und seine Aussprache deutlich, sodass m
 
 ## Was Sie von ihm lernen können
 
-Al-Dosari ist ein schöner Begleiter für alle, die den Qur'an nicht nur lernen, sondern auch lieben lernen wollen. Wenn Sie ihm zuhören, achten Sie darauf, wie er bestimmte Verse betont oder wiederholt – oft sind es Verse über Allahs Barmherzigkeit, das Paradies oder die Rückkehr zu Ihm. Das kannen Sie sich helfen, beim eigenen Lesen bewusster innezuhalten.
+Al-Dosari ist ein schöner Begleiter für alle, die den Qur'an nicht nur lernen, sondern auch lieben lernen wollen. Wenn Sie ihm zuhören, achten Sie darauf, wie er bestimmte Verse betont oder wiederholt – oft sind es Verse über Allahs Barmherzigkeit, das Paradies oder die Rückkehr zu Ihm. Das kann Ihnen helfen, beim eigenen Lesen bewusster innezuhalten.
 
 Für das Auswendiglernen eignen sich seine Aufnahmen gut, weil seine Melodie eingängig ist und im Gedächtnis bleibt. Anfänger sollten bei schwierigen Tajwid-Stellen zusätzlich einen langsameren Lehr-Rezitator zur Hand nehmen.
 
@@ -883,7 +883,7 @@ Baleela ist ein gutes Vorbild für eine ruhige, konzentrierte Rezitation ohne Ha
 
 Für das Auswendiglernen eignet sich sein gleichmäßiger Vortrag ebenfalls gut, weil jedes Wort klar und deutlich zu hören ist.
 
-Gerade in den letzten Nächten des Ramadan, wenn die Moschee voller Menschen ist, zeigt sich, wie viel Kraft in einer stillen, gesammelten Rezitation liegen kann. Seine Aufnahmen aus den Gebeten lassenen Sie sich ein wenig von dieser Atmosphäre auch zu Hause erleben.
+Gerade in den letzten Nächten des Ramadan, wenn die Moschee voller Menschen ist, zeigt sich, wie viel Kraft in einer stillen, gesammelten Rezitation liegen kann. Seine Aufnahmen aus den Gebeten lassen Sie ein wenig von dieser Atmosphäre auch zu Hause erleben.
 
 Möge Allah ihn bewahren und seinen Dienst an der Heiligen Moschee annehmen.`,
       knownFor: [
@@ -1080,7 +1080,7 @@ Ali Jabers Rezitation ist ruhig, tief und voller Ehrfurcht. Seine Stimme ist dun
 
 ## Was Sie von ihm lernen können
 
-Ali Jaber ist ein wunderbares Vorbild für eine Rezitation, die von Demut geprägt ist. Wenn Sie ihm zuhören, achten Sie auf sein Tempo: Er lassen sich Zeit, und so entsteht Raum zum Nachdenken. Für Lernende eignen sich seine Aufnahmen gut, um die Ruhe im eigenen Lesen zu finden und die Verse bewusst und mit Andacht vorzutragen.
+Ali Jaber ist ein wunderbares Vorbild für eine Rezitation, die von Demut geprägt ist. Wenn Sie ihm zuhören, achten Sie auf sein Tempo: Er lässt sich Zeit, und so entsteht Raum zum Nachdenken. Für Lernende eignen sich seine Aufnahmen gut, um die Ruhe im eigenen Lesen zu finden und die Verse bewusst und mit Andacht vorzutragen.
 
 Viele Rezitatoren der nachfolgenden Generation haben seine Art geschätzt und von ihm gelernt, einfach indem sie ihm zuhörten.
 
@@ -1267,9 +1267,9 @@ Viele Hörer beschreiben seine Rezitation als besonders berührend, weil man den
 
 ## Was Sie von ihm lernen können
 
-Al-Ajmi ist ein guter Begleiter für alle, die den Qur'an mit Gefühl und Nachdenken hören möchten. Achten Sie beim Zuhören darauf, wie sich seine Stimme mit dem Inhalt verändert – das kannen Sie sich helfen, auch beim eigenen Lesen bewusster auf die Bedeutung zu achten. Am besten lesen Sie dabei die Übersetzung oder den Tafsir mit.
+Al-Ajmi ist ein guter Begleiter für alle, die den Qur'an mit Gefühl und Nachdenken hören möchten. Achten Sie beim Zuhören darauf, wie sich seine Stimme mit dem Inhalt verändert – das kann Ihnen helfen, auch beim eigenen Lesen bewusster auf die Bedeutung zu achten. Am besten lesen Sie dabei die Übersetzung oder den Tafsir mit.
 
-Für das Auswendiglernen eignen sich seine Aufnahmen ebenfalls, weil er ruhig liest und jedes Wort klar zu hören ist. Wenn Sie gerade erst mit dem Tajwid beginnen, können Sie ihn mit einem Lehr-Rezitator kombinieren, der langsamer lesen.
+Für das Auswendiglernen eignen sich seine Aufnahmen ebenfalls, weil er ruhig liest und jedes Wort klar zu hören ist. Wenn Sie gerade erst mit dem Tajwid beginnen, können Sie ihn mit einem Lehr-Rezitator kombinieren, der langsamer liest.
 
 Möge Allah ihn bewahren und seine Stimme weiterhin zu einem Weg machen, auf dem Menschen zum Qur'an finden.`,
       knownFor: [
@@ -1332,7 +1332,7 @@ Die Rezitation von Abu Bakr Al-Shatri ist sanft, melodisch und sehr angenehm zu 
 
 Al-Shatri ist eine schöne Wahl für alle, die eine ruhige, melodische Begleitung beim Lesen suchen. Seine eingängige Melodie hilft beim Auswendiglernen, weil sich die Verse mit seiner Stimme gut einprägen. Gleichzeitig ist sein Tempo so angenehm, dass Sie jedes Wort im Mushaf mitverfolgen können.
 
-Ein Vorschlag: Wählen Sie eine kurze Sure, hören Sie sie mehrmals mit ihm und versuchen Sie, beim dritten oder vierten Mal mitzusprechen. Achten Sie dabei auf die Stellen, an denen er anhält – sie zeigen Ihnen, wo ein Gedanke endet. So wachsen mit der Zeit nicht nur Ihr Hifz, sondern auch Ihr Verständnis.
+Ein Vorschlag: Wählen Sie eine kurze Sure, hören Sie sie mehrmals mit ihm und versuchen Sie, beim dritten oder vierten Mal mitzusprechen. Achten Sie dabei auf die Stellen, an denen er anhält – sie zeigen Ihnen, wo ein Gedanke endet. So wächst mit der Zeit nicht nur Ihr Hifz, sondern auch Ihr Verständnis.
 
 Möge Allah ihn bewahren und seine Rezitation segnen.`,
       knownFor: [
@@ -1393,7 +1393,7 @@ Trotz dieser Emotionalität bleibt seine Rezitation klar und sein Tajwid sorgfä
 
 ## Was Sie von ihm lernen können
 
-Hani Ar-Rifai erinnert uns daran, dass der Qur'an nicht nur gelesen, sondern gefühlt werden will. Wenn Sie ihm zuhören, versuchen Sie, die Bedeutung der Verse mitzulesen – dann verstehen Sie, warum ihn bestimmte Stellen so berühren. Das kannen Sie sich helfen, beim eigenen Lesen mehr Khushu', also innere Andacht, zu finden.
+Hani Ar-Rifai erinnert uns daran, dass der Qur'an nicht nur gelesen, sondern gefühlt werden will. Wenn Sie ihm zuhören, versuchen Sie, die Bedeutung der Verse mitzulesen – dann verstehen Sie, warum ihn bestimmte Stellen so berühren. Das kann Ihnen helfen, beim eigenen Lesen mehr Khushu', also innere Andacht, zu finden.
 
 Seine Aufnahmen eignen sich auch gut zum Mitlesen, weil er ruhig und deutlich liest. Und seine Bittgebete können eine Inspiration für das eigene Du'a sein: ehrlich, demütig und voller Hoffnung auf Allahs Barmherzigkeit.
 
@@ -1412,7 +1412,7 @@ Sheikh Hani Ar-Rifai comes from Jeddah in Saudi Arabia and grew up in a family t
 
 ## His work
 
-Ar-Rifai is the imam and preacher of a mosque in Jeddah. Especially on Ramadan nights his mosque is full of people who want to pray behind him and listen to his supplications (Sie'a). His murattal recordings of the Qur'an are widely available, and his recitation is among those offered in well-known Qur'an apps with word-by-word timing – in our player, too, you can follow him verse by verse.
+Ar-Rifai is the imam and preacher of a mosque in Jeddah. Especially on Ramadan nights his mosque is full of people who want to pray behind him and listen to his supplications (du'a). His murattal recordings of the Qur'an are widely available, and his recitation is among those offered in well-known Qur'an apps with word-by-word timing – in our player, too, you can follow him verse by verse.
 
 ## His style
 
@@ -1424,7 +1424,7 @@ Despite this emotion, his recitation remains clear and his tajweed careful; his 
 
 Hani Ar-Rifai reminds us that the Qur'an wants not only to be read but to be felt. When you listen to him, try to follow the meaning of the verses – then you understand why certain passages move him so much. It can help you find more khushu', inner devotion, in your own reading.
 
-His recordings are also good for following along, because he reads calmly and distinctly. And his supplications can inspire your own Sie'a: honen, humble and full of hope in Allah's mercy.
+His recordings are also good for following along, because he reads calmly and distinctly. And his supplications can inspire your own du'a: honest, humble and full of hope in Allah's mercy.
 
 May Allah preserve him and accept his tears and prayers.`,
       knownFor: [
@@ -1521,7 +1521,7 @@ Nasser Al-Qatami hat eine kraftvolle, klangvolle Stimme mit einem sehr eigenen C
 
 ## Was Sie von ihm lernen können
 
-Al-Qatami ist ein guter Begleiter, wenn Sie den Qur'an mit Energie und Aufmerksamkeit hören möchten, zum Beispiel morgens oder auf dem Weg zur Arbeit. Achten Sie beim Zuhören darauf, wie er bestimmte Verse durch seine Melodie hervorhebt – oft sind es Verse, die eine wichtige Botschaft tragen. Wenn Sie dazu die Übersetzung lesen, wirden Sie sich der Zusammenhang zwischen Klang und Bedeutung deutlich.
+Al-Qatami ist ein guter Begleiter, wenn Sie den Qur'an mit Energie und Aufmerksamkeit hören möchten, zum Beispiel morgens oder auf dem Weg zur Arbeit. Achten Sie beim Zuhören darauf, wie er bestimmte Verse durch seine Melodie hervorhebt – oft sind es Verse, die eine wichtige Botschaft tragen. Wenn Sie dazu die Übersetzung lesen, wird Ihnen der Zusammenhang zwischen Klang und Bedeutung deutlich.
 
 Für das Auswendiglernen sind seine Aufnahmen hilfreich, weil seine Melodie sehr einprägsam ist. Anfänger sollten bei schwierigeren Tajwid-Regeln zusätzlich einen langsameren Lehr-Rezitator nutzen.
 

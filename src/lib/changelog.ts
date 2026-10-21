@@ -116,7 +116,7 @@ export const CHANGELOG: Release[] = [
       "365-Tage-Pläne mit wachsender Tagesmenge, von Sanft bis zum Hafiz-Track.",
       "Tajweed-Kurs mit 14 Lektionen, Koran-Vokabeltrainer, Khatm-Planer und 10 ausführliche Ratgeber.",
       "109 Bittgebete des Propheten ﷺ mit Quellen, dazu die Duas aus dem Koran.",
-      "Profilseite mit Statistiken, Datenexport und Kontolöschung; die Methode pasen sich Ihrem Alter an.",
+      "Profilseite mit Statistiken, Datenexport und Kontolöschung; die Methode passt sich Ihrem Alter an.",
       "Radio und Vers-Wiedergabe laufen beim Surfen weiter; dauerhafter Mini-Player.",
       "Kommentare, Likes und Teilen bei Versen – jeder Kommentar wird vor dem Erscheinen geprüft.",
       "Mehr Sicherheit: Sicherheits-Header, strengere Passwörter, Schutz gegen Passwort-Raten.",

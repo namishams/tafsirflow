@@ -20,7 +20,7 @@ type Seen = { first: number; last: number };
 
 const T = {
   de: {
-    title: "Heute schon an Allah gedacht?", lead: "Nimm dir eine Minute: ein Vers, ein stilles Gedenken – und wenn du magst, eine persönliche Dua, geschrieben für dein Anliegen.",
+    title: "Heute schon an Allah gedacht?", lead: "Nehmen Sie sich eine Minute: ein Vers, ein stilles Gedenken – und wenn Sie mögen, eine persönliche Dua, geschrieben für Ihr Anliegen.",
     dua: "Persönliche Dua · {price}", verse: "Vers des Tages öffnen", later: "Jetzt nicht",
     remind: "Jeden Tag daran erinnern", remindHint: "Eine Mitteilung am Morgen, auch mit Hinweisen auf persönliche Duas. Jederzeit im Konto abschaltbar.", reminded: "Erinnerung ist eingeschaltet",
   },

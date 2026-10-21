@@ -34,7 +34,7 @@ Texte mit Übersetzung finden Sie bei unseren [Duas](/duas).
 
 ### Die Absicht: aus Arbeit wird Gottesdienst
 
-Umar ibn al-Khattab berichtet, dass der Prophet ﷺ sagte: „Die Taten gelten nur nach den Absichten, und jedem steht nur das zu, was er beabsichtigt hat“ (al-Bukhari und Muslim). Ob Sie lernen, E-Mails schreiben, Patienten behandeln oder Kinder zur Schule bringen: Erneueren Sie die Absicht – „Ich tue das ehrlich, um meine Familie zu versorgen, anderen zu nützen und Allah zu gefallen“ –, und aus einer Gewohnheit wird eine Tat, für die Sie Lohn erhoffen dürfen. Die Niyyah sitzt im Herzen; ein stiller Gedanke am Beginn des Arbeitstages genügt.
+Umar ibn al-Khattab berichtet, dass der Prophet ﷺ sagte: „Die Taten gelten nur nach den Absichten, und jedem steht nur das zu, was er beabsichtigt hat“ (al-Bukhari und Muslim). Ob Sie lernen, E-Mails schreiben, Patienten behandeln oder Kinder zur Schule bringen: Erneuern Sie die Absicht – „Ich tue das ehrlich, um meine Familie zu versorgen, anderen zu nützen und Allah zu gefallen“ –, und aus einer Gewohnheit wird eine Tat, für die Sie Lohn erhoffen dürfen. Die Niyyah sitzt im Herzen; ein stiller Gedanke am Beginn des Arbeitstages genügt.
 
 ### Die fünf Gebete: Anker Ihres Tages
 
@@ -44,7 +44,7 @@ Machen Sie die Zeiten sichtbar: Schauen Sie morgens in unsere [Gebetszeiten](/pr
 
 ### Jeden Tag ein wenig Koran
 
-„Und rezitiere den Koran in aller Ruhe“ (Koran 73:4). Der Prophet ﷺ sagte: „Die Besten unter euch sind die, die den Koran lernen und lehren“ (Uthman, al-Bukhari). Und wer noch stockt, hat sogar zwei Belohnungen, weil er sich abmüht (Aischa, al-Bukhari und Muslim). Machen Sie daraus eine Gewohnheit, die zu Ihrem Tag pasen: eine Seite nach dem Fajr, einige Verse in der Mittagspause, zehn Minuten Hören in der Metro. Mit dem [Khatm-Planer](/khatm) verteilen Sie eine ganze Lesung auf feste Tagesportionen, mit dem [Memorierplan](/plan) lernen Sie Monat für Monat auswendig, und mit der [Shams-Methode](/shams) behalten Sie Verse in kleinen Schritten.
+„Und rezitiere den Koran in aller Ruhe“ (Koran 73:4). Der Prophet ﷺ sagte: „Die Besten unter euch sind die, die den Koran lernen und lehren“ (Uthman, al-Bukhari). Und wer noch stockt, hat sogar zwei Belohnungen, weil er sich abmüht (Aischa, al-Bukhari und Muslim). Machen Sie daraus eine Gewohnheit, die zu Ihrem Tag passt: eine Seite nach dem Fajr, einige Verse in der Mittagspause, zehn Minuten Hören in der Metro. Mit dem [Khatm-Planer](/khatm) verteilen Sie eine ganze Lesung auf feste Tagesportionen, mit dem [Memorierplan](/plan) lernen Sie Monat für Monat auswendig, und mit der [Shams-Methode](/shams) behalten Sie Verse in kleinen Schritten.
 
 ### Dhikr zwischendurch
 
@@ -89,7 +89,7 @@ Umar ibn Abi Salama war ein Junge im Haus des Propheten ﷺ, und seine Hand wand
 
 ### Maß halten
 
-„Und esst und trinkt, aber seid nicht maßlos. Er liebt die Maßlosen nicht“ (Koran 7:31). Es wird überliefert, dass der Prophet ﷺ empfahl, den Magen zu einem Drittel mit Essen, zu einem Drittel mit Trinken und zu einem Drittel mit Atem zu füllen (at-Tirmidhi). Halten Sie Maß, verschwende nichts und teile lieber, was übrig bleibt – gerade bei großen Einladungen und Buffets.
+„Und esst und trinkt, aber seid nicht maßlos. Er liebt die Maßlosen nicht“ (Koran 7:31). Es wird überliefert, dass der Prophet ﷺ empfahl, den Magen zu einem Drittel mit Essen, zu einem Drittel mit Trinken und zu einem Drittel mit Atem zu füllen (at-Tirmidhi). Halten Sie Maß, verschwenden Sie nichts und teilen Sie lieber, was übrig bleibt – gerade bei großen Einladungen und Buffets.
 
 ## Halal verdienen
 
@@ -111,7 +111,7 @@ Daraus ist das islamische Finanzwesen entstanden. Seine Grundidee: Gewinn ist er
 - **Takaful:** eine Versicherung auf Gegenseitigkeit, in der sich die Teilnehmenden gegenseitig absichern.
 - **Sukuk:** Anlagen, die an reale Werte gebunden sind, statt an Zinsen.
 
-In den Emiraten wurde 1975 die Dubai Islamic Bank gegründet, eine der ersten islamischen Geschäftsbanken der Welt; heute bieten viele Banken im Land islamische Konten, Finanzierungen und Takaful an. Ob ein bestimmtes Produkt wirklich frei von Riba ist, beurteilen die Gelehrten nicht immer gleich – auch für Muslime in Ländern ohne islamische Angebote, etwa beim Hauskauf, haben Gelehrtenräte unterschiedliche Antworten gegeben. **Für Einzelheiten frag einen qualifizierten Gelehrten** oder den Scharia-Ausschuss Ihrer Bank. Was Sie mit Ihrem Vermögen sonst schulden, erklärt das Kapitel [Zakat](/islam/zakat); mehr über die Rechtsschulen im Kapitel [Die Rechtsschulen](/islam/madhahib).
+In den Emiraten wurde 1975 die Dubai Islamic Bank gegründet, eine der ersten islamischen Geschäftsbanken der Welt; heute bieten viele Banken im Land islamische Konten, Finanzierungen und Takaful an. Ob ein bestimmtes Produkt wirklich frei von Riba ist, beurteilen die Gelehrten nicht immer gleich – auch für Muslime in Ländern ohne islamische Angebote, etwa beim Hauskauf, haben Gelehrtenräte unterschiedliche Antworten gegeben. **Für Einzelheiten fragen Sie einen qualifizierten Gelehrten** oder den Scharia-Ausschuss Ihrer Bank. Was Sie mit Ihrem Vermögen sonst schulden, erklärt das Kapitel [Zakat](/islam/zakat); mehr über die Rechtsschulen im Kapitel [Die Rechtsschulen](/islam/madhahib).
 
 ### Arbeitsethik und Itqan
 
@@ -119,7 +119,7 @@ Der Prophet ﷺ sagte: „Niemand hat je bessere Speise gegessen als die, die er
 
 *Itqan* heißt: sorgfältig, gewissenhaft, bis zum Ende. Das gilt im Büro, wo Menschen aus weit über hundert Ländern zusammenarbeiten, genauso wie zu Hause:
 
-- Sei pünktlich und halten Sie Ihr Wort.
+- Seien Sie pünktlich und halten Sie Ihr Wort.
 - Machen Sie Ihre Arbeit gut, auch wenn niemand hinschaut.
 - Nutzen Sie die Arbeitszeit für die Arbeit – das ist Teil der Ehrlichkeit.
 - Wenn Sie Verantwortung für andere tragen: Es wird überliefert, dass der Prophet ﷺ sagte, man solle dem Arbeiter seinen Lohn geben, bevor sein Schweiß trocknet (Ibn Madscha).
@@ -151,8 +151,8 @@ Allah gebietet Güte „zum Nachbarn, der (euch) nahesteht, und zum Nachbarn, de
 Allah sagt über Seinen Propheten ﷺ: „Und du bist wahrlich von großartiger Wesensart“ (Koran 68:4). Der Prophet ﷺ selbst sagte: „Die Besten unter euch sind die mit dem besten Charakter“ (al-Bukhari 3559). Guter Charakter zeigt sich im Kleinen:
 
 - Reden Sie nicht schlecht über Abwesende (Koran 49:12): „Wer an Allah und den Jüngsten Tag glaubt, der soll Gutes sagen oder schweigen“ (al-Bukhari und Muslim).
-- Begegne Menschen mit einem freundlichen Gesicht: „Verachte nichts Gutes, und sei es, dass du deinen Bruder mit heiterem Gesicht triffst“ (Muslim).
-- Sei geduldig, vergib schnell und halten Sie Ihre Versprechen.
+- Begegnen Sie Menschen mit einem freundlichen Gesicht: „Verachte nichts Gutes, und sei es, dass du deinen Bruder mit heiterem Gesicht triffst“ (Muslim).
+- Seien Sie geduldig, vergeben Sie schnell und halten Sie Ihre Versprechen.
 
 ### Haya' – Schamhaftigkeit und Anstand
 
@@ -193,7 +193,7 @@ Das Handy ist ein Werkzeug – es kann Sie näher zu Allah bringen oder viel Zei
 - **Ihre Hand und Ihre Tastatur:** „Der Muslim ist der, vor dessen Zunge und Hand die Muslime sicher sind“ (al-Bukhari und Muslim). Heute gehört die Tastatur dazu.
 - **Das Unnötige lassen:** Es wird überliefert, dass der Prophet ﷺ sagte: „Zum guten Islam eines Menschen gehört, dass er lässt, was ihn nicht angeht“ (at-Tirmidhi).
 
-Ein paar praktische Gewohnheiten: Legen Sie das Handy beim Gebet und beim Essen weg, machen Sie keine Fotos von Menschen ohne ihre Erlaubnis, teile Gutes – einen Vers, ein Bittgebet, eine hilfreiche Information – und setzen Sie sich feste Zeiten ohne Bildschirm. In den Emiraten sind auch die Gesetze hier deutlich: Wer Gerüchte verbreitet oder Bilder anderer ohne Erlaubnis veröffentlicht, kann sich strafbar machen.
+Ein paar praktische Gewohnheiten: Legen Sie das Handy beim Gebet und beim Essen weg, machen Sie keine Fotos von Menschen ohne ihre Erlaubnis, teilen Sie Gutes – einen Vers, ein Bittgebet, eine hilfreiche Information – und setzen Sie sich feste Zeiten ohne Bildschirm. In den Emiraten sind auch die Gesetze hier deutlich: Wer Gerüchte verbreitet oder Bilder anderer ohne Erlaubnis veröffentlicht, kann sich strafbar machen.
 
 ## Unterwegs: Reisen mit dem Islam
 
@@ -204,7 +204,7 @@ Der Islam macht das Reisen leicht:
 - **Das Gebet kürzen:** „Und wenn ihr im Land umherreist, so ist es keine Sünde für euch, das Gebet zu kürzen“ (Koran 4:101). Der Prophet ﷺ nannte diese Erleichterung eine Gabe, die Allah euch gegeben hat – „so nehmt Seine Gabe an“ (Muslim). Ab welcher Entfernung man kürzt und ob man Gebete zusammenlegen darf, beurteilen die Rechtsschulen unterschiedlich; die hanafitische Schule ist beim Zusammenlegen am zurückhaltendsten, die dschafaritische Schule erlaubt es auch außerhalb von Reisen.
 - **Fasten:** Reisende dürfen im Ramadan das Fasten brechen und es später nachholen (Koran 2:184).
 - **Bittgebete:** Es wird überliefert, dass das Bittgebet des Reisenden erhört wird (Abu Dawud, at-Tirmidhi).
-- **Gebetszeiten und Qibla:** Unsere [Gebetszeiten](/prayer) zeigenen Sie sich die Zeiten für jeden Ort; an den Flughäfen der Emirate gibt es Gebetsräume.
+- **Gebetszeiten und Qibla:** Unsere [Gebetszeiten](/prayer) zeigen Ihnen die Zeiten für jeden Ort; an den Flughäfen der Emirate gibt es Gebetsräume.
 
 Und unterwegs gilt der gute Charakter erst recht: geduldig in der Schlange, freundlich zu Personal und Mitreisenden, respektvoll gegenüber den Gesetzen und Bräuchen des Gastlandes.
 
@@ -257,18 +257,18 @@ Am Freitag: Ghusl, früh zur Moschee, Sure al-Kahf, Bittgebet.
 
 Aischa berichtet, dass der Prophet ﷺ sagte: „Die liebsten Taten bei Allah sind die beständigsten, auch wenn sie wenig sind“ (al-Bukhari und Muslim). Und: „Die Religion ist leicht. Wer sie sich schwer macht, den überwältigt sie. Strebt nach dem Richtigen, bleibt maßvoll und freut euch auf die gute Botschaft“ (Abu Huraira, al-Bukhari). Suchen Sie sich also zwei oder drei Punkte aus der Liste, halten Sie sie zwei Wochen lang jeden Tag ein und fügen Sie dann einen weiteren hinzu. Verpasst Sie einen Tag, fangen Sie am nächsten wieder an – Allah sieht Ihr Bemühen.`,
     faq: [
-      { q: "Muss ich all das jeden Tag tun?", a: "Nein. Verpflichtend sind die fünf Gebete und die übrigen Pflichten des Islam, dazu das Meiden des Verbotenen; Morgen- und Abend-Adhkar, Koranlesung, Dhikr und vieles andere in diesem Kapitel sind empfohlene Sunnah. Fangen Sie mit wenigem an und bleibe dabei – die liebsten Taten bei Allah sind die beständigsten, auch wenn sie klein sind (al-Bukhari und Muslim)." },
-      { q: "Ich verschlafe oft den Fajr. Was kann ich tun?", a: "Gehen Sie früher schlafen, erneueren Sie vor dem Schlafen die Absicht aufzustehen und stellen Sie einen zweiten Wecker. Machen Sie gleich nach dem Aufstehen das Wudu – es löst die „Knoten“ des Schlafs (al-Bukhari und Muslim). Wer ein Gebet verschläft, betet es, sobald er sich erinnert (al-Bukhari und Muslim). Bleiben Sie dran und verzweifle nicht." },
+      { q: "Muss ich all das jeden Tag tun?", a: "Nein. Verpflichtend sind die fünf Gebete und die übrigen Pflichten des Islam, dazu das Meiden des Verbotenen; Morgen- und Abend-Adhkar, Koranlesung, Dhikr und vieles andere in diesem Kapitel sind empfohlene Sunnah. Fangen Sie mit wenigem an und bleiben Sie dabei – die liebsten Taten bei Allah sind die beständigsten, auch wenn sie klein sind (al-Bukhari und Muslim)." },
+      { q: "Ich verschlafe oft den Fajr. Was kann ich tun?", a: "Gehen Sie früher schlafen, erneuern Sie vor dem Schlafen die Absicht aufzustehen und stellen Sie einen zweiten Wecker. Machen Sie gleich nach dem Aufstehen das Wudu – es löst die „Knoten“ des Schlafs (al-Bukhari und Muslim). Wer ein Gebet verschläft, betet es, sobald er sich erinnert (al-Bukhari und Muslim). Bleiben Sie dran und verzweifeln Sie nicht." },
       { q: "Woran erkenne ich, ob ein Lebensmittel halal ist?", a: "Grundsätzlich ist Essen erlaubt; verboten sind vor allem Schweinefleisch, Blut, Verendetes, nicht nach islamischer Art geschlachtetes Fleisch und Rauschmittel (Koran 2:173, 5:3, 5:90). Bei Fleisch und Zusatzstoffen hilft ein verlässliches Halal-Siegel. Wo die Gelehrten unterschiedlicher Ansicht sind, etwa bei Meerestieren oder der Betäubung, folgen Sie Ihrer Rechtsschule." },
-      { q: "Darf ich ein Bankkonto, eine Kreditkarte oder eine Finanzierung nutzen?", a: "Ein Konto zu haben ist kein Problem; gemieden werden soll Riba, also Zins auf Darlehen (Koran 2:275). Wo es geht, nutzen Sie islamische Angebote wie Murabaha oder Ijara und begleiche Kreditkarten rechtzeitig, damit keine Zinsen anfallen. Bei Einzelfragen, etwa zum Hauskauf, unterscheiden sich die Antworten der Gelehrten – fragen Sie einen qualifizierten Gelehrten." },
-      { q: "Wie bekomme ich Gebet und Arbeit unter einen Hut?", a: "Schauen Sie morgens in die Gebetszeiten Ihres Ortes und plane Termine darum herum. Fragen Sie freundlich nach einem ruhigen Platz und einer kurzen Pause – in den Emiraten gibt es fast überall Gebetsräume. „Allah erlegt keiner Seele mehr auf, als sie zu leisten vermag“ (Koran 2:286). Bei schwierigen Arbeitsbedingungen frag einen Gelehrten, wie Sie das Gebet richtig verrichten." },
-      { q: "Wie gehe ich als Muslim gut mit Social Media um?", a: "Prüfen Sie Nachrichten, bevor Sie sie teilen (Koran 49:6), spotte nicht und reden Sie nicht schlecht über andere (Koran 49:11–12), und fragen Sie bei religiösen Fragen lieber einen Gelehrten als einem viralen Video zu glauben. Legen Sie das Handy beim Gebet und beim Essen weg und teile lieber Gutes." },
+      { q: "Darf ich ein Bankkonto, eine Kreditkarte oder eine Finanzierung nutzen?", a: "Ein Konto zu haben ist kein Problem; gemieden werden soll Riba, also Zins auf Darlehen (Koran 2:275). Wo es geht, nutzen Sie islamische Angebote wie Murabaha oder Ijara und begleichen Sie Kreditkarten rechtzeitig, damit keine Zinsen anfallen. Bei Einzelfragen, etwa zum Hauskauf, unterscheiden sich die Antworten der Gelehrten – fragen Sie einen qualifizierten Gelehrten." },
+      { q: "Wie bekomme ich Gebet und Arbeit unter einen Hut?", a: "Schauen Sie morgens in die Gebetszeiten Ihres Ortes und planen Sie Termine darum herum. Fragen Sie freundlich nach einem ruhigen Platz und einer kurzen Pause – in den Emiraten gibt es fast überall Gebetsräume. „Allah erlegt keiner Seele mehr auf, als sie zu leisten vermag“ (Koran 2:286). Bei schwierigen Arbeitsbedingungen fragen Sie einen Gelehrten, wie Sie das Gebet richtig verrichten." },
+      { q: "Wie gehe ich als Muslim gut mit Social Media um?", a: "Prüfen Sie Nachrichten, bevor Sie sie teilen (Koran 49:6), spotten Sie nicht und reden Sie nicht schlecht über andere (Koran 49:11–12), und fragen Sie bei religiösen Fragen lieber einen Gelehrten als einem viralen Video zu glauben. Legen Sie das Handy beim Gebet und beim Essen weg und teilen Sie lieber Gutes." },
     ],
     sources: [
       "Koran 2:83, 2:168, 2:173, 2:184, 2:195, 2:222, 2:255, 2:275, 2:278–279, 2:282, 2:285–286, 4:29, 4:36, 4:58, 4:86, 4:101, 4:103, 5:3, 5:5, 5:90, 5:96, 6:38, 7:31, 7:56, 11:114, 13:28, 17:23–24, 17:26–27, 17:35, 17:36, 24:30–31, 30:21, 43:13–14, 49:6, 49:11–12, 59:18, 62:9–10, 68:4, 73:4, 112–114",
       "Sahih al-Bukhari 3559 – „Die Besten unter euch sind die mit dem besten Charakter“ (Abdullah ibn Amr)",
       "Sahih al-Bukhari und Sahih Muslim – Absichten (Umar); die drei Knoten beim Aufstehen; Nachholen eines verschlafenen Gebets; Wudu und Gebet ohne abschweifende Gedanken (Uthman); Miswak; die Fitra; Ehrlichkeit im Handel (Hakim ibn Hizam); Gutes sagen oder schweigen; Haya' als Zweig des Glaubens und „bringt nichts als Gutes“; „Junge, nenne den Namen Allahs“ (Umar ibn Abi Salama); Mutter und Vater; der Hirte und seine Herde; Verwandtschaftsbande; Dschibril und der Nachbar; Ehre für den Gast; der durstige Hund; das Pflanzen eines Baumes; Wudu mit einem Mudd (Anas); der Fluss vor der Tür; die Sicherheit vor Zunge und Hand; Ghusl und frühes Kommen am Freitag; die Stunde am Freitag; die letzten zwei Verse von al-Baqara; Schlafgebet (al-Bara' ibn Azib); die letzten drei Suren vor dem Schlafen (Aischa); stockende Rezitation (Aischa); die beständigsten Taten (Aischa)",
-      "Sahih al-Bukhari – Sie'a beim Aufwachen (Hudhaifa); Aischa über die Hilfe im Haushalt; „Die Besten unter euch sind die, die den Koran lernen und lehren“ (Uthman); von der eigenen Hände Arbeit leben (al-Miqdam); „Dein Körper hat ein Recht auf dich“; Gesundheit und freie Zeit (Ibn Abbas); Kranke besuchen; Salman über den Freitag; Ayat al-Kursi vor dem Schlafen (Abu Huraira); Sayyid al-Istighfar (Schaddad ibn Aus); „Die Religion ist leicht“ (Abu Huraira)",
+      "Sahih al-Bukhari – Du'a beim Aufwachen (Hudhaifa); Aischa über die Hilfe im Haushalt; „Die Besten unter euch sind die, die den Koran lernen und lehren“ (Uthman); von der eigenen Hände Arbeit leben (al-Miqdam); „Dein Körper hat ein Recht auf dich“; Gesundheit und freie Zeit (Ibn Abbas); Kranke besuchen; Salman über den Freitag; Ayat al-Kursi vor dem Schlafen (Abu Huraira); Sayyid al-Istighfar (Schaddad ibn Aus); „Die Religion ist leicht“ (Abu Huraira)",
       "Sahih Muslim – Ayat al-Kursi als größter Vers (Ubayy ibn Ka'b); „Die Reinheit ist die Hälfte des Glaubens“; „Allah ist schön und liebt die Schönheit“; „Allah ist gut und nimmt nur Gutes an“; Fluch über Riba (Dschabir); Verbot des Gharar; Ihsan in allem (Schaddad ibn Aus); „Wer uns betrügt, gehört nicht zu uns“; „Verbreitet den Salam“; das freundliche Gesicht (Abu Dharr); der starke Gläubige; Hindernisse vom Weg entfernen; „Es genügt als Lüge …“ (Einleitung); Reisegebet (Ibn Umar); das Kürzen als Gabe Allahs; Lob nach dem Essen (Anas); die vier liebsten Worte (Samura); der Freitag als bester Tag",
       "Sunan Abu Dawud, Dschami' at-Tirmidhi, Sunan Ibn Madscha, al-Baihaqi und al-Hakim – die drei Suren morgens und abends; Wettlauf mit Aischa; das Bittgebet des Reisenden; as-Sadschda und al-Mulk; das Maß beim Essen; der Beste zu seiner Familie; lassen, was einen nicht angeht; Lohn vor dem Trocknen des Schweißes; Itqan; Sure al-Kahf am Freitag; der Ausspruch Umars „Rechnet mit euch selbst ab“. Die Überlieferungen dieser Gruppe werden von Gelehrten unterschiedlich bewertet; im Text sind sie mit „es wird überliefert“ eingeleitet",
     ],
@@ -530,7 +530,7 @@ Aisha reports that the Prophet ﷺ said: "The deeds most beloved to Allah are th
       { q: "Do I have to do all of this every day?", a: "No. What is obligatory is the five prayers and the other duties of Islam, together with avoiding what is forbidden; the morning and evening adhkar, Quran reading, dhikr and much else in this chapter are recommended Sunnah. Start with a little and keep at it – the deeds most beloved to Allah are the most regular, even if small (al-Bukhari and Muslim)." },
       { q: "I often oversleep Fajr. What can I do?", a: "Go to bed earlier, renew the intention to get up before you sleep and set a second alarm. Make wudu as soon as you are up – it undoes the \"knots\" of sleep (al-Bukhari and Muslim). Whoever sleeps through a prayer prays it as soon as he remembers (al-Bukhari and Muslim). Keep going and do not despair." },
       { q: "How do I know whether food is halal?", a: "In principle food is permitted; forbidden are above all pork, blood, carrion, meat not slaughtered in the Islamic way, and intoxicants (Quran 2:173, 5:3, 5:90). For meat and additives a reliable halal label helps. Where scholars differ, for example on seafood or stunning, follow your school of law." },
-      { q: "May I use a bank account, a credit card or financing?", a: "Having an account is no problem; what should be avoided is riba, interest on loans (Quran 2:275). Where possible, use Islamic options such as murabaha or ijara, and pay off credit cards in time so that no interest is charged. On individual questions, suchen Sie as buying a home, scholars' answers differ – ask a qualified scholar." },
+      { q: "May I use a bank account, a credit card or financing?", a: "Having an account is no problem; what should be avoided is riba, interest on loans (Quran 2:275). Where possible, use Islamic options such as murabaha or ijara, and pay off credit cards in time so that no interest is charged. On individual questions, such as buying a home, scholars' answers differ – ask a qualified scholar." },
       { q: "How do I fit prayer and work together?", a: "Check the prayer times for your location in the morning and plan appointments around them. Ask kindly for a quiet place and a short break – in the Emirates there are prayer rooms almost everywhere. \"Allah does not charge a soul except [with that within] its capacity\" (Quran 2:286). If your working conditions are difficult, ask a scholar how to perform the prayer correctly." },
       { q: "How do I use social media well as a Muslim?", a: "Check news before you share it (Quran 49:6), do not mock or speak ill of others (Quran 49:11–12), and on religious questions ask a scholar rather than believing a viral video. Put your phone away during prayer and meals, and share what is good." },
     ],

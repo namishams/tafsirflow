@@ -17,7 +17,7 @@ const de: AboutContent = {
   eyebrow: "Über uns",
   title: "In Dubai entstanden – für jeden, der den Koran lernen möchte",
   lead: "Quran Masterclass ist eine kostenlose Plattform, um den Koran zu hören, zu verstehen, auswendig zu lernen und schön zu rezitieren – in 13 Sprachen, für Kinder und Erwachsene, ganz gleich, wo sie leben. Dies ist die Geschichte dahinter.",
-  facts: [{ n: "13", l: "Sprachen" }, { n: "114", l: "Suren, Vers für Vers" }, { n: "0 €", l: "Kosten für dich" }, { n: "0", l: "Werbung" }],
+  facts: [{ n: "13", l: "Sprachen" }, { n: "114", l: "Suren, Vers für Vers" }, { n: "0 €", l: "Kosten für Sie" }, { n: "0", l: "Werbung" }],
   story: `## Ein Gedanke, der nicht mehr losließ
 
 Es gibt Abende in Dubai, an denen die Stadt ganz still wird. Der Verkehr auf der Sheikh Zayed Road rauscht weiter, die Türme leuchten, aber aus einer Moschee in der Nachbarschaft steigt die Rezitation des Imams auf – und für einen Moment ist alles andere unwichtig. Wer das einmal erlebt hat, versteht, warum der Koran für Muslime nicht irgendein Buch ist. Er ist das Wort Allahs. Er ist das, was man im Gebet spricht, was man Kindern beibringt und was man sich am Ende des Lebens wünscht, im Herzen zu tragen.
@@ -32,26 +32,26 @@ Aus diesem Widerspruch ist Quran Masterclass entstanden. **Nami Shams** hat die 
 
 Der Prophet ﷺ sagte: „Die Besten unter euch sind die, die den Koran lernen und ihn lehren.“ (Sahih al-Bukhari) Er sagte auch, dass der Koran am Tag der Auferstehung als Fürsprecher für die kommen wird, die ihn gelesen haben (Sahih Muslim). Für einen gläubigen Menschen gibt es kaum ein Wissen, das mehr zählt.
 
-Deshalb ist Quran Masterclass keine Unterhaltungs-App, die nebenbei ein bisschen Religion anbietet. Hier steht der Koran im Mittelpunkt – jeder einzelne Vers, mit seinem Klang, seiner Bedeutung und seiner Erklärung. Alles andere, die Pläne, die Landkarte, die Akademie, das Radio, dient nur einem Ziel: dass du mehr vom Koran in dein Herz bekommst und dass er dort bleibt.
+Deshalb ist Quran Masterclass keine Unterhaltungs-App, die nebenbei ein bisschen Religion anbietet. Hier steht der Koran im Mittelpunkt – jeder einzelne Vers, mit seinem Klang, seiner Bedeutung und seiner Erklärung. Alles andere, die Pläne, die Landkarte, die Akademie, das Radio, dient nur einem Ziel: dass Sie mehr vom Koran in Ihr Herz bekommen und dass er dort bleibt.
 
 ## Was wir gebaut haben
 
-Im Kern steht die [Shams-Methode](/shams): sieben Schritte pro Vers – hören, rückwärts aufbauen, Wort für Wort verstehen, die Erklärung lesen, aus dem Gedächtnis abrufen, eine eigene Eselsbrücke bilden, über den Vers nachdenken. Ein Gedächtnismodell merkt sich, welche Verse dir leichtfallen und welche nicht, und bringt jeden Vers genau dann zurück, wenn er zu verblassen droht. Auf deiner [Koran-Landkarte](/map) siehst du jeden Tag, was sitzt und was Pflege braucht.
+Im Kern steht die [Shams-Methode](/shams): sieben Schritte pro Vers – hören, rückwärts aufbauen, Wort für Wort verstehen, die Erklärung lesen, aus dem Gedächtnis abrufen, eine eigene Eselsbrücke bilden, über den Vers nachdenken. Ein Gedächtnismodell merkt sich, welche Verse Ihnen leichtfallen und welche nicht, und bringt jeden Vers genau dann zurück, wenn er zu verblassen droht. Auf Ihrer [Koran-Landkarte](/map) sehen Sie jeden Tag, was sitzt und was Pflege braucht.
 
 Dazu kommen [Lernpläne](/plan) von gemächlich bis Hifz-Intensiv, eine [Akademie](/academy) mit Lektionen, Tests und Tageszielen, [Tajwīd-Lektionen](/tajweed), ein [Vokabeltrainer](/vocab), ein [Khatm-Planer](/khatm), [Bittgebete aus der Sunnah](/duas), [Gebetszeiten mit Adhan](/prayer) und ein [Koran-Radio](/radio), das nie aufhört zu spielen.
 
-Was wir nicht tun: Wir erfinden keine eigene Auslegung. Koran-Text, Übersetzungen und Tafsir stammen aus anerkannten Quellen und werden immer mit ihrer Herkunft genannt. Die Shams-Methode ist eine Lernmethode – kein neuer Tafsir und kein Ersatz für einen Lehrer, der deine Rezitation hört.`,
+Was wir nicht tun: Wir erfinden keine eigene Auslegung. Koran-Text, Übersetzungen und Tafsir stammen aus anerkannten Quellen und werden immer mit ihrer Herkunft genannt. Die Shams-Methode ist eine Lernmethode – kein neuer Tafsir und kein Ersatz für einen Lehrer, der Ihre Rezitation hört.`,
   valuesTitle: "Was uns leitet",
   values: [
     { t: "Kostenlos für alle", d: "Der Koran gehört jedem Muslim. Niemand soll aufhören zu lernen, weil ein Abo zu teuer ist." },
     { t: "Authentische Quellen", d: "Text, Übersetzungen und Tafsir aus anerkannten Quellen – immer mit Angabe, woher sie stammen." },
-    { t: "Respekt vor deinen Daten", d: "Keine Werbung, keine Analysedienste, kein Verkauf von Daten. Passwörter verschlüsselt, Verbindungen verschlüsselt, Export und Löschung jederzeit." },
+    { t: "Respekt vor Ihren Daten", d: "Keine Werbung, keine Analysedienste, kein Verkauf von Daten. Passwörter verschlüsselt, Verbindungen verschlüsselt, Export und Löschung jederzeit." },
     { t: "Würde im Miteinander", d: "Kommentare werden vor der Veröffentlichung geprüft. Was hier steht, soll einem Ort angemessen sein, an dem der Koran gelesen wird." },
-    { t: "Für jedes Alter", d: "Vom ersten Kinder-Vers bis zum Hifz-Weg passt sich die Methode an dein Alter und dein Tempo an." },
+    { t: "Für jedes Alter", d: "Vom ersten Kinder-Vers bis zum Hifz-Weg passt sich die Methode an Ihr Alter und Ihr Tempo an." },
     { t: "Ehrlichkeit", d: "Keine erfundenen Versprechen, keine aufgeblasenen Zahlen. Was noch fehlt, steht im Änderungsprotokoll – und wird gebaut." },
   ],
   freeTitle: "Kostenlos – und warum das so bleibt",
-  free: `Quran Masterclass kostet dich nichts. Keine Probephase, die nach sieben Tagen endet. Keine Werbung zwischen zwei Versen. Keine Funktion, die erst nach dem Bezahlen freigeschaltet wird.
+  free: `Quran Masterclass kostet Sie nichts. Keine Probephase, die nach sieben Tagen endet. Keine Werbung zwischen zwei Versen. Keine Funktion, die erst nach dem Bezahlen freigeschaltet wird.
 
 Die Plattform wird **privat von Nami Shams getragen** – Server, Entwicklung, Audio, alles. Es ist ein Projekt, das um Allahs willen gebaut wird, in der Hoffnung, dass jeder Vers, den jemand hier lernt, eine fortlaufende gute Tat (Sadaqa Jariya) wird.
 
@@ -106,11 +106,11 @@ Möge Allah sie alle belohnen, sie rechtleiten und die Länder der Muslime in Fr
 
 Ich wünsche mir, dass ein Kind in Hamburg, eine Großmutter in Sarajevo, ein Student in Jakarta und ein Taxifahrer in Dubai dieselbe Möglichkeit haben – kostenlos, in ihrer Sprache, in ihrem Tempo. Dass sie jeden Tag ein Stück weiterkommen. Und dass sie eines Tages eine Sure im Gebet rezitieren, die sie hier gelernt haben.
 
-Wenn dir diese Plattform hilft, dann bitte ich dich nur um eines: Mach Duʿāʾ für alle, die daran mitgewirkt haben – und erzähl jemandem davon, der auch lernen möchte.`,
+Wenn Ihnen diese Plattform hilft, dann bitte ich Sie nur um eines: Machen Sie Duʿāʾ für alle, die daran mitgewirkt haben – und erzählen Sie jemandem davon, der auch lernen möchte.`,
   signature: "Nami Shams",
   signatureRole: "Gründer von Quran Masterclass · Dubai",
   contactTitle: "Schreib uns",
-  contact: "Fragen, Ideen, Fehler im Text, Wünsche für neue Tafsir-Quellen oder Sprachen: Schreib an **info@quranmasterclass.com** oder nutze unsere [Feedback-Seite](/feedback). Was wir umsetzen, findest du im [Änderungsprotokoll](/changelog).",
+  contact: "Fragen, Ideen, Fehler im Text, Wünsche für neue Tafsir-Quellen oder Sprachen: Schreiben Sie an **info@quranmasterclass.com** oder nutzen Sie unsere [Feedback-Seite](/feedback). Was wir umsetzen, finden Sie im [Änderungsprotokoll](/changelog).",
 };
 
 const en: AboutContent = {

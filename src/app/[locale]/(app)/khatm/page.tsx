@@ -4,9 +4,11 @@ import KhatmPlanner from "@/components/KhatmPlanner";
 import RequireAccount from "@/components/RequireAccount";
 import { pageMeta } from "@/lib/site";
 import { QuranInlay, QuranShamsa } from "@/components/art/QuranArt";
+import { quoteRing, verseQuote } from "@/lib/verseQuotes";
 
-// verses around the medallion (exact Uthmani text): 35:29–30, on those who recite the Book of Allah
-const RING = "إِنَّ ٱلَّذِينَ يَتۡلُونَ كِتَٰبَ ٱللَّهِ وَأَقَامُواْ ٱلصَّلَوٰةَ وَأَنفَقُواْ مِمَّا رَزَقۡنَٰهُمۡ سِرّٗا وَعَلَانِيَةٗ يَرۡجُونَ تِجَٰرَةٗ لَّن تَبُورَ ۞ لِيُوَفِّيَهُمۡ أُجُورَهُمۡ وَيَزِيدَهُم مِّن فَضۡلِهِۦٓۚ إِنَّهُۥ غَفُورٞ شَكُورٞ ۞";
+// verses around the medallion: 35:29–30, on those who recite the Book of Allah (QPC Hafs text from the Quran data,
+// lib/verseQuotes; never typed by hand)
+const RING = quoteRing([verseQuote("qpc", "35:29"), verseQuote("qpc", "35:30")]);
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

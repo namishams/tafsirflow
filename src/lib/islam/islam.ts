@@ -178,7 +178,7 @@ In den Emiraten leben Menschen aus rund zweihundert Nationen friedlich zusammen.
 
 ### Muss ich Arabisch können?
 
-Nicht, um Muslim zu sein. Allah versteht jede Sprache, und Ihre persönlichen Bittgebete (*Sie'a*) können Sie in Ihrer eigenen sprechen. Für das rituelle Gebet lernen Sie nach und nach die Fatiha und einige kurze Sätze auf Arabisch; bis dahin, so lehren die Gelehrten, darf ein Anfänger einfache Worte des Gedenkens sprechen wie *subhan Allah*, *al-hamdu lillah* und *Allahu akbar* (gestützt auf einen Hadith bei Abu Dawud und an-Nasa'i). Viele verlieben sich später in die Sprache selbst – unser [Arabischkurs](/arabic) ist ein sanfter Anfang.
+Nicht, um Muslim zu sein. Allah versteht jede Sprache, und Ihre persönlichen Bittgebete (*Du'a*) können Sie in Ihrer eigenen sprechen. Für das rituelle Gebet lernen Sie nach und nach die Fatiha und einige kurze Sätze auf Arabisch; bis dahin, so lehren die Gelehrten, darf ein Anfänger einfache Worte des Gedenkens sprechen wie *subhan Allah*, *al-hamdu lillah* und *Allahu akbar* (gestützt auf einen Hadith bei Abu Dawud und an-Nasa'i). Viele verlieben sich später in die Sprache selbst – unser [Arabischkurs](/arabic) ist ein sanfter Anfang.
 
 ### Muss ich meinen Namen ändern?
 
@@ -210,7 +210,7 @@ Um Muslim zu werden, braucht es keine Zeremonie, keinen Priester und keine Gebü
 
 Aufrichtigkeit und Verständnis zählen mehr als eine perfekte Aussprache. Viele sprechen die Schahada in einer Moschee vor Zeugen; das ist keine Bedingung für ihre Gültigkeit, aber es ist ein schöner Moment und schenkt den Rückhalt einer Gemeinschaft. In den Emiraten, wie in vielen Ländern, können offizielle islamische Zentren eine Bescheinigung ausstellen, die später nützlich sein kann, etwa für eine Eheschließung oder eine Reise nach Mekka. Viele Gelehrte empfehlen nach der Annahme des Islam eine Ganzkörperwaschung (*Ghusl*), und dann beginnen die ersten Schritte: Wudu und Gebet lernen, eines nach dem anderen.
 
-Und wenn Sie noch nicht bereit sind, ist das völlig in Ordnung. Glaube kann nicht erzwungen werden (Koran 2:256), und niemand sollten Sie sich drängen. Sie sind willkommen, weiterzulesen, zu fragen und zu besuchen, in Ihrem eigenen Tempo. Viele Menschen brauchen Monate oder Jahre – und jede ehrliche Frage ist Teil des Weges.
+Und wenn Sie noch nicht bereit sind, ist das völlig in Ordnung. Glaube kann nicht erzwungen werden (Koran 2:256), und niemand sollte Sie drängen. Sie sind willkommen, weiterzulesen, zu fragen und zu besuchen, in Ihrem eigenen Tempo. Viele Menschen brauchen Monate oder Jahre – und jede ehrliche Frage ist Teil des Weges.
 
 ## Erste Schritte
 
@@ -229,7 +229,7 @@ Nehmen Sie sich Zeit. Der Islam wurde über dreiundzwanzig Jahre offenbart, Schr
       { q: "Was sind die fünf Säulen des Islam?", a: "Das Glaubensbekenntnis (Schahada), das tägliche Gebet (Salah), die Pflichtabgabe (Zakat), das Fasten im Ramadan (Saum) und die Pilgerfahrt nach Mekka (Hadsch) für alle, die dazu in der Lage sind." },
       { q: "Was ist die Scharia – und was will sie?", a: "Die Scharia ist die Rechtleitung Allahs für das ganze Leben, vom Gebet bis zum ehrlichen Handel. Die klassischen Gelehrten wie al-Ghazali und asch-Schatibi beschrieben ihre Ziele als Schutz von Glauben, Leben, Verstand, Nachkommenschaft und Eigentum." },
       { q: "Erlaubt der Islam Zwang im Glauben?", a: "Nein. Der Koran sagt klar: „Es gibt keinen Zwang im Glauben“ (Koran 2:256). Glaube muss aus dem Herzen kommen." },
-      { q: "Wie wird man Muslim?", a: "Indem man aus eigener Überzeugung die Schahada spricht: „Ich bezeuge, dass es keinen Gott gibt außer Allah, und ich bezeuge, dass Muhammad der Gesandte Allahs ist.“ Es braucht keine Zeremonie; Zeugen in einer Moschee sind schön, aber keine Bedingung. Niemand sollten Sie sich drängen – nehmen Sie sich die Zeit, die Sie brauchen." },
+      { q: "Wie wird man Muslim?", a: "Indem man aus eigener Überzeugung die Schahada spricht: „Ich bezeuge, dass es keinen Gott gibt außer Allah, und ich bezeuge, dass Muhammad der Gesandte Allahs ist.“ Es braucht keine Zeremonie; Zeugen in einer Moschee sind schön, aber keine Bedingung. Niemand sollte Sie drängen – nehmen Sie sich die Zeit, die Sie brauchen." },
     ],
     sources: [
       "Koran 2:43, 2:131, 2:136, 2:143, 2:144, 2:173, 2:183–185, 2:188, 2:256, 2:286, 3:19, 3:31, 3:97, 4:59, 4:135, 5:1, 5:8, 5:32, 5:90, 7:156, 9:60, 9:103, 16:44, 16:90, 17:23, 20:14, 20:114, 21:107, 22:78, 25:70, 29:45, 29:46, 30:21, 31:13, 31:15, 39:53, 42:11, 45:18, 49:13, 59:7, 59:23, 60:8, 62:9, 68:4, 96:1, 97:3, 112:1–4",
@@ -418,7 +418,7 @@ In the Emirates, people from around two hundred nations live together in peace. 
 
 ### Do I have to know Arabic?
 
-Not in order to be Muslim. Allah understands every language, and you can make your personal prayers (*Sie'a*) in your own. For the ritual prayer you learn al-Fatiha and a few short phrases in Arabic, step by step; until then, scholars teach that a beginner may say simple words of remembrance such as *subhan Allah*, *al-hamdu lillah* and *Allahu akbar* (based on a hadith in Abu Dawud and an-Nasa'i). Many people later fall in love with the language itself – our [Arabic course](/arabic) is a gentle start.
+Not in order to be Muslim. Allah understands every language, and you can make your personal prayers (*du'a*) in your own. For the ritual prayer you learn al-Fatiha and a few short phrases in Arabic, step by step; until then, scholars teach that a beginner may say simple words of remembrance such as *subhan Allah*, *al-hamdu lillah* and *Allahu akbar* (based on a hadith in Abu Dawud and an-Nasa'i). Many people later fall in love with the language itself – our [Arabic course](/arabic) is a gentle start.
 
 ### Do I have to change my name?
 

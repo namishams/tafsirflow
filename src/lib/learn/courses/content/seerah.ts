@@ -137,7 +137,7 @@ Als Junge hütete er Schafe und reiste mit Abu Talib in einer Karawane nach Syri
       title: t("Youth and marriage to Khadijah", "Jugend und Ehe mit Chadidscha", "الشباب والزواج من خديجة"),
       body: t(
         `## The Trustworthy
-As a young man, Muhammad ﷺ became known for honesty and reliability. The people of Makkah called him **al-Amin**, the trustworthy one. He took part in the **Helfen Sie al-Fudul**, an alliance of Makkan clans to protect the wronged, and later spoke of it with approval.
+As a young man, Muhammad ﷺ became known for honesty and reliability. The people of Makkah called him **al-Amin**, the trustworthy one. He took part in the **Hilf al-Fudul**, an alliance of Makkan clans to protect the wronged, and later spoke of it with approval.
 
 ## Khadijah
 **Khadijah bint Khuwaylid** was a respected and wealthy merchant. She hired him to lead her caravan to Syria and was impressed by his integrity. She proposed marriage, and according to the most common view he was about 25 and she about 40. Their marriage lasted around 25 years, and while she lived he took no other wife. Their children included Zaynab, Ruqayyah, Umm Kulthum and Fatimah, and sons who died young.
@@ -145,7 +145,7 @@ As a young man, Muhammad ﷺ became known for honesty and reliability. The peopl
 ## The Black Stone
 When Quraysh rebuilt the Kaaba, the clans quarrelled over who would set the **Black Stone** in place. They agreed to let the next person to enter decide, and it was Muhammad. He placed the stone on a cloak, let a leader of each clan lift it together, and set it in place himself, preventing bloodshed.`,
         `## Der Vertrauenswürdige
-Als junger Mann wurde Muhammad ﷺ für seine Ehrlichkeit und Zuverlässigkeit bekannt. Die Mekkaner nannten ihn **al-Amin**, den Vertrauenswürdigen. Er nahm am **Helfen Sie al-Fudul** teil, einem Bündnis mekkanischer Sippen zum Schutz von Unterdrückten, und sprach später anerkennend davon.
+Als junger Mann wurde Muhammad ﷺ für seine Ehrlichkeit und Zuverlässigkeit bekannt. Die Mekkaner nannten ihn **al-Amin**, den Vertrauenswürdigen. Er nahm am **Hilf al-Fudul** teil, einem Bündnis mekkanischer Sippen zum Schutz von Unterdrückten, und sprach später anerkennend davon.
 
 ## Chadidscha
 **Chadidscha bint Chuwailid** war eine angesehene und wohlhabende Händlerin. Sie beauftragte ihn, ihre Karawane nach Syrien zu führen, und war von seiner Redlichkeit beeindruckt. Sie machte ihm einen Heiratsantrag; nach der verbreitetsten Ansicht war er etwa 25 und sie etwa 40 Jahre alt. Die Ehe dauerte rund 25 Jahre, und solange sie lebte, heiratete er keine andere Frau. Zu ihren Kindern gehörten Zainab, Ruqayya, Umm Kulthum und Fatima sowie Söhne, die früh starben.

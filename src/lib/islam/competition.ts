@@ -33,7 +33,7 @@ Jede Jury hat ihre eigenen Bewertungsbögen, und die genauen Punkte sind Sache d
 
 ### 1. Hifz – die Genauigkeit des Auswendiglernens
 
-Die Jury nennt den Anfang eines Verses, oft irgendwo im Koran, und Sie setzt fort. Bewertet wird, ob Sie sofort und ohne Zögern weiterwissen, ob Sie kein Wort auslassen, vertauschen oder hinzufügen und ob Sie sich bei ähnlichen Versen nicht in eine andere Sure „verirrst“. Kleine Stockungen, die Sie selbst korrigieren, kosten meist weniger als ein Fehler, den die Jury verbessern muss.
+Die Jury nennt den Anfang eines Verses, oft irgendwo im Koran, und Sie setzen fort. Bewertet wird, ob Sie sofort und ohne Zögern weiterwissen, ob Sie kein Wort auslassen, vertauschen oder hinzufügen und ob Sie sich bei ähnlichen Versen nicht in eine andere Sure „verirrst“. Kleine Stockungen, die Sie selbst korrigieren, kosten meist weniger als ein Fehler, den die Jury verbessern muss.
 
 ### 2. Tadschwid – die Regeln der Rezitation
 
@@ -49,7 +49,7 @@ Wer mitten in einem Sinnzusammenhang anhält oder an einer Stelle neu beginnt, d
 
 ## Die innere Grundlage: Warum Sie das machen
 
-Bevor wir über Pläne sprechen: Ein Wettbewerb ist ein Mittel, kein Ziel. Allah sagt über die Wonnen des Paradieses: „Und darum sollen die Wetteifernden wetteifern“ (Koran 83:26). Das ist der eigentliche Wettbewerb. Der Prophet ﷺ sagte: „Die Taten werden nur nach den Absichten beurteilt“ (al-Bukhari und Muslim). Erneueren Sie Ihre Absicht immer wieder: Sie lernen für Allah, um Seinem Buch nahe zu sein – und wenn Er Ihnen dabei eine Bühne schenkt, ist das eine Gnade und eine Prüfung zugleich.
+Bevor wir über Pläne sprechen: Ein Wettbewerb ist ein Mittel, kein Ziel. Allah sagt über die Wonnen des Paradieses: „Und darum sollen die Wetteifernden wetteifern“ (Koran 83:26). Das ist der eigentliche Wettbewerb. Der Prophet ﷺ sagte: „Die Taten werden nur nach den Absichten beurteilt“ (al-Bukhari und Muslim). Erneuern Sie Ihre Absicht immer wieder: Sie lernen für Allah, um Seinem Buch nahe zu sein – und wenn Er Ihnen dabei eine Bühne schenkt, ist das eine Gnade und eine Prüfung zugleich.
 
 ## Der Jahresplan
 
@@ -70,7 +70,7 @@ Ein internationaler Wettbewerb setzt voraus, dass der ganze Koran bereits fest s
 ### Monate 7–9: Wettbewerbsform
 
 - **Ein vollständiger Durchgang (Khatma) aus dem Gedächtnis** in einem festen Rhythmus, etwa alle zwei bis vier Wochen, je nach Ihrem Niveau.
-- **Zufallsprüfungen** durch Lehrer, Eltern oder Freunde: Jemand nennt einen beliebigen Versanfang, Sie setzt fort.
+- **Zufallsprüfungen** durch Lehrer, Eltern oder Freunde: Jemand nennt einen beliebigen Versanfang, Sie setzen fort.
 - **Aufnahmen**: einmal pro Woche eine längere Passage aufnehmen und kritisch anhören.
 
 ### Monate 10–12: Feinschliff
@@ -101,9 +101,9 @@ Jetzt beginnt der 90-Tage-Plan.
 
 Viele Fehler in Wettbewerben passieren nicht, weil jemand vergessen hat, sondern weil zwei Verse sich fast gleichen. Ein Wort ist anders, eine Reihenfolge vertauscht, und schon rezitiert man in der falschen Sure weiter. So trainieren Sie sie:
 
-1. **Sammlen Sie sie**: Wenn Sie beim Wiederholen stolpern, weil Ihnen ein ähnlicher Vers „dazwischenkommt“, notieren Sie beide Stellen nebeneinander.
+1. **Sammeln Sie sie**: Wenn Sie beim Wiederholen stolpern, weil Ihnen ein ähnlicher Vers „dazwischenkommt“, notieren Sie beide Stellen nebeneinander.
 2. **Finden Sie den Unterschied**: Unterstreiche genau das Wort, das sich unterscheidet, und sprechen Sie laut aus, wo welcher Vers steht.
-3. **Verankeren Sie ihn in der Bedeutung**: Warum steht hier dieses Wort und dort jenes? Ein Blick in den Tafsir hilft oft, und die Unterscheidung bleibt besser haften.
+3. **Verankern Sie ihn in der Bedeutung**: Warum steht hier dieses Wort und dort jenes? Ein Blick in den Tafsir hilft oft, und die Unterscheidung bleibt besser haften.
 4. **Üben Sie sie im Paar**: Rezitieren Sie beide Stellen direkt hintereinander, dann einzeln aus der Mitte heraus.
 5. **Wiederholen Sie die Liste** jeden Tag ein paar Minuten lang.
 
@@ -112,15 +112,15 @@ Viele Fehler in Wettbewerben passieren nicht, weil jemand vergessen hat, sondern
 - **Nehmen Sie sich auf**: Hören Sie mit dem Mushaf mit. Sie werden Dinge hören, die Ihnen beim Rezitieren nicht auffallen – zu kurze Madd, verschluckte Endungen, unruhigen Atem.
 - **Vor einem Lehrer rezitieren**: Kein Programm ersetzt einen Lehrer, der Ihr Ohr schult und Ihre Fehler kennt. So wurde der Koran seit jeher weitergegeben – von Mund zu Ohr.
 - **Vor Publikum rezitieren**: in der Familie, in der Moschee, in Ihrer Koranschule. Das Lampenfieber wird kleiner, je öfter Sie es erleben.
-- **Probewettbewerbe** mit zufälligen Fragen, wie eine Jury sie stellt: Jemand schlägt den Mushaf irgendwo auf, lesen einen Versanfang vor, und Sie fahren fort, bis „genug“ gesagt wird. Wechselt euch ab, nehmt die Zeit, bewertet ehrlich.
+- **Probewettbewerbe** mit zufälligen Fragen, wie eine Jury sie stellt: Jemand schlägt den Mushaf irgendwo auf, liest einen Versanfang vor, und Sie fahren fort, bis „genug“ gesagt wird. Wechseln Sie sich ab, nehmen Sie die Zeit und bewerten Sie ehrlich.
 
 ## Stimme, Körper und Herz
 
 - **Stimmpflege**: ausreichend Wasser, nicht schreien, kein Rezitieren bis zur Heiserkeit. Eine Stimme braucht Pausen wie jeder Muskel. Wenn Sie eine Weile ein wenig heiser sind, lassen Sie sie ruhen und fragen Sie bei anhaltenden Beschwerden einen Arzt.
-- **Atem**: Üben Sie, ruhig aus dem Bauch zu atmen, und plane, wo Sie in langen Versen sinnvoll anhalten.
+- **Atem**: Üben Sie, ruhig aus dem Bauch zu atmen, und planen Sie, wo Sie in langen Versen sinnvoll anhalten.
 - **Schlaf**: Das Gedächtnis festigt sich im Schlaf. Nächtelanges Lernen kurz vor dem Wettbewerb schadet oft mehr, als es nützt.
 - **Nervosität**: Sie ist normal und zeigt, dass Ihnen die Sache wichtig ist. Bereiten Sie sich so vor, dass Ihr Wissen auch dann trägt, wenn Sie nervös sind – das ist der Sinn der Probewettbewerbe. Vor dem Vortrag: Wudu', zwei ruhige Atemzüge, Ta'awwudh, und dann nur noch an den Vers denken, nicht an die Jury.
-- **Sie'a**: Bitte Allah um Festigkeit. Musa (Friede sei mit ihm) bat: „Mein Herr, weite mir meine Brust, erleichtere mir meine Aufgabe und löse den Knoten von meiner Zunge, damit sie meine Worte verstehen“ (Koran 20:25–28).
+- **Du'a**: Bitten Sie Allah um Festigkeit. Musa (Friede sei mit ihm) bat: „Mein Herr, weite mir meine Brust, erleichtere mir meine Aufgabe und löse den Knoten von meiner Zunge, damit sie meine Worte verstehen“ (Koran 20:25–28).
 
 ## Wie Ihnen diese Plattform hilft
 
@@ -159,7 +159,7 @@ Teilnahmebedingungen, Altersgrenzen, Kategorien, Anmeldefristen und das Nominier
 Der Prophet ﷺ sagte: „Der Beste von euch ist, wer den Koran lernt und ihn lehrt“ (al-Bukhari). Ob Sie jemals auf einer Bühne in Dubai stehen oder nicht: Jede Stunde, die Sie in Ihren Hifz stecken, ist nicht verloren. Allah sagt: „Und Wir haben den Koran ja leicht zum Bedenken gemacht. Gibt es also jemanden, der bedenkt?“ (Koran 54:17). Fangen Sie heute an – mit einem Vers, mit einer Seite, mit einer ehrlichen Absicht.`,
     faq: [
       { q: "Seit wann gibt es die Dubai International Holy Quran Award?", a: "Seit 1997. Sie wurde unter der Schirmherrschaft Seiner Hoheit Scheich Mohammed bin Rashid Al Maktoum gegründet und findet jedes Jahr im Ramadan in Dubai statt." },
-      { q: "Kann ich mich selbst für den internationalen Wettbewerb anmelden?", a: "In der Regel werden Teilnehmende über offizielle nationale Stellen ihres Landes nominiert. Die genauen Wege und Bedingungen ändern sich; prüfe sie auf der offiziellen Website der Auszeichnung und bei den zuständigen Stellen in Ihrem Land." },
+      { q: "Kann ich mich selbst für den internationalen Wettbewerb anmelden?", a: "In der Regel werden Teilnehmende über offizielle nationale Stellen ihres Landes nominiert. Die genauen Wege und Bedingungen ändern sich; prüfen Sie sie auf der offiziellen Website der Auszeichnung und bei den zuständigen Stellen in Ihrem Land." },
       { q: "Was ist wichtiger: schöne Stimme oder genaues Auswendiglernen?", a: "Die Genauigkeit des Hifz und der korrekte Tadschwid stehen an erster Stelle. Ein ruhiger, würdevoller Vortrag kommt hinzu – aber eine schöne Stimme kann Fehler im Text nicht ausgleichen." },
       { q: "Was sind Mutaschabihat?", a: "Verse, die einander sehr ähneln und sich nur in einem Wort oder in der Reihenfolge unterscheiden. Sie sind die häufigste Ursache für Fehler in Wettbewerben und brauchen eigenes, gezieltes Training." },
       { q: "Ab welchem Alter kann ein Kind mit dem Hifz beginnen?", a: "Es gibt kein festes Alter. Viele Kinder beginnen spielerisch mit al-Fatiha und kurzen Suren, sobald sie gut nachsprechen können. Wichtiger als das Alter ist, dass das Lernen mit Freude und ohne Druck geschieht." },
@@ -192,7 +192,7 @@ Anyone who has sat in the hall on one of those Ramadan nights does not forget it
 
 - **The international memorisation competition**: the heart of the Award. Participants from many countries are examined on their hifz, their tajweed and their recitation.
 - **The Islamic Personality of the Year**: an honour for a person or institution that has rendered outstanding service to the Quran and to Islam.
-- **Further competitions and programmes**: among them a Quran competition for women that bears the name of **Sheikha Hind bint Maktoum**, as well as further competitions and events around the Quran, suchen Sie as lectures during Ramadan.
+- **Further competitions and programmes**: among them a Quran competition for women that bears the name of **Sheikha Hind bint Maktoum**, as well as further competitions and events around the Quran, such as lectures during Ramadan.
 
 How many categories there are in a given year, which age limits apply and how nominations work can change. More on that at the end of this chapter.
 
@@ -264,7 +264,7 @@ This is where the 90-day plan begins.
 
 - No big new projects any more. You consolidate what you have.
 - Revision stays daily, but becomes calmer: better slow and sure than fast and sloppy.
-- In the last days before the competition: enough sleep, light meals, rest your voice, plenty of Sie'a.
+- In the last days before the competition: enough sleep, light meals, rest your voice, plenty of du'a.
 
 ## Mutashabihat – the similar verses
 
@@ -289,7 +289,7 @@ Many mistakes in competitions do not happen because someone forgot, but because 
 - **Breath**: practise calm breathing from the belly, and plan where you can meaningfully pause in long verses.
 - **Sleep**: memory is consolidated during sleep. Studying through the night just before the competition often does more harm than good.
 - **Nerves**: they are normal and show that this matters to you. Prepare so that your knowledge holds even when you are nervous – that is the point of the mock competitions. Before you recite: wudu', two calm breaths, the ta'awwudh, and then think only of the verse, not of the jury.
-- **Sie'a**: ask Allah for steadfastness. Musa (peace be upon him) prayed: "My Lord, expand for me my breast, ease for me my task, and untie the knot from my tongue, that they may understand my speech" (Quran 20:25–28).
+- **Du'a**: ask Allah for steadfastness. Musa (peace be upon him) prayed: "My Lord, expand for me my breast, ease for me my task, and untie the knot from my tongue, that they may understand my speech" (Quran 20:25–28).
 
 ## How this platform helps
 

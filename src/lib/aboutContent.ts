@@ -36,7 +36,7 @@ Deshalb ist Quran Masterclass keine Unterhaltungs-App, die nebenbei ein bisschen
 
 ## Was wir gebaut haben
 
-Im Kern steht die [Shams-Methode](/shams): sieben Schritte pro Vers – hören, rückwärts aufbauen, Wort für Wort verstehen, die Erklärung lesen, aus dem Gedächtnis abrufen, eine eigene Eselsbrücke bilden, über den Vers nachdenken. Ein Gedächtnismodell merkt sich, welche Versen Sie sich leichtfallen und welche nicht, und bringt jeden Vers genau dann zurück, wenn er zu verblassen droht. Auf Ihrer [Koran-Landkarte](/map) sehen Sie jeden Tag, was sitzt und was Pflege braucht.
+Im Kern steht die [Shams-Methode](/shams): sieben Schritte pro Vers – hören, rückwärts aufbauen, Wort für Wort verstehen, die Erklärung lesen, aus dem Gedächtnis abrufen, eine eigene Eselsbrücke bilden, über den Vers nachdenken. Ein Gedächtnismodell merkt sich, welche Verse Ihnen leichtfallen und welche nicht, und bringt jeden Vers genau dann zurück, wenn er zu verblassen droht. Auf Ihrer [Koran-Landkarte](/map) sehen Sie jeden Tag, was sitzt und was Pflege braucht.
 
 Dazu kommen [Lernpläne](/plan) von gemächlich bis Hifz-Intensiv, eine [Akademie](/academy) mit Lektionen, Tests und Tageszielen, [Tajwīd-Lektionen](/tajweed), ein [Vokabeltrainer](/vocab), ein [Khatm-Planer](/khatm), [Bittgebete aus der Sunnah](/duas), [Gebetszeiten mit Adhan](/prayer) und ein [Koran-Radio](/radio), das nie aufhört zu spielen.
 
@@ -47,7 +47,7 @@ Was wir nicht tun: Wir erfinden keine eigene Auslegung. Koran-Text, Übersetzung
     { t: "Authentische Quellen", d: "Text, Übersetzungen und Tafsir aus anerkannten Quellen – immer mit Angabe, woher sie stammen." },
     { t: "Respekt vor Ihren Daten", d: "Keine Werbung, keine Analysedienste, kein Verkauf von Daten. Passwörter verschlüsselt, Verbindungen verschlüsselt, Export und Löschung jederzeit." },
     { t: "Würde im Miteinander", d: "Kommentare werden vor der Veröffentlichung geprüft. Was hier steht, soll einem Ort angemessen sein, an dem der Koran gelesen wird." },
-    { t: "Für jedes Alter", d: "Vom ersten Kinder-Vers bis zum Hifz-Weg pasen sich die Methode an Ihr Alter und Ihr Tempo an." },
+    { t: "Für jedes Alter", d: "Vom ersten Kinder-Vers bis zum Hifz-Weg passt sich die Methode an Ihr Alter und Ihr Tempo an." },
     { t: "Ehrlichkeit", d: "Keine erfundenen Versprechen, keine aufgeblasenen Zahlen. Was noch fehlt, steht im Änderungsprotokoll – und wird gebaut." },
   ],
   freeTitle: "Kostenlos – und warum das so bleibt",

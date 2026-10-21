@@ -34,7 +34,7 @@ const C: Record<Lang, Content> = {
     ctaPath: "Zum Lernpfad", ctaPlace: "Einstufungstest",
     signsTitle: "Die Zeichen der Koranschrift", signsLead: "Vokale, Dehnung, Verdopplung und die Besonderheiten des Mushaf – jedes Zeichen mit einem Beispiel. In den Einheiten 3 bis 5 üben Sie sie alle.",
     sheetTitle: "Alle Buchstaben auf einen Blick", sheetLead: "Name, Laut und die drei verbundenen Formen. Arabisch liest man von rechts nach links – die Form am Wortanfang steht rechts.",
-    makhTitle: "Woher die Laute kommen", makhLead: "In der Tajwid-Lehre hat jeder Buchstabe seinen Austrittsort (Machradsch). Diese vier Gruppen helfenen Sie sich am Anfang besonders:",
+    makhTitle: "Woher die Laute kommen", makhLead: "In der Tajwid-Lehre hat jeder Buchstabe seinen Austrittsort (Machradsch). Diese vier Gruppen helfen Ihnen am Anfang besonders:",
     makh: [
       ["Aus der Kehle", "ء ه ع ح غ خ", "Sechs Buchstaben kommen aus der Kehle: ء und ه ganz aus der Tiefe, ع und ح aus der Mitte, غ und خ aus dem oberen Teil."],
       ["Mit den Lippen", "ف ب م و", "Vier Buchstaben bilden die Lippen: ف mit der Unterlippe und den oberen Schneidezähnen, ب und م mit geschlossenen Lippen, و mit gerundeten Lippen."],

@@ -108,7 +108,7 @@ Bedeutet das, dass der Mensch keine Wahl hat? Nein. Der Koran betont ebenso deut
 
 Wie sich Allahs allumfassender Wille und die Wahl des Menschen zueinander verhalten, haben die Theologen verschiedener Schulen unterschiedlich erklärt. Sunnitische Gelehrte der asch'aritischen und maturiditischen Schule sprechen vom „Erwerb“ (*Kasb*) der Taten durch den Menschen. In der schiitischen Überlieferung ist ein Wort von Imam Dscha'far as-Sadiq berühmt: „Weder Zwang noch völlige Überlassung, sondern etwas zwischen beidem“ (al-Kulaini, al-Kafi). In den Kernpunkten sind sich alle einig: Allah ist gerecht, nichts entgeht Seinem Wissen, und der Mensch trägt Verantwortung für sein Tun.
 
-Im Leben schenkt der Glaube an den Qadar vor allem **Ruhe**. Der Koran sagt, dass jedes Unglück verzeichnet ist, „damit ihr nicht betrübt seid über das, was euch entgangen ist, und nicht übermütig über das, was Er euch gegeben hat“ (57:23). Der Prophet ﷺ sagte: „Wie wunderbar ist die Sache des Gläubigen! Alles ist gut für ihn. Trifft ihn Freude, ist er dankbar, und das ist gut für ihn. Trifft ihn Leid, ist er geduldig, und das ist gut für ihn“ (Muslim). Und er lehrte den jungen Ibn Abbas: Wenn sich die ganze Gemeinschaft versammelte, um Ihnen zu nützen, könnte sie Ihnen nur mit dem nützen, was Allah für Sie bereits bestimmt hat (at-Tirmidhi).
+Im Leben schenkt der Glaube an den Qadar vor allem **Ruhe**. Der Koran sagt, dass jedes Unglück verzeichnet ist, „damit ihr nicht betrübt seid über das, was euch entgangen ist, und nicht übermütig über das, was Er euch gegeben hat“ (57:23). Der Prophet ﷺ sagte: „Wie wunderbar ist die Sache des Gläubigen! Alles ist gut für ihn. Trifft ihn Freude, ist er dankbar, und das ist gut für ihn. Trifft ihn Leid, ist er geduldig, und das ist gut für ihn“ (Muslim). Und er lehrte den jungen Ibn Abbas: Wenn sich die ganze Gemeinschaft versammelte, um dir zu nützen, könnte sie dir nur mit dem nützen, was Allah für dich bereits bestimmt hat (at-Tirmidhi).
 
 Qadar ist keine Ausrede für Untätigkeit. Als ein Mann fragte, ob er sein Kamel anbinden oder auf Allah vertrauen solle, sagte der Prophet ﷺ: „Binde es an und vertraue auf Allah“ (at-Tirmidhi). Wir tun unser Bestes – und überlassen das Ergebnis Allah.
 
@@ -137,7 +137,7 @@ Was den Glauben schwächt, sind Nachlässigkeit, Sünden und ein Leben ohne Inne
 
 Der Prophet ﷺ sprach von einer **Süße des Glaubens**, die man schmecken kann: „Drei Dinge – wer sie in sich trägt, findet die Süße des Glaubens: dass Allah und Sein Gesandter ihm lieber sind als alles andere; dass er einen Menschen nur um Allahs willen liebt; und dass er es verabscheut, zum Unglauben zurückzukehren, so wie er es verabscheuen würde, ins Feuer geworfen zu werden“ (al-Bukhari, Muslim).
 
-Und er verband den Glauben untrennbar mit den Mitmenschen: „Keiner von euch glaubt wirklich, bis er für seinen Bruder liebt, was er für sich selbst liebt“ (al-Bukhari, Muslim). Glaube macht weich, großzügig und ehrlich. Wenn Ihr Glaube wachsen, sollten die Menschen um Sie herum es spüren.
+Und er verband den Glauben untrennbar mit den Mitmenschen: „Keiner von euch glaubt wirklich, bis er für seinen Bruder liebt, was er für sich selbst liebt“ (al-Bukhari, Muslim). Glaube macht weich, großzügig und ehrlich. Wenn Ihr Glaube wächst, sollten die Menschen um Sie herum es spüren.
 
 ## Die schiitische Darstellung: Usul ad-Din
 
@@ -162,7 +162,7 @@ Einige kleine Schritte für den Anfang:
 1. Lernen Sie den Thronvers (2:255) und die letzten beiden Verse der Sure al-Baqara (2:285–286); beide fassen den Glauben wunderbar zusammen. Sie können sie bei uns [Vers für Vers hören](/surah/2).
 2. Wählen Sie jede Woche einen der schönen Namen Allahs und achten Sie darauf, wo er Ihnen im Alltag begegnet.
 3. Sprechen Sie morgens und abends ein kurzes Gedenken und nehmen Sie sich einen Moment der Stille.
-4. Tu jeden Tag eine kleine gute Tat im Verborgenen – nur für Allah.
+4. Tun Sie jeden Tag eine kleine gute Tat im Verborgenen – nur für Allah.
 
 ## Zum Abschluss
 
@@ -174,7 +174,7 @@ Beten wir zum Schluss mit den Worten des Korans: „Unser Herr, lass unsere Herz
       { q: "Warum gibt es sechs Säulen des Glaubens, aber fünf Säulen des Islam?", a: "Die fünf Säulen des Islam sind Handlungen, die man sieht: Bekenntnis, Gebet, Fasten, Zakat und Pilgerfahrt. Die sechs Säulen des Glaubens sind Inhalte, die das Herz bejaht. Beide gehören zusammen wie die Wurzeln und die Zweige eines Baumes." },
       { q: "Glauben schiitische Muslime an die sechs Säulen?", a: "Ja, sie glauben an Allah, die Engel, die Bücher, die Gesandten, den Jüngsten Tag und Allahs Bestimmung. In der schiitischen Theologie werden die Grundlagen aber meist als fünf Usul ad-Din geordnet: Tauhid, 'Adl (Gerechtigkeit Allahs), Nubuwwa (Prophetentum), Imama (Führung durch die Imame) und Ma'ad (Rückkehr zu Allah)." },
       { q: "Wenn alles vorherbestimmt ist, bin ich dann für meine Taten verantwortlich?", a: "Ja. Der Koran sagt: „Wir haben ihm den Weg gezeigt, ob er nun dankbar ist oder undankbar“ (76:3), und Allah erlegt keiner Seele mehr auf, als sie tragen kann (2:286). Allah weiß alles, doch Sie entscheiden wirklich. Der Prophet ﷺ sagte: „Binde es an und vertraue auf Allah“ (at-Tirmidhi) – handeln und vertrauen gehören zusammen." },
-      { q: "Ist es schlimm, wenn ich Zweifel habe?", a: "Beunruhigende Gedanken sind menschlich. Als einige Gefährten dem Propheten ﷺ klagten, ihnen kämen Gedanken, die sie kaum auszusprechen wagten, sagte er: „Das ist klarer Glaube“ (Muslim) – denn gerade dass sie darunter litten, zeigte ihren Glauben. Suche Wissen, sprechen Sie mit vertrauenswürdigen Gelehrten und bitte Allah um Festigkeit." },
+      { q: "Ist es schlimm, wenn ich Zweifel habe?", a: "Beunruhigende Gedanken sind menschlich. Als einige Gefährten dem Propheten ﷺ klagten, ihnen kämen Gedanken, die sie kaum auszusprechen wagten, sagte er: „Das ist klarer Glaube“ (Muslim) – denn gerade dass sie darunter litten, zeigte ihren Glauben. Suchen Sie Wissen, sprechen Sie mit vertrauenswürdigen Gelehrten und bitten Sie Allah um Festigkeit." },
       { q: "Kann man Engel sehen?", a: "Normalerweise nicht, denn sie gehören zur verborgenen Welt. Der Koran berichtet aber, dass Engel auf Allahs Geheiß in menschlicher Gestalt erschienen, etwa bei Maryam (19:17) und bei Ibrahim (11:69–70). Auch im Hadith des Dschibril kam der Engel in Gestalt eines Mannes." },
     ],
     sources: [

@@ -196,7 +196,7 @@ const de: ExtraContent = {
         "Hidschaz: die weite Sekunde gibt eine ferne, sehnsuchtsvolle Farbe.",
         "Gelehrte sind sich über das Studium von Melodien uneins; alle sind sich einig, dass Tadschwid und Demut vor jeder Melodie kommen.",
       ],
-      check: ["Ich kann Bayati, Saba und Hidschaz mit eigenen Worten beschreiben.", "Ich höre al-Fatiha mit zwei Rezitatoren und vergleichen Sie die Stimmung."],
+      check: ["Ich kann Bayati, Saba und Hidschaz mit eigenen Worten beschreiben.", "Ich höre al-Fatiha mit zwei Rezitatoren und vergleiche die Stimmung."],
       mcq: [
         { q: "Was ist ein Maqam?", options: ["Ein melodischer Modus mit eigenen Tönen und eigener Stimmung", "Eine Tadschwid-Regel", "Eine Madd-Art", "Ein Pausenzeichen"], answer: 0 },
         { q: "Mit welchem Maqam beginnt man oft eine Rezitation?", options: ["Bayati", "Saba", "Sika", "Adscham"], answer: 0 },

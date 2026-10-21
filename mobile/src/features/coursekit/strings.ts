@@ -2,16 +2,16 @@ import { useLang } from "@/i18n";
 import { formatWeb } from "@/i18n/web";
 import { moduleText } from "@/i18n/app";
 
-// App-only texts of the courses (everything else comes from the website). German uses "du", like the website.
+// App-only texts of the courses (everything else comes from the website). German uses the Sie-form, like the website.
 const S = {
   de: {
     proEyebrow: "Quran Masterclass Pro",
     arabicProTitle: "Den ganzen Koran lesen lernen",
-    arabicProText: "Die ersten {n} Lektionen sind kostenlos. Mit Pro lernst du alle {total} Lektionen: Buchstabenformen, Vokale, Koranwörter, echte Rezitation und ganze Verse.",
+    arabicProText: "Die ersten {n} Lektionen sind kostenlos. Mit Pro lernen Sie alle {total} Lektionen: Buchstabenformen, Vokale, Koranwörter, echte Rezitation und ganze Verse.",
     tajweedProTitle: "Der ganze Tajweed-Kurs",
-    tajweedProText: "Die ersten {n} Lektionen sind kostenlos. Mit Pro lernst du alle {total} Regeln – mit Beispielen aus dem Koran und einem Quiz in jeder Lektion.",
-    vocabLimitTitle: "Das waren deine {n} Wörter für heute",
-    vocabLimitText: "Kostenlos übst du {n} Wörter am Tag. Mit Pro übst du so viele, wie du möchtest – jeden Stapel, jeden Tag. Morgen geht es kostenlos weiter.",
+    tajweedProText: "Die ersten {n} Lektionen sind kostenlos. Mit Pro lernen Sie alle {total} Regeln – mit Beispielen aus dem Koran und einem Quiz in jeder Lektion.",
+    vocabLimitTitle: "Das waren Ihre {n} Wörter für heute",
+    vocabLimitText: "Kostenlos üben Sie {n} Wörter am Tag. Mit Pro üben Sie so viele, wie Sie möchten – jeden Stapel, jeden Tag. Morgen geht es kostenlos weiter.",
     vocabLeft: "Heute noch {n} von {total} kostenlosen Wörtern",
     lessonLocked: "Diese Lektion gehört zu Pro",
     proLabel: "Pro",

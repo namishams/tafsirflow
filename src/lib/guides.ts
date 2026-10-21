@@ -196,13 +196,13 @@ Genau dafür gibt es die [Shams-Methode](/shams). Nami Shams hat sie als festen 
 4. **Bedeutung** – die Übersetzung des ganzen Verses lesen.
 5. **Tafsir** – die klassische Erklärung mit Quellenangabe lesen.
 6. **Ausblenden** – nur mit dem ersten Buchstaben jedes Wortes rezitieren, dann ganz ohne Hilfe.
-7. **Nachdenken** – ein, zwei Sätze notieren, was der Versen Sie sich persönlich sagt.
+7. **Nachdenken** – ein, zwei Sätze notieren, was der Vers Ihnen persönlich sagt.
 
 Anschließend kommt jeder Vers nach 1, 3, 7, 14, 30 und 90 Tagen zur Wiederholung. Wie das mit dem klassischen Sabaq, Sabqi und Manzil zusammenpasst, erklärt der [Hifz-Ratgeber](/guides/how-to-memorize-the-quran).
 
 ## Schritt 7: Eine tägliche Routine aufbauen
 
-Beständigkeit ist viel wichtiger als Intensität. Der Prophet ﷺ sagte, dass Allah die Taten am meisten liebt, die regelmäßig verrichtet werden, auch wenn sie klein sind (Bukhari und Muslim). Fünfzehn bis fünfundzwanzig Minuten am Tag bringenen Sie sich weiter als eine lange Einheit einmal pro Woche.
+Beständigkeit ist viel wichtiger als Intensität. Der Prophet ﷺ sagte, dass Allah die Taten am meisten liebt, die regelmäßig verrichtet werden, auch wenn sie klein sind (Bukhari und Muslim). Fünfzehn bis fünfundzwanzig Minuten am Tag bringen Sie weiter als eine lange Einheit einmal pro Woche.
 
 So kann Ihr Tag aussehen:
 
@@ -421,7 +421,7 @@ Wie Sie einen Vers zum ersten Mal lernen, ist genauso wichtig wie das spätere W
 3. **Wort für Wort** – jedes Wort mit seiner Bedeutung anschauen.
 4. **Bedeutung** – die Übersetzung des ganzen Verses lesen.
 5. **Tafsir** – die klassische Erklärung mit Quellenangabe lesen.
-6. **Ausblenden** – nur mit dem ersten Buchstaben jedes Wortes rezitieren, dann ganz ohne. Den Vers aufdecken und Sie ehrlich bewerten.
+6. **Ausblenden** – nur mit dem ersten Buchstaben jedes Wortes rezitieren, dann ganz ohne. Den Vers aufdecken und sich ehrlich bewerten.
 7. **Nachdenken** – ein, zwei Sätze in Ihre Notiz schreiben.
 
 Der Rückwärtsaufbau ist möglich, weil die App den genauen Zeitpunkt jedes Wortes in der Rezitation kennt. Warum jeder Schritt wirkt, erklärt unser [ausführlicher Artikel zur Shams-Methode](/guides/shams-method).
@@ -434,13 +434,13 @@ Die richtige Menge ist die, die Sie jeden Tag durchhalten. Als Orientierung:
 - **Mit etwas Übung:** 3–5 neue Verse
 - **Intensiv:** 5–10 neue Verse plus längere Wiederholung
 
-Denken Sie daran: Mit jedem gelernten Vers wächst die Wiederholung. Wenn sie anfängt, das Neue zu verdrängen, setzen Sie ein paar Tage mit neuen Versen aus und festige das Gelernte. Das ist kein Scheitern – so funktioniert Hifz.
+Denken Sie daran: Mit jedem gelernten Vers wächst die Wiederholung. Wenn sie anfängt, das Neue zu verdrängen, setzen Sie ein paar Tage mit neuen Versen aus und festigen Sie das Gelernte. Das ist kein Scheitern – so funktioniert Hifz.
 
 ## So kann eine Lerneinheit aussehen
 
 So passen Sabaq, Sabqi und Manzil in 20 bis 25 Minuten mit der App:
 
-1. **Manzil und fällige Verse (5–8 Min.):** Die heute fälligen Verse aus dem Gedächtnis rezitieren und Sie dann prüfen.
+1. **Manzil und fällige Verse (5–8 Min.):** Die heute fälligen Verse aus dem Gedächtnis rezitieren und sich dann prüfen.
 2. **Sabaq (8–12 Min.):** Ein bis drei neue Verse mit den sieben Schritten der Shams-Methode lernen.
 3. **Sabqi (3–5 Min.):** Die heutigen Verse zusammen mit denen von gestern ohne Hinsehen rezitieren – so entsteht eine Kette.
 4. **Abends (2 Min.):** Die Verse des Tages vor dem Schlafen noch einmal hören.
@@ -468,7 +468,7 @@ Allein auswendig zu lernen ist möglich, doch es wird dringend empfohlen, einem 
 
 ## Halten Sie Ihre Absicht lebendig
 
-Manche Tage fühlen sich zäh an. Dann erinneren Sie sich, warum Sie angefangen haben. Jeder Vers, den Sie im Herzen tragen, ist ein Geschenk – und auch ein einziger heute wiederholter Vers zählt.`,
+Manche Tage fühlen sich zäh an. Dann erinnern Sie sich, warum Sie angefangen haben. Jeder Vers, den Sie im Herzen tragen, ist ein Geschenk – und auch ein einziger heute wiederholter Vers zählt.`,
     faq: [
       {
         q_en: "What do sabaq, sabqi and manzil mean?",
@@ -640,7 +640,7 @@ Dieser Artikel erklärt jeden Schritt und das Lernprinzip dahinter. Wenn Sie es 
 
 Die Shams-Methode ist eine **Lernmethode**, keine neue Auslegung des Korans. Alle Erklärungen in der App stammen aus klassischen Tafsir-Werken und werden immer mit Quelle angezeigt. Bei religiösen Fragen wenden Sie sich bitte an einen qualifizierten Gelehrten.
 
-Keiner ihrer Bausteine ist für sich genommen neu. Zuhören vor dem Rezitieren, Wiederholung und Festigung sind so alt wie der Koranunterricht selbst. Neu ist, wie sie **kombiniert und getaktet** werden – und dass die Appen Sie sich bei jedem Vers des Korans hindurchführt.
+Keiner ihrer Bausteine ist für sich genommen neu. Zuhören vor dem Rezitieren, Wiederholung und Festigung sind so alt wie der Koranunterricht selbst. Neu ist, wie sie **kombiniert und getaktet** werden – und dass die App Sie bei jedem Vers des Korans hindurchführt.
 
 ## Die sieben Schritte im Überblick
 
@@ -756,7 +756,7 @@ Wie viel ist richtig? Anfänger: 1–3 neue Verse am Tag. Mit Übung: 3–5. Int
 
 ## Jetzt ausprobieren
 
-Beginnen Sie mit [Al-Fatiha](/surah/1) oder [wähle eine beliebige Sure](/quran). Die Methode führt Sie Schritt für Schritt auf dem Bildschirm – und sie ist komplett kostenlos.`,
+Beginnen Sie mit [Al-Fatiha](/surah/1) oder [wählen Sie eine beliebige Sure](/quran). Die Methode führt Sie Schritt für Schritt auf dem Bildschirm – und sie ist komplett kostenlos.`,
     faq: [
       {
         q_en: "Who developed the Shams Method?",
@@ -889,7 +889,7 @@ You do not need to learn all of them at once. Notice them, ask your teacher, and
 
 ## Step 7: Move on to tajweed
 
-Reading correctly is the foundation; tajweed adds the rules of beautiful, correct recitation, suchen Sie as nasal sounds, lengthening and merging of letters. Once you can read short words confidently, read our [tajweed guide for beginners](/guides/tajweed-for-beginners).
+Reading correctly is the foundation; tajweed adds the rules of beautiful, correct recitation, such as nasal sounds, lengthening and merging of letters. Once you can read short words confidently, read our [tajweed guide for beginners](/guides/tajweed-for-beginners).
 
 ## How long does it take?
 
@@ -1012,7 +1012,7 @@ Das ist von Mensch zu Mensch verschieden. Mit täglicher Übung erkennen viele E
 - **Lassen Sie sich von einem Lehrer prüfen.** Manche Fehler hört man selbst nicht.
 - **Lesen Sie jeden Tag ein bisschen,** auch an vollen Tagen – ein Vers reicht, um die Gewohnheit zu halten.
 
-Wenn Sie so weit sind, verbinden Sie das Lesen mit Verstehen und Auswendiglernen. Unser [kompletter Leitfaden für Anfänger](/guides/how-to-learn-the-quran) zeigt, wie alles zusammenpasen, und die [Shams-Methode](/shams) gibt Ihnen einen klaren Weg für jeden Vers.`,
+Wenn Sie so weit sind, verbinden Sie das Lesen mit Verstehen und Auswendiglernen. Unser [kompletter Leitfaden für Anfänger](/guides/how-to-learn-the-quran) zeigt, wie alles zusammenpasst, und die [Shams-Methode](/shams) gibt Ihnen einen klaren Weg für jeden Vers.`,
     faq: [
       {
         q_en: "How many letters does the Arabic alphabet have?",
@@ -1431,7 +1431,7 @@ Das hängt davon ab, wie viele neue Verse Sie pro Tag lernen. Bei 564 Versen:
 - **3 Verse am Tag:** etwa 188 Tage – rund **sechs Monate**
 - **5 Verse am Tag:** etwa 4 Monate
 
-Die Zahlen zählen nur Tage mit neuem Stoff. Plane Ruhetage und ab und zu reine Wiederholungstage ein. Außerdem lernt jeder unterschiedlich schnell. Entscheidend ist, dass Sie dranbleiben.
+Die Zahlen zählen nur Tage mit neuem Stoff. Planen Sie Ruhetage und ab und zu reine Wiederholungstage ein. Außerdem lernt jeder unterschiedlich schnell. Entscheidend ist, dass Sie dranbleiben.
 
 ## Rückwärts lernen: von An-Nas bis An-Naba'
 
@@ -1443,7 +1443,7 @@ Bei drei Versen am Tag: **etwa ein Monat.**
 
 Dazu gehören [An-Nas](/surah/114), [Al-Falaq](/surah/113), [Al-Ikhlas](/surah/112), Al-Masad, An-Nasr, Al-Kafirun, Al-Kauthar, Al-Ma'un, Quraisch, Al-Fil, Al-Humaza, [Al-'Asr](/surah/103), At-Takathur, Al-Qari'a und Al-'Adiyat.
 
-Viele dieser Suren kennen Sie schon aus dem Gebet. Nutzen Sie die Etappe, um Ihre Aussprache zu verfeinern und Sie an die tägliche Routine zu gewöhnen.
+Viele dieser Suren kennen Sie schon aus dem Gebet. Nutzen Sie die Etappe, um Ihre Aussprache zu verfeinern und sich an die tägliche Routine zu gewöhnen.
 
 ### Etappe 2: Az-Zalzala (99) bis Al-Balad (90) – 123 Verse
 
@@ -1490,11 +1490,11 @@ In mehreren Suren von Juz Amma gibt es Verse, die ähnlich klingen. Wenn Ihnen e
 
 ### Motivationstief bei den längeren Suren
 
-Die Etappen 3 und 4 dauern länger. Teile sie in Wochenziele auf – etwa „die ersten 20 Verse von Al-Fadschr diese Woche“ – und freuen Sie sich über jede fertige Sure.
+Die Etappen 3 und 4 dauern länger. Teilen Sie sie in Wochenziele auf – etwa „die ersten 20 Verse von Al-Fadschr diese Woche“ – und freuen Sie sich über jede fertige Sure.
 
 ### Verpasste Tage
 
-Das Leben kommt manchmal dazwischen. Wenn Sie einen Tag verpasen, versuch nicht, mit doppelten Portionen aufzuholen. Fangen Sie wieder mit der Wiederholung an und machen Sie im gewohnten Tempo weiter.
+Das Leben kommt manchmal dazwischen. Wenn Sie einen Tag verpassen, versuchen Sie nicht, mit doppelten Portionen aufzuholen. Fangen Sie wieder mit der Wiederholung an und machen Sie im gewohnten Tempo weiter.
 
 ## Nutzen Sie, was Sie lernen
 
@@ -1653,7 +1653,7 @@ Kinder sind keine kleinen Erwachsenen. Sie lernen mit allen Sinnen, brauchen Bew
 
 ## Mit dem Zuhören anfangen
 
-Für kleine Kinder ist Zuhören der natürlichste erste Schritt. Spiel kurze Suren zu Hause ab – beim Frühstück, im Auto, vor dem Schlafengehen. Am Anfang müssen Sie gar nicht verlangen, dass das Kind etwas nachspricht. Der Klang wird ganz von selbst vertraut.
+Für kleine Kinder ist Zuhören der natürlichste erste Schritt. Spielen Sie kurze Suren zu Hause ab – beim Frühstück, im Auto, vor dem Schlafengehen. Am Anfang müssen Sie gar nicht verlangen, dass das Kind etwas nachspricht. Der Klang wird ganz von selbst vertraut.
 
 Bei Quran Masterclass können Sie jede Sure Vers für Vers mit bekannten Rezitatoren abspielen, und das [Koran-Radio](/radio) ist eine einfache Möglichkeit, Rezitation im Hintergrund laufen zu lassen.
 
@@ -1707,7 +1707,7 @@ Quran Masterclass hat einen Kindermodus, den Sie mit einem Tippen oben in der Le
 - **Sterne als Belohnung** fürs Üben
 - **Tafsir ausgeblendet**, damit der Bildschirm ruhig und übersichtlich bleibt
 
-Der Kindermodus ist dafür gedacht, gemeinsam mit einem Elternteil genutzt zu werden, besonders bei jüngeren Kindern. Setzen Sie sich dazu, hört zusammen zu und freut euch über kleine Erfolge.
+Der Kindermodus ist dafür gedacht, gemeinsam mit einem Elternteil genutzt zu werden, besonders bei jüngeren Kindern. Setzen Sie sich dazu, hören Sie gemeinsam zu und freuen Sie sich zusammen über kleine Erfolge.
 
 ## Eine einfache Routine für Familien
 
@@ -1994,7 +1994,7 @@ Der Koran ist das Wort Allahs, und ihn zu erklären ist eine ernste Verantwortun
         q_en: "Which tafsir is good for beginners?",
         a_en: "Many beginners start with an abridged Tafsir Ibn Kathir or a concise work like Tafsir al-Jalalayn. A teacher can recommend what suits your level.",
         q_de: "Welcher Tafsir eignet sich für Anfänger?",
-        a_de: "Viele beginnen mit einer gekürzten Fassung von Ibn Kathir oder einem knappen Werk wie Tafsir al-Dschalalain. Ein Lehrer kann empfehlen, was zu Ihrem Stand pasen.",
+        a_de: "Viele beginnen mit einer gekürzten Fassung von Ibn Kathir oder einem knappen Werk wie Tafsir al-Dschalalain. Ein Lehrer kann empfehlen, was zu Ihrem Stand passt.",
       },
       {
         q_en: "Where does the tafsir in Quran Masterclass come from?",
@@ -2165,7 +2165,7 @@ Rezitieren Sie die neuen Verse von heute zusammen mit denen von gestern, ohne hi
 
 ### 4. Vor dem Schlafen hören (ca. 2 Minuten)
 
-Spiel abends die Verse des Tages noch einmal ab. Was man kurz vor dem Einschlafen durchgeht, wird oft über Nacht gefestigt. Und es ist ein friedlicher Abschluss des Tages.
+Spielen Sie abends die Verse des Tages noch einmal ab. Was man kurz vor dem Einschlafen durchgeht, wird oft über Nacht gefestigt. Und es ist ein friedlicher Abschluss des Tages.
 
 ## Drei Varianten für unterschiedliche Tage
 
@@ -2207,20 +2207,20 @@ Neben Ihrer konzentrierten Routine können Sie den Koran auch zwischendurch hör
 - Beim Kochen oder Aufräumen
 - Bei einem Spaziergang
 
-Spiel Ihre aktuelle Sure ab oder nutzen Sie das [Koran-Radio](/radio) für durchgehende Rezitation. Zuhören ersetzt das aktive Abrufen nicht, hält die Verse aber nah bei Ihnen.
+Spielen Sie Ihre aktuelle Sure ab oder nutzen Sie das [Koran-Radio](/radio) für durchgehende Rezitation. Zuhören ersetzt das aktive Abrufen nicht, hält die Verse aber nah bei Ihnen.
 
 ## Tipps zum Dranbleiben
 
 - **Gleicher Ort, gleiche Zeit.** Eine feste Ecke und eine feste Uhrzeit erleichtern den Start.
 - **Am Vorabend vorbereiten.** Wissen Sie, welche Verse als Nächstes kommen, damit Sie keine Zeit mit Suchen verlieren.
-- **Serie im Blick behalten.** Die Heute-Seite zählt, wie viele Tage Sie in Folge geübt haben. Eine wachsende Serie motiviert – eine gerissene sollten Sie sich aber nicht entmutigen.
-- **Handy in den Fokusmodus.** So unterbrechenen Sie sich keine Benachrichtigungen.
+- **Serie im Blick behalten.** Die Heute-Seite zählt, wie viele Tage Sie in Folge geübt haben. Eine wachsende Serie motiviert – eine gerissene sollte Sie aber nicht entmutigen.
+- **Handy in den Fokusmodus.** So unterbricht Sie keine Benachrichtigung.
 - **Gelerntes im Gebet rezitieren.** Das ist Wiederholung und Gottesdienst zugleich.
-- **Mit einem kurzen Bittgebet beginnen.** Bitte Allah um nützliches Wissen, bevor Sie starten. Passende Bittgebete finden Sie in unserer [Dua-Sammlung](/duas).
+- **Mit einem kurzen Bittgebet beginnen.** Bitten Sie Allah um nützliches Wissen, bevor Sie starten. Passende Bittgebete finden Sie in unserer [Dua-Sammlung](/duas).
 
 ## Wöchentlicher und monatlicher Rückblick
 
-Nehmen Sie sich einmal pro Woche ein paar Minuten extra, um eine ganze gelernte Sure von Anfang bis Ende zu rezitieren. Schauen Sie einmal im Monat zurück: Passt die Tagesmenge? Dauert das Wiederholen zu lange? Dann reduziere die neuen Verse eine Weile. Eine Routine sollen Sie sich dienen, nicht Sie erdrücken.
+Nehmen Sie sich einmal pro Woche ein paar Minuten extra, um eine ganze gelernte Sure von Anfang bis Ende zu rezitieren. Schauen Sie einmal im Monat zurück: Passt die Tagesmenge? Dauert das Wiederholen zu lange? Dann reduzieren Sie die neuen Verse eine Weile. Eine Routine soll Ihnen dienen, nicht Sie erdrücken.
 
 ## Beispiel: eine Woche mit Al-Mulk
 
@@ -2246,7 +2246,7 @@ Suchen Sie sich eine Uhrzeit aus, öffnen Sie den nächsten Vers und beginnen Si
         q_en: "What should I do if I miss a day?",
         a_en: "Simply continue the next day, starting with review. Do not try to catch up with double portions – that often leads to giving up.",
         q_de: "Was mache ich, wenn ich einen Tag verpasse?",
-        a_de: "Machen Sie einfach am nächsten Tag weiter und beginnen Sie mit dem Wiederholen. Versuch nicht, mit doppelten Portionen aufzuholen – das führt oft dazu, dass man aufgibt.",
+        a_de: "Machen Sie einfach am nächsten Tag weiter und beginnen Sie mit dem Wiederholen. Versuchen Sie nicht, mit doppelten Portionen aufzuholen – das führt oft dazu, dass man aufgibt.",
       },
     ],
     related: ["shams-method", "how-to-memorize-the-quran", "juz-amma-learning-plan"],
@@ -2258,7 +2258,7 @@ Suchen Sie sich eine Uhrzeit aus, öffnen Sie den nächsten Vers und beginnen Si
     title_en: "Learn Quranic Arabic Vocabulary: Core Words and Roots",
     title_de: "Koran-Wortschatz lernen: Grundwörter und Wurzeln",
     desc_en: "How a core vocabulary and the Arabic root system help you understand the Quran: frequent words, key roots, patterns and a simple way to learn them daily.",
-    desc_de: "Wie ein Grundwortschatz und das arabische Wurzelsystemen Sie sich helfen, den Koran zu verstehen: häufige Wörter, wichtige Wurzeln, Muster und tägliches Lernen.",
+    desc_de: "Wie ein Grundwortschatz und das arabische Wurzelsystem Ihnen helfen, den Koran zu verstehen: häufige Wörter, wichtige Wurzeln, Muster und tägliches Lernen.",
     keywords_en: "Quranic Arabic vocabulary, Quran words, Arabic roots, understand Quran Arabic, word by word Quran",
     keywords_de: "Koran Wortschatz, Koran Wörter, arabische Wurzeln, Koran auf Arabisch verstehen, Koran Wort für Wort",
     body_en: `Imagine reciting Al-Fatiha in prayer and understanding every word as you say it. For many Muslims who did not grow up with Arabic, that is a real and reachable goal. You do not need to master Arabic grammar first. A core vocabulary and a basic understanding of how Arabic words are built will already open up a large part of what you recite.
@@ -2493,7 +2493,7 @@ Schritt drei der [Shams-Methode](/shams), entwickelt von Nami Shams, heißt **Wo
 
 ### 3. Wörter nach Wurzeln ordnen
 
-Wenn Ihnen ein neues Wort begegnet, fragen Sie sich: Aus welcher Wurzel stammt es? Kennen Sie ich schon einen Verwandten? Führ in Ihren Notizen eine kleine Liste, geordnet nach Wurzeln.
+Wenn Ihnen ein neues Wort begegnet, fragen Sie sich: Aus welcher Wurzel stammt es? Kennen Sie schon einen Verwandten? Führen Sie in Ihren Notizen eine kleine Liste, geordnet nach Wurzeln.
 
 ### 4. In wachsenden Abständen wiederholen
 

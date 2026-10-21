@@ -221,7 +221,7 @@ const de: JourneyText = {
     fatiha: "Al-Fatiha rezitieren Sie in jedem Gebet. Lernen Sie sie Vers für Vers mit der Shams-Methode.",
     tajweed: "Tadschwid macht Ihre Rezitation richtig und schön. Beginnen Sie mit: {title}.",
     tajweedGoOn: "Weiter im Tadschwid. Als Nächstes: {title}.",
-    vocab: "Die häufigsten Wörter des Korans helfenen Sie sich zu verstehen, was Sie rezitieren.",
+    vocab: "Die häufigsten Wörter des Korans helfen Ihnen zu verstehen, was Sie rezitieren.",
     memo: "Weiter mit dem Auswendiglernen: {verse}.",
   },
   verseOf: "{surah}, Vers {v}",

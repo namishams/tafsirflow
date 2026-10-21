@@ -23,6 +23,7 @@ import { IconFlame } from "./Icons";
 import DonateCTA from "./DonateCTA";
 import { CalligraphyDraw, Rosette } from "./Ornaments";
 import { HomeCorners, HomeRain, HomeRing, HomeStar, HomeVerse, StarGlyph } from "./art/HomeOrnaments";
+import { verseQuote } from "@/lib/verseQuotes";
 
 type Last = { chapter: number; verse: number };
 type Task = { key: string; title: string; detail: string; href: string; cta: string; done: boolean };
@@ -93,7 +94,7 @@ export default function TodayDashboard() {
               <p className="hm-k text-[rgb(var(--gold))]">{dateText}{hijri ? ` · ${hijri}` : ""}</p>
               <h1 className="rise font-display mt-2 text-[34px] leading-none sm:text-5xl">{me?.name ? t("hello", { name: me.name.split(" ")[0] }) : t("title")}</h1>
               <p className="mt-3 max-w-md text-[15px] text-white/70">{doneCount >= tasks.length ? t("allDone") : t("tasksLeft", { n: tasks.length - doneCount })}</p>
-              <HomeVerse text="أَلَا بِذِكۡرِ ٱللَّهِ تَطۡمَئِنُّ ٱلۡقُلُوبُ" cite="13:28" className="mt-2 text-[19px] sm:text-[22px]" />
+              <HomeVerse text={verseQuote("qpc", "13:28", 7)} cite="13:28" className="mt-2 text-[19px] sm:text-[22px]" />
             </div>
             <Link href="/prayer" className="group relative min-w-[11rem] border border-[rgb(var(--gold))]/35 bg-white/[0.04] px-5 pb-3 pt-6 text-center text-sm transition hover:border-[rgb(var(--gold))]/70 hover:bg-white/[0.07]" style={{ borderRadius: "50% 50% 12px 12px / 30px 30px 12px 12px" }}>
               <svg aria-hidden viewBox="0 0 24 24" className="absolute left-1/2 top-1.5 h-4 w-4 -translate-x-1/2 text-[rgb(var(--gold))]" fill="currentColor"><path d="M15.5 3.5a8.5 8.5 0 1 0 5 15.4A7 7 0 1 1 15.5 3.5z" /></svg>

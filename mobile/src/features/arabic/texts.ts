@@ -5,16 +5,16 @@ import { LESSONS, PASS_PCT, UNITS } from "@/web/arabic";
 
 /** ArabicHome.tsx T */
 export const HOME_T = {
-  de: { start: "Kurs beginnen", cont: "Weiterlernen", lessons: "Lektionen", unit: "Einheit", locked: "Erst die vorherige Lektion schaffen", done: "geschafft", xp: "XP", progress: "Kursfortschritt", allDone: "Kurs abgeschlossen – du kannst den Koran lesen! Weiter mit der Shams-Methode.", test: "Test", placeTitle: "Einstufungstest", placeBody: "Du kannst schon etwas lesen? Zwölf kurze Fragen zeigen dir, wo du einsteigst – Einheiten, die du sicher beherrschst, überspringst du.", placeCta: "Test starten", placeAgain: "Test wiederholen", placeLast: "Letztes Ergebnis: {a} von {b} richtig", placeNote: "Per Einstufungstest übersprungen" },
+  de: { start: "Kurs beginnen", cont: "Weiterlernen", lessons: "Lektionen", unit: "Einheit", locked: "Erst die vorherige Lektion schaffen", done: "geschafft", xp: "XP", progress: "Kursfortschritt", allDone: "Kurs abgeschlossen – Sie können den Koran lesen! Weiter mit der Shams-Methode.", test: "Test", placeTitle: "Einstufungstest", placeBody: "Sie können schon etwas lesen? Zwölf kurze Fragen zeigen Ihnen, wo Sie einsteigen – Einheiten, die Sie sicher beherrschen, überspringen Sie.", placeCta: "Test starten", placeAgain: "Test wiederholen", placeLast: "Letztes Ergebnis: {a} von {b} richtig", placeNote: "Per Einstufungstest übersprungen" },
   ar: { start: "ابدأ الدورة", cont: "تابع التعلّم", lessons: "دروس", unit: "الوحدة", locked: "أتمّ الدرس السابق أولًا", done: "تمّ", xp: "نقطة", progress: "تقدّمك في الدورة", allDone: "أتممت الدورة – صرت تقرأ القرآن! تابع مع منهج شمس.", test: "اختبار", placeTitle: "اختبار تحديد المستوى", placeBody: "هل تقرأ العربية قليلًا؟ اثنا عشر سؤالًا قصيرًا تبيِّن لك من أين تبدأ – وتتخطّى الوحدات التي تُتقنها.", placeCta: "ابدأ الاختبار", placeAgain: "أعد الاختبار", placeLast: "آخر نتيجة: {a} من {b} صحيحة", placeNote: "تخطّيتَ بالاختبار" },
   en: { start: "Start the course", cont: "Continue", lessons: "lessons", unit: "Unit", locked: "Pass the previous lesson first", done: "done", xp: "XP", progress: "Course progress", allDone: "Course complete – you can read the Quran! Continue with the Shams Method.", test: "Test", placeTitle: "Placement test", placeBody: "Can you already read a little? Twelve short questions show where you join the course – units you know well are skipped.", placeCta: "Start the test", placeAgain: "Repeat the test", placeLast: "Last result: {a} of {b} correct", placeNote: "Skipped by the placement test" },
 };
 
 /** ArabicLesson.tsx T */
 export const LESSON_T = {
-  de: { check: "Prüfen", next: "Weiter", right: "Richtig!", wrong: "Nicht ganz – richtig ist:", listen: "Anhören", again: "Nochmal üben", overview: "Zur Kursübersicht", nextLesson: "Nächste Lektion", done: "Lektion geschafft!", notYet: "Fast geschafft!", needPass: `Ab ${PASS_PCT} % ist die nächste Lektion frei. Wiederhole die Lektion – die Fehler kommen gezielt zurück.`, score: "richtig beim ersten Versuch", xp: "XP", match: "Finde die Paare", review: "Wiederholung", quit: "Beenden", learn: "Neu", tip: "Sprich jeden Laut laut mit – Lesen lernt man mit dem Mund.", readQuran: "Jetzt im Koran lesen",
-    hearHint: "Tippe auf den Knopf, um das Wort (nochmal) zu hören.", offline: "Die Aufnahme ist gerade nicht erreichbar.", wordIs: "Das Wort lautet:", voice: "Mit Gerätestimme anhören", verse: "Ganzen Vers anhören", tapOrder: "Tippe die Wörter der Reihe nach an – das erste steht rechts.", emptyRow: "Hier entsteht der Vers", reset: "Zurücksetzen", meaningLbl: "Bedeutung",
-    pLabel: "Einstufungstest", pHead: "Dein Einstieg", pFrom: "Du startest bei Einheit {n}.", pAll: "Du beherrschst die Grundlagen – weiter geht es mit Einheit 7: Hören und lesen.", pRight: "{a} von {b} richtig", pGo: "Weiter bei:", pRetry: "Test wiederholen", pNote: "Sicher gelöste Einheiten gelten als bestanden (1 Stern). Du kannst jede Lektion trotzdem jederzeit wiederholen.", unitWord: "Einheit", known: "sicher", open: "noch üben" },
+  de: { check: "Prüfen", next: "Weiter", right: "Richtig!", wrong: "Nicht ganz – richtig ist:", listen: "Anhören", again: "Nochmal üben", overview: "Zur Kursübersicht", nextLesson: "Nächste Lektion", done: "Lektion geschafft!", notYet: "Fast geschafft!", needPass: `Ab ${PASS_PCT} % ist die nächste Lektion frei. Wiederholen Sie die Lektion – die Fehler kommen gezielt zurück.`, score: "richtig beim ersten Versuch", xp: "XP", match: "Finden Sie die Paare", review: "Wiederholung", quit: "Beenden", learn: "Neu", tip: "Sprechen Sie jeden Laut laut mit – Lesen lernt man mit dem Mund.", readQuran: "Jetzt im Koran lesen",
+    hearHint: "Tippen Sie auf den Knopf, um das Wort (nochmal) zu hören.", offline: "Die Aufnahme ist gerade nicht erreichbar.", wordIs: "Das Wort lautet:", voice: "Mit Gerätestimme anhören", verse: "Ganzen Vers anhören", tapOrder: "Tippen Sie die Wörter der Reihe nach an – das erste steht rechts.", emptyRow: "Hier entsteht der Vers", reset: "Zurücksetzen", meaningLbl: "Bedeutung",
+    pLabel: "Einstufungstest", pHead: "Ihr Einstieg", pFrom: "Sie starten bei Einheit {n}.", pAll: "Sie beherrschen die Grundlagen – weiter geht es mit Einheit 7: Hören und lesen.", pRight: "{a} von {b} richtig", pGo: "Weiter bei:", pRetry: "Test wiederholen", pNote: "Sicher gelöste Einheiten gelten als bestanden (1 Stern). Sie können jede Lektion trotzdem jederzeit wiederholen.", unitWord: "Einheit", known: "sicher", open: "noch üben" },
   ar: { check: "تحقّق", next: "متابعة", right: "أحسنت!", wrong: "ليس تمامًا – الصواب:", listen: "استمع", again: "تدرّب مرة أخرى", overview: "إلى صفحة الدورة", nextLesson: "الدرس التالي", done: "أتممت الدرس!", notYet: "اقتربت كثيرًا!", needPass: `يُفتح الدرس التالي عند ${PASS_PCT}٪، أعد الدرس وستعود إليك الأخطاء لتثبيتها.`, score: "صحيحة من المحاولة الأولى", xp: "نقطة", match: "طابِق الأزواج", review: "مراجعة", quit: "إنهاء", learn: "جديد", tip: "انطق كل صوت بصوت مسموع، فالقراءة تُتعلَّم باللسان.", readQuran: "اقرأ في المصحف الآن",
     hearHint: "اضغط على الزر لتسمع الكلمة (مرةً أخرى).", offline: "التسجيل غير متاح الآن.", wordIs: "الكلمة هي:", voice: "استمع بصوت الجهاز", verse: "استمع إلى الآية كاملة", tapOrder: "اضغط على الكلمات بالترتيب – الكلمة الأولى عن اليمين.", emptyRow: "هنا تتكوّن الآية", reset: "إعادة", meaningLbl: "المعنى",
     pLabel: "اختبار تحديد المستوى", pHead: "نقطة انطلاقك", pFrom: "تبدأ من الوحدة {n}.", pAll: "أنت تُتقن الأساسيات – تابع مع الوحدة 7: استمع واقرأ.", pRight: "{a} من {b} صحيحة", pGo: "تابع مع:", pRetry: "أعد الاختبار", pNote: "تُحسب الوحدات التي أجبتَ عنها بثقة منجَزة (نجمة واحدة)، ويمكنك إعادة أي درسٍ متى شئت.", unitWord: "الوحدة", known: "متقَنة", open: "للتدرّب" },
@@ -25,7 +25,7 @@ export const LESSON_T = {
 
 /** PracticeAlphabet.tsx T */
 export const ALPHA_T = {
-  de: { tap: "Tippe auf einen Buchstaben", hear: "Anhören", joins: "verbindet sich nach beiden Seiten", alone: "verbindet sich nur nach rechts", formsLbl: "Anfang · Mitte · Ende" },
+  de: { tap: "Tippen Sie auf einen Buchstaben", hear: "Anhören", joins: "verbindet sich nach beiden Seiten", alone: "verbindet sich nur nach rechts", formsLbl: "Anfang · Mitte · Ende" },
   en: { tap: "Tap a letter", hear: "Listen", joins: "joins on both sides", alone: "joins only to the right", formsLbl: "Start · middle · end" },
   ar: { tap: "اضغط على حرفٍ لتتعرّف عليه", hear: "استمع", joins: "يتصل بما قبله وبما بعده", alone: "يتصل بما قبله فقط", formsLbl: "أول · وسط · آخر" },
 };
@@ -33,22 +33,22 @@ export const ALPHA_T = {
 /** arabic/page.tsx C */
 export const PAGE_C = {
   de: {
-    kicker: "Arabisch lesen lernen · für Anfänger", title: "Lies den Koran – auch wenn du heute noch keinen Buchstaben kennst",
-    lead: "Dieser Kurs bringt dir das Lesen der Koranschrift bei, so wie es Koranschulen seit Generationen tun: erst die Buchstaben, dann ihre Formen, dann die Vokalzeichen – bis du Al-Fatiha und die kurzen Suren selbst liest. In kleinen Lektionen von fünf Minuten, mit Übungen, Paaren und Tests.",
+    kicker: "Arabisch lesen lernen · für Anfänger", title: "Lesen Sie den Koran – auch wenn Sie heute noch keinen Buchstaben kennen",
+    lead: "Dieser Kurs bringt Ihnen das Lesen der Koranschrift bei, so wie es Koranschulen seit Generationen tun: erst die Buchstaben, dann ihre Formen, dann die Vokalzeichen – bis Sie Al-Fatiha und die kurzen Suren selbst lesen. In kleinen Lektionen von fünf Minuten, mit Übungen, Paaren und Tests.",
     stats: [`${LESSONS.length} Lektionen`, `${UNITS.length} Einheiten`, "28 Buchstaben", "5 Min. pro Lektion"],
-    pathTitle: "Dein Lernpfad", alphaTitle: "Das arabische Alphabet",
-    howTitle: "So lernst du hier", how: [
+    pathTitle: "Ihr Lernpfad", alphaTitle: "Das arabische Alphabet",
+    howTitle: "So lernen Sie hier", how: [
       ["Kurze Lektionen", "Jede Lektion dauert etwa fünf Minuten: erst Lernkarten, dann abwechslungsreiche Übungen."],
-      ["Fehler kommen zurück", "Was du falsch beantwortest, kommt am Ende der Lektion noch einmal – so lange, bis es sitzt."],
-      ["Laut mitsprechen", "Lesen lernt man mit dem Mund. Sprich jeden Laut mit – wo dein Gerät eine arabische Stimme hat, kannst du ihn anhören."],
-      ["Vom Buchstaben zum Koran", "In Einheit 6 liest du echte Koranwörter aus Al-Fatiha, Al-Ikhlas, Al-Falaq und An-Nas – mit Bedeutung. Danach hörst du sie Wort für Wort in echter Rezitation und liest ganze Verse. Wer schon etwas lesen kann, startet mit dem Einstufungstest."],
+      ["Fehler kommen zurück", "Was Sie falsch beantworten, kommt am Ende der Lektion noch einmal – so lange, bis es sitzt."],
+      ["Laut mitsprechen", "Lesen lernt man mit dem Mund. Sprechen Sie jeden Laut mit – wo Ihr Gerät eine arabische Stimme hat, können Sie ihn anhören."],
+      ["Vom Buchstaben zum Koran", "In Einheit 6 lesen Sie echte Koranwörter aus Al-Fatiha, Al-Ikhlas, Al-Falaq und An-Nas – mit Bedeutung. Danach hören Sie sie Wort für Wort in echter Rezitation und lesen ganze Verse. Wer schon etwas lesen kann, startet mit dem Einstufungstest."],
     ],
-    teacher: "Die Aussprache mancher Laute (ح ع ق ص ض ط ظ) lernt man am besten durch Zuhören und mit einem Lehrer. Hör im Player einem Rezitator zu und sprich nach – das ist der Weg, den auch Koranschulen gehen.",
-    after: "Nach dem Kurs", afterBody: "Wenn du lesen kannst, beginnt das eigentliche Abenteuer: Mit der Shams-Methode lernst du Vers für Vers auswendig, im Tajwid-Kurs lernst du die Regeln der schönen Rezitation.",
+    teacher: "Die Aussprache mancher Laute (ح ع ق ص ض ط ظ) lernt man am besten durch Zuhören und mit einem Lehrer. Hören Sie im Player einem Rezitator zu und sprechen Sie nach – das ist der Weg, den auch Koranschulen gehen.",
+    after: "Nach dem Kurs", afterBody: "Wenn Sie lesen können, beginnt das eigentliche Abenteuer: Mit der Shams-Methode lernen Sie Vers für Vers auswendig, im Tajwid-Kurs lernen Sie die Regeln der schönen Rezitation.",
     ctaPath: "Zum Lernpfad", ctaPlace: "Einstufungstest",
-    signsTitle: "Die Zeichen der Koranschrift", signsLead: "Vokale, Dehnung, Verdopplung und die Besonderheiten des Mushaf – jedes Zeichen mit einem Beispiel. In den Einheiten 3 bis 5 übst du sie alle.",
+    signsTitle: "Die Zeichen der Koranschrift", signsLead: "Vokale, Dehnung, Verdopplung und die Besonderheiten des Mushaf – jedes Zeichen mit einem Beispiel. In den Einheiten 3 bis 5 üben Sie sie alle.",
     sheetTitle: "Alle Buchstaben auf einen Blick", sheetLead: "Name, Laut und die drei verbundenen Formen. Arabisch liest man von rechts nach links – die Form am Wortanfang steht rechts.",
-    makhTitle: "Woher die Laute kommen", makhLead: "In der Tajwid-Lehre hat jeder Buchstabe seinen Austrittsort (Machradsch). Diese vier Gruppen helfen dir am Anfang besonders:",
+    makhTitle: "Woher die Laute kommen", makhLead: "In der Tajwid-Lehre hat jeder Buchstabe seinen Austrittsort (Machradsch). Diese vier Gruppen helfen Ihnen am Anfang besonders:",
     makh: [
       ["Aus der Kehle", "ء ه ع ح غ خ", "Sechs Buchstaben kommen aus der Kehle: ء und ه ganz aus der Tiefe, ع und ح aus der Mitte, غ und خ aus dem oberen Teil."],
       ["Mit den Lippen", "ف ب م و", "Vier Buchstaben bilden die Lippen: ف mit der Unterlippe und den oberen Schneidezähnen, ب und م mit geschlossenen Lippen, و mit gerundeten Lippen."],
@@ -56,10 +56,10 @@ export const PAGE_C = {
       ["Die Dehnungsbuchstaben", "ا و ي", "ا, و und ي verlängern den Vokal davor, wenn sie selbst keinen Vokal tragen: das lange ā, ū und ī. Ihr Austrittsort ist der Hohlraum von Mund und Kehle (al-Dschauf)."],
     ] as [string, string, string][],
     faqTitle: "Häufige Fragen", faq: [
-      ["Wie lange dauert der Kurs?", `${LESSONS.length} kurze Lektionen von etwa fünf Minuten in ${UNITS.length} Einheiten. Mit einer Lektion am Tag liest du nach wenigen Wochen ganze Verse – wer mehr Zeit hat, kommt schneller voran.`],
-      ["Muss ich Arabisch verstehen?", "Nein. Der Kurs bringt dir das Lesen der Schrift bei. Die Bedeutung vieler Koranwörter lernst du nebenbei – für mehr Wortschatz gibt es den Vokabeltrainer."],
-      ["Welche Schrift lerne ich?", "Die Schrift des Korans mit allen Vokal- und Lesezeichen, wie im Mushaf – mit ihren Besonderheiten wie dem kleinen Alif und dem Wasla-Zeichen. Ab Einheit 6 liest du echte Wörter und Verse aus dem Koran."],
-      ["Brauche ich ein Konto?", "Ja, ein kostenloses. Darin wird dein Fortschritt gespeichert – Lektionen, Sterne und die Wörter, die du wiederholen solltest – und auf allen deinen Geräten synchronisiert."],
+      ["Wie lange dauert der Kurs?", `${LESSONS.length} kurze Lektionen von etwa fünf Minuten in ${UNITS.length} Einheiten. Mit einer Lektion am Tag lesen Sie nach wenigen Wochen ganze Verse – wer mehr Zeit hat, kommt schneller voran.`],
+      ["Muss ich Arabisch verstehen?", "Nein. Der Kurs bringt Ihnen das Lesen der Schrift bei. Die Bedeutung vieler Koranwörter lernen Sie nebenbei – für mehr Wortschatz gibt es den Vokabeltrainer."],
+      ["Welche Schrift lerne ich?", "Die Schrift des Korans mit allen Vokal- und Lesezeichen, wie im Mushaf – mit ihren Besonderheiten wie dem kleinen Alif und dem Wasla-Zeichen. Ab Einheit 6 lesen Sie echte Wörter und Verse aus dem Koran."],
+      ["Brauche ich ein Konto?", "Ja, ein kostenloses. Darin wird Ihr Fortschritt gespeichert – Lektionen, Sterne und die Wörter, die Sie wiederholen sollten – und auf allen Ihren Geräten synchronisiert."],
       ["Ist der Kurs für Kinder geeignet?", "Ja. Die Lektionen sind kurz und spielerisch. Am schönsten ist es, wenn Eltern sie gemeinsam mit ihren Kindern machen und jeden Laut zusammen aussprechen."],
     ] as [string, string][],
     ctaShams: "Zur Shams-Methode", ctaTajweed: "Zum Tajwid-Kurs",

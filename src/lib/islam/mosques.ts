@@ -198,9 +198,9 @@ Ob Sie Muslim sind oder als Gast kommen: Mit ein paar einfachen Regeln fühlen S
 - **Kleidung:** Wählen Sie locker sitzende Kleidung, die Arme und Beine bedeckt. Frauen tragen ein Kopftuch; große Moscheen wie die Scheich-Zayid-Moschee stellen bei Bedarf passende Kleidung bereit. Allah sagt: „O Kinder Adams, legt euren Schmuck bei jeder Gebetsstätte an“ (7:31).
 - **Schuhe:** Vor dem Gebetsraum ziehen Sie die Schuhe aus. Es gibt Regale oder Beutel dafür.
 - **Wudu:** Wer beten möchte, kommt mit Gebetswaschung oder vollzieht sie im Waschbereich der Moschee ([Koran 5:6](/surah/5?v=6)). Gäste, die nur schauen möchten, brauchen keine Waschung.
-- **Gebetszeiten:** Plane Ihren Besuch außerhalb der Gebetszeiten, wenn Sie nur besichtigen möchten. Viele Moscheen schließen für Besucher kurz vor und während des Gebets.
+- **Gebetszeiten:** Planen Sie Ihren Besuch außerhalb der Gebetszeiten, wenn Sie nur besichtigen möchten. Viele Moscheen schließen für Besucher kurz vor und während des Gebets.
 - **Frauenbereiche:** Viele Moscheen haben eigene Bereiche oder Eingänge für Frauen. Der Prophet ﷺ sagte: „Hindert die Dienerinnen Allahs nicht an den Moscheen Allahs“ (al-Bukhari, Muslim).
-- **Fotografieren:** Frage vorher, fotografiere niemals Betende aus der Nähe und gehen Sie nicht direkt vor jemandem vorbei, der gerade betet.
+- **Fotografieren:** Fragen Sie vorher, fotografieren Sie niemals Betende aus der Nähe und gehen Sie nicht direkt vor jemandem vorbei, der gerade betet.
 - **Ruhe und Duft:** Sprechen Sie leise, schalten Sie Ihr Telefon stumm. Der Prophet ﷺ bat darum, nicht nach dem Verzehr von rohem Knoblauch oder Zwiebeln in die Moschee zu kommen (al-Bukhari, Muslim) – ein Zeichen der Rücksicht auf die anderen.
 - **Freitag:** Am Freitag ist zur Mittagszeit das Freitagsgebet mit Predigt. „Wenn zum Gebet am Freitag gerufen wird, dann eilt zum Gedenken Allahs“ (62:9). Für Besichtigungen ist dieser Tag oft eingeschränkt.
 
@@ -223,7 +223,7 @@ Wenn Sie das nächste Mal an einer Moschee vorbeigehen, treten Sie ruhig ein. Si
       { q: "Was ziehe ich beim Moscheebesuch an?", a: "Locker sitzende Kleidung, die Arme und Beine bedeckt; Frauen tragen ein Kopftuch. Vor dem Gebetsraum ziehen Sie die Schuhe aus. Große Moscheen stellen oft passende Kleidung bereit." },
       { q: "Was ist Tahiyyat al-Masdschid?", a: "Zwei Rak'at, die man beim Betreten einer Moschee betet, bevor man sich setzt. Der Prophet ﷺ hat dazu angeleitet (al-Bukhari 444, Muslim)." },
       { q: "Was ist der Unterschied zwischen Mihrab und Minbar?", a: "Der Mihrab ist die Nische in der Qibla-Wand, die die Gebetsrichtung nach Mekka anzeigt; davor steht der Imam beim Gebet. Der Minbar ist die Kanzel mit Stufen daneben, von der die Freitagspredigt gehalten wird." },
-      { q: "Welches Bittgebet spricht man beim Betreten und Verlassen der Moschee?", a: "Beim Betreten: „Allahumma iftah li abwaba rahmatik“ (O Allah, öffnen Sie mir die Tore Deiner Barmherzigkeit). Beim Verlassen: „Allahumma inni as'aluka min fadlik“ (O Allah, ich bitte Dich um Deine Huld) (Muslim)." },
+      { q: "Welches Bittgebet spricht man beim Betreten und Verlassen der Moschee?", a: "Beim Betreten: „Allahumma iftah li abwaba rahmatik“ (O Allah, öffne mir die Tore Deiner Barmherzigkeit). Beim Verlassen: „Allahumma inni as'aluka min fadlik“ (O Allah, ich bitte Dich um Deine Huld) (Muslim)." },
     ],
     sources: [
       "Koran 2:144, 3:39, 3:96, 5:6, 7:31, 9:108, 17:1, 24:36, 62:9, 72:18",

@@ -167,9 +167,9 @@ Sie müssen nicht alles auf einmal können. Fangen Sie mit dem an, was heute pas
 
 1. Öffnen Sie den [Koran](/quran) und hören Sie Vers für Vers zu, mit Übersetzung und Tafsir. Das Wort, das gerade rezitiert wird, wird hervorgehoben.
 2. Lernen Sie kurze Suren auswendig mit der [Shams-Methode](/shams).
-3. Verbesseren Sie Ihre Aussprache im [Tadschwid-Kurs](/tajweed) und lernen Sie die Sprache im [Arabischkurs](/arabic).
+3. Verbessern Sie Ihre Aussprache im [Tadschwid-Kurs](/tajweed) und lernen Sie die Sprache im [Arabischkurs](/arabic).
 4. Gehen Sie in der [Academy](/academy) Schritt für Schritt durch alle 114 Suren.
-5. Folgen Sie dem [365-Tage-Plan](/plan), um jeden Tag ein kleines Stück zu lesen, oder verteile mit dem [Khatm-Planer](/khatm) eine ganze Lesung des Korans auf feste Tagesportionen.
+5. Folgen Sie dem [365-Tage-Plan](/plan), um jeden Tag ein kleines Stück zu lesen, oder verteilen Sie mit dem [Khatm-Planer](/khatm) eine ganze Lesung des Korans auf feste Tagesportionen.
 
 Ein Vers am Tag, mit Herz gelesen, ist mehr wert als ein großer Vorsatz, der nie beginnt.`,
     faq: [
@@ -241,7 +241,7 @@ Knowing whether a passage is Makki or Madani helps you understand it: the Makki 
 
 The Quran consists of **114 surahs** (chapters) of very different lengths. The longest is al-Baqarah with 286 verses; the shortest have only three. According to the Kufan count, which most printed copies today follow, it contains **6,236 verses** (ayat). Other classical counting traditions arrive at slightly different totals because they place verse breaks differently – the text itself is the same.
 
-Every surah except one, Surah at-Tawbah (9), opens with the *basmala*, "In the name of Allah, the Most Gracious, the Most Merciful"; it also appears within Surah an-Naml (Quran 27:30), so that it occurs 114 times in all. The first surah, al-Fatiha, is called "the Mother of the Book" and "the seven oft-repeated verses" (Quran 15:87); every Muslim recites it in each of the daily prayers. After it, the surahs are arranged roughly from long to short. Twenty-nine surahs open with single letters, suchen Sie as *Alif Lam Mim*; many scholars say that their full meaning is known to Allah alone.
+Every surah except one, Surah at-Tawbah (9), opens with the *basmala*, "In the name of Allah, the Most Gracious, the Most Merciful"; it also appears within Surah an-Naml (Quran 27:30), so that it occurs 114 times in all. The first surah, al-Fatiha, is called "the Mother of the Book" and "the seven oft-repeated verses" (Quran 15:87); every Muslim recites it in each of the daily prayers. After it, the surahs are arranged roughly from long to short. Twenty-nine surahs open with single letters, such as *Alif Lam Mim*; many scholars say that their full meaning is known to Allah alone.
 
 For regular reading, the Quran is divided into:
 
@@ -261,7 +261,7 @@ After his passing, many Companions who knew the Quran by heart fell at the Battl
 
 As Islam spread, **Hudhayfah ibn al-Yaman** noticed during a campaign in Armenia and Azerbaijan that Muslims from different regions were arguing about how to recite. He urged the third caliph, **Uthman**, to act. Uthman had copies made by a committee led by Zayd, with Abdullah ibn az-Zubayr, Sa'id ibn al-As and Abd ar-Rahman ibn al-Harith; where they differed in spelling, they wrote according to the dialect of Quraysh, in which the Quran had been revealed (al-Bukhari). The copies were sent to the major cities – reports differ on how many – and other personal copies were set aside, so that the community would gather around one text. This **Uthmanic mushaf** is the basis of every copy of the Quran you hold in your hands today.
 
-Some of the oldest surviving Quran manuscripts, suchen Sie as leaves held in Birmingham, Tübingen and Sana'a, have been radiocarbon-dated to the seventh century, the first decades of Islam. Sunni and Shia Muslims recite from the same mushaf. The great majority of Shia scholars – in earlier centuries, for example, ash-Sharif al-Murtada and Shaykh at-Tusi, and in modern times Abu al-Qasim al-Khoei – affirm, like Sunni scholars, that the Quran we hold is complete and unaltered.
+Some of the oldest surviving Quran manuscripts, such as leaves held in Birmingham, Tübingen and Sana'a, have been radiocarbon-dated to the seventh century, the first decades of Islam. Sunni and Shia Muslims recite from the same mushaf. The great majority of Shia scholars – in earlier centuries, for example, ash-Sharif al-Murtada and Shaykh at-Tusi, and in modern times Abu al-Qasim al-Khoei – affirm, like Sunni scholars, that the Quran we hold is complete and unaltered.
 
 ## Preservation, memorisation and the huffaz
 

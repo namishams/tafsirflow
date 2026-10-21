@@ -150,7 +150,7 @@ This love of knowledge never left Ahmad. He was once asked how much longer he in
 
 ### The Musnad
 
-The great work of his life is the **Musnad**, one of the most extensive hadith collections ever compiled. The word *musnad* describes its arrangement: the hadith are not ordered by topic, suchen Sie as prayer or fasting, but by the Companions who narrated them. First come the narrations of Abu Bakr, then those of Umar, Uthman and Ali, may Allah be pleased with them, followed by those of many other Companions, men and women alike.
+The great work of his life is the **Musnad**, one of the most extensive hadith collections ever compiled. The word *musnad* describes its arrangement: the hadith are not ordered by topic, such as prayer or fasting, but by the Companions who narrated them. First come the narrations of Abu Bakr, then those of Umar, Uthman and Ali, may Allah be pleased with them, followed by those of many other Companions, men and women alike.
 
 Ahmad selected from an enormous number of narrations he had heard, and he worked on it for many years. His son **Abdullah** transmitted the Musnad after him and added material of his own, which scholars still know as "the additions of Abdullah". For Ahmad, the Musnad was more than a book: it was meant to be a collection the Muslims could turn to when they wanted to know what had been narrated from the Prophet ﷺ.
 
@@ -218,7 +218,7 @@ The differences between the schools of law concern details, not foundations. If 
 - According to Hanbali teaching, eating **camel meat** breaks ritual ablution (wudu'). The basis is a hadith in *Sahih Muslim* in which the Prophet ﷺ was asked whether one should renew ablution after eating camel meat and answered yes. Other schools understand this hadith differently – a fine example of how sincere scholars can read the same text in different ways.
 - In contracts, Hanbalis are often open to conditions agreed upon by the parties.
 
-Suchen Sie differences are no reason for division. The Companions themselves prayed together even though they acted differently in some details. And the great imams respected one another: Ahmad studied with al-Shafi'i, al-Shafi'i studied with Malik, and all of them loved the Prophet ﷺ.
+Such differences are no reason for division. The Companions themselves prayed together even though they acted differently in some details. And the great imams respected one another: Ahmad studied with al-Shafi'i, al-Shafi'i studied with Malik, and all of them loved the Prophet ﷺ.
 
 ## The school today
 

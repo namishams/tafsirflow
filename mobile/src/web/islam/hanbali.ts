@@ -105,7 +105,7 @@ Die **Amman-Botschaft** von 2004, die 2005 von Gelehrten aus vielen Ländern bes
 
 Vielleicht ist das größte Erbe von Imam Ahmad nicht ein einzelnes Rechtsurteil, sondern eine Haltung. Er liebte die Worte des Propheten ﷺ so sehr, dass er sein Leben lang reiste, um sie zu hören. Er blieb bescheiden, obwohl die Menschen ihn verehrten. Er blieb standhaft, ohne zu hassen. Und er verzieh.
 
-Der Prophet ﷺ sagte: *„Wem Allah Gutes will, dem gibt Er Verständnis in der Religion“* (al-Buchari, Muslim). Wenn du die hanbalitische Schule studierst – oder einfach mit Hanbaliten zusammen betest –, dann begegnest du diesem Verständnis in einer seiner schönsten Formen. Und du erkennst, dass die verschiedenen Schulen keine Mauern sind, sondern Wege, die alle zum selben Ziel führen: Allah aufrichtig zu dienen und dem Vorbild Seines Gesandten ﷺ zu folgen.
+Der Prophet ﷺ sagte: *„Wem Allah Gutes will, dem gibt Er Verständnis in der Religion“* (al-Buchari, Muslim). Wenn Sie die hanbalitische Schule studieren – oder einfach mit Hanbaliten zusammen beten –, dann begegnen Sie diesem Verständnis in einer seiner schönsten Formen. Und Sie erkennen, dass die verschiedenen Schulen keine Mauern sind, sondern Wege, die alle zum selben Ziel führen: Allah aufrichtig zu dienen und dem Vorbild Seines Gesandten ﷺ zu folgen.
 
 Möge Allah Imam Ahmad und alle Imame der Umma mit Seiner Barmherzigkeit umfangen, und möge Er unsere Herzen in Liebe zueinander vereinen.`,
     faq: [

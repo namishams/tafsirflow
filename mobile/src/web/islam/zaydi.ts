@@ -108,7 +108,7 @@ Die **Amman-Botschaft** (2004, bestätigt 2005) nennt die zaiditische Schule aus
 
 ## Zum Abschluss
 
-Die zaiditische Schule erzählt eine Geschichte, die viele nicht kennen: eine Tradition aus dem Haus des Propheten ﷺ, die das Wissen über alles stellt, das Nachdenken nie für beendet erklärt hat und im Recht so nah bei ihren sunnitischen Geschwistern steht, dass man oft kaum einen Unterschied bemerkt. Wenn du das nächste Mal *Subul as-Salam* oder *Nail al-Autar* aufschlägst, denk daran, aus welcher Gelehrtenwelt diese Bücher kommen.
+Die zaiditische Schule erzählt eine Geschichte, die viele nicht kennen: eine Tradition aus dem Haus des Propheten ﷺ, die das Wissen über alles stellt, das Nachdenken nie für beendet erklärt hat und im Recht so nah bei ihren sunnitischen Geschwistern steht, dass man oft kaum einen Unterschied bemerkt. Wenn Sie das nächste Mal *Subul as-Salam* oder *Nail al-Autar* aufschlagen, denken Sie daran, aus welcher Gelehrtenwelt diese Bücher kommen.
 
 Allah sagt: „Und haltet alle fest am Seil Allahs und spaltet euch nicht“ (Sure 3:103). Dieses Seil ist der Quran, den Zaid ibn Ali so sehr liebte. Es ist dasselbe Seil, an dem wir alle festhalten.`,
     faq: [

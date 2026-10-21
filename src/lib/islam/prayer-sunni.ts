@@ -49,12 +49,12 @@ Grundlage ist [5:6](/surah/5): Gesicht waschen, die Arme bis einschließlich der
 1. Fassen Sie die Absicht im Herzen und sprechen Sie „Bismillah“.
 2. Waschen Sie beide Hände dreimal bis zu den Handgelenken.
 3. Spülen Sie den Mund dreimal aus.
-4. Ziehe dreimal Wasser in die Nase und schnäuze es wieder aus.
+4. Ziehen Sie dreimal Wasser in die Nase und schnäuzen Sie es wieder aus.
 5. Waschen Sie das Gesicht dreimal – vom Haaransatz bis unter das Kinn, von Ohr zu Ohr.
 6. Waschen Sie den rechten Arm dreimal bis einschließlich des Ellenbogens, dann den linken.
 7. Streichen Sie mit nassen Händen einmal über den Kopf (von der Stirn nach hinten und zurück).
 8. Wischen Sie die Ohren innen mit den Zeigefingern und außen mit den Daumen.
-9. Waschen Sie den rechten Fuß dreimal bis einschließlich des Knöchels, dann den linken; achte auf die Zwischenräume der Zehen.
+9. Waschen Sie den rechten Fuß dreimal bis einschließlich des Knöchels, dann den linken; achten Sie auf die Zwischenräume der Zehen.
 
 Danach sagt man: *Aschhadu an la ilaha illallahu wahdahu la scharika lah, wa aschhadu anna Muhammadan 'abduhu wa rasuluh* – „Ich bezeuge, dass es keinen Gott gibt außer Allah, dem Einen ohne Partner, und dass Muhammad Sein Diener und Gesandter ist“ (Sahih Muslim).
 
@@ -95,11 +95,11 @@ Hier am Beispiel eines Gebets mit zwei Rakat (wie Fajr). Eine Raka ist eine Einh
 10. **Niederwerfung (Sudschud):** *Allahu akbar* und werfen Sie sich nieder: Stirn und Nase, beide Handflächen, beide Knie und die Zehen beider Füße berühren den Boden (Sahih al-Bukhari, Sahih Muslim). Sprechen Sie dreimal *Subhana Rabbiyal-A'la* (سبحان ربي الأعلى) – „Gepriesen sei mein Herr, der Höchste“.
 11. **Sitzen zwischen den Niederwerfungen:** *Allahu akbar*, setzen Sie sich kurz auf und sprechen Sie z. B. *Rabbi ghfir li* – „Mein Herr, vergib mir“.
 12. **Zweite Niederwerfung:** *Allahu akbar*, wie zuvor. Damit ist die erste Raka beendet.
-13. **Zweite Raka:** Stehe mit *Allahu akbar* auf und wiederholen Sie Schritte 5 bis 12 (ohne Eröffnungs-Bittgebet).
+13. **Zweite Raka:** Stehen Sie mit *Allahu akbar* auf und wiederholen Sie Schritte 5 bis 12 (ohne Eröffnungs-Bittgebet).
 14. **Sitzen und Taschahhud:** Nach der zweiten Niederwerfung bleiben Sie sitzen und sprechen: *At-tahiyyatu lillahi wa s-salawatu wa t-tayyibat. As-salamu 'alaika ayyuha n-nabiyyu wa rahmatullahi wa barakatuh. As-salamu 'alaina wa 'ala 'ibadillahi s-salihin. Aschhadu an la ilaha illallah, wa aschhadu anna Muhammadan 'abduhu wa rasuluh* – „Alle Grüße, Gebete und guten Worte gebühren Allah. Friede sei mit dir, o Prophet, und die Barmherzigkeit Allahs und Sein Segen. Friede sei mit uns und mit den rechtschaffenen Dienern Allahs. Ich bezeuge, dass es keinen Gott gibt außer Allah, und ich bezeuge, dass Muhammad Sein Diener und Gesandter ist“ (Sahih al-Bukhari, Sahih Muslim). Beim Glaubenszeugnis hebt man den rechten Zeigefinger.
 15. **Segensgebet (as-Salat al-Ibrahimiyya):** *Allahumma salli 'ala Muhammadin wa 'ala ali Muhammad, kama sallaita 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Madschid. Allahumma barik 'ala Muhammadin wa 'ala ali Muhammad, kama barakta 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Madschid* – „O Allah, segne Muhammad und die Familie Muhammads, wie Du Ibrahim und die Familie Ibrahims gesegnet hast; Du bist der Lobenswerte, der Ruhmreiche …“ (Sahih al-Bukhari).
 16. **Abschließendes Bittgebet:** z. B. *Rabbana atina fi d-dunya hasanah, wa fi l-achirati hasanah, wa qina 'adhaba n-nar* – „Unser Herr, gib uns im Diesseits Gutes und im Jenseits Gutes und bewahre uns vor der Strafe des Feuers“ ([2:201](/surah/2)).
-17. **Friedensgruß (Taslim):** Wende den Kopf nach rechts: *As-salamu 'alaikum wa rahmatullah* – „Friede sei mit euch und die Barmherzigkeit Allahs“, dann nach links. Viele Malikiten sprechen nur einen Gruß. Das Gebet ist beendet.
+17. **Friedensgruß (Taslim):** Wenden Sie den Kopf nach rechts: *As-salamu 'alaikum wa rahmatullah* – „Friede sei mit euch und die Barmherzigkeit Allahs“, dann nach links. Viele Malikiten sprechen nur einen Gruß. Das Gebet ist beendet.
 
 **Bei drei oder vier Rakat:** Nach der zweiten Raka sprechen Sie nur den Taschahhud (Schritt 14) und stehen dann mit *Allahu akbar* auf. In der dritten und vierten Raka rezitieren Sie nur die Fatiha, leise. Im letzten Sitzen folgen Taschahhud, Segensgebet, Bittgebet und Taslim.
 

@@ -4,6 +4,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import SiteMenu from "./SiteMenu";
 import Wordmark from "./Wordmark";
 import { TrustLine } from "./TrustStrip";
+import { BUNDLED_UI_VERSES } from "@/lib/uiVerses";
 
 // Two-panel sign-in layout: brand panel (hidden on phones) + form
 export default async function AuthShell({ children }: { children: React.ReactNode }) {
@@ -13,7 +14,7 @@ export default async function AuthShell({ children }: { children: React.ReactNod
       <aside className="stage pattern relative hidden flex-col justify-between p-12 text-white lg:flex">
         <Link href="/" className="flex items-center" aria-label="Quran Masterclass"><Wordmark height={34} tone="gold" /></Link>
         <div>
-          <p className="font-arabic text-6xl leading-[1.5] text-[#e9cf99]" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+          <p className="font-arabic text-6xl leading-[1.5] text-[#e9cf99]" dir="rtl">{BUNDLED_UI_VERSES["1:1"]}</p>
           <h1 className="mt-8 max-w-md font-display text-4xl font-semibold leading-[1.15]">{t("panelTitle")}</h1>
           <ul className="mt-8 grid gap-3 text-[15px] text-white/80">
             {["b1", "b2", "b3"].map((k) => (

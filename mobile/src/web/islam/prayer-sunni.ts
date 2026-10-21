@@ -7,7 +7,7 @@ export const prayerSunni: IslamDoc = {
   de: {
     title: "Wie man betet – im sunnitischen Islam",
     kicker: "Gebet · Salah",
-    lead: "Das Gebet ist das tägliche Gespräch des Menschen mit seinem Schöpfer: fünfmal am Tag, zu festen Zeiten, mit Körper, Zunge und Herz. Dieses Kapitel erklärt dir Schritt für Schritt, wie Sunnitinnen und Sunniten beten – von der Gebetswaschung über den Gebetsruf bis zum Friedensgruß am Ende. Wo die vier Rechtsschulen voneinander abweichen, sagen wir es offen; alle vier sind anerkannt und gültig.",
+    lead: "Das Gebet ist das tägliche Gespräch des Menschen mit seinem Schöpfer: fünfmal am Tag, zu festen Zeiten, mit Körper, Zunge und Herz. Dieses Kapitel erklärt Ihnen Schritt für Schritt, wie Sunnitinnen und Sunniten beten – von der Gebetswaschung über den Gebetsruf bis zum Friedensgruß am Ende. Wo die vier Rechtsschulen voneinander abweichen, sagen wir es offen; alle vier sind anerkannt und gültig.",
     facts: [
       { n: "5", l: "Pflichtgebete am Tag" },
       { n: "17", l: "Pflicht-Rakat täglich (2 + 4 + 4 + 3 + 4)" },
@@ -25,7 +25,7 @@ Der Prophet Muhammad ﷺ sagte, dass das Erste, worüber der Mensch am Tag der A
 Damit ein Gebet gültig ist, müssen einige Bedingungen erfüllt sein:
 
 - **Muslim, bei Verstand und mündig:** Verpflichtet ist jeder geistig gesunde Muslim ab der Pubertät. Kinder werden liebevoll ab etwa sieben Jahren daran gewöhnt.
-- **Rituelle Reinheit:** Du brauchst die Gebetswaschung (Wudu); nach großer Unreinheit (z. B. ehelichem Verkehr) die Ganzkörperwaschung (Ghusl).
+- **Rituelle Reinheit:** Sie brauchen die Gebetswaschung (Wudu); nach großer Unreinheit (z. B. ehelichem Verkehr) die Ganzkörperwaschung (Ghusl).
 - **Saubere Kleidung, sauberer Körper, sauberer Ort:** frei von Unreinheiten wie Urin oder Blut. Ein Gebetsteppich ist schön, aber nicht nötig.
 - **Bedeckung der Aura:** Bei Männern mindestens vom Nabel bis zu den Knien; bei Frauen der ganze Körper außer Gesicht und Händen (bei den Hanafiten auch die Füße).
 - **Ausrichtung zur Qibla:** zur Kaaba in Mekka.
@@ -40,21 +40,21 @@ Damit ein Gebet gültig ist, müssen einige Bedingungen erfüllt sein:
 4. **Maghrib** (Abendgebet): 3 Rakat – direkt nach Sonnenuntergang.
 5. **Isha** (Nachtgebet): 4 Rakat – wenn die Abenddämmerung verschwunden ist.
 
-Die genauen Zeiten für deinen Ort findest du unter [Gebetszeiten](/prayer). Bei Fajr, Maghrib und Isha werden die ersten beiden Rakat laut rezitiert (vom Vorbeter bzw. von Männern, die allein beten), Dhuhr und Asr leise.
+Die genauen Zeiten für Ihren Ort finden Sie unter [Gebetszeiten](/prayer). Bei Fajr, Maghrib und Isha werden die ersten beiden Rakat laut rezitiert (vom Vorbeter bzw. von Männern, die allein beten), Dhuhr und Asr leise.
 
 ## Die Gebetswaschung (Wudu)
 
 Grundlage ist [5:6](/surah/5): Gesicht waschen, die Arme bis einschließlich der Ellenbogen, über den Kopf streichen und die Füße bis einschließlich der Knöchel waschen. So wird Wudu in den sunnitischen Schulen nach der Sunna verrichtet:
 
-1. Fasse die Absicht im Herzen und sprich „Bismillah“.
-2. Wasche beide Hände dreimal bis zu den Handgelenken.
-3. Spüle den Mund dreimal aus.
-4. Ziehe dreimal Wasser in die Nase und schnäuze es wieder aus.
-5. Wasche das Gesicht dreimal – vom Haaransatz bis unter das Kinn, von Ohr zu Ohr.
-6. Wasche den rechten Arm dreimal bis einschließlich des Ellenbogens, dann den linken.
-7. Streiche mit nassen Händen einmal über den Kopf (von der Stirn nach hinten und zurück).
-8. Wische die Ohren innen mit den Zeigefingern und außen mit den Daumen.
-9. Wasche den rechten Fuß dreimal bis einschließlich des Knöchels, dann den linken; achte auf die Zwischenräume der Zehen.
+1. Fassen Sie die Absicht im Herzen und sprechen Sie „Bismillah“.
+2. Waschen Sie beide Hände dreimal bis zu den Handgelenken.
+3. Spülen Sie den Mund dreimal aus.
+4. Ziehen Sie dreimal Wasser in die Nase und schnäuzen Sie es wieder aus.
+5. Waschen Sie das Gesicht dreimal – vom Haaransatz bis unter das Kinn, von Ohr zu Ohr.
+6. Waschen Sie den rechten Arm dreimal bis einschließlich des Ellenbogens, dann den linken.
+7. Streichen Sie mit nassen Händen einmal über den Kopf (von der Stirn nach hinten und zurück).
+8. Wischen Sie die Ohren innen mit den Zeigefingern und außen mit den Daumen.
+9. Waschen Sie den rechten Fuß dreimal bis einschließlich des Knöchels, dann den linken; achten Sie auf die Zwischenräume der Zehen.
 
 Danach sagt man: *Aschhadu an la ilaha illallahu wahdahu la scharika lah, wa aschhadu anna Muhammadan 'abduhu wa rasuluh* – „Ich bezeuge, dass es keinen Gott gibt außer Allah, dem Einen ohne Partner, und dass Muhammad Sein Diener und Gesandter ist“ (Sahih Muslim).
 
@@ -83,25 +83,25 @@ Die **Iqama** kündigt den unmittelbaren Beginn an. Sie ähnelt dem Adhan, wird 
 
 Hier am Beispiel eines Gebets mit zwei Rakat (wie Fajr). Eine Raka ist eine Einheit aus Stehen, Verbeugen und zwei Niederwerfungen.
 
-1. **Absicht (Niyya):** Stelle dich zur Qibla und fasse im Herzen die Absicht, z. B. „Ich bete die zwei Pflicht-Rakat des Fajr für Allah.“
-2. **Eröffnungs-Takbir (Takbirat al-Ihram):** Hebe die Hände bis zu den Schultern oder Ohren und sprich *Allahu akbar* (الله أكبر) – „Allah ist größer“. Ab jetzt bist du im Gebet.
-3. **Stehen (Qiyam):** Lege die rechte Hand auf die linke – bei den Schafiiten und vielen Hanbaliten auf die Brust bzw. über den Nabel, bei den Hanafiten unter den Nabel. Viele Malikiten lassen die Hände seitlich hängen. Alle diese Formen sind überliefert. Blicke auf den Platz der Niederwerfung.
+1. **Absicht (Niyya):** Stellen Sie sich zur Qibla und fassen Sie im Herzen die Absicht, z. B. „Ich bete die zwei Pflicht-Rakat des Fajr für Allah.“
+2. **Eröffnungs-Takbir (Takbirat al-Ihram):** Heben Sie die Hände bis zu den Schultern oder Ohren und sprechen Sie *Allahu akbar* (الله أكبر) – „Allah ist größer“. Ab jetzt sind Sie im Gebet.
+3. **Stehen (Qiyam):** Legen Sie die rechte Hand auf die linke – bei den Schafiiten und vielen Hanbaliten auf die Brust bzw. über den Nabel, bei den Hanafiten unter den Nabel. Viele Malikiten lassen die Hände seitlich hängen. Alle diese Formen sind überliefert. Blicken Sie auf den Platz der Niederwerfung.
 4. **Eröffnungs-Bittgebet (Thana'):** leise *Subhanaka Allahumma wa bihamdika, wa tabaraka smuka, wa ta'ala jadduka, wa la ilaha ghairuk* – „Gepriesen bist Du, o Allah, und Dir gebührt das Lob; gesegnet ist Dein Name, erhaben Deine Majestät, und es gibt keinen Gott außer Dir“ (Abu Dawud, at-Tirmidhi). Die Schafiiten sprechen oft ein anderes überliefertes Bittgebet; die Malikiten lassen es im Pflichtgebet meist weg.
 5. **Zuflucht und Basmala:** leise *A'udhu billahi mina sch-schaitani r-radschim* – „Ich suche Zuflucht bei Allah vor dem verfluchten Satan“, dann *Bismillahi r-Rahmani r-Rahim* – „Im Namen Allahs, des Allerbarmers, des Barmherzigen“.
-6. **Al-Fatiha:** Rezitiere die [Eröffnungssure](/surah/1). Danach sagt man *Amin* – „Erhöre uns“.
+6. **Al-Fatiha:** Rezitieren Sie die [Eröffnungssure](/surah/1). Danach sagt man *Amin* – „Erhöre uns“.
 7. **Eine weitere Sure:** In den ersten beiden Rakat folgt eine Sure oder einige Verse, z. B. [Al-Ikhlas](/surah/112).
-8. **Verbeugung (Ruku'):** *Allahu akbar*, beuge dich, Hände auf die Knie, Rücken gerade. Sprich dreimal *Subhana Rabbiyal-'Azim* (سبحان ربي العظيم) – „Gepriesen sei mein Herr, der Gewaltige“.
+8. **Verbeugung (Ruku'):** *Allahu akbar*, beugen Sie sich, Hände auf die Knie, Rücken gerade. Sprechen Sie dreimal *Subhana Rabbiyal-'Azim* (سبحان ربي العظيم) – „Gepriesen sei mein Herr, der Gewaltige“.
 9. **Aufrichten:** Beim Aufrichten *Sami'a llahu liman hamidah* – „Allah hört den, der Ihn lobt“, im Stehen *Rabbana wa laka l-hamd* – „Unser Herr, Dir gebührt das Lob“.
-10. **Niederwerfung (Sudschud):** *Allahu akbar* und wirf dich nieder: Stirn und Nase, beide Handflächen, beide Knie und die Zehen beider Füße berühren den Boden (Sahih al-Bukhari, Sahih Muslim). Sprich dreimal *Subhana Rabbiyal-A'la* (سبحان ربي الأعلى) – „Gepriesen sei mein Herr, der Höchste“.
-11. **Sitzen zwischen den Niederwerfungen:** *Allahu akbar*, setze dich kurz auf und sprich z. B. *Rabbi ghfir li* – „Mein Herr, vergib mir“.
+10. **Niederwerfung (Sudschud):** *Allahu akbar* und werfen Sie sich nieder: Stirn und Nase, beide Handflächen, beide Knie und die Zehen beider Füße berühren den Boden (Sahih al-Bukhari, Sahih Muslim). Sprechen Sie dreimal *Subhana Rabbiyal-A'la* (سبحان ربي الأعلى) – „Gepriesen sei mein Herr, der Höchste“.
+11. **Sitzen zwischen den Niederwerfungen:** *Allahu akbar*, setzen Sie sich kurz auf und sprechen Sie z. B. *Rabbi ghfir li* – „Mein Herr, vergib mir“.
 12. **Zweite Niederwerfung:** *Allahu akbar*, wie zuvor. Damit ist die erste Raka beendet.
-13. **Zweite Raka:** Stehe mit *Allahu akbar* auf und wiederhole Schritte 5 bis 12 (ohne Eröffnungs-Bittgebet).
-14. **Sitzen und Taschahhud:** Nach der zweiten Niederwerfung bleibst du sitzen und sprichst: *At-tahiyyatu lillahi wa s-salawatu wa t-tayyibat. As-salamu 'alaika ayyuha n-nabiyyu wa rahmatullahi wa barakatuh. As-salamu 'alaina wa 'ala 'ibadillahi s-salihin. Aschhadu an la ilaha illallah, wa aschhadu anna Muhammadan 'abduhu wa rasuluh* – „Alle Grüße, Gebete und guten Worte gebühren Allah. Friede sei mit dir, o Prophet, und die Barmherzigkeit Allahs und Sein Segen. Friede sei mit uns und mit den rechtschaffenen Dienern Allahs. Ich bezeuge, dass es keinen Gott gibt außer Allah, und ich bezeuge, dass Muhammad Sein Diener und Gesandter ist“ (Sahih al-Bukhari, Sahih Muslim). Beim Glaubenszeugnis hebt man den rechten Zeigefinger.
+13. **Zweite Raka:** Stehen Sie mit *Allahu akbar* auf und wiederholen Sie Schritte 5 bis 12 (ohne Eröffnungs-Bittgebet).
+14. **Sitzen und Taschahhud:** Nach der zweiten Niederwerfung bleiben Sie sitzen und sprechen: *At-tahiyyatu lillahi wa s-salawatu wa t-tayyibat. As-salamu 'alaika ayyuha n-nabiyyu wa rahmatullahi wa barakatuh. As-salamu 'alaina wa 'ala 'ibadillahi s-salihin. Aschhadu an la ilaha illallah, wa aschhadu anna Muhammadan 'abduhu wa rasuluh* – „Alle Grüße, Gebete und guten Worte gebühren Allah. Friede sei mit dir, o Prophet, und die Barmherzigkeit Allahs und Sein Segen. Friede sei mit uns und mit den rechtschaffenen Dienern Allahs. Ich bezeuge, dass es keinen Gott gibt außer Allah, und ich bezeuge, dass Muhammad Sein Diener und Gesandter ist“ (Sahih al-Bukhari, Sahih Muslim). Beim Glaubenszeugnis hebt man den rechten Zeigefinger.
 15. **Segensgebet (as-Salat al-Ibrahimiyya):** *Allahumma salli 'ala Muhammadin wa 'ala ali Muhammad, kama sallaita 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Madschid. Allahumma barik 'ala Muhammadin wa 'ala ali Muhammad, kama barakta 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Madschid* – „O Allah, segne Muhammad und die Familie Muhammads, wie Du Ibrahim und die Familie Ibrahims gesegnet hast; Du bist der Lobenswerte, der Ruhmreiche …“ (Sahih al-Bukhari).
 16. **Abschließendes Bittgebet:** z. B. *Rabbana atina fi d-dunya hasanah, wa fi l-achirati hasanah, wa qina 'adhaba n-nar* – „Unser Herr, gib uns im Diesseits Gutes und im Jenseits Gutes und bewahre uns vor der Strafe des Feuers“ ([2:201](/surah/2)).
-17. **Friedensgruß (Taslim):** Wende den Kopf nach rechts: *As-salamu 'alaikum wa rahmatullah* – „Friede sei mit euch und die Barmherzigkeit Allahs“, dann nach links. Viele Malikiten sprechen nur einen Gruß. Das Gebet ist beendet.
+17. **Friedensgruß (Taslim):** Wenden Sie den Kopf nach rechts: *As-salamu 'alaikum wa rahmatullah* – „Friede sei mit euch und die Barmherzigkeit Allahs“, dann nach links. Viele Malikiten sprechen nur einen Gruß. Das Gebet ist beendet.
 
-**Bei drei oder vier Rakat:** Nach der zweiten Raka sprichst du nur den Taschahhud (Schritt 14) und stehst dann mit *Allahu akbar* auf. In der dritten und vierten Raka rezitierst du nur die Fatiha, leise. Im letzten Sitzen folgen Taschahhud, Segensgebet, Bittgebet und Taslim.
+**Bei drei oder vier Rakat:** Nach der zweiten Raka sprechen Sie nur den Taschahhud (Schritt 14) und stehen dann mit *Allahu akbar* auf. In der dritten und vierten Raka rezitieren Sie nur die Fatiha, leise. Im letzten Sitzen folgen Taschahhud, Segensgebet, Bittgebet und Taslim.
 
 ## Freitagsgebet und Gemeinschaftsgebet
 
@@ -115,7 +115,7 @@ Neben den Pflichtgebeten betete der Prophet ﷺ regelmäßig freiwillige Gebete 
 
 ## Gedenken nach dem Gebet
 
-Nach dem Pflichtgebet ist es Sunna, 33× *Subhanallah* („Gepriesen sei Allah“), 33× *Alhamdulillah* („Alles Lob gebührt Allah“) und 33× *Allahu akbar* zu sagen und mit *La ilaha illallahu wahdahu la scharika lah, lahu l-mulku wa lahu l-hamdu wa huwa 'ala kulli schai'in qadir* auf hundert zu vervollständigen – oder 34× *Allahu akbar* (beide Formen in Sahih Muslim). Weitere Bittgebete findest du unter [Duas](/duas).
+Nach dem Pflichtgebet ist es Sunna, 33× *Subhanallah* („Gepriesen sei Allah“), 33× *Alhamdulillah* („Alles Lob gebührt Allah“) und 33× *Allahu akbar* zu sagen und mit *La ilaha illallahu wahdahu la scharika lah, lahu l-mulku wa lahu l-hamdu wa huwa 'ala kulli schai'in qadir* auf hundert zu vervollständigen – oder 34× *Allahu akbar* (beide Formen in Sahih Muslim). Weitere Bittgebete finden Sie unter [Duas](/duas).
 
 ## Häufige Fehler
 
@@ -130,11 +130,11 @@ Wer im Gebet etwas vergisst, gleicht es mit zwei Niederwerfungen des Vergessens 
 
 ## Die vier Rechtsschulen
 
-Hanafiten, Malikiten, Schafiiten und Hanbaliten beten im Kern gleich. Unterschiede betreffen Details wie die Haltung der Hände, das Eröffnungs-Bittgebet, die Form des Taschahhud oder ob man einen oder zwei Friedensgrüße spricht. Jede Schule stützt sich auf überlieferte Praxis des Propheten ﷺ und seiner Gefährten. Diese Vielfalt ist ein Segen und kein Streitpunkt: Wer neben jemandem einer anderen Schule betet, betet mit seinem Bruder oder seiner Schwester. Mehr zur schiitischen Praxis liest du unter [Wie man betet – im schiitischen Islam](/islam/prayer-shia).
+Hanafiten, Malikiten, Schafiiten und Hanbaliten beten im Kern gleich. Unterschiede betreffen Details wie die Haltung der Hände, das Eröffnungs-Bittgebet, die Form des Taschahhud oder ob man einen oder zwei Friedensgrüße spricht. Jede Schule stützt sich auf überlieferte Praxis des Propheten ﷺ und seiner Gefährten. Diese Vielfalt ist ein Segen und kein Streitpunkt: Wer neben jemandem einer anderen Schule betet, betet mit seinem Bruder oder seiner Schwester. Mehr zur schiitischen Praxis lesen Sie unter [Wie man betet – im schiitischen Islam](/islam/prayer-shia).
 
 ## Für Anfänger, Frauen, Reisende und Kranke
 
-**Anfänger:** Fang mit dem an, was du kannst. Lerne zuerst die [Fatiha](/surah/1) und eine kurze Sure wie [Al-Ikhlas](/surah/112) – in unserem Player kannst du sie Vers für Vers anhören und wiederholen. Bis du alles auswendig kannst, darfst du die Gebete langsam mit dem lernen, was du schon beherrschst. Allah belastet niemanden über sein Vermögen ([2:286](/surah/2)).
+**Anfänger:** Fangen Sie mit dem an, was Sie können. Lernen Sie zuerst die [Fatiha](/surah/1) und eine kurze Sure wie [Al-Ikhlas](/surah/112) – in unserem Player können Sie sie Vers für Vers anhören und wiederholen. Bis Sie alles auswendig können, dürfen Sie die Gebete langsam mit dem lernen, was Sie schon beherrschen. Allah belastet niemanden über sein Vermögen ([2:286](/surah/2)).
 
 **Frauen** beten auf dieselbe Weise. Während der Menstruation und des Wochenbetts wird nicht gebetet, und diese Gebete müssen nicht nachgeholt werden (Sahih Muslim). Frauen dürfen in der Moschee beten; das Gebet zu Hause ist ebenso wertvoll.
 
@@ -142,12 +142,12 @@ Hanafiten, Malikiten, Schafiiten und Hanbaliten beten im Kern gleich. Unterschie
 
 **Kranke** beten, wie sie können: im Stehen, sonst im Sitzen, sonst auf der Seite liegend (Sahih al-Bukhari). Ist Wasser schädlich, ist Tayammum erlaubt.
 
-## Lerne bei einem Lehrer
+## Lernen Sie bei einem Lehrer
 
-Dieses Kapitel gibt dir einen verlässlichen Überblick, ersetzt aber keinen Unterricht. Lerne die Einzelheiten bei einer qualifizierten Lehrerin oder einem qualifizierten Lehrer und folge der Rechtsschule, die in deiner Gemeinde gelehrt wird. Möge Allah dein Gebet annehmen.`,
+Dieses Kapitel gibt Ihnen einen verlässlichen Überblick, ersetzt aber keinen Unterricht. Lernen Sie die Einzelheiten bei einer qualifizierten Lehrerin oder einem qualifizierten Lehrer und folgen Sie der Rechtsschule, die in Ihrer Gemeinde gelehrt wird. Möge Allah Ihr Gebet annehmen.`,
     faq: [
       { q: "Muss ich die Absicht laut aussprechen?", a: "Nein. Die Absicht (Niyya) ist eine Sache des Herzens. Manche Gelehrte halten das leise Aussprechen als Hilfe für erlaubt, nötig ist es nicht." },
-      { q: "Was mache ich, wenn ich die Fatiha noch nicht auswendig kann?", a: "Lerne sie so bald wie möglich und bete in der Zwischenzeit mit dem, was du kannst, z. B. mit Lobpreisungen wie Subhanallah und Alhamdulillah. Im Gemeinschaftsgebet hinter einem Imam fällt der Einstieg leichter. Die Fatiha kannst du in unserem Player Vers für Vers üben." },
+      { q: "Was mache ich, wenn ich die Fatiha noch nicht auswendig kann?", a: "Lernen Sie sie so bald wie möglich und beten Sie in der Zwischenzeit mit dem, was Sie können, z. B. mit Lobpreisungen wie Subhanallah und Alhamdulillah. Im Gemeinschaftsgebet hinter einem Imam fällt der Einstieg leichter. Die Fatiha können Sie in unserem Player Vers für Vers üben." },
       { q: "Darf ich ein verpasstes Gebet nachholen?", a: "Ja. Ein Pflichtgebet, das man verschlafen oder vergessen hat, betet man, sobald man sich erinnert (Sahih al-Bukhari, Sahih Muslim). Absichtliches Aufschieben sollte man vermeiden." },
       { q: "Wo lege ich die Hände im Stehen hin?", a: "Das hängt von der Rechtsschule ab: auf die Brust oder über den Nabel (Schafiiten, viele Hanbaliten), unter den Nabel (Hanafiten) oder seitlich hängend (viele Malikiten). Alle Formen sind gültig." },
       { q: "Kann ich in einer Moschee mit Menschen einer anderen Schule beten?", a: "Ja, selbstverständlich. Muslime aller Schulen beten Seite an Seite – in den Vereinigten Arabischen Emiraten und auf der ganzen Welt. Kleine Unterschiede in der Haltung beeinträchtigen das gemeinsame Gebet nicht." },

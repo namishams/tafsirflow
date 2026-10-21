@@ -10,6 +10,7 @@ import { appStoreUrl } from "@/lib/appstore";
 import { courseLd, mc, STAGES } from "@/lib/masterclass";
 import { HomeCorners, HomeStar, HomeVerse, StarGlyph } from "@/components/art/HomeOrnaments";
 import { Ink } from "@/components/Ornaments";
+import { verseQuote } from "@/lib/verseQuotes";
 import { MasterclassPillars, McHead, PricingPlans, ReciterLadder, SchoolStages } from "@/components/masterclass/Sections";
 
 // The curriculum of Quran Masterclass: four school stages (Ibtidāʾī → ʿĀlī), the Reciter Path to the Masterclass
@@ -123,7 +124,7 @@ export default async function MasterclassPage({ params }: { params: Promise<{ lo
               </li>
             ))}
           </ul>
-          <HomeVerse text="وَرَتِّلِ ٱلۡقُرۡءَانَ تَرۡتِيلًا" cite="73:4" className="mt-12 text-center text-[24px] sm:text-[28px]" />
+          <HomeVerse text={verseQuote("qpc", "73:4", 4)} cite="73:4" className="mt-12 text-center text-[24px] sm:text-[28px]" />
         </div>
       </section>
 
@@ -144,7 +145,7 @@ export default async function MasterclassPage({ params }: { params: Promise<{ lo
       {/* outro */}
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
         <div className="relative mx-auto max-w-3xl px-5 py-16 text-center sm:py-24">
-          <p className="font-arabic text-[26px] text-[rgb(var(--gold))]" dir="rtl" lang="ar"><Ink>وَقُل رَّبِّ زِدۡنِي عِلۡمًا</Ink></p>
+          <p className="font-arabic text-[26px] text-[rgb(var(--gold))]" dir="rtl" lang="ar"><Ink>{verseQuote("qpc", "20:114", 14)}</Ink></p>
           <h2 className="font-display mt-5 text-4xl leading-[1.1] sm:text-5xl">{c.page.outroT}</h2>
           <p className="mt-4 text-[17px] leading-relaxed text-white/70">{c.page.outroD}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">

@@ -19,7 +19,42 @@ const parse = (file) => {
   return { src, sf: ts.createSourceFile(file, src, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX) };
 };
 
-// top-level declarations by name, verbatim, exported
+// The website cuts the verses it quotes as decoration out of the Quran data: verseQuote(…) and quoteRing(…) from
+// src/lib/verseQuotes.ts, reading src/lib/data/verse-quotes.json (written by scripts/gen-verse-quotes.mjs from Quran.com).
+// Those calls are resolved here with the same module and the same data, so the app gets exactly the words the website
+// shows, as a string, and nothing is typed by hand.
+const quotes = await (async () => {
+  const lib = join(site, "src", "lib");
+  const data = readFileSync(join(lib, "data", "verse-quotes.json"), "utf8");
+  const js = ts.transpileModule(readFileSync(join(lib, "verseQuotes.ts"), "utf8"), {
+    compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
+  }).outputText;
+  const inlined = js.replace(/^import QUOTES from "\.\/data\/verse-quotes\.json";?$/m, `const QUOTES = ${data};`);
+  if (inlined === js) throw new Error("src/lib/verseQuotes.ts: the import of data/verse-quotes.json was not found");
+  return import(`data:text/javascript;base64,${Buffer.from(inlined).toString("base64")}`);
+})();
+const QUOTE_CALLS = new Set(["verseQuote", "quoteRing"]);
+const isQuoteCall = (n) => ts.isCallExpression(n) && ts.isIdentifier(n.expression) && QUOTE_CALLS.has(n.expression.text);
+/** the text a verseQuote(…) / quoteRing(…) call of the website renders (the website passes only literals) */
+function quoteOf(call, sf) {
+  const code = call.getText(sf);
+  const text = new Function("verseQuote", "quoteRing", `return (${code});`)(quotes.verseQuote, quotes.quoteRing);
+  if (typeof text !== "string" || !text) throw new Error(`${code}: no text`);
+  return text;
+}
+/** the source of a node with every verseQuote(…) / quoteRing(…) call in it replaced by the text it renders */
+function withQuotes(src, sf, node) {
+  const calls = [];
+  // (no return value: forEachChild stops at the first child whose callback returns something truthy)
+  const visit = (n) => { if (isQuoteCall(n)) calls.push(n); else ts.forEachChild(n, visit); };
+  visit(node);
+  const start = node.getStart(sf);
+  let text = src.slice(start, node.end);
+  for (const c of calls.reverse()) text = text.slice(0, c.getStart(sf) - start) + JSON.stringify(quoteOf(c, sf)) + text.slice(c.end - start);
+  return text;
+}
+
+// top-level declarations by name, verbatim (verse quotes resolved), exported
 function decls(file, names) {
   const { src, sf } = parse(file);
   const found = new Map();
@@ -28,7 +63,7 @@ function decls(file, names) {
     if (ts.isVariableStatement(st)) name = st.declarationList.declarations[0].name.getText(sf);
     else if (ts.isTypeAliasDeclaration(st) || ts.isFunctionDeclaration(st)) name = st.name?.getText(sf) ?? null;
     if (name && names.includes(name)) {
-      const text = src.slice(st.getStart(sf), st.end);
+      const text = withQuotes(src, sf, st);
       found.set(name, /^export\s/.test(text) ? text : `export ${text}`);
     }
   }
@@ -49,7 +84,8 @@ function arabicJsx(file) {
   visit(sf);
   return texts;
 }
-// the Arabic line of a page hero (<p className="… font-arabic …">ARABIC <span>(ref)</span></p>) and its literal ref
+// the Arabic line of a page hero (<p className="… font-arabic …">ARABIC <span>(ref)</span></p>, ARABIC being literal
+// text or a verse cut from the Quran data with {verseQuote(…)}) and its literal ref
 function heroLine(file) {
   const { sf } = parse(file);
   let hit = null;
@@ -59,12 +95,13 @@ function heroLine(file) {
       const v = cls && cls.initializer && ts.isStringLiteral(cls.initializer) ? cls.initializer.text : "";
       if (/\bfont-arabic\b/.test(v)) {
         const text = n.children.find((c) => ts.isJsxText(c) && ARABIC.test(c.text));
-        if (text) {
+        const quote = text ? null : n.children.find((c) => ts.isJsxExpression(c) && c.expression && isQuoteCall(c.expression));
+        if (text || quote) {
           const span = n.children.find((c) => ts.isJsxElement(c));
           // a literal ref like "(40:60)"; "" when the page fills it from its texts (heroRef)
           const literal = span && !span.children.some((c) => ts.isJsxExpression(c));
           const ref = literal ? span.children.filter((c) => ts.isJsxText(c)).map((c) => c.text).join("").trim() : "";
-          hit = { ar: text.text.trim(), ref };
+          hit = { ar: text ? text.text.trim() : quoteOf(quote.expression, sf), ref };
         }
       }
     }
@@ -89,7 +126,8 @@ const write = (name, body) => writeFileSync(join(out, `${name}.ts`), `${HEAD}${b
 // geometry of the practice art (arch window, stars)
 write("practiceArt", decls(join(site, "src", "components", "art", "PracticeArt.tsx"), ["archPath", "starPath"]));
 // /wudu page: texts, the hadith on the virtue of wudu with their sources, further links
-write("wuduPage", decls(page("wudu"), ["Virtue", "C"]));
+// (VIRTUE_VERSE: the end of 2:222 from the Quran data, used in every language's list of virtues)
+write("wuduPage", decls(page("wudu"), ["Virtue", "VIRTUE_VERSE", "C"]));
 // /salah page
 write("salahPage", decls(page("salah"), ["C"]));
 // prayer trainer: UI texts and the figure's joints for every posture

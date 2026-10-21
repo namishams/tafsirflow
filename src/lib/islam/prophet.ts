@@ -26,7 +26,7 @@ Seine Kindheit war von Verlust geprägt. Sein Vater Abdullah starb noch vor sein
 
 Als junger Mann hütete Muhammad ﷺ Schafe und arbeitete später als Händler. Schon vor seiner Berufung nannten ihn die Mekkaner **al-Amin**, „der Vertrauenswürdige“. Man gab ihm Wertsachen zur Aufbewahrung, und man hörte auf sein Urteil.
 
-In seiner Jugend nahm er am **Helfen Sie al-Fudul** teil, einem Bund, in dem sich mekkanische Clans verpflichteten, jedem beizustehen, dem in der Stadt Unrecht geschah, ob Einheimischem oder Fremdem. Jahre später sagte er als Prophet nach den Berichten der Sira, wenn man ihn im Islam zu einem solchen Bund riefe, würde er zusagen. Bekannt ist auch die Überlieferung, wie er mit etwa 35 Jahren beim Wiederaufbau der Kaaba einen Streit der Clans schlichtete: Er legte den Schwarzen Stein auf ein Tuch, und jeder Clan durfte an einer Ecke tragen helfen – eine Lösung, bei der niemand das Gesicht verlor.
+In seiner Jugend nahm er am **Hilf al-Fudul** teil, einem Bund, in dem sich mekkanische Clans verpflichteten, jedem beizustehen, dem in der Stadt Unrecht geschah, ob Einheimischem oder Fremdem. Jahre später sagte er als Prophet nach den Berichten der Sira, wenn man ihn im Islam zu einem solchen Bund riefe, würde er zusagen. Bekannt ist auch die Überlieferung, wie er mit etwa 35 Jahren beim Wiederaufbau der Kaaba einen Streit der Clans schlichtete: Er legte den Schwarzen Stein auf ein Tuch, und jeder Clan durfte an einer Ecke tragen helfen – eine Lösung, bei der niemand das Gesicht verlor.
 
 ## Die Ehe mit Khadidscha und ihre Kinder
 
@@ -244,7 +244,7 @@ His childhood was marked by loss. His father Abdullah died before he was born, a
 
 As a young man Muhammad ﷺ tended sheep and later worked as a merchant. Even before his prophethood the people of Makkah called him **al-Amin**, "the trustworthy one". They left their valuables in his care and listened to his judgement.
 
-In his youth he took part in the **Helfen Sie al-Fudul**, a pact in which Makkan clans pledged to stand by anyone wronged in the city, whether local or stranger. Years later, as a prophet, he said, according to the Sirah, that if he were invited to such a pact in Islam he would accept. A well-known report also tells how, at about the age of 35, when the Kaaba was being rebuilt, he settled a dispute between the clans: he placed the Black Stone on a cloth and let every clan hold a corner and lift it together, so that no one lost face.
+In his youth he took part in the **Hilf al-Fudul**, a pact in which Makkan clans pledged to stand by anyone wronged in the city, whether local or stranger. Years later, as a prophet, he said, according to the Sirah, that if he were invited to such a pact in Islam he would accept. A well-known report also tells how, at about the age of 35, when the Kaaba was being rebuilt, he settled a dispute between the clans: he placed the Black Stone on a cloth and let every clan hold a corner and lift it together, so that no one lost face.
 
 ## Marriage to Khadijah and their children
 

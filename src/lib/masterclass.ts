@@ -153,7 +153,7 @@ const de: MC = {
   cefr: [["A1", "Buchstaben bis erste Sätze"], ["A2", "Häufige Wörter des Korans"], ["B1", "Verbformen und Wurzeln"], ["B2", "Ganze Abschnitte lesen"], ["C1", "Die 500 häufigsten Koranwörter"]],
   tajweedT: "Tadschwid", tajweedD: "Klare Lektionen, Beispiele aus dem Mushaf und kurze Quizze – die Regeln, die Sie für eine richtige Rezitation brauchen.",
   hifzT: "Hifz-Karten und Pläne", hifzD: "Lernpläne, die Schritt für Schritt wachsen, und Karten, die jeden Vers zur richtigen Zeit zurückbringen.",
-  gardenT: "Der wachsende Garten", gardenD: "Ihr Baum wachsen mit jedem Vers, den Sie mit der Shams-Methode lernen – ein stilles Zeichen beständiger Mühe.",
+  gardenT: "Der wachsende Garten", gardenD: "Ihr Baum wächst mit jedem Vers, den Sie mit der Shams-Methode lernen – ein stilles Zeichen beständiger Mühe.",
   academyTitle: "Die Akademie", academyLead: "Kurze Kurse mit Lektionen, Tests und Zertifikaten – für das Wissen rund um den Koran.",
   courses: ["Sira", "Die Propheten", "Tafsir", "Hadith", "ʿAqida", "Fiqh", "Achlaq", "Duʿa", "Die 99 Namen", "Ramadan", "Hadsch und ʿUmra", "Tadschwid", "Ibrahim", "Die Haramain"],
   certT: "Zertifikate, ehrlich gesagt", certD: "Zertifikate der Masterclass bestätigen Ihr Lernen in der App. Sie sind keine Idschaza – dafür rezitieren Sie vor einem qualifizierten Lehrer.",

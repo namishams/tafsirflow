@@ -74,7 +74,7 @@ Der Koran wurde mit einer bestimmten Lesart offenbart und von Lehrer zu Schüler
 ## Warum ist das wichtig?
 - Manche Fehler verändern die Bedeutung, etwa wenn man ه und ح verwechselt oder einen kurzen Vokal lang liest. Man nennt sie *offensichtliche Fehler* (Lahn dschali).
 - Andere Fehler ändern die Bedeutung nicht, nehmen der Rezitation aber ihre Schönheit, z. B. eine fehlende Ghunna. Das sind *versteckte Fehler* (Lahn chafi).
-- Tajweed lernt man vor allem durch **Hören und Nachsprechen**. Die Regeln helfenen Sie sich zu verstehen, was Sie hören.
+- Tajweed lernt man vor allem durch **Hören und Nachsprechen**. Die Regeln helfen Ihnen zu verstehen, was Sie hören.
 
 ## Isti'adha – Zuflucht suchen
 Vor dem Rezitieren sagen wir:
@@ -218,7 +218,7 @@ Take one area per day. Say each letter with sukun after a hamza (أَحْ، أَ
 Ein *Machradsch* (Plural *Machaaridsch*) ist die Stelle, an der ein Buchstabe gebildet wird. Verlässt ein Buchstabe seine Stelle, wird er zu einem anderen Buchstaben – etwa bei س und ص oder bei ك und ق. Die Artikulationsstellen sind deshalb das Fundament des gesamten Tajweed.
 
 ## So finden Sie die Stelle eines Buchstabens
-Setze ein Sukun auf den Buchstaben und stelle ein Hamza mit Vokal davor: أَبْ، أَقْ، أَعْ. Dort, wo der Klang endet, liegt sein Machradsch.
+Setzen Sie ein Sukun auf den Buchstaben und stellen Sie ein Hamza mit Vokal davor: أَبْ، أَقْ، أَعْ. Dort, wo der Klang endet, liegt sein Machradsch.
 
 ## Die fünf Bereiche
 - **Al-Dschauf (der Hohlraum von Mund und Rachen):** die drei langen Vokalbuchstaben – ا nach Fatha, و mit Sukun nach Damma, ي mit Sukun nach Kasra. Sie haben keinen festen Punkt; der Klang endet mit dem Atem.
@@ -237,7 +237,7 @@ Setze ein Sukun auf den Buchstaben und stelle ein Hamza mit Vokal davor: أَب�
 - Bei ف die Lippen runden.
 
 ## Übungstipp
-Nehmen Sie sich pro Tag einen Bereich vor. Sprechen Sie jeden Buchstaben mit Sukun nach einem Hamza (أَحْ، أَعْ) vor dem Spiegel und spüre, wo der Klang endet. Vergleichen Sie dann Paare: ه/ح, ء/ع, س/ص, ت/ط, د/ض, ذ/ظ.`,
+Nehmen Sie sich pro Tag einen Bereich vor. Sprechen Sie jeden Buchstaben mit Sukun nach einem Hamza (أَحْ، أَعْ) vor dem Spiegel und spüren Sie, wo der Klang endet. Vergleichen Sie dann Paare: ه/ح, ء/ع, س/ص, ت/ط, د/ض, ذ/ظ.`,
     examples: [
       {
         ar: "أَعْ – أَحْ – أَخْ",
@@ -895,7 +895,7 @@ Außerdem liest man bei Hafs das Nun in يس ۚ وَالْقُرْآنِ und ن 
 - Idgham bei الدُّنْيَا anwenden („ad-duyya“).
 
 ## Übungstipp
-Schreiben Sie يَرْمَلُونَ auf eine Karte und teile es auf in يَنْمُو (mit Ghunna) und لر (ohne). Lesen Sie Sure al-Ichlas und Sure az-Zalzala und markieren Sie jedes Idgham, das Sie finden.`,
+Schreiben Sie يَرْمَلُونَ auf eine Karte und teilen Sie es auf in يَنْمُو (mit Ghunna) und لر (ohne). Lesen Sie Sure al-Ichlas und Sure az-Zalzala und markieren Sie jedes Idgham, das Sie finden.`,
     examples: [
       {
         ar: "وَمِنَ النَّاسِ مَن يَقُولُ",
@@ -1060,7 +1060,7 @@ Das Nun mit seiner klaren Zungenartikulation und das ب mit geschlossenen Lippen
 - Manche Lehrer erlauben einen ganz kleinen Spalt zwischen den Lippen – entscheidend ist, dass das n verschwindet und die Ghunna hörbar bleibt.
 
 ## Übungstipp
-Suche auf einer Seite von Sure al-Baqara das kleine Mim-Zeichen. Jedes Mal, wenn Sie es sehen, summen Sie das m zwei Zählzeiten lang, bevor Sie das ب sprechen. Eine Aufnahme hilft Ihnen zu hören, ob das n wirklich verschwunden ist.`,
+Suchen Sie auf einer Seite von Sure al-Baqara das kleine Mim-Zeichen. Jedes Mal, wenn Sie es sehen, summen Sie das m zwei Zählzeiten lang, bevor Sie das ب sprechen. Eine Aufnahme hilft Ihnen zu hören, ob das n wirklich verschwunden ist.`,
     examples: [
       {
         ar: "مِن بَعْدِ مِيثَاقِهِ",
@@ -1817,7 +1817,7 @@ Tap your finger for each count while reciting Surah an-Nasr: جَاءَ (muttasi
 *Madd* heißt „Dehnung“. Die drei Madd-Buchstaben sind:
 - ا mit Fatha davor, و mit Sukun und Damma davor, ي mit Sukun und Kasra davor.
 
-Gemessen wird in *Harakat* (Zählzeiten). Eine Zählzeit entspricht etwa der Dauer eines kurzen Vokals; halte ein gleichmäßiges Tempo.
+Gemessen wird in *Harakat* (Zählzeiten). Eine Zählzeit entspricht etwa der Dauer eines kurzen Vokals; halten Sie ein gleichmäßiges Tempo.
 
 ## Madd tabi'i (natürliche Dehnung) – 2 Zählzeiten
 Ein Madd-Buchstabe, auf den weder Hamza noch Sukun folgt: قَالَ، يَقُولُ، قِيلَ. Ohne diese Dehnung ist das Wort falsch – sie wird also nie verkürzt.
@@ -2025,7 +2025,7 @@ Bei Hafs gibt es vier Stellen mit einem kleinen **س**: eine kurze Pause ohne At
 - Beim Anhalten den Vokal behalten („ar-rahimi“ mit Pause).
 
 ## Übungstipp
-Wählen Sie eine Seite und plane vor dem Rezitieren Ihre Atempausen: Markieren Sie jede Stelle, an der Sie anhalten wollen. Prüfen Sie, ob jeder Halt zu den Zeichen passt und jeder Neubeginn sinnvoll ist.`,
+Wählen Sie eine Seite und planen Sie vor dem Rezitieren Ihre Atempausen: Markieren Sie jede Stelle, an der Sie anhalten wollen. Prüfen Sie, ob jeder Halt zu den Zeichen passt und jeder Neubeginn sinnvoll ist.`,
     examples: [
       {
         ar: "إِنَّمَا يَسْتَجِيبُ الَّذِينَ يَسْمَعُونَ ۘ وَالْمَوْتَىٰ يَبْعَثُهُمُ اللَّهُ",

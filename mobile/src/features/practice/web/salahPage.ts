@@ -2,9 +2,9 @@
 /* eslint-disable */
 export const C = {
   de: {
-    kicker: "Gebet lernen · Schritt für Schritt", title: "So betest du – mit einem Trainer, der jede Bewegung zeigt",
-    lead: "Wähle das Gebet und deine Tradition. Die Figur zeigt jede Haltung, dazu siehst du die arabischen Worte, die Umschrift und die Bedeutung. Spiele den Ablauf ab oder geh Schritt für Schritt – so oft du willst.",
-    whyTitle: "Das Gebet – das Erste, worüber wir befragt werden", why: "Der Prophet ﷺ sagte, dass das Gebet die erste Tat ist, über die ein Mensch am Tag der Auferstehung Rechenschaft ablegt (at-Tirmidhi, Abu Dawud, an-Nasa'i). Fünfmal am Tag trittst du vor Allah – mit Körper, Zunge und Herz. Wer es einmal richtig gelernt hat, trägt es ein Leben lang.",
+    kicker: "Gebet lernen · Schritt für Schritt", title: "So beten Sie – mit einem Trainer, der jede Bewegung zeigt",
+    lead: "Wählen Sie das Gebet und Ihre Tradition. Die Figur zeigt jede Haltung, dazu sehen Sie die arabischen Worte, die Umschrift und die Bedeutung. Spielen Sie den Ablauf ab oder gehen Sie Schritt für Schritt – so oft Sie wollen.",
+    whyTitle: "Das Gebet – das Erste, worüber wir befragt werden", why: "Der Prophet ﷺ sagte, dass das Gebet die erste Tat ist, über die ein Mensch am Tag der Auferstehung Rechenschaft ablegt (at-Tirmidhi, Abu Dawud, an-Nasa'i). Fünfmal am Tag treten Sie vor Allah – mit Körper, Zunge und Herz. Wer es einmal richtig gelernt hat, trägt es ein Leben lang.",
     more: "Ausführlich erklärt", links: [["/islam/prayer-sunni", "Wie man betet – sunnitisch"], ["/islam/prayer-shia", "Wie man betet – schiitisch (Dscha'fari)"], ["/prayer", "Gebetszeiten und Adhan"], ["/arabic", "Arabisch lesen lernen"]],
   },
   en: {

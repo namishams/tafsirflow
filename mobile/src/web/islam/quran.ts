@@ -6,7 +6,7 @@ export const quran: IslamDoc = {
   de: {
     title: "Der Koran",
     kicker: "Das Buch",
-    lead: "Der Koran ist für Muslime das Wort Allahs, offenbart dem Propheten Muhammad ﷺ durch den Engel Dschibril über etwa dreiundzwanzig Jahre. Er wird seit vierzehn Jahrhunderten rezitiert, auswendig gelernt und erklärt – in Moscheen, Familien und Koranschulen auf der ganzen Welt. Hier erfährst du, wie er offenbart, aufgebaut, zusammengestellt und bewahrt wurde, wie die Lesarten entstanden sind und wie du selbst mit ihm beginnen und ihn verstehen kannst.",
+    lead: "Der Koran ist für Muslime das Wort Allahs, offenbart dem Propheten Muhammad ﷺ durch den Engel Dschibril über etwa dreiundzwanzig Jahre. Er wird seit vierzehn Jahrhunderten rezitiert, auswendig gelernt und erklärt – in Moscheen, Familien und Koranschulen auf der ganzen Welt. Hier erfahren Sie, wie er offenbart, aufgebaut, zusammengestellt und bewahrt wurde, wie die Lesarten entstanden sind und wie Sie selbst mit ihm beginnen und ihn verstehen können.",
     facts: [
       { n: "114", l: "Suren" },
       { n: "6.236", l: "Verse (kufische Zählung)" },
@@ -62,7 +62,7 @@ Für das regelmäßige Lesen ist der Koran gegliedert in:
 - **60 Hizb**, je zwei in einem Dschuz',
 - und jeder Hizb in **vier Viertel** (Rub' al-Hizb), insgesamt 240, die am Rand der meisten Ausgaben markiert sind.
 
-Viele Ausgaben aus Südasien markieren außerdem sieben *Manzil* (Etappen, um den Koran in einer Woche zu lesen) und kleinere Abschnitte, die *Ruku'* heißen. Am Rand findest du auch Zeichen für die Stellen der Niederwerfung (*Sadschdat at-Tilawa*), an denen man sich beim Rezitieren niederwirft; die Rechtsschulen unterscheiden sich leicht in ihrer Zahl und ihrem Status. Viele Muslime lesen im Ramadan jeden Tag einen Dschuz' und schließen so den ganzen Koran in einem Monat ab.
+Viele Ausgaben aus Südasien markieren außerdem sieben *Manzil* (Etappen, um den Koran in einer Woche zu lesen) und kleinere Abschnitte, die *Ruku'* heißen. Am Rand finden Sie auch Zeichen für die Stellen der Niederwerfung (*Sadschdat at-Tilawa*), an denen man sich beim Rezitieren niederwirft; die Rechtsschulen unterscheiden sich leicht in ihrer Zahl und ihrem Status. Viele Muslime lesen im Ramadan jeden Tag einen Dschuz' und schließen so den ganzen Koran in einem Monat ab.
 
 Die Reihenfolge der Suren im Buch ist nicht chronologisch. Sie folgt der Anordnung, die der Prophet ﷺ selbst gelehrt hat und in der die Gefährten den Koran rezitierten.
 
@@ -72,7 +72,7 @@ Zu Lebzeiten des Propheten ﷺ wurde der Koran auswendig gelernt und zugleich vo
 
 Nach seinem Tod fielen in der Schlacht von Yamama viele Gefährten, die den Koran auswendig kannten. Daraufhin regte **Umar** beim ersten Kalifen **Abu Bakr** an, den Koran in einem Band zusammenzustellen. Abu Bakr beauftragte **Zaid ibn Thabit**, der mit großer Sorgfalt nur aufnahm, was schriftlich vorlag und durch Zeugen bestätigt war. So schildert es al-Bukhari in seinem *Sahih*. Diese Blätter wurden später bei **Hafsa**, der Tochter Umars, aufbewahrt.
 
-Als sich der Islam ausbreitete, bemerkte **Hudhaifa ibn al-Yaman** während eines Feldzugs in Armenien und Aserbaidschan, dass Muslime aus verschiedenen Regionen darüber stritten, wie man rezitiert. Er drängte den dritten Kalifen **Uthman** zu handeln. Uthman ließ von einem Kreis unter der Leitung Zaids – mit Abdullah ibn az-Zubair, Sa'id ibn al-As und Abd ar-Rahman ibn al-Harith – Abschriften anfertigen; wo sie in der Schreibweise uneins waren, schrieben sie im Dialekt der Quraisch, in dem der Koran offenbart worden war (al-Bukhari). Die Abschriften wurden in die großen Städte geschickt – wie viele, darüber gehen die Berichte auseinander –, und andere private Abschriften wurden beiseitegelegt, damit sich die Gemeinschaft auf einen Text einigt. Dieser **uthmanische Mushaf** ist die Grundlage jeder Koranausgabe, die du heute in die Hand nimmst.
+Als sich der Islam ausbreitete, bemerkte **Hudhaifa ibn al-Yaman** während eines Feldzugs in Armenien und Aserbaidschan, dass Muslime aus verschiedenen Regionen darüber stritten, wie man rezitiert. Er drängte den dritten Kalifen **Uthman** zu handeln. Uthman ließ von einem Kreis unter der Leitung Zaids – mit Abdullah ibn az-Zubair, Sa'id ibn al-As und Abd ar-Rahman ibn al-Harith – Abschriften anfertigen; wo sie in der Schreibweise uneins waren, schrieben sie im Dialekt der Quraisch, in dem der Koran offenbart worden war (al-Bukhari). Die Abschriften wurden in die großen Städte geschickt – wie viele, darüber gehen die Berichte auseinander –, und andere private Abschriften wurden beiseitegelegt, damit sich die Gemeinschaft auf einen Text einigt. Dieser **uthmanische Mushaf** ist die Grundlage jeder Koranausgabe, die Sie heute in die Hand nehmen.
 
 Einige der ältesten erhaltenen Koranhandschriften, etwa Blätter in Birmingham, Tübingen und Sanaa, wurden mit der Radiokarbonmethode ins siebte Jahrhundert datiert, in die ersten Jahrzehnte des Islam. Sunniten und Schiiten rezitieren aus demselben Mushaf. Die große Mehrheit der schiitischen Gelehrten – früher etwa asch-Scharif al-Murtada und Schaich at-Tusi, in neuerer Zeit Abu al-Qasim al-Khoei – bekräftigt wie die sunnitischen Gelehrten, dass der Koran, den wir in Händen halten, vollständig und unverändert ist.
 
@@ -84,7 +84,7 @@ In Moscheen, Familien und Koranschulen beginnen Kinder oft mit den kurzen Suren 
 
 Wer sein Auswendiglernen und Rezitieren bei einem qualifizierten Lehrer vollendet, kann eine **Idschaza** erhalten, eine Lehrerlaubnis mit einer Kette von Lehrern (*Sanad*), die Name für Name bis zum Propheten ﷺ zurückreicht. Der Prophet ﷺ sagte: „Zum Gefährten des Korans wird gesagt werden: Lies und steige auf, und trage langsam vor, wie du in der Welt vorgetragen hast, denn dein Rang ist beim letzten Vers, den du liest“ (Abu Dawud und at-Tirmidhi). Und er erinnerte daran, dass Auswendiggelerntes Pflege braucht: „Bleibt beständig beim Koran, denn er entweicht schneller als Kamele aus ihren Fesseln“ (al-Bukhari und Muslim).
 
-Unsere [Shams-Methode](/shams) baut auf dieser Weisheit auf: kleine Abschnitte, häufige Wiederholung, Hören vor Lesen. Mehr dazu findest du im Leitfaden [Den Koran auswendig lernen](/guides/how-to-memorize-the-quran) und im Kapitel über den [Weg eines Rezitators](/islam/reciter-path).
+Unsere [Shams-Methode](/shams) baut auf dieser Weisheit auf: kleine Abschnitte, häufige Wiederholung, Hören vor Lesen. Mehr dazu finden Sie im Leitfaden [Den Koran auswendig lernen](/guides/how-to-memorize-the-quran) und im Kapitel über den [Weg eines Rezitators](/islam/reciter-path).
 
 ## Die Lesarten – Qira'at
 
@@ -106,11 +106,11 @@ Wir sprechen darüber lieber bescheiden. Viele Leser erleben die Kraft des Koran
 
 Der Koran ist auf Arabisch offenbart, und sein Klang, sein Rhythmus und seine Bedeutungsfülle gehören untrennbar zu ihm. Deshalb spricht man bei Übersetzungen von **Übersetzungen der Bedeutungen**: Sie sind eine wertvolle Hilfe zum Verständnis, aber sie sind nicht der Koran selbst. Jede Übersetzung muss sich entscheiden, wo das Arabische mehrere Bedeutungen zugleich trägt – darum lohnt es sich, zwei Übersetzungen zu vergleichen und eine Erklärung dazuzulesen. Das Gebet wird auf Arabisch verrichtet, und viele Muslime, deren Muttersprache nicht Arabisch ist, lernen zumindest die Suren, die sie im Gebet sprechen.
 
-Bekannte deutsche Übersetzungen stammen etwa von Frank Bubenheim und Nadeem Elyas, von Abu Rida Muhammad ibn Ahmad ibn Rassoul, von Max Henning und von Rudi Paret. Auf unserer Plattform liest du auf Deutsch die Übersetzung von Bubenheim und Elyas und auf Englisch die von Saheeh International. Wenn du tiefer in die Sprache selbst einsteigen möchtest, beginne mit unserem [Arabischkurs](/arabic).
+Bekannte deutsche Übersetzungen stammen etwa von Frank Bubenheim und Nadeem Elyas, von Abu Rida Muhammad ibn Ahmad ibn Rassoul, von Max Henning und von Rudi Paret. Auf unserer Plattform lesen Sie auf Deutsch die Übersetzung von Bubenheim und Elyas und auf Englisch die von Saheeh International. Wenn Sie tiefer in die Sprache selbst einsteigen möchten, beginnen Sie mit unserem [Arabischkurs](/arabic).
 
 ## Tadschwid – schön und richtig rezitieren
 
-Allah sagt: „Und trage den Koran langsam und deutlich vor“ (Koran 73:4). Dieses langsame, deutliche Vortragen heißt **Tartil**, und die Regeln dafür heißen **Tadschwid**: die richtige Aussprache jedes Buchstabens, Längen, Nasalierungen, Pausen. Tadschwid ist kein Selbstzweck, sondern Ausdruck von Respekt vor dem Wort Allahs. Und niemand muss perfekt beginnen. Der Prophet ﷺ sagte: „Wer den Koran gekonnt liest, ist bei den edlen, rechtschaffenen Schreibern; und wer ihn liest und dabei stockt, weil es ihm schwerfällt, erhält doppelten Lohn“ (al-Bukhari und Muslim). Schritt für Schritt lernst du die Regeln in unserem [Tadschwid-Kurs](/tajweed).
+Allah sagt: „Und trage den Koran langsam und deutlich vor“ (Koran 73:4). Dieses langsame, deutliche Vortragen heißt **Tartil**, und die Regeln dafür heißen **Tadschwid**: die richtige Aussprache jedes Buchstabens, Längen, Nasalierungen, Pausen. Tadschwid ist kein Selbstzweck, sondern Ausdruck von Respekt vor dem Wort Allahs. Und niemand muss perfekt beginnen. Der Prophet ﷺ sagte: „Wer den Koran gekonnt liest, ist bei den edlen, rechtschaffenen Schreibern; und wer ihn liest und dabei stockt, weil es ihm schwerfällt, erhält doppelten Lohn“ (al-Bukhari und Muslim). Schritt für Schritt lernen Sie die Regeln in unserem [Tadschwid-Kurs](/tajweed).
 
 ## Umgang mit dem Koran
 
@@ -130,14 +130,14 @@ Zu den großen Werken gehören:
 - der Tafsir von **as-Sa'di** (gest. 1956), *Taisir al-Karim ar-Rahman*, knapp, klar und bei Anfängern sehr beliebt;
 - für schiitische Leser der klassische *Madschma' al-Bayan* von **at-Tabrisi** (gest. 1153) und *al-Mizan* von **Muhammad Husain Tabataba'i** (gest. 1981), der den Koran vor allem durch den Koran selbst erklärt.
 
-Auf unserer Plattform kannst du zu jedem Vers Erklärungen lesen, jeweils mit Quellenangabe – auf Englisch etwa Ibn Kathir in gekürzter Fassung, Ma'arif al-Qur'an und Tazkirul Quran. Ein paar Gewohnheiten helfen beim Verstehen:
+Auf unserer Plattform können Sie zu jedem Vers Erklärungen lesen, jeweils mit Quellenangabe – auf Englisch etwa Ibn Kathir in gekürzter Fassung, Ma'arif al-Qur'an und Tazkirul Quran. Ein paar Gewohnheiten helfen beim Verstehen:
 
-1. **Beginne klein.** Lieber ein Abschnitt mit Verständnis als zehn Seiten ohne.
-2. **Lies zuerst den Vers, dann die Übersetzung, dann den Tafsir.**
-3. **Lies im Zusammenhang.** Schau auf die Verse davor und danach, auf die Sure als Ganzes und darauf, ob sie mekkanisch oder medinensisch ist. Wer nur „Nähert euch nicht dem Gebet“ zitiert und den Rest von Koran 4:43 weglässt, verdreht den Sinn.
-4. **Achte auf Wiederholungen.** Was der Koran an einer Stelle kurz sagt, erklärt er oft an einer anderen ausführlicher.
-5. **Frag nach.** Bei Fragen, besonders zu Rechtsfragen, wende dich an einen qualifizierten Gelehrten oder einen Lernkreis.
-6. **Nimm eine Sache mit.** Was lehrt dich dieser Vers über Allah, über die Menschen, über dein eigenes Leben – und was willst du heute davon umsetzen?
+1. **Beginnen Sie klein.** Lieber ein Abschnitt mit Verständnis als zehn Seiten ohne.
+2. **Lesen Sie zuerst den Vers, dann die Übersetzung, dann den Tafsir.**
+3. **Lesen Sie im Zusammenhang.** Schauen Sie auf die Verse davor und danach, auf die Sure als Ganzes und darauf, ob sie mekkanisch oder medinensisch ist. Wer nur „Nähert euch nicht dem Gebet“ zitiert und den Rest von Koran 4:43 weglässt, verdreht den Sinn.
+4. **Achten Sie auf Wiederholungen.** Was der Koran an einer Stelle kurz sagt, erklärt er oft an einer anderen ausführlicher.
+5. **Fragen Sie nach.** Bei Fragen, besonders zu Rechtsfragen, wenden Sie sich an einen qualifizierten Gelehrten oder einen Lernkreis.
+6. **Nehmen Sie eine Sache mit.** Was lehrt Sie dieser Vers über Allah, über die Menschen, über Ihr eigenes Leben – und was wollen Sie heute davon umsetzen?
 
 Mehr dazu im Leitfaden [Den Koran verstehen – Tafsir](/guides/understanding-the-quran-tafsir).
 
@@ -155,21 +155,21 @@ Der Koran ist kein Lehrbuch mit Kapiteln nach Fachgebieten. Er verbindet Themen 
 
 Der Prophet ﷺ sagte: „Der Beste von euch ist, wer den Koran lernt und ihn lehrt“ (al-Bukhari). Und er sagte: „Lest den Koran, denn er wird am Tag der Auferstehung als Fürsprecher für seine Gefährten kommen“ (Muslim). „Gefährten des Korans“ sind diejenigen, die ihn regelmäßig lesen und nach ihm leben – ein schöner Gedanke für jeden, der heute mit einem einzigen Vers anfängt.
 
-Er verglich den Gläubigen, der den Koran liest, mit einer Zitrusfrucht, deren Duft gut und deren Geschmack gut ist (al-Bukhari und Muslim). Die Fatiha nannte er die gewaltigste Sure des Korans (al-Bukhari), und den Thronvers (Koran 2:255) den gewaltigsten Vers (Muslim). Du kannst ihn gleich [hier anhören](/surah/2?v=255).
+Er verglich den Gläubigen, der den Koran liest, mit einer Zitrusfrucht, deren Duft gut und deren Geschmack gut ist (al-Bukhari und Muslim). Die Fatiha nannte er die gewaltigste Sure des Korans (al-Bukhari), und den Thronvers (Koran 2:255) den gewaltigsten Vers (Muslim). Sie können ihn gleich [hier anhören](/surah/2?v=255).
 
 ## Der Koran in den Emiraten
 
 Bei uns in den Emiraten hat der Koran einen festen Platz im Alltag und im öffentlichen Leben. Der **Internationale Koranpreis von Dubai** (Dubai International Holy Quran Award) wird seit 1997 vergeben und bringt jedes Jahr junge Rezitatoren aus vielen Ländern zusammen. In allen Emiraten gibt es **Zentren für das Auswendiglernen des Korans**, in denen Kinder und Erwachsene, Emiratis und Gäste, bei erfahrenen Lehrern lernen. 2019 öffnete in Al Khawaneej in Dubai der **Quranic Park**, ein Park, der Pflanzen und Geschichten aus dem Koran für Familien erlebbar macht. Und in der Scheich-Zayed-Moschee in Abu Dhabi erklingt die Rezitation für Besucher aus aller Welt.
 
-## So beginnst du bei uns
+## So beginnen Sie bei uns
 
-Du musst nicht alles auf einmal können. Fang mit dem an, was heute passt:
+Sie müssen nicht alles auf einmal können. Fangen Sie mit dem an, was heute passt:
 
-1. Öffne den [Koran](/quran) und höre Vers für Vers zu, mit Übersetzung und Tafsir. Das Wort, das gerade rezitiert wird, wird hervorgehoben.
-2. Lerne kurze Suren auswendig mit der [Shams-Methode](/shams).
-3. Verbessere deine Aussprache im [Tadschwid-Kurs](/tajweed) und lerne die Sprache im [Arabischkurs](/arabic).
-4. Geh in der [Academy](/academy) Schritt für Schritt durch alle 114 Suren.
-5. Folge dem [365-Tage-Plan](/plan), um jeden Tag ein kleines Stück zu lesen, oder verteile mit dem [Khatm-Planer](/khatm) eine ganze Lesung des Korans auf feste Tagesportionen.
+1. Öffnen Sie den [Koran](/quran) und hören Sie Vers für Vers zu, mit Übersetzung und Tafsir. Das Wort, das gerade rezitiert wird, wird hervorgehoben.
+2. Lernen Sie kurze Suren auswendig mit der [Shams-Methode](/shams).
+3. Verbessern Sie Ihre Aussprache im [Tadschwid-Kurs](/tajweed) und lernen Sie die Sprache im [Arabischkurs](/arabic).
+4. Gehen Sie in der [Academy](/academy) Schritt für Schritt durch alle 114 Suren.
+5. Folgen Sie dem [365-Tage-Plan](/plan), um jeden Tag ein kleines Stück zu lesen, oder verteilen Sie mit dem [Khatm-Planer](/khatm) eine ganze Lesung des Korans auf feste Tagesportionen.
 
 Ein Vers am Tag, mit Herz gelesen, ist mehr wert als ein großer Vorsatz, der nie beginnt.`,
     faq: [
@@ -178,7 +178,7 @@ Ein Vers am Tag, mit Herz gelesen, ist mehr wert als ein großer Vorsatz, der ni
       { q: "Ist eine Übersetzung auch der Koran?", a: "Eine Übersetzung gibt die Bedeutungen wieder und ist eine große Hilfe, aber der Koran selbst ist der arabische Text. Darum spricht man von „Übersetzungen der Bedeutungen“." },
       { q: "Was ist Hafs 'an 'Asim?", a: "Die weltweit am weitesten verbreitete der anerkannten Lesarten des Korans. Die meisten gedruckten Ausgaben und die Rezitationen auf unserer Plattform folgen ihr; in Nord- und Westafrika ist Warsch 'an Nafi' verbreitet." },
       { q: "Lesen Sunniten und Schiiten denselben Koran?", a: "Ja. Sunniten und Schiiten rezitieren aus demselben Mushaf, und die große Mehrheit der Gelehrten beider Seiten bekräftigt, dass er vollständig und unverändert ist. Unterschiede gibt es eher in der Auslegung, etwa bei der Wahl der Tafsir-Werke." },
-      { q: "Ich kann kein Arabisch – kann ich trotzdem anfangen?", a: "Ja. Höre zu, lies die Übersetzung und lerne nach und nach kurze Suren. Der Prophet ﷺ hat sogar dem, der mit Mühe liest, doppelten Lohn verheißen (al-Bukhari und Muslim)." },
+      { q: "Ich kann kein Arabisch – kann ich trotzdem anfangen?", a: "Ja. Hören Sie zu, lesen Sie die Übersetzung und lernen Sie nach und nach kurze Suren. Der Prophet ﷺ hat sogar dem, der mit Mühe liest, doppelten Lohn verheißen (al-Bukhari und Muslim)." },
     ],
     sources: [
       "Koran 2:2, 2:23, 2:219, 2:255, 2:281, 3:7, 4:43, 4:174, 5:48, 5:90–91, 7:204, 12:2, 15:9, 15:87, 16:44, 16:98, 17:9, 17:88, 17:106, 25:1, 25:32, 27:30, 38:29, 39:23, 47:24, 52:35, 54:17, 56:79, 58:1, 69:41, 73:4, 74:1–2, 96:1–5, 97:1",

@@ -10,8 +10,11 @@ import { PracticeStar } from "@/components/art/PracticeArt";
 import { getResources, getVerseByKey, pickTranslation } from "@/lib/quran";
 import { WUDU, langOf, type Lang } from "@/lib/wudu";
 import { abs, pageMeta } from "@/lib/site";
+import { verseQuote } from "@/lib/verseQuotes";
 
 type Virtue = { ar: string; text: string; src: string; href?: string };
+// the verse among the virtues (the end of 2:222) from the Quran data (lib/verseQuotes), never typed by hand
+const VIRTUE_VERSE = verseQuote("imlaei", "2:222", 22);
 // trBy: German and English name their fixed translation; the other languages give only the word "Translation" and the author is added
 type Content = {
   kicker: string; title: string; lead: string; verseKicker: string; verseTitle: string; verseLead: string; verseRef: string; listen: string; trBy: string;
@@ -32,7 +35,7 @@ const C: Record<Lang, Content> = {
     tay: "Finden Sie kein Wasser oder würde es Ihnen schaden, erlaubt Allah Ihnen die Reinigung mit reiner Erde (Tayammum) – im selben Vers 5:6 und in 4:43. Sie fassen die Absicht, schlagen mit den Handflächen auf reine Erde und streichen damit über das Gesicht und die Hände. Wie oft Sie aufschlagen und wie weit Sie über die Hände streichen, beschreiben die Rechtsschulen unterschiedlich. Sobald Sie wieder Wasser verwenden können, machen Sie für das nächste Gebet wieder Wudu.",
     virtueTitle: "Warum die Waschung so viel wert ist",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "Allah liebt die, die sich reumütig (Ihm) zuwenden, und Er liebt die, die sich reinigen.", src: "Quran 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "Allah liebt die, die sich reumütig (Ihm) zuwenden, und Er liebt die, die sich reinigen.", src: "Quran 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "Die Reinheit ist die Hälfte des Glaubens.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "Uthman ibn Affan zeigte, wie der Prophet ﷺ die Waschung verrichtete, und überlieferte seine Worte: Wer die Waschung so verrichtet wie diese und dann zwei Rak'a betet, ohne mit den Gedanken abzuschweifen, dem werden seine früheren Sünden vergeben.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -52,7 +55,7 @@ const C: Record<Lang, Content> = {
     tay: "If you cannot find water, or it would harm you, Allah allows you to purify yourself with clean earth (tayammum) – in the same verse 5:6 and in 4:43. You make the intention, strike clean earth with your palms and wipe your face and hands with them. How many times you strike and how far you wipe the hands is described differently by the schools. As soon as you can use water again, you make wudu again for the next prayer.",
     virtueTitle: "Why the ablution is worth so much",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "Allah loves those who repent and loves those who purify themselves.", src: "Quran 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "Allah loves those who repent and loves those who purify themselves.", src: "Quran 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "Purity is half of faith.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "Uthman ibn Affan showed how the Prophet ﷺ performed wudu and passed on his words: whoever performs wudu like this and then prays two rak'ahs without letting his thoughts wander, his previous sins are forgiven.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -72,7 +75,7 @@ const C: Record<Lang, Content> = {
     tay: "إذا لم تجد الماء أو كان استعماله يضرّك، أباح الله لك التطهّر بالصعيد الطيّب (التيمّم)، في الآية نفسها (المائدة: 6) وفي سورة النساء (43). تنوي، ثم تضرب بكفّيك على الصعيد الطاهر، وتمسح بهما وجهك ويديك. وتختلف المذاهب في عدد الضربات وفي القدر الذي يُمسح من اليدين. فإذا قدرت على استعمال الماء عدت إلى الوضوء للصلاة التالية.",
     virtueTitle: "فضل الوضوء",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "", src: "سورة البقرة، الآية 222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "", src: "سورة البقرة، الآية 222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "", src: "صحيح مسلم 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "توضّأ عثمان بن عفّان رضي الله عنه كما رأى النبيَّ ﷺ يتوضّأ، ثم روى عنه ﷺ قوله:", src: "صحيح البخاري 159، صحيح مسلم 226" },
     ] as Virtue[],
@@ -92,7 +95,7 @@ const C: Record<Lang, Content> = {
     tay: "Su bulamazsan ya da su sana zarar verecekse, Allah temiz toprakla arınmana (teyemmüm) izin verir – aynı 5:6 ayetinde ve 4:43'te. Niyet edersin, avuçlarınla temiz toprağa vurur ve onlarla yüzünü ve ellerini meshedersin. Kaç kez vurulacağını ve ellerin ne kadarının meshedileceğini mezhepler farklı anlatır. Tekrar su kullanabildiğin anda bir sonraki namaz için yeniden abdest alırsın.",
     virtueTitle: "Abdestin değeri neden bu kadar büyük?",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "Allah, tövbe edenleri sever ve kendilerini arındıranları sever.", src: "Kur'an 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "Allah, tövbe edenleri sever ve kendilerini arındıranları sever.", src: "Kur'an 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "Temizlik imanın yarısıdır.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "Osman ibn Affân, Peygamber ﷺ'in abdesti nasıl aldığını gösterdi ve onun sözlerini aktardı: Kim şöyle abdest alır, sonra düşüncelerini dağıtmadan iki rekât namaz kılarsa, geçmiş günahları bağışlanır.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -112,7 +115,7 @@ const C: Record<Lang, Content> = {
     tay: "اگر آپ کو پانی نہ ملے، یا وہ آپ کو نقصان پہنچائے، تو اللہ آپ کو پاک مٹی سے پاکیزگی حاصل کرنے (تیمم) کی اجازت دیتا ہے – اسی آیت 5:6 میں اور 4:43 میں۔ آپ نیت کرتے ہیں، ہتھیلیاں پاک مٹی پر مارتے ہیں اور ان سے اپنے چہرے اور ہاتھوں کا مسح کرتے ہیں۔ کتنی بار ہاتھ مارنا ہے اور ہاتھوں کا کتنا حصہ مسح کرنا ہے، اس بارے میں مکاتب کی بات مختلف ہے۔ جیسے ہی آپ دوبارہ پانی استعمال کر سکیں، اگلی نماز کے لیے دوبارہ وضو کرتے ہیں۔",
     virtueTitle: "وضو کی اتنی قدر کیوں ہے",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "اللہ توبہ کرنے والوں سے محبت کرتا ہے اور پاکیزگی اختیار کرنے والوں سے محبت کرتا ہے۔", src: "قرآن 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "اللہ توبہ کرنے والوں سے محبت کرتا ہے اور پاکیزگی اختیار کرنے والوں سے محبت کرتا ہے۔", src: "قرآن 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "پاکیزگی ایمان کا نصف ہے۔", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "عثمان بن عفان نے دکھایا کہ نبی ﷺ نے وضو کیسے کیا اور آپ ﷺ کے الفاظ آگے پہنچائے: جو شخص اس طرح وضو کرے اور پھر دو رکعت نماز پڑھے اور ان میں اپنے خیالات کو بھٹکنے نہ دے، اس کے پچھلے گناہ معاف کر دیے جاتے ہیں۔", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -132,7 +135,7 @@ const C: Record<Lang, Content> = {
     tay: "اگر آب نیافتید یا برای شما زیان‌آور باشد، الله اجازه می‌دهد با خاک پاک خود را پاک کنید (تیمم) – در همان آیهٔ 5:6 و در 4:43. نیت می‌کنید، کف دست‌ها را بر خاک پاک می‌زنید و با آنها صورت و دست‌هایتان را مسح می‌کنید. اینکه چند بار دست بزنید و دست‌ها را تا کجا مسح کنید را مذاهب به‌گونه‌ای متفاوت بیان می‌کنند. به‌محض اینکه دوباره بتوانید از آب استفاده کنید، برای نماز بعدی دوباره وضو می‌گیرید.",
     virtueTitle: "چرا وضو این‌قدر ارزشمند است",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "الله کسانی را که توبه می‌کنند دوست دارد و کسانی را که خود را پاک می‌کنند دوست دارد.", src: "قرآن 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "الله کسانی را که توبه می‌کنند دوست دارد و کسانی را که خود را پاک می‌کنند دوست دارد.", src: "قرآن 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "پاکیزگی نیمی از ایمان است.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "عثمان بن عفان نشان داد که پیامبر ﷺ چگونه وضو می‌گرفت و سخنان او را نقل کرد: هر که همچون این وضو بگیرد و سپس دو رکعت نماز بخواند بی‌آنکه افکارش پراکنده شود، گناهان پیشین او آمرزیده می‌شود.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -152,7 +155,7 @@ const C: Record<Lang, Content> = {
     tay: "که اوبه ونه مومئ، یا هغه ته تاسو زیان رسوي، الله تاسو ته اجازه درکوي چې په پاکې خاورې ځان پاک کړئ (تیمم) – په همدې 5:6 آیت او په 4:43 کې. تاسو نیت کوئ، خپل لاسونه پر پاکې خاورې ږدئ او په هغو خپل مخ او لاسونو ته مسح کوئ. څو ځله ږدل او د لاسونو څومره برخې ته مسح کول، مذهبونه په بېلابېل ډول بیانوي. همدا چې بیا اوبه وکاروئ، د راتلونکي لمانځه لپاره بیا اودس کوئ.",
     virtueTitle: "ولې اودس دومره ارزښت لري",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "الله هغه کسان خوښوي چې توبه کوي او هغه کسان خوښوي چې ځان پاکوي.", src: "قرآن 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "الله هغه کسان خوښوي چې توبه کوي او هغه کسان خوښوي چې ځان پاکوي.", src: "قرآن 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "پاکوالی د ایمان نیمایي دی.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "عثمان بن عفان وښودله چې پیغمبر ﷺ څنګه اودس کاوه او د هغه خبرې یې نقل کړې: څوک چې داسې اودس وکړي او بیا دوه رکعته لمونځ وکړي پرته له دې چې ذهن یې بل لوري ته ولاړ شي، د هغه تېر ګناهونه بښل کېږي.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -172,7 +175,7 @@ const C: Record<Lang, Content> = {
     tay: "Si tu ne trouves pas d'eau, ou si elle te nuirait, Allah te permet de te purifier avec de la terre propre (tayammum) – dans le même verset 5:6 et en 4:43. Tu formules l'intention, tu frappes de la terre propre avec tes paumes et tu t'en essuies le visage et les mains. Le nombre de frappes et l'étendue de ce qu'on essuie des mains sont décrits différemment par les écoles. Dès que tu peux de nouveau utiliser de l'eau, tu refais les ablutions (wudu) pour la prière suivante.",
     virtueTitle: "Pourquoi les ablutions valent-elles tant",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "Allah aime ceux qui se repentent et aime ceux qui se purifient.", src: "Coran 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "Allah aime ceux qui se repentent et aime ceux qui se purifient.", src: "Coran 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "La pureté est la moitié de la foi.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "Uthman ibn Affan a montré comment le Prophète ﷺ accomplissait les ablutions et a transmis ses paroles : quiconque fait ses ablutions ainsi, puis prie deux rak'at sans laisser ses pensées vagabonder, ses péchés passés lui sont pardonnés.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -192,7 +195,7 @@ const C: Record<Lang, Content> = {
     tay: "Si no encuentras agua, o si te perjudicaría, Allah te permite purificarte con tierra limpia (tayammum), en la misma aleya 5:6 y en 4:43. Haces la intención, golpeas tierra limpia con las palmas y te pasas las manos por el rostro y las manos. Cuántas veces se golpea y hasta dónde se pasa por las manos lo describen de forma distinta las escuelas. En cuanto puedas volver a usar agua, haces de nuevo el wudu para la siguiente oración.",
     virtueTitle: "Por qué la ablución vale tanto",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "Allah ama a los que se arrepienten y ama a los que se purifican.", src: "Corán 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "Allah ama a los que se arrepienten y ama a los que se purifican.", src: "Corán 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "La pureza es la mitad de la fe.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "Uthman ibn Affan mostró cómo realizaba el Profeta ﷺ el wudu y transmitió sus palabras: quien haga el wudu así y luego rece dos rak'at sin dejar vagar sus pensamientos, se le perdonan sus pecados anteriores.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -212,7 +215,7 @@ const C: Record<Lang, Content> = {
     tay: "Jika kamu tidak menemukan air, atau air akan membahayakanmu, Allah membolehkanmu bersuci dengan tanah yang bersih (tayamum) – dalam ayat 5:6 yang sama dan dalam 4:43. Kamu berniat, menepukkan kedua telapak tangan pada tanah bersih, lalu mengusap wajah dan kedua tangan dengannya. Berapa kali menepuk dan sejauh mana tangan diusap dijelaskan berbeda oleh para mazhab. Begitu kamu bisa memakai air lagi, kamu berwudhu lagi untuk shalat berikutnya.",
     virtueTitle: "Mengapa wudhu begitu berharga",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "Allah mencintai orang-orang yang bertobat dan mencintai orang-orang yang menyucikan diri.", src: "Al-Qur'an 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "Allah mencintai orang-orang yang bertobat dan mencintai orang-orang yang menyucikan diri.", src: "Al-Qur'an 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "Kesucian adalah separuh iman.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "Utsman bin Affan memperlihatkan bagaimana Nabi ﷺ berwudhu dan menyampaikan sabdanya: siapa yang berwudhu seperti ini lalu shalat dua rakaat tanpa membiarkan pikirannya melayang, dosa-dosanya yang telah lalu diampuni.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -232,7 +235,7 @@ const C: Record<Lang, Content> = {
     tay: "Jika anda tidak menemui air, atau air itu akan memudaratkan anda, Allah membenarkan anda bersuci dengan tanah yang bersih (tayamum) – dalam ayat 5:6 yang sama dan dalam 4:43. Anda berniat, menepuk tanah yang bersih dengan telapak tangan dan menyapu muka serta tangan dengannya. Berapa kali menepuk dan sejauh mana tangan disapu diterangkan secara berbeza oleh mazhab-mazhab. Sebaik sahaja anda boleh menggunakan air semula, anda berwudhu semula untuk solat yang seterusnya.",
     virtueTitle: "Mengapa wudhu begitu bernilai",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "Allah mencintai orang yang bertaubat dan mencintai orang yang menyucikan diri.", src: "Quran 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "Allah mencintai orang yang bertaubat dan mencintai orang yang menyucikan diri.", src: "Quran 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "Kesucian ialah separuh daripada iman.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "Uthman bin Affan menunjukkan bagaimana Nabi ﷺ berwudhu dan menyampaikan sabdanya: sesiapa yang berwudhu seperti ini kemudian solat dua rakaat tanpa membiarkan fikirannya melayang, dosanya yang lalu diampunkan.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -252,7 +255,7 @@ const C: Record<Lang, Content> = {
     tay: "পানি না পেলে, বা পানি ব্যবহারে ক্ষতি হলে, আল্লাহ আপনাকে পবিত্র মাটি দিয়ে পবিত্রতা অর্জনের (তায়াম্মুম) অনুমতি দিয়েছেন – একই 5:6 আয়াতে এবং 4:43-এ। আপনি নিয়ত করেন, পবিত্র মাটিতে দুই হাতের তালু মারেন এবং তা দিয়ে মুখ ও হাত মাসেহ করেন। কতবার মারতে হবে এবং হাতের কতটুকু পর্যন্ত মাসেহ করতে হবে তা মাযহাবগুলো ভিন্নভাবে বর্ণনা করে। আবার পানি ব্যবহার করতে পারলেই পরবর্তী নামাজের জন্য আপনি আবার ওযু করেন।",
     virtueTitle: "কেন ওযুর এত মূল্য",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "আল্লাহ তাওবাকারীদের ভালোবাসেন এবং যারা নিজেদের পবিত্র করে তাদের ভালোবাসেন।", src: "কুরআন 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "আল্লাহ তাওবাকারীদের ভালোবাসেন এবং যারা নিজেদের পবিত্র করে তাদের ভালোবাসেন।", src: "কুরআন 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "পবিত্রতা ঈমানের অর্ধেক।", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "উসমান ইবনে আফফান দেখিয়েছিলেন নবী ﷺ কীভাবে ওযু করতেন এবং তাঁর কথা বর্ণনা করেছেন: যে ব্যক্তি এভাবে ওযু করে তারপর চিন্তা এলোমেলো হতে না দিয়ে দুই রাকাত নামাজ পড়ে, তার আগের গুনাহ ক্ষমা করা হয়।", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -272,7 +275,7 @@ const C: Record<Lang, Content> = {
     tay: "Если ты не можешь найти воду или она причинила бы тебе вред, Аллах разрешает очиститься чистой землёй (тайаммум) – в том же аяте 5:6 и в 4:43. Ты делаешь намерение, ударяешь ладонями по чистой земле и проводишь ими по лицу и рукам. Сколько раз ударять и докуда проводить по рукам, школы описывают по-разному. Как только ты снова сможешь пользоваться водой, ты снова совершаешь омовение (вуду) для следующего намаза.",
     virtueTitle: "Почему омовение так ценно",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "Аллах любит кающихся и любит очищающихся.", src: "Коран 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "Аллах любит кающихся и любит очищающихся.", src: "Коран 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "Чистота – половина веры.", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "Усман ибн Аффан показал, как Пророк ﷺ совершал омовение, и передал его слова: тому, кто совершит омовение так, а затем совершит два ракаата, не давая мыслям блуждать, будут прощены его прежние грехи.", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],
@@ -292,7 +295,7 @@ const C: Record<Lang, Content> = {
     tay: "如果找不到水，或用水会对你有害，安拉允许你用洁净的泥土做净（土净）——就在同一节经文 5:6 以及 4:43 中。你立意，用双掌拍在洁净的泥土上，再用它们抹脸和双手。拍几次、双手抹到什么位置，各学派的说法不同。一旦能再用水，下一次礼拜前你就重新做小净。",
     virtueTitle: "小净为何如此珍贵",
     virtues: [
-      { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "安拉喜爱忏悔的人，也喜爱洁净自己的人。", src: "古兰经 2:222", href: "/surah/2?v=222" },
+      { ar: VIRTUE_VERSE, text: "安拉喜爱忏悔的人，也喜爱洁净自己的人。", src: "古兰经 2:222", href: "/surah/2?v=222" },
       { ar: "الطُّهُورُ شَطْرُ الْإِيمَانِ", text: "洁净是信仰的一半。", src: "Sahih Muslim 223" },
       { ar: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", text: "奥斯曼·本·阿凡示范了先知ﷺ如何做小净，并传述了他的话：谁这样做小净，然后礼两拉克尔提而不让思绪游离，他以前的罪过就会得到饶恕。", src: "Sahih al-Bukhari 159, Sahih Muslim 226" },
     ] as Virtue[],

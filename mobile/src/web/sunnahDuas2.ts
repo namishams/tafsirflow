@@ -540,7 +540,7 @@ export const SUNNAH_DUAS_2: SunnahDua[] = [
     ar: "جَزَاكَ اللَّهُ خَيْرًا",
     tr: "Jazāka llāhu khayrā.",
     en: "May Allah reward you with good. (When someone does you a favour – whoever says this has praised them fully.)",
-    de: "Möge Allah dich mit Gutem belohnen. (Wenn dir jemand einen Gefallen tut – wer dies sagt, hat ihn vollkommen gelobt.)",
+    de: "Möge Allah dich mit Gutem belohnen. (Wenn Ihnen jemand einen Gefallen tut – wer dies sagt, hat ihn vollkommen gelobt.)",
     src: "Jamiʿ at-Tirmidhi 2035",
   },
   {

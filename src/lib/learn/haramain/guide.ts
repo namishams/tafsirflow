@@ -17,7 +17,7 @@ export const UMRAH: Step[] = [
 
 const D = (n: number) => L3(`${n} Dhu al-Hijja`, `${n}. Dhu l-Hiddscha`, `${n} ذو الحجة`);
 export const HAJJ: Step[] = [
-  { arabic: "الإحرام", day: D(8), title: L3("Ihram for Hajj", "Ihram für den Hadsch", "الإحرام بالحج"), text: L3("Pilgrims doing tamattu' enter ihram again, usually from where they stay in Mecca.", "Wer Tamattu' vollzieht, treten Sie erneut in den Ihram, meist an seinem Aufenthaltsort in Mekka.", "يُحرم المتمتع بالحج من مكانه في مكة غالبًا.") },
+  { arabic: "الإحرام", day: D(8), title: L3("Ihram for Hajj", "Ihram für den Hadsch", "الإحرام بالحج"), text: L3("Pilgrims doing tamattu' enter ihram again, usually from where they stay in Mecca.", "Wer Tamattu' vollzieht, tritt erneut in den Ihram, meist an seinem Aufenthaltsort in Mekka.", "يُحرم المتمتع بالحج من مكانه في مكة غالبًا.") },
   { arabic: "منى", day: D(8), title: L3("To Mina", "Nach Mina", "إلى منى"), text: L3("Spend the day and night in Mina in prayer (yawm al-tarwiya).", "Tag und Nacht in Mina im Gebet verbringen (Yaum at-Tarwiya).", "قضاء يوم التروية وليلته في منى.") },
   { arabic: "عرفة", day: D(9), title: L3("Standing at Arafah", "Stehen in Arafat", "الوقوف بعرفة"), text: L3("From noon until sunset in supplication. The heart of Hajj.", "Von Mittag bis Sonnenuntergang im Bittgebet. Das Herz des Hadsch.", "من الزوال إلى الغروب في الدعاء، وهو ركن الحج الأعظم.") },
   { arabic: "مزدلفة", day: D(9), title: L3("Night at Muzdalifah", "Nacht in Muzdalifa", "المبيت بمزدلفة"), text: L3("Pray Maghrib and Isha together, rest, collect pebbles.", "Maghrib und Ischa zusammen beten, ruhen, Steinchen sammeln.", "جمع المغرب والعشاء والمبيت والتقاط الحصى.") },

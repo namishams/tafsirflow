@@ -1509,25 +1509,25 @@ ahmad|le plus digne de louange
 mahmud|loué, digne de louange
 mustafa|l'élu
 abdullah|serviteur d'Allah
-abdurrahman|serviteur Sie Tout Miséricordieux
-abdurrahim|serviteur Sie Particulièrement Miséricordieux
-abdulaziz|serviteur Sie Tout-Puissant
-abdulmalik|serviteur Sie Roi
-abdulkarim|serviteur Sie Très Généreux
-abdulhamid|serviteur Sie Digne de louange
+abdurrahman|serviteur du Tout Miséricordieux
+abdurrahim|serviteur du Particulièrement Miséricordieux
+abdulaziz|serviteur du Tout-Puissant
+abdulmalik|serviteur du Roi
+abdulkarim|serviteur du Très Généreux
+abdulhamid|serviteur du Digne de louange
 abdulqadir|serviteur de Celui qui peut tout
 abdussalam|serviteur de la Source de paix
-abdulwahhab|serviteur Sie Dispensateur
+abdulwahhab|serviteur du Dispensateur
 abdulghani|serviteur de l'Autosuffisant
-abdullatif|serviteur Sie Subtil, Sie Bienveillant
-abdulhadi|serviteur Sie Guide
+abdullatif|serviteur du Subtil, du Bienveillant
+abdulhadi|serviteur du Guide
 abdulbasit|serviteur de Celui qui étend les biens
 abdulwahid|serviteur de l'Unique
 abdulfattah|serviteur de Celui qui ouvre
-abdulmajid|serviteur Sie Glorieux
-abdulhayy|serviteur Sie Vivant éternel
+abdulmajid|serviteur du Glorieux
+abdulhayy|serviteur du Vivant éternel
 abdulwadud|serviteur de l'Affectueux
-abdulghafur|serviteur Sie Pardonneur
+abdulghafur|serviteur du Pardonneur
 ibrahim|le prophète Abraham, l'ami proche d'Allah
 ismail|le prophète Ismaël ; « Dieu entend »
 ishaq|le prophète Isaac ; « il rit »
@@ -1553,16 +1553,16 @@ imran|la famille de 'Imran dans le Coran ; de 'umr : vie, épanouissement
 luqman|Luqman le Sage, qui a donné son nom à une sourate
 taha|les lettres initiales de la sourate Ta-Ha
 yasin|les lettres initiales de la sourate Ya-Sin
-abubakr|la kunya Sie premier calife, le plus proche compagnon
+abubakr|la kunya du premier calife, le plus proche compagnon
 umar|longue vie ; le deuxième calife
 uthman|le troisième calife ; à l'origine un jeune outardeau (oiseau)
 ali|élevé, sublime
 hasan|bon, beau
 husayn|petit Hasan : le bon, le beau
-qasim|celui qui répartit ; un fils Sie Prophète ﷺ
+qasim|celui qui répartit ; un fils du Prophète ﷺ
 jafar|ruisseau, petit cours d'eau
-hamza|ferme, fort ; oncle Sie Prophète ﷺ
-abbas|à l'air sévère ; un nom Sie lion ; oncle Sie Prophète ﷺ
+hamza|ferme, fort ; oncle du Prophète ﷺ
+abbas|à l'air sévère ; un nom du lion ; oncle du Prophète ﷺ
 khalid|éternel, durable
 bilal|fraîcheur ; le premier muezzin de l'islam
 zayd|croissance ; le seul compagnon nommé dans le Coran
@@ -1581,7 +1581,7 @@ musab|difficile à dompter : à la volonté ferme
 jabir|celui qui répare et console
 tamim|complet, fort
 hakim|sage
-hassaan|très beau ; poète Sie Prophète ﷺ
+hassaan|très beau ; poète du Prophète ﷺ
 asim|protecteur, gardien
 safwan|roche claire et lisse
 sahl|facile, doux
@@ -1589,15 +1589,15 @@ harith|cultivateur, celui qui s'efforce
 aamir|florissant, plein de vie
 zahir|rayonnant, en fleur
 zainulabidin|parure des adorateurs
-tariq|visiteur de la nuit ; étoile Sie matin
+tariq|visiteur de la nuit ; étoile du matin
 ayman|béni ; le côté droit
 ridwan|bon plaisir (d'Allah)
 ihsan|excellence, faire le bien
 naim|félicité, délice
-ramadan|le mois Sie jeûne
+ramadan|le mois du jeûne
 tawfiq|réussite accordée par Allah
 burhan|preuve, évidence
-furqan|le critère qui distingue le vrai Sie faux
+furqan|le critère qui distingue le vrai du faux
 najm|étoile
 waqar|dignité, calme
 rayhan|plante parfumée, basilic
@@ -1651,7 +1651,7 @@ mazin|nuage de pluie
 murad|souhait, but
 nadir|rare, précieux
 nasir|soutien, partisan
-rayyan|bien arrosé ; une porte Sie Paradis pour ceux qui jeûnent
+rayyan|bien arrosé ; une porte du Paradis pour ceux qui jeûnent
 riyad|jardins
 sami|élevé, sublime
 samir|compagnon des veillées
@@ -1669,7 +1669,7 @@ arif|connaisseur, sage
 asad|lion
 basil|brave
 hamid|celui qui loue Allah
-hashim|arrière-grand-père Sie Prophète ﷺ ; « celui qui émiette le pain » (pour ses hôtes)
+hashim|arrière-grand-père du Prophète ﷺ ; « celui qui émiette le pain » (pour ses hôtes)
 imad|pilier, soutien
 isam|sauvegarde
 junayd|petit soldat
@@ -1686,7 +1686,7 @@ rami|archer
 wail|celui qui cherche refuge
 yamin|main droite ; bénédiction
 zahid|content de peu, ascète
-faruq|celui qui distingue le vrai Sie faux ; titre d'Umar
+faruq|celui qui distingue le vrai du faux ; titre d'Umar
 husam|épée tranchante
 jawad|généreux
 muin|aide, soutien
@@ -1702,17 +1702,17 @@ shahin|faucon
 arslan|lion (turc)
 arman|souhait, idéal (persan)
 kamran|réussi, fortuné (persan)
-maryam|mère Sie prophète Jésus ; la seule femme nommée dans le Coran
+maryam|mère du prophète Jésus ; la seule femme nommée dans le Coran
 asiya|épouse de Pharaon, louée dans le Coran comme exemple
 hajar|mère d'Ismaël ; sa quête entre Safa et Marwa se perpétue dans le Hajj
 sara|épouse d'Abraham ; « princesse »
 hawwa|Ève, mère de l'humanité
-khadija|première épouse Sie Prophète ﷺ et première à croire en lui
+khadija|première épouse du Prophète ﷺ et première à croire en lui
 aisha|vivante, pleine de vie
-fatima|fille Sie Prophète ﷺ ; « celle qui sevre »
+fatima|fille du Prophète ﷺ ; « celle qui sevre »
 zahra|la radieuse ; titre de Fatima
-zaynab|fille Sie Prophète ﷺ ; souvent expliqué comme une plante parfumée
-ruqayya|ascension ; fille Sie Prophète ﷺ
+zaynab|fille du Prophète ﷺ ; souvent expliqué comme une plante parfumée
+ruqayya|ascension ; fille du Prophète ﷺ
 batul|vouée à Allah ; titre de Maryam et de Fatima
 hafsa|jeune lionne ; l'une des mères des croyants
 safiyya|pure ; amie choisie
@@ -1723,15 +1723,15 @@ asma|élevée ; aussi « noms »
 nusayba|de noble lignée ; a défendu le Prophète ﷺ à Uhud
 rufayda|aide, soutien ; la première infirmière de l'islam
 baraka|bénédiction ; le nom d'Umm Ayman
-halima|douce, indulgente ; nourrice Sie Prophète ﷺ
-shayma|au grain de beauté ; sœur de lait Sie Prophète ﷺ
-arwa|bouquetin ; tante Sie Prophète ﷺ
+halima|douce, indulgente ; nourrice du Prophète ﷺ
+shayma|au grain de beauté ; sœur de lait du Prophète ﷺ
+arwa|bouquetin ; tante du Prophète ﷺ
 hala|halo autour de la lune
 hind|nom d'Umm Salama, l'une des mères des croyants
 khawla|gazelle ; la compagne dont Allah a entendu la plainte
-mariya|Mariya la Copte, mère Sie fils Sie Prophète ﷺ, Ibrahim
+mariya|Mariya la Copte, mère du fils du Prophète ﷺ, Ibrahim
 jamila|belle
-amina|en sécurité, protégée ; mère Sie Prophète ﷺ
+amina|en sécurité, protégée ; mère du Prophète ﷺ
 sakina|sérénité, paix intérieure
 huda|guidance
 nur|lumière
@@ -1739,10 +1739,10 @@ rahma|miséricorde
 iman|foi
 amal|espoir
 jannah|jardin, Paradis
-firdaws|le plus haut jardin Sie Paradis
-kawthar|abondance ; un fleuve Sie Paradis
-salsabil|une source Sie Paradis
-tasnim|une source Sie Paradis
+firdaws|le plus haut jardin du Paradis
+kawthar|abondance ; un fleuve du Paradis
+salsabil|une source du Paradis
+tasnim|une source du Paradis
 bushra|bonne nouvelle
 isra|le voyage nocturne ; nom de la sourate 17
 jana|fruit mûr prêt à être cueilli
@@ -1755,7 +1755,7 @@ sabira|patiente
 sana|éclat, splendeur
 yusra|aisance
 aliya|élevée, sublime
-aya|signe ; verset Sie Coran
+aya|signe ; verset du Coran
 bayan|clarté, éloquence
 duaa|invocation
 hanan|tendresse, compassion
@@ -1768,13 +1768,13 @@ salwa|réconfort ; les cailles qu'Allah envoya aux Enfants d'Israël
 shifa|guérison
 sidra|jujubier (Sidrat al-Muntaha)
 taqwa|conscience d'Allah
-duha|lumière Sie matin
+duha|lumière du matin
 fajr|aube
 ghufran|pardon
 husna|la plus belle, la meilleure
 qamar|lune
 raghad|vie insouciante et abondante
-sundus|soie fine (Sie Paradis)
+sundus|soie fine (du Paradis)
 qurratulayn|réconfort et joie des yeux
 qanita|pieusement obéissante
 abida|adoratrice
@@ -1832,7 +1832,7 @@ rasha|jeune gazelle
 ruba|collines
 ruwayda|douce, à la démarche légère
 sabah|matin
-samar|conversation Sie soir
+samar|conversation du soir
 thurayya|les Pléiades (amas d'étoiles)
 widad|amour, affection
 wijdan|sentiment, conscience
@@ -1862,7 +1862,7 @@ salima|saine, sauve
 alya|hauteurs, élévation
 warda|rose
 zaina|parure, beauté
-inshirah|soulagement et ouverture Sie cœur
+inshirah|soulagement et ouverture du cœur
 yasmin|jasmin
 nasrin|églantine (persan)
 fayruz|turquoise (pierre précieuse, persan)
@@ -4141,20 +4141,20 @@ type Dict = Record<string, string>;
 const T: Record<UiLang, Dict> = {
   de: {
     metaTitle: "Muslimische Vornamen mit Bedeutung – Namen-Finder",
-    metaDesc: "Über 300 muslimische Jungen- und Mädchennamen mit arabischer Schreibweise, Bedeutung und Koranvers. Der Namen-Finder schlägt passende Namen für euer Kind vor.",
-    kicker: "Namen für euer Kind",
+    metaDesc: "Über 300 muslimische Jungen- und Mädchennamen mit arabischer Schreibweise, Bedeutung und Koranvers. Der Namen-Finder schlägt passende Namen für Ihr Kind vor.",
+    kicker: "Namen für Ihr Kind",
     title: "Ein schöner Name",
-    lead: "Muslimische Vornamen, die Familien wirklich tragen – mit arabischer Schreibweise, Bedeutung und dem Vers, in dem der Name oder seine Wurzel im Koran vorkommt. Der Namen-Finder hört euch zu und schlägt drei Namen vor.",
+    lead: "Muslimische Vornamen, die Familien wirklich tragen – mit arabischer Schreibweise, Bedeutung und dem Vers, in dem der Name oder seine Wurzel im Koran vorkommt. Der Namen-Finder hört Ihnen zu und schlägt drei Namen vor.",
     heroRef: "Koran 19:7",
     tabFinder: "Namen-Finder",
     tabAll: "Alle Namen",
     step: "Schritt {n} von {total}",
     s1: "Die Familie",
-    s1d: "Damit wir den Namen zu eurer Familie passend vorschlagen und nicht einen Namen wiederholen.",
+    s1d: "Damit wir den Namen zu Ihrer Familie passend vorschlagen und nicht einen Namen wiederholen.",
     s2: "Das Kind",
     s2d: "Geschlecht, Geburtstermin und Geschwister – alles außer dem Geschlecht ist freiwillig.",
-    s3: "Eure Wünsche",
-    s3d: "Was soll der Name ausdrücken? Wählt so viel oder so wenig, wie ihr möchtet.",
+    s3: "Ihre Wünsche",
+    s3d: "Was soll der Name ausdrücken? Wählen Sie so viel oder so wenig, wie Sie möchten.",
     s4: "Vorschläge",
     father: "Name des Vaters",
     mother: "Name der Mutter",
@@ -4165,7 +4165,7 @@ const T: Record<UiLang, Dict> = {
     gender: "Für",
     boy: "Junge",
     girl: "Mädchen",
-    both: "Schlagt uns beides vor",
+    both: "Beides vorschlagen",
     date: "Geburtsdatum oder errechneter Termin (freiwillig)",
     hijriIs: "Im islamischen Kalender: {date}",
     siblings: "Namen der Geschwister (freiwillig, mit Komma getrennt)",
@@ -4202,15 +4202,15 @@ const T: Record<UiLang, Dict> = {
     v_theme: "Ein Vers zum Thema {theme}",
     listen: "Anhören",
     verseRef: "Koran {ref}",
-    noPool: "Mit diesen Wünschen haben wir keinen passenden Namen gefunden. Lockert einen Filter, dann klappt es.",
+    noPool: "Mit diesen Wünschen haben wir keinen passenden Namen gefunden. Lockern Sie einen Filter, dann klappt es.",
     resultLead: "Drei Namen aus den am besten passenden – jedes Mischen zeigt andere.",
-    monthNote: "Euer Kind kommt im Monat {month} zur Welt.",
-    donateLine: "Möge dieser Name ein Segen für euer Kind sein. Der Namen-Finder bleibt für jede Familie kostenlos. Wenn er euch geholfen hat, könnt ihr Quran Masterclass freiwillig unterstützen – als Sadaqa dschariya.",
+    monthNote: "Ihr Kind kommt im Monat {month} zur Welt.",
+    donateLine: "Möge dieser Name ein Segen für Ihr Kind sein. Der Namen-Finder bleibt für jede Familie kostenlos. Wenn er Ihnen geholfen hat, können Sie Quran Masterclass freiwillig unterstützen – als Sadaqa dschariya.",
     loved: "Bei Familien beliebt",
     lovedD: "Die Namen, die Familien hier am häufigsten gemerkt haben.",
-    lovedEmpty: "Noch hat niemand einen Namen gemerkt – tippt auf „Merken“, um den Anfang zu machen.",
-    favTitle: "Eure gemerkten Namen",
-    favEmpty: "Noch keine Namen gemerkt. Tippt bei einem Namen auf das Herz.",
+    lovedEmpty: "Noch hat niemand einen Namen gemerkt – tippen Sie auf „Merken“, um den Anfang zu machen.",
+    favTitle: "Ihre gemerkten Namen",
+    favEmpty: "Noch keine Namen gemerkt. Tippen Sie bei einem Namen auf das Herz.",
     favAdd: "Merken",
     favRemove: "Nicht mehr merken",
     copyList: "Liste kopieren",
@@ -4223,7 +4223,7 @@ const T: Record<UiLang, Dict> = {
     lenF: "Länge",
     search: "Name oder Bedeutung suchen …",
     count: "{n} Namen",
-    surprise: "Überrasch mich",
+    surprise: "Überraschen Sie mich",
     noMatch: "Kein Name passt zu dieser Auswahl.",
     boysN: "{n} Jungennamen",
     girlsN: "{n} Mädchennamen",
@@ -4240,7 +4240,7 @@ const T: Record<UiLang, Dict> = {
     rule3: "Namen mit schlechter oder unschöner Bedeutung.",
     rule4: "Den Namen des Vaters, der Mutter oder eines Geschwisters.",
     rightTitle: "Ein Recht des Kindes",
-    rightText: "Einen guten Namen zu wählen gehört zu den Rechten des Kindes – er begleitet es ein Leben lang. Wenn ihr unsicher seid, fragt eure Familie und einen Gelehrten.",
+    rightText: "Einen guten Namen zu wählen gehört zu den Rechten des Kindes – er begleitet es ein Leben lang. Wenn Sie unsicher sind, fragen Sie Ihre Familie und einen Gelehrten.",
     meaningNote: "Bedeutungen sind kurz gefasst; viele Namen tragen mehrere Nuancen.",
     g_b: "Junge",
     g_g: "Mädchen",

@@ -3,16 +3,16 @@
 export type Virtue = { ar: string; text: string; src: string; href?: string };
 export const C = {
   de: {
-    kicker: "Gebetswaschung · Schritt für Schritt", title: "Wudu – so wäschst du dich für das Gebet",
-    lead: "Bevor du vor Allah trittst, wäschst du dich – mit Wasser und mit Absicht. Der Trainer zeigt dir jeden Schritt, sagt dir, was Pflicht ist und was empfohlen, und am Ende prüfst du dich mit einem kleinen Quiz.",
+    kicker: "Gebetswaschung · Schritt für Schritt", title: "Wudu – so waschen Sie sich für das Gebet",
+    lead: "Bevor Sie vor Allah treten, waschen Sie sich – mit Wasser und mit Absicht. Der Trainer zeigt Ihnen jeden Schritt, sagt Ihnen, was Pflicht ist und was empfohlen, und am Ende prüfen Sie sich mit einem kleinen Quiz.",
     verseKicker: "Der Wudu-Vers", verseTitle: "Was Allah über die Waschung sagt",
     verseLead: "Die Gebetswaschung steht im Quran selbst: das Gesicht, die Arme bis zu den Ellenbogen, der Kopf und die Füße bis zu den Knöcheln.",
     verseRef: "Sura al-Ma'ida 5:6", listen: "Vers anhören", trBy: "Übersetzung: Bubenheim & Elyas",
     breaksTitle: "Was das Wudu aufhebt", breaksLead: "Darin sind sich alle Rechtsschulen einig:",
     breaks: ["Wenn Urin, Stuhl oder Winde den Körper verlassen", "Tiefer Schlaf", "Bewusstlosigkeit"],
-    breaksNote: "Andere Punkte – etwa Berührungen, Blutungen oder andere Ausscheidungen – beurteilen die Rechtsschulen unterschiedlich. Frag dazu einen Lehrer deiner Schule.",
+    breaksNote: "Andere Punkte – etwa Berührungen, Blutungen oder andere Ausscheidungen – beurteilen die Rechtsschulen unterschiedlich. Fragen Sie dazu einen Lehrer Ihrer Schule.",
     tayTitle: "Kein Wasser? Tayammum",
-    tay: "Findest du kein Wasser oder würde es dir schaden, erlaubt Allah dir die Reinigung mit reiner Erde (Tayammum) – im selben Vers 5:6 und in 4:43. Du fasst die Absicht, schlägst mit den Handflächen auf reine Erde und streichst damit über das Gesicht und die Hände. Wie oft du aufschlägst und wie weit du über die Hände streichst, beschreiben die Rechtsschulen unterschiedlich. Sobald du wieder Wasser verwenden kannst, machst du für das nächste Gebet wieder Wudu.",
+    tay: "Finden Sie kein Wasser oder würde es Ihnen schaden, erlaubt Allah Ihnen die Reinigung mit reiner Erde (Tayammum) – im selben Vers 5:6 und in 4:43. Sie fassen die Absicht, schlagen mit den Handflächen auf reine Erde und streichen damit über das Gesicht und die Hände. Wie oft Sie aufschlagen und wie weit Sie über die Hände streichen, beschreiben die Rechtsschulen unterschiedlich. Sobald Sie wieder Wasser verwenden können, machen Sie für das nächste Gebet wieder Wudu.",
     virtueTitle: "Warum die Waschung so viel wert ist",
     virtues: [
       { ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", text: "Allah liebt die, die sich reumütig (Ihm) zuwenden, und Er liebt die, die sich reinigen.", src: "Quran 2:222", href: "/surah/2?v=222" },

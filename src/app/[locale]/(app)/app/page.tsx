@@ -20,7 +20,7 @@ type C = { kicker: string; title: string; lead: string; buttons: { install: stri
 const de: C = {
   kicker: "Die App", title: "Quran Masterclass auf Ihr Handy",
   lead: "Die ganze Masterclass als App: Vollbild ohne Browserleiste, eigenes Symbol auf dem Startbildschirm, gespeicherte Suren auch offline – und jedes Update der Website ist sofort in der App.",
-  buttons: { install: "App installieren", installed: "Die App ist installiert", apk: "Android-App herunterladen (APK)", apkSoon: "Android-App: bald verfügbar", play: "Bei Google Play laden", samsung: "Sie nutzt Samsung Internet. Bitte installiere nicht über dessen Menü – Samsung baut dabei eine eigene Hülle für ein altes Android, die Google Play Protect blockiert. Öffnen Sie die Seite stattdessen in Chrome und wählen Sie „App installieren“, oder lade die Android-App oben herunter." },
+  buttons: { install: "App installieren", installed: "Die App ist installiert", apk: "Android-App herunterladen (APK)", apkSoon: "Android-App: bald verfügbar", play: "Bei Google Play laden", samsung: "Sie nutzen Samsung Internet. Bitte installieren Sie nicht über dessen Menü – Samsung baut dabei eine eigene Hülle für ein altes Android, die Google Play Protect blockiert. Öffnen Sie die Seite stattdessen in Chrome und wählen Sie „App installieren“, oder laden Sie die Android-App oben herunter." },
   waysTitle: "So installieren Sie sie",
   ways: [
     { t: "Android (Chrome)", steps: ["quranmasterclass.com in Chrome öffnen.", "Auf „App installieren“ tippen – oder im Menü ⋮ „App installieren“ wählen.", "Das Symbol erscheint auf dem Startbildschirm."] },

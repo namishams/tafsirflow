@@ -27,7 +27,7 @@ Al-Luhaidan liest im ruhigen **Murattal**-Stil, ohne kunstvolle Ausschmückungen
 
 - **Chuschu' (Demut) hören:** Achten Sie darauf, wie er bei warnenden und tröstenden Versen den Ton verändert. Das zeigt Ihnen, dass Tadschwid und Gefühl kein Gegensatz sind.
 - **Langsam lesen lernen:** Sein ruhiges Tempo eignet sich gut, um einzelne Verse mitzusprechen und die Aussprache nachzuahmen.
-- **Mit Tafsir verbinden:** Hören Sie einen Abschnitt, lesen Sie dann die Erklärung und hören Sie ihn erneut. Sie werden merken, wie viel mehren Sie sich die Rezitation dann erreicht.
+- **Mit Tafsir verbinden:** Hören Sie einen Abschnitt, lesen Sie dann die Erklärung und hören Sie ihn erneut. Sie werden merken, wie viel mehr die Rezitation Sie dann erreicht.
 
 ## Ein Vermächtnis der Stille
 
@@ -642,7 +642,7 @@ Neben seiner Arbeit in Kairo wurde Scheich Jibreel in viele Länder eingeladen, 
 ## Was Sie als Lernende oder Lernender mitnehmen können
 
 - **Gefühl und Klarheit:** Er zeigt, dass eine emotionale Rezitation trotzdem deutlich und regelgerecht sein kann.
-- **Sie'a mit Herz:** Hören Sie seine Bittgebete nicht nur als Klang, sondern achten Sie auf die Worte – viele davon stammen aus dem Qur'an und der Sunna und eignen sich gut für Ihr eigenes Gebet.
+- **Du'a mit Herz:** Hören Sie seine Bittgebete nicht nur als Klang, sondern achten Sie auf die Worte – viele davon stammen aus dem Qur'an und der Sunna und eignen sich gut für Ihr eigenes Gebet.
 - **Gemeinschaft erleben:** Seine Tarawih-Aufnahmen vermitteln das Gefühl, mit Tausenden gemeinsam zu beten – eine schöne Motivation für den eigenen Ramadan.
 
 ## Was bleibt
@@ -781,7 +781,7 @@ Seine Stimme ist warm, ruhig und etwas zurückgenommen. Er liest ohne Hast, mit 
 
 ## Ein Wort zum Hören im Internet
 
-Kurze Clips können ein wunderbarer Anfang sein – sie sind aber nur ein Anfang. Der größte Gewinn liegt darin, ganze Suren zu hören, sie zu verstehen und Stück für Stück selbst zu lesen. Genau dabei möchte Quran Masterclassen Sie sich begleiten: Vers für Vers, mit Übersetzung und Tafsir.
+Kurze Clips können ein wunderbarer Anfang sein – sie sind aber nur ein Anfang. Der größte Gewinn liegt darin, ganze Suren zu hören, sie zu verstehen und Stück für Stück selbst zu lesen. Genau dabei möchte Quran Masterclass Sie begleiten: Vers für Vers, mit Übersetzung und Tafsir.
 
 ## Was bleibt
 
@@ -854,7 +854,7 @@ As-Subayyils Lesung ist **Murattal** im klassischen Stil der Heiligen Moschee: r
 ## Was Sie als Lernende oder Lernender mitnehmen können
 
 - **Würde und Einfachheit:** Seine Rezitation zeigt, dass Schlichtheit eine eigene Schönheit hat.
-- **Historische Aufnahmen:** Ältere Gebetsaufnahmen aus Mekka lassenen Sie sich eine Epoche miterleben, in der viele heutige Imame ihre Vorbilder fanden.
+- **Historische Aufnahmen:** Ältere Gebetsaufnahmen aus Mekka lassen Sie eine Epoche miterleben, in der viele heutige Imame ihre Vorbilder fanden.
 - **Wissen und Rezitation verbinden:** Sein Leben ermutigt dazu, nicht nur zu lesen, sondern auch zu lernen, was man liest.
 
 ## Vermächtnis
@@ -999,7 +999,7 @@ Seine Lesung ist **Murattal** im alten hidschazisch-mekkanischen Stil: ruhig, kl
 
 ## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Tradition hören:** Seine Aufnahmen lassenen Sie sich erleben, wie in Mekka vor Jahrzehnten rezitiert wurde, und zeigen, wie viel Kontinuität es in der Rezitation gibt.
+- **Tradition hören:** Seine Aufnahmen lassen Sie erleben, wie in Mekka vor Jahrzehnten rezitiert wurde, und zeigen, wie viel Kontinuität es in der Rezitation gibt.
 - **Würde statt Effekt:** Er erinnert daran, dass die Schönheit der Rezitation aus dem Text selbst kommt.
 - **Wissen als Fundament:** Sein Leben zeigt, dass Imamat und Lernen untrennbar sind.
 
@@ -1437,7 +1437,7 @@ Shuayshas Rezitation verbindet Kraft und Wärme. Im **Mujawwad** gestaltete er d
 
 ## Was Sie als Lernende oder Lernender mitnehmen können
 
-- **Die frühe Radio-Ära hören:** Seine Aufnahmen verbindenen Sie sich mit den Anfängen der Rezitation im Rundfunk und mit dem Klang einer ganzen Generation.
+- **Die frühe Radio-Ära hören:** Seine Aufnahmen verbinden Sie mit den Anfängen der Rezitation im Rundfunk und mit dem Klang einer ganzen Generation.
 - **Melodie mit Geduld:** Achten Sie darauf, wie langsam und bewusst er Melodien aufbaut. Das lehrt, dass Schönheit Zeit braucht.
 - **Lebenslange Hingabe:** Über sieben Jahrzehnte hat er dem Qur'an gedient – ein Vorbild für Beständigkeit.
 

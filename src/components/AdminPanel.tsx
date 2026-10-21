@@ -324,7 +324,7 @@ function AdhanAdmin() {
   const remove = async (id: string) => { await fetch(`/api/admin/adhan?id=${id}`, { method: "DELETE" }); resetAdhanCache(); load(); };
   return (
     <div className="grid gap-4">
-      <p className="max-w-2xl text-sm text-muted">Adhan-Aufnahmen als MP3 (max. 15 MB). Im Radio und bei den Gebetszeiten spielt standardmäßig zufällig eine davon; Nutzer können auch eine feste Stimme wählen. Nutze nur Aufnahmen, für die du die Rechte oder eine Erlaubnis hast, und trage die Quelle ein – sie wird angezeigt.</p>
+      <p className="max-w-2xl text-sm text-muted">Adhan-Aufnahmen als MP3 (max. 15 MB). Im Radio und bei den Gebetszeiten spielt standardmäßig zufällig eine davon; Nutzer können auch eine feste Stimme wählen. Nutzen Sie nur Aufnahmen, für die Sie die Rechte oder eine Erlaubnis haben, und tragen Sie die Quelle ein – sie wird angezeigt.</p>
       <div className={card}>
         <b>Neue Aufnahme</b>
         <div className="mt-3 grid gap-2 sm:grid-cols-3">
@@ -520,7 +520,7 @@ function DonationAdmin({ de, d, set, save }: { de: boolean; d: Donation; set: (d
         <p className={`mt-3 ${ok}`}>{de ? "Ziina ist eingerichtet: Besucher wählen auf /support einen Betrag und zahlen bei Ziina." : "Ziina is set up: visitors choose an amount on /support and pay at Ziina."}</p>
       ) : (
         <p className={`mt-3 ${warn}`}>
-          {de ? "Kein Ziina-API-Schlüssel auf dem Server. Trage ZIINA_API_KEY in /srv/tafsirflow/.env.app ein und starten Sie die Seite neu (pm2 restart tafsirflow --update-env). " : "No Ziina API key on the server. Add ZIINA_API_KEY to /srv/tafsirflow/.env.app and restart the site (pm2 restart tafsirflow --update-env). "}
+          {de ? "Kein Ziina-API-Schlüssel auf dem Server. Tragen Sie ZIINA_API_KEY in /srv/tafsirflow/.env.app ein und starten Sie die Seite neu (pm2 restart tafsirflow --update-env). " : "No Ziina API key on the server. Add ZIINA_API_KEY to /srv/tafsirflow/.env.app and restart the site (pm2 restart tafsirflow --update-env). "}
           {z.link ? (de ? `Bis dahin sehen Besucher den Ziina-Zahlungslink ${z.link.replace(/^https:\/\//, "")}.` : `Until then visitors see the Ziina payment link ${z.link.replace(/^https:\/\//, "")}.`) : (de ? "Bis dahin steht auf /support nur der Hinweis, dass die Unterstützung eingerichtet wird." : "Until then /support only says that support is being set up.")}
         </p>
       )}

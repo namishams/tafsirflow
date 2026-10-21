@@ -180,7 +180,7 @@ Imam Ja'far does not belong to one tradition alone. Sunni scholars also mention 
 
 - **In the hadith collections:** Imam Muslim narrates in his *Sahih*, from Ja'far ibn Muhammad, from his father, from Jabir ibn Abdillah, the famous detailed account of the Prophet's ﷺ pilgrimage. Jurists of every school have derived the rulings of Hajj from exactly this report.
 - **Imam Malik:** It is reported of Malik ibn Anas, may Allah have mercy on him, that he often visited Ja'far ibn Muhammad and always found him praying, fasting or reciting the Quran, and he praised his piety.
-- **Imam Abu Hanifa:** It is also reported of Abu Hanifa, may Allah have mercy on him, that he met Imam Ja'far and held his knowledge in high esteem. Sunni biographers, suchen Sie as adh-Dhahabi in his great biographical dictionary of scholars, describe Imam Ja'far as one of the great scholars and devout men of his time.
+- **Imam Abu Hanifa:** It is also reported of Abu Hanifa, may Allah have mercy on him, that he met Imam Ja'far and held his knowledge in high esteem. Sunni biographers, such as adh-Dhahabi in his great biographical dictionary of scholars, describe Imam Ja'far as one of the great scholars and devout men of his time.
 
 We deliberately say "it is reported". There are different accounts of the exact nature of these meetings, and an honest teacher says no more than he knows. What is certain is this: Sunni and Shia Muslims alike speak his name with love, and many Sufi paths trace their spiritual chain through him back to the Prophet ﷺ.
 
@@ -254,7 +254,7 @@ The history of the school is rich in scholars whose influence reached far beyond
 - **ash-Shaykh al-Mufid** (d. 413 AH) in Baghdad, teacher of a whole generation.
 - **ash-Sharif al-Murtada** (d. 436 AH), an important theologian and jurist, brother of ash-Sharif ar-Radi.
 - **ash-Shaykh at-Tusi** (d. 460 AH), author of two of the Four Books and of works on legal theory and Quranic exegesis. According to tradition he moved from Baghdad to Najaf, and with him begins the long history of learning in that city.
-- **al-Muhaqqiq al-Hilli** and **al-'Allamah al-Hilli** from Hilla in Iraq, whose textbooks, suchen Sie as *Shara'i' al-Islam*, were taught for centuries.
+- **al-Muhaqqiq al-Hilli** and **al-'Allamah al-Hilli** from Hilla in Iraq, whose textbooks, such as *Shara'i' al-Islam*, were taught for centuries.
 - **Shaykh Murtada al-Ansari** (d. 1281 AH), whose works on legal theory and commercial law are still the basis of advanced study today.
 
 Beyond law, scholars from this tradition also contributed to Islamic civilisation, for example **Nasir ad-Din at-Tusi**, whose work in astronomy, mathematics and philosophy was read throughout the Islamic world.

@@ -1,4 +1,5 @@
 import { useLang } from "@/i18n";
+import { BUNDLED_UI_VERSES } from "@/features/quran/uiVerses";
 
 // The story of the onboarding: the learner joins the people of the Quran, the seed is their intention (niyyah), the
 // garden stands for patience (sabr), and the tree is a SYMBOL of their effort and sincerity, never more: the app's tree
@@ -16,7 +17,9 @@ export const STORY_NEEDS_SCHOLARLY_REVIEW = true;
 
 /** the du'a for beneficial knowledge (Quran 20:114) and the verses the story refers to */
 export const DUA_KEY = "20:114", GOOD_TREE_KEY = "14:24", RECITERS_KEY = "35:29";
-export const BISMILLAH = "بِسْمِ ٱللَّهِ";
+/** "Bismillah" of the planting ceremony: the first two words of Quran 1:1 from the Quran data snapshot (never typed by
+ *  hand). Canonical mark order (NFC) gives exactly the letters the frozen ceremony was designed with. */
+export const BISMILLAH = BUNDLED_UI_VERSES["1:1"].normalize("NFC").split(" ").slice(0, 2).join(" ");
 
 const en = {
   kicker: "Your story",

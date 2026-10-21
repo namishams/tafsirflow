@@ -61,7 +61,7 @@ Einige Einzelheiten:
 
 ## Die drei Arten des Hadsch
 
-- **Tamattu':** Man verrichtet in den Hadsch-Monaten zuerst eine Umra, verlässt den Ihram und treten Sie am 8. Dhul-Hiddscha erneut für den Hadsch hinein. Ein Opfertier ist Pflicht; wer keines findet, fastet drei Tage während des Hadsch und sieben nach der Rückkehr (Koran 2:196). Viele Pilger, besonders aus dem Ausland, wählen diese Form.
+- **Tamattu':** Man verrichtet in den Hadsch-Monaten zuerst eine Umra, verlässt den Ihram und tritt am 8. Dhul-Hiddscha erneut für den Hadsch hinein. Ein Opfertier ist Pflicht; wer keines findet, fastet drei Tage während des Hadsch und sieben nach der Rückkehr (Koran 2:196). Viele Pilger, besonders aus dem Ausland, wählen diese Form.
 - **Qiran:** Umra und Hadsch werden mit einem einzigen Ihram verbunden, ohne Unterbrechung. Auch hier ist ein Opfertier Pflicht.
 - **Ifrad:** Man tritt nur für den Hadsch in den Ihram. Ein Opfertier ist nicht Pflicht.
 
@@ -71,7 +71,7 @@ Welche Form die beste ist, darüber haben die Rechtsschulen verschiedene Ansicht
 
 ## Miqat und Ihram
 
-Wer zum Hadsch oder zur Umra reist, treten Sie an einer festgelegten Grenze, dem **Miqat**, in den Weihezustand, den **Ihram**. Der Prophet ﷺ bestimmte Dhul-Hulaifa für die Leute aus Medina, al-Dschuhfa für die aus dem Norden, Qarn al-Manazil für die aus dem Nadschd und Yalamlam für die aus dem Jemen (al-Bukhari und Muslim); für die aus dem Irak kam Dhat 'Irq hinzu. Wer im Flugzeug anreist, legt den Ihram vor dem Überfliegen des Miqat an. Viele ziehen die Ihram-Kleidung schon zu Hause oder am Flughafen an und fassen die Absicht kurz vor dem Miqat, wenn die Crew oder die Gruppe darauf hinweist. Wer aus den Emiraten nach Dschidda fliegt, überquert die Miqat-Grenze vor der Landung; Dschidda selbst liegt nach der verbreiteten Ansicht innerhalb der Grenze.
+Wer zum Hadsch oder zur Umra reist, tritt an einer festgelegten Grenze, dem **Miqat**, in den Weihezustand, den **Ihram**. Der Prophet ﷺ bestimmte Dhul-Hulaifa für die Leute aus Medina, al-Dschuhfa für die aus dem Norden, Qarn al-Manazil für die aus dem Nadschd und Yalamlam für die aus dem Jemen (al-Bukhari und Muslim); für die aus dem Irak kam Dhat 'Irq hinzu. Wer im Flugzeug anreist, legt den Ihram vor dem Überfliegen des Miqat an. Viele ziehen die Ihram-Kleidung schon zu Hause oder am Flughafen an und fassen die Absicht kurz vor dem Miqat, wenn die Crew oder die Gruppe darauf hinweist. Wer aus den Emiraten nach Dschidda fliegt, überquert die Miqat-Grenze vor der Landung; Dschidda selbst liegt nach der verbreiteten Ansicht innerhalb der Grenze.
 
 So treten Sie in den Ihram:
 
@@ -116,7 +116,7 @@ Der Hadsch findet in den Tagen vom 8. bis zum 13. **Dhul-Hiddscha** statt, dem l
 
 ### 8. Dhul-Hiddscha – Tag der Tarwiya
 
-Wer noch nicht im Ihram ist, treten Sie hinein. Die Pilger ziehen nach **Mina**, einer Zeltstadt vor Mekka, beten dort die Gebete des Tages, jedes zu seiner Zeit, die Vier-Rak'at-Gebete verkürzt, und verbringen die Nacht. Der Aufenthalt in Mina an diesem Tag ist nach der Mehrheit der Gelehrten Sunna. Von nun an erklingt immer wieder die Talbiya.
+Wer noch nicht im Ihram ist, tritt hinein. Die Pilger ziehen nach **Mina**, einer Zeltstadt vor Mekka, beten dort die Gebete des Tages, jedes zu seiner Zeit, die Vier-Rak'at-Gebete verkürzt, und verbringen die Nacht. Der Aufenthalt in Mina an diesem Tag ist nach der Mehrheit der Gelehrten Sunna. Von nun an erklingt immer wieder die Talbiya.
 
 ### 9. Dhul-Hiddscha – Tag von Arafa
 
@@ -157,7 +157,7 @@ Nicht jeder kann in diesem Jahr pilgern. Aber die Tage des Hadsch gehören der g
 
 - **Die ersten zehn Tage:** Der Prophet ﷺ sagte, es gebe keine Tage, an denen gute Taten vorzüglicher sind als in diesen zehn Tagen des Dhul-Hiddscha (al-Bukhari). Viele Erklärer beziehen auch den Schwur „bei den zehn Nächten“ (Koran 89:2) auf sie.
 - **Das Fasten am Tag von Arafa:** Der Prophet ﷺ sagte über das Fasten am 9. Dhul-Hiddscha: „Ich hoffe bei Allah, dass es die Sünden des vergangenen und des kommenden Jahres sühnt“ (Muslim 1162). Für die Pilger in Arafat selbst ist das Fasten nicht vorgesehen; sie brauchen ihre Kraft für das Gebet. In der Dscha'fari-Rechtsschule ist das Fasten an diesem Tag ebenfalls empfohlen, sofern es einen nicht vom Bittgebet abhält.
-- **Bittgebet und Gedenken:** Nehmen Sie sich am Nachmittag Zeit, so wie die Pilger in Arafat stehen. Sprechen Sie das Gedenken *La ilaha illallah wahdahu la scharika lah …*, bitte für Sie, Ihre Familie und die Menschen in Not. In der schiitischen Tradition sprechen viele an diesem Tag das bekannte Bittgebet von Arafa, das auf Imam al-Husain zurückgeht.
+- **Bittgebet und Gedenken:** Nehmen Sie sich am Nachmittag Zeit, so wie die Pilger in Arafat stehen. Sprechen Sie das Gedenken *La ilaha illallah wahdahu la scharika lah …*, bitten Sie für sich, Ihre Familie und die Menschen in Not. In der schiitischen Tradition sprechen viele an diesem Tag das bekannte Bittgebet von Arafa, das auf Imam al-Husain zurückgeht.
 - **Takbir:** Viele Muslime sprechen vom Morgen des Tages von Arafa bis zum Ende der Taschriq-Tage nach den Gebeten den Takbir: *Allahu akbar, Allahu akbar, la ilaha illallah, wallahu akbar, Allahu akbar wa lillahil-hamd*. Über Beginn, Ende und Wortlaut gibt es unterschiedliche Ansichten.
 - **Das Opfer:** Wer zum Fest ein Tier opfern möchte, lässt nach einer Überlieferung bei Muslim ab dem 1. Dhul-Hiddscha Haare und Nägel, bis geopfert ist; die Rechtsschulen bewerten das unterschiedlich streng. Ob das Opfer für Wohlhabende Pflicht oder eine stark empfohlene Sunna ist, darüber sind sie ebenfalls verschiedener Meinung: Die hanafitische Schule sieht es als Pflicht an, die Mehrheit als Sunna.
 
@@ -181,18 +181,18 @@ Mehr über die beiden heiligen Städte erfahren Sie im Kapitel [Die wichtigsten 
 
 ### Vor der Reise
 
-- **Lernen Sie vorher:** Lesen Sie die Riten in Ruhe zu Hause und besuche Vorbereitungskurse. Wer weiß, was kommt, kann sich vor Ort auf das Herz konzentrieren.
-- **Rechte anderer:** Bitte vor der Reise um Verzeihung, begleiche Schulden und regle Ihre Angelegenheiten. Viele schreiben vor dem Aufbruch auch ihr Testament (*Wasiyya*).
-- **Bittgebete vorbereiten:** Schreiben Sie sich auf, wofür Sie beten möchten – für Sie, Ihre Familie, Ihre Verstorbenen und die ganze Umma. Anregungen finden Sie bei unseren [Duas](/duas).
+- **Lernen Sie vorher:** Lesen Sie die Riten in Ruhe zu Hause und besuchen Sie Vorbereitungskurse. Wer weiß, was kommt, kann sich vor Ort auf das Herz konzentrieren.
+- **Rechte anderer:** Bitten Sie vor der Reise um Verzeihung, begleichen Sie Schulden und regeln Sie Ihre Angelegenheiten. Viele schreiben vor dem Aufbruch auch ihr Testament (*Wasiyya*).
+- **Bittgebete vorbereiten:** Schreiben Sie sich auf, wofür Sie beten möchten – für sich, Ihre Familie, Ihre Verstorbenen und die ganze Umma. Anregungen finden Sie bei unseren [Duas](/duas).
 - **Körperlich vorbereiten:** Beim Hadsch geht man an manchen Tagen viele Kilometer zu Fuß. Gewöhnen Sie sich in den Wochen davor an längere Spaziergänge und laufe Ihre Sandalen ein.
 
 ### Gesundheit
 
 - **Ärztliche Beratung:** Lassen Sie sich rechtzeitig ärztlich beraten und die vorgeschriebenen Impfungen geben; Saudi-Arabien verlangt unter anderem eine Impfung gegen Meningokokken. Die aktuelle Liste erfahren Sie bei den Behörden und Ihrem Veranstalter. Wer chronisch krank ist, bespricht die Reise besonders sorgfältig.
 - **Medikamente:** Nehmen Sie Ihre Medikamente in der Originalverpackung mit, dazu eine Kopie des Rezepts und eine kurze Übersicht über Ihre Erkrankungen.
-- **Hitze:** Trink viel Wasser, auch ohne Durst, meiden Sie die Mittagssonne, wo es geht, und nutzen Sie einen Schirm. Hitzschlag und Austrocknung gehören zu den häufigsten Gesundheitsproblemen beim Hadsch.
+- **Hitze:** Trinken Sie viel Wasser, auch ohne Durst, meiden Sie die Mittagssonne, wo es geht, und nutzen Sie einen Schirm. Hitzschlag und Austrocknung gehören zu den häufigsten Gesundheitsproblemen beim Hadsch.
 - **Füße und Haut:** Blasen und wunde Stellen sind häufig. Pflaster, unparfümierte Creme und gut eingelaufene Sandalen helfen.
-- **Ansteckung:** Wo Millionen Menschen eng zusammen sind, verbreiten sich Erkältungen schnell. Händewaschen und bei Bedarf eine Maske schützenen Sie sich und andere.
+- **Ansteckung:** Wo Millionen Menschen eng zusammen sind, verbreiten sich Erkältungen schnell. Händewaschen und bei Bedarf eine Maske schützen Sie und andere.
 - **Für Frauen:** Wer fürchtet, dass die Periode in die Tage des Hadsch fällt, kann mit einer Ärztin über Möglichkeiten sprechen; viele Gelehrte erlauben Mittel zur Verschiebung, wenn sie gesundheitlich unbedenklich sind.
 
 ### Packliste (Auswahl)
@@ -206,7 +206,7 @@ Mehr über die beiden heiligen Städte erfahren Sie im Kapitel [Die wichtigsten 
 ### Vor Ort
 
 - **Geduld:** Millionen Menschen, Hitze, Wartezeiten – der Hadsch prüft die Geduld. Ein freundliches Wort und ein Lächeln gehören zu einem angenommenen Hadsch.
-- **Bleiben Sie bei Ihrer Gruppe:** Trage Ihr Armband oder Ihre Karte mit den Daten Ihrer Gruppe, vereinbare Treffpunkte und folgen Sie den Zeitplänen – besonders bei der Steinigung.
+- **Bleiben Sie bei Ihrer Gruppe:** Tragen Sie Ihr Armband oder Ihre Karte mit den Daten Ihrer Gruppe, vereinbaren Sie Treffpunkte und folgen Sie den Zeitplänen – besonders bei der Steinigung.
 - **Helfen Sie anderen:** Viele Pilger sind alt, krank oder zum ersten Mal unterwegs. Ein Glas Wasser, ein Weg, den Sie zeigen, ein Platz, den Sie freimachen – auch das ist Hadsch.
 
 Ein wichtiger Hinweis: Die Einzelheiten unterscheiden sich zwischen den Rechtsschulen. Diese Seite gibt einen allgemeinen Überblick. Folgen Sie vor Ort einem **qualifizierten Gruppenleiter** oder Gelehrten, dem Sie vertrauen, und fragen Sie nach, wenn Sie unsicher sind.
@@ -223,7 +223,7 @@ Im Großen und Ganzen sieht der Weg so aus:
 4. **Gesundheitsnachweise und Impfungen** erbringen, wie vorgeschrieben.
 5. **Vorbereitung** – viele Veranstalter und Moscheen bieten Kurse an, in denen die Riten Schritt für Schritt geübt werden.
 
-Buche nie bei unlizenzierten Anbietern und verlassen Sie sich nicht auf Angebote aus sozialen Netzwerken; informieren Sie sich über die aktuellen Fristen und Voraussetzungen direkt bei den offiziellen Stellen. Für die Umra gelten eigene, einfachere Regeln, und viele Familien aus den Emiraten verrichten sie im Laufe des Jahres, besonders im Ramadan. Auch hier lohnt es sich, die aktuellen Visa- und Genehmigungsregeln zu prüfen.
+Buchen Sie nie bei unlizenzierten Anbietern und verlassen Sie sich nicht auf Angebote aus sozialen Netzwerken; informieren Sie sich über die aktuellen Fristen und Voraussetzungen direkt bei den offiziellen Stellen. Für die Umra gelten eigene, einfachere Regeln, und viele Familien aus den Emiraten verrichten sie im Laufe des Jahres, besonders im Ramadan. Auch hier lohnt es sich, die aktuellen Visa- und Genehmigungsregeln zu prüfen.
 
 ## Nach dem Hadsch
 
@@ -236,7 +236,7 @@ Möge Allah jedem, der sich nach Seinem Haus sehnt, den Weg dorthin leicht mache
       { q: "Dürfen Frauen im Ihram ihre normale Kleidung tragen?", a: "Ja. Frauen tragen ihre gewohnte, schlichte und bedeckende Kleidung in jeder Farbe; im Ihram verzichten sie auf Gesichtsschleier und Handschuhe (al-Bukhari)." },
       { q: "Gehört der Besuch in Medina zum Hadsch?", a: "Nein. Er ist sehr empfohlen, und fast alle Pilger beten gern in der Moschee des Propheten ﷺ, aber der Hadsch ist auch ohne diesen Besuch vollständig." },
       { q: "Was kann ich am Tag von Arafa tun, wenn ich nicht pilgere?", a: "Fasten, wenn Sie können – der Prophet ﷺ sagte, es sühne die Sünden des vergangenen und des kommenden Jahres (Muslim 1162) –, viel Bittgebet und Gedenken, besonders am Nachmittag, und die guten Taten der ersten zehn Tage des Dhul-Hiddscha." },
-      { q: "Wie melde ich mich in den Emiraten für den Hadsch an?", a: "Über die offizielle Registrierung der zuständigen Behörde der VAE und über einen lizenzierten Hadsch-Veranstalter. Informieren Sie sich dort über aktuelle Fristen und Voraussetzungen und buche nie bei unlizenzierten Anbietern." },
+      { q: "Wie melde ich mich in den Emiraten für den Hadsch an?", a: "Über die offizielle Registrierung der zuständigen Behörde der VAE und über einen lizenzierten Hadsch-Veranstalter. Informieren Sie sich dort über aktuelle Fristen und Voraussetzungen und buchen Sie nie bei unlizenzierten Anbietern." },
     ],
     sources: [
       "Koran 2:125–127, 2:158, 2:196–198, 2:201, 2:203, 3:96–97, 5:3, 5:95, 22:27, 22:37, 89:2",
@@ -337,7 +337,7 @@ Much of what pilgrims avoid out of uncertainty is permitted according to most sc
 
 ### If a mistake happens
 
-Whoever has to do something forbidden because of illness or another reason, suchen Sie as shaving the head, makes up for it: "… then a ransom of fasting or charity or sacrifice" (Quran 2:196). The Prophet ﷺ explained this to the Companion Ka'b ibn 'Ujrah: fast three days, feed six poor people or sacrifice a sheep (al-Bukhari and Muslim). Anyone who does something forbidden by mistake, or leaves out an obligation, should ask their group leader or a scholar about the compensation; the schools of law distinguish here between intention, forgetfulness and ignorance.
+Whoever has to do something forbidden because of illness or another reason, such as shaving the head, makes up for it: "… then a ransom of fasting or charity or sacrifice" (Quran 2:196). The Prophet ﷺ explained this to the Companion Ka'b ibn 'Ujrah: fast three days, feed six poor people or sacrifice a sheep (al-Bukhari and Muslim). Anyone who does something forbidden by mistake, or leaves out an obligation, should ask their group leader or a scholar about the compensation; the schools of law distinguish here between intention, forgetfulness and ignorance.
 
 ## Umrah – step by step
 
@@ -346,7 +346,7 @@ Umrah can be completed in a few hours. This is how it unfolds:
 1. **Ihram** at the miqat, as described above, with the talbiyah on the way to Makkah.
 2. **Tawaf:** In the Sacred Mosque you walk around the Kaaba **seven times** anticlockwise, starting and ending at the corner of the Black Stone. Each time you pass it you greet it – with a gesture of the hand from a distance when it is crowded. According to the majority of scholars, tawaf requires ritual purity (wudu). Men wear the upper sheet under the right shoulder during this tawaf and, where possible, walk with short, brisk steps (*raml*) in the first three circuits. There are no fixed words; you pray as your heart moves you. Between the Yemeni corner and the Black Stone many say: *Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina 'adhaban-nar* (Quran 2:201).
 3. **Two rak'at** behind the **Station of Ibrahim** (Maqam Ibrahim) if possible – or anywhere in the mosque when it is crowded (Quran 2:125). Then you drink from **Zamzam**. The Prophet ﷺ said of this water: "It is blessed; it is food that satisfies" (Muslim), and: "The water of Zamzam is for whatever it is drunk for" (Ibn Majah).
-4. **Sa'i:** You walk **seven times** between the hills of **Safa** and **Marwah**, starting at Safa and ending at Marwah. Allah says: "Indeed, as-Safa and al-Marwah are among the symbols of Allah" (Quran 2:158). As the Prophet ﷺ approached Safa he said: "I begin with what Allah began with", climbed it, faced the Kaaba, praised Allah and made Sie'a (Muslim 1218). Men walk a little faster between the green markers.
+4. **Sa'i:** You walk **seven times** between the hills of **Safa** and **Marwah**, starting at Safa and ending at Marwah. Allah says: "Indeed, as-Safa and al-Marwah are among the symbols of Allah" (Quran 2:158). As the Prophet ﷺ approached Safa he said: "I begin with what Allah began with", climbed it, faced the Kaaba, praised Allah and made du'a (Muslim 1218). Men walk a little faster between the green markers.
 5. **Shaving or shortening:** Men shave the head or shorten the hair evenly; women cut a fingertip's length from a lock of hair. With that the Umrah is complete, and ihram ends.
 
 In the Ja'fari school, a separate Umrah (*umrah mufradah*) also includes, after cutting the hair, a further tawaf, *tawaf an-nisa'*, with two rak'at.
@@ -388,7 +388,7 @@ For many scholars the order of these steps is Sunnah, because on the Day of Sacr
 
 ### 11 to 13 Dhul-Hijjah – the days of tashriq
 
-The pilgrims stay in Mina and each day, after midday, stone the **three pillars** – the small, the middle and the large – with seven pebbles each. After the small and the middle one, you stop and make Sie'a. Whoever is in a hurry may leave after the 12th: "Whoever hastens to leave in two days, there is no sin upon him; and whoever delays, there is no sin upon him" (Quran 2:203).
+The pilgrims stay in Mina and each day, after midday, stone the **three pillars** – the small, the middle and the large – with seven pebbles each. After the small and the middle one, you stop and make du'a. Whoever is in a hurry may leave after the 12th: "Whoever hastens to leave in two days, there is no sin upon him; and whoever delays, there is no sin upon him" (Quran 2:203).
 
 Spending these nights in Mina is obligatory according to most schools and Sunnah according to the Hanafi school. The Prophet ﷺ called these "days of eating, drinking and remembering Allah" (Muslim). According to the scholars, someone who is ill, elderly or weak may appoint another person to throw for them. Follow your group's schedule for the stoning times; it is designed to reduce crowding at the Jamarat.
 
@@ -412,7 +412,7 @@ You can read more about the festival in the chapter [The important days of the I
 
 Many pilgrims travel to **Madinah** before or after Hajj to pray in the Prophet's ﷺ mosque and to greet him. This is highly recommended, but it is not one of the rites of Hajj. The Prophet ﷺ said: "A prayer in this mosque of mine is better than a thousand prayers elsewhere, except the Sacred Mosque" (al-Bukhari and Muslim).
 
-In the mosque, between the Prophet's ﷺ house and his pulpit, lesen Sie the **Rawdah**. He said: "What is between my house and my pulpit is a garden from the gardens of Paradise" (al-Bukhari and Muslim). Because of the great crowds, visits to the Rawdah are currently organised with time slots and a permit from the Saudi authorities. Many visitors greet the Prophet ﷺ at his grave and then his two Companions Abu Bakr and Umar, who are buried beside him.
+In the mosque, between the Prophet's ﷺ house and his pulpit, lies the **Rawdah**. He said: "What is between my house and my pulpit is a garden from the gardens of Paradise" (al-Bukhari and Muslim). Because of the great crowds, visits to the Rawdah are currently organised with time slots and a permit from the Saudi authorities. Many visitors greet the Prophet ﷺ at his grave and then his two Companions Abu Bakr and Umar, who are buried beside him.
 
 Other places in Madinah:
 
@@ -428,7 +428,7 @@ You can learn more about the two holy cities in the chapter [The Most Important 
 
 - **Learn beforehand:** Read through the rites calmly at home and attend preparation courses. When you know what is coming, you can focus on your heart once you are there.
 - **Rights of others:** Before the journey, ask people's forgiveness, settle debts and put your affairs in order. Many also write their will (*wasiyyah*) before setting off.
-- **Prepare your Sie'as:** Write down what you want to pray for – for yourself, your family, those who have passed away and the whole ummah. You will find ideas among our [duas](/duas).
+- **Prepare your du'as:** Write down what you want to pray for – for yourself, your family, those who have passed away and the whole ummah. You will find ideas among our [duas](/duas).
 - **Prepare your body:** On some days of Hajj you walk many kilometres. In the weeks before, get used to longer walks and wear in your sandals.
 
 ### Health

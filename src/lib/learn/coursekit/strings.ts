@@ -3,7 +3,7 @@ import { useLang } from "@/lib/learn/i18n";
 import { formatWeb } from "@/lib/learn/i18n";
 import { moduleText } from "@/lib/learn/i18n";
 
-// App-only texts of the courses (everything else comes from the website). German uses "du", like the website.
+// App-only texts of the courses (everything else comes from the website). German uses the Sie-form, like the website.
 const S = {
   de: {
     proEyebrow: "Quran Masterclass Pro",

@@ -5,6 +5,8 @@ import { getVerseText } from "./quran";
 // medallion of the /quran page (54:17 and 56:77–80). Never typed by hand (BLUEPRINT §4): the server reads them from the
 // same Quran data as the reader (Quran.com text_uthmani); data/ui-verses.json is a snapshot of that answer (the same
 // file as the app's mobile/src/features/quran/data/ui-verses.json), used when the data cannot be read and in the player.
+// The other verses the website quotes as decoration (hero rings, gold verse lines, side calligraphy), each in the spelling
+// its design is set in, come from lib/verseQuotes.ts (data/verse-quotes.json, written by scripts/gen-verse-quotes.mjs).
 export const UI_VERSE_KEYS = ["1:1", "54:17", "56:77", "56:78", "56:79", "56:80"] as const;
 export type UiVerses = Record<(typeof UI_VERSE_KEYS)[number], string>;
 export const BUNDLED_UI_VERSES = BUNDLED as UiVerses;

@@ -6,9 +6,9 @@ export const daily: IslamDoc = {
   de: {
     title: "Islamischer Lebensstil – der Alltag mit Koran und Sunnah",
     kicker: "Vom Morgen bis zur Nacht",
-    lead: "Der Islam ist keine Religion für die Moschee allein – er begleitet dich vom ersten Gedanken am Morgen bis zum letzten vor dem Schlafen: beim Essen und beim Arbeiten, in der Familie, beim Sport, auf Reisen und sogar am Handy. In diesem Kapitel gehen wir gemeinsam durch einen ganz normalen Tag und durch die großen Bereiche des Lebens. Du findest kleine, machbare Schritte aus dem Koran und der Sunnah des Propheten ﷺ – keine Last, sondern Anker, an denen sich dein Alltag festhalten kann.",
+    lead: "Der Islam ist keine Religion für die Moschee allein – er begleitet Sie vom ersten Gedanken am Morgen bis zum letzten vor dem Schlafen: beim Essen und beim Arbeiten, in der Familie, beim Sport, auf Reisen und sogar am Handy. In diesem Kapitel gehen wir gemeinsam durch einen ganz normalen Tag und durch die großen Bereiche des Lebens. Sie finden kleine, machbare Schritte aus dem Koran und der Sunnah des Propheten ﷺ – keine Last, sondern Anker, an denen sich Ihr Alltag festhalten kann.",
     facts: [
-      { n: "5", l: "Gebete am Tag – die Anker deines Alltags" },
+      { n: "5", l: "Gebete am Tag – die Anker Ihres Alltags" },
       { n: "2:275", l: "Allah hat den Handel erlaubt und Riba verboten" },
       { n: "7:31", l: "„Esst und trinkt, aber seid nicht maßlos“" },
       { n: "3559", l: "al-Bukhari: Die Besten unter euch sind die mit dem besten Charakter" },
@@ -19,32 +19,32 @@ Beginnen wir mit einem ganz normalen Tag – vom Aufwachen bis zum Einschlafen.
 
 ### Beim Aufwachen: der erste Gedanke gehört Allah
 
-Bevor du nach dem Handy greifst, sprich die Worte, mit denen der Prophet ﷺ den Tag begann: „Alles Lob gebührt Allah, der uns zum Leben erweckt hat, nachdem Er uns hat sterben lassen, und zu Ihm ist die Auferstehung“ (al-Bukhari, überliefert von Hudhaifa). Der Schlaf ist wie ein kleiner Tod, jedes Erwachen ein geschenkter neuer Tag.
+Bevor Sie nach dem Handy greifen, sprechen Sie die Worte, mit denen der Prophet ﷺ den Tag begann: „Alles Lob gebührt Allah, der uns zum Leben erweckt hat, nachdem Er uns hat sterben lassen, und zu Ihm ist die Auferstehung“ (al-Bukhari, überliefert von Hudhaifa). Der Schlaf ist wie ein kleiner Tod, jedes Erwachen ein geschenkter neuer Tag.
 
 ### Fajr und die Morgen-Adhkar
 
-In den Emiraten hörst du den Ruf zum Fajr in der Dämmerung, wenn die Stadt gerade erst erwacht. Das Aufstehen fällt nicht immer leicht – der Prophet ﷺ sagte, der Satan knüpfe jedem von uns im Schlaf drei Knoten in den Nacken: Wer aufwacht und Allahs gedenkt, löst einen, wer das Wudu macht, den zweiten, wer betet, den dritten – und er steht frisch und gut gelaunt auf (al-Bukhari und Muslim).
+In den Emiraten hören Sie den Ruf zum Fajr in der Dämmerung, wenn die Stadt gerade erst erwacht. Das Aufstehen fällt nicht immer leicht – der Prophet ﷺ sagte, der Satan knüpfe jedem von uns im Schlaf drei Knoten in den Nacken: Wer aufwacht und Allahs gedenkt, löst einen, wer das Wudu macht, den zweiten, wer betet, den dritten – und er steht frisch und gut gelaunt auf (al-Bukhari und Muslim).
 
 Danach kommen die **Morgen-Adhkar**, die Worte des Gedenkens am Morgen:
 
 - **Ayat al-Kursi** (Koran 2:255): „Allah – es gibt keinen Gott außer Ihm, dem Lebendigen, dem Beständigen.“ Der Prophet ﷺ nannte sie den größten Vers im Buch Allahs (Ubayy ibn Ka'b, Muslim).
 - **Die letzten drei Suren** – al-Ikhlas, al-Falaq, an-Nas (Koran 112–114). Es wird überliefert, dass der Prophet ﷺ riet, sie morgens und abends je dreimal zu sprechen (Abu Dawud, at-Tirmidhi).
 
-Texte mit Übersetzung findest du bei unseren [Duas](/duas).
+Texte mit Übersetzung finden Sie bei unseren [Duas](/duas).
 
 ### Die Absicht: aus Arbeit wird Gottesdienst
 
-Umar ibn al-Khattab berichtet, dass der Prophet ﷺ sagte: „Die Taten gelten nur nach den Absichten, und jedem steht nur das zu, was er beabsichtigt hat“ (al-Bukhari und Muslim). Ob du lernst, E-Mails schreibst, Patienten behandelst oder Kinder zur Schule bringst: Erneuere die Absicht – „Ich tue das ehrlich, um meine Familie zu versorgen, anderen zu nützen und Allah zu gefallen“ –, und aus einer Gewohnheit wird eine Tat, für die du Lohn erhoffen darfst. Die Niyyah sitzt im Herzen; ein stiller Gedanke am Beginn des Arbeitstages genügt.
+Umar ibn al-Khattab berichtet, dass der Prophet ﷺ sagte: „Die Taten gelten nur nach den Absichten, und jedem steht nur das zu, was er beabsichtigt hat“ (al-Bukhari und Muslim). Ob Sie lernen, E-Mails schreiben, Patienten behandeln oder Kinder zur Schule bringen: Erneuern Sie die Absicht – „Ich tue das ehrlich, um meine Familie zu versorgen, anderen zu nützen und Allah zu gefallen“ –, und aus einer Gewohnheit wird eine Tat, für die Sie Lohn erhoffen dürfen. Die Niyyah sitzt im Herzen; ein stiller Gedanke am Beginn des Arbeitstages genügt.
 
-### Die fünf Gebete: Anker deines Tages
+### Die fünf Gebete: Anker Ihres Tages
 
-„Das Gebet ist den Gläubigen zu bestimmten Zeiten vorgeschrieben“ (Koran 4:103). Fajr, Dhuhr, Asr, Maghrib und Ischa gliedern den Tag in fünf Abschnitte, und jedes Gebet holt dich aus dem, was du gerade tust, zu Allah zurück. Der Prophet ﷺ verglich sie mit einem Fluss vor deiner Tür, in dem du jeden Tag fünfmal badest: Bliebe da noch Schmutz an dir? (al-Bukhari und Muslim).
+„Das Gebet ist den Gläubigen zu bestimmten Zeiten vorgeschrieben“ (Koran 4:103). Fajr, Dhuhr, Asr, Maghrib und Ischa gliedern den Tag in fünf Abschnitte, und jedes Gebet holt Sie aus dem, was Sie gerade tun, zu Allah zurück. Der Prophet ﷺ verglich sie mit einem Fluss vor Ihrer Tür, in dem Sie jeden Tag fünfmal baden: Bliebe da noch Schmutz an Ihnen? (al-Bukhari und Muslim).
 
-Mach die Zeiten sichtbar: Schau morgens in unsere [Gebetszeiten](/prayer) für deinen Ort und lege Termine darum herum. Fällt dir das regelmäßige Beten noch schwer, geh Schritt für Schritt und such dir Hilfe: einen Freund, die Moschee, eine feste Routine. Wie das Gebet Schritt für Schritt geht, übst du in unserem Gebetstrainer [Salah](/salah).
+Machen Sie die Zeiten sichtbar: Schauen Sie morgens in unsere [Gebetszeiten](/prayer) für Ihren Ort und legen Sie Termine darum herum. Fällt Ihnen das regelmäßige Beten noch schwer, gehen Sie Schritt für Schritt und suchen Sie sich Hilfe: einen Freund, die Moschee, eine feste Routine. Wie das Gebet Schritt für Schritt geht, üben Sie in unserem Gebetstrainer [Salah](/salah).
 
 ### Jeden Tag ein wenig Koran
 
-„Und rezitiere den Koran in aller Ruhe“ (Koran 73:4). Der Prophet ﷺ sagte: „Die Besten unter euch sind die, die den Koran lernen und lehren“ (Uthman, al-Bukhari). Und wer noch stockt, hat sogar zwei Belohnungen, weil er sich abmüht (Aischa, al-Bukhari und Muslim). Mach daraus eine Gewohnheit, die zu deinem Tag passt: eine Seite nach dem Fajr, einige Verse in der Mittagspause, zehn Minuten Hören in der Metro. Mit dem [Khatm-Planer](/khatm) verteilst du eine ganze Lesung auf feste Tagesportionen, mit dem [Memorierplan](/plan) lernst du Monat für Monat auswendig, und mit der [Shams-Methode](/shams) behältst du Verse in kleinen Schritten.
+„Und rezitiere den Koran in aller Ruhe“ (Koran 73:4). Der Prophet ﷺ sagte: „Die Besten unter euch sind die, die den Koran lernen und lehren“ (Uthman, al-Bukhari). Und wer noch stockt, hat sogar zwei Belohnungen, weil er sich abmüht (Aischa, al-Bukhari und Muslim). Machen Sie daraus eine Gewohnheit, die zu Ihrem Tag passt: eine Seite nach dem Fajr, einige Verse in der Mittagspause, zehn Minuten Hören in der Metro. Mit dem [Khatm-Planer](/khatm) verteilen Sie eine ganze Lesung auf feste Tagesportionen, mit dem [Memorierplan](/plan) lernen Sie Monat für Monat auswendig, und mit der [Shams-Methode](/shams) behalten Sie Verse in kleinen Schritten.
 
 ### Dhikr zwischendurch
 
@@ -52,7 +52,7 @@ Mach die Zeiten sichtbar: Schau morgens in unsere [Gebetszeiten](/prayer) für d
 
 ### Der Abend und der Schlaf
 
-Am Abend wiederholst du die Adhkar des Morgens. Vor dem Schlafen kommt dazu:
+Am Abend wiederholen Sie die Adhkar des Morgens. Vor dem Schlafen kommt dazu:
 
 - **Wudu und die rechte Seite.** Der Prophet ﷺ sagte zu al-Bara' ibn Azib: „Wenn du dich zu Bett legst, mach das Wudu wie für das Gebet, leg dich auf deine rechte Seite und sprich: ‚O Allah, ich habe mich Dir ergeben und mein Anliegen Dir anvertraut … Ich glaube an Dein Buch, das Du herabgesandt hast, und an Deinen Propheten, den Du gesandt hast.‘ … Und lass dies das Letzte sein, was du sagst“ (al-Bukhari und Muslim).
 - **Die letzten drei Suren.** Jede Nacht blies der Prophet ﷺ in seine Hände, sprach al-Ikhlas, al-Falaq und an-Nas und strich damit über seinen Körper – dreimal (Aischa, al-Bukhari und Muslim).
@@ -65,7 +65,7 @@ Am Abend wiederholst du die Adhkar des Morgens. Vor dem Schlafen kommt dazu:
 
 ## Reinheit: Wudu und Sauberkeit
 
-„Allah liebt die, die bereuen, und Er liebt die, die sich reinigen“ (Koran 2:222). Der Prophet ﷺ sagte: „Die Reinheit ist die Hälfte des Glaubens“ (Muslim). Das **Wudu** ist mehr als Wasser auf der Haut: eine kleine Pause mitten im Tag, in der du Staub, Ärger und Eile abwäschst. Wer sorgfältig Wudu macht und dann zwei Gebetseinheiten ohne abschweifende Gedanken betet, dem werden seine früheren Sünden vergeben (Uthman, al-Bukhari und Muslim). Wie das Wudu Schritt für Schritt geht, zeigt dir unsere Seite [Wudu](/wudu).
+„Allah liebt die, die bereuen, und Er liebt die, die sich reinigen“ (Koran 2:222). Der Prophet ﷺ sagte: „Die Reinheit ist die Hälfte des Glaubens“ (Muslim). Das **Wudu** ist mehr als Wasser auf der Haut: eine kleine Pause mitten im Tag, in der Sie Staub, Ärger und Eile abwaschen. Wer sorgfältig Wudu macht und dann zwei Gebetseinheiten ohne abschweifende Gedanken betet, dem werden seine früheren Sünden vergeben (Uthman, al-Bukhari und Muslim). Wie das Wudu Schritt für Schritt geht, zeigt Ihnen unsere Seite [Wudu](/wudu).
 
 Sauberkeit reicht über das Wudu hinaus. Der Prophet ﷺ sagte: „Allah ist schön und liebt die Schönheit“ (Muslim) – als jemand fragte, ob es Hochmut sei, schöne Kleidung und Schuhe zu mögen. Er sagte auch: Wäre es für seine Gemeinde nicht zu schwer, hätte er ihnen den **Miswak** vor jedem Gebet befohlen (al-Bukhari und Muslim). Nägel schneiden, den Schnurrbart kürzen und weitere Körperpflege zählt er zur *Fitra*, der natürlichen Veranlagung des Menschen (al-Bukhari und Muslim). Saubere Kleidung, ein gepflegtes Zuhause und ein angenehmer Duft gehören zu einem Muslim, der anderen begegnet.
 
@@ -81,15 +81,15 @@ Bei einigen Fragen gehen die Gelehrten auseinander, und es ist gut, das zu wisse
 - **Fleisch:** Wie geschlachtet werden muss, ob das Fleisch der Leute der Schrift (Koran 5:5) heute überall erlaubt ist und wie die Betäubung zu bewerten ist, beurteilen Rechtsschulen und Gelehrte unterschiedlich.
 - **Zusatzstoffe:** Bei Gelatine, Aromen mit Alkohol oder bestimmten Emulgatoren gibt es ebenfalls verschiedene Ansichten.
 
-Im Zweifel hilft ein verlässliches Halal-Siegel – oder die Frage an einen Gelehrten deiner Rechtsschule. In den Emiraten machen es dir die Regeln leicht: Fleisch wird nach nationalen Halal-Standards geprüft, Schweinefleisch gibt es nur in eigens gekennzeichneten Abteilungen, und Alkohol nur in lizenzierten Bereichen.
+Im Zweifel hilft ein verlässliches Halal-Siegel – oder die Frage an einen Gelehrten Ihrer Rechtsschule. In den Emiraten machen es Ihnen die Regeln leicht: Fleisch wird nach nationalen Halal-Standards geprüft, Schweinefleisch gibt es nur in eigens gekennzeichneten Abteilungen, und Alkohol nur in lizenzierten Bereichen.
 
 ### Essen mit Anstand
 
-Umar ibn Abi Salama war ein Junge im Haus des Propheten ﷺ, und seine Hand wanderte über die ganze Schüssel. Der Prophet ﷺ sagte zu ihm: „Junge, nenne den Namen Allahs, iss mit deiner Rechten und iss von dem, was dir am nächsten ist“ (al-Bukhari und Muslim). Also: **Bismillah** vorher, die rechte Hand, von dem essen, was vor dir steht. Danach **Alhamdulillah**, denn Allah ist mit dem Diener zufrieden, der einen Bissen isst und Ihn dafür preist (Muslim).
+Umar ibn Abi Salama war ein Junge im Haus des Propheten ﷺ, und seine Hand wanderte über die ganze Schüssel. Der Prophet ﷺ sagte zu ihm: „Junge, nenne den Namen Allahs, iss mit deiner Rechten und iss von dem, was dir am nächsten ist“ (al-Bukhari und Muslim). Also: **Bismillah** vorher, die rechte Hand, von dem essen, was vor Ihnen steht. Danach **Alhamdulillah**, denn Allah ist mit dem Diener zufrieden, der einen Bissen isst und Ihn dafür preist (Muslim).
 
 ### Maß halten
 
-„Und esst und trinkt, aber seid nicht maßlos. Er liebt die Maßlosen nicht“ (Koran 7:31). Es wird überliefert, dass der Prophet ﷺ empfahl, den Magen zu einem Drittel mit Essen, zu einem Drittel mit Trinken und zu einem Drittel mit Atem zu füllen (at-Tirmidhi). Halte Maß, verschwende nichts und teile lieber, was übrig bleibt – gerade bei großen Einladungen und Buffets.
+„Und esst und trinkt, aber seid nicht maßlos. Er liebt die Maßlosen nicht“ (Koran 7:31). Es wird überliefert, dass der Prophet ﷺ empfahl, den Magen zu einem Drittel mit Essen, zu einem Drittel mit Trinken und zu einem Drittel mit Atem zu füllen (at-Tirmidhi). Halten Sie Maß, verschwenden Sie nichts und teilen Sie lieber, was übrig bleibt – gerade bei großen Einladungen und Buffets.
 
 ## Halal verdienen
 
@@ -97,7 +97,7 @@ Umar ibn Abi Salama war ein Junge im Haus des Propheten ﷺ, und seine Hand wand
 
 ### Ehrlich im Handel
 
-Dubai ist eine Stadt des Handels, und der Koran spricht klar über Geschäfte: „Gebt volles Maß, wenn ihr messt, und wiegt mit der richtigen Waage“ (Koran 17:35). Der Prophet ﷺ sagte: Sind Käufer und Verkäufer ehrlich und legen alles offen, wird ihr Geschäft gesegnet; verschweigen sie und lügen, wird der Segen getilgt (al-Bukhari und Muslim). Und: „Wer uns betrügt, gehört nicht zu uns“ (Muslim). Gib Anvertrautes zurück (Koran 4:58), halte Verträge ein und schreib Schulden auf (Koran 2:282).
+Dubai ist eine Stadt des Handels, und der Koran spricht klar über Geschäfte: „Gebt volles Maß, wenn ihr messt, und wiegt mit der richtigen Waage“ (Koran 17:35). Der Prophet ﷺ sagte: Sind Käufer und Verkäufer ehrlich und legen alles offen, wird ihr Geschäft gesegnet; verschweigen sie und lügen, wird der Segen getilgt (al-Bukhari und Muslim). Und: „Wer uns betrügt, gehört nicht zu uns“ (Muslim). Geben Sie Anvertrautes zurück (Koran 4:58), halten Sie Verträge ein und schreiben Sie Schulden auf (Koran 2:282).
 
 ### Riba meiden: Grundlagen des Islamic Finance
 
@@ -105,13 +105,13 @@ Dubai ist eine Stadt des Handels, und der Koran spricht klar über Geschäfte: �
 
 Daraus ist das islamische Finanzwesen entstanden. Seine Grundidee: Gewinn ist erlaubt, wenn er aus echtem Handel, echter Leistung oder geteiltem Risiko entsteht. Bekannte Formen sind:
 
-- **Murabaha:** Die Bank kauft eine Ware und verkauft sie dir mit offen genanntem Aufschlag, oft in Raten.
-- **Ijara:** Die Bank kauft etwa ein Auto oder eine Wohnung und vermietet es dir, bis es dir am Ende gehört.
+- **Murabaha:** Die Bank kauft eine Ware und verkauft sie Ihnen mit offen genanntem Aufschlag, oft in Raten.
+- **Ijara:** Die Bank kauft etwa ein Auto oder eine Wohnung und vermietet es Ihnen, bis es Ihnen am Ende gehört.
 - **Musharaka und Mudaraba:** Partnerschaften, in denen Gewinn und Verlust geteilt werden.
 - **Takaful:** eine Versicherung auf Gegenseitigkeit, in der sich die Teilnehmenden gegenseitig absichern.
 - **Sukuk:** Anlagen, die an reale Werte gebunden sind, statt an Zinsen.
 
-In den Emiraten wurde 1975 die Dubai Islamic Bank gegründet, eine der ersten islamischen Geschäftsbanken der Welt; heute bieten viele Banken im Land islamische Konten, Finanzierungen und Takaful an. Ob ein bestimmtes Produkt wirklich frei von Riba ist, beurteilen die Gelehrten nicht immer gleich – auch für Muslime in Ländern ohne islamische Angebote, etwa beim Hauskauf, haben Gelehrtenräte unterschiedliche Antworten gegeben. **Für Einzelheiten frag einen qualifizierten Gelehrten** oder den Scharia-Ausschuss deiner Bank. Was du mit deinem Vermögen sonst schuldest, erklärt das Kapitel [Zakat](/islam/zakat); mehr über die Rechtsschulen im Kapitel [Die Rechtsschulen](/islam/madhahib).
+In den Emiraten wurde 1975 die Dubai Islamic Bank gegründet, eine der ersten islamischen Geschäftsbanken der Welt; heute bieten viele Banken im Land islamische Konten, Finanzierungen und Takaful an. Ob ein bestimmtes Produkt wirklich frei von Riba ist, beurteilen die Gelehrten nicht immer gleich – auch für Muslime in Ländern ohne islamische Angebote, etwa beim Hauskauf, haben Gelehrtenräte unterschiedliche Antworten gegeben. **Für Einzelheiten fragen Sie einen qualifizierten Gelehrten** oder den Scharia-Ausschuss Ihrer Bank. Was Sie mit Ihrem Vermögen sonst schulden, erklärt das Kapitel [Zakat](/islam/zakat); mehr über die Rechtsschulen im Kapitel [Die Rechtsschulen](/islam/madhahib).
 
 ### Arbeitsethik und Itqan
 
@@ -119,10 +119,10 @@ Der Prophet ﷺ sagte: „Niemand hat je bessere Speise gegessen als die, die er
 
 *Itqan* heißt: sorgfältig, gewissenhaft, bis zum Ende. Das gilt im Büro, wo Menschen aus weit über hundert Ländern zusammenarbeiten, genauso wie zu Hause:
 
-- Sei pünktlich und halte dein Wort.
-- Mach deine Arbeit gut, auch wenn niemand hinschaut.
-- Nutze die Arbeitszeit für die Arbeit – das ist Teil der Ehrlichkeit.
-- Wenn du Verantwortung für andere trägst: Es wird überliefert, dass der Prophet ﷺ sagte, man solle dem Arbeiter seinen Lohn geben, bevor sein Schweiß trocknet (Ibn Madscha).
+- Seien Sie pünktlich und halten Sie Ihr Wort.
+- Machen Sie Ihre Arbeit gut, auch wenn niemand hinschaut.
+- Nutzen Sie die Arbeitszeit für die Arbeit – das ist Teil der Ehrlichkeit.
+- Wenn Sie Verantwortung für andere tragen: Es wird überliefert, dass der Prophet ﷺ sagte, man solle dem Arbeiter seinen Lohn geben, bevor sein Schweiß trocknet (Ibn Madscha).
 
 ## Familie, Eltern und Nachbarn
 
@@ -150,9 +150,9 @@ Allah gebietet Güte „zum Nachbarn, der (euch) nahesteht, und zum Nachbarn, de
 
 Allah sagt über Seinen Propheten ﷺ: „Und du bist wahrlich von großartiger Wesensart“ (Koran 68:4). Der Prophet ﷺ selbst sagte: „Die Besten unter euch sind die mit dem besten Charakter“ (al-Bukhari 3559). Guter Charakter zeigt sich im Kleinen:
 
-- Rede nicht schlecht über Abwesende (Koran 49:12): „Wer an Allah und den Jüngsten Tag glaubt, der soll Gutes sagen oder schweigen“ (al-Bukhari und Muslim).
-- Begegne Menschen mit einem freundlichen Gesicht: „Verachte nichts Gutes, und sei es, dass du deinen Bruder mit heiterem Gesicht triffst“ (Muslim).
-- Sei geduldig, vergib schnell und halte deine Versprechen.
+- Reden Sie nicht schlecht über Abwesende (Koran 49:12): „Wer an Allah und den Jüngsten Tag glaubt, der soll Gutes sagen oder schweigen“ (al-Bukhari und Muslim).
+- Begegnen Sie Menschen mit einem freundlichen Gesicht: „Verachte nichts Gutes, und sei es, dass du deinen Bruder mit heiterem Gesicht triffst“ (Muslim).
+- Seien Sie geduldig, vergeben Sie schnell und halten Sie Ihre Versprechen.
 
 ### Haya' – Schamhaftigkeit und Anstand
 
@@ -162,18 +162,18 @@ Zur Bescheidenheit gehören zurückhaltende Kleidung für Männer und Frauen, ei
 
 ### Der Gruß des Friedens
 
-*As-salamu alaikum* – „Friede sei mit euch“ – ist ein Gebet für den anderen. Allah sagt: „Wenn ihr mit einem Gruß gegrüßt werdet, dann grüßt mit einem schöneren oder erwidert ihn“ (Koran 4:86). Der Prophet ﷺ lehrte, dass der Salam die Liebe unter den Gläubigen wachsen lässt: „Verbreitet den Salam unter euch“ (Muslim). Im Aufzug, an der Rezeption: Ein Lächeln und ein Gruß kosten nichts. Mit Menschen anderer Religionen sprichst du freundlich, in Worten, die für beide passen: „Sprecht zu den Menschen Gutes“ (Koran 2:83).
+*As-salamu alaikum* – „Friede sei mit euch“ – ist ein Gebet für den anderen. Allah sagt: „Wenn ihr mit einem Gruß gegrüßt werdet, dann grüßt mit einem schöneren oder erwidert ihn“ (Koran 4:86). Der Prophet ﷺ lehrte, dass der Salam die Liebe unter den Gläubigen wachsen lässt: „Verbreitet den Salam unter euch“ (Muslim). Im Aufzug, an der Rezeption: Ein Lächeln und ein Gruß kosten nichts. Mit Menschen anderer Religionen sprechen Sie freundlich, in Worten, die für beide passen: „Sprecht zu den Menschen Gutes“ (Koran 2:83).
 
 ## Gesundheit und Sport
 
-Dein Körper ist dir anvertraut. Der Prophet ﷺ sagte: „Der starke Gläubige ist besser und Allah lieber als der schwache Gläubige, und in beiden ist Gutes“ (Muslim). Zu einem Gefährten, der Tag und Nacht betete und fastete, sagte er: „Dein Körper hat ein Recht auf dich“ (al-Bukhari). Und: „Zwei Gaben gibt es, bei denen viele Menschen sich selbst betrügen: die Gesundheit und die freie Zeit“ (al-Bukhari). Der Koran mahnt: „und stürzt euch nicht mit eigener Hand ins Verderben“ (Koran 2:195).
+Ihr Körper ist Ihnen anvertraut. Der Prophet ﷺ sagte: „Der starke Gläubige ist besser und Allah lieber als der schwache Gläubige, und in beiden ist Gutes“ (Muslim). Zu einem Gefährten, der Tag und Nacht betete und fastete, sagte er: „Dein Körper hat ein Recht auf dich“ (al-Bukhari). Und: „Zwei Gaben gibt es, bei denen viele Menschen sich selbst betrügen: die Gesundheit und die freie Zeit“ (al-Bukhari). Der Koran mahnt: „und stürzt euch nicht mit eigener Hand ins Verderben“ (Koran 2:195).
 
 Praktisch heißt das:
 
-- **Bewegung:** Aischa berichtet, dass sie mit dem Propheten ﷺ um die Wette lief (Abu Dawud). Spaziergänge, Schwimmen, Radfahren oder Sport im Verein – alles, was dich gesund hält, kann mit guter Absicht Gottesdienst sein. In den Emiraten laden Strandpromenaden, Parks und Radwege dazu ein; im Sommer bewegst du dich am besten früh morgens oder abends.
+- **Bewegung:** Aischa berichtet, dass sie mit dem Propheten ﷺ um die Wette lief (Abu Dawud). Spaziergänge, Schwimmen, Radfahren oder Sport im Verein – alles, was Sie gesund hält, kann mit guter Absicht Gottesdienst sein. In den Emiraten laden Strandpromenaden, Parks und Radwege dazu ein; im Sommer bewegen Sie sich am besten früh morgens oder abends.
 - **Schlaf:** Früh schlafen und früh aufstehen passt zum Rhythmus der Gebete.
 - **Essen:** Maß halten (Koran 7:31), viel Wasser, wenig Verschwendung.
-- **Seele:** Gebet, Dhikr und Gespräche mit Menschen, denen du vertraust, sind auch Pflege für die Seele. Wer seelisch leidet, darf und soll sich Hilfe holen – auch bei Fachleuten.
+- **Seele:** Gebet, Dhikr und Gespräche mit Menschen, denen Sie vertrauen, sind auch Pflege für die Seele. Wer seelisch leidet, darf und soll sich Hilfe holen – auch bei Fachleuten.
 
 ## Umwelt, Tiere und Verschwendung
 
@@ -185,15 +185,15 @@ Wenn ein Muslim einen Baum pflanzt und ein Mensch oder ein Tier davon isst, ist 
 
 ## Social Media und das Handy
 
-Das Handy ist ein Werkzeug – es kann dich näher zu Allah bringen oder viel Zeit verschlingen. Der Koran gibt dafür erstaunlich aktuelle Regeln:
+Das Handy ist ein Werkzeug – es kann Sie näher zu Allah bringen oder viel Zeit verschlingen. Der Koran gibt dafür erstaunlich aktuelle Regeln:
 
 - **Erst prüfen, dann teilen:** „O ihr, die ihr glaubt, wenn ein Frevler mit einer Nachricht zu euch kommt, dann prüft sie genau nach, damit ihr nicht Leuten in Unwissenheit Schaden zufügt und dann über das, was ihr getan habt, Reue empfindet“ (Koran 49:6). Der Prophet ﷺ sagte: „Es genügt einem Menschen als Lüge, alles weiterzuerzählen, was er hört“ (Muslim).
 - **Kein Spott, keine üble Nachrede:** „Die einen sollen nicht über die anderen spotten; vielleicht sind diese ja besser als jene“ (Koran 49:11) – und: „spioniert nicht und führt nicht üble Nachrede übereinander“ (Koran 49:12). Das gilt für Kommentare genauso wie für Gespräche.
 - **Nichts ohne Wissen:** „Und verfolge nicht das, wovon du kein Wissen hast“ (Koran 17:36). Gerade bei religiösen Fragen: lieber einen Gelehrten fragen als einem viralen Video glauben.
-- **Deine Hand und deine Tastatur:** „Der Muslim ist der, vor dessen Zunge und Hand die Muslime sicher sind“ (al-Bukhari und Muslim). Heute gehört die Tastatur dazu.
+- **Ihre Hand und Ihre Tastatur:** „Der Muslim ist der, vor dessen Zunge und Hand die Muslime sicher sind“ (al-Bukhari und Muslim). Heute gehört die Tastatur dazu.
 - **Das Unnötige lassen:** Es wird überliefert, dass der Prophet ﷺ sagte: „Zum guten Islam eines Menschen gehört, dass er lässt, was ihn nicht angeht“ (at-Tirmidhi).
 
-Ein paar praktische Gewohnheiten: Leg das Handy beim Gebet und beim Essen weg, mach keine Fotos von Menschen ohne ihre Erlaubnis, teile Gutes – einen Vers, ein Bittgebet, eine hilfreiche Information – und setze dir feste Zeiten ohne Bildschirm. In den Emiraten sind auch die Gesetze hier deutlich: Wer Gerüchte verbreitet oder Bilder anderer ohne Erlaubnis veröffentlicht, kann sich strafbar machen.
+Ein paar praktische Gewohnheiten: Legen Sie das Handy beim Gebet und beim Essen weg, machen Sie keine Fotos von Menschen ohne ihre Erlaubnis, teilen Sie Gutes – einen Vers, ein Bittgebet, eine hilfreiche Information – und setzen Sie sich feste Zeiten ohne Bildschirm. In den Emiraten sind auch die Gesetze hier deutlich: Wer Gerüchte verbreitet oder Bilder anderer ohne Erlaubnis veröffentlicht, kann sich strafbar machen.
 
 ## Unterwegs: Reisen mit dem Islam
 
@@ -204,13 +204,13 @@ Der Islam macht das Reisen leicht:
 - **Das Gebet kürzen:** „Und wenn ihr im Land umherreist, so ist es keine Sünde für euch, das Gebet zu kürzen“ (Koran 4:101). Der Prophet ﷺ nannte diese Erleichterung eine Gabe, die Allah euch gegeben hat – „so nehmt Seine Gabe an“ (Muslim). Ab welcher Entfernung man kürzt und ob man Gebete zusammenlegen darf, beurteilen die Rechtsschulen unterschiedlich; die hanafitische Schule ist beim Zusammenlegen am zurückhaltendsten, die dschafaritische Schule erlaubt es auch außerhalb von Reisen.
 - **Fasten:** Reisende dürfen im Ramadan das Fasten brechen und es später nachholen (Koran 2:184).
 - **Bittgebete:** Es wird überliefert, dass das Bittgebet des Reisenden erhört wird (Abu Dawud, at-Tirmidhi).
-- **Gebetszeiten und Qibla:** Unsere [Gebetszeiten](/prayer) zeigen dir die Zeiten für jeden Ort; an den Flughäfen der Emirate gibt es Gebetsräume.
+- **Gebetszeiten und Qibla:** Unsere [Gebetszeiten](/prayer) zeigen Ihnen die Zeiten für jeden Ort; an den Flughäfen der Emirate gibt es Gebetsräume.
 
 Und unterwegs gilt der gute Charakter erst recht: geduldig in der Schlange, freundlich zu Personal und Mitreisenden, respektvoll gegenüber den Gesetzen und Bräuchen des Gastlandes.
 
 ## Der Freitag
 
-„O ihr, die ihr glaubt, wenn am Freitag zum Gebet gerufen wird, dann eilt zum Gedenken Allahs und lasst das Geschäft“ (Koran 62:9). Die Arbeit ruht – und danach heißt es: „Breitet euch auf der Erde aus und trachtet nach Allahs Huld“ (Koran 62:10). Der Prophet ﷺ nannte den Freitag den besten Tag, an dem die Sonne aufgeht (Muslim). Dein Freitag kann so aussehen:
+„O ihr, die ihr glaubt, wenn am Freitag zum Gebet gerufen wird, dann eilt zum Gedenken Allahs und lasst das Geschäft“ (Koran 62:9). Die Arbeit ruht – und danach heißt es: „Breitet euch auf der Erde aus und trachtet nach Allahs Huld“ (Koran 62:10). Der Prophet ﷺ nannte den Freitag den besten Tag, an dem die Sonne aufgeht (Muslim). Ihr Freitag kann so aussehen:
 
 - **Ghusl, Pflege und früh gehen.** Der Prophet ﷺ betonte das Ghusl am Freitag (al-Bukhari und Muslim). Wer sich reinigt, Duft anlegt, zur Moschee geht und still zuhört, dem wird zwischen diesem und dem nächsten Freitag vergeben (Salman, al-Bukhari). Wer früh kommt, erhält mehr Lohn als der, der spät kommt (al-Bukhari und Muslim).
 - **Sure al-Kahf.** Es wird überliefert (al-Hakim, al-Baihaqi), dass dem, der am Freitag die Sure al-Kahf liest, ein Licht zwischen den beiden Freitagen leuchtet. Gelehrte bewerten die Überlieferungen unterschiedlich; die Lesung ist weit verbreitet. Die Sure hat 110 Verse, etwa zwölf Seiten.
@@ -231,11 +231,11 @@ Wer in den Emiraten lebt, merkt schnell, wie sehr der Alltag hier einen islamisc
 - **Fragen stellen:** Offizielle Fatwa-Stellen beantworten religiöse Fragen, und viele Moscheen und Koranzentren bieten Unterricht an.
 - **Zusammenleben:** Menschen aus über 200 Nationen und vielen Religionen leben hier respektvoll miteinander – ganz im Sinne von „Sprecht zu den Menschen Gutes“ (Koran 2:83).
 
-Mehr über das Land und seine Haltung zum Glauben findest du im Kapitel über [die Emirate](/islam/emirates).
+Mehr über das Land und seine Haltung zum Glauben finden Sie im Kapitel über [die Emirate](/islam/emirates).
 
 ## Die Checkliste für den Tag
 
-Eine einfache Liste, kein Zwang – du musst nicht alles an einem Tag schaffen:
+Eine einfache Liste, kein Zwang – Sie müssen nicht alles an einem Tag schaffen:
 
 1. Beim Aufwachen danken, Wudu machen.
 2. Fajr beten, dann die Morgen-Adhkar.
@@ -255,14 +255,14 @@ Am Freitag: Ghusl, früh zur Moschee, Sure al-Kahf, Bittgebet.
 
 ## Klein, aber beständig
 
-Aischa berichtet, dass der Prophet ﷺ sagte: „Die liebsten Taten bei Allah sind die beständigsten, auch wenn sie wenig sind“ (al-Bukhari und Muslim). Und: „Die Religion ist leicht. Wer sie sich schwer macht, den überwältigt sie. Strebt nach dem Richtigen, bleibt maßvoll und freut euch auf die gute Botschaft“ (Abu Huraira, al-Bukhari). Such dir also zwei oder drei Punkte aus der Liste, halte sie zwei Wochen lang jeden Tag ein und füge dann einen weiteren hinzu. Verpasst du einen Tag, fang am nächsten wieder an – Allah sieht dein Bemühen.`,
+Aischa berichtet, dass der Prophet ﷺ sagte: „Die liebsten Taten bei Allah sind die beständigsten, auch wenn sie wenig sind“ (al-Bukhari und Muslim). Und: „Die Religion ist leicht. Wer sie sich schwer macht, den überwältigt sie. Strebt nach dem Richtigen, bleibt maßvoll und freut euch auf die gute Botschaft“ (Abu Huraira, al-Bukhari). Suchen Sie sich also zwei oder drei Punkte aus der Liste, halten Sie sie zwei Wochen lang jeden Tag ein und fügen Sie dann einen weiteren hinzu. Verpasst Sie einen Tag, fangen Sie am nächsten wieder an – Allah sieht Ihr Bemühen.`,
     faq: [
-      { q: "Muss ich all das jeden Tag tun?", a: "Nein. Verpflichtend sind die fünf Gebete und die übrigen Pflichten des Islam, dazu das Meiden des Verbotenen; Morgen- und Abend-Adhkar, Koranlesung, Dhikr und vieles andere in diesem Kapitel sind empfohlene Sunnah. Fang mit wenigem an und bleibe dabei – die liebsten Taten bei Allah sind die beständigsten, auch wenn sie klein sind (al-Bukhari und Muslim)." },
-      { q: "Ich verschlafe oft den Fajr. Was kann ich tun?", a: "Geh früher schlafen, erneuere vor dem Schlafen die Absicht aufzustehen und stell einen zweiten Wecker. Mach gleich nach dem Aufstehen das Wudu – es löst die „Knoten“ des Schlafs (al-Bukhari und Muslim). Wer ein Gebet verschläft, betet es, sobald er sich erinnert (al-Bukhari und Muslim). Bleib dran und verzweifle nicht." },
-      { q: "Woran erkenne ich, ob ein Lebensmittel halal ist?", a: "Grundsätzlich ist Essen erlaubt; verboten sind vor allem Schweinefleisch, Blut, Verendetes, nicht nach islamischer Art geschlachtetes Fleisch und Rauschmittel (Koran 2:173, 5:3, 5:90). Bei Fleisch und Zusatzstoffen hilft ein verlässliches Halal-Siegel. Wo die Gelehrten unterschiedlicher Ansicht sind, etwa bei Meerestieren oder der Betäubung, folge deiner Rechtsschule." },
-      { q: "Darf ich ein Bankkonto, eine Kreditkarte oder eine Finanzierung nutzen?", a: "Ein Konto zu haben ist kein Problem; gemieden werden soll Riba, also Zins auf Darlehen (Koran 2:275). Wo es geht, nutze islamische Angebote wie Murabaha oder Ijara und begleiche Kreditkarten rechtzeitig, damit keine Zinsen anfallen. Bei Einzelfragen, etwa zum Hauskauf, unterscheiden sich die Antworten der Gelehrten – frag einen qualifizierten Gelehrten." },
-      { q: "Wie bekomme ich Gebet und Arbeit unter einen Hut?", a: "Schau morgens in die Gebetszeiten deines Ortes und plane Termine darum herum. Frag freundlich nach einem ruhigen Platz und einer kurzen Pause – in den Emiraten gibt es fast überall Gebetsräume. „Allah erlegt keiner Seele mehr auf, als sie zu leisten vermag“ (Koran 2:286). Bei schwierigen Arbeitsbedingungen frag einen Gelehrten, wie du das Gebet richtig verrichtest." },
-      { q: "Wie gehe ich als Muslim gut mit Social Media um?", a: "Prüfe Nachrichten, bevor du sie teilst (Koran 49:6), spotte nicht und rede nicht schlecht über andere (Koran 49:11–12), und frag bei religiösen Fragen lieber einen Gelehrten als einem viralen Video zu glauben. Leg das Handy beim Gebet und beim Essen weg und teile lieber Gutes." },
+      { q: "Muss ich all das jeden Tag tun?", a: "Nein. Verpflichtend sind die fünf Gebete und die übrigen Pflichten des Islam, dazu das Meiden des Verbotenen; Morgen- und Abend-Adhkar, Koranlesung, Dhikr und vieles andere in diesem Kapitel sind empfohlene Sunnah. Fangen Sie mit wenigem an und bleiben Sie dabei – die liebsten Taten bei Allah sind die beständigsten, auch wenn sie klein sind (al-Bukhari und Muslim)." },
+      { q: "Ich verschlafe oft den Fajr. Was kann ich tun?", a: "Gehen Sie früher schlafen, erneuern Sie vor dem Schlafen die Absicht aufzustehen und stellen Sie einen zweiten Wecker. Machen Sie gleich nach dem Aufstehen das Wudu – es löst die „Knoten“ des Schlafs (al-Bukhari und Muslim). Wer ein Gebet verschläft, betet es, sobald er sich erinnert (al-Bukhari und Muslim). Bleiben Sie dran und verzweifeln Sie nicht." },
+      { q: "Woran erkenne ich, ob ein Lebensmittel halal ist?", a: "Grundsätzlich ist Essen erlaubt; verboten sind vor allem Schweinefleisch, Blut, Verendetes, nicht nach islamischer Art geschlachtetes Fleisch und Rauschmittel (Koran 2:173, 5:3, 5:90). Bei Fleisch und Zusatzstoffen hilft ein verlässliches Halal-Siegel. Wo die Gelehrten unterschiedlicher Ansicht sind, etwa bei Meerestieren oder der Betäubung, folgen Sie Ihrer Rechtsschule." },
+      { q: "Darf ich ein Bankkonto, eine Kreditkarte oder eine Finanzierung nutzen?", a: "Ein Konto zu haben ist kein Problem; gemieden werden soll Riba, also Zins auf Darlehen (Koran 2:275). Wo es geht, nutzen Sie islamische Angebote wie Murabaha oder Ijara und begleichen Sie Kreditkarten rechtzeitig, damit keine Zinsen anfallen. Bei Einzelfragen, etwa zum Hauskauf, unterscheiden sich die Antworten der Gelehrten – fragen Sie einen qualifizierten Gelehrten." },
+      { q: "Wie bekomme ich Gebet und Arbeit unter einen Hut?", a: "Schauen Sie morgens in die Gebetszeiten Ihres Ortes und planen Sie Termine darum herum. Fragen Sie freundlich nach einem ruhigen Platz und einer kurzen Pause – in den Emiraten gibt es fast überall Gebetsräume. „Allah erlegt keiner Seele mehr auf, als sie zu leisten vermag“ (Koran 2:286). Bei schwierigen Arbeitsbedingungen fragen Sie einen Gelehrten, wie Sie das Gebet richtig verrichten." },
+      { q: "Wie gehe ich als Muslim gut mit Social Media um?", a: "Prüfen Sie Nachrichten, bevor Sie sie teilen (Koran 49:6), spotten Sie nicht und reden Sie nicht schlecht über andere (Koran 49:11–12), und fragen Sie bei religiösen Fragen lieber einen Gelehrten als einem viralen Video zu glauben. Legen Sie das Handy beim Gebet und beim Essen weg und teilen Sie lieber Gutes." },
     ],
     sources: [
       "Koran 2:83, 2:168, 2:173, 2:184, 2:195, 2:222, 2:255, 2:275, 2:278–279, 2:282, 2:285–286, 4:29, 4:36, 4:58, 4:86, 4:101, 4:103, 5:3, 5:5, 5:90, 5:96, 6:38, 7:31, 7:56, 11:114, 13:28, 17:23–24, 17:26–27, 17:35, 17:36, 24:30–31, 30:21, 43:13–14, 49:6, 49:11–12, 59:18, 62:9–10, 68:4, 73:4, 112–114",

@@ -124,7 +124,7 @@ Nehmen wir runde Zahlen. Am Stichtag haben Sie:
 - Handelswaren im Wert von 10.000 Dirham,
 - und 2.000 Dirham an Schulden, die jetzt fällig sind.
 
-Ihr zakatpflichtiges Vermögen beträgt also 30.000 + 10.000 + 10.000 − 2.000 = **48.000 Dirham**. Angenommen, dieser Betrag liegt über dem Nisab und Ihr Vermögen war das ganze Jahr über mindestens auf Nisab-Höhe. Dann beträgt Ihre Zakat 48.000 × 2,5 % = **1.200 Dirham**. Ein praktischer Trick: Teile den Betrag durch 40 – das Ergebnis ist Ihre Zakat. Rechnen Sie nach dem Sonnenjahr, wären es 48.000 × 2,577 % ≈ **1.237 Dirham**.
+Ihr zakatpflichtiges Vermögen beträgt also 30.000 + 10.000 + 10.000 − 2.000 = **48.000 Dirham**. Angenommen, dieser Betrag liegt über dem Nisab und Ihr Vermögen war das ganze Jahr über mindestens auf Nisab-Höhe. Dann beträgt Ihre Zakat 48.000 × 2,5 % = **1.200 Dirham**. Ein praktischer Trick: Teilen Sie den Betrag durch 40 – das Ergebnis ist Ihre Zakat. Rechnen Sie nach dem Sonnenjahr, wären es 48.000 × 2,577 % ≈ **1.237 Dirham**.
 
 ### Ein Beispiel aus der Landwirtschaft
 
@@ -198,10 +198,10 @@ Geben Sie Ihre Zakat immer an vertrauenswürdige, zugelassene Stellen – so erf
 
 Die Grundregeln der Zakat sind klar, aber das Leben ist vielfältig. In folgenden Fällen lohnt sich die Frage an einen Gelehrten Ihrer Rechtsschule oder an eine offizielle Zakat-Stelle besonders:
 
-- Sie besitzt Gold- oder Silberschmuck und sind unsicher, welcher Ansicht Sie folgen.
+- Sie besitzen Gold- oder Silberschmuck und sind unsicher, welcher Ansicht Sie folgen.
 - Sie haben Aktien, Fonds, Rentenansprüche oder eine Abfindung, die noch nicht ausgezahlt ist.
 - Sie führen ein Geschäft oder sind an einer Firma beteiligt.
-- Sie haben Schulden, etwa eine Hypothek oder einen Autokredit, und fragen Sie, wie viel Sie abziehen dürfen.
+- Sie haben Schulden, etwa eine Hypothek oder einen Autokredit, und fragen sich, wie viel Sie abziehen dürfen.
 - Sie haben die Zakat in vergangenen Jahren nicht gezahlt und möchten das nachholen.
 - Sie verwalten Vermögen für ein Kind oder einen Angehörigen.
 
@@ -280,7 +280,7 @@ The nisab goes back to the time of the Prophet ﷺ. He said: "No charity is due 
 - **85 grams of gold** (20 × 4.25 g), or
 - **595 grams of silver** (200 × 2.975 g).
 
-These figures are a common reference point, not a number everyone has agreed on. Because the old weights are converted in different ways, some scholars and institutions, especially in South Asia, work with slightly different values, suchen Sie as 87.48 grams of gold and 612.36 grams of silver.
+These figures are a common reference point, not a number everyone has agreed on. Because the old weights are converted in different ways, some scholars and institutions, especially in South Asia, work with slightly different values, such as 87.48 grams of gold and 612.36 grams of silver.
 
 For gold and silver themselves the matter is clear. For cash and bank balances, however, the question arises which of the two values to use. Here scholars differ: some recommend the silver value because it is lower and so obliges more people to pay zakat – in favour of the poor. Others use the gold value because it is closer to today's purchasing power. Both views have their reasoning. Follow the opinion you trust and apply it consistently.
 
@@ -306,7 +306,7 @@ Things for personal use, on the other hand, are not subject to zakat: your home,
 
 Many forms of today's wealth were unknown to classical law. Contemporary scholars and expert bodies have developed guidelines that differ in detail. Commonly taught:
 
-- **Shares and funds** held for trading count at their market value on your zakat date. For long-term investments, many calculate zakat only on the zakatable portion of the company's assets, suchen Sie as cash, receivables and inventory.
+- **Shares and funds** held for trading count at their market value on your zakat date. For long-term investments, many calculate zakat only on the zakatable portion of the company's assets, such as cash, receivables and inventory.
 - **Rented-out property** is not itself zakatable; but rental income you have saved is part of your wealth.
 - **Property bought for resale** counts as trade goods at its market value.
 - **Money owed to you**: according to many scholars, money someone owes you and will surely repay is included. For doubtful debts the common view is that you pay once you receive the money; whether also for past years is disputed.
@@ -383,7 +383,7 @@ Zakat is not given to one's own parents, grandparents, children or grandchildren
 
 Besides zakat on wealth there is **zakat al-fitr**, the payment for breaking the fast. Ibn Umar reports that the Prophet ﷺ made it obligatory on every Muslim – male and female, young and old, free and unfree: one **sa'** (an old measure of volume, commonly converted to roughly 2.5 to 3 kilograms) of dates or barley, and he commanded that it be given **before the Eid prayer** (al-Bukhari and Muslim). Ibn Abbas describes its purpose: it purifies the fasting person from idle talk and is food for the poor (reported by Abu Dawud).
 
-The head of the household gives it for himself and everyone he provides for. Today a staple food of the country is usually given, suchen Sie as rice. Whether one may give its value in money instead is a well-known difference of opinion: the majority of scholars prefer food, while the Hanafi school and many contemporary scholars permit the money value, because it often benefits those in need more. In the Emirates the competent authorities set an amount each year as guidance.
+The head of the household gives it for himself and everyone he provides for. Today a staple food of the country is usually given, such as rice. Whether one may give its value in money instead is a well-known difference of opinion: the majority of scholars prefer food, while the Hanafi school and many contemporary scholars permit the money value, because it often benefits those in need more. In the Emirates the competent authorities set an amount each year as guidance.
 
 It should reach those in need before the Eid prayer at the latest. The Companions gave it a day or two before the festival (al-Bukhari); the Hanafi and Shafi'i schools allow it to be paid earlier in Ramadan. In the Ja'fari school, too, zakat al-fitr – often called *fitra* there – is obligatory: one sa' of a staple food or its value in money. You can read more about the festival in the chapter [The important days of the Islamic year](/islam/eid).
 
@@ -401,7 +401,7 @@ A classic form of ongoing charity is the **waqf**, the endowment. Umar owned lan
 
 ## Khums in the Ja'fari school
 
-In the Shia Ja'fari school there is a second financial duty alongside zakat: **khums**, the "fifth". It is based on the verse: "And know that whatever you obtain of spoils, a fifth of it belongs to Allah and to the Messenger and to the near relatives …" (Quran 8:41). According to Ja'fari teaching, this duty applies not only to the spoils of war but above all to the **surplus of annual income**: whatever remains of one's earnings at the end of one's own khums year, after the expenses for oneself and one's family have been met, one fifth of it is given. A few further categories are added, suchen Sie as minerals and found treasure.
+In the Shia Ja'fari school there is a second financial duty alongside zakat: **khums**, the "fifth". It is based on the verse: "And know that whatever you obtain of spoils, a fifth of it belongs to Allah and to the Messenger and to the near relatives …" (Quran 8:41). According to Ja'fari teaching, this duty applies not only to the spoils of war but above all to the **surplus of annual income**: whatever remains of one's earnings at the end of one's own khums year, after the expenses for oneself and one's family have been met, one fifth of it is given. A few further categories are added, such as minerals and found treasure.
 
 Khums is divided into two halves: the share of the sadat goes to needy descendants of the Prophet ﷺ, and the share of the Imam is used for religious and social purposes in agreement with a recognised scholar (*marja'*). In this school zakat is limited to nine things: wheat, barley, dates, raisins, gold and silver coins, camels, cattle, and sheep and goats.
 
@@ -426,7 +426,7 @@ The basic rules of zakat are clear, but life is varied. In the following cases i
 - You own gold or silver jewellery and are unsure which view to follow.
 - You have shares, funds, pension entitlements or an end-of-service benefit not yet paid out.
 - You run a business or hold a stake in a company.
-- You have debts, suchen Sie as a mortgage or a car loan, and wonder how much you may deduct.
+- You have debts, such as a mortgage or a car loan, and wonder how much you may deduct.
 - You did not pay zakat in past years and want to make it up.
 - You manage wealth for a child or a relative.
 

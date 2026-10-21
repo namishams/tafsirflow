@@ -6,6 +6,7 @@ import DuaGenerator from "@/components/DuaGenerator";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { MoreTiles } from "@/components/PosterTiles";
 import { abs, pageMeta } from "@/lib/site";
+import { verseQuote } from "@/lib/verseQuotes";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -27,7 +28,7 @@ export default async function DuaGeneratorPage({ params }: { params: Promise<{ l
           <p className="rise text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{t("kicker")}</p>
           <h1 className="rise font-display mt-3 text-[40px] leading-[1.05] sm:text-6xl" style={{ animationDelay: "120ms" }}>{t("title")}</h1>
           <p className="rise mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70" style={{ animationDelay: "240ms" }}>{t("lead")}</p>
-          <p className="rise font-arabic mt-6 text-2xl text-[rgb(var(--gold))]" dir="rtl" lang="ar" style={{ animationDelay: "360ms" }}>وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ <span className="text-sm text-white/45">(40:60)</span></p>
+          <p className="rise font-arabic mt-6 text-2xl text-[rgb(var(--gold))]" dir="rtl" lang="ar" style={{ animationDelay: "360ms" }}>{verseQuote("imlaei", "40:60", 1, 5)} <span className="text-sm text-white/45">(40:60)</span></p>
         </div>
       </section>
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-5">

@@ -4,20 +4,20 @@ export type Step = { n: string; title: string; body: string; href: string; cta: 
 export type C = { kicker: string; title: string; lead: string; stepsTitle: string; steps: Step[]; toolsTitle: string; tools: [string, string, string][]; dayTitle: string; day: [string, string][]; start: string };
 const de: C = {
   kicker: "Der Aufbau", title: "So ist die Quran Masterclass aufgebaut",
-  lead: "Ein Weg in sechs Stufen – vom ersten Buchstaben bis zur sicheren Rezitation. Jede Stufe baut auf der vorigen auf, und du kannst dort einsteigen, wo du heute stehst.",
+  lead: "Ein Weg in sechs Stufen – vom ersten Buchstaben bis zur sicheren Rezitation. Jede Stufe baut auf der vorigen auf, und Sie können dort einsteigen, wo Sie heute stehen.",
   stepsTitle: "Der Weg in sechs Stufen",
   steps: [
-    { n: "1", title: "Arabisch lesen lernen", body: "Buchstaben, Formen, Vokalzeichen, Schadda, Sonnen- und Mondbuchstaben – bis du Al-Fatiha und die kurzen Suren selbst liest. Kurze Lektionen mit Übungen, Fehler kommen gezielt zurück.", href: "/arabic", cta: "Zum Lesekurs", time: "ca. 2–6 Wochen" },
+    { n: "1", title: "Arabisch lesen lernen", body: "Buchstaben, Formen, Vokalzeichen, Schadda, Sonnen- und Mondbuchstaben – bis Sie Al-Fatiha und die kurzen Suren selbst lesen. Kurze Lektionen mit Übungen, Fehler kommen gezielt zurück.", href: "/arabic", cta: "Zum Lesekurs", time: "ca. 2–6 Wochen" },
     { n: "2", title: "Beten lernen", body: "Der Gebetstrainer zeigt jede Haltung mit Animation – sunnitisch und schiitisch (Dscha'fari), mit arabischem Text, Umschrift und Bedeutung.", href: "/salah", cta: "Zum Gebetstrainer", time: "ca. 1–2 Wochen" },
     { n: "3", title: "Vers für Vers mit der Shams-Methode", body: "Sieben Schritte pro Vers: hören, rückwärts aufbauen, Wort für Wort, Bedeutung und Eselsbrücken, Tafsir, verblassende Hinweise, Nachdenken. Ein Gedächtnismodell bringt jeden Vers zur richtigen Zeit zurück.", href: "/shams", cta: "Die Methode", time: "4 Min. pro Vers" },
-    { n: "4", title: "Dranbleiben: Plan, Academy, Landkarte", body: "Ein 365-Tage-Plan oder ein Hifz-Plan gibt dein Tagespensum vor, die Academy prüft dich mit Tests auf Zeit, die Koran-Landkarte zeigt, was sitzt und was wackelt.", href: "/plan", cta: "Plan wählen", time: "täglich 10–30 Min." },
+    { n: "4", title: "Dranbleiben: Plan, Academy, Landkarte", body: "Ein 365-Tage-Plan oder ein Hifz-Plan gibt Ihr Tagespensum vor, die Academy prüft Sie mit Tests auf Zeit, die Koran-Landkarte zeigt, was sitzt und was wackelt.", href: "/plan", cta: "Plan wählen", time: "täglich 10–30 Min." },
     { n: "5", title: "Schön rezitieren: Tajwid", body: "Die Regeln der Rezitation Schritt für Schritt mit Beispielen aus dem Koran und Quiz – und die großen Rezitatoren als Vorbild zum Zuhören.", href: "/tajweed", cta: "Zum Tajwid-Kurs", time: "ca. 2–3 Monate" },
     { n: "6", title: "Der Weg zum Rezitator", body: "Juz 'Amma, dann der ganze Koran, Wiederholungssystem nach Sabaq, Sabqi, Manzil – bis zum Vortrag vor einem Lehrer und der Idschaza.", href: "/islam/reciter-path", cta: "Der Rezitator-Weg", time: "Jahre – Schritt für Schritt" },
   ],
   toolsTitle: "Begleiter auf dem Weg",
   tools: [["/today", "Heute", "Dein Tagesplan, Serie und Fortschritt"], ["/map", "Koran-Landkarte", "Was sitzt, was wackelt – Sure für Sure"], ["/khatm", "Khatm-Planer", "Den ganzen Koran lesen, mit Tagespensum"], ["/vocab", "Wortschatz", "Die häufigsten Wörter des Korans"], ["/radio", "Radio", "Rezitation rund um die Uhr"], ["/prayer", "Gebetszeiten", "Mit Adhan und Qibla"], ["/duas", "Bittgebete", "Aus Koran und Sunnah"], ["/islam", "Islam verstehen", "Glaube, Gebet, Feste, Rechtsschulen"], ["/assistant", "Assistent", "Fragen zu Koran und Islam"]],
   dayTitle: "Ein typischer Lerntag (20 Minuten)",
-  day: [["5 Min.", "Wiederholen, was heute fällig ist – die roten und goldenen Verse zuerst."], ["10 Min.", "Neue Verse aus deinem Plan mit der Shams-Methode."], ["3 Min.", "Eine Academy-Lektion oder eine Arabisch-Lektion."], ["2 Min.", "Eine Notiz: Was nehme ich aus dem Vers heute mit?"]],
+  day: [["5 Min.", "Wiederholen, was heute fällig ist – die roten und goldenen Verse zuerst."], ["10 Min.", "Neue Verse aus Ihrem Plan mit der Shams-Methode."], ["3 Min.", "Eine Academy-Lektion oder eine Arabisch-Lektion."], ["2 Min.", "Eine Notiz: Was nehme ich aus dem Vers heute mit?"]],
   start: "Jetzt beginnen",
 };
 const en: C = {

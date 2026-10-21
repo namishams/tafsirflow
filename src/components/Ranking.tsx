@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { fetchMe } from "@/lib/sync";
 import { levelOf } from "@/lib/points";
+import { verseQuote } from "@/lib/verseQuotes";
 
 type Entry = { place: number; points: number; total: number; country: string | null; me: boolean; name: string | null };
 type Data = { participants: number; list: Entry[]; me: { rank: number | null; points: number; public: boolean } | null; disabled?: boolean };
@@ -51,7 +52,7 @@ export default function Ranking({ embedded = false }: { embedded?: boolean } = {
             <h1 className="font-display mt-3 text-[40px] leading-[1.05] sm:text-6xl">{t("rankTitle")}</h1>
             <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-white/70">{t("rankLead")}</p>
             <figure className="mt-6 max-w-2xl border-t border-white/10 pt-4">
-              <p className="font-arabic text-2xl leading-loose text-[rgb(var(--gold))]" dir="rtl" lang="ar">وَفِي ذَٰلِكَ فَلْيَتَنَافَسِ الْمُتَنَافِسُونَ</p>
+              <p className="font-arabic text-2xl leading-loose text-[rgb(var(--gold))]" dir="rtl" lang="ar">{verseQuote("imlaei", "83:26", 3)}</p>
               {locale !== "ar" && <figcaption className="mt-1 text-sm text-white/60">{t("verse83")} <span className="text-white/40">(83:26)</span></figcaption>}
             </figure>
           </div>

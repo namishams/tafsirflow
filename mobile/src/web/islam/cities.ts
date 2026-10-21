@@ -24,9 +24,9 @@ Mekka liegt in einem kargen Tal zwischen Bergen. Hier steht die **Kaaba**, das s
 
 Ibrahim ließ seine Frau Hadschar und den kleinen Ismail in diesem Tal zurück, im Vertrauen auf Allah, und betete, dass die Herzen der Menschen sich ihnen zuneigen mögen (14:37). Hadschar lief auf der Suche nach Wasser zwischen den Hügeln Safa und Marwa hin und her – bis die Quelle **Zamzam** hervorsprudelte. Bis heute gehen Pilger diesen Weg nach, und bis heute trinken sie von diesem Wasser.
 
-Um die Kaaba herum erstreckt sich die **Masdschid al-Haram**, die Heilige Moschee. Hierhin führen der **Hadsch**, die große Pilgerfahrt, die jeder Muslim einmal im Leben vollziehen soll, wenn er dazu in der Lage ist (3:97), und die **Umra**, die kleine Pilgerfahrt, die das ganze Jahr über möglich ist. Und nach Mekka richten sich Muslime auf der ganzen Welt bei jedem Gebet aus: Die Kaaba ist die **Qibla** (2:144). Wo immer du betest, ob in Berlin, Dubai oder Jakarta – du bist mit Millionen anderer Menschen auf denselben Punkt hin ausgerichtet.
+Um die Kaaba herum erstreckt sich die **Masdschid al-Haram**, die Heilige Moschee. Hierhin führen der **Hadsch**, die große Pilgerfahrt, die jeder Muslim einmal im Leben vollziehen soll, wenn er dazu in der Lage ist (3:97), und die **Umra**, die kleine Pilgerfahrt, die das ganze Jahr über möglich ist. Und nach Mekka richten sich Muslime auf der ganzen Welt bei jedem Gebet aus: Die Kaaba ist die **Qibla** (2:144). Wo immer Sie beten, ob in Berlin, Dubai oder Jakarta – Sie sind mit Millionen anderer Menschen auf denselben Punkt hin ausgerichtet.
 
-In Mekka wurde auch der Prophet Muhammad ﷺ geboren, und auf dem nahen Berg in der Höhle Hira empfing er die erste Offenbarung. Mehr über sein Leben erfährst du im Kapitel über [den Propheten ﷺ](/islam/prophet).
+In Mekka wurde auch der Prophet Muhammad ﷺ geboren, und auf dem nahen Berg in der Höhle Hira empfing er die erste Offenbarung. Mehr über sein Leben erfahren Sie im Kapitel über [den Propheten ﷺ](/islam/prophet).
 
 ### Medina – die erleuchtete Stadt
 
@@ -90,7 +90,7 @@ Nadschaf ist zugleich eine der ältesten Stätten schiitischer Gelehrsamkeit. Na
 
 ### Kerbela – die Stadt von Imam Husain
 
-In Kerbela ruht **Imam Husain ibn Ali**, der Enkel des Propheten ﷺ, Sohn von Ali und Fatima. Im Jahr 61 nach der Hidschra (680 n. Chr.) wurde er hier am 10. Muharram, dem Tag **Aschura**, zusammen mit Mitgliedern seiner Familie und Gefährten getötet. Für alle Muslime ist das ein schmerzhaftes Ereignis; für die Schiiten steht Kerbela im Mittelpunkt ihrer Erinnerung, als Sinnbild für Standhaftigkeit, Opferbereitschaft und den Einsatz für Gerechtigkeit. Dem Schrein von Imam Husain gegenüber liegt der Schrein seines Halbbruders **al-Abbas ibn Ali**, der in Kerbela die Fahne trug; zwischen beiden erstreckt sich ein weiter Platz, auf dem sich die Pilger begegnen. Mehr über die Geschichte und den Tag Aschura erfährst du im Kapitel über [Sunniten und Schiiten](/islam/sunni-shia).
+In Kerbela ruht **Imam Husain ibn Ali**, der Enkel des Propheten ﷺ, Sohn von Ali und Fatima. Im Jahr 61 nach der Hidschra (680 n. Chr.) wurde er hier am 10. Muharram, dem Tag **Aschura**, zusammen mit Mitgliedern seiner Familie und Gefährten getötet. Für alle Muslime ist das ein schmerzhaftes Ereignis; für die Schiiten steht Kerbela im Mittelpunkt ihrer Erinnerung, als Sinnbild für Standhaftigkeit, Opferbereitschaft und den Einsatz für Gerechtigkeit. Dem Schrein von Imam Husain gegenüber liegt der Schrein seines Halbbruders **al-Abbas ibn Ali**, der in Kerbela die Fahne trug; zwischen beiden erstreckt sich ein weiter Platz, auf dem sich die Pilger begegnen. Mehr über die Geschichte und den Tag Aschura erfahren Sie im Kapitel über [Sunniten und Schiiten](/islam/sunni-shia).
 
 Vierzig Tage nach Aschura begehen die Schiiten **Arba'in**. Viele Pilger gehen dann zu Fuß nach Kerbela, oft von Nadschaf aus und mehrere Tage lang. Arba'in gilt als eine der größten Versammlungen von Menschen auf der Welt. Berühmt ist die Gastfreundschaft am Weg: Freiwillige stellen Zelte auf und bieten den Pilgern unentgeltlich Essen, Tee und einen Platz zum Ausruhen an.
 
@@ -138,15 +138,15 @@ Im Osten des Emirats Abu Dhabi, an der Grenze zu Oman und am Fuß des Dschebel H
 
 In Dubai, wo unsere Plattform entsteht, ist die **Jumeirah-Moschee** ein Symbol der offenen Tür. Unter dem Motto „Open Doors. Open Minds.“ lädt das Sheikh Mohammed Centre for Cultural Understanding Besucher ein, die Moschee kennenzulernen, Fragen zu stellen und bei arabischem Kaffee und Datteln ins Gespräch zu kommen – Gastfreundschaft, wie wir sie hier verstehen.
 
-Seit 1997 ehrt der **Dubai International Holy Quran Award** jedes Jahr junge Menschen aus aller Welt, die den Koran auswendig gelernt haben. Und im **Quranic Park** in Al Khawaneej, eröffnet 2019, kannst du durch Gärten mit Pflanzen spazieren, die im Koran erwähnt werden – Dattelpalmen, Oliven, Feigen, Granatäpfel –, und die Wunder, von denen der Koran erzählt, auf neue Weise entdecken.
+Seit 1997 ehrt der **Dubai International Holy Quran Award** jedes Jahr junge Menschen aus aller Welt, die den Koran auswendig gelernt haben. Und im **Quranic Park** in Al Khawaneej, eröffnet 2019, können Sie durch Gärten mit Pflanzen spazieren, die im Koran erwähnt werden – Dattelpalmen, Oliven, Feigen, Granatäpfel –, und die Wunder, von denen der Koran erzählt, auf neue Weise entdecken.
 
 ### Schardscha – die Stadt der Kultur
 
 Gleich neben Dubai liegt **Schardscha**, das Emirat der Bücher, der Museen und der islamischen Kunst. Schon 1998 ernannte die UNESCO Schardscha zur **Kulturhauptstadt der arabischen Welt**, 2014 folgte der Titel **Hauptstadt der islamischen Kultur**, verliehen von der ISESCO, und 2019 war Schardscha **UNESCO-Welthauptstadt des Buches**. Der Herrscher, **Scheich Dr. Sultan bin Muhammad Al Qasimi**, ist selbst Historiker und Autor vieler Bücher.
 
-Am Wasser liegt das **Museum für Islamische Zivilisation**. Es zeigt Koranhandschriften, Kalligrafie, Keramik und wissenschaftliche Instrumente wie Astrolabien – eine Reise durch Glauben, Wissenschaft und Kunst der islamischen Welt. Die **Al-Nur-Moschee** an der Khalid-Lagune, im osmanischen Stil erbaut, heißt Besucher aller Religionen willkommen und bietet Führungen an, und die **König-Faisal-Moschee** im Zentrum gehört zu den großen Moscheen der Emirate. Mehr über diese Moscheen erfährst du im Kapitel über [die Moscheen der Welt](/islam/mosques).
+Am Wasser liegt das **Museum für Islamische Zivilisation**. Es zeigt Koranhandschriften, Kalligrafie, Keramik und wissenschaftliche Instrumente wie Astrolabien – eine Reise durch Glauben, Wissenschaft und Kunst der islamischen Welt. Die **Al-Nur-Moschee** an der Khalid-Lagune, im osmanischen Stil erbaut, heißt Besucher aller Religionen willkommen und bietet Führungen an, und die **König-Faisal-Moschee** im Zentrum gehört zu den großen Moscheen der Emirate. Mehr über diese Moscheen erfahren Sie im Kapitel über [die Moscheen der Welt](/islam/mosques).
 
-Jedes Jahr im Herbst lädt die **Internationale Buchmesse Schardscha**, die es seit 1982 gibt, zu einer der größten Buchmessen der Welt ein. Das moderne **Haus der Weisheit**, eine Bibliothek und ein Ort der Begegnung, trägt einen Namen, der an das berühmte Vorbild in Bagdad erinnert. In der University City lernen junge Menschen aus vielen Ländern, etwa an der **University of Sharjah** und der **American University of Sharjah**. Und im **Heart of Sharjah**, der liebevoll restaurierten Altstadt mit ihren alten Häusern, Gassen und dem traditionellen Souq Al Arsah, spürst du, wie das Leben am Golf früher war.
+Jedes Jahr im Herbst lädt die **Internationale Buchmesse Schardscha**, die es seit 1982 gibt, zu einer der größten Buchmessen der Welt ein. Das moderne **Haus der Weisheit**, eine Bibliothek und ein Ort der Begegnung, trägt einen Namen, der an das berühmte Vorbild in Bagdad erinnert. In der University City lernen junge Menschen aus vielen Ländern, etwa an der **University of Sharjah** und der **American University of Sharjah**. Und im **Heart of Sharjah**, der liebevoll restaurierten Altstadt mit ihren alten Häusern, Gassen und dem traditionellen Souq Al Arsah, spüren Sie, wie das Leben am Golf früher war.
 
 ### Von Adschman bis Fudschaira
 
@@ -160,7 +160,7 @@ So verschieden sie sind, alle diese Städte erzählen dieselbe Geschichte:
 - **Wissen** war immer ein Teil des Glaubens – die ersten Worte der Offenbarung lauten „Lies!“ (96:1).
 - **Gastfreundschaft und Miteinander** haben diese Städte groß gemacht, von der Bruderschaft in Medina über die Gastfreundschaft am Pilgerweg nach Kerbela bis zum Zusammenleben in den Emiraten.
 
-Wenn du die Verse zu diesen Orten selbst hören möchtest, beginne mit [Sure al-Isra'](/surah/17) oder [Sure Al Imran](/surah/3). Und wenn du einmal die Gelegenheit hast, eine dieser Städte zu besuchen, dann gehe mit offenem Herzen – als Gast.`,
+Wenn Sie die Verse zu diesen Orten selbst hören möchten, beginnen Sie mit [Sure al-Isra'](/surah/17) oder [Sure Al Imran](/surah/3). Und wenn Sie einmal die Gelegenheit haben, eine dieser Städte zu besuchen, dann gehen Sie mit offenem Herzen – als Gast.`,
     faq: [
       { q: "Welche drei Städte sind im Islam heilig?", a: "Mekka mit der Heiligen Moschee und der Kaaba, Medina mit der Prophetenmoschee und Jerusalem (al-Quds) mit der Aqsa-Moschee. Der Prophet ﷺ nannte diese drei Moscheen als die einzigen Ziele, zu denen man eigens reisen soll (al-Bukhari, Muslim)." },
       { q: "Warum beten Muslime in Richtung Mekka?", a: "Allah hat die Kaaba in Mekka als Gebetsrichtung (Qibla) bestimmt (2:144). So sind Muslime auf der ganzen Welt beim Gebet auf denselben Punkt hin ausgerichtet." },

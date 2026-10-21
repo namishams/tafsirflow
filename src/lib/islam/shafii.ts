@@ -290,7 +290,7 @@ Over the centuries the school produced an impressive line of scholars. Some name
 - **Jalal ad-Din as-Suyuti**, an unusually prolific author in almost all the Islamic sciences.
 - **Zakariyya al-Ansari**, and after him **Ibn Hajar al-Haytami** with *Tuhfat al-Muhtaj* and **Shams ad-Din ar-Ramli** with *Nihayat al-Muhtaj* – both commentaries on an-Nawawi's *Minhaj*. Later Shafi'is rely on these two works to a special degree.
 
-For beginners, short teaching texts are read in many countries, suchen Sie as the abridgement of **Abu Shuja'** or the little *Safinat an-Naja*, which is especially loved in South-East Asia and Yemen.
+For beginners, short teaching texts are read in many countries, such as the abridgement of **Abu Shuja'** or the little *Safinat an-Naja*, which is especially loved in South-East Asia and Yemen.
 
 ## Where the school is at home
 

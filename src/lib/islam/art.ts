@@ -183,7 +183,7 @@ Das alles ist nicht bloß Dekoration. Wie in einer Moschee soll die Gestaltung z
 
 Der Prophet ﷺ sagte: „Allah hat vorgeschrieben, alles auf vollkommene Weise (mit Ihsan) zu tun“ (Muslim). Der Kalligraf, der jahrelang denselben Buchstaben übt, die Handwerkerin, die tausend Kachelstücke legt, der Baumeister, der das Licht in eine Kuppel lenkt – sie alle haben versucht, ihr Werk mit Ihsan zu tun, als sähen sie Allah. Mehr über diesen Gedanken erfahren Sie im Kapitel [Die sechs Säulen des Glaubens](/islam/iman).
 
-Wenn Sie das nächste Mal eine Moschee betreten, nehmen Sie sich einen Moment Zeit: Folgen Sie einer Ranke mit den Augen, suche den Kreis, aus dem ein Stern entstanden ist, und lesen Sie die Inschrift über dem Mihrab. Sie werden sehen, dass jede Linie auf etwas jenseits ihrer selbst verweist.`,
+Wenn Sie das nächste Mal eine Moschee betreten, nehmen Sie sich einen Moment Zeit: Folgen Sie einer Ranke mit den Augen, suchen Sie den Kreis, aus dem ein Stern entstanden ist, und lesen Sie die Inschrift über dem Mihrab. Sie werden sehen, dass jede Linie auf etwas jenseits ihrer selbst verweist.`,
     faq: [
       { q: "Warum gibt es in Moscheen keine Bilder von Menschen?", a: "Weil Überlieferungen des Propheten ﷺ das Herstellen von Bildern lebender Wesen kritisch sehen (al-Bukhari, Muslim) und weil im Gebet nichts zwischen dem Menschen und Allah stehen soll. Darum schmücken Geometrie, Pflanzenornament und Kalligrafie die Moscheen. Wie weit das Verbot außerhalb des Gebetsraums reicht, beurteilen die Gelehrten unterschiedlich." },
       { q: "In welcher Schrift sind die meisten Koranausgaben geschrieben?", a: "In Naskh, einer runden, gut lesbaren Schrift. Der weit verbreitete Mushaf des König-Fahd-Komplexes in Medina wurde von dem syrischen Kalligrafen Uthman Taha in Naskh geschrieben. In Nord- und Westafrika sind auch Ausgaben in Maghribi verbreitet." },
@@ -221,7 +221,7 @@ Three elements shape this art almost everywhere, from Andalusia to Indonesia: **
 
 ## Geometry – the order of creation
 
-Every geometric pattern begins with a circle. With compass and straightedge the craftsman divides it into six, eight, ten or twelve parts, joins the points and lets stars emerge that interlace into bands and surfaces. Suchen Sie a pattern has no edge that closes it off: it could be continued endlessly in every direction. Many viewers see in it an image of the infinity of Allah and of unity in diversity: countless forms, all from a single circle.
+Every geometric pattern begins with a circle. With compass and straightedge the craftsman divides it into six, eight, ten or twelve parts, joins the points and lets stars emerge that interlace into bands and surfaces. Such a pattern has no edge that closes it off: it could be continued endlessly in every direction. Many viewers see in it an image of the infinity of Allah and of unity in diversity: countless forms, all from a single circle.
 
 This art joined craft and science. The mathematician **Abu al-Wafa' al-Buzjani** (10th century) is credited with a treatise on the geometric constructions that craftsmen need. In Persia the interlaced star patterns are called *girih*, "knots"; in Morocco they are laid from countless small, hand-cut pieces of tile, the **zellige**. Whether in wood, stucco, stone, brick or tile, the language of geometry was understood everywhere.
 

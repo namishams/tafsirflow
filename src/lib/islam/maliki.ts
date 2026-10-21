@@ -141,7 +141,7 @@ Heute ist die Schule vor allem verbreitet in:
 
 Wenn Sie in den Emiraten leben, ist Ihnen die malikitische Schule vielleicht näher, als Sie denken. Viele Familien am Golf haben ihre Religion über Generationen nach dieser Schule gelernt: wie man die Waschung vollzieht, wie man betet, wie man fastet. Die Großeltern, die einem Kind das Gebet beibrachten, gaben oft genau dieses Erbe weiter, ohne den Namen der Schule groß zu erwähnen. Es war einfach „unser Gebet“.
 
-Zugleich ist das Land ein Ort, an dem Menschen aus aller Welt leben, die anderen Schulen folgen. Hier zeigt sich etwas, das ganz im Geist Imam Maliks liegt: die eigene Tradition zu lieben und zugleich die anderen zu achten. Erinneren Sie sich daran, wie er den Kalifen bat, nicht allen Menschen sein Buch aufzuzwingen. Diese Haltung – **Wasatiyya**, Mäßigung und Ausgewogenheit – passt zu der Gemeinschaft, die Allah im Quran beschreibt: „So haben Wir euch zu einer Gemeinschaft der Mitte gemacht“ (2:143).
+Zugleich ist das Land ein Ort, an dem Menschen aus aller Welt leben, die anderen Schulen folgen. Hier zeigt sich etwas, das ganz im Geist Imam Maliks liegt: die eigene Tradition zu lieben und zugleich die anderen zu achten. Erinnern Sie sich daran, wie er den Kalifen bat, nicht allen Menschen sein Buch aufzuzwingen. Diese Haltung – **Wasatiyya**, Mäßigung und Ausgewogenheit – passt zu der Gemeinschaft, die Allah im Quran beschreibt: „So haben Wir euch zu einer Gemeinschaft der Mitte gemacht“ (2:143).
 
 ## Was Ihnen im Alltag auffallen kann
 
@@ -152,7 +152,7 @@ Wer zum ersten Mal Malikiten beten sieht, bemerkt manchmal kleine Unterschiede. 
 - **Der Friedensgruß:** Wer allein betet oder vorbetet, beendet das Gebet traditionell mit einem einzigen Friedensgruß, mit einer leichten Wendung nach rechts.
 - **Das Bittgebet im Morgengebet:** Das Qunut im Morgengebet wird in der Schule als empfohlen angesehen und leise gesprochen.
 
-Solche Einzelheiten zeigen, wie genau die Gelehrten hingeschaut haben. Wenn Sie hinter einem Imam einer anderen Schule beten oder ein Malikit nebenen Sie sich anders steht als Sie, dann denken Sie daran: Alle suchen dieselbe Sunna, alle wenden sich derselben Kaaba zu.
+Solche Einzelheiten zeigen, wie genau die Gelehrten hingeschaut haben. Wenn Sie hinter einem Imam einer anderen Schule beten oder ein Malikit neben Ihnen anders steht als Sie, dann denken Sie daran: Alle suchen dieselbe Sunna, alle wenden sich derselben Kaaba zu.
 
 ## Der Beitrag zur islamischen Zivilisation
 
@@ -268,9 +268,9 @@ Alongside these come further principles that the Malikis use especially widely:
 
 ### Why the practice of Madinah matters so much
 
-For Imam Malik, Madinah was not a city like any other. Here the Prophet ﷺ had lived for ten years, praying, teaching and judging. What the whole city did together, generation after generation – suchen Sie as the form of the call to prayer or certain measures and weights – was for him like a living transmission, carried not by a single narrator but by thousands.
+For Imam Malik, Madinah was not a city like any other. Here the Prophet ﷺ had lived for ten years, praying, teaching and judging. What the whole city did together, generation after generation – such as the form of the call to prayer or certain measures and weights – was for him like a living transmission, carried not by a single narrator but by thousands.
 
-That is why, in certain cases, the transmitted practice of Madinah could weigh more heavily in the Maliki school than a single hadith narrated by only a few people. This does not mean the Malikis held the hadith in low regard – quite the opposite: they understood the practice of Madinah as the most visible form of the Sunnah. Other scholars, including Imam ash-Shafi'i, saw it differently and discussed the matter respectfully with the Malikis. Suchen Sie discussions are not quarrels; they are part of the rich heritage of this ummah.
+That is why, in certain cases, the transmitted practice of Madinah could weigh more heavily in the Maliki school than a single hadith narrated by only a few people. This does not mean the Malikis held the hadith in low regard – quite the opposite: they understood the practice of Madinah as the most visible form of the Sunnah. Other scholars, including Imam ash-Shafi'i, saw it differently and discussed the matter respectfully with the Malikis. Such discussions are not quarrels; they are part of the rich heritage of this ummah.
 
 ### The aims of the Shari'ah
 

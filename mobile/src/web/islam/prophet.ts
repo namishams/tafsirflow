@@ -40,7 +40,7 @@ Mit zunehmendem Alter zog sich Muhammad ﷺ gern zur Besinnung in die Höhle Hir
 
 Dann brachte sie ihn zu ihrem Vetter Waraqa ibn Naufal, einem alten Mann, der Christ geworden war und die früheren Schriften kannte. Waraqa sagte, dies sei derselbe Engel, den Allah zu Moses gesandt hatte, und fügte hinzu: „Wäre ich doch noch am Leben, wenn dein Volk dich vertreibt!“ Der Prophet ﷺ fragte: „Werden sie mich denn vertreiben?“ Waraqa antwortete, niemand sei je mit etwas Ähnlichem gekommen, ohne angefeindet zu werden (al-Bukhari 3). Nach einer Pause der Offenbarung kam der Engel wieder, und es wurde offenbart: „O du Zugedeckter, steh auf und warne“ (74:1–2).
 
-Über 23 Jahre hinweg wurde ihm der Koran Stück für Stück offenbart – oft als Antwort auf konkrete Situationen. Wenn du heute auf unserer Plattform Vers für Vers zuhörst, folgst du genau diesem Weg der Offenbarung. Mehr darüber im Kapitel über den [Koran](/islam/quran).
+Über 23 Jahre hinweg wurde ihm der Koran Stück für Stück offenbart – oft als Antwort auf konkrete Situationen. Wenn Sie heute auf unserer Plattform Vers für Vers zuhören, folgen Sie genau diesem Weg der Offenbarung. Mehr darüber im Kapitel über den [Koran](/islam/quran).
 
 ## Der Ruf in Mekka
 
@@ -62,7 +62,7 @@ Aischa fragte ihn später, ob er je einen Tag erlebt habe, der schwerer war als 
 
 In dieser schweren Zeit schenkte Allah Seinem Gesandten ein besonderes Zeichen: **al-Isra' wal-Mi'radsch**. In einer Nacht wurde er von der heiligen Moschee in Mekka zur fernen Moschee in Jerusalem gebracht (17:1), wo er die früheren Propheten traf und sie im Gebet anführte (Muslim), und von dort in die Himmel erhoben – bis zum Lotusbaum des äußersten Endes (53:13–18). In dieser Nacht wurden den Muslimen die Gebete vorgeschrieben: zunächst fünfzig, und auf den Rat Moses' hin bat der Prophet ﷺ um Erleichterung, bis fünf blieben – mit dem Lohn von fünfzig (al-Bukhari und Muslim). Ein Geschenk, das bis heute jeden Tag unseres Lebens trägt.
 
-Die meisten Gelehrten sind der Ansicht, dass die Reise mit Körper und Seele geschah. Über ihr genaues Datum gehen die Berichte auseinander; meist wird sie in die letzten Jahre vor der Hidschra gelegt. Mehr dazu findest du auf unserer Seite zum [Gebet](/salah).
+Die meisten Gelehrten sind der Ansicht, dass die Reise mit Körper und Seele geschah. Über ihr genaues Datum gehen die Berichte auseinander; meist wird sie in die letzten Jahre vor der Hidschra gelegt. Mehr dazu finden Sie auf unserer Seite zum [Gebet](/salah).
 
 ## Die Treueschwüre von Aqaba und die Hidschra
 
@@ -161,7 +161,7 @@ Alle Muslime ehren die **Ahl al-Bait**, die Familie des Propheten ﷺ. Der Koran
 
 ## Seine Gefährten
 
-Die **Sahaba** sind diejenigen, die dem Propheten ﷺ als Gläubige begegneten und als Muslime starben. Sie standen ihm bei, bewahrten den Koran und gaben seine Sunna weiter – unter ihnen Abu Bakr, Umar, Uthman und Ali, Bilal, Salman al-Farisi, Abu Dharr und Ammar ibn Yasir, und viele Frauen wie Khadidscha, Aischa, Umm Salama und Asma. Allah sagt über die Ersten der Muhadschirun und Ansar: „Allah ist mit ihnen zufrieden, und sie sind mit Ihm zufrieden“ (9:100). Sunniten betrachten alle Gefährten als vertrauenswürdig in dem, was sie überlieferten; Schiiten ehren viele Gefährten zutiefst und beurteilen sie zugleich einzeln. Viele von ihnen lernst du in unserem Kapitel über die [Gefährten](/islam/sahaba) kennen.
+Die **Sahaba** sind diejenigen, die dem Propheten ﷺ als Gläubige begegneten und als Muslime starben. Sie standen ihm bei, bewahrten den Koran und gaben seine Sunna weiter – unter ihnen Abu Bakr, Umar, Uthman und Ali, Bilal, Salman al-Farisi, Abu Dharr und Ammar ibn Yasir, und viele Frauen wie Khadidscha, Aischa, Umm Salama und Asma. Allah sagt über die Ersten der Muhadschirun und Ansar: „Allah ist mit ihnen zufrieden, und sie sind mit Ihm zufrieden“ (9:100). Sunniten betrachten alle Gefährten als vertrauenswürdig in dem, was sie überlieferten; Schiiten ehren viele Gefährten zutiefst und beurteilen sie zugleich einzeln. Viele von ihnen lernen Sie in unserem Kapitel über die [Gefährten](/islam/sahaba) kennen.
 
 ## Die Sunna und der Hadith
 
@@ -195,14 +195,14 @@ Viele Muslime, Sunniten wie Schiiten, feiern seinen Geburtstag, den **Maulid**, 
 
 Dem Propheten ﷺ zu folgen, beginnt im Kleinen – im Alltag, mitten im Leben:
 
-1. **Lächeln und grüßen:** „Dein Lächeln für deinen Bruder ist eine Sadaqa“ (at-Tirmidhi). Verbreite den Friedensgruß „as-salamu alaikum“.
+1. **Lächeln und grüßen:** „Dein Lächeln für deinen Bruder ist eine Sadaqa“ (at-Tirmidhi). Verbreiten Sie den Friedensgruß „as-salamu alaikum“.
 2. **Mit Bismillah beginnen:** Er lehrte ein Kind: „Sprich den Namen Allahs, iss mit der rechten Hand und von dem, was vor dir liegt“ (al-Bukhari, Muslim).
 3. **Es leicht machen:** „Macht es leicht und nicht schwer, verkündet Frohes und schreckt nicht ab“ (al-Bukhari, Muslim) – das ist der Geist der Mitte, der **Wasatiyya**.
 4. **Eltern ehren und Verwandte besuchen:** Güte zu den Eltern steht im Koran direkt neben dem Glauben an Allah (17:23).
 5. **Ehrlich sein:** in Arbeit, Handel und Worten – wie al-Amin.
-6. **Den Koran leben:** jeden Tag ein paar Verse hören, verstehen und umsetzen. Fang gern direkt mit [Sure al-Ahzab](/surah/33) oder [Sure al-Isra'](/surah/17) an.
+6. **Den Koran leben:** jeden Tag ein paar Verse hören, verstehen und umsetzen. Fangen Sie gern direkt mit [Sure al-Ahzab](/surah/33) oder [Sure al-Isra'](/surah/17) an.
 
-So wird die Sira, die Lebensgeschichte des Propheten ﷺ, nicht nur Geschichte, sondern ein Weg, den du selbst gehen kannst.`,
+So wird die Sira, die Lebensgeschichte des Propheten ﷺ, nicht nur Geschichte, sondern ein Weg, den Sie selbst gehen können.`,
     faq: [
       { q: "Wann und wo wurde der Prophet Muhammad ﷺ geboren?", a: "Um das Jahr 570 in Mekka, im sogenannten „Jahr des Elefanten“. Er gehörte zum Clan der Banu Haschim vom Stamm Quraisch." },
       { q: "Was bedeutet „al-Amin“?", a: "„Der Vertrauenswürdige“. So nannten ihn die Menschen in Mekka schon vor seiner Berufung wegen seiner Ehrlichkeit und Zuverlässigkeit." },

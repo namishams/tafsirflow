@@ -7,7 +7,7 @@ export const art: IslamDoc = {
   de: {
     title: "Islamische Kunst und Kalligrafie",
     kicker: "Schönheit, die auf Allah verweist",
-    lead: "Wer eine Moschee in Isfahan, die Alhambra oder die Scheich-Zayed-Moschee betritt, spürt es sofort: Hier spricht Schönheit eine eigene Sprache. Sie zeigt keine Gesichter, sondern Muster ohne Ende, rankende Blüten und vor allem Schrift – das Wort Allahs, kunstvoll geschrieben. In diesem Kapitel erfährst du, woher diese Kunst kommt, wie man die großen Schriftarten unterscheidet, was Muqarnas und Maschrabiyya sind und wie die Emirate diese Tradition heute weiterschreiben – bis hinein in das Design dieser Seiten.",
+    lead: "Wer eine Moschee in Isfahan, die Alhambra oder die Scheich-Zayed-Moschee betritt, spürt es sofort: Hier spricht Schönheit eine eigene Sprache. Sie zeigt keine Gesichter, sondern Muster ohne Ende, rankende Blüten und vor allem Schrift – das Wort Allahs, kunstvoll geschrieben. In diesem Kapitel erfahren Sie, woher diese Kunst kommt, wie man die großen Schriftarten unterscheidet, was Muqarnas und Maschrabiyya sind und wie die Emirate diese Tradition heute weiterschreiben – bis hinein in das Design dieser Seiten.",
     facts: [
       { n: "96:4", l: "„der durch das Schreibrohr gelehrt hat“" },
       { n: "6", l: "klassische Schriften, die „sechs Federn“" },
@@ -48,7 +48,7 @@ Die älteste große Schrift ist nach der Stadt Kufa im Irak benannt: kantig, ruh
 
 ### Naskh
 
-Naskh ist rund, klar und gut lesbar – die Schrift, in der die meisten Koranausgaben geschrieben und gedruckt sind. Der Mushaf, den Millionen Menschen in der Hand halten, die Ausgabe des König-Fahd-Komplexes in Medina, wurde von dem syrischen Kalligrafen **Uthman Taha** in Naskh geschrieben. Wenn du bei uns den [Koran](/quran) liest, begegnest du dieser Tradition auf jeder Seite.
+Naskh ist rund, klar und gut lesbar – die Schrift, in der die meisten Koranausgaben geschrieben und gedruckt sind. Der Mushaf, den Millionen Menschen in der Hand halten, die Ausgabe des König-Fahd-Komplexes in Medina, wurde von dem syrischen Kalligrafen **Uthman Taha** in Naskh geschrieben. Wenn Sie bei uns den [Koran](/quran) lesen, begegnen Sie dieser Tradition auf jeder Seite.
 
 ### Thuluth
 
@@ -98,7 +98,7 @@ Eine Moschee braucht eigentlich nur eine reine Fläche und eine Richtung. Der Pr
 - **Iwan**: eine große, zum Hof hin offene Halle, typisch für Iran und Zentralasien.
 - **Muqarnas**: Gewölbe aus unzähligen kleinen Nischen, die wie Waben oder Tropfsteine aussehen. Sie lösen den Übergang von der eckigen Wand zur runden Kuppel in ein Spiel aus Licht und Schatten auf.
 
-Auch das Licht selbst ist ein Baustoff. In mamlukischen Moscheen hingen gläserne Lampen, auf denen der Lichtvers geschrieben stand: „Allah ist das Licht der Himmel und der Erde. Das Gleichnis Seines Lichts ist wie eine Nische, in der eine Lampe ist“ (24:35). Mehr über einzelne Bauten erfährst du im Kapitel über [die Moscheen der Welt](/islam/mosques).
+Auch das Licht selbst ist ein Baustoff. In mamlukischen Moscheen hingen gläserne Lampen, auf denen der Lichtvers geschrieben stand: „Allah ist das Licht der Himmel und der Erde. Das Gleichnis Seines Lichts ist wie eine Nische, in der eine Lampe ist“ (24:35). Mehr über einzelne Bauten erfahren Sie im Kapitel über [die Moscheen der Welt](/islam/mosques).
 
 ### Kacheln und Mosaike
 
@@ -106,7 +106,7 @@ In Damaskus und Jerusalem schmückten die Umayyaden ihre Bauten mit Glasmosaiken
 
 ### Maschrabiyya und Windtürme
 
-In den heißen Städten der arabischen Welt entstand die **Maschrabiyya**: ein Erker oder Fenstergitter aus gedrechselten Holzstäben. Sie lässt Luft und gedämpftes Licht herein, schützt vor der Sonne und bewahrt die Privatsphäre der Familie. In Kairo, in der Altstadt von Dschidda, wo man diese Erker *Rawaschin* nennt, und in Bagdad prägte sie ganze Straßenzüge. Am Golf erfand man eine andere Antwort auf die Hitze: die **Windtürme** (*Barjeel*), die kühlere Luft in die Häuser leiten. Im Al-Fahidi-Viertel in Dubai kannst du sie bis heute sehen.
+In den heißen Städten der arabischen Welt entstand die **Maschrabiyya**: ein Erker oder Fenstergitter aus gedrechselten Holzstäben. Sie lässt Luft und gedämpftes Licht herein, schützt vor der Sonne und bewahrt die Privatsphäre der Familie. In Kairo, in der Altstadt von Dschidda, wo man diese Erker *Rawaschin* nennt, und in Bagdad prägte sie ganze Straßenzüge. Am Golf erfand man eine andere Antwort auf die Hitze: die **Windtürme** (*Barjeel*), die kühlere Luft in die Häuser leiten. Im Al-Fahidi-Viertel in Dubai können Sie sie bis heute sehen.
 
 ## Meisterwerke der Welt
 
@@ -160,15 +160,15 @@ Seit 2022 steht an der Sheikh Zayed Road in Dubai das **Museum of the Future**, 
 
 ### Schardscha – Hauptstadt der islamischen Kunst
 
-**Schardscha** hat sich der islamischen Kultur besonders verschrieben. Das **Museum für Islamische Zivilisation**, eröffnet 2008, zeigt Koranhandschriften, Kalligrafie, Keramik, Textilien und wissenschaftliche Instrumente. Im Herzen der Altstadt widmet sich ein eigenes **Kalligrafie-Museum** dieser Kunst. Mit der **Schardscha-Biennale für Kalligrafie** und dem jährlichen **Festival für Islamische Kunst** kommen Künstlerinnen und Künstler aus vielen Ländern in das Emirat; mehr über die Stadt erfährst du im Kapitel über [die Städte des Islam](/islam/cities).
+**Schardscha** hat sich der islamischen Kultur besonders verschrieben. Das **Museum für Islamische Zivilisation**, eröffnet 2008, zeigt Koranhandschriften, Kalligrafie, Keramik, Textilien und wissenschaftliche Instrumente. Im Herzen der Altstadt widmet sich ein eigenes **Kalligrafie-Museum** dieser Kunst. Mit der **Schardscha-Biennale für Kalligrafie** und dem jährlichen **Festival für Islamische Kunst** kommen Künstlerinnen und Künstler aus vielen Ländern in das Emirat; mehr über die Stadt erfahren Sie im Kapitel über [die Städte des Islam](/islam/cities).
 
 ### Kalligrafie heute
 
-In den Emiraten und in der ganzen Region arbeiten heute Kalligrafinnen und Kalligrafen, die die klassischen Regeln beherrschen und zugleich neue Wege gehen: Sie schreiben mit Licht, Stahl und Glas, auf Leinwand und auf Hausfassaden, und verbinden Thuluth und Diwani mit moderner Malerei. Arabische Schrift begegnet dir auf Banknoten, Wappen und Logos, an Flughäfen und in Hotels. Die Schrift des Korans ist lebendig geblieben, weil jede Generation sie neu liebt.
+In den Emiraten und in der ganzen Region arbeiten heute Kalligrafinnen und Kalligrafen, die die klassischen Regeln beherrschen und zugleich neue Wege gehen: Sie schreiben mit Licht, Stahl und Glas, auf Leinwand und auf Hausfassaden, und verbinden Thuluth und Diwani mit moderner Malerei. Arabische Schrift begegnet Ihnen auf Banknoten, Wappen und Logos, an Flughäfen und in Hotels. Die Schrift des Korans ist lebendig geblieben, weil jede Generation sie neu liebt.
 
 ## Inspiration für diese Seiten
 
-Auch die Gestaltung von Quran Masterclass ist von dieser Kunst inspiriert. Vielleicht ist es dir schon aufgefallen:
+Auch die Gestaltung von Quran Masterclass ist von dieser Kunst inspiriert. Vielleicht ist es Ihnen schon aufgefallen:
 
 - Die dunklen Flächen tragen ein feines Muster aus achtzackigen, verflochtenen Sternen, wie die geprägten Ledereinbände alter Mushafe.
 - Das Gold, das Überschriften und Zahlen hervorhebt, erinnert an das Tadhhib der Handschriften.
@@ -181,15 +181,15 @@ Das alles ist nicht bloß Dekoration. Wie in einer Moschee soll die Gestaltung z
 
 ## Kunst als Gottesdienst
 
-Der Prophet ﷺ sagte: „Allah hat vorgeschrieben, alles auf vollkommene Weise (mit Ihsan) zu tun“ (Muslim). Der Kalligraf, der jahrelang denselben Buchstaben übt, die Handwerkerin, die tausend Kachelstücke legt, der Baumeister, der das Licht in eine Kuppel lenkt – sie alle haben versucht, ihr Werk mit Ihsan zu tun, als sähen sie Allah. Mehr über diesen Gedanken erfährst du im Kapitel [Die sechs Säulen des Glaubens](/islam/iman).
+Der Prophet ﷺ sagte: „Allah hat vorgeschrieben, alles auf vollkommene Weise (mit Ihsan) zu tun“ (Muslim). Der Kalligraf, der jahrelang denselben Buchstaben übt, die Handwerkerin, die tausend Kachelstücke legt, der Baumeister, der das Licht in eine Kuppel lenkt – sie alle haben versucht, ihr Werk mit Ihsan zu tun, als sähen sie Allah. Mehr über diesen Gedanken erfahren Sie im Kapitel [Die sechs Säulen des Glaubens](/islam/iman).
 
-Wenn du das nächste Mal eine Moschee betrittst, nimm dir einen Moment Zeit: Folge einer Ranke mit den Augen, suche den Kreis, aus dem ein Stern entstanden ist, und lies die Inschrift über dem Mihrab. Du wirst sehen, dass jede Linie auf etwas jenseits ihrer selbst verweist.`,
+Wenn Sie das nächste Mal eine Moschee betreten, nehmen Sie sich einen Moment Zeit: Folgen Sie einer Ranke mit den Augen, suchen Sie den Kreis, aus dem ein Stern entstanden ist, und lesen Sie die Inschrift über dem Mihrab. Sie werden sehen, dass jede Linie auf etwas jenseits ihrer selbst verweist.`,
     faq: [
       { q: "Warum gibt es in Moscheen keine Bilder von Menschen?", a: "Weil Überlieferungen des Propheten ﷺ das Herstellen von Bildern lebender Wesen kritisch sehen (al-Bukhari, Muslim) und weil im Gebet nichts zwischen dem Menschen und Allah stehen soll. Darum schmücken Geometrie, Pflanzenornament und Kalligrafie die Moscheen. Wie weit das Verbot außerhalb des Gebetsraums reicht, beurteilen die Gelehrten unterschiedlich." },
       { q: "In welcher Schrift sind die meisten Koranausgaben geschrieben?", a: "In Naskh, einer runden, gut lesbaren Schrift. Der weit verbreitete Mushaf des König-Fahd-Komplexes in Medina wurde von dem syrischen Kalligrafen Uthman Taha in Naskh geschrieben. In Nord- und Westafrika sind auch Ausgaben in Maghribi verbreitet." },
       { q: "Was ist Muqarnas?", a: "Ein Gewölbe aus vielen kleinen, gestaffelten Nischen, das an Waben oder Tropfsteine erinnert. Es verbindet die eckige Wand mit der runden Kuppel und bricht das Licht in unzählige Facetten – berühmte Beispiele finden sich in der Alhambra und in Isfahan." },
       { q: "Was bedeutet der Spruch an den Wänden der Alhambra?", a: "„Wa la ghaliba illa Allah“ heißt „Es gibt keinen Sieger außer Allah“. Es war der Wahlspruch der Nasriden, die die Alhambra erbauten, und erscheint unzählige Male in Stuck und Kacheln." },
-      { q: "Kann ich Kalligrafie lernen?", a: "Ja. Am besten lernst du bei einer Lehrerin oder einem Lehrer, mit Schreibrohr und Tinte, und beginnst mit einer einfachen Schrift wie Ruq'a oder Naskh. Der traditionelle Weg endet mit einer Idschaza, einer Erlaubnis des Meisters. Kurse bieten Kulturzentren und Museen an, in den Emiraten etwa in Schardscha." },
+      { q: "Kann ich Kalligrafie lernen?", a: "Ja. Am besten lernen Sie bei einer Lehrerin oder einem Lehrer, mit Schreibrohr und Tinte, und beginnen mit einer einfachen Schrift wie Ruq'a oder Naskh. Der traditionelle Weg endet mit einer Idschaza, einer Erlaubnis des Meisters. Kurse bieten Kulturzentren und Museen an, in den Emiraten etwa in Schardscha." },
       { q: "Was ist der „Lichtregen“ im Louvre Abu Dhabi?", a: "Die Kuppel des Museums besteht aus mehreren Schichten geometrischer Sterne. Wenn die Sonne hindurchscheint, fallen bewegte Lichtflecken auf die Plätze darunter, wie Licht durch die Palmwedel einer Oase. Das Prinzip erinnert an die Maschrabiyya und an die Gitter der islamischen Baukunst." },
     ],
     sources: [

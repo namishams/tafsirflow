@@ -244,7 +244,7 @@ A note on the dates: we give years in the Common Era and, where it is customary,
 - **around 619** – the "Year of Sorrow": death of Khadijah and Abu Talib
 - **621 and 622** – the pledges of Aqabah with Muslims from Yathrib, later Madinah
 
-For thirteen years the Prophet ﷺ called people in Makkah to faith in the One God, to justice and to mercy. The response of the powerful was mockery, boycott and persecution; the weak and the enslaved, suchen Sie as Bilal and Sumayyah, suffered most. The Night Journey to Jerusalem (17:1) also falls in this period. The chapter [The Prophet Muhammad ﷺ](/islam/prophet) tells more about these years.
+For thirteen years the Prophet ﷺ called people in Makkah to faith in the One God, to justice and to mercy. The response of the powerful was mockery, boycott and persecution; the weak and the enslaved, such as Bilal and Sumayyah, suffered most. The Night Journey to Jerusalem (17:1) also falls in this period. The chapter [The Prophet Muhammad ﷺ](/islam/prophet) tells more about these years.
 
 ## Madinah: a community is born (622–632)
 

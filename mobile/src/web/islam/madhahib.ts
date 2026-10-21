@@ -6,7 +6,7 @@ export const madhahib: IslamDoc = {
   de: {
     title: "Die Rechtsschulen des Islam – ein Überblick",
     kicker: "Fiqh und Madhahib",
-    lead: "Wenn Muslime beten, fasten, handeln oder heiraten, folgen sie einem gewachsenen Verständnis davon, was Allah von ihnen möchte. Dieses Verständnis haben große Gelehrte über Jahrhunderte sorgfältig aus dem Quran und der Sunna erschlossen – und daraus sind die Rechtsschulen, die Madhahib, entstanden. In diesem Kapitel lernst du, was eine Rechtsschule ist, warum es mehrere gibt und warum ihre Vielfalt für die Umma ein Reichtum ist.",
+    lead: "Wenn Muslime beten, fasten, handeln oder heiraten, folgen sie einem gewachsenen Verständnis davon, was Allah von ihnen möchte. Dieses Verständnis haben große Gelehrte über Jahrhunderte sorgfältig aus dem Quran und der Sunna erschlossen – und daraus sind die Rechtsschulen, die Madhahib, entstanden. In diesem Kapitel lernen Sie, was eine Rechtsschule ist, warum es mehrere gibt und warum ihre Vielfalt für die Umma ein Reichtum ist.",
     facts: [
       { n: "4", l: "große sunnitische Schulen: Hanafiten, Malikiten, Schafiiten, Hanbaliten" },
       { n: "8", l: "Rechtsschulen, die die Amman-Botschaft (2004/2005) anerkennt" },
@@ -126,12 +126,12 @@ Das Folgen einer anerkannten Rechtsschule nennen die Gelehrten **Taqlid**. Das i
 
 Praktisch bedeutet das:
 
-- **Lerne die Grundlagen deiner Schule:** Wie wäschst du dich, wie betest du, was bricht dein Fasten? Dafür gibt es in jeder Schule kurze, bewährte Lehrbücher.
-- **Frage einen Gelehrten, dem du vertraust:** bei einem Imam deiner Moschee, bei einer offiziellen Fatwa-Stelle oder bei einem Lehrer mit anerkannter Ausbildung.
-- **Prüfe die Quelle, nicht nur die Antwort:** Antworten aus sozialen Medien ohne erkennbaren Gelehrten sind kein guter Ersatz für eine fundierte Auskunft.
-- **Bleibe im Zweifel bei dem, was du gelernt hast:** Viele Gelehrte raten, nicht von Schule zu Schule zu springen, nur um die jeweils leichteste Meinung herauszusuchen.
+- **Lernen Sie die Grundlagen Ihrer Schule:** Wie waschen Sie sich, wie beten Sie, was bricht Ihr Fasten? Dafür gibt es in jeder Schule kurze, bewährte Lehrbücher.
+- **Fragen Sie einen Gelehrten, dem Sie vertrauen:** bei einem Imam Ihrer Moschee, bei einer offiziellen Fatwa-Stelle oder bei einem Lehrer mit anerkannter Ausbildung.
+- **Prüfen Sie die Quelle, nicht nur die Antwort:** Antworten aus sozialen Medien ohne erkennbaren Gelehrten sind kein guter Ersatz für eine fundierte Auskunft.
+- **Bleiben Sie im Zweifel bei dem, was Sie gelernt haben:** Viele Gelehrte raten, nicht von Schule zu Schule zu springen, nur um die jeweils leichteste Meinung herauszusuchen.
 
-Und wenn du in einer Familie aufgewachsen bist, die keiner bestimmten Schule folgt, oder wenn du neu zum Islam gefunden hast, dann ist es ein guter Weg, der Schule zu folgen, die in deiner Umgebung gelehrt wird und für die du einen verlässlichen Lehrer findest.
+Und wenn Sie in einer Familie aufgewachsen sind, die keiner bestimmten Schule folgt, oder wenn Sie neu zum Islam gefunden haben, dann ist es ein guter Weg, der Schule zu folgen, die in Ihrer Umgebung gelehrt wird und für die Sie einen verlässlichen Lehrer finden.
 
 ## Nebeneinander in den Emiraten
 
@@ -147,9 +147,9 @@ Die Rechtsschulen sind wie verschiedene Wege, die denselben Berg hinaufführen. 
 
 Möge Allah den großen Imamen barmherzig sein, die ihr Leben dem Verstehen Seiner Religion gewidmet haben, und möge Er uns ein Herz schenken, das von ihnen lernt, sie liebt und dabei die eigenen Geschwister nicht vergisst.
 
-In den folgenden Kapiteln lernst du jede Schule einzeln kennen – ihre Imame, ihre Methode, ihre großen Bücher und ihre Spuren in der Geschichte. Beginne mit den [Hanafiten](/islam/hanafi).`,
+In den folgenden Kapiteln lernen Sie jede Schule einzeln kennen – ihre Imame, ihre Methode, ihre großen Bücher und ihre Spuren in der Geschichte. Beginnen Sie mit den [Hanafiten](/islam/hanafi).`,
     faq: [
-      { q: "Muss ich einer Rechtsschule folgen?", a: "Die große Mehrheit der Gelehrten rät jedem, der selbst kein Gelehrter ist, einer anerkannten Rechtsschule zu folgen oder sich an einen Gelehrten zu halten, der nach einer solchen Schule lehrt. Das gibt Sicherheit und schützt davor, sich willkürlich die leichtesten Meinungen herauszusuchen. Für deine persönliche Situation frag einen Gelehrten, dem du vertraust." },
+      { q: "Muss ich einer Rechtsschule folgen?", a: "Die große Mehrheit der Gelehrten rät jedem, der selbst kein Gelehrter ist, einer anerkannten Rechtsschule zu folgen oder sich an einen Gelehrten zu halten, der nach einer solchen Schule lehrt. Das gibt Sicherheit und schützt davor, sich willkürlich die leichtesten Meinungen herauszusuchen. Für Ihre persönliche Situation fragen Sie einen Gelehrten, dem Sie vertrauen." },
       { q: "Sind die Rechtsschulen verschiedene Religionen oder Sekten?", a: "Nein. Die Rechtsschulen sind Traditionen innerhalb des Islam, die sich vor allem in Einzelfragen der Praxis unterscheiden. In den Grundlagen – Glaube an Allah, an den Propheten Muhammad ﷺ, den Quran und die fünf Säulen – sind sie sich einig." },
       { q: "Ist ein Gebet nach einer anderen Schule gültig?", a: "Ja. Die Gelehrten aller Schulen haben hintereinander gebetet, und in Mekka und Medina stehen täglich Menschen aller Schulen in denselben Reihen. Unterschiedliche Handhaltungen oder ein lautes oder leises „Amin“ machen das Gebet nicht ungültig." },
       { q: "Ist „Die Meinungsverschiedenheit meiner Umma ist Barmherzigkeit“ ein Hadith?", a: "Die Hadith-Gelehrten haben festgestellt, dass dieser Satz in dieser Form nicht als gesicherter Ausspruch des Propheten ﷺ belegt ist. Der Gedanke, dass die Vielfalt der Gelehrtenmeinungen der Umma Weite schenkt, wird jedoch von vielen großen Gelehrten vertreten." },

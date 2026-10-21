@@ -20,6 +20,8 @@ import { STAGE, toneOf } from "./tokens";
 
 const SAVED = "tf:story-saves";
 const readMs = (words: number) => Math.min(45000, Math.max(8000, (words / 3.2) * 1000));
+/** the room of the bottom bar (8 px padding, 46 px buttons, the safe area) plus a 28 px fade above it */
+const BAR_SPACE = "calc(82px + max(env(safe-area-inset-bottom), 12px))";
 
 export type StoryLib = { groups: Record<string, StoryGroup[]>; byId: Map<string, StoryGroup> };
 type Lib = StoryLib;
@@ -215,6 +217,8 @@ export function StoryViewer({ rail, start, onClose }: { rail: RailGroup[]; start
   return createPortal(
     <div role="dialog" aria-modal="true" aria-label={group?.title ?? T.feed.stories} className="fixed inset-0 z-[120] overflow-hidden" style={{ background: STAGE.deep, transform: `translateY(${dragY}px)`, opacity: 1 - Math.min(0.4, dragY / 750), transition: dragY ? "none" : "transform .2s, opacity .2s" }}>
       <Backdrop tone={toneOf(story?.group ?? "stories")} animate={!reduce} />
+      {/* a scrim of the stage under the header (as in the app): a long text scrolls under it, never through the title */}
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 z-[19]" style={{ height: "calc(env(safe-area-inset-top) + 92px)", background: "linear-gradient(180deg, rgba(5,28,21,0.96) 0%, rgba(5,28,21,0.82) 68%, rgba(5,28,21,0) 100%)" }} />
       {/* progress bars of this group */}
       {group ? (
         <div className="absolute inset-x-2.5 z-20 flex gap-1" style={{ top: "calc(env(safe-area-inset-top) + 8px)" }} role="img" aria-label={label}>
@@ -233,15 +237,18 @@ export function StoryViewer({ rail, start, onClose }: { rail: RailGroup[]; start
         </button>
       </div>
 
-      <div ref={scroller} className="absolute inset-x-0 top-0 overflow-y-auto" style={{ bottom: "calc(66px + max(env(safe-area-inset-bottom), 12px))" }} onClick={onTap} onPointerDown={down} onPointerUp={up} onPointerCancel={up} onPointerLeave={() => { if (hold.current) { window.clearTimeout(hold.current); hold.current = null; } setPaused(false); }} onPointerMove={move}>
-        <div className="mx-auto flex min-h-full w-full max-w-[720px] flex-col justify-center px-6 pb-6 pt-24">
+      <div ref={scroller} className="absolute inset-0 overflow-y-auto" onClick={onTap} onPointerDown={down} onPointerUp={up} onPointerCancel={up} onPointerLeave={() => { if (hold.current) { window.clearTimeout(hold.current); hold.current = null; } setPaused(false); }} onPointerMove={move}>
+        {/* the text ends above the bottom bar (its 54 px plus the safe area) and a fade, so the last line of a long story is never under the buttons */}
+        <div className="mx-auto flex min-h-full w-full max-w-[720px] flex-col justify-center px-6 pt-24" style={{ paddingBottom: BAR_SPACE }}>
           {story ? <StoryContent story={story} onNavigate={onClose} />
             : failed ? <p className="text-center text-white/80">{T.feed.offline}</p>
               : <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-white/25 border-t-[rgb(214,180,108)]" role="status" aria-label={T.feed.loading} />}
         </div>
       </div>
 
-      {/* the bottom bar: previous / next for everyone, save, share */}
+      {/* the bottom bar over a scrim of the stage (as in the app): the text scrolls under it and fades out, its last line
+          always ends above the buttons. Previous / next for everyone, save, share */}
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 z-[19]" style={{ height: BAR_SPACE, background: "linear-gradient(180deg, rgba(5,28,21,0) 0%, rgba(5,28,21,0.82) 32%, rgba(5,28,21,0.96) 100%)" }} />
       <div className="absolute inset-x-0 bottom-0 z-20 flex items-center justify-between px-3.5 pt-2" style={{ paddingBottom: "max(env(safe-area-inset-bottom), 12px)" }}>
         <BarButton icon="chevronLeft" label={T.prophet.prev} onClick={prev} />
         {story ? (

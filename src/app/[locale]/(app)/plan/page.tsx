@@ -5,9 +5,11 @@ import RequireAccount from "@/components/RequireAccount";
 import Markdown from "@/components/Markdown";
 import { pageMeta } from "@/lib/site";
 import { QuranInlay, QuranShamsa } from "@/components/art/QuranArt";
+import { quoteRing, verseQuote } from "@/lib/verseQuotes";
 
-// verses around the medallion (exact Uthmani text): 29:49 and 54:17, on the Quran kept in the hearts
-const RING = "بَلۡ هُوَ ءَايَٰتُۢ بَيِّنَٰتٞ فِي صُدُورِ ٱلَّذِينَ أُوتُواْ ٱلۡعِلۡمَۚ وَمَا يَجۡحَدُ بِـَٔايَٰتِنَآ إِلَّا ٱلظَّـٰلِمُونَ ۞ وَلَقَدۡ يَسَّرۡنَا ٱلۡقُرۡءَانَ لِلذِّكۡرِ فَهَلۡ مِن مُّدَّكِرٖ ۞";
+// verses around the medallion: 29:49 and 54:17, on the Quran kept in the hearts (QPC Hafs text from the Quran data,
+// lib/verseQuotes; never typed by hand)
+const RING = quoteRing([verseQuote("qpc", "29:49"), verseQuote("qpc", "54:17")]);
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

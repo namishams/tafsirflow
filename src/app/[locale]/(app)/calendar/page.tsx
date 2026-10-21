@@ -7,6 +7,7 @@ import { CalligraphyDraw } from "@/components/Ornaments";
 import { MoreTiles } from "@/components/PosterTiles";
 import { calText } from "@/lib/hijri";
 import { abs, pageMeta } from "@/lib/site";
+import { verseQuote } from "@/lib/verseQuotes";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -29,7 +30,7 @@ export default async function CalendarPage({ params }: { params: Promise<{ local
           <h1 className="rise font-display mt-3 text-[40px] leading-[1.05] sm:text-6xl" style={{ animationDelay: "120ms" }}>{t("title")}</h1>
           <p className="rise mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70" style={{ animationDelay: "240ms" }}>{t("lead")}</p>
           <p className="rise font-arabic mt-6 text-2xl leading-[1.9] text-[rgb(var(--gold))]" dir="rtl" lang="ar" style={{ animationDelay: "360ms" }}>
-            يَسْأَلُونَكَ عَنِ الْأَهِلَّةِ ۖ قُلْ هِيَ مَوَاقِيتُ لِلنَّاسِ وَالْحَجِّ <span className="text-sm text-white/45">({t("heroRef")})</span>
+            {verseQuote("imlaei", "2:189", 1, 8)} <span className="text-sm text-white/45">({t("heroRef")})</span>
           </p>
         </div>
       </section>

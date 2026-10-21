@@ -46,7 +46,7 @@ const c: SecretsContent = {
     { ar: "الإخلاص", title: "Kur’an’ın üçte biri", body: "İhlâs suresi (112) Kur’an’ın üçte birine denktir – Allah’ın birliği hakkında dört kısa ayet.", src: "Sahîh-i Buhârî 5013" },
     { ar: "اقرأ", title: "İlk kelime", body: "Hira Mağarası’ndaki ilk vahiy “Oku!” ile başlar (96:1–5). Kur’an, iniş yolculuğuna ilimle başlar.", src: "Sahîh-i Buhârî 3" },
     { ar: "البسملة", title: "114 besmele", body: "“Bismillâhirrahmânirrahîm”, Tevbe hariç 113 surenin başında yer alır ve bir kez de bir surenin ortasında: Süleyman’ın Sebe Melikesi’ne yazdığı mektupta (27:30). Toplam 114 – sure sayısı kadar.", src: "Kur’an 27:30" },
-    { ar: "الدَّين", title: "En uzun ayet", body: "En uzun ayet “borç ayeti”Ihnen (2:282): borçların yazıyla nasıl kaydedileceğini düzenler – Kur’an’ın günlük hayatta adaleti ne kadar ciddiye aldığının bir göstergesi.", src: "Kur’an 2:282" },
+    { ar: "الدَّين", title: "En uzun ayet", body: "En uzun ayet “borç ayeti”dir (2:282): borçların yazıyla nasıl kaydedileceğini düzenler – Kur’an’ın günlük hayatta adaleti ne kadar ciddiye aldığının bir göstergesi.", src: "Kur’an 2:282" },
     { ar: "الكوثر", title: "En kısa sure", body: "Kevser (108) üç ayet ve on kelimeden oluşur. En uzun sure olan Bakara 286 ayettir.", src: "Kur’an 108, 2" },
     { ar: "١١٤", title: "114 sure, 6.236 ayet", body: "Kur’an 114 sure ve 6.236 ayetten oluşur (Hafs sayımı) ve 30 cüze ayrılır. Metnimizde 77.429 kelime vardır – sayım yöntemine göre başkaları biraz farklı rakamlar verir.", src: "Osmanlı hattı (Uthmani) metin, Kral Fahd Kompleksi" },
   ],

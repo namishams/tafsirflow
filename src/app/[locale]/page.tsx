@@ -14,6 +14,7 @@ import AppShowcase from "@/components/AppShowcase";
 import FeedSection from "@/components/feed/FeedSection";
 import { getChapters } from "@/lib/quran";
 import { BUNDLED_UI_VERSES } from "@/lib/uiVerses";
+import { quoteRing, verseQuote } from "@/lib/verseQuotes";
 import VerseOfTheDay from "@/components/VerseOfTheDay";
 import Featured from "@/components/Featured";
 import DonateCTA from "@/components/DonateCTA";
@@ -42,6 +43,9 @@ const POPULAR: { n: number; href: string; s: number; ar: string }[] = [
 ];
 const PATHS: [string, string, string][] = [["pHifz", "/surah/78?m=2", "حفظ"], ["pFahm", "/surah/1", "فهم"], ["pTilawa", "/surah/112", "تلاوة"]];
 const METHOD: [string, string, string][] = [["mNew", "01", "سبق"], ["mRecent", "02", "سبقي"], ["mOld", "03", "منزل"]];
+// verses around the hero ring (96:1, the end of 20:114, 55:1–2) and the gold verse lines, cut from the Quran data
+// (lib/verseQuotes, Quran.com text), never typed by hand
+const HERO_RING = quoteRing([verseQuote("uthmani", "96:1"), verseQuote("uthmani", "20:114", 14), `${verseQuote("uthmani", "55:1")} ${verseQuote("uthmani", "55:2")}`]);
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -88,10 +92,10 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         <section className="stage girih relative overflow-hidden text-[#eef0f3]">
           <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 85% 15%, rgb(var(--gold) / .16) 0, transparent 40%), radial-gradient(circle at 10% 90%, rgb(var(--accent) / .22) 0, transparent 45%)" }} />
           <HomeRain className="opacity-80" />
-          <CalligraphyRing text="ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ ۞ وَقُل رَّبِّ زِدْنِى عِلْمًا ۞ ٱلرَّحْمَـٰنُ عَلَّمَ ٱلْقُرْءَانَ ۞" className="absolute -end-36 -top-36 w-[320px] opacity-50 sm:-end-16 sm:-top-16 sm:w-[560px] sm:opacity-50 lg:opacity-40 min-[1400px]:hidden" />
+          <CalligraphyRing text={HERO_RING} className="absolute -end-36 -top-36 w-[320px] opacity-50 sm:-end-16 sm:-top-16 sm:w-[560px] sm:opacity-50 lg:opacity-40 min-[1400px]:hidden" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <p className="rise font-arabic mb-5 text-[26px] leading-none text-[rgb(var(--gold))] sm:text-[30px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>
+              <p className="rise font-arabic mb-5 text-[26px] leading-none text-[rgb(var(--gold))] sm:text-[30px]"><Ink>{BUNDLED_UI_VERSES["1:1"]}</Ink></p>
               <p className="rise hm-k !text-[12px] text-[rgb(var(--gold))]" style={{ animationDelay: "120ms" }}>{t("home2.heroKicker", { n })}</p>
               <h1 className="rise font-display mt-5 text-[42px] leading-[1.04] [hyphens:manual] sm:text-6xl xl:text-7xl" style={{ animationDelay: "240ms" }}>{m.hero.title} <span className="gold-sheen block">{m.hero.accent}</span></h1>
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70 sm:text-lg">{m.hero.lead}</p>
@@ -181,7 +185,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{t("landing.whyTitle")}</h2>
-              <HomeVerse text="إِنَّ هَٰذَا ٱلۡقُرۡءَانَ يَهۡدِي لِلَّتِي هِيَ أَقۡوَمُ" cite="17:9" className="mt-6 text-[22px] sm:text-[26px]" />
+              <HomeVerse text={verseQuote("qpc", "17:9", 1, 7)} cite="17:9" className="mt-6 text-[22px] sm:text-[26px]" />
             </div>
             <div className="space-y-5 text-[17px] leading-relaxed text-muted lg:border-s lg:border-[rgb(var(--hm-gold))]/30 lg:ps-10">
               <p>{t("landing.whyP1")}</p>
@@ -309,7 +313,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
             <Sticker def={{ id: "hm-taj", icon: "ear", tone: "sea", ar: "" }} size={72} />
             <h2 className="font-display mt-5 text-4xl leading-[1.1]">{t("home2.tajTitle")}</h2>
             <p className="mt-4 text-[17px] leading-relaxed text-muted">{t("home2.tajBody")}</p>
-            <HomeVerse text="وَرَتِّلِ ٱلۡقُرۡءَانَ تَرۡتِيلًا" cite="73:4" className="mt-5 text-[24px] sm:text-[28px]" />
+            <HomeVerse text={verseQuote("qpc", "73:4", 4)} cite="73:4" className="mt-5 text-[24px] sm:text-[28px]" />
           </div>
         </section>
 
@@ -318,7 +322,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
             <h2 className="font-display max-w-3xl text-4xl leading-[1.1] sm:text-5xl">{t("home2.langsTitle2")}</h2>
             <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-muted">{t("home2.langsBody", { n })}</p>
-            <HomeVerse text="وَٱخۡتِلَٰفُ أَلۡسِنَتِكُمۡ وَأَلۡوَٰنِكُمۡ" cite="30:22" className="mt-5 text-[22px] sm:text-[26px]" />
+            <HomeVerse text={verseQuote("qpc", "30:22", 6, 8)} cite="30:22" className="mt-5 text-[22px] sm:text-[26px]" />
             <ul className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 sm:gap-x-7">
               {Object.entries(LOCALE_META).map(([k, v]) => (
                 <li key={k} className="flex items-center gap-2.5 sm:gap-3">
@@ -397,7 +401,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="lg:sticky lg:top-24 lg:self-start">
               <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{t("landing.faqTitle")}</h2>
-              <HomeVerse text="فَسۡـَٔلُوٓاْ أَهۡلَ ٱلذِّكۡرِ إِن كُنتُمۡ لَا تَعۡلَمُونَ" cite="16:43" className="mt-6 text-[21px] sm:text-[24px]" />
+              <HomeVerse text={verseQuote("qpc", "16:43", 9)} cite="16:43" className="mt-6 text-[21px] sm:text-[24px]" />
             </div>
             <div className="grid gap-2">
               {FAQ.map((i) => (
@@ -423,7 +427,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           <div className="relative mx-auto max-w-3xl px-4 py-16 sm:px-5 sm:py-24">
             <HomeArch dark ratio={0.3} lift={0.17}>
               <div className="px-5 pb-10 text-center sm:px-12 sm:pb-14">
-                <HomeVerse text="ٱقۡرَأۡ بِٱسۡمِ رَبِّكَ ٱلَّذِي خَلَقَ" cite="96:1" className="relative text-[22px] sm:text-[28px]" />
+                <HomeVerse text={verseQuote("qpc", "96:1")} cite="96:1" className="relative text-[22px] sm:text-[28px]" />
                 <h2 className="font-display mx-auto mt-4 max-w-3xl text-4xl leading-[1.1] sm:text-6xl">{t("home2.finalTitle")}</h2>
                 <p className="mx-auto mt-4 max-w-xl text-[17px] text-white/70">{t("home2.finalBody")}</p>
                 <div className="mt-8 flex flex-wrap justify-center gap-3">

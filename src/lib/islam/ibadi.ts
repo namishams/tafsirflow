@@ -112,9 +112,9 @@ Die **Amman-Botschaft** (2004, bestätigt 2005) nennt die ibaditische Schule aus
 
 Über kleinere Gemeinschaften wird oft mehr geredet als mit ihnen. Darum ein paar Gedanken, die für jede Schule gelten, ganz besonders aber für die ibaditische:
 
-- **Lesen Sie, was sie selbst schreiben.** Die Werke ibaditischer Gelehrter sind heute gedruckt und vielfach zugänglich. Sie sagen sich mehr über diese Schule als die Urteile ihrer historischen Gegner.
-- **Unterscheiden Sie zwischen Geschichte und Gegenwart.** Ereignisse aus dem ersten Jahrhundert der Hidschra erklären die Entstehung einer Schule, aber sie beschreiben nicht die Menschen, die heute nebenen Sie sich beten.
-- **Frage Gelehrte, nicht Gerüchte.** Wer etwas über eine Schule wissen möchte, fragt am besten jemanden, der sie gründlich studiert hat.
+- **Lesen Sie, was sie selbst schreiben.** Die Werke ibaditischer Gelehrter sind heute gedruckt und vielfach zugänglich. Sie sagen Ihnen mehr über diese Schule als die Urteile ihrer historischen Gegner.
+- **Unterscheiden Sie zwischen Geschichte und Gegenwart.** Ereignisse aus dem ersten Jahrhundert der Hidschra erklären die Entstehung einer Schule, aber sie beschreiben nicht die Menschen, die heute neben Ihnen beten.
+- **Fragen Sie Gelehrte, nicht Gerüchte.** Wer etwas über eine Schule wissen möchte, fragt am besten jemanden, der sie gründlich studiert hat.
 
 Das ist die Haltung, die die Amman-Botschaft von allen Muslimen erbittet, und es ist auch die Haltung, die wir bei Quran Masterclass leben möchten.
 

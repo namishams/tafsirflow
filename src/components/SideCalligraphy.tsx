@@ -1,7 +1,12 @@
+import { verseQuote } from "@/lib/verseQuotes";
+
 // Large Quran calligraphy in the side margins of wide screens, after the façade of the Museum of the Future:
 // a few verses are written slowly in gold, one after another, and fade again. Purely decorative.
-const LEFT = ["اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ", "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ", "فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ"];
-const RIGHT = ["وَقُل رَّبِّ زِدْنِي عِلْمًا", "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا", "الرَّحْمَٰنُ عَلَّمَ الْقُرْآنَ"];
+// The verses come from the Quran data (lib/verseQuotes, modern spelling for the calligraphy font), never typed by hand;
+// pause signs are left out in the large calligraphy. Left: 24:35, 13:28, 2:186; right: 20:114, 94:5, 55:1–2.
+const q = (key: string, from?: number, to?: number) => verseQuote("imlaei", key, from, to, { marks: false });
+const LEFT = [q("24:35", 1, 4), q("13:28", 7), q("2:186", 5, 9)];
+const RIGHT = [q("20:114", 14), q("94:5"), `${q("55:1")} ${q("55:2")}`];
 
 function Strip({ lines, side }: { lines: string[]; side: "start" | "end" }) {
   const id = `side-metal-${side}`;

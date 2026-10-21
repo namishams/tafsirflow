@@ -190,7 +190,7 @@ export const SUNNAH_DUAS: SunnahDua[] = [
     ar: "بِسْمِ اللَّهِ",
     tr: "Bismi llāh.",
     en: "In the name of Allah. If you forgot at the beginning: “Bismi llāhi awwalahū wa ākhirah” – in the name of Allah at its beginning and its end.",
-    de: "Im Namen Allahs. Wenn du es am Anfang vergessen hast: „Bismi llāhi awwalahū wa ākhirah“ – im Namen Allahs an seinem Anfang und an seinem Ende.",
+    de: "Im Namen Allahs. Wenn Sie es am Anfang vergessen haben: „Bismi llāhi awwalahū wa ākhirah“ – im Namen Allahs an seinem Anfang und an seinem Ende.",
     src: "Sunan Abi Dawud 3767; Jamiʿ at-Tirmidhi 1858",
   },
   {

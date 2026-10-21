@@ -6,7 +6,7 @@ export const hajj: IslamDoc = {
   de: {
     title: "Hadsch und Umra",
     kicker: "Die Pilgerfahrt",
-    lead: "Einmal im Leben nach Mekka zu reisen, um das Haus Allahs zu besuchen, ist für Millionen Muslime der größte Wunsch ihres Lebens. Der Hadsch ist die fünfte Säule des Islam und verpflichtend für jeden, der dazu körperlich und finanziell in der Lage ist; die Umra, die „kleine Pilgerfahrt“, kann man das ganze Jahr über verrichten. Hier erfährst du, worum es geht, wie die Riten Schritt für Schritt ablaufen und wie du dich gut vorbereitest.",
+    lead: "Einmal im Leben nach Mekka zu reisen, um das Haus Allahs zu besuchen, ist für Millionen Muslime der größte Wunsch ihres Lebens. Der Hadsch ist die fünfte Säule des Islam und verpflichtend für jeden, der dazu körperlich und finanziell in der Lage ist; die Umra, die „kleine Pilgerfahrt“, kann man das ganze Jahr über verrichten. Hier erfahren Sie, worum es geht, wie die Riten Schritt für Schritt ablaufen und wie Sie sich gut vorbereiten.",
     facts: [
       { n: "1×", l: "im Leben Pflicht – für alle, die es vermögen" },
       { n: "8.–13.", l: "Dhul-Hiddscha: die Tage des Hadsch" },
@@ -55,7 +55,7 @@ Die Gelehrten nennen als Bedingungen: Der Mensch ist **Muslim**, **erwachsen** u
 Einige Einzelheiten:
 
 - **Kinder:** Der Hadsch eines Kindes ist gültig und wird belohnt. Eine Frau hob auf der Pilgerfahrt ein kleines Kind hoch und fragte, ob es einen Hadsch habe; der Prophet ﷺ antwortete: „Ja, und du hast Lohn“ (Muslim). Die Pflicht, nach Erreichen der Reife zu pilgern, bleibt aber bestehen.
-- **Frauen:** Für Frauen gibt es zusätzliche Regeln zur Begleitung. Die hanafitische und die hanbalitische Schule verlangen grundsätzlich einen *Mahram*, also den Ehemann oder einen nahen männlichen Verwandten. Die malikitische und die schafiitische Schule erlauben es einer Frau, den Pflicht-Hadsch in einer vertrauenswürdigen, sicheren Gruppe zu vollziehen; auch nach der Dscha'fari-Rechtsschule ist ein Mahram keine Bedingung, wenn ihre Sicherheit gewährleistet ist. Die saudischen Bestimmungen haben sich in den letzten Jahren ebenfalls geändert; informiere dich über die aktuellen Regeln.
+- **Frauen:** Für Frauen gibt es zusätzliche Regeln zur Begleitung. Die hanafitische und die hanbalitische Schule verlangen grundsätzlich einen *Mahram*, also den Ehemann oder einen nahen männlichen Verwandten. Die malikitische und die schafiitische Schule erlauben es einer Frau, den Pflicht-Hadsch in einer vertrauenswürdigen, sicheren Gruppe zu vollziehen; auch nach der Dscha'fari-Rechtsschule ist ein Mahram keine Bedingung, wenn ihre Sicherheit gewährleistet ist. Die saudischen Bestimmungen haben sich in den letzten Jahren ebenfalls geändert; informieren Sie sich über die aktuellen Regeln.
 - **Stellvertretung:** Eine Frau aus dem Stamm Khath'am fragte den Propheten ﷺ, ob sie für ihren alten Vater pilgern dürfe, der sich nicht mehr auf dem Reittier halten konnte. Er bejahte es (al-Bukhari und Muslim). Daher kann nach vielen Gelehrten, wer dauerhaft körperlich nicht dazu fähig ist, aber die Mittel hat, jemanden beauftragen, an seiner Stelle zu pilgern; ebenso kann man für Verstorbene pilgern. Viele Gelehrte verlangen, dass der Stellvertreter seinen eigenen Pflicht-Hadsch bereits verrichtet hat.
 - **Genehmigung:** Heute braucht jeder Pilger eine offizielle Hadsch-Genehmigung der saudischen Behörden. Ohne sie zu pilgern ist verboten und gefährlich; Gelehrte in Saudi-Arabien haben ausdrücklich davor gewarnt.
 
@@ -73,12 +73,12 @@ Welche Form die beste ist, darüber haben die Rechtsschulen verschiedene Ansicht
 
 Wer zum Hadsch oder zur Umra reist, tritt an einer festgelegten Grenze, dem **Miqat**, in den Weihezustand, den **Ihram**. Der Prophet ﷺ bestimmte Dhul-Hulaifa für die Leute aus Medina, al-Dschuhfa für die aus dem Norden, Qarn al-Manazil für die aus dem Nadschd und Yalamlam für die aus dem Jemen (al-Bukhari und Muslim); für die aus dem Irak kam Dhat 'Irq hinzu. Wer im Flugzeug anreist, legt den Ihram vor dem Überfliegen des Miqat an. Viele ziehen die Ihram-Kleidung schon zu Hause oder am Flughafen an und fassen die Absicht kurz vor dem Miqat, wenn die Crew oder die Gruppe darauf hinweist. Wer aus den Emiraten nach Dschidda fliegt, überquert die Miqat-Grenze vor der Landung; Dschidda selbst liegt nach der verbreiteten Ansicht innerhalb der Grenze.
 
-So trittst du in den Ihram:
+So treten Sie in den Ihram:
 
 1. **Reinigung:** Ganzkörperwaschung (Ghusl) ist empfohlen, dazu Nägel und Haare vorher pflegen. Männer dürfen den Körper vor dem Ihram parfümieren, nicht die Kleidung.
 2. **Kleidung:** Männer tragen zwei ungenähte Tücher, eines um die Hüfte (Izar), eines über den Schultern (Rida'), dazu Sandalen; der Kopf bleibt unbedeckt. Frauen tragen ihre gewohnte, schlichte und bedeckende Kleidung, aber keinen Gesichtsschleier und keine Handschuhe (al-Bukhari).
-3. **Absicht (Niyya):** Du fasst im Herzen die Absicht für Umra oder Hadsch und sprichst etwa: *Labbayka 'umratan* bzw. *Labbayka hadschdschan*.
-4. **Talbiya:** Dann beginnst du, die Worte zu sprechen, die der Prophet ﷺ sprach (al-Bukhari und Muslim):
+3. **Absicht (Niyya):** Sie fassen im Herzen die Absicht für Umra oder Hadsch und sprechen etwa: *Labbayka 'umratan* bzw. *Labbayka hadschdschan*.
+4. **Talbiya:** Dann beginnen Sie, die Worte zu sprechen, die der Prophet ﷺ sprach (al-Bukhari und Muslim):
 
 *Labbayka Allahumma labbayk, labbayka la scharika laka labbayk, innal-hamda wan-ni'mata laka wal-mulk, la scharika lak.*
 
@@ -99,9 +99,9 @@ Wer wegen Krankheit oder aus einem anderen Grund etwas Verbotenes tun muss, etwa
 Die Umra lässt sich in wenigen Stunden verrichten. So läuft sie ab:
 
 1. **Ihram** am Miqat, wie oben beschrieben, mit der Talbiya auf dem Weg nach Mekka.
-2. **Tawaf:** In der Heiligen Moschee umrundest du die Kaaba **sieben Mal** gegen den Uhrzeigersinn, beginnend und endend an der Ecke mit dem Schwarzen Stein. Bei jedem Vorbeigehen grüßt du ihn – mit der Hand von Weitem, wenn es voll ist. Für den Tawaf brauchst du nach der Mehrheit der Gelehrten die rituelle Reinheit (Wudu). Männer tragen dabei das obere Tuch unter der rechten Schulter und gehen in den ersten drei Runden, wenn möglich, mit kurzen, zügigen Schritten (*Raml*). Es gibt keine festen Worte; du betest, wie dein Herz es dir eingibt. Zwischen der jemenitischen Ecke und dem Schwarzen Stein sprechen viele: *Rabbana atina fid-dunya hasanatan wa fil-achirati hasanatan wa qina 'adhaban-nar* (Koran 2:201).
-3. **Zwei Rak'at** hinter der **Stätte Ibrahims** (Maqam Ibrahim), wenn möglich – oder irgendwo in der Moschee, wenn es zu voll ist (Koran 2:125). Danach trinkst du von **Zamzam**. Der Prophet ﷺ sagte über dieses Wasser: „Es ist gesegnet; es ist eine Speise, die sättigt“ (Muslim), und: „Das Zamzam-Wasser ist für das, wofür man es trinkt“ (Ibn Madscha).
-4. **Sa'i:** Du gehst **sieben Mal** zwischen den Hügeln **Safa** und **Marwa**, beginnend bei Safa und endend bei Marwa. Allah sagt: „Gewiss, as-Safa und al-Marwa gehören zu den Kultzeichen Allahs“ (Koran 2:158). Als der Prophet ﷺ sich Safa näherte, sagte er: „Ich beginne mit dem, womit Allah begonnen hat“, stieg hinauf, wandte sich der Kaaba zu, pries Allah und bat (Muslim 1218). Männer laufen zwischen den grünen Markierungen etwas schneller.
+2. **Tawaf:** In der Heiligen Moschee umrunden Sie die Kaaba **sieben Mal** gegen den Uhrzeigersinn, beginnend und endend an der Ecke mit dem Schwarzen Stein. Bei jedem Vorbeigehen grüßt Sie ihn – mit der Hand von Weitem, wenn es voll ist. Für den Tawaf brauchen Sie nach der Mehrheit der Gelehrten die rituelle Reinheit (Wudu). Männer tragen dabei das obere Tuch unter der rechten Schulter und gehen in den ersten drei Runden, wenn möglich, mit kurzen, zügigen Schritten (*Raml*). Es gibt keine festen Worte; Sie beten, wie Ihr Herz es Ihnen eingibt. Zwischen der jemenitischen Ecke und dem Schwarzen Stein sprechen viele: *Rabbana atina fid-dunya hasanatan wa fil-achirati hasanatan wa qina 'adhaban-nar* (Koran 2:201).
+3. **Zwei Rak'at** hinter der **Stätte Ibrahims** (Maqam Ibrahim), wenn möglich – oder irgendwo in der Moschee, wenn es zu voll ist (Koran 2:125). Danach trinken Sie von **Zamzam**. Der Prophet ﷺ sagte über dieses Wasser: „Es ist gesegnet; es ist eine Speise, die sättigt“ (Muslim), und: „Das Zamzam-Wasser ist für das, wofür man es trinkt“ (Ibn Madscha).
+4. **Sa'i:** Sie gehen **sieben Mal** zwischen den Hügeln **Safa** und **Marwa**, beginnend bei Safa und endend bei Marwa. Allah sagt: „Gewiss, as-Safa und al-Marwa gehören zu den Kultzeichen Allahs“ (Koran 2:158). Als der Prophet ﷺ sich Safa näherte, sagte er: „Ich beginne mit dem, womit Allah begonnen hat“, stieg hinauf, wandte sich der Kaaba zu, pries Allah und bat (Muslim 1218). Männer laufen zwischen den grünen Markierungen etwas schneller.
 5. **Haare scheren oder kürzen:** Männer rasieren den Kopf oder kürzen das Haar gleichmäßig; Frauen schneiden von einer Haarsträhne etwa die Länge einer Fingerkuppe ab. Damit ist die Umra vollendet, und der Ihram ist aufgehoben.
 
 In der Dscha'fari-Rechtsschule gehört zur einzelnen Umra (*Umra mufrada*) nach dem Kürzen der Haare noch ein weiterer Tawaf, der *Tawaf an-Nisa'*, mit zwei Rak'at.
@@ -145,11 +145,11 @@ Für viele Gelehrte ist die Reihenfolge dieser Schritte Sunna, denn der Prophet 
 
 Die Pilger bleiben in Mina und bewerfen an jedem Tag nach dem Mittag die **drei Säulen** – die kleine, die mittlere und die große – mit je sieben Steinchen. Nach der kleinen und der mittleren bleibt man stehen und betet. Wer es eilig hat, darf nach dem 12. abreisen: „Wer sich beeilt und nach zwei Tagen aufbricht, auf dem liegt keine Sünde, und wer bleibt, auf dem liegt keine Sünde“ (Koran 2:203).
 
-Die Übernachtungen in Mina sind nach den meisten Schulen Pflicht, nach hanafitischer Lehre Sunna. Der Prophet ﷺ nannte diese Tage „Tage des Essens, des Trinkens und des Gedenkens Allahs“ (Muslim). Wer krank, alt oder schwach ist, darf nach den Gelehrten jemanden beauftragen, für ihn zu werfen. Folge bei den Wurfzeiten den Zeitplänen deiner Gruppe; sie sollen das Gedränge an den Dschamarat verringern.
+Die Übernachtungen in Mina sind nach den meisten Schulen Pflicht, nach hanafitischer Lehre Sunna. Der Prophet ﷺ nannte diese Tage „Tage des Essens, des Trinkens und des Gedenkens Allahs“ (Muslim). Wer krank, alt oder schwach ist, darf nach den Gelehrten jemanden beauftragen, für ihn zu werfen. Folgen Sie bei den Wurfzeiten den Zeitplänen Ihrer Gruppe; sie sollen das Gedränge an den Dschamarat verringern.
 
 ### Der Abschiedstawaf
 
-Bevor du Mekka verlässt, umrundest du die Kaaba ein letztes Mal: den **Tawaf al-Wada'**. Ibn Abbas berichtet, dass den Menschen geboten wurde, ihr Letztes beim Haus sein zu lassen, mit einer Erleichterung für menstruierende Frauen (al-Bukhari und Muslim). Die meisten Gelehrten halten ihn für Pflicht; die malikitische Schule und die Dscha'fari-Rechtsschule sehen ihn als empfohlen an.
+Bevor Sie Mekka verlassen, umrunden Sie die Kaaba ein letztes Mal: den **Tawaf al-Wada'**. Ibn Abbas berichtet, dass den Menschen geboten wurde, ihr Letztes beim Haus sein zu lassen, mit einer Erleichterung für menstruierende Frauen (al-Bukhari und Muslim). Die meisten Gelehrten halten ihn für Pflicht; die malikitische Schule und die Dscha'fari-Rechtsschule sehen ihn als empfohlen an.
 
 ## Der Tag von Arafa für alle zu Hause
 
@@ -157,11 +157,11 @@ Nicht jeder kann in diesem Jahr pilgern. Aber die Tage des Hadsch gehören der g
 
 - **Die ersten zehn Tage:** Der Prophet ﷺ sagte, es gebe keine Tage, an denen gute Taten vorzüglicher sind als in diesen zehn Tagen des Dhul-Hiddscha (al-Bukhari). Viele Erklärer beziehen auch den Schwur „bei den zehn Nächten“ (Koran 89:2) auf sie.
 - **Das Fasten am Tag von Arafa:** Der Prophet ﷺ sagte über das Fasten am 9. Dhul-Hiddscha: „Ich hoffe bei Allah, dass es die Sünden des vergangenen und des kommenden Jahres sühnt“ (Muslim 1162). Für die Pilger in Arafat selbst ist das Fasten nicht vorgesehen; sie brauchen ihre Kraft für das Gebet. In der Dscha'fari-Rechtsschule ist das Fasten an diesem Tag ebenfalls empfohlen, sofern es einen nicht vom Bittgebet abhält.
-- **Bittgebet und Gedenken:** Nimm dir am Nachmittag Zeit, so wie die Pilger in Arafat stehen. Sprich das Gedenken *La ilaha illallah wahdahu la scharika lah …*, bitte für dich, deine Familie und die Menschen in Not. In der schiitischen Tradition sprechen viele an diesem Tag das bekannte Bittgebet von Arafa, das auf Imam al-Husain zurückgeht.
+- **Bittgebet und Gedenken:** Nehmen Sie sich am Nachmittag Zeit, so wie die Pilger in Arafat stehen. Sprechen Sie das Gedenken *La ilaha illallah wahdahu la scharika lah …*, bitten Sie für sich, Ihre Familie und die Menschen in Not. In der schiitischen Tradition sprechen viele an diesem Tag das bekannte Bittgebet von Arafa, das auf Imam al-Husain zurückgeht.
 - **Takbir:** Viele Muslime sprechen vom Morgen des Tages von Arafa bis zum Ende der Taschriq-Tage nach den Gebeten den Takbir: *Allahu akbar, Allahu akbar, la ilaha illallah, wallahu akbar, Allahu akbar wa lillahil-hamd*. Über Beginn, Ende und Wortlaut gibt es unterschiedliche Ansichten.
 - **Das Opfer:** Wer zum Fest ein Tier opfern möchte, lässt nach einer Überlieferung bei Muslim ab dem 1. Dhul-Hiddscha Haare und Nägel, bis geopfert ist; die Rechtsschulen bewerten das unterschiedlich streng. Ob das Opfer für Wohlhabende Pflicht oder eine stark empfohlene Sunna ist, darüber sind sie ebenfalls verschiedener Meinung: Die hanafitische Schule sieht es als Pflicht an, die Mehrheit als Sunna.
 
-Mehr über das Fest erfährst du im Kapitel [Die wichtigen Tage des islamischen Jahres](/islam/eid).
+Mehr über das Fest erfahren Sie im Kapitel [Die wichtigen Tage des islamischen Jahres](/islam/eid).
 
 ## Der Besuch in Medina
 
@@ -175,24 +175,24 @@ Weitere Orte in Medina:
 - **Al-Baqi'**, der Friedhof Medinas, auf dem viele Gefährten und Angehörige des Propheten ﷺ ruhen, nach der Überlieferung auch vier Imame der Ahl al-Bait. Sunnitische und schiitische Pilger besuchen ihn gleichermaßen.
 - **Der Berg Uhud**, an dessen Fuß Hamza, der Onkel des Propheten ﷺ, und die Gefallenen der Schlacht von Uhud begraben sind.
 
-Mehr über die beiden heiligen Städte erfährst du im Kapitel [Die wichtigsten Städte des Islam](/islam/cities).
+Mehr über die beiden heiligen Städte erfahren Sie im Kapitel [Die wichtigsten Städte des Islam](/islam/cities).
 
 ## Vorbereitung und Gesundheit
 
 ### Vor der Reise
 
-- **Lerne vorher:** Lies die Riten in Ruhe zu Hause und besuche Vorbereitungskurse. Wer weiß, was kommt, kann sich vor Ort auf das Herz konzentrieren.
-- **Rechte anderer:** Bitte vor der Reise um Verzeihung, begleiche Schulden und regle deine Angelegenheiten. Viele schreiben vor dem Aufbruch auch ihr Testament (*Wasiyya*).
-- **Bittgebete vorbereiten:** Schreib dir auf, wofür du beten möchtest – für dich, deine Familie, deine Verstorbenen und die ganze Umma. Anregungen findest du bei unseren [Duas](/duas).
-- **Körperlich vorbereiten:** Beim Hadsch geht man an manchen Tagen viele Kilometer zu Fuß. Gewöhne dich in den Wochen davor an längere Spaziergänge und laufe deine Sandalen ein.
+- **Lernen Sie vorher:** Lesen Sie die Riten in Ruhe zu Hause und besuchen Sie Vorbereitungskurse. Wer weiß, was kommt, kann sich vor Ort auf das Herz konzentrieren.
+- **Rechte anderer:** Bitten Sie vor der Reise um Verzeihung, begleichen Sie Schulden und regeln Sie Ihre Angelegenheiten. Viele schreiben vor dem Aufbruch auch ihr Testament (*Wasiyya*).
+- **Bittgebete vorbereiten:** Schreiben Sie sich auf, wofür Sie beten möchten – für sich, Ihre Familie, Ihre Verstorbenen und die ganze Umma. Anregungen finden Sie bei unseren [Duas](/duas).
+- **Körperlich vorbereiten:** Beim Hadsch geht man an manchen Tagen viele Kilometer zu Fuß. Gewöhnen Sie sich in den Wochen davor an längere Spaziergänge und laufe Ihre Sandalen ein.
 
 ### Gesundheit
 
-- **Ärztliche Beratung:** Lass dich rechtzeitig ärztlich beraten und die vorgeschriebenen Impfungen geben; Saudi-Arabien verlangt unter anderem eine Impfung gegen Meningokokken. Die aktuelle Liste erfährst du bei den Behörden und deinem Veranstalter. Wer chronisch krank ist, bespricht die Reise besonders sorgfältig.
-- **Medikamente:** Nimm deine Medikamente in der Originalverpackung mit, dazu eine Kopie des Rezepts und eine kurze Übersicht über deine Erkrankungen.
-- **Hitze:** Trink viel Wasser, auch ohne Durst, meide die Mittagssonne, wo es geht, und nutze einen Schirm. Hitzschlag und Austrocknung gehören zu den häufigsten Gesundheitsproblemen beim Hadsch.
+- **Ärztliche Beratung:** Lassen Sie sich rechtzeitig ärztlich beraten und die vorgeschriebenen Impfungen geben; Saudi-Arabien verlangt unter anderem eine Impfung gegen Meningokokken. Die aktuelle Liste erfahren Sie bei den Behörden und Ihrem Veranstalter. Wer chronisch krank ist, bespricht die Reise besonders sorgfältig.
+- **Medikamente:** Nehmen Sie Ihre Medikamente in der Originalverpackung mit, dazu eine Kopie des Rezepts und eine kurze Übersicht über Ihre Erkrankungen.
+- **Hitze:** Trinken Sie viel Wasser, auch ohne Durst, meiden Sie die Mittagssonne, wo es geht, und nutzen Sie einen Schirm. Hitzschlag und Austrocknung gehören zu den häufigsten Gesundheitsproblemen beim Hadsch.
 - **Füße und Haut:** Blasen und wunde Stellen sind häufig. Pflaster, unparfümierte Creme und gut eingelaufene Sandalen helfen.
-- **Ansteckung:** Wo Millionen Menschen eng zusammen sind, verbreiten sich Erkältungen schnell. Händewaschen und bei Bedarf eine Maske schützen dich und andere.
+- **Ansteckung:** Wo Millionen Menschen eng zusammen sind, verbreiten sich Erkältungen schnell. Händewaschen und bei Bedarf eine Maske schützen Sie und andere.
 - **Für Frauen:** Wer fürchtet, dass die Periode in die Tage des Hadsch fällt, kann mit einer Ärztin über Möglichkeiten sprechen; viele Gelehrte erlauben Mittel zur Verschiebung, wenn sie gesundheitlich unbedenklich sind.
 
 ### Packliste (Auswahl)
@@ -201,19 +201,19 @@ Mehr über die beiden heiligen Städte erfährst du im Kapitel [Die wichtigsten 
 - unparfümierte Seife, Sonnencreme und Deo ohne Duft
 - bequeme Sandalen, ein leichter Gebetsteppich, ein kleiner Beutel für die Steinchen
 - eine Wasserflasche zum Nachfüllen, ein Schirm, ein Ladegerät für das Telefon
-- Kopien von Pass, Visum und Genehmigung sowie die Notfallnummern deiner Gruppe
+- Kopien von Pass, Visum und Genehmigung sowie die Notfallnummern Ihrer Gruppe
 
 ### Vor Ort
 
 - **Geduld:** Millionen Menschen, Hitze, Wartezeiten – der Hadsch prüft die Geduld. Ein freundliches Wort und ein Lächeln gehören zu einem angenommenen Hadsch.
-- **Bleib bei deiner Gruppe:** Trage dein Armband oder deine Karte mit den Daten deiner Gruppe, vereinbare Treffpunkte und folge den Zeitplänen – besonders bei der Steinigung.
-- **Hilf anderen:** Viele Pilger sind alt, krank oder zum ersten Mal unterwegs. Ein Glas Wasser, ein Weg, den du zeigst, ein Platz, den du freimachst – auch das ist Hadsch.
+- **Bleiben Sie bei Ihrer Gruppe:** Tragen Sie Ihr Armband oder Ihre Karte mit den Daten Ihrer Gruppe, vereinbaren Sie Treffpunkte und folgen Sie den Zeitplänen – besonders bei der Steinigung.
+- **Helfen Sie anderen:** Viele Pilger sind alt, krank oder zum ersten Mal unterwegs. Ein Glas Wasser, ein Weg, den Sie zeigen, ein Platz, den Sie freimachen – auch das ist Hadsch.
 
-Ein wichtiger Hinweis: Die Einzelheiten unterscheiden sich zwischen den Rechtsschulen. Diese Seite gibt einen allgemeinen Überblick. Folge vor Ort einem **qualifizierten Gruppenleiter** oder Gelehrten, dem du vertraust, und frag nach, wenn du unsicher bist.
+Ein wichtiger Hinweis: Die Einzelheiten unterscheiden sich zwischen den Rechtsschulen. Diese Seite gibt einen allgemeinen Überblick. Folgen Sie vor Ort einem **qualifizierten Gruppenleiter** oder Gelehrten, dem Sie vertrauen, und fragen Sie nach, wenn Sie unsicher sind.
 
 ## Hadsch aus den Vereinigten Arabischen Emiraten
 
-Wer in den Emiraten lebt, meldet sich für den Hadsch über die **offizielle Registrierung der zuständigen Behörde der VAE** an und reist mit einem **lizenzierten Hadsch-Veranstalter**. Die Plätze sind begrenzt und werden nach festen Kriterien vergeben; wer noch nie gepilgert ist, hat in der Regel Vorrang. Ob und wie Einwohner ohne emiratische Staatsangehörigkeit sich anmelden können oder den Weg über ihr Heimatland gehen, erfährst du bei den offiziellen Stellen.
+Wer in den Emiraten lebt, meldet sich für den Hadsch über die **offizielle Registrierung der zuständigen Behörde der VAE** an und reist mit einem **lizenzierten Hadsch-Veranstalter**. Die Plätze sind begrenzt und werden nach festen Kriterien vergeben; wer noch nie gepilgert ist, hat in der Regel Vorrang. Ob und wie Einwohner ohne emiratische Staatsangehörigkeit sich anmelden können oder den Weg über ihr Heimatland gehen, erfahren Sie bei den offiziellen Stellen.
 
 Im Großen und Ganzen sieht der Weg so aus:
 
@@ -223,7 +223,7 @@ Im Großen und Ganzen sieht der Weg so aus:
 4. **Gesundheitsnachweise und Impfungen** erbringen, wie vorgeschrieben.
 5. **Vorbereitung** – viele Veranstalter und Moscheen bieten Kurse an, in denen die Riten Schritt für Schritt geübt werden.
 
-Buche nie bei unlizenzierten Anbietern und verlass dich nicht auf Angebote aus sozialen Netzwerken; informiere dich über die aktuellen Fristen und Voraussetzungen direkt bei den offiziellen Stellen. Für die Umra gelten eigene, einfachere Regeln, und viele Familien aus den Emiraten verrichten sie im Laufe des Jahres, besonders im Ramadan. Auch hier lohnt es sich, die aktuellen Visa- und Genehmigungsregeln zu prüfen.
+Buchen Sie nie bei unlizenzierten Anbietern und verlassen Sie sich nicht auf Angebote aus sozialen Netzwerken; informieren Sie sich über die aktuellen Fristen und Voraussetzungen direkt bei den offiziellen Stellen. Für die Umra gelten eigene, einfachere Regeln, und viele Familien aus den Emiraten verrichten sie im Laufe des Jahres, besonders im Ramadan. Auch hier lohnt es sich, die aktuellen Visa- und Genehmigungsregeln zu prüfen.
 
 ## Nach dem Hadsch
 
@@ -235,8 +235,8 @@ Möge Allah jedem, der sich nach Seinem Haus sehnt, den Weg dorthin leicht mache
       { q: "Was ist der wichtigste Teil des Hadsch?", a: "Das Stehen in Arafat am 9. Dhul-Hiddscha. Der Prophet ﷺ sagte: „Der Hadsch ist Arafa“ (at-Tirmidhi und andere)." },
       { q: "Dürfen Frauen im Ihram ihre normale Kleidung tragen?", a: "Ja. Frauen tragen ihre gewohnte, schlichte und bedeckende Kleidung in jeder Farbe; im Ihram verzichten sie auf Gesichtsschleier und Handschuhe (al-Bukhari)." },
       { q: "Gehört der Besuch in Medina zum Hadsch?", a: "Nein. Er ist sehr empfohlen, und fast alle Pilger beten gern in der Moschee des Propheten ﷺ, aber der Hadsch ist auch ohne diesen Besuch vollständig." },
-      { q: "Was kann ich am Tag von Arafa tun, wenn ich nicht pilgere?", a: "Fasten, wenn du kannst – der Prophet ﷺ sagte, es sühne die Sünden des vergangenen und des kommenden Jahres (Muslim 1162) –, viel Bittgebet und Gedenken, besonders am Nachmittag, und die guten Taten der ersten zehn Tage des Dhul-Hiddscha." },
-      { q: "Wie melde ich mich in den Emiraten für den Hadsch an?", a: "Über die offizielle Registrierung der zuständigen Behörde der VAE und über einen lizenzierten Hadsch-Veranstalter. Informiere dich dort über aktuelle Fristen und Voraussetzungen und buche nie bei unlizenzierten Anbietern." },
+      { q: "Was kann ich am Tag von Arafa tun, wenn ich nicht pilgere?", a: "Fasten, wenn Sie können – der Prophet ﷺ sagte, es sühne die Sünden des vergangenen und des kommenden Jahres (Muslim 1162) –, viel Bittgebet und Gedenken, besonders am Nachmittag, und die guten Taten der ersten zehn Tage des Dhul-Hiddscha." },
+      { q: "Wie melde ich mich in den Emiraten für den Hadsch an?", a: "Über die offizielle Registrierung der zuständigen Behörde der VAE und über einen lizenzierten Hadsch-Veranstalter. Informieren Sie sich dort über aktuelle Fristen und Voraussetzungen und buchen Sie nie bei unlizenzierten Anbietern." },
     ],
     sources: [
       "Koran 2:125–127, 2:158, 2:196–198, 2:201, 2:203, 3:96–97, 5:3, 5:95, 22:27, 22:37, 89:2",

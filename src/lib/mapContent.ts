@@ -14,7 +14,7 @@ export type MapContent = {
 const de: MapContent = {
   kicker: "Quran Masterclass · Shams-Methode",
   title: "Die Koran-Landkarte",
-  lead: "114 Suren, 30 Ajzā', 6.236 Verse – und auf einen Blick sehen Sie, was bei Ihnen sitzt, was wackelt und was Ihnen schwerfällt. Die Karte ist kein Fortschrittsbalken, der nur wächst. Sie ist ein ehrlicher Spiegel Ihres Gedächtnisses: Sie wird grün, wenn Sie wiederholen, und verblasen, wenn Sie einen Vers zu lange liegen lassen.",
+  lead: "114 Suren, 30 Ajzā', 6.236 Verse – und auf einen Blick sehen Sie, was bei Ihnen sitzt, was wackelt und was Ihnen schwerfällt. Die Karte ist kein Fortschrittsbalken, der nur wächst. Sie ist ein ehrlicher Spiegel Ihres Gedächtnisses: Sie wird grün, wenn Sie wiederholen, und verblasst, wenn Sie einen Vers zu lange liegen lassen.",
   ctaStart: "Ersten Vers mit der Shams-Methode lernen",
   ctaToday: "Zu Ihren heutigen Aufgaben",
   stats: [{ n: "114", l: "Suren als Kästchen" }, { n: "30", l: "Ajzā' als Übersicht" }, { n: "6.236", l: "Verse einzeln sichtbar" }],

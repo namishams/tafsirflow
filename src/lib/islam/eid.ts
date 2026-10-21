@@ -162,7 +162,7 @@ Ob und wie man den Mawlid feiert, darüber denken Muslime unterschiedlich – un
 - **Viele Muslime feiern ihn**, in vielen Ländern seit Jahrhunderten: mit Versammlungen, in denen Koran rezitiert, aus seinem Leben erzählt und Lobgedichte wie die *Burda* von al-Busiri vorgetragen werden, mit Segenswünschen für ihn und mit Essen für Nachbarn und Bedürftige. Viele Gelehrte sehen darin eine gute Form, die Liebe zu ihm zu zeigen.
 - **Andere feiern ihn nicht**, weil der Prophet ﷺ und seine Gefährten diesen Tag nicht als Fest begangen haben. Sie zeigen ihre Liebe, indem sie seiner Sunna an jedem Tag des Jahres folgen – manche auch durch das Fasten am Montag.
 
-Wir urteilen hier nicht. Wenn Sie unsicher sind, fragen Sie einen Gelehrten Ihres Vertrauens, und begegne denen, die es anders halten, mit Respekt. In den Emiraten ist der Geburtstag des Propheten ﷺ ein gesetzlicher Feiertag. Mehr über sein Leben im Kapitel [Der Prophet Muhammad ﷺ](/islam/prophet).
+Wir urteilen hier nicht. Wenn Sie unsicher sind, fragen Sie einen Gelehrten Ihres Vertrauens, und begegnen Sie denen, die es anders halten, mit Respekt. In den Emiraten ist der Geburtstag des Propheten ﷺ ein gesetzlicher Feiertag. Mehr über sein Leben im Kapitel [Der Prophet Muhammad ﷺ](/islam/prophet).
 
 ## Der Freitag – das Fest jeder Woche
 
@@ -264,7 +264,7 @@ The Prophet ﷺ said: "Fast when you see it and end the fast when you see it. An
 How this instruction is applied today varies – and each practice has scholars behind it:
 
 - **Local sighting:** a country or region follows the sighting in its own sky.
-- **Sighting elsewhere:** some communities follow the sighting of another country, suchen Sie as Saudi Arabia, or any confirmed sighting worldwide.
+- **Sighting elsewhere:** some communities follow the sighting of another country, such as Saudi Arabia, or any confirmed sighting worldwide.
 - **Astronomical calculation:** others fix the months in advance by calculation, often combined with the question of whether the crescent can be seen at all.
 
 So it can happen that Ramadan or Eid begins on different days in two countries – sometimes even in two mosques of the same city. That is no reason to quarrel. It is reported that the Prophet ﷺ said: "The fast is the day you fast, the breaking of the fast is the day you break it, and al-Adha is the day you sacrifice" (at-Tirmidhi). Many scholars therefore advise joining your own community and not blaming others. In the Emirates an official moon-sighting committee meets on the evening of the 29th, and its decision applies to the whole country.

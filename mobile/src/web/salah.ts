@@ -84,7 +84,7 @@ const T = {
     ru: "Прибегаю к Аллаху от проклятого сатаны.",
     zh: "我求安拉护佑，免遭被驱逐的恶魔之害。",
   }) },
-  fatiha: { ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ …", translit: "Bismillāhi r-raḥmāni r-raḥīm. Al-ḥamdu lillāhi rabbi l-ʿālamīn …", meaning: L("Die ganze Al-Fatiha – ohne sie ist kein Gebet gültig. Lerne sie Vers für Vers im Player.", "The whole of Al-Fatiha – no prayer is valid without it. Learn it verse by verse in the player.", "سورةُ الفاتحة كاملةً، فـ«لا صلاةَ لمن لم يقرأ بفاتحة الكتاب». تعلَّمها آيةً آيةً في المشغِّل.", {
+  fatiha: { ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ …", translit: "Bismillāhi r-raḥmāni r-raḥīm. Al-ḥamdu lillāhi rabbi l-ʿālamīn …", meaning: L("Die ganze Al-Fatiha – ohne sie ist kein Gebet gültig. Lernen Sie sie Vers für Vers im Player.", "The whole of Al-Fatiha – no prayer is valid without it. Learn it verse by verse in the player.", "سورةُ الفاتحة كاملةً، فـ«لا صلاةَ لمن لم يقرأ بفاتحة الكتاب». تعلَّمها آيةً آيةً في المشغِّل.", {
     tr: "Fâtiha'nın tamamı – onsuz hiçbir namaz geçerli değildir. Onu oynatıcıda ayet ayet öğren.",
     ur: "پوری سورۂ فاتحہ – اس کے بغیر کوئی نماز درست نہیں۔ پلیئر میں اسے آیت بہ آیت سیکھیں۔",
     fa: "تمام سورهٔ فاتحه – بدون آن هیچ نمازی صحیح نیست. آن را آیه به آیه در پخش‌کننده بیاموزید.",
@@ -373,7 +373,7 @@ const TI = {
 
 // ---------- step notes ----------
 const N = {
-  takbir: L("Hebe die Hände bis zu den Ohren oder Schultern. Ab jetzt bist du im Gebet.", "Raise your hands to your ears or shoulders. From now on you are in prayer.", "ارفع يديك حذوَ أذنيك أو منكبيك. وبها تدخل في الصلاة.", {
+  takbir: L("Heben Sie die Hände bis zu den Ohren oder Schultern. Ab jetzt sind Sie im Gebet.", "Raise your hands to your ears or shoulders. From now on you are in prayer.", "ارفع يديك حذوَ أذنيك أو منكبيك. وبها تدخل في الصلاة.", {
     tr: "Ellerini kulaklarına ya da omuzlarına kadar kaldır. Bu andan itibaren namazdasın.",
     ur: "اپنے ہاتھ کانوں یا کندھوں تک اٹھائیں۔ اب سے آپ نماز میں ہیں۔",
     fa: "دست‌ها را تا گوش‌ها یا شانه‌ها بلند کنید. از این لحظه در نماز هستید.",
@@ -451,7 +451,7 @@ const N = {
     ru: "Читается про себя. После этого «Āmīn» не говорят.",
     zh: "低声诵读。之后不说“Āmīn”。",
   }),
-  fatihaShiaLater: L("In der 3. und 4. Raka kannst du statt der Fatiha die „vier Lobpreisungen“ sagen (nächster Schritt).", "In the 3rd and 4th rak'ah you may say the “four glorifications” instead of Al-Fatiha (next step).", "في الركعتين الثالثة والرابعة يجوز لك أن تقول «التسبيحات الأربع» بدلًا من الفاتحة (الخطوة التالية).", {
+  fatihaShiaLater: L("In der 3. und 4. Raka können Sie statt der Fatiha die „vier Lobpreisungen“ sagen (nächster Schritt).", "In the 3rd and 4th rak'ah you may say the “four glorifications” instead of Al-Fatiha (next step).", "في الركعتين الثالثة والرابعة يجوز لك أن تقول «التسبيحات الأربع» بدلًا من الفاتحة (الخطوة التالية).", {
     tr: "3. ve 4. rekâtta Fâtiha yerine “dört tesbih”i söyleyebilirsin (sonraki adım).",
     ur: "تیسری اور چوتھی رکعت میں آپ سورۂ فاتحہ کی جگہ “چار تسبیحات” کہہ سکتے ہیں (اگلا مرحلہ)۔",
     fa: "در رکعت سوم و چهارم می‌توانید به‌جای فاتحه «تسبیحات اربعه» را بگویید (گام بعد).",
@@ -503,7 +503,7 @@ const N = {
     ru: "Только в первых двух ракаатах; в джафаритском мазхабе – полная сура.",
     zh: "仅在前两拉克尔提；在贾法里学派中须念完整的一章。",
   }),
-  qunut: L("Empfohlen: Hebe die Hände mit den Handflächen nach oben vor das Gesicht und sprich ein Bittgebet – vor der Verbeugung der zweiten Raka.", "Recommended: raise your hands, palms up, in front of your face and make a supplication – before the bowing of the second rak'ah.", "مستحبّ: ارفع يديك حِيالَ وجهك وباطنُ كفَّيك إلى السماء، وادعُ بما شئت – وذلك قبل ركوع الركعة الثانية.", {
+  qunut: L("Empfohlen: Heben Sie die Hände mit den Handflächen nach oben vor das Gesicht und sprechen Sie ein Bittgebet – vor der Verbeugung der zweiten Raka.", "Recommended: raise your hands, palms up, in front of your face and make a supplication – before the bowing of the second rak'ah.", "مستحبّ: ارفع يديك حِيالَ وجهك وباطنُ كفَّيك إلى السماء، وادعُ بما شئت – وذلك قبل ركوع الركعة الثانية.", {
     tr: "Tavsiye edilir: ellerini avuçların yukarı bakacak şekilde yüzünün önüne kaldır ve bir dua et – ikinci rekâtın rükûsundan önce.",
     ur: "مستحب: اپنے ہاتھ ہتھیلیاں اوپر کر کے چہرے کے سامنے اٹھائیں اور دعا کریں – دوسری رکعت کے رکوع سے پہلے۔",
     fa: "مستحب: دست‌ها را با کف‌های رو به بالا مقابل صورت بلند کنید و دعا کنید – پیش از رکوع رکعت دوم.",
@@ -607,7 +607,7 @@ const N = {
     ru: "Многие поднимают указательный палец при свидетельстве. Шафииты и маликиты передают немного иной текст – оба варианта действительны.",
     zh: "许多人念作证词时抬起食指。沙斐仪学派和马立克学派传述的措辞略有不同——两者都有效。",
   }),
-  salawat: L("Danach darfst du ein eigenes Bittgebet sprechen.", "Afterwards you may make your own supplication.", "ثم لك أن تدعو بما أحببت من الدعاء.", {
+  salawat: L("Danach dürfen Sie ein eigenes Bittgebet sprechen.", "Afterwards you may make your own supplication.", "ثم لك أن تدعو بما أحببت من الدعاء.", {
     tr: "Ardından kendi duanı edebilirsin.",
     ur: "اس کے بعد آپ اپنی دعا کر سکتے ہیں۔",
     fa: "پس از آن می‌توانید دعای خودتان را بخوانید.",
@@ -694,7 +694,7 @@ export function buildPrayer(id: (typeof PRAYERS)[number]["id"], tradition: Tradi
   const sunni = tradition === "sunni";
   const out: Step[] = [];
   const stand: Posture = sunni ? "folded" : "sides";
-  out.push(s(1, "stand", TI.niyya, undefined, L(`Stell dich in Richtung Qibla und fasse im Herzen die Absicht, das ${p.name.de}-Gebet mit ${p.rakat} Rakaat zu beten. Die Absicht wird nicht laut ausgesprochen.`, `Face the qibla and make the intention in your heart to pray ${p.name.en} with ${p.rakat} rak'at. The intention is not said out loud.`, `استقبلِ القبلة، وانوِ بقلبك أداءَ صلاة ${p.ar} ${RAKAT_AR[p.rakat]}. ومحلُّ النيّة القلب، فلا يُجهَر بها.`, {
+  out.push(s(1, "stand", TI.niyya, undefined, L(`Stellen Sie sich in Richtung Qibla und fassen Sie im Herzen die Absicht, das ${p.name.de}-Gebet mit ${p.rakat} Rakaat zu beten. Die Absicht wird nicht laut ausgesprochen.`, `Face the qibla and make the intention in your heart to pray ${p.name.en} with ${p.rakat} rak'at. The intention is not said out loud.`, `استقبلِ القبلة، وانوِ بقلبك أداءَ صلاة ${p.ar} ${RAKAT_AR[p.rakat]}. ومحلُّ النيّة القلب، فلا يُجهَر بها.`, {
     tr: `Kıbleye dön ve kalbinle ${p.name.tr.toLocaleLowerCase("tr")} namazını ${p.rakat} rekât olarak kılmaya niyet et. Niyet yüksek sesle söylenmez.`,
     ur: `قبلہ رخ ہوں اور دل میں ${p.name.ur} کی ${p.rakat} رکعات پڑھنے کی نیت کریں۔ نیت بلند آواز سے نہیں کہی جاتی۔`,
     fa: `رو به قبله بایستید و در دل نیت کنید که نماز ${p.name.fa} را در ${p.rakat} رکعت بخوانید. نیت با صدای بلند گفته نمی‌شود.`,

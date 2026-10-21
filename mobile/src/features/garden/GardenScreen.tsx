@@ -115,6 +115,10 @@ export default function GardenScreen() {
   const [dust, setDust] = useState(0);
   const traitsN = useRef(s.traits.length);
   useEffect(() => { if (s.traits.length > traitsN.current) { setDust(Date.now()); focus(); } traitsN.current = s.traits.length; }, [s.traits.length]); // eslint-disable-line react-hooks/exhaustive-deps
+  // the record's list of decorations is changed in place (a gift adds one): a new list when it changes, so the
+  // memoised tree art shows a new decoration at once, not only after the garden is opened again (as on the website
+  // and in the gift flow; the art itself is unchanged)
+  const traits = useMemo(() => [...s.traits], [s.traits.join(",")]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // the ceremony also stands in when the garden has no tree any more (cleared or not yet synced): never a blank screen.
   // It then runs as a whole (its own new tree does not end it half way); a tree from the sync ends it (PlantFlow).
@@ -148,7 +152,7 @@ export default function GardenScreen() {
                 {Array.from({ length: plots }, (_, i) => {
                   const tr = s.trees[i];
                   if (!tr) return <EmptyPlot key={i} w={plotW} pro={pro} canPlantNow={canPlant(s, pro)} onPlant={() => setPlanting(true)} />;
-                  return <TreePlot key={tr.id} tr={tr} w={plotW} active={tr.id === tree.id} s={s} season={season} reduce={reduce} dust={tr.id === tree.id ? dust : 0} onEvent={focus} />;
+                  return <TreePlot key={tr.id} tr={tr} w={plotW} active={tr.id === tree.id} s={s} traits={traits} season={season} reduce={reduce} dust={tr.id === tree.id ? dust : 0} onEvent={focus} />;
                 })}
               </View>
             </Animated.View>
@@ -230,7 +234,7 @@ export default function GardenScreen() {
  *  leaves fall; with ripe fruits the active tree is harvested by a tap (the same harvest as the button below), the
  *  fruits float up into a golden glow. New decorations arrive with a dust of light. All purely visual. */
 type BurstKind = "water" | "fruit" | "dust";
-function TreePlot({ tr, w, active, s, season, reduce, dust, onEvent }: { tr: Tree; w: number; active: boolean; s: Garden; season: ReturnType<typeof seasonNow>; reduce: boolean; dust: number; onEvent: () => void }) {
+function TreePlot({ tr, w, active, s, traits, season, reduce, dust, onEvent }: { tr: Tree; w: number; active: boolean; s: Garden; traits: Garden["traits"]; season: ReturnType<typeof seasonNow>; reduce: boolean; dust: number; onEvent: () => void }) {
   const tx = useGardenText();
   const { pro } = usePro();
   const pp = progressOf(tr, pro);
@@ -252,7 +256,7 @@ function TreePlot({ tr, w, active, s, season, reduce, dust, onEvent }: { tr: Tre
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${tr.name}, ${tx[`s${pp.stage}` as "s0"]}${ripe ? `. ${fillG(tx.fruitsReady, { n: tr.fruits })}` : ""}`} style={{ width: w, alignItems: "center" }}>
       <View style={{ width: w, height: (TREE_H * w) / TREE_W }}>
         {ripe ? <RipeHalo x={cx} y={cy} r={Math.max(40, g.crown * k * 1.1)} still={reduce} /> : null}
-        <TreeArt id={tr.id} type={tr.type} stage={pp.stage} traits={s.traits} season={season} resting={resting(s)} fruits={tr.fruits} size={w} still={reduce} nudge={nudge} />
+        <TreeArt id={tr.id} type={tr.type} stage={pp.stage} traits={traits} season={season} resting={resting(s)} fruits={tr.fruits} size={w} still={reduce} nudge={nudge} />
         {burst && !reduce ? <Burst key={burst.id} kind={burst.kind} cx={cx} cy={cy} by={by} spread={Math.max(30, g.crown * k)} leaf={tr.type === "palm" ? "#3f9a68" : "#7fc48a"} /> : null}
         {burst?.kind === "fruit" ? <FloatText key={`t${burst.id}`} x={cx} y={cy - 30} text={fillG(tx.harvested, { n: burst.xp })} still={reduce} /> : null}
       </View>

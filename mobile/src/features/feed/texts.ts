@@ -263,7 +263,7 @@ const TEXT = {
     more: "Mehr",
     link: "Link teilen",
     preparing: "Bild wird erstellt",
-    shareFailed: "Teilen hat nicht funktioniert. Bitte versuche es erneut.",
+    shareFailed: "Teilen hat nicht funktioniert. Bitte versuchen Sie es erneut.",
     previewLabel: "Vorschau des Bildes",
     brand: "Quran Masterclass",
     pageOf: "Vers {n}",

@@ -192,7 +192,7 @@ An early centre of the Zaydis lay in the regions south of the **Caspian Sea**, i
 
 ### In Yemen
 
-The lasting home of the Zaydis became **Yemen**. In 284 AH (897 CE) **Imam al-Hadi ila l-Haqq Yahya ibn al-Husayn** came to Sa'dah in the north of the country. He was a grandson of the great scholar **al-Qasim ibn Ibrahim ar-Rassi** and combined piety with deep knowledge of law. His books, suchen Sie as *Kitab al-Ahkam*, became the foundation of the line prevalent in Yemen, which after him is called the **Hadawiyyah**.
+The lasting home of the Zaydis became **Yemen**. In 284 AH (897 CE) **Imam al-Hadi ila l-Haqq Yahya ibn al-Husayn** came to Sa'dah in the north of the country. He was a grandson of the great scholar **al-Qasim ibn Ibrahim ar-Rassi** and combined piety with deep knowledge of law. His books, such as *Kitab al-Ahkam*, became the foundation of the line prevalent in Yemen, which after him is called the **Hadawiyyah**.
 
 For more than a thousand years the Zaydis lived in the mountains and towns of the northern highlands: in Sa'dah, Sana'a, Dhamar and many villages in between. They built mosques, schools (*hijar*, places of learning) and libraries. To this day most Zaydis live in the north of Yemen, and many families preserve manuscripts that have been handed down from generation to generation over centuries.
 
@@ -223,7 +223,7 @@ Differences like these exist between all schools. They arise from different repo
 
 ## A contribution to Islamic civilisation
 
-The Zaydis have preserved a special treasure for the ummah: **manuscripts**. In the libraries of Yemen, for example in the collections of the Great Mosque of Sana'a and in the private libraries of scholarly families, works have survived that were lost elsewhere. They include important writings of the Mu'tazilah, suchen Sie as large parts of *al-Mughni* by Qadi Abd al-Jabbar, which were rediscovered in Yemeni manuscripts only in the twentieth century. Anyone researching the history of Islamic thought owes these libraries a great deal.
+The Zaydis have preserved a special treasure for the ummah: **manuscripts**. In the libraries of Yemen, for example in the collections of the Great Mosque of Sana'a and in the private libraries of scholarly families, works have survived that were lost elsewhere. They include important writings of the Mu'tazilah, such as large parts of *al-Mughni* by Qadi Abd al-Jabbar, which were rediscovered in Yemeni manuscripts only in the twentieth century. Anyone researching the history of Islamic thought owes these libraries a great deal.
 
 Added to this is the culture of the **hijar**, small scholarly settlements where teachers and students lived and learned together, often away from the big cities. In this way knowledge was passed on throughout the land for centuries.
 

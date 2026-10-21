@@ -134,7 +134,7 @@ const intention = (shia: boolean): WuduStep => ({
     tr: "Niyet", ur: "نیت", fa: "نیت", ps: "نیت", fr: "Intention (niyya)", es: "Intención (niyya)", id: "Niat", ms: "Niat", bn: "নিয়ত", ru: "Намерение (ният)", zh: "意念（尼亚）",
   }),
   text: shia
-    ? L("Fasse im Herzen die Absicht, die Gebetswaschung zu verrichten, um Allah näherzukommen (qurbatan ila llah).",
+    ? L("Fassen Sie im Herzen die Absicht, die Gebetswaschung zu verrichten, um Allah näherzukommen (qurbatan ila llah).",
         "Make the intention in your heart to perform wudu in order to draw closer to Allah (qurbatan ilā llāh).",
         "انوِ بقلبك الوضوءَ قربةً إلى الله تعالى.", {
           tr: "Kalbinle, Allah'a yaklaşmak için abdest almaya niyet et (qurbatan ilā llāh).",
@@ -149,7 +149,7 @@ const intention = (shia: boolean): WuduStep => ({
           ru: "Сделай в сердце намерение совершить омовение (вуду), чтобы приблизиться к Аллаху (qurbatan ilā llāh).",
           zh: "在心中立意做小净，以求接近安拉（qurbatan ilā llāh）。",
         })
-    : L("Fasse im Herzen die Absicht, die Gebetswaschung für Allah zu verrichten. Laut aussprechen musst du sie nicht.",
+    : L("Fassen Sie im Herzen die Absicht, die Gebetswaschung für Allah zu verrichten. Laut aussprechen müssen Sie sie nicht.",
         "Make the intention in your heart to perform wudu for Allah. You do not need to say it aloud.",
         "انوِ بقلبك أنك تتوضّأ لله تعالى، ولا يلزمك أن تتلفّظ بالنيّة.", {
           tr: "Kalbinle Allah için abdest almaya niyet et. Bunu yüksek sesle söylemene gerek yok.",
@@ -186,7 +186,7 @@ const bismillah = (shia: boolean): WuduStep => ({
   title: L("Bismillah sprechen", "Say Bismillah", "التسمية", {
     tr: "Bismillah de", ur: "بسم اللہ کہیں", fa: "«بسم الله» بگویید", ps: "«بسم الله» ووایاست", fr: "Dis « Bismillah »", es: "Di «Bismillah»", id: "Ucapkan Bismillah", ms: "Ucapkan Bismillah", bn: "বিসমিল্লাহ বলুন", ru: "Скажи «Бисмиллях»", zh: "说“Bismillah”",
   }),
-  text: L("Beginne mit dem Namen Allahs.", "Begin with the name of Allah.", "ابدأ وضوءك باسم الله.", {
+  text: L("Beginnen Sie mit dem Namen Allahs.", "Begin with the name of Allah.", "ابدأ وضوءك باسم الله.", {
     tr: "Allah'ın adıyla başla.",
     ur: "اللہ کے نام سے آغاز کریں۔",
     fa: "با نام الله آغاز کنید.",
@@ -220,7 +220,7 @@ const ending = (shia: boolean): WuduStep => ({
   title: L("Das Bittgebet danach", "The du'a afterwards", "الدعاء بعد الوضوء", {
     tr: "Ardından dua", ur: "اس کے بعد کی دعا", fa: "دعای پس از وضو", ps: "وروسته دعا", fr: "L'invocation (du'a) qui suit", es: "La súplica (du'a) posterior", id: "Doa setelahnya", ms: "Doa selepasnya", bn: "এরপরের দোয়া", ru: "Мольба (дуа) после омовения", zh: "之后的祈祷（du'a）",
   }),
-  text: L("Wenn du fertig bist, bezeuge die Einheit Allahs und bitte Ihn, dich zu den Reinen zu zählen.",
+  text: L("Wenn Sie fertig sind, bezeugen Sie die Einheit Allahs und bitten Sie Ihn, Sie zu den Reinen zu zählen.",
     "When you have finished, bear witness to the oneness of Allah and ask Him to count you among those who purify themselves.",
     "إذا فرغت من وضوئك فاشهد لله بالتوحيد، واسأله أن يجعلك من التوّابين والمتطهّرين.", {
       tr: "Bitirdiğinde Allah'ın birliğine şahitlik et ve O'ndan seni kendilerini arındıranlardan saymasını dile.",
@@ -235,7 +235,7 @@ const ending = (shia: boolean): WuduStep => ({
       ru: "Закончив, засвидетельствуй единственность Аллаха и попроси Его причислить тебя к тем, кто очищается.",
       zh: "做完之后，作证安拉的独一，并求祂把你列入洁净自己的人之中。",
     }),
-  note: shia ? L("Auch in der Dscha'fari-Tradition werden während und nach dem Wudu Bittgebete empfohlen – lerne ihre Formen bei einem Lehrer deiner Schule.",
+  note: shia ? L("Auch in der Dscha'fari-Tradition werden während und nach dem Wudu Bittgebete empfohlen – lernen Sie ihre Formen bei einem Lehrer Ihrer Schule.",
     "In the Ja'fari tradition, too, du'as are recommended during and after wudu – learn their wording with a teacher of your school.",
     "ويُستحبّ الدعاء أثناء الوضوء وبعده في المذهب الجعفري أيضًا، فتعلّم صيغه على يد معلّم من مذهبك.", {
       tr: "Caferî geleneğinde de abdest sırasında ve sonrasında dualar tavsiye edilir – bunların metnini kendi mezhebinden bir hocadan öğren.",
@@ -280,7 +280,7 @@ const SUNNI: WuduStep[] = [
   {
     id: "hands", scene: "hands", kind: "sunnah", times: 3, quiz: true,
     title: TITLE_HANDS,
-    text: L("Wasche beide Hände bis zu den Handgelenken und lass das Wasser auch zwischen die Finger laufen.",
+    text: L("Waschen Sie beide Hände bis zu den Handgelenken und lassen Sie das Wasser auch zwischen die Finger laufen.",
       "Wash both hands up to the wrists and let the water run between the fingers too.",
       "اغسل كفّيك إلى الرُّسغين، وخلِّل بين أصابعك.", {
         tr: "İki elini bileklere kadar yıka ve suyun parmaklarının arasından da akmasını sağla.",
@@ -299,7 +299,7 @@ const SUNNI: WuduStep[] = [
   {
     id: "mouth", scene: "mouth", kind: "sunnah", times: 3, quiz: true,
     title: TITLE_MOUTH,
-    text: L("Nimm mit der rechten Hand Wasser in den Mund, spüle ihn gut aus und spucke das Wasser wieder aus.",
+    text: L("Nehmen Sie mit der rechten Hand Wasser in den Mund, spülen Sie ihn gut aus und spucken Sie das Wasser wieder aus.",
       "Take water into your mouth with your right hand, rinse it well and spit the water out.",
       "خذ الماء بيدك اليمنى إلى فمك، وأدِره فيه، ثم مُجَّه.", {
         tr: "Sağ elinle ağzına su al, iyice çalkala ve suyu tükür.",
@@ -319,7 +319,7 @@ const SUNNI: WuduStep[] = [
   {
     id: "nose", scene: "nose", kind: "sunnah", times: 3, quiz: true,
     title: TITLE_NOSE_SUNNI,
-    text: L("Zieh etwas Wasser in die Nase und schnäuze es wieder aus.",
+    text: L("Ziehen Sie etwas Wasser in die Nase und schnäuzen Sie es wieder aus.",
       "Draw a little water into your nose and blow it out again.",
       "اجذب الماء بنَفَسك إلى أنفك، ثم انثره.", {
         tr: "Burnuna biraz su çek ve tekrar sümkürerek at.",
@@ -339,7 +339,7 @@ const SUNNI: WuduStep[] = [
   {
     id: "face", scene: "face", kind: "fard", times: 3, quiz: true,
     title: TITLE_FACE,
-    text: L("Wasche das ganze Gesicht – vom Haaransatz bis unter das Kinn und von einem Ohr zum anderen.",
+    text: L("Waschen Sie das ganze Gesicht – vom Haaransatz bis unter das Kinn und von einem Ohr zum anderen.",
       "Wash the whole face – from the hairline to below the chin and from one ear to the other.",
       "اغسل وجهك كلّه: من منابت شعر الرأس إلى أسفل الذقن، ومن الأذن إلى الأذن.", {
         tr: "Bütün yüzü yıka – saç çizgisinden çenenin altına kadar ve bir kulaktan diğerine.",
@@ -361,7 +361,7 @@ const SUNNI: WuduStep[] = [
     title: L("Arme waschen", "Wash the arms", "غسل اليدين إلى المرفقين", {
       tr: "Kolları yıka", ur: "بازو دھوئیں", fa: "دست‌ها را تا آرنج بشویید", ps: "لاسونه تر څنګلو ووینځئ", fr: "Lave les bras", es: "Lava los brazos", id: "Basuh kedua lengan", ms: "Basuh kedua-dua lengan", bn: "বাহু ধুয়ে নিন", ru: "Вымой руки до локтей", zh: "洗手臂",
     }),
-    text: L("Wasche den rechten Arm von den Fingerspitzen bis einschließlich des Ellenbogens, danach den linken.",
+    text: L("Waschen Sie den rechten Arm von den Fingerspitzen bis einschließlich des Ellenbogens, danach den linken.",
       "Wash the right arm from the fingertips up to and including the elbow, then the left.",
       "اغسل يدك اليمنى من أطراف الأصابع إلى المرفق مع المرفق، ثم اليسرى كذلك.", {
         tr: "Sağ kolu parmak uçlarından dirsek dahil olacak şekilde yıka, sonra solu.",
@@ -381,7 +381,7 @@ const SUNNI: WuduStep[] = [
   {
     id: "head", scene: "head", kind: "fard", times: 1, quiz: true,
     title: TITLE_HEAD_SUNNI,
-    text: L("Streiche mit nassen Händen einmal über den Kopf – von der Stirn bis zum Nacken und wieder zurück.",
+    text: L("Streichen Sie mit nassen Händen einmal über den Kopf – von der Stirn bis zum Nacken und wieder zurück.",
       "Wipe over your head once with wet hands – from the forehead to the nape of the neck and back again.",
       "امسح رأسك مرّةً واحدةً بيديك المبلولتين: من مقدَّم الرأس إلى القفا، ثم ارجع بهما إلى حيث بدأت.", {
         tr: "Islak ellerinle başının üzerini bir kez sil – alından ensene kadar ve tekrar geri.",
@@ -415,7 +415,7 @@ const SUNNI: WuduStep[] = [
     title: L("Ohren abwischen", "Wipe the ears", "مسح الأذنين", {
       tr: "Kulakları meshet", ur: "کانوں کا مسح کریں", fa: "بر گوش‌ها مسح کنید", ps: "پر غوږونو مسح وکړئ", fr: "Essuie les oreilles", es: "Pasa las manos por las orejas", id: "Usap kedua telinga", ms: "Sapu kedua-dua telinga", bn: "কান মাসেহ করুন", ru: "Протри уши", zh: "抹耳",
     }),
-    text: L("Wische mit den Zeigefingern das Innere der Ohren und mit den Daumen ihre Rückseite.",
+    text: L("Wischen Sie mit den Zeigefingern das Innere der Ohren und mit den Daumen ihre Rückseite.",
       "Wipe the inside of the ears with your index fingers and the back of them with your thumbs.",
       "امسح باطن أذنيك بالسبّابتين، وظاهرهما بالإبهامين.", {
         tr: "Kulakların içini işaret parmaklarınla, arkasını başparmaklarınla sil.",
@@ -436,7 +436,7 @@ const SUNNI: WuduStep[] = [
     title: L("Füße waschen", "Wash the feet", "غسل الرجلين إلى الكعبين", {
       tr: "Ayakları yıka", ur: "پاؤں دھوئیں", fa: "پاها را بشویید", ps: "پښې ووینځئ", fr: "Lave les pieds", es: "Lava los pies", id: "Basuh kedua kaki", ms: "Basuh kedua-dua kaki", bn: "পা ধুয়ে নিন", ru: "Вымой ноги", zh: "洗脚",
     }),
-    text: L("Wasche den rechten Fuß bis einschließlich des Knöchels, danach den linken. Vergiss die Zwischenräume der Zehen nicht.",
+    text: L("Waschen Sie den rechten Fuß bis einschließlich des Knöchels, danach den linken. Vergessen Sie die Zwischenräume der Zehen nicht.",
       "Wash the right foot up to and including the ankle, then the left. Don't forget the spaces between the toes.",
       "اغسل رجلك اليمنى إلى الكعبين مع الكعبين، ثم اليسرى، وخلِّل بين أصابع رجليك.", {
         tr: "Sağ ayağı ayak bileği dahil olacak şekilde yıka, sonra solu. Ayak parmaklarının arasını unutma.",
@@ -476,7 +476,7 @@ const SHIA: WuduStep[] = [
   {
     id: "hands", scene: "hands", kind: "sunnah", quiz: true,
     title: TITLE_HANDS,
-    text: L("Wasche zu Beginn beide Hände bis zu den Handgelenken.", "To begin, wash both hands up to the wrists.", "اغسل كفّيك إلى الزندين قبل أن تبدأ.", {
+    text: L("Waschen Sie zu Beginn beide Hände bis zu den Handgelenken.", "To begin, wash both hands up to the wrists.", "اغسل كفّيك إلى الزندين قبل أن تبدأ.", {
       tr: "Başlarken iki elini bileklere kadar yıka.",
       ur: "شروع میں دونوں ہاتھ کلائیوں تک دھوئیں۔",
       fa: "در آغاز هر دو دست را تا مچ بشویید.",
@@ -493,7 +493,7 @@ const SHIA: WuduStep[] = [
   {
     id: "mouth", scene: "mouth", kind: "sunnah", quiz: true,
     title: TITLE_MOUTH,
-    text: L("Spüle den Mund mit Wasser aus.", "Rinse your mouth with water.", "أدِر الماء في فمك ثم مُجَّه.", {
+    text: L("Spülen Sie den Mund mit Wasser aus.", "Rinse your mouth with water.", "أدِر الماء في فمك ثم مُجَّه.", {
       tr: "Ağzını su ile çalkala.",
       ur: "منہ میں پانی لے کر کلی کریں۔",
       fa: "دهانتان را با آب بشویید.",
@@ -510,7 +510,7 @@ const SHIA: WuduStep[] = [
   {
     id: "nose", scene: "nose", kind: "sunnah", quiz: true,
     title: TITLE_NOSE_SHIA,
-    text: L("Zieh etwas Wasser in die Nase und lass es wieder heraus.", "Draw a little water into your nose and let it out again.", "اجذب الماء إلى أنفك ثم أخرجه.", {
+    text: L("Ziehen Sie etwas Wasser in die Nase und lassen Sie es wieder heraus.", "Draw a little water into your nose and let it out again.", "اجذب الماء إلى أنفك ثم أخرجه.", {
       tr: "Burnuna biraz su çek ve tekrar dışarı bırak.",
       ur: "ناک میں تھوڑا پانی کھینچیں اور پھر نکال دیں۔",
       fa: "اندکی آب به بینی بکشید و دوباره بیرون بدهید.",
@@ -527,7 +527,7 @@ const SHIA: WuduStep[] = [
   {
     id: "face", scene: "face", kind: "fard", times: 1, quiz: true,
     title: TITLE_FACE,
-    text: L("Wasche das Gesicht von oben nach unten: vom Haaransatz bis zum Kinn, so breit, wie Mittelfinger und Daumen es umspannen.",
+    text: L("Waschen Sie das Gesicht von oben nach unten: vom Haaransatz bis zum Kinn, so breit, wie Mittelfinger und Daumen es umspannen.",
       "Wash the face from top to bottom: from the hairline to the chin, as wide as the span between your middle finger and thumb.",
       "اغسل وجهك من الأعلى إلى الأسفل: من قُصاص شعر الرأس إلى الذقن طولًا، وما دارت عليه الإصبع الوسطى والإبهام عرضًا.", {
         tr: "Yüzü yukarıdan aşağıya yıka: saç çizgisinden çeneye kadar, genişlik olarak orta parmak ile başparmağın arasındaki açıklık kadar.",
@@ -549,7 +549,7 @@ const SHIA: WuduStep[] = [
     title: L("Rechten Arm waschen", "Wash the right arm", "غسل اليد اليمنى", {
       tr: "Sağ kolu yıka", ur: "دایاں بازو دھوئیں", fa: "دست راست را بشویید", ps: "ښی لاس ووینځئ", fr: "Lave le bras droit", es: "Lava el brazo derecho", id: "Basuh lengan kanan", ms: "Basuh lengan kanan", bn: "ডান বাহু ধুয়ে নিন", ru: "Вымой правую руку", zh: "洗右臂",
     }),
-    text: L("Wasche den rechten Arm vom Ellenbogen abwärts bis zu den Fingerspitzen – nicht umgekehrt.",
+    text: L("Waschen Sie den rechten Arm vom Ellenbogen abwärts bis zu den Fingerspitzen – nicht umgekehrt.",
       "Wash the right arm from the elbow down to the fingertips – not the other way round.",
       "اغسل يدك اليمنى من المرفق إلى أطراف الأصابع، لا بالعكس.", {
         tr: "Sağ kolu dirsekten parmak uçlarına doğru aşağı yıka – tersine değil.",
@@ -571,7 +571,7 @@ const SHIA: WuduStep[] = [
     title: L("Linken Arm waschen", "Wash the left arm", "غسل اليد اليسرى", {
       tr: "Sol kolu yıka", ur: "بایاں بازو دھوئیں", fa: "دست چپ را بشویید", ps: "کیڼ لاس ووینځئ", fr: "Lave le bras gauche", es: "Lava el brazo izquierdo", id: "Basuh lengan kiri", ms: "Basuh lengan kiri", bn: "বাম বাহু ধুয়ে নিন", ru: "Вымой левую руку", zh: "洗左臂",
     }),
-    text: L("Wasche danach den linken Arm genauso – vom Ellenbogen bis zu den Fingerspitzen.",
+    text: L("Waschen Sie danach den linken Arm genauso – vom Ellenbogen bis zu den Fingerspitzen.",
       "Then wash the left arm in the same way – from the elbow down to the fingertips.",
       "ثم اغسل يدك اليسرى كذلك، من المرفق إلى أطراف الأصابع.", {
         tr: "Sonra sol kolu aynı şekilde yıka – dirsekten parmak uçlarına doğru aşağı.",
@@ -591,7 +591,7 @@ const SHIA: WuduStep[] = [
   {
     id: "head", scene: "head", kind: "fard", times: 1, quiz: true,
     title: TITLE_HEAD_SHIA,
-    text: L("Wische mit der Feuchtigkeit, die noch an der rechten Hand ist, über den vorderen Teil des Kopfes – ohne neues Wasser zu nehmen.",
+    text: L("Wischen Sie mit der Feuchtigkeit, die noch an der rechten Hand ist, über den vorderen Teil des Kopfes – ohne neues Wasser zu nehmen.",
       "With the wetness still left on your right hand, wipe the front part of your head – without taking new water.",
       "امسح مقدَّم رأسك ببلّة الوضوء الباقية في يدك اليمنى، من غير أن تأخذ ماءً جديدًا.", {
         tr: "Sağ elinde kalan nemle başının ön kısmını meshet – yeni su almadan.",
@@ -612,7 +612,7 @@ const SHIA: WuduStep[] = [
     title: L("Über die Füße wischen", "Wipe the feet", "مسح القدمين", {
       tr: "Ayakları meshet", ur: "پاؤں کا مسح کریں", fa: "بر پاها مسح کنید", ps: "پر پښو مسح وکړئ", fr: "Essuie les pieds", es: "Pasa las manos por los pies", id: "Usap kedua kaki", ms: "Sapu kedua-dua kaki", bn: "পা মাসেহ করুন", ru: "Протри ноги", zh: "抹脚",
     }),
-    text: L("Wische mit der verbliebenen Feuchtigkeit über den Fußrücken – von den Zehenspitzen bis zum Knöchel, der Erhebung oben am Fuß. Zuerst den rechten Fuß, dann den linken.",
+    text: L("Wischen Sie mit der verbliebenen Feuchtigkeit über den Fußrücken – von den Zehenspitzen bis zum Knöchel, der Erhebung oben am Fuß. Zuerst den rechten Fuß, dann den linken.",
       "With the remaining wetness, wipe the top of the foot – from the tips of the toes to the ankle, the raised part on top of the foot. First the right foot, then the left.",
       "امسح ظاهر قدمك ببلّة الوضوء الباقية، من أطراف الأصابع إلى الكعب، وهو قُبّة القدم: اليمنى ثم اليسرى.", {
         tr: "Kalan nemle ayağın üst kısmını sil – ayak parmaklarının uçlarından ayak bileğine kadar, yani ayağın üstündeki yüksek kısma kadar. Önce sağ ayak, sonra sol.",

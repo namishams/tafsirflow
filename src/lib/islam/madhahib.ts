@@ -127,9 +127,9 @@ Das Folgen einer anerkannten Rechtsschule nennen die Gelehrten **Taqlid**. Das i
 Praktisch bedeutet das:
 
 - **Lernen Sie die Grundlagen Ihrer Schule:** Wie waschen Sie sich, wie beten Sie, was bricht Ihr Fasten? Dafür gibt es in jeder Schule kurze, bewährte Lehrbücher.
-- **Frage einen Gelehrten, dem Sie vertrauen:** bei einem Imam Ihrer Moschee, bei einer offiziellen Fatwa-Stelle oder bei einem Lehrer mit anerkannter Ausbildung.
+- **Fragen Sie einen Gelehrten, dem Sie vertrauen:** bei einem Imam Ihrer Moschee, bei einer offiziellen Fatwa-Stelle oder bei einem Lehrer mit anerkannter Ausbildung.
 - **Prüfen Sie die Quelle, nicht nur die Antwort:** Antworten aus sozialen Medien ohne erkennbaren Gelehrten sind kein guter Ersatz für eine fundierte Auskunft.
-- **Bleibe im Zweifel bei dem, was Sie gelernt haben:** Viele Gelehrte raten, nicht von Schule zu Schule zu springen, nur um die jeweils leichteste Meinung herauszusuchen.
+- **Bleiben Sie im Zweifel bei dem, was Sie gelernt haben:** Viele Gelehrte raten, nicht von Schule zu Schule zu springen, nur um die jeweils leichteste Meinung herauszusuchen.
 
 Und wenn Sie in einer Familie aufgewachsen sind, die keiner bestimmten Schule folgt, oder wenn Sie neu zum Islam gefunden haben, dann ist es ein guter Weg, der Schule zu folgen, die in Ihrer Umgebung gelehrt wird und für die Sie einen verlässlichen Lehrer finden.
 
@@ -149,7 +149,7 @@ Möge Allah den großen Imamen barmherzig sein, die ihr Leben dem Verstehen Sein
 
 In den folgenden Kapiteln lernen Sie jede Schule einzeln kennen – ihre Imame, ihre Methode, ihre großen Bücher und ihre Spuren in der Geschichte. Beginnen Sie mit den [Hanafiten](/islam/hanafi).`,
     faq: [
-      { q: "Muss ich einer Rechtsschule folgen?", a: "Die große Mehrheit der Gelehrten rät jedem, der selbst kein Gelehrter ist, einer anerkannten Rechtsschule zu folgen oder sich an einen Gelehrten zu halten, der nach einer solchen Schule lehrt. Das gibt Sicherheit und schützt davor, sich willkürlich die leichtesten Meinungen herauszusuchen. Für Ihre persönliche Situation frag einen Gelehrten, dem Sie vertrauen." },
+      { q: "Muss ich einer Rechtsschule folgen?", a: "Die große Mehrheit der Gelehrten rät jedem, der selbst kein Gelehrter ist, einer anerkannten Rechtsschule zu folgen oder sich an einen Gelehrten zu halten, der nach einer solchen Schule lehrt. Das gibt Sicherheit und schützt davor, sich willkürlich die leichtesten Meinungen herauszusuchen. Für Ihre persönliche Situation fragen Sie einen Gelehrten, dem Sie vertrauen." },
       { q: "Sind die Rechtsschulen verschiedene Religionen oder Sekten?", a: "Nein. Die Rechtsschulen sind Traditionen innerhalb des Islam, die sich vor allem in Einzelfragen der Praxis unterscheiden. In den Grundlagen – Glaube an Allah, an den Propheten Muhammad ﷺ, den Quran und die fünf Säulen – sind sie sich einig." },
       { q: "Ist ein Gebet nach einer anderen Schule gültig?", a: "Ja. Die Gelehrten aller Schulen haben hintereinander gebetet, und in Mekka und Medina stehen täglich Menschen aller Schulen in denselben Reihen. Unterschiedliche Handhaltungen oder ein lautes oder leises „Amin“ machen das Gebet nicht ungültig." },
       { q: "Ist „Die Meinungsverschiedenheit meiner Umma ist Barmherzigkeit“ ein Hadith?", a: "Die Hadith-Gelehrten haben festgestellt, dass dieser Satz in dieser Form nicht als gesicherter Ausspruch des Propheten ﷺ belegt ist. Der Gedanke, dass die Vielfalt der Gelehrtenmeinungen der Umma Weite schenkt, wird jedoch von vielen großen Gelehrten vertreten." },
@@ -233,7 +233,7 @@ Yet one thing is just as important: differences of opinion concern particular qu
 
 After the death of the Prophet ﷺ, the Companions carried his knowledge in every direction: to Makkah and Madinah, to Kufa and Basra, to Damascus and Egypt. In each of these cities circles of learning arose. The generation after the Companions, the *Tabi'un*, gathered, ordered and taught.
 
-In the second and third centuries after the Hijrah, scholarship flourished in a way that still amazes us today. It was the age in which the great hadith collections were compiled and in which imams worked whose names are known in every mosque to this day. Some of them knew each other personally as teachers and students. There were many other important jurists as well – suchen Sie as al-Awza'i in Syria, Sufyan ath-Thawri in Kufa or al-Layth ibn Sa'd in Egypt – whose schools, however, did not live on as independent traditions. The schools that still exist owe their survival above all to students who wrote down, ordered and passed on the knowledge of their teachers.
+In the second and third centuries after the Hijrah, scholarship flourished in a way that still amazes us today. It was the age in which the great hadith collections were compiled and in which imams worked whose names are known in every mosque to this day. Some of them knew each other personally as teachers and students. There were many other important jurists as well – such as al-Awza'i in Syria, Sufyan ath-Thawri in Kufa or al-Layth ibn Sa'd in Egypt – whose schools, however, did not live on as independent traditions. The schools that still exist owe their survival above all to students who wrote down, ordered and passed on the knowledge of their teachers.
 
 ## The four Sunni schools of law
 
@@ -265,7 +265,7 @@ It goes back to **Zayd ibn Ali ibn al-Husayn**, a great-grandson of Ali, may All
 
 ### The Ibadi school
 
-The Ibadi school is one of the oldest traditions in Islam. It is lived above all in Oman, the neighbour of the Emirates, and also in communities in North Africa, suchen Sie as the Mzab in Algeria and the Tunisian island of Djerba. It is known for its learning and for its calm, measured piety. [More about the Ibadi school](/islam/ibadi)
+The Ibadi school is one of the oldest traditions in Islam. It is lived above all in Oman, the neighbour of the Emirates, and also in communities in North Africa, such as the Mzab in Algeria and the Tunisian island of Djerba. It is known for its learning and for its calm, measured piety. [More about the Ibadi school](/islam/ibadi)
 
 ### The Zahiri school
 

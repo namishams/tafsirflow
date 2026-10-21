@@ -103,7 +103,7 @@ In Ägypten sammelten sich um asch-Schafi'i Schüler, die seine Lehre bewahrten 
 
 Im Irak hatten zuvor Gelehrte wie **Abu Thaur** und **az-Za'farani** bei ihm gelernt, und Imam **Ahmad ibn Hanbal** blieb ihm in Liebe verbunden.
 
-Über die Jahrhunderte brachte die Schule eine beeindruckende Reihe von Gelehrten hervor. Einige Namen, die dir in der islamischen Literatur immer wieder begegnen werden:
+Über die Jahrhunderte brachte die Schule eine beeindruckende Reihe von Gelehrten hervor. Einige Namen, die Ihnen in der islamischen Literatur immer wieder begegnen werden:
 
 - **Al-Mawardi**, Richter in Bagdad, Verfasser von *al-Hawi* und dem Werk über die Grundsätze des Regierens *al-Ahkam as-Sultaniyya*.
 - **Abu Ishaq asch-Schirazi**, Verfasser von *al-Muhadhdhab* und *at-Tanbih*.
@@ -111,7 +111,7 @@ Im Irak hatten zuvor Gelehrte wie **Abu Thaur** und **az-Za'farani** bei ihm gel
 - **Ar-Rafi'i**, dessen Werke die Lehrmeinungen der Schule sorgfältig ordneten.
 - **Imam an-Nawawi** aus Nawa bei Damaskus, möge Allah ihm barmherzig sein. Er lebte kurz, arm und asketisch, und doch hinterließ er ein Werk, das die Welt bis heute nährt: *Minhadsch at-Talibin* und *Raudat at-Talibin* in der Rechtswissenschaft, *al-Madschmu'* als großer Kommentar, seinen Kommentar zu *Sahih Muslim* – und zwei Bücher, die in unzähligen Haushalten stehen: *Riyad as-Salihin* und die *Vierzig Hadithe*. Zusammen mit ar-Rafi'i gilt er als Hauptreferenz für die geprüfte Lehre der Schule.
 - **Al-Izz ibn Abd as-Salam**, berühmt für seine Furchtlosigkeit und sein Werk über die Grundregeln der Rechtsbestimmungen.
-- **Ibn Kathir**, der große Quran-Kommentator. Wenn du bei Quran Masterclass den Tafsir von Ibn Kathir liest, liest du die Worte eines schafiitischen Gelehrten.
+- **Ibn Kathir**, der große Quran-Kommentator. Wenn Sie bei Quran Masterclass den Tafsir von Ibn Kathir lesen, lesen Sie die Worte eines schafiitischen Gelehrten.
 - **Ibn Hadschar al-Asqalani**, Verfasser von *Fath al-Bari*, dem berühmtesten Kommentar zu *Sahih al-Buchari*.
 - **Dschalal ad-Din as-Suyuti**, ein ungewöhnlich fruchtbarer Autor in fast allen islamischen Wissenschaften.
 - **Zakariyya al-Ansari** und nach ihm **Ibn Hadschar al-Haitami** mit *Tuhfat al-Muhtadsch* sowie **Schams ad-Din ar-Ramli** mit *Nihayat al-Muhtadsch* – beides Kommentare zu an-Nawawis *Minhadsch*. Auf diese beiden Werke stützen sich die späteren Schafiiten in besonderem Maß.
@@ -131,13 +131,13 @@ Heute ist die Schule vor allem verbreitet in:
 - unter den **Kurden** und in Teilen des **Nordkaukasus** wie Dagestan und Tschetschenien;
 - **Sri Lanka**, den **Malediven** und der Malabarküste im Süden Indiens.
 
-Wenn du also in den Emiraten einem Kollegen aus Indonesien, einer Nachbarin aus Somalia oder einem Freund aus Kurdistan begegnest, ist die Wahrscheinlichkeit groß, dass ihr Gebet nach schafiitischem Verständnis gelernt wurde.
+Wenn Sie also in den Emiraten einem Kollegen aus Indonesien, einer Nachbarin aus Somalia oder einem Freund aus Kurdistan begegnen, ist die Wahrscheinlichkeit groß, dass ihr Gebet nach schafiitischem Verständnis gelernt wurde.
 
 Historisch hatte die Schule auch große Zentren in Bagdad, Damaskus und Kairo. Die Nizamiyya-Hochschule in Bagdad, an der al-Ghazali lehrte, und die vielen Madrasas in Damaskus und Kairo bildeten Generationen von Gelehrten aus. In der al-Azhar in Kairo wird die schafiitische Schule bis heute neben den anderen Schulen gelehrt.
 
-## Was dir im Alltag auffallen kann
+## Was Ihnen im Alltag auffallen kann
 
-Auch bei den Schafiiten gibt es kleine Besonderheiten, die dir vielleicht auffallen – nicht als Grund zur Trennung, sondern als Zeichen der Sorgfalt:
+Auch bei den Schafiiten gibt es kleine Besonderheiten, die Ihnen vielleicht auffallen – nicht als Grund zur Trennung, sondern als Zeichen der Sorgfalt:
 
 - **Die Basmala:** Sie gilt als Vers der Fatiha und wird in den laut rezitierten Gebeten laut gesprochen.
 - **Die Hände:** Sie werden unterhalb der Brust und oberhalb des Nabels übereinandergelegt. Beim Eröffnungs-Takbir, beim Beugen und beim Aufrichten werden die Hände erhoben.
@@ -146,7 +146,7 @@ Auch bei den Schafiiten gibt es kleine Besonderheiten, die dir vielleicht auffal
 - **Die Waschung:** Nach der schafiitischen Lehre wird die Gebetswaschung ungültig, wenn die Haut eines Mannes die Haut einer Frau berührt, die nicht zu seinen engen Verwandten gehört, und umgekehrt.
 - **Der Friedensgruß:** Das Gebet wird mit zwei Friedensgrüßen beendet, nach rechts und nach links.
 
-Wenn du einer anderen Schule folgst, wirst du manches anders kennen. Das ist der Reichtum der Umma: Verschiedene Gelehrte haben dieselben Belege mit größter Ernsthaftigkeit studiert und sind in Einzelheiten zu unterschiedlichen Ergebnissen gekommen. Der Prophet ﷺ sagte: „Wenn ein Richter urteilt, sich bemüht und recht hat, erhält er zwei Belohnungen; wenn er urteilt, sich bemüht und irrt, erhält er eine Belohnung“ (al-Buchari und Muslim).
+Wenn Sie einer anderen Schule folgen, werden Sie manches anders kennen. Das ist der Reichtum der Umma: Verschiedene Gelehrte haben dieselben Belege mit größter Ernsthaftigkeit studiert und sind in Einzelheiten zu unterschiedlichen Ergebnissen gekommen. Der Prophet ﷺ sagte: „Wenn ein Richter urteilt, sich bemüht und recht hat, erhält er zwei Belohnungen; wenn er urteilt, sich bemüht und irrt, erhält er eine Belohnung“ (al-Buchari und Muslim).
 
 ## Der Beitrag zur islamischen Zivilisation
 

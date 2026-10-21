@@ -17,7 +17,7 @@ export const CATEGORIES = {
     // the examination centre (overview and its twelve subjects; sessions, mock exams and statistics are personal)
     "/exams", ...QBANK_SUBJECTS.map((x) => `/exams/${x.id}`),
     // Shams Method 2.0, Rihlat al-'Ilm, the garden and the Mishary track (ported from the app)
-    "/shams/method", "/shams/handbook", "/shams/mutashabihat", "/shams/darajat", ...Array.from({ length: 114 }, (_, i) => `/shams/tadabbur?s=${i + 1}`), "/journey", "/garden", "/garden/collection", "/mishary", "/mishary/ear", "/mishary/masters", "/mishary/masters/alafasy", "/mishary/masters/abdulbasit", "/mishary/masters/minshawi", "/mishary/masters/husary", "/mishary/masters/sudais", "/mishary/seasons", "/mishary/hall-of-fame", "/tests", "/abrahamic", "/haramain", "/haramain/guide", "/tajweed/practice", "/vocab-decks"],
+    "/shams/method", "/shams/handbook", "/shams/mutashabihat", "/shams/darajat", ...Array.from({ length: 114 }, (_, i) => `/shams/tadabbur?s=${i + 1}`), "/journey", "/garden", "/garden/collection", "/garden/album", "/mishary", "/mishary/ear", "/mishary/masters", "/mishary/masters/alafasy", "/mishary/masters/abdulbasit", "/mishary/masters/minshawi", "/mishary/masters/husary", "/mishary/masters/sudais", "/mishary/seasons", "/mishary/hall-of-fame", "/tests", "/abrahamic", "/haramain", "/haramain/guide", "/tajweed/practice", "/vocab-decks"],
   legal: ["/legal/privacy", "/legal/terms", "/legal/imprint"],
   surahs: Array.from({ length: 114 }, (_, i) => `/surah/${i + 1}`),
   // the feed's carousels (src/lib/feed/carousels): the gallery and every carousel

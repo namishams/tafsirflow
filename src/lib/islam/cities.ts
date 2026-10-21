@@ -226,7 +226,7 @@ Damascus is among the oldest continuously inhabited cities in the world. Under t
 
 ### Baghdad
 
-Baghdad was founded by the Abbasid caliph al-Mansur as a round city on the Tigris and became the capital of the Abbasids. It is famous for the **House of Wisdom** (Bayt al-Hikmah), where scholars translated works from Greek, Persian and Indian into Arabic and developed them further. Here worked the mathematician al-Khwarizmi, whose book gave algebra its name. Great imams taught and rest in Baghdad, suchen Sie as Abu Hanifah and Ahmad ibn Hanbal, founders of two schools of law, as well as Abd al-Qadir al-Jilani.
+Baghdad was founded by the Abbasid caliph al-Mansur as a round city on the Tigris and became the capital of the Abbasids. It is famous for the **House of Wisdom** (Bayt al-Hikmah), where scholars translated works from Greek, Persian and Indian into Arabic and developed them further. Here worked the mathematician al-Khwarizmi, whose book gave algebra its name. Great imams taught and rest in Baghdad, such as Abu Hanifah and Ahmad ibn Hanbal, founders of two schools of law, as well as Abd al-Qadir al-Jilani.
 
 ### Cairo
 
@@ -270,7 +270,7 @@ Forty days after Ashura, Shia Muslims observe **Arbaeen**. Many pilgrims then wa
 
 ### Kadhimiya in Baghdad
 
-In the north of Baghdad, on the bank of the Tigris, lesen Sie the district of **Kadhimiya** (al-Kazimiyyah). Two Imams from the Prophet's ﷺ family rest here: **Musa al-Kazim**, the seventh Imam, and his grandson **Muhammad al-Jawad**, the ninth Imam. After them the shrine with its golden domes is also called *al-Kazimayn*, "the two Kazims". The title al-Kazim means "the one who restrains his anger" and recalls the believers whom the Quran praises: "who restrain their anger and pardon people" (3:134).
+In the north of Baghdad, on the bank of the Tigris, lies the district of **Kadhimiya** (al-Kazimiyyah). Two Imams from the Prophet's ﷺ family rest here: **Musa al-Kazim**, the seventh Imam, and his grandson **Muhammad al-Jawad**, the ninth Imam. After them the shrine with its golden domes is also called *al-Kazimayn*, "the two Kazims". The title al-Kazim means "the one who restrains his anger" and recalls the believers whom the Quran praises: "who restrain their anger and pardon people" (3:134).
 
 Across the Tigris, the **Bridge of the Imams** leads over to Adhamiyah, where the mosque of Imam Abu Hanifah stands. Two great imams, two riverbanks, one city: a beautiful picture of how close the traditions of Islam are to one another.
 
@@ -306,13 +306,13 @@ In 2019 the Grand Imam of al-Azhar, Sheikh Ahmad al-Tayyeb, and Pope Francis sig
 
 ### Al Ain – the oasis city
 
-In the east of the emirate of Abu Dhabi, on the border with Oman and at the foot of Jebel Hafeet, lesen Sie the garden city of **Al Ain**. For centuries the **aflaj**, ancient channels that bring water from underground, have watered thousands of date palms here. Since 2011 the Cultural Sites of Al Ain have been a **UNESCO World Heritage Site**, the first in the Emirates. Sheikh Zayed lived in Al Ain for many years and served here as the Ruler's Representative before he became Ruler of Abu Dhabi; his love for the oasis and for greenery stayed with him all his life. Today Al Ain is also home to the **Sheikh Khalifa Mosque**, one of the great new mosques of the country.
+In the east of the emirate of Abu Dhabi, on the border with Oman and at the foot of Jebel Hafeet, lies the garden city of **Al Ain**. For centuries the **aflaj**, ancient channels that bring water from underground, have watered thousands of date palms here. Since 2011 the Cultural Sites of Al Ain have been a **UNESCO World Heritage Site**, the first in the Emirates. Sheikh Zayed lived in Al Ain for many years and served here as the Ruler's Representative before he became Ruler of Abu Dhabi; his love for the oasis and for greenery stayed with him all his life. Today Al Ain is also home to the **Sheikh Khalifa Mosque**, one of the great new mosques of the country.
 
 ### Dubai
 
 In Dubai, where our platform is made, **Jumeirah Mosque** is a symbol of the open door. Under the motto "Open Doors. Open Minds.", the Sheikh Mohammed Centre for Cultural Understanding invites visitors to get to know the mosque, ask questions and talk over Arabic coffee and dates: hospitality as we understand it here.
 
-Since 1997 the **Dubai International Holy Quran Award** has honoured young people from around the world who have memorised the Quran. And in the **Quranic Park** in Al Khawaneej, opened in 2019, you can stroll through gardens of plants mentioned in the Quran, suchen Sie as date palms, olives, figs and pomegranates, and discover the wonders the Quran speaks of in a new way.
+Since 1997 the **Dubai International Holy Quran Award** has honoured young people from around the world who have memorised the Quran. And in the **Quranic Park** in Al Khawaneej, opened in 2019, you can stroll through gardens of plants mentioned in the Quran, such as date palms, olives, figs and pomegranates, and discover the wonders the Quran speaks of in a new way.
 
 ### Sharjah – the city of culture
 

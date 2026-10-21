@@ -87,7 +87,7 @@ Traditionell folgen viele Emiratis der malikitischen Rechtsschule, und zugleich 
 
 ## Familie, Gastfreundschaft und Gemeinschaft
 
-Im Herzen der emiratischen Gesellschaft steht die **Familie**. Eltern und Großeltern werden geehrt, Kinder wachsen mit vielen Cousins und Cousinen auf, und am Wochenende kommt die große Familie zusammen. Der Prophet ﷺ sagte: „Wer sich nicht der Jüngeren unter uns erbarmt und die Älteren unter uns nicht achtet, gehört nicht zu uns“ (at-Tirmidhi). Diese Achtung sehen Sie im Alltag: Man steht auf, wenn ein älterer Mensch den Raum betritt, man begrüßt zuerst die Ältesten und lassen ihnen den Vortritt.
+Im Herzen der emiratischen Gesellschaft steht die **Familie**. Eltern und Großeltern werden geehrt, Kinder wachsen mit vielen Cousins und Cousinen auf, und am Wochenende kommt die große Familie zusammen. Der Prophet ﷺ sagte: „Wer sich nicht der Jüngeren unter uns erbarmt und die Älteren unter uns nicht achtet, gehört nicht zu uns“ (at-Tirmidhi). Diese Achtung sehen Sie im Alltag: Man steht auf, wenn ein älterer Mensch den Raum betritt, man begrüßt zuerst die Ältesten und lässt ihnen den Vortritt.
 
 ### Gahwa, Datteln und der Madschlis
 
@@ -159,9 +159,9 @@ Wenn Sie die Emirate besuchen, gleich welcher Religion, helfen ein paar einfache
 - **Kleidung:** An öffentlichen Orten wie Einkaufszentren und Behörden ist schlichte Kleidung angemessen. In Moscheen bedecken Männer und Frauen Schultern und Knie, Frauen auch das Haar; in großen Moscheen bekommen Sie passende Kleidung oft vor Ort.
 - **Im Ramadan:** Nicht-Muslime fasten nicht, aber es ist eine freundliche Geste, tagsüber in der Öffentlichkeit nicht demonstrativ zu essen, zu trinken oder zu rauchen.
 - **Beim Gebet:** Gehen Sie nicht direkt vor einem betenden Menschen vorbei, und machen Sie die Musik leiser, wenn der Adhan ruft – viele tun das ganz von selbst.
-- **Begegnungen:** Ob Männer und Frauen einander die Hand geben, ist unterschiedlich; warte einfach ab, ob Ihnen die Hand gereicht wird. Eine Hand auf dem Herzen ist ein ebenso herzlicher Gruß.
+- **Begegnungen:** Ob Männer und Frauen einander die Hand geben, ist unterschiedlich; warten Sie einfach ab, ob Ihnen die Hand gereicht wird. Eine Hand auf dem Herzen ist ein ebenso herzlicher Gruß.
 - **Fotos:** Fragen Sie, bevor Sie Menschen fotografieren, besonders Frauen und Familien.
-- **Gahwa:** Nehmen Sie die Tasse mit der rechten Hand – und schwenke sie leicht, wenn Sie genug haben.
+- **Gahwa:** Nehmen Sie die Tasse mit der rechten Hand – und schwenken Sie sie leicht, wenn Sie genug haben.
 
 ## Ein ehrliches Wort: Der Ort hilft, das Herz entscheidet
 
@@ -171,7 +171,7 @@ Ebenso wichtig: Den Islam kann man überall leben, in Berlin wie in Jakarta, in 
 
 ## Eine Einladung
 
-Ob Sie hier leben, zu Besuch kommen oder einfach neugierig sind: Herzlich willkommen. Kommen Sie in eine Moschee, trink einen Kaffee im Madschlis, fragen Sie, was Sie bewegt. Und nimm den Geist dieses Landes mit nach Hause – Glaube, Wissen und Gastfreundschaft, zusammen mit der Moderne.
+Ob Sie hier leben, zu Besuch kommen oder einfach neugierig sind: Herzlich willkommen. Kommen Sie in eine Moschee, trinken Sie einen Kaffee im Madschlis, fragen Sie, was Sie bewegt. Und nehmen Sie den Geist dieses Landes mit nach Hause – Glaube, Wissen und Gastfreundschaft, zusammen mit der Moderne.
 
 Wenn Sie weiterlesen möchten:
 

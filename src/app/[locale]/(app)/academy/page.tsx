@@ -7,6 +7,7 @@ import { pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { HomeCorners, HomeGlowLayer, HomeRain, HomeVerse, StarGlyph } from "@/components/art/HomeOrnaments";
+import { verseQuote } from "@/lib/verseQuotes";
 import HomeGlow from "@/components/art/HomeGlow";
 import { tileFor } from "@/lib/tiles";
 
@@ -41,7 +42,7 @@ export default async function AcademyPage({ params }: { params: Promise<{ locale
           <p className="rise hm-k text-[rgb(var(--gold))]">{t("eyebrow")}</p>
           <h1 className="rise font-display mt-3 text-[40px] leading-[1.05] sm:text-6xl" style={{ animationDelay: "120ms" }}>{t("title")}</h1>
           <p className="rise mt-4 max-w-2xl text-[17px] leading-relaxed text-white/70" style={{ animationDelay: "240ms" }}>{t("lead")}</p>
-          <HomeVerse text="وَقُل رَّبِّ زِدۡنِي عِلۡمٗا" cite="20:114" className="rise mt-4 text-[24px] sm:text-[28px]" />
+          <HomeVerse text={verseQuote("qpc", "20:114", 14)} cite="20:114" className="rise mt-4 text-[24px] sm:text-[28px]" />
         </div>
       </section>
       <main className="mx-auto max-w-4xl px-4 pb-24 pt-2">

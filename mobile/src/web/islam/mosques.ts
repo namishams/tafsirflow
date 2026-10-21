@@ -5,9 +5,9 @@ export const mosques: IslamDoc = {
   slug: "mosques",
   arabic: "المساجد",
   de: {
-    title: "Die schönsten und bedeutendsten Moscheen der Welt – und wie du sie besuchst",
+    title: "Die schönsten und bedeutendsten Moscheen der Welt – und wie Sie sie besuchen",
     kicker: "Häuser Allahs, von Mekka bis Djenné",
-    lead: "Eine Moschee ist mehr als ein Gebäude: Sie ist ein Haus Allahs, ein Ort der Ruhe, des Wissens und der Begegnung. In diesem Kapitel besuchen wir gemeinsam die drei heiligen Moscheen, die Moscheen unserer Heimat, der Emirate, und einige der schönsten Gotteshäuser der Welt. Dazu erfährst du, was Mihrab, Minbar und Minarett bedeuten – und wie du eine Moschee mit Respekt und offenem Herzen betrittst.",
+    lead: "Eine Moschee ist mehr als ein Gebäude: Sie ist ein Haus Allahs, ein Ort der Ruhe, des Wissens und der Begegnung. In diesem Kapitel besuchen wir gemeinsam die drei heiligen Moscheen, die Moscheen unserer Heimat, der Emirate, und einige der schönsten Gotteshäuser der Welt. Dazu erfahren Sie, was Mihrab, Minbar und Minarett bedeuten – und wie Sie eine Moschee mit Respekt und offenem Herzen betreten.",
     facts: [
       { n: "3", l: "Moscheen, zu denen man eigens reisen soll" },
       { n: "2007", l: "Eröffnung der Scheich-Zayid-Moschee in Abu Dhabi" },
@@ -16,19 +16,19 @@ export const mosques: IslamDoc = {
     ],
     body: `## Was eine Moschee ist
 
-Das arabische Wort **Masdschid** bedeutet „Ort der Niederwerfung“. Der Prophet ﷺ sagte: „Die Erde wurde mir zur Gebetsstätte und zum Mittel der Reinigung gemacht“ (al-Bukhari, Muslim). Beten kannst du also überall. Und doch hat die Moschee einen besonderen Rang: „Die Orte, die Allah am meisten liebt, sind die Moscheen“ (Muslim). Und: „Wer für Allah eine Moschee baut, dem baut Allah ein Haus im Paradies“ (al-Bukhari, Muslim).
+Das arabische Wort **Masdschid** bedeutet „Ort der Niederwerfung“. Der Prophet ﷺ sagte: „Die Erde wurde mir zur Gebetsstätte und zum Mittel der Reinigung gemacht“ (al-Bukhari, Muslim). Beten können Sie also überall. Und doch hat die Moschee einen besonderen Rang: „Die Orte, die Allah am meisten liebt, sind die Moscheen“ (Muslim). Und: „Wer für Allah eine Moschee baut, dem baut Allah ein Haus im Paradies“ (al-Bukhari, Muslim).
 
-Von Anfang an war die Moschee mehr als ein Gebetsraum. In der Prophetenmoschee in Medina wurde gelehrt, beraten, Gäste wurden empfangen und Bedürftige versorgt. Diesen Geist spürst du bis heute – im Koranunterricht für Kinder, im gemeinsamen Fastenbrechen im Ramadan, im Glas Wasser, das dir ein Fremder reicht.
+Von Anfang an war die Moschee mehr als ein Gebetsraum. In der Prophetenmoschee in Medina wurde gelehrt, beraten, Gäste wurden empfangen und Bedürftige versorgt. Diesen Geist spüren Sie bis heute – im Koranunterricht für Kinder, im gemeinsamen Fastenbrechen im Ramadan, im Glas Wasser, das Ihnen ein Fremder reicht.
 
 ## Die drei heiligen Moscheen
 
-Der Prophet ﷺ sagte: „Man soll sich nicht eigens auf Reisen begeben außer zu drei Moscheen: der Heiligen Moschee, dieser meiner Moschee und der Aqsa-Moschee“ (al-Bukhari, Muslim). Mehr über die Städte, in denen sie stehen, liest du im Kapitel über [die wichtigsten Städte des Islam](/islam/cities).
+Der Prophet ﷺ sagte: „Man soll sich nicht eigens auf Reisen begeben außer zu drei Moscheen: der Heiligen Moschee, dieser meiner Moschee und der Aqsa-Moschee“ (al-Bukhari, Muslim). Mehr über die Städte, in denen sie stehen, lesen Sie im Kapitel über [die wichtigsten Städte des Islam](/islam/cities).
 
 ### Masdschid al-Haram in Mekka
 
 Im Herzen Mekkas steht die **Kaaba**, „das erste Haus, das für die Menschen errichtet wurde, gesegnet und eine Rechtleitung für die Welten“ (3:96). Um sie herum erstreckt sich die Heilige Moschee, die größte Moschee der Welt. Hierhin richten sich Muslime bei jedem Gebet aus (2:144), hierhin führen Hadsch und Umra. Wer zum ersten Mal die Kaaba sieht, vergisst diesen Moment selten: das schwarze Tuch, das weiße Marmorrund, die Menschen aus allen Ländern, die sie umkreisen – Schulter an Schulter, gleich vor Allah.
 
-Der Prophet ﷺ sagte, ein Gebet in der Heiligen Moschee sei besser als hunderttausend Gebete anderswo (Ahmad, Ibn Madscha). Mekka ist Muslimen vorbehalten. Wie du dich auf die Pilgerfahrt vorbereitest, erklärt das Kapitel über [Hadsch und Umra](/islam/hajj).
+Der Prophet ﷺ sagte, ein Gebet in der Heiligen Moschee sei besser als hunderttausend Gebete anderswo (Ahmad, Ibn Madscha). Mekka ist Muslimen vorbehalten. Wie Sie sich auf die Pilgerfahrt vorbereiten, erklärt das Kapitel über [Hadsch und Umra](/islam/hajj).
 
 ### Masdschid an-Nabawi in Medina
 
@@ -48,7 +48,7 @@ Die **Quba-Moschee** am Rand Medinas ist die erste Moschee, die der Prophet ﷺ 
 
 ## Die Moscheen der Emirate
 
-Hier bei uns in den Emiraten gehören Moscheen zum Alltag wie die Sonne und das Meer. In jedem Viertel hörst du den Adhan, und viele Moscheen öffnen ihre Türen bewusst auch für Gäste anderer Religionen. Gastfreundschaft ist hier keine Formalität, sondern Herzenssache.
+Hier bei uns in den Emiraten gehören Moscheen zum Alltag wie die Sonne und das Meer. In jedem Viertel hören Sie den Adhan, und viele Moscheen öffnen ihre Türen bewusst auch für Gäste anderer Religionen. Gastfreundschaft ist hier keine Formalität, sondern Herzenssache.
 
 ### Abu Dhabi – die Scheich-Zayid-Moschee
 
@@ -56,26 +56,26 @@ Wer Abu Dhabi besucht, sieht sie schon von weitem: die **Scheich-Zayid-Moschee**
 
 Die Architektur verbindet Einflüsse aus vielen Teilen der islamischen Welt. Der weiße Marmor ist mit Blumenmotiven aus Halbedelsteinen eingelegt, die Säulen tragen goldene Palmkronen. Im großen Gebetssaal liegt einer der größten handgeknüpften Teppiche der Welt, und darüber hängen gewaltige Kronleuchter aus Kristall, die zu den größten ihrer Art gehören. Am Abend wird die Fassade in Farben getaucht, die sich mit dem Mondzyklus wandeln.
 
-Die Moschee ist für Besucher aller Religionen geöffnet, der Eintritt ist frei, und es gibt kostenlose Führungen, bei denen du alles über den Islam und die Moschee fragen darfst. Bescheidene Kleidung wird erwartet; Frauen tragen ein Kopftuch. Zur Gebetszeit hörst du vielleicht den Adhan über den Hof hallen – ein Moment, den viele Gäste nie vergessen.
+Die Moschee ist für Besucher aller Religionen geöffnet, der Eintritt ist frei, und es gibt kostenlose Führungen, bei denen Sie alles über den Islam und die Moschee fragen dürfen. Bescheidene Kleidung wird erwartet; Frauen tragen ein Kopftuch. Zur Gebetszeit hören Sie vielleicht den Adhan über den Hof hallen – ein Moment, den viele Gäste nie vergessen.
 
 ### Al Ain – die Scheich-Khalifa-Moschee
 
-Al Ain, die grüne Oasenstadt im Emirat Abu Dhabi, über der sich der Dschabal Hafit erhebt, ist eng mit Scheich Zayid verbunden: Hier wirkte er lange Jahre als Statthalter, bevor er Herrscher von Abu Dhabi wurde. Zu den großen Moscheen der Stadt gehört die **Scheich-Khalifa-bin-Zayid-Moschee**, eine der neueren großen Moscheen des Landes, benannt nach Scheich Khalifa bin Zayid Al Nahyan, dem zweiten Präsidenten der Emirate – möge Allah ihm gnädig sein. Mit ihrer großen Kuppel, ihren Minaretten und ihrem weiten Gebetssaal ist sie ein Ort, an dem sich die Stadt zum Gebet versammelt. Wenn du sie besuchen möchtest, erkundige dich vorher nach den Besuchszeiten.
+Al Ain, die grüne Oasenstadt im Emirat Abu Dhabi, über der sich der Dschabal Hafit erhebt, ist eng mit Scheich Zayid verbunden: Hier wirkte er lange Jahre als Statthalter, bevor er Herrscher von Abu Dhabi wurde. Zu den großen Moscheen der Stadt gehört die **Scheich-Khalifa-bin-Zayid-Moschee**, eine der neueren großen Moscheen des Landes, benannt nach Scheich Khalifa bin Zayid Al Nahyan, dem zweiten Präsidenten der Emirate – möge Allah ihm gnädig sein. Mit ihrer großen Kuppel, ihren Minaretten und ihrem weiten Gebetssaal ist sie ein Ort, an dem sich die Stadt zum Gebet versammelt. Wenn Sie sie besuchen möchten, erkundigen Sie sich vorher nach den Besuchszeiten.
 
 ### Dubai – offene Türen, offene Herzen
 
 In Dubai, wo unsere Plattform entsteht, ist die **Jumeirah-Moschee** ein Wahrzeichen der Begegnung. Ihr Stil ist an die mittelalterliche Architektur Kairos angelehnt, mit zwei schlanken Minaretten und fein gemeißeltem hellem Stein. Unter dem Motto **„Open Doors. Open Minds.“** lädt das Sheikh Mohammed Centre for Cultural Understanding Gäste ein, die Moschee zu besuchen, Fragen zu stellen und bei arabischem Kaffee und Datteln ins Gespräch zu kommen. Keine Frage ist zu einfach, keine zu kritisch – genau das ist die Idee.
 
-Mitten im alten Dubai, nahe dem Creek, dem Textilsouk und dem historischen Viertel Al Fahidi, steht die **Große Moschee von Bur Dubai** (Grand Mosque). Mit ihren sandfarbenen Mauern, ihren vielen Kuppeln und einem hohen, schlanken Minarett fügt sie sich in das Bild der Altstadt, als wäre sie immer schon da gewesen. An dieser Stelle wird seit langer Zeit gebetet; das heutige Gebäude ist jünger und im traditionellen Stil errichtet. Für geführte Besuche ist die Jumeirah-Moschee die bessere Adresse – hier erlebst du vor allem das Gebetsleben der Altstadt, am schönsten vom Wasser aus, wenn der Adhan über den Creek zieht.
+Mitten im alten Dubai, nahe dem Creek, dem Textilsouk und dem historischen Viertel Al Fahidi, steht die **Große Moschee von Bur Dubai** (Grand Mosque). Mit ihren sandfarbenen Mauern, ihren vielen Kuppeln und einem hohen, schlanken Minarett fügt sie sich in das Bild der Altstadt, als wäre sie immer schon da gewesen. An dieser Stelle wird seit langer Zeit gebetet; das heutige Gebäude ist jünger und im traditionellen Stil errichtet. Für geführte Besuche ist die Jumeirah-Moschee die bessere Adresse – hier erleben Sie vor allem das Gebetsleben der Altstadt, am schönsten vom Wasser aus, wenn der Adhan über den Creek zieht.
 
-Im Stadtteil Al Safa steht die **Al-Faruq-Umar-bin-al-Khattab-Moschee**, benannt nach dem zweiten Kalifen. Ihre Kuppeln und Minarette erinnern an die großen osmanischen Moscheen Istanbuls, im Inneren verbinden sich Einflüsse aus verschiedenen Epochen islamischer Baukunst. Auch hier sind Besucher zu bestimmten Zeiten willkommen; erkundige dich am besten vorher.
+Im Stadtteil Al Safa steht die **Al-Faruq-Umar-bin-al-Khattab-Moschee**, benannt nach dem zweiten Kalifen. Ihre Kuppeln und Minarette erinnern an die großen osmanischen Moscheen Istanbuls, im Inneren verbinden sich Einflüsse aus verschiedenen Epochen islamischer Baukunst. Auch hier sind Besucher zu bestimmten Zeiten willkommen; erkundigen Sie sich am besten vorher.
 
 ### Schardscha – die Liebe zur islamischen Kultur
 
 Schardscha ist das Emirat, das sich der Kultur, den Büchern und der islamischen Kunst besonders verschrieben hat. Im Jahr 2014 wurde es zur **Hauptstadt der islamischen Kultur** ernannt, und seine Museen, Bibliotheken und Moscheen spiegeln diese Liebe wider.
 
 - Die **König-Faisal-Moschee** im Zentrum der Stadt ist eine der großen Moscheen der Emirate und seit Jahrzehnten ein Ort, an dem sich Menschen vieler Nationen zum Gebet treffen.
-- Die **Al-Nur-Moschee** an der Khalid-Lagune ist im osmanischen Stil erbaut, mit einer großen Zentralkuppel und schlanken Minaretten. Sie gehört zu den Moscheen, die gezielt Besucher anderer Religionen empfangen: Bei Führungen lernst du die Grundlagen des Gebets und der islamischen Kultur kennen. Am Abend, wenn sie sich im Wasser spiegelt, ist sie besonders schön.
+- Die **Al-Nur-Moschee** an der Khalid-Lagune ist im osmanischen Stil erbaut, mit einer großen Zentralkuppel und schlanken Minaretten. Sie gehört zu den Moscheen, die gezielt Besucher anderer Religionen empfangen: Bei Führungen lernen Sie die Grundlagen des Gebets und der islamischen Kultur kennen. Am Abend, wenn sie sich im Wasser spiegelt, ist sie besonders schön.
 - Die **Schardscha-Moschee** ist eine der neuesten und größten Moscheen des Emirats, ebenfalls von osmanischer Architektur inspiriert, umgeben von Gärten und Wasserflächen.
 
 ### Fudschaira – die Al-Bidya-Moschee
@@ -102,7 +102,7 @@ Ganz anders die **Ibn-Tulun-Moschee** aus dem 9. Jahrhundert: schlicht, gewaltig
 
 ### Die Sultan-Hasan-Moschee in Kairo
 
-Unterhalb der Zitadelle steht die **Moschee und Madrasa des Sultans Hasan** aus dem 14. Jahrhundert, ein Meisterwerk der Mamlukenzeit. Um ihren Hof öffnen sich vier hohe Hallen, und in jeder wurde eine der vier sunnitischen Rechtsschulen gelehrt – ein Bauwerk, das die Vielfalt der Schulen unter einem Dach vereint. Mehr über die Schulen erfährst du im Kapitel über [die Rechtsschulen](/islam/madhahib).
+Unterhalb der Zitadelle steht die **Moschee und Madrasa des Sultans Hasan** aus dem 14. Jahrhundert, ein Meisterwerk der Mamlukenzeit. Um ihren Hof öffnen sich vier hohe Hallen, und in jeder wurde eine der vier sunnitischen Rechtsschulen gelehrt – ein Bauwerk, das die Vielfalt der Schulen unter einem Dach vereint. Mehr über die Schulen erfahren Sie im Kapitel über [die Rechtsschulen](/islam/madhahib).
 
 ### Die Sultan-Ahmed-Moschee und die Süleymaniye in Istanbul
 
@@ -120,7 +120,7 @@ In Córdoba begann Abd ar-Rahman I. im 8. Jahrhundert den Bau einer Moschee, die
 
 ### Al-Qarawiyyin in Fes
 
-Im Jahr 859 gründete **Fatima al-Fihri**, eine fromme Frau aus Kairouan, in Fes eine Moschee, aus der eine der ältesten noch bestehenden Lehrstätten der Welt hervorging. Die al-Qarawiyyin liegt tief in den Gassen der Altstadt. Der Gebetssaal ist Muslimen vorbehalten, doch durch die geöffneten Tore kannst du einen Blick auf den Hof mit seinen Brunnen und Kacheln werfen.
+Im Jahr 859 gründete **Fatima al-Fihri**, eine fromme Frau aus Kairouan, in Fes eine Moschee, aus der eine der ältesten noch bestehenden Lehrstätten der Welt hervorging. Die al-Qarawiyyin liegt tief in den Gassen der Altstadt. Der Gebetssaal ist Muslimen vorbehalten, doch durch die geöffneten Tore können Sie einen Blick auf den Hof mit seinen Brunnen und Kacheln werfen.
 
 ### Die Hassan-II.-Moschee in Casablanca
 
@@ -150,7 +150,7 @@ Am weiten Naqsch-e-Dschahan-Platz in Isfahan stehen zwei Juwelen aus dem frühen
 
 ### Das Heiligtum von Imam Reza in Maschhad
 
-In Maschhad im Nordosten Irans liegt das Grab von **Ali ibn Musa ar-Rida**, einem Nachfahren des Propheten ﷺ, den die Zwölfer-Schiiten als achten Imam ehren. Der weitläufige Komplex aus Höfen, Moscheen und Bibliotheken wird jedes Jahr von sehr vielen Pilgern besucht. Mehr über die verschiedenen Traditionen erfährst du im Kapitel über [Sunniten und Schiiten](/islam/sunni-shia).
+In Maschhad im Nordosten Irans liegt das Grab von **Ali ibn Musa ar-Rida**, einem Nachfahren des Propheten ﷺ, den die Zwölfer-Schiiten als achten Imam ehren. Der weitläufige Komplex aus Höfen, Moscheen und Bibliotheken wird jedes Jahr von sehr vielen Pilgern besucht. Mehr über die verschiedenen Traditionen erfahren Sie im Kapitel über [Sunniten und Schiiten](/islam/sunni-shia).
 
 ### Die Sultan-Qabus-Moschee in Maskat
 
@@ -178,7 +178,7 @@ Auch Europa hat seine Moscheegeschichte. Die **Große Moschee von Paris** wurde 
 
 ## Die Elemente einer Moschee – ein kleiner Rundgang
 
-Eine Moschee braucht eigentlich nur einen sauberen Boden und eine Richtung. Und doch haben Muslime über Jahrhunderte eine eigene Formensprache entwickelt, in der jedes Element einem Zweck dient. Wenn du sie kennst, liest du jede Moschee wie ein Buch.
+Eine Moschee braucht eigentlich nur einen sauberen Boden und eine Richtung. Und doch haben Muslime über Jahrhunderte eine eigene Formensprache entwickelt, in der jedes Element einem Zweck dient. Wenn Sie sie kennen, lesen Sie jede Moschee wie ein Buch.
 
 - **Qibla-Wand:** die Wand, die nach Mekka zur Kaaba weist ([Koran 2:144](/surah/2?v=144)). Die Betenden stehen in geraden Reihen parallel zu ihr, Schulter an Schulter. Deshalb sind viele Gebetssäle breiter als tief.
 - **Mihrab:** die Nische in der Mitte der Qibla-Wand. Sie zeigt die Gebetsrichtung an, und der Imam steht davor. Das Wort kommt schon im Koran vor: Zakariyya betete „im Mihrab“, als die Engel ihn riefen ([Koran 3:39](/surah/3?v=39)) – dort bedeutet es einen Gebetsraum. Die Nische als fester Bauteil kam erst nach der Zeit des Propheten ﷺ auf und wurde zu einem der kostbarsten Orte islamischer Kunst, mit Kacheln, Stuck und Kalligrafie.
@@ -189,19 +189,19 @@ Eine Moschee braucht eigentlich nur einen sauberen Boden und eine Richtung. Und 
 - **Waschbereich:** Hier vollziehen Betende die Gebetswaschung, den Wudu: Gesicht, Hände und Unterarme, das Bestreichen des Kopfes und die Füße ([Koran 5:6](/surah/5?v=6)). In alten Moscheen ist es ein Brunnen im Hof, in neuen ein eigener Raum mit Sitzen und Wasserhähnen.
 - **Kalligrafie und Ornament:** In Gebetsräumen verzichtet die islamische Kunst auf Bilder von Lebewesen. An ihre Stelle treten Verse des Korans in kunstvoller Schrift, geometrische Sterne, die sich ins Unendliche fortsetzen, und Ranken ohne Ende. Viele sehen darin einen stillen Hinweis auf die Unendlichkeit Allahs.
 
-Wenn du das nächste Mal eine Moschee betrittst, such zuerst den Mihrab. Dann weißt du, wohin sich alle Herzen in diesem Raum wenden.
+Wenn Sie das nächste Mal eine Moschee betreten, suchen Sie zuerst den Mihrab. Dann wissen Sie, wohin sich alle Herzen in diesem Raum wenden.
 
-## Wie du eine Moschee mit Respekt besuchst
+## Wie Sie eine Moschee mit Respekt besuchen
 
-Ob du Muslim bist oder als Gast kommst: Mit ein paar einfachen Regeln fühlst du dich sofort willkommen.
+Ob Sie Muslim sind oder als Gast kommen: Mit ein paar einfachen Regeln fühlen Sie sich sofort willkommen.
 
-- **Kleidung:** Wähle locker sitzende Kleidung, die Arme und Beine bedeckt. Frauen tragen ein Kopftuch; große Moscheen wie die Scheich-Zayid-Moschee stellen bei Bedarf passende Kleidung bereit. Allah sagt: „O Kinder Adams, legt euren Schmuck bei jeder Gebetsstätte an“ (7:31).
-- **Schuhe:** Vor dem Gebetsraum ziehst du die Schuhe aus. Es gibt Regale oder Beutel dafür.
+- **Kleidung:** Wählen Sie locker sitzende Kleidung, die Arme und Beine bedeckt. Frauen tragen ein Kopftuch; große Moscheen wie die Scheich-Zayid-Moschee stellen bei Bedarf passende Kleidung bereit. Allah sagt: „O Kinder Adams, legt euren Schmuck bei jeder Gebetsstätte an“ (7:31).
+- **Schuhe:** Vor dem Gebetsraum ziehen Sie die Schuhe aus. Es gibt Regale oder Beutel dafür.
 - **Wudu:** Wer beten möchte, kommt mit Gebetswaschung oder vollzieht sie im Waschbereich der Moschee ([Koran 5:6](/surah/5?v=6)). Gäste, die nur schauen möchten, brauchen keine Waschung.
-- **Gebetszeiten:** Plane deinen Besuch außerhalb der Gebetszeiten, wenn du nur besichtigen möchtest. Viele Moscheen schließen für Besucher kurz vor und während des Gebets.
+- **Gebetszeiten:** Planen Sie Ihren Besuch außerhalb der Gebetszeiten, wenn Sie nur besichtigen möchten. Viele Moscheen schließen für Besucher kurz vor und während des Gebets.
 - **Frauenbereiche:** Viele Moscheen haben eigene Bereiche oder Eingänge für Frauen. Der Prophet ﷺ sagte: „Hindert die Dienerinnen Allahs nicht an den Moscheen Allahs“ (al-Bukhari, Muslim).
-- **Fotografieren:** Frage vorher, fotografiere niemals Betende aus der Nähe und gehe nicht direkt vor jemandem vorbei, der gerade betet.
-- **Ruhe und Duft:** Sprich leise, schalte dein Telefon stumm. Der Prophet ﷺ bat darum, nicht nach dem Verzehr von rohem Knoblauch oder Zwiebeln in die Moschee zu kommen (al-Bukhari, Muslim) – ein Zeichen der Rücksicht auf die anderen.
+- **Fotografieren:** Fragen Sie vorher, fotografieren Sie niemals Betende aus der Nähe und gehen Sie nicht direkt vor jemandem vorbei, der gerade betet.
+- **Ruhe und Duft:** Sprechen Sie leise, schalten Sie Ihr Telefon stumm. Der Prophet ﷺ bat darum, nicht nach dem Verzehr von rohem Knoblauch oder Zwiebeln in die Moschee zu kommen (al-Bukhari, Muslim) – ein Zeichen der Rücksicht auf die anderen.
 - **Freitag:** Am Freitag ist zur Mittagszeit das Freitagsgebet mit Predigt. „Wenn zum Gebet am Freitag gerufen wird, dann eilt zum Gedenken Allahs“ (62:9). Für Besichtigungen ist dieser Tag oft eingeschränkt.
 
 ### Tahiyyat al-Masdschid – die Begrüßung der Moschee
@@ -210,17 +210,17 @@ Der Prophet ﷺ sagte: „Wenn einer von euch die Moschee betritt, soll er zwei 
 
 ### Bittgebete beim Betreten und Verlassen
 
-Beim Betreten trittst du mit dem rechten Fuß ein und sagst: **„Allahumma iftah li abwaba rahmatik“** – „O Allah, öffne mir die Tore Deiner Barmherzigkeit.“ Beim Verlassen trittst du mit dem linken Fuß hinaus und sagst: **„Allahumma inni as'aluka min fadlik“** – „O Allah, ich bitte Dich um Deine Huld“ (Muslim).
+Beim Betreten treten Sie mit dem rechten Fuß ein und sagen: **„Allahumma iftah li abwaba rahmatik“** – „O Allah, öffne mir die Tore Deiner Barmherzigkeit.“ Beim Verlassen treten Sie mit dem linken Fuß hinaus und sagen: **„Allahumma inni as'aluka min fadlik“** – „O Allah, ich bitte Dich um Deine Huld“ (Muslim).
 
 ## Jede Moschee ist ein Haus Allahs
 
-Ob prächtige Kuppel in Abu Dhabi oder Lehmmauern in Djenné, ob Marmor in Mekka oder ein kleiner Gebetsraum in deiner Nachbarschaft: Allah sagt: „Und die Moscheen gehören Allah. So ruft neben Allah niemanden an“ (72:18). Kein Bauwerk ist an sich heilig wegen seines Goldes, sondern wegen des Gedenkens, das in ihm lebt.
+Ob prächtige Kuppel in Abu Dhabi oder Lehmmauern in Djenné, ob Marmor in Mekka oder ein kleiner Gebetsraum in Ihrer Nachbarschaft: Allah sagt: „Und die Moscheen gehören Allah. So ruft neben Allah niemanden an“ (72:18). Kein Bauwerk ist an sich heilig wegen seines Goldes, sondern wegen des Gedenkens, das in ihm lebt.
 
-Wenn du das nächste Mal an einer Moschee vorbeigehst, tritt ruhig ein. Du bist willkommen – als Betender, als Lernender, als Gast. Und wenn du die Verse über die Häuser Allahs selbst hören möchtest, beginne mit [Sure an-Nur](/surah/24), in der es heißt: „In Häusern, von denen Allah erlaubt hat, dass sie errichtet werden und dass Sein Name darin gedacht wird“ (24:36).`,
+Wenn Sie das nächste Mal an einer Moschee vorbeigehen, treten Sie ruhig ein. Sie sind willkommen – als Betender, als Lernender, als Gast. Und wenn Sie die Verse über die Häuser Allahs selbst hören möchten, beginnen Sie mit [Sure an-Nur](/surah/24), in der es heißt: „In Häusern, von denen Allah erlaubt hat, dass sie errichtet werden und dass Sein Name darin gedacht wird“ (24:36).`,
     faq: [
       { q: "Welche drei Moscheen sind im Islam besonders heilig?", a: "Die Heilige Moschee (Masdschid al-Haram) in Mekka, die Prophetenmoschee (Masdschid an-Nabawi) in Medina und die Aqsa-Moschee in Jerusalem. Der Prophet ﷺ nannte sie als die einzigen Moscheen, zu denen man sich eigens auf Reisen begeben soll (al-Bukhari, Muslim)." },
       { q: "Dürfen Nichtmuslime eine Moschee besuchen?", a: "Viele Moscheen heißen Gäste aller Religionen willkommen, etwa die Scheich-Zayid-Moschee in Abu Dhabi, die Jumeirah-Moschee in Dubai, die Al-Nur-Moschee in Schardscha oder die Hassan-II.-Moschee in Casablanca. Mekka ist allerdings Muslimen vorbehalten, und manche Moscheen erlauben Nichtmuslimen nur den Blick von außen." },
-      { q: "Was ziehe ich beim Moscheebesuch an?", a: "Locker sitzende Kleidung, die Arme und Beine bedeckt; Frauen tragen ein Kopftuch. Vor dem Gebetsraum ziehst du die Schuhe aus. Große Moscheen stellen oft passende Kleidung bereit." },
+      { q: "Was ziehe ich beim Moscheebesuch an?", a: "Locker sitzende Kleidung, die Arme und Beine bedeckt; Frauen tragen ein Kopftuch. Vor dem Gebetsraum ziehen Sie die Schuhe aus. Große Moscheen stellen oft passende Kleidung bereit." },
       { q: "Was ist Tahiyyat al-Masdschid?", a: "Zwei Rak'at, die man beim Betreten einer Moschee betet, bevor man sich setzt. Der Prophet ﷺ hat dazu angeleitet (al-Bukhari 444, Muslim)." },
       { q: "Was ist der Unterschied zwischen Mihrab und Minbar?", a: "Der Mihrab ist die Nische in der Qibla-Wand, die die Gebetsrichtung nach Mekka anzeigt; davor steht der Imam beim Gebet. Der Minbar ist die Kanzel mit Stufen daneben, von der die Freitagspredigt gehalten wird." },
       { q: "Welches Bittgebet spricht man beim Betreten und Verlassen der Moschee?", a: "Beim Betreten: „Allahumma iftah li abwaba rahmatik“ (O Allah, öffne mir die Tore Deiner Barmherzigkeit). Beim Verlassen: „Allahumma inni as'aluka min fadlik“ (O Allah, ich bitte Dich um Deine Huld) (Muslim)." },

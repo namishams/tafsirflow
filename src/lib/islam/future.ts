@@ -17,7 +17,7 @@ export const future: IslamDoc = {
 
 Jeder Mensch stellt sich irgendwann die großen Fragen: Woher komme ich? Wozu lebe ich? Wohin gehe ich? Der Islam gibt darauf eine klare und zugleich tröstende Antwort. Sie sind nicht zufällig hier. Allah hat Sie erschaffen, Er kennt Sie, und Ihr Leben hat ein Ziel: Ihn zu erkennen, Ihm zu dienen und Gutes in die Welt zu tragen.
 
-Diese Antwort wird im Alltag lebendig. Fünfmal am Tag unterbricht das Gebet den Lauf der Dinge. Sie legen ab, was Sie beschäftigt, wenden Sie der Kaaba zu und stehen vor Ihrem Herrn. Wer das erlebt, weiß: Das Gebet ist keine Last, sondern eine Atempause für die Seele.
+Diese Antwort wird im Alltag lebendig. Fünfmal am Tag unterbricht das Gebet den Lauf der Dinge. Sie legen ab, was Sie beschäftigt, wenden sich der Kaaba zu und stehen vor Ihrem Herrn. Wer das erlebt, weiß: Das Gebet ist keine Last, sondern eine Atempause für die Seele.
 
 Allah sagt: „Diejenigen, die glauben und deren Herzen im Gedenken Allahs Ruhe finden – ja, im Gedenken Allahs finden die Herzen Ruhe“ (13:28). In einer Zeit voller Lärm, Druck und Unruhe ist dieser innere Frieden ein kostbares Geschenk.
 

@@ -24,7 +24,8 @@ function loadVerse(key: string, lang: string) {
   if (!p) { p = getVerseByKey(key, lang); p.catch(() => verses.delete(k)); verses.set(k, p); }
   return p;
 }
-function useVerse(key: string) {
+/** one verse from the Quran API in the reader's language (Uthmani text and translation): null while loading, `error` when it cannot be loaded */
+export function useVerse(key: string) {
   const { lang } = useLang();
   const [st, setSt] = useState<{ k: string; v?: SingleVerse; error?: boolean } | null>(null);
   const k = `${key}|${lang}`;
@@ -38,7 +39,7 @@ function useVerse(key: string) {
 
 /** the author of the translation shown in this language (its source), once */
 const names = new Map<string, Promise<string>>();
-function useTranslationName(): string {
+export function useTranslationName(): string {
   const { lang } = useLang();
   const [name, setName] = useState("");
   useEffect(() => {
@@ -103,9 +104,10 @@ export function ShamsDemoLive({ stages, title }: { stages: string[]; title: stri
 
 const getJSON = (url: string) => cachedJSON<unknown>(`shams-${url.replace(/^https?:\/\//, "")}`, url);
 
-function HadithQuote({ item, cite }: { item: Extract<ShamsWhyItem, { kind: "hadith" }>; cite: string }) {
+/** a hadith of "Why learning the Quran matters" by reference (kept on the device once fetched): undefined while
+ *  loading, null when the source cannot be reached (then nothing is shown in its place) */
+export function useShamsHadith(item: Extract<ShamsWhyItem, { kind: "hadith" }>): ShamsHadith | null | undefined {
   const { lang } = useLang();
-  const isl = useIsl();
   const [h, setH] = useState<{ k: string; v: ShamsHadith | null } | null>(null);
   const k = `${item.collection}:${item.number}:${lang}`;
   useEffect(() => {
@@ -113,10 +115,15 @@ function HadithQuote({ item, cite }: { item: Extract<ShamsWhyItem, { kind: "hadi
     loadShamsHadith(item.collection, item.number, lang, getJSON).then((v) => { if (live) setH({ k, v }); }).catch(() => { if (live) setH({ k, v: null }); });
     return () => { live = false; };
   }, [item.collection, item.number, lang, k]);
-  const cur = h && h.k === k ? h : null;
-  if (!cur) return <Placeholder height={110} />;
-  if (!cur.v) return null;
-  const { arabic, text } = cur.v;
+  return h && h.k === k ? h.v : undefined;
+}
+
+function HadithQuote({ item, cite }: { item: Extract<ShamsWhyItem, { kind: "hadith" }>; cite: string }) {
+  const isl = useIsl();
+  const h = useShamsHadith(item);
+  if (h === undefined) return <Placeholder height={110} />;
+  if (!h) return null;
+  const { arabic, text } = h;
   return (
     <FramedQuote size={17 / 1.16} cite={`${cite} · ${HADITH_API_NAME}`} style={{ marginTop: 0, marginBottom: 0 }}>
       {arabic ? <Text style={{ fontFamily: ARABIC_FONT, fontStyle: "normal", fontSize: 19, lineHeight: 36, color: isl.head, writingDirection: "rtl" }}>{arabic}</Text> : null}

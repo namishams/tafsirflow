@@ -74,7 +74,7 @@ Am Beispiel eines Gebets mit zwei Rakat (Fajr):
 5. **Eine vollständige Sure:** In den ersten beiden Rakat folgt eine ganze weitere Sure mit ihrer Basmala, z. B. [Al-Ikhlas](/surah/112) oder al-Qadr.
 6. **Qunut (in der zweiten Raka):** Nach der Sure und vor der Verbeugung hebt man die Hände mit den Handflächen nach oben vor das Gesicht und spricht ein Bittgebet, z. B. *Rabbana atina fi d-dunya hasanah, wa fi l-achirati hasanah, wa qina 'adhaba n-nar* – „Unser Herr, gib uns im Diesseits Gutes und im Jenseits Gutes und bewahre uns vor der Strafe des Feuers“ ([2:201](/surah/2)). Der Qunut ist stark empfohlen.
 7. **Verbeugung (Ruku'):** *Allahu akbar*, verbeugen Sie sich, Hände auf die Knie, und sprechen Sie *Subhana Rabbiyal-'Azimi wa bihamdih* (سبحان ربي العظيم وبحمده) – „Gepriesen sei mein Herr, der Gewaltige, und Ihm gebührt das Lob“.
-8. **Aufrichten:** Richten Sie sich ganz auf und stehe einen Moment ruhig. Empfohlen ist *Sami'a llahu liman hamidah* – „Allah hört den, der Ihn lobt“.
+8. **Aufrichten:** Richten Sie sich ganz auf und stehen Sie einen Moment ruhig. Empfohlen ist *Sami'a llahu liman hamidah* – „Allah hört den, der Ihn lobt“.
 9. **Niederwerfung (Sudschud):** *Allahu akbar* und werfen Sie sich nieder auf sieben Körperteile: Stirn, beide Handflächen, beide Knie und die großen Zehen. Die Stirn liegt auf Erde oder auf etwas, das aus der Erde wächst und weder gegessen noch als Kleidung getragen wird – meist auf einer Turba. Sprechen Sie *Subhana Rabbiyal-A'la wa bihamdih* (سبحان ربي الأعلى وبحمده) – „Gepriesen sei mein Herr, der Höchste, und Ihm gebührt das Lob“.
 10. **Sitzen zwischen den Niederwerfungen:** *Allahu akbar*, setzen Sie sich ruhig auf. Empfohlen ist *Astaghfirullaha Rabbi wa atubu ilaih* – „Ich bitte Allah, meinen Herrn, um Vergebung und wende mich Ihm reuig zu“.
 11. **Zweite Niederwerfung:** *Allahu akbar*, wie zuvor, mit demselben Lobpreis.
@@ -207,7 +207,7 @@ Using a two-rak'ah prayer (Fajr) as the example:
 
 ## Why prostrate on earth?
 
-The Prophet ﷺ said: "The earth has been made for me a place of prostration and a means of purification" (Sahih al-Bukhari, Sahih Muslim). From this and from reports of the Imams (عليهم السلام), the Ja'fari school derives that the forehead in prostration should rest on natural earth, or on what grows from it and is not eaten or worn – suchen Sie as stone, sand, wood or palm leaves. Carpets and clothing do not count. That is why many use a **turbah**, a small tablet of pure clay: it is simply a clean piece of earth that can be carried anywhere. The turbah is not worshipped; one prostrates on it, not to it. Many cherish clay from Karbala out of love for Imam Husayn (عليه السلام), but any pure earth is valid.
+The Prophet ﷺ said: "The earth has been made for me a place of prostration and a means of purification" (Sahih al-Bukhari, Sahih Muslim). From this and from reports of the Imams (عليهم السلام), the Ja'fari school derives that the forehead in prostration should rest on natural earth, or on what grows from it and is not eaten or worn – such as stone, sand, wood or palm leaves. Carpets and clothing do not count. That is why many use a **turbah**, a small tablet of pure clay: it is simply a clean piece of earth that can be carried anywhere. The turbah is not worshipped; one prostrates on it, not to it. Many cherish clay from Karbala out of love for Imam Husayn (عليه السلام), but any pure earth is valid.
 
 ## After the prayer: the tasbih of Fatimah
 

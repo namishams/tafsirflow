@@ -38,6 +38,8 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
   const [paused, setPaused] = useState(false);
   const [sharing, setSharing] = useState(false);
   const [reader, setReader] = useState(false);
+  // the height of the bottom bar (measured; until then the size of its buttons and padding)
+  const [barH, setBarH] = useState(0);
   const progress = useRef(new Animated.Value(0)).current;
   const dragY = useRef(new Animated.Value(0)).current;
   const scrollTop = useRef(true);
@@ -117,6 +119,8 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
   const saved = saves.includes(story.id);
   const wide = width >= 700;
   const opacity = dragY.interpolate({ inputRange: [0, 300], outputRange: [1, 0.6], extrapolate: "clamp" });
+  // the text ends above the bottom bar: its height plus a fade, so the last line of a long story is never under the buttons
+  const barSpace = (barH || 54 + Math.max(insets.bottom, 12)) + 28;
 
   return (
     <Modal visible animationType={reduce ? "none" : "fade"} onRequestClose={onClose} statusBarTranslucent supportedOrientations={["portrait", "landscape"]}>
@@ -144,7 +148,7 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
         </View>
 
         <Pressable style={{ flex: 1 }} accessible={false} onPress={(e) => onTap(e.nativeEvent.pageX)} onLongPress={() => setPaused(true)} onPressOut={() => setPaused(false)} delayLongPress={250}>
-          <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingHorizontal: 24, paddingTop: insets.top + 70, paddingBottom: 24, maxWidth: 720, alignSelf: "center", width: "100%" }}
+          <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingHorizontal: 24, paddingTop: insets.top + 70, paddingBottom: barSpace, maxWidth: 720, alignSelf: "center", width: "100%" }}
             onScroll={(e) => { scrollTop.current = e.nativeEvent.contentOffset.y <= 2; }} scrollEventThrottle={32}>
             {allowed ? (
               <StoryContent story={story} wide={wide} onReadMore={() => { onClose(); router.push(story.href as Href); }} />
@@ -154,8 +158,15 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
           </ScrollView>
         </Pressable>
 
-        {/* the bottom bar: previous / next for everyone (also VoiceOver), save, share */}
-        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 14, paddingTop: 8, paddingBottom: Math.max(insets.bottom, 12) }}>
+        {/* the bottom bar over a scrim of the stage (like the header): the text scrolls under it and fades out, its
+            last line always ends above the buttons (paddingBottom of the text). Previous / next for everyone (also
+            VoiceOver), save, share */}
+        <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: barSpace, zIndex: 19, elevation: 19 }}>
+          <LinearGradient colors={["rgba(5,28,21,0)", "rgba(5,28,21,0.82)", "rgba(5,28,21,0.96)"]} locations={[0, 0.32, 1]}
+            style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} />
+        </View>
+        <View onLayout={(e) => { const h = Math.round(e.nativeEvent.layout.height); setBarH((cur) => (cur === h ? cur : h)); }}
+          style={{ position: "absolute", left: 0, right: 0, bottom: 0, zIndex: 20, elevation: 20, flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 14, paddingTop: 8, paddingBottom: Math.max(insets.bottom, 12) }}>
           <BarButton icon={I18nManager.isRTL ? "chevronRight" : "chevronLeft"} label={tx.prev} onPress={prev} />
           {/* our own promo cards are not stories: nothing to save, and their page (/pro) does not exist on the free website */}
           {allowed && !promo ? (
