@@ -1,5 +1,5 @@
 import { memo, useMemo, type ReactNode } from "react";
-import { Pressable, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
 import { Icon, type IconName } from "@/components/icons";
@@ -77,11 +77,11 @@ export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item
     ...(recapDue ? [{ id: "recap", label: gt.weekRecap, value: "", icon: "calendar" as IconName, tone: ["#0b3d2e", "#c6a65e"] as [string, string], fresh: true, on: () => router.push("/feed-stats?recap=week" as Href) }] : []),
     { id: "quests", label: gt.questsRing, value: `${qDone}/${quests.length}`, icon: "checkCircle", tone: ["#0b3d2e", "#1d6b52"], progress: qFrac, on: () => router.push("/feed-stats" as Href) },
     { id: "prayer", label: next ? wp(next.p) : tx.ringPrayer, value: next?.time ?? "", icon: "mosque", tone: ["#0b3d2e", "#1d6b52"], on: () => router.push("/prayer" as Href) },
-    { id: "countdown", label: tx.ringCountdown, value: days !== null ? fillDays(days) : "", icon: "moon", tone: ["#1f2b47", "#3e5a8c"], on: () => router.push("/calendar" as Href) },
-    { id: "streak", label: tx.ringStreak, value: String(streakOf(stats)), icon: "flame", tone: ["#47301f", "#b0662a"], on: () => router.push("/feed-stats" as Href) },
-    { id: "radio", label: tx.ringRadio, value: "", icon: "radio", tone: ["#47141f", "#a3283c"], on: () => router.push("/radio" as Href), live: true },
-    { id: "verse", label: tx.ringVerse, value: votd, icon: "book", tone: ["#2b1f47", "#5a3e8c"], on: () => onVerse(`v:${votd}`) },
-    { id: "stats", label: tx.statsOpen, value: "", icon: "trophy", tone: ["#0b2f3d", "#1d5a6b"], on: () => router.push("/feed-stats" as Href) },
+    { id: "countdown", label: tx.ringCountdown, value: days !== null ? fillDays(days) : "", icon: "moon", tone: ["#1f473b", "#3e8c75"], on: () => router.push("/calendar" as Href) },
+    { id: "streak", label: tx.ringStreak, value: String(streakOf(stats)), icon: "flame", tone: ["#3d2a0b", "#a67c2e"], on: () => router.push("/feed-stats" as Href) },
+    { id: "radio", label: tx.ringRadio, value: "", icon: "radio", tone: ["#473614", "#a27a29"], on: () => router.push("/radio" as Href), live: true },
+    { id: "verse", label: tx.ringVerse, value: votd, icon: "book", tone: ["#473a1f", "#8c723e"], on: () => onVerse(`v:${votd}`) },
+    { id: "stats", label: tx.statsOpen, value: "", icon: "trophy", tone: ["#10382c", "#1f6953"], on: () => router.push("/feed-stats" as Href) },
     { id: "shams", label: tx.ringShams, value: "", icon: "sun", tone: ["#3d2a0b", "#8c6a1d"], on: () => { statPromo("shams-ring", "tap"); router.push("/shams" as Href); } },
     ...(pro ? [] : [{ id: "pro", label: tx.ringPro, value: "", icon: "starBig" as IconName, tone: ["#0b3d2e", "#c6a65e"] as [string, string], on: () => { statPromo("pro-ring", "tap"); openPro("general"); } }]),
   ];
@@ -94,26 +94,26 @@ export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item
           {r.progress !== undefined ? (
             <View style={{ width: 72, height: 72 }}>
               <Svg width={72} height={72} style={{ position: "absolute" }}>
-                <Circle cx={36} cy={36} r={34} stroke={t.line} strokeWidth={3} fill="none" />
-                {r.progress > 0 ? <Circle cx={36} cy={36} r={34} stroke="#c6a65e" strokeWidth={3} fill="none" strokeLinecap="round" strokeDasharray={`${(2 * Math.PI * 34 * Math.min(1, r.progress)).toFixed(1)} 999`} transform="rotate(-90 36 36)" /> : null}
+                <Circle cx={36} cy={36} r={34} stroke={t.line} strokeWidth={2.5} fill="none" />
+                {r.progress > 0 ? <Circle cx={36} cy={36} r={34} stroke="#c6a65e" strokeWidth={2.5} fill="none" strokeLinecap="round" strokeDasharray={`${(2 * Math.PI * 34 * Math.min(1, r.progress)).toFixed(1)} 999`} transform="rotate(-90 36 36)" /> : null}
               </Svg>
-              <View style={{ flex: 1, margin: 4.5, borderRadius: 32, overflow: "hidden" }}>
+              <View style={{ flex: 1, margin: 4.5, borderRadius: 32, overflow: "hidden", borderWidth: StyleSheet.hairlineWidth, borderColor: "rgba(214,180,108,0.55)" }}>
                 <LinearGradient colors={r.tone} style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: 1 }}>
                   {r.node ?? <><Icon name={r.icon} color="rgb(233,207,153)" size={17} />
                   <Text allowFontScaling={false} numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 12, color: "#fff" }}>{r.value}</Text></>}
                 </LinearGradient>
               </View>
             </View>
-          ) : <LinearGradient colors={r.id === "radio" && radioOn ? ["#ff5a6e", "#d63031"] : r.fresh === false ? [t.line, t.line] : r.fresh ? ["#f3e2b6", "#c6a65e", "#8a6a2c"] : ["#f3e2b6", "#c6a65e"]} style={{ width: 72, height: 72, borderRadius: 36, padding: 2.5 }}>
-            <View style={{ flex: 1, borderRadius: 34, padding: 2, backgroundColor: t.bg }}>
-              <LinearGradient colors={r.tone} style={{ flex: 1, borderRadius: 32, alignItems: "center", justifyContent: "center", gap: 1 }}>
+          ) : <LinearGradient colors={r.id === "radio" && radioOn ? ["#fff3d6", "#d6b46c", "#8a6a2c", "#e9cf99"] : r.fresh === false ? [t.line, t.line] : r.fresh ? ["#f6e7bf", "#d6b46c", "#8a6a2c", "#e9cf99"] : ["#f3e2b6", "#c6a65e", "#a9802f"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={{ width: 72, height: 72, borderRadius: 36, padding: 2 }}>
+            <View style={{ flex: 1, borderRadius: 34, padding: 2.5, backgroundColor: t.bg }}>
+              <LinearGradient colors={r.tone} start={{ x: 0.2, y: 0 }} end={{ x: 0.8, y: 1 }} style={{ flex: 1, borderRadius: 32, alignItems: "center", justifyContent: "center", gap: 1, borderWidth: StyleSheet.hairlineWidth, borderColor: "rgba(214,180,108,0.55)" }}>
                 <Icon name={r.icon} color="rgb(233,207,153)" size={r.value ? 17 : 24} />
                 {r.value ? <Text allowFontScaling={false} numberOfLines={1} adjustsFontSizeToFit style={{ fontFamily: FONT.bold, fontSize: 12, color: "#fff", paddingHorizontal: 6 }}>{r.value}</Text> : null}
               </LinearGradient>
             </View>
           </LinearGradient>}
-          {r.live ? <View style={{ position: "absolute", top: 58, paddingHorizontal: 5, borderRadius: 4, backgroundColor: "rgb(214,48,49)" }}><Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: 9, color: "#fff", textTransform: "uppercase" }}>{tx.onAir}</Text></View> : null}
-          <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 11.5, color: t.ink, maxWidth: 76 }}>{r.label}</Text>
+          {r.live ? <View style={{ position: "absolute", top: 58, paddingHorizontal: 6, paddingVertical: 1, borderRadius: 3, backgroundColor: "rgb(8,38,29)", borderWidth: StyleSheet.hairlineWidth, borderColor: "rgb(214,180,108)" }}><Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 8.5, letterSpacing: 1, color: "rgb(233,207,153)", textTransform: "uppercase" }}>{tx.onAir}</Text></View> : null}
+          <Text numberOfLines={1} style={{ fontFamily: FONT.medium, fontSize: 11, letterSpacing: 0.2, color: t.ink, maxWidth: 76 }}>{r.label}</Text>
         </Pressable>
       ))}
     </>

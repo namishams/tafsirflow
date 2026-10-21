@@ -3,12 +3,13 @@ import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { sharerTier } from "@/lib/communityProfiles";
 import { CONTENT_VISIBLE, NOT_BLOCKED, NO_STORE, talentGate } from "@/lib/talents";
-import { LIVE, POST_COLS, VIEWER_COLS, postJson, type PostRow } from "@/lib/talentPosting";
+import { postingEnabled, LIVE, POST_COLS, VIEWER_COLS, postJson, type PostRow } from "@/lib/talentPosting";
 
 export const dynamic = "force-dynamic";
 
 // the member's saved clips (only live ones, blocked authors left out), newest saved first
 export async function GET(req: NextRequest) {
+  if (!postingEnabled()) return json({ posts: [], disabled: true }, 200, NO_STORE); // posting is switched off (config.json)
   const g = await talentGate(req, "saved", 60);
   if (g.res) return g.res;
   const r = await pool()!.query(

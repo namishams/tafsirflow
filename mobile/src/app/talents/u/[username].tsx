@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Alert, Modal, Platform, Pressable, ScrollView, Share, Text, View, useWindowDimensions } from "react-native";
 import { Stack, router, useFocusEffect, useLocalSearchParams, type Href } from "expo-router";
 import { FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
@@ -16,11 +16,20 @@ import { BadgeButton, BadgeMark, BadgeSheetHost } from "@/features/talents/badge
 import { ClipVisual } from "@/features/talents/ClipVisual";
 import { PostingChecklist } from "@/features/talents/Checklist";
 import { AccessGate, LevelBadge, Muted, ReportSheet, SafetyBar, SmallButton, TalentAvatar, useTalentAccess, useTalentErr } from "@/features/talents/ui";
+import { usePro } from "@/lib/pro";
+import { usePostingOn, useSijillFlags } from "@/features/sijill/config";
+import { sijillApi, type Sijill } from "@/features/sijill/api";
+import { syncSijill } from "@/features/sijill/summary";
+import { SijillShowcase, TreeBanner } from "@/features/sijill/Showcase";
+import { MomentsFeed } from "@/features/sijill/Moments";
+import { useST } from "@/features/sijill/text";
 
 // /talents/u/[username] – the talent profile, built like Instagram/TikTok in the Masterclass design: avatar with a gold
 // ring (live story), stats (clips · followers · following · likes), name with badge and level, rewaya/maqam/country,
 // bio, follow / message / connect, story highlights, tabs (clips grid, saved, achievements), the path to posting.
-type Tab = "posts" | "saved" | "awards";
+// Owner decision 21.10.2026: with posting switched off (config posting.enabled) the profile is an achievement showcase:
+// tabs Sijill (academic record), achievement moments and badges; clips, highlights and the posting path stay hidden.
+type Tab = "posts" | "saved" | "awards" | "sijill" | "moments";
 export default function TalentProfileScreen() {
   const t = useTheme();
   const tt = useTT();
@@ -34,27 +43,43 @@ export default function TalentProfileScreen() {
   const [saved, setSaved] = useState<Post[] | null>(null);
   const [highlights, setHighlights] = useState<Highlight[]>([]);
   const [posting, setPosting] = useState<PostingStatus | null>(null);
-  const [tab, setTab] = useState<Tab>("posts");
+  const [tab, setTab] = useState<Tab>("sijill");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState("");
   const [reporting, setReporting] = useState(false);
   const [newHighlight, setNewHighlight] = useState(false);
+  const st = useST();
+  const { pro } = usePro();
+  const flags = useSijillFlags();
+  const postingFlag = usePostingOn();
+  const postingRef = useRef(postingFlag);
+  postingRef.current = postingFlag;
+  const postingOn = postingFlag && p?.postingEnabled !== false;
+  const [sijill, setSijill] = useState<Sijill | null | "restricted">(null);
+  useEffect(() => { if (!postingOn && (tab === "posts" || tab === "saved")) setTab("sijill"); else if (postingOn && (tab === "sijill" || tab === "moments")) setTab("posts"); }, [postingOn]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const load = useCallback(async () => {
     if (!username) return;
     try {
       const d = (await T.profile(username)).profile;
       setP(d); setState("ok");
-      if (!d.restricted && !d.blocked) {
+      // Sijill: the own record is brought up to date from this device first
+      if (!d.blocked) {
+        (d.mine ? syncSijill(pro).then(() => sijillApi.mine(lang)) : sijillApi.of(d.username, lang))
+          .then((x) => setSijill(x.sijill ?? "restricted")).catch(() => setSijill("restricted"));
+      }
+      const clips = postingRef.current && d.postingEnabled !== false;
+      if (!clips) { setPosts([]); setHighlights([]); }
+      else if (!d.restricted && !d.blocked) {
         T.posts(d.username, "post").then((x) => setPosts(x.posts)).catch(() => setPosts([]));
         T.highlights(d.username).then((x) => setHighlights(x.highlights)).catch(() => setHighlights([]));
       } else { setPosts([]); setHighlights([]); }
-      if (d.mine) {
+      if (d.mine && clips) {
         T.posting().then(setPosting).catch(() => undefined);
         T.saved().then((x) => setSaved(x.posts)).catch(() => setSaved([]));
       }
     } catch (e) { setState(e instanceof ApiError && e.status === 404 ? "missing" : "error"); }
-  }, [username]);
+  }, [username, lang, pro]); // eslint-disable-line react-hooks/exhaustive-deps
   useFocusEffect(useCallback(() => { if (a.state === "ok") void load(); }, [a.state, load]));
 
   const run = async (fn: () => Promise<void>) => { setBusy(true); setMsg(""); try { await fn(); } catch (e) { setMsg(err(e)); } finally { setBusy(false); } };
@@ -103,16 +128,16 @@ export default function TalentProfileScreen() {
               <View style={{ padding: 16, gap: 16 }}>
                 {/* header */}
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-                  <Pressable onPress={p.liveStory ? () => router.push(`/talents/player?src=user&u=${p.username}&type=story` as Href) : undefined} disabled={!p.liveStory}
+                  <Pressable onPress={p.liveStory && postingOn ? () => router.push(`/talents/player?src=user&u=${p.username}&type=story` as Href) : undefined} disabled={!p.liveStory}
                     accessibilityRole={p.liveStory ? "button" : undefined} accessibilityLabel={p.liveStory ? tt("watchStory") : p.name}
                     style={{ padding: 3, borderRadius: 52, borderWidth: p.liveStory ? 2.5 : 0, borderColor: goldButton.to }}>
                     <SharerRing tier={p.sharerTier} size={88}><TalentAvatar name={p.name} size={88} uri={p.avatar} badge={p.badge} /></SharerRing>
                   </Pressable>
                   <View style={{ flex: 1, flexDirection: "row" }}>
-                    {stat(p.posts, tt("statClips"))}
+                    {postingOn ? stat(p.posts, tt("statClips")) : stat(sijill && sijill !== "restricted" ? sijill.moments : 0, st("tabMoments"))}
                     {stat(p.followers, tt("followers"), p.restricted ? undefined : () => router.push(`/talents/list?u=${p.username}&kind=followers` as Href))}
                     {stat(p.following, tt("following"), p.restricted ? undefined : () => router.push(`/talents/list?u=${p.username}&kind=following` as Href))}
-                    {stat(p.likes, tt("statLikes"))}
+                    {postingOn ? stat(p.likes, tt("statLikes")) : stat(sijill && sijill !== "restricted" ? sijill.reactions : 0, st("statEncouragements"))}
                   </View>
                 </View>
                 <View style={{ gap: 6 }}>
@@ -139,7 +164,13 @@ export default function TalentProfileScreen() {
                     <View style={{ flex: 1 }}><SmallButton title={tt("shareProfile")} onPress={share} /></View>
                     <SmallButton title={tt("settings")} onPress={() => router.push("/talents/settings" as Href)} label={tt("settings")} />
                   </View>
-                ) : p.blocked ? (
+                ) : null}
+                {p.mine && !postingOn ? (
+                  <View style={{ flexDirection: "row", gap: 8 }}>
+                    <View style={{ flex: 1 }}><SmallButton title={st("privacyBtn")} onPress={() => router.push("/talents/sijill" as Href)} /></View>
+                    <View style={{ flex: 1 }}><SmallButton title={st("friends")} onPress={() => router.push("/talents/friends" as Href)} /></View>
+                  </View>
+                ) : p.mine ? null : p.blocked ? (
                   <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{tt("blockedInfo")}</Text>
                 ) : (
                   <View style={{ flexDirection: "row", gap: 8 }}>
@@ -148,6 +179,10 @@ export default function TalentProfileScreen() {
                     {a.age?.interact ? <View style={{ flex: 1 }}><SmallButton title={connLabel} onPress={connect} disabled={busy} label={`${connLabel}, ${p.name}`} /></View> : null}
                   </View>
                 )}
+                {/* Sijill: compare (mutual follows or connections; the server checks) */}
+                {!p.mine && !p.blocked && flags.compare && (p.followed || p.connection === "connected") ? (
+                  <SmallButton title={st("compare")} onPress={() => router.push(`/talents/compare/${p.username}` as Href)} label={`${st("compare")}, ${p.name}`} />
+                ) : null}
                 {p.connection === "incoming" && !p.blocked ? (
                   <Pressable onPress={() => void run(async () => { await T.answer(p.username, "decline"); setP({ ...p, connection: "none" }); })} accessibilityRole="button" style={{ minHeight: 40, justifyContent: "center" }}>
                     <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{tt("decline")}</Text>
@@ -156,7 +191,7 @@ export default function TalentProfileScreen() {
                 {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: t.muted }}>{msg}</Text> : null}
 
                 {/* highlights */}
-                {!p.restricted && !p.blocked && (highlights.length || p.mine) ? (
+                {postingOn && !p.restricted && !p.blocked && (highlights.length || p.mine) ? (
                   <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 14, paddingVertical: 4 }}>
                     {p.mine ? (
                       <Pressable onPress={() => setNewHighlight(true)} accessibilityRole="button" accessibilityLabel={tt("newHighlight")} style={{ alignItems: "center", gap: 5, width: 70 }}>
@@ -177,9 +212,12 @@ export default function TalentProfileScreen() {
                   </ScrollView>
                 ) : null}
 
-                {p.mine && posting ? (posting.ok
+                {postingOn && p.mine && posting ? (posting.ok
                   ? <GoldButton title={tt("newClip")} onPress={() => router.push("/talents/record" as Href)} />
                   : <PostingChecklist s={posting} />) : null}
+
+                {/* Sijill: the garden tree as a banner (only when the member shows the tree section) */}
+                {!postingOn && sijill && sijill !== "restricted" && sijill.tree ? <TreeBanner tree={sijill.tree} /> : null}
 
                 {/* tabs */}
                 {p.restricted ? (
@@ -191,14 +229,19 @@ export default function TalentProfileScreen() {
                 ) : !p.blocked ? (
                   <>
                     <View accessibilityRole="tablist" style={{ flexDirection: "row", borderBottomWidth: 1, borderBottomColor: t.line }}>
-                      {([["posts", tt("tabClips")], ...(p.mine ? [["saved", tt("tabSaved")]] : []), ["awards", tt("tabAwards")]] as [Tab, string][]).map(([k, label]) => (
+                      {(postingOn
+                        ? [["posts", tt("tabClips")], ...(p.mine ? [["saved", tt("tabSaved")]] : []), ["awards", tt("tabAwards")]]
+                        : [["sijill", st("tabSijill")], ["moments", st("tabMoments")], ["awards", tt("tabAwards")]]
+                      ).map(([k, label]) => [k as Tab, label] as const).map(([k, label]) => (
                         <Pressable key={k} onPress={() => setTab(k)} accessibilityRole="tab" accessibilityState={{ selected: tab === k }}
                           style={{ flex: 1, minHeight: 44, alignItems: "center", justifyContent: "center", borderBottomWidth: 2, borderBottomColor: tab === k ? goldButton.to : "transparent" }}>
                           <Text style={{ fontFamily: tab === k ? FONT.bold : FONT.semibold, fontSize: 14, color: tab === k ? t.ink : t.muted }}>{label}</Text>
                         </Pressable>
                       ))}
                     </View>
-                    {tab === "posts" ? <Grid posts={posts} src={`user&u=${p.username}&type=post`} empty={p.mine ? tt("noClipsMine") : tt("noClips")} own={p.mine} />
+                    {tab === "sijill" ? (sijill === null ? <Loading /> : sijill === "restricted" ? <Muted>{st("restricted")}</Muted> : <SijillShowcase s={sijill} mine={p.mine} name={p.name} username={p.username} noTree />)
+                      : tab === "moments" ? <MomentsFeed username={p.username} empty={st("nothingYet")} />
+                      : tab === "posts" ? <Grid posts={posts} src={`user&u=${p.username}&type=post`} empty={p.mine ? tt("noClipsMine") : tt("noClips")} own={p.mine} />
                       : tab === "saved" ? <Grid posts={saved} src="saved" empty={tt("noSaved")} />
                       : <Awards p={p} />}
                   </>

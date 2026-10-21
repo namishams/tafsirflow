@@ -617,6 +617,7 @@
     "provider": "none"
   },
   "posting": {
+    "enabled": false,
     "requirePro": false,
     "minReciterLevel": 3,
     "requireVerified": true,
@@ -631,5 +632,10 @@
     "requirePhone": false,
     "goldMinLevel": 6,
     "officialMinSubscribers": 100000
+  },
+  "sijill": {
+    "momentsInFeed": false,
+    "leaderboards": true,
+    "compare": true
   }
 }

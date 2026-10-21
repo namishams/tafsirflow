@@ -3,7 +3,7 @@ import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { badText, sharerTier } from "@/lib/communityProfiles";
 import { CONTENT_VISIBLE, MIN_POST_AGE, NOT_BLOCKED, NO_STORE, para, talentGate } from "@/lib/talents";
-import { LIVE, notify } from "@/lib/talentPosting";
+import { POSTING_OFF, postingEnabled, LIVE, notify } from "@/lib/talentPosting";
 import { displayBadge } from "@/lib/talentBadges";
 
 export const dynamic = "force-dynamic";
@@ -18,6 +18,7 @@ async function livePost(meId: number, id: string) {
 }
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  if (!postingEnabled()) return json({ comments: [], more: null, disabled: true }, 200, NO_STORE); // posting is switched off (config.json)
   const g = await talentGate(req, "comments", 120);
   if (g.res) return g.res;
   const post = await livePost(g.me.id, (await params).id);
@@ -43,6 +44,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
 }
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  if (!postingEnabled()) return json(POSTING_OFF, 403, NO_STORE); // posting is switched off (config.json)
   const g = await talentGate(req, "comment", 20, { write: true, minAge: MIN_POST_AGE, needProfile: true });
   if (g.res) return g.res;
   const post = await livePost(g.me.id, (await params).id);

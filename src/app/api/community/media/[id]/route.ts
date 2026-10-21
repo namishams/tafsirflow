@@ -4,6 +4,7 @@ import { pool } from "@/lib/db";
 import { json, rateLimited } from "@/lib/http";
 import { ageOf, MIN_VIEW_AGE } from "@/lib/talents";
 import { streamMedia } from "@/lib/media";
+import { postingEnabled } from "@/lib/talentPosting";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +31,8 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
   const own = Number(x.author_id) === me.id;
   const live = x.status === "approved" && !x.deleted_at && (!x.expires_at || new Date(x.expires_at).getTime() > Date.now() || x.highlighted);
   const viewer = me.emailVerified && (ageOf(me.birthYear) ?? 0) >= MIN_VIEW_AGE && !x.blocked && x.visible;
+  // posting switched off (config.json): only the author and admins still reach a file
+  if (!own && me.role !== "admin" && !postingEnabled()) return json({ error: "not_found" }, 404);
   if (!own && me.role !== "admin" && !(live && viewer)) return json({ error: "not_found" }, 404);
   return streamMedia(req, x.media_path, x.media_mime || "application/octet-stream");
 }

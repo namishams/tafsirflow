@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FlatList, Modal, Pressable, RefreshControl, ScrollView, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { Icon } from "@/components/icons";
@@ -36,6 +36,11 @@ import { countShare } from "./useLike";
 import { useFeedText } from "./texts";
 import { VerseShareCard } from "./VerseShareCard";
 import { ReciterSheet, useFeedAudioGuard, useFeedVoice } from "./voice";
+import { ClipPlayer } from "@/features/talents/Player";
+import { T } from "@/features/talents/api";
+import { useTT } from "@/features/talents/text";
+import { useSijillFlags } from "@/features/sijill/config";
+import { useST } from "@/features/sijill/text";
 
 // The Quran Feed: an endless, full-screen vertical feed like Instagram Reels. Discover ("For you") mixes verses with
 // word-of-the-verse cards, names of Allah and story cards (prophet, reciters, Islam then and now, tips, secrets);
@@ -66,6 +71,13 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
   const quota = useStoryQuota();
 
   const startS = Math.min(114, Math.max(1, Number(params.s) || 1));
+  // Quran Talents: approved recitation clips of verified members as a separate reels stream
+  const [talents, setTalents] = useState(false);
+  const ttal = useTT();
+  // Sijill (owner decision 21.10.2026): the clip stream only while posting is on; friends' achievements when configured
+  const sflags = useSijillFlags();
+  const postingOn = sflags.posting;
+  const sst = useST();
   const [mode, setMode] = useState<FeedMode>(params.mode === "surah" || params.s ? "surah" : params.mode === "hadith" && HADITH_AVAILABLE ? "hadith" : "discover");
   const [autoplay, setAutoplay] = useState(() => readJSON<boolean>(AUTO_KEY, true));
   const [cat, setCat] = useState<FeedCat>(FEED_CATS.includes(params.cat as FeedCat) ? (params.cat as FeedCat) : "foryou");
@@ -209,7 +221,7 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
 
   const toggleAuto = () => { const a = !autoplay; setAutoplay(a); writeJSON(AUTO_KEY, a, true); };
   const toggleMute = () => { const m = !muted; setMuted(m); writeJSON(MUTE_KEY, m, true); if (m) engine.pause(); };
-  const switchMode = (m: FeedMode) => { if (m === mode) { if (m === "surah") setPicker(true); return; } engine.stop(); setMode(m); };
+  const switchMode = (m: FeedMode) => { if (talents) { setTalents(false); if (m === mode) return; } if (m === mode) { if (m === "surah") setPicker(true); return; } engine.stop(); setMode(m); };
   const pickSurah = (s: number) => { setPicker(false); engine.stop(); setSurah(s); setMode("surah"); };
   const pickCat = (c: FeedCat) => { if (c === cat) return; engine.stop(); setCat(c); };
   const later = useCallback(() => {
@@ -316,7 +328,9 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
       if (h !== pageH) { initialIndex.current = activeRef.current; setPageH(h); }
     }}>
       <StatusBar style="light" />
-      {pageH > 0 && keys.length ? (
+      {talents && postingOn ? (
+        <ClipPlayer load={(c) => T.reels(c)} bottomSpace={bottomSpace} emptyText={ttal("noClipsFeed")} />
+      ) : pageH > 0 && keys.length ? (
         <FlatList
           ref={list}
           key={`${mode}-${cat}-${surah}-${lang}-${pageH}`}
@@ -355,15 +369,17 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
         <View pointerEvents="box-none" style={{ paddingHorizontal: 12, flexDirection: "row", alignItems: "center", gap: 10 }}>
           <RoundButton label={onHome ? tx.home : tx.close} onPress={() => { engine.stop(); if (onHome) onHome(); else goBack(); }}><Icon name="chevronLeft" color="#fff" size={22} /></RoundButton>
           <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", gap: 6 }}>
-            <Pill label={pt.catForYou} selected={mode === "discover"} onPress={() => switchMode("discover")} />
-            <Pill label={mode === "surah" ? nameOf(activeSurah) : tx.surah} selected={mode === "surah"} onPress={() => switchMode("surah")} hint={tx.chooseSurah} chevron={mode === "surah"} />
-            {HADITH_AVAILABLE ? <Pill label={tx.hadith} selected={mode === "hadith"} onPress={() => switchMode("hadith")} /> : null}
+            <Pill label={pt.catForYou} selected={!talents && mode === "discover"} onPress={() => switchMode("discover")} />
+            <Pill label={mode === "surah" ? nameOf(activeSurah) : tx.surah} selected={!talents && mode === "surah"} onPress={() => switchMode("surah")} hint={tx.chooseSurah} chevron={mode === "surah"} />
+            {HADITH_AVAILABLE ? <Pill label={tx.hadith} selected={!talents && mode === "hadith"} onPress={() => switchMode("hadith")} /> : null}
+            {postingOn ? <Pill label={ttal("feedTab")} selected={talents} onPress={() => { engine.stop(); setTalents(true); }} /> : null}
+            {sflags.momentsInFeed ? <Pill label={sst("tabMoments")} selected={false} onPress={() => { engine.stop(); router.push("/talents/friends" as Href); }} /> : null}
           </View>
           <RoundButton label={tx.reciters} onPress={() => setVoices(true)}><Icon name="radio" color={voice.rotate ? stage.gold : "#fff"} size={20} /></RoundButton>
           <RoundButton label={tx.autoplay} selected={autoplay} onPress={toggleAuto}><Icon name="repeat" color={autoplay ? stage.gold : "rgba(255,255,255,0.6)"} size={20} /></RoundButton>
           <RoundButton label={muted ? tx.unmute : tx.mute} selected={!muted} onPress={toggleMute}><SpeakerIcon muted={muted} color="#fff" /></RoundButton>
         </View>
-        {mode === "discover" ? (
+        {mode === "discover" && !talents ? (
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginTop: 8, flexGrow: 0 }} contentContainerStyle={{ paddingHorizontal: 12, gap: 6 }} accessibilityRole="tablist">
             {FEED_CATS.map((c) => <Chip key={c} label={catLabel[c]} selected={cat === c} onPress={() => pickCat(c)} />)}
           </ScrollView>

@@ -12,9 +12,14 @@ import { fill, talentsText, type TwKey } from "@/lib/talentsWeb";
 import { BadgeIcon } from "@/components/talents/BadgeIcon";
 import TalentActions from "@/components/talents/TalentActions";
 import ClipCard from "@/components/talents/ClipCard";
+import SijillShowcase, { TreeBannerWeb } from "@/components/talents/SijillShowcase";
+import { publicSijill } from "@/lib/sijillPublic";
+import { sijillText } from "@/lib/sijillWeb";
 
 // Public talent profile on the website (same structure as the app profile): avatar, badge, level, stats, bio, follow /
 // message, highlights, recitations, achievements. Only public members aged 16+; badged profiles are indexed.
+// Owner decision 21.10.2026: with posting switched off the profile shows the Sijill (academic record): the garden tree,
+// the sections the member shows, and achievement moments with preset encouragements; clips stay hidden.
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; username: string }> }): Promise<Metadata> {
@@ -32,6 +37,8 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
   const p = await publicProfile(username.toLowerCase());
   if (!p) notFound();
   const tx = talentsText(locale);
+  const sx = sijillText(locale);
+  const sj = p.private ? null : await publicSijill(p.username, locale);
   const nf = new Intl.NumberFormat(locale, { notation: "compact" });
   // verse text from Quran.com (never typed by hand), first verse of each clip
   const texts = await Promise.all(p.clips.slice(0, 24).map((c) => {
@@ -72,10 +79,10 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
                 : <span aria-hidden className="font-callig text-4xl text-[#e8d3a0]">{(p.name.trim().split(/\s+/).slice(0, 2).map((w) => Array.from(w)[0] ?? "").join("") || "?").toUpperCase()}</span>}
             </span>
             <div className="flex flex-1 flex-wrap justify-start gap-4 sm:gap-8">
-              {stat(p.posts, tx.posts)}
+              {p.posting ? stat(p.posts, tx.posts) : stat(sj?.sijill.moments ?? 0, sx.tabMoments)}
               {stat(p.followers, tx.followers, `/talents/${p.username}/followers`)}
               {stat(p.following, tx.following, `/talents/${p.username}/following`)}
-              {stat(p.likes, tx.likes)}
+              {p.posting ? stat(p.likes, tx.likes) : stat(sj?.sijill.reactions ?? 0, sx.statEncouragements)}
             </div>
           </div>
           <h1 className="font-display mt-6 flex flex-wrap items-center gap-2 text-4xl leading-tight sm:text-5xl">
@@ -99,6 +106,12 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
       <div className="mx-auto max-w-4xl px-5 py-10">
         {p.private ? (
           <p className="callout rounded-lg p-6 text-center text-[16px]">{tx.privateText}</p>
+        ) : !p.posting ? (
+          <section aria-labelledby="sijill" className="grid gap-5">
+            {sj?.sijill.tree ? <TreeBannerWeb tree={sj.sijill.tree} locale={locale} /> : null}
+            <h2 id="sijill" className="font-display text-2xl">{sx.sijill} · {sx.title}</h2>
+            {sj ? <SijillShowcase s={sj.sijill} moments={sj.moments} locale={locale} /> : <p className="text-muted">{sx.hiddenAll}</p>}
+          </section>
         ) : (
           <>
             {p.highlights.length ? (

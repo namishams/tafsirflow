@@ -7,13 +7,13 @@ import type { FeedText } from "./texts";
 
 // The collectible stickers, drawn in the app's gold and emerald with react-native-svg: a seal shape, a motif from
 // Islamic ornament and everyday objects (books, lanterns, domes, palms, stars) and the milestone number on a ribbon.
-// No figurative depictions of people and no prophets; every shape is original and geometric.
+// Seals and medallions, not cartoon stickers. No figurative depictions of people and no prophets; every shape is original and geometric.
 
 const TONES: Record<Tone, { bg: [string, string]; rim: string; ink: string; ribbon: string; ribbonInk: string }> = {
   emerald: { bg: ["#1d6b52", "#0b3d2e"], rim: "#c6a65e", ink: "#f3e2b6", ribbon: "#c6a65e", ribbonInk: "#0b3d2e" },
   gold: { bg: ["#e3c98a", "#a07a32"], rim: "#f8ecc8", ink: "#0b3d2e", ribbon: "#0b3d2e", ribbonInk: "#f3e2b6" },
-  night: { bg: ["#3e5a8c", "#1f2b47"], rim: "#c6a65e", ink: "#f3e2b6", ribbon: "#c6a65e", ribbonInk: "#1f2b47" },
-  rare: { bg: ["#7a3e8c", "#2b1f47"], rim: "#f3e2b6", ink: "#f8ecc8", ribbon: "#f3e2b6", ribbonInk: "#2b1f47" },
+  night: { bg: ["#14523f", "#072a20"], rim: "#c6a65e", ink: "#f3e2b6", ribbon: "#c6a65e", ribbonInk: "#1f473b" },
+  rare: { bg: ["#5a4518", "#241a08"], rim: "#f3e2b6", ink: "#f8ecc8", ribbon: "#f3e2b6", ribbonInk: "#473a1f" },
 };
 const LOCKED = { bg: ["#7d8582", "#4a524f"] as [string, string], rim: "#a3aba8", ink: "#d9dedc", ribbon: "#a3aba8", ribbonInk: "#3a413e" };
 
@@ -75,24 +75,37 @@ function MotifArt({ m, c }: { m: Motif; c: string }) {
   }
 }
 
+// a seal struck in gold: a foil rim with an engraved inner line, an enamel field in the tone, the motif embossed
+// (a dark shadow under a gold line) and the milestone on a pointed gold cartouche
+const FOIL = ["#f6e7bf", "#d6b46c", "#a9802f", "#ecd7a2", "#8a6a2c"];
+const FOIL_LOCKED = ["#d9dedc", "#a3aba8", "#7d8582", "#c4cac7", "#6d7572"];
 export const StickerArt = memo(function StickerArt({ def, size = 88, locked = false }: { def: StickerDef; size?: number; locked?: boolean }) {
   const t = locked ? LOCKED : TONES[def.tone];
+  const foil = locked ? FOIL_LOCKED : FOIL;
   const id = `g${def.id}${locked ? "l" : ""}`;
   const label = def.n !== undefined ? String(def.n) : def.fam === "names99" ? "99" : def.fam === "names33" ? "33" : "";
+  const motif = label ? "translate(50 44) scale(0.85) translate(-50 -50)" : undefined;
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100" accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
       <Defs>
         <SvgGrad id={id} x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={t.bg[0]} /><Stop offset="1" stopColor={t.bg[1]} /></SvgGrad>
+        <SvgGrad id={`${id}f`} x1="0" y1="0" x2="1" y2="1">{foil.map((c, i) => <Stop key={c} offset={i / (foil.length - 1)} stopColor={c} />)}</SvgGrad>
       </Defs>
-      <Path d={SHAPES[def.shape]} fill={t.rim} />
-      <Path d={SHAPES[def.shape]} fill={`url(#${id})`} transform="translate(50 50) scale(0.93) translate(-50 -50)" />
-      <Path d={INNER[def.shape]} fill="none" stroke={t.rim} strokeWidth={1.2} strokeDasharray="2 3" opacity={0.8} />
-      <G transform={label ? "translate(50 44) scale(0.85) translate(-50 -50)" : undefined}><MotifArt m={def.motif} c={t.ink} /></G>
-      {def.rare && !locked ? [[20, 22], [80, 26], [78, 76], [24, 74]].map(([x, y]) => <Path key={`${x}`} d={star(x, y, 4, 1.4, 4)} fill={t.rim} />) : null}
+      <Path d={SHAPES[def.shape]} fill={`url(#${id}f)`} />
+      <Path d={SHAPES[def.shape]} fill="none" stroke="#5c4519" strokeOpacity={0.45} strokeWidth={0.6} transform="translate(50 50) scale(0.955) translate(-50 -50)" />
+      <Path d={SHAPES[def.shape]} fill={`url(#${id})`} transform="translate(50 50) scale(0.91) translate(-50 -50)" />
+      <Path d={INNER[def.shape]} fill="none" stroke={`url(#${id}f)`} strokeWidth={0.8} opacity={0.75} />
+      <G transform={motif}>
+        <G transform="translate(0.8 1.1)" opacity={0.35}><MotifArt m={def.motif} c="#000" /></G>
+        <MotifArt m={def.motif} c={t.ink} />
+      </G>
+      {def.rare && !locked ? [[50, 9], [91, 50], [50, 91], [9, 50]].map(([x, y]) => <Path key={`${x}-${y}`} d={star(x, y, 3.2, 1.1, 4)} fill="#fff6dc" opacity={0.9} />) : null}
+      <Path d="M22 34a32 32 0 0 1 30-18" stroke="#fff" strokeOpacity={0.18} strokeWidth={2} fill="none" strokeLinecap="round" />
       {label ? (
         <G>
-          <Rect x={30} y={70} width={40} height={15} rx={7.5} fill={t.ribbon} />
-          <SvgText x={50} y={81.5} fontSize={label.length > 3 ? 10 : 12} fontWeight="700" fill={t.ribbonInk} textAnchor="middle">{label}</SvgText>
+          <Path d="M30,77.5L35,70H65L70,77.5L65,85H35Z" fill={`url(#${id}f)`} />
+          <Path d="M32.5,77.5L36.2,72H63.8L67.5,77.5L63.8,83H36.2Z" fill="none" stroke="#5c4519" strokeOpacity={0.5} strokeWidth={0.5} />
+          <SvgText x={50} y={81.6} fontSize={label.length > 3 ? 9.5 : 11} fontWeight="700" letterSpacing={0.6} fill={locked ? "#3a413e" : "#3d2a0b"} textAnchor="middle">{label}</SvgText>
         </G>
       ) : null}
     </Svg>

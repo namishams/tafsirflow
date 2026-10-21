@@ -1,17 +1,17 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Animated, AppState, Easing, FlatList, Linking, Modal, Platform, Pressable, RefreshControl, ScrollView, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
+import { Animated, AppState, Easing, FlatList, Linking, Modal, Platform, Pressable, RefreshControl, ScrollView, StyleSheet, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "expo-blur";
 import { router, useNavigation, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { Icon, type IconName } from "@/components/icons";
-import { LogoMark } from "@/components/brand";
+import { Wordmark } from "@/components/brand";
 import { goBack } from "@/components/page";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { SITE } from "@/lib/api";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, GOLD_RING, R, stage, useTheme } from "@/lib/theme";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { getChapters, reciterName, type Chapter, type Reciter } from "@/lib/quran";
 import { VerseEngine } from "@/features/quran/useVerseAudio";
@@ -55,6 +55,7 @@ import { AccountNudge, PromoCap, PromoPost, nudgeAccount } from "./Promo";
 import { MomentCard, MonetizeCap, OfferWrap, PaywallCard, PremiumPost, markShareMoment, usePurchaseAttribution } from "./monetize";
 import { dwell, engaged, isBored } from "./interest";
 import { LibraryPost, topicLabel as libTopicLabel } from "./LibraryPost";
+import { GoldFrame, Rule } from "./ornament";
 
 // The Instagram home-feed view of /feed: logo bar, a stories rail, then one post after the other. A post is a square
 // card (the verse or story drawn like the share image) with a slow Ken Burns zoom; the recitation of the post that is
@@ -478,7 +479,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     ...(Object.fromEntries((remote?.topicChipGroups ?? []).filter((g) => g.label && (TOPICS as string[]).includes(g.id)).map((g) => [g.id, g.label])) as Partial<Record<Topic, string>>) };
   const showUpdate = updateAvailable(remote) && !updateHidden;
   const header = (
-    <View style={{ paddingTop: 8, paddingBottom: 10, borderBottomWidth: 1, borderBottomColor: t.line, marginBottom: 6 }}>
+    <View style={{ paddingTop: 8, paddingBottom: 12, marginBottom: 6 }}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 14, paddingHorizontal: 14, paddingVertical: 4 }} accessibilityLabel={tx.stories}>
         <TodayRings onVerse={(it) => openItem(it)} />
         {groups.length ? groups.map((g, i) => <Bubble key={g.id} g={g} fresh={g.stories.some((s) => !seen.includes(s.id))} onPress={() => setViewer({ group: i, story: 0 })} />)
@@ -489,8 +490,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
           const on = topic === k;
           return (
             <Pressable key={k} onPress={() => { if (on) toTop(); else { tick(); setTopic(k); } }} accessibilityRole="tab" accessibilityState={{ selected: on }}
-              style={{ height: 32, paddingHorizontal: 14, justifyContent: "center", borderRadius: R.pill, backgroundColor: on ? t.ink : "transparent", borderWidth: 1, borderColor: on ? t.ink : t.line }}>
-              <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13, color: on ? t.bg : t.ink }}>{topicLabel[k]}</Text>
+              style={{ height: 32, paddingHorizontal: 15, justifyContent: "center", borderRadius: R.pill, backgroundColor: on ? stage.bg : "transparent", borderWidth: on ? 1 : StyleSheet.hairlineWidth, borderColor: on ? stage.gold : t.dark ? t.line : "rgba(150,116,52,0.35)" }}>
+              <Text numberOfLines={1} style={{ fontFamily: on ? FONT.semibold : FONT.medium, fontSize: 13, letterSpacing: 0.2, color: on ? stage.cream : t.ink }}>{topicLabel[k]}</Text>
             </Pressable>
           );
         })}
@@ -517,7 +518,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       )}
       {freshCount > 0 ? (
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8, paddingHorizontal: 14, paddingTop: 12 }}>
-          <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: t.accent }} />
+          <View style={{ width: 7, height: 7, transform: [{ rotate: "45deg" }], backgroundColor: t.gold }} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.ink }}>{tx.newForYou}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{Intl.NumberFormat(lang).format(freshCount)}</Text>
         </View>
@@ -556,11 +557,13 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={refresh} progressViewOffset={headerH} tintColor={t.accent} colors={[t.accent]} accessibilityLabel={tx.refresh} />}
       />
 
-      <Animated.View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: 0, paddingTop: insets.top, backgroundColor: t.bg, borderBottomWidth: 1, borderBottomColor: t.line, transform: [{ translateY: barY }] }}>
+      <Animated.View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: 0, paddingTop: insets.top, overflow: "hidden", backgroundColor: reduce || Platform.OS === "android" ? t.bg : t.dark ? "rgba(7,22,17,0.62)" : "rgba(245,247,246,0.7)", borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.dark ? "rgba(214,180,108,0.35)" : "rgba(150,116,52,0.35)", transform: [{ translateY: barY }] }}>
+        {/* frosted glass under the bar (a solid canvas with Reduce Motion / on Android) */}
+        {reduce || Platform.OS === "android" ? null : <BlurView pointerEvents="none" intensity={50} tint={t.dark ? "dark" : "light"} style={StyleSheet.absoluteFill} />}
         <View style={{ height: BAR_H, flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 14 }}>
           <Pressable onPress={toTop} accessibilityRole="button" accessibilityLabel="Quran Masterclass" style={{ flexDirection: "row", alignItems: "center", gap: 9, flexShrink: 1 }}>
-            <LogoMark size={30} />
-            <Text numberOfLines={1} style={{ fontFamily: FONT.display, fontSize: 21, color: t.ink, flexShrink: 1 }}>Quran Masterclass<Text style={{ color: t.accent }}> {tx.feedButton}</Text></Text>
+            <Wordmark variant="stacked" height={32} />
+            <Text numberOfLines={1} style={{ fontFamily: FONT.medium, fontSize: 17, letterSpacing: -0.2, color: t.gold, flexShrink: 1 }}>{tx.feedButton}</Text>
           </Pressable>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <HeadBtn label={tx.explore} onPress={() => setSheet("explore")}><Icon name="compass" color={t.ink} size={23} /></HeadBtn>
@@ -574,8 +577,13 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
           {(["home", "reels"] as const).map((k) => {
             const on = tab === k;
             return (
-              <Pressable key={k} onPress={() => (on ? toTop() : onTab(k))} accessibilityRole="tab" accessibilityState={{ selected: on }} style={{ flex: 1, alignItems: "center", justifyContent: "center", borderBottomWidth: 2, borderBottomColor: on ? t.ink : "transparent" }}>
-                <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: on ? t.ink : t.muted }}>{k === "home" ? tx.home : tx.reels}</Text>
+              <Pressable key={k} onPress={() => (on ? toTop() : onTab(k))} accessibilityRole="tab" accessibilityState={{ selected: on }} style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+                <Text style={{ fontFamily: on ? FONT.semibold : FONT.medium, fontSize: 14, letterSpacing: 0.3, color: on ? t.ink : t.muted }}>{k === "home" ? tx.home : tx.reels}</Text>
+                {/* the selected view: a fine gold rule with a small lozenge, like a mushaf divider */}
+                {on ? <View style={{ position: "absolute", bottom: 0, alignItems: "center", justifyContent: "center", width: 64, height: 7 }}>
+                  <LinearGradient colors={["rgba(214,180,108,0)", "rgb(201,166,94)", "rgba(214,180,108,0)"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ position: "absolute", left: 0, right: 0, height: 1.5 }} />
+                  <View style={{ width: 5, height: 5, transform: [{ rotate: "45deg" }], backgroundColor: "rgb(201,166,94)" }} />
+                </View> : null}
               </Pressable>
             );
           })}
@@ -587,9 +595,9 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       {newPill ? (
         <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: headerH + 10, alignItems: "center" }}>
           <Pressable onPress={takeNew} accessibilityRole="button" accessibilityLabel={tx.newPosts}
-            style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 6, height: 36, paddingHorizontal: 16, borderRadius: R.pill, backgroundColor: t.accent, opacity: pressed ? 0.85 : 1 })}>
-            <View style={{ transform: [{ rotate: "180deg" }] }}><Icon name="chevronDown" color={t.onAccent} size={14} /></View>
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.onAccent }}>{tx.newPosts}</Text>
+            style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 6, height: 36, paddingHorizontal: 18, borderRadius: R.pill, backgroundColor: stage.bg, borderWidth: 1, borderColor: stage.gold, opacity: pressed ? 0.85 : 1, shadowColor: "#000", shadowOpacity: 0.18, shadowRadius: 10, shadowOffset: { width: 0, height: 4 } })}>
+            <View style={{ transform: [{ rotate: "180deg" }] }}><Icon name="chevronDown" color={stage.gold} size={14} /></View>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, letterSpacing: 0.3, color: stage.cream }}>{tx.newPosts}</Text>
           </Pressable>
         </View>
       ) : null}
@@ -620,14 +628,14 @@ const Bubble = memo(function Bubble({ g, fresh, onPress }: { g: StoryGroup; fres
   const t = useTheme();
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${g.title}, ${g.stories.length}${fresh ? "" : ""}`} style={{ width: 78, alignItems: "center", gap: 5 }}>
-      <LinearGradient colors={fresh ? ["#f3e2b6", "#c6a65e", "#8a6a2c"] : [t.line, t.line]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={{ width: 72, height: 72, borderRadius: 36, padding: 2.5 }}>
-        <View style={{ flex: 1, borderRadius: 34, padding: 2, backgroundColor: t.bg }}>
-          <LinearGradient colors={toneOf(g.id)} style={{ flex: 1, borderRadius: 32, alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+      <LinearGradient colors={fresh ? ["#f6e7bf", "#d6b46c", "#8a6a2c", "#e9cf99"] : [t.line, t.line]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={{ width: 72, height: 72, borderRadius: 36, padding: 2 }}>
+        <View style={{ flex: 1, borderRadius: 34, padding: 2.5, backgroundColor: t.bg }}>
+          <LinearGradient colors={toneOf(g.id)} start={{ x: 0.2, y: 0 }} end={{ x: 0.8, y: 1 }} style={{ flex: 1, borderRadius: 32, alignItems: "center", justifyContent: "center", overflow: "hidden", borderWidth: StyleSheet.hairlineWidth, borderColor: "rgba(214,180,108,0.55)" }}>
             <Text allowFontScaling={false} numberOfLines={1} adjustsFontSizeToFit style={{ fontFamily: CALLIG_FONT, fontSize: 20, lineHeight: 40, color: "rgb(233,207,153)", paddingHorizontal: 6 }}>{g.arabic}</Text>
           </LinearGradient>
         </View>
       </LinearGradient>
-      <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 11.5, color: fresh ? t.ink : t.muted, maxWidth: 76 }}>{g.title}</Text>
+      <Text numberOfLines={1} style={{ fontFamily: FONT.medium, fontSize: 11, letterSpacing: 0.2, color: fresh ? t.ink : t.muted, maxWidth: 76 }}>{g.title}</Text>
     </Pressable>
   );
 });
@@ -716,7 +724,7 @@ const Post = memo(function Post(p: PostProps) {
   const saved = verseKey ? marks.includes(verseKey) : hadith ? hSaves.some((x) => x.id === hadith.item.id) : saves.includes(storyId);
   const pop = useRef(new Animated.Value(1)).current;
   const popSave = useRef(new Animated.Value(1)).current;
-  const bump = (v: Animated.Value) => { if (!p.reduce) Animated.sequence([Animated.timing(v, { toValue: 1.3, duration: 110, useNativeDriver: true }), Animated.spring(v, { toValue: 1, friction: 4, useNativeDriver: true })]).start(); };
+  const bump = (v: Animated.Value) => { if (!p.reduce) Animated.sequence([Animated.timing(v, { toValue: 1.12, duration: 140, easing: Easing.out(Easing.quad), useNativeDriver: true }), Animated.timing(v, { toValue: 1, duration: 220, easing: Easing.inOut(Easing.quad), useNativeDriver: true })]).start(); };
   const doLike = () => { tick(); if (!liked) bump(pop); if (verseKey) void like.toggle(); else { if (!liked) statLike(); toggleLocalLike(); } if (!liked) engaged(kindOfItem(p.item), "like"); };
   const doSave = () => {
     tick(); bump(popSave);
@@ -782,7 +790,7 @@ const Post = memo(function Post(p: PostProps) {
     <View style={{ width: W, alignSelf: "center", paddingBottom: 14 }}>
       {/* header */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 12, height: 56 }}>
-        <LinearGradient colors={["#f3e2b6", "#c6a65e", "#8a6a2c"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={{ width: 38, height: 38, borderRadius: 19, padding: 2 }} accessibilityElementsHidden>
+        <LinearGradient colors={[...GOLD_RING]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={{ width: 38, height: 38, borderRadius: 19, padding: 1.5 }} accessibilityElementsHidden>
           <View style={{ flex: 1, borderRadius: 17, padding: 1.5, backgroundColor: t.bg }}>
             <LinearGradient colors={tone} style={{ flex: 1, borderRadius: 16, alignItems: "center", justifyContent: "center" }}>
               {initials ? <Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: 11.5, color: "rgb(233,207,153)" }}>{initials}</Text> : <Icon name={icon} color="rgb(233,207,153)" size={17} />}
@@ -790,8 +798,8 @@ const Post = memo(function Post(p: PostProps) {
           </View>
         </LinearGradient>
         <View style={{ flex: 1 }}>
-          <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{account}</Text>
-          {sub ? <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{sub}</Text> : null}
+          <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 14, letterSpacing: -0.1, color: t.ink }}>{account}</Text>
+          {sub ? <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 11.5, letterSpacing: 0.2, color: t.muted }}>{sub}</Text> : null}
         </View>
         {verseKey ? <LearnLink href={`/shams/${surahNo}?v=${verseKey.split(":")[1]}`} label={tx.learnThis} />
           : story ? <LearnLink href={story.href} label={tx.learnThis} />
@@ -806,10 +814,11 @@ const Post = memo(function Post(p: PostProps) {
         <Pressable {...gestures} accessible accessibilityRole="image" accessibilityLabel={label} accessibilityHint={verseKey ? tx.hint : undefined} style={{ flex: 1 }}>
           <Animated.View style={{ flex: 1, transform: p.reduce ? undefined : [{ scale: zoom.interpolate({ inputRange: [0, 1], outputRange: [1, 1.08] }) }, { translateX: zoom.interpolate({ inputRange: [0, 1], outputRange: [0, -6 * k] }) }] }}>
             <FeedBackdrop tone={media.tone} width={W} height={W} still />
-            <View style={{ flex: 1, paddingHorizontal: 24 * k, paddingTop: 22 * k, paddingBottom: 16 * k, justifyContent: "space-between" }}>
-              <View style={{ alignItems: "center", gap: 6 }}>
-                <View style={{ width: 40, height: 1, backgroundColor: stage.goldSoft }} />
-                <Text allowFontScaling={false} numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 11 * k, letterSpacing: 2, textTransform: "uppercase", color: stage.gold }}>{media.label}</Text>
+            <GoldFrame inset={10 * k} />
+            <View style={{ flex: 1, paddingHorizontal: 28 * k, paddingTop: 26 * k, paddingBottom: 20 * k, justifyContent: "space-between" }}>
+              <View style={{ alignItems: "center", gap: 7 }}>
+                <Rule width={64 * k} />
+                <Text allowFontScaling={false} numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 10.5 * k, letterSpacing: 2.4, textTransform: "uppercase", color: stage.gold }}>{media.label}</Text>
               </View>
               <View style={{ gap: 12 * k }}>
                 {media.arabic ? (
@@ -818,7 +827,7 @@ const Post = memo(function Post(p: PostProps) {
                 ) : !media.big ? <Text style={{ alignSelf: "center", fontFamily: FONT.regular, fontSize: 13, color: stage.textMuted }}>{tx.loading}</Text> : null}
                 {media.body ? (
                   <Text allowFontScaling={false} numberOfLines={media.big ? 6 : (media.arabic?.length ?? 0) > 320 ? 2 : 5}
-                    style={{ fontFamily: FONT.regular, fontSize: (media.big ? 14 : 13.5) * k, lineHeight: (media.big ? 14 : 13.5) * k * 1.5, color: "rgba(255,255,255,0.86)", textAlign: "center" }}>{media.body}</Text>
+                    style={{ fontFamily: FONT.regular, fontSize: (media.big ? 14 : 13.5) * k, lineHeight: (media.big ? 14 : 13.5) * k * 1.55, letterSpacing: 0.1, color: "rgba(243,226,182,0.88)", textAlign: "center" }}>{media.body}</Text>
                 ) : null}
               </View>
               <BrandFoot />
@@ -828,8 +837,8 @@ const Post = memo(function Post(p: PostProps) {
         </Pressable>
         {verseKey ? (
           <Pressable onPress={p.onMute} accessibilityRole="button" accessibilityLabel={p.muted ? tx.unmute : tx.mute} accessibilityState={{ selected: !p.muted }} hitSlop={8}
-            style={{ position: "absolute", end: 10, bottom: 10, width: 32, height: 32, borderRadius: 16, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(0,0,0,0.55)" }}>
-            <SpeakerIcon muted={p.muted} color="#fff" size={17} />
+            style={{ position: "absolute", end: 16, bottom: 16, width: 32, height: 32, borderRadius: 16, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(5,28,21,0.7)", borderWidth: StyleSheet.hairlineWidth, borderColor: stage.goldSoft }}>
+            <SpeakerIcon muted={p.muted} color={stage.cream} size={16} />
           </Pressable>
         ) : null}
       </View>
@@ -851,8 +860,9 @@ const Post = memo(function Post(p: PostProps) {
         </Text>
         {long && !open ? <Pressable onPress={() => setOpen(true)} accessibilityRole="button" hitSlop={6}><Text style={{ fontFamily: FONT.regular, fontSize: 13.5, color: t.muted }}>{tx.moreCaption}</Text></Pressable> : null}
         {verseKey ? <Pressable onPress={() => p.onComments(verseKey)} accessibilityRole="button" hitSlop={6}><Text style={{ fontFamily: FONT.regular, fontSize: 13.5, color: t.muted }}>{tx.viewComments}</Text></Pressable> : null}
-        <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 10.5, letterSpacing: 0.8, textTransform: "uppercase", color: t.muted, marginTop: 2 }}>{when}</Text>
+        <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 10, letterSpacing: 1.4, textTransform: "uppercase", color: t.gold, marginTop: 3 }}>{when}</Text>
       </View>
+      <View style={{ alignItems: "center", marginTop: 16 }}><Rule width={W * 0.42} color={t.dark ? "rgba(214,180,108,0.4)" : "rgba(150,116,52,0.35)"} /></View>
     </View>
   );
 });
@@ -897,12 +907,12 @@ function PostMenu({ item, onClose, stories, onShare, onVoices }: { item: Item | 
   return (
     <Modal visible={!!item && rows.length > 0} transparent animationType="slide" onRequestClose={onClose}>
       <Pressable style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.45)", justifyContent: "flex-end" }} onPress={onClose} accessibilityLabel={tx.close} accessibilityRole="button">
-        <View style={{ backgroundColor: t.surface, borderTopLeftRadius: 18, borderTopRightRadius: 18, paddingBottom: insets.bottom + 8, paddingTop: 10 }}>
+        <View style={{ backgroundColor: t.surface, borderTopLeftRadius: 18, borderTopRightRadius: 18, paddingBottom: insets.bottom + 8, paddingTop: 10, borderTopWidth: StyleSheet.hairlineWidth, borderColor: t.dark ? "rgba(214,180,108,0.35)" : "rgba(150,116,52,0.3)" }}>
           <View style={{ alignSelf: "center", width: 36, height: 4, borderRadius: 2, backgroundColor: t.line, marginBottom: 8 }} />
           {rows.map((r) => (
             <Pressable key={r.label} onPress={r.onPress} accessibilityRole="button" style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 14, paddingHorizontal: 20, height: 52, backgroundColor: pressed ? t.accentSoft : "transparent" })}>
-              <Icon name={r.icon} color={t.ink} size={22} />
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, color: t.ink }}>{r.label}</Text>
+              <Icon name={r.icon} color={t.gold} size={21} />
+              <Text style={{ fontFamily: FONT.medium, fontSize: 15.5, color: t.ink }}>{r.label}</Text>
             </Pressable>
           ))}
           <Pressable onPress={onClose} accessibilityRole="button" style={{ height: 52, alignItems: "center", justifyContent: "center", borderTopWidth: 1, borderTopColor: t.line, marginTop: 4 }}>

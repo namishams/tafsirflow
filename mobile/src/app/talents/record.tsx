@@ -16,6 +16,7 @@ import { T, upload, type PostingStatus } from "@/features/talents/api";
 import { useTT } from "@/features/talents/text";
 import { AccessGate, SafetyBar, useTalentAccess, useTalentErr } from "@/features/talents/ui";
 import { PostingChecklist } from "@/features/talents/Checklist";
+import { useST } from "@/features/sijill/text";
 import { ClipVisual, useKeyVerses } from "@/features/talents/ClipVisual";
 import { PASS, useWordCheck } from "@/features/talents/wordcheck";
 
@@ -25,6 +26,7 @@ import { PASS, useWordCheck } from "@/features/talents/wordcheck";
 type Step = "verse" | "check" | "record" | "preview" | "sent";
 export default function RecordClip() {
   const t = useTheme();
+  const st = useST(); // posting switched off (config): the screen only says so
   const tt = useTT();
   const err = useTalentErr();
   const { lang } = useLang();
@@ -73,7 +75,9 @@ export default function RecordClip() {
         <PageHero back arcade={false} eyebrow={tt("network")} title={tt("newClip")} lead={tt("recordLead")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 16 }}>
-            {!status ? (msg ? <FormError text={msg} /> : <Loading />) : !status.ok ? (
+            {status && status.enabled === false ? (
+              <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.muted }}>{st("postingOff")}</Text>
+            ) : !status ? (msg ? <FormError text={msg} /> : <Loading />) : !status.ok ? (
               <PostingChecklist s={status} />
             ) : step === "sent" ? (
               <View style={{ gap: 14 }}>

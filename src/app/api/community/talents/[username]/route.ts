@@ -4,6 +4,7 @@ import { json } from "@/lib/http";
 import { shape } from "@/lib/communityProfiles";
 import { MIN_POST_AGE, NO_STORE, PROFILE_COLS, ageOf, birthYearOf, talentGate } from "@/lib/talents";
 import { refreshBadges } from "@/lib/talentBadges";
+import { postingEnabled } from "@/lib/talentPosting";
 
 export const dynamic = "force-dynamic";
 
@@ -62,7 +63,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ user
       ...s, followed, mine, blocked: iBlocked, connection, canMessage,
       ...(badges ? { badges } : {}),
       requested, restricted: !mine && !!c.private && !followed,
-      posts: Number(st.posts), likes: Number(st.likes), liveStory: !!story.live, reciterLevel: mine ? Number(c.reciter_level ?? 0) : undefined,
+      posts: Number(st.posts), likes: Number(st.likes), liveStory: postingEnabled() && !!story.live, postingEnabled: postingEnabled(), reciterLevel: mine ? Number(c.reciter_level ?? 0) : undefined,
       // the member's own view also shows the progress setting when it is off
       progress: s.progress ?? (mine ? { treeStage: 0, treeType: "", certJuz: [], hidden: true } : null),
     },

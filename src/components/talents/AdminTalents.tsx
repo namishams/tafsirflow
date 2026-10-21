@@ -28,7 +28,7 @@ async function api<T>(url: string, body?: unknown, method?: string): Promise<T> 
   return d as T;
 }
 
-export default function AdminTalents({ locale }: { locale: string }) {
+export default function AdminTalents({ locale, posting = true }: { locale: string; /** clip moderation only while posting is switched on */ posting?: boolean }) {
   const t = locale === "de" ? DE : EN;
   const [tab, setTab] = useState<Tab>("reports");
   const [forbidden, setForbidden] = useState(false);
@@ -42,7 +42,7 @@ export default function AdminTalents({ locale }: { locale: string }) {
   return (
     <div className="mt-6">
       <div role="tablist" className="flex flex-wrap gap-2">
-        {(["reports", "posts", "members", "invites", "verify"] as Tab[]).map((k) => (
+        {(["reports", "posts", "members", "invites", "verify"] as Tab[]).filter((k) => posting || k !== "posts").map((k) => (
           <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={`h-10 rounded-full px-4 text-sm font-semibold ${tab === k ? "btn-gold" : "border border-line"}`}>{t[k]}</button>
         ))}
       </div>

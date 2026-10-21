@@ -31,6 +31,10 @@ export type FeedConfig = {
   flags: Record<string, boolean>;
   announcements: { id: string; title: string; image?: string; deeplink?: string; startsAt: string; endsAt: string }[];
   monetize?: FeedMonetize;
+  /** Quran Talents posting rules (see the website's FeedPosting) */
+  posting?: { enabled?: boolean; requirePro?: boolean; minReciterLevel?: number; requireVerified?: boolean; minAge?: number; minSeconds?: number; maxSeconds?: number; storyHours?: number; postsPerDay?: number };
+  /** Sijill switches (features/sijill/config.ts) */
+  sijill?: { momentsInFeed?: boolean; leaderboards?: boolean; compare?: boolean };
   /** placeholder slots for future ad posts (adSlots.tsx); missing = off */
   adSlots?: { enabled?: boolean; everyNItems?: number; firstAfter?: number; maxPerSession?: number; provider?: string };
 };

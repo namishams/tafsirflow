@@ -3,7 +3,7 @@ import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { sharerTier } from "@/lib/communityProfiles";
 import { CONTENT_VISIBLE, NOT_BLOCKED, NO_STORE, talentGate } from "@/lib/talents";
-import { POST_COLS, VIEWER_COLS, cleanupMedia, postJson, type PostRow } from "@/lib/talentPosting";
+import { postingEnabled, POST_COLS, VIEWER_COLS, cleanupMedia, postJson, type PostRow } from "@/lib/talentPosting";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +11,7 @@ export const dynamic = "force-dynamic";
 // stories (24 h) first. Paged with offset `cursor`.
 const PAGE = 15;
 export async function GET(req: NextRequest) {
+  if (!postingEnabled()) return json({ posts: [], next: null, disabled: true }, 200, NO_STORE); // posting is switched off (config.json)
   const g = await talentGate(req, "reels", 90);
   if (g.res) return g.res;
   void cleanupMedia();

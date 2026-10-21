@@ -5,7 +5,9 @@ import { BlurView } from "expo-blur";
 import * as WebBrowser from "expo-web-browser";
 import { router, type Href } from "expo-router";
 import { Icon, type IconName } from "@/components/icons";
-import { FONT, R, stage, useTheme } from "@/lib/theme";
+import { FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
+import { StarLattice } from "@/components/brand";
+import { GoldFrame, Medallion, Rule } from "./ornament";
 import { SITE } from "@/lib/api";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
@@ -216,10 +218,10 @@ function ContextLine({ c, width }: { c: Ctx; width: number }) {
 
 // ---------- Pro-only posts ----------
 const PREMIUM: Record<string, { icon: IconName; title: (x: FeedText) => string; body: (x: FeedText) => string; href: string; tone: [string, string] }> = {
-  "tafsir-deep": { icon: "book", title: (x) => x.premiumTafsir, body: (x) => x.premiumTafsirBody, href: "/shams", tone: ["#0b2f3d", "#1d5a6b"] },
-  "all-reciters": { icon: "radio", title: (x) => x.premiumReciters, body: (x) => x.premiumRecitersBody, href: "/reciters", tone: ["#2b1f47", "#5a3e8c"] },
-  "root-deep": { icon: "cap", title: (x) => x.premiumRoot, body: (x) => x.premiumRootBody, href: "/vocab", tone: ["#3d2a0b", "#8c6a1d"] },
-  stories: { icon: "moon", title: (x) => x.premiumStories, body: (x) => x.premiumStoriesBody, href: "/prophet-stories", tone: ["#0b3d2e", "#1d6b52"] },
+  "tafsir-deep": { icon: "book", title: (x) => x.premiumTafsir, body: (x) => x.premiumTafsirBody, href: "/shams", tone: ["#0c4a37", "#06221a"] },
+  "all-reciters": { icon: "radio", title: (x) => x.premiumReciters, body: (x) => x.premiumRecitersBody, href: "/reciters", tone: ["#0f3f3a", "#061c19"] },
+  "root-deep": { icon: "cap", title: (x) => x.premiumRoot, body: (x) => x.premiumRootBody, href: "/vocab", tone: ["#13392b", "#071a13"] },
+  stories: { icon: "moon", title: (x) => x.premiumStories, body: (x) => x.premiumStoriesBody, href: "/prophet-stories", tone: ["#0b3a30", "#041814"] },
 };
 const proPriceLabel = (tx: FeedText, price: string | null) => (price ? fillText(tx.paywallPrice, { price }) : null);
 
@@ -238,32 +240,33 @@ export const PremiumPost = memo(function PremiumPost({ item, width, pro }: { ite
   return (
     <View style={{ width, alignSelf: "center", paddingBottom: 16 }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 12, height: 56 }}>
-        <LinearGradient colors={p.tone} style={{ width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center" }}>
-          <Icon name={p.icon} color={stage.gold} size={17} />
-        </LinearGradient>
+        <Medallion size={36}><Icon name={p.icon} color={stage.gold} size={16} /></Medallion>
         <View style={{ flex: 1 }}>
           <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{p.title(tx)}</Text>
-          <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>Pro · {tx.promoLabel}</Text>
+          <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 10, letterSpacing: 1.4, textTransform: "uppercase", color: t.gold }}>Pro · {tx.promoLabel}</Text>
         </View>
       </View>
       <View style={{ marginHorizontal: 12, borderRadius: R.card, overflow: "hidden" }}>
-        <LinearGradient colors={p.tone} style={{ padding: 24, gap: 12, alignItems: "center", minHeight: width * 0.7, justifyContent: "center" }}>
-          <Icon name={p.icon} color={stage.gold} size={40} />
-          <Text style={{ fontFamily: FONT.display, fontSize: 22, color: "#fff", textAlign: "center" }}>{p.title(tx)}</Text>
+        <LinearGradient colors={p.tone} start={{ x: 0.2, y: 0 }} end={{ x: 0.8, y: 1 }} style={{ padding: 28, gap: 12, alignItems: "center", minHeight: width * 0.7, justifyContent: "center" }}>
+          <StarLattice opacity={0.06} />
+          <GoldFrame inset={8} />
+          <Medallion size={64}><Icon name={p.icon} color={stage.gold} size={26} /></Medallion>
+          <Rule width={72} />
+          <Text style={{ fontFamily: FONT.display, fontSize: 21, letterSpacing: -0.4, color: stage.cream, textAlign: "center" }}>{p.title(tx)}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: "rgba(255,255,255,0.88)", textAlign: "center" }}>{p.body(tx)}</Text>
           {!locked ? (
-            <Pressable onPress={open} accessibilityRole="button" style={{ height: 46, paddingHorizontal: 22, borderRadius: R.pill, justifyContent: "center", backgroundColor: stage.gold }}>
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.bg }}>{tx.premiumOpen}</Text>
+            <Pressable onPress={open} accessibilityRole="button" style={{ height: 44, paddingHorizontal: 24, borderRadius: R.pill, justifyContent: "center", backgroundColor: goldButton.to }}>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, letterSpacing: 0.2, color: goldButton.text }}>{tx.premiumOpen}</Text>
             </Pressable>
           ) : null}
         </LinearGradient>
         {locked ? (
           <BlurView intensity={Platform.OS === "ios" ? 28 : 60} tint="dark" style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0, alignItems: "center", justifyContent: "center", gap: 12, padding: 20 }}>
-            <Icon name="lock" color={stage.gold} size={34} />
-            <Text style={{ fontFamily: FONT.display, fontSize: 20, color: "#fff", textAlign: "center" }}>{p.title(tx)}</Text>
+            <Medallion size={56}><Icon name="lock" color={stage.gold} size={22} /></Medallion>
+            <Text style={{ fontFamily: FONT.display, fontSize: 20, letterSpacing: -0.3, color: stage.cream, textAlign: "center" }}>{p.title(tx)}</Text>
             <Pressable onPress={() => { offerTap("premium"); openPro("general"); }} accessibilityRole="button"
-              style={({ pressed }) => ({ minHeight: 46, paddingHorizontal: 20, borderRadius: R.pill, justifyContent: "center", backgroundColor: stage.gold, opacity: pressed ? 0.85 : 1 })}>
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.bg, textAlign: "center" }}>{withPrice(tx.premiumUnlock, proPriceLabel(tx, price))}</Text>
+              style={({ pressed }) => ({ minHeight: 44, paddingHorizontal: 22, borderRadius: R.pill, justifyContent: "center", backgroundColor: goldButton.to, opacity: pressed ? 0.85 : 1 })}>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: goldButton.text, textAlign: "center" }}>{withPrice(tx.premiumUnlock, proPriceLabel(tx, price))}</Text>
             </Pressable>
             {left > 0 ? (
               <Text onPress={free} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 14, color: "#fff", paddingVertical: 8, textDecorationLine: "underline" }}>{fillText(tx.premiumFreeLeft, { n: left })}</Text>
@@ -293,20 +296,22 @@ export const PaywallCard = memo(function PaywallCard({ width }: { width: number 
   };
   return (
     <View style={{ width, alignSelf: "center", paddingBottom: 16, paddingHorizontal: 12 }}>
-      <LinearGradient colors={["#0b3d2e", "#1d6b52"]} style={{ borderRadius: R.card, padding: 24, gap: 12 }}>
-        <Icon name="starBig" color={stage.gold} size={36} />
-        <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 21, color: "#fff" }}>{tx.paywallTitle}</Text>
+      <LinearGradient colors={["#0c4a37", "#06221a"]} start={{ x: 0.2, y: 0 }} end={{ x: 0.8, y: 1 }} style={{ borderRadius: R.card, padding: 28, gap: 12, overflow: "hidden" }}>
+        <StarLattice opacity={0.06} />
+        <GoldFrame inset={8} />
+        <Medallion size={52}><Icon name="starBig" color={stage.gold} size={21} /></Medallion>
+        <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 21, letterSpacing: -0.4, color: stage.cream }}>{tx.paywallTitle}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: "rgba(255,255,255,0.88)" }}>{tx.paywallBody}</Text>
         {[tx.paywallB1, tx.paywallB2, tx.paywallB3, tx.paywallB4].map((b) => (
           <View key={b} style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
-            <Icon name="check" color={stage.gold} size={16} />
-            <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 14.5, color: "#fff" }}>{b}</Text>
+            <View style={{ width: 6, height: 6, transform: [{ rotate: "45deg" }], backgroundColor: stage.gold }} />
+            <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 14.5, color: "rgba(255,255,255,0.9)" }}>{b}</Text>
           </View>
         ))}
         {priceLine ? <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: stage.gold, marginTop: 4 }}>{priceLine}</Text> : null}
         <Pressable onPress={() => { offerTap("paywall"); openPro("general"); }} accessibilityRole="button"
-          style={({ pressed }) => ({ height: 48, borderRadius: R.pill, alignItems: "center", justifyContent: "center", backgroundColor: stage.gold, opacity: pressed ? 0.85 : 1 })}>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, color: stage.bg }}>{tx.paywallCta}</Text>
+          style={({ pressed }) => ({ height: 48, borderRadius: R.pill, alignItems: "center", justifyContent: "center", backgroundColor: goldButton.to, borderWidth: 1, borderColor: goldButton.from, opacity: pressed ? 0.85 : 1 })}>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 15, letterSpacing: 0.2, color: goldButton.text }}>{tx.paywallCta}</Text>
         </Pressable>
         <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, lineHeight: 16, color: "rgba(255,255,255,0.7)" }}>{tx.paywallTerms}</Text>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 16 }}>
@@ -335,12 +340,15 @@ export const MomentCard = memo(function MomentCard({ item, width }: { item: stri
   const go = () => { offerTap(id); if (share) router.push("/dua-generator" as Href); else openPro("general"); };
   return (
     <View style={{ width, alignSelf: "center", paddingBottom: 16, paddingHorizontal: 12 }}>
-      <LinearGradient colors={share ? ["#2b1f47", "#5a3e8c"] : ["#3d2a0b", "#8c6a1d"]} style={{ borderRadius: R.card, padding: 24, gap: 12, alignItems: "center" }}>
-        <Icon name={share ? "hands" : id === "moment-streak" ? "flame" : "trophy"} color={stage.gold} size={40} />
-        <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 22, color: "#fff", textAlign: "center" }}>{title}</Text>
+      <LinearGradient colors={share ? ["#0f3f3a", "#061c19"] : ["#0c4a37", "#06221a"]} start={{ x: 0.2, y: 0 }} end={{ x: 0.8, y: 1 }} style={{ borderRadius: R.card, padding: 28, gap: 12, alignItems: "center", overflow: "hidden" }}>
+        <StarLattice opacity={0.06} />
+        <GoldFrame inset={8} />
+        <Medallion size={64}><Icon name={share ? "hands" : id === "moment-streak" ? "flame" : "trophy"} color={stage.gold} size={26} /></Medallion>
+        <Rule width={72} />
+        <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 21, letterSpacing: -0.4, color: stage.cream, textAlign: "center" }}>{title}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: "rgba(255,255,255,0.88)", textAlign: "center" }}>{share ? tx.momentShareBody : tx.momentBody}</Text>
-        <Pressable onPress={go} accessibilityRole="button" style={({ pressed }) => ({ minHeight: 46, paddingHorizontal: 22, borderRadius: R.pill, justifyContent: "center", backgroundColor: stage.gold, opacity: pressed ? 0.85 : 1 })}>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.bg }}>{share ? tx.offerDuaAny : tx.paywallCta}</Text>
+        <Pressable onPress={go} accessibilityRole="button" style={({ pressed }) => ({ minHeight: 44, paddingHorizontal: 24, borderRadius: R.pill, justifyContent: "center", backgroundColor: goldButton.to, opacity: pressed ? 0.85 : 1 })}>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: goldButton.text }}>{share ? tx.offerDuaAny : tx.paywallCta}</Text>
         </Pressable>
         <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, color: "rgba(255,255,255,0.7)" }}>{tx.promoLabel}</Text>
       </LinearGradient>

@@ -3,12 +3,13 @@ import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { sharerTier } from "@/lib/communityProfiles";
 import { CONTENT_VISIBLE, NOT_BLOCKED, NO_STORE, talentGate } from "@/lib/talents";
-import { LIVE, POST_COLS, VIEWER_COLS, dropPostMedia, postJson, type PostRow } from "@/lib/talentPosting";
+import { postingEnabled, LIVE, POST_COLS, VIEWER_COLS, dropPostMedia, postJson, type PostRow } from "@/lib/talentPosting";
 
 export const dynamic = "force-dynamic";
 
 // GET: one clip (approved and live, or the author's own). DELETE: the author removes the clip and its file.
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  if (!postingEnabled()) return json({ error: "not_found" }, 404, NO_STORE); // posting is switched off (config.json)
   const g = await talentGate(req, "post", 120);
   if (g.res) return g.res;
   const id = (await params).id;

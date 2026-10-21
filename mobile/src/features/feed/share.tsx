@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type ComponentRef, type ReactNode } from "react";
-import { ActivityIndicator, Animated, Linking, Modal, PanResponder, PixelRatio, Platform, Pressable, ScrollView, Share, Text, TextInput, View, useWindowDimensions } from "react-native";
+import { ActivityIndicator, Animated, Linking, Modal, PanResponder, PixelRatio, Platform, Pressable, ScrollView, Share, StyleSheet, Text, TextInput, View, useWindowDimensions } from "react-native";
+import Svg, { Circle, Path } from "react-native-svg";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { captureRef } from "react-native-view-shot";
 import * as Sharing from "expo-sharing";
@@ -8,6 +9,7 @@ import * as MediaLibrary from "expo-media-library/legacy";
 import { File, Paths } from "expo-file-system";
 import { SITE } from "@/lib/api";
 import { Icon, type IconName } from "@/components/icons";
+import { Wordmark } from "@/components/brand";
 import { FONT, R, stage } from "@/lib/theme";
 import { useFeedText } from "./texts";
 import { useShareText } from "@/features/share/texts";
@@ -311,10 +313,12 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
                 {targets.map((t) => (
                   <Pressable key={t.id} onPress={() => void run(t.id)} accessibilityRole="button" accessibilityLabel={label[t.id]} accessibilityState={{ busy: busy === t.id }}
                     style={({ pressed }) => ({ width: 68, alignItems: "center", gap: 6, opacity: pressed ? 0.7 : 1 })}>
-                    <View style={{ width: 58, height: 58, borderRadius: 29, alignItems: "center", justifyContent: "center", backgroundColor: t.bg[0], borderWidth: 2, borderColor: t.bg[1] }}>
-                      {busy === t.id ? <ActivityIndicator color="#fff" />
-                        : t.icon ? <Icon name={t.icon} color="#fff" size={24} />
-                          : <Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: t.mono === "f" ? 26 : (t.mono?.length ?? 0) > 2 ? 12 : 17, color: t.id === "snapchat" ? "#111" : "#fff" }}>{t.mono}</Text>}
+                    {/* every app as the same emerald seal with a gold monogram (the app's own palette, no brand colours) */}
+                    <View style={{ width: 58, height: 58, borderRadius: 29, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.06)", borderWidth: 1, borderColor: stage.gold }}>
+                      <View pointerEvents="none" style={{ position: "absolute", left: 3, right: 3, top: 3, bottom: 3, borderRadius: 26, borderWidth: StyleSheet.hairlineWidth, borderColor: stage.goldSoft }} />
+                      {busy === t.id ? <ActivityIndicator color={stage.gold} />
+                        : t.icon ? <Icon name={t.icon} color={stage.gold} size={22} />
+                          : <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: t.mono === "f" ? 24 : (t.mono?.length ?? 0) > 2 ? 11 : 16, letterSpacing: 0.5, color: stage.cream }}>{t.mono}</Text>}
                     </View>
                     <Text numberOfLines={2} style={{ fontFamily: FONT.regular, fontSize: 11.5, lineHeight: 14, color: "#fff", textAlign: "center" }}>{label[t.id]}</Text>
                   </Pressable>
@@ -340,7 +344,7 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
         <View style={{ paddingHorizontal: 16 }}>
           {busy && busy !== "copy" ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted, marginTop: 10 }}>{busy === "saveVideo" || (busy === "storyShare" && video) ? tx.preparingVideo : tx.preparing}</Text> : null}
           {note ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.gold, marginTop: 10 }}>{note}</Text> : null}
-          {err ? <Text accessibilityRole="alert" style={{ fontFamily: FONT.regular, fontSize: 13, color: "rgb(240,160,170)", marginTop: 10 }}>{err}</Text> : null}
+          {err ? <Text accessibilityRole="alert" style={{ fontFamily: FONT.regular, fontSize: 13, color: "rgb(232,176,164)", marginTop: 10 }}>{err}</Text> : null}
         </View>
       </Animated.View>
     </Modal>
@@ -351,9 +355,21 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
 export function BrandFoot({ color = stage.gold }: { color?: string }) {
   const tx = useFeedText();
   return (
-    <View style={{ alignItems: "center", gap: 2 }}>
-      <Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color }}>{tx.brand}</Text>
-      <Text allowFontScaling={false} style={{ fontFamily: FONT.regular, fontSize: 10.5, color: "rgba(255,255,255,0.7)" }}>quranmasterclass.com/app</Text>
+    <View style={{ alignItems: "center", gap: 5 }}>
+      {/* the gold wordmark is the whole brand (color stays for older callers) */}
+      <View accessible accessibilityLabel={tx.brand}><Wordmark tone="gold" height={20} /></View>
+      <Text allowFontScaling={false} style={{ fontFamily: FONT.regular, fontSize: 10, letterSpacing: 0.6, color: "rgba(243,226,182,0.7)" }}>quranmasterclass.com/app</Text>
     </View>
+  );
+}
+
+/** the small eight-pointed star of the app icon (no longer shown in BrandFoot; kept for reference) */
+export function BrandSeal({ color }: { color: string }) {
+  const pts = Array.from({ length: 16 }, (_, i) => { const a = (i * Math.PI) / 8 - Math.PI / 2; const r = i % 2 ? 5.4 : 7; return `${(8 + r * Math.cos(a)).toFixed(2)},${(8 + r * Math.sin(a)).toFixed(2)}`; }).join("L");
+  return (
+    <Svg width={16} height={16} viewBox="0 0 16 16">
+      <Path d={`M${pts}Z`} fill={color} />
+      <Circle cx={8} cy={8} r={2.4} fill="rgb(8,38,29)" />
+    </Svg>
   );
 }

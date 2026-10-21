@@ -24,10 +24,17 @@ export type FeedConfig = {
   adSlots?: FeedAdSlots;
   /** Quran Talents: who may post recitation clips (server-enforced; the app shows the checklist from it) */
   posting?: FeedPosting;
+  /** Sijill (achievement showcase): moments in the main feed (off by default), leaderboards and compare switches */
+  sijill?: FeedSijill;
 };
+
+export type FeedSijill = { momentsInFeed?: boolean; leaderboards?: boolean; compare?: boolean };
 
 /** posting rules for recitation clips; every field optional (defaults in src/lib/talentPosting.ts) */
 export type FeedPosting = {
+  /** owner decision 21.10.2026: the network shows learning achievements only; false (default) turns clips, comments and
+   * the posting path off everywhere (server and UI); the code stays behind this switch */
+  enabled?: boolean;
   requirePro?: boolean; minReciterLevel?: number; requireVerified?: boolean; minAge?: number;
   minSeconds?: number; maxSeconds?: number; storyHours?: number; postsPerDay?: number;
 };

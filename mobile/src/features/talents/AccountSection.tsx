@@ -6,6 +6,9 @@ import { LinkRow, RowGroup } from "@/components/page";
 import { useAuth } from "@/lib/auth";
 import { T } from "./api";
 import { useTT } from "./text";
+import { usePro } from "@/lib/pro";
+import { syncSijill } from "@/features/sijill/summary";
+import { useST } from "@/features/sijill/text";
 
 // Account tab: my talent profile, discover, notifications, messages, requests, badges, privacy settings, redeem an
 // invitation, guidelines and – for admins only – moderation. Nothing here without a signed-in account.
@@ -13,11 +16,14 @@ export function TalentsAccount() {
   const t = useTheme();
   const tt = useTT();
   const { user } = useAuth();
+  const st = useST();
+  const { pro } = usePro();
   const [username, setUsername] = useState<string | null>(null);
   useEffect(() => {
     if (!user) { setUsername(null); return; }
-    T.me().then((d) => setUsername(d.profile?.username ?? null)).catch(() => setUsername(null));
-  }, [user]);
+    // Sijill: keep the record (and the achievement moments of followers) current; throttled inside syncSijill
+    T.me().then((d) => { setUsername(d.profile?.username ?? null); if (d.profile) void syncSijill(pro); }).catch(() => setUsername(null));
+  }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!user) return null;
   const go = (href: string) => router.push(href as Href);
   return (
@@ -26,6 +32,8 @@ export function TalentsAccount() {
       <RowGroup>
         <LinkRow first icon="user" title={username ? tt("myTalentProfile") : tt("createProfile")} subtitle={username ? `@${username}` : undefined}
           onPress={() => go(username ? `/talents/u/${username}` : "/community/me")} />
+        {username ? <LinkRow icon="trophy" title={st("title")} subtitle={st("privacyBtn")} onPress={() => go("/talents/sijill")} /> : null}
+        {username ? <LinkRow icon="starBig" title={st("friends")} onPress={() => go("/talents/friends")} /> : null}
         <LinkRow icon="search" title={tt("discoverTitle")} onPress={() => go("/talents")} />
         <LinkRow icon="heart" title={tt("notifications")} onPress={() => go("/talents/notifications")} />
         <LinkRow icon="comment" title={tt("messages")} onPress={() => go("/talents/messages")} />

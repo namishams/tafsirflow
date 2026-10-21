@@ -10,6 +10,7 @@ import { HomeCorners, HomeStar, StarGlyph } from "@/components/art/HomeOrnaments
 import { Seal } from "@/components/PremiumPanel";
 import { Ink } from "@/components/Ornaments";
 import { McHead } from "@/components/masterclass/Sections";
+import { postingEnabled } from "@/lib/talentPosting";
 
 // Landing page of the Quran Masterclass Talents network: verified reciter profiles, the four levels and the path to
 // posting (16+, level, verification; Pro only where required, see src/lib/talentPosting.ts). The network itself lives in the app (API: src/app/api/community/*);
@@ -95,8 +96,8 @@ export default async function TalentsPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* the path to posting */}
-      <section className="relative">
+      {/* the path to posting (only while posting is switched on, config.json) */}
+      {postingEnabled() ? <section className="relative">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">
           <McHead locale={locale} title={c.pathTitle} word="الطريق" />
           <ol className="grid gap-0">
@@ -111,7 +112,7 @@ export default async function TalentsPage({ params }: { params: Promise<{ locale
             ))}
           </ol>
         </div>
-      </section>
+      </section> : null}
 
       {/* safety */}
       <section className="hm-warm">

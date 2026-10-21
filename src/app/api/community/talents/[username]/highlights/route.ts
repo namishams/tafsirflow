@@ -2,12 +2,13 @@ import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { NOT_BLOCKED, NO_STORE, canSeeContent, talentGate } from "@/lib/talents";
-import { LIVE, POST_COLS, VIEWER_COLS, postJson, type PostRow } from "@/lib/talentPosting";
+import { postingEnabled, LIVE, POST_COLS, VIEWER_COLS, postJson, type PostRow } from "@/lib/talentPosting";
 
 export const dynamic = "force-dynamic";
 
 // a member's story highlights with their clips (live ones only)
 export async function GET(req: NextRequest, { params }: { params: Promise<{ username: string }> }) {
+  if (!postingEnabled()) return json({ highlights: [], disabled: true }, 200, NO_STORE); // posting is switched off (config.json)
   const g = await talentGate(req, "highlights", 90);
   if (g.res) return g.res;
   const p = pool()!;

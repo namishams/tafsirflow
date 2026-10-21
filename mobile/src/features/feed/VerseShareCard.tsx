@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import { ARABIC_FONT, FONT, stage } from "@/lib/theme";
 import { FeedBackdrop } from "./art";
 import { BrandFoot, CARD_SIZE, type ShareFormat } from "./share";
+import { GoldFrame, Rule } from "./ornament";
 
 // The image of a verse for Instagram / WhatsApp: the verse in Arabic, the translation, the reference and the brand
 // line. Fixed layout (no font scaling), drawn at CARD_SIZE and captured at 1080 px width.
@@ -24,15 +25,16 @@ export function VerseShareCard({ format, arabic, translation, reference, tone }:
   return (
     <View style={{ width: w, height: h, overflow: "hidden" }}>
       <FeedBackdrop tone={tone} width={w} height={h} still />
+      <GoldFrame inset={12} />
       <View style={{ flex: 1, paddingHorizontal: 26, paddingTop: format === "story" ? 64 : 34, paddingBottom: format === "story" ? 44 : 22, justifyContent: "space-between" }}>
         <View style={{ alignItems: "center", gap: 6 }}>
-          <View style={{ width: 40, height: 1, backgroundColor: stage.goldSoft }} />
+          <Rule width={72} />
           <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2.2, textTransform: "uppercase", color: stage.gold }}>{reference}</Text>
         </View>
         <View style={{ gap: 16 }}>
           <Text allowFontScaling={false} style={{ fontFamily: ARABIC_FONT, fontSize: ar, lineHeight: ar * 1.85, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{arabic}</Text>
           {translation ? (
-            <Text allowFontScaling={false} numberOfLines={format === "story" ? 12 : 7} style={{ fontFamily: FONT.regular, fontSize: tr, lineHeight: tr * 1.5, color: "rgba(255,255,255,0.86)", textAlign: "center" }}>{translation}</Text>
+            <Text allowFontScaling={false} numberOfLines={format === "story" ? 12 : 7} style={{ fontFamily: FONT.regular, fontSize: tr, lineHeight: tr * 1.5, color: "rgba(243,226,182,0.9)", textAlign: "center" }}>{translation}</Text>
           ) : null}
         </View>
         <BrandFoot />

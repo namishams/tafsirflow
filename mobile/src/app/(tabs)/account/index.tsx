@@ -24,6 +24,8 @@ import { GardenNotifySetting, GardenWidget } from "@/features/garden/widgets";
 import { ShareCounter, SharePromptSetting } from "@/features/share/SharePrompt";
 import { SharerBadge } from "@/features/share/SharerUI";
 import { useMySharer } from "@/features/share/sharer";
+import { useSchoolT } from "@/features/school/texts";
+import { TalentsAccount } from "@/features/talents/AccountSection";
 
 // Account: Pro, sign-in, confirm the e-mail, appearance, language, learning progress, legal, report a
 // problem, delete the account
@@ -51,6 +53,7 @@ export default function AccountScreen() {
   const updateDaily = async (next: DailyReminder) => { const ok = await setDaily(next, lang); setDailyState(ok ? next : { ...next, on: false }); };
 
   const go = (href: string) => router.push(href as Href);
+  const sct = useSchoolT();
   const confirmDelete = async () => {
     setBusy(true); setError("");
     try {
@@ -135,10 +138,13 @@ export default function AccountScreen() {
           </Section>
           <View style={{ marginBottom: 16 }}><SharePromptSetting /></View>
 
+          <TalentsAccount />
+
           <RowGroup>
             <LinkRow first title={t("tabs.home")} icon="sun" onPress={() => go("/today")} />
             <LinkRow title={t("account.profile")} icon="user" onPress={() => go("/profile")} />
             <LinkRow title={t("account.stats")} icon="list" onPress={() => go("/stats")} />
+            <LinkRow title={sct("title")} subtitle={sct("certificates")} icon="cap" onPress={() => go("/school")} />
             <LinkRow title={t("account.map")} icon="map" onPress={() => go("/map")} />
           </RowGroup>
 

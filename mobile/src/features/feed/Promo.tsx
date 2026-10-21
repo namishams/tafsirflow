@@ -4,7 +4,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import { router, useIsFocused, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Icon, type IconName } from "@/components/icons";
-import { FONT, R, stage, useTheme } from "@/lib/theme";
+import { FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
+import { StarLattice } from "@/components/brand";
+import { GoldFrame, Medallion, Rule } from "./ornament";
 import { openPro } from "@/lib/pro";
 import { useAuth } from "@/lib/auth";
 import { readJSON, writeJSON } from "@/lib/store";
@@ -49,10 +51,10 @@ export class PromoCap {
 }
 
 const META: Record<PromoId, { icon: IconName; tone: [string, string] }> = {
-  shams: { icon: "sun", tone: ["#3d2a0b", "#8c6a1d"] },
-  pro: { icon: "starBig", tone: ["#0b3d2e", "#1d6b52"] },
-  dua: { icon: "hands", tone: ["#2b1f47", "#5a3e8c"] },
-  name: { icon: "pen", tone: ["#47301f", "#8c5e3e"] },
+  shams: { icon: "sun", tone: ["#0f3f3a", "#061c19"] },
+  pro: { icon: "starBig", tone: ["#0c4a37", "#06221a"] },
+  dua: { icon: "hands", tone: ["#13392b", "#06221a"] },
+  name: { icon: "pen", tone: ["#0b3d2e", "#062a20"] },
 };
 
 export const PromoPost = memo(function PromoPost({ item, width }: { item: string; width: number }) {
@@ -78,22 +80,23 @@ export const PromoPost = memo(function PromoPost({ item, width }: { item: string
   return (
     <View style={{ width, alignSelf: "center", paddingBottom: 16 }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 12, height: 56 }}>
-        <LinearGradient colors={m.tone} style={{ width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center" }}>
-          <Icon name={m.icon} color={stage.gold} size={17} />
-        </LinearGradient>
+        <Medallion size={36}><Icon name={m.icon} color={stage.gold} size={16} /></Medallion>
         <View style={{ flex: 1 }}>
           <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{text.title}</Text>
-          <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{tx.promoLabel}</Text>
+          <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 10, letterSpacing: 1.4, textTransform: "uppercase", color: t.gold }}>{tx.promoLabel}</Text>
         </View>
       </View>
-      <Pressable onPress={open} accessibilityRole="button" accessibilityLabel={`${text.title}. ${tx.promoLabel}`} style={({ pressed }) => ({ marginHorizontal: 12, transform: [{ scale: pressed ? 0.97 : 1 }] })}>
-        <LinearGradient colors={m.tone} style={{ borderRadius: R.card, padding: 24, gap: 14, alignItems: "center" }}>
-          <Icon name={m.icon} color={stage.gold} size={40} />
-          <Text style={{ fontFamily: FONT.display, fontSize: 22, color: "#fff", textAlign: "center" }}>{text.title}</Text>
-          <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: "rgba(255,255,255,0.88)", textAlign: "center" }}>{text.body}</Text>
-          <View style={{ height: 46, paddingHorizontal: 22, borderRadius: R.pill, justifyContent: "center", backgroundColor: stage.gold }}>
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: stage.bg }}>{text.cta}</Text>
-          </View>
+      <Pressable onPress={open} accessibilityRole="button" accessibilityLabel={`${text.title}. ${tx.promoLabel}`} style={({ pressed }) => ({ marginHorizontal: 12, opacity: pressed ? 0.92 : 1, transform: [{ scale: pressed ? 0.99 : 1 }] })}>
+        <LinearGradient colors={m.tone} start={{ x: 0.2, y: 0 }} end={{ x: 0.8, y: 1 }} style={{ borderRadius: R.card, paddingHorizontal: 28, paddingVertical: 30, gap: 14, alignItems: "center", overflow: "hidden" }}>
+          <StarLattice opacity={0.06} />
+          <GoldFrame inset={8} />
+          <Medallion size={64}><Icon name={m.icon} color={stage.gold} size={26} /></Medallion>
+          <Rule width={72} />
+          <Text style={{ fontFamily: FONT.display, fontSize: 21, letterSpacing: -0.4, lineHeight: 27, color: stage.cream, textAlign: "center" }}>{text.title}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: "rgba(255,255,255,0.78)", textAlign: "center" }}>{text.body}</Text>
+          <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ marginTop: 4, height: 44, paddingHorizontal: 24, borderRadius: R.pill, justifyContent: "center" }}>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, letterSpacing: 0.2, color: goldButton.text }}>{text.cta}</Text>
+          </LinearGradient>
         </LinearGradient>
       </Pressable>
     </View>
@@ -101,14 +104,16 @@ export const PromoPost = memo(function PromoPost({ item, width }: { item: string
 });
 
 function RemotePromo({ title, label, onPress, width }: { title: string; label: string; onPress: () => void; width: number }) {
-  const tone: [string, string] = ["#0b3d2e", "#1d6b52"];
+  const tone: [string, string] = ["#0c4a37", "#06221a"];
   return (
     <View style={{ width, alignSelf: "center", paddingBottom: 16, paddingHorizontal: 12 }}>
-      <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${title}. ${label}`} style={({ pressed }) => ({ transform: [{ scale: pressed ? 0.97 : 1 }] })}>
-        <LinearGradient colors={tone} style={{ borderRadius: R.card, padding: 24, gap: 10, alignItems: "center" }}>
-          <Icon name="starBig" color={stage.gold} size={36} />
-          <Text style={{ fontFamily: FONT.display, fontSize: 22, color: "#fff", textAlign: "center" }}>{title}</Text>
-          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: "rgba(255,255,255,0.75)" }}>{label}</Text>
+      <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${title}. ${label}`} style={({ pressed }) => ({ opacity: pressed ? 0.92 : 1, transform: [{ scale: pressed ? 0.99 : 1 }] })}>
+        <LinearGradient colors={tone} style={{ borderRadius: R.card, padding: 28, gap: 12, alignItems: "center", overflow: "hidden" }}>
+          <StarLattice opacity={0.06} />
+          <GoldFrame inset={8} />
+          <Medallion size={56}><Icon name="starBig" color={stage.gold} size={22} /></Medallion>
+          <Text style={{ fontFamily: FONT.display, fontSize: 21, letterSpacing: -0.4, color: stage.cream, textAlign: "center" }}>{title}</Text>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 10, letterSpacing: 1.4, textTransform: "uppercase", color: stage.gold }}>{label}</Text>
         </LinearGradient>
       </Pressable>
     </View>
@@ -138,7 +143,7 @@ export function AccountNudge() {
       <Pressable style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.4)" }} onPress={close} accessibilityRole="button" accessibilityLabel={tx.accountLater} />
       <View style={{ backgroundColor: t.surface, borderTopLeftRadius: 22, borderTopRightRadius: 22, padding: 22, paddingBottom: Math.max(insets.bottom, 18), gap: 12 }}>
         <View style={{ alignSelf: "center", width: 40, height: 4, borderRadius: 2, backgroundColor: t.line }} />
-        <Icon name="bookmark" color={t.accent} size={30} />
+        <Medallion size={48}><Icon name="bookmark" color={stage.gold} size={20} /></Medallion>
         <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 20, color: t.ink }}>{tx.accountTitle}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.muted }}>{tx.accountBody}</Text>
         <Pressable onPress={() => go("/register")} accessibilityRole="button" style={({ pressed }) => ({ height: 50, borderRadius: R.pill, alignItems: "center", justifyContent: "center", backgroundColor: t.accent, opacity: pressed ? 0.85 : 1 })}>

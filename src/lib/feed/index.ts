@@ -47,6 +47,7 @@ export function feedConfig({ locale, tradition }: FeedParams, now = new Date()):
     ...((c as { monetize?: FeedConfig["monetize"] }).monetize ? { monetize: (c as { monetize?: FeedConfig["monetize"] }).monetize } : {}),
     ...((c as { adSlots?: FeedConfig["adSlots"] }).adSlots ? { adSlots: (c as { adSlots?: FeedConfig["adSlots"] }).adSlots } : {}),
     ...((c as { posting?: FeedConfig["posting"] }).posting ? { posting: (c as { posting?: FeedConfig["posting"] }).posting } : {}),
+    ...((c as { sijill?: FeedConfig["sijill"] }).sijill ? { sijill: (c as { sijill?: FeedConfig["sijill"] }).sijill } : {}),
   };
 }
 

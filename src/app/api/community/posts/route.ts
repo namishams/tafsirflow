@@ -4,7 +4,7 @@ import { json } from "@/lib/http";
 import { badText } from "@/lib/communityProfiles";
 import { NOT_BLOCKED, NO_STORE, canSeeContent, line, talentGate } from "@/lib/talents";
 import { removeMedia, storeUpload } from "@/lib/media";
-import { LIVE, POST_COLS, VIEWER_COLS, postJson, postingRules, postingStatus, verseKey, type PostRow } from "@/lib/talentPosting";
+import { POSTING_OFF, postingEnabled, LIVE, POST_COLS, VIEWER_COLS, postJson, postingRules, postingStatus, verseKey, type PostRow } from "@/lib/talentPosting";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +13,7 @@ export const dynamic = "force-dynamic";
 // durationMs, hasVideo, waveform (JSON array 0..100), wordCheck (0..100), caption. Status pending until an admin approves.
 const PAGE = 30;
 export async function GET(req: NextRequest) {
+  if (!postingEnabled()) return json({ posts: [], next: null, disabled: true }, 200, NO_STORE); // posting is switched off (config.json)
   const g = await talentGate(req, "posts", 90);
   if (g.res) return g.res;
   const sp = req.nextUrl.searchParams;
@@ -39,6 +40,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
+  if (!postingEnabled()) return json(POSTING_OFF, 403, NO_STORE); // posting is switched off (config.json)
   const rules = postingRules();
   const g = await talentGate(req, "post-upload", rules.postsPerDay, { windowMs: 24 * 60 * 60_000, write: true, minAge: rules.minAge, needProfile: true });
   if (g.res) return g.res;

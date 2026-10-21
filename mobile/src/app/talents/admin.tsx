@@ -13,6 +13,7 @@ import { useAudioPlayer, useAudioPlayerStatus } from "expo-audio";
 import { VideoView, useVideoPlayer } from "expo-video";
 import { ClipVisual } from "@/features/talents/ClipVisual";
 import { BadgeSheetHost } from "@/features/talents/badges";
+import { usePostingOn } from "@/features/sijill/config";
 import { useTT, type TKey } from "@/features/talents/text";
 import { LevelBadge, ListBox, Muted, SmallButton, TalentRow, useTalentErr } from "@/features/talents/ui";
 
@@ -23,6 +24,7 @@ export default function Moderation() {
   const tt = useTT();
   const { user } = useAuth();
   const [tab, setTab] = useState<Tab>("reports");
+  const postingOn = usePostingOn(); // clip moderation only while posting is switched on (config.json)
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -32,7 +34,7 @@ export default function Moderation() {
         {user?.role !== "admin" ? <Muted>{tt("e_forbidden")}</Muted> : (
           <View style={{ padding: 16, gap: 16 }}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              <Segmented<Tab> value={tab} onChange={setTab} options={[["reports", tt("tabReports")], ["posts", tt("tabPosts")], ["members", tt("tabMembers")], ["invites", tt("tabInvites")], ["verify", tt("tabVerify")]]} />
+              <Segmented<Tab> value={tab} onChange={setTab} options={[["reports", tt("tabReports")], ...(postingOn ? [["posts", tt("tabPosts")] as [Tab, string]] : []), ["members", tt("tabMembers")], ["invites", tt("tabInvites")], ["verify", tt("tabVerify")]]} />
             </ScrollView>
             {tab === "reports" ? <Reports /> : tab === "members" ? <Members /> : tab === "invites" ? <Invites /> : tab === "verify" ? <Verifications /> : <Posts />}
           </View>

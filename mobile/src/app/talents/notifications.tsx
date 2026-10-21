@@ -8,6 +8,8 @@ import { T, type Notification } from "@/features/talents/api";
 import { useTT, type TKey } from "@/features/talents/text";
 import { BadgeButton, BadgeSheetHost } from "@/features/talents/badges";
 import { AccessGate, ListBox, Muted, SafetyBar, TalentAvatar, useTalentAccess, useTalentErr } from "@/features/talents/ui";
+import { useMomentText } from "@/features/sijill/Moments";
+import { useST, type SKey } from "@/features/sijill/text";
 
 // /talents/notifications – new followers, follow requests, likes, comments, clip approved/rejected, connections,
 // badges. Opening the screen marks everything as read.
@@ -21,9 +23,12 @@ export default function Notifications() {
   const [msg, setMsg] = useState("");
   useFocusEffect(useCallback(() => {
     if (a.state !== "ok") return;
-    T.notifications().then((d) => { setList(d.notifications); if (d.unread) void T.readNotifications().catch(() => undefined); }).catch((e) => { setMsg(err(e)); setList([]); });
+    T.notifications(lang).then((d) => { setList(d.notifications); if (d.unread) void T.readNotifications().catch(() => undefined); }).catch((e) => { setMsg(err(e)); setList([]); });
   }, [a.state])); // eslint-disable-line react-hooks/exhaustive-deps
+  const st = useST();
+  const momentText = useMomentText();
   const open = (n: Notification) => {
+    if (n.kind === "moment_reaction") { router.push("/talents/sijill" as Href); return; }
     if (n.kind === "follow_request") router.push("/talents/requests" as Href);
     else if (n.kind === "connect_request" || n.kind === "connect_accepted") router.push("/talents/requests" as Href);
     else if (n.kind === "verified" || n.kind === "verification_rejected") router.push("/talents/badges" as Href);
@@ -42,7 +47,11 @@ export default function Notifications() {
               {!list ? <Loading /> : !list.length ? <Muted>{msg || tt("noNotifications")}</Muted> : (
                 <ListBox>
                   {list.map((n, i) => {
-                    const text = tt(`n_${n.kind}` as TKey, { u: n.actor?.name ?? "", v: n.verseKey ?? "" });
+                    const text = n.kind === "moment_reaction" && n.moment
+                      ? n.reaction === "like" || !n.reaction
+                        ? st("n_moment_like", { u: n.actor?.name ?? "", m: momentText(n.moment) })
+                        : st("n_moment_reaction", { u: n.actor?.name ?? "", r: st(`react_${n.reaction}` as SKey), m: momentText(n.moment) })
+                      : tt(`n_${n.kind}` as TKey, { u: n.actor?.name ?? "", v: n.verseKey ?? "" });
                     return (
                       <Pressable key={n.id} onPress={() => open(n)} accessibilityRole="button" accessibilityLabel={`${text}, ${when(n.at)}`}
                         style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, backgroundColor: pressed ? t.bg : n.read ? t.surface : "rgba(201,166,94,0.08)", borderTopWidth: i ? 1 : 0, borderTopColor: t.line })}>

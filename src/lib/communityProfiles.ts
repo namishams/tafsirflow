@@ -11,7 +11,9 @@ export type CRole = (typeof ROLES)[number];
 export const USERNAME_RE = /^[a-z0-9_.]{3,20}$/;
 const RESERVED = new Set(["admin", "administrator", "root", "support", "help", "staff", "team", "moderator", "mod", "official", "quran", "quranmasterclass", "qmc", "allah", "muhammad", "prophet", "system", "null", "undefined", "me", "api", "settings", "shams",
   // Quran Talents: route names of the app and website (/talents/<name>)
-  "record", "player", "badges", "notifications", "blocked", "list", "requests", "messages", "guidelines", "invite", "talents", "followers", "following"]);
+  "record", "player", "badges", "notifications", "blocked", "list", "requests", "messages", "guidelines", "invite", "talents", "followers", "following",
+  // Sijill routes (app /talents/<name>)
+  "friends", "leaderboard", "buddies", "compare", "sijill", "moments", "preview"]);
 
 export const reserved = (u: string) => RESERVED.has(u.replace(/[._]/g, "")) || RESERVED.has(u);
 export const adultEnough = (birthYear: number | null) => !!birthYear && new Date().getFullYear() - birthYear >= 13;

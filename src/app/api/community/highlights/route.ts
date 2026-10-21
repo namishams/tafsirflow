@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
+import { postingEnabled, POSTING_OFF } from "@/lib/talentPosting";
 import { badText } from "@/lib/communityProfiles";
 import { NO_STORE, line, talentGate } from "@/lib/talents";
 
@@ -8,6 +9,7 @@ export const dynamic = "force-dynamic";
 
 // POST { title, postIds }: a story highlight of the member's own approved clips (keeps those stories after 24 h)
 export async function POST(req: NextRequest) {
+  if (!postingEnabled()) return json(POSTING_OFF, 403, NO_STORE); // posting is switched off (config.json)
   const g = await talentGate(req, "highlight", 20, { windowMs: 60 * 60_000, write: true, needProfile: true });
   if (g.res) return g.res;
   const b = (await req.json().catch(() => ({}))) as { title?: unknown; postIds?: unknown };

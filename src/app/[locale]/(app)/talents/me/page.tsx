@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import TalentMe from "@/components/talents/TalentMe";
+import SijillMe from "@/components/talents/SijillMe";
 import { sortedCountries } from "@/lib/countries";
 import { talentsText } from "@/lib/talentsWeb";
 
@@ -21,6 +22,7 @@ export default async function TalentMePage({ params, searchParams }: { params: P
       <h1 className="font-display mt-2 text-4xl">{tx.meTitle}</h1>
       <p className="mt-2 text-muted">{tx.meLead}</p>
       <TalentMe locale={locale} tx={tx} countries={sortedCountries(locale)} official={official} />
+      <SijillMe locale={locale} />
     </div>
   );
 }

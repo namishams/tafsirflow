@@ -2,13 +2,15 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { BadgeIcon, type WebBadge } from "./BadgeIcon";
+import { sijillText, type SwKey } from "@/lib/sijillWeb";
+import { momentLine } from "@/lib/sijillMoment";
 
 // /talents/me on the website: the signed-in member's talent profile (create or edit), age confirmation, badges with the
 // YouTube connection for the official star, and notifications. Same API as the app.
 type Tx = Record<string, string>;
 type Me = { username: string; name: string; bio: string; country: string | null; role: string; style: string; ijaza: boolean; public: boolean; rewaya: string; maqam: string; ijazahChain: string; private: boolean; messagePolicy: "connections" | "nobody"; badge: WebBadge | null };
 type Badges = { badge: WebBadge | null; emerald: { ok: boolean; email: boolean; phone: boolean | null; age: boolean; profile: boolean; guidelines: boolean }; gold: { ok: boolean; level: number; need: number }; official: { ok: boolean; channel: string | null; minSubscribers: number; available: boolean } };
-type Note = { id: string; kind: string; at: string; read: boolean; verseKey: string | null; actor: { username: string; name: string; badge?: WebBadge | null } | null };
+type Note = { id: string; kind: string; at: string; read: boolean; verseKey: string | null; moment?: { kind: string; data: unknown; title: string | null }; reaction?: string; actor: { username: string; name: string; badge?: WebBadge | null } | null };
 const f = (s: string, v: Record<string, string | number>) => Object.entries(v).reduce((a, [k, x]) => a.split(`{${k}}`).join(String(x)), s);
 
 async function call<T>(url: string, init?: RequestInit): Promise<{ ok: boolean; status: number; data: T & { error?: string } }> {
@@ -44,7 +46,7 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
     setState("ok");
     if (m.data.profile) {
       call<Badges>("/api/community/badges").then((b) => b.ok && setBadges(b.data)).catch(() => undefined);
-      call<{ notifications: Note[]; unread: number }>("/api/community/notifications").then((n) => {
+      call<{ notifications: Note[]; unread: number }>(`/api/community/notifications?locale=${locale}`).then((n) => {
         if (n.ok) { setNotes(n.data.notifications); if (n.data.unread) void call("/api/community/notifications", { method: "POST", body: "{}" }); }
       }).catch(() => undefined);
     }
@@ -148,7 +150,9 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
             <ul className="divide-y divide-line overflow-hidden rounded-lg border border-line bg-surface">
               {notes.map((n) => (
                 <li key={n.id} className={`flex items-center gap-2 p-4 ${n.read ? "" : "bg-[rgb(var(--hm-gold))]/10"}`}>
-                  <span className="flex-1">{f(tx[`n_${n.kind}`] ?? n.kind, { u: n.actor?.name ?? "", v: n.verseKey ?? "" })}</span>
+                  <span className="flex-1">{n.kind === "moment_reaction" && n.moment
+                    ? (() => { const sx = sijillText(locale); const m = momentLine(n.moment, sx); return n.reaction && n.reaction !== "like" ? f(sx.n_moment_reaction, { u: n.actor?.name ?? "", r: sx[`react_${n.reaction}` as SwKey] ?? n.reaction, m }) : f(sx.n_moment_like, { u: n.actor?.name ?? "", m }); })()
+                    : f(tx[`n_${n.kind}`] ?? n.kind, { u: n.actor?.name ?? "", v: n.verseKey ?? "" })}</span>
                   {n.actor?.badge ? <BadgeIcon badge={n.actor.badge} size={14} /> : null}
                   <time className="text-[12.5px] text-muted" dateTime={n.at}>{new Date(n.at).toLocaleDateString(locale)}</time>
                 </li>

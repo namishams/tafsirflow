@@ -14,9 +14,13 @@ import { BadgeButton, BadgeSheetHost } from "@/features/talents/badges";
 import { ScrollView } from "react-native";
 import { CountryPicker } from "@/features/talents/CountryPicker";
 import { AccessGate, ListBox, Muted, SafetyBar, SmallButton, TalentAvatar, TalentRow, useTalentAccess, useTalentErr } from "@/features/talents/ui";
+import { FOCUSES, STUDY_STAGES, type Focus, type StudyStage } from "@/features/sijill/api";
+import { usePostingOn, useSijillFlags } from "@/features/sijill/config";
+import { useST, type SKey } from "@/features/sijill/text";
 
 // /talents – Discover talents: search, filters (country, rewaya, level, verified), paged list; entry to messages,
-// requests and the own profile. Masterclass design.
+// requests and the own profile. Masterclass design. Sijill: friends' achievements, leaderboards, study buddies and
+// discovery by madrasa stage, focus and the surah being memorised (only members who show those sections).
 export default function DiscoverTalents() {
   const t = useTheme();
   const tt = useTT();
@@ -37,6 +41,12 @@ export default function DiscoverTalents() {
   const [incoming, setIncoming] = useState(0);
   const [notes, setNotes] = useState(0);
   const [suggested, setSuggested] = useState<TalentCard[]>([]);
+  const st = useST();
+  const postingOn = usePostingOn();
+  const flags = useSijillFlags();
+  const [stage, setStage] = useState<StudyStage | null>(null);
+  const [focus, setFocus] = useState<Focus | null>(null);
+  const [surah, setSurah] = useState("");
   const seq = useRef(0);
 
   const params = useMemo(() => {
@@ -46,8 +56,12 @@ export default function DiscoverTalents() {
     if (rewaya.trim()) p.rewaya = rewaya.trim();
     if (level) p.level = level;
     if (verified) p.verified = "1";
+    if (stage) p.stage = stage;
+    if (focus) p.focus = focus;
+    const sn = Number(surah);
+    if (Number.isInteger(sn) && sn >= 1 && sn <= 114) p.surah = String(sn);
     return p;
-  }, [q, country, rewaya, level, verified]);
+  }, [q, country, rewaya, level, verified, stage, focus, surah]);
 
   const load = useCallback(async (cursor?: string) => {
     const my = ++seq.current;
@@ -88,7 +102,11 @@ export default function DiscoverTalents() {
             <RowGroup>
               <LinkRow first icon="user" title={mine ? tt("myTalentProfile") : tt("createProfile")} subtitle={mine ? `@${mine}` : tt("needProfile")}
                 onPress={() => router.push((mine ? `/talents/u/${mine}` : "/community/me") as Href)} />
-              <LinkRow icon="reels" title={tt("watchClips")} onPress={() => router.push("/talents/player?src=reels" as Href)} />
+              {postingOn ? <LinkRow icon="reels" title={tt("watchClips")} onPress={() => router.push("/talents/player?src=reels" as Href)} /> : null}
+              {mine ? <LinkRow icon="trophy" title={st("title")} subtitle={st("privacyBtn")} onPress={() => router.push("/talents/sijill" as Href)} /> : null}
+              <LinkRow icon="starBig" title={st("friends")} onPress={() => router.push("/talents/friends" as Href)} />
+              {flags.leaderboards && mine ? <LinkRow icon="list" title={st("leaderboards")} onPress={() => router.push("/talents/leaderboard" as Href)} /> : null}
+              {a.age?.interact && mine ? <LinkRow icon="user" title={st("buddies")} subtitle={st("buddiesLead")} onPress={() => router.push("/talents/buddies" as Href)} /> : null}
               <LinkRow icon="heart" title={tt("notifications")} subtitle={notes ? tt("unread", { n: notes }) : undefined} onPress={() => router.push("/talents/notifications" as Href)} />
               {a.age?.interact ? <LinkRow icon="comment" title={tt("messages")} subtitle={unread ? tt("unread", { n: unread }) : undefined} onPress={() => router.push("/talents/messages" as Href)} /> : null}
               {a.age?.interact ? <LinkRow icon="list" title={tt("requestsTitle")} subtitle={incoming ? `${tt("incoming")}: ${incoming}` : undefined} onPress={() => router.push("/talents/requests" as Href)} /> : null}
@@ -115,6 +133,17 @@ export default function DiscoverTalents() {
                 {LEVELS.map((l) => <Chip key={l} label={tt(`level_${l}` as TKey)} selected={level === l} onPress={() => setLevel(level === l ? null : l)} />)}
                 <Chip label={tt("verifiedOnly")} selected={verified} onPress={() => setVerified(!verified)} />
               </View>
+            </View>
+            <View style={{ gap: 8 }}>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{st("filterStage")}</Text>
+              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                {STUDY_STAGES.map((x) => <Chip key={x} label={st(`stage_${x}` as SKey).split(" (")[0]} selected={stage === x} onPress={() => setStage(stage === x ? null : x)} />)}
+              </View>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{st("filterFocus")}</Text>
+              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                {FOCUSES.map((x) => <Chip key={x} label={st(`focus_${x}` as SKey)} selected={focus === x} onPress={() => setFocus(focus === x ? null : x)} />)}
+              </View>
+              <LabeledField label={st("filterSurah")} value={surah} onChangeText={(v) => setSurah(v.replace(/[^0-9]/g, "").slice(0, 3))} placeholder={st("surahHint")} keyboardType="number-pad" maxLength={3} />
             </View>
             <View style={{ flexDirection: "row", gap: 10, alignItems: "flex-end" }}>
               <View style={{ flex: 1, gap: 6 }}>

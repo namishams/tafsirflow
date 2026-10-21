@@ -2,12 +2,13 @@ import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { CONTENT_VISIBLE, NOT_BLOCKED, NO_STORE, talentGate } from "@/lib/talents";
-import { LIVE } from "@/lib/talentPosting";
+import { POSTING_OFF, postingEnabled, LIVE } from "@/lib/talentPosting";
 
 export const dynamic = "force-dynamic";
 
 // POST saves, DELETE unsaves a clip (private list of the member)
 async function run(req: NextRequest, params: Promise<{ id: string }>, on: boolean) {
+  if (!postingEnabled()) return json(POSTING_OFF, 403, NO_STORE); // posting is switched off (config.json)
   const g = await talentGate(req, "save", 120, { write: true });
   if (g.res) return g.res;
   const id = (await params).id;

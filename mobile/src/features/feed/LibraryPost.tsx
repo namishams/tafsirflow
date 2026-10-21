@@ -1,6 +1,8 @@
 import { memo, useRef, useState } from "react";
 import { Animated, FlatList, Image, Linking, Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { GoldFrame } from "./ornament";
+import { StarLattice } from "@/components/brand";
 import { router, type Href } from "expo-router";
 import { Icon, type IconName } from "@/components/icons";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
@@ -58,7 +60,9 @@ function LibImage({ item, w, h, reduce }: { item: ExtraItem; w: number; h: numbe
   const tone = toneOf(item.id);
   return (
     <View>
-      <LinearGradient colors={tone} style={{ width: w, height: h }}>
+      <LinearGradient colors={tone} style={{ width: w, height: h, overflow: "hidden" }}>
+        <StarLattice opacity={0.05} />
+        <GoldFrame inset={7} />
         <Animated.View style={{ flex: 1, opacity: op }}>
           <Image source={{ uri: item.image }} resizeMode="cover" style={{ flex: 1 }} accessibilityIgnoresInvertColors accessibilityLabel={item.title}
             onLoad={() => { if (!reduce) Animated.timing(op, { toValue: 1, duration: 260, useNativeDriver: true }).start(); }} />
@@ -78,7 +82,9 @@ function Card({ item, w, tall }: { item: LibItem; w: number; tall?: boolean }) {
   const ar = src(item).arabic;
   const tone = toneOf(item.id);
   return (
-    <LinearGradient colors={tone} style={{ width: w, minHeight: tall ? w * 1.1 : undefined, padding: 22, gap: 12, justifyContent: "center" }}>
+    <LinearGradient colors={tone} style={{ width: w, minHeight: tall ? w * 1.1 : undefined, padding: 22, gap: 12, justifyContent: "center", overflow: "hidden" }}>
+        <StarLattice opacity={0.05} />
+        <GoldFrame inset={7} />
       {ar ? <Text accessibilityLanguage="ar" numberOfLines={tall ? 10 : 7} adjustsFontSizeToFit minimumFontScale={0.6} style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: "#fff", textAlign: "center", writingDirection: "rtl" }}>{ar}</Text> : null}
       <Text style={{ fontFamily: FONT.display, fontSize: 18, color: stage.gold, textAlign: "center" }}>{item.title}</Text>
       {item.body ? <Text numberOfLines={tall ? 14 : 9} style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 22, color: "rgba(255,255,255,0.9)", textAlign: "center" }}>{item.body}</Text> : null}

@@ -15,6 +15,8 @@ export type TalentProfile = TalentCard & {
   requested: boolean; restricted: boolean; private: boolean; messagePolicy: "connections" | "nobody"; officialChannel: string | null;
   badges?: BadgeState;
   posts: number; likes: number; liveStory: boolean; reciterLevel?: number;
+  /** false: posting is switched off on the server (achievement showcase only) */
+  postingEnabled?: boolean;
 };
 export type Post = {
   id: string; type: "story" | "post"; verseKey: string | null; durationMs: number | null; hasVideo: boolean; waveform: number[]; caption: string;
@@ -24,8 +26,10 @@ export type Post = {
 };
 export type Comment = { id: string; text: string; at: string; mine: boolean; canDelete: boolean; author?: { username: string; name: string; verified: boolean; badge?: Badge | null; level: Level; sharerTier: number } };
 export type Highlight = { id: string; title: string; posts: Post[] };
-export type NotificationKind = "follow" | "follow_request" | "like" | "comment" | "post_approved" | "post_rejected" | "connect_request" | "connect_accepted" | "verified" | "verification_rejected";
-export type Notification = { id: string; kind: NotificationKind; at: string; read: boolean; postId: string | null; verseKey: string | null; actor: { username: string; name: string; verified: boolean; badge?: Badge | null; sharerTier: number } | null };
+export type NotificationKind = "moment_reaction" | "follow" | "follow_request" | "like" | "comment" | "post_approved" | "post_rejected" | "connect_request" | "connect_accepted" | "verified" | "verification_rejected";
+export type Notification = { id: string; kind: NotificationKind; at: string; read: boolean; postId: string | null; verseKey: string | null;
+  /** Sijill: the moment a reaction was given to and the preset reaction */
+  moment?: { id: string; kind: import("@/features/sijill/api").MomentKind; ref: string; data: Record<string, unknown>; title: string | null }; reaction?: import("@/features/sijill/api").Reaction; actor: { username: string; name: string; verified: boolean; badge?: Badge | null; sharerTier: number } | null };
 export type BadgeState = {
   badge: Badge | null;
   emerald: { ok: boolean; email: boolean; phone: boolean | null; age: boolean; profile: boolean; guidelines: boolean };
@@ -33,7 +37,7 @@ export type BadgeState = {
   official: { ok: boolean; source: string | null; channel: string | null; minSubscribers: number; available: boolean };
 };
 export type PostingStatus = {
-  ok: boolean; profile: boolean;
+  ok: boolean; profile: boolean; enabled?: boolean;
   rules: { requirePro: boolean; minReciterLevel: number; requireVerified: boolean; minAge: number; minSeconds: number; maxSeconds: number; storyHours: number; postsPerDay: number };
   age: { ok: boolean }; pro: { ok: boolean; required: boolean }; level: { ok: boolean; have: number; need: number };
   verified: { ok: boolean; required: boolean; badge: Badge | null; application: "none" | "pending" | "approved" | "rejected"; reason?: string };
@@ -90,7 +94,7 @@ export const T = {
   highlights: (name: string) => api<{ highlights: Highlight[]; restricted?: boolean }>(`/api/community/talents/${u(name)}/highlights`),
   createHighlight: (title: string, postIds: string[]) => api<{ id: string }>("/api/community/highlights", { method: "POST", body: { title, postIds } }),
   deleteHighlight: (id: string) => api(`/api/community/highlights/${u(id)}`, { method: "DELETE" }),
-  notifications: () => api<{ notifications: Notification[]; unread: number }>("/api/community/notifications"),
+  notifications: (locale?: string) => api<{ notifications: Notification[]; unread: number }>(`/api/community/notifications${locale ? `?locale=${u(locale)}` : ""}`),
   readNotifications: () => api("/api/community/notifications", { method: "POST", body: {} }),
   suggested: () => api<{ talents: TalentCard[] }>("/api/community/suggested"),
   blocks: () => api<{ blocked: TalentCard[] }>("/api/community/blocks"),
