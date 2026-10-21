@@ -131,7 +131,8 @@ async function corpusCard(i: FeedItem, cx: Ctx): Promise<WebCard | null> {
       const g = h.grades?.[0];
       const body = h.text ? `${h.text}${g ? `\n\nGrade: ${g.grade} (${g.by})` : ""}` : h.arabic ?? "";
       return card(i, "hadith", "hadith", {
-        title: `${h.name ?? c} ${h.number ?? n}`, body, arabic: h.text ? h.arabic : undefined,
+        // the usual number (Sahih Muslim 804): none when the source gives none, never the API's own count
+        title: h.number ? `${h.name ?? c} ${h.number}` : h.name ?? c, body, arabic: h.text ? h.arabic : undefined,
         source: `${h.name ?? c} – hadith-api (fawazahmed0)`, sourceUrl: h.url ?? "https://sunnah.com", lang: h.textLang,
       });
     }

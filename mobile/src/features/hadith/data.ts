@@ -3,6 +3,7 @@ import type { TraditionChoice } from "@/lib/tradition";
 import { SHIA_BOOKS, SUNNI_COLLECTIONS, type ShiaBook, type SunniCollection } from "./catalog";
 import { cachedJSON, cachedValue } from "./cache";
 import { nahjAt, nahjEdition, nahjPosition, type NahjPassage } from "./nahj";
+import { hadithLabel, hadithLink, usualHadithNumber } from "@/web/hadithNumber";
 
 // Hadith, only from published sources – nothing here is typed or generated:
 // - Sunni collections: fawazahmed0/hadith-api (The Unlicense), Arabic plus the reader's language where the API has
@@ -58,7 +59,7 @@ export function translationEdition(c: SunniCollection, lang: string): string | n
 }
 const editionLang = (ed: string | null) => (!ed ? "ar" : ({ eng: "en", tur: "tr", urd: "ur", ben: "bn", rus: "ru", fra: "fr", ind: "id" } as Record<string, string>)[ed.split("-")[0]] ?? "en");
 
-type SunnahHadith = { hadithnumber: number; arabicnumber?: number | string; text: string; grades?: { name: string; grade: string }[]; reference?: { book: number; hadith: number } };
+type SunnahHadith = { hadithnumber: number; arabicnumber?: number | string | null; text: string; grades?: { name: string; grade: string }[]; reference?: { book: number; hadith: number } };
 type SunnahDoc = { metadata: { name: string; section?: Record<string, string> }; hadiths: SunnahHadith[] };
 
 function sunniItem(c: SunniCollection, ar: SunnahHadith | undefined, tr: SunnahHadith | undefined, trEd: string | null, chapter?: string): HadithItem | null {
@@ -69,14 +70,17 @@ function sunniItem(c: SunniCollection, ar: SunnahHadith | undefined, tr: SunnahH
   if (!arabic && !text) return null;
   const names = SUNNI_NAMES[c.key] ?? { en: c.name, ar: "" };
   const ref = h.reference && h.reference.book > 0 ? ` · Book ${h.reference.book}, Hadith ${h.reference.hadith}` : "";
-  const arNum = h.arabicnumber !== undefined && String(h.arabicnumber) !== String(h.hadithnumber) ? ` (${h.arabicnumber})` : "";
+  // label and link by the usual number (Sahih Muslim 804, not the API's 1874; web/hadithNumber.ts, as on the website);
+  // id and number stay the API's, by which the text is fetched
+  const num = usualHadithNumber(c.key, h.hadithnumber, ar?.arabicnumber ?? tr?.arabicnumber);
+  const label = hadithLabel(names.en, num);
   return {
     id: `sunnah:${c.key}:${h.hadithnumber}`, source: "sunnah", collection: c.key, collectionName: names.en, collectionArabic: names.ar,
     chapter, number: String(h.hadithnumber), arabic: arabic || undefined, text, textLang: editionLang(trEd),
     grades: (tr?.grades ?? ar?.grades ?? []).filter((g) => g.grade).map((g) => ({ by: g.name, grade: g.grade })),
-    reference: `${names.en} ${h.hadithnumber}${arNum}${ref}`,
-    url: `${SUNNAH_CDN}/editions/${trEd ?? `ara-${c.key}`}/${h.hadithnumber}.json`,
-    credit: `${names.en} ${h.hadithnumber}`,
+    reference: `${label}${ref}`,
+    url: hadithLink(c.key, h.hadithnumber, num, trEd ?? `ara-${c.key}`),
+    credit: label,
   };
 }
 

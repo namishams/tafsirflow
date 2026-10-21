@@ -25,6 +25,8 @@ const MODULES = [
   ["radio", "features/radio/strings.ts", "S"],
 ];
 const LOCALES = ["de", "en", "ar", "tr", "ur", "fa", "ps", "fr", "es", "id", "ms", "bn", "ru", "zh"];
+// tables that hold only de + en; the app adds the other 12 languages from mobile/src/i18n/app/<lang>.json (moduleText)
+const MODULE_JSON = new Set(["prophet"]);
 
 function stub() {
   const f = function () { return stub(); };
@@ -47,6 +49,11 @@ for (const [mod, file, name] of MODULES) {
     let dict = t[l] ?? null;
     if (mod === "radio") {
       try { const j = JSON.parse(fs.readFileSync(path.join(APP, "i18n", "app", `${l}.json`), "utf8")); if (j.radio) dict = { ...(t.en ?? {}), ...(dict ?? {}), ...j.radio }; } catch { /* no module json */ }
+    }
+    // modules the app reads through moduleText (src/i18n/app.ts): a language without its own table reads its module
+    // json (mobile/src/i18n/app/<lang>.json, key = module) over English, exactly like the app
+    if (!dict && MODULE_JSON.has(mod)) {
+      try { const j = JSON.parse(fs.readFileSync(path.join(APP, "i18n", "app", `${l}.json`), "utf8")); if (j[mod]) dict = { ...t.en, ...j[mod] }; } catch { /* no module json */ }
     }
     if (dict) all[l][mod] = dict;
   }

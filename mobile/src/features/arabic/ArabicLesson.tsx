@@ -244,7 +244,7 @@ function LessonRun({ lesson }: { lesson: Lesson }) {
             <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{T.xp}</Text>
           </GoldCard>
         </View>
-        {!passed ? <Text style={{ marginTop: 20, fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.muted, textAlign: "center" }}>{T.needPass}</Text> : null}
+        {!passed ? <Text style={{ marginTop: 20, fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: t.muted, textAlign: "center" }}>{T.needPass.replace("{pass}", String(PASS_PCT))}</Text> : null}
         <View style={{ marginTop: 32, gap: 12 }}>
           {passed && next ? <BigButton title={`${T.nextLesson}  ${FWD}`} height={48} radius={R.pill} onPress={() => goLesson(next)} /> : null}
           {passed && !next ? <BigButton title={`${T.readQuran}  ${FWD}`} height={48} radius={R.pill} onPress={() => router.push("/shams/1" as Href)} /> : null}

@@ -23,6 +23,9 @@ Create `posts/<yyyy-mm>-<slug>.json`:
 ```
 
 - Never type Quran or hadith text by hand: set `verseKey` / `hadithId`; the app loads the text from the source.
+- `hadithId` numbers are hadith-api numbers (the text is fetched by them). Labels and sunnah.com links show the usual
+  number instead (`src/lib/hadithNumber.ts`, app copy in `mobile/src/web`): `muslim:1874` reads "Sahih Muslim 804" and
+  links to sunnah.com/muslim:804a. The other collections number alike in both.
 - `publishAt` in the future = scheduled. Invalid files are skipped (see server log), they do not break the feed.
 - Changes show up after deploy (posts are re-read every 60 s, CDN caches up to 5 min).
 

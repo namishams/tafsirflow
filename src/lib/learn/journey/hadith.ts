@@ -5,6 +5,7 @@
 // The app keeps fetched hadith in its documents folder; the website keeps them in memory for the visit (and the
 // browser's HTTP cache).
 import { SHIA_BOOKS, SUNNI_COLLECTIONS, type ShiaBook, type SunniCollection } from "./hadithCatalog";
+import { hadithLabel, hadithLink, usualHadithNumber } from "@/lib/hadithNumber";
 
 export const SUNNAH_CDN = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1";
 export const THAQALAYN_API = "https://www.thaqalayn-api.net/api/v2";
@@ -43,7 +44,7 @@ function translationEdition(c: SunniCollection, lang: string): string | null {
   return p && c.editions.includes(`${p}-${c.key}`) ? `${p}-${c.key}` : `eng-${c.key}`;
 }
 const editionLang = (ed: string | null) => (!ed ? "ar" : ({ eng: "en", tur: "tr", urd: "ur", ben: "bn", rus: "ru", fra: "fr", ind: "id" } as Record<string, string>)[ed.split("-")[0]] ?? "en");
-type SunnahHadith = { hadithnumber: number; arabicnumber?: number | string; text: string; grades?: { name: string; grade: string }[]; reference?: { book: number; hadith: number } };
+type SunnahHadith = { hadithnumber: number; arabicnumber?: number | string | null; text: string; grades?: { name: string; grade: string }[]; reference?: { book: number; hadith: number } };
 type SunnahDoc = { metadata: { name: string; section?: Record<string, string> }; hadiths: SunnahHadith[] };
 
 export async function sunniHadith(key: string, n: number, lang: string): Promise<HadithItem | null> {
@@ -64,12 +65,15 @@ export async function sunniHadith(key: string, n: number, lang: string): Promise
   if (lang !== "ar" && !text) return null; // a translation without text is not shown on its own
   const name = SUNNI_NAMES[c.key] ?? c.name;
   const ref = h.reference && h.reference.book > 0 ? ` · Book ${h.reference.book}, Hadith ${h.reference.hadith}` : "";
-  const arNum = h.arabicnumber !== undefined && String(h.arabicnumber) !== String(h.hadithnumber) ? ` (${h.arabicnumber})` : "";
+  // label and link by the usual number (Sahih Muslim 804, not the API's 1874; lib/hadithNumber.ts, as in the app);
+  // id and number stay the API's, by which the text is fetched
+  const num = usualHadithNumber(c.key, h.hadithnumber, a?.arabicnumber ?? t?.arabicnumber);
+  const label = hadithLabel(name, num);
   return {
     id: `sunnah:${c.key}:${h.hadithnumber}`, source: "sunnah", collection: c.key, collectionName: name,
     chapter: Object.values((tr ?? ar)?.metadata.section ?? {})[0], number: String(h.hadithnumber), arabic: arabic || undefined, text,
     textLang: editionLang(tr ? trEd : null), grades: (t?.grades ?? a?.grades ?? []).filter((g) => g.grade).map((g) => ({ by: g.name, grade: g.grade })),
-    reference: `${name} ${h.hadithnumber}${arNum}${ref}`, url: `${SUNNAH_CDN}/editions/${trEd ?? `ara-${c.key}`}/${h.hadithnumber}.json`, credit: `${name} ${h.hadithnumber}`,
+    reference: `${label}${ref}`, url: hadithLink(c.key, h.hadithnumber, num, trEd ?? `ara-${c.key}`), credit: label,
   };
 }
 

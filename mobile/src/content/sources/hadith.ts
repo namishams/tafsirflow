@@ -1,5 +1,6 @@
 import { cachedFetch, DAY, HttpError, rng, settle } from "./net";
 import type { SourceItem } from "./types";
+import { hadithLabel, hadithLink, usualHadithNumber } from "@/web/hadithNumber";
 
 // fawazahmed0/hadith-api. Single hadith files are served from GitHub raw (jsDelivr refuses the package size).
 const RAW = "https://raw.githubusercontent.com/fawazahmed0/hadith-api/1/editions";
@@ -19,21 +20,25 @@ const BOOKS: Record<string, { name: string; max: number; langs: string[] }> = {
 };
 const ISO3: Record<string, string> = { ar: "ara", bn: "ben", en: "eng", fr: "fra", id: "ind", ru: "rus", ta: "tam", tr: "tur", ur: "urd" };
 const ISO2: Record<string, string> = Object.fromEntries(Object.entries(ISO3).map(([k, v]) => [v, k]));
-const SUNNAH_SLUG: Record<string, string> = { abudawud: "abudawud", ibnmajah: "ibnmajah", nawawi: "nawawi40", qudsi: "qudsi40" };
 
-type Raw = { text: string; grade?: string; ref?: string } | null;
+/** `num`: the API's arabicnumber, the usual number of Sahih Muslim (web/hadithNumber.ts) */
+type Raw = { text: string; grade?: string; ref?: string; num?: string } | null;
 
 async function fetchOne(edition: string, n: number): Promise<Raw> {
   try {
-    return await cachedFetch<Raw>(`${RAW}/${edition}/${n}.json`, {
+    const url = `${RAW}/${edition}/${n}.json`;
+    return await cachedFetch<Raw>(url, {
       ttlMs: 90 * DAY,
+      // Sahih Muslim keeps its usual number too, under a new key (entries cached before have none)
+      key: edition.endsWith("-muslim") ? `${url}#num` : undefined,
       transform: (r) => {
         const h = r?.hadiths?.[0];
         const text = String(h?.text ?? "").trim();
         if (!text) return null;
         const g = (h.grades as any[] | undefined)?.[0];
         const ref = h.reference ? `Book ${h.reference.book}, Hadith ${h.reference.hadith}` : undefined;
-        return { text, grade: g ? `${g.grade} (${g.name})` : undefined, ref };
+        const num = h.arabicnumber === undefined || h.arabicnumber === null ? undefined : String(h.arabicnumber);
+        return { text, grade: g ? `${g.grade} (${g.name})` : undefined, ref, num };
       },
     });
   } catch (e) {
@@ -51,10 +56,12 @@ export async function sunniHadith(book: string, n: number, lang: string): Promis
   const main = tr ?? (lang === "ar" ? ar : null);
   if (!main) return null;
   const body = main.grade ? `${main.text}\n\nGrade: ${main.grade}` : main.text;
+  // label and link by the usual number (Sahih Muslim 804, not the API's 1874); the text is fetched by the API's own
+  const num = usualHadithNumber(book, n, ar?.num ?? tr?.num);
   return {
-    id: `hadith:${book}:${n}`, kind: "hadith", title: `${b.name} ${n}`, body,
+    id: `hadith:${book}:${n}`, kind: "hadith", title: hadithLabel(b.name, num), body,
     arabic: tr && ar ? ar.text : undefined, lang: tr ? ISO2[l3] : "ar",
-    source: `${b.name} – hadith-api (fawazahmed0)`, sourceUrl: `https://sunnah.com/${SUNNAH_SLUG[book] ?? book}:${n}`,
+    source: `${b.name} – hadith-api (fawazahmed0)`, sourceUrl: hadithLink(book, n, num, tr ? `${l3}-${book}` : `ara-${book}`),
     tradition: "sunni", tags: [book],
   };
 }

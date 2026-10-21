@@ -2,15 +2,19 @@
 // their references, the trainers' UI texts, the drawings' paths, the Arabic lines of the page heroes) into
 // mobile/src/features/practice/web/, byte for byte, so nothing religious is typed by hand in the app.
 // Run after changing those website files:  node scripts/sync-practice.mjs   (from mobile/)
+//   node scripts/sync-practice.mjs --out <dir>   writes the files into <dir> instead (to compare before applying)
 // sync-web.mjs mirrors src/lib; this script covers what still lives in src/app and src/components.
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const site = join(here, "..", "..");
-const out = join(here, "..", "src", "features", "practice", "web");
+const appWeb = join(here, "..", "src", "web");
+const outAt = process.argv.indexOf("--out");
+if (outAt > 0 && !process.argv[outAt + 1]) throw new Error("--out needs a folder");
+const out = outAt > 0 ? resolve(process.argv[outAt + 1]) : join(here, "..", "src", "features", "practice", "web");
 const page = (route) => join(site, "src", "app", "[locale]", "(app)", route, "page.tsx");
 const comp = (name) => join(site, "src", "components", `${name}.tsx`);
 
@@ -54,22 +58,97 @@ function withQuotes(src, sf, node) {
   return text;
 }
 
-// top-level declarations by name, verbatim (verse quotes resolved), exported
-function decls(file, names) {
+const topName = (st, sf) => {
+  if (ts.isVariableStatement(st)) return st.declarationList.declarations[0].name.getText(sf);
+  if (ts.isTypeAliasDeclaration(st) || ts.isFunctionDeclaration(st) || ts.isInterfaceDeclaration(st)) return st.name?.getText(sf) ?? null;
+  return null;
+};
+// the names a declaration refers to (not the property names it declares or reads: { a: 1 }, x.a, { a: string }, and
+// not the verseQuote(…) / quoteRing(…) calls, which are copied as the text they render)
+function referenced(node) {
+  const names = new Set();
+  const visit = (n) => {
+    if (isQuoteCall(n)) return;
+    if (ts.isIdentifier(n)) {
+      const p = n.parent;
+      const isPropName = p && ((ts.isPropertyAssignment(p) || ts.isPropertySignature(p) || ts.isPropertyDeclaration(p) || ts.isMethodDeclaration(p) || ts.isEnumMember(p)) && p.name === n
+        || ts.isPropertyAccessExpression(p) && p.name === n || ts.isQualifiedName(p) && p.right === n);
+      if (!isPropName) names.add(n.text);
+    }
+    ts.forEachChild(n, visit);
+  };
+  visit(node);
+  return names;
+}
+// the website file's imports by local name: { from, imported, isType, isDefault }
+function importsOf(sf) {
+  const map = new Map();
+  for (const st of sf.statements) {
+    if (!ts.isImportDeclaration(st) || !st.importClause) continue;
+    const from = st.moduleSpecifier.text, typeOnly = st.importClause.isTypeOnly;
+    if (st.importClause.name) map.set(st.importClause.name.text, { from, imported: "default", isType: typeOnly, isDefault: true });
+    const nb = st.importClause.namedBindings;
+    if (nb && ts.isNamedImports(nb)) for (const el of nb.elements) map.set(el.name.text, { from, imported: (el.propertyName ?? el.name).text, isType: typeOnly || el.isTypeOnly, isDefault: false });
+  }
+  return map;
+}
+// "@/lib/<module>" of the website is "@/web/<module>" in the app, its language list "@/i18n/locales" is "@/web/locales"
+// (both mirrored by sync-web.mjs)
+function appModule(from, file, name) {
+  const m = from === "@/i18n/locales" ? [from, "locales"] : /^@\/lib\/(.+)$/.exec(from);
+  const mirrored = m && [".ts", ".tsx", "/index.ts"].some((ext) => existsSync(join(appWeb, `${m[1]}${ext}`)));
+  if (!mirrored) throw new Error(`${file}: the copied declarations use ${name} from "${from}", which the app does not mirror (sync-web.mjs mirrors src/lib)`);
+  return `@/web/${m[1]}`;
+}
+// import lines for the given names of a website file, pointing at the app's mirror of src/lib
+function importLines(sf, file, names) {
+  const imports = importsOf(sf);
+  const byModule = new Map();
+  for (const name of names) {
+    const im = imports.get(name);
+    if (!im) continue;
+    const mod = appModule(im.from, file, name);
+    const list = byModule.get(mod) ?? [];
+    list.push({ name, ...im });
+    byModule.set(mod, list);
+  }
+  const lines = [];
+  for (const [mod, list] of [...byModule].sort(([a], [b]) => a.localeCompare(b))) {
+    const def = list.find((x) => x.isDefault);
+    const named = list.filter((x) => !x.isDefault).map((x) => ({ ...x, text: x.imported === x.name ? x.name : `${x.imported} as ${x.name}` }));
+    const byName = (a, b) => a.text.localeCompare(b.text, "en", { sensitivity: "base" });
+    if (def) lines.push(`import ${def.isType ? "type " : ""}${def.name} from "${mod}";`);
+    if (!named.length) continue;
+    if (named.every((x) => x.isType)) lines.push(`import type { ${named.sort(byName).map((x) => x.text).join(", ")} } from "${mod}";`);
+    else lines.push(`import { ${[...named.filter((x) => !x.isType).sort(byName).map((x) => x.text), ...named.filter((x) => x.isType).sort(byName).map((x) => `type ${x.text}`)].join(", ")} } from "${mod}";`);
+  }
+  return lines;
+}
+
+// top-level declarations by name, verbatim (verse quotes resolved), exported, preceded by the imports they need: what
+// they use from src/lib comes from the app's mirror in src/web (so a type the website moves into src/lib, like the
+// trainers' Lang, follows automatically); `also` names further imports of the file to bring along (for re-exports)
+function decls(file, names, also = []) {
   const { src, sf } = parse(file);
   const found = new Map();
+  const declared = new Set();
+  const uses = new Set(also);
   for (const st of sf.statements) {
-    let name = null;
-    if (ts.isVariableStatement(st)) name = st.declarationList.declarations[0].name.getText(sf);
-    else if (ts.isTypeAliasDeclaration(st) || ts.isFunctionDeclaration(st)) name = st.name?.getText(sf) ?? null;
+    const name = topName(st, sf);
+    if (name) declared.add(name);
     if (name && names.includes(name)) {
       const text = withQuotes(src, sf, st);
       found.set(name, /^export\s/.test(text) ? text : `export ${text}`);
+      for (const r of referenced(st)) uses.add(r);
     }
   }
   const missing = names.filter((n) => !found.has(n));
   if (missing.length) throw new Error(`${file}: missing ${missing.join(", ")}`);
-  return names.map((n) => found.get(n)).join("\n");
+  // a declaration of the file that the copied ones use but that is not copied would leave the app's copy broken
+  const left = [...uses].filter((n) => declared.has(n) && !names.includes(n));
+  if (left.length) throw new Error(`${file}: the copied declarations use ${left.join(", ")} – add them to the list`);
+  const imports = importLines(sf, file, [...uses].filter((n) => !names.includes(n)));
+  return [...imports, ...names.map((n) => found.get(n))].join("\n");
 }
 
 const ARABIC = /[؀-ۿ]/;
@@ -127,23 +206,30 @@ const write = (name, body) => writeFileSync(join(out, `${name}.ts`), `${HEAD}${b
 write("practiceArt", decls(join(site, "src", "components", "art", "PracticeArt.tsx"), ["archPath", "starPath"]));
 // /wudu page: texts, the hadith on the virtue of wudu with their sources, further links
 // (VIRTUE_VERSE: the end of 2:222 from the Quran data, used in every language's list of virtues)
-write("wuduPage", decls(page("wudu"), ["Virtue", "VIRTUE_VERSE", "C"]));
+// (C is typed Record<Lang, Content>: Content comes along, Lang from the app's src/web)
+write("wuduPage", decls(page("wudu"), ["Virtue", "VIRTUE_VERSE", "Content", "C"]));
 // /salah page
-write("salahPage", decls(page("salah"), ["C"]));
+write("salahPage", decls(page("salah"), ["Content", "C"]));
+// The trainers' language type (Lang) and the prayer trainer's text type (Tx, now L2) moved from the components into
+// src/lib/salah; the app's trainers import both from these files, so they are re-exported under their old names.
 // prayer trainer: UI texts and the figure's joints for every posture
-write("prayerTrainer", `import type { Posture } from "@/web/salah";\n${decls(comp("PrayerTrainer"), ["Lang", "Tx", "UI", "P", "Pose", "STAND", "SIT", "POSES", "KEYS", "ease", "lerpPose"])}`);
+write("prayerTrainer", `${decls(comp("PrayerTrainer"), ["UiKey", "UI", "P", "Pose", "STAND", "SIT", "POSES", "KEYS", "ease", "lerpPose"], ["Lang", "L2"])}
+export type { Lang };
+/** the texts of a step (title, meaning, note): the website's L2 */
+export type Tx = L2;`);
 // wudu trainer: UI texts, Arabic counts, the drawing's paths and colours
-write("wuduTrainer", decls(comp("WuduTrainer"), ["Lang", "UI", "AR_TIMES", "GOLD", "WATER", "DROP", "HEAD", "HAIR", "FACE", "EAR", "LIPS", "NOSE", "HAND", "ARM", "FOOT", "INSTEP", "arc", "slips", "shuffle"])
+write("wuduTrainer", `${decls(comp("WuduTrainer"), ["UiKey", "Ui", "UI", "AR_TIMES", "GOLD", "WATER", "DROP", "HEAD", "HAIR", "FACE", "EAR", "LIPS", "NOSE", "HAND", "ARM", "FOOT", "INSTEP", "arc", "slips", "shuffle"], ["Lang"])}
+export type { Lang };`
   + `\nexport const DONE_AR = ${JSON.stringify(arabicJsx(comp("WuduTrainer"))[0])};`);
 // prayer board: the Arabic names of the prayer times
-write("prayerBoard", `import type { Prayer } from "@/web/prayer";\n${decls(comp("PrayerBoard"), ["AR_NAME"])}`);
+write("prayerBoard", decls(comp("PrayerBoard"), ["AR_NAME"]));
 // sunnah duas: reading-mode texts, the Arabic names of the hadith collections for Arabic readers
-write("sunnahDuas", decls(comp("SunnahDuas"), ["UI", "SRC_AR", "srcAr"]));
+write("sunnahDuas", decls(comp("SunnahDuas"), ["UiText", "UI", "SRC_AR", "srcAr"]));
 // name finder: the "father" line of a classical name, the Hijri month of a birth date, the hadith on the most beloved names
 {
   const ar = arabicJsx(comp("NameGenerator"));
   if (ar.length !== 1) throw new Error(`NameGenerator: expected one Arabic text, found ${ar.length}`);
-  write("nameGenerator", `import { findName, hasArabic, latinOf, type BabyName } from "@/web/names";\nimport { toHijri } from "@/web/hijri";\n${decls(comp("NameGenerator"), ["FAV_KEY", "hijriOfInput", "classicalName"])}\nexport const ABD_HADITH_AR = ${JSON.stringify(ar[0])};`);
+  write("nameGenerator", `${decls(comp("NameGenerator"), ["FAV_KEY", "hijriOfInput", "classicalName"])}\nexport const ABD_HADITH_AR = ${JSON.stringify(ar[0])};`);
 }
 // dua generator: the hadith whose etiquette the personal dua follows (named in the head comment of lib/duaGenerator.ts)
 {

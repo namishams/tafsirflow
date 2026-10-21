@@ -2,70 +2,58 @@
 // src/lib, so sync-web.mjs does not cover them) into mobile/src/features/arabic/texts.ts, verbatim, so the app says
 // exactly what the website says and no Arabic is typed by hand. Run after changing those website files:
 //   node scripts/sync-courses.mjs   (from mobile/)
-import { readFileSync, writeFileSync } from "node:fs";
-import { dirname, join, relative } from "node:path";
+//   node scripts/sync-courses.mjs --out <dir>   writes texts.ts into <dir> instead (to compare before applying)
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import ts from "typescript";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const site = join(here, "..", "..");
-const out = join(here, "..", "src", "features", "arabic", "texts.ts");
+const outAt = process.argv.indexOf("--out");
+if (outAt > 0 && !process.argv[outAt + 1]) throw new Error("--out needs a folder");
+const out = outAt > 0 ? join(resolve(process.argv[outAt + 1]), "texts.ts") : join(here, "..", "src", "features", "arabic", "texts.ts");
 
-// returns [start, end) of the object literal that follows `marker` (from its first "{" to the matching "}")
-function objectAfter(src, marker) {
-  const at = src.indexOf(marker);
-  if (at < 0) throw new Error(`marker not found: ${marker}`);
-  const eq = src.indexOf("=", at);
-  const start = src.indexOf("{", eq);
-  let depth = 0, i = start;
-  const stack = []; // string modes: '"', "'", "`", or "${" for template expressions
-  for (; i < src.length; i++) {
-    const c = src[i], mode = stack[stack.length - 1];
-    if (mode === '"' || mode === "'") { if (c === "\\") { i++; continue; } if (c === mode) stack.pop(); continue; }
-    if (mode === "`") { if (c === "\\") { i++; continue; } if (c === "`") { stack.pop(); continue; } if (c === "$" && src[i + 1] === "{") { stack.push("${"); i++; } continue; }
-    if (c === '"' || c === "'" || c === "`") { stack.push(c); continue; }
-    if (c === "{") { if (mode === "${") stack.push("{"); else depth++; continue; }
-    if (c === "}") {
-      if (mode === "{") { stack.pop(); continue; }
-      if (mode === "${") { stack.pop(); continue; }
-      depth--; if (depth === 0) return [start, i + 1];
+// what the generated texts.ts imports from the app's copy of src/lib/arabic
+const IMPORTED = ["LESSONS", "PASS_PCT", "UNITS"];
+
+// the text of each entry of the object literal assigned to the top-level `const <name>` of a website file, whatever
+// type annotation the declaration has (`const C =`, `const T: Record<Lang, …> =`, `… as const`, `… satisfies …`);
+// read with the TypeScript parser, so strings, template literals and comments cannot confuse it
+function objectEntries(src, file, name) {
+  const sf = ts.createSourceFile(file, src, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
+  for (const st of sf.statements) {
+    if (!ts.isVariableStatement(st)) continue;
+    for (const d of st.declarationList.declarations) {
+      if (!ts.isIdentifier(d.name) || d.name.text !== name || !d.initializer) continue;
+      let init = d.initializer;
+      while (ts.isAsExpression(init) || ts.isSatisfiesExpression(init) || ts.isParenthesizedExpression(init)) init = init.expression;
+      if (!ts.isObjectLiteralExpression(init)) throw new Error(`${file}: const ${name} is not an object literal`);
+      // the texts may only use what texts.ts imports (LESSONS.length, UNITS.length …): anything else would not compile
+      const visit = (n) => {
+        if (ts.isIdentifier(n) && !((ts.isPropertyAssignment(n.parent) && n.parent.name === n) || (ts.isPropertyAccessExpression(n.parent) && n.parent.name === n)) && !IMPORTED.includes(n.text))
+          throw new Error(`${file}: const ${name} uses ${n.text} – import it in the header of texts.ts (IMPORTED in sync-courses.mjs)`);
+        ts.forEachChild(n, visit);
+      };
+      init.properties.forEach(visit);
+      return init.properties.map((p) => p.getText(sf));
     }
   }
-  throw new Error("unbalanced object");
-}
-
-// splits the top-level entries of an object literal text "{ a: ..., b: ... }"
-function entries(obj) {
-  const body = obj.slice(1, -1);
-  const parts = []; let depth = 0, cur = "";
-  const stack = [];
-  for (let i = 0; i < body.length; i++) {
-    const c = body[i], mode = stack[stack.length - 1];
-    cur += c;
-    if (mode === '"' || mode === "'") { if (c === "\\") { cur += body[++i]; continue; } if (c === mode) stack.pop(); continue; }
-    if (mode === "`") { if (c === "\\") { cur += body[++i]; continue; } if (c === "`") { stack.pop(); continue; } if (c === "$" && body[i + 1] === "{") { stack.push("${"); cur += body[++i]; } continue; }
-    if (mode === "${" && c === "}") { stack.pop(); continue; }
-    if (c === '"' || c === "'" || c === "`") { stack.push(c); continue; }
-    if (c === "{" || c === "[" || c === "(") depth++;
-    if (c === "}" || c === "]" || c === ")") depth--;
-    if (c === "," && depth === 0) { parts.push(cur.slice(0, -1)); cur = ""; }
-  }
-  if (cur.trim()) parts.push(cur);
-  return parts.map((p) => p.trim()).filter(Boolean);
+  throw new Error(`${file}: top-level const ${name} not found`);
 }
 
 // every language the website file has (at least German and English); the app falls back to English for the rest
-function allLangs(file, marker) {
+function allLangs(file, name) {
   const src = readFileSync(join(site, file), "utf8");
-  const [s, e] = objectAfter(src, marker);
-  const keep = entries(src.slice(s, e)).filter((p) => /^(de|en|ar|tr|ur|fa|ps|fr|es|id|ms|bn|ru|zh)\s*:/.test(p));
+  const keep = objectEntries(src, file, name).filter((p) => /^(de|en|ar|tr|ur|fa|ps|fr|es|id|ms|bn|ru|zh)\s*:/.test(p));
   if (!keep.some((p) => /^de\s*:/.test(p)) || !keep.some((p) => /^en\s*:/.test(p))) throw new Error(`expected de and en in ${file}`);
   return `{\n  ${keep.join(",\n  ")},\n}`;
 }
 
-const home = allLangs("src/components/ArabicHome.tsx", "const T =");
-const lesson = allLangs("src/components/ArabicLesson.tsx", "const T =");
-const alpha = allLangs("src/components/art/PracticeAlphabet.tsx", "const T:");
-const page = allLangs("src/app/[locale]/(app)/arabic/page.tsx", "const C =");
+const home = allLangs("src/components/ArabicHome.tsx", "T");
+const lesson = allLangs("src/components/ArabicLesson.tsx", "T");
+const alpha = allLangs("src/components/art/PracticeAlphabet.tsx", "T");
+const page = allLangs("src/app/[locale]/(app)/arabic/page.tsx", "C");
 // the calligraphic "well done" above a passed lesson (a JSX text in ArabicLesson.tsx)
 const lessonSrc = readFileSync(join(site, "src/components/ArabicLesson.tsx"), "utf8");
 const wellDone = lessonSrc.match(/font-callig text-\[40px\][^>]*>([^<]+)<\/p>/)?.[1];
@@ -75,10 +63,11 @@ const pageSrc = readFileSync(join(site, "src/app/[locale]/(app)/arabic/page.tsx"
 const signIds = pageSrc.match(/const SIGN_LESSONS = (\[[^\]]+\]);/)?.[1];
 if (!signIds) throw new Error("SIGN_LESSONS not found");
 
+mkdirSync(dirname(out), { recursive: true });
 writeFileSync(out, `// The texts of the website's Arabic course pages in every language they have, copied verbatim (not typed) from
 // src/components/ArabicHome.tsx, src/components/ArabicLesson.tsx, src/components/art/PracticeAlphabet.tsx and
 // src/app/[locale]/(app)/arabic/page.tsx. Generated by scripts/sync-courses.mjs – change the website file and run it again, never edit here.
-import { LESSONS, PASS_PCT, UNITS } from "@/web/arabic";
+import { ${IMPORTED.join(", ")} } from "@/web/arabic";
 
 /** ArabicHome.tsx T */
 export const HOME_T = ${home};

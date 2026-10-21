@@ -3,6 +3,7 @@
 // content/sources/hadith.ts); nothing is typed by hand. Also used by the web feed's card resolver (lib/feedWeb/resolve.ts).
 import { getChapter, getResources, getVerseByKey, pickTranslation } from "@/lib/quran";
 import { SHIA_BOOKS } from "@/lib/learn/journey/hadithCatalog";
+import { hadithLabel, hadithLink, usualHadithNumber } from "@/lib/hadithNumber";
 import { getJson, memo, stripHtml, withTimeout, DAY } from "@/lib/feedWeb/net";
 import type { FeedItem } from "./types";
 
@@ -18,23 +19,23 @@ const SUNNAH_CDN = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1";
 const SUNNAH_RAW = "https://raw.githubusercontent.com/fawazahmed0/hadith-api/1";
 const THAQALAYN_API = "https://www.thaqalayn-api.net/api/v2";
 // the ten Sunni collections of hadith-api with the translation editions the API publishes (same table as the app's
-// mobile/src/content/sources/hadith.ts BOOKS; Arabic is always "ara-<key>")
-const SUNNI: Record<string, { name: string; editions: string[]; slug: string }> = {
-  bukhari: { name: "Sahih al-Bukhari", editions: ["ben", "eng", "fra", "ind", "rus", "tur", "urd"], slug: "bukhari" },
-  muslim: { name: "Sahih Muslim", editions: ["ben", "eng", "fra", "ind", "rus", "tur", "urd"], slug: "muslim" },
-  abudawud: { name: "Sunan Abu Dawud", editions: ["ben", "eng", "fra", "ind", "rus", "tur", "urd"], slug: "abudawud" },
-  tirmidhi: { name: "Jami at-Tirmidhi", editions: ["ben", "eng", "ind", "tur", "urd"], slug: "tirmidhi" },
-  nasai: { name: "Sunan an-Nasa'i", editions: ["ben", "eng", "fra", "ind", "tur", "urd"], slug: "nasai" },
-  ibnmajah: { name: "Sunan Ibn Majah", editions: ["ben", "eng", "fra", "ind", "tur", "urd"], slug: "ibnmajah" },
-  malik: { name: "Muwatta Malik", editions: ["ben", "eng", "fra", "ind", "tur", "urd"], slug: "malik" },
-  nawawi: { name: "The Forty Hadith of an-Nawawi", editions: ["ben", "eng", "fra", "tur"], slug: "nawawi40" },
-  qudsi: { name: "40 Hadith Qudsi", editions: ["eng", "fra"], slug: "qudsi40" },
-  dehlawi: { name: "40 Hadith Shah Waliullah Dehlawi", editions: ["eng", "fra"], slug: "shahwaliullah40" },
+// mobile/src/content/sources/hadith.ts BOOKS; Arabic is always "ara-<key>"); sunnah.com paths in lib/hadithNumber.ts
+const SUNNI: Record<string, { name: string; editions: string[] }> = {
+  bukhari: { name: "Sahih al-Bukhari", editions: ["ben", "eng", "fra", "ind", "rus", "tur", "urd"] },
+  muslim: { name: "Sahih Muslim", editions: ["ben", "eng", "fra", "ind", "rus", "tur", "urd"] },
+  abudawud: { name: "Sunan Abu Dawud", editions: ["ben", "eng", "fra", "ind", "rus", "tur", "urd"] },
+  tirmidhi: { name: "Jami at-Tirmidhi", editions: ["ben", "eng", "ind", "tur", "urd"] },
+  nasai: { name: "Sunan an-Nasa'i", editions: ["ben", "eng", "fra", "ind", "tur", "urd"] },
+  ibnmajah: { name: "Sunan Ibn Majah", editions: ["ben", "eng", "fra", "ind", "tur", "urd"] },
+  malik: { name: "Muwatta Malik", editions: ["ben", "eng", "fra", "ind", "tur", "urd"] },
+  nawawi: { name: "The Forty Hadith of an-Nawawi", editions: ["ben", "eng", "fra", "tur"] },
+  qudsi: { name: "40 Hadith Qudsi", editions: ["eng", "fra"] },
+  dehlawi: { name: "40 Hadith Shah Waliullah Dehlawi", editions: ["eng", "fra"] },
 };
 const PREFIX: Record<string, string> = { en: "eng", tr: "tur", ur: "urd", bn: "ben", ru: "rus", fr: "fra", id: "ind" };
 const LANG: Record<string, string> = { eng: "en", tur: "tr", urd: "ur", ben: "bn", rus: "ru", fra: "fr", ind: "id" };
 
-type SunnahDoc = { hadiths: { hadithnumber: number; text: string; grades?: { name: string; grade: string }[]; reference?: { book: number; hadith: number } }[] };
+type SunnahDoc = { hadiths: { hadithnumber: number; arabicnumber?: number | string | null; text: string; grades?: { name: string; grade: string }[]; reference?: { book: number; hadith: number } }[] };
 type TqHadith = {
   bookId: string; id: number; book: string; category?: string; chapter?: string; englishText?: string; arabicText?: string; frenchText?: string; URL?: string;
   gradingsFull?: { author?: { name_en?: string | null; name_ar?: string | null }; grade_en?: string | null; grade_ar?: string | null }[];
@@ -86,10 +87,12 @@ export async function resolveHadith(id: string, locale: string): Promise<Resolve
   if (!arabic || (locale !== "ar" && !text)) return null;
   const ref = (t ?? a)?.reference;
   const grades = (t?.grades ?? a?.grades ?? []).filter((g) => g.grade).map((g) => ({ by: g.name, grade: g.grade }));
+  // label and link by the usual number (Sahih Muslim 804, not the API's 1874); the text is fetched by the API's own
+  const num = usualHadithNumber(parts[0], n, a?.arabicnumber ?? t?.arabicnumber);
   return {
-    arabic, text, textLang: trEd ? LANG[trEd.split("-")[0]] ?? "en" : "ar", name: c.name, number: String(n), grades,
-    reference: `${c.name} ${n}${ref && ref.book > 0 ? ` · Book ${ref.book}, Hadith ${ref.hadith}` : ""}`,
-    url: `https://sunnah.com/${c.slug}:${n}`,
+    arabic, text, textLang: trEd ? LANG[trEd.split("-")[0]] ?? "en" : "ar", name: c.name, number: num?.label, grades,
+    reference: `${hadithLabel(c.name, num)}${ref && ref.book > 0 ? ` · Book ${ref.book}, Hadith ${ref.hadith}` : ""}`,
+    url: hadithLink(parts[0], n, num, trEd ?? `ara-${parts[0]}`),
   };
 }
 
