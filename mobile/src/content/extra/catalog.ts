@@ -90,3 +90,80 @@ export const WORKS: CatalogEntry[] = [
   ...shia("Kitab al-Kafi", "Man La Yahduruhu al-Faqih", "Tahdhib al-Ahkam", "Al-Istibsar", "Nahj al-Balagha", "Bihar al-Anwar",
     "Tafsir al-Mizan", "Al-Sahifa al-Sajjadiyya", "Majma' al-Bayan", "Wasa'il al-Shia"),
 ];
+
+/** spread of Islam */
+export const SPREAD: CatalogEntry[] = all(
+  "Spread of Islam", "Early Muslim conquests", "Muslim conquest of the Levant", "Muslim conquest of Persia", "Muslim conquest of Egypt",
+  "Muslim conquest of the Maghreb", "Umayyad conquest of Hispania", "Muslim conquest of Transoxiana", "Umayyad campaigns in India",
+  "Islam in Africa", "Trans-Saharan trade", "Indian Ocean trade", "Silk Road",
+  "Islam in Southeast Asia", "Spread of Islam in Indonesia", "Islam in China", "Hui people", "Islam in Europe", "Islam in the Americas",
+  "Islam in Oceania", "Sufism", "Chishti Order", "Qadiriyya", "Naqshbandi", "Wali Sanga", "Swahili coast",
+  "Sultanate of Malacca", "Delhi Sultanate", "Seljuk Empire", "Ghaznavid dynasty", "Volga Bulgaria", "Golden Horde",
+  "Kanem–Bornu Empire", "Songhai Empire", "Sokoto Caliphate", "Muslim world",
+);
+
+export const GOLDEN_AGE: CatalogEntry[] = all(
+  "Islamic Golden Age", "Al-Khwarizmi", "Ibn Sina", "Ibn al-Haytham", "Al-Biruni", "Al-Zahrawi", "Ibn Battuta", "Ibn Khaldun",
+  "Al-Kindi", "Al-Farabi", "Ibn Rushd", "Abu Bakr al-Razi", "Jabir ibn Hayyan", "Al-Battani", "Ibn al-Nafis", "Al-Jazari",
+  "Banu Musa", "Thabit ibn Qurra", "Omar Khayyam", "Nasir al-Din al-Tusi", "Al-Idrisi", "Abbas ibn Firnas", "Ulugh Beg",
+  "Al-Sufi", "Ibn Yunus", "Al-Masudi", "Hunayn ibn Ishaq", "Ibn Tufail", "Al-Jahiz", "Piri Reis", "Taqi al-Din Muhammad ibn Ma'ruf",
+  "House of Wisdom", "Al-Qarawiyyin", "Al-Azhar University", "Bimaristan", "Maragheh observatory", "Ulugh Beg Observatory",
+  "Astrolabe", "Algebra", "Arabic numerals", "Mathematics in medieval Islam", "Medicine in the medieval Islamic world",
+  "Astronomy in the medieval Islamic world", "Alchemy and chemistry in the medieval Islamic world", "Book of Optics",
+  "The Canon of Medicine", "Tabula Rogeriana", "Translation movement", "Madrasa",
+);
+
+export const TRADITIONS: CatalogEntry[] = [
+  ...all("Ramadan", "Iftar", "Suhur", "Tarawih", "Fanous", "Laylat al-Qadr", "Eid al-Fitr", "Eid al-Adha",
+    "Zakat al-Fitr", "Qurbani", "Eidi (gift)", "Hari Raya Puasa", "Lebaran", "Mudik", "Ketupat", "Bayram", "Şeker Bayramı",
+    "Islamic New Year", "Mid-Sha'ban", "Hajj", "Aqiqah", "Islamic holidays"),
+  // Mawlid is celebrated by many Sunnis and by Shia; some reject it – tagged "all" as an encyclopedic topic
+  ...all("Mawlid"),
+  ...all("Ashura"),
+  ...shia("Mourning of Muharram", "Arbaeen", "Arbaeen Pilgrimage", "Tazieh", "Eid al-Ghadir", "Hosay", "Tabuik", "Tabot"),
+];
+
+export const WOMEN: CatalogEntry[] = [
+  ...all("Khadija bint Khuwaylid", "Fatimah", "Mary in Islam", "Asiya", "Hagar in Islam", "Amina bint Wahb", "Halima bint Abi Dhu'ayb",
+    "Sumayyah bint Khayyat", "Umm Salama", "Zaynab bint Ali", "Rabia of Basra", "Fatima al-Fihri", "Nusaybah bint Ka'ab",
+    "Al-Shifa' bint Abdullah", "Umm Kulthum bint Muhammad", "Ruqayya bint Muhammad", "Zainab bint Muhammad", "Umm Ayman",
+    "Asma bint Abi Bakr", "Sayyida Nafisa", "Zubaidah bint Ja'far", "Nana Asma'u", "Razia Sultan",
+    "Shajar al-Durr", "Arwa al-Sulayhi", "Gawhar Shad", "Hurrem Sultan", "Fatima bint Musa", "Umm al-Banin", 
+    "Hafsa bint Umar", "Zaynab bint Jahsh", "Juwayriyya bint al-Harith", "Maymunah bint al-Harith", "Safiyya bint Huyayy"),
+  ...sunni("Aisha"),
+];
+
+export const PROPHETS: CatalogEntry[] = all(
+  "Prophets and messengers in Islam", "Adam in Islam", "Idris (prophet)", "Noah in Islam", "Hud (prophet)", "Salih", "Abraham in Islam",
+  "Lot in Islam", "Ishmael in Islam", "Isaac in Islam", "Jacob in Islam", "Joseph in Islam", "Job in Islam", "Shuayb",
+  "Moses in Islam", "Aaron in Islam", "Dhul-Kifl", "David in Islam", "Solomon in Islam", "Elijah in Islam", "Elisha in Islam",
+  "Jonah in Islam", "Zechariah in Islam", "John the Baptist in Islam", "Jesus in Islam", "Muhammad", "Luqman", "Dhu al-Qarnayn",
+  "Khidr", "Uzair",
+);
+
+export const CALLIGRAPHY: CatalogEntry[] = all(
+  "Islamic calligraphy", "Arabic calligraphy", "Kufic", "Naskh (script)", "Thuluth", "Muhaqqaq", "Rayhani", 
+  "Nastaliq", "Shikasta", "Diwani", "Maghrebi script", "Sini (script)", "Hijazi script", "Ibn Muqla", "Ibn al-Bawwab",
+  "Yaqut al-Musta'simi", "Hafız Osman", "Mir Emad Hassani", "Hashem Muhammad al-Baghdadi", "Qalam", "Tughra",
+  "Hilya", "Calligram", "Bismillah", 
+);
+export const ARCHITECTURE: CatalogEntry[] = all(
+  "Islamic architecture", "Umayyad architecture", "Abbasid architecture", "Fatimid architecture", "Mamluk architecture",
+  "Moorish architecture", "Mudéjar", "Seljuk architecture", "Ottoman architecture", "Persian architecture", "Timurid architecture",
+  "Safavid architecture", "Mughal architecture", "Indo-Islamic architecture", "Sudano-Sahelian architecture", "Chinese Islamic architecture",
+  "Muqarnas", "Iwan", "Mihrab", "Minbar", "Minaret", "Dome", "Horseshoe arch", "Courtyard", "Sahn", "Mashrabiya", "Chahar bagh",
+  "Ablaq", "Zellij", "Hypostyle", "Caravanserai", "Hammam", "Madrasa", "Sabil (fountain)", "Alhambra", "Taj Mahal",
+);
+
+export const MONTHS: CatalogEntry[] = all(
+  "Islamic calendar", "Muharram", "Safar", "Rabi' al-Awwal", "Rabi' al-Thani", "Jumada al-Awwal", "Jumada al-Thani", "Rajab",
+  "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qadah", "Dhu al-Hijjah", "Sacred months", "Hijri year", "Lunar calendar", 
+);
+
+export const PILLARS: CatalogEntry[] = [
+  ...all("Five Pillars of Islam", "Shahada", "Salah", "Zakat", "Sawm", "Hajj", "Umrah", "Ihram", "Miqat", "Tawaf", "Sa'i",
+    "Safa and Marwa", "Zamzam Well", "Day of Arafah", "Mount Arafat", "Muzdalifah", "Mina, Saudi Arabia", "Stoning of the Devil",
+    "Hady", "Halq", "Black Stone", "Maqam Ibrahim", "Hateem", "Iman (Islam)", "Tawhid", "Angels in Islam", "Islamic holy books",
+    "Day of Resurrection", "Predestination in Islam"),
+  ...shia("Usul al-Din", "Imamate in Twelver doctrine", "Khums"),
+];

@@ -1,7 +1,8 @@
 import { RECITERS } from "@/lib/quran";
 import { VOCAB_DECKS, type Word } from "@/web/vocab";
 import { meaning } from "@/web/vocabI18n";
-import { ART, HISTORY, MOSQUES, RECITER_ARTICLES, SCHOLARS, SEERAH, WORKS, type CatalogEntry } from "./catalog";
+import { ART, HISTORY, MOSQUES, RECITER_ARTICLES, SCHOLARS, SEERAH, WORKS, SPREAD, GOLDEN_AGE, TRADITIONS, WOMEN, PROPHETS, CALLIGRAPHY, ARCHITECTURE, MONTHS, PILLARS, type CatalogEntry } from "./catalog";
+import { ISLAM_IN } from "./countries";
 import type { ExtraItem, ExtraKind } from "./types";
 import { WIKI_LICENSE, WIKI_LICENSE_URL, cached, claimDate, claimItem, claimYear, commonsImages, getJSON, label, wikiPages, wikidataEntities } from "./wiki";
 
@@ -185,6 +186,9 @@ function wordItems(lang: string, page: number): ExtraItem[] {
   });
 }
 
+const simple = (kind: ExtraKind, list: CatalogEntry[], lang: string, page: number) =>
+  cached(`v1.${kind}.${lang}.${page % 60}.${dayIndex()}`, () => wikiItems(kind, slice(rotate(list), page), lang));
+
 export async function loadKind(kind: ExtraKind, lang: string, page: number): Promise<ExtraItem[]> {
   switch (kind) {
     case "arabic-word": return wordItems(lang, page);
@@ -198,5 +202,15 @@ export async function loadKind(kind: ExtraKind, lang: string, page: number): Pro
     case "scholar-bio": return cached(`v1.${kind}.${lang}.${page % 50}.${dayIndex()}`, () => wikiItems(kind, slice(rotate(SCHOLARS), page), lang));
     case "scholar-work": return cached(`v1.${kind}.${lang}.${page % 50}.${dayIndex()}`, () => wikiItems(kind, slice(rotate(WORKS), page), lang));
     case "scholar-timeline": return scholarTimeline(lang, page);
+    case "islam-country": return simple(kind, Object.values(ISLAM_IN).map((title) => ({ title, tradition: "all" as const })), lang, page);
+    case "spread": return simple(kind, SPREAD, lang, page);
+    case "golden-age": return simple(kind, GOLDEN_AGE, lang, page);
+    case "traditions": return simple(kind, TRADITIONS, lang, page);
+    case "women": return simple(kind, WOMEN, lang, page);
+    case "prophets": return simple(kind, PROPHETS, lang, page);
+    case "calligraphy-style": return simple(kind, CALLIGRAPHY, lang, page);
+    case "architecture-style": return simple(kind, ARCHITECTURE, lang, page);
+    case "islamic-months": return simple(kind, MONTHS, lang, page);
+    case "pillars-hajj": return simple(kind, PILLARS, lang, page);
   }
 }

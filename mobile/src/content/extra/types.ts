@@ -13,6 +13,16 @@ export const EXTRA_KINDS = [
   "scholar-timeline", // scholars in chronological order with born/died years and places (Wikidata)
   "seerah", // the Prophet's life, ordered by "this day" when Wikidata has a date
   "history", // later Islamic history, ordered by "this day"
+  "islam-country", // "Islam in <country>" for ~200 countries (Wikipedia)
+  "spread", // spread of Islam: conquests, trade routes, Sufi orders, regions
+  "golden-age", // scholars, scientists, inventions and institutions of the Islamic Golden Age
+  "traditions", // Ramadan, Eid, Mawlid, Ashura/Muharram customs around the world
+  "women", // notable women in Islamic history
+  "prophets", // prophets mentioned in the Quran (Wikipedia, complements the app's own stories)
+  "calligraphy-style", // scripts and master calligraphers
+  "architecture-style", // regional styles and architectural elements
+  "islamic-months", // the Hijri months and the calendar
+  "pillars-hajj", // pillars of Islam and Iman, steps and places of Hajj and Umrah (encyclopedic, no rulings)
   "arabic-word", // Arabic word and root of the day from the app's own vocabulary
 ] as const;
 export type ExtraKind = (typeof EXTRA_KINDS)[number];
