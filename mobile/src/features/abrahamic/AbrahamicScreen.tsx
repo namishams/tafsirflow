@@ -13,6 +13,8 @@ import { getVerseByKey, type SingleVerse } from "@/lib/quran";
 import { extraItemsFor, type ExtraItem } from "@/content/extra";
 import { openVerse } from "@/features/coursekit/links";
 import { UI, UNITS, type AbrahamicUnit } from "./content";
+import { CourseList } from "./courseKit";
+import { ABRAHAMIC_COURSE } from "./lessons";
 
 // /abrahamic – "Abraham and the Abrahamic religions in the Quran". Unit 1 is free, the rest needs Pro ("abrahamic").
 export function AbrahamicScreen() {
@@ -26,6 +28,7 @@ export function AbrahamicScreen() {
       <Page>
         <PageHero back topInset eyebrow={s("eyebrow")} title={s("title")} lead={s("lead")} arabic="مِلَّةَ إِبْرَاهِيمَ" />
         <View style={{ padding: 16, gap: 14 }}>
+          <CourseList def={ABRAHAMIC_COURSE} />
           {UNITS.map((u, i) => {
             const locked = i > 0 && !ent.allowed;
             return <UnitCard key={u.id} unit={u} n={i + 1} locked={locked} expanded={open === i}

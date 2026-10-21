@@ -13,6 +13,10 @@ import { extraItemsFor, type ExtraItem } from "@/content/extra";
 import { openVerse } from "@/features/coursekit/links";
 import { BrandFoot, CARD_SIZE, ShareSheet, type ShareFormat } from "@/features/feed/share";
 import { SECTIONS, TIMELINE, UI, expandRange, type Section } from "./content";
+import { router } from "expo-router";
+import { CourseList } from "@/features/abrahamic/courseKit";
+import { HARAMAIN_COURSE } from "./lessons";
+import { GUIDE_LABEL } from "./HajjGuide";
 
 // /haramain – the Kaaba, Mecca and Medina. The first section is free, the rest needs Pro ("haramain").
 export function HaramainScreen() {
@@ -30,6 +34,8 @@ export function HaramainScreen() {
           <GoldButton compact title={s("share")} icon="send" onPress={() => setShare(true)} style={{ marginTop: 14, alignSelf: "flex-start" }} />
         </PageHero>
         <View style={{ padding: 16, gap: 14 }}>
+          <CourseList def={HARAMAIN_COURSE} />
+          <GoldButton title={pick(GUIDE_LABEL, lang)} icon="map" onPress={() => router.push("/haramain/guide")} />
           <View style={{ backgroundColor: t.surface, borderRadius: 14, borderWidth: 1, borderColor: t.line, padding: 16 }}>
             <Eyebrow>{s("timeline")}</Eyebrow>
             <View style={{ marginTop: 10 }}>
