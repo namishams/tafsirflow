@@ -28,6 +28,7 @@ import { LibScheduler, isLibId, takeRemoteNew } from "./library";
 import { loadRemoteConfig } from "./remote";
 import { wasSeen } from "./seen";
 import { LibraryPost } from "./LibraryPost";
+import { KnowledgePage, isKnowId } from "./KnowledgePost";
 import { LIB } from "./library";
 import { kindOfItem, statPost, statVerse, useFeedTimer } from "./statsStore";
 import { rand } from "./source";
@@ -284,11 +285,13 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
       if (!n) return <View style={{ width, height: pageH }} />;
       return <NamePage {...common} name={n} onShare={(x) => setShare({ kind: "name", n: x })} />;
     }
+    // knowledge posts: a full-screen page of their own
+    if (isKnowId(item)) return <KnowledgePage id={item} width={width} height={pageH} topInset={insets.top + chrome} bottomInset={insets.bottom + bottomSpace} active={index === active && focused} />;
     if (isLibId(item)) {
       return (
         <View style={{ width, height: pageH, justifyContent: "center", paddingTop: insets.top + chrome, paddingBottom: insets.bottom + bottomSpace, backgroundColor: stage.bg }}>
           <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }} showsVerticalScrollIndicator={false} nestedScrollEnabled>
-            <LibraryPost id={item} width={Math.min(width, 560)} reduce={reduce} onDark />
+            <LibraryPost id={item} width={Math.min(width, 560)} reduce={reduce} onDark active={index === active && focused} />
           </ScrollView>
         </View>
       );

@@ -437,7 +437,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     if (item.startsWith("pw:")) return voice.pro ? <View style={{ height: 1 }} /> : <PaywallCard width={colW} />;
     if (item.startsWith("mo:")) return <MomentCard item={item} width={colW} />;
     if (item.startsWith("ad:")) return <AdSlot item={item} width={colW} />;
-    if (isLibId(item)) return <LibraryPost id={item} width={colW} reduce={reduce} />;
+    if (isLibId(item)) return <LibraryPost id={item} width={colW} reduce={reduce} active={index === active && tab === "home" && focused} />;
     if (item.startsWith("r:")) return <RecitersPost {...ex} voices={voices} engine={engine} active={index === active && tab === "home"} sound={focused && tab === "home"} />;
     if (item.startsWith("t:")) return <TranslitPost {...ex} />;
     if (item.startsWith("d:")) return <WordPost {...ex} />;

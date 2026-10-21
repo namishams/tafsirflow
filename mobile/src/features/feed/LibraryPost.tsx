@@ -13,6 +13,7 @@ import type { SourceItem } from "@/content/sources";
 import { toneOf } from "./art";
 import { LIB, topicOfKind, type LibItem, type LibKind, type LibTopic } from "./library";
 import { fillText, useFeedText, type FeedText } from "./texts";
+import { KnowledgePost, knowItemOf } from "./KnowledgePost";
 
 // The posts of the content libraries: image posts (mosques, art, Met objects) with the image credit and licence link
 // always shown, text cards with the Arabic on top (hadith, tafsir, duas, names, words), carousels (scholar timeline,
@@ -37,7 +38,7 @@ export function reciterHref(i: LibItem): Href | null {
   return bio ? (`/reciters/${bio.slug}` as Href) : ("/reciters" as Href);
 }
 /** plain text of a post (Explore search) */
-export const libText = (id: string) => { const p = LIB.get(id); return p ? p.items.map((i) => `${i.title} ${i.body} ${src(i).arabic ?? ""}`).join(" ") : ""; };
+export const libText = (id: string) => { const p = LIB.get(id); return p ? p.items.map((i) => `${i.title} ${i.body} ${src(i).arabic ?? ""} ${(i as { eyebrow?: string }).eyebrow ?? ""}`).join(" ") : ""; };
 
 /** the source line: name, licence and a link to the original */
 export function SourceLine({ item, light }: { item: LibItem; light?: boolean }) {
@@ -92,7 +93,12 @@ function Card({ item, w, tall }: { item: LibItem; w: number; tall?: boolean }) {
   );
 }
 
-export const LibraryPost = memo(function LibraryPost({ id, width, reduce, onDark }: { id: string; width: number; reduce: boolean; onDark?: boolean }) {
+export const LibraryPost = memo(function LibraryPost({ id, width, reduce, onDark, active }: { id: string; width: number; reduce: boolean; onDark?: boolean; active?: boolean }) {
+  // the knowledge posts (knowledge.ts) have their own card with a CTA
+  if (knowItemOf(id)) return <KnowledgePost id={id} width={width} onDark={onDark} active={active} />;
+  return <LibraryPostInner id={id} width={width} reduce={reduce} onDark={onDark} />;
+});
+function LibraryPostInner({ id, width, reduce, onDark }: { id: string; width: number; reduce: boolean; onDark?: boolean }) {
   const th = useTheme();
   const t = onDark ? { ...th, ink: "#fff", muted: "rgba(255,255,255,0.65)", line: "rgba(255,255,255,0.25)" } : th;
   const tx = useFeedText();
@@ -141,4 +147,4 @@ export const LibraryPost = memo(function LibraryPost({ id, width, reduce, onDark
       )}
     </View>
   );
-});
+}

@@ -340,3 +340,8 @@ export function useSchoolT() {
   const d = moduleText("school", { en, de, ar, tr, ur, fa, ps, fr, es, id, ms, bn, ru, zh }, lang);
   return (k: SchoolKey, p?: Record<string, string | number>) => (p ? d[k].replace(/\{(\w+)\}/g, (_, x: string) => String(p[x] ?? "")) : d[k]);
 }
+/** the same texts outside React (the feed's knowledge posts build their items without hooks) */
+export function schoolText(lang: string) {
+  const d = moduleText("school", { en, de, ar, tr, ur, fa, ps, fr, es, id, ms, bn, ru, zh }, lang);
+  return (k: SchoolKey, p?: Record<string, string | number>) => (p ? d[k].replace(/\{(\w+)\}/g, (_, x: string) => String(p[x] ?? "")) : d[k]);
+}

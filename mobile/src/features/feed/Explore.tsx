@@ -17,7 +17,11 @@ import { useFeedText } from "./texts";
 import { useFeedVoice } from "./voice";
 import { useReducedMotionX } from "@/features/extra/motion";
 import { Image, TextInput } from "react-native";
-import { LIB, LIB_TOPICS, LibScheduler, isLibId, onLibData, takeRemoteNew, type LibTopic } from "./library";
+import { LIB, LIB_TOPICS, LibScheduler, isLibId, isSubTopic, onLibData, takeRemoteNew, type LibTopic, type SubTopic } from "./library";
+import { KNOW_SUBJECTS } from "./knowKinds";
+import { knowItemOf, knowKindLabel } from "./KnowledgePost";
+import { useKnowText } from "./knowTexts";
+import { useSchoolT } from "@/features/school/texts";
 import { loadRemoteConfig } from "./remote";
 import { tick } from "./haptics";
 import { wasSeen } from "./seen";
@@ -43,10 +47,13 @@ const Tile = memo(function Tile({ e, size, onPress, big }: { e: Entry; size: num
     return () => { ok = false; };
   }, [verseKey, lang, reciter]);
   const tx = useFeedText();
+  const kt = useKnowText();
   let label = ""; let ar = ""; let body = ""; let tone = toneOf(e.item); let img = "";
+  const kn = knowItemOf(e.item);
   if (verseKey) { label = `Quran ${verseKey}`; ar = arabic; tone = toneOf(verseKey); }
   else if (e.item.startsWith("s:")) { const s = stories.byId.get(e.item.slice(2)); if (s) { label = s.groupTitle; ar = s.arabic; body = s.title; tone = toneOf(s.group); } }
   else if (e.item.startsWith("n:")) { const n = stories.names[Number(e.item.slice(2))]; if (n) { label = n.latin; ar = n.ar; body = n.meaning; tone = toneOf(`name:${n.latin}`); } }
+  else if (kn) { label = knowKindLabel(kt, kn.kind); ar = kn.arabic ?? ""; body = kn.title; tone = toneOf(kn.id); }
   else if (isLibId(e.item)) { const lp = LIB.get(e.item); const f = lp?.items[0]; if (lp && f) { label = libTopicLabel(tx, kindTopic(lp.kind)); ar = (f as { arabic?: string }).arabic ?? ""; body = f.title; tone = toneOf(f.id); img = (f as { image?: string }).image ?? ""; } }
   else if (e.hadith) { label = e.hadith.source; ar = e.hadith.arabic ?? ""; body = ar ? "" : e.hadith.text; tone = toneOf(`hadith:${e.hadith.source}`); }
   return (
@@ -117,8 +124,9 @@ function Sheet({ visible, title, onClose, children }: { visible: boolean; title:
   );
 }
 
-type ExTopic = "all" | "verses" | "names" | "stories" | "hadith" | Exclude<LibTopic, "hadith">;
-const EX_TOPICS: ExTopic[] = ["all", "verses", "tafsir", "hadith", "duas", "stories", "prayer", "seerah", "quran", "holy", "names", "scholars", "history", "art"];
+type ExTopic = "all" | "verses" | "names" | "stories" | "hadith" | Exclude<LibTopic, "hadith"> | SubTopic;
+// after the topics: one chip per Madrasa subject (knowledge posts of that subject, knowledge.ts)
+const EX_TOPICS: ExTopic[] = ["all", "verses", "tafsir", "hadith", "duas", "stories", "prayer", "seerah", "quran", "holy", "names", "scholars", "history", "art", ...KNOW_SUBJECTS.map((s): SubTopic => `sub:${s}`)];
 const isLibTopic = (t: ExTopic): t is Exclude<LibTopic, "hadith"> => (LIB_TOPICS as string[]).includes(t) && t !== "hadith";
 
 export function ExploreSheet({ visible, onClose, onOpen }: { visible: boolean; onClose: () => void; onOpen: OpenItem }) {
@@ -137,8 +145,12 @@ export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOp
   const t = useTheme();
   const { lang } = useLang();
   const stories = useStories();
+  const sch = useSchoolT();
+  // the subject chips: the Madrasa's subject names, shortened to the part before a colon or bracket
+  const subLabel = (s: string) => { const full = sch(`subj_${s}` as never); return full.split(/[:(（]/)[0].trim() || full; };
   const label: Record<ExTopic, string> = { all: tx.topicAll, verses: pt.catVerses, names: tx.topicNames, stories: tx.topicStories, hadith: tx.hadith,
-    ...(Object.fromEntries(LIB_TOPICS.filter((x) => x !== "hadith").map((x) => [x, libTopicLabel(tx, x)])) as Record<Exclude<LibTopic, "hadith">, string>) };
+    ...(Object.fromEntries(LIB_TOPICS.filter((x) => x !== "hadith").map((x) => [x, libTopicLabel(tx, x)])) as Record<Exclude<LibTopic, "hadith">, string>),
+    ...(Object.fromEntries(KNOW_SUBJECTS.map((s) => [`sub:${s}`, subLabel(s)])) as Record<SubTopic, string>) };
   const [query, setQuery] = useState("");
   const lib = useRef<LibScheduler | null>(null);
   const quota = useStoryQuota();
@@ -168,7 +180,7 @@ export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOp
     const tp = topicRef.current;
     const names = latest.current.stories.names.length;
     if (tp === "names") return names ? Array.from({ length: n }, () => ({ item: `n:${Math.floor(Math.random() * names)}` })) : [];
-    if (isLibTopic(tp)) return (lib.current?.take(n) ?? []).map((item) => ({ item }));
+    if (isLibTopic(tp) || isSubTopic(tp)) return (lib.current?.take(n) ?? []).map((item) => ({ item }));
     if (tp === "hadith") { fetchHadith(); return hadith.current.queue.splice(0, n).map((h) => ({ item: `h:${h.id}`, hadith: h })); }
     const draw = d.next(tp === "stories" ? n * 4 : n, latest.current.quota.left).filter((k) => k !== "pro" && (tp === "all" || (tp === "stories" ? k.startsWith("s:") : /^[vw]:/.test(k))));
     const out: Entry[] = [];
@@ -201,7 +213,7 @@ export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOp
     const ids = (k: keyof typeof st.groups) => st.groups[k].flatMap((g) => g.stories.map((x) => x.id));
     feed.current = new DiscoverFeed("foryou", { prophet: ids("prophet"), reciters: ids("reciters"), islam: ids("islam"), tips: ids("tips"), secrets: ids("secrets") }, st.names.length, false, undefined);
     hadith.current = { queue: [], cursor: null, loading: false };
-    lib.current = new LibScheduler(lang, isLibTopic(topicRef.current) ? topicRef.current : "all");
+    lib.current = new LibScheduler(lang, isLibTopic(topicRef.current) || isSubTopic(topicRef.current) ? topicRef.current : "all");
     fetchHadith();
     const fresh = topicRef.current === "all" ? freshIds.current.map((item) => ({ item })) : [];
     freshIds.current = [];

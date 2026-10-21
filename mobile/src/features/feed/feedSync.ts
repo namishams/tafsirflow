@@ -54,6 +54,7 @@ function mergeGamify(a: Gamify | undefined, b: Gamify | undefined): Gamify | und
   const max = (k: "xp" | "quiz" | "quests" | "ramadan" | "tahajjud" | "fajr" | "friday") => Math.max(n[k] ?? 0, o[k] ?? 0);
   return {
     ...o, ...n,
+    recv: Math.max(n.recv ?? 0, o.recv ?? 0), gave: Math.max(n.gave ?? 0, o.gave ?? 0),
     xp: max("xp"), quiz: max("quiz"), quests: max("quests"), ramadan: max("ramadan"), tahajjud: max("tahajjud"), fajr: max("fajr"), friday: max("friday"),
     names: numList(n.names, o.names, 99), holy: union(n.holy, o.holy, 80), frozen: numList(n.frozen, o.frozen, 30),
     stickers: maxMap(n.stickers, o.stickers),

@@ -8,33 +8,48 @@ const servedUrls = new Set<string>();
 const urlSeen = (u: string) => !!u && (servedUrls.has(u) || wasSeen(`u:${u}`));
 import { interestOf, takeBoredom } from "./interest";
 import { fetchFeedNew, fetchFeedPage, flagOn, remoteConfig, resolveAll } from "./remote";
+import { KNOW_KINDS, isKnowKind, knowVisible, type KnowKind, type KnowSubject } from "./knowKinds";
+import type { KnowItem } from "./knowledge";
+/** the knowledge builders load on first use (they import courses and the Madrasa, which import gamify.ts) */
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const knowledge = () => require("./knowledge") as typeof import("./knowledge");
+import { knowText } from "./knowTexts";
 
 // The weighted scheduler of the content libraries (src/content/sources and src/content/extra) for Home, Reels and
 // Explore. Items become feed ids "x:<item id>" (one post) or "xc:<first id>" (a carousel of 3–5 items of the
 // scholar timeline or the seerah). Variety: never the same kind twice in a row, at most two of a kind within six
 // posts, kinds not shown yet in this session are boosted; each kind prefetches its next page when its queue runs low.
 
-export type LibKind = SourceKind | ExtraKind;
-export type LibItem = (SourceItem | ExtraItem) & { kind: LibKind };
+export type LibKind = SourceKind | ExtraKind | KnowKind;
+export type LibItem = (SourceItem | ExtraItem | KnowItem) & { kind: LibKind };
 export type LibPost = { id: string; kind: LibKind; items: LibItem[] };
 export type LibTopic = "tafsir" | "hadith" | "duas" | "prayer" | "holy" | "seerah" | "scholars" | "history" | "art" | "quran";
 export const LIB_TOPICS: LibTopic[] = ["tafsir", "hadith", "duas", "prayer", "holy", "seerah", "quran", "scholars", "history", "art"];
+/** a Madrasa subject as a filter (Explore chips "sub:<subject>"): only knowledge posts of that subject */
+export type SubTopic = `sub:${KnowSubject}`;
+export type SchedTopic = LibTopic | "all" | SubTopic;
+export const isSubTopic = (t: string): t is SubTopic => t.startsWith("sub:");
 
 /** the known kinds per topic; any other kind (new EXTRA_KINDS) is placed by its name in topicOfKind */
 const TOPIC_KINDS: Record<LibTopic, string[]> = {
-  tafsir: ["tafsir", "surah-info", "word-root", "word-of-day"],
-  hadith: ["hadith", "hadith-of-day", "shia-hadith"],
-  duas: ["dua", "asma", "phrases", "akhlaq"],
+  tafsir: ["tafsir", "surah-info", "word-root", "word-of-day", "kn-tadabbur", "kn-grammar"],
+  hadith: ["hadith", "hadith-of-day", "shia-hadith", "kn-nahj"],
+  duas: ["dua", "asma", "phrases", "akhlaq", "kn-names"],
   prayer: ["salah", "pillars", "pillars-hajj", "islamic-months"],
-  holy: ["mosque", "holy-places", "saudi-heritage"],
-  seerah: ["seerah", "prophets", "prophet-family", "battles"],
-  quran: ["quran-facts", "angels-unseen", "arabic-word"],
-  scholars: ["scholar-bio", "scholar-work", "scholar-timeline", "reciter-bio", "reciter-fact", "women"],
-  history: ["history", "islamic-date", "islam-country", "spread", "golden-age", "traditions", "islamic-finance", "halal-culture"],
+  holy: ["mosque", "holy-places", "saudi-heritage", "kn-haramain"],
+  seerah: ["seerah", "prophets", "prophet-family", "battles", "kn-course"],
+  quran: ["quran-facts", "angels-unseen", "arabic-word", "kn-exam", "kn-tajweed", "kn-maqam", "kn-arabic-word"],
+  scholars: ["scholar-bio", "scholar-work", "scholar-timeline", "reciter-bio", "reciter-fact", "women", "kn-faculty", "kn-adab", "kn-next", "kn-moment"],
+  history: ["kn-abrahamic", "history", "islamic-date", "islam-country", "spread", "golden-age", "traditions", "islamic-finance", "halal-culture"],
   art: ["art", "met-art", "calligraphy-style", "architecture-style"],
 };
 const CAROUSEL = new Set<LibKind>(["scholar-timeline", "seerah"]);
-const WEIGHT: Partial<Record<LibKind, number>> = { "hadith-of-day": 3, "islamic-date": 2, "word-of-day": 2, dua: 1.6, tafsir: 1.4, hadith: 1.4, mosque: 1.3, art: 1.2, "met-art": 1.2 };
+const WEIGHT: Partial<Record<LibKind, number>> = { "hadith-of-day": 3, "islamic-date": 2, "word-of-day": 2, dua: 1.6, tafsir: 1.4, hadith: 1.4, mosque: 1.3, art: 1.2, "met-art": 1.2,
+  // the knowledge posts (knowledge.ts): lessons and questions often, Madrasa and progress posts now and then
+  "kn-course": 1.4, "kn-tadabbur": 1.3, "kn-exam": 1.3, "kn-arabic-word": 1.2, "kn-grammar": 1, "kn-tajweed": 1.1, "kn-maqam": 0.7, "kn-names": 1,
+  "kn-abrahamic": 0.9, "kn-haramain": 0.9, "kn-nahj": 0.9, "kn-faculty": 0.5, "kn-adab": 0.6, "kn-next": 0.7, "kn-moment": 0.8 };
+/** knowledge posts: at most this many within the last five posts (the feed stays a feed, not a classroom) */
+const KNOW_MAX_IN_5 = 2;
 const isExtra = (k: LibKind): k is ExtraKind => (EXTRA_KINDS as readonly string[]).includes(k);
 
 /** every post by its feed id */
@@ -65,8 +80,9 @@ export function topicOfKind(kind: string): LibTopic {
 }
 /** posts drawn as an image (format rotation and boredom switch) */
 const IMAGE_KINDS = new Set<string>(["mosque", "holy-places", "saudi-heritage", "art", "met-art", "calligraphy-style", "architecture-style"]);
-export function kindsOf(topic: LibTopic | "all"): LibKind[] {
-  const allowed = new Set<LibKind>([...kindsFor(tradition()), ...EXTRA_KINDS]);
+export function kindsOf(topic: SchedTopic): LibKind[] {
+  if (isSubTopic(topic)) return KNOW_KINDS.filter((k) => k !== "kn-moment" && knowVisible(k) && remoteEnabled(k));
+  const allowed = new Set<LibKind>([...kindsFor(tradition()), ...EXTRA_KINDS, ...KNOW_KINDS.filter(knowVisible)]);
   const all = [...new Set<LibKind>([...(LIB_TOPICS.flatMap((t) => TOPIC_KINDS[t]) as LibKind[]), ...EXTRA_KINDS])];
   const list = topic === "all" ? all : all.filter((k) => topicOfKind(k) === topic);
   return list.filter((k) => allowed.has(k) && remoteEnabled(k));
@@ -113,15 +129,16 @@ export async function takeRemoteNew(lang: string, since?: string): Promise<strin
 // Endless: the sources page through their catalogs and wrap around; items not seen in the last 7 days come first, and
 // when a small pool is fully seen it is served again (reshuffled) rather than running dry. Empty answers (offline)
 // back off and are retried, so a kind never stops for good.
-function fetchKind(kind: LibKind, lang: string) {
+function fetchKind(kind: LibKind, lang: string, deep = false) {
   const key = `${lang}|${kind}`;
   let q = queues.get(key);
   if (!q) { q = { items: [], page: 0, loading: false, empty: 0, retryAt: 0 }; queues.set(key, q); }
-  if (q.loading || q.items.length >= 4 || Date.now() < q.retryAt) return;
+  // a subject filter reads further ahead: the queue may hold items of other subjects
+  if (q.loading || q.items.length >= (deep ? 40 : 4) || Date.now() < q.retryAt) return;
   q.loading = true;
   const cur = q;
   const p = cur.page++;
-  const load: Promise<LibItem[]> = isExtra(kind) ? extraFeedItems(kind, lang, p) as Promise<LibItem[]> : sourceFeedItems(kind, lang, p, { tradition: tradition() }) as Promise<LibItem[]>;
+  const load: Promise<LibItem[]> = isKnowKind(kind) ? knowledge().knowledgeFeedItems(kind, lang, p, knowText(lang)) as Promise<LibItem[]> : isExtra(kind) ? extraFeedItems(kind, lang, p) as Promise<LibItem[]> : sourceFeedItems(kind, lang, p, { tradition: tradition() }) as Promise<LibItem[]>;
   void load.then((got) => {
     if (!got.length) {
       cur.empty++;
@@ -137,7 +154,7 @@ function fetchKind(kind: LibKind, lang: string) {
     const add = unseen.length ? unseen : p >= 4 ? shuffleSeeded(got2.filter((i) => !servedUrls.has(i.sourceUrl))) : [];
     cur.items.push(...add);
     if (add.length) listeners.forEach((f) => f());
-    else setTimeout(() => fetchKind(kind, lang), 0);
+    else setTimeout(() => fetchKind(kind, lang, deep), 0);
   }).catch(() => { cur.retryAt = Date.now() + 30000; }).finally(() => { cur.loading = false; });
 }
 function shuffleSeeded<T>(a: T[]): T[] {
@@ -147,8 +164,8 @@ function shuffleSeeded<T>(a: T[]): T[] {
 }
 
 /** start loading the kinds of a topic (call on mount / topic change) */
-export function warmLibrary(topic: LibTopic | "all", lang: string) {
-  for (const k of kindsOf(topic)) fetchKind(k, lang);
+export function warmLibrary(topic: SchedTopic, lang: string) {
+  for (const k of kindsOf(topic)) fetchKind(k, lang, isSubTopic(topic));
 }
 
 /** a scheduler per feed (Home, Reels, Explore): remembers the recent kinds for the variety rule */
@@ -161,7 +178,10 @@ export class LibScheduler {
   private boredNow = false;
   /** the reader skipped several posts fast: the next post is a different format */
   bored() { this.boredNow = true; }
-  constructor(private lang: string, private topic: LibTopic | "all") { warmLibrary(topic, lang); }
+  constructor(private lang: string, private topic: SchedTopic) { warmLibrary(topic, lang); }
+  /** the subject of a subject filter ("sub:fiqh" → "fiqh") */
+  private get subject(): KnowSubject | null { return isSubTopic(this.topic) ? (this.topic.slice(4) as KnowSubject) : null; }
+  private fits = (i: LibItem) => { const s = this.subject; return !s || (i as KnowItem).subject === s; };
 
   /** up to `n` posts that are ready now (may be fewer while pages load) */
   take(n: number): string[] {
@@ -174,7 +194,7 @@ export class LibScheduler {
     // the server's items: with the weight of "editorial" against the local kinds, when they fit the topic
     fetchRemotePage(this.lang);
     const r = remoteFor(this.lang);
-    const ri = r.items.findIndex((i) => this.topic === "all" || topicOfKind(i.kind) === this.topic);
+    const ri = this.subject ? -1 : r.items.findIndex((i) => this.topic === "all" || topicOfKind(i.kind) === this.topic);
     if (ri >= 0 && rand() < Math.min(0.5, weightOf("editorial") / 12)) {
       const [it] = r.items.splice(ri, 1);
       const id = `x:${it.id}`;
@@ -183,12 +203,15 @@ export class LibScheduler {
       return id;
     }
     const kinds = kindsOf(this.topic);
-    kinds.forEach((k) => fetchKind(k, this.lang));
+    const sub = !!this.subject;
+    kinds.forEach((k) => fetchKind(k, this.lang, sub));
     const last6 = this.recent.slice(-6);
-    const ready = kinds.filter((k) => (queues.get(`${this.lang}|${k}`)?.items.length ?? 0) >= (CAROUSEL.has(k) ? 3 : 1));
-    // the variety rule; when only one kind is loaded (a single-kind topic) it may repeat
+    const ready = kinds.filter((k) => { const its = queues.get(`${this.lang}|${k}`)?.items ?? []; return sub ? its.some(this.fits) : its.length >= (CAROUSEL.has(k) ? 3 : 1); });
+    // the variety rule; when only one kind is loaded (a single-kind topic or a subject filter) it may repeat
     let pool = ready.filter((k) => k !== this.recent[this.recent.length - 1] && last6.filter((x) => x === k).length < 2);
-    if (!pool.length && ready.length && new Set(kinds).size <= 2) pool = ready;
+    // knowledge posts between the others: at most KNOW_MAX_IN_5 of the last five posts (not inside a subject filter)
+    if (!sub && this.recent.slice(-5).filter(isKnowKind).length >= KNOW_MAX_IN_5) { const rest = pool.filter((k) => !isKnowKind(k)); if (rest.length) pool = rest; }
+    if (!pool.length && ready.length && (new Set(kinds).size <= 2 || sub)) pool = ready;
     if (!pool.length) return null;
     // personal interest × base weight, mixed with 15 % uniform exploration; every ~8th post a surprise (a kind seen
     // rarely); after fast skips (boredom) or after a text card: an image post when one is ready (format rotation)
@@ -224,8 +247,16 @@ export class LibScheduler {
       const at = q.items.findIndex((i) => (i as ExtraItem).onThisDay);
       if (at > 0) q.items.unshift(...q.items.splice(at, 1));
     }
+    // knowledge posts: an item of the subject filter, otherwise the learner's favourite subject among the next few
+    if (isKnowKind(kind)) {
+      const cand = q.items.map((it, i) => ({ i, s: (it as KnowItem).subject })).filter((c) => this.fits(q.items[c.i])).slice(0, 4);
+      if (cand.length) {
+        const best = cand.reduce((a, c) => (interestOf(`sub:${c.s}`) * (0.75 + rand() * 0.5) > interestOf(`sub:${a.s}`) * (0.75 + rand() * 0.5) ? c : a));
+        if (best.i > 0) q.items.unshift(...q.items.splice(best.i, 1));
+      }
+    }
     const items = CAROUSEL.has(kind) ? q.items.splice(0, Math.min(5, q.items.length)) : q.items.splice(0, 1);
-    if (q.items.length < 3) fetchKind(kind, this.lang);
+    if (q.items.length < 3) fetchKind(kind, this.lang, sub);
     this.recent.push(kind);
     if (this.recent.length > 12) this.recent.shift();
     this.shown.add(kind);
