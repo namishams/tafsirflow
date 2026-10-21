@@ -17,7 +17,7 @@ import { addOwnCards } from "@/features/srs/store";
 import { loadVerse, type VWord } from "@/features/srs/verse";
 import { StepIn, useNudge } from "../coursekit/motion";
 import { useArabicVoice } from "../coursekit/voice";
-import { buildLesson, scored, type Ex } from "./build";
+import { buildLesson, prepareLesson, scored, type Ex } from "./build";
 import { ALL_WORDS, FREE_UNITS, LESSONS, LEVELS, PASS, UNITS, deckWords, isFreeUnit, lessonById, unitOfLesson } from "./curriculum";
 import { Ar, ChooseCard, DialogueView, IntroCard, SpeakCard, SpotCard, TilesCard, TypeCard } from "./Exercises";
 import { isDone, lessonOpen, nextLesson, saveLesson, setGoal, streak, todayCount, useLangProgress } from "./progress";
@@ -212,9 +212,13 @@ export function LangLessonScreen({ id }: { id: string }) {
   const total = queue.filter((q) => q.first && scored(q.ex)).length;
 
   const begin = () => {
-    setQueue(buildLesson(lesson, lang, { canSpeak }).map((ex) => ({ ex, first: true })));
-    setIdx(0); setRight(0); setFb(null); setResult(null);
-    setPhase("ex");
+    const go = () => {
+      setQueue(buildLesson(lesson, lang, { canSpeak }).map((ex) => ({ ex, first: true })));
+      setIdx(0); setRight(0); setFb(null); setResult(null);
+      setPhase("ex");
+    };
+    // the Quran frequency track loads its words first; on failure the lesson starts with what is cached
+    prepareLesson(lesson, lang).then(go, go);
   };
   const onCheck = (ok: boolean, correct: string) => {
     const q = queue[idx];

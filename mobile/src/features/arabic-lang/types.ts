@@ -5,7 +5,7 @@
 
 export type TxLang = "en" | "de" | "ar" | "tr" | "ur" | "id" | "fr";
 export type Tx = { en: string; de: string; ar?: string; tr?: string; ur?: string; id?: string; fr?: string };
-export type Level = "A1" | "A2" | "B1" | "B2";
+export type Level = "A1" | "A2" | "B1" | "B2" | "C1";
 
 /** a word or sentence of Modern Standard Arabic, fully vowelled, with transliteration and meaning */
 export type Item = { ar: string; tr: string; en: string; de: string };
@@ -28,6 +28,8 @@ export type Lesson = {
   lines?: Line[];
   /** opens the root explorer with these roots */
   roots?: string[];
+  /** Quran frequency track: words `from`..`from+n` of the lemma frequency list (freq.ts), loaded at run time */
+  freq?: { from: number; n: number };
   /** generated unit test */
   test?: boolean;
 };

@@ -82,6 +82,17 @@ export const LEVELS: Level[] = [
   },
 ];
 
+// Levels 7–10 (appended; ids of earlier units unchanged so saved progress stays valid). Listening and practice verses
+// are verse keys only; the words and recordings come from the word data and the chosen reciter.
+const v = (surah: number, from: number, to = from) => ({ surah, from, to });
+const vu = (id: string, level: number, verses: { surah: number; from: number; to: number }[]): Unit => ({ id, level, rules: [], examples: [], tap: [], verses });
+LEVELS.push(
+  { n: 7, units: [vu("7-1", 7, [v(1, 1, 7)]), vu("7-2", 7, [v(93, 1, 11)]), vu("7-3", 7, [v(19, 1, 6), v(12, 4, 6)])] },
+  { n: 8, units: [vu("8-1", 8, [v(1, 1, 7)]), vu("8-2", 8, [v(2, 282)]), vu("8-3", 8, [v(2, 255), v(2, 285, 286)])] },
+  { n: 9, units: [vu("9-1", 9, [v(1, 1, 7)]), vu("9-2", 9, [v(1, 4), v(2, 9, 10)]), vu("9-3", 9, [v(2, 35), v(7, 19), v(2, 58), v(7, 161), v(2, 49), v(7, 141), v(14, 6)]), vu("9-4", 9, [v(2, 62), v(5, 69)])] },
+  { n: 10, units: [vu("10-1", 10, [v(67, 1, 30)]), vu("10-2", 10, [v(36, 1, 27)]), vu("10-3", 10, [v(55, 1, 30)]), vu("10-4", 10, [v(56, 1, 40), v(18, 1, 10)]), vu("10-5", 10, [v(1, 1, 7), v(2, 255), v(67, 1, 5)])] },
+);
+
 export const ALL_UNITS = LEVELS.flatMap((l) => l.units);
 export const unitById = (id: string) => ALL_UNITS.find((u) => u.id === id);
 

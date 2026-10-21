@@ -1,6 +1,7 @@
 import { useLang } from "@/i18n";
 import { moduleText } from "@/i18n/app";
 import type { RuleId } from "./curriculum";
+import { EXTRA } from "./content2";
 
 // Course content of the Reciter Path, written in our own words (established tajweed of the riwaya of Hafs ʿan ʿAsim).
 // English and German here; the other languages can add a "reciterPathContent" entry to src/i18n/app/<lang>.json and
@@ -410,7 +411,15 @@ const de: Content = {
   },
 };
 
+const mergedCache = new Map<string, Content>();
 export function useContent(): Content {
   const { lang } = useLang();
-  return moduleText("reciterPathContent", { en, de }, lang);
+  const base = moduleText("reciterPathContent", { en, de }, lang);
+  const hit = mergedCache.get(lang);
+  if (hit && (hit as Content & { _base?: Content })._base === base) return hit;
+  // levels 7–10 (content2.ts): the learner's language, else English
+  const x = EXTRA[lang] ?? EXTRA.en;
+  const m = { ...base, levels: { ...base.levels, ...x.levels }, units: { ...base.units, ...x.units }, _base: base } as Content;
+  mergedCache.set(lang, m);
+  return m;
 }

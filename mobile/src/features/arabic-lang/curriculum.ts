@@ -2,6 +2,8 @@ import { VOCAB_DECKS, type Word } from "@/web/vocab";
 import { meaning } from "@/web/vocabI18n";
 import { UNITS_A } from "./content1";
 import { UNITS_B } from "./content2";
+import { UNITS_C } from "./content3";
+import { freqItems } from "./freq";
 import { X, type Item, type Lesson, type Level, type Unit } from "./types";
 
 // The whole course: ten units, A1 → B2, each closing with a generated unit test. Unit 1 is free, the rest is Pro.
@@ -15,7 +17,7 @@ const withTest = (u: Unit): Unit => ({
   }],
 });
 
-export const UNITS: Unit[] = [...UNITS_A, ...UNITS_B].map(withTest);
+export const UNITS: Unit[] = [...UNITS_A, ...UNITS_B, ...UNITS_C].map(withTest);
 export const LESSONS: Lesson[] = UNITS.flatMap((u) => u.lessons);
 export const FREE_UNITS = 1;
 export const PASS = 0.8;
@@ -26,7 +28,7 @@ export const isFreeUnit = (n: number) => n <= FREE_UNITS;
 
 /** CEFR-style levels: the certificate for a level needs every unit test up to its last unit */
 export const LEVELS: { level: Level; lastUnit: number }[] = [
-  { level: "A1", lastUnit: 3 }, { level: "A2", lastUnit: 5 }, { level: "B1", lastUnit: 8 }, { level: "B2", lastUnit: 10 },
+  { level: "A1", lastUnit: 3 }, { level: "A2", lastUnit: 5 }, { level: "B1", lastUnit: 8 }, { level: "B2", lastUnit: 10 }, { level: "C1", lastUnit: 16 },
 ];
 
 const DECK = new Map(VOCAB_DECKS.map((d) => [d.id, d]));
@@ -39,6 +41,7 @@ export function deckWords(l: Lesson): Word[] {
 export type LItem = Item & { wordId?: string; local: string };
 export function lessonItems(l: Lesson, lang: string): LItem[] {
   const own: LItem[] = (l.items ?? []).map((it) => ({ ...it, local: lang === "de" ? it.de : it.en }));
+  if (l.freq) return freqItems(l.freq, lang);
   const words: LItem[] = deckWords(l).map((w) => ({ ar: w.ar, tr: w.tr, en: w.en, de: w.de, wordId: w.id, local: meaning(w, lang) }));
   return [...own, ...words];
 }

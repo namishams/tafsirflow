@@ -148,9 +148,39 @@ function testEx(stage: QStage, l: QLesson, verses: Verse[], lang: string, tr: Tr
   return shuffle(pool).slice(0, 10);
 }
 
+// stages 13+: long verses read in phrases, and timed reading (one speed card per verse)
+function longEx(verses: Verse[], l: QLesson, tr: Tr): Ex[] {
+  const out: Ex[] = [];
+  const min = l.minWords ?? 12;
+  const ms = l.msPerWord ?? 1400;
+  const vs = shuffle(verses.filter((v) => realWords(v).length >= min)).slice(0, 3);
+  for (const v of vs) {
+    const ws = realWords(v).map((w) => toQWord(v, w));
+    out.push({ t: "learn", big: ws.map((w) => w.ar).join(" "), title: v.verse_key, body: v.translation.replace(/<[^>]+>/g, "") });
+    out.push({ t: "read", words: ws, key: `R:${v.verse_key}` });
+    for (const w of shuffle(ws).slice(0, 2)) out.push(wordChoose(w, ws, tr));
+    out.push({ t: "speed", items: ws.map((w) => w.ar), targetMs: ws.length * ms, lessonId: l.id });
+  }
+  return out;
+}
+function timedEx(verses: Verse[], l: QLesson, tr: Tr): Ex[] {
+  const ms = l.msPerWord ?? 1000;
+  const vs = shuffle(verses.filter((v) => { const n = realWords(v).length; return n >= 4 && n <= 30; })).slice(0, 5);
+  const out: Ex[] = vs.map((v) => ({ t: "speed", items: realWords(v).map((w) => w.text_uthmani), targetMs: realWords(v).length * ms, lessonId: l.id }));
+  const pool = vs.flatMap((v) => realWords(v).map((w) => toQWord(v, w)));
+  for (const w of shuffle(pool).slice(0, 3)) out.push(wordChoose(w, pool, tr));
+  return out;
+}
+
 /** the exercises of one lesson (null while the Quran words are needed but not loaded) */
 export function buildLesson(stage: QStage, l: QLesson, verses: Verse[], lang: string, tr: Tr, canSpeak: boolean): Ex[] {
+  const core = buildCore(stage, l, verses, lang, tr, canSpeak);
+  return l.note ? [{ t: "learn", big: stage.glyph, title: txOf(stage.title, lang), body: txOf(l.note, lang) }, ...core] : core;
+}
+function buildCore(stage: QStage, l: QLesson, verses: Verse[], lang: string, tr: Tr, canSpeak: boolean): Ex[] {
   switch (l.kind) {
+    case "long": return longEx(verses, l, tr);
+    case "timed": return timedEx(verses, l, tr);
     case "letters": return letterEx(l.letters ?? [], lang, verses, tr, canSpeak);
     case "forms": return formEx(l.letters ?? [], lang, tr);
     case "join": return joinEx(pickWords(verses, "any", 30, l.letters), tr);

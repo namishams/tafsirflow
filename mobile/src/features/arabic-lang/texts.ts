@@ -5,13 +5,13 @@ import { moduleText } from "@/i18n/app";
 // Interface texts of the Arabic language course in all 14 app languages (module "arabicLang"; a language file in
 // src/i18n/app/<lang>.json may override single keys). Always the polite form of address.
 const en = {
-  kicker: "Arabic language course", title: "Understand Arabic", lead: "From your first sentence to reading the Quran with understanding: ten units from A1 to B2, Quranic and Modern Standard Arabic.",
-  cardLead: "Learn the language itself: grammar, roots and the most frequent Quran words, A1 to B2.",
+  kicker: "Arabic language course", title: "Understand Arabic", lead: "From your first sentence to reading the Quran with understanding: seventeen units from A1 to C1, Quranic and Modern Standard Arabic, with the 500 most frequent Quran words.",
+  cardLead: "Learn the language itself: grammar, roots, rhetoric and the most frequent Quran words, A1 to C1.",
   start: "Start", continue: "Continue", unit: "Unit {n}", lessonsDone: "{d} of {n} lessons", locked: "Finish the previous lesson first", free: "Free", pro: "Pro",
   goal: "Daily goal", goalN: "{n} per day", today: "Today: {d} of {n} lessons", goalMet: "Daily goal reached", streak: "{n} days in a row",
   roots: "Root explorer", rootsLead: "Enter a root and see its family of words, with an example verse from the Quran.", rootPh: "Root, e.g. ع ل م", rootNone: "No words with this root in the course vocabulary yet.", rootPick: "Frequent roots", inQuran: "In the Quran",
   certs: "Certificates", certTitle: "Certificate {level}", certNote: "App certificate of Quran Masterclass, not an official CEFR certificate.", certFor: "has completed level {level} of the Arabic language course", certLocked: "Pass the unit tests up to unit {n}", certYou: "You",
-  unlockKicker: "Unit 1 complete", unlockTitle: "Keep going: from A1 to B2", unlockLead: "Nine more units take you from the past tense to verb forms, iʿrāb and reading whole verses with understanding.", unlockList1: "63 more lessons and 9 unit tests", unlockList2: "Grammar spotting in real verses", unlockList3: "App certificates A1, A2, B1 and B2", unlockCta: "Unlock with Pro",
+  unlockKicker: "Unit 1 complete", unlockTitle: "Keep going: from A1 to C1", unlockLead: "Nine more units take you from the past tense to verb forms, iʿrāb and reading whole verses with understanding.", unlockList1: "119 more lessons and 16 unit tests", unlockList2: "Grammar spotting in real verses", unlockList3: "App certificates A1, A2, B1 and B2", unlockCta: "Unlock with Pro",
   check: "Check", next: "Continue", right: "Correct", wrong: "Not quite. Correct is:", listen: "Listen", isNew: "New",
   chooseMeaning: "What does this mean?", chooseArabic: "Which is the Arabic for this?", listenPick: "Listen and choose what you hear", tilesQ: "Build the sentence", tilesHint: "Tap the words in order. The first word goes on the right.", reset: "Reset",
   typeQ: "Write it in Arabic", typeDict: "Listen and write what you hear", typeHint: "Vowel signs are optional.", typePad: "Letters", del: "Delete", space: "Space",
@@ -22,13 +22,13 @@ const en = {
 };
 type T = typeof en;
 const de: T = {
-  kicker: "Arabisch-Sprachkurs", title: "Arabisch verstehen", lead: "Vom ersten Satz bis Sie den Koran verstehend lesen: zehn Einheiten von A1 bis B2, koranisches und modernes Hocharabisch.",
-  cardLead: "Lernen Sie die Sprache selbst: Grammatik, Wurzeln und die häufigsten Koranwörter, A1 bis B2.",
+  kicker: "Arabisch-Sprachkurs", title: "Arabisch verstehen", lead: "Vom ersten Satz bis Sie den Koran verstehend lesen: siebzehn Einheiten von A1 bis C1, koranisches und modernes Hocharabisch, mit den 500 häufigsten Koranwörtern.",
+  cardLead: "Lernen Sie die Sprache selbst: Grammatik, Wurzeln, Rhetorik und die häufigsten Koranwörter, A1 bis C1.",
   start: "Beginnen", continue: "Weiter", unit: "Einheit {n}", lessonsDone: "{d} von {n} Lektionen", locked: "Schließen Sie zuerst die vorige Lektion ab", free: "Kostenlos", pro: "Pro",
   goal: "Tagesziel", goalN: "{n} pro Tag", today: "Heute: {d} von {n} Lektionen", goalMet: "Tagesziel erreicht", streak: "{n} Tage in Folge",
   roots: "Wurzel-Explorer", rootsLead: "Geben Sie eine Wurzel ein und sehen Sie ihre Wortfamilie mit einem Beispielvers aus dem Koran.", rootPh: "Wurzel, z. B. ع ل م", rootNone: "Zu dieser Wurzel gibt es im Kurswortschatz noch keine Wörter.", rootPick: "Häufige Wurzeln", inQuran: "Im Koran",
   certs: "Zertifikate", certTitle: "Zertifikat {level}", certNote: "App-Zertifikat von Quran Masterclass, kein offizielles GER-Zertifikat.", certFor: "hat die Stufe {level} des Arabisch-Sprachkurses abgeschlossen", certLocked: "Bestehen Sie die Einheitentests bis Einheit {n}", certYou: "Sie",
-  unlockKicker: "Einheit 1 geschafft", unlockTitle: "Weiter von A1 bis B2", unlockLead: "Neun weitere Einheiten führen Sie von der Vergangenheit über die Verbstämme und den Iʿrāb bis zum verstehenden Lesen ganzer Verse.", unlockList1: "63 weitere Lektionen und 9 Einheitentests", unlockList2: "Grammatik in echten Versen erkennen", unlockList3: "App-Zertifikate A1, A2, B1 und B2", unlockCta: "Mit Pro freischalten",
+  unlockKicker: "Einheit 1 geschafft", unlockTitle: "Weiter von A1 bis C1", unlockLead: "Neun weitere Einheiten führen Sie von der Vergangenheit über die Verbstämme und den Iʿrāb bis zum verstehenden Lesen ganzer Verse.", unlockList1: "119 weitere Lektionen und 16 Einheitentests", unlockList2: "Grammatik in echten Versen erkennen", unlockList3: "App-Zertifikate A1, A2, B1 und B2", unlockCta: "Mit Pro freischalten",
   check: "Prüfen", next: "Weiter", right: "Richtig", wrong: "Nicht ganz. Richtig ist:", listen: "Anhören", isNew: "Neu",
   chooseMeaning: "Was bedeutet das?", chooseArabic: "Wie heißt das auf Arabisch?", listenPick: "Hören Sie zu und wählen Sie, was Sie hören", tilesQ: "Bauen Sie den Satz", tilesHint: "Tippen Sie die Wörter der Reihe nach an. Das erste Wort steht rechts.", reset: "Zurücksetzen",
   typeQ: "Schreiben Sie es auf Arabisch", typeDict: "Hören Sie zu und schreiben Sie, was Sie hören", typeHint: "Vokalzeichen sind freiwillig.", typePad: "Buchstaben", del: "Löschen", space: "Leerzeichen",

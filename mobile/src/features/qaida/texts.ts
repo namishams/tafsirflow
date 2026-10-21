@@ -4,13 +4,13 @@ import { moduleText } from "@/i18n/app";
 // Interface texts of the reading course (module "qaida"; the other twelve languages in src/i18n/app/<lang>.json).
 // Always the polite form of address. Stage explanations live in curriculum.ts.
 const en = {
-  kicker: "Qaida method", title: "Read the Quran in Arabic", lead: "From the first letter to reading Juz ʿAmma yourself: twelve stages in the order of the Quran schools, with real Quran words, recordings and an on-device reading check.",
+  kicker: "Qaida method", title: "Read the Quran in Arabic", lead: "From the first letter to fluent reading in the whole mushaf: twenty stages in the order of the Quran schools, with real Quran words, recordings and an on-device reading check.",
   start: "Start", continue: "Continue", stage: "Stage {n}", lessonsDone: "{d} of {n} lessons", placed: "Placed by the test", locked: "Finish the previous stage first", free: "Free",
   placement: "Placement test", placementLead: "Can you already read? Twelve short questions show which stages you can skip.",
   goal: "Daily goal", goalN: "{n} per day", today: "Today: {d} of {n} lessons", goalMet: "Daily goal reached", streak: "{n} days in a row",
   review: "Review", reviewLead: "Your hardest letters and words come back until they sit. Words also go to your card trainer.", reviewEmpty: "Nothing to review yet. Mistakes from your lessons appear here.",
   unlockKicker: "Stages 1–3 complete", unlockTitle: "You can read all the letters. Now read the Quran.", unlockLead: "With Pro you continue with vowels, tanwin, madd, sukun, shadda, the signs of the mushaf and real verses, up to reading Juz ʿAmma with word-by-word highlighting.", unlockCta: "Unlock with Pro",
-  unlockList1: "Nine more stages, from harakat to Juz ʿAmma", unlockList2: "Reading check on your device", unlockList3: "Speed drills and mini-tests",
+  unlockList1: "Seventeen more stages, from harakat to Juz 28, al-Kahf and timed challenges", unlockList2: "Reading check on your device", unlockList3: "Speed drills and mini-tests",
   learn: "New", lesson: "Lesson {n}", test: "Mini-test", juzSurah: "Surah {n}",
   listenTap: "Listen and tap what you hear", which: "Which one is “{x}”?", called: "What is this letter called?", whichLetter: "Which letter is this?",
   matchTitle: "Find the pairs", matchForms: "Match each form to its letter", hearWord: "Listen and pick the word",
@@ -25,13 +25,13 @@ const en = {
 };
 type T = typeof en;
 const de: T = {
-  kicker: "Qaida-Methode", title: "Den Koran auf Arabisch lesen", lead: "Vom ersten Buchstaben bis Sie Juz ʿAmma selbst lesen: zwölf Stufen in der Reihenfolge der Koranschulen, mit echten Koranwörtern, Aufnahmen und einer Leseprüfung auf dem Gerät.",
+  kicker: "Qaida-Methode", title: "Den Koran auf Arabisch lesen", lead: "Vom ersten Buchstaben bis zum flüssigen Lesen im ganzen Mushaf: zwanzig Stufen in der Reihenfolge der Koranschulen, mit echten Koranwörtern, Aufnahmen und einer Leseprüfung auf dem Gerät.",
   start: "Beginnen", continue: "Weiter", stage: "Stufe {n}", lessonsDone: "{d} von {n} Lektionen", placed: "Per Einstufungstest übersprungen", locked: "Schließen Sie zuerst die vorige Stufe ab", free: "Kostenlos",
   placement: "Einstufungstest", placementLead: "Sie können schon lesen? Zwölf kurze Fragen zeigen, welche Stufen Sie überspringen können.",
   goal: "Tagesziel", goalN: "{n} pro Tag", today: "Heute: {d} von {n} Lektionen", goalMet: "Tagesziel erreicht", streak: "{n} Tage in Folge",
   review: "Wiederholung", reviewLead: "Ihre schwierigsten Buchstaben und Wörter kommen zurück, bis sie sitzen. Wörter landen auch in Ihrem Kartentrainer.", reviewEmpty: "Noch nichts zu wiederholen. Fehler aus Ihren Lektionen erscheinen hier.",
   unlockKicker: "Stufen 1–3 geschafft", unlockTitle: "Sie können alle Buchstaben lesen. Jetzt lesen Sie den Koran.", unlockLead: "Mit Pro geht es weiter mit Vokalen, Tanwin, Madd, Sukun, Schadda, den Zeichen des Mushaf und echten Versen, bis Sie Juz ʿAmma mit Wort-für-Wort-Markierung lesen.", unlockCta: "Mit Pro freischalten",
-  unlockList1: "Neun weitere Stufen, von den Harakat bis Juz ʿAmma", unlockList2: "Leseprüfung auf Ihrem Gerät", unlockList3: "Tempoübungen und Mini-Tests",
+  unlockList1: "Siebzehn weitere Stufen, von den Harakat bis Juz 28, al-Kahf und Lese-Challenges", unlockList2: "Leseprüfung auf Ihrem Gerät", unlockList3: "Tempoübungen und Mini-Tests",
   learn: "Neu", lesson: "Lektion {n}", test: "Mini-Test", juzSurah: "Sure {n}",
   listenTap: "Hören Sie zu und tippen Sie, was Sie hören", which: "Welches ist „{x}“?", called: "Wie heißt dieser Buchstabe?", whichLetter: "Welcher Buchstabe ist das?",
   matchTitle: "Finden Sie die Paare", matchForms: "Ordnen Sie jede Form ihrem Buchstaben zu", hearWord: "Hören Sie zu und wählen Sie das Wort",

@@ -1,14 +1,15 @@
 import type { WordRule } from "./words";
+import { MUSHAF_STAGES } from "./curriculum-mushaf";
 
 // "Read the Quran in Arabic": the order of the Qāʿida Nūrāniyya / Baghdādiyya taught in Quran schools, in twelve
 // stages from the single letter to reading Juz ʿAmma. Letters and syllables are typed here (they are not Quran text);
 // every Quran word and verse is picked at run time from the word data (see words.ts).
 // Explanations: de, en, ar, tr, ur, id, fr (other languages fall back to English).
 
-export type Tx = { en: string; de: string; ar: string; tr: string; ur: string; id: string; fr: string };
+export type Tx = { en: string; de: string; ar: string; tr?: string; ur?: string; id?: string; fr?: string };
 export const txOf = (v: Tx, lang: string) => (v as Record<string, string>)[lang] ?? v.en;
 
-export type LessonKind = "letters" | "forms" | "join" | "syllables" | "words" | "verses" | "juz" | "test";
+export type LessonKind = "letters" | "forms" | "join" | "syllables" | "words" | "verses" | "juz" | "test" | "long" | "timed";
 export type QLesson = {
   id: string;
   kind: LessonKind;
@@ -18,8 +19,15 @@ export type QLesson = {
   rule?: WordRule;         // words: which Quran words fit
   surahs?: number[];       // where the words come from
   surah?: number;          // juz: the surah to read
+  note?: Tx;               // an explanation card shown before the exercises (stages 13+)
+  msPerWord?: number;      // long / timed: target reading speed per word
+  minWords?: number;       // long: shortest verse that counts as long
 };
-export type QStage = { n: number; id: string; glyph: string; title: Tx; explain: Tx; lessons: QLesson[] };
+export type QStage = {
+  n: number; id: string; glyph: string; title: Tx; explain: Tx; lessons: QLesson[];
+  /** surah stages: every lesson open at once, complete after `need` lessons (default: all) */
+  openAll?: boolean; need?: number;
+};
 
 export const FREE_STAGES = 3;
 export const PASS = 70;
@@ -233,7 +241,9 @@ export const STAGES: QStage[] = [
       "Bacalah juz terakhir Al-Qur’an surah demi surah. Dengarkan dengan penanda kata demi kata, lalu bacalah sendiri setiap ayat dan periksa kata-katanya.",
       "Lisez la dernière partie du Coran sourate par sourate. Écoutez avec le surlignage mot à mot, puis lisez chaque verset vous-même et vérifiez les mots."),
     lessons: Array.from({ length: 37 }, (_, i) => 114 - i).map((s) => ({ id: `juz-${s}`, kind: "juz" as const, surah: s })),
+    openAll: true, need: 5,
   },
+  ...MUSHAF_STAGES,
 ];
 
 export const stageOf = (lessonId: string) => STAGES.find((s) => s.lessons.some((l) => l.id === lessonId));

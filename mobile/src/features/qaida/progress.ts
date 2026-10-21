@@ -60,7 +60,7 @@ export const lessonPassed = (p: QaidaProgress, id: string) => (p.done[id]?.best 
 export function stageState(p: QaidaProgress, s: QStage, placed: Set<number>) {
   const passed = s.lessons.filter((l) => lessonPassed(p, l.id)).length;
   const stars = s.lessons.length ? Math.min(...s.lessons.map((l) => p.done[l.id]?.stars ?? 0)) : 0;
-  const complete = s.id === "juz" ? passed >= 5 : passed === s.lessons.length;
+  const complete = s.openAll ? passed >= (s.need ?? s.lessons.length) : passed === s.lessons.length;
   return { passed, total: s.lessons.length, stars: complete ? Math.max(1, stars) : placed.has(s.n) ? 1 : 0, complete: complete || placed.has(s.n), placed: placed.has(s.n) && !complete };
 }
 /** a stage opens when the stage before it is complete or placed */
@@ -71,7 +71,7 @@ export function stageOpen(p: QaidaProgress, n: number, placed: Set<number>) {
 }
 /** inside a stage, lessons open one after the other (Juz ʿAmma: all open) */
 export function lessonOpen(p: QaidaProgress, s: QStage, i: number, placed: Set<number>) {
-  if (i === 0 || s.id === "juz" || placed.has(s.n)) return true;
+  if (i === 0 || s.openAll || placed.has(s.n)) return true;
   return lessonPassed(p, s.lessons[i - 1].id);
 }
 export function nextLesson(p: QaidaProgress, placed: Set<number>) {

@@ -1,5 +1,6 @@
 import { lessonItems, unitItems, unitOfLesson, type LItem } from "./curriculum";
 import { tx, type Lesson } from "./types";
+import { loadFreq } from "./freq";
 
 // Builds the exercises of a lesson or unit test from its content. Every exercise except "intro" is scored.
 export type Ex =
@@ -41,8 +42,19 @@ function conjEx(l: Lesson, lang: string, n: number): Ex[] {
 }
 const spotEx = (l: Lesson, lang: string): Ex[] => (l.spot ?? []).map((s) => ({ k: "spot", key: s.key, pos: s.pos, ask: tx(s.ask, lang) }));
 
+/** loads run-time data a lesson needs before its exercises can be built (the Quran frequency track) */
+export async function prepareLesson(l: Lesson, lang: string): Promise<void> {
+  const u = unitOfLesson(l.id);
+  if (l.freq) return loadFreq(l.freq, lang);
+  if (l.test && u) {
+    const fl = shuffle(u.lessons.filter((x) => x.freq)).slice(0, 2);
+    await Promise.all(fl.map((x) => loadFreq(x.freq!, lang)));
+  }
+}
+
 export function buildLesson(l: Lesson, lang: string, opt: { canSpeak: boolean }): Ex[] {
   const u = unitOfLesson(l.id);
+  if (l.freq) return buildFreq(l, lang, opt);
   if (l.test && u) return buildTest(u.lessons.filter((x) => !x.test), lang, opt);
   const items = lessonItems(l, lang);
   const pool = u ? [...items, ...unitItems(u, lang)] : items;
@@ -73,3 +85,12 @@ export function buildTest(lessons: Lesson[], lang: string, opt: { canSpeak: bool
 }
 
 export const scored = (e: Ex) => e.k !== "intro";
+
+/** Quran frequency track: meaning both ways and listening; no typing (Uthmani spelling with its special signs) */
+function buildFreq(l: Lesson, lang: string, opt: { canSpeak: boolean }): Ex[] {
+  const items = lessonItems(l, lang);
+  const intro: Ex[] = items.map((item) => ({ k: "intro", item }));
+  const ex: Ex[] = items.map((it, i) => choose(it, items, i % 2 === 1));
+  if (opt.canSpeak) shuffle(items).slice(0, 3).forEach((it) => { const o = options(it.ar, items.map((p) => p.ar)); ex.push({ k: "listen", say: it.ar, opts: o.opts, ans: o.ans }); });
+  return [...intro, ...shuffle(ex).slice(0, 16)];
+}

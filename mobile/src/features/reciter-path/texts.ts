@@ -3,9 +3,9 @@ import { moduleText } from "@/i18n/app";
 
 // Interface texts of the Reciter Path (module "reciterPath"; the other twelve languages in src/i18n/app/<lang>.json)
 const en = {
-  kicker: "Shams Method", title: "Reciter Path", lead: "Become a reciter step by step: six levels from the makharij to whole surahs, with model recitation, your own recordings and tests.",
+  kicker: "Shams Method", title: "Reciter Path", lead: "Become a reciter step by step: ten levels from the makharij to maqamat, qira'at and whole surahs, with model recitation, your own recordings and tests.",
   start: "Start the path", continue: "Continue", level: "Level {n}", unit: "Unit {n}", free: "Free", locked: "Pro",
-  lockedTitle: "Part of Pro", lockedLead: "The full Reciter Path with all six levels, practice tools, tests and certificates is part of Quran Masterclass Pro.", unlock: "Unlock with Pro",
+  lockedTitle: "Part of Pro", lockedLead: "The full Reciter Path with all ten levels, practice tools, tests and certificates is part of Quran Masterclass Pro.", unlock: "Unlock with Pro",
   preview: "Preview", explanation: "Explanation", examples: "Examples from the Quran", practice: "Practice", checklist: "Self-check", test: "Unit test", exam: "Level exam",
   playWord: "Play word", playVerse: "Play verse", loop: "Repeat", speed: "Speed", stop: "Stop", loading: "Loading words…", offline: "The words could not be loaded. Please check your connection.",
   record: "Record yourself", stopRec: "Stop recording", reciter: "A: Reciter", you: "B: You", ab: "A, then B", micDenied: "Microphone access was not allowed. You can allow it in the system settings.",
@@ -24,9 +24,9 @@ const en = {
 type T = typeof en;
 
 const de: T = {
-  kicker: "Shams-Methode", title: "Rezitationspfad", lead: "Werden Sie Schritt für Schritt zur Rezitatorin oder zum Rezitator: sechs Stufen von den Makharidsch bis zu ganzen Suren, mit Vorbild-Rezitation, eigenen Aufnahmen und Tests.",
+  kicker: "Shams-Methode", title: "Rezitationspfad", lead: "Werden Sie Schritt für Schritt zur Rezitatorin oder zum Rezitator: zehn Stufen von den Makharidsch über Maqamat und Qiraʾat bis zu ganzen Suren, mit Vorbild-Rezitation, eigenen Aufnahmen und Tests.",
   start: "Pfad beginnen", continue: "Weiter", level: "Stufe {n}", unit: "Einheit {n}", free: "Kostenlos", locked: "Pro",
-  lockedTitle: "Teil von Pro", lockedLead: "Der ganze Rezitationspfad mit allen sechs Stufen, Übungswerkzeugen, Tests und Zertifikaten gehört zu Quran Masterclass Pro.", unlock: "Mit Pro freischalten",
+  lockedTitle: "Teil von Pro", lockedLead: "Der ganze Rezitationspfad mit allen zehn Stufen, Übungswerkzeugen, Tests und Zertifikaten gehört zu Quran Masterclass Pro.", unlock: "Mit Pro freischalten",
   preview: "Vorschau", explanation: "Erklärung", examples: "Beispiele aus dem Quran", practice: "Üben", checklist: "Selbstkontrolle", test: "Test der Einheit", exam: "Stufenprüfung",
   playWord: "Wort abspielen", playVerse: "Vers abspielen", loop: "Wiederholen", speed: "Tempo", stop: "Stopp", loading: "Wörter werden geladen…", offline: "Die Wörter konnten nicht geladen werden. Bitte prüfen Sie Ihre Verbindung.",
   record: "Sich selbst aufnehmen", stopRec: "Aufnahme beenden", reciter: "A: Rezitator", you: "B: Sie", ab: "A, dann B", micDenied: "Der Zugriff auf das Mikrofon wurde nicht erlaubt. Sie können ihn in den Systemeinstellungen erlauben.",
