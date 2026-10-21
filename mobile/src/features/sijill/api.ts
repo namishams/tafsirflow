@@ -45,6 +45,10 @@ export type Sijill = {
   sharer?: { tier: number; shares: number };
   reactions: number;
   moments: number;
+  /** counted encouragements received (given and receivedToday only on the own record) */
+  received?: number;
+  given?: number;
+  receivedToday?: number;
 };
 export type SijillConfig = { momentsInFeed: boolean; leaderboards: boolean; compare: boolean };
 

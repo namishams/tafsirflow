@@ -189,6 +189,10 @@ export type Sijill = {
   sharer?: { tier: number; shares: number };
   reactions: number;
   moments: number;
+  /** counted encouragements received (rewarded in the app); `given` and `receivedToday` only for the owner */
+  received: number;
+  given?: number;
+  receivedToday?: number;
 };
 
 type ProfileRow = {
@@ -204,7 +208,7 @@ export async function sijillOf(r: ProfileRow, full: boolean, locale: string): Pr
   const on = (s: Section) => full || pv[s];
   const a = (r.achievements ?? {}) as Partial<Summary>;
   const has = !!a.v;
-  const out: Sijill = { updatedAt: r.achievements_updated_at, reactions: 0, moments: 0 };
+  const out: Sijill = { updatedAt: r.achievements_updated_at, reactions: 0, moments: 0, received: 0 };
   if (full) { out.privacy = pv; out.leaderboard = !!r.leaderboard_opt_in; }
   if (on("level") && has) out.level = { xp: a.level!.xp, level: a.level!.level, talentLevel: r.level ?? "talent", stage: a.rank!.stage, rank: a.rank!.rank, overall: a.rank!.overall };
   if (on("badges")) out.badges = { badge: displayBadge(r), official: !!r.official };
@@ -239,6 +243,11 @@ export async function sijillOf(r: ProfileRow, full: boolean, locale: string): Pr
   );
   out.moments = Number(m.rows[0]?.n ?? 0);
   out.reactions = Number(m.rows[0]?.r ?? 0);
+  try {
+    const t = await creditTotals(Number(r.user_id));
+    out.received = t.received;
+    if (full) { out.given = t.given; out.receivedToday = t.receivedToday; }
+  } catch { /* table not created yet */ }
   return out;
 }
 
@@ -285,4 +294,36 @@ export async function notifyReaction(ownerId: number, actorId: number, momentId:
     const u = await p.query("UPDATE community_notifications SET reaction = $4 WHERE user_id = $1 AND kind = 'moment_reaction' AND actor_id = $2 AND moment_id = $3 RETURNING 1", [ownerId, actorId, momentId, reaction]);
     if (!u.rows[0]) await p.query("INSERT INTO community_notifications (user_id, kind, actor_id, moment_id, reaction) VALUES ($1,'moment_reaction',$2,$3,$4)", [ownerId, actorId, momentId, reaction]);
   } catch { /* not essential */ }
+}
+
+// ---------- rewards for encouragement ----------
+// A reaction is "counted" (rewarded for the receiver, counted for the giver) once per giver and moment, never for oneself
+// (the react route rejects own moments), never across blocks (visibleMoment), and within daily caps so it cannot be farmed:
+// at most 5 from one person to the same person, 50 per receiver and 20 per giver per UTC day. Removing and giving again
+// does not count twice. The app turns the received total into XP and garden growth (mobile/src/features/sijill/received.ts).
+export const CREDIT_CAPS = { perPair: 5, receiverDay: 50, giverDay: 20 } as const;
+export async function creditReaction(momentId: string, giverId: number, receiverId: number): Promise<boolean> {
+  if (giverId === receiverId) return false;
+  try {
+    const r = await pool()!.query(
+      `INSERT INTO community_reaction_credits (moment_id, giver_id, receiver_id)
+       SELECT $1::bigint, $2::bigint, $3::bigint
+        WHERE (SELECT count(*) FROM community_reaction_credits WHERE giver_id = $2 AND receiver_id = $3 AND day = (now() AT TIME ZONE 'UTC')::date) < $4
+          AND (SELECT count(*) FROM community_reaction_credits WHERE receiver_id = $3 AND day = (now() AT TIME ZONE 'UTC')::date) < $5
+          AND (SELECT count(*) FROM community_reaction_credits WHERE giver_id = $2 AND day = (now() AT TIME ZONE 'UTC')::date) < $6
+       ON CONFLICT (moment_id, giver_id) DO NOTHING RETURNING 1`,
+      [momentId, giverId, receiverId, CREDIT_CAPS.perPair, CREDIT_CAPS.receiverDay, CREDIT_CAPS.giverDay],
+    );
+    return !!r.rows[0];
+  } catch { return false; }
+}
+export async function creditTotals(userId: number): Promise<{ received: number; given: number; receivedToday: number }> {
+  const r = await pool()!.query(
+    `SELECT (SELECT count(*)::int FROM community_reaction_credits WHERE receiver_id = $1) AS rec,
+            (SELECT count(*)::int FROM community_reaction_credits WHERE giver_id = $1) AS gave,
+            (SELECT count(*)::int FROM community_reaction_credits WHERE receiver_id = $1 AND day = (now() AT TIME ZONE 'UTC')::date) AS today`,
+    [userId],
+  );
+  const x = r.rows[0] ?? {};
+  return { received: Number(x.rec ?? 0), given: Number(x.gave ?? 0), receivedToday: Number(x.today ?? 0) };
 }

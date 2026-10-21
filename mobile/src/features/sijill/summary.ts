@@ -17,6 +17,7 @@ import { readProgress as readLang } from "@/features/arabic-lang/progress";
 import { PASS as LANG_PASS } from "@/features/arabic-lang/curriculum";
 import { currentStage, overallGrade, stageState, subjectGrades } from "@/features/school/model";
 import { sijillApi, type Summary } from "./api";
+import { collectReceived } from "./received";
 
 // The Sijill summary: a compact record of aggregates computed on this device from the existing learning stores
 // (feed gamification and stats, garden and sticker catalogue, memorised verses, Darajat al-Hifz, courses, reading and
@@ -118,6 +119,7 @@ let inflight: Promise<boolean> | null = null;
 /** sends the summary when it changed (at most every 15 minutes unless forced); false when nothing was sent */
 export function syncSijill(pro: boolean, force = false): Promise<boolean> {
   if (inflight) return inflight;
+  void collectReceived(); // encouragements received since last time (throttled inside)
   inflight = (async () => {
     try {
       const s = buildSummary(pro);

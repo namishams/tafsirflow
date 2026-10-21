@@ -669,3 +669,16 @@ CREATE TABLE IF NOT EXISTS admin_user_actions (
   created_at     timestamptz NOT NULL DEFAULT now()
 );
 CREATE INDEX IF NOT EXISTS admin_user_actions_target ON admin_user_actions(target_user_id, id DESC);
+
+-- rewards for encouragement: one row per counted reaction (a reaction counts once per giver and moment, even if it is
+-- removed and given again), capped per giver and receiver, per receiver and per giver per day (see src/lib/sijill.ts)
+CREATE TABLE IF NOT EXISTS community_reaction_credits (
+  moment_id   bigint NOT NULL REFERENCES community_moments(id) ON DELETE CASCADE,
+  giver_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  receiver_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  day         date   NOT NULL DEFAULT (now() AT TIME ZONE 'UTC')::date,
+  PRIMARY KEY (moment_id, giver_id)
+);
+CREATE INDEX IF NOT EXISTS community_reaction_credits_receiver ON community_reaction_credits(receiver_id, day);
+CREATE INDEX IF NOT EXISTS community_reaction_credits_giver ON community_reaction_credits(giver_id, day);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;

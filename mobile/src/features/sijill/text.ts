@@ -75,6 +75,11 @@ const S = {
     "sharerTier": "Verbreiter-Stufe {n}",
     "sharesN": "{n} geteilt",
     "encouragements": "{n} Ermutigungen",
+    "mashaReceived": "{n} MashaAllah erhalten",
+    "encouragerGiven": "{n} Ermutigungen gegeben",
+    "recvNotifTitle": "MashaAllah",
+    "recvNotifBody": "Sie haben heute {n} MashaAllah erhalten.",
+    "recvNotifBodyOne": "Sie haben heute ein MashaAllah erhalten.",
     "momentsN": "{n} Erfolge",
     "nothingYet": "Noch nichts zu zeigen.",
     "hiddenAll": "Dieses Mitglied zeigt noch keine Lernerfolge.",
@@ -231,6 +236,11 @@ const S = {
     "sharerTier": "Sharer level {n}",
     "sharesN": "{n} shares",
     "encouragements": "{n} encouragements",
+    "mashaReceived": "{n} MashaAllah received",
+    "encouragerGiven": "{n} encouragements given",
+    "recvNotifTitle": "MashaAllah",
+    "recvNotifBody": "You received {n} MashaAllahs today.",
+    "recvNotifBodyOne": "You received a MashaAllah today.",
     "momentsN": "{n} achievements",
     "nothingYet": "Nothing to show yet.",
     "hiddenAll": "This member does not show learning achievements yet.",
@@ -326,6 +336,12 @@ export function useST() {
     if (vars) for (const [k, v] of Object.entries(vars)) s = s.split(`{${k}}`).join(String(v));
     return s;
   };
+}
+/** the same texts outside React (notifications) */
+export function sijillT(lang: string, key: SKey, vars?: Record<string, string | number>): string {
+  let s = moduleText("sijill", S, lang)[key] ?? S.en[key];
+  if (vars) for (const [k, v] of Object.entries(vars)) s = s.split(`{${k}}`).join(String(v));
+  return s;
 }
 /** the English table, for the translation script */
 export const SIJILL_EN = S.en;

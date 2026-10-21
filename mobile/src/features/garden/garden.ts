@@ -210,6 +210,15 @@ export function shamsGrow(kind: keyof typeof SHAMS_GP, pro: boolean): number {
 export const shamsRun = (s: Garden) => (s.shamsDay !== undefined && s.shamsDay >= dayNum() - 1 ? s.shamsRun ?? 0 : 0);
 /** first watering of the planting ceremony */
 export function firstWater(id: string) { const s = g(); const t = s.trees.find((x) => x.id === id); if (!t || s.watered === dayNum()) return; s.watered = dayNum(); t.hist.push({ d: dayNum(), k: "water" }); grow(t, 5, "quests"); save(); }
+/** a little growth for encouragement received (the caller caps it per day); false when there is no tree or no stage-up */
+export function growFromKindness(gp: number): boolean {
+  const s = g();
+  const t = s.trees.find((x) => x.id === s.active) ?? s.trees[0];
+  if (!t || !(gp > 0)) return false;
+  const up = grow(t, Math.min(5, Math.floor(gp)), "quests");
+  save();
+  return up;
+}
 export const clearNotifyStage = () => { const s = g(); if (s.notifyStage) { s.notifyStage = undefined; save(); } };
 
 export function plantTree(type: TreeType, name: string, pro: boolean): Tree | null {

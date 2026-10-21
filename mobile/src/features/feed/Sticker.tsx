@@ -71,6 +71,7 @@ function MotifArt({ m, c }: { m: Motif; c: string }) {
     case "hourglass": return <G {...s}><Path d="M36,28H64M36,72H64" /><Path d="M38,28Q38,44 50,50Q62,44 62,28" /><Path d="M38,72Q38,56 50,50Q62,56 62,72" /><Path d="M44,66H56" strokeWidth={4} /></G>;
     case "drop": return <G {...s}><Path d="M38,62Q34,44 44,36Q48,44 46,52" /><Path d="M62,62Q66,44 56,36Q52,44 54,52" /><Path d="M38,62Q50,70 62,62" /><Circle cx={50} cy={30} r={3} fill={c} /></G>;
     case "mat": return <G {...s}><Rect x={32} y={26} width={36} height={50} rx={3} /><Path d="M38,48Q38,34 50,32Q62,34 62,48V70H38Z" /><Path d="M32,72H68" /></G>;
+    case "heart": return <G {...s}><Path d="M50,70Q30,56 30,44Q30,34 40,34Q47,34 50,41Q53,34 60,34Q70,34 70,44Q70,56 50,70Z" /><Path d={star(50, 50, 6, 3, 4)} fill={c} /></G>;
     case "calendar": return <G {...s}><Rect x={28} y={32} width={44} height={38} rx={5} /><Path d="M28,44H72M38,26V36M62,26V36" /><Path d={star(50, 57, 7, 3.5, 5)} fill={c} /></G>;
   }
 }
@@ -115,7 +116,7 @@ export const StickerArt = memo(function StickerArt({ def, size = 88, locked = fa
 const TOPIC_TX: Record<LibTopic, keyof FeedText> = { tafsir: "topicTafsir", hadith: "hadith", duas: "topicDuas", prayer: "topicPrayer", holy: "topicHoly", seerah: "topicSeerah", quran: "topicQuran", scholars: "topicScholars", history: "topicHistory", art: "topicArt" };
 export const topicLabel = (tp: LibTopic, tx: FeedText) => tx[TOPIC_TX[tp]] as string;
 const FAM: Record<string, keyof GameText> = {
-  verses: "sVerses", posts: "sPosts", words: "sWords", quiz: "sQuiz", share1: "sShare1", shares: "sShares", shareStreak: "sShareStreak", streak: "sStreak", level: "sLevel", quest1: "sQuest1", quests: "sQuests",
+  verses: "sVerses", posts: "sPosts", words: "sWords", quiz: "sQuiz", share1: "sShare1", shares: "sShares", shareStreak: "sShareStreak", mashaRecv: "sMashaRecv", encourager: "sEncourager", streak: "sStreak", level: "sLevel", quest1: "sQuest1", quests: "sQuests",
   topic1: "sTopic1", topic2: "sTopic2", names33: "sNames33", names99: "sNames99", holy10: "sHoly10", holyAll: "sHolyAll", ramadan7: "sRamadan7", ramadan29: "sRamadan29",
   tahajjud1: "sTahajjud1", tahajjud10: "sTahajjud10", fajr7: "sFajr7", friday4: "sFriday4", hours10: "sHours10",
   "rare-moon": "rMoon", "rare-lantern": "rLantern", "rare-palm": "rPalm", "rare-star": "rStar", "rare-rose": "rRose", "rare-ink": "rInk", "rare-arch": "rArch", "rare-dove": "rDove",

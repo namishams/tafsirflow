@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { CONTENT_VISIBLE, NOT_BLOCKED, NO_STORE, talentGate } from "@/lib/talents";
-import { MOMENT_SHOWN, REACTIONS, isReaction, notifyReaction } from "@/lib/sijill";
+import { MOMENT_SHOWN, REACTIONS, creditReaction, isReaction, notifyReaction } from "@/lib/sijill";
 
 export const dynamic = "force-dynamic";
 
@@ -39,6 +39,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     [m.id, g.me.id, b.reaction],
   );
   if (r.rows[0]?.inserted) await p.query("UPDATE community_moments SET reaction_count = reaction_count + 1 WHERE id = $1", [m.id]);
+  // reacting is free for everyone (no Pro check, also on Pro members' moments); a counted reaction rewards the receiver
+  void creditReaction(String(m.id), g.me.id, Number(m.user_id));
   void notifyReaction(Number(m.user_id), g.me.id, String(m.id), b.reaction);
   const c = await counts(String(m.id));
   return json({ mine: b.reaction, counts: c, total: Object.values(c).reduce((a, x) => a + x, 0) }, 200, NO_STORE);

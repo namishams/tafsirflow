@@ -180,6 +180,8 @@ export function SijillShowcase({ s, mine, name, username, noTree }: { s: Sijill;
           {s.level ? <Pill>{st("xpN", { n: n(s.level.xp) })}</Pill> : null}
           {s.level ? <Pill>{`${st("talentLevel")}: ${tt(`level_${s.level.talentLevel}` as TKey)}`}</Pill> : null}
           {s.reactions > 0 ? <Pill>{st("encouragements", { n: n(s.reactions) })}</Pill> : null}
+          {(s.received ?? 0) > 0 ? <Pill>{st("mashaReceived", { n: n(s.received ?? 0) })}</Pill> : null}
+          {mine && (s.given ?? 0) > 0 ? <Pill>{st("encouragerGiven", { n: n(s.given ?? 0) })}</Pill> : null}
           {hid("level") ? <Pill>{st("hidden")}</Pill> : null}
         </View>
       </View>

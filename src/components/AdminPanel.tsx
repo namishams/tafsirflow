@@ -61,7 +61,7 @@ export default function AdminPanel() {
     <main className="mx-auto max-w-5xl px-4 pb-16 pt-4">
       <header className="mb-6 flex items-center justify-between">
         <h1 className="font-display text-2xl font-semibold">{t.admin}</h1>
-        <div className="flex gap-2"><Link href="/admin/users" className={btn}>{locale === "de" ? "Konten & Tarife" : locale === "ar" ? "الحسابات" : "Accounts & plans"}</Link><Link href="/" className={btn}>← {t.home}</Link></div>
+        <div className="flex gap-2"><Link href="/admin/dashboard" className={btn}>Dashboard</Link><Link href="/admin/users" className={btn}>{locale === "de" ? "Konten & Tarife" : locale === "ar" ? "الحسابات" : "Accounts & plans"}</Link><Link href="/" className={btn}>← {t.home}</Link></div>
       </header>
       <nav className="mb-6 inline-flex flex-wrap gap-1 rounded-xl bg-surface p-1 shadow-card">
         {tabs.map(([k, label]) => (

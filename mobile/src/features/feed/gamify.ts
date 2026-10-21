@@ -29,6 +29,8 @@ export type Gamify = {
   shareBest: number;
   /** duplicates of collected stickers (a gift after all daily quests); they can be given to the garden */
   dupes?: Record<string, number>;
+  /** encouragements received / given, counted by the server (community_reaction_credits); only ever rises */
+  recv?: number; gave?: number;
 };
 const empty = (): Gamify => ({
   xp: 0, quiz: 0, quests: 0, names: [], holy: [], ramadan: 0, tahajjud: 0, fajr: 0, friday: 0,
@@ -193,9 +195,9 @@ export function mastery(n: number): { level: number; frac: number } {
 
 // ---------- stickers ----------
 export type Shape = "circle" | "star" | "arch" | "hex" | "rosette";
-export type Motif = "book" | "wave" | "word" | "check" | "plane" | "flame" | "chevrons" | "target" | "crescent" | "star8" | "lantern" | "palm" | "dome" | "arch" | "dove" | "rose" | "pen" | "scroll" | "sunrise" | "night" | "hourglass" | "drop" | "mat" | "calendar";
+export type Motif = "book" | "wave" | "word" | "check" | "plane" | "flame" | "chevrons" | "target" | "crescent" | "star8" | "lantern" | "palm" | "dome" | "arch" | "dove" | "rose" | "pen" | "scroll" | "sunrise" | "night" | "hourglass" | "drop" | "mat" | "calendar" | "heart";
 export type Tone = "emerald" | "gold" | "night" | "rare";
-type Ctx = { t: DayStats; best: number; level: number; quiz: number; quests: number; topic: Record<LibTopic, number>; names: number; holy: number; ramadan: number; tahajjud: number; fajr: number; friday: number; hours: number; shareBest: number };
+type Ctx = { t: DayStats; best: number; level: number; quiz: number; quests: number; topic: Record<LibTopic, number>; names: number; holy: number; ramadan: number; tahajjud: number; fajr: number; friday: number; hours: number; shareBest: number; recv: number; gave: number };
 export type StickerDef = { id: string; fam: string; n?: number; topic?: LibTopic; shape: Shape; motif: Motif; tone: Tone; rare?: boolean; test?: (c: Ctx) => boolean };
 const TOPIC_MOTIF: Record<LibTopic, Motif> = { tafsir: "book", hadith: "scroll", duas: "drop", prayer: "mat", holy: "dome", seerah: "palm", quran: "star8", scholars: "pen", history: "hourglass", art: "rose" };
 const tiers = (fam: string, ns: number[], shape: Shape, motif: Motif, get: (c: Ctx) => number): StickerDef[] =>
@@ -209,6 +211,9 @@ export const STICKERS: StickerDef[] = [
   // "Diligent sharer" series (share-1 above is the first tier; ids shares-10 / shares-50 kept from the old series)
   ...tiers("shares", [5, 10, 25, 50, 100, 250, 500, 1000], "arch", "plane", (c) => c.t.shares),
   ...tiers("shareStreak", [3, 7, 30, 100], "star", "plane", (c) => c.shareBest),
+  // new series (owner rule: additions only, new ids): encouragements received ("MashaAllah received") and given ("Encourager")
+  ...tiers("mashaRecv", [1, 10, 50, 100, 250, 500, 1000], "rosette", "heart", (c) => c.recv),
+  ...tiers("encourager", [10, 50, 200, 1000], "arch", "heart", (c) => c.gave),
   ...tiers("streak", [3, 7, 30, 100, 365], "star", "flame", (c) => c.best),
   ...tiers("level", [5, 10, 25, 50], "rosette", "chevrons", (c) => c.level),
   { id: "quest-1", fam: "quest1", shape: "circle", motif: "target", tone: "emerald", test: (c) => c.quests >= 1 },
@@ -240,7 +245,7 @@ function ctx(st: Stats): Ctx {
   const s = g();
   return {
     t: st.total, best: longestStreak(st), level: levelOf(s.xp).level, quiz: s.quiz, quests: s.quests, topic: topicCounts(st.total.kinds),
-    names: s.names.length, holy: s.holy.length, ramadan: s.ramadan, tahajjud: s.tahajjud, fajr: s.fajr, friday: s.friday, hours: st.total.ms / 3600000, shareBest: Math.max(s.shareBest, shareStreakOf(st).best),
+    names: s.names.length, holy: s.holy.length, ramadan: s.ramadan, tahajjud: s.tahajjud, fajr: s.fajr, friday: s.friday, hours: st.total.ms / 3600000, shareBest: Math.max(s.shareBest, shareStreakOf(st).best), recv: s.recv ?? 0, gave: s.gave ?? 0,
   };
 }
 /** the current and the longest run of days with a share (current counts today or, until a share today, yesterday) */
@@ -329,4 +334,11 @@ export function takeDupe(id: string): boolean {
   return true;
 }
 /** XP from outside the feed (garden harvest); goes through levels like every other XP */
+/** the server's counted totals of encouragements received and given: only rises, and opens the matching stickers */
+export function setSocialTotals(recv: number, gave: number) {
+  const s = g();
+  const r = Math.max(s.recv ?? 0, Math.floor(recv) || 0), v = Math.max(s.gave ?? 0, Math.floor(gave) || 0);
+  if (r === (s.recv ?? 0) && v === (s.gave ?? 0)) return;
+  s.recv = r; s.gave = v; evaluate(true); save(true);
+}
 export function bonusXp(n: number) { if (n > 0 && n <= 500) { addXp(Math.round(n)); save(true); } }
