@@ -7,6 +7,7 @@ import type { RawQ } from "../types";
 export const BANK_FILES: (() => { QS: RawQ[] })[] = [
   () => require("./aqidah"),
   () => require("./fiqh-sawm-zakat-hajj"),
+  () => require("./fiqh-taharah-salah"),
   () => require("./hadith-books"),
   () => require("./hadith-terms"),
   () => require("./nahw-theory"),
