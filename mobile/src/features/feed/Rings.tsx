@@ -1,4 +1,4 @@
-import { memo, useMemo } from "react";
+import { memo, useMemo, type ReactNode } from "react";
 import { Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
@@ -22,12 +22,15 @@ import Svg, { Circle } from "react-native-svg";
 import { mondayOf, todaysQuests, useGamify } from "./gamify";
 import { useGameText } from "./gamifyTexts";
 import { dayNum } from "./statsStore";
+import { useGardenRing } from "@/features/garden/garden";
+import { useGardenText } from "@/features/garden/texts";
+import { TreeArt } from "@/features/garden/Tree";
 
 const ANN_SEEN = "qmc.feed-ann-seen";
 
 // Today's key cards as rings at the start of the Home stories rail: next prayer, countdown to the next Islamic day,
 // feed streak, radio live, verse of the day, feed statistics, the Shams Method and (without Pro) Pro.
-type Ring = { id: string; label: string; value: string; icon: IconName; tone: [string, string]; on: () => void; live?: boolean; fresh?: boolean; progress?: number };
+type Ring = { id: string; label: string; value: string; icon: IconName; tone: [string, string]; on: () => void; live?: boolean; fresh?: boolean; progress?: number; node?: ReactNode };
 
 export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item: string) => void }) {
   const t = useTheme();
@@ -65,7 +68,11 @@ export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item
   const qFrac = quests.length ? quests.reduce((a, q) => a + Math.min(1, q.p / q.n), 0) / quests.length : 0;
   const today = dayNum();
   const recapDue = today === mondayOf(today) && gm.recapSeen.week !== mondayOf(today) - 7 && stats.days[String(today - 1)] !== undefined;
+  // the garden: the tree with its progress to the next stage (a seed until it is planted)
+  const gr = useGardenRing(pro);
+  const gtx = useGardenText();
   const rings: Ring[] = [
+    { id: "garden", label: gtx.ring, value: "", icon: "heart", tone: ["#0b3d2e", "#1d6b52"], progress: gr.frac, fresh: gr.fruits > 0, node: <TreeArt id={gr.id} type={gr.type} stage={gr.planted ? Math.min(gr.stage, 8) : 0} size={46} still />, on: () => router.push((gr.planted ? "/garden" : "/garden?plant=1") as Href) },
     ...ann,
     ...(recapDue ? [{ id: "recap", label: gt.weekRecap, value: "", icon: "calendar" as IconName, tone: ["#0b3d2e", "#c6a65e"] as [string, string], fresh: true, on: () => router.push("/feed-stats?recap=week" as Href) }] : []),
     { id: "quests", label: gt.questsRing, value: `${qDone}/${quests.length}`, icon: "checkCircle", tone: ["#0b3d2e", "#1d6b52"], progress: qFrac, on: () => router.push("/feed-stats" as Href) },
@@ -92,8 +99,8 @@ export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item
               </Svg>
               <View style={{ flex: 1, margin: 4.5, borderRadius: 32, overflow: "hidden" }}>
                 <LinearGradient colors={r.tone} style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: 1 }}>
-                  <Icon name={r.icon} color="rgb(233,207,153)" size={17} />
-                  <Text allowFontScaling={false} numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 12, color: "#fff" }}>{r.value}</Text>
+                  {r.node ?? <><Icon name={r.icon} color="rgb(233,207,153)" size={17} />
+                  <Text allowFontScaling={false} numberOfLines={1} style={{ fontFamily: FONT.bold, fontSize: 12, color: "#fff" }}>{r.value}</Text></>}
                 </LinearGradient>
               </View>
             </View>

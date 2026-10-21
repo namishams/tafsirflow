@@ -27,6 +27,8 @@ export type Gamify = {
   recapSeen: { week: number; month: number };
   /** longest run of days with at least one share */
   shareBest: number;
+  /** duplicates of collected stickers (a gift after all daily quests); they can be given to the garden */
+  dupes?: Record<string, number>;
 };
 const empty = (): Gamify => ({
   xp: 0, quiz: 0, quests: 0, names: [], holy: [], ramadan: 0, tahajjud: 0, fajr: 0, friday: 0,
@@ -108,6 +110,9 @@ function progress(kind: QuestKind, by = 1) {
     addXp(XP.allQuests);
     if (s.freezes < MAX_FREEZES) { s.freezes++; emit({ type: "freeze", used: false }); }
     surprise(true);
+    // a duplicate of one collected sticker (for the garden)
+    const own = STICKERS.filter((x) => s.stickers[x.id]);
+    if (own.length) { const id = own[hash(d0() * 13) % own.length].id; s.dupes = { ...(s.dupes ?? {}), [id]: Math.min(99, (s.dupes?.[id] ?? 0) + 1) }; }
   }
 }
 
@@ -308,3 +313,20 @@ export function lastMonth(now = new Date()): { from: number; to: number; date: D
   const last = new Date(now.getFullYear(), now.getMonth(), 0, 12);
   return { from: dayNum(first.getTime()), to: dayNum(last.getTime()), date: first };
 }
+
+// ---------- garden (src/features/garden) ----------
+const d0 = () => dayNum();
+/** duplicates per sticker id */
+export const stickerDupes = (): Record<string, number> => ({ ...(g().dupes ?? {}) });
+/** uses one duplicate of a sticker; false when there is none */
+export function takeDupe(id: string): boolean {
+  const s = g();
+  const n = s.dupes?.[id] ?? 0;
+  if (n <= 0) return false;
+  const next = { ...(s.dupes ?? {}) };
+  if (n > 1) next[id] = n - 1; else delete next[id];
+  s.dupes = next; save(true);
+  return true;
+}
+/** XP from outside the feed (garden harvest); goes through levels like every other XP */
+export function bonusXp(n: number) { if (n > 0 && n <= 500) { addXp(Math.round(n)); save(true); } }

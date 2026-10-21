@@ -18,6 +18,9 @@ import { alpha } from "@/features/extra/art";
 import { goBack } from "@/components/page";
 import type { Goal } from "@/web/coach";
 import { Day1Paywall } from "./Day1Paywall";
+import { PlantFlow } from "@/features/garden/PlantFlow";
+import { PlanMilestones } from "@/features/garden/widgets";
+import { readGarden } from "@/features/garden/garden";
 import { GOALS, LEVELS, MINUTES, MOTIVATIONS, STEPS, readDraft, savePlan, writeDraft, type Plan, type QuizAnswers, type QuizDraft } from "./plan";
 import { fmt, usePlanT } from "./texts";
 
@@ -25,7 +28,7 @@ import { fmt, usePlanT } from "./texts";
 // the personal 30-day plan → the day-1 paywall (prices from the store; "Continue for free" always visible).
 // Answers so far are kept in qmc.quiz.draft, so the reload a right-to-left language needs resumes at the same step.
 const Q = ["lang", "goal", "level", "minutes", "reciter", "tradition", "prayer", "motivation"] as const;
-type Phase = "quiz" | "building" | "plan" | "paywall";
+type Phase = "quiz" | "building" | "plan" | "garden" | "paywall";
 
 /** the website's goal (tf:goal, synced with the account) from the quiz answers */
 function websiteGoal(a: QuizAnswers): Goal {
@@ -71,7 +74,9 @@ export function Funnel() {
   };
 
   if (phase === "building") return <Building onDone={() => { success(); setPhase("plan"); }} />;
-  if (phase === "plan" && plan) return <PlanView plan={plan} onNext={afterPlan} />;
+  // the tree is planted right after the plan (the mission of the Shams Method), unless one already grows
+  if (phase === "plan" && plan) return <PlanView plan={plan} onNext={() => (readGarden().trees.length ? afterPlan() : setPhase("garden"))} />;
+  if (phase === "garden") return <PlantFlow minutes={plan?.answers.minutes} onDone={afterPlan} onLater={afterPlan} />;
   if (phase === "paywall") return <Day1Paywall plan={plan} onDone={done} />;
 
   const q = Q[step];
@@ -262,6 +267,7 @@ function PlanView({ plan, onNext }: { plan: Plan; onNext: () => void }) {
             </View>
           ))}
         </View>
+        <View style={{ marginTop: 12 }}><PlanMilestones minutes={a.minutes} /></View>
         <GoldButton title={p.start} onPress={onNext} style={{ marginTop: 24 }} />
       </Animated.ScrollView>
     </Stage>

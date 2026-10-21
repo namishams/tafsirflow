@@ -1,4 +1,7 @@
 import { DoneShare } from "@/features/share/SharePrompt";
+import { GardenBurst } from "@/features/garden/widgets";
+import { shamsGrow } from "@/features/garden/garden";
+import { dropVerse } from "@/features/garden/catalog";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Pressable, ScrollView, Text, TextInput, View, type ScrollViewInstance } from "react-native";
 import { router, useLocalSearchParams, type Href } from "expo-router";
@@ -238,6 +241,8 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
   const slipped = useRef<string | null>(null); // verse that was rated "again" during this pass
   const goNextVerse = (ok: boolean) => {
     audio.stop();
+    // the tree grows with every verse of the Shams Method, and the verse joins the sticker collection
+    if (ok) { const [gs, gv] = verse.verse_key.split(":").map(Number); shamsGrow("verse", pro); dropVerse(gs, gv); }
     if (sessionMode) {
       let next: SessionItem | null = completeItem(verse.verse_key, ok && slipped.current !== verse.verse_key);
       // free users: skip items in Pro-locked surahs instead of getting stuck behind the gate
@@ -287,6 +292,7 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
             <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 23, color: stage.textSoft }}>
               {finished === "session" && sum ? st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes }) : st("doneLead")}
             </Text>
+            <GardenBurst kind={finished} />
             <GoldButton title={finished === "session" ? st("toToday") : st("backToCourse")} onPress={() => goBack()} style={{ marginTop: 8 }} />
             <DoneShare kind="lessonDone" onStage arabic={chapter.name_arabic} title={chapter.name_simple}
               body={finished === "session" && sum ? st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes }) : st("doneLead")} />

@@ -7,7 +7,9 @@ import { getSettings } from "@/lib/settings";
 export const dynamic = "force-dynamic";
 const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen", "tf:jv",
   // feed data of the app (saves, likes, stats, gamification, stickers); merged on the device, bounded there
-  "tf:story-saves", "qmc.hadithSaved", "tf:feed-likes", "tf:stickers", "qmc.feed-gamify", "qmc.feed-stats2"]);
+  "tf:story-saves", "qmc.hadithSaved", "tf:feed-likes", "tf:stickers", "qmc.feed-gamify", "qmc.feed-stats2",
+  // the garden of the app (tree growth, decorations) and its sticker collection (verse bitset + counts); merged on the device
+  "qmc.garden", "qmc.stickers2"]);
 
 export async function GET() {
   const u = await currentUser();

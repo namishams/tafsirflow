@@ -1,3 +1,5 @@
+import { GardenWidget } from "@/features/garden/widgets";
+import { useGardenText } from "@/features/garden/texts";
 import { Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
@@ -38,6 +40,7 @@ export default function ShamsPage() {
   const { lang } = useLang();
   const t = useWebT("shams");
   const isl = useIsl();
+  const gtx = useGardenText();
   const theme = useTheme();
   const c = shamsContent(lang);
   const guide = GUIDES.find((g) => g.slug === "shams-method");
@@ -67,7 +70,7 @@ export default function ShamsPage() {
           </View>
         ) : null}
       </IslHero>
-      <View style={{ paddingHorizontal: 16, marginTop: 24 }}><ReciterPathCard /></View>
+      <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 14 }}><GardenWidget lead={gtx.shamsCard} /><ReciterPathCard /></View>
 
       <Marble>
         {/* Why "Shams" */}

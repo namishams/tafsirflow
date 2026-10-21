@@ -1,3 +1,4 @@
+import { GardenWidget } from "@/features/garden/widgets";
 import { useEffect, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
@@ -66,6 +67,7 @@ export default function Masterclass() {
         </PageHero>
 
         <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 28 }}>
+          <GardenWidget />
           <TodayPlanCard />
           <QaidaCard />
           <LangCourseCard />

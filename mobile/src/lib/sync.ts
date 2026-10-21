@@ -11,6 +11,8 @@ configureListen({ base: SITE, headers: { "x-qmc-app": Platform.OS } });
 import type { Srs } from "@/web/learning";
 import { FEED_SYNC_KEYS, feedSnapshot, mergeFeed, reloadFeedCaches } from "@/features/feed/feedSync";
 import { sendOfferStats } from "@/features/feed/statsStore";
+import { GARDEN_KEY, mergeGarden, reloadGarden, type Garden } from "@/features/garden/garden";
+import { CATALOG_KEY, mergeCatalog, reloadCatalog } from "@/features/garden/catalog";
 
 // Progress sync with the account, the same merge rules as the website (src/lib/sync.ts): what you learn in the app
 // shows up on quranmasterclass.com and the other way round.
@@ -47,7 +49,7 @@ function merge(local: Record<string, unknown>, remote: Record<string, unknown>) 
   return { "tf:bookmarks": bm, "tf:srs": srs, "tf:days": days, "tf:notes": notes, "tf:academy": newer("tf:academy") ?? undefined, "tf:khatm": newer("tf:khatm") ?? undefined, "tf:plan": newer("tf:plan") ?? undefined, "tf:goal": newer("tf:goal") ?? undefined, "tf:wudu": newer("tf:wudu") ?? undefined, "tf:jv": { ...((remote["tf:jv"] as object) ?? {}), ...((local["tf:jv"] as object) ?? {}) }, "tf:points": mergePoints(local["tf:points"] as Points | undefined, remote["tf:points"] as Points | undefined), "tf:listen": mergeListen(local["tf:listen"] as Listen | undefined, remote["tf:listen"] as Listen | undefined), "tf:mnemo": { ...((remote["tf:mnemo"] as object) ?? {}), ...((local["tf:mnemo"] as object) ?? {}) }, "tf:vocab": { ...((remote["tf:vocab"] as object) ?? {}), ...((local["tf:vocab"] as object) ?? {}) }, "tf:tajweed": bestScores(local["tf:tajweed"], remote["tf:tajweed"]), "tf:arabic": mergeArabic(local["tf:arabic"] as ArabicP | undefined, remote["tf:arabic"] as ArabicP | undefined), "tf:duafav": Array.from(new Set([...((local["tf:duafav"] as string[]) ?? []), ...((remote["tf:duafav"] as string[]) ?? [])])), ...(last ? { "tf:last": last } : {}) } as Record<string, unknown>;
 }
 
-export const SYNC_KEYS = ["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen", "tf:jv", ...FEED_SYNC_KEYS] as const;
+export const SYNC_KEYS = ["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen", "tf:jv", ...FEED_SYNC_KEYS, GARDEN_KEY, CATALOG_KEY] as const;
 const snapshot = (): Record<string, unknown> => {
   const out: Record<string, unknown> = {};
   for (const k of SYNC_KEYS) { const v = readJSON<unknown>(k, undefined); if (v !== undefined && v !== null) out[k] = v; }
@@ -63,9 +65,10 @@ export async function startSync(): Promise<boolean> {
   try {
     const remote = await api<Record<string, unknown>>("/api/sync");
     const local = snapshot();
-    const merged = { ...merge(local, remote), ...mergeFeed(local, remote) };
+    // the garden: max growth per tree, union of decorations; the sticker collection: union of verses, max counts
+    const merged: Record<string, unknown> = { ...merge(local, remote), ...mergeFeed(local, remote), [GARDEN_KEY]: mergeGarden(local[GARDEN_KEY] as Garden | undefined, remote[GARDEN_KEY] as Garden | undefined), [CATALOG_KEY]: mergeCatalog(local[CATALOG_KEY] as Parameters<typeof mergeCatalog>[0], remote[CATALOG_KEY] as Parameters<typeof mergeCatalog>[0]) };
     for (const k of SYNC_KEYS) if (merged[k] !== undefined) writeJSON(k, merged[k], true);
-    reloadFeedCaches();
+    reloadFeedCaches(); reloadGarden(); reloadCatalog();
     await push();
     setWriteHook(() => { if (timer) clearTimeout(timer); timer = setTimeout(push, 1500); });
     return true;

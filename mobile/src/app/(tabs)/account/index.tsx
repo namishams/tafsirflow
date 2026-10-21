@@ -20,6 +20,7 @@ import { manageSubscriptions } from "@/lib/iap";
 import { ProPromo } from "@/features/learn/ProPromo";
 import type { AppearanceSetting } from "@/lib/theme";
 import { FeedLinks, FeedStatsRow } from "@/features/feed/FeedStats";
+import { GardenNotifySetting, GardenWidget } from "@/features/garden/widgets";
 import { ShareCounter, SharePromptSetting } from "@/features/share/SharePrompt";
 import { SharerBadge } from "@/features/share/SharerUI";
 import { useMySharer } from "@/features/share/sharer";
@@ -76,6 +77,8 @@ export default function AccountScreen() {
 
         <View style={{ padding: 16, gap: 22 }}>
           <FeedStatsRow />
+          <GardenWidget />
+          <GardenNotifySetting />
           <ShareCounter />
           <FeedLinks />
           {user && !user.emailVerified ? (

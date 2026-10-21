@@ -16,6 +16,7 @@ import { SettingsProvider } from "@/lib/settings";
 import { ProProvider } from "@/lib/pro";
 import { hydrateStore } from "@/lib/store";
 import { SyncBridge } from "@/lib/sync";
+import { GardenCelebrate } from "@/features/garden/widgets";
 import { stackOptions } from "@/components/page";
 import { useTheme } from "@/lib/theme";
 import { RewardsHost } from "@/features/progress";
@@ -64,6 +65,7 @@ export default function RootLayout() {
                 <NotificationsBridge />
                 <DailyMoment />
                 <SharerCelebration />
+                <GardenCelebrate />
               </RewardsHost>
             </ProProvider>
           </AuthProvider>
