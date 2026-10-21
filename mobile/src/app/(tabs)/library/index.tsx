@@ -8,17 +8,16 @@ import { HadithSpotlight } from "@/features/hadith/cards";
 import { CommunityCard } from "@/features/community/ui";
 import { AbrahamicCard } from "@/features/abrahamic/AbrahamicScreen";
 import { HaramainCard } from "@/features/haramain/HaramainScreen";
-import { DiscoverRows, DiscoverStream, useDiscoverStream } from "@/features/library/Discover";
+import { DiscoverRows } from "@/features/library/Discover";
 
 // Discover: one endless scroll in the Masterclass design. Spotlights first, then every course, tool and section as
-// poster cards in themed rows (no "more" button), then a stream of discovery cards that keeps loading.
+// poster cards in themed rows (no "more" button); the endless discovery lives in the Feed.
 export default function Discover() {
   const w = useWebT();
-  const stream = useDiscoverStream();
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <Page onScroll={stream.onScroll} scrollEventThrottle={200}>
+      <Page>
         <PageHero topInset eyebrow="Quran Masterclass" title={w("home2.toolsTitle") === "home2.toolsTitle" ? w("nav.more") : w("home2.toolsTitle")} />
         <View style={{ marginTop: 20, gap: 20 }}>
           <View style={{ paddingHorizontal: 16 }}><FeedSpotlight /></View>
@@ -29,7 +28,6 @@ export default function Discover() {
           <StoryRails />
         </View>
         <View style={{ marginTop: 28 }}><DiscoverRows /></View>
-        <DiscoverStream s={stream} />
       </Page>
     </>
   );

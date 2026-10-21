@@ -20,7 +20,7 @@ import { ReciterPathCard } from "@/features/reciter-path/Screens";
 import { QaidaCard } from "@/features/qaida/Screens";
 import { LangCourseCard } from "@/features/arabic-lang/Screens";
 import { useLearnT } from "@/features/learn/texts";
-import { DiscoverRows, DiscoverStream, useDiscoverStream } from "@/features/library/Discover";
+import { DiscoverRows } from "@/features/library/Discover";
 
 // The Masterclass tab: learning the tafsir of the Quran with the Shams Method – hero like the website's /shams page,
 // "continue learning", the course path (free: al-Fātiḥa and Juz ʿAmma; Pro: every surah), courses and tools.
@@ -30,7 +30,6 @@ const PRO_PATH = [67, 36, 18, 55, 56, 32, 2, 12, 19, 25, 24, 49];
 export default function Masterclass() {
   const t = useTheme();
   const lt = useLearnT();
-  const stream = useDiscoverStream();
   const w = useWebT();
   const { lang } = useLang();
   const { pro } = usePro();
@@ -50,7 +49,7 @@ export default function Masterclass() {
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <Page onScroll={stream.onScroll} scrollEventThrottle={200}>
+      <Page>
         <PageHero topInset eyebrow={c.heroKicker} title={c.heroTitle} lead={c.heroLead}>
           {c.heroFacts ? (
             <View style={{ flexDirection: "row", gap: 8, marginBottom: 6 }}>
@@ -112,9 +111,8 @@ export default function Masterclass() {
           <ProPromo title={lt("proCardTitle")} lead={lt("proCardLead")} feature="shams" />
 
         </View>
-        {/* every course, tool and section directly, then the endless discovery stream (no "more" button) */}
+        {/* every course, tool and section directly (no "more" button); the endless discovery lives in the Feed */}
         <View style={{ marginTop: 32 }}><DiscoverRows /></View>
-        <DiscoverStream s={stream} />
       </Page>
     </>
   );
