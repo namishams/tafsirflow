@@ -66,7 +66,8 @@ export async function currentUser(): Promise<User | null> {
     const verified = !!u.email_verified;
     // admin rights only for confirmed addresses, so nobody can claim the owner's e-mail before the owner confirms it
     const admin = verified && (u.role === "admin" || isAdminEmail(u.email));
-    return { id: Number(u.id), email: u.email, name: u.name, plan: u.plan, emailVerified: verified, role: admin ? "admin" : "user", birthYear: u.birth_year ?? null };
+    // the owner (admin) always has Premium
+    return { id: Number(u.id), email: u.email, name: u.name, plan: admin ? "premium" : u.plan, emailVerified: verified, role: admin ? "admin" : "user", birthYear: u.birth_year ?? null };
   } catch {
     return null;
   }
