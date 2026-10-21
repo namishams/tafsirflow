@@ -39,7 +39,7 @@ const STORY_MS = 8000; // story cards in "For you" stay about 8 s
 const MUTED_VERSE_MS = 10000; // a muted verse (no recitation to wait for)
 type ShareItem = { kind: "verse"; v: FeedVerse } | { kind: "story"; s: Story } | { kind: "name"; n: AllahName };
 
-export function FeedScreen() {
+export function FeedScreen({ onHome }: { onHome?: () => void } = {}) {
   const params = useLocalSearchParams<{ mode?: string; s?: string; v?: string; key?: string; cat?: string }>();
   const tx = useFeedText();
   const pt = useProphetText();
@@ -276,7 +276,7 @@ export function FeedScreen() {
       {/* top bar over the feed */}
       <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: 0, paddingTop: insets.top + 8 }}>
         <View pointerEvents="box-none" style={{ paddingHorizontal: 12, flexDirection: "row", alignItems: "center", gap: 10 }}>
-          <RoundButton label={tx.close} onPress={() => goBack()}><Icon name="chevronLeft" color="#fff" size={22} /></RoundButton>
+          <RoundButton label={onHome ? tx.home : tx.close} onPress={() => (onHome ? onHome() : goBack())}><Icon name="chevronLeft" color="#fff" size={22} /></RoundButton>
           <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", gap: 6 }}>
             <Pill label={pt.catForYou} selected={mode === "discover"} onPress={() => switchMode("discover")} />
             <Pill label={mode === "surah" ? nameOf(activeSurah) : tx.surah} selected={mode === "surah"} onPress={() => switchMode("surah")} hint={tx.chooseSurah} chevron={mode === "surah"} />
