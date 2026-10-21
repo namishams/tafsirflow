@@ -20,6 +20,7 @@ import { manageSubscriptions } from "@/lib/iap";
 import { ProPromo } from "@/features/learn/ProPromo";
 import type { AppearanceSetting } from "@/lib/theme";
 import { FeedLinks, FeedStatsRow } from "@/features/feed/FeedStats";
+import { ShareCounter, SharePromptSetting } from "@/features/share/SharePrompt";
 
 // Account: Pro, sign-in, confirm the e-mail, appearance, language, learning progress, legal, report a
 // problem, delete the account
@@ -72,6 +73,7 @@ export default function AccountScreen() {
 
         <View style={{ padding: 16, gap: 22 }}>
           <FeedStatsRow />
+          <ShareCounter />
           <FeedLinks />
           {user && !user.emailVerified ? (
             <View style={{ backgroundColor: theme.accentSoft, padding: 12, borderRadius: R.sm, gap: 10 }}>
@@ -125,6 +127,7 @@ export default function AccountScreen() {
               ) : null}
             </View>
           </Section>
+          <View style={{ marginBottom: 16 }}><SharePromptSetting /></View>
 
           <RowGroup>
             <LinkRow first title={t("tabs.home")} icon="sun" onPress={() => go("/today")} />

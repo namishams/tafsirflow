@@ -210,7 +210,7 @@ export function TestRunner({ kind, refId: ref }: { kind: TestKind; refId: string
                 {kind === "placement" ? <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink, textAlign: "center" }}>{st("placementResult", { deck: st(pct >= 70 ? "deck_vocab" : "deck_juzamma") })}</Text> : null}
               </GoldCard>
               <View style={{ gap: 10, marginTop: 14 }}>
-                <BigButton title={st("share")} icon="share" onPress={() => setShare(true)} />
+                <BigButton title={st("share")} icon="send" onPress={() => setShare(true)} />
                 {kind === "juz" && pct >= PASS * 100 ? (gate.pro
                   ? <BigButton title={st("viewCert")} variant="outline" onPress={() => router.push(`/tests/certificate?juz=${ref}` as Href)} />
                   : <ProCard feature="vocab" title={st("certificate")} text={st("proText")} />) : null}
@@ -297,7 +297,7 @@ export function CertificateScreen({ juz }: { juz: number }) {
                   <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: stage.textMuted, textAlign: "center", marginTop: 10 }}>{st("certificateNote")}</Text>
                 </View>
               </Stage>
-              <BigButton title={st("share")} icon="share" onPress={() => setShare(true)} />
+              <BigButton title={st("share")} icon="send" onPress={() => setShare(true)} />
               <ShareSheet visible={share} onClose={() => setShare(false)} link={SITE} noDecoration message={st("shareMsg", { pct: nf(cert.pct), test: st("juzN", { n: nf(juz) }) })}
                 renderCard={(f) => <ResultCard format={f} kicker={st("certificate")} title={`${user?.name ? `${user.name} · ` : ""}${st("juzN", { n: nf(juz) })}`} big={`${nf(cert.pct)} %`} sub={date} note={st("certificateNote")} />} />
             </>

@@ -96,7 +96,7 @@ export default function NowPlaying() {
             <Text numberOfLines={1} accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13, color: back ? "#ffffff" : "rgba(255,255,255,0.75)", marginTop: 2 }}>{back ? a("backToLive") : `${t("title")} · ${t(`st_${r.station.id}`)}`}</Text>
           </View>
           <Pressable onPress={share} accessibilityRole="button" accessibilityLabel={a("shareRadio")} hitSlop={10} style={{ width: 44, height: 44, alignItems: "flex-end", justifyContent: "center", marginEnd: -6 }}>
-            <Icon name="share" color="#ffffff" size={20} />
+            <Icon name="send" color="#ffffff" size={20} />
           </Pressable>
         </View>
 

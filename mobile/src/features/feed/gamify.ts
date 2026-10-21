@@ -25,12 +25,14 @@ export type Gamify = {
   freezes: number; frozen: number[];
   rec: Records;
   recapSeen: { week: number; month: number };
+  /** longest run of days with at least one share */
+  shareBest: number;
 };
 const empty = (): Gamify => ({
   xp: 0, quiz: 0, quests: 0, names: [], holy: [], ramadan: 0, tahajjud: 0, fajr: 0, friday: 0,
   last: { ramadan: 0, tahajjud: 0, fajr: 0, friday: 0, surprise: 0 },
   stickers: {}, fresh: [], day: 0, today: [], rewarded: false, freezes: 0, frozen: [],
-  rec: { posts: 0, verses: 0, words: 0, ms: 0, xp: 0 }, recapSeen: { week: 0, month: 0 },
+  rec: { posts: 0, verses: 0, words: 0, ms: 0, xp: 0 }, recapSeen: { week: 0, month: 0 }, shareBest: 0,
 });
 let cache: Gamify | null = null;
 function g(): Gamify {
@@ -143,7 +145,7 @@ export function gEvent(e: GEvent) {
     case "verse": addXp(XP.verse); progress("verses"); break;
     case "words": addXp(XP.word * e.n); progress("words", e.n); break;
     case "quiz": if (e.right) { s.quiz++; addXp(XP.quiz); progress("quiz"); } break;
-    case "share": addXp(XP.share); progress("share"); break;
+    case "share": addXp(XP.share); progress("share"); s.shareBest = Math.max(s.shareBest, shareStreakOf(statsNow()).best); save(); break;
   }
   records(dayOf(statsNow(), dayNum()));
   evaluate();
@@ -188,7 +190,7 @@ export function mastery(n: number): { level: number; frac: number } {
 export type Shape = "circle" | "star" | "arch" | "hex" | "rosette";
 export type Motif = "book" | "wave" | "word" | "check" | "plane" | "flame" | "chevrons" | "target" | "crescent" | "star8" | "lantern" | "palm" | "dome" | "arch" | "dove" | "rose" | "pen" | "scroll" | "sunrise" | "night" | "hourglass" | "drop" | "mat" | "calendar";
 export type Tone = "emerald" | "gold" | "night" | "rare";
-type Ctx = { t: DayStats; best: number; level: number; quiz: number; quests: number; topic: Record<LibTopic, number>; names: number; holy: number; ramadan: number; tahajjud: number; fajr: number; friday: number; hours: number };
+type Ctx = { t: DayStats; best: number; level: number; quiz: number; quests: number; topic: Record<LibTopic, number>; names: number; holy: number; ramadan: number; tahajjud: number; fajr: number; friday: number; hours: number; shareBest: number };
 export type StickerDef = { id: string; fam: string; n?: number; topic?: LibTopic; shape: Shape; motif: Motif; tone: Tone; rare?: boolean; test?: (c: Ctx) => boolean };
 const TOPIC_MOTIF: Record<LibTopic, Motif> = { tafsir: "book", hadith: "scroll", duas: "drop", prayer: "mat", holy: "dome", seerah: "palm", quran: "star8", scholars: "pen", history: "hourglass", art: "rose" };
 const tiers = (fam: string, ns: number[], shape: Shape, motif: Motif, get: (c: Ctx) => number): StickerDef[] =>
@@ -199,7 +201,9 @@ export const STICKERS: StickerDef[] = [
   ...tiers("words", [10, 100, 500, 1000], "rosette", "word", (c) => c.t.words),
   ...tiers("quiz", [10, 50, 200], "circle", "check", (c) => c.quiz),
   { id: "share-1", fam: "share1", shape: "arch", motif: "plane", tone: "emerald", test: (c) => c.t.shares >= 1 },
-  ...tiers("shares", [10, 50], "arch", "plane", (c) => c.t.shares),
+  // "Diligent sharer" series (share-1 above is the first tier; ids shares-10 / shares-50 kept from the old series)
+  ...tiers("shares", [5, 10, 25, 50, 100, 250, 500, 1000], "arch", "plane", (c) => c.t.shares),
+  ...tiers("shareStreak", [3, 7, 30, 100], "star", "plane", (c) => c.shareBest),
   ...tiers("streak", [3, 7, 30, 100, 365], "star", "flame", (c) => c.best),
   ...tiers("level", [5, 10, 25, 50], "rosette", "chevrons", (c) => c.level),
   { id: "quest-1", fam: "quest1", shape: "circle", motif: "target", tone: "emerald", test: (c) => c.quests >= 1 },
@@ -231,8 +235,24 @@ function ctx(st: Stats): Ctx {
   const s = g();
   return {
     t: st.total, best: longestStreak(st), level: levelOf(s.xp).level, quiz: s.quiz, quests: s.quests, topic: topicCounts(st.total.kinds),
-    names: s.names.length, holy: s.holy.length, ramadan: s.ramadan, tahajjud: s.tahajjud, fajr: s.fajr, friday: s.friday, hours: st.total.ms / 3600000,
+    names: s.names.length, holy: s.holy.length, ramadan: s.ramadan, tahajjud: s.tahajjud, fajr: s.fajr, friday: s.friday, hours: st.total.ms / 3600000, shareBest: Math.max(s.shareBest, shareStreakOf(st).best),
   };
+}
+/** the current and the longest run of days with a share (current counts today or, until a share today, yesterday) */
+export function shareStreakOf(st: Stats): { now: number; best: number } {
+  const days = Object.keys(st.days).map(Number).filter((d) => (st.days[String(d)]?.shares ?? 0) > 0).sort((a, b) => a - b);
+  let best = 0, run = 0, prev = -2;
+  for (const d of days) { run = d === prev + 1 ? run + 1 : 1; prev = d; best = Math.max(best, run); }
+  const today = dayNum();
+  const now = prev === today || prev === today - 1 ? run : 0;
+  return { now, best };
+}
+/** shares of the current week (Monday to today) */
+export function weekShares(st: Stats = statsNow()): number {
+  const to = dayNum();
+  let n = 0;
+  for (let d = mondayOf(to); d <= to; d++) n += st.days[String(d)]?.shares ?? 0;
+  return n;
 }
 function unlock(id: string) {
   const s = g();

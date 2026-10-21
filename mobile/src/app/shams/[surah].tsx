@@ -1,3 +1,4 @@
+import { DoneShare } from "@/features/share/SharePrompt";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Pressable, ScrollView, Text, TextInput, View, type ScrollViewInstance } from "react-native";
 import { router, useLocalSearchParams, type Href } from "expo-router";
@@ -73,6 +74,7 @@ export default function ShamsSession() {
         <Display size="title1" style={{ marginTop: 24 }}>{st("sessionDone")}</Display>
         {sum ? <Text style={{ marginTop: 10, color: t.ink, fontFamily: FONT.regular, fontSize: 16 }}>{st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes })}</Text> : null}
         <GoldButton title={st("toToday")} onPress={() => goBack()} style={{ marginTop: 16 }} />
+        <View style={{ marginTop: 12 }}><DoneShare kind="lessonDone" title={st("sessionDone")} body={sum ? st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes }) : undefined} /></View>
       </View>
     );
   }
@@ -286,6 +288,8 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
               {finished === "session" && sum ? st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes }) : st("doneLead")}
             </Text>
             <GoldButton title={finished === "session" ? st("toToday") : st("backToCourse")} onPress={() => goBack()} style={{ marginTop: 8 }} />
+            <DoneShare kind="lessonDone" onStage arabic={chapter.name_arabic} title={chapter.name_simple}
+              body={finished === "session" && sum ? st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes }) : st("doneLead")} />
             {finished === "surah" ? <OutlineButton title={st("again")} onStage onPress={() => { setFinished(null); setIdx(0); beginPlan(0, fullPath); }} /> : null}
           </View>
         </Stage>

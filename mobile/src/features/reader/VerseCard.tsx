@@ -181,7 +181,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
             <ActionIcon icon="bookmark" label={marked ? w("bookmarked") : w("bookmark")} filled={marked} color={marked ? gold : t.muted} onPress={() => h.toggleMark(v.verse_key)} />
             <ActionIcon icon="note" label={w("note")} color={note ? t.accent : t.muted} onPress={() => h.openNote(noteOpen ? null : v.verse_key)} />
             <ActionIcon icon="copy" label={w("copy")} color={t.muted} onPress={() => h.copy(v)} />
-            <ActionIcon icon="share" label={w("share")} color={t.muted} onPress={() => h.share(v)} />
+            <ActionIcon icon="send" label={w("share")} color={t.muted} onPress={() => h.share(v)} />
             <ActionIcon icon="eye" label={r("focusOpen")} color={t.muted} onPress={h.focus} />
             <ActionIcon icon={st.playing ? "pause" : "playSm"} label={st.playing ? w("pause") : w("playVerse")} color={t.muted} onPress={() => h.playVerse(i)} />
           </View>

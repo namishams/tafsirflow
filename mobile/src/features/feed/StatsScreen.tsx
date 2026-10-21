@@ -1,3 +1,4 @@
+import { ShareCounter } from "@/features/share/SharePrompt";
 import { useState } from "react";
 import { I18nManager, Pressable, Text, View } from "react-native";
 import { Stack } from "expo-router";
@@ -169,6 +170,7 @@ export default function StatsScreen() {
             </View>
           ))}
           {wk.top ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{gt.topTopic}: {topicLabel(wk.top, tx)}</Text> : null}
+          {(() => { let n = 0; for (let d = wk.from; d <= wk.to; d++) n += s.days[String(d)]?.shares ?? 0; return n ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.accent }}>{gt.weekShared.replace("{n}", nf(n))}</Text> : null; })()}
           <Pressable onPress={() => setShare("week")} accessibilityRole="button" style={({ pressed }) => ({ height: 42, borderRadius: R.pill, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: t.accent, opacity: pressed ? 0.7 : 1 })}>
             <Icon name="send" color={t.accent} size={16} />
             <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{gt.recapShare}</Text>
@@ -277,6 +279,7 @@ export default function StatsScreen() {
             <Stat label={tx.statsShares} value={nf(s.total.shares)} />
           </View>
         </View>
+        <ShareCounter />
 
         <View style={card}>
           {h(tx.statsLast7)}

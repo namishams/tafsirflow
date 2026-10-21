@@ -1,3 +1,4 @@
+import { DoneShare } from "@/features/share/SharePrompt";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Easing, PanResponder, Pressable, Text, View, useWindowDimensions } from "react-native";
 import { router, type Href } from "expo-router";
@@ -35,6 +36,7 @@ export function ReviewSession({ ids }: { ids: string[] }) {
         <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 26, color: t.ink, textAlign: "center" }}>{st("sessionDone")}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 16, color: t.muted, textAlign: "center" }}>{st("sessionStats", { n: nf(done.n), ok: nf(done.ok) })}</Text>
         <BigButton title={st("backToCards")} onPress={() => (router.canGoBack() ? router.back() : router.replace("/cards" as Href))} style={{ alignSelf: "stretch", marginTop: 8 }} />
+        {done.n > 0 ? <DoneShare kind="review" title={st("sessionDone")} big={nf(done.n)} body={st("sessionStats", { n: nf(done.n), ok: nf(done.ok) })} /> : null}
       </View>
     );
   }

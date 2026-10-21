@@ -112,7 +112,7 @@ function Page({ p, height, width, top, bottom, onNext }: { p: NahjPassage; heigh
       {/* actions on the side */}
       <View style={{ justifyContent: "flex-end", gap: 18, paddingBottom: 12 }}>
         <Side icon="bookmark" label={saved ? x.saved : x.save} on={saved} onPress={() => toggleSaved(item)} />
-        <Side icon="share" label={x.share} onPress={() => setShare(true)} />
+        <Side icon="send" label={x.share} onPress={() => setShare(true)} />
         <Side icon="chevronDown" label={x.next} onPress={onNext} hint={x.nahjSwipe} />
       </View>
       {share ? <HadithShare item={item} onClose={() => setShare(false)} /> : null}

@@ -189,7 +189,7 @@ export const FeedPage = memo(function FeedPage(p: PageProps) {
         <View style={{ width: 72, justifyContent: "flex-end", alignItems: "center", gap: 16, paddingEnd: 6 }}>
           <Action icon="heart" filled={like.liked} color={like.liked ? HEART : "#fff"} label={like.count !== null ? compact(like.count, p.lang) : ws("like")} a11y={`${ws("like")}${like.count !== null ? `, ${like.count}` : ""}`} selected={like.liked} onPress={onLike} scale={pop} />
           <Action icon="bookmark" filled={saved} color={saved ? stage.gold : "#fff"} label={saved ? tx.saved : tx.save} a11y={saved ? wp("bookmarked") : wp("bookmark")} selected={saved} onPress={toggleSave} />
-          <Action icon="share" color="#fff" label={ws("share")} a11y={ws("share")} onPress={() => data && p.onShare(data)} disabled={!data} />
+          <Action icon="send" color="#fff" label={ws("share")} a11y={ws("share")} onPress={() => data && p.onShare(data)} disabled={!data} />
           <Action icon="book" color="#fff" label={tx.reader} a11y={tx.reader} onPress={() => router.push(`/quran/${s}?v=${v}` as Href)} />
           <Action icon="cap" color="#fff" label={tx.learn} a11y={tx.learn} onPress={() => router.push(`/shams/${s}?v=${v}` as Href)} />
         </View>

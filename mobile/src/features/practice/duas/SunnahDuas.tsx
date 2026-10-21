@@ -1,3 +1,5 @@
+import { CardShareSheet, type CardData } from "@/features/share/ShareKit";
+import { useShareText } from "@/features/share/texts";
 import { useMemo, useRef, useState } from "react";
 import { Modal, Pressable, ScrollView, Share, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -51,10 +53,13 @@ export default function SunnahDuas() {
 
   const toggleFav = (id: string) => writeJSON(FAV_KEY, fav.includes(id) ? fav.filter((x) => x !== id) : [...fav, id]);
   const tap = (id: string, max: number) => setCount((c) => ({ ...c, [id]: (c[id] ?? 0) >= max ? 0 : (c[id] ?? 0) + 1 }));
-  const share = (d: Dua) => { void Share.share({ message: [d.ar, ar ? "" : d.tr, meaning(d), `— ${srcOf(d)}`].filter(Boolean).join("\n\n") }).catch(() => undefined); };
+  const stx = useShareText();
+  const [sharing, setSharing] = useState<CardData | null>(null);
+  const share = (d: Dua) => setSharing({ kicker: stx.dua, arabic: d.ar, body: [ar ? "" : d.tr, meaning(d)].filter(Boolean).join("\n\n"), footer: `— ${srcOf(d)}`, seed: d.id });
 
   return (
     <View>
+      {sharing ? <CardShareSheet visible data={sharing} onClose={() => setSharing(null)} /> : null}
       <View style={{ gap: 12 }}>
         <View style={{ height: 48, borderRadius: R.pill, borderWidth: 1, borderColor: focus ? "rgb(201,166,94)" : `rgba(${g},0.3)`, backgroundColor: th.surface, flexDirection: "row", alignItems: "center", paddingStart: 16, gap: 10,
           shadowColor: "rgb(201,166,94)", shadowOpacity: 0.25, shadowRadius: 12, shadowOffset: { width: 0, height: 8 } }}>
@@ -93,7 +98,7 @@ export default function SunnahDuas() {
                   </View>
                   <View style={{ flexDirection: "row", marginEnd: -8, marginTop: -8 }}>
                     <IconBtn icon="book" label={ui.read} onPress={() => setRead(k)} />
-                    <IconBtn icon="share" label={w("duagen.share")} onPress={() => share(d)} />
+                    <IconBtn icon="send" label={w("duagen.share")} onPress={() => share(d)} />
                     <IconBtn icon="bookmark" label={t("fav")} on={isFav} onPress={() => toggleFav(d.id)} />
                   </View>
                 </View>
@@ -118,7 +123,7 @@ export default function SunnahDuas() {
   );
 }
 
-function IconBtn({ icon, label, onPress, on }: { icon: "book" | "share" | "bookmark"; label: string; onPress: () => void; on?: boolean }) {
+function IconBtn({ icon, label, onPress, on }: { icon: "book" | "send" | "bookmark"; label: string; onPress: () => void; on?: boolean }) {
   const th = useTheme();
   const g = useGold();
   return (

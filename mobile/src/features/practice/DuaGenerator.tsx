@@ -1,3 +1,5 @@
+import { CardShareSheet } from "@/features/share/ShareKit";
+import { useShareText } from "@/features/share/texts";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Pressable, Share, Text, View } from "react-native";
 import { router } from "expo-router";
@@ -68,12 +70,16 @@ export default function DuaGenerator({ scrollTo, initialTopic }: { scrollTo?: (y
     names.map((n) => n.voc).join("، "), "", request, made.who !== "me" ? t("forWho", { who: t(`wf_${made.who}`) }) : "", "",
     FRAME.close, ar ? "" : t("closeTr"), FRAME.end, "", "quranmasterclass.com",
   ].filter((l, i, a) => !(l === "" && a[i - 1] === "")).join("\n") : "";
-  const share = () => { void Share.share({ title: t("title"), message: plain() }).catch(() => undefined); };
+  const stx = useShareText();
+  const [sharing, setSharing] = useState(false);
+  const share = () => setSharing(true);
 
   const chip = (label: string, on: boolean, onPress: () => void) => <LightChip key={label} label={label} on={on} onPress={onPress} />;
 
   return (
     <View>
+      {sharing && made ? <CardShareSheet visible onClose={() => setSharing(false)}
+        data={{ kicker: stx.dua, arabic: [FRAME.praise, FRAME.salawat, names.map((n) => n.voc).join("، ")].join("\n"), body: request, footer: t("title") }} /> : null}
       {/* the request */}
       <View style={{ borderRadius: 16, borderWidth: 1, borderColor: "rgba(201,166,94,0.3)", backgroundColor: th.surface, padding: 20, shadowColor: "rgb(3,25,18)", shadowOpacity: 0.06, shadowRadius: 30, shadowOffset: { width: 0, height: 10 } }}>
         <Label>{t("step1")}</Label>

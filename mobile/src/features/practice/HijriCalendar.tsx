@@ -1,3 +1,4 @@
+import { DoneShare } from "@/features/share/SharePrompt";
 import { useMemo, useState, type ReactNode } from "react";
 import { Pressable, Text, View } from "react-native";
 import { DAY, eventsFor, HIJRI_MONTHS, addMonths, calText, daysBetween, fmtGregorian, fmtHijri, fromHijri, hijriMonthName, monthGrid, monthLength, nextOccurrence, toHijri, todayUtc } from "@/web/hijri";
@@ -70,6 +71,9 @@ function TodayCard({ today, locale, t, ev }: { today: number; locale: string; t:
             <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>{fmtGregorian(next.o!.t, locale, { day: "numeric", month: "long", year: "numeric" })}</Text>
           </View>
         ) : null}
+        <DoneShare kind="calendar" banner={false} onStage arabic={`${h.d} ${HIJRI_MONTHS[h.m - 1].ar} ${h.y}`} big={String(h.d)}
+          title={locale === "ar" ? `${h.y} هـ` : `${hijriMonthName(h.m, locale)} ${h.y} AH`} body={fmtGregorian(today, locale, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}
+          footer={next ? `${ev(next.e.id).name} · ${n === 0 ? t("todayCount") : n === 1 ? t("tomorrow") : t("days", { n })}` : undefined} />
       </View>
     </Stage>
   );

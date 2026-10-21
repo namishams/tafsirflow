@@ -31,6 +31,7 @@ import { DiscoverFeed, loadVerse, rand, shuffle, type FeedVerse } from "./source
 import { countShare, useVerseLike } from "./useLike";
 import { fillText, useFeedText } from "./texts";
 import { VerseShareCard } from "./VerseShareCard";
+import { SharePromptCard } from "@/features/share/SharePrompt";
 import { CalendarPost, CarouselPost, ChaptersPost, LearnLink, MemoPost, PrayerPost, ProgressPost, QuizPost, RadioPost, RecitersPost, TranslitPost, WordPost, prayerNow } from "./Extras";
 import { allowedReciter, isFreeReciter } from "@/features/quran/reciter";
 import { lastVisit, markSeen, touchVisit, wasSeen } from "./seen";
@@ -493,6 +494,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
           );
         })}
       </ScrollView>
+      <View style={{ paddingHorizontal: 14 }}><SharePromptCard /></View>
       {showUpdate ? (
         <View style={{ marginHorizontal: 14, marginTop: 12, padding: 14, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, gap: 6 }}>
           <Text accessibilityRole="header" style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{tx.updateTitle}</Text>
@@ -880,16 +882,16 @@ function PostMenu({ item, onClose, stories, onShare, onVoices }: { item: Item | 
   const go = (href: string) => { onClose(); router.push(href as Href); };
   const rows: { label: string; icon: IconName; onPress: () => void }[] = [];
   if (verseKey) {
-    rows.push({ label: ws("share"), icon: "share", onPress: () => { void loadVerse(verseKey, lang, reciter).then((d) => onShare({ kind: "verse", v: d })).catch(onClose); } });
+    rows.push({ label: ws("share"), icon: "send", onPress: () => { void loadVerse(verseKey, lang, reciter).then((d) => onShare({ kind: "verse", v: d })).catch(onClose); } });
     rows.push({ label: tx.reader, icon: "book", onPress: () => go(`/quran/${s}?v=${v}`) });
     rows.push({ label: tx.learn, icon: "cap", onPress: () => go(`/shams/${s}?v=${v}`) });
     rows.push({ label: tx0.reciters, icon: "radio", onPress: onVoices });
   } else if (story) {
-    rows.push({ label: ws("share"), icon: "share", onPress: () => onShare({ kind: "story", s: story }) });
+    rows.push({ label: ws("share"), icon: "send", onPress: () => onShare({ kind: "story", s: story }) });
     rows.push({ label: pt.readFull, icon: "book", onPress: () => go(story.href) });
   } else if (item?.startsWith("h:") && HADITH.get(item)) {
     const h = HADITH.get(item)!;
-    rows.push({ label: ws("share"), icon: "share", onPress: () => onShare({ kind: "hadith", h }) });
+    rows.push({ label: ws("share"), icon: "send", onPress: () => onShare({ kind: "hadith", h }) });
   }
   return (
     <Modal visible={!!item && rows.length > 0} transparent animationType="slide" onRequestClose={onClose}>

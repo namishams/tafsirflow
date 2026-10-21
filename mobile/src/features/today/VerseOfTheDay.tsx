@@ -1,3 +1,5 @@
+import { ShareVerseButton } from "@/features/share/ShareKit";
+import { useShareText } from "@/features/share/texts";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { router, type Href } from "expo-router";
@@ -16,6 +18,7 @@ export function VerseOfTheDay() {
   const w = useWebT("home2");
   const { lang } = useLang();
   const key = verseOfDayKey();
+  const stx = useShareText();
   const [c, v] = key.split(":").map(Number);
   const [verse, setVerse] = useState<SingleVerse | null>(null);
   const [surahName, setSurahName] = useState("");
@@ -37,6 +40,7 @@ export function VerseOfTheDay() {
           <OutlineButton title={w("votdTafsir")} icon="book" onPress={() => router.push(`/quran/${c}?v=${v}&tafsir=1` as Href)} style={{ flex: 1 }} />
           <OutlineButton title={w("votdMemorize")} icon="sun" onPress={() => router.push(`/shams/${c}?v=${v}` as Href)} style={{ flex: 1 }} />
         </ActionRow>
+        <ShareVerseButton verseKey={key} kicker={stx.verseOfDay} pill />
       </View>
     </GoldCard>
   );

@@ -10,6 +10,10 @@ import { SITE } from "@/lib/api";
 import { Icon, type IconName } from "@/components/icons";
 import { FONT, R, stage } from "@/lib/theme";
 import { useFeedText } from "./texts";
+import { useShareText } from "@/features/share/texts";
+
+/** the app download page (redirects to the App Store / Google Play); every shared card and message carries it */
+export const APP_LINK = `${SITE}/app`;
 import { statShare } from "./statsStore";
 import { STICKER, STICKERS, useGamify } from "./gamify";
 import { useGameText } from "./gamifyTexts";
@@ -76,6 +80,9 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
   link: string; message: string; onShared?: () => void;
 }) {
   const tx = useFeedText();
+  const stx = useShareText();
+  // every message carries the brand line and the app download link
+  if (!message.includes(APP_LINK)) message = `${message}\n\n${tx.brand} · ${stx.getApp}: ${APP_LINK}`;
   const onSharedRaw = onShared;
   onShared = () => { statShare(); onSharedRaw?.(); };
   const insets = useSafeAreaInsets();
@@ -346,7 +353,7 @@ export function BrandFoot({ color = stage.gold }: { color?: string }) {
   return (
     <View style={{ alignItems: "center", gap: 2 }}>
       <Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color }}>{tx.brand}</Text>
-      <Text allowFontScaling={false} style={{ fontFamily: FONT.regular, fontSize: 10.5, color: "rgba(255,255,255,0.7)" }}>quranmasterclass.com</Text>
+      <Text allowFontScaling={false} style={{ fontFamily: FONT.regular, fontSize: 10.5, color: "rgba(255,255,255,0.7)" }}>quranmasterclass.com/app</Text>
     </View>
   );
 }

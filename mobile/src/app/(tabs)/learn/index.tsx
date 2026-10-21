@@ -17,6 +17,7 @@ import { ProPromo } from "@/features/learn/ProPromo";
 import { TodayPlanCard } from "@/features/plan/TodayPlanCard";
 import { SrsEntryCard } from "@/features/srs";
 import { ReciterPathCard } from "@/features/reciter-path/Screens";
+import { QaidaCard } from "@/features/qaida/Screens";
 import { useLearnT } from "@/features/learn/texts";
 import { useFeedText } from "@/features/feed/texts";
 import { I18nManager } from "react-native";
@@ -68,6 +69,7 @@ export default function Masterclass() {
 
         <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 28 }}>
           <TodayPlanCard />
+          <QaidaCard />
           <ReciterPathCard />
           {next && nextChapter ? (
             <GoldCard>

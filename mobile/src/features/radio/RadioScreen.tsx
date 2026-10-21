@@ -118,7 +118,7 @@ export default function RadioScreen() {
               <GoldPlay playing={r.playing} onPress={radio.toggle} labels={[t("pause"), t("play")]} />
               <RoundButton icon="next" label={t("nextVerse")} onPress={radio.skipVerse} />
               <StagePill title={t("nextSurah")} onPress={radio.skipSurah} />
-              <RoundButton icon="share" label={ts("share")} onPress={share} />
+              <RoundButton icon="send" label={ts("share")} onPress={share} />
             </View>
             <View style={{ marginTop: 14, flexDirection: "row", alignItems: "center", gap: 12 }}>
               <Icon name="volume" color="rgba(255,255,255,0.6)" size={18} />

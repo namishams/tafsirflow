@@ -64,7 +64,7 @@ export function HadithCard({ item, style, maxLines }: { item: HadithItem; style?
       {foreign ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted, marginTop: 4, fontStyle: "italic" }}>{x.englishOnly}</Text> : null}
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 14 }}>
         <ActionButton icon="bookmark" label={saved ? x.saved : x.save} on={saved} onPress={() => toggleSaved(item)} />
-        <ActionButton icon="share" label={x.share} onPress={() => setShare(true)} />
+        <ActionButton icon="send" label={x.share} onPress={() => setShare(true)} />
         {item.url && item.source === "thaqalayn" ? <ActionButton icon="globe" label={x.openSource} onPress={() => void Linking.openURL(item.url!)} /> : null}
       </View>
       {share ? <HadithShare item={item} onClose={() => setShare(false)} /> : null}

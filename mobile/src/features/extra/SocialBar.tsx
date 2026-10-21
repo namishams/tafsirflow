@@ -103,7 +103,7 @@ export function SocialBar({ verseKey, shareText, trackView = true, onStage = fal
         ) : null}
         <Pressable onPress={() => void share()} accessibilityRole="button" accessibilityLabel={`${w("share")}, ${s.shares}`} hitSlop={4}
           style={({ pressed }) => [btn, pressed && { backgroundColor: onStage ? "rgba(255,255,255,0.08)" : t.bg }]}>
-          <Icon name="share" color={muted} size={18} />
+          <Icon name="send" color={muted} size={18} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: muted, fontVariant: ["tabular-nums"] }}>{compact(s.shares, lang)}</Text>
         </Pressable>
         <View style={{ flex: 1 }} />

@@ -1,3 +1,4 @@
+import { VerseShare } from "@/features/share/ShareKit";
 import { useCallback, useEffect, useMemo, useRef, useState, type ComponentRef } from "react";
 import { FlatList, Modal, Platform, Pressable, ScrollView, Share, Switch, Text, View } from "react-native";
 import { Stack, router, useFocusEffect, useLocalSearchParams, type Href } from "expo-router";
@@ -132,6 +133,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const [view, setViewState] = useState<"verses" | "reading">(() => (readJSON<string>("tf:view", "verses") === "reading" ? "reading" : "verses"));
   const setView = (v: "verses" | "reading") => { setViewState(v); writeJSON("tf:view", v, true); };
   const [idx, setIdx] = useState(Math.max(0, Math.min(verses.length - 1, (start || 1) - 1)));
+  const [shareKey, setShareKey] = useState<string | null>(null);
   const [tafsirFor, setTafsirFor] = useState<Verse | null>(openTafsir && start ? verses[start - 1] ?? null : null);
   const [settings, setSettings] = useState(false);
   const [nowOpen, setNowOpen] = useState(false);
@@ -429,11 +431,8 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
     },
     tafsir: (v: Verse) => setTafsirFor(v),
     shams: (v: Verse) => { if (mine) audio.stop(); router.push(`/shams/${chapter.id}?v=${v.verse_number}` as Href); },
-    share: (v: Verse) => {
-      const title = `${chapter.name_simple} ${v.verse_key}`;
-      const url = `${SITE}/${lang}/surah/${chapter.id}?v=${v.verse_number}`;
-      void Share.share(Platform.OS === "ios" ? { title, message: `${v.translation}\n— ${title}`, url } : { title, message: `${v.translation}\n— ${title}\n${url}` }).catch(() => undefined);
-    },
+    // share: the Instagram-style share sheet with the verse card (paper plane)
+    share: (v: Verse) => setShareKey(v.verse_key),
     // copy (website copyVerse): the Arabic, the translation and the reference; the share sheet carries "Copy"
     copy: (v: Verse) => {
       const message = [v.text_uthmani, v.translation, `— ${chapter.name_simple} ${v.verse_key}`].filter(Boolean).join("\n\n");
@@ -634,6 +633,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
       </Modal>
 
       {/* tafsir sheet */}
+      {shareKey ? <VerseShare verseKey={shareKey} onClose={() => setShareKey(null)} /> : null}
       <Modal visible={!!tafsirFor} animationType="slide" presentationStyle="pageSheet" onRequestClose={() => setTafsirFor(null)}>
         {tafsirFor ? (
           <View style={{ flex: 1, backgroundColor: t.bg }}>

@@ -66,7 +66,7 @@ export const StoryPage = memo(function StoryPage(p: Common & { story: Story; all
                 label={voice.free ? (sampling ? tx.stopSample : tx.listen) : tx.proVoice} a11y={`${voice.free ? (sampling ? tx.stopSample : tx.listen) : tx.proVoice}, ${reciterName(voice.reciter, p.lang)}`} selected={sampling} onPress={sample} />
             ) : null}
             <Action icon="bookmark" filled={saved} color={saved ? stage.gold : "#fff"} label={saved ? tx.saved : tx.save} a11y={saved ? tx.unsave : tx.save} selected={saved} onPress={() => { if (!saved) statSave(); toggleSavedStory(p.story.id); }} />
-            <Action icon="share" color="#fff" label={tx.share} a11y={tx.share} onPress={() => p.onShare(p.story)} />
+            <Action icon="send" color="#fff" label={tx.share} a11y={tx.share} onPress={() => p.onShare(p.story)} />
             <Action icon="book" color="#fff" label={tx.readMore} a11y={tx.readMore} onPress={() => router.push(p.story.href as Href)} />
           </View>
         ) : null}
@@ -92,7 +92,7 @@ export const NamePage = memo(function NamePage(p: Common & { name: AllahName; on
           <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted, textAlign: "center", marginTop: 22 }}>{ft.nameSource}</Text>
         </View>
         <View style={{ width: 72, justifyContent: "flex-end", alignItems: "center", gap: 16, paddingEnd: 6 }}>
-          <Action icon="share" color="#fff" label={tx.share} a11y={tx.share} onPress={() => p.onShare(p.name)} />
+          <Action icon="send" color="#fff" label={tx.share} a11y={tx.share} onPress={() => p.onShare(p.name)} />
           <Action icon="book" color="#fff" label={tx.readMore} a11y={tx.readMore} onPress={() => router.push("/islam/names" as Href)} />
         </View>
       </View>

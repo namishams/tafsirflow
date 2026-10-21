@@ -1,3 +1,4 @@
+import { DoneShare } from "@/features/share/SharePrompt";
 import { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
@@ -93,6 +94,7 @@ export function HifzScreen() {
               <Text style={{ fontFamily: FONT.bold, fontSize: 18, color: t.ink, textAlign: "left" }}>{name(cur)}</Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.muted, textAlign: "left" }}>{st("learnedOf", { n: nf(cur.known), total: nf(cur.total) })}</Text>
               <BigButton title={mode === "juz" ? st("juzExam") : st("surahExam")} variant="outline" onPress={() => router.push(`/tests/${mode}?ref=${cur.id}` as Href)} />
+              {cur.known > 0 && cur.known >= cur.total ? <DoneShare kind="milestone" banner={false} title={name(cur)} body={st("learnedOf", { n: nf(cur.known), total: nf(cur.total) })} /> : null}
             </GoldCard>
           ) : null}
         </View>

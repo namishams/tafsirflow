@@ -1,3 +1,4 @@
+import { DoneShare } from "@/features/share/SharePrompt";
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Linking, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type ScrollViewInstance } from "react-native";
@@ -131,6 +132,10 @@ export default function PrayerBoard() {
           {hijriAr ? <Text style={{ fontFamily: CALLIG_FONT, fontSize: 22, lineHeight: 34, color: stage.gold, marginTop: 12, writingDirection: "rtl", alignSelf: "flex-start" }}>{hijriAr}</Text> : null}
           {geoMsg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 14, color: "rgba(255,255,255,0.6)", marginTop: 8 }}>{geoMsg}</Text> : null}
 
+          <View style={{ alignSelf: "flex-end", marginTop: 8 }}>
+            <DoneShare kind="prayerTimes" banner={false} onStage title={label(main)} arabic={hijriAr || undefined} footer={greg}
+              body={PRAYERS.map((p) => `${t(p)}  ${fmtTime(day.times[p], main.tz, locale)}`).join("\n")} />
+          </View>
           <View style={{ marginTop: 24, alignItems: "center" }}>
             <NextArch width={archW} prayer={day.next} at={fmtTime(day.nextAt, main.tz, locale)} left={countdown(day.nextAt, now)} frac={frac} label={t("nextPrayer")} name={t(day.next)} ar={ar} />
           </View>

@@ -189,7 +189,7 @@ function ReportView({ report, t, tr, l, rtl, favs, onClose }: { report: Report; 
       {report.intro ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 8 }}>{report.intro}</Text> : null}
       {report.month && report.monthNote ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: th.muted, marginTop: 8 }}>{report.monthNote}</Text> : null}
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
-        <OutlineButton title={tr("reportShare")} icon="share" compact onPress={shareAll} />
+        <OutlineButton title={tr("reportShare")} icon="send" compact onPress={shareAll} />
         <OutlineButton title={tr("reportClose")} compact onPress={onClose} />
       </View>
 

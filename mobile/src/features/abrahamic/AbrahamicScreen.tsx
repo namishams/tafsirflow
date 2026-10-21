@@ -1,3 +1,5 @@
+import { ShareVerseButton } from "@/features/share/ShareKit";
+import { DoneShare } from "@/features/share/SharePrompt";
 import { useEffect, useState } from "react";
 import { Image, Linking, Pressable, Text, View } from "react-native";
 import { Stack } from "expo-router";
@@ -82,7 +84,10 @@ function UnitBody({ unit, s, lang }: { unit: AbrahamicUnit; s: (k: string) => st
                 {v.translation ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted }}>{v.translation}</Text> : null}
               </>
             ) : <Text style={{ color: t.muted, fontFamily: FONT.regular }}>{s("offline")}</Text>}
-            <TextLink title={`${k} · ${s("openReader")}`} onPress={() => openVerse(k)} />
+            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+              <TextLink title={`${k} · ${s("openReader")}`} onPress={() => openVerse(k)} />
+              <ShareVerseButton verseKey={k} />
+            </View>
           </View>
         );
       })}
@@ -90,6 +95,7 @@ function UnitBody({ unit, s, lang }: { unit: AbrahamicUnit; s: (k: string) => st
       {items === null ? <Text style={{ color: t.muted, fontFamily: FONT.regular }}>{s("loading")}</Text>
         : items.length === 0 ? <Text style={{ color: t.muted, fontFamily: FONT.regular }}>{s("offline")}</Text>
         : items.map((it) => <ItemCard key={it.id} item={it} />)}
+      <DoneShare kind="course" banner={false} arabic={unit.arabic} title={pick(unit.title, lang)} body={pick(unit.text, lang)} />
     </View>
   );
 }

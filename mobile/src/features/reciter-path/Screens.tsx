@@ -1,3 +1,4 @@
+import { DoneShare } from "@/features/share/SharePrompt";
 import { useMemo, useState, type ReactNode } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
@@ -252,6 +253,7 @@ export function UnitPage({ id }: { id: string }) {
                     <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: quiz >= PASS ? t.accent : t.muted }}>{quiz >= PASS ? rt("passed") : rt("notPassed")}</Text>
                     <OutlineButton title={rt("retry")} onPress={() => setQuiz("run")} />
                     <GoldButton title={rt("toPath")} onPress={() => router.back()} />
+                    {quiz >= PASS ? <DoneShare kind="unitDone" title={tx.title} big={`${Math.round(quiz * 100)} %`} footer={`${rt("title")} · ${rt("level", { n: u.level })} · ${rt("unit", { n: unitNo })}`} /> : null}
                   </Card>
                 ) : (
                   <>
@@ -286,6 +288,7 @@ function CertificateCard({ level, name, date, format }: { level: number; name: s
         <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.gold }}>{`${rt("title")} · ${date}`}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 11, lineHeight: 15, color: "rgba(255,255,255,0.65)", textAlign: "center", marginTop: 8 }}>{rt("certNote")}</Text>
         <Text style={{ fontFamily: FONT.bold, fontSize: 12, color: "rgba(255,255,255,0.9)" }}>Quran Masterclass</Text>
+        <Text style={{ fontFamily: FONT.regular, fontSize: 10.5, color: "rgba(255,255,255,0.7)" }}>quranmasterclass.com/app</Text>
       </View>
     </View>
   );
@@ -302,7 +305,7 @@ function Certificate({ level, date }: { level: number; date: string }) {
       <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, marginTop: 8 }}>{rt("certNote")}</Text>
       <TextInput value={name} onChangeText={setName} placeholder={rt("certName")} placeholderTextColor={t.muted} maxLength={40}
         style={{ marginTop: 12, height: 44, borderRadius: R.lg, borderWidth: 1, borderColor: t.line, paddingHorizontal: 12, color: t.ink, fontFamily: FONT.regular, backgroundColor: t.surface }} />
-      <GoldButton title={rt("shareCert")} icon="share" onPress={() => setShare(true)} style={{ marginTop: 12 }} />
+      <GoldButton title={rt("shareCert")} icon="send" onPress={() => setShare(true)} style={{ marginTop: 12 }} />
       <ShareSheet visible={share} onClose={() => setShare(false)} noDecoration link="https://quranmasterclass.com/shams"
         message={`${rt("certTitle")} · ${rt("title")} · ${rt("level", { n: level })}`}
         renderCard={(f) => <CertificateCard level={level} name={name.trim()} date={date} format={f} />} />
@@ -338,6 +341,7 @@ export function ExamPage({ level }: { level: number }) {
                 <Card>
                   <Text style={{ fontFamily: FONT.bold, fontSize: 20, color: t.ink }}>{rt("result", { score: Math.round(state * 100) })}</Text>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: state >= PASS ? t.accent : t.muted }}>{state >= PASS ? rt("passed") : rt("notPassed")}</Text>
+                  {state >= PASS ? <DoneShare kind="levelDone" title={rt("title")} big={`${Math.round(state * 100)} %`} footer={rt("level", { n: level })} /> : null}
                 </Card>
               ) : null}
               <GoldButton title={state === null ? rt("exam") : rt("retry")} icon="cap" onPress={() => setState("run")} />

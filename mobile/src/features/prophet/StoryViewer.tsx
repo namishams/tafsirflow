@@ -146,7 +146,7 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
           {allowed ? (
             <View style={{ flexDirection: "row", gap: 6 }}>
               <BarButton icon="bookmark" label={saved ? tx.unsave : tx.save} filled={saved} onPress={() => toggleSavedStory(story.id)} />
-              <BarButton icon="share" label={tx.share} onPress={() => setSharing(true)} />
+              <BarButton icon="send" label={tx.share} onPress={() => setSharing(true)} />
             </View>
           ) : <View />}
           <BarButton icon={I18nManager.isRTL ? "chevronLeft" : "chevronRight"} label={tx.next} onPress={next} />
@@ -158,7 +158,7 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
   );
 }
 
-function BarButton({ icon, label, onPress, filled }: { icon: "chevronLeft" | "chevronRight" | "bookmark" | "share"; label: string; onPress: () => void; filled?: boolean }) {
+function BarButton({ icon, label, onPress, filled }: { icon: "chevronLeft" | "chevronRight" | "bookmark" | "send"; label: string; onPress: () => void; filled?: boolean }) {
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} hitSlop={6}
       style={({ pressed }) => ({ width: 46, height: 46, borderRadius: 23, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? "rgba(255,255,255,0.18)" : "rgba(0,0,0,0.28)", borderWidth: 1, borderColor: "rgba(255,255,255,0.14)" })}>
