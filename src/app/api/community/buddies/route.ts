@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
               + (abs(c.study_minutes - $5) <= 10)::int + (c.country IS NOT DISTINCT FROM $6)::int + (lower(c.rewaya) = lower($7) AND $7 <> '')::int) AS score
        FROM community_profiles c JOIN users u ON u.id = c.user_id
       WHERE c.public AND NOT c.suspended AND c.user_id <> $1 AND ${NOT_BLOCKED("c.user_id")}
-        AND COALESCE((c.sijill_privacy ->> 'level')::boolean, false)
+        AND COALESCE((c.sijill_privacy ->> 'level')::boolean, true)
         AND c.achievements_updated_at > now() - interval '30 days'
         AND u.birth_year IS NOT NULL AND extract(year from now())::int - u.birth_year >= ${MIN_POST_AGE}
         AND NOT EXISTS (SELECT 1 FROM community_follows f WHERE f.follower_id = $1 AND f.followee_id = c.user_id)

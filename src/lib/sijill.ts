@@ -8,7 +8,7 @@ import { courseName, verifyUrl } from "@/app/api/certificates/lib";
 // learning achievements only. The app computes a compact summary of aggregates from its own stores (no raw data, no
 // answers, no verse lists) and sends it to POST /api/community/achievements; it is validated, capped and stored in
 // community_profiles.achievements. Certificates and exam results come from the server tables, never from the client.
-// Every section is hidden until the member switches it on (sijill_privacy). Achievement moments are generated here,
+// Every section is public until the member switches it off (sijill_privacy); certificates stay off until switched on. Achievement moments are generated here,
 // by the system, from what changed between two syncs and from new certificates and passed exams.
 
 export const SECTIONS = ["level", "badges", "hifz", "tree", "stickers", "certificates", "exams", "memorised", "time", "activity", "courses", "sharer"] as const;
@@ -18,7 +18,8 @@ export const isSection = (v: unknown): v is Section => typeof v === "string" && 
 
 export function privacyOf(v: unknown): Privacy {
   const o = (v && typeof v === "object" ? v : {}) as Record<string, unknown>;
-  return Object.fromEntries(SECTIONS.map((s) => [s, o[s] === true])) as Privacy;
+  // public by default (owner decision): every section shows unless switched off; certificates (real name on the verify page) stay off until switched on
+  return Object.fromEntries(SECTIONS.map((s) => [s, o[s] === undefined ? s !== "certificates" : o[s] === true])) as Privacy;
 }
 
 export type SijillConfig = { momentsInFeed: boolean; leaderboards: boolean; compare: boolean };
@@ -114,7 +115,7 @@ export const MOMENT_SECTION: Record<MomentKind, Section> = {
   certificate: "certificates", exam: "exams", level: "level", juz: "memorised", tree: "tree", sticker: "stickers", streak: "time", course: "courses", hifz: "hifz",
 };
 /** SQL: the privacy section of moment alias m switched on by its owner (profile alias c) */
-export const MOMENT_SHOWN = `COALESCE((c.sijill_privacy ->> (CASE m.kind ${MOMENT_KINDS.map((k) => `WHEN '${k}' THEN '${MOMENT_SECTION[k]}'`).join(" ")} END))::boolean, false)`;
+export const MOMENT_SHOWN = `COALESCE((c.sijill_privacy ->> (CASE m.kind ${MOMENT_KINDS.map((k) => `WHEN '${k}' THEN '${MOMENT_SECTION[k]}'`).join(" ")} END))::boolean, true)`;
 export const REACTIONS = ["like", "mashallah", "barakallah", "barik"] as const;
 export type Reaction = (typeof REACTIONS)[number];
 export const isReaction = (v: unknown): v is Reaction => typeof v === "string" && (REACTIONS as readonly string[]).includes(v);

@@ -36,9 +36,9 @@ export async function GET(req: NextRequest) {
         AND ($4 = '' OR lower(c.rewaya) LIKE $4 || '%' ESCAPE '\\')
         AND ($5::text IS NULL OR c.level = $5)
         AND (NOT $6 OR ${HAS_BADGE})
-        AND ($8::text IS NULL OR (c.study_stage = $8 AND COALESCE((c.sijill_privacy ->> 'level')::boolean, false)))
-        AND ($9::int IS NULL OR (c.current_surah = $9 AND COALESCE((c.sijill_privacy ->> 'memorised')::boolean, false)))
-        AND ($10::text IS NULL OR (c.study_focus = $10 AND COALESCE((c.sijill_privacy ->> 'level')::boolean, false)))
+        AND ($8::text IS NULL OR (c.study_stage = $8 AND COALESCE((c.sijill_privacy ->> 'level')::boolean, true)))
+        AND ($9::int IS NULL OR (c.current_surah = $9 AND COALESCE((c.sijill_privacy ->> 'memorised')::boolean, true)))
+        AND ($10::text IS NULL OR (c.study_focus = $10 AND COALESCE((c.sijill_privacy ->> 'level')::boolean, true)))
       ORDER BY ${BADGE_RANK} DESC, array_position(ARRAY['sheikh','master','rising','talent'], c.level), followers DESC, c.created_at DESC
       LIMIT ${PAGE + 1} OFFSET $7`,
     [g.me.id, q, country, rewaya, level, verified, offset, stage, surah, focus],
