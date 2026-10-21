@@ -1,3 +1,4 @@
+import { statWords } from "./statsStore";
 import { readJSON, writeJSON } from "@/lib/store";
 
 // What the feed showed in the last days, kept compactly ("qmc.feed-seen": item -> day number, capped), so new
@@ -28,7 +29,7 @@ function flush() {
   writeJSON(KEY, seen, true);
 }
 /** the content key of a feed item (variants of one verse count as the verse) */
-export const contentKey = (item: string) => (/^[vwqcm]:/.test(item) ? `v:${item.slice(2)}` : item);
+export const contentKey = (item: string) => (/^[vwqcmrtd]:/.test(item) ? `v:${item.slice(2)}` : item);
 export const wasSeen = (item: string) => contentKey(item) in load();
 export function markSeen(item: string) {
   const s = load();
@@ -48,6 +49,7 @@ export const touchVisit = () => writeJSON(LAST_KEY, Date.now(), true);
 const STATS_KEY = "qmc.feed-stats";
 export type FeedStats = { day: number; words: number };
 export function addLearnedWords(n: number) {
+  statWords(n);
   const cur = readJSON<FeedStats>(STATS_KEY, { day: day(), words: 0 });
   writeJSON(STATS_KEY, { day: day(), words: (cur.day === day() ? cur.words : 0) + n }, true);
 }

@@ -51,7 +51,9 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
 
   const group = groups[pos.group];
   const story = group?.stories[pos.story];
-  const allowed = story ? quota.allowed(story.id) : false;
+  // our own promo cards between the groups (feed/HomeFeed) never use up a free story
+  const promo = !!story?.id.startsWith("promo-");
+  const allowed = story ? promo || quota.allowed(story.id) : false;
 
   const next = () => {
     if (!group) return;
@@ -68,7 +70,7 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
   const auto = !reduce && !reader && allowed;
   useEffect(() => {
     if (!story || !start) return;
-    if (allowed) { quota.mark(story.id); markSeen(story.id); }
+    if (allowed && !promo) { quota.mark(story.id); markSeen(story.id); }
     progress.setValue(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [story?.id, !!start]);

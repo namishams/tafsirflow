@@ -1,7 +1,8 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Animated, AppState, Easing, FlatList, Modal, Pressable, RefreshControl, ScrollView, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { router, type Href } from "expo-router";
+import { BlurView } from "expo-blur";
+import { router, useNavigation, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { Icon, type IconName } from "@/components/icons";
@@ -26,11 +27,12 @@ import type { AllahName, Story, StoryGroup } from "@/features/prophet/stories";
 import { FeedBackdrop, SpeakerIcon, toneOf } from "./art";
 import { tick } from "./haptics";
 import { BrandFoot, ShareSheet } from "./share";
-import { DiscoverFeed, loadVerse, shuffle, type FeedVerse } from "./source";
+import { DiscoverFeed, loadVerse, rand, shuffle, type FeedVerse } from "./source";
 import { countShare, useVerseLike } from "./useLike";
 import { fillText, useFeedText } from "./texts";
 import { VerseShareCard } from "./VerseShareCard";
-import { CarouselPost, LearnLink, MemoPost, PrayerPost, QuizPost, prayerNow } from "./Extras";
+import { CalendarPost, CarouselPost, ChaptersPost, LearnLink, MemoPost, PrayerPost, ProgressPost, QuizPost, RadioPost, RecitersPost, TranslitPost, WordPost, prayerNow } from "./Extras";
+import { allowedReciter, isFreeReciter } from "@/features/quran/reciter";
 import { lastVisit, markSeen, touchVisit, wasSeen } from "./seen";
 import { ExploreSheet, SavedSheet, type OpenItem } from "./Explore";
 import { hadithFeedItems, type HadithFeedItem } from "./hadith";
@@ -39,6 +41,13 @@ import { HadithShare } from "@/features/hadith/ui";
 import { SAVED_KEY as HADITH_SAVED_KEY, toggleSaved as toggleSavedHadith, type HadithItem } from "@/features/hadith/data";
 import { readTradition } from "@/lib/tradition";
 import { HeartBurst, useTapGestures } from "./ui";
+import { LIB_TOPICS, LibScheduler, isLibId, onLibData, type LibTopic } from "./library";
+import { statLike, statPost, statSave, statVerse, kindOfItem, useFeedTimer } from "./statsStore";
+import { LIB } from "./library";
+import { TodayRings } from "./Rings";
+import { AccountNudge, PromoCap, PromoPost, nudgeAccount } from "./Promo";
+import { dwell, engaged, isBored } from "./interest";
+import { LibraryPost, topicLabel as libTopicLabel } from "./LibraryPost";
 
 // The Instagram home-feed view of /feed: logo bar, a stories rail, then one post after the other. A post is a square
 // card (the verse or story drawn like the share image) with a slow Ken Burns zoom; the recitation of the post that is
@@ -51,9 +60,15 @@ const BAR_H = 52;
 const TABS_H = 40;
 type Item = string;
 type ShareItem = { kind: "verse"; v: FeedVerse } | { kind: "story"; s: Story } | { kind: "name"; n: AllahName } | { kind: "hadith"; h: HadithFeedItem };
-export type Topic = "all" | "verses" | "names" | "stories" | "hadith";
-const TOPICS: Topic[] = ["all", "verses", "names", "stories", "hadith"];
-const HADITH_EVERY = 4; // in "All" a hadith post after every few posts
+export type Topic = "all" | "verses" | "names" | "stories" | "hadith" | Exclude<LibTopic, "hadith">;
+const TOPICS: Topic[] = ["all", "verses", "tafsir", "hadith", "duas", "stories", "prayer", "seerah", "quran", "holy", "names", "scholars", "history", "art"];
+const isLibTopic = (t: Topic): t is Exclude<LibTopic, "hadith"> => (LIB_TOPICS as string[]).includes(t) && t !== "hadith";
+const HADITH_EVERY = 4;
+/** the Home list keeps at most this many items (older ones are dropped from the front) */
+const WINDOW = 400;
+let savesThisSession = 0;
+/** a promo card in the story viewer after every this many groups */
+const PROMO_EVERY = 4; // in "All" a hadith post after every few posts
 /** the hadith posts of the feed by item id ("h:<id>"), filled from features/hadith (never typed by hand) */
 const HADITH = new Map<string, HadithFeedItem>();
 
@@ -101,6 +116,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   const latest = useRef({ stories, quota });
   latest.current = { stories, quota };
   const activeRef = useRef(0);
+  const trimmed = useRef(0);
   activeRef.current = active;
 
   useEffect(() => { getChapters(lang).then(setChapters).catch(() => undefined); }, [lang]);
@@ -135,12 +151,20 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
 
   const storyQueue = useRef<string[]>([]);
   const shownPrayer = useRef(new Set<string>());
+  const extraState = useRef({ n: 0, calendar: false, progress: false });
+  const lib = useRef<LibScheduler | null>(null);
+  // our own products: frequency-capped (Promo.tsx); the position counts from the start of the session
+  const promo = useRef(new PromoCap());
+  const keysLenRef = useRef(0);
+  const proRef = useRef(false);
+  proRef.current = voice.pro;
   const nextPosts = useCallback((n: number, queuedStories: number): string[] => {
     const { stories: st, quota: q } = latest.current;
     const left = Math.max(0, q.left - queuedStories);
     const tp = topicRef.current;
     if (tp === "hadith") { fetchHadith(); return []; }
-    if (tp === "names") return st.names.length ? Array.from({ length: n }, () => `n:${Math.floor(Math.random() * st.names.length)}`) : [];
+    if (isLibTopic(tp)) return lib.current?.take(n) ?? [];
+    if (tp === "names") return st.names.length ? Array.from({ length: n }, () => `n:${Math.floor(rand() * st.names.length)}`) : [];
     if (tp === "stories") {
       const all = (["prophet", "reciters", "islam", "tips", "secrets"] as const).flatMap((c) => st.groups[c].flatMap((g) => g.stories.map((x) => x.id)));
       const out: string[] = [];
@@ -151,10 +175,26 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     if (!d) return [];
     const got = d.next(n, left).filter((k) => k !== "pro" && (tp !== "verses" || /^[vw]:/.test(k)));
     // weighted variants of a verse post, so the stream never feels the same: quiz, carousel, memorise
+    // weights: quiz 7 %, carousel 5 %, memorise 5 %, reciters 5 %, transliteration 5 %, word in depth 6 %, verse 67 %
+    const VARIANTS: [string, number][] = [["q", 0.07], ["c", 0.05], ["m", 0.05], ["r", 0.05], ["t", 0.05], ["d", 0.06]];
     const vary = (k: string) => {
       if (!k.startsWith("v:")) return k;
-      const x = Math.random();
-      return x < 0.09 ? `q:${k.slice(2)}` : x < 0.15 ? `c:${k.slice(2)}` : x < 0.21 ? `m:${k.slice(2)}` : k;
+      let x = rand();
+      for (const [pre, w] of VARIANTS) { if (x < w) return `${pre}:${k.slice(2)}`; x -= w; }
+      return k;
+    };
+    // the occasional extra cards of "All": calendar and progress once per session, radio and story chapters now and then
+    const extras = (): string | null => {
+      const e = extraState.current;
+      e.n++;
+      if (!e.calendar && e.n >= 5) { e.calendar = true; return `cal:${new Date().toDateString()}`; }
+      if (!e.progress && e.n >= 18) { e.progress = true; return "prog"; }
+      if (e.n % 37 === 0) return "radio";
+      if (e.n % 23 === 0) {
+        const gs = (["prophet", "islam"] as const).flatMap((c) => st.groups[c]).filter((g) => g.stories.length > 2);
+        if (gs.length) return `k:${gs[Math.floor(rand() * gs.length)].id}`;
+      }
+      return null;
     };
     const pr = prayerNow();
     const prayerCard = pr && !shownPrayer.current.has(`${pr.prayer}:${pr.at.toDateString()}`) ? (shownPrayer.current.add(`${pr.prayer}:${pr.at.toDateString()}`), [`p:${pr.prayer}`]) : [];
@@ -164,6 +204,12 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     for (const k0 of got) {
       const k = vary(k0);
       out.push(k);
+      const x = extras();
+      if (x) out.push(x);
+      // the content libraries: about every second post (as far as their pages have arrived)
+      if (rand() < 0.5) out.push(...(lib.current?.take(1) ?? []));
+      const ad = promo.current.at(keysLenRef.current + out.length, proRef.current);
+      if (ad) out.push(ad);
       if (out.length % (HADITH_EVERY + 1) === HADITH_EVERY && hq.current.queue.length) out.push(hq.current.queue.shift()!);
     }
     return out;
@@ -174,6 +220,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     const ids = (k: keyof typeof st.groups) => st.groups[k].flatMap((g) => g.stories.map((x) => x.id));
     discover.current = new DiscoverFeed(topicRef.current === "verses" ? "verses" : "foryou", { prophet: ids("prophet"), reciters: ids("reciters"), islam: ids("islam"), tips: ids("tips"), secrets: ids("secrets") }, st.names.length, lang !== "ar", undefined);
     storyQueue.current = [];
+    lib.current = new LibScheduler(lang, isLibTopic(topicRef.current) ? topicRef.current : "all");
     hq.current = { queue: [], cursor: null, loading: false, gen: hq.current.gen + 1 };
     return nextPosts(8, 0);
   }, [lang, nextPosts]);
@@ -183,8 +230,25 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   const more = useCallback(() => {
     const queued = keys.slice(activeRef.current).filter((k) => k.startsWith("s:")).length;
     const add = nextPosts(6, queued);
-    if (add.length) setKeys((k) => [...k, ...add]);
+    if (!add.length) return;
+    setKeys((k) => {
+      const next = [...k, ...add];
+      // memory stays bounded: drop the oldest items far above the reader (keys stay stable through `trimmed`)
+      const drop = next.length - WINDOW;
+      if (drop <= 0 || activeRef.current - drop < 20) return next;
+      trimmed.current += drop;
+      setActive((a) => Math.max(0, a - drop));
+      return next.slice(drop);
+    });
   }, [keys, nextPosts]);
+
+  // a library topic fills as its pages arrive
+  const moreRef = useRef(more);
+  moreRef.current = more;
+  const keysLen = useRef(0);
+  keysLen.current = keys.length;
+  keysLenRef.current = keys.length + trimmed.current;
+  useEffect(() => onLibData(() => { if (keysLen.current - activeRef.current < 6) moreRef.current(); }), []);
 
   const refresh = useCallback(() => {
     setRefreshing(true);
@@ -201,7 +265,32 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
 
   // stop the sound when the visible post has no recitation (story post) or the tab is left
   const activeItem = keys[active] ?? "";
-  useEffect(() => { if (activeItem) markSeen(activeItem); }, [activeItem]);
+  // interest: how long each post stayed; a run of fast skips switches the next post to another format right away
+  const shownAt = useRef<{ item: string; at: number } | null>(null);
+  useEffect(() => {
+    const prev = shownAt.current;
+    if (prev) dwell(kindOfItem(prev.item, LIB.get(prev.item)?.kind), Date.now() - prev.at);
+    shownAt.current = activeItem ? { item: activeItem, at: Date.now() } : null;
+    if (!activeItem) return;
+    markSeen(activeItem);
+    statPost(kindOfItem(activeItem, LIB.get(activeItem)?.kind));
+    if (isBored() && lib.current) {
+      lib.current.bored();
+      const at = activeRef.current + 1;
+      const k0 = keys[at] ?? "";
+      const swap = lib.current.take(1);
+      // an image post (or a quiz / carousel of the next verse) instead of more of the same
+      const alt = swap.length ? swap : /^v:/.test(k0) ? [`${rand() < 0.5 ? "q" : "c"}:${k0.slice(2)}`] : [];
+      if (alt.length) setKeys((k) => [...k.slice(0, at), ...alt, ...k.slice(at)]);
+    }
+  }, [activeItem]); // eslint-disable-line react-hooks/exhaustive-deps
+  // statistics: time while the Home view is on screen; a verse counts as heard after a few seconds with sound
+  useFeedTimer(focused && tab === "home");
+  useEffect(() => {
+    if (!/^[vw]:/.test(activeItem) || !focused || muted || tab !== "home") return;
+    const id = setTimeout(statVerse, 4000);
+    return () => clearTimeout(id);
+  }, [activeItem, focused, muted, tab]);
   // "New for you": items not seen before, counted when a batch is built; the pill after returning a while later
   const freshCount = useMemo(() => keys.filter((k) => !wasSeen(k)).length, [keys]); // eslint-disable-line react-hooks/exhaustive-deps
   const [newPill, setNewPill] = useState(false);
@@ -216,7 +305,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     return () => { sub.remove(); touchVisit(); };
   }, []);
   const takeNew = useCallback(() => { setNewPill(false); engine.stop(); setKeys(build()); setActive(0); list.current?.scrollToOffset({ offset: 0, animated: !reduce }); }, [build, engine, reduce]);
-  useEffect(() => { if (!/^[vw]:/.test(activeItem) || tab !== "home") engine.pause(); }, [activeItem, tab, engine]);
+  useEffect(() => { if (!/^[vwr]:/.test(activeItem) || tab !== "home") engine.pause(); }, [activeItem, tab, engine]);
   const close = useCallback(() => { engine.stop(); goBack(); }, [engine]);
   const toggleMute = useCallback(() => { setMuted((m) => { const n = !m; writeJSON(MUTE_KEY, n, true); if (n) engine.pause(); return n; }); }, [engine]);
   const toTop = useCallback(() => list.current?.scrollToOffset({ offset: 0, animated: !reduce }), [reduce]);
@@ -230,11 +319,42 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   }, [scrollY, insets.top]);
   const barY = hide.interpolate({ inputRange: [0, BAR_H + TABS_H + insets.top], outputRange: [0, -(BAR_H + TABS_H + insets.top)] });
   const onScroll = useMemo(() => Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], { useNativeDriver: true }), [scrollY]);
+  // the Feed tab icon: a tap scrolls to the top, a second tap at the top refreshes (as on Instagram)
+  const navigation = useNavigation();
+  const atTop = useRef(true);
+  useEffect(() => {
+    const sub = scrollY.addListener(({ value }) => { atTop.current = value < 8; });
+    return () => scrollY.removeListener(sub);
+  }, [scrollY]);
+  useEffect(() => {
+    if (!inTab) return;
+    type Nav = { addListener: (e: "tabPress", f: () => void) => () => void; isFocused: () => boolean; getParent: () => Nav | undefined };
+    const nav = navigation as unknown as Nav;
+    // the Feed tab's navigator is the parent of this stack screen
+    const tabs = nav.getParent() ?? nav;
+    return tabs.addListener("tabPress", () => {
+      if (!nav.isFocused()) return;
+      if (atTop.current) refresh(); else toTop();
+    });
+  }, [navigation, inTab, refresh, toTop]);
 
   // story circles of every category in one rail
   const groups = useMemo<StoryGroup[]>(() => (["prophet", "reciters", "islam", "tips", "secrets"] as const).flatMap((c) => stories.groups[c]), [stories]);
 
+  // the story viewer: a story-style card of our own products after every few groups (none for Pro users)
+  const viewerGroups = useMemo<StoryGroup[]>(() => {
+    if (voice.pro) return groups;
+    const promo = (i: number): StoryGroup => {
+      const shams = i % 2 === 0;
+      const st: Story = { id: shams ? "promo-shams" : "promo-pro", cat: "tips", group: "promo", groupTitle: tx.promoLabel, arabic: "", title: shams ? tx.promoShamsTitle : tx.promoProTitle,
+        paragraphs: [shams ? tx.promoShamsBody : tx.promoProBody], truncated: false, sources: [tx.promoLabel], href: shams ? "/shams" : "/pro", webPath: shams ? "/shams" : "/pro" };
+      return { id: `promo-${i}`, cat: "tips", title: tx.promoLabel, arabic: "", stories: [st] };
+    };
+    return groups.flatMap((g, i) => ((i + 1) % PROMO_EVERY === 0 ? [g, promo(i)] : [g]));
+  }, [groups, voice.pro, tx]);
   const colW = Math.min(width, MAX_W);
+  // voices of the "same verse, different reciters" post: only the allowed ones (allowedReciter)
+  const voices = useMemo(() => voice.all.filter((r) => voice.pro || isFreeReciter(r)).map((r) => allowedReciter(r, voice.pro, voice.all)), [voice.all, voice.pro]);
   // a tile of Explore / Saved: the Reels view at that item (in the Feed tab), otherwise the Reels route
   const openItem = useCallback<OpenItem>((item, h) => {
     engine.stop();
@@ -247,11 +367,23 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     if (item.startsWith("q:")) return <QuizPost {...ex} />;
     if (item.startsWith("c:")) return <CarouselPost {...ex} />;
     if (item.startsWith("m:")) return <MemoPost {...ex} />;
+    if (item.startsWith("ad:")) return <PromoPost item={item} width={colW} />;
+    if (isLibId(item)) return <LibraryPost id={item} width={colW} reduce={reduce} />;
+    if (item.startsWith("r:")) return <RecitersPost {...ex} voices={voices} engine={engine} active={index === active && tab === "home"} sound={focused && tab === "home"} />;
+    if (item.startsWith("t:")) return <TranslitPost {...ex} />;
+    if (item.startsWith("d:")) return <WordPost {...ex} />;
+    if (item.startsWith("cal:")) return <CalendarPost width={colW} lang={lang} />;
+    if (item === "prog") return <ProgressPost width={colW} lang={lang} />;
+    if (item === "radio") return <RadioPost width={colW} nameOf={nameOf} active={index === active && tab === "home"} sound={focused && tab === "home"} onStart={() => engine.stop()} />;
+    if (item.startsWith("k:")) {
+      const gi = groups.findIndex((g) => g.id === item.slice(2));
+      return gi < 0 ? <View style={{ height: 1 }} /> : <ChaptersPost group={groups[gi]} width={colW} onOpen={(story) => { engine.stop(); setViewer({ group: gi, story }); }} />;
+    }
     if (item.startsWith("p:")) return <PrayerPost item={item} width={colW} lang={lang} onOpen={() => { engine.stop(); router.push("/prayer" as Href); }} />;
     return <Post item={item} index={index} width={colW} active={index === active && tab === "home"} sound={focused && !muted && tab === "home"} muted={muted} onMute={toggleMute}
       engine={engine} lang={lang} reciter={voice.voiceFor(item)} nameOf={nameOf} reduce={reduce} stories={stories} quota={quota}
       onShare={setShare} onComments={setComments} onMenu={setMenu} />;
-  }, [colW, active, tab, focused, muted, toggleMute, engine, lang, voice, nameOf, reduce, stories, quota]);
+  }, [colW, active, tab, focused, muted, toggleMute, engine, lang, voice, voices, groups, nameOf, reduce, stories, quota]);
 
   const sh = useMemo(() => {
     if (!share) return null;
@@ -270,10 +402,12 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     return { link: `${SITE}/${lang}/islam/names`, message: `${n.ar} – ${n.latin}: ${n.meaning}`, card: (f: "story" | "post") => <StoryShareCard story={fake} format={f} lines={{ title: `${n.ar}\n${n.latin}`, body: n.meaning, arabic: n.ar }} /> };
   }, [share, lang, nameOf, tx.nameTitle, tx.nameSource]);
 
-  const topicLabel: Record<Topic, string> = { all: tx.topicAll, verses: pt.catVerses, names: tx.topicNames, stories: tx.topicStories, hadith: tx.hadith };
+  const topicLabel: Record<Topic, string> = { all: tx.topicAll, verses: pt.catVerses, names: tx.topicNames, stories: tx.topicStories, hadith: tx.hadith,
+    ...(Object.fromEntries(LIB_TOPICS.filter((x) => x !== "hadith").map((x) => [x, libTopicLabel(tx, x)])) as Record<Exclude<LibTopic, "hadith">, string>) };
   const header = (
     <View style={{ paddingTop: 8, paddingBottom: 10, borderBottomWidth: 1, borderBottomColor: t.line, marginBottom: 6 }}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 14, paddingHorizontal: 14, paddingVertical: 4 }} accessibilityLabel={tx.stories}>
+        <TodayRings onVerse={(it) => openItem(it)} />
         {groups.length ? groups.map((g, i) => <Bubble key={g.id} g={g} fresh={g.stories.some((s) => !seen.includes(s.id))} onPress={() => setViewer({ group: i, story: 0 })} />)
           : Array.from({ length: 6 }, (_, i) => <Skeleton key={i} reduce={reduce} style={{ width: 68, height: 68, borderRadius: 34, marginHorizontal: 5 }} />)}
       </ScrollView>
@@ -313,7 +447,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       <Animated.FlatList
         ref={list as never}
         data={keys}
-        keyExtractor={(k: Item, i: number) => `${k}-${i}`}
+        keyExtractor={(k: Item, i: number) => `${k}-${i + trimmed.current}`}
+        maintainVisibleContentPosition={{ minIndexForVisible: 0 }}
         renderItem={render as never}
         extraData={`${active}|${muted}|${focused}|${tab}`}
         ListHeaderComponent={header}
@@ -325,6 +460,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         onScroll={onScroll}
         onEndReached={more}
         onEndReachedThreshold={2}
+        decelerationRate="normal"
         initialNumToRender={2}
         maxToRenderPerBatch={2}
         updateCellsBatchingPeriod={60}
@@ -344,6 +480,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <HeadBtn label={tx.explore} onPress={() => setSheet("explore")}><Icon name="compass" color={t.ink} size={23} /></HeadBtn>
             <HeadBtn label={tx.saved} onPress={() => setSheet("saved")}><Icon name="bookmark" color={t.ink} size={22} /></HeadBtn>
+            <HeadBtn label={tx.statsOpen} onPress={() => router.push("/feed-stats" as Href)}><Icon name="trophy" color={t.ink} size={22} /></HeadBtn>
             <HeadBtn label={tx.reciters} onPress={() => setSheet("voices")}><Icon name="radio" color={voice.rotate ? t.accent : t.ink} size={22} /></HeadBtn>
             {inTab ? null : <HeadBtn label={tx.close} onPress={close}><Icon name="close" color={t.ink} size={22} /></HeadBtn>}
           </View>
@@ -360,6 +497,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         </View>
       </Animated.View>
 
+      {/* the status bar area stays blurred while the bar scrolls away */}
+      <BlurView pointerEvents="none" intensity={reduce ? 0 : 40} tint="systemChromeMaterial" style={{ position: "absolute", left: 0, right: 0, top: 0, height: insets.top, backgroundColor: reduce ? t.bg : "transparent" }} />
       {newPill ? (
         <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: headerH + 10, alignItems: "center" }}>
           <Pressable onPress={takeNew} accessibilityRole="button" accessibilityLabel={tx.newPosts}
@@ -371,11 +510,12 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       ) : null}
       <PostMenu item={menu} onClose={() => setMenu(null)} stories={stories} onShare={(s) => { setMenu(null); setShare(s); }} onVoices={() => { setMenu(null); setSheet("voices"); }} />
       <ExploreSheet visible={sheet === "explore"} onClose={() => setSheet(null)} onOpen={openItem} />
-      <SavedSheet visible={sheet === "saved"} onClose={() => setSheet(null)} onOpen={openItem} />
+      <SavedSheet visible={sheet === "saved"} onClose={() => { setSheet(null); setTimeout(nudgeAccount, 500); }} onOpen={openItem} />
       <ReciterSheet visible={sheet === "voices"} onClose={() => setSheet(null)} />
       {share?.kind === "hadith" ? <HadithShare item={share.h.item} onClose={() => setShare(null)} /> : null}
+      <AccountNudge />
       <CommentsSheet visible={!!comments} verseKey={comments ?? "1:1"} onClose={() => setComments(null)} />
-      <StoryViewer groups={groups} start={viewer} onClose={() => setViewer(null)} />
+      <StoryViewer groups={viewerGroups} start={viewer ? { group: viewer.group + Math.floor(viewer.group / PROMO_EVERY) * (voice.pro ? 0 : 1), story: viewer.story } : null} onClose={() => setViewer(null)} />
       <ShareSheet visible={!!sh && share?.kind !== "hadith"} onClose={() => setShare(null)} link={sh?.link ?? SITE} message={sh?.message ?? ""} onShared={sh?.onShared} video={sh?.video} renderCard={(f) => sh?.card(f) ?? null} />
     </View>
   );
@@ -491,9 +631,10 @@ const Post = memo(function Post(p: PostProps) {
   const pop = useRef(new Animated.Value(1)).current;
   const popSave = useRef(new Animated.Value(1)).current;
   const bump = (v: Animated.Value) => { if (!p.reduce) Animated.sequence([Animated.timing(v, { toValue: 1.3, duration: 110, useNativeDriver: true }), Animated.spring(v, { toValue: 1, friction: 4, useNativeDriver: true })]).start(); };
-  const doLike = () => { tick(); if (!liked) bump(pop); if (verseKey) void like.toggle(); else toggleLocalLike(); };
+  const doLike = () => { tick(); if (!liked) bump(pop); if (verseKey) void like.toggle(); else { if (!liked) statLike(); toggleLocalLike(); } if (!liked) engaged(kindOfItem(p.item), "like"); };
   const doSave = () => {
     tick(); bump(popSave);
+    if (!saved) { statSave(); engaged(kindOfItem(p.item), "save"); if (++savesThisSession === 3) nudgeAccount(); }
     if (verseKey) { const cur = readJSON<string[]>("tf:bookmarks", []); writeJSON("tf:bookmarks", cur.includes(verseKey) ? cur.filter((k) => k !== verseKey) : [...cur, verseKey]); }
     else if (storyId) toggleSavedStory(storyId);
     else if (hadith) toggleSavedHadith(hadith.item);
@@ -548,7 +689,7 @@ const Post = memo(function Post(p: PostProps) {
   const likeLine = count === null ? "" : liked && count > 1 ? fillText(tx.likedByYou, { n: Intl.NumberFormat(p.lang).format(count - 1) }) : count === 1 ? tx.like1 : fillText(tx.likesN, { n });
   const W = p.width; const k = W / 360;
   const long = caption.length > 110;
-  const onShare = () => { if (verseKey && data) p.onShare({ kind: "verse", v: data }); else if (story) p.onShare({ kind: "story", s: story }); else if (name) p.onShare({ kind: "name", n: name }); else if (hadith) p.onShare({ kind: "hadith", h: hadith }); };
+  const onShare = () => { engaged(kindOfItem(p.item), "share"); if (verseKey && data) p.onShare({ kind: "verse", v: data }); else if (story) p.onShare({ kind: "story", s: story }); else if (name) p.onShare({ kind: "name", n: name }); else if (hadith) p.onShare({ kind: "hadith", h: hadith }); };
   const label = [account, media.label, media.body ?? ""].filter(Boolean).join(". ");
 
   return (

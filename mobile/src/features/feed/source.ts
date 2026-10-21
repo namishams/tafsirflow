@@ -1,7 +1,17 @@
 import { getVerses, type Reciter, type Segment, type Word } from "@/lib/quran";
 import { VERSES_OF_THE_DAY } from "@/web/votd";
 import { VERSE_COUNTS } from "@/web/counts";
-import { wasSeen } from "./seen";
+import { SESSION_SEED, wasSeen } from "./seen";
+
+/** the feed's random numbers: seeded per session and day (seen.ts SESSION_SEED), mulberry32 */
+let seedState = SESSION_SEED;
+export function rand(): number {
+  seedState = (seedState + 0x6d2b79f5) >>> 0;
+  let t = seedState;
+  t = Math.imul(t ^ (t >>> 15), t | 1);
+  t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+}
 
 // Where the feed's pages come from. Every Quran text comes from the Quran API helpers (lib/quran.ts); every story
 // from the vetted library content (features/prophet/stories.ts). This file only decides what follows what:
@@ -21,12 +31,12 @@ export const keyOfItem = (id: string) => (id.startsWith("v:") || id.startsWith("
 
 export function shuffle<T>(a: readonly T[]): T[] {
   const out = [...a];
-  for (let i = out.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [out[i], out[j]] = [out[j], out[i]]; }
+  for (let i = out.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [out[i], out[j]] = [out[j], out[i]]; }
   return out;
 }
 function randomKey(): string {
-  const s = 1 + Math.floor(Math.random() * 114);
-  return `${s}:${1 + Math.floor(Math.random() * VERSE_COUNTS[s - 1])}`;
+  const s = 1 + Math.floor(rand() * 114);
+  return `${s}:${1 + Math.floor(rand() * VERSE_COUNTS[s - 1])}`;
 }
 
 /** an endless source of verse keys: two curated verses, then a random one of all 6236 (not seen in the last days);
@@ -100,7 +110,7 @@ export class DiscoverFeed {
           const id = storyOr(this.story(cats[this.turn++ % cats.length]));
           if (id) { out.push(id); continue; }
         }
-        if (this.names && this.n % (this.cat === "verses" ? 7 : 11) === 0) { out.push(`n:${Math.floor(Math.random() * this.names)}`); continue; }
+        if (this.names && this.n % (this.cat === "verses" ? 7 : 11) === 0) { out.push(`n:${Math.floor(rand() * this.names)}`); continue; }
         if (this.hasWords && this.n % (this.cat === "verses" ? 4 : 6) === 0) { out.push(`w:${this.verses.curated()}`); continue; }
         out.push(`v:${this.verses.next()}`);
         continue;

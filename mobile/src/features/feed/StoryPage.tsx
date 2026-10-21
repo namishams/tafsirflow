@@ -1,3 +1,4 @@
+import { statSave } from "./statsStore";
 import { memo, useEffect, useRef, useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { router, type Href } from "expo-router";
@@ -64,7 +65,7 @@ export const StoryPage = memo(function StoryPage(p: Common & { story: Story; all
               <Action color="#fff" custom={voice.free ? <SpeakerIcon muted={false} color={sampling ? stage.gold : "#fff"} /> : <Text style={{ fontFamily: FONT.bold, fontSize: 11, color: stage.gold }}>PRO</Text>}
                 label={voice.free ? (sampling ? tx.stopSample : tx.listen) : tx.proVoice} a11y={`${voice.free ? (sampling ? tx.stopSample : tx.listen) : tx.proVoice}, ${reciterName(voice.reciter, p.lang)}`} selected={sampling} onPress={sample} />
             ) : null}
-            <Action icon="bookmark" filled={saved} color={saved ? stage.gold : "#fff"} label={saved ? tx.saved : tx.save} a11y={saved ? tx.unsave : tx.save} selected={saved} onPress={() => toggleSavedStory(p.story.id)} />
+            <Action icon="bookmark" filled={saved} color={saved ? stage.gold : "#fff"} label={saved ? tx.saved : tx.save} a11y={saved ? tx.unsave : tx.save} selected={saved} onPress={() => { if (!saved) statSave(); toggleSavedStory(p.story.id); }} />
             <Action icon="share" color="#fff" label={tx.share} a11y={tx.share} onPress={() => p.onShare(p.story)} />
             <Action icon="book" color="#fff" label={tx.readMore} a11y={tx.readMore} onPress={() => router.push(p.story.href as Href)} />
           </View>

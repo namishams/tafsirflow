@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { FlatList, Modal, Pressable, ScrollView, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
+import { FlatList, Modal, Pressable, RefreshControl, ScrollView, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
@@ -23,7 +23,13 @@ import { FeedPage } from "./FeedPage";
 import { HadithPage, NamePage, ProPage, StoryPage } from "./StoryPage";
 import { HADITH_AVAILABLE, hadithFeedItems, type HadithFeedItem } from "./hadith";
 import { ShareSheet } from "./share";
-import { DiscoverFeed, FEED_CATS, keyOfItem, preloadSurah, surahKeys, validKey, type FeedCat, type FeedMode, type FeedVerse } from "./source";
+import { tick } from "./haptics";
+import { LibScheduler, isLibId } from "./library";
+import { LibraryPost } from "./LibraryPost";
+import { LIB } from "./library";
+import { kindOfItem, statPost, statVerse, useFeedTimer } from "./statsStore";
+import { rand } from "./source";
+import { DiscoverFeed, FEED_CATS, keyOfItem, loadVerse, preloadSurah, surahKeys, validKey, type FeedCat, type FeedMode, type FeedVerse } from "./source";
 import { countShare } from "./useLike";
 import { useFeedText } from "./texts";
 import { VerseShareCard } from "./VerseShareCard";
@@ -77,6 +83,9 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
   const startUsed = useRef(false);
   const activeRef = useRef(0);
   activeRef.current = active;
+  // swipe down at the top: a fresh sequence
+  const [gen, setGen] = useState(0);
+  const lib = useRef<LibScheduler | null>(null);
   const hadith = useRef<{ byId: Map<string, HadithFeedItem>; cursor: string | null; loading: boolean; gen: number }>({ byId: new Map(), cursor: null, loading: false, gen: 0 });
   const latest = useRef({ stories, quota });
   latest.current = { stories, quota };
@@ -87,6 +96,7 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
   // pause when another screen (reader, Shams, Pro) opens on top; play again when the feed is visible
   // also stops on tab switch, back gesture, app background and unmount
   const focused = useFeedAudioGuard(engine);
+  useFeedTimer(focused);
 
   // the hadith stream (features/hadith via ./hadith): loops – when the source is through it starts again
   const nextHadith = useCallback((): string[] => {
@@ -140,7 +150,7 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
     }
     setActive(initialIndex.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, cat, surah, lang, voice.sig]);
+  }, [mode, cat, surah, lang, voice.sig, gen]);
 
   const more = useCallback(() => {
     if (mode === "hadith") { nextHadith(); return; }
@@ -149,7 +159,10 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
       if (d) {
         // stories already in the list count against today's allowance before they are seen
         const queued = keys.slice(activeRef.current).filter((k) => k.startsWith("s:")).length;
-        const add = d.next(10, Math.max(0, latest.current.quota.left - queued));
+        const add0 = d.next(10, Math.max(0, latest.current.quota.left - queued));
+        // "For you": the content libraries between the reels (variety rule in library.ts)
+        if (cat === "foryou") { lib.current ??= new LibScheduler(lang, "all"); }
+        const add = cat === "foryou" ? add0.flatMap((k) => (rand() < 0.35 ? [k, ...(lib.current?.take(1) ?? [])] : [k])) : add0;
         if (add.length) setKeys((k) => [...k, ...add]);
       }
       return;
@@ -162,13 +175,30 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
       void preloadSurah(next, lang, reciter).catch(() => undefined);
       return [...k, ...surahKeys(next)];
     });
-  }, [mode, surah, lang, reciter, keys]);
+  }, [mode, surah, lang, reciter, keys, cat]);
 
   const onViewable = useRef(({ viewableItems }: { viewableItems: ListViewToken[] }) => {
     const first = viewableItems.find((x) => x.isViewable && x.index !== null);
     if (first?.index !== null && first?.index !== undefined) setActive(first.index);
   }).current;
   const viewConfig = useRef({ itemVisiblePercentThreshold: 60 }).current;
+  // a light haptic on each page change; the next reel's verse data (text, words, audio URL) is loaded ahead
+  const firstPage = useRef(true);
+  useEffect(() => {
+    const it = keys[active];
+    if (it) statPost(kindOfItem(it, LIB.get(it)?.kind));
+    if (firstPage.current) { firstPage.current = false; return; }
+    tick();
+  }, [active]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const it = keys[active] ?? "";
+    if (!/^[vw]:/.test(it) || !focused || muted) return;
+    const id = setTimeout(statVerse, 4000);
+    return () => clearTimeout(id);
+  }, [active, keys, focused, muted]);
+  useEffect(() => {
+    for (const k of keys.slice(active + 1, active + 3)) { const vk = keyOfItem(k); if (vk) void loadVerse(vk, lang, voice.voiceFor(k)).then((d) => { void fetch(d.audio, { method: "HEAD" }).catch(() => undefined); }).catch(() => undefined); }
+  }, [active, keys, lang]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const toggleAuto = () => { const a = !autoplay; setAutoplay(a); writeJSON(AUTO_KEY, a, true); };
   const toggleMute = () => { const m = !muted; setMuted(m); writeJSON(MUTE_KEY, m, true); if (m) engine.pause(); };
@@ -235,6 +265,15 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
       if (!n) return <View style={{ width, height: pageH }} />;
       return <NamePage {...common} name={n} onShare={(x) => setShare({ kind: "name", n: x })} />;
     }
+    if (isLibId(item)) {
+      return (
+        <View style={{ width, height: pageH, justifyContent: "center", paddingTop: insets.top + chrome, paddingBottom: insets.bottom + bottomSpace, backgroundColor: stage.bg }}>
+          <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }} showsVerticalScrollIndicator={false} nestedScrollEnabled>
+            <LibraryPost id={item} width={Math.min(width, 560)} reduce={reduce} onDark />
+          </ScrollView>
+        </View>
+      );
+    }
     if (item.startsWith("h:")) {
       const h = hadith.current.byId.get(item);
       return h ? <HadithPage {...common} item={h} /> : <View style={{ width, height: pageH }} />;
@@ -279,7 +318,11 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
           renderItem={renderItem}
           extraData={active}
           pagingEnabled
+          snapToInterval={pageH}
+          snapToAlignment="start"
+          disableIntervalMomentum
           decelerationRate="fast"
+          refreshControl={<RefreshControl refreshing={false} tintColor="#fff" onRefresh={() => { engine.stop(); setGen((g) => g + 1); }} />}
           showsVerticalScrollIndicator={false}
           getItemLayout={(_, i) => ({ length: pageH, offset: pageH * i, index: i })}
           initialScrollIndex={Math.min(initialIndex.current, keys.length - 1)}

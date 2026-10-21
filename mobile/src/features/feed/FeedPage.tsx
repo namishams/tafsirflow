@@ -1,3 +1,4 @@
+import { statSave } from "./statsStore";
 import { memo, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { ActivityIndicator, Animated, Pressable, ScrollView, Text, View } from "react-native";
 import { router, type Href } from "expo-router";
@@ -112,6 +113,7 @@ export const FeedPage = memo(function FeedPage(p: PageProps) {
   const marks = useStored<string[]>("tf:bookmarks", []);
   const saved = marks.includes(p.verseKey);
   const toggleSave = () => {
+    if (!saved) statSave();
     const cur = readJSON<string[]>("tf:bookmarks", []);
     writeJSON("tf:bookmarks", cur.includes(p.verseKey) ? cur.filter((k) => k !== p.verseKey) : [...cur, p.verseKey]);
   };

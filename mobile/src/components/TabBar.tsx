@@ -8,14 +8,14 @@ import { Icon, type IconName } from "./icons";
 
 // The tab bar: icons only, like Instagram, on a floating capsule of Apple's Liquid Glass (blur on systems without it).
 // The active tab is drawn heavier in the accent colour inside a small glass lens; names stay for VoiceOver.
-const ICONS: Record<string, IconName> = { "(home)": "grid", quran: "book", learn: "cap", library: "compass", account: "user", foryou: "reels" };
+const ICONS: Record<string, IconName> = { "(home)": "grid", quran: "book", learn: "cap", library: "compass", account: "user", foryou: "reels", explore: "compass" };
 /** routes that are tabs (keep their stack and URL) without a button in the bar */
-const HIDDEN = new Set(["library"]);
+const HIDDEN = new Set(["library", "(home)"]);
 export const TAB_BAR_HEIGHT = 62;
 /** space a screen leaves at the bottom so nothing hides behind the floating tab bar */
 export const useTabBarSpace = () => TAB_BAR_HEIGHT + Math.max(useSafeAreaInsets().bottom, 12) + 12;
 
-export default function TabBar({ state, descriptors, navigateToTab }: BottomTabBarProps) {
+export default function TabBar({ state, descriptors, navigateToTab, emitter }: BottomTabBarProps) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
   const glass = Platform.OS === "ios" && isLiquidGlassAvailable();
@@ -31,7 +31,7 @@ export default function TabBar({ state, descriptors, navigateToTab }: BottomTabB
         const name = ICONS[route.name] ?? "grid";
         return (
           <Pressable key={route.key} accessibilityRole="tab" accessibilityState={{ selected: on }} accessibilityLabel={label}
-            onPress={() => { if (!on) navigateToTab(route.key); }} style={s.tab} hitSlop={4}>
+            onPress={() => { const e = emitter.emit({ type: "tabPress", target: route.key, canPreventDefault: true }); if (!on && !e.defaultPrevented) navigateToTab(route.key); }} style={s.tab} hitSlop={4}>
             {on ? (glass
               ? <GlassView glassEffectStyle="clear" tintColor={t.dark ? "rgba(58,190,146,0.18)" : "rgba(6,108,78,0.10)"} style={s.lens} />
               : <View style={[s.lens, { backgroundColor: t.dark ? "rgba(58,190,146,0.16)" : "rgba(6,108,78,0.08)" }]} />) : null}

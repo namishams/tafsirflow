@@ -34,6 +34,27 @@
           "bn",
           "ru",
           "zh-Hans"
+        ],
+        "LSApplicationQueriesSchemes": [
+          "instagram",
+          "instagram-stories",
+          "facebook-stories",
+          "fb",
+          "fbapi",
+          "fb-messenger",
+          "snssdk1233",
+          "tiktok",
+          "whatsapp",
+          "tg",
+          "sgnl",
+          "viber",
+          "sms",
+          "mailto",
+          "snapchat",
+          "line",
+          "weixin",
+          "twitter",
+          "barcelona"
         ]
       },
       "buildNumber": "8"
@@ -97,7 +118,19 @@
           "color": "#066C4E"
         }
       ],
-      "expo-sharing"
+      "expo-sharing",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Quran Masterclass saves the verse images and videos you choose to your photo library. Nothing else is read or uploaded.",
+          "savePhotosPermission": "Quran Masterclass saves the verse images and videos you choose to your photo library.",
+          "isAccessMediaLocationEnabled": false,
+          "granularPermissions": [
+            "photo",
+            "video"
+          ]
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { tick } from "./haptics";
 import { Animated, Pressable, Text, View } from "react-native";
 import { Icon, type IconName } from "@/components/icons";
 import { FONT } from "@/lib/theme";
@@ -27,6 +28,7 @@ export function HeartBurst({ n, reduce }: { n: number; reduce: boolean }) {
   const [on, setOn] = useState(false);
   useEffect(() => {
     if (!n) return;
+    tick();
     setOn(true);
     if (reduce) { v.setValue(1); const id = setTimeout(() => setOn(false), 650); return () => clearTimeout(id); }
     v.setValue(0);

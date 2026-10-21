@@ -1,3 +1,4 @@
+import { statLike } from "./statsStore";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
@@ -38,6 +39,7 @@ export function useVerseLike(key: string, active: boolean) {
   const count = s ? s.likes + (!server && local.includes(key) && !s.liked ? 1 : 0) : null;
 
   const toggle = useCallback(async () => {
+    if (!liked) statLike();
     if (!server) {
       const cur = readJSON<string[]>(LOCAL, []);
       writeJSON(LOCAL, cur.includes(key) ? cur.filter((k) => k !== key) : [...cur, key], true);
@@ -47,7 +49,7 @@ export function useVerseLike(key: string, active: boolean) {
     setS((v) => (v ? { ...v, liked: !was, likes: Math.max(0, v.likes + (was ? -1 : 1)) } : { likes: was ? 0 : 1, liked: !was, shares: 0 }));
     try { const d = await api<Stats>("/api/social/like", { body: { key } }); if (live.current) setS(d); }
     catch { if (live.current) setS((v) => (v ? { ...v, liked: was, likes: Math.max(0, v.likes + (was ? 1 : -1)) } : v)); }
-  }, [server, s?.liked, key]);
+  }, [server, s?.liked, key, liked]);
 
   return { liked, count, toggle };
 }

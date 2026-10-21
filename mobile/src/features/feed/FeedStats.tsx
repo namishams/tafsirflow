@@ -22,3 +22,18 @@ export function FeedStatsRow() {
     </Pressable>
   );
 }
+
+/** Account: the feed statistics and the Today screen (its cards live in the Feed's stories rail now) */
+export function FeedLinks() {
+  const t = useTheme();
+  const tx = useFeedText();
+  const row = (label: string, icon: "trophy" | "sun", href: string) => (
+    <Pressable onPress={() => router.push(href as Href)} accessibilityRole="button"
+      style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: pressed ? t.accentSoft : t.surface })}>
+      <Icon name={icon} color={t.accent} size={22} />
+      <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14.5, color: t.ink }}>{label}</Text>
+      <Icon name="chevronRight" color={t.muted} size={18} />
+    </Pressable>
+  );
+  return <>{row(tx.statsTitle, "trophy", "/feed-stats")}{row(tx.todayLink, "sun", "/")}</>;
+}

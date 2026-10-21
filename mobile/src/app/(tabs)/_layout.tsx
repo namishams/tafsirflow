@@ -6,8 +6,9 @@ import { useT } from "@/i18n";
 import { useFeedText } from "@/features/feed/texts";
 import { shouldOnboard } from "@/features/extra/Onboarding";
 
-// Five tab buttons: Feed, Today, Quran, Masterclass, Account. The Feed is the landing screen once onboarding (shown on
-// Today) is done; Discover (library) stays a route without its own button (TabBar HIDDEN), reached from Masterclass.
+// Five tab buttons: Feed, Explore, Quran, Masterclass, Account. The Feed is the landing screen once onboarding (shown on
+// Today, "/") is done; Today ((home)) and Discover (library) stay routes without a button (TabBar HIDDEN): Today's key
+// cards are rings in the Feed's stories rail, and Today stays reachable from Account and deep links.
 let landed = false;
 
 export default function TabsLayout() {
@@ -24,6 +25,7 @@ export default function TabsLayout() {
   return (
     <Tabs tabBar={(props) => <TabBar {...props} />} screenOptions={{ headerShown: false }}>
       <Tabs.Screen name="foryou" options={{ title: f.feedButton }} />
+      <Tabs.Screen name="explore" options={{ title: f.explore }} />
       <Tabs.Screen name="(home)" options={{ title: t("tabs.home") }} />
       <Tabs.Screen name="quran" options={{ title: t("tabs.quran") }} />
       <Tabs.Screen name="learn" options={{ title: t("tabs.learn") }} />
