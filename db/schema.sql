@@ -658,3 +658,14 @@ EXCEPTION WHEN others THEN NULL; END $$;
 -- keep last: the app user needs rights on every table above
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- every plan change an admin makes on /admin/users (who, on whom, what)
+CREATE TABLE IF NOT EXISTS admin_user_actions (
+  id             bigserial PRIMARY KEY,
+  admin_id       bigint REFERENCES users(id) ON DELETE SET NULL,
+  target_user_id bigint REFERENCES users(id) ON DELETE SET NULL,
+  action         text NOT NULL,      -- grant_premium | grant_pro_until | revoke
+  detail         jsonb NOT NULL DEFAULT '{}',
+  created_at     timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS admin_user_actions_target ON admin_user_actions(target_user_id, id DESC);
