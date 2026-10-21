@@ -3,8 +3,9 @@
 // build (tap or drag the tiles into the row), read aloud (Web Speech API, scored with align() from the recite check)
 // and the speed drill. Arabic is always right to left. Quran words play their Quran.com word recording; letters and
 // syllables use the device's Arabic voice and are hidden without one.
-import { useEffect, useMemo, useRef, useState } from "react";
-import { useArabicVoice, useClip, useWordCheck } from "@/components/learn/media";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { speakArabic, useArabicVoice, useClip, useWordCheck } from "@/components/learn/media";
+import { useAudioT } from "@/components/learn/audioText";
 import { IconSpeaker } from "@/components/Icons";
 import type { Ex } from "@/lib/learn/qaida/lesson";
 import { saveSpeed, useQaida } from "@/lib/learn/qaida/progress";
@@ -20,20 +21,38 @@ export function ArText({ children, size = 40, className = "" }: { children: stri
   return <span lang="ar" dir="rtl" className={cx("font-arabic block text-center", className)} style={{ fontSize: size, lineHeight: 1.8 }}>{children}</span>;
 }
 
-/** play a Quran word recording, or let the device voice say a letter / syllable */
+/** play a Quran word recording (the device voice reads the word when the recording cannot be loaded), or let the
+ *  device voice say a letter / syllable */
 export function useSay() {
   const clip = useClip();
-  const { canSpeak, speak } = useArabicVoice();
-  return { canSpeak, clip, say: (o: { speak?: string; word?: QWord }) => (o.word ? clip.play(qwordAudio(o.word)) : o.speak ? speak(o.speak) : undefined) };
+  const voice = useArabicVoice();
+  const { play } = clip;
+  const { speak } = voice;
+  const say = useCallback((o: { speak?: string; word?: QWord }) => {
+    if (o.word) { const ar = o.word.ar; play(qwordAudio(o.word), { fallback: () => speakArabic(ar) }); }
+    else if (o.speak) speak(o.speak);
+  }, [play, speak]);
+  const busy = clip.state === "loading" || voice.state === "starting";
+  return { canSpeak: voice.canSpeak, voiceReady: voice.ready, clip, say, busy, failed: clip.state === "error" || clip.state === "fallback" ? clip.state : null };
 }
 
-export function ListenButton({ onPress, label, big = false, busy = false }: { onPress: () => void; label: string; big?: boolean; busy?: boolean }) {
+/** the recordings an exercise plays (fetched while the learner is on the cards before it) */
+export function exClips(ex: Ex): string[] {
+  if (ex.t === "read") return ex.words.slice(0, 3).map(qwordAudio);
+  return "word" in ex && ex.word ? [qwordAudio(ex.word)] : [];
+}
+
+export function ListenButton({ onPress, label, big = false, busy = false, failed = null }: { onPress: () => void; label: string; big?: boolean; busy?: boolean; failed?: "error" | "fallback" | null }) {
+  const at = useAudioT();
   return (
-    <button type="button" onClick={onPress} aria-label={label}
-      className={cx("mx-auto flex items-center justify-center gap-2 rounded-full bg-accent font-bold text-white transition hover:opacity-90", big ? "h-16 w-16" : "h-11 px-5 text-sm")}>
-      {busy ? <span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <IconSpeaker className={big ? "h-7 w-7" : "h-4 w-4"} />}
-      {big ? null : <span>{label}</span>}
-    </button>
+    <div className="flex flex-col items-center gap-2">
+      <button type="button" onClick={onPress} aria-label={label} aria-busy={busy}
+        className={cx("mx-auto flex items-center justify-center gap-2 rounded-full bg-accent font-bold text-white transition hover:opacity-90", big ? "h-16 w-16" : "h-11 px-5 text-sm")}>
+        {busy ? <span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <IconSpeaker className={big ? "h-7 w-7" : "h-4 w-4"} />}
+        {big ? null : <span>{label}</span>}
+      </button>
+      {failed && !busy ? <p role="status" className="max-w-xs text-center text-[13px] leading-snug text-muted">{failed === "error" ? at("clipFailed") : at("clipVoice")}</p> : null}
+    </div>
   );
 }
 
@@ -41,7 +60,7 @@ const heading = "font-display text-center text-[21px] leading-snug sm:text-2xl";
 
 export function LearnCard({ ex }: { ex: Extract<Ex, { t: "learn" }> }) {
   const qt = useQT();
-  const { say, canSpeak, clip } = useSay();
+  const { say, canSpeak, busy, failed } = useSay();
   const can = !!ex.word || (canSpeak && !!ex.speak);
   return (
     <div className="flex flex-col gap-4">
@@ -57,14 +76,14 @@ export function LearnCard({ ex }: { ex: Extract<Ex, { t: "learn" }> }) {
           <ArText size={30}>{ex.word.ar}</ArText>
         </div>
       ) : null}
-      {can ? <ListenButton label={qt("listen")} onPress={() => say(ex)} busy={clip.state === "loading"} /> : null}
+      {can ? <ListenButton label={qt("listen")} onPress={() => say(ex)} busy={busy} failed={failed} /> : null}
     </div>
   );
 }
 
 export function ChooseCard({ ex, picked, checked, onPick }: { ex: Extract<Ex, { t: "choose" }>; picked: number | null; checked: boolean; onPick: (i: number) => void }) {
   const qt = useQT();
-  const { say, clip } = useSay();
+  const { say, busy, failed } = useSay();
   const audio = !!ex.word || !!ex.speak;
   useEffect(() => { if (audio && !ex.big) say(ex); }, [ex]); // eslint-disable-line react-hooks/exhaustive-deps
   const wide = ex.options.some((o) => o.text) || ex.options.some((o) => (o.ar?.length ?? 0) > 4);
@@ -72,7 +91,7 @@ export function ChooseCard({ ex, picked, checked, onPick }: { ex: Extract<Ex, { 
     <div className="flex flex-col gap-4">
       <h2 className={heading}>{ex.q}</h2>
       {ex.big ? <ArText size={ex.big.length > 3 ? 52 : 78}>{ex.big}</ArText> : null}
-      {audio ? <ListenButton big={!ex.big} label={qt("listen")} onPress={() => say(ex)} busy={clip.state === "loading"} /> : null}
+      {audio ? <ListenButton big={!ex.big} label={qt("listen")} onPress={() => say(ex)} busy={busy} failed={failed} /> : null}
       <div className={cx("grid gap-2.5", wide ? "grid-cols-1" : "grid-cols-2")}>
         {ex.options.map((o, i) => {
           const right = checked && i === ex.answer, wrong = checked && picked === i && i !== ex.answer, sel = !checked && picked === i;
@@ -136,7 +155,7 @@ export function MatchCard({ ex, onDone }: { ex: Extract<Ex, { t: "match" }>; onD
 export function BuildCard({ ex, checked, onChange }: { ex: Extract<Ex, { t: "build" }>; checked: boolean; onChange: (order: number[]) => void }) {
   const qt = useQT();
   const qw = useQW();
-  const { say } = useSay();
+  const { say, busy, failed } = useSay();
   const bank = useMemo(() => ex.tiles.map((x, i) => ({ x, i })).sort(() => Math.random() - 0.5), [ex]);
   const [order, setOrder] = useState<number[]>([]);
   const [over, setOver] = useState(false);
@@ -147,7 +166,7 @@ export function BuildCard({ ex, checked, onChange }: { ex: Extract<Ex, { t: "bui
     <div className="flex flex-col gap-4">
       <h2 className={heading}>{ex.q}</h2>
       <p className="text-center text-sm leading-relaxed text-muted">{ex.hint}</p>
-      {ex.word ? <ListenButton label={qt("listen")} onPress={() => say(ex)} /> : null}
+      {ex.word ? <ListenButton label={qt("listen")} onPress={() => say(ex)} busy={busy} failed={failed} /> : null}
       <div
         onDragOver={(e) => { if (!checked) { e.preventDefault(); setOver(true); } }}
         onDragLeave={() => setOver(false)}

@@ -16,7 +16,8 @@ import { success, tick } from "@/features/feed/haptics";
 import { addOwnCards } from "@/features/srs/store";
 import { loadVerse, type VWord } from "@/features/srs/verse";
 import { StepIn, useNudge } from "../coursekit/motion";
-import { useArabicVoice } from "../coursekit/voice";
+import { useAudioT } from "../coursekit/audioText";
+import { arabicVoiceWithin, useArabicVoice } from "../coursekit/voice";
 import { buildLesson, prepareLesson, scored, type Ex } from "./build";
 import { ALL_WORDS, FREE_UNITS, LESSONS, LEVELS, PASS, UNITS, deckWords, isFreeUnit, lessonById, unitOfLesson } from "./curriculum";
 import { Ar, ChooseCard, DialogueView, IntroCard, SpeakCard, SpotCard, TilesCard, TypeCard } from "./Exercises";
@@ -200,8 +201,9 @@ export function LangLessonScreen({ id }: { id: string }) {
   const ent = useEntitlement("arabicLanguage");
   const lesson = lessonById(id);
   const unit = unitOfLesson(id);
-  const { canSpeak } = useArabicVoice();
-  const [phase, setPhase] = useState<"explain" | "dialogue" | "ex" | "done">("explain");
+  const { canSpeak, ready: voiceReady } = useArabicVoice();
+  const at = useAudioT();
+  const [phase, setPhase] = useState<"explain" | "dialogue" | "loading" | "error" | "ex" | "done">("explain");
   const [queue, setQueue] = useState<Q[]>([]);
   const [idx, setIdx] = useState(0);
   const [fb, setFb] = useState<{ ok: boolean; correct: string } | null>(null);
@@ -218,13 +220,20 @@ export function LangLessonScreen({ id }: { id: string }) {
   const total = queue.filter((q) => q.first && scored(q.ex)).length;
 
   const begin = () => {
-    const go = () => {
-      setQueue(buildLesson(lesson, lang, { canSpeak }).map((ex) => ({ ex, first: true })));
+    // immediate feedback: the frequency track loads its word list first (the first time a few seconds)
+    setPhase("loading");
+    const go = (voice: unknown) => {
+      // built with the voice lookup's answer, not with a hook value that may still be on its first render
+      const built = buildLesson(lesson, lang, { canSpeak: !!voice }).map((ex) => ({ ex, first: true }));
+      // without its word list the frequency track has nothing to practise: say so and offer to try again
+      if (!built.some((q) => scored(q.ex))) { setPhase("error"); return; }
+      setQueue(built);
       setIdx(0); setRight(0); setFb(null); setResult(null);
       setPhase("ex");
     };
-    // the Quran frequency track loads its words first; on failure the lesson starts with what is cached
-    prepareLesson(lesson, lang).then(go, go);
+    const voice = arabicVoiceWithin(1500);
+    // on failure the lesson starts with what is cached
+    prepareLesson(lesson, lang).catch(() => undefined).then(() => voice).then(go, () => go(null));
   };
   const onCheck = (ok: boolean, correct: string) => {
     const q = queue[idx];
@@ -280,10 +289,22 @@ export function LangLessonScreen({ id }: { id: string }) {
             </GoldCard>
             {lesson.conj ? <ConjTable lesson={lesson} /> : null}
             {lesson.roots ? <OutlineButton title={lt("openRoots")} onPress={() => router.push(`/arabic/lang/roots?r=${encodeURIComponent(lesson.roots![0])}` as Href)} /> : null}
+            {voiceReady && !canSpeak ? <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: t.muted }}>{at("noVoice")}</Text> : null}
             <GoldButton title={lt("startEx")} onPress={() => (lesson.lines ? setPhase("dialogue") : begin())} />
           </StepIn>
         ) : phase === "dialogue" && lesson.lines ? (
           <StepIn><DialogueView lines={lesson.lines} onNext={begin} /></StepIn>
+        ) : phase === "loading" ? (
+          <View accessibilityLiveRegion="polite" style={{ alignItems: "center", gap: 10, paddingVertical: 48 }}>
+            <ActivityIndicator color={t.accent} />
+            <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{at("loading")}</Text>
+          </View>
+        ) : phase === "error" ? (
+          <View style={{ gap: 12, paddingVertical: 24 }}>
+            <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 24, color: t.muted, textAlign: "center" }}>{at("loadFailed")}</Text>
+            <GoldButton title={at("tryAgain")} onPress={begin} />
+            <OutlineButton title={lt("toMap")} onPress={goBack} />
+          </View>
         ) : phase === "ex" && lesson.test && ex.phase === "blocked" ? <ExamBlocked session={ex} />
         : phase === "ex" && lesson.test && ex.phase === "void" ? <View style={{ gap: 12 }}><ExamVerdict session={ex} /><OutlineButton title={lt("toMap")} onPress={goBack} /></View>
         : phase === "ex" && lesson.test && !ex.ready ? <ActivityIndicator color={t.accent} />

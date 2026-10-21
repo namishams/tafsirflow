@@ -24,7 +24,8 @@ import { tx, type Lesson, type Level, type Unit } from "@/lib/learn/arabic-lang/
 import { useExamSession } from "@/lib/learn/exam/integrity";
 import { arabicRecitePlan } from "@/lib/learn/exam/plans";
 import { ExamBar, ExamBlocked, ExamVerdict, VerifiedCertLink } from "@/components/learn/exam";
-import { tone } from "@/components/learn/media";
+import { arabicVoiceWithin, tone, useArabicVoice } from "@/components/learn/media";
+import { useAudioT } from "@/components/learn/audioText";
 import { shareOrCopy } from "@/components/learn/coursekit/share";
 import { Bar, Card, GoldButton, GoldLink, LearnHero, LearnMain, OutlineButton, OutlineLink, Pill, SectionTitle, Spinner, StageStats } from "@/components/learn/ui";
 import { IconClose, IconFlame, IconLock, IconRepeat, IconShare, IconTrophy } from "@/components/Icons";
@@ -212,7 +213,8 @@ export function LangLessonScreen({ id }: { id: string }) {
   const [shake, setShake] = useState(0);
   // unit tests follow the exam rules (src/lib/learn/exam); the final test of a level leads to a verifiable certificate
   const ex = useExamSession(lesson?.test && unit ? "ar-unit" : null, String(unit?.n ?? ""), { active: phase === "ex", recite: (rand) => arabicRecitePlan(rand) });
-  const { canSpeak } = useVoiceReady();
+  const { canSpeak, ready: voiceReady } = useArabicVoice();
+  const at = useAudioT();
 
   useEffect(() => { setPhase("explain"); setIdx(0); setFb(null); setRight(0); setResult(null); }, [id]);
   useEffect(() => { if (typeof window !== "undefined") window.scrollTo({ top: 0 }); }, [idx, phase]);
@@ -223,15 +225,18 @@ export function LangLessonScreen({ id }: { id: string }) {
 
   const begin = () => {
     setPhase("loading");
-    const go = () => {
-      const built = buildLesson(lesson, lang, { canSpeak }).map((e) => ({ ex: e, first: true }));
+    // built with the voice lookup's answer (the browser lists its voices a moment after loading), not with a value
+    // from an earlier render
+    const go = (voice: unknown) => {
+      const built = buildLesson(lesson, lang, { canSpeak: !!voice }).map((e) => ({ ex: e, first: true }));
       // the Quran frequency track needs its word list: without it there is nothing to practise
       if (!built.some((q) => scored(q.ex))) { setPhase("error"); return; }
       setQueue(built);
       setIdx(0); setRight(0); setFb(null); setResult(null);
       setPhase("ex");
     };
-    prepareLesson(lesson, lang).then(go, go);
+    const voice = arabicVoiceWithin(1500);
+    prepareLesson(lesson, lang).catch(() => undefined).then(() => voice).then(go, () => go(null));
   };
   const onCheck = (ok: boolean, correct: string) => {
     const q = queue[idx];
@@ -291,6 +296,7 @@ export function LangLessonScreen({ id }: { id: string }) {
         {lesson.test && ex.rule ? <p className="text-[13px] leading-relaxed text-muted">{`${lw("examRules")}: ${Math.round(ex.rule.examSec / 60)} min · ${Math.round(ex.rule.pass * 100)} %`}</p> : null}
         {lesson.conj ? <ConjTable lesson={lesson} /> : null}
         {lesson.roots ? <OutlineLink href={`${MAP}/roots?r=${encodeURIComponent(lesson.roots[0])}`} className="w-fit">{lt("openRoots")}</OutlineLink> : null}
+        {voiceReady && !canSpeak ? <p className="text-[13.5px] leading-relaxed text-muted">{at("noVoice")}</p> : null}
         <GoldButton onClick={() => (lesson.lines ? setPhase("dialogue") : begin())}>{lt("startEx")}</GoldButton>
       </div>
     );
@@ -364,19 +370,6 @@ export function LangLessonScreen({ id }: { id: string }) {
       ) : null}
     </div>
   );
-}
-
-/** the browser lists its voices a moment after loading; the listening exercises are only built when a voice exists */
-function useVoiceReady() {
-  const [canSpeak, setCanSpeak] = useState(false);
-  useEffect(() => {
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-    const find = () => setCanSpeak(window.speechSynthesis.getVoices().some((v) => v.lang.toLowerCase().startsWith("ar")));
-    find();
-    window.speechSynthesis.addEventListener?.("voiceschanged", find);
-    return () => window.speechSynthesis.removeEventListener?.("voiceschanged", find);
-  }, []);
-  return { canSpeak };
 }
 
 function ConjTable({ lesson }: { lesson: Lesson }) {

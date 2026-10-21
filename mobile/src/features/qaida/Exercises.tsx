@@ -1,11 +1,12 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Animated, PanResponder, Pressable, Text, View } from "react-native";
 import { Icon } from "@/components/icons";
 import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
 import { align } from "@/web/recite";
-import { useClip } from "../coursekit/audio";
+import { markAudioSessionChanged, useClip } from "../coursekit/audio";
+import { useAudioT } from "../coursekit/audioText";
 import { GoldRing, useReduceMotion } from "../coursekit/motion";
-import { useArabicVoice } from "../coursekit/voice";
+import { speakArabic, useArabicVoice } from "../coursekit/voice";
 import type { Ex } from "./lesson";
 import { saveSpeed, useQaida } from "./progress";
 import { useQT } from "./texts";
@@ -24,28 +25,46 @@ export function Ar({ children, size = 40, color, center = true }: { children: st
   );
 }
 
-/** play a Quran word recording, or let the device voice say a letter / syllable */
+/** play a Quran word recording (the device voice reads the word when the recording cannot be loaded), or let the
+ *  device voice say a letter / syllable */
 export function useSay() {
   const clip = useClip();
-  const { canSpeak, speak } = useArabicVoice();
-  return { canSpeak, clip, say: (o: { speak?: string; word?: QWord }) => (o.word ? clip.play(qwordAudio(o.word)) : o.speak ? speak(o.speak) : undefined) };
+  const voice = useArabicVoice();
+  const { play } = clip;
+  const { speak } = voice;
+  const say = useCallback((o: { speak?: string; word?: QWord }) => {
+    if (o.word) { const ar = o.word.ar; play(qwordAudio(o.word), { fallback: () => speakArabic(ar) }); }
+    else if (o.speak) speak(o.speak);
+  }, [play, speak]);
+  const busy = clip.state === "loading" || voice.state === "starting";
+  return { canSpeak: voice.canSpeak, voiceReady: voice.ready, clip, say, busy, failed: clip.state === "error" || clip.state === "fallback" ? clip.state : null };
 }
 
-export function ListenButton({ onPress, label, big = false, busy = false }: { onPress: () => void; label: string; big?: boolean; busy?: boolean }) {
+/** the recordings an exercise plays (preloaded while the learner is on the cards before it) */
+export function exClips(ex: Ex): string[] {
+  if (ex.t === "read") return ex.words.slice(0, 3).map(qwordAudio);
+  return "word" in ex && ex.word ? [qwordAudio(ex.word)] : [];
+}
+
+export function ListenButton({ onPress, label, big = false, busy = false, failed = null }: { onPress: () => void; label: string; big?: boolean; busy?: boolean; failed?: "error" | "fallback" | null }) {
   const t = useTheme();
+  const at = useAudioT();
   return (
-    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label}
-      style={{ alignSelf: "center", height: big ? 64 : 42, minWidth: big ? 64 : undefined, paddingHorizontal: big ? 0 : 16, borderRadius: R.pill, backgroundColor: t.accent, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8 }}>
-      {busy ? <ActivityIndicator color={t.onAccent} size="small" /> : <Icon name="speaker" size={big ? 26 : 16} color={t.onAccent} />}
-      {big ? null : <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: t.onAccent }}>{label}</Text>}
-    </Pressable>
+    <View style={{ alignItems: "center", gap: 8 }}>
+      <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ busy }}
+        style={({ pressed }) => ({ alignSelf: "center", height: big ? 64 : 42, minWidth: big ? 64 : undefined, paddingHorizontal: big ? 0 : 16, borderRadius: R.pill, backgroundColor: t.accent, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, opacity: pressed ? 0.85 : 1 })}>
+        {busy ? <ActivityIndicator color={t.onAccent} size="small" /> : <Icon name={failed === "error" ? "repeat" : "speaker"} size={big ? 26 : 16} color={t.onAccent} />}
+        {big ? null : <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: t.onAccent }}>{label}</Text>}
+      </Pressable>
+      {failed && !busy ? <Text accessibilityLiveRegion="polite" style={{ maxWidth: 300, fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: t.muted, textAlign: "center" }}>{failed === "error" ? at("clipFailed") : at("clipVoice")}</Text> : null}
+    </View>
   );
 }
 
 export function LearnCard({ ex }: { ex: Extract<Ex, { t: "learn" }> }) {
   const t = useTheme();
   const qt = useQT();
-  const { say, canSpeak, clip } = useSay();
+  const { say, canSpeak, busy, failed } = useSay();
   const can = !!ex.word || (canSpeak && !!ex.speak);
   return (
     <View style={{ gap: 14, alignItems: "stretch" }}>
@@ -61,7 +80,7 @@ export function LearnCard({ ex }: { ex: Extract<Ex, { t: "learn" }> }) {
           <Ar size={30}>{ex.word.ar}</Ar>
         </View>
       ) : null}
-      {can ? <ListenButton label={qt("listen")} onPress={() => say(ex)} busy={clip.state === "loading"} /> : null}
+      {can ? <ListenButton label={qt("listen")} onPress={() => say(ex)} busy={busy} failed={failed} /> : null}
     </View>
   );
 }
@@ -69,7 +88,7 @@ export function LearnCard({ ex }: { ex: Extract<Ex, { t: "learn" }> }) {
 export function ChooseCard({ ex, picked, checked, onPick }: { ex: Extract<Ex, { t: "choose" }>; picked: number | null; checked: boolean; onPick: (i: number) => void }) {
   const t = useTheme();
   const qt = useQT();
-  const { say, clip } = useSay();
+  const { say, busy, failed } = useSay();
   const audio = !!ex.word || !!ex.speak;
   useEffect(() => { if (audio && !ex.big) say(ex); }, [ex]); // eslint-disable-line react-hooks/exhaustive-deps
   const wide = ex.options.some((o) => o.text) || ex.options.some((o) => (o.ar?.length ?? 0) > 4);
@@ -77,7 +96,7 @@ export function ChooseCard({ ex, picked, checked, onPick }: { ex: Extract<Ex, { 
     <View style={{ gap: 16 }}>
       <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 19, lineHeight: 25, color: t.ink, textAlign: "center" }}>{ex.q}</Text>
       {ex.big ? <Ar size={ex.big.length > 3 ? 52 : 78}>{ex.big}</Ar> : null}
-      {audio ? <ListenButton big={!ex.big} label={qt("listen")} onPress={() => say(ex)} busy={clip.state === "loading"} /> : null}
+      {audio ? <ListenButton big={!ex.big} label={qt("listen")} onPress={() => say(ex)} busy={busy} failed={failed} /> : null}
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10, justifyContent: "center" }}>
         {ex.options.map((o, i) => {
           const right = checked && i === ex.answer, wrong = checked && picked === i && i !== ex.answer, sel = !checked && picked === i;
@@ -167,7 +186,7 @@ function DragTile({ label, onPlace, disabled }: { label: string; onPlace: () => 
 export function BuildCard({ ex, checked, onChange }: { ex: Extract<Ex, { t: "build" }>; checked: boolean; onChange: (order: number[]) => void }) {
   const t = useTheme();
   const qt = useQT();
-  const { say } = useSay();
+  const { say, busy, failed } = useSay();
   const bank = useMemo(() => ex.tiles.map((x, i) => ({ x, i })).sort(() => Math.random() - 0.5), [ex]);
   const [order, setOrder] = useState<number[]>([]);
   const set = (o: number[]) => { setOrder(o); onChange(o); };
@@ -176,7 +195,7 @@ export function BuildCard({ ex, checked, onChange }: { ex: Extract<Ex, { t: "bui
     <View style={{ gap: 16 }}>
       <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 19, color: t.ink, textAlign: "center" }}>{ex.q}</Text>
       <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, textAlign: "center" }}>{ex.hint}</Text>
-      {ex.word ? <ListenButton label={qt("listen")} onPress={() => say(ex)} /> : null}
+      {ex.word ? <ListenButton label={qt("listen")} onPress={() => say(ex)} busy={busy} failed={failed} /> : null}
       <View style={{ minHeight: 96, borderRadius: R.card, borderWidth: 1.5, borderStyle: order.length ? "solid" : "dashed", borderColor: checked ? (ok ? t.accent : RED) : t.line, backgroundColor: checked && ok ? t.accentSoft : t.surface, alignItems: "center", justifyContent: "center", padding: 8 }}>
         {order.length ? <Ar size={ex.joiner ? 28 : 44}>{order.map((i) => ex.tiles[i]).join(ex.joiner)}</Ar> : <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{qt("emptyRow")}</Text>}
         {order.length && !checked ? (
@@ -231,14 +250,16 @@ export function ReadCard({ words, onResult, highlight }: { words: QWord[]; onRes
           setOk(r.ok);
           report.current(r.score);
         }),
-        m.addListener("end", () => setState((s) => (s === "listening" ? "done" : s))),
-        m.addListener("error", () => setState("done")),
+        // recognition leaves the audio session in record mode: the next recording sets playback again
+        m.addListener("end", () => { markAudioSessionChanged(); setState((s) => (s === "listening" ? "done" : s)); }),
+        m.addListener("error", () => { markAudioSessionChanged(); setState("done"); }),
       ];
+      markAudioSessionChanged();
       m.start({ lang: "ar-SA", interimResults: true, continuous: true, requiresOnDeviceRecognition: true, addsPunctuation: false });
       setState("listening");
     } catch { setState("unavailable"); report.current(null); }
   };
-  const stop = () => { try { speech()?.ExpoSpeechRecognitionModule.stop(); } catch { /* ended */ } setState("done"); };
+  const stop = () => { try { speech()?.ExpoSpeechRecognitionModule.stop(); } catch { /* ended */ } markAudioSessionChanged(); setState("done"); };
   const n = ok?.filter(Boolean).length ?? 0;
   return (
     <View style={{ gap: 14 }}>

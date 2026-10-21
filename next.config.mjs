@@ -12,10 +12,11 @@ const csp = [
   `script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/${prod ? "" : " 'unsafe-eval'"}`,
   "frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://www.gstatic.com/recaptcha/",
+  "img-src 'self' data: blob: https://www.gstatic.com/recaptcha/ https://upload.wikimedia.org",
   "font-src 'self' data:",
   "media-src 'self' blob: https://verses.quran.com https://*.quran.com https://audio.qurancdn.com https://download.quranicaudio.com",
-  `connect-src 'self' https://www.google.com/recaptcha/ https://raw.githubusercontent.com${prod ? "" : " ws: wss:"}`,
+  // the courses fetch Quran.com's word recordings ahead (src/components/learn/media.ts preloadClips) and play them as blob:
+  `connect-src 'self' https://www.google.com/recaptcha/ https://raw.githubusercontent.com https://audio.qurancdn.com https://verses.quran.com${prod ? "" : " ws: wss:"}`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -57,7 +58,7 @@ export default withNextIntl({
       // personal data is never cached by browsers or proxies – except the public, read-only community figures and the
       // public feed (config, new, page, web: no personal data), which set their own Cache-Control (a header here would
       // override the route's own)
-      { source: "/api/:path((?!social/community$|feed/config$|feed/new$|feed/page$|feed/web$).*)", headers: [{ key: "Cache-Control", value: "private, no-store" }] },
+      { source: "/api/:path((?!social/community$|feed/config$|feed/new$|feed/page$|feed/web$|feed/stories$).*)", headers: [{ key: "Cache-Control", value: "private, no-store" }] },
     ];
   },
 });

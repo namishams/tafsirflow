@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { syncQuranText } from "@/lib/arabicQuran";
 import { LESSONS, PASS_PCT, PLACEMENT_UNITS, UNITS, buildLesson, lessonById, nextArabic, placementResult, saveArabic, savePlacement, starsFor, verseAudioUrl, wordAudioUrl, type Ex, type Lang, type PlacementResult } from "@/lib/arabic";
 import { logDay } from "@/lib/learning";
+import { preloadClips, useArabicVoice, useClip } from "@/components/learn/media";
 import { PracticeCelebrate, PracticeMedallion, PracticeStar, PracticeStarNum, PracticeWindow } from "./art/PracticeArt";
 
 const T = {
@@ -183,47 +184,11 @@ function tone(ok: boolean) {
   } catch { /* sound is optional */ }
 }
 
-// Arabic speech from the device (if it has an Arabic voice) – used as a pronunciation helper, not as recitation
-function useArabicVoice() {
-  const [voice, setVoice] = useState<SpeechSynthesisVoice | null>(null);
-  useEffect(() => {
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-    const pick = () => setVoice(window.speechSynthesis.getVoices().find((v) => v.lang.toLowerCase().startsWith("ar")) ?? null);
-    pick(); window.speechSynthesis.addEventListener("voiceschanged", pick);
-    return () => window.speechSynthesis.removeEventListener("voiceschanged", pick);
-  }, []);
-  const speak = (text: string) => { if (!voice) return; window.speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.voice = voice; u.lang = voice.lang; u.rate = 0.7; window.speechSynthesis.speak(u); };
-  return { canSpeak: !!voice, speak };
-}
+// Arabic speech from the device (if it has an Arabic voice) – a pronunciation helper, not recitation – and the word
+// recordings come from the shared course sound (components/learn/media.ts: one player, preloading, a time limit).
 
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
 
-// one recording at a time (word recordings from Quran.com, verse recordings from our own server); pauses the site radio first.
-// If the file cannot be loaded (offline, blocked, missing) the state becomes "error" and the UI shows a quiet hint instead.
-function useClip() {
-  const el = useRef<HTMLAudioElement | null>(null);
-  const [state, setState] = useState<"idle" | "loading" | "playing" | "error">("idle");
-  const stop = () => { const a = el.current; if (!a) return; a.onplaying = a.onended = a.onerror = null; try { a.pause(); } catch { /* ignore */ } };
-  const play = (url: string) => {
-    stop();
-    try {
-      const a = new Audio(url);
-      el.current = a;
-      a.onplaying = () => setState("playing");
-      a.onended = () => setState("idle");
-      a.onerror = () => setState("error");
-      window.dispatchEvent(new Event("tf-audio-start"));
-      setState("loading");
-      a.play().catch((e: unknown) => {
-        if (el.current !== a) return; // replaced by a newer clip
-        const name = (e as { name?: string } | null)?.name;
-        setState(name === "NotAllowedError" || name === "AbortError" ? "idle" : "error"); // autoplay blocked → the button is still there
-      });
-    } catch { setState("error"); }
-  };
-  useEffect(() => stop, []); // eslint-disable-line react-hooks/exhaustive-deps
-  return { state, play, stop };
-}
 
 // after "Check" the feedback and the continue button scroll into view (the tab bar covers the bottom of the screen)
 function useReveal(on: boolean) {
@@ -268,6 +233,10 @@ export default function ArabicLesson({ id }: { id: string }) {
   const ex = queue[pos];
   const total = queue.length;
   const isRetry = retried.current.has(pos);
+  // the word recordings of this card and the next four are fetched in the background, so they play at once
+  useEffect(() => {
+    preloadClips(queue.slice(pos, pos + 5).flatMap((e) => { const r = (e as { ref?: string }).ref; return r ? [wordAudioUrl(r)] : []; }));
+  }, [pos, queue]);
 
   const finish = (s = stats) => {
     const pct = s.first ? Math.round((s.firstRight / s.first) * 100) : 100;
@@ -468,7 +437,7 @@ function ListenCard({ ex, t, isRetry, canSpeak, speak }: { ex: Extract<Ex, { t: 
       <div className="pa-card mt-5 flex flex-col items-center px-4 py-7 text-center">
         <button onClick={play} aria-label={t.listen} className="stage relative grid h-24 w-24 place-items-center rounded-full text-[#f3e2b6] shadow-[0_12px_28px_-12px_rgba(6,58,44,.9)] ring-2 ring-[rgb(201_166_94)]/70 ring-offset-4 ring-offset-[rgb(var(--surface))] transition active:scale-95">
           {clip.state === "playing" && <span aria-hidden className="absolute inset-0 animate-ping rounded-full bg-[rgb(201_166_94)]/30" />}
-          <span className="relative scale-[1.7]">{clip.state === "playing" ? <IconSpeaker /> : <IconPlay />}</span>
+          <span className="relative scale-[1.7]">{clip.state === "loading" ? <span aria-hidden className="block h-3.5 w-3.5 animate-spin rounded-full border-2 border-current border-t-transparent" /> : clip.state === "playing" ? <IconSpeaker /> : <IconPlay />}</span>
         </button>
         {clip.state === "error" ? (
           // the recording cannot be loaded: say so quietly and give the transliteration, so the exercise stays solvable

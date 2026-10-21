@@ -73,10 +73,14 @@ export function useSurahs(surahs: number[]): { verses: Verse[] | null; error: bo
     if (!surahs.length) { setSt({ verses: [], error: false }); return; }
     let alive = true;
     setSt({ verses: null, error: false });
+    // a request that hangs (no answer, no error) must not keep the lesson spinner forever: after 20 s the screen
+    // offers "try again"; the request itself goes on and fills the cache
+    const watchdog = setTimeout(() => { if (alive) setSt((x) => (x.verses ? x : { verses: null, error: true })); }, 20_000);
     Promise.all(surahs.map((s) => load(s, lang, reciter.folder, reciter)))
       .then((vs) => { if (alive) setSt({ verses: vs.flat(), error: false }); })
-      .catch(() => { if (alive) setSt({ verses: null, error: true }); });
-    return () => { alive = false; };
+      .catch(() => { if (alive) setSt({ verses: null, error: true }); })
+      .finally(() => clearTimeout(watchdog));
+    return () => { alive = false; clearTimeout(watchdog); };
   }, [key, lang, reciter]); // eslint-disable-line react-hooks/exhaustive-deps
   return st;
 }

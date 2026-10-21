@@ -29,14 +29,27 @@ function Prompt({ children }: { children: React.ReactNode }) {
   return <h2 className="font-display text-center text-[21px] leading-snug sm:text-2xl">{children}</h2>;
 }
 
-export function SayButton({ text, label }: { text: string; label?: string }) {
+const Spin = ({ className = "" }: { className?: string }) => <span aria-hidden className={cx("animate-spin rounded-full border-2 border-current border-t-transparent", className)} />;
+
+export function SayButton({ text, label, big = false, auto = false }: { text: string; label?: string; big?: boolean; auto?: boolean }) {
   const lt = useLT();
-  const { canSpeak, speak } = useArabicVoice();
+  const { canSpeak, speak, state } = useArabicVoice();
+  // listening exercises say their text once by themselves
+  const said = useRef(false);
+  useEffect(() => { if (auto && canSpeak && !said.current) { said.current = true; speak(text); } }, [auto, canSpeak, speak, text]);
   if (!canSpeak) return null;
+  if (big) {
+    return (
+      <button type="button" onClick={() => speak(text)} aria-label={label ?? lt("listen")} aria-busy={state === "starting"}
+        className={cx("mx-auto flex h-16 w-16 items-center justify-center rounded-full transition hover:opacity-90", state === "idle" ? "bg-accent-soft text-accent" : "bg-accent text-white")}>
+        {state === "starting" ? <Spin className="h-6 w-6" /> : <IconSpeaker className="h-7 w-7" />}
+      </button>
+    );
+  }
   return (
-    <button type="button" onClick={() => speak(text)} aria-label={label ?? lt("listen")}
-      className="mx-auto inline-flex h-10 items-center gap-2 rounded-full border border-line bg-surface px-4 text-sm font-semibold transition hover:border-[rgb(var(--hm-gold))]/70">
-      <IconSpeaker className="h-[18px] w-[18px] text-[rgb(var(--hm-gold))]" />{label ?? lt("listen")}
+    <button type="button" onClick={() => speak(text)} aria-label={label ?? lt("listen")} aria-busy={state === "starting"}
+      className={cx("mx-auto inline-flex h-10 items-center gap-2 rounded-full border bg-surface px-4 text-sm font-semibold transition hover:border-[rgb(var(--hm-gold))]/70", state === "idle" ? "border-line" : "border-[rgb(var(--hm-gold))]")}>
+      {state === "starting" ? <Spin className="h-[18px] w-[18px] text-[rgb(var(--hm-gold))]" /> : <IconSpeaker className="h-[18px] w-[18px] text-[rgb(var(--hm-gold))]" />}{label ?? lt("listen")}
     </button>
   );
 }
@@ -65,9 +78,6 @@ export function IntroCard({ item, onNext }: { item: LItem; onNext: () => void })
 export function ChooseCard({ ex, onCheck }: { ex: Extract<Ex, { k: "choose" | "listen" | "conj" }>; onCheck: Check }) {
   const lt = useLT();
   const [sel, setSel] = useState<number | null>(null);
-  const { canSpeak, speak } = useArabicVoice();
-  const spoke = useRef(false);
-  useEffect(() => { if (ex.k === "listen" && canSpeak && !spoke.current) { spoke.current = true; speak(ex.say); } }, [ex, canSpeak, speak]);
   const optsAr = ex.k === "choose" ? ex.optsAr : true;
   return (
     <div className="flex flex-col gap-4">
@@ -80,11 +90,7 @@ export function ChooseCard({ ex, onCheck }: { ex: Extract<Ex, { k: "choose" | "l
       ) : ex.k === "listen" ? (
         <>
           <Prompt>{lt("listenPick")}</Prompt>
-          {canSpeak ? (
-            <button type="button" onClick={() => speak(ex.say)} aria-label={lt("listen")} className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white transition hover:opacity-90">
-              <IconSpeaker className="h-7 w-7" />
-            </button>
-          ) : null}
+          <SayButton text={ex.say} big auto />
         </>
       ) : (
         <>
@@ -143,7 +149,7 @@ const PAD = "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك �
 export function TypeCard({ ex, onCheck }: { ex: Extract<Ex, { k: "type" }>; onCheck: Check }) {
   const lt = useLT();
   const [v, setV] = useState("");
-  const { canSpeak, speak } = useArabicVoice();
+  const { canSpeak } = useArabicVoice();
   const dict = !!ex.say && canSpeak;
   const ok = () => {
     const a = ex.target.split(/\s+/), b = v.trim().split(/\s+/);
@@ -155,9 +161,7 @@ export function TypeCard({ ex, onCheck }: { ex: Extract<Ex, { k: "type" }>; onCh
     <div className="flex flex-col gap-4">
       <Prompt>{dict ? lt("typeDict") : lt("typeQ")}</Prompt>
       {dict ? (
-        <button type="button" onClick={() => speak(ex.say!)} aria-label={lt("listen")} className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-soft text-accent">
-          <IconSpeaker className="h-7 w-7" />
-        </button>
+        <SayButton text={ex.say!} big />
       ) : <p className="font-display text-center text-[22px] leading-snug">{ex.q}</p>}
       <input value={v} onChange={(e) => setV(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") submit(); }} dir="rtl" lang="ar" autoComplete="off" autoCorrect="off" spellCheck={false}
         aria-label={dict ? lt("typeDict") : lt("typeQ")} placeholder="…"

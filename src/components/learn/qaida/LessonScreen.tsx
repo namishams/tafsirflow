@@ -13,10 +13,10 @@ import { readQaida, saveLesson, starsFor, useQaida, weakKeys } from "@/lib/learn
 import { useQT } from "@/lib/learn/qaida/texts";
 import { realWords, toQWord, useSurahs } from "@/lib/learn/qaida/words";
 import type { Verse } from "@/lib/learn/quran";
-import { tone, announceAudio } from "@/components/learn/media";
+import { preloadClips, tone, announceAudio } from "@/components/learn/media";
 import { Bar, GoldButton, GoldLink, LearnMain, OutlineButton, OutlineLink, Spinner } from "@/components/learn/ui";
 import { ArrowBack, IconClose, IconPause, IconPlaySm, IconSpeaker } from "@/components/Icons";
-import { BuildCard, ChooseCard, LearnCard, MatchCard, RED_TEXT, ReadCard, SpeedCard, useSay } from "./Exercises";
+import { BuildCard, ChooseCard, LearnCard, MatchCard, RED_TEXT, ReadCard, SpeedCard, exClips, useSay } from "./Exercises";
 import { Stars, lessonHref } from "./PathScreen";
 import { useQW } from "./strings";
 
@@ -44,15 +44,16 @@ function LessonLoader({ stage, lesson, retry }: { stage: QStage | null; lesson: 
   const [keys] = useState(() => weakKeys(readQaida()));
   const surahs = useMemo(() => (lesson ? (lesson.kind === "forms" || lesson.kind === "syllables" ? [] : lesson.surahs ?? []) : reviewSurahs(keys).length ? reviewSurahs(keys) : [1]), [lesson, keys]);
   const { verses, error } = useSurahs(surahs);
-  const { canSpeak } = useSay();
-  // the browser lists its voices a moment after loading: wait briefly so letter and syllable audio is not dropped
+  const { canSpeak, voiceReady } = useSay();
+  // the browser lists its voices a moment after loading: wait for the list (at most 1.5 s) so letter and syllable
+  // audio is not dropped
   const [voiceWait, setVoiceWait] = useState(true);
-  useEffect(() => { const t = setTimeout(() => setVoiceWait(false), 700); return () => clearTimeout(t); }, []);
+  useEffect(() => { const t = setTimeout(() => setVoiceWait(false), 1500); return () => clearTimeout(t); }, []);
   const [exs, setExs] = useState<Ex[] | null>(null);
   useEffect(() => {
-    if (!verses || exs || (voiceWait && !canSpeak)) return;
+    if (!verses || exs || (voiceWait && !voiceReady)) return;
     setExs(lesson && stage ? buildLesson(stage, lesson, verses, lang, qt, canSpeak) : buildReview(keys, verses, lang, qt, canSpeak));
-  }, [verses, voiceWait, canSpeak]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [verses, voiceWait, voiceReady]); // eslint-disable-line react-hooks/exhaustive-deps
   if (error || (exs && !exs.length)) {
     return (
       <Centered>
@@ -86,6 +87,8 @@ function LessonRun({ exs, lesson, stage, retry }: { exs: Ex[]; lesson: QLesson |
   const [finished, setFinished] = useState<number | null>(null);
   const top = useRef<HTMLDivElement>(null);
   const ex = queue[i];
+  // the recordings of this card and the next four are fetched in the background, so "Listen" plays at once
+  useEffect(() => { preloadClips(queue.slice(i, i + 5).flatMap(exClips)); }, [i, queue]);
 
   const total = exs.filter(gradable).length;
   const grade = (ok: boolean) => {

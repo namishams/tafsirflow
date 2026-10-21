@@ -55,21 +55,29 @@ const ck = (f: { from: number; n: number }, lang: string) => `${f.from}:${f.n}:$
 export async function loadFreq(f: { from: number; n: number }, lang: string): Promise<void> {
   if (items.has(ck(f, lang))) return;
   const rows = (await lemmaTable()).slice(f.from, f.from + f.n);
-  const out: LItem[] = [];
-  for (let i = 0; i < rows.length; i += 5) {
-    const part = await Promise.all(rows.slice(i, i + 5).map(async ([lemma, root, count, ref]) => {
+  // the verses of a lesson load side by side (at most six requests at a time) instead of four rounds one after the
+  // other; the order of the list stays the frequency order
+  const part: (LItem | null)[] = new Array(rows.length).fill(null);
+  let next = 0;
+  const worker = async () => {
+    while (next < rows.length) {
+      const i = next++;
+      const [lemma, root, count, ref] = rows[i];
       const [s, a, w] = ref.split(":");
       try {
         const v = await loadVerse(`${s}:${a}`, lang);
         const word = v.words.find((x) => x.position === Number(w));
-        if (!word || !word.meaning) return null;
+        if (!word || !word.meaning) continue;
         const tr = `${word.tr} · ${lemma}${root ? ` · ${[...root].join(" ")}` : ""} · ${count}×`;
-        return { ar: word.text, tr, en: word.meaning, de: word.meaning, local: word.meaning } as LItem;
-      } catch { return null; }
-    }));
-    for (const p of part) if (p && !out.some((o) => o.ar === p.ar)) out.push(p);
-  }
-  items.set(ck(f, lang), out);
+        part[i] = { ar: word.text, tr, en: word.meaning, de: word.meaning, local: word.meaning } as LItem;
+      } catch { /* this word is left out */ }
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(6, rows.length) }, worker));
+  const out: LItem[] = [];
+  for (const p of part) if (p && !out.some((o) => o.ar === p.ar)) out.push(p);
+  // an empty result is not kept, so "try again" really asks again
+  if (out.length) items.set(ck(f, lang), out);
 }
 /** the loaded words of a lesson (empty until loadFreq finished) */
 export const freqItems = (f: { from: number; n: number }, lang: string): LItem[] => items.get(ck(f, lang)) ?? [];

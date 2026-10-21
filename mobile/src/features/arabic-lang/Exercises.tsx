@@ -6,6 +6,7 @@ import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
 import { align, same } from "@/web/recite";
 import { normalizeArabic } from "@/web/vocabStudy";
 import { loadVerse, type VWord } from "@/features/srs/verse";
+import { markAudioSessionChanged } from "../coursekit/audio";
 import { useArabicVoice } from "../coursekit/voice";
 import { GoldRing } from "../coursekit/motion";
 import type { Ex } from "./build";
@@ -29,15 +30,27 @@ function Prompt({ children }: { children: string }) {
   return <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 18, lineHeight: 24, color: t.ink, textAlign: "center" }}>{children}</Text>;
 }
 
-export function SayButton({ text, label }: { text: string; label?: string }) {
+export function SayButton({ text, label, big = false, auto = false }: { text: string; label?: string; big?: boolean; auto?: boolean }) {
   const t = useTheme();
   const lt = useLT();
-  const { canSpeak, speak } = useArabicVoice();
+  const { canSpeak, speak, state } = useArabicVoice();
+  // listening exercises say their text once by themselves
+  const said = useRef(false);
+  useEffect(() => { if (auto && canSpeak && !said.current) { said.current = true; speak(text); } }, [auto, canSpeak, speak, text]);
   if (!canSpeak) return null;
+  const on = state !== "idle";
+  if (big) {
+    return (
+      <Pressable onPress={() => speak(text)} accessibilityRole="button" accessibilityLabel={label ?? lt("listen")} accessibilityState={{ busy: state === "starting" }}
+        style={({ pressed }) => ({ alignSelf: "center", width: 72, height: 72, borderRadius: 36, alignItems: "center", justifyContent: "center", backgroundColor: on ? t.accent : t.accentSoft, opacity: pressed ? 0.85 : 1 })}>
+        {state === "starting" ? <ActivityIndicator color={t.onAccent} /> : <Icon name="speaker" size={30} color={on ? t.onAccent : t.accent} />}
+      </Pressable>
+    );
+  }
   return (
-    <Pressable onPress={() => speak(text)} accessibilityRole="button" accessibilityLabel={label ?? lt("listen")} hitSlop={8}
-      style={{ alignSelf: "center", flexDirection: "row", alignItems: "center", gap: 8, height: 40, paddingHorizontal: 16, borderRadius: R.pill, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
-      <Icon name="speaker" size={18} color={t.gold} />
+    <Pressable onPress={() => speak(text)} accessibilityRole="button" accessibilityLabel={label ?? lt("listen")} accessibilityState={{ busy: state === "starting" }} hitSlop={8}
+      style={({ pressed }) => ({ alignSelf: "center", flexDirection: "row", alignItems: "center", gap: 8, height: 40, paddingHorizontal: 16, borderRadius: R.pill, borderWidth: 1, borderColor: on ? t.gold : t.line, backgroundColor: t.surface, opacity: pressed ? 0.85 : 1 })}>
+      {state === "starting" ? <ActivityIndicator size="small" color={t.gold} /> : <Icon name="speaker" size={18} color={t.gold} />}
       <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{label ?? lt("listen")}</Text>
     </Pressable>
   );
@@ -85,9 +98,6 @@ export function ChooseCard({ ex, onCheck }: { ex: Extract<Ex, { k: "choose" | "l
   const t = useTheme();
   const lt = useLT();
   const [sel, setSel] = useState<number | null>(null);
-  const { canSpeak, speak } = useArabicVoice();
-  const spoke = useRef(false);
-  useEffect(() => { if (ex.k === "listen" && canSpeak && !spoke.current) { spoke.current = true; speak(ex.say); } }, [ex, canSpeak, speak]);
   const optsAr = ex.k === "choose" ? ex.optsAr : true;
   return (
     <View style={{ gap: 12 }}>
@@ -100,7 +110,7 @@ export function ChooseCard({ ex, onCheck }: { ex: Extract<Ex, { k: "choose" | "l
       ) : ex.k === "listen" ? (
         <>
           <Prompt>{lt("listenPick")}</Prompt>
-          <SayButton text={ex.say} />
+          <SayButton text={ex.say} big auto />
         </>
       ) : (
         <>
@@ -152,7 +162,7 @@ export function TypeCard({ ex, onCheck }: { ex: Extract<Ex, { k: "type" }>; onCh
   const t = useTheme();
   const lt = useLT();
   const [v, setV] = useState("");
-  const { canSpeak, speak } = useArabicVoice();
+  const { canSpeak } = useArabicVoice();
   const dict = !!ex.say && canSpeak;
   const ok = () => {
     const a = ex.target.split(/\s+/), b = v.trim().split(/\s+/);
@@ -161,7 +171,7 @@ export function TypeCard({ ex, onCheck }: { ex: Extract<Ex, { k: "type" }>; onCh
   return (
     <View style={{ gap: 12 }}>
       <Prompt>{dict ? lt("typeDict") : lt("typeQ")}</Prompt>
-      {dict ? <Pressable onPress={() => speak(ex.say!)} accessibilityRole="button" accessibilityLabel={lt("listen")} style={{ alignSelf: "center", width: 64, height: 64, borderRadius: 32, alignItems: "center", justifyContent: "center", backgroundColor: t.accentSoft }}><Icon name="speaker" size={28} color={t.accent} /></Pressable>
+      {dict ? <SayButton text={ex.say!} big />
         : <Text style={{ fontFamily: FONT.display, fontSize: 22, lineHeight: 28, color: t.ink, textAlign: "center" }}>{ex.q}</Text>}
       <TextInput value={v} onChangeText={setV} autoCorrect={false} autoCapitalize="none" accessibilityLabel={lt("typeQ")} placeholder="…"
         placeholderTextColor={t.muted}
@@ -209,14 +219,16 @@ export function SpeakCard({ ex, onCheck, onSkip }: { ex: Extract<Ex, { k: "speak
       subs.current.forEach((s) => s.remove());
       subs.current = [
         m.addListener("result", (e) => setOk(align(words, e.results[0]?.transcript ?? "").ok)),
-        m.addListener("end", () => setState((s) => (s === "listening" ? "done" : s))),
-        m.addListener("error", () => setState("done")),
+        // recognition leaves the audio session in record mode: the next sound sets playback again
+        m.addListener("end", () => { markAudioSessionChanged(); setState((s) => (s === "listening" ? "done" : s)); }),
+        m.addListener("error", () => { markAudioSessionChanged(); setState("done"); }),
       ];
+      markAudioSessionChanged();
       m.start({ lang: "ar-SA", interimResults: true, continuous: true, requiresOnDeviceRecognition: true, addsPunctuation: false });
       setState("listening");
     } catch { setState("unavailable"); }
   };
-  const stop = () => { try { speech()?.ExpoSpeechRecognitionModule.stop(); } catch { /* ended */ } setState("done"); };
+  const stop = () => { try { speech()?.ExpoSpeechRecognitionModule.stop(); } catch { /* ended */ } markAudioSessionChanged(); setState("done"); };
   const n = ok?.filter(Boolean).length ?? 0;
   return (
     <View style={{ gap: 12 }}>

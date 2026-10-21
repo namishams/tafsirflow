@@ -15,7 +15,7 @@ import {
 } from "@/web/arabic";
 import { logDay } from "@/web/learning";
 import { Girih, IllumFrame, MedalText, PracticeCelebrate, PracticeMedallion, PracticeStar, PracticeStarNum, PracticeWindow, ROSE, goldA, roseA, solidGoldA } from "../coursekit/art";
-import { tone, useClip } from "../coursekit/audio";
+import { preloadClips, tone, useClip } from "../coursekit/audio";
 import { GoldRing, StepIn, useNudge, useReduceMotion } from "../coursekit/motion";
 import { syncQuranTextApp } from "../coursekit/quranText";
 import { useCourseT } from "../coursekit/strings";
@@ -126,6 +126,10 @@ function LessonRun({ lesson }: { lesson: Lesson }) {
 
   const ex = queue[pos];
   const total = queue.length;
+  // the word recordings of this card and the next four load in the background, so they play from disk
+  useEffect(() => {
+    preloadClips(queue.slice(pos, pos + 5).flatMap((e) => { const r = (e as { ref?: string }).ref; return r ? [wordAudioUrl(r)] : []; }));
+  }, [pos, queue]);
   const isRetry = retried.current.has(pos);
 
   const finish = (s = stats) => {
@@ -508,7 +512,7 @@ function ListenCard({ ex, T, isRetry, canSpeak, speak }: { ex: Extract<Ex, { t: 
             style={({ pressed }) => ({ width: 96, height: 96, borderRadius: 48, overflow: "hidden", transform: [{ scale: pressed ? 0.95 : 1 }],
               shadowColor: "rgb(6,58,44)", shadowOpacity: 0.9, shadowRadius: 14, shadowOffset: { width: 0, height: 12 } })}>
             <Stage rounded={48} hairlines={false} style={{ width: 96, height: 96, alignItems: "center", justifyContent: "center" }}>
-              <Icon name={clip.state === "playing" ? "speaker" : "play"} size={36} color="#f3e2b6" />
+              {clip.state === "loading" ? <ActivityIndicator color="#f3e2b6" /> : <Icon name={clip.state === "playing" ? "speaker" : "play"} size={36} color="#f3e2b6" />}
             </Stage>
           </Pressable>
         </View>
