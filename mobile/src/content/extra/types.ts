@@ -23,6 +23,18 @@ export const EXTRA_KINDS = [
   "architecture-style", // regional styles and architectural elements
   "islamic-months", // the Hijri months and the calendar
   "pillars-hajj", // pillars of Islam and Iman, steps and places of Hajj and Umrah (encyclopedic, no rulings)
+  "salah", // the prayers, adhan, iqama, wudu, Friday, tarawih, night, Eid and funeral prayers (descriptions only)
+  "pillars", // five pillars and articles of faith (Shia usul tagged shia)
+  "holy-places", // Mecca, Medina, Jerusalem, Hebron; Shia shrines tagged shia
+  "saudi-heritage", // historic Islamic sites in Mecca, Medina, Taif, Badr and the Hejaz
+  "quran-facts", // revelation, compilation, qira'at, Meccan/Medinan, juz/hizb, sajdah
+  "angels-unseen", // angels, jinn, the hereafter (encyclopedic)
+  "akhlaq", // ethics and character
+  "prophet-family", // family of the Prophet
+  "battles", // the Prophet's expeditions and battles
+  "islamic-finance", // finance concepts
+  "halal-culture", // halal, food culture
+  "phrases", // greetings and phrases (Bismillah, InshaAllah, ...)
   "arabic-word", // Arabic word and root of the day from the app's own vocabulary
 ] as const;
 export type ExtraKind = (typeof EXTRA_KINDS)[number];

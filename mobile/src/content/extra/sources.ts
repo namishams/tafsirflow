@@ -2,6 +2,7 @@ import { RECITERS } from "@/lib/quran";
 import { VOCAB_DECKS, type Word } from "@/web/vocab";
 import { meaning } from "@/web/vocabI18n";
 import { ART, HISTORY, MOSQUES, RECITER_ARTICLES, SCHOLARS, SEERAH, WORKS, SPREAD, GOLDEN_AGE, TRADITIONS, WOMEN, PROPHETS, CALLIGRAPHY, ARCHITECTURE, MONTHS, PILLARS, type CatalogEntry } from "./catalog";
+import { SALAH, PILLARS_FAITH, HOLY_PLACES, SAUDI_HERITAGE, QURAN_FACTS, UNSEEN, ETHICS, FAMILY, BATTLES, FINANCE, HALAL, PHRASES } from "./catalog2";
 import { ISLAM_IN } from "./countries";
 import type { ExtraItem, ExtraKind } from "./types";
 import { WIKI_LICENSE, WIKI_LICENSE_URL, cached, claimDate, claimItem, claimYear, commonsImages, getJSON, label, wikiPages, wikidataEntities } from "./wiki";
@@ -212,5 +213,17 @@ export async function loadKind(kind: ExtraKind, lang: string, page: number): Pro
     case "architecture-style": return simple(kind, ARCHITECTURE, lang, page);
     case "islamic-months": return simple(kind, MONTHS, lang, page);
     case "pillars-hajj": return simple(kind, PILLARS, lang, page);
+    case "salah": return simple(kind, SALAH, lang, page);
+    case "pillars": return simple(kind, PILLARS_FAITH, lang, page);
+    case "holy-places": return simple(kind, HOLY_PLACES, lang, page);
+    case "saudi-heritage": return simple(kind, SAUDI_HERITAGE, lang, page);
+    case "quran-facts": return simple(kind, QURAN_FACTS, lang, page);
+    case "angels-unseen": return simple(kind, UNSEEN, lang, page);
+    case "akhlaq": return simple(kind, ETHICS, lang, page);
+    case "prophet-family": return simple(kind, FAMILY, lang, page);
+    case "battles": return simple(kind, BATTLES, lang, page);
+    case "islamic-finance": return simple(kind, FINANCE, lang, page);
+    case "halal-culture": return simple(kind, HALAL, lang, page);
+    case "phrases": return simple(kind, PHRASES, lang, page);
   }
 }
