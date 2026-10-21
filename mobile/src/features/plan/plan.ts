@@ -15,13 +15,14 @@ export const MOTIVATIONS: QuizMotivation[] = ["closer", "family", "prayer", "con
 export const MINUTES = [5, 10, 20, 30];
 
 export type StepId =
-  | "arabic" | "arabicMore" | "placement" | "qaida" | "shams" | "shamsShort" | "shamsLong" | "academy" | "academyMore"
+  | "arabic" | "arabicMore" | "arabicLang" | "placement" | "qaida" | "shams" | "shamsShort" | "shamsLong" | "academy" | "academyMore"
   | "tajweed" | "tajweedMore" | "memo" | "hifz" | "listen" | "recite" | "vocab" | "feed" | "duas" | "prayer";
 export type Step = { id: StepId; href: string; minutes: number; pro: boolean };
 /** every step: where it opens and whether it lies beyond the free part (first unit of each course is free) */
 export const STEPS: Record<StepId, Step> = {
   arabic: { id: "arabic", href: "/arabic", minutes: 10, pro: false },
   arabicMore: { id: "arabicMore", href: "/arabic", minutes: 10, pro: true },
+  arabicLang: { id: "arabicLang", href: "/arabic/lang", minutes: 10, pro: false },
   placement: { id: "placement", href: "/arabic/placement", minutes: 10, pro: false },
   qaida: { id: "qaida", href: "/arabic/read", minutes: 10, pro: false },
   shams: { id: "shams", href: "/shams/1", minutes: 10, pro: false },
@@ -57,10 +58,10 @@ export function buildWeeks(a: QuizAnswers): Week[] {
     case "read":
       weeks = a.level === "fluent" || a.level === "slow"
         ? [W("placement", "placement", "qaida"), W("reading", "qaida", "vocab"), W("tajweed1", "tajweed", "listen"), W("fatiha", "shams", "recite")]
-        : [W("letters", "qaida", "arabic"), W("reading", "qaida", "vocab"), W("tajweed1", "tajweed", "listen"), W("fatiha", "shams", "listen")];
+        : [W("letters", "qaida", "arabic"), W("reading", "qaida", "vocab"), W("tajweed1", "tajweed", "listen"), W("fatiha", "shams", "arabicLang")];
       break;
     case "understand":
-      weeks = [W("fatiha", "shams", "vocab"), W("short", "shamsShort", "feed"), W("academy", "academy", "vocab"), W("deeper", "shamsLong", "academyMore")];
+      weeks = [W("fatiha", "shams", "arabicLang"), W("short", "shamsShort", "arabicLang"), W("academy", "academy", "vocab"), W("deeper", "shamsLong", "academyMore")];
       break;
     case "juzamma":
       weeks = [W("memo1", "memo", "listen"), W("memo2", "hifz", "memo"), W("tajweed1", "tajweed", "listen"), W("recite", "recite", "tajweedMore")];

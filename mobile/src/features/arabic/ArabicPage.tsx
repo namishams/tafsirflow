@@ -19,6 +19,7 @@ import { ArabicHome } from "./ArabicHome";
 import { PAGE_C, SIGN_LESSONS } from "./texts";
 import { goBack } from "@/components/page";
 import { QaidaCard } from "../qaida/Screens";
+import { LangCourseCard } from "../arabic-lang/Screens";
 
 // /arabic – the website's "Read the Quran" page (src/app/[locale]/(app)/arabic/page.tsx): the alphabet on a ring of
 // light, the learning path, how you learn, the signs of the script, where the sounds come from, every letter at a
@@ -43,7 +44,7 @@ export function ArabicPage() {
         <Hero onPath={() => scroll.current?.scrollTo({ y: pathY.current, animated: !reduce })} />
 
         <View onLayout={(e) => { pathY.current = e.nativeEvent.layout.y; }} style={{ paddingHorizontal: 16, paddingTop: 48 }}>
-          <View style={{ marginBottom: 32 }}><QaidaCard /></View>
+          <View style={{ marginBottom: 32, gap: 16 }}><QaidaCard /><LangCourseCard /></View>
           <Text accessibilityRole="header" style={[h2, { marginBottom: 28 }]}>{c.pathTitle}</Text>
           <ArabicHome />
         </View>

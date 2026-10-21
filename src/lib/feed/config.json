@@ -107,6 +107,26 @@
         "deeplink": "quranmasterclass://arabic"
       },
       {
+        "id": "arabic-language",
+        "title": {
+          "de": "Arabisch verstehen: der Sprachkurs",
+          "en": "Understand Arabic: the language course",
+          "ar": "افهم العربية: دورة اللغة",
+          "tr": "Arapçayı anlayın: dil kursu",
+          "ur": "عربی سمجھیں: زبان کا کورس",
+          "fa": "عربی را بفهمید: دورهٔ زبان",
+          "ps": "عربي پوه شئ: د ژبې کورس",
+          "fr": "Comprendre l'arabe : le cours de langue",
+          "es": "Entienda el árabe: el curso de lengua",
+          "id": "Memahami bahasa Arab: kursus bahasa",
+          "ms": "Fahami bahasa Arab: kursus bahasa",
+          "bn": "আরবি বুঝুন: ভাষা কোর্স",
+          "ru": "Понимать арабский: языковой курс",
+          "zh": "理解阿拉伯语：语言课程"
+        },
+        "deeplink": "quranmasterclass://arabic/lang"
+      },
+      {
         "id": "abrahamic",
         "title": {
           "de": "Abraham und die abrahamitischen Religionen",

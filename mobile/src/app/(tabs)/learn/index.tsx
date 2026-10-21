@@ -17,6 +17,7 @@ import { TodayPlanCard } from "@/features/plan/TodayPlanCard";
 import { SrsEntryCard } from "@/features/srs";
 import { ReciterPathCard } from "@/features/reciter-path/Screens";
 import { QaidaCard } from "@/features/qaida/Screens";
+import { LangCourseCard } from "@/features/arabic-lang/Screens";
 import { useLearnT } from "@/features/learn/texts";
 import { DiscoverRows, DiscoverStream, useDiscoverStream } from "@/features/library/Discover";
 
@@ -67,6 +68,7 @@ export default function Masterclass() {
         <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 28 }}>
           <TodayPlanCard />
           <QaidaCard />
+          <LangCourseCard />
           <ReciterPathCard />
           {next && nextChapter ? (
             <GoldCard>
