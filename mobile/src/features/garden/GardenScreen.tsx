@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
-import { Alert, FlatList, Modal, Pressable, ScrollView, Text, View, useWindowDimensions } from "react-native";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Alert, FlatList, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router, useLocalSearchParams, type Href } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { Gesture, GestureDetector, GestureHandlerRootView } from "react-native-gesture-handler";
-import Animated, { Easing, useAnimatedStyle, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
+import Animated, { Easing, cancelAnimation, interpolate, useAnimatedStyle, useDerivedValue, useSharedValue, withDelay, withRepeat, withSequence, withSpring, withTiming, type SharedValue } from "react-native-reanimated";
 import { GoldButton, OutlineButton } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { goBack } from "@/components/page";
@@ -17,20 +17,21 @@ import { StickerArt } from "@/features/feed/Sticker";
 import { BrandFoot, CARD_SIZE, ShareSheet, type ShareFormat } from "@/features/feed/share";
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
-import { MAX_STAGE, SRCS, holdCelebrations, STICKER_GP_HINT, activeTree, canPlant, giveSticker, harvest, plotsOf, PLOT_STAGES, progressOf, resting, seasonNow, setActive, shamsRun, useGarden, weekGrowth, type Garden, type HistKind } from "./garden";
+import { MAX_STAGE, SRCS, stageOf, type Tree, holdCelebrations, STICKER_GP_HINT, activeTree, canPlant, giveSticker, harvest, plotsOf, PLOT_STAGES, progressOf, resting, seasonNow, setActive, shamsRun, useGarden, weekGrowth, type Garden, type HistKind } from "./garden";
 import { CATALOG_SIZE, RARITY_GP, SERIES, SERIES_SIZE, countOf, dailyPackReady, duplicates, isGiven, itemAt, openDailyPack, rarityOf, seriesOwned, totalOwned, useCatalog } from "./catalog";
 import { CatalogArt } from "./CatalogArt";
-import { Celestial, Courtyard, FarLayer, Parallax, Petals, Sky, Zellige, phaseNow, skyInk } from "./Scene";
-import { Plaque, TreeArt } from "./Tree";
+import { Petals, Zellige } from "./Scene";
+import { Fronds, Heavens, Motes, Panorama, SKIES, SkyFill, TERRACE_H, Terrace, gardenLevel, inkFor, useSky, type Sky } from "./Landscape";
+import { Plaque, TREE_H, TREE_W, TreeArt, geom } from "./Tree";
 import { PlantFlow } from "./PlantFlow";
-import { GardenNotifySetting, ProgressBar, chime, useGardenTick } from "./widgets";
+import { GardenNotifySetting, ProgressBar, StageCinematic, chime, useGardenTick } from "./widgets";
 import { GIFT_FULL, fillG, useGardenText } from "./texts";
 
-const SCENE_H = 470;
+const SCENE_H = 520;
 
 export default function GardenScreen() {
   useGardenTick();
-  const params = useLocalSearchParams<{ plant?: string; share?: string }>();
+  const params = useLocalSearchParams<{ plant?: string; share?: string; sky?: string; cine?: string; level?: string }>();
   const tx = useGardenText();
   const t = useTheme();
   const insets = useSafeAreaInsets();
@@ -39,17 +40,19 @@ export default function GardenScreen() {
   const reduce = useReducedMotion();
   const s = useGarden();
   const tree = activeTree(s, pro);
-  const [planting, setPlanting] = useState(params.plant === "1" || s.trees.length === 0);
+  const [planting, setPlanting] = useState(params.plant === "1" || params.plant === "demo" || s.trees.length === 0);
   const [gift, setGift] = useState(false);
   const [share, setShare] = useState(params.share === "1");
-  const phase = useMemo(() => phaseNow(), []);
+  const liveSky = useSky();
+  // "?sky=night|dawn|day|golden" pins the light (previews and store screenshots)
+  const sky = params.sky && params.sky in SKIES ? SKIES[params.sky as keyof typeof SKIES] : liveSky;
   const season = seasonNow();
 
   // pinch to zoom, drag to move (bounded), double tap resets
   const scale = useSharedValue(1), sx = useSharedValue(1), tx0 = useSharedValue(0), ty0 = useSharedValue(0), px = useSharedValue(0), py = useSharedValue(0);
   const plots = Math.max(plotsOf(s), s.trees.length);
   const plotW = Math.min(width * 0.78, 320);
-  const worldW = Math.max(width, plots * plotW + 40);
+  const worldW = Math.max(width + 80, plots * plotW + 40); // wider than the screen, so the idle camera drift never shows an edge
   const maxX = Math.max(0, (worldW - width) / 2 + 40);
   const pinch = Gesture.Pinch().onStart(() => { sx.value = scale.value; }).onUpdate((e) => { scale.value = Math.min(2.2, Math.max(0.8, sx.value * e.scale)); }).onEnd(() => { if (scale.value < 1) scale.value = withSpring(1); });
   const pan = Gesture.Pan().minDistance(8).onStart(() => { tx0.value = px.value; ty0.value = py.value; }).onUpdate((e) => {
@@ -59,48 +62,56 @@ export default function GardenScreen() {
   });
   const dbl = Gesture.Tap().numberOfTaps(2).onEnd(() => { scale.value = withSpring(1); px.value = withSpring(0); py.value = withSpring(0); });
   const gesture = Gesture.Simultaneous(pinch, pan, dbl);
-  const world = useAnimatedStyle(() => ({ transform: [{ translateX: px.value }, { translateY: py.value }, { scale: scale.value }] }));
+  // the camera: a gentle idle drift (parallax through every layer) and a soft push-in on events
+  const drift = useSharedValue(0), cam = useSharedValue(1);
+  useEffect(() => {
+    if (reduce) return;
+    drift.value = withRepeat(withSequence(withTiming(9, { duration: 9000, easing: Easing.inOut(Easing.sin) }), withTiming(-9, { duration: 10000, easing: Easing.inOut(Easing.sin) })), -1, true);
+    return () => cancelAnimation(drift);
+  }, [reduce, drift]);
+  const camX = useDerivedValue(() => px.value + drift.value);
+  const focus = () => { if (!reduce) cam.value = withSequence(withTiming(1.07, { duration: 650, easing: Easing.out(Easing.cubic) }), withDelay(1100, withTiming(1, { duration: 1100, easing: Easing.inOut(Easing.quad) }))); };
+  const world = useAnimatedStyle(() => ({ transform: [{ translateX: px.value + drift.value }, { translateY: py.value + (cam.value - 1) * 260 }, { scale: scale.value * cam.value }] }));
+  // a new decoration (from a gift) arrives with a dust of light around the tree
+  const [dust, setDust] = useState(0);
+  const traitsN = useRef(s.traits.length);
+  useEffect(() => { if (s.traits.length > traitsN.current) { setDust(Date.now()); focus(); } traitsN.current = s.traits.length; }, [s.traits.length]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (planting) {
     return (
-      <PlantFlow onDone={() => { setPlanting(false); router.setParams({ plant: undefined }); }} onLater={s.trees.length ? () => setPlanting(false) : () => goBack()} />
+      <PlantFlow demo={params.plant === "demo"} onDone={() => { setPlanting(false); router.setParams({ plant: undefined }); }} onLater={s.trees.length ? () => setPlanting(false) : () => goBack()} />
     );
   }
   if (!tree) return null;
   const p = progressOf(tree.gp, pro);
-  const ink = skyInk(phase);
-  const petal = tree.type === "pomegranate" ? "#ff8a65" : s.traits.includes("blossoms") ? "#f6d6e0" : "#9fd28a";
+  const ink = inkFor(sky);
+  const petal = tree.type === "pomegranate" ? "#e0c184" : s.traits.includes("blossoms") ? "#f5ebd7" : "#9fd28a";
+  const level = __DEV__ && params.level ? Number(params.level) : gardenLevel(s.trees.map((x) => stageOf(x.gp, pro)));
+  const H = SCENE_H + insets.top;
 
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: t.bg }}>
       <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 40 }} bounces={false}>
-        {/* ---------- the scene ---------- */}
-        <View style={{ height: SCENE_H + insets.top, overflow: "hidden" }}>
+        {/* ---------- the scene: a living landscape in parallax ---------- */}
+        <View style={{ height: H, overflow: "hidden" }}>
         <GestureDetector gesture={gesture}>
           <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} accessibilityLabel={tx.zoomHint}>
-            <Sky phase={phase} />
-            <Celestial phase={phase} width={width} height={SCENE_H} />
-            <Parallax x={px} factor={0.25} style={{ position: "absolute", left: -width * 0.15, top: insets.top + 150 }}><FarLayer width={width} phase={phase} /></Parallax>
+            <Panorama width={width} height={H} ground={H - TERRACE_H + 6} sky={sky} level={level} px={camX} still={reduce} scale={1.9} />
             <Petals width={width} height={SCENE_H} color={petal} still={reduce} />
             <Animated.View style={[{ position: "absolute", left: (width - worldW) / 2, width: worldW, bottom: 0, height: SCENE_H - 40 }, world]}>
               <View style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
-                <Zellige width={worldW} />
-                <Courtyard width={worldW} fountain bench={s.traits.includes("bench")} still={reduce} />
+                <Terrace width={worldW} level={level} night={sky.night} still={reduce} fountain={s.traits.includes("fountain")} bench={s.traits.includes("bench")} interactive />
               </View>
-              <View style={{ position: "absolute", bottom: 74, left: 0, right: 0, flexDirection: "row", justifyContent: "center", alignItems: "flex-end" }}>
+              <View style={{ position: "absolute", bottom: TERRACE_H - 12 - 30 - plotW * (48 / 360), left: 0, right: 0, flexDirection: "row", justifyContent: "center", alignItems: "flex-end" }}>
                 {Array.from({ length: plots }, (_, i) => {
                   const tr = s.trees[i];
                   if (!tr) return <EmptyPlot key={i} w={plotW} pro={pro} canPlantNow={canPlant(s, pro)} onPlant={() => setPlanting(true)} />;
-                  const pp = progressOf(tr.gp, pro);
-                  return (
-                    <Pressable key={tr.id} onPress={() => { tick(); setActive(tr.id); }} accessibilityRole="button" accessibilityLabel={`${tr.name}, ${tx[`s${pp.stage}` as "s0"]}`} style={{ width: plotW, alignItems: "center" }}>
-                      <TreeArt id={tr.id} type={tr.type} stage={pp.stage} traits={s.traits} season={season} resting={resting(s)} fruits={tr.fruits} size={plotW} still={reduce} />
-                      <View style={{ marginTop: -18 }}><Plaque name={tr.name || tx[`t_${tr.type}`]} width={Math.min(170, plotW * 0.6)} /></View>
-                    </Pressable>
-                  );
+                  return <TreePlot key={tr.id} tr={tr} w={plotW} active={tr.id === tree.id} s={s} season={season} reduce={reduce} dust={tr.id === tree.id ? dust : 0} onEvent={focus} />;
                 })}
               </View>
             </Animated.View>
+            <Motes width={width} height={H} night={sky.night} still={reduce} />
+            <Fronds width={width} height={H} px={camX} />
           </View>
         </GestureDetector>
             {/* top bar: outside the scene's gestures, whose double tap would swallow the buttons' taps */}
@@ -148,10 +159,101 @@ export default function GardenScreen() {
         </View>
       </ScrollView>
       {gift ? <GiftSheet onClose={() => setGift(false)} /> : null}
+      {__DEV__ && params.cine ? <StageCinematic ev={{ tree, stage: Number(params.cine) || 1 }} onClose={() => router.setParams({ cine: undefined })} /> : null}
       {share ? <ShareSheet visible noDecoration onClose={() => setShare(false)} link="https://quranmasterclass.com/app" message={`${tx.shareMsg}: ${tree.name}, ${tx[`s${p.stage}` as "s0"]}`} renderCard={(f) => <GardenCard format={f} />} /> : null}
     </GestureHandlerRootView>
   );
 }
+/** one tree in the scene: a tap waters it (a stream of drops into the basin), rustles the crown and lets a few
+ *  leaves fall; with ripe fruits the active tree is harvested by a tap (the same harvest as the button below), the
+ *  fruits float up into a golden glow. New decorations arrive with a dust of light. All purely visual. */
+type BurstKind = "water" | "fruit" | "dust";
+function TreePlot({ tr, w, active, s, season, reduce, dust, onEvent }: { tr: Tree; w: number; active: boolean; s: Garden; season: ReturnType<typeof seasonNow>; reduce: boolean; dust: number; onEvent: () => void }) {
+  const tx = useGardenText();
+  const { pro } = usePro();
+  const pp = progressOf(tr.gp, pro);
+  const [nudge, setNudge] = useState(0);
+  const [burst, setBurst] = useState<{ id: number; kind: BurstKind; xp: number } | null>(null);
+  useEffect(() => { if (dust) { success(); setBurst({ id: dust, kind: "dust", xp: 0 }); setNudge((n) => n + 1); } }, [dust]);
+  const g = geom(tr.type, pp.stage), k = w / TREE_W;
+  const cx = w / 2, cy = (pp.stage < 3 ? 300 : g.top + g.crown * 0.55) * k, by = 312 * k;
+  const ripe = active && tr.fruits > 0 && pp.stage >= 5;
+  const onPress = () => {
+    if (ripe) {
+      const xp = harvest(tr.id);
+      if (xp) { chime(); onEvent(); setBurst({ id: Date.now(), kind: "fruit", xp }); setNudge((n) => n + 1); return; }
+    }
+    tick(); setActive(tr.id); setBurst({ id: Date.now(), kind: "water", xp: 0 });
+    setTimeout(() => { setNudge((n) => n + 1); tick(); }, reduce ? 0 : 520);
+  };
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${tr.name}, ${tx[`s${pp.stage}` as "s0"]}${ripe ? `. ${fillG(tx.fruitsReady, { n: tr.fruits })}` : ""}`} style={{ width: w, alignItems: "center" }}>
+      <View style={{ width: w, height: (TREE_H * w) / TREE_W }}>
+        {ripe ? <RipeHalo x={cx} y={cy} r={Math.max(40, g.crown * k * 1.1)} still={reduce} /> : null}
+        <TreeArt id={tr.id} type={tr.type} stage={pp.stage} traits={s.traits} season={season} resting={resting(s)} fruits={tr.fruits} size={w} still={reduce} nudge={nudge} />
+        {burst && !reduce ? <Burst key={burst.id} kind={burst.kind} cx={cx} cy={cy} by={by} spread={Math.max(30, g.crown * k)} leaf={tr.type === "palm" ? "#3f9a68" : "#7fc48a"} /> : null}
+        {burst?.kind === "fruit" ? <FloatText key={`t${burst.id}`} x={cx} y={cy - 30} text={fillG(tx.harvested, { n: burst.xp })} still={reduce} /> : null}
+      </View>
+      <View style={{ marginTop: -18 }}><Plaque name={tr.name || tx[`t_${tr.type}`]} width={Math.min(170, w * 0.6)} /></View>
+    </Pressable>
+  );
+}
+function RipeHalo({ x, y, r, still }: { x: number; y: number; r: number; still: boolean }) {
+  const v = useSharedValue(0.5);
+  useEffect(() => { if (still) return; v.value = withRepeat(withTiming(1, { duration: 1600, easing: Easing.inOut(Easing.sin) }), -1, true); return () => cancelAnimation(v); }, [still, v]);
+  const st = useAnimatedStyle(() => ({ opacity: 0.25 + v.value * 0.45, transform: [{ scale: 0.92 + v.value * 0.1 }] }));
+  return <Animated.View pointerEvents="none" style={[{ position: "absolute", left: x - r, top: y - r, width: r * 2, height: r * 2, borderRadius: r, borderWidth: 1.5, borderColor: "rgba(243,226,182,0.8)", backgroundColor: "rgba(255,226,150,0.12)" }, st]} />;
+}
+/** one pooled burst: a watering stream with a splash and falling leaves, fruits rising into a gold glow, or a dust
+ *  of light (at most 12 particles, one clock) */
+function Burst({ kind, cx, cy, by, spread, leaf }: { kind: BurstKind; cx: number; cy: number; by: number; spread: number; leaf: string }) {
+  const v = useSharedValue(0);
+  const dur = kind === "water" ? 2200 : kind === "fruit" ? 1500 : 1800;
+  useEffect(() => { v.value = withTiming(1, { duration: dur, easing: Easing.linear }); }, [v, dur]);
+  const glow = useAnimatedStyle(() => {
+    const k = v.value;
+    if (kind === "water") return { opacity: interpolate(k, [0.2, 0.3, 0.6], [0, 0.8, 0], "clamp"), transform: [{ scale: interpolate(k, [0.2, 0.6], [0.3, 1.4], "clamp") }] };
+    return { opacity: interpolate(k, [0, 0.25, 1], [0, 0.9, 0]), transform: [{ scale: 0.5 + k * 0.9 }] };
+  });
+  const gx = kind === "water" ? cx : cx, gy = kind === "water" ? by : kind === "fruit" ? cy - 70 : cy, gr = kind === "water" ? 50 : spread * 1.2;
+  const n = kind === "water" ? 12 : kind === "fruit" ? 8 : 12;
+  return (
+    <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+      <Animated.View style={[{ position: "absolute", left: gx - gr, top: gy - gr * (kind === "water" ? 0.35 : 1), width: gr * 2, height: kind === "water" ? gr * 0.7 : gr * 2, borderRadius: gr, backgroundColor: kind === "water" ? "rgba(215,250,236,0.35)" : "rgba(255,222,140,0.28)", borderWidth: kind === "water" ? 1.2 : 0, borderColor: "#effff8" }, glow]} />
+      {Array.from({ length: n }, (_, i) => <Particle key={i} i={i} n={n} v={v} kind={kind} cx={cx} cy={cy} by={by} spread={spread} leaf={leaf} />)}
+    </View>
+  );
+}
+function Particle({ i, n, v, kind, cx, cy, by, spread, leaf }: { i: number; n: number; v: SharedValue<number>; kind: BurstKind; cx: number; cy: number; by: number; spread: number; leaf: string }) {
+  const a = (i / n) * Math.PI * 2 + i * 0.7, dx = Math.cos(a) * spread * (0.4 + (i % 3) * 0.25), dy0 = Math.sin(a) * spread * 0.4;
+  const st = useAnimatedStyle(() => {
+    const k = v.value;
+    if (kind === "water") {
+      if (i < 8) { // the stream: drops along an arc from the upper left into the basin
+        const t = interpolate(k, [i * 0.03, i * 0.03 + 0.28], [0, 1], "clamp");
+        const sx = cx - spread * 1.6, sy = by - spread * 2.2;
+        return { opacity: t > 0 && t < 1 ? 0.95 : 0, transform: [{ translateX: sx + (cx - sx) * t + (i % 2) * 3 }, { translateY: sy + (by - 6 - sy) * t * t - Math.sin(t * Math.PI) * 30 }, { scaleY: 1.6 }] };
+      }
+      // then leaves shaken loose by the rustle
+      const t = interpolate(k, [0.3, 1], [0, 1], "clamp");
+      return { opacity: interpolate(t, [0, 0.1, 0.75, 1], [0, 1, 0.9, 0]), transform: [{ translateX: cx + dx * 0.5 + Math.sin(t * 6 + i) * 14 }, { translateY: cy + dy0 + t * (110 + (i % 3) * 30) }, { rotate: `${t * 400 + i * 50}deg` }, { scaleX: Math.cos(t * 12 + i) }] };
+    }
+    if (kind === "fruit") return { opacity: interpolate(k, [0, 0.1, 0.75, 1], [0, 1, 1, 0]), transform: [{ translateX: cx + dx * (1 - k) * 0.8 - 4 }, { translateY: cy + dy0 * (1 - k) - k * (70 + (i % 3) * 12) }, { scale: 1.2 - k * 0.7 }] };
+    const r = spread * (0.3 + k * (0.9 + (i % 4) * 0.15));
+    return { opacity: interpolate(k, [0, 0.15, 0.7, 1], [0, 1, 0.8, 0]), transform: [{ translateX: cx + Math.cos(a + k * 1.2) * r - 2 }, { translateY: cy + Math.sin(a + k * 1.2) * r * 0.8 - k * 30 }, { scale: 1 - k * 0.5 }] };
+  });
+  const style = kind === "fruit" ? { width: 10, height: 10, borderRadius: 5, backgroundColor: "#f3c35a", shadowColor: "#ffd98a", shadowOpacity: 1, shadowRadius: 7, shadowOffset: { width: 0, height: 0 } }
+    : kind === "dust" ? { width: 4, height: 4, borderRadius: 2, backgroundColor: "#fff2c4", shadowColor: "#ffe08a", shadowOpacity: 1, shadowRadius: 5, shadowOffset: { width: 0, height: 0 } }
+    : i < 8 ? { width: 4, height: 6, borderRadius: 3, backgroundColor: "#dff8ee" } : { width: 9, height: 5, borderRadius: 5, backgroundColor: leaf };
+  return <Animated.View style={[{ position: "absolute" }, style, st]} />;
+}
+function FloatText({ x, y, text, still }: { x: number; y: number; text: string; still: boolean }) {
+  const v = useSharedValue(still ? 0.5 : 0);
+  useEffect(() => { if (!still) v.value = withSequence(withTiming(0.5, { duration: 500, easing: Easing.out(Easing.cubic) }), withDelay(700, withTiming(1, { duration: 500 }))); }, [still, v]);
+  const st = useAnimatedStyle(() => ({ opacity: interpolate(v.value, [0, 0.2, 0.7, 1], [0, 1, 1, 0]), transform: [{ translateY: -v.value * 50 }] }));
+  return <Animated.Text accessibilityLiveRegion="polite" style={[{ position: "absolute", left: x - 100, width: 200, top: y, textAlign: "center", fontFamily: FONT.display, fontSize: 22, color: "#f6e7bf", textShadowColor: "rgba(0,0,0,0.5)", textShadowRadius: 6 }, st]}>{text}</Animated.Text>;
+}
+
 const todayNum = () => { const t = Date.now(); return Math.floor((t - new Date(t).getTimezoneOffset() * 60000) / 86400000); };
 
 function RoundBtn({ icon, label, onPress }: { icon: "chevronLeft" | "grid" | "send"; label: string; onPress: () => void }) {
@@ -362,14 +464,16 @@ function GardenCard({ format }: { format: ShareFormat }) {
   const tree = activeTree(s, pro)!;
   const p = progressOf(tree.gp, pro);
   const { w, h } = CARD_SIZE[format];
-  const phase = phaseNow();
+  const sky: Sky = useMemo(() => SKIES.golden, []);
+  const ground = h - 20 - 46 - w * 0.9 * (48 / 360) + 14;
   return (
     <View style={{ width: w, height: h, overflow: "hidden", alignItems: "center", justifyContent: "flex-end" }}>
-      <Sky phase={phase} />
-      <Celestial phase={phase} width={w} height={h} />
+      <SkyFill sky={sky} />
+      <Heavens sky={sky} width={w} height={ground} still />
+      <Panorama width={w} height={h} ground={ground} sky={sky} level={stageOf(tree.gp, pro)} still withSky={false} />
       <View style={{ position: "absolute", top: format === "story" ? 70 : 26, left: 0, right: 0, alignItems: "center", gap: 4 }}>
-        <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: skyInk(phase) }}>{tx.title}</Text>
-        <Text style={{ fontFamily: FONT.display, fontSize: 26, color: skyInk(phase) }}>{tx[`s${p.stage}` as "s0"]}</Text>
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: inkFor(sky) }}>{tx.title}</Text>
+        <Text style={{ fontFamily: FONT.display, fontSize: 26, color: inkFor(sky) }}>{tx[`s${p.stage}` as "s0"]}</Text>
       </View>
       <TreeArt id={tree.id} type={tree.type} stage={p.stage} traits={s.traits} season={seasonNow()} fruits={tree.fruits} size={w * 0.9} still />
       <View style={{ marginTop: -14 }}><Plaque name={tree.name || tx[`t_${tree.type}`]} width={160} /></View>

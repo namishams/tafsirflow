@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { Modal, Pressable, Switch, Text, View } from "react-native";
+import { Modal, Pressable, StyleSheet, Switch, Text, View, useWindowDimensions } from "react-native";
 import { router, type Href } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, RadialGradient, Stop } from "react-native-svg";
-import Animated, { Easing, FadeIn, FadeOut, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withSpring, withTiming } from "react-native-reanimated";
+import Animated, { Easing, FadeIn, FadeOut, interpolate, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withSpring, withTiming, type SharedValue } from "react-native-reanimated";
 import { GoldButton, OutlineButton } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { FONT, R, stage as stageC, useTheme } from "@/lib/theme";
@@ -17,6 +17,7 @@ import { FREE_STAGE, MAX_STAGE, activeTree, markFlourishSeen, onSeriesReward, on
 import { onDrops, type Drop } from "./catalog";
 import { readGardenNotify, rescheduleGarden, setGardenNotify } from "./notify";
 import { TreeArt } from "./Tree";
+import { Motes, Panorama, SKIES } from "./Landscape";
 import { CatalogArt } from "./CatalogArt";
 import { fillG, useGardenText } from "./texts";
 
@@ -163,45 +164,84 @@ function DropToast({ drops }: { drops: Drop[] }) {
   );
 }
 
-function StageCinematic({ ev, onClose }: { ev: StageUp; onClose: () => void }) {
+/** the stage-up as a short cinematic: the landscape rises, motes of light gather into the tree, a flash, and the
+ *  tree grows from its old shape into the new one; the words follow. A still under Reduce Motion. */
+export function StageCinematic({ ev, onClose }: { ev: StageUp; onClose: () => void }) {
   const tx = useGardenText();
   const { pro } = usePro();
   const reduce = useReducedMotion();
   const price = useProPrice();
-  const zoom = useSharedValue(reduce ? 1 : 0.7), glow = useSharedValue(reduce ? 1 : 0);
+  const { width, height } = useWindowDimensions();
+  const sky = SKIES.golden;
+  const t = useSharedValue(reduce ? 1 : 0), reveal = useSharedValue(reduce ? 1 : 0.5), zoom = useSharedValue(reduce ? 1 : 1.12), glow = useSharedValue(reduce ? 1 : 0);
   useEffect(() => {
     if (reduce) return;
-    zoom.value = withSequence(withTiming(1.12, { duration: 1400, easing: Easing.out(Easing.cubic) }), withSpring(1, { damping: 14 }));
-    glow.value = withSequence(withTiming(1, { duration: 900 }), withRepeat(withSequence(withTiming(0.7, { duration: 1400 }), withTiming(1, { duration: 1400 })), -1, true));
-  }, [reduce, zoom, glow]);
-  const zs = useAnimatedStyle(() => ({ transform: [{ scale: zoom.value }] }));
-  const gs = useAnimatedStyle(() => ({ opacity: glow.value }));
+    t.value = withTiming(1, { duration: 2600, easing: Easing.linear });
+    reveal.value = withDelay(1300, withTiming(1, { duration: 1600, easing: Easing.out(Easing.cubic) }));
+    zoom.value = withSequence(withTiming(1.16, { duration: 1300, easing: Easing.inOut(Easing.quad) }), withTiming(1, { duration: 1500, easing: Easing.out(Easing.cubic) }));
+    glow.value = withDelay(1200, withSequence(withTiming(1, { duration: 500 }), withRepeat(withSequence(withTiming(0.7, { duration: 1400 }), withTiming(1, { duration: 1400 })), -1, true)));
+    setTimeout(success, 1250);
+  }, [reduce, t, reveal, zoom, glow]);
+  const camSt = useAnimatedStyle(() => ({ transform: [{ scale: zoom.value }] }));
+  const gs = useAnimatedStyle(() => ({ opacity: glow.value, transform: [{ scale: 0.7 + glow.value * 0.3 }] }));
+  const flash = useAnimatedStyle(() => ({ opacity: interpolate(t.value, [0.44, 0.5, 0.7], [0, 0.6, 0], "clamp") }));
+  const oldSt = useAnimatedStyle(() => ({ opacity: interpolate(t.value, [0.45, 0.55], [1, 0], "clamp") }));
+  const size = Math.min(260, width * 0.62), th = size * 1.2;
+  const newSt = useAnimatedStyle(() => {
+    const k = interpolate(t.value, [0.48, 0.85], [0, 1], "clamp"), e = 1 - Math.pow(1 - k, 3);
+    const over = Math.sin(k * Math.PI) * 0.05;
+    return { opacity: interpolate(t.value, [0.46, 0.52], [0, 1], "clamp"), transform: [{ translateY: th * 0.43 }, { scaleY: 0.78 + e * 0.22 + over }, { scaleX: 0.88 + e * 0.12 }, { translateY: -th * 0.43 }] };
+  });
+  const textSt = useAnimatedStyle(() => ({ opacity: interpolate(t.value, [0.7, 0.95], [0, 1], "clamp"), transform: [{ translateY: interpolate(t.value, [0.7, 0.95], [14, 0], "clamp") }] }));
   const s = readGarden();
   const flourish = !pro && ev.stage >= FREE_STAGE && !s.flourishSeen;
   const close = () => { if (flourish) markFlourishSeen(); onClose(); };
+  const ground = height * 0.56;
   return (
     <Modal visible transparent animationType="fade" onRequestClose={close} statusBarTranslucent>
-      <LinearGradient colors={["#02100b", "#0b3d2e", "#02100b"]} style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: 24 }}>
-        <Animated.View style={[{ position: "absolute", width: 420, height: 420 }, gs]}>
-          <Svg width={420} height={420}><Defs><RadialGradient id="cg" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#ffe9a8" stopOpacity={0.55} /><Stop offset="1" stopColor="#ffe9a8" stopOpacity={0} /></RadialGradient></Defs><Circle cx={210} cy={210} r={210} fill="url(#cg)" /></Svg>
+      <View style={{ flex: 1, backgroundColor: "#02100b" }}>
+        <Animated.View style={[StyleSheet.absoluteFill, camSt]}>
+          <Panorama width={width} height={height} ground={ground} sky={sky} level={ev.stage} reveal={reveal} still={reduce} scale={1.7} />
+          <LinearGradient colors={["rgba(2,16,11,0)", "rgba(2,16,11,0.92)", "#02100b"]} locations={[0, 0.3, 1]} style={{ position: "absolute", left: 0, right: 0, top: ground - 20, bottom: 0 }} />
+          <Animated.View style={[{ position: "absolute", left: width / 2 - 210, top: ground - th * 0.62 - 210, width: 420, height: 420 }, gs]}>
+            <Svg width={420} height={420}><Defs><RadialGradient id="cg" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#ffe9a8" stopOpacity={0.6} /><Stop offset="1" stopColor="#ffe9a8" stopOpacity={0} /></RadialGradient></Defs><Circle cx={210} cy={210} r={210} fill="url(#cg)" /></Svg>
+          </Animated.View>
+          <View style={{ position: "absolute", left: width / 2 - size / 2, top: ground - th * 0.87 }}>
+            {ev.stage > 0 ? <Animated.View style={[{ position: "absolute" }, oldSt]}><TreeArt id={ev.tree.id} type={ev.tree.type} stage={ev.stage - 1} traits={s.traits} season={seasonNow()} size={size} still /></Animated.View> : null}
+            <Animated.View style={newSt}><TreeArt id={ev.tree.id} type={ev.tree.type} stage={ev.stage} traits={s.traits} season={seasonNow()} size={size} still={reduce} /></Animated.View>
+          </View>
+          {!reduce ? Array.from({ length: 12 }, (_, i) => <Gather key={i} i={i} t={t} cx={width / 2} cy={ground - th * 0.45} w={width} h={height} />) : null}
+          <Motes width={width} height={height} night={0} still={reduce} top={0.2} />
         </Animated.View>
-        <Animated.View style={zs}><TreeArt id={ev.tree.id} type={ev.tree.type} stage={ev.stage} traits={s.traits} season={seasonNow()} size={240} still={reduce} /></Animated.View>
-        <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 26, color: "#f3e2b6", textAlign: "center", marginTop: 12 }}>{flourish ? tx.flourishTitle : fillG(tx.stageUp, { n: ev.stage })}</Text>
-        <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: stageC.textSoft, textAlign: "center", marginTop: 8, maxWidth: 360 }}>
-          {flourish ? tx.flourishBody : fillG(tx.stageUpBody, { name: ev.tree.name || tx[`t_${ev.tree.type}`], stage: tx[`s${ev.stage}` as "s0"] })}
-        </Text>
-        <View style={{ gap: 10, marginTop: 22, alignSelf: "stretch", maxWidth: 380, width: "100%" }}>
-          {flourish ? <>
-            <GoldButton title={withPrice(tx.flourishCta, price)} icon="starBig" onPress={() => { close(); openPro("general"); }} />
-            <OutlineButton title={tx.continueFree} onStage onPress={close} />
-          </> : <>
-            <GoldButton title={tx.shareMoment} icon="send" onPress={() => { close(); router.push("/garden?share=1" as Href); }} />
-            <OutlineButton title={tx.close} onStage onPress={close} />
-          </>}
-        </View>
-      </LinearGradient>
+        <Animated.View pointerEvents="none" style={[StyleSheet.absoluteFill, { backgroundColor: "#fff4d6" }, flash]} />
+        <Animated.View style={[{ position: "absolute", left: 24, right: 24, bottom: 40, alignItems: "center" }, textSt]}>
+          <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 26, color: "#f3e2b6", textAlign: "center" }}>{flourish ? tx.flourishTitle : fillG(tx.stageUp, { n: ev.stage })}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: stageC.textSoft, textAlign: "center", marginTop: 8, maxWidth: 360 }}>
+            {flourish ? tx.flourishBody : fillG(tx.stageUpBody, { name: ev.tree.name || tx[`t_${ev.tree.type}`], stage: tx[`s${ev.stage}` as "s0"] })}
+          </Text>
+          <View style={{ gap: 10, marginTop: 22, alignSelf: "stretch", maxWidth: 380, width: "100%" }}>
+            {flourish ? <>
+              <GoldButton title={withPrice(tx.flourishCta, price)} icon="starBig" onPress={() => { close(); openPro("general"); }} />
+              <OutlineButton title={tx.continueFree} onStage onPress={close} />
+            </> : <>
+              <GoldButton title={tx.shareMoment} icon="send" onPress={() => { close(); router.push("/garden?share=1" as Href); }} />
+              <OutlineButton title={tx.close} onStage onPress={close} />
+            </>}
+          </View>
+        </Animated.View>
+      </View>
     </Modal>
   );
+}
+/** a mote of light flying from the edge of the screen into the tree */
+function Gather({ i, t, cx, cy, w, h }: { i: number; t: SharedValue<number>; cx: number; cy: number; w: number; h: number }) {
+  const a = (i / 12) * Math.PI * 2 + 0.3, sx = cx + Math.cos(a) * Math.max(w, h) * 0.6, sy = cy + Math.sin(a) * Math.max(w, h) * 0.5;
+  const st = useAnimatedStyle(() => {
+    const k = interpolate(t.value, [i * 0.012, 0.45], [0, 1], "clamp"), e = k * k;
+    const sw = Math.sin(k * Math.PI) * 40;
+    return { opacity: k > 0 && k < 1 ? 0.95 : 0, transform: [{ translateX: sx + (cx - sx) * e + Math.cos(a + 1.57) * sw }, { translateY: sy + (cy - sy) * e + Math.sin(a + 1.57) * sw }, { scale: 1.3 - e * 0.6 }] };
+  });
+  return <Animated.View pointerEvents="none" style={[{ position: "absolute", width: 6, height: 6, borderRadius: 3, backgroundColor: "#fff2c4", shadowColor: "#ffd98a", shadowOpacity: 1, shadowRadius: 8, shadowOffset: { width: 0, height: 0 } }, st]} />;
 }
 function SeriesModal({ r, onClose }: { r: SeriesReward; onClose: () => void }) {
   const tx = useGardenText();

@@ -3,7 +3,7 @@ import { Platform, Pressable, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
-import { Display, Eyebrow, GoldButton, LogoMark, OutlineButton, Stage, TextLink } from "@/components/brand";
+import { Display, Eyebrow, GoldButton, OutlineButton, Stage, TextLink, Wordmark } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { intlLocale, useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
@@ -14,6 +14,8 @@ import { FONT, R, stage } from "@/lib/theme";
 import { remoteConfig } from "@/features/feed/remote";
 import { success, tick } from "@/features/feed/haptics";
 import { alpha } from "@/features/extra/art";
+import { JourneyStage } from "@/features/garden/Landscape";
+import Svg, { Circle, Defs, RadialGradient, Stop } from "react-native-svg";
 import type { IntroOffer, ProPlan } from "@/lib/iap";
 import { STEPS, type Plan } from "./plan";
 import { fmt, usePlanT } from "./texts";
@@ -116,7 +118,7 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
         return (
           <Pressable key={x.sku} onPress={() => { tick(); setSku(x.sku); }} accessibilityRole="radio" accessibilityState={{ checked: on }}
             accessibilityLabel={`${x.period === "year" ? p.yearly : p.monthly}, ${x.price} ${per(x)}${intro ? `. ${intro}` : ""}`}
-            style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: 16, borderRadius: R.card, borderWidth: on ? 2 : 1, borderColor: on ? stage.gold : alpha(stage.gold, 0.3), backgroundColor: on ? alpha(stage.gold, 0.1) : "rgba(255,255,255,0.03)" }}>
+            style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: 16, borderRadius: R.card, borderWidth: on ? 2 : 1, borderColor: on ? stage.gold : alpha(stage.gold, 0.3), backgroundColor: on ? "rgba(58,47,18,0.85)" : "rgba(6,30,23,0.72)" }}>
             <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: on ? stage.gold : stage.goldSoft, alignItems: "center", justifyContent: "center" }}>
               {on ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: stage.gold }} /> : null}
             </View>
@@ -144,7 +146,7 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
     </View>
   );
   const compare = cfg.showCompare === false ? null : (
-    <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: stage.hair, overflow: "hidden" }}>
+    <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: stage.hair, overflow: "hidden", backgroundColor: "rgba(6,30,23,0.72)" }}>
       <View style={{ flexDirection: "row", paddingHorizontal: 12, paddingVertical: 8, backgroundColor: "rgba(255,255,255,0.05)" }}>
         <Text style={{ flex: 1.3 }} />
         <Text style={{ flex: 1, fontFamily: FONT.bold, fontSize: 11, letterSpacing: 1, textTransform: "uppercase", color: stage.textMuted, textAlign: "center" }}>{p.compareFree}</Text>
@@ -162,7 +164,7 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
   const compact = cfg.variant === "compact";
 
   return (
-    <Stage hairlines={false} style={{ flex: 1 }}>
+    <JourneyStage progress={1} horizon={0.205} veil={0.7} level={5}>
       <ScrollView contentContainerStyle={{ padding: 20, paddingTop: insets.top + 10, paddingBottom: insets.bottom + 24, gap: 18 }}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
           <Pressable onPress={free} accessibilityRole="button" accessibilityLabel={p.continueFree} hitSlop={8}
@@ -172,7 +174,10 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
           </Pressable>
         </View>
         <View style={{ alignItems: "center" }}>
-          <LogoMark size={46} />
+          <View style={{ width: 120, height: 120, alignItems: "center", justifyContent: "center", marginVertical: -30 }}>
+            <Svg width={120} height={120} style={{ position: "absolute" }}><Defs><RadialGradient id="pwg" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#ffe2a0" stopOpacity={0.55} /><Stop offset="1" stopColor="#ffe2a0" stopOpacity={0} /></RadialGradient></Defs><Circle cx={60} cy={60} r={60} fill="url(#pwg)" /></Svg>
+            <Wordmark variant="stacked" tone="gold" height={44} />
+          </View>
           <Eyebrow onStage style={{ marginTop: 12 }}>{tr("pro.name")}</Eyebrow>
           <Display onStage size="largeTitle" style={{ marginTop: 8, textAlign: "center" }}>{pwTitle}</Display>
           <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: stage.textSoft, marginTop: 8, textAlign: "center" }}>{pwLead}</Text>
@@ -193,6 +198,6 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
           <TextLink onStage title={tr("account.privacy")} onPress={() => openDoc("privacy")} style={{ fontSize: 13 }} />
         </View>
       </ScrollView>
-    </Stage>
+    </JourneyStage>
   );
 }

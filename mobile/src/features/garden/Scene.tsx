@@ -131,7 +131,7 @@ function Petal({ i, width, height, color }: { i: number; width: number; height: 
   const x0 = ((i * 37) % 80) / 100 * width + width * 0.1;
   const st = useAnimatedStyle(() => ({
     opacity: interpolate(t.value, [0, 0.1, 0.85, 1], [0, 0.9, 0.9, 0]),
-    transform: [{ translateX: x0 + Math.sin(t.value * 6 + i) * 22 + t.value * 30 }, { translateY: height * 0.15 + t.value * height * 0.8 }, { rotate: `${t.value * 540 + i * 40}deg` }],
+    transform: [{ translateX: x0 + Math.sin(t.value * 6 + i) * 22 + Math.sin(t.value * 17 + i * 2) * 5 + t.value * 40 }, { translateY: height * 0.15 + t.value * height * 0.8 - Math.abs(Math.sin(t.value * 6 + i)) * 10 }, { rotate: `${t.value * 540 + i * 40}deg` }, { scaleX: Math.cos(t.value * (14 + i * 2) + i) }],
   }));
   return <Animated.View style={[{ position: "absolute", width: 7, height: 4, borderRadius: 4, backgroundColor: color }, st]} />;
 }

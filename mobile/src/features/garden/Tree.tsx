@@ -1,7 +1,7 @@
 import { memo, useEffect, useMemo } from "react";
 import { View } from "react-native";
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient as SvgLinear, Line, Path, RadialGradient, Rect, Stop, Text as SvgText } from "react-native-svg";
-import Animated, { Easing, cancelAnimation, useAnimatedStyle, useSharedValue, withRepeat, withSequence, withTiming } from "react-native-reanimated";
+import Animated, { Easing, cancelAnimation, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming } from "react-native-reanimated";
 import { CALLIG_FONT } from "@/lib/theme";
 import type { Season, Trait, TreeType } from "./garden";
 
@@ -22,7 +22,7 @@ const PAL: Record<TreeType, Pal> = {
   sidr: { leaf: ["#3a6a2c", "#6a9a3e", "#c3d983"], trunk: ["#6a5236", "#a8865a"], fruit: ["#c78a1c", "#f2c34a"], blossom: "#f8eebf" },
 };
 
-type Props = { id: string; type: TreeType; stage: number; traits?: Trait[]; season?: Season; resting?: boolean; fruits?: number; size?: number; still?: boolean };
+type Props = { id: string; type: TreeType; stage: number; traits?: Trait[]; season?: Season; resting?: boolean; fruits?: number; size?: number; still?: boolean; /** change it to rustle the crown (a tap) */ nudge?: number };
 
 /** trunk height and crown size for a stage (shared with the scene for decorations) */
 export function geom(type: TreeType, stage: number) {
@@ -32,17 +32,25 @@ export function geom(type: TreeType, stage: number) {
   return { h, crown, top: GROUND - h, w: stage < 3 ? 2 : 6 + k * (type === "palm" ? 10 : 22) };
 }
 
-export const TreeArt = memo(function TreeArt({ id, type, stage, traits = [], season = null, resting = false, fruits = 0, size = 300, still = false }: Props) {
-  const sway = useSharedValue(0);
+export const TreeArt = memo(function TreeArt({ id, type, stage, traits = [], season = null, resting = false, fruits = 0, size = 300, still = false, nudge = 0 }: Props) {
+  const sway = useSharedValue(0), kick = useSharedValue(0), flutter = useSharedValue(0), gust = useSharedValue(0);
+  useEffect(() => {
+    if (!nudge || still) return;
+    kick.value = withSequence(withTiming(3.2, { duration: 110, easing: Easing.out(Easing.quad) }), withTiming(-2.2, { duration: 220 }), withTiming(1.1, { duration: 260 }), withTiming(-0.4, { duration: 260 }), withTiming(0, { duration: 320, easing: Easing.inOut(Easing.sin) }));
+  }, [nudge, still, kick]);
   useEffect(() => {
     if (still || stage < 1) return;
     sway.value = withRepeat(withSequence(withTiming(1, { duration: 2600, easing: Easing.inOut(Easing.sin) }), withTiming(-1, { duration: 2900, easing: Easing.inOut(Easing.sin) })), -1, true);
-    return () => cancelAnimation(sway);
-  }, [still, stage, sway]);
+    // a second, quicker leaf flutter and an occasional gust of wind give the crown layered, living motion
+    flutter.value = withRepeat(withSequence(withTiming(1, { duration: 1700, easing: Easing.inOut(Easing.sin) }), withTiming(-1, { duration: 1900, easing: Easing.inOut(Easing.sin) })), -1, true);
+    const seed = (id.length * 977) % 3000;
+    gust.value = withDelay(seed, withRepeat(withSequence(withDelay(6500, withTiming(1, { duration: 1400, easing: Easing.out(Easing.quad) })), withTiming(0, { duration: 2600, easing: Easing.inOut(Easing.sin) })), -1, false));
+    return () => { cancelAnimation(sway); cancelAnimation(flutter); cancelAnimation(gust); };
+  }, [still, stage, sway, flutter, gust, id]);
   const g = geom(type, stage);
   const scale = size / TREE_W;
   const pivotY = (stage < 3 ? GROUND : g.top + g.crown * 0.3) * scale;
-  const crownStyle = useAnimatedStyle(() => ({ transform: [{ translateX: 0 }, { translateY: pivotY - (TREE_H * scale) / 2 }, { rotate: `${sway.value * (stage < 3 ? 3 : 1.4)}deg` }, { translateY: -(pivotY - (TREE_H * scale) / 2) }] }));
+  const crownStyle = useAnimatedStyle(() => ({ transform: [{ translateX: 0 }, { translateY: pivotY - (TREE_H * scale) / 2 }, { rotate: `${sway.value * (stage < 3 ? 3 : 1.4) * (1 + gust.value * 1.1) + gust.value * 0.8 + kick.value}deg` }, { skewX: `${flutter.value * (stage < 3 ? 1.6 : 0.9) * (1 + gust.value)}deg` }, { translateY: -(pivotY - (TREE_H * scale) / 2) }] }));
   const back = useMemo(() => <Back id={id} type={type} stage={stage} traits={traits} season={season} resting={resting} />, [id, type, stage, traits, season, resting]);
   const front = useMemo(() => <Crown id={id} type={type} stage={stage} traits={traits} season={season} resting={resting} fruits={fruits} />, [id, type, stage, traits, season, resting, fruits]);
   const h = (TREE_H * size) / TREE_W;
@@ -62,15 +70,27 @@ function Back({ id, type, stage, traits, resting }: { id: string; type: TreeType
   const g = geom(type, stage);
   const r = rng(id + "t");
   const dim = resting ? 0.75 : 1;
+  const basin = 30 + Math.min(stage, 12) * 3.2;
+  const tb0 = rng(id + "k")(), tb = () => tb0;
   return (
     <G opacity={dim}>
       <Defs>
+        <SvgLinear id="bface" x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor="#0f4a39" /><Stop offset="1" stopColor="#06261c" /></SvgLinear>
+        <RadialGradient id="aura" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#ffe6a6" stopOpacity={0.4} /><Stop offset="1" stopColor="#ffe6a6" stopOpacity={0} /></RadialGradient>
+        <SvgLinear id="trkHi" x1="0" y1="0" x2="1" y2="0"><Stop offset="0" stopColor="#ffffff" stopOpacity={0} /><Stop offset="0.5" stopColor="#fff3d6" stopOpacity={0.35} /><Stop offset="1" stopColor="#ffffff" stopOpacity={0} /></SvgLinear>
         <SvgLinear id="trk" x1="0" y1="0" x2="1" y2="0"><Stop offset="0" stopColor={p.trunk[0]} /><Stop offset="0.55" stopColor={p.trunk[1]} /><Stop offset="1" stopColor={p.trunk[0]} /></SvgLinear>
         <RadialGradient id="soil" cx="0.5" cy="0.4" r="0.6"><Stop offset="0" stopColor="#7a5634" /><Stop offset="1" stopColor="#3e2a18" /></RadialGradient>
       </Defs>
-      {/* soil mound */}
-      <Ellipse cx={CX} cy={GROUND + 6} rx={46 + stage * 4} ry={10 + stage * 0.6} fill="url(#soil)" />
-      <Ellipse cx={CX} cy={GROUND + 2} rx={30 + stage * 3} ry={5} fill="#8a6440" opacity={0.5} />
+      {/* a light behind the crown of old trees */}
+      {stage >= 9 ? <Circle cx={CX} cy={g.top + g.crown * 0.55} r={g.crown * 1.25} fill="url(#aura)" /> : null}
+      {/* the raised marble basin with a zellige face and a gold rim, soil inside */}
+      <Ellipse cx={CX} cy={GROUND + 14} rx={basin + 8} ry={7} fill="#000" opacity={0.18} />
+      <Path d={`M${CX - basin} ${GROUND + 2} L${CX - basin} ${GROUND + 9} A${basin} ${9 + stage * 0.4} 0 0 0 ${CX + basin} ${GROUND + 9} L${CX + basin} ${GROUND + 2} Z`} fill="url(#bface)" />
+      {Array.from({ length: Math.floor(basin / 7) }, (_, i) => { const t = (i + 0.5) / Math.floor(basin / 7), x = CX - basin * 0.92 + t * basin * 1.84, y = GROUND + 6 + Math.sqrt(Math.max(0, 1 - ((x - CX) / basin) ** 2)) * (9 + stage * 0.4) * 0.85; return <Path key={i} d={`M${x} ${y - 2.6} l2.6 2.6 l-2.6 2.6 l-2.6 -2.6 Z`} fill={i % 2 ? "#d6b46c" : "#f2e9d2"} opacity={0.9} />; })}
+      <Ellipse cx={CX} cy={GROUND + 2} rx={basin} ry={9 + stage * 0.4} fill="#efe4c8" />
+      <Ellipse cx={CX} cy={GROUND + 2} rx={basin} ry={9 + stage * 0.4} fill="none" stroke="#c6a65e" strokeWidth={1.2} />
+      <Ellipse cx={CX} cy={GROUND + 2.5} rx={basin - 5} ry={6.5 + stage * 0.35} fill="url(#soil)" />
+      <Ellipse cx={CX - basin * 0.3} cy={GROUND - 0.5} rx={basin * 0.35} ry={1.4} fill="#ffffff" opacity={0.35} />
       {stage === 0 ? (
         <G>
           <Ellipse cx={CX} cy={GROUND - 1} rx={9} ry={6} fill="#8c5f32" />
@@ -78,7 +98,10 @@ function Back({ id, type, stage, traits, resting }: { id: string; type: TreeType
           <Circle cx={CX + 3} cy={GROUND - 4} r={1.6} fill="#fff6d8" />
         </G>
       ) : stage < 3 ? (
-        <Path d={`M${CX} ${GROUND} Q${CX - 4} ${GROUND - g.h / 2} ${CX + 2} ${GROUND - g.h}`} stroke="#4f8a3c" strokeWidth={2.4 + stage} fill="none" strokeLinecap="round" />
+        <G>
+          <Path d={`M${CX} ${GROUND} Q${CX - 4} ${GROUND - g.h / 2} ${CX + 2} ${GROUND - g.h}`} stroke="#3f7a32" strokeWidth={2.4 + stage} fill="none" strokeLinecap="round" />
+          <Path d={`M${CX - 0.6} ${GROUND - 2} Q${CX - 4.6} ${GROUND - g.h / 2} ${CX + 0.8} ${GROUND - g.h + 2}`} stroke="#a7d68a" strokeWidth={0.9} fill="none" opacity={0.7} strokeLinecap="round" />
+        </G>
       ) : type === "palm" ? (
         <PalmTrunk g={g} stage={stage} />
       ) : (
@@ -86,7 +109,8 @@ function Back({ id, type, stage, traits, resting }: { id: string; type: TreeType
           {/* roots */}
           {stage >= 6 ? [-1, 1, -0.5, 0.6].map((d, i) => <Path key={i} d={`M${CX + d * 4} ${GROUND - 4} Q${CX + d * 18} ${GROUND - 2} ${CX + d * (26 + r() * 16)} ${GROUND + 4}`} stroke={p.trunk[0]} strokeWidth={5 - i} fill="none" strokeLinecap="round" />) : null}
           {/* trunk: two or three twisted strands for old olive / sidr, one tapered trunk otherwise */}
-          <Path d={trunkPath(g, type === "olive" || type === "sidr" ? 0.35 : 0.12, r)} fill="url(#trk)" />
+          <Path d={trunkPath(g, type === "olive" || type === "sidr" ? 0.35 : 0.12, tb)} fill="url(#trk)" />
+          <Path d={trunkPath({ ...g, w: g.w * 0.5 }, type === "olive" || type === "sidr" ? 0.35 : 0.12, tb)} fill="url(#trkHi)" transform={`translate(${-g.w * 0.18} 0)`} />
           {(type === "olive" || type === "sidr") && stage >= 7 ? <Path d={trunkPath({ ...g, w: g.w * 0.55 }, -0.5, r)} fill={p.trunk[0]} opacity={0.6} /> : null}
           {/* bark lines */}
           {Array.from({ length: Math.min(10, stage) }, (_, i) => { const y = GROUND - 10 - r() * g.h * 0.7; const x = CX + (r() - 0.5) * g.w * 0.6; return <Path key={i} d={`M${x} ${y} q${(r() - 0.5) * 4} ${-6 - r() * 8} ${(r() - 0.5) * 3} ${-14 - r() * 6}`} stroke={p.trunk[0]} strokeWidth={0.9} opacity={0.55} fill="none" />; })}
@@ -149,12 +173,12 @@ function Crown({ id, type, stage, traits, season, resting, fruits }: { id: strin
       </Defs>
       <G opacity={dim}>{type === "palm" ? <Fronds g={g} stage={stage} p={p} r={r} /> : <Clusters id={id} type={type} stage={stage} p={p} r={r} />}</G>
       {/* blossoms */}
-      {traits.includes("blossoms") || (type === "pomegranate" && stage >= 6) ? Array.from({ length: Math.min(14, stage + 4) }, (_, i) => { const [x, y] = inCrown(type, g, r); return <G key={`bl${i}`}><Circle cx={x} cy={y} r={2.6} fill={p.blossom} /><Circle cx={x} cy={y} r={1} fill="#f7c948" /></G>; }) : null}
+      {traits.includes("blossoms") || (type === "pomegranate" && stage >= 6) ? Array.from({ length: Math.min(14, stage + 4) }, (_, i) => { const [x, y] = inCrown(type, g, r); return <G key={`bl${i}`}>{[0, 1, 2, 3, 4].map((k) => <Circle key={k} cx={x + Math.cos(k * 1.2566) * 1.9} cy={y + Math.sin(k * 1.2566) * 1.9} r={1.6} fill={p.blossom} />)}<Circle cx={x} cy={y} r={1.1} fill="#d6a93a" /><Circle cx={x - 0.6} cy={y - 0.8} r={0.5} fill="#fffbe8" /></G>; }) : null}
       {/* glowing fruits */}
       {stage >= 5 && !resting ? Array.from({ length: ripe }, (_, i) => {
         const [x, y] = type === "palm" ? [CX + (i % 2 ? 1 : -1) * (8 + (i >> 1) * 5) + (r() - 0.5) * 6, g.top + 14 + (i >> 1) * 4] : inCrown(type, g, r);
         const fr = type === "palm" ? 3 : type === "olive" || type === "sidr" ? 3.2 : 5;
-        return <G key={`f${i}`}><Circle cx={x} cy={y} r={fr * 2.6} fill="url(#glow)" />{type === "olive" ? <Ellipse cx={x} cy={y} rx={fr * 0.8} ry={fr * 1.1} fill="url(#fr)" /> : <Circle cx={x} cy={y} r={fr} fill="url(#fr)" />}{type === "pomegranate" ? <Path d={`M${x - 1.5} ${y - fr} l1.5 -2.4 l1.5 2.4`} fill={p.fruit[0]} /> : null}</G>;
+        return <G key={`f${i}`}><Circle cx={x} cy={y} r={fr * 2.6} fill="url(#glow)" />{type === "olive" ? <Ellipse cx={x} cy={y} rx={fr * 0.8} ry={fr * 1.1} fill="url(#fr)" /> : <Circle cx={x} cy={y} r={fr} fill="url(#fr)" />}<Circle cx={x - fr * 0.35} cy={y - fr * 0.4} r={fr * 0.28} fill="#fffbe8" opacity={0.85} />{type === "pomegranate" ? <Path d={`M${x - 1.5} ${y - fr} l1.5 -2.4 l1.5 2.4`} fill={p.fruit[0]} /> : null}</G>;
       }) : null}
       {/* hanging lanterns (Ramadan or the lantern sticker) */}
       {lanterns ? [-0.6, 0.15, 0.7].slice(0, stage >= 6 ? 3 : 1).map((k, i) => { const x = CX + k * g.crown, y0 = g.top + g.crown * 0.75, y = y0 + 16 + i * 4; return (
@@ -175,39 +199,70 @@ function inCrown(type: TreeType, g: ReturnType<typeof geom>, r: () => number): [
   const wide = type === "fig" || type === "sidr" ? 1.15 : 1;
   return [CX + Math.cos(a) * g.crown * wide * d, g.top + g.crown * 0.55 + Math.sin(a) * g.crown * 0.62 * d];
 }
+/** a lobed, cloud-like foliage mass (the painterly shape of a crown cluster) */
+function blob(cx: number, cy: number, rad: number, r: () => number, lobes = 8, flat = 0.9): string {
+  const pts = Array.from({ length: lobes }, (_, i) => { const a = (i / lobes) * Math.PI * 2 + r() * 0.3; return { a, k: 0.86 + r() * 0.14 }; });
+  const at = (a: number, k: number) => `${(cx + Math.cos(a) * rad * k).toFixed(1)} ${(cy + Math.sin(a) * rad * k * flat).toFixed(1)}`;
+  let d = `M${at(pts[0].a, pts[0].k)}`;
+  for (let i = 0; i < lobes; i++) {
+    const p0 = pts[i], p1 = pts[(i + 1) % lobes], a1 = i + 1 === lobes ? p1.a + Math.PI * 2 : p1.a, m = (p0.a + a1) / 2;
+    d += ` Q${at(m, 1.2 + r() * 0.18)} ${at(p1.a, p1.k)}`;
+  }
+  return d + " Z";
+}
 function Fronds({ g, stage, p, r }: { g: ReturnType<typeof geom>; stage: number; p: Pal; r: () => number }) {
   const n = Math.min(16, 5 + stage);
   const top = g.top, bend = 10 + stage, tx = CX + Math.sin(1.4) * bend;
+  const fronds = Array.from({ length: n }, (_, i) => {
+    const a = Math.PI + (i / (n - 1)) * Math.PI + (r() - 0.5) * 0.25;
+    const len = g.crown * (0.8 + r() * 0.4);
+    const ex = tx + Math.cos(a) * len, ey = top + Math.sin(a) * len * 0.5 + len * 0.42;
+    const mx = tx + Math.cos(a) * len * 0.55, my = top + Math.sin(a) * len * 0.55 - 8;
+    return { a, len, ex, ey, mx, my, back: i % 2 === 0 };
+  });
+  // back fronds first (darker), front fronds on top; each frond: a soft blade, then drooping leaflets in two tones
+  const one = (f: (typeof fronds)[number], k: number) => {
+    const at = (t: number) => { const u = 1 - t; return [u * u * tx + 2 * u * t * f.mx + t * t * f.ex, u * u * top + 2 * u * t * (f.my - 10) + t * t * f.ey]; };
+    let dark = "", light = "";
+    const m = stage >= 5 ? 14 : 9;
+    for (let j = 1; j <= m; j++) {
+      const t = j / (m + 1), [x, y] = at(t), l = f.len * 0.26 * Math.sin(t * Math.PI * 0.9 + 0.15);
+      const right = Math.cos(f.a) > 0 ? 1 : -1;
+      dark += `M${x.toFixed(1)} ${y.toFixed(1)} q${(Math.cos(f.a + 1.2 * right) * l * 0.5).toFixed(1)} ${(l * 0.3).toFixed(1)} ${(Math.cos(f.a + 1.0 * right) * l).toFixed(1)} ${(l * 0.95).toFixed(1)} `;
+      light += `M${x.toFixed(1)} ${y.toFixed(1)} q${(Math.cos(f.a - 0.9 * right) * l * 0.4).toFixed(1)} ${(-l * 0.15).toFixed(1)} ${(Math.cos(f.a - 0.7 * right) * l * 0.8).toFixed(1)} ${(l * 0.45).toFixed(1)} `;
+    }
+    return (
+      <G key={k} opacity={f.back ? 0.9 : 1}>
+        <Path d={`M${tx} ${top} Q${f.mx} ${f.my - 10} ${f.ex} ${f.ey} Q${f.mx} ${f.my + 8} ${tx} ${top + 3} Z`} fill={f.back ? p.leaf[0] : "url(#lf)"} opacity={0.55} />
+        <Path d={dark} stroke={f.back ? p.leaf[0] : p.leaf[1]} strokeWidth={stage >= 6 ? 2.6 : 2} fill="none" strokeLinecap="round" />
+        <Path d={light} stroke={f.back ? p.leaf[1] : p.leaf[2]} strokeWidth={stage >= 6 ? 2.2 : 1.7} fill="none" strokeLinecap="round" />
+        <Path d={`M${tx} ${top} Q${f.mx} ${f.my - 10} ${f.ex} ${f.ey}`} stroke={f.back ? p.leaf[0] : "#e9d7a0"} strokeWidth={1.1} fill="none" opacity={f.back ? 0.8 : 0.55} />
+      </G>
+    );
+  };
   return (
     <G>
-      {Array.from({ length: n }, (_, i) => {
-        const a = Math.PI + (i / (n - 1)) * Math.PI + (r() - 0.5) * 0.25;
-        const len = g.crown * (0.8 + r() * 0.4);
-        const ex = tx + Math.cos(a) * len, ey = top + Math.sin(a) * len * 0.5 + len * 0.42;
-        const mx = tx + Math.cos(a) * len * 0.55, my = top + Math.sin(a) * len * 0.55 - 8;
-        const col = i % 3 === 0 ? p.leaf[0] : i % 3 === 1 ? p.leaf[1] : "url(#lf)";
-        return (
-          <G key={i}>
-            <Path d={`M${tx} ${top} Q${mx} ${my - 10} ${ex} ${ey} Q${mx} ${my + 8} ${tx} ${top + 3} Z`} fill={col} />
-            {stage >= 5 ? Array.from({ length: 7 }, (_, j) => { const t = (j + 1) / 8, x = tx + (ex - tx) * t, y = top + (ey - top) * t - Math.sin(t * Math.PI) * 10; return <Line key={j} x1={x} y1={y} x2={x + Math.cos(a + 0.9) * 9} y2={y + Math.sin(a + 0.9) * 9 + 4} stroke={p.leaf[2]} strokeWidth={0.7} opacity={0.7} />; }) : null}
-          </G>
-        );
-      })}
+      {fronds.filter((f) => f.back).map(one)}
+      {fronds.filter((f) => !f.back).map((f, k) => one(f, 100 + k))}
       <Circle cx={tx} cy={top + 2} r={g.w * 0.8} fill={p.trunk[0]} />
+      <Circle cx={tx - g.w * 0.25} cy={top} r={g.w * 0.3} fill="#f3e2b6" opacity={0.35} />
     </G>
   );
 }
 function Clusters({ id, type, stage, p, r }: { id: string; type: TreeType; stage: number; p: Pal; r: () => number }) {
   const g = geom(type, stage);
   const tips = branchTips(id, type, stage);
-  const blob = type === "fig" ? 1.25 : type === "olive" ? 0.9 : 1;
-  const leaves = Math.min(70, 14 + stage * 5);
+  const blobK = type === "fig" ? 1.25 : type === "olive" ? 0.9 : 1;
+  const leaves = Math.min(56, 12 + stage * 4);
+  const flat = type === "olive" ? 0.78 : 0.9;
+  const R0 = g.crown * 0.42 * blobK, R1 = g.crown * 0.36 * blobK;
   return (
     <G>
-      {/* deep shadow layer, then lit clusters */}
-      {tips.map((b, i) => <Circle key={`s${i}`} cx={b.x + 4} cy={b.y + 8} r={g.crown * 0.42 * blob} fill={p.leaf[0]} opacity={0.9} />)}
-      <Ellipse cx={CX} cy={g.top + g.crown * 0.6} rx={g.crown * (type === "fig" || type === "sidr" ? 1.05 : 0.9)} ry={g.crown * 0.55} fill={p.leaf[0]} />
-      {tips.map((b, i) => <Circle key={`c${i}`} cx={b.x} cy={b.y} r={g.crown * 0.36 * blob} fill="url(#lf)" />)}
+      {/* deep shadow masses, the body of the crown, then lit clusters with soft highlights */}
+      {tips.map((b, i) => <Path key={`s${i}`} d={blob(b.x + 4, b.y + 9, R0, r, 8, flat)} fill={p.leaf[0]} opacity={0.95} />)}
+      <Path d={blob(CX, g.top + g.crown * 0.6, g.crown * (type === "fig" || type === "sidr" ? 1.05 : 0.9), r, 11, 0.62)} fill={p.leaf[0]} />
+      {tips.map((b, i) => <Path key={`c${i}`} d={blob(b.x, b.y, R1, r, 9, flat)} fill="url(#lf)" />)}
+      {tips.map((b, i) => <Path key={`h${i}`} d={blob(b.x - R1 * 0.22, b.y - R1 * 0.28, R1 * 0.52, r, 7, flat)} fill={p.leaf[2]} opacity={0.38} />)}
       {/* single leaves for texture, shaped per type */}
       {Array.from({ length: leaves }, (_, i) => {
         const [x, y] = inCrown(type, g, r), a = r() * 360, s = type === "fig" ? 7 : type === "olive" ? 5 : 4.5;
@@ -217,8 +272,9 @@ function Clusters({ id, type, stage, p, r }: { id: string; type: TreeType; stage
           : type === "olive" ? `M0 0 q${s * 0.4} ${-s} 0 ${-s * 2.2} q${-s * 0.4} ${s} 0 ${s * 2.2} Z` : `M0 0 q${s * 0.7} ${-s * 0.8} 0 ${-s * 1.8} q${-s * 0.7} ${s * 0.8} 0 ${s * 1.8} Z`;
         return <Path key={i} d={d} fill={fill} opacity={0.92} transform={`translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${a.toFixed(0)})`} />;
       })}
-      {/* rim light */}
-      <Ellipse cx={CX - g.crown * 0.25} cy={g.top + g.crown * 0.25} rx={g.crown * 0.4} ry={g.crown * 0.18} fill="#ffffff" opacity={0.07} />
+      {/* sun-kissed edge: a few gold glints on the upper left of each cluster */}
+      {tips.map((b, i) => <G key={`g${i}`}>{[0, 1, 2].map((k) => { const a = Math.PI * (1.05 + k * 0.17 + r() * 0.1); return <Circle key={k} cx={b.x + Math.cos(a) * R1 * 0.9} cy={b.y + Math.sin(a) * R1 * 0.85 * flat} r={1.1 + r() * 0.8} fill="#f3e2b6" opacity={0.55} />; })}</G>)}
+      <Ellipse cx={CX - g.crown * 0.25} cy={g.top + g.crown * 0.25} rx={g.crown * 0.4} ry={g.crown * 0.18} fill="#fff6dc" opacity={0.08} />
     </G>
   );
 }

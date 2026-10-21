@@ -21,6 +21,8 @@ import { Day1Paywall } from "./Day1Paywall";
 import { PlantFlow } from "@/features/garden/PlantFlow";
 import { PlanMilestones } from "@/features/garden/widgets";
 import { readGarden } from "@/features/garden/garden";
+import { JourneyStage } from "@/features/garden/Landscape";
+import { GoldStarSpinner } from "./Scenes";
 import { LEVELS, MINUTES, MOTIVATIONS, STEPS, readDraft, readPlan, savePlan, writeDraft, type Plan, type QuizAnswers, type QuizDraft } from "./plan";
 import { fmt, usePlanT } from "./texts";
 import { useO2 } from "./texts2";
@@ -50,7 +52,7 @@ export function Funnel() {
   const o = useO2();
   const hx = useHadithText();
   const goalLabel = useGoalLabel();
-  const { personalise } = useLocalSearchParams<{ personalise?: string }>();
+  const { personalise, preview } = useLocalSearchParams<{ personalise?: string; preview?: string }>();
   const pers = personalise === "1";
   const { lang, setSetting } = useLang();
   const { pro } = usePro();
@@ -63,9 +65,11 @@ export function Funnel() {
     return { ...d, step: d.v === undefined && d.step ? 0 : d.step, v: 2, goals: prev?.goals ?? (d.goal ? [d.goal] : undefined), interests: prev?.interests, challenges: prev?.challenges };
   });
   const [step, setStep] = useState(() => Math.min(draft.step ?? 0, Q.length - 1));
-  const [phase, setPhase] = useState<Phase>("quiz");
-  const [plan, setPlan] = useState<Plan | null>(null);
-  const [v2, setV2] = useState<V2Answers | null>(null);
+  // development only: "?preview=method|building|plan|garden|paywall" opens a later scene with the saved plan (design previews)
+  const pv = __DEV__ && preview && readPlan() ? (preview as Phase) : null;
+  const [phase, setPhase] = useState<Phase>(pv ?? "quiz");
+  const [plan, setPlan] = useState<Plan | null>(() => (pv ? readPlan() : null));
+  const [v2, setV2] = useState<V2Answers | null>(() => (pv ? readV2() ?? { goals: ["read", "understand"], interests: ["tafsir", "history"], challenges: ["time"], courses: ["arabicRead", "cards"], at: 0 } : null));
   const [name, setName] = useState(() => readName());
   const [reply, setReply] = useState<string | null>(null);
   const scroller = useRef<ScrollViewInstance>(null);
@@ -122,7 +126,7 @@ export function Funnel() {
   const opt = (key: string, on: boolean, label: string, desc: string | null, onPress: () => void, badge?: string, multi?: boolean) => (
     <Pressable key={key} onPress={onPress} disabled={!!reply} accessibilityRole={multi ? "checkbox" : "button"} accessibilityState={multi ? { checked: on } : { selected: on }} accessibilityLabel={desc ? `${label}. ${desc}` : label}
       style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, borderRadius: R.md, borderWidth: 1, paddingHorizontal: 16, paddingVertical: 14, minHeight: 56,
-        borderColor: on ? stage.gold : pressed ? alpha(stage.gold, 0.6) : alpha(stage.gold, 0.22), backgroundColor: on ? alpha(stage.gold, 0.12) : pressed ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.03)" })}>
+        borderColor: on ? stage.gold : pressed ? alpha(stage.gold, 0.6) : alpha(stage.gold, 0.22), backgroundColor: on ? alpha(stage.gold, 0.12) : pressed ? "rgba(255,255,255,0.06)" : "rgba(6,30,23,0.62)" })}>
       <View style={{ flex: 1 }}>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: "#ffffff" }}>{label}</Text>
         {desc ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: stage.textMuted, marginTop: 3 }}>{desc}</Text> : null}
@@ -142,7 +146,7 @@ export function Funnel() {
   );
 
   return (
-    <Stage hairlines={false} style={{ flex: 1 }}>
+    <JourneyStage progress={(step + 1) / Q.length} horizon={0.5}>
       <View style={{ paddingTop: insets.top + 8, paddingHorizontal: 20 }}>
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
           <Pressable onPress={back} accessibilityRole="button" accessibilityLabel={p.back} hitSlop={10} style={{ width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.08)" }}>
@@ -201,7 +205,7 @@ export function Funnel() {
                 return (
                   <Pressable key={i} disabled={!!reply} onPress={() => pick({ interests: toggle(draft.interests, i) })} accessibilityRole="checkbox" accessibilityState={{ checked: on }} accessibilityLabel={o[`i_${i}`]}
                     style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: R.pill, borderWidth: 1, paddingHorizontal: 14, paddingVertical: 10, minHeight: 44,
-                      borderColor: on ? stage.gold : alpha(stage.gold, 0.3), backgroundColor: on ? alpha(stage.gold, 0.16) : pressed ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.03)" })}>
+                      borderColor: on ? stage.gold : alpha(stage.gold, 0.3), backgroundColor: on ? alpha(stage.gold, 0.16) : pressed ? "rgba(255,255,255,0.06)" : "rgba(6,30,23,0.62)" })}>
                     {on ? <Icon name="check" color={stage.gold} size={14} /> : null}
                     <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: "#ffffff" }}>{o[`i_${i}`]}</Text>
                   </Pressable>
@@ -233,7 +237,7 @@ export function Funnel() {
                 const on = draft.minutes === m;
                 return (
                   <Pressable key={m} disabled={!!reply} onPress={() => answer({ minutes: m }, fmt(o.r_minutes, { n: m }))} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={`${m} ${p.min}`}
-                    style={({ pressed }) => ({ flex: 1, alignItems: "center", paddingVertical: 18, borderRadius: R.lg, borderWidth: 1, borderColor: on ? stage.gold : alpha(stage.gold, 0.25), backgroundColor: on ? alpha(stage.gold, 0.12) : pressed ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.03)" })}>
+                    style={({ pressed }) => ({ flex: 1, alignItems: "center", paddingVertical: 18, borderRadius: R.lg, borderWidth: 1, borderColor: on ? stage.gold : alpha(stage.gold, 0.25), backgroundColor: on ? alpha(stage.gold, 0.12) : pressed ? "rgba(255,255,255,0.06)" : "rgba(6,30,23,0.62)" })}>
                     <Text style={{ fontFamily: FONT.display, fontSize: 26, color: "#ffffff" }}>{m}</Text>
                     <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: stage.textMuted, marginTop: 2 }}>{p.min}</Text>
                   </Pressable>
@@ -285,7 +289,7 @@ export function Funnel() {
         ) : null}
         {reply ? <View style={{ marginTop: 20 }}><ReplyCard title={hi} body={reply} cta={p.next} onNext={go} /></View> : null}
       </ScrollView>
-    </Stage>
+    </JourneyStage>
   );
 }
 
@@ -293,6 +297,7 @@ export function Funnel() {
 function Building({ onDone }: { onDone: () => void }) {
   const p = usePlanT();
   const [n, setN] = useState(0);
+  const [still, setStill] = useState(false);
   const spin = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     let live = true;
@@ -300,19 +305,17 @@ function Building({ onDone }: { onDone: () => void }) {
     loop.start();
     AccessibilityInfo.isReduceMotionEnabled().then((reduce) => {
       if (!live) return;
+      setStill(reduce);
       const gap = reduce ? 250 : 750;
       [1, 2, 3].forEach((i) => setTimeout(() => { if (live) { setN(i); tick(); } }, gap * i));
       setTimeout(() => { if (live) onDone(); }, gap * 3 + 450);
     }).catch(() => onDone());
     return () => { live = false; loop.stop(); };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-  const rotate = spin.interpolate({ inputRange: [0, 1], outputRange: ["0deg", "360deg"] });
   return (
-    <Stage hairlines={false} style={{ flex: 1, justifyContent: "center" }}>
-      <View style={{ padding: 28, alignItems: "center" }}>
-        <Animated.View style={{ transform: [{ rotate }], marginBottom: 26 }}>
-          <View style={{ width: 64, height: 64, borderRadius: 32, borderWidth: 3, borderColor: alpha(stage.gold, 0.2), borderTopColor: stage.gold }} />
-        </Animated.View>
+    <JourneyStage progress={0.92} horizon={0.5} veil={0.5}>
+      <View style={{ flex: 1, padding: 28, alignItems: "center", justifyContent: "center" }}>
+        <View style={{ marginBottom: 10 }}><GoldStarSpinner still={still} /></View>
         <Display size="title1" onStage style={{ textAlign: "center" }}>{p.building}</Display>
         <View style={{ gap: 12, marginTop: 24, alignSelf: "stretch" }} accessibilityLiveRegion="polite">
           {[p.b1, p.b2, p.b3].map((s, i) => (
@@ -323,7 +326,7 @@ function Building({ onDone }: { onDone: () => void }) {
           ))}
         </View>
       </View>
-    </Stage>
+    </JourneyStage>
   );
 }
 

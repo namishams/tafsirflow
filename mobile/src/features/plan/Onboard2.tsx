@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { Pressable, ScrollView, Text, View, useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Animated, { FadeIn, FadeInDown, FadeInUp, FadeOut } from "react-native-reanimated";
 import { router, type Href } from "expo-router";
@@ -11,6 +11,8 @@ import { alpha } from "@/features/extra/art";
 import { useReducedMotion } from "@/features/library/motion";
 import { TreeArt } from "@/features/garden/Tree";
 import { PlanMilestones } from "@/features/garden/widgets";
+import { JourneyStage } from "@/features/garden/Landscape";
+import { ArcadeOfSteps, Astrolabe, GrowingTerraces, MapPath, Rosette } from "./Scenes";
 import { STEPS, usePlan, type Plan } from "./plan";
 import { fmt, usePlanT } from "./texts";
 import { useO2 } from "./texts2";
@@ -53,6 +55,7 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
   const label = useGoalLabel();
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
+  const { width } = useWindowDimensions();
   const [i, setI] = useState(0);
   const N = 4;
   const next = () => { tick(); if (i + 1 < N) setI(i + 1); else { success(); onDone(); } };
@@ -71,7 +74,7 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
   );
   const focus = goals.length ? goals : (["daily"] as GoalV2[]);
   return (
-    <Stage hairlines={false} style={{ flex: 1 }}>
+    <JourneyStage progress={1} horizon={0.37} veil={0.6}>
       <View style={{ paddingTop: insets.top + 8, paddingHorizontal: 20, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
         <Pressable onPress={back} disabled={i === 0} accessibilityRole="button" accessibilityLabel={p.back} hitSlop={10} style={{ width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.08)", opacity: i === 0 ? 0 : 1 }}>
           <Icon name="chevronLeft" color="#ffffff" size={20} />
@@ -83,6 +86,12 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
       </View>
       <ScrollView contentContainerStyle={{ padding: 22, paddingTop: 26, paddingBottom: insets.bottom + 24, flexGrow: 1 }}>
         <Animated.View key={i} entering={enter} style={{ flex: 1, gap: 18 }}>
+          <View style={{ height: 220, justifyContent: "flex-end", marginTop: -8 }}>
+            {i === 0 ? <ArcadeOfSteps icons={METHOD_STEPS.map(([, ic]) => ic)} still={reduce} width={width - 44} /> : null}
+            {i === 1 ? <Rosette still={reduce} size={190} /> : null}
+            {i === 2 ? <GrowingTerraces still={reduce} width={width - 44} /> : null}
+            {i === 3 ? <Astrolabe still={reduce} size={196} marks={focus.length} /> : null}
+          </View>
           {i === 0 ? (
             <>
               <Display size="title1" onStage>{name ? `${name}, ${o.m1T.charAt(0).toLocaleLowerCase()}${o.m1T.slice(1)}` : o.m1T}</Display>
@@ -95,13 +104,6 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
           {i === 1 ? (
             <>
               <Display size="title1" onStage>{o.m2T}</Display>
-              <View style={{ alignSelf: "center", width: 180, height: 180, alignItems: "center", justifyContent: "center", marginVertical: 6 }} accessible={false}>
-                {[180, 128, 76].map((d, n) => (
-                  <Animated.View key={d} entering={reduce ? undefined : FadeIn.delay(n * 160).duration(500)}
-                    style={{ position: "absolute", width: d, height: d, borderRadius: d / 2, borderWidth: 1, borderColor: alpha(stage.gold, 0.25 + n * 0.25), backgroundColor: alpha(stage.gold, 0.04 + n * 0.05) }} />
-                ))}
-                <Icon name="sun" color={stage.gold} size={34} />
-              </View>
               <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 24, color: stage.textSoft }}>{o.m2B}</Text>
               <View style={{ gap: 12 }}>{[o.m2a, o.m2b, o.m2c].map((s, n) => row("checkCircle", s, "", n))}</View>
             </>
@@ -109,13 +111,6 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
           {i === 2 ? (
             <>
               <Display size="title1" onStage>{o.m3T}</Display>
-              <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "center", gap: 2, marginVertical: 4 }} accessible={false}>
-                {[1, 4, 7].map((s, n) => (
-                  <Animated.View key={s} entering={reduce ? undefined : FadeInUp.delay(n * 220).duration(420)}>
-                    <TreeArt id="onboarding" type="olive" stage={s} size={96 + n * 26} still={reduce} />
-                  </Animated.View>
-                ))}
-              </View>
               <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 24, color: stage.textSoft }}>{o.m3B}</Text>
             </>
           ) : null}
@@ -129,7 +124,7 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
         </Animated.View>
         <GoldButton title={i + 1 < N ? p.next : o.pathKicker} onPress={next} style={{ marginTop: 24 }} />
       </ScrollView>
-    </Stage>
+    </JourneyStage>
   );
 }
 
@@ -141,21 +136,24 @@ export function PathView({ plan, v2, name, hasTree, onNext }: { plan: Plan; v2: 
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
   const a = plan.answers;
+  const [ys, setYs] = useState<(number | undefined)[]>([]);
+  const [mapH, setMapH] = useState(0);
+  const mapYs = ys.length === plan.weeks.length && ys.every((y) => y !== undefined) ? (ys as number[]) : [];
   const chip = (s: string) => (
     <View key={s} style={{ borderRadius: R.pill, borderWidth: 1, borderColor: alpha(stage.gold, 0.45), backgroundColor: alpha(stage.gold, 0.1), paddingHorizontal: 12, paddingVertical: 6 }}>
       <Text style={{ fontFamily: FONT.medium, fontSize: 13.5, color: "#ffffff" }}>{s}</Text>
     </View>
   );
   const section = (title: string, body: React.ReactNode, n: number) => (
-    <Animated.View entering={reduce ? undefined : FadeInDown.delay(120 + n * 110).duration(360)} style={{ borderRadius: R.card, borderWidth: 1, borderColor: alpha(stage.gold, 0.25), backgroundColor: "rgba(255,255,255,0.04)", padding: 16, gap: 10 }}>
+    <Animated.View entering={reduce ? undefined : FadeInDown.delay(120 + n * 110).duration(360)} style={{ borderRadius: R.card, borderWidth: 1, borderColor: alpha(stage.gold, 0.25), backgroundColor: "rgba(6,30,23,0.7)", padding: 16, gap: 10 }}>
       <Text style={{ fontFamily: FONT.bold, fontSize: 11.5, letterSpacing: 1.6, textTransform: "uppercase", color: stage.gold }}>{title}</Text>
       {body}
     </Animated.View>
   );
   const interests = v2.interests.map((i) => o[`i_${i}`]);
   return (
-    <Stage hairlines={false} style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={{ padding: 20, paddingTop: insets.top + 24, paddingBottom: insets.bottom + 24, gap: 12 }}>
+    <JourneyStage progress={1} horizon={0.27} veil={0.5}>
+      <ScrollView contentContainerStyle={{ padding: 20, paddingTop: insets.top + 220, paddingBottom: insets.bottom + 24, gap: 12 }}>
         <Text style={kicker}>{o.pathKicker}</Text>
         <Display onStage>{name ? fmt(o.pathTName, { name }) : o.pathT}</Display>
         {a.motivation ? <Text style={{ fontFamily: FONT.italic, fontSize: 14, color: stage.gold }}>{p[`m_${a.motivation}`]}</Text> : null}
@@ -178,8 +176,11 @@ export function PathView({ plan, v2, name, hasTree, onNext }: { plan: Plan; v2: 
           </View>
         ), 3) : null}
         <Text style={[kicker, { marginTop: 10 }]}>{o.pathWeeks}</Text>
+        <View onLayout={(e) => setMapH(e.nativeEvent.layout.height)} style={{ paddingLeft: 46, gap: 12 }}>
+        <MapPath ys={mapYs} height={mapH} still={reduce} />
         {plan.weeks.map((w, i) => (
-          <View key={i} style={{ borderRadius: R.card, borderWidth: 1, borderColor: alpha(stage.gold, 0.2), backgroundColor: "rgba(255,255,255,0.03)", padding: 16 }}>
+          <Animated.View key={i} entering={reduce ? undefined : FadeInDown.delay(500 + i * 260).duration(420)} onLayout={(e) => { const y = e.nativeEvent.layout.y + 30; setYs((p0) => { if (p0[i] === y) return p0; const n = [...p0]; n.length = plan.weeks.length; n[i] = y; return n; }); }}
+            style={{ borderRadius: R.card, borderWidth: 1, borderColor: alpha(stage.gold, 0.28), backgroundColor: "rgba(6,30,23,0.7)", padding: 16 }}>
             <Text style={{ fontFamily: FONT.bold, fontSize: 11.5, letterSpacing: 1.6, textTransform: "uppercase", color: stage.gold }}>{fmt(p.week, { n: i + 1 })}</Text>
             <Text style={{ fontFamily: FONT.display, fontSize: 18, color: "#ffffff", marginTop: 4 }}>{p[`w_${w.theme}`]}</Text>
             <View style={{ gap: 6, marginTop: 10 }}>
@@ -191,12 +192,13 @@ export function PathView({ plan, v2, name, hasTree, onNext }: { plan: Plan; v2: 
                 </View>
               ))}
             </View>
-          </View>
+          </Animated.View>
         ))}
+        </View>
         <PlanMilestones minutes={a.minutes} />
         <GoldButton title={hasTree ? o.pathCtaTree : o.pathCta} onPress={onNext} style={{ marginTop: 12 }} />
       </ScrollView>
-    </Stage>
+    </JourneyStage>
   );
 }
 
