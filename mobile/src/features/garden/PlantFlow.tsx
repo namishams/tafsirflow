@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Animated, { Easing, FadeIn, FadeInDown, cancelAnimation, interpolate, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withSpring, withTiming, type SharedValue } from "react-native-reanimated";
@@ -9,12 +9,13 @@ import { ARABIC_FONT, FONT, R, stage } from "@/lib/theme";
 import { getVerseByKey } from "@/lib/quran";
 import { useLang } from "@/i18n";
 import { BISMILLAH, DUA_KEY, fillS, useStory } from "@/features/plan/story";
+import { closingWords } from "@/features/plan/sources";
 import { readName, readV2 } from "@/features/plan/v2";
 import { useGoalLabel } from "@/features/plan/Onboard2";
 import { openPro, usePro } from "@/lib/pro";
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
-import { TREE_TYPES, firstWater, plantTree, type Tree, type TreeType } from "./garden";
+import { TREE_TYPES, canPlant, firstWater, plantTree, readGarden, useGarden, type Tree, type TreeType } from "./garden";
 import { TreeArt } from "./Tree";
 import { chime } from "./widgets";
 import { fillG, useGardenText } from "./texts";
@@ -37,9 +38,17 @@ export function PlantFlow({ minutes, onDone, onLater, demo }: { minutes?: number
   const kicker = { fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 2, textTransform: "uppercase" as const, color: stage.gold };
   const body = { fontFamily: FONT.regular, fontSize: 16, lineHeight: 24, color: stage.textSoft };
 
+  // a tree arrived from the account sync before this flow planted one, or no tree can be planted here (a free learner
+  // who already has one): the ceremony is not needed, so it goes on to the garden instead of a button that does nothing
+  const g = useGarden();
+  const [startN] = useState(() => g.trees.length);
+  const planting = useRef(false); // this flow is planting right now: its own new tree never ends the ceremony
+  const settled = !demo && !tree && !planting.current && (step === "mission" || step === "choose") && g.trees.length > 0 && (g.trees.length > startN || !canPlant(g, pro));
+  useEffect(() => { if (settled) onDone(); }, [settled]); // eslint-disable-line react-hooks/exhaustive-deps
   const plant = () => {
+    planting.current = true;
     const t = __DEV__ && demo ? { id: "demo", type, name: name || tx[`t_${type}`], planted: 0, gp: 0, fruits: 0, fruitDay: 0, harvested: 0, hist: [] } : plantTree(type, name || tx[`t_${type}`], pro);
-    if (!t) return;
+    if (!t) { planting.current = false; if (readGarden().trees.length) onDone(); else onLater?.(); return; }
     setTree(t); tick(); setStep("plant");
   };
   return (
@@ -189,22 +198,34 @@ function RainDrop({ i, v, bottom }: { i: number; v: SharedValue<number>; bottom:
 }
 
 /** the du'a for beneficial knowledge before the first watering: the words "Rabbi zidni 'ilma" from the app's Quran
- *  data (Quran 20:114), the meaning and the reference */
+ *  data (Quran 20:114), their meaning from the verse's translation and the reference. Arabic readers see the words
+ *  once (no second Arabic line); the story's line is shown only when the translation cannot be read, marked as a
+ *  paraphrase. */
 function Dua() {
   const story = useStory();
   const { lang } = useLang();
   const [ar, setAr] = useState<string | null>(null);
+  const [meaning, setMeaning] = useState<string | null>(null);
+  const [failed, setFailed] = useState(false);
   useEffect(() => {
     let live = true;
-    getVerseByKey(DUA_KEY, lang).then((v) => { if (live) setAr(v.text_uthmani.trim().split(/\s+/).slice(-3).join(" ")); }).catch(() => undefined);
+    setMeaning(null); setFailed(false);
+    getVerseByKey(DUA_KEY, lang).then((v) => {
+      if (!live) return;
+      setAr(v.text_uthmani.trim().split(/\s+/).slice(-3).join(" "));
+      const w = lang === "ar" ? null : closingWords(v.translation);
+      if (w) setMeaning(fillS(story.quote, { t: w })); else setFailed(true);
+    }).catch(() => { if (live) setFailed(true); });
     return () => { live = false; };
-  }, [lang]);
+  }, [lang]); // eslint-disable-line react-hooks/exhaustive-deps
+  const text = lang === "ar" ? null : meaning ?? (failed ? story.duaM : null);
+  const source = lang !== "ar" && !meaning && failed ? `${story.duaS} · ${story.para}` : story.duaS;
   return (
     <View style={{ alignSelf: "stretch", borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.4)", backgroundColor: "rgba(6,30,23,0.78)", padding: 14, gap: 4 }}>
       <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.8, textTransform: "uppercase", color: stage.gold }}>{story.duaT}</Text>
       {ar ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 28, lineHeight: 52, color: "#f3e2b6", textAlign: "center", writingDirection: "rtl" }}>{ar}</Text> : null}
-      <Text style={{ fontFamily: FONT.italic, fontSize: 15.5, lineHeight: 22, color: "#ffffff", textAlign: "center" }}>{story.duaM}</Text>
-      <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: stage.gold, textAlign: "center" }}>{story.duaS}</Text>
+      {text ? <Text style={{ fontFamily: FONT.italic, fontSize: 15.5, lineHeight: 22, color: "#ffffff", textAlign: "center" }}>{text}</Text> : null}
+      <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: stage.gold, textAlign: "center" }}>{source}</Text>
     </View>
   );
 }

@@ -5,6 +5,7 @@ import { Chip, GoldButton } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { usePro } from "@/lib/pro";
+import { useEntitlement } from "@/lib/entitlements";
 import { rate, stats } from "@/web/learning";
 import { award } from "@/web/points";
 import { shamsGrow } from "@/features/garden/garden";
@@ -12,7 +13,7 @@ import { gEvent } from "@/features/feed/gamify";
 import { success } from "@/features/feed/haptics";
 import { StepIn } from "@/features/coursekit/motion";
 import { useIntl } from "@/features/srs/format";
-import { useShams2 } from "./model";
+import { useShams2, type Shams2Model } from "./model";
 import { useSurahNames } from "./names";
 import { rangeId, type Range, type WirdBlock } from "./plan";
 import { markBlock, rateRange, saveSettings, useLog, wirdStreak, type Block } from "./store";
@@ -33,12 +34,12 @@ export function rewardBlock(pro: boolean, verses: number) {
   success();
 }
 
-function BlockCard({ b, done, onDone, ratings }: { b: WirdBlock; done: boolean; onDone: () => void; ratings: Record<string, string> }) {
+function BlockCard({ b, done, onDone, ratings, known, locked }: { b: WirdBlock; done: boolean; onDone: () => void; ratings: Record<string, string>; known: Shams2Model["known"]; locked?: Range | null }) {
   const t = useTheme();
   const { s } = useS2();
   const nf = useIntl();
   const { name } = useSurahNames();
-  const { known } = useShams2();
+  const ent = useEntitlement("shams");
   const reviewKind = b.kind !== "sabaq";
   const onRate = (r: Range, g: "fluent" | "hesitant" | "weak") => {
     for (let v = r.from; v <= r.to; v++) {
@@ -76,6 +77,17 @@ function BlockCard({ b, done, onDone, ratings }: { b: WirdBlock; done: boolean; 
         );
       })}
       {b.ranges.length > 12 ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{s("moreRanges", { n: nf(b.ranges.length - 12) })}</Text> : null}
+      {locked ? (
+        // the next portion needs Pro (all free surahs are learned): shown with a lock, never planned or marked as done
+        <View style={{ gap: 8, paddingTop: 8, borderTopWidth: 1, borderTopColor: t.line }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+            <Icon name="lock" size={16} color={t.gold} />
+            <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 15, color: t.ink, textAlign: "left" }} numberOfLines={1}>{`${name(locked.s)} · ${locked.from === locked.to ? s("verseN", { v: nf(locked.from) }) : s("versesAB", { a: nf(locked.from), b: nf(locked.to) })}`}</Text>
+          </View>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: t.muted, textAlign: "left" }}>{s("proSurah")}</Text>
+          <Btn title={s("unlock")} icon="lock" onPress={() => ent.upsell()} />
+        </View>
+      ) : null}
       {b.verses && !done ? <GoldButton title={s("markDone")} onPress={onDone} /> : null}
     </Card>
   );
@@ -86,7 +98,7 @@ export function WirdScreen() {
   const { s } = useS2();
   const nf = useIntl();
   const { pro } = usePro();
-  const { wird, settings, day, grade } = useShams2();
+  const { wird, settings, day, grade, known } = useShams2();
   const log = useLog();
   const today = log[day] ?? {};
   const streak = Math.max(wirdStreak(log, day), 0);
@@ -114,7 +126,7 @@ export function WirdScreen() {
           {wird.gated ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.gold, textAlign: "left" }}>{s("gatedLead")}</Text> : null}
           {reasonKey ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, textAlign: "left" }}>{s(reasonKey)}</Text> : null}
           {(["sabaq", "sabqi", "manzil"] as const).map((k, i) => (
-            <StepIn key={k} delay={i * 60}><BlockCard b={wird[k]} done={done(k)} onDone={() => finish(wird[k])} ratings={today.r ?? {}} /></StepIn>
+            <StepIn key={k} delay={i * 60}><BlockCard b={wird[k]} done={done(k)} onDone={() => finish(wird[k])} ratings={today.r ?? {}} known={known} locked={k === "sabaq" ? wird.locked : null} /></StepIn>
           ))}
           {allDone ? <Card gold><Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink }}>{s("wirdDone")}</Text><ContinueNext /></Card> : null}
           <Card>

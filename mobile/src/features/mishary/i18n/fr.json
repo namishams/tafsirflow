@@ -1,8 +1,8 @@
 {
- "kicker": "Parcours Mishary",
+ "kicker": "Masār al-Qurrāʾ",
  "title": "Former la prochaine génération de récitateurs",
  "lead": "Après le Parcours du récitateur : exercez votre oreille aux maqamat, étudiez le style des maîtres, tenez un journal d'enregistrement quotidien, recevez l'avis d'un maître vérifié et participez aux saisons des talents.",
- "cardTitle": "Parcours Mishary",
+ "cardTitle": "Masār al-Qurrāʾ",
  "cardLead": "Entraînement de l'oreille aux maqamat, études de style des maîtres, journal d'enregistrement quotidien, mentorat et saisons des talents.",
  "tileSub": "Oreille des maqamat, style des maîtres, mentorat, saisons",
  "needsReview": "En cours de vérification",
@@ -215,5 +215,10 @@
  "startsOn": "Début (YYYY-MM-DD)",
  "endsOn": "Fin (YYYY-MM-DD)",
  "titleField": "Titre (facultatif)",
- "create": "Créer"
+ "create": "Créer",
+ "safetyFor": "Signaler ou bloquer {name}",
+ "reportRecording": "Signaler l'enregistrement",
+ "reportReview": "Signaler le retour",
+ "blockedNote": "{name} est bloqué et n'apparaît plus ici.",
+ "mentoringNote": "Enregistrements privés, supprimés après 60 jours. À partir de 16 ans."
 }

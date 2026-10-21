@@ -43,6 +43,9 @@ export function WeakScreen({ surah }: { surah?: number }) {
   const cur = queue ? queue[i] : null;
   const spot = spots.find((x) => x.key === cur);
   const vd = useVerseData(cur, lang);
+  // one array per loaded verse, so the recitation check keeps its result when this screen re-renders
+  const vdData = vd?.data;
+  const vWords = useMemo(() => vdData?.words.map((w) => ({ position: w.position, text: w.text })) ?? [], [vdData]);
   const ref = (k: string) => { const [a, b] = k.split(":"); return `${name(Number(a))} ${nf(Number(b))}`; };
   const grade = (r: Rating) => {
     if (!cur) return;
@@ -70,9 +73,9 @@ export function WeakScreen({ surah }: { surah?: number }) {
               <Card gold>
                 {!vd?.data ? <Loading /> : (
                   <>
-                    <PromptedWords words={vd.data.words.map((w) => ({ position: w.position, text: w.text }))} prompt={m.grade.prompt} mark={new Set(spot?.words ?? [])} />
+                    <PromptedWords words={vWords} prompt={m.grade.prompt} mark={new Set(spot?.words ?? [])} />
                     {spot?.words.length ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted }}>{s("weakWordsMarked", { n: nf(spot.words.length) })}</Text> : null}
-                    <SpeechCheck words={vd.data.words.map((w) => ({ position: w.position, text: w.text }))} pass={m.grade.wordPass} onResult={onCheck} />
+                    <SpeechCheck words={vWords} pass={m.grade.wordPass} onResult={onCheck} />
                     {result ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: result.pass ? t.accent : t.gold }}>{result.pass ? s("passed") : s("notYetPassed")}</Text> : null}
                     <Briefing s={Number(cur.split(":")[0])} v={Number(cur.split(":")[1])} review />
                     <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.ink }}>{s("howWasIt")}</Text>

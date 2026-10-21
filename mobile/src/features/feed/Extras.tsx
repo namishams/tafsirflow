@@ -180,7 +180,7 @@ export const MemoPost = memo(function MemoPost(p: Common) {
   return (
     <Frame learn={`/shams/${s}?v=${key.split(":")[1]}`} icon="eye" title={tx.memoTitle} sub={`${p.nameOf(s)} · ${key}`} width={p.width} tone={tone} share={v ? () => verseSpec(shareCtx, v, p.nameOf(s)) : undefined}>
       <PostPanel seed={tone.join("")} style={{ marginHorizontal: 12, borderRadius: R.card, padding: 18, gap: 12 }}>
-        <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", justifyContent: "center", gap: 8 }}>
+        <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", justifyContent: "center", gap: 8 }}>
           {words.map((w, i) => {
             const on = shown.has(i);
             return (

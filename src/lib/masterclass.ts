@@ -116,7 +116,7 @@ const en: MC = {
 
 const de: MC = {
   hero: {
-    title: "Werde Rezitator des Korans.",
+    title: "Werden Sie Rezitator des Korans.",
     accent: "Mit der Shams-Methode.",
     lead: "Eine vollständige Koranschule – vom ersten arabischen Buchstaben bis zu Ihrer Masterclass-Rezitation. Lesen, Tadschwid, Auswendiglernen und Bedeutung, Vers für Vers, mit einem Plan, der sich für Sie erinnert.",
     cta: "Die Masterclass entdecken", ctaFree: "Kostenlos starten",
@@ -125,7 +125,7 @@ const de: MC = {
   pillarsLead: "Alles, was Sie brauchen, um den Koran schön zu rezitieren und zu verstehen, was Sie rezitieren – als ein zusammenhängender Lehrplan, nicht als Sammlung von Werkzeugen.",
   pillars: {
     shams: { t: "Die Shams-Methode", d: "Jeder Vers in kurzen Schritten: hören, aufbauen, Wort für Wort, Bedeutung, Tafsir, abrufen. Täglich Neues, Frisches und langfristige Wiederholung." },
-    path: { t: "Der Rezitatorweg", d: "Zehn Stufen von den Makharidsch bis zu Qiraʾat und Maqamat – mit Ihrer Masterclass-Rezitation und Zertifikat als Abschluss." },
+    path: { t: "Der Rezitationspfad", d: "Zehn Stufen von den Makharidsch bis zu Qiraʾat und Maqamat – mit Ihrer Masterclass-Rezitation und Zertifikat als Abschluss." },
     school: { t: "Die Schulstufen", d: "Ibtidāʾī, Iʿdādī, Thānawī, ʿĀlī: vier Stufen wie an einer traditionellen islamischen Schule, jede mit klaren Zielen." },
     arabic: { t: "Arabisch lesen und verstehen", d: "Lesen ab dem ersten Buchstaben in 20 Stufen, dann das Arabisch des Korans von A1 bis C1 mit seinen 500 häufigsten Wörtern." },
     tajweed: { t: "Tadschwid", d: "Jede Regel mit Beispielen aus dem Mushaf erklärt, von großen Rezitatoren gehört und in kurzen Tests geübt." },
@@ -137,16 +137,16 @@ const de: MC = {
   schoolKicker: "Die Schule", schoolTitle: "Vier Stufen wie an einer traditionellen islamischen Schule", stageWord: "Stufe",
   schoolLead: "Die Masterclass folgt der Reihenfolge, in der der Koran seit Jahrhunderten gelehrt wird: zuerst lesen, dann richtig rezitieren, dann Tiefe und Meisterschaft.",
   stages: {
-    ibtidai: { name: "Ibtidāʾiyya", t: "Grundlage", d: "Buchstaben, Vokale und Ihre ersten Suren.", items: ["Arabisch-Lesekurs, erste Stufen", "al-Fātiḥa und Juz ʿAmma mit der Shams-Methode", "Rezitatorweg Stufen 1–2", "Arabisch-Sprachkurs A1"] },
-    idadi: { name: "Iʿdādiyya", t: "Vorbereitung", d: "Flüssig lesen und die Kernregeln des Tadschwid.", items: ["Lesekurs abgeschlossen (20 Stufen)", "Rezitatorweg Stufen 3–5", "Tägliche Hifz-Karten", "Arabisch-Sprachkurs A2"] },
-    thanawi: { name: "Thānawiyya", t: "Festigung", d: "Gut anhalten, Atem, Melodie und längere Suren.", items: ["Rezitatorweg Stufen 6–8: Waqf, Maqamat, Atem", "Längere Suren mit der Shams-Methode", "Akademie: Tafsir, Hadith, Fiqh", "Arabisch-Sprachkurs B1–B2"] },
-    ali: { name: "ʿĀliya", t: "Meisterschaft", d: "Qiraʾat, ähnliche Verse und Ihre Masterclass-Rezitation.", items: ["Rezitatorweg Stufen 9–10", "Masterclass-Rezitation mit Zertifikat", "Arabisch-Sprachkurs C1", "Verifiziertes Profil in der Talents-Gemeinschaft"] },
+    ibtidai: { name: "Ibtidāʾiyya", t: "Grundlage", d: "Buchstaben, Vokale und Ihre ersten Suren.", items: ["Arabisch-Lesekurs, erste Stufen", "al-Fātiḥa und Juz ʿAmma mit der Shams-Methode", "Rezitationspfad Stufen 1–2", "Arabisch-Sprachkurs A1"] },
+    idadi: { name: "Iʿdādiyya", t: "Vorbereitung", d: "Flüssig lesen und die Kernregeln des Tadschwid.", items: ["Lesekurs abgeschlossen (20 Stufen)", "Rezitationspfad Stufen 3–5", "Tägliche Hifz-Karten", "Arabisch-Sprachkurs A2"] },
+    thanawi: { name: "Thānawiyya", t: "Festigung", d: "Gut anhalten, Atem, Melodie und längere Suren.", items: ["Rezitationspfad Stufen 6–8: Waqf, Maqamat, Atem", "Längere Suren mit der Shams-Methode", "Akademie: Tafsir, Hadith, Fiqh", "Arabisch-Sprachkurs B1–B2"] },
+    ali: { name: "ʿĀliya", t: "Meisterschaft", d: "Qiraʾat, ähnliche Verse und Ihre Masterclass-Rezitation.", items: ["Rezitationspfad Stufen 9–10", "Masterclass-Rezitation mit Zertifikat", "Arabisch-Sprachkurs C1", "Verifiziertes Profil in der Talents-Gemeinschaft"] },
   },
-  pathKicker: "Rezitatorweg", pathTitle: "Zehn Stufen bis zur Masterclass-Rezitation", levelWord: "Stufe",
+  pathKicker: "Rezitationspfad", pathTitle: "Zehn Stufen bis zur Masterclass-Rezitation", levelWord: "Stufe",
   pathLead: "Jede Stufe lehrt eine Gruppe von Regeln mit Beispielen aus dem Mushaf, gespielt von dem Rezitator Ihrer Wahl, und endet mit einem Test.",
   levels: ["Grundlagen: Makharidsch, Sifat, Vokale", "Nun sakina und Tanwin", "Mim sakina und Ghunna", "Madd: Dehnung", "Qalqala, Lam und Ra", "Waqf und angewandte Rezitation", "Maqamat: die melodischen Modi", "Atem und lange Verse", "Qiraʾat und Mutaschabihat", "Längere Suren und Masterclass-Rezitation"],
   recitalT: "Die Masterclass-Rezitation",
-  recitalD: "Ihre abschließende Rezitation: al-Fātiḥa, Āyat al-Kursī und der Beginn von al-Mulk, in einem Zug aufgenommen wie vor einem Lehrer. Mit der bestandenen Stufenprüfung erhalten Sie das Masterclass-Zertifikat des Rezitatorwegs.",
+  recitalD: "Ihre abschließende Rezitation: al-Fātiḥa, Āyat al-Kursī und der Beginn von al-Mulk, in einem Zug aufgenommen wie vor einem Lehrer. Mit der bestandenen Stufenprüfung erhalten Sie das Masterclass-Zertifikat des Rezitationspfads.",
   arabicTitle: "Arabisch: erst lesen, dann verstehen",
   arabicLead: "Zwei Kurse, die aufeinander aufbauen – damit der Koran nicht nur gehört, sondern gelesen und verstanden wird.",
   readingT: "Lesekurs in 20 Stufen", readingD: "Von den Formen der Buchstaben bis zum flüssigen Lesen im Mushaf, mit Einstufungstest für alle, die schon lesen können.",
@@ -164,7 +164,7 @@ const de: MC = {
     levelsTitle: "Vier Stufen",
     levels: [["Talent", "Am Anfang des Weges, mit Sorgfalt rezitierend."], ["Aufstrebend", "Richtige Rezitation mit wachsender Sicherheit."], ["Meister", "Beherrschung des Tadschwid und langer Abschnitte."], ["Scheich", "Lehrende mit Idschaza und geprüfter Kette."]],
     pathTitle: "Der Weg zur eigenen Rezitation im Netzwerk",
-    steps: [["Ab 16 Jahren", "Ansehen und Folgen ab 13; Posten, Vernetzen und Nachrichten ab 16."], ["Eine erreichte Stufe", "Ihre Stufe auf dem Rezitatorweg, von der App gemeldet, öffnet das Posten Schritt für Schritt."], ["Verifizierung", "Sie bewerben sich in der App; das Team prüft Ihr Profil und, falls angegeben, die Idschaza-Kette. Geprüfte Profile tragen ein Siegel."], ["Pro, wo erforderlich", "Die Gemeinschaft ist kostenlos. Wo das Posten an Quran Masterclass Pro gebunden ist, sagt es Ihnen die App vorher."]],
+    steps: [["Ab 16 Jahren", "Ansehen und Folgen ab 13; Posten, Vernetzen und Nachrichten ab 16."], ["Eine erreichte Stufe", "Ihre Stufe auf dem Rezitationspfad, von der App gemeldet, öffnet das Posten Schritt für Schritt."], ["Verifizierung", "Sie bewerben sich in der App; das Team prüft Ihr Profil und, falls angegeben, die Idschaza-Kette. Geprüfte Profile tragen ein Siegel."], ["Pro, wo erforderlich", "Die Gemeinschaft ist kostenlos. Wo das Posten an Quran Masterclass Pro gebunden ist, sagt es Ihnen die App vorher."]],
     safetyTitle: "Mit Sorgfalt gebaut",
     safety: ["Keine Kontaktdaten oder Links in Nachrichten", "Nachrichten nur zwischen verbundenen Mitgliedern", "Melden und Blockieren auf jedem Profil und jeder Nachricht", "Profile Minderjähriger sind geschützt"],
     soonTitle: "Öffentliche Profile kommen bald", soonBody: "Rezitatorenprofile werden bald auch hier auf der Website sichtbar. Bis dahin lebt die Talents-Gemeinschaft in der App.", soonBack: "Über die Talents",
@@ -183,14 +183,14 @@ const de: MC = {
     cta: "Ihre Erfahrung teilen",
   },
   page: {
-    metaTitle: "Die Masterclass – Lehrplan, Schulstufen und Rezitatorweg",
-    metaDesc: "Werde Koranrezitator mit der Shams-Methode: vier Schulstufen von Ibtidāʾī bis ʿĀlī, der Rezitatorweg bis zur Masterclass-Rezitation, Arabisch A1–C1, Tadschwid, Hifz und Kurse der Akademie.",
+    metaTitle: "Die Masterclass – Lehrplan, Schulstufen und Rezitationspfad",
+    metaDesc: "Werden Sie Koranrezitator mit der Shams-Methode: vier Schulstufen von Ibtidāʾī bis ʿĀlī, der Rezitationspfad bis zur Masterclass-Rezitation, Arabisch A1–C1, Tadschwid, Hifz und Kurse der Akademie.",
     kicker: "Der Lehrplan", title: "Die Masterclass",
     lead: "Eine Koranschule in vier Stufen. Sie lernen lesen, richtig rezitieren, auswendig lernen und verstehen – und schließt mit Ihrer Masterclass-Rezitation ab.",
     ctaApp: "In der App beginnen", ctaShams: "Die Shams-Methode",
     outroT: "Beginnen Sie mit einem Vers", outroD: "Jede Stufe beginnt mit dem nächsten kleinen Schritt. al-Fātiḥa und Juz ʿAmma sind mit der Shams-Methode kostenlos.",
   },
-  appPage: { title: "Die ganze Masterclass in der App", lead: "Die Schulstufen, der Rezitatorweg, die Arabischkurse, Hifz-Karten und Ihr Garten – alles in einer App mit demselben Konto wie die Website.", cta: "Den Lehrplan ansehen" },
+  appPage: { title: "Die ganze Masterclass in der App", lead: "Die Schulstufen, der Rezitationspfad, die Arabischkurse, Hifz-Karten und Ihr Garten – alles in einer App mit demselben Konto wie die Website.", cta: "Den Lehrplan ansehen" },
 };
 
 const ar: MC = {

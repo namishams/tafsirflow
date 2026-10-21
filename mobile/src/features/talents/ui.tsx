@@ -8,6 +8,7 @@ import { CALLIG_FONT, FONT, R, goldButton, useTheme } from "@/lib/theme";
 import { Icon } from "@/components/icons";
 import { GoldButton, OutlineButton } from "@/components/brand";
 import { CheckRow, FormError, LabeledField } from "@/components/form";
+import { Loading, goBack } from "@/components/page";
 import { useAuth } from "@/lib/auth";
 import { countryName } from "@/lib/countries";
 import { useLang, useT } from "@/i18n";
@@ -255,7 +256,8 @@ export function AccessGate({ a, children }: { a: Access; children: ReactNode }) 
   const tt = useTT();
   const tr = useT();
   if (a.state === "ok") return <>{children}</>;
-  if (a.state === "load") return null;
+  // while the account and the age load: a spinner, never an empty area under the hero
+  if (a.state === "load") return <View style={{ minHeight: 160 }}><Loading /></View>;
   return (
     <View style={{ padding: 20, gap: 14 }}>
       {a.state === "signin" ? (
@@ -279,6 +281,28 @@ export function AccessGate({ a, children }: { a: Access; children: ReactNode }) 
 }
 
 export { SharerBadge };
+
+/** expo-router ErrorBoundary of the network routes (profile, follower lists, search): a failure shows Back and Retry
+ * instead of a white screen. Used as `export { TalentsRouteError as ErrorBoundary }` in the route file. */
+export function TalentsRouteError({ retry }: { error: Error; retry: () => Promise<void> }) {
+  const t = useTheme();
+  const tt = useTT();
+  const tr = useT();
+  const insets = useSafeAreaInsets();
+  return (
+    <View style={{ flex: 1, backgroundColor: t.dark ? t.bg : t.surface, paddingTop: insets.top + 3 }}>
+      <Pressable onPress={goBack} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={6}
+        style={{ width: 44, height: 44, marginStart: 6, alignItems: "center", justifyContent: "center" }}>
+        <Icon name="chevronLeft" color={t.ink} size={26} weight={2.2} />
+      </Pressable>
+      <View style={{ padding: 20, gap: 14 }}>
+        <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{tt("e_generic")}</Text>
+        <GoldButton title={tr("common.retry")} onPress={() => void retry()} />
+        <SafetyBar />
+      </View>
+    </View>
+  );
+}
 
 /** entry card on the Discover tab */
 export function TalentsCard() {

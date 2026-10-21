@@ -127,7 +127,8 @@ export function MomentFeed({ visible, moments, start, username, more, onClose, o
         <FlatList data={moments} keyExtractor={(m) => m.id} pagingEnabled showsVerticalScrollIndicator={false} initialScrollIndex={Math.min(start, Math.max(0, moments.length - 1))}
           getItemLayout={(_, i) => ({ length: height, offset: height * i, index: i })} onEndReached={() => void loadMore()} onEndReachedThreshold={1.5}
           renderItem={({ item, index }: ListRenderItemInfo<Moment>) => (
-            <FeedItem m={item} width={width} height={height} top={insets.top} bottom={insets.bottom} label={pt("momentOf", { n: index + 1, m: moments.length })} onChange={onChange} />
+            <FeedItem m={item} width={width} height={height} top={insets.top} bottom={insets.bottom} label={pt("momentOf", { n: index + 1, m: moments.length })} onChange={onChange}
+              current={username} onClose={onClose} />
           )} />
         <Pressable onPress={onClose} accessibilityRole="button" accessibilityLabel={pt("close")} hitSlop={10}
           style={{ position: "absolute", top: insets.top + 8, left: 14, width: 44, height: 44, borderRadius: 22, backgroundColor: "rgba(0,0,0,0.35)", alignItems: "center", justifyContent: "center" }}>
@@ -138,7 +139,13 @@ export function MomentFeed({ visible, moments, start, username, more, onClose, o
   );
 }
 
-function FeedItem({ m, width, height, top, bottom, label, onChange }: { m: Moment; width: number; height: number; top: number; bottom: number; label: string; onChange: (m: Moment) => void }) {
+function FeedItem({ m, width, height, top, bottom, label, onChange, current, onClose }: {
+  m: Moment; width: number; height: number; top: number; bottom: number; label: string; onChange: (m: Moment) => void;
+  /** the profile this feed belongs to: its author link stays inert (it would open the same profile again) */
+  current: string;
+  /** closes the full-screen feed; called before opening another profile, which would otherwise open behind the modal */
+  onClose: () => void;
+}) {
   const pt = usePT();
   const st = useST();
   const err = useTalentErr();
@@ -180,6 +187,7 @@ function FeedItem({ m, width, height, top, bottom, label, onChange }: { m: Momen
 
   const n = maOf(m);
   const on = isMa(m.mine);
+  const linkable = !!m.author.username && m.author.username !== current;
   const card = Math.min(width - 48, 420, (height - top - bottom) * 0.62 * 0.8);
   const scale = burst.interpolate({ inputRange: [0, 1, 2], outputRange: [0.3, 1.15, 1.35] });
   const opacity = burst.interpolate({ inputRange: [0, 0.2, 1, 2], outputRange: [0, 1, 1, 0] });
@@ -209,8 +217,9 @@ function FeedItem({ m, width, height, top, bottom, label, onChange }: { m: Momen
         </Animated.View>
       </Pressable>
 
-      {/* author and date */}
-      <Pressable onPress={() => router.push(`/talents/u/${m.author.username}` as Href)} disabled={!m.author.username} accessibilityRole={m.author.username ? "link" : "text"} accessibilityLabel={m.author.name}
+      {/* author and date: another member's profile closes the feed first (a push from inside the modal lands behind it) */}
+      <Pressable onPress={() => { if (!linkable) return; onClose(); router.push(`/talents/u/${m.author.username}` as Href); }} disabled={!linkable}
+        accessibilityRole={linkable ? "link" : "text"} accessibilityLabel={m.author.name}
         style={{ position: "absolute", left: 16, right: 96, bottom: bottom + 22, flexDirection: "row", alignItems: "center", gap: 10 }}>
         <TalentAvatar name={m.author.name} size={40} uri={m.author.avatar} badge={m.author.badge} />
         <View style={{ flex: 1 }}>

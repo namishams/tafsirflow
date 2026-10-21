@@ -82,7 +82,7 @@ export default function People() {
             <View style={{ borderRadius: R.card, borderWidth: list?.length ? 1 : 0, borderColor: t.line, overflow: "hidden", backgroundColor: t.surface }}>
               {list?.map((p, i) => (
                 <View key={p.username} style={[{ flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 14, paddingVertical: 12 }, i > 0 && { borderTopWidth: 1, borderTopColor: t.line }]}>
-                  <Pressable onPress={() => router.push(`/community/u/${p.username}` as Href)} accessibilityRole="button" accessibilityLabel={`${p.name}, @${p.username}${p.role !== "learner" ? `, ${c(p.role)}` : ""}`}
+                  <Pressable onPress={() => router.push(`/talents/u/${p.username}` as Href)} accessibilityRole="button" accessibilityLabel={`${p.name}, @${p.username}${p.role !== "learner" ? `, ${c(p.role)}` : ""}`}
                     style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 12, minHeight: 56 }}>
                     <SharerRing tier={p.sharerTier ?? 0} size={52}><Avatar name={p.name} /></SharerRing>
                     <View style={{ flex: 1, gap: 3 }}>

@@ -1,9 +1,11 @@
-import { Pressable, Text, View } from "react-native";
-import { router, type Href } from "expo-router";
+import { useEffect, useState } from "react";
+import { Pressable, Switch, Text, TextInput, View } from "react-native";
+import { router, useGlobalSearchParams, type Href } from "expo-router";
 import { FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
 import { Icon } from "@/components/icons";
 import { usePT } from "./profileText";
-import { isHaramain, useTravel } from "./travel";
+import { isHaramain, setTravel, useTravel } from "./travel";
+import { T } from "./api";
 
 // Travel mode on the prayer page and in the feed (owner, 21.10.2026). Only while travel mode is on.
 // SCHOLAR REVIEW: the note on praying while travelling (texts qasrGeneral, qasrHanafi, qasrNote in profileText.ts and
@@ -74,6 +76,44 @@ export function TravelBadge({ city }: { city?: string }) {
     <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: 9, paddingVertical: 3, borderRadius: R.pill, backgroundColor: "rgba(201,166,94,0.14)", borderWidth: 1, borderColor: goldButton.line, flexShrink: 1 }}>
       <Icon name="compass" color={t.gold} size={12} />
       <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.semibold, fontSize: 12, color: t.gold }}>{city ? pt("travellingTo", { c: city }) : pt("travelling")}</Text>
+    </View>
+  );
+}
+
+/** Settings: travel mode on this device (also without a community profile); with a profile the profile shows it too */
+export function TravelSetting() {
+  const t = useTheme();
+  const pt = usePT();
+  const trip = useTravel();
+  const [city, setCity] = useState(trip.city);
+  const [msg, setMsg] = useState("");
+  // development only (screenshot audits): /account/settings?travel=Makkah switches travel mode on, ?travel=off off
+  const { travel: demo } = useGlobalSearchParams<{ travel?: string }>();
+  useEffect(() => {
+    if (!__DEV__ || !demo) return;
+    void setTravel(demo !== "off", demo === "off" ? "" : demo).then(() => setCity(demo === "off" ? "" : demo));
+  }, [demo]);
+  const apply = async (on: boolean, name: string) => {
+    setMsg("");
+    const r = await setTravel(on, name);
+    if (on && name) setMsg(r.place ? pt("destinationSet", { c: name }) : pt("destinationNotFound"));
+    void T.saveExtras({ travel: { on, city: name } }).catch(() => undefined); // only when a profile exists
+  };
+  return (
+    <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 14, gap: 12 }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
+        <View style={{ flex: 1 }}>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{pt("travelTitle")}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted, marginTop: 2 }}>{pt("travelHint")}</Text>
+        </View>
+        <Switch value={trip.on} onValueChange={(on) => void apply(on, city)} trackColor={{ true: t.accent }} accessibilityLabel={pt("travelTitle")} />
+      </View>
+      {trip.on ? (
+        <TextInput value={city} onChangeText={(v) => setCity(v.replace(/[0-9]/g, "").slice(0, 60))} onEndEditing={() => { if (city !== trip.city) void apply(true, city); }}
+          placeholder={pt("destination")} placeholderTextColor={t.muted} accessibilityLabel={pt("destination")} returnKeyType="done" autoCorrect={false}
+          style={{ height: 46, borderRadius: R.md, borderWidth: 1, borderColor: t.line, paddingHorizontal: 12, fontFamily: FONT.regular, fontSize: 16, color: t.ink, backgroundColor: t.bg }} />
+      ) : null}
+      {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{msg}</Text> : null}
     </View>
   );
 }

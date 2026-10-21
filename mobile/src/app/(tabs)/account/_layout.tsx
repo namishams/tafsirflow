@@ -8,6 +8,7 @@ export default function Layout() {
     <Stack screenOptions={stackOptions(theme)}>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="settings" options={{ headerShown: false }} />
+      <Stack.Screen name="security" options={{ headerShown: false }} />
     </Stack>
   );
 }

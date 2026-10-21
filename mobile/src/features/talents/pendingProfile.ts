@@ -10,7 +10,9 @@ import { uploadAvatarFile } from "./avatar";
 // overwritten; only a missing photo is added. Username taken in the meantime: one try with a short number, otherwise
 // the member picks another one in Edit profile.
 export const PENDING_KEY = "qmc.talents.pendingProfile";
-export type PendingProfile = { name: string; username: string; photo: string | null; at: number };
+/** `visibility`: the choice made in the onboarding step (public account, or private: followers need approval); older
+ *  entries without it are created as private accounts, the more private choice, which Edit profile can change */
+export type PendingProfile = { name: string; username: string; photo: string | null; visibility?: "public" | "private"; at: number };
 export const readPending = () => readJSON<PendingProfile | null>(PENDING_KEY, null);
 export const savePending = (p: Omit<PendingProfile, "at">) => writeJSON(PENDING_KEY, { ...p, at: Date.now() });
 export const clearPending = () => writeJSON(PENDING_KEY, undefined);
@@ -35,7 +37,7 @@ async function run(): Promise<"created" | "photo" | "waiting" | "none"> {
     clearPending();
     return out;
   }
-  const body = (username: string) => ({ username, name: p.name.trim() || username, bio: "", role: "learner", style: "", ijaza: false, public: true });
+  const body = (username: string) => ({ username, name: p.name.trim() || username, bio: "", role: "learner", style: "", ijaza: false, public: true, private: p.visibility !== "public" });
   try { await api("/api/community/me", { method: "PUT", body: body(p.username) }); }
   catch (e) {
     if (!(e instanceof ApiError) || e.code !== "username_taken") return "waiting";

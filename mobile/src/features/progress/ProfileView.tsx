@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { Alert, Platform, Pressable, Share, Text, View } from "react-native";
+import { AccessibilityInfo, Alert, Platform, Pressable, Share, Text, View } from "react-native";
 import { router } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
 import { File, Paths } from "expo-file-system";
@@ -37,12 +37,15 @@ import { go } from "./links";
 import { longDate } from "./format";
 import { useText } from "./text";
 import { Grid, useCols } from "./ui";
+import { ConfirmCode } from "@/features/auth/ConfirmCode";
+import { useAuthT } from "@/features/auth/text";
 
 export const PROFILE_TABS = ["overview", "stats", "badges", "ranking", "learning", "account"] as const;
 export type ProfileTab = (typeof PROFILE_TABS)[number];
 
 type Profile = { email: string; birth_year: number | null; first_name: string | null; last_name: string | null; country: string | null; city: string | null; goal: string | null; locale: string | null; marketing_opt_in: boolean; email_verified: boolean; created_at: string; last_login_at: string | null; plan: string };
-type Data = { profile: Profile; sessions: number; social: { comments: number; likes: number } };
+/** `hasPassword` false: an account created with an e-mail code or a passkey (it confirms the deletion with a code) */
+type Data = { profile: Profile; sessions: number; social: { comments: number; likes: number }; hasPassword?: boolean };
 type Form = { birthYear: string; firstName: string; lastName: string; country: string; city: string; goal: string; locale: string; marketing: boolean };
 
 // Learning statistics from the synced account data (website: ProfileView.tsx collect())
@@ -103,6 +106,8 @@ export function ProfileView({ initialTab = "overview" }: { initialTab?: ProfileT
   const [msg, setMsg] = useState<Record<string, string>>({});
   const [pw, setPw] = useState({ current: "", next: "" });
   const [del, setDel] = useState("");
+  const [delConfirmed, setDelConfirmed] = useState(false); // accounts without a password confirm with an e-mail code (as on the website)
+  const tau = useAuthT();
   const [rank, setRank] = useState<{ rank: number | null; participants: number } | null>(null);
   const tp = useWebT("plan");
   const learnCols = useCols(2, 2, 4);
@@ -156,12 +161,19 @@ export function ProfileView({ initialTab = "overview" }: { initialTab?: ProfileT
       catch { await Share.share({ url: out.uri, title: tr("export") }); }
     } catch { flash("export", tx.exportFailed); }
   };
+  const noPassword = d?.hasPassword === false;
   const doDelete = async () => {
     try {
-      await deleteAccount(del);
+      await deleteAccount(noPassword ? undefined : del);
       for (const k of storedKeys()) if (k.startsWith("tf:")) removeKey(k);
+      AccessibilityInfo.announceForAccessibility(ta("account.deleted"));
+      if (Platform.OS !== "web") Alert.alert(tr("delete"), ta("account.deleted"));
       router.replace("/");
-    } catch { flash("del", tr("pwWrong")); }
+    } catch (e) {
+      const current = e instanceof ApiError && e.code === "current";
+      if (noPassword) setDelConfirmed(false); // the confirmation ran out (15 minutes): ask for a new code
+      flash("del", current ? (noPassword ? tau("errExpired") : tr("pwWrong")) : tr("error"));
+    }
   };
   const confirmDelete = () => {
     if (Platform.OS === "web") { void doDelete(); return; }
@@ -344,14 +356,19 @@ export function ProfileView({ initialTab = "overview" }: { initialTab?: ProfileT
 
           <View style={card}>
             <Text accessibilityRole="header" style={h2}>{tr("security")}</Text>
-            <View style={{ gap: 16, marginTop: 16 }}>
-              <TextField label={tr("pwCurrent")} value={pw.current} onChangeText={(v) => setPw({ ...pw, current: v })} secureTextEntry autoComplete="current-password" textContentType="password" />
-              <TextField label={tr("pwNew")} value={pw.next} onChangeText={(v) => setPw({ ...pw, next: v })} secureTextEntry autoComplete="new-password" textContentType="newPassword" />
-            </View>
-            <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 12, marginTop: 16 }}>
-              {inkButton(tr("pwChange"), () => void changePw(), !pw.current || pw.next.length < 10)}
-              {statusText("pw")}
-            </View>
+            {/* changing the password only for accounts that have one (as on the website) */}
+            {!noPassword ? (
+              <>
+                <View style={{ gap: 16, marginTop: 16 }}>
+                  <TextField label={tr("pwCurrent")} value={pw.current} onChangeText={(v) => setPw({ ...pw, current: v })} secureTextEntry autoComplete="current-password" textContentType="password" />
+                  <TextField label={tr("pwNew")} value={pw.next} onChangeText={(v) => setPw({ ...pw, next: v })} secureTextEntry autoComplete="new-password" textContentType="newPassword" />
+                </View>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 12, marginTop: 16 }}>
+                  {inkButton(tr("pwChange"), () => void changePw(), !pw.current || pw.next.length < 10)}
+                  {statusText("pw")}
+                </View>
+              </>
+            ) : null}
             <View style={{ marginTop: 24, paddingTop: 20, borderTopWidth: 1, borderTopColor: t.line, gap: 12 }}>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{tr("sessions", { n: d.sessions })}</Text>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
@@ -373,8 +390,14 @@ export function ProfileView({ initialTab = "overview" }: { initialTab?: ProfileT
               <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 15, color: "rgb(160,58,52)" }}>{tr("delete")}</Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.muted, marginTop: 4 }}>{tr("deleteText")}</Text>
               <View style={{ gap: 12, marginTop: 12 }}>
-                <TextField label={tr("pwCurrent")} value={del} onChangeText={setDel} secureTextEntry autoComplete="current-password" textContentType="password" />
-                {lineButton(tr("deleteBtn"), confirmDelete, true, !del)}
+                {noPassword ? (
+                  <>
+                    <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.muted }}>{tau("deleteByCode")}</Text>
+                    {delConfirmed ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{tau("confirmed")}</Text>
+                      : <ConfirmCode email={d.profile.email} onConfirmed={() => setDelConfirmed(true)} />}
+                  </>
+                ) : <TextField label={tr("pwCurrent")} value={del} onChangeText={setDel} secureTextEntry autoComplete="current-password" textContentType="password" />}
+                {lineButton(tr("deleteBtn"), confirmDelete, true, noPassword ? !delConfirmed : !del)}
                 {statusText("del")}
               </View>
             </View>

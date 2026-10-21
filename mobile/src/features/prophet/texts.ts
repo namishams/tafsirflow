@@ -1,6 +1,8 @@
-import { pick, useLang } from "@/i18n";
+import { useLang } from "@/i18n";
+import { moduleText } from "@/i18n/app";
 
-// App-only texts of "The Prophet ﷺ" stories (de + en; every other language falls back to English).
+// App-only texts of "The Prophet ﷺ" stories: de + en here, the other 12 languages in src/i18n/app/<lang>.json under
+// "prophet" (moduleText; a key a language does not have yet falls back to English).
 // The stories themselves are never written here: they come from the Islam library (web/islam).
 const TEXT = {
   en: {
@@ -59,7 +61,7 @@ const TEXT = {
     stories: "{n} Geschichten",
     fromLibrary: "Aus der Islam-Bibliothek",
     holdToPause: "Gedrückt halten zum Anhalten",
-    catForYou: "Für dich",
+    catForYou: "Für Sie",
     catVerses: "Verse",
     catProphet: "Prophet ﷺ",
     catReciters: "Rezitatoren",
@@ -71,7 +73,7 @@ const TEXT = {
     stopSample: "Hörprobe anhalten",
     proVoice: "Pro-Stimme",
     proTitle: "Unbegrenzt Geschichten, alle Rezitatoren",
-    proBody: "Du hast die kostenlosen Geschichten für heute gelesen. Mit Pro bekommst du alle Geschichten, alle Rezitatoren und die ganze Shams-Methode – die Verse bleiben für alle frei.",
+    proBody: "Sie haben die kostenlosen Geschichten für heute gelesen. Mit Pro erhalten Sie alle Geschichten, alle Rezitatoren und die ganze Shams-Methode – die Verse bleiben für alle frei.",
     proCta: "Pro entdecken",
     proLater: "Zurück zu den Versen",
     readMore: "Weiterlesen",
@@ -81,5 +83,5 @@ const TEXT = {
 export type ProphetText = typeof TEXT.en;
 export function useProphetText(): ProphetText {
   const { lang } = useLang();
-  return pick<ProphetText>(TEXT, lang);
+  return moduleText<ProphetText>("prophet", TEXT, lang);
 }

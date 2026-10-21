@@ -1,6 +1,18 @@
 // Texts of the Instagram/TikTok-style parts of the public talent profile on the website (counters, achievement grid,
-// full-screen moment feed, share, profile photo on /talents/me). English, German and Arabic; other locales fall back to
-// English. Polite address everywhere. {n}, {m} are placeholders.
+// full-screen moment feed, share, profile photo on /talents/me). English, German and Arabic here; the other 11 locales
+// (22.10.2026, from the app's "talentsProfile" module) in profileWeb/<locale>.json, merged over English. Polite address
+// everywhere. {n}, {m} are placeholders.
+import bn from "./profileWeb/bn.json";
+import es from "./profileWeb/es.json";
+import fa from "./profileWeb/fa.json";
+import fr from "./profileWeb/fr.json";
+import id from "./profileWeb/id.json";
+import ms from "./profileWeb/ms.json";
+import ps from "./profileWeb/ps.json";
+import ru from "./profileWeb/ru.json";
+import tr from "./profileWeb/tr.json";
+import ur from "./profileWeb/ur.json";
+import zh from "./profileWeb/zh.json";
 const en = {
   usernameFree: "Available", usernameChecking: "Checking …", username_format: "3 to 20 characters: a-z, 0-9, dot, underscore.",
   username_reserved: "This username is reserved.", username_taken: "This username is already taken.", username_inappropriate: "Please choose a different username.",
@@ -51,6 +63,7 @@ const ar: Record<PwKey, string> = {
   photoTooBig: "يرجى اختيار صورة أصغر من 15 ميغابايت.",
 };
 const ALL: Record<string, Record<PwKey, string>> = { en, de, ar };
+const OTHER: Record<string, Partial<Record<PwKey, string>>> = { bn, es, fa, fr, id, ms, ps, ru, tr, ur, zh };
 export function profileText(locale: string): Record<PwKey, string> {
-  return ALL[locale] ?? en;
+  return ALL[locale] ?? { ...en, ...(OTHER[locale] ?? {}) };
 }

@@ -1,0 +1,18 @@
+{
+  "discoverTitle": "发现人才",
+  "discoverLead": "寻找来自世界各地的诵读者和老师，关注并与他们建立联系。",
+  "search": "搜索姓名或 @用户名",
+  "filterLevel": "等级",
+  "all": "全部",
+  "verifiedOnly": "仅已认证",
+  "filterCountry": "国家",
+  "anyCountry": "所有国家",
+  "filterRewaya": "Rewaya（读法）",
+  "rewayaFilterHint": "例如 Hafs 或 Warsh",
+  "empty": "未找到人才。",
+  "loadMore": "加载更多",
+  "signIn": "请登录以使用社区。",
+  "signInBtn": "登录",
+  "e_generic": "操作未成功。",
+  "retry": "重试"
+}

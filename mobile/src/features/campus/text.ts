@@ -51,7 +51,7 @@ const de: T = {
   wird: "Ihr Wird heute", wirdD: "Neue, frische und langfristige Verse für heute.",
   darajat: "Darajāt al-Ḥifẓ", darajatD: "Ihr Hifz-Grad, wöchentliche und monatliche Prüfungen.",
   mutashabihat: "Mutashābihāt", mutashabihatD: "Ähnliche Verse nebeneinander, damit sie sich nie vermischen.",
-  reciterPath: "Rezitatorenweg", reciterPathD: "Zehn Stufen von den Makhārij bis zu ganzen Suren, mit Prüfungen.",
+  reciterPath: "Rezitationspfad", reciterPathD: "Zehn Stufen von den Makhārij bis zu ganzen Suren, mit Prüfungen.",
   tajweed: "Tajwid", tajweedD: "Die Regeln Schritt für Schritt mit Beispielen aus dem Koran.",
   readArabic: "Den Koran auf Arabisch lesen", readArabicD: "Buchstaben, Vokale und Zeichen, dann echte Verse.",
   arabicLevel: "Arabisch {level}", arabicLevelD: "Grammatik, Wurzeln und die häufigsten Wörter des Korans.",

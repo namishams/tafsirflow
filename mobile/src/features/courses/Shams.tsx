@@ -44,6 +44,9 @@ export const PROGRAM: PDay[] = (() => {
   return out;
 })();
 const openAt = (s: number, v: number) => router.push(`/shams/${s}?v=${v}` as Href);
+const dayStamp = (ms: number) => { const d = new Date(ms); return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`; };
+/** whether a program day was already marked on today's calendar date (local time) */
+const markedToday = (days: Record<string, number>) => { const now = dayStamp(Date.now()); return Object.values(days).some((ms) => typeof ms === "number" && dayStamp(ms) === now); };
 
 function useNames() {
   const { lang } = useLang();
@@ -78,9 +81,11 @@ export function ShamsProgramScreen() {
   const days = p.days ?? {};
   const doneN = Object.keys(days).length;
   const today = PROGRAM.find((d) => !days[d.n]) ?? null;
+  // a program day per calendar day: once a day was marked today, the next one opens tomorrow
+  const doneToday = markedToday(days);
   const mark = (d: PDay) => {
     const cur = readJSON<Prog>(KEY, { days: {} });
-    if (cur.days?.[d.n]) return;
+    if (cur.days?.[d.n] || markedToday(cur.days ?? {})) return;
     writeJSON(KEY, { days: { ...(cur.days ?? {}), [d.n]: Date.now() } });
     award("session"); shamsGrow("session", pro); success();
   };
@@ -107,11 +112,12 @@ export function ShamsProgramScreen() {
                     {done ? <Icon name="check" size={16} color={t.accent} /> : locked ? <Icon name="lock" size={14} color={t.gold} /> : null}
                   </View>
                   {cur ? (
-                    <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap" }}>
+                    <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
                       <Chip label={c("shOpen")} onPress={() => openAt(d.s, d.from)} />
-                      <Chip label={c("shMarkDone")} selected onPress={() => mark(d)} />
+                      {doneToday ? null : <Chip label={c("shMarkDone")} selected onPress={() => mark(d)} />}
                     </View>
                   ) : null}
+                  {cur && doneToday ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted }}>{c("shOneADay")}</Text> : null}
                 </View>
               </StepIn>
             );

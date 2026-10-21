@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "updatedAt": "2026-10-21",
   "minAppBuild": 1,
   "kindWeights": {
@@ -583,12 +583,7 @@
       "everyNItems": 20,
       "maxPerSession": 3,
       "freePerDay": 2,
-      "kinds": [
-        "tafsir-deep",
-        "all-reciters",
-        "root-deep",
-        "stories"
-      ]
+      "kinds": []
     },
     "paywall": {
       "maxPerSession": 1,
@@ -638,8 +633,16 @@
     "leaderboards": true,
     "compare": true
   },
+  "swipe": {
+    "enabled": true,
+    "minSeconds": 10,
+    "momentSeconds": 3,
+    "momentEvery": 5,
+    "sessionSize": 20,
+    "dailyGrowth": 50
+  },
   "corpus": {
-    "share": 0.35,
-    "kindWeights": { "verse": 1.2, "word": 0.9, "tafsir": 1.2, "hadith": 1.4, "shia-hadith": 1.4, "name": 0.6, "quiz": 1, "course": 0.8, "wiki": 1, "lemma": 0.6, "mutashabihat": 0.4, "maqasid": 0.8, "dua": 1 }
+    "share": 0.45,
+    "kindWeights": { "verse": 1.2, "word": 0.9, "tafsir": 1.2, "hadith": 1.4, "shia-hadith": 1.4, "name": 0.6, "quiz": 1, "course": 0.8, "wiki": 1, "lemma": 0.6, "mutashabihat": 0.4, "maqasid": 0.8, "dua": 1, "carousel": 2.4, "wisdom": 2 }
   }
 }

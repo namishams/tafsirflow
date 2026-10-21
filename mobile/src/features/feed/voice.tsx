@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
-import { AppState, FlatList, Modal, Pressable, Switch, Text, View } from "react-native";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { AppState, FlatList, Modal, Platform, Pressable, Switch, Text, View } from "react-native";
 import { useFocusEffect } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Icon } from "@/components/icons";
 import { useLang } from "@/i18n";
 import { FONT, useTheme } from "@/lib/theme";
-import { usePro } from "@/lib/pro";
+import { openPro, usePro } from "@/lib/pro";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { reciterName, type Reciter } from "@/lib/quran";
 import { allowedReciter, isFreeReciter, useReciter } from "@/features/quran/reciter";
@@ -45,19 +45,29 @@ export function useFeedAudioGuard(engine: VerseEngine) {
   return focused && appActive;
 }
 
-/** the reciter sheet: every voice of the app; locked ones (without Pro) open the paywall through useReciter's set() */
+/** the reciter sheet: every voice of the app; a locked one (without Pro) closes the sheet and then opens the paywall
+ *  (iOS cannot present the Pro screen over this sheet, so the tap would seem to do nothing) */
 export function ReciterSheet({ visible, onClose, dark }: { visible: boolean; onClose: () => void; dark?: boolean }) {
   const tx = useFeedText();
   const th = useTheme();
   const { lang } = useLang();
   const insets = useSafeAreaInsets();
   const v = useFeedVoice();
+  const proAfter = useRef(false);
+  const pickLocked = () => {
+    onClose();
+    // iOS: after the sheet is gone (onDismiss, with a fallback should the event not come); Android closes its dialog at once
+    if (Platform.OS !== "ios") { openPro("reciters"); return; }
+    proAfter.current = true;
+    setTimeout(() => { if (proAfter.current) { proAfter.current = false; openPro("reciters"); } }, 900);
+  };
   const bg = dark ? "#0b1512" : th.surface;
   const ink = dark ? "#fff" : th.ink;
   const muted = dark ? "rgba(255,255,255,0.6)" : th.muted;
   const line = dark ? "rgba(255,255,255,0.12)" : th.line;
   return (
-    <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
+    <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}
+      onDismiss={() => { if (proAfter.current) { proAfter.current = false; openPro("reciters"); } }}>
       <View style={{ flex: 1, backgroundColor: bg }}>
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 20, height: 58, borderBottomWidth: 1, borderBottomColor: line }}>
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 19, color: ink }}>{tx.reciters}</Text>
@@ -79,7 +89,7 @@ export function ReciterSheet({ visible, onClose, dark }: { visible: boolean; onC
             const on = !v.rotate && r.folder === v.reciter.folder;
             const name = reciterName(r, lang);
             return (
-              <Pressable onPress={() => { if (v.rotate && !locked) v.setRotate(false); v.setReciter(r); if (!locked) onClose(); }} accessibilityRole="button"
+              <Pressable onPress={() => { if (locked) { pickLocked(); return; } if (v.rotate) v.setRotate(false); v.setReciter(r); onClose(); }} accessibilityRole="button"
                 accessibilityState={{ selected: on }} accessibilityLabel={locked ? `${name}, ${tx.proOnly}` : name}
                 style={({ pressed }) => ({ height: 54, flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 20, backgroundColor: pressed || on ? th.accentSoft : "transparent" })}>
                 <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 15.5, color: locked ? muted : ink }}>{name}</Text>

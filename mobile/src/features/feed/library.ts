@@ -14,6 +14,8 @@ import type { KnowItem } from "./knowledge";
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const knowledge = () => require("./knowledge") as typeof import("./knowledge");
 import { knowText } from "./knowTexts";
+import { topicOfCarouselKind } from "@/features/carousel/registry";
+import { nahjWisdomIds } from "@/features/carousel/nahj";
 
 // The weighted scheduler of the content libraries (src/content/sources and src/content/extra) for Home, Reels and
 // Explore. Items become feed ids "x:<item id>" (one post) or "xc:<first id>" (a carousel of 3–5 items of the
@@ -68,6 +70,8 @@ function tradition() {
 export function topicOfKind(kind: string): LibTopic {
   for (const g of remoteConfig()?.topicChipGroups ?? []) if ((LIB_TOPICS as string[]).includes(g.id) && g.kinds.includes(kind)) return g.id as LibTopic;
   for (const t of LIB_TOPICS) if (TOPIC_KINDS[t].includes(kind)) return t;
+  const ct = topicOfCarouselKind(kind);
+  if (ct && (LIB_TOPICS as string[]).includes(ct)) return ct as LibTopic;
   if (/callig|architect|art/.test(kind)) return "art";
   if (/mosque|holy|heritage|makkah|madinah/.test(kind)) return "holy";
   if (/salah|prayer|pillar|hajj|fast|zakat/.test(kind)) return "prayer";
@@ -132,6 +136,8 @@ function fetchRemotePage(lang: string) {
     if (!p.nextCursor) { r.done = true; r.retryAt = Date.now() + 300000; }
     const got = (await resolveAll(p.items, lang, r.known)).filter((x) => !wasSeen(x.feedId) && !postUrlSeen(x) && !LIB.has(x.feedId));
     if (r.key !== key) return;
+    // Shia mode: wisdom posts from the bundled Nahj al-Balagha sayings join the server posts (made on the device)
+    got.push(...nahjWisdomIds(lang, Math.floor(got.length / 6)).map((feedId) => ({ feedId, kind: "wisdom-hadith" })));
     r.items.push(...got);
     r.empty = got.length ? 0 : r.empty + 1;
     if (got.length) listeners.forEach((f) => f());

@@ -1,6 +1,9 @@
 // mirrors mobile/src/features/haramain/lessons.ts (copied for the website; keep both in step)
 // Haramain course: 20 lessons. Verse keys only (text from the app's verse data); explanations in our own words,
 // factual, and where the schools of law or Sunni and Shia practice differ, the note says so without ruling.
+// No Quran or hadith wording is typed here (BLUEPRINT §4): the lesson text describes and points to the verse key or the
+// hadith collection, the verses themselves are rendered from the Quran.com data. Lessons rewritten on 22.10.2026 carry
+// review: "needs_review" until a scholar has checked them.
 import { L14, L3, vv, type CourseDef, type Lesson, type Q } from "@/lib/learn/abrahamic/core";
 
 const q = (q: [string, string, string], options: [string, string, string][], answer: number, why?: [string, string, string]): Q =>
@@ -8,12 +11,12 @@ const q = (q: [string, string, string], options: [string, string, string][], ans
 
 export const HARAMAIN_LESSONS: Lesson[] = [
   {
-    id: "kaaba-origin", arabic: "البيت العتيق", verses: vv("3:96-97", "2:127"), tags: ["quran", "tafsir", "history"],
+    id: "kaaba-origin", review: "needs_review", arabic: "البيت العتيق", verses: vv("3:96-97", "2:127"), tags: ["quran", "tafsir", "history"],
     title: L3("The Kaaba from Ibrahim", "Die Kaaba seit Ibrahim", "الكعبة منذ إبراهيم"),
     text: L3(
-      "\"The first House established for people is the one at Bakka, blessed and guidance for the worlds\" (3:96). The Quran calls it al-Bayt al-'Atiq, the Ancient House, and links its foundations to Ibrahim and Ismail (2:127).\nThe Kaaba is a nearly cube-shaped building, about 13 m high. In its eastern corner is the Black Stone; the semicircular wall of Hijr Ismail stands on its northwest side. Muslims everywhere face it in prayer.",
-      "„Das erste Haus, das für die Menschen errichtet wurde, ist das in Bakka, gesegnet und Rechtleitung für die Welten“ (3:96). Der Koran nennt es al-Bait al-'Atiq, das Alte Haus, und verbindet seine Grundmauern mit Ibrahim und Ismail (2:127).\nDie Kaaba ist ein annähernd würfelförmiger Bau von etwa 13 m Höhe. In ihrer Ostecke sitzt der Schwarze Stein; an ihrer Nordwestseite steht die halbrunde Mauer des Hidschr Ismail. Muslime überall wenden sich ihr im Gebet zu.",
-      "«إن أول بيت وُضع للناس للذي ببكة مباركًا وهدى للعالمين» (3:96). ويسمّيه القرآن البيت العتيق ويربط قواعده بإبراهيم وإسماعيل (2:127).\nالكعبة بناء شبه مكعب بارتفاع نحو 13 مترًا، في ركنها الشرقي الحجر الأسود، وفي جهتها الشمالية الغربية جدار حِجر إسماعيل نصف الدائري، ويستقبلها المسلمون في صلاتهم.",
+      "The Quran names the House at Bakka as the first house of worship set up for people, blessed and a guidance for all (3:96). It also calls it al-Bayt al-'Atiq, the Ancient House, and links its foundations to Ibrahim and Ismail (2:127).\nThe Kaaba is a nearly cube-shaped building, about 13 m high. In its eastern corner is the Black Stone; the semicircular wall of Hijr Ismail stands on its northwest side. Muslims everywhere face it in prayer.",
+      "Der Koran nennt das Haus in Bakka das erste Gotteshaus, das für die Menschen errichtet wurde, gesegnet und eine Rechtleitung für alle (3:96). Er nennt es auch al-Bait al-'Atiq, das Alte Haus, und verbindet seine Grundmauern mit Ibrahim und Ismail (2:127).\nDie Kaaba ist ein annähernd würfelförmiger Bau von etwa 13 m Höhe. In ihrer Ostecke sitzt der Schwarze Stein; an ihrer Nordwestseite steht die halbrunde Mauer des Hidschr Ismail. Muslime überall wenden sich ihr im Gebet zu.",
+      "يذكر القرآن أن البيت الذي ببكة هو أول بيت أُقيم لعبادة الناس، وأنه مبارك وهداية للبشر (3:96). ويسمّيه أيضًا البيت العتيق ويربط قواعده بإبراهيم وإسماعيل (2:127).\nالكعبة بناء شبه مكعب بارتفاع نحو 13 مترًا، في ركنها الشرقي الحجر الأسود، وفي جهتها الشمالية الغربية جدار حِجر إسماعيل نصف الدائري، ويستقبلها المسلمون في صلاتهم.",
     ),
     quiz: [
       q(["What does 3:96 call the place of the first House?", "Wie nennt 3:96 den Ort des ersten Hauses?", "ما اسم موضع أول بيت في 3:96؟"],
@@ -53,12 +56,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "quraysh-trade", arabic: "إيلاف قريش", verses: vv("106:1-4", "28:57"), tags: ["quran", "history"],
+    id: "quraysh-trade", review: "needs_review", arabic: "إيلاف قريش", verses: vv("106:1-4", "28:57"), tags: ["quran", "history"],
     title: L3("Quraysh and the caravans", "Die Quraisch und die Karawanen", "قريش والقوافل"),
     text: L3(
-      "Surah Quraysh speaks of their \"winter and summer journeys\": caravans to Yemen in winter and to Syria in summer. Hashim, the Prophet's great-grandfather, is credited with agreements (ilaf) that secured these routes.\nThe surah asks Quraysh to worship \"the Lord of this House, who fed them against hunger and secured them against fear\" (106:3-4). Mecca also had seasonal markets such as 'Ukaz, known for its poetry contests.",
-      "Sure Quraisch spricht von ihren „Reisen im Winter und Sommer“: Karawanen im Winter nach Jemen und im Sommer nach Syrien. Haschim, dem Urgroßvater des Propheten, werden Abkommen (Ilaf) zugeschrieben, die diese Wege sicherten.\nDie Sure fordert die Quraisch auf, „dem Herrn dieses Hauses zu dienen, der sie gegen Hunger speiste und vor Furcht sicherte“ (106:3-4). Zu Mekka gehörten auch saisonale Märkte wie 'Ukaz, bekannt für Dichterwettstreite.",
-      "تذكر سورة قريش «رحلة الشتاء والصيف»: قوافل إلى اليمن شتاءً وإلى الشام صيفًا. ويُنسب إلى هاشم جدّ النبي ﷺ عقد الإيلاف الذي أمّن هذه الطرق.\nوتدعو السورة قريشًا إلى عبادة «ربّ هذا البيت الذي أطعمهم من جوع وآمنهم من خوف» (106:3-4). وكانت لمكة أسواق موسمية كعكاظ المشهور بمساجلات الشعراء.",
+      "Surah Quraysh speaks of their journeys in winter and summer: caravans to Yemen in winter and to Syria in summer. Hashim, the Prophet's great-grandfather, is credited with agreements (ilaf) that secured these routes.\nThe surah calls Quraysh to worship the Lord of the Kaaba, who protected them from hunger and from fear (106:3-4). Mecca also had seasonal markets such as 'Ukaz, known for its poetry contests.",
+      "Sure Quraisch spricht von ihren Reisen im Winter und im Sommer: Karawanen im Winter nach Jemen und im Sommer nach Syrien. Haschim, dem Urgroßvater des Propheten, werden Abkommen (Ilaf) zugeschrieben, die diese Wege sicherten.\nDie Sure ruft die Quraisch dazu auf, dem Herrn der Kaaba zu dienen, der sie vor Hunger und Furcht bewahrte (106:3-4). Zu Mekka gehörten auch saisonale Märkte wie 'Ukaz, bekannt für Dichterwettstreite.",
+      "تذكر سورة قريش رحلتيهم في الشتاء والصيف: قوافل إلى اليمن شتاءً وإلى الشام صيفًا. ويُنسب إلى هاشم جدّ النبي ﷺ عقد الإيلاف الذي أمّن هذه الطرق.\nوتدعو السورة قريشًا إلى عبادة ربّ الكعبة الذي كفاهم الجوع وحماهم من الخوف (106:3-4). وكانت لمكة أسواق موسمية كعكاظ المشهور بمساجلات الشعراء.",
     ),
     quiz: [
       q(["Where did the winter caravans go?", "Wohin zogen die Winterkarawanen?", "إلى أين كانت رحلة الشتاء؟"],
@@ -68,12 +71,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "elephant", arabic: "عام الفيل", verses: vv("105:1-5"), tags: ["quran", "tafsir", "history"],
+    id: "elephant", review: "needs_review", arabic: "عام الفيل", verses: vv("105:1-5"), tags: ["quran", "tafsir", "history"],
     title: L3("The Year of the Elephant", "Das Jahr des Elefanten", "عام الفيل"),
     text: L3(
-      "Abraha, the Aksumite ruler of Yemen, marched on Mecca with an elephant to destroy the Kaaba. The Quraysh withdrew to the hills; Abd al-Muttalib is reported to have said: \"The House has a Lord who will protect it.\"\nSurah al-Fil tells how birds in flocks (ababil) pelted the army with stones of baked clay. Muslim tradition dates the Prophet's birth to this year, around 570.",
-      "Abraha, der aksumitische Herrscher Jemens, zog mit einem Elefanten gegen Mekka, um die Kaaba zu zerstören. Die Quraisch zogen sich in die Berge zurück; von Abd al-Muttalib wird überliefert: „Das Haus hat einen Herrn, der es schützen wird.“\nSure al-Fil erzählt, wie Vögel in Scharen (Ababil) das Heer mit Steinen aus gebranntem Ton bewarfen. Die muslimische Überlieferung datiert die Geburt des Propheten in dieses Jahr, um 570.",
-      "سار أبرهة حاكم اليمن الأكسومي إلى مكة ومعه الفيل ليهدم الكعبة، فاعتصمت قريش بالجبال، ويُروى أن عبد المطلب قال: «للبيت ربٌّ يحميه».\nوتروي سورة الفيل أن الله أرسل عليهم طيرًا أبابيل ترميهم بحجارة من سجيل. ويؤرّخ التراث مولد النبي ﷺ بهذا العام نحو 570م.",
+      "Abraha, the Aksumite ruler of Yemen, marched on Mecca with an elephant to destroy the Kaaba. The Quraysh withdrew to the hills; Abd al-Muttalib is reported (Ibn Ishaq) to have said that the House had a Lord who would protect it.\nSurah al-Fil tells how birds in flocks (ababil) pelted the army with stones of baked clay. Muslim tradition dates the Prophet's birth to this year, around 570.",
+      "Abraha, der aksumitische Herrscher Jemens, zog mit einem Elefanten gegen Mekka, um die Kaaba zu zerstören. Die Quraisch zogen sich in die Berge zurück; von Abd al-Muttalib wird überliefert (Ibn Ishaq), das Haus habe einen Herrn, der es schützen werde.\nSure al-Fil erzählt, wie Vögel in Scharen (Ababil) das Heer mit Steinen aus gebranntem Ton bewarfen. Die muslimische Überlieferung datiert die Geburt des Propheten in dieses Jahr, um 570.",
+      "سار أبرهة حاكم اليمن الأكسومي إلى مكة ومعه الفيل ليهدم الكعبة، فاعتصمت قريش بالجبال، ويُروى عند ابن إسحاق أن عبد المطلب قال إن للبيت ربًّا يحميه.\nوتروي سورة الفيل أن الله أرسل على الجيش أسرابًا من الطير (أبابيل) رمتهم بحجارة من طين متحجّر (105:3-4). ويؤرّخ التراث مولد النبي ﷺ بهذا العام نحو 570م.",
     ),
     note: L3("Some modern historians date Abraha's campaign earlier than 570; the traditional dating links it to the Prophet's birth year.", "Einige moderne Historiker datieren Abrahas Feldzug früher als 570; die traditionelle Datierung verbindet ihn mit dem Geburtsjahr des Propheten.", "يؤرّخ بعض المؤرخين المعاصرين حملة أبرهة بما قبل 570، والتأريخ التقليدي يربطها بعام مولد النبي ﷺ."),
     quiz: [
@@ -84,12 +87,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "prophet-mecca", arabic: "النبي في مكة", verses: vv("96:1-5", "17:1"), tags: ["quran", "history"],
+    id: "prophet-mecca", review: "needs_review", arabic: "النبي في مكة", verses: vv("96:1-5", "17:1"), tags: ["quran", "history"],
     title: L3("The Prophet in Mecca", "Der Prophet in Mekka", "النبي ﷺ في مكة"),
     text: L3(
-      "In 610, in the cave of Hira on Jabal al-Nur, the first verses were revealed: \"Read in the name of your Lord who created\" (96:1). Khadija was the first to believe. Early Muslims met secretly in the house of al-Arqam.\nPersecution grew; in 615 a group emigrated to Abyssinia, where the Christian Negus protected them. After the boycott and the \"year of sorrow\" (the deaths of Khadija and Abu Talib) came the journey to Ta'if and the Night Journey to Jerusalem (17:1).",
-      "610 wurden in der Höhle Hira auf dem Dschabal an-Nur die ersten Verse offenbart: „Lies im Namen deines Herrn, der erschaffen hat“ (96:1). Chadidscha glaubte als Erste. Die frühen Muslime trafen sich heimlich im Haus al-Arqams.\nDie Verfolgung wuchs; 615 wanderte eine Gruppe nach Abessinien aus, wo der christliche Negus sie schützte. Nach dem Boykott und dem „Jahr der Trauer“ (Tod Chadidschas und Abu Talibs) folgten die Reise nach Ta'if und die Nachtreise nach Jerusalem (17:1).",
-      "سنة 610 نزلت أولى الآيات في غار حراء بجبل النور: «اقرأ باسم ربك الذي خلق» (96:1)، وكانت خديجة أول من آمن، واجتمع المسلمون الأوائل سرًّا في دار الأرقم.\nواشتد الأذى فهاجرت جماعة سنة 615 إلى الحبشة فحماهم النجاشي النصراني. وبعد المقاطعة وعام الحزن (وفاة خديجة وأبي طالب) كانت رحلة الطائف والإسراء إلى بيت المقدس (17:1).",
+      "In 610, in the cave of Hira on Jabal al-Nur, the first verses were revealed, the opening of Surah al-'Alaq with the command to read (96:1-5). Khadija was the first to believe. Early Muslims met secretly in the house of al-Arqam.\nPersecution grew; in 615 a group emigrated to Abyssinia, where the Christian Negus protected them. After the boycott and the \"year of sorrow\" (the deaths of Khadija and Abu Talib) came the journey to Ta'if and the Night Journey to Jerusalem (17:1).",
+      "610 wurden in der Höhle Hira auf dem Dschabal an-Nur die ersten Verse offenbart, der Anfang der Sure al-'Alaq mit dem Auftrag zu lesen (96:1-5). Chadidscha glaubte als Erste. Die frühen Muslime trafen sich heimlich im Haus al-Arqams.\nDie Verfolgung wuchs; 615 wanderte eine Gruppe nach Abessinien aus, wo der christliche Negus sie schützte. Nach dem Boykott und dem „Jahr der Trauer“ (Tod Chadidschas und Abu Talibs) folgten die Reise nach Ta'if und die Nachtreise nach Jerusalem (17:1).",
+      "سنة 610 نزلت أولى الآيات في غار حراء بجبل النور، وهي مطلع سورة العلق بالأمر بالقراءة (96:1-5)، وكانت خديجة أول من آمن، واجتمع المسلمون الأوائل سرًّا في دار الأرقم.\nواشتد الأذى فهاجرت جماعة سنة 615 إلى الحبشة فحماهم النجاشي النصراني. وبعد المقاطعة وعام الحزن (وفاة خديجة وأبي طالب) كانت رحلة الطائف والإسراء إلى بيت المقدس (17:1).",
     ),
     quiz: [
       q(["Where were the first verses revealed?", "Wo wurden die ersten Verse offenbart?", "أين نزلت أولى الآيات؟"],
@@ -99,12 +102,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "hijra", arabic: "الهجرة", verses: vv("9:40", "8:30"), tags: ["quran", "history"],
+    id: "hijra", review: "needs_review", arabic: "الهجرة", verses: vv("9:40", "8:30"), tags: ["quran", "history"],
     title: L3("The Hijra", "Die Hidschra", "الهجرة"),
     text: L3(
-      "After pledges with people from Yathrib at 'Aqaba, the Muslims emigrated in 622. The Prophet left with Abu Bakr and hid three nights in the cave of Thawr: \"Do not grieve, God is with us\" (9:40).\nThey reached Quba, where the first mosque was built, and then Yathrib, which became al-Madina, \"the city\". The Hijra marks the start of the Islamic calendar, introduced under Umar.",
-      "Nach den Gelöbnissen von 'Aqaba mit Leuten aus Yathrib wanderten die Muslime 622 aus. Der Prophet brach mit Abu Bakr auf und verbarg sich drei Nächte in der Höhle Thaur: „Sei nicht traurig, Gott ist mit uns“ (9:40).\nSie erreichten Quba, wo die erste Moschee entstand, und dann Yathrib, das zu al-Madina wurde, „der Stadt“. Die Hidschra markiert den Beginn des islamischen Kalenders, eingeführt unter Umar.",
-      "بعد بيعتَي العقبة مع أهل يثرب هاجر المسلمون سنة 622، وخرج النبي ﷺ مع أبي بكر واختبأ ثلاث ليال في غار ثور: «لا تحزن إن الله معنا» (9:40).\nووصلا قباء حيث بُني أول مسجد، ثم يثرب التي صارت المدينة. وبالهجرة يبدأ التقويم الهجري الذي اعتُمد في عهد عمر.",
+      "After pledges with people from Yathrib at 'Aqaba, the Muslims emigrated in 622. The Prophet left with Abu Bakr and hid three nights in the cave of Thawr, where he reassured Abu Bakr that God was with them (9:40).\nThey reached Quba, where the first mosque was built, and then Yathrib, which became al-Madina, \"the city\". The Hijra marks the start of the Islamic calendar, introduced under Umar.",
+      "Nach den Gelöbnissen von 'Aqaba mit Leuten aus Yathrib wanderten die Muslime 622 aus. Der Prophet brach mit Abu Bakr auf und verbarg sich drei Nächte in der Höhle Thaur, wo er Abu Bakr versicherte, dass Gott mit ihnen sei (9:40).\nSie erreichten Quba, wo die erste Moschee entstand, und dann Yathrib, das zu al-Madina wurde, „der Stadt“. Die Hidschra markiert den Beginn des islamischen Kalenders, eingeführt unter Umar.",
+      "بعد بيعتَي العقبة مع أهل يثرب هاجر المسلمون سنة 622، وخرج النبي ﷺ مع أبي بكر واختبأ ثلاث ليال في غار ثور، وفيه طمأن صاحبه بأن الله معهما (9:40).\nووصلا قباء حيث بُني أول مسجد، ثم يثرب التي صارت المدينة. وبالهجرة يبدأ التقويم الهجري الذي اعتُمد في عهد عمر.",
     ),
     quiz: [
       q(["Where did the Prophet and Abu Bakr hide?", "Wo verbargen sich der Prophet und Abu Bakr?", "أين اختبأ النبي ﷺ وأبو بكر؟"],
@@ -114,18 +117,18 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "medina-society", arabic: "المهاجرون والأنصار", verses: vv("59:8-9"), tags: ["quran", "history"],
+    id: "medina-society", review: "needs_review", arabic: "المهاجرون والأنصار", verses: vv("59:8-9"), tags: ["quran", "history"],
     title: L3("Medina: Muhajirun and Ansar", "Medina: Muhadschirun und Ansar", "المدينة: المهاجرون والأنصار"),
     text: L3(
-      "In Medina the Prophet paired each emigrant (muhajir) with a helper from Medina (ansari) in brotherhood (mu'akhat). The Quran praises the Ansar: \"they prefer others over themselves, even when in need\" (59:9).\nThe Charter of Medina set rules for the tribes, including Jewish tribes, as one community for defence. Medina became the centre of the young community, and later the capital of the first caliphs.",
-      "In Medina verband der Prophet jeden Auswanderer (Muhadschir) mit einem Helfer aus Medina (Ansari) in Brüderschaft (Mu'achat). Der Koran lobt die Ansar: „Sie ziehen andere sich selbst vor, auch wenn sie selbst in Not sind“ (59:9).\nDie Charta von Medina regelte die Stämme, auch jüdische, als eine Gemeinschaft zur Verteidigung. Medina wurde Zentrum der jungen Gemeinschaft und später Hauptstadt der ersten Kalifen.",
-      "آخى النبي ﷺ في المدينة بين كل مهاجر وأنصاري، وأثنى القرآن على الأنصار: «ويؤثرون على أنفسهم ولو كان بهم خصاصة» (59:9).\nونظّمت صحيفة المدينة القبائل ومنها اليهودية أمةً في الدفاع. وصارت المدينة مركز الجماعة الناشئة ثم عاصمة الخلفاء الأوائل.",
+      "In Medina the Prophet paired each emigrant (muhajir) with a helper from Medina (ansari) in brotherhood (mu'akhat). The Quran praises the Ansar for putting others before themselves, even when they were in need (59:9).\nThe Charter of Medina set rules for the tribes, including Jewish tribes, as one community for defence. Medina became the centre of the young community, and later the capital of the first caliphs.",
+      "In Medina verband der Prophet jeden Auswanderer (Muhadschir) mit einem Helfer aus Medina (Ansari) in Brüderschaft (Mu'achat). Der Koran lobt die Ansar dafür, dass sie andere sich selbst vorzogen, auch wenn sie selbst in Not waren (59:9).\nDie Charta von Medina regelte die Stämme, auch jüdische, als eine Gemeinschaft zur Verteidigung. Medina wurde Zentrum der jungen Gemeinschaft und später Hauptstadt der ersten Kalifen.",
+      "آخى النبي ﷺ في المدينة بين كل مهاجر وأنصاري، وأثنى القرآن على الأنصار لأنهم قدّموا إخوانهم على أنفسهم مع حاجتهم (59:9).\nونظّمت صحيفة المدينة القبائل ومنها اليهودية أمةً في الدفاع. وصارت المدينة مركز الجماعة الناشئة ثم عاصمة الخلفاء الأوائل.",
     ),
     quiz: [
       q(["What was the mu'akhat?", "Was war die Mu'achat?", "ما المؤاخاة؟"],
         [["Brotherhood between emigrants and helpers", "Brüderschaft zwischen Auswanderern und Helfern", "الأخوّة بين المهاجرين والأنصار"], ["A battle", "Eine Schlacht", "معركة"], ["A tax", "Eine Steuer", "ضريبة"]], 0),
       q(["How does 59:9 describe the Ansar?", "Wie beschreibt 59:9 die Ansar?", "كيف تصف 59:9 الأنصار؟"],
-        [["They prefer others over themselves", "Sie ziehen andere sich selbst vor", "يؤثرون على أنفسهم"], ["They are rich", "Sie sind reich", "أغنياء"], ["They are traders", "Sie sind Händler", "تجار"]], 0),
+        [["They prefer others over themselves", "Sie ziehen andere sich selbst vor", "يقدّمون غيرهم على أنفسهم"], ["They are rich", "Sie sind reich", "أغنياء"], ["They are traders", "Sie sind Händler", "تجار"]], 0),
     ],
   },
   {
@@ -144,12 +147,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "qibla", arabic: "القبلة", verses: vv("2:142-144"), tags: ["quran", "tafsir", "history"],
+    id: "qibla", review: "needs_review", arabic: "القبلة", verses: vv("2:142-144"), tags: ["quran", "tafsir", "history"],
     title: L3("The change of the qibla", "Der Wechsel der Gebetsrichtung", "تحويل القبلة"),
     text: L3(
-      "For about 16 or 17 months in Medina, Muslims prayed towards Jerusalem. Then came the verse: \"Turn your face towards al-Masjid al-Haram\" (2:144). Tradition places the change during a prayer in the Banu Salima mosque, since known as Masjid al-Qiblatayn, \"the mosque of the two qiblas\".\nThe Quran calls the Muslims \"a middle community\" (2:143) in the same passage.",
-      "Etwa 16 oder 17 Monate lang beteten die Muslime in Medina in Richtung Jerusalem. Dann kam der Vers: „Wende dein Gesicht zur geschützten Gebetsstätte“ (2:144). Die Überlieferung verortet den Wechsel während eines Gebets in der Moschee der Banu Salima, seither Masdschid al-Qiblatain, „Moschee der zwei Gebetsrichtungen“.\nIm selben Abschnitt nennt der Koran die Muslime „eine Gemeinschaft der Mitte“ (2:143).",
-      "صلّى المسلمون في المدينة نحو ستة عشر أو سبعة عشر شهرًا إلى بيت المقدس، ثم نزل: «فولِّ وجهك شطر المسجد الحرام» (2:144)، ويُروى أن التحويل كان في صلاة بمسجد بني سلمة الذي سُمّي مسجد القبلتين.\nوفي الموضع نفسه يصف القرآن المسلمين بأنهم «أمة وسطًا» (2:143).",
+      "For about 16 or 17 months in Medina, Muslims prayed towards Jerusalem. Then a verse commanded turning towards al-Masjid al-Haram in Mecca (2:144). Tradition places the change during a prayer in the Banu Salima mosque, since known as Masjid al-Qiblatayn, \"the mosque of the two qiblas\".\nIn the same passage the Quran describes the Muslims as a community of the middle way (2:143).",
+      "Etwa 16 oder 17 Monate lang beteten die Muslime in Medina in Richtung Jerusalem. Dann gebot ein Vers, sich zur geschützten Gebetsstätte in Mekka zu wenden (2:144). Die Überlieferung verortet den Wechsel während eines Gebets in der Moschee der Banu Salima, seither Masdschid al-Qiblatain, „Moschee der zwei Gebetsrichtungen“.\nIm selben Abschnitt beschreibt der Koran die Muslime als Gemeinschaft der Mitte (2:143).",
+      "صلّى المسلمون في المدينة نحو ستة عشر أو سبعة عشر شهرًا إلى بيت المقدس، ثم نزل الأمر بالتوجّه إلى المسجد الحرام (2:144)، ويُروى أن التحويل كان في صلاة بمسجد بني سلمة الذي سُمّي مسجد القبلتين.\nوفي الموضع نفسه يصف القرآن المسلمين بالأمة الوسط (2:143).",
     ),
     quiz: [
       q(["Towards which city did Muslims pray first?", "In Richtung welcher Stadt beteten die Muslime zuerst?", "إلى أي مدينة صلّى المسلمون أولًا؟"],
@@ -159,27 +162,27 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "fath-makka", arabic: "فتح مكة", verses: vv("110:1-3", "17:81"), tags: ["quran", "history"],
+    id: "fath-makka", review: "needs_review", arabic: "فتح مكة", verses: vv("110:1-3", "17:81"), tags: ["quran", "history"],
     title: L3("The return to Mecca (630)", "Die Rückkehr nach Mekka (630)", "فتح مكة (630)"),
     text: L3(
-      "After the Treaty of Hudaybiyya (628) was broken, the Prophet entered Mecca in 630 almost without fighting. He removed the idols around the Kaaba, reciting: \"The truth has come and falsehood has vanished\" (17:81).\nHe declared a general amnesty for the people of Mecca. Bilal called the adhan from the Kaaba's roof. Surah an-Nasr speaks of people \"entering God's religion in crowds\".",
-      "Nachdem der Vertrag von Hudaibiya (628) gebrochen war, zog der Prophet 630 fast kampflos in Mekka ein. Er entfernte die Götzen um die Kaaba und rezitierte: „Die Wahrheit ist gekommen, und das Falsche ist vergangen“ (17:81).\nEr verkündete eine allgemeine Amnestie für die Mekkaner. Bilal rief den Adhan vom Dach der Kaaba. Sure an-Nasr spricht von Menschen, die „scharenweise in Gottes Religion eintreten“.",
-      "بعد نقض صلح الحديبية (628) دخل النبي ﷺ مكة سنة 630 دون قتال يُذكر، فأزال الأصنام حول الكعبة وهو يقرأ: «جاء الحق وزهق الباطل» (17:81).\nوأعلن العفو العام عن أهل مكة، وأذّن بلال على ظهر الكعبة، وتذكر سورة النصر دخول الناس في دين الله أفواجًا.",
+      "After the Treaty of Hudaybiyya (628) was broken, the Prophet entered Mecca in 630 almost without fighting. He removed the idols around the Kaaba while reciting 17:81, the verse on truth arriving and falsehood vanishing.\nHe declared a general amnesty for the people of Mecca. Bilal called the adhan from the Kaaba's roof. Surah an-Nasr speaks of people entering God's religion in great numbers (110:2).",
+      "Nachdem der Vertrag von Hudaibiya (628) gebrochen war, zog der Prophet 630 fast kampflos in Mekka ein. Er entfernte die Götzen um die Kaaba und rezitierte dabei 17:81, den Vers vom Kommen der Wahrheit und Vergehen des Falschen.\nEr verkündete eine allgemeine Amnestie für die Mekkaner. Bilal rief den Adhan vom Dach der Kaaba. Sure an-Nasr spricht von Menschen, die in großer Zahl in Gottes Religion eintreten (110:2).",
+      "بعد نقض صلح الحديبية (628) دخل النبي ﷺ مكة سنة 630 دون قتال يُذكر، فأزال الأصنام حول الكعبة وهو يتلو الآية 17:81 في مجيء الحق وزوال الباطل.\nوأعلن العفو العام عن أهل مكة، وأذّن بلال على ظهر الكعبة، وتذكر سورة النصر دخول الناس في دين الله جماعاتٍ كثيرة (110:2).",
     ),
     quiz: [
       q(["Which verse did the Prophet recite while removing the idols?", "Welchen Vers rezitierte der Prophet beim Entfernen der Götzen?", "أي آية قرأها النبي ﷺ عند إزالة الأصنام؟"],
-        [["The truth has come and falsehood has vanished", "Die Wahrheit ist gekommen, das Falsche vergangen", "جاء الحق وزهق الباطل"], ["Read in the name of your Lord", "Lesen Sie im Namen Ihres Herrn", "اقرأ باسم ربك"], ["Say: He is God, One", "Sprechen Sie: Er ist Gott, ein Einziger", "قل هو الله أحد"]], 0),
+        [["17:81, on truth arriving and falsehood vanishing", "17:81, über das Kommen der Wahrheit und das Vergehen des Falschen", "17:81 في مجيء الحق وزوال الباطل"], ["96:1, the command to read", "96:1, der Auftrag zu lesen", "96:1 في الأمر بالقراءة"], ["112:1, God's oneness", "112:1, Gottes Einheit", "112:1 في وحدانية الله"]], 0),
       q(["How did the Prophet treat the people of Mecca?", "Wie behandelte der Prophet die Mekkaner?", "كيف عامل النبي ﷺ أهل مكة؟"],
         [["General amnesty", "Allgemeine Amnestie", "عفو عام"], ["Exile", "Verbannung", "النفي"], ["Heavy tribute", "Hoher Tribut", "جزية ثقيلة"]], 0),
     ],
   },
   {
-    id: "hajj-basics", arabic: "الحج", verses: vv("3:97", "2:196-197", "22:27"), tags: ["quran", "fiqh", "sunni", "shia"],
+    id: "hajj-basics", review: "needs_review", arabic: "الحج", verses: vv("3:97", "2:196-197", "22:27"), tags: ["quran", "fiqh", "sunni", "shia"],
     title: L3("Hajj: meaning, types and ihram", "Hadsch: Bedeutung, Arten und Ihram", "الحج: معناه وأنواعه والإحرام"),
     text: L3(
-      "Hajj is a pillar of Islam, due once in a lifetime for those able to make the journey (3:97), in the month of Dhu al-Hijja. There are three forms: tamattu' (Umrah first, then Hajj, with an offering), qiran (both together) and ifrad (Hajj alone).\nPilgrims enter ihram at the miqat, a fixed boundary, with an intention and the talbiya: \"Labbayk Allahumma labbayk\". Men wear two unstitched white cloths; women wear modest normal clothing. During ihram certain things are avoided, such as perfume, cutting hair and disputes (2:197).",
-      "Der Hadsch ist eine Säule des Islam, einmal im Leben Pflicht für alle, die die Reise vermögen (3:97), im Monat Dhu l-Hiddscha. Es gibt drei Formen: Tamattu' (erst Umra, dann Hadsch, mit Opfer), Qiran (beides zusammen) und Ifrad (nur Hadsch).\nAm Miqat, einer festen Grenze, treten Pilgernde mit Absicht und Talbiya in den Ihram: „Labbaika llahumma labbaik“. Männer tragen zwei ungenähte weiße Tücher, Frauen schlichte normale Kleidung. Im Ihram meidet man bestimmte Dinge wie Parfüm, Haareschneiden und Streit (2:197).",
-      "الحج ركن من أركان الإسلام، يجب مرة في العمر على المستطيع (3:97) في ذي الحجة، وأنواعه ثلاثة: التمتع (عمرة ثم حج مع الهدي)، والقِران (جمعهما)، والإفراد (الحج وحده).\nويُحرم الحاج من الميقات بالنية والتلبية: «لبيك اللهم لبيك». ويلبس الرجل إزارًا ورداءً غير مخيطين، وتلبس المرأة ثيابها الساترة المعتادة، ويجتنب المحرم أمورًا كالطيب وأخذ الشعر والجدال (2:197).",
+      "Hajj is a pillar of Islam, due once in a lifetime for those able to make the journey (3:97), in the month of Dhu al-Hijja. There are three forms: tamattu' (Umrah first, then Hajj, with an offering), qiran (both together) and ifrad (Hajj alone).\nPilgrims enter ihram at the miqat, a fixed boundary, with an intention and the talbiya, the pilgrims' call answering God. Men wear two unstitched white cloths; women wear modest normal clothing. During ihram certain things are avoided, such as perfume, cutting hair and disputes (2:197).",
+      "Der Hadsch ist eine Säule des Islam, einmal im Leben Pflicht für alle, die die Reise vermögen (3:97), im Monat Dhu l-Hiddscha. Es gibt drei Formen: Tamattu' (erst Umra, dann Hadsch, mit Opfer), Qiran (beides zusammen) und Ifrad (nur Hadsch).\nAm Miqat, einer festen Grenze, treten Pilgernde mit Absicht und Talbiya in den Ihram, dem Antwortruf der Pilgernden an Gott. Männer tragen zwei ungenähte weiße Tücher, Frauen schlichte normale Kleidung. Im Ihram meidet man bestimmte Dinge wie Parfüm, Haareschneiden und Streit (2:197).",
+      "الحج ركن من أركان الإسلام، يجب مرة في العمر على المستطيع (3:97) في ذي الحجة، وأنواعه ثلاثة: التمتع (عمرة ثم حج مع الهدي)، والقِران (جمعهما)، والإفراد (الحج وحده).\nويُحرم الحاج من الميقات بالنية والتلبية، وهي نداء الحاج استجابةً لربه. ويلبس الرجل إزارًا ورداءً غير مخيطين، وتلبس المرأة ثيابها الساترة المعتادة، ويجتنب المحرم أمورًا كالطيب وأخذ الشعر والجدال (2:197).",
     ),
     note: L3("The four Sunni schools differ in details (for example which acts are pillars versus obligations). In Twelver Shia practice, tamattu' is obligatory for those living far from Mecca, and the order of some rites differs. Pilgrims follow their own school and their group's guidance.",
       "Die vier sunnitischen Rechtsschulen unterscheiden sich in Einzelheiten (etwa was Säule und was Pflicht ist). In der zwölferschiitischen Praxis ist Tamattu' für Fernwohnende verpflichtend, und die Reihenfolge einiger Riten weicht ab. Pilgernde folgen ihrer eigenen Rechtsschule und der Anleitung ihrer Gruppe.",
@@ -192,12 +195,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "hajj-8-9", arabic: "عرفة", verses: vv("2:198-199"), tags: ["quran", "fiqh"],
+    id: "hajj-8-9", review: "needs_review", arabic: "عرفة", verses: vv("2:198-199"), tags: ["quran", "fiqh"],
     title: L3("Hajj days 8 and 9: Mina, Arafah, Muzdalifah", "Hadsch-Tage 8 und 9: Mina, Arafat, Muzdalifa", "يوما الثامن والتاسع: منى وعرفة ومزدلفة"),
     text: L3(
-      "On 8 Dhu al-Hijja (yawm al-tarwiya) pilgrims go to Mina and spend the day and night in prayer. On the 9th they stand at Arafah from noon until sunset in supplication: the wuquf, the heart of Hajj. \"Hajj is Arafah\", says a hadith.\nAfter sunset they move to Muzdalifah, pray Maghrib and Isha together, remember God at al-Mash'ar al-Haram (2:198), rest under the open sky and gather small pebbles.",
-      "Am 8. Dhu l-Hiddscha (Yaum at-Tarwiya) ziehen die Pilgernden nach Mina und verbringen Tag und Nacht im Gebet. Am 9. stehen sie von Mittag bis Sonnenuntergang in Arafat im Bittgebet: der Wuquf, das Herz des Hadsch. „Der Hadsch ist Arafat“, sagt ein Hadith.\nNach Sonnenuntergang ziehen sie nach Muzdalifa, beten Maghrib und Ischa zusammen, gedenken Gottes bei al-Masch'ar al-Haram (2:198), ruhen unter freiem Himmel und sammeln kleine Steine.",
-      "في الثامن من ذي الحجة (يوم التروية) يتوجّه الحجاج إلى منى ويقضون يومهم وليلتهم في العبادة، وفي التاسع يقفون بعرفة من الزوال إلى الغروب داعين، وهو ركن الحج الأعظم: «الحج عرفة».\nوبعد الغروب يفيضون إلى مزدلفة فيجمعون المغرب والعشاء ويذكرون الله عند المشعر الحرام (2:198) ويبيتون تحت السماء ويلتقطون الحصى.",
+      "On 8 Dhu al-Hijja (yawm al-tarwiya) pilgrims go to Mina and spend the day and night in prayer. On the 9th they stand at Arafah from noon until sunset in supplication: the wuquf, the heart of Hajj; a hadith (Abu Dawud, al-Tirmidhi) calls the standing at Arafah the core of Hajj.\nAfter sunset they move to Muzdalifah, pray Maghrib and Isha together, remember God at al-Mash'ar al-Haram (2:198), rest under the open sky and gather small pebbles.",
+      "Am 8. Dhu l-Hiddscha (Yaum at-Tarwiya) ziehen die Pilgernden nach Mina und verbringen Tag und Nacht im Gebet. Am 9. stehen sie von Mittag bis Sonnenuntergang in Arafat im Bittgebet: der Wuquf, das Herz des Hadsch; ein Hadith (Abu Dawud, at-Tirmidhi) nennt das Stehen in Arafat den Kern des Hadsch.\nNach Sonnenuntergang ziehen sie nach Muzdalifa, beten Maghrib und Ischa zusammen, gedenken Gottes bei al-Masch'ar al-Haram (2:198), ruhen unter freiem Himmel und sammeln kleine Steine.",
+      "في الثامن من ذي الحجة (يوم التروية) يتوجّه الحجاج إلى منى ويقضون يومهم وليلتهم في العبادة، وفي التاسع يقفون بعرفة من الزوال إلى الغروب داعين، وهو ركن الحج الأعظم كما في حديث عند أبي داود والترمذي.\nوبعد الغروب يفيضون إلى مزدلفة فيجمعون المغرب والعشاء ويذكرون الله عند المشعر الحرام (2:198) ويبيتون تحت السماء ويلتقطون الحصى.",
     ),
     quiz: [
       q(["What is the heart of Hajj according to the hadith?", "Was ist laut Hadith das Herz des Hadsch?", "ما ركن الحج الأعظم بحسب الحديث؟"],
@@ -207,14 +210,14 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "hajj-10-13", arabic: "أيام التشريق", verses: vv("2:200-203", "22:28-29", "22:36-37"), tags: ["quran", "fiqh"],
+    id: "hajj-10-13", review: "needs_review", arabic: "أيام التشريق", verses: vv("2:200-203", "22:28-29", "22:36-37"), tags: ["quran", "fiqh"],
     title: L3("Hajj days 10 to 13: Eid, stoning, tawaf", "Hadsch-Tage 10 bis 13: Fest, Steinigung, Tawaf", "أيام العاشر إلى الثالث عشر: العيد والرمي والطواف"),
     text: L3(
-      "On the 10th, the day of Eid al-Adha, pilgrims throw seven pebbles at Jamrat al-'Aqaba, offer the sacrifice (hady), shave or shorten the hair and perform Tawaf al-Ifada, followed by sa'i. \"Neither their meat nor their blood reaches God, but your piety reaches Him\" (22:37).\nOn the days of tashriq (11th to 12th or 13th) they stay in Mina and throw seven pebbles at each of the three jamarat daily. Before leaving Mecca they perform the farewell tawaf (tawaf al-wada').",
-      "Am 10., dem Tag des Opferfests, werfen die Pilgernden sieben Steinchen auf die Dschamrat al-'Aqaba, bringen das Opfer (Hady) dar, rasieren oder kürzen das Haar und vollziehen den Tawaf al-Ifada mit anschließendem Sa'i. „Weder ihr Fleisch noch ihr Blut erreicht Gott, sondern eure Frömmigkeit erreicht Ihn“ (22:37).\nAn den Taschriq-Tagen (11. bis 12. oder 13.) bleiben sie in Mina und werfen täglich je sieben Steinchen auf die drei Dschamarat. Vor dem Verlassen Mekkas folgt der Abschieds-Tawaf (Tawaf al-Wada').",
-      "في العاشر، يوم عيد الأضحى، يرمي الحجاج جمرة العقبة بسبع حصيات، وينحرون الهدي، ويحلقون أو يقصّرون، ويطوفون طواف الإفاضة ثم يسعون. «لن ينال الله لحومها ولا دماؤها ولكن يناله التقوى منكم» (22:37).\nوفي أيام التشريق (11 و12 أو 13) يبيتون بمنى ويرمون الجمرات الثلاث كل يوم بسبع حصيات، وقبل مغادرة مكة يطوفون طواف الوداع.",
+      "On the 10th, the day of Eid al-Adha, pilgrims throw seven pebbles at Jamrat al-'Aqaba, offer the sacrifice (hady), shave or shorten the hair and perform Tawaf al-Ifada, followed by sa'i. The Quran reminds pilgrims that it is not the meat or blood of the sacrifice that reaches God, but their piety (22:37).\nOn the days of tashriq (11th to 12th or 13th) they stay in Mina and throw seven pebbles at each of the three jamarat daily. Before leaving Mecca they perform the farewell tawaf (tawaf al-wada').",
+      "Am 10., dem Tag des Opferfests, werfen die Pilgernden sieben Steinchen auf die Dschamrat al-'Aqaba, bringen das Opfer (Hady) dar, rasieren oder kürzen das Haar und vollziehen den Tawaf al-Ifada mit anschließendem Sa'i. Der Koran erinnert daran, dass nicht Fleisch und Blut des Opfers Gott erreichen, sondern die Frömmigkeit der Pilgernden (22:37).\nAn den Taschriq-Tagen (11. bis 12. oder 13.) bleiben sie in Mina und werfen täglich je sieben Steinchen auf die drei Dschamarat. Vor dem Verlassen Mekkas folgt der Abschieds-Tawaf (Tawaf al-Wada').",
+      "في العاشر، يوم عيد الأضحى، يرمي الحجاج جمرة العقبة بسبع حصيات، وينحرون الهدي، ويحلقون أو يقصّرون، ويطوفون طواف الإفاضة ثم يسعون. ويذكّر القرآن بأن الذي يبلغ الله من الهدي ليس لحمه ولا دمه بل تقوى صاحبه (22:37).\nوفي أيام التشريق (11 و12 أو 13) يبيتون بمنى ويرمون الجمرات الثلاث كل يوم بسبع حصيات، وقبل مغادرة مكة يطوفون طواف الوداع.",
     ),
-    note: L3("Schools differ on the exact order of the acts on the 10th and on what is required if the order changes; many scholars allow flexibility, based on the Prophet's \"No harm, do it\".", "Die Rechtsschulen unterscheiden sich in der genauen Reihenfolge der Handlungen am 10. und in den Folgen einer Abweichung; viele Gelehrte erlauben Flexibilität, gestützt auf das Prophetenwort „Kein Problem, tu es“.", "تختلف المذاهب في ترتيب أعمال يوم النحر وما يلزم عند تقديم بعضها على بعض، وكثير من العلماء يوسّعون في ذلك لقوله ﷺ: «افعل ولا حرج»."),
+    note: L3("Schools differ on the exact order of the acts on the 10th and on what is required if the order changes; many scholars allow flexibility, based on hadiths in which the Prophet accepted a changed order from pilgrims who asked (al-Bukhari, Muslim).", "Die Rechtsschulen unterscheiden sich in der genauen Reihenfolge der Handlungen am 10. und in den Folgen einer Abweichung; viele Gelehrte erlauben Flexibilität, gestützt auf Hadithe, in denen der Prophet Pilgernden auf ihre Frage eine abweichende Reihenfolge gelten ließ (al-Buchari, Muslim).", "تختلف المذاهب في ترتيب أعمال يوم النحر وما يلزم عند تقديم بعضها على بعض، وكثير من العلماء يوسّعون في ذلك لأحاديث أجاز فيها النبي ﷺ لمن سأله تقديم بعض الأعمال على بعض (البخاري ومسلم)."),
     quiz: [
       q(["Which jamra is stoned on the 10th?", "Welche Dschamra wird am 10. beworfen?", "أي جمرة تُرمى يوم العاشر؟"],
         [["Jamrat al-'Aqaba", "Dschamrat al-'Aqaba", "جمرة العقبة"], ["All three", "Alle drei", "الثلاث"], ["None", "Keine", "لا شيء"]], 0),
@@ -223,12 +226,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "umrah", arabic: "العمرة", verses: vv("2:158", "2:196", "48:27"), tags: ["quran", "fiqh"],
+    id: "umrah", review: "needs_review", arabic: "العمرة", verses: vv("2:158", "2:196", "48:27"), tags: ["quran", "fiqh"],
     title: L3("Umrah step by step", "Umra Schritt für Schritt", "العمرة خطوة بخطوة"),
     text: L3(
-      "Umrah, the \"lesser pilgrimage\", can be performed at any time of year. Its steps: enter ihram at the miqat with intention and talbiya; circle the Kaaba seven times anticlockwise, starting at the Black Stone (tawaf); pray two rak'as behind Maqam Ibrahim if possible; drink Zamzam.\nThen walk seven times between Safa and Marwa (sa'i), starting at Safa: \"Safa and Marwa are among the symbols of God\" (2:158). Finally shave or shorten the hair, and the ihram ends.",
-      "Die Umra, die „kleine Pilgerfahrt“, ist das ganze Jahr möglich. Ihre Schritte: am Miqat mit Absicht und Talbiya in den Ihram treten; die Kaaba siebenmal gegen den Uhrzeigersinn umrunden, beginnend am Schwarzen Stein (Tawaf); möglichst hinter dem Maqam Ibrahim zwei Rak'as beten; Zamzam trinken.\nDann siebenmal zwischen Safa und Marwa gehen (Sa'i), beginnend bei Safa: „Safa und Marwa gehören zu den Kultzeichen Gottes“ (2:158). Zuletzt das Haar rasieren oder kürzen, damit endet der Ihram.",
-      "العمرة «الحج الأصغر» تجوز في كل العام. خطواتها: الإحرام من الميقات بالنية والتلبية، ثم الطواف بالكعبة سبعة أشواط عكس عقارب الساعة بدءًا من الحجر الأسود، وصلاة ركعتين خلف المقام إن تيسّر، وشرب ماء زمزم.\nثم السعي بين الصفا والمروة سبعة أشواط بدءًا بالصفا: «إن الصفا والمروة من شعائر الله» (2:158)، ثم الحلق أو التقصير وبه يتحلّل.",
+      "Umrah, the \"lesser pilgrimage\", can be performed at any time of year. Its steps: enter ihram at the miqat with intention and talbiya; circle the Kaaba seven times anticlockwise, starting at the Black Stone (tawaf); pray two rak'as behind Maqam Ibrahim if possible; drink Zamzam.\nThen walk seven times between Safa and Marwa (sa'i), starting at Safa; the Quran counts Safa and Marwa among the symbols of God (2:158). Finally shave or shorten the hair, and the ihram ends.",
+      "Die Umra, die „kleine Pilgerfahrt“, ist das ganze Jahr möglich. Ihre Schritte: am Miqat mit Absicht und Talbiya in den Ihram treten; die Kaaba siebenmal gegen den Uhrzeigersinn umrunden, beginnend am Schwarzen Stein (Tawaf); möglichst hinter dem Maqam Ibrahim zwei Rak'as beten; Zamzam trinken.\nDann siebenmal zwischen Safa und Marwa gehen (Sa'i), beginnend bei Safa; der Koran zählt Safa und Marwa zu den Kultzeichen Gottes (2:158). Zuletzt das Haar rasieren oder kürzen, damit endet der Ihram.",
+      "العمرة «الحج الأصغر» تجوز في كل العام. خطواتها: الإحرام من الميقات بالنية والتلبية، ثم الطواف بالكعبة سبعة أشواط عكس عقارب الساعة بدءًا من الحجر الأسود، وصلاة ركعتين خلف المقام إن تيسّر، وشرب ماء زمزم.\nثم السعي بين الصفا والمروة سبعة أشواط بدءًا بالصفا، وقد عدّ القرآن الصفا والمروة من شعائر الله (2:158)، ثم الحلق أو التقصير وبه يتحلّل.",
     ),
     note: L3("In Twelver Shia practice, the Umrah mufrada also includes tawaf al-nisa' with its prayer after the hair is cut.", "In der zwölferschiitischen Praxis gehört zur Umra Mufrada nach dem Haarekürzen zusätzlich der Tawaf an-Nisa' mit seinem Gebet.", "في الفقه الإمامي يُضاف إلى العمرة المفردة طواف النساء وصلاته بعد التقصير."),
     quiz: [
@@ -239,12 +242,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "farewell-hajj", arabic: "حجة الوداع", verses: vv("5:3", "49:13"), tags: ["quran", "history"],
+    id: "farewell-hajj", review: "needs_review", arabic: "حجة الوداع", verses: vv("5:3", "49:13"), tags: ["quran", "history"],
     title: L3("The Farewell Pilgrimage (632)", "Die Abschiedspilgerfahrt (632)", "حجة الوداع (632)"),
     text: L3(
-      "In 632 the Prophet performed his only Hajj, with a very large number of companions. At Arafah he gave the Farewell Sermon: lives, property and honour are sacred; no Arab is above a non-Arab, nor white above black, except in piety; treat women well.\nThe verse \"Today I have perfected your religion for you\" (5:3) was revealed on the day of Arafah, according to most reports. Most rites of Hajj follow his example from this pilgrimage.",
-      "632 vollzog der Prophet seinen einzigen Hadsch, mit sehr vielen Gefährten. In Arafat hielt er die Abschiedspredigt: Leben, Besitz und Ehre sind unantastbar; kein Araber steht über einem Nichtaraber, kein Weißer über einem Schwarzen, außer durch Frömmigkeit; behandelt die Frauen gut.\nDer Vers „Heute habe Ich euch eure Religion vervollkommnet“ (5:3) wurde den meisten Berichten zufolge am Tag von Arafat offenbart. Die meisten Hadsch-Riten folgen seinem Vorbild auf dieser Pilgerfahrt.",
-      "حجّ النبي ﷺ حجته الوحيدة سنة 632 ومعه جمع كبير من الصحابة، وخطب بعرفة خطبة الوداع: الدماء والأموال والأعراض حرام، ولا فضل لعربي على أعجمي ولا لأبيض على أسود إلا بالتقوى، واستوصوا بالنساء خيرًا.\nونزلت «اليوم أكملت لكم دينكم» (5:3) يوم عرفة في أكثر الروايات، وأكثر مناسك الحج مأخوذة من هذه الحجة.",
+      "In 632 the Prophet performed his only Hajj, with a very large number of companions. At Arafah he gave the Farewell Sermon: lives, property and honour are sacred; people do not rank above one another by origin or colour, only by piety; women are to be treated well (reports in Muslim and in the Musnad of Ahmad).\nThe verse on the completion of the religion (5:3) was revealed on the day of Arafah, according to most reports. Most rites of Hajj follow his example from this pilgrimage.",
+      "632 vollzog der Prophet seinen einzigen Hadsch, mit sehr vielen Gefährten. In Arafat hielt er die Abschiedspredigt: Leben, Besitz und Ehre sind unantastbar; Menschen stehen nicht durch Herkunft oder Hautfarbe übereinander, sondern nur durch Frömmigkeit; Frauen sind gut zu behandeln (Berichte bei Muslim und im Musnad Ahmads).\nDer Vers über die Vollendung der Religion (5:3) wurde den meisten Berichten zufolge am Tag von Arafat offenbart. Die meisten Hadsch-Riten folgen seinem Vorbild auf dieser Pilgerfahrt.",
+      "حجّ النبي ﷺ حجته الوحيدة سنة 632 ومعه جمع كبير من الصحابة، وخطب بعرفة خطبة الوداع: حرمة الدماء والأموال والأعراض، وأن الناس لا يتفاضلون بالأصل أو اللون بل بالتقوى، والوصية بالنساء خيرًا (روايات عند مسلم وفي مسند أحمد).\nونزلت آية إكمال الدين (5:3) يوم عرفة في أكثر الروايات، وأكثر مناسك الحج مأخوذة من هذه الحجة.",
     ),
     note: L3("Shia tradition also connects this journey with Ghadir Khumm on the way back, and many Shia commentators link 5:3 to that event.", "Die schiitische Überlieferung verbindet diese Reise zudem mit Ghadir Chumm auf dem Rückweg, und viele schiitische Kommentatoren beziehen 5:3 auf dieses Ereignis.", "يربط التراث الشيعي هذه الرحلة أيضًا بغدير خم في طريق العودة، ويربط كثير من مفسري الشيعة الآية 5:3 بذلك الحدث."),
     quiz: [
@@ -255,12 +258,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "medina-adab", arabic: "آداب الزيارة", verses: vv("49:1-3", "33:56"), tags: ["quran", "fiqh", "sunni", "shia"],
+    id: "medina-adab", review: "needs_review", arabic: "آداب الزيارة", verses: vv("49:1-3", "33:56"), tags: ["quran", "fiqh", "sunni", "shia"],
     title: L3("Etiquette of visiting Medina", "Verhalten beim Besuch Medinas", "آداب زيارة المدينة"),
     text: L3(
-      "Visiting Medina is not part of Hajj, but many pilgrims travel there. Prayer in the Prophet's Mosque is of great merit. The Rawda, between the Prophet's house and his minbar, is called \"a garden of the gardens of Paradise\"; access is now booked by time slot.\nAt the grave, visitors greet the Prophet, Abu Bakr and Umar with peace, quietly: \"Do not raise your voices above the voice of the Prophet\" (49:2). Send blessings upon him (33:56), be patient in crowds and kind to fellow visitors.",
-      "Der Besuch Medinas gehört nicht zum Hadsch, doch viele Pilgernde reisen dorthin. Das Gebet in der Prophetenmoschee hat großen Wert. Die Rauda zwischen dem Haus des Propheten und seiner Kanzel heißt „ein Garten aus den Gärten des Paradieses“; der Zugang wird heute nach Zeitfenster gebucht.\nAm Grab grüßen Besuchende den Propheten, Abu Bakr und Umar mit dem Friedensgruß, leise: „Erhebt eure Stimmen nicht über die Stimme des Propheten“ (49:2). Segenswünsche für ihn sprechen (33:56), geduldig im Gedränge und freundlich zu anderen bleiben.",
-      "زيارة المدينة ليست من مناسك الحج لكن كثيرًا من الحجاج يقصدونها، والصلاة في المسجد النبوي عظيمة الفضل. والروضة بين بيته ﷺ ومنبره «روضة من رياض الجنة»، ويُحجز دخولها اليوم بمواعيد.\nوعند القبر يسلّم الزائر على النبي ﷺ وأبي بكر وعمر بصوت خفيض: «لا ترفعوا أصواتكم فوق صوت النبي» (49:2)، ويكثر الصلاة عليه (33:56)، ويصبر في الزحام ويرفق بالزائرين.",
+      "Visiting Medina is not part of Hajj, but many pilgrims travel there. Prayer in the Prophet's Mosque is of great merit. The Rawda, between the Prophet's house and his minbar, is described in a hadith (al-Bukhari, Muslim) as one of the gardens of Paradise; access is now booked by time slot.\nAt the grave, visitors greet the Prophet, Abu Bakr and Umar with peace, quietly, mindful of the Quran's command not to raise voices above the Prophet's (49:2). Send blessings upon him (33:56), be patient in crowds and kind to fellow visitors.",
+      "Der Besuch Medinas gehört nicht zum Hadsch, doch viele Pilgernde reisen dorthin. Das Gebet in der Prophetenmoschee hat großen Wert. Die Rauda zwischen dem Haus des Propheten und seiner Kanzel wird in einem Hadith (al-Buchari, Muslim) als einer der Gärten des Paradieses beschrieben; der Zugang wird heute nach Zeitfenster gebucht.\nAm Grab grüßen Besuchende den Propheten, Abu Bakr und Umar mit dem Friedensgruß, leise, eingedenk des koranischen Gebots, die Stimme nicht über die des Propheten zu erheben (49:2). Segenswünsche für ihn sprechen (33:56), geduldig im Gedränge und freundlich zu anderen bleiben.",
+      "زيارة المدينة ليست من مناسك الحج لكن كثيرًا من الحجاج يقصدونها، والصلاة في المسجد النبوي عظيمة الفضل. والروضة بين بيته ﷺ ومنبره وُصفت في حديث عند البخاري ومسلم بأنها من رياض الجنة، ويُحجز دخولها اليوم بمواعيد.\nوعند القبر يسلّم الزائر على النبي ﷺ وأبي بكر وعمر بصوت خفيض، امتثالًا لنهي القرآن عن رفع الصوت فوق صوت النبي (49:2)، ويكثر الصلاة عليه (33:56)، ويصبر في الزحام ويرفق بالزائرين.",
     ),
     note: L3("Scholars differ on whether one should travel with the intention of visiting the grave or of the mosque, and on details of supplication there. Shia visitors also visit the graves of the Imams in al-Baqi'.", "Gelehrte sind uneins, ob man mit der Absicht reist, das Grab oder die Moschee zu besuchen, und über Einzelheiten des Bittgebets dort. Schiitische Besuchende suchen zudem die Gräber der Imame in al-Baqi' auf.", "اختلف العلماء في شدّ الرحل بنية زيارة القبر أو المسجد وفي تفاصيل الدعاء عنده، ويزور الشيعة أيضًا قبور الأئمة في البقيع."),
     quiz: [
@@ -271,12 +274,12 @@ export const HARAMAIN_LESSONS: Lesson[] = [
     ],
   },
   {
-    id: "ziyarah-medina", arabic: "قباء وأحد", verses: vv("9:108", "3:121-122"), tags: ["history", "sunni", "shia"],
+    id: "ziyarah-medina", review: "needs_review", arabic: "قباء وأحد", verses: vv("9:108", "3:121-122"), tags: ["history", "sunni", "shia"],
     title: L3("Sites in Medina: Quba, Uhud, al-Baqi'", "Orte in Medina: Quba, Uhud, al-Baqi'", "معالم المدينة: قباء وأحد والبقيع"),
     text: L3(
-      "Masjid Quba, the first mosque, is commonly linked to \"a mosque founded on piety from the first day\" (9:108); a hadith says that praying there carries the reward of an Umrah. Mount Uhud is the site of the battle of 625 (3:121) and of the graves of its martyrs, among them Hamza.\nAl-Baqi' is the main cemetery of Medina, with many companions and members of the Prophet's family. Other sites include Masjid al-Qiblatayn and the Seven Mosques near the trench of 627.",
-      "Die Quba-Moschee, die erste Moschee, wird oft mit „einer Moschee, vom ersten Tag an auf Gottesfurcht gegründet“ (9:108) verbunden; ein Hadith sagt, ein Gebet dort entspreche dem Lohn einer Umra. Der Berg Uhud ist Ort der Schlacht von 625 (3:121) und der Gräber ihrer Märtyrer, darunter Hamza.\nAl-Baqi' ist der Hauptfriedhof Medinas mit vielen Gefährten und Angehörigen der Familie des Propheten. Weitere Orte sind die Masdschid al-Qiblatain und die Sieben Moscheen am Graben von 627.",
-      "يُربط مسجد قباء، أول مسجد، كثيرًا بقوله تعالى: «لمسجدٌ أُسس على التقوى من أول يوم» (9:108)، وفي الحديث أن الصلاة فيه كعمرة. وجبل أحد موضع غزوة سنة 625 (3:121) وفيه قبور شهدائها ومنهم حمزة.\nوالبقيع مقبرة المدينة الكبرى وفيها كثير من الصحابة وآل البيت، ومن المعالم أيضًا مسجد القبلتين والمساجد السبعة عند الخندق (627).",
+      "Masjid Quba, the first mosque, is commonly linked to the mosque founded on piety from its first day (9:108); a hadith (al-Tirmidhi, Ibn Majah) says that praying there carries the reward of an Umrah. Mount Uhud is the site of the battle of 625 (3:121) and of the graves of its martyrs, among them Hamza.\nAl-Baqi' is the main cemetery of Medina, with many companions and members of the Prophet's family. Other sites include Masjid al-Qiblatayn and the Seven Mosques near the trench of 627.",
+      "Die Quba-Moschee, die erste Moschee, wird oft mit der Moschee verbunden, die vom ersten Tag an auf Gottesfurcht gegründet wurde (9:108); ein Hadith (at-Tirmidhi, Ibn Madscha) sagt, ein Gebet dort entspreche dem Lohn einer Umra. Der Berg Uhud ist Ort der Schlacht von 625 (3:121) und der Gräber ihrer Märtyrer, darunter Hamza.\nAl-Baqi' ist der Hauptfriedhof Medinas mit vielen Gefährten und Angehörigen der Familie des Propheten. Weitere Orte sind die Masdschid al-Qiblatain und die Sieben Moscheen am Graben von 627.",
+      "يُربط مسجد قباء، أول مسجد، كثيرًا بالمسجد الذي أُسّس على التقوى منذ يومه الأول (9:108)، وفي حديث عند الترمذي وابن ماجه أن الصلاة فيه كأجر عمرة. وجبل أحد موضع غزوة سنة 625 (3:121) وفيه قبور شهدائها ومنهم حمزة.\nوالبقيع مقبرة المدينة الكبرى وفيها كثير من الصحابة وآل البيت، ومن المعالم أيضًا مسجد القبلتين والمساجد السبعة عند الخندق (627).",
     ),
     note: L3("Some commentators apply 9:108 to the Prophet's Mosque rather than Quba. Practices at graves (such as which supplications are made) differ between Sunni schools and Shia tradition.", "Einige Kommentatoren beziehen 9:108 auf die Prophetenmoschee statt auf Quba. Die Praxis an Gräbern (etwa welche Bittgebete gesprochen werden) unterscheidet sich zwischen sunnitischen Schulen und schiitischer Tradition.", "يحمل بعض المفسرين 9:108 على المسجد النبوي لا قباء، وتختلف الممارسات عند القبور (كصيغ الدعاء) بين المذاهب السنية والتقليد الشيعي."),
     quiz: [

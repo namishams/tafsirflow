@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AccessibilityInfo, Animated, Easing, I18nManager, Modal, PanResponder, Pressable, ScrollView, Text, View, useWindowDimensions } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
@@ -41,7 +42,15 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
   const dragY = useRef(new Animated.Value(0)).current;
   const scrollTop = useRef(true);
 
-  useEffect(() => { if (start) setPos(start); }, [start]);
+  // the viewer moves to `start` only when it opens or the start card really changes: callers pass a new object on
+  // every render, and a store write while the viewer is open (seen, quota, saves, feed timer) must not jump back to the
+  // first card. Adjusted during render, so the first frame already shows the opened card (never the previous one).
+  const startSig = start ? `${start.group}:${start.story}` : "";
+  const [openSig, setOpenSig] = useState(startSig);
+  if (openSig !== startSig) {
+    setOpenSig(startSig);
+    if (start) setPos({ group: start.group, story: start.story });
+  }
   useEffect(() => {
     let alive = true;
     AccessibilityInfo.isScreenReaderEnabled().then((v) => { if (alive) setReader(v); }).catch(() => undefined);
@@ -114,19 +123,24 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
       <StatusBar style="light" />
       <Animated.View style={{ flex: 1, backgroundColor: stage.deep, opacity, transform: [{ translateY: dragY }] }} {...pan.panHandlers}>
         <FeedBackdrop tone={toneOf(story.group)} width={width} height={height} animate={!reduce} still={reduce} />
-        {/* progress bars of this group */}
-        <View style={{ position: "absolute", top: insets.top + 8, left: 10, right: 10, flexDirection: "row", gap: 4 }} accessible accessibilityLabel={tx.storyOf.replace("{n}", String(pos.story + 1)).replace("{total}", String(group.stories.length))}>
-          {group.stories.map((s, i) => (
-            <View key={s.id} style={{ flex: 1, height: 2.5, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.25)", overflow: "hidden" }}>
-              {i < pos.story ? <View style={{ flex: 1, backgroundColor: "#fff" }} /> : i === pos.story ? (
-                auto ? <Animated.View style={{ height: "100%", backgroundColor: "#fff", width: progress.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] }) }} /> : <View style={{ flex: 1, backgroundColor: "#fff" }} />
-              ) : null}
-            </View>
-          ))}
-        </View>
-        <View style={{ position: "absolute", top: insets.top + 20, left: 14, right: 8, flexDirection: "row", alignItems: "center", gap: 10, zIndex: 20, elevation: 20 }}>
-          <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 13.5, color: "#fff" }}>{group.title}</Text>
-          <Pressable onPress={onClose} accessibilityRole="button" accessibilityLabel={tx.close} hitSlop={14} style={{ padding: 10, borderRadius: 22, backgroundColor: "rgba(0,0,0,0.25)" }}><Icon name="close" color="#fff" size={22} /></Pressable>
+        {/* the header over the text: a scrim of the stage (the text scrolls under it, never through the title), the
+            progress bars of this group, the group title and close */}
+        <View pointerEvents="box-none" style={{ position: "absolute", top: 0, left: 0, right: 0, height: insets.top + 92, zIndex: 20, elevation: 20 }}>
+          <LinearGradient pointerEvents="none" colors={["rgba(5,28,21,0.96)", "rgba(5,28,21,0.82)", "rgba(5,28,21,0)"]} locations={[0, 0.68, 1]}
+            style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} />
+          <View style={{ position: "absolute", top: insets.top + 8, left: 10, right: 10, flexDirection: "row", gap: 4 }} accessible accessibilityLabel={tx.storyOf.replace("{n}", String(pos.story + 1)).replace("{total}", String(group.stories.length))}>
+            {group.stories.map((s, i) => (
+              <View key={s.id} style={{ flex: 1, height: 2.5, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.25)", overflow: "hidden" }}>
+                {i < pos.story ? <View style={{ flex: 1, backgroundColor: "#fff" }} /> : i === pos.story ? (
+                  auto ? <Animated.View style={{ height: "100%", backgroundColor: "#fff", width: progress.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] }) }} /> : <View style={{ flex: 1, backgroundColor: "#fff" }} />
+                ) : null}
+              </View>
+            ))}
+          </View>
+          <View pointerEvents="box-none" style={{ marginTop: insets.top + 20, marginStart: 14, marginEnd: 8, flexDirection: "row", alignItems: "center", gap: 10 }}>
+            <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 13.5, color: "#fff" }}>{group.title}</Text>
+            <Pressable onPress={onClose} accessibilityRole="button" accessibilityLabel={tx.close} hitSlop={14} style={{ padding: 10, borderRadius: 22, backgroundColor: "rgba(0,0,0,0.25)" }}><Icon name="close" color="#fff" size={22} /></Pressable>
+          </View>
         </View>
 
         <Pressable style={{ flex: 1 }} accessible={false} onPress={(e) => onTap(e.nativeEvent.pageX)} onLongPress={() => setPaused(true)} onPressOut={() => setPaused(false)} delayLongPress={250}>
@@ -143,7 +157,8 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
         {/* the bottom bar: previous / next for everyone (also VoiceOver), save, share */}
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 14, paddingTop: 8, paddingBottom: Math.max(insets.bottom, 12) }}>
           <BarButton icon={I18nManager.isRTL ? "chevronRight" : "chevronLeft"} label={tx.prev} onPress={prev} />
-          {allowed ? (
+          {/* our own promo cards are not stories: nothing to save, and their page (/pro) does not exist on the free website */}
+          {allowed && !promo ? (
             <View style={{ flexDirection: "row", gap: 6 }}>
               <BarButton icon="bookmark" label={saved ? tx.unsave : tx.save} filled={saved} onPress={() => toggleSavedStory(story.id)} />
               <BarButton icon="send" label={tx.share} onPress={() => setSharing(true)} />

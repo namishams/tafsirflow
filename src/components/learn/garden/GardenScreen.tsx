@@ -3,27 +3,33 @@
 // The garden on the website: the living landscape with the learner's tree at its stage (read from the synced store
 // qmc.garden), the tree card with the next stage and the calendar wait, fruits and decorations (read-only), growth this
 // week by source, the history, what unlocks in the landscape and how the tree grows. A learner without a tree plants
-// one with the ceremony (PlantFlow). Growth never happens here (no tickGarden): it comes from the app and Shams 2.0.
-// Not on the web (app only): pinch, pan and the panorama look, watering by tap, harvesting, giving stickers, the daily
-// sticker pack, more plots, Pro offers, the share card, reminders.
-import { useEffect, useRef, useState } from "react";
+// one with the ceremony (PlantFlow). Learning growth never happens here (no tickGarden): it comes from the app and
+// Shams 2.0. Giving stickers ("Nourish your tree", GiftFlow.tsx), harvesting the fruits and the daily sticker pack work
+// here exactly as in the app (same store keys, synced with the account).
+// Sharing the garden uses the same words and link as the app (the system share sheet or the clipboard).
+// Not on the web (app only): pinch, pan and the panorama look, watering by tap, more plots, Pro offers, the picture
+// of the share card, reminders.
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { Link } from "@/i18n/navigation";
 import { useLang, intlLocale } from "@/lib/learn/i18n";
 import { useHydrated } from "@/lib/learn/store";
 import { useAuth } from "@/lib/learn/auth";
-import { MAX_STAGE, MIN_DAYS, SRCS, STAGES, activeTree, progressOf, resting, seasonNow, setActive, shamsRun, treeStage, useGarden, weekGrowth, type Garden, type HistKind, type Tree } from "@/lib/learn/garden/garden";
-import { CATALOG_SIZE, totalOwned, useCatalog } from "@/lib/learn/garden/catalog";
-import { fillG, skyLabel, useAgeText, useGardenText, useSkyText } from "@/lib/learn/garden/texts";
+import { MAX_STAGE, MIN_DAYS, SRCS, STAGES, activeTree, harvest, progressOf, resting, seasonNow, setActive, shamsRun, treeStage, useGarden, weekGrowth, type Garden, type HistKind, type Tree } from "@/lib/learn/garden/garden";
+import { CATALOG_SIZE, countOf, dailyPackReady, itemById, openDailyPack, totalOwned, useCatalog, type Drop } from "@/lib/learn/garden/catalog";
+import { fillG, skyLabel, useAgeText, useGardenText, useSkyText, useStickerLabel } from "@/lib/learn/garden/texts";
 import { UNLOCK, gardenLevel, inkFor, setSkyPlace, useSky, useSkyPlace, type Sky } from "@/lib/learn/garden/sky";
 import { useGardenPro, useGardenWebText } from "@/lib/learn/garden/web";
 import { dayNum } from "@/lib/learn/feed/statsStore";
-import { Bar, Card, GoldButton, LearnMain, SectionTitle, Spinner } from "@/components/learn/ui";
+import { Bar, Card, GoldButton, LearnMain, OutlineButton, SectionTitle, Spinner } from "@/components/learn/ui";
 import { Fronds, Motes, Panorama, TERRACE_H, Terrace } from "./Landscape";
 import { Plaque, TREE_H, TREE_W, TreeArt } from "./Tree";
 import { GardenStyles, Petals, useReducedMotion } from "./Scene";
 import { PlantFlow } from "./PlantFlow";
 import { CatalogArt } from "./CatalogArt";
+import { GiftFlow, NourishButton, StickerBag } from "./GiftFlow";
+import { useGiftText } from "@/lib/learn/garden/giftText";
+import { shareOrCopy } from "@/components/learn/coursekit/share";
 
 const SCENE_H = 520;
 const GOLD = "rgb(214,180,108)";
@@ -98,8 +104,17 @@ function GardenView({ s, tree, pro }: { s: Garden; tree: Tree; pro: boolean }) {
   const season = seasonNow();
   const [box, width] = useWidth<HTMLDivElement>();
   const [nudge, setNudge] = useState<Record<string, number>>({});
+  const [gift, setGift] = useState(false);
+  const [copied, setCopied] = useState<string | null>(null);
+  const gx = useGiftText();
   const name = tree.name || tx[`t_${tree.type}`];
   const stageName = tx[`s${p.stage}` as "s0"];
+  // the same words and link as the app's share sheet (the app adds the picture card)
+  const share = async () => {
+    setCopied(null);
+    const res = await shareOrCopy({ title: tx.title, text: `${tx.shareMsg}: ${name}, ${stageName}`, url: "https://quranmasterclass.com/app" });
+    if (res === "copied") setCopied(gx.copied);
+  };
   const next = p.held ? wt.heldWeb : p.left ? fillG(tx.next, { n: p.left }) : p.wait ? ageTx(p.age, p.wait).wait : tx.maxed;
   const sceneLabel = fillG(wt.sceneLabel, { name, type: tx[`t_${tree.type}`], stage: `${stageName}, ${fillG(tx.stageN, { n: p.stage, m: MAX_STAGE })}` });
   return (
@@ -112,6 +127,13 @@ function GardenView({ s, tree, pro }: { s: Garden; tree: Tree; pro: boolean }) {
               <Scene width={width} sky={sky} s={s} tree={tree} pro={pro} level={level} season={season} still={reduce} label={sceneLabel}
                 nudge={nudge} onTree={(t) => { if (t.id !== tree.id) setActive(t.id); setNudge((n) => ({ ...n, [t.id]: (n[t.id] ?? 0) + 1 })); }} />
             ) : null}
+            {/* the sticker bag beside the active tree (with several trees the active one is not always in the middle;
+                the plot width is the one the scene uses): opens the gift flow */}
+            {width ? (
+              <div className="absolute" style={{ bottom: TERRACE_H + 14, left: bagLeft(width, s, tree) }}>
+                <StickerBag onClick={() => setGift(true)} />
+              </div>
+            ) : null}
             <div className="pointer-events-none absolute inset-x-3 top-3 flex items-start gap-2">
               <div className="min-w-0 flex-1" style={{ color: sky ? inkFor(sky) : "#f6ead0" }}>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] opacity-85 rtl:tracking-normal">{season === "ramadan" ? tx.ramadan : season === "eid" ? tx.eid : tx.kicker}</p>
@@ -122,7 +144,13 @@ function GardenView({ s, tree, pro }: { s: Garden; tree: Tree; pro: boolean }) {
                 className="pointer-events-auto grid h-10 w-10 shrink-0 place-items-center rounded-full border text-[#f3e2b6] transition hover:bg-black/30" style={{ backgroundColor: "rgba(8,38,29,0.55)", borderColor: "rgba(233,207,153,0.4)" }}>
                 <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></svg>
               </Link>
+              {/* share the garden, as the app's top bar does (the system share sheet, or the link copied) */}
+              <button type="button" onClick={share} aria-label={tx.share} title={tx.share}
+                className="pointer-events-auto grid h-10 w-10 shrink-0 place-items-center rounded-full border text-[#f3e2b6] transition hover:bg-black/30" style={{ backgroundColor: "rgba(8,38,29,0.55)", borderColor: "rgba(233,207,153,0.4)" }}>
+                <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M21 3 10 14" /><path d="M21 3l-7 18-4-7-7-4 18-7Z" /></svg>
+              </button>
             </div>
+            {copied ? <p role="status" className="absolute inset-x-3 top-16 text-end text-[12.5px] font-semibold" style={{ color: "#f3e2b6", textShadow: "0 1px 4px rgba(0,0,0,0.45)" }}>{copied}</p> : null}
           </div>
 
           {/* ---------- the tree: stage, next stage, calendar, fruits ---------- */}
@@ -139,12 +167,9 @@ function GardenView({ s, tree, pro }: { s: Garden; tree: Tree; pro: boolean }) {
               {shamsRun(s) >= 2 ? <p className="text-[13.5px] font-semibold" style={{ color: GOLD }}>{fillG(tx.shamsRunT, { n: shamsRun(s) })}</p> : null}
               {pro ? <p className="text-[13px]" style={{ color: GOLD }}>{tx.proDouble}</p> : null}
             </div>
-            <div className="flex items-center gap-3 rounded-2xl border border-[rgb(var(--gold))]/30 bg-white/[0.04] p-4">
-              <span className="flex min-w-[54px] gap-1" aria-hidden>
-                {Array.from({ length: Math.max(1, Math.min(5, tree.fruits)) }, (_, i) => <span key={i} className="h-3 w-3 rounded-full" style={{ backgroundColor: tree.fruits ? "#f3b14a" : "rgba(255,255,255,0.18)", boxShadow: tree.fruits ? "0 0 6px #ffd27a" : undefined }} />)}
-              </span>
-              <p className="flex-1 text-[14px]">{tree.fruits ? fillG(tx.fruitsReady, { n: tree.fruits }) : p.stage >= 5 ? tx.noFruit : tx.fruitFrom}{tree.fruits ? <span className="block text-[12.5px] text-white/55">{wt.harvestApp}</span> : null}</p>
-            </div>
+            <NourishButton onClick={() => setGift(true)} />
+            <Harvest tree={tree} stage={p.stage} />
+            <DailyPack />
             <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-[rgb(var(--gold))]/30 bg-white/[0.04] p-4" role="radiogroup" aria-label={skyT.label}>
               <span className="me-auto text-[14.5px] font-semibold">{skyT.label}</span>
               {(["mecca", "local"] as const).map((k) => (
@@ -171,6 +196,7 @@ function GardenView({ s, tree, pro }: { s: Garden; tree: Tree; pro: boolean }) {
           <History tree={tree} />
         </div>
       </LearnMain>
+      {gift ? <GiftFlow onClose={() => setGift(false)} /> : null}
     </>
   );
 }
@@ -186,6 +212,9 @@ function Scene({ width, sky, s, tree, pro, level, season, still, label, nudge, o
   const plotW = Math.min(width * 0.78, 320, (width - 20) / n);
   const worldW = Math.max(width + 80, n * plotW + 40);
   const petal = tree.type === "pomegranate" ? "#e0c184" : s.traits.includes("blossoms") ? "#f5ebd7" : "#9fd28a";
+  // the record's list of decorations is changed in place (a gift adds one): a new list when it changes, so the
+  // memoised tree art shows a new decoration at once
+  const traits = useMemo(() => [...s.traits], [s.traits.join(",")]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div role="img" aria-label={label} style={{ position: "absolute", inset: 0 }}>
       <Panorama width={width} height={H} ground={H - TERRACE_H + 6} sky={sky} level={level} drift still={still} scale={1.9} />
@@ -202,7 +231,7 @@ function Scene({ width, sky, s, tree, pro, level, season, still, label, nudge, o
               <button key={tr.id} type="button" onClick={() => onTree(tr)} aria-label={`${nm}, ${tx[`s${st}` as "s0"]}`} aria-pressed={tr.id === tree.id}
                 className="flex flex-col items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(214,180,108)]" style={{ width: plotW, background: "none", border: 0, padding: 0, cursor: "pointer" }}>
                 <span style={{ width: plotW, height: (TREE_H * plotW) / TREE_W, display: "block" }}>
-                  <TreeArt id={tr.id} type={tr.type} stage={st} traits={s.traits} season={season} resting={resting(s)} fruits={tr.fruits} size={plotW} still={still} nudge={nudge[tr.id] ?? 0} />
+                  <TreeArt id={tr.id} type={tr.type} stage={st} traits={traits} season={season} resting={resting(s)} fruits={tr.fruits} size={plotW} still={still} nudge={nudge[tr.id] ?? 0} />
                 </span>
                 <span style={{ marginTop: -18, display: "block" }}><Plaque name={nm} width={Math.min(170, plotW * 0.6)} /></span>
               </button>
@@ -212,6 +241,67 @@ function Scene({ width, sky, s, tree, pro, level, season, still, label, nudge, o
       </div>
       <Motes width={width} height={H} night={sky.night} still={still} />
       <Fronds width={width} height={H} drift still={still} />
+    </div>
+  );
+}
+
+/** where the sticker bag stands: beside the active tree, with the plot width and row of the scene below */
+function bagLeft(width: number, s: Garden, tree: Tree): number {
+  const n = Math.max(1, s.trees.length);
+  const plotW = Math.min(width * 0.78, 320, (width - 20) / n);
+  const i = Math.max(0, s.trees.findIndex((t) => t.id === tree.id));
+  return width / 2 + (i - (n - 1) / 2) * plotW + Math.min(plotW * 0.36, 118);
+}
+
+/** the fruits of the active tree, harvested here as in the app (the same harvest: XP and a sticker) */
+function Harvest({ tree, stage }: { tree: Tree; stage: number }) {
+  const tx = useGardenText();
+  const [got, setGot] = useState(0);
+  return (
+    <div className="flex items-center gap-3 rounded-2xl border border-[rgb(var(--gold))]/30 bg-white/[0.04] p-4">
+      <span className="flex min-w-[54px] gap-1" aria-hidden>
+        {Array.from({ length: Math.max(1, Math.min(5, tree.fruits)) }, (_, i) => <span key={i} className="h-3 w-3 rounded-full" style={{ backgroundColor: tree.fruits ? "#f3b14a" : "rgba(255,255,255,0.18)", boxShadow: tree.fruits ? "0 0 6px #ffd27a" : undefined }} />)}
+      </span>
+      <p className="flex-1 text-[14px]">
+        {tree.fruits ? fillG(tx.fruitsReady, { n: tree.fruits }) : stage >= 5 ? tx.noFruit : tx.fruitFrom}
+        {got ? <span role="status" className="block text-[13px] font-semibold" style={{ color: GOLD }}>{fillG(tx.harvested, { n: got })}</span> : null}
+      </p>
+      {tree.fruits ? <GoldButton onClick={() => { const xp = harvest(tree.id); if (xp) setGot(xp); }}>{tx.harvest}</GoldButton> : null}
+    </div>
+  );
+}
+
+/** the daily pack, as in the app: the three stickers it brought are shown right here, new ones and further copies */
+function DailyPack() {
+  const tx = useGardenText();
+  const name = useStickerLabel();
+  useCatalog();
+  const ready = dailyPackReady();
+  const [got, setGot] = useState<Drop[]>([]);
+  return (
+    <div className="grid gap-3 rounded-2xl border border-[rgb(var(--gold))]/30 bg-white/[0.04] p-4">
+      <OutlineButton dark className="w-full" disabled={!ready} onClick={() => { const d = openDailyPack(); if (d.length) setGot(d); }}>{ready ? `${tx.dailyPack}: ${tx.openPack}` : tx.dailyPack}</OutlineButton>
+      {got.length ? (
+        <div aria-live="polite" className="grid gap-2">
+          <p className="text-[11.5px] font-semibold uppercase tracking-[0.16em] rtl:tracking-normal" style={{ color: GOLD }}>{tx.packGot}</p>
+          <ul className="grid grid-cols-3 gap-2">
+            {got.map((d, i) => {
+              const it = itemById(d.id), label = it ? name(it) : d.id, n = countOf(d.id);
+              return (
+                <li key={`${d.id}-${i}`}>
+                  <Link href="/garden/collection" aria-label={`${label}, ${d.fresh ? tx.packNew : fillG(tx.copies, { n })}`} className="flex flex-col items-center gap-1 rounded-lg p-1 transition hover:bg-white/5">
+                    <CatalogArt id={d.id} size={72} />
+                    <span className="line-clamp-2 max-w-full text-center text-[12px] font-semibold leading-tight">{label}</span>
+                    <span className="text-[11.5px] font-semibold" style={{ color: d.fresh ? GOLD : "rgba(255,255,255,0.6)" }}>{d.fresh ? tx.packNew : `×${n}`}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <Link href="/garden/collection" className="justify-self-center text-[13.5px] font-semibold text-[rgb(var(--gold))] hover:underline">{tx.viewAlbum}</Link>
+        </div>
+      ) : null}
+      {!ready ? <p className="text-center text-[12.5px] text-white/60">{tx.packDone}</p> : null}
     </div>
   );
 }

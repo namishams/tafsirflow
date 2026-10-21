@@ -1,31 +1,38 @@
+import { useMemo } from "react";
 import { View } from "react-native";
-import { Stack, router, type Href } from "expo-router";
+import { Stack } from "expo-router";
 import { Page } from "@/components/page";
-import { CampusRails, MadrasaHero, StudyWisdom } from "@/features/campus/Campus";
+import { CampusRailsView, HERO_RECORD_HREFS, MadrasaHero, StudyWisdom, useCampusRails } from "@/features/campus/Campus";
 import { useWebT } from "@/i18n/web";
 import { FeedSpotlight } from "@/features/feed/EntryCards";
 import { StoryRails } from "@/features/prophet/Rails";
 import { HadithSpotlight } from "@/features/hadith/cards";
 import { CommunityCard } from "@/features/community/ui";
 import { TalentsCard } from "@/features/talents/ui";
-import { AbrahamicCard } from "@/features/abrahamic/AbrahamicScreen";
-import { HaramainCard } from "@/features/haramain/HaramainScreen";
 import { DiscoverRows } from "@/features/library/Discover";
-import { Poster, PosterGrid, SectionTitle, gradientColors } from "@/components/brand";
-import { useLang } from "@/i18n";
-import { calText } from "@/web/hijri";
-import { namesText } from "@/web/names";
-import { GROUPS, extraTool, routeOf, tile } from "@/lib/features";
+import { SectionTitle } from "@/components/brand";
 
-// Discover: one endless scroll in the Masterclass design. Spotlights first, then every course, tool and section as
-// poster cards in themed rows (no "more" button); the endless discovery lives in the Feed.
+// Discover: one endless scroll in the Masterclass design. The Madrasa first (stage, next step, records), the study
+// wisdom, every faculty, course and tool with the learner's progress, the spotlights, then every remaining course,
+// tool and section as poster cards in themed rows (no "more" button). Each place is shown once: the rails, the
+// spotlights and the poster rows share one set of hrefs, and a tile whose href already appeared above is left out
+// (every destination stays reachable; the Abrahamic and Haramain courses live in the heritage rail, the website's
+// tool groups in the themed rows). The endless discovery lives in the Feed.
+
+/** places the spotlights open: the Feed ("/" in the app, "/feed" as a tile), the prophet stories, Talents, Community people */
+const SPOTLIGHT_HREFS = ["/feed", "/prophet-stories", "/talents", "/community/people"];
+
 export default function Discover() {
   const w = useWebT();
-  const { lang } = useLang();
-  const cal = calText(lang).t;
-  const nm = namesText(lang);
-  const extraText = (k: string): [string, string] =>
-    k === "search" ? [w("nav.search"), w("search.title")] : k === "calendar" ? [cal("title"), cal("lead")] : [nm("title"), nm("lead")];
+  const campus = useCampusRails();
+  const heroRecords = useMemo(() => new Set<string>(HERO_RECORD_HREFS), []);
+  // every href shown above the poster rows: the hero's records, the campus rails, the spotlights
+  const shown = useMemo(() => {
+    const s = new Set<string>([...HERO_RECORD_HREFS, "/school", ...SPOTLIGHT_HREFS]);
+    for (const r of campus.rails) for (const i of r.items) s.add(i.href.split("?")[0]);
+    for (const i of campus.stageItems) s.add(i.href.split("?")[0]);
+    return s;
+  }, [campus]);
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -33,8 +40,8 @@ export default function Discover() {
         {/* the Madrasa first: stage, next step, today's wird, faculties and records */}
         <MadrasaHero eyebrow="Quran Masterclass" />
         <View style={{ marginTop: 28 }}><StudyWisdom /></View>
-        {/* every faculty, course and tool with the learner's progress */}
-        <View style={{ marginTop: 32 }}><CampusRails /></View>
+        {/* every faculty, course and tool with the learner's progress (the hero's records are not repeated) */}
+        <View style={{ marginTop: 32 }}><CampusRailsView data={campus} skip={heroRecords} /></View>
         <View style={{ paddingHorizontal: 16, marginTop: 36 }}>
           <SectionTitle title={w("home2.toolsTitle") === "home2.toolsTitle" ? w("nav.more") : w("home2.toolsTitle")} style={{ marginBottom: 0 }} />
         </View>
@@ -43,34 +50,10 @@ export default function Discover() {
           <View style={{ paddingHorizontal: 16 }}><HadithSpotlight /></View>
           <View style={{ paddingHorizontal: 16 }}><TalentsCard /></View>
           <View style={{ paddingHorizontal: 16 }}><CommunityCard /></View>
-          <View style={{ paddingHorizontal: 16 }}><AbrahamicCard onPress={() => router.push("/abrahamic" as Href)} /></View>
-          <View style={{ paddingHorizontal: 16 }}><HaramainCard onPress={() => router.push("/haramain" as Href)} /></View>
           <StoryRails />
         </View>
-        {/* every course and tool of the website as poster tiles, grouped like the website menu */}
-        <View style={{ paddingHorizontal: 16, gap: 32, marginTop: 28 }}>
-          {GROUPS.map((g) => (
-            <View key={g.id}>
-              <SectionTitle title={w(g.title)} />
-              <PosterGrid>
-                {g.keys.map((k) => {
-                  const t = tile(k);
-                  if (t) {
-                    return <Poster key={k} title={w(`nav.${t.key}`)} desc={w(`home2.${t.desc}`)} badge={w(`home2.badge_${t.badge}`)} arabic={t.ar}
-                      colors={gradientColors(t.bg)} cta={w("home2.open")} onPress={() => router.push(routeOf(t) as Href)} />;
-                  }
-                  const x = extraTool(k);
-                  if (!x) return null;
-                  const [title, desc] = extraText(k);
-                  return <Poster key={k} title={title} desc={desc} badge={w(`home2.badge_${x.badge}`)} arabic={x.ar}
-                    colors={gradientColors(x.bg)} cta={w("home2.open")} onPress={() => router.push(routeOf(x) as Href)} />;
-                }).filter((p) => p !== null)}
-              </PosterGrid>
-            </View>
-          ))}
-        </View>
-        {/* the app's own sections (reciter path, cards, Arabic courses, Haramain …) in themed rows */}
-        <View style={{ marginTop: 28 }}><DiscoverRows /></View>
+        {/* every remaining course, tool and section (the website's menu groups included) in themed rows */}
+        <View style={{ marginTop: 28 }}><DiscoverRows skip={shown} /></View>
       </Page>
     </>
   );

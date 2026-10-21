@@ -5,6 +5,7 @@ import { CaptchaNotice } from "./CaptchaBox";
 import { captchaToken, warmCaptcha } from "@/lib/captchaClient";
 import AuthGate from "./AuthGate";
 import { useConfig } from "@/lib/config";
+import { Link } from "@/i18n/navigation";
 import { IconComment, IconEye, IconFlag, IconHeart, IconShare } from "./Icons";
 
 type Stats = { views: number; shares: number; likes: number; comments: number; liked: boolean; signedIn?: boolean; verified?: boolean };
@@ -105,8 +106,10 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
     setBusy(true); setMsg(null);
     try {
       const r = await post("comment", { key: verseKey, body: text, parentId: reply?.id, captcha: await captchaToken("comment") });
-      if (onAuth(r.status)) { onClose(); return; }
       const d = await r.json().catch(() => ({}));
+      // the community's age rule (writing from 16) is a 403 of its own, not the e-mail confirmation
+      if (r.status === 403 && d.error === "age16") { setMsg({ kind: "err", text: t("age16") }); return; }
+      if (onAuth(r.status)) { onClose(); return; }
       if (r.ok) { setText(""); setReply(null); setMsg({ kind: "ok", text: d.pending ? t("pendingNote") : t("posted") }); load(); }
       else if (r.status === 422) setMsg({ kind: "err", text: t(`rej_${d.reason}`) });
       else if (r.status === 429) setMsg({ kind: "err", text: t("rate") });
@@ -117,6 +120,13 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
     } finally { setBusy(false); }
   };
   const report = async (c: Comment) => { const r = await post("report", { id: c.id }); if (onAuth(r.status)) { onClose(); return; } setMsg({ kind: "ok", text: t("reported") }); };
+  // block the author (as in the app): asked once, then their comments disappear (the server filters them)
+  const block = async (c: Comment) => {
+    if (!window.confirm(`${t("blockConfirm", { name: c.author })}\n\n${t("blockBody")}`)) return;
+    const r = await post("block", { id: c.id });
+    if (onAuth(r.status)) { onClose(); return; }
+    if (r.ok) { setMsg({ kind: "ok", text: t("blocked") }); load(); } else setMsg({ kind: "err", text: t("error") });
+  };
   const del = async (c: Comment) => { await post("delete", { id: c.id }); load(); };
 
   const roots = (list ?? []).filter((c) => !c.parentId);
@@ -131,7 +141,10 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
       <p className="mt-1 whitespace-pre-wrap text-[15px] leading-relaxed">{c.body}</p>
       <div className="mt-1 flex gap-4 text-xs text-muted">
         {!child && !c.pending && <button className="hover:text-ink" onClick={() => setReply(c)}>{t("reply")}</button>}
-        {c.mine ? <button className="hover:text-ink" onClick={() => del(c)}>{t("delete")}</button> : <button className="inline-flex items-center gap-1 hover:text-ink" onClick={() => report(c)}><IconFlag />{t("report")}</button>}
+        {c.mine ? <button className="hover:text-ink" onClick={() => del(c)}>{t("delete")}</button> : <>
+          <button className="inline-flex items-center gap-1 hover:text-ink" onClick={() => report(c)} aria-label={`${t("report")}, ${c.author}`}><IconFlag />{t("report")}</button>
+          <button className="hover:text-ink" onClick={() => block(c)} aria-label={`${t("block")}, ${c.author}`}>{t("block")}</button>
+        </>}
       </div>
     </li>
   );
@@ -144,7 +157,8 @@ function CommentsSheet({ verseKey, onClose, onAuth, onCount }: { verseKey: strin
           <button onClick={onClose} className="text-sm text-muted hover:text-ink">{t("close")}</button>
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto px-5">
-          <p className="py-3 text-xs leading-relaxed text-muted">{t("rules")}</p>
+          <p className="pt-3 text-xs leading-relaxed text-muted">{t("rules")}</p>
+          <p className="pb-3 pt-1 text-xs"><Link href="/talents" className="font-semibold text-accent hover:underline">{t("guidelines")}</Link></p>
           {list === null ? <p className="py-6 text-sm text-muted">…</p> : roots.length === 0 ? <p className="py-6 text-sm text-muted">{t("none")}</p> : (
             <ul className="divide-y divide-line">
               {roots.map((c) => (

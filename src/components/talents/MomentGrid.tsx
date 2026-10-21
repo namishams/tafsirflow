@@ -34,12 +34,12 @@ function Heart({ on, className }: { on: boolean; className: string }) {
   return <svg aria-hidden viewBox="0 0 24 24" className={className} fill={on ? "#dcc48c" : "none"} stroke={on ? "#dcc48c" : "currentColor"} strokeWidth="1.8"><path d={HEART} /></svg>;
 }
 
-function Art({ m, locale, big }: { m: GridMoment; locale: string; big?: boolean }) {
+function Art({ m, locale, big, edge }: { m: GridMoment; locale: string; big?: boolean; edge?: boolean }) {
   const sx = sijillText(locale), px = profileText(locale);
   const fig = figure(m);
   return (
     <div className={`relative flex h-full w-full flex-col items-center justify-center bg-gradient-to-br ${legendary(m) ? "from-[#4a3a12] to-[#120e06]" : TONE[m.kind] ?? TONE.level} ${big ? "gap-4 p-8" : "gap-1.5 p-2"}`}>
-      <span aria-hidden className={`absolute border ${legendary(m) ? "border-[#dcc48c]" : "border-[rgba(214,180,108,0.45)]"} ${big ? "inset-4 rounded-xl" : "inset-1.5 rounded-[4px]"}`} />
+      {edge ? null : <span aria-hidden className={`absolute border ${legendary(m) ? "border-[#dcc48c]" : "border-[rgba(214,180,108,0.45)]"} ${big ? "inset-4 rounded-xl" : "inset-1.5 rounded-[4px]"}`} />}
       <span className={`font-semibold text-[rgb(214,180,108)] ${big ? "text-[14px]" : "text-[9.5px] sm:text-[11px]"}`}>{legendary(m) ? px.legendary : px[`kind_${m.kind}` as PwKey] ?? ""}</span>
       <span className={`grid aspect-square place-items-center rounded-full bg-gradient-to-br from-[#f6e7bf] via-[#d6b46c] to-[#a9802f] ${big ? "h-28 w-28" : "h-[34%]"}`}>
         <span className="grid h-[calc(100%-6px)] w-[calc(100%-6px)] place-items-center rounded-full bg-[rgb(8,38,29)] font-extrabold text-[#f3e2b6]">
@@ -51,10 +51,19 @@ function Art({ m, locale, big }: { m: GridMoment; locale: string; big?: boolean 
   );
 }
 
-export default function MomentGrid({ username, locale, initial }: { username: string; locale: string; initial: GridMoment[] }) {
+/** `edge` (TikTok profile, owner 21.10.2026): edge to edge, 1 px gaps, square corners, 3:4 tiles with a dark foot so the
+ * heart and the MashaAllah count read like TikTok's view count. The profile's highlight circles open the full-screen
+ * feed of one kind through the window event "qm-open-moments" (detail: moment ids). */
+export default function MomentGrid({ username, locale, initial, edge, empty }: { username: string; locale: string; initial: GridMoment[]; edge?: boolean; empty?: string }) {
   const px = profileText(locale);
   const [list, setList] = useState<GridMoment[]>(initial);
   const [open, setOpen] = useState<number | null>(null);
+  const [only, setOnly] = useState<string[] | null>(null);
+  useEffect(() => {
+    const on = (e: Event) => { const ids = (e as CustomEvent<string[]>).detail; if (Array.isArray(ids) && ids.length) { setOnly(ids); setOpen(0); } };
+    window.addEventListener("qm-open-moments", on);
+    return () => window.removeEventListener("qm-open-moments", on);
+  }, []);
   const nf = new Intl.NumberFormat(locale, { notation: "compact", maximumFractionDigits: 1 });
   useEffect(() => {
     // signed in: the viewer-aware list (own moments, own reactions)
@@ -68,18 +77,20 @@ export default function MomentGrid({ username, locale, initial }: { username: st
     if (old) window.dispatchEvent(new CustomEvent("qm-mashaallah", { detail: maOf(m) - maOf(old) }));
     setList((l) => l.map((x) => (x.id === m.id ? m : x)));
   }, [list]);
-  const close = useCallback(() => setOpen(null), []);
-  if (!list.length) return <p className="py-8 text-center text-muted">{px.noMoments}</p>;
+  const close = useCallback(() => { setOpen(null); setOnly(null); }, []);
+  if (!list.length) return <p className="py-8 text-center text-muted">{empty ?? px.noMoments}</p>;
+  const shown = only ? list.filter((m) => only.includes(m.id)) : list;
   return (
     <>
-      <ul className="grid grid-cols-3 gap-0.5 sm:gap-1.5">
+      <ul className={edge ? "grid grid-cols-3 gap-px" : "grid grid-cols-3 gap-0.5 sm:gap-1.5"}>
         {list.map((m, i) => {
           const n = maOf(m);
           return (
             <li key={m.id}>
-              <button type="button" onClick={() => setOpen(i)} aria-label={`${momentLine(m, sijillText(locale))}, ${fill(px.maCount, { n })}`}
-                className="relative block aspect-[4/5] w-full overflow-hidden rounded-[3px] transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[rgb(var(--hm-gold))] sm:rounded-md">
-                <Art m={m} locale={locale} />
+              <button type="button" onClick={() => { setOnly(null); setOpen(i); }} aria-label={`${momentLine(m, sijillText(locale))}, ${fill(px.maCount, { n })}`}
+                className={`relative block w-full overflow-hidden transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[rgb(var(--hm-gold))] ${edge ? "aspect-[3/4]" : "aspect-[4/5] rounded-[3px] sm:rounded-md"}`}>
+                <Art m={m} locale={locale} edge={edge} />
+                {edge ? <span aria-hidden className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/45 to-transparent" /> : null}
                 <span className="absolute bottom-1.5 start-2 flex items-center gap-1 text-[12px] font-bold text-white [text-shadow:0_1px_3px_rgba(0,0,0,.6)]">
                   <Heart on={n > 0 || isMa(m.mine)} className="h-3.5 w-3.5" />{nf.format(n)}
                 </span>
@@ -88,7 +99,7 @@ export default function MomentGrid({ username, locale, initial }: { username: st
           );
         })}
       </ul>
-      {open !== null ? <Feed list={list} start={open} locale={locale} onClose={close} onChange={change} /> : null}
+      {open !== null ? <Feed list={shown} start={open} locale={locale} onClose={close} onChange={change} /> : null}
     </>
   );
 }

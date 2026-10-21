@@ -2,8 +2,11 @@
 // Own words, except the three classical sayings, which carry their Arabic wording and the book they are found in.
 // No Quran or hadith text is typed here. The whole selection is marked for scholar review (BLUEPRINT §4).
 
+import { WISDOM_I18N } from "./wisdom-i18n";
+
 export type WisdomCat = "method" | "adab" | "saying";
-type L = { en: string; de: string };
+/** en and de written here; the other twelve app languages come from wisdom-i18n.ts (filled in below) */
+type L = { en: string; de: string } & Partial<Record<string, string>>;
 export type Wisdom = { id: string; cat: WisdomCat; title: L; body: L; ar?: string; who?: string; source?: string };
 
 export const WISDOM_REVIEW = { status: "pending" as const };
@@ -59,9 +62,17 @@ export const WISDOM: Wisdom[] = [
     body: { en: "Go to Rabīʿa and learn his adab before his knowledge.", de: "Geh zu Rabīʿa und lerne von seinem Adab vor seinem Wissen." } },
 ];
 
+// the twelve other languages, by entry id (no new store; ids and order stay the same)
+for (const w of WISDOM) {
+  for (const [lang, rows] of Object.entries(WISDOM_I18N)) {
+    const r = rows[w.id];
+    if (r) { w.title[lang] = r[0]; w.body[lang] = r[1]; }
+  }
+}
+
 /** today's tip: one per calendar day, the same for everyone */
 export function tipOfDay(d = new Date()): number {
   const day = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
   return ((day % WISDOM.length) + WISDOM.length) % WISDOM.length;
 }
-export const wisdomText = (l: L, lang: string) => (lang === "de" ? l.de : l.en);
+export const wisdomText = (l: L, lang: string) => l[lang] || l.en;

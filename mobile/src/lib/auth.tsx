@@ -19,8 +19,11 @@ type Ctx = {
   login: (email: string, password: string) => Promise<void>;
   register: (input: RegisterInput) => Promise<void>;
   logout: () => Promise<void>;
-  deleteAccount: (password: string) => Promise<void>;
+  /** without a password: the session was confirmed with an e-mail code in the last 15 minutes (accounts without one) */
+  deleteAccount: (password?: string) => Promise<void>;
   refresh: () => Promise<void>;
+  /** a session from sign-in with an e-mail code or a passkey (features/auth) */
+  adopt: (d: { user: User; token?: string }) => Promise<void>;
 };
 const AuthContext = createContext<Ctx | null>(null);
 
@@ -57,8 +60,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       await setToken(null);
       setUser(null);
     },
+    adopt: async (d) => {
+      if (d.token) await setToken(d.token);
+      setUser(d.user);
+      rememberAge(d.user?.birthYear);
+    },
     deleteAccount: async (password) => {
-      await api("/api/account", { body: { action: "delete", current: password } });
+      await api("/api/account", { body: { action: "delete", current: password ?? "" } });
       await setToken(null);
       setUser(null);
     },

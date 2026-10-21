@@ -3,12 +3,13 @@ import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
 import { NO_STORE, adminGate, logAdmin } from "@/lib/talents";
 import { dropPostMedia } from "@/lib/talentPosting";
+import { removeMedia } from "@/lib/media";
 
 export const dynamic = "force-dynamic";
 
 // Moderation queue (admins only). GET: open reports, oldest first, with the reported profile and, for messages,
-// the reported message, comment or clip. POST { id, action }: dismiss | resolve | remove_message (message or
-// comment) | remove_post | suspend (also resolves).
+// the reported message, comment or clip. POST { id, action }: dismiss | resolve | remove_message (message, comment
+// or a Mishary mentoring review/recording) | remove_post | suspend (also resolves).
 export async function GET(req: NextRequest) {
   const g = await adminGate(req);
   if (g.res) return g.res;
@@ -18,13 +19,16 @@ export async function GET(req: NextRequest) {
             rp.username AS reported, rp.display_name AS reported_name, rp.suspended, rr.username AS reporter,
             (SELECT count(*)::int FROM community_reports x WHERE x.reported_id = r.reported_id) AS reports_total,
             m.body AS message, m.removed_at AS message_removed,
-            cm.body AS comment, cm.removed_at AS comment_removed, po.verse_key AS post_verse, po.status AS post_status, (po.media_path IS NOT NULL) AS post_media
+            cm.body AS comment, cm.removed_at AS comment_removed, po.verse_key AS post_verse, po.status AS post_status, (po.media_path IS NOT NULL) AS post_media,
+            mr.body AS review_body, ms.verse_key AS sub_verse, ms.note AS sub_note, (ms.media_path IS NULL) AS sub_removed
        FROM community_reports r
        LEFT JOIN community_profiles rp ON rp.user_id = r.reported_id
        LEFT JOIN community_profiles rr ON rr.user_id = r.reporter_id
        LEFT JOIN community_messages m ON r.target_type = 'message' AND m.id = r.target_id
        LEFT JOIN community_post_comments cm ON r.target_type = 'comment' AND cm.id = r.target_id
        LEFT JOIN community_posts po ON r.target_type = 'post' AND po.id = r.target_id
+       LEFT JOIN mentoring_reviews mr ON r.target_type = 'mentoring_review' AND mr.id = r.target_id
+       LEFT JOIN mentoring_submissions ms ON r.target_type = 'mentoring_submission' AND ms.id = r.target_id
       WHERE ${status === "open" ? "r.status = 'open'" : "r.status <> 'open'"}
       ORDER BY r.created_at ${status === "open" ? "ASC" : "DESC"} LIMIT 100`,
   );
@@ -33,7 +37,10 @@ export async function GET(req: NextRequest) {
       id: String(x.id), reason: x.reason, category: x.category, type: x.target_type, status: x.status, at: x.created_at,
       reported: x.reported ?? null, reportedName: x.reported_name ?? null, suspended: !!x.suspended, reporter: x.reporter ?? null, total: Number(x.reports_total),
       message: x.target_type === "message" ? { text: x.message ?? null, removed: !!x.message_removed }
-        : x.target_type === "comment" ? { text: x.comment ?? null, removed: !!x.comment_removed } : null,
+        : x.target_type === "comment" ? { text: x.comment ?? null, removed: !!x.comment_removed }
+        // Mishary mentoring: the review text, or the recording's verse and note (removing deletes the note and the audio)
+        : x.target_type === "mentoring_review" ? { text: x.review_body ?? null, removed: !x.review_body }
+        : x.target_type === "mentoring_submission" ? { text: [x.sub_verse, x.sub_note].filter(Boolean).join(" · ") || null, removed: !!x.sub_removed && !x.sub_note } : null,
       post: x.target_type === "post" ? { id: String(x.target_id), verseKey: x.post_verse, status: x.post_status, media: x.post_media ? `/api/community/media/${x.target_id}` : null } : null,
     })),
   }, 200, NO_STORE);
@@ -55,6 +62,14 @@ export async function POST(req: NextRequest) {
     else if (rep.target_type === "comment") {
       const c = await p.query("UPDATE community_post_comments SET removed_at = now() WHERE id = $1 AND removed_at IS NULL RETURNING post_id", [rep.target_id]);
       if (c.rows[0]) await p.query("UPDATE community_posts SET comment_count = GREATEST(0, comment_count - 1) WHERE id = $1", [c.rows[0].post_id]);
+    } else if (rep.target_type === "mentoring_review") {
+      // the rubric stays, the reported text goes
+      await p.query("UPDATE mentoring_reviews SET body = '' WHERE id = $1", [rep.target_id]);
+    } else if (rep.target_type === "mentoring_submission") {
+      // the reported recording: note and audio file are deleted, the row stays (like a withdrawal)
+      const s = await p.query("SELECT media_path FROM mentoring_submissions WHERE id = $1", [rep.target_id]);
+      await p.query("UPDATE mentoring_submissions SET note = '', media_path = NULL, deleted_at = COALESCE(deleted_at, now()) WHERE id = $1", [rep.target_id]);
+      if (s.rows[0]?.media_path) await removeMedia(s.rows[0].media_path);
     } else return json({ error: "bad_request" }, 400);
   }
   if (action === "remove_post") {

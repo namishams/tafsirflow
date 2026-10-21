@@ -1,7 +1,6 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Animated, Easing, FlatList, I18nManager, Platform, Pressable, StyleSheet, Text, TextInput, View, useWindowDimensions, type LayoutChangeEvent, type TextStyle } from "react-native";
-import { Stack, router, useFocusEffect, type Href } from "expo-router";
-import { setStatusBarStyle } from "expo-status-bar";
+import { Stack, router, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Path } from "react-native-svg";
@@ -12,6 +11,8 @@ import { ErrorState, READ_WIDTH } from "@/components/page";
 import { useTabBarSpace } from "@/components/TabBar";
 import { QArcade } from "@/features/radio/art";
 import { useReduceMotion } from "@/features/radio/motion";
+import { useScreenBarStyle } from "@/features/reader/statusBar";
+import { ringOf, useUiVerses } from "@/features/quran/uiVerses";
 import {
   ArchWindow, EMERALD, FourStar, JUZ, JUZ_OF_SURAH, JuzHeadArt, PlaceIcon, QuranHeroBackdrop, QuranPageBackdrop, QuranShamsa, QuranStar, Ribbon,
   TileArch, TileRibbon, placeOf, qPalette, withAlpha, type Juz, type JuzPart, type Place, type QPal,
@@ -19,7 +20,10 @@ import {
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { readJSON, useStoreVersion, writeJSON } from "@/lib/store";
-import { getChapters, type Chapter } from "@/lib/quran";
+import { getChapters, savedChapters, type Chapter } from "@/lib/quran";
+import { savedSurahs } from "@/features/reader/offline";
+import { useReaderT } from "@/features/reader/texts";
+import { useAppT } from "@/features/radio/strings";
 import { surahProgress } from "@/web/coach";
 import { dueVerses, readSrs, stats } from "@/web/learning";
 import { TOTAL_VERSES, indexOf, juzOf } from "@/web/quranIndex";
@@ -32,7 +36,7 @@ type Mode = "surah" | "juz";
 type Filter = "all" | Place;
 type Last = { chapter: number; verse: number };
 type Item = { k: "s"; c: Chapter } | { k: "j"; j: Juz; parts: JuzPart[] };
-type Labels = { verses: string; juz: string; makki: string; madani: string; plain: boolean; learnedOf: (n: number, total: number) => string };
+type Labels = { verses: string; juz: string; makki: string; madani: string; plain: boolean; learnedOf: (n: number, total: number) => string; saved: string };
 
 const VIEW_KEY = "tf:quranView";
 // no letter spacing or capitals in these scripts (art-quran.css .q-kicker, globals.css .font-display)
@@ -61,19 +65,31 @@ export default function QuranIndex() {
   const wsr = useWebT("search");
   const wa = useWebT("app");
   const ws = useWebT("seo");
+  const rt = useReaderT();
+  const ra = useAppT();
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
   const [failed, setFailed] = useState(false);
+  // no connection: the list of the last visit (or the bundled one), with a note and the surahs saved offline marked
+  const [offlineList, setOfflineList] = useState(false);
   const [query, setQuery] = useState("");
   const [place, setPlace] = useState<Filter>("all");
 
-  const load = useCallback(() => { setFailed(false); getChapters(lang).then(setChapters).catch(() => setFailed(true)); }, [lang]);
+  const load = useCallback(() => {
+    setFailed(false);
+    getChapters(lang)
+      .then((c) => { setChapters(c); setOfflineList(false); })
+      .catch(() => {
+        const saved = savedChapters(lang);
+        if (!saved) { setFailed(true); return; }
+        setChapters((cur) => cur ?? saved.chapters);
+        setOfflineList(true);
+      });
+  }, [lang]);
   useEffect(load, [load]);
 
-  // the hero is light marble: dark status bar text while this tab is in front (the app default is light)
-  useFocusEffect(useCallback(() => {
-    if (!t.dark) setStatusBarStyle("dark", true);
-    return () => setStatusBarStyle("light", true);
-  }, [t.dark]));
+  // the hero is light marble: dark status bar text while this tab is in front (the app default is light); applied a tick
+  // later so it wins over the blur of the screen that was in front before (features/reader/statusBar.ts)
+  useScreenBarStyle(t.dark ? "light" : "dark");
 
   // stored state: Surahs / Juz switch, last position, bookmarks and the review plan (re-read when the store changes)
   const version = useStoreVersion();
@@ -89,7 +105,9 @@ export default function QuranIndex() {
       const j = juzOf(indexOf(s, v));
       juz[j] = (juz[j] ?? 0) + 1;
     }
-    return { progress: surahProgress(srs), juz, due: dueVerses(srs), st: stats(), last: readJSON<Last | null>("tf:last", null), marks: readJSON<string[]>("tf:bookmarks", []) };
+    // surahs saved for listening offline (Pro), with any reciter: marked while there is no connection
+    const offline = new Set(Object.keys(savedSurahs()).map((k) => Number(k.split(":")[0])));
+    return { progress: surahProgress(srs), juz, due: dueVerses(srs), st: stats(), last: readJSON<Last | null>("tf:last", null), marks: readJSON<string[]>("tf:bookmarks", []), offline };
   }, [version]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const byId = useMemo(() => new Map((chapters ?? []).map((c) => [c.id, c])), [chapters]);
@@ -119,7 +137,7 @@ export default function QuranIndex() {
   useEffect(() => { if (!chapters) return; const id = setTimeout(() => { enterRef.current = false; }, 1500); return () => clearTimeout(id); }, [chapters]);
 
   const statLabels = useMemo(() => [wh("surahs"), wh("verses"), wm("juz")], [wh, wm]);
-  const labels = useMemo<Labels>(() => ({ verses: wh("verses"), juz: wp("juz"), makki: wh("makki"), madani: wh("madani"), plain, learnedOf: (n, total) => wm("learnedOf", { n, total }) }), [wh, wp, wm, plain]);
+  const labels = useMemo<Labels>(() => ({ verses: wh("verses"), juz: wp("juz"), makki: wh("makki"), madani: wh("madani"), plain, learnedOf: (n, total) => wm("learnedOf", { n, total }), saved: rt("savedOffline") }), [wh, wp, wm, plain, rt]);
   const fmt = useMemo(() => {
     try { const nf = new Intl.NumberFormat(`${lang}-u-nu-latn`, { maximumFractionDigits: 0 }); return (n: number) => nf.format(n); }
     catch { return (n: number) => String(Math.round(n)); }
@@ -131,10 +149,11 @@ export default function QuranIndex() {
     if (item.k === "s") {
       const p = learn.progress[item.c.id - 1];
       const pct = p?.learned ? (p.learned / Math.max(1, p.total)) * 100 : 0;
-      return <SurahTile c={item.c} pct={pct} learned={p?.learned ?? 0} total={p?.total ?? item.c.verses_count} here={lastId === item.c.id} ar={ar} tiny={tiny} pal={pal} labels={labels} w={itemW} enter={enter} />;
+      return <SurahTile c={item.c} pct={pct} learned={p?.learned ?? 0} total={p?.total ?? item.c.verses_count} here={lastId === item.c.id} ar={ar} tiny={tiny} pal={pal} labels={labels} w={itemW} enter={enter}
+        saved={offlineList && learn.offline.has(item.c.id)} />;
     }
     return <JuzCard j={item.j} parts={item.parts} byId={byId} learned={learn.juz[item.j.n] ?? 0} ar={ar} pal={pal} labels={labels} w={itemW} />;
-  }, [learn, lastId, ar, tiny, pal, labels, itemW, byId, reduce]);
+  }, [learn, lastId, ar, tiny, pal, labels, itemW, byId, reduce, offlineList]);
 
   if (failed) return <ErrorState retry={load} />;
 
@@ -149,6 +168,15 @@ export default function QuranIndex() {
       <QuranHero pal={pal} reduce={reduce} width={width} top={insets.top} pad={pad} plain={plain} rtlScript={ARABIC_SCRIPT.includes(lang)}
         kickerText={wa("name")} title={wh("surahs")} lead={ws("quranDesc")} statLabels={statLabels} fmt={fmt} />
       <View style={{ paddingTop: sm ? 40 : 32 }}>
+        {offlineList ? (
+          <View accessibilityRole="alert" style={{ marginBottom: 20, flexDirection: "row", alignItems: "center", gap: 12, borderRadius: 12, borderWidth: 1, borderColor: "rgba(201,166,94,0.45)", backgroundColor: pal.surface, padding: 14 }}>
+            <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: pal.ink }}>{rt("offlineList")}</Text>
+            <Pressable onPress={load} accessibilityRole="button" accessibilityLabel={ra("tryAgain")} hitSlop={6}
+              style={({ pressed }) => ({ minHeight: 40, justifyContent: "center", paddingHorizontal: 14, borderRadius: 999, borderWidth: 1, borderColor: pressed ? "rgba(201,166,94,0.9)" : "rgba(201,166,94,0.5)" })}>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: pal.inkGold }}>{ra("tryAgain")}</Text>
+            </Pressable>
+          </View>
+        ) : null}
         {topCards ? (
           <View style={{ gap: 16 }}>
             {lastChapter && last ? (
@@ -288,6 +316,9 @@ const QuranHero = memo(function QuranHero({ pal, reduce, width, top, pad, plain,
   const onLayout = (e: LayoutChangeEvent) => { const { width: w, height: h } = e.nativeEvent.layout; setBox((b) => (b.w === w && b.h === h ? b : { w, h })); };
   const sm = width >= 640, tiny = width < 360;
   const medal = tiny ? 104 : sm ? 230 : 156;
+  // the verses around the medallion (54:17, 56:77–80) from the Quran data, never typed by hand
+  const verses = useUiVerses();
+  const ring = useMemo(() => ringOf(verses), [verses["54:17"], verses["56:77"], verses["56:78"], verses["56:79"], verses["56:80"]]); // eslint-disable-line react-hooks/exhaustive-deps
   const size = tiny ? 34 : sm ? 72 : 44;
   const leadSize = sm ? 17 : 15;
   return (
@@ -302,7 +333,7 @@ const QuranHero = memo(function QuranHero({ pal, reduce, width, top, pad, plain,
             </View>
             <Text accessibilityRole="header" style={{ marginTop: 12, fontFamily: FONT.display, fontSize: size, lineHeight: Math.round(size * (rtlScript ? 1.4 : 1)), letterSpacing: plain ? 0 : -0.025 * size, color: pal.ink }}>{title}</Text>
           </View>
-          <QuranShamsa size={medal} pal={pal} reduce={reduce} />
+          <QuranShamsa size={medal} pal={pal} reduce={reduce} ring={ring} />
         </View>
         <Text style={{ marginTop: 20, maxWidth: 576, fontFamily: FONT.regular, fontSize: leadSize, lineHeight: leadSize * 1.625, color: pal.muted }}>{lead}</Text>
         <HeroStats pal={pal} reduce={reduce} labels={statLabels} tiny={tiny} sm={sm} plain={plain} fmt={fmt} />
@@ -472,8 +503,10 @@ const MetaItem = ({ children, pal }: { children: ReactNode; pal: QPal }) => (
 );
 
 /** .q-tile: star medallion | name, meaning, details | Arabic name in a mihrab outline; a gold hairline on top */
-const SurahTile = memo(function SurahTile({ c, pct, learned, total, here, ar, tiny, pal, labels, w, enter }: {
+const SurahTile = memo(function SurahTile({ c, pct, learned, total, here, ar, tiny, pal, labels, w, enter, saved = false }: {
   c: Chapter; pct: number; learned: number; total: number; here: boolean; ar: boolean; tiny: boolean; pal: QPal; labels: Labels; w?: number; enter: number;
+  /** saved for listening offline (shown while there is no connection) */
+  saved?: boolean;
 }) {
   const rise = useEnter(enter);
   const place = placeOf(c);
@@ -501,10 +534,16 @@ const SurahTile = memo(function SurahTile({ c, pct, learned, total, here, ar, ti
         </View>
         {!ar ? <MetaItem pal={pal}>{c.verses_count} {labels.verses}</MetaItem> : null}
         <MetaItem pal={pal}>{labels.juz} {juz}</MetaItem>
+        {saved ? (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+            <Icon name="download" size={12} color={pal.inkGold} />
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, lineHeight: 15, color: pal.inkGold }}>{labels.saved}</Text>
+          </View>
+        ) : null}
       </View>
     </>
   );
-  const a11y = `${c.id}. ${c.name_simple}${sub ? `, ${sub}` : ""}, ${labels[place]}, ${c.verses_count} ${labels.verses}, ${labels.juz} ${juz}${learned > 0 ? `, ${labels.learnedOf(learned, total)}` : ""}`;
+  const a11y = `${c.id}. ${c.name_simple}${sub ? `, ${sub}` : ""}, ${labels[place]}, ${c.verses_count} ${labels.verses}, ${labels.juz} ${juz}${learned > 0 ? `, ${labels.learnedOf(learned, total)}` : ""}${saved ? `, ${labels.saved}` : ""}`;
   return (
     <Animated.View style={[w ? { width: w } : null, enter >= 0 ? { opacity: rise, transform: [{ translateY: rise.interpolate({ inputRange: [0, 1], outputRange: [12, 0] }) }, { scale: rise.interpolate({ inputRange: [0, 1], outputRange: [0.985, 1] }) }] } : null]}>
       <Pressable onPress={() => router.push(`/quran/${c.id}` as Href)} accessibilityRole="button" accessibilityLabel={a11y}

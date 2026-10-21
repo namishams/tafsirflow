@@ -1,6 +1,6 @@
 import { Pressable, Text, View } from "react-native";
 import { router, type Href } from "expo-router";
-import { GoldButton, GoldCard } from "@/components/brand";
+import { GoldButton, GoldCard, OutlineButton } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { openPro, usePro } from "@/lib/pro";
 import { FONT, R, useTheme } from "@/lib/theme";
@@ -10,8 +10,9 @@ import { fmt, usePlanT } from "./texts";
 import { planStepHref, useShamsMode } from "@/features/shams2/mode";
 
 /** "Today's plan" on the Masterclass tab: today's steps with checkboxes, the streak, and Pro for locked steps.
- *  Without a plan it invites to the short quiz (/onboarding). */
-export function TodayPlanCard() {
+ *  Without a plan it invites to the short quiz (/onboarding). secondary: the invitation as an outline button, for
+ *  screens whose one gold action is another (the Shams tab's "Continue"). */
+export function TodayPlanCard({ secondary }: { secondary?: boolean } = {}) {
   const t = useTheme();
   const p = usePlanT();
   const { pro } = usePro();
@@ -23,7 +24,8 @@ export function TodayPlanCard() {
       <GoldCard>
         <Text style={{ fontFamily: FONT.display, fontSize: 19, color: t.ink }}>{p.makePlan}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.muted, marginTop: 4 }}>{p.makePlanD}</Text>
-        <GoldButton title={p.next} onPress={() => router.push("/onboarding" as Href)} style={{ marginTop: 14 }} />
+        {secondary ? <OutlineButton title={p.next} onPress={() => router.push("/onboarding" as Href)} style={{ marginTop: 14 }} />
+          : <GoldButton title={p.next} onPress={() => router.push("/onboarding" as Href)} style={{ marginTop: 14 }} />}
       </GoldCard>
     );
   }

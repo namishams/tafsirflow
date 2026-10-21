@@ -73,7 +73,7 @@ export function HajjGuideScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back topInset eyebrow={g("open")} title={g("title")} lead={g("lead")} arabic="لبيك اللهم لبيك" />
+        <PageHero back topInset eyebrow={g("open")} title={g("title")} lead={g("lead")} arabic="الحج" />
         <View style={{ padding: 16, gap: 14 }}>
           <View accessibilityRole="tablist" style={{ flexDirection: "row", gap: 8 }}>
             {(["umrah", "hajj"] as const).map((m) => (

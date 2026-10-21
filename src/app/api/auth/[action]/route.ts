@@ -124,7 +124,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
     try {
       const r = await p.query("INSERT INTO users (email, password_hash, name, first_name, last_name, country, city, goal, locale, marketing_opt_in, terms_accepted_at, role, email_verified, birth_year) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, now(), $11, $12, $13) RETURNING id", [email, hashPassword(password), name, firstName, lastName, country, city, goal, loc, body.marketing === true, isAdminEmail(email) ? "admin" : "user", !mailConfigured(), birthYear]);
       const uid = Number(r.rows[0].id);
-      token = await startSession(uid, req);
+      token = await startSession(uid, req, "register");
       if (mailConfigured()) await sendVerification(req, uid, email, /^[a-z]{2}$/.test(String(body.locale)) ? String(body.locale) : "en");
     } catch (e) {
       if ((e as { code?: string }).code === "23505") return json({ error: "exists" }, 409);
@@ -141,7 +141,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
   const ok = verifyPassword(password, row?.password_hash ?? "scrypt$00$00");
   if (!row || !ok) return json({ error: "invalid" }, 401);
   await p.query("UPDATE users SET last_login_at = now() WHERE id = $1", [row.id]);
-  const token = await startSession(Number(row.id), req);
+  const token = await startSession(Number(row.id), req, "password");
   // the mobile app (header x-qmc-app) keeps the token itself
   return json({ user: await currentUser(), ...(req.headers.get("x-qmc-app") ? { token } : {}) });
 }

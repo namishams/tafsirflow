@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useRef, useState } from "react";
-import { ActivityIndicator, Image, Linking, Pressable, ScrollView, Text, View, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
+import { ActivityIndicator, FlatList, Image, Linking, Pressable, Text, View, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
 import { Poster, SectionTitle, gradientColors } from "@/components/brand";
@@ -76,24 +76,29 @@ function useCards(_tradition: TraditionChoice | null) {
   }));
 }
 
-/** every course, tool and section, in themed rows of posters that scroll sideways */
-export function DiscoverRows() {
+const PosterGap = () => <View style={{ width: 12 }} />;
+
+/** every course, tool and section, in themed rows of posters that scroll sideways. `skip`: hrefs the screen already
+ *  shows above (Discover shows each place once); a row left without cards is not drawn. */
+export function DiscoverRows({ skip }: { skip?: ReadonlySet<string> } = {}) {
   const { tradition } = useTradition();
-  const rows = useCards(tradition);
+  const all = useCards(tradition);
+  const rows = skip ? all.map((r) => ({ ...r, cards: r.cards.filter((c) => !skip.has(c.href.split("?")[0])) })).filter((r) => r.cards.length) : all;
   const w = useWebT();
   return (
     <View style={{ gap: 28 }}>
       {rows.map((row) => (
         <View key={row.title}>
           <View style={{ paddingHorizontal: 16 }}><SectionTitle title={row.title} /></View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 16, gap: 12 }}>
-            {row.cards.map((c) => (
-              <View key={c.key} style={{ width: 172 }}>
+          {/* virtualised: the first posters of a row mount with Discover, the rest as they scroll in */}
+          <FlatList horizontal data={row.cards} keyExtractor={(c) => c.key} showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingHorizontal: 16 }} ItemSeparatorComponent={PosterGap} initialNumToRender={3} maxToRenderPerBatch={4} windowSize={3}
+            renderItem={({ item: c }) => (
+              <View style={{ width: 172 }}>
                 <Poster title={c.title} desc={c.desc} badge={c.badge} arabic={c.ar} colors={c.colors} cta={w("home2.open")}
                   onPress={() => { tick(); router.push(c.href as Href); }} />
               </View>
-            ))}
-          </ScrollView>
+            )} />
         </View>
       ))}
     </View>

@@ -4,7 +4,8 @@ import { ARABIC_FONT, FONT, stage } from "@/lib/theme";
 import { Stage } from "@/components/brand";
 import { useWebT } from "@/i18n/web";
 import type { Chapter } from "@/lib/quran";
-import { BISMILLAH, SURAH_PREFIX } from "@/features/quran/arabic";
+import { SURAH_PREFIX } from "@/features/quran/arabic";
+import { useUiVerses } from "@/features/quran/uiVerses";
 import { useFadeIn } from "@/features/radio/motion";
 import { Cartouche, IllumFrame, Medallion, Rosette } from "./ornaments";
 
@@ -16,6 +17,8 @@ export const SurahOpening = memo(function SurahOpening({ chapter, reduce }: { ch
   const wh = useWebT("home");
   const ink = useFadeIn(reduce, 1800);
   const withBismillah = chapter.id !== 1 && chapter.id !== 9;
+  // the basmala is verse 1:1 from the Quran data (stored copy, bundled snapshot as fallback), never typed by hand
+  const bismillah = useUiVerses()["1:1"];
   return (
     <Stage rounded={16} hairlines={false} style={{ marginHorizontal: 16, marginTop: 10 }}>
       <IllumFrame radius={16} />
@@ -35,7 +38,7 @@ export const SurahOpening = memo(function SurahOpening({ chapter, reduce }: { ch
         <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 34, letterSpacing: -0.7, color: "#eef0f3", marginTop: 18, textAlign: "center" }}>{chapter.name_simple}</Text>
         {chapter.translated_name?.name ? <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, color: "rgba(255,255,255,0.6)", marginTop: 6, textAlign: "center" }}>{chapter.translated_name.name}</Text> : null}
         {withBismillah ? (
-          <Animated.Text accessibilityLanguage="ar" style={{ opacity: ink, fontFamily: ARABIC_FONT, fontSize: 29, lineHeight: 64, color: stage.gold, marginTop: 14, textAlign: "center", writingDirection: "rtl" }}>{BISMILLAH}</Animated.Text>
+          <Animated.Text accessibilityLanguage="ar" style={{ opacity: ink, fontFamily: ARABIC_FONT, fontSize: 29, lineHeight: 64, color: stage.gold, marginTop: 14, textAlign: "center", writingDirection: "rtl" }}>{bismillah}</Animated.Text>
         ) : null}
       </View>
     </Stage>

@@ -6,8 +6,8 @@ import { useLang } from "@/i18n";
 // teacher has checked it.
 const en = {
   // hub
-  kicker: "Mishary track", title: "Forming the next generation of reciters", lead: "After the Reciter Path: train your ear for the maqamat, study the style of the masters, keep a daily recording journal, get feedback from a verified master and take part in the talent seasons.",
-  cardTitle: "Mishary track", cardLead: "Maqam ear training, style studies of the masters, a daily recording journal, mentoring and talent seasons.",
+  kicker: "Masār al-Qurrāʾ", title: "Forming the next generation of reciters", lead: "After the Reciter Path: train your ear for the maqamat, study the style of the masters, keep a daily recording journal, get feedback from a verified master and take part in the talent seasons.",
+  cardTitle: "Masār al-Qurrāʾ", cardLead: "Maqam ear training, style studies of the masters, a daily recording journal, mentoring and talent seasons.",
   tileSub: "Maqam ear, masters' styles, mentoring, seasons",
   needsReview: "Needs review", needsReviewNote: "Marked content is a draft written by our team and is being checked by a qualified teacher.",
   open: "Open", back: "Back", loading: "Loading…", offline: "Could not load. Please check your connection.", retry: "Try again", error: "Something went wrong. Please try again.",
@@ -77,14 +77,16 @@ const en = {
   recordSeason: "Record {v} (up to {s} s).", entryPrivate: "Your entry is private: only the jury hears it, without your name.", withdrawEntry: "Withdraw entry",
   judge: "Judge entries", toJudge: "Entries to judge", entry: "Entry {n}", place: "Place {n}", score: "Score {s} of 25", mythic: "Mythic sticker", legendary: "Legendary sticker",
   noResults: "No results yet.", yourResult: "Your result: place {n}",
+  // safety (report, block, guidelines) and the mentoring hero note
+  safetyFor: "Report or block {name}", reportRecording: "Report recording", reportReview: "Report feedback", blockedNote: "{name} is blocked and no longer appears here.", mentoringNote: "Private recordings, deleted after 60 days. Open from age 16.",
   adminJudging: "Close entries (judging)", adminPublish: "Publish results", adminNew: "New season", slug: "Short name (a-z, 0-9, -)", startsOn: "Starts (YYYY-MM-DD)", endsOn: "Ends (YYYY-MM-DD)", titleField: "Title (optional)", create: "Create",
 };
 export type MtKey = keyof typeof en;
 type T = Record<MtKey, string>;
 
 const de: T = {
-  kicker: "Mishary-Pfad", title: "Die nächste Generation von Rezitatoren", lead: "Nach dem Rezitationspfad: Schulen Sie Ihr Gehör für die Maqamat, studieren Sie den Stil der Meister, führen Sie ein tägliches Aufnahme-Tagebuch, erhalten Sie Rückmeldung von einem verifizierten Meister und nehmen Sie an den Talent-Saisons teil.",
-  cardTitle: "Mishary-Pfad", cardLead: "Maqam-Gehörbildung, Stilstudien der Meister, tägliches Aufnahme-Tagebuch, Mentoring und Talent-Saisons.",
+  kicker: "Masār al-Qurrāʾ", title: "Die nächste Generation von Rezitatoren", lead: "Nach dem Rezitationspfad: Schulen Sie Ihr Gehör für die Maqamat, studieren Sie den Stil der Meister, führen Sie ein tägliches Aufnahme-Tagebuch, erhalten Sie Rückmeldung von einem verifizierten Meister und nehmen Sie an den Talent-Saisons teil.",
+  cardTitle: "Masār al-Qurrāʾ", cardLead: "Maqam-Gehörbildung, Stilstudien der Meister, tägliches Aufnahme-Tagebuch, Mentoring und Talent-Saisons.",
   tileSub: "Maqam-Gehör, Stil der Meister, Mentoring, Saisons",
   needsReview: "Wird geprüft", needsReviewNote: "Markierte Inhalte sind Entwürfe unseres Teams und werden von einer qualifizierten Lehrkraft geprüft.",
   open: "Öffnen", back: "Zurück", loading: "Wird geladen…", offline: "Konnte nicht geladen werden. Bitte prüfen Sie Ihre Verbindung.", retry: "Erneut versuchen", error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
@@ -146,6 +148,8 @@ const de: T = {
   recordSeason: "Nehmen Sie {v} auf (bis {s} s).", entryPrivate: "Ihre Teilnahme ist privat: Nur die Jury hört sie, ohne Ihren Namen.", withdrawEntry: "Teilnahme zurückziehen",
   judge: "Teilnahmen bewerten", toJudge: "Zu bewertende Teilnahmen", entry: "Teilnahme {n}", place: "Platz {n}", score: "Wertung {s} von 25", mythic: "Mythischer Sticker", legendary: "Legendärer Sticker",
   noResults: "Noch keine Ergebnisse.", yourResult: "Ihr Ergebnis: Platz {n}",
+  // safety (report, block, guidelines) and the mentoring hero note
+  safetyFor: "{name} melden oder blockieren", reportRecording: "Aufnahme melden", reportReview: "Rückmeldung melden", blockedNote: "{name} ist blockiert und erscheint hier nicht mehr.", mentoringNote: "Private Aufnahmen, nach 60 Tagen gelöscht. Ab 16 Jahren.",
   adminJudging: "Teilnahme schließen (Bewertung)", adminPublish: "Ergebnisse veröffentlichen", adminNew: "Neue Saison", slug: "Kurzname (a-z, 0-9, -)", startsOn: "Beginn (JJJJ-MM-TT)", endsOn: "Ende (JJJJ-MM-TT)", titleField: "Titel (optional)", create: "Anlegen",
 };
 

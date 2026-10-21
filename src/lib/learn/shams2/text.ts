@@ -541,7 +541,7 @@ const de: T = {
   nx_talaqqiLead: "Mit einem Meisterrezitator rezitieren, Satzteil für Satzteil.",
   nx_academy: "Akademie",
   nx_academyLead: "Der nächste Kurs des Studienprogramms.",
-  nx_reciterPath: "Rezitatoren-Pfad",
+  nx_reciterPath: "Rezitationspfad",
   nx_reciterPathLead: "Tajwīd und Rezitation, Einheit für Einheit.",
   nx_courses: "Kurse",
   nx_coursesLead: "Arabisch, Tajwīd und mehr.",

@@ -1,4 +1,6 @@
 import { api, SITE } from "./api";
+import { readJSON, writeJSON } from "./store";
+import BUNDLED_CHAPTERS from "@/features/quran/data/chapters-en.json";
 import { localeMeta } from "@/web/locales";
 
 // The same data layer as the website (src/lib/quran.ts): Quran text, translations, word timings and tafsir come from
@@ -35,9 +37,9 @@ export class LimitError extends Error {
   constructor(message: string, public needsVerify = false) { super(message); }
 }
 
-async function get<T>(path: string, headers?: Record<string, string>): Promise<T> {
+async function get<T>(path: string, headers?: Record<string, string>, timeoutMs?: number): Promise<T> {
   try {
-    return await api<T>(`/api/q${path}`, { headers });
+    return await api<T>(`/api/q${path}`, { headers, timeoutMs });
   } catch (e) {
     const err = e as { status?: number; code?: string };
     if (err.status === 402) throw new LimitError("daily tafsir limit", err.code === "verify");
@@ -72,21 +74,49 @@ function localName(c: Chapter, lang: string): Chapter {
   return { ...c, name_simple: c.name_arabic, translated_name: { name: lang === "ar" ? "" : c.translated_name?.name ?? "" } };
 }
 
+// The last surah list of each language is kept on the device (qmc.chapters.<lang>), so the Quran tab and the surahs
+// saved offline stay reachable without a connection. A first start offline falls back to the bundled list
+// (features/quran/data/chapters-en.json: a snapshot of /api/q/chapters?language=en, Quran.com data, not typed by hand).
+const chaptersKey = (lang: string) => `qmc.chapters.${lang}`;
+const slim = (c: Chapter): Chapter => ({ id: c.id, name_simple: c.name_simple, name_arabic: c.name_arabic, verses_count: c.verses_count, revelation_place: c.revelation_place, translated_name: { name: c.translated_name?.name ?? "" } });
+
 export function getChapters(lang: string): Promise<Chapter[]> {
   let p = chapterCache.get(lang);
   if (!p) {
-    p = get<{ chapters: Chapter[] }>(`/chapters?language=${lang}`).then((d) => d.chapters.map((c) => localName(c, lang)));
+    p = get<{ chapters: Chapter[] }>(`/chapters?language=${lang}`).then((d) => {
+      const list = d.chapters.map((c) => localName(c, lang));
+      if (list.length === 114) {
+        const keep = list.map(slim);
+        if (JSON.stringify(readJSON<Chapter[] | null>(chaptersKey(lang), null)) !== JSON.stringify(keep)) writeJSON(chaptersKey(lang), keep, true);
+      }
+      return list;
+    });
     p.catch(() => chapterCache.delete(lang));
     chapterCache.set(lang, p);
   }
   return p;
 }
 
+/** the surah list without a connection: the last one loaded in this language, else the bundled one (null = none) */
+export function savedChapters(lang: string): { chapters: Chapter[]; bundled: boolean } | null {
+  const own = readJSON<Chapter[] | null>(chaptersKey(lang), null);
+  if (Array.isArray(own) && own.length === 114) return { chapters: own, bundled: false };
+  const list = (BUNDLED_CHAPTERS as Chapter[]).map((c) => localName(c, lang));
+  return list.length === 114 ? { chapters: list, bundled: true } : null;
+}
+
 export async function getChapter(id: number, lang: string): Promise<Chapter> {
   const all = await getChapters(lang).catch(() => null);
   const hit = all?.find((c) => c.id === id);
   if (hit) return hit;
-  return localName((await get<{ chapter: Chapter }>(`/chapters/${id}?language=${lang}`)).chapter, lang);
+  try {
+    return localName((await get<{ chapter: Chapter }>(`/chapters/${id}?language=${lang}`)).chapter, lang);
+  } catch (e) {
+    // offline: the saved list still knows the surah
+    const saved = savedChapters(lang)?.chapters.find((c) => c.id === id);
+    if (saved) return saved;
+    throw e;
+  }
 }
 
 let resourceCache: Promise<{ translations: Resource[]; tafsirs: Resource[] }> | null = null;
@@ -177,7 +207,8 @@ export async function getVerses(chapter: number, lang: string, reciter: Reciter,
 async function loadVerses(chapter: number, lang: string, reciter: Reciter, translationId: number): Promise<Verse[]> {
   const timed = reciter.id > 0; // word timings only exist for reciters known to Quran.com
   const q = `words=true&word_fields=text_uthmani&language=${lang}&fields=text_uthmani,page_number,juz_number,hizb_number&translations=${translationId}&audio=${timed ? reciter.id : RECITERS[0].id}&per_page=300`;
-  const d = await get<{ verses: any[] }>(`/verses/by_chapter/${chapter}?${q}`); // eslint-disable-line @typescript-eslint/no-explicit-any
+  // a long surah with every word is a large answer: more time than the default read limit (lib/api.ts)
+  const d = await get<{ verses: any[] }>(`/verses/by_chapter/${chapter}?${q}`, undefined, 60000); // eslint-disable-line @typescript-eslint/no-explicit-any
   return d.verses.map((v) => ({
     verse_key: v.verse_key,
     verse_number: v.verse_number,
@@ -199,7 +230,8 @@ async function loadVerses(chapter: number, lang: string, reciter: Reciter, trans
 /** translation text without footnote markers and markup */
 export const stripFootnotes = (s: string) => s.replace(/<sup[^>]*>.*?<\/sup>/g, "").replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").trim();
 
-export type Tafsir = { text: string; html: string; verseKeys: string[] };
+/** generatedByAi: the own tafsir entry was written with AI help (approved by the editors; shown with a label) */
+export type Tafsir = { text: string; html: string; verseKeys: string[]; generatedByAi?: boolean };
 
 /** tafsir for one verse (primary = the verse the reader opened; counts against the anonymous daily limit) */
 export async function getTafsir(tafsirId: number, verseKey: string, primary = true): Promise<Tafsir | null> {
@@ -212,13 +244,16 @@ export async function getTafsir(tafsirId: number, verseKey: string, primary = tr
 export const OWN_TAFSIR_ID = -1;
 export async function getOwnTafsir(lang: string, surah: number, verse: number): Promise<Tafsir | null> {
   try {
-    const d = await api<{ entry: { html: string; verse_from: number; verse_to: number } | null }>(`/api/entries?lang=${lang}&surah=${surah}&verse=${verse}`, { headers: { "x-tf-primary": "1" } });
+    const d = await api<{ entry: { html: string; verse_from: number; verse_to: number; generated_by_ai?: boolean } | null }>(`/api/entries?lang=${lang}&surah=${surah}&verse=${verse}`, { headers: { "x-tf-primary": "1" } });
     if (!d.entry) return null;
     const keys = [`${surah}:${d.entry.verse_from}`];
     if (d.entry.verse_to !== d.entry.verse_from) keys.push(`${surah}:${d.entry.verse_to}`);
-    return { html: d.entry.html, text: htmlToText(d.entry.html), verseKeys: keys };
+    return { html: d.entry.html, text: htmlToText(d.entry.html), verseKeys: keys, generatedByAi: !!d.entry.generated_by_ai };
   } catch (e) {
-    if ((e as { status?: number }).status === 402) throw new LimitError("daily tafsir limit");
+    const status = (e as { status?: number }).status;
+    if (status === 402) throw new LimitError("daily tafsir limit");
+    // no answer at all (offline, timeout, server error): the panel shows the connection error with a retry
+    if (!status || status >= 500) throw e;
     return null;
   }
 }

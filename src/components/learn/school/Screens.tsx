@@ -15,6 +15,8 @@ import {
 import { MyCertificates, useMyCertificates } from "@/components/learn/exam";
 import { Bar, Card, GoldLink, LearnHero, LearnMain, OutlineButton, SectionTitle } from "@/components/learn/ui";
 import { StarGlyph } from "@/components/art/HomeOrnaments";
+import { QbankSchoolCard } from "@/components/learn/qbank/Screens";
+import { StudyWisdom } from "./StudyWisdom";
 
 const pct = (x: number) => Math.round(x * 100);
 /** the app's routes are the website's paths, except the Shams Method of one surah (the reader with ?shams=1) */
@@ -226,6 +228,8 @@ export function SchoolHome() {
       <LearnMain wide>
         {!data ? <Placeholder /> : (
           <div className="grid gap-12">
+            {/* the study wisdom of the app's Madrasa (Discover): one tip a day */}
+            <StudyWisdom />
             <section>
               <div className="flex flex-wrap items-end justify-between gap-3"><SectionTitle title={st("faculties")} /><Link href="/school/report" className="text-sm font-semibold text-accent hover:underline">{st("w_kashf")}</Link></div>
               <div className="mt-5"><Faculties grades={data.grades} /></div>
@@ -254,6 +258,9 @@ export function SchoolHome() {
                 </Card>
               </section>
             </div>
+
+            {/* the examination centre: its grades per school subject and the way in (as the app's QbankSchoolCard) */}
+            <QbankSchoolCard />
 
             <div className="grid gap-4 md:grid-cols-2"><AppRankCard /><RankCard rank={ownRank(data.live, data.store.terms, term)} /></div>
 

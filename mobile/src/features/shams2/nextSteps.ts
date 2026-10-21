@@ -1,6 +1,7 @@
 import { nextNew, surahProgress } from "@/web/coach";
 import type { Srs } from "@/web/learning";
 import { MUT_GROUPS } from "./mutData";
+import { nextAllowed } from "./plan";
 import type { Cell, Known } from "./qualityModel";
 
 // The "continue" engine: after any surah, juz, course or level there is always a next meaningful step – never an end
@@ -8,10 +9,12 @@ import type { Cell, Known } from "./qualityModel";
 export type NextKind = "sabaq" | "tathbit" | "juzExam" | "nextJuz" | "tafsir" | "mutashabihat" | "talaqqi" | "academy" | "reciterPath" | "courses";
 export type NextStep = { kind: NextKind; href: string; s?: number; v?: number; juz?: number; score?: number };
 
-export function nextSteps(srs: Srs, known: Map<string, Known>, surahs: Cell[], juz: Cell[], ctx?: { surah?: number }): NextStep[] {
+/** ctx.allow (app only): the surahs the learner may open; without Pro the next new portion stays in the free surahs */
+export function nextSteps(srs: Srs, known: Map<string, Known>, surahs: Cell[], juz: Cell[], ctx?: { surah?: number; allow?: (surah: number) => boolean }): NextStep[] {
   const out: NextStep[] = [];
   const sp = surahProgress(srs);
-  const nx = nextNew(srs, sp);
+  const coach = nextNew(srs, sp);
+  const nx = ctx?.allow && !ctx.allow(coach.surah) ? nextAllowed(known, ctx.allow) ?? coach : coach;
   const finished = ctx?.surah;
   // 1. consolidate what was just finished when it does not hold yet
   if (finished) {

@@ -1,9 +1,10 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle } from "react-native-svg";
 import { ARABIC_FONT, FONT, R, goldButton, useTheme, AR_RIGHT } from "@/lib/theme";
 import { Icon, type IconName } from "@/components/icons";
+import { ProBadge } from "@/components/page";
 import { useWebT } from "@/i18n/web";
 import type { Verse } from "@/lib/quran";
 import type { Rating } from "@/web/learning";
@@ -57,6 +58,8 @@ export type TestDone = { ok: number; total: number; pct: number; days: number };
 export type CardState = {
   hide: Hide; memo: Memo; revealed: boolean; seed: number; testPos: number; testMarks: Record<number, boolean>; shown: number[]; activeWord: number | null;
   playing: boolean; wordOn: string | null; waiting: boolean; turn: boolean; testDone: TestDone | null; reduce: boolean;
+  /** the Shams Method of this surah needs Pro (lock badge on the button, so the paywall does not come as a surprise) */
+  shamsLocked?: boolean;
 };
 export const IDLE: CardState = { hide: 0, memo: { tool: "read", level: 1, all: false }, revealed: false, seed: 1, testPos: 0, testMarks: {}, shown: [], activeWord: null, playing: false, wordOn: null, waiting: false, turn: false, testDone: null, reduce: false };
 
@@ -100,6 +103,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
 }) {
   const t = useTheme();
   const w = useWebT("player");
+  const wr = useWebT("recite");
   const r = useReaderT();
   const gold = t.gold;
   const words = v.words.filter((x) => x.char_type_name === "word");
@@ -112,6 +116,10 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
   const coverKey = `${hide}:${seed}`;
   const [peek, setPeek] = useState("");
   const covered = !active && hide > 0 && peek !== coverKey;
+  // result of "recite & check" (on-device word check): heard words green, missed ones red, and a suggested rating
+  const [recite, setRecite] = useState<{ score: number; ok: boolean[] } | null>(null);
+  useEffect(() => { if (!active || !revealed) setRecite(null); }, [active, revealed]);
+  const tip: Rating | null = recite ? (recite.score >= 0.95 ? "easy" : recite.score >= 0.75 ? "good" : "again") : null;
   const shown = new Set(st.shown);
   const anyCovered = active && hide > 0 && !revealed;
 
@@ -121,7 +129,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
       accessible={hide === 0} accessibilityLabel={hide === 0 ? v.text_uthmani : undefined} accessibilityLanguage="ar">
       {words.map((x, wi) => {
         const cover = coverOf(hide, v.verse_key, seed, wi, words.length, { revealed, shown, testPos });
-        const mark = hide === 6 ? testMarks[wi] : undefined;
+        const mark = hide === 6 ? testMarks[wi] : recite && revealed ? recite.ok[wi] : undefined;
         const focus = hide === 6 && wi === testPos && !revealed;
         const lit = cover !== "hidden" && hasTimings && st.activeWord === x.position;
         const hearing = st.wordOn === `${v.verse_key}:${x.position}`;
@@ -205,12 +213,14 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
         <View style={{ marginTop: 18, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 16, gap: 12 }}>
           <MemoControls memo={m} onTool={h.setTool} onLevel={h.setLevel} onShuffle={h.shuffle} />
           {anyCovered ? <Text maxFontSizeMultiplier={1.8} style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{r("wordHint")}</Text> : null}
-          <Pressable onPress={() => h.shams(v)} accessibilityRole="button" accessibilityLabel={w("toolShams")}>
-              <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ minHeight: 44, borderRadius: R.pill, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7 }}>
-                <SunMark color={goldButton.text} />
-                <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.bold, fontSize: 13.5, color: goldButton.text }}>{w("toolShams")}</Text>
-              </LinearGradient>
-            </Pressable>
+          {/* an outline button: the gold stays for the reader's main action (play, reveal, rate) */}
+          <Pressable onPress={() => h.shams(v)} accessibilityRole="button" accessibilityLabel={`${w("toolShams")}${st.shamsLocked ? ", Pro" : ""}`}
+            style={({ pressed }) => ({ minHeight: 44, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? gold : "rgba(201,166,94,0.6)", backgroundColor: pressed ? "rgba(201,166,94,0.08)" : t.surface,
+              flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7, paddingHorizontal: 16 })}>
+            <SunMark color={gold} />
+            <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.bold, fontSize: 13.5, color: t.ink }}>{w("toolShams")}</Text>
+            {st.shamsLocked ? <ProBadge /> : null}
+          </Pressable>
         </View>
       ) : null}
 
@@ -258,22 +268,27 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
           ) : null}
           {!revealed ? (
             <View style={{ marginTop: 12 }}>
-              <ReciteCheck words={words.map((x) => x.text_uthmani)} onResult={() => h.reveal()} onPlayReciter={h.replay} pauseOthers={h.pause} />
+              <ReciteCheck words={words.map((x) => x.text_uthmani)} onResult={(score, ok) => { setRecite({ score, ok }); h.reveal(); }} onPlayReciter={h.replay} pauseOthers={h.pause} />
             </View>
           ) : null}
           {revealed && hide !== 6 ? (
             <View style={panel(t.dark)}>
+              {recite ? (
+                <Text maxFontSizeMultiplier={1.8} accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, marginBottom: 8 }}>
+                  <Text style={{ fontFamily: FONT.semibold, color: t.ink }}>{wr("score", { pct: Math.round(recite.score * 100) })}</Text> · {recite.score >= 0.95 ? wr("great") : recite.score >= 0.75 ? wr("good") : wr("again")}
+                </Text>
+              ) : null}
               <Text maxFontSizeMultiplier={1.8} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink, marginBottom: 10 }}>{w("rateQ")}</Text>
               <View style={{ flexDirection: "row", gap: 8 }}>
-                <Pressable onPress={() => h.rate("again")} accessibilityRole="button" accessibilityLabel={w("again")}
-                  style={({ pressed }) => ({ flex: 1, minHeight: 44, borderRadius: R.md, borderWidth: 1, borderColor: t.dark ? "rgba(178,72,64,0.4)" : "rgb(232,176,164)", backgroundColor: pressed ? "rgba(178,72,64,0.08)" : t.surface, alignItems: "center", justifyContent: "center" })}>
+                <Pressable onPress={() => h.rate("again")} accessibilityRole="button" accessibilityLabel={w("again")} accessibilityState={{ selected: tip === "again" }}
+                  style={({ pressed }) => [{ flex: 1, minHeight: 44, borderRadius: R.md, borderWidth: 1, borderColor: t.dark ? "rgba(178,72,64,0.4)" : "rgb(232,176,164)", backgroundColor: pressed ? "rgba(178,72,64,0.08)" : t.surface, alignItems: "center", justifyContent: "center" }, tip === "again" ? tipRing(gold) : null]}>
                   <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.dark ? "rgb(232,176,164)" : "rgb(130,40,36)" }}>↺ {w("again")}</Text>
                 </Pressable>
-                <Pressable onPress={() => h.rate("good")} accessibilityRole="button" accessibilityLabel={w("good")}
-                  style={({ pressed }) => ({ flex: 1, minHeight: 44, borderRadius: R.md, backgroundColor: t.accent, opacity: pressed ? 0.88 : 1, alignItems: "center", justifyContent: "center" })}>
+                <Pressable onPress={() => h.rate("good")} accessibilityRole="button" accessibilityLabel={w("good")} accessibilityState={{ selected: tip === "good" }}
+                  style={({ pressed }) => [{ flex: 1, minHeight: 44, borderRadius: R.md, backgroundColor: t.accent, opacity: pressed ? 0.88 : 1, alignItems: "center", justifyContent: "center" }, tip === "good" ? tipRing(gold) : null]}>
                   <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.bold, fontSize: 14, color: t.dark ? t.onAccent : "#ffffff" }}>✓ {w("good")}</Text>
                 </Pressable>
-                <Pressable onPress={() => h.rate("easy")} accessibilityRole="button" accessibilityLabel={w("easy")} style={{ flex: 1 }}>
+                <Pressable onPress={() => h.rate("easy")} accessibilityRole="button" accessibilityLabel={w("easy")} accessibilityState={{ selected: tip === "easy" }} style={[{ flex: 1, borderRadius: R.md }, tip === "easy" ? tipRing(gold) : null]}>
                   <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ minHeight: 44, borderRadius: R.md, alignItems: "center", justifyContent: "center" }}>
                     <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.bold, fontSize: 14, color: goldButton.text }}>★ {w("easy")}</Text>
                   </LinearGradient>
@@ -328,5 +343,8 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
     </Pressable>
   );
 });
+
+/** the rating "recite & check" suggests (website: ring-2 ring-gold ring-offset-2); the learner still decides */
+const tipRing = (gold: string) => ({ borderWidth: 2, borderColor: gold });
 
 const panel = (dark: boolean) => ({ marginTop: 12, borderRadius: 12, borderWidth: 1, borderColor: "rgba(201,166,94,0.4)", backgroundColor: dark ? "rgba(214,178,106,0.06)" : "rgba(150,116,52,0.05)", padding: 12 });

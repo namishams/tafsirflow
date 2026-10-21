@@ -1,8 +1,8 @@
 {
- "kicker": "Itinerario Mishary",
+ "kicker": "Masār al-Qurrāʾ",
  "title": "Formar a la próxima generación de recitadores",
  "lead": "Después del Camino del recitador: entrene su oído para los maqamat, estudie el estilo de los maestros, lleve un diario de grabación diario, reciba la valoración de un maestro verificado y participe en las temporadas de talentos.",
- "cardTitle": "Itinerario Mishary",
+ "cardTitle": "Masār al-Qurrāʾ",
  "cardLead": "Entrenamiento auditivo de maqamat, estudios de estilo de los maestros, diario de grabación diario, mentoría y temporadas de talentos.",
  "tileSub": "Oído para maqamat, estilos de los maestros, mentoría, temporadas",
  "needsReview": "Pendiente de revisión",
@@ -215,5 +215,10 @@
  "startsOn": "Inicio (YYYY-MM-DD)",
  "endsOn": "Fin (YYYY-MM-DD)",
  "titleField": "Título (opcional)",
- "create": "Crear"
+ "create": "Crear",
+ "safetyFor": "Denunciar o bloquear a {name}",
+ "reportRecording": "Denunciar grabación",
+ "reportReview": "Denunciar comentario",
+ "blockedNote": "{name} está bloqueado y ya no aparece aquí.",
+ "mentoringNote": "Grabaciones privadas, eliminadas tras 60 días. A partir de 16 años."
 }

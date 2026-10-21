@@ -1,5 +1,17 @@
-// Texts of the worldwide rankings on the website (/ranking, profile line). English, German and Arabic; other locales fall
-// back to English. Polite address in German. Placeholders: {n}, {c}, {t}, {u}.
+// Texts of the worldwide rankings on the website (/ranking, profile line). English, German and Arabic here; the other 11
+// locales (22.10.2026, from the app's "rankings" module) in rankingsWeb/<locale>.json, merged over English. Polite
+// address in every language. Placeholders: {n}, {c}, {t}, {u}.
+import bn from "./rankingsWeb/bn.json";
+import es from "./rankingsWeb/es.json";
+import fa from "./rankingsWeb/fa.json";
+import fr from "./rankingsWeb/fr.json";
+import id from "./rankingsWeb/id.json";
+import ms from "./rankingsWeb/ms.json";
+import ps from "./rankingsWeb/ps.json";
+import ru from "./rankingsWeb/ru.json";
+import tr from "./rankingsWeb/tr.json";
+import ur from "./rankingsWeb/ur.json";
+import zh from "./rankingsWeb/zh.json";
 const en = {
   "metaTitle": "Worldwide rankings",
   "metaDesc": "Who learns the most? Worldwide, by country and among friends: XP this week, total XP, streak, memorised verses, stickers and encouragements. Opt-in and privacy-safe.",
@@ -241,9 +253,10 @@ const ar: Record<RwKey, string> = {
   "of": "من {n}",
 };
 
+const OTHER: Record<string, Partial<Record<RwKey, string>>> = { bn, es, fa, fr, id, ms, ps, ru, tr, ur, zh };
 export function rankingsText(locale: string): Record<RwKey, string> {
   if (locale === "de") return de;
   if (locale === "ar") return ar;
-  return en;
+  return { ...en, ...(OTHER[locale] ?? {}) };
 }
 export const fillRw = (s: string, vars: Record<string, string | number>) => Object.entries(vars).reduce((a, [k, v]) => a.split(`{${k}}`).join(String(v)), s);

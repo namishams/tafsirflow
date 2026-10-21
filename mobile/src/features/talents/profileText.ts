@@ -26,6 +26,7 @@ const S = {
     setupTitle: "Ihr Profil", setupLead: "So erkennen Sie andere in der Gemeinschaft und können Ihre Erfolge mit MashaAllah würdigen. Alles lässt sich später unter Profil bearbeiten ändern.",
     displayName: "Anzeigename", usernameLabel: "Benutzername", usernameOffline: "Wird nach der Anmeldung geprüft und gespeichert.", photoOptional: "Profilfoto (freiwillig)",
     later: "Später", setupSaved: "Ihr Profil ist angelegt.", setupPending: "Ihr Profil wird angelegt, sobald Sie angemeldet sind.",
+    visTitle: "Sichtbarkeit Ihres Profils", visPublic: "Öffentliches Konto", visPublicD: "Alle in der Gemeinschaft können Ihr Profil sehen und Ihnen ohne Anfrage folgen.",
     // own profile in the Account tab (TikTok layout), follow requests, followers, search (21.10.2026)
     menuLabel: "Einstellungen und mehr", profileMenu: "Profilmenü", shareQr: "Profil teilen und QR-Code", discoverPeople: "Personen entdecken",
     suggestedAccounts: "Vorgeschlagene Konten", moreOptions: "Weitere Optionen", requestsRow: "Follower-Anfragen", requestsHint: "Bestätigen oder löschen",
@@ -72,6 +73,7 @@ const S = {
     setupTitle: "Your profile", setupLead: "This is how others recognise you in the community and can honour your achievements with MashaAllah. You can change everything later in Edit profile.",
     displayName: "Display name", usernameLabel: "Username", usernameOffline: "Checked and saved after you sign in.", photoOptional: "Profile photo (optional)",
     later: "Later", setupSaved: "Your profile has been created.", setupPending: "Your profile will be created as soon as you sign in.",
+    visTitle: "Profile visibility", visPublic: "Public account", visPublicD: "Everyone in the community can see your profile and follow you without a request.",
     menuLabel: "Settings and more", profileMenu: "Profile menu", shareQr: "Share profile and QR code", discoverPeople: "Discover people",
     suggestedAccounts: "Suggested accounts", moreOptions: "More options", requestsRow: "Follow requests", requestsHint: "Confirm or delete",
     confirm: "Confirm", delete: "Delete", remove: "Remove", removeTitle: "Remove follower?",

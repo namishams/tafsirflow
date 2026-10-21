@@ -15,6 +15,7 @@ import { lemmaItem, tafsirByRef, wordByRef } from "@/content/sources/quran";
 import { duaByRef } from "@/content/sources/duas";
 import { extraItemsFor, isExtraKind } from "@/content/extra";
 import { knowText } from "./knowTexts";
+import { fromServerItem } from "@/features/carousel/registry";
 import { validKey } from "./source";
 import type { LibItem, LibKind } from "./library";
 /** the knowledge builders load on first use (see library.ts) */
@@ -82,6 +83,9 @@ export type FeedItem = {
   /** corpus posts (kind "corpus", postKind = the corpus kind): the reference, see the website's FeedRef */
   ref?: Record<string, unknown>;
   topic?: string;
+  /** postKind "carousel" / "wisdom": the payload of features/carousel (only sent with carousels=1) */
+  carousel?: unknown;
+  wisdom?: unknown;
 };
 export type FeedNewResponse = { items: FeedItem[]; generatedAt: string };
 export type FeedPageResponse = { items: FeedItem[]; nextCursor: string | null; day: string };
@@ -147,11 +151,11 @@ export type CorpusPage = { ok: true; page: FeedPageResponse } | { ok: false; bad
 /** one corpus page; the first page (no cursor) is kept for offline starts, later pages are not stored */
 export async function fetchCorpusPage(lang: string, cursor: string | null): Promise<CorpusPage> {
   if (!cursor) {
-    const p = await getFeed<FeedPageResponse>("page", { ...base(lang), v: "2", seed: installSeed(), limit: "12" }, `page2|${lang}|${tradition()}`);
+    const p = await getFeed<FeedPageResponse>("page", { ...base(lang), v: "2", seed: installSeed(), limit: "12", carousels: "1" }, `page2|${lang}|${tradition()}`);
     return p && Array.isArray(p.items) ? { ok: true, page: p } : { ok: false, badCursor: false };
   }
   try {
-    const q = Object.entries({ ...base(lang), v: "2", limit: "12", cursor }).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
+    const q = Object.entries({ ...base(lang), v: "2", limit: "12", carousels: "1", cursor }).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), 10000);
     const res = await fetch(`${SITE}/api/feed/page?${q}`, { headers: { Accept: "application/json", "x-qmc-app": Platform.OS }, signal: ctrl.signal }).finally(() => clearTimeout(timer));
@@ -247,7 +251,16 @@ export async function resolveItem(i: FeedItem, lang: string): Promise<(LibItem &
       out.body = ev && i.hijri.daysToEvent !== undefined ? `${ev} · ${Intl.NumberFormat(lang).format(i.hijri.daysToEvent)}` : i.body;
     }
   } catch { return null; }
-  return { ...out, kind: out.kind, remote: true, deeplink: i.deeplink } as LibItem & { remote: true; deeplink?: string };
+  return { ...out, kind: out.kind, remote: true, deeplink: i.deeplink ?? impliedDeeplink(i) } as LibItem & { remote: true; deeplink?: string };
+}
+
+/** where a day post leads when the editor set no deeplink: the same targets as the website's cards (src/lib/feedWeb/
+ *  resolve.ts: the reader at the verse, the featured surah, the calendar); /surah/<n> forwards to the app's reader */
+function impliedDeeplink(i: FeedItem): string | undefined {
+  if (i.kind === "featured-surah" && Number.isInteger(i.surah) && i.surah! >= 1 && i.surah! <= 114) return `/surah/${i.surah}`;
+  if (i.kind === "verse-of-day" && i.verseKey && validKey(i.verseKey)) { const [s, v] = i.verseKey.split(":"); return `/surah/${s}?v=${v}`; }
+  if (i.kind === "islamic-date") return "/calendar";
+  return undefined;
 }
 
 /** a resolved server item as a feed post: a library post ("x:<item id>", registered in LIB by the scheduler) or a
@@ -287,6 +300,8 @@ async function resolveCorpus(i: FeedItem, lang: string): Promise<RemotePost | nu
         if (!isExtraKind(kind) || !title) return null;
         return asPost((await extraItemsFor(kind, [title], lang))[0]);
       }
+      // carousels and wisdom posts (features/carousel): rendered by their feed ids "cr:" / "ws:"
+      case "carousel": case "wisdom": return fromServerItem(i);
       case "name": case "quiz": case "course": case "maqasid": case "mutashabihat":
         return asPost((await knowledge().knowledgeByRef(i.postKind, ref, lang, knowText(lang))) as LibItem | null);
       default: {

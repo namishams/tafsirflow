@@ -26,7 +26,7 @@ export default function JourneyTodayScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arabic="رحلة العلم" eyebrow={jt("eyebrow")} title={jt("todayTitle")} lead={jt("todayLead")} />
+        <PageHero topInset back arabic="رحلة العلم" eyebrow={jt("eyebrow")} title={jt("todayTitle")} lead={jt("todayLead")} />
         <View style={{ paddingHorizontal: 16, marginTop: 20, gap: 22 }}>
           <KhatmCard />
           <ReviewCard />

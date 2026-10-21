@@ -6,7 +6,7 @@ import { Icon, type IconName } from "@/components/icons";
 import { LinkRow, Page, PageHero, READ_WIDTH, RowGroup } from "@/components/page";
 import { CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
 import { useLang } from "@/i18n";
-import { formatNumber } from "@/features/progress/format";
+import { formatNumber, formatYear } from "@/features/progress/format";
 import { useJourneyData } from "./hooks";
 import { marhala, fracOf, doneOf, marhalaPoints, type Area, type Milestone } from "./marahil";
 import { BAND } from "./rank";
@@ -66,7 +66,7 @@ export default function JourneyScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arabic="رحلة العلم" eyebrow={jt("eyebrow")} title={jt("title")} lead={jt("lead")}>
+        <PageHero topInset back arabic="رحلة العلم" eyebrow={jt("eyebrow")} title={jt("title")} lead={jt("lead")}>
           <GoldButton title={jt("todayCta")} icon="calendar" onPress={() => router.push("/journey/today" as Href)} />
         </PageHero>
 
@@ -127,7 +127,7 @@ export default function JourneyScreen() {
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.ink, marginBottom: 8 }}>{jt(`row_${row.fam}` as JKey)}</Text>
                   <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
                     {row.items.map(({ def, have, prog }) => {
-                      const label = jt(def.key as JKey, { n: typeof def.n === "number" ? nf(def.n) : "" });
+                      const label = jt(def.key as JKey, { n: typeof def.n === "number" ? (def.fam === "rihla-hijri" ? formatYear(def.n, lang) : nf(def.n)) : "" });
                       const fresh = j.fresh.includes(def.id);
                       return (
                         <View key={def.id} style={{ width: 84, alignItems: "center", gap: 4 }} accessible accessibilityLabel={`${label}${have ? "" : `, ${jt("locked")}: ${nf(prog?.[0] ?? 0)} / ${nf(prog?.[1] ?? 0)}`}`}>

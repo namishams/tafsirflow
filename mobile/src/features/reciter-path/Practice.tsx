@@ -19,7 +19,7 @@ export function VerseWords({ verse, mark, picked, onWord, active, size = 26 }: {
 }) {
   const t = useTheme();
   return (
-    <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 6, justifyContent: "flex-start" }}>
+    <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 6, justifyContent: "flex-start" }}>
       {wordsOf(verse).map((w) => {
         const isMark = mark?.includes(w.position);
         const isPick = picked?.includes(w.position);
@@ -273,7 +273,7 @@ export function WordCheck({ verse }: { verse: Verse }) {
         </View>
       )}
       {ok ? (
-        <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 6 }}>
+        <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 6 }}>
           {words.map((w, i) => (
             <View key={w.position} style={{ paddingHorizontal: 6, borderRadius: R.md, backgroundColor: ok[i] ? t.accentSoft : "rgba(160,58,52,0.08)" }}>
               <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 40, color: ok[i] ? t.accent : RED }}>{w.text_uthmani}</Text>

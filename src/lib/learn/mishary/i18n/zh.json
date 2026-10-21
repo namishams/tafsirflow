@@ -1,8 +1,8 @@
 {
- "kicker": "Mishary 进阶课程",
+ "kicker": "Masār al-Qurrāʾ",
  "title": "培养下一代诵读者",
  "lead": "完成诵读者之路之后：训练您对各种 Maqam（音阶）的听辨能力，研习名家的诵读风格，坚持每日录音日志，获得已认证名家的反馈，并参加人才赛季。",
- "cardTitle": "Mishary 进阶课程",
+ "cardTitle": "Masār al-Qurrāʾ",
  "cardLead": "Maqam 听辨训练、名家风格研习、每日录音日志、导师指导和人才赛季。",
  "tileSub": "Maqam 听辨、名家风格、导师指导、赛季",
  "needsReview": "待审核",
@@ -215,5 +215,10 @@
  "startsOn": "开始 (YYYY-MM-DD)",
  "endsOn": "结束 (YYYY-MM-DD)",
  "titleField": "标题（可选）",
- "create": "创建"
+ "create": "创建",
+ "safetyFor": "举报或屏蔽 {name}",
+ "reportRecording": "举报录音",
+ "reportReview": "举报反馈",
+ "blockedNote": "{name} 已被屏蔽，不会再在此处显示。",
+ "mentoringNote": "录音私密保存，60 天后删除。16 岁及以上可用。"
 }

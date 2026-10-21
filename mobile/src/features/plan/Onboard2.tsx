@@ -14,8 +14,10 @@ import { PlanMilestones } from "@/features/garden/widgets";
 import { ShamsModeNote } from "@/features/shams2/ModeChooser";
 import { JourneyStage } from "@/features/garden/Landscape";
 import { ArcadeOfSteps, Astrolabe, GrowingTerraces, MapPath, QuranStand, RefQuote, Rosette } from "./Scenes";
-import { fillS, useStory } from "./story";
+import { GOOD_TREE_KEY, RECITERS_KEY, fillS, useStory } from "./story";
+import { useHadithQuote, useVerseQuote } from "./sources";
 import { RECITERS } from "@/lib/quran";
+import { FREE, usePro } from "@/lib/pro";
 import { readTradition } from "@/lib/tradition";
 import { useHadithText } from "@/features/hadith/texts";
 import { useWebT } from "@/i18n/web";
@@ -52,8 +54,9 @@ export function ReplyCard({ title, body, cta, onNext }: { title: string; body: s
   );
 }
 
-/** The story begins: "the people of the Quran" (the honour of learning and teaching it, from the app's own hadith
- *  texts; Quran references only for the Shia tradition), personal with name, goal, reciter and tradition. */
+/** The story begins: "the people of the Quran" (the honour of learning and teaching it: Sahih al-Bukhari 5027 from the
+ *  synced hadith sources; Quran 35:29 from the Quran data for the Shia tradition), personal with name, goal, reciter
+ *  and tradition. */
 export function PeopleOfQuran({ plan, goals, name, onDone }: { plan: Plan | null; goals: GoalV2[]; name: string; onDone: () => void }) {
   const st = useStory();
   const p = usePlanT();
@@ -63,7 +66,16 @@ export function PeopleOfQuran({ plan, goals, name, onDone }: { plan: Plan | null
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
   const [trad] = useState(() => readTradition());
+  const { pro } = usePro();
   const reciter = RECITERS.find((r) => r.folder === plan?.answers.reciter);
+  // a Pro voice chosen without Pro: the reader plays the first free voice until then (features/quran/reciter.ts)
+  const freeVoice = RECITERS.find((r) => FREE.reciterIds.includes(r.id));
+  const reciterText = !reciter ? null : pro || FREE.reciterIds.includes(reciter.id) || !freeVoice
+    ? fillS(st.reciterLine, { reciter: reciter.name })
+    : fillS(st.reciterLinePro, { reciter: reciter.name, free: freeVoice.name });
+  // Sahih al-Bukhari 5027 and Quran 35:29 from the app's data; the story's lines only offline, marked as a paraphrase
+  const bukhari = useHadithQuote("bukhari", 5027, web("why1s"), (w) => fillS(st.quote, { t: w }), { text: web("why1"), source: `${web("why1s")} · ${st.para}` });
+  const reciters = useVerseQuote(RECITERS_KEY, st.shiaQs.split(" · ")[0], { text: st.shiaQ, source: st.shiaQs });
   const goal = label(goals[0] ?? "daily");
   const line = (s: string, n: number) => <Animated.Text key={s} entering={reduce ? undefined : FadeInDown.delay(500 + n * 140).duration(380)} style={{ fontFamily: FONT.medium, fontSize: 15, lineHeight: 22, color: "#ffffff" }}>{s}</Animated.Text>;
   return (
@@ -76,11 +88,11 @@ export function PeopleOfQuran({ plan, goals, name, onDone }: { plan: Plan | null
           <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 24, color: stage.textSoft }}>{st.peopleB}</Text>
         </Animated.View>
         <Animated.View entering={reduce ? undefined : FadeIn.delay(300).duration(500)}>
-          {trad === "shia" ? <RefQuote text={st.shiaQ} source={st.shiaQs} /> : <RefQuote text={web("why1")} source={web("why1s")} />}
+          {trad === "shia" ? (reciters ? <RefQuote {...reciters} /> : null) : bukhari ? <RefQuote {...bukhari} /> : null}
         </Animated.View>
         <View style={{ gap: 6 }}>
           {line(fillS(st.goalLine, { goal }), 0)}
-          {reciter ? line(fillS(st.reciterLine, { reciter: reciter.name }), 1) : null}
+          {reciterText ? line(reciterText, 1) : null}
           {trad ? line(fillS(st.tradLine, { trad: trad === "sunni" ? hx.sunni : trad === "shia" ? hx.shia : hx.both }), 2) : null}
         </View>
         <View style={{ flex: 1 }} />
@@ -97,6 +109,8 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
   const o = useO2();
   const st = useStory();
   const [trad] = useState(() => readTradition());
+  // Quran 14:24 from the app's data; the story's line only offline, marked as a paraphrase
+  const goodTree = useVerseQuote(GOOD_TREE_KEY, st.goodTreeS.split(" · ")[0], { text: st.goodTree, source: st.goodTreeS });
   const p = usePlanT();
   const label = useGoalLabel();
   const insets = useSafeAreaInsets();
@@ -160,7 +174,7 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
               <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 24, color: stage.textSoft }}>{o.m3B}</Text>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, lineHeight: 23, color: "#ffffff" }}>{st.treeB}</Text>
               <View style={{ gap: 12 }}>
-                <RefQuote text={st.goodTree} source={st.goodTreeS} />
+                {goodTree ? <RefQuote {...goodTree} /> : null}
                 {trad !== "shia" ? <RefQuote text={st.hearts} source={st.heartsS} /> : null}
                 {trad !== "shia" ? <RefQuote text={st.paradise} source={st.paradiseS} /> : null}
               </View>

@@ -4,15 +4,18 @@ import { pool } from "./db";
 import { currentUser } from "./auth";
 import { clientIp } from "./http";
 import { getSettings } from "./settings";
+import { fromApp } from "./appRequest";
 
 export type GateResult = { blocked: boolean; limit: number; setAnon?: string; needsVerify?: boolean };
 
 // Freemium gate: visitors without a confirmed account may open tafsir for a limited number of different verses per day
 // (limit set in the admin area). Only the verse the reader actually opened counts (header x-tf-primary).
-// Applies to every tafsir source, including our own.
+// Applies to every tafsir source, including our own. Not in the native app: tafsir texts are free there and reading
+// must not depend on creating an account (App Store guideline 5.1.1(v)); the website keeps its gate.
 export async function checkGate(req: NextRequest, verseKey: string): Promise<GateResult> {
   const p = pool();
   if (!p || req.headers.get("x-tf-primary") !== "1") return { blocked: false, limit: 0 };
+  if (fromApp(req)) return { blocked: false, limit: 0 };
   const me = await currentUser();
   if (me?.emailVerified) return { blocked: false, limit: 0 };
   const { anonTafsirLimit: limit } = await getSettings();

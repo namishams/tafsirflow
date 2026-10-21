@@ -28,7 +28,7 @@ export default function JourneyStatsScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arabic="رحلة العلم" eyebrow={jt("eyebrow")} title={jt("statsTitle")} lead={jt("statsLead")} />
+        <PageHero topInset back arabic="رحلة العلم" eyebrow={jt("eyebrow")} title={jt("statsTitle")} lead={jt("statsLead")} />
         <View style={{ paddingHorizontal: 16, marginTop: 20, gap: 28 }}>
           {GROUPS.map((g) => {
             const list = rows.filter((r) => r.d.group === g);

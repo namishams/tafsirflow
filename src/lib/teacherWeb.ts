@@ -1,5 +1,17 @@
-// Texts of the teacher dashboard on the website (/[locale]/teacher). English, German and Arabic here; the other
-// locales read English (the app has all 14 languages). Polite address in German. Placeholders: {n}, {s}, {a}, {b}, {d}.
+// Texts of the teacher dashboard on the website (/[locale]/teacher). English, German and Arabic here; the other 11
+// locales (22.10.2026, from the app's teacher/text.ts tables) in teacherWeb/<locale>.json, merged over English. Polite
+// address in German. Placeholders: {n}, {s}, {a}, {b}, {d}.
+import bn from "./teacherWeb/bn.json";
+import es from "./teacherWeb/es.json";
+import fa from "./teacherWeb/fa.json";
+import fr from "./teacherWeb/fr.json";
+import id from "./teacherWeb/id.json";
+import ms from "./teacherWeb/ms.json";
+import ps from "./teacherWeb/ps.json";
+import ru from "./teacherWeb/ru.json";
+import tr from "./teacherWeb/tr.json";
+import ur from "./teacherWeb/ur.json";
+import zh from "./teacherWeb/zh.json";
 const en = {
   metaTitle: "Teacher dashboard", title: "My students", lead: "Students who invited you as their teacher and chose to share their Shams 2.0 summary. Aggregates only, no recordings.",
   signIn: "Please sign in to see your students.", signInBtn: "Sign in", invites: "Invitations", accept: "Accept", decline: "Decline",
@@ -42,9 +54,10 @@ const ar: Partial<Record<K, string>> = {
   student: "بصفتي طالبًا", studentLead: "المعلّمون الذين دعوتهم. الإيقاف يحذف النسخة من الخادم. الدعوات والملخّص يُرسلان من التطبيق.", myTeachers: "معلّموني", waiting: "في انتظار الرد", sharing: "قيد المشاركة", stop: "إيقاف المشاركة", noTeachers: "لا معلّم مرتبط.",
 };
 export type TcKey = K;
+const OTHER: Record<string, Partial<Record<K, string>>> = { bn, es, fa, fr, id, ms, ps, ru, tr, ur, zh };
 export function teacherText(locale: string): Record<K, string> {
   if (locale === "de") return de;
   if (locale === "ar") return { ...en, ...ar };
-  return en;
+  return { ...en, ...(OTHER[locale] ?? {}) };
 }
 export const fillT = (s: string, v: Record<string, string | number>) => Object.entries(v).reduce((a, [k, x]) => a.split(`{${k}}`).join(String(x)), s);

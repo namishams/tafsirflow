@@ -923,3 +923,80 @@ CREATE INDEX IF NOT EXISTS feed_items_stream_seq ON feed_items(stream, kseq);
 CREATE INDEX IF NOT EXISTS feed_items_kind ON feed_items(kind);
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- Profile extras (owner, 21.10.2026; app and website): learning goals (ids of the onboarding goals), a coarse city or
+-- region (never an exact location), travel mode with an optional destination city, and who sees each of them
+-- (extras_privacy: {"goals"|"city"|"travel": "everyone"|"followers"|"me"}; missing = goals everyone, others followers)
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS learning_goals text[] NOT NULL DEFAULT '{}';
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS city text NOT NULL DEFAULT '';
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS travel_on boolean NOT NULL DEFAULT false;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS travel_city text NOT NULL DEFAULT '';
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS extras_privacy jsonb NOT NULL DEFAULT '{}';
+
+-- Sign-in with an e-mail code and passkeys (owner, 21.10.2026; app and website). Password sign-in stays as a second way.
+-- email_codes: 6-digit one-time codes, only an HMAC with a random salt is stored ("salt$hash"), valid 10 minutes,
+--   single use, at most 5 wrong attempts. purpose: signin (sign in or create the account) | confirm (a signed-in person
+--   confirms a sensitive step or the address). Rows older than a day are removed by the code routes.
+CREATE TABLE IF NOT EXISTS email_codes (
+  id         bigserial PRIMARY KEY,
+  email      text NOT NULL,
+  purpose    text NOT NULL DEFAULT 'signin',
+  code_hash  text NOT NULL,
+  attempts   integer NOT NULL DEFAULT 0,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  expires_at timestamptz NOT NULL,
+  used_at    timestamptz
+);
+CREATE INDEX IF NOT EXISTS email_codes_email ON email_codes(email, purpose, created_at DESC);
+-- after a correct code for an address without an account: the short welcome form creates the account with this ticket
+CREATE TABLE IF NOT EXISTS signup_tickets (
+  token_hash text PRIMARY KEY,
+  email      text NOT NULL,
+  expires_at timestamptz NOT NULL
+);
+-- passkeys (WebAuthn, RP ID quranmasterclass.com): only the public key is stored
+CREATE TABLE IF NOT EXISTS passkeys (
+  id            bigserial PRIMARY KEY,
+  user_id       bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  credential_id text UNIQUE NOT NULL,
+  public_key    bytea NOT NULL,
+  counter       bigint NOT NULL DEFAULT 0,
+  transports    text[] NOT NULL DEFAULT '{}',
+  device_type   text,
+  backed_up     boolean NOT NULL DEFAULT false,
+  aaguid        text,
+  name          text,
+  created_at    timestamptz NOT NULL DEFAULT now(),
+  last_used_at  timestamptz
+);
+CREATE INDEX IF NOT EXISTS passkeys_user ON passkeys(user_id);
+-- random WebAuthn user handle per account (never the numeric id)
+ALTER TABLE users ADD COLUMN IF NOT EXISTS webauthn_handle text;
+-- one WebAuthn ceremony (challenge), single use, 5 minutes
+CREATE TABLE IF NOT EXISTS webauthn_challenges (
+  id         text PRIMARY KEY,
+  challenge  text NOT NULL,
+  purpose    text NOT NULL,
+  user_id    bigint REFERENCES users(id) ON DELETE CASCADE,
+  expires_at timestamptz NOT NULL
+);
+-- the app signs in with a passkey through the system browser sheet (ASWebAuthenticationSession): the app holds the
+-- secret, the browser only the id; kind login (done_user_id set by the browser) | register (user_id = signed-in account)
+CREATE TABLE IF NOT EXISTS app_handoffs (
+  id           text PRIMARY KEY,
+  secret_hash  text NOT NULL,
+  kind         text NOT NULL,
+  user_id      bigint REFERENCES users(id) ON DELETE CASCADE,
+  done_user_id bigint REFERENCES users(id) ON DELETE CASCADE,
+  created_at   timestamptz NOT NULL DEFAULT now(),
+  expires_at   timestamptz NOT NULL
+);
+-- sessions: when and how they started (security screen, "sign out other devices"); reauth_at = the last confirmation
+-- with an e-mail code or password (sensitive steps need a sign-in or confirmation of the last 15 minutes)
+ALTER TABLE sessions ADD COLUMN IF NOT EXISTS created_at timestamptz DEFAULT now();
+ALTER TABLE sessions ADD COLUMN IF NOT EXISTS method text;      -- password | code | passkey | register
+ALTER TABLE sessions ADD COLUMN IF NOT EXISTS client text;      -- web | ios | android
+ALTER TABLE sessions ADD COLUMN IF NOT EXISTS user_agent text;
+ALTER TABLE sessions ADD COLUMN IF NOT EXISTS reauth_at timestamptz;
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

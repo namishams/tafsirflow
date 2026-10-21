@@ -1,9 +1,11 @@
 import { statSave } from "./statsStore";
 import { memo, useEffect, useRef, useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { Linking, ScrollView, Text, View } from "react-native";
 import { router, type Href } from "expo-router";
 import { AR_RIGHT, ARABIC_FONT, FONT, stage } from "@/lib/theme";
 import type { HadithFeedItem } from "./hadith";
+import { SAVED_KEY as HADITH_SAVED_KEY, toggleSaved as toggleSavedHadith, type HadithItem } from "@/features/hadith/data";
+import { SAVED_NAMES_KEY, toggleSavedName } from "./savedNames";
 import { openPro } from "@/lib/pro";
 import { useStored } from "@/lib/store";
 import { reciterName } from "@/lib/quran";
@@ -78,6 +80,8 @@ export const StoryPage = memo(function StoryPage(p: Common & { story: Story; all
 export const NamePage = memo(function NamePage(p: Common & { name: AllahName; onShare: (n: AllahName) => void }) {
   const ft = useFeedText();
   const tx = useProphetText();
+  // saved like on Home (the same device key, by the Arabic name)
+  const saved = useStored<string[]>(SAVED_NAMES_KEY, []).includes(p.name.ar);
   useEffect(() => { if (p.active) p.engine.pause(); }, [p.active, p.engine]);
   const wide = p.width >= 700;
   return (
@@ -92,6 +96,7 @@ export const NamePage = memo(function NamePage(p: Common & { name: AllahName; on
           <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted, textAlign: "center", marginTop: 22 }}>{ft.nameSource}</Text>
         </View>
         <View style={{ width: 72, justifyContent: "flex-end", alignItems: "center", gap: 16, paddingEnd: 6 }}>
+          <Action icon="bookmark" filled={saved} color={saved ? stage.gold : "#fff"} label={saved ? tx.saved : tx.save} a11y={saved ? tx.unsave : tx.save} selected={saved} onPress={() => { if (!saved) statSave(); toggleSavedName(p.name.ar); }} />
           <Action icon="send" color="#fff" label={tx.share} a11y={tx.share} onPress={() => p.onShare(p.name)} />
           <Action icon="book" color="#fff" label={tx.readMore} a11y={tx.readMore} onPress={() => router.push("/islam/names" as Href)} />
         </View>
@@ -112,17 +117,29 @@ export const ProPage = memo(function ProPage(p: Common & { onLater: () => void }
   );
 });
 
-export const HadithPage = memo(function HadithPage(p: Common & { item: HadithFeedItem }) {
+export const HadithPage = memo(function HadithPage(p: Common & { item: HadithFeedItem; onShare?: (h: HadithFeedItem) => void }) {
+  const tx = useProphetText();
+  const ft = useFeedText();
   useEffect(() => { if (p.active) p.engine.pause(); }, [p.active, p.engine]);
+  // the same actions as the hadith post on Home: save (the hadith collection's saved list), share, the source
+  const saved = useStored<HadithItem[]>(HADITH_SAVED_KEY, []).some((x) => x.id === p.item.item.id);
+  const url = p.item.item.url;
   const wide = p.width >= 700;
   return (
     <View style={{ width: p.width, height: p.height, overflow: "hidden" }}>
       <FeedBackdrop tone={toneOf(`hadith:${p.item.source}`)} width={p.width} height={p.height} animate={p.active && !p.reduce} still={p.reduce} />
-      <ScrollView style={{ flex: 1 }} nestedScrollEnabled contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingHorizontal: 22, paddingTop: p.topInset + 70, paddingBottom: p.bottomInset + 24, gap: 16, maxWidth: 700, alignSelf: "center", width: "100%" }}>
-        {p.item.arabic ? <Text accessibilityLanguage="ar" style={{ fontFamily: ARABIC_FONT, fontSize: wide ? 30 : 25, lineHeight: (wide ? 30 : 25) * 1.9, color: "#fff", textAlign: AR_RIGHT, writingDirection: "rtl" }}>{p.item.arabic}</Text> : null}
-        <Text selectable style={{ fontFamily: FONT.regular, fontSize: wide ? 20 : 17, lineHeight: wide ? 31 : 27, color: "rgba(255,255,255,0.92)" }}>{p.item.text}</Text>
-        <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.gold }}>{[p.item.narrator, p.item.source, p.item.grade].filter(Boolean).join(" · ")}</Text>
-      </ScrollView>
+      <View style={{ flex: 1, paddingTop: p.topInset + 70, paddingBottom: p.bottomInset + 24, flexDirection: "row" }}>
+        <ScrollView style={{ flex: 1 }} nestedScrollEnabled contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingStart: 22, paddingEnd: 10, paddingVertical: 8, gap: 16, maxWidth: 700, alignSelf: "center", width: "100%" }}>
+          {p.item.arabic ? <Text accessibilityLanguage="ar" style={{ fontFamily: ARABIC_FONT, fontSize: wide ? 30 : 25, lineHeight: (wide ? 30 : 25) * 1.9, color: "#fff", textAlign: AR_RIGHT, writingDirection: "rtl" }}>{p.item.arabic}</Text> : null}
+          <Text selectable style={{ fontFamily: FONT.regular, fontSize: wide ? 20 : 17, lineHeight: wide ? 31 : 27, color: "rgba(255,255,255,0.92)" }}>{p.item.text}</Text>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.gold }}>{[p.item.narrator, p.item.source, p.item.grade].filter(Boolean).join(" · ")}</Text>
+        </ScrollView>
+        <View style={{ width: 72, justifyContent: "flex-end", alignItems: "center", gap: 16, paddingEnd: 6 }}>
+          <Action icon="bookmark" filled={saved} color={saved ? stage.gold : "#fff"} label={saved ? tx.saved : tx.save} a11y={saved ? tx.unsave : tx.save} selected={saved} onPress={() => { if (!saved) statSave(); toggleSavedHadith(p.item.item); }} />
+          {p.onShare ? <Action icon="send" color="#fff" label={tx.share} a11y={tx.share} onPress={() => p.onShare?.(p.item)} /> : null}
+          {url ? <Action icon="globe" color="#fff" label={ft.sourceLabel} a11y={`${ft.sourceLabel}: ${p.item.source}`} onPress={() => void Linking.openURL(url).catch(() => undefined)} /> : null}
+        </View>
+      </View>
     </View>
   );
 });

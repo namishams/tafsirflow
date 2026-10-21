@@ -1,8 +1,8 @@
 {
- "kicker": "Laluan Mishary",
+ "kicker": "Masār al-Qurrāʾ",
  "title": "Membentuk generasi qari seterusnya",
  "lead": "Selepas Laluan Qari: latih pendengaran anda untuk maqamat, kaji gaya para qari mahir, simpan jurnal rakaman harian, dapatkan maklum balas daripada guru mahir yang disahkan dan sertai musim bakat.",
- "cardTitle": "Laluan Mishary",
+ "cardTitle": "Masār al-Qurrāʾ",
  "cardLead": "Latihan pendengaran maqam, kajian gaya para qari mahir, jurnal rakaman harian, bimbingan dan musim bakat.",
  "tileSub": "Pendengaran maqam, gaya qari mahir, bimbingan, musim",
  "needsReview": "Perlu disemak",
@@ -215,5 +215,10 @@
  "startsOn": "Bermula (YYYY-MM-DD)",
  "endsOn": "Berakhir (YYYY-MM-DD)",
  "titleField": "Tajuk (pilihan)",
- "create": "Cipta"
+ "create": "Cipta",
+ "safetyFor": "Laporkan atau sekat {name}",
+ "reportRecording": "Laporkan rakaman",
+ "reportReview": "Laporkan maklum balas",
+ "blockedNote": "{name} disekat dan tidak lagi dipaparkan di sini.",
+ "mentoringNote": "Rakaman peribadi, dipadam selepas 60 hari. Mulai umur 16 tahun."
 }

@@ -1,7 +1,7 @@
 {
   "ios": {
     "CFBundleDisplayName": "Quran Masterclass",
-    "NSLocationWhenInUseUsageDescription": "Quran Masterclass utilise ta position uniquement sur cet appareil, pour calculer les horaires de prière et la direction de la qibla là où tu te trouves. Elle n’est ni enregistrée ni envoyée.",
+    "NSLocationWhenInUseUsageDescription": "Quran Masterclass utilise votre position pour calculer les horaires de prière, la direction de la qibla et le ciel de votre jardin là où vous vous trouvez. Vos coordonnées restent sur cet appareil et ne nous sont jamais envoyées. Seulement si vous choisissez d’afficher votre ville sur votre profil, le nom de la ville est enregistré avec votre profil.",
     "NSMicrophoneUsageDescription": "Quran Masterclass utilise le micro uniquement lorsque vous lancez un enregistrement, la vérification de la récitation ou la vérification des mots. Un enregistrement reste sur cet appareil, sauf si vous choisissez de l’envoyer ou de le publier.",
     "NSSpeechRecognitionUsageDescription": "Quran Masterclass reconnaît sur cet appareil les mots arabes que vous récitez, dans les exercices, les tests et la vérification des mots, pour indiquer quels mots ont été entendus. Ce n’est pas une évaluation du tajwid et rien n’est envoyé.",
     "NSCameraUsageDescription": "Quran Masterclass utilise l’appareil photo uniquement lorsque vous prenez une photo de profil ou, lorsque c’est proposé, activez la vidéo pour un extrait de récitation. Rien n’est enregistré avant que vous ne commenciez.",

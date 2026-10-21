@@ -25,8 +25,13 @@ import { UsernameStatus, useUsernameCheck, usernameBlocked } from "@/features/ta
 import { countryName } from "@/lib/countries";
 import { useLang } from "@/i18n";
 import { Icon } from "@/components/icons";
+import { EMPTY_EXTRAS, ExtrasEditor, ProfilePreview } from "@/features/talents/ExtrasEditor";
+import { readTravel, setTravel } from "@/features/talents/travel";
+import { usePT } from "@/features/talents/profileText";
+import type { OwnExtras } from "@/features/talents/api";
 
-// /community/me – create or edit your own profile (also the Quran Talents fields: rewaya, maqam, ijazah chain and
+// /community/me – create or edit your own profile (21.10.2026: live preview of the profile header, learning goals,
+// city, travel mode and who sees them) (also the Quran Talents fields: rewaya, maqam, ijazah chain and
 // whether the garden tree and juz certificates show on the profile), profile picture, country, and for new
 // profiles the birth year confirmation and the acceptance of terms and community guidelines)
 const ROLES = ["learner", "reciter", "teacher"] as const;
@@ -66,6 +71,10 @@ export default function MyProfile() {
   const [accepted, setAccepted] = useState(false);
   const [ageKnown, setAgeKnown] = useState(true);
   const [picMsg, setPicMsg] = useState("");
+  // owner 21.10.2026: learning goals, city, travel mode and who sees them; the live preview of the profile header
+  const [extras, setExtras] = useState<OwnExtras>(() => ({ ...EMPTY_EXTRAS, travel: { on: readTravel().on, city: readTravel().city } }));
+  const [tripMsg, setTripMsg] = useState("");
+  const pt = usePT();
 
   useEffect(() => {
     if (!user) { setReady(true); return; }
@@ -78,6 +87,7 @@ export default function MyProfile() {
         const x = p as Profile & { rewaya?: string; maqam?: string; ijazahChain?: string; progress?: unknown; avatar?: string | null };
         setRewaya(x.rewaya ?? ""); setMaqam(x.maqam ?? ""); setChain(x.ijazahChain ?? ""); setShowProgress(!!x.progress);
         setCountry(p.country); setAvatar(x.avatar ?? null);
+        Talents.extras().then((e) => setExtras(e.extras)).catch(() => undefined);
       }
       else {
         // a profile set up in the onboarding that is not created yet (e.g. age not confirmed): prefill it
@@ -96,6 +106,13 @@ export default function MyProfile() {
       await Talents.progress({ show: showProgress, treeStage: ring.planted ? ring.stage : 0, treeType: ring.planted ? ring.type : "", certJuz: tests.certs.map((c) => c.juz) }).catch(() => undefined);
       setExists(true); setOk(true); setSavedName(username.trim().toLowerCase());
       void syncSharer();
+      // goals, city and travel (the server keeps only names, never coordinates); travel mode also moves the prayer times
+      await Talents.saveExtras(extras).catch(() => undefined);
+      const before = readTravel();
+      if (before.on !== extras.travel.on || before.city !== extras.travel.city) {
+        const r = await setTravel(extras.travel.on, extras.travel.city);
+        setTripMsg(extras.travel.on && extras.travel.city ? (r.place ? pt("destinationSet", { c: extras.travel.city }) : pt("destinationNotFound")) : "");
+      }
     } catch (e) { setErr(errText(e, c)); } finally { setBusy(false); }
   };
 
@@ -128,6 +145,8 @@ export default function MyProfile() {
               ) : <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted, textAlign: "center" }}>{tt("photoAfterCreate")}</Text>}
               {picMsg ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.danger }}>{picMsg}</Text> : null}
             </View>
+            <ProfilePreview name={name} username={username} bio={bio} avatar={avatar} extras={extras}
+              facts={[rewaya, country ? countryName(country, lang) : ""].filter(Boolean).join(" · ")} />
             <LabeledField label={c("username")} hint={c("usernameHint")} value={username} onChangeText={(v) => setUsername(v.toLowerCase().replace(/[^a-z0-9_.]/g, ""))}
               autoCapitalize="none" autoCorrect={false} maxLength={20} style={{ textAlign: "left", writingDirection: "ltr" }} />
             <UsernameStatus state={nameCheck} />
@@ -164,6 +183,7 @@ export default function MyProfile() {
               <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.ink }}>{tt("showProgress")}</Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted, marginTop: 2 }}>{tt("showProgressHint")}</Text>
             </CheckRow>
+            {exists ? <ExtrasEditor value={extras} onChange={setExtras} /> : null}
             <CheckRow checked={isPublic} onChange={setPublic} label={c("isPublic")}><Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.ink }}>{c("isPublic")}</Text></CheckRow>
             {!accepted ? (
               <CheckRow checked={guidelines} onChange={setGuidelines} label={tt("acceptGuidelines")}>
@@ -176,11 +196,12 @@ export default function MyProfile() {
             ) : null}
             <FormError text={err} />
             {ok ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{c("saved")}</Text> : null}
+            {tripMsg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 13.5, color: t.muted }}>{tripMsg}</Text> : null}
             <GoldButton title={c("save")} onPress={save} busy={busy} disabled={busy || usernameBlocked(nameCheck) || username.length < 3 || !name.trim() || (!exists && !guidelines)} />
-            {exists ? <Pressable onPress={() => router.push(`/community/u/${username}` as Href)} accessibilityRole="link" style={{ minHeight: 44, justifyContent: "center", alignItems: "center" }}>
+            {/* one profile layout (BLUEPRINT §7): "My profile" opens the own TikTok profile in the Account tab; the legacy
+                /community/u route stays for old links */}
+            {exists ? <Pressable onPress={() => router.navigate("/account" as Href)} accessibilityRole="link" style={{ minHeight: 44, justifyContent: "center", alignItems: "center" }}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.accent }}>{c("myProfile")}</Text></Pressable> : null}
-            {exists ? <Pressable onPress={() => router.push(`/talents/u/${username}` as Href)} accessibilityRole="link" style={{ minHeight: 44, justifyContent: "center", alignItems: "center" }}>
-              <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.accent }}>{tt("myTalentProfile")}</Text></Pressable> : null}
             <Pressable onPress={() => router.push("/talents/guidelines" as Href)} accessibilityRole="link" style={{ minHeight: 44, justifyContent: "center", alignItems: "center" }}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{tt("guidelines")}</Text></Pressable>
           </View>

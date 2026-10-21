@@ -13,7 +13,9 @@ const RESERVED = new Set(["admin", "administrator", "root", "support", "help", "
   // Quran Talents: route names of the app and website (/talents/<name>)
   "record", "player", "badges", "notifications", "blocked", "list", "requests", "messages", "guidelines", "invite", "talents", "followers", "following",
   // Sijill routes (app /talents/<name>)
-  "friends", "leaderboard", "buddies", "compare", "sijill", "moments", "preview"]);
+  "friends", "leaderboard", "buddies", "compare", "sijill", "moments", "preview",
+  // website /talents/search and /talents/discover (22.10.2026; added only, existing names keep working)
+  "search", "discover"]);
 
 export const reserved = (u: string) => RESERVED.has(u.replace(/[._]/g, "")) || RESERVED.has(u);
 export const adultEnough = (birthYear: number | null) => !!birthYear && new Date().getFullYear() - birthYear >= 13;

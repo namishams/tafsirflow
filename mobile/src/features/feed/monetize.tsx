@@ -23,7 +23,9 @@ import { fillText, useFeedText, type FeedText } from "./texts";
 // How the feed earns its keep, without ads and without pressure (App Store 3.1.1 / 3.1.2):
 // - contextual offers: one quiet line under a fitting post (dua → personal dua for that topic, names → name report,
 //   verse/word/quiz → Shams lesson, the reciters post → more reciters with Pro)
-// - Pro-only posts mixed in: a blurred preview with a lock; free users may open a few per day, Pro users see them open
+// - Pro-only posts mixed in: a blurred preview with a lock; free users may open a few per day, Pro users see them open.
+//   Only for kinds whose target really is Pro (checked through useEntitlement): a lock on a screen that is free for
+//   everyone would be misleading (App Store 3.1.1 / 2.3.1). No kind has such a target yet, so none is placed.
 // - when the free premium posts of the day are used up: one paywall card in the stream (never a modal), with the
 //   benefits, the real store price, the trial only if the server says the store offers it, restore, terms, privacy
 // - celebration cards at real milestones (7-day streak, 20 words, 5 saves) and a dua offer after sharing a hadith/dua
@@ -33,7 +35,7 @@ import { fillText, useFeedText, type FeedText } from "./texts";
 const DEFAULTS = {
   variants: ["a"],
   context: { everyNItems: 6, maxPerSession: 4 },
-  premium: { everyNItems: 20, maxPerSession: 3, freePerDay: 2, kinds: ["tafsir-deep", "all-reciters", "root-deep", "stories"] },
+  premium: { everyNItems: 20, maxPerSession: 3, freePerDay: 2, kinds: [] as string[] },
   paywall: { maxPerSession: 1, trialDays: 0 },
   moments: { streakDays: 7, words: 20, saves: 5 },
 };
@@ -127,11 +129,13 @@ export class MonetizeCap {
     if (!pro && index >= 6 && index % 4 === 0) { const m = dueMoment(); if (m) return `mo:${m}`; }
     const c = cfg();
     if (!pro && paywallDue && offerOn("paywall") && this.paywallN < c.paywall.maxPerSession) { paywallDue = false; this.paywallN++; return `pw:${index}`; }
-    if (!offerOn("premium") || !c.premium.kinds.length) return null;
+    // only kinds with a real Pro target (whatever the server lists)
+    const kinds = c.premium.kinds.filter(isGatedKind);
+    if (!offerOn("premium") || !kinds.length) return null;
     if (index < 8 || index - this.lastPremium < Math.max(5, c.premium.everyNItems) || this.premiumN >= c.premium.maxPerSession) return null;
     this.lastPremium = index;
     this.premiumN++;
-    return `pp:${c.premium.kinds[this.turn++ % c.premium.kinds.length]}:${index}`;
+    return `pp:${kinds[this.turn++ % kinds.length]}:${index}`;
   }
 }
 export const isMonetizeItem = (item: string) => /^(pp|pw|mo):/.test(item);
@@ -217,12 +221,16 @@ function ContextLine({ c, width }: { c: Ctx; width: number }) {
 }
 
 // ---------- Pro-only posts ----------
-const PREMIUM: Record<string, { icon: IconName; title: (x: FeedText) => string; body: (x: FeedText) => string; href: string; tone: [string, string] }> = {
+// `gated`: the entitlement that `href` itself checks (useEntitlement). A kind without one leads to a screen that is free
+// for everyone (the index pages below), so it is never shown as a locked Pro post; set `gated` (and point `href` at the
+// Pro feature with its context, e.g. the tafsir comparison of a verse) once such a target exists.
+const PREMIUM: Record<string, { icon: IconName; title: (x: FeedText) => string; body: (x: FeedText) => string; href: string; tone: [string, string]; gated?: string }> = {
   "tafsir-deep": { icon: "book", title: (x) => x.premiumTafsir, body: (x) => x.premiumTafsirBody, href: "/shams", tone: ["#0c4a37", "#06221a"] },
   "all-reciters": { icon: "radio", title: (x) => x.premiumReciters, body: (x) => x.premiumRecitersBody, href: "/reciters", tone: ["#0f3f3a", "#061c19"] },
   "root-deep": { icon: "cap", title: (x) => x.premiumRoot, body: (x) => x.premiumRootBody, href: "/vocab", tone: ["#13392b", "#071a13"] },
   stories: { icon: "moon", title: (x) => x.premiumStories, body: (x) => x.premiumStoriesBody, href: "/prophet-stories", tone: ["#0b3a30", "#041814"] },
 };
+function isGatedKind(kind: string): boolean { return !!PREMIUM[kind]?.gated; }
 const proPriceLabel = (tx: FeedText, price: string | null) => (price ? fillText(tx.paywallPrice, { price }) : null);
 
 export const PremiumPost = memo(function PremiumPost({ item, width, pro }: { item: string; width: number; pro: boolean }) {
@@ -230,7 +238,8 @@ export const PremiumPost = memo(function PremiumPost({ item, width, pro }: { ite
   const tx = useFeedText();
   const price = useProPrice();
   const kind = item.split(":")[1];
-  const p = PREMIUM[kind];
+  // a kind without a real Pro target is never drawn as a locked post (also not from an older list)
+  const p = isGatedKind(kind) ? PREMIUM[kind] : undefined;
   const [left, setLeft] = useState(premiumLeft);
   useEffect(() => { if (p && !pro) offerImp("premium"); }, [p, pro]);
   if (!p) return <View style={{ height: 1 }} />;

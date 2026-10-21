@@ -1,13 +1,18 @@
 import { useCallback, useEffect, useState } from "react";
 import { Alert, Platform, View } from "react-native";
-import { Stack, useLocalSearchParams } from "expo-router";
-import { Page, PageHero } from "@/components/page";
+import { Stack, router, useLocalSearchParams, type Href } from "expo-router";
+import * as Haptics from "expo-haptics";
+import { Loading, Page, PageHero } from "@/components/page";
 import { OutlineButton } from "@/components/brand";
 import { T, type TalentCard } from "@/features/talents/api";
 import { useTT } from "@/features/talents/text";
 import { BadgeSheetHost } from "@/features/talents/badges";
 import { AccessGate, ListBox, Muted, SafetyBar, SmallButton, TalentRow, useTalentAccess, useTalentErr } from "@/features/talents/ui";
 import { usePT } from "@/features/talents/profileText";
+export { TalentsRouteError as ErrorBoundary } from "@/features/talents/ui";
+
+// header options once (see talents/u/[username].tsx)
+const SCREEN = { headerShown: false } as const;
 
 // /talents/list?u=<username>&kind=followers|following – with Follow / Follow back / Following on every row; the own
 // followers list also has Remove
@@ -22,10 +27,16 @@ export default function FollowList() {
   const [msg, setMsg] = useState("");
   const pt = usePT();
   const [busy, setBusy] = useState<string | null>(null);
+  // optimistic with a light haptic tap; a failed call puts the row back. Followed and requested stay apart: a pending
+  // request to a private account reads "Requested" (tapping it withdraws the request), never "Following".
   const follow = async (c: TalentCard) => {
-    setBusy(c.username);
-    try { const d = await T.follow(c.username, !c.followed); setList((l) => l?.map((x) => (x.username === c.username ? { ...x, followed: d.followed || !!d.requested } : x)) ?? null); }
-    catch (e) { setMsg(err(e)); } finally { setBusy(null); }
+    const mark = (followed: boolean, requested: boolean) => setList((l) => l?.map((x) => (x.username === c.username ? { ...x, followed, requested } : x)) ?? null);
+    const on = !c.followed && !c.requested;
+    setBusy(c.username); setMsg("");
+    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => undefined);
+    mark(on && !c.private, on && !!c.private);
+    try { const d = await T.follow(c.username, on); mark(d.followed, !!d.requested && !d.followed); }
+    catch (e) { mark(!!c.followed, !!c.requested); setMsg(err(e)); } finally { setBusy(null); }
   };
   // own followers list (Instagram / TikTok): Follow back or Following, and Remove (the member is not notified)
   const own = !!u && a.me?.profile?.username === u && kind === "followers";
@@ -40,8 +51,8 @@ export default function FollowList() {
   };
   const right = (c: TalentCard) => {
     if (c.mine) return undefined;
-    const label = c.followed ? tt("followingBtn") : c.followsMe ? pt("followBack") : tt("follow");
-    const main = <SmallButton title={label} tone={c.followed ? "plain" : "gold"} disabled={busy === c.username} onPress={() => void follow(c)} label={`${label}, ${c.name}`} />;
+    const label = c.followed ? tt("followingBtn") : c.requested ? tt("requested") : c.followsMe ? pt("followBack") : tt("follow");
+    const main = <SmallButton title={label} tone={c.followed || c.requested ? "plain" : "gold"} disabled={busy === c.username} onPress={() => void follow(c)} label={`${label}, ${c.name}`} />;
     if (!own) return main;
     return (
       <View style={{ flexDirection: "row", gap: 6 }}>
@@ -58,15 +69,23 @@ export default function FollowList() {
   useEffect(() => { if (a.state === "ok") void load(); }, [a.state, load]);
   return (
     <>
-      <Stack.Screen options={{ headerShown: false }} />
+      <Stack.Screen options={SCREEN} />
       <BadgeSheetHost>
       <Page>
         <PageHero back topInset arcade={false} eyebrow={`@${u ?? ""}`} title={kind === "followers" ? tt("followers") : tt("following")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 16 }}>
-            {msg ? <Muted>{msg}</Muted> : list && !list.length ? <Muted>{tt("empty")}</Muted> : list ? (
+            {/* a message (load failed, or one follow failed) sits above the list instead of replacing it */}
+            {msg ? <Muted>{msg}</Muted> : null}
+            {msg && !list ? null : list && !list.length ? (
+              // empty (no followers yet / follows nobody yet): the way to find people
+              <View style={{ alignItems: "center", gap: 6 }}>
+                <Muted>{tt("empty")}</Muted>
+                <SmallButton title={pt("discoverPeople")} tone="gold" onPress={() => router.push("/talents" as Href)} />
+              </View>
+            ) : list ? (
               <ListBox>{list.map((c, i) => <TalentRow key={c.username} c={c} first={i === 0} right={right(c)} />)}</ListBox>
-            ) : null}
+            ) : <View style={{ minHeight: 160 }}><Loading /></View>}
             {next ? <OutlineButton title={tt("loadMore")} onPress={() => void load(next)} /> : null}
             <SafetyBar />
           </View>

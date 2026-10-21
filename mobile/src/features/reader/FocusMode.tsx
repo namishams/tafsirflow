@@ -8,6 +8,7 @@ import { useWebT } from "@/i18n/web";
 import type { Chapter, Verse } from "@/lib/quran";
 import { VerseWords, coverOf, type Cover, type Hide } from "@/features/quran/VerseWords";
 import { useReaderT } from "./texts";
+import { useSheetBarStyle } from "./statusBar";
 
 // Full-screen focus mode for listening and reciting. Top half: the current verse, the recited word lit (word timings),
 // the translation small below (can be hidden). Bottom half: a magnifier with only the current word, very large, with
@@ -33,6 +34,8 @@ export function FocusMode({ open, onClose, chapter, verse, total, activeWord, ti
   onToggle: () => void; onPrev: () => void; onNext: () => void; onRepeat: (n: number) => void; onRevealWord: (wi: number, pos: number) => void; onPlayWord: (pos: number) => void;
 }) {
   const t = useTheme();
+  // the light focus surface: dark status bar text in light mode while it is open
+  useSheetBarStyle(open, t.dark ? "light" : "dark", t.dark ? "light" : "dark");
   const w = useWebT("player");
   const r = useReaderT();
   const insets = useSafeAreaInsets();

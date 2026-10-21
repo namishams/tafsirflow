@@ -77,6 +77,17 @@ function nextPos(p: Pos, st: Station): Pos {
   if (st.mode === "list" && st.list) { const i = st.list.indexOf(p.s); return { s: st.list[(i + 1) % st.list.length], v: 1 }; }
   return { s: p.s >= st.to ? st.from : p.s + 1, v: 1 };
 }
+// one surah back within the station (as in the app's radio)
+function prevSurahPos(p: Pos, st: Station, history: Pos[]): Pos {
+  if (st.mode === "single") return { s: st.from, v: 1 };
+  if (st.mode === "list" && st.list) { const i = Math.max(0, st.list.indexOf(p.s)); return { s: st.list[(i - 1 + st.list.length) % st.list.length], v: 1 }; }
+  if (st.mode === "random") { const h = history.find((x) => x.s !== p.s); return { s: h ? h.s : randSurah(), v: 1 }; }
+  if (st.mode === "juzday") { const [a] = juzToday(); return p.s - 1 > a.s ? { s: p.s - 1, v: 1 } : a; }
+  return { s: p.s <= st.from ? st.to : p.s - 1, v: 1 };
+}
+// repeat (as in the app's radio): off, the verse on air again and again, or the surah on air from its first verse
+export type RadioRepeat = "off" | "verse" | "surah";
+const RATES = [0.75, 1, 1.25];
 const startOf = (st: Station): Pos => (st.mode === "juzday" ? juzToday()[0] : { s: st.mode === "random" ? randSurah() : st.mode === "list" && st.list ? st.list[0] : st.from, v: 1 });
 
 function useEngine() {
@@ -97,6 +108,15 @@ function useEngine() {
   const [tid, setTid] = useState<number | null>(null);
   const [showText, setShowText] = useState(true);
   const [sleepLeft, setSleepLeft] = useState(0);
+  // the sleep timer as chosen (as in the app's radio): off, 15 / 30 / 60 minutes or the end of the surah on air
+  const [sleep, setSleepSel] = useState<0 | 15 | 30 | 60 | "eos">(0);
+  const eosRef = useRef(false);
+  const [offline, setOffline] = useState(false);
+  // speed and repeat (as in the app's radio), kept on this device
+  const [rate, setRateState] = useState(1);
+  const rateRef = useRef(1);
+  const [repeat, setRepeatState] = useState<RadioRepeat>("off");
+  const repeatRef = useRef<RadioRepeat>("off");
   const adhanEl = useRef<HTMLAudioElement>(null);
   const fired = useRef(new Set<string>());
   const [adhanMode, setAdhanMode] = useState<AdhanMode>("makkah");
@@ -131,7 +151,13 @@ function useEngine() {
     if (st) { stRef.current = st; setStation(st); }
     setVol(readJSON<number>("tf:radio-vol", 1));
     setMixState(readJSON<boolean>("tf:radio-mix", false));
+    const r0 = readJSON<number>("tf:radio-rate", 1);
+    if (RATES.includes(r0)) { rateRef.current = r0; setRateState(r0); }
+    const rp = readJSON<RadioRepeat>("tf:radio-repeat", "off");
+    if (rp === "verse" || rp === "surah") { repeatRef.current = rp; setRepeatState(rp); }
   }, []);
+  // the speed holds for every file the two elements load (load() resets playbackRate to defaultPlaybackRate)
+  useEffect(() => { a.current.forEach((e) => { if (e) { e.defaultPlaybackRate = rate; e.playbackRate = rate; } }); }, [rate]);
   useEffect(() => { a.current.forEach((e) => { if (e) e.volume = vol; }); }, [vol]);
 
   useEffect(() => {
@@ -181,7 +207,13 @@ function useEngine() {
     return () => { off = true; };
   }, [now.s, locale, tid]);
 
-  const prepare = useCallback((el: HTMLAudioElement, p: Pos) => { el.src = urlOf(reciterRef.current, p); el.load(); }, []);
+  const prepare = useCallback((el: HTMLAudioElement, p: Pos) => { el.src = urlOf(reciterRef.current, p); el.defaultPlaybackRate = rateRef.current; el.load(); el.playbackRate = rateRef.current; }, []);
+  // what plays after a verse: the same verse (repeat verse), the surah from its start (repeat surah), else the station's next
+  const following = (p: Pos): Pos => {
+    if (repeatRef.current === "verse") return p;
+    if (repeatRef.current === "surah" && p.v >= countOf(p.s)) return { s: p.s, v: 1 };
+    return nextPos(p, stRef.current);
+  };
 
   const meta = useCallback((p: Pos) => {
     if (typeof navigator === "undefined" || !("mediaSession" in navigator)) return;
@@ -195,15 +227,23 @@ function useEngine() {
     setHistory((h) => (h[0]?.s === p.s && h[0]?.v === p.v ? h : [p, ...h].slice(0, 6)));
     window.dispatchEvent(new Event("tf-radio-start"));
     const cur = a.current[live.current], idle = a.current[1 - live.current];
-    cur.src = urlOf(reciterRef.current, p); cur.load();
-    prepare(idle, nextPos(p, stRef.current));
+    cur.src = urlOf(reciterRef.current, p); cur.defaultPlaybackRate = rateRef.current; cur.load(); cur.playbackRate = rateRef.current;
+    prepare(idle, following(p));
     meta(p);
     if (autoplay) cur.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
-  }, [meta, prepare]);
+  }, [meta, prepare]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // gapless hand-over: the idle element already holds the next verse
   const advance = useCallback(() => {
-    const next = nextPos(pos.current, stRef.current);
+    const next = following(pos.current);
+    // sleep timer "end of the surah": the surah on air is finished – stop here, the next surah waits at its first verse
+    if (eosRef.current && (next.s !== pos.current.s || next.v <= pos.current.v)) {
+      eosRef.current = false; setSleepSel(0);
+      start(next, false);
+      a.current.forEach((e) => e.pause());
+      setPlaying(false);
+      return;
+    }
     // mixed stations: a new surah gets a new voice (a random one of the installed reciters)
     if (next.s !== pos.current.s && (stRef.current.mix || mixRef.current) && recitersRef.current.length > 1) {
       const others = recitersRef.current.filter((r) => r.folder !== reciterRef.current.folder);
@@ -221,7 +261,7 @@ function useEngine() {
       // the preloaded file is missing: skip it so the station keeps running
       if (cur.error && errors.current < 8) { errors.current += 1; setTimeout(() => advanceRef.current(), 600); } else setPlaying(false);
     });
-    prepare(old, nextPos(next, stRef.current));
+    prepare(old, following(next));
     meta(next);
   }, [meta, prepare]); // eslint-disable-line react-hooks/exhaustive-deps
   const advanceRef = useRef(advance);
@@ -233,11 +273,19 @@ function useEngine() {
     if (!cur.src) { start(startOf(stRef.current)); return; }
     if (cur.paused) { window.dispatchEvent(new Event("tf-radio-start")); cur.play().then(() => setPlaying(true)).catch(() => undefined); } else { cur.pause(); setPlaying(false); }
   };
-  const stop = () => { a.current.forEach((e) => { e.pause(); e.removeAttribute("src"); e.load(); }); startedRef.current = false; setStarted(false); setPlaying(false); setSleepLeft(0); setBanner(null); };
+  const stop = () => { a.current.forEach((e) => { e.pause(); e.removeAttribute("src"); e.load(); }); startedRef.current = false; setStarted(false); setPlaying(false); setSleepLeft(0); setSleepSel(0); eosRef.current = false; setOffline(false); setBanner(null); };
   const setVolume = (v: number) => { setVol(v); writeJSON("tf:radio-vol", v, true); };
   const skipVerse = () => advance();
   const skipSurah = () => { const p = pos.current; start(stRef.current.mode === "random" ? { s: randSurah(), v: 1 } : nextPos({ s: p.s, v: countOf(p.s) }, stRef.current)); };
   const prevVerse = () => { const p = pos.current; start(p.v > 1 ? { s: p.s, v: p.v - 1 } : p); };
+  const prevSurah = () => start(prevSurahPos(pos.current, stRef.current, history));
+  const setRate = (r: number) => { rateRef.current = r; setRateState(r); writeJSON("tf:radio-rate", r, true); };
+  // a new repeat rule: what waits in the idle element is replaced at once
+  const setRepeat = (r: RadioRepeat) => {
+    repeatRef.current = r; setRepeatState(r); writeJSON("tf:radio-repeat", r, true);
+    const idle = a.current[1 - live.current];
+    if (startedRef.current && idle) prepare(idle, following(pos.current));
+  };
 
   useEffect(() => {
     if (typeof navigator === "undefined" || !("mediaSession" in navigator)) return;
@@ -282,13 +330,22 @@ function useEngine() {
   // sleep timer
   useEffect(() => {
     if (sleepLeft <= 0) return;
-    const id = setInterval(() => setSleepLeft((s) => { if (s <= 1) { a.current.forEach((e) => e.pause()); setPlaying(false); return 0; } return s - 1; }), 1000);
+    const id = setInterval(() => setSleepLeft((s) => { if (s <= 1) { a.current.forEach((e) => e.pause()); setPlaying(false); setSleepSel(0); return 0; } return s - 1; }), 1000);
     return () => clearInterval(id);
   }, [sleepLeft]);
 
   const chapter = chapters.find((c) => c.id === now.s);
   const verse = verses.find((x) => x.verse_number === now.v);
   const sleepOptions = useMemo(() => [15, 30, 60], []);
+  const setSleep = (v: 0 | 15 | 30 | 60 | "eos") => { setSleepSel(v); eosRef.current = v === "eos"; setSleepLeft(typeof v === "number" ? v * 60 : 0); };
+  // the connection came back (or the visitor tries again): the station goes on where it stopped
+  const retry = () => { setOffline(false); if (startedRef.current) start(pos.current); };
+  useEffect(() => {
+    if (!offline) return;
+    const on = () => { setOffline(false); if (startedRef.current) start(pos.current); };
+    window.addEventListener("online", on);
+    return () => window.removeEventListener("online", on);
+  }, [offline]); // eslint-disable-line react-hooks/exhaustive-deps
   const stationName = (id: string) => t(`st_${id}`);
   const upNext = nextPos(now, station);
   const setVoice = (v: string) => { setVoiceState(v); writeJSON("tf:adhanVoice", v, true); };
@@ -302,11 +359,11 @@ function useEngine() {
       <audio ref={adhanEl} preload="none" />
       {[0, 1].map((i) => (
         <audio key={i} ref={(el) => { if (el) a.current[i] = el; }} preload="auto" x-webkit-airplay="allow" onEnded={() => { errors.current = 0; if (i === live.current) advance(); }}
-          onError={() => { if (i !== live.current || !startedRef.current) return; errors.current += 1; if (errors.current <= 8) setTimeout(() => advance(), 600); else { setPlaying(false); errors.current = 0; } }} onPause={() => { if (i === live.current && !a.current[i].ended) setPlaying(false); }} onPlay={() => { if (i === live.current) { setPlaying(true); quietOthers(); } }} />
+          onError={() => { if (i !== live.current || !startedRef.current) return; if (typeof navigator !== "undefined" && navigator.onLine === false) { a.current.forEach((e) => e.pause()); setPlaying(false); setOffline(true); errors.current = 0; return; } errors.current += 1; if (errors.current <= 8) setTimeout(() => advance(), 600); else { setPlaying(false); errors.current = 0; } }} onPause={() => { if (i === live.current && !a.current[i].ended) setPlaying(false); }} onPlay={() => { if (i === live.current) { setPlaying(true); quietOthers(); } }} />
       ))}
     </>
   );
-  return { mix, setMix, station, playing, started, now, chapter, verse, upNext, history, chapters, reciter, reciters, changeReciter, sleepLeft, setSleepLeft, sleepOptions, adhanMode, setAdhanMode: setAdhan, adhanFiles, adhanCredit, voice, setVoice, testAdhan, stopAdhan, banner, showText, setShowText, vol, setVolume, chooseStation, toggle, skipVerse, skipSurah, prevVerse, stop, stationName, audios, castable, airplay, cast, shareRadio };
+  return { mix, setMix, station, playing, started, now, chapter, verse, upNext, history, chapters, reciter, reciters, changeReciter, sleepLeft, setSleepLeft, sleepOptions, sleep, setSleep, offline, retry, rate, setRate, rates: RATES, repeat, setRepeat, prevSurah, adhanMode, setAdhanMode: setAdhan, adhanFiles, adhanCredit, voice, setVoice, testAdhan, stopAdhan, banner, showText, setShowText, vol, setVolume, chooseStation, toggle, skipVerse, skipSurah, prevVerse, stop, stationName, audios, castable, airplay, cast, shareRadio };
 }
 
 type Radio = ReturnType<typeof useEngine>;

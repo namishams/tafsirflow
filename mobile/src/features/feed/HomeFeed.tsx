@@ -40,10 +40,11 @@ import { ExploreSheet, SavedSheet, type OpenItem } from "./Explore";
 import { usePT } from "@/features/talents/profileText";
 import { TravelFeedBanner } from "@/features/talents/TravelCard";
 import { hadithFeedItems, type HadithFeedItem } from "./hadith";
+import { SAVED_NAMES_KEY, toggleSavedName } from "./savedNames";
 import { ReciterSheet, useFeedAudioGuard, useFeedVoice } from "./voice";
 import { SAVED_KEY as HADITH_SAVED_KEY, toggleSaved as toggleSavedHadith, type HadithItem } from "@/features/hadith/data";
 import { readTradition } from "@/lib/tradition";
-import { HeartBurst, useTapGestures } from "./ui";
+import { FeedEmpty, HeartBurst, useStalled, useTapGestures } from "./ui";
 import { LIB_TOPICS, LibScheduler, isLibId, onLibData, takeRemoteNew, type LibTopic } from "./library";
 import { flagOn, loadRemoteConfig, updateAvailable, useRemoteConfig } from "./remote";
 import Constants from "expo-constants";
@@ -58,6 +59,9 @@ import { MomentCard, MonetizeCap, OfferWrap, PaywallCard, PremiumPost, markShare
 import { dwell, engaged, isBored } from "./interest";
 import { LibraryPost, topicLabel as libTopicLabel } from "./LibraryPost";
 import { Rule } from "./ornament";
+import { isCarouselId, isWisdomId } from "@/features/carousel/registry";
+import { CarouselPost as CarouselFeedPost, WisdomPost } from "@/features/carousel/Posts";
+import { useSwipeT } from "@/features/swipe/texts";
 
 // The Instagram home-feed view of /feed: logo bar, a stories rail, then one post after the other. A post is a square
 // card (the verse or story drawn like the share image) with a slow Ken Burns zoom; the recitation of the post that is
@@ -96,6 +100,7 @@ function useLocalFlag(storageKey: string, id: string) {
 export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: "home" | "reels"; onTab: (t: "home" | "reels") => void; inTab?: boolean; bottomSpace?: number; onOpen?: OpenItem }) {
   const tx = useFeedText();
   const tpp = usePT();
+  const swipeT = useSwipeT();
   const pt = useProphetText();
   const t = useTheme();
   const { lang } = useLang();
@@ -151,7 +156,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       if (gen !== hq.current.gen) return;
       h.cursor = page.cursor;
       const ids = page.items.map((it) => { const id = `h:${it.id}`; HADITH.set(id, it); return id; });
-      if (topicRef.current === "hadith") { setKeys((k) => [...k, ...ids]); return; }
+      // an empty page means offline: the hadith topic says so at once instead of loading on
+      if (topicRef.current === "hadith") { if (!ids.length) failRef.current(); setKeys((k) => [...k, ...ids]); return; }
       h.queue.push(...ids);
       // the first page came after the posts: one hadith a few posts ahead of the reader
       setKeys((k) => {
@@ -159,8 +165,9 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         const at = Math.min(k.length, Math.max(3, activeRef.current + 2));
         return [...k.slice(0, at), h.queue.shift()!, ...k.slice(at)];
       });
-    }).catch(() => undefined).finally(() => { h.loading = false; });
+    }).catch(() => { if (topicRef.current === "hadith") failRef.current(); }).finally(() => { h.loading = false; });
   }, [lang]);
+  const failRef = useRef(() => undefined as void);
 
   const storyQueue = useRef<string[]>([]);
   const shownPrayer = useRef(new Set<string>());
@@ -246,6 +253,12 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   }, [lang, nextPosts]);
   const storiesReady = stories.byId.size > 0;
   useEffect(() => { engine.stop(); setKeys(build()); setActive(0); list.current?.scrollToOffset({ offset: 0, animated: false }); }, [build, storiesReady, voice.sig, topic, engine]);
+  // a topic without posts: the skeleton while they load, then (nothing arrived: offline, a source down) the reason
+  // with "Try again", which builds the topic again
+  const [retries, setRetries] = useState(0);
+  const [stalled, setStalled] = useStalled(keys.length === 0, [topic, retries, lang]);
+  failRef.current = () => setStalled(true);
+  const retryEmpty = useCallback(() => { setRetries((n) => n + 1); engine.stop(); setKeys(build()); setActive(0); }, [build, engine]);
 
   const more = useCallback(() => {
     const queued = keys.slice(activeRef.current).filter((k) => k.startsWith("s:")).length;
@@ -421,6 +434,9 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     };
     return groups.flatMap((g, i) => ((i + 1) % PROMO_EVERY === 0 ? [g, promo(i)] : [g]));
   }, [groups, voice.pro, tx]);
+  // the opened card in viewerGroups (a promo after every PROMO_EVERY groups shifts the index); one stable object per
+  // opening, so a re-render of the feed while the viewer is open never moves it back to this card
+  const viewerStart = useMemo(() => (viewer ? { group: viewer.group + Math.floor(viewer.group / PROMO_EVERY) * (voice.pro ? 0 : 1), story: viewer.story } : null), [viewer, voice.pro]);
   const colW = Math.min(width, MAX_W);
   // voices of the "same verse, different reciters" post: only the allowed ones (allowedReciter)
   const voices = useMemo(() => voice.all.filter((r) => voice.pro || isFreeReciter(r)).map((r) => allowedReciter(r, voice.pro, voice.all)), [voice.all, voice.pro]);
@@ -434,6 +450,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   usePurchaseAttribution(voice.pro);
   const renderPost = useCallback(({ item, index }: { item: Item; index: number }) => {
     const ex = { item, width: colW, lang, reciter: voice.voiceFor(item), nameOf, reduce };
+    if (isCarouselId(item)) return <CarouselFeedPost id={item} width={colW} />;
+    if (isWisdomId(item)) return <WisdomPost id={item} width={colW} />;
     if (item.startsWith("q:")) return <QuizPost {...ex} />;
     if (item.startsWith("c:")) return <CarouselPost {...ex} />;
     if (item.startsWith("m:")) return <MemoPost {...ex} />;
@@ -538,8 +556,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         renderItem={render as never}
         extraData={`${active}|${muted}|${focused}|${tab}`}
         ListHeaderComponent={header}
-        ListFooterComponent={<View style={{ paddingBottom: insets.bottom + bottomSpace + 24 }}><PostSkeleton width={colW} reduce={reduce} /></View>}
-        ListEmptyComponent={<View><PostSkeleton width={colW} reduce={reduce} /></View>}
+        ListFooterComponent={<View style={{ paddingBottom: insets.bottom + bottomSpace + 24 }}>{keys.length ? <PostSkeleton width={colW} reduce={reduce} /> : null}</View>}
+        ListEmptyComponent={stalled ? <FeedEmpty state="failed" onRetry={retryEmpty} /> : <View accessible accessibilityLabel={tx.loadingPosts}><PostSkeleton width={colW} reduce={reduce} /></View>}
         contentContainerStyle={{ paddingTop: headerH, alignItems: "stretch" }}
         showsVerticalScrollIndicator={false}
         scrollEventThrottle={16}
@@ -575,13 +593,14 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
           </View>
         </View>
         <View accessibilityRole="tablist" style={{ height: TABS_H, flexDirection: "row" }}>
-          {(["home", "reels", "explore"] as const).map((k) => {
+          {(["home", "reels", "explore", "learn"] as const).map((k) => {
             const on = tab === k;
-            // Explore opens the full-screen Explore grid (same as the compass), like Instagram's third view
-            const press = () => (k === "explore" ? setSheet("explore") : on ? toTop() : onTab(k));
+            // Explore opens the full-screen Explore grid (same as the compass), like Instagram's third view;
+            // Learn opens Swipe & Learn (features/swipe)
+            const press = () => (k === "learn" ? router.push("/swipe" as Href) : k === "explore" ? setSheet("explore") : on ? toTop() : onTab(k));
             return (
               <Pressable key={k} onPress={press} accessibilityRole="tab" accessibilityState={{ selected: on }} style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-                <Text style={{ fontFamily: on ? FONT.semibold : FONT.medium, fontSize: 14, letterSpacing: 0.3, color: on ? t.ink : t.muted }}>{k === "home" ? tx.home : k === "reels" ? tx.reels : tx.explore}</Text>
+                <Text style={{ fontFamily: on ? FONT.semibold : FONT.medium, fontSize: 14, letterSpacing: 0.3, color: on ? t.ink : t.muted }}>{k === "home" ? tx.home : k === "reels" ? tx.reels : k === "learn" ? swipeT("tab") : tx.explore}</Text>
                 {/* the selected view: a fine gold rule with a small lozenge, like a mushaf divider */}
                 {on ? <View style={{ position: "absolute", bottom: 0, alignItems: "center", justifyContent: "center", width: 64, height: 7 }}>
                   <LinearGradient colors={["rgba(214,180,108,0)", "rgb(201,166,94)", "rgba(214,180,108,0)"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ position: "absolute", left: 0, right: 0, height: 1.5 }} />
@@ -610,7 +629,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       <ReciterSheet visible={sheet === "voices"} onClose={() => setSheet(null)} />
       <AccountNudge />
       <CommentsSheet visible={!!comments} verseKey={comments ?? "1:1"} onClose={() => setComments(null)} />
-      <StoryViewer groups={viewerGroups} start={viewer ? { group: viewer.group + Math.floor(viewer.group / PROMO_EVERY) * (voice.pro ? 0 : 1), story: viewer.story } : null} onClose={() => setViewer(null)} />
+      <StoryViewer groups={viewerGroups} start={viewerStart} onClose={() => setViewer(null)} />
       <Celebrations />
       {sh ? <SpecShareSheet spec={sh} quick={quickShare} onClose={() => setShare(null)} /> : null}
     </View>
@@ -724,8 +743,9 @@ const Post = memo(function Post(p: PostProps) {
   const marks = useStored<string[]>("tf:bookmarks", []);
   const saves = useStored<string[]>(SAVED_KEY, []);
   const hSaves = useStored<HadithItem[]>(HADITH_SAVED_KEY, []);
+  const nSaves = useStored<string[]>(SAVED_NAMES_KEY, []);
   const liked = verseKey ? like.liked : lLocal;
-  const saved = verseKey ? marks.includes(verseKey) : hadith ? hSaves.some((x) => x.id === hadith.item.id) : saves.includes(storyId);
+  const saved = verseKey ? marks.includes(verseKey) : hadith ? hSaves.some((x) => x.id === hadith.item.id) : name ? nSaves.includes(name.ar) : saves.includes(storyId);
   const pop = useRef(new Animated.Value(1)).current;
   const popSave = useRef(new Animated.Value(1)).current;
   const bump = (v: Animated.Value) => { if (!p.reduce) Animated.sequence([Animated.timing(v, { toValue: 1.12, duration: 140, easing: Easing.out(Easing.quad), useNativeDriver: true }), Animated.timing(v, { toValue: 1, duration: 220, easing: Easing.inOut(Easing.quad), useNativeDriver: true })]).start(); };
@@ -736,6 +756,7 @@ const Post = memo(function Post(p: PostProps) {
     if (verseKey) { const cur = readJSON<string[]>("tf:bookmarks", []); writeJSON("tf:bookmarks", cur.includes(verseKey) ? cur.filter((k) => k !== verseKey) : [...cur, verseKey]); }
     else if (storyId) toggleSavedStory(storyId);
     else if (hadith) toggleSavedHadith(hadith.item);
+    else if (name) toggleSavedName(name.ar);
   };
   const [burst, setBurst] = useState(0);
   const gestures = useTapGestures({
@@ -811,9 +832,12 @@ const Post = memo(function Post(p: PostProps) {
         {verseKey ? <LearnLink href={`/shams/${surahNo}?v=${verseKey.split(":")[1]}`} label={tx.learnThis} />
           : story ? <LearnLink href={story.href} label={tx.learnThis} />
           : name ? <LearnLink href="/islam/names" label={tx.learnThis} /> : null}
-        <Pressable onPress={() => p.onMenu(p.item)} accessibilityRole="button" accessibilityLabel={tx.options} hitSlop={10} style={{ width: 40, height: 40, alignItems: "center", justifyContent: "center" }}>
-          <View style={{ flexDirection: "row", gap: 3.5 }}>{[0, 1, 2].map((i) => <View key={i} style={{ width: 4, height: 4, borderRadius: 2, backgroundColor: t.ink }} />)}</View>
-        </Pressable>
+        {/* the options (PostMenu): only for posts that have some (verse, story, name, hadith), never a button that does nothing */}
+        {verseKey || story || name || hadith ? (
+          <Pressable onPress={() => p.onMenu(p.item)} accessibilityRole="button" accessibilityLabel={tx.options} hitSlop={10} style={{ width: 40, height: 40, alignItems: "center", justifyContent: "center" }}>
+            <View style={{ flexDirection: "row", gap: 3.5 }}>{[0, 1, 2].map((i) => <View key={i} style={{ width: 4, height: 4, borderRadius: 2, backgroundColor: t.ink }} />)}</View>
+          </Pressable>
+        ) : null}
       </View>
 
       {/* media: the verse / story card, square */}
@@ -906,6 +930,8 @@ function PostMenu({ item, onClose, stories, onShare, onVoices }: { item: Item | 
   const reciter = item ? voice.voiceFor(item) : voice.reciter;
   const verseKey = item && /^[vw]:/.test(item) ? item.slice(2) : "";
   const story = item?.startsWith("s:") ? stories.byId.get(item.slice(2)) : undefined;
+  const name = item?.startsWith("n:") ? stories.names[Number(item.slice(2))] : undefined;
+  const hSaves = useStored<HadithItem[]>(HADITH_SAVED_KEY, []);
   const [s, v] = verseKey.split(":");
   const go = (href: string) => { onClose(); router.push(href as Href); };
   const rows: { label: string; icon: IconName; onPress: () => void }[] = [];
@@ -917,9 +943,18 @@ function PostMenu({ item, onClose, stories, onShare, onVoices }: { item: Item | 
   } else if (story) {
     rows.push({ label: ws("share"), icon: "send", onPress: () => onShare({ kind: "story", s: story }) });
     rows.push({ label: pt.readFull, icon: "book", onPress: () => go(story.href) });
+  } else if (name) {
+    // a name of Allah: share its image, or the whole list of the 99 names in the Islam library
+    rows.push({ label: ws("share"), icon: "send", onPress: () => onShare({ kind: "name", n: name }) });
+    rows.push({ label: tx.topicNames, icon: "book", onPress: () => go("/islam/names") });
   } else if (item?.startsWith("h:") && HADITH.get(item)) {
     const h = HADITH.get(item)!;
+    const hSaved = hSaves.some((x) => x.id === h.item.id);
     rows.push({ label: ws("share"), icon: "send", onPress: () => onShare({ kind: "hadith", h }) });
+    rows.push({ label: hSaved ? pt.unsave : pt.save, icon: "bookmark", onPress: () => { if (!hSaved) statSave(); toggleSavedHadith(h.item); onClose(); } });
+    // the collection it comes from (Sunni collections and Thaqalayn books; the Nahj al-Balagha passages have their own page)
+    const coll = h.item.source === "nahj" ? "/nahj" : `/hadith/${encodeURIComponent(h.item.collection)}`;
+    if (h.item.collectionName) rows.push({ label: h.item.collectionName, icon: "book", onPress: () => go(coll) });
   }
   return (
     <Modal visible={!!item && rows.length > 0} transparent animationType="slide" onRequestClose={onClose}>

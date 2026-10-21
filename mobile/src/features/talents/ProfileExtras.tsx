@@ -2,12 +2,17 @@ import { useEffect, useState } from "react";
 import { Modal, Pressable, ScrollView, Share, Text, View } from "react-native";
 import * as Clipboard from "expo-clipboard";
 import { router, type Href } from "expo-router";
+import * as Haptics from "expo-haptics";
 import { FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
 import { GoldButton, OutlineButton } from "@/components/brand";
 import { Icon, type IconName } from "@/components/icons";
 import { QrCode } from "@/features/exam/ExamUI";
+import { LinearGradient } from "expo-linear-gradient";
+import { ShareSheet as ImageShareSheet } from "@/features/feed/share";
+import { CARD_SIZE, PALETTES, type ShareFormat, type ShareOpts } from "@/features/share/formats";
+import { useLang } from "@/i18n";
 import { T, type TalentCard, type TalentProfile } from "./api";
-import { BadgeButton } from "./badges";
+import { BadgeButton, BadgeMark as BadgeMarkStatic } from "./badges";
 import { TalentAvatar, useTalentErr } from "./ui";
 import { usePT, type PKey } from "./profileText";
 import { useTT } from "./text";
@@ -95,14 +100,20 @@ export function Suggested({ exclude, seeAll, inset = 0 }: { exclude?: string; se
   const tt = useTT();
   const pt = usePT();
   const err = useTalentErr();
-  const [list, setList] = useState<(TalentCard & { done?: boolean })[] | null>(null);
+  const [list, setList] = useState<TalentCard[] | null>(null);
   const [msg, setMsg] = useState("");
   useEffect(() => { T.suggested().then((d) => setList(d.talents.filter((x) => x.username !== exclude))).catch(() => setList([])); }, [exclude]);
   if (!list?.length && !seeAll) return null;
-  const follow = async (c: TalentCard & { done?: boolean }) => {
+  // optimistic with a light haptic tap; a failed call puts the card back. Followed and requested stay apart (a pending
+  // request to a private account reads "Requested"; tapping it again withdraws the request)
+  const follow = async (c: TalentCard) => {
     setMsg("");
-    try { const d = await T.follow(c.username, !c.done); setList((l) => l?.map((x) => (x.username === c.username ? { ...x, done: d.followed || !!d.requested } : x)) ?? null); }
-    catch (e) { setMsg(err(e)); }
+    const mark = (followed: boolean, requested: boolean) => setList((l) => l?.map((x) => (x.username === c.username ? { ...x, followed, requested } : x)) ?? null);
+    const on = !c.followed && !c.requested;
+    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => undefined);
+    mark(on && !c.private, on && !!c.private);
+    try { const d = await T.follow(c.username, on); mark(d.followed, !!d.requested && !d.followed); }
+    catch (e) { mark(!!c.followed, !!c.requested); setMsg(err(e)); }
   };
   return (
     <View style={{ gap: 8 }}>
@@ -122,7 +133,7 @@ export function Suggested({ exclude, seeAll, inset = 0 }: { exclude?: string; se
         </Pressable>
       ) : (
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10, paddingVertical: 2, paddingHorizontal: inset }}>
-        {list.map((c) => (
+        {list.map((c) => { const done = !!(c.followed || c.requested); return (
           <View key={c.username} style={{ width: 148, borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 12, alignItems: "center", gap: 6 }}>
             <Pressable onPress={() => router.push(`/talents/u/${c.username}` as Href)} accessibilityRole="link" accessibilityLabel={`${c.name}, @${c.username}`} style={{ alignItems: "center", gap: 5 }}>
               <TalentAvatar name={c.name} size={64} uri={c.avatar} badge={c.badge} />
@@ -132,13 +143,13 @@ export function Suggested({ exclude, seeAll, inset = 0 }: { exclude?: string; se
               </View>
               <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted, writingDirection: "ltr" }}>@{c.username}</Text>
             </Pressable>
-            <Pressable onPress={() => void follow(c)} accessibilityRole="button" accessibilityState={{ selected: !!c.done }}
+            <Pressable onPress={() => void follow(c)} accessibilityRole="button" accessibilityState={{ selected: done }}
               style={({ pressed }) => ({ alignSelf: "stretch", minHeight: 34, borderRadius: R.md, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.7 : 1,
-                backgroundColor: c.done ? t.surface : goldButton.to, borderWidth: 1, borderColor: c.done ? t.line : goldButton.line })}>
-              <Text style={{ fontFamily: FONT.bold, fontSize: 13, color: c.done ? t.ink : goldButton.text }}>{c.done ? tt("followingBtn") : c.followsMe ? pt("followBack") : tt("follow")}</Text>
+                backgroundColor: done ? t.surface : goldButton.to, borderWidth: 1, borderColor: done ? t.line : goldButton.line })}>
+              <Text style={{ fontFamily: FONT.bold, fontSize: 13, color: done ? t.ink : goldButton.text }}>{c.followed ? tt("followingBtn") : c.requested ? tt("requested") : c.followsMe ? pt("followBack") : tt("follow")}</Text>
             </Pressable>
           </View>
-        ))}
+        ); })}
       </ScrollView>
       )}
       {msg ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted, paddingHorizontal: inset }}>{msg}</Text> : null}
@@ -186,6 +197,7 @@ export function ShareSheet({ p, visible, onClose }: { p: TalentProfile; visible:
   const t = useTheme();
   const pt = usePT();
   const [copied, setCopied] = useState(false);
+  const [image, setImage] = useState(false);
   const url = p.shareUrl ?? "";
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
@@ -213,9 +225,55 @@ export function ShareSheet({ p, visible, onClose }: { p: TalentProfile; visible:
           <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted, textAlign: "center" }}>{pt("scanHint")}</Text>
         </View>
         <GoldButton title={pt("share")} icon="share" onPress={() => void Share.share({ message: `${p.name} (@${p.username}) · Quran Masterclass Talents\n${url}` }).catch(() => undefined)} />
+        {/* the profile card as an image: story 9:16 (1080 × 1920), portrait 4:5 and square 1:1 (1080 × 1080) */}
+        <OutlineButton title={pt("shareImage")} icon="send" onPress={() => setImage(true)} />
         <OutlineButton title={copied ? pt("copied") : pt("copyLink")} icon="copy" onPress={() => void Clipboard.setStringAsync(url).then(() => setCopied(true)).catch(() => undefined)} />
         <Text selectable style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted, textAlign: "center", writingDirection: "ltr" }}>{url}</Text>
       </ScrollView>
+      <ImageShareSheet visible={image} onClose={() => setImage(false)} link={url} message={`${p.name} (@${p.username}) · Quran Masterclass Talents`} templated noDecoration seed={p.username}
+        renderCard={(f, o) => <ProfileShareCard p={p} format={f} opts={o} />} />
     </Modal>
+  );
+}
+
+/** the shareable profile card at CARD_SIZE[format]: gold wordmark, avatar, name with badge, @username, the counters
+ * and the QR code of the public profile, on the chosen design's ground */
+export function ProfileShareCard({ p, format, opts }: { p: TalentProfile; format: ShareFormat; opts: ShareOpts }) {
+  const pt = usePT();
+  const tt = useTT();
+  const { lang } = useLang();
+  const pal = PALETTES[opts.palette] ?? PALETTES.night;
+  const { w, h } = CARD_SIZE[format];
+  const story = format === "story", square = format === "square";
+  const qr = story ? 170 : square ? 92 : 120;
+  const av = story ? 96 : square ? 56 : 72;
+  const nf = (n: number) => { try { return Intl.NumberFormat(lang, { notation: n >= 10000 ? "compact" : "standard", maximumFractionDigits: 1 }).format(n); } catch { return String(n); } };
+  const stat = (n: number, label: string) => (
+    <View style={{ alignItems: "center", minWidth: 70 }}>
+      <Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: square ? 15 : 18, color: pal.ink }}>{nf(n)}</Text>
+      <Text allowFontScaling={false} numberOfLines={1} style={{ fontFamily: FONT.medium, fontSize: square ? 10 : 11.5, color: pal.muted }}>{label}</Text>
+    </View>
+  );
+  return (
+    <LinearGradient colors={pal.bg as [string, string, ...string[]]} style={{ width: w, height: h, alignItems: "center", justifyContent: "center", paddingHorizontal: 26, gap: story ? 12 : square ? 5 : 8 }}>
+      <View pointerEvents="none" style={{ position: "absolute", top: 12, left: 12, right: 12, bottom: 12, borderRadius: 18, borderWidth: 1, borderColor: pal.line, opacity: 0.7 }} />
+      <Text allowFontScaling={false} style={{ fontFamily: FONT.display, fontSize: story ? 24 : square ? 16 : 19, letterSpacing: 0.4, color: pal.wordmark === "gold" ? "#D6B46C" : pal.accent }}>Quran Masterclass</Text>
+      <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: square ? 10.5 : 12.5, letterSpacing: 1.2, color: pal.soft, marginTop: story ? -8 : -4 }}>Talents</Text>
+      <View style={{ marginTop: story ? 10 : 2 }}><TalentAvatar name={p.name} size={av} uri={p.avatar} badge={p.badge} /></View>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 6, maxWidth: w - 60 }}>
+        <Text allowFontScaling={false} numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.display, fontSize: story ? 22 : square ? 15 : 18, color: pal.ink }}>{p.name}</Text>
+        {p.badge ? <BadgeMarkStatic badge={p.badge} size={story ? 20 : 15} /> : null}
+      </View>
+      <Text allowFontScaling={false} style={{ fontFamily: FONT.semibold, fontSize: square ? 11.5 : 14, color: pal.soft, writingDirection: "ltr", marginTop: -2 }}>@{p.username}</Text>
+      <View style={{ flexDirection: "row", gap: 6, marginTop: story ? 6 : 2 }}>
+        {stat(p.following, tt("following"))}{stat(p.followers, tt("followers"))}{stat(p.mashaallahTotal ?? 0, pt("statMashaAllah"))}
+      </View>
+      {p.shareQr?.length ? (
+        <View style={{ marginTop: story ? 14 : 4, padding: square ? 6 : 9, borderRadius: 12, backgroundColor: "#fff", borderWidth: 2, borderColor: "#D6B46C" }}>
+          <QrCode rows={p.shareQr} size={qr} color={stage.bg} />
+        </View>
+      ) : null}
+      <Text allowFontScaling={false} style={{ fontFamily: FONT.regular, fontSize: square ? 9.5 : 11.5, color: pal.muted, textAlign: "center" }}>{pt("scanHint")}</Text>
+    </LinearGradient>
   );
 }

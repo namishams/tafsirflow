@@ -99,20 +99,26 @@ function Body({ surah, from, to }: { surah: number; from: number; to?: number })
   useEffect(() => { setPi(0); setStep(timed ? "listen" : "verse"); }, [vi, timed]);
 
   const verseMs = verse?.segments.length ? Math.max(...verse.segments.map((x) => x.end)) - Math.min(...verse.segments.map((x) => x.start)) : null;
+  // XP and growth come once per verse and visit (a passed check or the first "well done"), never per tap
+  const rewarded = useRef(new Set<string>());
+  const reward = (key: string) => { if (rewarded.current.has(key)) return; rewarded.current.add(key); gEvent({ t: "verse" }); shamsGrow("verse", false); };
   const onPhrase = (r: CheckResult) => { if (verse && phrase) noteWords(verse.verse_key, phrase.words.map((x, i) => ({ position: x.position, ok: !!r.ok[i] }))); };
   const onVerse = (r: CheckResult) => {
     if (!verse) return;
     noteWords(verse.verse_key, allWords.map((x, i) => ({ position: x.position, ok: !!r.ok[i] })));
     noteCheck(verse.verse_key, r.ok.filter(Boolean).length, r.ok.length);
-    if (r.pass) { gEvent({ t: "verse" }); shamsGrow("verse", false); }
+    if (r.pass) reward(verse.verse_key);
   };
   const [rated, setRated] = useState<"good" | "slip" | null>(null);
   useEffect(() => setRated(null), [vi]);
+  // the self-assessment is recorded once per verse (the first answer); a later click only changes what is shown
   const selfRate = (good: boolean) => {
     if (!verse) return;
+    const first = rated === null;
     setRated(good ? "good" : "slip");
+    if (!first) return;
     noteCheck(verse.verse_key, good ? allWords.length : Math.floor(allWords.length / 2), allWords.length);
-    if (good) { gEvent({ t: "verse" }); shamsGrow("verse", false); }
+    if (good) reward(verse.verse_key);
   };
   const nextVerse = () => { audio.stop(); if (vi < last) { setVi(vi + 1); window.scrollTo({ top: 0, behavior: "smooth" }); } else router.replace(`/shams/next?s=${surah}`); };
 

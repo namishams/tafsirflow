@@ -1,8 +1,8 @@
 {
- "kicker": "Mishary yolu",
+ "kicker": "Masâr el-Kurrâ",
  "title": "Yeni kâri neslini yetiştirmek",
  "lead": "Kâri Yolu'ndan sonra: kulağınızı makamlara alıştırın, ustaların üslubunu inceleyin, günlük bir kayıt defteri tutun, doğrulanmış bir ustadan geri bildirim alın ve yetenek sezonlarına katılın.",
- "cardTitle": "Mishary yolu",
+ "cardTitle": "Masâr el-Kurrâ",
  "cardLead": "Makam kulak eğitimi, ustaların üslup çalışmaları, günlük kayıt defteri, mentorluk ve yetenek sezonları.",
  "tileSub": "Makam kulağı, ustaların üslubu, mentorluk, sezonlar",
  "needsReview": "İnceleme bekliyor",
@@ -215,5 +215,10 @@
  "startsOn": "Başlangıç (YYYY-MM-DD)",
  "endsOn": "Bitiş (YYYY-MM-DD)",
  "titleField": "Başlık (isteğe bağlı)",
- "create": "Oluştur"
+ "create": "Oluştur",
+ "safetyFor": "{name} kullanıcısını bildirin veya engelleyin",
+ "reportRecording": "Kaydı bildir",
+ "reportReview": "Geri bildirimi bildir",
+ "blockedNote": "{name} engellendi ve artık burada görünmüyor.",
+ "mentoringNote": "Kayıtlar gizlidir ve 60 gün sonra silinir. 16 yaşından itibaren."
 }

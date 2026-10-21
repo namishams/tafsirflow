@@ -8,10 +8,11 @@ import { useLang } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { SURAHS } from "@/features/garden/catalog";
-import { M, type Placement, type Season, type SeasonItem } from "./api";
+import { M, type Member, type Placement, type Season, type SeasonItem } from "./api";
 import { useMt } from "./texts";
 import { Card, Chip, ErrorText, Muted, Recorder, Row, Section, useLoad, type Take } from "./ui";
 import { Gate, MemberLine, VersePick, useErr } from "./Mentoring";
+import { MentoringSafetyBar, SafetyButton, useMentoringSafety } from "./safety";
 
 // Talent seasons: monthly challenges (created by the server for every month), Ramadan and special seasons (admin).
 // An entry is a private recording heard only by the jury (masters and admins), without the member's name. Published
@@ -107,7 +108,8 @@ export function SeasonsScreen() {
   );
 }
 
-export function Podium({ list }: { list: Placement[] }) {
+/** the podium; onMember (report or block a placed member) for everyone but the viewer */
+export function Podium({ list, onMember }: { list: Placement[]; onMember?: (m: Member) => void }) {
   const t = useTheme();
   const mt = useMt();
   return (
@@ -124,7 +126,7 @@ export function Podium({ list }: { list: Placement[] }) {
               </View>
             ) : null}
           </Row>
-          {p.member ? <MemberLine m={p.member} /> : null}
+          {p.member ? <MemberLine m={p.member} right={onMember && !p.mine ? <SafetyButton label={mt("safetyFor", { name: `@${p.member.username}` })} onPress={() => onMember(p.member!)} /> : undefined} /> : null}
         </View>
       ))}
     </View>
@@ -153,6 +155,8 @@ export function SeasonScreen({ slug }: { slug: string }) {
   };
   const admin = (a: "judging" | "publish") => void M.seasonAction(slug, a).then(() => { d.reload(); list.reload(); }).catch((e) => setMsg(err(e)));
   const open = s?.status === "open" && s.endsOn >= new Date().toISOString().slice(0, 10);
+  // jurors report an entry (anonymous: the member stays hidden), everyone can report or block a placed member
+  const safe = useMentoringSafety(() => { d.reload(); jury.reload(); });
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -183,18 +187,21 @@ export function SeasonScreen({ slug }: { slug: string }) {
                 ) : null}
                 <ErrorText text={msg} />
                 <Section title={mt("hofTitle")}>
-                  <Card>{d.data!.results.length ? <Podium list={d.data!.results} /> : <Muted>{mt("noResults")}</Muted>}</Card>
+                  <Card>{d.data!.results.length ? <Podium list={d.data!.results} onMember={safe.memberMenu} /> : <Muted>{mt("noResults")}</Muted>}</Card>
                 </Section>
                 {list.data?.judge && !s.published ? (
                   <Section title={`${mt("toJudge")} (${jury.data?.length ?? 0})`}>
                     <Card style={{ gap: 0 }}>
                       {(jury.data ?? []).length ? (jury.data ?? []).map((x) => (
-                        <Pressable key={x.id} onPress={() => router.push(href(`/mishary/mentoring/${x.id}`))} accessibilityRole="button"
-                          style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingVertical: 10, borderTopWidth: 1, borderTopColor: t.line }}>
-                          <Icon name="speaker" size={16} color={t.gold} />
-                          <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{mt("entry", { n: x.id })} · {Math.round(x.durationMs / 1000)} s</Text>
-                          <Icon name="chevronRight" size={15} color={t.muted} />
-                        </Pressable>
+                        <View key={x.id} style={{ flexDirection: "row", alignItems: "center", gap: 4, borderTopWidth: 1, borderTopColor: t.line }}>
+                          <Pressable onPress={() => router.push(href(`/mishary/mentoring/${x.id}`))} accessibilityRole="button"
+                            style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 10, paddingVertical: 10 }}>
+                            <Icon name="speaker" size={16} color={t.gold} />
+                            <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{mt("entry", { n: x.id })} · {Math.round(x.durationMs / 1000)} s</Text>
+                            <Icon name="chevronRight" size={15} color={t.muted} />
+                          </Pressable>
+                          <SafetyButton label={mt("reportRecording")} onPress={() => safe.reportSubmission(x.id)} />
+                        </View>
                       )) : <Muted>{mt("none")}</Muted>}
                     </Card>
                   </Section>
@@ -208,9 +215,12 @@ export function SeasonScreen({ slug }: { slug: string }) {
               </>
             )}
           </Gate>
+          {safe.note ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.accent }}>{safe.note}</Text> : null}
+          <MentoringSafetyBar />
           <View style={{ height: 40 }} />
         </View>
       </Page>
+      {safe.sheet}
     </>
   );
 }
@@ -221,6 +231,7 @@ export function HallOfFameScreen() {
   const { lang } = useLang();
   const { user } = useAuth();
   const d = useLoad(() => (user ? M.hallOfFame() : Promise.resolve(null)), [user]);
+  const safe = useMentoringSafety(() => d.reload());
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -230,13 +241,16 @@ export function HallOfFameScreen() {
           <Gate error={d.error}>
             {!d.data ? <Muted>{mt("loading")}</Muted> : d.data.seasons.length ? d.data.seasons.map((x) => (
               <Section key={x.season.slug} title={seasonTitle(x.season, mt, lang)}>
-                <Card><Podium list={x.podium} /></Card>
+                <Card><Podium list={x.podium} onMember={safe.memberMenu} /></Card>
               </Section>
             )) : <Muted>{mt("noResults")}</Muted>}
           </Gate>
+          {safe.note ? <Muted>{safe.note}</Muted> : null}
+          <MentoringSafetyBar />
           <View style={{ height: 40 }} />
         </View>
       </Page>
+      {safe.sheet}
     </>
   );
 }

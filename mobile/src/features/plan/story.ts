@@ -4,10 +4,14 @@ import { useLang } from "@/i18n";
 // garden stands for patience (sabr), and the tree is a SYMBOL of their effort and sincerity, never more: the app's tree
 // is not seen or rewarded by Allah and promises nothing; the texts say "Let this tree remind you". Polite form.
 //
-// NEEDS SCHOLARLY REVIEW: every religious reference below (Sahih al-Bukhari 5027 is shown from the app's own hadith
-// texts; Sahih Muslim 2564, Jami' at-Tirmidhi 3464, Quran 14:24 and 35:29 are paraphrased and marked as such; the du'a
-// of Quran 20:114 is rendered from the app's Quran data). Learners who follow the Shia tradition see only the Quran
-// references. Check wording and attributions with a qualified scholar before release.
+// NEEDS SCHOLARLY REVIEW: every religious reference below. Sahih al-Bukhari 5027 is rendered from the synced hadith
+// sources, Quran 14:24 and 35:29 from the app's Quran data (translation, Arabic readers the Uthmani text), the du'a of
+// Quran 20:114 from the Quran data (Arabic words and, where the translation quotes them, their meaning) – see
+// sources.ts; the lines here for them are only the offline fallback and are then marked "paraphrase" (`para`).
+// Sahih Muslim 2564 and Jami' at-Tirmidhi 3464 are paraphrased and marked as such (the synced collections number
+// Muslim differently and have no Tirmidhi). The Arabic lines are worded freely, so that no fallback reads like the
+// verse or the hadith itself. Learners who follow the Shia tradition see only the Quran references.
+// Check wording and attributions with a qualified scholar before release.
 export const STORY_NEEDS_SCHOLARLY_REVIEW = true;
 
 /** the du'a for beneficial knowledge (Quran 20:114) and the verses the story refers to */
@@ -29,6 +33,7 @@ const en = {
   niyyahT: "Your intention (niyyah)", niyyah: "I intend to learn the Book of Allah for His sake, {n} minutes a day, with patience.", niyyah0: "I intend to learn the Book of Allah for His sake, with patience.",
   duaT: "A du'a for beneficial knowledge", duaM: "“My Lord, increase me in knowledge.”", duaS: "Quran 20:114",
   begins: "{name}, your path begins today: {goal}.", begins0: "Your path begins today: {goal}.",
+  reciterLinePro: "{reciter} is part of Pro. Until then, {free} recites every verse for you.", para: "paraphrase", quote: "“{t}”",
 };
 export type StoryText = typeof en;
 
@@ -49,22 +54,24 @@ const T: Record<string, StoryText> = {
     niyyahT: "Ihre Absicht (Niyya)", niyyah: "Ich beabsichtige, das Buch Allahs um Seinetwillen zu lernen, {n} Minuten am Tag, mit Geduld.", niyyah0: "Ich beabsichtige, das Buch Allahs um Seinetwillen zu lernen, mit Geduld.",
     duaT: "Ein Bittgebet um nützliches Wissen", duaM: "„Mein Herr, mehre mich an Wissen.“", duaS: "Koran 20:114",
     begins: "{name}, heute beginnt Ihr Weg: {goal}.", begins0: "Heute beginnt Ihr Weg: {goal}.",
+    reciterLinePro: "{reciter} gehört zu Pro. Bis dahin rezitiert Ihnen {free} jeden Vers.", para: "sinngemäß", quote: "„{t}“",
   },
   ar: {
     kicker: "قصتك",
     peopleT: "{name}، أنت الآن من أهل القرآن", peopleT0: "أنت الآن من أهل القرآن",
     peopleB: "من تعلّم القرآن وعلّمه نال شرفًا عظيمًا. ومن اليوم أنت ممن يحملونه، آيةً بعد آية.",
-    shiaQ: "يُثني القرآن على الذين يتلون كتاب الله ويرجون تجارة لن تبور.", shiaQs: "القرآن 35:29 · بالمعنى",
+    shiaQ: "يُثني القرآن على قرّاء كتاب الله الذين يرجون ربحًا عند الله لا يخسر أبدًا.", shiaQs: "القرآن 35:29 · بالمعنى",
     goalLine: "هدفك: {goal}.", reciterLine: "سيتلو عليك {reciter} كل آية.", tradLine: "الأحاديث والمحتوى وفق اختيارك: {trad}.",
     treeT: "ما تعنيه شجرتك",
     treeB: "لتذكّرك هذه الشجرة بنيتك وجهدك. إنها مجرد صورة، والعبرة بصدق قلبك.",
-    hearts: "إن الله لا ينظر إلى صوركم وأموالكم، ولكن ينظر إلى قلوبكم وأعمالكم.", heartsS: "صحيح مسلم 2564 · بالمعنى",
+    hearts: "لا يزن الله الناس بمظاهرهم ولا بأموالهم، بل بما في قلوبهم وما يعملون.", heartsS: "صحيح مسلم 2564 · بالمعنى",
     paradise: "أخبر النبي ﷺ عن نخل يُغرس في الجنة لمن سبّح الله.", paradiseS: "جامع الترمذي 3464 · بالمعنى",
-    goodTree: "ضرب الله مثلًا كلمةً طيبةً كشجرةٍ طيبةٍ أصلها ثابت وفرعها في السماء.", goodTreeS: "القرآن 14:24 · بالمعنى",
+    goodTree: "يشبّه الله الكلمة الطيبة بشجرة طيبة: جذورها راسخة في الأرض وأغصانها عالية نحو السماء.", goodTreeS: "القرآن 14:24 · بالمعنى",
     sabr: "تنمو حديقتك ببطء كما ينمو العلم: بالصبر وبقليل كل يوم.",
     niyyahT: "نيتك", niyyah: "نويت أن أتعلم كتاب الله ابتغاء وجهه، {n} دقائق كل يوم، بصبر.", niyyah0: "نويت أن أتعلم كتاب الله ابتغاء وجهه، بصبر.",
     duaT: "دعاء لطلب العلم النافع", duaM: "«ربِّ زدني علمًا»", duaS: "القرآن 20:114",
     begins: "{name}، طريقك يبدأ اليوم: {goal}.", begins0: "طريقك يبدأ اليوم: {goal}.",
+    reciterLinePro: "{reciter} من ميزات Pro، وإلى ذلك الحين يتلو عليك {free} كل آية.", para: "بالمعنى", quote: "«{t}»",
   },
   tr: {
     kicker: "Hikâyeniz", peopleT: "{name}, artık Kur'an ehline katılıyorsunuz", peopleT0: "Artık Kur'an ehline katılıyorsunuz",
@@ -79,6 +86,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "Niyetiniz", niyyah: "Allah rızası için, sabırla, günde {n} dakika Allah'ın Kitabını öğrenmeye niyet ediyorum.", niyyah0: "Allah rızası için, sabırla Allah'ın Kitabını öğrenmeye niyet ediyorum.",
     duaT: "Faydalı ilim için bir dua", duaM: "“Rabbim, ilmimi artır.”", duaS: "Kur'an 20:114",
     begins: "{name}, yolunuz bugün başlıyor: {goal}.", begins0: "Yolunuz bugün başlıyor: {goal}.",
+    reciterLinePro: "{reciter}, Pro'ya dahildir. O zamana kadar her ayeti size {free} okur.", para: "anlamı", quote: "“{t}”",
   },
   ur: {
     kicker: "آپ کی کہانی", peopleT: "{name}، آپ اب اہلِ قرآن میں شامل ہیں", peopleT0: "آپ اب اہلِ قرآن میں شامل ہیں",
@@ -93,6 +101,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "آپ کی نیت", niyyah: "میں اللہ کی رضا کے لیے، صبر کے ساتھ، روزانہ {n} منٹ اللہ کی کتاب سیکھنے کی نیت کرتا ہوں۔", niyyah0: "میں اللہ کی رضا کے لیے صبر کے ساتھ اللہ کی کتاب سیکھنے کی نیت کرتا ہوں۔",
     duaT: "نفع بخش علم کی دعا", duaM: "”اے میرے رب، میرے علم میں اضافہ فرما۔“", duaS: "قرآن 20:114",
     begins: "{name}، آپ کا سفر آج شروع ہوتا ہے: {goal}۔", begins0: "آپ کا سفر آج شروع ہوتا ہے: {goal}۔",
+    reciterLinePro: "{reciter} Pro کا حصہ ہیں۔ تب تک {free} آپ کے لیے ہر آیت کی تلاوت کریں گے۔", para: "مفہوم", quote: "”{t}“",
   },
   fa: {
     kicker: "داستان شما", peopleT: "{name}، شما اکنون از اهل قرآن هستید", peopleT0: "شما اکنون از اهل قرآن هستید",
@@ -107,6 +116,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "نیت شما", niyyah: "نیت می‌کنم برای رضای خدا، با صبر، روزی {n} دقیقه کتاب خدا را بیاموزم.", niyyah0: "نیت می‌کنم برای رضای خدا، با صبر، کتاب خدا را بیاموزم.",
     duaT: "دعایی برای دانش سودمند", duaM: "«پروردگارا، بر دانشم بیفزا.»", duaS: "قرآن ۲۰:۱۱۴",
     begins: "{name}، راه شما امروز آغاز می‌شود: {goal}.", begins0: "راه شما امروز آغاز می‌شود: {goal}.",
+    reciterLinePro: "{reciter} جزو Pro است. تا آن زمان {free} هر آیه را برایتان تلاوت می‌کند.", para: "مضمون", quote: "«{t}»",
   },
   ps: {
     kicker: "ستاسو کیسه", peopleT: "{name}، تاسو اوس د قرآن له اهلو سره یوځای کېږئ", peopleT0: "تاسو اوس د قرآن له اهلو سره یوځای کېږئ",
@@ -121,6 +131,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "ستاسو نیت", niyyah: "زه نیت کوم چې د الله د رضا لپاره، په صبر، هره ورځ {n} دقیقې د الله کتاب زده کړم.", niyyah0: "زه نیت کوم چې د الله د رضا لپاره په صبر د الله کتاب زده کړم.",
     duaT: "د ګټور علم لپاره دعا", duaM: "«ربه، زما علم زیات کړه.»", duaS: "قرآن 20:114",
     begins: "{name}، ستاسو لاره نن پیلېږي: {goal}.", begins0: "ستاسو لاره نن پیلېږي: {goal}.",
+    reciterLinePro: "{reciter} د Pro برخه ده. تر هغه وخته {free} تاسو ته هر آیت تلاوت کوي.", para: "مفهوم", quote: "«{t}»",
   },
   fr: {
     kicker: "Votre histoire", peopleT: "{name}, vous rejoignez les gens du Coran", peopleT0: "Vous rejoignez les gens du Coran",
@@ -135,6 +146,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "Votre intention (niyya)", niyyah: "J'ai l'intention d'apprendre le Livre d'Allah pour Lui, {n} minutes par jour, avec patience.", niyyah0: "J'ai l'intention d'apprendre le Livre d'Allah pour Lui, avec patience.",
     duaT: "Une invocation pour un savoir utile", duaM: "« Seigneur, accrois mon savoir. »", duaS: "Coran 20:114",
     begins: "{name}, votre chemin commence aujourd'hui : {goal}.", begins0: "Votre chemin commence aujourd'hui : {goal}.",
+    reciterLinePro: "{reciter} fait partie de Pro. En attendant, {free} vous récite chaque verset.", para: "sens", quote: "« {t} »",
   },
   es: {
     kicker: "Su historia", peopleT: "{name}, se une a la gente del Corán", peopleT0: "Se une a la gente del Corán",
@@ -149,6 +161,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "Su intención (niyya)", niyyah: "Tengo la intención de aprender el Libro de Alá por Él, {n} minutos al día, con paciencia.", niyyah0: "Tengo la intención de aprender el Libro de Alá por Él, con paciencia.",
     duaT: "Una súplica por el conocimiento útil", duaM: "«Señor mío, aumenta mi conocimiento».", duaS: "Corán 20:114",
     begins: "{name}, su camino empieza hoy: {goal}.", begins0: "Su camino empieza hoy: {goal}.",
+    reciterLinePro: "{reciter} forma parte de Pro. Mientras tanto, {free} le recita cada versículo.", para: "sentido", quote: "«{t}»",
   },
   id: {
     kicker: "Kisah Anda", peopleT: "{name}, Anda bergabung dengan ahli Al-Qur'an", peopleT0: "Anda bergabung dengan ahli Al-Qur'an",
@@ -163,6 +176,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "Niat Anda", niyyah: "Saya berniat mempelajari Kitab Allah karena-Nya, {n} menit sehari, dengan sabar.", niyyah0: "Saya berniat mempelajari Kitab Allah karena-Nya, dengan sabar.",
     duaT: "Doa untuk ilmu yang bermanfaat", duaM: "“Ya Tuhanku, tambahkanlah ilmu kepadaku.”", duaS: "Al-Qur'an 20:114",
     begins: "{name}, perjalanan Anda dimulai hari ini: {goal}.", begins0: "Perjalanan Anda dimulai hari ini: {goal}.",
+    reciterLinePro: "{reciter} termasuk dalam Pro. Sampai saat itu, {free} membacakan setiap ayat untuk Anda.", para: "makna", quote: "“{t}”",
   },
   ms: {
     kicker: "Kisah anda", peopleT: "{name}, anda menyertai ahli al-Quran", peopleT0: "Anda menyertai ahli al-Quran",
@@ -177,6 +191,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "Niat anda", niyyah: "Saya berniat mempelajari Kitab Allah kerana-Nya, {n} minit sehari, dengan sabar.", niyyah0: "Saya berniat mempelajari Kitab Allah kerana-Nya, dengan sabar.",
     duaT: "Doa untuk ilmu yang bermanfaat", duaM: "“Wahai Tuhanku, tambahkanlah ilmuku.”", duaS: "Al-Quran 20:114",
     begins: "{name}, perjalanan anda bermula hari ini: {goal}.", begins0: "Perjalanan anda bermula hari ini: {goal}.",
+    reciterLinePro: "{reciter} termasuk dalam Pro. Sehingga itu, {free} membacakan setiap ayat untuk anda.", para: "maksud", quote: "“{t}”",
   },
   bn: {
     kicker: "আপনার গল্প", peopleT: "{name}, আপনি এখন কুরআনের মানুষদের দলে", peopleT0: "আপনি এখন কুরআনের মানুষদের দলে",
@@ -191,6 +206,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "আপনার নিয়ত", niyyah: "আমি আল্লাহর সন্তুষ্টির জন্য, ধৈর্যের সাথে, প্রতিদিন {n} মিনিট আল্লাহর কিতাব শেখার নিয়ত করছি।", niyyah0: "আমি আল্লাহর সন্তুষ্টির জন্য ধৈর্যের সাথে আল্লাহর কিতাব শেখার নিয়ত করছি।",
     duaT: "উপকারী জ্ঞানের জন্য দোয়া", duaM: "“হে আমার রব, আমার জ্ঞান বৃদ্ধি করুন।”", duaS: "কুরআন 20:114",
     begins: "{name}, আপনার পথ আজ শুরু হলো: {goal}।", begins0: "আপনার পথ আজ শুরু হলো: {goal}।",
+    reciterLinePro: "{reciter} Pro-এর অংশ। ততদিন {free} আপনার জন্য প্রতিটি আয়াত তিলাওয়াত করবেন।", para: "মর্মার্থ", quote: "“{t}”",
   },
   ru: {
     kicker: "Ваша история", peopleT: "{name}, вы присоединяетесь к людям Корана", peopleT0: "Вы присоединяетесь к людям Корана",
@@ -205,6 +221,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "Ваше намерение (ният)", niyyah: "Я намереваюсь изучать Книгу Аллаха ради Него, {n} минут в день, с терпением.", niyyah0: "Я намереваюсь изучать Книгу Аллаха ради Него, с терпением.",
     duaT: "Мольба о полезном знании", duaM: "«Господи, приумножь мои знания».", duaS: "Коран 20:114",
     begins: "{name}, ваш путь начинается сегодня: {goal}.", begins0: "Ваш путь начинается сегодня: {goal}.",
+    reciterLinePro: "{reciter} входит в Pro. А пока каждый аят для вас читает {free}.", para: "по смыслу", quote: "«{t}»",
   },
   zh: {
     kicker: "您的故事", peopleT: "{name}，您正加入古兰经的人们", peopleT0: "您正加入古兰经的人们",
@@ -219,6 +236,7 @@ const T: Record<string, StoryText> = {
     niyyahT: "您的举意", niyyah: "我举意为了真主而学习真主的经典，每天 {n} 分钟，坚持忍耐。", niyyah0: "我举意为了真主而学习真主的经典，坚持忍耐。",
     duaT: "求有益知识的祈祷", duaM: "“我的主啊！求你增加我的知识。”", duaS: "古兰经 20:114",
     begins: "{name}，您的道路今天开始：{goal}。", begins0: "您的道路今天开始：{goal}。",
+    reciterLinePro: "{reciter} 属于 Pro。在此之前，{free} 将为您诵读每一节。", para: "大意", quote: "“{t}”",
   },
 };
 export const fillS = (s: string, v: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(v[k] ?? ""));

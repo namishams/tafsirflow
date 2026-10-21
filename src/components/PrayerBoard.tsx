@@ -6,6 +6,7 @@ import { readJSON, writeJSON } from "@/lib/storage";
 import { adhanList, adhanUrl, pickAdhan, type AdhanFile } from "@/lib/adhan";
 import { ArrowNext, ArrowBack } from "./Icons";
 import { PracticeWindow, starPath } from "./art/PracticeArt";
+import TravelPrayerWeb from "./talents/TravelPrayerWeb";
 
 const dark = "stage text-[#eef0f3]";
 
@@ -159,6 +160,8 @@ export default function PrayerBoard() {
       </section>
 
       <main className="mx-auto max-w-6xl px-4 pb-12 pt-10 sm:px-5">
+        {/* travel mode (owner, 21.10.2026; like the app): the note on praying while travelling, travel duas, the destination */}
+        <TravelPrayerWeb locale={locale} hanafi={st.madhab === "hanafi" || (st.madhab === "auto" && !!CITIES.find((c) => c.id === cityId)?.hanafi)} cityId={cityId} onCity={pick} />
         <div className="grid gap-5 lg:grid-cols-3">
           {/* Qibla */}
           <section className={card}>

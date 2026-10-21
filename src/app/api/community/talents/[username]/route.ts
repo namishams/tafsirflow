@@ -6,6 +6,7 @@ import { MIN_POST_AGE, NO_STORE, PROFILE_COLS, ageOf, birthYearOf, talentGate } 
 import { refreshBadges } from "@/lib/talentBadges";
 import { postingEnabled } from "@/lib/talentPosting";
 import { NO_MOMENTS, followedBy, profileMoments, profileShare } from "@/lib/profileMoments";
+import { visibleExtras } from "@/lib/profileExtras";
 
 export const dynamic = "force-dynamic";
 
@@ -69,6 +70,8 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ user
     mine || iBlocked ? null : followedBy(g.me.id, id),
   ]);
   const shareLink = profileShare(c.username, locale);
+  // profile extras (goals, city, travel) by their audience; nothing of it for a private account the viewer does not follow
+  const extras = visibleExtras(c, mine ? "owner" : followed ? "follower" : "other");
   return json({
     profile: {
       ...s, followed, mine, blocked: iBlocked, connection, canMessage,
@@ -79,6 +82,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ user
       posts: Number(st.posts), likes: Number(st.likes), liveStory: postingEnabled() && !!story.live, postingEnabled: postingEnabled(), reciterLevel: mine ? Number(c.reciter_level ?? 0) : undefined,
       // the member's own view also shows the progress setting when it is off
       progress: s.progress ?? (mine ? { treeStage: 0, treeType: "", certJuz: [], hidden: true } : null),
+      extras: restricted || iBlocked ? {} : extras,
     },
   }, 200, NO_STORE);
 }

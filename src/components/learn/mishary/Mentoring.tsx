@@ -3,7 +3,8 @@
 // <id>, /mishary/mentoring/send?mentor=<username>): text and rubric review by a verified master the student is
 // connected with. Recordings are 30–60 s, recorded in the browser (MediaRecorder), private on the server and deleted
 // after 60 days. Calls src/app/api/mentoring/* same-origin with the session cookie; sign-in, age 16+ and the Quran
-// Talents profile are checked by the server. Members link to their Talents profile, where report and block are.
+// Talents profile are checked by the server. Every member row, recording and review of someone else can be reported,
+// every member blocked (./Safety.tsx), as in the app.
 import { useState, type ReactNode } from "react";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useAuth } from "@/lib/learn/auth";
@@ -17,6 +18,7 @@ import { DefaultAvatar } from "@/components/talents/DefaultAvatar";
 import { BadgeIcon } from "@/components/talents/BadgeIcon";
 import { IconCheckCircle, IconLock } from "@/components/Icons";
 import { Chip, ErrorText, Muted, Recorder, Section, useLoad, type Take } from "./ui";
+import { ReportLink, SafetyButton, SafetyFooter, useMentoringSafety } from "./Safety";
 
 export function useErr() {
   const mt = useMt();
@@ -102,23 +104,27 @@ export function MentoringScreen() {
   const askable = (masters.data ?? []).filter((m) => m.link !== "accepted" && m.link !== "pending");
   const pendingStudents = d?.students.filter((s) => s.status === "pending") ?? [];
   const students = d?.students.filter((s) => s.status === "accepted") ?? [];
+  // a blocked member disappears from every list (the server leaves them out)
+  const safe = useMentoringSafety(() => { me.reload(); masters.reload(); mine.reload(); inbox.reload(); });
+  const flag = (m: Member | null) => (m ? <SafetyButton label={mt("safetyFor", { name: `@${m.username}` })} onClick={() => safe.memberMenu(m)} /> : null);
 
   return (
     <>
       <LearnHero back={{ href: "/mishary", label: mt("kicker") }} kicker={mt("kicker")} title={mt("mentoringTitle")} lead={mt("mentoringLead")} word="إرشاد" uid="mn">
-        <span className="text-[13.5px] font-semibold text-white/75">{mt("free")}</span>
+        <span className="text-[13.5px] font-semibold text-white/75">{mt("mentoringNote")}</span>
       </LearnHero>
       <LearnMain className="grid gap-8">
         <Gate error={me.error}>
           {!d ? <Spinner label={mt("loading")} /> : (
             <>
               <ErrorText text={msg} />
+              {safe.note ? <p role="status" className="text-[13.5px] font-semibold text-accent">{safe.note}</p> : null}
               <Section title={mt("yourMentors")}>
                 <Card className="grid gap-4">
                   {d.mentors.length ? d.mentors.map((l) => (
                     <div key={l.id} className="grid gap-2.5">
                       <MemberLine m={l.member} sub={l.status === "accepted" ? mt("accepted") : mt("requested")}
-                        right={<Chip label={mt("endMentoring")} onClick={() => void act(() => M.link(l.id, "end"))} />} />
+                        right={<span className="flex items-center gap-1"><Chip label={mt("endMentoring")} onClick={() => void act(() => M.link(l.id, "end"))} />{flag(l.member)}</span>} />
                       {l.status === "accepted" && l.member && <OutlineLink href={`/mishary/mentoring/send?mentor=${encodeURIComponent(l.member.username)}`} className="!h-10 w-fit !px-4">{mt("send")}</OutlineLink>}
                     </div>
                   )) : <Muted>{mt("none")}</Muted>}
@@ -128,7 +134,7 @@ export function MentoringScreen() {
                 <Muted>{mt("askLead")}</Muted>
                 <Card className="grid gap-4">
                   {askable.length ? askable.map((m) => (
-                    <MemberLine key={m.username} m={m} right={<Chip label={mt("ask")} onClick={() => void act(async () => { await M.ask(m.username); masters.reload(); })} />} />
+                    <MemberLine key={m.username} m={m} right={<span className="flex items-center gap-1"><Chip label={mt("ask")} onClick={() => void act(async () => { await M.ask(m.username); masters.reload(); })} />{flag(m)}</span>} />
                   )) : <Muted>{mt("noMasters")}</Muted>}
                   <OutlineLink href="/talents" className="!h-10 w-fit !px-4">{mt("openTalents")}</OutlineLink>
                 </Card>
@@ -142,7 +148,7 @@ export function MentoringScreen() {
                     <Card className="grid gap-4">
                       {pendingStudents.length ? pendingStudents.map((l) => (
                         <div key={l.id} className="grid gap-2.5">
-                          <MemberLine m={l.member} sub={l.note || undefined} />
+                          <MemberLine m={l.member} sub={l.note || undefined} right={flag(l.member)} />
                           <div className="flex flex-wrap gap-2">
                             <Chip label={mt("accept")} on onClick={() => void act(() => M.link(l.id, "accept"))} />
                             <Chip label={mt("decline")} onClick={() => void act(() => M.link(l.id, "decline"))} />
@@ -155,7 +161,7 @@ export function MentoringScreen() {
                     <Card className="grid gap-4">
                       {students.length ? students.map((l) => (
                         <MemberLine key={l.id} m={l.member} sub={l.open ? `${l.open} · ${mt("pending")}` : undefined}
-                          right={<Chip label={mt("endMentoring")} onClick={() => void act(() => M.link(l.id, "end"))} />} />
+                          right={<span className="flex items-center gap-1"><Chip label={mt("endMentoring")} onClick={() => void act(() => M.link(l.id, "end"))} />{flag(l.member)}</span>} />
                       )) : <Muted>{mt("none")}</Muted>}
                     </Card>
                   </Section>
@@ -167,7 +173,9 @@ export function MentoringScreen() {
             </>
           )}
         </Gate>
+        <SafetyFooter />
       </LearnMain>
+      {safe.element}
     </>
   );
 }
@@ -234,11 +242,13 @@ export function ServerAudio({ path }: { path: string }) {
 
 const RLABEL: Record<RubricKey, MtKey> = { makharij: "r_makharij", tajweed: "r_tajweed", waqf: "r_waqf", pace: "r_pace", maqam: "r_maqam" };
 
-function ReviewView({ r }: { r: Review }) {
+/** a review; onReport / onMember when someone else wrote it (report the text, report or block the reviewer) */
+function ReviewView({ r, onReport, onMember }: { r: Review; onReport?: () => void; onMember?: (m: Member) => void }) {
   const mt = useMt();
   return (
     <Card className="grid gap-3">
-      {r.reviewer ? <MemberLine m={r.reviewer} /> : <p className="font-semibold text-[rgb(var(--hm-gold-d))]">{mt("jury")}</p>}
+      {r.reviewer ? <MemberLine m={r.reviewer} right={onMember ? <SafetyButton label={mt("safetyFor", { name: `@${r.reviewer.username}` })} onClick={() => onMember(r.reviewer!)} /> : undefined} />
+        : <p className="font-semibold text-[rgb(var(--hm-gold-d))]">{mt("jury")}</p>}
       <dl className="grid gap-2">
         {RUBRIC.map((k) => (
           <div key={k} className="flex items-center gap-3">
@@ -249,6 +259,7 @@ function ReviewView({ r }: { r: Review }) {
       </dl>
       <p className="text-[14.5px] font-bold">{mt("total", { n: r.total })}</p>
       {r.text && <p className="whitespace-pre-line text-[15px] leading-relaxed">{r.text}</p>}
+      {onReport ? <ReportLink label={mt("reportReview")} onClick={onReport} /> : null}
     </Card>
   );
 }
@@ -291,6 +302,12 @@ export function SubmissionScreen({ id }: { id: string }) {
   const d = useLoad(() => (user ? M.submission(id) : Promise.resolve(null)), [id, user]);
   const [msg, setMsg] = useState("");
   const s = d.data?.submission;
+  // after a block the submission is gone for both sides (the server answers 404), so the page goes back to the list
+  const safe = useMentoringSafety(() => router.push(s?.season ? `/mishary/seasons/${s.season}` : "/mishary/mentoring"));
+  const role = d.data?.role;
+  const flag = (m: Member | null) => (m ? <SafetyButton label={mt("safetyFor", { name: `@${m.username}` })} onClick={() => safe.memberMenu(m)} /> : null);
+  // the student reports any review; the master every review but the own (s.mentor is the master); a juror sees only the own
+  const canReportReview = (r: Review) => role === "student" || (role === "master" && (!r.reviewer || r.reviewer.username !== s?.mentor?.username));
   return (
     <>
       <LearnHero back={{ href: "/mishary/mentoring", label: mt("mentoringTitle") }} kicker={d.data?.role === "jury" ? mt("jury") : mt("mentoringTitle")} title={s ? verseLabel(s.verseKey, mt) : mt("mentoringTitle")} word="إرشاد" uid="mnd" />
@@ -298,19 +315,24 @@ export function SubmissionScreen({ id }: { id: string }) {
         <Gate error={d.error}>
           {!s ? <Spinner label={mt("loading")} /> : (
             <>
-              {d.data!.role === "master" && <MemberLine m={s.student} />}
-              {d.data!.role === "student" && s.mentor && <MemberLine m={s.mentor} sub={mt("accepted")} />}
+              {d.data!.role === "master" && <MemberLine m={s.student} right={flag(s.student)} />}
+              {d.data!.role === "student" && s.mentor && <MemberLine m={s.mentor} sub={mt("accepted")} right={flag(s.mentor)} />}
               <Card className="grid gap-3">
                 <VersePick value={s.verseKey} fixed />
                 {s.hasAudio ? <ServerAudio path={M.audioPath(s.id)} /> : <Muted>{mt("deletedFile")}</Muted>}
                 {s.note && <p className="whitespace-pre-line text-[15px] leading-relaxed">{s.note}</p>}
                 {s.hasAudio && <Muted className="text-[12.5px]">{mt("expires", { d: date(s.expiresAt) })}</Muted>}
+                {role !== "student" ? <ReportLink label={mt("reportRecording")} onClick={() => safe.reportSubmission(s.id)} /> : null}
               </Card>
               <Section title={mt("feedback")}>
-                {d.data!.reviews.length ? d.data!.reviews.map((r) => <ReviewView key={r.id} r={r} />) : <Muted>{mt("pending")}</Muted>}
+                {d.data!.reviews.length ? d.data!.reviews.map((r) => (
+                  <ReviewView key={r.id} r={r} onReport={canReportReview(r) ? () => safe.reportReview(s.id, r.id) : undefined}
+                    onMember={canReportReview(r) && r.reviewer ? safe.memberMenu : undefined} />
+                )) : <Muted>{mt("pending")}</Muted>}
                 {d.data!.canReview && <RubricForm id={s.id} needText={d.data!.role === "master"} onDone={d.reload} />}
               </Section>
               <ErrorText text={msg} />
+              {safe.note ? <p role="status" className="text-[13.5px] font-semibold text-accent">{safe.note}</p> : null}
               {d.data!.role === "student" && s.status === "pending" && (
                 <OutlineButton className="w-fit" onClick={() => void M.withdraw(s.id).then(() => router.push(s.season ? `/mishary/seasons/${s.season}` : "/mishary/mentoring")).catch((e) => setMsg(err(e)))}>
                   {s.season ? mt("withdrawEntry") : mt("withdraw")}
@@ -319,7 +341,9 @@ export function SubmissionScreen({ id }: { id: string }) {
             </>
           )}
         </Gate>
+        <SafetyFooter />
       </LearnMain>
+      {safe.element}
     </>
   );
 }

@@ -9,13 +9,13 @@ import { ErrorState } from "@/components/page";
 import { openPro, usePro } from "@/lib/pro";
 import { RECITERS } from "@/lib/quran";
 import { useLang, pick } from "@/i18n";
-import { RECITER_BIOS, STYLE, bioText, reciterBio } from "@/web/reciters";
+import { RECITER_BIOS, bioText, reciterBio } from "@/web/reciters";
 import { Callout, Kicker, QuranSeal, StarBullet, useQ } from "@/features/radio/art";
 import { isFreeReciter, radio, useRadioSelect } from "@/features/radio/engine";
 import { RadioMiniPlayer, MINI_SPACE } from "@/features/radio/MiniPlayer";
 import { useAppT } from "@/features/radio/strings";
 import { useReciter } from "@/features/quran/reciter";
-import { LBL } from "./texts";
+import { LBL, styleName } from "./texts";
 import { Markdown } from "./Markdown";
 import { CalligraphyBackdrop, QPageWash, QTile, bioInitials, countryName } from "./common";
 import { goBack } from "@/components/page";
@@ -76,7 +76,7 @@ export default function ReciterScreen() {
             <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: 30, rowGap: 12, marginTop: 26 }}>
               <Fact label={L.country} value={countryName(r, lang)} />
               {life ? <Fact label={L.life} value={life} /> : null}
-              <Fact label={L.style} value={r.styles.map((s) => pick(STYLE[s], lang)).join(" · ")} />
+              <Fact label={L.style} value={r.styles.map((s) => styleName(s, lang)).join(" · ")} />
             </View>
             {player ? (
               <View style={{ marginTop: 28, gap: 12 }}>

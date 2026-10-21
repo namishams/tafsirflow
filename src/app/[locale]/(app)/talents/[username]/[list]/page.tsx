@@ -19,7 +19,7 @@ export default async function TalentListPage({ params }: { params: Promise<{ loc
       <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-gold rtl:tracking-normal"><Link href={`/talents/${username}`} className="hover:underline">@{username}</Link></p>
       <h1 className="font-display mt-2 text-4xl">{fill(list === "followers" ? tx.listTitleFollowers : tx.listTitleFollowing, { u: username })}</h1>
       <TalentList username={username} kind={list} l={{ empty: tx.empty, restricted: tx.restricted, loadMore: tx.loadMore, signInToFollow: tx.signInToFollow, signIn: tx.signIn, error: tx.error,
-        levels: { talent: tx.level_talent, rising: tx.level_rising, master: tx.level_master, sheikh: tx.level_sheikh } }} />
+        levels: { talent: tx.level_talent, rising: tx.level_rising, master: tx.level_master, sheikh: tx.level_sheikh } }} locale={locale} />
     </div>
   );
 }

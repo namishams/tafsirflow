@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { Stack } from "expo-router";
 import { FONT, useTheme } from "@/lib/theme";
-import { Page, PageHero } from "@/components/page";
+import { Loading, Page, PageHero } from "@/components/page";
 import { SectionTitle } from "@/components/brand";
 import { T, type ConnItem, type TalentCard } from "@/features/talents/api";
 import { BadgeSheetHost } from "@/features/talents/badges";
@@ -22,11 +22,13 @@ export default function Requests() {
   const [msg, setMsg] = useState("");
   const [busy, setBusy] = useState(false);
   const [follows, setFollows] = useState<TalentCard[]>([]);
+  // until the first answer: a spinner instead of an empty screen
+  const [loaded, setLoaded] = useState(false);
   const load = useCallback(async () => {
     try {
       setFollows((await T.followRequests()).requests);
       if (a.age?.interact) setD(await T.connections());
-    } catch (e) { setMsg(err(e)); }
+    } catch (e) { setMsg(err(e)); } finally { setLoaded(true); }
   }, [a.age?.interact]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { if (a.state === "ok") void load(); }, [a.state, load]);
   const act = async (fn: () => Promise<unknown>) => { setBusy(true); setMsg(""); try { await fn(); await load(); } catch (e) { setMsg(err(e)); } finally { setBusy(false); } };
@@ -51,6 +53,7 @@ export default function Requests() {
         <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("requestsTitle")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 22 }}>
+            {!loaded ? <View style={{ minHeight: 160 }}><Loading /></View> : null}
             {/* follow requests (Instagram / TikTok): Confirm and Delete side by side */}
             {follows.length ? section(`${tt("followRequests")} (${follows.length})`, follows, "", (c) => (
               <View style={{ flexDirection: "row", gap: 6 }}>
@@ -58,7 +61,7 @@ export default function Requests() {
                 <SmallButton title={pt("delete")} disabled={busy} label={`${pt("delete")}, ${c.name}`} onPress={() => void act(() => T.answerFollow(c.username, "decline"))} />
               </View>
             )) : null}
-            {!a.age?.interact ? <Muted>{tt("age16")}</Muted> : d ? (
+            {!loaded ? null : !a.age?.interact ? <Muted>{tt("age16")}</Muted> : d ? (
               <>
                 {section(tt("incoming"), d.incoming, tt("noRequests"), (c) => (
                   <View style={{ gap: 6 }}>

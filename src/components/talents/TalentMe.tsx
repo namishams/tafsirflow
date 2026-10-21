@@ -205,10 +205,12 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
                 <p className="text-[14px] text-muted">{tx[`badge_${b}_text`]}</p>
                 {b === "emerald" ? <ul className="grid gap-1.5 text-[14.5px]">{row(badges.emerald.email, tx.reqEmail)}{badges.emerald.phone !== null ? row(badges.emerald.phone, tx.reqPhone) : null}{row(badges.emerald.age, tx.reqAge)}{row(badges.emerald.profile, tx.reqProfile)}{row(badges.emerald.guidelines, tx.reqGuidelines)}</ul> : null}
                 {b === "gold" ? <ul className="grid gap-1.5 text-[14.5px]">{row(badges.emerald.ok, tx.reqEmerald)}{row(badges.gold.level >= badges.gold.need, f(tx.reqLevel, { n: badges.gold.need, m: badges.gold.level }))}</ul> : null}
-                {b === "official" && !ok ? (
+                {/* YouTube only when the server can connect it (no "soon" placeholder, like the app); the star by
+                    invitation is described in the badge text above */}
+                {b === "official" && !ok && badges.official.available ? (
                   <div className="grid gap-3">
                     <p className="text-[14.5px]">{f(tx.officialHow, { n: new Intl.NumberFormat(locale).format(badges.official.minSubscribers) })}</p>
-                    {badges.official.available ? <button type="button" onClick={youtube} className="btn-gold h-11 w-fit rounded-md px-6 font-bold">{tx.connectYoutube}</button> : <p className="text-[14px] text-muted">{tx.officialSoon}</p>}
+                    <button type="button" onClick={youtube} className="btn-gold h-11 w-fit rounded-md px-6 font-bold">{tx.connectYoutube}</button>
                   </div>
                 ) : null}
                 {b === "official" && ok && badges.official.channel ? <p className="text-[14px] text-gold">{f(tx.officialChannel, { c: badges.official.channel })}</p> : null}

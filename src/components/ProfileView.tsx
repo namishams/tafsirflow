@@ -25,12 +25,13 @@ import { usePremium } from "@/lib/premium";
 import { levelOf as pointsLevel, readPoints, streakOf as pointsStreak, totalPoints } from "@/lib/points";
 import { buildCtx, earnedIds, hoursOf, stickerById } from "@/lib/stickers";
 import DonateCTA from "./DonateCTA";
+import ConfirmCode from "./auth/ConfirmCode";
 
 const TABS = ["overview", "stats", "badges", "ranking", "learning", "account"] as const;
 type Tab = (typeof TABS)[number];
 
 type Profile = { email: string; birth_year: number | null; first_name: string | null; last_name: string | null; country: string | null; city: string | null; goal: string | null; locale: string | null; marketing_opt_in: boolean; email_verified: boolean; created_at: string; last_login_at: string | null; plan: string };
-type Data = { profile: Profile; sessions: number; social: { comments: number; likes: number } };
+type Data = { profile: Profile; sessions: number; social: { comments: number; likes: number }; hasPassword?: boolean };
 
 const field = "h-11 w-full rounded-md border border-line bg-bg px-3 text-[15px] focus:border-ink focus:outline-none";
 const card = "rounded-lg border border-line bg-surface p-5 sm:p-6";
@@ -48,6 +49,8 @@ export default function ProfileView() {
   const [msg, setMsg] = useState<Record<string, string>>({});
   const [pw, setPw] = useState({ current: "", next: "" });
   const [del, setDel] = useState("");
+  const [delConfirmed, setDelConfirmed] = useState(false); // accounts without a password confirm with an e-mail code
+  const ts = useTranslations("security");
   const [s, setS] = useState<ReturnType<typeof collect> | null>(null);
   const [tab, setTabState] = useState<Tab>("overview");
   const [me, setMe] = useState<{ points: number; level: ReturnType<typeof pointsLevel>; streak: number; hours: number; stickers: string[] } | null>(null);
@@ -88,8 +91,9 @@ export default function ProfileView() {
   const deleteAccount = async () => {
     if (!confirm(t("deleteConfirm"))) return;
     const r = await post({ action: "delete", current: del });
+    if (!r.ok && d?.hasPassword === false) setDelConfirmed(false);
     if (r.ok) { stopSync(); try { Object.keys(localStorage).filter((k) => k.startsWith("tf:")).forEach((k) => localStorage.removeItem(k)); } catch { /* storage blocked */ } router.push("/"); }
-    else flash("del", t("pwWrong"));
+    else flash("del", d?.hasPassword === false ? ts("error") : t("pwWrong"));
   };
 
   if (!d || !s) return <div className="mt-8 h-64 animate-pulse rounded-lg bg-line/40" />;
@@ -221,6 +225,11 @@ export default function ProfileView() {
 
       <section className={card}>
         <h2 className="text-lg font-bold">{t("security")}</h2>
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-md bg-bg p-4">
+          <p className="text-sm text-muted">{ts("profileHint")}</p>
+          <Link href="/account/security" className="inline-flex h-10 items-center rounded-md border border-line px-4 text-sm font-bold hover:border-ink">{ts("title")}</Link>
+        </div>
+        {d.hasPassword !== false && <>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <label className="grid gap-1 text-sm"><span className="text-muted">{t("pwCurrent")}</span><input type="password" className={field} value={pw.current} onChange={(e) => setPw({ ...pw, current: e.target.value })} autoComplete="current-password" /></label>
           <label className="grid gap-1 text-sm"><span className="text-muted">{t("pwNew")}</span><input type="password" className={field} value={pw.next} onChange={(e) => setPw({ ...pw, next: e.target.value })} autoComplete="new-password" minLength={10} /></label>
@@ -229,6 +238,7 @@ export default function ProfileView() {
           <button onClick={changePw} disabled={!pw.current || pw.next.length < 10} className="h-11 rounded-md bg-ink px-5 text-sm font-bold text-bg disabled:opacity-40">{t("pwChange")}</button>
           {msg.pw && <span role="status" className="text-sm text-accent">{msg.pw}</span>}
         </div>
+        </>}
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-5">
           <p className="text-sm text-muted">{t("sessions", { n: d.sessions })}</p>
           <div className="flex flex-wrap gap-2">
@@ -248,9 +258,10 @@ export default function ProfileView() {
         <div className="mt-6 border-t border-line pt-5">
           <h3 className="font-bold text-red-600">{t("delete")}</h3>
           <p className="mt-1 text-sm text-muted">{t("deleteText")}</p>
+          {d.hasPassword === false && !delConfirmed && <div className="mt-3 max-w-md"><ConfirmCode email={p.email} onConfirmed={() => setDelConfirmed(true)} /></div>}
           <div className="mt-3 flex flex-wrap items-center gap-3">
-            <input type="password" placeholder={t("pwCurrent")} className={`${field} max-w-xs`} value={del} onChange={(e) => setDel(e.target.value)} autoComplete="current-password" />
-            <button onClick={deleteAccount} disabled={!del} className="h-11 rounded-md border border-red-500 px-5 text-sm font-bold text-red-600 disabled:opacity-40">{t("deleteBtn")}</button>
+            {d.hasPassword !== false && <input type="password" placeholder={t("pwCurrent")} className={`${field} max-w-xs`} value={del} onChange={(e) => setDel(e.target.value)} autoComplete="current-password" />}
+            <button onClick={deleteAccount} disabled={d.hasPassword === false ? !delConfirmed : !del} className="h-11 rounded-md border border-red-500 px-5 text-sm font-bold text-red-600 disabled:opacity-40">{t("deleteBtn")}</button>
             {msg.del && <span role="alert" className="text-sm text-red-600">{msg.del}</span>}
           </div>
         </div>

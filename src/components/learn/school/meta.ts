@@ -1,5 +1,7 @@
-// SEO texts of the Madrasa pages (server-safe). German, English and Arabic; other languages use English.
-// Mirrors the wording of src/lib/learn/school/texts.ts (module "school"), polite address.
+// SEO texts of the Madrasa pages (server-safe). German, English and Arabic written here; the other eleven languages are
+// built from the Madrasa's own texts in that language (src/lib/learn/school/textTables.ts, module "school"), polite
+// address throughout.
+import { schoolTextFor } from "@/lib/learn/school/textTables";
 type M = { title: string; description: string };
 type Page = "home" | "stage" | "timetable" | "report" | "transcript" | "certificates";
 const T: Record<"en" | "de" | "ar", Record<Page, M>> = {
@@ -35,8 +37,25 @@ const STAGE: Record<string, { en: [string, string]; de: [string, string]; ar: [s
   ali: { en: ["Higher stage", "The reciter's final levels, juz exams with review, Arabic at C1 level and the tafsir of long surahs."], de: ["Hochstufe", "Die letzten Stufen des Rezitationspfads, Dschuz-Prüfungen mit Begutachtung, Arabisch auf C1-Niveau und der Tafsir langer Suren."], ar: ["المرحلة العالية", "المستويات الأخيرة لمسار القارئ، واختبارات الأجزاء مع المراجعة، والعربية بمستوى C1، وتفسير السور الطويلة."] },
 };
 
+/** the other eleven languages: title and description from the page's own headings and leads */
+function fromTexts(locale: string, page: Page, stage?: string): M {
+  const st = schoolTextFor(locale);
+  const SUF = " | Quran Masterclass";
+  const school = st("title");
+  const id = (stage && stage in STAGE ? stage : "ibtidai") as "ibtidai" | "idadi" | "thanawi" | "ali";
+  switch (page) {
+    case "stage": return { title: `${st(`stage_${id}`)} – ${school}${SUF}`, description: st(`lead_${id}`) };
+    case "timetable": return { title: `${st("timetable")} – ${school}${SUF}`, description: st("timetableLead", { m: 20 }) };
+    case "report": return { title: `${st("report")} – ${school}${SUF}`, description: st("reportLead") };
+    case "transcript": return { title: `${st("w_sijill")} – ${school}${SUF}`, description: st("transcriptLead") };
+    case "certificates": return { title: `${st("certificates")}${SUF}`, description: st("certificatesLead") };
+    default: return { title: `${school}${SUF}`, description: st("lead") };
+  }
+}
+
 export function schoolMeta(locale: string, page: Page, stage?: string): M {
-  const l = locale === "de" || locale === "ar" ? locale : "en";
+  if (locale !== "en" && locale !== "de" && locale !== "ar") return fromTexts(locale, page, stage);
+  const l = locale;
   const m = T[l][page];
   if (page !== "stage") return m;
   const s = STAGE[stage ?? ""]?.[l] ?? STAGE.ibtidai[l];

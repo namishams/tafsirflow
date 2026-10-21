@@ -16,9 +16,11 @@ import { M, RUBRIC, errCode, type Member, type MentoringMe, type Review, type Ru
 import { useMt, type MtKey } from "./texts";
 import { Card, Chip, ErrorText, Muted, Recorder, Row, Section, useLoad, type Take } from "./ui";
 import { STUDY_VERSES } from "./StyleStudy";
+import { MentoringSafetyBar, SafetyButton, useMentoringSafety } from "./safety";
 
 // Mentoring (no video): text + audio review by a verified master the student is connected with. Recordings are
-// 30–60 s, recorded here, private on the server (MEDIA_DIR) and deleted after 60 days. Free for now.
+// 30–60 s, recorded here, private on the server (MEDIA_DIR) and deleted after 60 days. Every member row, recording
+// and review of someone else can be reported, every member blocked (./safety.tsx, App Store guideline 1.2).
 
 const href = (p: string) => p as Href;
 export function useErr() {
@@ -100,25 +102,30 @@ export function MentoringScreen() {
   const [msg, setMsg] = useState("");
   const act = async (f: () => Promise<unknown>) => { setMsg(""); try { await f(); me.reload(); } catch (e) { setMsg(err(e)); } };
   const d = me.data;
+  // a blocked member disappears from every list (the server leaves them out)
+  const safe = useMentoringSafety(() => { me.reload(); masters.reload(); mine.reload(); inbox.reload(); });
+  const flag = (m: Member | null) => (m ? <SafetyButton label={mt("safetyFor", { name: `@${m.username}` })} onPress={() => safe.memberMenu(m)} /> : null);
+  const pair = (a: ReactNode, b: ReactNode) => <View style={{ flexDirection: "row", alignItems: "center", gap: 2 }}>{a}{b}</View>;
 
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
         <PageHero topInset back eyebrow={mt("kicker")} title={mt("mentoringTitle")} lead={mt("mentoringLead")}>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: "rgba(255,255,255,0.75)" }}>{mt("free")}</Text>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 13, lineHeight: 19, color: "rgba(255,255,255,0.75)" }}>{mt("mentoringNote")}</Text>
         </PageHero>
         <View style={{ paddingHorizontal: 16, marginTop: 20, gap: 24 }}>
           <Gate error={me.error}>
             {!d ? <Muted>{mt("loading")}</Muted> : (
               <>
                 <ErrorText text={msg} />
+                {safe.note ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.accent }}>{safe.note}</Text> : null}
                 <Section title={mt("yourMentors")}>
                   <Card>
                     {d.mentors.length ? d.mentors.map((l) => (
                       <View key={l.id} style={{ gap: 8 }}>
                         <MemberLine m={l.member} sub={l.status === "accepted" ? mt("accepted") : mt("requested")}
-                          right={<Chip label={mt("endMentoring")} onPress={() => void act(() => M.link(l.id, "end"))} />} />
+                          right={pair(<Chip label={mt("endMentoring")} onPress={() => void act(() => M.link(l.id, "end"))} />, flag(l.member))} />
                         {l.status === "accepted" && l.member ? <OutlineButton compact icon="plus" title={mt("send")} onPress={() => router.push(href(`/mishary/mentoring/send?mentor=${l.member!.username}`))} /> : null}
                       </View>
                     )) : <Muted>{mt("none")}</Muted>}
@@ -128,7 +135,7 @@ export function MentoringScreen() {
                   <Muted>{mt("askLead")}</Muted>
                   <Card>
                     {(masters.data ?? []).filter((m) => m.link !== "accepted" && m.link !== "pending").length ? (masters.data ?? []).filter((m) => m.link !== "accepted" && m.link !== "pending").map((m) => (
-                      <MemberLine key={m.username} m={m} right={<Chip label={mt("ask")} icon="send" onPress={() => void act(async () => { await M.ask(m.username); masters.reload(); })} />} />
+                      <MemberLine key={m.username} m={m} right={pair(<Chip label={mt("ask")} icon="send" onPress={() => void act(async () => { await M.ask(m.username); masters.reload(); })} />, flag(m))} />
                     )) : <Muted>{mt("noMasters")}</Muted>}
                     <OutlineButton compact title={mt("openTalents")} onPress={() => router.push(href("/talents"))} />
                   </Card>
@@ -144,7 +151,7 @@ export function MentoringScreen() {
                       <Card>
                         {d.students.filter((s) => s.status === "pending").length ? d.students.filter((s) => s.status === "pending").map((l) => (
                           <View key={l.id} style={{ gap: 8 }}>
-                            <MemberLine m={l.member} sub={l.note || undefined} />
+                            <MemberLine m={l.member} sub={l.note || undefined} right={flag(l.member)} />
                             <Row>
                               <Chip label={mt("accept")} icon="check" on onPress={() => void act(() => M.link(l.id, "accept"))} />
                               <Chip label={mt("decline")} icon="close" onPress={() => void act(() => M.link(l.id, "decline"))} />
@@ -157,7 +164,7 @@ export function MentoringScreen() {
                       <Card>
                         {d.students.filter((s) => s.status === "accepted").length ? d.students.filter((s) => s.status === "accepted").map((l) => (
                           <MemberLine key={l.id} m={l.member} sub={l.open ? `${l.open} · ${mt("pending")}` : undefined}
-                            right={<Chip label={mt("endMentoring")} onPress={() => void act(() => M.link(l.id, "end"))} />} />
+                            right={pair(<Chip label={mt("endMentoring")} onPress={() => void act(() => M.link(l.id, "end"))} />, flag(l.member))} />
                         )) : <Muted>{mt("none")}</Muted>}
                       </Card>
                     </Section>
@@ -171,9 +178,11 @@ export function MentoringScreen() {
               </>
             )}
           </Gate>
+          <MentoringSafetyBar />
           <View style={{ height: 40 }} />
         </View>
       </Page>
+      {safe.sheet}
     </>
   );
 }
@@ -258,12 +267,14 @@ export function ServerAudio({ path }: { path: string }) {
 
 const RLABEL: Record<RubricKey, MtKey> = { makharij: "r_makharij", tajweed: "r_tajweed", waqf: "r_waqf", pace: "r_pace", maqam: "r_maqam" };
 
-function ReviewView({ r }: { r: Review }) {
+/** a review; onReport / onMember when someone else wrote it (report the text, report or block the reviewer) */
+function ReviewView({ r, onReport, onMember }: { r: Review; onReport?: () => void; onMember?: (m: Member) => void }) {
   const t = useTheme();
   const mt = useMt();
   return (
     <Card>
-      {r.reviewer ? <MemberLine m={r.reviewer} /> : <Text style={{ fontFamily: FONT.semibold, color: t.gold }}>{mt("jury")}</Text>}
+      {r.reviewer ? <MemberLine m={r.reviewer} right={onMember ? <SafetyButton label={mt("safetyFor", { name: `@${r.reviewer.username}` })} onPress={() => onMember(r.reviewer!)} /> : undefined} />
+        : <Text style={{ fontFamily: FONT.semibold, color: t.gold }}>{mt("jury")}</Text>}
       {RUBRIC.map((k) => (
         <View key={k} style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
           <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 14, color: t.ink }}>{mt(RLABEL[k])}</Text>
@@ -272,7 +283,19 @@ function ReviewView({ r }: { r: Review }) {
       ))}
       <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: t.ink }}>{mt("total", { n: r.total })}</Text>
       {r.text ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{r.text}</Text> : null}
+      {onReport ? <ReportLink label={mt("reportReview")} onPress={onReport} /> : null}
     </Card>
+  );
+}
+
+/** a quiet text button in the danger colour (report a recording or a review) */
+function ReportLink({ label, onPress }: { label: string; onPress: () => void }) {
+  const t = useTheme();
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" hitSlop={6} style={{ alignSelf: "flex-start", minHeight: 40, flexDirection: "row", alignItems: "center", gap: 6 }}>
+      <Icon name="flag" size={14} color={t.danger} />
+      <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.danger }}>{label}</Text>
+    </Pressable>
   );
 }
 
@@ -315,6 +338,12 @@ export function SubmissionScreen({ id }: { id: string }) {
   const d = useLoad(() => M.submission(id), [id]);
   const [msg, setMsg] = useState("");
   const s = d.data?.submission;
+  // after a block the submission is gone for both sides (the server answers 404), so the screen closes
+  const safe = useMentoringSafety(() => router.back());
+  const role = d.data?.role;
+  const flag = (m: Member | null) => (m ? <SafetyButton label={mt("safetyFor", { name: `@${m.username}` })} onPress={() => safe.memberMenu(m)} /> : null);
+  // the student reports any review; the master every review but the own (s.mentor is the master); a juror sees only the own
+  const canReportReview = (r: Review) => role === "student" || (role === "master" && (!r.reviewer || r.reviewer.username !== s?.mentor?.username));
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -324,28 +353,35 @@ export function SubmissionScreen({ id }: { id: string }) {
           <Gate error={d.error}>
             {!s ? <Muted>{mt("loading")}</Muted> : (
               <>
-                {d.data!.role === "master" ? <MemberLine m={s.student} /> : null}
-                {d.data!.role === "student" && s.mentor ? <MemberLine m={s.mentor} sub={mt("accepted")} /> : null}
+                {d.data!.role === "master" ? <MemberLine m={s.student} right={flag(s.student)} /> : null}
+                {d.data!.role === "student" && s.mentor ? <MemberLine m={s.mentor} sub={mt("accepted")} right={flag(s.mentor)} /> : null}
                 <Card>
                   <VersePick value={s.verseKey} fixed />
                   {s.hasAudio ? <ServerAudio path={M.audioPath(s.id)} /> : <Muted>{mt("deletedFile")}</Muted>}
                   {s.note ? <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: t.ink }}>{s.note}</Text> : null}
                   {s.hasAudio ? <Muted size={12}>{mt("expires", { d: date(s.expiresAt) })}</Muted> : null}
+                  {role !== "student" ? <ReportLink label={mt("reportRecording")} onPress={() => safe.reportSubmission(s.id)} /> : null}
                 </Card>
                 <Section title={mt("feedback")}>
-                  {d.data!.reviews.length ? d.data!.reviews.map((r) => <ReviewView key={r.id} r={r} />) : <Muted>{mt("pending")}</Muted>}
+                  {d.data!.reviews.length ? d.data!.reviews.map((r) => (
+                    <ReviewView key={r.id} r={r} onReport={canReportReview(r) ? () => safe.reportReview(s.id, r.id) : undefined}
+                      onMember={canReportReview(r) && r.reviewer ? safe.memberMenu : undefined} />
+                  )) : <Muted>{mt("pending")}</Muted>}
                   {d.data!.canReview ? <RubricForm id={s.id} needText={d.data!.role === "master"} onDone={d.reload} /> : null}
                 </Section>
                 <ErrorText text={msg} />
+                {safe.note ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.accent }}>{safe.note}</Text> : null}
                 {d.data!.role === "student" && s.status === "pending" ? (
                   <OutlineButton title={s.season ? mt("withdrawEntry") : mt("withdraw")} onPress={() => void M.withdraw(s.id).then(() => router.back()).catch((e) => setMsg(err(e)))} />
                 ) : null}
               </>
             )}
           </Gate>
+          <MentoringSafetyBar />
           <View style={{ height: 40 }} />
         </View>
       </Page>
+      {safe.sheet}
     </>
   );
 }

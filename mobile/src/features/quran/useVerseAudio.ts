@@ -34,7 +34,11 @@ function trackOf(url: string): Track | null {
 }
 
 export type PlayOpts = { fallback?: string; fromMs?: number; rate?: number; title?: string; artist?: string; track?: Track | false };
-export type VerseSnap = { playing: boolean; positionMs: number; durationMs: number; ended: boolean; loadedUrl: string; fallback: boolean };
+/** error: the verse could not be loaded (no connection, or the file is missing here and on Quran.com) */
+export type VerseSnap = { playing: boolean; positionMs: number; durationMs: number; ended: boolean; loadedUrl: string; fallback: boolean; error: boolean };
+// how long a verse file may take to load before the Quran.com copy is tried, and before the verse counts as failed
+const LOAD_MS = 6000;
+const FALLBACK_MS = 9000;
 
 export type VerseAudio = VerseSnap & {
   /** load a verse file and play it (from = ms offset); onEnd fires when it finished */
@@ -57,7 +61,7 @@ export class VerseEngine {
   private p: AudioPlayer | null = null;
   private cur: { url: string; fallback?: string; rate: number; startAt: number; triedFallback: boolean; track: Track | null; loaded: string } | null = null;
   private loadTimer: ReturnType<typeof setTimeout> | null = null;
-  private snap: VerseSnap = { playing: false, positionMs: 0, durationMs: 0, ended: false, loadedUrl: "", fallback: false };
+  private snap: VerseSnap = { playing: false, positionMs: 0, durationMs: 0, ended: false, loadedUrl: "", fallback: false, error: false };
   private subs = new Set<() => void>();
   private offs: (() => void)[] = [];
   private lastT = -1;
@@ -97,9 +101,11 @@ export class VerseEngine {
       const patch: Partial<VerseSnap> = { playing: s.playing, positionMs: Math.round(s.currentTime * 1000) };
       if (s.duration) patch.durationMs = Math.round(s.duration * 1000);
       if (s.playing) patch.ended = false;
+      // the player gave up on the file (missing, no connection): try the Quran.com copy at once, else report it
+      if (c && c.startAt >= 0 && Date.now() - this.loadAt > 800 && /fail|error/i.test(s.playbackState ?? "")) this.failed();
       if (s.isLoaded && c && c.startAt >= 0) {
         const at = c.startAt; c.startAt = -1;
-        patch.loadedUrl = c.loaded; patch.fallback = c.loaded !== c.url;
+        patch.loadedUrl = c.loaded; patch.fallback = c.loaded !== c.url; patch.error = false;
         if (this.loadTimer) { clearTimeout(this.loadTimer); this.loadTimer = null; }
         this.lastT = -1;
         void p.seekTo(at / 1000).then(() => { p.setPlaybackRate(c.rate); p.play(); });
@@ -116,17 +122,37 @@ export class VerseEngine {
     return p;
   }
 
+  private loadAt = 0;
   private load(url: string) {
     const p = this.get();
     if (this.cur) this.cur.loaded = url;
+    this.loadAt = Date.now();
     p.replace({ uri: url });
     // a missing self-hosted file never loads: switch to Quran.com audio after a few seconds
     if (this.loadTimer) clearTimeout(this.loadTimer);
-    this.loadTimer = setTimeout(() => {
-      const c = this.cur;
-      if (c && c.startAt >= 0 && c.fallback && !c.triedFallback) { c.triedFallback = true; c.loaded = c.fallback; p.replace({ uri: c.fallback }); }
-    }, 6000);
+    this.loadTimer = setTimeout(() => this.failed(), LOAD_MS);
   }
+
+  /** the file did not load: the Quran.com copy once, then the verse counts as failed (snap.error, the reader offers a retry) */
+  private failed() {
+    const c = this.cur;
+    const p = this.p;
+    if (this.loadTimer) { clearTimeout(this.loadTimer); this.loadTimer = null; }
+    if (!c || !p || c.startAt < 0) return;
+    if (c.fallback && !c.triedFallback) {
+      c.triedFallback = true; c.loaded = c.fallback;
+      this.loadAt = Date.now();
+      p.replace({ uri: c.fallback });
+      this.loadTimer = setTimeout(() => this.failed(), FALLBACK_MS);
+      return;
+    }
+    // a late answer of the network still plays (startAt stays); tapping play again loads the verse anew
+    this.set({ error: true, playing: false });
+    this.errorListeners.forEach((f) => f());
+  }
+  private errorListeners = new Set<() => void>();
+  /** called when a verse could not be loaded */
+  onError = (f: () => void) => { this.errorListeners.add(f); return () => { this.errorListeners.delete(f); }; };
 
   play = (url: string, opts: PlayOpts = {}) => {
     void ensureMode();
@@ -140,7 +166,7 @@ export class VerseEngine {
       void p.seekTo((opts.fromMs ?? 0) / 1000).then(() => { p.setPlaybackRate(rate); p.play(); });
     } else {
       this.cur = { url, fallback: opts.fallback || undefined, rate, startAt: opts.fromMs ?? 0, triedFallback: false, track, loaded: url };
-      this.set({ durationMs: 0, positionMs: opts.fromMs ?? 0, ended: false });
+      this.set({ durationMs: 0, positionMs: opts.fromMs ?? 0, ended: false, error: false });
       this.load(url);
     }
     if (opts.title) { try { p.setActiveForLockScreen(true, { title: opts.title, artist: opts.artist ?? "Quran Masterclass" }); } catch { /* not supported */ } }

@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, G, LinearGradient as SvgLinearGradient, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
 import { WORDMARK, WORDMARK_FOIL } from "./wordmark-paths";
 import { ARABIC_VARIANT, WORDMARK_FILES, type WordmarkFile } from "./wordmark-files";
-import { useLang } from "@/i18n";
+import { isRTL, useLang } from "@/i18n";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, TONES, goldButton, stage, type, useTheme } from "@/lib/theme";
 import { Icon, type IconName } from "./icons";
 
@@ -48,10 +48,14 @@ export function Stage({ children, style, rounded = 0, hairlines = true, pattern 
   );
 }
 
+/** no tracking in Arabic-script languages (ar, ur, fa, ps): letter-spacing breaks the joining of the letters */
+const NO_TRACK: TextStyle = { letterSpacing: 0 };
+
 /** small uppercase label above headings (.eyebrow), gold on the stage */
 export function Eyebrow({ children, onStage, style }: { children: ReactNode; onStage?: boolean; style?: StyleProp<TextStyle> }) {
   const t = useTheme();
-  return <Text style={[type.eyebrow, { color: onStage ? stage.gold : t.muted }, style]} accessibilityRole="text">{children}</Text>;
+  const { lang } = useLang();
+  return <Text style={[type.eyebrow, isRTL(lang) ? NO_TRACK : null, { color: onStage ? stage.gold : t.muted }, style]} accessibilityRole="text">{children}</Text>;
 }
 
 /** headline in the website's display face (Plus Jakarta Sans ExtraBold, tight tracking) */
@@ -227,6 +231,8 @@ export function Poster({ title, desc, badge, arabic, tone = 0, colors, cta, lock
   title: string; desc: string; badge: string; arabic: string; tone?: number; colors?: [string, string]; cta: string; locked?: boolean; onPress: () => void; tall?: boolean;
 }) {
   const [a, b] = colors ?? TONES[tone % TONES.length];
+  const { lang } = useLang();
+  const track = isRTL(lang) ? NO_TRACK : null;
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${title}. ${desc}${locked ? ". Pro" : ""}`}
       style={({ pressed }) => [{ flex: 1, borderRadius: R.md, overflow: "hidden", transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
@@ -236,12 +242,12 @@ export function Poster({ title, desc, badge, arabic, tone = 0, colors, cta, lock
         <Text numberOfLines={1} allowFontScaling={false} style={{ position: "absolute", right: -2, top: 6, fontFamily: CALLIG_FONT, fontSize: 64, lineHeight: 96, color: "rgba(233,207,153,0.13)" }}>{arabic}</Text>
         <View style={{ position: "absolute", left: 16, top: 16, right: 16, flexDirection: "row", alignItems: "center", gap: 6 }}>
           <SmallStar size={9} color="rgba(214,180,108,0.8)" />
-          <Text numberOfLines={1} style={[type.eyebrow, { fontSize: 9.5, color: "rgba(255,255,255,0.6)", flex: 1 }]}>{badge}</Text>
+          <Text numberOfLines={1} style={[type.eyebrow, track, { fontSize: 9.5, color: "rgba(255,255,255,0.6)", flex: 1 }]}>{badge}</Text>
           {locked ? <Icon name="lock" size={15} color={stage.gold} /> : null}
         </View>
         <Text style={{ fontFamily: FONT.display, fontSize: 19, lineHeight: 23, letterSpacing: -0.4, color: "#ffffff" }} numberOfLines={2}>{title}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 17, color: "rgba(255,255,255,0.65)", marginTop: 6 }} numberOfLines={2}>{desc}</Text>
-        <Text style={[type.eyebrow, { fontSize: 10.5, color: stage.gold, marginTop: 12 }]}>{cta}</Text>
+        <Text style={[type.eyebrow, track, { fontSize: 10.5, color: stage.gold, marginTop: 12 }]}>{cta}</Text>
       </LinearGradient>
     </Pressable>
   );
@@ -267,19 +273,19 @@ export function PosterGrid({ children }: { children: ReactNode[] }) {
   );
 }
 
-/** pill chip (pa-chip); selected = gold */
-export function Chip({ label, selected, onPress, onStage }: { label: string; selected?: boolean; onPress: () => void; onStage?: boolean }) {
+/** pill chip (pa-chip); selected = gold; disabled = dimmed and not tappable (a setting another one fixes) */
+export function Chip({ label, selected, onPress, onStage, disabled }: { label: string; selected?: boolean; onPress: () => void; onStage?: boolean; disabled?: boolean }) {
   const t = useTheme();
   if (selected && onStage) {
     return (
-      <Pressable onPress={onPress} accessibilityRole="button" accessibilityState={{ selected: true }} accessibilityLabel={label}>
+      <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityState={{ selected: true, disabled: !!disabled }} accessibilityLabel={label} style={disabled ? { opacity: 0.45 } : undefined}>
         <LinearGradient colors={[goldButton.from, goldButton.to]} style={s.chip}><Text style={[s.chipText, { color: goldButton.text }]}>{label}</Text></LinearGradient>
       </Pressable>
     );
   }
   return (
-    <Pressable onPress={onPress} accessibilityRole="button" accessibilityState={{ selected: !!selected }} accessibilityLabel={label}
-      style={[s.chip, onStage
+    <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityState={{ selected: !!selected, disabled: !!disabled }} accessibilityLabel={label}
+      style={[s.chip, disabled ? { opacity: 0.45 } : null, onStage
         ? { borderColor: "rgba(255,255,255,0.18)", backgroundColor: "rgba(255,255,255,0.04)" }
         : { borderColor: selected ? goldButton.line : t.line, backgroundColor: selected ? "rgba(201,166,94,0.14)" : t.surface }]}>
       <Text style={[s.chipText, { color: onStage ? "rgba(255,255,255,0.8)" : selected ? t.ink : t.muted }]}>{label}</Text>

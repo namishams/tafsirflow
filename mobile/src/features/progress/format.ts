@@ -26,6 +26,13 @@ export function formatNumber(n: number, lang: string, maxFrac = 0, minFrac = 0):
   return `${neg ? "-" : ""}${grouped}${frac ? (de ? "," : ".") + frac : ""}`;
 }
 
+/** a calendar year (Hijri or Gregorian) without thousands separator: "1448", never "1,448" or "1.448" */
+export function formatYear(y: number, lang: string): string {
+  if (!Number.isFinite(y)) return "–";
+  if (other(lang)) return viaIntl(lang, (loc) => new Intl.NumberFormat(loc, { useGrouping: false, maximumFractionDigits: 0 }).format(y), () => String(Math.round(y)));
+  return String(Math.round(y));
+}
+
 const MONTH_SHORT = {
   de: ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez."],
   en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],

@@ -72,6 +72,13 @@ export function allDuplicates(s: Garden, dupes: GiftItem[]): { picks: Pick[]; la
   return { picks: first.slice(0, fits), later: all.length - fits };
 }
 
+/** all duplicates that are ready to give (feed and collection) */
+export function readyToGive(): number {
+  let n = Object.values(stickerDupes()).reduce((a, x) => a + Math.max(0, x), 0);
+  for (const id of duplicates(800)) n += Math.max(0, countOf(id) - 1);
+  return n;
+}
+
 /** the feed sticker's definition (for its art), or null for a collection sticker */
 export const feedDef = (id: string): StickerDef | null => STICKER.get(id) ?? null;
 

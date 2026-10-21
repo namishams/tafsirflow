@@ -4,7 +4,9 @@ import Svg, { Circle, ClipPath, Defs, G, LinearGradient as SvgLinear, Path, Stop
 import Animated, { Easing, cancelAnimation, useAnimatedStyle, useSharedValue, withRepeat, withTiming } from "react-native-reanimated";
 import { LinearGradient } from "expo-linear-gradient";
 import { ARABIC_FONT, CALLIG_FONT, FONT } from "@/lib/theme";
+import { useLang } from "@/i18n";
 import { hashId, itemById, rarityOf, type Rarity, type Series } from "./catalog";
+import { stickerLabel } from "./texts";
 
 // Procedural sticker art: frame shape × geometric pattern × palette × rarity, all from the id. Only text and
 // geometry (no people, faces or living beings; no Quran text — verse stickers show the verse key and surah name).
@@ -30,7 +32,10 @@ function framePath(f: Frame, c: number, r: number): string {
 }
 
 export const CatalogArt = memo(function CatalogArt({ id, size = 84, locked = false }: { id: string; size?: number; locked?: boolean }) {
-  const it = itemById(id);
+  const { lang } = useLang();
+  const it0 = itemById(id);
+  // seasons and juz read in the learner's language (the id stays the same); every other label as before
+  const it = it0 && (it0.series === "seasonal" || it0.series === "juz") ? { ...it0, label: stickerLabel(it0, lang) } : it0;
   const h = hashId(id);
   const rarity = rarityOf(id);
   const frame: Frame = (it && SERIES_FRAME[it.series]) ?? FRAMES[h % FRAMES.length];
@@ -64,12 +69,16 @@ export const CatalogArt = memo(function CatalogArt({ id, size = 84, locked = fal
         <Path d={d} fill="none" stroke={`url(#rim${h})`} strokeWidth={rarity === "common" ? 2 : rarity === "rare" ? 3 : 4} />
         {rarity === "legendary" || rarity === "epic" ? <Path d={framePath(frame, c, r - 6)} fill="none" stroke={RIM[rarity][1]} strokeWidth={0.7} opacity={0.7} /> : null}
         {big ? <SvgText x={50} y={arabicBig ? 56 : 54} fontSize={arabicBig ? (big.length > 6 ? 16 : 26) : big.length > 6 ? 15 : 20} fontFamily={arabicBig ? (it?.series === "letters" || it?.series === "roots" ? ARABIC_FONT : CALLIG_FONT) : FONT.bold} fill={light} textAnchor="middle">{big}</SvgText> : null}
-        {sub ? <SvgText x={50} y={big ? 74 : 54} fontSize={big ? 8 : sub.length > 14 ? 8.5 : 11} fontFamily={FONT.semibold} fill={light} opacity={big ? 0.85 : 1} textAnchor="middle">{sub.length > 20 ? `${sub.slice(0, 19)}…` : sub}</SvgText> : null}
+        {sub ? <SvgText x={50} y={big ? 74 : 54} fontSize={subSize(sub, !!big)} fontFamily={FONT.semibold} fill={light} opacity={big ? 0.85 : 1} textAnchor="middle">{sub}</SvgText> : null}
       </Svg>
       {rarity === "legendary" ? <Foil size={size} /> : null}
     </View>
   );
 });
+
+/** the size of the small line: as before up to 20 characters; a longer name (Dhul-Jalali-wal-Ikram, a season in some
+ *  languages) is set smaller to fit whole instead of being cut off */
+const subSize = (sub: string, big: boolean) => (big ? 8 : sub.length > 20 ? Math.max(5.5, (8.5 * 19) / sub.length) : sub.length > 14 ? 8.5 : 11);
 
 /** the moving foil shine of legendary stickers */
 function Foil({ size }: { size: number }) {

@@ -8,7 +8,8 @@ import type { Badge } from "./badges";
 export type Level = "talent" | "rising" | "master" | "sheikh";
 export const LEVELS: Level[] = ["talent", "rising", "master", "sheikh"];
 export type Connection = "none" | "outgoing" | "incoming" | "connected";
-export type TalentCard = { username: string; name: string; country: string | null; role: string; rewaya: string; level: Level; verified: boolean; badge?: Badge | null; sharerTier: number; followers: number; avatar?: string | null; followed?: boolean; mine?: boolean; followsMe?: boolean };
+export type TalentCard = { username: string; name: string; country: string | null; role: string; rewaya: string; level: Level; verified: boolean; badge?: Badge | null; sharerTier: number; followers: number; avatar?: string | null; followed?: boolean; mine?: boolean; followsMe?: boolean;
+  /** lists and suggestions (22.10.2026): a follow request to this private account is pending */ requested?: boolean; private?: boolean };
 export type TalentProfile = TalentCard & {
   bio: string; style: string; ijaza: boolean; public: boolean; following: number; shares: number; maqam: string; ijazahChain: string;
   progress: { treeStage: number; treeType: string; certJuz: number[]; hidden?: boolean } | null;

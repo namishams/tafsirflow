@@ -1,0 +1,18 @@
+{
+  "discoverTitle": "Yetenekleri keşfedin",
+  "discoverLead": "Dünyanın dört bir yanındaki kâri ve hocaları bulun, takip edin ve bağlantı kurun.",
+  "search": "Ad veya @kullanıcıadı arayın",
+  "filterLevel": "Seviye",
+  "all": "Tümü",
+  "verifiedOnly": "Yalnızca doğrulanmışlar",
+  "filterCountry": "Ülke",
+  "anyCountry": "Tüm ülkeler",
+  "filterRewaya": "Rivayet",
+  "rewayaFilterHint": "Örneğin Hafs veya Verş",
+  "empty": "Yetenek bulunamadı.",
+  "loadMore": "Daha fazla yükle",
+  "signIn": "Topluluğu kullanmak için lütfen giriş yapın.",
+  "signInBtn": "Giriş yap",
+  "e_generic": "İşlem başarısız oldu.",
+  "retry": "Tekrar deneyin"
+}

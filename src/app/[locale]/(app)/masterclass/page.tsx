@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import LearnHub, { LEARN_LINKS } from "@/components/learn/LearnHub";
+import LearnHub from "@/components/learn/LearnHub";
+import { LEARN_LINKS } from "@/components/learn/learnLinks";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";

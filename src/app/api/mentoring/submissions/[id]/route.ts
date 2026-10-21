@@ -19,14 +19,18 @@ export async function GET(req: NextRequest, { params }: Ctx) {
   const anon = isAnonymous(r, role);
   const rv = await p.query("SELECT * FROM mentoring_reviews WHERE submission_id = $1 ORDER BY created_at", [r.id]);
   const mine = rv.rows.some((x) => Number(x.reviewer_id) === me.id);
+  // members the caller blocked or who blocked the caller disappear: their reviews and their member card (guideline 1.2)
+  const blocked = new Set((await p.query(
+    "SELECT CASE WHEN blocker_id = $1 THEN blocked_id ELSE blocker_id END AS other FROM community_blocks WHERE blocker_id = $1 OR blocked_id = $1", [me.id],
+  )).rows.map((x) => Number(x.other)));
   // a juror sees only the own review (no anchoring); season reviewers stay anonymous towards the student
-  const shown = role === "jury" ? rv.rows.filter((x) => Number(x.reviewer_id) === me.id) : rv.rows;
+  const shown = role === "jury" ? rv.rows.filter((x) => Number(x.reviewer_id) === me.id) : rv.rows.filter((x) => !blocked.has(Number(x.reviewer_id)));
   const ids = [Number(r.student_id), ...(r.master_id ? [Number(r.master_id)] : []), ...(r.season_id ? [] : shown.map((x) => Number(x.reviewer_id)))];
   const cards = await cardsFor(ids);
   const seasonLive = !r.season_id || ["open", "judging"].includes(String(r.season_status));
   const canReview = !mine && Number(r.student_id) !== me.id && role !== "student" && seasonLive && !!r.media_path;
   return json({
-    submission: submissionJson(r, anon ? null : cards.get(Number(r.student_id)) ?? null, anon || !r.master_id ? null : cards.get(Number(r.master_id)) ?? null, { hideStats: role === "jury" && !!r.season_id, hideNote: anon }),
+    submission: submissionJson(r, anon ? null : cards.get(Number(r.student_id)) ?? null, anon || !r.master_id || blocked.has(Number(r.master_id)) ? null : cards.get(Number(r.master_id)) ?? null, { hideStats: role === "jury" && !!r.season_id, hideNote: anon }),
     role,
     reviews: shown.map((x) => reviewJson(x, r.season_id ? null : cards.get(Number(x.reviewer_id)) ?? null)),
     canReview,

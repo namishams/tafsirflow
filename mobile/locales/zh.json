@@ -1,7 +1,7 @@
 {
   "ios": {
     "CFBundleDisplayName": "Quran Masterclass",
-    "NSLocationWhenInUseUsageDescription": "Quran Masterclass 仅在此设备上使用你的位置，用于计算你所在地的礼拜时间和基卜拉方向。位置信息不会被存储，也不会被发送到任何地方。",
+    "NSLocationWhenInUseUsageDescription": "Quran Masterclass 使用您的位置来计算您所在地的礼拜时间、基卜拉方向以及您花园中的天空。您的坐标只保留在此设备上，绝不会发送给我们。只有当您选择在个人资料中显示所在城市时，城市名称才会随个人资料一同保存。",
     "NSMicrophoneUsageDescription": "Quran Masterclass 仅在您开始录音、诵读检查或单词检查时使用麦克风。除非您选择发送或发布，录音会保留在此设备上。",
     "NSSpeechRecognitionUsageDescription": "Quran Masterclass 在此设备上识别您在练习、测试和单词检查中诵读的阿拉伯语单词，以显示听到了哪些单词。这不是泰吉威德评估，也不会上传任何内容。",
     "NSCameraUsageDescription": "Quran Masterclass 仅在您拍摄头像，或在提供该功能时为诵读片段开启视频时使用相机。在您开始之前不会录制任何内容。",

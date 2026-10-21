@@ -10,7 +10,8 @@ import type { CSSProperties } from "react";
 import { useLang } from "@/lib/learn/i18n";
 import { getVerseByKey } from "@/lib/learn/quran";
 import { TREE_TYPES, firstWater, plantTree, type Tree, type TreeType } from "@/lib/learn/garden/garden";
-import { BISMILLAH, DUA_KEY, useStory } from "@/lib/learn/garden/story";
+import { BISMILLAH, DUA_KEY, fillS, useStory } from "@/lib/learn/garden/story";
+import { closingWords } from "@/lib/learn/garden/sources";
 import { useGardenText } from "@/lib/learn/garden/texts";
 import { journeySky } from "@/lib/learn/garden/sky";
 import { GoldButton, OutlineButton } from "@/components/learn/ui";
@@ -184,17 +185,29 @@ function Dua() {
   const story = useStory();
   const { lang } = useLang();
   const [ar, setAr] = useState<string | null>(null);
+  const [meaning, setMeaning] = useState<string | null>(null);
+  const [failed, setFailed] = useState(false);
   useEffect(() => {
     let live = true;
-    getVerseByKey(DUA_KEY, lang).then((v) => { if (live) setAr(v.text_uthmani.trim().split(/\s+/).slice(-3).join(" ")); }).catch(() => undefined);
+    setMeaning(null); setFailed(false);
+    getVerseByKey(DUA_KEY, lang).then((v) => {
+      if (!live) return;
+      setAr(v.text_uthmani.trim().split(/\s+/).slice(-3).join(" "));
+      const w = lang === "ar" ? null : closingWords(v.translation);
+      if (w) setMeaning(fillS(story.quote, { t: w })); else setFailed(true);
+    }).catch(() => { if (live) setFailed(true); });
     return () => { live = false; };
-  }, [lang]);
+  }, [lang]); // eslint-disable-line react-hooks/exhaustive-deps
+  // as in the app: Arabic readers see the words once; the story's line only when the translation cannot be read,
+  // marked as a paraphrase
+  const text = lang === "ar" ? null : meaning ?? (failed ? story.duaM : null);
+  const source = lang !== "ar" && !meaning && failed ? `${story.duaS} · ${story.para}` : story.duaS;
   return (
     <div className="grid w-full gap-1 rounded-2xl border p-3.5" style={{ borderColor: "rgba(214,180,108,0.4)", backgroundColor: "rgba(6,30,23,0.78)" }}>
       <p className={kicker} style={{ color: GOLD }}>{story.duaT}</p>
       {ar ? <p lang="ar" dir="rtl" className="font-arabic text-center text-[28px] leading-[52px] text-[#f3e2b6]">{ar}</p> : null}
-      <p className="text-center text-[15.5px] italic leading-relaxed text-white">{story.duaM}</p>
-      <p className="text-center text-[12px] font-semibold" style={{ color: GOLD }}>{story.duaS}</p>
+      {text ? <p className="text-center text-[15.5px] italic leading-relaxed text-white">{text}</p> : null}
+      <p className="text-center text-[12px] font-semibold" style={{ color: GOLD }}>{source}</p>
     </div>
   );
 }

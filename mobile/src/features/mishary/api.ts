@@ -42,5 +42,13 @@ export const M = {
   newSeason: (b: { slug: string; kind: string; title: string; verses: string; startsOn: string; endsOn: string; maxSeconds?: number }) => api<{ ok: true }>("/api/mentoring/seasons", { body: b }),
   seasonAction: (slug: string, action: "judging" | "publish") => api<{ ok: true }>(`/api/mentoring/seasons/${u(slug)}`, { body: { action } }),
   hallOfFame: () => api<{ seasons: { season: Season; podium: Placement[] }[] }>("/api/mentoring/hall-of-fame"),
+  // safety (App Store guideline 1.2): report a recording or one review of it, report a member (a mentoring request
+  // with its note), block a member; the same community_reports / community_blocks as Quran Talents
+  report: (id: string, category: ReportCategory, reason: string, review?: string) =>
+    api<{ reported: true }>(`/api/mentoring/submissions/${u(id)}/report`, { body: { category, reason, ...(review ? { review } : {}) } }),
+  reportMember: (username: string, category: ReportCategory, reason: string) => api<{ reported: true }>(`/api/community/report/${u(username)}`, { body: { category, reason } }),
+  block: (username: string) => api<{ blocked: boolean }>(`/api/community/block/${u(username)}`, { method: "POST" }),
 };
+export type ReportCategory = "spam" | "harassment" | "inappropriate" | "impersonation" | "minor_safety" | "other";
+export const REPORT_CATEGORIES: ReportCategory[] = ["spam", "harassment", "inappropriate", "impersonation", "minor_safety", "other"];
 export const errCode = (e: unknown) => (e instanceof ApiError ? e.code : "generic");

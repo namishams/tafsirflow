@@ -30,7 +30,7 @@ export function VerseCard({ verseKey, word, reveal }: { verseKey: string; word?:
         <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.2, color: t.gold }}>{qt("verseShown", { key: verseKey })}</Text>
       </View>
       {verse ? (
-        <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 4 }} accessibilityLanguage="ar">
+        <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 4 }} accessibilityLanguage="ar">
           {words.map((w) => {
             const on = word === w.position;
             return (
@@ -59,7 +59,7 @@ export function OptionButton({ index, text, state, rtl, disabled, onPress }: { i
   return (
     <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityState={{ selected: state === "picked" || state === "right" || state === "wrong", disabled }}
       accessibilityLabel={`${letter}. ${text}`}
-      style={({ pressed }) => ({ flexDirection: rtl ? "row-reverse" : "row", alignItems: "center", gap: 12, minHeight: 56, paddingVertical: 12, paddingHorizontal: 14, borderRadius: R.lg, borderWidth: state === "idle" || state === "dim" ? 1 : 1.5, borderColor: tone, backgroundColor: pressed && !disabled ? t.bg : bg, opacity: state === "dim" ? 0.55 : 1 })}>
+      style={({ pressed }) => ({ flexDirection: rtl ? "row-reverse" : "row", direction: rtl ? "ltr" : "inherit", alignItems: "center", gap: 12, minHeight: 56, paddingVertical: 12, paddingHorizontal: 14, borderRadius: R.lg, borderWidth: state === "idle" || state === "dim" ? 1 : 1.5, borderColor: tone, backgroundColor: pressed && !disabled ? t.bg : bg, opacity: state === "dim" ? 0.55 : 1 })}>
       <View style={{ width: 30, height: 30, borderRadius: 15, borderWidth: 1, borderColor: state === "idle" || state === "dim" ? t.line : tone, alignItems: "center", justifyContent: "center", backgroundColor: state === "right" ? t.accent : state === "wrong" ? GARNET : "transparent" }}>
         {state === "right" ? <Icon name="check" size={15} color="#fff" /> : state === "wrong" ? <Icon name="close" size={14} color="#fff" />
           : <Text style={{ fontFamily: rtl ? ARABIC_FONT : FONT.bold, fontSize: rtl ? 16 : 13, color: state === "picked" ? t.gold : t.muted }}>{letter}</Text>}

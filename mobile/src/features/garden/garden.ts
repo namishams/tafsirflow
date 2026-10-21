@@ -277,7 +277,7 @@ export function tickGarden(xp: number, questsDone: boolean, pro: boolean, names:
   if (!seasonDone) { seasonDone = true; seasonalDrops(); }
   claimSeries(t);
   if (!s.traits.includes("garland") && ramadanComplete()) { s.traits.push("garland"); grow(t, 100, "stickers"); changed = true; }
-  // fruits: one a day per tree from stage 6 (two with the "fruits" decoration), none while resting
+  // fruits: one a day per tree from stage 5 (FRUIT_STAGE; two with the "fruits" decoration), none while resting
   // the calendar alone can open the next stage (the points were already there)
   for (const tr of s.trees) if (reachedOf(tr) !== (tr.floor ?? 0)) { up = settle(tr) || up; changed = true; }
   for (const tr of s.trees) {

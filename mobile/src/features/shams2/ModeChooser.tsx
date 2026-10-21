@@ -1,6 +1,6 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Pressable, Text, View, useWindowDimensions } from "react-native";
-import { router, type Href } from "expo-router";
+import { router, useRootNavigationState, type Href } from "expo-router";
 import { Icon } from "@/components/icons";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
 import { useIsl } from "@/features/library/palette";
@@ -92,18 +92,53 @@ function MethodCard({ mode, chosen, suggested, nested, side, onPick }: { mode: S
   );
 }
 
+/** opens a method: Shams Method 2.0's hub is taken back to when it is already open below (never a second hub on the
+ *  stack, e.g. hub → Shams page → hub), everything else is pushed */
+function useOpenMethod() {
+  const root = useRootNavigationState();
+  return (to: ShamsMode) => {
+    const href = methodHref(to, classicAt()) as Href;
+    if (to === "v2" && root?.routes?.some((r) => r.name === "shams/method")) router.dismissTo(href);
+    else router.push(href);
+  };
+}
+
+/** "Your method: … · Change" in the colours of the place it sits in (the dark Shams card or a light page) */
+function ModeBarRow({ onStage, onChange }: { onStage: boolean; onChange: () => void }) {
+  const t = useTheme();
+  const m = useModeT();
+  const { mode } = useShamsMode();
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center", gap: 12, paddingVertical: 10, paddingHorizontal: 14, borderRadius: R.card, borderWidth: 1,
+      borderColor: onStage ? GOLD_LINE : t.line, backgroundColor: onStage ? "rgba(0,0,0,0.22)" : t.surface }}>
+      <Icon name="sun" size={16} color={onStage ? stage.gold : t.accent} />
+      <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14, color: onStage ? stage.text : t.ink, textAlign: "left" }}>{m("methodIs", { name: nameOf(mode, m) })}</Text>
+      <Pressable onPress={onChange} accessibilityRole="button" accessibilityLabel={`${m("change")}: ${m("chooserTitle")}`} hitSlop={8} style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}>
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: onStage ? stage.gold : t.accent }}>{m("change")}</Text>
+      </Pressable>
+    </View>
+  );
+}
+
 /** The two methods as cards. tone "page": on the Shams page (title above the cards in the page's colours); tone "stage":
- *  inside the dark Shams card of the Masterclass tab. Choosing marks the method as "Your method" and opens it. */
-export function ShamsModeChooser({ tone = "page" }: { tone?: "page" | "stage" }) {
+ *  inside the dark Shams card of the Masterclass tab. Choosing marks the method as "Your method" and opens it.
+ *  collapsible: once a method is chosen only the slim "Your method · Change" bar shows; "Change" opens the cards in place.
+ *  here: the method whose screen the chooser sits on (the 2.0 hub): picking it again only closes the cards. */
+export function ShamsModeChooser({ tone = "page", collapsible, here, onClose }: { tone?: "page" | "stage"; collapsible?: boolean; here?: ShamsMode; onClose?: () => void }) {
   const m = useModeT();
   const isl = useIsl();
   const { width } = useWindowDimensions();
   const { mode, chosen, suggested } = useShamsMode();
   const onStage = tone === "stage";
+  const [open, setOpen] = useState(false);
+  const openMethod = useOpenMethod();
   const pick = (to: ShamsMode) => {
     if (!(chosen && mode === to)) { setShamsMode(to); tick(); }
-    router.push(methodHref(to, classicAt()) as Href);
+    setOpen(false);
+    onClose?.();
+    if (to !== here) openMethod(to);
   };
+  if (collapsible && chosen && !open) return <ModeBarRow onStage={onStage} onChange={() => { tick(); setOpen(true); }} />;
   return (
     <View style={{ gap: 12 }}>
       <View style={{ gap: 4 }}>
@@ -131,18 +166,10 @@ export function ShamsModeNote({ top = 12 }: { top?: number }) {
   );
 }
 
-/** A slim bar on the Shams Method 2.0 hub: the method in use and a way to change it (the cards are on the Shams page). */
+/** A slim bar on the Shams Method 2.0 hub: the method in use and a way to change it. "Change" opens the two cards in
+ *  place (as on the website's hub) instead of the long Shams page, so no second hub is stacked when 2.0 is kept. */
 export function ShamsModeBar() {
-  const t = useTheme();
-  const m = useModeT();
-  const { mode } = useShamsMode();
-  return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: 12, paddingVertical: 10, paddingHorizontal: 14, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
-      <Icon name="sun" size={16} color={t.accent} />
-      <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14, color: t.ink, textAlign: "left" }}>{m("methodIs", { name: nameOf(mode, m) })}</Text>
-      <Pressable onPress={() => router.push("/shams" as Href)} accessibilityRole="button" accessibilityLabel={`${m("change")}: ${m("chooserTitle")}`} hitSlop={8} style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}>
-        <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{m("change")}</Text>
-      </Pressable>
-    </View>
-  );
+  const [open, setOpen] = useState(false);
+  if (open) return <ShamsModeChooser here="v2" onClose={() => setOpen(false)} />;
+  return <ModeBarRow onStage={false} onChange={() => { tick(); setOpen(true); }} />;
 }

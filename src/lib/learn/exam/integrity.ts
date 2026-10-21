@@ -13,12 +13,14 @@ import { ApiError, api } from "@/lib/learn/api";
 import { useAuth } from "@/lib/learn/auth";
 import { readJSON, writeJSON } from "@/lib/learn/store";
 
-export type ExamKind = "rp-level" | "juz" | "surah" | "vocab" | "weekly" | "ar-unit";
+export type ExamKind = "rp-level" | "juz" | "surah" | "vocab" | "weekly" | "ar-unit" | "qbank";
 export type Rule = {
   questionSec: number; examSec: number; cooldownH: number; maxPerWeek: number; pass: number;
   recitation?: { threshold: number }; review?: boolean;
 };
 const AR_FINAL: Record<number, string> = { 3: "A1", 5: "A2", 8: "B1", 10: "B2", 16: "C1" };
+/** examination centre (src/lib/learn/qbank, as the app): mock exam per stage 1..4 – questions, pass mark */
+export const QBANK_MOCK: Record<number, { questions: number; pass: number }> = { 1: { questions: 50, pass: 0.7 }, 2: { questions: 60, pass: 0.75 }, 3: { questions: 80, pass: 0.75 }, 4: { questions: 100, pass: 0.8 } };
 
 export function ruleFor(exam: ExamKind, ref: string): Rule | null {
   const n = Number(ref);
@@ -28,6 +30,10 @@ export function ruleFor(exam: ExamKind, ref: string): Rule | null {
     case "surah": return n >= 1 && n <= 114 ? { questionSec: 45, examSec: 900, cooldownH: 6, maxPerWeek: 5, pass: 0.8 } : null;
     case "vocab": return ["juzamma", "vocab", "names"].includes(ref) ? { questionSec: 30, examSec: 900, cooldownH: 1, maxPerWeek: 7, pass: 0.8 } : null;
     case "weekly": return { questionSec: 45, examSec: 900, cooldownH: 24, maxPerWeek: 2, pass: 0.8 };
+    case "qbank": {
+      const m = QBANK_MOCK[n];
+      return m ? { questionSec: 90, examSec: m.questions * 60, cooldownH: 12, maxPerWeek: 3, pass: m.pass } : null;
+    }
     case "ar-unit": {
       if (!(n >= 1 && n <= 16)) return null;
       const final = AR_FINAL[n];

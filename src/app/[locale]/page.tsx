@@ -13,6 +13,7 @@ import WhyQuran from "@/components/WhyQuran";
 import AppShowcase from "@/components/AppShowcase";
 import FeedSection from "@/components/feed/FeedSection";
 import { getChapters } from "@/lib/quran";
+import { BUNDLED_UI_VERSES } from "@/lib/uiVerses";
 import VerseOfTheDay from "@/components/VerseOfTheDay";
 import Featured from "@/components/Featured";
 import DonateCTA from "@/components/DonateCTA";
@@ -114,8 +115,10 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
               <span className="illum-frame" />
               {corners.map((c) => <Rosette key={c} size={22} className={`absolute ${c}`} />)}
               <div className="relative flex items-center justify-between gap-3 text-xs text-white/55"><span>{ar ? "الفاتحة · ١" : "Al-Fatihah · 1"}</span><span>{ar ? "مشاري العفاسي" : "Mishary Alafasy"}</span></div>
-              <p className="hero-words font-arabic relative mt-6 flex flex-row-reverse flex-wrap justify-start gap-x-3 text-[2.4rem] leading-[1.9] sm:text-5xl">
-                <span>بِسْمِ</span><span>ٱللَّهِ</span><span>ٱلرَّحْمَـٰنِ</span><span>ٱلرَّحِيمِ</span>
+              {/* Quran 1:1 from the Quran data snapshot (lib/uiVerses), never typed by hand; dir="rtl" keeps the word order
+                  right to left on every locale (flex-row-reverse turned it around on the right-to-left pages) */}
+              <p dir="rtl" className="hero-words font-arabic relative mt-6 flex flex-wrap justify-start gap-x-3 text-[2.4rem] leading-[1.9] sm:text-5xl">
+                {BUNDLED_UI_VERSES["1:1"].split(/\s+/).map((w, i) => <span key={i}>{w}</span>)}
               </p>
               {!ar && <p className="relative mt-2 text-[15px] italic text-[rgb(var(--gold))]">Bismi llāhi r-raḥmāni r-raḥīm</p>}
               <p className={`relative text-sm text-white/60 ${ar ? "mt-3" : "mt-1"}`}>{t("home2.heroVerse")}</p>

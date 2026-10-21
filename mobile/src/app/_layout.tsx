@@ -26,6 +26,9 @@ import { DailyMoment } from "@/features/daily/DailyMoment";
 
 SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
+const HEADERLESS = { headerShown: false } as const;
+const HEADERLESS_FADE = { headerShown: false, animation: "fade" } as const;
+
 function Routes() {
   const t = useT();
   const theme = useTheme();
@@ -37,6 +40,18 @@ function Routes() {
       <Stack.Screen name="pro" options={{ presentation: "modal", headerShown: false }} />
       <Stack.Screen name="shams/[surah]" options={{ headerShown: false, gestureEnabled: false }} />
       <Stack.Screen name="radio/now" options={{ presentation: "fullScreenModal", headerShown: false, animation: "slide_from_bottom" }} />
+      {/* the learning journey draws its own hero with the back button: never a native header, not even for one frame */}
+      <Stack.Screen name="journey/index" options={{ headerShown: false }} />
+      <Stack.Screen name="journey/today" options={{ headerShown: false }} />
+      <Stack.Screen name="journey/year" options={{ headerShown: false }} />
+      <Stack.Screen name="journey/stats" options={{ headerShown: false }} />
+      {/* talent profiles, follower lists and search: header options set once here (an inline options object in the
+          screen re-ran setOptions on every render and could end in "Maximum update depth exceeded") */}
+      <Stack.Screen name="talents/u/[username]" options={HEADERLESS} />
+      <Stack.Screen name="talents/list" options={HEADERLESS} />
+      <Stack.Screen name="talents/search" options={HEADERLESS_FADE} />
+      {/* the legal pages draw their own hero: no native header with the raw route name during the push */}
+      <Stack.Screen name="legal/[doc]" options={HEADERLESS} />
     </Stack>
   );
 }

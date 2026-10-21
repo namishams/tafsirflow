@@ -6,9 +6,9 @@ import { moduleText } from "@/i18n/app";
 // are never translated here: they come from the sources.
 const T = {
   de: {
-    tradKicker: "Dein Weg",
-    tradQ: "Welcher Tradition folgst du?",
-    tradLead: "Das passt nur Gebetszeiten, die Anleitungen zu Gebet und Wudu und die Hadith-Sammlungen an. Du kannst es jederzeit im Konto ändern.",
+    tradKicker: "Ihr Weg",
+    tradQ: "Welcher Tradition folgen Sie?",
+    tradLead: "Das passt nur Gebetszeiten, die Anleitungen zu Gebet und Wudu und die Hadith-Sammlungen an. Sie können es jederzeit in den Einstellungen ändern.",
     sunni: "Sunnitisch",
     shia: "Schiitisch (Dschaʿfari)",
     both: "Möchte ich nicht sagen / beides zeigen",
@@ -33,9 +33,9 @@ const T = {
     hadiths: "{n} Hadithe",
     grade: "Bewertung",
     translator: "Übersetzung: {name}",
-    englishOnly: "Übersetzung auf Englisch – in deiner Sprache noch nicht verfügbar.",
+    englishOnly: "Übersetzung auf Englisch – in Ihrer Sprache noch nicht verfügbar.",
     loading: "Wird geladen …",
-    offline: "Konnte nicht geladen werden. Bitte prüfe deine Verbindung – bereits geöffnete Bücher funktionieren offline.",
+    offline: "Konnte nicht geladen werden. Bitte prüfen Sie Ihre Verbindung – bereits geöffnete Bücher funktionieren offline.",
     retry: "Erneut versuchen",
     save: "Speichern",
     saved: "Gespeichert",
@@ -44,7 +44,7 @@ const T = {
     prev: "Zurück",
     page: "Seite {n} von {total}",
     savedTitle: "Gespeichert",
-    savedEmpty: "Noch nichts gespeichert. Tippe bei einem Hadith auf Speichern.",
+    savedEmpty: "Noch nichts gespeichert. Tippen Sie bei einem Hadith auf Speichern.",
     sources: "Quellen",
     sourcesSunni: "Sunnitische Sammlungen: fawazahmed0/hadith-api (frei, gemeinfrei lizenziert). Die Texte stehen so da, wie sie veröffentlicht sind.",
     sourcesShia: "Schiitische Sammlungen: Thaqalayn (thaqalayn.net) über die Thaqalayn-API, mit den bei jedem Buch genannten Übersetzern.",
@@ -61,7 +61,7 @@ const T = {
   en: {
     tradKicker: "Your path",
     tradQ: "Which tradition do you follow?",
-    tradLead: "This only adjusts prayer times, the prayer and wudu guides and the hadith collections. You can change it anytime in Account.",
+    tradLead: "This only adjusts prayer times, the prayer and wudu guides and the hadith collections. You can change it anytime in Settings.",
     sunni: "Sunni",
     shia: "Shia (Jaʿfari)",
     both: "I'd rather not say / show both",

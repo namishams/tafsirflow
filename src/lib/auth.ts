@@ -30,10 +30,21 @@ export const isAdminEmail = (email: string) => !!process.env.ADMIN_EMAIL && emai
 
 // returns the session token: the website keeps it in an httpOnly cookie, the mobile app stores it in the
 // device keychain and sends it as "Authorization: Bearer <token>"
-export async function startSession(userId: number, req: NextRequest): Promise<string> {
+// method (password | code | passkey | register) and the client are shown on the security screen; a session that started
+// with a sign-in counts as a fresh confirmation for 15 minutes (recentlyConfirmed)
+export async function startSession(userId: number, req: NextRequest, method?: SessionMethod): Promise<string> {
   const p = pool()!;
   const token = crypto.randomBytes(32).toString("base64url");
-  await p.query("INSERT INTO sessions (token_hash, user_id, expires_at) VALUES ($1, $2, now() + $3::int * interval '1 day')", [sha(token), userId, TTL_DAYS]);
+  const app = req.headers.get("x-qmc-app");
+  const client = app === "ios" || app === "android" ? app : app ? "app" : "web";
+  try {
+    await p.query("INSERT INTO sessions (token_hash, user_id, expires_at, created_at, method, client, user_agent) VALUES ($1, $2, now() + $3::int * interval '1 day', now(), $4, $5, $6)",
+      [sha(token), userId, TTL_DAYS, method ?? null, client, (req.headers.get("user-agent") ?? "").slice(0, 200) || null]);
+  } catch (e) {
+    // database without the new session columns yet (schema not applied): the plain session still works
+    if ((e as { code?: string }).code !== "42703") throw e;
+    await p.query("INSERT INTO sessions (token_hash, user_id, expires_at) VALUES ($1, $2, now() + $3::int * interval '1 day')", [sha(token), userId, TTL_DAYS]);
+  }
   (await cookies()).set(COOKIE, token, { httpOnly: true, sameSite: "lax", secure: isHttps(req), path: "/", maxAge: TTL_DAYS * 86400 });
   return token;
 }
@@ -42,6 +53,36 @@ async function bearer(): Promise<string | undefined> {
   const h = (await headers()).get("authorization") ?? "";
   return h.startsWith("Bearer ") ? h.slice(7).trim() || undefined : undefined;
 }
+
+export type SessionMethod = "password" | "code" | "passkey" | "register";
+
+/** sha256 of the token of the current request's session (cookie or bearer), to tell "this device" from the others */
+export async function currentSessionHash(): Promise<string | null> {
+  const token = (await cookies()).get(COOKIE)?.value ?? (await bearer());
+  return token ? sha(token) : null;
+}
+
+// Sensitive steps (add a passkey, delete the account without a password, set a password) need a sign-in or a
+// confirmation (e-mail code or password) of the last 15 minutes in this very session.
+export async function recentlyConfirmed(): Promise<boolean> {
+  const h = await currentSessionHash();
+  if (!h) return false;
+  const r = await pool()!.query(
+    "SELECT 1 FROM sessions WHERE token_hash = $1 AND expires_at > now() AND ((method IS NOT NULL AND created_at > now() - interval '15 minutes') OR reauth_at > now() - interval '15 minutes')",
+    [h],
+  ).catch(() => ({ rows: [] }));
+  return r.rows.length > 0;
+}
+
+export async function markConfirmed(): Promise<void> {
+  const h = await currentSessionHash();
+  if (h) await pool()!.query("UPDATE sessions SET reauth_at = now() WHERE token_hash = $1", [h]).catch(() => undefined);
+}
+
+// Accounts created with an e-mail code have no password (the column stays NOT NULL): this value never matches a
+// password (verifyPassword only accepts "scrypt$…"), and "Forgot password" can still set one later.
+export const NO_PASSWORD = "none";
+export const hasPassword = (stored: string | null | undefined) => !!stored && stored.startsWith("scrypt$");
 
 export async function endSession() {
   const jar = await cookies();

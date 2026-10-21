@@ -9,6 +9,7 @@ import { getSettings } from "@/lib/settings";
 import { checkCaptcha } from "@/lib/captcha";
 import { appRateLimited, fromApp } from "@/lib/appRequest";
 import { myLikes, surahCounts } from "@/lib/community";
+import { MIN_POST_AGE, ageOf } from "@/lib/talents";
 
 export const dynamic = "force-dynamic";
 
@@ -68,6 +69,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ acti
         `SELECT c.id, c.parent_id, c.body, c.status, c.created_at, c.user_id, u.first_name, u.last_name, u.name, u.country
            FROM comments c JOIN users u ON u.id = c.user_id
           WHERE c.verse_key = $1 AND (c.status = 'approved' OR (c.user_id = $2 AND c.status <> 'rejected'))
+            AND NOT EXISTS (SELECT 1 FROM community_blocks b WHERE b.blocker_id = $2 AND b.blocked_id = c.user_id)
           ORDER BY c.created_at ASC LIMIT 200`,
         [key, me?.id ?? 0],
       );
@@ -106,8 +108,25 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
       return reply(await stats(b.key, me?.id), 200, setAnon);
     }
 
-    // everything below needs a signed-in account with a confirmed e-mail
+    // everything below needs a signed-in account
     if (!me) return json({ error: "login" }, 401);
+
+    // blocking the author of a comment (App Store 1.2): a safety feature, so it needs no confirmed e-mail. It is the
+    // network's block (community_blocks): the author's comments disappear for the blocker, and follows and connections
+    // between the two end, as with a block on a profile (/api/community/block). Unblocking: /talents/blocked.
+    if (action === "block") {
+      if (!b.id || rateLimited(`soc:block:${me.id}`, 20, 10 * 60_000)) return json({ error: "bad request" }, 400);
+      const c = await p.query("SELECT user_id FROM comments WHERE id = $1", [b.id]);
+      const other = c.rows[0] ? Number(c.rows[0].user_id) : 0;
+      if (!other) return json({ error: "not found" }, 404);
+      if (other === me.id) return json({ error: "self" }, 400);
+      await p.query("INSERT INTO community_blocks (blocker_id, blocked_id) VALUES ($1,$2) ON CONFLICT DO NOTHING", [me.id, other]);
+      await p.query("DELETE FROM community_follows WHERE (follower_id = $1 AND followee_id = $2) OR (follower_id = $2 AND followee_id = $1)", [me.id, other]);
+      await p.query("DELETE FROM community_connections WHERE (requester_id = $1 AND addressee_id = $2) OR (requester_id = $2 AND addressee_id = $1)", [me.id, other]);
+      return reply({ ok: true, blocked: true });
+    }
+
+    // everything below also needs a confirmed e-mail
     if (!me.emailVerified) return json({ error: "verify" }, 403);
 
     const feat = (await getSettings()).features;
@@ -123,6 +142,9 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ act
     if (action === "comment") {
       if (!feat.comments) return json({ error: "off" }, 403);
       if (!validKey(b.key) || typeof b.body !== "string") return json({ error: "bad request" }, 400);
+      // the community's age rule (BLUEPRINT §7): writing comments from 16 (a known, confirmed birth year below that)
+      const age = ageOf(me.birthYear);
+      if (age !== null && age < MIN_POST_AGE) return json({ error: "age16" }, 403);
       const u = (await p.query("SELECT comment_banned FROM users WHERE id = $1", [me.id])).rows[0];
       if (u?.comment_banned) return json({ error: "banned" }, 403);
       if (rateLimited(`soc:comment:${me.id}`, 5, 10 * 60_000)) return json({ error: "rate" }, 429);

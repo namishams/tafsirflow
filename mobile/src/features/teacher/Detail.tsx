@@ -11,6 +11,7 @@ import { useIntl } from "@/features/srs/format";
 import { PRESETS, TL, type Preset, type Suggestion } from "./api";
 import { useErr } from "./Screen";
 import { useTT } from "./text";
+import { intlLocale, useLang } from "@/i18n";
 
 // /teacher/<id> – one student: the shared summary (the same read-only view as the share-code path), gentle
 // encouragement from four presets, a suggested portion, and what was sent so far.
@@ -21,6 +22,7 @@ export function StudentDetail() {
   const err = useErr();
   const { name } = useSurahNames();
   const { id } = useLocalSearchParams<{ id: string }>();
+  const { lang } = useLang();
   const [d, setD] = useState<Awaited<ReturnType<typeof TL.student>> | null>(null);
   const [msg, setMsg] = useState("");
   const [sent, setSent] = useState("");
@@ -43,7 +45,7 @@ export function StudentDetail() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back topInset eyebrow="Shams 2.0" arabic="الطّالِب" title={d?.member?.name ?? tt("studentsT")} lead={d?.syncedAt ? tt("updated", { d: new Date(d.syncedAt).toLocaleString() }) : tt("never")} />
+        <PageHero back topInset eyebrow="Shams 2.0" arabic="الطّالِب" title={d?.member?.name ?? tt("studentsT")} lead={d?.syncedAt ? tt("updated", { d: new Date(d.syncedAt).toLocaleString(intlLocale(lang), { dateStyle: "medium", timeStyle: "short" }) }) : tt("never")} />
         <View style={{ padding: 16, gap: 14 }}>
           {msg ? <Text accessibilityRole="alert" style={{ fontFamily: FONT.regular, fontSize: 13, color: t.danger, textAlign: "left" }}>{msg}</Text> : null}
           {d?.snapshot ? <StudentView snap={{ ...d.snapshot, name: d.member?.name ?? "" }} onRemove={unlink} /> : d ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, textAlign: "left" }}>{tt("never")}</Text> : null}

@@ -1,0 +1,18 @@
+{
+  "discoverTitle": "Découvrir des talents",
+  "discoverLead": "Trouvez des récitants et des enseignants du monde entier, suivez-les et entrez en contact.",
+  "search": "Rechercher un nom ou @nomdutilisateur",
+  "filterLevel": "Niveau",
+  "all": "Tous",
+  "verifiedOnly": "Vérifiés uniquement",
+  "filterCountry": "Pays",
+  "anyCountry": "Tous les pays",
+  "filterRewaya": "Rewaya",
+  "rewayaFilterHint": "Par exemple Hafs ou Warsh",
+  "empty": "Aucun talent trouvé.",
+  "loadMore": "Charger plus",
+  "signIn": "Veuillez vous connecter pour utiliser la communauté.",
+  "signInBtn": "Se connecter",
+  "e_generic": "L'opération a échoué.",
+  "retry": "Réessayer"
+}

@@ -211,7 +211,8 @@ export async function getVerses(chapter: number, locale: string, reciter: Recite
   }));
 }
 
-export type TafsirResult = { text: string; verseKeys: string[] };
+/** generatedByAi: an own entry written with AI help (approved by the editors; shown with a label) */
+export type TafsirResult = { text: string; verseKeys: string[]; generatedByAi?: boolean };
 
 // primary = the verse the reader actually opened (counts against the anonymous daily limit)
 export async function getTafsir(tafsirId: number, verseKey: string, primary = false): Promise<TafsirResult | null> {
@@ -233,11 +234,11 @@ export async function getOwnTafsir(locale: string, surah: number, verse: number)
     throw new LimitError("daily tafsir limit", !!d.needsVerify);
   }
   if (!r.ok) return null;
-  const { entry } = (await r.json()) as { entry: { html: string; verse_from: number; verse_to: number } | null };
+  const { entry } = (await r.json()) as { entry: { html: string; verse_from: number; verse_to: number; generated_by_ai?: boolean } | null };
   if (!entry) return null;
   const keys = [`${surah}:${entry.verse_from}`];
   if (entry.verse_to !== entry.verse_from) keys.push(`${surah}:${entry.verse_to}`);
-  return { text: entry.html, verseKeys: keys };
+  return { text: entry.html, verseKeys: keys, generatedByAi: !!entry.generated_by_ai };
 }
 
 export async function hasOwnTafsir(locale: string): Promise<boolean> {
@@ -259,6 +260,13 @@ export async function searchVerses(q: string, locale: string): Promise<SearchHit
     text: String(r.text ?? ""),
     translation: String(r.translations?.[0]?.text ?? ""),
   }));
+}
+
+/** the Uthmani text of one verse, without translation (decorative lines such as the basmala: lib/uiVerses.ts) */
+export async function getVerseText(key: string): Promise<string> {
+  const d = await get<{ verse?: { verse_key?: string; text_uthmani?: string } }>(`/verses/by_key/${key}?words=false&fields=text_uthmani`);
+  if (d.verse?.verse_key !== key || !d.verse.text_uthmani) throw new Error("verse not found");
+  return d.verse.text_uthmani;
 }
 
 export type SingleVerse = { verse_key: string; text_uthmani: string; translation: string };

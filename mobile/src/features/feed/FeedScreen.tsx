@@ -20,7 +20,8 @@ import { SpeakerIcon } from "./art";
 import { FeedPage } from "./FeedPage";
 import { HadithPage, NamePage, ProPage, StoryPage } from "./StoryPage";
 import { HADITH_AVAILABLE, hadithFeedItems, type HadithFeedItem } from "./hadith";
-import { SpecShareSheet, nameSpec, storySpec, useShareCtx, verseSpec } from "@/features/share/feedShare";
+import { SpecShareSheet, hadithSpec, nameSpec, storySpec, useShareCtx, verseSpec } from "@/features/share/feedShare";
+import { FeedEmpty, useStalled } from "./ui";
 import { tick } from "./haptics";
 import { LibScheduler, isLibId, takeRemoteNew } from "./library";
 import { loadRemoteConfig } from "./remote";
@@ -30,6 +31,8 @@ import { KnowledgePage, isKnowId } from "./KnowledgePost";
 import { LIB } from "./library";
 import { kindOfItem, statPost, statVerse, useFeedTimer } from "./statsStore";
 import { rand } from "./source";
+import { isCarouselId, isWisdomId } from "@/features/carousel/registry";
+import { CarouselReel, WisdomReel } from "@/features/carousel/Posts";
 import { DiscoverFeed, FEED_CATS, keyOfItem, loadVerse, preloadSurah, surahKeys, validKey, type FeedCat, type FeedMode, type FeedVerse } from "./source";
 import { countShare } from "./useLike";
 import { useFeedText } from "./texts";
@@ -49,7 +52,7 @@ const MUTE_KEY = "qmc.feed-muted";
 const AUTO_KEY = "qmc.feed-autoplay";
 const STORY_MS = 8000; // story cards in "For you" stay about 8 s
 const MUTED_VERSE_MS = 10000; // a muted verse (no recitation to wait for)
-type ShareItem = { kind: "verse"; v: FeedVerse } | { kind: "story"; s: Story } | { kind: "name"; n: AllahName };
+type ShareItem = { kind: "verse"; v: FeedVerse } | { kind: "story"; s: Story } | { kind: "name"; n: AllahName } | { kind: "hadith"; h: HadithFeedItem };
 
 /** `start`: an item to open first (Explore / Saved), with its hadith data when it is one; `bottomSpace`: room for the
  *  floating tab bar when the feed lives in the Feed tab */
@@ -124,9 +127,12 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
       const round = h.byId.size;
       const add = page.items.map((it, i) => { const id = `h:${round + i}`; h.byId.set(id, it); return id; });
       if (add.length) setKeys((k) => [...k, ...add]);
-    }).catch(() => undefined).finally(() => { h.loading = false; });
+      // nothing at all on the first page: offline (the stream says so instead of staying blank)
+      else if (!round) setHadithFailed(true);
+    }).catch(() => { if (gen === hadith.current.gen && !h.byId.size) setHadithFailed(true); }).finally(() => { h.loading = false; });
     return [];
   }, [lang]);
+  const [hadithFailed, setHadithFailed] = useState(false);
 
   const newDiscover = useCallback((c: FeedCat, first?: string) => {
     const { stories: st } = latest.current;
@@ -137,6 +143,7 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
   // (re)build the list when the mode, the category, the surah, the language or the voice changes
   useEffect(() => {
     loadedSurahs.current = new Set();
+    setHadithFailed(false);
     if (mode === "hadith") {
       hadith.current = { byId: new Map(), cursor: null, loading: false, gen: hadith.current.gen + 1 };
       initialIndex.current = 0;
@@ -282,6 +289,9 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
       if (!n) return <View style={{ width, height: pageH }} />;
       return <NamePage {...common} name={n} onShare={(x) => setShare({ kind: "name", n: x })} />;
     }
+    // carousels (slides swiped horizontally) and wisdom posts (features/carousel)
+    if (isCarouselId(item)) return <CarouselReel id={item} width={width} height={pageH} topInset={insets.top + chrome} bottomInset={insets.bottom + bottomSpace} />;
+    if (isWisdomId(item)) return <WisdomReel id={item} width={width} height={pageH} topInset={insets.top + chrome} bottomInset={insets.bottom + bottomSpace} />;
     // knowledge posts: a full-screen page of their own
     if (isKnowId(item)) return <KnowledgePage id={item} width={width} height={pageH} topInset={insets.top + chrome} bottomInset={insets.bottom + bottomSpace} active={index === active && focused} />;
     if (isLibId(item)) {
@@ -295,7 +305,7 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
     }
     if (item.startsWith("h:")) {
       const h = hadith.current.byId.get(item);
-      return h ? <HadithPage {...common} item={h} /> : <View style={{ width, height: pageH }} />;
+      return h ? <HadithPage {...common} item={h} onShare={(x) => setShare({ kind: "hadith", h: x })} /> : <View style={{ width, height: pageH }} />;
     }
     return <ProPage {...common} onLater={later} />;
   }, [width, pageH, active, focused, muted, lang, voice, nameOf, insets.top, insets.bottom, bottomSpace, chrome, reduce, engine, stories, quota, later]);
@@ -306,8 +316,11 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
     if (!share) return null;
     if (share.kind === "verse") { const v = share.v; return verseSpec(shareCtx, v, nameOf(v.s), { onShared: () => countShare(v.key) }); }
     if (share.kind === "story") return storySpec(shareCtx, share.s);
+    if (share.kind === "hadith") return hadithSpec(shareCtx, share.h);
     return nameSpec(shareCtx, share.n);
   }, [share, nameOf, shareCtx.lang, shareCtx.tt, shareCtx.stx]); // eslint-disable-line react-hooks/exhaustive-deps
+  // an empty stream (the hadith mode before its first page, or offline): a spinner, then the reason with "Try again"
+  const [stalled] = useStalled(keys.length === 0 && !talents, [mode, cat, surah, lang, gen]);
 
   const catLabel: Record<FeedCat, string> = { foryou: pt.catForYou, verses: pt.catVerses, prophet: pt.catProphet, reciters: pt.catReciters, islam: pt.catIslam, tips: pt.catTips };
 
@@ -352,19 +365,24 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
           viewabilityConfig={viewConfig}
           accessibilityHint={tx.hint}
         />
+      ) : pageH > 0 ? (
+        <View style={{ flex: 1, justifyContent: "center", paddingTop: insets.top + 60, paddingBottom: insets.bottom + bottomSpace }}>
+          <FeedEmpty onDark state={hadithFailed || stalled ? "failed" : "loading"} onRetry={() => { engine.stop(); setGen((g) => g + 1); }} />
+        </View>
       ) : null}
 
       {/* top bar over the feed */}
       <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: 0, paddingTop: insets.top + 8 }}>
         <View pointerEvents="box-none" style={{ paddingHorizontal: 12, flexDirection: "row", alignItems: "center", gap: 10 }}>
           <RoundButton label={onHome ? tx.home : tx.close} onPress={() => { engine.stop(); if (onHome) onHome(); else goBack(); }}><Icon name="chevronLeft" color="#fff" size={22} /></RoundButton>
-          <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", gap: 6 }}>
+          {/* the modes scroll sideways when they do not fit between the buttons (long surah names, German, larger text) */}
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, justifyContent: "center", alignItems: "center", gap: 6 }} accessibilityRole="tablist">
             <Pill label={pt.catForYou} selected={!talents && mode === "discover"} onPress={() => switchMode("discover")} />
             <Pill label={mode === "surah" ? nameOf(activeSurah) : tx.surah} selected={!talents && mode === "surah"} onPress={() => switchMode("surah")} hint={tx.chooseSurah} chevron={mode === "surah"} />
             {HADITH_AVAILABLE ? <Pill label={tx.hadith} selected={!talents && mode === "hadith"} onPress={() => switchMode("hadith")} /> : null}
             {postingOn ? <Pill label={ttal("feedTab")} selected={talents} onPress={() => { engine.stop(); setTalents(true); }} /> : null}
             {sflags.momentsInFeed ? <Pill label={sst("tabMoments")} selected={false} onPress={() => { engine.stop(); router.push("/talents/friends" as Href); }} /> : null}
-          </View>
+          </ScrollView>
           <RoundButton label={tx.reciters} onPress={() => setVoices(true)}><Icon name="radio" color={voice.rotate ? stage.gold : "#fff"} size={20} /></RoundButton>
           <RoundButton label={tx.autoplay} selected={autoplay} onPress={toggleAuto}><Icon name="repeat" color={autoplay ? stage.gold : "rgba(255,255,255,0.6)"} size={20} /></RoundButton>
           <RoundButton label={muted ? tx.unmute : tx.mute} selected={!muted} onPress={toggleMute}><SpeakerIcon muted={muted} color="#fff" /></RoundButton>

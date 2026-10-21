@@ -58,6 +58,8 @@ const en = {
   noDue: "Nothing is due. Wrong answers come back here at growing intervals until you know them.",
   noBookmarks: "No bookmarks yet. Tap the bookmark on a question to keep it here.",
   mockTitle: "Mock exam", mockLead: "{n} questions from this stage and the stages before it, {min} minutes in total, at most {q} seconds per question. Pass mark {p} %. Passing opens the next stage.",
+  // locked screens: what Pro adds, and the free way to practise
+  lockedTitle: "Included with Pro", lk_mock1: "{n} questions from this stage and the stages before it", lk_mock2: "At most {q} seconds per question, under exam rules", lk_mock3: "Pass mark {p} %; passing opens the next stage", lk_stats1: "Your accuracy over the last three weeks", lk_stats2: "Your readiness for the mock exam of every stage", lk_stats3: "Accuracy per subject, with your strongest and weakest topics", practiseFree: "Practise for free", proMode: "This mode is part of Pro. Practice in the foundation stage stays free: {n} questions left today.",
   mockStart: "Start the mock exam", mockPass: "Passed. The next stage is open.", mockFail: "Not passed yet: {p} % are needed. Your weakest topics are listed below.",
   mockLocked: "Please pass the mock exam of the previous stage first.", mockAttempts: "Attempts so far: {n}",
   statsTitle: "Statistics", overallTitle: "Overall", trendTitle: "Accuracy over the last days", trendEmpty: "Your trend appears after your first sessions.",
@@ -122,6 +124,8 @@ const de: T = {
   noDue: "Nichts ist fällig. Falsch beantwortete Fragen kehren hier in wachsenden Abständen zurück, bis Sie sie beherrschen.",
   noBookmarks: "Noch nichts gemerkt. Tippen Sie bei einer Frage auf das Lesezeichen, um sie hier zu behalten.",
   mockTitle: "Probeprüfung", mockLead: "{n} Fragen aus dieser und den vorherigen Stufen, insgesamt {min} Minuten, höchstens {q} Sekunden pro Frage. Bestehensgrenze {p} %. Das Bestehen öffnet die nächste Stufe.",
+  // locked screens: what Pro adds, and the free way to practise
+  lockedTitle: "Mit Pro enthalten", lk_mock1: "{n} Fragen aus dieser und den vorherigen Stufen", lk_mock2: "Höchstens {q} Sekunden pro Frage, nach Prüfungsregeln", lk_mock3: "Bestehensgrenze {p} %; das Bestehen öffnet die nächste Stufe", lk_stats1: "Ihre Trefferquote der letzten drei Wochen", lk_stats2: "Ihre Bereitschaft für die Probeprüfung jeder Stufe", lk_stats3: "Trefferquote je Fach, mit Ihren stärksten und schwächsten Themen", practiseFree: "Kostenlos üben", proMode: "Dieser Modus gehört zu Pro. Üben in der Grundstufe bleibt kostenlos: heute noch {n} Fragen.",
   mockStart: "Probeprüfung starten", mockPass: "Bestanden. Die nächste Stufe ist geöffnet.", mockFail: "Noch nicht bestanden: {p} % sind erforderlich. Ihre schwächsten Themen finden Sie unten.",
   mockLocked: "Bitte bestehen Sie zuerst die Probeprüfung der vorherigen Stufe.", mockAttempts: "Bisherige Versuche: {n}",
   statsTitle: "Statistik", overallTitle: "Gesamt", trendTitle: "Trefferquote der letzten Tage", trendEmpty: "Ihr Verlauf erscheint nach den ersten Einheiten.",
@@ -185,6 +189,8 @@ const ar: T = {
   noDue: "لا شيء حان موعده. تعود الأسئلة الخاطئة هنا على فترات متزايدة حتى تتقنوها.",
   noBookmarks: "لا محفوظات بعد. اضغطوا على علامة الحفظ في السؤال ليبقى هنا.",
   mockTitle: "امتحان تجريبي", mockLead: "{n} سؤالًا من هذه المرحلة وما قبلها، {min} دقيقة إجمالًا، و{q} ثانية على الأكثر لكل سؤال. درجة النجاح {p} %. النجاح يفتح المرحلة التالية.",
+  // locked screens: what Pro adds, and the free way to practise
+  lockedTitle: "متاح مع Pro", lk_mock1: "{n} سؤالًا من هذه المرحلة وما قبلها", lk_mock2: "{q} ثانية على الأكثر لكل سؤال، وفق قواعد الامتحان", lk_mock3: "درجة النجاح {p} %، والنجاح يفتح المرحلة التالية", lk_stats1: "دقة إجاباتكم في الأسابيع الثلاثة الأخيرة", lk_stats2: "جاهزيتكم للامتحان التجريبي في كل مرحلة", lk_stats3: "الدقة في كل مادة، مع أقوى موضوعاتكم وأضعفها", practiseFree: "تدرّبوا مجانًا", proMode: "هذا النمط جزء من Pro. يبقى التدريب في المرحلة الابتدائية مجانيًا: بقي اليوم {n} سؤالًا.",
   mockStart: "ابدأ الامتحان التجريبي", mockPass: "نجحتم. المرحلة التالية مفتوحة.", mockFail: "لم تنجحوا بعد: المطلوب {p} %. أضعف موضوعاتكم أدناه.",
   mockLocked: "يرجى النجاح أولًا في الامتحان التجريبي للمرحلة السابقة.", mockAttempts: "المحاولات حتى الآن: {n}",
   statsTitle: "الإحصاءات", overallTitle: "الإجمالي", trendTitle: "نسبة الصواب في الأيام الأخيرة", trendEmpty: "يظهر تطوركم بعد الجلسات الأولى.",

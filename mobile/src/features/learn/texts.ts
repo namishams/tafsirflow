@@ -4,14 +4,15 @@ import { moduleText } from "@/i18n/app";
 const T = {
   de: {
     continue: "Weiterlernen", continueAt: "{surah} · ab Vers {verse}", start: "Mit al-Fātiḥa beginnen", about: "Über die Methode",
-    pathTitle: "Dein Kursweg", pathLead: "So lernen die meisten: zuerst al-Fātiḥa, dann Juz ʿAmma vom Ende her, danach die Suren, die man gern auswendig kann.",
+    pathTitle: "Ihr Kursweg", pathLead: "So lernen die meisten: zuerst al-Fātiḥa, dann Juz ʿAmma vom Ende her, danach die Suren, die man gern auswendig kann.",
     freeTitle: "Kostenlos", freeLead: "al-Fātiḥa und Juz ʿAmma – 38 Suren mit der ganzen Shams-Methode.",
     proTitle: "Mit Pro", proLead: "Jede Sure des Koran mit der Shams-Methode, dazu alle Rezitatoren und Kurse.",
-    allSurahs: "Alle 114 Suren", allSurahsSub: "Wähle jede Sure im Koran-Tab und starte die Shams-Methode.",
+    allSurahs: "Alle 114 Suren", allSurahsSub: "Wählen Sie eine beliebige Sure im Koran-Tab und starten Sie die Shams-Methode.",
     verses: "{done} von {total} Versen", notStarted: "Noch nicht begonnen", complete: "Abgeschlossen",
     toolsTitle: "Kurse und Werkzeuge", academy: "Academy-Tests", academySub: "Kurze Tests auf Zeit zu jeder Lektion",
-    proCardTitle: "Die ganze Masterclass", proCardLead: "Lerne den Tafsir jeder Sure mit der Shams-Methode – mit allen Rezitatoren, Radio, Arabisch und Tadschwid komplett.",
+    proCardTitle: "Die ganze Masterclass", proCardLead: "Lernen Sie den Tafsir jeder Sure mit der Shams-Methode – mit allen Rezitatoren, Radio, Arabisch und Tadschwid komplett.",
     showMore: "Alle anzeigen", showLess: "Weniger anzeigen",
+    madrasaTitle: "Mehr aus der Madrasa", madrasaLead: "Kurse, Übungen und Werkzeuge – alle auch unter Entdecken.", toDiscover: "In Entdecken öffnen",
   },
   en: {
     continue: "Continue learning", continueAt: "{surah} · from verse {verse}", start: "Begin with al-Fātiḥa", about: "About the method",
@@ -23,6 +24,7 @@ const T = {
     toolsTitle: "Courses and tools", academy: "Academy tests", academySub: "Short timed tests for every lesson",
     proCardTitle: "The whole Masterclass", proCardLead: "Learn the tafsir of every surah with the Shams Method – with all reciters, radio, and the complete Arabic and Tajweed courses.",
     showMore: "Show all", showLess: "Show less",
+    madrasaTitle: "More from the Madrasa", madrasaLead: "Courses, practice and tools – all of them also in Discover.", toDiscover: "Open in Discover",
   },
 };
 

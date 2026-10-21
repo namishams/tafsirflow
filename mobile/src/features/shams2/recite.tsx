@@ -13,12 +13,16 @@ import { useS2 } from "./text";
 //                   not changed); here the result is reported back, compared with the grade's pass mark and, when the
 //                   reciter's time is known, with the pace target. It never judges tajwīd.
 export type W = { position: number; text: string };
+/** identity of a list of words (positions and text), stable across renders that rebuild the array */
+export const wordsKey = (ws: W[]) => ws.map((w) => `${w.position}:${w.text}`).join("|");
 
 export function PromptedWords({ words, prompt, mark, size = 26, revealLabel }: { words: W[]; prompt: Prompt; mark?: Set<number>; size?: number; revealLabel?: string }) {
   const t = useTheme();
   const { s } = useS2();
   const [shown, setShown] = useState(false);
-  useEffect(() => setShown(false), [words, prompt]);
+  // reset only when the verse itself changes, not when the caller passes a new array for the same words
+  const key = wordsKey(words);
+  useEffect(() => setShown(false), [key, prompt]);
   const level: Prompt = shown ? "full" : prompt;
   if (level === "hidden") {
     return (
@@ -31,7 +35,7 @@ export function PromptedWords({ words, prompt, mark, size = 26, revealLabel }: {
   }
   return (
     <View style={{ gap: 6 }}>
-      <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 6 }}>
+      <View style={{ flexDirection: "row", direction: "rtl", flexWrap: "wrap", gap: 6 }}>
         {words.map((w) => {
           const m = mark?.has(w.position);
           return (
@@ -69,10 +73,17 @@ export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { word
   const subs = useRef<{ remove: () => void }[]>([]);
   const report = useRef(onResult); report.current = onResult;
   useEffect(() => () => { subs.current.forEach((x) => x.remove()); try { speech()?.ExpoSpeechRecognitionModule.abort(); } catch { /* not running */ } }, []);
-  useEffect(() => { setOk(null); setState((x) => (x === "unavailable" ? x : "idle")); }, [words]);
+  // a new verse resets the result; a parent re-render with the same words (e.g. after onResult) keeps it
+  const key = wordsKey(words);
+  const wordsRef = useRef(words); wordsRef.current = words;
+  useEffect(() => {
+    setOk(null); setState((x) => (x === "unavailable" ? x : "idle"));
+    // a check still listening for the previous verse is stopped, so its words are never scored against the new ones
+    if (live.current) { live.current = false; subs.current.forEach((x) => x.remove()); subs.current = []; try { speech()?.ExpoSpeechRecognitionModule.abort(); } catch { /* not running */ } }
+  }, [key]);
 
   const finish = () => {
-    const res = align(words.map((w) => w.text), heard.current).ok;
+    const res = align(wordsRef.current.map((w) => w.text), heard.current).ok;
     const share = res.length ? res.filter(Boolean).length / res.length : 0;
     const took = Date.now() - started.current;
     setMs(took); setOk(res); setState("done");
@@ -87,7 +98,7 @@ export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { word
       heard.current = ""; setOk(null);
       subs.current.forEach((x) => x.remove());
       subs.current = [
-        m.addListener("result", (e) => { heard.current = e.results[0]?.transcript ?? heard.current; setOk(align(words.map((w) => w.text), heard.current).ok); }),
+        m.addListener("result", (e) => { heard.current = e.results[0]?.transcript ?? heard.current; setOk(align(wordsRef.current.map((w) => w.text), heard.current).ok); }),
         m.addListener("end", () => { if (live.current) { live.current = false; finish(); } }),
         m.addListener("error", () => { if (live.current) { live.current = false; finish(); } }),
       ];

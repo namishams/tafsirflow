@@ -12,11 +12,15 @@ import { useAuth } from "@/lib/auth";
 import { ApiError, SITE } from "@/lib/api";
 import { countryList, countryName } from "@/lib/countries";
 import { useWebT } from "@/i18n/web";
+import { CodeFlow } from "@/features/auth/CodeFlow";
+import { useAuthT } from "@/features/auth/text";
 
 // learning goals of the website's registration form (src/lib/countries.ts GOALS), texts account.goal<Name>
 const GOALS = [["hifz", "goalHifz"], ["fahm", "goalFahm"], ["tilawa", "goalTilawa"], ["all", "goalAll"]] as const;
 
-// Create the account (the same account as on the website). Nothing is preselected: country and consent are chosen
+// Create the account (the same account as on the website). First view (21.10.2026): the e-mail code flow
+// (features/auth/CodeFlow) – the code confirms the address, then the same details as below; this password form stays
+// one tap away ("Create an account with a password"). Nothing is preselected: country and consent are chosen
 // by the learner; the year of birth lets the Shams Method adapt to children and seniors. City and goal are optional,
 // as on the website.
 export default function Register() {
@@ -33,6 +37,8 @@ export default function Register() {
   const [query, setQuery] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [byCode, setByCode] = useState(true);
+  const tx = useAuthT();
   const set = (k: keyof typeof f) => (v: string) => setF((o) => ({ ...o, [k]: v }));
   const list = useMemo(() => countryList(lang).filter((c) => c.name.toLowerCase().includes(query.trim().toLowerCase())), [lang, query]);
   const open = (doc: string) => WebBrowser.openBrowserAsync(`${SITE}/${lang}/legal/${doc}`);
@@ -55,6 +61,17 @@ export default function Register() {
       setError(t(known[code] ?? "common.error"));
     } finally { setBusy(false); }
   };
+
+  if (byCode) {
+    return (
+      <KeyboardAvoidingView style={{ flex: 1, backgroundColor: theme.bg }} behavior={Platform.OS === "ios" ? "padding" : undefined}>
+        <Stack.Screen options={{ headerShown: false }} />
+        <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingBottom: 40 }}>
+          <CodeFlow fresh onDone={goBack} secondary={{ title: tx("passwordRegister"), onPress: () => { setByCode(false); setError(""); } }} />
+        </ScrollView>
+      </KeyboardAvoidingView>
+    );
+  }
 
   if (picking) {
     return (
@@ -115,6 +132,7 @@ export default function Register() {
               </CheckRow>
               <FormError text={error} />
               <GoldButton title={t("auth.registerTitle")} busy={busy} onPress={() => void submit()} />
+              <TextLink title={tx("withCode")} onPress={() => { setByCode(true); setError(""); }} style={{ alignSelf: "center", fontSize: 14 }} />
             </View>
           </GoldCard>
           <Divider style={{ marginVertical: 22 }} />

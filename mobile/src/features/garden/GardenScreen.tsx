@@ -16,7 +16,7 @@ import { BrandFoot, CARD_SIZE, ShareSheet, type ShareFormat } from "@/features/f
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
 import { MAX_STAGE, SRCS, treeStage, type Tree, activeTree, canPlant, harvest, plotsOf, PLOT_STAGES, progressOf, resting, seasonNow, setActive, shamsRun, useGarden, weekGrowth, type Garden, type HistKind } from "./garden";
-import { CATALOG_SIZE, dailyPackReady, openDailyPack, totalOwned, useCatalog } from "./catalog";
+import { CATALOG_SIZE, countOf, dailyPackReady, itemById, openDailyPack, totalOwned, useCatalog, type Drop } from "./catalog";
 import { CatalogArt } from "./CatalogArt";
 import { Petals, Zellige } from "./Scene";
 import { scheduleOnRN } from "react-native-worklets";
@@ -24,7 +24,7 @@ import { Fronds, Heavens, Motes, NearSand, setSkyPlace, useSkyPlace, Panorama, S
 import { Plaque, TREE_H, TREE_W, TreeArt, geom } from "./Tree";
 import { PlantFlow } from "./PlantFlow";
 import { GardenNotifySetting, ProgressBar, StageCinematic, chime, useGardenTick } from "./widgets";
-import { fillG, skyLabel, useAgeText, useGardenText, useSkyText } from "./texts";
+import { fillG, skyLabel, useAgeText, useGardenText, useSkyText, useStickerLabel } from "./texts";
 import { GiftFlow, NourishButton, StickerBag } from "./GiftFlow";
 
 const SCENE_H = 520;
@@ -52,11 +52,22 @@ export default function GardenScreen() {
   const season = seasonNow();
 
   // pinch to zoom, drag to move (bounded), double tap resets
-  const scale = useSharedValue(1), sx = useSharedValue(1), tx0 = useSharedValue(0), ty0 = useSharedValue(0), px = useSharedValue(0), py = useSharedValue(0);
   const plots = Math.max(plotsOf(s), s.trees.length);
   const plotW = Math.min(width * 0.78, 320);
-  const worldW = Math.max(width + 80, plots * plotW + 40); // wider than the screen, so the idle camera drift never shows an edge
+  // the camera rests on the active tree: from stage 6 the row of plots is wider than the screen and the first tree
+  // would sit at its left edge, so the world is moved by the active plot's offset ("home") and is wide enough on
+  // both sides of it (bug fix; the scene, the art and the landscape's centre view are unchanged)
+  const activeIdx = Math.max(0, s.trees.findIndex((x) => x.id === tree?.id));
+  const homeX = -(activeIdx - (plots - 1) / 2) * plotW;
+  const worldW = Math.max(width + 80 + 2 * Math.abs(homeX), plots * plotW + 40); // wider than the screen, so the idle camera drift never shows an edge
   const maxX = Math.max(0, (worldW - width) / 2 + 40);
+  const scale = useSharedValue(1), sx = useSharedValue(1), tx0 = useSharedValue(0), ty0 = useSharedValue(0), px = useSharedValue(homeX), py = useSharedValue(0);
+  const home = useSharedValue(homeX);
+  useEffect(() => {
+    if (home.value === homeX) return;
+    home.value = homeX;
+    px.value = reduce ? homeX : withSpring(homeX, { damping: 18, stiffness: 120 });
+  }, [homeX, reduce, home, px]);
   const pinch = Gesture.Pinch().onStart(() => { sx.value = scale.value; }).onUpdate((e) => { scale.value = Math.min(2.2, Math.max(0.8, sx.value * e.scale)); }).onEnd(() => { if (scale.value < 1) scale.value = withSpring(1); });
   // the panorama look (owner extension): dragging past the edge of the garden turns the camera, towards Makkah on
   // the right and the open desert on the left; on release it springs back to the tree. Reduce Motion: no look.
@@ -77,9 +88,9 @@ export default function GardenScreen() {
     if (look.value === 0) return;
     edged.value = 0;
     look.value = withSpring(0, { damping: 17, stiffness: 95, mass: 1, velocity: Math.max(-1500, Math.min(1500, e.velocityX)) });
-    px.value = withSpring(0, { damping: 18, stiffness: 120 });
+    px.value = withSpring(home.value, { damping: 18, stiffness: 120 });
   });
-  const dbl = Gesture.Tap().numberOfTaps(2).onEnd(() => { scale.value = withSpring(1); px.value = withSpring(0); py.value = withSpring(0); look.value = withSpring(0); });
+  const dbl = Gesture.Tap().numberOfTaps(2).onEnd(() => { scale.value = withSpring(1); px.value = withSpring(home.value); py.value = withSpring(0); look.value = withSpring(0); });
   const gesture = Gesture.Simultaneous(pinch, pan, dbl);
   // the camera: a gentle idle drift (parallax through every layer) and a soft push-in on events
   const drift = useSharedValue(0), cam = useSharedValue(1);
@@ -88,24 +99,31 @@ export default function GardenScreen() {
     drift.value = withRepeat(withSequence(withTiming(9, { duration: 9000, easing: Easing.inOut(Easing.sin) }), withTiming(-9, { duration: 10000, easing: Easing.inOut(Easing.sin) })), -1, true);
     return () => cancelAnimation(drift);
   }, [reduce, drift]);
-  const camX = useDerivedValue(() => px.value + drift.value);
+  // the landscape and the fronds follow the camera relative to home, so the centre view stays as approved
+  const camX = useDerivedValue(() => px.value - home.value + drift.value);
   // "?look=-1|1" (dev only) holds the camera turned to Makkah or the desert (store previews)
   useEffect(() => { if (__DEV__ && params.look && !reduce) look.value = Math.max(-1, Math.min(1, Number(params.look) || 0)) * LOOK; }, [params.look, reduce, LOOK, look]);
   const frondX = useDerivedValue(() => camX.value + lookC.value * 0.8);
   const petalSt = useAnimatedStyle(() => ({ opacity: interpolate(Math.abs(lookC.value), [0, width * 0.4], [1, 0], "clamp") }));
   const focus = () => { if (!reduce) cam.value = withSequence(withTiming(1.07, { duration: 650, easing: Easing.out(Easing.cubic) }), withDelay(1100, withTiming(1, { duration: 1100, easing: Easing.inOut(Easing.quad) }))); };
-  const world = useAnimatedStyle(() => ({ transform: [{ translateX: px.value + drift.value + lookC.value }, { translateY: py.value + (cam.value - 1) * 260 }, { scale: scale.value * cam.value }] }));
+  // the world scales around its centre; "(k - 1) * home" keeps the active tree where it stands while zooming (at home 0,
+  // a single plot, this is the transform as before)
+  const world = useAnimatedStyle(() => { const k = scale.value * cam.value; return { transform: [{ translateX: px.value + drift.value + lookC.value + (k - 1) * home.value }, { translateY: py.value + (cam.value - 1) * 260 }, { scale: k }] }; });
+  // the same camera for the layer of the sticker bag (its own style: one animated style per view)
+  const bagSt = useAnimatedStyle(() => { const k = scale.value * cam.value; return { transform: [{ translateX: px.value + drift.value + lookC.value + (k - 1) * home.value }, { translateY: py.value + (cam.value - 1) * 260 }, { scale: k }] }; });
   // a new decoration (from a gift) arrives with a dust of light around the tree
   const [dust, setDust] = useState(0);
   const traitsN = useRef(s.traits.length);
   useEffect(() => { if (s.traits.length > traitsN.current) { setDust(Date.now()); focus(); } traitsN.current = s.traits.length; }, [s.traits.length]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  if (planting) {
+  // the ceremony also stands in when the garden has no tree any more (cleared or not yet synced): never a blank screen.
+  // It then runs as a whole (its own new tree does not end it half way); a tree from the sync ends it (PlantFlow).
+  useEffect(() => { if (!tree && !planting) setPlanting(true); }, [tree, planting]);
+  if (planting || !tree) {
     return (
       <PlantFlow demo={params.plant === "demo"} onDone={() => { setPlanting(false); router.setParams({ plant: undefined }); }} onLater={s.trees.length ? () => setPlanting(false) : () => goBack()} />
     );
   }
-  if (!tree) return null;
   const p = progressOf(tree, pro);
   const ink = inkFor(sky);
   const petal = tree.type === "pomegranate" ? "#e0c184" : s.traits.includes("blossoms") ? "#f5ebd7" : "#9fd28a";
@@ -138,10 +156,13 @@ export default function GardenScreen() {
             <Fronds width={width} height={H} px={frondX} />
           </View>
         </GestureDetector>
-            {/* the sticker bag beside the tree: opens the gift flow (outside the gestures, like the top bar) */}
-            <View style={{ position: "absolute", bottom: TERRACE_H + 14, left: width / 2 + Math.min(plotW * 0.36, 118) }}>
-              <StickerBag onPress={() => setGift(true)} />
-            </View>
+            {/* the sticker bag beside the active tree: opens the gift flow. Outside the gestures (like the top bar), in a
+                layer that moves exactly like the world, so it pans and zooms with the tree */}
+            <Animated.View pointerEvents="box-none" style={[{ position: "absolute", left: (width - worldW) / 2, width: worldW, bottom: 0, height: SCENE_H - 40 }, bagSt]}>
+              <View style={{ position: "absolute", bottom: TERRACE_H + 14, left: worldW / 2 - homeX + Math.min(plotW * 0.36, 118) }}>
+                <StickerBag onPress={() => setGift(true)} />
+              </View>
+            </Animated.View>
             {/* top bar: outside the scene's gestures, whose double tap would swallow the buttons' taps */}
             <View style={{ position: "absolute", top: insets.top + 6, left: 12, right: 12, flexDirection: "row", alignItems: "center", gap: 8 }}>
               <RoundBtn icon="chevronLeft" label="Back" onPress={() => goBack()} />
@@ -356,14 +377,40 @@ function Harvest({ treeId, fruits, stage, reduce }: { treeId: string; fruits: nu
   );
 }
 
+/** the daily pack: the three stickers it brought are shown right here, new ones and further copies alike */
 function DailyPack() {
   const tx = useGardenText();
+  const t = useTheme();
+  const name = useStickerLabel();
   useCatalog();
   const ready = dailyPackReady();
+  const [got, setGot] = useState<Drop[]>([]);
+  const open = () => { const d = openDailyPack(); if (d.length) { success(); setGot(d); } };
+  const album = () => router.push("/sticker-collection" as Href);
   return (
-    <View style={{ flex: 1 }}>
-      <OutlineButton title={ready ? `${tx.dailyPack}: ${tx.openPack}` : tx.dailyPack} disabled={!ready} onPress={() => { openDailyPack(); success(); }} />
-      {!ready ? <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, color: "gray", marginTop: 4, textAlign: "center" }}>{tx.packDone}</Text> : null}
+    <View style={{ flex: 1, gap: 8 }}>
+      <OutlineButton title={ready ? `${tx.dailyPack}: ${tx.openPack}` : tx.dailyPack} disabled={!ready} onPress={open} />
+      {got.length ? (
+        <View accessibilityLiveRegion="polite" style={{ borderRadius: R.card, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, padding: 14, gap: 10 }}>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.6, textTransform: "uppercase", color: t.gold }}>{tx.packGot}</Text>
+          <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+            {got.map((d, i) => {
+              const it = itemById(d.id), label = it ? name(it) : d.id, n = countOf(d.id);
+              return (
+                <Pressable key={`${d.id}-${i}`} onPress={album} accessibilityRole="button" accessibilityLabel={`${label}, ${d.fresh ? tx.packNew : fillG(tx.copies, { n })}`} style={{ width: "31%", alignItems: "center", gap: 4 }}>
+                  <CatalogArt id={d.id} size={72} />
+                  <Text numberOfLines={2} style={{ fontFamily: FONT.semibold, fontSize: 12, lineHeight: 15, color: t.ink, maxWidth: "100%", textAlign: "center" }}>{label}</Text>
+                  <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, color: d.fresh ? t.gold : t.muted }}>{d.fresh ? tx.packNew : `×${n}`}</Text>
+                </Pressable>
+              );
+            })}
+          </View>
+          <Pressable onPress={album} accessibilityRole="link" hitSlop={8} style={{ alignSelf: "center" }}>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.accent }}>{tx.viewAlbum}</Text>
+          </Pressable>
+        </View>
+      ) : null}
+      {!ready ? <Text style={{ fontFamily: FONT.regular, fontSize: 11.5, color: t.muted, textAlign: "center" }}>{tx.packDone}</Text> : null}
     </View>
   );
 }
@@ -416,7 +463,8 @@ function History({ s, treeId }: { s: Garden; treeId: string }) {
   const tr = s.trees.find((x) => x.id === treeId);
   if (!tr) return null;
   const label = (k: HistKind, n?: number) => (k === "plant" ? tx.h_plant : k === "stage" ? fillG(tx.h_stage, { n: n ?? 0 }) : k === "gift" ? tx.h_gift : k === "harvest" ? fillG(tx.h_harvest, { n: n ?? 0 }) : tx.h_water);
-  const fmt = (d: number) => new Date(d * 86400000).toLocaleDateString(lang, { day: "numeric", month: "short" });
+  // day numbers are local days: read them as UTC dates, or learners west of UTC see the day before (as on the website)
+  const fmt = (d: number) => new Date(d * 86400000).toLocaleDateString(lang, { day: "numeric", month: "short", timeZone: "UTC" });
   const items = [...tr.hist].reverse().filter((h, i, a) => h.k !== "water" || a.findIndex((x) => x.k === "water") === i).slice(0, 14);
   return (
     <View style={{ borderRadius: R.card, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, padding: 16, gap: 8 }}>

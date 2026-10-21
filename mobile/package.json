@@ -59,9 +59,11 @@
     "ios": "expo run:ios",
     "android": "expo run:android",
     "web": "expo start --web",
-    "typecheck": "tsc --noEmit",
-    "prebuild": "expo prebuild --clean",
-    "sync-web": "node scripts/sync-web.mjs"
+    "typecheck": "node scripts/check-web-messages.mjs && tsc --noEmit",
+    "prebuild": "node scripts/check-web-messages.mjs && expo prebuild --clean",
+    "sync-web": "node scripts/sync-web.mjs",
+    "check-web-messages": "node scripts/check-web-messages.mjs",
+    "check-sie-form": "node scripts/check-sie-form.mjs"
   },
   "private": true
 }

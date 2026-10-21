@@ -5,7 +5,8 @@ import nodemailer from "nodemailer";
 // Whether real e-mail can be sent. Without SMTP the app cannot ask people to confirm an address (they would be locked out).
 export const mailConfigured = () => !!process.env.SMTP_HOST;
 
-export async function sendMail(to: string, subject: string, text: string): Promise<boolean> {
+// html (optional): a designed version of the same message; the plain text stays for clients that show only text
+export async function sendMail(to: string, subject: string, text: string, html?: string): Promise<boolean> {
   const host = process.env.SMTP_HOST;
   if (!host) {
     console.warn(`[mail] SMTP not configured – would send to ${to}: ${subject}\n${text}`);
@@ -18,6 +19,6 @@ export async function sendMail(to: string, subject: string, text: string): Promi
     tls: { rejectUnauthorized: process.env.SMTP_INSECURE_TLS !== "1" },
     auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } : undefined,
   });
-  await t.sendMail({ from: process.env.MAIL_FROM ?? process.env.SMTP_USER, to, subject, text });
+  await t.sendMail({ from: process.env.MAIL_FROM ?? process.env.SMTP_USER, to, subject, text, ...(html ? { html } : {}) });
   return true;
 }

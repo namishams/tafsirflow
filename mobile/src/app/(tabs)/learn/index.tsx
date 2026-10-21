@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
-import { Eyebrow, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, gradientColors } from "@/components/brand";
+import { Eyebrow, GoldButton, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, gradientColors } from "@/components/brand";
 import { ShamsModeChooser } from "@/features/shams2/ModeChooser";
 import { continueHref, useShamsMode } from "@/features/shams2/mode";
 import { useModeT } from "@/features/shams2/modeText";
@@ -33,6 +33,9 @@ import { DiscoverRows } from "@/features/library/Discover";
 
 // The Masterclass tab: learning the tafsir of the Quran with the Shams Method – hero like the website's /shams page,
 // "continue learning", the course path (free: al-Fātiḥa and Juz ʿAmma; Pro: every surah), courses and tools.
+// One gold action: "Continue" in the Shams card. Once a method is chosen the chooser folds to "Your method · Change".
+// The courses and tools that Discover shows as well (the Madrasa) sit in one folded section "More from the Madrasa"
+// with a link to Discover; nothing is removed, every card is one tap away.
 const FREE_PATH = [1, ...Array.from({ length: 37 }, (_, i) => 114 - i)];
 const PRO_PATH = [67, 36, 18, 55, 56, 32, 2, 12, 19, 25, 24, 49];
 
@@ -46,6 +49,7 @@ export default function Masterclass() {
   const c = shamsContent(lang);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [allFree, setAllFree] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   useEffect(() => { getChapters(lang).then(setChapters).catch(() => undefined); }, [lang]);
   const byId = useMemo(() => new Map(chapters.map((ch) => [ch.id, ch])), [chapters]);
   const progress = surahProgress();
@@ -80,24 +84,16 @@ export default function Masterclass() {
                   ))}
                 </View>
               ) : null}
-              <OutlineButton title={mode === "v2" ? mt("continueWird") : next ? lt("continue") : w("shams.cta")} icon="sun" onStage onPress={() => (mode === "v2" ? router.push(continueHref("v2") as Href) : next ? open(next.surah, next.verse) : open(1))} />
+              <GoldButton title={mode === "v2" ? mt("continueWird") : next ? lt("continue") : w("shams.cta")} icon="sun" onPress={() => (mode === "v2" ? router.push(continueHref("v2") as Href) : next ? open(next.surah, next.verse) : open(1))} />
               <OutlineButton title={lt("about")} onStage onPress={() => router.push("/shams" as Href)} />
-              <ShamsModeChooser tone="stage" />
+              <ShamsModeChooser tone="stage" collapsible />
             </View>
           </Stage>
-          <TodayPlanCard />
+          <TodayPlanCard secondary />
           <GardenWidget />
-          <SwipeEntryCard />
-          <QbankEntryCard />
         </View>
 
         <View style={{ paddingHorizontal: 16, marginTop: 32, gap: 28 }}>
-          <PersonaliseCard />
-          <QaidaCard />
-          <SchoolEntryCard />
-          <JourneyEntryCard />
-          <LangCourseCard />
-          <ReciterPathCard />
           {mode === "classic" && next && nextChapter ? (
             <GoldCard>
               <SurahBanner arabic={nextChapter.name_arabic} onStage={false} />
@@ -137,20 +133,60 @@ export default function Masterclass() {
 
           <ProPromo title={lt("proCardTitle")} lead={lt("proCardLead")} feature="shams" />
 
+          {/* the Madrasa's courses and tools (also in Discover), folded: one tap shows every card as before */}
+          <MadrasaMore open={moreOpen} onToggle={() => setMoreOpen(!moreOpen)} />
         </View>
-        {/* every course, tool and section directly (no "more" button); the endless discovery lives in the Feed */}
-        <View style={{ paddingHorizontal: 16, marginTop: 32 }}>
-          <SectionTitle title={lt("toolsTitle")} />
-          <PosterGrid>
-            {["courses", "arabic", "tajweed", "vocab", "salah", "wudu", "plan", "map"].map((k) => tile(k)).filter((x) => !!x).map((x) => (
-              <Poster key={x!.key} title={w(`nav.${x!.key}`)} desc={w(`home2.${x!.desc}`)} badge={w(`home2.badge_${x!.badge}`)} arabic={x!.ar}
-                colors={gradientColors(x!.bg)} cta={w("home2.open")} onPress={() => router.push(routeOf(x!) as Href)} />
-            ))}
-          </PosterGrid>
-        </View>
-        <View style={{ marginTop: 32 }}><DiscoverRows /></View>
+        {moreOpen ? (
+          <>
+            <View style={{ paddingHorizontal: 16, marginTop: 20, gap: 28 }}>
+              <SwipeEntryCard />
+              <QbankEntryCard />
+              <PersonaliseCard />
+              <QaidaCard />
+              <SchoolEntryCard />
+              <JourneyEntryCard />
+              <LangCourseCard />
+              <ReciterPathCard />
+            </View>
+            {/* every course, tool and section directly; the endless discovery lives in the Feed */}
+            <View style={{ paddingHorizontal: 16, marginTop: 32 }}>
+              <SectionTitle title={lt("toolsTitle")} />
+              <PosterGrid>
+                {["courses", "arabic", "tajweed", "vocab", "salah", "wudu", "plan", "map"].map((k) => tile(k)).filter((x) => !!x).map((x) => (
+                  <Poster key={x!.key} title={w(`nav.${x!.key}`)} desc={w(`home2.${x!.desc}`)} badge={w(`home2.badge_${x!.badge}`)} arabic={x!.ar}
+                    colors={gradientColors(x!.bg)} cta={w("home2.open")} onPress={() => router.push(routeOf(x!) as Href)} />
+                ))}
+              </PosterGrid>
+            </View>
+            <View style={{ marginTop: 32 }}><DiscoverRows /></View>
+          </>
+        ) : null}
       </Page>
     </>
+  );
+}
+
+/** "More from the Madrasa": the folded courses and tools of this tab, with the way to Discover where they also live */
+function MadrasaMore({ open, onToggle }: { open: boolean; onToggle: () => void }) {
+  const t = useTheme();
+  const lt = useLearnT();
+  return (
+    <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, overflow: "hidden" }}>
+      <Pressable onPress={onToggle} accessibilityRole="button" accessibilityState={{ expanded: open }} accessibilityLabel={`${lt("madrasaTitle")}. ${lt("madrasaLead")}`}
+        style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, padding: 16, backgroundColor: pressed ? t.bg : t.surface })}>
+        <View style={{ width: 38, height: 38, borderRadius: 19, backgroundColor: t.accentSoft, alignItems: "center", justifyContent: "center" }}><Icon name="book" size={17} color={t.accent} /></View>
+        <View style={{ flex: 1, gap: 2 }}>
+          <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink, textAlign: "left" }}>{lt("madrasaTitle")}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: t.muted, textAlign: "left" }}>{lt("madrasaLead")}</Text>
+        </View>
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{open ? lt("showLess") : lt("showMore")}</Text>
+      </Pressable>
+      <Pressable onPress={() => router.navigate("/library" as Href)} accessibilityRole="link" accessibilityLabel={lt("toDiscover")}
+        style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 8, paddingHorizontal: 16, paddingVertical: 12, borderTopWidth: 1, borderTopColor: t.line, backgroundColor: pressed ? t.bg : t.surface })}>
+        <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 14, color: t.ink, textAlign: "left" }}>{lt("toDiscover")}</Text>
+        <Icon name="chevronRight" color={t.muted} size={16} />
+      </Pressable>
+    </View>
   );
 }
 

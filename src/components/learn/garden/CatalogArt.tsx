@@ -6,6 +6,8 @@
 import { memo } from "react";
 import type { CSSProperties } from "react";
 import { hashId, itemById, rarityOf, type Rarity, type Series } from "@/lib/learn/garden/catalog";
+import { useLang } from "@/lib/learn/i18n";
+import { stickerLabel } from "@/lib/learn/garden/texts";
 import { CALLIG, useUid } from "./Tree";
 
 const FRAMES = ["circle", "octagon", "arch", "star", "hex", "rosette"] as const;
@@ -35,7 +37,10 @@ const FOIL = `.gd-foil{animation:gd-foil 2.8s ease-in-out infinite}@keyframes gd
 
 export const CatalogArt = memo(function CatalogArt({ id, size = 84, locked = false }: { id: string; size?: number; locked?: boolean }) {
   const u = useUid("ca");
-  const it = itemById(id);
+  const { lang } = useLang();
+  const it0 = itemById(id);
+  // seasons and juz read in the learner's language (the id stays the same); every other label as before
+  const it = it0 && (it0.series === "seasonal" || it0.series === "juz") ? { ...it0, label: stickerLabel(it0, lang) } : it0;
   const h = hashId(id);
   const rarity = rarityOf(id);
   const frame: Frame = (it && SERIES_FRAME[it.series]) ?? FRAMES[h % FRAMES.length];
@@ -69,7 +74,7 @@ export const CatalogArt = memo(function CatalogArt({ id, size = 84, locked = fal
         <path d={d} fill="none" stroke={`url(#${u}rim)`} strokeWidth={rarity === "common" ? 2 : rarity === "rare" ? 3 : 4} />
         {rarity === "legendary" || rarity === "epic" ? <path d={framePath(frame, c, r - 6)} fill="none" stroke={RIM[rarity][1]} strokeWidth={0.7} opacity={0.7} /> : null}
         {big ? <text x={50} y={arabicBig ? 56 : 54} fontSize={arabicBig ? (big.length > 6 ? 16 : 26) : big.length > 6 ? 15 : 20} fontFamily={arabicBig ? (it?.series === "letters" || it?.series === "roots" ? ARABIC : CALLIG) : SANS} fontWeight={arabicBig ? undefined : 700} fill={light} textAnchor="middle" direction={arabicBig ? "rtl" : undefined}>{big}</text> : null}
-        {sub ? <text x={50} y={big ? 74 : 54} fontSize={big ? 8 : sub.length > 14 ? 8.5 : 11} fontFamily={SANS} fontWeight={600} fill={light} opacity={big ? 0.85 : 1} textAnchor="middle">{sub.length > 20 ? `${sub.slice(0, 19)}…` : sub}</text> : null}
+        {sub ? <text x={50} y={big ? 74 : 54} fontSize={subSize(sub, !!big)} fontFamily={SANS} fontWeight={600} fill={light} opacity={big ? 0.85 : 1} textAnchor="middle">{sub}</text> : null}
       </svg>
       {rarity === "legendary" ? (
         <span style={{ position: "absolute", inset: 0, overflow: "hidden", borderRadius: size / 2, pointerEvents: "none" }}>
@@ -81,3 +86,6 @@ export const CatalogArt = memo(function CatalogArt({ id, size = 84, locked = fal
   );
 });
 export const rarityColor = (r: Rarity) => RIM[r][0];
+/** the size of the small line: as before up to 20 characters; a longer name (Dhul-Jalali-wal-Ikram, a season in some
+ *  languages) is set smaller to fit whole instead of being cut off */
+const subSize = (sub: string, big: boolean) => (big ? 8 : sub.length > 20 ? Math.max(5.5, (8.5 * 19) / sub.length) : sub.length > 14 ? 8.5 : 11);

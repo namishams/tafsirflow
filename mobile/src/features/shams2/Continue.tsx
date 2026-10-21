@@ -4,6 +4,7 @@ import { Page, PageHero } from "@/components/page";
 import { Icon } from "@/components/icons";
 import { FONT, FWD, R, stage, useTheme } from "@/lib/theme";
 import { useIntl } from "@/features/srs/format";
+import { FREE, usePro } from "@/lib/pro";
 import { nextSteps, type NextStep } from "./nextSteps";
 import { useShams2 } from "./model";
 import { useSurahNames } from "./names";
@@ -14,7 +15,8 @@ import { SourceNote } from "./ui";
 // wird, at the end of a Shams session and on /shams/next.
 function useSteps(surah?: number) {
   const { srs, known, q } = useShams2();
-  return nextSteps(srs, known, q.surahs, q.juz, { surah });
+  const { pro } = usePro();
+  return nextSteps(srs, known, q.surahs, q.juz, { surah, allow: pro ? undefined : FREE.shamsSurah });
 }
 
 function useLabel() {

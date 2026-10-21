@@ -63,6 +63,7 @@ const en = {
   err_too_soon: "One encouragement a day per student.",
   err_range: "Please check the surah and the verses.",
   err_too_many: "The limit is reached.",
+  signIn: "Sign in",
   loginNeeded: "Please sign in and complete your Quran Talents profile first.",
   openLive: "Live link with a teacher",
   openLiveSub: "Invite a teacher from your connections; the teacher sees a summary and can encourage you.",
@@ -131,6 +132,7 @@ const de: Record<K, string> = {
   err_too_soon: "Eine Ermutigung pro Tag und Lernendem.",
   err_range: "Bitte prüfen Sie Sure und Verse.",
   err_too_many: "Die Grenze ist erreicht.",
+  signIn: "Anmelden",
   loginNeeded: "Bitte melden Sie sich an und vervollständigen Sie zuerst Ihr Quran-Talents-Profil.",
   openLive: "Direkte Verbindung zur Lehrkraft",
   openLiveSub: "Laden Sie eine Lehrkraft aus Ihren Verbindungen ein; sie sieht eine Zusammenfassung und kann Sie ermutigen.",
@@ -156,6 +158,7 @@ const ar: Partial<Record<K, string>> = {
   fromV: "من الآية", toV: "إلى الآية", send: "إرسال", sent: "أُرسل", withdraw: "سحب", st_open: "بانتظار", st_accepted: "مقبول",
   st_dismissed: "مرفوض", st_done: "تم", err_generic: "لم تنجح العملية. حاول مرة أخرى.", err_not_connected: "لا تُدعى إلا الصلات المقبولة.",
   err_exists: "هذا المعلّم مدعو بالفعل.", err_too_soon: "تشجيع واحد في اليوم لكل طالب.", err_range: "تحقّق من السورة والآيات.", err_too_many: "بلغتَ الحد.",
+  signIn: "تسجيل الدخول",
   loginNeeded: "سجّل الدخول وأكمل ملفك في مواهب القرآن أولاً.", openLive: "صلة مباشرة بمعلّمك",
   openLiveSub: "ادعُ معلّمًا من صلاتك؛ يرى ملخّصًا ويمكنه تشجيعك.", assignedT: "من معلّمك", assignedFrom: "مقطع من {t}", recite: "اقرأ", remove: "إزالة",
 };
@@ -176,6 +179,7 @@ const tr: Partial<Record<K, string>> = {
   fromV: "Ayetten", toV: "Ayete kadar", send: "Gönder", sent: "Gönderildi", withdraw: "Geri çek", st_open: "bekliyor", st_accepted: "kabul edildi",
   st_dismissed: "reddedildi", st_done: "tamamlandı", err_generic: "Olmadı. Lütfen tekrar deneyin.", err_not_connected: "Yalnızca onaylı bağlantılar davet edilebilir.",
   err_exists: "Bu öğretmen zaten davet edildi.", err_too_soon: "Öğrenci başına günde bir teşvik.", err_range: "Lütfen sure ve ayetleri kontrol edin.", err_too_many: "Sınıra ulaşıldı.",
+  signIn: "Giriş yap",
   loginNeeded: "Lütfen giriş yapın ve önce Kur'an Yetenekleri profilinizi tamamlayın.", openLive: "Öğretmenle canlı bağlantı",
   openLiveSub: "Bağlantılarınızdan bir öğretmen davet edin; öğretmen bir özet görür ve sizi teşvik edebilir.", assignedT: "Öğretmeninizden", assignedFrom: "{t} tarafından bölüm", recite: "Oku", remove: "Kaldır",
 };
@@ -196,6 +200,7 @@ const ur: Partial<Record<K, string>> = {
   fromV: "آیت سے", toV: "آیت تک", send: "بھیجیں", sent: "بھیج دیا", withdraw: "واپس لیں", st_open: "منتظر", st_accepted: "قبول",
   st_dismissed: "مسترد", st_done: "مکمل", err_generic: "کامیاب نہیں ہوا۔ براہِ کرم دوبارہ کوشش کریں۔", err_not_connected: "صرف منظور شدہ رابطوں کو دعوت دی جا سکتی ہے۔",
   err_exists: "اس استاد کو پہلے ہی دعوت دی جا چکی ہے۔", err_too_soon: "ہر طالب علم کے لیے دن میں ایک حوصلہ افزائی۔", err_range: "براہِ کرم سورت اور آیات چیک کریں۔", err_too_many: "حد پوری ہو گئی۔",
+  signIn: "سائن اِن کریں",
   loginNeeded: "براہِ کرم سائن اِن کریں اور پہلے قرآن ٹیلنٹس پروفائل مکمل کریں۔", openLive: "استاد سے براہِ راست رابطہ",
   openLiveSub: "اپنے رابطوں میں سے استاد کو دعوت دیں؛ وہ خلاصہ دیکھتے ہیں اور آپ کی حوصلہ افزائی کر سکتے ہیں۔", assignedT: "آپ کے استاد کی طرف سے", assignedFrom: "{t} کی طرف سے حصہ", recite: "پڑھیں", remove: "ہٹائیں",
 };
@@ -216,6 +221,7 @@ const fa: Partial<Record<K, string>> = {
   fromV: "از آیه", toV: "تا آیه", send: "ارسال", sent: "ارسال شد", withdraw: "پس گرفتن", st_open: "در انتظار", st_accepted: "پذیرفته شد",
   st_dismissed: "رد شد", st_done: "انجام شد", err_generic: "انجام نشد. لطفاً دوباره تلاش کنید.", err_not_connected: "فقط ارتباطات تأییدشده قابل دعوت هستند.",
   err_exists: "این استاد قبلاً دعوت شده است.", err_too_soon: "روزی یک تشویق برای هر دانش‌آموز.", err_range: "لطفاً سوره و آیات را بررسی کنید.", err_too_many: "به حد مجاز رسیده‌اید.",
+  signIn: "ورود",
   loginNeeded: "لطفاً وارد شوید و ابتدا نمایه استعدادهای قرآن را کامل کنید.", openLive: "ارتباط مستقیم با استاد",
   openLiveSub: "استادی را از میان ارتباطات خود دعوت کنید؛ او خلاصه را می‌بیند و می‌تواند شما را تشویق کند.", assignedT: "از استاد شما", assignedFrom: "بخش از {t}", recite: "تلاوت", remove: "حذف",
 };
@@ -236,6 +242,7 @@ const ps: Partial<Record<K, string>> = {
   fromV: "له آیت", toV: "تر آیت", send: "لېږل", sent: "ولېږل شو", withdraw: "بیرته اخیستل", st_open: "په تمه", st_accepted: "منل شوی",
   st_dismissed: "رد شوی", st_done: "بشپړ", err_generic: "ونه شو. مهرباني وکړئ بیا هڅه وکړئ.", err_not_connected: "یوازې تایید شوې اړیکې بلل کیدی شي.",
   err_exists: "دا ښوونکی لا مخکې بلل شوی دی.", err_too_soon: "د هر زده کوونکي لپاره په ورځ کې یوه هڅونه.", err_range: "مهرباني وکړئ سورت او آیتونه وګورئ.", err_too_many: "حد ته رسیدلی یاست.",
+  signIn: "ننوتل",
   loginNeeded: "مهرباني وکړئ ننوځئ او لومړی د قرآن استعدادونو پروفایل بشپړ کړئ.", openLive: "له ښوونکي سره مستقیم اړیکه",
   openLiveSub: "له خپلو اړیکو یو ښوونکی وبولئ؛ هغه لنډیز ویني او تاسو هڅولی شي.", assignedT: "ستاسو له ښوونکي", assignedFrom: "له {t} برخه", recite: "ولولئ", remove: "لرې کول",
 };
@@ -256,6 +263,7 @@ const fr: Partial<Record<K, string>> = {
   fromV: "Du verset", toV: "Au verset", send: "Envoyer", sent: "Envoyé", withdraw: "Retirer", st_open: "en attente", st_accepted: "accepté",
   st_dismissed: "refusé", st_done: "terminé", err_generic: "Cela n'a pas fonctionné. Veuillez réessayer.", err_not_connected: "Seuls les contacts acceptés peuvent être invités.",
   err_exists: "Cet enseignant est déjà invité.", err_too_soon: "Un encouragement par jour et par élève.", err_range: "Veuillez vérifier la sourate et les versets.", err_too_many: "La limite est atteinte.",
+  signIn: "Se connecter",
   loginNeeded: "Veuillez vous connecter et d'abord compléter votre profil Quran Talents.", openLive: "Lien direct avec un enseignant",
   openLiveSub: "Invitez un enseignant parmi vos contacts ; il voit un résumé et peut vous encourager.", assignedT: "De votre enseignant", assignedFrom: "Passage de {t}", recite: "Réciter", remove: "Retirer",
 };
@@ -276,6 +284,7 @@ const es: Partial<Record<K, string>> = {
   fromV: "Desde el versículo", toV: "Hasta el versículo", send: "Enviar", sent: "Enviado", withdraw: "Retirar", st_open: "pendiente", st_accepted: "aceptado",
   st_dismissed: "rechazado", st_done: "hecho", err_generic: "No ha funcionado. Inténtelo de nuevo.", err_not_connected: "Solo se puede invitar a contactos aceptados.",
   err_exists: "Este maestro ya está invitado.", err_too_soon: "Un ánimo al día por estudiante.", err_range: "Revise la sura y los versículos.", err_too_many: "Se alcanzó el límite.",
+  signIn: "Iniciar sesión",
   loginNeeded: "Inicie sesión y complete primero su perfil de Quran Talents.", openLive: "Enlace directo con un maestro",
   openLiveSub: "Invite a un maestro desde sus contactos; verá un resumen y podrá animarle.", assignedT: "De su maestro", assignedFrom: "Pasaje de {t}", recite: "Recitar", remove: "Quitar",
 };
@@ -296,6 +305,7 @@ const id: Partial<Record<K, string>> = {
   fromV: "Dari ayat", toV: "Sampai ayat", send: "Kirim", sent: "Terkirim", withdraw: "Tarik kembali", st_open: "menunggu", st_accepted: "diterima",
   st_dismissed: "ditolak", st_done: "selesai", err_generic: "Gagal. Silakan coba lagi.", err_not_connected: "Hanya koneksi yang diterima yang dapat diundang.",
   err_exists: "Guru ini sudah diundang.", err_too_soon: "Satu semangat per hari untuk setiap murid.", err_range: "Periksa surah dan ayatnya.", err_too_many: "Batas tercapai.",
+  signIn: "Masuk",
   loginNeeded: "Silakan masuk dan lengkapi dulu profil Quran Talents Anda.", openLive: "Tautan langsung dengan guru",
   openLiveSub: "Undang guru dari koneksi Anda; guru melihat ringkasan dan dapat menyemangati Anda.", assignedT: "Dari guru Anda", assignedFrom: "Bagian dari {t}", recite: "Baca", remove: "Hapus",
 };
@@ -316,6 +326,7 @@ const ms: Partial<Record<K, string>> = {
   fromV: "Dari ayat", toV: "Hingga ayat", send: "Hantar", sent: "Dihantar", withdraw: "Tarik balik", st_open: "menunggu", st_accepted: "diterima",
   st_dismissed: "ditolak", st_done: "selesai", err_generic: "Tidak berjaya. Sila cuba lagi.", err_not_connected: "Hanya sambungan yang diterima boleh dijemput.",
   err_exists: "Guru ini sudah dijemput.", err_too_soon: "Satu semangat sehari bagi setiap pelajar.", err_range: "Sila semak surah dan ayat.", err_too_many: "Had dicapai.",
+  signIn: "Log masuk",
   loginNeeded: "Sila log masuk dan lengkapkan dahulu profil Quran Talents anda.", openLive: "Pautan terus dengan guru",
   openLiveSub: "Jemput guru daripada sambungan anda; guru melihat ringkasan dan boleh memberi semangat.", assignedT: "Daripada guru anda", assignedFrom: "Bahagian daripada {t}", recite: "Baca", remove: "Buang",
 };
@@ -336,6 +347,7 @@ const bn: Partial<Record<K, string>> = {
   fromV: "আয়াত থেকে", toV: "আয়াত পর্যন্ত", send: "পাঠান", sent: "পাঠানো হয়েছে", withdraw: "প্রত্যাহার", st_open: "অপেক্ষমাণ", st_accepted: "গৃহীত",
   st_dismissed: "প্রত্যাখ্যাত", st_done: "সম্পন্ন", err_generic: "হয়নি। অনুগ্রহ করে আবার চেষ্টা করুন।", err_not_connected: "শুধু গৃহীত সংযোগকে আমন্ত্রণ জানানো যায়।",
   err_exists: "এই শিক্ষককে আগেই আমন্ত্রণ জানানো হয়েছে।", err_too_soon: "প্রতি শিক্ষার্থীর জন্য দিনে একটি উৎসাহ।", err_range: "অনুগ্রহ করে সূরা ও আয়াত দেখুন।", err_too_many: "সীমায় পৌঁছেছে।",
+  signIn: "সাইন ইন",
   loginNeeded: "অনুগ্রহ করে সাইন ইন করুন এবং আগে কুরআন ট্যালেন্টস প্রোফাইল সম্পূর্ণ করুন।", openLive: "শিক্ষকের সঙ্গে সরাসরি সংযোগ",
   openLiveSub: "আপনার সংযোগ থেকে একজন শিক্ষককে আমন্ত্রণ জানান; তিনি সারসংক্ষেপ দেখেন এবং উৎসাহ দিতে পারেন।", assignedT: "আপনার শিক্ষকের কাছ থেকে", assignedFrom: "{t}-এর অংশ", recite: "তিলাওয়াত", remove: "সরান",
 };
@@ -356,6 +368,7 @@ const ru: Partial<Record<K, string>> = {
   fromV: "С аята", toV: "По аят", send: "Отправить", sent: "Отправлено", withdraw: "Отозвать", st_open: "ожидает", st_accepted: "принято",
   st_dismissed: "отклонено", st_done: "выполнено", err_generic: "Не получилось. Пожалуйста, попробуйте ещё раз.", err_not_connected: "Приглашать можно только принятые контакты.",
   err_exists: "Этот преподаватель уже приглашён.", err_too_soon: "Одна поддержка в день на ученика.", err_range: "Проверьте суру и аяты.", err_too_many: "Достигнут предел.",
+  signIn: "Войти",
   loginNeeded: "Пожалуйста, войдите и сначала заполните профиль Quran Talents.", openLive: "Прямая связь с преподавателем",
   openLiveSub: "Пригласите преподавателя из ваших контактов; он видит сводку и может вас подбодрить.", assignedT: "От вашего преподавателя", assignedFrom: "Отрывок от {t}", recite: "Читать", remove: "Убрать",
 };
@@ -376,6 +389,7 @@ const zh: Partial<Record<K, string>> = {
   fromV: "起始节", toV: "结束节", send: "发送", sent: "已发送", withdraw: "撤回", st_open: "等待中", st_accepted: "已接受",
   st_dismissed: "已拒绝", st_done: "已完成", err_generic: "操作未成功，请重试。", err_not_connected: "只能邀请已接受的联系人。",
   err_exists: "已邀请过这位老师。", err_too_soon: "每位学生每天一次鼓励。", err_range: "请检查章和节。", err_too_many: "已达上限。",
+  signIn: "登录",
   loginNeeded: "请先登录并完善您的古兰经人才资料。", openLive: "与老师实时联系",
   openLiveSub: "从联系人中邀请一位老师；老师可查看摘要并给予鼓励。", assignedT: "来自您的老师", assignedFrom: "来自 {t} 的内容", recite: "诵读", remove: "移除",
 };

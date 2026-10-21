@@ -27,7 +27,7 @@ const S = {
     listenRadio: "Im Radio hören",
     resume: "Weiterhören",
     elapsed: "{a} von {b}",
-    syncHint: "Dein Plan wird auf diesem Gerät gespeichert. Melde dich an, damit er auch auf der Website und deinen anderen Geräten weiterläuft.",
+    syncHint: "Ihr Plan wird auf diesem Gerät gespeichert. Melden Sie sich an, damit er auch auf der Website und Ihren anderen Geräten weiterläuft.",
     signIn: "Anmelden",
     cancel: "Abbrechen",
     delete: "Löschen",

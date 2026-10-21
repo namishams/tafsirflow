@@ -82,14 +82,27 @@ export function TalaqqiScreen({ surah, from, to }: { surah: number; from: number
   const playVerse = () => { if (!verse) return; range.current = null; audio.play(verse.audioUrl, { fallback: verse.remoteAudioUrl, track: false }); };
   const verseMs = verse?.segments.length ? Math.max(...verse.segments.map((x) => x.end)) - Math.min(...verse.segments.map((x) => x.start)) : null;
 
+  // XP and growth come once per verse and visit (a passed check or the first "well done"), never per tap
+  const rewarded = useRef(new Set<string>());
+  const reward = (key: string) => { if (rewarded.current.has(key)) return; rewarded.current.add(key); gEvent({ t: "verse" }); shamsGrow("verse", pro); };
+  const [rated, setRated] = useState<"good" | "slip" | null>(null);
+  useEffect(() => setRated(null), [vi]);
   const onPhrase = (r: CheckResult) => { if (verse && phrase) noteWords(verse.verse_key, phrase.words.map((w, i) => ({ position: w.position, ok: !!r.ok[i] }))); };
   const onVerse = (r: CheckResult) => {
     if (!verse) return;
     noteWords(verse.verse_key, allWords.map((w, i) => ({ position: w.position, ok: !!r.ok[i] })));
     noteCheck(verse.verse_key, r.ok.filter(Boolean).length, r.ok.length);
-    if (r.pass) { gEvent({ t: "verse" }); shamsGrow("verse", pro); }
+    if (r.pass) reward(verse.verse_key);
   };
-  const selfRate = (good: boolean) => { if (verse) { noteCheck(verse.verse_key, good ? allWords.length : Math.floor(allWords.length / 2), allWords.length); if (good) { gEvent({ t: "verse" }); shamsGrow("verse", pro); } } };
+  // the self-assessment is recorded once per verse (the first answer); a later tap only changes what is shown
+  const selfRate = (good: boolean) => {
+    if (!verse) return;
+    const first = rated === null;
+    setRated(good ? "good" : "slip");
+    if (!first) return;
+    noteCheck(verse.verse_key, good ? allWords.length : Math.floor(allWords.length / 2), allWords.length);
+    if (good) reward(verse.verse_key);
+  };
 
   const nextVerse = () => { audio.stop(); if (vi < last) setVi(vi + 1); else router.replace(`/shams/next?s=${surah}` as Href); };
 
@@ -140,8 +153,8 @@ export function TalaqqiScreen({ surah, from, to }: { surah: number; from: number
                   <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap" }}><Btn icon="play" title={s("listenVerse")} onPress={playVerse} /></View>
                   <SpeechCheck words={allWords} pass={grade.wordPass} targetMs={verseMs ? verseMs * grade.pace : null} onResult={onVerse} />
                   <View style={{ flexDirection: "row", gap: 6, flexWrap: "wrap" }}>
-                    <Chip label={s("selfGood")} onPress={() => selfRate(true)} />
-                    <Chip label={s("selfSlip")} onPress={() => selfRate(false)} />
+                    <Chip label={s("selfGood")} selected={rated === "good"} onPress={() => selfRate(true)} />
+                    <Chip label={s("selfSlip")} selected={rated === "slip"} onPress={() => selfRate(false)} />
                   </View>
                   <View style={{ height: 1, backgroundColor: t.line, marginVertical: 4 }} />
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.ink }}>{s("abTitle")}</Text>

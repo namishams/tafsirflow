@@ -75,6 +75,12 @@ export function HubScreen() {
               </View>
             ))}
             {m.wird.gated ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.gold }}>{s("gatedLead")}</Text> : null}
+            {m.wird.locked ? (
+              <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 8 }}>
+                <Icon name="lock" size={14} color={t.gold} />
+                <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, textAlign: "left" }}>{s("proSurah")}</Text>
+              </View>
+            ) : null}
             {first ? <Briefing s={first.s} v={first.from} /> : null}
             <GoldButton title={s("openWird", { m: nf(m.wird.minutes) })} onPress={() => router.push("/shams/wird" as Href)} />
           </Card>

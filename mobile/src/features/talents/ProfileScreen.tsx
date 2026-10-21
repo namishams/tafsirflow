@@ -33,6 +33,10 @@ import { usePT } from "./profileText";
 import { Completeness, FollowedBy, Highlights, ShareSheet, Suggested } from "./ProfileExtras";
 import { PIcon, type ProfileIconName } from "./ProfileIcons";
 import { demoProfileData, localProfileData, readOwnCache, writeOwnCache } from "./localProfile";
+import * as Haptics from "expo-haptics";
+import { ExtrasChips } from "./ExtrasEditor";
+import { useGoalLabels, useTravel } from "./travel";
+import { readV2 } from "@/features/plan/v2";
 
 // The talent profile, one layout for the own profile (Account tab, owner 21.10.2026: "the last tab IS your profile")
 // and for everybody else (/talents/u/<username>). TikTok structure in emerald and gold: top bar (own: name with a
@@ -156,7 +160,7 @@ type Tab = "posts" | "saved" | "awards" | "sijill" | "moments";
 type Opt = { label: string; onPress: () => void; destructive?: boolean };
 
 /** the whole profile screen: top bar, header, tabs, grid and the sheets */
-export function ProfileScreenView({ d, variant, title, canInteract, signedIn, requests = 0, onRefresh }: {
+export function ProfileScreenView({ d, variant, title, canInteract, signedIn, requests = 0, unread = 0, onRefresh }: {
   d: ProfileData;
   /** "tab": own profile in the Account tab (menu opens the settings); "stack": a pushed profile with a back button */
   variant: "tab" | "stack";
@@ -167,6 +171,8 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   signedIn: boolean;
   /** own private account: pending follow requests */
   requests?: number;
+  /** own profile: unread notifications, messages and requests (a gold dot on the menu button) */
+  unread?: number;
   /** pull to refresh: what else the screen reloads (own: account, follow requests) */
   onRefresh?: () => Promise<void>;
 }) {
@@ -181,6 +187,8 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   const { width: winW } = useWindowDimensions();
   const tabSpace = useTabBarSpace();
   const flags = useSijillFlags();
+  const goalLabels = useGoalLabels();
+  const trip = useTravel();
   const { p, setP, moments, setMoments, momentsMore, setMomentsMore, sijill, posts, saved, highlights, setHighlights, posting, postingOn } = d;
   const bg = t.dark ? t.bg : t.surface;
   const mode: "own" | "other" | "local" = d.source === "local" ? "local" : p?.mine ? "own" : "other";
@@ -226,12 +234,23 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   const createProfile = () => router.push((signedIn ? "/community/me" : "/register") as Href);
   const openSettings = () => router.push("/account/settings" as Href);
 
+  // optimistic: the button and the counter change at once (with a light haptic tap), a failed call puts both back
   const follow = () => p && run(async () => {
-    if (p.requested) { await T.follow(p.username, false); setP({ ...p, requested: false }); return; }
-    const r = await T.follow(p.username, !p.followed);
-    setP({ ...p, followed: r.followed, followers: r.followers, requested: !!r.requested });
-    if (r.followed || r.requested) { setJustFollowed(true); setSuggest(true); }
-    if (r.followed && p.restricted) await d.load();
+    const prev = p;
+    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => undefined);
+    if (p.requested) {
+      setP({ ...p, requested: false });
+      try { await T.follow(p.username, false); } catch (e) { setP(prev); throw e; }
+      return;
+    }
+    const on = !p.followed;
+    setP({ ...p, followed: on && !p.private, requested: on && p.private, followers: Math.max(0, p.followers + (on ? (p.private ? 0 : 1) : -1)) });
+    try {
+      const r = await T.follow(p.username, on);
+      setP((x) => (x ? { ...x, followed: r.followed, followers: r.followers, requested: !!r.requested } : x));
+      if (r.followed || r.requested) { setJustFollowed(true); setSuggest(true); }
+      if (r.followed && p.restricted) await d.load();
+    } catch (e) { setP(prev); throw e; }
   });
   // "Following": a sheet with Unfollow, like Instagram and TikTok (no accidental unfollow)
   const unfollow = () => p && options(`@${p.username}`, [{ label: pt("unfollow"), destructive: true, onPress: () => void follow() }]);
@@ -311,7 +330,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         </Pressable>
         <View style={{ flex: 1 }} />
         <BarBtn icon="plusSquare" label={pt("shareQr")} onPress={share} />
-        <BarBtn icon="menu" label={pt("menuLabel")} onPress={openSettings} />
+        <BarBtn icon="menu" label={unread > 0 ? `${pt("menuLabel")}, ${tt("unread", { n: unread })}` : pt("menuLabel")} onPress={openSettings} dot={unread > 0} />
       </View>
     </View>
   ) : (
@@ -334,13 +353,16 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         {topBar}
         {d.state === "missing" ? <Muted>{tt("notFound")}</Muted> : d.state === "error" ? (
           <View style={{ padding: 20 }}><OutlineButton title={tt("retry")} onPress={() => void d.load()} /></View>
-        ) : <Loading />}
+        ) : <ProfileSkeleton width={winW > READ_WIDTH + 40 ? READ_WIDTH : winW} />}
       </View>
     );
   }
 
   // ---------- header ----------
   const handle = p.username ? `@${p.username}` : "";
+  // goals, city and travel: from the server by their audience; on this device (no profile) the onboarding goals and
+  // the device's travel mode
+  const ext = mode === "local" ? { goals: readV2()?.goals ?? [], city: "", travel: trip.on ? { on: true, city: trip.city } : undefined } : (p.extras ?? {});
   const ownish = mode === "own" || mode === "local";
   const header = (
     <View style={{ alignItems: "center", paddingTop: 10, paddingHorizontal: 16 }}>
@@ -360,13 +382,20 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
 
       {/* @username with badge, then the level */}
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 5, marginTop: 12, flexWrap: "wrap" }}>
-        <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 17, color: t.ink, writingDirection: handle ? "ltr" : undefined }}>{handle || p.name}</Text>
+        {/* no @username yet (this device only): the name, unless it is just the tab's title */}
+        {handle || p.name !== title ? <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 17, color: t.ink, writingDirection: handle ? "ltr" : undefined }}>{handle || p.name}</Text> : null}
         <BadgeButton badge={p.badge} size={17} />
         {p.private && variant === "stack" ? <Icon name="lock" color={t.muted} size={14} /> : null}
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 6 }}>
         <LevelBadge level={p.level} />
         {sj?.level ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{st("levelN", { n: sj.level.level })}</Text> : null}
+        {/* mutual follow: this member follows the viewer */}
+        {mode === "other" && p.followsMe ? (
+          <View style={{ paddingHorizontal: 8, paddingVertical: 3, borderRadius: R.pill, backgroundColor: softBg(t) }}>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: t.muted }}>{pt("followsYou")}</Text>
+          </View>
+        ) : null}
       </View>
 
       {/* counters (TikTok): Following | Followers | MashaAllah */}
@@ -420,8 +449,10 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         {p.officialChannel ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.gold }}>{tt("officialChannel", { c: p.officialChannel })}</Text> : null}
         <SharerBadge tier={p.sharerTier} />
         {!p.private && p.username && live ? <View style={{ flexDirection: "row", justifyContent: "center" }}><RankLine username={p.username} /></View> : null}
+        <ExtrasChips goals={ext.goals} city={ext.city} travel={ext.travel} labels={goalLabels} />
         <FollowedBy p={p} />
-        {mode === "local" ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, textAlign: "center", maxWidth: 340 }}>{pt("localNote")}</Text> : null}
+        {/* the note once: here when the grid has tiles, otherwise as the empty grid's text */}
+        {mode === "local" && moments?.length ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, textAlign: "center", maxWidth: 340 }}>{pt("localNote")}</Text> : null}
       </View>
     </View>
   );
@@ -530,7 +561,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
                 <>
                   <Icon name="lock" color={t.muted} size={26} />
                   <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{tt("privateTitle")}</Text>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, textAlign: "center" }}>{tt("privateText")}</Text>
+                  <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, textAlign: "center" }}>{p.requested ? tt("privateText") : pt("followToSee")}</Text>
                 </>
               ) : null}
             </View>
@@ -553,6 +584,27 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   );
 }
 
+/** the profile's shape while it loads (no animation, like the rest of the app) */
+function ProfileSkeleton({ width }: { width: number }) {
+  const t = useTheme();
+  const g = t.dark ? "rgba(255,255,255,0.08)" : "rgba(13,31,25,0.07)";
+  const bar = (w: number, h = 12) => <View style={{ width: w, height: h, borderRadius: h / 2, backgroundColor: g }} />;
+  const tile = Math.floor((width - 2) / 3);
+  return (
+    <View accessibilityLabel="…" accessibilityState={{ busy: true }} style={{ alignItems: "center", paddingTop: 10 }}>
+      <View style={{ width: 96, height: 96, borderRadius: 48, backgroundColor: g }} />
+      <View style={{ marginTop: 14 }}>{bar(130, 16)}</View>
+      <View style={{ marginTop: 10 }}>{bar(90)}</View>
+      <View style={{ flexDirection: "row", gap: 28, marginTop: 20 }}>{[0, 1, 2].map((i) => <View key={i} style={{ alignItems: "center", gap: 6 }}>{bar(34, 16)}{bar(58, 10)}</View>)}</View>
+      <View style={{ flexDirection: "row", gap: 6, marginTop: 20 }}><View style={{ width: 150, height: 42, borderRadius: R.md, backgroundColor: g }} /><View style={{ width: 150, height: 42, borderRadius: R.md, backgroundColor: g }} /><View style={{ width: 44, height: 42, borderRadius: R.md, backgroundColor: g }} /></View>
+      <View style={{ marginTop: 16 }}>{bar(220)}</View>
+      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 1, marginTop: 26, width }}>
+        {[0, 1, 2, 3, 4, 5].map((i) => <View key={i} style={{ width: i % 3 === 2 ? width - 2 - tile * 2 : tile, height: Math.round(tile * 4 / 3), backgroundColor: g }} />)}
+      </View>
+    </View>
+  );
+}
+
 const isPIcon = (n: string): n is ProfileIconName => ["plusSquare", "userPlus", "dots", "gridTab", "record", "rosette", "userCheck"].includes(n);
 
 /** one counter: the number bold above the grey label (the MashaAllah label with a gold heart) */
@@ -570,13 +622,14 @@ function Stat({ n, label, onPress, heart }: { n: string; label: string; onPress?
   );
 }
 
-/** a top bar icon button (44 pt) */
-function BarBtn({ icon, label, onPress }: { icon: ProfileIconName | IconName; label: string; onPress: () => void }) {
+/** a top bar icon button (44 pt); `dot`: something unread behind it (a small gold dot, like Instagram) */
+function BarBtn({ icon, label, onPress, dot }: { icon: ProfileIconName | IconName; label: string; onPress: () => void; dot?: boolean }) {
   const t = useTheme();
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} hitSlop={4}
       style={({ pressed }) => ({ width: 44, height: 44, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.55 : 1 })}>
       {isPIcon(icon) ? <PIcon name={icon} color={t.ink} size={26} weight={1.8} /> : <Icon name={icon} color={t.ink} size={icon === "chevronLeft" ? 26 : 26} weight={icon === "chevronLeft" ? 2.2 : 1.8} />}
+      {dot ? <View pointerEvents="none" style={{ position: "absolute", top: 8, end: 6, width: 10, height: 10, borderRadius: 5, backgroundColor: goldButton.to, borderWidth: 1.5, borderColor: t.dark ? t.bg : t.surface }} /> : null}
     </Pressable>
   );
 }

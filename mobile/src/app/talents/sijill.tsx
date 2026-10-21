@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { Switch, Text, View } from "react-native";
-import { Stack, useFocusEffect } from "expo-router";
+import { Stack, router, useFocusEffect, type Href } from "expo-router";
 import { FONT, useTheme } from "@/lib/theme";
 import { Page, PageHero, Loading } from "@/components/page";
 import { GoldButton, OutlineButton } from "@/components/brand";
@@ -11,12 +11,14 @@ import { syncSijill } from "@/features/sijill/summary";
 import { SijillShowcase } from "@/features/sijill/Showcase";
 import { useST, type SKey } from "@/features/sijill/text";
 import { AccessGate, Muted, SafetyBar, useTalentAccess, useTalentErr } from "@/features/talents/ui";
+import { useTT } from "@/features/talents/text";
 
 // /talents/sijill – the member's own academic record: update it from this device, choose per section what others see
 // (everything starts hidden), take part in leaderboards (opt-in), preview the record as it is stored.
 export default function MySijill() {
   const t = useTheme();
   const st = useST();
+  const tt = useTT();
   const err = useTalentErr();
   const { lang } = useLang();
   const { pro } = usePro();
@@ -62,7 +64,13 @@ export default function MySijill() {
         <PageHero back topInset arcade={false} eyebrow={st("sijill")} title={st("title")} lead={st("leadMine")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 18 }}>
-            {!a.me?.profile ? <Muted>{msg || "…"}</Muted> : !s ? (msg ? <Muted>{msg}</Muted> : <Loading />) : (
+            {/* no community profile yet (deep link, notification): say why and offer the way forward */}
+            {!a.me?.profile ? (
+              <>
+                <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{msg || tt("needProfile")}</Text>
+                <GoldButton title={tt("createProfile")} onPress={() => router.push("/community/me" as Href)} />
+              </>
+            ) : !s ? (msg ? <Muted>{msg}</Muted> : <Loading />) : (
               <>
                 <GoldButton title={st("syncNow")} onPress={() => void syncNow()} busy={busy} disabled={busy} />
                 {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{msg}</Text> : null}

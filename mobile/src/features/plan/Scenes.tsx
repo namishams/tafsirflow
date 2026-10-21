@@ -231,12 +231,12 @@ export const QuranStand = memo(function QuranStand({ still, size = 200 }: { stil
   );
 });
 
-/** a quiet quotation with its reference (hadith or verse) */
+/** a quiet quotation with its reference (hadith or verse); `text` may be empty when only the Arabic is shown */
 export function RefQuote({ text, source, arabic }: { text: string; source: string; arabic?: string }) {
   return (
     <View style={{ borderLeftWidth: 2, borderLeftColor: GOLD, paddingLeft: 12, paddingVertical: 4, gap: 4 }}>
       {arabic ? <SvgFreeArabic text={arabic} /> : null}
-      <Animated.Text style={{ fontFamily: FONT.italic, fontSize: 15.5, lineHeight: 23, color: CREAM }}>{text}</Animated.Text>
+      {text ? <Animated.Text style={{ fontFamily: FONT.italic, fontSize: 15.5, lineHeight: 23, color: CREAM }}>{text}</Animated.Text> : null}
       <Animated.Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 0.4, color: "rgba(214,180,108,0.9)" }}>{source}</Animated.Text>
     </View>
   );

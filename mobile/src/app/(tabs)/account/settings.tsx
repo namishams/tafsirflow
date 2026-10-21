@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Alert, Platform, Switch, Text, TextInput, View } from "react-native";
+import { AccessibilityInfo, Alert, Platform, Switch, Text, TextInput, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import Constants from "expo-constants";
 import { FONT, R, useTheme } from "@/lib/theme";
-import { Chip, GoldButton, OutlineButton, Segmented } from "@/components/brand";
+import { Chip, GoldButton, OutlineButton, Segmented, TextLink } from "@/components/brand";
 import { readDaily, setDaily, type DailyReminder } from "@/lib/daily";
 import { LinkRow, Page, PageHero, ProBadge, RowGroup } from "@/components/page";
+import { Icon } from "@/components/icons";
 import { intlLocale, langLabel, useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { ApiError } from "@/lib/api";
@@ -25,8 +26,12 @@ import { ShareCounter, SharePromptSetting } from "@/features/share/SharePrompt";
 import { SharerBadge } from "@/features/share/SharerUI";
 import { useMySharer } from "@/features/share/sharer";
 import { useSchoolT } from "@/features/school/texts";
-import { TalentsAccount } from "@/features/talents/AccountSection";
+import { TalentsAccount, TalentsInbox } from "@/features/talents/AccountSection";
 import { useTT } from "@/features/talents/text";
+import { ConfirmCode } from "@/features/auth/ConfirmCode";
+import { securityApi } from "@/features/auth/api";
+import { useAuthT } from "@/features/auth/text";
+import { TravelSetting } from "@/features/talents/TravelCard";
 
 // /account/settings – everything the Account tab showed before it became the own profile (owner, 21.10.2026: the last tab
 // is the Instagram/TikTok profile; the menu button opens this screen). Unchanged content: Pro, sign-in, confirm the
@@ -39,13 +44,25 @@ export default function AccountSettingsScreen() {
   const { lang, setting } = useLang();
   const { appearance, setAppearance } = useSettings();
   const hx = useHadithText();
-  const { user, logout, deleteAccount } = useAuth();
+  const { user, logout, deleteAccount, refresh } = useAuth();
+  const tx = useAuthT();
+  // accounts created with an e-mail code have no password: they confirm the deletion with a code (features/auth)
+  const [noPassword, setNoPassword] = useState(false);
+  const [codeOk, setCodeOk] = useState(false);
+  const [byCode, setByCode] = useState(false);
+  const [verifyByCode, setVerifyByCode] = useState(false);
+  const startDelete = () => {
+    setDeleting(true); setError(""); setCodeOk(false); setByCode(false);
+    securityApi.load().then((r) => { if (r.ok) setNoPassword(!r.data.hasPassword); }).catch(() => undefined);
+  };
+  const codeWay = noPassword || byCode;
   const sharer = useMySharer();
   const { pro, until } = usePro();
   const [deleting, setDeleting] = useState(false);
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [deleted, setDeleted] = useState(false); // after the deletion: a clear line where the form was (App Review 5.1.1(v))
   const wa = useWebT("account");
   const wn = useWebT("nav");
   const [resent, setResent] = useState<"" | "busy" | "sent" | "error">("");
@@ -61,11 +78,15 @@ export default function AccountSettingsScreen() {
   const confirmDelete = async () => {
     setBusy(true); setError("");
     try {
-      await deleteAccount(password); setDeleting(false); setPassword("");
+      await deleteAccount(codeWay ? undefined : password); setDeleting(false); setPassword("");
       // the learning progress on this device belonged to the deleted account (as on the profile page)
       for (const k of storedKeys()) if (k.startsWith("tf:")) removeKey(k);
+      setDeleted(true); AccessibilityInfo.announceForAccessibility(t("account.deleted"));
     }
-    catch (e) { setError(e instanceof ApiError && e.code === "current" ? t("account.wrongPassword") : t("common.error")); }
+    catch (e) {
+      if (codeWay) setCodeOk(false); // the confirmation ran out (15 minutes): ask for a new code
+      setError(e instanceof ApiError && e.code === "current" ? (codeWay ? tx("errExpired") : t("account.wrongPassword")) : t("common.error"));
+    }
     finally { setBusy(false); }
   };
 
@@ -83,6 +104,8 @@ export default function AccountSettingsScreen() {
         </PageHero>
 
         <View style={{ padding: 16, gap: 22 }}>
+          {/* notifications, messages and requests first, with their unread counts (the profile's menu shows a dot) */}
+          <TalentsInbox />
           <FeedStatsRow />
           <GardenWidget />
           <GardenNotifySetting />
@@ -97,6 +120,8 @@ export default function AccountSettingsScreen() {
                   <OutlineButton compact title={wa("resend")} icon="repeat" disabled={resent === "busy"} onPress={() => void resend()} style={{ alignSelf: "flex-start" }} />
                 </>
               )}
+              {verifyByCode ? <ConfirmCode email={user.email} onConfirmed={() => { setVerifyByCode(false); void refresh(); }} />
+                : <TextLink title={tx("verifyByCode")} onPress={() => setVerifyByCode(true)} style={{ fontSize: 14, paddingVertical: 2 }} />}
             </View>
           ) : null}
 
@@ -141,6 +166,8 @@ export default function AccountSettingsScreen() {
             </View>
           </Section>
           <View style={{ marginBottom: 16 }}><SharePromptSetting /></View>
+          {/* travel mode (owner, 21.10.2026): prayer times for the destination, travel duas, the note on praying while travelling */}
+          <TravelSetting />
 
           <TalentsAccount />
 
@@ -165,8 +192,9 @@ export default function AccountSettingsScreen() {
 
           {user ? (
             <RowGroup>
-              <LinkRow first title={t("account.signOut")} icon="logout" onPress={() => void logout()} />
-              {user.role !== "admin" ? <LinkRow title={t("account.deleteAccount")} onPress={() => { setDeleting(true); setError(""); }} /> : null}
+              <LinkRow first title={tx("security")} icon="shield" onPress={() => go("/account/security")} />
+              <LinkRow title={t("account.signOut")} icon="logout" onPress={() => void logout()} />
+              {user.role !== "admin" ? <LinkRow title={t("account.deleteAccount")} onPress={startDelete} /> : null}
             </RowGroup>
           ) : null}
 
@@ -174,13 +202,30 @@ export default function AccountSettingsScreen() {
             <View style={{ gap: 12, borderRadius: R.lg, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 16 }}>
               <Text style={{ fontFamily: FONT.display, fontSize: 18, color: theme.ink }}>{t("account.deleteTitle")}</Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.muted }}>{t("account.deleteBody")}</Text>
-              <TextInput value={password} onChangeText={setPassword} secureTextEntry autoComplete="current-password" textContentType="password" placeholder={t("account.currentPassword")} placeholderTextColor={theme.muted} accessibilityLabel={t("account.currentPassword")}
-                style={{ height: 48, borderRadius: R.md, borderWidth: 1, borderColor: theme.line, paddingHorizontal: 14, fontFamily: FONT.regular, fontSize: 16, color: theme.ink, backgroundColor: theme.bg }} />
+              {codeWay ? (
+                <>
+                  {noPassword ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.muted }}>{tx("deleteByCode")}</Text> : null}
+                  {codeOk ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, color: theme.accent }}>{tx("confirmed")}</Text>
+                    : <ConfirmCode email={user.email} onConfirmed={() => setCodeOk(true)} />}
+                </>
+              ) : (
+                <>
+                  <TextInput value={password} onChangeText={setPassword} secureTextEntry autoComplete="current-password" textContentType="password" placeholder={t("account.currentPassword")} placeholderTextColor={theme.muted} accessibilityLabel={t("account.currentPassword")}
+                    style={{ height: 48, borderRadius: R.md, borderWidth: 1, borderColor: theme.line, paddingHorizontal: 14, fontFamily: FONT.regular, fontSize: 16, color: theme.ink, backgroundColor: theme.bg }} />
+                  <TextLink title={tx("verifyByCode")} onPress={() => { setByCode(true); setError(""); }} style={{ fontSize: 14, paddingVertical: 2 }} />
+                </>
+              )}
               {error ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: theme.danger }} accessibilityLiveRegion="polite">{error}</Text> : null}
-              <OutlineButton title={t("account.deleteConfirm")} disabled={!password || busy} onPress={() =>
+              <OutlineButton title={t("account.deleteConfirm")} disabled={(codeWay ? !codeOk : !password) || busy} onPress={() =>
                 Platform.OS === "web" ? void confirmDelete() :
                 Alert.alert(t("account.deleteTitle"), t("account.deleteBody"), [{ text: t("common.cancel"), style: "cancel" }, { text: t("account.deleteConfirm"), style: "destructive", onPress: () => void confirmDelete() }])} />
               <OutlineButton title={t("common.cancel")} onPress={() => setDeleting(false)} />
+            </View>
+          ) : null}
+          {deleted && !user ? (
+            <View accessibilityLiveRegion="polite" style={{ flexDirection: "row", alignItems: "center", gap: 10, borderRadius: R.lg, backgroundColor: theme.accentSoft, padding: 16 }}>
+              <Icon name="checkCircle" color={theme.accent} size={20} />
+              <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 15, lineHeight: 22, color: theme.ink }}>{t("account.deleted")}</Text>
             </View>
           ) : null}
 

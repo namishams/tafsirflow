@@ -9,13 +9,13 @@ import { Icon } from "@/components/icons";
 import { usePro } from "@/lib/pro";
 import { RECITERS } from "@/lib/quran";
 import { useLang, pick } from "@/i18n";
-import { RECITER_BIOS, STYLE, bioText } from "@/web/reciters";
+import { RECITER_BIOS, bioText } from "@/web/reciters";
 import { Pill, QuranSeal, useQ } from "@/features/radio/art";
 import { isFreeReciter, useRadioSelect } from "@/features/radio/engine";
 import { RadioMiniPlayer, MINI_SPACE } from "@/features/radio/MiniPlayer";
 import { goBack } from "@/features/radio/controls";
 import { useAppT } from "@/features/radio/strings";
-import { C, HERO_CALLIGRAPHY } from "./texts";
+import { C, HERO_CALLIGRAPHY, styleName } from "./texts";
 import { CalligraphyBackdrop, MoreTiles, QPageWash, QTile, bioInitials, countryName } from "./common";
 
 // /reciters – the website's reciters page: 50 great reciters with their story; biographies are free to read.
@@ -79,7 +79,7 @@ export default function RecitersScreen() {
                   </View>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: th.muted, marginTop: 12 }}>{tx.short}</Text>
                   <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 14 }}>
-                    {r.styles.map((s) => <Pill key={s} label={pick(STYLE[s], lang)} />)}
+                    {r.styles.map((s) => <Pill key={s} label={styleName(s, lang)} />)}
                     {r.playerSlug ? <Pill play locked={locked} label={c.listen} /> : null}
                   </View>
                 </QTile>

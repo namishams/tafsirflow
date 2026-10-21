@@ -16,6 +16,7 @@ import {
   weakestTopics, weaknessDrill, type Mode, type QbankStore,
 } from "./engine";
 import { Results, Runner, saveRun, useQLang, useQbankRewards, type Answer } from "./Runner";
+import { tagLabel as tagName } from "./tags";
 import { CareNote } from "@/components/CareNote";
 import { useQbankT } from "./text";
 import { Bar, Explanation, Panel, Pill, StatTile, pctText } from "./ui";
@@ -28,7 +29,35 @@ const go = (href: string) => router.push(href as Href);
 const sessionHref = (p: Record<string, string | number | undefined>) =>
   `/exams/session?${Object.entries(p).filter(([, v]) => v !== undefined && v !== "").map(([k, v]) => `${k}=${encodeURIComponent(String(v))}`).join("&")}`;
 const useQbank = () => { useStored<Partial<QbankStore>>(QBANK_KEY, {}); return readQbank(); };
-const tagLabel = (tag: string) => tag.replace(/-/g, " ");
+/** topic names in the question language (tags stay the keys; never the raw kebab-case tag) */
+const useTagLabel = () => { const lang = useQLang(); return (tag: string) => tagName(tag, lang); };
+
+/** a locked Pro screen: what it contains, the free way to practise and the upsell (never a bare paywall) */
+function LockedPreview({ lines, onUnlock }: { lines: string[]; onUnlock: () => void }) {
+  const t = useTheme();
+  const qt = useQbankT();
+  const left = freeLeft();
+  return (
+    <GoldCard>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
+        <Icon name="lock" size={16} color={t.gold} />
+        <Text accessibilityRole="header" style={{ flex: 1, fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{qt("lockedTitle")}</Text>
+        <ProBadge />
+      </View>
+      <View style={{ gap: 8, marginTop: 12 }}>
+        {lines.map((l) => (
+          <View key={l} style={{ flexDirection: "row", gap: 10 }}>
+            <Icon name="check" size={15} color={t.accent} />
+            <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: t.ink }}>{l}</Text>
+          </View>
+        ))}
+      </View>
+      <GoldButton title={qt("unlock")} icon="lock" onPress={onUnlock} style={{ marginTop: 14 }} />
+      <OutlineButton title={qt("practiseFree")} icon="book" onPress={() => go(sessionHref({ mode: "practice", n: 10 }))} style={{ marginTop: 10 }} />
+      <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted, marginTop: 10 }}>{left ? qt("free", { n: left }) : qt("freeUsed")}</Text>
+    </GoldCard>
+  );
+}
 
 // ---------- entry cards (Masterclass tab, school) ----------
 export function QbankEntryCard() {
@@ -102,6 +131,7 @@ export function QbankHome() {
   const best = SUBJECTS.reduce((m, x) => Math.max(m, stats[x.id].rating), 0);
   const left = freeLeft(s);
   const lock = (href: string) => () => (pro ? go(href) : ent.upsell());
+  const tagLabel = useTagLabel();
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -244,6 +274,7 @@ export function QbankSubjectScreen({ id }: { id: string }) {
   const pro = ent.allowed;
   const meta = subjectMeta(id);
   const counts = useMemo(() => countsBySubject(), []);
+  const tagLabel = useTagLabel();
   if (!meta) return <Page><PageHero topInset back title={qt("empty")} /></Page>;
   const sub = meta.id;
   const st = subjectStats(s)[sub];
@@ -374,8 +405,10 @@ export function QbankSessionScreen() {
         <View style={{ padding: 16, gap: 16 }}>
           {!allowed ? (
             <GoldCard>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{qt("freeUsed")}</Text>
+              {/* a Pro mode while free questions remain is not "used up": say what it is and offer the free practice */}
+              <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{freeLeft() > 0 ? qt("proMode", { n: freeLeft() }) : qt("freeUsed")}</Text>
               <GoldButton title={qt("unlock")} icon="lock" onPress={ent.upsell} style={{ marginTop: 12 }} />
+              {freeLeft() > 0 ? <OutlineButton title={qt("practiseFree")} icon="book" onPress={() => router.replace(sessionHref({ mode: "practice", n: 10 }) as Href)} style={{ marginTop: 10 }} /> : null}
             </GoldCard>
           ) : done ? (
             <Results answers={done} mode={mode} onAgain={mode === "daily" ? undefined : again} />
@@ -447,6 +480,7 @@ export function QbankMockScreen() {
   const c = answers?.filter((x) => x.ok).length ?? 0;
   const passed = answers ? c / total >= rule.pass && (!ex.submitted || ex.submitted.result.passed) : false;
   const weak = weakestTopics(s, 5);
+  const tagLabel = useTagLabel();
 
   return (
     <>
@@ -456,7 +490,9 @@ export function QbankMockScreen() {
           lead={qt("mockLead", { n: rule.questions, min: rule.questions, q: 90, p: Math.round(rule.pass * 100) })} />
         <View style={{ padding: 16, gap: 16 }}>
           {!ent.allowed ? (
-            <GoldCard><GoldButton title={qt("unlock")} icon="lock" onPress={ent.upsell} /></GoldCard>
+            <LockedPreview onUnlock={ent.upsell} lines={[
+              qt("lk_mock1", { n: rule.questions }), qt("lk_mock2", { q: 90 }), qt("lk_mock3", { p: Math.round(rule.pass * 100) }),
+            ]} />
           ) : !open ? (
             <GoldCard><Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{qt("mockLocked")}</Text></GoldCard>
           ) : (
@@ -505,8 +541,10 @@ export function QbankStatsScreen() {
   const tags = tagStats(s).filter((x) => x.n >= 3);
   const weak = weakestTopics(s, 6);
   const strong = [...tags].sort((a, b) => (b.acc ?? 0) - (a.acc ?? 0) || b.n - a.n).slice(0, 5);
+  const tagLabel = useTagLabel();
   if (!ent.allowed) return (
-    <><Stack.Screen options={{ headerShown: false }} /><Page><PageHero topInset back eyebrow={qt("title")} title={qt("statsTitle")} /><View style={{ padding: 16 }}><GoldCard><GoldButton title={qt("unlock")} icon="lock" onPress={ent.upsell} /></GoldCard></View></Page></>
+    <><Stack.Screen options={{ headerShown: false }} /><Page><PageHero topInset back eyebrow={qt("title")} title={qt("statsTitle")} />
+      <View style={{ padding: 16 }}><LockedPreview onUnlock={ent.upsell} lines={[qt("lk_stats1"), qt("lk_stats2"), qt("lk_stats3")]} /></View></Page></>
   );
   return (
     <>
@@ -614,7 +652,7 @@ export function QbankBookmarksScreen() {
       <Page>
         <PageHero topInset back arcade={false} eyebrow={qt("title")} title={qt("m_bookmarks")} />
         <View style={{ padding: 16, gap: 14 }}>
-          {!ent.allowed ? <GoldCard><GoldButton title={qt("unlock")} icon="lock" onPress={ent.upsell} /></GoldCard> : items.length ? (
+          {!ent.allowed ? <LockedPreview onUnlock={ent.upsell} lines={[qt("m_bookmarksSub", { n: s.bm.length }), qt("m_srsSub", { n: dueQuestions(s).length, m: inRepetition(s) })]} /> : items.length ? (
             <>
               <GoldButton title={qt("start")} icon="play" onPress={() => go(sessionHref({ mode: "bookmarks" }))} />
               {items.map((q) => {

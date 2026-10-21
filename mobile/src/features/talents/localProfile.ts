@@ -92,6 +92,7 @@ export function demoProfileData(kind: "own" | "other", base: { p: TalentProfile;
     rewaya: "Hafs ʿan ʿAsim", country: "DE", bio: "Hifz student, Juz ʿAmma. Learning tajweed step by step.", public: true,
     mine: kind === "own", private: kind === "own", followsMe: kind === "other", followed: false, canMessage: false,
     followedBy: kind === "other" ? { total: 5, users: [{ username: "amina", name: "Amina", avatar: null }, { username: "yusuf", name: "Yusuf", avatar: null }] } : null,
+    extras: { goals: ["juzamma", "tajweed", "understand"], city: "Hamburg", travel: kind === "other" ? { on: true, city: "Makkah" } : undefined },
   };
   return { p, moments, sijill: base.sijill };
 }

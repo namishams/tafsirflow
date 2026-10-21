@@ -1,7 +1,8 @@
 // SEO texts of the Shams Method 2.0 pages (server-safe). German (Sie-form), English and Arabic; other languages use
 // English. {s} is a surah name where the page has one.
 type M = { title: string; description: string };
-export type S2Page = "method" | "wird" | "quality" | "mutashabihat" | "weak" | "tadabbur" | "darajat" | "ard" | "week" | "handbook" | "welcome" | "next" | "talaqqi" | "teacher";
+export type S2Page = "method" | "wird" | "quality" | "mutashabihat" | "weak" | "tadabbur" | "darajat" | "ard" | "week" | "handbook" | "welcome" | "next" | "talaqqi" | "teacher"
+  | "program" | "plans" | "review";
 const B = " | Quran Masterclass";
 const T: Record<"en" | "de" | "ar", Record<S2Page, M>> = {
   en: {
@@ -19,6 +20,9 @@ const T: Record<"en" | "de" | "ar", Record<S2Page, M>> = {
     next: { title: `Next steps – Shams Method${B}`, description: "The next meaningful steps after every surah, juz and test." },
     talaqqi: { title: `Talaqqi – recite phrase by phrase with a master reciter${B}`, description: "Listen phrase by phrase, recite from memory, check the words and compare your recording with the reciter." },
     teacher: { title: `Teacher view – share your hifz progress${B}`, description: "Share your wird, quality and streak with your teacher through a code, read-only, without an account." },
+    program: { title: `30-day program – Shams Method${B}`, description: "A guided month with the Shams Method: one small portion a day, with review built in." },
+    plans: { title: `Memorisation plans for every surah – Shams Method${B}`, description: "A plan for any surah: choose your pace and see each day's verses." },
+    review: { title: `Shams review – your weakest verses first${B}`, description: "Your weakest verses first, with the steps of the Shams Method." },
   },
   de: {
     method: { title: `Shams-Methode 2.0 – das klassische Hifz-System mit Lernwissenschaft${B}`, description: "Sabaq, Sabqi und Manzil jeden Tag, die Hifz-Qualität jeder Seite, ähnliche Verse, Talaqqi mit einem Meister-Rezitator, Hifz-Stufen und Rezitationsprüfungen – berechnet aus dem, was Sie auswendig können. Kostenlos." },
@@ -35,6 +39,9 @@ const T: Record<"en" | "de" | "ar", Record<S2Page, M>> = {
     next: { title: `Nächste Schritte – Shams-Methode${B}`, description: "Die nächsten sinnvollen Schritte nach jeder Sure, jedem Dschuz und jeder Prüfung." },
     talaqqi: { title: `Talaqqi – Satz für Satz mit einem Meister-Rezitator${B}`, description: "Hören Sie Satz für Satz, rezitieren Sie aus dem Gedächtnis, prüfen Sie die Wörter und vergleichen Sie Ihre Aufnahme mit dem Rezitator." },
     teacher: { title: `Ansicht für Lehrkräfte – Hifz-Fortschritt teilen${B}`, description: "Teilen Sie Wird, Qualität und Serie per Code mit Ihrer Lehrkraft, nur lesend und ohne Konto." },
+    program: { title: `30-Tage-Programm – Shams-Methode${B}`, description: "Ein begleiteter Monat mit der Shams-Methode: jeden Tag ein kleiner Abschnitt, mit eingebauter Wiederholung." },
+    plans: { title: `Hifz-Pläne für jede Sure – Shams-Methode${B}`, description: "Ein Plan für jede Sure: Wählen Sie Ihr Tempo und sehen Sie die Verse jedes Tages." },
+    review: { title: `Shams-Wiederholung – Ihre schwächsten Verse zuerst${B}`, description: "Ihre schwächsten Verse zuerst, mit den Schritten der Shams-Methode." },
   },
   ar: {
     method: { title: `منهج شمس 2.0 – نظام الحفظ الكلاسيكي مع علم التعلّم${B}`, description: "السبق والسبقي والمنزل كل يوم، وجودة الحفظ لكل صفحة، والمتشابهات، والتلقي مع قارئ متقن، ودرجات الحفظ واختبارات العرض – محسوبة مما تحفظونه. مجانًا." },
@@ -51,6 +58,9 @@ const T: Record<"en" | "de" | "ar", Record<S2Page, M>> = {
     next: { title: `الخطوات التالية – منهج شمس${B}`, description: "الخطوات المفيدة التالية بعد كل سورة وجزء واختبار." },
     talaqqi: { title: `التلقي – التلاوة جملةً جملة مع قارئ متقن${B}`, description: "استمعوا جملةً جملة، ثم اتلوا من الحفظ، وافحصوا الكلمات وقارنوا تسجيلكم بالقارئ." },
     teacher: { title: `عرض المعلّم – مشاركة تقدّم الحفظ${B}`, description: "شاركوا وردكم وجودة حفظكم وسلسلتكم مع معلّمكم عبر رمز، للقراءة فقط ودون حساب." },
+    program: { title: `برنامج 30 يومًا – منهج شمس${B}`, description: "شهر موجَّه مع منهج شمس: مقطع صغير كل يوم، مع مراجعة مدمجة." },
+    plans: { title: `خطط الحفظ لكل سورة – منهج شمس${B}`, description: "خطة لأي سورة: اختاروا وتيرتكم وشاهدوا آيات كل يوم." },
+    review: { title: `مراجعة شمس – أضعف آياتكم أولًا${B}`, description: "أضعف آياتكم أولًا، مع خطوات منهج شمس." },
   },
 };
 export function s2Meta(locale: string, page: S2Page, v: { s?: string } = {}): M {

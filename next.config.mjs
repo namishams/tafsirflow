@@ -16,7 +16,9 @@ const csp = [
   "font-src 'self' data:",
   "media-src 'self' blob: https://verses.quran.com https://*.quran.com https://audio.qurancdn.com https://download.quranicaudio.com",
   // the courses fetch Quran.com's word recordings ahead (src/components/learn/media.ts preloadClips) and play them as blob:
-  `connect-src 'self' https://www.google.com/recaptcha/ https://raw.githubusercontent.com https://audio.qurancdn.com https://verses.quran.com${prod ? "" : " ws: wss:"}`,
+  // hadith by number from the published hadith-api (src/lib/learn/journey/hadith.ts: the long path's daily hadith and
+  // the story of /start) – only that repository's path on the CDN
+  `connect-src 'self' https://www.google.com/recaptcha/ https://raw.githubusercontent.com https://audio.qurancdn.com https://verses.quran.com https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/${prod ? "" : " ws: wss:"}`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

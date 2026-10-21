@@ -91,9 +91,13 @@ export default function Badges() {
                   s.official.channel ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.gold }}>{tt("officialChannel", { c: s.official.channel })}</Text> : null
                 ) : (
                   <View style={{ gap: 10 }}>
-                    <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.ink }}>{tt("officialHow", { n: Intl.NumberFormat(lang).format(s.official.minSubscribers) })}</Text>
-                    {s.official.available ? <GoldButton title={tt("connectYoutube")} onPress={() => void youtube()} busy={busy} disabled={busy} />
-                      : <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{tt("officialSoon")}</Text>}
+                    {/* YouTube only when the server can connect it; otherwise only the invitation path (no "soon" text) */}
+                    {s.official.available ? (
+                      <>
+                        <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.ink }}>{tt("officialHow", { n: Intl.NumberFormat(lang).format(s.official.minSubscribers) })}</Text>
+                        <GoldButton title={tt("connectYoutube")} onPress={() => void youtube()} busy={busy} disabled={busy} />
+                      </>
+                    ) : <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.ink }}>{tt("inviteLead")}</Text>}
                     <OutlineButton title={tt("inviteTitle")} onPress={() => router.push("/talents/invite" as Href)} />
                   </View>
                 ))}

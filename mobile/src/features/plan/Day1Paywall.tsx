@@ -5,7 +5,7 @@ import { router } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
 import { Display, Eyebrow, GoldButton, OutlineButton, Stage, TextLink, Wordmark } from "@/components/brand";
 import { Icon } from "@/components/icons";
-import { intlLocale, useLang, useT } from "@/i18n";
+import { useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { SITE } from "@/lib/api";
 import { FREE } from "@/lib/pro";
@@ -16,9 +16,10 @@ import { success, tick } from "@/features/feed/haptics";
 import { alpha } from "@/features/extra/art";
 import { JourneyStage } from "@/features/garden/Landscape";
 import Svg, { Circle, Defs, RadialGradient, Stop } from "react-native-svg";
-import type { IntroOffer, ProPlan } from "@/lib/iap";
+import type { ProPlan } from "@/lib/iap";
 import { STEPS, type Plan } from "./plan";
 import { fmt, usePlanT } from "./texts";
+import { planIntro, planPer, planRenew } from "./offer";
 import { useO2 } from "./texts2";
 import { readName, readV2 } from "./v2";
 import { joinList, useGoalLabel } from "./Onboard2";
@@ -34,12 +35,6 @@ const COMPARE: [string, string, string][] = [
   ["c_shams", "c_shamsFree", "c_shamsPro"], ["c_arabic", "c_arabicFree", "c_full"], ["c_tajweed", "c_tajweedFree", "c_full"], ["c_reciters", "c_recitersFree", "c_recitersPro"],
 ];
 
-/** "7 days", "1 month" … in the interface language (plain number + unit when Intl has no unit formatting) */
-function duration(o: IntroOffer, lang: string): string {
-  try { return new Intl.NumberFormat(intlLocale(lang), { style: "unit", unit: o.unit, unitDisplay: "long" }).format(o.count); }
-  catch { return `${o.count} ${o.unit}`; }
-}
-
 export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () => void }) {
   const p = usePlanT();
   const o = useO2();
@@ -49,7 +44,12 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
   const [who] = useState(() => readName());
   const [goals] = useState(() => readV2()?.goals ?? []);
   const pwTitle = who ? fmt(o.pwTitleName, { name: who }) : p.pwTitle;
-  const pwLead = goals.length ? fmt(o.pwLeadGoals, { goals: joinList(goals.slice(0, 3).map(goalLabel)) }) : p.pwLead;
+  // "Your plan includes lessons from Pro" only when a step of this plan really is Pro; otherwise the neutral lead
+  const planHasPro = !!plan?.weeks.some((w) => w.steps.some((s) => STEPS[s].pro));
+  const goalList = joinList(goals.slice(0, 3).map(goalLabel));
+  const pwLead = planHasPro
+    ? (goals.length ? fmt(o.pwLeadGoals, { goals: goalList }) : p.pwLead)
+    : (goals.length ? fmt(o.pwLeadGoalsMore, { goals: goalList }) : p.pwLeadMore);
   const { lang } = useLang();
   const { user, refresh } = useAuth();
   const insets = useSafeAreaInsets();
@@ -71,20 +71,18 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const chosen = plans?.find((x) => x.sku === sku) ?? null;
-  const per = (x: ProPlan) => (x.period === "year" ? p.perYear : p.perMonth);
-  const introLine = (x: ProPlan) => !x.intro ? null : x.intro.mode === "free-trial"
-    ? fmt(p.introFree, { duration: duration(x.intro, lang), price: x.price, per: per(x) })
-    : fmt(p.introPaid, { intro: x.intro.price, duration: duration(x.intro, lang), price: x.price, per: per(x) });
+  const per = (x: ProPlan) => planPer(p, x);
+  const introLine = (x: ProPlan) => planIntro(p, x, lang);
 
   const benefits = useMemo(() => {
     const out: string[] = [];
-    if (plan?.weeks.some((w) => w.steps.some((s) => STEPS[s].pro))) out.push(p.pb_plan);
+    if (planHasPro) out.push(p.pb_plan);
     out.push(p.pb_courses);
     const r = RECITERS.find((x) => x.folder === plan?.answers.reciter);
     out.push(r && !FREE.reciterIds.includes(r.id) ? fmt(p.pb_reciters, { name: r.name }) : p.pb_recitersAll);
     out.push(p.pb_limits);
     return out;
-  }, [plan, p]);
+  }, [plan, p, planHasPro]);
 
   const canBuy = !!user || GUEST_PURCHASE;
   const buy = async () => {
@@ -190,7 +188,7 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
         {!user ? <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: "#ffffff", backgroundColor: "rgba(255,255,255,0.08)", borderRadius: R.sm, padding: 12 }}>{tr(GUEST_PURCHASE ? "pro.guestNote" : "pro.signInFirst")}</Text> : null}
         <View style={{ gap: 10 }}>
           <GoldButton title={!canBuy ? tr("account.signIn") : chosen?.intro?.mode === "free-trial" ? p.ctaTrial : p.cta} busy={busy === "buy"} disabled={!!busy || !chosen} onPress={buy} />
-          {chosen ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: stage.textMuted, textAlign: "center" }}>{fmt(p.renew, { price: chosen.price, per: per(chosen), store: STORE })}</Text> : null}
+          {chosen ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: stage.textMuted, textAlign: "center" }}>{planRenew(p, chosen, STORE)}</Text> : null}
           <OutlineButton title={p.continueFree} onStage onPress={free} />
         </View>
         {msg ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: "#ffffff", textAlign: "center" }} accessibilityLiveRegion="polite">{msg}</Text> : null}

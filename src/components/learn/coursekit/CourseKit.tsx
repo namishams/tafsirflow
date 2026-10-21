@@ -12,6 +12,7 @@ import { useAuth } from "@/lib/learn/auth";
 import { award } from "@/lib/points";
 import { certHref, lessonHref, markDone, useCK, useCourseProgress, type CourseDef, type Q, type Tag } from "@/lib/learn/abrahamic/kit";
 import QuranVerse from "@/components/learn/QuranVerse";
+import { getResources, translationFor } from "@/lib/learn/quran";
 import { Bar, Card, GoldButton, GoldLink, Kicker, LearnHero, LearnMain, OutlineButton, OutlineLink, Option, Pill } from "@/components/learn/ui";
 import { IconCheckCircle, IconShare, IconTrophy } from "@/components/Icons";
 import { PracticeStar } from "@/components/art/PracticeArt";
@@ -19,6 +20,21 @@ import { WEB } from "./texts";
 import { shareOrCopy } from "./share";
 
 const cx = (...c: (string | false | null | undefined)[]) => c.filter(Boolean).join(" ");
+
+/** the name of the translation the lesson's verses are shown in (as the app), for the source line; none in Arabic */
+function useTranslationName(lang: string): string {
+  const [name, setName] = useState("");
+  useEffect(() => {
+    let live = true;
+    setName("");
+    if (lang === "ar") return;
+    Promise.all([translationFor(lang), getResources()])
+      .then(([id, r]) => { const x = r.translations.find((tr) => tr.id === id); if (live && x) setName(x.name); })
+      .catch(() => {});
+    return () => { live = false; };
+  }, [lang]);
+  return name;
+}
 
 export function TagChips({ tags }: { tags: Tag[] }) {
   const { c } = useCK();
@@ -127,6 +143,7 @@ export function CourseLessonScreen({ def, id }: { def: CourseDef; id: string }) 
   const [phase, setPhase] = useState<"read" | "quiz" | "result">("read");
   const [res, setRes] = useState<{ score: number; complete: boolean } | null>(null);
   const top = useRef<HTMLDivElement>(null);
+  const source = useTranslationName(lang);
   useEffect(() => { setPhase("read"); setRes(null); }, [id]);
   useEffect(() => { if (phase !== "read") top.current?.scrollIntoView({ block: "start", behavior: "smooth" }); }, [phase]);
   if (!lesson) {
@@ -161,6 +178,7 @@ export function CourseLessonScreen({ def, id }: { def: CourseDef; id: string }) 
                 <div dir={dir} className="space-y-3 text-[16.5px] leading-[1.75]">
                   {pick(lesson.text, lang).split("\n").map((t, k) => <p key={k}>{t}</p>)}
                 </div>
+                {lesson.review && <p dir={dir} className="text-[13px] leading-relaxed text-muted">{c("review")}</p>}
               </section>
               {lesson.note && (
                 <aside className="rounded-xl border border-[rgb(var(--hm-gold))]/70 p-5">
@@ -174,6 +192,7 @@ export function CourseLessonScreen({ def, id }: { def: CourseDef; id: string }) 
                   <div className="grid gap-3">
                     {lesson.verses.map((k) => <QuranVerse key={k} verseKey={k} size="text-[24px] sm:text-[28px]" />)}
                   </div>
+                  {source && <p className="text-[13px] text-muted">{c("translationBy", { name: source })}</p>}
                 </section>
               )}
               <GoldButton onClick={() => setPhase("quiz")} className="w-full sm:w-auto">{c("startQuiz")}</GoldButton>

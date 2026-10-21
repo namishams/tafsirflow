@@ -12,10 +12,11 @@ import { useAuth } from "@/lib/auth";
 import { usePro, type ProFeature } from "@/lib/pro";
 import { SITE } from "@/lib/api";
 import { TILES } from "@/web/tiles";
-import { loadPrices, manageSubscriptions, purchasePro, restore } from "@/lib/iap";
+import { loadProPlans, manageSubscriptions, purchasePro, restore, type ProPlan } from "@/lib/iap";
 import { goBack } from "@/components/page";
 import { useDuaPrice } from "@/lib/purchases";
 import { fmt, usePlanT } from "@/features/plan/texts";
+import { planIntro, planPer, planRenew } from "@/features/plan/offer";
 
 // iOS: Pro can be bought without an account (App Review 5.1.1); signing in later binds it to the account.
 const GUEST_PURCHASE = Platform.OS === "ios";
@@ -23,6 +24,10 @@ const STORE = Platform.OS === "ios" ? "App Store" : "Google Play";
 
 // The Pro sheet: what Pro brings (gold medallions), Free and Pro side by side, and a clear price card with the summary
 // Apple asks for (what, price, term, how to cancel) before Apple's own purchase sheet. Purchases belong to the account.
+// App Review 3.1.2: the plans come from the store (monthly; yearly and intro offers only when the store reports them
+// for this buyer, the same wording as the day-1 paywall), the renewal terms, restore, terms and privacy sit right under
+// the first buy button too, no buy button works before the store has answered, and the result of a purchase or a
+// restore appears next to the button that was tapped.
 const BENEFITS: [IconName, string, string][] = [
   ["sun", "f_shams", "d_shams"], ["speaker", "f_reciters", "d_reciters"],
   ["cap", "f_courses", "d_courses"], ["checkCircle", "f_tests", "d_tests"], ["hands", "f_ai", "d_ai"],
@@ -43,28 +48,37 @@ export default function ProSheet() {
   const { f } = useLocalSearchParams<{ f?: ProFeature }>();
   const { user, refresh } = useAuth();
   const { pro, until } = usePro();
-  const [price, setPrice] = useState<string | null>(null);
+  // the Pro plans the store sells to this buyer (null while asking, [] when the store cannot be reached)
+  const [plans, setPlans] = useState<ProPlan[] | null>(null);
+  const [sku, setSku] = useState<string | null>(null);
   const [busy, setBusy] = useState<"buy" | "restore" | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
-  useEffect(() => { loadPrices().then((p) => setPrice(p.pro)).catch(() => undefined); }, []);
-  const shown = price; // Apple's price in the buyer's currency; nothing until the store has answered
+  const [msgAt, setMsgAt] = useState<"hero" | "card">("hero"); // the result appears next to the button that was tapped
+  useEffect(() => {
+    let live = true;
+    loadProPlans().then((l) => { if (live) { setPlans(l); setSku(l[0]?.sku ?? null); } }).catch(() => { if (live) setPlans([]); });
+    return () => { live = false; };
+  }, []);
+  const chosen = plans?.find((x) => x.sku === sku) ?? null;
+  const shown = chosen?.price ?? null; // Apple's price in the buyer's currency; nothing until the store has answered
   const why = f && ["shams", "reciters", "arabic", "tajweed", "academy", "offline", "vocab", "stats"].includes(f) ? f : "general";
 
   const pt = usePlanT();
   const canBuy = !!user || GUEST_PURCHASE;
-  const buy = async () => {
+  const buy = async (at: "hero" | "card") => {
     if (!canBuy) { router.push("/sign-in"); return; }
-    setBusy("buy"); setMsg(null);
-    const r = await purchasePro();
+    if (!chosen) return;
+    setBusy("buy"); setMsg(null); setMsgAt(at);
+    const r = await purchasePro(chosen.sku);
     setBusy(null);
     if (r === "ok") { await refresh(); setMsg(tr(user ? "pro.thanks" : "pro.thanksGuest")); }
     else if (r === "pending") setMsg(tr("pro.pending"));
     else if (r === "failed") setMsg(tr("pro.failed"));
     else if (r === "unavailable") setMsg(tr("pro.unavailable"));
   };
-  const doRestore = async () => {
+  const doRestore = async (at: "hero" | "card") => {
     if (!canBuy) { router.push("/sign-in"); return; }
-    setBusy("restore"); setMsg(null);
+    setBusy("restore"); setMsg(null); setMsgAt(at);
     const r = await restore();
     setBusy(null);
     if (r === "restored") { await refresh(); setMsg(tr(user ? "pro.thanks" : "pro.thanksGuest")); }
@@ -72,7 +86,17 @@ export default function ProSheet() {
   };
   const openDoc = (doc: "terms" | "privacy") => WebBrowser.openBrowserAsync(`${SITE}/${lang}/legal/${doc}`);
   const duaPrice = useDuaPrice();
-  const cell = (k: string) => (k === "✓" || k === "–" ? k : (duaPrice || !k.includes("Free") ? tr(`pro.${k}`, { price: duaPrice ?? "" }) : "✓"));
+  // only the dua row needs a price: without it (store not answered, offline) it shows "–", never a checkmark
+  const cell = (k: string) => (k === "✓" || k === "–" ? k : k === "c_duasFree" && !duaPrice ? "–" : tr(`pro.${k}`, { price: duaPrice ?? "" }));
+  // the buy button: the trial, an intro offer (its terms in the line below) or the plan's price and period
+  const buyTitle = !canBuy ? tr("account.signIn") : !chosen ? tr("pro.cta")
+    : chosen.intro?.mode === "free-trial" ? pt.ctaTrial : chosen.intro ? pt.cta
+    : tr(chosen.period === "year" ? "pro.subscribeYear" : "pro.subscribe", { price: chosen.price });
+  const buyDisabled = !!busy || (canBuy && !chosen);
+  const noStore = plans !== null && !plans.length;
+  const message = (at: "hero" | "card", onStage: boolean) => (msg && msgAt === at ? (
+    <Text style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 21, color: onStage ? "#ffffff" : t.ink, textAlign: "center", marginTop: onStage ? 12 : 0 }} accessibilityLiveRegion="polite">{msg}</Text>
+  ) : null);
 
   return (
     <View style={{ flex: 1, backgroundColor: t.bg }}>
@@ -91,8 +115,19 @@ export default function ProSheet() {
               <Display onStage style={{ marginTop: 10, textAlign: "center" }}>{tr(`pro.why_${why}`)}</Display>
               <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 24, color: stage.textSoft, marginTop: 12, textAlign: "center" }}>{tr("pro.lead")}</Text>
             </View>
-            {!pro ? <GoldButton title={canBuy ? (shown ? tr("pro.subscribe", { price: shown }) : tr("pro.cta")) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 22 }} /> : null}
+            {!pro ? <GoldButton title={buyTitle} busy={busy === "buy" && msgAt === "hero"} disabled={buyDisabled} onPress={() => void buy("hero")} style={{ marginTop: 22 }} /> : null}
+            {message("hero", true)}
+            {!pro && chosen?.intro ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13, lineHeight: 19, color: stage.gold, textAlign: "center", marginTop: 10 }}>{planIntro(pt, chosen, lang)}</Text> : null}
+            {!pro && chosen ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: stage.textMuted, textAlign: "center", marginTop: 8 }}>{planRenew(pt, chosen, STORE)}</Text> : null}
+            {!pro && noStore ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: stage.textSoft, textAlign: "center", marginTop: 10 }}>{fmt(pt.noPrice, { store: STORE })}</Text> : null}
             <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stage.textMuted, textAlign: "center", marginTop: 10 }}>{tr("pro.cancelAnytime")} · {tr("pro.noAds")}</Text>
+            {!pro ? (
+              <View style={{ flexDirection: "row", justifyContent: "center", flexWrap: "wrap", columnGap: 18, marginTop: 2 }}>
+                <TextLink onStage title={tr("pro.restore")} onPress={() => { if (!busy) void doRestore("hero"); }} style={{ fontSize: 13 }} />
+                <TextLink onStage title={tr("account.terms")} onPress={() => openDoc("terms")} style={{ fontSize: 13 }} />
+                <TextLink onStage title={tr("account.privacy")} onPress={() => openDoc("privacy")} style={{ fontSize: 13 }} />
+              </View>
+            ) : null}
           </View>
           <View style={{ marginTop: 14 }}><Arcade /></View>
         </Stage>
@@ -145,20 +180,48 @@ export default function ProSheet() {
                 <Wordmark variant="stacked" height={38} />
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{tr("pro.priceTitle")}</Text>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{tr("pro.summaryTerm")}</Text>
+                  <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{chosen?.period === "year" ? pt.yearly : tr("pro.summaryTerm")}</Text>
                 </View>
-                <View style={{ alignItems: "flex-end" }}>
-                  <Text style={{ fontFamily: FONT.display, fontSize: 24, color: t.ink }}>{shown ?? "…"}</Text>
-                  <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{tr("pro.perMonth")}</Text>
-                </View>
+                {plans && plans.length > 1 ? null : (
+                  <View style={{ alignItems: "flex-end" }}>
+                    <Text style={{ fontFamily: FONT.display, fontSize: 24, color: t.ink }}>{shown ?? "…"}</Text>
+                    <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{chosen?.period === "year" ? pt.perYear : tr("pro.perMonth")}</Text>
+                  </View>
+                )}
               </View>
-              <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, marginTop: 12 }}>{shown ? fmt(pt.renew, { price: shown, per: tr("pro.perMonth"), store: STORE }) : tr("pro.summaryCancel")}</Text>
+              {/* more than one plan (yearly next to monthly): choose one, each with its own intro offer as the store reports it */}
+              {plans && plans.length > 1 ? (
+                <View style={{ gap: 8, marginTop: 14 }} accessibilityRole="radiogroup">
+                  {plans.map((x) => {
+                    const on = x.sku === sku;
+                    const intro = planIntro(pt, x, lang);
+                    return (
+                      <Pressable key={x.sku} onPress={() => setSku(x.sku)} accessibilityRole="radio" accessibilityState={{ checked: on }}
+                        accessibilityLabel={`${x.period === "year" ? pt.yearly : pt.monthly}, ${x.price} ${planPer(pt, x)}${intro ? `. ${intro}` : ""}`}
+                        style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, borderRadius: R.md, borderWidth: on ? 2 : 1, borderColor: on ? t.gold : t.line, backgroundColor: on ? t.accentSoft : t.bg }}>
+                        <View style={{ width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: on ? t.gold : t.line, alignItems: "center", justifyContent: "center" }}>
+                          {on ? <View style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: t.gold }} /> : null}
+                        </View>
+                        <View style={{ flex: 1 }}>
+                          <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: t.ink }}>{x.period === "year" ? pt.yearly : pt.monthly}</Text>
+                          {intro ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 17, color: t.accent, marginTop: 2 }}>{intro}</Text> : null}
+                        </View>
+                        <View style={{ alignItems: "flex-end" }}>
+                          <Text style={{ fontFamily: FONT.display, fontSize: 19, color: t.ink }}>{x.price}</Text>
+                          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{planPer(pt, x)}</Text>
+                        </View>
+                      </Pressable>
+                    );
+                  })}
+                </View>
+              ) : chosen?.intro ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13, lineHeight: 19, color: t.accent, marginTop: 12 }}>{planIntro(pt, chosen, lang)}</Text> : null}
+              <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, marginTop: 12 }}>{chosen ? planRenew(pt, chosen, STORE) : noStore ? fmt(pt.noPrice, { store: STORE }) : tr("pro.summaryCancel")}</Text>
               {!user ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink, backgroundColor: t.accentSoft, borderRadius: R.sm, padding: 12, marginTop: 12 }}>{tr(GUEST_PURCHASE ? "pro.guestNote" : "pro.signInFirst")}</Text> : null}
-              <GoldButton title={canBuy ? (shown ? tr("pro.subscribe", { price: shown }) : tr("pro.cta")) : tr("account.signIn")} busy={busy === "buy"} disabled={!!busy} onPress={buy} style={{ marginTop: 14 }} />
-              <OutlineButton title={tr("pro.restore")} disabled={!!busy} onPress={doRestore} style={{ marginTop: 10 }} />
+              <GoldButton title={buyTitle} busy={busy === "buy" && msgAt === "card"} disabled={buyDisabled} onPress={() => void buy("card")} style={{ marginTop: 14 }} />
+              <OutlineButton title={tr("pro.restore")} disabled={!!busy} onPress={() => void doRestore("card")} style={{ marginTop: 10 }} />
             </GoldCard>
           ) : null}
-          {msg ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 21, color: t.ink, textAlign: "center" }} accessibilityLiveRegion="polite">{msg}</Text> : null}
+          {message("card", false)}
 
           <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 10 }}>
             <SmallStar size={12} color={t.gold} />

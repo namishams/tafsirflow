@@ -15,18 +15,23 @@ export type Session = {
   /** the session needs Pro (a Pro voice or offline files); without Pro it continues in the free voice */
   locked?: boolean; free?: { id: number; folder: string; name: string; slug: string };
 };
-export type Handlers = { ended?: () => void };
-type Snap = { session: Session | null; playing: boolean; attached: boolean };
+export type Handlers = { ended?: () => void; /** the sleep timer stopped the recitation (the reader clears its pause) */ slept?: () => void };
+/** sleep timer: mode 0 off, 15/30/60 minutes (until = when it stops), -1 at the end of the surah */
+export type Sleep = { mode: number; until: number };
+const NO_SLEEP: Sleep = { mode: 0, until: 0 };
+type Snap = { session: Session | null; playing: boolean; attached: boolean; sleep: Sleep };
 
 let engine: VerseEngine | null = null;
 let session: Session | null = null;
 let attached: { current: Handlers } | null = null;
 let pro = false;
-let snap: Snap = { session: null, playing: false, attached: false };
+let sleep: Sleep = NO_SLEEP;
+let sleepTicker: ReturnType<typeof setInterval> | null = null;
+let snap: Snap = { session: null, playing: false, attached: false, sleep };
 const subs = new Set<() => void>();
 
 function publish() {
-  snap = { session: session ? { ...session } : null, playing: !!engine?.getSnapshot().playing, attached: !!attached };
+  snap = { session: session ? { ...session } : null, playing: !!engine?.getSnapshot().playing, attached: !!attached, sleep };
   subs.forEach((f) => f());
 }
 export const subscribe = (f: () => void) => { subs.add(f); return () => { subs.delete(f); }; };
@@ -73,10 +78,17 @@ function headlessEnded() {
   const s = session;
   if (!s) return;
   s.playsDone += 1;
+  if (sleepDue()) return; // sleep timer reached
   if (s.playsDone < s.repeat && (pro || !s.locked)) { getEngine().seekPlay(0); return; }
   if (s.playsDone < s.repeat) { const n = s.playsDone; go(s.idx); s.playsDone = n; return; }
   if (s.mode === "learn") return; // learn mode waits for the learner
-  if (s.loopOn && s.idx >= s.loopTo - 1) { go(Math.max(0, s.loopFrom - 1)); return; }
+  nextHeadless(s);
+}
+
+/** after a verse without the reader: the sleep timer at the end of the surah, the loop range, the next verse */
+function nextHeadless(s: Session) {
+  if (sleep.mode === -1 && s.idx >= s.items.length - 1) { setSleep(0); return; } // sleep timer: end of surah
+  if (s.loopOn && s.idx >= s.loopTo - 1 && sleep.mode !== -1) { go(Math.max(0, s.loopFrom - 1)); return; }
   if (s.idx < s.items.length - 1) go(s.idx + 1);
 }
 
@@ -84,9 +96,36 @@ function headlessEnded() {
 export function advanceHeadless() {
   const s = session;
   if (!s || attached) return;
+  if (sleepDue()) return;
   if (s.playsDone > 0 && s.playsDone < s.repeat) { if (pro || !s.locked) getEngine().seekPlay(0); else { const n = s.playsDone; go(s.idx); s.playsDone = n; } return; }
-  if (s.loopOn && s.idx >= s.loopTo - 1) { go(Math.max(0, s.loopFrom - 1)); return; }
-  if (s.idx < s.items.length - 1) go(s.idx + 1);
+  nextHeadless(s);
+}
+
+// ── sleep timer ─────────────────────────────────────────────────────────────────────────────────────────────────────
+// It belongs to the shared session, not to the reader screen: it keeps counting after the reader was left (tab switch,
+// search, Shams, back) and also stops in the middle of a long verse. "End of surah" (-1) stops after the last verse,
+// with or without the loop range.
+
+/** the sleep timer of the shared player (the reader's settings, its full player, the mini bar) */
+export function getSleep(): Sleep { return sleep; }
+/** 0 off, minutes, or -1 for the end of the surah */
+export function setSleep(mode: number) {
+  sleep = mode > 0 ? { mode, until: Date.now() + mode * 60000 } : mode === -1 ? { mode: -1, until: 0 } : NO_SLEEP;
+  if (sleepTicker) { clearInterval(sleepTicker); sleepTicker = null; }
+  if (sleep.mode > 0) sleepTicker = setInterval(() => { sleepDue(); }, 5000);
+  publish();
+}
+/** true (and the recitation paused) when the timer has run out */
+export function sleepDue(): boolean {
+  if (sleep.mode <= 0 || Date.now() < sleep.until) return false;
+  engine?.pause();
+  attached?.current.slept?.();
+  setSleep(0);
+  return true;
+}
+/** minutes left (null = off, 0 = end of surah) */
+export function sleepMinutes(s: Sleep = sleep): number | null {
+  return s.mode > 0 ? Math.max(1, Math.ceil((s.until - Date.now()) / 60000)) : s.mode === -1 ? 0 : null;
 }
 
 /** play / pause from the mini bar */
@@ -115,6 +154,7 @@ export function stop() {
   engine?.stop();
   engine?.clearLockScreen();
   session = null;
+  if (sleep.mode !== 0) { setSleep(0); return; }
   publish();
 }
 

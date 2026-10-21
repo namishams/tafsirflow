@@ -13,13 +13,15 @@ import { Eq, PlayRosette } from "./ornaments";
 // The floating player dock of the website (Player.tsx): a dark-green jewel with gold – how far through the surah, the
 // position in the verse, the surah's Arabic name and verse x/y beside a small equaliser, previous / next verse and the
 // gold play button inside a slowly turning rosette, and the verse picker. Tapping the name opens the full player.
-// During the pause after a verse ("your turn") a gold countdown bar sits on top with a Skip button.
+// During the pause after a verse ("your turn") a gold countdown bar sits on top with a Skip button. When a verse could not
+// be loaded (error), a gold-framed note with a retry sits on top instead of the play button doing nothing.
 export type Turn = { ms: number; key: number };
-export function PlayerDock({ bottom, arabicName, verse, total, playing, positionMs, durationMs, sleepMin, reduce, turn, onSkipTurn, onToggle, onPrev, onNext, onSeek, onJump, onOpen, onFocus, focusLabel }: {
+export function PlayerDock({ bottom, arabicName, verse, total, playing, positionMs, durationMs, sleepMin, reduce, turn, onSkipTurn, onToggle, onPrev, onNext, onSeek, onJump, onOpen, onFocus, focusLabel, error, retryLabel, onRetry }: {
   bottom: number; arabicName: string; verse: number; total: number; playing: boolean; positionMs: number; durationMs: number; sleepMin: number | null; reduce: boolean;
   turn: Turn | null; onSkipTurn: () => void;
   onToggle: () => void; onPrev: () => void; onNext: () => void; onSeek: (ms: number) => void; onJump: () => void; onOpen: () => void;
   onFocus?: () => void; focusLabel?: string;
+  error?: string | null; retryLabel?: string; onRetry?: () => void;
 }) {
   const w = useWebT("player");
   const a = useAppT();
@@ -28,7 +30,7 @@ export function PlayerDock({ bottom, arabicName, verse, total, playing, position
     <View pointerEvents="box-none" style={{ position: "absolute", left: 12, right: 12, bottom }}>
       <View style={{ borderRadius: 24, shadowColor: "rgb(3,25,18)", shadowOpacity: 0.45, shadowRadius: 22, shadowOffset: { width: 0, height: 14 }, elevation: 10 }}>
         <Stage rounded={24} hairlines={false} style={{ borderWidth: 1, borderColor: "rgba(201,166,94,0.35)" }}>
-          {turn ? <TurnBar turn={turn} reduce={reduce} label={w("yourTurn")} skip={w("skip")} onSkip={onSkipTurn} /> : null}
+          {error && onRetry ? <ErrorBar text={error} retry={retryLabel ?? ""} onRetry={onRetry} /> : turn ? <TurnBar turn={turn} reduce={reduce} label={w("yourTurn")} skip={w("skip")} onSkip={onSkipTurn} /> : null}
           {/* how far through the surah */}
           <View style={{ height: 3, backgroundColor: "rgba(255,255,255,0.1)" }}>
             <LinearGradient colors={["rgba(201,166,94,0.6)", "rgb(233,207,153)", "rgb(201,166,94)"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ height: 3, width: `${(verse / Math.max(1, total)) * 100}%` }} />
@@ -86,6 +88,20 @@ export function PlayerDock({ bottom, arabicName, verse, total, playing, position
           </View>
         </Stage>
       </View>
+    </View>
+  );
+}
+
+/** the verse did not load: a short note in cream on the dock's gold band, and a retry */
+function ErrorBar({ text, retry, onRetry }: { text: string; retry: string; onRetry: () => void }) {
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 16, paddingVertical: 7, backgroundColor: "rgba(201,166,94,0.15)", borderBottomWidth: 1, borderBottomColor: "rgba(201,166,94,0.35)" }}
+      accessibilityLiveRegion="assertive" accessibilityRole="alert">
+      <Text style={{ flex: 1, fontFamily: FONT.medium, fontSize: 12, lineHeight: 16, color: "rgb(233,207,153)" }}>{text}</Text>
+      <Pressable onPress={onRetry} accessibilityRole="button" accessibilityLabel={retry} hitSlop={{ top: 10, bottom: 10, left: 6, right: 6 }}
+        style={({ pressed }) => ({ borderRadius: 999, borderWidth: 1, borderColor: pressed ? "#ffffff" : "rgba(233,207,153,0.6)", paddingHorizontal: 11, paddingVertical: 4 })}>
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: "rgb(233,207,153)" }}>{retry}</Text>
+      </Pressable>
     </View>
   );
 }

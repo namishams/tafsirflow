@@ -3,7 +3,7 @@ import { Pressable, Text, View } from "react-native";
 import { Stack } from "expo-router";
 import { Page, PageHero, Loading } from "@/components/page";
 import { GoldButton, Segmented } from "@/components/brand";
-import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, AR_RIGHT, FONT, R, useTheme } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { loadVerse, type VerseData } from "@/features/srs/verse";
 import { gEvent } from "@/features/feed/gamify";
@@ -48,7 +48,7 @@ function useGroupData(groups: MutGroup[]) {
 function ArWords({ d, mark, mask }: { d: VerseData; mark?: number[]; mask?: number[] }) {
   const t = useTheme();
   return (
-    <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 5 }}>
+    <View style={{ flexDirection: "row", direction: "rtl", flexWrap: "wrap", gap: 5 }}>
       {d.words.map((w) => {
         const hide = mask?.includes(w.position), m = mark?.includes(w.position);
         return (
@@ -179,7 +179,7 @@ function Drill({ groups, onClose, reduce, refOf }: { groups: MutGroup[]; onClose
         return (
           <Pressable key={o.id} onPress={() => answer(o.id)} accessibilityRole="button" accessibilityState={{ selected: chosen, disabled: !!picked }}
             style={{ padding: 14, borderRadius: R.card, borderWidth: 1.5, borderColor: border, backgroundColor: picked && ok ? t.accentSoft : t.surface }}>
-            <Text style={q.kind === "complete" ? { fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 40, color: t.ink, textAlign: "right", writingDirection: "rtl" } : { fontFamily: FONT.semibold, fontSize: 15, color: t.ink, textAlign: "left" }}>{o.label}</Text>
+            <Text style={q.kind === "complete" ? { fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 40, color: t.ink, textAlign: AR_RIGHT, writingDirection: "rtl" } : { fontFamily: FONT.semibold, fontSize: 15, color: t.ink, textAlign: "left" }}>{o.label}</Text>
           </Pressable>
         );
       })}

@@ -13,8 +13,9 @@ import { useTT } from "./text";
 
 // Onboarding step "Your profile" (inserted into the first-run funnel after the name question; the funnel's scene
 // stays as it is): display name (prefilled), @username with the live check, an optional photo (library or camera),
-// and a clear "Later". Without an account everything waits on the device (pendingProfile.ts) and is created after
-// sign-in; signed in, the profile is created right away. Everything can be changed later in Edit profile.
+// the choice between a public and a private account (nothing preselected), and a clear "Later". Without an account
+// everything waits on the device (pendingProfile.ts) and is created after sign-in; signed in, the profile is created
+// right away. Everything can be changed later in Edit profile.
 const ascii = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/\s+/g, ".").replace(/[^a-z0-9_.]/g, "").replace(/\.{2,}/g, ".").replace(/^\.|\.$/g, "").slice(0, 20);
 
 export function ProfileSetupStep({ name: firstName, onDone }: { name: string; onDone: () => void }) {
@@ -25,6 +26,8 @@ export function ProfileSetupStep({ name: firstName, onDone }: { name: string; on
   const [name, setName] = useState(pending?.name ?? firstName ?? "");
   const [username, setUsername] = useState(pending?.username ?? ascii(firstName ?? ""));
   const [photo, setPhoto] = useState<string | null>(pending?.photo ?? null);
+  // who may follow: nothing preselected (BLUEPRINT §2); the profile is only created with a choice
+  const [visibility, setVisibility] = useState<"public" | "private" | null>(pending?.visibility ?? null);
   const [msg, setMsg] = useState("");
   const [busy, setBusy] = useState(false);
   const check = useUsernameCheck(username, null, !!user);
@@ -34,10 +37,10 @@ export function ProfileSetupStep({ name: firstName, onDone }: { name: string; on
     setMsg("");
     void pickAvatarLocal(src, true).then((u) => { if (u) setPhoto(u); }).catch((e) => setMsg(e instanceof Error && e.message === "permission" ? tt("photoDenied") : tt("e_generic")));
   };
-  const ok = name.trim().length > 0 && /^[a-z0-9_.]{3,20}$/.test(username) && !usernameBlocked(check) && check !== "checking";
+  const ok = name.trim().length > 0 && /^[a-z0-9_.]{3,20}$/.test(username) && !usernameBlocked(check) && check !== "checking" && !!visibility;
   const save = async () => {
     setBusy(true); setMsg("");
-    savePending({ name: name.trim(), username, photo });
+    savePending({ name: name.trim(), username, photo, visibility: visibility ?? "private" });
     await syncPendingProfile(); // signed in: created now; otherwise after sign-in
     setBusy(false);
     onDone();
@@ -87,6 +90,27 @@ export function ProfileSetupStep({ name: firstName, onDone }: { name: string; on
       </View>
       {status ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13, marginTop: 6, color: check === "ok" ? goldButton.from : usernameBlocked(check) ? "#f2b8a8" : stage.textMuted }}>{status}</Text> : null}
       {msg ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13, marginTop: 8, color: "#f2b8a8" }}>{msg}</Text> : null}
+
+      {/* visibility: public account or private account (new followers need approval) */}
+      <View style={{ height: 18 }} />
+      {label(pt("visTitle"))}
+      <View style={{ gap: 8 }} accessibilityRole="radiogroup">
+        {([["public", pt("visPublic"), pt("visPublicD")], ["private", tt("privateAccount"), tt("privateAccountHint")]] as const).map(([v, title, desc]) => {
+          const on = visibility === v;
+          return (
+            <Pressable key={v} onPress={() => setVisibility(v)} accessibilityRole="radio" accessibilityState={{ checked: on }} accessibilityLabel={`${title}. ${desc}`}
+              style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, borderRadius: R.md, borderWidth: 1, paddingHorizontal: 14, paddingVertical: 12, minHeight: 56,
+                borderColor: on ? stage.gold : "rgba(214,180,108,0.3)", backgroundColor: on ? "rgba(214,180,108,0.12)" : pressed ? "rgba(255,255,255,0.06)" : "rgba(6,30,23,0.62)" })}>
+              <Icon name={v === "public" ? "globe" : "lock"} color={stage.gold} size={16} />
+              <View style={{ flex: 1 }}>
+                <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: "#fff" }}>{title}</Text>
+                <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 17, color: stage.textMuted, marginTop: 2 }}>{desc}</Text>
+              </View>
+              {on ? <Icon name="checkCircle" color={stage.gold} size={20} /> : null}
+            </Pressable>
+          );
+        })}
+      </View>
 
       <GoldButton title={tt("save")} onPress={() => void save()} busy={busy} disabled={!ok || busy} style={{ marginTop: 22 }} />
       <Text onPress={onDone} accessibilityRole="button" style={{ fontFamily: FONT.medium, fontSize: 15, color: stage.textSoft, textAlign: "center", paddingVertical: 14 }}>{pt("later")}</Text>

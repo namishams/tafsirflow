@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { tick } from "./haptics";
-import { Animated, Easing, Pressable, Text, View } from "react-native";
+import { ActivityIndicator, Animated, Easing, Pressable, Text, View } from "react-native";
 import { Icon, type IconName } from "@/components/icons";
-import { FONT } from "@/lib/theme";
+import { FONT, R, stage, useTheme } from "@/lib/theme";
 import { HEART } from "@/features/extra/SocialBar";
+import { useFeedText } from "./texts";
 
 // Small parts shared by every feed page: the round action buttons of the side column and the heart that pops on a
 // double tap.
@@ -72,4 +73,49 @@ export function useTapGestures({ onTap, onDouble, onHoldStart, onHoldEnd }: { on
     onPressOut: () => { if (holding.current) { holding.current = false; onHoldEnd?.(); } },
     delayLongPress: 380,
   };
+}
+
+/** how long an empty list may wait for its first posts before it says that nothing arrived (offline, a source down) */
+export const STALL_MS = 9000;
+/** true when `empty` has lasted STALL_MS; restarts whenever one of `deps` (topic, retry …) changes */
+export function useStalled(empty: boolean, deps: unknown[]): [boolean, (v: boolean) => void] {
+  const [stalled, setStalled] = useState(false);
+  useEffect(() => {
+    setStalled(false);
+    if (!empty) return;
+    const id = setTimeout(() => setStalled(true), STALL_MS);
+    return () => clearTimeout(id);
+  }, [empty, ...deps]); // eslint-disable-line react-hooks/exhaustive-deps
+  return [stalled, setStalled];
+}
+
+/**
+ * The empty state of a feed list: a spinner while the first posts load, then (nothing arrived) the reason with
+ * "Try again", or a plain message (no search results). `onDark`: white text on the emerald stage (Reels).
+ */
+export function FeedEmpty({ state, message, onRetry, onDark }: { state: "loading" | "failed" | "message"; message?: string; onRetry?: () => void; onDark?: boolean }) {
+  const t = useTheme();
+  const tx = useFeedText();
+  const ink = onDark ? "#fff" : t.ink;
+  const muted = onDark ? stage.textSoft : t.muted;
+  if (state === "loading") {
+    return (
+      <View style={{ alignItems: "center", justifyContent: "center", paddingVertical: 56, gap: 12 }} accessible accessibilityLabel={tx.loadingPosts} accessibilityRole="progressbar">
+        <ActivityIndicator color={onDark ? stage.gold : t.accent} />
+        <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, color: muted }}>{tx.loadingPosts}</Text>
+      </View>
+    );
+  }
+  return (
+    <View style={{ alignItems: "center", justifyContent: "center", paddingVertical: 48, paddingHorizontal: 32, gap: 14 }}>
+      <Icon name={state === "failed" ? "globe" : "search"} color={muted} size={28} />
+      <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: state === "failed" ? muted : ink, textAlign: "center" }}>{message ?? tx.loadFailed}</Text>
+      {state === "failed" && onRetry ? (
+        <Pressable onPress={() => { tick(); onRetry(); }} accessibilityRole="button" hitSlop={6}
+          style={({ pressed }) => ({ minHeight: 44, paddingHorizontal: 22, borderRadius: R.pill, justifyContent: "center", borderWidth: 1, borderColor: onDark ? stage.goldSoft : t.gold, backgroundColor: pressed ? (onDark ? "rgba(214,180,108,0.16)" : t.accentSoft) : "transparent" })}>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: ink }}>{tx.retry}</Text>
+        </Pressable>
+      ) : null}
+    </View>
+  );
 }

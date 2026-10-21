@@ -13,7 +13,8 @@ export async function GET(req: NextRequest) {
   const p = pool()!;
   const mine = (await p.query("SELECT country FROM community_profiles WHERE user_id = $1", [g.me.id])).rows[0];
   const r = await p.query(
-    `SELECT ${PROFILE_COLS} FROM community_profiles c
+    `SELECT ${PROFILE_COLS}, EXISTS (SELECT 1 FROM community_follow_requests q WHERE q.requester_id = $1 AND q.target_id = c.user_id) AS requested
+       FROM community_profiles c
       WHERE c.public AND NOT c.suspended AND c.user_id <> $1 AND ${NOT_BLOCKED("c.user_id")}
         AND NOT EXISTS (SELECT 1 FROM community_follows f WHERE f.follower_id = $1 AND f.followee_id = c.user_id)
         AND (${HAS_BADGE} OR c.level <> 'talent' OR EXISTS (SELECT 1 FROM community_posts p WHERE p.author_id = c.user_id AND p.status = 'approved'))
@@ -22,5 +23,6 @@ export async function GET(req: NextRequest) {
       LIMIT 12`,
     [g.me.id, mine?.country ?? null],
   );
-  return json({ talents: r.rows.map((x) => card(x)) }, 200, NO_STORE);
+  // private and requested (added 22.10.2026): the follow button shows "Requested" for a pending request to a private account
+  return json({ talents: r.rows.map((x) => ({ ...card(x), private: !!x.private, requested: !!x.requested })) }, 200, NO_STORE);
 }

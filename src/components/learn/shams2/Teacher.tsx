@@ -4,6 +4,7 @@
 // no account, no recordings). Teacher side: paste codes, see each student. The codes are the same as in the app, so a
 // code made in the app opens here and the other way round. Copy uses the clipboard, share the Web Share API.
 import { useState } from "react";
+import { Link } from "@/i18n/navigation";
 import { intlLocale } from "@/lib/learn/i18n";
 import { stats } from "@/lib/learning";
 import { useShams2 } from "@/lib/learn/shams2/model";
@@ -146,12 +147,45 @@ function StudentView({ snap, onRemove }: { snap: Snapshot; onRemove: () => void 
   );
 }
 
+// the entry to the live link through the Quran Talents network (/teacher), as on the app's screen (features/teacher/
+// LiveLinkCard.tsx); the texts are the app's teacher texts (openLive, openLiveSub) in its 14 languages
+const LIVE: Record<string, [string, string]> = {
+  en: ["Live link with a teacher", "Invite a teacher from your connections; the teacher sees a summary and can encourage you."],
+  de: ["Direkte Verbindung zur Lehrkraft", "Laden Sie eine Lehrkraft aus Ihren Verbindungen ein; sie sieht eine Zusammenfassung und kann Sie ermutigen."],
+  ar: ["صلة مباشرة بمعلّمك", "ادعُ معلّمًا من صلاتك؛ يرى ملخّصًا ويمكنه تشجيعك."],
+  tr: ["Öğretmenle canlı bağlantı", "Bağlantılarınızdan bir öğretmen davet edin; öğretmen bir özet görür ve sizi teşvik edebilir."],
+  ur: ["استاد سے براہِ راست رابطہ", "اپنے رابطوں میں سے استاد کو دعوت دیں؛ وہ خلاصہ دیکھتے ہیں اور آپ کی حوصلہ افزائی کر سکتے ہیں۔"],
+  fa: ["ارتباط مستقیم با استاد", "استادی را از میان ارتباطات خود دعوت کنید؛ او خلاصه را می‌بیند و می‌تواند شما را تشویق کند."],
+  ps: ["له ښوونکي سره مستقیم اړیکه", "له خپلو اړیکو یو ښوونکی وبولئ؛ هغه لنډیز ویني او تاسو هڅولی شي."],
+  fr: ["Lien direct avec un enseignant", "Invitez un enseignant parmi vos contacts ; il voit un résumé et peut vous encourager."],
+  es: ["Enlace directo con un maestro", "Invite a un maestro desde sus contactos; verá un resumen y podrá animarle."],
+  id: ["Tautan langsung dengan guru", "Undang guru dari koneksi Anda; guru melihat ringkasan dan dapat menyemangati Anda."],
+  ms: ["Pautan terus dengan guru", "Jemput guru daripada sambungan anda; guru melihat ringkasan dan boleh memberi semangat."],
+  bn: ["শিক্ষকের সঙ্গে সরাসরি সংযোগ", "আপনার সংযোগ থেকে একজন শিক্ষককে আমন্ত্রণ জানান; তিনি সারসংক্ষেপ দেখেন এবং উৎসাহ দিতে পারেন।"],
+  ru: ["Прямая связь с преподавателем", "Пригласите преподавателя из ваших контактов; он видит сводку и может вас подбодрить."],
+  zh: ["与老师实时联系", "从联系人中邀请一位老师；老师可查看摘要并给予鼓励。"],
+};
+function LiveLinkCard() {
+  const { lang } = useS2();
+  const [title, lead] = LIVE[lang] ?? LIVE.en;
+  return (
+    <Link href="/teacher" className="hm-card flex items-center gap-3 border-[rgb(var(--hm-gold))]/55 p-4 transition hover:border-[rgb(var(--hm-gold))]">
+      <span className="min-w-0 flex-1">
+        <span className="block text-[15px] font-bold">{title}</span>
+        <span className="mt-0.5 block text-[12.5px] leading-snug text-muted">{lead}</span>
+      </span>
+      <span aria-hidden className="text-muted rtl:-scale-x-100">›</span>
+    </Link>
+  );
+}
+
 export function TeacherScreen() {
   const { s } = useS2();
   return (
     <>
       <LearnHero back={useBack()} kicker={s("eyebrow")} title={s("teacherTitle")} lead={s("teacherLead")} word="الشيخ" uid="s2r" />
       <LearnMain className="grid gap-5">
+        <LiveLinkCard />
         <Live><Body /></Live>
         <Term id="ard" />
         <SourceNote src={["app"]} />

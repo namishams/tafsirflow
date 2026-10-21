@@ -2,7 +2,7 @@ import { memo, useRef, useState } from "react";
 import { Animated, FlatList, Image, Linking, Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { GoldFrame } from "./ornament";
-import { StarLattice } from "@/components/brand";
+import { GoldButton, StarLattice } from "@/components/brand";
 import { router, type Href } from "expo-router";
 import { Icon, type IconName } from "@/components/icons";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
@@ -16,6 +16,7 @@ import { fillText, useFeedText, type FeedText } from "./texts";
 import { KnowledgePost, knowItemOf } from "./KnowledgePost";
 import { PostShareButtons, libSpec, useShareCtx } from "@/features/share/feedShare";
 import { PostPanel } from "@/features/share/ShareTemplates";
+import { openDeeplink } from "./remote";
 
 // The posts of the content libraries: image posts (mosques, art, Met objects) with the image credit and licence link
 // always shown, text cards with the Arabic on top (hadith, tafsir, duas, names, words), carousels (scholar timeline,
@@ -109,6 +110,8 @@ function LibraryPostInner({ id, width, reduce, onDark }: { id: string; width: nu
   const topic = kindTopic(p.kind);
   const tone = toneOf(`lib:${p.kind}`);
   const profile = p.kind.startsWith("reciter") ? reciterHref(first) : null;
+  // a server post with a destination (featured surah, editorial, verse of the day): one gold "Open" below the post
+  const deeplink = (first as { deeplink?: string }).deeplink;
   return (
     <View style={{ width, alignSelf: "center", paddingBottom: 16 }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 12, height: 56 }}>
@@ -146,6 +149,7 @@ function LibraryPostInner({ id, width, reduce, onDark }: { id: string; width: nu
           <SourceLine item={first} light={onDark} />
         </>
       )}
+      {deeplink ? <GoldButton title={tx.premiumOpen} compact onPress={() => openDeeplink(deeplink)} style={{ alignSelf: "center", marginTop: 12 }} /> : null}
     </View>
   );
 }

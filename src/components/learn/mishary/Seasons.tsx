@@ -8,12 +8,13 @@ import { useLang } from "@/lib/learn/i18n";
 import { useAuth } from "@/lib/learn/auth";
 import { SURAHS } from "@/lib/learn/garden/catalog";
 import { useMt, type Mt } from "@/lib/learn/mishary/texts";
-import { M, type Placement, type Season, type SeasonItem } from "@/lib/learn/mishary/api";
+import { M, type Member, type Placement, type Season, type SeasonItem } from "@/lib/learn/mishary/api";
 import { Link } from "@/i18n/navigation";
 import { Card, CardLink, GoldButton, LearnHero, LearnMain, OutlineButton, OutlineLink, Spinner } from "@/components/learn/ui";
 import { IconLock } from "@/components/Icons";
 import { Chip, ErrorText, Muted, Recorder, Section, useLoad, type Take } from "./ui";
 import { Gate, MemberLine, VersePick, useErr } from "./Mentoring";
+import { SafetyButton, SafetyFooter, useMentoringSafety } from "./Safety";
 
 const MYTHIC = "text-[rgb(122,64,160)] dark:text-[rgb(190,150,225)]";
 const MYTHIC_BORDER = "border-[rgb(122,64,160)] dark:border-[rgb(190,150,225)]";
@@ -99,7 +100,8 @@ export function SeasonsScreen() {
   );
 }
 
-export function Podium({ list }: { list: Placement[] }) {
+/** the podium; onMember (report or block a placed member) for everyone but the viewer */
+export function Podium({ list, onMember }: { list: Placement[]; onMember?: (m: Member) => void }) {
   const mt = useMt();
   return (
     <ol className="divide-y divide-line">
@@ -114,7 +116,7 @@ export function Podium({ list }: { list: Placement[] }) {
               </span>
             )}
           </div>
-          {p.member && <MemberLine m={p.member} />}
+          {p.member && <MemberLine m={p.member} right={onMember && !p.mine ? <SafetyButton label={mt("safetyFor", { name: `@${p.member.username}` })} onClick={() => onMember(p.member!)} /> : undefined} />}
         </li>
       ))}
     </ol>
@@ -143,6 +145,8 @@ export function SeasonScreen({ slug }: { slug: string }) {
   };
   const admin = (a: "judging" | "publish") => void M.seasonAction(slug, a).then(() => { d.reload(); list.reload(); }).catch((e) => setMsg(err(e)));
   const open = s?.status === "open" && s.endsOn >= new Date().toISOString().slice(0, 10);
+  // jurors report an entry (anonymous: the member stays hidden), everyone can report or block a placed member
+  const safe = useMentoringSafety(() => { d.reload(); jury.reload(); });
   return (
     <>
       <LearnHero back={{ href: "/mishary/seasons", label: mt("seasonsTitle") }} kicker={s ? kindLabel(s.kind, mt) : mt("seasonsTitle")} title={s ? seasonTitle(s, lang) : mt("seasonsTitle")}
@@ -172,7 +176,7 @@ export function SeasonScreen({ slug }: { slug: string }) {
               ) : null}
               <ErrorText text={msg} />
               <Section title={mt("hofTitle")}>
-                <Card>{d.data!.results.length ? <Podium list={d.data!.results} /> : <Muted>{mt("noResults")}</Muted>}</Card>
+                <Card>{d.data!.results.length ? <Podium list={d.data!.results} onMember={safe.memberMenu} /> : <Muted>{mt("noResults")}</Muted>}</Card>
               </Section>
               {list.data?.judge && !s.published && (
                 <Section title={`${mt("toJudge")} (${jury.data?.length ?? 0})`}>
@@ -180,11 +184,12 @@ export function SeasonScreen({ slug }: { slug: string }) {
                     {(jury.data ?? []).length ? (
                       <ul className="divide-y divide-line">
                         {jury.data!.map((x) => (
-                          <li key={x.id}>
-                            <Link href={`/mishary/mentoring/${x.id}`} className="flex min-h-[52px] items-center gap-3 py-2.5 transition hover:bg-[rgb(var(--hm-gold))]/[0.06]">
+                          <li key={x.id} className="flex items-center gap-1">
+                            <Link href={`/mishary/mentoring/${x.id}`} className="flex min-h-[52px] min-w-0 flex-1 items-center gap-3 py-2.5 transition hover:bg-[rgb(var(--hm-gold))]/[0.06]">
                               <span className="min-w-0 flex-1 text-[14.5px] font-semibold">{mt("entry", { n: x.id })} · {Math.round(x.durationMs / 1000)} s</span>
                               <span aria-hidden className="text-muted rtl:-scale-x-100">›</span>
                             </Link>
+                            <SafetyButton label={mt("reportRecording")} onClick={() => safe.reportSubmission(x.id)} />
                           </li>
                         ))}
                       </ul>
@@ -201,7 +206,10 @@ export function SeasonScreen({ slug }: { slug: string }) {
             </>
           )}
         </Gate>
+        {safe.note ? <p role="status" className="text-[13.5px] font-semibold text-accent">{safe.note}</p> : null}
+        <SafetyFooter />
       </LearnMain>
+      {safe.element}
     </>
   );
 }
@@ -212,6 +220,7 @@ export function HallOfFameScreen() {
   const { lang } = useLang();
   const { user } = useAuth();
   const d = useLoad(() => (user ? M.hallOfFame() : Promise.resolve(null)), [user]);
+  const safe = useMentoringSafety(() => d.reload());
   return (
     <>
       <LearnHero back={{ href: "/mishary/seasons", label: mt("seasonsTitle") }} kicker={mt("seasonsTitle")} title={mt("hofTitle")} lead={mt("hofLead")} word="لوحة الشرف" uid="mhf" />
@@ -219,11 +228,14 @@ export function HallOfFameScreen() {
         <Gate error={d.error}>
           {!d.data ? <Spinner label={mt("loading")} /> : d.data.seasons.length ? d.data.seasons.map((x) => (
             <Section key={x.season.slug} title={seasonTitle(x.season, lang)}>
-              <Card><Podium list={x.podium} /></Card>
+              <Card><Podium list={x.podium} onMember={safe.memberMenu} /></Card>
             </Section>
           )) : <Muted>{mt("noResults")}</Muted>}
         </Gate>
+        {safe.note ? <p role="status" className="text-[13.5px] font-semibold text-accent">{safe.note}</p> : null}
+        <SafetyFooter />
       </LearnMain>
+      {safe.element}
     </>
   );
 }

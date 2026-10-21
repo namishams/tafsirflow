@@ -25,6 +25,7 @@ const en = {
   vdTitle: "Vocabulary decks", vdLead: "More decks: words of a surah, straight from the Quran text, and theme decks from the core vocabulary.", vdBySurah: "By surah", vdByTheme: "By theme", vdWords: "{n} words",
   vdShow: "Show meaning", vdKnew: "I knew it", vdAgain: "Again", vdQuiz: "Quiz", vdCards: "Cards", vdDone: "Deck finished", vdKnown: "{n} of {m} known",
   theme_verbs: "Verbs", theme_names: "Names and attributes", theme_particles: "Particles", theme_nouns: "Nouns", theme_adjectives: "Qualities", theme_pronouns: "Pronouns", theme_root: "Root family {r}",
+  shOneADay: "Done for today. The next day of the program opens tomorrow.",
 };
 export type CText = typeof en;
 type Part = Partial<CText>;
@@ -49,6 +50,7 @@ const de: CText = {
   vdTitle: "Vokabelstapel", vdLead: "Weitere Stapel: Wörter einer Sure, direkt aus dem Korantext, und Themenstapel aus dem Grundwortschatz.", vdBySurah: "Nach Sure", vdByTheme: "Nach Thema", vdWords: "{n} Wörter",
   vdShow: "Bedeutung zeigen", vdKnew: "Gewusst", vdAgain: "Nochmal", vdQuiz: "Quiz", vdCards: "Karten", vdDone: "Stapel beendet", vdKnown: "{n} von {m} gewusst",
   theme_verbs: "Verben", theme_names: "Namen und Eigenschaften", theme_particles: "Partikeln", theme_nouns: "Nomen", theme_adjectives: "Eigenschaftswörter", theme_pronouns: "Pronomen", theme_root: "Wurzelfamilie {r}",
+  shOneADay: "Für heute erledigt. Der nächste Tag des Programms öffnet sich morgen.",
 };
 
 const ar: CText = {
@@ -71,6 +73,7 @@ const ar: CText = {
   vdTitle: "مجموعات المفردات", vdLead: "مجموعات أخرى: كلمات سورة مأخوذة من نص القرآن مباشرة، ومجموعات موضوعية من المفردات الأساسية.", vdBySurah: "حسب السورة", vdByTheme: "حسب الموضوع", vdWords: "{n} كلمات",
   vdShow: "أظهر المعنى", vdKnew: "عرفتها", vdAgain: "مرة أخرى", vdQuiz: "اختبار", vdCards: "بطاقات", vdDone: "انتهت المجموعة", vdKnown: "عرفت {n} من {m}",
   theme_verbs: "الأفعال", theme_names: "الأسماء والصفات", theme_particles: "الحروف", theme_nouns: "الأسماء", theme_adjectives: "الصفات", theme_pronouns: "الضمائر", theme_root: "عائلة الجذر {r}",
+  shOneADay: "أنجزت يوم اليوم. يُفتح اليوم التالي من البرنامج غدًا.",
 };
 
 const tr: Part = {
@@ -89,6 +92,7 @@ const tr: Part = {
   shKind_learn: "Yeni bölüm", shKind_review: "Tekrar", shKind_link: "Bağla", shKind_recite: "Sesli oku",
   vdTitle: "Kelime desteleri", vdBySurah: "Sureye göre", vdByTheme: "Konuya göre", vdWords: "{n} kelime", vdShow: "Anlamı göster", vdKnew: "Biliyordum", vdAgain: "Tekrar", vdQuiz: "Test", vdCards: "Kartlar", vdDone: "Deste bitti", vdKnown: "{m} kelimeden {n} biliniyor",
   theme_verbs: "Fiiller", theme_names: "İsimler ve sıfatlar", theme_particles: "Edatlar", theme_nouns: "İsimler", theme_adjectives: "Nitelikler", theme_pronouns: "Zamirler", theme_root: "Kök ailesi {r}",
+  shProgramLead: "Shams Metodu ile rehberli bir ay: her gün küçük bir bölüm, tekrar dahil.", shPlansLead: "Her sure için bir plan: temponuzu seçin ve her günün ayetlerini görün.", shReviewLead: "En zayıf ayetleriniz önce, metodun adımlarıyla.", shNoWeak: "Henüz tekrar edilecek ayet yok. Önce Shams Metodu ile birkaç ayet öğrenin.", shOneADay: "Bugünlük tamam. Programın sonraki günü yarın açılır.",
 };
 
 const ur: Part = {
@@ -103,6 +107,7 @@ const ur: Part = {
   shKind_learn: "نیا حصہ", shKind_review: "دہرائی", shKind_link: "جوڑیں", shKind_recite: "بلند آواز سے تلاوت",
   vdTitle: "الفاظ کے ڈیک", vdBySurah: "سورت کے لحاظ سے", vdByTheme: "موضوع کے لحاظ سے", vdWords: "{n} الفاظ", vdShow: "معنی دکھائیں", vdKnew: "مجھے معلوم تھا", vdAgain: "دوبارہ", vdQuiz: "کوئز", vdCards: "کارڈز", vdDone: "ڈیک مکمل",
   theme_verbs: "افعال", theme_names: "اسماء و صفات", theme_particles: "حروف", theme_nouns: "اسماء", theme_pronouns: "ضمائر",
+  shProgramLead: "شمس طریقے کے ساتھ ایک رہنمائی والا مہینہ: ہر دن ایک چھوٹا حصہ، دہرائی کے ساتھ۔", shMarkDone: "دن کو مکمل کے طور پر نشان زد کریں", shPlansLead: "ہر سورت کے لیے ایک منصوبہ: اپنی رفتار منتخب کریں اور ہر دن کی آیات دیکھیں۔", shReviewLead: "آپ کی سب سے کمزور آیات پہلے، طریقے کے مراحل کے ساتھ۔", shNoWeak: "ابھی دہرانے کے لیے کوئی آیت نہیں۔ پہلے شمس طریقے سے چند آیات یاد کریں۔", shStrength: "{p} % پختگی", shOneADay: "آج کا دن مکمل ہوا۔ پروگرام کا اگلا دن کل کھلے گا۔",
 };
 
 const fa: Part = {
@@ -117,6 +122,7 @@ const fa: Part = {
   shKind_learn: "بخش جدید", shKind_review: "مرور", shKind_link: "اتصال", shKind_recite: "تلاوت بلند",
   vdTitle: "دسته‌های واژگان", vdBySurah: "بر اساس سوره", vdByTheme: "بر اساس موضوع", vdWords: "{n} واژه", vdShow: "نمایش معنا", vdKnew: "می‌دانستم", vdAgain: "دوباره", vdQuiz: "آزمون", vdCards: "کارت‌ها", vdDone: "دسته تمام شد",
   theme_verbs: "افعال", theme_names: "اسماء و صفات", theme_particles: "حروف", theme_nouns: "اسم‌ها", theme_pronouns: "ضمیرها",
+  shProgramLead: "یک ماه همراه با روش شمس: هر روز بخشی کوچک، همراه با مرور.", shMarkDone: "علامت‌گذاری روز به‌عنوان انجام‌شده", shPlansLead: "برنامه‌ای برای هر سوره: سرعت خود را انتخاب کنید و آیات هر روز را ببینید.", shReviewLead: "ضعیف‌ترین آیات شما در اولویت، با گام‌های این روش.", shNoWeak: "هنوز آیه‌ای برای مرور نیست. ابتدا چند آیه را با روش شمس بیاموزید.", shStrength: "استحکام {p} %", shOneADay: "کار امروز انجام شد. روز بعدی برنامه فردا باز می‌شود.",
 };
 
 const ps: Part = {
@@ -126,6 +132,7 @@ const ps: Part = {
   unlock: "د Pro سره یې پرانیزئ", tag_consensus: "اجماع", tag_hanafi: "حنفي", tag_maliki: "مالکي", tag_shafii: "شافعي", tag_hanbali: "حنبلي", tag_jafari: "جعفري",
   nameMeaning: "مانا", tjPractice: "د تجوید تمرین", tjHint: "اشاره", shDay: "ورځ {n}", shToday: "نن", shDays: "{n} ورځې", shVersesRange: "آیتونه {a}–{b}", shKind_review: "تکرار",
   vdWords: "{n} کلمې", vdAgain: "بیا", vdQuiz: "ازموینه", vdCards: "کارتونه",
+  tjPick: "یو سورت وټاکئ", shProgram: "د ۳۰ ورځو پروګرام", shProgramLead: "د شمس طریقې سره لارښوونه شوې میاشت: هره ورځ یوه کوچنۍ برخه، له تکرار سره.", shMarkDone: "ورځ بشپړه په نښه کړئ", shDayDone: "ورځ بشپړه شوه", shOpen: "ناسته پرانیزئ", shPlans: "د حفظ پلانونه", shPlansLead: "د هر سورت لپاره یو پلان: خپله چټکتیا وټاکئ او د هرې ورځې آیتونه وګورئ.", shPace: "په ورځ کې {n} آیتونه", shReview: "د شمس تکرار", shReviewLead: "ستاسو تر ټولو کمزوري آیتونه لومړی، د طریقې له ګامونو سره.", shNoWeak: "تر اوسه د تکرار لپاره آیتونه نشته. لومړی د شمس په طریقه څو آیتونه زده کړئ.", shStrength: "{p} % ټینګښت", shKind_learn: "نوې برخه", shKind_link: "نښلول", shKind_recite: "په لوړ غږ تلاوت", shOneADay: "د نن ورځې کار بشپړ شو. د پروګرام بله ورځ سبا پرانیستل کېږي.",
 };
 
 const fr: Part = {
@@ -146,6 +153,7 @@ const fr: Part = {
   shKind_learn: "Nouvelle portion", shKind_review: "Révision", shKind_link: "Relier", shKind_recite: "Réciter à voix haute",
   vdTitle: "Paquets de vocabulaire", vdBySurah: "Par sourate", vdByTheme: "Par thème", vdWords: "{n} mots", vdShow: "Afficher le sens", vdKnew: "Je savais", vdAgain: "Encore", vdQuiz: "Quiz", vdCards: "Cartes", vdDone: "Paquet terminé", vdKnown: "{n} sur {m} connus",
   theme_verbs: "Verbes", theme_names: "Noms et attributs", theme_particles: "Particules", theme_nouns: "Noms", theme_adjectives: "Qualités", theme_pronouns: "Pronoms", theme_root: "Famille de la racine {r}",
+  shProgramLead: "Un mois accompagné avec la Méthode Shams : chaque jour une petite portion, révision comprise.", shPlansLead: "Un plan pour chaque sourate : choisissez votre rythme et voyez les versets de chaque jour.", shReviewLead: "Vos versets les plus fragiles d’abord, avec les étapes de la méthode.", shNoWeak: "Aucun verset à réviser pour l’instant. Apprenez d’abord quelques versets avec la Méthode Shams.", shOneADay: "C’est fait pour aujourd’hui. Le jour suivant du programme s’ouvre demain.",
 };
 
 const es: Part = {
@@ -164,6 +172,7 @@ const es: Part = {
   shKind_learn: "Porción nueva", shKind_review: "Repaso", shKind_link: "Conectar", shKind_recite: "Recitar en voz alta",
   vdTitle: "Mazos de vocabulario", vdBySurah: "Por sura", vdByTheme: "Por tema", vdWords: "{n} palabras", vdShow: "Mostrar significado", vdKnew: "La sabía", vdAgain: "Otra vez", vdQuiz: "Cuestionario", vdCards: "Tarjetas", vdDone: "Mazo terminado", vdKnown: "{n} de {m} sabidas",
   theme_verbs: "Verbos", theme_names: "Nombres y atributos", theme_particles: "Partículas", theme_nouns: "Sustantivos", theme_adjectives: "Cualidades", theme_pronouns: "Pronombres", theme_root: "Familia de la raíz {r}",
+  shProgramLead: "Un mes acompañado con el Método Shams: cada día una pequeña porción, con repaso incluido.", shPlansLead: "Un plan para cada sura: elija su ritmo y vea las aleyas de cada día.", shReviewLead: "Sus aleyas más débiles primero, con los pasos del método.", shNoWeak: "Todavía no hay aleyas para repasar. Aprenda primero algunas aleyas con el Método Shams.", shOneADay: "Listo por hoy. El siguiente día del programa se abre mañana.",
 };
 
 const id_: Part = {
@@ -178,6 +187,7 @@ const id_: Part = {
   shKind_learn: "Bagian baru", shKind_review: "Murajaah", shKind_link: "Sambungkan", shKind_recite: "Baca dengan suara",
   vdTitle: "Dek kosakata", vdBySurah: "Per surah", vdByTheme: "Per tema", vdWords: "{n} kata", vdShow: "Tampilkan makna", vdKnew: "Saya tahu", vdAgain: "Lagi", vdQuiz: "Kuis", vdCards: "Kartu", vdDone: "Dek selesai",
   theme_verbs: "Kata kerja", theme_names: "Nama dan sifat", theme_particles: "Partikel", theme_nouns: "Kata benda", theme_pronouns: "Kata ganti",
+  shProgramLead: "Satu bulan terbimbing dengan Metode Shams: setiap hari satu bagian kecil, termasuk murajaah.", shMarkDone: "Tandai hari ini selesai", shPlansLead: "Rencana untuk setiap surah: pilih kecepatan Anda dan lihat ayat setiap hari.", shReviewLead: "Ayat-ayat terlemah Anda lebih dahulu, dengan langkah-langkah metode ini.", shNoWeak: "Belum ada ayat untuk diulang. Pelajari dahulu beberapa ayat dengan Metode Shams.", shStrength: "Kekuatan {p} %", shOneADay: "Selesai untuk hari ini. Hari berikutnya dari program terbuka besok.",
 };
 
 const ms: Part = {
@@ -191,6 +201,7 @@ const ms: Part = {
   shProgram: "Program 30 hari", shDay: "Hari {n}", shToday: "Hari ini", shDayDone: "Hari selesai", shOpen: "Buka sesi", shPlans: "Pelan hafazan", shPace: "{n} ayat sehari", shDays: "{n} hari", shVersesRange: "Ayat {a}–{b}", shReview: "Ulang kaji Shams",
   shKind_learn: "Bahagian baharu", shKind_review: "Ulang kaji", shKind_link: "Sambung", shKind_recite: "Baca dengan kuat",
   vdTitle: "Dek perbendaharaan kata", vdBySurah: "Ikut surah", vdByTheme: "Ikut tema", vdWords: "{n} perkataan", vdShow: "Tunjuk makna", vdKnew: "Saya tahu", vdAgain: "Lagi", vdQuiz: "Kuiz", vdCards: "Kad", vdDone: "Dek selesai",
+  shProgramLead: "Sebulan berpandu dengan Kaedah Shams: setiap hari satu bahagian kecil, termasuk ulang kaji.", shMarkDone: "Tandakan hari ini selesai", shPlansLead: "Pelan untuk setiap surah: pilih rentak anda dan lihat ayat bagi setiap hari.", shReviewLead: "Ayat-ayat paling lemah anda dahulu, dengan langkah-langkah kaedah ini.", shNoWeak: "Belum ada ayat untuk diulang kaji. Hafal dahulu beberapa ayat dengan Kaedah Shams.", shStrength: "Kekuatan {p} %", shOneADay: "Selesai untuk hari ini. Hari seterusnya dalam program dibuka esok.",
 };
 
 const bn: Part = {
@@ -200,6 +211,7 @@ const bn: Part = {
   unlock: "Pro দিয়ে খুলুন", tag_consensus: "ইজমা", tag_hanafi: "হানাফি", tag_maliki: "মালিকি", tag_shafii: "শাফেয়ি", tag_hanbali: "হাম্বলি", tag_jafari: "জাফরি",
   nameMeaning: "অর্থ", tjPractice: "তাজবিদ অনুশীলন", tjHint: "ইঙ্গিত", tjItems: "{n}টি প্রশ্ন", shDay: "দিন {n}", shToday: "আজ", shDays: "{n} দিন", shVersesRange: "আয়াত {a}–{b}", shPace: "দিনে {n}টি আয়াত", shKind_review: "পুনরাবৃত্তি",
   vdWords: "{n}টি শব্দ", vdAgain: "আবার", vdQuiz: "কুইজ", vdCards: "কার্ড", vdShow: "অর্থ দেখান",
+  tjPick: "একটি সূরা বেছে নিন", shProgram: "৩০ দিনের প্রোগ্রাম", shProgramLead: "শামস পদ্ধতির সাথে একটি নির্দেশিত মাস: প্রতিদিন একটি ছোট অংশ, পুনরাবৃত্তিসহ।", shMarkDone: "দিনটি সম্পন্ন হিসেবে চিহ্নিত করুন", shDayDone: "দিন সম্পন্ন", shOpen: "সেশন খুলুন", shPlans: "হিফজের পরিকল্পনা", shPlansLead: "প্রতিটি সূরার জন্য একটি পরিকল্পনা: আপনার গতি বেছে নিন এবং প্রতিদিনের আয়াত দেখুন।", shReview: "শামস পুনরাবৃত্তি", shReviewLead: "আপনার সবচেয়ে দুর্বল আয়াতগুলো আগে, পদ্ধতির ধাপগুলোসহ।", shNoWeak: "এখনও পুনরাবৃত্তির জন্য কোনো আয়াত নেই। প্রথমে শামস পদ্ধতিতে কয়েকটি আয়াত মুখস্থ করুন।", shStrength: "দৃঢ়তা {p} %", shKind_learn: "নতুন অংশ", shKind_link: "সংযুক্ত করুন", shKind_recite: "উচ্চস্বরে তিলাওয়াত", shOneADay: "আজকের কাজ সম্পন্ন। প্রোগ্রামের পরের দিন আগামীকাল খুলবে।",
 };
 
 const ru: Part = {
@@ -218,6 +230,7 @@ const ru: Part = {
   shKind_learn: "Новая часть", shKind_review: "Повторение", shKind_link: "Связать", shKind_recite: "Читать вслух",
   vdTitle: "Колоды слов", vdBySurah: "По суре", vdByTheme: "По теме", vdWords: "Слов: {n}", vdShow: "Показать значение", vdKnew: "Знал(а)", vdAgain: "Ещё раз", vdQuiz: "Тест", vdCards: "Карточки", vdDone: "Колода пройдена", vdKnown: "Известно {n} из {m}",
   theme_verbs: "Глаголы", theme_names: "Имена и атрибуты", theme_particles: "Частицы", theme_nouns: "Существительные", theme_adjectives: "Качества", theme_pronouns: "Местоимения", theme_root: "Семья корня {r}",
+  shProgramLead: "Месяц с сопровождением по Методу Шамса: каждый день небольшая часть, повторение включено.", shPlansLead: "План для любой суры: выберите свой темп и посмотрите аяты на каждый день.", shReviewLead: "Сначала ваши самые слабые аяты, по шагам метода.", shNoWeak: "Пока нет аятов для повторения. Сначала выучите несколько аятов по Методу Шамса.", shOneADay: "На сегодня готово. Следующий день программы откроется завтра.",
 };
 
 const zh: Part = {
@@ -236,6 +249,7 @@ const zh: Part = {
   shKind_learn: "新内容", shKind_review: "复习", shKind_link: "衔接", shKind_recite: "大声诵读",
   vdTitle: "词汇卡组", vdBySurah: "按章", vdByTheme: "按主题", vdWords: "{n} 个词", vdShow: "显示含义", vdKnew: "我会了", vdAgain: "再来", vdQuiz: "测验", vdCards: "卡片", vdDone: "卡组完成", vdKnown: "已掌握 {n}/{m}",
   theme_verbs: "动词", theme_names: "名称与属性", theme_particles: "虚词", theme_nouns: "名词", theme_adjectives: "性质词", theme_pronouns: "代词", theme_root: "词根 {r} 词族",
+  shProgramLead: "跟随 Shams 方法的一个月：每天一小段，并包含复习。", shPlansLead: "为任意一章制定计划：请选择您的节奏，查看每天要学的经文。", shReviewLead: "先复习您最薄弱的经文，按照方法的步骤进行。", shNoWeak: "暂时没有需要复习的经文。请先用 Shams 方法学习几节经文。", shOneADay: "今天已完成。计划的下一天将在明天开放。",
 };
 
 const TABLE: { en: CText } & Record<string, CText | undefined> = { en, de, ar, tr: { ...en, ...tr }, ur: { ...en, ...ur }, fa: { ...en, ...fa }, ps: { ...en, ...ps }, fr: { ...en, ...fr }, es: { ...en, ...es }, id: { ...en, ...id_ }, ms: { ...en, ...ms }, bn: { ...en, ...bn }, ru: { ...en, ...ru }, zh: { ...en, ...zh } };

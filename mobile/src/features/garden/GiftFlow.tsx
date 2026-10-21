@@ -7,6 +7,7 @@ import { router, type Href } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, Path, RadialGradient, Stop } from "react-native-svg";
 import Animated, { Easing, FadeIn, interpolate, useAnimatedStyle, useSharedValue, withDelay, withSequence, withTiming, type SharedValue } from "react-native-reanimated";
+import { scheduleOnRN } from "react-native-worklets";
 import { GoldButton, OutlineButton } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { FONT, goldButton, stage as stageC } from "@/lib/theme";
@@ -25,7 +26,7 @@ import { TREE_W, TreeArt, geom } from "./Tree";
 import { chime } from "./widgets";
 import { fillG, useAgeText, useGardenText } from "./texts";
 import { useGiftText } from "./giftText";
-import { RARITY_ORDER, allDuplicates, feedDef, giftInventory, ordered, pickedOf, previewOf, untilReset, type GiftItem, type GiftSeries, type Pick } from "./gift";
+import { RARITY_ORDER, allDuplicates, feedDef, giftInventory, ordered, pickedOf, previewOf, readyToGive, untilReset, type GiftItem, type GiftSeries, type Pick } from "./gift";
 
 // "Nourish your tree": the gift flow of the garden (owner request 21.10.2026). A full-height sheet on deep emerald with
 // gold: the tree in a small vignette, today's room for sticker growth as twelve gold drops, a live preview of the
@@ -50,16 +51,16 @@ const STAGGER = 380, FLIGHT = 820;
 type Phase = "pick" | "giving" | "done";
 type Given = { id: string; gp: number; trait: Trait | null; up: boolean };
 type Flight = { key: string; id: string; sx: number; sy: number; tx: number; ty: number; delay: number };
-type Row = { k: "head"; key: string; title: string; lead: string; count: number; all?: boolean } | { k: "tiles"; key: string; items: GiftItem[] } | { k: "note"; key: string; kind: "noDupes" | "noMatch" | "empty" };
+type Row = { k: "head"; key: string; title: string; lead: string; count: number; all?: boolean } | { k: "sub"; key: string; rarity: Rarity; count: number } | { k: "tiles"; key: string; items: GiftItem[] } | { k: "note"; key: string; kind: "noDupes" | "noMatch" | "empty" };
 
 /** the entry on the garden screen: a gold button with today's room and the duplicates ready to give */
 export function NourishButton({ onPress }: { onPress: () => void }) {
   const gt = useGiftText();
   const s = useGarden();
-  const gm = useGamify();
+  useGamify(); // re-render when the feed duplicates change
   useCatalog();
   const o = giftOutlook(s, []);
-  const ready = readyCount(gm.dupes);
+  const ready = readyToGive();
   const sub = o.room <= 0 ? gt.capT : ready > 0 ? `${fillG(gt.leftToday, { n: o.room, m: o.cap })} · ${fillG(gt.readyN, { n: ready })}` : fillG(gt.leftToday, { n: o.room, m: o.cap });
   return (
     <Pressable onPress={() => { tick(); onPress(); }} accessibilityRole="button" accessibilityLabel={`${gt.nourish}. ${sub}`}
@@ -73,7 +74,7 @@ export function NourishButton({ onPress }: { onPress: () => void }) {
           <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: "rgba(8,38,29,0.72)", marginTop: 2 }} numberOfLines={2}>{sub}</Text>
         </View>
         <View style={{ flexDirection: "row", gap: 2, alignItems: "flex-end" }} accessible={false}>
-          {Array.from({ length: 4 }, (_, i) => <DropShape key={i} size={9} state={i < Math.ceil((o.room / o.cap) * 4) ? "deep" : "spentDark"} />)}
+          {Array.from({ length: 4 }, (_, i) => { const st = i < Math.ceil((o.room / o.cap) * 4) ? "deep" : "spentDark"; return <DropShape key={`${i}${st}`} size={9} state={st} />; })}
         </View>
       </LinearGradient>
     </Pressable>
@@ -83,10 +84,10 @@ export function NourishButton({ onPress }: { onPress: () => void }) {
 /** the small sticker bag near the tree in the scene, with the number of duplicates ready to give */
 export function StickerBag({ onPress }: { onPress: () => void }) {
   const gt = useGiftText();
-  const gm = useGamify();
+  useGamify(); // re-render when the feed duplicates change
   const s = useGarden();
   useCatalog();
-  const ready = readyCount(gm.dupes);
+  const ready = readyToGive();
   const room = giftOutlook(s, []).room;
   return (
     <Pressable onPress={() => { tick(); onPress(); }} hitSlop={10} accessibilityRole="button" accessibilityLabel={ready > 0 ? `${gt.bag}. ${fillG(gt.readyN, { n: ready })}` : gt.bag}
@@ -100,8 +101,6 @@ export function StickerBag({ onPress }: { onPress: () => void }) {
     </Pressable>
   );
 }
-/** feed duplicates (the large collection's duplicates are counted in the sheet) */
-const readyCount = (d: Record<string, number> | undefined) => Object.values(d ?? {}).reduce((a, n) => a + Math.max(0, n), 0);
 
 /** the gift flow itself (rendered by the garden screen above everything else) */
 export function GiftFlow({ onClose }: { onClose: () => void }) {
@@ -175,19 +174,19 @@ export function GiftFlow({ onClose }: { onClose: () => void }) {
   const add = (it: GiftItem) => {
     const next = [...picks, { id: it.id, unique: it.unique, base: it.base }];
     if (previewOf(s, next).fits < next.length) { setNote(gt.full); return; }
-    tick(); setNote(null); setPicks(next);
+    tick(); setNote(null); setLater(0); setPicks(next);
   };
   const onTile = (it: GiftItem) => {
     const n = pickedOf(picks, it.id), max = it.unique ? 1 : it.dupes;
-    if (n >= max) { tick(); setPicks(picks.filter((p) => p.id !== it.id)); setNote(null); return; } // all of it chosen: a tap takes it back
+    if (n >= max) { tick(); setPicks(picks.filter((p) => p.id !== it.id)); setNote(null); setLater(0); return; } // all of it chosen: a tap takes it back
     if (it.unique) { setConfirm(it); return; }
     add(it);
   };
-  const removeOne = (id: string) => { const i = picks.map((p) => p.id).lastIndexOf(id); if (i < 0) return; tick(); setNote(null); setPicks(picks.filter((_, k) => k !== i)); };
+  const removeOne = (id: string) => { const i = picks.map((p) => p.id).lastIndexOf(id); if (i < 0) return; tick(); setNote(null); setLater(0); setPicks(picks.filter((_, k) => k !== i)); };
   const giveAll = () => { const r = allDuplicates(s, inv.dupes); if (!r.picks.length) { setNote(gt.full); return; } tick(); setNote(null); setPicks(r.picks); setLater(r.later); };
 
   // ---------- giving ----------
-  const rootRef = useRef<ViewT>(null), anchorRef = useRef<ViewT>(null), listRef = useRef<FlatList<Row>>(null), trayRef = useRef<ScrollViewInstance>(null);
+  const rootRef = useRef<ViewT>(null), vigRef = useRef<{ x: number; y: number; w: number; crown: number } | null>(null), listRef = useRef<FlatList<Row>>(null), trayRef = useRef<ScrollViewInstance>(null);
   const chipRefs = useRef(new Map<string, ViewT | null>());
   const glow = useSharedValue(0.35);
   const measure = (v: ViewT | null | undefined) => new Promise<{ x: number; y: number; w: number; h: number } | null>((res) => { if (!v) { res(null); return; } v.measureInWindow((x, y, w, h) => res({ x, y, w, h })); });
@@ -198,7 +197,7 @@ export function GiftFlow({ onClose }: { onClose: () => void }) {
     listRef.current?.scrollToOffset({ offset: 0, animated: false });
     trayRef.current?.scrollTo({ x: 0, animated: false });
     await new Promise((r) => setTimeout(r, 40));
-    const [root, anchor] = await Promise.all([measure(rootRef.current), measure(anchorRef.current)]);
+    const root = await measure(rootRef.current), vig = vigRef.current;
     const chips = new Map<string, { x: number; y: number }>();
     if (!reduce) for (const id of new Set(list.map((p) => p.id))) { const m = await measure(chipRefs.current.get(id)); if (m) chips.set(id, { x: m.x + m.w / 2, y: m.y + m.h / 2 }); }
     // the gifts themselves, all at once (the animation only shows what already happened)
@@ -212,23 +211,38 @@ export function GiftFlow({ onClose }: { onClose: () => void }) {
     setGiven(out);
     setPicks([]); setLater(0); setNote(null);
     if (!out.length) { setPhase("pick"); setNote(gt.full); return; }
-    if (reduce || !root || !anchor) {
+    if (reduce || !root || !vig) {
       setShown(out.reduce((a, x) => a + x.gp, 0)); setPhase("done");
       if (out.some((x) => x.trait || x.up)) chime(); else success();
       return;
     }
-    const ox = root.x, oy = root.y, tx0 = anchor.x + anchor.w / 2 - ox, ty0 = anchor.y + anchor.h / 2 - oy;
+    // the target from the layout (the list is at its top): the sheet's top, the grabber (12), the vignette and the crown
+    const ox = root.x, oy = root.y, tx0 = (width - sheetW) / 2 + vig.x + vig.w / 2, ty0 = insets.top + 8 + 12 + vig.y + vig.crown;
     const gap = out.length > 8 ? Math.max(150, Math.round(2800 / out.length)) : STAGGER;
     const fallback = { x: width / 2, y: height - insets.bottom - 90 };
     setFlights(out.map((g, i) => { const c = chips.get(g.id) ?? { x: fallback.x + ox, y: fallback.y + oy }; return { key: `${i}`, id: g.id, sx: Math.min(width - 28, Math.max(28, c.x - ox)), sy: c.y - oy, tx: tx0, ty: ty0, delay: i * gap }; }));
     setShown(0);
     setPhase("giving");
-    let sum = 0;
-    out.forEach((g, i) => schedule(() => {
-      sum += g.gp; setShown(sum); tick(); setNudge((n) => n + 1);
-      glow.value = withSequence(withTiming(1, { duration: 160 }), withTiming(0.5, { duration: 700, easing: Easing.out(Easing.quad) }));
-    }, i * gap + FLIGHT));
-    schedule(() => { setFlights([]); setPhase("done"); if (out.some((x) => x.trait || x.up)) chime(); else success(); }, (out.length - 1) * gap + FLIGHT + 650);
+    flight.current = { out, sum: 0, n: 0, done: false };
+    // the arrivals come from the flights themselves (in step with what is seen); a late safety net closes the flight
+    schedule(finish, (out.length - 1) * gap + FLIGHT + 4000);
+  };
+  /** one light has reached the crown: a tick, the tree glows and rustles, the counter grows */
+  const flight = useRef<{ out: Given[]; sum: number; n: number; done: boolean } | null>(null);
+  const arrive = (i: number) => {
+    const f = flight.current;
+    if (!f || f.done || !f.out[i]) return;
+    f.sum += f.out[i].gp; f.n++;
+    setShown(f.sum); tick(); setNudge((n) => n + 1);
+    glow.value = withSequence(withTiming(1, { duration: 160 }), withTiming(0.5, { duration: 700, easing: Easing.out(Easing.quad) }));
+    if (f.n >= f.out.length) schedule(finish, 650);
+  };
+  const finish = () => {
+    const f = flight.current;
+    if (!f || f.done) return;
+    f.done = true;
+    setFlights([]); setShown(f.out.reduce((a, x) => a + x.gp, 0)); setPhase("done");
+    if (f.out.some((x) => x.trait || x.up)) chime(); else success();
   };
   const again = () => { setPhase("pick"); setGiven([]); setSnap(null); setShown(0); };
 
@@ -239,7 +253,7 @@ export function GiftFlow({ onClose }: { onClose: () => void }) {
     { k: "head", key: "hd", title: gt.ready, lead: gt.readyLead, count: dupes.reduce((a, x) => a + x.dupes, 0), all: dupes.length > 0 },
     ...(dupes.length ? chunk(dupes, "d") : [{ k: "note", key: "nd", kind: inv.dupes.length ? "noMatch" : "noDupes" } as Row]),
     ...(unique.length || inv.unique.length ? [{ k: "head", key: "hu", title: gt.album, lead: gt.albumLead, count: unique.length } as Row] : []),
-    ...(unique.length ? chunk(unique, "u") : inv.unique.length ? [{ k: "note", key: "nu", kind: "noMatch" } as Row] : []),
+    ...(unique.length ? RARITY_ORDER.flatMap((r) => { const its = unique.filter((x) => x.rarity === r); return its.length ? [{ k: "sub", key: `s${r}`, rarity: r, count: its.length } as Row, ...chunk(its, `u${r}`)] : []; }) : inv.unique.length ? [{ k: "note", key: "nu", kind: "noMatch" } as Row] : []),
   ];
   const trayH = 184 + insets.bottom;
 
@@ -260,6 +274,14 @@ export function GiftFlow({ onClose }: { onClose: () => void }) {
         {item.all && later > 0 ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: GOLD }}>{fillG(gt.later, { n: later })}</Text> : null}
       </View>
     );
+    if (item.k === "sub") return (
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 8, paddingHorizontal: 16, paddingTop: 10, paddingBottom: 4 }} accessible accessibilityRole="header" accessibilityLabel={`${tx[`r_${item.rarity}`]}, ${item.count}`}>
+        <View style={{ width: 7, height: 7, borderRadius: 4, backgroundColor: DOT[item.rarity] }} />
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: "rgba(243,226,182,0.8)" }}>{tx[`r_${item.rarity}`]}</Text>
+        <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: stageC.textMuted }}>{item.count}</Text>
+        <View style={{ flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: "rgba(214,180,108,0.3)" }} />
+      </View>
+    );
     if (item.k === "note") {
       if (item.kind === "noMatch") return <Text style={{ paddingHorizontal: 16, paddingVertical: 14, fontFamily: FONT.regular, fontSize: 13.5, color: stageC.textMuted }}>{gt.noMatch}</Text>;
       return <NoDupes onQuests={() => { close(); setTimeout(() => router.push("/feed-stats" as Href), 340); }} />;
@@ -276,7 +298,7 @@ export function GiftFlow({ onClose }: { onClose: () => void }) {
 
   const header = (
     <View>
-      <Hero gt={gt} tree={tree} s={s} pro={pro} reduce={reduce} glow={glow} anchorRef={anchorRef} nudge={nudge}
+      <Hero gt={gt} tree={tree} s={s} pro={pro} reduce={reduce} glow={glow} onVignette={(v) => { vigRef.current = v; }} nudge={nudge}
         phase={phase} total={phase === "pick" ? look.total : shown} picks={picks.length}
         cap={base.cap} room={room} chosen={phase === "pick" ? look.total : 0} consumed={phase === "pick" ? 0 : shown}
         givenToday={phase === "pick" ? base.givenToday : snap?.given ?? base.givenToday} fits={phase === "pick" ? look.fits : given.length}
@@ -316,7 +338,7 @@ export function GiftFlow({ onClose }: { onClose: () => void }) {
             nameOf={nameOf} onRemove={removeOne} onGive={give} />
         ) : null}
       </Animated.View>
-      {flights.map((f) => <Flyer key={f.key} f={f} />)}
+      {flights.map((f, i) => <Flyer key={f.key} f={f} onArrive={() => arrive(i)} />)}
       {confirm ? (
         <Confirm gt={gt} it={confirm} name={nameOf(confirm.id)} onYes={() => { const it = confirm; setConfirm(null); add(it); }} onNo={() => setConfirm(null)} />
       ) : null}
@@ -329,17 +351,21 @@ export function GiftFlow({ onClose }: { onClose: () => void }) {
 }
 
 // ---------- the top: the tree, the counter, the drops and the declining value ----------
-function Hero({ gt, tree, s, pro, reduce, glow, anchorRef, nudge, phase, total, picks, cap, room, chosen, consumed, givenToday, fits, growthLabel, onClose, closeLabel }: {
-  gt: ReturnType<typeof useGiftText>; tree: ReturnType<typeof activeTree>; s: ReturnType<typeof useGarden>; pro: boolean; reduce: boolean; glow: SharedValue<number>; anchorRef: React.RefObject<ViewT | null>; nudge: number;
+function Hero({ gt, tree, s, pro, reduce, glow, onVignette, nudge, phase, total, picks, cap, room, chosen, consumed, givenToday, fits, growthLabel, onClose, closeLabel }: {
+  gt: ReturnType<typeof useGiftText>; tree: ReturnType<typeof activeTree>; s: ReturnType<typeof useGarden>; pro: boolean; reduce: boolean; glow: SharedValue<number>; onVignette: (v: { x: number; y: number; w: number; crown: number }) => void; nudge: number;
   phase: Phase; total: number; picks: number; cap: number; room: number; chosen: number; consumed: number; givenToday: number; fits: number; growthLabel: string; onClose: () => void; closeLabel: string;
 }) {
-  const vh = 184, size = 136, th = size * 1.2;
+  const vh = 184;
   const st = tree ? treeStage(tree, pro) : 0;
-  const g = geom(tree?.type ?? "olive", st), k = size / TREE_W;
-  const crownY = vh - th - 2 + (st < 3 ? 300 : g.top + g.crown * 0.55) * k;
+  const { size, top, crownY } = vignette(tree?.type ?? "olive", st, vh);
   const glowSt = useAnimatedStyle(() => ({ opacity: glow.value, transform: [{ scale: 0.85 + glow.value * 0.2 }] }));
   useEffect(() => { if (phase === "pick") glow.value = withTiming(picks ? 0.75 : 0.35, { duration: reduce ? 0 : 500 }); }, [phase, picks, reduce, glow]);
   const left = Math.max(0, room - consumed);
+  // a gift can add a decoration to the record's list in place: a new list when it changes, so the tree shows it at once
+  const traits = useMemo(() => [...s.traits], [s.traits.join(",")]); // eslint-disable-line react-hooks/exhaustive-deps
+  // where the light flies to: the vignette's place in the sheet and the crown in it (from the layout, not measured)
+  const [lay, setLay] = useState<{ x: number; y: number; w: number } | null>(null);
+  useEffect(() => { if (lay) onVignette({ ...lay, crown: crownY }); }, [lay, crownY]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <View style={{ paddingHorizontal: 16, gap: 12 }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingTop: 6 }}>
@@ -349,18 +375,21 @@ function Hero({ gt, tree, s, pro, reduce, glow, anchorRef, nudge, phase, total, 
           <Icon name="close" size={16} color={CREAM} />
         </Pressable>
       </View>
-      <View style={{ height: vh, borderRadius: 22, overflow: "hidden", borderWidth: 1, borderColor: "rgba(214,180,108,0.35)" }}>
+      <View onLayout={(e) => { const l = e.nativeEvent.layout; setLay({ x: l.x, y: l.y, w: l.width }); }} style={{ height: vh, borderRadius: 22, overflow: "hidden", borderWidth: 1, borderColor: "rgba(214,180,108,0.35)" }}>
         <LinearGradient colors={["#155a45", "#0a3528", "#06251c"]} style={StyleSheet.absoluteFill} />
         <Animated.View pointerEvents="none" style={[{ position: "absolute", left: "50%", top: crownY - 110, width: 220, height: 220, marginLeft: -110 }, glowSt]}>
           <Svg width={220} height={220}><Defs><RadialGradient id="gfGlow" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#ffe6a6" stopOpacity={0.55} /><Stop offset="0.55" stopColor="#ffd98a" stopOpacity={0.16} /><Stop offset="1" stopColor="#ffd98a" stopOpacity={0} /></RadialGradient></Defs><Circle cx={110} cy={110} r={110} fill="url(#gfGlow)" /></Svg>
         </Animated.View>
-        <View pointerEvents="none" style={{ position: "absolute", left: "50%", marginLeft: -size * 0.55, width: size * 1.1, bottom: 6, height: 18, borderRadius: 9, backgroundColor: "rgba(0,0,0,0.25)" }} />
+        <Svg pointerEvents="none" width={150} height={vh - 18} viewBox="0 0 150 166" style={{ position: "absolute", left: "50%", marginLeft: -75, top: 18 }}>
+          <Path d="M8 166V70C8 34 40 8 75 2c35 6 67 32 67 68v96" fill="rgba(255,236,190,0.035)" stroke="rgba(214,180,108,0.32)" strokeWidth={1} />
+          <Path d="M18 166V73c0-30 26-52 57-58 31 6 57 28 57 58v93" fill="none" stroke="rgba(214,180,108,0.16)" strokeWidth={0.8} />
+        </Svg>
+        <View pointerEvents="none" style={{ position: "absolute", left: "50%", marginLeft: -70, width: 140, bottom: 6, height: 16, borderRadius: 8, backgroundColor: "rgba(0,0,0,0.22)" }} />
         {tree ? (
-          <View style={{ position: "absolute", left: "50%", marginLeft: -size / 2, top: vh - th - 2 }} accessible accessibilityLabel={tree.name}>
-            <TreeArt id={tree.id} type={tree.type} stage={st} traits={s.traits} season={seasonNow()} size={size} still={reduce} nudge={nudge} />
+          <View style={{ position: "absolute", left: "50%", marginLeft: -size / 2, top }} accessible accessibilityLabel={tree.name}>
+            <TreeArt id={tree.id} type={tree.type} stage={st} traits={traits} season={seasonNow()} size={size} still={reduce} nudge={nudge} />
           </View>
         ) : null}
-        <View ref={anchorRef} collapsable={false} pointerEvents="none" style={{ position: "absolute", left: "50%", marginLeft: -1, top: crownY - 1, width: 2, height: 2 }} />
         <View style={{ position: "absolute", top: 12, end: 14, alignItems: "flex-end" }} accessible accessibilityLiveRegion="polite" accessibilityLabel={`+${total} ${growthLabel}`}>
           <Counter value={total} dim={phase === "pick" && !picks} reduce={reduce} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, color: "rgba(243,226,182,0.75)" }}>{growthLabel}</Text>
@@ -370,15 +399,25 @@ function Hero({ gt, tree, s, pro, reduce, glow, anchorRef, nudge, phase, total, 
       <View style={{ gap: 6 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
           <Drops cap={cap} left={left} chosen={phase === "pick" ? chosen : 0} />
-          <Text style={{ flex: 1, textAlign: "right", fontFamily: FONT.semibold, fontSize: 12.5, color: CREAM }} numberOfLines={1}>{fillG(gt.leftToday, { n: Math.max(0, left - (phase === "pick" ? chosen : 0)), m: cap })}</Text>
+          <Text style={{ flex: 1, textAlign: "right", fontFamily: FONT.semibold, fontSize: 12.5, color: CREAM }} numberOfLines={1}>{fillG(gt.leftToday, { n: left, m: cap })}</Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-          <Decline given={givenToday} chosen={phase === "pick" ? fits : 0} />
-          <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 12, lineHeight: 16, color: stageC.textMuted }}>{phase === "pick" && !picks ? `${gt.pickHint} ${gt.decline}` : gt.decline}</Text>
+          <Decline given={givenToday} chosen={fits} />
+          <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 12, lineHeight: 16, color: stageC.textMuted }}>{gt.decline}</Text>
         </View>
       </View>
     </View>
   );
+}
+
+/** the tree in the vignette: as large as its stage allows (a young tree is drawn larger), the basin on the ground,
+ *  and the point in the crown the light flies to */
+function vignette(type: Parameters<typeof geom>[0], st: number, vh: number) {
+  const g = geom(type, st);
+  const topY = st < 3 ? 250 : g.top - g.crown * 0.5, visible = 330 - topY;
+  const size = Math.min(300, Math.max(140, (vh - 34) * TREE_W / visible));
+  const k = size / TREE_W, top = vh - 10 - 330 * k;
+  return { size, top, crownY: top + (st < 3 ? 296 : g.top + g.crown * 0.55) * k };
 }
 
 /** the big gold "+N" of the preview and of the gift; a small pop on every change */
@@ -395,18 +434,20 @@ function Drops({ cap, left, chosen }: { cap: number; left: number; chosen: numbe
   const free = Math.max(0, left - chosen);
   return (
     <View style={{ flexDirection: "row", gap: 3 }} accessible={false}>
-      {Array.from({ length: cap }, (_, i) => <DropShape key={i} size={12} state={i < free ? "full" : i < left ? "chosen" : "spent"} />)}
+      {Array.from({ length: cap }, (_, i) => { const st = i < free ? "full" : i < left ? "chosen" : "spent"; return <DropShape key={`${i}${st}`} size={12} state={st} />; })}
     </View>
   );
 }
+/** one drop (keyed by its state by the callers: react-native-svg keeps a removed dash pattern otherwise) */
 function DropShape({ size, state }: { size: number; state: "full" | "chosen" | "spent" | "deep" | "spentDark" }) {
   const w = size, h = size * 1.33;
-  const fill = state === "full" ? "#e3c98a" : state === "chosen" ? "rgba(255,240,200,0.35)" : state === "deep" ? "rgba(8,38,29,0.75)" : "transparent";
-  const stroke = state === "spent" ? "rgba(243,226,182,0.28)" : state === "spentDark" ? "rgba(8,38,29,0.35)" : state === "deep" ? "rgba(8,38,29,0.9)" : "#f6e7bf";
+  const fill = state === "full" ? "#e3c98a" : state === "chosen" ? "rgba(241,215,154,0.16)" : state === "deep" ? "rgba(8,38,29,0.75)" : "transparent";
+  const stroke = state === "spent" ? "rgba(243,226,182,0.22)" : state === "spentDark" ? "rgba(8,38,29,0.35)" : state === "deep" ? "rgba(8,38,29,0.9)" : state === "chosen" ? "#f1d79a" : "#f6e7bf";
   return (
     <Svg width={w} height={h} viewBox="0 0 12 16">
-      <Path d="M6 1.2C6 1.2 1.6 6.7 1.6 10.1a4.4 4.4 0 0 0 8.8 0C10.4 6.7 6 1.2 6 1.2Z" fill={fill} stroke={stroke} strokeWidth={1.1} />
+      <Path d="M6 1.2C6 1.2 1.6 6.7 1.6 10.1a4.4 4.4 0 0 0 8.8 0C10.4 6.7 6 1.2 6 1.2Z" fill={fill} stroke={stroke} strokeWidth={state === "chosen" ? 1.4 : 1.1} strokeDasharray={state === "chosen" ? "2 1.4" : undefined} />
       {state === "full" ? <Path d="M4.2 9.6a1.9 1.9 0 0 0 1.4 2.3" stroke="#fff7e0" strokeWidth={0.9} strokeLinecap="round" fill="none" /> : null}
+      {state === "chosen" ? <Circle cx={6} cy={10.2} r={1.7} fill="#f1d79a" /> : null}
     </Svg>
   );
 }
@@ -497,7 +538,8 @@ function Tray({ gt, tx, picks, total, phase, note, reduce, insetBottom, trayRef,
   const n = picks.length;
   return (
     <View style={{ position: "absolute", left: 0, right: 0, bottom: 0 }}>
-      <LinearGradient colors={["rgba(4,26,19,0)", "rgba(4,26,19,0.94)", "#041a13"]} locations={[0, 0.22, 1]} style={{ paddingTop: 22, paddingBottom: insetBottom + 12, paddingHorizontal: 16, gap: 10 }}>
+      <LinearGradient pointerEvents="none" colors={["rgba(4,26,19,0)", "rgba(4,26,19,0.9)"]} style={{ height: 22 }} />
+      <View style={{ paddingTop: 10, paddingBottom: insetBottom + 12, paddingHorizontal: 16, gap: 10, backgroundColor: "#041a13", borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: "rgba(214,180,108,0.45)" }}>
         {phase === "giving" ? (
           <Animated.Text entering={reduce ? undefined : FadeIn} accessibilityLiveRegion="polite" style={{ fontFamily: FONT.display, fontSize: 17, color: CREAM, textAlign: "center", paddingVertical: 18 }}>{gt.giving}</Animated.Text>
         ) : (
@@ -526,7 +568,7 @@ function Tray({ gt, tx, picks, total, phase, note, reduce, insetBottom, trayRef,
             <GoldButton title={gt.giveBtn} icon="heart" disabled={!n} onPress={onGive} />
           </>
         )}
-      </LinearGradient>
+      </View>
     </View>
   );
 }
@@ -534,9 +576,11 @@ function Tray({ gt, tx, picks, total, phase, note, reduce, insetBottom, trayRef,
 // ---------- the flight: a sticker rises from the tray and flies into the tree as golden light ----------
 /** a point on the flight's curve (quadratic: from the tray, bending up and sideways, into the crown) */
 const bez = (m: number, a: number, c: number, b: number) => { "worklet"; const u = 1 - m; return u * u * a + 2 * u * m * c + m * m * b; };
-function Flyer({ f }: { f: Flight }) {
+function Flyer({ f, onArrive }: { f: Flight; onArrive: () => void }) {
   const t = useSharedValue(0);
-  useEffect(() => { t.value = withDelay(f.delay, withTiming(1, { duration: FLIGHT, easing: Easing.inOut(Easing.cubic) })); }, [f.delay, t]);
+  useEffect(() => {
+    t.value = withDelay(f.delay, withTiming(1, { duration: FLIGHT, easing: Easing.inOut(Easing.cubic) }, (fin) => { if (fin) scheduleOnRN(onArrive); }));
+  }, [f.delay, t]); // eslint-disable-line react-hooks/exhaustive-deps
   const { sx, sy, tx, ty } = f;
   const cx = (sx + tx) / 2 + (sx < tx ? -60 : 60), cy = Math.min(sy, ty) + (sy - ty) * 0.25 - 40;
   const body = useAnimatedStyle(() => {

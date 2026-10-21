@@ -1,5 +1,9 @@
-// Long-form content of the Shams Method page (/shams). German and English; other languages fall back to English.
-export type StepDetail = { what: string; why: string; platform: string; time: string };
+// Long-form content of the Shams Method page (/shams). German, English and Arabic in full; the other languages
+// (src/lib/pagecontent/<locale>/shams.ts) translate the parts on the app's Shams tab and the core of the page, the rest
+// falls back to English. Quran and hadith are never typed here: only verse keys and hadith numbers, the texts are
+// loaded from the Quran API and the hadith API and shown with their source (BLUEPRINT §4).
+/** `verse`: key of a verse shown under "why" (Arabic and translation from the Quran API) */
+export type StepDetail = { what: string; why: string; platform: string; time: string; verse?: string };
 export type ShamsContent = {
   heroKicker: string; heroTitle: string; heroLead: string; heroBy: string;
   heroFacts?: { n: string; l: string }[];        // three honest key numbers under the hero
@@ -7,7 +11,8 @@ export type ShamsContent = {
   principlesLead?: string;                         // intro of "Why it works"
   heritage?: { title: string; lead: string; items: { ar: string; t: string; d: string }[] }; // roots in the hifz tradition
   finalPoints?: string[];                          // three short reassurances at the final call to action
-  name?: { title: string; body: string; verses: { ar: string; ref: string; meaning: string }[] };
+  /** verses: `key` = verse key for the Quran API (default: ref), `ref` = the label; the text comes from the API */
+  name?: { title: string; body: string; verses: { ref: string; key?: string; ar?: string; meaning?: string }[] };
   demoTitle: string; demoStages: string[];
   problemTitle: string; problems: { t: string; d: string }[];
   solutionTitle: string; solution: string;
@@ -26,9 +31,94 @@ export type ShamsContent = {
   compareTitle: string; compareLead: string; compareCols: string[]; compareRows: { label: string; cells: string[] }[]; compareNote: string;
   teachTitle: string; teachLead: string; teachPlan: { min: string; t: string; d: string }[]; teachNote: string;
   deepTitle: string; deepLead: string;
-  faq: { q: string; a: string }[];
+  faq: { id?: string; q: string; a: string }[];
   finalTitle: string; finalLead: string;
+  /** app only (the app sells Pro; the website is free): FAQ answers replaced by id, the teachers' note, the closing line */
+  faqApp?: Record<string, { q?: string; a: string }>;
+  teachNoteApp?: string;
+  whyCloseApp?: string;
+  /** where the verses and hadith on the page come from */
+  sourcesNote?: string;
 };
+
+// ---- Sources of the verses and hadith on the page (only references; the texts are loaded and shown with source) ----
+/** the verse shown in "one verse, four stages" (words from the Quran API, first-letter cues derived from them) */
+export const SHAMS_DEMO_KEY = "1:2";
+/** "Why learning the Quran matters": cite = the message key of the reference label (shams.why1s …) */
+export type ShamsWhyItem =
+  | { kind: "hadith"; collection: "bukhari" | "muslim" | "tirmidhi"; number: number; cite: string }
+  | { kind: "verse"; key: string; cite: string };
+export const SHAMS_WHY: ShamsWhyItem[] = [
+  { kind: "hadith", collection: "bukhari", number: 5027, cite: "why1s" },
+  // Sahih Muslim 804 in the usual numbering is hadith 1874 in the numbering of the hadith API (arabicnumber 804.01)
+  { kind: "hadith", collection: "muslim", number: 1874, cite: "why2s" },
+  { kind: "hadith", collection: "tirmidhi", number: 2910, cite: "why3s" },
+  { kind: "hadith", collection: "bukhari", number: 4937, cite: "why4s" },
+  { kind: "verse", key: "54:17", cite: "why5s" },
+];
+/** fawazahmed0/hadith-api (The Unlicense): the editions each collection publishes */
+export const HADITH_API = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1";
+export const HADITH_API_NAME = "fawazahmed0/hadith-api";
+const HADITH_EDITIONS: Record<string, string[]> = {
+  bukhari: ["ara", "ben", "eng", "fra", "ind", "rus", "tur", "urd"],
+  muslim: ["ara", "ben", "eng", "fra", "ind", "rus", "tur", "urd"],
+  tirmidhi: ["ara", "ben", "eng", "ind", "tur", "urd"],
+};
+const HADITH_LANG: Record<string, string> = { en: "eng", tr: "tur", ur: "urd", bn: "ben", ru: "rus", fr: "fra", id: "ind" };
+/** the Arabic edition and the translation for this language (English where the API has none; none for Arabic) */
+export function hadithEditions(collection: string, n: number, locale: string): { ar: string; tr: string | null; trLang: string | null } {
+  const eds = HADITH_EDITIONS[collection] ?? ["ara", "eng"];
+  const pre = HADITH_LANG[locale];
+  const trEd = locale === "ar" ? null : pre && eds.includes(pre) ? pre : "eng";
+  const url = (ed: string) => `${HADITH_API}/editions/${ed}-${collection}/${n}.min.json`;
+  return { ar: url("ara"), tr: trEd ? url(trEd) : null, trLang: trEd ? (Object.entries(HADITH_LANG).find(([, v]) => v === trEd)?.[0] ?? "en") : null };
+}
+/** the text of the one hadith in an API response (whitespace tidied, nothing else changed) */
+export function hadithTextOf(doc: unknown): string {
+  const h = (doc as { hadiths?: { text?: string }[] } | null)?.hadiths?.[0];
+  return String(h?.text ?? "").replace(/\s+/g, " ").trim();
+}
+/** the same file from the API's mirrors: jsDelivr refuses some large editions (e.g. ara-tirmidhi), GitHub serves all */
+export function hadithMirrors(url: string): string[] {
+  const path = url.startsWith(HADITH_API) ? url.slice(HADITH_API.length) : "";
+  if (!path) return [url];
+  return [url, `${HADITH_API}${path.replace(/\.min\.json$/, ".json")}`, `https://raw.githubusercontent.com/fawazahmed0/hadith-api/1${path}`];
+}
+/** the Prophet's words in an Arabic hadith text: the first passage in quotation marks after the chain of narrators
+ *  (as the source marks it); null when the text has none, then the whole text is shown */
+export function hadithMatn(arabic: string): string | null {
+  const s = arabic.replace(/[‎‏]/g, "").replace(/[“”„«»]/g, '"').replace(/\s+/g, " ").trim();
+  const a = s.indexOf('"');
+  if (a < 0) return null;
+  const b = s.indexOf('"', a + 1);
+  const w = (b < 0 ? s.slice(a + 1) : s.slice(a + 1, b)).trim();
+  return w.length >= 8 ? w : null;
+}
+export type ShamsHadith = { arabic: string; text: string; textLang: string | null };
+/** one hadith of "Why learning the Quran matters" from the hadith API: the Arabic words (matn) and, outside Arabic, the
+ *  whole translation in the reader's language (English where the API has none). `getJSON` is the caller's cached fetch.
+ *  null when the source cannot be reached: then the item is left out (nothing is typed in its place). */
+export async function loadShamsHadith(collection: string, n: number, locale: string, getJSON: (url: string) => Promise<unknown>): Promise<ShamsHadith | null> {
+  const first = async (url: string) => {
+    for (const u of hadithMirrors(url)) {
+      try { const t = hadithTextOf(await getJSON(u)); if (t) return t; } catch { /* next mirror */ }
+    }
+    return "";
+  };
+  const ed = hadithEditions(collection, n, locale);
+  const [ar, tr] = await Promise.all([first(ed.ar), ed.tr ? first(ed.tr) : Promise.resolve("")]);
+  if (locale === "ar" ? !ar : !tr) return null;
+  return { arabic: ar ? hadithMatn(ar) ?? ar : "", text: locale === "ar" ? "" : tr, textLang: ed.trLang };
+}
+/** the verses shown on the page besides the demo: the two of "Why Shams", step 7 and the last of the "why" list */
+export const shamsVerseKeys = (c: ShamsContent) => [
+  ...(c.name?.verses.map((v) => v.key ?? v.ref) ?? []),
+  ...c.steps.flatMap((s) => (s.verse ? [s.verse] : [])),
+  ...SHAMS_WHY.flatMap((w) => (w.kind === "verse" ? [w.key] : [])),
+];
+
+/** the languages translated in part (src/lib/pagecontent/<locale>/shams.ts): steps are merged one by one */
+export type ShamsPart = Partial<Omit<ShamsContent, "steps">> & { steps?: Partial<StepDetail>[] };
 
 const de: ShamsContent = {
   heroKicker: "Quran Masterclass · Lernmethode",
@@ -48,7 +138,7 @@ const de: ShamsContent = {
     items: [
       { ar: "تَلَقِّي", t: "Talaqqi – zuerst hören", d: "Der Koran wird von Mund zu Ohr weitergegeben: Der Schüler hört den Vers vom Lehrer, bevor er ihn selbst spricht. Darum beginnt bei uns jeder Vers mit dreimaligem Hören – und darum empfehlen wir, zusätzlich bei einem Lehrer vorzutragen." },
       { ar: "لَوْح", t: "Lauh – die Schreibtafel", d: "In vielen Koranschulen Westafrikas und des Maghreb schreiben Schüler ihren Abschnitt bis heute auf eine Holztafel, lernen ihn auswendig und waschen die Tafel dann ab. Der Text verschwindet, das Gedächtnis bleibt – derselbe Gedanke steckt in den verblassenden Hinweisen von Schritt 6." },
-      { ar: "سَبَق · سَبْقِي · مَنْزِل", t: "Sabaq, Sabqi, Manzil", d: "Viele Hifz-Schulen teilen jeden Tag in drei Teile: die neue Lektion (Sabaq), die Verse der letzten Tage (Sabqi) und die Wiederholung des älteren Bestands (Manzil). Das Gedächtnismodell der Shams-Methode plant dieselben drei Ebenen – und pasen die Abstände an Sie an." },
+      { ar: "سَبَق · سَبْقِي · مَنْزِل", t: "Sabaq, Sabqi, Manzil", d: "Viele Hifz-Schulen teilen jeden Tag in drei Teile: die neue Lektion (Sabaq), die Verse der letzten Tage (Sabqi) und die Wiederholung des älteren Bestands (Manzil). Das Gedächtnismodell der Shams-Methode plant dieselben drei Ebenen – und passt die Abstände an Sie an." },
       { ar: "عَشْرُ آيَات", t: "Zehn Verse – mit Wissen und Handeln", d: "Von Gefährten wie Ibn Mas'ud wird berichtet, dass sie vom Propheten ﷺ zehn Verse lernten und erst weitergingen, wenn sie wussten, was darin an Wissen und Handeln steckt (überliefert bei at-Tabari). Deshalb gehören Bedeutung, Tafsir und Nachdenken zu jedem Vers." },
     ],
   },
@@ -56,10 +146,7 @@ const de: ShamsContent = {
   name: {
     title: "Warum „Shams“?",
     body: "„Shams“ – شمس – ist das arabische Wort für die Sonne. Es ist zugleich der Familienname von Nami Shams, der die Methode entwickelt hat. Und es beschreibt, wie Lernen hier gemeint ist: Die Sonne geht jeden Morgen auf, nicht einmal im Jahr mit voller Kraft. Sie ist pünktlich, geduldig und beständig – und gerade deshalb lässt sie alles wachsen. So soll auch der Koran in Ihr Leben kommen: ein wenig Licht jeden Tag, zur richtigen Zeit, bis aus vielen Tagen ein ganzes Leben mit dem Wort Allahs wird. Der Koran selbst schwört bei der Sonne und nennt sie ein Licht, das Allah gemacht hat – eine Erinnerung daran, dass alles Licht von Ihm kommt, auch das Licht des Wissens.",
-    verses: [
-      { ar: "وَالشَّمْسِ وَضُحَاهَا", ref: "91:1", meaning: "Bei der Sonne und ihrer Morgenhelle." },
-      { ar: "هُوَ الَّذِي جَعَلَ الشَّمْسَ ضِيَاءً وَالْقَمَرَ نُورًا", ref: "10:5", meaning: "Er ist es, der die Sonne zu einer Leuchte und den Mond zu einem Licht gemacht hat." },
-    ],
+    verses: [{ ref: "91:1" }, { ref: "10:5" }],
   },
   demoTitle: "Ein Vers, vier Stufen",
   demoStages: ["Ganzer Vers", "Rückwärts aufbauen", "Nur Anfangsbuchstaben", "Aus dem Gedächtnis"],
@@ -78,13 +165,13 @@ const de: ShamsContent = {
     { what: "Sie hören den Vers dreimal hintereinander und folgen dabei dem arabischen Text. Noch keine Übersetzung, kein Nachsprechen – nur hören und schauen.", why: "Wer eine Sprache lernt, hört sie zuerst. Wiederholtes Hören baut ein inneres Klangbild auf: Rhythmus, Pausen und Melodie sind schon vertraut, bevor Sie selbst sprechen. Das senkt die Fehler beim ersten Rezitieren deutlich.", platform: "Die Wiedergabe wiederholt den Vers automatisch, das gerade rezitierte Wort wird farbig markiert. Kinder und Senioren hören ihn fünf- bzw. viermal, in ruhigerem Tempo.", time: "ca. 45 Sekunden" },
     { what: "Der Vers wird von hinten aufgebaut: erst nur das letzte Wort, dann die letzten zwei, dann die letzten drei – bis zum ganzen Vers. Sie sprechen jedes Mal mit.", why: "Diese Technik heißt Backchaining und wird im Sprachunterricht für lange Sätze genutzt. Weil jede Wiederholung mit dem Teil endet, den Sie schon am besten können, bleibt die Melodie natürlich und Sie stocken nicht am Ende. Der Vers wächst als Einheit zusammen statt als Kette einzelner Wörter.", platform: "Das geht nur, weil die Plattform weiß, wann genau jedes Wort rezitiert wird. Sie spielt den Vers ab jedem beliebigen Wort bis zum Ende und graut die noch nicht geübten Wörter aus.", time: "ca. 60 Sekunden" },
     { what: "Sie gehen den Vers Wort für Wort durch: arabisches Wort, Lautschrift, Bedeutung.", why: "Das Gedächtnis speichert kleine, sinnvolle Einheiten leichter als lange Ketten (Chunking). Wenn jedes Wort eine Bedeutung hat, wird aus Lauten Sprache.", platform: "Bedeutung und Lautschrift erscheinen direkt unter jedem Wort. Häufige Wörter können Sie später im Vokabeltrainer festigen.", time: "ca. 30 Sekunden" },
-    { what: "Sie lesen die Übersetzung des ganzen Verses und nutzt die Eselsbrücken: das Ankerwort, den Reim am Versende, die Brücke zum nächsten Vers – und schreiben bei Bedarf Ihre eigene Merkhilfe.", why: "Bedeutung ist der stärkste Gedächtnisanker. Dazu kommen Hinweise, die im Text selbst liegen: Viele Verse einer Sure enden auf denselben Laut, und die meisten Fehler passieren beim Übergang von einem Vers zum nächsten.", platform: "Ankerwort, Reim und Übergang werden für jeden Vers automatisch ermittelt. Ihre eigenen Eselsbrücken werden in Ihrem Konto gespeichert.", time: "ca. 40 Sekunden" },
+    { what: "Sie lesen die Übersetzung des ganzen Verses und nutzen die Eselsbrücken: das Ankerwort, den Reim am Versende, die Brücke zum nächsten Vers – und schreiben bei Bedarf Ihre eigene Merkhilfe.", why: "Bedeutung ist der stärkste Gedächtnisanker. Dazu kommen Hinweise, die im Text selbst liegen: Viele Verse einer Sure enden auf denselben Laut, und die meisten Fehler passieren beim Übergang von einem Vers zum nächsten.", platform: "Ankerwort, Reim und Übergang werden für jeden Vers automatisch ermittelt. Ihre eigenen Eselsbrücken werden in Ihrem Konto gespeichert.", time: "ca. 40 Sekunden" },
     { what: "Sie lesen die klassische Erklärung: Zusammenhang, Anlass der Offenbarung und was die Gelehrten dazu lehren.", why: "Wer weiß, warum ein Vers offenbart wurde und worauf er antwortet, versteht ihn tiefer – und erinnert sich an ihn wie an eine Geschichte, nicht wie an eine Wortliste.", platform: "Tafsir aus anerkannten Werken, immer mit Quellenangabe. Die Shams-Methode erfindet keine eigene Auslegung.", time: "ca. 45 Sekunden" },
-    { what: "Die Wörter verschwinden in Stufen: Zuerst sehen Sie nur noch den Anfangsbuchstaben jedes Wortes, dann gar nichts mehr. Sie rezitieren aus dem Gedächtnis, decken auf und bewerten Sie ehrlich.", why: "Aktives Abrufen festigt Wissen weit stärker als erneutes Lesen. Die Hinweise werden bewusst schrittweise weggenommen – gerade genug Hilfe, damit Sie selbst darauf kommen.", platform: "Ihre Bewertung fließt direkt in Ihr persönliches Gedächtnismodell: Der Vers kommt zum richtigen Zeitpunkt zur Wiederholung zurück.", time: "ca. 40 Sekunden" },
-    { what: "Sie schreiben ein bis zwei Sätze: Was sagt mir dieser Vers über Allah? Über mich? Was nehme ich mir heute vor?", why: "Allah sagt: „Ein gesegnetes Buch, das Wir zu dir hinabgesandt haben, damit sie über seine Verse nachdenken“ (38:29). Nachdenken (Tadabbur) verbindet den Vers mit Ihrem Leben – und was persönlich bedeutsam ist, bleibt am längsten.", platform: "Ihre Notizen werden im Konto gespeichert und sind bei jeder Wiederholung wieder sichtbar.", time: "ca. 30 Sekunden" },
+    { what: "Die Wörter verschwinden in Stufen: Zuerst sehen Sie nur noch den Anfangsbuchstaben jedes Wortes, dann gar nichts mehr. Sie rezitieren aus dem Gedächtnis, decken auf und bewerten sich ehrlich.", why: "Aktives Abrufen festigt Wissen weit stärker als erneutes Lesen. Die Hinweise werden bewusst schrittweise weggenommen – gerade genug Hilfe, damit Sie selbst darauf kommen.", platform: "Ihre Bewertung fließt direkt in Ihr persönliches Gedächtnismodell: Der Vers kommt zum richtigen Zeitpunkt zur Wiederholung zurück.", time: "ca. 40 Sekunden" },
+    { what: "Sie schreiben ein bis zwei Sätze: Was sagt mir dieser Vers über Allah? Über mich? Was nehme ich mir heute vor?", why: "Der Koran selbst ruft dazu auf, über seine Verse nachzudenken (38:29, Wortlaut unten). Nachdenken (Tadabbur) verbindet den Vers mit Ihrem Leben – und was persönlich bedeutsam ist, bleibt am längsten.", platform: "Ihre Notizen werden im Konto gespeichert und sind bei jeder Wiederholung wieder sichtbar.", time: "ca. 30 Sekunden", verse: "38:29" },
   ],
   curveTitle: "Warum Wiederholung zum richtigen Zeitpunkt alles entscheidet",
-  curveLead: "Ohne Wiederholung sinkt das Erinnern schnell. Jede Wiederholung zum richtigen Zeitpunkt flacht die Kurve ab – der Abstand bis zur nächsten Wiederholung wird größer. Die Shams-Methode wiederholt jeden Vers nach etwa 1, 3, 7, 14, 30 und 90 Tagen – und pasen diese Abstände an Sie an.",
+  curveLead: "Ohne Wiederholung sinkt das Erinnern schnell. Jede Wiederholung zum richtigen Zeitpunkt flacht die Kurve ab – der Abstand bis zur nächsten Wiederholung wird größer. Die Shams-Methode wiederholt jeden Vers nach etwa 1, 3, 7, 14, 30 und 90 Tagen – und passt diese Abstände an Sie an.",
   curveNote: "Schematische Darstellung des Prinzips, keine Messdaten.",
   curveAxis: { x: "Tage", y: "Erinnern", without: "ohne Wiederholung", with: "mit Wiederholung" },
   spacing: {
@@ -92,7 +179,7 @@ const de: ShamsContent = {
     lead: "Die Kurve oben ist kein Trick, sondern eine der am besten belegten Beobachtungen der Gedächtnisforschung: Was wir lernen, verblasst nach einer vorhersagbaren Kurve – und jede Wiederholung im richtigen Moment macht die nächste Kurve flacher. Daraus folgen vier Dinge, die jeder Koranschüler kennen sollte.",
     points: [
       { t: "Am Stück wiederholen fühlt sich gut an – und hält am kürzesten", d: "Wer einen Vers an einem Abend fünfzigmal hintereinander rezitiert, kann ihn in dieser Stunde perfekt. Am nächsten Morgen ist ein großer Teil weg. Der Grund: Wiederholungen direkt hintereinander treffen auf eine Erinnerung, die noch ganz frisch ist. Das Gehirn muss sich nicht anstrengen, also speichert es nichts Neues. Forscher nennen das massiertes Lernen. Es erzeugt ein Gefühl von Sicherheit, aber wenig dauerhafte Spur." },
-      { t: "Die richtige Mühe: kurz bevor es weg ist", d: "Die stärkste Erinnerung entsteht, wenn Sie einen Vers abrufen müssen, der schon fast verblasen ist – und es gerade noch schaffen. Diese kleine Anstrengung ist das Signal an Ihr Gehirn: „Das ist wichtig, bewahr es länger.“ Deshalb kommt bei uns jeder Vers nach etwa einem Tag zurück, dann nach drei, sieben, vierzehn, dreißig und neunzig Tagen. Jedes Mal, wenn Sie ihn schaffen, wird der Abstand länger; wenn Sie ihn verfehlen, wird er kürzer." },
+      { t: "Die richtige Mühe: kurz bevor es weg ist", d: "Die stärkste Erinnerung entsteht, wenn Sie einen Vers abrufen müssen, der schon fast verblasst ist – und es gerade noch schaffen. Diese kleine Anstrengung ist das Signal an Ihr Gehirn: „Das ist wichtig, bewahr es länger.“ Deshalb kommt bei uns jeder Vers nach etwa einem Tag zurück, dann nach drei, sieben, vierzehn, dreißig und neunzig Tagen. Jedes Mal, wenn Sie ihn schaffen, wird der Abstand länger; wenn Sie ihn verfehlen, wird er kürzer." },
       { t: "Wo Dauer-Wiederholung trotzdem hingehört", d: "Nonstop-Wiederholung ist nicht nutzlos – sie hat nur eine andere Aufgabe: das erste Einprägen. In den ersten Minuten mit einem neuen Vers brauchen Sie Dichte: dreimal hören, rückwärts aufbauen, mit Hinweisen rezitieren. Genau das tut die Shams-Methode in den Schritten 1 bis 6. Und die Hifz-Schulen wissen seit Jahrhunderten, dass auf dieses dichte Einprägen eine tägliche Durchsicht des Alten folgen muss – Sabaq, Sabqi, Manzil: das Neue von heute, das Neue der letzten Tage, und ein Teil des Alten. Die Methode verbindet beides: dicht am Anfang, dann gestreckt." },
       { t: "Verstehen, was gemeint ist, ist der stärkste Kleber", d: "Ein Vers, den Sie nur als Klangkette kennen, hat nur einen Weg in Ihr Gedächtnis. Ein Vers, dessen Wörter Sie kennen, dessen Zusammenhang Sie gelesen haben und über den Sie einen Satz nachgedacht haben, hat vier Wege – und wenn einer abreißt, tragen die anderen. Deshalb stehen Wort-für-Wort, Tafsir und Nachdenken mitten in der Methode und nicht als Zugabe am Ende. Wer versteht, vergisst langsamer, und wer vergisst, findet den Vers über die Bedeutung wieder." },
     ],
@@ -107,7 +194,7 @@ const de: ShamsContent = {
       { min: "3 Minuten", d: "Denselben Abschnitt ohne Hilfe, Fehler kurz markieren, nicht stoppen." },
       { min: "2 Minuten", d: "Noch einmal, im Tempo eines Rezitators. Jetzt trägt die Melodie den Text." },
     ],
-    fluencyNote: "Die kürzer werdende Zeit zwingt Sie, nicht mehr Wort für Wort zu denken, sondern in Sinnabschnitten – so, wie Rezitatoren es tun. Benutze dafür die Wiedergabe-Geschwindigkeit im Player: 0,75× beim ersten, 1× beim zweiten, 1,25× beim dritten Durchgang.",
+    fluencyNote: "Die kürzer werdende Zeit zwingt Sie, nicht mehr Wort für Wort zu denken, sondern in Sinnabschnitten – so, wie Rezitatoren es tun. Benutzen Sie dafür die Wiedergabe-Geschwindigkeit im Player: 0,75× beim ersten, 1× beim zweiten, 1,25× beim dritten Durchgang.",
     meaningTitle: "Was „verstehen“ hier heißt",
     meaning: "Nicht Gelehrter werden – sondern beim Rezitieren wissen, wovon der Vers spricht. Drei Fragen reichen: Wer spricht hier zu wem? Was wird versprochen, befohlen oder erzählt? Was ändert das heute an meinem Tag? Wenn Sie diese drei Fragen in einem Satz beantworten können, haben Sie den Vers verstanden – und Sie werden ihn nicht mehr mit einem anderen verwechseln, der ähnlich klingt.",
     rule: "Merksatz: Dicht lernen, gestreckt wiederholen, mit Bedeutung verankern.",
@@ -115,7 +202,7 @@ const de: ShamsContent = {
   adaptTitle: "Eine Methode, die Sie kennenlernt",
   adapt: [
     { t: "Persönlicher Gedächtnisfaktor", d: "Jeder Vers bekommt seinen eigenen Faktor. Fällt er Ihnen schwer, kommt er früher zurück; fällt er Ihnen leicht, später. Keine zwei Lernenden haben denselben Plan." },
-    { t: "Fehler zählen", d: "Jeder Fehler in einem Academy-Test holt den Vers am nächsten Tag zurück. Ihre schwächsten Verse werdenen Sie sich zuerst gezeigt." },
+    { t: "Fehler zählen", d: "Jeder Fehler in einem Academy-Test holt den Vers am nächsten Tag zurück. Ihre schwächsten Verse werden Ihnen zuerst gezeigt." },
     { t: "Angepasst an Ihr Alter", d: "Kinder und Senioren bekommen ruhigeres Tempo, mehr Wiederholungen und mehr Zeit in Tests. Der empfohlene Plan richtet sich nach Ihrem Alter." },
     { t: "Wachsende Tagesmenge", d: "Ihr 365-Tage-Plan beginnt klein und legt jede Woche etwas drauf – vom sanften Einstieg bis zum Hafiz-Track mit dem ganzen Koran in etwa einem Jahr." },
   ],
@@ -144,17 +231,24 @@ const de: ShamsContent = {
   deepTitle: "Die Methode ausführlich erklärt",
   deepLead: "Der vollständige Hintergrund: woher jeder Schritt kommt, wie er wirkt und wie Sie ihn in Ihren Alltag bringen.",
   faq: [
-    { q: "Was ist die Shams-Methode?", a: "Eine Lernmethode in sieben Schritten pro Vers, entwickelt von Nami Shams: hören, rückwärts aufbauen, Wort für Wort, Bedeutung und Eselsbrücken, Tafsir, verblassende Hinweise und Nachdenken – mit einem Gedächtnismodell, das die Wiederholungen plant. Sie ist kostenlos bei Quran Masterclass." },
+    { id: "what", q: "Was ist die Shams-Methode?", a: "Eine Lernmethode in sieben Schritten pro Vers, entwickelt von Nami Shams: hören, rückwärts aufbauen, Wort für Wort, Bedeutung und Eselsbrücken, Tafsir, verblassende Hinweise und Nachdenken – mit einem Gedächtnismodell, das die Wiederholungen plant. Sie ist kostenlos bei Quran Masterclass." },
     { q: "Was ist daran neu?", a: "Die einzelnen Bausteine stammen aus der Sprachlern- und Gedächtnisforschung und der Hifz-Tradition. Neu ist ihre feste Reihenfolge pro Vers und die Umsetzung mit exakten Wortzeiten: der Rückwärts-Aufbau ab jedem Wort und das stufenweise Ausblenden bis zu den Anfangsbuchstaben – kombiniert mit einem persönlichen Wiederholungsplan." },
     { q: "Wie viele Verse sollte ich pro Tag lernen?", a: "Einsteiger ein bis drei neue Verse am Tag plus die fällige Wiederholung, mit Übung drei bis fünf. Im 365-Tage-Plan wächst die Menge Woche für Woche. Die richtige Menge ist die, die Sie jeden Tag durchhalten." },
-    { q: "Muss ich Arabisch können?", a: "Nein. Lautschrift und Wort-für-Wort-Bedeutung helfenen Sie sich ab dem ersten Vers. Mit der Zeit erkennen Sie Buchstaben und Wörter von selbst – der Vokabeltrainer beschleunigt das." },
+    { q: "Muss ich Arabisch können?", a: "Nein. Lautschrift und Wort-für-Wort-Bedeutung helfen Ihnen ab dem ersten Vers. Mit der Zeit erkennen Sie Buchstaben und Wörter von selbst – der Vokabeltrainer beschleunigt das." },
     { q: "Ist die Shams-Methode für Kinder geeignet?", a: "Ja. Für Kinder wird das Tempo ruhiger, der Vers öfter gehört und in Tests gibt es mehr Zeit. Der Kinder-Modus zeigt große Schrift und Belohnungen. Am besten lernen Kinder gemeinsam mit einem Elternteil." },
     { q: "Ersetzt die Methode einen Lehrer?", a: "Nein. Für die richtige Aussprache ist das Vortragen bei einem qualifizierten Lehrer sehr empfehlenswert. Die Shams-Methode sorgt dafür, dass Sie täglich üben und gut vorbereitet sind." },
     { q: "Ist die Shams-Methode ein neuer Tafsir?", a: "Nein. Sie ist eine Lernmethode. Alle Erklärungen stammen aus klassischen Tafsir-Werken und werden mit Quelle angezeigt. Bei religiösen Fragen wenden Sie sich an einen qualifizierten Gelehrten." },
-    { q: "Was kostet die Shams-Methode?", a: "Nichts. Quran Masterclass ist kostenlos. Sie brauchen nur ein Konto, damit Ihr Fortschritt auf allen Geräten gespeichert wird." },
+    { id: "cost", q: "Was kostet die Shams-Methode?", a: "Nichts. Quran Masterclass ist kostenlos. Sie brauchen nur ein Konto, damit Ihr Fortschritt auf allen Geräten gespeichert wird." },
   ],
   finalTitle: "Ihr erster Vers dauert vier Minuten",
   finalLead: "Beginnen Sie mit Al-Fatiha. Die Plattform führt Sie durch jeden Schritt.",
+  faqApp: {
+    what: { a: "Eine Lernmethode in sieben Schritten pro Vers, entwickelt von Nami Shams: hören, rückwärts aufbauen, Wort für Wort, Bedeutung und Eselsbrücken, Tafsir, verblassende Hinweise und Nachdenken – mit einem Gedächtnismodell, das die Wiederholungen plant." },
+    cost: { a: "Al-Fātiḥa und Juz ʿAmma – 38 Suren – lernen Sie in der App kostenlos mit der ganzen Shams-Methode. Jede weitere Sure gehört zu Quran Masterclass Pro. Ein Konto brauchen Sie nur, damit Ihr Fortschritt auf allen Geräten gespeichert wird." },
+  },
+  teachNoteApp: "Schreiben Sie uns an info@quranmasterclass.com, wenn Sie die Methode in Ihrer Schule, Moschee oder Gruppe einsetzen möchten.",
+  whyCloseApp: "Deshalb gibt es die Shams-Methode: damit niemand das wichtigste Lernen seines Lebens aufschieben muss.",
+  sourcesNote: "Koranverse auf Arabisch mit Übersetzung aus der Quran.com-API. Hadith-Texte aus der fawazahmed0/hadith-api, auf Arabisch und in Ihrer Sprache, wo die Quelle sie anbietet, sonst auf Englisch.",
 };
 
 const en: ShamsContent = {
@@ -183,10 +277,7 @@ const en: ShamsContent = {
   name: {
     title: "Why “Shams”?",
     body: "“Shams” – شمس – is the Arabic word for the sun. It is also the family name of Nami Shams, who developed the method. And it describes how learning is meant here: the sun rises every morning, not once a year with full force. It is punctual, patient and steady – and that is exactly why it makes everything grow. This is how the Quran should enter your life: a little light every day, at the right time, until many days become a whole life with the word of Allah. The Quran itself swears by the sun and calls it a light that Allah has made – a reminder that all light comes from Him, the light of knowledge too.",
-    verses: [
-      { ar: "وَالشَّمْسِ وَضُحَاهَا", ref: "91:1", meaning: "By the sun and its morning brightness." },
-      { ar: "هُوَ الَّذِي جَعَلَ الشَّمْسَ ضِيَاءً وَالْقَمَرَ نُورًا", ref: "10:5", meaning: "It is He who made the sun a shining radiance and the moon a light." },
-    ],
+    verses: [{ ref: "91:1" }, { ref: "10:5" }],
   },
   demoTitle: "One verse, four stages",
   demoStages: ["Whole verse", "Build up backwards", "First letters only", "From memory"],
@@ -208,7 +299,7 @@ const en: ShamsContent = {
     { what: "You read the translation of the whole verse and use the memory hooks: the anchor word, the rhyme at the end of the verse, the bridge to the next verse – and write your own mnemonic if you like.", why: "Meaning is the strongest memory anchor. On top come cues hidden in the text itself: many verses of a surah end on the same sound, and most mistakes happen at the transition from one verse to the next.", platform: "Anchor word, rhyme and transition are found automatically for every verse. Your own mnemonics are saved in your account.", time: "about 40 seconds" },
     { what: "You read the classical explanation: context, occasion of revelation and what the scholars teach about it.", why: "Whoever knows why a verse was revealed and what it answers understands it more deeply – and remembers it like a story, not like a list of words.", platform: "Tafsir from recognised works, always with its source. The Shams Method does not create its own interpretation.", time: "about 45 seconds" },
     { what: "The words disappear in stages: first you only see the first letter of each word, then nothing at all. You recite from memory, reveal and rate yourself honestly.", why: "Active recall strengthens knowledge far more than reading again. The cues are taken away step by step on purpose – just enough help for you to find the word yourself.", platform: "Your rating goes straight into your personal memory model: the verse comes back for review at the right time.", time: "about 40 seconds" },
-    { what: "You write one or two sentences: What does this verse tell me about Allah? About me? What will I take with me today?", why: "Allah says: “A blessed Book which We have revealed to you, so that they may reflect upon its verses” (38:29). Reflection (tadabbur) connects the verse to your life – and what is personally meaningful stays the longest.", platform: "Your notes are saved in your account and shown again at every review.", time: "about 30 seconds" },
+    { what: "You write one or two sentences: What does this verse tell me about Allah? About me? What will I take with me today?", why: "The Quran itself calls for reflection on its verses (38:29, wording below). Reflection (tadabbur) connects the verse to your life – and what is personally meaningful stays the longest.", platform: "Your notes are saved in your account and shown again at every review.", time: "about 30 seconds", verse: "38:29" },
   ],
   curveTitle: "Why reviewing at the right time decides everything",
   curveLead: "Without review, remembering drops quickly. Every review at the right moment flattens the curve – and the gap until the next review grows. The Shams Method reviews every verse after about 1, 3, 7, 14, 30 and 90 days – and adapts these gaps to you.",
@@ -271,18 +362,52 @@ const en: ShamsContent = {
   deepTitle: "The method explained in depth",
   deepLead: "The full background: where each step comes from, how it works and how to bring it into your daily life.",
   faq: [
-    { q: "What is the Shams Method?", a: "A learning method with seven steps per verse, developed by Nami Shams: listen, build up backwards, word by word, meaning and memory hooks, tafsir, fading cues and reflection – with a memory model that plans the reviews. It is free at Quran Masterclass." },
+    { id: "what", q: "What is the Shams Method?", a: "A learning method with seven steps per verse, developed by Nami Shams: listen, build up backwards, word by word, meaning and memory hooks, tafsir, fading cues and reflection – with a memory model that plans the reviews. It is free at Quran Masterclass." },
     { q: "What is new about it?", a: "The individual building blocks come from language-learning and memory research and from the hifz tradition. New is their fixed order per verse and the implementation with exact word timings: building up backwards from any word and fading the text in stages down to the first letters – combined with a personal review plan." },
     { q: "How many verses should I learn per day?", a: "Beginners one to three new verses a day plus the review that is due, with practice three to five. In the 365-day plan the amount grows week by week. The right amount is the one you can keep up every day." },
     { q: "Do I need to know Arabic?", a: "No. Transliteration and word-by-word meaning help you from the first verse. Over time you recognise letters and words on your own – the vocabulary trainer speeds this up." },
     { q: "Is the Shams Method suitable for children?", a: "Yes. For children the pace is calmer, the verse is heard more often and tests give more time. Kids mode shows large text and rewards. Children learn best together with a parent." },
     { q: "Does the method replace a teacher?", a: "No. For correct pronunciation, reciting to a qualified teacher is strongly recommended. The Shams Method makes sure you practise every day and arrive well prepared." },
     { q: "Is the Shams Method a new tafsir?", a: "No. It is a learning method. All explanations come from classical tafsir works and are shown with their source. For religious questions, please ask a qualified scholar." },
-    { q: "What does the Shams Method cost?", a: "Nothing. Quran Masterclass is free. You only need an account so that your progress is saved on all your devices." },
+    { id: "cost", q: "What does the Shams Method cost?", a: "Nothing. Quran Masterclass is free. You only need an account so that your progress is saved on all your devices." },
   ],
   finalTitle: "Your first verse takes four minutes",
   finalLead: "Start with Al-Fatihah. The platform guides you through every step.",
+  faqApp: {
+    what: { a: "A learning method with seven steps per verse, developed by Nami Shams: listen, build up backwards, word by word, meaning and memory hooks, tafsir, fading cues and reflection – with a memory model that plans the reviews." },
+    cost: { a: "In the app you learn al-Fātiḥa and Juz ʿAmma – 38 surahs – with the complete Shams Method for free. Every further surah is part of Quran Masterclass Pro. You only need an account so that your progress is saved on all your devices." },
+  },
+  teachNoteApp: "Write to info@quranmasterclass.com if you would like to use the method in your school, mosque or group.",
+  whyCloseApp: "That is why the Shams Method exists: so that nobody has to postpone the most important learning of their life.",
+  sourcesNote: "Quran verses in Arabic with translation from the Quran.com API. Hadith texts from fawazahmed0/hadith-api, in Arabic and in your language where the source offers it, otherwise in English.",
 };
 
 import ar from "./pagecontent/ar/shams";
-export const shamsContent = (locale: string): ShamsContent => (locale === "de" ? de : locale === "ar" ? ar : en);
+import frPart from "./pagecontent/fr/shams";
+import trPart from "./pagecontent/tr/shams";
+import urPart from "./pagecontent/ur/shams";
+import faPart from "./pagecontent/fa/shams";
+import psPart from "./pagecontent/ps/shams";
+import esPart from "./pagecontent/es/shams";
+import idPart from "./pagecontent/id/shams";
+import msPart from "./pagecontent/ms/shams";
+import bnPart from "./pagecontent/bn/shams";
+import ruPart from "./pagecontent/ru/shams";
+import zhPart from "./pagecontent/zh/shams";
+const PARTS: Record<string, ShamsPart> = { fr: frPart, tr: trPart, ur: urPart, fa: faPart, ps: psPart, es: esPart, id: idPart, ms: msPart, bn: bnPart, ru: ruPart, zh: zhPart };
+const merged = new Map<string, ShamsContent>();
+/** the content in this language: de, en and ar in full; the other languages translate the parts on the app's Shams tab
+ *  and the core of the page over the English text (merged once per language) */
+export const shamsContent = (locale: string): ShamsContent => {
+  if (locale === "de") return de;
+  if (locale === "ar") return ar;
+  const part = PARTS[locale];
+  if (!part) return en;
+  let c = merged.get(locale);
+  if (!c) {
+    const { steps, ...rest } = part;
+    c = { ...en, ...rest, steps: en.steps.map((s, i) => ({ ...s, ...(steps?.[i] ?? {}) })) };
+    merged.set(locale, c);
+  }
+  return c;
+};

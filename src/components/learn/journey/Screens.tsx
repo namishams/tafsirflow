@@ -7,7 +7,7 @@
 // Stored progress is read only in the browser (after hydration); the server renders the hero and the frame.
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
-import { useLang, formatNumber } from "@/lib/learn/i18n";
+import { useLang, formatNumber, formatYear } from "@/lib/learn/i18n";
 import { readJSON, useStored } from "@/lib/learn/store";
 import { readTradition } from "@/lib/learn/tradition";
 import { TOTAL_VERSES } from "@/lib/quranIndex";
@@ -149,7 +149,7 @@ export function JourneyHome() {
                     <h3 className="mb-2 text-[14px] font-semibold">{jt(`row_${row.fam}` as JKey)}</h3>
                     <ul className="flex flex-wrap gap-3">
                       {row.items.map(({ def, have, prog }) => {
-                        const label = jt(def.key as JKey, { n: typeof def.n === "number" ? nf(def.n) : "" });
+                        const label = jt(def.key as JKey, { n: typeof def.n === "number" ? (def.fam === "rihla-hijri" ? formatYear(def.n, lang) : nf(def.n)) : "" });
                         const fresh = j.fresh.includes(def.id);
                         return (
                           <li key={def.id} className="flex w-[88px] flex-col items-center gap-1 text-center" aria-label={`${label}${have ? "" : `, ${jt("locked")}: ${nf(prog?.[0] ?? 0)} / ${nf(prog?.[1] ?? 0)}`}`}>
@@ -553,7 +553,7 @@ export function JourneyYear() {
 
   // the app's share card is replaced by the Web Share API (text and link), or a copy to the clipboard
   async function share() {
-    const text = jt("y_shareText", { y: nf(y), d: nf(days) });
+    const text = jt("y_shareText", { y: formatYear(y, lang), d: nf(days) });
     const url = typeof window !== "undefined" ? window.location.href : "";
     try {
       if (navigator.share) { await navigator.share({ title: jt("yearTitle"), text, url }); return; }
@@ -567,7 +567,7 @@ export function JourneyYear() {
       <LearnHero back={{ href: "/journey", label: jt("title") }} kicker={jt("eyebrow")} title={jt("yearTitle")} lead={jt("yearLead")} word={WORD} uid="journey-year">
         {ready ? (
           <div className="flex flex-wrap gap-2" role="group" aria-label={jt("yearTitle")}>
-            {years.map((x) => <Chip key={x} onStage selected={x === y} onClick={() => setY(x)}>{jt("hijriYear", { y: nf(x) })}</Chip>)}
+            {years.map((x) => <Chip key={x} onStage selected={x === y} onClick={() => setY(x)}>{jt("hijriYear", { y: formatYear(x, lang) })}</Chip>)}
           </div>
         ) : null}
       </LearnHero>
@@ -586,7 +586,7 @@ export function JourneyYear() {
               <div className="flex items-center gap-4">
                 <Seal def={yd} size={72} locked={!j.stickers[yd.id]} pct={days / YEAR_DAYS} />
                 <div className="grid min-w-0 flex-1 gap-1">
-                  <p className="text-[15.5px] font-bold">{jt("s_hijri", { n: nf(y) })}</p>
+                  <p className="text-[15.5px] font-bold">{jt("s_hijri", { n: formatYear(y, lang) })}</p>
                   <p className="text-[13.5px] leading-relaxed text-muted">{j.stickers[yd.id] ? jt("earned") : jt("y_sealHow", { n: nf(Math.min(days, YEAR_DAYS)), m: nf(YEAR_DAYS) })}</p>
                 </div>
               </div>

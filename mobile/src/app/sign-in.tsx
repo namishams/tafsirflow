@@ -10,10 +10,13 @@ import { useAuth } from "@/lib/auth";
 import { ApiError } from "@/lib/api";
 import { useWebT } from "@/i18n/web";
 import { request } from "@/features/extra/http";
+import { CodeFlow } from "@/features/auth/CodeFlow";
+import { useAuthT } from "@/features/auth/text";
 
-// Sign in with the website account (same e-mail and password as on quranmasterclass.com). "Forgot password?" asks
-// for the reset link right here (POST /api/auth/forgot, like the website's form; app requests need no captcha); the
-// link in the e-mail opens /reset-password in the app.
+// Sign in with the website account. First view (21.10.2026): a 6-digit code by e-mail (features/auth/CodeFlow, also
+// creates new accounts) or a passkey; "Sign in with password" keeps the classic form (existing accounts and the App
+// Review demo account). "Forgot password?" asks for the reset link right here (POST /api/auth/forgot, like the
+// website's form; app requests need no captcha); the link in the e-mail opens /reset-password in the app.
 export default function SignIn() {
   const t = useT();
   const theme = useTheme();
@@ -26,6 +29,8 @@ export default function SignIn() {
   const wa = useWebT("account");
   const [forgot, setForgot] = useState(false);
   const [sent, setSent] = useState(false);
+  const [byCode, setByCode] = useState(true);
+  const tx = useAuthT();
 
   const sendReset = async () => {
     setBusy(true); setError("");
@@ -51,6 +56,7 @@ export default function SignIn() {
     <KeyboardAvoidingView style={{ flex: 1, backgroundColor: theme.bg }} behavior={Platform.OS === "ios" ? "padding" : undefined}>
       <Stack.Screen options={{ headerShown: false }} />
       <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingBottom: 40 }}>
+        {byCode ? <CodeFlow onDone={goBack} secondary={{ title: tx("withPassword"), onPress: () => { setByCode(false); setError(""); } }} /> : <>
         <PageHero back eyebrow="Quran Masterclass" title={forgot ? wa("forgotTitle") : t("auth.signInTitle")} lead={forgot ? wa("forgotHint") : t("account.notSignedIn")} />
         <View style={{ padding: 16 }}>
           {forgot ? (
@@ -76,6 +82,7 @@ export default function SignIn() {
               <TextLink title={t("auth.forgot")} onPress={() => { setForgot(true); setSent(false); setError(""); }} style={{ alignSelf: "flex-end", fontSize: 14, paddingVertical: 0 }} />
               <FormError text={error} />
               <GoldButton title={t("auth.signInTitle")} busy={busy} disabled={!email.includes("@") || !password} onPress={() => void submit()} />
+              <TextLink title={tx("withCode")} onPress={() => { setByCode(true); setError(""); }} style={{ alignSelf: "center", fontSize: 14 }} />
             </View>
           </GoldCard>
           )}
@@ -85,6 +92,7 @@ export default function SignIn() {
             <TextLink title={t("account.createAccount")} onPress={() => router.replace("/register")} />
           </View>
         </View>
+        </>}
       </ScrollView>
     </KeyboardAvoidingView>
   );

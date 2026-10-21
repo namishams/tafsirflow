@@ -14,6 +14,7 @@ import { TL, type Inbox, type MyTeacher, type StudentRow } from "./api";
 import { SuggestionsList } from "./Inbox";
 import { setActive, syncTeacher } from "./sync";
 import { useTT } from "./text";
+import { intlLocale, useLang } from "@/i18n";
 
 // /teacher – live teacher–student link through the Quran Talents network. Student: invite an accepted connection,
 // consent, update, stop (deletes the server copy). Teacher: invitations and the dashboard of all students.
@@ -41,7 +42,7 @@ export function TeacherLiveScreen() {
           {!user ? (
             <Card>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink, textAlign: "left" }}>{tt("loginNeeded")}</Text>
-              <GoldButton title="OK" onPress={() => router.push("/sign-in" as Href)} />
+              <GoldButton title={tt("signIn")} onPress={() => router.push("/sign-in" as Href)} />
             </Card>
           ) : (
             <>
@@ -91,7 +92,9 @@ function StudentSide() {
   const run = async (f: () => Promise<unknown>) => { setBusy(true); setMsg(""); try { await f(); await load(); } catch (e) { setMsg(err(e)); } setBusy(false); };
   const invitedNames = new Set((shares?.teachers ?? []).map((x) => x.teacher?.username));
   const choices = conn.filter((c) => !invitedNames.has(c.username));
-  const dt = (s: string) => new Date(s).toLocaleString();
+  const { lang } = useLang();
+  // dates in the chosen app language, not the device's
+  const dt = (s: string) => new Date(s).toLocaleString(intlLocale(lang), { dateStyle: "medium", timeStyle: "short" });
   const revoke = (x: MyTeacher) => Alert.alert(tt("revoke"), tt("revokeAsk"), [
     { text: tt("later"), style: "cancel" },
     { text: tt("revoke"), style: "destructive", onPress: () => void run(() => TL.end(x.id)) },

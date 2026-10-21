@@ -16,7 +16,7 @@ import { ShareSheet, CARD_SIZE, BrandFoot, type ShareFormat } from "@/features/f
 import { activeTree, readGarden, treeStage } from "@/features/garden/garden";
 import { readCP } from "@/features/courses/progress";
 import { readProgress as readLang } from "@/features/arabic-lang/progress";
-import { formatNumber } from "@/features/progress/format";
+import { formatNumber, formatYear } from "@/features/progress/format";
 import { useJourneyData } from "./hooks";
 import { allStats } from "./stats";
 import { activeDaysByHijri, defOf, hijriBounds, MYTHIC, yearDef, YEAR_DAYS, type JDef } from "./stickers";
@@ -37,6 +37,7 @@ export default function JourneyYearScreen() {
   const { lang } = useLang();
   const { pro } = usePro();
   const nf = (n: number) => formatNumber(n, lang);
+  const yf = (n: number) => formatYear(n, lang); // years never get a thousands separator ("1448 AH")
   const { M } = useJourneyData();
   const j = useJourney();
   const nowY = toHijri(todayUtc()).y;
@@ -73,9 +74,9 @@ export default function JourneyYearScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arabic="رحلة العلم" eyebrow={jt("eyebrow")} title={jt("yearTitle")} lead={jt("yearLead")}>
+        <PageHero topInset back arabic="رحلة العلم" eyebrow={jt("eyebrow")} title={jt("yearTitle")} lead={jt("yearLead")}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-            {years.map((x) => <Chip key={x} onStage label={jt("hijriYear", { y: nf(x) })} selected={x === y} onPress={() => setY(x)} />)}
+            {years.map((x) => <Chip key={x} onStage label={jt("hijriYear", { y: yf(x) })} selected={x === y} onPress={() => setY(x)} />)}
           </View>
         </PageHero>
         {data ? (
@@ -100,7 +101,7 @@ export default function JourneyYearScreen() {
               <View style={{ flexDirection: "row", alignItems: "center", gap: 14 }}>
                 <Seal def={yd} size={72} locked={!j.stickers[yd.id]} pct={days / YEAR_DAYS} />
                 <View style={{ flex: 1, gap: 4 }}>
-                  <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: t.ink }}>{jt("s_hijri", { n: nf(y) })}</Text>
+                  <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: t.ink }}>{jt("s_hijri", { n: yf(y) })}</Text>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted }}>{j.stickers[yd.id] ? jt("earned") : jt("y_sealHow", { n: nf(Math.min(days, YEAR_DAYS)), m: nf(YEAR_DAYS) })}</Text>
                 </View>
               </View>
@@ -132,8 +133,8 @@ export default function JourneyYearScreen() {
           </View>
         ) : null}
         {data ? (
-          <ShareSheet visible={share} onClose={() => setShare(false)} noDecoration link="" message={jt("y_shareText", { y: nf(y), d: nf(days) })}
-            renderCard={(f) => <YearCard f={f} y={y} days={days} points={data.per.points ?? 0} hours={Math.round((data.per.minutes ?? 0) / 60)} learned={data.learned} seals={[...data.pathSt.filter((x) => !x.mythic).slice(-4), ...data.pathSt.filter((x) => x.mythic)].slice(-5)} nf={nf} jt={jt} />} />
+          <ShareSheet visible={share} onClose={() => setShare(false)} noDecoration link="" message={jt("y_shareText", { y: yf(y), d: nf(days) })}
+            renderCard={(f) => <YearCard f={f} y={y} days={days} points={data.per.points ?? 0} hours={Math.round((data.per.minutes ?? 0) / 60)} learned={data.learned} seals={[...data.pathSt.filter((x) => !x.mythic).slice(-4), ...data.pathSt.filter((x) => x.mythic)].slice(-5)} nf={nf} yf={yf} jt={jt} />} />
         ) : null}
       </Page>
     </>
@@ -150,7 +151,7 @@ function jdefOf(id: string): JDef | null {
   return s ? defOf(s[1], Number(s[2]), 0) : null;
 }
 
-function YearCard({ f, y, days, points, hours, learned, seals, nf, jt }: { f: ShareFormat; y: number; days: number; points: number; hours: number; learned: number; seals: JDef[]; nf: (n: number) => string; jt: ReturnType<typeof useJT> }) {
+function YearCard({ f, y, days, points, hours, learned, seals, nf, yf, jt }: { f: ShareFormat; y: number; days: number; points: number; hours: number; learned: number; seals: JDef[]; nf: (n: number) => string; yf: (n: number) => string; jt: ReturnType<typeof useJT> }) {
   const { w, h } = CARD_SIZE[f];
   return (
     <View style={{ width: w, height: h, overflow: "hidden" }}>
@@ -158,7 +159,7 @@ function YearCard({ f, y, days, points, hours, learned, seals, nf, jt }: { f: Sh
         <View style={{ gap: 6 }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><SmallStar size={11} color={stage.gold} /><Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.6, color: stage.gold }}>{jt("yearTitle")}</Text></View>
           <Text style={{ fontFamily: CALLIG_FONT, fontSize: 28, lineHeight: 46, color: stage.gold }}>{"رحلة العلم"}</Text>
-          <Text style={{ fontFamily: FONT.display, fontSize: 30, color: "#fff" }}>{jt("hijriYear", { y: nf(y) })}</Text>
+          <Text style={{ fontFamily: FONT.display, fontSize: 30, color: "#fff" }}>{jt("hijriYear", { y: yf(y) })}</Text>
         </View>
         <View style={{ gap: 14 }}>
           {[[nf(days), jt("y_days")], [nf(points), jt("y_points")], [nf(hours), jt("y_hours")], [nf(learned), jt("y_learned")]].map(([v, l]) => (

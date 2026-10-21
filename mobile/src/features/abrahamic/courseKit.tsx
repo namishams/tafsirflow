@@ -13,7 +13,7 @@ import { ARABIC_FONT, FONT, useTheme } from "@/lib/theme";
 import { useEntitlement } from "@/lib/entitlements";
 import { usePro } from "@/lib/pro";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
-import { getVerseByKey, type SingleVerse } from "@/lib/quran";
+import { getResources, getVerseByKey, translationFor, type SingleVerse } from "@/lib/quran";
 import { openVerse } from "@/features/coursekit/links";
 import { GoldRing, StepIn, useNudge } from "@/features/coursekit/motion";
 import { gEvent, useGamify } from "@/features/feed/gamify";
@@ -28,7 +28,8 @@ export const L3 = (en: string, de: string, ar: string): L => ({ en, de, ar });
 
 export type Tag = "quran" | "tafsir" | "sunni" | "shia" | "bible" | "history" | "fiqh" | "today";
 export type Q = { q: L; options: L[]; answer: number; why?: L };
-export type Lesson = { id: string; arabic: string; title: L; text: L; note?: L; verses: string[]; tags: Tag[]; quiz: Q[] };
+/** review: "needs_review" while a rewritten lesson waits for a scholar (shown as a quiet line under the explanation) */
+export type Lesson = { id: string; arabic: string; title: L; text: L; note?: L; verses: string[]; tags: Tag[]; quiz: Q[]; review?: "needs_review" };
 export type CourseDef = {
   id: "abrahamic" | "haramain";
   storeKey: string;
@@ -85,6 +86,8 @@ export const CK: Record<string, L> = {
   "tag.bible": L14("Also in the Bible", "Auch in der Bibel", "في الكتاب المقدس أيضًا", "Kitab-ı Mukaddes'te de", "بائبل میں بھی", "در کتاب مقدس نیز", "په انجیل کې هم", "Aussi dans la Bible", "También en la Biblia", "Juga dalam Alkitab", "Juga dalam Bible", "বাইবেলেও", "Также в Библии", "圣经中亦有"),
   "tag.history": L14("History", "Geschichte", "التاريخ", "Tarih", "تاریخ", "تاریخ", "تاریخ", "Histoire", "Historia", "Sejarah", "Sejarah", "ইতিহাস", "История", "历史"),
   "tag.fiqh": L14("Schools differ", "Rechtsschulen unterscheiden sich", "تختلف المذاهب", "Mezhepler farklıdır", "مسالک میں اختلاف", "مذاهب متفاوت‌اند", "مذهبونه توپیر لري", "Les écoles divergent", "Las escuelas difieren", "Mazhab berbeda", "Mazhab berbeza", "মাযহাবে মতভেদ", "Мазхабы расходятся", "教法学派有分歧"),
+  review: L14("Explanation in our own words, awaiting review by a scholar.", "Erläuterung in eigenen Worten, die Prüfung durch Gelehrte steht noch aus.", "شرح بأسلوبنا، بانتظار مراجعة أهل العلم.", "Kendi ifademizle açıklama; bir âlimin incelemesi bekleniyor.", "ہمارے اپنے الفاظ میں وضاحت، کسی عالم کے جائزے کی منتظر۔", "توضیح به زبان خودمان، در انتظار بازبینی یک عالم.", "زموږ په خپلو ټکو تشریح، د یوه عالم بیاکتنې ته په تمه.", "Explication rédigée avec nos propres mots, en attente de relecture par un savant.", "Explicación con nuestras propias palabras, pendiente de revisión por un erudito.", "Penjelasan dengan kata-kata kami sendiri, menunggu tinjauan seorang ulama.", "Penjelasan dalam kata-kata kami sendiri, menunggu semakan seorang ulama.", "আমাদের নিজের ভাষায় ব্যাখ্যা, একজন আলেমের পর্যালোচনার অপেক্ষায়।", "Пояснение нашими словами, ожидает проверки учёным.", "以我们自己的话所作的说明，尚待学者审阅。"),
+  translationBy: L14("Translation: {name}", "Übersetzung: {name}", "الترجمة: {name}", "Çeviri: {name}", "ترجمہ: {name}", "ترجمه: {name}", "ژباړه: {name}", "Traduction : {name}", "Traducción: {name}", "Terjemahan: {name}", "Terjemahan: {name}", "অনুবাদ: {name}", "Перевод: {name}", "译文：{name}"),
   "tag.today": L14("Today", "Heute", "اليوم", "Bugün", "آج", "امروز", "نن", "Aujourd'hui", "Hoy", "Kini", "Kini", "আজ", "Сегодня", "今日"),
 };
 const fill = (s: string, v: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(v[k] ?? ""));
@@ -177,9 +180,25 @@ export function CourseList({ def }: { def: CourseDef }) {
   );
 }
 
+/** the name of the translation the verses are shown in (Quran.com resource), for the source line; none in Arabic */
+function useTranslationName(lang: string): string {
+  const [name, setName] = useState("");
+  useEffect(() => {
+    let live = true;
+    setName("");
+    if (lang === "ar") return;
+    Promise.all([translationFor(lang), getResources()])
+      .then(([id, r]) => { const x = r.translations.find((tr) => tr.id === id); if (live && x) setName(x.name); })
+      .catch(() => {});
+    return () => { live = false; };
+  }, [lang]);
+  return name;
+}
+
 function Verses({ keys }: { keys: string[] }) {
   const t = useTheme();
   const { c, lang } = useCK();
+  const source = useTranslationName(lang);
   const [verses, setVerses] = useState<(SingleVerse | null)[] | null>(null);
   useEffect(() => {
     let live = true;
@@ -204,6 +223,7 @@ function Verses({ keys }: { keys: string[] }) {
           </View>
         );
       })}
+      {source && verses.some((v) => v?.translation) ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted }}>{c("translationBy", { name: source })}</Text> : null}
     </>
   );
 }
@@ -295,6 +315,7 @@ export function CourseLessonScreen({ def, id }: { def: CourseDef; id: string }) 
               <TagChips tags={lesson.tags} />
               <Eyebrow>{c("explain")}</Eyebrow>
               {pick(lesson.text, lang).split("\n").map((p, k) => <Text key={k} style={para}>{p}</Text>)}
+              {lesson.review ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted, writingDirection: rtl ? "rtl" : "ltr" }}>{c("review")}</Text> : null}
               {lesson.note ? (
                 <View style={{ borderRadius: 12, borderWidth: 1, borderColor: t.gold, padding: 14, gap: 6 }}>
                   <Eyebrow>{c("note")}</Eyebrow>

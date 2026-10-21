@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AccessibilityInfo, Animated, Easing, Pressable, ScrollView, Text, TextInput, View, type ScrollViewInstance } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { router, useLocalSearchParams, type Href } from "expo-router";
+import { router, useLocalSearchParams, useNavigation, type Href } from "expo-router";
 import { Display, GoldButton, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { LANGS, langLabel, useLang, type Lang } from "@/i18n";
@@ -110,7 +110,20 @@ export function Funnel() {
     setPhase("story");
   };
   const back = () => { tick(); if (reply) { setReply(null); return; } if (step > 0) setStep(step - 1); else leave(); };
-  const leave = () => { if (!pers) writeJSON("tf:onboardSkip", true); writeDraft(null); if (router.canGoBack()) goBack(); else router.replace("/" as Href); };
+  /** what "Skip" leaves behind: no draft (so the questions do not reopen at the next start) and, on first run, the skip */
+  const forget = () => { if (!pers) writeJSON("tf:onboardSkip", true); writeDraft(null); };
+  const leave = () => { forget(); if (router.canGoBack()) goBack(); else router.replace("/" as Href); };
+  // leaving the questions by the back gesture (iOS edge swipe, Android back) counts as "Skip" too; the reload a
+  // right-to-left language needs is no navigation and keeps the draft, so the quiz still resumes after it
+  const navigation = useNavigation();
+  const phaseRef = useRef(phase);
+  phaseRef.current = phase;
+  const forgetRef = useRef(forget);
+  forgetRef.current = forget;
+  useEffect(() => {
+    const nav = navigation as unknown as { addListener: (ev: "beforeRemove", cb: () => void) => () => void };
+    return nav.addListener("beforeRemove", () => { if (phaseRef.current === "quiz") forgetRef.current(); });
+  }, [navigation]);
   const done = () => { if (pers && router.canGoBack()) goBack(); else router.replace("/" as Href); };
   const afterPlan = () => {
     const cfg = remoteConfig()?.monetize?.paywall?.day1;
@@ -279,10 +292,8 @@ export function Funnel() {
           <>
             {title(p.qPrayer)}
             <View style={{ gap: 8 }}>
-              {opt("yes", draft.prayer === true, p.yes, null, () => {
-                void import("@/features/practice/prayer/alerts").then((m) => m.ensurePermission()).catch(() => undefined);
-                answer({ prayer: true }, o.r_prayer);
-              })}
+              {/* no permission prompt here: the plan's first step (prayer setup) asks when reminders are switched on */}
+              {opt("yes", draft.prayer === true, p.yes, null, () => answer({ prayer: true }, o.r_prayerYes))}
               {opt("no", draft.prayer === false, p.no, null, () => answer({ prayer: false }, o.r_prayer))}
             </View>
             {note(p.prayerD)}

@@ -22,6 +22,7 @@ import ProfileTabs from "@/components/talents/ProfileTabs";
 import { DefaultAvatar } from "@/components/talents/DefaultAvatar";
 import { fillRw, rankingsText } from "@/lib/rankingsWeb";
 import { rankOf } from "@/lib/rankings";
+import TalentProfileWeb, { type WebProfile } from "@/components/talents/TalentProfileWeb";
 
 // Public talent profile on the website (same structure as the app profile): avatar, badge, level, stats, bio, follow /
 // message, highlights, recitations, achievements. Only public members aged 16+; badged profiles are indexed.
@@ -29,6 +30,9 @@ import { rankOf } from "@/lib/rankings";
 // the sections the member shows, and achievement moments with preset encouragements; clips stay hidden.
 // Owner 21.10.2026 ("like Instagram / early TikTok, only the likes are MashaAllahs"): centred header with the counters
 // Following · Followers · MashaAllah, then tabs Achievements (3-column grid, full-screen feed) · Sijill · Badges.
+// Owner 21.10.2026 (app and website 1:1): the same TikTok-style view as the app (components/talents/TalentProfileWeb.tsx):
+// top bar, @username, Following | Followers | MashaAllah, Follow / Follow back / Requested / Following, Message, the
+// suggestions arrow, highlights, icon tabs with the edge-to-edge grid; signed-in visitors get the viewer-aware data.
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; username: string }> }): Promise<Metadata> {
@@ -103,6 +107,22 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
           <p className="text-[13px] text-muted"><Link href="/talents" className="font-semibold text-accent hover:underline">{tx.guidelines}</Link> · {tx.reportInApp}</p>
     </div>
   );
+  // Owner 21.10.2026 (app and website 1:1): the TikTok-style profile of the app; with clips switched on the clip layout
+  // below stays as it was
+  if (!p.posting) {
+    const initial: WebProfile = {
+      username: p.username, name: p.name, avatar: p.avatar, badge: p.badge, level: p.level, private: p.private, following: p.following, followers: p.followers,
+      mashaallahTotal: ach.mashaallah, bio: p.bio, rewaya: p.rewaya, country: p.country, maqam: p.maqam, officialChannel: p.officialChannel, ijazahChain: p.ijazahChain,
+      progress: p.progress, moments: ach.moments as GridMoment[], momentCount: ach.count, restricted: p.private, extras: p.extras,
+    };
+    return (
+      <div className="px-0 sm:px-5">
+        <JsonLd data={ld} />
+        <TalentProfileWeb locale={locale} initial={initial} username={p.username} own={false} appUrl={appStoreUrl()} placeText={placeText}
+          sijillPanel={sj ? <div className="grid gap-4">{sj.sijill.tree ? <TreeBannerWeb tree={sj.sijill.tree} locale={locale} /> : null}<SijillShowcase s={sj.sijill} moments={[]} locale={locale} /></div> : undefined} />
+      </div>
+    );
+  }
   return (
     <div>
       <JsonLd data={ld} />

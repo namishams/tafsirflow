@@ -37,6 +37,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "Bahçeniz her oturumla büyür.", empty: "Bu seçim için henüz soru yok.", noDue: "Zamanı gelen soru yok. Yanlış cevaplar öğrenilene kadar artan aralıklarla buraya döner.",
     noBookmarks: "Henüz kayıt yok. Bir soruyu burada tutmak için yer imine dokunun.", mockTitle: "Deneme sınavı",
     mockLead: "Bu ve önceki aşamalardan {n} soru, toplam {min} dakika, soru başına en fazla {q} saniye. Geçme notu %{p}. Geçmek bir sonraki aşamayı açar.",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "Pro'ya dahil", lk_mock1: "Bu ve önceki aşamalardan {n} soru", lk_mock2: "Soru başına en fazla {q} saniye, sınav kurallarıyla", lk_mock3: "Geçme notu %{p}; geçmek bir sonraki aşamayı açar", lk_stats1: "Son üç haftadaki doğruluk oranınız", lk_stats2: "Her aşamanın deneme sınavına hazırlığınız", lk_stats3: "Ders bazında doğruluk, en güçlü ve en zayıf konularınızla", practiseFree: "Ücretsiz alıştırma yapın", proMode: "Bu mod Pro'ya dahildir. Temel aşamada alıştırma ücretsiz kalır: bugün {n} soru kaldı.",
     mockStart: "Deneme sınavını başlatın", mockPass: "Geçtiniz. Bir sonraki aşama açık.", mockFail: "Henüz geçilmedi: %{p} gerekiyor. En zayıf konularınız aşağıda.",
     mockLocked: "Lütfen önce önceki aşamanın deneme sınavını geçin.", mockAttempts: "Şimdiye kadarki denemeler: {n}",
     statsTitle: "İstatistikler", overallTitle: "Genel", trendTitle: "Son günlerdeki doğruluk", trendEmpty: "Gidişatınız ilk oturumlardan sonra görünür.",
@@ -79,6 +81,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "ہر نشست کے ساتھ آپ کا باغ بڑھتا ہے۔", empty: "اس انتخاب کے لیے ابھی سوالات نہیں ہیں۔", noDue: "ابھی کچھ باقی نہیں۔ غلط جوابات بڑھتے وقفوں سے یہاں لوٹتے ہیں یہاں تک کہ آپ انہیں سیکھ لیں۔",
     noBookmarks: "ابھی کچھ محفوظ نہیں۔ کسی سوال کو یہاں رکھنے کے لیے بُک مارک پر ٹیپ کریں۔", mockTitle: "آزمائشی امتحان",
     mockLead: "اس اور پچھلے درجات سے {n} سوالات، کل {min} منٹ، ہر سوال کے لیے زیادہ سے زیادہ {q} سیکنڈ۔ کامیابی کا معیار {p} %۔ کامیابی اگلا درجہ کھولتی ہے۔",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "Pro میں شامل", lk_mock1: "اس اور پچھلے درجات سے {n} سوالات", lk_mock2: "ہر سوال کے لیے زیادہ سے زیادہ {q} سیکنڈ، امتحانی قواعد کے مطابق", lk_mock3: "کامیابی کا معیار {p} %؛ کامیابی اگلا درجہ کھولتی ہے", lk_stats1: "پچھلے تین ہفتوں میں آپ کی درستگی", lk_stats2: "ہر درجے کے آزمائشی امتحان کے لیے آپ کی تیاری", lk_stats3: "ہر مضمون میں درستگی، آپ کے مضبوط ترین اور کمزور ترین موضوعات کے ساتھ", practiseFree: "مفت مشق کریں", proMode: "یہ طریقہ Pro کا حصہ ہے۔ بنیادی درجے میں مشق مفت رہتی ہے: آج {n} سوالات باقی ہیں۔",
     mockStart: "آزمائشی امتحان شروع کریں", mockPass: "کامیاب۔ اگلا درجہ کھل گیا۔", mockFail: "ابھی کامیاب نہیں: {p} % درکار ہیں۔ آپ کے کمزور ترین موضوعات نیچے ہیں۔",
     mockLocked: "براہ کرم پہلے پچھلے درجے کا آزمائشی امتحان پاس کریں۔", mockAttempts: "اب تک کی کوششیں: {n}",
     statsTitle: "اعداد و شمار", overallTitle: "مجموعی", trendTitle: "پچھلے دنوں کی درستی", trendEmpty: "آپ کا رجحان پہلی نشستوں کے بعد ظاہر ہوگا۔",
@@ -121,6 +125,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "باغ شما با هر جلسه رشد می‌کند.", empty: "برای این انتخاب هنوز پرسشی نیست.", noDue: "چیزی در نوبت نیست. پاسخ‌های نادرست با فاصله‌های فزاینده بازمی‌گردند تا آن‌ها را بیاموزید.",
     noBookmarks: "هنوز نشانی ندارید. برای نگه‌داشتن پرسش، روی نشانک بزنید.", mockTitle: "آزمون آزمایشی",
     mockLead: "{n} پرسش از این مرحله و مراحل پیشین، روی‌هم {min} دقیقه، حداکثر {q} ثانیه برای هر پرسش. حد قبولی {p} ٪. قبولی مرحلهٔ بعد را باز می‌کند.",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "بخشی از Pro", lk_mock1: "{n} پرسش از این مرحله و مراحل پیشین", lk_mock2: "حداکثر {q} ثانیه برای هر پرسش، طبق قواعد آزمون", lk_mock3: "حد قبولی {p} ٪؛ قبولی مرحلهٔ بعد را باز می‌کند", lk_stats1: "دقت شما در سه هفتهٔ اخیر", lk_stats2: "آمادگی شما برای آزمون آزمایشی هر مرحله", lk_stats3: "دقت در هر درس، همراه با قوی‌ترین و ضعیف‌ترین موضوعات شما", practiseFree: "تمرین رایگان", proMode: "این حالت بخشی از Pro است. تمرین در مرحلهٔ پایه رایگان می‌ماند: امروز {n} پرسش باقی مانده است.",
     mockStart: "شروع آزمون آزمایشی", mockPass: "قبول شدید. مرحلهٔ بعد باز است.", mockFail: "هنوز قبول نشده: {p} ٪ لازم است. ضعیف‌ترین موضوعات شما در زیر آمده است.",
     mockLocked: "لطفاً نخست آزمون آزمایشی مرحلهٔ پیشین را بگذرانید.", mockAttempts: "تلاش‌ها تاکنون: {n}",
     statsTitle: "آمار", overallTitle: "کلی", trendTitle: "درستی در روزهای اخیر", trendEmpty: "روند شما پس از نخستین جلسه‌ها نمایان می‌شود.",
@@ -163,6 +169,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "ستاسو باغ له هرې ناستې سره وده کوي.", empty: "د دې انتخاب لپاره لا پوښتنې نشته.", noDue: "هېڅ شی نه دی رسېدلی. ناسم ځوابونه په زیاتېدونکو واټنونو بېرته راځي ترڅو یې زده کړئ.",
     noBookmarks: "لا هېڅ خوندي نه دي. د پوښتنې ساتلو لپاره په نښه کېکاږئ.", mockTitle: "ازمایښتي ازموینه",
     mockLead: "له دې او پخوانیو کچو څخه {n} پوښتنې، ټول {min} دقیقې، په هره پوښتنه تر {q} ثانیو پورې. د بریا حد {p} %. بریا بله کچه پرانیزي.",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "په Pro کې شامل", lk_mock1: "له دې او پخوانیو کچو څخه {n} پوښتنې", lk_mock2: "په هره پوښتنه تر {q} ثانیو پورې، د ازموینې د قواعدو سره سم", lk_mock3: "د بریا حد {p} %؛ بریا بله کچه پرانیزي", lk_stats1: "په تېرو درېیو اونیو کې ستاسو سموالی", lk_stats2: "د هرې کچې آزمایښتي ازموینې ته ستاسو چمتووالی", lk_stats3: "په هر مضمون کې سموالی، ستاسو له تر ټولو پیاوړو او کمزورو موضوعاتو سره", practiseFree: "وړیا تمرین وکړئ", proMode: "دا حالت د Pro برخه ده. په بنسټیزه کچه کې تمرین وړیا پاتې کېږي: نن {n} پوښتنې پاتې دي.",
     mockStart: "ازمایښتي ازموینه پیل کړئ", mockPass: "بریالي شوئ. بله کچه پرانیستې ده.", mockFail: "لا بریالي نه یاست: {p} % ته اړتیا ده. ستاسو کمزوري موضوعات لاندې دي.",
     mockLocked: "مهرباني وکړئ لومړی د مخکینۍ کچې ازمایښتي ازموینه بریالۍ کړئ.", mockAttempts: "تر اوسه هڅې: {n}",
     statsTitle: "شمېرنې", overallTitle: "ټولیز", trendTitle: "په وروستیو ورځو کې سموالی", trendEmpty: "ستاسو بهیر له لومړیو ناستو وروسته ښکاري.",
@@ -205,6 +213,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "Votre jardin grandit à chaque séance.", empty: "Il n'y a pas encore de questions pour ce choix.", noDue: "Rien à revoir. Les mauvaises réponses reviennent ici à intervalles croissants jusqu'à ce que vous les maîtrisiez.",
     noBookmarks: "Aucun favori pour l'instant. Touchez le signet d'une question pour la garder ici.", mockTitle: "Examen blanc",
     mockLead: "{n} questions de ce niveau et des niveaux précédents, {min} minutes au total, au plus {q} secondes par question. Seuil de réussite {p} %. La réussite ouvre le niveau suivant.",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "Inclus avec Pro", lk_mock1: "{n} questions de ce niveau et des niveaux précédents", lk_mock2: "Au plus {q} secondes par question, selon les règles d'examen", lk_mock3: "Seuil de réussite {p} % ; la réussite ouvre le niveau suivant", lk_stats1: "Votre taux de réussite des trois dernières semaines", lk_stats2: "Votre préparation à l'examen blanc de chaque niveau", lk_stats3: "Le taux de réussite par matière, avec vos thèmes les plus forts et les plus faibles", practiseFree: "S'entraîner gratuitement", proMode: "Ce mode fait partie de Pro. L'entraînement au niveau fondamental reste gratuit : encore {n} questions aujourd'hui.",
     mockStart: "Commencer l'examen blanc", mockPass: "Réussi. Le niveau suivant est ouvert.", mockFail: "Pas encore réussi : {p} % sont requis. Vos thèmes les plus faibles figurent ci-dessous.",
     mockLocked: "Veuillez d'abord réussir l'examen blanc du niveau précédent.", mockAttempts: "Tentatives jusqu'ici : {n}",
     statsTitle: "Statistiques", overallTitle: "Global", trendTitle: "Réussite des derniers jours", trendEmpty: "Votre évolution apparaît après vos premières séances.",
@@ -247,6 +257,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "Su jardín crece con cada sesión.", empty: "Aún no hay preguntas para esta selección.", noDue: "No hay nada pendiente. Las respuestas incorrectas vuelven aquí a intervalos crecientes hasta que las domine.",
     noBookmarks: "Aún no hay preguntas guardadas. Toque el marcador de una pregunta para conservarla aquí.", mockTitle: "Examen de prueba",
     mockLead: "{n} preguntas de esta etapa y de las anteriores, {min} minutos en total, como máximo {q} segundos por pregunta. Nota de aprobado {p} %. Aprobar abre la siguiente etapa.",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "Incluido con Pro", lk_mock1: "{n} preguntas de esta etapa y de las anteriores", lk_mock2: "Como máximo {q} segundos por pregunta, con reglas de examen", lk_mock3: "Nota de aprobado {p} %; aprobar abre la siguiente etapa", lk_stats1: "Su porcentaje de aciertos de las últimas tres semanas", lk_stats2: "Su preparación para el examen de prueba de cada etapa", lk_stats3: "Aciertos por materia, con sus temas más fuertes y más débiles", practiseFree: "Practicar gratis", proMode: "Este modo forma parte de Pro. La práctica en la etapa básica sigue siendo gratuita: hoy le quedan {n} preguntas.",
     mockStart: "Empezar el examen de prueba", mockPass: "Aprobado. La siguiente etapa está abierta.", mockFail: "Aún no aprobado: se necesita un {p} %. Sus temas más débiles están abajo.",
     mockLocked: "Apruebe primero el examen de prueba de la etapa anterior.", mockAttempts: "Intentos hasta ahora: {n}",
     statsTitle: "Estadísticas", overallTitle: "General", trendTitle: "Acierto de los últimos días", trendEmpty: "Su evolución aparece tras las primeras sesiones.",
@@ -289,6 +301,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "Kebun Anda tumbuh di setiap sesi.", empty: "Belum ada soal untuk pilihan ini.", noDue: "Tidak ada yang jatuh tempo. Jawaban salah kembali ke sini dengan jarak yang makin panjang hingga Anda menguasainya.",
     noBookmarks: "Belum ada soal tersimpan. Ketuk penanda pada soal untuk menyimpannya di sini.", mockTitle: "Ujian percobaan",
     mockLead: "{n} soal dari tingkat ini dan sebelumnya, total {min} menit, paling lama {q} detik per soal. Batas lulus {p} %. Lulus membuka tingkat berikutnya.",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "Termasuk dalam Pro", lk_mock1: "{n} soal dari tingkat ini dan sebelumnya", lk_mock2: "Paling lama {q} detik per soal, dengan aturan ujian", lk_mock3: "Batas lulus {p} %; lulus membuka tingkat berikutnya", lk_stats1: "Ketepatan Anda selama tiga minggu terakhir", lk_stats2: "Kesiapan Anda untuk ujian percobaan setiap tingkat", lk_stats3: "Ketepatan per mata pelajaran, dengan topik terkuat dan terlemah Anda", practiseFree: "Berlatih gratis", proMode: "Mode ini bagian dari Pro. Latihan di tingkat dasar tetap gratis: hari ini masih {n} soal.",
     mockStart: "Mulai ujian percobaan", mockPass: "Lulus. Tingkat berikutnya terbuka.", mockFail: "Belum lulus: diperlukan {p} %. Topik terlemah Anda ada di bawah.",
     mockLocked: "Silakan lulus ujian percobaan tingkat sebelumnya terlebih dahulu.", mockAttempts: "Percobaan sejauh ini: {n}",
     statsTitle: "Statistik", overallTitle: "Keseluruhan", trendTitle: "Ketepatan beberapa hari terakhir", trendEmpty: "Tren Anda muncul setelah sesi pertama.",
@@ -331,6 +345,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "Taman anda tumbuh dengan setiap sesi.", empty: "Belum ada soalan untuk pilihan ini.", noDue: "Tiada yang perlu diulang. Jawapan salah kembali ke sini dengan jarak yang semakin panjang sehingga anda menguasainya.",
     noBookmarks: "Belum ada yang disimpan. Ketik penanda pada soalan untuk menyimpannya di sini.", mockTitle: "Peperiksaan percubaan",
     mockLead: "{n} soalan daripada peringkat ini dan sebelumnya, jumlah {min} minit, paling lama {q} saat setiap soalan. Markah lulus {p} %. Lulus membuka peringkat seterusnya.",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "Termasuk dalam Pro", lk_mock1: "{n} soalan daripada peringkat ini dan sebelumnya", lk_mock2: "Paling lama {q} saat bagi setiap soalan, mengikut peraturan peperiksaan", lk_mock3: "Markah lulus {p} %; lulus membuka peringkat seterusnya", lk_stats1: "Ketepatan Anda dalam tiga minggu terakhir", lk_stats2: "Kesediaan Anda untuk peperiksaan percubaan setiap peringkat", lk_stats3: "Ketepatan bagi setiap subjek, dengan topik terkuat dan terlemah Anda", practiseFree: "Berlatih secara percuma", proMode: "Mod ini sebahagian daripada Pro. Latihan di peringkat asas kekal percuma: masih {n} soalan hari ini.",
     mockStart: "Mulakan peperiksaan percubaan", mockPass: "Lulus. Peringkat seterusnya dibuka.", mockFail: "Belum lulus: {p} % diperlukan. Topik paling lemah anda di bawah.",
     mockLocked: "Sila lulus peperiksaan percubaan peringkat sebelumnya dahulu.", mockAttempts: "Percubaan setakat ini: {n}",
     statsTitle: "Statistik", overallTitle: "Keseluruhan", trendTitle: "Ketepatan beberapa hari lepas", trendEmpty: "Trend anda muncul selepas sesi pertama.",
@@ -373,6 +389,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "প্রতিটি সেশনে আপনার বাগান বেড়ে ওঠে।", empty: "এই নির্বাচনের জন্য এখনও কোনো প্রশ্ন নেই।", noDue: "এখন কিছু বাকি নেই। ভুল উত্তরগুলো আয়ত্ত না হওয়া পর্যন্ত ক্রমবর্ধমান ব্যবধানে এখানে ফিরে আসে।",
     noBookmarks: "এখনও কিছু সংরক্ষিত নেই। কোনো প্রশ্ন এখানে রাখতে বুকমার্কে চাপুন।", mockTitle: "মডেল পরীক্ষা",
     mockLead: "এই ও আগের স্তরগুলো থেকে {n}টি প্রশ্ন, মোট {min} মিনিট, প্রতি প্রশ্নে সর্বোচ্চ {q} সেকেন্ড। পাস নম্বর {p} %। উত্তীর্ণ হলে পরের স্তর খোলে।",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "Pro-তে অন্তর্ভুক্ত", lk_mock1: "এই ও আগের স্তরগুলো থেকে {n}টি প্রশ্ন", lk_mock2: "প্রতি প্রশ্নে সর্বোচ্চ {q} সেকেন্ড, পরীক্ষার নিয়মে", lk_mock3: "পাস নম্বর {p} %; পাস করলে পরের স্তর খুলে যায়", lk_stats1: "গত তিন সপ্তাহে আপনার নির্ভুলতা", lk_stats2: "প্রতিটি স্তরের মক পরীক্ষার জন্য আপনার প্রস্তুতি", lk_stats3: "বিষয়ভিত্তিক নির্ভুলতা, আপনার সবচেয়ে শক্তিশালী ও দুর্বল বিষয়সহ", practiseFree: "বিনামূল্যে অনুশীলন করুন", proMode: "এই মোডটি Pro-এর অংশ। প্রাথমিক স্তরে অনুশীলন বিনামূল্যে থাকে: আজ আরও {n}টি প্রশ্ন বাকি।",
     mockStart: "মডেল পরীক্ষা শুরু করুন", mockPass: "উত্তীর্ণ। পরের স্তর খোলা।", mockFail: "এখনও উত্তীর্ণ নন: {p} % প্রয়োজন। আপনার দুর্বলতম বিষয় নিচে।",
     mockLocked: "অনুগ্রহ করে আগে পূর্ববর্তী স্তরের মডেল পরীক্ষায় উত্তীর্ণ হন।", mockAttempts: "এ পর্যন্ত প্রচেষ্টা: {n}",
     statsTitle: "পরিসংখ্যান", overallTitle: "সামগ্রিক", trendTitle: "গত কয়েক দিনের নির্ভুলতা", trendEmpty: "প্রথম সেশনগুলোর পরে আপনার প্রবণতা দেখা যাবে।",
@@ -415,6 +433,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "Ваш сад растёт с каждым занятием.", empty: "Для этого выбора вопросов пока нет.", noDue: "Повторять нечего. Неверные ответы возвращаются сюда через растущие интервалы, пока вы их не усвоите.",
     noBookmarks: "Закладок пока нет. Нажмите на закладку у вопроса, чтобы сохранить его здесь.", mockTitle: "Пробный экзамен",
     mockLead: "{n} вопросов этой и предыдущих ступеней, всего {min} минут, не более {q} секунд на вопрос. Проходной балл {p} %. Сдача открывает следующую ступень.",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "Входит в Pro", lk_mock1: "{n} вопросов этой и предыдущих ступеней", lk_mock2: "Не более {q} секунд на вопрос, по правилам экзамена", lk_mock3: "Проходной балл {p} %; сдача открывает следующую ступень", lk_stats1: "Ваша точность за последние три недели", lk_stats2: "Ваша готовность к пробному экзамену каждой ступени", lk_stats3: "Точность по предметам, ваши самые сильные и слабые темы", practiseFree: "Тренироваться бесплатно", proMode: "Этот режим входит в Pro. Тренировка на начальной ступени остаётся бесплатной: сегодня осталось {n} вопросов.",
     mockStart: "Начать пробный экзамен", mockPass: "Сдано. Следующая ступень открыта.", mockFail: "Пока не сдано: требуется {p} %. Самые слабые темы приведены ниже.",
     mockLocked: "Пожалуйста, сначала сдайте пробный экзамен предыдущей ступени.", mockAttempts: "Попыток до сих пор: {n}",
     statsTitle: "Статистика", overallTitle: "В целом", trendTitle: "Точность за последние дни", trendEmpty: "Динамика появится после первых занятий.",
@@ -457,6 +477,8 @@ export const OTHER: Record<string, Record<string, string>> = {
     xp: "每次练习都会让您的花园成长。", empty: "此选择暂无题目。", noDue: "暂无待复习内容。答错的题目会以逐渐拉长的间隔回到这里，直到您掌握为止。",
     noBookmarks: "尚无收藏。点击题目上的书签即可保存在这里。", mockTitle: "模拟考试",
     mockLead: "本阶段及之前阶段共 {n} 道题，总计 {min} 分钟，每题最多 {q} 秒。及格线 {p}%。通过后开放下一阶段。",
+    // locked screens: what Pro adds, and the free way to practise
+    lockedTitle: "Pro 包含", lk_mock1: "本阶段及之前阶段的 {n} 道题", lk_mock2: "每题最多 {q} 秒，按考试规则进行", lk_mock3: "及格线 {p}%；通过后开放下一阶段", lk_stats1: "您最近三周的正确率", lk_stats2: "您对每个阶段模拟考试的准备程度", lk_stats3: "各科正确率，以及您最强和最弱的主题", practiseFree: "免费练习", proMode: "此模式属于 Pro。基础阶段的练习保持免费：今天还剩 {n} 道题。",
     mockStart: "开始模拟考试", mockPass: "已通过。下一阶段已开放。", mockFail: "尚未通过：需要 {p}%。您最薄弱的主题列在下方。",
     mockLocked: "请先通过上一阶段的模拟考试。", mockAttempts: "目前尝试次数：{n}",
     statsTitle: "统计", overallTitle: "总体", trendTitle: "近几天的正确率", trendEmpty: "完成最初几次练习后将显示趋势。",

@@ -1,7 +1,7 @@
 import { VerseShare } from "@/features/share/ShareKit";
 import { useCallback, useEffect, useMemo, useRef, useState, type ComponentRef } from "react";
 import { FlatList, Modal, Platform, Pressable, ScrollView, Share, Switch, Text, View } from "react-native";
-import { Stack, router, useFocusEffect, useLocalSearchParams, type Href } from "expo-router";
+import { Stack, router, useFocusEffect, useLocalSearchParams, useNavigation, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
@@ -13,9 +13,10 @@ import { intlLocale, useLang, useT } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { SITE } from "@/lib/api";
 import { openPro, usePro } from "@/lib/pro";
+import { entitlement } from "@/lib/entitlements";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { getChapter, getChapters, getVerses, type Chapter, type Verse, reciterName } from "@/lib/quran";
-import { rate, type Rating } from "@/web/learning";
+import { dueVerses, rate, type Rating } from "@/web/learning";
 import { useReciter, isFreeReciter, freeReciter } from "@/features/quran/reciter";
 import { toAr, useEngine } from "@/features/quran/useVerseAudio";
 import { VerseWords, wordAt } from "@/features/quran/VerseWords";
@@ -34,6 +35,8 @@ import { PlayerDock, type Turn } from "@/features/reader/PlayerDock";
 import { ReaderNowPlaying } from "@/features/reader/ReaderNowPlaying";
 import { loadText, localVerseUri, removeSurah, saveSurah, saveText, savedInfo } from "@/features/reader/offline";
 import * as vp from "@/features/reader/versePlayback";
+import { useScreenBarStyle } from "@/features/reader/statusBar";
+import { useAppT } from "@/features/radio/strings";
 
 // The surah reader with its player, presented like the website's Player.tsx: the illuminated opening of the surah,
 // the surah picker, compact verse cards with the active verse framed in gold (word highlighting, Read / Practise /
@@ -50,11 +53,31 @@ const FOLLOW_PAUSE_MS = 5000;
 type Notes = Record<string, { text: string; at: number }>;
 type Offline = { state: "none" | "saving" | "saved" | "error"; done: number; bytes: number };
 
+// A reader pushed into the Quran tab from another tab (feed, today, search results, the mini bar, a reciter's page) before
+// the tab was opened is the only screen of the tab's stack. The surah list is put underneath it, so the back button and
+// the tab button lead to the 114 surahs (deep links get the same from unstable_settings in _layout.tsx).
+function useListAnchor() {
+  const navigation = useNavigation();
+  useEffect(() => {
+    try {
+      const st = navigation.getState() as unknown as { routes?: { name: string }[]; routeNames?: string[] } | undefined;
+      if (!st?.routes?.length || st.routes[0].name === "index" || !st.routeNames?.includes("index")) return;
+      navigation.dispatch({ type: "RESET", payload: { ...st, stale: false, index: st.routes.length, routes: [{ name: "index", params: {} }, ...st.routes] } } as never);
+    } catch { /* the stack stays as it is */ }
+  }, [navigation]);
+}
+
+/** website ?m=: 1 every second word covered, 2 every word covered (practise / review); a session-only start mode */
+const startMemoOf = (m?: string): Memo | null => (m === "2" ? { tool: "practice", level: 5, all: false } : m === "1" ? { tool: "practice", level: 3, all: false } : null);
+
 export default function SurahReader() {
-  const params = useLocalSearchParams<{ surah: string; v?: string; tafsir?: string; m?: string; shams?: string; reciter?: string }>();
+  const params = useLocalSearchParams<{ surah: string; v?: string; tafsir?: string; m?: string; shams?: string; reciter?: string; r?: string; session?: string }>();
   const surah = Math.max(1, Math.min(114, Number(params.surah) || 1));
-  // website links: m=2 (practise / review) and shams=1 open the verse in the Shams Method
-  useEffect(() => { if (params.m === "2" || params.shams === "1") router.replace(`/shams/${surah}${params.v ? `?v=${params.v}` : ""}` as Href); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  useListAnchor();
+  // website links: shams=1 opens the verse in the Shams Method, and so does a review step of today's session (session=1,
+  // the session lives there). m=2 (practise / review, r=1 = through the due verses) stays in this free reader, like the
+  // website's player.
+  useEffect(() => { if (params.shams === "1" || (params.m === "2" && params.session === "1")) router.replace(`/shams/${surah}${params.v ? `?v=${params.v}` : ""}` as Href); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const { lang } = useLang();
   const { pro } = usePro();
   const [reciter, setReciter, all] = useReciter();
@@ -93,14 +116,18 @@ export default function SurahReader() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       {failed ? <ErrorState retry={load} /> : !ready ? <Loading /> : (
-        <Reader key={surah} chapter={ready.chapter} verses={ready.verses} start={Number(params.v) || 0} openTafsir={params.tafsir === "1"} />
+        <Reader key={surah} chapter={ready.chapter} verses={ready.verses} start={Number(params.v) || 0} openTafsir={params.tafsir === "1"}
+          review={params.r === "1"} startMemo={startMemoOf(params.m)} />
       )}
     </>
   );
 }
 
-function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; verses: Verse[]; start: number; openTafsir: boolean }) {
+function Reader({ chapter, verses, start, openTafsir, review, startMemo }: { chapter: Chapter; verses: Verse[]; start: number; openTafsir: boolean; review: boolean; startMemo: Memo | null }) {
   const t = useTheme();
+  const ra = useAppT();
+  // light reading surface: dark status bar text in light mode while the reader is in front
+  useScreenBarStyle(t.dark ? "light" : "dark");
   const w = useWebT("player");
   const wh = useWebT("home");
   const wn = useWebT("nav");
@@ -117,11 +144,13 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const setPref = (p: Partial<Prefs>) => writeJSON("qmc.reader", { ...prefs, ...p }, true);
   // the memorising mode (Read · Practise · Test · Listen & repeat · Random check), the same in the card and the surah bar
   const memoKey = JSON.stringify(prefs.memo ?? null);
+  // a website link with ?m= starts in that cover for this visit only; choosing a mode makes it the saved one again
+  const [memoStart, setMemoStart] = useState<Memo | null>(startMemo);
   const memo = useMemo(() => {
-    const m = readMemo(prefs.memo, prefs.drill);
+    const m = memoStart ?? readMemo(prefs.memo, prefs.drill);
     return m;
-  }, [memoKey, prefs.drill]); // eslint-disable-line react-hooks/exhaustive-deps
-  const setMemo = (p: Partial<Memo>) => setPref({ memo: { ...memo, ...p }, drill: 0 });
+  }, [memoKey, prefs.drill, memoStart]); // eslint-disable-line react-hooks/exhaustive-deps
+  const setMemo = (p: Partial<Memo>) => { setMemoStart(null); setPref({ memo: { ...memo, ...p }, drill: 0 }); };
   const listen = memo.tool === "listen";
   const showWords = prefs.words;
   const showTranslit = prefs.translit;
@@ -138,7 +167,6 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const [settings, setSettings] = useState(false);
   const [nowOpen, setNowOpen] = useState(false);
   const [jumpOpen, setJumpOpen] = useState(false);
-  const [sleep, setSleep] = useState<{ mode: number; until: number }>({ mode: 0, until: 0 });
   const [loop, setLoop] = useState({ on: false, from: 1, to: verses.length });
   const [waiting, setWaiting] = useState(false); // learn mode: paused until "Continue"
   const [turn, setTurn] = useState<Turn | null>(null); // "your turn" countdown during the pause after a verse
@@ -171,6 +199,8 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const audio = useEngine(engine);
   const handlers = useRef<vp.Handlers>({});
   const pb = vp.useVersePlayback();
+  // the sleep timer lives in the shared session, so it keeps counting after the reader was left
+  const sleep = pb.sleep;
   const mine = pb.attached && vp.isAttached(handlers);
   const playing = mine && audio.playing;
   const positionMs = mine ? audio.positionMs : 0;
@@ -220,12 +250,8 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   useEffect(() => { setShown([]); }, [seed]);
   useEffect(() => { if (!toast) return; const id = setTimeout(() => setToast(""), 2600); return () => clearTimeout(id); }, [toast]);
   useEffect(() => { if (clip.state === "idle" || clip.state === "error") setWordKey(null); }, [clip.state]);
-  // sleep timer: also stops in the middle of a long verse
-  useEffect(() => {
-    if (sleep.mode <= 0) return;
-    const iv = setInterval(() => { if (Date.now() >= sleep.until) { if (vp.isAttached(handlers)) audio.pause(); clearGap(); setSleep({ mode: 0, until: 0 }); } }, 5000);
-    return () => clearInterval(iv);
-  }, [sleep]); // eslint-disable-line react-hooks/exhaustive-deps
+  // sleep timer (versePlayback.ts): when it stops the recitation, the pause after a verse ends too
+  handlers.current.slept = () => { clearGap(); setWaiting(false); };
   // another reciter: the offline state belongs to the voice, and a playing verse continues in the new voice
   useEffect(() => { const s = savedInfo(chapter.id, reciter.folder); setOffline(s ? { state: "saved", done: s.n, bytes: s.bytes } : { state: "none", done: 0, bytes: 0 }); }, [reciter.folder]); // eslint-disable-line react-hooks/exhaustive-deps
   const prevVerses = useRef(verses);
@@ -358,13 +384,13 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   };
   const advance = () => {
     clearGap(); setWaiting(false);
-    if (sleep.mode === -1 && idx >= verses.length - 1) { setSleep({ mode: 0, until: 0 }); return; } // sleep timer: end of surah
+    if (sleep.mode === -1 && idx >= verses.length - 1) { vp.setSleep(0); return; } // sleep timer: end of surah
     if (loop.on && idx >= loop.to - 1 && sleep.mode !== -1) { playAt(Math.max(0, loop.from - 1), true); return; }
     if (idx < verses.length - 1) playAt(idx + 1, true);
   };
   handlers.current.ended = () => {
     plays.current += 1;
-    if (sleep.mode > 0 && Date.now() >= sleep.until) { setSleep({ mode: 0, until: 0 }); return; } // sleep timer reached
+    if (vp.sleepDue()) return; // sleep timer reached
     if (plays.current < prefs.repeat) { afterGap(() => audio.seekPlay(0)); return; }
     if (mode === "learn") { setWaiting(true); return; } // learn mode waits for "Continue"
     afterGap(advance);
@@ -375,12 +401,30 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
     if (mine && !audio.ended && audio.positionMs > 0 && audio.durationMs > 0 && engine.url === items[idx]?.url) { audio.resume(); return; }
     playAt(idx);
   };
+  // review (?r=1, the "Start review" button): on to the next verse that is due, in this surah or another one (website onRate)
+  const nextDue = () => {
+    const next = dueVerses().find((k) => k !== verse.verse_key);
+    if (!next) return false;
+    const [c, vn] = next.split(":").map(Number);
+    if (!(c >= 1 && c <= 114 && vn >= 1)) return false;
+    if (c === chapter.id) {
+      const i = verses.findIndex((x) => x.verse_number === vn);
+      if (i < 0) return false;
+      goTo(i, false);
+      return true;
+    }
+    if (mine) audio.stop();
+    router.replace(`/quran/${c}?v=${vn}&m=2&r=1` as Href);
+    return true;
+  };
   const toggleMark = (k: string) => writeJSON("tf:bookmarks", marks.includes(k) ? marks.filter((x) => x !== k) : [...marks, k]);
   const saveNote = (k: string, text: string) => { const n = { ...notes }; if (text.trim()) n[k] = { text: text.trim(), at: Date.now() }; else delete n[k]; setNotes(n); writeJSON("tf:notes", n); };
   const setSpeed = (n: number) => { setPref({ speed: n }); if (mine) audio.setRate(n); };
-  const setSleepMode = (n: number) => setSleep({ mode: n, until: n > 0 ? Date.now() + n * 60000 : 0 });
+  const setSleepMode = (n: number) => vp.setSleep(n);
   const activeWord = playing && timingsOk ? wordAt(verse, positionMs) : null;
-  const sleepMin = sleep.mode > 0 ? Math.max(1, Math.ceil((sleep.until - Date.now()) / 60000)) : sleep.mode === -1 ? 0 : null;
+  const sleepMin = vp.sleepMinutes(sleep);
+  // the verse could not be loaded (no connection, file missing): the dock and the full player offer a retry
+  const loadError = mine && audio.error;
   const seekTo = (ms: number) => { if (!mine) return; if (audio.playing) audio.seekPlay(ms); else audio.seek(ms); };
   const pickReciter = (r: (typeof reciters)[number]) => {
     if (!pro && !isFreeReciter(r)) { setSettings(false); setTimeout(() => openPro("reciters"), 350); return; }
@@ -419,7 +463,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
       }
     },
     testAgain: () => { setRevealed(false); setTestPos(0); setTestMarks({}); setTestDone(null); },
-    next: () => { if (idx < verses.length - 1) goTo(idx + 1, false); },
+    next: () => { if (review && nextDue()) return; if (idx < verses.length - 1) goTo(idx + 1, false); },
     nextCheck: () => startCheck(),
     focus: () => setFocusOpen(true),
     layout: (i: number) => onActiveLayout(i),
@@ -427,6 +471,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
       const days = rate(verse.verse_key, r);
       setToast(days ? w("saved", { days }) : w("savedToday"));
       if (memo.tool === "check") { startCheck(); return; }
+      if (review && nextDue()) return;
       if (idx < verses.length - 1) goTo(idx + 1, false);
     },
     tafsir: (v: Verse) => setTafsirFor(v),
@@ -457,8 +502,10 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
     return Object.fromEntries(keys.map((k) => [k, (...args: unknown[]) => (liveImpl.current[k] as (...a: unknown[]) => void)(...args)])) as CardHandlers;
   }, []);
 
-  const activeState = useMemo<CardState>(() => ({ hide, memo, revealed, seed, testPos, testMarks, shown, activeWord, playing, wordOn: wordKey, waiting: waiting && mode === "learn", turn: !!turn, testDone, reduce }),
-    [hide, memo, revealed, seed, testPos, testMarks, shown, activeWord, playing, wordKey, waiting, mode, turn, testDone, reduce]);
+  // the Shams Method is free for al-Fatiha and Juz 'Amma (FREE.shamsSurah); elsewhere its button carries the Pro badge
+  const shamsLocked = !entitlement({ shamsSurah: chapter.id }, pro).allowed;
+  const activeState = useMemo<CardState>(() => ({ hide, memo, revealed, seed, testPos, testMarks, shown, activeWord, playing, wordOn: wordKey, waiting: waiting && mode === "learn", turn: !!turn, testDone, reduce, shamsLocked }),
+    [hide, memo, revealed, seed, testPos, testMarks, shown, activeWord, playing, wordKey, waiting, mode, turn, testDone, reduce, shamsLocked]);
   const idleState = useMemo<CardState>(() => ({ ...IDLE, hide: drill, seed: drill ? seed : 1, reduce }), [drill, seed, reduce]);
   const setAll = useRef((on: boolean) => undefined as void);
   setAll.current = (on: boolean) => setMemo({ all: on });
@@ -600,6 +647,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
 
       <PlayerDock bottom={dockBottom} arabicName={chapter.name_arabic} verse={verse.verse_number} total={verses.length} playing={playing}
         positionMs={positionMs} durationMs={durationMs} sleepMin={sleepMin} reduce={reduce} turn={turn} onSkipTurn={advance}
+        error={loadError ? rt("audioError") : null} retryLabel={ra("tryAgain")} onRetry={() => playAt(idx)}
         onToggle={toggle} onPrev={() => goTo(Math.max(0, idx - 1), false)} onNext={() => goTo(Math.min(verses.length - 1, idx + 1), false)}
         onSeek={seekTo} onJump={() => setJumpOpen(true)} onOpen={() => setNowOpen(true)} onFocus={() => setFocusOpen(true)} focusLabel={rt("focusOpen")} />
 
@@ -611,7 +659,8 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
       <ReaderNowPlaying open={nowOpen} onClose={() => setNowOpen(false)} chapter={chapter} verse={verse} total={verses.length} reciterName={reciterName(reciter, lang)} timed={verse.segments.length > 0 && timingsOk}
         playing={playing} positionMs={positionMs} durationMs={durationMs} reduce={reduce} speed={prefs.speed} repeat={prefs.repeat} sleepMode={sleep.mode} sleepMin={sleepMin}
         onToggle={toggle} onPrev={() => playAt(Math.max(0, idx - 1))} onNext={() => playAt(Math.min(verses.length - 1, idx + 1))} onSeek={seekTo}
-        onSpeed={setSpeed} onRepeat={(n) => setPref({ repeat: n })} onSleep={setSleepMode} />
+        onSpeed={setSpeed} onRepeat={(n) => setPref({ repeat: n })} onSleep={setSleepMode}
+        error={loadError ? rt("audioError") : null} retryLabel={ra("tryAgain")} onRetry={() => playAt(idx)} />
 
       {/* verse picker of the dock */}
       <Modal visible={jumpOpen} transparent animationType="fade" onRequestClose={() => setJumpOpen(false)}>
@@ -689,8 +738,9 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
             </Setting>
             <Setting label={w("mode")}>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-                  {([["learn", w("modeLearn")], ["continuous", w("modeContinuous")]] as const).map(([k, l]) => <Chip key={k} label={l} selected={mode === k} onPress={() => { setPref({ mode: k }); if (k === "continuous" && waiting) setWaiting(false); }} />)}
+                  {([["learn", w("modeLearn")], ["continuous", w("modeContinuous")]] as const).map(([k, l]) => <Chip key={k} label={l} selected={mode === k} disabled={listen} onPress={() => { setPref({ mode: k }); if (k === "continuous" && waiting) setWaiting(false); }} />)}
                 </View>
+                {listen ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: t.muted }}>{rt("listenFixed", { mode: rt("modeListen") })}</Text> : null}
               </Setting>
             <Setting label={w("repeat")}>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>{[1, 2, 3, 5, 10].map((n) => <Chip key={n} label={`×${n}`} selected={prefs.repeat === n} onPress={() => setPref({ repeat: n })} />)}</View>
@@ -700,9 +750,9 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
             </Setting>
             <Setting label={w("gap")}>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-                  {[0, 2, 5, 10, -1].map((n) => <Chip key={n} label={n === 0 ? w("gapOff") : n === -1 ? w("gapVerse") : `${n} s`} selected={gap === n} onPress={() => setGap(n)} />)}
+                  {[0, 2, 5, 10, -1].map((n) => <Chip key={n} label={n === 0 ? w("gapOff") : n === -1 ? w("gapVerse") : `${n} s`} selected={gap === n} disabled={listen} onPress={() => setGap(n)} />)}
                 </View>
-                <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: t.muted }}>{w("gapHint")}</Text>
+                <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: t.muted }}>{listen ? rt("listenFixed", { mode: rt("modeListen") }) : w("gapHint")}</Text>
               </Setting>
             <Setting label={w("sleep")}>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>

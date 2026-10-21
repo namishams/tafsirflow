@@ -17,7 +17,7 @@ export type W = { position: number; text: string };
 export function PromptedWords({ words, prompt, mark, size = 26, revealLabel }: { words: W[]; prompt: Prompt; mark?: Set<number>; size?: number; revealLabel?: string }) {
   const { s } = useS2();
   const [shown, setShown] = useState(false);
-  const key = words.map((w) => w.position).join(",");
+  const key = words.map((w) => `${w.position}:${w.text}`).join("|");
   useEffect(() => setShown(false), [key, prompt]);
   const level: Prompt = shown ? "full" : prompt;
   if (level === "hidden") {
@@ -57,7 +57,7 @@ export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { word
   const started = useRef(0);
   const armed = useRef(false);
   const report = useRef(onResult); report.current = onResult;
-  const key = words.map((x) => x.position).join(",");
+  const key = words.map((x) => `${x.position}:${x.text}`).join("|");
   useEffect(() => { setRes(null); armed.current = false; }, [key]);
   useEffect(() => {
     if (c.state === "listening") { started.current = Date.now(); armed.current = true; setRes(null); return; }

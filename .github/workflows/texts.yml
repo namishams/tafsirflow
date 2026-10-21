@@ -1,0 +1,23 @@
+# App and website texts: the app's copy of the website texts (mobile/src/web/messages, legal pages, Discover posters,
+# Shams …) must be the same as the website's messages/*.json. Fails when they differ; fix with
+# `node mobile/scripts/check-web-messages.mjs --fix` (or `npm --prefix mobile run sync-web`).
+name: App and website texts
+on:
+  push:
+    paths: ["messages/**", "mobile/src/web/messages/**", "mobile/scripts/check-web-messages.mjs", ".github/workflows/texts.yml"]
+  pull_request:
+    paths: ["messages/**", "mobile/src/web/messages/**"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compare the app's copy with the website's texts
+        run: node mobile/scripts/check-web-messages.mjs

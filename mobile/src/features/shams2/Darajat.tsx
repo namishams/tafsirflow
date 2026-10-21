@@ -164,7 +164,8 @@ function Item({ k, onDone }: { k: string; onDone: (score: number) => void }) {
   const cur = useVerseData(k, lang);
   const [check, setCheck] = useState<CheckResult | null>(null);
   const [shown, setShown] = useState(false);
-  const words = cur?.data?.words.map((w) => ({ position: w.position, text: w.text })) ?? [];
+  const curData = cur?.data;
+  const words = useMemo(() => curData?.words.map((w) => ({ position: w.position, text: w.text })) ?? [], [curData]);
   // the cue: at the highest prompt level only the last words of the previous verse, like a teacher's prompt
   const cue = prev?.data ? (m.grade.prompt === "hidden" ? prev.data.words.slice(-3) : prev.data.words) : [];
   const finish = (score: number) => {

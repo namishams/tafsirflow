@@ -199,7 +199,7 @@ export function BuildCard({ ex, checked, onChange }: { ex: Extract<Ex, { t: "bui
       <View style={{ minHeight: 96, borderRadius: R.card, borderWidth: 1.5, borderStyle: order.length ? "solid" : "dashed", borderColor: checked ? (ok ? t.accent : RED) : t.line, backgroundColor: checked && ok ? t.accentSoft : t.surface, alignItems: "center", justifyContent: "center", padding: 8 }}>
         {order.length ? <Ar size={ex.joiner ? 28 : 44}>{order.map((i) => ex.tiles[i]).join(ex.joiner)}</Ar> : <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{qt("emptyRow")}</Text>}
         {order.length && !checked ? (
-          <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 6, marginTop: 6 }}>
+          <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 6, marginTop: 6 }}>
             {order.map((i, k) => (
               <Pressable key={k} onPress={() => set(order.filter((_, j) => j !== k))} accessibilityRole="button" accessibilityLabel={ex.tiles[i]}
                 style={{ paddingHorizontal: 8, borderRadius: R.sm, backgroundColor: t.accentSoft }}><Ar size={18}>{ex.tiles[i]}</Ar></Pressable>
@@ -208,7 +208,7 @@ export function BuildCard({ ex, checked, onChange }: { ex: Extract<Ex, { t: "bui
         ) : null}
       </View>
       {checked && !ok ? <Ar size={ex.joiner ? 26 : 40} color={t.accent}>{ex.tiles.join(ex.joiner)}</Ar> : null}
-      <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 10, justifyContent: "center" }}>
+      <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 10, justifyContent: "center" }}>
         {bank.map(({ x, i }) => <DragTile key={i} label={x} disabled={checked || order.includes(i)} onPlace={() => set([...order, i])} />)}
       </View>
       {order.length && !checked ? <Pressable onPress={() => set([])} accessibilityRole="button" style={{ alignSelf: "center", padding: 8 }}><Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{qt("reset")}</Text></Pressable> : null}
@@ -264,7 +264,7 @@ export function ReadCard({ words, onResult, highlight }: { words: QWord[]; onRes
   return (
     <View style={{ gap: 14 }}>
       {!highlight ? <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 19, color: t.ink, textAlign: "center" }}>{qt("read")}</Text> : null}
-      <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
+      <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
         {words.map((w, i) => (
           <Pressable key={w.ref} onPress={() => say({ word: w })} accessibilityRole="button" accessibilityLabel={w.tr || w.ar}
             style={{ paddingHorizontal: 6, borderRadius: R.md, backgroundColor: ok ? (ok[i] ? t.accentSoft : "rgba(160,58,52,0.08)") : "transparent" }}>
@@ -307,7 +307,7 @@ export function SpeedCard({ ex, onDone }: { ex: Extract<Ex, { t: "speed" }>; onD
       <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, textAlign: "center" }}>{qt("speedLead")}</Text>
       <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.gold, textAlign: "center" }}>{qt("target", { s: s(ex.targetMs) })}{best ? ` · ${qt("best", { s: s(best) })}` : ""}</Text>
       <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 12, opacity: start === null ? 0.35 : 1 }}>
-        <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
+        <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
           {ex.items.map((x, i) => <Ar key={i} size={ex.items.some((y) => y.length > 4) ? 28 : 36}>{x}</Ar>)}
         </View>
       </View>

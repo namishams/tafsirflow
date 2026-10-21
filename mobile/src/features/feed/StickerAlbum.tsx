@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { CATALOG_SIZE, totalOwned, useCatalog } from "@/features/garden/catalog";
+import { fillG, useGardenText } from "@/features/garden/texts";
 import { LinearGradient } from "expo-linear-gradient";
 import { Page } from "@/components/page";
 import { useLang } from "@/i18n";
@@ -25,6 +26,7 @@ export default function StickerAlbum() {
   const gt = useGameText();
   const { lang } = useLang();
   const gm = useGamify();
+  const gx = useGardenText();
   const [fresh] = useState(() => new Set(gm.fresh));
   const [open, setOpen] = useState<string | null>(null);
   const [share, setShare] = useState<string | null>(null);
@@ -60,11 +62,11 @@ export default function StickerAlbum() {
       <Stack.Screen options={{ title: gt.album }} />
       <View style={{ gap: 14 }}>
         {/* the big collection (every verse, surah, juz, the 99 names …) that feeds the tree */}
-        <Pressable onPress={() => router.push("/sticker-collection" as Href)} accessibilityRole="button" accessibilityLabel={`${lang === "de" ? "Große Sammlung" : "Big collection"}: ${nf(bigOwned)} / ${nf(CATALOG_SIZE)}`}
+        <Pressable onPress={() => router.push("/sticker-collection" as Href)} accessibilityRole="button" accessibilityLabel={`${gx.bigT}: ${fillG(gx.albumLead, { n: nf(bigOwned), m: nf(CATALOG_SIZE) })}`}
           style={({ pressed }) => ({ borderRadius: R.card, overflow: "hidden", transform: [{ scale: pressed ? 0.98 : 1 }] })}>
           <LinearGradient colors={[stage.bg, stage.deep]} style={{ padding: 18, gap: 6 }}>
-            <Text style={{ fontFamily: FONT.display, fontSize: 20, color: "#f3e2b6" }}>{lang === "de" ? "Große Sammlung" : lang === "ar" ? "المجموعة الكبرى" : "Big collection"} · {nf(CATALOG_SIZE)}</Text>
-            <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: "rgba(255,255,255,0.85)" }}>{lang === "de" ? `Jeder Vers, jede Sure, jeder Juz, die 99 Namen und mehr. Sie haben ${nf(bigOwned)}. Für Ihren Baum.` : `Every verse, surah, juz, the 99 names and more. You have ${nf(bigOwned)}. For your tree.`}</Text>
+            <Text style={{ fontFamily: FONT.display, fontSize: 20, color: "#f3e2b6" }}>{gx.bigT} · {nf(CATALOG_SIZE)}</Text>
+            <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: "rgba(255,255,255,0.85)" }}>{fillG(gx.bigLead, { n: nf(bigOwned) })}</Text>
           </LinearGradient>
         </Pressable>
         <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 16, gap: 10 }}>

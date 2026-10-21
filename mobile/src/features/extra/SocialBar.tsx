@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ActivityIndicator, Animated, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, Share, Text, TextInput, View } from "react-native";
+import { ActivityIndicator, Alert, Animated, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, Share, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { GoldButton } from "@/components/brand";
 import { Icon } from "@/components/icons";
-import { useLang } from "@/i18n";
+import { useLang, useT } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { ApiError, SITE, api } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
@@ -118,10 +118,12 @@ export function SocialBar({ verseKey, shareText, trackView = true, onStage = fal
   );
 }
 
-/** the comment sheet of one verse: rules, comments with one level of replies, report / delete, the composer */
+/** the comment sheet of one verse: rules with the community guidelines, comments with one level of replies, report /
+ *  block / delete (App Store 1.2: report and block wherever members write), the composer (from 16, BLUEPRINT §7) */
 export function CommentsSheet({ visible, verseKey, onClose, onCount }: { visible: boolean; verseKey: string; onClose: () => void; onCount?: (n: number) => void }) {
   const t = useTheme();
   const w = useWebT("social");
+  const tr = useT();
   const x = useX();
   const { lang } = useLang();
   const { user } = useAuth();
@@ -131,12 +133,15 @@ export function CommentsSheet({ visible, verseKey, onClose, onCount }: { visible
   const [reply, setReply] = useState<Comment | null>(null);
   const [msg, setMsg] = useState<{ kind: "ok" | "err"; text: string } | null>(null);
   const [busy, setBusy] = useState(false);
+  // the comments could not be loaded (no connection): not the same as "no comments yet", so the sheet offers a retry
+  const [loadFailed, setLoadFailed] = useState(false);
 
   const load = useCallback(async () => {
+    setLoadFailed(false);
     try {
       const d = await api<{ comments: Comment[] }>(`/api/social/comments?key=${verseKey}`);
       setList(d.comments); onCount?.(d.comments.filter((c) => !c.pending).length);
-    } catch { setList([]); }
+    } catch { setList([]); setLoadFailed(true); }
   }, [verseKey, onCount]);
   useEffect(() => { if (visible) { setMsg(null); void load(); } }, [visible, load]);
 
@@ -155,12 +160,26 @@ export function CommentsSheet({ visible, verseKey, onClose, onCount }: { visible
       if (r.ok) { setText(""); setReply(null); setMsg({ kind: "ok", text: d.pending ? w("pendingNote") : w("posted") }); void load(); return; }
       if (r.status === 401) { onClose(); router.push("/sign-in"); return; }
       if (r.status === 403 && d.error === "verify") { setMsg({ kind: "err", text: x.verify }); return; }
+      if (r.status === 403 && d.error === "age16") { setMsg({ kind: "err", text: w("age16") }); return; }
       const reason = r.status === 422 ? w(`rej_${d.reason ?? "ai"}`) : "";
       setMsg({ kind: "err", text: reason && !reason.startsWith("rej_") ? reason : r.status === 422 ? w("rej_ai") : r.status === 429 ? w("rate") : d.error === "banned" ? w("banned") : r.status === 409 ? w("duplicate") : d.error === "captcha" ? x.feedback.captcha : w("error") });
     } catch { setMsg({ kind: "err", text: x.offline }); }
     finally { setBusy(false); }
   };
   const report = async (c: Comment) => { try { await api("/api/social/report", { body: { id: c.id } }); setMsg({ kind: "ok", text: w("reported") }); } catch (e) { if (!auth(e)) setMsg({ kind: "err", text: w("error") }); } };
+  // block the author: asked once, then their comments disappear (the server filters them from now on)
+  const block = (c: Comment) => {
+    if (!user) { onClose(); router.push("/sign-in"); return; }
+    Alert.alert(w("blockConfirm", { name: c.author }), w("blockBody"), [
+      { text: tr("common.cancel"), style: "cancel" },
+      { text: w("block"), style: "destructive", onPress: () => void (async () => {
+        try { await api("/api/social/block", { body: { id: c.id } }); setMsg({ kind: "ok", text: w("blocked") }); void load(); }
+        catch (e) { if (!auth(e)) setMsg({ kind: "err", text: w("error") }); }
+      })() },
+    ]);
+  };
+  // the community's age rule: writing from 16 when the confirmed birth year says otherwise (the server checks it too)
+  const tooYoung = !!user?.birthYear && new Date().getFullYear() - user.birthYear < 16;
   const del = async (c: Comment) => { try { await api("/api/social/delete", { body: { id: c.id } }); } catch { /* ignore */ } void load(); };
 
   const roots = (list ?? []).filter((c) => !c.parentId);
@@ -176,7 +195,10 @@ export function CommentsSheet({ visible, verseKey, onClose, onCount }: { visible
         {!child && !c.pending ? <Text onPress={() => setReply(c)} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.muted }}>{w("reply")}</Text> : null}
         {c.mine
           ? <Text onPress={() => void del(c)} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.muted }}>{w("delete")}</Text>
-          : <Pressable onPress={() => void report(c)} accessibilityRole="button" accessibilityLabel={w("report")} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><Icon name="flag" size={13} color={t.muted} /><Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.muted }}>{w("report")}</Text></Pressable>}
+          : <>
+            <Pressable onPress={() => void report(c)} accessibilityRole="button" accessibilityLabel={`${w("report")}, ${c.author}`} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><Icon name="flag" size={13} color={t.muted} /><Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.muted }}>{w("report")}</Text></Pressable>
+            <Pressable onPress={() => block(c)} accessibilityRole="button" accessibilityLabel={`${w("block")}, ${c.author}`} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><Icon name="shield" size={13} color={t.muted} /><Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.muted }}>{w("block")}</Text></Pressable>
+          </>}
       </View>
     </View>
   );
@@ -189,8 +211,17 @@ export function CommentsSheet({ visible, verseKey, onClose, onCount }: { visible
           <Text onPress={onClose} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.accent, paddingVertical: 8 }}>{w("close")}</Text>
         </View>
         <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 20 }} keyboardShouldPersistTaps="handled">
-          <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted, paddingVertical: 12 }}>{w("rules")}</Text>
-          {list === null ? <ActivityIndicator color={t.accent} style={{ marginTop: 16 }} /> : roots.length === 0 ? (
+          <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted, paddingTop: 12 }}>{w("rules")}</Text>
+          <Text onPress={() => { onClose(); router.push("/talents/guidelines"); }} accessibilityRole="link" style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.accent, paddingTop: 6, paddingBottom: 12 }}>{w("guidelines")}</Text>
+          {list === null ? <ActivityIndicator color={t.accent} style={{ marginTop: 16 }} /> : loadFailed ? (
+            <View accessibilityRole="alert" style={{ paddingVertical: 16, gap: 12 }}>
+              <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: t.muted }}>{x.offline}</Text>
+              <Pressable onPress={() => { setList(null); void load(); }} accessibilityRole="button" accessibilityLabel={tr("common.retry")}
+                style={({ pressed }) => ({ alignSelf: "flex-start", minHeight: 44, justifyContent: "center", paddingHorizontal: 18, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? t.gold : t.line })}>
+                <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{tr("common.retry")}</Text>
+              </Pressable>
+            </View>
+          ) : roots.length === 0 ? (
             <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, color: t.muted, paddingVertical: 16 }}>{w("none")}</Text>
           ) : roots.map((c, i) => (
             <View key={c.id} style={{ borderTopWidth: i ? 1 : 0, borderTopColor: t.line }}>
@@ -206,12 +237,16 @@ export function CommentsSheet({ visible, verseKey, onClose, onCount }: { visible
               <Pressable onPress={() => setReply(null)} accessibilityRole="button" accessibilityLabel={w("close")} hitSlop={10}><Icon name="close" size={16} color={t.muted} /></Pressable>
             </View>
           ) : null}
-          <TextInput value={text} onChangeText={setText} maxLength={500} multiline placeholder={w("placeholder")} placeholderTextColor={t.muted} accessibilityLabel={w("placeholder")}
-            style={{ minHeight: 84, maxHeight: 160, borderRadius: R.md, borderWidth: 1, borderColor: t.line, backgroundColor: t.bg, paddingHorizontal: 14, paddingTop: 12, paddingBottom: 12, fontFamily: FONT.regular, fontSize: 16, color: t.ink, textAlignVertical: "top" }} />
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-            <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 12, color: t.muted, fontVariant: ["tabular-nums"] }}>{fill(x.social.chars, { n: text.length })}</Text>
-            <GoldButton title={w("send")} compact busy={busy} disabled={text.trim().length < 2} onPress={() => void send()} />
-          </View>
+          {tooYoung ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.muted }}>{w("age16")}</Text> : (
+            <>
+              <TextInput value={text} onChangeText={setText} maxLength={500} multiline placeholder={w("placeholder")} placeholderTextColor={t.muted} accessibilityLabel={w("placeholder")}
+                style={{ minHeight: 84, maxHeight: 160, borderRadius: R.md, borderWidth: 1, borderColor: t.line, backgroundColor: t.bg, paddingHorizontal: 14, paddingTop: 12, paddingBottom: 12, fontFamily: FONT.regular, fontSize: 16, color: t.ink, textAlignVertical: "top" }} />
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
+                <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 12, color: t.muted, fontVariant: ["tabular-nums"] }}>{fill(x.social.chars, { n: text.length })}</Text>
+                <GoldButton title={w("send")} compact busy={busy} disabled={text.trim().length < 2} onPress={() => void send()} />
+              </View>
+            </>
+          )}
           {msg ? <Text accessibilityRole="alert" style={{ fontFamily: FONT.regular, fontSize: 13.5, color: msg.kind === "err" ? t.danger : t.accent }}>{msg.text}</Text> : null}
         </View>
       </KeyboardAvoidingView>

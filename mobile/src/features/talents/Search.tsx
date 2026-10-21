@@ -1,10 +1,12 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Keyboard, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { router, type Href } from "expo-router";
+import * as Haptics from "expo-haptics";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FONT, R, goldButton, useTheme } from "@/lib/theme";
 import { Icon, type IconName } from "@/components/icons";
 import { GoldButton } from "@/components/brand";
+import { goBack } from "@/components/page";
 import { useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
 import { readJSON, writeJSON } from "@/lib/store";
@@ -94,11 +96,14 @@ export function SearchScreen({ initial, initialTab }: { initial?: string; initia
   const follow = async (c: Row, list: "rows" | "suggested") => {
     const set = list === "rows" ? setRows : setSuggested;
     const patch = (x: Partial<Row>) => set((l) => l?.map((y) => (y.username === c.username ? { ...y, ...x } : y)) ?? null);
-    patch({ busy: true }); setMsg("");
+    // optimistic with a light haptic tap; a failed call puts the row back
+    const on = !(c.followed || c.requested);
+    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => undefined);
+    patch({ busy: true, followed: on, requested: false }); setMsg("");
     try {
-      const d = await T.follow(c.username, !(c.followed || c.requested));
+      const d = await T.follow(c.username, on);
       patch({ busy: false, followed: d.followed, requested: !!d.requested, followers: d.followers });
-    } catch (e) { patch({ busy: false }); setMsg(err(e)); }
+    } catch (e) { patch({ busy: false, followed: c.followed, requested: c.requested }); setMsg(err(e)); }
   };
 
   // learning content (Top): surahs by name, translation or number, courses by title
@@ -184,7 +189,8 @@ export function SearchScreen({ initial, initialTab }: { initial?: string; initia
               </Pressable>
             ) : null}
           </View>
-          <Pressable onPress={() => router.back()} accessibilityRole="button" hitSlop={8} style={{ minHeight: 40, justifyContent: "center" }}>
+          {/* goBack: opened by a link (nothing to go back to) Cancel still leaves, to the start */}
+          <Pressable onPress={() => { Keyboard.dismiss(); goBack(); }} accessibilityRole="button" hitSlop={8} style={{ minHeight: 40, justifyContent: "center" }}>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, color: t.ink }}>{tt("cancel")}</Text>
           </Pressable>
         </View>

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FlatList, Modal, Pressable, Text, TextInput, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { FONT, R, useTheme } from "@/lib/theme";
-import { Page, PageHero, LinkRow, RowGroup } from "@/components/page";
+import { Loading, Page, PageHero, LinkRow, RowGroup } from "@/components/page";
 import { Chip, OutlineButton } from "@/components/brand";
 import { LabeledField } from "@/components/form";
 import { Icon } from "@/components/icons";
@@ -34,7 +34,7 @@ export default function DiscoverTalents() {
   const [verified, setVerified] = useState(false);
   const [list, setList] = useState<TalentCard[]>([]);
   const [next, setNext] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
+  const [busy, setBusy] = useState(true); // the first page loads at once (no "empty" flash before it)
   const [msg, setMsg] = useState("");
   const [picker, setPicker] = useState(false);
   const [unread, setUnread] = useState(0);
@@ -159,7 +159,7 @@ export default function DiscoverTalents() {
               </View>
             </View>
 
-            {msg ? <Muted>{msg}</Muted> : !list.length && !busy ? <Muted>{tt("empty")}</Muted> : (
+            {msg ? <Muted>{msg}</Muted> : !list.length && busy ? <View style={{ minHeight: 120 }}><Loading /></View> : !list.length ? <Muted>{tt("empty")}</Muted> : (
               <ListBox>{list.map((c, i) => <TalentRow key={c.username} c={c} first={i === 0} />)}</ListBox>
             )}
             {next ? <OutlineButton title={tt("loadMore")} onPress={() => void load(next)} disabled={busy} /> : null}

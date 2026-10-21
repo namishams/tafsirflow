@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
-import { currentUser, endSession, hashPassword, verifyPassword } from "@/lib/auth";
+import { currentUser, endSession, hashPassword, hasPassword, recentlyConfirmed, verifyPassword } from "@/lib/auth";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { COUNTRY_CODES, GOALS } from "@/lib/countries";
 import { passwordProblem } from "@/lib/passwords";
@@ -35,7 +35,9 @@ export async function GET(req: NextRequest) {
   }
   const sessions = Number((await p.query("SELECT count(*)::int AS n FROM sessions WHERE user_id = $1 AND expires_at > now()", [me.id])).rows[0].n);
   const social = (await p.query("SELECT (SELECT count(*)::int FROM comments WHERE user_id = $1 AND status = 'approved') AS comments, (SELECT count(*)::int FROM verse_likes WHERE user_id = $1) AS likes", [me.id])).rows[0];
-  return json({ profile: u, sessions, social });
+  // accounts created with an e-mail code have no password: they confirm deletion with a code instead (hasPassword)
+  const pw = (await p.query("SELECT password_hash FROM users WHERE id = $1", [me.id])).rows[0]?.password_hash;
+  return json({ profile: u, sessions, social, hasPassword: hasPassword(pw) });
 }
 
 export async function PUT(req: NextRequest) {
@@ -65,9 +67,13 @@ export async function POST(req: NextRequest) {
   const p = pool()!;
   const row = (await p.query("SELECT password_hash FROM users WHERE id = $1", [me.id])).rows[0];
   const checkCurrent = () => verifyPassword(String(b.current ?? ""), row?.password_hash ?? "scrypt$00$00");
+  // without the password: a sign-in or an e-mail code confirmation of the last 15 minutes in this session (accounts
+  // created with an e-mail code or a passkey have no password)
+  const confirmedOrCurrent = async () => checkCurrent() || (await recentlyConfirmed());
 
   if (b.action === "password") {
-    if (!checkCurrent()) return json({ error: "current" }, 403);
+    // an account without a password may set one after a fresh confirmation; an existing password needs the old one
+    if (hasPassword(row?.password_hash) ? !checkCurrent() : !(await recentlyConfirmed())) return json({ error: "current" }, 403);
     if (passwordProblem(String(b.next ?? ""), me.email)) return json({ error: "weak" }, 400);
     await p.query("UPDATE users SET password_hash = $2 WHERE id = $1", [me.id, hashPassword(String(b.next))]);
     return json({ ok: true });
@@ -78,7 +84,7 @@ export async function POST(req: NextRequest) {
     return json({ ok: true });
   }
   if (b.action === "delete") {
-    if (!checkCurrent()) return json({ error: "current" }, 403);
+    if (!(await confirmedOrCurrent())) return json({ error: "current" }, 403);
     if (me.role === "admin") return json({ error: "admin" }, 400); // the owner account cannot delete itself by accident
     await deleteUserMedia(me.id); // Quran Talents: clips, samples and avatar in MEDIA_DIR (rows go with the cascade)
     // certificate recordings sent for review (absolute paths outside the web root; the rows go with the cascade)

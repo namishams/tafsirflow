@@ -26,7 +26,7 @@ export function AbrahamicScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back topInset eyebrow={s("eyebrow")} title={s("title")} lead={s("lead")} arabic="مِلَّةَ إِبْرَاهِيمَ" />
+        <PageHero back topInset eyebrow={s("eyebrow")} title={s("title")} lead={s("lead")} arabic="إبراهيم" />
         <View style={{ padding: 16, gap: 14 }}>
           <CourseList def={ABRAHAMIC_COURSE} />
           {UNITS.map((u, i) => {

@@ -1,4 +1,5 @@
 // Contracts of /api/feed/*. Quran and hadith text is never in the feed: items reference verseKey / hadithId and the app resolves the text.
+import type { CarouselPayload, WisdomPayload } from "./carousels/types";
 export type FeedTradition = "all" | "sunni" | "shia";
 export const FEED_LOCALES = ["de", "en", "ar", "tr", "ur", "fa", "ps", "fr", "es", "id", "ms", "bn", "ru", "zh"] as const;
 export type FeedLocale = (typeof FEED_LOCALES)[number];
@@ -28,7 +29,14 @@ export type FeedConfig = {
   sijill?: FeedSijill;
   /** the server corpus behind /api/feed/page (feed_items); every field optional */
   corpus?: FeedCorpusConfig;
+  /** Swipe & Learn (app features/swipe, website /swipe); every field optional, defaults in the clients */
+  swipe?: FeedSwipe;
 };
+
+/** Swipe & Learn: `minSeconds` a learning card must be read before it can be swiped (owner: 10), `momentSeconds` the
+ *  same for an achievement card of another learner, `momentEvery` one such card after about this many learning cards,
+ *  `sessionSize` cards per set (a summary after each), `dailyGrowth` cards a day that grow the garden a little. */
+export type FeedSwipe = { enabled?: boolean; minSeconds?: number; momentSeconds?: number; momentEvery?: number; sessionSize?: number; dailyGrowth?: number };
 
 /** The server corpus (scripts/feed-corpus.mjs → feed_items → /api/feed/page). `share`: the part of the app's library posts
  *  taken from the corpus when items are ready (0–0.9, app default 0.35); `kindWeights`: relative weight per corpus kind
@@ -106,7 +114,9 @@ export type FeedItemKind = "editorial" | "announcement" | "verse-of-day" | "hadi
   | "corpus";
 
 /** Kinds of the server corpus. Older app builds (no v=2) only get verse and hadith posts as "editorial" items. */
-export type FeedCorpusKind = "verse" | "word" | "tafsir" | "hadith" | "shia-hadith" | "name" | "quiz" | "course" | "wiki" | "lemma" | "mutashabihat" | "maqasid" | "dua";
+export type FeedCorpusKind = "verse" | "word" | "tafsir" | "hadith" | "shia-hadith" | "name" | "quiz" | "course" | "wiki" | "lemma" | "mutashabihat" | "maqasid" | "dua"
+  /** carousels and wisdom posts: the editors' own words from src/lib/feed/carousels (ref {c} / {w}), only for clients that send carousels=1 */
+  | "carousel" | "wisdom";
 /** The reference of a corpus post, per kind (never text; the client loads the text from the source):
  *  verse {k}, word {k, w} (1-based word position), tafsir {k, t} (Quran.com tafsir id), hadith {c, n} (hadith-api
  *  collection and number), shia-hadith {b, n} (Thaqalayn bookId and id), name {i, v} (index 0–98 of the app's list,
@@ -140,6 +150,10 @@ export type FeedItem = {
   /** corpus posts (v=2): the reference (see FeedRef) and the app topic; older clients ignore both */
   ref?: FeedRef;
   topic?: string;
+  /** postKind "carousel": the slides in the reader's language (scripture as references) */
+  carousel?: CarouselPayload;
+  /** postKind "wisdom": one wisdom post (verse / hadith reference, a cited saying or an own reflection) */
+  wisdom?: WisdomPayload;
 };
 
 export type FeedNewResponse = { items: FeedItem[]; generatedAt: string };

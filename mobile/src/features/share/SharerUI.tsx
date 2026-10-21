@@ -94,7 +94,7 @@ export function TopSharers() {
       <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 17, color: t.ink }}>{s.topWeek}</Text>
       <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted, marginBottom: 6 }}>{s.topLead}</Text>
       {list.map((x, i) => (
-        <Pressable key={x.username} onPress={() => { tick(); router.push(`/community/u/${x.username}` as Href); }} accessibilityRole="link"
+        <Pressable key={x.username} onPress={() => { tick(); router.push(`/talents/u/${x.username}` as Href); }} accessibilityRole="link"
           accessibilityLabel={`${i + 1}. ${x.name}, ${fillText(s.sharedWeek, { n: nf(x.week) })}`}
           style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, paddingVertical: 10, borderTopWidth: i ? 1 : 0, borderTopColor: t.line, opacity: pressed ? 0.7 : 1 })}>
           <Text style={{ width: 24, fontFamily: FONT.display, fontSize: 16, color: i < 3 ? t.gold : t.muted, textAlign: "center" }}>{nf(i + 1)}</Text>

@@ -10,11 +10,16 @@ import { readJSON, writeJSON } from "@/lib/store";
 import { LimitError, OWN_TAFSIR_ID, getOwnTafsir, getResources, getTafsir, hasOwnTafsir, tafsirBlocks, tafsirOptionsFor, type Resource, type Tafsir } from "@/lib/quran";
 import { GoldButton } from "@/components/brand";
 import { localeMeta } from "@/web/locales";
+import { useX } from "@/features/extra/strings";
+import { useAppT } from "@/features/radio/strings";
 
 // Tafsir for one verse, like the website's tafsir sheet: the own Quran Masterclass tafsir first (if written for this
 // language), then Quran.com tafsirs of the reader's language, English classics as fallback. Empty entries belong to
-// the nearest earlier verse. Source always shown under the text.
+// the nearest earlier verse. Source always shown under the text; an own entry written with AI help carries the AI label.
+// No connection is not "no tafsir": the panel says so and offers a retry (also for the list of sources).
 const cache = new Map<string, Tafsir | null>();
+// app languages in Arabic script: no letter spacing (it breaks the joined letters)
+const RTL_LANGS_UI = ["ar", "ur", "fa", "ps"];
 const TAFSIR_KEY = "qmc.tafsir";
 // tafsir languages written right to left (Quran.com language names and the own tafsir's resourceLang)
 const RTL_LANGS = ["arabic", "urdu", "persian", "farsi", "pashto", "kurdish", "sindhi", "uyghur", "hebrew", "dhivehi"];
@@ -25,8 +30,12 @@ export function useTafsirSources() {
   const { lang } = useLang();
   const [opts, setOpts] = useState<Resource[]>([]);
   const [hasLocal, setHasLocal] = useState(true);
+  // the list of sources could not be loaded (no connection): nothing is cached, retry() asks again
+  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     let off = false;
+    setFailed(false);
     Promise.all([getResources(), hasOwnTafsir(lang)])
       .then(([r, own]) => {
         if (off) return;
@@ -35,10 +44,10 @@ export function useTafsirSources() {
         setOpts(all);
         setHasLocal(local || own);
       })
-      .catch(() => { if (!off) setOpts([{ id: 169, name: "Ibn Kathir (Abridged)", author_name: "Hafiz Ibn Kathir", language_name: "english" }]); });
+      .catch(() => { if (!off) { setOpts([]); setFailed(true); } });
     return () => { off = true; };
-  }, [lang]);
-  return { opts, hasLocal };
+  }, [lang, attempt]);
+  return { opts, hasLocal, failed, retry: () => setAttempt((n) => n + 1) };
 }
 
 export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) {
@@ -47,9 +56,15 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
   const wa = useWebT("account");
   const { lang } = useLang();
   const { user } = useAuth();
-  const { opts, hasLocal } = useTafsirSources();
+  const x = useX();
+  const ra = useAppT();
+  const sources = useTafsirSources();
+  const { opts, hasLocal } = sources;
   const [id, setId] = useState<number | null>(() => readJSON<number | null>(TAFSIR_KEY, null));
   const [tafsir, setTafsir] = useState<Tafsir | null | undefined>(undefined);
+  // the text could not be loaded (offline, server error) – not the same as "no tafsir for this verse"
+  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const [limit, setLimit] = useState(false);
   const [needsVerify, setNeedsVerify] = useState(false);
   const [resent, setResent] = useState(false);
@@ -62,7 +77,7 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
   useEffect(() => {
     if (active === null) return;
     const run = ++tick.current;
-    setTafsir(undefined); setLimit(false); setNeedsVerify(false);
+    setTafsir(undefined); setLimit(false); setNeedsVerify(false); setFailed(false);
     (async () => {
       try {
         if (active === OWN_TAFSIR_ID) { const r = await getOwnTafsir(lang, surah, verse); if (run === tick.current) setTafsir(r); return; }
@@ -77,10 +92,11 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
       } catch (e) {
         if (run !== tick.current) return;
         if (e instanceof LimitError) { setLimit(true); setNeedsVerify(e.needsVerify); }
+        else setFailed(true);
         setTafsir(null);
       }
     })();
-  }, [active, surah, verse, lang, user?.id]);
+  }, [active, surah, verse, lang, user?.id, attempt]);
 
   const choose = (v: number) => { setId(v); writeJSON(TAFSIR_KEY, v, true); setPicking(false); };
   const rtl = RTL_LANGS.includes(source?.language_name?.toLowerCase() ?? "");
@@ -112,7 +128,16 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
           ) : null}
         </View>
       ) : null}
-      {tafsir === undefined ? <ActivityIndicator color={t.accent} style={{ marginVertical: 16 }} /> : null}
+      {sources.failed || failed ? (
+        <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: "rgba(201,166,94,0.45)", backgroundColor: t.surface, padding: 16, gap: 12 }} accessibilityRole="alert">
+          <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.ink }}>{x.offline}</Text>
+          <Pressable onPress={() => { if (sources.failed) sources.retry(); else setAttempt((n) => n + 1); }} accessibilityRole="button" accessibilityLabel={ra("tryAgain")}
+            style={({ pressed }) => ({ alignSelf: "flex-start", minHeight: 44, justifyContent: "center", paddingHorizontal: 18, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? t.gold : "rgba(201,166,94,0.6)", backgroundColor: pressed ? "rgba(201,166,94,0.08)" : t.surface })}>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{ra("tryAgain")}</Text>
+          </Pressable>
+        </View>
+      ) : null}
+      {tafsir === undefined && !sources.failed ? <ActivityIndicator color={t.accent} style={{ marginVertical: 16 }} /> : null}
       {limit && needsVerify && user ? (
         <View style={{ borderRadius: R.lg, backgroundColor: t.accentSoft, padding: 16, gap: 12 }} accessibilityRole="alert">
           <Text style={{ fontFamily: FONT.bold, fontSize: 16, lineHeight: 22, color: t.ink }}>{wa("verifyGateTitle")}</Text>
@@ -126,7 +151,7 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
           <GoldButton title={wa("register")} onPress={() => router.push("/register")} compact />
         </View>
       ) : null}
-      {tafsir === null && !limit ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{w("noTafsir")}</Text> : null}
+      {tafsir === null && !limit && !failed ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{w("noTafsir")}</Text> : null}
       {tafsir ? (
         <View>
           {tafsir.verseKeys.length > 1 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted, marginBottom: 8 }}>{w("covers", { from: tafsir.verseKeys[0].split(":")[1], to: tafsir.verseKeys[tafsir.verseKeys.length - 1].split(":")[1] })}</Text> : null}
@@ -139,6 +164,15 @@ export function TafsirPanel({ surah, verse }: { surah: number; verse: number }) 
             <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: t.muted, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 8, marginTop: 6 }}>
               {w("source")}: {source.name}{source.author_name ? ` — ${source.author_name}` : ""}{source.id === OWN_TAFSIR_ID ? "" : " (Quran.com)"}
             </Text>
+          ) : null}
+          {tafsir.generatedByAi ? (
+            // AI output is labelled as AI (blueprint §4), with the note that it is marked for review by scholars
+            <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 8, marginTop: 8 }}>
+              <View style={{ paddingHorizontal: 7, height: 20, borderRadius: R.pill, borderWidth: 1, borderColor: "rgba(201,166,94,0.6)", backgroundColor: "rgba(201,166,94,0.12)", justifyContent: "center" }}>
+                <Text style={{ fontFamily: FONT.bold, fontSize: 10.5, letterSpacing: RTL_LANGS_UI.includes(lang) ? 0 : 0.6, color: t.gold }}>{w("aiBadge")}</Text>
+              </View>
+              <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: t.muted }}>{w("aiTafsir")}</Text>
+            </View>
           ) : null}
         </View>
       ) : null}

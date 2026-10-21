@@ -7,8 +7,8 @@ import Svg, { Circle, Defs, LinearGradient as SvgGradient, Stop } from "react-na
 import { CALLIG_FONT, FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
 import { Arabic, Arcade, GoldButton, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, SmallStar, Stage, Tile, gradientColors } from "@/components/brand";
 import { Icon } from "@/components/icons";
-import { Page } from "@/components/page";
-import { intlLocale, useLang } from "@/i18n";
+import { Page, goBack } from "@/components/page";
+import { intlLocale, useLang, useT } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { useAuth } from "@/lib/auth";
 import { readJSON, useStoreVersion } from "@/lib/store";
@@ -49,6 +49,7 @@ export default function Today() {
   const wp = useWebT("prayer");
   const wh = useWebT("home2");
   const { lang } = useLang();
+  const tr = useT();
   const { user } = useAuth();
   const insets = useSafeAreaInsets();
   useStoreVersion();
@@ -101,7 +102,11 @@ export default function Today() {
         {/* stage: the day under a lattice of light */}
         <Stage hairlines={false}>
           <Text allowFontScaling={false} style={{ position: "absolute", right: -6, top: insets.top + 6, fontFamily: CALLIG_FONT, fontSize: 92, lineHeight: 150, color: "rgba(214,180,108,0.16)" }}>{TODAY_WORD}</Text>
-          <View style={{ paddingHorizontal: 18, paddingTop: insets.top + 22, paddingBottom: 18 }}>
+          <View style={{ paddingHorizontal: 18, paddingTop: insets.top + 6, paddingBottom: 18 }}>
+            {/* a stack screen (opened from the Feed and the account settings): the way back, as on every PageHero */}
+            <Pressable onPress={goBack} accessibilityRole="button" accessibilityLabel={tr("common.back")} hitSlop={12} style={{ width: 40, height: 40, justifyContent: "center", marginStart: -6, marginBottom: 2 }}>
+              <Icon name="chevronLeft" color="#ffffff" size={24} />
+            </Pressable>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.4, textTransform: "uppercase", color: stage.gold }}>{dateText}{hijri ? ` · ${hijri}` : ""}</Text>
             <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 34, lineHeight: 38, letterSpacing: -0.8, color: "#fff", marginTop: 8 }}>{user?.name ? w("hello", { name: user.name.split(" ")[0] }) : w("title")}</Text>
             <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: stage.textSoft, marginTop: 8 }}>{doneCount >= tasks.length ? w("allDone") : w("tasksLeft", { n: tasks.length - doneCount })}</Text>

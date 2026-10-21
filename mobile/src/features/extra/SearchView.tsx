@@ -14,6 +14,7 @@ import { openVerse } from "./links";
 import { fill, useX } from "./strings";
 import { useT } from "@/i18n";
 import { usePT } from "@/features/talents/profileText";
+import { useScreenBarStyle } from "@/features/reader/statusBar";
 
 /** keeps the <em> highlight of the search API, drops every other tag (SearchView.tsx Highlighted) */
 function Highlighted({ html, mark }: { html: string; mark: string }) {
@@ -28,6 +29,8 @@ function Highlighted({ html, mark }: { html: string; mark: string }) {
  */
 export function SearchView({ initial }: { initial?: string }) {
   const t = useTheme();
+  // light marble: dark status bar text in light mode while the search is in front
+  useScreenBarStyle(t.dark ? "light" : "dark");
   const hm = useHm(t);
   const { lang } = useLang();
   const ws = useWebT("search");

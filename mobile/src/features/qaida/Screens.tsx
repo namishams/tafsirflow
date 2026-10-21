@@ -452,7 +452,7 @@ function JuzSurahScreen({ surah, id }: { surah: number; id: string }) {
               onPress={() => { if (audio.playing && all) { audio.pause(); setAll(false); } else { setAll(true); play(cur ?? 0); } }} />
             {verses.map((v, k) => (
               <GoldCard key={v.verse_key} star={false}>
-                <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 4 }}>
+                <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 4 }}>
                   {realWords(v).map((w) => (
                     <Text key={w.position} accessibilityLanguage="ar" allowFontScaling={false}
                       style={{ fontFamily: ARABIC_FONT, fontSize: 28, lineHeight: 54, paddingHorizontal: 4, borderRadius: R.sm, writingDirection: "rtl",

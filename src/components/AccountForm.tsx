@@ -7,9 +7,13 @@ import { fetchMe, startSync, stopSync, type Me } from "@/lib/sync";
 import { GOALS, sortedCountries } from "@/lib/countries";
 import { captchaToken } from "@/lib/captchaClient";
 import CaptchaBox from "./CaptchaBox";
+import CodeSignIn from "./auth/CodeSignIn";
+import ConfirmCode from "./auth/ConfirmCode";
 
 const ERR: Record<string, string> = { invalid: "errInvalid", exists: "errExists", weak: "errWeak", email: "errEmail", rate: "errRate", insecure: "errInsecure", nodb: "errNoDb", token: "errToken", terms: "errTerms", name: "errName", country: "errCountry", age: "errAge", captcha: "errCaptcha" };
 type Mode = "login" | "register" | "forgot";
+// "code" (sign in or create the account with an e-mail code, 21.10.2026) is the first view; the password forms stay
+// one tap away ("Sign in with password"). defaultMode only picks the headline: "register" = "Create your free account".
 
 export function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -35,11 +39,14 @@ export function PasswordInput(props: { value: string; onChange: (v: string) => v
 
 export default function AccountForm({ defaultMode = "login", bare = false }: { defaultMode?: Mode; bare?: boolean }) {
   const t = useTranslations("account");
+  const ts = useTranslations("signin");
+  const tsec = useTranslations("security");
   const locale = useLocale();
   const [me, setMe] = useState<Me | null>(null);
   const [ready, setReady] = useState(false);
   const [secure, setSecure] = useState(true);
-  const [mode, setMode] = useState<Mode>(defaultMode);
+  const [mode, setMode] = useState<Mode | "code">("code");
+  const [byCode, setByCode] = useState(false);
   const qs = useSearchParams();
   const [resent, setResent] = useState(false);
   const [email, setEmail] = useState("");
@@ -104,7 +111,13 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
     setMe(null);
   };
 
-  const go = (m: Mode) => { setMode(m); setErr(""); setInfo(""); };
+  const go = (m: Mode | "code") => { setMode(m); setErr(""); setInfo(""); };
+  // signed in with a code or a passkey (CodeSignIn): the same follow-up as after the password form
+  const signedIn = async (u: Me) => {
+    setMe(u);
+    if (await startSync()) window.dispatchEvent(new Event("tf-synced"));
+    window.dispatchEvent(new Event("tf-auth"));
+  };
   if (!ready) return <div className="h-64" />;
 
   if (me)
@@ -118,18 +131,25 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
         {!me.emailVerified && (
           <div className="mt-4 rounded-lg border border-accent/30 bg-accent-soft p-4 text-sm">
             <p>{t("verifyNeeded", { email: me.email })}</p>
-            <button onClick={resend} disabled={resent} className="mt-3 font-semibold text-accent hover:underline disabled:opacity-60">{resent ? t("resent") : t("resend")}</button>
+            <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+              <button onClick={resend} disabled={resent} className="font-semibold text-accent hover:underline disabled:opacity-60">{resent ? t("resent") : t("resend")}</button>
+              {!byCode && <button onClick={() => setByCode(true)} className="font-semibold text-accent hover:underline">{ts("verifyByCode")}</button>}
+            </div>
+            {byCode && <div className="mt-3"><ConfirmCode email={me.email} onConfirmed={() => { fetchMe().then((r) => { if (r.user) void signedIn(r.user); }); }} /></div>}
           </div>
         )}
         {me.emailVerified && <p className="mt-5 border-t border-line pt-5 text-sm leading-relaxed text-muted">{t("syncOn")}</p>}
         <div className="mt-6 flex flex-wrap gap-3">
           <Link href="/profile" className="inline-flex h-11 items-center rounded-lg bg-ink px-5 text-sm font-semibold text-bg">{t("myProfile")}</Link>
+          <Link href="/account/security" className="inline-flex h-11 items-center rounded-lg border border-line px-5 text-sm font-semibold hover:border-ink">{tsec("title")}</Link>
           <Link href="/quran" className="inline-flex h-11 items-center rounded-lg bg-accent px-5 text-sm font-semibold text-white">{t("home")}</Link>
           {me.role === "admin" && <Link href="/admin" className="inline-flex h-11 items-center rounded-lg border border-line px-5 text-sm font-semibold hover:border-ink">Admin</Link>}
           <button onClick={logout} className="inline-flex h-11 items-center rounded-lg border border-line px-5 text-sm font-semibold hover:border-ink">{t("signOut")}</button>
         </div>
       </div>
     );
+
+  if (mode === "code") return <CodeSignIn fresh={defaultMode === "register"} bare={bare} secure={secure} onSignedIn={signedIn} onPassword={() => go("login")} />;
 
   const title = mode === "login" ? t("loginTitle") : mode === "register" ? t("registerTitle") : t("forgotTitle");
   return (
@@ -208,6 +228,9 @@ export default function AccountForm({ defaultMode = "login", bare = false }: { d
         ) : (
           <button type="button" className="font-medium text-accent hover:underline" onClick={() => go(mode === "login" ? "register" : "login")}>{mode === "login" ? t("noAccount") : t("haveAccount")}</button>
         )}
+      </p>
+      <p className="-mt-2 text-center text-sm">
+        <button type="button" className="font-medium text-muted hover:text-ink" onClick={() => go("code")}>{ts("withCode")}</button>
       </p>
     </form>
   );

@@ -41,7 +41,7 @@ function bump(f: (d: DayStats) => void) {
 export function kindOfItem(item: string, libKind?: string): string {
   if (libKind) return libKind;
   const p = item.split(":")[0];
-  return ({ v: "verse", w: "word", q: "quiz", c: "carousel", m: "memorise", r: "reciters", t: "transliteration", d: "word", n: "name", s: "story", h: "hadith", p: "prayer", k: "chapters", cal: "calendar" } as Record<string, string>)[p] ?? p;
+  return ({ v: "verse", w: "word", q: "quiz", c: "carousel", m: "memorise", r: "reciters", t: "transliteration", d: "word", n: "name", s: "story", h: "hadith", p: "prayer", k: "chapters", cal: "calendar", cr: "carousel", ws: "wisdom" } as Record<string, string>)[p] ?? p;
 }
 export const statPost = (kind: string, item?: string) => { bump((d) => { d.posts++; d.kinds[kind] = (d.kinds[kind] ?? 0) + 1; }); gEvent({ t: "post", kind, item }); };
 export const statVerse = () => { bump((d) => { d.verses++; }); gEvent({ t: "verse" }); };

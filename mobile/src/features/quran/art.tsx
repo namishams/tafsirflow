@@ -7,6 +7,7 @@ import { turn, useSpin } from "@/features/radio/motion";
 import type { Chapter } from "@/lib/quran";
 import { VERSE_COUNTS } from "@/web/counts";
 import { JUZ_START } from "@/web/quranIndex";
+import { BUNDLED_UI_VERSES, ringOf } from "./uiVerses";
 
 // The ornaments of the website's Quran page (src/components/art/QuranArt.tsx, src/styles/art-quran.css,
 // src/app/[locale]/(app)/quran/page.tsx), drawn natively with the same path data: the shamsa medallion with its
@@ -42,8 +43,9 @@ export function qPalette(t: Theme): QPal {
 export const EMERALD: readonly [string, string] = ["rgb(13,68,52)", "rgb(6,36,27)"];
 
 // ---------- texts copied verbatim from the website by script, never typed by hand ----------
-// src/app/[locale]/(app)/quran/page.tsx RING: the verses around the medallion (54:17 and 56:77–80, Uthmani script)
-export const QURAN_RING = "وَلَقَدۡ يَسَّرۡنَا ٱلۡقُرۡءَانَ لِلذِّكۡرِ فَهَلۡ مِن مُّدَّكِرٖ ۞ إِنَّهُۥ لَقُرۡءَانٞ كَرِيمٞ ۞ فِي كِتَٰبٖ مَّكۡنُونٖ ۞ لَّا يَمَسُّهُۥٓ إِلَّا ٱلۡمُطَهَّرُونَ ۞ تَنزِيلٞ مِّن رَّبِّ ٱلۡعَٰلَمِينَ ۞";
+// the verses around the medallion (54:17 and 56:77–80, Uthmani script) from the Quran data (uiVerses.ts: the stored
+// copy via useUiVerses(), this constant is the bundled snapshot), as on the website's /quran page
+export const QURAN_RING = ringOf(BUNDLED_UI_VERSES);
 // src/components/art/QuranArt.tsx QuranShamsa: the words in the centre of the medallion
 export const SHAMSA_LINES = ["القرآن", "الكريم"] as const;
 

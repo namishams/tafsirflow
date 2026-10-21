@@ -109,7 +109,7 @@ export default function RecordClip() {
                   <View style={{ gap: 14 }}>
                     <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: t.muted }}>{tt("checkLead", { n: Math.round(PASS * 100) })}</Text>
                     {!verses ? <Loading /> : (
-                      <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 6, padding: 12, borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
+                      <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 6, padding: 12, borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
                         {check.words.map((w, i) => (
                           <Text key={i} style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 40, paddingHorizontal: 4, borderRadius: R.sm, color: check.ok ? (check.ok[i] ? t.accent : t.danger) : t.ink, backgroundColor: check.ok?.[i] ? t.accentSoft : "transparent" }}>{w}</Text>
                         ))}

@@ -1,7 +1,7 @@
 import { strength, today, type Srs } from "@/web/learning";
 import { NOT_COUNTED } from "@/web/coach";
 import { VERSE_COUNTS } from "@/web/counts";
-import { JUZ_START, TOTAL_VERSES, indexOf, keyAt } from "@/web/quranIndex";
+import { JUZ_START, TOTAL_VERSES, indexOf } from "@/web/quranIndex";
 import { strengthOf } from "@/features/srs/fsrs";
 import type { SrsState } from "@/features/srs/store";
 import type { Check, MutStat, Words } from "./store";
@@ -71,22 +71,24 @@ const juzRange = (j: number): [number, number] => {
   const at = (k: string) => indexOf(...(k.split(":").map(Number) as [number, number]));
   return [at(JUZ_START[j - 1]), j < 30 ? at(JUZ_START[j]) : TOTAL_VERSES];
 };
+// fixed sizes, computed once: counted verses per surah, verse index range [from, to) per juz
+const SURAH_TOTAL = VERSE_COUNTS.map((n, i) => n - [...NOT_COUNTED].filter((k) => k.startsWith(`${i + 1}:`)).length);
+const JUZ_RANGES = Array.from({ length: 30 }, (_, j) => juzRange(j + 1));
+const juzAt = (i: number) => { let j = 0; while (j < 29 && JUZ_RANGES[j + 1][0] <= i) j++; return j + 1; };
 
 /** score per verse plus aggregates per surah and juz (pages need the page map, see pages.ts) */
 export function qualityModel(known: Map<string, Known>, x: Extra) {
   const scores = new Map<string, number>();
   for (const k of known.values()) scores.set(k.key, verseScore(k, x).score);
-  const surahs: Cell[] = VERSE_COUNTS.map((n, i) => {
-    const s = i + 1;
-    const keys = Array.from({ length: n }, (_, v) => `${s}:${v + 1}`).filter((k) => !NOT_COUNTED.has(k));
-    return cellOf(s, keys.filter((k) => scores.has(k)), keys.length, scores);
-  });
-  const juz: Cell[] = Array.from({ length: 30 }, (_, j) => {
-    const [a, b] = juzRange(j + 1);
-    const keys: string[] = [];
-    for (let i = a; i < b; i++) { const { s, v } = keyAt(i); keys.push(`${s}:${v}`); }
-    return cellOf(j + 1, keys.filter((k) => scores.has(k)), keys.length, scores);
-  });
+  // only the memorised verses are visited (in Quran order, so ties among the weakest stay in verse order)
+  const bySurah = new Map<number, string[]>(), byJuz = new Map<number, string[]>();
+  for (const k of [...known.values()].sort((a, b) => a.i - b.i)) {
+    const s = Number(k.key.split(":")[0]), j = juzAt(k.i);
+    (bySurah.get(s) ?? bySurah.set(s, []).get(s)!).push(k.key);
+    (byJuz.get(j) ?? byJuz.set(j, []).get(j)!).push(k.key);
+  }
+  const surahs: Cell[] = VERSE_COUNTS.map((_, i) => cellOf(i + 1, bySurah.get(i + 1) ?? [], SURAH_TOTAL[i], scores));
+  const juz: Cell[] = JUZ_RANGES.map(([a, b], j) => cellOf(j + 1, byJuz.get(j + 1) ?? [], b - a, scores));
   const all = [...scores.values()];
   const overall = all.length ? Math.round(all.reduce((a, b) => a + b, 0) / all.length) : null;
   return { scores, surahs, juz, overall, count: all.length };

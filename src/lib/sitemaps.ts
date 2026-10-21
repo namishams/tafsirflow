@@ -5,17 +5,23 @@ import { TAJWEED_LESSONS } from "./tajweed";
 import { ISLAM } from "./islam";
 import { RECITER_BIOS } from "./reciters";
 import { CATALOG } from "./learn/courses/catalog";
+import { carouselPaths } from "./feed/carousels/paths";
+import { SUBJECTS as QBANK_SUBJECTS } from "./learn/qbank/bank";
 
 // Sitemap index -> one file per category and language, e.g. /sitemaps/surahs-de.xml
 export const CATEGORIES = {
   pages: ["", "/shams", "/plan", "/academy", "/tajweed", "/vocab", "/khatm", "/guides", "/about", "/feedback", "/changelog", "/quran", "/islam", "/how", "/arabic", "/salah", "/reciters", "/world", "/secrets", "/app", "/today", "/feed", "/map", "/search", "/prayer", "/radio", "/duas", "/support", "/wudu", "/community", "/ranking", "/assistant", "/dua-generator", "/masterclass", "/talents", "/premium"],
   guides: [...ISLAM.map((d) => `/islam/${d.slug}`), ...RECITER_BIOS.map((r) => `/reciters/${r.slug}`), ...GUIDES.map((g) => `/guides/${g.slug}`), ...TAJWEED_LESSONS.map((l) => `/tajweed/${l.id}`)],
   // the courses ported from the app (overview pages; lesson runners and exams are not listed)
-  learn: ["/school", "/school/ibtidai", "/school/idadi", "/school/thanawi", "/school/ali", "/courses", ...CATALOG.map((c) => `/courses/${c.id}`), "/arabic/read", "/arabic/lang", "/reciter-path", "/cards",
+  learn: ["/school", "/school/ibtidai", "/school/idadi", "/school/thanawi", "/school/ali", "/courses", ...CATALOG.map((c) => `/courses/${c.id}`), "/arabic/read", "/arabic/lang", "/reciter-path", "/cards", "/swipe",
+    // the examination centre (overview and its twelve subjects; sessions, mock exams and statistics are personal)
+    "/exams", ...QBANK_SUBJECTS.map((x) => `/exams/${x.id}`),
     // Shams Method 2.0, Rihlat al-'Ilm, the garden and the Mishary track (ported from the app)
     "/shams/method", "/shams/handbook", "/shams/mutashabihat", "/shams/darajat", ...Array.from({ length: 114 }, (_, i) => `/shams/tadabbur?s=${i + 1}`), "/journey", "/garden", "/garden/collection", "/mishary", "/mishary/ear", "/mishary/masters", "/mishary/masters/alafasy", "/mishary/masters/abdulbasit", "/mishary/masters/minshawi", "/mishary/masters/husary", "/mishary/masters/sudais", "/mishary/seasons", "/mishary/hall-of-fame", "/tests", "/abrahamic", "/haramain", "/haramain/guide", "/tajweed/practice", "/vocab-decks"],
   legal: ["/legal/privacy", "/legal/terms", "/legal/imprint"],
   surahs: Array.from({ length: 114 }, (_, i) => `/surah/${i + 1}`),
+  // the feed's carousels (src/lib/feed/carousels): the gallery and every carousel
+  carousels: carouselPaths(),
 } as const;
 export type Category = keyof typeof CATEGORIES;
 

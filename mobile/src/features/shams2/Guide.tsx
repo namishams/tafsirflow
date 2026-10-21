@@ -30,7 +30,9 @@ export function WelcomeScreen() {
   const [mins, setMins] = useState<number | null>(null);
   const last = i >= PRINCIPLES.length;
   const p = PRINCIPLES[Math.min(i, PRINCIPLES.length - 1)];
-  const finish = () => { if (mins) saveSettings({ minutes: mins }); writeJSON(ONBOARDED, Date.now()); router.replace("/shams/method" as Href); };
+  // back to where the welcome was opened (the hub's card or the handbook); only a welcome opened on its own (a link)
+  // goes on to the hub, so the hub is never stacked twice
+  const finish = () => { if (mins) saveSettings({ minutes: mins }); writeJSON(ONBOARDED, Date.now()); if (router.canGoBack()) router.back(); else router.replace("/shams/method" as Href); };
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />

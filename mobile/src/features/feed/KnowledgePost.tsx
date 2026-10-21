@@ -62,7 +62,7 @@ function VerseBlock({ verseKey, mark, find, full, onFound }: { verseKey: string;
   return (
     <View style={{ gap: 6 }}>
       {find && mark?.length ? (
-        <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", justifyContent: "center", gap: 4 }}>
+        <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", justifyContent: "center", gap: 4 }}>
           {ws.map((w) => {
             const hit = tapped !== null && mark.includes(w.position) && (solved || tapped === w.position);
             const miss = tapped === w.position && !mark.includes(w.position);

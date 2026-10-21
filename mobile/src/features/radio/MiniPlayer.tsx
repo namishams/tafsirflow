@@ -156,27 +156,49 @@ function RadioBar({ onTabs }: { onTabs: boolean }) {
   );
 }
 
+/** re-render every half minute while a sleep timer runs, so its minutes stay current */
+function useSleepClock(on: boolean) {
+  const [, setTick] = useState(0);
+  useEffect(() => {
+    if (!on) return;
+    const id = setInterval(() => setTick((x) => x + 1), 30000);
+    return () => clearInterval(id);
+  }, [on]);
+}
+
 function VerseBar({ onTabs }: { onTabs: boolean }) {
   const v = vp.useVersePlayback();
   const t = useWebT("radio");
   const a = useAppT();
   const { lang } = useLang();
   const th = useTheme();
+  useSleepClock(v.sleep.mode > 0);
   const s0 = v.session;
   if (!s0) return null;
   const title = `${s0.chapterName} · ${s0.idx + 1}`;
+  // the reader's sleep timer keeps running here: minutes left, or the end of the surah
+  const sleepMin = vp.sleepMinutes(v.sleep);
+  const sleepText = sleepMin === null ? "" : sleepMin > 0 ? a("sleepLeft", { m: sleepMin }) : a("sleepEnd");
   const sub = reciterName({ folder: s0.reciterFolder, name: s0.reciterName }, lang);
   const last = s0.idx >= s0.items.length - 1;
   return (
     <Capsule onTabs={onTabs}>
       <Pressable onPress={() => router.push(`/quran/${s0.chapterId}?v=${s0.idx + 1}` as Href)} accessibilityRole="button"
-        accessibilityLabel={`${t("openSurah")}: ${title}, ${sub}`} style={s.main}>
+        accessibilityLabel={`${t("openSurah")}: ${title}, ${sub}${sleepText ? `, ${sleepText}` : ""}`} style={s.main}>
         <View style={[s.art, { backgroundColor: th.accentSoft }]}>
           <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: th.accent, fontVariant: ["tabular-nums"] }}>{s0.chapterId}</Text>
         </View>
         <View style={{ flex: 1, minWidth: 0 }}>
           <Text numberOfLines={1} style={[s.title, { color: th.ink }]}>{title}</Text>
-          <Text numberOfLines={1} style={[s.sub, { color: th.muted, marginTop: 2 }]}>{sub}</Text>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginTop: 2 }}>
+            <Text numberOfLines={1} style={[s.sub, { flexShrink: 1, color: th.muted }]}>{sub}</Text>
+            {sleepText ? (
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 3 }} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
+                <Icon name="moon" color={th.gold} size={11} />
+                <Text numberOfLines={1} style={[s.sub, { color: th.gold, fontFamily: FONT.semibold, fontVariant: ["tabular-nums"] }]}>{sleepText}</Text>
+              </View>
+            ) : null}
+          </View>
         </View>
       </Pressable>
       <Controls playing={v.playing} onToggle={vp.toggle} onNext={() => vp.step(1)} nextDisabled={last} onClose={vp.stop}

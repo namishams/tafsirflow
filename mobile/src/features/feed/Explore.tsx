@@ -13,8 +13,10 @@ import { SAVED_KEY as HADITH_SAVED_KEY, type HadithItem } from "@/features/hadit
 import { toneOf } from "./art";
 import { hadithFeedItems, toFeedItem, type HadithFeedItem } from "./hadith";
 import { DiscoverFeed, loadVerse } from "./source";
-import { useFeedText } from "./texts";
+import { fillText, useFeedText } from "./texts";
 import { useFeedVoice } from "./voice";
+import { FeedEmpty, useStalled } from "./ui";
+import { SAVED_NAMES_KEY } from "./savedNames";
 import { useReducedMotionX } from "@/features/extra/motion";
 import { Image, TextInput } from "react-native";
 import { LIB, LIB_TOPICS, LibScheduler, isLibId, isSubTopic, onLibData, takeRemoteNew, type LibTopic, type SubTopic } from "./library";
@@ -26,6 +28,8 @@ import { loadRemoteConfig } from "./remote";
 import { tick } from "./haptics";
 import { wasSeen } from "./seen";
 import { kindTopic, libText, topicLabel as libTopicLabel } from "./LibraryPost";
+import { SAVED_KEY as CAROUSEL_SAVED_KEY, isCarouselOrWisdom, postSearchText, savedPostIds, type SavedPost } from "@/features/carousel/registry";
+import { CarouselTile } from "@/features/carousel/Posts";
 
 // Explore (a 3-column grid of square tiles, like Instagram Explore) and the Saved collection. A tile opens the Reels
 // view at that item. Every text on a tile comes from the vetted sources (Quran API, library stories, hadith APIs).
@@ -79,7 +83,9 @@ function Grid({ data, onOpen, onEnd, empty, refresh }: { data: Entry[]; onOpen: 
     for (let i = 0, b = 0; i < data.length; i += 6, b++) out.push({ id: `${data[i].item}-${i}`, items: data.slice(i, i + 6), big: b % 2 === 1 && data.length - i >= 6, left: b % 4 === 1 });
     return out;
   }, [data]);
-  const tile = (e: Entry, big = false) => <Tile key={e.item} e={e} big={big} size={big ? size * 2 : size} onPress={() => onOpen(e.item, e.hadith)} />;
+  const tile = (e: Entry, big = false) => isCarouselOrWisdom(e.item)
+    ? <CarouselTile key={e.item} id={e.item} size={big ? size * 2 : size} onPress={() => onOpen(e.item)} />
+    : <Tile key={e.item} e={e} big={big} size={big ? size * 2 : size} onPress={() => onOpen(e.item, e.hadith)} />;
   return (
     <FlatList
       data={blocks}
@@ -172,10 +178,13 @@ export function ExploreBody({ active, onOpen, top = 0, onSearch, initialQuery }:
     h.loading = true;
     void hadithFeedItems(lang, readTradition(), h.cursor, 12).then((p) => {
       h.cursor = p.cursor; h.queue.push(...p.items);
+      // an empty page means offline: the hadith view says so at once
+      if (topicRef.current === "hadith" && !p.items.length) failRef.current();
       // the hadith view fills as pages arrive (and keeps prefetching the next one)
       if (topicRef.current === "hadith") setData((d) => [...d, ...h.queue.splice(0).map((x) => ({ item: `h:${x.id}`, hadith: x }))]);
-    }).catch(() => undefined).finally(() => { h.loading = false; });
+    }).catch(() => { if (topicRef.current === "hadith") failRef.current(); }).finally(() => { h.loading = false; });
   }, [lang]);
+  const failRef = useRef(() => undefined as void);
 
   const [topic, setTopic] = useState<ExTopic>("all");
   const topicRef = useRef(topic);
@@ -226,6 +235,9 @@ export function ExploreBody({ active, onOpen, top = 0, onSearch, initialQuery }:
     const got = page(30).filter((e) => !fresh.some((f) => f.item === e.item));
     setData([...fresh, ...got.filter((e) => !wasSeen(e.item)), ...got.filter((e) => wasSeen(e.item))]);
   }, [active, ready, lang, topic, fetchHadith, page, gen]);
+  // an empty grid: a spinner while the first tiles load, then (nothing arrived) the reason with "Try again"
+  const [stalled, setStalled] = useStalled(data.length === 0, [topic, gen, lang]);
+  failRef.current = () => setStalled(true);
   // library topics fill as their pages arrive
   const dataLen = useRef(0);
   dataLen.current = data.length;
@@ -237,6 +249,7 @@ export function ExploreBody({ active, onOpen, top = 0, onSearch, initialQuery }:
     const st = latest.current.stories;
     const hits = data.filter((e) => {
       if (isLibId(e.item)) return libText(e.item).toLowerCase().includes(q);
+      if (isCarouselOrWisdom(e.item)) return postSearchText(e.item).toLowerCase().includes(q);
       if (e.item.startsWith("s:")) { const x = st.byId.get(e.item.slice(2)); return !!x && `${x.title} ${x.groupTitle}`.toLowerCase().includes(q); }
       if (e.item.startsWith("n:")) { const n = st.names[Number(e.item.slice(2))]; return !!n && `${n.latin} ${n.meaning} ${n.ar}`.toLowerCase().includes(q); }
       if (e.hadith) return `${e.hadith.text ?? ""} ${e.hadith.source}`.toLowerCase().includes(q);
@@ -271,7 +284,9 @@ export function ExploreBody({ active, onOpen, top = 0, onSearch, initialQuery }:
         })}
       </ScrollView>
       <Grid key={topic} data={shown} onOpen={onOpen} onEnd={query ? undefined : () => setData((d) => [...d, ...page(24)])}
-        refresh={query ? undefined : <RefreshControl refreshing={refreshing} onRefresh={refresh} tintColor={t.accent} colors={[t.accent]} />} />
+        refresh={query ? undefined : <RefreshControl refreshing={refreshing} onRefresh={refresh} tintColor={t.accent} colors={[t.accent]} />}
+        empty={query.trim() ? <FeedEmpty state="message" message={fillText(tx.noResults, { q: query.trim() })} />
+          : stalled ? <FeedEmpty state="failed" onRetry={() => setGen((g) => g + 1)} /> : <FeedEmpty state="loading" />} />
     </View>
   );
 }
@@ -282,12 +297,17 @@ export function SavedSheet({ visible, onClose, onOpen }: { visible: boolean; onC
   const verses = useStored<string[]>("tf:bookmarks", []);
   const storyIds = useStored<string[]>(SAVED_KEY, []);
   const hadiths = useStored<HadithItem[]>(HADITH_SAVED_KEY, []);
+  const names = useStored<string[]>(SAVED_NAMES_KEY, []);
   const stories = useStories();
+  const carousels = useStored<SavedPost[]>(CAROUSEL_SAVED_KEY, []);
   const data = useMemo<Entry[]>(() => [
+    ...savedPostIds(carousels).map((item) => ({ item })),
     ...hadiths.map((h) => { const f = toFeedItem(h); return { item: `h:${f.id}`, hadith: f }; }),
     ...storyIds.filter((id) => stories.byId.has(id)).map((id) => ({ item: `s:${id}` })),
+    // saved names of Allah (kept by their Arabic name) as the name posts of the current list
+    ...names.map((ar) => stories.names.findIndex((n) => n.ar === ar)).filter((i) => i >= 0).map((i) => ({ item: `n:${i}` })),
     ...verses.filter((k) => /^\d+:\d+$/.test(k)).map((k) => ({ item: `v:${k}` })),
-  ], [hadiths, storyIds, verses, stories]);
+  ], [hadiths, storyIds, names, verses, stories, carousels]);
   return (
     <Sheet visible={visible} title={tx.saved} onClose={onClose}>
       <Grid data={data} onOpen={(i, h) => { onClose(); onOpen(i, h); }} empty={

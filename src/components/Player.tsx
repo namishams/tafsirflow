@@ -10,6 +10,7 @@ import SocialBar from "./SocialBar";
 import SurahPicker from "./SurahPicker";
 import { Ink, Medallion, Rosette, SurahBanner } from "./Ornaments";
 import ReciteCheck from "./ReciteCheck";
+import FocusMode, { type Cover } from "./FocusMode";
 import SessionBar from "./SessionBar";
 import { completeItem, itemUrl } from "@/lib/session";
 import { offlineReady, removeSurah, saveSurah, savedSurahs } from "@/lib/offline";
@@ -26,6 +27,8 @@ import { readJSON, writeJSON } from "@/lib/storage";
 import { dueVerses, rate, readSrs, stats, type Rating } from "@/lib/learning";
 import { versePlan, stepCount, type VersePlan } from "@/lib/coach";
 import * as vp from "@/lib/versePlayback";
+// the basmala is verse 1:1 from the Quran data (snapshot in lib/data/ui-verses.json), never typed by hand
+import { BUNDLED_UI_VERSES } from "@/lib/uiVerses";
 import { ageProfile } from "@/lib/age";
 
 type Mode = "learn" | "continuous";
@@ -51,10 +54,10 @@ function Toggle({ on, onChange, label, compact = false }: { on: boolean; onChang
   );
 }
 // a small group of choices shown as pills
-function Chips<T extends number>({ value, options, onChange, fmtOpt }: { value: T; options: T[]; onChange: (v: T) => void; fmtOpt: (v: T) => string }) {
+function Chips<T extends number>({ value, options, onChange, fmtOpt, disabled = false }: { value: T; options: T[]; onChange: (v: T) => void; fmtOpt: (v: T) => string; disabled?: boolean }) {
   return (
-    <div className="flex flex-wrap gap-1.5">
-      {options.map((o) => <button key={o} type="button" aria-pressed={value === o} onClick={() => onChange(o)} className={`h-9 min-w-[3rem] rounded-full border px-3 text-[13px] font-semibold tabular-nums transition ${value === o ? "border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/15 text-ink" : "border-line bg-surface text-muted hover:border-ink/30 hover:text-ink"}`}>{fmtOpt(o)}</button>)}
+    <div className={`flex flex-wrap gap-1.5 ${disabled ? "opacity-45" : ""}`}>
+      {options.map((o) => <button key={o} type="button" disabled={disabled} aria-pressed={value === o} onClick={() => onChange(o)} className={`h-9 min-w-[3rem] rounded-full border px-3 text-[13px] font-semibold tabular-nums transition disabled:cursor-not-allowed ${value === o ? "border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/15 text-ink" : "border-line bg-surface text-muted hover:border-ink/30 hover:text-ink"}`}>{fmtOpt(o)}</button>)}
     </div>
   );
 }
@@ -75,6 +78,20 @@ function firstLetter(word: string) {
 
 // small deterministic hash for the random hide mode
 const hashOf = (x: string) => { let h = 2166136261; for (let i = 0; i < x.length; i++) h = Math.imul(h ^ x.charCodeAt(i), 16777619); return h >>> 0; };
+/** the cover of word wi of n of a verse before anything is revealed (the same rules as the active verse below) */
+function coverOf(hide: number, key: string, seed: number, wi: number, n: number): Cover {
+  if (hide === 2 || hide === 6) return "hidden";
+  if (hide === 1) return wi % 2 === 1 ? "hidden" : "none";
+  if (hide === 4) return (hashOf(`${key}:${seed}:${wi}`) % 100) < 45 || (n > 1 && wi === hashOf(`${key}:${seed}`) % n) ? "hidden" : "none";
+  if (hide === 5) return "soft";
+  if (hide === 3) return "cue";
+  return "none";
+}
+// the practise levels as a progression, as in the app (features/reader/memo.ts LEVEL_HIDE): 1 soft, 2 first letters,
+// 3 every second word, 4 random gaps, 5 every word
+const LEVELS: [1 | 2 | 3 | 4 | 5, number][] = [[1, 5], [2, 3], [3, 1], [4, 4], [5, 2]];
+type Tool = "read" | "practice" | "test" | "listen" | "check";
+const TOOL_D: Record<Tool, string> = { read: "modeReadD", practice: "modePractiseD", test: "modeTestD", listen: "modeListenD", check: "modeCheckD" };
 
 // Memory hooks (Eselsbrücken) for a verse, computed from its words
 const bare = (w: string) => w.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, "");
@@ -99,6 +116,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const th = useTranslations("home");
   const ta = useTranslations("account");
   const ts = useTranslations("shams");
+  const rt = useTranslations("reader"); // the app reader's memorising modes and focus mode (messages "reader")
   const locale = useLocale();
   const meta = localeMeta(locale);
   // the audio element is shared and lives beyond this page (see lib/versePlayback.ts)
@@ -138,6 +156,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const [hide, setHide] = useState(startHide); // 0 show all, 1 every 2nd word, 2 hard (all), 3 first letters (cue), 4 random, 5 soft (blurred), 6 test word by word
   const [seed, setSeed] = useState(1); // random mode: reshuffle
   const [practiceHide, setPracticeHide] = useState(5); // last chosen cover level of the "practise" tool
+  // the app reader's two other memorising tools: "listen" (hear the verse, then a pause as long as the verse to repeat it,
+  // without stopping in learn mode) and "check" (a random verse of the surah fully covered: recite, reveal, rate)
+  const [memoX, setMemoX] = useState<"listen" | "check" | null>(null);
+  // practise / test: cover every verse of the surah, not only the active one (as in the app)
+  const [coverAll, setCoverAll] = useState(false);
+  const [focusOpen, setFocusOpen] = useState(false);
   const [menuFor, setMenuFor] = useState<string | null>(null); // verse whose "more" menu is open
   useEffect(() => {
     if (!menuFor) return;
@@ -446,7 +470,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   // after a recitation: wait (gap) so the listener can repeat it, then continue
   const afterGap = (next: () => void) => {
     const a = audioRef.current;
-    const ms = gap === -1 ? Math.round(((a && isFinite(a.duration) ? a.duration : 4) / (a?.playbackRate || 1)) * 1000) : gap * 1000;
+    const g = memoX === "listen" ? -1 : gap; // "listen & repeat": a pause as long as the verse
+    const ms = g === -1 ? Math.round(((a && isFinite(a.duration) ? a.duration : 4) / (a?.playbackRate || 1)) * 1000) : g * 1000;
     if (!ms) { next(); return; }
     setTurn({ ms, key: Date.now() });
     gapTimer.current = setTimeout(() => { gapTimer.current = null; setTurn(null); next(); }, ms);
@@ -463,7 +488,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (playsDone.current < repeat) { if (shams !== null) play(); else afterGap(play); return; }
     setPlaying(false);
     if (shams !== null) { if (shams === 0) autoNext(0); return; } // Shams method: the coach decides when to move on
-    if (mode === "learn") { setWaiting(true); return; }
+    if (mode === "learn" && memoX !== "listen") { setWaiting(true); return; }
     afterGap(advance);
   };
 
@@ -523,7 +548,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     setShams(-1);
     setTimeout(() => setShams(p.steps[0]), 0);
   };
-  const startShams = () => beginPlan(idx);
+  const startShams = () => { setMemoX(null); beginPlan(idx); };
   const shamsIdx = useRef(idx);
   useEffect(() => {
     if (shamsIdx.current === idx) return;
@@ -590,6 +615,29 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
   const [celebrate, setCelebrate] = useState<string | null>(null); // a short gold glow when a verse was recalled
   useEffect(() => { if (!celebrate) return; const id = setTimeout(() => setCelebrate(null), 1700); return () => clearTimeout(id); }, [celebrate]);
+  // "random check": a random other verse of the surah, fully covered
+  const startCheck = () => {
+    setMemoX("check"); setHide(2); setRevealed(false);
+    if (verses.length < 2) return;
+    let r = idx;
+    while (r === idx) r = Math.floor(Math.random() * verses.length);
+    goTo(r, false);
+  };
+  // the memorising tools of the app reader: Read · Practise · Test · Listen & repeat · Random check
+  const chooseTool = (k: Tool) => {
+    if (k === "check") { startCheck(); return; }
+    setMemoX(k === "listen" ? "listen" : null);
+    setHide(k === "read" || k === "listen" ? 0 : k === "test" ? 6 : practiceHide);
+    if (k === "listen") setWaiting(false);
+  };
+  const levelLabel = (n: number) => (n === 1 ? t("hideSoft") : n === 2 ? ts("hAcrostic") : n === 3 ? t("hideHalf") : n === 4 ? t("hideRandom") : t("hideHard"));
+  const togglePlay = () => { if (turn) { clearGap(); return; } if (playing) audioRef.current?.pause(); else play(); };
+  // the cover of the active verse in focus mode (what is revealed or already tested shows)
+  const focusCover = (wi: number, n: number): Cover => {
+    if (!verse || revealed) return "none";
+    if (hide === 6) return wi >= testPos ? "hidden" : "none";
+    return coverOf(hide, verse.verse_key, seed, wi, n);
+  };
   const onRate = (r: Rating) => {
     if (!verse) return;
     if (r !== "again") { setCelebrate(verse.verse_key); try { navigator.vibrate?.(18); } catch { /* not supported */ } }
@@ -597,6 +645,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (r === "again") slipped.current = verse.verse_key;
     setNote(days ? t("saved", { days }) : t("savedToday"));
     if (shams !== null) { if (r === "again" && plan) { beginPlan(idx); return; } nextShams(); return; }
+    if (memoX === "check") { startCheck(); return; }
     if (sessionMode) { setTimeout(() => goSession(r !== "again"), 500); return; }
     if (reviewMode) {
       const next = dueVerses().find((k) => k !== verse.verse_key);
@@ -691,6 +740,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               {t("source")}: {source.name}{source.author_name ? ` — ${source.author_name}` : ""}{source.id === OWN_TAFSIR_ID ? "" : " (Quran.com)"}
             </p>
           )}
+          {/* AI output is labelled as AI, with the note that it is marked for review by scholars (same as the app) */}
+          {tafsir.generatedByAi && (
+            <p className="mt-2 flex items-start gap-2 text-xs text-muted">
+              <span className="shrink-0 rounded-full border border-gold/60 bg-gold/10 px-2 py-0.5 text-[10.5px] font-bold tracking-wide text-gold rtl:tracking-normal">{t("aiBadge")}</span>
+              <span>{t("aiTafsir")}</span>
+            </p>
+          )}
         </>
       )}
     </div>
@@ -716,7 +772,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             </div>
             <h1 className={locale === "ar" ? "sr-only" : "font-display relative mt-5 text-3xl leading-none sm:text-4xl"}>{chapter.name_simple}</h1>
             {chapter.translated_name.name && <p className="relative mt-2 text-white/60">{chapter.translated_name.name}</p>}
-            {withBismillah && <p className="font-arabic relative mt-6 text-[30px] leading-loose text-[rgb(var(--gold))] sm:text-[36px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>}
+            {withBismillah && <p className="font-arabic relative mt-6 text-[30px] leading-loose text-[rgb(var(--gold))] sm:text-[36px]"><Ink>{BUNDLED_UI_VERSES["1:1"]}</Ink></p>}
           </section>
 
           <div className="mb-6">
@@ -757,9 +813,10 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                   </div>
                   {!kids && <div className="grid gap-2"><span className={label}>{t("mode")}</span>
                     <div className="inline-flex w-fit rounded-full bg-bg p-1">
-                      <button className={seg(mode === "learn")} onClick={() => setMode("learn")}>{t("modeLearn")}</button>
-                      <button className={seg(mode === "continuous")} onClick={() => setMode("continuous")}>{t("modeContinuous")}</button>
+                      <button className={`${seg(memoX === "listen" ? false : mode === "learn")} disabled:cursor-not-allowed disabled:opacity-45`} disabled={memoX === "listen"} onClick={() => setMode("learn")}>{t("modeLearn")}</button>
+                      <button className={`${seg(memoX === "listen" ? true : mode === "continuous")} disabled:cursor-not-allowed disabled:opacity-45`} disabled={memoX === "listen"} onClick={() => setMode("continuous")}>{t("modeContinuous")}</button>
                     </div>
+                    {memoX === "listen" && <span className="text-xs text-muted">{rt("listenFixed", { mode: rt("modeListen") })}</span>}
                   </div>}
                   <div className="grid gap-2"><span className={label}>{t("repeat")}</span>
                     <Chips value={repeat} options={[1, 2, 3, 5, 10]} onChange={setRepeat} fmtOpt={(n) => `×${n}`} />
@@ -768,8 +825,8 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     <Chips value={speed} options={[0.5, 0.75, 1, 1.25, 1.5]} onChange={setSpeed} fmtOpt={(n) => `${n}×`} />
                   </div>
                   {!kids && <div className="grid gap-2"><span className={label}>{t("gap")}</span>
-                    <Chips value={gap} options={[0, 2, 5, 10, -1]} onChange={setGap} fmtOpt={(n) => (n === 0 ? t("gapOff") : n === -1 ? t("gapVerse") : `${n} s`)} />
-                    <span className="text-xs text-muted">{t("gapHint")}</span>
+                    <Chips value={memoX === "listen" ? -1 : gap} options={[0, 2, 5, 10, -1]} onChange={setGap} disabled={memoX === "listen"} fmtOpt={(n) => (n === 0 ? t("gapOff") : n === -1 ? t("gapVerse") : `${n} s`)} />
+                    <span className="text-xs text-muted">{memoX === "listen" ? rt("listenFixed", { mode: rt("modeListen") }) : t("gapHint")}</span>
                   </div>}
                   <div className="grid gap-2"><span className={label}>{t("sleep")}</span>
                     <Chips value={sleep.mode} options={[0, 15, 30, 60, -1]} onChange={setSleep} fmtOpt={(n) => (n === 0 ? t("sleepOff") : n === -1 ? t("sleepEnd") : `${n} min`)} />
@@ -839,7 +896,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
               const active = i === idx;
               const words = v.words.filter((w) => w.char_type_name === "word");
               const marked = marks.includes(v.verse_key);
-              const tool = hide === 0 ? "read" : hide === 6 ? "test" : "practice";
+              const tool: Tool = memoX ?? (hide === 0 ? "read" : hide === 6 ? "test" : "practice");
+              // "cover every verse": the quiet verses get the cover of the active one (practise / test)
+              const drill = !active && coverAll && shams === null && memoX === null && hide > 0;
               const markWord = (ok: boolean) => () => { const m = { ...testMarks, [testPos]: ok }; setTestMarks(m); if (testPos + 1 >= words.length) setRevealed(true); setTestPos(testPos + 1); };
               // Shams focus: only the verse being learned (and the one before it, for connecting) stays open – the rest fold into one quiet line
               if (shams !== null && i !== idx && i !== idx - 1) return (
@@ -906,9 +965,17 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         <span className="verse-end self-center">﴿{toAr(v.verse_number)}﴾</span>
                       </p>
                     ) : (
-                      <p className="ar-text-sm font-arabic" dir="rtl">{v.text_uthmani} <span className="verse-end">﴿{toAr(v.verse_number)}﴾</span></p>
+                      drill ? (
+                        <p className="ar-text-sm flex flex-wrap gap-x-2 font-arabic" dir="rtl" aria-label={`${t("verse")} ${v.verse_number}`}>
+                          {words.map((w, wi) => {
+                            const c = coverOf(hide, v.verse_key, seed, wi, words.length);
+                            return <span key={w.position} aria-hidden className={`rounded-md ${c === "hidden" ? "select-none bg-line text-transparent blur-sm" : c === "soft" ? "select-none opacity-40 blur-[3px]" : c === "cue" ? "text-gold" : ""}`}>{c === "cue" ? firstLetter(w.text_uthmani) : w.text_uthmani}</span>;
+                          })}
+                          <span className="verse-end self-center">﴿{toAr(v.verse_number)}﴾</span>
+                        </p>
+                      ) : <p className="ar-text-sm font-arabic" dir="rtl">{v.text_uthmani} <span className="verse-end">﴿{toAr(v.verse_number)}﴾</span></p>
                     )}
-                    {showTranslit && v.transliteration && !(active && hide > 0 && !revealed) && (
+                    {showTranslit && v.transliteration && !(active && hide > 0 && !revealed) && !drill && (
                       <p className="mt-3 italic leading-relaxed text-gold" dir="ltr" lang="en">{v.transliteration}</p>
                     )}
                     {showTranslation && <p className="mt-2 leading-relaxed text-muted" dir={meta.dir}>{v.translation}</p>}
@@ -973,24 +1040,47 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                     {active && shams === null && (
                       <div className="mt-5 border-t border-line pt-4" onClick={(e) => e.stopPropagation()}>
                         <div className="flex flex-wrap items-center gap-2">
-                          <div className="inline-flex rounded-full bg-bg p-1" role="tablist" aria-label={t("memorize")}>
-                            <button role="tab" aria-selected={tool === "read"} className={seg(tool === "read")} onClick={() => setHide(0)}>{t("toolRead")}</button>
-                            <button role="tab" aria-selected={tool === "practice"} className={seg(tool === "practice")} onClick={() => setHide(practiceHide)}>{t("toolPractice")}</button>
-                            <button role="tab" aria-selected={tool === "test"} className={seg(tool === "test")} onClick={() => setHide(6)}>{t("toolTest")}</button>
+                          <div className="inline-flex max-w-full flex-wrap rounded-3xl bg-bg p-1" role="tablist" aria-label={t("memorize")}>
+                            {([["read", t("toolRead")], ["practice", t("toolPractice")], ["test", t("toolTest")], ["listen", rt("modeListen")], ["check", rt("modeCheck")]] as [Tool, string][]).map(([k, l]) => (
+                              <button key={k} role="tab" aria-selected={tool === k} className={seg(tool === k)} onClick={() => chooseTool(k)}>{l}</button>
+                            ))}
                           </div>
-                          {!kids && <button onClick={startShams} className="btn-gold ms-auto inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-full px-4 text-[13px] font-bold sm:w-auto"><Sun className="h-3.5 w-3.5" />{t("toolShams")}</button>}
+                          {/* an outline button: the gold stays for the main action (play, reveal, rate), as in the app */}
+                          {!kids && <button onClick={startShams} className="ms-auto inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-full border border-[rgb(201_166_94)]/60 bg-surface px-4 text-[13px] font-bold text-ink transition hover:bg-[rgb(201_166_94)]/10 sm:w-auto"><Sun className="h-3.5 w-3.5 text-[rgb(var(--gold))]" />{t("toolShams")}</button>}
                         </div>
+                        <p className="mt-2 text-[13px] leading-relaxed text-muted">{rt(TOOL_D[tool])}</p>
                         {tool === "practice" && (
-                          <div className="mt-3 flex flex-wrap items-center gap-2 text-[13px]">
-                            <span className="shrink-0 text-muted">{t("hideLabel")}</span>
-                            <div className="inline-flex flex-wrap rounded-full bg-bg p-1">
-                              {([[5, "hideSoft"], [1, "hideHalf"], [4, "hideRandom"], [2, "hideHard"]] as const).map(([h, k]) => (
-                                <button key={h} className={seg(hide === h)} onClick={() => { if (h === 4 && hide === 4) setSeed((x) => x + 1); setHide(h); setPracticeHide(h); }}>{t(k)}</button>
-                              ))}
+                          <div className="mt-3 grid gap-2 text-[13px]">
+                            <div className="flex flex-wrap gap-1.5" role="tablist" aria-label={t("hideLabel")}>
+                              {LEVELS.map(([n, h]) => {
+                                const on = hide === h;
+                                return (
+                                  <button key={n} role="tab" aria-selected={on} aria-label={`${rt("level", { n })}: ${levelLabel(n)}`} title={rt(`lvl${n}D`)}
+                                    onClick={() => { if (h === 4 && on) setSeed((x) => x + 1); setHide(h); setPracticeHide(h); }}
+                                    className={`inline-flex h-10 items-center gap-2 rounded-full border px-3 font-semibold transition ${on ? "border-accent bg-accent-soft text-accent" : "border-line bg-surface text-ink hover:border-ink/30"}`}>
+                                    <span aria-hidden className={`grid h-[22px] w-[22px] place-items-center rounded-full text-xs font-bold tabular-nums ${on ? "bg-accent text-white" : "border border-line bg-bg text-muted"}`}>{n}</span>
+                                    {levelLabel(n)}
+                                  </button>
+                                );
+                              })}
                             </div>
-                            {hide === 4 && !revealed && <button className="shrink-0 font-semibold text-accent hover:underline" onClick={() => setSeed((x) => x + 1)}>↻ {t("shuffle")}</button>}
+                            <p className="flex flex-wrap items-center gap-x-3 text-muted">
+                              <span>{rt(`lvl${LEVELS.find(([, h]) => h === hide)?.[0] ?? 1}D`)}</span>
+                              {hide === 4 && !revealed && <button className="shrink-0 font-semibold text-accent hover:underline" onClick={() => setSeed((x) => x + 1)}>↻ {t("shuffle")}</button>}
+                            </p>
                           </div>
                         )}
+                        {tool === "listen" && !playing && !turn && (
+                          <button onClick={() => goTo(idx, true)} className="mt-3 inline-flex h-10 items-center gap-2 rounded-full border border-line bg-surface px-4 text-[13px] font-semibold hover:border-ink/30"><IconPlaySm />{rt("listenStart")}</button>
+                        )}
+                        {tool === "listen" && (playing || turn) && <p className="mt-3 text-[13px] font-semibold text-accent" aria-live="polite">{turn ? rt("turnNow") : rt("listenNow")}</p>}
+                        {tool === "check" && (
+                          <p className="mt-3 flex flex-wrap items-center gap-x-3 text-[13px]">
+                            <span className="font-semibold">{rt("checkTitle", { n: v.verse_number })}</span>
+                            <button className="font-semibold text-accent hover:underline" onClick={startCheck}>↻ {rt("checkNext")}</button>
+                          </p>
+                        )}
+                        {(tool === "practice" || tool === "test") && <div className="mt-2 max-w-md"><Toggle on={coverAll} onChange={setCoverAll} label={rt("coverAll")} /></div>}
                       </div>
                     )}
                     {active && ((shams === null && hide > 0) || shams === 5) && (
@@ -1081,7 +1171,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
 
       {note && (
         <div role="status" className="fixed inset-x-0 bottom-28 z-50 flex justify-center px-4">
-          <p className={`rounded-full bg-ink px-4 py-2 text-sm text-bg shadow-card ${kids ? "pop text-base" : ""}`}>{kids ? "🌟 " : ""}{note}</p>
+          <p className={`rounded-full bg-ink px-4 py-2 text-sm text-bg shadow-card ${kids ? "pop inline-flex items-center gap-1.5 text-base" : ""}`}>{kids ? <Sun className="h-4 w-4 shrink-0 text-[rgb(var(--gold))]" /> : null}{note}</p>
         </div>
       )}
 
@@ -1108,6 +1198,9 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             <span className="w-8">{fmt(dur)}</span>
             {sleep.mode !== 0 && <span className="inline-flex items-center gap-1 text-[rgb(233_207_153)]" title={t("sleep")}><svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg>{sleep.mode > 0 ? Math.max(1, Math.ceil((sleep.until - Date.now()) / 60000)) : ""}</span>}
             <button className="grid h-7 w-7 place-items-center rounded-full hover:text-white" onClick={() => setVol(vol === 0 ? 1 : 0)} aria-label={t("volume")}><IconVolume muted={vol === 0} /></button>
+            <button className="grid h-7 w-7 place-items-center rounded-full hover:text-white" onClick={() => setFocusOpen(true)} aria-label={rt("focusOpen")} title={rt("focus")}>
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4" /></svg>
+            </button>
           </div>
           <div className="flex items-center justify-between gap-2 px-3 pb-2.5 pt-1">
             <span className="flex w-20 min-w-0 items-center gap-2 text-xs leading-tight text-white/65">
@@ -1122,7 +1215,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                 </svg>
                 <button
                   className="btn-gold relative grid h-12 w-12 place-items-center rounded-full shadow-card"
-                  onClick={() => { if (turn) { clearGap(); return; } if (playing) audioRef.current?.pause(); else play(); }}
+                  onClick={togglePlay}
                   aria-label={playing ? t("pause") : t("play")}
                 >{playing ? <IconPause /> : <IconPlay />}</button>
               </span>
@@ -1134,6 +1227,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
           </div>
         </div>
       </div>
+
+      {focusOpen && chapter && verse && (
+        <FocusMode chapter={chapter} verse={verse} total={verses.length} activeWord={activeWord} timed={hasTimings} playing={playing} repeat={repeat}
+          coverAt={focusCover} cueOf={firstLetter} arabicUi={locale === "ar"} dir={meta.dir === "rtl" ? "rtl" : "ltr"}
+          onClose={() => setFocusOpen(false)} onToggle={togglePlay} onPrev={() => goTo(Math.max(0, idx - 1))} onNext={() => goTo(Math.min(verses.length - 1, idx + 1))}
+          onRepeat={setRepeat} onPlayWord={(pos) => playWord(verse.verse_key, pos)} />
+      )}
 
       {/* Mobile: bottom sheet */}
       {sheetOpen && (

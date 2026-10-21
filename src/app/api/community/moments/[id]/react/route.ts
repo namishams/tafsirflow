@@ -39,11 +39,12 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     [m.id, g.me.id, b.reaction],
   );
   if (r.rows[0]?.inserted) await p.query("UPDATE community_moments SET reaction_count = reaction_count + 1 WHERE id = $1", [m.id]);
-  // reacting is free for everyone (no Pro check, also on Pro members' moments); a counted reaction rewards the receiver
-  void creditReaction(String(m.id), g.me.id, Number(m.user_id));
+  // reacting is free for everyone (no Pro check, also on Pro members' moments); a counted reaction rewards the receiver.
+  // `credited` (added for Swipe & Learn): whether this one was counted within the daily caps (CREDIT_CAPS)
+  const credited = await creditReaction(String(m.id), g.me.id, Number(m.user_id));
   void notifyReaction(Number(m.user_id), g.me.id, String(m.id), b.reaction);
   const c = await counts(String(m.id));
-  return json({ mine: b.reaction, counts: c, total: Object.values(c).reduce((a, x) => a + x, 0) }, 200, NO_STORE);
+  return json({ mine: b.reaction, counts: c, total: Object.values(c).reduce((a, x) => a + x, 0), credited }, 200, NO_STORE);
 }
 
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {

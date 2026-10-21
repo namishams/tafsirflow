@@ -4,11 +4,11 @@ import { moduleText } from "@/i18n/app";
 // App-only texts of the Shams screens (everything the website also says comes from its messages via useWebT)
 const T = {
   de: {
-    close: "Schließen", verseOf: "Vers {n} von {total}", done: "Sure abgeschlossen", doneLead: "Du hast alle Verse dieser Sure mit der Shams-Methode durchgearbeitet. Sie kommen zum richtigen Zeitpunkt zur Wiederholung zurück.",
+    close: "Schließen", verseOf: "Vers {n} von {total}", done: "Sure abgeschlossen", doneLead: "Sie haben alle Verse dieser Sure mit der Shams-Methode durchgearbeitet. Die Verse kommen zum richtigen Zeitpunkt zur Wiederholung zurück.",
     backToCourse: "Zurück zur Masterclass", again: "Noch einmal von vorn", sessionDone: "Heutige Sitzung abgeschlossen",
     sessionLead: "{done} Verse geübt, davon {fresh} neu, in etwa {minutes} Minuten. Bis morgen.", toToday: "Zu Heute",
-    play: "Abspielen", pause: "Pause", noteTitle: "Deine Notiz", saveNote: "Notiz sichern", noteSaved: "Gesichert",
-    lockedTitle: "Diese Sure gehört zu Pro", lockedText: "Mit Quran Masterclass Pro lernst du jede Sure mit der Shams-Methode. Kostenlos: al-Fātiḥa und Juz ʿAmma.",
+    play: "Abspielen", pause: "Pause", noteTitle: "Ihre Notiz", saveNote: "Notiz sichern", noteSaved: "Gesichert",
+    lockedTitle: "Diese Sure gehört zu Pro", lockedText: "Mit Quran Masterclass Pro lernen Sie jede Sure mit der Shams-Methode. Kostenlos: al-Fātiḥa und Juz ʿAmma.",
     item: "{i} von {n}",
   },
   en: {

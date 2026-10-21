@@ -1,7 +1,8 @@
 // mirrors mobile/src/i18n/index.tsx (useLang, pick, isRTL, intlLocale), mobile/src/i18n/app.ts (moduleText) and
 // mobile/src/i18n/web.ts (formatWeb) for the learning modules copied from the app. The language is the page's locale
 // (next-intl). Module tables carry their own languages (usually en/de/ar and more); the app's per-language files for
-// the other languages are copied to src/lib/learn/i18n/<lang>.json (modules learn, coursekit, reciterPath, srs, qaida)
+// the other languages are copied to src/lib/learn/i18n/<lang>.json (modules learn, coursekit, reciterPath, srs, qaida,
+// plan and onboard2 for the personal path on /start)
 // and loaded the first time a language is used. Every missing key falls back to English.
 import { useEffect, useSyncExternalStore } from "react";
 import { useLocale } from "next-intl";
@@ -72,4 +73,9 @@ export function useLang(): { lang: Lang; rtl: boolean } {
 /** numbers in the page's language */
 export function formatNumber(n: number, lang: string): string {
   try { return new Intl.NumberFormat(intlLocale(lang)).format(n); } catch { return String(n); }
+}
+
+/** a calendar year (Hijri or Gregorian) without thousands separator: "1448", never "1,448" or "1.448" */
+export function formatYear(y: number, lang: string): string {
+  try { return new Intl.NumberFormat(intlLocale(lang), { useGrouping: false, maximumFractionDigits: 0 }).format(y); } catch { return String(Math.round(y)); }
 }

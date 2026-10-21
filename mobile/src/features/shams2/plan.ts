@@ -1,4 +1,4 @@
-import { dayPlan, readGoal } from "@/web/coach";
+import { NOT_COUNTED, dayPlan, readGoal } from "@/web/coach";
 import { VERSE_COUNTS } from "@/web/counts";
 import { today, type Srs } from "@/web/learning";
 import type { Known } from "./qualityModel";
@@ -15,7 +15,21 @@ import type { Grade } from "./grades";
 
 export type Range = { s: number; from: number; to: number };
 export type WirdBlock = { kind: "sabaq" | "sabqi" | "manzil"; ranges: Range[]; verses: number; minutes: number };
-export type Wird = { sabaq: WirdBlock; sabqi: WirdBlock; manzil: WirdBlock; minutes: number; reason: ReturnType<typeof dayPlan>["reason"]; cycleDay: number; cycleOf: number; memorised: number; gated: boolean };
+export type Wird = { sabaq: WirdBlock; sabqi: WirdBlock; manzil: WirdBlock; minutes: number; reason: ReturnType<typeof dayPlan>["reason"]; cycleDay: number; cycleOf: number; memorised: number; gated: boolean;
+  /** the new portion the coach would plan but which needs Pro (only when every free surah is learned); never in the sabaq */
+  locked?: Range | null };
+
+// the free surahs in the order they are usually memorised: al-Fātiḥa, then Juzʾ ʿAmma from the end (as web/coach.ts PATH)
+const FREE_ORDER = [1, ...Array.from({ length: 37 }, (_, i) => 114 - i)];
+
+/** the first verse still to learn in a surah the learner may open (free order first), or null when none is left */
+export function nextAllowed(known: Map<string, Known>, allow: (surah: number) => boolean): { surah: number; verse: number } | null {
+  for (const s of [...FREE_ORDER, ...Array.from({ length: 114 }, (_, i) => i + 1)]) {
+    if (!allow(s)) continue;
+    for (let v = 1; v <= VERSE_COUNTS[s - 1]; v++) { const k = `${s}:${v}`; if (!NOT_COUNTED.has(k) && !known.has(k)) return { surah: s, verse: v }; }
+  }
+  return null;
+}
 
 const MIN = { sabaq: 4, sabqi: 0.7, manzil: 0.4 };
 
@@ -33,7 +47,8 @@ export function toRanges(keys: string[]): Range[] {
 export const rangeId = (r: Range) => `${r.s}:${r.from}-${r.to}`;
 export const rangeSize = (r: Range) => r.to - r.from + 1;
 
-export function computeWird(srs: Srs, known: Map<string, Known>, st: Settings, grade: Grade, gated: boolean, day = today()): Wird {
+/** `allow` (app only): the surahs the learner may open; without Pro the sabaq stays in the free surahs (website: all) */
+export function computeWird(srs: Srs, known: Map<string, Known>, st: Settings, grade: Grade, gated: boolean, day = today(), allow?: (surah: number) => boolean): Wird {
   const dp = dayPlan(srs);
   // the grade raises the floor of the daily wird (a larger wird as the learner advances)
   const goalMin = Math.max(5, grade.minutesMin, Math.min(180, st.minutes || readGoal()?.minutes || 20));
@@ -64,10 +79,20 @@ export function computeWird(srs: Srs, known: Map<string, Known>, st: Settings, g
   if (dp.reason === "reviewOnly" && st.newPerDay === 0) n = 0;
   if (gated) n = 0; // a formal test is overdue: the sabaq waits until it is taken (never longer)
   const sabaqKeys: string[] = [];
-  const { surah, verse } = dp.next;
+  let { surah, verse } = dp.next;
+  let locked: Range | null = null;
+  if (allow && !allow(surah)) {
+    // the coach continues in a Pro surah: take the next free surah instead; when none is left, show the portion as locked
+    const alt = nextAllowed(known, allow);
+    if (alt) ({ surah, verse } = alt);
+    else {
+      if (n > 0) locked = { s: surah, from: verse, to: Math.min(VERSE_COUNTS[surah - 1], verse + n - 1) };
+      n = 0;
+    }
+  }
   for (let v = verse; v <= VERSE_COUNTS[surah - 1] && sabaqKeys.length < n; v++) if (!known.has(`${surah}:${v}`)) sabaqKeys.push(`${surah}:${v}`);
 
   const block = (kind: WirdBlock["kind"], keys: string[]): WirdBlock => ({ kind, ranges: toRanges(keys), verses: keys.length, minutes: Math.round(keys.length * MIN[kind]) });
   const b = { sabaq: block("sabaq", sabaqKeys), sabqi: block("sabqi", sabqiKeys), manzil: block("manzil", manzilKeys) };
-  return { ...b, minutes: Math.max(5, b.sabaq.minutes + b.sabqi.minutes + b.manzil.minutes), reason: dp.reason, cycleDay: cycleDay + 1, cycleOf, memorised: list.length, gated };
+  return { ...b, minutes: Math.max(5, b.sabaq.minutes + b.sabqi.minutes + b.manzil.minutes), reason: dp.reason, cycleDay: cycleDay + 1, cycleOf, memorised: list.length, gated, locked };
 }

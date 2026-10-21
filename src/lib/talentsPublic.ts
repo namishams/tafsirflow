@@ -2,6 +2,7 @@ import { pool } from "./db";
 import { sharerTier } from "./communityProfiles";
 import { displayBadge, type Badge } from "./talentBadges";
 import { postingEnabled } from "./talentPosting";
+import { visibleExtras, type ProfileExtras } from "./profileExtras";
 
 // Data for the public talent pages on the website (/talents/<username>). Only public, not suspended members aged 16
 // or older appear on the open web (younger members only inside the signed-in community). Private accounts show the
@@ -16,6 +17,8 @@ export type PublicProfile = {
   clips: PublicPost[];
   /** clips and highlights are switched on (posting.enabled in config.json) */
   posting: boolean;
+  /** goals, city, travel the member shows to everyone (profileExtras.ts) */
+  extras: ProfileExtras;
 };
 
 export async function publicProfile(username: string): Promise<PublicProfile | null> {
@@ -51,6 +54,7 @@ export async function publicProfile(username: string): Promise<PublicProfile | n
     badge: displayBadge(r), officialChannel: r.official ? r.official_channel ?? null : null,
     avatar: r.avatar_path ? `/api/community/avatar/${r.username}?v=${Number(r.avatar_version ?? 0)}` : null,
     posting,
+    extras: priv ? {} : visibleExtras(r, "other"),
     private: priv, sharerTier: sharerTier(Number(r.shares_total ?? 0)), ijazahChain: r.ijazah_chain ?? "",
     followers: Number(r.followers), following: Number(r.following), posts: Number(r.posts), likes: Number(r.likes),
     progress: r.show_progress ? { treeStage: Number(r.tree_stage ?? 0), certJuz: (r.cert_juz ?? []).map(Number) } : null,

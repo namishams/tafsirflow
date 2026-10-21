@@ -8,11 +8,10 @@ import { QuranInlay, QuranShamsa } from "@/components/art/QuranArt";
 import { getChapters } from "@/lib/quran";
 import { TOTAL_VERSES } from "@/lib/quranIndex";
 import { pageMeta } from "@/lib/site";
+import { getUiVerses, ringOf } from "@/lib/uiVerses";
 
 export const dynamic = "force-dynamic";
 
-// verses around the medallion (exact Uthmani text): 54:17 and 56:77–80
-const RING = "وَلَقَدۡ يَسَّرۡنَا ٱلۡقُرۡءَانَ لِلذِّكۡرِ فَهَلۡ مِن مُّدَّكِرٖ ۞ إِنَّهُۥ لَقُرۡءَانٞ كَرِيمٞ ۞ فِي كِتَٰبٖ مَّكۡنُونٖ ۞ لَّا يَمَسُّهُۥٓ إِلَّا ٱلۡمُطَهَّرُونَ ۞ تَنزِيلٞ مِّن رَّبِّ ٱلۡعَٰلَمِينَ ۞";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -27,6 +26,8 @@ export default async function QuranPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
   const t = await getTranslations();
   const chapters = await getChapters(locale);
+  // the verses around the medallion (54:17 and 56:77–80) from the Quran data, never typed by hand
+  const ring = ringOf(await getUiVerses());
   const stats: [number, string][] = [[114, t("home.surahs")], [TOTAL_VERSES, t("home.verses")], [30, t("map.juz")]];
   return (
     <main className="q-page min-w-0">
@@ -42,7 +43,7 @@ export default async function QuranPage({ params }: { params: Promise<{ locale: 
             <h1 className="font-display mt-3 text-[34px] leading-[0.95] min-[360px]:text-[44px] sm:text-7xl lg:text-[88px]">{t("home.surahs")}</h1>
           </div>
           <div className="q-a-medal">
-            <QuranShamsa ring={RING} className="w-[104px] min-[360px]:w-[156px] sm:w-[230px] lg:w-[400px]" />
+            <QuranShamsa ring={ring} className="w-[104px] min-[360px]:w-[156px] sm:w-[230px] lg:w-[400px]" />
           </div>
           <p className="q-a-lead mt-5 max-w-xl text-[15px] leading-relaxed text-muted sm:text-[17px] lg:mt-6">{t("seo.quranDesc")}</p>
           <div className="q-a-stats mt-6 max-w-md lg:mt-8">

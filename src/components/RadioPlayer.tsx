@@ -5,6 +5,11 @@ import { STATIONS, useRadio } from "./RadioProvider";
 import { reciterName } from "@/lib/quran";
 import { QuranOrb, QuranSeal } from "./art/QuranArt";
 import DonateCTA from "./DonateCTA";
+import { fill } from "@/lib/feedWeb/texts";
+import { useFeedTexts } from "@/lib/feedWeb/useTexts";
+
+// the garnet of the live mark (as on the app's radio stage, mini player and posters)
+const LIVE = "rgb(160,58,52)";
 
 // jewel tones of Islamic art (emerald, lapis, garnet, Iznik turquoise, amber, aubergine, olive)
 const J = { emerald: "linear-gradient(165deg,#13644b 0%,#073024 55%,#04190f 100%)", lapis: "linear-gradient(165deg,#244a86 0%,#0e2348 55%,#070f22 100%)", garnet: "linear-gradient(165deg,#7a2433 0%,#3a0d16 55%,#1a0509 100%)", turquoise: "linear-gradient(165deg,#0f6b6c 0%,#06393b 55%,#031b1c 100%)", amber: "linear-gradient(165deg,#7c5617 0%,#3b2707 55%,#1c1203 100%)", aubergine: "linear-gradient(165deg,#4d2760 0%,#25102f 55%,#110616 100%)", olive: "linear-gradient(165deg,#4f5a22 0%,#262c0d 55%,#111405 100%)" };
@@ -58,6 +63,7 @@ export default function RadioPlayer() {
   const ts = useTranslations("social");
   const locale = useLocale();
   const r = useRadio();
+  const A = useFeedTexts().radio; // the app's radio texts (offline, sleep timer …)
   const rn = (x: { slug?: string; folder?: string; name: string }) => reciterName(x, locale);
   const { station, playing, now, chapter, verse, upNext, history, chapters } = r;
   const nameOf = (s: number) => chapters.find((c) => c.id === s)?.name_simple ?? `${locale === "ar" ? "سورة" : "Surah"} ${s}`;
@@ -71,8 +77,8 @@ export default function RadioPlayer() {
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-12 pt-8 sm:pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-3">
-              <span className={`inline-flex items-center gap-1.5 rounded-sm px-2 py-0.5 text-[11px] font-extrabold tracking-wider ${playing ? "bg-red-600 text-white" : "bg-white/10 text-white/60"}`}>
-                {playing && <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" />}{playing ? t("onAir") : t("off")}
+              <span className="inline-flex items-center gap-1.5 rounded-[3px] px-2 py-[3px] text-[11px] font-extrabold tracking-[0.12em] text-white" style={{ background: LIVE }} aria-label={t("onAir")}>
+                <span className={`h-1.5 w-1.5 rounded-full bg-white ${playing ? "animate-pulse" : ""}`} />{t("onAir")}
               </span>
               <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[rgb(var(--gold))]">{t("title")} · {r.stationName(station.id)}</span>
             </div>
@@ -84,10 +90,17 @@ export default function RadioPlayer() {
                 {verse.translation && <p className="mt-3 text-[15px] leading-relaxed text-white/70">{verse.translation}</p>}
               </div>
             )}
+            {r.offline && (
+              <div role="status" aria-live="polite" className="mt-5 grid gap-2.5 rounded-lg border border-[rgb(214_180_108/0.35)] p-3.5">
+                <p className="text-[14.5px] leading-relaxed text-white/80">{A.offline}</p>
+                <button type="button" onClick={r.retry} className="h-10 justify-self-start rounded-full border border-white/30 px-5 text-sm font-bold hover:border-white">{A.tryAgain}</button>
+              </div>
+            )}
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <button onClick={r.prevVerse} aria-label={t("prev")} className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><IconPrev /></button>
               <button onClick={r.toggle} aria-label={playing ? t("pause") : t("play")} className="grid h-16 w-16 place-items-center rounded-full bg-[rgb(var(--gold))] text-[rgb(var(--stage))] shadow-lg hover:brightness-110">{playing ? <IconPause /> : <IconPlay />}</button>
               <button onClick={r.skipVerse} aria-label={t("nextVerse")} className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><IconNext /></button>
+              <button onClick={r.prevSurah} className="h-12 rounded-full border border-white/30 px-5 text-sm font-bold hover:border-white">{A.prevSurah}</button>
               <button onClick={r.skipSurah} className="h-12 rounded-full border border-white/30 px-5 text-sm font-bold hover:border-white">{t("nextSurah")}</button>
               {r.castable.airplay && <button onClick={r.airplay} aria-label="AirPlay" title="AirPlay" className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" /><path d="M12 15l5 6H7z" fill="currentColor" /></svg></button>}
               {r.castable.cast && <button onClick={r.cast} aria-label="Chromecast" title="Chromecast" className="grid h-12 w-12 place-items-center rounded-full border border-white/20 hover:border-white"><svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" /><path d="M2 12a9 9 0 0 1 8 8M2 16a5 5 0 0 1 4 4" /><circle cx="2.5" cy="19.5" r="0.8" fill="currentColor" /></svg></button>}
@@ -156,7 +169,10 @@ export default function RadioPlayer() {
                       <svg aria-hidden viewBox="0 0 100 110" preserveAspectRatio="none" className="q-poster-arch"><g fill="none" stroke="currentColor" strokeWidth=".8" vectorEffect="non-scaling-stroke"><path d="M4 110V48C4 24 26 9 50 2c24 7 46 22 46 46v62" /><path d="M11 110V50c0-20 19-33 39-39 20 6 39 19 39 39v60" strokeOpacity=".55" /></g></svg>
                       <span aria-hidden className={`q-poster-word ${p.ar.length > 6 ? "text-[30px] sm:text-[38px]" : p.ar.length > 3 ? "text-[38px] sm:text-[50px]" : "text-[48px] sm:text-[62px]"}`} dir="rtl">{p.ar}</span>
                       <span className="q-poster-play absolute start-4 top-4">{on ? <span className="eq eq-on" aria-hidden><i /><i /><i /><i /></span> : <IconPlay />}</span>
-                      {st.mix && <span className="absolute end-4 top-5 rounded-full border border-[rgb(233_207_153/0.45)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#f3e2b6] rtl:tracking-normal">{t("mixBadge")}</span>}
+                      <span className="absolute end-4 top-4 flex flex-col items-end gap-1.5">
+                        {on && <span className="inline-flex items-center gap-1 rounded-[3px] px-1.5 py-[2px] text-[9.5px] font-extrabold tracking-[0.1em] text-white" style={{ background: LIVE }}><span className="h-[5px] w-[5px] rounded-full bg-white" />{t("onAir")}</span>}
+                        {st.mix && <span className="rounded-full border border-[rgb(233_207_153/0.45)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#f3e2b6] rtl:tracking-normal">{t("mixBadge")}</span>}
+                      </span>
                       <span className="font-display relative text-[18px] leading-tight text-white sm:text-[22px]">{r.stationName(st.id)}</span>
                       <span className="relative mt-1 line-clamp-2 text-[12.5px] leading-snug text-white/65 sm:text-sm">{t(`sd_${st.id}`)}</span>
                     </button>
@@ -173,9 +189,24 @@ export default function RadioPlayer() {
             <h2 className="q-kicker text-[rgb(var(--q-ink-gold))]">{t("settings")}</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <label className="grid gap-1 text-sm"><span className="text-muted">{t("sleep")}</span>
-                <select value={r.sleepLeft ? "on" : "0"} onChange={(e) => r.setSleepLeft(e.target.value === "0" ? 0 : Number(e.target.value) * 60)} className={field}>
-                  <option value="0">{r.sleepLeft ? `${Math.ceil(r.sleepLeft / 60)} ${t("min")}` : t("off")}</option>
+                <select value={String(r.sleep)} onChange={(e) => r.setSleep(e.target.value === "eos" ? "eos" : (Number(e.target.value) as 0 | 15 | 30 | 60))} className={field}>
+                  <option value="0">{t("off")}</option>
                   {r.sleepOptions.map((m) => <option key={m} value={m}>{m} {t("min")}</option>)}
+                  <option value="eos">{A.sleepEnd}</option>
+                </select>
+                {r.sleep && r.sleepLeft ? <span className="text-[13px] text-muted">{fill(A.sleepLeft, { m: Math.ceil(r.sleepLeft / 60) })}</span> : null}
+              </label>
+              {/* speed and repeat, as in the app's radio */}
+              <label className="grid gap-1 text-sm"><span className="text-muted">{A.speed}</span>
+                <select value={String(r.rate)} onChange={(e) => r.setRate(Number(e.target.value))} className={field}>
+                  {r.rates.map((x) => <option key={x} value={x}>{new Intl.NumberFormat(locale).format(x)}×</option>)}
+                </select>
+              </label>
+              <label className="grid gap-1 text-sm"><span className="text-muted">{A.repeat}</span>
+                <select value={r.repeat} onChange={(e) => r.setRepeat(e.target.value as typeof r.repeat)} className={field}>
+                  <option value="off">{A.repeatOff}</option>
+                  <option value="verse">{A.repeatVerse}</option>
+                  <option value="surah">{A.repeatSurah}</option>
                 </select>
               </label>
               <label className="grid gap-1 text-sm"><span className="text-muted">{t("adhan")}</span>

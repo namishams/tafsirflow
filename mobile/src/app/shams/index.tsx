@@ -4,20 +4,20 @@ import { Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
 import Svg, { Defs, RadialGradient, Rect, Stop } from "react-native-svg";
-import { ARABIC_BOLD, ARABIC_FONT, FONT, stage, useTheme } from "@/lib/theme";
+import { ARABIC_BOLD, FONT, stage, useTheme } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
-import { shamsContent } from "@/web/shamsContent";
+import { SHAMS_WHY, shamsContent } from "@/web/shamsContent";
 import { GUIDES } from "@/web/guides";
-import { Corners, FactCartouche, HeroKicker, IllumFrame, IslBreak, IslCard, IslH2, IslHero, IslamNum, Marble, Rain, RefChip, StageBackground, StarMark } from "@/features/library/art";
-import { Article, FramedQuote } from "@/features/library/markdown";
+import { Corners, FactCartouche, HeroKicker, IllumFrame, IslBreak, IslCard, IslH2, IslHero, IslamNum, Marble, Rain, StageBackground, StarMark } from "@/features/library/art";
+import { Article } from "@/features/library/markdown";
 import { FaqItem, GoldPill, MoreTiles, OutlinePill, StageCard, StageDetails } from "@/features/library/ui";
 import { IslScreen } from "@/features/library/screen";
 import { SERIF, STAGE_GOLD, STAGE_TEXT, stageGold, useIsl } from "@/features/library/palette";
 import { guideOf } from "@/features/library/content";
 import { openHref } from "@/features/library/links";
-import { Curve, DayIcon, Ladder, PrincipleIcon, ShamsDemo, ShamsPlanner, StepIcon, Sun } from "@/features/library/shamsArt";
-import { CUES, W } from "@/features/library/content/shams";
+import { Curve, DayIcon, Ladder, PrincipleIcon, ShamsPlanner, StepIcon, Sun } from "@/features/library/shamsArt";
+import { ShamsDemoLive, ShamsNameVerse, ShamsStepVerse, ShamsWhyList } from "@/features/library/shamsSources";
 import { ShamsEntries } from "@/features/courses/Shams";
 import { ShamsModeChooser } from "@/features/shams2/ModeChooser";
 import { readShamsMode } from "@/features/shams2/mode";
@@ -26,7 +26,9 @@ import { ReciterPathCard } from "@/features/reciter-path/Screens";
 // /shams – the Shams Method: hero with the sun over the arcade, why "Shams", problems and solution, the seven steps as
 // a journey towards the sun, one verse in four stages, roots in the hifz tradition, why it works, the forgetting curve,
 // spacing and fluency, adaptation, a learning day with the planner, comparison, teaching plan, why it matters, the
-// in-depth guide, questions and the final call (website: src/app/[locale]/(app)/shams/page.tsx)
+// in-depth guide, questions and the final call (website: src/app/[locale]/(app)/shams/page.tsx). Verses and hadith are
+// rendered from their sources by reference (features/library/shamsSources.tsx). The app sells Pro, so the FAQ answers,
+// the teachers' note and the closing line use the app's wording (faqApp, teachNoteApp, whyCloseApp; the website is free).
 const minutesOf = (s: string) => { const m = s.match(/\d+/); return m ? Number(m[0]) : 1; };
 // "Start": the first classic session, or today's wird for those who use Shams Method 2.0
 const startShams = () => router.push((readShamsMode() === "v2" ? "/shams/wird" : "/shams/1") as Href);
@@ -87,9 +89,7 @@ export default function ShamsPage() {
               {c.name.verses.map((v) => (
                 <IslCard key={v.ref} style={{ paddingHorizontal: 20, paddingBottom: 20, paddingTop: 24, alignItems: "center" }}>
                   <Corners />
-                  <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 49.4, color: isl.head, textAlign: "center", writingDirection: "rtl" }}>{v.ar}</Text>
-                  {v.meaning ? <Text style={{ marginTop: 4, fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: isl.muted, textAlign: "center" }}>{v.meaning}</Text> : null}
-                  <View style={{ marginTop: 12 }}><RefChip label={v.ref} /></View>
+                  <ShamsNameVerse verseKey={v.key ?? v.ref} label={v.ref} />
                 </IslCard>
               ))}
             </View>
@@ -160,6 +160,7 @@ export default function ShamsPage() {
                     <Text style={{ marginTop: 12, fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 23.5, color: "rgba(255,255,255,0.75)" }}>{s.why}</Text>
                     <Text style={{ marginTop: 12, fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.44, textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>{c.labels.platform}</Text>
                     <Text style={{ marginTop: 4, fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 23.5, color: "rgba(255,255,255,0.75)" }}>{s.platform}</Text>
+                    {s.verse ? <ShamsStepVerse verseKey={s.verse} /> : null}
                   </StageDetails>
                 </StageCard>
               </View>
@@ -175,7 +176,7 @@ export default function ShamsPage() {
           <H2>{c.demoTitle}</H2>
           <Lead>{t("d6")}</Lead>
           <GoldPill title={t("cta")} onPress={startShams} style={{ marginTop: 28 }} />
-          <View style={{ marginTop: 40 }}><ShamsDemo words={W} cues={CUES} stages={c.demoStages} title={c.demoTitle} /></View>
+          <View style={{ marginTop: 40 }}><ShamsDemoLive stages={c.demoStages} title={c.demoTitle} /></View>
         </View>
 
         {/* Roots in the hifz tradition */}
@@ -376,7 +377,7 @@ export default function ShamsPage() {
               </StageCard>
             ))}
           </View>
-          <Text style={{ marginTop: 24, fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.7)" }}>{c.teachNote}</Text>
+          <Text style={{ marginTop: 24, fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.7)" }}>{c.teachNoteApp ?? c.teachNote}</Text>
         </View>
       </StageBackground>
 
@@ -385,10 +386,8 @@ export default function ShamsPage() {
         <View style={{ paddingHorizontal: 20, paddingVertical: 64 }}>
           <H2 center>{t("whyTitle")}</H2>
           <Lead center>{t("whyLead")}</Lead>
-          <View style={{ marginTop: 48, gap: 40 }}>
-            {[1, 2, 3, 4, 5].map((n) => <FramedQuote key={n} size={17 / 1.16} cite={t(`why${n}s`)} style={{ marginTop: 0, marginBottom: 0 }}>{t(`why${n}`)}</FramedQuote>)}
-          </View>
-          <Text style={{ marginTop: 40, fontFamily: SERIF, fontSize: 19, lineHeight: 31, color: isl.a("ink", 0.85), textAlign: "center" }}>{t("whyClose")}</Text>
+          <ShamsWhyList items={SHAMS_WHY} cites={SHAMS_WHY.map((w) => t(w.cite))} note={c.sourcesNote} />
+          <Text style={{ marginTop: 40, fontFamily: SERIF, fontSize: 19, lineHeight: 31, color: isl.a("ink", 0.85), textAlign: "center" }}>{c.whyCloseApp ?? t("whyClose")}</Text>
         </View>
 
         {/* In-depth article */}
@@ -405,7 +404,7 @@ export default function ShamsPage() {
         <View style={{ paddingHorizontal: 20, paddingBottom: 64 }}>
           <H2>{t("faqTitle")}</H2>
           <View style={{ marginTop: 32, gap: 12 }}>
-            {c.faq.map((f, i) => <FaqItem key={i} q={f.q} a={f.a} />)}
+            {c.faq.map((f, i) => { const app = f.id ? c.faqApp?.[f.id] : undefined; return <FaqItem key={i} q={app?.q ?? f.q} a={app?.a ?? f.a} />; })}
           </View>
           <View style={{ marginTop: 32, borderRadius: 8, borderWidth: 1, borderColor: theme.dark ? "rgba(214,178,106,0.28)" : "rgba(150,116,52,0.28)", backgroundColor: theme.surface, padding: 16, overflow: "hidden" }}>
             <LinearGradient pointerEvents="none" colors={[theme.dark ? "rgba(214,178,106,0.07)" : "rgba(150,116,52,0.07)", "transparent"]} style={{ position: "absolute", top: 0, left: 0, right: 0, height: 80 }} />

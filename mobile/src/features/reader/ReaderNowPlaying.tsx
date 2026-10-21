@@ -2,7 +2,7 @@ import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensio
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import Svg, { Defs, RadialGradient, Rect, Stop } from "react-native-svg";
-import { CALLIG_FONT, FONT, R, stage } from "@/lib/theme";
+import { CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
 import { Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
@@ -13,16 +13,22 @@ import { GoldSlider } from "@/features/radio/Slider";
 import { VerseArabic, wordAt } from "@/features/radio/VerseText";
 import { initials } from "@/features/radio/engine";
 import { useAppT } from "@/features/radio/strings";
+import { useSheetBarStyle } from "./statusBar";
 
 // The reader's full "now playing" view, in the radio's style: the reciter orb, the surah in calligraphy, the verse
 // being recited with the word lit in gold and its translation, position in the verse, previous / next verse,
 // speed, repeat and sleep timer – all driving the reader's own player.
 export function ReaderNowPlaying({ open, onClose, chapter, verse, total, reciterName, timed, playing, positionMs, durationMs, reduce, speed, repeat, sleepMode, sleepMin,
-  onToggle, onPrev, onNext, onSeek, onSpeed, onRepeat, onSleep }: {
+  onToggle, onPrev, onNext, onSeek, onSpeed, onRepeat, onSleep, error, retryLabel, onRetry }: {
   open: boolean; onClose: () => void; chapter: Chapter; verse: Verse; total: number; reciterName: string; timed: boolean; playing: boolean; positionMs: number; durationMs: number; reduce: boolean;
   speed: number; repeat: number; sleepMode: number; sleepMin: number | null;
   onToggle: () => void; onPrev: () => void; onNext: () => void; onSeek: (ms: number) => void; onSpeed: (n: number) => void; onRepeat: (n: number) => void; onSleep: (m: number) => void;
+  /** the verse could not be loaded: a note with a retry */
+  error?: string | null; retryLabel?: string; onRetry?: () => void;
 }) {
+  const th = useTheme();
+  // the dark stage needs light status bar text; the reader below gets its own style back on close
+  useSheetBarStyle(open, "light", th.dark ? "light" : "dark");
   const w = useWebT("player");
   const a = useAppT();
   const insets = useSafeAreaInsets();
@@ -78,6 +84,17 @@ export function ReaderNowPlaying({ open, onClose, chapter, verse, total, reciter
               <Text style={timeStyle}>{durationMs > 0 ? fmtTime(durationMs / 1000) : "–:––"}</Text>
             </View>
           </View>
+
+          {error && onRetry ? (
+            <View style={{ marginTop: 14, flexDirection: "row", alignItems: "center", gap: 12, borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.45)", backgroundColor: "rgba(214,180,108,0.08)", padding: 12 }}
+              accessibilityLiveRegion="assertive" accessibilityRole="alert">
+              <Text style={{ flex: 1, fontFamily: FONT.medium, fontSize: 13.5, lineHeight: 19, color: "#f3e2b6" }}>{error}</Text>
+              <Pressable onPress={onRetry} accessibilityRole="button" accessibilityLabel={retryLabel} hitSlop={8}
+                style={({ pressed }) => ({ minHeight: 36, justifyContent: "center", borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? "#ffffff" : stage.goldSoft, paddingHorizontal: 14 })}>
+                <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.gold }}>{retryLabel}</Text>
+              </Pressable>
+            </View>
+          ) : null}
 
           <View style={{ marginTop: 14, flexDirection: "row", direction: "ltr", alignItems: "center", justifyContent: "center", gap: 22 }}>
             <RoundButton icon="prev" label={w("prev")} onPress={onPrev} size={52} />

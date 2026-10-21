@@ -5,15 +5,16 @@ import JsonLd from "@/components/JsonLd";
 import Markdown from "@/components/Markdown";
 import ShamsPlanner from "@/components/ShamsPlanner";
 import { GUIDES, guideText } from "@/lib/guides";
-import { shamsContent, type ShamsContent } from "@/lib/shamsContent";
+import { SHAMS_WHY, shamsContent, type ShamsContent } from "@/lib/shamsContent";
 import { abs, pageMeta } from "@/lib/site";
 import { MoreTiles } from "@/components/PosterTiles";
 import { IslamArcadeLine, IslamBreak, IslamCorners, IslamNum, IslamRain, IslamStarMark, starPath } from "@/components/art/IslamArt";
 import { IslamStepIcon, IslamSun, STEP_AR } from "@/components/art/IslamShams";
-import IslamShamsDemo from "@/components/art/IslamShamsDemo";
 import { Shams2EntryCard } from "@/components/learn/shams2/EntryCard";
 import { ShamsModeChooser } from "@/components/learn/shams2/ModeChooser";
 import DonateCTA from "@/components/DonateCTA";
+import { ShamsDemoLive, ShamsNameVerse, ShamsStepVerse, ShamsWhyList } from "@/components/learn/shams2/Sources";
+import { ShamsEntries } from "@/components/learn/shams2/Extensions";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -21,9 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return pageMeta(locale, "/shams", t("seoTitle"), t("seoDesc"), t("seoKeywords"));
 }
 
-// Al-Fatihah 1:2 – used to show the four stages of one verse
-const W = ["ٱلْحَمْدُ", "لِلَّهِ", "رَبِّ", "ٱلْعَٰلَمِينَ"];
-const CUES = ["ٱلْحَـ", "لِـ", "رَ", "ٱلْعَـ"];
+// The demo verse (1:2), the verses of "Why Shams", step 7 and the "why" list are rendered from the Quran API and the
+// hadith API by reference (components/learn/shams2/Sources.tsx); no Quran or hadith text is typed on this page.
 
 function Curve({ c }: { c: ShamsContent }) {
   // schematic forgetting curves: one without review, one with reviews on day 1, 3, 7, 14 and 30
@@ -160,7 +160,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
 
       <div className="isl-marble isl-under">
         {/* the two ways to learn with Shams: classic and 2.0 */}
-        <section className="mx-auto max-w-6xl px-5 pt-14 sm:pt-20"><ShamsModeChooser /></section>
+        <section className="mx-auto max-w-6xl px-5 pt-14 sm:pt-20"><ShamsModeChooser /><div className="mt-6"><ShamsEntries /></div></section>
 
         {/* Why "Shams" */}
         {c.name && (
@@ -174,9 +174,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
                 {c.name.verses.map((v) => (
                   <li key={v.ref} className="isl-card px-5 pb-5 pt-6 text-center sm:px-8">
                     <IslamCorners />
-                    <p className="font-arabic text-[26px] leading-[1.9] text-[rgb(var(--isl-head))] sm:text-[30px]" dir="rtl">{v.ar}</p>
-                    {v.meaning && <p className="mx-auto mt-1 max-w-md text-[15px] text-muted">{v.meaning}</p>}
-                    <p className="mt-3"><span className="isl-ref"><IslamStarMark />{v.ref}</span></p>
+                    <ShamsNameVerse verseKey={v.key ?? v.ref} label={v.ref} />
                   </li>
                 ))}
               </ul>
@@ -234,6 +232,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
                     <p className="mt-3 text-[14.5px] leading-relaxed text-white/75">{s.why}</p>
                     <p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-white/45">{c.labels.platform}</p>
                     <p className="mt-1 text-[14.5px] leading-relaxed text-white/75">{s.platform}</p>
+                    {s.verse ? <ShamsStepVerse verseKey={s.verse} /> : null}
                   </details>
                 </article>
               </li>
@@ -251,7 +250,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
             <p className="mt-5 text-[17px] leading-relaxed text-ink/75">{t("d6")}</p>
             <Link href="/surah/1?shams=1" className="btn-gold mt-7 inline-flex h-12 items-center rounded-full px-6 text-[15px] font-bold">{t("cta")}</Link>
           </div>
-          <IslamShamsDemo words={W} cues={CUES} stages={c.demoStages} title={c.demoTitle} />
+          <ShamsDemoLive stages={c.demoStages} title={c.demoTitle} />
         </section>
 
         {/* Roots in the hifz tradition */}
@@ -451,17 +450,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
             <h2 className="font-display text-4xl leading-[1.1] sm:text-5xl">{t("whyTitle")}</h2>
             <p className="mt-5 text-[17px] leading-relaxed text-ink/75">{t("whyLead")}</p>
           </div>
-          <ul className="mt-12 grid gap-6 md:grid-cols-2">
-            {[1, 2, 3, 4, 5].map((n) => (
-              <li key={n} className={n === 5 ? "md:col-span-2" : ""}>
-                <figure className="isl-quote !my-0 h-full">
-                  <span className="isl-quote-star"><svg viewBox="0 0 24 24" className="h-full w-full"><path d={starPath(12, 12, 11, 5)} fill="currentColor" fillOpacity=".25" stroke="currentColor" strokeWidth="1" /><circle cx="12" cy="12" r="2.2" fill="currentColor" /></svg></span>
-                  <blockquote className="text-[17px] sm:text-[19px]">{t(`why${n}`)}</blockquote>
-                  <figcaption><span className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(var(--isl-gold))]">{t(`why${n}s`)}</span></figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
+          <ShamsWhyList items={SHAMS_WHY} cites={SHAMS_WHY.map((w) => t(w.cite))} note={c.sourcesNote} />
           <p className="isl-serif mx-auto mt-10 max-w-3xl text-center text-[19px] leading-relaxed text-ink/85">{t("whyClose")}</p>
         </section>
 

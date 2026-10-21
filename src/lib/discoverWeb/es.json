@@ -1,0 +1,18 @@
+{
+  "discoverTitle": "Descubrir talentos",
+  "discoverLead": "Encuentre recitadores y profesores de todo el mundo, sígalos y conecte con ellos.",
+  "search": "Buscar nombre o @usuario",
+  "filterLevel": "Nivel",
+  "all": "Todos",
+  "verifiedOnly": "Solo verificados",
+  "filterCountry": "País",
+  "anyCountry": "Todos los países",
+  "filterRewaya": "Rewaya",
+  "rewayaFilterHint": "Por ejemplo Hafs o Warsh",
+  "empty": "No se han encontrado talentos.",
+  "loadMore": "Cargar más",
+  "signIn": "Inicie sesión para usar la comunidad.",
+  "signInBtn": "Iniciar sesión",
+  "e_generic": "No ha funcionado.",
+  "retry": "Reintentar"
+}

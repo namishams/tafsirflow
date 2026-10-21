@@ -107,7 +107,7 @@ export function RecitationStep({ session: s }: { session: ExamSession }) {
       <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: t.muted }}>{et(plan.mode === "memory" ? "reciteLeadMemory" : "reciteLeadReading")}</Text>
       <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.gold }}>{`${et("reciteVerse", { key: plan.verse })} · ${et("reciteNeed", { pct: need })}`}</Text>
       {verse ? (
-        <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 6 }}>
+        <View style={{ flexDirection: "row-reverse", direction: "ltr", flexWrap: "wrap", gap: 6 }}>
           {(ok ? words : shown).map((w, i) => (
             <View key={w.position} style={{ paddingHorizontal: 6, borderRadius: R.md, backgroundColor: ok ? (ok[i] ? t.accentSoft : "rgba(200,72,72,0.08)") : "transparent" }}>
               <Text accessibilityLanguage="ar" style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 44, color: ok ? (ok[i] ? t.accent : RED) : t.ink }}>{w.text_uthmani}</Text>

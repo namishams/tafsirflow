@@ -1,8 +1,8 @@
 {
- "kicker": "Jalur Mishary",
+ "kicker": "Masār al-Qurrāʾ",
  "title": "Membentuk generasi qari berikutnya",
  "lead": "Setelah Jalur Qari: latih pendengaran Anda untuk maqamat, pelajari gaya para master, buat jurnal rekaman harian, dapatkan masukan dari master terverifikasi, dan ikuti musim talenta.",
- "cardTitle": "Jalur Mishary",
+ "cardTitle": "Masār al-Qurrāʾ",
  "cardLead": "Latihan pendengaran maqam, studi gaya para master, jurnal rekaman harian, bimbingan, dan musim talenta.",
  "tileSub": "Pendengaran maqam, gaya master, bimbingan, musim",
  "needsReview": "Perlu ditinjau",
@@ -215,5 +215,10 @@
  "startsOn": "Mulai (YYYY-MM-DD)",
  "endsOn": "Berakhir (YYYY-MM-DD)",
  "titleField": "Judul (opsional)",
- "create": "Buat"
+ "create": "Buat",
+ "safetyFor": "Laporkan atau blokir {name}",
+ "reportRecording": "Laporkan rekaman",
+ "reportReview": "Laporkan masukan",
+ "blockedNote": "{name} diblokir dan tidak lagi muncul di sini.",
+ "mentoringNote": "Rekaman pribadi, dihapus setelah 60 hari. Mulai usia 16 tahun."
 }

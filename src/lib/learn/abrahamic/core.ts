@@ -8,7 +8,8 @@ export const L3 = (en: string, de: string, ar: string): L => ({ en, de, ar });
 
 export type Tag = "quran" | "tafsir" | "sunni" | "shia" | "bible" | "history" | "fiqh" | "today";
 export type Q = { q: L; options: L[]; answer: number; why?: L };
-export type Lesson = { id: string; arabic: string; title: L; text: L; note?: L; verses: string[]; tags: Tag[]; quiz: Q[] };
+/** review: "needs_review" while a rewritten lesson waits for a scholar (shown as a quiet line under the explanation) */
+export type Lesson = { id: string; arabic: string; title: L; text: L; note?: L; verses: string[]; tags: Tag[]; quiz: Q[]; review?: "needs_review" };
 export type CourseDef = {
   id: "abrahamic" | "haramain";
   storeKey: string;
