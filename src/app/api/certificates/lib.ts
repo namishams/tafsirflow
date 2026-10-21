@@ -13,7 +13,7 @@ import type { User } from "@/lib/auth";
 // the recording. Recordings live in a private folder outside the web root and are deleted after 90 days.
 // Tables: exam_attempts, certificates, review_queue (db/schema.sql).
 
-export type ExamKind = "rp-level" | "juz" | "surah" | "vocab" | "weekly" | "ar-unit";
+export type ExamKind = "rp-level" | "juz" | "surah" | "vocab" | "weekly" | "ar-unit" | "qbank";
 export type Rule = {
   /** seconds per question and for the whole exam (the server adds a grace period for the network) */
   questionSec: number; examSec: number;
@@ -49,6 +49,11 @@ export function ruleFor(exam: ExamKind, ref: string): Rule | null {
       return ["juzamma", "vocab", "names"].includes(ref) ? { questionSec: 30, examSec: 15 * 60, cooldownH: 1, maxPerWeek: 7, pass: 0.8 } : null;
     case "weekly":
       return { questionSec: 45, examSec: 15 * 60, cooldownH: 24, maxPerWeek: 2, pass: 0.8 };
+    case "qbank": {
+      // examination centre (app src/features/qbank): mock exam per stage, no certificate
+      const m = ({ 1: { q: 50, pass: 0.7 }, 2: { q: 60, pass: 0.75 }, 3: { q: 80, pass: 0.75 }, 4: { q: 100, pass: 0.8 } } as Record<number, { q: number; pass: number }>)[n];
+      return m ? { questionSec: 90, examSec: m.q * 60, cooldownH: 12, maxPerWeek: 3, pass: m.pass } : null;
+    }
     case "ar-unit": {
       if (!(n >= 1 && n <= 16)) return null;
       const final = arLevelOf(n);
@@ -57,7 +62,7 @@ export function ruleFor(exam: ExamKind, ref: string): Rule | null {
   }
   return null;
 }
-export const EXAMS: ExamKind[] = ["rp-level", "juz", "surah", "vocab", "weekly", "ar-unit"];
+export const EXAMS: ExamKind[] = ["rp-level", "juz", "surah", "vocab", "weekly", "ar-unit", "qbank"];
 export const isExam = (x: unknown): x is ExamKind => typeof x === "string" && (EXAMS as string[]).includes(x);
 
 // ---------- signing ----------

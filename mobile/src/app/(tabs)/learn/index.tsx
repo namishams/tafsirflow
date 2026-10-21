@@ -19,6 +19,8 @@ import { ProPromo } from "@/features/learn/ProPromo";
 import { TodayPlanCard } from "@/features/plan/TodayPlanCard";
 import { SrsEntryCard } from "@/features/srs";
 import { ReciterPathCard } from "@/features/reciter-path/Screens";
+import { SchoolEntryCard } from "@/features/school/Screens";
+import { QbankEntryCard } from "@/features/qbank/Screens";
 import { QaidaCard } from "@/features/qaida/Screens";
 import { LangCourseCard } from "@/features/arabic-lang/Screens";
 import { useLearnT } from "@/features/learn/texts";
@@ -72,6 +74,8 @@ export default function Masterclass() {
           <TodayPlanCard />
           <PersonaliseCard />
           <QaidaCard />
+          <SchoolEntryCard />
+          <QbankEntryCard />
           <LangCourseCard />
           <ReciterPathCard />
           {next && nextChapter ? (

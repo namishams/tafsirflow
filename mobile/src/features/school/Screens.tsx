@@ -14,6 +14,7 @@ import {
   setMinutes, stageState, stateOf, subjectGrades, termBounds, termExams, termOf, timetable, titleOf, type SchoolCourse, type Snapshot, type StageId, type SubjectId, type TermId,
 } from "./model";
 import { useSchoolT } from "./texts";
+import { QbankSchoolCard } from "@/features/qbank/Screens";
 
 // The Madrasa screens: home (/school), a stage (/school/<stage>), the report card (/school/report) and the weekly
 // timetable (/school/timetable). Emerald and gold like the rest of the app; the Quran is the main subject throughout.
@@ -238,6 +239,8 @@ export function SchoolHome() {
               <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 20, color: t.muted, marginTop: 10 }}>{gain > 0 ? st("termGain", { p: gain }) : st("termNoGain")}</Text>
             </GoldCard>
           </View>
+
+          <QbankSchoolCard />
 
           <AppRankCard />
           <RankCard rank={rank} />
