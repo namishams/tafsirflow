@@ -39,6 +39,10 @@ export const EXTRA_KINDS = [
   "abrahamic-religions", // Abrahamic religions, People of the Book, the revealed books, Hanif, Millat Ibrahim
   "abrahamic-places", // Hebron, Jerusalem, Sinai, Mecca, Zamzam, Abrahamic Family House (Abu Dhabi)
   "interfaith-history", // neutral history of Muslim relations with Jews and Christians, Amman Message, A Common Word, Human Fraternity
+  "kaaba", // the Kaaba, its history and reconstructions, Black Stone, Hijr Ismail, Kiswah, Maqam Ibrahim, Zamzam
+  "mecca-history", // pre-Islamic Mecca, Quraysh, Year of the Elephant, the Hijra, the conquest, Mecca today
+  "medina-history", // Yathrib, Aws and Khazraj, Jewish tribes, Constitution of Medina, the Prophet's Mosque, Quba, Qiblatayn
+  "hejaz-geography", // Hejaz, Tihamah, Sarawat Mountains, wadis, climate
   "arabic-word", // Arabic word and root of the day from the app's own vocabulary
 ] as const;
 export type ExtraKind = (typeof EXTRA_KINDS)[number];

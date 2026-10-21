@@ -12,6 +12,7 @@ import { StoryRails } from "@/features/prophet/Rails";
 import { HadithSpotlight } from "@/features/hadith/cards";
 import { CommunityCard } from "@/features/community/ui";
 import { AbrahamicCard } from "@/features/abrahamic/AbrahamicScreen";
+import { HaramainCard } from "@/features/haramain/HaramainScreen";
 
 // Discover: every course and tool of the website as poster tiles, grouped like the website menu; search, the
 // Islamic calendar and the names finder (website menu items without a poster) in the same look
@@ -32,6 +33,7 @@ export default function Discover() {
           <View style={{ paddingHorizontal: 16 }}><HadithSpotlight /></View>
           <View style={{ paddingHorizontal: 16 }}><CommunityCard /></View>
           <View style={{ paddingHorizontal: 16 }}><AbrahamicCard onPress={() => router.push("/abrahamic" as Href)} /></View>
+          <View style={{ paddingHorizontal: 16 }}><HaramainCard onPress={() => router.push("/haramain" as Href)} /></View>
           <StoryRails />
         </View>
         <View style={{ paddingHorizontal: 16, gap: 32, marginTop: 28 }}>

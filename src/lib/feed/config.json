@@ -107,6 +107,26 @@
         "deeplink": "quranmasterclass://abrahamic"
       },
       {
+        "id": "haramain",
+        "title": {
+          "de": "Kaaba, Mekka und Medina",
+          "en": "The Kaaba, Mecca and Medina",
+          "ar": "الكعبة ومكة والمدينة",
+          "tr": "Kâbe, Mekke ve Medine",
+          "ur": "کعبہ، مکہ اور مدینہ",
+          "fa": "کعبه، مکه و مدینه",
+          "ps": "کعبه، مکه او مدینه",
+          "fr": "La Kaaba, La Mecque et Médine",
+          "es": "La Kaaba, La Meca y Medina",
+          "id": "Ka'bah, Makkah, dan Madinah",
+          "ms": "Kaabah, Makkah dan Madinah",
+          "bn": "কাবা, মক্কা ও মদিনা",
+          "ru": "Кааба, Мекка и Медина",
+          "zh": "克尔白、麦加与麦地那"
+        },
+        "deeplink": "quranmasterclass://haramain"
+      },
+      {
         "id": "pro",
         "title": {
           "de": "Pro freischalten",
@@ -447,7 +467,8 @@
     "newPostsTab": true,
     "serverPage": true,
     "promos": true,
-    "announcements": true
+    "announcements": true,
+    "sharePrompt": true
   },
   "announcements": [
     {

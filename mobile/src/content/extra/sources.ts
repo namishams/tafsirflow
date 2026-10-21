@@ -4,6 +4,7 @@ import { meaning } from "@/web/vocabI18n";
 import { ART, HISTORY, MOSQUES, RECITER_ARTICLES, SCHOLARS, SEERAH, WORKS, SPREAD, GOLDEN_AGE, TRADITIONS, WOMEN, PROPHETS, CALLIGRAPHY, ARCHITECTURE, MONTHS, PILLARS, type CatalogEntry } from "./catalog";
 import { SALAH, PILLARS_FAITH, HOLY_PLACES, SAUDI_HERITAGE, QURAN_FACTS, UNSEEN, ETHICS, FAMILY, BATTLES, FINANCE, HALAL, PHRASES } from "./catalog2";
 import { ISLAM_IN } from "./countries";
+import { HEJAZ_GEOGRAPHY, KAABA, MECCA_HISTORY, MEDINA_HISTORY } from "./haramain";
 import { ABRAHAMIC_PLACES, ABRAHAMIC_PROPHETS, ABRAHAMIC_RELIGIONS, INTERFAITH_HISTORY } from "./abrahamic";
 import type { ExtraItem, ExtraKind } from "./types";
 import { WIKI_LICENSE, WIKI_LICENSE_URL, cached, claimDate, claimItem, claimYear, commonsImages, getJSON, label, wikiPages, wikidataEntities } from "./wiki";
@@ -230,5 +231,9 @@ export async function loadKind(kind: ExtraKind, lang: string, page: number): Pro
     case "abrahamic-religions": return simple(kind, ABRAHAMIC_RELIGIONS, lang, page);
     case "abrahamic-places": return simple(kind, ABRAHAMIC_PLACES, lang, page);
     case "interfaith-history": return simple(kind, INTERFAITH_HISTORY, lang, page);
+    case "kaaba": return simple(kind, KAABA, lang, page);
+    case "mecca-history": return simple(kind, MECCA_HISTORY, lang, page);
+    case "medina-history": return simple(kind, MEDINA_HISTORY, lang, page);
+    case "hejaz-geography": return simple(kind, HEJAZ_GEOGRAPHY, lang, page);
   }
 }
