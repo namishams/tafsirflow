@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { GoldCard, SectionTitle, Stage } from "@/components/brand";
@@ -18,6 +18,10 @@ import { useIntl } from "./format";
 import { EMPTY_TESTS, TESTS_KEY, useTestGate, type TestKind, type TestResult, type TestStore } from "./gate";
 import { PASS, buildTest, saveResult, type Question } from "./testgen";
 import { useSrsT } from "./texts";
+import { ExamBar, ExamBlocked, ExamVerdict } from "../exam/ExamUI";
+import { shuffleOptions, useExamSession } from "../exam/integrity";
+import { examOfTest, juzRecitePlan } from "../exam/plans";
+import { VerifiedCertLink } from "../exam/Certificates";
 
 const KINDS: TestKind[] = ["placement", "weekly", "juz", "surah", "vocab"];
 export const isTestKind = (k: string | undefined): k is TestKind => !!k && (KINDS as string[]).includes(k);
@@ -147,12 +151,20 @@ export function TestRunner({ kind, refId: ref }: { kind: TestKind; refId: string
   const [result, setResult] = useState<TestResult | null>(null);
   const [share, setShare] = useState(false);
   const allowed = gate.canStart(kind);
+  // exam rules (src/features/exam): seeded option order, time limits, no going back, cooldown, server-signed result
+  const onTimeout = useRef(() => {});
+  const onExpire = useRef(() => {});
+  const ex = useExamSession(allowed ? examOfTest(kind) : null, ref, {
+    questionIndex: i, questionOpen: pick === null && !!qs && !result,
+    onQuestionTimeout: () => onTimeout.current(), onExpire: () => onExpire.current(),
+    recite: (rand) => juzRecitePlan(Number(ref), rand),
+  });
   useEffect(() => {
-    if (!allowed) return;
+    if (!allowed || !ex.ready || qs) return;
     let live = true;
-    buildTest(kind, ref, lang).then((q) => { if (live) { if (q.length) setQs(q); else setError(true); } }).catch(() => { if (live) setError(true); });
+    buildTest(kind, ref, lang).then((q) => { if (live) { if (q.length) setQs(q.map((x) => shuffleOptions(x, ex.rand))); else setError(true); } }).catch(() => { if (live) setError(true); });
     return () => { live = false; };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [ex.ready]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const q = qs?.[i];
   const answer = (k: number) => {
@@ -164,7 +176,10 @@ export function TestRunner({ kind, refId: ref }: { kind: TestKind; refId: string
     if (!qs) return;
     if (i + 1 < qs.length) { setI(i + 1); setPick(null); return; }
     setResult(saveResult({ kind, ref, score, total: qs.length }, gate.pro));
+    ex.finish(score, qs.length);
   };
+  onTimeout.current = () => answer(-1);
+  onExpire.current = () => { if (qs && !result) { setResult(saveResult({ kind, ref, score, total: qs.length }, gate.pro)); ex.finish(score, qs.length); } };
   const pct = result && result.total ? Math.round((result.score / result.total) * 100) : 0;
   return (
     <>
@@ -173,9 +188,12 @@ export function TestRunner({ kind, refId: ref }: { kind: TestKind; refId: string
         <CourseHero back title={title} lead={kind === "juz" || kind === "surah" ? st("examLead") : undefined} />
         <View style={{ paddingHorizontal: 16, paddingTop: 20, gap: 14 }}>
           {!allowed ? <ProCard feature="vocab" title={st("proTitle")} text={st("oneTestWeek")} /> : null}
+          <ExamBlocked session={ex} />
+          {q && !result && ex.phase !== "void" ? <ExamBar session={ex} showRules={i === 0} /> : null}
           {allowed && error ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.muted, textAlign: "center" }}>{st("loadError")}</Text> : null}
-          {allowed && !qs && !error ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.muted, textAlign: "center" }}>{st("loading")}</Text> : null}
-          {q && !result ? (
+          {allowed && !qs && !error && ex.phase !== "blocked" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.muted, textAlign: "center" }}>{st("loading")}</Text> : null}
+          {ex.phase === "void" && !result ? <ExamVerdict session={ex} /> : null}
+          {q && !result && ex.phase !== "void" ? (
             <StepIn key={i}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted, textAlign: "center", marginBottom: 10 }}>{st("question", { n: nf(i + 1), total: nf(qs!.length) })}</Text>
               <Stage rounded={R.card} hairlines={false} style={{ padding: 20, minHeight: 160, justifyContent: "center", borderWidth: 1, borderColor: stage.goldSoft }}>
@@ -209,6 +227,7 @@ export function TestRunner({ kind, refId: ref }: { kind: TestKind; refId: string
                 {kind !== "placement" ? <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: pct >= PASS * 100 ? t.accent : t.muted, textAlign: "center" }}>{pct >= PASS * 100 ? st("passed") : st("notPassed")}</Text> : null}
                 {kind === "placement" ? <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink, textAlign: "center" }}>{st("placementResult", { deck: st(pct >= 70 ? "deck_vocab" : "deck_juzamma") })}</Text> : null}
               </GoldCard>
+              <View style={{ marginTop: 14 }}><ExamVerdict session={ex} /></View>
               <View style={{ gap: 10, marginTop: 14 }}>
                 <BigButton title={st("share")} icon="send" onPress={() => setShare(true)} />
                 {kind === "juz" && pct >= PASS * 100 ? (gate.pro
@@ -298,6 +317,7 @@ export function CertificateScreen({ juz }: { juz: number }) {
                 </View>
               </Stage>
               <BigButton title={st("share")} icon="send" onPress={() => setShare(true)} />
+              <VerifiedCertLink course={`juz:${juz}`} />
               <ShareSheet visible={share} onClose={() => setShare(false)} link={SITE} noDecoration message={st("shareMsg", { pct: nf(cert.pct), test: st("juzN", { n: nf(juz) }) })}
                 renderCard={(f) => <ResultCard format={f} kicker={st("certificate")} title={`${user?.name ? `${user.name} · ` : ""}${st("juzN", { n: nf(juz) })}`} big={`${nf(cert.pct)} %`} sub={date} note={st("certificateNote")} />} />
             </>

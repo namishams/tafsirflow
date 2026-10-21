@@ -305,6 +305,306 @@ CREATE TABLE IF NOT EXISTS feed_offer_stats (
   PRIMARY KEY (day, variant, offer)
 );
 
+-- Quran Talents network (extends the reciters community; nothing above is changed or removed)
+-- age: birth year stays in users.birth_year; age_confirmed_at = the member confirmed the year for the community
+ALTER TABLE users ADD COLUMN IF NOT EXISTS age_confirmed_at timestamptz;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS rewaya text NOT NULL DEFAULT '';
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS maqam text NOT NULL DEFAULT '';
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS ijazah_chain text NOT NULL DEFAULT '';
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS level text NOT NULL DEFAULT 'talent';
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS verified boolean NOT NULL DEFAULT false;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS verified_by bigint REFERENCES users(id) ON DELETE SET NULL;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS verified_at timestamptz;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS master_invite_id bigint;
+-- progress the member chooses to show (sent by the app, status only)
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS show_progress boolean NOT NULL DEFAULT false;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS tree_stage smallint NOT NULL DEFAULT 0;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS tree_type text NOT NULL DEFAULT '';
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS cert_juz smallint[] NOT NULL DEFAULT '{}';
+-- suspended by an admin: hidden from lists, cannot write
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS suspended boolean NOT NULL DEFAULT false;
+DO $$ BEGIN
+  ALTER TABLE community_profiles ADD CONSTRAINT community_profiles_level CHECK (level IN ('talent','rising','master','sheikh'));
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+DO $$ BEGIN
+  ALTER TABLE community_profiles ADD CONSTRAINT community_profiles_chain_len CHECK (char_length(ijazah_chain) <= 600);
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+CREATE INDEX IF NOT EXISTS community_profiles_level ON community_profiles(level) WHERE public;
+-- reports: what was reported (profile, message, post) and how it was handled
+ALTER TABLE community_reports ADD COLUMN IF NOT EXISTS target_type text NOT NULL DEFAULT 'profile';
+ALTER TABLE community_reports ADD COLUMN IF NOT EXISTS target_id bigint;
+ALTER TABLE community_reports ADD COLUMN IF NOT EXISTS category text NOT NULL DEFAULT '';
+ALTER TABLE community_reports ADD COLUMN IF NOT EXISTS handled_by bigint REFERENCES users(id) ON DELETE SET NULL;
+ALTER TABLE community_reports ADD COLUMN IF NOT EXISTS handled_at timestamptz;
+CREATE INDEX IF NOT EXISTS community_reports_open ON community_reports(created_at) WHERE status = 'open';
+-- connections: a request that the other member accepts or declines; one row per pair
+CREATE TABLE IF NOT EXISTS community_connections (
+  id           bigserial PRIMARY KEY,
+  requester_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  addressee_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  status       text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','accepted','declined')),
+  note         text NOT NULL DEFAULT '' CHECK (char_length(note) <= 200),
+  created_at   timestamptz NOT NULL DEFAULT now(),
+  responded_at timestamptz,
+  CHECK (requester_id <> addressee_id)
+);
+CREATE UNIQUE INDEX IF NOT EXISTS community_connections_pair ON community_connections (LEAST(requester_id, addressee_id), GREATEST(requester_id, addressee_id));
+CREATE INDEX IF NOT EXISTS community_connections_addressee ON community_connections(addressee_id, status);
+-- 1:1 conversations (user_a < user_b) and their messages (text only for now)
+CREATE TABLE IF NOT EXISTS community_conversations (
+  id              bigserial PRIMARY KEY,
+  user_a          bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  user_b          bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  a_read_id       bigint NOT NULL DEFAULT 0,
+  b_read_id       bigint NOT NULL DEFAULT 0,
+  created_at      timestamptz NOT NULL DEFAULT now(),
+  last_message_at timestamptz,
+  CHECK (user_a < user_b),
+  UNIQUE (user_a, user_b)
+);
+CREATE INDEX IF NOT EXISTS community_conversations_b ON community_conversations(user_b);
+CREATE TABLE IF NOT EXISTS community_messages (
+  id              bigserial PRIMARY KEY,
+  conversation_id bigint NOT NULL REFERENCES community_conversations(id) ON DELETE CASCADE,
+  sender_id       bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  body            text NOT NULL CHECK (char_length(body) BETWEEN 1 AND 1000),
+  created_at      timestamptz NOT NULL DEFAULT now(),
+  removed_at      timestamptz           -- removed by an admin after a report
+);
+CREATE INDEX IF NOT EXISTS community_messages_conv ON community_messages(conversation_id, id DESC);
+-- every moderation step of an admin (who, what, on whom)
+CREATE TABLE IF NOT EXISTS community_admin_actions (
+  id             bigserial PRIMARY KEY,
+  admin_id       bigint REFERENCES users(id) ON DELETE SET NULL,
+  action         text NOT NULL,
+  target_user_id bigint REFERENCES users(id) ON DELETE SET NULL,
+  report_id      bigint REFERENCES community_reports(id) ON DELETE SET NULL,
+  detail         jsonb NOT NULL DEFAULT '{}',
+  created_at     timestamptz NOT NULL DEFAULT now()
+);
+-- master invite codes: an admin creates them (only the hash is stored); redeeming makes the member a verified master
+CREATE TABLE IF NOT EXISTS community_master_invites (
+  id         bigserial PRIMARY KEY,
+  code_hash  text NOT NULL UNIQUE,
+  hint       text NOT NULL DEFAULT '',            -- last 4 characters, to recognise a code in the list
+  note       text NOT NULL DEFAULT '',
+  level      text NOT NULL DEFAULT 'master' CHECK (level IN ('rising','master','sheikh')),
+  max_uses   integer NOT NULL DEFAULT 1 CHECK (max_uses BETWEEN 1 AND 100),
+  uses       integer NOT NULL DEFAULT 0,
+  created_by bigint REFERENCES users(id) ON DELETE SET NULL,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  expires_at timestamptz,
+  revoked_at timestamptz
+);
+CREATE TABLE IF NOT EXISTS community_master_invite_uses (
+  invite_id bigint NOT NULL REFERENCES community_master_invites(id) ON DELETE CASCADE,
+  user_id   bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  used_at   timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (invite_id, user_id)
+);
+-- posts and stories (next step: media upload). Nothing is shown before an admin approves it; stories expire.
+CREATE TABLE IF NOT EXISTS community_posts (
+  id            bigserial PRIMARY KEY,
+  author_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  type          text NOT NULL CHECK (type IN ('story','post')),
+  media_url     text,
+  media_kind    text CHECK (media_kind IN ('video','image','audio')),
+  duration_ms   integer CHECK (duration_ms IS NULL OR duration_ms BETWEEN 0 AND 600000),
+  caption       text NOT NULL DEFAULT '' CHECK (char_length(caption) <= 500),
+  surah         smallint,                          -- optional: which verses are recited
+  verse_from    smallint,
+  verse_to      smallint,
+  status        text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected','removed')),
+  reviewed_by   bigint REFERENCES users(id) ON DELETE SET NULL,
+  reviewed_at   timestamptz,
+  reject_reason text NOT NULL DEFAULT '',
+  created_at    timestamptz NOT NULL DEFAULT now(),
+  expires_at    timestamptz                        -- stories: created_at + 24 h
+);
+CREATE INDEX IF NOT EXISTS community_posts_queue ON community_posts(created_at) WHERE status = 'pending';
+CREATE INDEX IF NOT EXISTS community_posts_author ON community_posts(author_id, created_at DESC);
+
+-- Exams and verifiable certificates ("keine Schummler"; nothing above is changed). The app runs the exam, the server
+-- opens the attempt (start time, nonce, cooldown, weekly limit), checks the timing of the result and signs it (HMAC);
+-- certificates are issued only from these rows. Highest certificates wait for a review of the recording.
+CREATE TABLE IF NOT EXISTS exam_attempts (
+  id           bigserial PRIMARY KEY,
+  user_id      bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  exam         text NOT NULL CHECK (exam IN ('rp-level','juz','surah','vocab','weekly','ar-unit')),
+  ref          text NOT NULL DEFAULT '' CHECK (char_length(ref) <= 20),
+  nonce        text NOT NULL,                       -- seed for the question pool and option order of this attempt
+  status       text NOT NULL DEFAULT 'running' CHECK (status IN ('running','submitted','void')),
+  started_at   timestamptz NOT NULL DEFAULT now(),
+  submitted_at timestamptz,
+  score        integer CHECK (score IS NULL OR score >= 0),
+  total        integer CHECK (total IS NULL OR total BETWEEN 0 AND 500),
+  word_score   real CHECK (word_score IS NULL OR word_score BETWEEN 0 AND 1),
+  duration_ms  integer,
+  flags        text[] NOT NULL DEFAULT '{}',        -- background, timeout, too_fast, late, offline …
+  passed       boolean NOT NULL DEFAULT false,
+  platform     text NOT NULL DEFAULT '',
+  sig          text                                 -- HMAC over the result (lib.ts resultMsg)
+);
+CREATE INDEX IF NOT EXISTS exam_attempts_user ON exam_attempts(user_id, exam, ref, started_at DESC);
+CREATE TABLE IF NOT EXISTS certificates (
+  id          bigserial PRIMARY KEY,
+  code        text UNIQUE NOT NULL,                 -- QMC-XXXX-XXXX, printed with a QR to /verify/<code>
+  user_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  attempt_id  bigint REFERENCES exam_attempts(id) ON DELETE SET NULL,
+  course      text NOT NULL,                        -- rp-level:10, juz:30, ar-level:C1 …
+  holder_name text NOT NULL DEFAULT '' CHECK (char_length(holder_name) <= 80),
+  pct         smallint NOT NULL CHECK (pct BETWEEN 0 AND 100),
+  status      text NOT NULL DEFAULT 'valid' CHECK (status IN ('valid','pending','rejected','revoked')),
+  issued_at   timestamptz NOT NULL DEFAULT now(),
+  decided_at  timestamptz,
+  sig         text NOT NULL,                        -- HMAC over code, holder, course, pct, date (lib.ts certMsg)
+  UNIQUE (user_id, course)
+);
+CREATE TABLE IF NOT EXISTS review_queue (
+  id                   bigserial PRIMARY KEY,
+  certificate_id       bigint NOT NULL REFERENCES certificates(id) ON DELETE CASCADE,
+  attempt_id           bigint REFERENCES exam_attempts(id) ON DELETE SET NULL,
+  recording_path       text,                        -- private folder outside the web root, deleted after 90 days
+  recording_mime       text NOT NULL DEFAULT '',
+  recording_bytes      integer,
+  recording_deleted_at timestamptz,
+  status               text NOT NULL DEFAULT 'open' CHECK (status IN ('open','approved','rejected')),
+  reviewer_id          bigint REFERENCES users(id) ON DELETE SET NULL,
+  reviewed_at          timestamptz,
+  note                 text NOT NULL DEFAULT '' CHECK (char_length(note) <= 500),
+  created_at           timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS review_queue_open ON review_queue(created_at) WHERE status = 'open';
+
+-- Quran Talents: recitation clips (owner decision 21.10.2026). Only verified members (16+, Pro, learning level, see
+-- posting in src/lib/feed/config.json) may post; recorded in the app only; nothing is shown before an admin approves.
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS reciter_level smallint NOT NULL DEFAULT 0;  -- Reciter Path level passed, reported by the app
+ALTER TABLE community_posts ADD COLUMN IF NOT EXISTS verse_key text;              -- "surah:verse" or "surah:from-to"
+ALTER TABLE community_posts ADD COLUMN IF NOT EXISTS media_path text;             -- file name inside MEDIA_DIR (never a public URL)
+ALTER TABLE community_posts ADD COLUMN IF NOT EXISTS media_mime text;
+ALTER TABLE community_posts ADD COLUMN IF NOT EXISTS has_video boolean NOT NULL DEFAULT false;
+ALTER TABLE community_posts ADD COLUMN IF NOT EXISTS waveform smallint[] NOT NULL DEFAULT '{}';  -- 0..100 loudness bars for the visual
+ALTER TABLE community_posts ADD COLUMN IF NOT EXISTS word_check smallint;         -- share of verse words heard on the device, 0..100
+ALTER TABLE community_posts ADD COLUMN IF NOT EXISTS like_count integer NOT NULL DEFAULT 0;
+ALTER TABLE community_posts ADD COLUMN IF NOT EXISTS deleted_at timestamptz;      -- deleted by the author or expired (story)
+CREATE INDEX IF NOT EXISTS community_posts_live ON community_posts(created_at DESC) WHERE status = 'approved' AND deleted_at IS NULL;
+CREATE TABLE IF NOT EXISTS community_post_likes (
+  post_id    bigint NOT NULL REFERENCES community_posts(id) ON DELETE CASCADE,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (post_id, user_id)
+);
+-- verification applications: real name and teacher details are seen by admins only; the voice sample is deleted
+-- from MEDIA_DIR when the application is decided
+CREATE TABLE IF NOT EXISTS community_verifications (
+  id            bigserial PRIMARY KEY,
+  user_id       bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  real_name     text NOT NULL CHECK (char_length(real_name) BETWEEN 2 AND 100),
+  country       text,
+  rewaya        text NOT NULL DEFAULT '',
+  teacher       text NOT NULL DEFAULT '' CHECK (char_length(teacher) <= 300),
+  ijazah_info   text NOT NULL DEFAULT '' CHECK (char_length(ijazah_info) <= 1000),
+  sample_path   text,
+  sample_mime   text,
+  status        text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')),
+  reject_reason text NOT NULL DEFAULT '',
+  reviewed_by   bigint REFERENCES users(id) ON DELETE SET NULL,
+  reviewed_at   timestamptz,
+  created_at    timestamptz NOT NULL DEFAULT now()
+);
+CREATE UNIQUE INDEX IF NOT EXISTS community_verifications_open ON community_verifications(user_id) WHERE status = 'pending';
+
+-- Quran Talents social layer (owner decision 21.10.2026: all social features are free): comments, saved clips,
+-- story highlights, notifications
+CREATE TABLE IF NOT EXISTS community_post_comments (
+  id         bigserial PRIMARY KEY,
+  post_id    bigint NOT NULL REFERENCES community_posts(id) ON DELETE CASCADE,
+  author_id  bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  body       text NOT NULL CHECK (char_length(body) BETWEEN 1 AND 500),
+  created_at timestamptz NOT NULL DEFAULT now(),
+  removed_at timestamptz
+);
+CREATE INDEX IF NOT EXISTS community_post_comments_post ON community_post_comments(post_id, id);
+ALTER TABLE community_posts ADD COLUMN IF NOT EXISTS comment_count integer NOT NULL DEFAULT 0;
+CREATE TABLE IF NOT EXISTS community_post_saves (
+  post_id    bigint NOT NULL REFERENCES community_posts(id) ON DELETE CASCADE,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (user_id, post_id)
+);
+CREATE TABLE IF NOT EXISTS community_highlights (
+  id         bigserial PRIMARY KEY,
+  owner_id   bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  title      text NOT NULL CHECK (char_length(title) BETWEEN 1 AND 30),
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS community_highlight_items (
+  highlight_id bigint NOT NULL REFERENCES community_highlights(id) ON DELETE CASCADE,
+  post_id      bigint NOT NULL REFERENCES community_posts(id) ON DELETE CASCADE,
+  position     smallint NOT NULL DEFAULT 0,
+  PRIMARY KEY (highlight_id, post_id)
+);
+CREATE TABLE IF NOT EXISTS community_notifications (
+  id         bigserial PRIMARY KEY,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind       text NOT NULL CHECK (kind IN ('follow','like','comment','post_approved','post_rejected','connect_request','connect_accepted','verified','verification_rejected')),
+  actor_id   bigint REFERENCES users(id) ON DELETE CASCADE,
+  post_id    bigint REFERENCES community_posts(id) ON DELETE CASCADE,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  read_at    timestamptz
+);
+CREATE INDEX IF NOT EXISTS community_notifications_user ON community_notifications(user_id, id DESC);
+
+-- Quran Talents profile settings: avatar (file in MEDIA_DIR/avatars), private account (new followers need approval,
+-- clips and lists only for followers), who may message, acceptance of terms and community guidelines
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS avatar_path text;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS avatar_version integer NOT NULL DEFAULT 0;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS private boolean NOT NULL DEFAULT false;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS message_policy text NOT NULL DEFAULT 'connections';
+DO $$ BEGIN
+  ALTER TABLE community_profiles ADD CONSTRAINT community_profiles_message_policy CHECK (message_policy IN ('connections','nobody'));
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS guidelines_accepted_at timestamptz;
+CREATE TABLE IF NOT EXISTS community_follow_requests (
+  requester_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  target_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  created_at   timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (requester_id, target_id),
+  CHECK (requester_id <> target_id)
+);
+CREATE INDEX IF NOT EXISTS community_follow_requests_target ON community_follow_requests(target_id);
+DO $$ BEGIN
+  ALTER TABLE community_notifications DROP CONSTRAINT IF EXISTS community_notifications_kind_check;
+  ALTER TABLE community_notifications ADD CONSTRAINT community_notifications_kind_check CHECK (kind IN ('follow','follow_request','like','comment','post_approved','post_rejected','connect_request','connect_accepted','verified','verification_rejected'));
+EXCEPTION WHEN others THEN NULL; END $$;
+
+-- Quran Talents badges (owner decision 21.10.2026, no manual work): emerald check (automatic: e-mail confirmed, 16+,
+-- profile complete, guidelines accepted; phone by SMS once an SMS provider exists), gold check "Masterclass Reciter"
+-- (automatic: Reciter Path level certificate from the exam module + emerald), official star (YouTube channel proven
+-- with Google OAuth and enough subscribers, or an invite code; admins can override). Stored for fast lists,
+-- recomputed by src/lib/talentBadges.ts.
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS badge text NOT NULL DEFAULT 'none';
+DO $$ BEGIN
+  ALTER TABLE community_profiles ADD CONSTRAINT community_profiles_badge CHECK (badge IN ('none','emerald','gold'));
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS official boolean NOT NULL DEFAULT false;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS official_source text;          -- youtube | invite | admin
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS official_channel text;         -- public channel title (YouTube)
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS official_channel_id text;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS official_subscribers integer;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS official_at timestamptz;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS badge_override text;           -- admin: 'none' blocks automatic badges
+ALTER TABLE users ADD COLUMN IF NOT EXISTS phone_verified_at timestamptz;              -- set once SMS verification exists
+-- one-time tickets that carry the signed-in member from the app into the Google OAuth flow (only the hash)
+CREATE TABLE IF NOT EXISTS community_oauth_tickets (
+  ticket_hash text PRIMARY KEY,
+  user_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  target      text NOT NULL DEFAULT 'app' CHECK (target IN ('app','web')),
+  locale      text NOT NULL DEFAULT 'en',
+  expires_at  timestamptz NOT NULL,
+  used_at     timestamptz
+);
+
 -- keep last: the app user needs rights on every table above
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

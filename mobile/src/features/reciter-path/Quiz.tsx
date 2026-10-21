@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, Pressable, Text, View } from "react-native";
 import { GoldButton, OutlineButton } from "@/components/brand";
 import { FONT, R, useTheme } from "@/lib/theme";
@@ -36,7 +36,7 @@ function TapQuestion({ item, picked, setPicked, revealed }: { item: TapItem; pic
 }
 
 /** unit test or level exam: one question at a time, answer checked with feedback, score at the end */
-export function Quiz({ questions, seed, onDone }: { questions: Question[]; seed: string; onDone: (score: number) => void }) {
+export function Quiz({ questions, seed, onDone, questionSeconds }: { questions: Question[]; seed: string; onDone: (score: number) => void; /** exams: time per question (src/features/exam) */ questionSeconds?: number }) {
   const t = useTheme();
   const rt = useRpT();
   const [i, setI] = useState(0);
@@ -46,6 +46,15 @@ export function Quiz({ questions, seed, onDone }: { questions: Question[]; seed:
   const [right, setRight] = useState(0);
   const q = questions[i];
   const ord = useMemo(() => (q?.kind === "mcq" ? order(q.options.length, `${seed}:${i}`) : []), [q, seed, i]);
+  // exam time per question: when it runs out, the answer is checked as it stands
+  const [left, setLeft] = useState<number | null>(questionSeconds ?? null);
+  useEffect(() => {
+    if (!questionSeconds || revealed) return;
+    setLeft(questionSeconds);
+    const end = Date.now() + questionSeconds * 1000;
+    const tm = setInterval(() => { const l = Math.max(0, Math.ceil((end - Date.now()) / 1000)); setLeft(l); if (!l) { clearInterval(tm); setChoice(null); setPicked([]); setRevealed(true); } }, 500);
+    return () => clearInterval(tm);
+  }, [i, revealed, questionSeconds]);
   if (!q) return null;
 
   const isRight = q.kind === "tap"
@@ -59,7 +68,7 @@ export function Quiz({ questions, seed, onDone }: { questions: Question[]; seed:
 
   return (
     <View style={{ gap: 16 }}>
-      <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.2, color: t.gold }}>{`${i + 1} / ${questions.length}`}</Text>
+      <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 1.2, color: t.gold }}>{`${i + 1} / ${questions.length}${questionSeconds && !revealed && left !== null ? ` · ${left} s` : ""}`}</Text>
       {q.kind === "tap" ? <TapQuestion item={q.item} picked={picked} setPicked={setPicked} revealed={revealed} /> : (
         <View style={{ gap: 10 }}>
           <Text style={{ fontFamily: FONT.bold, fontSize: 17, lineHeight: 24, color: t.ink }}>{q.q}</Text>
@@ -69,14 +78,14 @@ export function Quiz({ questions, seed, onDone }: { questions: Question[]; seed:
             const bad = revealed && sel && k !== q.answer;
             return (
               <Pressable key={k} disabled={revealed} onPress={() => setChoice(k)} accessibilityRole="radio" accessibilityState={{ selected: sel }}
-                style={{ padding: 14, borderRadius: R.lg, borderWidth: 1.5, borderColor: good ? t.accent : bad ? "rgb(220,38,38)" : sel ? t.gold : t.line, backgroundColor: good ? t.accentSoft : t.surface }}>
+                style={{ padding: 14, borderRadius: R.lg, borderWidth: 1.5, borderColor: good ? t.accent : bad ? "rgb(160,58,52)" : sel ? t.gold : t.line, backgroundColor: good ? t.accentSoft : t.surface }}>
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{q.options[k]}</Text>
               </Pressable>
             );
           })}
         </View>
       )}
-      {revealed ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.bold, fontSize: 15, color: isRight ? t.accent : "rgb(220,38,38)" }}>{isRight ? rt("correct") : rt("wrong")}</Text> : null}
+      {revealed ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.bold, fontSize: 15, color: isRight ? t.accent : "rgb(160,58,52)" }}>{isRight ? rt("correct") : rt("wrong")}</Text> : null}
       {revealed
         ? <GoldButton title={i + 1 >= questions.length ? rt("finish") : rt("next")} onPress={next} />
         : <OutlineButton title={rt("check")} onPress={check} disabled={q.kind === "tap" ? picked.length === 0 : choice === null} />}

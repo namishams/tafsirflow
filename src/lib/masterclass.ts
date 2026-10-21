@@ -58,10 +58,10 @@ const en: MC = {
   schoolKicker: "The school", schoolTitle: "Four stages, like a traditional Islamic school", stageWord: "Stage",
   schoolLead: "The Masterclass follows the order in which the Quran has been taught for centuries: first reading, then correct recitation, then depth and mastery.",
   stages: {
-    ibtidai: { name: "Ibtidāʾī", t: "Foundation", d: "Letters, vowels and your first surahs.", items: ["Arabic reading course, first stages", "al-Fātiḥa and Juz ʿAmma with the Shams Method", "Reciter Path levels 1–2", "Arabic language A1"] },
-    idadi: { name: "Iʿdādī", t: "Preparation", d: "Fluent reading and the core rules of tajweed.", items: ["Reading course completed (20 stages)", "Reciter Path levels 3–5", "Daily hifz cards", "Arabic language A2"] },
-    thanawi: { name: "Thānawī", t: "Consolidation", d: "Stopping well, breath, melody and longer surahs.", items: ["Reciter Path levels 6–8: waqf, maqamat, breath", "Longer surahs with the Shams Method", "Academy: tafsir, hadith, fiqh", "Arabic language B1–B2"] },
-    ali: { name: "ʿĀlī", t: "Mastery", d: "Qira'at, similar verses and your Masterclass recital.", items: ["Reciter Path levels 9–10", "Masterclass recital with certificate", "Arabic language C1", "Verified profile in the Talents community"] },
+    ibtidai: { name: "Ibtidāʾiyya", t: "Foundation", d: "Letters, vowels and your first surahs.", items: ["Arabic reading course, first stages", "al-Fātiḥa and Juz ʿAmma with the Shams Method", "Reciter Path levels 1–2", "Arabic language A1"] },
+    idadi: { name: "Iʿdādiyya", t: "Preparation", d: "Fluent reading and the core rules of tajweed.", items: ["Reading course completed (20 stages)", "Reciter Path levels 3–5", "Daily hifz cards", "Arabic language A2"] },
+    thanawi: { name: "Thānawiyya", t: "Consolidation", d: "Stopping well, breath, melody and longer surahs.", items: ["Reciter Path levels 6–8: waqf, maqamat, breath", "Longer surahs with the Shams Method", "Academy: tafsir, hadith, fiqh", "Arabic language B1–B2"] },
+    ali: { name: "ʿĀliya", t: "Mastery", d: "Qira'at, similar verses and your Masterclass recital.", items: ["Reciter Path levels 9–10", "Masterclass recital with certificate", "Arabic language C1", "Verified profile in the Talents community"] },
   },
   pathKicker: "Reciter Path", pathTitle: "Ten levels to the Masterclass recital", levelWord: "Level",
   pathLead: "Each level teaches a group of rules with examples from the mushaf, played by the reciter you choose, and closes with a test.",
@@ -137,10 +137,10 @@ const de: MC = {
   schoolKicker: "Die Schule", schoolTitle: "Vier Stufen wie an einer traditionellen islamischen Schule", stageWord: "Stufe",
   schoolLead: "Die Masterclass folgt der Reihenfolge, in der der Koran seit Jahrhunderten gelehrt wird: zuerst lesen, dann richtig rezitieren, dann Tiefe und Meisterschaft.",
   stages: {
-    ibtidai: { name: "Ibtidāʾī", t: "Grundlage", d: "Buchstaben, Vokale und deine ersten Suren.", items: ["Arabisch-Lesekurs, erste Stufen", "al-Fātiḥa und Juz ʿAmma mit der Shams-Methode", "Rezitatorweg Stufen 1–2", "Arabisch-Sprachkurs A1"] },
-    idadi: { name: "Iʿdādī", t: "Vorbereitung", d: "Flüssig lesen und die Kernregeln des Tadschwid.", items: ["Lesekurs abgeschlossen (20 Stufen)", "Rezitatorweg Stufen 3–5", "Tägliche Hifz-Karten", "Arabisch-Sprachkurs A2"] },
-    thanawi: { name: "Thānawī", t: "Festigung", d: "Gut anhalten, Atem, Melodie und längere Suren.", items: ["Rezitatorweg Stufen 6–8: Waqf, Maqamat, Atem", "Längere Suren mit der Shams-Methode", "Akademie: Tafsir, Hadith, Fiqh", "Arabisch-Sprachkurs B1–B2"] },
-    ali: { name: "ʿĀlī", t: "Meisterschaft", d: "Qiraʾat, ähnliche Verse und deine Masterclass-Rezitation.", items: ["Rezitatorweg Stufen 9–10", "Masterclass-Rezitation mit Zertifikat", "Arabisch-Sprachkurs C1", "Verifiziertes Profil in der Talents-Gemeinschaft"] },
+    ibtidai: { name: "Ibtidāʾiyya", t: "Grundlage", d: "Buchstaben, Vokale und deine ersten Suren.", items: ["Arabisch-Lesekurs, erste Stufen", "al-Fātiḥa und Juz ʿAmma mit der Shams-Methode", "Rezitatorweg Stufen 1–2", "Arabisch-Sprachkurs A1"] },
+    idadi: { name: "Iʿdādiyya", t: "Vorbereitung", d: "Flüssig lesen und die Kernregeln des Tadschwid.", items: ["Lesekurs abgeschlossen (20 Stufen)", "Rezitatorweg Stufen 3–5", "Tägliche Hifz-Karten", "Arabisch-Sprachkurs A2"] },
+    thanawi: { name: "Thānawiyya", t: "Festigung", d: "Gut anhalten, Atem, Melodie und längere Suren.", items: ["Rezitatorweg Stufen 6–8: Waqf, Maqamat, Atem", "Längere Suren mit der Shams-Methode", "Akademie: Tafsir, Hadith, Fiqh", "Arabisch-Sprachkurs B1–B2"] },
+    ali: { name: "ʿĀliya", t: "Meisterschaft", d: "Qiraʾat, ähnliche Verse und deine Masterclass-Rezitation.", items: ["Rezitatorweg Stufen 9–10", "Masterclass-Rezitation mit Zertifikat", "Arabisch-Sprachkurs C1", "Verifiziertes Profil in der Talents-Gemeinschaft"] },
   },
   pathKicker: "Rezitatorweg", pathTitle: "Zehn Stufen bis zur Masterclass-Rezitation", levelWord: "Stufe",
   pathLead: "Jede Stufe lehrt eine Gruppe von Regeln mit Beispielen aus dem Mushaf, gespielt von dem Rezitator deiner Wahl, und endet mit einem Test.",
@@ -216,10 +216,10 @@ const ar: MC = {
   schoolKicker: "المدرسة", schoolTitle: "أربع مراحل كما في المدرسة الإسلامية التقليدية", stageWord: "المرحلة",
   schoolLead: "تتبع الماستركلاس الترتيب الذي عُلِّم به القرآن قرونًا: القراءة أولًا، ثم التلاوة الصحيحة، ثم العمق والإتقان.",
   stages: {
-    ibtidai: { name: "ابتدائي", t: "التأسيس", d: "الحروف والحركات وسورك الأولى.", items: ["دورة قراءة العربية، المراحل الأولى", "الفاتحة وجزء عمّ بمنهج شمس", "طريق القارئ، المرحلتان ١–٢", "اللغة العربية A1"] },
-    idadi: { name: "إعدادي", t: "الإعداد", d: "القراءة بطلاقة وأصول أحكام التجويد.", items: ["إتمام دورة القراءة (٢٠ مرحلة)", "طريق القارئ، المراحل ٣–٥", "بطاقات الحفظ يوميًا", "اللغة العربية A2"] },
-    thanawi: { name: "ثانوي", t: "التثبيت", d: "الوقف الحسن والنفَس واللحن والسور الأطول.", items: ["طريق القارئ، المراحل ٦–٨: الوقف والمقامات والنفَس", "سور أطول بمنهج شمس", "الأكاديمية: التفسير والحديث والفقه", "اللغة العربية B1–B2"] },
-    ali: { name: "عالٍ", t: "الإتقان", d: "القراءات والمتشابهات وتلاوة الماستركلاس.", items: ["طريق القارئ، المرحلتان ٩–١٠", "تلاوة الماستركلاس مع الشهادة", "اللغة العربية C1", "ملف موثَّق في مجتمع المواهب"] },
+    ibtidai: { name: "ابتدائية", t: "التأسيس", d: "الحروف والحركات وسورك الأولى.", items: ["دورة قراءة العربية، المراحل الأولى", "الفاتحة وجزء عمّ بمنهج شمس", "طريق القارئ، المرحلتان ١–٢", "اللغة العربية A1"] },
+    idadi: { name: "إعدادية", t: "الإعداد", d: "القراءة بطلاقة وأصول أحكام التجويد.", items: ["إتمام دورة القراءة (٢٠ مرحلة)", "طريق القارئ، المراحل ٣–٥", "بطاقات الحفظ يوميًا", "اللغة العربية A2"] },
+    thanawi: { name: "ثانوية", t: "التثبيت", d: "الوقف الحسن والنفَس واللحن والسور الأطول.", items: ["طريق القارئ، المراحل ٦–٨: الوقف والمقامات والنفَس", "سور أطول بمنهج شمس", "الأكاديمية: التفسير والحديث والفقه", "اللغة العربية B1–B2"] },
+    ali: { name: "عالية", t: "الإتقان", d: "القراءات والمتشابهات وتلاوة الماستركلاس.", items: ["طريق القارئ، المرحلتان ٩–١٠", "تلاوة الماستركلاس مع الشهادة", "اللغة العربية C1", "ملف موثَّق في مجتمع المواهب"] },
   },
   pathKicker: "طريق القارئ", pathTitle: "عشر مراحل حتى تلاوة الماستركلاس", levelWord: "المرحلة",
   pathLead: "كل مرحلة تعلّم مجموعة من الأحكام بأمثلة من المصحف، بصوت القارئ الذي تختاره، وتُختم باختبار.",
@@ -287,7 +287,7 @@ export const PILLARS: { k: PillarKey; ar: string; href: string }[] = [
   { k: "talents", ar: "مواهب", href: "/talents" },
 ];
 export const STAGES: { k: StageKey; ar: string }[] = [
-  { k: "ibtidai", ar: "ابتدائي" }, { k: "idadi", ar: "إعدادي" }, { k: "thanawi", ar: "ثانوي" }, { k: "ali", ar: "عالٍ" },
+  { k: "ibtidai", ar: "ابتدائية" }, { k: "idadi", ar: "إعدادية" }, { k: "thanawi", ar: "ثانوية" }, { k: "ali", ar: "عالية" },
 ];
 
 /** real, approved testimonials only (with the learner's permission). Empty until there are some. */

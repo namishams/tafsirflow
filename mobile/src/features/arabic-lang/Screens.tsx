@@ -23,9 +23,13 @@ import { Ar, ChooseCard, DialogueView, IntroCard, SpeakCard, SpotCard, TilesCard
 import { isDone, lessonOpen, nextLesson, saveLesson, setGoal, streak, todayCount, useLangProgress } from "./progress";
 import { useLT } from "./texts";
 import { tx, type Lesson, type Unit } from "./types";
+import { ExamBar, ExamBlocked, ExamVerdict } from "@/features/exam/ExamUI";
+import { useExamSession } from "@/features/exam/integrity";
+import { arabicRecitePlan } from "@/features/exam/plans";
+import { VerifiedCertLink } from "@/features/exam/Certificates";
 
 const open = (id: string) => router.push(`/arabic/lang/${id}` as Href);
-const RED = "#c2410c";
+const RED = "#a57c29";
 
 function BackButton({ onStage }: { onStage?: boolean }) {
   const t = useTheme();
@@ -204,6 +208,8 @@ export function LangLessonScreen({ id }: { id: string }) {
   const [right, setRight] = useState(0);
   const [result, setResult] = useState<{ score: number; added: number } | null>(null);
   const nudge = useNudge();
+  // unit tests follow the exam rules (src/features/exam); the final test of a level leads to a verifiable certificate
+  const ex = useExamSession(lesson?.test && unit ? "ar-unit" : null, String(unit?.n ?? ""), { active: phase === "ex", recite: (rand) => arabicRecitePlan(rand) });
 
   useEffect(() => { setPhase(lesson?.test ? "explain" : "explain"); setIdx(0); setFb(null); setRight(0); setResult(null); }, [id, lesson?.test]);
 
@@ -239,6 +245,7 @@ export function LangLessonScreen({ id }: { id: string }) {
     }
     setResult({ score, added });
     setPhase("done");
+    if (lesson.test) ex.finish(rightNow, total);
   };
   const advance = () => {
     setFb(null);
@@ -277,8 +284,12 @@ export function LangLessonScreen({ id }: { id: string }) {
           </StepIn>
         ) : phase === "dialogue" && lesson.lines ? (
           <StepIn><DialogueView lines={lesson.lines} onNext={begin} /></StepIn>
-        ) : phase === "ex" && cur ? (
+        ) : phase === "ex" && lesson.test && ex.phase === "blocked" ? <ExamBlocked session={ex} />
+        : phase === "ex" && lesson.test && ex.phase === "void" ? <View style={{ gap: 12 }}><ExamVerdict session={ex} /><OutlineButton title={lt("toMap")} onPress={goBack} /></View>
+        : phase === "ex" && lesson.test && !ex.ready ? <ActivityIndicator color={t.accent} />
+        : phase === "ex" && cur ? (
           <StepIn key={idx}>
+            {lesson.test ? <View style={{ marginBottom: 12 }}><ExamBar session={ex} showRules={idx === 0} /></View> : null}
             <View pointerEvents={fb ? "none" : "auto"}>
               {cur.ex.k === "intro" ? <IntroCard item={cur.ex.item} onNext={advance} />
                 : cur.ex.k === "choose" || cur.ex.k === "listen" || cur.ex.k === "conj" ? <ChooseCard ex={cur.ex} onCheck={onCheck} />
@@ -302,8 +313,9 @@ export function LangLessonScreen({ id }: { id: string }) {
               </View>
               <Arcade />
             </Stage>
+            {lesson.test ? <ExamVerdict session={ex} /> : null}
             {nextL && (result.score >= PASS || !lesson.test) ? <GoldButton title={lt("nextLesson")} onPress={() => router.replace(`/arabic/lang/${nextL.id}` as Href)} /> : null}
-            <OutlineButton title={lt("retry")} onPress={begin} />
+            {ex.phase === "recite" || ex.phase === "submitting" ? null : <OutlineButton title={lt("retry")} onPress={begin} />}
             <OutlineButton title={lt("toMap")} onPress={goBack} />
             {unit.n === FREE_UNITS && lesson.test && result.score >= PASS ? <UnlockCard /> : null}
           </StepIn>
@@ -464,6 +476,7 @@ export function LangCertificateScreen() {
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: ST.cream }}>{`${c.pct} % · ${date}`}</Text>
                 <Text style={{ marginTop: 6, fontFamily: FONT.regular, fontSize: 11.5, color: "rgba(255,255,255,0.55)", textAlign: "center" }}>{lt("certNote")}</Text>
                 <OutlineButton onStage compact title={lt("share")} icon="share" onPress={() => { void Share.share({ message: msg }).catch(() => undefined); }} style={{ marginTop: 10 }} />
+                <View style={{ alignSelf: "stretch", marginTop: 10 }}><VerifiedCertLink course={`ar-level:${level}`} /></View>
               </View>
               <Arcade />
             </Stage>

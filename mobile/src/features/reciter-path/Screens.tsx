@@ -15,6 +15,10 @@ import { levelUnitsDone, setExamScore, setUnitScore, toggleCheck, unitDone, useR
 import { ListenRepeat, RecordCompare, VerseWords, WordCheck } from "./Practice";
 import { Quiz, type Question } from "./Quiz";
 import { useVerse } from "./useVerse";
+import { ExamBar, ExamBlocked, ExamVerdict } from "@/features/exam/ExamUI";
+import { shuffleWith, useExamSession } from "@/features/exam/integrity";
+import { rpRecitePlan } from "@/features/exam/plans";
+import { VerifiedCertLink } from "@/features/exam/Certificates";
 
 const unitHref = (id: string) => `/reciter-path/${id}` as Href;
 const examHref = (n: number) => `/reciter-path/exam/${n}` as Href;
@@ -323,6 +327,9 @@ export function ExamPage({ level }: { level: number }) {
   const [state, setState] = useState<null | "run" | number>(null);
   const l = LEVELS[level - 1];
   const questions = useMemo<Question[]>(() => (l ? l.units.flatMap((u) => unitQuestions(u, c.units[u.id].mcq)) : []), [l, c]);
+  // exam rules (src/features/exam): order drawn per attempt, time limits, cooldown, recitation, server-signed result
+  const ex = useExamSession(pro && l ? "rp-level" : null, String(level), { active: state === "run", recite: (rand) => rpRecitePlan(level, rand) });
+  const examQs = useMemo(() => (ex.ready ? shuffleWith(questions, ex.rand) : questions), [questions, ex.ready, ex.rand]);
   if (!l) return null;
   const ready = levelUnitsDone(p, level);
   return (
@@ -334,7 +341,14 @@ export function ExamPage({ level }: { level: number }) {
           {!pro ? <LockedPreview intro={c.levels[level].lead} /> : !ready && !p.certs[level] ? (
             <Card><Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{rt("examLocked")}</Text><OutlineButton title={rt("toPath")} onPress={() => router.back()} /></Card>
           ) : state === "run" ? (
-            <Card><Quiz questions={questions} seed={`exam-${level}`} onDone={(s) => { setExamScore(level, s, s >= PASS); setState(s); }} /></Card>
+            ex.phase === "blocked" ? <ExamBlocked session={ex} /> : ex.phase === "void" ? (
+              <Card><ExamVerdict session={ex} /><OutlineButton title={rt("toPath")} onPress={() => router.back()} /></Card>
+            ) : !ex.ready ? null : (
+              <>
+                <ExamBar session={ex} />
+                <Card><Quiz questions={examQs} seed={`exam-${level}-${ex.nonce}`} questionSeconds={ex.rule?.questionSec} onDone={(s) => { setExamScore(level, s, s >= PASS); setState(s); ex.finish(Math.round(s * examQs.length), examQs.length); }} /></Card>
+              </>
+            )
           ) : (
             <>
               {typeof state === "number" ? (
@@ -342,12 +356,14 @@ export function ExamPage({ level }: { level: number }) {
                   <Text style={{ fontFamily: FONT.bold, fontSize: 20, color: t.ink }}>{rt("result", { score: Math.round(state * 100) })}</Text>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: state >= PASS ? t.accent : t.muted }}>{state >= PASS ? rt("passed") : rt("notPassed")}</Text>
                   {state >= PASS ? <DoneShare kind="levelDone" title={rt("title")} big={`${Math.round(state * 100)} %`} footer={rt("level", { n: level })} /> : null}
+                  <ExamVerdict session={ex} />
                 </Card>
               ) : null}
-              <GoldButton title={state === null ? rt("exam") : rt("retry")} icon="cap" onPress={() => setState("run")} />
+              {ex.phase === "recite" || ex.phase === "submitting" ? null : <GoldButton title={state === null ? rt("exam") : rt("retry")} icon="cap" onPress={() => setState("run")} />}
             </>
           )}
           {pro && p.certs[level] && state !== "run" ? <Certificate level={level} date={p.certs[level]} /> : null}
+          {pro && p.certs[level] && state !== "run" ? <VerifiedCertLink course={`rp-level:${level}`} /> : null}
           <View style={{ height: 40 }} />
         </View>
       </Page>
