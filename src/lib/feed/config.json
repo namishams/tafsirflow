@@ -87,6 +87,26 @@
         "deeplink": "quranmasterclass://reciter-path"
       },
       {
+        "id": "arabic-reading",
+        "title": {
+          "de": "Den Koran auf Arabisch lesen",
+          "en": "Read the Quran in Arabic",
+          "ar": "اقرأ القرآن بالعربية",
+          "tr": "Kur’an’ı Arapça okuyun",
+          "ur": "قرآن عربی میں پڑھیں",
+          "fa": "قرآن را به عربی بخوانید",
+          "ps": "قرآن په عربي ولولئ",
+          "fr": "Lire le Coran en arabe",
+          "es": "Lea el Corán en árabe",
+          "id": "Membaca Al-Qur’an dalam bahasa Arab",
+          "ms": "Baca al-Quran dalam bahasa Arab",
+          "bn": "আরবিতে কুরআন পড়ুন",
+          "ru": "Читайте Коран на арабском",
+          "zh": "用阿拉伯语诵读古兰经"
+        },
+        "deeplink": "quranmasterclass://arabic"
+      },
+      {
         "id": "abrahamic",
         "title": {
           "de": "Abraham und die abrahamitischen Religionen",
