@@ -23,7 +23,8 @@ const MYTHIC = "rgb(122,64,160)";
 
 export function seasonTitle(s: Season, mt: ReturnType<typeof useMt>, lang: string): string {
   if (s.title) return s.title;
-  const [surah, range] = s.verses.split(":");
+  if (!s.verses) return s.slug;
+  const [surah, range = ""] = s.verses.split(":");
   const name = SURAHS[Number(surah) - 1] ?? surah;
   const [a, b] = range.split("-");
   const base = `${name} ${a}${b ? `–${b}` : ""}`;

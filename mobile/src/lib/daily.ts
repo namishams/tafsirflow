@@ -13,7 +13,7 @@ const ID = "qmc-daily-remembrance";
 export const readDaily = () => readJSON<DailyReminder>(KEY, { on: false, hour: 8, minute: 0 });
 
 const TEXTS = {
-  de: { title: "Heute schon an Allah gedacht?", body: "Eine Minute für einen Vers, ein Gedenken und auf Wunsch eine persönliche Dua für dein Anliegen." },
+  de: { title: "Heute schon an Allah gedacht?", body: "Eine Minute für einen Vers, ein Gedenken und auf Wunsch eine persönliche Dua für Ihr Anliegen." },
   en: { title: "Have you remembered Allah today?", body: "One minute for a verse, a remembrance and, if you wish, a personal dua for your concern." },
 };
 

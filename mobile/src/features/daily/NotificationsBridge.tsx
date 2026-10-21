@@ -4,6 +4,7 @@ import * as Notifications from "expo-notifications";
 import { router, type Href } from "expo-router";
 import { useLang } from "@/i18n";
 import { refreshDaily } from "@/lib/daily";
+import { collectReceived } from "@/features/sijill/received";
 import { reschedulePrayerAlerts } from "@/features/practice/prayer/alerts";
 
 // Local notifications of the app: prayer reminders (7 days ahead, kept rolling) and the daily remembrance. Shows them
@@ -15,7 +16,7 @@ Notifications.setNotificationHandler({
 export function NotificationsBridge() {
   const { lang } = useLang();
   useEffect(() => {
-    const roll = () => { void reschedulePrayerAlerts(lang).catch(() => 0); void refreshDaily(lang); };
+    const roll = () => { void reschedulePrayerAlerts(lang).catch(() => 0); void refreshDaily(lang); void collectReceived(lang); };
     roll();
     const sub = AppState.addEventListener("change", (s) => { if (s === "active") roll(); });
     return () => sub.remove();

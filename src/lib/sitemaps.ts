@@ -11,7 +11,9 @@ export const CATEGORIES = {
   pages: ["", "/shams", "/plan", "/academy", "/tajweed", "/vocab", "/khatm", "/guides", "/about", "/feedback", "/changelog", "/quran", "/islam", "/how", "/arabic", "/salah", "/reciters", "/world", "/secrets", "/app", "/today", "/feed", "/map", "/search", "/prayer", "/radio", "/duas", "/support", "/wudu", "/community", "/ranking", "/assistant", "/dua-generator", "/masterclass", "/talents", "/premium"],
   guides: [...ISLAM.map((d) => `/islam/${d.slug}`), ...RECITER_BIOS.map((r) => `/reciters/${r.slug}`), ...GUIDES.map((g) => `/guides/${g.slug}`), ...TAJWEED_LESSONS.map((l) => `/tajweed/${l.id}`)],
   // the courses ported from the app (overview pages; lesson runners and exams are not listed)
-  learn: ["/school", "/school/ibtidai", "/school/idadi", "/school/thanawi", "/school/ali", "/courses", ...CATALOG.map((c) => `/courses/${c.id}`), "/arabic/read", "/arabic/lang", "/reciter-path", "/cards", "/tests", "/abrahamic", "/haramain", "/haramain/guide", "/tajweed/practice", "/vocab-decks"],
+  learn: ["/school", "/school/ibtidai", "/school/idadi", "/school/thanawi", "/school/ali", "/courses", ...CATALOG.map((c) => `/courses/${c.id}`), "/arabic/read", "/arabic/lang", "/reciter-path", "/cards",
+    // Shams Method 2.0, Rihlat al-'Ilm, the garden and the Mishary track (ported from the app)
+    "/shams/method", "/shams/handbook", "/shams/mutashabihat", "/shams/darajat", ...Array.from({ length: 114 }, (_, i) => `/shams/tadabbur?s=${i + 1}`), "/journey", "/garden", "/garden/collection", "/mishary", "/mishary/ear", "/mishary/masters", "/mishary/masters/alafasy", "/mishary/masters/abdulbasit", "/mishary/masters/minshawi", "/mishary/masters/husary", "/mishary/masters/sudais", "/mishary/seasons", "/mishary/hall-of-fame", "/tests", "/abrahamic", "/haramain", "/haramain/guide", "/tajweed/practice", "/vocab-decks"],
   legal: ["/legal/privacy", "/legal/terms", "/legal/imprint"],
   surahs: Array.from({ length: 114 }, (_, i) => `/surah/${i + 1}`),
 } as const;
@@ -28,7 +30,7 @@ export function sitemapIndex() {
 }
 
 export function sitemapFile(file: string): string | null {
-  const m = file.match(/^(pages|guides|legal|surahs)-([a-z]{2})\.xml$/);
+  const m = file.match(new RegExp(`^(${Object.keys(CATEGORIES).join("|")})-([a-z]{2})\\.xml$`));
   if (!m || !(routing.locales as readonly string[]).includes(m[2])) return null;
   const [, cat, locale] = m as unknown as [string, Category, string];
   const urls = CATEGORIES[cat].map((p) => {

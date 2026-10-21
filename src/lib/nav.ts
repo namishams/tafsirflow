@@ -21,7 +21,8 @@ export const GROUPS: NavGroup[] = [
   // the courses ported from the app (school, courses, Arabic, Reciter Path, cards, tests) – free on the website
   { title: "groupSchool", items: [
     { href: "/school", key: "school" }, { href: "/courses", key: "academyCourses" }, { href: "/arabic/read", key: "arabicRead" }, { href: "/arabic/lang", key: "arabicLang" },
-    { href: "/reciter-path", key: "reciterPath" }, { href: "/cards", key: "cards" }, { href: "/tests", key: "tests" }, { href: "/abrahamic", key: "abrahamic" },
+    { href: "/reciter-path", key: "reciterPath" }, { href: "/shams/method", key: "shamsMethod" }, { href: "/journey", key: "journey" }, { href: "/garden", key: "garden" },
+    { href: "/mishary", key: "mishary" }, { href: "/cards", key: "cards" }, { href: "/tests", key: "tests" }, { href: "/abrahamic", key: "abrahamic" },
     { href: "/haramain", key: "haramain" }, { href: "/school/certificates", key: "certificates" },
   ] },
   { title: "groupQuran", items: [

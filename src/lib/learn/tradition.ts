@@ -7,3 +7,5 @@ export function readTradition(): TraditionChoice | null {
   const t = readJSON<{ tradition?: string }>("qmc.prayerSetup", {}).tradition;
   return t === "sunni" || t === "shia" ? t : t === "unsure" ? "both" : null;
 }
+/** mirrors showsShia() of mobile/src/lib/tradition.ts: Shia content unless the learner chose Sunni */
+export const showsShia = (t: TraditionChoice | null) => t !== "sunni";

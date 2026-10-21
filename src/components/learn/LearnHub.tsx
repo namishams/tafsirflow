@@ -9,6 +9,10 @@ import { ReciterPathEntryCard } from "./reciter-path/EntryCard";
 import { CoursesEntryCard } from "./courses/EntryCard";
 import { AbrahamicEntryCard } from "./abrahamic/EntryCard";
 import { HaramainEntryCard } from "./haramain/EntryCard";
+import { Shams2EntryCard } from "./shams2/EntryCard";
+import { JourneyEntryCard } from "./journey/EntryCard";
+import { GardenEntryCard } from "./garden/EntryCard";
+import { MisharyEntryCard } from "./mishary/EntryCard";
 import { SrsEntryCard } from "./srs/EntryCard";
 import { LangCourseEntryCard } from "./arabic-lang/EntryCard";
 import { StarGlyph } from "@/components/art/HomeOrnaments";
@@ -19,7 +23,7 @@ const T = {
   ar: { kicker: "مجانًا على الموقع", title: "ابدؤوا التعلّم هنا", lead: "المدرسة، ودورة القراءة، والعربية A1–C1، ومسار القارئ، ودورات الأكاديمية، وبطاقات المراجعة والاختبارات – كلها مجانًا في المتصفح. ومع تسجيل الدخول يتابع تقدّمكم في التطبيق.", links: "جميع الأقسام" },
 };
 export const LEARN_LINKS: [string, string][] = [
-  ["/school", "school"], ["/courses", "academyCourses"], ["/arabic/read", "arabicRead"], ["/arabic/lang", "arabicLang"], ["/reciter-path", "reciterPath"],
+  ["/school", "school"], ["/courses", "academyCourses"], ["/arabic/read", "arabicRead"], ["/arabic/lang", "arabicLang"], ["/reciter-path", "reciterPath"], ["/shams/method", "shamsMethod"], ["/journey", "journey"], ["/garden", "garden"], ["/mishary", "mishary"],
   ["/cards", "cards"], ["/tests", "tests"], ["/abrahamic", "abrahamic"], ["/haramain", "haramain"], ["/school/certificates", "certificates"],
 ];
 
@@ -40,6 +44,10 @@ export default function LearnHub({ labels }: { labels: Record<string, string> })
           <CoursesEntryCard />
           <AbrahamicEntryCard />
           <HaramainEntryCard />
+          <Shams2EntryCard />
+          <JourneyEntryCard />
+          <GardenEntryCard />
+          <MisharyEntryCard />
           <SrsEntryCard />
         </div>
         <nav aria-label={t.links} className="mt-8">

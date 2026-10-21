@@ -11,6 +11,7 @@ import { MoreTiles } from "@/components/PosterTiles";
 import { IslamArcadeLine, IslamBreak, IslamCorners, IslamNum, IslamRain, IslamStarMark, starPath } from "@/components/art/IslamArt";
 import { IslamStepIcon, IslamSun, STEP_AR } from "@/components/art/IslamShams";
 import IslamShamsDemo from "@/components/art/IslamShamsDemo";
+import { Shams2EntryCard } from "@/components/learn/shams2/EntryCard";
 import DonateCTA from "@/components/DonateCTA";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -503,6 +504,7 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
           <Link href="/surah/1?shams=1" className="btn-gold mt-9 inline-flex h-12 items-center rounded-full px-7 text-[15px] font-bold">{t("cta")}</Link>
         </div>
       </section>
+      <div className="mx-auto max-w-6xl px-5 pt-12"><Shams2EntryCard /></div>
       <div className="mx-auto max-w-6xl px-5 pt-12"><DonateCTA variant="slim" /></div>
       <MoreTiles keys={["courses", "plan", "map", "arabic"]} className="pt-12" />
     </div>

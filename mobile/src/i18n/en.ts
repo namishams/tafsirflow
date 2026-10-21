@@ -13,7 +13,7 @@ const en = {
     f_courses: "Complete Arabic and Tajweed courses", f_tests: "Academy tests for every surah", f_offline: "Surahs offline",
     free: "Always free: the whole Quran with translation and tafsir, al-Fātiḥa and Juz ʿAmma with the Shams Method, prayer times, duas and much more.",
     summaryTitle: "Your subscription", summaryWhat: "Quran Masterclass Pro", summaryTerm: "Monthly, renews automatically", summaryCancel: "Cancel any time in your App Store settings, at least 24 hours before the end of the month.",
-    subscribe: "Subscribe for {price} per month", restore: "Restore purchases", signInFirst: "Please sign in first so that Pro belongs to your account and works on all your devices.",
+    subscribe: "Subscribe for {price} per month", restore: "Restore purchases", signInFirst: "Please sign in first so that Pro belongs to your account and works on all your devices.", guestNote: "No account needed: Pro is active on this device right after the purchase. Signing in is optional and lets you use Pro on your other devices and with the AI features.", thanksGuest: "Thank you. Pro is now active on this device. Sign in at any time to use it on your other devices as well.",
     active: "Pro is active", activeUntil: "Renews or ends on {date}", thanks: "Thank you. Pro is now active on this account.",
     pending: "The purchase is waiting for approval.", failed: "The purchase could not be completed. You were not charged.", nothingToRestore: "No active subscription was found for this Apple ID.",
     unavailable: "Purchases are not available right now. Please try again later.", manage: "Manage subscription",

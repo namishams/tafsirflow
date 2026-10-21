@@ -14,7 +14,7 @@ const de: Dict = {
     f_courses: "Arabisch- und Tadschwid-Kurs komplett", f_tests: "Academy-Tests für jede Sure", f_offline: "Suren offline",
     free: "Immer kostenlos: der ganze Koran mit Übersetzung und Tafsir, al-Fātiḥa und Juz ʿAmma mit der Shams-Methode, Gebetszeiten, Duas und vieles mehr.",
     summaryTitle: "Dein Abo", summaryWhat: "Quran Masterclass Pro", summaryTerm: "Monatlich, verlängert sich automatisch", summaryCancel: "Jederzeit in den App-Store-Einstellungen kündbar, spätestens 24 Stunden vor Ende des Monats.",
-    subscribe: "Für {price} im Monat abonnieren", restore: "Käufe wiederherstellen", signInFirst: "Bitte melde dich zuerst an, damit Pro zu deinem Konto gehört und auf allen deinen Geräten gilt.",
+    subscribe: "Für {price} im Monat abonnieren", restore: "Käufe wiederherstellen", signInFirst: "Bitte melde dich zuerst an, damit Pro zu deinem Konto gehört und auf allen deinen Geräten gilt.", guestNote: "Kein Konto nötig: Pro gilt nach dem Kauf sofort auf diesem Gerät. Die Anmeldung ist freiwillig und macht Pro auch auf Ihren anderen Geräten und für die KI-Funktionen verfügbar.", thanksGuest: "Vielen Dank. Pro ist jetzt auf diesem Gerät aktiv. Melden Sie sich jederzeit an, um es auch auf Ihren anderen Geräten zu nutzen.",
     active: "Pro ist aktiv", activeUntil: "Verlängert sich oder endet am {date}", thanks: "Danke. Pro ist jetzt für dieses Konto aktiv.",
     pending: "Der Kauf wartet auf Freigabe.", failed: "Der Kauf konnte nicht abgeschlossen werden. Es wurde nichts abgebucht.", nothingToRestore: "Für diese Apple-ID wurde kein aktives Abo gefunden.",
     unavailable: "Käufe sind gerade nicht verfügbar. Bitte versuche es später erneut.", manage: "Abo verwalten",

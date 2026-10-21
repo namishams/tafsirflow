@@ -5,12 +5,18 @@
 // cards. Sent in its own PUT next to the older keys (src/lib/sync.ts), so the 400 KB limit applies to each part.
 import { readJSON } from "../storage";
 import { EXTRA_KEYS, EXTRA_MERGE } from "./syncExtra";
+import { GARDEN_KEY, mergeGarden, type Garden } from "./garden/garden";
+import { CATALOG_KEY, mergeCatalog } from "./garden/catalog";
+import { JOURNEY_KEY, mergeJourney } from "./journey/store";
 
 export const LEARN_SYNC_KEYS = [
   "qmc.courses.v1", "qmc.qaida", "qmc.arabicLang.v1", "qmc.reciterPath", "qmc.srs.v1", "qmc.srs.tests",
   "qmc.abrahamic.course.v1", "qmc.haramain.course.v1", "qmc.haramain.guide.v1", "qmc.school.v1",
   // added by the app: Shams Method 2.0, question bank, Nahj course (merge rules in syncExtra.ts)
   ...EXTRA_KEYS,
+  // the garden (tree growth, decorations), its sticker collection and the long path (Rihlat al-'Ilm): the app's own
+  // merge rules (mobile/src/features/garden/garden.ts, catalog.ts, journey/store.ts), copied to src/lib/learn
+  GARDEN_KEY, CATALOG_KEY, JOURNEY_KEY,
 ] as const;
 
 type Obj = Record<string, unknown>;
@@ -34,6 +40,9 @@ const keepFirst = (a: unknown, b: unknown) => ({ ...o(a), ...o(b) });
 
 const MERGE: Record<(typeof LEARN_SYNC_KEYS)[number], (a: unknown, b: unknown) => unknown> = {
   ...EXTRA_MERGE,
+  [GARDEN_KEY]: (a, b) => mergeGarden(a as Garden, b as Garden),
+  [CATALOG_KEY]: (a, b) => mergeCatalog(a as Parameters<typeof mergeCatalog>[0], b as Parameters<typeof mergeCatalog>[1]),
+  [JOURNEY_KEY]: (a, b) => mergeJourney(a, b),
   "qmc.courses.v1": (a, b) => ({ done: bestOf(o(a).done, o(b).done, ["score", "at"]), complete: keepFirst(o(a).complete, o(b).complete) }),
   "qmc.qaida": (a, b) => ({ ...o(b), ...o(a), done: bestOf(o(a).done, o(b).done, ["best", "stars", "at"]), mistakes: o(a).mistakes ?? o(b).mistakes ?? {}, days: maxMap(o(a).days, o(b).days), speed: minMap(o(a).speed, o(b).speed) }),
   "qmc.arabicLang.v1": (a, b) => ({ ...o(b), ...o(a), done: bestOf(o(a).done, o(b).done, ["score", "at"]), days: maxMap(o(a).days, o(b).days), certs: keepFirst(o(a).certs, o(b).certs) }),
