@@ -124,9 +124,9 @@ export function StoryViewer({ groups, start, onClose }: { groups: StoryGroup[]; 
             </View>
           ))}
         </View>
-        <View style={{ position: "absolute", top: insets.top + 20, left: 14, right: 8, flexDirection: "row", alignItems: "center", gap: 10 }}>
+        <View style={{ position: "absolute", top: insets.top + 20, left: 14, right: 8, flexDirection: "row", alignItems: "center", gap: 10, zIndex: 20, elevation: 20 }}>
           <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 13.5, color: "#fff" }}>{group.title}</Text>
-          <Pressable onPress={onClose} accessibilityRole="button" accessibilityLabel={tx.close} hitSlop={10} style={{ padding: 8 }}><Icon name="close" color="#fff" size={22} /></Pressable>
+          <Pressable onPress={onClose} accessibilityRole="button" accessibilityLabel={tx.close} hitSlop={14} style={{ padding: 10, borderRadius: 22, backgroundColor: "rgba(0,0,0,0.25)" }}><Icon name="close" color="#fff" size={22} /></Pressable>
         </View>
 
         <Pressable style={{ flex: 1 }} accessible={false} onPress={(e) => onTap(e.nativeEvent.pageX)} onLongPress={() => setPaused(true)} onPressOut={() => setPaused(false)} delayLongPress={250}>
