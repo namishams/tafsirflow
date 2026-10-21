@@ -12,6 +12,7 @@ import { IslamArcadeLine, IslamBreak, IslamCorners, IslamNum, IslamRain, IslamSt
 import { IslamStepIcon, IslamSun, STEP_AR } from "@/components/art/IslamShams";
 import IslamShamsDemo from "@/components/art/IslamShamsDemo";
 import { Shams2EntryCard } from "@/components/learn/shams2/EntryCard";
+import { ShamsModeChooser } from "@/components/learn/shams2/ModeChooser";
 import DonateCTA from "@/components/DonateCTA";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -158,6 +159,9 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
       </section>
 
       <div className="isl-marble isl-under">
+        {/* the two ways to learn with Shams: classic and 2.0 */}
+        <section className="mx-auto max-w-6xl px-5 pt-14 sm:pt-20"><ShamsModeChooser /></section>
+
         {/* Why "Shams" */}
         {c.name && (
           <section className="mx-auto max-w-6xl px-5 pt-14 sm:pt-20">

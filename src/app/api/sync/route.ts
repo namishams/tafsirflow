@@ -15,6 +15,8 @@ const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes"
   "qmc.abrahamic.course.v1", "qmc.haramain.course.v1", "qmc.haramain.guide.v1", "qmc.school.v1",
   // Shams Method 2.0, question bank, Nahj course (merged on the device by both clients, rules in src/lib/learn/syncExtra.ts)
   "qmc.shams2.settings.v1", "qmc.shams2.log.v1", "qmc.shams2.words.v1", "qmc.shams2.checks.v1", "qmc.shams2.mut.v1", "qmc.shams2.grade.v1", "qmc.shams2.weeks.v1", "qmc.qbank.v1", "qmc.nahjCourse.v1",
+  // which Shams method the learner uses ("classic" | "v2"); the newer choice wins on the device (src/lib/learn/syncExtra.ts)
+  "qmc.shamsMode.v1",
   // the long path of the app (journey seals, endless daily plans, qirāʾāt marks); merged on the device (mobile/src/features/journey/store.ts)
   "qmc.journey"]);
 

@@ -34,6 +34,7 @@ import { CommunityCard } from "@/features/community/ui";
 import { Announcement } from "@/features/extra/widgets/Announcement";
 import { courseLang } from "@/features/arabic/lang";
 import { FeedButton, FeedSpotlight } from "@/features/feed/EntryCards";
+import { readShamsMode } from "@/features/shams2/mode";
 
 // "Today" (website TodayDashboard.tsx): the daily hub – the greeting stage with the ring of today's tasks and the next
 // prayer, one big button for today's guided session, the checklist that ticks itself off, verse of the day, paths,
@@ -70,11 +71,13 @@ export default function Today() {
   // the daily checklist (same tasks as the website)
   const tasks: Task[] = [];
   const first = v.due[0];
+  // the learner's Shams method decides where the review and the first step lead: today's wird (2.0) or the classic session
+  const wirdMode = readShamsMode() === "v2";
   tasks.push(first
-    ? { key: "review", title: w("taskReview", { n: v.due.length }), detail: w("taskReviewD"), href: `/shams/${first.split(":")[0]}?v=${first.split(":")[1]}`, cta: w("start"), done: false }
+    ? { key: "review", title: w("taskReview", { n: v.due.length }), detail: w("taskReviewD"), href: wirdMode ? "/shams/wird" : `/shams/${first.split(":")[0]}?v=${first.split(":")[1]}`, cta: w("start"), done: false }
     : v.learned
       ? { key: "review", title: w("taskReviewDone"), detail: w("taskReviewDoneD"), href: "/map", cta: w("open"), done: true }
-      : { key: "start", title: w("startTitle"), detail: w("startBody"), href: "/shams/1", cta: w("startCta"), done: false });
+      : { key: "start", title: w("startTitle"), detail: w("startBody"), href: wirdMode ? "/shams/wird" : "/shams/1", cta: w("startCta"), done: false });
   if (v.plan) {
     const r = ranges(v.plan.portion);
     tasks.push({ key: "plan", title: w("taskPlan", { n: v.plan.perDay }), detail: r.map((x) => `${name(x.s)} ${x.from}${x.to > x.from ? `–${x.to}` : ""}`).join(", "), href: r[0] ? `/shams/${r[0].s}?v=${r[0].from}` : "/plan", cta: w("learn"), done: v.plan.doneToday });

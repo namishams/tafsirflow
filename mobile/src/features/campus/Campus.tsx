@@ -15,6 +15,7 @@ import { nahjCourseText } from "@/features/nahj-course/text";
 import { useQbankT } from "@/features/qbank/text";
 import { useS2 } from "@/features/shams2/text";
 import { useShams2 } from "@/features/shams2/model";
+import { useShamsContinue } from "@/features/shams2/ModeChooser";
 import { useSchoolT } from "@/features/school/texts";
 import { ABRAHAMIC_COURSE } from "@/features/abrahamic/lessons";
 import { HARAMAIN_COURSE } from "@/features/haramain/lessons";
@@ -48,6 +49,7 @@ export function MadrasaHero({ eyebrow, topInset = true }: { eyebrow?: string; to
   const { s } = useS2();
   const { lang } = useLang();
   const { wird } = useShams2();
+  const sc = useShamsContinue();
   const v = useStoreVersion();
   const data = useMemo(() => {
     const stage = currentStage();
@@ -121,7 +123,10 @@ export function MadrasaHero({ eyebrow, topInset = true }: { eyebrow?: string; to
             <HeroRow icon="cap" kicker={ct("nextStep")} title={titleOf(data.next, lang, st)} sub={`${st(`subj_${data.next.subject}`)} · ${data.nextDone > 0 ? st("progress", { p: pct(data.nextDone) }) : ct("start")}`}
               value={data.nextDone} onPress={() => go(hrefOf(data.next!))} />
           ) : <HeroRow icon="checkCircle" kicker={ct("nextStep")} title={ct("allDone")} sub={st("stageDone")} onPress={() => go(`/school/${data.stage}`)} />}
-          <HeroRow icon="sun" kicker={ct("todayWird")} title={s("hubTitle")} sub={s("entryToday", { a: wird.sabaq.verses, b: wird.sabqi.verses, c: wird.manzil.verses })} onPress={() => go("/shams/wird")} />
+          {/* the Shams method the learner chose: today's wird (2.0) or the next classic session */}
+          {sc.mode === "v2"
+            ? <HeroRow icon="sun" kicker={ct("todayWird")} title={s("hubTitle")} sub={s("entryToday", { a: wird.sabaq.verses, b: wird.sabqi.verses, c: wird.manzil.verses })} onPress={() => go(sc.href)} />
+            : <HeroRow icon="sun" kicker={sc.kicker} title={sc.title} sub={sc.line} onPress={() => go(sc.href)} />}
         </View>
 
         {/* faculties */}

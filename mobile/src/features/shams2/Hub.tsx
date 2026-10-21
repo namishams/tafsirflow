@@ -13,6 +13,7 @@ import { ContinueNext } from "./Continue";
 import { DueChecks, GradeCard } from "./Darajat";
 import { Briefing } from "./Tadabbur";
 import { useOnboarded } from "./Guide";
+import { ShamsModeBar } from "./ModeChooser";
 
 // /shams/method – Shams Method 2.0: the classical hifz system (sabaq, sabqī, manzil, talaqqī, ʿarḍ, mutashābihāt,
 // darajāt) joined with learning science (spaced retrieval, interleaving), never ending. Everything here extends the
@@ -62,6 +63,7 @@ export function HubScreen() {
       <Page>
         <PageHero back topInset eyebrow={s("eyebrow")} arabic="مَنْهَج شَمْس" title={s("hubTitle")} lead={s("hubLead")} />
         <View style={{ padding: 16, gap: 14 }}>
+          <ShamsModeBar />
           {!onboarded ? <Tile icon="sun" title={s("onboardCard")} lead={s("welcomeLead")} href="/shams/welcome" /> : null}
           <DueChecks />
           <Card gold>

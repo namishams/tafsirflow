@@ -11,6 +11,7 @@ import { alpha } from "@/features/extra/art";
 import { useReducedMotion } from "@/features/library/motion";
 import { TreeArt } from "@/features/garden/Tree";
 import { PlanMilestones } from "@/features/garden/widgets";
+import { ShamsModeNote } from "@/features/shams2/ModeChooser";
 import { JourneyStage } from "@/features/garden/Landscape";
 import { ArcadeOfSteps, Astrolabe, GrowingTerraces, MapPath, QuranStand, RefQuote, Rosette } from "./Scenes";
 import { fillS, useStory } from "./story";
@@ -250,6 +251,7 @@ export function PathView({ plan, v2, name, hasTree, onNext }: { plan: Plan; v2: 
         ))}
         </View>
         <PlanMilestones minutes={a.minutes} />
+        <ShamsModeNote top={0} />
         <GoldButton title={hasTree ? o.pathCtaTree : o.pathCta} onPress={onNext} style={{ marginTop: 12 }} />
       </ScrollView>
     </JourneyStage>

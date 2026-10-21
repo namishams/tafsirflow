@@ -19,7 +19,8 @@ import { openHref } from "@/features/library/links";
 import { Curve, DayIcon, Ladder, PrincipleIcon, ShamsDemo, ShamsPlanner, StepIcon, Sun } from "@/features/library/shamsArt";
 import { CUES, W } from "@/features/library/content/shams";
 import { ShamsEntries } from "@/features/courses/Shams";
-import { Shams2Entry } from "@/features/shams2/Hub";
+import { ShamsModeChooser } from "@/features/shams2/ModeChooser";
+import { readShamsMode } from "@/features/shams2/mode";
 import { ReciterPathCard } from "@/features/reciter-path/Screens";
 
 // /shams – the Shams Method: hero with the sun over the arcade, why "Shams", problems and solution, the seven steps as
@@ -27,7 +28,8 @@ import { ReciterPathCard } from "@/features/reciter-path/Screens";
 // spacing and fluency, adaptation, a learning day with the planner, comparison, teaching plan, why it matters, the
 // in-depth guide, questions and the final call (website: src/app/[locale]/(app)/shams/page.tsx)
 const minutesOf = (s: string) => { const m = s.match(/\d+/); return m ? Number(m[0]) : 1; };
-const startShams = () => router.push("/shams/1" as Href);
+// "Start": the first classic session, or today's wird for those who use Shams Method 2.0
+const startShams = () => router.push((readShamsMode() === "v2" ? "/shams/wird" : "/shams/1") as Href);
 
 function H2({ children, center, onStage }: { children: string; center?: boolean; onStage?: boolean }) {
   const isl = useIsl();
@@ -72,7 +74,7 @@ export default function ShamsPage() {
           </View>
         ) : null}
       </IslHero>
-      <View style={{ paddingHorizontal: 16, paddingBottom: 8 }}><Shams2Entry /><ShamsEntries /></View>
+      <View style={{ paddingHorizontal: 16, paddingTop: 24, paddingBottom: 8 }}><ShamsModeChooser /><ShamsEntries /></View>
       <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 14 }}><GardenWidget lead={gtx.shamsCard} /><ReciterPathCard /></View>
 
       <Marble>

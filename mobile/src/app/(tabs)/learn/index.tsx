@@ -6,7 +6,9 @@ import { Stack, router, type Href } from "expo-router";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
 import { Eyebrow, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, gradientColors } from "@/components/brand";
 import { CampusRails, MadrasaHero } from "@/features/campus/Campus";
-import { Shams2Entry } from "@/features/shams2/Hub";
+import { ShamsModeChooser } from "@/features/shams2/ModeChooser";
+import { continueHref, useShamsMode } from "@/features/shams2/mode";
+import { useModeT } from "@/features/shams2/modeText";
 import { tile, routeOf } from "@/lib/features";
 import { Icon } from "@/components/icons";
 import { Page, ProBadge } from "@/components/page";
@@ -51,6 +53,9 @@ export default function Masterclass() {
   const next = me.learned > 0 ? me.next : null;
   const nextChapter = next ? byId.get(next.surah) : undefined;
   const open = (surah: number, verse?: number) => router.push(`/shams/${surah}${verse ? `?v=${verse}` : ""}` as Href);
+  // "Continue" follows the learner's Shams method: the classic session where they left off, or today's wird (2.0)
+  const { mode } = useShamsMode();
+  const mt = useModeT();
 
   const freeShown = allFree ? FREE_PATH : FREE_PATH.slice(0, 8);
   return (
@@ -78,9 +83,9 @@ export default function Masterclass() {
                   ))}
                 </View>
               ) : null}
-              <OutlineButton title={next ? lt("continue") : w("shams.cta")} icon="sun" onStage onPress={() => (next ? open(next.surah, next.verse) : open(1))} />
+              <OutlineButton title={mode === "v2" ? mt("continueWird") : next ? lt("continue") : w("shams.cta")} icon="sun" onStage onPress={() => (mode === "v2" ? router.push(continueHref("v2") as Href) : next ? open(next.surah, next.verse) : open(1))} />
               <OutlineButton title={lt("about")} onStage onPress={() => router.push("/shams" as Href)} />
-              <Shams2Entry />
+              <ShamsModeChooser tone="stage" />
             </View>
           </Stage>
           <TodayPlanCard />
@@ -97,7 +102,7 @@ export default function Masterclass() {
           <JourneyEntryCard />
           <LangCourseCard />
           <ReciterPathCard />
-          {next && nextChapter ? (
+          {mode === "classic" && next && nextChapter ? (
             <GoldCard>
               <SurahBanner arabic={nextChapter.name_arabic} onStage={false} />
               <Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink, marginTop: 12, textAlign: "center" }}>{lt("continueAt", { surah: `${nextChapter.id}. ${nextChapter.name_simple}`, verse: next.verse })}</Text>

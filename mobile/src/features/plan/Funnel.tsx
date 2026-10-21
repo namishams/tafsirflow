@@ -20,6 +20,7 @@ import type { Goal } from "@/web/coach";
 import { Day1Paywall } from "./Day1Paywall";
 import { PlantFlow } from "@/features/garden/PlantFlow";
 import { PlanMilestones } from "@/features/garden/widgets";
+import { ShamsModeNote } from "@/features/shams2/ModeChooser";
 import { readGarden } from "@/features/garden/garden";
 import { JourneyStage } from "@/features/garden/Landscape";
 import { GoldStarSpinner } from "./Scenes";
@@ -370,6 +371,7 @@ function PlanView({ plan, onNext }: { plan: Plan; onNext: () => void }) {
           ))}
         </View>
         <View style={{ marginTop: 12 }}><PlanMilestones minutes={a.minutes} /></View>
+        <ShamsModeNote />
         <GoldButton title={p.start} onPress={onNext} style={{ marginTop: 24 }} />
       </Animated.ScrollView>
     </Stage>

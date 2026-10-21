@@ -26,6 +26,7 @@ const newest = <T extends Obj>(list: T[], at: string) => list.reduce((m, x) => M
 export const EXTRA_KEYS = [
   "qmc.shams2.settings.v1", "qmc.shams2.log.v1", "qmc.shams2.words.v1", "qmc.shams2.checks.v1", "qmc.shams2.mut.v1", "qmc.shams2.grade.v1", "qmc.shams2.weeks.v1",
   "qmc.qbank.v1", "qmc.nahjCourse.v1",
+  "qmc.shamsMode.v1",
 ] as const;
 // Not synced on purpose: qmc.shams2.teacher.v1 (links and other people's student snapshots stay on the device),
 // qmc.shams2.pages.v1 (cache from the Quran API), qmc.shams2.onboarded.v1 (per device).
@@ -33,6 +34,12 @@ export const EXTRA_KEYS = [
 export const EXTRA_MERGE: Record<(typeof EXTRA_KEYS)[number], (a: unknown, b: unknown) => unknown> = {
   // settings carry no timestamp: this device's choice wins, missing fields come from the account
   "qmc.shams2.settings.v1": (a, b) => ({ ...o(b), ...o(a) }),
+  // the chosen Shams method ("classic" | "v2"), stored as { mode, at } (a plain string counts as at = 0): the newer choice wins, a tie keeps this device's
+  "qmc.shamsMode.v1": (a, b) => {
+    const pick = (x: unknown) => { const m = typeof x === "string" ? x : o(x).mode; return m === "classic" || m === "v2" ? { mode: m, at: n(o(x).at) } : null; };
+    const x = pick(a), y = pick(b);
+    return x && y ? (x.at >= y.at ? x : y) : x ?? y ?? a ?? b;
+  },
   // day -> blocks done (first completion time kept) and ratings per range (union)
   "qmc.shams2.log.v1": (a, b) => {
     const out: Record<string, Obj> = { ...(o(b) as Record<string, Obj>) };

@@ -7,6 +7,7 @@ import { FONT, R, useTheme } from "@/lib/theme";
 import { tick, success } from "@/features/feed/haptics";
 import { doneToday, planDay, streakOf, todaysSteps, toggleStep, useDone, usePlan } from "./plan";
 import { fmt, usePlanT } from "./texts";
+import { planStepHref, useShamsMode } from "@/features/shams2/mode";
 
 /** "Today's plan" on the Masterclass tab: today's steps with checkboxes, the streak, and Pro for locked steps.
  *  Without a plan it invites to the short quiz (/onboarding). */
@@ -16,6 +17,7 @@ export function TodayPlanCard() {
   const { pro } = usePro();
   const plan = usePlan();
   const done = useDone();
+  const { mode } = useShamsMode(); // the Shams steps open today's wird for Shams Method 2.0
   if (!plan) {
     return (
       <GoldCard>
@@ -58,7 +60,7 @@ export function TodayPlanCard() {
                   </View>
                 )}
               </Pressable>
-              <Pressable onPress={() => (locked ? openPro("general") : router.push(s.href as Href))} accessibilityRole="button" accessibilityLabel={locked ? `${p[`s_${s.id}`]}, ${p.unlock}` : p[`s_${s.id}`]}
+              <Pressable onPress={() => (locked ? openPro("general") : router.push(planStepHref(s.id, s.href, mode) as Href))} accessibilityRole="button" accessibilityLabel={locked ? `${p[`s_${s.id}`]}, ${p.unlock}` : p[`s_${s.id}`]}
                 style={({ pressed }) => ({ flex: 1, flexDirection: "row", alignItems: "center", gap: 8, paddingRight: 14, paddingVertical: 12, opacity: pressed ? 0.7 : 1 })}>
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink, textDecorationLine: on ? "line-through" : "none" }}>{p[`s_${s.id}`]}</Text>

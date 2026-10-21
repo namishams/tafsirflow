@@ -13,6 +13,7 @@ import { ContinueNext } from "./Continue";
 import { DueChecks, GradeCard } from "./Darajat";
 import { Briefing } from "./Tadabbur";
 import { useOnboarded } from "./Guide";
+import { ShamsModeChooser } from "./ModeChooser";
 
 function Today() {
   const { s, nf } = useS2();
@@ -86,6 +87,7 @@ export function HubScreen() {
     <>
       <LearnHero back={{ href: "/shams", label: w.method }} kicker={s("eyebrow")} title={s("hubTitle")} lead={s("hubLead")} word="منهج شمس" uid="s2" />
       <LearnMain className="grid gap-5">
+        <ShamsModeChooser className="pb-2" />
         <Live fallback={null}><Onboard /><DueChecks /></Live>
         <Live><Today /><GradeCard compact /></Live>
         <Live fallback={<StaticTiles />}><Tiles /></Live>
