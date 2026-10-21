@@ -1,0 +1,30 @@
+{
+  "set": "verses-kindness",
+  "kind": "verse",
+  "theme": "kindness",
+  "tradition": "all",
+  "items": [
+    {"id": "wv-kindness-4-36", "verse": "4:36", "check": "neighbor"},
+    {"id": "wv-kindness-28-77", "verse": "28:77", "check": "do good as Allah has done good"},
+    {"id": "wv-kindness-2-195", "verse": "2:195", "check": "doers of good"},
+    {"id": "wv-kindness-55-60", "verse": "55:60", "check": "reward for good"},
+    {"id": "wv-kindness-93-9", "verse": "93:9-10", "check": "orphan"},
+    {"id": "wv-kindness-17-28", "verse": "17:28", "check": "gentle word"},
+    {"id": "wv-kindness-26-215", "verse": "26:215", "check": "lower your wing"},
+    {"id": "wv-kindness-23-96", "verse": "23:96", "check": "what is best"},
+    {"id": "wv-kindness-3-159", "verse": "3:159", "check": "lenient"},
+    {"id": "wv-kindness-9-128", "verse": "9:128", "check": "kind and merciful"},
+    {"id": "wv-kindness-90-17", "verse": "90:17", "check": "compassion"},
+    {"id": "wv-kindness-89-17", "verse": "89:17-18", "check": "honor the orphan"},
+    {"id": "wv-kindness-4-86", "verse": "4:86", "check": "greeting"},
+    {"id": "wv-kindness-60-8", "verse": "60:8", "check": "righteous toward them"},
+    {"id": "wv-kindness-2-280", "verse": "2:280", "check": "postponement"},
+    {"id": "wv-kindness-4-85", "verse": "4:85", "check": "intercedes for a good cause"},
+    {"id": "wv-kindness-4-149", "verse": "4:149", "check": "pardon an offense"},
+    {"id": "wv-kindness-16-128", "verse": "16:128", "check": "doers of good"},
+    {"id": "wv-kindness-3-104", "verse": "3:104", "check": "inviting to"},
+    {"id": "wv-kindness-11-69", "verse": "11:69", "check": "roasted calf"},
+    {"id": "wv-kindness-51-24", "verse": "51:24-26", "check": "honored guests"},
+    {"id": "wv-kindness-30-38", "verse": "30:38", "check": "the needy and the traveler"}
+  ]
+}

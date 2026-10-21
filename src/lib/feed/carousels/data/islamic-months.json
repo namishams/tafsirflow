@@ -1,0 +1,702 @@
+{
+  "series": "islamic-months",
+  "label": { "en": "The Islamic months", "de": "Die islamischen Monate", "ar": "الأشهر الهجرية" },
+  "topic": "history",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "islamic-months-01-muharram",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 1", "de": "Die islamischen Monate · 1", "ar": "الأشهر الهجرية · ١" },
+        "title": { "en": "Muharram", "de": "Muharram", "ar": "المحرَّم" },
+        "sub": { "en": "The first month of the Hijri year and one of the four sacred months", "de": "Der erste Monat des Hidschra-Jahres und einer der vier heiligen Monate", "ar": "أول شهور السنة الهجرية وأحد الأشهر الحرم الأربعة" },
+        "arabic": "مُحَرَّم"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ح ر م",
+          "body": { "en": "Muharram means 'made sacred' or 'forbidden'. Even before Islam the Arabs held fighting in it to be forbidden. Today it opens the Hijri year.", "de": "Muharram bedeutet „geheiligt“ oder „verboten“. Schon vor dem Islam galt das Kämpfen in diesem Monat als verboten. Heute eröffnet er das Hidschra-Jahr.", "ar": "المحرَّم من الحُرمة، فقد كان العرب قبل الإسلام يعظّمونه ويحرّمون فيه القتال، وهو اليوم فاتحة السنة الهجرية." }
+        },
+        {
+          "verse": "9:36",
+          "check": "four are sacred",
+          "title": { "en": "One of four sacred months", "de": "Einer von vier heiligen Monaten", "ar": "من الأشهر الحرم" },
+          "body": { "en": "Allah made twelve months and singled out four as sacred. Many scholars explain that wrongdoing in them weighs heavier.", "de": "Allah schuf zwölf Monate und zeichnete vier als heilig aus. Viele Gelehrte erklären, dass Unrecht in ihnen schwerer wiegt.", "ar": "جعل الله الشهور اثني عشر، وخصّ منها أربعة بالحرمة، ويذكر كثير من العلماء أن الظلم فيها أعظم إثمًا." }
+        },
+        {
+          "hadith": "bukhari:3934",
+          "check": "Muslim calendar",
+          "title": { "en": "Counting from the Hijrah", "de": "Zählung ab der Hidschra", "ar": "التأريخ بالهجرة" },
+          "body": { "en": "The Companions counted the years from the Prophet's arrival in Madinah. The caliph Umar is credited with introducing this calendar.", "de": "Die Gefährten zählten die Jahre ab der Ankunft des Propheten in Medina. Die Einführung dieses Kalenders wird dem Kalifen Umar zugeschrieben.", "ar": "أرّخ الصحابة السنين بمقدم النبي ﷺ إلى المدينة، ويُنسب وضع هذا التقويم إلى الخليفة عمر بن الخطاب." }
+        },
+        {
+          "hadith": "muslim:2755",
+          "check": "al-Muharram",
+          "title": { "en": "The month of Allah", "de": "Der Monat Allahs", "ar": "شهر الله" },
+          "body": { "en": "The Prophet called Muharram the month of Allah and praised fasting in it above other months after Ramadan.", "de": "Der Prophet nannte Muharram den Monat Allahs und stellte das Fasten in ihm über das anderer Monate nach dem Ramadan.", "ar": "سمّى النبي ﷺ المحرم شهر الله، وفضّل الصيام فيه على غيره من الشهور بعد رمضان." }
+        },
+        {
+          "hadith": "bukhari:2004",
+          "check": "rescued",
+          "title": { "en": "Ashura: the day of Musa", "de": "Aschura: der Tag Musas", "ar": "عاشوراء ونجاة موسى" },
+          "body": { "en": "On the 10th, Allah saved Musa and his people. The Prophet fasted that day in gratitude and asked Muslims to fast it.", "de": "Am 10. rettete Allah Musa und sein Volk. Der Prophet fastete an diesem Tag aus Dankbarkeit und forderte die Muslime dazu auf.", "ar": "في العاشر نجّى الله موسى وقومه، فصامه النبي ﷺ شكرًا وأمر المسلمين بصيامه." }
+        },
+        {
+          "hadith": "muslim:2666",
+          "check": "9th",
+          "title": { "en": "Together with the 9th", "de": "Zusammen mit dem 9.", "ar": "مع التاسع" },
+          "body": { "en": "He intended to fast the 9th as well, so many Sunni Muslims fast the 9th and the 10th.", "de": "Er hatte vor, auch den 9. zu fasten. Darum fasten viele sunnitische Muslime am 9. und 10.", "ar": "عزم النبي ﷺ على صيام التاسع أيضًا، ولذلك يصوم كثير من أهل السنة التاسع والعاشر." }
+        },
+        {
+          "title": { "en": "One day, remembered in different ways", "de": "Ein Tag, unterschiedlich begangen", "ar": "يوم واحد وذكرى مختلفة" },
+          "body": { "en": "On 10 Muharram 61 AH (680 CE), Imam Husayn, the Prophet's grandson, was martyred at Karbala with family members and companions. Shia Muslims mark the day by mourning him; Sunni Muslims fast. Both honour his memory.", "de": "Am 10. Muharram 61 n. H. (680 n. Chr.) wurde Imam Husain, der Enkel des Propheten, mit Angehörigen und Gefährten in Kerbela getötet. Schiitische Muslime gedenken seiner in Trauer, Sunniten fasten. Beide ehren sein Andenken.", "ar": "في العاشر من المحرم سنة ٦١ هـ (٦٨٠ م) استُشهد الإمام الحسين سبط النبي ﷺ في كربلاء مع عدد من أهل بيته وأصحابه. يحيي الشيعة ذكراه بالعزاء، ويصوم أهل السنة هذا اليوم، وكلاهما يجلّ ذكراه." }
+        },
+        {
+          "title": { "en": "Starting the new year", "de": "Das neue Jahr beginnen", "ar": "بداية عام جديد" },
+          "list": {
+            "en": ["Fast some days of Muharram", "Fast Ashura, with the 9th if you can", "Guard against wronging yourself and others", "Choose one good habit for the year"],
+            "de": ["Einige Tage im Muharram fasten", "Aschura fasten, wenn möglich mit dem 9.", "Sich hüten, sich selbst oder anderen Unrecht zu tun", "Eine gute Gewohnheit für das Jahr wählen"],
+            "ar": ["صم أيامًا من المحرم", "صم عاشوراء ومعه التاسع إن استطعت", "احذر ظلم نفسك وظلم غيرك", "اختر عادة صالحة للعام الجديد"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 9:36" },
+        { "label": "al-Tabari, Tarikh al-Rusul wa al-Muluk, on the calendar and on Karbala" }
+      ]
+    },
+    {
+      "id": "islamic-months-02-safar",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 2", "de": "Die islamischen Monate · 2", "ar": "الأشهر الهجرية · ٢" },
+        "title": { "en": "Safar", "de": "Safar", "ar": "صفر" },
+        "sub": { "en": "A month of journeys, not of bad luck", "de": "Ein Monat der Reisen, nicht des Unglücks", "ar": "شهر للسفر والسعي لا للتشاؤم" },
+        "arabic": "صَفَر"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ص ف ر",
+          "body": { "en": "Classical lexicons give several explanations. A common one: homes stood empty (sifr) in this month, as people left to travel or to raid.", "de": "Klassische Wörterbücher nennen mehrere Erklärungen. Eine verbreitete: Die Häuser standen in diesem Monat leer (sifr), weil die Menschen auf Reisen oder Feldzüge gingen.", "ar": "تذكر المعاجم القديمة تفسيرات عدة، أشهرها أن البيوت كانت تخلو من أهلها في هذا الشهر لخروجهم إلى السفر أو الغزو." }
+        },
+        {
+          "hadith": "bukhari:5757",
+          "check": "nor Safar",
+          "title": { "en": "No bad luck in Safar", "de": "Kein Unglück im Safar", "ar": "لا شؤم في صفر" },
+          "body": { "en": "Before Islam, some saw Safar as an unlucky month. The Prophet clearly rejected this belief.", "de": "Vor dem Islam hielten manche den Safar für einen Unglücksmonat. Der Prophet wies diesen Glauben klar zurück.", "ar": "كان بعض العرب قبل الإسلام يتشاءمون بشهر صفر، فأبطل النبي ﷺ هذا الاعتقاد." }
+        },
+        {
+          "hadith": "bukhari:5755",
+          "check": "good word",
+          "title": { "en": "The good word instead", "de": "Stattdessen das gute Wort", "ar": "الفأل بدل التشاؤم" },
+          "body": { "en": "Superstition gives way to hope: the Prophet loved fa'l, an encouraging word that lifts the heart.", "de": "Aberglaube weicht der Hoffnung: Der Prophet liebte den Fa'l, ein ermutigendes Wort, das das Herz hebt.", "ar": "يحلّ الأمل محل الخرافة، فقد كان النبي ﷺ يحب الفأل، الكلمة الحسنة التي ترفع القلب." }
+        },
+        {
+          "dua": "hisn:94:0",
+          "check": "no omen",
+          "title": { "en": "A dua against omens", "de": "Ein Bittgebet gegen Vorzeichen", "ar": "دعاء عند التطير" },
+          "body": { "en": "When a dark thought about luck arises, turn it into trust in Allah with this short dua.", "de": "Kommt ein düsterer Gedanke über Glück und Unglück auf, verwandeln Sie ihn mit diesem kurzen Bittgebet in Vertrauen auf Allah.", "ar": "إذا خطر لك تشاؤم فحوّله إلى توكل على الله بهذا الدعاء القصير." }
+        },
+        {
+          "verse": "9:37",
+          "check": "postponing",
+          "title": { "en": "Moving the sacred months", "de": "Das Verschieben der heiligen Monate", "ar": "النسيء" },
+          "body": { "en": "Pre-Islamic Arabs sometimes moved a sacred month, swapping Muharram and Safar. The Quran ended this practice.", "de": "Die vorislamischen Araber verschoben bisweilen einen heiligen Monat und tauschten etwa Muharram und Safar. Der Koran beendete diese Praxis.", "ar": "كان العرب في الجاهلية يؤخرون حرمة شهر فيجعلون صفر مكان المحرم، فأبطل القرآن ذلك." }
+        },
+        {
+          "title": { "en": "The Hijrah journey", "de": "Die Reise der Hidschra", "ar": "رحلة الهجرة" },
+          "body": { "en": "Many biographers date the Prophet's departure from Makkah to the end of Safar in the year of the Hijrah (622 CE). He reached Quba in Rabi al-Awwal.", "de": "Viele Biografen datieren den Aufbruch des Propheten aus Mekka auf das Ende des Safar im Jahr der Hidschra (622 n. Chr.). In Quba kam er im Rabi al-Awwal an.", "ar": "يؤرخ كثير من كتّاب السيرة خروج النبي ﷺ من مكة بأواخر صفر في عام الهجرة (٦٢٢ م)، وقد بلغ قباء في ربيع الأول." }
+        },
+        {
+          "verse": "65:3",
+          "check": "relies upon",
+          "title": { "en": "Trust, not fear", "de": "Vertrauen statt Furcht", "ar": "توكل لا خوف" },
+          "body": { "en": "No month and no day holds bad luck in itself. Reliance on Allah is enough.", "de": "Kein Monat und kein Tag bringt von sich aus Unglück. Das Vertrauen auf Allah genügt.", "ar": "لا شهر ولا يوم يحمل الشؤم في ذاته، والتوكل على الله كافٍ." }
+        }
+      ],
+      "sources": [
+        { "label": "Safiur Rahman al-Mubarakpuri, ar-Rahiq al-Makhtum (The Sealed Nectar)" },
+        { "label": "Ibn Manzur, Lisan al-Arab, entry s-f-r" }
+      ]
+    },
+    {
+      "id": "islamic-months-03-rabi-al-awwal",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 3", "de": "Die islamischen Monate · 3", "ar": "الأشهر الهجرية · ٣" },
+        "title": { "en": "Rabi al-Awwal", "de": "Rabi al-Awwal", "ar": "ربيع الأول" },
+        "sub": { "en": "The month of the Prophet's birth, his Hijrah and his passing", "de": "Der Monat der Geburt des Propheten, seiner Hidschra und seines Todes", "ar": "شهر مولد النبي ﷺ وهجرته ووفاته" },
+        "arabic": "رَبِيعُ الأَوَّل"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ر ب ع",
+          "body": { "en": "Rabi means spring. The month probably received its name when it fell in spring; al-Awwal means 'the first'.", "de": "Rabi bedeutet Frühling. Der Monat erhielt seinen Namen wohl, als er in den Frühling fiel; al-Awwal heißt „der erste“.", "ar": "الربيع فصل الخصب، ويُرجَّح أن الشهر سُمّي بذلك حين وافق زمن الربيع، والأول أي أول الربيعين." }
+        },
+        {
+          "hadith": "muslim:2750",
+          "check": "born",
+          "title": { "en": "Born on a Monday", "de": "An einem Montag geboren", "ar": "وُلد يوم الاثنين" },
+          "body": { "en": "The Prophet was born on a Monday in Makkah, in the Year of the Elephant, around 570 CE.", "de": "Der Prophet wurde an einem Montag in Mekka geboren, im Jahr des Elefanten, um 570 n. Chr.", "ar": "وُلد النبي ﷺ يوم الاثنين في مكة، في عام الفيل، نحو سنة ٥٧٠ م." }
+        },
+        {
+          "title": { "en": "Which day?", "de": "Welcher Tag?", "ar": "أي يوم؟" },
+          "body": { "en": "Most Sunni sources give the 12th of Rabi al-Awwal; Shia sources mostly the 17th. Historians mention other dates too, but most agree on the month.", "de": "Die meisten sunnitischen Quellen nennen den 12. Rabi al-Awwal, schiitische Quellen meist den 17. Historiker nennen auch andere Tage, doch über den Monat sind sich die meisten einig.", "ar": "تذكر أكثر المصادر السنية الثاني عشر من ربيع الأول، وأكثر المصادر الشيعية السابع عشر. وذكر المؤرخون أيامًا أخرى، لكن أكثرهم متفقون على الشهر." }
+        },
+        {
+          "title": { "en": "Arrival in Madinah", "de": "Ankunft in Medina", "ar": "الوصول إلى المدينة" },
+          "body": { "en": "In Rabi al-Awwal of the year of the Hijrah (622 CE), the Prophet reached Quba and then Madinah. A persecuted group became a community.", "de": "Im Rabi al-Awwal des Hidschra-Jahres (622 n. Chr.) erreichte der Prophet Quba und dann Medina. Aus einer verfolgten Gruppe wurde eine Gemeinschaft.", "ar": "في ربيع الأول من عام الهجرة (٦٢٢ م) بلغ النبي ﷺ قباء ثم المدينة، فصارت الفئة المستضعفة مجتمعًا." }
+        },
+        {
+          "verse": "33:56",
+          "check": "confers blessing",
+          "title": { "en": "Allah and His angels", "de": "Allah und Seine Engel", "ar": "الله وملائكته" },
+          "body": { "en": "The Quran itself calls on believers to send blessings and peace upon the Prophet.", "de": "Der Koran selbst ruft die Gläubigen auf, Segen und Frieden auf den Propheten herabzuwünschen.", "ar": "القرآن نفسه يدعو المؤمنين إلى الصلاة والسلام على النبي ﷺ." }
+        },
+        {
+          "dua": "hisn:107:0",
+          "check": "sends ten",
+          "title": { "en": "One for ten", "de": "Einer für zehn", "ar": "واحدة بعشر" },
+          "body": { "en": "One blessing on the Prophet brings ten from Allah. A beautiful way to live this month.", "de": "Ein Segenswunsch für den Propheten bringt zehn von Allah. Eine schöne Art, diesen Monat zu leben.", "ar": "صلاة واحدة على النبي ﷺ يقابلها عشر من الله، وهي طريقة جميلة لنعيش هذا الشهر." }
+        },
+        {
+          "hadith": "bukhari:4466",
+          "check": "sixty-three",
+          "title": { "en": "He passed away at 63", "de": "Er starb mit 63", "ar": "تُوفي عن ثلاث وستين" },
+          "body": { "en": "In Rabi al-Awwal 11 AH (632 CE), on a Monday, the Prophet returned to his Lord in Madinah.", "de": "Im Rabi al-Awwal 11 n. H. (632 n. Chr.) kehrte der Prophet an einem Montag in Medina zu seinem Herrn zurück.", "ar": "في ربيع الأول سنة ١١ هـ (٦٣٢ م)، في يوم اثنين، انتقل النبي ﷺ إلى ربه في المدينة." }
+        },
+        {
+          "title": { "en": "Mawlid: different customs", "de": "Maulid: unterschiedliche Bräuche", "ar": "المولد: عادات مختلفة" },
+          "body": { "en": "Many Muslims gather in this month to celebrate the Prophet's birth with poetry, food and lessons. Other scholars do not mark it with special celebrations. Both seek to express love for him.", "de": "Viele Muslime feiern in diesem Monat die Geburt des Propheten mit Gedichten, Essen und Unterricht. Andere Gelehrte begehen ihn nicht mit besonderen Feiern. Beide wollen ihre Liebe zu ihm zeigen.", "ar": "يجتمع كثير من المسلمين في هذا الشهر احتفاءً بمولد النبي ﷺ بالمدائح والطعام ومجالس العلم، ولا يخصه علماء آخرون باحتفال، والجميع يقصد التعبير عن محبته." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Hisham, as-Sira an-Nabawiyya" },
+        { "label": "Safiur Rahman al-Mubarakpuri, ar-Rahiq al-Makhtum (The Sealed Nectar)" }
+      ]
+    },
+    {
+      "id": "islamic-months-04-rabi-al-thani",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 4", "de": "Die islamischen Monate · 4", "ar": "الأشهر الهجرية · ٤" },
+        "title": { "en": "Rabi al-Thani", "de": "Rabi ath-Thani", "ar": "ربيع الآخر" },
+        "sub": { "en": "A quiet month and a lesson in steady faith", "de": "Ein stiller Monat und eine Lehre über beständigen Glauben", "ar": "شهر هادئ ودرس في الثبات" },
+        "arabic": "رَبِيعُ الآخِر"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ربيع الآخر",
+          "body": { "en": "The second spring. Many scholars prefer the name Rabi al-Akhir, 'the later spring'. Like every month, it begins with the new crescent.", "de": "Der zweite Frühling. Viele Gelehrte bevorzugen den Namen Rabi al-Achir, „der spätere Frühling“. Wie jeder Monat beginnt er mit der neuen Mondsichel.", "ar": "هو الربيع الثاني، ويؤثر كثير من العلماء تسميته «ربيع الآخر». ويبدأ كسائر الشهور بظهور الهلال الجديد." }
+        },
+        {
+          "verse": "2:189",
+          "check": "crescent moons",
+          "title": { "en": "The moon as a calendar", "de": "Der Mond als Kalender", "ar": "الهلال ميقات" },
+          "body": { "en": "The crescents mark time for people and for Hajj. That is why the Islamic months follow the moon.", "de": "Die Mondsicheln bestimmen die Zeit für die Menschen und für die Pilgerfahrt. Darum folgen die islamischen Monate dem Mond.", "ar": "الأهلّة مواقيت للناس وللحج، ولذلك تتبع الشهور الهجرية القمر." }
+        },
+        {
+          "dua": "hisn:67:0",
+          "check": "crescent",
+          "title": { "en": "A dua for the new moon", "de": "Ein Bittgebet beim Neumond", "ar": "دعاء رؤية الهلال" },
+          "body": { "en": "When the new crescent appears, ask for safety, faith and peace in the month ahead.", "de": "Wenn die neue Mondsichel erscheint, bitten Sie um Sicherheit, Glauben und Frieden für den kommenden Monat.", "ar": "إذا ظهر الهلال فاسأل الله الأمن والإيمان والسلامة في الشهر المقبل." }
+        },
+        {
+          "title": { "en": "Why the months move", "de": "Warum die Monate wandern", "ar": "لماذا تتنقل الشهور" },
+          "body": { "en": "A lunar year has 354 or 355 days, about eleven days fewer than the solar year. So Ramadan and every other month travel through all the seasons.", "de": "Ein Mondjahr hat 354 oder 355 Tage, etwa elf Tage weniger als das Sonnenjahr. Darum wandern Ramadan und alle anderen Monate durch alle Jahreszeiten.", "ar": "السنة القمرية ٣٥٤ أو ٣٥٥ يومًا، أي أقصر من الشمسية بنحو أحد عشر يومًا، فيتنقل رمضان وسائر الشهور بين الفصول كلها." }
+        },
+        {
+          "hadith": "bukhari:1132",
+          "check": "done continuously",
+          "title": { "en": "Small and steady", "de": "Klein und beständig", "ar": "قليل دائم" },
+          "body": { "en": "Few famous events fall in this month. That makes it ideal for the deed the Prophet loved most: one done continuously.", "de": "Nur wenige berühmte Ereignisse fallen in diesen Monat. Umso besser passt er zu der Tat, die der Prophet am meisten liebte: einer beständigen.", "ar": "قلّما تُذكر في هذا الشهر أحداث كبرى، فهو مناسب للعمل الذي كان أحب الأعمال إلى النبي ﷺ: العمل الدائم." }
+        },
+        {
+          "hadith": "bukhari:1178",
+          "check": "three days every month",
+          "title": { "en": "Three habits for every month", "de": "Drei Gewohnheiten für jeden Monat", "ar": "ثلاث عادات لكل شهر" },
+          "body": { "en": "Abu Hurayrah kept this advice all his life: three days of fasting each month, Duha and Witr.", "de": "Abu Huraira hielt sich sein Leben lang an diesen Rat: drei Fastentage im Monat, Duha und Witr.", "ar": "حافظ أبو هريرة على هذه الوصية طوال حياته: صيام ثلاثة أيام من كل شهر، والضحى، والوتر." }
+        },
+        {
+          "title": { "en": "A plan for an ordinary month", "de": "Ein Plan für einen gewöhnlichen Monat", "ar": "خطة لشهر عادي" },
+          "list": {
+            "en": ["Fast three days, such as the white days", "Pray two rak'ahs of Duha", "Never sleep without Witr", "Read a little Quran every day"],
+            "de": ["Drei Tage fasten, etwa die weißen Tage", "Zwei Rak'as Duha beten", "Nie ohne Witr schlafen gehen", "Jeden Tag ein wenig Koran lesen"],
+            "ar": ["صم ثلاثة أيام كالأيام البيض", "صلِّ ركعتي الضحى", "لا تنم إلا على وتر", "اقرأ شيئًا من القرآن كل يوم"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "islamic-months-05-jumada-al-ula",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 5", "de": "Die islamischen Monate · 5", "ar": "الأشهر الهجرية · ٥" },
+        "title": { "en": "Jumada al-Ula", "de": "Dschumada al-Ula", "ar": "جمادى الأولى" },
+        "sub": { "en": "A winter name, the battle of Mu'tah and three heroes", "de": "Ein Wintername, die Schlacht von Mu'ta und drei Helden", "ar": "اسم شتوي، وغزوة مؤتة، وثلاثة أبطال" },
+        "arabic": "جُمَادَى الأُولَى"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ج م د",
+          "body": { "en": "Jumada comes from jamad, 'to freeze'. Lexicons explain that the name was given when the month fell in the cold season, when water froze.", "de": "Dschumada kommt von dschamad, „gefrieren“. Wörterbücher erklären, dass der Name entstand, als der Monat in die kalte Jahreszeit fiel und das Wasser gefror.", "ar": "جمادى من الجمود، وتذكر المعاجم أن الاسم أُطلق حين وقع الشهر في زمن البرد إذ يجمد الماء." }
+        },
+        {
+          "verse": "10:5",
+          "check": "phases",
+          "title": { "en": "Months without fixed seasons", "de": "Monate ohne feste Jahreszeit", "ar": "شهور بلا فصول ثابتة" },
+          "body": { "en": "The moon's phases let us count the years. Because the lunar year is shorter, Jumada can fall in summer today.", "de": "Die Mondphasen lassen uns die Jahre zählen. Weil das Mondjahr kürzer ist, kann Dschumada heute auch in den Sommer fallen.", "ar": "بمنازل القمر نعرف حساب الأعوام، ولأن السنة القمرية أقصر قد تقع جمادى اليوم في الصيف." }
+        },
+        {
+          "title": { "en": "The battle of Mu'tah", "de": "Die Schlacht von Mu'ta", "ar": "غزوة مؤتة" },
+          "body": { "en": "In Jumada al-Ula 8 AH (629 CE), a Muslim army of about 3,000 met a much larger Byzantine and allied force at Mu'tah, in today's Jordan.", "de": "Im Dschumada al-Ula 8 n. H. (629 n. Chr.) traf ein muslimisches Heer von etwa 3.000 Mann bei Mu'ta im heutigen Jordanien auf eine weit größere byzantinische Streitmacht mit ihren Verbündeten.", "ar": "في جمادى الأولى سنة ٨ هـ (٦٢٩ م) التقى جيش مسلم قوامه نحو ثلاثة آلاف بجيش بيزنطي وحلفائه أكبر منه بكثير عند مؤتة في الأردن اليوم." }
+        },
+        {
+          "title": { "en": "Three commanders", "de": "Drei Befehlshaber", "ar": "ثلاثة قادة" },
+          "body": { "en": "Zayd ibn Harithah, Ja'far ibn Abi Talib and Abdullah ibn Rawahah fell one after another. The Prophet announced their deaths in Madinah with tears in his eyes, and Khalid ibn al-Walid brought the army home.", "de": "Zaid ibn Haritha, Dscha'far ibn Abi Talib und Abdullah ibn Rawaha fielen nacheinander. Der Prophet verkündete ihren Tod in Medina unter Tränen, und Chalid ibn al-Walid führte das Heer nach Hause.", "ar": "استُشهد زيد بن حارثة وجعفر بن أبي طالب وعبد الله بن رواحة واحدًا بعد الآخر، ونعاهم النبي ﷺ في المدينة والدموع في عينيه، وعاد خالد بن الوليد بالجيش." }
+        },
+        {
+          "verse": "3:169",
+          "check": "alive with their Lord",
+          "title": { "en": "Not dead, but alive", "de": "Nicht tot, sondern lebendig", "ar": "حياةٌ لا يقطعها الموت" },
+          "body": { "en": "The Quran comforts those who lose loved ones in the cause of Allah: their story does not end with death.", "de": "Der Koran tröstet jene, die geliebte Menschen auf Allahs Weg verlieren: Ihre Geschichte endet nicht mit dem Tod.", "ar": "يواسي القرآن من فقد أحبته في سبيل الله: فقصتهم لا تنتهي بالموت." }
+        },
+        {
+          "title": { "en": "Ja'far with two wings", "de": "Dscha'far mit zwei Flügeln", "ar": "جعفر الطيار" },
+          "body": { "en": "Ja'far lost both arms holding the flag. Muslims of every tradition remember him as Ja'far at-Tayyar, the one given two wings in Paradise.", "de": "Dscha'far verlor beide Arme, während er die Fahne hielt. Muslime aller Traditionen gedenken seiner als Dscha'far at-Tayyar, dem im Paradies zwei Flügel gegeben wurden.", "ar": "فقد جعفر ذراعيه وهو يحمل الراية، ويذكره المسلمون على اختلاف مذاهبهم باسم جعفر الطيار، صاحب الجناحين في الجنة." }
+        },
+        {
+          "title": { "en": "Lessons from Mu'tah", "de": "Lehren aus Mu'ta", "ar": "دروس من مؤتة" },
+          "list": {
+            "en": ["Courage is not measured by numbers", "Leadership is a trust passed on in turn", "Tears of grief are mercy, not weakness", "Remember the fallen in your duas"],
+            "de": ["Mut misst sich nicht an Zahlen", "Führung ist ein anvertrautes Gut, das weitergegeben wird", "Tränen der Trauer sind Barmherzigkeit, keine Schwäche", "Gedenken Sie der Gefallenen in Ihren Bittgebeten"],
+            "ar": ["الشجاعة لا تقاس بالعدد", "القيادة أمانة تنتقل من يد إلى يد", "دموع الحزن رحمة لا ضعف", "اذكر الشهداء في دعائك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Hisham, as-Sira an-Nabawiyya, on the expedition of Mu'tah" },
+        { "label": "Ibn Manzur, Lisan al-Arab, entry j-m-d" }
+      ]
+    },
+    {
+      "id": "islamic-months-06-jumada-al-akhirah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 6", "de": "Die islamischen Monate · 6", "ar": "الأشهر الهجرية · ٦" },
+        "title": { "en": "Jumada al-Akhirah", "de": "Dschumada al-Achira", "ar": "جمادى الآخرة" },
+        "sub": { "en": "The last month before the sacred Rajab", "de": "Der letzte Monat vor dem heiligen Radschab", "ar": "آخر شهر قبل رجب الحرام" },
+        "arabic": "جُمَادَى الآخِرَة"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ج م د",
+          "body": { "en": "The later Jumada, also called Jumada ath-Thaniyah, 'the second'. With it, the first half of the Hijri year comes to an end.", "de": "Die spätere Dschumada, auch Dschumada ath-Thaniya, „die zweite“, genannt. Mit ihr endet die erste Hälfte des Hidschra-Jahres.", "ar": "جمادى الآخرة، وتُسمّى أيضًا جمادى الثانية، وبها ينتهي النصف الأول من السنة الهجرية." }
+        },
+        {
+          "hadith": "bukhari:3197",
+          "check": "Jumada-ath-Thaniyah",
+          "title": { "en": "The doorway to Rajab", "de": "Die Schwelle zum Radschab", "ar": "على باب رجب" },
+          "body": { "en": "In the Prophet's words, Rajab follows directly after this month. The sacred month is near.", "de": "Nach den Worten des Propheten folgt Radschab direkt auf diesen Monat. Der heilige Monat ist nah.", "ar": "بحسب كلام النبي ﷺ يأتي رجب بعد هذا الشهر مباشرة، فالشهر الحرام قريب." }
+        },
+        {
+          "title": { "en": "Abu Bakr as-Siddiq", "de": "Abu Bakr as-Siddiq", "ar": "أبو بكر الصديق" },
+          "body": { "en": "Abu Bakr, the first caliph and the Prophet's companion on the Hijrah, passed away in Madinah in Jumada al-Akhirah 13 AH (634 CE), according to the historians.", "de": "Abu Bakr, der erste Kalif und Begleiter des Propheten auf der Hidschra, starb nach Angaben der Historiker im Dschumada al-Achira 13 n. H. (634 n. Chr.) in Medina.", "ar": "تُوفي أبو بكر، أول الخلفاء ورفيق النبي ﷺ في الهجرة، في المدينة في جمادى الآخرة سنة ١٣ هـ (٦٣٤ م) كما يذكر المؤرخون." }
+        },
+        {
+          "hadith": "bukhari:3714",
+          "check": "part of me",
+          "title": { "en": "Fatimah az-Zahra", "de": "Fatima az-Zahra", "ar": "فاطمة الزهراء" },
+          "body": { "en": "In the Shia tradition, the 20th of this month is celebrated as her birthday. All Muslims love the Prophet's daughter.", "de": "In der schiitischen Tradition wird der 20. dieses Monats als ihr Geburtstag gefeiert. Alle Muslime lieben die Tochter des Propheten.", "ar": "في التقليد الشيعي يُحتفى بالعشرين من هذا الشهر ذكرى لمولدها، وجميع المسلمين يحبون بنت النبي ﷺ." }
+        },
+        {
+          "verse": "59:18",
+          "check": "put forth for tomorrow",
+          "title": { "en": "Look to tomorrow", "de": "Auf morgen blicken", "ar": "انظر لغدك" },
+          "body": { "en": "Before the blessed months arrive, take stock: what have you prepared for the days ahead?", "de": "Bevor die gesegneten Monate kommen, ziehen Sie Bilanz: Was haben Sie für die kommenden Tage vorbereitet?", "ar": "قبل أن تقبل الأشهر المباركة راجع نفسك: ماذا أعددت للأيام القادمة؟" }
+        },
+        {
+          "hadith": "bukhari:43",
+          "check": "within your capacity",
+          "title": { "en": "Within your strength", "de": "Im Rahmen Ihrer Kraft", "ar": "على قدر الطاقة" },
+          "body": { "en": "Choose good deeds that fit your strength, so you can carry them through Rajab, Sha'ban and Ramadan.", "de": "Wählen Sie gute Taten, die zu Ihrer Kraft passen, damit Sie sie durch Radschab, Scha'ban und Ramadan tragen können.", "ar": "اختر من الأعمال الصالحة ما يناسب طاقتك، لتستمر بها في رجب وشعبان ورمضان." }
+        },
+        {
+          "title": { "en": "Getting ready", "de": "Sich vorbereiten", "ar": "استعداد" },
+          "list": {
+            "en": ["Make up any missed fasts", "Set a daily Quran portion", "Mend one broken family tie", "Write down your list of duas"],
+            "de": ["Versäumte Fastentage nachholen", "Eine tägliche Koran-Portion festlegen", "Eine abgebrochene Verwandtschaftsbeziehung erneuern", "Ihre Liste der Bittgebete aufschreiben"],
+            "ar": ["اقضِ ما فاتك من صيام", "حدّد وِردًا يوميًا من القرآن", "أصلح علاقة رحم مقطوعة", "اكتب قائمة أدعيتك"]
+          }
+        }
+      ],
+      "sources": [{ "label": "al-Tabari, Tarikh al-Rusul wa al-Muluk, on the death of Abu Bakr" }]
+    },
+    {
+      "id": "islamic-months-07-rajab",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 7", "de": "Die islamischen Monate · 7", "ar": "الأشهر الهجرية · ٧" },
+        "title": { "en": "Rajab", "de": "Radschab", "ar": "رجب" },
+        "sub": { "en": "The sacred month that stands alone", "de": "Der heilige Monat, der allein steht", "ar": "الشهر الحرام المنفرد" },
+        "arabic": "رَجَب"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ر ج ب",
+          "body": { "en": "From rajjaba, 'to honour, to hold in awe'. The Arabs revered this month and laid down their weapons in it.", "de": "Von radschdschaba, „ehren, in Ehrfurcht halten“. Die Araber verehrten diesen Monat und legten in ihm die Waffen nieder.", "ar": "من الترجيب أي التعظيم، فقد كان العرب يعظّمون هذا الشهر ويضعون فيه السلاح." }
+        },
+        {
+          "hadith": "bukhari:4662",
+          "check": "Rajab Mudar",
+          "title": { "en": "Rajab of Mudar", "de": "Radschab der Mudar", "ar": "رجب مضر" },
+          "body": { "en": "Three sacred months come in a row, but Rajab stands alone. It is linked to the tribe of Mudar, who honoured it.", "de": "Drei heilige Monate folgen aufeinander, Radschab aber steht allein. Er ist mit dem Stamm Mudar verbunden, der ihn ehrte.", "ar": "ثلاثة أشهر حرم متتابعة، ورجب وحده منفرد، ويُنسب إلى قبيلة مضر لتعظيمها إياه." }
+        },
+        {
+          "verse": "17:1",
+          "check": "by night",
+          "title": { "en": "The Night Journey", "de": "Die Nachtreise", "ar": "الإسراء" },
+          "body": { "en": "Many Muslims remember the Isra and Mi'raj on 27 Rajab. Historians differ on its exact date.", "de": "Viele Muslime gedenken der Nachtreise und Himmelfahrt am 27. Radschab. Über das genaue Datum sind sich die Historiker uneins.", "ar": "يحيي كثير من المسلمين ذكرى الإسراء والمعراج في السابع والعشرين من رجب، واختلف المؤرخون في تاريخها بدقة." }
+        },
+        {
+          "title": { "en": "Special acts in Rajab?", "de": "Besondere Taten im Radschab?", "ar": "عبادات خاصة برجب؟" },
+          "body": { "en": "Scholars differ. Many hadith scholars, such as Ibn Hajar, found no authentic report of a prayer or fast specific to Rajab. Fasting and good deeds in the sacred months in general remain praiseworthy.", "de": "Die Gelehrten sind uneins. Viele Hadith-Gelehrte, etwa Ibn Hadschar, fanden keinen authentischen Bericht über ein eigenes Gebet oder Fasten für Radschab. Fasten und gute Taten in den heiligen Monaten allgemein bleiben lobenswert.", "ar": "اختلف العلماء في ذلك، فكثير من المحدّثين كابن حجر لم يجدوا خبرًا صحيحًا في صلاة أو صيام يخص رجب، ويبقى الصيام والعمل الصالح في الأشهر الحرم عمومًا محمودًا." }
+        },
+        {
+          "hadith": "bukhari:2950",
+          "check": "Tabuk",
+          "title": { "en": "The expedition of Tabuk", "de": "Der Feldzug von Tabuk", "ar": "غزوة تبوك" },
+          "body": { "en": "In Rajab 9 AH the Prophet set out on a Thursday for Tabuk, his last great expedition.", "de": "Im Radschab 9 n. H. brach der Prophet an einem Donnerstag nach Tabuk auf, zu seinem letzten großen Feldzug.", "ar": "في رجب سنة ٩ هـ خرج النبي ﷺ يوم خميس إلى تبوك، وكانت آخر غزواته الكبرى." }
+        },
+        {
+          "title": { "en": "The 13th of Rajab", "de": "Der 13. Radschab", "ar": "الثالث عشر من رجب" },
+          "body": { "en": "In the Shia tradition, 13 Rajab is celebrated as the birthday of Imam Ali ibn Abi Talib, who according to many reports was born inside the Ka'bah.", "de": "In der schiitischen Tradition wird der 13. Radschab als Geburtstag von Imam Ali ibn Abi Talib gefeiert, der vielen Berichten zufolge in der Kaaba geboren wurde.", "ar": "في التقليد الشيعي يُحتفى بالثالث عشر من رجب ذكرى لمولد الإمام علي بن أبي طالب، الذي وُلد في الكعبة بحسب روايات كثيرة." }
+        },
+        {
+          "title": { "en": "The month of sowing", "de": "Der Monat der Aussaat", "ar": "شهر الزرع" },
+          "body": { "en": "Abu Bakr al-Balkhi said, as Ibn Rajab records: Rajab is the month of sowing, Sha'ban the month of watering, and Ramadan the month of harvest. Start planting now.", "de": "Abu Bakr al-Balchi sagte, wie Ibn Radschab überliefert: Radschab ist der Monat der Aussaat, Scha'ban der Monat der Bewässerung und Ramadan der Monat der Ernte. Beginnen Sie jetzt zu säen.", "ar": "قال أبو بكر البلخي فيما نقله ابن رجب: رجب شهر الزرع، وشعبان شهر السقي، ورمضان شهر الحصاد. فابدأ الغرس الآن." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Hajar al-Asqalani, Tabyin al-'Ajab bima warada fi fadl Rajab" },
+        { "label": "Ibn Rajab al-Hanbali, Lata'if al-Ma'arif, chapter on Rajab" }
+      ]
+    },
+    {
+      "id": "islamic-months-08-shaban",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 8", "de": "Die islamischen Monate · 8", "ar": "الأشهر الهجرية · ٨" },
+        "title": { "en": "Sha'ban", "de": "Scha'ban", "ar": "شعبان" },
+        "sub": { "en": "The month of preparation before Ramadan", "de": "Der Monat der Vorbereitung auf den Ramadan", "ar": "شهر الاستعداد لرمضان" },
+        "arabic": "شَعْبَان"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ش ع ب",
+          "body": { "en": "From tasha'ub, 'branching out'. Lexicons explain that the tribes spread out in this month to search for water or to raid.", "de": "Von tascha'ub, „sich verzweigen“. Wörterbücher erklären, dass sich die Stämme in diesem Monat zerstreuten, um Wasser zu suchen oder auf Raubzüge zu gehen.", "ar": "من التشعّب أي التفرّق، وتذكر المعاجم أن القبائل كانت تتفرق فيه طلبًا للماء أو للغارات." }
+        },
+        {
+          "hadith": "bukhari:1969",
+          "check": "Sha'ban",
+          "title": { "en": "His most-fasted month", "de": "Sein meistgefasteter Monat", "ar": "أكثر شهر صامه" },
+          "body": { "en": "Outside Ramadan, there was no month in which the Prophet fasted as much as in Sha'ban.", "de": "Außerhalb des Ramadan fastete der Prophet in keinem Monat so viel wie im Scha'ban.", "ar": "لم يكن النبي ﷺ يصوم في شهر غير رمضان أكثر مما يصوم في شعبان." }
+        },
+        {
+          "hadith": "bukhari:1950",
+          "check": "missed",
+          "title": { "en": "Time to make up fasts", "de": "Zeit zum Nachholen", "ar": "وقت القضاء" },
+          "body": { "en": "Aishah used Sha'ban to make up the Ramadan days she had missed. Do not leave yours to the last week.", "de": "Aischa nutzte den Scha'ban, um versäumte Ramadan-Tage nachzuholen. Lassen Sie Ihre nicht bis zur letzten Woche liegen.", "ar": "كانت عائشة تقضي ما فاتها من رمضان في شعبان، فلا تؤجل قضاءك إلى الأسبوع الأخير." }
+        },
+        {
+          "hadith": "bukhari:1914",
+          "check": "a day or two",
+          "title": { "en": "No early start", "de": "Kein vorzeitiger Beginn", "ar": "بداية واضحة" },
+          "body": { "en": "Ramadan should begin clearly, not with fasts just in case. Regular voluntary fasts are the exception.", "de": "Der Ramadan soll klar beginnen, nicht mit Fastentagen „für alle Fälle“. Gewohnte freiwillige Fasten sind die Ausnahme.", "ar": "يبدأ رمضان بداية واضحة، لا بصيام احتياطي قبله، إلا لمن وافق صومًا اعتاده." }
+        },
+        {
+          "verse": "2:142",
+          "check": "qiblah",
+          "title": { "en": "The change of qiblah", "de": "Der Wechsel der Gebetsrichtung", "ar": "تحويل القبلة" },
+          "body": { "en": "About sixteen or seventeen months after the Hijrah, the qiblah turned from Jerusalem to the Ka'bah. Many date it to Rajab or Sha'ban of 2 AH.", "de": "Etwa sechzehn oder siebzehn Monate nach der Hidschra wechselte die Gebetsrichtung von Jerusalem zur Kaaba. Viele datieren dies auf Radschab oder Scha'ban 2 n. H.", "ar": "بعد الهجرة بنحو ستة عشر أو سبعة عشر شهرًا تحولت القبلة من بيت المقدس إلى الكعبة، ويؤرخها كثيرون برجب أو شعبان سنة ٢ هـ." }
+        },
+        {
+          "title": { "en": "The middle of Sha'ban", "de": "Die Mitte des Scha'ban", "ar": "النصف من شعبان" },
+          "body": { "en": "Many Muslims spend the 15th night in prayer and dua; scholars differ on the strength of the narrations about it. In the Shia tradition it is also the birthday of Imam al-Mahdi.", "de": "Viele Muslime verbringen die 15. Nacht im Gebet und mit Bittgebeten; die Gelehrten sind über die Stärke der Überlieferungen dazu uneins. In der schiitischen Tradition ist sie zudem der Geburtstag von Imam al-Mahdi.", "ar": "يحيي كثير من المسلمين ليلة النصف من شعبان بالصلاة والدعاء، واختلف العلماء في قوة الروايات الواردة فيها. وهي في التقليد الشيعي ذكرى مولد الإمام المهدي." }
+        },
+        {
+          "title": { "en": "Before Ramadan arrives", "de": "Bevor der Ramadan kommt", "ar": "قبل أن يأتي رمضان" },
+          "list": {
+            "en": ["Make up missed fasts", "Fast some days of Sha'ban", "Build a habit of night prayer", "Plan your Ramadan Quran reading"],
+            "de": ["Versäumte Fastentage nachholen", "Einige Tage im Scha'ban fasten", "Eine Gewohnheit des Nachtgebets aufbauen", "Die Koranlesung für den Ramadan planen"],
+            "ar": ["اقضِ ما فاتك من صيام", "صم أيامًا من شعبان", "اعتد صلاة الليل", "خطط لقراءتك القرآن في رمضان"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Manzur, Lisan al-Arab, entry sh-'-b" }]
+    },
+    {
+      "id": "islamic-months-09-ramadan",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 9", "de": "Die islamischen Monate · 9", "ar": "الأشهر الهجرية · ٩" },
+        "title": { "en": "Ramadan", "de": "Ramadan", "ar": "رمضان" },
+        "sub": { "en": "The month of the Quran, of fasting and of the Night of Decree", "de": "Der Monat des Korans, des Fastens und der Nacht der Bestimmung", "ar": "شهر القرآن والصيام وليلة القدر" },
+        "arabic": "رَمَضَان"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ر م ض",
+          "body": { "en": "From ramad, intense heat. Some explain the name by the hot season in which it was named; others say fasting burns away sins.", "de": "Von ramad, „große Hitze“. Manche erklären den Namen mit der heißen Jahreszeit, in der er entstand; andere sagen, das Fasten verbrenne die Sünden.", "ar": "من الرَّمَض وهو شدة الحر؛ فقيل سُمّي بذلك لحرّ الزمن الذي سُمّي فيه، وقيل لأن الصيام يحرق الذنوب." }
+        },
+        {
+          "verse": "2:183",
+          "check": "decreed upon you",
+          "title": { "en": "Fasting prescribed", "de": "Das vorgeschriebene Fasten", "ar": "فريضة الصيام" },
+          "body": { "en": "Fasting is not new: earlier communities fasted too. Its goal is taqwa, an awareness of Allah.", "de": "Das Fasten ist nicht neu: Auch frühere Gemeinschaften fasteten. Sein Ziel ist Taqwa, das Bewusstsein für Allah.", "ar": "الصيام ليس جديدًا، فقد صامت الأمم السابقة، وغايته التقوى." }
+        },
+        {
+          "verse": "97:1-3",
+          "check": "Night of Decree",
+          "title": { "en": "The Night of Decree", "de": "Die Nacht der Bestimmung", "ar": "ليلة القدر" },
+          "body": { "en": "The Quran began to descend in Ramadan. One of its nights outweighs a thousand months.", "de": "Im Ramadan begann die Herabsendung des Korans. Eine einzige seiner Nächte wiegt tausend Monate auf.", "ar": "في رمضان بدأ نزول القرآن، وليلة واحدة منه تفوق ألف شهر." }
+        },
+        {
+          "hadith": "bukhari:38",
+          "check": "sincere faith",
+          "title": { "en": "With faith and hope", "de": "Mit Glauben und Hoffnung", "ar": "بإيمان ورجاء" },
+          "body": { "en": "Fasting with conviction and hoping for Allah's reward wipes away past sins.", "de": "Wer mit Überzeugung fastet und auf Allahs Lohn hofft, dem werden frühere Sünden vergeben.", "ar": "الصيام عن يقين ورجاء لثواب الله يمحو ما سلف من الذنوب." }
+        },
+        {
+          "hadith": "bukhari:6",
+          "check": "most generous",
+          "title": { "en": "The month of generosity", "de": "Der Monat der Großzügigkeit", "ar": "شهر الجود" },
+          "body": { "en": "Every night Jibril reviewed the Quran with the Prophet, and his generosity grew stronger than the wind.", "de": "Jede Nacht ging Dschibril mit dem Propheten den Koran durch, und seine Großzügigkeit wurde stärker als der Wind.", "ar": "كان جبريل يلقى النبي ﷺ كل ليلة لمراجعة القرآن، فيبلغ كرمه ذروته." }
+        },
+        {
+          "hadith": "bukhari:2020",
+          "check": "last ten nights",
+          "title": { "en": "The last ten nights", "de": "Die letzten zehn Nächte", "ar": "العشر الأواخر" },
+          "body": { "en": "He secluded himself in the mosque in the last ten nights and sought Laylat al-Qadr in them.", "de": "In den letzten zehn Nächten zog er sich in die Moschee zurück und suchte in ihnen die Nacht der Bestimmung.", "ar": "كان يعتكف في المسجد في العشر الأواخر ويلتمس فيها ليلة القدر." }
+        },
+        {
+          "verse": "3:123",
+          "check": "Badr",
+          "title": { "en": "Badr and the conquest", "de": "Badr und die Eroberung", "ar": "بدر والفتح" },
+          "body": { "en": "Badr was fought on 17 Ramadan 2 AH; Makkah was opened in Ramadan 8 AH. Victories came in the month of fasting.", "de": "Die Schlacht von Badr fand am 17. Ramadan 2 n. H. statt; Mekka wurde im Ramadan 8 n. H. geöffnet. Siege kamen im Monat des Fastens.", "ar": "وقعت بدر في السابع عشر من رمضان سنة ٢ هـ، وفُتحت مكة في رمضان سنة ٨ هـ، فكانت انتصارات في شهر الصيام." }
+        },
+        {
+          "title": { "en": "Remembering Ali", "de": "Gedenken an Ali", "ar": "ذكرى علي" },
+          "body": { "en": "In Ramadan 40 AH, Ali ibn Abi Talib was struck at the Fajr prayer in the mosque of Kufa and died days later. Shia Muslims mourn him on the 21st; Sunni Muslims honour him as the fourth caliph.", "de": "Im Ramadan 40 n. H. wurde Ali ibn Abi Talib beim Fajr-Gebet in der Moschee von Kufa niedergeschlagen und starb Tage später. Schiiten trauern am 21. um ihn, Sunniten ehren ihn als vierten Kalifen.", "ar": "في رمضان سنة ٤٠ هـ ضُرب علي بن أبي طالب في صلاة الفجر بمسجد الكوفة، وتوفي بعد أيام. يحيي الشيعة ذكراه في الحادي والعشرين، ويجلّه أهل السنة رابعًا للخلفاء." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Hisham, as-Sira an-Nabawiyya, on Badr and the conquest of Makkah" },
+        { "label": "Ibn Manzur, Lisan al-Arab, entry r-m-d" }
+      ]
+    },
+    {
+      "id": "islamic-months-10-shawwal",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 10", "de": "Die islamischen Monate · 10", "ar": "الأشهر الهجرية · ١٠" },
+        "title": { "en": "Shawwal", "de": "Schawwal", "ar": "شوال" },
+        "sub": { "en": "Eid al-Fitr, six fasts and the lessons of Uhud", "de": "Das Fest des Fastenbrechens, sechs Fastentage und die Lehren von Uhud", "ar": "عيد الفطر وست من شوال ودروس أحد" },
+        "arabic": "شَوَّال"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ش و ل",
+          "body": { "en": "From shala, 'to lift'. Lexicons explain that she-camels raised their tails in this season, when their milk grew scarce.", "de": "Von schala, „heben“. Wörterbücher erklären, dass die Kamelstuten in dieser Zeit den Schwanz hoben, als ihre Milch knapp wurde.", "ar": "من شالَ أي ارتفع، وتذكر المعاجم أن النوق كانت تشول بأذنابها في هذا الوقت إذ يقلّ لبنها." }
+        },
+        {
+          "hadith": "bukhari:953",
+          "check": "dates",
+          "title": { "en": "Eid on the first day", "de": "Das Fest am ersten Tag", "ar": "العيد في أوله" },
+          "body": { "en": "Shawwal opens with Eid al-Fitr. The Prophet ate a few dates before going out to the prayer.", "de": "Der Schawwal beginnt mit dem Fest des Fastenbrechens. Der Prophet aß einige Datteln, bevor er zum Gebet hinausging.", "ar": "يبدأ شوال بعيد الفطر، وكان النبي ﷺ يأكل تمرات قبل خروجه إلى الصلاة." }
+        },
+        {
+          "hadith": "muslim:2758",
+          "check": "six",
+          "title": { "en": "Six more days", "de": "Sechs weitere Tage", "ar": "ستة أيام أخرى" },
+          "body": { "en": "Six days of fasting in Shawwal, after Ramadan, carry an immense reward.", "de": "Sechs Fastentage im Schawwal nach dem Ramadan tragen einen gewaltigen Lohn.", "ar": "ستة أيام من شوال بعد رمضان لها أجر عظيم." }
+        },
+        {
+          "hadith": "bukhari:6464",
+          "check": "most beloved deed",
+          "title": { "en": "Keep the Ramadan habits", "de": "Die Ramadan-Gewohnheiten bewahren", "ar": "حافظ على عادات رمضان" },
+          "body": { "en": "Do not let everything stop with Eid. A small deed done constantly is most beloved to Allah.", "de": "Lassen Sie mit dem Fest nicht alles enden. Eine kleine, beständige Tat ist Allah am liebsten.", "ar": "لا تجعل كل شيء يتوقف بعد العيد، فالعمل اليسير المستمر محبوب عند الله." }
+        },
+        {
+          "hadith": "muslim:3483",
+          "check": "Shawwal",
+          "title": { "en": "A wedding in Shawwal", "de": "Eine Hochzeit im Schawwal", "ar": "زواج في شوال" },
+          "body": { "en": "Scholars such as an-Nawawi explain that Aishah mentioned this to reject an old belief that weddings in Shawwal bring bad luck.", "de": "Gelehrte wie an-Nawawi erklären, dass Aischa dies erwähnte, um den alten Glauben zurückzuweisen, Hochzeiten im Schawwal brächten Unglück.", "ar": "يذكر علماء كالنووي أن عائشة قالت ذلك ردًّا على اعتقاد قديم بأن الزواج في شوال شؤم." }
+        },
+        {
+          "verse": "3:121",
+          "check": "battle",
+          "title": { "en": "Uhud", "de": "Uhud", "ar": "أُحد" },
+          "body": { "en": "In Shawwal 3 AH the battle of Uhud took place near Madinah. Its lessons on patience fill much of Surah Al Imran.", "de": "Im Schawwal 3 n. H. fand nahe Medina die Schlacht von Uhud statt. Ihre Lehren über Geduld füllen einen großen Teil der Sure Al Imran.", "ar": "في شوال سنة ٣ هـ وقعت غزوة أحد قرب المدينة، وتملأ دروسها في الصبر جزءًا كبيرًا من سورة آل عمران." }
+        },
+        {
+          "title": { "en": "After Ramadan", "de": "Nach dem Ramadan", "ar": "بعد رمضان" },
+          "list": {
+            "en": ["Fast six days of Shawwal", "Keep a little night prayer", "Keep your daily Quran portion", "Hold on to one new habit"],
+            "de": ["Sechs Tage im Schawwal fasten", "Ein wenig Nachtgebet beibehalten", "Die tägliche Koran-Portion beibehalten", "An einer neuen Gewohnheit festhalten"],
+            "ar": ["صم ستًّا من شوال", "حافظ على شيء من قيام الليل", "داوم على وردك اليومي من القرآن", "تمسّك بعادة جديدة واحدة"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "an-Nawawi, al-Minhaj Sharh Sahih Muslim, on the marriage in Shawwal" },
+        { "label": "Ibn Manzur, Lisan al-Arab, entry sh-w-l" }
+      ]
+    },
+    {
+      "id": "islamic-months-11-dhul-qadah",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 11", "de": "Die islamischen Monate · 11", "ar": "الأشهر الهجرية · ١١" },
+        "title": { "en": "Dhul-Qa'dah", "de": "Dhul-Qa'da", "ar": "ذو القعدة" },
+        "sub": { "en": "The month of sitting, of umrah and of the treaty of Hudaybiyyah", "de": "Der Monat des Sitzens, der Umra und des Vertrags von Hudaibiya", "ar": "شهر القعود والعمرة وصلح الحديبية" },
+        "arabic": "ذُو القَعْدَة"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ق ع د",
+          "body": { "en": "'The one of sitting'. As it is a sacred month, the Arabs stayed at home and refrained from fighting.", "de": "„Der des Sitzens“. Weil er ein heiliger Monat ist, blieben die Araber zu Hause und verzichteten auf Kämpfe.", "ar": "ذو القعدة أي شهر القعود، فقد كان العرب يقعدون فيه عن القتال لأنه من الأشهر الحرم." }
+        },
+        {
+          "title": { "en": "The month of umrah", "de": "Der Monat der Umra", "ar": "شهر العمرة" },
+          "body": { "en": "Three of the Prophet's four umrahs took place in Dhul-Qa'dah: from Hudaybiyyah, a year later, and from al-Ji'ranah. The fourth was joined to his Hajj.", "de": "Drei der vier Umras des Propheten fanden im Dhul-Qa'da statt: von Hudaibiya, ein Jahr später und von al-Dschi'rana. Die vierte war mit seiner Hadsch verbunden.", "ar": "ثلاث من عُمَر النبي ﷺ الأربع كانت في ذي القعدة: عمرة الحديبية، والتي بعدها بعام، وعمرة الجعرانة، والرابعة مع حجته." }
+        },
+        {
+          "title": { "en": "Hudaybiyyah", "de": "Hudaibiya", "ar": "الحديبية" },
+          "body": { "en": "In Dhul-Qa'dah 6 AH, the Muslims set out for umrah but were stopped at Hudaybiyyah. The treaty signed there looked like a loss, but it opened the way to peace.", "de": "Im Dhul-Qa'da 6 n. H. brachen die Muslime zur Umra auf, wurden aber bei Hudaibiya aufgehalten. Der dort geschlossene Vertrag wirkte wie eine Niederlage, öffnete aber den Weg zum Frieden.", "ar": "في ذي القعدة سنة ٦ هـ خرج المسلمون للعمرة فصُدّوا عند الحديبية، وبدا الصلح الذي عُقد هناك خسارة، لكنه فتح طريق السلام." }
+        },
+        {
+          "verse": "48:18",
+          "check": "under the tree",
+          "title": { "en": "The pledge under the tree", "de": "Der Treueid unter dem Baum", "ar": "بيعة الرضوان" },
+          "body": { "en": "At Hudaybiyyah the Companions pledged their loyalty to the Prophet, and Allah declared His pleasure with them.", "de": "Bei Hudaibiya leisteten die Gefährten dem Propheten den Treueid, und Allah erklärte Sein Wohlgefallen an ihnen.", "ar": "في الحديبية بايع الصحابة النبي ﷺ، فأعلن الله رضاه عنهم." }
+        },
+        {
+          "verse": "48:1",
+          "check": "clear conquest",
+          "title": { "en": "A clear victory", "de": "Ein klarer Sieg", "ar": "فتح مبين" },
+          "body": { "en": "On the way back from Hudaybiyyah, Surah al-Fath was revealed. It called the treaty a clear victory.", "de": "Auf dem Rückweg von Hudaibiya wurde die Sure al-Fath offenbart. Sie nannte den Vertrag einen klaren Sieg.", "ar": "في طريق العودة من الحديبية نزلت سورة الفتح، فسمّت الصلح فتحًا." }
+        },
+        {
+          "verse": "48:27",
+          "check": "vision",
+          "title": { "en": "A promise fulfilled", "de": "Ein erfülltes Versprechen", "ar": "وعد تحقق" },
+          "body": { "en": "A year later, in Dhul-Qa'dah 7 AH, the Muslims entered Makkah in peace for the umrah promised in the Prophet's dream.", "de": "Ein Jahr später, im Dhul-Qa'da 7 n. H., zogen die Muslime friedlich in Mekka ein, zu der Umra, die der Traum des Propheten verheißen hatte.", "ar": "بعد عام، في ذي القعدة سنة ٧ هـ، دخل المسلمون مكة آمنين لأداء العمرة التي بشّرت بها رؤيا النبي ﷺ." }
+        },
+        {
+          "verse": "2:197",
+          "check": "well-known months",
+          "title": { "en": "The months of Hajj", "de": "Die Monate der Hadsch", "ar": "أشهر الحج" },
+          "body": { "en": "Dhul-Qa'dah belongs to the months of Hajj. Pilgrims set out and prepare their hearts.", "de": "Der Dhul-Qa'da gehört zu den Monaten der Hadsch. Die Pilger brechen auf und bereiten ihre Herzen vor.", "ar": "ذو القعدة من أشهر الحج، فيه ينطلق الحجاج ويهيئون قلوبهم." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Hisham, as-Sira an-Nabawiyya, on Hudaybiyyah" },
+        { "label": "Sahih al-Bukhari 1778, Anas on the Prophet's umrahs" },
+        { "label": "Ibn Manzur, Lisan al-Arab, entry q-'-d" }
+      ]
+    },
+    {
+      "id": "islamic-months-12-dhul-hijjah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "The Islamic months · 12", "de": "Die islamischen Monate · 12", "ar": "الأشهر الهجرية · ١٢" },
+        "title": { "en": "Dhul-Hijjah", "de": "Dhul-Hiddscha", "ar": "ذو الحجة" },
+        "sub": { "en": "Hajj, Arafah and Eid al-Adha: the last month of the year", "de": "Hadsch, Arafa und Opferfest: der letzte Monat des Jahres", "ar": "الحج وعرفة وعيد الأضحى: خاتمة العام" },
+        "arabic": "ذُو الحِجَّة"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "arabic": "ح ج ج",
+          "body": { "en": "'The one of the pilgrimage'. A sacred month: the rites of Hajj take place in its first days, and it closes the Hijri year.", "de": "„Der der Pilgerfahrt“. Ein heiliger Monat: In seinen ersten Tagen finden die Riten der Hadsch statt, und er beschließt das Hidschra-Jahr.", "ar": "ذو الحجة أي شهر الحج، وهو من الأشهر الحرم، تُؤدّى في أيامه الأولى مناسك الحج، وبه تُختم السنة الهجرية." }
+        },
+        {
+          "hadith": "bukhari:969",
+          "check": "first ten days",
+          "title": { "en": "The best ten days", "de": "Die besten zehn Tage", "ar": "خير الأيام العشر" },
+          "body": { "en": "Fasting, dhikr, charity: good deeds in these ten days surpass those of any other days.", "de": "Fasten, Dhikr, Spenden: Gute Taten in diesen zehn Tagen übertreffen die aller anderen Tage.", "ar": "صيام وذكر وصدقة: العمل الصالح في هذه العشر يفوق العمل في سائر الأيام." }
+        },
+        {
+          "verse": "22:27",
+          "check": "proclaim",
+          "title": { "en": "The call to Hajj", "de": "Der Ruf zur Hadsch", "ar": "النداء إلى الحج" },
+          "body": { "en": "Ibrahim was told to call people to Hajj. Ever since, they have come from every corner of the earth.", "de": "Ibrahim wurde geboten, die Menschen zur Hadsch zu rufen. Seitdem kommen sie aus allen Winkeln der Erde.", "ar": "أُمر إبراهيم أن ينادي الناس بالحج، ومنذ ذلك الحين يأتون من كل أنحاء الأرض." }
+        },
+        {
+          "dua": "hisn:119:0",
+          "check": "best of supplications",
+          "title": { "en": "The Day of Arafah", "de": "Der Tag von Arafa", "ar": "يوم عرفة" },
+          "body": { "en": "Arafah is the greatest day of dua. Those not on Hajj are encouraged to fast it.", "de": "Arafa ist der größte Tag des Bittgebets. Wer nicht auf der Pilgerfahrt ist, dem wird das Fasten an diesem Tag empfohlen.", "ar": "يوم عرفة أعظم مواسم الدعاء، ويُستحب لغير الحاج صيامه." }
+        },
+        {
+          "hadith": "bukhari:45",
+          "check": "perfected",
+          "title": { "en": "The religion perfected", "de": "Die Religion vervollkommnet", "ar": "إكمال الدين" },
+          "body": { "en": "The verse on the perfection of the religion came down on a Friday, while the Prophet stood at Arafah during his Farewell Hajj in 10 AH.", "de": "Der Vers über die Vollendung der Religion wurde an einem Freitag offenbart, als der Prophet bei seiner Abschiedswallfahrt 10 n. H. am Arafa stand.", "ar": "نزلت آية إكمال الدين يوم جمعة والنبي ﷺ واقف بعرفة في حجة الوداع سنة ١٠ هـ." }
+        },
+        {
+          "verse": "22:37",
+          "check": "piety",
+          "title": { "en": "What reaches Allah", "de": "Was Allah erreicht", "ar": "ما يصل إلى الله" },
+          "body": { "en": "The sacrifice of Eid al-Adha is a matter of the heart: Allah looks at the taqwa behind it.", "de": "Das Opfer am Opferfest ist eine Sache des Herzens: Allah schaut auf die Gottesfurcht dahinter.", "ar": "أضحية العيد عمل قلبي قبل كل شيء، والله ينظر إلى التقوى التي وراءها." }
+        },
+        {
+          "hadith": "muslim:2677",
+          "check": "Tashriq",
+          "title": { "en": "Days of feasting", "de": "Tage des Feierns", "ar": "أيام التشريق" },
+          "body": { "en": "The three days after Eid, the days of Tashriq, are for eating, drinking and remembering Allah, not for fasting.", "de": "Die drei Tage nach dem Fest, die Taschriq-Tage, sind zum Essen, Trinken und Gedenken Allahs da, nicht zum Fasten.", "ar": "الأيام الثلاثة بعد العيد، أيام التشريق، للطعام والذكر والفرح، لا للصيام." }
+        },
+        {
+          "title": { "en": "Ghadir Khumm", "de": "Ghadir Chumm", "ar": "غدير خم" },
+          "body": { "en": "On the way back from the Farewell Hajj, at Ghadir Khumm, the Prophet spoke about Ali. Shia Muslims celebrate the 18th of Dhul-Hijjah as Eid al-Ghadir; Sunni scholars also record his words there.", "de": "Auf dem Rückweg von der Abschiedswallfahrt sprach der Prophet bei Ghadir Chumm über Ali. Schiitische Muslime feiern den 18. Dhul-Hiddscha als Ghadir-Fest; auch sunnitische Gelehrte überliefern seine dortigen Worte.", "ar": "في طريق العودة من حجة الوداع تحدث النبي ﷺ عند غدير خم عن علي. ويحتفل الشيعة بالثامن عشر من ذي الحجة عيدًا للغدير، ويروي علماء السنة أيضًا كلامه هناك." }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, al-Bidaya wa an-Nihaya, on the Farewell Hajj and Ghadir Khumm" }]
+    }
+  ]
+}

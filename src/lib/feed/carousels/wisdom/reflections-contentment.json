@@ -1,0 +1,120 @@
+{
+  "set": "reflections-contentment",
+  "kind": "reflection",
+  "theme": "contentment",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-contentment-01",
+      "text": {
+        "en": "Contentment is enjoying your tea without checking whether someone else's cup is bigger.",
+        "de": "Zufriedenheit heißt, Ihren Tee zu genießen, ohne nachzusehen, ob die Tasse eines anderen größer ist.",
+        "ar": "القناعة أن تستمتع بشايك دون أن تنظر هل كوب غيرك أكبر."
+      }
+    },
+    {
+      "id": "wr-contentment-02",
+      "text": {
+        "en": "A small home filled with gratitude is more spacious than a palace filled with complaints.",
+        "de": "Ein kleines Zuhause voller Dankbarkeit ist geräumiger als ein Palast voller Klagen.",
+        "ar": "البيت الصغير المملوء شكرا أوسع من قصر مملوء شكوى."
+      }
+    },
+    {
+      "id": "wr-contentment-03",
+      "text": {
+        "en": "Scrolling through other people's highlights can make your own life look small. Put the phone down and look around you.",
+        "de": "Durch die Höhepunkte anderer zu scrollen, kann Ihr eigenes Leben klein wirken lassen. Legen Sie das Telefon weg und schauen Sie sich um.",
+        "ar": "تصفح لحظات الآخرين المختارة قد يجعل حياتك تبدو صغيرة، فضع الهاتف جانبا وانظر حولك."
+      }
+    },
+    {
+      "id": "wr-contentment-04",
+      "text": {
+        "en": "Contentment does not mean you stop striving. It means you stop believing that happiness lives only in the next purchase.",
+        "de": "Zufriedenheit heißt nicht, dass Sie aufhören, sich zu bemühen. Sie heißt, dass Sie nicht mehr glauben, das Glück wohne nur im nächsten Kauf.",
+        "ar": "القناعة لا تعني أن تتوقف عن السعي، بل أن تكف عن الاعتقاد بأن السعادة لا تسكن إلا في الشراء القادم."
+      }
+    },
+    {
+      "id": "wr-contentment-05",
+      "text": {
+        "en": "Bread, water, a roof and people who love you: on most days, that is more than enough.",
+        "de": "Brot, Wasser, ein Dach und Menschen, die Sie lieben: An den meisten Tagen ist das mehr als genug.",
+        "ar": "خبز، وماء، وسقف، وأناس يحبونك: في أغلب الأيام هذا أكثر من كاف."
+      }
+    },
+    {
+      "id": "wr-contentment-06",
+      "text": {
+        "en": "Contentment is a quiet room inside you that no market, advertisement or rumour can enter.",
+        "de": "Zufriedenheit ist ein stiller Raum in Ihnen, den kein Markt, keine Werbung und kein Gerücht betreten kann.",
+        "ar": "القناعة غرفة هادئة في داخلك لا يدخلها سوق ولا إعلان ولا شائعة."
+      }
+    },
+    {
+      "id": "wr-contentment-07",
+      "text": {
+        "en": "Being pleased with what Allah has chosen for you is not giving up. It is finally being at peace.",
+        "de": "Mit dem zufrieden zu sein, was Allah für Sie gewählt hat, ist kein Aufgeben. Es ist endlich Frieden.",
+        "ar": "الرضا بما اختاره الله لك ليس استسلاما، بل هو السلام أخيرا."
+      }
+    },
+    {
+      "id": "wr-contentment-08",
+      "text": {
+        "en": "The child who is happy with a cardboard box and a stick knows something adults often forget.",
+        "de": "Das Kind, das mit einem Karton und einem Stock glücklich ist, weiß etwas, das Erwachsene oft vergessen.",
+        "ar": "الطفل السعيد بصندوق من الورق المقوى وعصا يعرف شيئا كثيرا ما ينساه الكبار."
+      }
+    },
+    {
+      "id": "wr-contentment-09",
+      "text": {
+        "en": "Wanting less is sometimes the fastest way to having enough.",
+        "de": "Weniger zu wollen ist manchmal der schnellste Weg, genug zu haben.",
+        "ar": "أن تريد أقل هو أحيانا أسرع طريق إلى أن يكون لديك ما يكفي."
+      }
+    },
+    {
+      "id": "wr-contentment-10",
+      "text": {
+        "en": "A simple meal eaten slowly with family is a feast that money alone cannot buy.",
+        "de": "Eine einfache Mahlzeit, langsam mit der Familie gegessen, ist ein Festmahl, das Geld allein nicht kaufen kann.",
+        "ar": "وجبة بسيطة تؤكل على مهل مع الأسرة وليمة لا يشتريها المال وحده."
+      }
+    },
+    {
+      "id": "wr-contentment-11",
+      "text": {
+        "en": "Contentment is not the absence of wishes. It is wishing with a calm heart and trusting whatever the answer will be.",
+        "de": "Zufriedenheit ist nicht das Fehlen von Wünschen. Sie heißt, mit ruhigem Herzen zu wünschen und der Antwort zu vertrauen, wie auch immer sie ausfällt.",
+        "ar": "القناعة ليست غياب الأماني، بل أن تتمنى بقلب هادئ واثقا بالجواب أيا كان."
+      }
+    },
+    {
+      "id": "wr-contentment-12",
+      "text": {
+        "en": "Count the things in your life you would not trade for any amount of money. You are richer than you think.",
+        "de": "Zählen Sie die Dinge in Ihrem Leben, die Sie für kein Geld der Welt eintauschen würden. Sie sind reicher, als Sie denken.",
+        "ar": "عد الأشياء في حياتك التي لن تبادلها بأي مال، فأنت أغنى مما تظن."
+      }
+    },
+    {
+      "id": "wr-contentment-13",
+      "text": {
+        "en": "The contented sleep well in a small bed; the greedy lie awake in a large one.",
+        "de": "Wer zufrieden ist, schläft gut in einem kleinen Bett; der Gierige liegt wach in einem großen.",
+        "ar": "القانع ينام هانئا في سرير صغير، والطماع يسهر في سرير كبير."
+      }
+    },
+    {
+      "id": "wr-contentment-14",
+      "text": {
+        "en": "When a wish is not granted, try saying: perhaps this is protection. Many hearts have found peace in that one thought.",
+        "de": "Wenn ein Wunsch nicht erfüllt wird, versuchen Sie zu sagen: Vielleicht ist das ein Schutz. Viele Herzen haben in diesem einen Gedanken Frieden gefunden.",
+        "ar": "إذا لم تتحقق أمنية فجرب أن تقول: لعل في هذا حماية، فكم من قلب وجد السكينة في هذه الفكرة وحدها."
+      }
+    }
+  ]
+}

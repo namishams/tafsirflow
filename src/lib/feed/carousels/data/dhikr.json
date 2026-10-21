@@ -1,0 +1,310 @@
+{
+  "series": "dhikr",
+  "label": { "en": "Dhikr", "de": "Gedenken Allahs", "ar": "الذكر" },
+  "topic": "duas",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "dhikr-after-prayer",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Dhikr · 1", "de": "Gedenken Allahs · 1", "ar": "الذكر · ١" },
+        "title": { "en": "Dhikr after the prayer", "de": "Gedenken nach dem Gebet", "ar": "الأذكار بعد الصلاة" },
+        "sub": { "en": "The few minutes after the salam that many hurry past: what the Prophet said and taught.", "de": "Die wenigen Minuten nach dem Salam, an denen viele vorbeieilen: was der Prophet sagte und lehrte.", "ar": "دقائق قليلة بعد السلام يستعجل عنها كثيرون: ما كان النبي ﷺ يقوله ويعلّمه." },
+        "arabic": "أذكار الصلاة"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:1334",
+          "check": "begged forgiveness three times",
+          "title": { "en": "First: seek forgiveness", "de": "Zuerst: um Vergebung bitten", "ar": "أولًا: الاستغفار" },
+          "body": { "en": "Even after prayer, the Prophet began with istighfar. No prayer is perfect; humility completes it.", "de": "Selbst nach dem Gebet begann der Prophet mit Istighfar. Kein Gebet ist vollkommen; Demut vervollständigt es.", "ar": "حتى بعد الصلاة كان النبي ﷺ يبدأ بالاستغفار؛ فلا صلاة كاملة، والتواضع يتمّها." }
+        },
+        {
+          "dua": "hisn:25:1",
+          "check": "none can prevent what You have willed to bestow",
+          "title": { "en": "Then the words of tawhid", "de": "Dann die Worte des Tauhid", "ar": "ثم كلمات التوحيد" },
+          "body": { "en": "Al-Bukhari reports that the Prophet said this after every obligatory prayer. A reminder of who truly gives.", "de": "Al-Buchari berichtet, dass der Prophet es nach jedem Pflichtgebet sprach. Eine Erinnerung daran, wer wirklich gibt.", "ar": "روى البخاري أن النبي ﷺ كان يقوله بعد كل صلاة مكتوبة، تذكيرًا بمن يعطي حقًّا." }
+        },
+        {
+          "hadith": "muslim:1352",
+          "check": "thirty-three times",
+          "title": { "en": "33, 33, 33 and one", "de": "33, 33, 33 und eins", "ar": "٣٣ و٣٣ و٣٣ وواحدة" },
+          "body": { "en": "About two minutes, counted on the fingers. Hisnul Muslim notes that the Prophet counted tasbih on his right hand.", "de": "Etwa zwei Minuten, an den Fingern gezählt. Hisnul Muslim vermerkt, dass der Prophet den Tasbih an der rechten Hand zählte.", "ar": "دقيقتان تقريبًا تعدّها على أصابعك، وفي حصن المسلم أن النبي ﷺ كان يعدّ التسبيح بيده اليمنى." }
+        },
+        {
+          "dua": "hisn:25:5",
+          "check": "Aayat ul-Kursee after each prayer",
+          "title": { "en": "Ayat al-Kursi after each prayer", "de": "Ayat al-Kursi nach jedem Gebet", "ar": "آية الكرسي بعد كل صلاة" },
+          "body": { "en": "Hisnul Muslim lists it as a sunnah after every prayer: one verse, about a minute.", "de": "Hisnul Muslim nennt sie als Sunna nach jedem Gebet: ein Vers, etwa eine Minute.", "ar": "يذكرها حصن المسلم سنةً بعد كل صلاة: آية واحدة في نحو دقيقة." }
+        },
+        {
+          "dua": "hisn:25:4",
+          "check": "three Soorahs should be recited once",
+          "title": { "en": "The three Quls", "de": "Die drei Schutzsuren", "ar": "المعوّذات" },
+          "body": { "en": "Once after Dhuhr, Asr and Isha; three times after Fajr and Maghrib, as Hisnul Muslim lists them.", "de": "Einmal nach Dhuhr, Asr und Ischa, dreimal nach Fadschr und Maghrib, wie Hisnul Muslim sie auflistet.", "ar": "مرة بعد الظهر والعصر والعشاء، وثلاثًا بعد الفجر والمغرب، كما في حصن المسلم." }
+        },
+        {
+          "verse": "62:10",
+          "check": "remember Allāh often",
+          "title": { "en": "Then go out and remember", "de": "Dann hinausgehen und gedenken", "ar": "ثم امضِ واذكر الله" },
+          "body": { "en": "The prayer ends, the remembrance does not. Take it with you into work and life.", "de": "Das Gebet endet, das Gedenken nicht. Nehmen Sie es mit in Arbeit und Alltag.", "ar": "تنتهي الصلاة ولا ينتهي الذكر، فاحمله معك إلى عملك وحياتك." }
+        }
+      ]
+    },
+    {
+      "id": "dhikr-best-words",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Dhikr · 2", "de": "Gedenken Allahs · 2", "ar": "الذكر · ٢" },
+        "title": { "en": "The best words of dhikr", "de": "Die besten Worte des Gedenkens", "ar": "أفضل كلمات الذكر" },
+        "sub": { "en": "Four short phrases, a few seconds each, that carry more weight than they seem.", "de": "Vier kurze Sätze, je wenige Sekunden lang, die mehr wiegen, als es scheint.", "ar": "أربع كلمات قصيرة، ثوانٍ معدودة، أثقل مما تبدو." },
+        "arabic": "سبحان الله والحمد لله"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:5601",
+          "check": "dearest phrases to Allah are four",
+          "title": { "en": "The four dearest phrases", "de": "Die vier liebsten Sätze", "ar": "الكلمات الأربع" },
+          "body": { "en": "Easy for a child to learn, deep enough for a lifetime.", "de": "Leicht zu lernen für ein Kind, tief genug für ein ganzes Leben.", "ar": "يسهل على الطفل حفظها، وتكفي عمقًا لعمر كامل." }
+        },
+        {
+          "hadith": "muslim:6847",
+          "check": "anything over which the sun rises",
+          "title": { "en": "Better than the whole world", "de": "Besser als die ganze Welt", "ar": "خير من الدنيا" },
+          "body": { "en": "A measure of value: a few seconds of dhikr against everything this world can offer.", "de": "Ein Maßstab für Wert: wenige Sekunden Gedenken gegen alles, was diese Welt bieten kann.", "ar": "ميزان للقيمة: ثوانٍ من الذكر في مقابل كل ما تقدمه الدنيا." }
+        },
+        {
+          "hadith": "bukhari:7563",
+          "check": "very heavy in weight in the balance",
+          "title": { "en": "Two light words", "de": "Zwei leichte Worte", "ar": "كلمتان خفيفتان" },
+          "body": { "en": "Imam al-Bukhari chose this hadith to close his Sahih.", "de": "Imam al-Buchari wählte diesen Hadith als Abschluss seines Sahih.", "ar": "اختار الإمام البخاري هذا الحديث خاتمةً لصحيحه." }
+        },
+        {
+          "hadith": "muslim:6852",
+          "check": "one thousand virtues",
+          "title": { "en": "A thousand good deeds a day", "de": "Tausend gute Taten am Tag", "ar": "ألف حسنة كل يوم" },
+          "body": { "en": "A hundred times Subhan Allah: a few minutes on the way to work.", "de": "Hundertmal Subhan Allah: wenige Minuten auf dem Weg zur Arbeit.", "ar": "مئة تسبيحة: دقائق قليلة في طريقك إلى العمل." }
+        },
+        {
+          "dua": "hisn:130:10",
+          "check": "the best form of remembrance",
+          "title": { "en": "The best remembrance", "de": "Das beste Gedenken", "ar": "أفضل الذكر" },
+          "body": { "en": "La ilaha illa Allah: the word that brings a person into Islam, and the word we hope to leave this world with.", "de": "La ilaha illa Allah: das Wort, mit dem ein Mensch den Islam betritt, und das Wort, mit dem wir diese Welt verlassen möchten.", "ar": "لا إله إلا الله: الكلمة التي يدخل بها المرء الإسلام، والكلمة التي نرجو أن نختم بها حياتنا." }
+        },
+        {
+          "verse": "18:46",
+          "check": "the enduring good deeds",
+          "title": { "en": "Deeds that last", "de": "Taten, die bleiben", "ar": "الأعمال الباقية" },
+          "body": { "en": "Many exegetes explain 'the enduring good deeds' as these very phrases of dhikr.", "de": "Viele Exegeten deuten „die bleibenden guten Taten“ als genau diese Worte des Gedenkens.", "ar": "فسّر كثير من المفسرين الأعمال الصالحة الباقية المذكورة في الآية بهذه الكلمات من الذكر." }
+        }
+      ]
+    },
+    {
+      "id": "dhikr-istighfar",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Dhikr · 3", "de": "Gedenken Allahs · 3", "ar": "الذكر · ٣" },
+        "title": { "en": "Istighfar: seeking forgiveness", "de": "Istighfar: um Vergebung bitten", "ar": "الاستغفار" },
+        "sub": { "en": "The Prophet asked forgiveness many times a day. Istighfar is not only for bad days.", "de": "Der Prophet bat viele Male am Tag um Vergebung. Istighfar ist nicht nur für schlechte Tage.", "ar": "كان النبي ﷺ يستغفر مرات كثيرة في اليوم؛ فالاستغفار ليس للأيام السيئة وحدها." },
+        "arabic": "أستغفر الله"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6307",
+          "check": "more than seventy times a day",
+          "title": { "en": "More than seventy times", "de": "Mehr als siebzigmal", "ar": "أكثر من سبعين مرة" },
+          "body": { "en": "The best of creation asked forgiveness constantly. Istighfar is a habit of the strong, not a sign of failure.", "de": "Der Beste der Schöpfung bat beständig um Vergebung. Istighfar ist eine Gewohnheit der Starken, kein Zeichen des Scheiterns.", "ar": "كان خير الخلق يستغفر دائمًا؛ فالاستغفار عادة الأقوياء لا علامة فشل." }
+        },
+        {
+          "hadith": "muslim:6858",
+          "check": "a hundred times a day",
+          "title": { "en": "Polishing the heart", "de": "Das Herz polieren", "ar": "جلاء القلب" },
+          "body": { "en": "Hearts gather dust on ordinary days. Istighfar is how they are cleaned, again and again.", "de": "Herzen sammeln an gewöhnlichen Tagen Staub. Istighfar reinigt sie, immer wieder.", "ar": "تتراكم على القلوب غبرة الأيام العادية، والاستغفار يجلوها مرة بعد مرة." }
+        },
+        {
+          "hadith": "bukhari:6306",
+          "check": "most superior way of asking for forgiveness",
+          "title": { "en": "The master of istighfar", "de": "Das vorzüglichste Istighfar", "ar": "سيد الاستغفار" },
+          "body": { "en": "Learn it once and say it every morning and evening. It holds tawhid, gratitude and honesty in a few lines.", "de": "Lernen Sie es einmal und sprechen Sie es jeden Morgen und Abend. Es enthält Tauhid, Dankbarkeit und Ehrlichkeit in wenigen Zeilen.", "ar": "احفظه مرة وقله كل صباح ومساء؛ فيه التوحيد والشكر والصدق في أسطر قليلة." }
+        },
+        {
+          "verse": "71:10-12",
+          "check": "Ask forgiveness of your Lord",
+          "title": { "en": "Istighfar brings blessings", "de": "Istighfar bringt Segen", "ar": "الاستغفار باب للبركات" },
+          "body": { "en": "Nuh linked seeking forgiveness with rain, wealth and children. Istighfar touches this life too.", "de": "Nuh verband die Bitte um Vergebung mit Regen, Wohlstand und Kindern. Istighfar berührt auch dieses Leben.", "ar": "ربط نوح الاستغفار بالمطر والمال والبنين؛ فأثره يمتد إلى الدنيا أيضًا." }
+        },
+        {
+          "verse": "3:135",
+          "check": "seek forgiveness for their sins",
+          "title": { "en": "After a sin", "de": "Nach einer Sünde", "ar": "بعد الذنب" },
+          "body": { "en": "The Quran describes the way back after a fall: turning to Allah at once, and not staying in the sin.", "de": "Der Koran beschreibt den Rückweg nach einem Fehltritt: sich sofort an Allah wenden und nicht in der Sünde verharren.", "ar": "يصف القرآن طريق العودة بعد الزلل: الرجوع إلى الله فورًا وترك الإصرار على الذنب." }
+        },
+        {
+          "dua": "hisn:84:0",
+          "check": "turn towards me",
+          "title": { "en": "In every sitting", "de": "In jeder Sitzung", "ar": "في كل مجلس" },
+          "body": { "en": "Ibn Umar reports that it was counted a hundred times from the Prophet in one sitting. Short enough for any pause in your day.", "de": "Ibn Umar berichtet, dass man es vom Propheten hundertmal in einer Sitzung zählte. Kurz genug für jede Pause am Tag.", "ar": "روى ابن عمر أنه عُدّ للنبي ﷺ مئة مرة في المجلس الواحد، وهو قصير يناسب كل استراحة في يومك." }
+        }
+      ]
+    },
+    {
+      "id": "dhikr-salawat",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Dhikr · 4", "de": "Gedenken Allahs · 4", "ar": "الذكر · ٤" },
+        "title": { "en": "Salawat: blessings on the Prophet", "de": "Salawat: Segenswünsche für den Propheten", "ar": "الصلاة على النبي ﷺ" },
+        "sub": { "en": "A command of the Quran, a reward ten times over and a greeting that reaches him. Why and how.", "de": "Ein Gebot des Korans, ein zehnfacher Lohn und ein Gruß, der ihn erreicht. Warum und wie.", "ar": "أمر قرآني وأجر مضاعف عشرًا وسلام يبلغه: لماذا وكيف." },
+        "arabic": "الصلاة على النبي"
+      },
+      "slides": [
+        {
+          "verse": "33:56",
+          "check": "blessing upon the Prophet",
+          "title": { "en": "The command", "de": "Das Gebot", "ar": "الأمر الإلهي" },
+          "body": { "en": "The verse begins with what Allah and His angels do, and only then turns to the believers. An honour before it is a duty.", "de": "Der Vers beginnt mit dem, was Allah und Seine Engel tun, und wendet sich erst dann an die Gläubigen. Eine Ehre, bevor es eine Pflicht ist.", "ar": "تبدأ الآية بما يفعله الله وملائكته، ثم تتوجه إلى المؤمنين؛ فهي تشريف قبل أن تكون تكليفًا." }
+        },
+        {
+          "hadith": "muslim:912",
+          "check": "Allah would bless him ten times",
+          "title": { "en": "One for ten", "de": "Eins für zehn", "ar": "واحدة بعشر" },
+          "body": { "en": "One of the shortest hadith, and one of the most generous promises.", "de": "Einer der kürzesten Hadithe und eine der großzügigsten Verheißungen.", "ar": "من أقصر الأحاديث، ومن أكرم الوعود." }
+        },
+        {
+          "hadith": "bukhari:4797",
+          "check": "how to invoke Allah for you",
+          "title": { "en": "How to say it", "de": "Wie man sie spricht", "ar": "كيف نصلّي عليه" },
+          "body": { "en": "The companions asked and the Prophet taught them this wording. Many say it in the final tashahhud of every prayer.", "de": "Die Gefährten fragten, und der Prophet lehrte sie diese Form. Viele sprechen sie im letzten Taschahhud jedes Gebets.", "ar": "سأل الصحابة فعلّمهم النبي ﷺ هذه الصيغة، ويقولها كثيرون في التشهد الأخير من كل صلاة." }
+        },
+        {
+          "dua": "hisn:107:4",
+          "check": "Allah returns my soul to me",
+          "title": { "en": "Your greeting reaches him", "de": "Ihr Gruß erreicht ihn", "ar": "سلامك يبلغه" },
+          "body": { "en": "Fourteen centuries and thousands of kilometres do not stand between you and his reply.", "de": "Vierzehn Jahrhunderte und tausende Kilometer stehen nicht zwischen Ihnen und seiner Antwort.", "ar": "لا تحول أربعة عشر قرنًا وآلاف الكيلومترات بينك وبين ردّه." }
+        },
+        {
+          "dua": "hisn:107:2",
+          "check": "A miser is one",
+          "title": { "en": "When his name is mentioned", "de": "Wenn sein Name fällt", "ar": "إذا ذُكر اسمه" },
+          "body": { "en": "Answer his name with a blessing. It costs one breath.", "de": "Antworten Sie auf seinen Namen mit einem Segenswunsch. Es kostet einen Atemzug.", "ar": "قابل ذكر اسمه بالصلاة عليه؛ لا يكلّفك إلا نَفَسًا." }
+        },
+        {
+          "dua": "hisn:27:23",
+          "check": "send prayers and peace upon our Prophet",
+          "title": { "en": "Ten times, morning and evening", "de": "Zehnmal, morgens und abends", "ar": "عشر مرات صباحًا ومساءً" },
+          "body": { "en": "Hisnul Muslim includes it in the morning and evening adhkar, ten times.", "de": "Hisnul Muslim nennt es unter den Morgen- und Abend-Adhkar, zehnmal.", "ar": "يذكره حصن المسلم في أذكار الصباح والمساء، عشر مرات." }
+        }
+      ]
+    },
+    {
+      "id": "dhikr-la-hawla",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Dhikr · 5", "de": "Gedenken Allahs · 5", "ar": "الذكر · ٥" },
+        "title": { "en": "La hawla wa la quwwata illa billah", "de": "La hawla wa la quwwata illa billah", "ar": "لا حول ولا قوة إلا بالله" },
+        "sub": { "en": "A treasure for the Hereafter in a few words: the sentence of those who know their own limits.", "de": "Ein Schatz für das Jenseits in wenigen Worten: der Satz derer, die ihre eigenen Grenzen kennen.", "ar": "ذخر للآخرة في كلمات قليلة: جملة من عرف حدود قوته." },
+        "arabic": "لا حول ولا قوة إلا بالله"
+      },
+      "slides": [
+        {
+          "title": { "en": "What it means", "de": "Was der Satz bedeutet", "ar": "معناها" },
+          "body": { "en": "No change of state and no strength except through Allah. It admits that every step, from getting up to holding on, depends on Him.", "de": "Keine Veränderung und keine Kraft außer durch Allah. Der Satz gesteht ein, dass jeder Schritt, vom Aufstehen bis zum Durchhalten, von Ihm abhängt.", "ar": "لا تحوّل من حال إلى حال ولا قدرة على شيء إلا بالله؛ فهي اعتراف بأن كل خطوة، من القيام إلى الثبات، متوقفة عليه." }
+        },
+        {
+          "hadith": "bukhari:6384",
+          "check": "one of the treasures of Paradise",
+          "title": { "en": "A treasure of Paradise", "de": "Ein Schatz des Paradieses", "ar": "كنز في الجنة" },
+          "body": { "en": "Abu Musa was saying it quietly to himself. The Prophet came to him and told him its worth.", "de": "Abu Musa sprach den Satz leise vor sich hin. Der Prophet kam zu ihm und nannte ihm seinen Wert.", "ar": "كان أبو موسى يقولها في نفسه، فجاءه النبي ﷺ وأخبره بقدرها." }
+        },
+        {
+          "dua": "hisn:15:0",
+          "check": "La hawla wala quwwata illa billah",
+          "title": { "en": "When the adhan calls you", "de": "Wenn der Gebetsruf Sie ruft", "ar": "حين يدعوك الأذان" },
+          "body": { "en": "At 'come to prayer' and 'come to success' you answer with these words: you can only come if Allah helps you.", "de": "Bei „kommt zum Gebet“ und „kommt zum Erfolg“ antworten Sie mit diesen Worten: Kommen können Sie nur mit Allahs Hilfe.", "ar": "عند «حيّ على الصلاة» و«حيّ على الفلاح» تجيب بهذه الكلمات: لا تأتي إلا بعون الله." }
+        },
+        {
+          "dua": "hisn:10:0",
+          "check": "no might nor power except with Allah",
+          "title": { "en": "Leaving the house", "de": "Beim Verlassen des Hauses", "ar": "عند الخروج من البيت" },
+          "body": { "en": "Every outing starts with it: whatever the day brings, the strength to face it comes from Allah.", "de": "Jeder Weg nach draußen beginnt damit: Was der Tag auch bringt, die Kraft dafür kommt von Allah.", "ar": "كل خروج يبدأ بها: مهما حمل اليوم، فالقوة على مواجهته من الله." }
+        },
+        {
+          "verse": "18:39",
+          "check": "there is no power except in",
+          "title": { "en": "When you look at your blessings", "de": "Wenn Sie Ihre Gaben betrachten", "ar": "حين تنظر إلى نعمك" },
+          "body": { "en": "The Quran's version of the same truth: what you have exists by Allah's will and lasts by His power.", "de": "Die koranische Fassung derselben Wahrheit: Was Sie haben, besteht durch Allahs Willen und bleibt durch Seine Kraft.", "ar": "الحقيقة نفسها في القرآن: ما تملكه كان بمشيئة الله ويبقى بقوته." }
+        },
+        {
+          "title": { "en": "When to say it", "de": "Wann man ihn sagt", "ar": "متى تقولها" },
+          "list": {
+            "en": ["When a task feels bigger than you", "When you hear bad news", "When you start something new", "Whenever you remember Allah"],
+            "de": ["Wenn eine Aufgabe größer scheint als Sie", "Wenn Sie schlechte Nachrichten hören", "Wenn Sie etwas Neues beginnen", "Immer, wenn Sie an Allah denken"],
+            "ar": ["حين تبدو المهمة أكبر منك", "حين تسمع خبرًا سيئًا", "حين تبدأ أمرًا جديدًا", "كلما ذكرت الله"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "dhikr-through-the-day",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Dhikr · 6", "de": "Gedenken Allahs · 6", "ar": "الذكر · ٦" },
+        "title": { "en": "Dhikr through the day", "de": "Gedenken durch den Tag", "ar": "الذكر طوال اليوم" },
+        "sub": { "en": "Not only after prayer: how remembrance can fill the hours between, from the commute to the kitchen.", "de": "Nicht nur nach dem Gebet: wie Gedenken die Stunden dazwischen füllen kann, vom Arbeitsweg bis zur Küche.", "ar": "لا بعد الصلاة فقط: كيف يملأ الذكر الساعات بينها، من الطريق إلى المطبخ." },
+        "arabic": "اذكر الله"
+      },
+      "slides": [
+        {
+          "verse": "33:41-42",
+          "check": "with much remembrance",
+          "title": { "en": "Much, not occasionally", "de": "Viel, nicht gelegentlich", "ar": "كثيرًا لا أحيانًا" },
+          "body": { "en": "Most acts of worship have a set amount. For dhikr, the Quran asks for much.", "de": "Die meisten Gottesdienste haben ein festes Maß. Für das Gedenken verlangt der Koran: viel.", "ar": "لمعظم العبادات قدر محدد، أما الذكر فيطلب القرآن الإكثار منه." }
+        },
+        {
+          "hadith": "muslim:826",
+          "check": "remember Allah at all moments",
+          "title": { "en": "His way", "de": "Seine Art", "ar": "هديه ﷺ" },
+          "body": { "en": "Aishah's short description of the Prophet. Standing, sitting, walking: no moment was left out.", "de": "Aischas kurze Beschreibung des Propheten. Im Stehen, Sitzen, Gehen: kein Moment war ausgenommen.", "ar": "وصف قصير من عائشة للنبي ﷺ: قائمًا وقاعدًا وماشيًا، لم تُستثنَ لحظة." }
+        },
+        {
+          "hadith": "bukhari:6407",
+          "check": "living creature compared to a dead one",
+          "title": { "en": "Alive or not", "de": "Lebendig oder nicht", "ar": "حيّ أو ميت" },
+          "body": { "en": "The Prophet's image for a heart with and without dhikr.", "de": "Das Bild des Propheten für ein Herz mit und ohne Gedenken.", "ar": "تشبيه النبي ﷺ للقلب الذاكر وغير الذاكر." }
+        },
+        {
+          "verse": "13:28",
+          "check": "hearts are assured",
+          "title": { "en": "Where the heart rests", "de": "Wo das Herz Ruhe findet", "ar": "حيث يطمئن القلب" },
+          "body": { "en": "Not in more information or more noise. The Quran names one place where hearts find rest.", "de": "Nicht in mehr Information oder mehr Lärm. Der Koran nennt einen Ort, an dem Herzen Ruhe finden.", "ar": "لا في مزيد من المعلومات أو الضجيج؛ يذكر القرآن موضعًا واحدًا تطمئن فيه القلوب." }
+        },
+        {
+          "hadith": "muslim:6808",
+          "check": "remember Allah much",
+          "title": { "en": "Those who went ahead", "de": "Die vorausgegangen sind", "ar": "المفرّدون" },
+          "body": { "en": "On the road to Makkah the Prophet named those who are truly ahead. Not the fastest, but the ones who remember.", "de": "Auf dem Weg nach Mekka nannte der Prophet die wirklich Vorausgehenden. Nicht die Schnellsten, sondern die Gedenkenden.", "ar": "في الطريق إلى مكة ذكر النبي ﷺ السابقين حقًّا: لا الأسرع، بل الذاكرين." }
+        },
+        {
+          "title": { "en": "Moments for dhikr", "de": "Momente für das Gedenken", "ar": "أوقات للذكر" },
+          "list": {
+            "en": ["On the way to work or school", "While cooking or cleaning", "In a queue or a waiting room", "Before you fall asleep"],
+            "de": ["Auf dem Weg zur Arbeit oder Schule", "Beim Kochen oder Aufräumen", "In der Warteschlange oder im Wartezimmer", "Vor dem Einschlafen"],
+            "ar": ["في الطريق إلى العمل أو المدرسة", "أثناء الطبخ أو التنظيف", "في الطابور أو غرفة الانتظار", "قبل النوم"]
+          }
+        },
+        {
+          "hadith": "bukhari:7405",
+          "check": "if He remembers Me",
+          "title": { "en": "He remembers you", "de": "Er gedenkt Ihrer", "ar": "يذكرك" },
+          "body": { "en": "A hadith qudsi to end with: your remembrance is never one-sided.", "de": "Ein Hadith Qudsi zum Schluss: Ihr Gedenken ist nie einseitig.", "ar": "حديث قدسي في الختام: ذكرك لله ليس من طرف واحد." }
+        }
+      ]
+    }
+  ]
+}

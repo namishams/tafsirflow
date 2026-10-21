@@ -1,0 +1,33 @@
+{
+  "set": "sayings-umar-ibn-al-khattab",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-umar-ibn-al-khattab-01",
+      "theme": "patience",
+      "text": {
+        "en": "We found the best of our life in patience.",
+        "de": "Das Beste unseres Lebens fanden wir in der Geduld.",
+        "ar": "وجدنا خير عيشنا بالصبر."
+      },
+      "arabic": "وجدنا خير عيشنا بالصبر.",
+      "by": { "en": "'Umar ibn al-Khattab", "de": "'Umar ibn al-Chattab", "ar": "عمر بن الخطاب" },
+      "work": { "en": "Reported by al-Bukhari in his Sahih, Book of Softening Hearts", "de": "Überliefert von al-Buchari in seinem Sahih, Buch ar-Riqaq", "ar": "ذكره البخاري في صحيحه، كتاب الرقاق" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-umar-ibn-al-khattab-02",
+      "theme": "reflection",
+      "text": {
+        "en": "Take account of yourselves before you are taken to account, and adorn yourselves for the great presentation.",
+        "de": "Ziehen Sie sich selbst zur Rechenschaft, bevor Sie zur Rechenschaft gezogen werden, und schmücken Sie sich für die große Vorführung.",
+        "ar": "حاسبوا أنفسكم قبل أن تحاسبوا، وتزينوا للعرض الأكبر."
+      },
+      "arabic": "حاسبوا أنفسكم قبل أن تحاسبوا، وتزينوا للعرض الأكبر.",
+      "by": { "en": "'Umar ibn al-Khattab", "de": "'Umar ibn al-Chattab", "ar": "عمر بن الخطاب" },
+      "work": { "en": "Reported by al-Tirmidhi in his Jami'", "de": "Überliefert von at-Tirmidhi in seinem Dschami'", "ar": "ذكره الترمذي في جامعه" },
+      "needs_review": true
+    }
+  ]
+}

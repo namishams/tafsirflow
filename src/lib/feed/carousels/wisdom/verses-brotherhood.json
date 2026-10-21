@@ -1,0 +1,25 @@
+{
+  "set": "verses-brotherhood",
+  "kind": "verse",
+  "theme": "brotherhood",
+  "tradition": "all",
+  "items": [
+    {"id": "wv-brotherhood-49-10", "verse": "49:10", "check": "brothers"},
+    {"id": "wv-brotherhood-49-13", "verse": "49:13", "check": "know one another"},
+    {"id": "wv-brotherhood-3-103", "verse": "3:103", "check": "brothers"},
+    {"id": "wv-brotherhood-8-63", "verse": "8:63", "check": "brought together their hearts"},
+    {"id": "wv-brotherhood-59-9", "verse": "59:9", "check": "preference over themselves"},
+    {"id": "wv-brotherhood-15-47", "verse": "15:47", "check": "brothers"},
+    {"id": "wv-brotherhood-6-52", "verse": "6:52", "check": "do not send away"},
+    {"id": "wv-brotherhood-43-67", "verse": "43:67", "check": "Close friends"},
+    {"id": "wv-brotherhood-24-12", "verse": "24:12", "check": "think good"},
+    {"id": "wv-brotherhood-5-56", "verse": "5:56", "check": "party of Allah"},
+    {"id": "wv-brotherhood-6-159", "verse": "6:159", "check": "divided their religion"},
+    {"id": "wv-brotherhood-30-31", "verse": "30:31-32", "check": "sects"},
+    {"id": "wv-brotherhood-3-105", "verse": "3:105", "check": "divided"},
+    {"id": "wv-brotherhood-10-19", "verse": "10:19", "check": "one community"},
+    {"id": "wv-brotherhood-42-13", "verse": "42:13", "check": "not be divided"},
+    {"id": "wv-brotherhood-33-58", "verse": "33:58", "check": "harm believing men and believing women"},
+    {"id": "wv-brotherhood-25-27", "verse": "25:27-29", "check": "friend"}
+  ]
+}

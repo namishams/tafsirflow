@@ -1,0 +1,16 @@
+{ "set": "hadith-hereafter", "kind": "hadith", "theme": "hereafter", "tradition": "sunni",
+  "items": [
+    {"id": "wh-hereafter-bukhari-6514", "hadith": "bukhari:6514", "check": "his deeds remain"},
+    {"id": "wh-hereafter-bukhari-6548", "hadith": "bukhari:6548", "check": "no more death"},
+    {"id": "wh-hereafter-bukhari-6512", "hadith": "bukhari:6512", "check": "Relieved or relieving"},
+    {"id": "wh-hereafter-bukhari-3797", "hadith": "bukhari:3797", "check": "no life except the life of the Hereafter"},
+    {"id": "wh-hereafter-muslim-2257", "hadith": "muslim:2257", "check": "graveyard"},
+    {"id": "wh-hereafter-muslim-7417", "hadith": "muslim:7417", "check": "prison-house"},
+    {"id": "wh-hereafter-muslim-7197", "hadith": "muslim:7197", "check": "dip his finger"},
+    {"id": "wh-hereafter-bukhari-1379", "hadith": "bukhari:1379", "check": "shown his place"},
+    {"id": "wh-hereafter-bukhari-4936", "hadith": "bukhari:4936", "check": "these two fingers"},
+    {"id": "wh-hereafter-bukhari-7443", "hadith": "bukhari:7443", "check": "no interpreter"},
+    {"id": "wh-hereafter-muslim-2123", "hadith": "muslim:2123", "check": "There is no god but Allah"},
+    {"id": "wh-hereafter-muslim-5891", "hadith": "muslim:5891", "check": "everything is vain"},
+    {"id": "wh-hereafter-muslim-7232", "hadith": "muslim:7232", "check": "in which he dies"}
+  ] }

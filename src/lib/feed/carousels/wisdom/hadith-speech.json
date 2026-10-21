@@ -1,0 +1,14 @@
+{ "set": "hadith-speech", "kind": "hadith", "theme": "speech", "tradition": "sunni",
+  "items": [
+    {"id": "wh-speech-bukhari-6475", "hadith": "bukhari:6475", "check": "talk what is good or keep quiet"},
+    {"id": "wh-speech-bukhari-10", "hadith": "bukhari:10", "check": "tongue and hands"},
+    {"id": "wh-speech-bukhari-6478", "hadith": "bukhari:6478", "check": "a word which pleases Allah"},
+    {"id": "wh-speech-bukhari-2457", "hadith": "bukhari:2457", "check": "most quarrelsome"},
+    {"id": "wh-speech-bukhari-2692", "hadith": "bukhari:2692", "check": "makes peace between the people"},
+    {"id": "wh-speech-muslim-6593", "hadith": "muslim:6593", "check": "backbiting"},
+    {"id": "wh-speech-muslim-290", "hadith": "muslim:290", "check": "tale-bearer"},
+    {"id": "wh-speech-nawawi-12", "hadith": "nawawi:12", "check": "does not concern him"},
+    {"id": "wh-speech-bukhari-95", "hadith": "bukhari:95", "check": "repeat it thrice"},
+    {"id": "wh-speech-muslim-4481", "hadith": "muslim:4481", "check": "irrelevant talk"},
+    {"id": "wh-speech-muslim-6683", "hadith": "muslim:6683", "check": "people are ruined"}
+  ] }

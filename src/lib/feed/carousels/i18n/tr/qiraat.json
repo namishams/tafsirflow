@@ -1,0 +1,144 @@
+{
+ "qiraat-01-what-are-qiraat": {
+  "c.k": "Kıraatleri anlamak · 1",
+  "c.t": "Kıraatler nedir?",
+  "c.s": "Tek Kur'an; her biri Peygamberimize dayanan birkaç sahih şekilde okunur",
+  "0.t": "Senedi olan bir okuyuş",
+  "0.b": "Kıraat, büyük kıraat imamlarından birinin adıyla anılan bir Kur'an okuma şeklidir. Peygamberimize (s.a.v.) kadar uzanan kesintisiz bir hocalar zinciriyle aktarılmıştır.",
+  "1.t": "Okunmak için indirildi",
+  "1.b": "Kur'an her zaman hocadan talebeye, sesli ve özenle öğrenildi. Kıraatler bu okuyuşun korunduğu şekillerdir.",
+  "2.t": "Farklılık nerede?",
+  "2.b": "Farkların çoğu telaffuzla ilgilidir: meddin uzunluğu, hemzenin hafifletilmesi, bir harekenin imâlesi, harflerin kalın ya da ince okunması. Bazıları ise aynı yazı içinde bir kelimenin şekliyle ilgilidir; her biri geçerli bir anlam taşır.",
+  "3.t": "Üç şart",
+  "3.b": "İbnü'l-Cezerî makbul bir kıraat için üç şart sayar:",
+  "3.l": [
+   "Sahih bir rivayet senedi",
+   "En azından geçerli bir vecihle Arapça gramere uygunluk",
+   "Örtük de olsa Hz. Osman mushaflarından birine uygunluk"
+  ],
+  "4.t": "Dört anahtar kavram",
+  "4.l": [
+   "Kıraat: Âsım gibi bir imamın okuyuşu",
+   "Rivayet: Hafs gibi onun râvisinin aktarımı",
+   "Tarik: Şâtıbiyye gibi râviden sonraki yol",
+   "Vecih: okuyucunun seçebileceği bir seçenek"
+  ],
+  "5.t": "Çok kıraat, korunmuş tek Kitap",
+  "5.b": "Kıraatlerin çeşitliliği Kur'an'ın korunmuşluğunu zayıflatmaz. Her harfin ne kadar özenle aktarıldığını gösterir."
+ },
+ "qiraat-02-ahruf-and-qiraat": {
+  "c.k": "Kıraatleri anlamak · 2",
+  "c.t": "Yedi harf ve kıraatler",
+  "c.s": "Sıkça karıştırılan iki kavram ve âlimlerin onları nasıl ilişkilendirdiği",
+  "0.t": "Yedi şekilde indirildi",
+  "0.b": "Peygamberimiz giderek daha fazla okuyuş şekli istedi. Hadis, adı belli yedi kârîden değil, ahruftan, yani okuyuş tarzlarından söz eder.",
+  "1.t": "Ahruf nedir?",
+  "1.b": "Âlimler bu konuda çok farklı görüştedir. Kimi yedi Arap lehçesi, kimi kelime ve şekillerdeki yedi tür farklılık, kimi de yedinin çokluk ifade ettiğini söyler. Suyûtî kırk kadar görüş nakleder.",
+  "2.t": "Yedi kârî değil",
+  "2.b": "Nesiller sonra İbn Mücâhid (ö. h. 324), Kitâbü's-Seb'a adlı eseri için yedi meşhur kârîyi seçti. Sayının aynı olması pek çok kişinin onları yedi harfle karıştırmasına yol açtı; âlimler bu karışıklığı çoktan düzeltmiştir.",
+  "3.t": "Aralarındaki ilişki",
+  "3.b": "Pek çok âlime göre kıraatler, yedi harften Hz. Osman mushaflarına uyanı korur. Bunun tek bir harf mi yoksa birkaç harf mi olduğunda ise farklı görüştedirler.",
+  "4.t": "Kısacası",
+  "4.l": [
+   "Ahruf: Peygamberimizin bahsettiği nüzul şekilleri",
+   "Kıraatler: her biri kendi senediyle, adı belli okuyuşlar",
+   "Yedi kârî, yedi harf değildir",
+   "Makbul bütün kıraatler Hz. Osman mushaflarına uyar"
+  ]
+ },
+ "qiraat-03-ten-readers": {
+  "c.k": "Kıraatleri anlamak · 3",
+  "c.t": "On kârî ve râvileri",
+  "c.s": "On kıraat imamı ve onların kıraatlerini taşıyan yirmi râvi",
+  "0.t": "Önce yedi, sonra on",
+  "0.b": "İbn Mücâhid yedi kârîyi bir araya getirdi. Asırlar sonra İbnü'l-Cezerî üç kârînin daha sahih olduğunu teyit etti; böylece sayı ona ulaştı. Her kârî iki meşhur râvisiyle bilinir.",
+  "1.t": "Medine ve Mekke",
+  "1.l": [
+   "Nâfi' (Medine): Kâlûn ve Verş",
+   "Ebû Ca'fer (Medine): İbn Verdân ve İbn Cemmâz",
+   "İbn Kesîr (Mekke): Bezzî ve Kunbül"
+  ],
+  "2.t": "Basra ve Şam",
+  "2.l": [
+   "Ebû Amr (Basra): Dûrî ve Sûsî",
+   "Ya'kûb (Basra): Ruveys ve Ravh",
+   "İbn Âmir (Şam): Hişâm ve İbn Zekvân"
+  ],
+  "3.t": "Kûfe ve Bağdat",
+  "3.l": [
+   "Âsım (Kûfe): Şu'be ve Hafs",
+   "Hamza (Kûfe): Halef ve Hallâd",
+   "Kisâî (Kûfe): Ebü'l-Hâris ve Dûrî",
+   "Halef el-Âşir (Bağdat): İshak ve İdris"
+  ],
+  "4.t": "İki kez geçen isimler",
+  "4.b": "Dûrî hem Ebû Amr'dan hem de Kisâî'den rivayet eder: ikisi aynı kişidir. Hamza'nın kıraatini aktaran Halef de bizzat onuncu kârîdir.",
+  "5.t": "Bugün dünyada okunanlar",
+  "5.b": "Bugün en yaygın olanı Âsım'dan Hafs rivayetidir. Nâfi'den Verş, Kuzey ve Batı Afrika'nın büyük kısmında; Kâlûn, Libya'da ve Tunus'un bazı bölgelerinde; Ebû Amr'dan Dûrî ise Sudan'ın bazı bölgelerinde okunur."
+ },
+ "qiraat-04-hafs-and-warsh": {
+  "c.k": "Kıraatleri anlamak · 4",
+  "c.t": "Hafs ile Verş karşılaştırması",
+  "c.s": "Bugünün en yaygın iki rivayeti yan yana",
+  "0.t": "İki rivayet",
+  "0.b": "Hafs, Kûfeli Âsım'ın kıraatini; Verş ise Medineli Nâfi'in kıraatini aktarır. Bugün en yaygın olan Hafs'tır; Verş de Kuzey ve Batı Afrika'da yaygın olarak okunur.",
+  "1.t": "Mâlik mi, melik mi?",
+  "1.b": "Hafs uzun a ile mâliki, yani sahip; Verş kısa okuyarak meliki, yani hükümdar der. İkisi de Allah'ı vasfeder ve birlikte daha fazlasını anlatır.",
+  "2.t": "Daha uzun medler",
+  "2.b": "Ezrak tarikiyle Verş, muttasıl ve munfasıl medde altı hareke, med-i bedele iki, dört ya da altı hareke verir. Şâtıbiyye tarikiyle Hafs dört ya da beş, bedel için de iki hareke kullanır.",
+  "3.t": "Hafifletilen hemze",
+  "3.b": "Hafs'ın hemzeyle yu'minûne dediği yerde Verş hemzeyi uzun bir sesliyle değiştirir: yûminûne.",
+  "4.t": "Cemi mimi",
+  "4.b": "Hemzeden önce Verş cemi mimini uzun bir u ile bağlar: aleyhimû e enzertehum. Hafs mimi sükûnla okur.",
+  "5.t": "Hafs'ın tek imâlesi",
+  "5.b": "Hafs, Kur'an'da yalnızca tek bir kelimede a'yı e'ye doğru meylettirir: burada geçen mecrâhâ. Verş ise pek çok kelimede daha hafif bir meyil kullanır.",
+  "6.t": "Aynı kalanlar",
+  "6.l": [
+   "İkisi de kesintisiz senetleriyle sahihtir",
+   "Anlam korunur, çoğu zaman da zenginleşir",
+   "Hiçbiri diğerinden daha doğru değildir",
+   "Hocanızdan öğrendiğiniz rivayetle okuyun"
+  ]
+ },
+ "qiraat-05-transmission": {
+  "c.k": "Kıraatleri anlamak · 5",
+  "c.t": "Kıraatler nasıl aktarıldı?",
+  "c.s": "Peygamberimizden bugünün kurrâsına: senetler, hocalar ve iki meşhur manzume",
+  "0.t": "Dinleyerek öğrenilen",
+  "0.b": "Peygamberimiz bile Kur'an'ı önce dinleyerek, sonra okuyarak aldı. Her kıraat bu yolu izler.",
+  "1.t": "Yüz yüze",
+  "1.b": "Kıraat yüz yüze öğrenilir: talebe bütün Kur'an'ı her harfi düzelten bir hocaya okur. İcazet denen bir belge, Peygamberimize uzanan zinciri (senedi) kaydeder.",
+  "2.t": "Kalplerde korunan",
+  "2.b": "Kur'an yalnızca sayfalarda değil, onu öğrenenlerin hafızalarında yaşar.",
+  "3.t": "İbn Mücâhid'in yedisi",
+  "3.b": "Hicri 4. asırda Bağdat'ta İbn Mücâhid, Kitâbü's-Seb'a'sında yedi tanınmış kârîyi topladı. Sonraki eserler onun seçimi üzerine bina edildi.",
+  "4.t": "Şâtıbiyye",
+  "4.b": "İmam Şâtıbî (ö. h. 590), Dânî'nin yedi kıraat üzerine yazdığı et-Teysîr'i Hırzü'l-emânî adlı uzun, kafiyeli bir manzumeye dönüştürdü. Şâtıbiyye olarak bilinen bu eser hâlâ ezberlenir.",
+  "5.t": "Dürre ve on kıraat",
+  "5.b": "İbnü'l-Cezerî (ö. h. 833), üç kârî daha için ed-Dürretü'l-mudıyye'yi yazdı: Ebû Ca'fer, Ya'kûb ve Halef. Şâtıbiyye ile birlikte onu tamamlar. Tayyibetü'n-neşr adlı eseri ise on kıraati çok daha fazla tarikle ele alır.",
+  "6.t": "Hâlâ canlı bir zincir",
+  "6.b": "Bugün de hocalar, senetleri bu eserlerden geçen icazetler verir. İmkânınız varsa ehil bir hocaya okuyun: Peygamberimize uzanan bir silsileye katılırsınız."
+ },
+ "qiraat-06-why-they-matter": {
+  "c.k": "Kıraatleri anlamak · 6",
+  "c.t": "Kıraatler neden önemlidir?",
+  "c.s": "Anlam, muhafaza ve yaşayan bir okuma geleneği",
+  "0.t": "Muhafazanın canlı bir belgesi",
+  "0.b": "Uzak diyarlarda pek çok hocanın taşıdığı kıraatler hâlâ aynı Kur'an'da ve aynı Osmanî hatta buluşur. Farkları kaybolmadı, özenle kaydedildi.",
+  "1.t": "İki kıraat, iki ders",
+  "1.b": "Hafs fe tebeyyenû, yani araştırın; Hamza, Kisâî ve Halef fe tesebbetû, yani emin olun diye okur. Birlikte: dikkatle doğrulayın, acele etmeyin.",
+  "2.t": "Yalan ve yalanlama",
+  "2.b": "Hafs yekzibûn, yani yalan söylüyorlardı; Nâfi', İbn Kesîr ve diğerleri yükezzibûn, yani yalanlıyorlardı diye okur. İkisi de aynı insanlara uyar.",
+  "3.t": "Tecvid nereden gelir?",
+  "3.b": "Gunneden her meddin uzunluğuna kadar öğrendiğiniz kurallar, bir rivayetin, genellikle de Hafs'ın kurallarıdır. Bunu bilmek, kârîlerin neden bazen farklı okuduğunu ve neden ikisinin de doğru olabileceğini açıklar.",
+  "4.t": "Hatırlamak için kolaylaştırıldı",
+  "4.b": "Her diyarda nesiller Kur'an'ı ezberledi. Kıraatlerinin özenle kaydedilmesi bu hikâyenin bir parçasıdır.",
+  "5.t": "Onlara nasıl yaklaşmalı?",
+  "5.l": [
+   "Hocanızın öğrettiği rivayetle okuyun",
+   "Verş ya da Kâlûn rivayetiyle okunanları dinleyin",
+   "Sahih bir kıraate asla hata demeyin",
+   "Başka rivayetlerle okumadan önce ehil bir hocadan öğrenin"
+  ]
+ }
+}

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-prayer",
+  "kind": "reflection",
+  "theme": "prayer",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-prayer-01",
+      "text": {
+        "en": "Five times a day, the world is asked to wait while you stand before your Lord. Few appointments are kept so faithfully.",
+        "de": "Fünfmal am Tag darf die Welt warten, während Sie vor Ihrem Herrn stehen. Kaum eine Verabredung wird so treu eingehalten.",
+        "ar": "خمس مرات في اليوم تنتظر الدنيا وأنت واقف بين يدي ربك، وقليل من المواعيد ما يحفظ بهذا الوفاء."
+      }
+    },
+    {
+      "id": "wr-prayer-02",
+      "text": {
+        "en": "The quiet of Fajr belongs to the few who rise for it: cold water, a dark window, and a whole city still asleep.",
+        "de": "Die Stille des Morgengebets gehört den wenigen, die dafür aufstehen: kaltes Wasser, ein dunkles Fenster und eine ganze Stadt, die noch schläft.",
+        "ar": "سكون الفجر لمن يقومون له: ماء بارد، ونافذة مظلمة، ومدينة كاملة ما زالت نائمة."
+      }
+    },
+    {
+      "id": "wr-prayer-03",
+      "text": {
+        "en": "A prayer mat unrolled in an office corner, a park, a train station: every place you pray becomes a little more beautiful.",
+        "de": "Ein Gebetsteppich, ausgerollt in einer Büroecke, in einem Park, auf einem Bahnhof: Jeder Ort, an dem Sie beten, wird ein wenig schöner.",
+        "ar": "سجادة صلاة تفرش في زاوية مكتب، أو في حديقة، أو في محطة قطار: كل مكان تصلي فيه يصير أجمل قليلا."
+      }
+    },
+    {
+      "id": "wr-prayer-04",
+      "text": {
+        "en": "In prostration, your forehead touches the same ground as everyone else's. No title, no salary and no worry follows you down there.",
+        "de": "In der Niederwerfung berührt Ihre Stirn denselben Boden wie die aller anderen. Kein Titel, kein Gehalt und keine Sorge folgt Ihnen dorthin.",
+        "ar": "في السجود تلامس جبهتك الأرض نفسها التي تلامسها جباه الجميع، فلا لقب ولا راتب ولا هم يتبعك إلى هناك."
+      }
+    },
+    {
+      "id": "wr-prayer-05",
+      "text": {
+        "en": "When you cannot fix a problem, you can still pray about it. That is never the smallest thing you can do.",
+        "de": "Wenn Sie ein Problem nicht lösen können, können Sie immer noch dafür beten. Das ist nie das Geringste, was Sie tun können.",
+        "ar": "حين لا تستطيع حل المشكلة ما زال بإمكانك أن تصلي من أجلها، وليس ذلك أقل ما تستطيعه أبدا."
+      }
+    },
+    {
+      "id": "wr-prayer-06",
+      "text": {
+        "en": "Slow down between the movements. A prayer that breathes leaves you calmer than one that hurries.",
+        "de": "Lassen Sie sich Zeit zwischen den Bewegungen. Ein Gebet, das atmet, macht Sie ruhiger als eines, das hetzt.",
+        "ar": "تمهل بين الحركات، فالصلاة التي تتنفس تترك فيك سكينة أكثر من صلاة مستعجلة."
+      }
+    },
+    {
+      "id": "wr-prayer-07",
+      "text": {
+        "en": "Children learn prayer by standing next to you long before they understand the words. Let them see that you love it.",
+        "de": "Kinder lernen das Gebet, indem sie neben Ihnen stehen, lange bevor sie die Worte verstehen. Lassen Sie sie sehen, dass Sie es lieben.",
+        "ar": "يتعلم الأطفال الصلاة بالوقوف إلى جانبك قبل أن يفهموا كلماتها بزمن طويل، فدعهم يرون أنك تحبها."
+      }
+    },
+    {
+      "id": "wr-prayer-08",
+      "text": {
+        "en": "The prayer you almost skipped because you were tired is often the one you needed most.",
+        "de": "Das Gebet, das Sie aus Müdigkeit fast ausgelassen hätten, ist oft das, was Sie am meisten gebraucht haben.",
+        "ar": "الصلاة التي كدت تتركها لأنك متعب كثيرا ما تكون أكثر ما كنت تحتاج إليه."
+      }
+    },
+    {
+      "id": "wr-prayer-09",
+      "text": {
+        "en": "Prayer is a door that opens whenever you knock. No appointment, no queue, no closing time.",
+        "de": "Das Gebet ist eine Tür, die sich öffnet, wann immer Sie anklopfen. Kein Termin, keine Warteschlange, kein Ladenschluss.",
+        "ar": "الصلاة باب ينفتح كلما طرقته، بلا موعد، ولا طابور، ولا وقت إغلاق."
+      }
+    },
+    {
+      "id": "wr-prayer-10",
+      "text": {
+        "en": "Standing shoulder to shoulder with strangers in congregation teaches brotherhood in a way no lecture can.",
+        "de": "Schulter an Schulter mit Fremden im gemeinsamen Gebet zu stehen, lehrt Geschwisterlichkeit, wie es kein Vortrag kann.",
+        "ar": "الوقوف كتفا إلى كتف مع غرباء في صلاة الجماعة يعلم الأخوة كما لا تعلمها أي محاضرة."
+      }
+    },
+    {
+      "id": "wr-prayer-11",
+      "text": {
+        "en": "Each prayer is a small homecoming in the middle of a busy day. Leave the noise at the door for a few minutes.",
+        "de": "Jedes Gebet ist eine kleine Heimkehr mitten in einem vollen Tag. Lassen Sie den Lärm für ein paar Minuten vor der Tür.",
+        "ar": "كل صلاة عودة صغيرة إلى البيت في منتصف يوم مزدحم، فاترك الضجيج عند الباب بضع دقائق."
+      }
+    },
+    {
+      "id": "wr-prayer-12",
+      "text": {
+        "en": "The washing before prayer cools the face, the hands and the feet, and somehow the anger too.",
+        "de": "Die Waschung vor dem Gebet kühlt Gesicht, Hände und Füße und irgendwie auch den Zorn.",
+        "ar": "الوضوء قبل الصلاة يبرد الوجه واليدين والقدمين، ويبرد معها الغضب أيضا بطريقة ما."
+      }
+    },
+    {
+      "id": "wr-prayer-13",
+      "text": {
+        "en": "Between the alarm and the first email, two quiet rak'ahs set the tone for everything that follows.",
+        "de": "Zwischen Wecker und erster E-Mail geben zwei stille Gebetseinheiten den Ton für alles an, was folgt.",
+        "ar": "بين المنبه وأول رسالة في البريد، تضبط ركعتان هادئتان إيقاع كل ما يأتي بعدهما."
+      }
+    },
+    {
+      "id": "wr-prayer-14",
+      "text": {
+        "en": "When words fail in grief, the familiar movements of prayer can still carry you. The body remembers the way home.",
+        "de": "Wenn in der Trauer die Worte versagen, können die vertrauten Bewegungen des Gebets Sie noch tragen. Der Körper kennt den Heimweg.",
+        "ar": "حين تعجز الكلمات في الحزن، قد تحملك حركات الصلاة المألوفة، فالجسد يعرف طريق العودة."
+      }
+    }
+  ]
+}

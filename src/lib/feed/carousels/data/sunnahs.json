@@ -1,0 +1,875 @@
+{
+  "series": "sunnahs",
+  "label": { "en": "Sunnahs to revive", "de": "Sunnas zum Wiederbeleben", "ar": "سنن نحييها" },
+  "topic": "hadith",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "sunnahs-01-friday",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 1", "de": "Sunnas zum Wiederbeleben · 1", "ar": "سنن نحييها · ١" },
+        "title": { "en": "Sunnahs of Friday", "de": "Die Sunnas des Freitags", "ar": "سنن يوم الجمعة" },
+        "sub": { "en": "How the Prophet honoured the weekly feast of the believers", "de": "Wie der Prophet das wöchentliche Fest der Gläubigen ehrte", "ar": "كيف كان النبي ﷺ يعظّم عيد المؤمنين في كل أسبوع" },
+        "arabic": "يَوْمُ الجُمُعَة"
+      },
+      "slides": [
+        {
+          "verse": "62:9",
+          "check": "leave trade",
+          "title": { "en": "Answer the call", "de": "Dem Ruf folgen", "ar": "لبِّ النداء" },
+          "body": { "en": "Friday has its own congregational prayer. When the adhan sounds, the Quran asks believers to set business aside and hurry to remember Allah.", "de": "Der Freitag hat sein eigenes Gemeinschaftsgebet. Ertönt der Adhan, fordert der Koran die Gläubigen auf, Geschäfte ruhen zu lassen und zum Gedenken Allahs zu eilen.", "ar": "للجمعة صلاتها الجامعة، فإذا ارتفع الأذان دعا القرآن المؤمنين إلى ترك التجارة والمسارعة إلى ذكر الله." }
+        },
+        {
+          "hadith": "muslim:1976",
+          "check": "best day",
+          "title": { "en": "The best of days", "de": "Der beste aller Tage", "ar": "خير الأيام" },
+          "body": { "en": "Friday is the weekly celebration of the believers. The Prophet linked it to the story of Adam, the first human.", "de": "Der Freitag ist das wöchentliche Fest der Gläubigen. Der Prophet verband ihn mit der Geschichte Adams, des ersten Menschen.", "ar": "الجمعة عيد المؤمنين في كل أسبوع، وقد ربطها النبي ﷺ بقصة آدم أول البشر." }
+        },
+        {
+          "hadith": "bukhari:883",
+          "check": "bath on Friday",
+          "title": { "en": "Wash, scent, silence", "de": "Waschen, Duft, Stille", "ar": "غسل وطيب وإنصات" },
+          "body": { "en": "A full bath, clean clothes and a little scent, then a quiet heart during the khutbah. Most scholars count this bath as a strong sunnah.", "de": "Eine Ganzkörperwaschung, saubere Kleidung, etwas Duft und dann Stille während der Khutba. Die meisten Gelehrten sehen diese Waschung als betonte Sunna.", "ar": "غسل كامل وثياب نظيفة وشيء من الطيب، ثم إنصات تام للخطبة. ويرى جمهور العلماء أن غسل الجمعة سنة مؤكدة." }
+        },
+        {
+          "hadith": "bukhari:881",
+          "check": "first hour",
+          "title": { "en": "Come early", "de": "Früh kommen", "ar": "التبكير" },
+          "body": { "en": "The earlier you arrive, the greater the reward, from a camel down to an egg. When the imam begins, even the angels come to listen.", "de": "Je früher Sie kommen, desto größer der Lohn, vom Kamel bis zum Ei. Beginnt der Imam, kommen sogar die Engel, um zuzuhören.", "ar": "كلما بكّرت عظم الأجر، من البدنة إلى البيضة. فإذا بدأ الإمام حضرت الملائكة تستمع." }
+        },
+        {
+          "hadith": "bukhari:935",
+          "check": "an hour",
+          "title": { "en": "An hour of answered dua", "de": "Eine Stunde der Erhörung", "ar": "ساعة الإجابة" },
+          "body": { "en": "Somewhere in Friday lies a short moment in which dua is answered. Scholars differ on when; many seek it in the last hour before Maghrib.", "de": "Im Freitag liegt ein kurzer Moment, in dem Bittgebete erhört werden. Die Gelehrten sind über die Zeit uneins; viele suchen ihn in der letzten Stunde vor Maghrib.", "ar": "في يوم الجمعة لحظة قصيرة يُستجاب فيها الدعاء. واختلف العلماء في وقتها، ويتحرّاها كثيرون في آخر ساعة قبل المغرب." }
+        },
+        {
+          "hadith": "bukhari:891",
+          "check": "Fajr prayer of Friday",
+          "title": { "en": "The Fajr of Friday", "de": "Das Fajr-Gebet am Freitag", "ar": "فجر الجمعة" },
+          "body": { "en": "On Friday mornings the Prophet recited Surah as-Sajdah and Surah al-Insan in Fajr. Imams can revive this beautiful practice.", "de": "Am Freitagmorgen rezitierte der Prophet im Fajr-Gebet die Suren as-Sajda und al-Insan. Imame können diese schöne Praxis wiederbeleben.", "ar": "كان النبي ﷺ يقرأ في فجر الجمعة سورتي السجدة والإنسان، وهي سنة جميلة يحييها الأئمة." }
+        },
+        {
+          "title": { "en": "Your Friday checklist", "de": "Ihre Freitags-Checkliste", "ar": "قائمة يوم الجمعة" },
+          "list": {
+            "en": ["Ghusl, clean clothes and a little scent", "Leave early and sit close to the front", "Listen to the khutbah without talking", "Make plenty of dua through the day", "Send blessings on the Prophet often"],
+            "de": ["Ghusl, saubere Kleidung und etwas Duft", "Früh aufbrechen und weit vorn sitzen", "Der Khutba schweigend zuhören", "Über den Tag viele Bittgebete sprechen", "Oft Segensgrüße auf den Propheten sprechen"],
+            "ar": ["الغسل والثياب النظيفة وشيء من الطيب", "التبكير والجلوس في الصفوف الأولى", "الإنصات للخطبة دون كلام", "الإكثار من الدعاء طوال اليوم", "الإكثار من الصلاة على النبي ﷺ"]
+          },
+          "body": { "en": "Reciting Surah al-Kahf on Friday is also widely recommended, based on narrations in other hadith collections.", "de": "Auch das Rezitieren der Sure al-Kahf am Freitag wird weithin empfohlen, gestützt auf Überlieferungen anderer Hadith-Sammlungen.", "ar": "ويُستحب كذلك قراءة سورة الكهف يوم الجمعة، استنادًا إلى روايات في كتب حديث أخرى." }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hajar al-Asqalani, Fath al-Bari, on the hour of Friday" }]
+    },
+    {
+      "id": "sunnahs-02-sleeping",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 2", "de": "Sunnas zum Wiederbeleben · 2", "ar": "سنن نحييها · ٢" },
+        "title": { "en": "Sunnahs of sleeping", "de": "Die Sunnas des Schlafens", "ar": "سنن النوم" },
+        "sub": { "en": "End the day as the Prophet did: clean, calm and remembering Allah", "de": "Den Tag beenden wie der Prophet: rein, ruhig und im Gedenken an Allah", "ar": "اختم يومك كما كان النبي ﷺ يختمه: طاهرًا هادئًا ذاكرًا لله" },
+        "arabic": "آدَابُ النَّوْم"
+      },
+      "slides": [
+        {
+          "title": { "en": "Sleep in a state of wudu", "de": "Mit Wudu schlafen gehen", "ar": "النوم على طهارة" },
+          "body": { "en": "The Prophet taught his companion al-Bara' ibn Azib to make wudu before bed, as for prayer. This is reported in Bukhari and Muslim. The day ends in purity.", "de": "Der Prophet lehrte seinen Gefährten al-Bara' ibn Azib, vor dem Schlafen Wudu zu machen wie für das Gebet. So berichten es Bukhari und Muslim. Der Tag endet in Reinheit.", "ar": "علّم النبي ﷺ صاحبه البراء بن عازب أن يتوضأ قبل النوم كوضوئه للصلاة، كما في البخاري ومسلم. فيُختم اليوم على طهارة." }
+        },
+        {
+          "hadith": "bukhari:7393",
+          "check": "dust it off",
+          "title": { "en": "Dust off the bed", "de": "Das Bett abklopfen", "ar": "نفض الفراش" },
+          "body": { "en": "A small act of care: shake out the bed three times, then lie down with a short dua that entrusts your soul to Allah.", "de": "Eine kleine Geste der Sorgfalt: das Bett dreimal ausschütteln und sich dann mit einem kurzen Bittgebet hinlegen, das die Seele Allah anvertraut.", "ar": "عناية صغيرة: انفض فراشك ثلاثًا، ثم اضطجع بدعاء قصير تستودع فيه نفسك الله." }
+        },
+        {
+          "hadith": "bukhari:6315",
+          "check": "right side",
+          "title": { "en": "Lie on your right side", "de": "Auf der rechten Seite liegen", "ar": "على الشق الأيمن" },
+          "body": { "en": "He slept on his right side and handed his whole affair to Allah. Whoever dies that night after these words dies upon Islam.", "de": "Er schlief auf der rechten Seite und übergab seine ganze Angelegenheit Allah. Wer nach diesen Worten in jener Nacht stirbt, stirbt im Islam.", "ar": "كان ينام على شقه الأيمن ويفوّض أمره كله إلى الله، ومن مات ليلته بعد هذه الكلمات مات على الإسلام." }
+        },
+        {
+          "hadith": "bukhari:5017",
+          "check": "Surat Al-Falaq",
+          "title": { "en": "The three protectors", "de": "Die drei Schutzsuren", "ar": "المعوذات" },
+          "body": { "en": "Al-Ikhlas, al-Falaq and an-Nas: recite them into cupped hands, blow gently and wipe over the body. Three times.", "de": "Al-Ikhlas, al-Falaq und an-Nas: in die hohlen Hände rezitieren, leicht hineinhauchen und über den Körper streichen. Dreimal.", "ar": "الإخلاص والفلق والناس: اقرأها في كفيك مجموعتين، وانفث فيهما برفق، وامسح بهما جسدك. ثلاث مرات." }
+        },
+        {
+          "hadith": "muslim:6918",
+          "check": "thirty-four",
+          "title": { "en": "Better than a servant", "de": "Besser als eine Dienerin", "ar": "خير من خادم" },
+          "body": { "en": "When Fatimah asked for help with heavy housework, her father gave her words instead: 33, 33 and 34 before sleep.", "de": "Als Fatima um Hilfe bei der schweren Hausarbeit bat, gab ihr Vater ihr stattdessen Worte: 33, 33 und 34 vor dem Schlafen.", "ar": "لما طلبت فاطمة خادمًا يعينها على عمل البيت، أعطاها أبوها ﷺ كلمات تقولها قبل النوم: ٣٣ و٣٣ و٣٤." }
+        },
+        {
+          "dua": "hisn:28:6",
+          "check": "live and die",
+          "title": { "en": "The shortest bedtime dua", "de": "Das kürzeste Bittgebet vor dem Schlaf", "ar": "أقصر دعاء للنوم" },
+          "body": { "en": "A few words that place both sleep and waking in the hands of Allah. Easy to teach children.", "de": "Wenige Worte, die Schlafen und Erwachen in Allahs Hände legen. Leicht auch für Kinder zu lernen.", "ar": "كلمات قليلة تجعل النوم واليقظة بيد الله، ويسهل تعليمها للأطفال." }
+        },
+        {
+          "hadith": "bukhari:5624",
+          "check": "Extinguish the lamps",
+          "title": { "en": "Close the house for the night", "de": "Das Haus für die Nacht schließen", "ar": "إغلاق البيت ليلًا" },
+          "body": { "en": "Lights out, doors shut, containers covered: practical safety that the Prophet joined to the name of Allah.", "de": "Licht aus, Türen zu, Gefäße abgedeckt: praktische Sicherheit, die der Prophet mit dem Namen Allahs verband.", "ar": "إطفاء السرج وإغلاق الأبواب وتغطية الآنية: أسباب سلامة عملية ربطها النبي ﷺ بذكر اسم الله." }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-03-waking-up",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 3", "de": "Sunnas zum Wiederbeleben · 3", "ar": "سنن نحييها · ٣" },
+        "title": { "en": "Sunnahs of waking up", "de": "Die Sunnas des Aufwachens", "ar": "سنن الاستيقاظ" },
+        "sub": { "en": "The first minutes of the day, as the Prophet lived them", "de": "Die ersten Minuten des Tages, wie der Prophet sie lebte", "ar": "الدقائق الأولى من اليوم كما عاشها النبي ﷺ" },
+        "arabic": "سُنَنُ الاسْتِيقَاظ"
+      },
+      "slides": [
+        {
+          "dua": "hisn:1:0",
+          "check": "gave us life",
+          "title": { "en": "First words: praise", "de": "Die ersten Worte: Lob", "ar": "أول الكلام حمد" },
+          "body": { "en": "Sleep is a small death. The first words of the day thank Allah for giving life back to us.", "de": "Der Schlaf ist ein kleiner Tod. Die ersten Worte des Tages danken Allah, dass Er uns das Leben zurückgegeben hat.", "ar": "النوم موتة صغرى، وأول كلمات اليوم شكر لله على أن ردّ إلينا الحياة." }
+        },
+        {
+          "hadith": "bukhari:1142",
+          "check": "three knots",
+          "title": { "en": "Untie the three knots", "de": "Die drei Knoten lösen", "ar": "حلّ العقد الثلاث" },
+          "body": { "en": "Remembering Allah, wudu and prayer each undo one knot. Whoever does all three starts the day with energy and a good heart.", "de": "Gedenken an Allah, Wudu und Gebet lösen je einen Knoten. Wer alle drei vollzieht, beginnt den Tag voller Kraft und mit gutem Herzen.", "ar": "ذكر الله والوضوء والصلاة، كل واحد منها يحل عقدة، ومن أتى بها كلها بدأ يومه بنشاط وقلب طيب." }
+        },
+        {
+          "hadith": "bukhari:245",
+          "check": "Siwak",
+          "title": { "en": "Freshen your mouth", "de": "Den Mund erfrischen", "ar": "تطييب الفم" },
+          "body": { "en": "Rising at night, he reached for the siwak. A clean mouth for a day of dhikr.", "de": "Wenn er nachts aufstand, griff er zum Siwak. Ein reiner Mund für einen Tag voller Dhikr.", "ar": "كان السواك رفيقه عند القيام من الليل. فم طاهر ليوم عامر بالذكر." }
+        },
+        {
+          "hadith": "bukhari:162",
+          "check": "wash his hands",
+          "title": { "en": "Wash your hands first", "de": "Zuerst die Hände waschen", "ar": "اغسل يديك أولًا" },
+          "body": { "en": "After sleep, wash your hands before dipping them into a water vessel. A habit of hygiene taught long before modern medicine.", "de": "Waschen Sie nach dem Schlaf die Hände, bevor Sie sie in ein Wassergefäß tauchen. Hygiene, gelehrt lange vor der modernen Medizin.", "ar": "اغسل يديك بعد النوم قبل أن تدخلهما في إناء الماء. عادة نظافة عُلّمت قبل الطب الحديث بقرون." }
+        },
+        {
+          "hadith": "bukhari:3295",
+          "check": "thrice",
+          "title": { "en": "Rinse the nose three times", "de": "Die Nase dreimal spülen", "ar": "الاستنثار ثلاثًا" },
+          "body": { "en": "Part of the wudu after sleep: draw water into the nose and blow it out, three times.", "de": "Teil der Waschung nach dem Schlaf: Wasser in die Nase ziehen und wieder ausstoßen, dreimal.", "ar": "من الوضوء بعد النوم: أن تستنشق الماء ثم تنثره، ثلاث مرات." }
+        },
+        {
+          "dua": "hisn:1:2",
+          "check": "restored to me my health",
+          "title": { "en": "Thank Him for your health", "de": "Für die Gesundheit danken", "ar": "الحمد على العافية" },
+          "body": { "en": "Another dua of waking: gratitude for health, for a returned soul and for the chance to remember Him again.", "de": "Ein weiteres Bittgebet beim Aufwachen: Dank für Gesundheit, für die zurückgegebene Seele und für die Möglichkeit, Seiner wieder zu gedenken.", "ar": "دعاء آخر عند الاستيقاظ: شكر على العافية، وعلى ردّ الروح، وعلى فرصة جديدة لذكره." }
+        },
+        {
+          "title": { "en": "A five-minute start", "de": "Ein Start in fünf Minuten", "ar": "بداية في خمس دقائق" },
+          "list": {
+            "en": ["Say the dua of waking", "Use the siwak or brush your teeth", "Wash your hands, then make wudu", "Pray the two rak'ahs before Fajr", "Begin your tasks with Bismillah"],
+            "de": ["Das Bittgebet des Aufwachens sprechen", "Siwak benutzen oder die Zähne putzen", "Die Hände waschen, dann Wudu machen", "Die zwei Rak'as vor Fajr beten", "Die Aufgaben mit Bismillah beginnen"],
+            "ar": ["قل دعاء الاستيقاظ", "استك أو نظّف أسنانك", "اغسل يديك ثم توضأ", "صلِّ ركعتي الفجر", "ابدأ أعمالك بالبسملة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-04-eating",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 4", "de": "Sunnas zum Wiederbeleben · 4", "ar": "سنن نحييها · ٤" },
+        "title": { "en": "Sunnahs of eating", "de": "Die Sunnas des Essens", "ar": "سنن الطعام" },
+        "sub": { "en": "Every meal can become an act of worship", "de": "Jede Mahlzeit kann zum Gottesdienst werden", "ar": "كل وجبة يمكن أن تصير عبادة" },
+        "arabic": "آدَابُ الطَّعَام"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:5376",
+          "check": "right hand",
+          "title": { "en": "Three lessons for a child", "de": "Drei Lektionen für ein Kind", "ar": "ثلاثة دروس لطفل" },
+          "body": { "en": "Three manners in one sentence: Bismillah, the right hand and the food nearest to you. Umar ibn Abi Salamah kept them all his life.", "de": "Drei Tischsitten in einem Satz: Bismillah, die rechte Hand und das Essen, das vor einem liegt. Umar ibn Abi Salama bewahrte sie sein Leben lang.", "ar": "ثلاثة آداب في جملة واحدة: التسمية، واليد اليمنى، والأكل من أقرب الطعام. حفظها عمر بن أبي سلمة طوال حياته." }
+        },
+        {
+          "dua": "hisn:69:0",
+          "check": "forget",
+          "title": { "en": "If you forget Bismillah", "de": "Wenn Sie Bismillah vergessen", "ar": "إذا نسيت التسمية" },
+          "body": { "en": "Nothing is lost. Say it as soon as you remember, even in the middle of the meal.", "de": "Nichts ist verloren. Sprechen Sie es, sobald Sie sich erinnern, auch mitten im Essen.", "ar": "لم يفت شيء؛ قلها متى تذكرت، ولو في أثناء الطعام." }
+        },
+        {
+          "hadith": "muslim:5300",
+          "check": "blessing lies",
+          "title": { "en": "Lick your fingers", "de": "Die Finger ablecken", "ar": "لعق الأصابع" },
+          "body": { "en": "The blessing may be in the last bite. Finishing your food well is a quiet form of gratitude.", "de": "Der Segen kann im letzten Bissen liegen. Das Essen sorgfältig zu beenden ist eine stille Form der Dankbarkeit.", "ar": "قد تكون البركة في آخر لقمة، وإتمام الطعام دون إهدار شكر صامت." }
+        },
+        {
+          "hadith": "bukhari:5392",
+          "check": "sufficient for three",
+          "title": { "en": "Food grows when shared", "de": "Geteiltes Essen reicht weiter", "ar": "الطعام يتسع بالمشاركة" },
+          "body": { "en": "A meal for two can feed three. Inviting others costs less than we think.", "de": "Ein Essen für zwei reicht für drei. Andere einzuladen kostet weniger, als wir denken.", "ar": "وجبة شخصين تتسع لثالث، ودعوة الآخرين أيسر مما نظن." }
+        },
+        {
+          "hadith": "bukhari:5409",
+          "check": "never criticized",
+          "title": { "en": "Respect every meal", "de": "Jede Mahlzeit achten", "ar": "احترام الطعام" },
+          "body": { "en": "He ate what he liked and quietly left what he did not. No complaints at the table.", "de": "Er aß, was ihm schmeckte, und ließ still liegen, was ihm nicht zusagte. Keine Klagen am Tisch.", "ar": "كان يأكل ما يحبه ويترك ما لا يعجبه بهدوء، دون شكوى على المائدة." }
+        },
+        {
+          "hadith": "muslim:5287",
+          "check": "three times",
+          "title": { "en": "Drink in three breaths", "de": "In drei Atemzügen trinken", "ar": "الشرب على ثلاثة أنفاس" },
+          "body": { "en": "Pause and breathe outside the cup. The Prophet said it quenches thirst better and is healthier.", "de": "Absetzen und außerhalb des Bechers atmen. Der Prophet sagte, so stille es den Durst besser und sei bekömmlicher.", "ar": "توقف وتنفّس خارج الإناء، فذلك أنفع للعطش والبدن كما أخبر النبي ﷺ." }
+        },
+        {
+          "dua": "hisn:70:0",
+          "check": "fed me",
+          "title": { "en": "Praise at the end", "de": "Lob zum Schluss", "ar": "الحمد في الختام" },
+          "body": { "en": "A meal ends as it began, with Allah: now in thanks for food we could never have provided by our own strength.", "de": "Eine Mahlzeit endet, wie sie begann, mit Allah: nun im Dank für Speise, die wir aus eigener Kraft nie hätten beschaffen können.", "ar": "تنتهي الوجبة كما بدأت بذكر الله، شكرًا على رزق ما كنا لننال منه شيئًا بقوتنا وحدها." }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-05-morning",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 5", "de": "Sunnas zum Wiederbeleben · 5", "ar": "سنن نحييها · ٥" },
+        "title": { "en": "Sunnahs of the morning", "de": "Die Sunnas des Morgens", "ar": "سنن الصباح" },
+        "sub": { "en": "From Fajr to the forenoon: a morning full of light", "de": "Von Fajr bis zum Vormittag: ein Morgen voller Licht", "ar": "من الفجر إلى الضحى: صباح مليء بالنور" },
+        "arabic": "أَذْكَارُ الصَّبَاح"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:1688",
+          "check": "better than this world",
+          "title": { "en": "The two rak'ahs of dawn", "de": "Die zwei Rak'as der Morgendämmerung", "ar": "ركعتا الفجر" },
+          "body": { "en": "Short, light and precious: the two sunnah rak'ahs before Fajr were among the prayers the Prophet guarded most.", "de": "Kurz, leicht und kostbar: Die zwei Sunna-Rak'as vor Fajr gehörten zu den Gebeten, die der Prophet am beständigsten verrichtete.", "ar": "قصيرتان خفيفتان عظيمتا القدر: كانت ركعتا سنة الفجر من أشد ما يحافظ عليه النبي ﷺ." }
+        },
+        {
+          "dua": "hisn:27:3",
+          "check": "reached the morning",
+          "title": { "en": "Begin by His leave", "de": "Mit Seiner Erlaubnis beginnen", "ar": "نبدأ بإذنه" },
+          "body": { "en": "One sentence that places the morning, the evening, life and death with Allah. A frame for the whole day.", "de": "Ein Satz, der Morgen und Abend, Leben und Tod in Allahs Hand legt. Ein Rahmen für den ganzen Tag.", "ar": "جملة واحدة تجعل الصباح والمساء والحياة والموت بيد الله، فتحيط اليوم كله." }
+        },
+        {
+          "hadith": "bukhari:6306",
+          "check": "most superior way",
+          "title": { "en": "The master of forgiveness", "de": "Der Meister der Vergebungsbitten", "ar": "سيد الاستغفار" },
+          "body": { "en": "Known as Sayyid al-Istighfar. Said with certainty in the morning, it carries the promise of Paradise.", "de": "Bekannt als Sayyid al-Istighfar. Wer es morgens mit Gewissheit spricht, dem gilt die Verheißung des Paradieses.", "ar": "يُعرف بسيد الاستغفار، ومن قاله في الصباح موقنًا به وُعد بالجنة." }
+        },
+        {
+          "dua": "hisn:27:11",
+          "check": "nothing is harmed",
+          "title": { "en": "Three times for protection", "de": "Dreimal zum Schutz", "ar": "ثلاثًا للحفظ" },
+          "body": { "en": "Said three times in the morning and the evening, this short dua seeks protection through the name of Allah.", "de": "Morgens und abends dreimal gesprochen, sucht dieses kurze Bittgebet Schutz durch den Namen Allahs.", "ar": "تُقال ثلاثًا في الصباح والمساء، وفيها استعانة باسم الله على الحفظ." }
+        },
+        {
+          "hadith": "bukhari:6405",
+          "check": "one hundred times",
+          "title": { "en": "A hundred times", "de": "Hundertmal", "ar": "مئة مرة" },
+          "body": { "en": "Subhan Allah wa bihamdihi: under two minutes, and sins as countless as sea foam are forgiven.", "de": "Subhan Allah wa bihamdihi: keine zwei Minuten, und Sünden, zahllos wie Meerschaum, werden vergeben.", "ar": "سبحان الله وبحمده: أقل من دقيقتين، وتُغفر بها ذنوب كثيرة ككثرة زبد البحر." }
+        },
+        {
+          "hadith": "muslim:1671",
+          "check": "forenoon",
+          "title": { "en": "The forenoon prayer", "de": "Das Vormittagsgebet", "ar": "صلاة الضحى" },
+          "body": { "en": "Every joint of the body owes a daily charity. Two rak'ahs of Duha, after the sun has risen, cover them all.", "de": "Jedes Gelenk des Körpers schuldet täglich eine Spende. Zwei Rak'as Duha nach Sonnenaufgang decken sie alle ab.", "ar": "على كل مفصل من الجسد صدقة كل يوم، وركعتا الضحى بعد ارتفاع الشمس تكفيان عنها كلها." }
+        },
+        {
+          "title": { "en": "A morning routine", "de": "Eine Morgenroutine", "ar": "برنامج الصباح" },
+          "list": {
+            "en": ["Pray the two rak'ahs before Fajr", "Read the morning adhkar after Fajr", "Say Sayyid al-Istighfar once", "Glorify Allah a hundred times", "Pray two rak'ahs of Duha before noon"],
+            "de": ["Die zwei Rak'as vor Fajr beten", "Nach Fajr die Morgen-Adhkar lesen", "Einmal Sayyid al-Istighfar sprechen", "Allah hundertmal lobpreisen", "Vor Mittag zwei Rak'as Duha beten"],
+            "ar": ["صلِّ ركعتي الفجر", "اقرأ أذكار الصباح بعد الفجر", "قل سيد الاستغفار مرة", "سبّح الله مئة مرة", "صلِّ ركعتي الضحى قبل الظهر"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-06-mosque",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 6", "de": "Sunnas zum Wiederbeleben · 6", "ar": "سنن نحييها · ٦" },
+        "title": { "en": "Sunnahs of the mosque", "de": "Die Sunnas der Moschee", "ar": "سنن المسجد" },
+        "sub": { "en": "From the first step out of the door to the moment you sit down", "de": "Vom ersten Schritt aus der Tür bis zu dem Moment, in dem Sie sich setzen", "ar": "من أول خطوة خارج البيت إلى لحظة الجلوس في المسجد" },
+        "arabic": "آدَابُ المَسْجِد"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:1520",
+          "check": "footsteps are recorded",
+          "title": { "en": "Every footstep is written", "de": "Jeder Schritt wird verzeichnet", "ar": "كل خطوة تُكتب" },
+          "body": { "en": "The Banu Salamah wanted to move closer to the mosque. The Prophet told them their long walk was being recorded.", "de": "Die Banu Salama wollten näher an die Moschee ziehen. Der Prophet sagte ihnen, dass ihr langer Weg verzeichnet wird.", "ar": "أراد بنو سلمة أن ينتقلوا قرب المسجد، فأخبرهم النبي ﷺ أن طول طريقهم محفوظ لهم في صحائفهم." }
+        },
+        {
+          "hadith": "muslim:1652",
+          "check": "doors of Thy mercy",
+          "title": { "en": "A dua at the door", "de": "Ein Bittgebet an der Tür", "ar": "دعاء عند الباب" },
+          "body": { "en": "Enter asking for His mercy, leave asking for His bounty. Many scholars also recommend entering with the right foot.", "de": "Treten Sie mit der Bitte um Seine Barmherzigkeit ein und gehen Sie mit der Bitte um Seine Gunst. Viele Gelehrte empfehlen, mit dem rechten Fuß einzutreten.", "ar": "ادخل سائلًا رحمته، واخرج سائلًا فضله. ويستحب كثير من العلماء الدخول بالرجل اليمنى." }
+        },
+        {
+          "hadith": "bukhari:444",
+          "check": "before sitting",
+          "title": { "en": "Greet the mosque", "de": "Die Moschee grüßen", "ar": "تحية المسجد" },
+          "body": { "en": "Before you sit, pray two rak'ahs. They are known as tahiyyat al-masjid, the greeting of the mosque.", "de": "Beten Sie zwei Rak'as, bevor Sie sich setzen. Man nennt sie Tahiyyat al-Masjid, den Gruß an die Moschee.", "ar": "صلِّ ركعتين قبل أن تجلس، وتُعرفان بتحية المسجد." }
+        },
+        {
+          "hadith": "bukhari:445",
+          "check": "angels keep on asking",
+          "title": { "en": "Angels pray for you", "de": "Engel bitten für Sie", "ar": "الملائكة تدعو لك" },
+          "body": { "en": "Stay seated after the prayer, in wudu, and the angels make dua for your forgiveness and mercy.", "de": "Bleiben Sie nach dem Gebet mit Wudu sitzen, dann bitten die Engel für Sie um Vergebung und Barmherzigkeit.", "ar": "اجلس بعد الصلاة في مصلاك على وضوء، فالملائكة تدعو لك بالمغفرة والرحمة." }
+        },
+        {
+          "hadith": "bukhari:853",
+          "check": "garlic",
+          "title": { "en": "Come with a pleasant smell", "de": "Mit angenehmem Duft kommen", "ar": "رائحة طيبة" },
+          "body": { "en": "Raw garlic and strong odours bother those praying beside you. Come fresh and clean.", "de": "Roher Knoblauch und starke Gerüche stören die Betenden neben Ihnen. Kommen Sie frisch und gepflegt.", "ar": "الثوم النيء والروائح القوية تؤذي من يصلي بجانبك، فأتِ المسجد نظيفًا طيب الرائحة." }
+        },
+        {
+          "hadith": "bukhari:662",
+          "check": "honorable place",
+          "title": { "en": "A guest of Allah", "de": "Ein Gast Allahs", "ar": "ضيف الله" },
+          "body": { "en": "Morning and evening, every trip to the mosque prepares a place of honour for you in Paradise.", "de": "Morgens und abends bereitet jeder Gang zur Moschee Ihnen einen Ehrenplatz im Paradies.", "ar": "كل ذهاب إلى المسجد صباحًا أو مساءً يهيئ لك مقام ضيافة وكرامة في الجنة." }
+        },
+        {
+          "title": { "en": "Mosque manners", "de": "Benehmen in der Moschee", "ar": "آداب في المسجد" },
+          "list": {
+            "en": ["Enter with the right foot, leave with the left", "Put your phone on silent", "Do not step over people's shoulders", "Fill the gaps in the rows", "Keep your voice low"],
+            "de": ["Mit dem rechten Fuß eintreten, mit dem linken hinaus", "Das Handy stumm schalten", "Nicht über die Schultern anderer steigen", "Lücken in den Reihen schließen", "Leise sprechen"],
+            "ar": ["ادخل باليمنى واخرج باليسرى", "اجعل هاتفك صامتًا", "لا تتخطَّ رقاب الناس", "سُدّ الفُرَج في الصفوف", "اخفض صوتك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-07-travelling",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 7", "de": "Sunnas zum Wiederbeleben · 7", "ar": "سنن نحييها · ٧" },
+        "title": { "en": "Sunnahs of travelling", "de": "Die Sunnas des Reisens", "ar": "سنن السفر" },
+        "sub": { "en": "From departure to homecoming: the manners of the traveller", "de": "Vom Aufbruch bis zur Heimkehr: die Sitten des Reisenden", "ar": "من الخروج إلى العودة: آداب المسافر" },
+        "arabic": "آدَابُ السَّفَر"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:2950",
+          "check": "Thursday",
+          "title": { "en": "Set out on a Thursday", "de": "Am Donnerstag aufbrechen", "ar": "الخروج يوم الخميس" },
+          "body": { "en": "When he could choose, the Prophet liked to begin his journeys on a Thursday.", "de": "Wenn er wählen konnte, begann der Prophet seine Reisen gern an einem Donnerstag.", "ar": "كان النبي ﷺ يحب، إذا تيسر له، أن يبدأ سفره يوم الخميس." }
+        },
+        {
+          "verse": "43:13-14",
+          "check": "subjected this to us",
+          "title": { "en": "The dua of riding", "de": "Das Bittgebet beim Aufsteigen", "ar": "دعاء الركوب" },
+          "body": { "en": "Car, train or plane: remember who made it serve you, and that every journey ends with Him.", "de": "Ob Auto, Zug oder Flugzeug: Denken Sie daran, wer es Ihnen dienstbar gemacht hat und dass jede Reise bei Ihm endet.", "ar": "سيارة كانت أو قطارًا أو طائرة: تذكّر من سخّرها لك، وأن كل رحلة تنتهي إليه." }
+        },
+        {
+          "hadith": "bukhari:2993",
+          "check": "went down",
+          "title": { "en": "Up and down the road", "de": "Bergauf und bergab", "ar": "صعودًا ونزولًا" },
+          "body": { "en": "Allahu akbar when climbing, Subhan Allah when descending. Even the landscape becomes dhikr.", "de": "Allahu akbar beim Aufstieg, Subhan Allah beim Abstieg. Selbst die Landschaft wird zum Dhikr.", "ar": "تكبير عند الصعود وتسبيح عند النزول، فتصير الطريق نفسها ذكرًا." }
+        },
+        {
+          "dua": "hisn:104:0",
+          "check": "perfect words",
+          "title": { "en": "When you stop to rest", "de": "Wenn Sie Rast machen", "ar": "عند النزول في مكان" },
+          "body": { "en": "At a hotel, a rest stop or a friend's home: seek refuge in Allah's perfect words.", "de": "Im Hotel, an der Raststätte oder bei Freunden: Suchen Sie Zuflucht bei Allahs vollkommenen Worten.", "ar": "في فندق أو استراحة أو بيت صديق: احتمِ بكلمات الله من كل شر." }
+        },
+        {
+          "hadith": "bukhari:2998",
+          "check": "travel alone",
+          "title": { "en": "Not alone at night", "de": "Nachts nicht allein", "ar": "الرفقة في الليل" },
+          "body": { "en": "Company protects. The Prophet discouraged travelling alone, especially at night.", "de": "Gesellschaft schützt. Der Prophet riet davon ab, allein zu reisen, besonders bei Nacht.", "ar": "الرفقة حماية، وقد حذّر النبي ﷺ من السفر منفردًا، ولا سيما في الليل." }
+        },
+        {
+          "hadith": "bukhari:1804",
+          "check": "return quickly",
+          "title": { "en": "Hurry home", "de": "Zügig heimkehren", "ar": "عجّل بالعودة" },
+          "body": { "en": "Travel tires body and mind. Once the purpose is done, go back to your family without delay.", "de": "Reisen ermüdet Körper und Geist. Ist das Ziel erreicht, kehren Sie ohne Aufschub zu Ihrer Familie zurück.", "ar": "السفر يُتعب الجسد والنفس، فإذا قضيت حاجتك فارجع إلى أهلك دون تأخير." }
+        },
+        {
+          "hadith": "bukhari:3088",
+          "check": "returned from a journey",
+          "title": { "en": "Pray before going home", "de": "Vor dem Heimweg beten", "ar": "صلاة القادم من السفر" },
+          "body": { "en": "On returning, he first went to the mosque and prayed two rak'ahs before sitting with people.", "de": "Bei der Rückkehr ging er zuerst in die Moschee und betete zwei Rak'as, bevor er sich zu den Menschen setzte.", "ar": "عند عودته من السفر كان يقصد المسجد أولًا ويصلي ركعتين، ثم يلقى الناس." }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-08-greeting",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 8", "de": "Sunnas zum Wiederbeleben · 8", "ar": "سنن نحييها · ٨" },
+        "title": { "en": "Sunnahs of greeting", "de": "Die Sunnas des Grüßens", "ar": "سنن السلام" },
+        "sub": { "en": "As-salamu alaykum: a short sentence that builds love", "de": "As-salamu alaikum: ein kurzer Satz, der Liebe stiftet", "ar": "السلام عليكم: جملة قصيرة تبني المحبة" },
+        "arabic": "إِفْشَاءُ السَّلَام"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:194",
+          "check": "love one another",
+          "title": { "en": "The road to love", "de": "Der Weg zur Liebe", "ar": "طريق المحبة" },
+          "body": { "en": "Faith grows with love, and love grows with salam. The Prophet named the shortest way between hearts.", "de": "Der Glaube wächst mit der Liebe, und die Liebe wächst mit dem Salam. Der Prophet nannte den kürzesten Weg zwischen den Herzen.", "ar": "الإيمان ينمو بالمحبة، والمحبة تنمو بالسلام. هكذا دلّ النبي ﷺ على أقصر طريق بين القلوب." }
+        },
+        {
+          "hadith": "bukhari:28",
+          "check": "greet those whom you know",
+          "title": { "en": "Greet strangers too", "de": "Auch Fremde grüßen", "ar": "السلام للجميع" },
+          "body": { "en": "Salam is not only for friends. Offer it to people you have never met.", "de": "Der Salam ist nicht nur für Freunde da. Schenken Sie ihn auch Menschen, die Sie nie getroffen haben.", "ar": "ليس السلام للأصدقاء وحدهم، فامنحه أيضًا لمن لم تلقه قط." }
+        },
+        {
+          "verse": "4:86",
+          "check": "one better than it",
+          "title": { "en": "Return it better", "de": "Schöner erwidern", "ar": "الرد الأجمل" },
+          "body": { "en": "Answer a greeting with at least the same words, better still with more: wa rahmatullahi wa barakatuh.", "de": "Erwidern Sie einen Gruß mindestens mit denselben Worten, noch schöner mit mehr: wa rahmatullahi wa barakatuh.", "ar": "ردّ التحية بمثلها على الأقل، والأجمل أن تزيد: ورحمة الله وبركاته." }
+        },
+        {
+          "hadith": "bukhari:6234",
+          "check": "younger person",
+          "title": { "en": "Who greets first?", "de": "Wer grüßt zuerst?", "ar": "من يبدأ بالسلام؟" },
+          "body": { "en": "Clear manners for every encounter: age, movement and group size decide who begins. No room for ego.", "de": "Klare Regeln für jede Begegnung: Alter, Bewegung und Gruppengröße bestimmen, wer beginnt. Kein Platz für Eitelkeit.", "ar": "آداب واضحة لكل لقاء: السن والحركة وعدد الجماعة تحدد من يبدأ بالسلام، ولا مكان للكِبر." }
+        },
+        {
+          "hadith": "bukhari:6077",
+          "check": "greets the other first",
+          "title": { "en": "Be the first", "de": "Seien Sie der Erste", "ar": "كن البادئ" },
+          "body": { "en": "After a quarrel, do not wait for the other. A salam can end a long silence, and the Prophet praised whoever offers it first.", "de": "Warten Sie nach einem Streit nicht auf den anderen. Ein Salam kann langes Schweigen beenden, und der Prophet lobte, wer ihn zuerst spricht.", "ar": "لا تنتظر الآخر بعد الخصام؛ فالسلام ينهي الصمت الطويل، وقد أثنى النبي ﷺ على من يبدأ به." }
+        },
+        {
+          "hadith": "bukhari:6263",
+          "check": "shake hands",
+          "title": { "en": "Shake hands", "de": "Hände schütteln", "ar": "المصافحة" },
+          "body": { "en": "The Companions shook hands when they met. A warm hand adds to the words.", "de": "Die Gefährten gaben sich bei der Begegnung die Hand. Ein warmer Händedruck ergänzt die Worte.", "ar": "كان الصحابة يتصافحون إذا التقوا، ودفء اليد يزيد الكلمة دفئًا." }
+        },
+        {
+          "hadith": "muslim:6690",
+          "check": "cheerful countenance",
+          "title": { "en": "A cheerful face", "de": "Ein freundliches Gesicht", "ar": "الوجه الطلق" },
+          "body": { "en": "Even a smile when you meet someone is a good deed. Never think it too small.", "de": "Schon ein Lächeln bei einer Begegnung ist eine gute Tat. Halten Sie es nie für zu klein.", "ar": "حتى الابتسامة عند اللقاء عمل صالح، فلا تستصغرها." }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-09-eid",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 9", "de": "Sunnas zum Wiederbeleben · 9", "ar": "سنن نحييها · ٩" },
+        "title": { "en": "Sunnahs of Eid", "de": "Die Sunnas des Festes", "ar": "سنن العيد" },
+        "sub": { "en": "Joy, gratitude and generosity: how the Prophet celebrated", "de": "Freude, Dankbarkeit und Großzügigkeit: wie der Prophet feierte", "ar": "فرح وشكر وكرم: كيف كان النبي ﷺ يحتفل بالعيد" },
+        "arabic": "سُنَنُ العِيد"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:1509",
+          "check": "before going to the",
+          "title": { "en": "Zakat al-fitr comes first", "de": "Zuerst die Zakat al-Fitr", "ar": "زكاة الفطر أولًا" },
+          "body": { "en": "Before the prayer of Eid al-Fitr, the poor receive their share, so that everyone can celebrate.", "de": "Vor dem Gebet zum Fest des Fastenbrechens erhalten die Armen ihren Anteil, damit alle feiern können.", "ar": "قبل صلاة عيد الفطر يأخذ الفقراء حقهم، ليفرح الجميع بالعيد." }
+        },
+        {
+          "hadith": "bukhari:953",
+          "check": "odd number",
+          "title": { "en": "Dates before the prayer", "de": "Datteln vor dem Gebet", "ar": "تمرات قبل الصلاة" },
+          "body": { "en": "On Eid al-Fitr he ate a few dates, an odd number, before leaving the house. The fast is over.", "de": "Am Fest des Fastenbrechens aß er vor dem Aufbruch einige Datteln, eine ungerade Zahl. Das Fasten ist vorbei.", "ar": "قبل الخروج إلى المصلى يوم الفطر كان يتناول عددًا وترًا من التمر، إيذانًا بانتهاء الصيام." }
+        },
+        {
+          "hadith": "bukhari:971",
+          "check": "say Takbir",
+          "title": { "en": "Everyone comes out", "de": "Alle kommen heraus", "ar": "الجميع إلى المصلى" },
+          "body": { "en": "Women and young girls, even those not praying, were called to the Eid gathering to share in the takbir and the blessing of the day.", "de": "Frauen und junge Mädchen, auch jene, die nicht beteten, wurden zur Festversammlung gerufen, um am Takbir und am Segen des Tages teilzuhaben.", "ar": "دُعيت النساء والفتيات، حتى من لا تصلي منهن، إلى مصلى العيد ليشاركن في التكبير وبركة اليوم." }
+        },
+        {
+          "hadith": "bukhari:986",
+          "check": "different",
+          "title": { "en": "Take another way home", "de": "Einen anderen Heimweg nehmen", "ar": "مخالفة الطريق" },
+          "body": { "en": "He returned by a different road than the one he came by. Scholars mention wisdoms, such as meeting and greeting more people.", "de": "Er kehrte auf einem anderen Weg zurück, als er gekommen war. Gelehrte nennen Weisheiten, etwa mehr Menschen zu begegnen und zu grüßen.", "ar": "كان يرجع من طريق غير الذي ذهب منه، وذكر العلماء لذلك حِكَمًا، منها لقاء عدد أكبر من الناس والسلام عليهم." }
+        },
+        {
+          "hadith": "bukhari:952",
+          "check": "this is our",
+          "title": { "en": "Joy belongs to the day", "de": "Freude gehört zum Festtag", "ar": "الفرح من العيد" },
+          "body": { "en": "When Abu Bakr objected to the girls' songs, the Prophet let them continue. Eid is a day for joy.", "de": "Als Abu Bakr die Lieder der Mädchen beanstandete, ließ der Prophet sie weitersingen. Das Fest ist ein Tag der Freude.", "ar": "لما أنكر أبو بكر غناء الجاريتين تركهما النبي ﷺ، فالعيد يوم فرح وسرور." }
+        },
+        {
+          "hadith": "bukhari:5558",
+          "check": "two rams",
+          "title": { "en": "The sacrifice of Eid al-Adha", "de": "Das Opfer am Opferfest", "ar": "أضحية عيد الأضحى" },
+          "body": { "en": "He slaughtered with his own hands, with the name of Allah and the takbir. Those who can, follow this sunnah of Ibrahim.", "de": "Er schlachtete mit eigenen Händen, mit dem Namen Allahs und dem Takbir. Wer kann, folgt dieser Sunna Ibrahims.", "ar": "ذبح بيده مسمّيًا ومكبّرًا، ومن استطاع اتبع هذه السنة الإبراهيمية." }
+        },
+        {
+          "title": { "en": "An Eid morning", "de": "Ein Festmorgen", "ar": "صباح العيد" },
+          "list": {
+            "en": ["Take a bath and wear your best clothes", "Say the takbir on the way to the prayer", "Pray Eid together with the community", "Visit family and greet the neighbours", "Remember those who are alone"],
+            "de": ["Baden und die schönste Kleidung tragen", "Auf dem Weg zum Gebet den Takbir sprechen", "Das Festgebet mit der Gemeinschaft beten", "Familie besuchen und Nachbarn grüßen", "An Menschen denken, die allein sind"],
+            "ar": ["اغتسل والبس أحسن ثيابك", "كبّر في طريقك إلى المصلى", "صلِّ العيد مع جماعة المسلمين", "زر أهلك وهنّئ جيرانك", "تذكّر من يقضي العيد وحده"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-10-fasting-days",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 10", "de": "Sunnas zum Wiederbeleben · 10", "ar": "سنن نحييها · ١٠" },
+        "title": { "en": "Sunnah fasting days", "de": "Sunna-Fastentage", "ar": "أيام صيام التطوع" },
+        "sub": { "en": "Mondays and Thursdays, the white days, Arafah and Ashura", "de": "Montage und Donnerstage, die weißen Tage, Arafa und Aschura", "ar": "الاثنين والخميس والأيام البيض وعرفة وعاشوراء" },
+        "arabic": "صِيَامُ التَّطَوُّع"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:2750",
+          "check": "born",
+          "title": { "en": "Monday: his day", "de": "Montag: sein Tag", "ar": "الاثنين يوم مولده" },
+          "body": { "en": "Asked about fasting on Monday, the Prophet linked it to his birth and to the beginning of revelation.", "de": "Nach dem Fasten am Montag gefragt, verband der Prophet es mit seiner Geburt und dem Beginn der Offenbarung.", "ar": "لما سُئل النبي ﷺ عن صيام الاثنين ربطه بيوم مولده وبداية نزول الوحي عليه." }
+        },
+        {
+          "hadith": "muslim:6547",
+          "check": "Monday and Thursday",
+          "title": { "en": "Days of review", "de": "Tage der Vorlage", "ar": "يوما عرض الأعمال" },
+          "body": { "en": "On Mondays and Thursdays deeds are presented. Many love to be fasting then, and at peace with everyone.", "de": "Montags und donnerstags werden die Taten vorgelegt. Viele fasten an diesen Tagen gern und versöhnen sich mit allen.", "ar": "في يومي الاثنين والخميس تُعرض الأعمال، فيحب كثيرون أن يكونوا صائمين وقد تصالحوا مع الناس." }
+        },
+        {
+          "hadith": "bukhari:1981",
+          "check": "three days a month",
+          "title": { "en": "Three days every month", "de": "Drei Tage jeden Monat", "ar": "ثلاثة أيام من كل شهر" },
+          "body": { "en": "Many scholars recommend the 13th, 14th and 15th, the white days of the full moon, based on narrations in other collections.", "de": "Viele Gelehrte empfehlen den 13., 14. und 15., die weißen Tage des Vollmonds, gestützt auf Überlieferungen anderer Sammlungen.", "ar": "ويستحب كثير من العلماء أن تكون الأيام البيض: الثالث عشر والرابع عشر والخامس عشر، استنادًا إلى روايات في كتب أخرى." }
+        },
+        {
+          "title": { "en": "The Day of Arafah", "de": "Der Tag von Arafa", "ar": "يوم عرفة" },
+          "body": { "en": "For those not on Hajj, fasting the 9th of Dhul-Hijjah is a great sunnah. In Sahih Muslim the Prophet expressed hope that it expiates the sins of the year before and the year after.", "de": "Für alle, die nicht auf der Pilgerfahrt sind, ist das Fasten am 9. Dhul-Hiddscha eine große Sunna. In Sahih Muslim äußerte der Prophet die Hoffnung, dass es die Sünden des vergangenen und des kommenden Jahres sühnt.", "ar": "لغير الحاج صيام التاسع من ذي الحجة سنة عظيمة، وفي صحيح مسلم رجاء النبي ﷺ أن يكون كفارة لذنوب عامين: الماضي والقادم." }
+        },
+        {
+          "hadith": "bukhari:2004",
+          "check": "Moses fasted",
+          "title": { "en": "Ashura: the day of Musa", "de": "Aschura: der Tag Musas", "ar": "عاشوراء يوم موسى" },
+          "body": { "en": "He fasted the 10th of Muharram in gratitude for the rescue of Musa, and asked the believers to fast it too.", "de": "Er fastete am 10. Muharram aus Dankbarkeit für die Rettung Musas und forderte die Gläubigen auf, ebenfalls zu fasten.", "ar": "صام العاشر من المحرم شكرًا لله على نجاة موسى، وأمر المؤمنين بصيامه." }
+        },
+        {
+          "hadith": "muslim:2666",
+          "check": "9th",
+          "title": { "en": "Add the 9th", "de": "Den 9. hinzunehmen", "ar": "صيام التاسع معه" },
+          "body": { "en": "He intended to fast the 9th as well. Many scholars therefore recommend fasting the 9th together with the 10th.", "de": "Er hatte vor, auch den 9. zu fasten. Viele Gelehrte empfehlen daher, den 9. zusammen mit dem 10. zu fasten.", "ar": "عزم النبي ﷺ على صيام التاسع أيضًا، ولذا يستحب كثير من العلماء صيام التاسع مع العاشر." }
+        },
+        {
+          "hadith": "muslim:2758",
+          "check": "six",
+          "title": { "en": "Six days of Shawwal", "de": "Sechs Tage im Schawwal", "ar": "ستّ من شوال" },
+          "body": { "en": "After Ramadan, six more days, together or spread out, bring the reward of lifelong fasting.", "de": "Nach dem Ramadan bringen sechs weitere Tage, am Stück oder verteilt, den Lohn eines lebenslangen Fastens.", "ar": "بعد رمضان، ستة أيام متتابعة أو متفرقة تحمل أجر صيام الدهر." }
+        },
+        {
+          "title": { "en": "Gentle guidelines", "de": "Sanfte Leitlinien", "ar": "توجيهات لطيفة" },
+          "list": {
+            "en": ["No fasting on the two days of Eid", "Do not single out a Friday: add a day before or after", "Small and steady beats much and rare", "When ill or travelling, be gentle with yourself"],
+            "de": ["Kein Fasten an den beiden Festtagen", "Den Freitag nicht allein fasten: einen Tag davor oder danach dazunehmen", "Wenig und beständig ist besser als viel und selten", "Bei Krankheit oder auf Reisen sanft mit sich selbst sein"],
+            "ar": ["لا صيام في يومي العيد", "لا تفرد الجمعة بالصيام، بل صم يومًا قبلها أو بعدها", "القليل الدائم خير من الكثير المنقطع", "في المرض أو السفر ترفّق بنفسك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-11-night",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 11", "de": "Sunnas zum Wiederbeleben · 11", "ar": "سنن نحييها · ١١" },
+        "title": { "en": "Sunnahs of the night", "de": "Die Sunnas der Nacht", "ar": "سنن الليل" },
+        "sub": { "en": "When the world sleeps, the door of dua stands open", "de": "Wenn die Welt schläft, steht die Tür des Bittgebets offen", "ar": "حين ينام الناس يبقى باب الدعاء مفتوحًا" },
+        "arabic": "قِيَامُ اللَّيْل"
+      },
+      "slides": [
+        {
+          "verse": "32:16",
+          "check": "beds",
+          "title": { "en": "Rising from the bed", "de": "Vom Bett aufstehen", "ar": "هجر الفراش" },
+          "body": { "en": "The Quran describes believers who leave their beds at night to call on their Lord, in awe and in hope.", "de": "Der Koran beschreibt Gläubige, die nachts ihr Bett verlassen, um ihren Herrn anzurufen, in Ehrfurcht und Hoffnung.", "ar": "يصف القرآن مؤمنين يتركون فرشهم ليلًا ليدعوا ربهم خشية ورجاء." }
+        },
+        {
+          "hadith": "bukhari:1145",
+          "check": "last third",
+          "title": { "en": "The last third of the night", "de": "Das letzte Drittel der Nacht", "ar": "الثلث الأخير من الليل" },
+          "body": { "en": "The most precious time for dua and for seeking forgiveness: the last third of the night, before Fajr.", "de": "Die kostbarste Zeit für Bittgebete und die Bitte um Vergebung: das letzte Drittel der Nacht, vor Fajr.", "ar": "أثمن أوقات الدعاء والاستغفار: الثلث الأخير من الليل قبل الفجر." }
+        },
+        {
+          "hadith": "muslim:2756",
+          "check": "middle of the night",
+          "title": { "en": "The best voluntary prayer", "de": "Das beste freiwillige Gebet", "ar": "أفضل صلاة التطوع" },
+          "body": { "en": "Among all voluntary prayers, the prayer of the night holds the first rank.", "de": "Unter allen freiwilligen Gebeten steht das Nachtgebet an erster Stelle.", "ar": "صلاة الليل في المرتبة الأولى بين صلوات التطوع." }
+        },
+        {
+          "hadith": "bukhari:990",
+          "check": "night prayer",
+          "title": { "en": "Two by two", "de": "Zwei und zwei", "ar": "ركعتين ركعتين" },
+          "body": { "en": "Pray in pairs of two rak'ahs, as many as you can, and close with a single rak'ah of Witr before dawn.", "de": "Beten Sie in Paaren von zwei Rak'as, so viele Sie können, und schließen Sie vor der Morgendämmerung mit einer einzelnen Rak'a Witr.", "ar": "صلِّ ركعتين ركعتين ما استطعت، ثم اختم بركعة وتر قبل الفجر." }
+        },
+        {
+          "hadith": "bukhari:998",
+          "check": "witr",
+          "title": { "en": "End with Witr", "de": "Mit Witr abschließen", "ar": "اختم بالوتر" },
+          "body": { "en": "Whatever you pray at night, Witr comes last. If you fear you will not wake, pray it before sleeping.", "de": "Was immer Sie nachts beten, Witr kommt zuletzt. Fürchten Sie, nicht aufzuwachen, beten Sie es vor dem Schlafen.", "ar": "مهما صليت من الليل فليكن الوتر آخره، وإن خشيت ألا تستيقظ فأوتر قبل أن تنام." }
+        },
+        {
+          "hadith": "bukhari:1130",
+          "check": "thankful",
+          "title": { "en": "Gratitude, not burden", "de": "Dankbarkeit, keine Last", "ar": "شكر لا عبء" },
+          "body": { "en": "His feet swelled from long standing, and he called it gratitude. Night prayer is a thank-you to Allah.", "de": "Seine Füße schwollen vom langen Stehen an, und er nannte es Dankbarkeit. Das Nachtgebet ist ein Dank an Allah.", "ar": "تورمت قدماه من طول القيام، وعدّ ذلك شكرًا. فقيام الليل شكر لله." }
+        },
+        {
+          "hadith": "bukhari:5009",
+          "check": "last two Verses",
+          "title": { "en": "Even a little counts", "de": "Auch wenig zählt", "ar": "القليل يكفي" },
+          "body": { "en": "On tired nights, the closing two verses of al-Baqarah are enough.", "de": "In müden Nächten genügen die zwei Schlussverse der Sure al-Baqara.", "ar": "في الليالي المتعبة تكفيك خاتمة سورة البقرة." }
+        },
+        {
+          "title": { "en": "Starting small", "de": "Klein anfangen", "ar": "ابدأ صغيرًا" },
+          "list": {
+            "en": ["Sleep early after Isha", "Make the intention to wake before Fajr", "Begin with two rak'ahs and Witr", "Ask Allah for one thing you need"],
+            "de": ["Nach Isha früh schlafen gehen", "Die Absicht fassen, vor Fajr aufzuwachen", "Mit zwei Rak'as und Witr beginnen", "Allah um eine Sache bitten, die Sie brauchen"],
+            "ar": ["نم مبكرًا بعد العشاء", "انوِ الاستيقاظ قبل الفجر", "ابدأ بركعتين ثم الوتر", "اسأل الله حاجة تحتاجها"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-12-family",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 12", "de": "Sunnas zum Wiederbeleben · 12", "ar": "سنن نحييها · ١٢" },
+        "title": { "en": "Sunnahs of family life", "de": "Die Sunnas des Familienlebens", "ar": "سنن الحياة الأسرية" },
+        "sub": { "en": "Kindness begins at home: how the Prophet lived with his family", "de": "Güte beginnt zu Hause: wie der Prophet mit seiner Familie lebte", "ar": "الإحسان يبدأ من البيت: كيف عاش النبي ﷺ مع أهله" },
+        "arabic": "السُّنَّةُ فِي البَيْت"
+      },
+      "slides": [
+        {
+          "verse": "30:21",
+          "check": "affection and mercy",
+          "title": { "en": "Love and mercy", "de": "Zuneigung und Barmherzigkeit", "ar": "مودة ورحمة" },
+          "body": { "en": "In the Quran, marriage is one of Allah's signs: a place of calm, affection and mercy.", "de": "Im Koran ist die Ehe eines der Zeichen Allahs: ein Ort der Ruhe, der Zuneigung und der Barmherzigkeit.", "ar": "الزواج في القرآن آية من آيات الله: سكن ومودة ورحمة." }
+        },
+        {
+          "hadith": "bukhari:676",
+          "check": "serving his family",
+          "title": { "en": "He helped at home", "de": "Er half im Haushalt", "ar": "في خدمة أهله" },
+          "body": { "en": "The Prophet served his family with his own hands, until it was time for prayer.", "de": "Der Prophet diente seiner Familie mit eigenen Händen, bis es Zeit zum Gebet war.", "ar": "كان النبي ﷺ يعين أهله بيده حتى يحين وقت الصلاة." }
+        },
+        {
+          "hadith": "bukhari:56",
+          "check": "morsel",
+          "title": { "en": "A bite of food", "de": "Ein Bissen", "ar": "لقمة" },
+          "body": { "en": "Even feeding your spouse is rewarded when done for Allah's sake. Small tenderness, great reward.", "de": "Selbst wer dem Ehepartner einen Bissen reicht, wird belohnt, wenn es um Allahs willen geschieht. Kleine Zärtlichkeit, großer Lohn.", "ar": "حتى إطعام زوجتك تؤجر عليه إذا ابتغيت به وجه الله. لطف صغير وأجر كبير." }
+        },
+        {
+          "hadith": "muslim:3648",
+          "check": "believing woman",
+          "title": { "en": "See the good", "de": "Das Gute sehen", "ar": "انظر إلى الجميل" },
+          "body": { "en": "Every spouse has flaws. Look past the one trait you dislike to the many you appreciate.", "de": "Jeder Ehepartner hat Schwächen. Blicken Sie über die eine Eigenschaft, die Sie stört, hinweg auf die vielen, die Sie schätzen.", "ar": "لكل زوج عيوب، فتجاوز الخصلة التي تكرهها إلى الخصال الكثيرة التي تحبها." }
+        },
+        {
+          "hadith": "bukhari:5997",
+          "check": "merciful",
+          "title": { "en": "Kiss your children", "de": "Küssen Sie Ihre Kinder", "ar": "قبّل أولادك" },
+          "body": { "en": "When a man boasted that he had never kissed any of his ten children, the Prophet answered with a lesson on mercy.", "de": "Als ein Mann sich rühmte, keines seiner zehn Kinder je geküsst zu haben, antwortete der Prophet mit einer Lehre über Barmherzigkeit.", "ar": "لما تفاخر رجل بأنه لم يقبّل أحدًا من أولاده العشرة، أجابه النبي ﷺ بدرس في الرحمة." }
+        },
+        {
+          "hadith": "bukhari:5971",
+          "check": "Your mother",
+          "title": { "en": "Your mother, three times", "de": "Ihre Mutter, dreimal", "ar": "الأم ثلاثًا" },
+          "body": { "en": "Asked who deserves the best companionship, he named the mother three times, and then the father.", "de": "Gefragt, wem die beste Gesellschaft gebührt, nannte er dreimal die Mutter und dann den Vater.", "ar": "سُئل عن أحق الناس بحسن الصحبة، فذكر الأم ثلاث مرات ثم الأب." }
+        },
+        {
+          "hadith": "bukhari:2587",
+          "check": "be just to your children",
+          "title": { "en": "Be fair to your children", "de": "Gerecht zu den Kindern sein", "ar": "العدل بين الأولاد" },
+          "body": { "en": "Gifts and attention should be shared justly. Fairness protects the love between siblings.", "de": "Geschenke und Aufmerksamkeit sollen gerecht verteilt werden. Gerechtigkeit schützt die Liebe zwischen Geschwistern.", "ar": "وزّع العطايا والاهتمام بعدل، فالعدل يحفظ المحبة بين الإخوة." }
+        },
+        {
+          "hadith": "bukhari:5986",
+          "check": "Kith and kin",
+          "title": { "en": "Keep the ties", "de": "Die Bande pflegen", "ar": "صلة الرحم" },
+          "body": { "en": "Visiting, calling and helping relatives: the Prophet linked it to blessing in provision and in life.", "de": "Verwandte besuchen, anrufen, unterstützen: Der Prophet verband dies mit Segen im Lebensunterhalt und im Leben.", "ar": "زيارة الأقارب والاتصال بهم وإعانتهم: ربطها النبي ﷺ بالبركة في الرزق والعمر." }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-13-cleanliness",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 13", "de": "Sunnas zum Wiederbeleben · 13", "ar": "سنن نحييها · ١٣" },
+        "title": { "en": "Sunnahs of cleanliness", "de": "Die Sunnas der Reinheit", "ar": "سنن الطهارة" },
+        "sub": { "en": "From the bathroom to wudu: purity in everyday life", "de": "Vom Badezimmer bis zum Wudu: Reinheit im Alltag", "ar": "من بيت الخلاء إلى الوضوء: طهارة في كل يوم" },
+        "arabic": "الطَّهَارَة"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:534",
+          "check": "half of faith",
+          "title": { "en": "Half of faith", "de": "Die Hälfte des Glaubens", "ar": "شطر الإيمان" },
+          "body": { "en": "Purity is not a side issue. The Prophet placed it at the very heart of faith.", "de": "Reinheit ist keine Nebensache. Der Prophet stellte sie in das Herz des Glaubens.", "ar": "الطهارة ليست أمرًا جانبيًا، بل جعلها النبي ﷺ في صميم الإيمان." }
+        },
+        {
+          "hadith": "bukhari:142",
+          "check": "seek Refuge",
+          "title": { "en": "Before entering", "de": "Vor dem Eintreten", "ar": "قبل الدخول" },
+          "body": { "en": "A short dua before entering the toilet asks Allah for protection from all that is impure.", "de": "Ein kurzes Bittgebet vor dem Betreten der Toilette bittet Allah um Schutz vor allem Unreinen.", "ar": "دعاء قصير قبل دخول الخلاء تستعيذ فيه بالله من كل خبيث." }
+        },
+        {
+          "dua": "hisn:7:0",
+          "check": "forgiveness",
+          "title": { "en": "On leaving", "de": "Beim Hinausgehen", "ar": "عند الخروج" },
+          "body": { "en": "A single word on the way out asks for Allah's forgiveness. Scholars see in it thanks for ease and relief.", "de": "Ein einziges Wort beim Hinausgehen bittet um Allahs Vergebung. Gelehrte sehen darin Dank für Erleichterung.", "ar": "كلمة واحدة عند الخروج تسأل الله المغفرة، ويرى فيها العلماء شكرًا على التيسير والراحة." }
+        },
+        {
+          "hadith": "bukhari:154",
+          "check": "right hand",
+          "title": { "en": "Use the left hand", "de": "Die linke Hand benutzen", "ar": "اليسرى للتنظيف" },
+          "body": { "en": "The right hand is kept for eating, greeting and giving. Cleaning is done with the left.", "de": "Die rechte Hand bleibt dem Essen, Grüßen und Geben vorbehalten. Gereinigt wird mit der linken.", "ar": "اليمنى للطعام والمصافحة والعطاء، واليسرى للتنظيف." }
+        },
+        {
+          "hadith": "bukhari:168",
+          "check": "start from the right",
+          "title": { "en": "Start on the right", "de": "Rechts beginnen", "ar": "البدء باليمين" },
+          "body": { "en": "Shoes, combing, washing: he liked to begin with the right side in all good things.", "de": "Schuhe, Kämmen, Waschen: Bei allem Guten begann er gern auf der rechten Seite.", "ar": "في الانتعال وتسريح الشعر والوضوء وسائر الأمور الحسنة كان يحب أن يبدأ بالجهة اليمنى." }
+        },
+        {
+          "hadith": "bukhari:5891",
+          "check": "Fitra",
+          "title": { "en": "The five of fitrah", "de": "Die fünf der Fitra", "ar": "خصال الفطرة" },
+          "body": { "en": "Trimming the moustache, cutting the nails and removing body hair belong to the natural way of the prophets.", "de": "Den Schnurrbart kürzen, die Nägel schneiden, Körperhaare entfernen: Das gehört zur natürlichen Art der Propheten.", "ar": "قص الشارب وتقليم الأظفار وإزالة شعر الجسد من الفطرة التي سار عليها الأنبياء." }
+        },
+        {
+          "hadith": "bukhari:887",
+          "check": "Siwak",
+          "title": { "en": "The siwak", "de": "Der Siwak", "ar": "السواك" },
+          "body": { "en": "He wished to make it a duty before every prayer, but held back out of mercy for his community.", "de": "Er wünschte, ihn vor jedem Gebet zur Pflicht zu machen, hielt sich aber aus Barmherzigkeit mit seiner Gemeinschaft zurück.", "ar": "تمنّى أن يجعله واجبًا عند كل صلاة، لكنه ترك ذلك رحمة بأمته." }
+        },
+        {
+          "hadith": "muslim:578",
+          "check": "under his nails",
+          "title": { "en": "Wudu washes away sins", "de": "Wudu wäscht Sünden ab", "ar": "الوضوء يغسل الخطايا" },
+          "body": { "en": "Wudu is more than washing: when done well, sins leave the body, down to the fingertips.", "de": "Wudu ist mehr als Waschen: Gut vollzogen, verlassen die Sünden den Körper bis in die Fingerspitzen.", "ar": "الوضوء أكثر من غسل: إذا أُحسن خرجت الخطايا من الجسد حتى أطراف الأصابع." }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-14-charity",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 14", "de": "Sunnas zum Wiederbeleben · 14", "ar": "سنن نحييها · ١٤" },
+        "title": { "en": "Sunnahs of giving", "de": "Die Sunnas des Gebens", "ar": "سنن الصدقة" },
+        "sub": { "en": "Generosity that never makes you poorer", "de": "Großzügigkeit, die niemals ärmer macht", "ar": "كرم لا يورث فقرًا" },
+        "arabic": "فَضْلُ الصَّدَقَة"
+      },
+      "slides": [
+        {
+          "verse": "2:261",
+          "check": "seven spikes",
+          "title": { "en": "One seed, seven hundred", "de": "Ein Korn, siebenhundert", "ar": "حبة تصير سبعمئة" },
+          "body": { "en": "The Quran's image of charity: a single seed that grows into seven ears of a hundred grains each.", "de": "Das Bild des Korans für das Spenden: ein einziges Korn, aus dem sieben Ähren zu je hundert Körnern wachsen.", "ar": "صورة القرآن للصدقة: بذرة واحدة تصير سبعمئة حبة وأكثر." }
+        },
+        {
+          "hadith": "muslim:6592",
+          "check": "does not decrease",
+          "title": { "en": "Wealth does not shrink", "de": "Vermögen schrumpft nicht", "ar": "المال لا يقلّ" },
+          "body": { "en": "Giving may look like a loss, but the Prophet promised that it never reduces what you have.", "de": "Spenden mag wie ein Verlust aussehen, doch der Prophet versicherte, dass es Ihr Vermögen niemals mindert.", "ar": "قد تبدو الصدقة خسارة، لكن النبي ﷺ أخبر أنها لا تُنقص مما تملك شيئًا." }
+        },
+        {
+          "hadith": "bukhari:1417",
+          "check": "half a date",
+          "title": { "en": "Even half a date", "de": "Selbst eine halbe Dattel", "ar": "نصف تمرة" },
+          "body": { "en": "No gift is too small. Half a date given sincerely can shield you from the Fire.", "de": "Kein Geschenk ist zu klein. Eine halbe Dattel, aufrichtig gegeben, kann vor dem Feuer schützen.", "ar": "لا عطاء صغير؛ نصف تمرة تُعطى بإخلاص قد تقيك النار." }
+        },
+        {
+          "hadith": "bukhari:6022",
+          "check": "refrain from doing evil",
+          "title": { "en": "Charity without money", "de": "Spenden ohne Geld", "ar": "صدقة بلا مال" },
+          "body": { "en": "No money? Work and give, help someone in need, speak good, or simply hold back from harm.", "de": "Kein Geld? Arbeiten und geben, Bedürftigen helfen, Gutes sagen oder einfach Schaden unterlassen.", "ar": "لا مال لديك؟ اعمل وتصدّق، أو أعن محتاجًا، أو قل خيرًا، أو كفّ أذاك عن الناس." }
+        },
+        {
+          "hadith": "bukhari:1427",
+          "check": "upper hand",
+          "title": { "en": "Start at home", "de": "Zu Hause beginnen", "ar": "الأقربون أولًا" },
+          "body": { "en": "The giving hand is better than the taking one, and charity begins with those you support.", "de": "Die gebende Hand ist besser als die nehmende, und das Spenden beginnt bei denen, für die Sie sorgen.", "ar": "اليد المعطية خير من الآخذة، والعطاء يبدأ بمن تنفق عليهم." }
+        },
+        {
+          "hadith": "bukhari:1442",
+          "check": "two angels",
+          "title": { "en": "Two angels every morning", "de": "Zwei Engel jeden Morgen", "ar": "ملكان كل صباح" },
+          "body": { "en": "Each day two angels make dua: one for the generous, one against the miser.", "de": "Jeden Tag sprechen zwei Engel ein Bittgebet: einer für den Großzügigen, einer gegen den Geizigen.", "ar": "كل يوم يدعو ملكان: أحدهما للمنفق، والآخر على الممسك." }
+        },
+        {
+          "hadith": "muslim:4223",
+          "check": "recurring charity",
+          "title": { "en": "Charity that keeps flowing", "de": "Spenden, die weiterfließen", "ar": "الصدقة الجارية" },
+          "body": { "en": "A well, a book, a planted tree: some gifts go on rewarding you after death.", "de": "Ein Brunnen, ein Buch, ein gepflanzter Baum: Manche Gaben belohnen Sie noch nach dem Tod.", "ar": "بئر أو كتاب أو شجرة تغرسها: عطايا يستمر أجرها بعد الموت." }
+        },
+        {
+          "verse": "2:271",
+          "check": "conceal them",
+          "title": { "en": "In secret", "de": "Im Verborgenen", "ar": "في السر" },
+          "body": { "en": "Public giving can inspire others. Yet a gift no one sees keeps the heart sincere.", "de": "Öffentliches Spenden kann andere anspornen. Doch eine Gabe, die niemand sieht, hält das Herz aufrichtig.", "ar": "الصدقة العلنية قد تحفز غيرك، لكن العطاء الخفي يحفظ القلب مخلصًا." }
+        }
+      ]
+    },
+    {
+      "id": "sunnahs-15-small-deeds",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Sunnahs to revive · 15", "de": "Sunnas zum Wiederbeleben · 15", "ar": "سنن نحييها · ١٥" },
+        "title": { "en": "Small sunnahs, big rewards", "de": "Kleine Sunnas, großer Lohn", "ar": "سنن صغيرة وأجور عظيمة" },
+        "sub": { "en": "Seconds of effort that weigh heavily on the scale", "de": "Sekunden der Mühe, die schwer auf der Waage wiegen", "ar": "لحظات يسيرة تثقل الميزان" },
+        "arabic": "أَعْمَالٌ يَسِيرَة"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:7563",
+          "check": "heavy in weight",
+          "title": { "en": "Two light phrases", "de": "Zwei leichte Sätze", "ar": "عبارتان خفيفتان" },
+          "body": { "en": "Two short phrases of praise, said in seconds, weigh heavily on the Day of Judgement.", "de": "Zwei kurze Lobpreisungen, in Sekunden gesprochen, wiegen schwer am Tag des Gerichts.", "ar": "عبارتا تسبيح قصيرتان تقولهما في ثوانٍ، ولهما وزن عظيم يوم القيامة." }
+        },
+        {
+          "hadith": "bukhari:2472",
+          "check": "thorny branch",
+          "title": { "en": "Clear the path", "de": "Den Weg freiräumen", "ar": "إماطة الأذى" },
+          "body": { "en": "A man moved a thorny branch out of people's way and was forgiven. Pick up the broken glass on the pavement.", "de": "Ein Mann räumte einen Dornenzweig aus dem Weg und wurde dafür vergeben. Heben Sie die Glasscherbe auf dem Gehweg auf.", "ar": "أزاح رجل غصن شوك عن طريق الناس فغُفر له. ارفع الزجاج المكسور عن الرصيف." }
+        },
+        {
+          "hadith": "bukhari:780",
+          "check": "Say Amin",
+          "title": { "en": "Say amin", "de": "Amin sagen", "ar": "قل آمين" },
+          "body": { "en": "When the imam finishes al-Fatiha, say amin. If it matches the amin of the angels, past sins are forgiven.", "de": "Wenn der Imam al-Fatiha beendet, sagen Sie Amin. Trifft es mit dem Amin der Engel zusammen, werden frühere Sünden vergeben.", "ar": "قل آمين بعد فاتحة الإمام، فإن وافقت آمين الملائكة كانت سببًا لمغفرة الذنوب السابقة." }
+        },
+        {
+          "hadith": "bukhari:614",
+          "check": "intercession",
+          "title": { "en": "The dua after the adhan", "de": "Das Bittgebet nach dem Adhan", "ar": "الدعاء بعد الأذان" },
+          "body": { "en": "Repeat the call after the muezzin, then make this dua. The Prophet promised his intercession to whoever says it.", "de": "Wiederholen Sie den Ruf nach dem Muezzin und sprechen Sie dann dieses Bittgebet. Der Prophet versprach dafür seine Fürsprache.", "ar": "ردّد مع المؤذن، ثم ادعُ بهذا الدعاء، وقد وعد النبي ﷺ قائله بشفاعته." }
+        },
+        {
+          "hadith": "bukhari:1149",
+          "check": "footsteps",
+          "title": { "en": "Two rak'ahs after wudu", "de": "Zwei Rak'as nach dem Wudu", "ar": "ركعتان بعد الوضوء" },
+          "body": { "en": "Bilal's footsteps were heard in Paradise. His secret: praying after every wudu.", "de": "Bilals Schritte wurden im Paradies gehört. Sein Geheimnis: nach jedem Wudu zu beten.", "ar": "سُمع وقع خطى بلال في الجنة، وسرّه أنه كان يصلي بعد كل وضوء." }
+        },
+        {
+          "hadith": "muslim:6552",
+          "check": "fruit garden",
+          "title": { "en": "Visit the sick", "de": "Kranke besuchen", "ar": "عيادة المريض" },
+          "body": { "en": "Every visit to someone ill is like a walk through the gardens of Paradise until you return.", "de": "Jeder Besuch bei einem Kranken gleicht einem Gang durch die Gärten des Paradieses, bis Sie heimkehren.", "ar": "كل زيارة لمريض كأنها نزهة في بساتين الجنة حتى تعود." }
+        },
+        {
+          "hadith": "bukhari:6409",
+          "check": "treasure",
+          "title": { "en": "A treasure of Paradise", "de": "Ein Schatz des Paradieses", "ar": "كنز في الجنة" },
+          "body": { "en": "A short sentence of trust: there is no power except with Allah. The Prophet called it a treasure.", "de": "Ein kurzer Satz des Vertrauens: Es gibt keine Kraft außer bei Allah. Der Prophet nannte ihn einen Schatz.", "ar": "جملة قصيرة من التوكل: لا قوة إلا بالله، وقد سماها النبي ﷺ كنزًا." }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "set": "sayings-abu-al-tayyib-al-tabari",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-abu-al-tayyib-al-tabari-01",
+      "theme": "taqwa",
+      "text": {
+        "en": "Past a hundred years old, he leapt strongly from a boat to the shore. When rebuked, he said: These are limbs we guarded from sins in youth, so Allah guarded them for us in old age.",
+        "de": "Mit über hundert Jahren sprang er kräftig von einem Boot an Land. Als man ihn tadelte, sagte er: Diese Glieder haben wir in der Jugend vor Sünden bewahrt, so hat Allah sie uns im Alter bewahrt.",
+        "ar": "جاوز المائة وهو ممتع بعقله وقوته، فوثب من سفينة إلى الأرض وثبة شديدة، فعوتب، فقال: هذه جوارح حفظناها عن المعاصي في الصغر، فحفظها الله علينا في الكبر."
+      },
+      "by": { "en": "Abu al-Tayyib al-Tabari", "de": "Abu t-Tayyib at-Tabari", "ar": "أبو الطيب الطبري" },
+      "work": { "en": "Reported by Ibn Rajab in Jami' al-'Ulum wa-l-Hikam", "de": "Überliefert von Ibn Radschab in Dschami' al-'Ulum wa-l-Hikam", "ar": "نقله ابن رجب في جامع العلوم والحكم" },
+      "needs_review": true
+    }
+  ]
+}

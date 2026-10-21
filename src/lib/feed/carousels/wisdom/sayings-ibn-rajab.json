@@ -1,0 +1,84 @@
+{
+  "set": "sayings-ibn-rajab",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-ibn-rajab-01",
+      "theme": "worship",
+      "text": {
+        "en": "Eid is not for the one who wears new clothes. Eid is for the one whose obedience grows.",
+        "de": "Das Fest gehört nicht dem, der neue Kleider trägt. Das Fest gehört dem, dessen Gehorsam wächst.",
+        "ar": "ليس العيد لمن لبس الجديد، إنما العيد لمن طاعاته تزيد."
+      },
+      "arabic": "ليس العيد لمن لبس الجديد، إنما العيد لمن طاعاته تزيد.",
+      "by": { "en": "Ibn Rajab al-Hanbali", "de": "Ibn Radschab al-Hanbali", "ar": "ابن رجب الحنبلي" },
+      "work": { "en": "Lata'if al-Ma'arif", "de": "Lata'if al-Ma'arif", "ar": "لطائف المعارف" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-rajab-02",
+      "theme": "taqwa",
+      "text": {
+        "en": "Whoever guards the limits of Allah in his youth and strength, Allah guards him in his old age and weakness.",
+        "de": "Wer die Grenzen Allahs in seiner Jugend und Kraft wahrt, den bewahrt Allah in seinem Alter und seiner Schwäche.",
+        "ar": "من حفظ الله في صباه وقوته، حفظه الله في حال كبره وضعف قوته."
+      },
+      "arabic": "من حفظ الله في صباه وقوته، حفظه الله في حال كبره وضعف قوته.",
+      "by": { "en": "Ibn Rajab al-Hanbali", "de": "Ibn Radschab al-Hanbali", "ar": "ابن رجب الحنبلي" },
+      "work": { "en": "Jami' al-'Ulum wa-l-Hikam", "de": "Dschami' al-'Ulum wa-l-Hikam", "ar": "جامع العلوم والحكم" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-rajab-03",
+      "theme": "family",
+      "text": {
+        "en": "Allah may protect a servant, because of his righteousness, even after his death, in his children and their children.",
+        "de": "Allah kann einen Diener wegen seiner Rechtschaffenheit auch nach seinem Tod schützen, in seinen Kindern und Nachkommen.",
+        "ar": "وقد يحفظ الله العبد بصلاحه بعد موته في ذريته."
+      },
+      "arabic": "وقد يحفظ الله العبد بصلاحه بعد موته في ذريته.",
+      "by": { "en": "Ibn Rajab al-Hanbali", "de": "Ibn Radschab al-Hanbali", "ar": "ابن رجب الحنبلي" },
+      "work": { "en": "Jami' al-'Ulum wa-l-Hikam", "de": "Dschami' al-'Ulum wa-l-Hikam", "ar": "جامع العلوم والحكم" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-rajab-04",
+      "theme": "taqwa",
+      "text": {
+        "en": "The root of taqwa is that the servant places, between himself and what he fears, a shield that protects him from it.",
+        "de": "Die Wurzel der Gottesfurcht ist, dass der Diener zwischen sich und das, was er fürchtet, einen Schild stellt, der ihn davor schützt.",
+        "ar": "وأصل التقوى أن يجعل العبد بينه وبين ما يخافه ويحذره وقاية تقيه منه."
+      },
+      "arabic": "وأصل التقوى أن يجعل العبد بينه وبين ما يخافه ويحذره وقاية تقيه منه.",
+      "by": { "en": "Ibn Rajab al-Hanbali", "de": "Ibn Radschab al-Hanbali", "ar": "ابن رجب الحنبلي" },
+      "work": { "en": "Jami' al-'Ulum wa-l-Hikam", "de": "Dschami' al-'Ulum wa-l-Hikam", "ar": "جامع العلوم والحكم" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-rajab-05",
+      "theme": "fasting",
+      "text": {
+        "en": "O you whose life has slipped away in nothing, make up what you have missed in the Night of Decree.",
+        "de": "Sie, dessen Leben im Nichts verronnen ist: Holen Sie in der Nacht der Bestimmung nach, was Ihnen entgangen ist.",
+        "ar": "يا من ضاع عمره في لا شيء، استدرك ما فاتك في ليلة القدر."
+      },
+      "by": { "en": "Ibn Rajab al-Hanbali", "de": "Ibn Radschab al-Hanbali", "ar": "ابن رجب الحنبلي" },
+      "work": { "en": "Lata'if al-Ma'arif", "de": "Lata'if al-Ma'arif", "ar": "لطائف المعارف" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-rajab-06",
+      "theme": "prayer",
+      "text": {
+        "en": "The root of humility in prayer is a heart that is soft, tender, still, submissive and broken. When the heart is humbled, all the limbs follow it.",
+        "de": "Die Wurzel der Demut im Gebet ist ein weiches, zartes, stilles, ergebenes und gebrochenes Herz. Wenn das Herz demütig wird, folgen ihm alle Glieder.",
+        "ar": "أصل الخشوع لين القلب ورقته وسكونه وخضوعه وانكساره وحرقته، فإذا خشع القلب تبعه خشوع جميع الجوارح والأعضاء."
+      },
+      "arabic": "أصل الخشوع لين القلب ورقته وسكونه وخضوعه وانكساره وحرقته، فإذا خشع القلب تبعه خشوع جميع الجوارح والأعضاء.",
+      "by": { "en": "Ibn Rajab al-Hanbali", "de": "Ibn Radschab al-Hanbali", "ar": "ابن رجب الحنبلي" },
+      "work": { "en": "al-Khushu' fi al-Salah", "de": "al-Chuschu' fi s-Salah", "ar": "الخشوع في الصلاة" },
+      "needs_review": true
+    }
+  ]
+}

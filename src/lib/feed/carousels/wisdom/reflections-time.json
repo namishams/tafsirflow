@@ -1,0 +1,120 @@
+{
+  "set": "reflections-time",
+  "kind": "reflection",
+  "theme": "time",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-time-01",
+      "text": {
+        "en": "The hour you spend scrolling at night could be an hour of sleep, prayer or a call to your mother. Choose one of them tonight.",
+        "de": "Die Stunde, die Sie nachts mit Scrollen verbringen, könnte eine Stunde Schlaf, Gebet oder ein Anruf bei Ihrer Mutter sein. Wählen Sie heute Abend eines davon.",
+        "ar": "الساعة التي تقضيها ليلا في تصفح الهاتف قد تكون ساعة نوم أو صلاة أو اتصال بأمك، فاختر واحدة منها الليلة."
+      }
+    },
+    {
+      "id": "wr-time-02",
+      "text": {
+        "en": "Every sunset closes a page that will never be rewritten. Let each page hold at least one good line.",
+        "de": "Jeder Sonnenuntergang schließt eine Seite, die nie neu geschrieben wird. Lassen Sie jede Seite wenigstens eine gute Zeile enthalten.",
+        "ar": "كل غروب يطوي صفحة لن تكتب من جديد، فاجعل في كل صفحة سطرا طيبا واحدا على الأقل."
+      }
+    },
+    {
+      "id": "wr-time-03",
+      "text": {
+        "en": "The five prayers divide the day into gentle portions, so that no hour wanders too far from Allah.",
+        "de": "Die fünf Gebete teilen den Tag in sanfte Abschnitte, damit keine Stunde sich zu weit von Allah entfernt.",
+        "ar": "الصلوات الخمس تقسم اليوم أجزاء لطيفة، كي لا تبتعد ساعة منه كثيرا عن الله."
+      }
+    },
+    {
+      "id": "wr-time-04",
+      "text": {
+        "en": "Ten minutes a day add up to more than sixty hours a year. Small, steady time is enough to learn a language or memorise a surah.",
+        "de": "Zehn Minuten am Tag ergeben mehr als sechzig Stunden im Jahr. Kleine, beständige Zeit reicht, um eine Sprache zu lernen oder eine Sure auswendig zu lernen.",
+        "ar": "عشر دقائق في اليوم تتجاوز ستين ساعة في السنة، والوقت القليل الدائم يكفي لتعلم لغة أو حفظ سورة."
+      }
+    },
+    {
+      "id": "wr-time-05",
+      "text": {
+        "en": "Waiting rooms, traffic jams, queues: these lost minutes can become found ones with a little remembrance.",
+        "de": "Wartezimmer, Staus, Warteschlangen: Diese verlorenen Minuten können mit ein wenig Gedenken zu gewonnenen werden.",
+        "ar": "غرف الانتظار، وزحام الطرق، والطوابير: هذه الدقائق الضائعة قد تصير دقائق مكسوبة بشيء من الذكر."
+      }
+    },
+    {
+      "id": "wr-time-06",
+      "text": {
+        "en": "Do not wait for the perfect time to begin. The perfect time is usually the one you are wasting while you wait.",
+        "de": "Warten Sie nicht auf den perfekten Zeitpunkt, um anzufangen. Der perfekte Zeitpunkt ist meist der, den Sie mit Warten vergeuden.",
+        "ar": "لا تنتظر الوقت المثالي لتبدأ، فالوقت المثالي غالبا هو الذي تضيعه وأنت تنتظر."
+      }
+    },
+    {
+      "id": "wr-time-07",
+      "text": {
+        "en": "The time you give your children now is the inheritance they will remember most.",
+        "de": "Die Zeit, die Sie Ihren Kindern jetzt schenken, ist das Erbe, an das sie sich am meisten erinnern werden.",
+        "ar": "الوقت الذي تمنحه لأطفالك الآن هو الميراث الذي سيتذكرونه أكثر من غيره."
+      }
+    },
+    {
+      "id": "wr-time-08",
+      "text": {
+        "en": "With every birthday, one year less remains. Let the candles remind you to make the next year count.",
+        "de": "Mit jedem Geburtstag bleibt ein Jahr weniger. Lassen Sie die Kerzen Sie daran erinnern, das nächste Jahr wertvoll zu machen.",
+        "ar": "مع كل عيد ميلاد ينقص من عمرك عام، فلتذكرك الشموع بأن تجعل العام القادم ذا قيمة."
+      }
+    },
+    {
+      "id": "wr-time-09",
+      "text": {
+        "en": "The early morning is a quiet treasure. Those who claim it often find the rest of the day kinder to them.",
+        "de": "Der frühe Morgen ist ein stiller Schatz. Wer ihn für sich gewinnt, erlebt den Rest des Tages oft freundlicher.",
+        "ar": "الصباح الباكر كنز هادئ، ومن يغتنمه يجد بقية يومه ألطف به في الغالب."
+      }
+    },
+    {
+      "id": "wr-time-10",
+      "text": {
+        "en": "You cannot add hours to your day, but you can add meaning to the hours you already have.",
+        "de": "Sie können Ihrem Tag keine Stunden hinzufügen, aber Sie können den Stunden, die Sie haben, Sinn hinzufügen.",
+        "ar": "لا تستطيع أن تضيف ساعات إلى يومك، لكنك تستطيع أن تضيف معنى إلى الساعات التي لديك."
+      }
+    },
+    {
+      "id": "wr-time-11",
+      "text": {
+        "en": "Time spent with the elderly is never wasted. Their stories are libraries that will close one day.",
+        "de": "Zeit mit alten Menschen ist nie vergeudet. Ihre Geschichten sind Bibliotheken, die eines Tages schließen.",
+        "ar": "الوقت الذي تقضيه مع كبار السن لا يضيع أبدا، فقصصهم مكتبات ستغلق يوما ما."
+      }
+    },
+    {
+      "id": "wr-time-12",
+      "text": {
+        "en": "Ask yourself at the end of each day: what did I do today that will still matter in a hundred years?",
+        "de": "Fragen Sie sich am Ende jedes Tages: Was habe ich heute getan, das in hundert Jahren noch zählt?",
+        "ar": "اسأل نفسك في نهاية كل يوم: ماذا فعلت اليوم مما سيظل مهما بعد مئة عام؟"
+      }
+    },
+    {
+      "id": "wr-time-13",
+      "text": {
+        "en": "Rest is not wasted time when it restores you for good work. Even sleep can be worship with the right intention.",
+        "de": "Ruhe ist keine vergeudete Zeit, wenn sie Sie für gute Arbeit stärkt. Selbst Schlaf kann mit der richtigen Absicht Gottesdienst sein.",
+        "ar": "الراحة ليست وقتا ضائعا إذا جددت قوتك للعمل الصالح، وحتى النوم قد يكون عبادة بالنية الصالحة."
+      }
+    },
+    {
+      "id": "wr-time-14",
+      "text": {
+        "en": "The clock slows down for no one. Walk with it calmly, and fill each hour with something you will be glad you did.",
+        "de": "Die Uhr wird für niemanden langsamer. Gehen Sie ruhig mit ihr und füllen Sie jede Stunde mit etwas, über das Sie sich später freuen.",
+        "ar": "الساعة لا تبطئ لأحد، فسر معها بهدوء، واملأ كل ساعة بما تسعد بأنك فعلته."
+      }
+    }
+  ]
+}

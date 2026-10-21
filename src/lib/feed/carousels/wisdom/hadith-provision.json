@@ -1,0 +1,14 @@
+{ "set": "hadith-provision", "kind": "hadith", "theme": "provision", "tradition": "sunni",
+  "items": [
+    {"id": "wh-provision-bukhari-1480", "hadith": "bukhari:1480", "check": "take a rope"},
+    {"id": "wh-provision-bukhari-2067", "hadith": "bukhari:2067", "check": "Kith and kin"},
+    {"id": "wh-provision-bukhari-2896", "hadith": "bukhari:2896", "check": "livelihood"},
+    {"id": "wh-provision-muslim-2427", "hadith": "muslim:2427", "check": "provision of Muhammad's family"},
+    {"id": "wh-provision-bukhari-2072", "hadith": "bukhari:2072", "check": "own hands"},
+    {"id": "wh-provision-bukhari-2083", "hadith": "bukhari:2083", "check": "lawful means or unlawful"},
+    {"id": "wh-provision-muslim-4517", "hadith": "muslim:4517", "check": "surplus of provisions"},
+    {"id": "wh-provision-muslim-6408", "hadith": "muslim:6408", "check": "Ash'arites"},
+    {"id": "wh-provision-bukhari-6380", "hadith": "bukhari:6380", "check": "Increase his wealth and offspring"},
+    {"id": "wh-provision-muslim-5307", "hadith": "muslim:5307", "check": "blessing lies"},
+    {"id": "wh-provision-bukhari-2128", "hadith": "bukhari:2128", "check": "Measure your foodstuff"}
+  ] }

@@ -1,0 +1,1159 @@
+{
+  "series": "seerah",
+  "label": { "en": "Seerah timeline", "de": "Die Sira im Zeitstrahl", "ar": "السيرة على خط الزمن" },
+  "topic": "seerah",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "seerah-01-year-of-the-elephant",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Seerah · 1", "de": "Sīra · 1", "ar": "السيرة · ١" },
+        "title": { "en": "The Year of the Elephant", "de": "Das Jahr des Elefanten", "ar": "عام الفيل" },
+        "sub": { "en": "An army marches against the Ka'bah, and a child is born in Makkah", "de": "Ein Heer zieht gegen die Kaaba, und in Mekka wird ein Kind geboren", "ar": "جيش يقصد هدم الكعبة، وطفل يولد في مكة" },
+        "arabic": "عام الفيل"
+      },
+      "slides": [
+        {
+          "title": { "en": "An army marches on Makkah", "de": "Ein Heer zieht gegen Mekka", "ar": "جيش يزحف نحو مكة" },
+          "body": { "en": "Abraha, who ruled Yemen for the Abyssinian kingdom, marched on Makkah to destroy the Ka'bah. An elephant went with his army and gave the year its name.", "de": "Abraha, der den Jemen für das abessinische Reich regierte, zog gegen Mekka, um die Kaaba zu zerstören. Mit seinem Heer zog ein Elefant, der dem Jahr seinen Namen gab.", "ar": "سار أبرهة، حاكم اليمن من قِبَل مملكة الحبشة، إلى مكة ليهدم الكعبة، وكان مع جيشه فيلٌ سُمّي العام باسمه." }
+        },
+        {
+          "title": { "en": "The House has a Lord", "de": "Das Haus hat einen Herrn", "ar": "للبيت ربٌّ يحميه" },
+          "body": { "en": "The Makkans could not face such an army and withdrew to the hills. Sira works report that 'Abd al-Muttalib, the Prophet's grandfather, trusted that the Lord of the House would protect it.", "de": "Die Mekkaner konnten einem solchen Heer nicht standhalten und zogen sich in die Berge zurück. Nach den Sīra-Werken vertraute ʿAbd al-Muttalib, der Großvater des Propheten, darauf, dass der Herr des Hauses es schützen werde.", "ar": "لم يكن لأهل مكة طاقة بهذا الجيش فلجؤوا إلى الجبال، وتروي كتب السيرة أن عبد المطلب جدّ النبي ﷺ وثق بأن للبيت ربًّا يحميه." }
+        },
+        {
+          "verse": "105:1-3",
+          "check": "companions of the elephant",
+          "title": { "en": "The Quran remembers it", "de": "Der Koran erinnert daran", "ar": "القرآن يذكّر بها" },
+          "body": { "en": "Surah al-Fil, a Makkan surah of five verses, tells how the army was stopped before it reached the House.", "de": "Sure al-Fīl, eine mekkanische Sure mit fünf Versen, erzählt, wie das Heer aufgehalten wurde, bevor es das Haus erreichte.", "ar": "تحكي سورة الفيل، وهي سورة مكية من خمس آيات، كيف رُدّ الجيش قبل أن يبلغ البيت." }
+        },
+        {
+          "verse": "105:4-5",
+          "check": "hard clay",
+          "title": { "en": "A mighty army undone", "de": "Ein mächtiges Heer zerschlagen", "ar": "جيش عظيم يتبدّد" },
+          "body": { "en": "Numbers and an elephant decided nothing. For a long time afterwards, the Arabs dated events by this year.", "de": "Zahl und Elefant entschieden nichts. Noch lange danach datierten die Araber Ereignisse nach diesem Jahr.", "ar": "لم تُغنِ الكثرة ولا الفيل شيئًا، وظلّ العرب زمنًا طويلًا يؤرّخون بهذا العام." }
+        },
+        {
+          "title": { "en": "A child is born", "de": "Ein Kind wird geboren", "ar": "مولد طفل" },
+          "body": { "en": "Most historians place the Prophet's birth in this year, around 570 CE, in Makkah. His father 'Abdullah had died before he was born. His mother was Aminah bint Wahb.", "de": "Die meisten Historiker setzen die Geburt des Propheten in dieses Jahr, um 570 n. Chr., in Mekka. Sein Vater ʿAbdullāh war vor seiner Geburt gestorben. Seine Mutter war Āmina bint Wahb.", "ar": "يجعل أكثر المؤرخين مولد النبي ﷺ في هذا العام، نحو سنة ٥٧٠م، بمكة. وكان أبوه عبد الله قد توفي قبل مولده، وأمه آمنة بنت وهب." }
+        },
+        {
+          "hadith": "muslim:2750",
+          "check": "when I was born",
+          "title": { "en": "Born on a Monday", "de": "Geboren an einem Montag", "ar": "وُلد يوم الاثنين" },
+          "body": { "en": "He himself named the day of his birth when he was asked about fasting.", "de": "Er selbst nannte den Tag seiner Geburt, als man ihn nach dem Fasten fragte.", "ar": "ذكر بنفسه يوم مولده حين سُئل عن الصيام." }
+        },
+        {
+          "title": { "en": "A name of praise", "de": "Ein Name des Lobes", "ar": "اسمٌ من الحمد" },
+          "arabic": "مُحَمَّد",
+          "body": { "en": "Muhammad comes from the root h-m-d, praise: the one who is praised again and again. Sira works report that his grandfather chose it. The name occurs four times in the Quran.", "de": "Muhammad stammt von der Wurzel ḥ-m-d, Lob: der immer wieder Gepriesene. Nach den Sīra-Werken wählte sein Großvater den Namen. Im Koran kommt er viermal vor.", "ar": "اسم محمد من الجذر ح م د، ومعناه الذي يُحمد مرة بعد مرة. وتروي كتب السيرة أن جدّه هو الذي سمّاه به. ويرد الاسم في القرآن أربع مرات." }
+        },
+        {
+          "title": { "en": "Lessons from this year", "de": "Lehren aus diesem Jahr", "ar": "دروس من هذا العام" },
+          "list": {
+            "en": ["Allah protects what is His, in His own way", "Power and numbers do not decide the end", "Great beginnings often look small at first"],
+            "de": ["Allah schützt, was Ihm gehört, auf Seine Weise", "Macht und Zahl entscheiden nicht über das Ende", "Große Anfänge wirken oft zunächst klein"],
+            "ar": ["الله يحمي ما له بطريقته", "القوة والكثرة لا تحسمان العاقبة", "البدايات العظيمة تبدو صغيرة في أولها"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Hisham, as-Sira an-Nabawiyya" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Fil" },
+        { "label": "Quranic Arabic Corpus, root h-m-d", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Hmd" }
+      ]
+    },
+    {
+      "id": "seerah-02-childhood",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Seerah · 2", "de": "Sīra · 2", "ar": "السيرة · ٢" },
+        "title": { "en": "An orphan in the desert", "de": "Ein Waisenkind in der Wüste", "ar": "يتيمٌ في البادية" },
+        "sub": { "en": "Halimah, his mother Aminah, his grandfather and his uncle Abu Talib: the years that shaped him", "de": "Halīma, seine Mutter Āmina, sein Großvater und sein Onkel Abū Tālib: Jahre, die ihn prägten", "ar": "حليمة وأمه آمنة وجدّه وعمّه أبو طالب: سنوات صنعت شخصيته" },
+        "arabic": "حليمة السعدية"
+      },
+      "slides": [
+        {
+          "title": { "en": "Raised in the desert", "de": "Aufgewachsen in der Wüste", "ar": "نشأة في البادية" },
+          "body": { "en": "Makkan families often sent their infants to the desert tribes, for the clean air and the pure Arabic. The Prophet was nursed by Halimah of the Banu Sa'd.", "de": "Mekkanische Familien gaben ihre Säuglinge oft zu den Wüstenstämmen, wegen der reinen Luft und des reinen Arabisch. Den Propheten stillte Halīma vom Stamm der Banū Saʿd.", "ar": "كانت أُسَر مكة كثيرًا ما تدفع أطفالها إلى البادية لصفاء هوائها وفصاحة لسانها، وقد أرضعت النبيَّ ﷺ حليمةُ السعدية من بني سعد." }
+        },
+        {
+          "title": { "en": "A blessed household", "de": "Ein gesegnetes Zuhause", "ar": "بيت مبارك" },
+          "body": { "en": "Halimah's family was poor. Sira works report that after the child came to them, their animals gave more milk and their life became easier.", "de": "Halīmas Familie war arm. Die Sīra-Werke berichten, dass ihre Tiere mehr Milch gaben und ihr Leben leichter wurde, nachdem das Kind zu ihnen gekommen war.", "ar": "كانت أسرة حليمة فقيرة، وتروي كتب السيرة أن أنعامها درّت باللبن وتيسّر عيشها بعد أن جاءها الطفل." }
+        },
+        {
+          "hadith": "muslim:413",
+          "check": "playing with his playmates",
+          "title": { "en": "The opening of his chest", "de": "Die Öffnung seiner Brust", "ar": "شقّ الصدر" },
+          "body": { "en": "An event from his childhood among the Banu Sa'd, as Anas narrates it.", "de": "Ein Ereignis aus seiner Kindheit bei den Banū Saʿd, wie Anas es überliefert.", "ar": "حادثة من طفولته في بني سعد كما يرويها أنس رضي الله عنه." }
+        },
+        {
+          "title": { "en": "Loss upon loss", "de": "Verlust auf Verlust", "ar": "فقدٌ بعد فقد" },
+          "body": { "en": "When he was about six, his mother Aminah died on a journey, at al-Abwa'. His grandfather 'Abd al-Muttalib took him in, and died about two years later.", "de": "Mit etwa sechs Jahren verlor er seine Mutter Āmina auf einer Reise bei al-Abwāʾ. Sein Großvater ʿAbd al-Muttalib nahm ihn auf und starb etwa zwei Jahre später.", "ar": "ولمّا بلغ نحو السادسة توفيت أمه آمنة في سفر بالأبواء، فكفله جدّه عبد المطلب، ثم توفي بعد نحو عامين." }
+        },
+        {
+          "title": { "en": "In the house of Abu Talib", "de": "Im Haus von Abū Tālib", "ar": "في بيت أبي طالب" },
+          "body": { "en": "His uncle Abu Talib then raised him among his own children, though he had little wealth. He would protect his nephew for the rest of his life.", "de": "Danach zog ihn sein Onkel Abū Tālib mit seinen eigenen Kindern auf, obwohl er wenig besaß. Er sollte seinen Neffen sein Leben lang beschützen.", "ar": "ثم كفله عمه أبو طالب ورباه مع أولاده على قلة ماله، وظل يحمي ابن أخيه طوال حياته." }
+        },
+        {
+          "hadith": "bukhari:2262",
+          "check": "shepherd the sheep",
+          "title": { "en": "A young shepherd", "de": "Ein junger Hirte", "ar": "راعي الغنم" },
+          "body": { "en": "Like the prophets before him, he tended sheep: a school of patience and care.", "de": "Wie die Propheten vor ihm hütete er Schafe: eine Schule der Geduld und Fürsorge.", "ar": "رعى الغنم كما رعاها الأنبياء قبله، وفي ذلك مدرسة للصبر والرعاية." }
+        },
+        {
+          "verse": "93:6-8",
+          "check": "orphan",
+          "title": { "en": "Allah gave him refuge", "de": "Allah gab ihm Zuflucht", "ar": "آواه الله" },
+          "body": { "en": "Years later the Quran reminded him of these early losses, and of how Allah had cared for him in each one.", "de": "Jahre später erinnerte ihn der Koran an diese frühen Verluste und daran, wie Allah ihn in jedem einzelnen versorgt hatte.", "ar": "بعد سنين ذكّره القرآن بهذا الفقد المبكر، وبرعاية الله له في كل مرة." }
+        },
+        {
+          "title": { "en": "Lessons from his childhood", "de": "Lehren aus seiner Kindheit", "ar": "دروس من طفولته" },
+          "list": {
+            "en": ["Loss can be the soil in which strength grows", "Care for orphans: the Prophet was one himself", "Small duties, like tending sheep, train great hearts"],
+            "de": ["Verlust kann der Boden sein, auf dem Stärke wächst", "Sorgen Sie für Waisen: Der Prophet war selbst einer", "Kleine Aufgaben wie das Hüten formen große Herzen"],
+            "ar": ["قد يكون الفقد تربةً تنبت فيها القوة", "أحسن إلى اليتيم، فقد كان النبي ﷺ يتيمًا", "المهام الصغيرة كرعي الغنم تربي القلوب الكبيرة"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }]
+    },
+    {
+      "id": "seerah-03-al-amin-and-khadijah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Seerah · 3", "de": "Sīra · 3", "ar": "السيرة · ٣" },
+        "title": { "en": "Al-Amin and Khadijah", "de": "Al-Amīn und Chadīdscha", "ar": "الأمين وخديجة" },
+        "sub": { "en": "Trust, trade and a marriage of mercy, years before the first revelation", "de": "Vertrauen, Handel und eine Ehe voller Barmherzigkeit, Jahre vor der ersten Offenbarung", "ar": "أمانة وتجارة وزواج قائم على الرحمة قبل البعثة بسنين" },
+        "arabic": "الأمين"
+      },
+      "slides": [
+        {
+          "title": { "en": "Known as al-Amin", "de": "Bekannt als al-Amīn", "ar": "عُرف بالأمين" },
+          "body": { "en": "As a young man he became known in Makkah as al-Amin, the trustworthy. People left their valuables with him, even some who later fought his message.", "de": "Als junger Mann war er in Mekka als al-Amīn bekannt, der Vertrauenswürdige. Man vertraute ihm Wertsachen an, sogar manche, die später seine Botschaft bekämpften.", "ar": "عُرف في شبابه بمكة بالأمين، وكان الناس يودعونه أماناتهم، حتى بعض من عادَوا دعوته فيما بعد." }
+        },
+        {
+          "title": { "en": "A merchant of Makkah", "de": "Eine Kauffrau aus Mekka", "ar": "تاجرة من مكة" },
+          "body": { "en": "Khadijah bint Khuwaylid was a respected businesswoman. She hired him to lead her caravan to Syria, and her servant Maysarah came back full of praise for his honesty.", "de": "Chadīdscha bint Chuwailid war eine angesehene Kauffrau. Sie beauftragte ihn, ihre Karawane nach Syrien zu führen, und ihr Diener Maisara kehrte voller Lob über seine Ehrlichkeit zurück.", "ar": "كانت خديجة بنت خويلد تاجرة ذات شرف، فاستأجرته ليخرج في تجارتها إلى الشام، وعاد غلامها ميسرة يثني على أمانته." }
+        },
+        {
+          "title": { "en": "She proposed", "de": "Sie hielt um seine Hand an", "ar": "هي التي خطبته" },
+          "body": { "en": "It was Khadijah who proposed marriage. Most reports say he was about 25. Her age is reported differently; many sources say 40.", "de": "Chadīdscha war es, die die Ehe vorschlug. Nach den meisten Berichten war er etwa 25 Jahre alt. Ihr Alter wird unterschiedlich überliefert, viele Quellen nennen 40.", "ar": "كانت خديجة هي التي عرضت الزواج، وتذكر أكثر الروايات أنه كان في نحو الخامسة والعشرين، وتختلف الروايات في سنّها، ويذكر كثير من المصادر أنها كانت في الأربعين." }
+        },
+        {
+          "verse": "30:21",
+          "check": "affection and mercy",
+          "title": { "en": "Rest, affection and mercy", "de": "Ruhe, Zuneigung und Barmherzigkeit", "ar": "سكنٌ ومودةٌ ورحمة" },
+          "body": { "en": "Their home became a living picture of what this verse describes.", "de": "Ihr Zuhause wurde zu einem lebendigen Bild dessen, was dieser Vers beschreibt.", "ar": "صار بيتهما صورة حيّة لما تصفه هذه الآية." }
+        },
+        {
+          "title": { "en": "A wise arbitration", "de": "Ein weiser Schiedsspruch", "ar": "تحكيم حكيم" },
+          "body": { "en": "When he was about 35, Quraysh rebuilt the Ka'bah and the clans quarrelled over who would set the Black Stone. He laid it on a cloth, each clan lifted a corner, and he set it in place.", "de": "Als er etwa 35 war, bauten die Quraisch die Kaaba neu, und die Sippen stritten, wer den Schwarzen Stein einsetzen dürfe. Er legte ihn auf ein Tuch, jede Sippe hob eine Ecke, und er setzte ihn ein.", "ar": "ولما بلغ نحو الخامسة والثلاثين أعادت قريش بناء الكعبة، واختلفت القبائل فيمن يضع الحجر الأسود، فوضعه على ثوب وأخذت كل قبيلة بطرف منه، ثم وضعه بيده." }
+        },
+        {
+          "hadith": "bukhari:3815",
+          "check": "best of the world's women is Khadija",
+          "title": { "en": "Among the best of women", "de": "Unter den besten Frauen", "ar": "من خير النساء" },
+          "body": { "en": "'Ali narrates how the Prophet spoke of her rank.", "de": "ʿAlī überliefert, wie der Prophet über ihren Rang sprach.", "ar": "يروي علي رضي الله عنه كيف ذكر النبي ﷺ منزلتها." }
+        },
+        {
+          "title": { "en": "A home ready for the mission", "de": "Ein Zuhause, bereit für die Sendung", "ar": "بيت مهيّأ للرسالة" },
+          "body": { "en": "For about fifteen years before the first revelation, they built a home of trust together. When the revelation came, that home was ready to carry it.", "de": "Etwa fünfzehn Jahre vor der ersten Offenbarung bauten sie gemeinsam ein Zuhause des Vertrauens auf. Als die Offenbarung kam, war dieses Zuhause bereit, sie zu tragen.", "ar": "عاشا معًا نحو خمس عشرة سنة قبل البعثة، بنيا فيها بيتًا من الثقة، فلما جاء الوحي كان ذلك البيت مستعدًّا لحمله." }
+        },
+        {
+          "title": { "en": "What their marriage teaches", "de": "Was ihre Ehe lehrt", "ar": "ما يعلّمنا زواجهما" },
+          "list": {
+            "en": ["Character is the best recommendation", "A good marriage is built on trust and respect", "Honour the people who stand by you early"],
+            "de": ["Charakter ist die beste Empfehlung", "Eine gute Ehe beruht auf Vertrauen und Achtung", "Ehren Sie die Menschen, die früh zu Ihnen stehen"],
+            "ar": ["الخُلُق خير تزكية", "الزواج الصالح يقوم على الثقة والاحترام", "أكرم من وقفوا معك في البدايات"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }]
+    },
+    {
+      "id": "seerah-04-cave-of-hira",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Seerah · 4", "de": "Sīra · 4", "ar": "السيرة · ٤" },
+        "title": { "en": "The night in the cave of Hira", "de": "Die Nacht in der Höhle Hirāʾ", "ar": "ليلة في غار حراء" },
+        "sub": { "en": "Around 610 CE, at about forty, the first words of the Quran came down", "de": "Um 610 n. Chr., mit etwa vierzig Jahren, kamen die ersten Worte des Korans herab", "ar": "نحو سنة ٦١٠م، وهو في الأربعين تقريبًا، نزلت أولى كلمات القرآن" },
+        "arabic": "غار حراء"
+      },
+      "slides": [
+        {
+          "title": { "en": "Seeking solitude", "de": "Die Suche nach Stille", "ar": "حب العزلة" },
+          "body": { "en": "In the years before revelation he loved to withdraw to a small cave on Jabal an-Nur above Makkah. He spent nights there in worship and reflection, taking provisions with him.", "de": "In den Jahren vor der Offenbarung zog er sich gern in eine kleine Höhle am Dschabal an-Nūr oberhalb Mekkas zurück. Dort verbrachte er Nächte in Andacht und Nachdenken und nahm Proviant mit.", "ar": "في السنوات التي سبقت الوحي كان يحب العزلة، فيخلو في غار صغير بجبل النور فوق مكة، يقضي فيه ليالي في العبادة والتفكر، ويأخذ معه زاده." }
+        },
+        {
+          "title": { "en": "The angel came", "de": "Der Engel kam", "ar": "جاء المَلَك" },
+          "body": { "en": "In Ramadan, when he was about forty, the angel Jibril came to him in the cave and commanded him to read. Three times he answered that he could not read.", "de": "Im Ramadan, als er etwa vierzig war, kam der Engel Gabriel zu ihm in die Höhle und befahl ihm zu lesen. Dreimal antwortete er, er könne nicht lesen.", "ar": "وفي رمضان، وهو في نحو الأربعين، جاءه جبريل عليه السلام في الغار وأمره بالقراءة، فأجاب ثلاث مرات أنه لا يحسن القراءة." }
+        },
+        {
+          "verse": "96:1-3",
+          "check": "Recite in the name of your Lord",
+          "title": { "en": "The first words", "de": "Die ersten Worte", "ar": "أول ما نزل" },
+          "body": { "en": "According to most scholars, revelation began with these verses: reading, creation and the generosity of Allah.", "de": "Nach den meisten Gelehrten begann die Offenbarung mit diesen Versen: Lesen, Schöpfung und die Großzügigkeit Allahs.", "ar": "يرى أكثر العلماء أن الوحي بدأ بهذه الآيات: القراءة والخلق وكرم الله." }
+        },
+        {
+          "verse": "96:4-5",
+          "check": "taught by the pen",
+          "title": { "en": "Knowledge from the start", "de": "Wissen von Anfang an", "ar": "العلم منذ البداية" },
+          "body": { "en": "From its first moment, the Quran tied faith to learning and to the pen.", "de": "Vom ersten Augenblick an verband der Koran den Glauben mit dem Lernen und dem Schreiben.", "ar": "منذ اللحظة الأولى ربط القرآن الإيمان بالعلم والقلم." }
+        },
+        {
+          "hadith": "bukhari:4957",
+          "check": "Wrap me",
+          "title": { "en": "Back to Khadijah", "de": "Zurück zu Chadīdscha", "ar": "العودة إلى خديجة" },
+          "body": { "en": "Shaken, he went straight home to the person he trusted most.", "de": "Erschüttert ging er sofort nach Hause, zu dem Menschen, dem er am meisten vertraute.", "ar": "عاد مرتجفًا إلى بيته، إلى أوثق الناس عنده." }
+        },
+        {
+          "title": { "en": "Words of comfort", "de": "Worte des Trostes", "ar": "كلمات تطمئن القلب" },
+          "body": { "en": "Khadijah did not doubt him for a moment. She reminded him of the good he did for others and assured him that Allah would not let such a man come to harm.", "de": "Chadīdscha zweifelte keinen Augenblick an ihm. Sie erinnerte ihn an das Gute, das er anderen tat, und versicherte ihm, dass Allah einen solchen Menschen nicht zu Schaden kommen lasse.", "ar": "لم تشكّ خديجة فيه لحظة، بل ذكّرته بما يقدّمه للناس من خير، وطمأنته بأن الله لا يُسلم مثله إلى سوء." }
+        },
+        {
+          "hadith": "bukhari:3392",
+          "check": "Waraqa",
+          "title": { "en": "Waraqa's answer", "de": "Waraqas Antwort", "ar": "جواب ورقة" },
+          "body": { "en": "Khadijah took him to her cousin Waraqa ibn Nawfal, who knew the earlier scriptures.", "de": "Chadīdscha brachte ihn zu ihrem Vetter Waraqa ibn Naufal, der die früheren Schriften kannte.", "ar": "أخذته خديجة إلى ابن عمها ورقة بن نوفل، وكان عالمًا بالكتب السابقة." }
+        },
+        {
+          "title": { "en": "Lessons from Hira", "de": "Lehren aus Hirāʾ", "ar": "دروس من حراء" },
+          "list": {
+            "en": ["Make room for quiet reflection in your life", "Seek knowledge: the first command was to read", "Share your burdens with those who love you"],
+            "de": ["Schaffen Sie Raum für stilles Nachdenken", "Suchen Sie Wissen: Das erste Gebot war, zu lesen", "Teilen Sie Ihre Last mit denen, die Sie lieben"],
+            "ar": ["اجعل في حياتك مكانًا للتأمل الهادئ", "اطلب العلم، فأول أمرٍ كان: اقرأ", "شارك همّك من يحبك"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-'Alaq" }]
+    },
+    {
+      "id": "seerah-05-the-call-begins",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Seerah · 5", "de": "Sīra · 5", "ar": "السيرة · ٥" },
+        "title": { "en": "The call begins", "de": "Der Ruf beginnt", "ar": "بداية الدعوة" },
+        "sub": { "en": "From a quiet circle of believers to a public message on the hill of Safa", "de": "Von einem stillen Kreis von Gläubigen bis zur öffentlichen Botschaft auf dem Hügel Safā", "ar": "من دائرة صغيرة من المؤمنين إلى دعوة جهرية على جبل الصفا" },
+        "arabic": "الدعوة"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:4",
+          "check": "Arise and warn",
+          "title": { "en": "After a pause, a task", "de": "Nach einer Pause ein Auftrag", "ar": "بعد فترة، تكليف" },
+          "body": { "en": "Many scholars say: with Iqra' he became a prophet, and with these verses of al-Muddaththir a messenger sent to warn.", "de": "Viele Gelehrte sagen: Mit Iqraʾ wurde er Prophet, mit diesen Versen der Sure al-Muddaththir ein Gesandter, der warnen soll.", "ar": "يقول كثير من العلماء: نُبّئ باقرأ، وأُرسل بأوائل المدثر نذيرًا." }
+        },
+        {
+          "title": { "en": "The first believers", "de": "Die ersten Gläubigen", "ar": "أوائل المؤمنين" },
+          "body": { "en": "For about three years the call was quiet, person to person. Sira works name Khadijah, 'Ali, Zayd ibn Harithah and Abu Bakr among the very first to believe.", "de": "Etwa drei Jahre lang verlief der Ruf im Stillen, von Mensch zu Mensch. Die Sīra-Werke nennen Chadīdscha, ʿAlī, Zaid ibn Hāritha und Abū Bakr unter den allerersten Gläubigen.", "ar": "ظلت الدعوة نحو ثلاث سنين سرية، من شخص إلى شخص، وتذكر كتب السيرة خديجة وعليًّا وزيد بن حارثة وأبا بكر في أوائل المؤمنين." }
+        },
+        {
+          "title": { "en": "A house of learning", "de": "Ein Haus des Lernens", "ar": "دار للتعلّم" },
+          "body": { "en": "Believers met in the house of al-Arqam ibn Abi al-Arqam near Safa. There they prayed, learned the newest verses and strengthened each other.", "de": "Die Gläubigen trafen sich im Haus von al-Arqam ibn Abī al-Arqam nahe dem Safā. Dort beteten sie, lernten die neuesten Verse und stärkten einander.", "ar": "كان المؤمنون يجتمعون في دار الأرقم بن أبي الأرقم قرب الصفا، يصلّون ويتعلّمون ما ينزل من الآيات ويشدّ بعضهم أزر بعض." }
+        },
+        {
+          "verse": "26:214",
+          "check": "closest kindred",
+          "title": { "en": "Then: family first", "de": "Dann: zuerst die Familie", "ar": "ثم: الأقربون أولًا" },
+          "body": { "en": "Then came the command to warn his closest relatives openly.", "de": "Dann kam der Befehl, die nächsten Verwandten offen zu warnen.", "ar": "ثم جاء الأمر بإنذار الأقارب جهرًا." }
+        },
+        {
+          "hadith": "bukhari:4971",
+          "check": "Safa",
+          "title": { "en": "On the hill of Safa", "de": "Auf dem Hügel Safā", "ar": "على جبل الصفا" },
+          "body": { "en": "He first asked whether they trusted his word, and only then delivered his message.", "de": "Zuerst fragte er, ob sie seinem Wort trauten, und erst dann überbrachte er seine Botschaft.", "ar": "سألهم أولًا أيصدّقونه، ثم بلّغهم رسالته." }
+        },
+        {
+          "verse": "15:94",
+          "check": "declare what you are commanded",
+          "title": { "en": "Openly, without fear", "de": "Offen und ohne Furcht", "ar": "جهرًا بلا خوف" },
+          "body": { "en": "From now on the message was proclaimed in public, whatever the cost.", "de": "Von nun an wurde die Botschaft öffentlich verkündet, was es auch kosten mochte.", "ar": "ومن ذلك الحين صار البلاغ علنًا مهما كان الثمن." }
+        },
+        {
+          "title": { "en": "Lessons from the early call", "de": "Lehren aus dem frühen Ruf", "ar": "دروس من بداية الدعوة" },
+          "list": {
+            "en": ["Begin with those closest to you", "Build a circle that learns and prays together", "Truthfulness earns a hearing"],
+            "de": ["Beginnen Sie bei den Menschen, die Ihnen am nächsten sind", "Bauen Sie einen Kreis, der gemeinsam lernt und betet", "Wahrhaftigkeit verschafft Gehör"],
+            "ar": ["ابدأ بأقرب الناس إليك", "كوِّن صحبة تتعلم وتصلي معًا", "الصدق يفتح الآذان"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn al-Qayyim, Zad al-Ma'ad" }]
+    },
+    {
+      "id": "seerah-06-years-of-persecution",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Seerah · 6", "de": "Sīra · 6", "ar": "السيرة · ٦" },
+        "title": { "en": "Sumayyah, Bilal and the years of persecution", "de": "Sumayya, Bilāl und die Jahre der Verfolgung", "ar": "سمية وبلال وسنوات الاضطهاد" },
+        "sub": { "en": "When faith cost everything, the weakest showed the greatest courage", "de": "Als der Glaube alles kostete, zeigten die Schwächsten den größten Mut", "ar": "حين كلّف الإيمانُ كلَّ شيء، أظهر المستضعفون أعظم الشجاعة" },
+        "arabic": "أحدٌ أحد"
+      },
+      "slides": [
+        {
+          "title": { "en": "Pressure from Quraysh", "de": "Druck der Quraisch", "ar": "ضغط قريش" },
+          "body": { "en": "When the message became public, the leaders of Quraysh answered with mockery, threats and pressure. Those without a protecting clan, the poor and the enslaved, suffered most.", "de": "Als die Botschaft öffentlich wurde, antworteten die Führer der Quraisch mit Spott, Drohungen und Druck. Am meisten litten jene ohne schützende Sippe: die Armen und die Versklavten.", "ar": "لما جهر بالدعوة قابلها سادة قريش بالسخرية والتهديد والتضييق، وكان أشدَّ الناس بلاءً من لا عشيرة تحميه من الفقراء والمستعبَدين." }
+        },
+        {
+          "verse": "29:2-3",
+          "check": "will not be tried",
+          "title": { "en": "Faith is tested", "de": "Glaube wird geprüft", "ar": "الإيمان يُمتحن" },
+          "body": { "en": "These Makkan verses gave the believers a lens: trial is part of the path, not a sign of being abandoned.", "de": "Diese mekkanischen Verse gaben den Gläubigen eine Sicht: Prüfung gehört zum Weg und ist kein Zeichen, verlassen zu sein.", "ar": "منحت هذه الآيات المكية المؤمنين نظرة جديدة: الابتلاء جزء من الطريق لا علامة على الخذلان." }
+        },
+        {
+          "title": { "en": "The family of Yasir", "de": "Die Familie Yāsirs", "ar": "آل ياسر" },
+          "body": { "en": "Yasir, his wife Sumayyah and their son 'Ammar were tortured in the heat of Makkah. Sira works report that the Prophet passed by them and promised them Paradise.", "de": "Yāsir, seine Frau Sumayya und ihr Sohn ʿAmmār wurden in der Hitze Mekkas gefoltert. Nach den Sīra-Werken kam der Prophet an ihnen vorbei und verhieß ihnen das Paradies.", "ar": "عُذّب ياسر وزوجه سمية وابنهما عمار في حرّ مكة، وتروي كتب السيرة أن النبي ﷺ مرّ بهم فبشّرهم بالجنة." }
+        },
+        {
+          "title": { "en": "The first martyr", "de": "Die erste Märtyrerin", "ar": "أول شهيدة" },
+          "body": { "en": "Sumayyah bint Khayyat refused to give up her faith and was killed by Abu Jahl. She is remembered as the first martyr in Islam.", "de": "Sumayya bint Chayyāt weigerte sich, ihren Glauben aufzugeben, und wurde von Abū Dschahl getötet. Man gedenkt ihrer als der ersten Märtyrerin des Islam.", "ar": "أبت سمية بنت خياط أن تترك دينها فقتلها أبو جهل، فكانت أول شهيدة في الإسلام." }
+        },
+        {
+          "verse": "16:106",
+          "check": "heart is secure in faith",
+          "title": { "en": "Mercy for those forced", "de": "Barmherzigkeit für Gezwungene", "ar": "رحمة بالمُكرَه" },
+          "body": { "en": "Many commentators link this verse to 'Ammar: words forced out under torture do not cancel the faith in the heart.", "de": "Viele Kommentatoren beziehen diesen Vers auf ʿAmmār: Worte, die unter Folter erzwungen werden, heben den Glauben im Herzen nicht auf.", "ar": "يربط كثير من المفسرين هذه الآية بعمار: الكلمة التي تُنتزع تحت التعذيب لا تنقض إيمان القلب." }
+        },
+        {
+          "title": { "en": "One, One", "de": "Einer, Einer", "ar": "أحدٌ أحد" },
+          "arabic": "أَحَدٌ أَحَد",
+          "body": { "en": "Bilal, an enslaved man of Abyssinian descent, was laid on the burning sand with a rock on his chest. Sira works report that he kept repeating one word: Ahad, One.", "de": "Bilāl, ein versklavter Mann abessinischer Herkunft, wurde auf den glühenden Sand gelegt, einen Felsen auf der Brust. Nach den Sīra-Werken wiederholte er nur ein Wort: Ahad, Einer.", "ar": "طُرح بلال، وهو عبد من أصل حبشي، على الرمل المحرق وعلى صدره صخرة، وتروي كتب السيرة أنه ظل يردد كلمة واحدة: أحدٌ أحد." }
+        },
+        {
+          "title": { "en": "What their courage teaches", "de": "Was ihr Mut lehrt", "ar": "ما تعلّمنا شجاعتهم" },
+          "list": {
+            "en": ["Faith is not measured by status or wealth", "Stand by those who are weak and oppressed", "Hardship does not mean Allah has left you"],
+            "de": ["Glaube bemisst sich nicht an Rang oder Reichtum", "Stehen Sie den Schwachen und Unterdrückten bei", "Not bedeutet nicht, dass Allah Sie verlassen hat"],
+            "ar": ["الإيمان لا يُقاس بالجاه ولا بالمال", "قف مع الضعفاء والمظلومين", "الشدة لا تعني أن الله تخلّى عنك"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }, { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 16:106" }]
+    },
+    {
+      "id": "seerah-07-migration-to-abyssinia",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Seerah · 7", "de": "Sīra · 7", "ar": "السيرة · ٧" },
+        "title": { "en": "Refuge with a just king", "de": "Zuflucht bei einem gerechten König", "ar": "اللجوء إلى ملك عادل" },
+        "sub": { "en": "Around 615 CE, believers crossed the sea to Abyssinia and found safety under the Negus", "de": "Um 615 n. Chr. überquerten Gläubige das Meer nach Abessinien und fanden Schutz beim Negus", "ar": "نحو سنة ٦١٥م عبر مؤمنون البحر إلى الحبشة فوجدوا الأمان عند النجاشي" },
+        "arabic": "الهجرة إلى الحبشة"
+      },
+      "slides": [
+        {
+          "title": { "en": "A land of justice", "de": "Ein Land der Gerechtigkeit", "ar": "أرض عدل" },
+          "body": { "en": "As persecution grew, the Prophet allowed a group of believers to seek refuge in Abyssinia. Its Christian king was known for letting no one be wronged in his land.", "de": "Als die Verfolgung zunahm, erlaubte der Prophet einer Gruppe von Gläubigen, in Abessinien Zuflucht zu suchen. Dessen christlicher König war dafür bekannt, in seinem Land kein Unrecht zu dulden.", "ar": "لما اشتد الأذى أذن النبي ﷺ لطائفة من المؤمنين بالهجرة إلى الحبشة، وكان ملكها النصراني معروفًا بأنه لا يُظلم عنده أحد." }
+        },
+        {
+          "title": { "en": "Two waves of emigrants", "de": "Zwei Gruppen von Auswanderern", "ar": "هجرتان" },
+          "body": { "en": "A small first group left around 615 CE, and a larger one followed later. Among them was Ja'far ibn Abi Talib, the Prophet's cousin.", "de": "Eine kleine erste Gruppe brach um 615 n. Chr. auf, später folgte eine größere. Unter ihnen war Dschaʿfar ibn Abī Tālib, der Vetter des Propheten.", "ar": "خرجت جماعة أولى صغيرة نحو سنة ٦١٥م، ثم تبعتها جماعة أكبر، وكان فيهم جعفر بن أبي طالب ابن عم النبي ﷺ." }
+        },
+        {
+          "title": { "en": "Quraysh pursue them", "de": "Die Quraisch verfolgen sie", "ar": "قريش تلاحقهم" },
+          "body": { "en": "Quraysh sent envoys with gifts to the Negus and asked him to hand the refugees back. He refused to judge before he had heard the other side.", "de": "Die Quraisch schickten Gesandte mit Geschenken zum Negus und verlangten die Auslieferung der Flüchtlinge. Er weigerte sich zu urteilen, bevor er die andere Seite gehört hatte.", "ar": "أرسلت قريش رسلًا بالهدايا إلى النجاشي يطلبون تسليم المهاجرين، فأبى أن يحكم قبل أن يسمع منهم." }
+        },
+        {
+          "verse": "19:16-18",
+          "check": "Mary",
+          "title": { "en": "Ja'far recites Surah Maryam", "de": "Dschaʿfar rezitiert Sure Maryam", "ar": "جعفر يتلو سورة مريم" },
+          "body": { "en": "Ja'far explained the message and recited from Surah Maryam. Reports say the king wept as he listened.", "de": "Dschaʿfar erklärte die Botschaft und rezitierte aus Sure Maryam. Berichten zufolge weinte der König, als er zuhörte.", "ar": "شرح جعفر الدعوة وتلا من سورة مريم، وتذكر الروايات أن الملك بكى وهو يستمع." }
+        },
+        {
+          "title": { "en": "Safe in a Christian land", "de": "Sicher in einem christlichen Land", "ar": "أمان في أرض نصرانية" },
+          "body": { "en": "The Negus let them stay and live their faith in peace. For years believers lived securely in Abyssinia; some returned only at the time of Khaybar.", "de": "Der Negus ließ sie bleiben und ihren Glauben in Frieden leben. Jahrelang lebten Gläubige sicher in Abessinien; manche kehrten erst zur Zeit von Chaibar zurück.", "ar": "أذن لهم النجاشي بالبقاء وعبادة ربهم في أمان، فعاش المؤمنون سنين آمنين في الحبشة، ولم يرجع بعضهم إلا زمن خيبر." }
+        },
+        {
+          "hadith": "bukhari:3876",
+          "check": "two migrations",
+          "title": { "en": "The people of the ship", "de": "Die Leute des Schiffes", "ar": "أهل السفينة" },
+          "body": { "en": "When the last of them came home, the Prophet honoured what they had endured.", "de": "Als die Letzten von ihnen heimkehrten, würdigte der Prophet, was sie ertragen hatten.", "ar": "ولما رجع آخرهم أكرم النبي ﷺ ما صبروا عليه." }
+        },
+        {
+          "hadith": "bukhari:3877",
+          "check": "pious man",
+          "title": { "en": "A prayer for the Negus", "de": "Ein Gebet für den Negus", "ar": "صلاة على النجاشي" },
+          "body": { "en": "Years later, the Prophet led the funeral prayer for the king who had protected his companions.", "de": "Jahre später leitete der Prophet das Totengebet für den König, der seine Gefährten beschützt hatte.", "ar": "وبعد سنين صلّى النبي ﷺ صلاة الجنازة على الملك الذي حمى أصحابه." }
+        },
+        {
+          "title": { "en": "Lessons from Abyssinia", "de": "Lehren aus Abessinien", "ar": "دروس من الحبشة" },
+          "list": {
+            "en": ["Seeking safety is not weakness", "Justice can be found where you may not expect it", "Speak the truth, even before the powerful"],
+            "de": ["Schutz zu suchen ist keine Schwäche", "Gerechtigkeit findet sich auch, wo man sie nicht erwartet", "Sprechen Sie die Wahrheit, auch vor Mächtigen"],
+            "ar": ["طلب الأمان ليس ضعفًا", "قد تجد العدل حيث لا تتوقع", "قل الحق ولو أمام أصحاب السلطان"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Musnad Ahmad, report of Umm Salamah on the emigration to Abyssinia" }]
+    },
+    {
+      "id": "seerah-08-year-of-sorrow",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Seerah · 8", "de": "Sīra · 8", "ar": "السيرة · ٨" },
+        "title": { "en": "The Year of Sorrow", "de": "Das Jahr der Trauer", "ar": "عام الحزن" },
+        "sub": { "en": "A boycott of about three years, then the loss of Abu Talib and Khadijah, around 619 CE", "de": "Ein Boykott von etwa drei Jahren, dann der Verlust von Abū Tālib und Chadīdscha, um 619 n. Chr.", "ar": "حصار نحو ثلاث سنين، ثم فقد أبي طالب وخديجة نحو سنة ٦١٩م" },
+        "arabic": "عام الحزن"
+      },
+      "slides": [
+        {
+          "title": { "en": "The boycott", "de": "Der Boykott", "ar": "المقاطعة" },
+          "body": { "en": "Quraysh agreed to cut off the Banu Hashim and the Banu al-Muttalib: no trade, no marriage. For about three years they lived confined in a valley of Makkah, the Shi'b of Abu Talib.", "de": "Die Quraisch beschlossen, die Banū Hāschim und die Banū al-Muttalib zu boykottieren: kein Handel, keine Ehen. Etwa drei Jahre lebten diese eingeschlossen in einem Tal Mekkas, dem Schiʿb Abī Tālib.", "ar": "تعاهدت قريش على مقاطعة بني هاشم وبني المطلب، فلا بيع ولا زواج، فعاشوا نحو ثلاث سنين محصورين في شِعب أبي طالب بمكة." }
+        },
+        {
+          "title": { "en": "Hunger and steadfastness", "de": "Hunger und Standhaftigkeit", "ar": "جوع وثبات" },
+          "body": { "en": "Food was scarce, and the crying of hungry children could be heard. Khadijah spent her wealth to support the besieged until the boycott finally collapsed.", "de": "Nahrung war knapp, und man hörte hungrige Kinder weinen. Chadīdscha setzte ihr Vermögen ein, um die Eingeschlossenen zu versorgen, bis der Boykott schließlich zerbrach.", "ar": "قلّ الطعام حتى سُمع بكاء الأطفال من الجوع، وأنفقت خديجة مالها في عون المحصورين حتى انهارت المقاطعة." }
+        },
+        {
+          "title": { "en": "Two losses in one year", "de": "Zwei Verluste in einem Jahr", "ar": "فقدان في عام واحد" },
+          "body": { "en": "Soon after the boycott, around 619 CE, Abu Talib died, his protector for more than forty years. Shortly afterwards Khadijah died too. Later writers called it the Year of Sorrow.", "de": "Bald nach dem Boykott, um 619 n. Chr., starb Abū Tālib, sein Beschützer über mehr als vierzig Jahre. Kurz darauf starb auch Chadīdscha. Spätere Autoren nannten es das Jahr der Trauer.", "ar": "وبعد المقاطعة بقليل، نحو سنة ٦١٩م، توفي أبو طالب الذي حماه أكثر من أربعين سنة، ثم توفيت خديجة بعده بمدة يسيرة، فسُمّي ذلك العام عام الحزن." }
+        },
+        {
+          "hadith": "bukhari:3818",
+          "check": "women friends of Khadija",
+          "title": { "en": "He never forgot her", "de": "Er vergaß sie nie", "ar": "لم ينسها أبدًا" },
+          "body": { "en": "Years after her death, 'A'ishah noticed how often he still spoke of Khadijah.", "de": "Noch Jahre nach ihrem Tod bemerkte ʿĀʾischa, wie oft er von Chadīdscha sprach.", "ar": "وبعد وفاتها بسنين لاحظت عائشة رضي الله عنها كثرة ذكره لخديجة." }
+        },
+        {
+          "verse": "2:155-157",
+          "check": "we belong to Allah",
+          "title": { "en": "Words for loss", "de": "Worte für den Verlust", "ar": "كلمات عند المصيبة" },
+          "body": { "en": "The Quran gives the grieving a sentence to hold on to, and a promise of mercy.", "de": "Der Koran gibt Trauernden einen Satz, an dem sie sich festhalten können, und ein Versprechen der Barmherzigkeit.", "ar": "يمنح القرآن المحزون كلمة يتمسك بها، ووعدًا بالرحمة." }
+        },
+        {
+          "dua": "hisn:34:1",
+          "check": "anxiety and sorrow",
+          "title": { "en": "A refuge from grief", "de": "Zuflucht vor Kummer", "ar": "استعاذة من الهم والحزن" },
+          "body": { "en": "A dua the Prophet used to say often.", "de": "Ein Bittgebet, das der Prophet oft sprach.", "ar": "دعاء كان النبي ﷺ يكثر منه." }
+        },
+        {
+          "verse": "94:5-6",
+          "check": "with hardship",
+          "title": { "en": "Not after, but with", "de": "Nicht danach, sondern mit", "ar": "ليس بعد العسر بل معه" },
+          "body": { "en": "Notice the word with: relief is already present inside the hardship, not only after it. And the promise is given twice.", "de": "Beachten Sie das Wort mit: Die Erleichterung steckt schon in der Not, nicht erst danach. Und das Versprechen wird zweimal gegeben.", "ar": "تأمّل كلمة مع: فاليسر حاضر في قلب العسر لا بعده فقط، والوعد مكرر مرتين." }
+        },
+        {
+          "title": { "en": "Living through grief", "de": "Mit der Trauer leben", "ar": "العيش مع الحزن" },
+          "list": {
+            "en": ["Grief is not a lack of faith; the Prophet grieved too", "Keep the memory of loved ones alive through kindness", "Turn to Allah with your own words and with His"],
+            "de": ["Trauer ist kein Mangel an Glauben, auch der Prophet trauerte", "Bewahren Sie das Andenken geliebter Menschen durch Güte", "Wenden Sie sich an Allah, mit Ihren Worten und mit Seinen"],
+            "ar": ["الحزن ليس نقصًا في الإيمان، فقد حزن النبي ﷺ", "أحيِ ذكرى أحبتك بالإحسان", "الجأ إلى الله بكلماتك وبكلماته"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }]
+    },
+    {
+      "id": "seerah-09-the-road-to-taif",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Seerah · 9", "de": "Sīra · 9", "ar": "السيرة · ٩" },
+        "title": { "en": "The road to Ta'if", "de": "Der Weg nach Taif", "ar": "الطريق إلى الطائف" },
+        "sub": { "en": "Rejected and stoned, he answered with a prayer for the future", "de": "Abgewiesen und mit Steinen beworfen, antwortete er mit einem Gebet für die Zukunft", "ar": "رُدّ ورُمي بالحجارة، فأجاب بدعاء للمستقبل" },
+        "arabic": "الطائف"
+      },
+      "slides": [
+        {
+          "title": { "en": "Seeking new support", "de": "Auf der Suche nach Beistand", "ar": "البحث عن نصرة" },
+          "body": { "en": "After the Year of Sorrow, the Prophet went on foot to Ta'if, a town in the mountains, with Zayd ibn Harithah. He hoped the tribe of Thaqif would listen and offer protection.", "de": "Nach dem Jahr der Trauer ging der Prophet mit Zaid ibn Hāritha zu Fuß nach Taif, einer Stadt in den Bergen. Er hoffte, der Stamm Thaqīf würde zuhören und ihm Schutz gewähren.", "ar": "بعد عام الحزن خرج النبي ﷺ ماشيًا إلى الطائف، وهي بلدة في الجبال، ومعه زيد بن حارثة، يرجو أن تسمع ثقيف وتمنحه النصرة." }
+        },
+        {
+          "title": { "en": "A harsh rejection", "de": "Eine harte Abweisung", "ar": "ردّ قاسٍ" },
+          "body": { "en": "The leaders of Thaqif turned him away and set the youths of the town on him. They threw stones until his feet bled, and Zayd was wounded shielding him.", "de": "Die Führer der Thaqīf wiesen ihn ab und hetzten die Jugend der Stadt auf ihn. Man warf Steine, bis seine Füße bluteten, und Zaid wurde verletzt, als er ihn schützte.", "ar": "ردّه سادة ثقيف وأغروا به سفهاءهم، فرموه بالحجارة حتى دميت قدماه، وجُرح زيد وهو يحميه." }
+        },
+        {
+          "title": { "en": "A bunch of grapes", "de": "Eine Traube", "ar": "قطف من عنب" },
+          "body": { "en": "Resting in a garden outside the town, he was brought grapes by 'Addas, a Christian servant from Nineveh. When 'Addas heard him speak of the prophet Yunus, he was deeply moved.", "de": "Als er in einem Garten vor der Stadt rastete, brachte ihm ʿAddās, ein christlicher Diener aus Ninive, Trauben. Als ʿAddās ihn vom Propheten Yūnus sprechen hörte, war er tief bewegt.", "ar": "ولما استراح في بستان خارج البلدة قدّم إليه عدّاس، وهو غلام نصراني من نينوى، قطفًا من عنب، فلما سمعه يذكر النبي يونس تأثر تأثرًا شديدًا." }
+        },
+        {
+          "title": { "en": "Mercy instead of revenge", "de": "Barmherzigkeit statt Rache", "ar": "رحمة لا انتقام" },
+          "body": { "en": "Sahih al-Bukhari reports that an angel later offered to destroy the people who had rejected him. He declined, hoping that among their descendants would be people who worship Allah alone.", "de": "Sahīh al-Buchārī berichtet, dass ihm später ein Engel anbot, die Leute zu vernichten, die ihn abgewiesen hatten. Er lehnte ab, in der Hoffnung, dass unter ihren Nachkommen Menschen sein würden, die Allah allein dienen.", "ar": "يروي صحيح البخاري أن ملَكًا عرض عليه بعد ذلك أن يُهلك من ردّوه، فأبى، راجيًا أن يكون في ذريتهم من يوحّد الله." }
+        },
+        {
+          "verse": "21:107",
+          "check": "mercy to the worlds",
+          "title": { "en": "What mercy looks like", "de": "Wie Barmherzigkeit aussieht", "ar": "هكذا تكون الرحمة" },
+          "body": { "en": "Ta'if shows what this verse means in practice: mercy even towards those who hurt him.", "de": "Taif zeigt, was dieser Vers im Leben bedeutet: Barmherzigkeit selbst gegenüber denen, die ihn verletzten.", "ar": "تُظهر الطائف معنى هذه الآية واقعًا: رحمة حتى بمن آذوه." }
+        },
+        {
+          "verse": "46:29",
+          "check": "listening to the Qur",
+          "title": { "en": "Listeners he did not expect", "de": "Zuhörer, die er nicht erwartete", "ar": "مستمعون لم يتوقعهم" },
+          "body": { "en": "Ibn Ishaq places this on his way back from Ta'if: people had turned away, yet jinn listened. Other reports date it differently.", "de": "Ibn Ishāq verortet dies auf dem Rückweg von Taif: Menschen hatten sich abgewandt, doch Dschinn hörten zu. Andere Berichte datieren es anders.", "ar": "يجعل ابن إسحاق ذلك في طريق عودته من الطائف: أعرض الناس واستمع الجن. وفي روايات أخرى توقيت مختلف." }
+        },
+        {
+          "title": { "en": "Back to Makkah", "de": "Zurück nach Mekka", "ar": "العودة إلى مكة" },
+          "body": { "en": "He could re-enter Makkah only under the protection of al-Mut'im ibn 'Adi, a man who had not accepted Islam. The Prophet remembered this kindness long afterwards.", "de": "Er konnte nur unter dem Schutz von al-Mutʿim ibn ʿAdī nach Mekka zurückkehren, eines Mannes, der den Islam nicht angenommen hatte. Der Prophet erinnerte sich noch lange an diese Güte.", "ar": "ولم يدخل مكة إلا في جوار المطعم بن عدي، ولم يكن قد أسلم، وظل النبي ﷺ يذكر له هذا المعروف." }
+        },
+        {
+          "title": { "en": "Lessons from Ta'if", "de": "Lehren aus Taif", "ar": "دروس من الطائف" },
+          "list": {
+            "en": ["Rejection is not the end of your mission", "Answer harm with a prayer for guidance", "Remember the kindness of others, whoever they are"],
+            "de": ["Ablehnung ist nicht das Ende Ihrer Aufgabe", "Antworten Sie auf Kränkung mit einem Gebet um Rechtleitung", "Erinnern Sie sich an die Güte anderer, wer sie auch sind"],
+            "ar": ["الرفض ليس نهاية رسالتك", "قابل الأذى بالدعاء بالهداية", "اذكر معروف الناس أيًّا كانوا"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Sahih al-Bukhari 3231 (the hardest day after Uhud)" }]
+    },
+    {
+      "id": "seerah-10-isra-and-miraj",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Seerah · 10", "de": "Sīra · 10", "ar": "السيرة · ١٠" },
+        "title": { "en": "The Night Journey and the Ascension", "de": "Die Nachtreise und die Himmelfahrt", "ar": "الإسراء والمعراج" },
+        "sub": { "en": "From Makkah to Jerusalem, and beyond the heavens: a gift after the hardest years", "de": "Von Mekka nach Jerusalem und über die Himmel hinaus: ein Geschenk nach den schwersten Jahren", "ar": "من مكة إلى بيت المقدس ثم إلى السماوات العُلا: عطاءٌ بعد أشد السنين" },
+        "arabic": "الإسراء والمعراج"
+      },
+      "slides": [
+        {
+          "verse": "17:1",
+          "check": "by night",
+          "title": { "en": "One night", "de": "In einer Nacht", "ar": "في ليلة واحدة" },
+          "body": { "en": "Surah al-Isra opens with this journey, from the Sacred Mosque in Makkah to al-Aqsa in Jerusalem.", "de": "Sure al-Isrāʾ beginnt mit dieser Reise von der Heiligen Moschee in Mekka zur al-Aqsā in Jerusalem.", "ar": "تُفتتح سورة الإسراء بهذه الرحلة من المسجد الحرام بمكة إلى المسجد الأقصى ببيت المقدس." }
+        },
+        {
+          "title": { "en": "When did it happen?", "de": "Wann geschah es?", "ar": "متى كانت؟" },
+          "body": { "en": "Scholars differ on the date. Many place it about a year before the Hijrah; the popular date of 27 Rajab is one view among several.", "de": "Über das Datum sind sich die Gelehrten nicht einig. Viele setzen es etwa ein Jahr vor der Hidschra an; der verbreitete 27. Radschab ist eine Ansicht unter mehreren.", "ar": "اختلف العلماء في تاريخها، ويجعلها كثيرون قبل الهجرة بنحو سنة، وتاريخ السابع والعشرين من رجب المشهور قولٌ من عدة أقوال." }
+        },
+        {
+          "title": { "en": "Body and soul", "de": "Mit Leib und Seele", "ar": "بالروح والجسد" },
+          "body": { "en": "Most scholars hold that the journey was made in body and soul, while awake. A minority of early scholars understood it as a true vision.", "de": "Die meisten Gelehrten sehen die Reise als leiblich und seelisch, im Wachzustand. Eine Minderheit früher Gelehrter verstand sie als wahrhaftige Schau.", "ar": "يرى جمهور العلماء أن الرحلة كانت بالروح والجسد يقظةً، وفهمها قلة من المتقدمين رؤيا صادقة." }
+        },
+        {
+          "title": { "en": "Among the prophets", "de": "Unter den Propheten", "ar": "مع الأنبياء" },
+          "body": { "en": "Hadith reports describe him leading the earlier prophets in prayer at al-Aqsa, and meeting several of them in the heavens.", "de": "Hadith-Berichte beschreiben, wie er die früheren Propheten in al-Aqsā im Gebet anführte und mehreren von ihnen in den Himmeln begegnete.", "ar": "تصف روايات الحديث صلاته إمامًا بالأنبياء في المسجد الأقصى، ولقاءه عددًا منهم في السماوات." }
+        },
+        {
+          "verse": "53:13-15",
+          "check": "Lote Tree",
+          "title": { "en": "At the Lote Tree", "de": "Beim Lotusbaum", "ar": "عند سدرة المنتهى" },
+          "body": { "en": "Surah an-Najm describes what he saw at the utmost boundary of creation.", "de": "Sure an-Nadschm beschreibt, was er an der äußersten Grenze der Schöpfung sah.", "ar": "تصف سورة النجم ما رآه عند منتهى الخلق." }
+        },
+        {
+          "verse": "53:16-18",
+          "check": "greatest signs",
+          "title": { "en": "A steady gaze", "de": "Ein fester Blick", "ar": "بصر ثابت" },
+          "body": { "en": "His sight did not waver, and he returned with certainty to people who doubted him.", "de": "Sein Blick blieb fest, und er kehrte mit Gewissheit zu Menschen zurück, die an ihm zweifelten.", "ar": "ثبت بصره، وعاد باليقين إلى قوم يشكّون فيه." }
+        },
+        {
+          "title": { "en": "The gift of prayer", "de": "Das Geschenk des Gebets", "ar": "هدية الصلاة" },
+          "body": { "en": "On this night the five daily prayers were made obligatory. Each prayer carries something of this ascension: a meeting with the Lord, five times a day.", "de": "In dieser Nacht wurden die fünf täglichen Gebete zur Pflicht. Jedes Gebet trägt etwas von dieser Himmelfahrt in sich: eine Begegnung mit dem Herrn, fünfmal am Tag.", "ar": "في هذه الليلة فُرضت الصلوات الخمس، وفي كل صلاة شيء من هذا المعراج: لقاءٌ بالرب خمس مرات في اليوم." }
+        },
+        {
+          "title": { "en": "Lessons from this night", "de": "Lehren aus dieser Nacht", "ar": "دروس من هذه الليلة" },
+          "list": {
+            "en": ["After hardship, Allah honours His servant", "Al-Aqsa has a place in every believer's heart", "Guard your five prayers: they were a gift"],
+            "de": ["Nach der Not ehrt Allah Seinen Diener", "Al-Aqsā hat einen Platz im Herzen jedes Gläubigen", "Bewahren Sie Ihre fünf Gebete: Sie waren ein Geschenk"],
+            "ar": ["بعد الشدة يكرم الله عبده", "للأقصى مكان في قلب كل مؤمن", "حافظ على صلواتك الخمس فهي هدية"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 17:1 and 53:1-18" }, { "label": "Ibn Hisham, as-Sira an-Nabawiyya" }]
+    },
+    {
+      "id": "seerah-11-pledges-of-aqabah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Seerah · 11", "de": "Sīra · 11", "ar": "السيرة · ١١" },
+        "title": { "en": "The pledges of 'Aqabah", "de": "Die Gelöbnisse von ʿAqaba", "ar": "بيعتا العقبة" },
+        "sub": { "en": "Pilgrims from Yathrib pledged their faith and their protection, in 621 and 622 CE", "de": "Pilger aus Yathrib gelobten Glauben und Schutz, 621 und 622 n. Chr.", "ar": "حجاج من يثرب بايعوا على الإيمان والنصرة سنة ٦٢١م و٦٢٢م" },
+        "arabic": "بيعة العقبة"
+      },
+      "slides": [
+        {
+          "title": { "en": "Six men from Yathrib", "de": "Sechs Männer aus Yathrib", "ar": "ستة رجال من يثرب" },
+          "body": { "en": "In a pilgrimage season, around 620 CE, the Prophet met six men of the Khazraj from Yathrib near Mina. They listened, believed and promised to return.", "de": "In einer Pilgerzeit, um 620 n. Chr., traf der Prophet bei Minā sechs Männer vom Stamm Chazradsch aus Yathrib. Sie hörten zu, glaubten und versprachen wiederzukommen.", "ar": "في موسم من مواسم الحج، نحو سنة ٦٢٠م، لقي النبي ﷺ عند منى ستة رجال من الخزرج من يثرب، فاستمعوا وآمنوا ووعدوا بالعودة." }
+        },
+        {
+          "title": { "en": "The first pledge", "de": "Das erste Gelöbnis", "ar": "البيعة الأولى" },
+          "body": { "en": "A year later, in 621 CE, twelve men came and gave their pledge at 'Aqabah. Its terms were like those later revealed for the pledge of the believing women.", "de": "Ein Jahr später, 621 n. Chr., kamen zwölf Männer und legten bei ʿAqaba ihr Gelöbnis ab. Seine Bedingungen glichen jenen, die später für das Gelöbnis der gläubigen Frauen offenbart wurden.", "ar": "وبعد عام، سنة ٦٢١م، جاء اثنا عشر رجلًا فبايعوه عند العقبة، على شروط تشبه ما نزل بعد ذلك في بيعة المؤمنات." }
+        },
+        {
+          "verse": "60:12",
+          "check": "pledging to you",
+          "title": { "en": "The terms of the pledge", "de": "Die Bedingungen des Gelöbnisses", "ar": "شروط البيعة" },
+          "body": { "en": "Faith in one God and a clean life: the same commitments stood at the start of Islam in Madinah.", "de": "Glaube an den einen Gott und ein reines Leben: Dieselben Verpflichtungen standen am Anfang des Islam in Medina.", "ar": "التوحيد والاستقامة: هي الالتزامات نفسها التي بدأ بها الإسلام في المدينة." }
+        },
+        {
+          "title": { "en": "A teacher is sent", "de": "Ein Lehrer wird gesandt", "ar": "إرسال معلّم" },
+          "body": { "en": "The Prophet sent Mus'ab ibn 'Umayr with them to teach the Quran. Within a year, Islam had entered many homes of Yathrib.", "de": "Der Prophet schickte Musʿab ibn ʿUmair mit ihnen, um den Koran zu lehren. Innerhalb eines Jahres hatte der Islam viele Häuser Yathribs erreicht.", "ar": "أرسل النبي ﷺ معهم مصعب بن عمير يعلّمهم القرآن، فما مضى عام حتى دخل الإسلام كثيرًا من بيوت يثرب." }
+        },
+        {
+          "title": { "en": "The second pledge", "de": "Das zweite Gelöbnis", "ar": "البيعة الثانية" },
+          "body": { "en": "In 622 CE more than seventy men and two women met him secretly by night at 'Aqabah. They pledged to protect him as they protected their own families.", "de": "622 n. Chr. trafen ihn mehr als siebzig Männer und zwei Frauen heimlich in der Nacht bei ʿAqaba. Sie gelobten, ihn zu schützen wie ihre eigenen Familien.", "ar": "وفي سنة ٦٢٢م لقيه أكثر من سبعين رجلًا وامرأتان سرًّا ليلًا عند العقبة، فبايعوه على أن يحموه كما يحمون أهليهم." }
+        },
+        {
+          "hadith": "bukhari:3889",
+          "check": "Aqaba pledge",
+          "title": { "en": "Dearer than Badr", "de": "Wertvoller als Badr", "ar": "أحبّ إليه من بدر" },
+          "body": { "en": "For Ka'b ibn Malik, that night at 'Aqabah meant more than the famous battle.", "de": "Für Kaʿb ibn Mālik bedeutete jene Nacht bei ʿAqaba mehr als die berühmte Schlacht.", "ar": "كانت تلك الليلة عند العقبة عند كعب بن مالك أعظم من الغزوة المشهورة." }
+        },
+        {
+          "title": { "en": "Twelve leaders", "de": "Zwölf Anführer", "ar": "اثنا عشر نقيبًا" },
+          "body": { "en": "The Prophet asked them to choose twelve leaders, naqibs, each responsible for his people. The way to Madinah was now open.", "de": "Der Prophet bat sie, zwölf Anführer zu wählen, Nuqabāʾ, jeder verantwortlich für seine Leute. Der Weg nach Medina war nun offen.", "ar": "وطلب منهم النبي ﷺ أن يختاروا اثني عشر نقيبًا، كلٌّ مسؤول عن قومه، وانفتح بذلك الطريق إلى المدينة." }
+        },
+        {
+          "title": { "en": "Lessons from 'Aqabah", "de": "Lehren aus ʿAqaba", "ar": "دروس من العقبة" },
+          "list": {
+            "en": ["A promise made to Allah is the strongest bond", "Teaching comes before building", "Small beginnings can change a whole city"],
+            "de": ["Ein Versprechen vor Allah ist das stärkste Band", "Lehren kommt vor dem Aufbauen", "Kleine Anfänge können eine ganze Stadt verändern"],
+            "ar": ["العهد مع الله أوثق رباط", "التعليم قبل البناء", "البدايات الصغيرة قد تغيّر مدينة كاملة"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }]
+    },
+    {
+      "id": "seerah-12-the-hijrah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Seerah · 12", "de": "Sīra · 12", "ar": "السيرة · ١٢" },
+        "title": { "en": "The Hijrah", "de": "Die Hidschra", "ar": "الهجرة" },
+        "sub": { "en": "In 622 CE the Prophet left Makkah for Madinah: the event from which the Islamic calendar is counted", "de": "622 n. Chr. verließ der Prophet Mekka nach Medina: das Ereignis, nach dem die islamische Zeitrechnung zählt", "ar": "سنة ٦٢٢م هاجر النبي ﷺ من مكة إلى المدينة، ومنها يبدأ التاريخ الهجري" },
+        "arabic": "الهجرة النبوية"
+      },
+      "slides": [
+        {
+          "title": { "en": "The believers go first", "de": "Die Gläubigen gehen voraus", "ar": "المؤمنون يسبقون" },
+          "body": { "en": "After the second pledge, the believers of Makkah began to leave for Yathrib in small groups, often in secret, leaving homes and property behind.", "de": "Nach dem zweiten Gelöbnis brachen die Gläubigen Mekkas in kleinen Gruppen nach Yathrib auf, oft heimlich, und ließen Häuser und Besitz zurück.", "ar": "بعد البيعة الثانية بدأ مؤمنو مكة يهاجرون إلى يثرب جماعات صغيرة، سرًّا في الغالب، تاركين ديارهم وأموالهم." }
+        },
+        {
+          "verse": "8:30",
+          "check": "best of planners",
+          "title": { "en": "A plot in the night", "de": "Ein Plan in der Nacht", "ar": "مكرٌ بالليل" },
+          "body": { "en": "Quraysh plotted to stop him for good. The Quran recalls their plan, and Allah's.", "de": "Die Quraisch planten, ihn endgültig aufzuhalten. Der Koran erinnert an ihren Plan und an den Plan Allahs.", "ar": "دبّرت قريش أمرًا لتتخلص منه، ويذكّر القرآن بمكرهم وبتدبير الله." }
+        },
+        {
+          "title": { "en": "'Ali in his bed", "de": "ʿAlī in seinem Bett", "ar": "عليٌّ في فراشه" },
+          "body": { "en": "That night 'Ali ibn Abi Talib slept in the Prophet's bed. He stayed behind to return the valuables people had entrusted to the Prophet, then followed him to Madinah.", "de": "In jener Nacht schlief ʿAlī ibn Abī Tālib im Bett des Propheten. Er blieb zurück, um anvertraute Wertsachen ihren Besitzern zurückzugeben, und folgte ihm dann nach Medina.", "ar": "في تلك الليلة نام علي بن أبي طالب في فراش النبي ﷺ، وبقي بعده ليردّ الأمانات إلى أهلها، ثم لحق به إلى المدينة." }
+        },
+        {
+          "title": { "en": "Three days in a cave", "de": "Drei Tage in einer Höhle", "ar": "ثلاثة أيام في الغار" },
+          "body": { "en": "The Prophet left with Abu Bakr, and they hid for three days in the cave of Thawr, south of Makkah, while Quraysh searched every road.", "de": "Der Prophet brach mit Abū Bakr auf, und sie verbargen sich drei Tage in der Höhle Thaur südlich von Mekka, während die Quraisch jeden Weg absuchten.", "ar": "خرج النبي ﷺ مع أبي بكر واختبآ ثلاثة أيام في غار ثور جنوب مكة، وقريش تطلبهما في كل طريق." }
+        },
+        {
+          "hadith": "bukhari:3653",
+          "check": "third of whom is Allah",
+          "title": { "en": "Calm at the cave's mouth", "de": "Ruhe am Eingang der Höhle", "ar": "سكينة عند باب الغار" },
+          "body": { "en": "At the most dangerous moment, the Prophet answered his friend's fear with quiet trust.", "de": "Im gefährlichsten Augenblick antwortete der Prophet auf die Sorge seines Freundes mit stillem Vertrauen.", "ar": "في أخطر لحظة أجاب النبي ﷺ خوف صاحبه بثقة هادئة." }
+        },
+        {
+          "verse": "28:85",
+          "check": "place of return",
+          "title": { "en": "A promise of return", "de": "Ein Versprechen der Rückkehr", "ar": "وعدٌ بالعودة" },
+          "body": { "en": "Ibn 'Abbas explained the place of return in this verse as Makkah. Eight years after the Hijrah, the Prophet returned.", "de": "Ibn ʿAbbās deutete den Ort der Rückkehr in diesem Vers als Mekka. Acht Jahre nach der Hidschra kehrte der Prophet zurück.", "ar": "فسّر ابن عباس المعاد في هذه الآية بمكة، وقد عاد إليها النبي ﷺ بعد الهجرة بثماني سنين." }
+        },
+        {
+          "title": { "en": "Arrival in Madinah", "de": "Ankunft in Medina", "ar": "الوصول إلى المدينة" },
+          "body": { "en": "He stopped first at Quba, where the first mosque was built, then entered Yathrib to great joy. The town became al-Madinah, and the Hijri calendar was later counted from this year.", "de": "Er hielt zuerst in Qubāʾ, wo die erste Moschee entstand, und zog dann unter großer Freude in Yathrib ein. Die Stadt wurde zu al-Madīna, und die Hidschra-Zeitrechnung zählt später ab diesem Jahr.", "ar": "نزل أولًا بقباء حيث بُني أول مسجد، ثم دخل يثرب وسط فرح عظيم، فصارت المدينة، وصار التاريخ الهجري يُعدّ لاحقًا من هذا العام." }
+        },
+        {
+          "title": { "en": "Lessons from the Hijrah", "de": "Lehren aus der Hidschra", "ar": "دروس من الهجرة" },
+          "list": {
+            "en": ["Plan carefully, then trust Allah completely", "Return what you are entrusted with, even to those who wrong you", "What you leave for Allah is never lost"],
+            "de": ["Planen Sie sorgfältig und vertrauen Sie dann ganz auf Allah", "Geben Sie Anvertrautes zurück, auch denen, die Ihnen Unrecht tun", "Was Sie für Allah zurücklassen, geht nie verloren"],
+            "ar": ["خطّط بإتقان ثم توكل على الله تمامًا", "أدِّ الأمانة ولو لمن ظلمك", "ما تتركه لله لا يضيع أبدًا"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Sahih al-Bukhari 4773 (Ibn 'Abbas on 28:85)" }]
+    },
+    {
+      "id": "seerah-13-building-madinah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Seerah · 13", "de": "Sīra · 13", "ar": "السيرة · ١٣" },
+        "title": { "en": "Building a community in Madinah", "de": "Eine Gemeinschaft in Medina aufbauen", "ar": "بناء المجتمع في المدينة" },
+        "sub": { "en": "A mosque, a brotherhood and a written agreement: the first steps of a new city", "de": "Eine Moschee, eine Bruderschaft und eine schriftliche Vereinbarung: die ersten Schritte einer neuen Stadt", "ar": "مسجدٌ وأخوّة وعهدٌ مكتوب: الخطوات الأولى لمدينة جديدة" },
+        "arabic": "المسجد النبوي"
+      },
+      "slides": [
+        {
+          "title": { "en": "The mosque first", "de": "Zuerst die Moschee", "ar": "المسجد أولًا" },
+          "body": { "en": "The first thing the Prophet built in Madinah was a mosque, and it was simple: walls of mud brick, a roof of palm branches, palm trunks as pillars. He carried bricks with his companions.", "de": "Das Erste, was der Prophet in Medina baute, war eine schlichte Moschee: Wände aus Lehmziegeln, ein Dach aus Palmzweigen, Palmstämme als Säulen. Er trug selbst Ziegel mit seinen Gefährten.", "ar": "كان أول ما بناه النبي ﷺ في المدينة مسجدًا بسيطًا: جدران من اللبِن، وسقف من جريد النخل، وأعمدة من جذوعه، وكان يحمل اللبِن مع أصحابه." }
+        },
+        {
+          "hadith": "bukhari:2779",
+          "check": "price for your garden",
+          "title": { "en": "Land given for Allah", "de": "Land, gegeben für Allah", "ar": "أرض لوجه الله" },
+          "body": { "en": "When he asked the Banu an-Najjar for a price, their answer showed what faith had done to their hearts.", "de": "Als er die Banū an-Naddschār nach dem Preis fragte, zeigte ihre Antwort, was der Glaube in ihren Herzen bewirkt hatte.", "ar": "لما سأل بني النجار عن الثمن، كشف جوابهم ما صنعه الإيمان في قلوبهم." }
+        },
+        {
+          "verse": "9:108",
+          "check": "founded on righteousness",
+          "title": { "en": "Founded on piety", "de": "Auf Gottesfurcht gegründet", "ar": "قام على التقوى" },
+          "body": { "en": "Commentators differ whether this means the mosque of Quba or the Prophet's Mosque; both were built on that foundation.", "de": "Die Kommentatoren sind uneins, ob die Moschee von Qubāʾ oder die Moschee des Propheten gemeint ist; beide entstanden auf diesem Fundament.", "ar": "اختلف المفسرون أهو مسجد قباء أم المسجد النبوي، وكلاهما قام على هذا الأساس." }
+        },
+        {
+          "title": { "en": "Brothers by faith", "de": "Brüder im Glauben", "ar": "إخوة في الدين" },
+          "body": { "en": "The Prophet joined emigrants from Makkah with helpers from Madinah as brothers. They shared homes and work, and for a time even inherited from each other.", "de": "Der Prophet verband Auswanderer aus Mekka mit Helfern aus Medina als Brüder. Sie teilten Häuser und Arbeit und beerbten einander eine Zeit lang sogar.", "ar": "آخى النبي ﷺ بين المهاجرين من مكة والأنصار من المدينة، فتقاسموا البيوت والعمل، بل وتوارثوا مدةً من الزمن." }
+        },
+        {
+          "hadith": "bukhari:6083",
+          "check": "between the Ansar and the Quraish",
+          "title": { "en": "In the house of Anas", "de": "Im Haus von Anas", "ar": "في دار أنس" },
+          "body": { "en": "Anas remembered that this brotherhood was sealed in his own home.", "de": "Anas erinnerte sich, dass diese Bruderschaft in seinem eigenen Haus geschlossen wurde.", "ar": "تذكّر أنس أن هذه المؤاخاة عُقدت في داره." }
+        },
+        {
+          "verse": "59:9",
+          "check": "love those who emigrated to them",
+          "title": { "en": "The generosity of the Ansar", "de": "Die Großzügigkeit der Ansār", "ar": "إيثار الأنصار" },
+          "body": { "en": "The Quran itself praises the helpers of Madinah for putting others before themselves.", "de": "Der Koran selbst lobt die Helfer Medinas dafür, dass sie andere sich selbst vorzogen.", "ar": "يثني القرآن نفسه على الأنصار لأنهم قدّموا إخوانهم على أنفسهم." }
+        },
+        {
+          "title": { "en": "A written agreement", "de": "Eine schriftliche Vereinbarung", "ar": "عهد مكتوب" },
+          "body": { "en": "Sira works preserve a document, often called the Charter of Madinah, setting out the rights and duties of the Muslims and the Jewish tribes of the city.", "de": "Die Sīra-Werke überliefern ein Dokument, oft Verfassung von Medina genannt, das Rechte und Pflichten der Muslime und der jüdischen Stämme der Stadt festlegte.", "ar": "تحفظ كتب السيرة وثيقة تُسمّى غالبًا صحيفة المدينة، تحدد حقوق المسلمين واليهود في المدينة وواجباتهم." }
+        },
+        {
+          "title": { "en": "How a community is built", "de": "Wie Gemeinschaft entsteht", "ar": "كيف يُبنى المجتمع" },
+          "list": {
+            "en": ["Put the house of prayer at the centre", "Share what you have with newcomers", "Agree on clear rights and duties"],
+            "de": ["Stellen Sie das Gebetshaus in die Mitte", "Teilen Sie, was Sie haben, mit Neuankömmlingen", "Vereinbaren Sie klare Rechte und Pflichten"],
+            "ar": ["اجعل بيت الصلاة في القلب", "شارك ما عندك مع القادمين الجدد", "اتفقوا على حقوق وواجبات واضحة"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Sahih al-Bukhari, Book of the Merits of the Ansar" }]
+    },
+    {
+      "id": "seerah-14-battle-of-badr",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Seerah · 14", "de": "Sīra · 14", "ar": "السيرة · ١٤" },
+        "title": { "en": "Badr: the Day of Criterion", "de": "Badr: der Tag der Unterscheidung", "ar": "بدر: يوم الفرقان" },
+        "sub": { "en": "Ramadan, 2 AH (624 CE): a few hundred believers against an army of about a thousand", "de": "Ramadan 2 n. H. (624 n. Chr.): einige hundert Gläubige gegen ein Heer von etwa tausend", "ar": "رمضان سنة ٢هـ (٦٢٤م): بضع مئات من المؤمنين أمام جيش من نحو ألف" },
+        "arabic": "يوم الفرقان"
+      },
+      "slides": [
+        {
+          "title": { "en": "A caravan and an army", "de": "Eine Karawane und ein Heer", "ar": "قافلة وجيش" },
+          "body": { "en": "The Muslims went out to meet a Quraysh caravan returning from Syria. The caravan escaped, and instead a Quraysh army of about a thousand marched to Badr.", "de": "Die Muslime zogen aus, um eine aus Syrien heimkehrende Karawane der Quraisch abzufangen. Die Karawane entkam, stattdessen zog ein Heer der Quraisch von etwa tausend Mann nach Badr.", "ar": "خرج المسلمون لاعتراض قافلة لقريش عائدة من الشام، فنجت القافلة، وزحف بدلًا منها جيش لقريش من نحو ألف رجل إلى بدر." }
+        },
+        {
+          "verse": "22:39",
+          "check": "because they were wronged",
+          "title": { "en": "Permission after years of wrong", "de": "Erlaubnis nach Jahren des Unrechts", "ar": "إذنٌ بعد سنين من الظلم" },
+          "body": { "en": "Many scholars say this was the first verse to permit fighting, after thirteen years of patience in Makkah.", "de": "Viele Gelehrte sagen, dies sei der erste Vers gewesen, der den Kampf erlaubte, nach dreizehn Jahren der Geduld in Mekka.", "ar": "يقول كثير من العلماء إنها أول آية أذنت بالقتال، بعد ثلاث عشرة سنة من الصبر في مكة." }
+        },
+        {
+          "hadith": "bukhari:3959",
+          "check": "three-hundred-and-ten",
+          "title": { "en": "A little over three hundred", "de": "Etwas über dreihundert", "ar": "بضعة عشر وثلاثمئة" },
+          "body": { "en": "The companions compared their small number with those who crossed the river with Talut.", "de": "Die Gefährten verglichen ihre kleine Zahl mit denen, die mit Tālūt den Fluss überquerten.", "ar": "شبّه الصحابة قلة عددهم بمن عبروا النهر مع طالوت." }
+        },
+        {
+          "verse": "8:9",
+          "check": "thousand from the angels",
+          "title": { "en": "Help from above", "de": "Hilfe von oben", "ar": "مددٌ من السماء" },
+          "body": { "en": "Before the battle the believers turned to Allah in earnest prayer, and the answer came.", "de": "Vor der Schlacht wandten sich die Gläubigen mit inständigem Gebet an Allah, und die Antwort kam.", "ar": "قبل المعركة تضرّع المؤمنون إلى الله، فجاء الجواب." }
+        },
+        {
+          "verse": "8:44",
+          "check": "as few in your eyes",
+          "title": { "en": "Few in each other's eyes", "de": "Wenige in den Augen der anderen", "ar": "قلة في أعين الفريقين" },
+          "body": { "en": "Allah let each side see the other as few, so that the meeting He had decreed would take place.", "de": "Allah ließ jede Seite die andere als gering sehen, damit die Begegnung stattfand, die Er bestimmt hatte.", "ar": "أرى الله كل فريق الآخرَ قليلًا ليقع اللقاء الذي قدّره." }
+        },
+        {
+          "verse": "3:123",
+          "check": "victory at",
+          "title": { "en": "Victory while few", "de": "Sieg trotz geringer Zahl", "ar": "نصر مع القلة" },
+          "body": { "en": "A year later, after Uhud, the Quran recalled Badr to remind them where victory comes from.", "de": "Ein Jahr später, nach Uhud, erinnerte der Koran an Badr, um zu zeigen, woher der Sieg kommt.", "ar": "بعد عام، عقب أحد، ذكّر القرآن ببدر ليبيّن من أين يأتي النصر." }
+        },
+        {
+          "verse": "8:41",
+          "check": "the day when the two armies met",
+          "title": { "en": "The Day of Criterion", "de": "Der Tag der Unterscheidung", "ar": "يوم الفرقان" },
+          "body": { "en": "The Quran calls Badr the day of criterion: the day truth and falsehood were set apart.", "de": "Der Koran nennt Badr den Tag der Unterscheidung: den Tag, an dem Wahrheit und Falschheit geschieden wurden.", "ar": "يسمي القرآن بدرًا يوم الفرقان: يوم فُرّق فيه بين الحق والباطل." }
+        },
+        {
+          "title": { "en": "Lessons from Badr", "de": "Lehren aus Badr", "ar": "دروس من بدر" },
+          "list": {
+            "en": ["Victory belongs to Allah, not to numbers", "Prepare well, then pray with all your heart", "Remember His favours in good times and bad"],
+            "de": ["Der Sieg gehört Allah, nicht der Zahl", "Bereiten Sie sich gut vor und beten Sie dann von ganzem Herzen", "Gedenken Sie Seiner Gaben in guten und schweren Zeiten"],
+            "ar": ["النصر من الله لا من الكثرة", "أعدّ جيدًا ثم ادعُ بكل قلبك", "اذكر نعم الله في الرخاء والشدة"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Anfal" }]
+    },
+    {
+      "id": "seerah-15-battle-of-uhud",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Seerah · 15", "de": "Sīra · 15", "ar": "السيرة · ١٥" },
+        "title": { "en": "Uhud: a lesson in defeat", "de": "Uhud: eine Lehre aus der Niederlage", "ar": "أُحد: درس في الهزيمة" },
+        "sub": { "en": "Shawwal, 3 AH (625 CE): a battle almost won, a hill abandoned, and verses that heal", "de": "Schawwāl 3 n. H. (625 n. Chr.): eine fast gewonnene Schlacht, ein verlassener Hügel und Verse, die heilen", "ar": "شوال سنة ٣هـ (٦٢٥م): معركة كادت تُكسب، وجبل تُرك، وآيات تداوي الجراح" },
+        "arabic": "جبل أحد"
+      },
+      "slides": [
+        {
+          "title": { "en": "Quraysh return", "de": "Die Quraisch kehren zurück", "ar": "قريش تعود" },
+          "body": { "en": "A year after Badr, Quraysh marched on Madinah with about three thousand men. The Muslims met them at the foot of Mount Uhud, north of the city.", "de": "Ein Jahr nach Badr zogen die Quraisch mit etwa dreitausend Mann gegen Medina. Die Muslime stellten sich ihnen am Fuß des Berges Uhud nördlich der Stadt.", "ar": "بعد عام من بدر زحفت قريش إلى المدينة في نحو ثلاثة آلاف رجل، فلقيهم المسلمون عند سفح جبل أحد شمال المدينة." }
+        },
+        {
+          "hadith": "bukhari:4561",
+          "check": "Abdullah bin Jubair",
+          "title": { "en": "The archers on the hill", "de": "Die Bogenschützen auf dem Hügel", "ar": "الرماة على الجبل" },
+          "body": { "en": "The Prophet placed archers on a small hill with a clear order never to leave it.", "de": "Der Prophet stellte Bogenschützen auf einen kleinen Hügel, mit dem klaren Befehl, ihn keinesfalls zu verlassen.", "ar": "وضع النبي ﷺ الرماة على جبل صغير وأمرهم أمرًا واضحًا ألا يتركوه بحال." }
+        },
+        {
+          "verse": "3:153",
+          "check": "calling you from behind",
+          "title": { "en": "When the order was left", "de": "Als der Befehl missachtet wurde", "ar": "حين تُرك الأمر" },
+          "body": { "en": "When victory seemed certain, most archers left their post, and the enemy cavalry turned the battle.", "de": "Als der Sieg sicher schien, verließen die meisten Bogenschützen ihren Posten, und die feindliche Reiterei wendete die Schlacht.", "ar": "لما بدا النصر محققًا ترك أكثر الرماة مواقعهم، فالتفّت خيل العدو وانقلبت المعركة." }
+        },
+        {
+          "title": { "en": "Hamzah and the martyrs", "de": "Hamza und die Märtyrer", "ar": "حمزة والشهداء" },
+          "body": { "en": "About seventy believers were martyred, among them Hamzah, the Prophet's uncle. The Prophet himself was wounded, and a rumour spread that he had been killed.", "de": "Etwa siebzig Gläubige fielen als Märtyrer, unter ihnen Hamza, der Onkel des Propheten. Der Prophet selbst wurde verwundet, und es ging das Gerücht, er sei getötet worden.", "ar": "استُشهد نحو سبعين من المؤمنين، منهم حمزة عم النبي ﷺ، وجُرح النبي ﷺ نفسه، وشاع أنه قُتل." }
+        },
+        {
+          "verse": "3:144",
+          "check": "Muhammad is not but a messenger",
+          "title": { "en": "What if he were gone?", "de": "Was, wenn er nicht mehr wäre?", "ar": "ماذا لو غاب؟" },
+          "body": { "en": "The rumour of his death led to this lesson: faith is in Allah, who never dies.", "de": "Das Gerücht von seinem Tod führte zu dieser Lehre: Der Glaube gilt Allah, der niemals stirbt.", "ar": "أثمرت شائعة موته هذا الدرس: الإيمان بالله الحي الذي لا يموت." }
+        },
+        {
+          "verse": "3:139-140",
+          "check": "do not weaken",
+          "title": { "en": "Comfort instead of blame", "de": "Trost statt Vorwurf", "ar": "مواساة لا لوم" },
+          "body": { "en": "The Quran gave the wounded believers comfort and perspective: days of victory and loss take turns.", "de": "Der Koran schenkte den verwundeten Gläubigen Trost und Weitblick: Tage des Sieges und des Verlustes wechseln sich ab.", "ar": "قدّم القرآن للمؤمنين الجرحى العزاء والبصيرة: أيام النصر والهزيمة دُوَل." }
+        },
+        {
+          "hadith": "bukhari:4084",
+          "check": "mountain that loves us",
+          "title": { "en": "No bitterness towards Uhud", "de": "Keine Bitterkeit gegenüber Uhud", "ar": "لا مرارة تجاه أحد" },
+          "body": { "en": "Even after the pain of that day, the Prophet spoke of the mountain with love.", "de": "Selbst nach dem Schmerz jenes Tages sprach der Prophet mit Liebe von dem Berg.", "ar": "حتى بعد ألم ذلك اليوم تحدث النبي ﷺ عن الجبل بمحبة." }
+        },
+        {
+          "title": { "en": "Lessons from Uhud", "de": "Lehren aus Uhud", "ar": "دروس من أحد" },
+          "list": {
+            "en": ["Discipline matters most when success seems near", "Learn from mistakes without losing hope", "Your faith rests on Allah, not on any person"],
+            "de": ["Disziplin zählt am meisten, wenn der Erfolg nah scheint", "Lernen Sie aus Fehlern, ohne die Hoffnung zu verlieren", "Ihr Glaube ruht auf Allah, nicht auf einem Menschen"],
+            "ar": ["الانضباط أهم ما يكون حين يقترب النجاح", "تعلّم من الخطأ دون أن تفقد الأمل", "إيمانك قائم على الله لا على أحد من الخلق"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 3:121-175" }]
+    },
+    {
+      "id": "seerah-16-battle-of-the-trench",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Seerah · 16", "de": "Sīra · 16", "ar": "السيرة · ١٦" },
+        "title": { "en": "The Battle of the Trench", "de": "Die Grabenschlacht", "ar": "غزوة الخندق" },
+        "sub": { "en": "5 AH (627 CE): a city surrounded by the confederates, and a trench dug in the cold", "de": "5 n. H. (627 n. Chr.): eine Stadt, umzingelt von den Verbündeten, und ein Graben, gegraben in der Kälte", "ar": "سنة ٥هـ (٦٢٧م): مدينة تحاصرها الأحزاب، وخندق يُحفر في البرد" },
+        "arabic": "الأحزاب"
+      },
+      "slides": [
+        {
+          "title": { "en": "The confederates gather", "de": "Die Verbündeten sammeln sich", "ar": "تجمّع الأحزاب" },
+          "body": { "en": "According to most historians, in 5 AH (627 CE) Quraysh and allied tribes marched on Madinah together, an army often put at ten thousand. The Quran calls them al-Ahzab, the confederates.", "de": "Nach den meisten Historikern zogen 5 n. H. (627 n. Chr.) die Quraisch und verbündete Stämme gemeinsam gegen Medina, ein Heer, das oft mit zehntausend angegeben wird. Der Koran nennt sie al-Ahzāb, die Verbündeten.", "ar": "في السنة الخامسة للهجرة (٦٢٧م) على قول أكثر المؤرخين زحفت قريش والقبائل المتحالفة معها إلى المدينة في جيش يُقدَّر غالبًا بعشرة آلاف، ويسميهم القرآن الأحزاب." }
+        },
+        {
+          "title": { "en": "Salman's idea", "de": "Salmāns Idee", "ar": "مشورة سلمان" },
+          "body": { "en": "Sira works report that Salman al-Farisi suggested a trench, a Persian defence the Arabs did not know. The Prophet agreed, and the believers dug it along the open side of the city.", "de": "Nach den Sīra-Werken schlug Salmān al-Fārisī einen Graben vor, eine persische Verteidigung, die die Araber nicht kannten. Der Prophet stimmte zu, und die Gläubigen hoben ihn an der offenen Seite der Stadt aus.", "ar": "تروي كتب السيرة أن سلمان الفارسي أشار بحفر خندق، وهي حيلة فارسية لم تعرفها العرب، فوافق النبي ﷺ، وحفره المؤمنون في الجهة المكشوفة من المدينة." }
+        },
+        {
+          "hadith": "bukhari:2835",
+          "check": "digging the trench",
+          "title": { "en": "Digging together", "de": "Gemeinsam graben", "ar": "يحفرون معًا" },
+          "body": { "en": "They sang as they carried the earth, and the Prophet answered them with a prayer.", "de": "Sie sangen, während sie die Erde trugen, und der Prophet antwortete ihnen mit einem Gebet.", "ar": "كانوا ينشدون وهم يحملون التراب، فيجيبهم النبي ﷺ بدعاء." }
+        },
+        {
+          "verse": "33:10-11",
+          "check": "hearts reached the throats",
+          "title": { "en": "Shaken to the core", "de": "Bis ins Innerste erschüttert", "ar": "زلزالٌ في القلوب" },
+          "body": { "en": "The siege lasted for weeks, in cold and hunger. The Quran describes the fear honestly.", "de": "Die Belagerung dauerte Wochen, in Kälte und Hunger. Der Koran beschreibt die Angst ohne Beschönigung.", "ar": "طال الحصار أسابيع في البرد والجوع، ويصف القرآن الخوف بصدق." }
+        },
+        {
+          "verse": "33:22",
+          "check": "increased them only in faith",
+          "title": { "en": "The believers' answer", "de": "Die Antwort der Gläubigen", "ar": "جواب المؤمنين" },
+          "body": { "en": "Seeing the armies, the believers did not collapse; their faith grew.", "de": "Beim Anblick der Heere brachen die Gläubigen nicht zusammen; ihr Glaube wuchs.", "ar": "لما رأى المؤمنون الأحزاب لم ينهاروا، بل زادهم ذلك يقينًا." }
+        },
+        {
+          "verse": "33:9",
+          "check": "a wind",
+          "title": { "en": "A wind and unseen help", "de": "Ein Wind und unsichtbare Hilfe", "ar": "ريحٌ ومدد خفيّ" },
+          "body": { "en": "A cold wind tore through the camp of the confederates, and they withdrew without taking the city.", "de": "Ein kalter Wind fegte durch das Lager der Verbündeten, und sie zogen ab, ohne die Stadt einzunehmen.", "ar": "هبّت ريح باردة على معسكر الأحزاب فرحلوا دون أن يدخلوا المدينة." }
+        },
+        {
+          "title": { "en": "A turning point", "de": "Ein Wendepunkt", "ar": "نقطة تحوّل" },
+          "body": { "en": "After the Trench, Quraysh never again marched on Madinah. The balance had shifted for good.", "de": "Nach der Grabenschlacht zogen die Quraisch nie wieder gegen Medina. Das Gleichgewicht hatte sich endgültig verschoben.", "ar": "بعد الخندق لم تغزُ قريش المدينة مرة أخرى، فقد تغيّر ميزان القوى إلى غير رجعة." }
+        },
+        {
+          "title": { "en": "Lessons from the Trench", "de": "Lehren aus der Grabenschlacht", "ar": "دروس من الخندق" },
+          "list": {
+            "en": ["Good ideas can come from anyone", "Leaders work alongside their people", "Fear is human; faith is what you do with it"],
+            "de": ["Gute Ideen können von jedem kommen", "Wer führt, packt mit an", "Angst ist menschlich, Glaube zeigt sich im Umgang mit ihr"],
+            "ar": ["الفكرة الجيدة قد تأتي من أي أحد", "القائد يعمل مع قومه", "الخوف بشري، والإيمان فيما تفعله به"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Ahzab" }]
+    },
+    {
+      "id": "seerah-17-treaty-of-hudaybiyah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Seerah · 17", "de": "Sīra · 17", "ar": "السيرة · ١٧" },
+        "title": { "en": "The Treaty of Hudaybiyah", "de": "Der Vertrag von Hudaibiya", "ar": "صلح الحديبية" },
+        "sub": { "en": "6 AH (628 CE): a blocked pilgrimage, a pledge under a tree, and a peace called a clear victory", "de": "6 n. H. (628 n. Chr.): eine verhinderte Pilgerfahrt, ein Gelöbnis unter einem Baum und ein Frieden, der ein klarer Sieg genannt wurde", "ar": "سنة ٦هـ (٦٢٨م): عمرة مُنعت، وبيعة تحت شجرة، وصلح سُمّي فتحًا مبينًا" },
+        "arabic": "صلح الحديبية"
+      },
+      "slides": [
+        {
+          "title": { "en": "Setting out for 'umrah", "de": "Aufbruch zur ʿUmra", "ar": "الخروج للعمرة" },
+          "body": { "en": "The Prophet set out from Madinah with his companions to perform 'umrah. They wore the pilgrim's garments, brought animals for sacrifice and carried only a traveller's arms.", "de": "Der Prophet brach mit seinen Gefährten von Medina auf, um die ʿUmra zu vollziehen. Sie trugen Pilgerkleidung, führten Opfertiere mit und hatten nur die Waffen eines Reisenden bei sich.", "ar": "خرج النبي ﷺ من المدينة مع أصحابه معتمرين، محرمين يسوقون الهدي، لا يحملون إلا سلاح المسافر." }
+        },
+        {
+          "hadith": "bukhari:4154",
+          "check": "best people on the earth",
+          "title": { "en": "Fourteen hundred", "de": "Vierzehnhundert", "ar": "ألف وأربعمئة" },
+          "body": { "en": "Jabir remembered their number, and the praise the Prophet gave them that day.", "de": "Dschābir erinnerte sich an ihre Zahl und an das Lob, das der Prophet ihnen an jenem Tag aussprach.", "ar": "تذكّر جابر عددهم، وثناء النبي ﷺ عليهم في ذلك اليوم." }
+        },
+        {
+          "title": { "en": "Stopped at Hudaybiyah", "de": "Aufgehalten bei Hudaibiya", "ar": "التوقف عند الحديبية" },
+          "body": { "en": "Quraysh blocked the way to Makkah. The Prophet camped at al-Hudaybiyah and sent 'Uthman ibn 'Affan to negotiate. When a rumour spread that 'Uthman had been killed, the companions gave a pledge.", "de": "Die Quraisch versperrten den Weg nach Mekka. Der Prophet lagerte bei al-Hudaibiya und schickte ʿUthmān ibn ʿAffān zu Verhandlungen. Als das Gerücht aufkam, ʿUthmān sei getötet worden, legten die Gefährten ein Gelöbnis ab.", "ar": "منعت قريش الطريق إلى مكة، فنزل النبي ﷺ بالحديبية وأرسل عثمان بن عفان مفاوضًا، فلما شاع أن عثمان قُتل بايعه الصحابة." }
+        },
+        {
+          "verse": "48:18",
+          "check": "under the tree",
+          "title": { "en": "The pledge under the tree", "de": "Das Gelöbnis unter dem Baum", "ar": "بيعة الشجرة" },
+          "body": { "en": "Allah declared His pleasure with those who pledged that day. It became known as the Pledge of Ridwan.", "de": "Allah erklärte Sein Wohlgefallen an denen, die an jenem Tag gelobten. Es wurde als Gelöbnis von Ridwān bekannt.", "ar": "أعلن الله رضاه عمّن بايعوا يومئذ، فسُمّيت بيعة الرضوان." }
+        },
+        {
+          "title": { "en": "Hard terms", "de": "Harte Bedingungen", "ar": "شروط شاقة" },
+          "body": { "en": "The treaty seemed one-sided: no 'umrah that year but the next, and a truce of ten years. Many companions found the terms painful, yet the Prophet accepted them.", "de": "Der Vertrag schien einseitig: keine ʿUmra in diesem Jahr, sondern im nächsten, und ein Waffenstillstand von zehn Jahren. Viele Gefährten empfanden die Bedingungen als schmerzlich, doch der Prophet nahm sie an.", "ar": "بدت شروط الصلح مجحفة: لا عمرة هذا العام بل في العام القادم، وهدنة عشر سنين، فشقّت على كثير من الصحابة، وقبلها النبي ﷺ." }
+        },
+        {
+          "verse": "48:1",
+          "check": "clear conquest",
+          "title": { "en": "Called a clear victory", "de": "Ein klarer Sieg genannt", "ar": "سُمّي فتحًا مبينًا" },
+          "body": { "en": "On the way home, Surah al-Fath came down and named this peace a victory.", "de": "Auf dem Heimweg kam Sure al-Fath herab und nannte diesen Frieden einen Sieg.", "ar": "وفي طريق العودة نزلت سورة الفتح فسمّت هذا الصلح فتحًا." }
+        },
+        {
+          "title": { "en": "Peace opened hearts", "de": "Frieden öffnete Herzen", "ar": "السلام فتح القلوب" },
+          "body": { "en": "With the roads safe, people could meet Muslims and hear the Quran. Az-Zuhri observed that more people entered Islam in the two years after Hudaybiyah than in all the years before.", "de": "Da die Wege sicher waren, konnten Menschen Muslimen begegnen und den Koran hören. Az-Zuhrī bemerkte, dass in den zwei Jahren nach Hudaibiya mehr Menschen den Islam annahmen als in allen Jahren davor.", "ar": "لما أمنت الطرق صار الناس يلقون المسلمين ويسمعون القرآن، ولاحظ الزهري أن من دخل الإسلام في السنتين بعد الحديبية أكثر ممن دخله قبلها." }
+        },
+        {
+          "title": { "en": "Lessons from Hudaybiyah", "de": "Lehren aus Hudaibiya", "ar": "دروس من الحديبية" },
+          "list": {
+            "en": ["Patience can win what force cannot", "Trust the Prophet's way, even when it feels hard", "Peace opens doors that conflict keeps shut"],
+            "de": ["Geduld kann gewinnen, was Gewalt nicht erreicht", "Vertrauen Sie dem Weg des Propheten, auch wenn er schwerfällt", "Frieden öffnet Türen, die der Streit verschlossen hält"],
+            "ar": ["الصبر قد يكسب ما لا تكسبه القوة", "ثق بطريق النبي ﷺ ولو شقّ عليك", "السلام يفتح أبوابًا يغلقها النزاع"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya (with the remark of az-Zuhri)" }, { "label": "Sahih al-Bukhari, Book of Conditions (Kitab ash-Shurut)" }]
+    },
+    {
+      "id": "seerah-18-opening-of-makkah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Seerah · 18", "de": "Sīra · 18", "ar": "السيرة · ١٨" },
+        "title": { "en": "The opening of Makkah", "de": "Die Öffnung Mekkas", "ar": "فتح مكة" },
+        "sub": { "en": "Ramadan, 8 AH (630 CE): a return without revenge", "de": "Ramadan 8 n. H. (630 n. Chr.): eine Rückkehr ohne Rache", "ar": "رمضان سنة ٨هـ (٦٣٠م): عودة بلا انتقام" },
+        "arabic": "فتح مكة"
+      },
+      "slides": [
+        {
+          "title": { "en": "A broken truce", "de": "Ein gebrochener Waffenstillstand", "ar": "نقض العهد" },
+          "body": { "en": "Allies of Quraysh attacked the Khuza'ah, who were allied with the Muslims, and the truce of Hudaybiyah was broken. In Ramadan 8 AH the Prophet marched on Makkah with about ten thousand men.", "de": "Verbündete der Quraisch griffen die Chuzāʿa an, die mit den Muslimen verbündet waren, und der Waffenstillstand von Hudaibiya war gebrochen. Im Ramadan 8 n. H. zog der Prophet mit etwa zehntausend Mann gegen Mekka.", "ar": "اعتدى حلفاء قريش على خزاعة حلفاء المسلمين، فانتقض صلح الحديبية، فسار النبي ﷺ في رمضان سنة ٨هـ إلى مكة في نحو عشرة آلاف." }
+        },
+        {
+          "title": { "en": "Entering in humility", "de": "Einzug in Demut", "ar": "دخول بتواضع" },
+          "body": { "en": "Makkah was entered almost without fighting. Sira works describe the Prophet riding in with his head bowed so low that it nearly touched his saddle.", "de": "Mekka wurde fast ohne Kampf betreten. Die Sīra-Werke beschreiben, wie der Prophet mit so tief gesenktem Haupt einritt, dass es beinahe den Sattel berührte.", "ar": "دخل المسلمون مكة دون قتال يُذكر، وتصف كتب السيرة النبي ﷺ داخلًا وقد طأطأ رأسه تواضعًا حتى كاد يمسّ رحله." }
+        },
+        {
+          "hadith": "bukhari:4287",
+          "check": "360 idols",
+          "title": { "en": "The idols fall", "de": "Die Götzenbilder fallen", "ar": "سقوط الأصنام" },
+          "body": { "en": "At the Ka'bah he cleared away the idols while reciting a verse of the Quran.", "de": "An der Kaaba entfernte er die Götzenbilder und rezitierte dabei einen Vers des Korans.", "ar": "أزال الأصنام من حول الكعبة وهو يتلو آية من القرآن." }
+        },
+        {
+          "verse": "17:81",
+          "check": "falsehood has departed",
+          "title": { "en": "The verse he recited", "de": "Der Vers, den er rezitierte", "ar": "الآية التي تلاها" },
+          "body": { "en": "These words of Surah al-Isra, revealed in Makkah years earlier, now came true before everyone's eyes.", "de": "Diese Worte aus Sure al-Isrāʾ, Jahre zuvor in Mekka offenbart, wurden nun vor aller Augen wahr.", "ar": "تحققت أمام الناس كلمات سورة الإسراء التي نزلت بمكة قبل سنين." }
+        },
+        {
+          "title": { "en": "A general pardon", "de": "Eine allgemeine Vergebung", "ar": "عفوٌ عام" },
+          "body": { "en": "The people who had persecuted him for years now stood before him. He forgave them, and declared safety for all who stayed in their homes or in the Sacred Mosque.", "de": "Die Menschen, die ihn jahrelang verfolgt hatten, standen nun vor ihm. Er vergab ihnen und gewährte allen Sicherheit, die in ihren Häusern oder in der Heiligen Moschee blieben.", "ar": "وقف أمامه الذين آذوه سنين طويلة، فعفا عنهم، وأمّن من لزم بيته أو دخل المسجد الحرام." }
+        },
+        {
+          "verse": "12:92",
+          "check": "No blame will there be upon you today",
+          "title": { "en": "The words of Yusuf", "de": "Die Worte Yūsufs", "ar": "كلمة يوسف" },
+          "body": { "en": "Some sira works report that he answered Quraysh with the words Yusuf once spoke to his brothers.", "de": "Einige Sīra-Werke berichten, dass er den Quraisch mit den Worten antwortete, die Yūsuf einst an seine Brüder richtete.", "ar": "تروي بعض كتب السيرة أنه أجاب قريشًا بالكلمة التي قالها يوسف لإخوته." }
+        },
+        {
+          "title": { "en": "The call from the Ka'bah", "de": "Der Ruf von der Kaaba", "ar": "الأذان فوق الكعبة" },
+          "body": { "en": "Bilal, once tortured on the sand of Makkah, climbed onto the Ka'bah and gave the call to prayer over the city.", "de": "Bilāl, einst im Sand Mekkas gefoltert, stieg auf die Kaaba und rief über der Stadt zum Gebet.", "ar": "صعد بلال، الذي عُذّب يومًا في رمضاء مكة، على ظهر الكعبة ورفع الأذان فوق البلد." }
+        },
+        {
+          "verse": "110:1-3",
+          "check": "people entering into the religion",
+          "title": { "en": "Victory, then praise", "de": "Sieg, dann Lobpreis", "ar": "نصرٌ ثم تسبيح" },
+          "body": { "en": "Surah an-Nasr: when victory comes, the answer is praise and asking forgiveness, not pride.", "de": "Sure an-Nasr: Wenn der Sieg kommt, lautet die Antwort Lobpreis und Bitte um Vergebung, nicht Stolz.", "ar": "سورة النصر: إذا جاء الفتح فالجواب تسبيح واستغفار لا كِبر." }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Sahih Muslim, Book of Jihad and Expeditions (the conquest of Makkah)" }]
+    },
+    {
+      "id": "seerah-19-farewell-pilgrimage",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Seerah · 19", "de": "Sīra · 19", "ar": "السيرة · ١٩" },
+        "title": { "en": "The Farewell Pilgrimage", "de": "Die Abschiedswallfahrt", "ar": "حجة الوداع" },
+        "sub": { "en": "10 AH (632 CE): his only Hajj after the Hijrah, and a sermon for all people", "de": "10 n. H. (632 n. Chr.): seine einzige Pilgerfahrt nach der Hidschra und eine Predigt für alle Menschen", "ar": "سنة ١٠هـ (٦٣٢م): حجته الوحيدة بعد الهجرة، وخطبة للناس كافة" },
+        "arabic": "حجة الوداع"
+      },
+      "slides": [
+        {
+          "title": { "en": "One Hajj", "de": "Eine Pilgerfahrt", "ar": "حجة واحدة" },
+          "body": { "en": "In 10 AH the Prophet announced that he would perform Hajj, and believers came from all over Arabia to join him. It was his only Hajj after the Hijrah.", "de": "Im Jahr 10 n. H. kündigte der Prophet an, die Pilgerfahrt zu vollziehen, und Gläubige kamen aus ganz Arabien, um sich ihm anzuschließen. Es war seine einzige Pilgerfahrt nach der Hidschra.", "ar": "في السنة العاشرة أعلن النبي ﷺ أنه حاجّ، فأقبل المؤمنون من أنحاء الجزيرة ليحجّوا معه، وكانت حجته الوحيدة بعد الهجرة." }
+        },
+        {
+          "title": { "en": "A name that came true", "de": "Ein Name, der sich erfüllte", "ar": "اسمٌ صدق" },
+          "body": { "en": "It is called the Farewell Pilgrimage because he bid the people farewell in it. He did not live to see another Hajj season.", "de": "Sie heißt Abschiedswallfahrt, weil er sich darin von den Menschen verabschiedete. Eine weitere Pilgerzeit erlebte er nicht mehr.", "ar": "سُمّيت حجة الوداع لأنه ودّع فيها الناس، ولم يدرك موسم حج بعدها." }
+        },
+        {
+          "hadith": "bukhari:105",
+          "check": "sacred to one another",
+          "title": { "en": "What is sacred", "de": "Was unantastbar ist", "ar": "حُرماتٌ مصونة" },
+          "body": { "en": "At the heart of his sermon: the sanctity of every person's life, property and honour.", "de": "Im Zentrum seiner Predigt: die Unantastbarkeit von Leben, Besitz und Ehre jedes Menschen.", "ar": "في قلب خطبته: حرمة نفس كل إنسان وماله وكرامته." }
+        },
+        {
+          "title": { "en": "What else he stressed", "de": "Was er außerdem betonte", "ar": "ومما أكّد عليه" },
+          "body": { "en": "From Jabir's long description of the Prophet's Hajj in Sahih Muslim:", "de": "Aus Dschābirs ausführlicher Beschreibung der Pilgerfahrt des Propheten in Sahīh Muslim:", "ar": "من وصف جابر الطويل لحجة النبي ﷺ في صحيح مسلم:" },
+          "list": {
+            "en": ["The blood feuds of the pre-Islamic era were ended", "Usury was abolished, beginning with his own family's claims", "Fear Allah in how you treat women", "Hold fast to the Book of Allah"],
+            "de": ["Die Blutfehden der vorislamischen Zeit wurden beendet", "Der Zinswucher wurde abgeschafft, beginnend mit Forderungen seiner eigenen Familie", "Fürchten Sie Allah im Umgang mit den Frauen", "Halten Sie fest am Buch Allahs"],
+            "ar": ["أُبطلت دماء الجاهلية", "وُضع الربا، وبدأ بربا أهل بيته", "اتقوا الله في معاملة النساء", "اعتصموا بكتاب الله"]
+          }
+        },
+        {
+          "hadith": "bukhari:45",
+          "check": "perfected your religion",
+          "title": { "en": "At 'Arafah, on a Friday", "de": "Bei ʿArafa, an einem Freitag", "ar": "بعرفة يوم الجمعة" },
+          "body": { "en": "'Umar knew exactly when and where the verse of the perfected religion came down.", "de": "ʿUmar wusste genau, wann und wo der Vers von der vollendeten Religion herabkam.", "ar": "كان عمر يعلم متى وأين نزلت آية إكمال الدين." }
+        },
+        {
+          "verse": "49:13",
+          "check": "most noble of you",
+          "title": { "en": "One humanity", "de": "Eine Menschheit", "ar": "إنسانية واحدة" },
+          "body": { "en": "The equal worth of people, central to his teaching, stands in this verse: no one is better by birth, only by piety.", "de": "Der gleiche Wert der Menschen, zentral in seiner Lehre, steht in diesem Vers: Niemand ist durch Herkunft besser, nur durch Gottesfurcht.", "ar": "تساوي الناس في القيمة، وهو أصل في تعليمه، تقرره هذه الآية: لا فضل بالنسب بل بالتقوى." }
+        },
+        {
+          "title": { "en": "Carrying the message on", "de": "Die Botschaft weitertragen", "ar": "حمل الرسالة من بعده" },
+          "list": {
+            "en": ["Treat the life, property and honour of others as sacred", "Pass on what you learn to those who were not there", "Measure people by their piety, not their origin"],
+            "de": ["Achten Sie Leben, Besitz und Ehre anderer als unantastbar", "Geben Sie weiter, was Sie lernen, an jene, die nicht dabei waren", "Messen Sie Menschen an ihrer Gottesfurcht, nicht an ihrer Herkunft"],
+            "ar": ["احفظ حرمة نفوس الناس وأموالهم وأعراضهم", "بلّغ ما تتعلمه لمن لم يحضر", "زِن الناس بتقواهم لا بأصولهم"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Sahih Muslim, hadith of Jabir on the Prophet's Hajj" }, { "label": "Ibn Hisham, as-Sira an-Nabawiyya" }]
+    },
+    {
+      "id": "seerah-20-passing-of-the-prophet",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Seerah · 20", "de": "Sīra · 20", "ar": "السيرة · ٢٠" },
+        "title": { "en": "The passing of the Prophet", "de": "Der Heimgang des Propheten", "ar": "وفاة النبي ﷺ" },
+        "sub": { "en": "11 AH (632 CE): the end of a life, not of the message", "de": "11 n. H. (632 n. Chr.): das Ende eines Lebens, nicht der Botschaft", "ar": "سنة ١١هـ (٦٣٢م): انتهت حياةٌ ولم تنته الرسالة" },
+        "arabic": "الرفيق الأعلى"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:3902",
+          "check": "sixty-three",
+          "title": { "en": "A life in numbers", "de": "Ein Leben in Zahlen", "ar": "حياةٌ في أرقام" },
+          "body": { "en": "Forty years before revelation, thirteen in Makkah, ten in Madinah.", "de": "Vierzig Jahre vor der Offenbarung, dreizehn in Mekka, zehn in Medina.", "ar": "أربعون سنة قبل الوحي، وثلاث عشرة في مكة، وعشر في المدينة." }
+        },
+        {
+          "title": { "en": "The last illness", "de": "Die letzte Krankheit", "ar": "المرض الأخير" },
+          "body": { "en": "A few months after the Farewell Pilgrimage he fell ill with a fever. As long as he could, he came out to the mosque to be with his companions.", "de": "Wenige Monate nach der Abschiedswallfahrt erkrankte er an Fieber. Solange er konnte, kam er in die Moschee, um bei seinen Gefährten zu sein.", "ar": "بعد حجة الوداع بأشهر قليلة اشتدت عليه الحمّى، وكان يخرج إلى المسجد ليكون مع أصحابه ما استطاع." }
+        },
+        {
+          "verse": "39:30",
+          "check": "you are to die",
+          "title": { "en": "Even the Prophet", "de": "Auch der Prophet", "ar": "حتى النبي ﷺ" },
+          "body": { "en": "The Quran had prepared the believers: the Prophet, too, would die.", "de": "Der Koran hatte die Gläubigen vorbereitet: Auch der Prophet würde sterben.", "ar": "هيّأ القرآن المؤمنين لذلك: النبي ﷺ أيضًا يموت." }
+        },
+        {
+          "hadith": "bukhari:4440",
+          "check": "highest",
+          "title": { "en": "His last prayer", "de": "Sein letztes Gebet", "ar": "دعاؤه الأخير" },
+          "body": { "en": "'A'ishah narrates the prayer he made in his final hours.", "de": "ʿĀʾischa überliefert das Gebet, das er in seinen letzten Stunden sprach.", "ar": "تروي عائشة رضي الله عنها الدعاء الذي دعا به في ساعاته الأخيرة." }
+        },
+        {
+          "title": { "en": "The day he passed", "de": "Der Tag seines Heimgangs", "ar": "يوم الوفاة" },
+          "body": { "en": "He passed away in Madinah in 11 AH (632 CE), aged sixty-three. Most Sunni historians date it to a Monday in Rabi' al-Awwal; Shia sources commonly give the end of Safar.", "de": "Er starb 11 n. H. (632 n. Chr.) in Medina, im Alter von dreiundsechzig Jahren. Die meisten sunnitischen Historiker nennen einen Montag im Rabīʿ al-Awwal, schiitische Quellen meist das Ende des Safar.", "ar": "توفي ﷺ في المدينة سنة ١١هـ (٦٣٢م) عن ثلاث وستين سنة، ويؤرّخها أكثر مؤرخي أهل السنة بيوم اثنين من ربيع الأول، وتذكر المصادر الشيعية غالبًا أواخر صفر." }
+        },
+        {
+          "verse": "3:144",
+          "check": "Muhammad is not but a messenger",
+          "title": { "en": "A verse heard anew", "de": "Ein Vers, neu gehört", "ar": "آية كأنها تُسمع لأول مرة" },
+          "body": { "en": "When many could not believe the news, Abu Bakr recited this verse, and people felt they were hearing it for the first time.", "de": "Als viele die Nachricht nicht glauben konnten, rezitierte Abū Bakr diesen Vers, und den Menschen war, als hörten sie ihn zum ersten Mal.", "ar": "لما لم يصدّق كثيرون الخبر تلا أبو بكر هذه الآية، فكأن الناس يسمعونها لأول مرة." }
+        },
+        {
+          "verse": "33:56",
+          "check": "blessing upon the Prophet",
+          "title": { "en": "A bond that remains", "de": "Eine Verbindung, die bleibt", "ar": "صلة لا تنقطع" },
+          "body": { "en": "His life ended, but the believers' bond with him continues: sending blessings upon him is a command for all time.", "de": "Sein Leben endete, doch die Verbindung der Gläubigen zu ihm bleibt: Segenswünsche über ihn sind ein Gebot für alle Zeit.", "ar": "انتهت حياته وبقيت صلة المؤمنين به: الصلاة عليه أمرٌ باقٍ على مرّ الزمان." }
+        },
+        {
+          "title": { "en": "Walking his path today", "de": "Seinen Weg heute gehen", "ar": "على طريقه اليوم" },
+          "list": {
+            "en": ["Learn his life from reliable sources", "Send blessings upon him often", "Live by the Quran he brought and the character he showed"],
+            "de": ["Lernen Sie sein Leben aus verlässlichen Quellen kennen", "Sprechen Sie oft Segenswünsche über ihn", "Leben Sie nach dem Koran, den er brachte, und nach seinem Vorbild"],
+            "ar": ["تعلّم سيرته من المصادر الموثوقة", "أكثر من الصلاة عليه ﷺ", "عش بالقرآن الذي جاء به وبالخُلق الذي كان عليه"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Sahih al-Bukhari, Book of Military Expeditions (the illness and death of the Prophet)" }]
+    }
+  ]
+}

@@ -1,0 +1,3180 @@
+{
+  "series": "tajweed",
+  "label": {
+    "en": "Tajweed rule of the week",
+    "de": "Tadschwid-Regel der Woche",
+    "ar": "قاعدة التجويد"
+  },
+  "topic": "quran",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "tajweed-01-izhar",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Izhar: the clear noon",
+          "de": "Izhar: das klare Nun",
+          "ar": "الإظهار الحلقي"
+        },
+        "sub": {
+          "en": "When noon sakinah or tanween meets a throat letter, say it clearly",
+          "de": "Wenn Nun sakina oder Tanwin auf einen Kehllaut trifft, sprechen Sie es klar",
+          "ar": "إذا جاء بعد النون الساكنة أو التنوين حرف حلقي فأظهرها بوضوح"
+        },
+        "arabic": "الإظهار الحلقي"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ء ه ع ح غ خ",
+          "body": {
+            "en": "When a noon with sukun or a tanween is followed by one of the six throat letters (hamza, ha, 'ayn, ḥa, ghayn, kha), the noon is pronounced clearly. This is called izhar halqi, the throat clarity.",
+            "de": "Folgt auf ein Nun mit Sukun oder ein Tanwin einer der sechs Kehllaute (Hamza, Ha, 'Ain, Ḥa, Ghain, Cha), wird das Nun klar ausgesprochen. Das heißt Izhar halqi, die Klarheit vor den Kehllauten.",
+            "ar": "إذا وقع بعد النون الساكنة أو التنوين حرف من حروف الحلق الستة، وهي الهمزة والهاء والعين والحاء والغين والخاء، وجب إظهار النون، ويسمى الإظهار الحلقي."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "The tongue touches the noon's place, the noon sounds crisp and short, and you move straight on to the throat letter. Why? The throat is far from the tip of the tongue, so the noon cannot hide or merge.",
+            "de": "Die Zunge berührt die Stelle des Nun, das Nun klingt kurz und klar, und Sie gehen direkt zum Kehllaut über. Warum? Die Kehle liegt weit von der Zungenspitze entfernt, darum kann sich das Nun weder verbergen noch verschmelzen.",
+            "ar": "يعتمد اللسان على مخرج النون فتخرج واضحة قصيرة، ثم تنتقل مباشرة إلى الحرف الحلقي. والسبب بُعد مخرج حروف الحلق عن مخرج النون، فلا يتأتى إخفاؤها ولا إدغامها."
+          }
+        },
+        {
+          "verse": "1:7",
+          "check": "bestowed favor",
+          "title": {
+            "en": "Inside one word",
+            "de": "Innerhalb eines Wortes",
+            "ar": "في كلمة واحدة"
+          },
+          "body": {
+            "en": "In an'amta the noon with sukun meets 'ayn: say the noon clearly, then the 'ayn.",
+            "de": "In an'amta trifft das Nun mit Sukun auf 'Ain: sprechen Sie das Nun klar, dann das 'Ain.",
+            "ar": "في الآية المعروضة كلمةٌ تأتي فيها العين بعد النون الساكنة مباشرة، فتُظهر النون ثم تنطق العين."
+          }
+        },
+        {
+          "verse": "101:11",
+          "check": "intensely hot",
+          "title": {
+            "en": "With tanween",
+            "de": "Mit Tanwin",
+            "ar": "مع التنوين"
+          },
+          "body": {
+            "en": "In narun hamiyah the tanween meets ḥa. The unwritten noon sound of the tanween is pronounced clearly.",
+            "de": "In narun hamiya trifft das Tanwin auf Ḥa. Das Nun des Tanwin wird klar ausgesprochen.",
+            "ar": "في الآية المعروضة تنوينٌ بعده حاء في أول الكلمة التالية، فتظهر نون التنوين واضحة."
+          }
+        },
+        {
+          "verse": "106:4",
+          "check": "from fear",
+          "title": {
+            "en": "Across two words",
+            "de": "Über zwei Wörter",
+            "ar": "بين كلمتين"
+          },
+          "body": {
+            "en": "In min khawf the noon ends one word and kha begins the next: still izhar.",
+            "de": "In min chauf endet das eine Wort mit Nun, das nächste beginnt mit Cha: auch das ist Izhar.",
+            "ar": "في آخر الآية المعروضة تنتهي كلمةٌ بالنون الساكنة وتبدأ التي بعدها بالخاء، والحكم الإظهار كذلك."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Adding a nasal hum or a small vowel after the noon, so that min khawf sounds like mina-khawf. The noon is clear and short, with nothing added.",
+            "de": "Ein Nasalsummen oder einen kleinen Vokal nach dem Nun hinzufügen, sodass min chauf wie mina-chauf klingt. Das Nun ist klar und kurz, ohne Zusatz.",
+            "ar": "إطالة الغنة أو إضافة حركة بعد النون، فتُنطق النون الساكنة قبل الخاء كأنها مفتوحة. والصواب نون واضحة قصيرة بلا زيادة."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "arabic": "أخي هاك علمًا حازه غير خاسر",
+          "body": {
+            "en": "A well-known teaching phrase holds the six letters in the first letters of its words. Learn it, then read al-Fatiha slowly and find the izhar in it.",
+            "de": "Ein bekannter Merksatz enthält die sechs Buchstaben als Anfangsbuchstaben seiner Wörter. Lernen Sie ihn und lesen Sie dann al-Fatiha langsam: Wo finden Sie Izhar?",
+            "ar": "تجمع هذه العبارة المشهورة الحروف الستة في أوائل كلماتها، فاحفظها ثم اقرأ الفاتحة ببطء وابحث عن موضع الإظهار فيها."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-02-idgham-bighunnah",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Idgham with ghunnah",
+          "de": "Idgham mit Ghunna",
+          "ar": "الإدغام بغنة"
+        },
+        "sub": {
+          "en": "Four letters absorb the noon, while its nasal sound stays",
+          "de": "Vier Buchstaben nehmen das Nun in sich auf, doch sein Nasalklang bleibt",
+          "ar": "أربعة أحرف تُدغم فيها النون وتبقى الغنة"
+        },
+        "arabic": "الإدغام بغنة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ي ن م و",
+          "body": {
+            "en": "When noon sakinah or tanween at the end of a word is followed by ya, noon, meem or waw at the start of the next word, the noon merges into that letter. Teachers gather the four in the word yanmu.",
+            "de": "Folgt auf Nun sakina oder Tanwin am Wortende ein Ya, Nun, Mim oder Waw am Anfang des nächsten Wortes, verschmilzt das Nun mit diesem Buchstaben. Merkwort für die vier: yanmu.",
+            "ar": "إذا جاء بعد النون الساكنة أو التنوين في آخر الكلمة حرف من حروف «ينمو» في أول الكلمة التالية، أُدغمت النون فيه إدغامًا مع الغنة."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "The noon disappears into the next letter, which sounds doubled, and the nasal hum lasts about two counts. With noon and meem the merge is complete; with ya and waw it is partial.",
+            "de": "Das Nun geht im folgenden Buchstaben auf, der verdoppelt klingt, und das Nasalsummen dauert etwa zwei Zählzeiten. Bei Nun und Mim ist die Verschmelzung vollständig, bei Ya und Waw unvollständig.",
+            "ar": "تذوب النون في الحرف التالي فيُنطق مشددًا، وتمتد الغنة نحو حركتين. والإدغام في النون والميم كامل، وفي الياء والواو ناقص."
+          }
+        },
+        {
+          "verse": "99:7",
+          "check": "atom's weight",
+          "title": {
+            "en": "Two examples in one verse",
+            "de": "Zwei Beispiele in einem Vers",
+            "ar": "مثالان في آية واحدة"
+          },
+          "body": {
+            "en": "Listen for man ya'mal (noon before ya) and khayran yarah (tanween before ya): both merge with ghunnah.",
+            "de": "Achten Sie auf man ya'mal (Nun vor Ya) und chairan yarah (Tanwin vor Ya): beide verschmelzen mit Ghunna.",
+            "ar": "في الآية المعروضة موضعان: نون ساكنة في آخر كلمة بعدها ياء في أول التي تليها، ثم تنوين بعده ياء كذلك، وكلاهما إدغام بغنة."
+          }
+        },
+        {
+          "verse": "88:8",
+          "check": "faces",
+          "title": {
+            "en": "Before ya and noon",
+            "de": "Vor Ya und Nun",
+            "ar": "قبل الياء والنون"
+          },
+          "body": {
+            "en": "In wujuhun yawma'idhin the tanween merges into ya, and in yawma'idhin na'imah into noon.",
+            "de": "In wudschuhun yauma'idhin verschmilzt das Tanwin mit Ya, in yauma'idhin na'ima mit Nun.",
+            "ar": "في الآية المعروضة تنوينان متتاليان: الأول بعده ياء، والثاني بعده نون، وفي كليهما يُدغم التنوين بغنة."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Applying idgham inside a single word. In dunya, bunyan, qinwan and sinwan the noon stays clear, so that the word keeps its shape.",
+            "de": "Idgham innerhalb eines einzigen Wortes anwenden. In dunya, bunyan, qinwan und sinwan bleibt das Nun klar, damit das Wort erkennbar bleibt.",
+            "ar": "الإدغام داخل الكلمة الواحدة؛ فإذا اجتمعت النون الساكنة وأحد هذه الأحرف في كلمة واحدة أُظهرت النون، وهو الإظهار المطلق في أربع كلمات من القرآن، لئلا يلتبس اللفظ بالمضعّف."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Read Surah az-Zalzalah and mark each noon or tanween followed by y, n, m or w. Hold each merge for two even counts, tapping a finger.",
+            "de": "Lesen Sie Sure az-Zalzala und markieren Sie jedes Nun oder Tanwin vor y, n, m oder w. Halten Sie jede Verschmelzung zwei gleichmäßige Zählzeiten und tippen Sie dabei mit dem Finger.",
+            "ar": "اقرأ سورة الزلزلة وضع علامة على كل نون ساكنة أو تنوين بعده ياء أو نون أو ميم أو واو، ثم أمسك الغنة حركتين متساويتين مع النقر بإصبعك."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-03-idgham-bila-ghunnah",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Idgham without ghunnah",
+          "de": "Idgham ohne Ghunna",
+          "ar": "الإدغام بغير غنة"
+        },
+        "sub": {
+          "en": "Before lam and ra the noon vanishes completely, nasal sound and all",
+          "de": "Vor Lam und Ra verschwindet das Nun ganz, samt seinem Nasalklang",
+          "ar": "قبل اللام والراء تذهب النون بغنتها ذهابًا تامًا"
+        },
+        "arabic": "الإدغام بغير غنة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ل ر",
+          "body": {
+            "en": "When noon sakinah or tanween is followed by lam or ra in the next word, the noon merges completely into that letter, with no nasal sound left.",
+            "de": "Folgt auf Nun sakina oder Tanwin ein Lam oder Ra im nächsten Wort, verschmilzt das Nun vollständig mit diesem Buchstaben, ohne Nasalklang.",
+            "ar": "إذا جاء بعد النون الساكنة أو التنوين لام أو راء في الكلمة التالية، أُدغمت النون فيهما إدغامًا كاملًا بلا غنة."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "You skip the noon and go straight into a doubled lam or ra. It is a complete merge: the noon leaves no trace in the sound.",
+            "de": "Sie überspringen das Nun und sprechen direkt ein verdoppeltes Lam oder Ra. Die Verschmelzung ist vollständig: vom Nun bleibt nichts hörbar.",
+            "ar": "تتجاوز النون وتنطق اللام أو الراء مشددة مباشرة، فالإدغام كامل لا يبقى للنون فيه أثر."
+          }
+        },
+        {
+          "verse": "104:1",
+          "check": "Woe",
+          "title": {
+            "en": "Tanween before lam",
+            "de": "Tanwin vor Lam",
+            "ar": "التنوين قبل اللام"
+          },
+          "body": {
+            "en": "In waylun li-kulli the tanween disappears: you hear waylul-likulli, with a doubled lam.",
+            "de": "In wailun li-kulli verschwindet das Tanwin: Sie hören wailul-likulli, mit verdoppeltem Lam.",
+            "ar": "في أول الآية المعروضة تنوينٌ بعده لام، فيذهب التنوين وتسمع لامًا مشددة بعد الكلمة الأولى."
+          }
+        },
+        {
+          "verse": "2:5",
+          "check": "from their Lord",
+          "title": {
+            "en": "Noon before ra",
+            "de": "Nun vor Ra",
+            "ar": "النون قبل الراء"
+          },
+          "body": {
+            "en": "In min rabbihim the noon is not heard at all: it is read mir-rabbihim.",
+            "de": "In min rabbihim ist das Nun gar nicht hörbar: man liest mir-rabbihim.",
+            "ar": "في الآية المعروضة نون ساكنة بعدها راء في الكلمة التالية، فلا تُسمع النون، وتُنطق الراء مشددة بعد الميم."
+          }
+        },
+        {
+          "verse": "75:27",
+          "check": "Who will cure",
+          "title": {
+            "en": "A famous exception",
+            "de": "Eine bekannte Ausnahme",
+            "ar": "استثناء مشهور"
+          },
+          "body": {
+            "en": "In Hafs there is a brief pause without breath after man here (sakt), so the noon is not merged into the ra.",
+            "de": "Bei Hafs gibt es hier nach man eine kurze Pause ohne Atemholen (Sakt), daher verschmilzt das Nun nicht mit dem Ra.",
+            "ar": "في رواية حفص سكتة لطيفة بلا تنفس بعد النون الساكنة في هذه الآية، فلا تُدغم في الراء التي بعدها."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Keeping a little nasal hum before lam or ra. In Hafs via ash-Shatibiyyah the ghunnah is fully dropped here; a lingering hum blurs the rule.",
+            "de": "Ein leises Summen vor Lam oder Ra beibehalten. Bei Hafs über asch-Schatibiyya fällt die Ghunna hier ganz weg; ein Nachklang verwischt die Regel.",
+            "ar": "إبقاء شيء من الغنة قبل اللام أو الراء؛ ففي رواية حفص من طريق الشاطبية تسقط الغنة هنا تمامًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Find the examples in the first five verses of al-Baqarah. Read each slowly, as one smooth, doubled sound.",
+            "de": "Suchen Sie die Beispiele in den ersten fünf Versen von al-Baqara. Lesen Sie jedes langsam, als einen glatten, verdoppelten Laut.",
+            "ar": "ابحث عن أمثلة هذا الحكم في الآيات الخمس الأولى من سورة البقرة، واقرأ كل مثال ببطء صوتًا واحدًا مشددًا."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-04-iqlab",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Iqlab: when noon turns into meem",
+          "de": "Iqlab: wenn Nun zu Mim wird",
+          "ar": "الإقلاب"
+        },
+        "sub": {
+          "en": "One letter, ba, changes the sound of the noon completely",
+          "de": "Ein einziger Buchstabe, Ba, verwandelt den Klang des Nun",
+          "ar": "حرف واحد هو الباء يقلب النون ميمًا"
+        },
+        "arabic": "الإقلاب"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ب",
+          "body": {
+            "en": "When noon sakinah or tanween is followed by ba, in one word or across two, the noon turns into a hidden meem with ghunnah. In the mushaf a small meem marks the place.",
+            "de": "Folgt auf Nun sakina oder Tanwin ein Ba, in einem Wort oder über zwei Wörter, wird das Nun zu einem verborgenen Mim mit Ghunna. Im Mushaf zeigt ein kleines Mim die Stelle.",
+            "ar": "إذا جاء بعد النون الساكنة أو التنوين باء، في كلمة أو كلمتين، قُلبت النون ميمًا مخفاة مع الغنة، وتدل عليها في المصحف ميم صغيرة."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "Close the lips lightly as for a meem, without pressing, and hold the nasal sound for two counts. Then open into the ba.",
+            "de": "Schließen Sie die Lippen leicht wie bei einem Mim, ohne zu pressen, und halten Sie den Nasalklang zwei Zählzeiten. Dann öffnen Sie zum Ba.",
+            "ar": "أطبق شفتيك إطباقًا خفيفًا كالميم دون ضغط، وأمسك الغنة حركتين، ثم انطق الباء."
+          }
+        },
+        {
+          "verse": "104:4",
+          "check": "thrown",
+          "title": {
+            "en": "Inside one word",
+            "de": "Innerhalb eines Wortes",
+            "ar": "في كلمة واحدة"
+          },
+          "body": {
+            "en": "In layunbadhanna the noon before ba becomes a soft meem: layumbadhanna.",
+            "de": "In layunbadhanna wird das Nun vor Ba zu einem weichen Mim: layumbadhanna.",
+            "ar": "في الكلمة الثانية من الآية المعروضة نون ساكنة قبل الباء، فتُقلب ميمًا مخفاة."
+          }
+        },
+        {
+          "verse": "22:75",
+          "check": "Hearing and Seeing",
+          "title": {
+            "en": "Across two words",
+            "de": "Über zwei Wörter",
+            "ar": "بين كلمتين"
+          },
+          "body": {
+            "en": "At the end, sami'un basir: the tanween meets ba and is read sami'um basir.",
+            "de": "Am Ende, sami'un basir: das Tanwin trifft auf Ba und wird sami'um basir gelesen.",
+            "ar": "في آخر الآية المعروضة يلتقي التنوين بالباء في أول الكلمة الأخيرة، فيُقلب ميمًا."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Pressing the lips hard, or saying a clear noon before the ba. The meem is light and hidden, carried by the ghunnah.",
+            "de": "Die Lippen fest zusammenpressen oder ein klares Nun vor dem Ba sprechen. Das Mim ist leicht und verborgen, getragen von der Ghunna.",
+            "ar": "الضغط الشديد على الشفتين، أو نطق النون صريحة قبل الباء؛ والصواب ميم خفيفة مخفاة تحملها الغنة."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Look for the small meem on a page or two of your mushaf. Each time, close the lips softly, hum for two counts, then release the ba.",
+            "de": "Suchen Sie auf ein, zwei Seiten Ihres Mushafs das kleine Mim. Schließen Sie jedes Mal sanft die Lippen, summen Sie zwei Zählzeiten und lösen Sie dann das Ba.",
+            "ar": "ابحث عن الميم الصغيرة في صفحة أو صفحتين من مصحفك، وفي كل مرة أطبق شفتيك برفق، وأمسك الغنة حركتين، ثم انطق الباء."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-05-ikhfa",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Ikhfa: the hidden noon",
+          "de": "Ikhfa: das verborgene Nun",
+          "ar": "الإخفاء الحقيقي"
+        },
+        "sub": {
+          "en": "Fifteen letters, and a soft nasal sound between clear and merged",
+          "de": "Fünfzehn Buchstaben und ein weicher Nasalklang zwischen klar und verschmolzen",
+          "ar": "خمسة عشر حرفًا، وغنة بين الإظهار والإدغام"
+        },
+        "arabic": "الإخفاء الحقيقي"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك",
+          "body": {
+            "en": "Before the remaining fifteen letters, noon sakinah and tanween are hidden: neither fully clear nor merged, with a ghunnah of two counts.",
+            "de": "Vor den übrigen fünfzehn Buchstaben werden Nun sakina und Tanwin verborgen: weder ganz klar noch verschmolzen, mit einer Ghunna von zwei Zählzeiten.",
+            "ar": "قبل الأحرف الخمسة عشر الباقية تُخفى النون الساكنة والتنوين، فلا تُظهر ولا تُدغم، مع غنة بمقدار حركتين."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "The tip of the tongue does not press on the noon's place. It is already moving towards the next letter while the sound flows through the nose. Before heavy letters the ghunnah sounds fuller.",
+            "de": "Die Zungenspitze drückt nicht auf die Stelle des Nun. Sie bewegt sich schon zum nächsten Buchstaben, während der Klang durch die Nase fließt. Vor schweren Buchstaben klingt die Ghunna voller.",
+            "ar": "لا يعتمد طرف اللسان على مخرج النون، بل يتهيأ للحرف التالي والصوت يجري من الخيشوم، وتُفخم الغنة قبل الحروف المفخمة."
+          }
+        },
+        {
+          "verse": "114:4",
+          "check": "evil",
+          "title": {
+            "en": "Before shin",
+            "de": "Vor Schin",
+            "ar": "قبل الشين"
+          },
+          "body": {
+            "en": "In min sharri the noon is hidden before shin. The tongue prepares the shin while you hum.",
+            "de": "In min scharri wird das Nun vor Schin verborgen. Die Zunge bereitet das Schin vor, während Sie summen.",
+            "ar": "في أول الآية المعروضة نون ساكنة بعدها شين، فتُخفى النون ويتهيأ اللسان للشين أثناء الغنة."
+          }
+        },
+        {
+          "verse": "106:4",
+          "check": "from hunger",
+          "title": {
+            "en": "Before jim",
+            "de": "Vor Dschim",
+            "ar": "قبل الجيم"
+          },
+          "body": {
+            "en": "In min ju' the noon is hidden before jim. Compare min khawf in the same verse, where it is clear.",
+            "de": "In min dschu' wird das Nun vor Dschim verborgen. Vergleichen Sie min chauf im selben Vers, wo es klar ist.",
+            "ar": "في الآية المعروضة نون ساكنة قبل الجيم فتُخفى، وقارنها بالنون الساكنة قبل الخاء في آخر الآية نفسها حيث تُظهر."
+          }
+        },
+        {
+          "verse": "98:3",
+          "check": "writings",
+          "title": {
+            "en": "Tanween before qaf",
+            "de": "Tanwin vor Qaf",
+            "ar": "التنوين قبل القاف"
+          },
+          "body": {
+            "en": "In kutubun qayyimah the tanween is hidden before qaf, a heavy letter, so the ghunnah sounds full and deep.",
+            "de": "In kutubun qayyima wird das Tanwin vor Qaf verborgen, einem schweren Buchstaben; darum klingt die Ghunna voll und tief.",
+            "ar": "في الآية المعروضة تنوينٌ بعده قاف فيُخفى، والقاف حرف مفخم فتأتي الغنة مفخمة."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Turning the hidden noon into a clear n, or into an ng sound pressed at the back of the mouth. The tongue should already be on its way to the next letter.",
+            "de": "Das verborgene Nun als klares n sprechen oder als ng hinten im Mund. Die Zunge ist bereits auf dem Weg zum nächsten Buchstaben.",
+            "ar": "نطق النون المخفاة صريحة، أو صوتًا من أقصى الفم يشبه «نج»؛ والصواب أن يتهيأ اللسان للحرف التالي."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Practise three letters a day: say min before each one slowly and feel the tongue move ahead. In five days you will have covered all fifteen.",
+            "de": "Üben Sie drei Buchstaben am Tag: sprechen Sie min langsam vor jedem und spüren Sie, wie die Zunge vorausgeht. In fünf Tagen haben Sie alle fünfzehn geübt.",
+            "ar": "تدرّب كل يوم على ثلاثة أحرف: انطق نونًا ساكنة قبل كل حرف منها ببطء، ولاحظ تهيؤ اللسان له، فتتم الأحرف الخمسة عشر في خمسة أيام."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-06-ikhfa-shafawi",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Ikhfa shafawi: the hidden meem",
+          "de": "Ikhfa schafawi: das verborgene Mim",
+          "ar": "الإخفاء الشفوي"
+        },
+        "sub": {
+          "en": "When meem sakinah meets ba, the lips meet softly and hum",
+          "de": "Wenn Mim sakina auf Ba trifft, berühren sich die Lippen sanft und summen",
+          "ar": "إذا لقيت الميم الساكنة باءً انطبقت الشفتان برفق مع الغنة"
+        },
+        "arabic": "الإخفاء الشفوي"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "مْ ب",
+          "body": {
+            "en": "When a meem with sukun is followed by ba, the meem is hidden with a ghunnah of two counts. It is called shafawi, of the lips, because both letters come from the lips.",
+            "de": "Folgt auf ein Mim mit Sukun ein Ba, wird das Mim mit einer Ghunna von zwei Zählzeiten verborgen. Es heißt schafawi, von den Lippen, weil beide Buchstaben dort entstehen.",
+            "ar": "إذا جاءت الباء بعد الميم الساكنة أُخفيت الميم مع غنة بمقدار حركتين، ويسمى شفويًا لأن الميم والباء تخرجان من الشفتين."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "Bring the lips together gently, hum through the nose for two counts, then release the ba. Teachers differ on whether the lips close fully or leave a tiny gap; follow your teacher.",
+            "de": "Führen Sie die Lippen sanft zusammen, summen Sie zwei Zählzeiten durch die Nase und lösen Sie dann das Ba. Lehrer unterscheiden sich darin, ob die Lippen ganz schließen oder einen Hauch offen bleiben; folgen Sie Ihrem Lehrer.",
+            "ar": "ضم الشفتين برفق، وأخرج الغنة من الخيشوم حركتين، ثم انطق الباء. ويختلف المعلمون في إطباق الشفتين أو ترك فرجة يسيرة بينهما، فاتبع شيخك."
+          }
+        },
+        {
+          "verse": "105:4",
+          "check": "Striking them",
+          "title": {
+            "en": "Meem before ba",
+            "de": "Mim vor Ba",
+            "ar": "الميم قبل الباء"
+          },
+          "body": {
+            "en": "In tarmihim bi-hijarah the meem of tarmihim meets the ba of the next word: hide it with a gentle hum.",
+            "de": "In tarmihim bi-hidschara trifft das Mim von tarmihim auf das Ba des nächsten Wortes: verbergen Sie es mit sanftem Summen.",
+            "ar": "في أول الآية المعروضة تنتهي الكلمة الأولى بميم ساكنة وتبدأ الثانية بالباء، فتُخفى الميم مع الغنة."
+          }
+        },
+        {
+          "verse": "100:11",
+          "check": "their Lord",
+          "title": {
+            "en": "Hidden, then clear",
+            "de": "Verborgen, dann klar",
+            "ar": "إخفاء ثم إظهار"
+          },
+          "body": {
+            "en": "Rabbahum bihim: the meem of rabbahum is hidden before ba, then the meem of bihim is clear before ya.",
+            "de": "Rabbahum bihim: das Mim von rabbahum wird vor Ba verborgen, das Mim von bihim ist vor Ya dann klar.",
+            "ar": "في الآية المعروضة ميمان ساكنتان متتاليتان: الأولى قبل الباء فتُخفى، والثانية قبل الياء فتظهر."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Pressing the lips hard so that the meem sounds like a full, clear m, or dropping the hum altogether. The meem here is soft and hidden.",
+            "de": "Die Lippen fest pressen, sodass das Mim wie ein volles, klares m klingt, oder das Summen ganz weglassen. Das Mim ist hier weich und verborgen.",
+            "ar": "الضغط على الشفتين حتى تخرج الميم صريحة قوية، أو حذف الغنة؛ والصواب ميم خفيفة مخفاة مع الغنة."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Read Surah al-Fil and find every meem with sukun. Sort them: before ba (hidden), before meem (merged), before any other letter (clear).",
+            "de": "Lesen Sie Sure al-Fil und suchen Sie jedes Mim mit Sukun. Ordnen Sie es ein: vor Ba (verborgen), vor Mim (verschmolzen), vor anderen Buchstaben (klar).",
+            "ar": "اقرأ سورة الفيل وابحث عن كل ميم ساكنة، ثم صنّفها: قبل الباء إخفاء، وقبل الميم إدغام، وقبل سائر الحروف إظهار."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-07-idgham-shafawi",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Idgham shafawi: meem into meem",
+          "de": "Idgham schafawi: Mim in Mim",
+          "ar": "الإدغام الشفوي"
+        },
+        "sub": {
+          "en": "Two meems become one doubled meem with a full nasal sound",
+          "de": "Zwei Mim werden zu einem verdoppelten Mim mit vollem Nasalklang",
+          "ar": "ميمان تصيران ميمًا واحدة مشددة بغنة كاملة"
+        },
+        "arabic": "الإدغام الشفوي"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "مْ م",
+          "body": {
+            "en": "When a meem with sukun is followed by another meem, the two merge into one doubled meem with a ghunnah of two counts. It is also called idgham mithlayn saghir: the merging of two identical letters.",
+            "de": "Folgt auf ein Mim mit Sukun ein weiteres Mim, verschmelzen beide zu einem verdoppelten Mim mit einer Ghunna von zwei Zählzeiten. Man nennt es auch Idgham mithlain saghir: Verschmelzung zweier gleicher Buchstaben.",
+            "ar": "إذا جاء بعد الميم الساكنة ميم متحركة أُدغمتا فصارتا ميمًا واحدة مشددة مع غنة بمقدار حركتين، ويسمى أيضًا إدغام المثلين الصغير."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "Close the lips once, hum through the nose for two counts, then open on the vowel of the second meem. One closing, not two.",
+            "de": "Schließen Sie die Lippen einmal, summen Sie zwei Zählzeiten durch die Nase und öffnen Sie dann auf den Vokal des zweiten Mim. Ein Schließen, nicht zwei.",
+            "ar": "أطبق شفتيك مرة واحدة، وأخرج الغنة حركتين، ثم افتحهما على حركة الميم الثانية؛ إطباق واحد لا اثنان."
+          }
+        },
+        {
+          "verse": "104:8",
+          "check": "closed down upon them",
+          "title": {
+            "en": "Across two words",
+            "de": "Über zwei Wörter",
+            "ar": "بين كلمتين"
+          },
+          "body": {
+            "en": "In 'alayhim mu'sadah the meem of 'alayhim merges into the meem that follows.",
+            "de": "In 'alaihim mu'sada verschmilzt das Mim von 'alaihim mit dem folgenden Mim.",
+            "ar": "في الآية المعروضة تنتهي الكلمة الثانية بميم ساكنة وتبدأ الثالثة بميم، فتُدغم الأولى في الثانية."
+          }
+        },
+        {
+          "verse": "2:10",
+          "check": "hearts is disease",
+          "title": {
+            "en": "In their hearts",
+            "de": "In ihren Herzen",
+            "ar": "ميمٌ تلقى ميمًا"
+          },
+          "body": {
+            "en": "In qulubihim marad the meem with sukun meets a meem: one doubled meem with a full hum.",
+            "de": "In qulubihim marad trifft das Mim mit Sukun auf ein Mim: ein verdoppeltes Mim mit vollem Summen.",
+            "ar": "في الآية المعروضة تلتقي ميمٌ ساكنة في آخر كلمة بميمٍ في أول التي تليها، فتصيران ميمًا مشددة بغنة كاملة."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Pronouncing two separate meems with a break between them, or rushing the hum. Close the lips once and let the ghunnah take its full two counts.",
+            "de": "Zwei getrennte Mim mit einer Lücke dazwischen sprechen oder das Summen überhasten. Schließen Sie die Lippen einmal und geben Sie der Ghunna ihre vollen zwei Zählzeiten.",
+            "ar": "نطق ميمين منفصلتين بينهما فاصل، أو العجلة في الغنة؛ والصواب إطباق واحد وغنة كاملة بمقدار حركتين."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Read Surah al-Humazah slowly. Find the meem that merges, then the noon and tanween rules around it, and name each rule aloud.",
+            "de": "Lesen Sie Sure al-Humaza langsam. Finden Sie das verschmelzende Mim, dann die Regeln von Nun und Tanwin ringsum, und benennen Sie jede Regel laut.",
+            "ar": "اقرأ سورة الهمزة ببطء، وحدد الميم المدغمة، ثم أحكام النون الساكنة والتنوين حولها، وسمِّ كل حكم بصوت مسموع."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-08-izhar-shafawi",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Izhar shafawi: the clear meem",
+          "de": "Izhar schafawi: das klare Mim",
+          "ar": "الإظهار الشفوي"
+        },
+        "sub": {
+          "en": "Before every letter except ba and meem, the meem stays clear and crisp",
+          "de": "Vor jedem Buchstaben außer Ba und Mim bleibt das Mim klar und deutlich",
+          "ar": "تظهر الميم الساكنة عند كل الحروف إلا الباء والميم"
+        },
+        "arabic": "الإظهار الشفوي"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "الميم الساكنة",
+          "body": {
+            "en": "When a meem with sukun is followed by any letter other than ba or meem, it is pronounced clearly, without a lengthened ghunnah. That covers the remaining 26 letters.",
+            "de": "Folgt auf ein Mim mit Sukun ein anderer Buchstabe als Ba oder Mim, wird es klar und ohne gedehnte Ghunna gesprochen. Das betrifft die übrigen 26 Buchstaben.",
+            "ar": "إذا جاء بعد الميم الساكنة أي حرف غير الباء والميم أُظهرت الميم بوضوح دون إطالة الغنة، وذلك عند الأحرف الستة والعشرين الباقية."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "Close the lips briefly for the meem, then move on at once. Take extra care before waw and fa, which are formed close to the meem.",
+            "de": "Schließen Sie die Lippen kurz für das Mim und gehen Sie sofort weiter. Achten Sie besonders auf Waw und Fa, die nahe beim Mim gebildet werden.",
+            "ar": "أطبق الشفتين إطباقًا قصيرًا للميم ثم انتقل فورًا، واحرص أشد الحرص عند الواو والفاء لقرب مخرجهما من مخرج الميم."
+          }
+        },
+        {
+          "verse": "105:2",
+          "check": "their plan",
+          "title": {
+            "en": "Before fa",
+            "de": "Vor Fa",
+            "ar": "قبل الفاء"
+          },
+          "body": {
+            "en": "In kaydahum fi the meem stays clear before fa. Do not let it slide into a hidden sound.",
+            "de": "In kaidahum fi bleibt das Mim vor Fa klar. Lassen Sie es nicht in einen verborgenen Laut gleiten.",
+            "ar": "في الآية المعروضة تنتهي كلمةٌ بميم ساكنة وتبدأ التي بعدها بالفاء، فتظهر الميم ولا تُخفى."
+          }
+        },
+        {
+          "verse": "1:7",
+          "check": "astray",
+          "title": {
+            "en": "Before ghayn and waw",
+            "de": "Vor Ghain und Waw",
+            "ar": "قبل الغين والواو"
+          },
+          "body": {
+            "en": "In 'alayhim ghayri and 'alayhim wa la, the meem is clear before ghayn and before waw.",
+            "de": "In 'alaihim ghairi und 'alaihim wa la ist das Mim vor Ghain und vor Waw klar.",
+            "ar": "في الآية المعروضة ميمٌ ساكنة قبل الغين، وأخرى قبل الواو، فتظهر الميم في الموضعين."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Hiding the meem before fa or waw, as if it were ikhfa. Only ba causes the hidden meem; before fa and waw the meem stays fully clear.",
+            "de": "Das Mim vor Fa oder Waw verbergen, als wäre es Ikhfa. Nur Ba bewirkt das verborgene Mim; vor Fa und Waw bleibt das Mim ganz klar.",
+            "ar": "إخفاء الميم قبل الفاء أو الواو كأنه إخفاء شفوي؛ والإخفاء لا يكون إلا قبل الباء، أما قبل الفاء والواو فالإظهار أشد."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "In al-Fatiha, find every meem with sukun and the letter after it. Even al-hamdu has one. Then read the surah again with each meem crisp and short.",
+            "de": "Suchen Sie in al-Fatiha jedes Mim mit Sukun und den Buchstaben danach. Selbst al-hamdu hat eines. Lesen Sie die Sure dann erneut, jedes Mim klar und kurz.",
+            "ar": "ابحث في الفاتحة عن كل ميم ساكنة والحرف الذي بعدها، وفي الكلمة الأولى من الآية الثانية واحدة منها، ثم أعد القراءة بميم واضحة قصيرة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-09-ghunnah",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Ghunnah: the nasal sound",
+          "de": "Ghunna: der Nasalklang",
+          "ar": "الغنة"
+        },
+        "sub": {
+          "en": "The gentle hum of noon and meem, and where it is held longest",
+          "de": "Das sanfte Summen von Nun und Mim und wo es am längsten klingt",
+          "ar": "صوت النون والميم الرخيم، ومتى يكون أكمل"
+        },
+        "arabic": "الغنة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "نّ مّ",
+          "body": {
+            "en": "Ghunnah is a sound from the nasal passage that belongs to noon and meem. It is at its fullest when they carry a shaddah: then it is held for two counts.",
+            "de": "Ghunna ist ein Klang aus dem Nasenraum, der zu Nun und Mim gehört. Am vollsten ist sie, wenn diese eine Schadda tragen: dann wird sie zwei Zählzeiten gehalten.",
+            "ar": "الغنة صوت يخرج من الخيشوم، وهي صفة لازمة للنون والميم، وأكمل ما تكون فيهما مشددتين، فتُمد حركتين."
+          }
+        },
+        {
+          "title": {
+            "en": "A simple test",
+            "de": "Ein einfacher Test",
+            "ar": "اختبار بسيط"
+          },
+          "body": {
+            "en": "Hold your nose and say a doubled noon. If the sound stops, it was coming from the nasal passage. That hum is the ghunnah.",
+            "de": "Halten Sie sich die Nase zu und sprechen Sie ein verdoppeltes Nun. Bricht der Klang ab, kam er aus dem Nasenraum. Dieses Summen ist die Ghunna.",
+            "ar": "أمسك أنفك وانطق نونًا مشددة، فإن انقطع الصوت فهو يخرج من الخيشوم، وهذا الصوت هو الغنة."
+          }
+        },
+        {
+          "verse": "108:1",
+          "check": "granted you",
+          "title": {
+            "en": "A doubled noon",
+            "de": "Ein verdoppeltes Nun",
+            "ar": "نون مشددة"
+          },
+          "body": {
+            "en": "Inna opens the surah with a noon carrying shaddah. Hold its hum for two even counts.",
+            "de": "Inna eröffnet die Sure mit einem Nun mit Schadda. Halten Sie sein Summen zwei gleichmäßige Zählzeiten.",
+            "ar": "تبدأ السورة بكلمةٍ فيها نون مشددة، فأمسك غنتها حركتين متساويتين."
+          }
+        },
+        {
+          "verse": "78:1",
+          "check": "asking one another",
+          "title": {
+            "en": "A doubled meem",
+            "de": "Ein verdoppeltes Mim",
+            "ar": "ميم مشددة"
+          },
+          "body": {
+            "en": "'Amma begins with a meem carrying shaddah: close the lips and let the hum last two counts.",
+            "de": "'Amma beginnt mit einem Mim mit Schadda: schließen Sie die Lippen und lassen Sie das Summen zwei Zählzeiten dauern.",
+            "ar": "في الكلمة الأولى من الآية المعروضة ميم مشددة، فأطبق الشفتين ودع الغنة تمتد حركتين."
+          }
+        },
+        {
+          "verse": "114:6",
+          "check": "jinn and mankind",
+          "title": {
+            "en": "Two in one verse",
+            "de": "Zweimal in einem Vers",
+            "ar": "مثالان في آية"
+          },
+          "body": {
+            "en": "Al-jinnati and an-nas each carry a doubled noon. Give both the same length.",
+            "de": "Al-dschinnati und an-nas tragen je ein verdoppeltes Nun. Geben Sie beiden dieselbe Länge.",
+            "ar": "في الكلمتين الأخيرتين من الآية المعروضة نونان مشددتان، فاجعل غنتيهما بالقدر نفسه."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Uneven ghunnah: long in one place and clipped in the next. Readers in a hurry often shorten it at the ends of verses. Keep a steady two counts.",
+            "de": "Ungleichmäßige Ghunna: an einer Stelle lang, an der nächsten abgehackt. Wer es eilig hat, kürzt sie oft am Versende. Halten Sie gleichmäßig zwei Zählzeiten.",
+            "ar": "تفاوت الغنة: طويلة في موضع ومبتورة في آخر، وكثيرًا ما يقصرها المستعجل في أواخر الآيات. والصواب حركتان ثابتتان."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Read Surah an-Nas and tap two beats on every doubled noon and meem. Then record yourself and listen: are all the hums equal?",
+            "de": "Lesen Sie Sure an-Nas und tippen Sie bei jedem verdoppelten Nun und Mim zwei Schläge. Nehmen Sie sich dann auf und hören Sie: Sind alle Ghunnas gleich lang?",
+            "ar": "اقرأ سورة الناس وانقر نقرتين عند كل نون وميم مشددتين، ثم سجّل قراءتك واستمع: هل الغنن متساوية؟"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-10-qalqalah",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Qalqalah: the echoing letters",
+          "de": "Qalqala: die nachhallenden Buchstaben",
+          "ar": "القلقلة"
+        },
+        "sub": {
+          "en": "Five letters that bounce slightly when they carry a sukun",
+          "de": "Fünf Buchstaben, die mit Sukun leicht nachfedern",
+          "ar": "خمسة أحرف تضطرب عند سكونها"
+        },
+        "arabic": "القلقلة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ق ط ب ج د",
+          "body": {
+            "en": "Qalqalah is a slight echo when one of five letters has a sukun: qaf, ṭa, ba, jim and dal. They are gathered in the phrase qutbu jad.",
+            "de": "Qalqala ist ein leichter Nachhall, wenn einer von fünf Buchstaben ein Sukun trägt: Qaf, Ṭa, Ba, Dschim und Dal. Merkwort: qutbu dschad.",
+            "ar": "القلقلة اضطراب يسير في المخرج عند سكون أحد خمسة أحرف هي القاف والطاء والباء والجيم والدال، ويجمعها قولهم: «قطب جد»."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "The letter is closed firmly, then released with a small bounce, without adding a vowel. It is lighter in the middle of a word and strongest when you stop on the letter.",
+            "de": "Der Buchstabe wird fest gebildet und dann mit einem kleinen Nachfedern gelöst, ohne einen Vokal anzuhängen. In der Wortmitte ist sie leichter, am stärksten beim Anhalten auf dem Buchstaben.",
+            "ar": "يُحبس الحرف في مخرجه ثم ينفصل بنبرة يسيرة دون إضافة حركة، وتكون القلقلة صغرى في وسط الكلمة، وكبرى عند الوقف على الحرف."
+          }
+        },
+        {
+          "verse": "96:1",
+          "check": "Recite in the name",
+          "title": {
+            "en": "Two levels in one verse",
+            "de": "Zwei Stufen in einem Vers",
+            "ar": "مرتبتان في آية"
+          },
+          "body": {
+            "en": "Iqra' has a light qalqalah on its qaf. Stopping on khalaq gives a strong one on the final qaf.",
+            "de": "Iqra' hat eine leichte Qalqala auf dem Qaf. Halten Sie bei chalaq an, klingt das letzte Qaf stark nach.",
+            "ar": "في الكلمة الأولى من الآية المعروضة قافٌ ساكنة في وسطها فقلقلتها صغرى، وعند الوقف على آخر كلمة فيها قلقلةٌ كبرى على القاف الأخيرة."
+          }
+        },
+        {
+          "verse": "112:3",
+          "check": "neither begets",
+          "title": {
+            "en": "Dal with sukun",
+            "de": "Dal mit Sukun",
+            "ar": "الدال الساكنة"
+          },
+          "body": {
+            "en": "Lam yalid has a dal with sukun in the middle of the verse, and yulad ends on a dal when you stop.",
+            "de": "Lam yalid hat ein Dal mit Sukun in der Versmitte, und yulad endet beim Anhalten auf einem Dal.",
+            "ar": "في الآية المعروضة دالان: الأولى ساكنة في وسط الآية، والثانية في آخرها يُوقف عليها."
+          }
+        },
+        {
+          "verse": "111:1",
+          "check": "ruined",
+          "title": {
+            "en": "Ba at a stop",
+            "de": "Ba beim Anhalten",
+            "ar": "الباء عند الوقف"
+          },
+          "body": {
+            "en": "Stopping on wa tabb at the end gives a strong qalqalah on a doubled ba.",
+            "de": "Beim Anhalten auf wa tabb am Ende klingt das verdoppelte Ba deutlich nach.",
+            "ar": "عند الوقف على الكلمة الأخيرة من الآية تظهر القلقلة الكبرى في الباء المشددة."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Adding a vowel, so that iqra' sounds like iqa-ra', or turning the echo into a whole syllable. The bounce is short, and the sukun stays.",
+            "de": "Einen Vokal anhängen, sodass iqra' wie iqa-ra' klingt, oder aus dem Nachhall eine ganze Silbe machen. Das Nachfedern ist kurz, und das Sukun bleibt.",
+            "ar": "إضافة حركة بعد حرف القلقلة حتى يُسمع الساكن متحركًا، أو تحويل القلقلة إلى مقطع كامل؛ والصواب نبرة قصيرة مع بقاء السكون."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Read Surah al-Falaq and stop at the end of each verse. All five verses end on a qalqalah letter: let each one bounce once, cleanly.",
+            "de": "Lesen Sie Sure al-Falaq und halten Sie am Ende jedes Verses an. Alle fünf Verse enden auf einem Qalqala-Buchstaben: lassen Sie jeden einmal sauber nachfedern.",
+            "ar": "اقرأ سورة الفلق وقف عند آخر كل آية، فالآيات الخمس كلها تنتهي بحرف قلقلة؛ فأظهر القلقلة في كل منها مرة واحدة نقية."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-11-lam-shamsiyyah-qamariyyah",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Sun letters and moon letters",
+          "de": "Sonnen- und Mondbuchstaben",
+          "ar": "اللام الشمسية واللام القمرية"
+        },
+        "sub": {
+          "en": "When the lam of al- is heard, and when it disappears",
+          "de": "Wann das Lam des Artikels al- hörbar ist und wann es verschwindet",
+          "ar": "متى تُنطق لام التعريف ومتى تُدغم"
+        },
+        "arabic": "الشمسية والقمرية"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ابغ حجك وخف عقيمه",
+          "body": {
+            "en": "The lam of al- is pronounced before fourteen moon letters and merged into fourteen sun letters. The moon letters are gathered in the phrase ibghi hajjaka wa khaf 'aqimah.",
+            "de": "Das Lam des Artikels al- wird vor vierzehn Mondbuchstaben gesprochen und mit vierzehn Sonnenbuchstaben verschmolzen. Die Mondbuchstaben fasst der Merksatz ibghi haddschaka wa chaf 'aqimah zusammen.",
+            "ar": "تُظهر لام التعريف قبل أربعة عشر حرفًا قمريًا يجمعها قولهم «ابغ حجك وخف عقيمه»، وتُدغم في أربعة عشر حرفًا شمسيًا."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "Moon: the lam has a clear sukun, as in al-qamar. Sun: the lam is written but silent and the next letter is doubled, as in ash-shams. The two names come from these words.",
+            "de": "Mond: das Lam ist mit Sukun klar hörbar, wie in al-qamar. Sonne: das Lam wird geschrieben, aber nicht gesprochen, und der nächste Buchstabe verdoppelt, wie in asch-schams. Daher die beiden Namen.",
+            "ar": "في القمرية تُنطق اللام ساكنة واضحة كما في «القمر»، وفي الشمسية تُكتب اللام ولا تُنطق ويُشدد الحرف بعدها كما في «الشمس»، ومن هنا جاءت التسمية."
+          }
+        },
+        {
+          "verse": "1:2",
+          "check": "praise",
+          "title": {
+            "en": "Two moon letters",
+            "de": "Zwei Mondbuchstaben",
+            "ar": "حرفان قمريان"
+          },
+          "body": {
+            "en": "Al-hamdu and al-'alamin: the lam is clearly heard before ḥa and before 'ayn.",
+            "de": "Al-hamdu und al-'alamin: das Lam ist vor Ḥa und vor 'Ain klar hörbar.",
+            "ar": "في أول الآية المعروضة وآخرها تظهر لام التعريف قبل الحاء ثم قبل العين."
+          }
+        },
+        {
+          "verse": "1:1",
+          "check": "Entirely Merciful",
+          "title": {
+            "en": "A sun letter",
+            "de": "Ein Sonnenbuchstabe",
+            "ar": "حرف شمسي"
+          },
+          "body": {
+            "en": "In ar-rahman and ar-rahim the lam is silent and the ra is doubled.",
+            "de": "In ar-rahman und ar-rahim ist das Lam stumm und das Ra verdoppelt.",
+            "ar": "في الكلمتين الأخيرتين من الآية المعروضة تُدغم لام التعريف في الراء فتُنطق مشددة."
+          }
+        },
+        {
+          "verse": "1:7",
+          "check": "anger",
+          "title": {
+            "en": "Both in one verse",
+            "de": "Beides in einem Vers",
+            "ar": "النوعان في آية"
+          },
+          "body": {
+            "en": "Al-maghdubi has a moon lam before ghayn; ad-dallin has a sun lam merged into ḍad.",
+            "de": "Al-maghdubi hat ein Mond-Lam vor Ghain; ad-dallin ein Sonnen-Lam, das mit Ḍad verschmilzt.",
+            "ar": "في الآية المعروضة لامٌ قمرية قبل الغين، ولامٌ شمسية مدغمة في الضاد في الكلمة الأخيرة."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Pronouncing the lam before a sun letter, as in al-rahman, or dropping it before a moon letter. Look at the next letter: if it carries a shaddah, the lam is silent.",
+            "de": "Das Lam vor einem Sonnenbuchstaben sprechen, wie in al-rahman, oder es vor einem Mondbuchstaben weglassen. Schauen Sie auf den nächsten Buchstaben: trägt er eine Schadda, ist das Lam stumm.",
+            "ar": "نطق اللام قبل الحرف الشمسي، أو حذفها قبل الحرف القمري. انظر إلى الحرف التالي: إن كان عليه شدة فاللام لا تُنطق."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Write the letters in two columns, sun and moon. Then say al- with each one, such as ash-shams and al-qamar, until the choice becomes automatic.",
+            "de": "Schreiben Sie die Buchstaben in zwei Spalten, Sonne und Mond. Sprechen Sie dann al- mit jedem, etwa asch-schams und al-qamar, bis die Wahl von selbst geht.",
+            "ar": "اكتب الحروف في عمودين: شمسية وقمرية، ثم انطق «ال» مع كل حرف، كـ«الشمس» و«القمر»، حتى يصير التمييز عادة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-12-lam-lafz-al-jalalah",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "The lam in the name Allah",
+          "de": "Das Lam im Namen Allah",
+          "ar": "لام لفظ الجلالة"
+        },
+        "sub": {
+          "en": "Full and heavy, or light and thin: the vowel before it decides",
+          "de": "Voll und schwer oder leicht und dünn: der Vokal davor entscheidet",
+          "ar": "تفخيم أو ترقيق بحسب الحركة التي قبلها"
+        },
+        "arabic": "لفظ الجلالة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "تفخيم · ترقيق",
+          "body": {
+            "en": "The doubled lam in the name Allah is heavy (tafkhim) after a fatha or a damma, and light (tarqiq) after a kasra. When you begin with the name, it is heavy.",
+            "de": "Das doppelte Lam im Namen Allah ist schwer (Tafchim) nach Fatha oder Damma und leicht (Tarqiq) nach Kasra. Beginnen Sie mit dem Namen, ist es schwer.",
+            "ar": "تُفخم لام لفظ الجلالة إذا سبقها فتح أو ضم، وتُرقق إذا سبقها كسر، وتُفخم كذلك عند الابتداء بها."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "Heavy: the back of the tongue rises, the mouth fills, and the lam sounds round and deep. Light: the tongue stays low and the lam sounds thin and bright, as in bismillah.",
+            "de": "Schwer: der hintere Zungenrücken hebt sich, der Mund füllt sich, das Lam klingt rund und tief. Leicht: die Zunge bleibt unten, das Lam klingt dünn und hell, wie in bismillah.",
+            "ar": "في التفخيم يرتفع أقصى اللسان فيمتلئ الفم وتخرج اللام غليظة، وفي الترقيق ينخفض اللسان فتخرج اللام رقيقة كما في لفظ الجلالة من البسملة."
+          }
+        },
+        {
+          "verse": "112:1",
+          "check": "One",
+          "title": {
+            "en": "Heavy after fatha",
+            "de": "Schwer nach Fatha",
+            "ar": "تفخيم بعد الفتح"
+          },
+          "body": {
+            "en": "Huwa Allahu: the vowel before the name is a fatha, so its lam is full and heavy.",
+            "de": "Huwa Allahu: vor dem Namen steht eine Fatha, darum ist sein Lam voll und schwer.",
+            "ar": "في الآية المعروضة يسبق لفظَ الجلالة حرفٌ مفتوح، فتُفخم اللام."
+          }
+        },
+        {
+          "verse": "110:1",
+          "check": "victory",
+          "title": {
+            "en": "Heavy after damma",
+            "de": "Schwer nach Damma",
+            "ar": "تفخيم بعد الضم"
+          },
+          "body": {
+            "en": "Nasrullahi: the ra before the name carries a damma, so the lam is heavy.",
+            "de": "Nasrullahi: das Ra vor dem Namen trägt eine Damma, darum ist das Lam schwer.",
+            "ar": "في الآية المعروضة يسبق لفظَ الجلالة راءٌ مضمومة، فتُفخم اللام."
+          }
+        },
+        {
+          "verse": "1:2",
+          "check": "Lord of the worlds",
+          "title": {
+            "en": "Light after kasra",
+            "de": "Leicht nach Kasra",
+            "ar": "ترقيق بعد الكسر"
+          },
+          "body": {
+            "en": "Lillahi: the letter before the name has a kasra, so the lam of Allah is light.",
+            "de": "Lillahi: der Buchstabe vor dem Namen trägt eine Kasra, darum ist das Lam leicht.",
+            "ar": "في الآية المعروضة يسبق لفظَ الجلالة لامُ الجر المكسورة، فتُرقق اللام."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "A heavy lam in bismillah, where it follows a kasra and must be light. Or a thin lam after a fatha or damma. The heaviness also stays on the lam: do not carry it into the ha.",
+            "de": "Ein schweres Lam in bismillah, wo es nach einer Kasra steht und leicht sein muss. Oder ein dünnes Lam nach Fatha oder Damma. Die Schwere bleibt zudem beim Lam und geht nicht auf das Ha über.",
+            "ar": "تفخيم اللام في البسملة وهي بعد كسر فحقها الترقيق، أو ترقيقها بعد فتح أو ضم. والتفخيم خاص باللام فلا يسري إلى الهاء."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Say bismillah, then qul huwa Allah, then nasrullah: light, heavy, heavy. Repeat until your tongue feels the difference on its own.",
+            "de": "Sprechen Sie bismillah, dann qul huwa Allah, dann nasrullah: leicht, schwer, schwer. Wiederholen Sie, bis Ihre Zunge den Unterschied von selbst spürt.",
+            "ar": "اقرأ البسملة ثم أول سورة الإخلاص ثم أول سورة النصر: ترقيق ثم تفخيم ثم تفخيم، وكرر حتى يميز لسانك الفرق وحده."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tajweed-13-ra",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Ra: heavy or light?",
+          "de": "Ra: schwer oder leicht?",
+          "ar": "الراء بين التفخيم والترقيق"
+        },
+        "sub": {
+          "en": "One letter, two voices: the vowels around it decide",
+          "de": "Ein Buchstabe, zwei Klänge: die Vokale ringsum entscheiden",
+          "ar": "حرف واحد بصوتين بحسب الحركات حوله"
+        },
+        "arabic": "الراء"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "رَ رُ رِ",
+          "body": {
+            "en": "Ra is heavy when it has a fatha or a damma, or a sukun after a fatha or damma. It is light when it has a kasra, or a sukun after an original kasra, and in a few other cases.",
+            "de": "Ra ist schwer mit Fatha oder Damma oder mit Sukun nach Fatha oder Damma. Leicht ist es mit Kasra oder mit Sukun nach einer ursprünglichen Kasra, dazu in einigen weiteren Fällen.",
+            "ar": "تُفخم الراء إذا كانت مفتوحة أو مضمومة، أو ساكنة بعد فتح أو ضم، وتُرقق إذا كانت مكسورة، أو ساكنة بعد كسر أصلي، وفي مواضع أخرى."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "Heavy: the back of the tongue rises and the ra sounds full, as in rabb. Light: the tongue stays lower and the ra sounds thin, as in rizq. Keep any trill hidden: one light tap.",
+            "de": "Schwer: der hintere Zungenrücken hebt sich, das Ra klingt voll, wie in rabb. Leicht: die Zunge bleibt tiefer, das Ra klingt dünn, wie in rizq. Kein Rollen: ein leichter Schlag genügt.",
+            "ar": "في التفخيم يرتفع أقصى اللسان فتخرج الراء ممتلئة كما في الراء المفتوحة، وفي الترقيق ينخفض فتخرج رقيقة كما في الراء المكسورة، مع إخفاء التكرير: ضربة واحدة خفيفة."
+          }
+        },
+        {
+          "verse": "108:2",
+          "check": "pray to your Lord",
+          "title": {
+            "en": "Heavy with fatha",
+            "de": "Schwer mit Fatha",
+            "ar": "تفخيم مع الفتح"
+          },
+          "body": {
+            "en": "Li-rabbika: a ra with fatha, heavy. Wanhar at a stop: the vowel before is a fatha, so heavy too.",
+            "de": "Li-rabbika: Ra mit Fatha, schwer. Wanhar beim Anhalten: davor steht eine Fatha, also ebenfalls schwer.",
+            "ar": "في الكلمة الثانية من الآية المعروضة راء مفتوحة فتُفخم، وفي آخرها عند الوقف راء ساكنة قبلها فتح فتُفخم كذلك."
+          }
+        },
+        {
+          "verse": "89:10",
+          "check": "Pharaoh",
+          "title": {
+            "en": "Light after kasra",
+            "de": "Leicht nach Kasra",
+            "ar": "ترقيق بعد الكسر"
+          },
+          "body": {
+            "en": "In fir'awn the ra has a sukun after a kasra, so it is light.",
+            "de": "In fir'aun hat das Ra ein Sukun nach einer Kasra, darum ist es leicht.",
+            "ar": "في أول الآية المعروضة راء ساكنة بعد كسر، فتُرقق."
+          }
+        },
+        {
+          "verse": "97:3",
+          "check": "thousand months",
+          "title": {
+            "en": "Light and heavy together",
+            "de": "Leicht und schwer zugleich",
+            "ar": "ترقيق وتفخيم معًا"
+          },
+          "body": {
+            "en": "Al-qadri: ra with kasra, light. Khayrun: ra with damma, heavy. Shahr at a stop: heavy.",
+            "de": "Al-qadri: Ra mit Kasra, leicht. Chairun: Ra mit Damma, schwer. Schahr beim Anhalten: schwer.",
+            "ar": "في الآية المعروضة ثلاث راءات: الأولى مكسورة فتُرقق، والثانية مضمومة فتُفخم، والأخيرة تُفخم عند الوقف."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Rolling the ra like a trilled r, or making every ra heavy. Look at the vowel on the ra, or before it, before you decide.",
+            "de": "Das Ra rollen oder jedes Ra schwer sprechen. Achten Sie auf den Vokal auf dem Ra oder davor, bevor Sie entscheiden.",
+            "ar": "تكرير الراء ترديدًا ظاهرًا، أو تفخيم كل راء؛ فانظر إلى حركتها أو حركة ما قبلها قبل أن تحكم."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Take Surah al-Qadr and label every ra: heavy or light, and why. Then read it aloud and compare it with a trusted recording.",
+            "de": "Nehmen Sie Sure al-Qadr und bezeichnen Sie jedes Ra: schwer oder leicht, und warum. Lesen Sie die Sure dann laut und vergleichen Sie mit einer verlässlichen Aufnahme.",
+            "ar": "خذ سورة القدر وصنّف كل راء فيها: مفخمة أم مرققة ولماذا، ثم اقرأها بصوت مسموع وقارنها بتلاوة موثوقة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Jazari, al-Muqaddimah al-Jazariyyah"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-14-heavy-light-letters",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Heavy letters, light letters",
+          "de": "Schwere und leichte Buchstaben",
+          "ar": "التفخيم والترقيق"
+        },
+        "sub": {
+          "en": "Seven letters always fill the mouth; most others always stay light",
+          "de": "Sieben Buchstaben füllen immer den Mund, die meisten anderen bleiben immer leicht",
+          "ar": "سبعة أحرف مفخمة دائمًا، وأكثر الحروف مرققة"
+        },
+        "arabic": "التفخيم والترقيق"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "خص ضغط قظ",
+          "body": {
+            "en": "Seven letters are always heavy: kha, ṣad, ḍad, ghayn, ṭa, qaf and ẓa, gathered in the phrase khussa daghtin qiz. Most other letters are always light. Ra, the lam of Allah and alif can change.",
+            "de": "Sieben Buchstaben sind immer schwer: Cha, Ṣad, Ḍad, Ghain, Ṭa, Qaf und Ẓa, zusammengefasst im Merksatz chussa daghtin qiz. Die meisten anderen sind immer leicht. Ra, das Lam in Allah und Alif wechseln.",
+            "ar": "سبعة أحرف مفخمة دائمًا يجمعها قولهم «خص ضغط قظ»، وأكثر الحروف الباقية مرققة دائمًا، أما الراء ولام لفظ الجلالة والألف فتتغير."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "For a heavy letter the back of the tongue rises towards the palate and the sound becomes full and deep. For a light letter the tongue stays low and the sound is clear and thin.",
+            "de": "Bei einem schweren Buchstaben hebt sich der hintere Zungenrücken zum Gaumen, der Klang wird voll und tief. Bei einem leichten bleibt die Zunge unten, der Klang ist klar und dünn.",
+            "ar": "في الحرف المفخم يرتفع أقصى اللسان نحو الحنك فيمتلئ الصوت ويغلظ، وفي المرقق ينخفض اللسان فيخرج الصوت صافيًا رقيقًا."
+          }
+        },
+        {
+          "verse": "1:6",
+          "check": "straight path",
+          "title": {
+            "en": "Three heavy letters",
+            "de": "Drei schwere Buchstaben",
+            "ar": "ثلاثة أحرف مفخمة"
+          },
+          "body": {
+            "en": "In as-sirat al-mustaqim listen for ṣad, ṭa and qaf: each one fills the mouth.",
+            "de": "In as-sirat al-mustaqim hören Sie Ṣad, Ṭa und Qaf: jeder füllt den Mund.",
+            "ar": "في الكلمتين الأخيرتين من الآية المعروضة تُفخم الصاد والطاء والقاف."
+          }
+        },
+        {
+          "verse": "1:7",
+          "check": "earned",
+          "title": {
+            "en": "Ghayn and ḍad",
+            "de": "Ghain und Ḍad",
+            "ar": "الغين والضاد"
+          },
+          "body": {
+            "en": "Ghayri and al-maghdubi carry ghayn and ḍad, and ad-dallin a doubled ḍad. Notice the light letters around them.",
+            "de": "Ghairi und al-maghdubi tragen Ghain und Ḍad, ad-dallin ein verdoppeltes Ḍad. Achten Sie auf die leichten Buchstaben ringsum.",
+            "ar": "في الآية المعروضة غينان وضادان، والضاد الأخيرة مشددة، فلاحظ الحروف المرققة حولها."
+          }
+        },
+        {
+          "title": {
+            "en": "Alif follows the letter before",
+            "de": "Alif folgt dem Buchstaben davor",
+            "ar": "الألف تتبع ما قبلها"
+          },
+          "body": {
+            "en": "Alif has no weight of its own. After a heavy letter it sounds heavy, as in qala; after a light letter it sounds light, as in kana.",
+            "de": "Alif hat kein eigenes Gewicht. Nach einem schweren Buchstaben klingt es schwer, wie in qala, nach einem leichten leicht, wie in kana.",
+            "ar": "الألف لا توصف بتفخيم ولا ترقيق، بل تتبع ما قبلها: تُفخم بعد القاف والصاد والطاء ونحوها، وتُرقق بعد الكاف والسين والتاء ونحوها."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Letting the heaviness spread to the light letters nearby, or thinning heavy letters. Watch the pairs: sin and ṣad, ta and ṭa, dhal and ẓa.",
+            "de": "Die Schwere auf benachbarte leichte Buchstaben übertragen oder schwere Buchstaben verdünnen. Achten Sie auf die Paare: Sin und Ṣad, Ta und Ṭa, Dhal und Ẓa.",
+            "ar": "تسرب التفخيم إلى الحروف المرققة المجاورة، أو ترقيق المفخم؛ فانتبه إلى الأزواج: السين والصاد، والتاء والطاء، والذال والظاء."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Practise pairs: tin (fig) and ṭin (clay), sayf (sword) and ṣayf (summer). Say each pair slowly until the difference is clear to your ear.",
+            "de": "Üben Sie Paare: tin (Feige) und ṭin (Lehm), saif (Schwert) und ṣaif (Sommer). Sprechen Sie jedes Paar langsam, bis Ihr Ohr den Unterschied klar hört.",
+            "ar": "تدرب على الأزواج: «تين» و«طين»، و«سيف» و«صيف»، وانطق كل زوج ببطء حتى يتضح الفرق لأذنك."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Jazari, al-Muqaddimah al-Jazariyyah"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-15-madd-tabii",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Madd tabi'i: the natural length",
+          "de": "Madd tabi'i: die natürliche Dehnung",
+          "ar": "المد الطبيعي"
+        },
+        "sub": {
+          "en": "Two counts: the basic stretch that every other madd builds on",
+          "de": "Zwei Zählzeiten: die Grunddehnung, auf der jede andere aufbaut",
+          "ar": "حركتان، وهو أصل المدود كلها"
+        },
+        "arabic": "المد الطبيعي"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ا و ي",
+          "body": {
+            "en": "A madd letter (alif after fatha, waw with sukun after damma, ya with sukun after kasra) is stretched for two counts when no hamza and no sukun follows it.",
+            "de": "Ein Dehnungsbuchstabe (Alif nach Fatha, Waw mit Sukun nach Damma, Ya mit Sukun nach Kasra) wird zwei Zählzeiten gedehnt, wenn kein Hamza und kein Sukun folgt.",
+            "ar": "حروف المد ثلاثة: الألف بعد فتح، والواو الساكنة بعد ضم، والياء الساكنة بعد كسر، فإن لم يأت بعدها همز ولا سكون مُدت حركتين، وهذا هو المد الطبيعي."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "One count is the length of a short vowel; two counts is twice that: steady, not hurried, not dragged. It is called natural because a sound tongue says it this way without effort.",
+            "de": "Eine Zählzeit ist die Länge eines kurzen Vokals, zwei Zählzeiten das Doppelte: gleichmäßig, nicht gehetzt, nicht gezogen. Natürlich heißt sie, weil eine gesunde Zunge sie mühelos so spricht.",
+            "ar": "الحركة مقدار نطق حرف متحرك، والمد الطبيعي ضعفها: ثابت بلا عجلة ولا تمطيط، وسمي طبيعيًا لأن صاحب الطبيعة السليمة ينطقه هكذا دون تكلف."
+          }
+        },
+        {
+          "verse": "1:5",
+          "check": "worship",
+          "title": {
+            "en": "In iyyaka",
+            "de": "In iyyaka",
+            "ar": "في الكلمة الأولى"
+          },
+          "body": {
+            "en": "The alif in iyyaka is a natural madd of two counts, and it comes twice in this verse.",
+            "de": "Das Alif in iyyaka ist eine natürliche Dehnung von zwei Zählzeiten, zweimal in diesem Vers.",
+            "ar": "الألف في الكلمة الأولى من الآية المعروضة مد طبيعي بمقدار حركتين، وتتكرر الكلمة مرتين في الآية."
+          }
+        },
+        {
+          "verse": "1:4",
+          "check": "Sovereign",
+          "title": {
+            "en": "In maliki",
+            "de": "In maliki",
+            "ar": "ألفٌ بعد الميم"
+          },
+          "body": {
+            "en": "In Hafs, maliki has an alif after the meem: a natural madd of two counts.",
+            "de": "Bei Hafs hat maliki ein Alif nach dem Mim: eine natürliche Dehnung von zwei Zählzeiten.",
+            "ar": "في رواية حفص تُقرأ الكلمة الأولى من الآية المعروضة بألف بعد الميم، وهو مد طبيعي حركتين."
+          }
+        },
+        {
+          "title": {
+            "en": "All three in one word",
+            "de": "Alle drei in einem Wort",
+            "ar": "الثلاثة في كلمة"
+          },
+          "arabic": "و · ي · ا",
+          "body": {
+            "en": "Teachers often use the word nuhiha to show all three madd letters together: waw, ya and alif. Each one takes two counts.",
+            "de": "Lehrer zeigen oft am Wort nuhiha alle drei Dehnungsbuchstaben zusammen: Waw, Ya und Alif. Jeder erhält zwei Zählzeiten.",
+            "ar": "يمثل المعلمون بهذه الكلمة لاجتماع حروف المد الثلاثة فيها: الواو والياء والألف، ولكل منها حركتان."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Shortening madd letters into short vowels, or stretching them too long. A long vowel read short, or a short one read long, can change the word.",
+            "de": "Dehnungsbuchstaben zu kurzen Vokalen verkürzen oder zu lang ziehen. Ein langer Vokal kurz gelesen oder ein kurzer lang gelesen kann das Wort verändern.",
+            "ar": "قصر حروف المد حتى تصير حركات قصيرة، أو إطالتها فوق حقها؛ فإشباع الحركة أو قصر المد قد يغيّر الكلمة."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Read al-Fatiha slowly and fold a finger for each count. Every natural madd gets exactly two folds, no more and no less.",
+            "de": "Lesen Sie al-Fatiha langsam und beugen Sie für jede Zählzeit einen Finger. Jede natürliche Dehnung bekommt genau zwei, nicht mehr und nicht weniger.",
+            "ar": "اقرأ الفاتحة ببطء واقبض إصبعًا مع كل حركة، فلكل مد طبيعي قبضتان بلا زيادة ولا نقص."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-16-madd-muttasil",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Madd muttasil: the connected madd",
+          "de": "Madd muttasil: die verbundene Dehnung",
+          "ar": "المد الواجب المتصل"
+        },
+        "sub": {
+          "en": "A madd letter and a hamza in the same word call for a longer stretch",
+          "de": "Dehnungsbuchstabe und Hamza im selben Wort verlangen eine längere Dehnung",
+          "ar": "حرف مد بعده همز في كلمة واحدة"
+        },
+        "arabic": "المد المتصل"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ـا ء · ـو ء · ـي ء",
+          "body": {
+            "en": "When a madd letter is followed by a hamza in the same word, the madd is lengthened. It is called wajib, obligatory, because all readers stretch it beyond two counts.",
+            "de": "Folgt auf einen Dehnungsbuchstaben ein Hamza im selben Wort, wird die Dehnung verlängert. Sie heißt wadschib, verpflichtend, weil alle Leser sie über zwei Zählzeiten hinaus dehnen.",
+            "ar": "إذا جاء بعد حرف المد همز في كلمة واحدة فهو المد المتصل، ويسمى واجبًا لاتفاق القراء على مده أكثر من حركتين."
+          }
+        },
+        {
+          "title": {
+            "en": "How long?",
+            "de": "Wie lang?",
+            "ar": "ما مقداره؟"
+          },
+          "body": {
+            "en": "In Hafs via ash-Shatibiyyah: four or five counts. Choose one and keep it the same throughout your recitation. If you stop on the hamza itself, up to six counts is allowed.",
+            "de": "Bei Hafs über asch-Schatibiyya: vier oder fünf Zählzeiten. Wählen Sie eine Länge und halten Sie sie in der ganzen Rezitation. Halten Sie auf dem Hamza selbst an, sind bis zu sechs erlaubt.",
+            "ar": "في رواية حفص من طريق الشاطبية يُمد أربع حركات أو خمسًا، فاختر قدرًا والتزمه في قراءتك كلها، وإذا وقفت على الهمز المتطرف جاز المد إلى ست."
+          }
+        },
+        {
+          "verse": "110:1",
+          "check": "conquest",
+          "title": {
+            "en": "Ja'a",
+            "de": "Dscha'a",
+            "ar": "ألفٌ بعدها همزة"
+          },
+          "body": {
+            "en": "In ja'a the alif is followed by a hamza in the same word: four or five counts.",
+            "de": "In dscha'a folgt auf das Alif ein Hamza im selben Wort: vier oder fünf Zählzeiten.",
+            "ar": "في الكلمة الثانية من الآية المعروضة تأتي الهمزة بعد الألف في الكلمة نفسها، فتُمد أربعًا أو خمسًا."
+          }
+        },
+        {
+          "verse": "106:2",
+          "check": "winter",
+          "title": {
+            "en": "Ash-shita'",
+            "de": "Asch-schita'",
+            "ar": "مدٌّ ثم همزة"
+          },
+          "body": {
+            "en": "Ash-shita'i: a madd letter, then a hamza, inside one word. Keep the length you chose before.",
+            "de": "Asch-schita'i: Dehnungsbuchstabe, dann Hamza, in einem Wort. Halten Sie die zuvor gewählte Länge.",
+            "ar": "في الكلمة الثالثة من الآية المعروضة حرف مد ثم همزة في كلمة واحدة، فالتزم القدر الذي اخترته."
+          }
+        },
+        {
+          "verse": "86:1",
+          "check": "sky",
+          "title": {
+            "en": "As-sama'",
+            "de": "As-sama'",
+            "ar": "في مطلع الطارق"
+          },
+          "body": {
+            "en": "As-sama'i opens Surah at-Tariq with a connected madd. Begin the surah with a steady, full stretch.",
+            "de": "As-sama'i eröffnet Sure at-Tariq mit einer verbundenen Dehnung. Beginnen Sie die Sure mit einer ruhigen, vollen Dehnung.",
+            "ar": "تبدأ سورة الطارق بمد متصل في كلمتها الأولى، فابدأها بمد ثابت تام."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Mixing lengths: four counts in one verse and six in the next. Another is swallowing the hamza after the stretch. Stretch evenly, then say the hamza clearly.",
+            "de": "Längen mischen: vier Zählzeiten in einem Vers, sechs im nächsten. Ein weiterer Fehler ist, das Hamza nach der Dehnung zu verschlucken. Dehnen Sie gleichmäßig und sprechen Sie dann das Hamza deutlich.",
+            "ar": "خلط المقادير: أربع حركات في آية وست في التي تليها، أو إخفاء الهمزة بعد المد؛ والصواب مد متساوٍ ثم همزة محققة."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Mark every connected madd on one page of your mushaf. Count on your fingers to four, then recite the page keeping each one at exactly that length.",
+            "de": "Markieren Sie jede verbundene Dehnung auf einer Seite Ihres Mushafs. Zählen Sie an den Fingern bis vier und rezitieren Sie die Seite, jede Dehnung genau so lang.",
+            "ar": "ضع علامة على كل مد متصل في صفحة من مصحفك، وعدّ بأصابعك إلى أربع، ثم اقرأ الصفحة ملتزمًا هذا المقدار في كل مد."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "al-Qasim ibn Firruh al-Shatibi, Hirz al-Amani wa Wajh al-Tahani (ash-Shatibiyyah)"
+        },
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-17-madd-munfasil",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Madd munfasil: the separated madd",
+          "de": "Madd munfasil: die getrennte Dehnung",
+          "ar": "المد الجائز المنفصل"
+        },
+        "sub": {
+          "en": "A madd letter ends one word, and a hamza begins the next",
+          "de": "Ein Dehnungsbuchstabe endet ein Wort, ein Hamza beginnt das nächste",
+          "ar": "حرف المد في آخر كلمة والهمز في أول الكلمة التالية"
+        },
+        "arabic": "المد المنفصل"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "المد المنفصل",
+          "body": {
+            "en": "When a madd letter ends a word and the next word begins with a hamza, it is madd munfasil. It is called ja'iz, permitted, because the readers differ in its length.",
+            "de": "Endet ein Wort mit einem Dehnungsbuchstaben und beginnt das nächste mit Hamza, ist es Madd munfasil. Es heißt dscha'iz, zulässig, weil die Leser in seiner Länge abweichen.",
+            "ar": "إذا كان حرف المد في آخر الكلمة والهمز في أول الكلمة التالية فهو المد المنفصل، ويسمى جائزًا لاختلاف القراء في مده وقصره."
+          }
+        },
+        {
+          "title": {
+            "en": "How long?",
+            "de": "Wie lang?",
+            "ar": "ما مقداره؟"
+          },
+          "body": {
+            "en": "In Hafs via ash-Shatibiyyah: four or five counts, never longer than your connected madd. Through other paths, such as that of at-Tayyibah, Hafs may also shorten it to two.",
+            "de": "Bei Hafs über asch-Schatibiyya: vier oder fünf Zählzeiten, nie länger als Ihre verbundene Dehnung. Über andere Wege, etwa den der Tayyiba, darf Hafs sie auch auf zwei kürzen.",
+            "ar": "في رواية حفص من طريق الشاطبية أربع حركات أو خمس، ولا يزيد على المتصل، ومن طرق أخرى كطريق الطيبة يجوز لحفص قصره حركتين."
+          }
+        },
+        {
+          "verse": "109:1",
+          "check": "disbelievers",
+          "title": {
+            "en": "Ya ayyuha",
+            "de": "Ya ayyuha",
+            "ar": "حرف النداء ثم همزة"
+          },
+          "body": {
+            "en": "Ya ends with an alif and ayyuha begins with a hamza: a separated madd at the very start of the surah.",
+            "de": "Ya endet mit Alif, ayyuha beginnt mit Hamza: eine getrennte Dehnung gleich zu Beginn der Sure.",
+            "ar": "ينتهي حرف النداء في مطلع الآية بألف، وتبدأ الكلمة التالية بهمزة، فهو مد منفصل في أول السورة."
+          }
+        },
+        {
+          "verse": "97:1",
+          "check": "Night of Decree",
+          "title": {
+            "en": "Inna anzalnahu",
+            "de": "Inna anzalnahu",
+            "ar": "بين الكلمتين الأوليين"
+          },
+          "body": {
+            "en": "Inna ends with an alif and anzalnahu begins with a hamza: stretch it as in the last example.",
+            "de": "Inna endet mit Alif, anzalnahu beginnt mit Hamza: dehnen Sie wie im vorigen Beispiel.",
+            "ar": "تنتهي الكلمة الأولى من الآية بألف، وتبدأ الثانية بهمزة، فمُدّها بالقدر السابق نفسه."
+          }
+        },
+        {
+          "title": {
+            "en": "When you stop",
+            "de": "Wenn Sie anhalten",
+            "ar": "عند الوقف"
+          },
+          "body": {
+            "en": "If you stop on the word with the madd letter, the hamza is no longer joined to it. The madd then becomes natural: two counts.",
+            "de": "Halten Sie auf dem Wort mit dem Dehnungsbuchstaben an, ist das Hamza nicht mehr damit verbunden. Die Dehnung wird dann natürlich: zwei Zählzeiten.",
+            "ar": "إذا وقفت على الكلمة التي فيها حرف المد انفصل عنها الهمز، فيصير المد طبيعيًا حركتين."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Giving the separated madd more length than the connected one, or switching lengths in the middle of a recitation. Decide on your lengths and keep them.",
+            "de": "Der getrennten Dehnung mehr Länge geben als der verbundenen oder die Länge mitten in der Rezitation wechseln. Legen Sie Ihre Längen fest und bleiben Sie dabei.",
+            "ar": "مد المنفصل أطول من المتصل، أو تغيير المقدار في أثناء القراءة؛ فحدد مقاديرك والتزمها."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Read Surah al-Kafirun and mark every separated madd. Recite the surah once at four counts and once at five, and listen to the difference.",
+            "de": "Lesen Sie Sure al-Kafirun und markieren Sie jede getrennte Dehnung. Rezitieren Sie die Sure einmal mit vier und einmal mit fünf Zählzeiten und hören Sie den Unterschied.",
+            "ar": "اقرأ سورة الكافرون وحدد كل مد منفصل فيها، ثم اقرأها مرة بأربع حركات ومرة بخمس، واستمع إلى الفرق."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "al-Qasim ibn Firruh al-Shatibi, Hirz al-Amani wa Wajh al-Tahani (ash-Shatibiyyah)"
+        },
+        {
+          "label": "Ibn al-Jazari, Tayyibat al-Nashr fi al-Qira'at al-'Ashr"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-18-madd-lazim",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Madd lazim: the six-count madd",
+          "de": "Madd lazim: sechs Zählzeiten",
+          "ar": "المد اللازم"
+        },
+        "sub": {
+          "en": "When a madd letter meets a permanent sukun, every reader stretches it fully",
+          "de": "Trifft ein Dehnungsbuchstabe auf ein bleibendes Sukun, dehnen alle Leser voll",
+          "ar": "حرف مد بعده سكون أصلي، يمده القراء جميعًا ست حركات"
+        },
+        "arabic": "المد اللازم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ست حركات",
+          "body": {
+            "en": "When a madd letter is followed by a sukun or a shaddah that stays whether you stop or continue, the madd is lazim: six counts for all readers.",
+            "de": "Folgt auf einen Dehnungsbuchstaben ein Sukun oder eine Schadda, die beim Anhalten wie beim Weiterlesen bleibt, ist es Madd lazim: sechs Zählzeiten bei allen Lesern.",
+            "ar": "إذا جاء بعد حرف المد سكون أصلي ثابت وصلًا ووقفًا، أو حرف مشدد، فهو المد اللازم، ويُمد ست حركات عند جميع القراء."
+          }
+        },
+        {
+          "title": {
+            "en": "Four kinds",
+            "de": "Vier Arten",
+            "ar": "أقسامه الأربعة"
+          },
+          "list": {
+            "en": [
+              "In a word, with shaddah: ad-dallin",
+              "In a word, without shaddah: al-ana, in two places only",
+              "In a letter name, merged: the lam of alif lam mim",
+              "In a letter name, not merged: mim, qaf, nun, sad"
+            ],
+            "de": [
+              "Im Wort, mit Schadda: ad-dallin",
+              "Im Wort, ohne Schadda: al-ana, nur an zwei Stellen",
+              "Im Buchstabennamen, verschmolzen: das Lam in alif lam mim",
+              "Im Buchstabennamen, nicht verschmolzen: Mim, Qaf, Nun, Sad"
+            ],
+            "ar": [
+              "كلمي مثقل: حرف مد بعده مشدد، كآخر كلمة في الفاتحة",
+              "كلمي مخفف: حرف مد بعده سكون أصلي، في موضعين فقط من سورة يونس",
+              "حرفي مثقل: اللام من «ألف لام ميم»",
+              "حرفي مخفف: مثل قاف ونون وصاد في أوائل السور"
+            ]
+          }
+        },
+        {
+          "verse": "1:7",
+          "check": "astray",
+          "title": {
+            "en": "Ad-dallin",
+            "de": "Ad-dallin",
+            "ar": "في آخر الفاتحة"
+          },
+          "body": {
+            "en": "The alif in ad-dallin is followed by a doubled lam: six full counts, every time you read al-Fatiha.",
+            "de": "Auf das Alif in ad-dallin folgt ein verdoppeltes Lam: sechs volle Zählzeiten, jedes Mal, wenn Sie al-Fatiha lesen.",
+            "ar": "في الكلمة الأخيرة من الآية المعروضة لامٌ مشددة بعد الألف، فتُمد ست حركات في كل قراءة للفاتحة."
+          }
+        },
+        {
+          "verse": "2:1",
+          "check": "Alif",
+          "title": {
+            "en": "Letters at the start",
+            "de": "Buchstaben am Anfang",
+            "ar": "الحروف المقطعة"
+          },
+          "body": {
+            "en": "Alif has no madd. Lam and mim are each stretched six counts, and the lam is merged into the mim that follows.",
+            "de": "Alif hat keine Dehnung. Lam und Mim werden je sechs Zählzeiten gedehnt, und das Lam verschmilzt mit dem folgenden Mim.",
+            "ar": "الألف لا مد فيها، واللام والميم تُمد كل منهما ست حركات، وتُدغم اللام في الميم بعدها."
+          }
+        },
+        {
+          "verse": "79:34",
+          "check": "Overwhelming Calamity",
+          "title": {
+            "en": "At-tammah",
+            "de": "At-tamma",
+            "ar": "مدّان في آية"
+          },
+          "body": {
+            "en": "Ja'at has a connected madd; at-tammah has a madd before a doubled meem: six counts.",
+            "de": "Dscha'at hat eine verbundene Dehnung; at-tamma eine Dehnung vor verdoppeltem Mim: sechs Zählzeiten.",
+            "ar": "في الكلمة الثانية من الآية المعروضة مد متصل، وفي الثالثة مد لازم قبل الميم المشددة: ست حركات."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Shortening ad-dallin to four counts or less when reading quickly. Madd lazim stays at six counts at every pace.",
+            "de": "Ad-dallin beim schnellen Lesen auf vier Zählzeiten oder weniger kürzen. Madd lazim bleibt in jedem Tempo bei sechs.",
+            "ar": "قصر المد في آخر كلمة من الفاتحة إلى أربع حركات أو أقل عند الإسراع؛ والمد اللازم ست حركات في كل مراتب القراءة."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Collect the opening letters of the surahs, such as alif lam mim, qaf and nun, and read them with six-count madds. Note that some, like ṭa and ha, take only two.",
+            "de": "Sammeln Sie die Anfangsbuchstaben der Suren, etwa alif lam mim, qaf und nun, und lesen Sie sie mit sechs Zählzeiten. Beachten Sie: manche, wie Ṭa und Ha, erhalten nur zwei.",
+            "ar": "اجمع الحروف المقطعة في أوائل السور، مثل ألف لام ميم وقاف ونون، واقرأها بمد ست حركات، ولاحظ أن بعضها كالطاء والهاء يُمد حركتين فقط."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-19-madd-arid",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Madd 'arid: the madd of stopping",
+          "de": "Madd 'arid: die Dehnung beim Anhalten",
+          "ar": "المد العارض للسكون"
+        },
+        "sub": {
+          "en": "At the end of a verse, a madd may grow to two, four or six counts",
+          "de": "Am Versende darf die Dehnung zwei, vier oder sechs Zählzeiten betragen",
+          "ar": "عند الوقف يجوز فيه حركتان أو أربع أو ست"
+        },
+        "arabic": "المد العارض للسكون"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "عارض للسكون",
+          "body": {
+            "en": "When a madd letter comes just before the last letter of a word and you stop there, that letter takes a temporary sukun. The madd may then be two, four or six counts.",
+            "de": "Steht ein Dehnungsbuchstabe direkt vor dem letzten Buchstaben eines Wortes und halten Sie dort an, erhält dieser ein vorübergehendes Sukun. Dann darf die Dehnung zwei, vier oder sechs Zählzeiten betragen.",
+            "ar": "إذا وقع حرف المد قبل الحرف الأخير من الكلمة ووقفت عليه سكن سكونًا عارضًا، فيجوز في المد حركتان أو أربع أو ست."
+          }
+        },
+        {
+          "title": {
+            "en": "Only when you stop",
+            "de": "Nur beim Anhalten",
+            "ar": "عند الوقف فقط"
+          },
+          "body": {
+            "en": "If you join the word to the next one, the last letter keeps its vowel and the madd is natural: two counts. The extra length exists only because of the stop.",
+            "de": "Verbinden Sie das Wort mit dem nächsten, behält der letzte Buchstabe seinen Vokal und die Dehnung ist natürlich: zwei Zählzeiten. Die zusätzliche Länge entsteht nur durch das Anhalten.",
+            "ar": "إذا وصلت الكلمة بما بعدها بقي الحرف الأخير متحركًا وكان المد طبيعيًا حركتين، فالزيادة سببها الوقف وحده."
+          }
+        },
+        {
+          "title": {
+            "en": "Choose and stay",
+            "de": "Wählen und dabei bleiben",
+            "ar": "اختر والتزم"
+          },
+          "body": {
+            "en": "Teachers advise choosing one length and keeping it for every stop in the same recitation. Six gives a calm, measured feel; two suits a quicker pace.",
+            "de": "Lehrer raten, eine Länge zu wählen und sie bei jedem Anhalten derselben Rezitation beizubehalten. Sechs wirkt ruhig und gemessen, zwei passt zu einem zügigeren Tempo.",
+            "ar": "ينصح المعلمون باختيار مقدار واحد والتزامه في كل وقف من التلاوة نفسها؛ فالست تناسب الترتيل والتؤدة، والحركتان تناسبان الحدر."
+          }
+        },
+        {
+          "verse": "114:1-3",
+          "check": "mankind",
+          "title": {
+            "en": "An-nas, three times",
+            "de": "An-nas, dreimal",
+            "ar": "كلمةٌ واحدة ثلاث مرات"
+          },
+          "body": {
+            "en": "Each verse ends on an-nas. When you stop on each, give all three the same length.",
+            "de": "Jeder Vers endet auf an-nas. Halten Sie jeweils an, geben Sie allen dreien dieselbe Länge.",
+            "ar": "تنتهي الآيات الثلاث المعروضة بالكلمة نفسها، فإذا وقفت عليها فاجعل المد فيها بقدر واحد."
+          }
+        },
+        {
+          "verse": "1:2",
+          "check": "Lord of the worlds",
+          "title": {
+            "en": "Al-'alamin",
+            "de": "Al-'alamin",
+            "ar": "في آخر الآية"
+          },
+          "body": {
+            "en": "Stopping on al-'alamin: the ya before the final noon may be stretched two, four or six counts.",
+            "de": "Beim Anhalten auf al-'alamin darf das Ya vor dem letzten Nun zwei, vier oder sechs Zählzeiten gedehnt werden.",
+            "ar": "عند الوقف على آخر كلمة في الآية المعروضة تُمد الياء قبل النون الأخيرة حركتين أو أربعًا أو ستًا."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Two counts at one verse end, six at the next, then four. Uneven stops make a recitation sound restless. Choose, then stay with it.",
+            "de": "Zwei Zählzeiten an einem Versende, sechs am nächsten, dann vier. Ungleiche Pausen lassen eine Rezitation unruhig klingen. Wählen Sie und bleiben Sie dabei.",
+            "ar": "حركتان في آخر آية، وست في التي تليها، ثم أربع؛ واختلاف المقادير يجعل التلاوة مضطربة. اختر ثم التزم."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Every verse of al-Fatiha ends with this madd. Recite it three times: with two counts at each stop, then four, then six, and keep each round consistent.",
+            "de": "Jeder Vers von al-Fatiha endet mit dieser Dehnung. Rezitieren Sie die Sure dreimal: mit zwei Zählzeiten bei jedem Anhalten, dann mit vier, dann mit sechs, jede Runde gleichmäßig.",
+            "ar": "تنتهي كل آيات الفاتحة بهذا المد، فاقرأها ثلاث مرات: بحركتين في كل وقف، ثم بأربع، ثم بست، ملتزمًا مقدارًا واحدًا في كل مرة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sulayman al-Jamzuri, Tuhfat al-Atfal"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-20-madd-lin",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Madd lin: the soft madd",
+          "de": "Madd lin: die weiche Dehnung",
+          "ar": "مد اللين"
+        },
+        "sub": {
+          "en": "Waw and ya after a fatha, stretched only when you stop",
+          "de": "Waw und Ya nach Fatha, gedehnt nur beim Anhalten",
+          "ar": "الواو والياء الساكنتان بعد فتح، تُمدان عند الوقف"
+        },
+        "arabic": "مد اللين"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ـَوْ ـَيْ",
+          "body": {
+            "en": "A waw or ya with sukun after a fatha is a letter of lin, softness, as in khawf and bayt. When you stop on the letter after it, it may be stretched two, four or six counts.",
+            "de": "Ein Waw oder Ya mit Sukun nach einer Fatha ist ein Buchstabe des Lin, der Weichheit, wie in chauf und bait. Halten Sie beim folgenden Buchstaben an, darf es zwei, vier oder sechs Zählzeiten gedehnt werden.",
+            "ar": "الواو والياء الساكنتان بعد فتح حرفا لين، كما في «خوف» و«بيت»، فإذا وقفت على الحرف الذي بعدهما جاز المد حركتين أو أربعًا أو ستًا."
+          }
+        },
+        {
+          "title": {
+            "en": "How it sounds",
+            "de": "Wie es klingt",
+            "ar": "كيف يُنطق"
+          },
+          "body": {
+            "en": "Without a stop there is no madd at all: aw and ay simply glide. At a stop the glide may lengthen, softly and evenly, never forced.",
+            "de": "Ohne Anhalten gibt es keine Dehnung: aw und ay gleiten einfach. Beim Anhalten darf das Gleiten länger werden, weich und gleichmäßig, nie gepresst.",
+            "ar": "عند الوصل لا مد فيهما، وإنما ينساب الصوت انسيابًا، وعند الوقف يجوز إطالة هذا الانسياب برفق واستواء دون تكلف."
+          }
+        },
+        {
+          "verse": "106:1-3",
+          "check": "Quraysh",
+          "title": {
+            "en": "A surah of soft madds",
+            "de": "Eine Sure weicher Dehnungen",
+            "ar": "سورة مدود اللين"
+          },
+          "body": {
+            "en": "Stop on quraysh, as-sayf and al-bayt: each ends with a soft madd before the last letter.",
+            "de": "Halten Sie bei quraisch, as-saif und al-bait an: jedes endet mit einer weichen Dehnung vor dem letzten Buchstaben.",
+            "ar": "قف على آخر كل آية من الآيات المعروضة، ففي الكلمة الأخيرة من كل منها مد لين قبل الحرف الأخير."
+          }
+        },
+        {
+          "verse": "106:4",
+          "check": "fear",
+          "title": {
+            "en": "Once more at the end",
+            "de": "Noch einmal am Ende",
+            "ar": "ومرة أخيرة"
+          },
+          "body": {
+            "en": "Khawf closes the surah: a waw with sukun after a fatha. Keep the same length as before.",
+            "de": "Chauf beschließt die Sure: ein Waw mit Sukun nach Fatha. Halten Sie dieselbe Länge wie zuvor.",
+            "ar": "تُختم السورة بكلمة فيها واو ساكنة بعد فتح، فالتزم المقدار نفسه."
+          }
+        },
+        {
+          "title": {
+            "en": "A special case",
+            "de": "Ein Sonderfall",
+            "ar": "حالة خاصة"
+          },
+          "body": {
+            "en": "The letter 'ayn at the start of Surah Maryam and Surah ash-Shura holds a soft madd before a permanent sukun. In Hafs it takes four or six counts, and six is preferred.",
+            "de": "Der Buchstabe 'Ain am Anfang der Suren Maryam und asch-Schura hat eine weiche Dehnung vor einem bleibenden Sukun. Bei Hafs vier oder sechs Zählzeiten, sechs wird bevorzugt.",
+            "ar": "حرف العين في فاتحتي سورتي مريم والشورى فيه مد لين قبل سكون أصلي، ويجوز فيه لحفص التوسط والطول، والطول أولى."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Stretching aw and ay in the middle of reading, for example when you continue past khawf. Lin is lengthened only at a stop.",
+            "de": "Aw und ay mitten im Lesen dehnen, etwa wenn Sie über chauf hinaus weiterlesen. Lin wird nur beim Anhalten gedehnt.",
+            "ar": "مد الواو والياء اللينتين في أثناء الوصل؛ فمد اللين لا يكون إلا عند الوقف."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Recite Surah Quraysh, stopping at the end of each verse. Use the same length at all four stops, and listen that the glide stays soft.",
+            "de": "Rezitieren Sie Sure Quraisch und halten Sie am Ende jedes Verses an. Nehmen Sie bei allen vier Pausen dieselbe Länge und hören Sie darauf, dass das Gleiten weich bleibt.",
+            "ar": "اقرأ سورة قريش وقف عند آخر كل آية، والتزم مقدارًا واحدًا في المواضع الأربعة، واحرص على بقاء الصوت لينًا."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "al-Qasim ibn Firruh al-Shatibi, Hirz al-Amani wa Wajh al-Tahani (ash-Shatibiyyah)"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-21-madd-badal",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Madd badal: hamza before the madd",
+          "de": "Madd badal: Hamza vor der Dehnung",
+          "ar": "مد البدل"
+        },
+        "sub": {
+          "en": "When the hamza comes first and the madd letter follows it",
+          "de": "Wenn das Hamza zuerst kommt und der Dehnungsbuchstabe folgt",
+          "ar": "همز يليه حرف مد"
+        },
+        "arabic": "مد البدل"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ءَا ءُو ءِي",
+          "body": {
+            "en": "When a hamza is followed by a madd letter, as in amanu, iman and utu, it is madd badal. In Hafs it is two counts, like a natural madd.",
+            "de": "Folgt auf ein Hamza ein Dehnungsbuchstabe, wie in amanu, iman und utu, ist es Madd badal. Bei Hafs dauert es zwei Zählzeiten, wie eine natürliche Dehnung.",
+            "ar": "إذا تقدم الهمز على حرف المد، كهمزة مفتوحة بعدها ألف، أو مضمومة بعدها واو، أو مكسورة بعدها ياء، فهو مد البدل، ويُمد عند حفص حركتين كالمد الطبيعي."
+          }
+        },
+        {
+          "title": {
+            "en": "Why the name?",
+            "de": "Warum dieser Name?",
+            "ar": "سبب التسمية"
+          },
+          "body": {
+            "en": "Badal means substitute. In many such words the madd letter took the place of a second hamza: amana was originally a'mana.",
+            "de": "Badal bedeutet Ersatz. In vielen solchen Wörtern trat der Dehnungsbuchstabe an die Stelle eines zweiten Hamza: amana lautete ursprünglich a'mana.",
+            "ar": "البدل معناه العوض، لأن حرف المد في أكثر أمثلته أُبدل من همزة ثانية؛ فأصل «آمن» «أأمن»."
+          }
+        },
+        {
+          "verse": "103:3",
+          "check": "believed",
+          "title": {
+            "en": "Amanu",
+            "de": "Amanu",
+            "ar": "همزة بعدها ألف"
+          },
+          "body": {
+            "en": "In alladhina amanu the hamza is followed by an alif: two counts in Hafs.",
+            "de": "In alladhina amanu folgt auf das Hamza ein Alif: zwei Zählzeiten bei Hafs.",
+            "ar": "في الآية المعروضة كلمةٌ تأتي فيها الألف بعد الهمزة، فتُمد عند حفص حركتين."
+          }
+        },
+        {
+          "verse": "106:1",
+          "check": "accustomed security",
+          "title": {
+            "en": "Li-ilafi",
+            "de": "Li-ilafi",
+            "ar": "همزة بعدها ياء"
+          },
+          "body": {
+            "en": "Li-ilafi: a hamza with kasra followed by ya, a badal madd of two counts.",
+            "de": "Li-ilafi: ein Hamza mit Kasra, gefolgt von Ya, eine Badal-Dehnung von zwei Zählzeiten.",
+            "ar": "في أول الآية المعروضة همزة مكسورة بعدها ياء مدية، فهو مد بدل حركتين."
+          }
+        },
+        {
+          "title": {
+            "en": "In Warsh it grows",
+            "de": "Bei Warsch wird es länger",
+            "ar": "وعند ورش يطول"
+          },
+          "body": {
+            "en": "This madd shows how readings differ. Warsh, through al-Azraq, may stretch it two, four or six counts; Hafs keeps it at two.",
+            "de": "Diese Dehnung zeigt, wie Lesarten sich unterscheiden. Warsch über al-Azraq darf sie zwei, vier oder sechs Zählzeiten dehnen; Hafs bleibt bei zwei.",
+            "ar": "يُظهر هذا المد اختلاف الروايات: فورش من طريق الأزرق يمده حركتين أو أربعًا أو ستًا، وحفص يقتصر على حركتين."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Stretching amanu or iman to four counts in Hafs, often by confusing it with a connected madd. In badal the hamza comes before the madd, not after it.",
+            "de": "Amanu oder iman bei Hafs auf vier Zählzeiten dehnen, oft aus Verwechslung mit der verbundenen Dehnung. Bei Badal steht das Hamza vor der Dehnung, nicht danach.",
+            "ar": "مد البدل أربع حركات في رواية حفص خلطًا بينه وبين المتصل؛ ففي البدل يتقدم الهمز على حرف المد ولا يتأخر عنه."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Make two lists from one page: hamza before madd (badal, two counts) and madd before hamza (connected, four or five). Read them side by side.",
+            "de": "Legen Sie von einer Seite zwei Listen an: Hamza vor Dehnung (Badal, zwei Zählzeiten) und Dehnung vor Hamza (verbunden, vier oder fünf). Lesen Sie sie nebeneinander.",
+            "ar": "اصنع من صفحة واحدة قائمتين: همز قبل مد وهو البدل بحركتين، ومد قبل همز وهو المتصل بأربع أو خمس، ثم اقرأهما متقابلتين."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "al-Qasim ibn Firruh al-Shatibi, Hirz al-Amani wa Wajh al-Tahani (ash-Shatibiyyah)"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-22-madd-iwad-silah",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Madd 'iwad and madd silah",
+          "de": "Madd 'iwad und Madd sila",
+          "ar": "مد العوض ومد الصلة"
+        },
+        "sub": {
+          "en": "The alif that replaces tanween, and the pronoun ha joined to a long vowel",
+          "de": "Das Alif anstelle des Tanwin und das Pronomen-Ha mit einem langen Vokal",
+          "ar": "ألف تعوض التنوين، وهاء ضمير توصل بحرف مد"
+        },
+        "arabic": "العوض والصلة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Madd 'iwad",
+            "de": "Madd 'iwad",
+            "ar": "مد العوض"
+          },
+          "arabic": "مد العوض",
+          "body": {
+            "en": "When you stop on a word ending in tanween with fatha, the tanween turns into an alif of two counts: -an becomes -a. Ta marbutah is the exception: it becomes a ha.",
+            "de": "Halten Sie bei einem Wort mit Tanwin-Fatha an, wird das Tanwin zu einem Alif von zwei Zählzeiten: aus -an wird -a. Ausnahme ist das Ta marbuta, es wird zu Ha.",
+            "ar": "إذا وقفت على كلمة منونة بالفتح أُبدل التنوين ألفًا تُمد حركتين، إلا التاء المربوطة فيوقف عليها بالهاء."
+          }
+        },
+        {
+          "title": {
+            "en": "Madd silah",
+            "de": "Madd sila",
+            "ar": "مد الصلة"
+          },
+          "arabic": "مد الصلة",
+          "body": {
+            "en": "The pronoun ha (hu, hi) between two voweled letters is joined to a long vowel. Before any letter but hamza it is two counts (sughra); before a hamza, four or five, like a separated madd (kubra).",
+            "de": "Das Pronomen-Ha (hu, hi) zwischen zwei vokalisierten Buchstaben wird mit einem langen Vokal verbunden. Vor anderen Buchstaben als Hamza zwei Zählzeiten (sughra), vor Hamza vier oder fünf, wie die getrennte Dehnung (kubra).",
+            "ar": "هاء الضمير الواقعة بين متحركين توصل بواو إن كانت مضمومة وبياء إن كانت مكسورة؛ فإن لم يأت بعدها همز فهي صلة صغرى حركتان، وإن جاء همز فهي صلة كبرى تُمد كالمنفصل."
+          }
+        },
+        {
+          "verse": "110:3",
+          "check": "ask forgiveness",
+          "title": {
+            "en": "Both in one verse",
+            "de": "Beides in einem Vers",
+            "ar": "النوعان في آية"
+          },
+          "body": {
+            "en": "Innahu kana: the ha is joined to a long u (silah sughra). Tawwaba at the stop: madd 'iwad.",
+            "de": "Innahu kana: das Ha wird mit langem u verbunden (sila sughra). Tawwaba beim Anhalten: Madd 'iwad.",
+            "ar": "في الآية المعروضة هاء ضمير مضمومة بين متحركين فهي صلة صغرى، وفي الكلمة الأخيرة عند الوقف مد عوض."
+          }
+        },
+        {
+          "verse": "104:3",
+          "check": "his wealth",
+          "title": {
+            "en": "Silah kubra",
+            "de": "Sila kubra",
+            "ar": "الصلة الكبرى"
+          },
+          "body": {
+            "en": "In malahu akhladah the ha is followed by a hamza: four or five counts, like a separated madd.",
+            "de": "In malahu achladah folgt auf das Ha ein Hamza: vier oder fünf Zählzeiten, wie bei der getrennten Dehnung.",
+            "ar": "في الآية المعروضة هاء ضمير تأتي بعدها همزة في أول الكلمة التالية، فتُمد أربعًا أو خمسًا كالمنفصل."
+          }
+        },
+        {
+          "verse": "25:69",
+          "check": "humiliated",
+          "title": {
+            "en": "A famous exception",
+            "de": "Eine bekannte Ausnahme",
+            "ar": "استثناء مشهور"
+          },
+          "body": {
+            "en": "Normally there is no silah after a sukun or a long vowel, yet in Hafs fihi is joined here: fihi muhana. It is the only such place.",
+            "de": "Normalerweise gibt es nach Sukun oder langem Vokal keine Sila, doch bei Hafs wird fihi hier verbunden: fihi muhana. Es ist die einzige solche Stelle.",
+            "ar": "الأصل ألا توصل الهاء بعد ساكن، لكن حفصًا وصل هاء الضمير بعد الياء الساكنة في هذا الموضع وحده."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Pronouncing the tanween at a stop, as in tawwaban, or forgetting to join hu between two vowels. Watch for the small waw or ya written after the ha in the mushaf.",
+            "de": "Das Tanwin beim Anhalten sprechen, etwa tawwaban, oder vergessen, hu zwischen zwei Vokalen zu verbinden. Achten Sie im Mushaf auf das kleine Waw oder Ya nach dem Ha.",
+            "ar": "النطق بالتنوين عند الوقف، أو ترك صلة الهاء بين متحركين؛ فانتبه إلى الواو أو الياء الصغيرة بعد الهاء في المصحف."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Read Surah an-Nasr: stop on afwaja and tawwaba (madd 'iwad) and join innahu (silah). Then look for more examples of silah in the last juz.",
+            "de": "Lesen Sie Sure an-Nasr: halten Sie bei afwadscha und tawwaba an (Madd 'iwad) und verbinden Sie innahu (Sila). Suchen Sie dann weitere Beispiele für Sila im letzten Dschuz'.",
+            "ar": "اقرأ سورة النصر: قف على آخر الآيتين الثانية والثالثة وفيهما مد عوض، وصِل هاء الضمير التي بين متحركين في الآية الثالثة، ثم ابحث عن أمثلة أخرى للصلة في الجزء الأخير."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "al-Qasim ibn Firruh al-Shatibi, Hirz al-Amani wa Wajh al-Tahani (ash-Shatibiyyah)"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-23-hamzat-al-wasl",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Hamzat al-wasl: the joining hamza",
+          "de": "Hamzat al-wasl: das verbindende Hamza",
+          "ar": "همزة الوصل"
+        },
+        "sub": {
+          "en": "Heard when you begin with the word, silent when you join it",
+          "de": "Hörbar, wenn Sie mit dem Wort beginnen, stumm in der Verbindung",
+          "ar": "تثبت في الابتداء وتسقط في الوصل"
+        },
+        "arabic": "همزة الوصل"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The rule",
+            "de": "Die Regel",
+            "ar": "القاعدة"
+          },
+          "arabic": "ٱ",
+          "body": {
+            "en": "Some words begin with a hamza that is pronounced only when you start with them. When you join them to the word before, it drops out of the sound. In the mushaf its alif carries a small sign like the head of a ṣad.",
+            "de": "Manche Wörter beginnen mit einem Hamza, das nur gesprochen wird, wenn Sie mit dem Wort beginnen. Verbinden Sie es mit dem vorigen Wort, fällt es weg. Im Mushaf trägt sein Alif ein kleines Zeichen wie der Kopf eines Ṣad.",
+            "ar": "همزة الوصل همزة تُنطق عند الابتداء بالكلمة وتسقط عند وصلها بما قبلها، وتُكتب في المصحف ألفًا عليها علامة كرأس الصاد."
+          }
+        },
+        {
+          "title": {
+            "en": "Which vowel when you begin?",
+            "de": "Welcher Vokal am Anfang?",
+            "ar": "بأي حركة يُبتدأ بها؟"
+          },
+          "list": {
+            "en": [
+              "With al-: begin with a",
+              "Verb with damma on its third letter: begin with u",
+              "Verb with fatha or kasra on its third letter: begin with i",
+              "Certain nouns, such as ism and ibn: begin with i"
+            ],
+            "de": [
+              "Mit al-: Beginn mit a",
+              "Verb mit Damma auf dem dritten Buchstaben: Beginn mit u",
+              "Verb mit Fatha oder Kasra auf dem dritten Buchstaben: Beginn mit i",
+              "Bestimmte Nomen wie ism und ibn: Beginn mit i"
+            ],
+            "ar": [
+              "مع «ال»: يُبتدأ بالفتح",
+              "في الفعل المضموم الثالث: يُبتدأ بالضم",
+              "في الفعل المفتوح أو المكسور الثالث: يُبتدأ بالكسر",
+              "في أسماء مثل «اسم» و«ابن»: يُبتدأ بالكسر"
+            ]
+          }
+        },
+        {
+          "verse": "96:1",
+          "check": "Recite",
+          "title": {
+            "en": "Beginning with i",
+            "de": "Beginn mit i",
+            "ar": "الابتداء بالكسر"
+          },
+          "body": {
+            "en": "Iqra': its third letter has a fatha, so you begin with i. In bismi the hamza of ism is written but silent.",
+            "de": "Iqra': der dritte Buchstabe trägt eine Fatha, also beginnen Sie mit i. In bismi steht das Hamza von ism geschrieben, wird aber nicht gesprochen.",
+            "ar": "في الكلمة الأولى من الآية المعروضة ثالث الحروف مفتوح فيُبدأ بالكسر، وفي الكلمة الثانية تُكتب همزة الوصل ولا تُنطق."
+          }
+        },
+        {
+          "verse": "15:46",
+          "check": "Enter it in peace",
+          "title": {
+            "en": "Beginning with u",
+            "de": "Beginn mit u",
+            "ar": "الابتداء بالضم"
+          },
+          "body": {
+            "en": "Udkhuluha: the third letter, kha, has a damma, so the verse begins with u.",
+            "de": "Udchuluha: der dritte Buchstabe, Cha, trägt eine Damma, darum beginnt der Vers mit u.",
+            "ar": "في الكلمة الأولى من الآية المعروضة ثالث الحروف خاءٌ مضمومة، فيُبدأ بالضم."
+          }
+        },
+        {
+          "verse": "1:2",
+          "check": "praise",
+          "title": {
+            "en": "Dropped in connection",
+            "de": "In der Verbindung entfallen",
+            "ar": "السقوط في الوصل"
+          },
+          "body": {
+            "en": "Rabbil-'alamin: the a of al- is not heard when it is joined to rabbi. You go straight from the kasra to the lam.",
+            "de": "Rabbil-'alamin: das a von al- ist nicht hörbar, wenn es mit rabbi verbunden wird. Sie gehen direkt von der Kasra zum Lam.",
+            "ar": "في آخر الآية المعروضة لا تُنطق همزة «ال» عند الوصل، فتنتقل من كسرة الباء إلى اللام مباشرة."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Pronouncing the joining hamza in the middle of reading, as in rabbi al-'alamin. Another is keeping a long vowel before it: fi al-ard is read fil-ard.",
+            "de": "Das verbindende Hamza mitten im Lesen sprechen, etwa rabbi al-'alamin. Ein weiterer Fehler ist ein langer Vokal davor: fi al-ard wird fil-ard gelesen.",
+            "ar": "نطق همزة الوصل في أثناء الوصل، أو إبقاء حرف المد قبلها؛ فالصواب حذف المد لفظًا، كحرف الجر المختوم بياء مدية قبل «ال»، فيُقرأ بكسرة قصيرة."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Read al-Fatiha twice: once stopping after every verse, once joining each verse to the next. Notice where the hamza appears and where it disappears.",
+            "de": "Lesen Sie al-Fatiha zweimal: einmal mit Anhalten nach jedem Vers, einmal mit Verbinden jedes Verses mit dem nächsten. Achten Sie darauf, wo das Hamza erscheint und wo es verschwindet.",
+            "ar": "اقرأ الفاتحة مرتين: مرة تقف عند آخر كل آية، ومرة تصل كل آية بالتي تليها، ولاحظ أين تظهر الهمزة وأين تسقط."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Jazari, al-Muqaddimah al-Jazariyyah"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-24-waqf-signs",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Stopping signs in the mushaf",
+          "de": "Pausenzeichen im Mushaf",
+          "ar": "علامات الوقف"
+        },
+        "sub": {
+          "en": "Small signs above the line tell you where to pause and where to go on",
+          "de": "Kleine Zeichen über der Zeile zeigen, wo Sie anhalten und wo Sie weiterlesen",
+          "ar": "رموز صغيرة ترشدك إلى مواضع الوقف والوصل"
+        },
+        "arabic": "علامات الوقف"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The signs of the Madinah mushaf",
+            "de": "Die Zeichen des Mushaf von Medina",
+            "ar": "علامات مصحف المدينة"
+          },
+          "list": {
+            "en": [
+              "A small mim: a necessary stop",
+              "Lam-alif: do not stop here",
+              "Jim: stopping and continuing are equal",
+              "Sad-lam-ya: continuing is better",
+              "Qaf-lam-ya: stopping is better",
+              "Three dots twice: stop at one of them, not at both"
+            ],
+            "de": [
+              "Kleines Mim: notwendiger Halt",
+              "Lam-Alif: hier nicht anhalten",
+              "Dschim: Anhalten und Weiterlesen sind gleichwertig",
+              "Sad-Lam-Ya: Weiterlesen ist besser",
+              "Qaf-Lam-Ya: Anhalten ist besser",
+              "Zweimal drei Punkte: an einer Stelle anhalten, nicht an beiden"
+            ],
+            "ar": [
+              "م: وقف لازم",
+              "لا: الوقف ممنوع",
+              "ج: وقف جائز يستوي فيه الوقف والوصل",
+              "صلى: الوصل أولى",
+              "قلى: الوقف أولى",
+              "∴ ∴: تعانق الوقف، فيوقف على أحدهما"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "How to stop on a word",
+            "de": "Wie man auf einem Wort anhält",
+            "ar": "كيف تقف على الكلمة"
+          },
+          "body": {
+            "en": "At a stop, the last vowel becomes a sukun. Tanween with fatha becomes an alif, and ta marbutah becomes a soft ha. Breathe at the stop, never in the middle of a word.",
+            "de": "Beim Anhalten wird der letzte Vokal zum Sukun. Tanwin mit Fatha wird zu Alif, Ta marbuta zu einem weichen Ha. Atmen Sie beim Anhalten, nie mitten im Wort.",
+            "ar": "عند الوقف تُسكن الحركة الأخيرة، ويُبدل تنوين الفتح ألفًا، وتصير التاء المربوطة هاء ساكنة، ويكون التنفس عند الوقف لا في وسط الكلمة."
+          }
+        },
+        {
+          "verse": "36:76",
+          "check": "grieve you",
+          "title": {
+            "en": "A necessary stop",
+            "de": "Ein notwendiger Halt",
+            "ar": "وقف لازم"
+          },
+          "body": {
+            "en": "After qawluhum stands a small mim. Stop there: joining on would make the next sentence sound like their words.",
+            "de": "Nach qauluhum steht ein kleines Mim. Halten Sie dort an: sonst klingt der folgende Satz wie ihre Worte.",
+            "ar": "في الآية المعروضة علامة وقف لازم بعد ذكر قولهم، فلو وُصل لأوهم أن ما بعده من كلامهم."
+          }
+        },
+        {
+          "verse": "6:36",
+          "check": "Only those who hear",
+          "title": {
+            "en": "Another necessary stop",
+            "de": "Noch ein notwendiger Halt",
+            "ar": "وقف لازم آخر"
+          },
+          "body": {
+            "en": "The small mim after yasma'un keeps the dead from being read as part of those who hear.",
+            "de": "Das kleine Mim nach yasma'un verhindert, dass die Toten als Teil derer gelesen werden, die hören.",
+            "ar": "علامة الوقف اللازم بعد ذكر السامعين تمنع أن يُعطف ذكر الموتى عليهم."
+          }
+        },
+        {
+          "verse": "2:2",
+          "check": "no doubt",
+          "title": {
+            "en": "Embracing stops",
+            "de": "Umarmende Pausen",
+            "ar": "تعانق الوقف"
+          },
+          "body": {
+            "en": "Three dots appear after rayb and after fihi. Stop at one of them, not at both, and the meaning stays complete.",
+            "de": "Drei Punkte stehen nach raib und nach fihi. Halten Sie an einer der beiden Stellen an, nicht an beiden, dann bleibt der Sinn vollständig.",
+            "ar": "تأتي النقاط الثلاث بعد الكلمة الرابعة وبعد الخامسة من الآية المعروضة، فقف على أحد الموضعين لا على كليهما، فيبقى المعنى تامًا."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Stopping wherever the breath runs out and starting again with the next word. If you have to stop at a poor place, go back a little and begin where the meaning begins.",
+            "de": "Dort anhalten, wo der Atem ausgeht, und mit dem nächsten Wort weiterlesen. Müssen Sie an einer ungünstigen Stelle anhalten, gehen Sie ein Stück zurück und beginnen Sie dort, wo der Sinn beginnt.",
+            "ar": "الوقف حيث ينقطع النفس ثم الابتداء من الكلمة التالية؛ فإن اضطررت إلى الوقف في موضع غير مناسب فارجع قليلًا وابدأ من موضع يحسن الابتداء به."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Take one page and circle every sign. Read it once following the signs exactly, then explain to yourself how each stop serves the meaning.",
+            "de": "Nehmen Sie eine Seite und kreisen Sie jedes Zeichen ein. Lesen Sie sie einmal genau nach den Zeichen und erklären Sie sich dann, wie jede Pause dem Sinn dient.",
+            "ar": "خذ صفحة واحدة وضع دائرة حول كل علامة، ثم اقرأها ملتزمًا العلامات تمامًا، واشرح لنفسك كيف يخدم كل وقف المعنى."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Mushaf al-Madinah an-Nabawiyyah (King Fahd Complex), notes on the stopping signs"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-25-makharij",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "Where the letters come from",
+          "de": "Woher die Buchstaben kommen",
+          "ar": "مخارج الحروف"
+        },
+        "sub": {
+          "en": "Makharij: five areas and seventeen points of articulation",
+          "de": "Machaaridsch: fünf Bereiche und siebzehn Artikulationsstellen",
+          "ar": "خمسة مواضع عامة وسبعة عشر مخرجًا"
+        },
+        "arabic": "مخارج الحروف"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "What is a makhraj?",
+            "de": "Was ist ein Machradsch?",
+            "ar": "ما المخرج؟"
+          },
+          "arabic": "مخارج الحروف",
+          "body": {
+            "en": "A makhraj is the exact place where a letter is formed. Following Ibn al-Jazari, most teachers count seventeen such points, grouped into five areas.",
+            "de": "Ein Machradsch ist die genaue Stelle, an der ein Buchstabe gebildet wird. Nach Ibn al-Dschazari zählen die meisten Lehrer siebzehn solcher Stellen in fünf Bereichen.",
+            "ar": "المخرج موضع خروج الحرف، وأكثر المعلمين على مذهب ابن الجزري في أنها سبعة عشر مخرجًا تجمعها خمسة مواضع عامة."
+          }
+        },
+        {
+          "title": {
+            "en": "The five areas",
+            "de": "Die fünf Bereiche",
+            "ar": "المواضع الخمسة"
+          },
+          "list": {
+            "en": [
+              "The open space of mouth and throat: the three madd letters",
+              "The throat: six letters, at three depths",
+              "The tongue: eighteen letters, at ten points",
+              "The lips: fa, ba, mim and waw",
+              "The nasal passage: the ghunnah"
+            ],
+            "de": [
+              "Der offene Raum von Mund und Rachen: die drei Dehnungsbuchstaben",
+              "Die Kehle: sechs Buchstaben in drei Tiefen",
+              "Die Zunge: achtzehn Buchstaben an zehn Stellen",
+              "Die Lippen: Fa, Ba, Mim und Waw",
+              "Der Nasenraum: die Ghunna"
+            ],
+            "ar": [
+              "الجوف: حروف المد الثلاثة",
+              "الحلق: ستة أحرف في ثلاثة مخارج",
+              "اللسان: ثمانية عشر حرفًا في عشرة مخارج",
+              "الشفتان: الفاء والباء والميم والواو",
+              "الخيشوم: مخرج الغنة"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "The throat at three depths",
+            "de": "Die Kehle in drei Tiefen",
+            "ar": "الحلق ثلاثة مخارج"
+          },
+          "arabic": "ء ه · ع ح · غ خ",
+          "body": {
+            "en": "Deepest: hamza and ha. Middle: 'ayn and ḥa. Nearest to the mouth: ghayn and kha. Feeling the depth helps you keep ḥa apart from ha, and 'ayn apart from hamza.",
+            "de": "Am tiefsten: Hamza und Ha. In der Mitte: 'Ain und Ḥa. Am nächsten zum Mund: Ghain und Cha. Wer die Tiefe spürt, hält Ḥa und Ha, 'Ain und Hamza auseinander.",
+            "ar": "أقصى الحلق للهمزة والهاء، ووسطه للعين والحاء، وأدناه للغين والخاء؛ ومعرفة العمق تعين على التفريق بين الحاء والهاء، وبين العين والهمزة."
+          }
+        },
+        {
+          "verse": "1:2",
+          "check": "praise",
+          "title": {
+            "en": "The middle of the throat",
+            "de": "Die Mitte der Kehle",
+            "ar": "وسط الحلق"
+          },
+          "body": {
+            "en": "Al-hamdu has ḥa and al-'alamin has 'ayn: both come from the middle of the throat.",
+            "de": "Al-hamdu hat Ḥa, al-'alamin hat 'Ain: beide kommen aus der Mitte der Kehle.",
+            "ar": "في أول الآية المعروضة حاء، وفي آخرها عين، وكلاهما من وسط الحلق."
+          }
+        },
+        {
+          "title": {
+            "en": "How to find a makhraj",
+            "de": "Wie man den Machradsch findet",
+            "ar": "كيف تعرف المخرج"
+          },
+          "body": {
+            "en": "Give the letter a sukun and put a voweled hamza before it: ab, at, aq. Where the sound stops is the letter's makhraj. It is a classic test of the tajweed teachers.",
+            "de": "Geben Sie dem Buchstaben ein Sukun und setzen Sie ein Hamza mit Vokal davor: ab, at, aq. Wo der Klang endet, liegt sein Machradsch. Ein klassischer Test der Tadschwid-Lehrer.",
+            "ar": "سكّن الحرف وأدخل عليه همزة متحركة: «أبْ»، «أتْ»، «أقْ»، فحيث ينقطع الصوت فهناك مخرجه، وهي طريقة مشهورة عند علماء التجويد."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Saying Arabic letters with the sounds of your mother tongue. Letters like 'ayn, ḥa and ḍad have no twin in most languages and need their own place.",
+            "de": "Arabische Buchstaben mit den Lauten der eigenen Muttersprache sprechen. Buchstaben wie 'Ain, Ḥa und Ḍad haben in den meisten Sprachen keine Entsprechung und brauchen ihre eigene Stelle.",
+            "ar": "نطق الحروف العربية بأصوات اللغة الأم؛ فحروف كالعين والحاء والضاد لا نظير لها في أكثر اللغات، ولكل منها مخرجه الخاص."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Take three letters a day. Test each one with the hamza method in front of a mirror, then read a short surah listening for those letters.",
+            "de": "Nehmen Sie sich drei Buchstaben am Tag vor. Prüfen Sie jeden mit der Hamza-Methode vor dem Spiegel und lesen Sie dann eine kurze Sure mit Blick auf diese Buchstaben.",
+            "ar": "خذ ثلاثة أحرف كل يوم، واختبر كلًا منها بطريقة الهمزة أمام المرآة، ثم اقرأ سورة قصيرة منتبهًا لهذه الأحرف."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Jazari, al-Muqaddimah al-Jazariyyah"
+        }
+      ]
+    },
+    {
+      "id": "tajweed-26-sifat",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Tajweed rule of the week",
+          "de": "Tadschwid-Regel der Woche",
+          "ar": "قاعدة التجويد لهذا الأسبوع"
+        },
+        "title": {
+          "en": "The qualities of the letters",
+          "de": "Die Eigenschaften der Buchstaben",
+          "ar": "صفات الحروف"
+        },
+        "sub": {
+          "en": "Sifat: how a letter sounds, once you know where it comes from",
+          "de": "Sifat: wie ein Buchstabe klingt, wenn Sie wissen, woher er kommt",
+          "ar": "كيف يُنطق الحرف بعد معرفة مخرجه"
+        },
+        "arabic": "صفات الحروف"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Place and manner",
+            "de": "Ort und Art",
+            "ar": "المخرج والصفة"
+          },
+          "arabic": "صفات الحروف",
+          "body": {
+            "en": "The makhraj tells you where a letter is formed; its sifat tell you how. Two letters from the same place, like sin and ṣad, differ only in their qualities.",
+            "de": "Der Machradsch sagt, wo ein Buchstabe gebildet wird, die Sifat sagen, wie. Zwei Buchstaben von derselben Stelle, wie Sin und Ṣad, unterscheiden sich nur in ihren Eigenschaften.",
+            "ar": "المخرج يحدد موضع الحرف، والصفات تحدد كيفيته؛ فالسين والصاد من مخرج واحد، ولا يفرق بينهما إلا الصفات."
+          }
+        },
+        {
+          "title": {
+            "en": "Seventeen qualities",
+            "de": "Siebzehn Eigenschaften",
+            "ar": "سبع عشرة صفة"
+          },
+          "body": {
+            "en": "In his Muqaddimah, Ibn al-Jazari counts seventeen: ten that come in five pairs of opposites, and seven without an opposite. Every letter has one quality from each pair.",
+            "de": "In seiner Muqaddima zählt Ibn al-Dschazari siebzehn: zehn in fünf gegensätzlichen Paaren und sieben ohne Gegenteil. Jeder Buchstabe hat aus jedem Paar eine Eigenschaft.",
+            "ar": "يعدها ابن الجزري في مقدمته سبع عشرة صفة: عشر متقابلة في خمسة أزواج، وسبع لا ضد لها، ولكل حرف صفة من كل زوج."
+          }
+        },
+        {
+          "title": {
+            "en": "Five pairs of opposites",
+            "de": "Fünf Gegensatzpaare",
+            "ar": "الصفات المتقابلة"
+          },
+          "list": {
+            "en": [
+              "Hams, breath flows / jahr, breath is held",
+              "Shiddah, sound stops / rakhawah, sound flows",
+              "Isti'la, tongue rises / istifal, tongue lowers",
+              "Itbaq, tongue closes up / infitah, it stays apart",
+              "Idhlaq, light and fluent / ismat, restrained"
+            ],
+            "de": [
+              "Hams, der Atem fließt / Dschahr, der Atem wird gehalten",
+              "Schidda, der Klang stockt / Rachawa, der Klang fließt",
+              "Isti'la, die Zunge hebt sich / Istifal, sie senkt sich",
+              "Itbaq, die Zunge legt sich an / Infitah, sie bleibt fern",
+              "Idhlaq, leicht und flüssig / Ismat, zurückhaltend"
+            ],
+            "ar": [
+              "الهمس والجهر: جريان النفس وانحباسه",
+              "الشدة والرخاوة: انحباس الصوت وجريانه",
+              "الاستعلاء والاستفال: ارتفاع اللسان وانخفاضه",
+              "الإطباق والانفتاح: انطباق اللسان وانفتاحه",
+              "الإذلاق والإصمات: خفة النطق وثقله"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Seven without opposites",
+            "de": "Sieben ohne Gegenteil",
+            "ar": "الصفات التي لا ضد لها"
+          },
+          "list": {
+            "en": [
+              "Safir, a whistle: ṣad, zay, sin",
+              "Qalqalah, an echo: qaf, ṭa, ba, jim, dal",
+              "Lin, softness: waw and ya after a fatha",
+              "Inhiraf, a turning: lam and ra",
+              "Takrir, repetition: ra",
+              "Tafashshi, spreading: shin; istitalah, lengthening: ḍad"
+            ],
+            "de": [
+              "Safir, ein Pfeifen: Ṣad, Zay, Sin",
+              "Qalqala, ein Nachhall: Qaf, Ṭa, Ba, Dschim, Dal",
+              "Lin, Weichheit: Waw und Ya nach Fatha",
+              "Inhiraf, ein Abweichen: Lam und Ra",
+              "Takrir, Wiederholung: Ra",
+              "Tafaschschi, Ausbreitung: Schin; Istitala, Verlängerung: Ḍad"
+            ],
+            "ar": [
+              "الصفير: الصاد والزاي والسين",
+              "القلقلة: «قطب جد»",
+              "اللين: الواو والياء الساكنتان بعد فتح",
+              "الانحراف: اللام والراء",
+              "التكرير: الراء",
+              "التفشي: الشين، والاستطالة: الضاد"
+            ]
+          }
+        },
+        {
+          "verse": "114:4-5",
+          "check": "whispers",
+          "title": {
+            "en": "Hear the whistle",
+            "de": "Hören Sie das Pfeifen",
+            "ar": "اسمع الصفير"
+          },
+          "body": {
+            "en": "Al-waswas, yuwaswisu, suduri: the whistling sin and ṣad let you almost hear the whisper itself.",
+            "de": "Al-waswas, yuwaswisu, suduri: das pfeifende Sin und Ṣad lassen das Flüstern beinahe selbst hören.",
+            "ar": "في الآيتين المعروضتين تتكرر السين وتأتي الصاد، فيكاد صفيرهما يُسمعك الوسوسة نفسها."
+          }
+        },
+        {
+          "title": {
+            "en": "A common mistake",
+            "de": "Ein häufiger Fehler",
+            "ar": "خطأ شائع"
+          },
+          "body": {
+            "en": "Making ṣad sound like sin, or ṭa like ta, by dropping the rising of the tongue. Same place, different qualities: the difference lies in how the tongue is held.",
+            "de": "Ṣad wie Sin oder Ṭa wie Ta sprechen, weil das Heben der Zunge fehlt. Gleiche Stelle, andere Eigenschaften: der Unterschied liegt in der Haltung der Zunge.",
+            "ar": "نطق الصاد سينًا أو الطاء تاءً بترك استعلاء اللسان؛ فالمخرج واحد والصفات مختلفة، والفرق في هيئة اللسان."
+          }
+        },
+        {
+          "title": {
+            "en": "Practice tip",
+            "de": "Übungstipp",
+            "ar": "تمرين عملي"
+          },
+          "body": {
+            "en": "Take one quality a week. For hams, hold a hand before your mouth and feel the breath on fa, ha and sin; then feel it held back on jahr letters like ba and dal.",
+            "de": "Nehmen Sie sich jede Woche eine Eigenschaft vor. Für Hams halten Sie die Hand vor den Mund und spüren den Atem bei Fa, Ha und Sin; bei Dschahr-Buchstaben wie Ba und Dal bleibt er zurück.",
+            "ar": "خذ صفة كل أسبوع؛ ففي الهمس ضع يدك أمام فمك وتحسس جريان النفس مع الفاء والهاء والسين، ثم لاحظ انحباسه مع حروف الجهر كالباء والدال."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Jazari, al-Muqaddimah al-Jazariyyah"
+        }
+      ]
+    }
+  ]
+}

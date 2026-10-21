@@ -1,0 +1,144 @@
+{
+ "qiraat-01-what-are-qiraat": {
+  "c.k": "Mengenal qiraat · 1",
+  "c.t": "Apa itu qiraat?",
+  "c.s": "Satu Al-Qur'an, dibaca dengan beberapa cara yang sahih, masing-masing bersambung hingga Nabi",
+  "0.t": "Bacaan yang bersanad",
+  "0.b": "Qiraah adalah cara membaca Al-Qur'an yang dinisbatkan kepada salah seorang imam besar qiraat. Ia diwariskan melalui rantai guru yang tak terputus hingga Nabi shallallahu 'alaihi wa sallam.",
+  "1.t": "Diturunkan untuk dibaca",
+  "1.b": "Al-Qur'an selalu dipelajari dengan suara dan penuh ketelitian, dari guru ke murid. Qiraat adalah bentuk-bentuk tempat bacaan ini terjaga.",
+  "2.t": "Apa yang berbeda?",
+  "2.b": "Sebagian besar perbedaan menyangkut pelafalan: panjang mad, pelunakan hamzah, imalah vokal, huruf tebal atau tipis. Sebagian lagi menyangkut bentuk kata dalam tulisan yang sama, masing-masing dengan makna yang sah.",
+  "3.t": "Tiga syarat",
+  "3.b": "Ibnu Al-Jazari menyebut tiga syarat bacaan yang diterima:",
+  "3.l": [
+   "Sanad periwayatan yang sahih",
+   "Sesuai tata bahasa Arab, setidaknya dari satu segi yang sah",
+   "Sesuai salah satu mushaf Utsmani, meski hanya secara tersirat"
+  ],
+  "4.t": "Empat istilah kunci",
+  "4.l": [
+   "Qiraah: bacaan seorang imam, seperti 'Ashim",
+   "Riwayat: versi perawinya, seperti Hafs",
+   "Thariq: jalur setelah perawi, seperti Asy-Syathibiyyah",
+   "Wajh: pilihan yang boleh diambil pembaca"
+  ],
+  "5.t": "Banyak bacaan, satu Kitab yang terjaga",
+  "5.b": "Ragam bacaan tidak melemahkan keterjagaan Al-Qur'an. Justru menunjukkan betapa cermat setiap huruf diwariskan."
+ },
+ "qiraat-02-ahruf-and-qiraat": {
+  "c.k": "Mengenal qiraat · 2",
+  "c.t": "Tujuh ahruf dan qiraat",
+  "c.s": "Dua gagasan yang sering tertukar, dan bagaimana ulama menghubungkannya",
+  "0.t": "Diturunkan dalam tujuh cara",
+  "0.b": "Nabi terus meminta tambahan cara. Hadis itu berbicara tentang ahruf, ragam bacaan, bukan tentang tujuh imam qiraat tertentu.",
+  "1.t": "Apa itu ahruf?",
+  "1.b": "Ulama sangat berbeda pendapat. Ada yang mengatakan tujuh dialek Arab, ada yang mengatakan tujuh jenis perbedaan dalam kata dan bentuk, ada pula yang mengatakan tujuh berarti banyak. As-Suyuthi mencatat sekitar empat puluh pendapat.",
+  "2.t": "Bukan tujuh imam qiraat",
+  "2.b": "Beberapa generasi kemudian, Ibnu Mujahid (w. 324 H) memilih tujuh imam qiraat terkenal untuk Kitab As-Sab'ah. Kesamaan angka membuat banyak orang mengira mereka adalah tujuh ahruf, kekeliruan yang telah lama diluruskan para ulama.",
+  "3.t": "Hubungan keduanya",
+  "3.b": "Banyak ulama berpendapat bahwa qiraat memelihara bagian dari ahruf yang sesuai dengan mushaf Utsmani. Apakah itu satu harf atau beberapa, mereka berbeda pendapat.",
+  "4.t": "Ringkasnya",
+  "4.l": [
+   "Ahruf: ragam turunnya wahyu yang disebut Nabi",
+   "Qiraat: bacaan bernama, masing-masing dengan sanadnya",
+   "Tujuh imam qiraat bukanlah tujuh ahruf",
+   "Semua bacaan yang diterima sesuai dengan mushaf Utsmani"
+  ]
+ },
+ "qiraat-03-ten-readers": {
+  "c.k": "Mengenal qiraat · 3",
+  "c.t": "Sepuluh imam qiraat dan para perawinya",
+  "c.s": "Sepuluh imam qiraat dan dua puluh perawi yang meneruskan bacaan mereka",
+  "0.t": "Tujuh, lalu sepuluh",
+  "0.b": "Ibnu Mujahid menghimpun tujuh imam. Berabad-abad kemudian Ibnu Al-Jazari menegaskan tiga imam lagi sebagai sahih, sehingga genap sepuluh. Setiap imam dikenal melalui dua perawi masyhur.",
+  "1.t": "Madinah dan Makkah",
+  "1.l": [
+   "Nafi' (Madinah): Qalun dan Warsy",
+   "Abu Ja'far (Madinah): Ibnu Wardan dan Ibnu Jammaz",
+   "Ibnu Katsir (Makkah): Al-Bazzi dan Qunbul"
+  ],
+  "2.t": "Basrah dan Damaskus",
+  "2.l": [
+   "Abu 'Amr (Basrah): Ad-Duri dan As-Susi",
+   "Ya'qub (Basrah): Ruwais dan Rauh",
+   "Ibnu 'Amir (Damaskus): Hisyam dan Ibnu Dzakwan"
+  ],
+  "3.t": "Kufah dan Baghdad",
+  "3.l": [
+   "'Ashim (Kufah): Syu'bah dan Hafs",
+   "Hamzah (Kufah): Khalaf dan Khallad",
+   "Al-Kisa'i (Kufah): Abul Harits dan Ad-Duri",
+   "Khalaf Al-'Asyir (Baghdad): Ishaq dan Idris"
+  ],
+  "4.t": "Nama yang muncul dua kali",
+  "4.b": "Ad-Duri meriwayatkan dari Abu 'Amr sekaligus Al-Kisa'i: orangnya sama. Dan Khalaf, perawi bacaan Hamzah, adalah imam qiraat yang kesepuluh.",
+  "5.t": "Dibaca di seluruh dunia kini",
+  "5.b": "Hafs dari 'Ashim paling luas tersebar saat ini. Warsy dari Nafi' dibaca di sebagian besar Afrika Utara dan Barat, Qalun di Libya dan sebagian Tunisia, dan Ad-Duri dari Abu 'Amr di sebagian Sudan."
+ },
+ "qiraat-04-hafs-and-warsh": {
+  "c.k": "Mengenal qiraat · 4",
+  "c.t": "Membandingkan Hafs dan Warsy",
+  "c.s": "Dua riwayat yang paling luas tersebar saat ini, berdampingan",
+  "0.t": "Dua riwayat",
+  "0.b": "Hafs meriwayatkan bacaan 'Ashim dari Kufah; Warsy meriwayatkan bacaan Nafi' dari Madinah. Hafs paling luas tersebar saat ini, dan Warsy banyak dibaca di Afrika Utara dan Barat.",
+  "1.t": "Pemilik atau Raja",
+  "1.b": "Hafs membaca maliki dengan a panjang, pemilik; Warsy membacanya pendek, raja. Keduanya menggambarkan Allah, dan bersama-sama maknanya lebih kaya.",
+  "2.t": "Mad yang lebih panjang",
+  "2.b": "Warsy, melalui jalur Al-Azraq, memanjangkan mad muttashil dan munfashil enam harakat, dan mad badal dua, empat, atau enam. Hafs melalui Asy-Syathibiyyah memakai empat atau lima, dan dua untuk badal.",
+  "3.t": "Hamzah yang dilunakkan",
+  "3.b": "Saat Hafs membaca yu'minuna dengan hamzah, Warsy mengganti hamzah dengan vokal panjang: yuminuna.",
+  "4.t": "Mim jamak",
+  "4.b": "Sebelum hamzah, Warsy menyambung mim jamak dengan u panjang: 'alaihimu a'andzartahum. Hafs mempertahankan mim dengan sukun.",
+  "5.t": "Satu-satunya imalah Hafs",
+  "5.b": "Hafs memiringkan bunyi a ke arah e hanya pada satu kata dalam Al-Qur'an: majreha, di sini. Warsy memakai kemiringan yang lebih ringan pada banyak kata.",
+  "6.t": "Yang tetap sama",
+  "6.l": [
+   "Keduanya sahih, dengan sanad tak terputus",
+   "Maknanya terjaga, bahkan sering diperkaya",
+   "Tidak ada yang lebih benar dari yang lain",
+   "Bacalah dengan riwayat yang Anda pelajari dari guru"
+  ]
+ },
+ "qiraat-05-transmission": {
+  "c.k": "Mengenal qiraat · 5",
+  "c.t": "Bagaimana qiraat diwariskan",
+  "c.s": "Dari Nabi hingga para qari masa kini: sanad, guru, dan dua syair terkenal",
+  "0.t": "Dipelajari dengan mendengar",
+  "0.b": "Bahkan Nabi menerima Al-Qur'an dengan mendengarkan dahulu, lalu membacanya. Setiap qiraah mengikuti jalan ini.",
+  "1.t": "Tatap muka",
+  "1.b": "Bacaan dipelajari secara tatap muka: murid membaca seluruh Al-Qur'an di hadapan guru, yang membetulkan setiap huruf. Sebuah sertifikat, ijazah, mencatat rantai sanad hingga Nabi.",
+  "2.t": "Terjaga di dalam dada",
+  "2.b": "Al-Qur'an hidup dalam hafalan orang-orang yang mempelajarinya, bukan hanya di atas lembaran.",
+  "3.t": "Tujuh pilihan Ibnu Mujahid",
+  "3.b": "Pada abad ke-4 H, Ibnu Mujahid di Baghdad menghimpun tujuh imam qiraat terkenal dalam Kitab As-Sab'ah. Karya-karya sesudahnya bertumpu pada pilihannya.",
+  "4.t": "Asy-Syathibiyyah",
+  "4.b": "Imam Asy-Syathibi (w. 590 H) menggubah kitab At-Taisir karya Ad-Dani tentang tujuh qiraat menjadi syair panjang berirama, Hirz Al-Amani. Dikenal sebagai Asy-Syathibiyyah, syair ini masih dihafalkan hingga kini.",
+  "5.t": "Ad-Durrah dan sepuluh qiraat",
+  "5.b": "Ibnu Al-Jazari (w. 833 H) menulis Ad-Durrah Al-Mudhiyyah tentang tiga imam lainnya: Abu Ja'far, Ya'qub, dan Khalaf. Bersama Asy-Syathibiyyah, karya ini melengkapi sepuluh qiraat. Thayyibatun Nasyr karyanya mencakup sepuluh qiraat melalui jauh lebih banyak jalur.",
+  "6.t": "Sanad yang masih hidup",
+  "6.b": "Para guru masa kini masih memberikan ijazah dengan sanad yang melewati karya-karya ini. Jika bisa, bacalah di hadapan guru yang mumpuni: Anda bergabung dalam rantai yang bersambung hingga Nabi."
+ },
+ "qiraat-06-why-they-matter": {
+  "c.k": "Mengenal qiraat · 6",
+  "c.t": "Mengapa qiraat penting",
+  "c.s": "Makna, keterjagaan, dan tradisi bacaan yang hidup",
+  "0.t": "Bukti hidup keterjagaan",
+  "0.b": "Bacaan yang dibawa banyak guru di negeri-negeri yang berjauhan tetap sepakat pada Al-Qur'an yang sama dan rasm Utsmani yang sama. Perbedaannya dicatat dengan cermat, bukan hilang.",
+  "1.t": "Dua bacaan, dua pelajaran",
+  "1.b": "Hafs membaca fatabayyanu, telitilah; Hamzah, Al-Kisa'i, dan Khalaf membaca fatatsabbatu, pastikanlah. Bersama-sama: periksa dengan cermat, jangan tergesa-gesa.",
+  "2.t": "Berdusta dan mendustakan",
+  "2.b": "Hafs membaca yakdzibun, mereka berdusta; Nafi', Ibnu Katsir, dan lainnya membaca yukadzdzibun, mereka mendustakan. Keduanya sesuai untuk kaum yang sama.",
+  "3.t": "Asal-usul tajwid",
+  "3.b": "Hukum yang Anda pelajari, dari ghunnah hingga panjang setiap mad, adalah hukum suatu riwayat, biasanya Hafs. Mengetahui hal ini menjelaskan mengapa para qari terkadang berbeda, dan mengapa keduanya bisa benar.",
+  "4.t": "Dimudahkan untuk diingat",
+  "4.b": "Generasi demi generasi di setiap negeri menghafal Al-Qur'an. Catatan cermat tentang bacaan-bacaannya adalah bagian dari kisah itu.",
+  "5.t": "Cara menyikapinya",
+  "5.l": [
+   "Bacalah dengan riwayat yang diajarkan guru Anda",
+   "Dengarkan bacaan riwayat Warsy atau Qalun",
+   "Jangan menyebut bacaan yang sahih sebagai kesalahan",
+   "Belajarlah pada guru yang mumpuni sebelum membaca riwayat lain"
+  ]
+ }
+}

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-patience",
+  "kind": "reflection",
+  "theme": "patience",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-patience-01",
+      "text": {
+        "en": "Patience is not the absence of tears. It is choosing, again and again, to keep trusting Allah while they fall.",
+        "de": "Geduld heißt nicht, keine Tränen zu haben. Sie ist die Entscheidung, immer wieder auf Allah zu vertrauen, während sie fließen.",
+        "ar": "ليس الصبر أن تجف الدموع، بل أن تختار مرة بعد مرة أن تبقى واثقا بالله وهي تنهمر."
+      }
+    },
+    {
+      "id": "wr-patience-02",
+      "text": {
+        "en": "A seed spends weeks in the dark before anyone sees green. Some of your best seasons are growing where no one can see them yet.",
+        "de": "Ein Samenkorn liegt wochenlang im Dunkeln, bevor jemand Grün sieht. Manche Ihrer besten Zeiten wachsen gerade dort, wo sie noch niemand sieht.",
+        "ar": "تمكث البذرة أسابيع في الظلمة قبل أن يرى أحد خضرتها، وبعض أجمل مواسمك ينمو الآن حيث لا يراه أحد."
+      }
+    },
+    {
+      "id": "wr-patience-03",
+      "text": {
+        "en": "Waiting for an answer that has not come yet is also worship, if you wait with your hands still raised.",
+        "de": "Auf eine Antwort zu warten, die noch nicht gekommen ist, ist auch Gottesdienst, wenn Sie dabei die Hände erhoben lassen.",
+        "ar": "انتظار جواب لم يأت بعد عبادة أيضا، إن انتظرته ويداك ما زالتا مرفوعتين."
+      }
+    },
+    {
+      "id": "wr-patience-04",
+      "text": {
+        "en": "The hospital corridor, the long night, the phone that does not ring: none of these hours is lost when it is carried with patience.",
+        "de": "Der Krankenhausflur, die lange Nacht, das Telefon, das nicht klingelt: Keine dieser Stunden geht verloren, wenn sie mit Geduld getragen wird.",
+        "ar": "ممر المستشفى، والليل الطويل، والهاتف الذي لا يرن: لا تضيع ساعة من هذه الساعات إذا حملت بالصبر."
+      }
+    },
+    {
+      "id": "wr-patience-05",
+      "text": {
+        "en": "Patience with people is often harder than patience with hardship. Both are counted, and both are seen.",
+        "de": "Geduld mit Menschen ist oft schwerer als Geduld in der Not. Beides wird gezählt, und beides wird gesehen.",
+        "ar": "الصبر على الناس أصعب أحيانا من الصبر على الشدائد، وكلاهما محسوب، وكلاهما مرئي."
+      }
+    },
+    {
+      "id": "wr-patience-06",
+      "text": {
+        "en": "When hard news arrives, the first moment matters most. One slow breath before you speak can keep a whole day from breaking.",
+        "de": "Wenn eine schwere Nachricht kommt, zählt der erste Moment am meisten. Ein langsamer Atemzug, bevor Sie sprechen, kann einen ganzen Tag davor bewahren, zu zerbrechen.",
+        "ar": "حين يأتي الخبر الثقيل تكون اللحظة الأولى هي الأهم، ونفس واحد بطيء قبل أن تتكلم قد يحفظ يوما كاملا من الانكسار."
+      }
+    },
+    {
+      "id": "wr-patience-07",
+      "text": {
+        "en": "A mother rocking a feverish child at three in the morning would never call it patience. Yet that is exactly what it is.",
+        "de": "Eine Mutter, die um drei Uhr nachts ihr fieberndes Kind wiegt, würde das nie Geduld nennen. Und doch ist es genau das.",
+        "ar": "الأم التي تهدهد طفلها المحموم في الثالثة فجرا لا تسمي ذلك صبرا أبدا، ومع ذلك فهو الصبر بعينه."
+      }
+    },
+    {
+      "id": "wr-patience-08",
+      "text": {
+        "en": "Patience is not doing nothing. It is the farmer who keeps tending his field while the sky decides about the rain.",
+        "de": "Geduld heißt nicht, nichts zu tun. Sie ist der Bauer, der sein Feld weiter pflegt, während der Himmel über den Regen entscheidet.",
+        "ar": "ليس الصبر قعودا، بل هو الفلاح الذي يواصل رعاية حقله بينما السماء تقرر أمر المطر."
+      }
+    },
+    {
+      "id": "wr-patience-09",
+      "text": {
+        "en": "Bitterness and patience can look alike from the outside. The difference is whether your heart is still speaking to Allah.",
+        "de": "Verbitterung und Geduld können von außen gleich aussehen. Der Unterschied ist, ob Ihr Herz noch mit Allah spricht.",
+        "ar": "قد تتشابه المرارة والصبر من الخارج، والفرق هو: هل ما زال قلبك يناجي الله؟"
+      }
+    },
+    {
+      "id": "wr-patience-10",
+      "text": {
+        "en": "Every slow recovery, every long degree, every year of trying again is a quiet story of patience that is being written with you.",
+        "de": "Jede langsame Genesung, jedes lange Studium, jedes Jahr des erneuten Versuchens ist eine stille Geschichte der Geduld, die mit Ihnen geschrieben wird.",
+        "ar": "كل شفاء بطيء، وكل دراسة طويلة، وكل عام من المحاولة من جديد، قصة صبر هادئة تكتب معك."
+      }
+    },
+    {
+      "id": "wr-patience-11",
+      "text": {
+        "en": "You do not have to carry the whole year today. Patience only asks you to carry this one hour well.",
+        "de": "Sie müssen heute nicht das ganze Jahr tragen. Die Geduld bittet Sie nur, diese eine Stunde gut zu tragen.",
+        "ar": "لست مطالبا بأن تحمل العام كله اليوم، فالصبر لا يطلب منك إلا أن تحمل هذه الساعة جيدا."
+      }
+    },
+    {
+      "id": "wr-patience-12",
+      "text": {
+        "en": "Holding back a sharp reply is a small act of patience. Over a lifetime, such small acts build a gentle heart.",
+        "de": "Eine scharfe Antwort zurückzuhalten ist ein kleiner Akt der Geduld. Über ein ganzes Leben bauen solche kleinen Akte ein sanftes Herz.",
+        "ar": "كتم الرد الحاد صبر صغير، ومع مرور العمر تبني هذه الأفعال الصغيرة قلبا رقيقا."
+      }
+    },
+    {
+      "id": "wr-patience-13",
+      "text": {
+        "en": "Patience grows the way a pearl does: layer by layer, around the very thing that hurt.",
+        "de": "Geduld wächst wie eine Perle: Schicht um Schicht, um genau das herum, was wehgetan hat.",
+        "ar": "ينمو الصبر كما تنمو اللؤلؤة: طبقة فوق طبقة، حول الشيء نفسه الذي آلمها."
+      }
+    },
+    {
+      "id": "wr-patience-14",
+      "text": {
+        "en": "The caregiver who repeats the same answer for the tenth time, softly, is practising a patience the angels would admire.",
+        "de": "Wer einen kranken Menschen pflegt und dieselbe Antwort zum zehnten Mal sanft wiederholt, übt eine Geduld, die selbst Engel bewundern würden.",
+        "ar": "من يرعى مريضا ويكرر الجواب نفسه للمرة العاشرة بلطف، يمارس صبرا تعجب به الملائكة."
+      }
+    }
+  ]
+}

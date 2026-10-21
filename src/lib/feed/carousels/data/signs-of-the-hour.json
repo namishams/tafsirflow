@@ -1,0 +1,261 @@
+{
+  "series": "signs-of-the-hour",
+  "label": { "en": "Signs of the Hour", "de": "Zeichen der Stunde", "ar": "علامات الساعة" },
+  "topic": "hadith",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "signs-of-the-hour-1-minor-signs",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Signs of the Hour · 1", "de": "Zeichen der Stunde · 1", "ar": "علامات الساعة · ١" },
+        "title": { "en": "The minor signs, as narrated", "de": "Die kleinen Zeichen, wie sie überliefert sind", "ar": "العلامات الصغرى كما وردت" },
+        "sub": { "en": "What the Prophet is reported to have said about the times before the Hour, with sources", "de": "Was der Prophet über die Zeit vor der Stunde gesagt haben soll, mit Quellen", "ar": "ما رُوي عن النبي ﷺ في الزمن الذي يسبق الساعة، مع المصادر" },
+        "arabic": "أشراط الساعة"
+      },
+      "slides": [
+        {
+          "title": { "en": "What are the signs?", "de": "Was sind die Zeichen?", "ar": "ما الأشراط؟" },
+          "arabic": "أَشْرَاط",
+          "body": { "en": "The Quran speaks of the Hour's ashrat, its indications, in 47:18, the only place the word occurs. Scholars later divided the signs in the hadith into minor ones, spread over time, and major ones, close to the end.", "de": "Der Koran spricht in 47:18 von den aschrāt der Stunde, ihren Anzeichen; nur dort kommt das Wort vor. Gelehrte teilten die Zeichen der Hadithe später in kleine, über lange Zeit verteilte, und große kurz vor dem Ende.", "ar": "يذكر القرآن أشراط الساعة في سورة محمد ١٨، وهو الموضع الوحيد للكلمة فيه، ثم قسّم العلماء ما ورد في الحديث إلى علامات صغرى تمتد عبر الزمن، وكبرى تقرب من النهاية." }
+        },
+        {
+          "hadith": "bukhari:4936",
+          "check": "like these two fingers",
+          "title": { "en": "The first sign", "de": "Das erste Zeichen", "ar": "أول العلامات" },
+          "body": { "en": "Many scholars count the Prophet's own coming among the first signs of the Hour.", "de": "Viele Gelehrte zählen das Kommen des Propheten selbst zu den ersten Zeichen der Stunde.", "ar": "يعدّ كثير من العلماء بعثة النبي ﷺ نفسها من أول أشراط الساعة." }
+        },
+        {
+          "title": { "en": "In the hadith of Jibril", "de": "Im Hadith Dschibrīl", "ar": "في حديث جبريل" },
+          "body": { "en": "In the well-known hadith of Jibril (Sahih Muslim; an-Nawawi's Forty, no. 2), the Prophet is reported to have named two signs: one about a reversal within households, and one about poor desert herders competing in tall buildings.", "de": "Im bekannten Hadith Dschibrīl (Sahīh Muslim; an-Nawawīs Vierzig, Nr. 2) soll der Prophet zwei Zeichen genannt haben: eines über eine Umkehrung innerhalb der Familien und eines über arme Hirten der Wüste, die im Bau hoher Gebäude wetteifern.", "ar": "في حديث جبريل المشهور (صحيح مسلم، والأربعون النووية رقم ٢) يُروى أن النبي ﷺ ذكر علامتين: إحداهما تتعلق بانقلاب الأحوال داخل البيوت، والأخرى بفقراء البادية يتبارون في تشييد المباني العالية." }
+        },
+        {
+          "hadith": "bukhari:6496",
+          "check": "When honesty is lost",
+          "title": { "en": "Lost trust", "de": "Verlorenes Vertrauen", "ar": "ضياع الأمانة" },
+          "body": { "en": "The Prophet explained what losing trust means in public life.", "de": "Der Prophet erklärte, was der Verlust des Vertrauens im öffentlichen Leben bedeutet.", "ar": "بيّن النبي ﷺ معنى تضييع الأمانة في الشأن العام." }
+        },
+        {
+          "hadith": "bukhari:1036",
+          "check": "time will pass quickly",
+          "title": { "en": "Knowledge fades, time hastens", "de": "Wissen schwindet, die Zeit eilt", "ar": "علمٌ يُرفع وزمنٌ يتسارع" },
+          "body": { "en": "Several signs named together: less knowledge, more killing, and time that seems to rush by.", "de": "Mehrere Zeichen zusammen: weniger Wissen, mehr Töten und eine Zeit, die zu verfliegen scheint.", "ar": "علامات مجتمعة: قلة العلم، وكثرة القتل، وزمنٌ يبدو متسارعًا." }
+        },
+        {
+          "hadith": "bukhari:7115",
+          "check": "Would that I were in his place",
+          "title": { "en": "When trials weigh heavy", "de": "Wenn Prüfungen schwer lasten", "ar": "حين تشتد الفتن" },
+          "body": { "en": "A sign of how heavy the trials of a time can become.", "de": "Ein Zeichen dafür, wie schwer die Prüfungen einer Zeit werden können.", "ar": "علامة على ما قد تبلغه شدة الفتن في زمن ما." }
+        },
+        {
+          "title": { "en": "Signs, not a calendar", "de": "Zeichen, kein Kalender", "ar": "علاماتٌ لا تقويم" },
+          "body": { "en": "These narrations are warnings, not a timetable. Scholars caution against pinning them on particular years, countries or people. Many such signs have appeared, in different forms, across the centuries.", "de": "Diese Überlieferungen sind Warnungen, kein Fahrplan. Gelehrte warnen davor, sie auf bestimmte Jahre, Länder oder Personen festzulegen. Viele dieser Zeichen sind über die Jahrhunderte in verschiedenen Formen aufgetreten.", "ar": "هذه الروايات تحذير لا جدول زمني، ويحذّر العلماء من تنزيلها على سنوات أو بلدان أو أشخاص بأعيانهم، فقد ظهر كثير منها بصور مختلفة عبر القرون." }
+        },
+        {
+          "title": { "en": "How to read the minor signs", "de": "Wie man die kleinen Zeichen liest", "ar": "كيف نقرأ العلامات الصغرى" },
+          "list": {
+            "en": ["Let them wake you up, not frighten you", "Guard trust and knowledge in your own life", "Do not tie them to people or dates without knowledge"],
+            "de": ["Lassen Sie sich wecken, nicht ängstigen", "Bewahren Sie Vertrauen und Wissen in Ihrem eigenen Leben", "Beziehen Sie sie nicht ohne Wissen auf Personen oder Daten"],
+            "ar": ["لتوقظك لا لتخيفك", "احفظ الأمانة والعلم في حياتك أنت", "لا تنزّلها على أشخاص أو تواريخ بغير علم"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih Muslim, Book of Faith (hadith of Jibril)" },
+        { "label": "An-Nawawi, al-Arba'un an-Nawawiyya, hadith 2" },
+        { "label": "Ibn Kathir, an-Nihaya fi al-Fitan wa al-Malahim" }
+      ]
+    },
+    {
+      "id": "signs-of-the-hour-2-major-signs",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Signs of the Hour · 2", "de": "Zeichen der Stunde · 2", "ar": "علامات الساعة · ٢" },
+        "title": { "en": "The major signs, as narrated", "de": "Die großen Zeichen, wie sie überliefert sind", "ar": "العلامات الكبرى كما وردت" },
+        "sub": { "en": "Ten signs named in one hadith of Sahih Muslim, and the protection the Prophet taught", "de": "Zehn Zeichen in einem Hadith aus Sahīh Muslim und der Schutz, den der Prophet lehrte", "ar": "عشر علامات في حديث واحد من صحيح مسلم، والوقاية التي علّمها النبي ﷺ" },
+        "arabic": "العلامات الكبرى"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:7285",
+          "check": "ten signs",
+          "title": { "en": "Ten signs in one hadith", "de": "Zehn Zeichen in einem Hadith", "ar": "عشر علامات في حديث واحد" },
+          "body": { "en": "Hudhayfah ibn Asid narrates the list most often cited for the major signs.", "de": "Hudhaifa ibn Asīd überliefert die Liste, die für die großen Zeichen am häufigsten angeführt wird.", "ar": "يروي حذيفة بن أسيد القائمة الأكثر ذكرًا في العلامات الكبرى." }
+        },
+        {
+          "title": { "en": "The order is not certain", "de": "Die Reihenfolge ist nicht sicher", "ar": "الترتيب غير قطعي" },
+          "body": { "en": "The hadith names the signs but does not settle their sequence in every detail. Scholars have discussed the order at length, and they differ on parts of it.", "de": "Der Hadith nennt die Zeichen, legt ihre Abfolge aber nicht in allen Einzelheiten fest. Die Gelehrten haben die Reihenfolge ausführlich erörtert und sind in Teilen uneins.", "ar": "يذكر الحديث العلامات دون أن يحسم ترتيبها في كل تفاصيله، وقد بحث العلماء ترتيبها طويلًا واختلفوا في بعضه." }
+        },
+        {
+          "hadith": "bukhari:4635",
+          "check": "rises from the West",
+          "title": { "en": "The sun from the west", "de": "Die Sonne aus dem Westen", "ar": "طلوع الشمس من مغربها" },
+          "body": { "en": "After this sign, the narration says, a late faith no longer helps. Commentators link it to 6:158.", "de": "Nach diesem Zeichen, so die Überlieferung, nützt ein später Glaube nicht mehr. Kommentatoren verbinden es mit 6:158.", "ar": "تذكر الرواية أن الإيمان المتأخر لا ينفع بعد هذه العلامة، ويربطها المفسرون بآية الأنعام ١٥٨." }
+        },
+        {
+          "hadith": "bukhari:7408",
+          "check": "one-eyed liar",
+          "title": { "en": "The false messiah", "de": "Der falsche Messias", "ar": "المسيح الدجال" },
+          "body": { "en": "The trial every prophet warned against, and the sign that exposes it.", "de": "Die Prüfung, vor der jeder Prophet warnte, und das Zeichen, das sie entlarvt.", "ar": "الفتنة التي حذّر منها كل نبي، والعلامة التي تفضحها." }
+        },
+        {
+          "hadith": "muslim:1883",
+          "check": "first ten verses",
+          "title": { "en": "Protection through al-Kahf", "de": "Schutz durch al-Kahf", "ar": "الاحتماء بسورة الكهف" },
+          "body": { "en": "A practical answer to a great trial: learn the opening of Surah al-Kahf by heart.", "de": "Eine praktische Antwort auf eine große Prüfung: Lernen Sie den Anfang der Sure al-Kahf auswendig.", "ar": "جوابٌ عملي عن فتنة عظيمة: احفظ أوائل سورة الكهف." }
+        },
+        {
+          "dua": "hisn:24:1",
+          "check": "Al-Maseeh Ad-Dajjal",
+          "title": { "en": "A dua in every prayer", "de": "Ein Bittgebet in jedem Gebet", "ar": "دعاء في كل صلاة" },
+          "body": { "en": "Before ending the prayer, the Prophet sought refuge from this trial.", "de": "Vor dem Ende des Gebets suchte der Prophet Zuflucht vor dieser Prüfung.", "ar": "كان النبي ﷺ يستعيذ من هذه الفتنة قبل السلام." }
+        },
+        {
+          "title": { "en": "'Isa, son of Maryam", "de": "ʿĪsā, Sohn der Maryam", "ar": "عيسى ابن مريم" },
+          "body": { "en": "Among the ten is the descent of 'Isa, son of Maryam. Many commentators also read 4:159 and 43:61 in this light, though others understand those verses differently.", "de": "Zu den zehn gehört das Herabkommen von ʿĪsā, dem Sohn der Maryam. Viele Kommentatoren lesen auch 4:159 und 43:61 in diesem Licht, andere verstehen diese Verse anders.", "ar": "من العشر نزول عيسى ابن مريم عليه السلام، ويقرأ كثير من المفسرين آيتي النساء ١٥٩ والزخرف ٦١ في ضوء ذلك، ويفهمهما آخرون على وجه آخر." }
+        },
+        {
+          "title": { "en": "Holding steady", "de": "Standhaft bleiben", "ar": "الثبات" },
+          "list": {
+            "en": ["Learn the opening verses of al-Kahf", "Seek refuge from trials in every prayer", "Judge every claim by revelation, not by wonders"],
+            "de": ["Lernen Sie die ersten Verse von al-Kahf", "Suchen Sie in jedem Gebet Zuflucht vor Prüfungen", "Messen Sie jeden Anspruch an der Offenbarung, nicht an Wundern"],
+            "ar": ["احفظ أوائل سورة الكهف", "استعذ من الفتن في كل صلاة", "زِن كل دعوى بالوحي لا بالخوارق"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, an-Nihaya fi al-Fitan wa al-Malahim" },
+        { "label": "An-Nawawi, al-Minhaj Sharh Sahih Muslim, Book of Trials" }
+      ]
+    },
+    {
+      "id": "signs-of-the-hour-3-in-the-quran",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Signs of the Hour · 3", "de": "Zeichen der Stunde · 3", "ar": "علامات الساعة · ٣" },
+        "title": { "en": "What the Quran says about the Hour", "de": "Was der Koran über die Stunde sagt", "ar": "ماذا يقول القرآن عن الساعة" },
+        "sub": { "en": "Its nearness, its indications, and the signs the Quran itself mentions", "de": "Ihre Nähe, ihre Anzeichen und die Zeichen, die der Koran selbst erwähnt", "ar": "قربها وأشراطها والعلامات التي يذكرها القرآن نفسه" },
+        "arabic": "الساعة في القرآن"
+      },
+      "slides": [
+        {
+          "verse": "47:18",
+          "check": "its indications",
+          "title": { "en": "Already on the way", "de": "Schon unterwegs", "ar": "أشراطٌ قد ظهرت" },
+          "body": { "en": "This is the only place in the Quran where the word ashrat, indications, occurs.", "de": "Dies ist die einzige Stelle im Koran, an der das Wort aschrāt, Anzeichen, vorkommt.", "ar": "هذا هو الموضع الوحيد في القرآن الذي ترد فيه كلمة أشراط." }
+        },
+        {
+          "verse": "54:1-2",
+          "check": "the moon has split",
+          "title": { "en": "Near, and a sign seen", "de": "Nah, und ein Zeichen gesehen", "ar": "قربٌ وآيةٌ مشهودة" },
+          "body": { "en": "Most commentators understand the splitting of the moon as a sign shown in the Prophet's time, tied here to the nearness of the Hour.", "de": "Die meisten Kommentatoren verstehen die Spaltung des Mondes als ein Zeichen zur Zeit des Propheten, hier mit der Nähe der Stunde verbunden.", "ar": "يرى أكثر المفسرين أن انشقاق القمر آية وقعت في زمن النبي ﷺ، وقُرنت هنا بقرب الساعة." }
+        },
+        {
+          "verse": "21:96-97",
+          "check": "Gog and Magog",
+          "title": { "en": "Gog and Magog", "de": "Gog und Magog", "ar": "يأجوج ومأجوج" },
+          "body": { "en": "Their release is tied in this passage to the approach of the true promise.", "de": "Ihre Freisetzung ist in dieser Stelle mit dem Nahen des wahren Versprechens verbunden.", "ar": "يرتبط خروجهم في هذا الموضع باقتراب الوعد الحق." }
+        },
+        {
+          "verse": "27:82",
+          "check": "a creature from the earth",
+          "title": { "en": "The beast of the earth", "de": "Das Tier der Erde", "ar": "دابة الأرض" },
+          "body": { "en": "Commentators identify it with one of the ten signs in the hadith. Reports describe its nature in different ways.", "de": "Die Kommentatoren setzen es mit einem der zehn Zeichen im Hadith gleich. Die Berichte beschreiben sein Wesen unterschiedlich.", "ar": "يجعلها المفسرون إحدى العلامات العشر الواردة في الحديث، وتختلف الروايات في وصفها." }
+        },
+        {
+          "verse": "44:10-11",
+          "check": "visible smoke",
+          "title": { "en": "The smoke", "de": "Der Rauch", "ar": "الدخان" },
+          "body": { "en": "Ibn Mas'ud held that this smoke had already come, in a famine in Makkah; others see it as a sign still to come.", "de": "Ibn Masʿūd vertrat, dieser Rauch sei bereits gekommen, in einer Hungersnot in Mekka; andere sehen darin ein Zeichen, das noch aussteht.", "ar": "يرى ابن مسعود أن هذا الدخان قد مضى في قحط أصاب مكة، ويراه آخرون علامة لم تأتِ بعد." }
+        },
+        {
+          "verse": "43:61",
+          "check": "knowledge of the Hour",
+          "title": { "en": "'Isa and the Hour", "de": "ʿĪsā und die Stunde", "ar": "عيسى والساعة" },
+          "body": { "en": "Many commentators read this verse as pointing to the return of 'Isa before the Hour; others read it differently.", "de": "Viele Kommentatoren lesen diesen Vers als Hinweis auf die Wiederkunft von ʿĪsā vor der Stunde; andere verstehen ihn anders.", "ar": "يفهم كثير من المفسرين هذه الآية إشارة إلى نزول عيسى قبل الساعة، ويفهمها آخرون على وجه آخر." }
+        },
+        {
+          "verse": "6:158",
+          "check": "some of the signs of your Lord",
+          "title": { "en": "When faith comes too late", "de": "Wenn der Glaube zu spät kommt", "ar": "حين يتأخر الإيمان" },
+          "body": { "en": "The Prophet is reported to have recited this verse when he spoke of the sun rising from the west.", "de": "Es wird berichtet, dass der Prophet diesen Vers rezitierte, als er vom Aufgang der Sonne im Westen sprach.", "ar": "يُروى أن النبي ﷺ تلا هذه الآية حين ذكر طلوع الشمس من مغربها." }
+        },
+        {
+          "verse": "33:63",
+          "check": "Knowledge of it is only with Allah",
+          "title": { "en": "Only Allah knows when", "de": "Nur Allah weiß, wann", "ar": "وقتها عند الله" },
+          "body": { "en": "For all its signs, the time of the Hour stays hidden. The Quran turns the question back to us: it may be near.", "de": "Trotz aller Zeichen bleibt die Zeit der Stunde verborgen. Der Koran gibt die Frage an uns zurück: Sie könnte nahe sein.", "ar": "مع كل أشراطها يبقى وقت الساعة خفيًّا، ويردّ القرآن السؤال إلينا: لعلها قريبة." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 21:96, 27:82, 43:61 and 44:10" },
+        { "label": "Sahih Muslim 7068 (Ibn Mas'ud on signs that have passed)" },
+        { "label": "Sahih al-Bukhari 4636 (the Prophet recites 6:158)" },
+        { "label": "Quranic Arabic Corpus, root sh-r-t", "url": "https://corpus.quran.com/qurandictionary.jsp?q=%24rT" }
+      ]
+    },
+    {
+      "id": "signs-of-the-hour-4-how-to-relate",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Signs of the Hour · 4", "de": "Zeichen der Stunde · 4", "ar": "علامات الساعة · ٤" },
+        "title": { "en": "Living with the signs: deeds, not speculation", "de": "Mit den Zeichen leben: Taten statt Spekulation", "ar": "العيش مع العلامات: عملٌ لا تخمين" },
+        "sub": { "en": "How the Prophet turned questions about the Hour into a call to prepare", "de": "Wie der Prophet Fragen nach der Stunde in einen Ruf zur Vorbereitung verwandelte", "ar": "كيف حوّل النبي ﷺ السؤال عن الساعة إلى دعوة للاستعداد" },
+        "arabic": "الاستعداد"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6171",
+          "check": "What have you prepared for it",
+          "title": { "en": "The better question", "de": "Die bessere Frage", "ar": "السؤال الأهم" },
+          "body": { "en": "A man asked when. The Prophet answered with a question about the man himself.", "de": "Ein Mann fragte nach dem Wann. Der Prophet antwortete mit einer Frage nach ihm selbst.", "ar": "سأل رجل: متى؟ فأجابه النبي ﷺ بسؤال عن حاله هو." }
+        },
+        {
+          "verse": "79:42-44",
+          "check": "when is its arrival",
+          "title": { "en": "Not ours to know", "de": "Nicht an uns, es zu wissen", "ar": "ليس لنا علم وقتها" },
+          "body": { "en": "Even the Prophet was not given its time. Its final knowledge rests with Allah alone.", "de": "Selbst dem Propheten wurde ihre Zeit nicht gegeben. Das letzte Wissen darüber liegt bei Allah allein.", "ar": "لم يُعطَ النبي ﷺ نفسه علم وقتها، فمنتهى علمها إلى الله وحده." }
+        },
+        {
+          "verse": "31:34",
+          "check": "knowledge of the Hour",
+          "title": { "en": "Knowledge He keeps", "de": "Wissen, das Er bei sich behält", "ar": "علمٌ اختص الله به" },
+          "body": { "en": "This verse lists knowledge that belongs to Allah alone, and it begins with the Hour.", "de": "Dieser Vers nennt Wissen, das allein Allah gehört, und er beginnt mit der Stunde.", "ar": "تعدّد هذه الآية علمًا اختص الله به، وأوله علم الساعة." }
+        },
+        {
+          "hadith": "muslim:7397",
+          "check": "Hasten to do good deeds",
+          "title": { "en": "Hurry to do good", "de": "Eilen Sie zum Guten", "ar": "المسارعة إلى الخير" },
+          "body": { "en": "Here the signs are named to move us towards good deeds, not to fill us with fear.", "de": "Hier werden die Zeichen genannt, um uns zu guten Taten zu bewegen, nicht um uns Angst zu machen.", "ar": "تُذكر العلامات هنا لتدفعنا إلى العمل الصالح لا لتملأنا خوفًا." }
+        },
+        {
+          "title": { "en": "Beware of speculation", "de": "Vorsicht vor Spekulation", "ar": "احذر التخمين" },
+          "body": { "en": "Over the centuries many people tied the signs to their own time, to certain rulers or dates, and were proved wrong. Scholars warn against such claims: they spread fear and distract from deeds.", "de": "Über die Jahrhunderte haben viele die Zeichen auf ihre eigene Zeit, auf bestimmte Herrscher oder Daten bezogen und sich geirrt. Gelehrte warnen vor solchen Behauptungen: Sie verbreiten Angst und lenken von den Taten ab.", "ar": "ربط كثيرون عبر القرون العلامات بزمانهم أو بحكام أو تواريخ بعينها فأخطؤوا، ويحذّر العلماء من مثل هذه الدعاوى لأنها تنشر الخوف وتشغل عن العمل." }
+        },
+        {
+          "title": { "en": "Your own hour", "de": "Ihre eigene Stunde", "ar": "ساعتك أنت" },
+          "body": { "en": "For each of us, death comes before the Hour. The best preparation for both is the same: faith, prayer, honesty and kindness, starting today.", "de": "Für jeden von uns kommt der Tod vor der Stunde. Die beste Vorbereitung auf beides ist dieselbe: Glaube, Gebet, Ehrlichkeit und Güte, von heute an.", "ar": "لكل واحد منا موتٌ يسبق الساعة، وخير استعداد لهما واحد: إيمان وصلاة وصدق وإحسان، من اليوم." }
+        },
+        {
+          "verse": "42:18",
+          "check": "fearful of it",
+          "title": { "en": "Awe, not obsession", "de": "Ehrfurcht, nicht Besessenheit", "ar": "خشيةٌ لا هوس" },
+          "body": { "en": "Believers neither mock the Hour nor obsess over it. They hold it in awe and keep working.", "de": "Gläubige verspotten die Stunde nicht und sind nicht von ihr besessen. Sie begegnen ihr mit Ehrfurcht und handeln weiter.", "ar": "المؤمن لا يستهزئ بالساعة ولا ينشغل بها انشغالًا مرضيًّا، بل يخشاها ويمضي في عمله." }
+        },
+        {
+          "title": { "en": "A believer's response", "de": "Die Antwort der Gläubigen", "ar": "موقف المؤمن" },
+          "list": {
+            "en": ["Ask what you have prepared, not when it will come", "Hold on to prayer, honesty and good character", "Learn from reliable scholars, not from rumours", "Leave the timing to Allah and keep doing good"],
+            "de": ["Fragen Sie, was Sie vorbereitet haben, nicht wann sie kommt", "Halten Sie fest an Gebet, Ehrlichkeit und gutem Charakter", "Lernen Sie von verlässlichen Gelehrten, nicht von Gerüchten", "Überlassen Sie den Zeitpunkt Allah und tun Sie weiter Gutes"],
+            "ar": ["اسأل عن استعدادك لا عن موعدها", "الزم الصلاة والصدق وحسن الخلق", "تعلّم من العلماء الموثوقين لا من الشائعات", "دع الوقت لله وواصل فعل الخير"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, an-Nihaya fi al-Fitan wa al-Malahim" }]
+    }
+  ]
+}

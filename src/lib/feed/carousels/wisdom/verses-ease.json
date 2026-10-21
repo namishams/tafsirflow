@@ -1,0 +1,25 @@
+{
+  "set": "verses-ease",
+  "kind": "verse",
+  "theme": "ease",
+  "tradition": "all",
+  "items": [
+    {"id": "wv-ease-94-5", "verse": "94:5-6", "check": "hardship"},
+    {"id": "wv-ease-94-1", "verse": "94:1-3", "check": "burden"},
+    {"id": "wv-ease-65-7", "verse": "65:7", "check": "after hardship, ease"},
+    {"id": "wv-ease-4-28", "verse": "4:28", "check": "lighten"},
+    {"id": "wv-ease-7-42", "verse": "7:42", "check": "capacity"},
+    {"id": "wv-ease-92-5", "verse": "92:5-7", "check": "ease him toward ease"},
+    {"id": "wv-ease-87-8", "verse": "87:8", "check": "ease you toward ease"},
+    {"id": "wv-ease-20-25", "verse": "20:25-26", "check": "ease for me my task"},
+    {"id": "wv-ease-21-83", "verse": "21:83-84", "check": "adversity"},
+    {"id": "wv-ease-2-214", "verse": "2:214", "check": "help of Allah is near"},
+    {"id": "wv-ease-84-7", "verse": "84:7-9", "check": "easy account"},
+    {"id": "wv-ease-18-16", "verse": "18:16", "check": "facility"},
+    {"id": "wv-ease-93-6", "verse": "93:6-8", "check": "refuge"},
+    {"id": "wv-ease-21-76", "verse": "21:76", "check": "great affliction"},
+    {"id": "wv-ease-19-24", "verse": "19:24-25", "check": "Do not grieve"},
+    {"id": "wv-ease-10-103", "verse": "10:103", "check": "save the believers"},
+    {"id": "wv-ease-8-26", "verse": "8:26", "check": "sheltered you"}
+  ]
+}

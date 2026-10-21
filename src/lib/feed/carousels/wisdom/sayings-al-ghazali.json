@@ -1,0 +1,133 @@
+{
+  "set": "sayings-al-ghazali",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-al-ghazali-01",
+      "theme": "knowledge",
+      "text": {
+        "en": "Knowledge without action is madness, and action without knowledge never comes to be.",
+        "de": "Wissen ohne Handeln ist Wahnsinn, und Handeln ohne Wissen kommt gar nicht erst zustande.",
+        "ar": "العلم بلا عمل جنون، والعمل بغير علم لا يكون."
+      },
+      "arabic": "العلم بلا عمل جنون، والعمل بغير علم لا يكون.",
+      "by": {
+        "en": "al-Ghazali",
+        "de": "al-Ghazali",
+        "ar": "الإمام الغزالي"
+      },
+      "work": {
+        "en": "Ayyuha al-Walad",
+        "de": "Ayyuha l-Walad",
+        "ar": "أيها الولد"
+      },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-ghazali-02",
+      "theme": "knowledge",
+      "text": {
+        "en": "Even if you studied for a hundred years and gathered a thousand books, you would not be ready for the mercy of Allah except through action.",
+        "de": "Selbst wenn Sie hundert Jahre lernten und tausend Bücher sammelten, wären Sie für die Barmherzigkeit Allahs nur durch das Handeln bereit.",
+        "ar": "لو قرأت العلم مائة سنة، وجمعت ألف كتاب، لا تكون مستعدا لرحمة الله تعالى إلا بالعمل."
+      },
+      "arabic": "لو قرأت العلم مائة سنة، وجمعت ألف كتاب، لا تكون مستعدا لرحمة الله تعالى إلا بالعمل.",
+      "by": {
+        "en": "al-Ghazali",
+        "de": "al-Ghazali",
+        "ar": "الإمام الغزالي"
+      },
+      "work": {
+        "en": "Ayyuha al-Walad",
+        "de": "Ayyuha l-Walad",
+        "ar": "أيها الولد"
+      },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-ghazali-03",
+      "theme": "wisdom",
+      "text": {
+        "en": "Advice is easy. What is hard is accepting it.",
+        "de": "Ein Rat ist leicht. Schwer ist es, ihn anzunehmen.",
+        "ar": "النصيحة سهلة، والمشكل قبولها."
+      },
+      "arabic": "النصيحة سهلة، والمشكل قبولها.",
+      "by": {
+        "en": "al-Ghazali",
+        "de": "al-Ghazali",
+        "ar": "الإمام الغزالي"
+      },
+      "work": {
+        "en": "Ayyuha al-Walad",
+        "de": "Ayyuha l-Walad",
+        "ar": "أيها الولد"
+      },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-ghazali-04",
+      "theme": "speech",
+      "text": {
+        "en": "The tongue is one of Allah's great blessings and one of the wonders of His making: small in size, yet great in its obedience and great in its offence.",
+        "de": "Die Zunge gehört zu den großen Gaben Allahs und zu den Wundern Seines Schaffens: klein an Gestalt, doch groß in ihrem Gehorsam und groß in ihrem Vergehen.",
+        "ar": "اعلم أن اللسان من نعم الله العظيمة ولطائف صنعه الغريبة، فإنه صغير جرمه، عظيم طاعته وجرمه."
+      },
+      "arabic": "اعلم أن اللسان من نعم الله العظيمة ولطائف صنعه الغريبة، فإنه صغير جرمه، عظيم طاعته وجرمه.",
+      "by": {
+        "en": "al-Ghazali",
+        "de": "al-Ghazali",
+        "ar": "الإمام الغزالي"
+      },
+      "work": {
+        "en": "Ihya' 'Ulum al-Din",
+        "de": "Ihya' 'Ulum ad-Din",
+        "ar": "إحياء علوم الدين"
+      },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-ghazali-05",
+      "theme": "guidance",
+      "text": {
+        "en": "My healing did not come from arranging proofs or ordering words, but from a light that Allah cast into the breast, and that light is the key to most knowledge.",
+        "de": "Meine Heilung kam nicht durch das Ordnen von Beweisen und Worten, sondern durch ein Licht, das Allah in die Brust warf, und dieses Licht ist der Schlüssel zu den meisten Erkenntnissen.",
+        "ar": "ولم يكن ذلك بنظم دليل وترتيب كلام، بل بنور قذفه الله تعالى في الصدر، وذلك النور هو مفتاح أكثر المعارف."
+      },
+      "arabic": "ولم يكن ذلك بنظم دليل وترتيب كلام، بل بنور قذفه الله تعالى في الصدر، وذلك النور هو مفتاح أكثر المعارف.",
+      "by": {
+        "en": "al-Ghazali",
+        "de": "al-Ghazali",
+        "ar": "الإمام الغزالي"
+      },
+      "work": {
+        "en": "al-Munqidh min al-Dalal",
+        "de": "al-Munqidh min ad-Dalal",
+        "ar": "المنقذ من الضلال"
+      },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-ghazali-06",
+      "theme": "character",
+      "text": {
+        "en": "If character could not be changed, all counsel, admonition and upbringing would be in vain.",
+        "de": "Wenn sich der Charakter nicht ändern ließe, wären alle Ratschläge, Ermahnungen und alle Erziehung vergeblich.",
+        "ar": "لو كانت الأخلاق لا تقبل التغيير لبطلت الوصايا والمواعظ والتأديبات."
+      },
+      "arabic": "لو كانت الأخلاق لا تقبل التغيير لبطلت الوصايا والمواعظ والتأديبات.",
+      "by": {
+        "en": "al-Ghazali",
+        "de": "al-Ghazali",
+        "ar": "الإمام الغزالي"
+      },
+      "work": {
+        "en": "Ihya' 'Ulum al-Din",
+        "de": "Ihya' 'Ulum ad-Din",
+        "ar": "إحياء علوم الدين"
+      },
+      "needs_review": true
+    }
+  ]
+}

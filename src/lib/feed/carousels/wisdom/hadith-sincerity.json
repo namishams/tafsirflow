@@ -1,0 +1,12 @@
+{ "set": "hadith-sincerity", "kind": "hadith", "theme": "sincerity", "tradition": "sunni",
+  "items": [
+    {"id": "wh-sincerity-bukhari-99", "hadith": "bukhari:99", "check": "sincerely"},
+    {"id": "wh-sincerity-bukhari-54", "hadith": "bukhari:54", "check": "intention"},
+    {"id": "wh-sincerity-nawawi-7", "hadith": "nawawi:7", "check": "naseehah"},
+    {"id": "wh-sincerity-bukhari-6499", "hadith": "bukhari:6499", "check": "show off"},
+    {"id": "wh-sincerity-bukhari-57", "hadith": "bukhari:57", "check": "sincere and true to every Muslim"},
+    {"id": "wh-sincerity-muslim-6543", "hadith": "muslim:6543", "check": "looks to your heart"},
+    {"id": "wh-sincerity-muslim-7475", "hadith": "muslim:7475", "check": "does not stand in need of a partner"},
+    {"id": "wh-sincerity-muslim-6741", "hadith": "muslim:6741", "check": "apparently before people"},
+    {"id": "wh-sincerity-bukhari-41", "hadith": "bukhari:41", "check": "embraces Islam sincerely"}
+  ] }

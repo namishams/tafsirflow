@@ -1,0 +1,1056 @@
+{
+  "series": "etiquette",
+  "label": {
+    "en": "Islamic etiquette",
+    "de": "Islamische Umgangsformen",
+    "ar": "الآداب الإسلامية"
+  },
+  "topic": "duas",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "etiquette-salam",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 1",
+          "de": "Umgangsformen · 1",
+          "ar": "الآداب الإسلامية · ١"
+        },
+        "title": {
+          "en": "The greeting of peace",
+          "de": "Der Friedensgruß",
+          "ar": "تحية السلام"
+        },
+        "sub": {
+          "en": "How to give and return salam, and why it spreads love",
+          "de": "Wie man den Salam gibt und erwidert, und warum er Liebe verbreitet",
+          "ar": "كيف نُلقي السلام ونردّه، ولماذا ينشر المحبة"
+        },
+        "arabic": "السَّلَامُ عَلَيْكُم"
+      },
+      "slides": [
+        {
+          "verse": "4:86",
+          "check": "one better than it",
+          "title": {
+            "en": "Return it more fully",
+            "de": "Erwidern Sie ihn ausführlicher",
+            "ar": "الردّ الأحسن"
+          },
+          "body": {
+            "en": "Answer a greeting with a fuller one, or at least the same. Adding wa rahmatullah is a simple way.",
+            "de": "Erwidern Sie einen Gruß ausführlicher oder mindestens gleich. Ein 'wa rahmatullah' hinzuzufügen ist ein einfacher Weg.",
+            "ar": "ردّ التحية بأتمّ منها أو بمثلها، وزيادة «ورحمة الله» طريقٌ سهل لذلك."
+          }
+        },
+        {
+          "hadith": "muslim:194",
+          "check": "as-salamu alaikum",
+          "title": {
+            "en": "A key to love",
+            "de": "Ein Schlüssel zur Liebe",
+            "ar": "مفتاح المحبة"
+          },
+          "body": {
+            "en": "The Prophet linked faith, love and greeting in one chain. Salam is where it starts.",
+            "de": "Der Prophet verband Glaube, Liebe und Gruß in einer Kette. Der Salam ist der Anfang.",
+            "ar": "ربط النبي ﷺ بين الإيمان والمحبة والسلام في سلسلة واحدة، والسلام أولها."
+          }
+        },
+        {
+          "hadith": "bukhari:28",
+          "check": "those whom you don't know",
+          "title": {
+            "en": "Not only for friends",
+            "de": "Nicht nur für Freunde",
+            "ar": "لا للأصدقاء فقط"
+          },
+          "body": {
+            "en": "Greeting strangers was named among the best qualities in Islam, alongside feeding people.",
+            "de": "Fremde zu grüßen wurde zu den besten Eigenschaften im Islam gezählt, neben dem Speisen der Menschen.",
+            "ar": "عُدّ إلقاء السلام على من لا تعرف من خير خصال الإسلام، مع إطعام الطعام."
+          }
+        },
+        {
+          "hadith": "bukhari:6234",
+          "check": "younger person should greet the older",
+          "title": {
+            "en": "Who greets first",
+            "de": "Wer zuerst grüßt",
+            "ar": "من يبدأ بالسلام"
+          },
+          "body": {
+            "en": "The Sunnah gives simple rules for who begins, so that no one waits for the other out of pride.",
+            "de": "Die Sunna gibt einfache Regeln, wer beginnt, damit niemand aus Stolz auf den anderen wartet.",
+            "ar": "تضع السنة قواعد يسيرة لمن يبدأ، كي لا ينتظر أحدٌ غيره تكبّرًا."
+          }
+        },
+        {
+          "hadith": "muslim:6532",
+          "check": "first to give a greeting",
+          "title": {
+            "en": "After a quarrel",
+            "de": "Nach einem Streit",
+            "ar": "بعد الخصام"
+          },
+          "body": {
+            "en": "Breaking the silence after a quarrel takes courage. The hadith honours the one who does it with a simple salam.",
+            "de": "Nach einem Streit das Schweigen zu brechen braucht Mut. Der Hadith ehrt den, der es mit einem einfachen Salam tut.",
+            "ar": "كسر الصمت بعد الخصام يحتاج إلى شجاعة، والحديث يكرّم من يفعل ذلك بسلامٍ بسيط."
+          }
+        },
+        {
+          "title": {
+            "en": "Salam in practice",
+            "de": "Salam in der Praxis",
+            "ar": "السلام في الواقع"
+          },
+          "list": {
+            "en": [
+              "Greet at home, at work and at the mosque",
+              "Answer every salam you hear, also in messages",
+              "Smile and say it clearly",
+              "Teach children to greet first"
+            ],
+            "de": [
+              "Grüßen Sie zu Hause, bei der Arbeit und in der Moschee",
+              "Erwidern Sie jeden Salam, auch in Nachrichten",
+              "Lächeln Sie und sprechen Sie ihn deutlich",
+              "Bringen Sie Kindern bei, zuerst zu grüßen"
+            ],
+            "ar": [
+              "سلّم في البيت والعمل والمسجد",
+              "ردّ كل سلامٍ تسمعه، ولو في الرسائل",
+              "ابتسم وانطقه بوضوح",
+              "علّم الأطفال أن يبدؤوا بالسلام"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-eating",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 2",
+          "de": "Umgangsformen · 2",
+          "ar": "الآداب الإسلامية · ٢"
+        },
+        "title": {
+          "en": "Manners of eating and drinking",
+          "de": "Umgangsformen beim Essen und Trinken",
+          "ar": "آداب الطعام والشراب"
+        },
+        "sub": {
+          "en": "Turning every meal into a moment of gratitude",
+          "de": "Jede Mahlzeit zu einem Moment der Dankbarkeit machen",
+          "ar": "أن تصير كل وجبة لحظة شكر"
+        },
+        "arabic": "آدَابُ الطَّعَام"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:5376",
+          "check": "eat with your right hand",
+          "title": {
+            "en": "Three lessons for a boy",
+            "de": "Drei Lehren für einen Jungen",
+            "ar": "ثلاثة دروس لغلام"
+          },
+          "body": {
+            "en": "Gently taught at the table, these lessons stayed with Umar ibn Abi Salama for life.",
+            "de": "Sanft am Tisch gelehrt, blieben diese Lehren Umar ibn Abi Salama ein Leben lang.",
+            "ar": "تعلّمها عمر بن أبي سلمة على المائدة برفق، فبقيت معه طوال حياته."
+          }
+        },
+        {
+          "dua": "hisn:69:0",
+          "check": "if you forget",
+          "title": {
+            "en": "If you forgot Bismillah",
+            "de": "Wenn Sie Bismillah vergessen haben",
+            "ar": "إذا نسيت التسمية"
+          },
+          "body": {
+            "en": "It is never too late during the meal. A short formula makes up for the forgotten start.",
+            "de": "Es ist während der Mahlzeit nie zu spät. Eine kurze Formel holt den vergessenen Anfang nach.",
+            "ar": "لا يفوت الأوان أثناء الطعام، فعبارةٌ قصيرة تتدارك التسمية المنسيّة."
+          }
+        },
+        {
+          "hadith": "bukhari:5409",
+          "check": "never criticized any food",
+          "title": {
+            "en": "No complaints about food",
+            "de": "Keine Klagen über das Essen",
+            "ar": "لا عيب للطعام"
+          },
+          "body": {
+            "en": "Food someone prepared deserves respect. Leaving it quietly is better than criticising it.",
+            "de": "Essen, das jemand zubereitet hat, verdient Respekt. Es still stehen zu lassen ist besser, als es zu kritisieren.",
+            "ar": "الطعام الذي أعدّه أحدهم يستحق الاحترام، وتركه بهدوء خيرٌ من ذمّه."
+          }
+        },
+        {
+          "hadith": "muslim:5287",
+          "check": "three times",
+          "title": {
+            "en": "Drinking in three breaths",
+            "de": "In drei Atemzügen trinken",
+            "ar": "الشرب على ثلاث"
+          },
+          "body": {
+            "en": "Drinking slowly, with breaths taken outside the cup, was his habit, and he called it more wholesome.",
+            "de": "Langsam zu trinken und außerhalb des Gefäßes zu atmen war seine Gewohnheit, und er nannte es bekömmlicher.",
+            "ar": "كان من عادته أن يشرب على مهل ويتنفس خارج الإناء، ووصف ذلك بأنه أنفع."
+          }
+        },
+        {
+          "hadith": "bukhari:5392",
+          "check": "sufficient for three",
+          "title": {
+            "en": "Food stretches when shared",
+            "de": "Essen reicht weiter, wenn man teilt",
+            "ar": "الطعام يكفي بالمشاركة"
+          },
+          "body": {
+            "en": "Do not worry that sharing leaves too little. There is blessing in eating together.",
+            "de": "Sorgen Sie sich nicht, dass Teilen zu wenig übrig lässt. Im gemeinsamen Essen liegt Segen.",
+            "ar": "لا تخشَ أن تقلّ حصتك إذا شاركت، فالبركة في الاجتماع على الطعام."
+          }
+        },
+        {
+          "dua": "hisn:70:0",
+          "check": "who fed me this",
+          "title": {
+            "en": "After the meal",
+            "de": "Nach dem Essen",
+            "ar": "بعد الطعام"
+          },
+          "body": {
+            "en": "Praise the One who provided it. Gratitude closes the meal as Bismillah opened it.",
+            "de": "Loben Sie Den, der es geschenkt hat. Dankbarkeit beschließt die Mahlzeit, wie Bismillah sie eröffnete.",
+            "ar": "احمد من رزقك إياه، فالحمد يختم الطعام كما افتتحته التسمية."
+          }
+        },
+        {
+          "title": {
+            "en": "At the table",
+            "de": "Am Tisch",
+            "ar": "على المائدة"
+          },
+          "list": {
+            "en": [
+              "Begin with Bismillah",
+              "Use the right hand and take what is near you",
+              "Keep to moderation",
+              "Praise Allah, and thank the cook"
+            ],
+            "de": [
+              "Beginnen Sie mit Bismillah",
+              "Nehmen Sie die rechte Hand und das, was vor Ihnen liegt",
+              "Bleiben Sie maßvoll",
+              "Loben Sie Allah und danken Sie dem Koch"
+            ],
+            "ar": [
+              "ابدأ بالتسمية",
+              "الأكل باليمين ومن الجهة القريبة",
+              "اعتدل في الطعام والشراب",
+              "احمد الله واشكر من أعدّ الطعام"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran 7:31 on moderation in eating and drinking",
+          "url": "https://quran.com/7/31"
+        }
+      ]
+    },
+    {
+      "id": "etiquette-sneezing",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 3",
+          "de": "Umgangsformen · 3",
+          "ar": "الآداب الإسلامية · ٣"
+        },
+        "title": {
+          "en": "When someone sneezes",
+          "de": "Wenn jemand niest",
+          "ar": "آداب العطاس"
+        },
+        "sub": {
+          "en": "A small moment that the Sunnah turns into an exchange of duas",
+          "de": "Ein kleiner Moment, den die Sunna in einen Austausch von Bittgebeten verwandelt",
+          "ar": "لحظةٌ صغيرة تجعلها السنة تبادلًا للدعاء"
+        },
+        "arabic": "يَرْحَمُكَ الله"
+      },
+      "slides": [
+        {
+          "dua": "hisn:77:0",
+          "check": "May Allah have mercy upon you",
+          "title": {
+            "en": "Three short phrases",
+            "de": "Drei kurze Sätze",
+            "ar": "ثلاث عبارات قصيرة"
+          },
+          "body": {
+            "en": "One praises, the other prays for mercy, and the first answers with a dua for guidance. A full exchange of kindness.",
+            "de": "Einer lobt, der andere bittet um Barmherzigkeit, der Erste antwortet mit einem Bittgebet um Rechtleitung. Ein ganzer Austausch von Güte.",
+            "ar": "يحمد العاطس، ويدعو له السامع بالرحمة، فيردّ بالدعاء له بالهداية؛ تبادلٌ كامل للمودة."
+          }
+        },
+        {
+          "hadith": "bukhari:6223",
+          "check": "Allah likes sneezing",
+          "title": {
+            "en": "Sneezing and yawning",
+            "de": "Niesen und Gähnen",
+            "ar": "العطاس والتثاؤب"
+          },
+          "body": {
+            "en": "A sneeze is met with praise; a yawn is held back as far as possible.",
+            "de": "Auf das Niesen folgt Lob; das Gähnen hält man so weit wie möglich zurück.",
+            "ar": "يُستقبل العطاس بالحمد، ويُكظم التثاؤب ما استطعنا."
+          }
+        },
+        {
+          "hadith": "bukhari:6221",
+          "check": "praised Allah",
+          "title": {
+            "en": "Only after praise",
+            "de": "Nur nach dem Lob",
+            "ar": "بعد الحمد"
+          },
+          "body": {
+            "en": "The reply is for the one who praised Allah. Make saying alhamdulillah right away a habit.",
+            "de": "Die Antwort gilt dem, der Allah gelobt hat. Gewöhnen Sie sich an, sofort Alhamdulillah zu sagen.",
+            "ar": "الدعاء لمن حمد الله، فاجعل الحمد عادتك فور العطاس."
+          }
+        },
+        {
+          "hadith": "bukhari:1240",
+          "check": "reply to those who sneeze",
+          "title": {
+            "en": "A right between Muslims",
+            "de": "Ein Recht unter Muslimen",
+            "ar": "حقٌّ بين المسلمين"
+          },
+          "body": {
+            "en": "Answering a sneeze stands beside greeting, visiting the sick and accepting invitations.",
+            "de": "Die Antwort auf ein Niesen steht neben dem Grüßen, dem Krankenbesuch und der Annahme von Einladungen.",
+            "ar": "تشميت العاطس حقٌّ إلى جانب ردّ السلام وعيادة المريض وإجابة الدعوة."
+          }
+        },
+        {
+          "hadith": "muslim:7491",
+          "check": "keep his mouth shut with the help of his hand",
+          "title": {
+            "en": "Cover a yawn",
+            "de": "Das Gähnen bedecken",
+            "ar": "تغطية التثاؤب"
+          },
+          "body": {
+            "en": "Covering the mouth is both Sunnah and simple courtesy toward others.",
+            "de": "Den Mund zu bedecken ist Sunna und zugleich einfache Höflichkeit.",
+            "ar": "تغطية الفم سنةٌ وأدبٌ مع الآخرين."
+          }
+        },
+        {
+          "title": {
+            "en": "In practice",
+            "de": "In der Praxis",
+            "ar": "في التطبيق"
+          },
+          "list": {
+            "en": [
+              "The one who sneezes praises Allah",
+              "Those who hear answer with a dua for mercy",
+              "The sneezer replies with a dua for guidance",
+              "Cover your mouth and turn away from others"
+            ],
+            "de": [
+              "Wer niest, lobt Allah",
+              "Wer es hört, antwortet mit einem Bittgebet um Barmherzigkeit",
+              "Der Niesende antwortet mit einem Bittgebet um Rechtleitung",
+              "Bedecken Sie den Mund und wenden Sie sich von anderen ab"
+            ],
+            "ar": [
+              "يحمد العاطس الله",
+              "يدعو له السامع بالرحمة",
+              "يردّ العاطس بالدعاء بالهداية",
+              "غطِّ فمك وأشِح بوجهك عن الآخرين"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-visiting-the-sick",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 4",
+          "de": "Umgangsformen · 4",
+          "ar": "الآداب الإسلامية · ٤"
+        },
+        "title": {
+          "en": "Visiting the sick",
+          "de": "Kranke besuchen",
+          "ar": "عيادة المريض"
+        },
+        "sub": {
+          "en": "A visit that the Sunnah fills with reward and dua",
+          "de": "Ein Besuch, den die Sunna mit Lohn und Bittgebet füllt",
+          "ar": "زيارةٌ تملؤها السنة أجرًا ودعاءً"
+        },
+        "arabic": "عِيَادَةُ المَرِيض"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:5649",
+          "check": "visit the sick",
+          "title": {
+            "en": "Three acts of mercy",
+            "de": "Drei Taten der Barmherzigkeit",
+            "ar": "ثلاث صور للرحمة"
+          },
+          "body": {
+            "en": "Visiting the sick is named together with feeding the hungry and freeing captives.",
+            "de": "Der Krankenbesuch wird zusammen mit dem Speisen der Hungernden und dem Befreien von Gefangenen genannt.",
+            "ar": "تُذكر عيادة المريض مع إطعام الجائع وفكّ الأسير."
+          }
+        },
+        {
+          "hadith": "muslim:6552",
+          "check": "fruit garden of Paradise",
+          "title": {
+            "en": "Gathering reward",
+            "de": "Lohn sammeln",
+            "ar": "جنيُ الأجر"
+          },
+          "body": {
+            "en": "From the moment you set out until you return, the visit counts as time spent gathering reward.",
+            "de": "Vom Aufbruch bis zur Rückkehr zählt der Besuch als Zeit, in der Sie Lohn sammeln.",
+            "ar": "من خروجك حتى عودتك، يُحسب الوقت كله جنيًا للأجر."
+          }
+        },
+        {
+          "dua": "hisn:49:0",
+          "check": "purification",
+          "title": {
+            "en": "Words of comfort",
+            "de": "Worte des Trostes",
+            "ar": "كلمات مواساة"
+          },
+          "body": {
+            "en": "The Prophet comforted the sick with hope: the illness can be a purification.",
+            "de": "Der Prophet tröstete Kranke mit Hoffnung: Die Krankheit kann eine Reinigung sein.",
+            "ar": "كان النبي ﷺ يواسي المريض بالرجاء: لعل المرض تطهير."
+          }
+        },
+        {
+          "hadith": "bukhari:5675",
+          "check": "Take away the disease",
+          "title": {
+            "en": "A dua for healing",
+            "de": "Ein Bittgebet um Heilung",
+            "ar": "دعاءٌ بالشفاء"
+          },
+          "body": {
+            "en": "The Prophet's dua when visiting a patient. Learn it and say it at the bedside.",
+            "de": "Das Bittgebet des Propheten beim Krankenbesuch. Lernen Sie es und sprechen Sie es am Krankenbett.",
+            "ar": "دعاء النبي ﷺ عند عيادة المريض، فاحفظه وقله عند سريره."
+          }
+        },
+        {
+          "hadith": "muslim:2129",
+          "check": "supplicate for good",
+          "title": {
+            "en": "Say only good",
+            "de": "Sagen Sie nur Gutes",
+            "ar": "لا تقل إلا خيرًا"
+          },
+          "body": {
+            "en": "Visits are moments when words carry extra weight. Speak with hope, and pray for good.",
+            "de": "Besuche sind Momente, in denen Worte besonderes Gewicht haben. Sprechen Sie Hoffnung aus und bitten Sie um Gutes.",
+            "ar": "في العيادة تزداد الكلمة وزنًا، فتكلّم بالرجاء وادعُ بالخير."
+          }
+        },
+        {
+          "title": {
+            "en": "A considerate visit",
+            "de": "Ein rücksichtsvoller Besuch",
+            "ar": "زيارةٌ لطيفة"
+          },
+          "list": {
+            "en": [
+              "Ask before you come, and keep it short",
+              "Sit close and speak gently",
+              "Make dua for their healing",
+              "Offer practical help, not only words"
+            ],
+            "de": [
+              "Fragen Sie vorher und halten Sie den Besuch kurz",
+              "Setzen Sie sich zu ihnen und sprechen Sie sanft",
+              "Bitten Sie um ihre Heilung",
+              "Bieten Sie praktische Hilfe an, nicht nur Worte"
+            ],
+            "ar": [
+              "استأذن قبل الزيارة وخفّفها",
+              "اجلس قريبًا وتكلّم بلطف",
+              "ادعُ له بالشفاء",
+              "قدّم عونًا عمليًا لا كلامًا فقط"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-home",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 5",
+          "de": "Umgangsformen · 5",
+          "ar": "الآداب الإسلامية · ٥"
+        },
+        "title": {
+          "en": "Entering and leaving the home",
+          "de": "Das Haus betreten und verlassen",
+          "ar": "آداب دخول البيت والخروج منه"
+        },
+        "sub": {
+          "en": "Small words that make a house a place of blessing",
+          "de": "Kleine Worte, die ein Haus zu einem Ort des Segens machen",
+          "ar": "كلماتٌ قليلة تجعل البيت موضع بركة"
+        },
+        "arabic": "بَيْتٌ مُبَارَك"
+      },
+      "slides": [
+        {
+          "verse": "16:80",
+          "check": "from your homes a place of rest",
+          "title": {
+            "en": "A home is a gift",
+            "de": "Ein Zuhause ist ein Geschenk",
+            "ar": "البيت نعمة"
+          },
+          "body": {
+            "en": "The Quran counts the home among Allah's favours: a place of rest and calm.",
+            "de": "Der Koran zählt das Zuhause zu den Gaben Allahs: ein Ort der Ruhe und Erholung.",
+            "ar": "يعدّ القرآن البيت من نعم الله: موضع راحة وطمأنينة."
+          }
+        },
+        {
+          "hadith": "muslim:5262",
+          "check": "mentions the name of Allah at the time of entering",
+          "title": {
+            "en": "A protected home",
+            "de": "Ein geschütztes Zuhause",
+            "ar": "بيتٌ محفوظ"
+          },
+          "body": {
+            "en": "Remembering Allah when you enter and when you eat keeps the home protected.",
+            "de": "Allahs zu gedenken, wenn Sie eintreten und wenn Sie essen, schützt das Zuhause.",
+            "ar": "ذكر الله عند الدخول وعند الطعام يحفظ البيت."
+          }
+        },
+        {
+          "dua": "hisn:11:0",
+          "check": "In the name of Allah we enter",
+          "title": {
+            "en": "When you come home",
+            "de": "Wenn Sie nach Hause kommen",
+            "ar": "عند الدخول"
+          },
+          "body": {
+            "en": "Enter with Allah's name and greet your family. A short dua changes the mood of a house.",
+            "de": "Treten Sie mit Allahs Namen ein und grüßen Sie Ihre Familie. Ein kurzes Bittgebet verändert die Stimmung eines Hauses.",
+            "ar": "ادخل باسم الله وسلّم على أهلك، فدعاءٌ قصير يغيّر جوّ البيت."
+          }
+        },
+        {
+          "dua": "hisn:10:0",
+          "check": "I place my trust in Allah",
+          "title": {
+            "en": "When you leave",
+            "de": "Wenn Sie hinausgehen",
+            "ar": "عند الخروج"
+          },
+          "body": {
+            "en": "Step out with trust in Allah. Whatever the day brings, you set out under His care.",
+            "de": "Gehen Sie im Vertrauen auf Allah hinaus. Was der Tag auch bringt, Sie brechen unter Seiner Obhut auf.",
+            "ar": "اخرج متوكلًا على الله، فمهما حمل اليوم فأنت في رعايته."
+          }
+        },
+        {
+          "hadith": "bukhari:6039",
+          "check": "serving his family",
+          "title": {
+            "en": "Helping at home",
+            "de": "Im Haushalt helfen",
+            "ar": "العون في البيت"
+          },
+          "body": {
+            "en": "The best of people helped at home until it was time to pray. Housework is part of good character.",
+            "de": "Der beste der Menschen half im Haushalt, bis es Zeit zum Gebet war. Hausarbeit gehört zum guten Charakter.",
+            "ar": "كان خير الناس يعين أهله حتى يحين وقت الصلاة، فالمعاونة في البيت من حسن الخلق."
+          }
+        },
+        {
+          "hadith": "bukhari:3304",
+          "check": "mention the Name of Allah",
+          "title": {
+            "en": "Closing the day",
+            "de": "Den Tag beschließen",
+            "ar": "ختام اليوم"
+          },
+          "body": {
+            "en": "At night, close the doors with Allah's name. Safety and remembrance go together.",
+            "de": "Schließen Sie nachts die Türen mit dem Namen Allahs. Sicherheit und Gedenken gehören zusammen.",
+            "ar": "أغلق الأبواب ليلًا مع ذكر اسم الله، فالأمان والذكر متلازمان."
+          }
+        },
+        {
+          "title": {
+            "en": "A blessed home",
+            "de": "Ein gesegnetes Zuhause",
+            "ar": "بيتٌ مبارك"
+          },
+          "list": {
+            "en": [
+              "Enter with Bismillah and a greeting",
+              "Leave with the dua of trust",
+              "Share the housework",
+              "Pray some voluntary prayers at home"
+            ],
+            "de": [
+              "Treten Sie mit Bismillah und einem Gruß ein",
+              "Gehen Sie mit dem Bittgebet des Vertrauens hinaus",
+              "Teilen Sie die Hausarbeit",
+              "Verrichten Sie freiwillige Gebete auch zu Hause"
+            ],
+            "ar": [
+              "ادخل بالتسمية والسلام",
+              "اخرج بدعاء التوكل",
+              "شارك في أعمال البيت",
+              "صلِّ بعض النوافل في بيتك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-mosque",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 6",
+          "de": "Umgangsformen · 6",
+          "ar": "الآداب الإسلامية · ٦"
+        },
+        "title": {
+          "en": "Manners in the mosque",
+          "de": "Umgangsformen in der Moschee",
+          "ar": "آداب المسجد"
+        },
+        "sub": {
+          "en": "How to enter, sit in and leave the house of Allah",
+          "de": "Wie man das Haus Allahs betritt, darin verweilt und es verlässt",
+          "ar": "كيف ندخل بيت الله ونجلس فيه ونخرج منه"
+        },
+        "arabic": "بُيُوتُ الله"
+      },
+      "slides": [
+        {
+          "verse": "24:36",
+          "check": "His name be mentioned",
+          "title": {
+            "en": "Houses of remembrance",
+            "de": "Häuser des Gedenkens",
+            "ar": "بيوتٌ للذكر"
+          },
+          "body": {
+            "en": "Every mosque, large or small, shares this purpose. Come with a heart ready to remember.",
+            "de": "Jede Moschee, ob groß oder klein, hat diesen Zweck. Kommen Sie mit einem Herzen, das bereit ist zu gedenken.",
+            "ar": "كل مسجد، كبيرًا كان أو صغيرًا، له هذه الغاية، فأقبِل بقلبٍ مستعد للذكر."
+          }
+        },
+        {
+          "verse": "7:31",
+          "check": "take your adornment",
+          "title": {
+            "en": "Come well dressed",
+            "de": "Kommen Sie gut gekleidet",
+            "ar": "الزينة عند المسجد"
+          },
+          "body": {
+            "en": "Clean, decent clothes honour the place and the people praying beside you.",
+            "de": "Saubere, angemessene Kleidung ehrt den Ort und die Menschen, die neben Ihnen beten.",
+            "ar": "الثياب النظيفة اللائقة تكريمٌ للمكان ولمن يصلّي بجانبك."
+          }
+        },
+        {
+          "dua": "hisn:13:0",
+          "check": "open the gates of Your mercy",
+          "title": {
+            "en": "Entering",
+            "de": "Beim Eintreten",
+            "ar": "عند الدخول"
+          },
+          "body": {
+            "en": "Many enter with the right foot and this dua, asking for the doors of mercy to open.",
+            "de": "Viele treten mit dem rechten Fuß und diesem Bittgebet ein und bitten um geöffnete Tore der Barmherzigkeit.",
+            "ar": "يدخل كثيرون بالقدم اليمنى مع هذا الدعاء سائلين الرحمة."
+          }
+        },
+        {
+          "hadith": "bukhari:444",
+          "check": "before sitting",
+          "title": {
+            "en": "Greeting the mosque",
+            "de": "Die Moschee begrüßen",
+            "ar": "تحية المسجد"
+          },
+          "body": {
+            "en": "Two short rak'ahs before sitting down are known as the greeting of the mosque.",
+            "de": "Zwei kurze Rak'as vor dem Hinsetzen nennt man die Begrüßung der Moschee.",
+            "ar": "ركعتان قبل الجلوس تُعرفان بتحية المسجد."
+          }
+        },
+        {
+          "hadith": "bukhari:636",
+          "check": "calmness and solemnity",
+          "title": {
+            "en": "No rushing",
+            "de": "Kein Hetzen",
+            "ar": "بلا عجلة"
+          },
+          "body": {
+            "en": "Arriving calmly is part of the prayer itself. Leave a little earlier so that you do not need to rush.",
+            "de": "Ruhiges Ankommen gehört zum Gebet selbst. Gehen Sie etwas früher los, damit Sie nicht hetzen müssen.",
+            "ar": "الوصول بهدوء جزءٌ من الصلاة نفسها، فاخرج مبكرًا كي لا تحتاج إلى العجلة."
+          }
+        },
+        {
+          "hadith": "bukhari:853",
+          "check": "garlic",
+          "title": {
+            "en": "Considerate to others",
+            "de": "Rücksicht auf andere",
+            "ar": "مراعاة المصلين"
+          },
+          "body": {
+            "en": "Strong smells disturb people praying side by side. Fresh breath and clean clothes belong to mosque manners.",
+            "de": "Starke Gerüche stören Menschen, die Seite an Seite beten. Frischer Atem und saubere Kleidung gehören zu den Umgangsformen der Moschee.",
+            "ar": "الروائح القوية تؤذي المصلين المتجاورين، والفم الطيب والثياب النظيفة من آداب المسجد."
+          }
+        },
+        {
+          "dua": "hisn:14:0",
+          "check": "I ask You from Your favour",
+          "title": {
+            "en": "Leaving",
+            "de": "Beim Hinausgehen",
+            "ar": "عند الخروج"
+          },
+          "body": {
+            "en": "Going back into the world, ask for His bounty. The mosque prepares you for daily life.",
+            "de": "Zurück in die Welt bitten Sie um Seine Huld. Die Moschee bereitet Sie auf den Alltag vor.",
+            "ar": "عند العودة إلى الدنيا اسأل الله من فضله، فالمسجد يهيّئك للحياة اليومية."
+          }
+        },
+        {
+          "title": {
+            "en": "Quick checklist",
+            "de": "Kurze Checkliste",
+            "ar": "قائمة سريعة"
+          },
+          "list": {
+            "en": [
+              "Phone on silent before you enter",
+              "Do not pass in front of someone praying",
+              "Keep voices low",
+              "Leave the place cleaner than you found it"
+            ],
+            "de": [
+              "Stellen Sie das Telefon vor dem Eintreten lautlos",
+              "Gehen Sie nicht vor einem Betenden vorbei",
+              "Sprechen Sie leise",
+              "Hinterlassen Sie den Ort sauberer, als Sie ihn vorgefunden haben"
+            ],
+            "ar": [
+              "اجعل هاتفك صامتًا قبل الدخول",
+              "لا تمرّ بين يدي المصلي",
+              "اخفض صوتك",
+              "اترك المكان أنظف مما وجدته"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "etiquette-permission",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 7",
+          "de": "Umgangsformen · 7",
+          "ar": "الآداب الإسلامية · ٧"
+        },
+        "title": {
+          "en": "Asking permission to enter",
+          "de": "Um Erlaubnis bitten",
+          "ar": "آداب الاستئذان"
+        },
+        "sub": {
+          "en": "Privacy and respect at every door",
+          "de": "Privatsphäre und Respekt an jeder Tür",
+          "ar": "الخصوصية والاحترام عند كل باب"
+        },
+        "arabic": "الاسْتِئْذَان"
+      },
+      "slides": [
+        {
+          "verse": "24:27",
+          "check": "until you ascertain welcome",
+          "title": {
+            "en": "Greet before you enter",
+            "de": "Grüßen, bevor Sie eintreten",
+            "ar": "السلام قبل الدخول"
+          },
+          "body": {
+            "en": "Another person's home is their own space. Ask first, and greet those inside.",
+            "de": "Das Zuhause eines anderen ist sein eigener Raum. Fragen Sie zuerst und grüßen Sie die Bewohner.",
+            "ar": "بيت غيرك مساحته الخاصة، فاستأذن أولًا وسلّم على أهله."
+          }
+        },
+        {
+          "verse": "24:28",
+          "check": "Go back",
+          "title": {
+            "en": "When the answer is no",
+            "de": "Wenn die Antwort nein ist",
+            "ar": "حين يكون الجواب لا"
+          },
+          "body": {
+            "en": "Being turned away is not an insult. Leaving graciously is described as purer.",
+            "de": "Abgewiesen zu werden ist keine Beleidigung. Würdevoll zu gehen wird als reiner beschrieben.",
+            "ar": "الاعتذار عن الاستقبال ليس إهانة، والانصراف بلطف أطهر للنفس."
+          }
+        },
+        {
+          "hadith": "muslim:5639",
+          "check": "seeking permission",
+          "title": {
+            "en": "Why we ask",
+            "de": "Warum wir fragen",
+            "ar": "لماذا نستأذن"
+          },
+          "body": {
+            "en": "Permission exists to protect privacy, including what the eyes see. Do not look into other people's homes.",
+            "de": "Die Erlaubnis dient dem Schutz der Privatsphäre, auch vor Blicken. Schauen Sie nicht in fremde Wohnungen.",
+            "ar": "شُرع الاستئذان لحفظ الخصوصية، ومنها النظر، فلا تتطلع إلى بيوت الناس."
+          }
+        },
+        {
+          "hadith": "bukhari:6250",
+          "check": "Who is that",
+          "title": {
+            "en": "Say your name",
+            "de": "Nennen Sie Ihren Namen",
+            "ar": "عرّف بنفسك"
+          },
+          "body": {
+            "en": "'It's me' tells the person inside nothing. A clear name is part of good manners.",
+            "de": "'Ich bin's' sagt der Person drinnen nichts. Ein klarer Name gehört zu gutem Benehmen.",
+            "ar": "قول «أنا» لا يعرّف بك، وذكر اسمك بوضوح من حسن الأدب."
+          }
+        },
+        {
+          "verse": "24:59",
+          "check": "ask permission",
+          "title": {
+            "en": "Within the family too",
+            "de": "Auch in der Familie",
+            "ar": "داخل الأسرة أيضًا"
+          },
+          "body": {
+            "en": "Children who have grown up ask permission before entering, as adults do. Privacy is respected even at home.",
+            "de": "Erwachsen gewordene Kinder bitten um Erlaubnis, bevor sie eintreten, wie Erwachsene. Privatsphäre gilt auch zu Hause.",
+            "ar": "يستأذن الأبناء البالغون قبل الدخول كما يفعل الكبار، فالخصوصية محترمة حتى في البيت."
+          }
+        },
+        {
+          "title": {
+            "en": "At the door, in practice",
+            "de": "An der Tür, in der Praxis",
+            "ar": "عند الباب عمليًا"
+          },
+          "list": {
+            "en": [
+              "Knock or ring, then wait",
+              "Ask up to three times, then leave kindly",
+              "Stand to the side, not facing the open door",
+              "Knock before entering a closed room at home"
+            ],
+            "de": [
+              "Klopfen oder klingeln Sie und warten Sie",
+              "Fragen Sie bis zu dreimal, dann gehen Sie freundlich",
+              "Stehen Sie seitlich, nicht vor der offenen Tür",
+              "Klopfen Sie auch zu Hause an geschlossene Türen"
+            ],
+            "ar": [
+              "اطرق الباب أو اضغط الجرس ثم انتظر",
+              "استأذن ثلاثًا ثم انصرف بلطف",
+              "قف بجانب الباب لا قبالته",
+              "اطرق قبل دخول غرفة مغلقة في البيت"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sahih al-Bukhari 6245, on asking permission three times",
+          "url": "https://sunnah.com/bukhari:6245"
+        }
+      ]
+    },
+    {
+      "id": "etiquette-gatherings",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Islamic etiquette · 8",
+          "de": "Umgangsformen · 8",
+          "ar": "الآداب الإسلامية · ٨"
+        },
+        "title": {
+          "en": "Manners of gatherings",
+          "de": "Umgangsformen in Gesellschaft",
+          "ar": "آداب المجالس"
+        },
+        "sub": {
+          "en": "Making room, speaking well and ending with forgiveness",
+          "de": "Platz machen, gut sprechen und mit Vergebung enden",
+          "ar": "التوسعة، وحسن الكلام، والختام بالاستغفار"
+        },
+        "arabic": "آدَابُ المَجْلِس"
+      },
+      "slides": [
+        {
+          "verse": "58:11",
+          "check": "make space",
+          "title": {
+            "en": "Make room",
+            "de": "Machen Sie Platz",
+            "ar": "وسّع لغيرك"
+          },
+          "body": {
+            "en": "When someone arrives, shift a little. Allah promises to make room for those who make room.",
+            "de": "Wenn jemand dazukommt, rücken Sie ein wenig. Allah verspricht, denen Raum zu geben, die Raum machen.",
+            "ar": "إذا جاء أحد فتزحزح قليلًا، فقد وعد الله من يوسّع لغيره أن يوسّع له."
+          }
+        },
+        {
+          "hadith": "bukhari:6270",
+          "check": "make room and spread out",
+          "title": {
+            "en": "Do not take someone's seat",
+            "de": "Nehmen Sie niemandem den Platz",
+            "ar": "لا تأخذ مكان غيرك"
+          },
+          "body": {
+            "en": "Space is made, not taken. Ibn Umar was careful even when someone offered him their seat.",
+            "de": "Platz wird gemacht, nicht genommen. Ibn Umar war selbst dann zurückhaltend, wenn man ihm einen Platz anbot.",
+            "ar": "المكان يُوسَّع ولا يُنتزع، وكان ابن عمر يتورّع حتى إذا قام له أحد عن مجلسه."
+          }
+        },
+        {
+          "hadith": "bukhari:6290",
+          "check": "secret counsel",
+          "title": {
+            "en": "No whispering that excludes",
+            "de": "Kein Flüstern, das ausschließt",
+            "ar": "لا تناجي يُقصي أحدًا"
+          },
+          "body": {
+            "en": "Whispering in front of a third person can hurt them. Include everyone at the table, also in the language you use.",
+            "de": "Flüstern vor einer dritten Person kann sie verletzen. Beziehen Sie alle am Tisch ein, auch in der Sprache.",
+            "ar": "التناجي أمام الثالث قد يؤذيه، فأشرك الجميع في الحديث، حتى في اللغة."
+          }
+        },
+        {
+          "hadith": "nawawi:15",
+          "check": "speak good, or keep silent",
+          "title": {
+            "en": "Speak good or stay quiet",
+            "de": "Gutes reden oder schweigen",
+            "ar": "خيرٌ أو صمت"
+          },
+          "body": {
+            "en": "A simple filter for every gathering: if it is not good, silence is the better contribution.",
+            "de": "Ein einfacher Filter für jede Runde: Wenn es nicht gut ist, ist Schweigen der bessere Beitrag.",
+            "ar": "ميزانٌ بسيط لكل مجلس: إن لم يكن الكلام خيرًا فالصمت أفضل مشاركة."
+          }
+        },
+        {
+          "dua": "hisn:85:0",
+          "check": "I seek Your forgiveness",
+          "title": {
+            "en": "Closing the gathering",
+            "de": "Die Runde beschließen",
+            "ar": "كفّارة المجلس"
+          },
+          "body": {
+            "en": "Known as the expiation of the gathering. Say it before you stand up, whatever was said.",
+            "de": "Bekannt als Sühne der Versammlung. Sprechen Sie es, bevor Sie aufstehen, was immer gesagt wurde.",
+            "ar": "يُعرف بكفارة المجلس، فقله قبل أن تقوم، أيًّا كان ما قيل."
+          }
+        },
+        {
+          "title": {
+            "en": "Good company, in practice",
+            "de": "Gute Gesellschaft, in der Praxis",
+            "ar": "المجلس الطيب عمليًا"
+          },
+          "list": {
+            "en": [
+              "Greet when you arrive and when you leave",
+              "Sit where there is space",
+              "Listen without interrupting",
+              "Keep what was shared in confidence"
+            ],
+            "de": [
+              "Grüßen Sie beim Kommen und beim Gehen",
+              "Setzen Sie sich dorthin, wo Platz ist",
+              "Hören Sie zu, ohne zu unterbrechen",
+              "Behalten Sie Vertrauliches für sich"
+            ],
+            "ar": [
+              "سلّم عند القدوم وعند الانصراف",
+              "اجلس حيث يتسع المكان",
+              "استمع ولا تقاطع",
+              "احفظ ما قيل لك في ثقة"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

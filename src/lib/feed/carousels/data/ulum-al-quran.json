@@ -1,0 +1,1150 @@
+{
+  "series": "ulum-al-quran",
+  "label": {
+    "en": "Sciences of the Quran",
+    "de": "Wissenschaften des Korans",
+    "ar": "علوم القرآن"
+  },
+  "topic": "quran",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "ulum-al-quran-01-first-revelation",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 1",
+          "de": "Koranwissenschaften · 1",
+          "ar": "علوم القرآن · ١"
+        },
+        "title": {
+          "en": "The first revelation",
+          "de": "Die erste Offenbarung",
+          "ar": "أول ما نزل من القرآن"
+        },
+        "sub": {
+          "en": "Five verses in a cave near Makkah, and a first word: read",
+          "de": "Fünf Verse in einer Höhle bei Mekka und ein erstes Wort: lies",
+          "ar": "خمس آيات في غار قرب مكة، وأول كلمة: اقرأ"
+        },
+        "arabic": "اقرأ"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "In the cave of Hira",
+            "de": "In der Höhle Hira",
+            "ar": "في غار حراء"
+          },
+          "arabic": "غار حراء",
+          "body": {
+            "en": "The Prophet used to withdraw to the cave of Hira, on a mountain near Makkah, to worship. There, around 610 CE and at about forty years of age, the angel Jibril came to him with the first verses.",
+            "de": "Der Prophet zog sich zum Gottesdienst in die Höhle Hira auf einem Berg bei Mekka zurück. Dort kam um 610 n. Chr., als er etwa vierzig Jahre alt war, der Engel Dschibril mit den ersten Versen zu ihm.",
+            "ar": "كان النبي ﷺ يخلو في غار حراء على جبل قرب مكة يتعبد، وهناك نحو سنة ٦١٠م، وهو في نحو الأربعين من عمره، جاءه جبريل بأول الآيات."
+          }
+        },
+        {
+          "verse": "96:1-3",
+          "check": "Recite",
+          "title": {
+            "en": "The first command",
+            "de": "Der erste Befehl",
+            "ar": "أول أمر"
+          },
+          "body": {
+            "en": "Most scholars hold that these were the first verses revealed. The very first command is iqra': read, recite.",
+            "de": "Die meisten Gelehrten sehen in diesen Versen die ersten offenbarten. Der allererste Befehl lautet iqra': lies, trage vor.",
+            "ar": "على قول جمهور العلماء هذه أول آيات نزلت، وأول ما فيها أمرٌ بالقراءة."
+          }
+        },
+        {
+          "verse": "96:4-5",
+          "check": "pen",
+          "title": {
+            "en": "Taught by the pen",
+            "de": "Gelehrt durch das Schreibrohr",
+            "ar": "التعليم بالقلم"
+          },
+          "body": {
+            "en": "From its first moment, the revelation honours knowledge, writing and learning.",
+            "de": "Vom ersten Augenblick an ehrt die Offenbarung Wissen, Schrift und Lernen.",
+            "ar": "منذ اللحظة الأولى كرّم الوحي العلم والكتابة والتعلم."
+          }
+        },
+        {
+          "title": {
+            "en": "One root, one name",
+            "de": "Eine Wurzel, ein Name",
+            "ar": "جذر واحد واسم واحد"
+          },
+          "arabic": "ق ر أ",
+          "body": {
+            "en": "The command iqra' and the name al-Qur'an share the root q-r-': to read, to recite. In the Quran this root appears in 88 words, 70 of them the word Qur'an itself.",
+            "de": "Der Befehl iqra' und der Name al-Qur'an teilen die Wurzel q-r-': lesen, vortragen. Im Koran kommt diese Wurzel in 88 Wörtern vor, 70 davon sind das Wort Qur'an selbst.",
+            "ar": "يشترك الأمر بالقراءة في أول ما نزل واسم «القرآن» في الجذر ق ر أ، ومعناه القراءة والتلاوة، ويرد هذا الجذر في القرآن في ٨٨ كلمة، منها ٧٠ مرة لفظ «القرآن» نفسه."
+          }
+        },
+        {
+          "verse": "97:1",
+          "check": "Night of Decree",
+          "title": {
+            "en": "On a blessed night",
+            "de": "In einer gesegneten Nacht",
+            "ar": "في ليلة مباركة"
+          },
+          "body": {
+            "en": "The Quran links its own sending down to the Night of Decree, in the month of Ramadan.",
+            "de": "Der Koran verbindet seine eigene Herabsendung mit der Nacht der Bestimmung im Monat Ramadan.",
+            "ar": "يربط القرآن نزوله بليلة القدر في شهر رمضان."
+          }
+        },
+        {
+          "title": {
+            "en": "What these verses teach",
+            "de": "Was diese Verse lehren",
+            "ar": "دروس من هذه الآيات"
+          },
+          "list": {
+            "en": [
+              "Faith and learning begin together",
+              "Learn for Allah's sake, not for pride",
+              "Allah is the most generous teacher",
+              "Every journey with the Quran starts with one word"
+            ],
+            "de": [
+              "Glaube und Lernen beginnen gemeinsam",
+              "Lernen Sie um Allahs willen, nicht aus Stolz",
+              "Allah ist der großzügigste Lehrer",
+              "Jeder Weg mit dem Koran beginnt mit einem Wort"
+            ],
+            "ar": [
+              "الإيمان والعلم يبدآن معًا",
+              "تعلّم لوجه الله لا للفخر",
+              "الله أكرم معلم",
+              "كل رحلة مع القرآن تبدأ بكلمة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, Surat al-'Alaq"
+        },
+        {
+          "label": "Quranic Arabic Corpus, root q-r-'"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-02-revealed-over-23-years",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 2",
+          "de": "Koranwissenschaften · 2",
+          "ar": "علوم القرآن · ٢"
+        },
+        "title": {
+          "en": "Revealed over 23 years",
+          "de": "Offenbart über 23 Jahre",
+          "ar": "نزول القرآن في ثلاث وعشرين سنة"
+        },
+        "sub": {
+          "en": "Why the Quran came step by step, and not all at once",
+          "de": "Warum der Koran Schritt für Schritt kam und nicht auf einmal",
+          "ar": "لماذا نزل القرآن مفرقًا لا جملة واحدة"
+        },
+        "arabic": "نزول القرآن منجمًا"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Thirteen years and ten",
+            "de": "Dreizehn Jahre und zehn",
+            "ar": "ثلاث عشرة سنة وعشر"
+          },
+          "arabic": "مكة · المدينة",
+          "body": {
+            "en": "Revelation began in Makkah and continued there for about thirteen years, then for about ten years in Madinah, until shortly before the Prophet's death.",
+            "de": "Die Offenbarung begann in Mekka und dauerte dort etwa dreizehn Jahre, dann etwa zehn Jahre in Medina, bis kurz vor dem Tod des Propheten.",
+            "ar": "بدأ الوحي في مكة واستمر فيها نحو ثلاث عشرة سنة، ثم نحو عشر سنين في المدينة، إلى قُبيل وفاة النبي ﷺ."
+          }
+        },
+        {
+          "verse": "17:106",
+          "check": "progressively",
+          "title": {
+            "en": "In portions, on purpose",
+            "de": "In Abschnitten, mit Absicht",
+            "ar": "مفرقًا لحكمة"
+          },
+          "body": {
+            "en": "The Quran names the purpose itself: to be recited to people over time.",
+            "de": "Der Koran nennt den Zweck selbst: den Menschen über eine lange Zeit vorgetragen zu werden.",
+            "ar": "يذكر القرآن الحكمة بنفسه: أن يُقرأ على الناس على مهل."
+          }
+        },
+        {
+          "verse": "25:32",
+          "check": "all at once",
+          "title": {
+            "en": "To make the heart firm",
+            "de": "Um das Herz zu festigen",
+            "ar": "لتثبيت الفؤاد"
+          },
+          "body": {
+            "en": "The question was asked openly. The answer: to strengthen the Prophet's heart, step by step.",
+            "de": "Die Frage wurde offen gestellt. Die Antwort: um das Herz des Propheten Schritt für Schritt zu festigen.",
+            "ar": "طُرح السؤال صراحة، وجاء الجواب: ليثبت قلب النبي ﷺ شيئًا فشيئًا."
+          }
+        },
+        {
+          "verse": "2:189",
+          "check": "crescent moons",
+          "title": {
+            "en": "Answers to real questions",
+            "de": "Antworten auf echte Fragen",
+            "ar": "أجوبة عن أسئلة واقعة"
+          },
+          "body": {
+            "en": "Many passages answered questions or events of their time. Scholars call these occasions asbab an-nuzul.",
+            "de": "Viele Abschnitte antworteten auf Fragen oder Ereignisse ihrer Zeit. Gelehrte nennen diese Anlässe asbab an-nuzul.",
+            "ar": "نزل كثير من الآيات جوابًا عن سؤال أو حادثة في زمنها، ويسمي العلماء ذلك «أسباب النزول»."
+          }
+        },
+        {
+          "title": {
+            "en": "Rulings step by step",
+            "de": "Regelungen Schritt für Schritt",
+            "ar": "التدرج في التشريع"
+          },
+          "body": {
+            "en": "Rulings often came gradually. A well-known example is wine: first its harm was named (2:219), then prayer while intoxicated was forbidden (4:43), then it was prohibited (5:90).",
+            "de": "Regelungen kamen oft schrittweise. Ein bekanntes Beispiel ist der Wein: zuerst wurde sein Schaden genannt (2:219), dann das Gebet im Rausch untersagt (4:43), dann er selbst verboten (5:90).",
+            "ar": "كثيرًا ما جاءت الأحكام بالتدريج، ومن أشهر أمثلته الخمر: ذُكر إثمها أولًا (٢:٢١٩)، ثم نُهي عن الصلاة حال السكر (٤:٤٣)، ثم حُرمت (٥:٩٠)."
+          }
+        },
+        {
+          "verse": "2:281",
+          "check": "fear a Day",
+          "title": {
+            "en": "Among the last verses",
+            "de": "Unter den letzten Versen",
+            "ar": "من أواخر ما نزل"
+          },
+          "body": {
+            "en": "Scholars differ on the very last verse revealed. Many name this one: a reminder of the Day of return.",
+            "de": "Die Gelehrten sind uneins über den allerletzten offenbarten Vers. Viele nennen diesen: eine Erinnerung an den Tag der Rückkehr.",
+            "ar": "اختلف العلماء في آخر آية نزلت، وكثير منهم يذكرون هذه الآية، وفيها تذكير بيوم الرجوع إلى الله."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons for learners",
+            "de": "Lehren für Lernende",
+            "ar": "دروس للمتعلم"
+          },
+          "list": {
+            "en": [
+              "Take the Quran in small portions",
+              "Act on what you learn before moving on",
+              "Read verses together with their context",
+              "Let it strengthen your heart over the years"
+            ],
+            "de": [
+              "Nehmen Sie den Koran in kleinen Abschnitten auf",
+              "Handeln Sie nach dem Gelernten, bevor Sie weitergehen",
+              "Lesen Sie Verse zusammen mit ihrem Zusammenhang",
+              "Lassen Sie ihn Ihr Herz über die Jahre festigen"
+            ],
+            "ar": [
+              "خذ القرآن قليلًا قليلًا",
+              "اعمل بما تعلمت قبل أن تنتقل",
+              "اقرأ الآيات في سياقها",
+              "دعه يثبّت قلبك على مر السنين"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Badr al-Din al-Zarkashi, al-Burhan fi 'Ulum al-Qur'an"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-03-makki-madani",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 3",
+          "de": "Koranwissenschaften · 3",
+          "ar": "علوم القرآن · ٣"
+        },
+        "title": {
+          "en": "Makki and Madani surahs",
+          "de": "Mekkanische und medinensische Suren",
+          "ar": "المكي والمدني"
+        },
+        "sub": {
+          "en": "Before and after the Hijrah: two phases of one message",
+          "de": "Vor und nach der Hidschra: zwei Phasen einer Botschaft",
+          "ar": "قبل الهجرة وبعدها: مرحلتان لرسالة واحدة"
+        },
+        "arabic": "المكي والمدني"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Time, not place",
+            "de": "Zeit, nicht Ort",
+            "ar": "العبرة بالزمان لا بالمكان"
+          },
+          "arabic": "قبل الهجرة · بعد الهجرة",
+          "body": {
+            "en": "Most scholars call a passage Makki if it was revealed before the Hijrah, and Madani if it came after it, even when it came down in or near Makkah.",
+            "de": "Die meisten Gelehrten nennen einen Abschnitt mekkanisch, wenn er vor der Hidschra offenbart wurde, und medinensisch, wenn er danach kam, selbst wenn er in oder bei Mekka herabkam.",
+            "ar": "المشهور عند العلماء أن المكي ما نزل قبل الهجرة، والمدني ما نزل بعدها، ولو نزل بمكة أو قربها."
+          }
+        },
+        {
+          "title": {
+            "en": "Signs of Makki passages",
+            "de": "Merkmale mekkanischer Abschnitte",
+            "ar": "من سمات المكي"
+          },
+          "list": {
+            "en": [
+              "Faith in one God and in the Hereafter",
+              "Stories of earlier prophets and nations",
+              "Short, rhythmic verses with vivid images",
+              "Often addressed to all people"
+            ],
+            "de": [
+              "Glaube an den einen Gott und an das Jenseits",
+              "Geschichten früherer Propheten und Völker",
+              "Kurze, rhythmische Verse mit starken Bildern",
+              "Oft an alle Menschen gerichtet"
+            ],
+            "ar": [
+              "الدعوة إلى التوحيد والإيمان بالآخرة",
+              "قصص الأنبياء والأمم السابقة",
+              "آيات قصيرة ذات إيقاع وصور قوية",
+              "الخطاب غالبًا للناس جميعًا"
+            ]
+          }
+        },
+        {
+          "verse": "81:1-3",
+          "check": "sun is wrapped",
+          "title": {
+            "en": "A Makki voice",
+            "de": "Eine mekkanische Stimme",
+            "ar": "صوت مكي"
+          },
+          "body": {
+            "en": "Short verses and powerful images of the Last Day: typical of the Makkan period.",
+            "de": "Kurze Verse und starke Bilder vom Jüngsten Tag: typisch für die mekkanische Zeit.",
+            "ar": "آيات قصيرة وصور قوية ليوم القيامة، وهذا من سمات المرحلة المكية."
+          }
+        },
+        {
+          "title": {
+            "en": "Signs of Madani passages",
+            "de": "Merkmale medinensischer Abschnitte",
+            "ar": "من سمات المدني"
+          },
+          "list": {
+            "en": [
+              "Rulings on worship, family and trade",
+              "The life of a growing community",
+              "Dialogue with the People of the Book",
+              "Longer verses, often addressed to the believers"
+            ],
+            "de": [
+              "Regelungen zu Gottesdienst, Familie und Handel",
+              "Das Leben einer wachsenden Gemeinschaft",
+              "Gespräch mit den Leuten der Schrift",
+              "Längere Verse, oft an die Gläubigen gerichtet"
+            ],
+            "ar": [
+              "أحكام العبادات والأسرة والمعاملات",
+              "بناء مجتمع ناشئ",
+              "محاورة أهل الكتاب",
+              "آيات أطول، والخطاب غالبًا للمؤمنين"
+            ]
+          }
+        },
+        {
+          "verse": "2:183",
+          "check": "decreed upon you is fasting",
+          "title": {
+            "en": "A Madani voice",
+            "de": "Eine medinensische Stimme",
+            "ar": "صوت مدني"
+          },
+          "body": {
+            "en": "Addressed to the believers, and setting out an act of worship: fasting.",
+            "de": "An die Gläubigen gerichtet, mit einer gottesdienstlichen Pflicht: dem Fasten.",
+            "ar": "خطاب للمؤمنين وتشريع لعبادة: الصيام."
+          }
+        },
+        {
+          "title": {
+            "en": "86 and 28",
+            "de": "86 und 28",
+            "ar": "٨٦ و٢٨"
+          },
+          "body": {
+            "en": "In the classification Quran.com uses, 86 surahs are Makki and 28 Madani. Scholars differ on a few surahs, and some surahs contain verses from the other period.",
+            "de": "In der Einteilung, die Quran.com verwendet, sind 86 Suren mekkanisch und 28 medinensisch. Bei einigen Suren sind die Gelehrten uneins, und manche Suren enthalten Verse aus der jeweils anderen Zeit.",
+            "ar": "في التصنيف الذي يعتمده موقع Quran.com ست وثمانون سورة مكية وثمانٍ وعشرون مدنية، واختلف العلماء في بعض السور، وفي بعضها آيات من المرحلة الأخرى."
+          }
+        },
+        {
+          "title": {
+            "en": "Why it matters",
+            "de": "Warum es wichtig ist",
+            "ar": "لماذا يهمنا ذلك؟"
+          },
+          "body": {
+            "en": "Knowing the period helps you read a verse in its setting, see how rulings unfolded over time, and notice how faith was built first, before laws.",
+            "de": "Die Zeit zu kennen hilft, einen Vers in seinem Umfeld zu lesen, zu sehen, wie sich Regelungen entfalteten, und zu erkennen, dass zuerst der Glaube aufgebaut wurde, dann die Gesetze.",
+            "ar": "معرفة زمن النزول تعين على فهم الآية في سياقها، وتتبع تدرج الأحكام، وإدراك أن بناء الإيمان سبق التشريع."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Badr al-Din al-Zarkashi, al-Burhan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Quran.com, chapter information",
+          "url": "https://quran.com"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-04-compilation",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 4",
+          "de": "Koranwissenschaften · 4",
+          "ar": "علوم القرآن · ٤"
+        },
+        "title": {
+          "en": "How the Quran was compiled",
+          "de": "Wie der Koran gesammelt wurde",
+          "ar": "جمع القرآن"
+        },
+        "sub": {
+          "en": "From memory and written pieces to one agreed copy",
+          "de": "Vom Gedächtnis und einzelnen Schriftstücken zu einer gemeinsamen Abschrift",
+          "ar": "من الصدور والرقاع إلى مصحف مجمع عليه"
+        },
+        "arabic": "جمع القرآن"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "In the Prophet's lifetime",
+            "de": "Zu Lebzeiten des Propheten",
+            "ar": "في حياة النبي ﷺ"
+          },
+          "arabic": "كتّاب الوحي",
+          "body": {
+            "en": "Every revelation was memorised by many Companions and written down by scribes such as Zayd ibn Thabit, on parchment, palm stalks, bone and stone. It was not yet bound in one volume.",
+            "de": "Jede Offenbarung wurde von vielen Gefährten auswendig gelernt und von Schreibern wie Zaid ibn Thabit aufgeschrieben, auf Pergament, Palmstängeln, Knochen und Stein. In einem Band gebunden war sie noch nicht.",
+            "ar": "حفظ كثير من الصحابة كل ما نزل، وكتبه كتّاب الوحي كزيد بن ثابت على الرقاع والعسب والعظام والحجارة، ولم يكن مجموعًا بعد في مجلد واحد."
+          }
+        },
+        {
+          "hadith": "bukhari:4998",
+          "check": "twice",
+          "title": {
+            "en": "Reviewed every Ramadan",
+            "de": "Jeden Ramadan wiederholt",
+            "ar": "المعارضة في كل رمضان"
+          },
+          "body": {
+            "en": "Jibril reviewed the Quran with the Prophet each year, and twice in his final year.",
+            "de": "Dschibril ging den Koran jedes Jahr mit dem Propheten durch, im letzten Lebensjahr zweimal.",
+            "ar": "كان جبريل يعارض النبي ﷺ القرآن كل عام، وعارضه مرتين في العام الذي توفي فيه."
+          }
+        },
+        {
+          "title": {
+            "en": "Under Abu Bakr",
+            "de": "Unter Abu Bakr",
+            "ar": "في عهد أبي بكر"
+          },
+          "body": {
+            "en": "After the battle of al-Yamamah, where many who knew the Quran by heart were killed, 'Umar urged Abu Bakr to gather it in one collection. Zayd ibn Thabit was given the task.",
+            "de": "Nach der Schlacht von al-Yamama, in der viele fielen, die den Koran auswendig kannten, drängte 'Umar Abu Bakr, ihn in einer Sammlung zusammenzuführen. Zaid ibn Thabit erhielt die Aufgabe.",
+            "ar": "بعد معركة اليمامة التي قُتل فيها كثير من حفاظ القرآن، أشار عمر على أبي بكر بجمعه في موضع واحد، فكُلّف زيد بن ثابت بذلك."
+          }
+        },
+        {
+          "hadith": "bukhari:4989",
+          "check": "search for",
+          "title": {
+            "en": "Zayd's task",
+            "de": "Zaids Aufgabe",
+            "ar": "مهمة زيد"
+          },
+          "body": {
+            "en": "Zayd, a scribe of revelation, searched written pieces and people's memories. The pages were kept by Abu Bakr, then 'Umar, then Hafsah.",
+            "de": "Zaid, ein Schreiber der Offenbarung, durchsuchte Schriftstücke und das Gedächtnis der Menschen. Die Blätter verwahrten Abu Bakr, dann 'Umar, dann Hafsa.",
+            "ar": "تتبع زيد، وهو من كتّاب الوحي، المكتوب وما في صدور الرجال، وبقيت الصحف عند أبي بكر ثم عمر ثم حفصة."
+          }
+        },
+        {
+          "title": {
+            "en": "Under 'Uthman",
+            "de": "Unter 'Uthman",
+            "ar": "في عهد عثمان"
+          },
+          "arabic": "المصاحف العثمانية",
+          "body": {
+            "en": "As Islam spread, differences in recitation alarmed Hudhayfah ibn al-Yaman. 'Uthman had Zayd and others copy Hafsah's pages into masahif, sent them to the main regions and had other copies burned.",
+            "de": "Als der Islam sich ausbreitete, beunruhigten Unterschiede in der Rezitation Hudhaifa ibn al-Yaman. 'Uthman ließ Zaid und andere Hafsas Blätter in Masahif abschreiben, sandte sie in die großen Regionen und ließ andere Abschriften verbrennen.",
+            "ar": "لما اتسعت رقعة الإسلام أفزع حذيفةَ بنَ اليمان اختلافُ الناس في القراءة، فأمر عثمان زيدًا وآخرين بنسخ صحف حفصة في مصاحف أرسلها إلى الأمصار، وأمر بإحراق ما سواها."
+          }
+        },
+        {
+          "hadith": "bukhari:4988",
+          "check": "Surat Ahzab",
+          "title": {
+            "en": "Checked verse by verse",
+            "de": "Vers für Vers geprüft",
+            "ar": "تحقق آية آية"
+          },
+          "body": {
+            "en": "Even a single verse was searched for until it was found in writing with a Companion.",
+            "de": "Selbst nach einem einzelnen Vers wurde gesucht, bis er schriftlich bei einem Gefährten gefunden war.",
+            "ar": "حتى الآية الواحدة كانوا يبحثون عنها حتى وجدوها مكتوبة عند أحد الصحابة."
+          }
+        },
+        {
+          "title": {
+            "en": "Two compilations, two aims",
+            "de": "Zwei Sammlungen, zwei Ziele",
+            "ar": "جمعان وغايتان"
+          },
+          "list": {
+            "en": [
+              "Abu Bakr: to keep the Quran safe in one collection",
+              "'Uthman: to unite Muslims on agreed copies",
+              "The text was gathered, not changed",
+              "Today's mushafs go back to the 'Uthmani copies"
+            ],
+            "de": [
+              "Abu Bakr: den Koran in einer Sammlung sichern",
+              "'Uthman: die Muslime auf gemeinsame Abschriften einen",
+              "Der Text wurde gesammelt, nicht verändert",
+              "Heutige Mushafs gehen auf die 'uthmanischen Abschriften zurück"
+            ],
+            "ar": [
+              "أبو بكر: حفظ القرآن مجموعًا في موضع واحد",
+              "عثمان: جمع المسلمين على مصاحف متفق عليها",
+              "جُمع النص ولم يُغيَّر",
+              "مصاحف اليوم ترجع إلى المصاحف العثمانية"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sahih al-Bukhari 4986, the collection under Abu Bakr",
+          "url": "https://sunnah.com/bukhari:4986"
+        },
+        {
+          "label": "Sahih al-Bukhari 4987, the copies under 'Uthman",
+          "url": "https://sunnah.com/bukhari:4987"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-05-structure",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 5",
+          "de": "Koranwissenschaften · 5",
+          "ar": "علوم القرآن · ٥"
+        },
+        "title": {
+          "en": "How the Quran is divided",
+          "de": "Wie der Koran eingeteilt ist",
+          "ar": "تقسيم المصحف"
+        },
+        "sub": {
+          "en": "Surah, ayah, juz, hizb, manzil and ruku': a map of the mushaf",
+          "de": "Sure, Vers, Dschuz', Hizb, Manzil und Ruku': eine Karte des Mushaf",
+          "ar": "السورة والآية والجزء والحزب والمنزل والركوع"
+        },
+        "arabic": "أجزاء المصحف"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "114 surahs, 6236 verses",
+            "de": "114 Suren, 6236 Verse",
+            "ar": "١١٤ سورة و٦٢٣٦ آية"
+          },
+          "arabic": "سورة · آية",
+          "body": {
+            "en": "The Quran has 114 surahs. In the Kufan count, used in most printed mushafs today, it has 6236 verses. Other counting traditions differ slightly in where verses end, not in the text.",
+            "de": "Der Koran hat 114 Suren. In der kufischen Zählung, die die meisten heutigen gedruckten Mushafs verwenden, hat er 6236 Verse. Andere Zähltraditionen unterscheiden sich leicht darin, wo Verse enden, nicht im Text.",
+            "ar": "في القرآن ١١٤ سورة، وعدد آياته في العد الكوفي، المعتمد في أكثر المصاحف المطبوعة اليوم، ٦٢٣٦ آية، وتختلف مذاهب العد قليلًا في رؤوس الآي لا في النص."
+          }
+        },
+        {
+          "verse": "24:1",
+          "check": "verses of clear evidence",
+          "title": {
+            "en": "The word surah",
+            "de": "Das Wort Sure",
+            "ar": "لفظ السورة"
+          },
+          "body": {
+            "en": "The Quran itself calls a chapter a surah, and its parts ayat: signs and verses.",
+            "de": "Der Koran selbst nennt ein Kapitel Sure und seine Teile Ayat: Zeichen und Verse.",
+            "ar": "يسمي القرآن نفسه الجزء منه سورة، ويسمي أجزاءها آيات."
+          }
+        },
+        {
+          "title": {
+            "en": "Juz: thirty parts",
+            "de": "Dschuz': dreißig Teile",
+            "ar": "الجزء: ثلاثون جزءًا"
+          },
+          "arabic": "جزء",
+          "body": {
+            "en": "A later aid for readers divides the Quran into thirty parts of about equal length. One juz a day completes it in a month, as many do in Ramadan.",
+            "de": "Eine spätere Lesehilfe teilt den Koran in dreißig etwa gleich lange Teile. Ein Dschuz' pro Tag vollendet ihn in einem Monat, wie viele es im Ramadan tun.",
+            "ar": "قسّم المتأخرون القرآن تيسيرًا للقراء ثلاثين جزءًا متقاربة الطول، فمن قرأ جزءًا كل يوم ختمه في شهر، كما يفعل كثيرون في رمضان."
+          }
+        },
+        {
+          "title": {
+            "en": "Hizb and its quarters",
+            "de": "Hizb und seine Viertel",
+            "ar": "الحزب وأرباعه"
+          },
+          "arabic": "حزب · ربع",
+          "body": {
+            "en": "Each juz is split into two hizbs, sixty in all, and each hizb into four quarters. Many mushafs mark these quarters in the margin.",
+            "de": "Jeder Dschuz' ist in zwei Hizb geteilt, insgesamt sechzig, und jeder Hizb in vier Viertel. Viele Mushafs markieren diese Viertel am Rand.",
+            "ar": "كل جزء حزبان، فهي ستون حزبًا، وكل حزب أربعة أرباع، وتُعلَّم الأرباع في هامش كثير من المصاحف."
+          }
+        },
+        {
+          "title": {
+            "en": "Manzil: seven stations",
+            "de": "Manzil: sieben Stationen",
+            "ar": "المنازل السبعة"
+          },
+          "arabic": "فمي بشوق",
+          "body": {
+            "en": "Seven parts for reading the whole Quran in a week. They begin at al-Fatiha, al-Ma'idah, Yunus, al-Isra', ash-Shu'ara', as-Saffat and Qaf. The phrase fami bi-shawq holds their first letters.",
+            "de": "Sieben Teile, um den ganzen Koran in einer Woche zu lesen. Sie beginnen bei al-Fatiha, al-Ma'ida, Yunus, al-Isra', asch-Schu'ara', as-Saffat und Qaf. Der Merksatz fami bi-schauq enthält ihre Anfangsbuchstaben.",
+            "ar": "سبعة أقسام لختم القرآن في أسبوع، تبدأ بالفاتحة والمائدة ويونس والإسراء والشعراء والصافات وق، ويجمع أوائلها قولهم «فمي بشوق»."
+          }
+        },
+        {
+          "title": {
+            "en": "Ruku': units of meaning",
+            "de": "Ruku': Sinneinheiten",
+            "ar": "الركوع: وحدات المعنى"
+          },
+          "arabic": "ركوع",
+          "body": {
+            "en": "Many South Asian mushafs mark a ruku' with an 'ayn in the margin: a passage of related verses, a natural length for one unit of prayer.",
+            "de": "Viele südasiatische Mushafs markieren einen Ruku' mit einem 'Ain am Rand: ein Abschnitt zusammengehöriger Verse, eine natürliche Länge für eine Gebetseinheit.",
+            "ar": "تُعلّم مصاحف كثيرة في جنوب آسيا الركوع بحرف العين في الهامش، وهو مقطع من آيات مترابطة يناسب طوله ركعة واحدة."
+          }
+        },
+        {
+          "title": {
+            "en": "Plan your reading",
+            "de": "Planen Sie Ihr Lesen",
+            "ar": "خطط لقراءتك"
+          },
+          "list": {
+            "en": [
+              "One juz a day: the whole Quran in a month",
+              "One manzil a day: the whole Quran in a week",
+              "One hizb a day: the whole Quran in two months",
+              "A few pages a day: steady and lasting"
+            ],
+            "de": [
+              "Ein Dschuz' am Tag: der ganze Koran in einem Monat",
+              "Ein Manzil am Tag: der ganze Koran in einer Woche",
+              "Ein Hizb am Tag: der ganze Koran in zwei Monaten",
+              "Einige Seiten am Tag: beständig und dauerhaft"
+            ],
+            "ar": [
+              "جزء كل يوم: ختمة في شهر",
+              "منزل كل يوم: ختمة في أسبوع",
+              "حزب كل يوم: ختمة في شهرين",
+              "صفحات قليلة كل يوم: قليل دائم"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-06-verses-of-prostration",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 6",
+          "de": "Koranwissenschaften · 6",
+          "ar": "علوم القرآن · ٦"
+        },
+        "title": {
+          "en": "The verses of prostration",
+          "de": "Die Verse der Niederwerfung",
+          "ar": "آيات السجدة"
+        },
+        "sub": {
+          "en": "Fifteen places in the mushaf where reciters bow down to the ground",
+          "de": "Fünfzehn Stellen im Mushaf, an denen Rezitierende sich niederwerfen",
+          "ar": "خمسة عشر موضعًا في المصحف يسجد عندها التالي"
+        },
+        "arabic": "سجود التلاوة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Sujud at-tilawah",
+            "de": "Sudschud at-tilawa",
+            "ar": "سجود التلاوة"
+          },
+          "arabic": "سجود التلاوة",
+          "body": {
+            "en": "Certain verses invite a prostration when you recite or hear them. The Madinah mushaf marks fifteen such places with a small sign at the end of the verse.",
+            "de": "Bestimmte Verse laden zur Niederwerfung ein, wenn Sie sie rezitieren oder hören. Der Mushaf von Medina markiert fünfzehn solcher Stellen mit einem kleinen Zeichen am Versende.",
+            "ar": "في القرآن آيات يُشرع عندها السجود لمن قرأها أو سمعها، وقد علّم مصحف المدينة خمسة عشر موضعًا منها بعلامة صغيرة في آخر الآية."
+          }
+        },
+        {
+          "title": {
+            "en": "The fifteen places",
+            "de": "Die fünfzehn Stellen",
+            "ar": "المواضع الخمسة عشر"
+          },
+          "body": {
+            "en": "7:206, 13:15, 16:50, 17:109, 19:58, 22:18, 22:77, 25:60, 27:26, 32:15, 38:24, 41:38, 53:62, 84:21 and 96:19, as marked in the Madinah mushaf. The schools differ on a few of them.",
+            "de": "7:206, 13:15, 16:50, 17:109, 19:58, 22:18, 22:77, 25:60, 27:26, 32:15, 38:24, 41:38, 53:62, 84:21 und 96:19, wie im Mushaf von Medina markiert. Bei einigen sind die Rechtsschulen uneins.",
+            "ar": "٧:٢٠٦، ١٣:١٥، ١٦:٥٠، ١٧:١٠٩، ١٩:٥٨، ٢٢:١٨، ٢٢:٧٧، ٢٥:٦٠، ٢٧:٢٦، ٣٢:١٥، ٣٨:٢٤، ٤١:٣٨، ٥٣:٦٢، ٨٤:٢١، ٩٦:١٩، كما في مصحف المدينة، واختلفت المذاهب في بعضها."
+          }
+        },
+        {
+          "verse": "32:15",
+          "check": "prostration",
+          "title": {
+            "en": "A surah named after it",
+            "de": "Eine Sure, die danach benannt ist",
+            "ar": "سورة تحمل اسمها"
+          },
+          "body": {
+            "en": "Surah as-Sajdah takes its name from this verse: the humble answer a reminder with prostration.",
+            "de": "Sure as-Sadschda trägt ihren Namen nach diesem Vers: die Demütigen antworten auf eine Ermahnung mit Niederwerfung.",
+            "ar": "سُميت سورة السجدة بهذه الآية: فالمتواضعون يستجيبون للتذكير بالسجود."
+          }
+        },
+        {
+          "verse": "17:109",
+          "check": "weeping",
+          "title": {
+            "en": "Prostration with tears",
+            "de": "Niederwerfung unter Tränen",
+            "ar": "سجود مع البكاء"
+          },
+          "body": {
+            "en": "Those given knowledge are described as moved to tears, growing in humility.",
+            "de": "Die mit Wissen Beschenkten werden als zu Tränen gerührt beschrieben, wachsend in Demut.",
+            "ar": "يصف القرآن أهل العلم بالبكاء عند سماعه، وبزيادة خشوعهم."
+          }
+        },
+        {
+          "verse": "96:19",
+          "check": "prostrate and draw near",
+          "title": {
+            "en": "The last in the mushaf",
+            "de": "Die letzte im Mushaf",
+            "ar": "آخرها في المصحف"
+          },
+          "body": {
+            "en": "The final place of prostration closes the surah whose opening was the first revelation.",
+            "de": "Die letzte Stelle der Niederwerfung beschließt die Sure, deren Anfang die erste Offenbarung war.",
+            "ar": "آخر مواضع السجود يختم السورة التي كان أولها أول ما نزل."
+          }
+        },
+        {
+          "title": {
+            "en": "Where the schools differ",
+            "de": "Wo die Rechtsschulen abweichen",
+            "ar": "اختلاف المذاهب"
+          },
+          "body": {
+            "en": "Hanafis hold it to be wajib; Malikis, Shafi'is and Hanbalis a sunnah. Ja'fari fiqh makes it obligatory in four surahs (as-Sajdah, Fussilat, an-Najm, al-'Alaq) and recommended elsewhere.",
+            "de": "Hanafiten halten sie für wadschib, Malikiten, Schafi'iten und Hanbaliten für Sunna. Die dscha'faritische Rechtslehre macht sie in vier Suren zur Pflicht (as-Sadschda, Fussilat, an-Nadschm, al-'Alaq), sonst ist sie empfohlen.",
+            "ar": "يرى الحنفية أنه واجب، ويرى المالكية والشافعية والحنابلة أنه سنة، وفي الفقه الجعفري يجب في أربع سور: السجدة وفصلت والنجم والعلق، ويُستحب في غيرها."
+          }
+        },
+        {
+          "title": {
+            "en": "When you reach one",
+            "de": "Wenn Sie zu einer kommen",
+            "ar": "إذا مررت بآية سجدة"
+          },
+          "list": {
+            "en": [
+              "Prostrate once on reciting or hearing the verse",
+              "Glorify Allah in it as in the prostration of prayer",
+              "Learn your school's details on purity and takbir"
+            ],
+            "de": [
+              "Werfen Sie sich einmal nieder, wenn Sie den Vers rezitieren oder hören",
+              "Preisen Sie Allah darin wie in der Niederwerfung des Gebets",
+              "Lernen Sie die Einzelheiten Ihrer Schule zu Reinheit und Takbir"
+            ],
+            "ar": [
+              "اسجد سجدة واحدة عند قراءة الآية أو سماعها",
+              "سبّح الله فيها كما تسبّحه في سجود الصلاة",
+              "تعلّم تفاصيل مذهبك في الطهارة والتكبير"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Mushaf al-Madinah an-Nabawiyyah (King Fahd Complex)"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-07-the-challenge",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 7",
+          "de": "Koranwissenschaften · 7",
+          "ar": "علوم القرآن · ٧"
+        },
+        "title": {
+          "en": "The challenge of the Quran",
+          "de": "Die Herausforderung des Korans",
+          "ar": "التحدي القرآني"
+        },
+        "sub": {
+          "en": "Produce something like it: an invitation that still stands",
+          "de": "Etwas Gleiches hervorbringen: eine Einladung, die bis heute gilt",
+          "ar": "تحدٍّ ما زال قائمًا إلى اليوم"
+        },
+        "arabic": "التحدي"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Tahaddi and i'jaz",
+            "de": "Tahaddi und I'dschaz",
+            "ar": "التحدي والإعجاز"
+          },
+          "arabic": "التحدي والإعجاز",
+          "body": {
+            "en": "The Quran challenges those who doubt its source to produce something like it. Scholars call this tahaddi, the challenge, and the inability to meet it i'jaz, inimitability.",
+            "de": "Der Koran fordert jene, die an seiner Herkunft zweifeln, heraus, etwas Gleiches hervorzubringen. Gelehrte nennen dies Tahaddi, die Herausforderung, und die Unmöglichkeit, sie zu erfüllen, I'dschaz, Unnachahmlichkeit.",
+            "ar": "يتحدى القرآن من يشك في مصدره أن يأتي بمثله، ويسمي العلماء ذلك التحدي، ويسمون العجز عن معارضته الإعجاز."
+          }
+        },
+        {
+          "verse": "17:88",
+          "check": "produce the like",
+          "title": {
+            "en": "The whole Quran",
+            "de": "Der ganze Koran",
+            "ar": "بمثل القرآن كله"
+          },
+          "body": {
+            "en": "Even humans and jinn working together, the verse says, could not bring its like.",
+            "de": "Selbst Menschen und Dschinn gemeinsam, so der Vers, könnten nichts Gleiches bringen.",
+            "ar": "تقرر الآية أن الإنس والجن لو اجتمعوا لما قدروا على الإتيان بمثله."
+          }
+        },
+        {
+          "verse": "11:13",
+          "check": "ten sūrahs",
+          "title": {
+            "en": "Ten surahs",
+            "de": "Zehn Suren",
+            "ar": "عشر سور"
+          },
+          "body": {
+            "en": "The challenge narrows: not a whole book, only ten surahs of the same kind.",
+            "de": "Die Herausforderung wird enger: kein ganzes Buch, nur zehn Suren dieser Art.",
+            "ar": "يضيق التحدي: لا كتاب كامل، بل عشر سور مثله."
+          }
+        },
+        {
+          "verse": "2:23",
+          "check": "produce a sūrah",
+          "title": {
+            "en": "A single surah",
+            "de": "Eine einzige Sure",
+            "ar": "سورة واحدة"
+          },
+          "body": {
+            "en": "The smallest measure: one surah. The shortest surahs have only three verses.",
+            "de": "Das kleinste Maß: eine Sure. Die kürzesten Suren haben nur drei Verse.",
+            "ar": "أقل المقادير: سورة واحدة، وأقصر السور ثلاث آيات فقط."
+          }
+        },
+        {
+          "title": {
+            "en": "Among masters of language",
+            "de": "Unter Meistern der Sprache",
+            "ar": "بين أرباب البيان"
+          },
+          "body": {
+            "en": "The challenge was first made to Arabs who prized poetry and eloquence above all. Scholars see the Quran's inimitability in its language and composition, and many also in its meanings and guidance.",
+            "de": "Die Herausforderung erging zuerst an Araber, die Dichtung und Beredsamkeit über alles schätzten. Gelehrte sehen die Unnachahmlichkeit des Korans in Sprache und Aufbau, viele auch in seinen Bedeutungen und seiner Rechtleitung.",
+            "ar": "وُجّه التحدي أولًا إلى العرب وهم أهل الشعر والبيان، ويرى العلماء إعجاز القرآن في لغته ونظمه، ويرى كثير منهم إعجازه كذلك في معانيه وهدايته."
+          }
+        },
+        {
+          "verse": "4:82",
+          "check": "much contradiction",
+          "title": {
+            "en": "An invitation to reflect",
+            "de": "Eine Einladung zum Nachdenken",
+            "ar": "دعوة إلى التدبر"
+          },
+          "body": {
+            "en": "The Quran asks to be examined: reflect, and see how its parts agree.",
+            "de": "Der Koran lädt zur Prüfung ein: denken Sie nach und sehen Sie, wie seine Teile übereinstimmen.",
+            "ar": "يدعو القرآن إلى التدبر والنظر في اتساق أجزائه."
+          }
+        },
+        {
+          "title": {
+            "en": "Taking up the invitation",
+            "de": "Die Einladung annehmen",
+            "ar": "قبول الدعوة"
+          },
+          "list": {
+            "en": [
+              "Read with reflection, not only recitation",
+              "Learn some Arabic to taste its style",
+              "Compare translations, then return to the original",
+              "Note what moves you, and why"
+            ],
+            "de": [
+              "Lesen Sie mit Nachdenken, nicht nur rezitierend",
+              "Lernen Sie etwas Arabisch, um seinen Stil zu kosten",
+              "Vergleichen Sie Übersetzungen und kehren Sie zum Original zurück",
+              "Notieren Sie, was Sie berührt, und warum"
+            ],
+            "ar": [
+              "اقرأ متدبرًا لا تاليًا فقط",
+              "تعلّم شيئًا من العربية لتتذوق بيانه",
+              "قارن بين الترجمات ثم عد إلى الأصل",
+              "دوّن ما يؤثر فيك ولماذا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "al-Khattabi, Bayan I'jaz al-Qur'an"
+        },
+        {
+          "label": "al-Baqillani, I'jaz al-Qur'an"
+        },
+        {
+          "label": "'Abd al-Qahir al-Jurjani, Dala'il al-I'jaz"
+        }
+      ]
+    },
+    {
+      "id": "ulum-al-quran-08-names-of-the-quran",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Sciences of the Quran · 8",
+          "de": "Koranwissenschaften · 8",
+          "ar": "علوم القرآن · ٨"
+        },
+        "title": {
+          "en": "The names of the Quran",
+          "de": "Die Namen des Korans",
+          "ar": "أسماء القرآن"
+        },
+        "sub": {
+          "en": "How the Quran describes itself, in its own words",
+          "de": "Wie der Koran sich selbst beschreibt, in seinen eigenen Worten",
+          "ar": "كيف وصف القرآن نفسه"
+        },
+        "arabic": "أسماء القرآن"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Many names, one Book",
+            "de": "Viele Namen, ein Buch",
+            "ar": "أسماء كثيرة لكتاب واحد"
+          },
+          "arabic": "القرآن · الكتاب · الفرقان",
+          "body": {
+            "en": "The Quran calls itself by several names. Each one shows another side of the same Book: what it is, what it does, and what it brings.",
+            "de": "Der Koran nennt sich mit mehreren Namen. Jeder zeigt eine andere Seite desselben Buches: was es ist, was es bewirkt und was es bringt.",
+            "ar": "سمّى القرآن نفسه بأسماء عدة، يكشف كل منها جانبًا من الكتاب الواحد: حقيقته وأثره وما جاء به."
+          }
+        },
+        {
+          "verse": "17:9",
+          "check": "guides",
+          "title": {
+            "en": "Al-Qur'an: the recitation",
+            "de": "Al-Qur'an: die Rezitation",
+            "ar": "القرآن: المقروء"
+          },
+          "body": {
+            "en": "From the root q-r-': that which is read and recited. The word appears 70 times in the Quran.",
+            "de": "Von der Wurzel q-r-': das, was gelesen und vorgetragen wird. Das Wort kommt 70 Mal im Koran vor.",
+            "ar": "من الجذر ق ر أ: المقروء المتلو، ويرد لفظه في القرآن ٧٠ مرة."
+          }
+        },
+        {
+          "verse": "2:2",
+          "check": "the Book",
+          "title": {
+            "en": "Al-Kitab: the Book",
+            "de": "Al-Kitab: das Buch",
+            "ar": "الكتاب: المكتوب"
+          },
+          "body": {
+            "en": "From k-t-b, to write: that which is written down. Kept both in hearts and on pages.",
+            "de": "Von k-t-b, schreiben: das Aufgeschriebene. Bewahrt in Herzen und auf Seiten zugleich.",
+            "ar": "من الجذر ك ت ب: المكتوب، وهو محفوظ في الصدور والسطور معًا."
+          }
+        },
+        {
+          "verse": "25:1",
+          "check": "Criterion",
+          "title": {
+            "en": "Al-Furqan: the Criterion",
+            "de": "Al-Furqan: die Unterscheidung",
+            "ar": "الفرقان"
+          },
+          "body": {
+            "en": "That which separates truth from falsehood. Surah 25 carries this name.",
+            "de": "Das, was Wahrheit von Falschem trennt. Sure 25 trägt diesen Namen.",
+            "ar": "يفرق بين الحق والباطل، وبهذا الاسم سُميت السورة الخامسة والعشرون."
+          }
+        },
+        {
+          "verse": "15:9",
+          "check": "message",
+          "title": {
+            "en": "Adh-Dhikr: the Reminder",
+            "de": "Adh-Dhikr: die Ermahnung",
+            "ar": "الذكر"
+          },
+          "body": {
+            "en": "Dhikr is both reminder and remembrance: the Quran reminds, and it is remembered.",
+            "de": "Dhikr ist Ermahnung und Gedenken zugleich: der Koran erinnert, und man gedenkt seiner.",
+            "ar": "الذكر تذكير وتذكّر معًا: فالقرآن يذكّر، ويُذكر ويُحفظ."
+          }
+        },
+        {
+          "verse": "4:174",
+          "check": "clear light",
+          "title": {
+            "en": "Burhan and Nur",
+            "de": "Burhan und Nur",
+            "ar": "البرهان والنور"
+          },
+          "body": {
+            "en": "Proof for the mind and light for the path: two names in one verse.",
+            "de": "Beweis für den Verstand und Licht für den Weg: zwei Namen in einem Vers.",
+            "ar": "برهان للعقل ونور للطريق: اسمان في آية واحدة."
+          }
+        },
+        {
+          "verse": "10:57",
+          "check": "healing",
+          "title": {
+            "en": "Four names in one verse",
+            "de": "Vier Namen in einem Vers",
+            "ar": "أربعة أسماء في آية"
+          },
+          "body": {
+            "en": "Maw'izah, instruction; shifa', healing; huda, guidance; rahmah, mercy.",
+            "de": "Mau'iza, Belehrung; Schifa', Heilung; Huda, Rechtleitung; Rahma, Barmherzigkeit.",
+            "ar": "الموعظة والشفاء والهدى والرحمة."
+          }
+        },
+        {
+          "title": {
+            "en": "Let the names shape your reading",
+            "de": "Lassen Sie die Namen Ihr Lesen prägen",
+            "ar": "اقرأ بهدي هذه الأسماء"
+          },
+          "list": {
+            "en": [
+              "As guidance: what does it ask of me?",
+              "As healing: what does it ease in me?",
+              "As a criterion: what does it set right?",
+              "As a reminder: what have I forgotten?"
+            ],
+            "de": [
+              "Als Rechtleitung: was verlangt er von mir?",
+              "Als Heilung: was lindert er in mir?",
+              "Als Unterscheidung: was rückt er zurecht?",
+              "Als Ermahnung: was habe ich vergessen?"
+            ],
+            "ar": [
+              "هدى: ماذا يطلب مني؟",
+              "شفاء: ماذا يداوي فيّ؟",
+              "فرقان: ماذا يقوّم؟",
+              "ذكر: ماذا نسيت؟"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Badr al-Din al-Zarkashi, al-Burhan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        }
+      ]
+    }
+  ]
+}

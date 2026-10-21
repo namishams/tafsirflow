@@ -1,0 +1,523 @@
+{
+  "series": "mosques",
+  "label": {"en": "Mosques of the world", "de": "Moscheen der Welt", "ar": "مساجد العالم"},
+  "topic": "holy",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "mosques-01-masjid-al-haram",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 1", "de": "Moscheen der Welt · 1", "ar": "مساجد العالم · ١"},
+        "title": {"en": "al-Masjid al-Haram", "de": "al-Masjid al-Haram", "ar": "المسجد الحرام"},
+        "sub": {"en": "In Mecca, around the Kaaba: the direction of every prayer", "de": "In Mekka, rund um die Kaaba: die Richtung jedes Gebets", "ar": "في مكة حول الكعبة، قبلة كل صلاة"},
+        "arabic": "المسجد الحرام"
+      },
+      "slides": [
+        {
+          "verse": "3:96",
+          "check": "first House",
+          "title": {"en": "The first House", "de": "Das erste Haus", "ar": "أول بيت"},
+          "body": {"en": "The Quran calls the Kaaba the first house of worship set up for humanity, at Bakkah, a name for Mecca.", "de": "Der Koran nennt die Kaaba das erste Haus der Anbetung für die Menschen, in Bakka, einem Namen für Mekka.", "ar": "يصف القرآن الكعبة بأنها أول بيت للعبادة أقيم للبشر، ببكة، وهي من أسماء مكة."}
+        },
+        {
+          "verse": "2:127",
+          "check": "raising the foundations",
+          "title": {"en": "Built with a prayer", "de": "Mit einem Gebet erbaut", "ar": "بناء يصحبه الدعاء"},
+          "body": {"en": "Ibrahim and Ismail raised its foundations and asked for one thing only: that Allah accept their work.", "de": "Ibrahim und Ismail errichteten seine Grundmauern und baten nur um eines: dass Allah ihr Werk annimmt.", "ar": "رفع إبراهيم وإسماعيل أسسه، ولم يسألا إلا أن يتقبل الله عملهما."}
+        },
+        {
+          "title": {"en": "What the mosque surrounds", "de": "Was die Moschee umschließt", "ar": "ما يضمه المسجد"},
+          "list": {
+            "en": ["The Kaaba, the qibla of every prayer", "The Black Stone in its eastern corner", "Maqam Ibrahim, the stone linked to Ibrahim's footprints", "The well of Zamzam", "As-Safa and al-Marwa, joined by a covered walkway"],
+            "de": ["Die Kaaba, die Gebetsrichtung jedes Gebets", "Der Schwarze Stein an ihrer östlichen Ecke", "Maqam Ibrahim, der Stein mit Ibrahims Fußspuren", "Der Brunnen Zamzam", "As-Safa und al-Marwa, verbunden durch einen überdachten Gang"],
+            "ar": ["الكعبة، قبلة كل صلاة", "الحجر الأسود في ركنها الشرقي", "مقام إبراهيم، الحجر المرتبط بأثر قدميه", "بئر زمزم", "الصفا والمروة يصل بينهما المسعى المسقوف"]
+          }
+        },
+        {
+          "verse": "2:158",
+          "check": "Marwah",
+          "title": {"en": "Walking in Hajar's steps", "de": "Auf den Spuren Hadschars", "ar": "على خطى هاجر"},
+          "body": {"en": "Pilgrims walk seven times between the two hills, remembering Hajar's search for water for her son.", "de": "Pilger gehen siebenmal zwischen den beiden Hügeln und erinnern an Hadschars Suche nach Wasser für ihren Sohn.", "ar": "يسعى الحجاج والمعتمرون بين الجبلين سبعة أشواط، تذكيرًا بسعي هاجر بحثًا عن الماء لابنها."}
+        },
+        {
+          "verse": "14:37",
+          "check": "incline toward them",
+          "title": {"en": "Hearts drawn to a valley", "de": "Herzen, die sich einem Tal zuneigen", "ar": "قلوب تهفو إلى وادٍ"},
+          "body": {"en": "Ibrahim prayed for a barren valley. Today believers from every land long to stand in it.", "de": "Ibrahim betete für ein karges Tal. Heute sehnen sich Gläubige aus allen Ländern danach, dort zu stehen.", "ar": "دعا إبراهيم لوادٍ قاحل، واليوم تشتاق قلوب المؤمنين من كل البلاد إلى الوقوف فيه."}
+        },
+        {
+          "title": {"en": "A mosque that keeps growing", "de": "Eine Moschee, die weiter wächst", "ar": "مسجد يتسع على مر القرون"},
+          "body": {"en": "It was enlarged again and again: under the early caliphs, the Abbasids, the Ottomans and in modern times. The domed arcades renovated by the Ottoman architect Sinan from 1570 are its oldest surviving parts.", "de": "Sie wurde immer wieder erweitert: unter den frühen Kalifen, den Abbasiden, den Osmanen und in unserer Zeit. Die Kuppelarkaden, die der osmanische Baumeister Sinan ab 1570 erneuerte, sind ihre ältesten erhaltenen Teile.", "ar": "وُسِّع المسجد مرة بعد مرة: في عهد الخلفاء الأوائل والعباسيين والعثمانيين وفي العصر الحديث. والأروقة ذات القباب التي جددها المعماري العثماني سنان منذ سنة ١٥٧٠م هي أقدم أجزائه الباقية."}
+        },
+        {
+          "title": {"en": "The Haram in your day", "de": "Der Haram in Ihrem Alltag", "ar": "الحرم في يومك"},
+          "list": {
+            "en": ["Turn toward it five times a day, wherever you are", "Make dua for everyone who longs to visit", "Keep its peace: no pushing, no harm, no anger"],
+            "de": ["Wenden Sie sich ihm fünfmal am Tag zu, wo Sie auch sind", "Bitten Sie für alle, die sich nach einem Besuch sehnen", "Wahren Sie seinen Frieden: kein Drängen, kein Schaden, kein Zorn"],
+            "ar": ["توجّه إليه خمس مرات كل يوم أينما كنت", "ادعُ لكل من يشتاق إلى زيارته", "احفظ سكينته: لا مزاحمة ولا أذى ولا غضب"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Great Mosque of Mecca", "url": "https://en.wikipedia.org/wiki/Great_Mosque_of_Mecca"}
+      ]
+    },
+    {
+      "id": "mosques-02-masjid-an-nabawi",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 2", "de": "Moscheen der Welt · 2", "ar": "مساجد العالم · ٢"},
+        "title": {"en": "al-Masjid an-Nabawi", "de": "al-Masjid an-Nabawi", "ar": "المسجد النبوي"},
+        "sub": {"en": "The Prophet's Mosque in Medina: built by hand, home of the first community", "de": "Die Moschee des Propheten in Medina: von Hand gebaut, Heimat der ersten Gemeinde", "ar": "مسجد النبي ﷺ في المدينة: بُني بالأيدي وكان بيت الجماعة الأولى"},
+        "arabic": "المسجد النبوي الشريف"
+      },
+      "slides": [
+        {
+          "title": {"en": "Built in the first year", "de": "Im ersten Jahr erbaut", "ar": "بُني في العام الأول"},
+          "body": {"en": "After the Hijrah in 622, the Prophet chose a plot in Medina and worked on the building with his companions. Walls of mud brick, pillars of palm trunks, a roof of palm leaves.", "de": "Nach der Hidschra im Jahr 622 wählte der Prophet in Medina ein Grundstück und baute mit seinen Gefährten selbst mit. Wände aus Lehmziegeln, Säulen aus Palmstämmen, ein Dach aus Palmblättern.", "ar": "بعد الهجرة سنة ٦٢٢م اختار النبي ﷺ أرضًا في المدينة وشارك أصحابه في البناء: جدران من اللبن، وأعمدة من جذوع النخل، وسقف من جريده."}
+        },
+        {
+          "title": {"en": "Mosque, school and shelter", "de": "Moschee, Schule und Zuflucht", "ar": "مسجد ومدرسة ومأوى"},
+          "body": {"en": "It was more than a place of prayer. Here the Prophet taught, received delegations and settled disputes. Companions without homes lived on its shaded platform, the Suffa.", "de": "Sie war mehr als ein Ort des Gebets. Hier lehrte der Prophet, empfing Gesandtschaften und schlichtete Streit. Gefährten ohne Zuhause lebten auf ihrer überdachten Plattform, der Suffa.", "ar": "لم يكن مكانًا للصلاة فحسب؛ ففيه كان النبي ﷺ يعلّم ويستقبل الوفود ويقضي بين الناس، وعلى الصُّفّة المظللة فيه أقام من لا مأوى له من الصحابة."}
+        },
+        {
+          "verse": "49:4",
+          "check": "behind the chambers",
+          "title": {"en": "The chambers next door", "de": "Die Gemächer nebenan", "ar": "الحجرات المجاورة"},
+          "body": {"en": "Surah al-Hujurat is named after the rooms of the Prophet's household beside the mosque. It teaches calm manners in his presence.", "de": "Sure al-Hudschurat ist nach den Wohnräumen der Familie des Propheten neben der Moschee benannt. Sie lehrt ruhiges Benehmen in seiner Gegenwart.", "ar": "سُمّيت سورة الحجرات باسم حجرات بيت النبي ﷺ المجاورة للمسجد، وهي تعلّم الأدب والسكينة في حضرته."}
+        },
+        {
+          "title": {"en": "The Green Dome", "de": "Die Grüne Kuppel", "ar": "القبة الخضراء"},
+          "body": {"en": "The Prophet was buried in the room of Aisha beside the mosque; later enlargements brought it inside. The dome above was rebuilt in 1817 and first painted green in 1837.", "de": "Der Prophet wurde im Zimmer Aischas neben der Moschee beigesetzt; spätere Erweiterungen bezogen es in die Moschee ein. Die Kuppel darüber wurde 1817 neu gebaut und 1837 zum ersten Mal grün gestrichen.", "ar": "دُفن النبي ﷺ في حجرة عائشة بجوار المسجد، ثم أدخلتها التوسعات اللاحقة فيه. وأعيد بناء القبة فوقها سنة ١٨١٧م، وطُليت بالأخضر أول مرة سنة ١٨٣٧م."}
+        },
+        {
+          "verse": "33:56",
+          "check": "blessing upon the Prophet",
+          "title": {"en": "Greeting him with peace", "de": "Ihn mit Frieden grüßen", "ar": "السلام عليه"},
+          "body": {"en": "Visitors greet the Prophet at his resting place. Believers everywhere answer this verse with salawat.", "de": "Besucher grüßen den Propheten an seiner Ruhestätte. Gläubige überall antworten auf diesen Vers mit Segenswünschen für ihn.", "ar": "يسلّم الزائرون على النبي ﷺ عند مرقده، ويجيب المؤمنون في كل مكان هذه الآية بالصلاة عليه."}
+        },
+        {
+          "title": {"en": "The Rawdah", "de": "Die Rauda", "ar": "الروضة الشريفة"},
+          "body": {"en": "The area between his house and his minbar is called the Rawdah. Prophetic reports describe it as a garden among the gardens of Paradise, so visitors hope to pray there.", "de": "Der Bereich zwischen seinem Haus und seiner Kanzel heißt Rauda. Überlieferungen des Propheten beschreiben ihn als einen der Gärten des Paradieses, darum hoffen Besucher, dort zu beten.", "ar": "تُسمّى البقعة بين بيته ومنبره الروضة، وقد وصفتها الأحاديث بأنها روضة من رياض الجنة، فيرجو الزائرون الصلاة فيها."}
+        },
+        {
+          "title": {"en": "Visiting with adab", "de": "Besuch mit Anstand", "ar": "آداب الزيارة"},
+          "list": {
+            "en": ["Come with a sincere intention and a calm heart", "Lower your voice in the mosque", "Send abundant blessings upon the Prophet", "Make room for others, especially in the Rawdah"],
+            "de": ["Kommen Sie mit aufrichtiger Absicht und ruhigem Herzen", "Senken Sie in der Moschee Ihre Stimme", "Sprechen Sie viele Segenswünsche für den Propheten", "Machen Sie anderen Platz, besonders in der Rauda"],
+            "ar": ["احضر بنية صادقة وقلب مطمئن", "اخفض صوتك في المسجد", "أكثر من الصلاة على النبي ﷺ", "أفسح لغيرك، ولا سيما في الروضة"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Prophet's Mosque", "url": "https://en.wikipedia.org/wiki/Prophet%27s_Mosque"}
+      ]
+    },
+    {
+      "id": "mosques-03-al-aqsa",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 3", "de": "Moscheen der Welt · 3", "ar": "مساجد العالم · ٣"},
+        "title": {"en": "al-Masjid al-Aqsa", "de": "al-Masjid al-Aqsa", "ar": "المسجد الأقصى"},
+        "sub": {"en": "Jerusalem: the first qibla and a station of the Night Journey", "de": "Jerusalem: die erste Gebetsrichtung und eine Station der Nachtreise", "ar": "القدس: القبلة الأولى ومسرى النبي ﷺ"},
+        "arabic": "المسجد الأقصى"
+      },
+      "slides": [
+        {
+          "verse": "17:1",
+          "check": "al-Masjid al-Aqsa",
+          "title": {"en": "Named in the Quran", "de": "Im Koran genannt", "ar": "مذكور في القرآن"},
+          "body": {"en": "Surah al-Isra opens with the Night Journey from the Sacred Mosque in Mecca to al-Aqsa, the Farthest Mosque.", "de": "Sure al-Isra beginnt mit der Nachtreise von der Heiligen Moschee in Mekka zu al-Aqsa, der fernsten Moschee.", "ar": "تفتتح سورة الإسراء بذكر رحلة الإسراء من المسجد الحرام بمكة إلى المسجد الأقصى."}
+        },
+        {
+          "title": {"en": "More than one building", "de": "Mehr als ein Gebäude", "ar": "أكثر من مبنى واحد"},
+          "body": {"en": "Al-Masjid al-Aqsa is the whole sanctuary on the hill, also called al-Haram ash-Sharif. It holds the Qibli Mosque under its lead dome and the golden Dome of the Rock.", "de": "Al-Masjid al-Aqsa ist das ganze Heiligtum auf dem Hügel, auch al-Haram asch-Scharif genannt. Dazu gehören die Qibli-Moschee mit ihrer bleigedeckten Kuppel und der goldene Felsendom.", "ar": "المسجد الأقصى هو الحرم كله فوق الهضبة، ويسمى أيضًا الحرم الشريف، وفيه المصلى القبلي بقبته الرصاصية وقبة الصخرة الذهبية."}
+        },
+        {
+          "title": {"en": "The Dome of the Rock", "de": "Der Felsendom", "ar": "قبة الصخرة"},
+          "body": {"en": "It was built under the Umayyad caliph Abd al-Malik and dates from 691–692. It is one of the oldest surviving monuments of Islamic architecture and stands within the sanctuary.", "de": "Er wurde unter dem umayyadischen Kalifen Abd al-Malik erbaut und stammt aus den Jahren 691–692. Er gehört zu den ältesten erhaltenen Bauwerken der islamischen Architektur und steht innerhalb des Heiligtums.", "ar": "بُنيت في عهد الخليفة الأموي عبد الملك بن مروان سنة ٦٩١–٦٩٢م، وهي من أقدم المعالم الباقية في العمارة الإسلامية، وتقع داخل الحرم."}
+        },
+        {
+          "verse": "2:142",
+          "check": "qiblah",
+          "title": {"en": "The first qibla", "de": "Die erste Gebetsrichtung", "ar": "القبلة الأولى"},
+          "body": {"en": "The early Muslims prayed toward Jerusalem. In Medina the qibla was turned to the Kaaba, and these verses answer those who questioned it.", "de": "Die frühen Muslime beteten in Richtung Jerusalem. In Medina wurde die Gebetsrichtung zur Kaaba gewendet, und diese Verse antworten den Zweiflern.", "ar": "صلى المسلمون الأوائل نحو بيت المقدس، ثم حُوّلت القبلة في المدينة إلى الكعبة، وهذه الآيات ترد على من اعترض على ذلك."}
+        },
+        {
+          "verse": "21:71",
+          "check": "land which We had blessed",
+          "title": {"en": "A blessed land", "de": "Ein gesegnetes Land", "ar": "أرض مباركة"},
+          "body": {"en": "Many commentators identify this land with the region around al-Aqsa, where many prophets lived and taught.", "de": "Viele Kommentatoren verstehen darunter die Gegend um al-Aqsa, in der viele Propheten lebten und lehrten.", "ar": "يرى كثير من المفسرين أن هذه الأرض هي ما حول المسجد الأقصى، حيث عاش كثير من الأنبياء ودعوا."}
+        },
+        {
+          "verse": "53:13-15",
+          "check": "Lote Tree",
+          "title": {"en": "From al-Aqsa to the heavens", "de": "Von al-Aqsa in die Himmel", "ar": "من الأقصى إلى السماوات"},
+          "body": {"en": "Muslim tradition holds that the Ascension, the Miraj, began here. Surah an-Najm describes what the Prophet saw.", "de": "Nach muslimischer Überlieferung begann hier die Himmelfahrt, der Miradsch. Sure an-Nadschm beschreibt, was der Prophet sah.", "ar": "يذكر التراث الإسلامي أن المعراج بدأ من هنا، وتصف سورة النجم ما رآه النبي ﷺ."}
+        },
+        {
+          "title": {"en": "Keeping al-Aqsa in the heart", "de": "Al-Aqsa im Herzen tragen", "ar": "الأقصى في القلب"},
+          "list": {
+            "en": ["Learn its history and its place in the Quran", "Remember it in your dua", "Teach your children why it is honoured"],
+            "de": ["Lernen Sie seine Geschichte und seinen Platz im Koran kennen", "Gedenken Sie seiner in Ihren Bittgebeten", "Erklären Sie Ihren Kindern, warum es geehrt wird"],
+            "ar": ["تعرّف على تاريخه ومكانته في القرآن", "اذكره في دعائك", "علّم أبناءك سبب مكانته"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Al-Aqsa Mosque", "url": "https://en.wikipedia.org/wiki/Al-Aqsa_Mosque"},
+        {"label": "Wikipedia: Dome of the Rock", "url": "https://en.wikipedia.org/wiki/Dome_of_the_Rock"}
+      ]
+    },
+    {
+      "id": "mosques-04-quba",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 4", "de": "Moscheen der Welt · 4", "ar": "مساجد العالم · ٤"},
+        "title": {"en": "Masjid Quba", "de": "Masjid Quba", "ar": "مسجد قباء"},
+        "sub": {"en": "The first mosque of Islam, founded at the end of the Hijrah", "de": "Die erste Moschee des Islam, gegründet am Ende der Hidschra", "ar": "أول مسجد في الإسلام، أُسس عند تمام الهجرة"},
+        "arabic": "مسجد قباء"
+      },
+      "slides": [
+        {
+          "title": {"en": "The first mosque", "de": "Die erste Moschee", "ar": "المسجد الأول"},
+          "body": {"en": "When the Prophet reached Quba on his Hijrah in 622, a mosque was founded there, at the edge of Medina. It is widely regarded as the first mosque in Islam.", "de": "Als der Prophet auf seiner Hidschra im Jahr 622 Quba erreichte, wurde dort am Rand von Medina eine Moschee gegründet. Sie gilt weithin als die erste Moschee des Islam.", "ar": "لما وصل النبي ﷺ إلى قباء في هجرته سنة ٦٢٢م أُسس فيها مسجد على أطراف المدينة، ويُعد على نطاق واسع أول مسجد في الإسلام."}
+        },
+        {
+          "verse": "9:108",
+          "check": "founded on righteousness",
+          "title": {"en": "Founded on taqwa", "de": "Auf Gottesfurcht gegründet", "ar": "أُسس على التقوى"},
+          "body": {"en": "Many commentators link this verse to Quba. Others apply it to the Prophet's Mosque, and many say it fits both.", "de": "Viele Kommentatoren beziehen diesen Vers auf Quba. Andere beziehen ihn auf die Moschee des Propheten, und viele sagen, er passe auf beide.", "ar": "يربط كثير من المفسرين هذه الآية بمسجد قباء، ويحملها آخرون على المسجد النبوي، ويرى كثيرون أنها تصدق على المسجدين."}
+        },
+        {
+          "title": {"en": "People who love purity", "de": "Menschen, die Reinheit lieben", "ar": "قوم يحبون الطهارة"},
+          "body": {"en": "The same verse praises the people of this mosque for loving to purify themselves. Commentators explain it as care for cleanliness of body and of heart.", "de": "Derselbe Vers lobt die Menschen dieser Moschee, weil sie die Reinheit lieben. Kommentatoren erklären es als Sorgfalt für die Reinheit des Körpers und des Herzens.", "ar": "تثني الآية نفسها على أهل هذا المسجد بحبهم للطهارة، ويفسرها العلماء بالعناية بطهارة البدن والقلب."}
+        },
+        {
+          "title": {"en": "A regular visit", "de": "Ein regelmäßiger Besuch", "ar": "زيارة منتظمة"},
+          "body": {"en": "Reports in the hadith collections describe the Prophet going to Quba on Saturdays, on foot or riding, and praying there. Visitors to Medina still follow this example.", "de": "Berichte in den Hadithsammlungen erzählen, dass der Prophet samstags nach Quba ging, zu Fuß oder reitend, und dort betete. Besucher Medinas folgen bis heute diesem Beispiel.", "ar": "تذكر كتب الحديث أن النبي ﷺ كان يأتي قباء يوم السبت ماشيًا أو راكبًا ويصلي فيه، وما زال زوار المدينة يقتدون به."}
+        },
+        {
+          "title": {"en": "Rebuilt in our time", "de": "In unserer Zeit neu gebaut", "ar": "إعادة البناء في عصرنا"},
+          "body": {"en": "In the 1980s the old building was replaced. The new mosque, designed by the Egyptian architect Abdel-Wahed El-Wakil, opened in 1986 with white domes around open courtyards.", "de": "In den 1980er-Jahren wurde der alte Bau ersetzt. Die neue Moschee nach Plänen des ägyptischen Architekten Abdel-Wahed El-Wakil wurde 1986 eröffnet, mit weißen Kuppeln um offene Höfe.", "ar": "استُبدل البناء القديم في ثمانينيات القرن العشرين، وافتُتح المسجد الجديد سنة ١٩٨٦م بتصميم المعماري المصري عبد الواحد الوكيل، بقبابه البيضاء حول أفنية مفتوحة."}
+        },
+        {
+          "title": {"en": "Lessons from Quba", "de": "Lehren aus Quba", "ar": "دروس من قباء"},
+          "list": {
+            "en": ["A new community begins with a place of prayer", "Small beginnings can be blessed for centuries", "Purity of body and purity of heart belong together"],
+            "de": ["Eine neue Gemeinschaft beginnt mit einem Ort des Gebets", "Kleine Anfänge können über Jahrhunderte gesegnet sein", "Reinheit des Körpers und des Herzens gehören zusammen"],
+            "ar": ["تبدأ الجماعة الجديدة بمكان للصلاة", "قد يبارك الله البدايات الصغيرة قرونًا", "طهارة البدن وطهارة القلب متلازمتان"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Quba Mosque", "url": "https://en.wikipedia.org/wiki/Quba_Mosque"},
+        {"label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 9:107-108"}
+      ]
+    },
+    {
+      "id": "mosques-05-umayyad",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 5", "de": "Moscheen der Welt · 5", "ar": "مساجد العالم · ٥"},
+        "title": {"en": "The Umayyad Mosque", "de": "Die Umayyaden-Moschee", "ar": "الجامع الأموي"},
+        "sub": {"en": "Damascus: a mosque built on layers of sacred history", "de": "Damaskus: eine Moschee auf Schichten heiliger Geschichte", "ar": "دمشق: جامع قام على طبقات من التاريخ"},
+        "arabic": "الجامع الأموي"
+      },
+      "slides": [
+        {
+          "title": {"en": "Built by al-Walid", "de": "Erbaut unter al-Walid", "ar": "بناه الوليد"},
+          "body": {"en": "In 706 the Umayyad caliph al-Walid I began the mosque on the site of a church, which itself stood on a Roman temple. The work was finished within about a decade.", "de": "Im Jahr 706 ließ der umayyadische Kalif al-Walid I. die Moschee auf dem Gelände einer Kirche beginnen, die selbst auf einem römischen Tempel stand. Der Bau war nach etwa einem Jahrzehnt vollendet.", "ar": "بدأ الخليفة الأموي الوليد بن عبد الملك بناء الجامع سنة ٧٠٦م في موضع كنيسة قامت بدورها على معبد روماني، واكتمل البناء في نحو عقد من الزمن."}
+        },
+        {
+          "verse": "19:7",
+          "check": "John",
+          "title": {"en": "The shrine of Yahya", "de": "Der Schrein Yahyas", "ar": "مقام النبي يحيى"},
+          "body": {"en": "In the prayer hall stands a shrine that Muslim and Christian tradition link to the head of Yahya, John the Baptist.", "de": "Im Gebetssaal steht ein Schrein, den muslimische und christliche Überlieferung mit dem Haupt Yahyas, Johannes des Täufers, verbinden.", "ar": "في بيت الصلاة مقام تربطه الروايات الإسلامية والمسيحية برأس النبي يحيى عليه السلام."}
+        },
+        {
+          "title": {"en": "Remembering al-Husayn", "de": "Gedenken an al-Husain", "ar": "ذكرى الحسين"},
+          "body": {"en": "A shrine within the complex commemorates Imam al-Husayn, the grandson of the Prophet. Tradition holds that the heads of the martyrs of Karbala were brought to Damascus. Many pilgrims visit it.", "de": "Ein Schrein im Gebäudekomplex erinnert an Imam al-Husain, den Enkel des Propheten. Nach der Überlieferung wurden die Häupter der Märtyrer von Kerbela nach Damaskus gebracht. Viele Pilger besuchen ihn.", "ar": "في الجامع مشهد يخلّد ذكرى الإمام الحسين سبط النبي ﷺ، إذ تذكر الروايات أن رؤوس شهداء كربلاء حُملت إلى دمشق، ويزوره كثير من الزائرين."}
+        },
+        {
+          "title": {"en": "The Minaret of Isa", "de": "Das Minarett Isas", "ar": "مئذنة عيسى"},
+          "body": {"en": "Its tallest minaret bears the name of Isa, peace be upon him. A hadith speaks of his descent at a white minaret east of Damascus, and tradition links this minaret to it.", "de": "Sein höchstes Minarett trägt den Namen Isas, Friede sei mit ihm. Ein Hadith spricht von seiner Herabkunft bei einem weißen Minarett östlich von Damaskus, und die Überlieferung verbindet dieses Minarett damit.", "ar": "تحمل أعلى مآذنه اسم عيسى عليه السلام، فقد ورد في الحديث ذكر نزوله عند منارة بيضاء شرقي دمشق، وتربط الروايات هذه المئذنة بذلك."}
+        },
+        {
+          "title": {"en": "Gold mosaics of gardens", "de": "Goldmosaiken voller Gärten", "ar": "فسيفساء ذهبية من الجنان"},
+          "body": {"en": "Gold mosaics show rivers, trees and buildings, without people or animals. Many scholars read them as an image of Paradise.", "de": "Goldmosaiken zeigen Flüsse, Bäume und Gebäude, ohne Menschen oder Tiere. Viele Forscher deuten sie als Bild des Paradieses.", "ar": "تصور الفسيفساء الذهبية أنهارًا وأشجارًا ومباني، بلا بشر ولا حيوان، ويراها كثير من الباحثين صورة للجنة."}
+        },
+        {
+          "verse": "24:36",
+          "check": "houses",
+          "title": {"en": "Houses raised for His name", "de": "Häuser für Seinen Namen", "ar": "بيوت يُذكر فيها اسمه"},
+          "body": {"en": "Through fires and rebuilding, prayer has continued here for more than thirteen centuries.", "de": "Trotz Bränden und Wiederaufbau wird hier seit mehr als dreizehn Jahrhunderten gebetet.", "ar": "رغم الحرائق وإعادة البناء ما زالت الصلاة تقام هنا منذ أكثر من ثلاثة عشر قرنًا."}
+        },
+        {
+          "title": {"en": "Next door: Salah al-Din", "de": "Nebenan: Saladin", "ar": "بجواره: صلاح الدين"},
+          "body": {"en": "In a garden by the north wall lies the mausoleum of Salah al-Din, who died in Damascus in 1193. The old city is a Unesco World Heritage site since 1979.", "de": "In einem Garten an der Nordmauer liegt das Mausoleum Saladins, der 1193 in Damaskus starb. Die Altstadt ist seit 1979 Unesco-Welterbe.", "ar": "في حديقة عند جداره الشمالي ضريح صلاح الدين الأيوبي الذي توفي في دمشق سنة ١١٩٣م، والمدينة القديمة مدرجة في قائمة التراث العالمي لليونسكو منذ ١٩٧٩م."}
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Umayyad Mosque", "url": "https://en.wikipedia.org/wiki/Umayyad_Mosque"},
+        {"label": "Unesco: Ancient City of Damascus", "url": "https://whc.unesco.org/en/list/20"}
+      ]
+    },
+    {
+      "id": "mosques-06-kairouan",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 6", "de": "Moscheen der Welt · 6", "ar": "مساجد العالم · ٦"},
+        "title": {"en": "The Great Mosque of Kairouan", "de": "Die Große Moschee von Kairouan", "ar": "جامع القيروان الكبير"},
+        "sub": {"en": "Founded in 670: a city, a minaret and a school for the Maghreb", "de": "Gegründet 670: eine Stadt, ein Minarett und eine Schule für den Maghreb", "ar": "تأسس سنة ٦٧٠م: مدينة ومئذنة ومدرسة للمغرب"},
+        "arabic": "جامع عقبة بن نافع"
+      },
+      "slides": [
+        {
+          "title": {"en": "A city and its mosque", "de": "Eine Stadt und ihre Moschee", "ar": "مدينة ومسجدها"},
+          "body": {"en": "In 670 (50 AH) Uqba ibn Nafi founded the city of Kairouan in today's Tunisia, and with it this mosque. It is also called the Mosque of Uqba. Kairouan has been a Unesco World Heritage site since 1988.", "de": "Im Jahr 670 (50 n. H.) gründete Uqba ibn Nafi die Stadt Kairouan im heutigen Tunesien und mit ihr diese Moschee. Sie heißt auch Moschee des Uqba. Kairouan ist seit 1988 Unesco-Welterbe.", "ar": "أسس عقبة بن نافع مدينة القيروان في تونس اليوم سنة ٥٠هـ (٦٧٠م)، وأسس معها هذا الجامع الذي يسمى أيضًا جامع عقبة، والقيروان مدرجة في التراث العالمي منذ ١٩٨٨م."}
+        },
+        {
+          "title": {"en": "Rebuilt by the Aghlabids", "de": "Von den Aghlabiden neu gebaut", "ar": "أعاد الأغالبة بناءه"},
+          "body": {"en": "Around 836 the Aghlabid emir Ziyadat Allah I rebuilt the mosque. The building took on the appearance it still has today.", "de": "Um 836 baute der aghlabidische Emir Ziyadat Allah I. die Moschee neu. Damals erhielt sie das Aussehen, das sie bis heute hat.", "ar": "أعاد الأمير الأغلبي زيادة الله الأول بناء الجامع نحو سنة ٨٣٦م، فاتخذ الهيئة التي ما زال عليها إلى اليوم."}
+        },
+        {
+          "title": {"en": "A minaret that set the pattern", "de": "Ein Minarett als Vorbild", "ar": "مئذنة صارت نموذجًا"},
+          "body": {"en": "Its square minaret is often described as the oldest minaret still standing. It became a model for minarets across North Africa and al-Andalus.", "de": "Sein quadratisches Minarett gilt oft als das älteste noch stehende Minarett. Es wurde zum Vorbild für Minarette in ganz Nordafrika und al-Andalus.", "ar": "يوصف برجه المربع كثيرًا بأنه أقدم مئذنة ما زالت قائمة، وقد صار نموذجًا للمآذن في شمال إفريقيا والأندلس."}
+        },
+        {
+          "title": {"en": "Treasures of the prayer hall", "de": "Schätze des Gebetssaals", "ar": "كنوز بيت الصلاة"},
+          "body": {"en": "The mihrab is framed by ninth-century lustre tiles. The carved teak minbar from about 862 is among the oldest minbars preserved anywhere.", "de": "Der Mihrab ist von Lüsterfliesen aus dem 9. Jahrhundert eingefasst. Die geschnitzte Teakholz-Kanzel von etwa 862 gehört zu den ältesten erhaltenen Minbaren überhaupt.", "ar": "يحيط بالمحراب بلاط ذو بريق معدني من القرن التاسع، والمنبر الخشبي المنحوت من خشب الساج نحو سنة ٨٦٢م من أقدم المنابر المحفوظة في العالم."}
+        },
+        {
+          "title": {"en": "A school of the Maliki tradition", "de": "Eine Schule der malikitischen Tradition", "ar": "مدرسة للمذهب المالكي"},
+          "body": {"en": "Scholars such as Sahnun ibn Sa'id and Asad ibn al-Furat taught here. Sahnun's al-Mudawwana became a foundational work of the Maliki school across the Maghreb.", "de": "Gelehrte wie Sahnun ibn Said und Asad ibn al-Furat lehrten hier. Sahnuns al-Mudawwana wurde zu einem Grundwerk der malikitischen Rechtsschule im ganzen Maghreb.", "ar": "درّس فيه علماء مثل سحنون بن سعيد وأسد بن الفرات، وصارت مدونة سحنون من أمهات كتب المذهب المالكي في المغرب كله."}
+        },
+        {
+          "verse": "9:18",
+          "check": "maintained",
+          "title": {"en": "Who keeps mosques alive", "de": "Wer Moscheen lebendig hält", "ar": "من يعمر المساجد"},
+          "body": {"en": "The Quran ties the care of mosques to faith, prayer and zakah. Kairouan shows how one mosque can shape a whole city.", "de": "Der Koran verbindet die Pflege der Moscheen mit Glauben, Gebet und Zakat. Kairouan zeigt, wie eine Moschee eine ganze Stadt prägen kann.", "ar": "يربط القرآن عمارة المساجد بالإيمان والصلاة والزكاة، والقيروان شاهد على أن مسجدًا واحدًا قد يصنع مدينة كاملة."}
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Great Mosque of Kairouan", "url": "https://en.wikipedia.org/wiki/Great_Mosque_of_Kairouan"},
+        {"label": "Unesco: Kairouan", "url": "https://whc.unesco.org/en/list/499"}
+      ]
+    },
+    {
+      "id": "mosques-07-cordoba",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 7", "de": "Moscheen der Welt · 7", "ar": "مساجد العالم · ٧"},
+        "title": {"en": "The Great Mosque of Cordoba", "de": "Die Große Moschee von Córdoba", "ar": "جامع قرطبة الكبير"},
+        "sub": {"en": "A forest of arches in al-Andalus, and what it teaches about time", "de": "Ein Wald aus Bögen in al-Andalus und was er über die Zeit lehrt", "ar": "غابة من الأقواس في الأندلس، ودرس في تقلب الزمان"},
+        "arabic": "جامع قرطبة"
+      },
+      "slides": [
+        {
+          "title": {"en": "Begun in 785", "de": "Begonnen im Jahr 785", "ar": "بدأ بناؤه سنة ٧٨٥م"},
+          "body": {"en": "Abd al-Rahman I, the Umayyad prince who escaped to al-Andalus, began the mosque in 785. It became the heart of Cordoba, one of the great cities of its age.", "de": "Abd ar-Rahman I., der umayyadische Prinz, der nach al-Andalus geflohen war, begann den Bau im Jahr 785. Die Moschee wurde zum Herzen Córdobas, einer der großen Städte ihrer Zeit.", "ar": "بدأ عبد الرحمن الداخل، الأمير الأموي الذي نجا إلى الأندلس، بناء الجامع سنة ٧٨٥م، فصار قلب قرطبة، إحدى كبرى مدن عصرها."}
+        },
+        {
+          "title": {"en": "Growing over two centuries", "de": "Gewachsen über zwei Jahrhunderte", "ar": "اتساع على مدى قرنين"},
+          "list": {
+            "en": ["Abd al-Rahman II extended the prayer hall", "Abd al-Rahman III built its first true minaret", "Al-Hakam II added a richly decorated mihrab", "Al-Mansur enlarged it once more to the east"],
+            "de": ["Abd ar-Rahman II. erweiterte den Gebetssaal", "Abd ar-Rahman III. baute das erste echte Minarett", "Al-Hakam II. fügte einen reich geschmückten Mihrab hinzu", "Al-Mansur erweiterte sie noch einmal nach Osten"],
+            "ar": ["وسّع عبد الرحمن الأوسط بيت الصلاة", "بنى عبد الرحمن الناصر أول مئذنة حقيقية له", "أضاف الحكم المستنصر محرابًا بديع الزخرفة", "وسّعه المنصور بن أبي عامر مرة أخرى نحو الشرق"]
+          }
+        },
+        {
+          "title": {"en": "A forest of arches", "de": "Ein Wald aus Bögen", "ar": "غابة من الأقواس"},
+          "body": {"en": "Hundreds of columns carry double arches of red brick and white stone. The rows seem to go on without end and draw the eye further and further.", "de": "Hunderte Säulen tragen doppelte Bögen aus rotem Ziegel und weißem Stein. Die Reihen scheinen kein Ende zu nehmen und ziehen den Blick immer weiter.", "ar": "تحمل مئات الأعمدة أقواسًا مزدوجة من الآجر الأحمر والحجر الأبيض، وتمتد صفوفها كأنها بلا نهاية فتأخذ البصر إلى أبعد فأبعد."}
+        },
+        {
+          "title": {"en": "Gold around the mihrab", "de": "Gold um den Mihrab", "ar": "ذهب حول المحراب"},
+          "body": {"en": "Al-Hakam II had the mihrab area adorned with gold mosaics, made with the help of Byzantine craftsmen. Bands of Quranic calligraphy run around them.", "de": "Al-Hakam II. ließ den Bereich des Mihrab mit Goldmosaiken schmücken, die mit Hilfe byzantinischer Handwerker entstanden. Bänder koranischer Kalligrafie umgeben sie.", "ar": "زيّن الحكم المستنصر ما حول المحراب بفسيفساء ذهبية صُنعت بمساعدة صنّاع بيزنطيين، وتحيط بها أشرطة من الخط القرآني."}
+        },
+        {
+          "title": {"en": "From mosque to cathedral", "de": "Von der Moschee zur Kathedrale", "ar": "من مسجد إلى كاتدرائية"},
+          "body": {"en": "When Ferdinand III of Castile took Cordoba in 1236, the mosque became a cathedral. From 1523 a Renaissance nave was built into its centre. It serves as the city's cathedral today.", "de": "Als Ferdinand III. von Kastilien Córdoba 1236 eroberte, wurde die Moschee zur Kathedrale. Ab 1523 wurde ein Renaissance-Schiff in ihre Mitte gebaut. Heute ist sie die Kathedrale der Stadt.", "ar": "لما استولى فرناندو الثالث ملك قشتالة على قرطبة سنة ١٢٣٦م حُوّل الجامع إلى كاتدرائية، وبُني في وسطه منذ سنة ١٥٢٣م صحن على طراز النهضة، وهو اليوم كاتدرائية المدينة."}
+        },
+        {
+          "verse": "3:140",
+          "check": "We alternate among the people",
+          "title": {"en": "Days that change hands", "de": "Tage, die wechseln", "ar": "أيام يداولها الله"},
+          "body": {"en": "Power passes from people to people. The Quran invites us to read history as a test of faith, not as a reason to despair.", "de": "Macht geht von Volk zu Volk. Der Koran lädt ein, Geschichte als Prüfung des Glaubens zu lesen, nicht als Grund zur Verzweiflung.", "ar": "ينتقل السلطان من قوم إلى قوم، والقرآن يدعونا إلى قراءة التاريخ ابتلاءً للإيمان لا سببًا لليأس."}
+        },
+        {
+          "verse": "55:26-27",
+          "check": "Face of your Lord",
+          "title": {"en": "What remains", "de": "Was bleibt", "ar": "ما يبقى"},
+          "body": {"en": "Buildings change owners and names. What remains is Allah, and the good that was done for His sake.", "de": "Gebäude wechseln Besitzer und Namen. Was bleibt, ist Allah und das Gute, das um Seinetwillen getan wurde.", "ar": "تتبدل المباني وأسماؤها وأصحابها، ويبقى الله سبحانه، ويبقى ما عُمل لوجهه من خير."}
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Mosque-Cathedral of Cordoba", "url": "https://en.wikipedia.org/wiki/Mosque%E2%80%93Cathedral_of_C%C3%B3rdoba"},
+        {"label": "Unesco: Historic Centre of Cordoba", "url": "https://whc.unesco.org/en/list/313"}
+      ]
+    },
+    {
+      "id": "mosques-08-suleymaniye",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 8", "de": "Moscheen der Welt · 8", "ar": "مساجد العالم · ٨"},
+        "title": {"en": "The Süleymaniye Mosque", "de": "Die Süleymaniye-Moschee", "ar": "جامع السليمانية"},
+        "sub": {"en": "Istanbul: Sinan's masterpiece and a whole complex of care", "de": "Istanbul: Sinans Meisterwerk und ein ganzer Komplex der Fürsorge", "ar": "إسطنبول: تحفة سنان ومجمع كامل لخدمة الناس"},
+        "arabic": "جامع السليمانية"
+      },
+      "slides": [
+        {
+          "title": {"en": "Sinan and Suleiman", "de": "Sinan und Süleyman", "ar": "سنان وسليمان"},
+          "body": {"en": "The imperial architect Mimar Sinan built it for Sultan Suleiman the Magnificent. An inscription names 1550 as the year of foundation and 1557 as the year of opening.", "de": "Der Hofarchitekt Mimar Sinan baute sie für Sultan Süleyman den Prächtigen. Eine Inschrift nennt 1550 als Jahr der Grundsteinlegung und 1557 als Jahr der Eröffnung.", "ar": "بناه المعماري سنان آغا لسلطان العثمانيين سليمان القانوني، وتذكر نقيشة فيه سنة ١٥٥٠م للتأسيس وسنة ١٥٥٧م للافتتاح."}
+        },
+        {
+          "title": {"en": "A dome above the city", "de": "Eine Kuppel über der Stadt", "ar": "قبة فوق المدينة"},
+          "body": {"en": "It crowns the Third Hill above the Golden Horn. Inside, the great dome and its half domes open one wide space for prayer, filled with light.", "de": "Sie krönt den Dritten Hügel über dem Goldenen Horn. Innen öffnen die große Kuppel und ihre Halbkuppeln einen weiten, lichtdurchfluteten Gebetsraum.", "ar": "يعلو الجامع التل الثالث المطل على القرن الذهبي، وفي داخله تفتح القبة الكبرى وأنصاف القباب فضاءً واسعًا للصلاة يغمره النور."}
+        },
+        {
+          "title": {"en": "More than a mosque", "de": "Mehr als eine Moschee", "ar": "أكثر من مسجد"},
+          "list": {
+            "en": ["Madrasas for students of knowledge", "A hospital and a medical school", "A public kitchen for the poor", "A guesthouse, baths and rows of shops"],
+            "de": ["Medresen für Studierende des Wissens", "Ein Krankenhaus und eine medizinische Schule", "Eine öffentliche Armenküche", "Ein Gästehaus, ein Bad und Ladenreihen"],
+            "ar": ["مدارس لطلاب العلم", "مستشفى ومدرسة للطب", "مطبخ عام يطعم الفقراء", "دار للضيافة وحمّام وصفوف من الدكاكين"]
+          }
+        },
+        {
+          "verse": "76:8-9",
+          "check": "give food",
+          "title": {"en": "Feeding for His sake", "de": "Speisen um Seinetwillen", "ar": "إطعام ابتغاء وجه الله"},
+          "body": {"en": "The public kitchen served meals to students, travellers and the poor. Its spirit matches these verses: giving without asking thanks.", "de": "Die Armenküche speiste Studierende, Reisende und Arme. Ihr Geist entspricht diesen Versen: geben, ohne Dank zu erwarten.", "ar": "كان المطبخ العام يطعم الطلاب والمسافرين والفقراء، وروحه توافق هذه الآيات: عطاء بلا انتظار شكر."}
+        },
+        {
+          "title": {"en": "Resting beside the mosque", "de": "Ruhe neben der Moschee", "ar": "مراقد بجوار الجامع"},
+          "body": {"en": "Suleiman and his wife Hürrem lie in tombs in the cemetery behind the qibla wall. Sinan, the master builder, is buried just outside the walls of his own work.", "de": "Süleyman und seine Frau Hürrem ruhen in Grabbauten auf dem Friedhof hinter der Qibla-Wand. Sinan, der Baumeister, liegt gleich außerhalb der Mauern seines eigenen Werks.", "ar": "يرقد سليمان وزوجته خُرّم في ضريحين بالمقبرة خلف جدار القبلة، ودُفن سنان المعماري خارج أسوار عمله مباشرة."}
+        },
+        {
+          "title": {"en": "Heritage of the world", "de": "Erbe der Welt", "ar": "تراث للعالم"},
+          "body": {"en": "The mosque belongs to the Historic Areas of Istanbul, inscribed by Unesco in 1985. Above all, it is still a place of daily prayer.", "de": "Die Moschee gehört zu den historischen Bereichen Istanbuls, die die Unesco 1985 in das Welterbe aufnahm. Vor allem aber ist sie bis heute ein Ort des täglichen Gebets.", "ar": "الجامع جزء من المناطق التاريخية في إسطنبول التي أدرجتها اليونسكو في التراث العالمي سنة ١٩٨٥م، وهو قبل ذلك كله ما زال مكانًا للصلاة كل يوم."}
+        },
+        {
+          "title": {"en": "Lessons for our mosques", "de": "Lehren für unsere Moscheen", "ar": "دروس لمساجدنا"},
+          "list": {
+            "en": ["Beauty can serve worship without distracting from it", "A mosque can feed, heal and teach", "Plan good works that will outlive you"],
+            "de": ["Schönheit kann dem Gebet dienen, ohne abzulenken", "Eine Moschee kann speisen, heilen und lehren", "Planen Sie gute Werke, die Sie überdauern"],
+            "ar": ["قد يخدم الجمال العبادة دون أن يشغل عنها", "يمكن للمسجد أن يطعم ويداوي ويعلّم", "خطّط لأعمال صالحة تبقى بعدك"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Süleymaniye Mosque", "url": "https://en.wikipedia.org/wiki/S%C3%BCleymaniye_Mosque"},
+        {"label": "Unesco: Historic Areas of Istanbul", "url": "https://whc.unesco.org/en/list/356"}
+      ]
+    },
+    {
+      "id": "mosques-09-djenne",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 9", "de": "Moscheen der Welt · 9", "ar": "مساجد العالم · ٩"},
+        "title": {"en": "The Great Mosque of Djenné", "de": "Die Große Moschee von Djenné", "ar": "جامع جينيه الكبير"},
+        "sub": {"en": "Mali: a giant of mud brick, renewed by its people every year", "de": "Mali: ein Riese aus Lehm, jedes Jahr von den Menschen erneuert", "ar": "مالي: صرح من الطين يجدده أهله كل عام"},
+        "arabic": "جامع جينيه"
+      },
+      "slides": [
+        {
+          "title": {"en": "A mosque of earth", "de": "Eine Moschee aus Erde", "ar": "مسجد من طين"},
+          "body": {"en": "The Great Mosque of Djenné is built of sun-dried mud bricks covered with mud plaster. It is often called the largest mud-brick building in the world.", "de": "Die Große Moschee von Djenné besteht aus sonnengetrockneten Lehmziegeln mit Lehmputz. Sie gilt oft als größtes Lehmziegelgebäude der Welt.", "ar": "بُني جامع جينيه الكبير من طوب طيني مجفف بالشمس ومكسو بملاط من الطين، ويوصف كثيرًا بأنه أكبر مبنى من الطوب اللبن في العالم."}
+        },
+        {
+          "title": {"en": "Old roots", "de": "Alte Wurzeln", "ar": "جذور قديمة"},
+          "body": {"en": "A first mosque stood here from around the 13th century. The chronicle Tarikh al-Sudan credits Sultan Kunburu, a ruler who embraced Islam. Today's building was raised in 1906 and 1907.", "de": "Eine erste Moschee stand hier etwa seit dem 13. Jahrhundert. Die Chronik Tarikh as-Sudan nennt Sultan Kunburu, einen Herrscher, der den Islam annahm. Der heutige Bau entstand 1906 und 1907.", "ar": "قام هنا مسجد أول منذ نحو القرن الثالث عشر، وينسبه كتاب تاريخ السودان إلى السلطان كنبرو الذي اعتنق الإسلام، أما البناء الحالي فشُيّد سنتي ١٩٠٦ و١٩٠٧م."}
+        },
+        {
+          "title": {"en": "Wooden beams that help", "de": "Hölzer, die helfen", "ar": "أعواد تعين البنّائين"},
+          "body": {"en": "Bundles of palm wood, called toron, stick out of the walls. They decorate the facade and serve as a ready scaffold for repairs.", "de": "Bündel aus Palmholz, Toron genannt, ragen aus den Wänden. Sie schmücken die Fassade und dienen als festes Gerüst für Ausbesserungen.", "ar": "تبرز من الجدران حزم من خشب النخيل تسمى تورون، تزيّن الواجهة وتكون سقالة جاهزة لأعمال الترميم."}
+        },
+        {
+          "title": {"en": "A festival of repair", "de": "Ein Fest der Ausbesserung", "ar": "موسم الترميم"},
+          "body": {"en": "Rain wears the walls down, so once a year the whole town renews them. Masons guide the work, men apply fresh plaster, boys mix it, and women and girls bring water.", "de": "Regen trägt die Wände ab, darum erneuert sie die ganze Stadt einmal im Jahr. Maurer leiten die Arbeit, Männer tragen frischen Putz auf, Jungen rühren ihn an, Frauen und Mädchen bringen Wasser.", "ar": "تُضعف الأمطار الجدران، فتجددها المدينة كلها مرة كل عام: يقود البنّاؤون العمل، ويطلي الرجال الملاط الجديد، ويخلطه الصبية، وتحمل النساء والفتيات الماء."}
+        },
+        {
+          "verse": "3:103",
+          "check": "rope of Allah",
+          "title": {"en": "Holding together", "de": "Zusammenhalten", "ar": "الاعتصام معًا"},
+          "body": {"en": "The mosque survives each year because a whole community works as one. Unity here is not a slogan but a shared task.", "de": "Die Moschee übersteht jedes Jahr, weil eine ganze Gemeinschaft zusammenarbeitet. Einheit ist hier keine Parole, sondern gemeinsame Arbeit.", "ar": "يبقى الجامع عامًا بعد عام لأن جماعة كاملة تعمل يدًا واحدة؛ فالوحدة هنا ليست شعارًا بل عمل مشترك."}
+        },
+        {
+          "title": {"en": "World heritage at risk", "de": "Welterbe in Gefahr", "ar": "تراث عالمي في خطر"},
+          "body": {"en": "The Old Towns of Djenné became a Unesco World Heritage site in 1988. Since 2016 they have been on the List of World Heritage in Danger, mainly because of insecurity in the region.", "de": "Die Altstädte von Djenné wurden 1988 Unesco-Welterbe. Seit 2016 stehen sie auf der Liste des gefährdeten Welterbes, vor allem wegen der unsicheren Lage in der Region.", "ar": "أُدرجت مدن جينيه القديمة في قائمة التراث العالمي لليونسكو سنة ١٩٨٨م، وهي منذ ٢٠١٦م على قائمة التراث العالمي المعرض للخطر، بسبب انعدام الأمن في المنطقة أساسًا."}
+        },
+        {
+          "title": {"en": "What Djenné teaches", "de": "Was Djenné lehrt", "ar": "ما تعلمنا جينيه"},
+          "list": {
+            "en": ["Simple materials can carry great beauty", "What people care for together will last", "Every generation must renew its heritage"],
+            "de": ["Einfache Stoffe können große Schönheit tragen", "Was Menschen gemeinsam pflegen, hat Bestand", "Jede Generation muss ihr Erbe erneuern"],
+            "ar": ["المواد البسيطة قد تحمل جمالًا عظيمًا", "ما يرعاه الناس معًا يدوم", "على كل جيل أن يجدد ميراثه"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Great Mosque of Djenné", "url": "https://en.wikipedia.org/wiki/Great_Mosque_of_Djenn%C3%A9"},
+        {"label": "Unesco: Old Towns of Djenné", "url": "https://whc.unesco.org/en/list/116"}
+      ]
+    },
+    {
+      "id": "mosques-10-sheikh-zayed",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Mosques of the world · 10", "de": "Moscheen der Welt · 10", "ar": "مساجد العالم · ١٠"},
+        "title": {"en": "Sheikh Zayed Grand Mosque", "de": "Die Scheich-Zayid-Moschee", "ar": "جامع الشيخ زايد الكبير"},
+        "sub": {"en": "Abu Dhabi: white marble, calligraphy and the phases of the moon", "de": "Abu Dhabi: weißer Marmor, Kalligrafie und die Phasen des Mondes", "ar": "أبوظبي: رخام أبيض وخط عربي وأطوار القمر"},
+        "arabic": "جامع الشيخ زايد"
+      },
+      "slides": [
+        {
+          "title": {"en": "A vision of unity", "de": "Eine Vision der Einheit", "ar": "رؤية للوحدة"},
+          "body": {"en": "Sheikh Zayed bin Sultan Al Nahyan, the founding president of the UAE, wanted a mosque that brings together the cultures of the Muslim world. It was inaugurated in December 2007.", "de": "Scheich Zayid bin Sultan Al Nahyan, der Gründungspräsident der Emirate, wünschte sich eine Moschee, die die Kulturen der muslimischen Welt vereint. Sie wurde im Dezember 2007 eröffnet.", "ar": "أراد الشيخ زايد بن سلطان آل نهيان، مؤسس دولة الإمارات ورئيسها الأول، جامعًا يجمع ثقافات العالم الإسلامي، وافتُتح الجامع في ديسمبر ٢٠٠٧م."}
+        },
+        {
+          "title": {"en": "Resting in its courtyard", "de": "Ruhestätte im Hof", "ar": "مرقده في ساحته"},
+          "body": {"en": "Sheikh Zayed died in 2004, before the mosque was finished, and was buried in its courtyard. Visitors pass his resting place on their way to prayer.", "de": "Scheich Zayid starb 2004, bevor die Moschee fertig war, und wurde in ihrem Hof beigesetzt. Besucher kommen auf dem Weg zum Gebet an seiner Ruhestätte vorbei.", "ar": "توفي الشيخ زايد سنة ٢٠٠٤م قبل اكتمال الجامع، ودُفن في ساحته، فيمر الزائرون بمرقده في طريقهم إلى الصلاة."}
+        },
+        {
+          "title": {"en": "82 domes of white marble", "de": "82 Kuppeln aus weißem Marmor", "ar": "٨٢ قبة من الرخام الأبيض"},
+          "body": {"en": "Eighty-two domes in seven sizes crown the building. Long reflecting pools mirror the white arcades, so the mosque seems to stand twice.", "de": "Zweiundachtzig Kuppeln in sieben Größen krönen den Bau. Lange Wasserbecken spiegeln die weißen Arkaden, sodass die Moschee zweimal zu stehen scheint.", "ar": "تتوج المبنى اثنتان وثمانون قبة بسبعة أحجام، وتعكس الأحواض الطويلة أروقته البيضاء فيبدو الجامع كأنه قائم مرتين."}
+        },
+        {
+          "verse": "10:5",
+          "check": "phases",
+          "title": {"en": "Light that follows the moon", "de": "Licht, das dem Mond folgt", "ar": "نور يتبع القمر"},
+          "body": {"en": "At night, projected clouds on its walls grow brighter or dimmer with the lunar cycle, echoing this verse.", "de": "Nachts werden projizierte Wolken auf den Wänden mit dem Mondzyklus heller oder dunkler, ein Echo dieses Verses.", "ar": "في الليل تشتد السحب المضيئة على جدرانه أو تخفت مع دورة القمر، صدى لهذه الآية."}
+        },
+        {
+          "title": {"en": "The names of Allah on the qibla wall", "de": "Die Namen Allahs an der Qibla-Wand", "ar": "الأسماء الحسنى على جدار القبلة"},
+          "body": {"en": "The qibla wall carries the names of Allah in Kufic calligraphy by the Emirati calligrapher Mohammed Mandi Al Tamimi. Naskh and Thuluth scripts appear elsewhere in the mosque.", "de": "Die Qibla-Wand trägt die Namen Allahs in kufischer Kalligrafie des emiratischen Kalligrafen Mohammed Mandi Al Tamimi. Naschi- und Thuluth-Schrift finden sich an anderen Stellen der Moschee.", "ar": "يحمل جدار القبلة أسماء الله الحسنى بالخط الكوفي بريشة الخطاط الإماراتي محمد مندي التميمي، ويظهر خطا النسخ والثلث في مواضع أخرى من الجامع."}
+        },
+        {
+          "title": {"en": "A carpet knotted by hand", "de": "Ein handgeknüpfter Teppich", "ar": "سجادة معقودة باليد"},
+          "body": {"en": "The main prayer hall is covered by a hand-knotted carpet designed by the Iranian artist Ali Khaliqi. Many consider it the largest carpet in the world.", "de": "Den großen Gebetssaal bedeckt ein handgeknüpfter Teppich nach einem Entwurf des iranischen Künstlers Ali Khaliqi. Viele halten ihn für den größten Teppich der Welt.", "ar": "تغطي بيت الصلاة الرئيس سجادة معقودة باليد من تصميم الفنان الإيراني علي خالقي، ويعدها كثيرون أكبر سجادة في العالم."}
+        },
+        {
+          "verse": "7:31",
+          "check": "adornment",
+          "title": {"en": "Beauty for prayer", "de": "Schönheit für das Gebet", "ar": "الزينة للصلاة"},
+          "body": {"en": "Worshippers and visitors enter in modest dress. Dignity in a place of prayer has its basis in this verse.", "de": "Betende und Besucher treten in angemessener Kleidung ein. Würde am Ort des Gebets hat ihre Grundlage in diesem Vers.", "ar": "يدخل المصلون والزوار بلباس محتشم، ولهذا الأدب في بيوت الله أصل في هذه الآية."}
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Sheikh Zayed Grand Mosque", "url": "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque"}
+      ]
+    }
+  ]
+}

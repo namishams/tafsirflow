@@ -1,0 +1,18 @@
+{ "set": "hadith-kindness", "kind": "hadith", "theme": "kindness", "tradition": "sunni",
+  "items": [
+    {"id": "wh-kindness-muslim-6602", "hadith": "muslim:6602", "check": "adds to its beauty"},
+    {"id": "wh-kindness-muslim-6601", "hadith": "muslim:6601", "check": "loves kindness"},
+    {"id": "wh-kindness-muslim-6598", "hadith": "muslim:6598", "check": "deprived of good"},
+    {"id": "wh-kindness-muslim-6690", "hadith": "muslim:6690", "check": "cheerful countenance"},
+    {"id": "wh-kindness-muslim-6689", "hadith": "muslim:6689", "check": "broth"},
+    {"id": "wh-kindness-bukhari-6014", "hadith": "bukhari:6014", "check": "neighbors"},
+    {"id": "wh-kindness-bukhari-173", "hadith": "bukhari:173", "check": "quenched its thirst"},
+    {"id": "wh-kindness-bukhari-5649", "hadith": "bukhari:5649", "check": "Feed the hungry"},
+    {"id": "wh-kindness-bukhari-6005", "hadith": "bukhari:6005", "check": "orphan"},
+    {"id": "wh-kindness-muslim-7468", "hadith": "muslim:7468", "check": "widow"},
+    {"id": "wh-kindness-bukhari-12", "hadith": "bukhari:12", "check": "greet those whom you know"},
+    {"id": "wh-kindness-muslim-5622", "hadith": "muslim:5622", "check": "sparrow"},
+    {"id": "wh-kindness-muslim-4899", "hadith": "muslim:4899", "check": "guides to something good"},
+    {"id": "wh-kindness-bukhari-3822", "hadith": "bukhari:3822", "check": "he would smile"},
+    {"id": "wh-kindness-muslim-5883", "hadith": "muslim:5883", "check": "flower"}
+  ] }

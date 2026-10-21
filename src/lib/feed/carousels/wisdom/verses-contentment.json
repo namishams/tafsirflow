@@ -1,0 +1,29 @@
+{
+  "set": "verses-contentment",
+  "kind": "verse",
+  "theme": "contentment",
+  "tradition": "all",
+  "items": [
+    {"id": "wv-contentment-11-86", "verse": "11:86", "check": "What remains"},
+    {"id": "wv-contentment-13-26", "verse": "13:26", "check": "brief"},
+    {"id": "wv-contentment-20-131", "verse": "20:131", "check": "do not extend your eyes"},
+    {"id": "wv-contentment-4-32", "verse": "4:32", "check": "do not wish"},
+    {"id": "wv-contentment-9-59", "verse": "9:59", "check": "satisfied"},
+    {"id": "wv-contentment-9-100", "verse": "9:100", "check": "pleased with Him"},
+    {"id": "wv-contentment-15-88", "verse": "15:88", "check": "Do not extend your eyes"},
+    {"id": "wv-contentment-102-1", "verse": "102:1-2", "check": "Competition in"},
+    {"id": "wv-contentment-53-42", "verse": "53:42-44", "check": "laugh and weep"},
+    {"id": "wv-contentment-28-82", "verse": "28:82", "check": "extends provision"},
+    {"id": "wv-contentment-23-55", "verse": "23:55-56", "check": "hasten for them good things"},
+    {"id": "wv-contentment-34-36", "verse": "34:36", "check": "extends provision"},
+    {"id": "wv-contentment-39-49", "verse": "39:49", "check": "trial"},
+    {"id": "wv-contentment-39-52", "verse": "39:52", "check": "extends provision"},
+    {"id": "wv-contentment-17-83", "verse": "17:83", "check": "despairing"},
+    {"id": "wv-contentment-41-49", "verse": "41:49", "check": "not weary"},
+    {"id": "wv-contentment-30-36", "verse": "30:36", "check": "rejoice"},
+    {"id": "wv-contentment-18-39", "verse": "18:39", "check": "What Allah willed"},
+    {"id": "wv-contentment-68-32", "verse": "68:32", "check": "desirous"},
+    {"id": "wv-contentment-8-28", "verse": "8:28", "check": "trial"},
+    {"id": "wv-contentment-53-48", "verse": "53:48", "check": "enriches and suffices"}
+  ]
+}

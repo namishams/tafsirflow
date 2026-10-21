@@ -1,0 +1,120 @@
+{
+  "set": "reflections-quran",
+  "kind": "reflection",
+  "theme": "quran",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-quran-01",
+      "text": {
+        "en": "Read one page of the Quran a day. In less than two years you will have read all of it, one quiet morning at a time.",
+        "de": "Lesen Sie jeden Tag eine Seite des Korans. In weniger als zwei Jahren haben Sie ihn ganz gelesen, einen stillen Morgen nach dem anderen.",
+        "ar": "اقرأ صفحة واحدة من القرآن كل يوم، وفي أقل من عامين ستكون قد ختمته، صباحا هادئا بعد صباح."
+      }
+    },
+    {
+      "id": "wr-quran-02",
+      "text": {
+        "en": "A verse you have read a hundred times can suddenly speak to you on the hundred-and-first. Keep coming back.",
+        "de": "Ein Vers, den Sie hundertmal gelesen haben, kann beim hundertersten Mal plötzlich zu Ihnen sprechen. Kommen Sie immer wieder zurück.",
+        "ar": "آية قرأتها مئة مرة قد تخاطبك فجأة في المرة الأولى بعد المئة، فعد إليها دائما."
+      }
+    },
+    {
+      "id": "wr-quran-03",
+      "text": {
+        "en": "A child stumbling through a short surah beside their grandmother is one of the sweetest sounds a home can hold.",
+        "de": "Ein Kind, das neben seiner Großmutter stockend eine kurze Sure liest, ist einer der schönsten Klänge, die ein Zuhause kennen kann.",
+        "ar": "طفل يتعثر في قراءة سورة قصيرة إلى جانب جدته من أعذب الأصوات التي يحتضنها بيت."
+      }
+    },
+    {
+      "id": "wr-quran-04",
+      "text": {
+        "en": "Do not wait until you understand everything to begin. Read, look up one meaning, and let it stay with you all day.",
+        "de": "Warten Sie nicht, bis Sie alles verstehen, um zu beginnen. Lesen Sie, schlagen Sie eine Bedeutung nach und lassen Sie sie den ganzen Tag bei sich.",
+        "ar": "لا تنتظر أن تفهم كل شيء لتبدأ، اقرأ، وابحث عن معنى واحد، ودعه يرافقك طوال اليوم."
+      }
+    },
+    {
+      "id": "wr-quran-05",
+      "text": {
+        "en": "Stop at a verse that moves you and read it again, slowly. Reflection is not about how much you read, but how deeply.",
+        "de": "Halten Sie bei einem Vers inne, der Sie berührt, und lesen Sie ihn langsam noch einmal. Beim Nachdenken zählt nicht, wie viel Sie lesen, sondern wie tief.",
+        "ar": "توقف عند آية تحرك قلبك وأعد قراءتها ببطء، فالتدبر لا يقاس بكم تقرأ بل بعمق ما تقرأ."
+      }
+    },
+    {
+      "id": "wr-quran-06",
+      "text": {
+        "en": "The mushaf on your shelf is waiting patiently. Dust the cover, open it anywhere, and greet it like an old friend.",
+        "de": "Der Koran in Ihrem Regal wartet geduldig. Wischen Sie den Staub ab, schlagen Sie ihn irgendwo auf und begrüßen Sie ihn wie einen alten Freund.",
+        "ar": "المصحف على رفك ينتظر بصبر، فامسح الغبار عن غلافه، وافتحه في أي موضع، وسلم عليه كصديق قديم."
+      }
+    },
+    {
+      "id": "wr-quran-07",
+      "text": {
+        "en": "A beautiful recitation on the way to work can change the weather inside you before the day has even begun.",
+        "de": "Eine schöne Rezitation auf dem Weg zur Arbeit kann das Wetter in Ihrem Inneren ändern, bevor der Tag überhaupt begonnen hat.",
+        "ar": "تلاوة جميلة في الطريق إلى العمل قد تغير طقس قلبك قبل أن يبدأ اليوم."
+      }
+    },
+    {
+      "id": "wr-quran-08",
+      "text": {
+        "en": "Memorising even a few verses means carrying light with you wherever you go, without needing a book or a screen.",
+        "de": "Selbst ein paar Verse auswendig zu lernen heißt, Licht bei sich zu tragen, wohin Sie auch gehen, ohne Buch und ohne Bildschirm.",
+        "ar": "أن تحفظ ولو آيات قليلة يعني أن تحمل النور معك أينما ذهبت، دون حاجة إلى كتاب أو شاشة."
+      }
+    },
+    {
+      "id": "wr-quran-09",
+      "text": {
+        "en": "Read the Quran as a letter addressed to you, not as a text about other people.",
+        "de": "Lesen Sie den Koran wie einen Brief, der an Sie gerichtet ist, nicht wie einen Text über andere Menschen.",
+        "ar": "اقرأ القرآن كرسالة موجهة إليك، لا كنص يتحدث عن غيرك."
+      }
+    },
+    {
+      "id": "wr-quran-10",
+      "text": {
+        "en": "A short surah recited with presence in prayer gives your heart more than a long recitation with a wandering mind.",
+        "de": "Eine kurze Sure, im Gebet mit gegenwärtigem Herzen gelesen, gibt Ihrem Herzen mehr als eine lange Rezitation mit abschweifenden Gedanken.",
+        "ar": "سورة قصيرة تتلوها في الصلاة بحضور قلب تعطي قلبك أكثر من تلاوة طويلة بذهن شارد."
+      }
+    },
+    {
+      "id": "wr-quran-11",
+      "text": {
+        "en": "The old mushaf of a late grandparent, with its soft pages and pencil notes, is an inheritance worth more than gold.",
+        "de": "Der alte Koran verstorbener Großeltern mit seinen weichen Seiten und Bleistiftnotizen ist ein Erbe, das mehr wert ist als Gold.",
+        "ar": "مصحف الجد الراحل القديم، بصفحاته اللينة وملاحظاته بقلم الرصاص، ميراث أغلى من الذهب."
+      }
+    },
+    {
+      "id": "wr-quran-12",
+      "text": {
+        "en": "Learn the meaning of what you recite in each prayer. The Fatiha you say seventeen times a day deserves to be understood.",
+        "de": "Lernen Sie die Bedeutung dessen, was Sie in jedem Gebet rezitieren. Die Fatiha, die Sie siebzehnmal am Tag sprechen, verdient es, verstanden zu werden.",
+        "ar": "تعلم معنى ما تتلوه في كل صلاة، فالفاتحة التي تقرؤها سبع عشرة مرة في اليوم تستحق أن تفهم."
+      }
+    },
+    {
+      "id": "wr-quran-13",
+      "text": {
+        "en": "When life gets loud, the Quran does not shout back. It waits, steady and calm, for you to open it again.",
+        "de": "Wenn das Leben laut wird, schreit der Koran nicht zurück. Er wartet, beständig und ruhig, bis Sie ihn wieder aufschlagen.",
+        "ar": "حين تعلو ضوضاء الحياة لا يرفع القرآن صوته، بل ينتظر ثابتا هادئا حتى تفتحه من جديد."
+      }
+    },
+    {
+      "id": "wr-quran-14",
+      "text": {
+        "en": "Struggling with the Arabic letters is not failure. Every slow, careful word you read is a step forward, not a step behind.",
+        "de": "Mit den arabischen Buchstaben zu ringen ist kein Versagen. Jedes langsame, sorgfältige Wort, das Sie lesen, ist ein Schritt nach vorn, nicht zurück.",
+        "ar": "التعثر في الحروف العربية ليس فشلا، فكل كلمة تقرؤها ببطء وعناية خطوة إلى الأمام لا إلى الوراء."
+      }
+    }
+  ]
+}

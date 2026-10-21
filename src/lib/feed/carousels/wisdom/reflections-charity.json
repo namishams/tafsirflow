@@ -1,0 +1,120 @@
+{
+  "set": "reflections-charity",
+  "kind": "reflection",
+  "theme": "charity",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-charity-01",
+      "text": {
+        "en": "Charity does not have to wait for a big salary. A warm meal for a neighbour, a coat you no longer wear, a coin in the box: start there.",
+        "de": "Wohltätigkeit muss nicht auf ein großes Gehalt warten. Eine warme Mahlzeit für den Nachbarn, ein Mantel, den Sie nicht mehr tragen, eine Münze in der Box: Beginnen Sie dort.",
+        "ar": "الصدقة لا تنتظر راتبا كبيرا: وجبة دافئة لجارك، أو معطف لم تعد ترتديه، أو قطعة نقدية في الصندوق، فابدأ من هناك."
+      }
+    },
+    {
+      "id": "wr-charity-02",
+      "text": {
+        "en": "The most beautiful charity is often the one that only you and Allah know about.",
+        "de": "Die schönste Spende ist oft die, von der nur Sie und Allah wissen.",
+        "ar": "أجمل الصدقة كثيرا ما تكون تلك التي لا يعلم بها إلا أنت والله."
+      }
+    },
+    {
+      "id": "wr-charity-03",
+      "text": {
+        "en": "Set aside something small every month before you spend on yourself. Generosity grows best as a habit, not a mood.",
+        "de": "Legen Sie jeden Monat etwas Kleines zur Seite, bevor Sie für sich selbst ausgeben. Großzügigkeit wächst am besten als Gewohnheit, nicht als Laune.",
+        "ar": "ادخر شيئا صغيرا كل شهر قبل أن تنفق على نفسك، فالكرم ينمو عادة أفضل منه مزاجا عابرا."
+      }
+    },
+    {
+      "id": "wr-charity-04",
+      "text": {
+        "en": "Your time is charity too: an hour of tutoring, a lift to the hospital, help with a form someone cannot read.",
+        "de": "Auch Ihre Zeit ist eine Spende: eine Stunde Nachhilfe, eine Fahrt ins Krankenhaus, Hilfe bei einem Formular, das jemand nicht lesen kann.",
+        "ar": "وقتك صدقة أيضا: ساعة تعليم، أو توصيلة إلى المستشفى، أو مساعدة في استمارة لا يستطيع صاحبها قراءتها."
+      }
+    },
+    {
+      "id": "wr-charity-05",
+      "text": {
+        "en": "Give with a smile and without a lecture. The other person's dignity is part of the gift.",
+        "de": "Geben Sie mit einem Lächeln und ohne Belehrung. Die Würde des anderen ist ein Teil des Geschenks.",
+        "ar": "أعط بابتسامة ودون موعظة، فكرامة الآخذ جزء من العطاء."
+      }
+    },
+    {
+      "id": "wr-charity-06",
+      "text": {
+        "en": "A well dug, a tree planted, a book written: some gifts keep giving long after the giver is gone.",
+        "de": "Ein gegrabener Brunnen, ein gepflanzter Baum, ein geschriebenes Buch: Manche Gaben geben weiter, lange nachdem der Gebende gegangen ist.",
+        "ar": "بئر تحفر، وشجرة تغرس، وكتاب يكتب: بعض العطايا تظل تعطي بعد رحيل صاحبها بزمن طويل."
+      }
+    },
+    {
+      "id": "wr-charity-07",
+      "text": {
+        "en": "Let your children drop the coin into the charity box themselves. Let their small hands learn the joy of giving.",
+        "de": "Lassen Sie Ihre Kinder die Münze selbst in die Spendenbox werfen. Lassen Sie ihre kleinen Hände die Freude des Gebens lernen.",
+        "ar": "دع أطفالك يضعون قطعة النقود في صندوق الصدقة بأيديهم، لتتعلم أيديهم الصغيرة فرحة العطاء."
+      }
+    },
+    {
+      "id": "wr-charity-08",
+      "text": {
+        "en": "Buy from the elderly street seller even when you could get it cheaper elsewhere. Some purchases are quiet charity.",
+        "de": "Kaufen Sie beim alten Straßenhändler, auch wenn Sie es anderswo billiger bekämen. Mancher Einkauf ist eine stille Spende.",
+        "ar": "اشتر من البائع المسن في الشارع ولو وجدت الشيء أرخص في مكان آخر، فبعض المشتريات صدقة هادئة."
+      }
+    },
+    {
+      "id": "wr-charity-09",
+      "text": {
+        "en": "Giving when you have little is worth more than it looks. A small coin from a tight budget weighs heavily on the scales.",
+        "de": "Zu geben, wenn man wenig hat, ist mehr wert, als es aussieht. Eine kleine Münze aus einem knappen Budget wiegt schwer auf der Waage.",
+        "ar": "العطاء مع قلة ما في اليد أثمن مما يبدو، فقطعة نقدية صغيرة من ميزانية ضيقة ثقيلة في الميزان."
+      }
+    },
+    {
+      "id": "wr-charity-10",
+      "text": {
+        "en": "Donate blood, register as a donor, give a few hours at the food bank. Charity takes many shapes beyond money.",
+        "de": "Blut spenden, sich als Spender registrieren, ein paar Stunden bei der Tafel helfen: Wohltätigkeit hat viele Formen jenseits des Geldes.",
+        "ar": "تبرع بالدم، أو سجل اسمك متبرعا، أو اقض ساعات في بنك الطعام، فللصدقة أشكال كثيرة غير المال."
+      }
+    },
+    {
+      "id": "wr-charity-11",
+      "text": {
+        "en": "Generosity is not measured by the size of the gift, but by how gladly it leaves your hands.",
+        "de": "Großzügigkeit misst sich nicht an der Größe der Gabe, sondern daran, wie gern sie Ihre Hände verlässt.",
+        "ar": "لا يقاس الكرم بحجم العطية، بل بمقدار الرضا الذي تخرج به من يديك."
+      }
+    },
+    {
+      "id": "wr-charity-12",
+      "text": {
+        "en": "A family that gives together every Friday creates a tradition that outlives every one of its members.",
+        "de": "Eine Familie, die jeden Freitag gemeinsam spendet, schafft eine Tradition, die jedes ihrer Mitglieder überdauert.",
+        "ar": "الأسرة التي تتصدق معا كل جمعة تصنع تقليدا يعيش بعد كل أفرادها."
+      }
+    },
+    {
+      "id": "wr-charity-13",
+      "text": {
+        "en": "Pay attention to the neighbour whose lights stay off in winter. Charity often starts with noticing.",
+        "de": "Achten Sie auf den Nachbarn, bei dem im Winter die Lichter aus bleiben. Wohltätigkeit beginnt oft mit dem Hinsehen.",
+        "ar": "انتبه إلى الجار الذي تبقى أنواره مطفأة في الشتاء، فالصدقة كثيرا ما تبدأ بالانتباه."
+      }
+    },
+    {
+      "id": "wr-charity-14",
+      "text": {
+        "en": "Charity softens the heart of the one who gives as much as it eases the life of the one who receives.",
+        "de": "Wohltätigkeit macht das Herz des Gebenden ebenso weich, wie sie das Leben des Empfangenden erleichtert.",
+        "ar": "الصدقة تلين قلب المعطي بقدر ما تيسر حياة الآخذ."
+      }
+    }
+  ]
+}

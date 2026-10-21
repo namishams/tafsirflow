@@ -1,0 +1,18 @@
+{ "set": "hadith-brotherhood", "kind": "hadith", "theme": "brotherhood", "tradition": "sunni",
+  "items": [
+    {"id": "wh-brotherhood-muslim-6546", "hadith": "muslim:6546", "check": "reconciled"},
+    {"id": "wh-brotherhood-bukhari-6951", "hadith": "bukhari:6951", "check": "fulfilled the needs of his brother"},
+    {"id": "wh-brotherhood-muslim-6595", "hadith": "muslim:6595", "check": "conceals"},
+    {"id": "wh-brotherhood-bukhari-3038", "hadith": "bukhari:3038", "check": "love each other"},
+    {"id": "wh-brotherhood-bukhari-6064", "hadith": "bukhari:6064", "check": "Be brothers"},
+    {"id": "wh-brotherhood-bukhari-2446", "hadith": "bukhari:2446", "check": "like a building"},
+    {"id": "wh-brotherhood-muslim-6586", "hadith": "muslim:6586", "check": "one body"},
+    {"id": "wh-brotherhood-bukhari-6237", "hadith": "bukhari:6237", "check": "starts greeting"},
+    {"id": "wh-brotherhood-bukhari-1240", "hadith": "bukhari:1240", "check": "rights of a Muslim"},
+    {"id": "wh-brotherhood-muslim-6553", "hadith": "muslim:6553", "check": "fruit garden of Paradise"},
+    {"id": "wh-brotherhood-nawawi-13", "hadith": "nawawi:13", "check": "loves for his brother"},
+    {"id": "wh-brotherhood-muslim-6549", "hadith": "muslim:6549", "check": "another town"},
+    {"id": "wh-brotherhood-bukhari-3336", "hadith": "bukhari:3336", "check": "recruited troops"},
+    {"id": "wh-brotherhood-muslim-194", "hadith": "muslim:194", "check": "love one another"},
+    {"id": "wh-brotherhood-bukhari-6231", "hadith": "bukhari:6231", "check": "The young should greet the old"}
+  ] }

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-family",
+  "kind": "reflection",
+  "theme": "family",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-family-01",
+      "text": {
+        "en": "Call your mother today, not because something happened, but because nothing did.",
+        "de": "Rufen Sie heute Ihre Mutter an, nicht weil etwas passiert ist, sondern gerade weil nichts passiert ist.",
+        "ar": "اتصل بأمك اليوم، لا لأن شيئا حدث، بل لأنه لم يحدث شيء."
+      }
+    },
+    {
+      "id": "wr-family-02",
+      "text": {
+        "en": "The hands that once held yours to cross the street may now need yours. Hold them with the same patience.",
+        "de": "Die Hände, die einst Ihre hielten, um über die Straße zu gehen, brauchen jetzt vielleicht Ihre. Halten Sie sie mit derselben Geduld.",
+        "ar": "اليدان اللتان أمسكتا بيدك يوما لتعبر الطريق قد تحتاجان الآن إلى يدك، فأمسكهما بالصبر نفسه."
+      }
+    },
+    {
+      "id": "wr-family-03",
+      "text": {
+        "en": "A home is not made of walls but of small kindnesses: tea brought without asking, shoes set straight by the door.",
+        "de": "Ein Zuhause besteht nicht aus Wänden, sondern aus kleinen Freundlichkeiten: Tee, der ungefragt gebracht wird, Schuhe, die an der Tür geradegerückt werden.",
+        "ar": "البيت لا يبنى من الجدران، بل من لطائف صغيرة: شاي يقدم دون طلب، وأحذية ترتب عند الباب."
+      }
+    },
+    {
+      "id": "wr-family-04",
+      "text": {
+        "en": "Your parents' dua is a shelter you may not see. Keep it over you by keeping their hearts glad.",
+        "de": "Das Bittgebet Ihrer Eltern ist ein Schutzdach, das Sie vielleicht nicht sehen. Bewahren Sie es über sich, indem Sie ihre Herzen froh machen.",
+        "ar": "دعاء والديك سقف يظلك وإن لم تره، فأبقه فوقك بإسعاد قلبيهما."
+      }
+    },
+    {
+      "id": "wr-family-05",
+      "text": {
+        "en": "Children will forget most of what you told them, but never how it felt to sit beside you at the dinner table.",
+        "de": "Kinder vergessen das meiste von dem, was Sie ihnen gesagt haben, aber nie, wie es sich anfühlte, beim Abendessen neben Ihnen zu sitzen.",
+        "ar": "ينسى الأطفال أكثر ما قلته لهم، لكنهم لا ينسون أبدا شعورهم وهم يجلسون إلى جانبك على مائدة العشاء."
+      }
+    },
+    {
+      "id": "wr-family-06",
+      "text": {
+        "en": "Pray for your parents by name, whether they are beside you or already beneath the earth. The dua reaches them either way.",
+        "de": "Beten Sie für Ihre Eltern mit Namen, ob sie neben Ihnen sind oder schon unter der Erde. Das Bittgebet erreicht sie so oder so.",
+        "ar": "ادع لوالديك بأسمائهما، سواء كانا إلى جانبك أو تحت التراب، فالدعاء يصلهما في الحالين."
+      }
+    },
+    {
+      "id": "wr-family-07",
+      "text": {
+        "en": "Visiting the aunt no one visits, calling the cousin who drifted away: keeping family ties is often quiet, unglamorous work.",
+        "de": "Die Tante besuchen, die niemand besucht, den Cousin anrufen, der sich entfernt hat: Verwandtschaftsbande zu pflegen ist oft stille, unscheinbare Arbeit.",
+        "ar": "أن تزور العمة التي لا يزورها أحد، وأن تتصل بابن العم الذي ابتعد: صلة الرحم كثيرا ما تكون عملا هادئا لا بريق فيه."
+      }
+    },
+    {
+      "id": "wr-family-08",
+      "text": {
+        "en": "Speak to your spouse with the softness you keep for guests. The people closest to us deserve our best words, not our most tired ones.",
+        "de": "Sprechen Sie mit Ihrem Ehepartner so sanft wie mit Gästen. Die Menschen, die uns am nächsten sind, verdienen unsere besten Worte, nicht unsere müdesten.",
+        "ar": "كلم شريك حياتك بالرقة التي تخص بها ضيوفك، فأقرب الناس إلينا يستحقون أجمل كلماتنا لا أكثرها تعبا."
+      }
+    },
+    {
+      "id": "wr-family-09",
+      "text": {
+        "en": "A father who comes home tired and still asks about his children's day is building something no salary can buy.",
+        "de": "Ein Vater, der müde nach Hause kommt und trotzdem nach dem Tag seiner Kinder fragt, baut etwas, das kein Gehalt kaufen kann.",
+        "ar": "الأب الذي يعود متعبا ويسأل مع ذلك أولاده عن يومهم يبني شيئا لا يشتريه أي راتب."
+      }
+    },
+    {
+      "id": "wr-family-10",
+      "text": {
+        "en": "Old photographs, recipes in a grandmother's handwriting: a family's memory is a trust. Pass it on with love.",
+        "de": "Alte Fotos, Rezepte in der Handschrift der Großmutter: Das Gedächtnis einer Familie ist ein anvertrautes Gut. Geben Sie es mit Liebe weiter.",
+        "ar": "الصور القديمة، ووصفات الطبخ بخط الجدة: ذاكرة الأسرة أمانة، فسلمها لمن بعدك بحب."
+      }
+    },
+    {
+      "id": "wr-family-11",
+      "text": {
+        "en": "When your parents tell the same story for the tenth time, listen as if it were the first. One day you will miss their voices.",
+        "de": "Wenn Ihre Eltern dieselbe Geschichte zum zehnten Mal erzählen, hören Sie zu, als wäre es das erste Mal. Eines Tages werden Sie ihre Stimmen vermissen.",
+        "ar": "حين يكرر والداك القصة نفسها للمرة العاشرة، فأصغ كأنها المرة الأولى، فيوما ما ستشتاق إلى صوتيهما."
+      }
+    },
+    {
+      "id": "wr-family-12",
+      "text": {
+        "en": "Siblings who once fought over toys can become each other's greatest support. Be the first to reach out after a quarrel.",
+        "de": "Geschwister, die sich einst um Spielzeug stritten, können einander die größte Stütze werden. Seien Sie nach einem Streit der Erste, der die Hand reicht.",
+        "ar": "الإخوة الذين تشاجروا يوما على الألعاب قد يصيرون أعظم سند لبعضهم، فكن أول من يمد يده بعد الخصام."
+      }
+    },
+    {
+      "id": "wr-family-13",
+      "text": {
+        "en": "A family that prays together, even once a week, builds a memory its children will carry into their own homes.",
+        "de": "Eine Familie, die zusammen betet, und sei es nur einmal in der Woche, schafft eine Erinnerung, die ihre Kinder in ihr eigenes Zuhause mitnehmen.",
+        "ar": "الأسرة التي تصلي معا، ولو مرة في الأسبوع، تصنع ذكرى يحملها أبناؤها إلى بيوتهم."
+      }
+    },
+    {
+      "id": "wr-family-14",
+      "text": {
+        "en": "Handing your elderly mother a glass of water may feel small to you. On the scales of goodness, it is immense.",
+        "de": "Ihrer alten Mutter ein Glas Wasser zu reichen, mag Ihnen klein erscheinen. Auf der Waage des Guten ist es gewaltig.",
+        "ar": "أن تناول أمك المسنة كوب ماء قد يبدو لك شيئا صغيرا، لكنه في ميزان الخير عظيم."
+      }
+    }
+  ]
+}

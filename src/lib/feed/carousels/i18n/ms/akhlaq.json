@@ -1,0 +1,260 @@
+{
+ "akhlaq-honesty": {
+  "c.k": "Akhlak · 1",
+  "c.t": "Jujur: jalan yang membawa kepada kebaikan",
+  "c.s": "Apa yang diajarkan al-Quran dan sunnah tentang kejujuran",
+  "0.t": "Lebih daripada tidak berdusta",
+  "0.b": "Sidq bermaksud benar dalam kata-kata, niat dan perbuatan. Lama sebelum wahyu turun, penduduk Makkah menggelar Nabi al-Amin, yang amanah.",
+  "1.t": "Pilihlah teman yang jujur",
+  "1.b": "Kejujuran tumbuh dalam pergaulan yang baik. Orang di sekeliling anda membentuk apa yang terasa biasa.",
+  "2.t": "Kebenaran ialah satu jalan",
+  "2.b": "Kejujuran digambarkan sebagai jalan yang ada arahnya. Setiap kata yang benar ialah satu langkah, dan akhlak terbentuk dari masa ke masa.",
+  "3.t": "Berkat dalam jual beli yang jujur",
+  "3.b": "Menyebut kecacatan barang yang anda jual mungkin terasa rugi. Hadis menyebut itulah yang membawa berkat dalam urus niaga.",
+  "4.t": "Amalkan minggu ini",
+  "4.l": [
+   "Tepati janji kecil, walaupun kepada kanak-kanak",
+   "Betulkan kata-kata yang berlebihan sebaik sahaja anda menyedarinya",
+   "Katakan 'saya tidak tahu' apabila anda tidak tahu",
+   "Kekal jujur dalam ulasan, resume dan laporan"
+  ]
+ },
+ "akhlaq-patience": {
+  "c.k": "Akhlak · 2",
+  "c.t": "Sabar: baik dalam setiap keadaan",
+  "c.s": "Sabar dalam al-Quran dan sunnah, dan cara mengamalkannya",
+  "0.t": "Tiga jenis sabar",
+  "0.b": "Ulama sering menyebut tiga: sabar dalam mentaati Allah, sabar dalam menjauhi larangan-Nya, dan sabar menerima ketentuan-Nya.",
+  "1.t": "Kesabaran datang daripada-Nya",
+  "1.b": "Kesabaran Nabi sendiri digambarkan datang dengan pertolongan Allah. Mohonlah kepada-Nya, bukan sekadar menuntutnya daripada diri sendiri.",
+  "2.t": "Baik dalam apa jua keadaan",
+  "2.b": "Kegembiraan mengajak kepada syukur, kesusahan mengajak kepada sabar. Dalam kedua-duanya, orang beriman tetap beruntung.",
+  "3.t": "Saat yang pertama",
+  "3.b": "Mudah mengaku sabar kemudian. Ujian sebenar ialah reaksi pertama dan kata-kata pertama.",
+  "4.t": "Tiada yang sia-sia",
+  "4.b": "Kesakitan dan kerisauan yang kecil pun boleh menghapuskan dosa. Kesusahan tidak pernah tanpa makna.",
+  "5.t": "Langkah kecil ke arah sabar",
+  "5.l": [
+   "Berhenti sejenak sebelum bertindak balas terhadap berita buruk",
+   "Ucapkan istirja' apabila kehilangan sesuatu",
+   "Kembalilah kepada solat apabila hati terasa berat",
+   "Mohon kesabaran kepada Allah dalam doa anda"
+  ]
+ },
+ "akhlaq-gratitude": {
+  "c.k": "Akhlak · 3",
+  "c.t": "Syukur: melihat nikmat sebagai pemberian",
+  "c.s": "Bersyukur dengan hati, lidah dan perbuatan",
+  "0.t": "Tiga tempat syukur",
+  "0.b": "Ulama menjelaskan syukur dengan hati melalui pengiktirafan nikmat, dengan lidah melalui pujian kepada Pemberinya, dan dengan anggota melalui penggunaannya dengan baik.",
+  "1.t": "Makanlah, kemudian bersyukur",
+  "1.b": "Makanan biasa pun tempat untuk bersyukur. Satu hidangan boleh menjadi ibadah.",
+  "2.t": "Pujian untuk satu suapan",
+  "2.b": "Keredaan Allah boleh diraih dengan sepatah pujian atas makanan dan minuman. Ia tidak memerlukan apa-apa kos.",
+  "3.t": "Bandingkan dengan yang kurang",
+  "3.b": "Perbandingan boleh mencuri kegembiraan. Nasihat ini memusingkannya supaya syukur pula yang bertambah.",
+  "4.t": "Syukur yang berdiri pada waktu malam",
+  "4.b": "Solat malam Nabi yang panjang ialah cara baginda berterima kasih. Ibadah boleh menjadi tanda syukur.",
+  "5.t": "Tabiat bersyukur",
+  "5.l": [
+   "Bismillah sebelum makan, alhamdulillah selepasnya",
+   "Sebut tiga nikmat sebelum anda tidur",
+   "Ucapkan terima kasih kepada yang membantu anda hari ini",
+   "Gunakan satu nikmat untuk membantu orang lain"
+  ]
+ },
+ "akhlaq-humility": {
+  "c.k": "Akhlak · 4",
+  "c.t": "Tawaduk: diangkat kerana merendah diri",
+  "c.s": "Mengapa orang yang rendah diri diangkat, dan sombong ialah beban paling berat",
+  "0.t": "Nasihat Luqman",
+  "0.b": "Tawaduk terlihat pada wajah, cara berjalan dan suara. Tabiat kecil mendedahkan isi hati.",
+  "1.t": "Diangkat, bukan direndahkan",
+  "1.b": "Tawaduk kelihatan seperti hilang kedudukan. Nabi menjanjikan yang sebaliknya.",
+  "2.t": "Apa sebenarnya sombong",
+  "2.b": "Hadis ini memisahkan keindahan daripada keangkuhan. Suka pakaian yang baik tidak salah; yang penting ialah sikap kita terhadap kebenaran dan manusia.",
+  "3.t": "Nabi di rumah",
+  "3.b": "Pemimpin umat membantu kerja-kerja rumah. Tiada tugas yang terlalu rendah bagi orang yang tawaduk.",
+  "4.t": "Tawaduk dalam kehidupan seharian",
+  "4.l": [
+   "Berilah salam sebelum orang memberi salam kepada anda",
+   "Terimalah kebenaran, walaupun daripada orang yang lebih muda",
+   "Bantulah tugas yang dielakkan orang lain",
+   "Bersyukurlah kepada Allah apabila anda dipuji"
+  ]
+ },
+ "akhlaq-generosity": {
+  "c.k": "Akhlak · 5",
+  "c.t": "Pemurah: tangan yang terbuka",
+  "c.s": "Memberi daripada apa yang anda sayangi, dengan hati yang lapang",
+  "0.t": "Berilah apa yang anda sayangi",
+  "0.b": "Memberi apa yang tidak lagi kita perlukan itu mudah. Ayat ini meletakkan ukuran yang lebih tinggi.",
+  "1.t": "Kemurahan hati Nabi",
+  "1.b": "Pemberian baginda bertambah lagi pada bulan Ramadan, bulan al-Quran.",
+  "2.t": "Membelanjakan bukan kehilangan",
+  "2.b": "Setiap hari membawa doa bagi mereka yang memberi. Kemurahan hati dibalas dengan gantian.",
+  "3.t": "Pemberian kecil akan berkembang",
+  "3.b": "Senilai sebiji kurma pun, daripada pendapatan yang halal, boleh berkembang tanpa batas. Jangan tunggu sehingga anda memiliki banyak.",
+  "4.t": "Teladan kaum Ansar",
+  "4.b": "Penduduk Madinah berkongsi rumah dan harta mereka dengan kaum Muhajirin, walaupun mereka sendiri dalam keperluan.",
+  "5.t": "Cara memberi hari ini",
+  "5.l": [
+   "Berilah sesuatu yang kecil, tetapi secara tetap",
+   "Kongsikan makanan dengan jiran atau rakan sekerja",
+   "Berikan masa dan perhatian penuh anda",
+   "Berilah secara diam-diam, tanpa mengungkit"
+  ]
+ },
+ "akhlaq-anger": {
+  "c.k": "Akhlak · 6",
+  "c.t": "Marah: kekuatan untuk menahan diri",
+  "c.s": "Nasihat Nabi untuk saat kemarahan memuncak",
+  "0.t": "Kekuatan sebenar",
+  "0.b": "Kekuatan diberi makna baharu: bukan menang dalam pergaduhan, tetapi menguasai diri ketika ia memuncak.",
+  "1.t": "Nasihat yang diulang",
+  "1.b": "Seorang lelaki meminta nasihat berulang kali dan menerima jawapan yang sama setiap kali. Sesetengah pelajaran perlu diulang.",
+  "2.t": "Tiga peringkat",
+  "2.b": "Menahan marah, kemudian memaafkan, kemudian berbuat baik kepada orang itu. Setiap langkah lebih tinggi daripada yang sebelumnya.",
+  "3.t": "Kata-kata yang menyejukkan marah",
+  "3.b": "Nabi menunjukkan seorang lelaki yang marah supaya berlindung kepada Allah. Ucapkannya sebaik sahaja anda merasa panas mula naik.",
+  "4.t": "Memaafkan pada saat itu juga",
+  "4.b": "Antara sifat orang beriman: marah datang, tetapi kemaafan menyusulinya.",
+  "5.t": "Apabila marah memuncak",
+  "5.l": [
+   "Berlindunglah kepada Allah daripada syaitan",
+   "Diamlah sehingga anda tenang",
+   "Menjauhlah seketika untuk beberapa minit",
+   "Jangan hantar mesej yang ditulis ketika marah"
+  ]
+ },
+ "akhlaq-backbiting": {
+  "c.k": "Akhlak · 7",
+  "c.t": "Mengumpat: menjaga maruah yang tiada",
+  "c.s": "Mengapa bercakap tentang orang di belakangnya begitu berat",
+  "0.t": "Gambaran yang melekat",
+  "0.b": "Al-Quran menggunakan gambaran yang sengaja mengejutkan supaya kita merasai hakikat sebenar mengumpat.",
+  "1.t": "Walaupun ia benar",
+  "1.b": "Ramai menyangka tidak mengapa selagi ceritanya benar. Takrif yang diberikan Nabi menutup alasan itu.",
+  "2.t": "Janji bagi yang menjaga lidah",
+  "2.b": "Menjaga lidah begitu berat nilainya sehingga syurga dijanjikan baginya, bersama menjaga kehormatan diri.",
+  "3.t": "Membawa mulut",
+  "3.b": "Qattat membawa kata-kata antara manusia untuk menimbulkan perbalahan. Memutuskan rantai itu ialah satu kebaikan.",
+  "4.t": "Ejekan dan fitnah",
+  "4.b": "Surah al-Humazah dibuka dengan amaran kepada mereka yang memperkecilkan orang lain, dengan kata-kata atau isyarat.",
+  "5.t": "Apabila perbualan beralih kepada orang yang tiada",
+  "5.l": [
+   "Tukar topik dengan lembut",
+   "Sebutkan sesuatu yang baik tentang orang itu",
+   "Tanya diri: adakah saya akan berkata begini di depannya?",
+   "Doakanlah dia sebagai gantinya"
+  ]
+ },
+ "akhlaq-envy": {
+  "c.k": "Akhlak · 8",
+  "c.t": "Hasad: mendoakan kebaikan untuk orang lain",
+  "c.s": "Bagaimana Islam mengubah hasad menjadi kasih dan cita-cita yang sihat",
+  "0.t": "Bukan bahagian mereka, tetapi limpahan kurnia-Nya",
+  "0.b": "Daripada merenung apa yang dimiliki orang lain, ayat ini mengarahkan anda untuk memohon kebaikan kepada Allah.",
+  "1.t": "Lawan kepada hasad",
+  "1.b": "Hasad mahu kebaikan hilang daripada seseorang. Iman mahu kebaikan itu kekal padanya, dan sampai juga kepada anda.",
+  "2.t": "Cita-cita yang sihat",
+  "2.b": "Menginginkan kebaikan yang sama seperti orang lain, tanpa mahu ia hilang daripadanya, dibenarkan, malah dalam dua keadaan ini dipuji.",
+  "3.t": "Saudara, bukan pesaing",
+  "3.b": "Hasad, benci dan memutuskan hubungan disebut bersama. Penawarnya ialah hidup bersaudara.",
+  "4.t": "Memohon perlindungan",
+  "4.b": "Al-Falaq diakhiri dengan memohon perlindungan daripada kejahatan orang yang hasad. Ramai membacanya pagi dan petang.",
+  "5.t": "Apabila anda merasa hasad",
+  "5.l": [
+   "Ucapkan MasyaAllah dan doakan keberkatan untuknya",
+   "Doakanlah orang yang anda cemburui",
+   "Hitunglah nikmat anda sendiri",
+   "Mohonlah kebaikan kepada Allah tanpa melihat milik orang"
+  ]
+ },
+ "akhlaq-neighbours": {
+  "c.k": "Akhlak · 9",
+  "c.t": "Jiran: hak orang di sebelah rumah",
+  "c.s": "Betapa seriusnya Islam terhadap orang yang tinggal di sisi anda",
+  "0.t": "Jiran dekat dan jiran jauh",
+  "0.b": "Jiran disebut dalam ayat yang sama dengan ibadah dan ibu bapa, sama ada yang dekat mahupun yang lebih jauh.",
+  "1.t": "Ditekankan berulang kali",
+  "1.b": "Jibril terus-menerus menekankan hak jiran kepada Nabi. Pengulangan itu menunjukkan betapa beratnya.",
+  "2.t": "Keselamatan dahulu",
+  "2.b": "Paling kurang, jiran anda merasa selamat daripada anda: daripada bising, gangguan dan permusuhan.",
+  "3.t": "Tambah sedikit air",
+  "3.b": "Kemurahan hati tidak memerlukan jamuan besar. Lebihkan sedikit masakan anda dan kongsikannya.",
+  "4.t": "Mulakan dengan pintu yang terdekat",
+  "4.b": "Apabila anda tidak mampu memberi kepada semua, mulakan dengan yang paling dekat dengan anda.",
+  "5.t": "Menjadi jiran yang baik",
+  "5.l": [
+   "Sapa jiran anda dengan nama mereka",
+   "Kongsikan makanan pada hari-hari istimewa",
+   "Bertimbang rasa tentang bunyi bising dan tempat letak kereta",
+   "Jenguklah jiran yang tua atau sakit"
+  ]
+ },
+ "akhlaq-parents": {
+  "c.k": "Akhlak · 10",
+  "c.t": "Berbuat baik kepada ibu bapa",
+  "c.s": "Antara amalan yang paling dicintai Allah",
+  "0.t": "Lembut dalam kata dan perbuatan",
+  "0.b": "Dua ayat yang merangkumi tutur kata, sikap dan doa. Bacalah perlahan-lahan sambil mengingati ibu bapa anda.",
+  "1.t": "Sejurus selepas solat",
+  "1.b": "Apabila ditanya tentang amalan yang paling dicintai, Nabi menyebut berbuat baik kepada ibu bapa sejurus selepas solat pada waktunya.",
+  "2.t": "Ibumu, tiga kali",
+  "2.b": "Ibu disebut tiga kali sebelum bapa, sebagai penghormatan atas jagaan, kehamilan dan pengorbanannya.",
+  "3.t": "Peluang yang terlepas",
+  "3.b": "Ibu bapa yang tua ialah pintu terbuka ke syurga. Amaran ini untuk mereka yang membiarkan peluang itu berlalu.",
+  "4.t": "Kebaikan-kebaikan kecil",
+  "4.l": [
+   "Telefonlah mereka, walaupun anda sibuk",
+   "Bercakaplah dengan lembut, jangan sekali-kali dengan tidak sabar",
+   "Mintalah nasihat dan doa mereka",
+   "Doakanlah mereka dalam setiap solat"
+  ]
+ },
+ "akhlaq-promises": {
+  "c.k": "Akhlak · 11",
+  "c.t": "Menepati janji",
+  "c.s": "Mengapa janji yang dimungkiri begitu berat dalam Islam",
+  "0.t": "Anda akan ditanya",
+  "0.b": "Janji bukan sekadar budi bahasa. Setiap satunya ialah tanggungjawab yang akan dipersoalkan.",
+  "1.t": "Tanda orang yang berjaya",
+  "1.b": "Antara sifat yang disenaraikan pada awal surah al-Mu'minun, menjaga amanah dan janji mempunyai tempatnya sendiri.",
+  "2.t": "Tanda yang perlu dijauhi",
+  "2.b": "Memungkiri janji disenaraikan antara tanda-tanda munafik. Kata-kata orang beriman sepatutnya boleh dipercayai.",
+  "3.t": "Malah lawannya pun tahu",
+  "3.b": "Abu Sufyan, yang ketika itu masih lawan, memberitahu maharaja Rom tentang ajaran Nabi. Menepati janji termasuk dalamnya.",
+  "4.t": "Kata dan perbuatan",
+  "4.b": "Berkata tanpa melakukan digambarkan sebagai sesuatu yang amat dibenci Allah. Kurangkan berjanji, lebihkan menepatinya.",
+  "5.t": "Memegang kata-kata anda",
+  "5.l": [
+   "Ucapkan InsyaAllah, kemudian benar-benar berusaha",
+   "Catatkan apa yang anda janjikan",
+   "Jika tidak dapat ditepati, beritahu lebih awal",
+   "Tepati masa: masa juga satu janji"
+  ]
+ },
+ "akhlaq-kind-words": {
+  "c.k": "Akhlak · 12",
+  "c.t": "Senyuman dan kata-kata yang baik",
+  "c.s": "Sedekah kecil yang boleh diberikan oleh semua orang",
+  "0.t": "Tiada kebaikan yang kecil",
+  "0.b": "Wajah yang mesra dikira sebagai kebaikan yang sebenar. Ia percuma dan boleh mengubah hari seseorang.",
+  "1.t": "Senyuman Nabi",
+  "1.b": "Jarir mengingati bahawa Nabi tersenyum setiap kali melihatnya. Orang ingat bagaimana kita membuat mereka berasa.",
+  "2.t": "Sedekah tanpa wang",
+  "2.b": "Sedekah bukan hanya wang. Kata-kata yang baik, tangan yang membantu dan keputusan yang adil semuanya dikira.",
+  "3.t": "Cara kita memberi",
+  "3.b": "Cara kita memberi sama penting dengan apa yang kita beri. Kata-kata yang lembut boleh menjadi hadiah itu sendiri.",
+  "4.t": "Ukuran insan terbaik",
+  "4.b": "Nabi tidak pernah berkata kesat, dan baginda mengukur nilai manusia dengan akhlaknya.",
+  "5.t": "Cubalah hari ini",
+  "5.l": [
+   "Senyumlah kepada orang pertama yang anda temui",
+   "Ucapkan terima kasih kepada seseorang dengan menyebut namanya",
+   "Gantikan rungutan dengan kata-kata yang baik",
+   "Hantarkan mesej yang memberi semangat"
+  ]
+ }
+}

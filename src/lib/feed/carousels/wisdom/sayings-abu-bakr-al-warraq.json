@@ -1,0 +1,33 @@
+{
+  "set": "sayings-abu-bakr-al-warraq",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-abu-bakr-al-warraq-01",
+      "theme": "fasting",
+      "text": {
+        "en": "Rajab is the month of sowing, Sha'ban the month of watering the crop, and Ramadan the month of harvest.",
+        "de": "Radschab ist der Monat der Aussaat, Scha'ban der Monat des Bewässerns und Ramadan der Monat der Ernte.",
+        "ar": "شهر رجب شهر للزرع، وشهر شعبان شهر السقي للزرع، وشهر رمضان شهر حصاد الزرع."
+      },
+      "arabic": "شهر رجب شهر للزرع، وشهر شعبان شهر السقي للزرع، وشهر رمضان شهر حصاد الزرع.",
+      "by": { "en": "Abu Bakr al-Warraq al-Balkhi", "de": "Abu Bakr al-Warraq al-Balchi", "ar": "أبو بكر الوراق البلخي" },
+      "work": { "en": "Reported by Ibn Rajab in Lata'if al-Ma'arif", "de": "Überliefert von Ibn Radschab in Lata'if al-Ma'arif", "ar": "نقله ابن رجب في لطائف المعارف" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-abu-bakr-al-warraq-02",
+      "theme": "fasting",
+      "text": {
+        "en": "Rajab is like the wind, Sha'ban like the clouds, and Ramadan like the rain.",
+        "de": "Radschab ist wie der Wind, Scha'ban wie die Wolken und Ramadan wie der Regen.",
+        "ar": "مثل شهر رجب مثل الريح، ومثل شعبان مثل الغيم، ومثل رمضان مثل المطر."
+      },
+      "arabic": "مثل شهر رجب مثل الريح، ومثل شعبان مثل الغيم، ومثل رمضان مثل المطر.",
+      "by": { "en": "Abu Bakr al-Warraq al-Balkhi", "de": "Abu Bakr al-Warraq al-Balchi", "ar": "أبو بكر الوراق البلخي" },
+      "work": { "en": "Reported by Ibn Rajab in Lata'if al-Ma'arif", "de": "Überliefert von Ibn Radschab in Lata'if al-Ma'arif", "ar": "نقله ابن رجب في لطائف المعارف" },
+      "needs_review": true
+    }
+  ]
+}

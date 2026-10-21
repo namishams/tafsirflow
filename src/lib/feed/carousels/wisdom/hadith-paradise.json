@@ -1,0 +1,19 @@
+{ "set": "hadith-paradise", "kind": "hadith", "theme": "paradise", "tradition": "sunni",
+  "items": [
+    {"id": "wh-paradise-muslim-136", "hadith": "muslim:136", "check": "knowing"},
+    {"id": "wh-paradise-muslim-7154", "hadith": "muslim:7154", "check": "glorify and praise Allah"},
+    {"id": "wh-paradise-bukhari-7280", "hadith": "bukhari:7280", "check": "except those who refuse"},
+    {"id": "wh-paradise-bukhari-6640", "hadith": "bukhari:6640", "check": "handkerchiefs of Sa`d"},
+    {"id": "wh-paradise-bukhari-3250", "hadith": "bukhari:3250", "check": "size of a lash"},
+    {"id": "wh-paradise-muslim-6671", "hadith": "muslim:6671", "check": "enjoying himself in Paradise"},
+    {"id": "wh-paradise-muslim-7156", "hadith": "muslim:7156", "check": "youth"},
+    {"id": "wh-paradise-bukhari-7498", "hadith": "bukhari:7498", "check": "no eye has ever seen"},
+    {"id": "wh-paradise-bukhari-3251", "hadith": "bukhari:3251", "check": "one hundred years"},
+    {"id": "wh-paradise-bukhari-6549", "hadith": "bukhari:6549", "check": "never be angry"},
+    {"id": "wh-paradise-bukhari-7436", "hadith": "bukhari:7436", "check": "full moon"},
+    {"id": "wh-paradise-bukhari-6488", "hadith": "bukhari:6488", "check": "Shirak"},
+    {"id": "wh-paradise-bukhari-1196", "hadith": "bukhari:1196", "check": "garden of the gardens of Paradise"},
+    {"id": "wh-paradise-bukhari-1382", "hadith": "bukhari:1382", "check": "wet-nurse"},
+    {"id": "wh-paradise-muslim-484", "hadith": "muslim:484", "check": "knock at the door of Paradise"},
+    {"id": "wh-paradise-muslim-7162", "hadith": "muslim:7162", "check": "hearts of birds"}
+  ] }

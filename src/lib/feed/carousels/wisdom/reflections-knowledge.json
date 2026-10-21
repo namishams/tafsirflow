@@ -1,0 +1,120 @@
+{
+  "set": "reflections-knowledge",
+  "kind": "reflection",
+  "theme": "knowledge",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-knowledge-01",
+      "text": {
+        "en": "One page a day, read slowly and understood, will carry you further than a whole book skimmed in a hurry.",
+        "de": "Eine Seite am Tag, langsam gelesen und verstanden, bringt Sie weiter als ein ganzes Buch, das Sie hastig überflogen haben.",
+        "ar": "صفحة واحدة في اليوم تقرأ بتأن وتفهم تأخذك أبعد من كتاب كامل تتصفحه على عجل."
+      }
+    },
+    {
+      "id": "wr-knowledge-02",
+      "text": {
+        "en": "Knowledge that makes you gentler with people is light. Knowledge that makes you harsher deserves a second look.",
+        "de": "Wissen, das Sie sanfter mit Menschen macht, ist Licht. Wissen, das Sie härter macht, verdient einen zweiten Blick.",
+        "ar": "العلم الذي يجعلك ألين مع الناس نور، والعلم الذي يجعلك أقسى يستحق نظرة ثانية."
+      }
+    },
+    {
+      "id": "wr-knowledge-03",
+      "text": {
+        "en": "\"I do not know\" is one of the most honest sentences a learned person can say, and one of the hardest.",
+        "de": "„Ich weiß es nicht“ ist einer der ehrlichsten Sätze, die ein gelehrter Mensch sagen kann, und einer der schwersten.",
+        "ar": "قول: لا أدري، من أصدق ما يقوله العالم، ومن أصعبه."
+      }
+    },
+    {
+      "id": "wr-knowledge-04",
+      "text": {
+        "en": "Every scholar you admire once sat as a beginner, mispronouncing words and asking simple questions. Start where you are.",
+        "de": "Jeder Gelehrte, den Sie bewundern, saß einmal als Anfänger da, sprach Wörter falsch aus und stellte einfache Fragen. Beginnen Sie dort, wo Sie sind.",
+        "ar": "كل عالم تعجب به جلس يوما مبتدئا يخطئ في نطق الكلمات ويسأل أسئلة بسيطة، فابدأ من حيث أنت."
+      }
+    },
+    {
+      "id": "wr-knowledge-05",
+      "text": {
+        "en": "Learn so that you can act. One thing learned and lived is worth more than a hundred learned and forgotten.",
+        "de": "Lernen Sie, um zu handeln. Eine Sache, gelernt und gelebt, ist mehr wert als hundert, gelernt und vergessen.",
+        "ar": "تعلم لتعمل، فشيء واحد تتعلمه وتعيشه خير من مئة تتعلمها وتنساها."
+      }
+    },
+    {
+      "id": "wr-knowledge-06",
+      "text": {
+        "en": "A teacher who explains the same thing for the third time with a smile is giving a gift that lasts for generations.",
+        "de": "Ein Lehrer, der dasselbe zum dritten Mal mit einem Lächeln erklärt, macht ein Geschenk, das Generationen überdauert.",
+        "ar": "المعلم الذي يشرح الشيء نفسه للمرة الثالثة بابتسامة يقدم هدية تبقى أجيالا."
+      }
+    },
+    {
+      "id": "wr-knowledge-07",
+      "text": {
+        "en": "Ask the question you think is too simple. Someone else in the room was hoping you would.",
+        "de": "Stellen Sie die Frage, die Ihnen zu einfach erscheint. Jemand anderes im Raum hat gehofft, dass Sie es tun.",
+        "ar": "اسأل السؤال الذي تظنه بسيطا جدا، فهناك في القاعة من كان يتمنى أن تسأله."
+      }
+    },
+    {
+      "id": "wr-knowledge-08",
+      "text": {
+        "en": "A notebook, a quiet corner and twenty minutes after Fajr: many lifelong journeys of learning began with less.",
+        "de": "Ein Notizbuch, eine stille Ecke und zwanzig Minuten nach dem Morgengebet: Viele lebenslange Wege des Lernens begannen mit weniger.",
+        "ar": "دفتر، وركن هادئ، وعشرون دقيقة بعد الفجر: رحلات علم كثيرة امتدت عمرا كاملا بدأت بأقل من ذلك."
+      }
+    },
+    {
+      "id": "wr-knowledge-09",
+      "text": {
+        "en": "The more you learn, the more you see how much you do not know. That is not failure; it is the beginning of humility.",
+        "de": "Je mehr Sie lernen, desto mehr sehen Sie, wie viel Sie nicht wissen. Das ist kein Scheitern, sondern der Anfang der Demut.",
+        "ar": "كلما ازددت علما رأيت كم تجهل، وليس ذلك فشلا، بل بداية التواضع."
+      }
+    },
+    {
+      "id": "wr-knowledge-10",
+      "text": {
+        "en": "Teach what you know, even if it is little. Something small, explained kindly to a child, can stay with them for a lifetime.",
+        "de": "Lehren Sie, was Sie wissen, auch wenn es wenig ist. Etwas Kleines, einem Kind freundlich erklärt, kann es ein Leben lang begleiten.",
+        "ar": "علم ما تعرفه وإن كان قليلا، فالشيء الصغير الذي تشرحه لطفل بلطف قد يرافقه طوال حياته."
+      }
+    },
+    {
+      "id": "wr-knowledge-11",
+      "text": {
+        "en": "Seek knowledge with a clean intention: not to win arguments, but to know your Lord and to serve His creation better.",
+        "de": "Suchen Sie Wissen mit reiner Absicht: nicht, um Streitgespräche zu gewinnen, sondern um Ihren Herrn besser zu kennen und Seiner Schöpfung besser zu dienen.",
+        "ar": "اطلب العلم بنية صافية، لا لتنتصر في الجدال، بل لتعرف ربك وتخدم خلقه على نحو أفضل."
+      }
+    },
+    {
+      "id": "wr-knowledge-12",
+      "text": {
+        "en": "Doctors, engineers, farmers and nurses who work with excellence and honesty are people of knowledge too.",
+        "de": "Ärztinnen, Ingenieure, Bauern und Pflegekräfte, die mit Sorgfalt und Ehrlichkeit arbeiten, sind auch Menschen des Wissens.",
+        "ar": "الأطباء والمهندسون والمزارعون والممرضون الذين يعملون بإتقان وأمانة هم أيضا أهل علم."
+      }
+    },
+    {
+      "id": "wr-knowledge-13",
+      "text": {
+        "en": "Reread what you learned last month. Knowledge that is never revisited fades quietly, like ink left in the sun.",
+        "de": "Lesen Sie noch einmal, was Sie letzten Monat gelernt haben. Wissen, das man nie wiederholt, verblasst still wie Tinte in der Sonne.",
+        "ar": "راجع ما تعلمته الشهر الماضي، فالعلم الذي لا يراجع يبهت بهدوء كالحبر المتروك تحت الشمس."
+      }
+    },
+    {
+      "id": "wr-knowledge-14",
+      "text": {
+        "en": "Sitting in a circle of learning, even as a quiet listener, softens the heart in ways a screen rarely can.",
+        "de": "In einem Kreis des Lernens zu sitzen, auch als stiller Zuhörer, macht das Herz weich, wie es ein Bildschirm selten vermag.",
+        "ar": "الجلوس في حلقة علم، ولو مستمعا صامتا، يلين القلب بطرق قلما تستطيعها الشاشة."
+      }
+    }
+  ]
+}

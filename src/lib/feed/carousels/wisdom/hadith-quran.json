@@ -1,0 +1,18 @@
+{ "set": "hadith-quran", "kind": "hadith", "theme": "quran", "tradition": "sunni",
+  "items": [
+    {"id": "wh-quran-muslim-6777", "hadith": "muslim:6777", "check": "as long as your hearts agree"},
+    {"id": "wh-quran-bukhari-5025", "hadith": "bukhari:5025", "check": "recites it during the hours of the night"},
+    {"id": "wh-quran-bukhari-5027", "hadith": "bukhari:5027", "check": "learn the Qur'an and teach it"},
+    {"id": "wh-quran-bukhari-4937", "hadith": "bukhari:4937", "check": "double reward"},
+    {"id": "wh-quran-muslim-1844", "hadith": "muslim:1844", "check": "Keep refreshing"},
+    {"id": "wh-quran-bukhari-5050", "hadith": "bukhari:5050", "check": "overflowing with tears"},
+    {"id": "wh-quran-bukhari-5015", "hadith": "bukhari:5015", "check": "one third of the Qur'an"},
+    {"id": "wh-quran-bukhari-5009", "hadith": "bukhari:5009", "check": "last two Verses"},
+    {"id": "wh-quran-bukhari-5059", "hadith": "bukhari:5059", "check": "citron"},
+    {"id": "wh-quran-muslim-1824", "hadith": "muslim:1824", "check": "Satan runs away"},
+    {"id": "wh-quran-bukhari-5017", "hadith": "bukhari:5017", "check": "three times"},
+    {"id": "wh-quran-muslim-1856", "hadith": "muslim:1856", "check": "tranquillity"},
+    {"id": "wh-quran-muslim-1845", "hadith": "muslim:1845", "check": "sweet voice"},
+    {"id": "wh-quran-muslim-1852", "hadith": "muslim:1852", "check": "like that of David"},
+    {"id": "wh-quran-bukhari-769", "hadith": "bukhari:769", "check": "sweeter voice"}
+  ] }

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-brotherhood",
+  "kind": "reflection",
+  "theme": "brotherhood",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-brotherhood-01",
+      "text": {
+        "en": "A true friend reminds you of Allah without making you feel small.",
+        "de": "Ein wahrer Freund erinnert Sie an Allah, ohne dass Sie sich klein fühlen.",
+        "ar": "الصديق الحق يذكرك بالله دون أن يشعرك بالصغار."
+      }
+    },
+    {
+      "id": "wr-brotherhood-02",
+      "text": {
+        "en": "Greet the person next to you at the mosque, even if you never see them again. A salam is a bridge built in a second.",
+        "de": "Grüßen Sie den Menschen neben Ihnen in der Moschee, auch wenn Sie ihn nie wiedersehen. Ein Salam ist eine Brücke, gebaut in einer Sekunde.",
+        "ar": "سلم على من يقف إلى جانبك في المسجد ولو لم تره بعد ذلك أبدا، فالسلام جسر يبنى في ثانية."
+      }
+    },
+    {
+      "id": "wr-brotherhood-03",
+      "text": {
+        "en": "When a friend is grieving, you do not need the perfect words. Bring food, sit with them, and stay.",
+        "de": "Wenn ein Freund trauert, brauchen Sie nicht die perfekten Worte. Bringen Sie Essen mit, setzen Sie sich zu ihm und bleiben Sie.",
+        "ar": "حين يحزن صديقك لا تحتاج إلى الكلمات المثالية، احمل له طعاما، واجلس معه، وابق."
+      }
+    },
+    {
+      "id": "wr-brotherhood-04",
+      "text": {
+        "en": "Make dua for your friends by name in their absence. It is love that asks for nothing in return.",
+        "de": "Beten Sie für Ihre Freunde mit Namen, wenn sie nicht da sind. Das ist Liebe, die nichts zurückverlangt.",
+        "ar": "ادع لأصدقائك بأسمائهم في غيبتهم، فذلك حب لا يطلب مقابلا."
+      }
+    },
+    {
+      "id": "wr-brotherhood-05",
+      "text": {
+        "en": "Brotherhood is sharing the umbrella, the notes from the lecture you both attended, and the last date at iftar.",
+        "de": "Geschwisterlichkeit heißt, den Regenschirm zu teilen, die Mitschrift der gemeinsamen Vorlesung und die letzte Dattel beim Fastenbrechen.",
+        "ar": "الأخوة أن تتقاسم المظلة، ومذكرات المحاضرة التي حضرتماها، وآخر تمرة على الإفطار."
+      }
+    },
+    {
+      "id": "wr-brotherhood-06",
+      "text": {
+        "en": "Defend your friend's honour when they are not in the room. That is where loyalty is truly measured.",
+        "de": "Verteidigen Sie die Ehre Ihres Freundes, wenn er nicht im Raum ist. Dort misst sich Treue wirklich.",
+        "ar": "دافع عن عرض صديقك حين لا يكون في المجلس، فهناك يقاس الوفاء حقا."
+      }
+    },
+    {
+      "id": "wr-brotherhood-07",
+      "text": {
+        "en": "Visiting a brother for no reason but the love of Allah is a journey that is never wasted.",
+        "de": "Einen Bruder ohne anderen Grund als die Liebe zu Allah zu besuchen, ist eine Reise, die nie vergeudet ist.",
+        "ar": "زيارة أخ لا لشيء إلا حبا في الله رحلة لا تضيع أبدا."
+      }
+    },
+    {
+      "id": "wr-brotherhood-08",
+      "text": {
+        "en": "Strangers from different countries, standing in one row and breaking one fast together: that is a family no passport can explain.",
+        "de": "Fremde aus verschiedenen Ländern, die in einer Reihe stehen und gemeinsam das Fasten brechen: Das ist eine Familie, die kein Reisepass erklären kann.",
+        "ar": "غرباء من بلدان شتى يقفون في صف واحد ويفطرون معا: تلك أسرة لا يفسرها أي جواز سفر."
+      }
+    },
+    {
+      "id": "wr-brotherhood-09",
+      "text": {
+        "en": "Choose friends who make you want to pray on time, speak more kindly and give more freely.",
+        "de": "Wählen Sie Freunde, bei denen Sie pünktlicher beten, freundlicher sprechen und freigebiger geben wollen.",
+        "ar": "اختر أصدقاء يجعلونك تحب أن تصلي في وقتك، وأن تتكلم بلطف أكبر، وأن تعطي بسخاء أكثر."
+      }
+    },
+    {
+      "id": "wr-brotherhood-10",
+      "text": {
+        "en": "When you see a brother make a mistake, cover it gently and advise him in private.",
+        "de": "Wenn Sie sehen, dass ein Bruder einen Fehler macht, bedecken Sie ihn behutsam und beraten Sie ihn unter vier Augen.",
+        "ar": "إذا رأيت أخاك يخطئ فاستر عليه برفق، وانصحه على انفراد."
+      }
+    },
+    {
+      "id": "wr-brotherhood-11",
+      "text": {
+        "en": "Reach out to an old friend this week. A short message saying you thought of them can open a door that has been closed for years.",
+        "de": "Melden Sie sich diese Woche bei einem alten Freund. Eine kurze Nachricht, dass Sie an ihn gedacht haben, kann eine Tür öffnen, die seit Jahren verschlossen war.",
+        "ar": "تواصل هذا الأسبوع مع صديق قديم، فرسالة قصيرة تقول إنك تذكرته قد تفتح بابا أغلق منذ سنين."
+      }
+    },
+    {
+      "id": "wr-brotherhood-12",
+      "text": {
+        "en": "Brotherhood is not agreeing on everything. It is staying kind while you disagree.",
+        "de": "Geschwisterlichkeit heißt nicht, in allem einer Meinung zu sein. Sie heißt, freundlich zu bleiben, während man verschiedener Meinung ist.",
+        "ar": "الأخوة ليست أن تتفقا في كل شيء، بل أن يبقى اللطف بينكما وأنتما مختلفان."
+      }
+    },
+    {
+      "id": "wr-brotherhood-13",
+      "text": {
+        "en": "Help a neighbour carry the shopping up the stairs. Sometimes brotherhood is simply an extra pair of hands.",
+        "de": "Helfen Sie einer Nachbarin, die Einkäufe die Treppe hinaufzutragen. Manchmal ist Geschwisterlichkeit einfach ein zusätzliches Paar Hände.",
+        "ar": "ساعد جارك على حمل مشترياته على الدرج، فالأخوة أحيانا ليست إلا يدين إضافيتين."
+      }
+    },
+    {
+      "id": "wr-brotherhood-14",
+      "text": {
+        "en": "The people who pray beside you in the dark at Fajr are your companions on a road that leads somewhere beautiful.",
+        "de": "Die Menschen, die im Dunkeln beim Morgengebet neben Ihnen beten, sind Ihre Gefährten auf einem Weg, der an einen schönen Ort führt.",
+        "ar": "من يصلون إلى جانبك في ظلمة الفجر رفاقك في طريق يفضي إلى مكان جميل."
+      }
+    }
+  ]
+}

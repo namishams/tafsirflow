@@ -1,0 +1,120 @@
+{
+  "set": "reflections-worship",
+  "kind": "reflection",
+  "theme": "worship",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-worship-01",
+      "text": {
+        "en": "Worship is not only the prayer mat. It is also an honest day's work, patient parenting and a kind word to a stranger.",
+        "de": "Gottesdienst ist nicht nur der Gebetsteppich. Er ist auch ehrliche Tagesarbeit, geduldige Erziehung und ein freundliches Wort an einen Fremden.",
+        "ar": "العبادة ليست سجادة الصلاة وحدها، بل هي أيضا عمل يوم بأمانة، وتربية بصبر، وكلمة طيبة لغريب."
+      }
+    },
+    {
+      "id": "wr-worship-02",
+      "text": {
+        "en": "Wudu before bed, a few verses before sleep, a quiet word of praise on waking: worship can frame the day like a gentle border.",
+        "de": "Die Waschung vor dem Schlafen, ein paar Verse vor dem Einschlafen, ein leises Lob beim Aufwachen: Gottesdienst kann den Tag wie ein sanfter Rahmen umgeben.",
+        "ar": "الوضوء قبل النوم، وآيات قليلة قبل أن تغفو، وحمد هادئ عند الاستيقاظ: العبادة قد تحيط اليوم كإطار لطيف."
+      }
+    },
+    {
+      "id": "wr-worship-03",
+      "text": {
+        "en": "Worship done with presence, even briefly, nourishes the heart more than long hours done on autopilot.",
+        "de": "Gottesdienst mit gegenwärtigem Herzen, auch wenn er kurz ist, nährt das Herz mehr als lange Stunden im Autopilot.",
+        "ar": "العبادة بحضور قلب، ولو كانت قصيرة، تغذي القلب أكثر من ساعات طويلة تؤدى بلا وعي."
+      }
+    },
+    {
+      "id": "wr-worship-04",
+      "text": {
+        "en": "When worship stands at the centre of the day, everything else finds its proper place around it: work, family, rest.",
+        "de": "Wenn der Gottesdienst in der Mitte des Tages steht, findet alles andere seinen richtigen Platz um ihn herum: Arbeit, Familie, Ruhe.",
+        "ar": "حين تكون العبادة في قلب اليوم، يجد كل شيء آخر مكانه الصحيح حولها: العمل، والأسرة، والراحة."
+      }
+    },
+    {
+      "id": "wr-worship-05",
+      "text": {
+        "en": "Feeding your family from honest work is worship. So is going to bed early to wake for Fajr.",
+        "de": "Die Familie von ehrlicher Arbeit zu ernähren ist Gottesdienst. Ebenso, früh schlafen zu gehen, um für das Morgengebet aufzuwachen.",
+        "ar": "إطعام أسرتك من عمل حلال عبادة، وكذلك أن تنام مبكرا لتستيقظ للفجر."
+      }
+    },
+    {
+      "id": "wr-worship-06",
+      "text": {
+        "en": "The joy of worship often comes after the effort, not before it. Begin, and the sweetness will follow.",
+        "de": "Die Freude am Gottesdienst kommt oft nach der Mühe, nicht davor. Fangen Sie an, und die Süße folgt.",
+        "ar": "حلاوة العبادة كثيرا ما تأتي بعد الجهد لا قبله، فابدأ وستتبعك الحلاوة."
+      }
+    },
+    {
+      "id": "wr-worship-07",
+      "text": {
+        "en": "Some days worship feels light, some days heavy. Show up either way; showing up is worship too.",
+        "de": "An manchen Tagen fühlt sich Gottesdienst leicht an, an anderen schwer. Kommen Sie trotzdem; auch das Kommen ist Gottesdienst.",
+        "ar": "في بعض الأيام تكون العبادة خفيفة، وفي بعضها ثقيلة، فاحضر في الحالين، فالحضور نفسه عبادة."
+      }
+    },
+    {
+      "id": "wr-worship-08",
+      "text": {
+        "en": "A quiet corner of your home kept for prayer becomes, over the years, a place that calms you the moment you enter it.",
+        "de": "Eine stille Ecke in Ihrem Zuhause, die dem Gebet vorbehalten ist, wird über die Jahre zu einem Ort, der Sie schon beim Betreten beruhigt.",
+        "ar": "ركن هادئ في بيتك تخصصه للصلاة يصير مع السنين مكانا يسكنك بمجرد دخوله."
+      }
+    },
+    {
+      "id": "wr-worship-09",
+      "text": {
+        "en": "Worship is not a transaction. It is a relationship, and relationships grow through daily, faithful contact.",
+        "de": "Gottesdienst ist kein Geschäft. Er ist eine Beziehung, und Beziehungen wachsen durch täglichen, treuen Kontakt.",
+        "ar": "العبادة ليست صفقة، بل علاقة، والعلاقات تنمو بالتواصل اليومي الوفي."
+      }
+    },
+    {
+      "id": "wr-worship-10",
+      "text": {
+        "en": "Smiling at your spouse, helping in the kitchen, returning a lost wallet: the list of worship is longer than we think.",
+        "de": "Ihrem Ehepartner zulächeln, in der Küche helfen, eine verlorene Geldbörse zurückgeben: Die Liste des Gottesdienstes ist länger, als wir denken.",
+        "ar": "أن تبتسم لشريك حياتك، وتساعد في المطبخ، وترد محفظة ضائعة: قائمة العبادة أطول مما نظن."
+      }
+    },
+    {
+      "id": "wr-worship-11",
+      "text": {
+        "en": "Worship frees you from many masters: trends, approval, fear of people. You bow to One, and stand tall before everything else.",
+        "de": "Gottesdienst befreit Sie von vielen Herren: von Trends, von Anerkennung, von der Angst vor Menschen. Sie verneigen sich vor Einem und stehen aufrecht vor allem anderen.",
+        "ar": "العبادة تحررك من أسياد كثيرين: الموضة، ورضا الناس، والخوف منهم، فتنحني لواحد وتقف شامخا أمام كل ما سواه."
+      }
+    },
+    {
+      "id": "wr-worship-12",
+      "text": {
+        "en": "Do not compare your worship with others'. Some build with prayer, some with charity, some with patience. Find your door.",
+        "de": "Vergleichen Sie Ihren Gottesdienst nicht mit dem anderer. Manche bauen mit Gebet, manche mit Spenden, manche mit Geduld. Finden Sie Ihre Tür.",
+        "ar": "لا تقارن عبادتك بعبادة غيرك، فبعضهم يبني بالصلاة، وبعضهم بالصدقة، وبعضهم بالصبر، فابحث عن بابك."
+      }
+    },
+    {
+      "id": "wr-worship-13",
+      "text": {
+        "en": "Make one act of worship a family tradition: a surah together on Fridays, a shared iftar, a weekly visit to an elderly relative.",
+        "de": "Machen Sie eine gottesdienstliche Handlung zur Familientradition: freitags gemeinsam eine Sure, ein gemeinsames Fastenbrechen, ein wöchentlicher Besuch bei einem alten Verwandten.",
+        "ar": "اجعل عبادة واحدة تقليدا عائليا: سورة تقرؤونها معا يوم الجمعة، أو إفطارا مشتركا، أو زيارة أسبوعية لقريب مسن."
+      }
+    },
+    {
+      "id": "wr-worship-14",
+      "text": {
+        "en": "Even when you feel far away, keep the prayer. The habit holds the door open until the heart comes back.",
+        "de": "Selbst wenn Sie sich fern fühlen, halten Sie am Gebet fest. Die Gewohnheit hält die Tür offen, bis das Herz zurückkehrt.",
+        "ar": "حتى حين تشعر بالبعد حافظ على الصلاة، فالعادة تبقي الباب مفتوحا حتى يعود القلب."
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{ "set": "hadith-family", "kind": "hadith", "theme": "family", "tradition": "sunni",
+  "items": [
+    {"id": "wh-family-bukhari-5997", "hadith": "bukhari:5997", "check": "not merciful to others"},
+    {"id": "wh-family-muslim-3648", "hadith": "muslim:3648", "check": "believing woman"},
+    {"id": "wh-family-bukhari-5351", "hadith": "bukhari:5351", "check": "spends something on his family"},
+    {"id": "wh-family-bukhari-56", "hadith": "bukhari:56", "check": "morsel"},
+    {"id": "wh-family-muslim-6501", "hadith": "muslim:6501", "check": "your mother"},
+    {"id": "wh-family-muslim-6511", "hadith": "muslim:6511", "check": "old age"},
+    {"id": "wh-family-muslim-6519", "hadith": "muslim:6519", "check": "suspended to the Throne"},
+    {"id": "wh-family-bukhari-5991", "hadith": "bukhari:5991", "check": "Al-Wasil"},
+    {"id": "wh-family-bukhari-5988", "hadith": "bukhari:5988", "check": "Ar-Rahman"},
+    {"id": "wh-family-bukhari-5363", "hadith": "bukhari:5363", "check": "work for his family"},
+    {"id": "wh-family-bukhari-5995", "hadith": "bukhari:5995", "check": "daughters"},
+    {"id": "wh-family-muslim-6695", "hadith": "muslim:6695", "check": "two girls"},
+    {"id": "wh-family-muslim-6514", "hadith": "muslim:6514", "check": "loved ones of his father"},
+    {"id": "wh-family-bukhari-3004", "hadith": "bukhari:3004", "check": "exert yourself in their service"},
+    {"id": "wh-family-muslim-3643", "hadith": "muslim:3643", "check": "pious woman"},
+    {"id": "wh-family-bukhari-5979", "hadith": "bukhari:5979", "check": "be good to your mother"},
+    {"id": "wh-family-muslim-6256", "hadith": "muslim:6256", "check": "I love him"},
+    {"id": "wh-family-muslim-1822", "hadith": "muslim:1822", "check": "betterment in his house"}
+  ] }

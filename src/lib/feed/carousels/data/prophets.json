@@ -1,0 +1,1533 @@
+{
+  "series": "prophets",
+  "label": { "en": "Stories of the prophets", "de": "Geschichten der Propheten", "ar": "قصص الأنبياء" },
+  "topic": "seerah",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "prophet-01-adam",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 1", "de": "Geschichten der Propheten · 1", "ar": "قصص الأنبياء · ١" },
+        "title": { "en": "The story of Adam in 8 slides", "de": "Die Geschichte Adams in 8 Folien", "ar": "قصة آدم في ٨ شرائح" },
+        "sub": { "en": "The first human: honoured, tested and forgiven", "de": "Der erste Mensch: geehrt, geprüft und vergeben", "ar": "أول البشر: تكريم وابتلاء ومغفرة" },
+        "arabic": "آدم عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "2:30",
+          "check": "successive authority",
+          "title": { "en": "A successor on earth", "de": "Ein Nachfolger auf der Erde", "ar": "خليفة في الأرض" },
+          "body": { "en": "Before Adam was created, Allah told the angels of His plan. Their question met an answer only He could give: He knows what they do not.", "de": "Bevor Adam erschaffen wurde, teilte Allah den Engeln Seinen Plan mit. Auf ihre Frage antwortete Er mit einem Wissen, das nur Er hat.", "ar": "قبل خلق آدم عليه السلام أخبر الله الملائكة بما أراد، فلما سألوا أجابهم بعلمه الذي لا يحيطون به." }
+        },
+        {
+          "verse": "2:31",
+          "check": "taught Adam the names",
+          "title": { "en": "Honoured with knowledge", "de": "Geehrt durch Wissen", "ar": "تكريم بالعلم" },
+          "body": { "en": "Adam's first honour was knowledge. Allah taught him the names of things, and the angels admitted they knew only what they had been taught.", "de": "Adams erste Ehre war Wissen. Allah lehrte ihn die Namen der Dinge, und die Engel bekannten, nur zu wissen, was man sie gelehrt hatte.", "ar": "كان أول تكريم لآدم هو العلم؛ علّمه الله أسماء الأشياء، وأقرّ الملائكة بأن علمهم مقصور على ما عُلِّموه." }
+        },
+        {
+          "verse": "2:34",
+          "check": "Iblees",
+          "title": { "en": "One refused", "de": "Einer weigerte sich", "ar": "واحد أبى" },
+          "body": { "en": "The angels bowed at Allah's command. Iblis refused out of pride, convinced that being made of fire made him better.", "de": "Die Engel warfen sich auf Allahs Befehl nieder. Iblis weigerte sich aus Hochmut, überzeugt, dass ihn seine Erschaffung aus Feuer besser mache.", "ar": "سجد الملائكة امتثالًا لأمر الله، وامتنع إبليس كِبرًا، ظانًّا أن أصله الناري يجعله أفضل." }
+        },
+        {
+          "verse": "2:35",
+          "check": "do not approach this tree",
+          "title": { "en": "A garden and one limit", "de": "Ein Garten und eine Grenze", "ar": "جنة وحدٌّ واحد" },
+          "body": { "en": "Adam and his wife were given the Garden and all its fruit. Only one tree was off limits.", "de": "Adam und seine Frau erhielten den Garten mit all seinen Früchten. Nur ein einziger Baum war ihnen verwehrt.", "ar": "أُسكن آدم وزوجه الجنة يأكلان من ثمارها، ولم يُمنعا إلا من شجرة واحدة." }
+        },
+        {
+          "verse": "7:20",
+          "check": "whispered to them",
+          "title": { "en": "The whisper", "de": "Das Einflüstern", "ar": "الوسوسة" },
+          "body": { "en": "Shaytan whispered to both of them with false promises. The Quran never places the blame on his wife alone.", "de": "Der Satan flüsterte beiden falsche Versprechen ein. Der Koran legt die Schuld nirgends allein seiner Frau auf.", "ar": "وسوس الشيطان لهما معًا بوعود كاذبة، ولا يُلقي القرآن اللوم على زوجه وحدها." }
+        },
+        {
+          "verse": "7:23",
+          "check": "we have wronged ourselves",
+          "title": { "en": "The way back", "de": "Der Weg zurück", "ar": "طريق العودة" },
+          "body": { "en": "No excuses, only honesty. Many commentators say these are the words Adam received from his Lord, and Allah accepted his repentance (2:37).", "de": "Keine Ausreden, nur Ehrlichkeit. Viele Kommentatoren sehen hierin die Worte, die Adam von seinem Herrn empfing; Allah nahm seine Reue an (2:37).", "ar": "لا أعذار، بل اعتراف صادق. ويرى كثير من المفسرين أنها الكلمات التي تلقّاها آدم، فقبل الله توبته (٢:٣٧)." }
+        },
+        {
+          "verse": "2:38",
+          "check": "follows My guidance",
+          "title": { "en": "Life on earth, with guidance", "de": "Leben auf der Erde, mit Rechtleitung", "ar": "حياة في الأرض مع الهدى" },
+          "body": { "en": "Adam came to earth forgiven, not cursed, and with a promise: guidance will come, and whoever follows it need not fear or grieve.", "de": "Adam kam vergeben auf die Erde, nicht verflucht, und mit einem Versprechen: Rechtleitung wird kommen, und wer ihr folgt, muss weder bangen noch trauern.", "ar": "نزل آدم إلى الأرض مغفورًا له لا ملعونًا، ومعه وعد: سيأتي الهدى، ومن اتبعه أمِن من الخوف والحزن." }
+        },
+        {
+          "title": { "en": "Lessons from Adam's story", "de": "Lehren aus der Geschichte Adams", "ar": "دروس من قصة آدم" },
+          "list": {
+            "en": ["Knowledge is an honour and a trust", "Pride shut Iblis out; humility brought Adam back", "A mistake is not the end if you turn back to Allah", "Admit your wrong without excuses"],
+            "de": ["Wissen ist eine Ehre und ein anvertrautes Gut", "Hochmut schloss Iblis aus, Demut brachte Adam zurück", "Ein Fehler ist nicht das Ende, wenn Sie zu Allah umkehren", "Gestehen Sie Ihr Unrecht ohne Ausreden ein"],
+            "ar": ["العلم شرف وأمانة", "الكِبر أبعد إبليس، والتواضع أعاد آدم", "الخطأ ليس النهاية إن رجعت إلى الله", "اعترف بخطئك دون أعذار"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 2:37" }
+      ]
+    },
+    {
+      "id": "prophet-02-idris",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 2", "de": "Geschichten der Propheten · 2", "ar": "قصص الأنبياء · ٢" },
+        "title": { "en": "The story of Idris in 6 slides", "de": "Die Geschichte von Idris in 6 Folien", "ar": "قصة إدريس في ٦ شرائح" },
+        "sub": { "en": "A man of truth whom Allah raised high", "de": "Ein Mann der Wahrhaftigkeit, den Allah erhöhte", "ar": "صدّيق رفعه الله منزلة عالية" },
+        "arabic": "إدريس عليه السلام"
+      },
+      "slides": [
+        {
+          "title": { "en": "Few words, great honour", "de": "Wenige Worte, große Ehre", "ar": "كلمات قليلة وشرف عظيم" },
+          "body": { "en": "Idris is named twice in the Quran, in Surah Maryam and Surah al-Anbiya. Both passages are short, yet every word in them is praise.", "de": "Idris wird im Koran zweimal genannt, in Sure Maryam und Sure al-Anbiya. Beide Stellen sind kurz, doch jedes Wort darin ist Lob.", "ar": "ذُكر إدريس عليه السلام في القرآن مرتين، في سورة مريم وسورة الأنبياء. والموضعان قصيران، لكن كل كلمة فيهما ثناء." }
+        },
+        {
+          "verse": "19:56-57",
+          "check": "man of truth",
+          "title": { "en": "Truthful and a prophet", "de": "Wahrhaftig und Prophet", "ar": "صدّيق ونبي" },
+          "body": { "en": "Two qualities define him: complete truthfulness and prophethood. Then comes a rare honour: Allah lifted him to an elevated place.", "de": "Zwei Eigenschaften kennzeichnen ihn: völlige Wahrhaftigkeit und Prophetentum. Dann folgt eine seltene Ehre: Allah erhob ihn an einen hohen Ort.", "ar": "صفتان تعرّفان به: الصدق الكامل والنبوة، ثم تكريم نادر: رفعه الله منزلة عالية." }
+        },
+        {
+          "title": { "en": "What does the high place mean?", "de": "Was bedeutet der hohe Ort?", "ar": "ما المكان العلي؟" },
+          "body": { "en": "Scholars differ: some say it is a high rank of honour, others a place in the heavens. In the hadith of the Night Journey, the Prophet met Idris in the fourth heaven.", "de": "Die Gelehrten sind sich nicht einig: ein hoher Rang der Ehre oder ein Ort in den Himmeln. Im Hadith der Nachtreise begegnete der Prophet Idris im vierten Himmel.", "ar": "اختلف العلماء: فمنهم من قال هي منزلة رفيعة من الشرف، ومنهم من قال مكان في السماء. وفي حديث المعراج لقي النبي صلى الله عليه وسلم إدريس في السماء الرابعة." }
+        },
+        {
+          "verse": "21:85-86",
+          "check": "Idrees",
+          "title": { "en": "Among the patient", "de": "Unter den Standhaften", "ar": "من الصابرين" },
+          "body": { "en": "Here he stands beside Isma'il and Dhul-Kifl. What unites them is patience, and with it a place in Allah's mercy.", "de": "Hier steht er neben Ismail und Dhul-Kifl. Was sie verbindet, ist Geduld und mit ihr ein Platz in Allahs Barmherzigkeit.", "ar": "يُذكر هنا مع إسماعيل وذي الكفل، ويجمعهم الصبر، وبه نالوا رحمة الله." }
+        },
+        {
+          "title": { "en": "What we do not know", "de": "Was wir nicht wissen", "ar": "ما لا نعلمه" },
+          "body": { "en": "The Quran gives no dates, places or details about his people. Many commentators identify him with Enoch of the Bible. Longer tales about him come from Israelite reports and are not confirmed.", "de": "Der Koran nennt keine Daten, Orte oder Einzelheiten über sein Volk. Viele Kommentatoren setzen ihn mit Henoch aus der Bibel gleich. Längere Erzählungen über ihn stammen aus israelitischen Überlieferungen und sind nicht bestätigt.", "ar": "لا يذكر القرآن زمنًا ولا مكانًا ولا تفاصيل عن قومه. ويرى كثير من المفسرين أنه أخنوخ المذكور في الكتاب المقدس. أما القصص المطوّلة عنه فمن الإسرائيليات ولا تثبت." }
+        },
+        {
+          "title": { "en": "Lessons from Idris", "de": "Lehren von Idris", "ar": "دروس من إدريس" },
+          "list": {
+            "en": ["Truthfulness is a path to honour with Allah", "Patience earns a place in His mercy", "A short mention by Allah outweighs long fame", "Be content with what revelation tells you"],
+            "de": ["Wahrhaftigkeit führt zu Ehre bei Allah", "Geduld verschafft einen Platz in Seiner Barmherzigkeit", "Eine kurze Erwähnung durch Allah wiegt mehr als langer Ruhm", "Begnügen Sie sich mit dem, was die Offenbarung sagt"],
+            "ar": ["الصدق طريق إلى الرفعة عند الله", "الصبر سبيل إلى رحمته", "ذِكر قليل عند الله خير من شهرة طويلة", "اكتفِ بما أخبر به الوحي"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 3207 (the Night Journey)", "url": "https://sunnah.com/bukhari:3207" },
+        { "label": "Ibn Kathir, Qisas al-Anbiya (Stories of the Prophets)" }
+      ]
+    },
+    {
+      "id": "prophet-03-nuh",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 3", "de": "Geschichten der Propheten · 3", "ar": "قصص الأنبياء · ٣" },
+        "title": { "en": "The story of Nuh in 8 slides", "de": "Die Geschichte Nuhs in 8 Folien", "ar": "قصة نوح في ٨ شرائح" },
+        "sub": { "en": "Nuh (Noah): centuries of patient calling, a ship and a new beginning", "de": "Nuh (Noah): Jahrhunderte geduldigen Rufens, ein Schiff und ein Neubeginn", "ar": "قرون من الدعوة الصابرة، وسفينة، وبداية جديدة" },
+        "arabic": "نوح عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "29:14",
+          "check": "thousand years minus fifty",
+          "title": { "en": "950 years among his people", "de": "950 Jahre unter seinem Volk", "ar": "٩٥٠ عامًا في قومه" },
+          "body": { "en": "Nuh called his people for nine and a half centuries. The Quran gives the number, and with it the measure of his patience.", "de": "Nuh rief sein Volk neuneinhalb Jahrhunderte lang. Der Koran nennt die Zahl und damit das Maß seiner Geduld.", "ar": "دعا نوح عليه السلام قومه تسعة قرون ونصفًا، وفي ذكر هذا العدد بيان لطول صبره." }
+        },
+        {
+          "verse": "71:5-7",
+          "check": "night and day",
+          "title": { "en": "Every way, every hour", "de": "Auf jedem Weg, zu jeder Stunde", "ar": "بكل سبيل وفي كل وقت" },
+          "body": { "en": "He tried every way, in private and in public. His people blocked their ears, hid under their clothes and turned away in pride.", "de": "Er versuchte jeden Weg, im Stillen und öffentlich. Sein Volk verschloss die Ohren, verhüllte sich und wandte sich hochmütig ab.", "ar": "سلك كل سبيل سرًّا وجهرًا، فسدّ قومه آذانهم وتغطّوا بثيابهم وأعرضوا متكبرين." }
+        },
+        {
+          "verse": "54:10-11",
+          "check": "overpowered",
+          "title": { "en": "A short prayer", "de": "Ein kurzes Gebet", "ar": "دعاء قصير" },
+          "body": { "en": "After all those years, he turned to Allah in a few words, admitting he had no strength left. The answer came from the sky.", "de": "Nach all den Jahren wandte er sich mit wenigen Worten an Allah und gestand, keine Kraft mehr zu haben. Die Antwort kam vom Himmel.", "ar": "بعد تلك السنين دعا ربه بكلمات قليلة معترفًا بضعفه، فجاء الجواب من السماء." }
+        },
+        {
+          "verse": "11:37-38",
+          "check": "constructed the ship",
+          "title": { "en": "Building under mockery", "de": "Bauen unter Spott", "ar": "يبني والقوم يسخرون" },
+          "body": { "en": "Allah told him to build a ship under His watch. Each time the leaders passed by, they laughed at him. He kept building.", "de": "Allah befahl ihm, unter Seiner Aufsicht ein Schiff zu bauen. Immer wenn die Vornehmen vorbeikamen, lachten sie ihn aus. Er baute weiter.", "ar": "أمره الله أن يصنع السفينة بعنايته، وكان الملأ يسخرون منه كلما مرّوا به، فمضى في عمله." }
+        },
+        {
+          "verse": "11:40",
+          "check": "except a few",
+          "title": { "en": "Only a few", "de": "Nur wenige", "ar": "قلة مؤمنة" },
+          "body": { "en": "When the command came, he took pairs of every kind, his family and the believers on board. After 950 years, they were only a few.", "de": "Als der Befehl kam, nahm er Paare jeder Art, seine Familie und die Gläubigen an Bord. Nach 950 Jahren waren es nur wenige.", "ar": "لما جاء الأمر حمل معه من كل نوع زوجين، وأهله والمؤمنين، وبعد ٩٥٠ عامًا كانوا قلة." }
+        },
+        {
+          "verse": "11:42-43",
+          "check": "O my son",
+          "title": { "en": "A father calls his son", "de": "Ein Vater ruft seinen Sohn", "ar": "أب ينادي ابنه" },
+          "body": { "en": "Nuh begged his son to come aboard, but the son trusted a mountain. Allah later told Nuh that, by his deeds, he was not of his family (11:46).", "de": "Nuh flehte seinen Sohn an, an Bord zu kommen, doch der Sohn vertraute einem Berg. Später sagte Allah zu Nuh, dass er wegen seiner Taten nicht zu seiner Familie gehörte (11:46).", "ar": "ناشد نوح ابنه أن يركب معهم، فاعتصم الابن بجبل. ثم بيّن الله لنوح أن ابنه خرج من أهله بسوء عمله (١١:٤٦)." }
+        },
+        {
+          "verse": "11:44",
+          "check": "came to rest",
+          "title": { "en": "The water recedes", "de": "Das Wasser weicht", "ar": "انحسار الماء" },
+          "body": { "en": "Earth and sky obeyed. The water drew back and the ship settled on al-Judi. From there, a new beginning for humanity started.", "de": "Erde und Himmel gehorchten. Das Wasser zog sich zurück, und das Schiff kam auf dem al-Dschudi zur Ruhe. Von dort begann ein Neuanfang für die Menschheit.", "ar": "أطاعت الأرض والسماء، وانحسر الماء، واستقرت السفينة على الجودي، ومن هناك بدأت البشرية من جديد." }
+        },
+        {
+          "title": { "en": "Lessons from Nuh's story", "de": "Lehren aus der Geschichte Nuhs", "ar": "دروس من قصة نوح" },
+          "list": {
+            "en": ["Keep calling to good, even when few respond", "Do what Allah asks, even when people mock", "Faith, not lineage, is what saves", "In distress, turn to Allah with honest words"],
+            "de": ["Rufen Sie weiter zum Guten, auch wenn wenige antworten", "Tun Sie, was Allah gebietet, auch wenn man spottet", "Glaube rettet, nicht Abstammung", "Wenden Sie sich in der Not mit ehrlichen Worten an Allah"],
+            "ar": ["استمر في الدعوة إلى الخير وإن قلّ المستجيبون", "افعل ما أمر الله به وإن سخر الناس", "الإيمان هو المنجي لا النسب", "الجأ إلى الله في الشدة بكلمات صادقة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-04-hud",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 4", "de": "Geschichten der Propheten · 4", "ar": "قصص الأنبياء · ٤" },
+        "title": { "en": "The story of Hud in 8 slides", "de": "Die Geschichte Huds in 8 Folien", "ar": "قصة هود في ٨ شرائح" },
+        "sub": { "en": "Hud and the people of 'Ad: strength, pride and a wind", "de": "Hud und das Volk der 'Ad: Stärke, Hochmut und ein Wind", "ar": "هود وقوم عاد: قوة وكِبر وريح" },
+        "arabic": "هود عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "7:65",
+          "check": "their brother",
+          "title": { "en": "A brother to 'Ad", "de": "Ein Bruder der 'Ad", "ar": "أخو عاد" },
+          "body": { "en": "Hud was one of 'Ad, not a stranger. His message was the one every prophet brought: worship Allah alone.", "de": "Hud war einer der 'Ad, kein Fremder. Seine Botschaft war die jedes Propheten: der Dienst an Allah allein.", "ar": "كان هود عليه السلام من عاد لا غريبًا عنهم، ودعوته دعوة كل نبي: عبادة الله وحده." }
+        },
+        {
+          "verse": "89:6-8",
+          "check": "lofty pillars",
+          "title": { "en": "A people of pillars", "de": "Ein Volk der Säulen", "ar": "قوم البنيان العالي" },
+          "body": { "en": "'Ad came after Nuh's people and were known for strength and tall buildings. Scholars differ whether Iram names their tribe or their city.", "de": "Die 'Ad kamen nach dem Volk Nuhs und waren für Stärke und hohe Bauten bekannt. Ob Iram ihren Stamm oder ihre Stadt bezeichnet, ist unter Gelehrten umstritten.", "ar": "جاءت عاد بعد قوم نوح، وعُرفت بالقوة والبنيان العالي. واختلف العلماء: هل إرم اسم القبيلة أم اسم مدينتها؟" }
+        },
+        {
+          "verse": "26:128-130",
+          "check": "every elevation",
+          "title": { "en": "Building for show", "de": "Bauen zur Schau", "ar": "بناء للتفاخر" },
+          "body": { "en": "Hud warned them against monuments built for vanity, fortresses built as if they would live forever, and harshness toward the weak.", "de": "Hud warnte vor Bauten aus Eitelkeit, vor Festungen, als würden sie ewig leben, und vor Härte gegen Schwache.", "ar": "حذّرهم هود من بناء للعبث، ومن حصون يشيّدونها كأنهم باقون أبدًا، ومن البطش بالضعفاء." }
+        },
+        {
+          "verse": "11:52",
+          "check": "ask forgiveness",
+          "title": { "en": "Forgiveness opens the sky", "de": "Vergebung öffnet den Himmel", "ar": "الاستغفار يفتح السماء" },
+          "body": { "en": "He tied repentance to blessing: seek Allah's forgiveness, and rain and new strength will follow.", "de": "Er verband Reue mit Segen: Wer Allah um Vergebung bittet, dem folgen Regen und neue Kraft.", "ar": "ربط هود التوبة بالبركة: من استغفر الله جاءه المطر وزادت قوته." }
+        },
+        {
+          "verse": "41:15",
+          "check": "greater than us in strength",
+          "title": { "en": "The pride of power", "de": "Der Stolz auf die eigene Macht", "ar": "غرور القوة" },
+          "body": { "en": "Their pride rested on their power. The Quran answers simply: the One who created them is stronger.", "de": "Ihr Hochmut gründete auf ihrer Macht. Der Koran antwortet schlicht: Der sie erschaffen hat, ist stärker.", "ar": "قام كِبرهم على قوتهم، فجاء الرد بسيطًا: الخالق أقوى من خلقه." }
+        },
+        {
+          "verse": "11:56",
+          "check": "relied upon",
+          "title": { "en": "Alone, but not afraid", "de": "Allein, aber ohne Furcht", "ar": "وحيد بلا خوف" },
+          "body": { "en": "Facing a hostile people alone, Hud declared his trust in Allah, who holds every living creature in His control.", "de": "Allein vor einem feindseligen Volk erklärte Hud sein Vertrauen auf Allah, der jedes Lebewesen in Seiner Gewalt hat.", "ar": "وقف هود وحده أمام قوم معادين، وأعلن توكله على الله الذي بيده كل دابة." }
+        },
+        {
+          "verse": "46:24-25",
+          "check": "cloud approaching",
+          "title": { "en": "The cloud that was not rain", "de": "Die Wolke, die kein Regen war", "ar": "سحاب بلا مطر" },
+          "body": { "en": "They saw a cloud and rejoiced at the rain to come. It was a wind that left nothing standing but their empty homes.", "de": "Sie sahen eine Wolke und freuten sich auf Regen. Es war ein Wind, der nur ihre leeren Wohnstätten zurückließ.", "ar": "رأوا سحابًا ففرحوا بالمطر، فإذا هو ريح لم تُبقِ إلا مساكنهم خالية." }
+        },
+        {
+          "title": { "en": "Lessons from Hud's story", "de": "Lehren aus der Geschichte Huds", "ar": "دروس من قصة هود" },
+          "body": { "en": "Hud and those who believed with him were saved (11:58).", "de": "Hud und die Gläubigen mit ihm wurden gerettet (11:58).", "ar": "ونجّى الله هودًا ومن آمن معه (١١:٥٨)." },
+          "list": {
+            "en": ["Strength and wealth are gifts, not proof of being right", "Build to benefit people, not to show off", "Seeking forgiveness opens doors of provision", "Rely on Allah when you stand alone for the truth"],
+            "de": ["Stärke und Reichtum sind Gaben, kein Beweis, im Recht zu sein", "Bauen Sie, um Menschen zu nützen, nicht um zu prahlen", "Die Bitte um Vergebung öffnet Türen der Versorgung", "Vertrauen Sie auf Allah, wenn Sie allein für die Wahrheit stehen"],
+            "ar": ["القوة والمال نِعَم وليست دليلًا على الحق", "ابنِ لتنفع الناس لا لتتفاخر", "الاستغفار يفتح أبواب الرزق", "توكّل على الله إن وقفت وحدك مع الحق"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-05-salih",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 5", "de": "Geschichten der Propheten · 5", "ar": "قصص الأنبياء · ٥" },
+        "title": { "en": "The story of Salih in 8 slides", "de": "Die Geschichte Salihs in 8 Folien", "ar": "قصة صالح في ٨ شرائح" },
+        "sub": { "en": "Salih and Thamud: a sign, a test and a people who failed it", "de": "Salih und die Thamud: ein Zeichen, eine Prüfung und ein Volk, das sie nicht bestand", "ar": "صالح وثمود: آية وابتلاء وقوم لم يصبروا" },
+        "arabic": "صالح عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "26:147-149",
+          "check": "carve out of the mountains",
+          "title": { "en": "Homes cut from rock", "de": "Häuser aus dem Fels", "ar": "بيوت من الصخر" },
+          "body": { "en": "Thamud came after 'Ad. They lived among gardens, springs and palms and carved their homes from the mountains.", "de": "Die Thamud kamen nach den 'Ad. Sie lebten zwischen Gärten, Quellen und Palmen und meißelten ihre Häuser aus den Bergen.", "ar": "جاءت ثمود بعد عاد، وعاشت بين البساتين والعيون والنخيل، وشقّت بيوتها في الصخر." }
+        },
+        {
+          "verse": "11:61",
+          "check": "near and responsive",
+          "title": { "en": "A Lord who is near", "de": "Ein Herr, der nahe ist", "ar": "ربٌّ قريب" },
+          "body": { "en": "Salih called them to worship Allah, who made them from the earth, and to seek His forgiveness. He described his Lord as near and answering.", "de": "Salih rief sie zum Dienst an Allah, der sie aus der Erde hervorbrachte, und zur Bitte um Seine Vergebung. Er beschrieb seinen Herrn als nahe und erhörend.", "ar": "دعاهم صالح عليه السلام إلى عبادة الله الذي أنشأهم من الأرض، وإلى طلب مغفرته، ووصف ربه بالقرب والإجابة." }
+        },
+        {
+          "verse": "11:62",
+          "check": "man of promise",
+          "title": { "en": "Once their hope", "de": "Einst ihre Hoffnung", "ar": "كان أمل قومه" },
+          "body": { "en": "His people had expected great things of him. His call to leave the gods of their fathers changed that.", "de": "Sein Volk hatte Großes von ihm erwartet. Sein Ruf, die Götter der Väter zu verlassen, änderte das.", "ar": "كان قومه يرجون منه الخير الكثير، فلما دعاهم إلى ترك آلهة آبائهم تغيّر ذلك." }
+        },
+        {
+          "verse": "26:155-156",
+          "check": "she-camel",
+          "title": { "en": "The she-camel", "de": "Die Kamelstute", "ar": "الناقة" },
+          "body": { "en": "They asked for a sign, and it came with a condition: share the water on set days and do her no harm.", "de": "Sie verlangten ein Zeichen, und es kam mit einer Bedingung: das Wasser an festen Tagen teilen und ihr nichts antun.", "ar": "طلبوا آية، فجاءت بشرط: أن يُقسم الماء بينهم وبينها في أيام معلومة، وألا يؤذوها." }
+        },
+        {
+          "verse": "91:12-14",
+          "check": "hamstrung her",
+          "title": { "en": "One acted, all agreed", "de": "Einer handelte, alle stimmten zu", "ar": "فعلها واحد ورضي الجميع" },
+          "body": { "en": "One man went out to kill her, yet the Quran attributes the deed to the whole people. Those who approve of a wrong share in it.", "de": "Ein Mann ging hin, um sie zu töten, doch der Koran schreibt die Tat dem ganzen Volk zu. Wer einem Unrecht zustimmt, hat Anteil daran.", "ar": "انبعث رجل واحد لقتلها، لكن القرآن نسب الفعل إلى القوم كلهم؛ فمن رضي بالظلم شارك فيه." }
+        },
+        {
+          "verse": "11:65-66",
+          "check": "three days",
+          "title": { "en": "Three days", "de": "Drei Tage", "ar": "ثلاثة أيام" },
+          "body": { "en": "Salih gave them three days. Then the command came, and he and those who believed were saved.", "de": "Salih gab ihnen drei Tage. Dann kam der Befehl, und er und die Gläubigen wurden gerettet.", "ar": "أمهلهم صالح ثلاثة أيام، ثم جاء الأمر فنجا هو والمؤمنون معه." }
+        },
+        {
+          "verse": "7:79",
+          "check": "do not like advisors",
+          "title": { "en": "A sincere farewell", "de": "Ein aufrichtiger Abschied", "ar": "وداع ناصح" },
+          "body": { "en": "He left them with grief, not triumph. He had passed on the message and advised them sincerely, but they disliked anyone who advised them.", "de": "Er verließ sie in Trauer, nicht im Triumph. Er hatte die Botschaft überbracht und aufrichtig geraten, doch sie mochten niemanden, der ihnen riet.", "ar": "ودّعهم حزينًا لا شامتًا: قد أدّى الأمانة وأخلص النصح، لكنهم كرهوا من ينصحهم." }
+        },
+        {
+          "title": { "en": "Lessons from Salih's story", "de": "Lehren aus der Geschichte Salihs", "ar": "دروس من قصة صالح" },
+          "list": {
+            "en": ["Blessings call for gratitude, not pride", "A sign from Allah is also a test", "Approving of a wrong is sharing in it", "Value those who advise you sincerely"],
+            "de": ["Gaben verlangen Dankbarkeit, keinen Hochmut", "Ein Zeichen Allahs ist auch eine Prüfung", "Wer Unrecht billigt, hat Anteil daran", "Schätzen Sie Menschen, die Sie aufrichtig beraten"],
+            "ar": ["النعم تستدعي الشكر لا الكِبر", "آية الله ابتلاء أيضًا", "الرضا بالظلم مشاركة فيه", "قدّر من ينصحك بإخلاص"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-06-ibrahim",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 6", "de": "Geschichten der Propheten · 6", "ar": "قصص الأنبياء · ٦" },
+        "title": { "en": "The story of Ibrahim in 8 slides", "de": "Die Geschichte Ibrahims in 8 Folien", "ar": "قصة إبراهيم في ٨ شرائح" },
+        "sub": { "en": "Ibrahim (Abraham): a searching mind, a fire and a House for Allah", "de": "Ibrahim (Abraham): ein suchender Verstand, ein Feuer und ein Haus für Allah", "ar": "عقل يبحث، ونار، وبيت لله" },
+        "arabic": "إبراهيم عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "6:78-79",
+          "check": "turned my face",
+          "title": { "en": "Star, moon and sun", "de": "Stern, Mond und Sonne", "ar": "الكوكب والقمر والشمس" },
+          "body": { "en": "Step by step he showed his people that whatever rises and sets cannot be God. Then he turned fully to the Creator of all.", "de": "Schritt für Schritt zeigte er seinem Volk, dass nichts, was aufgeht und untergeht, Gott sein kann. Dann wandte er sich ganz dem Schöpfer aller Dinge zu.", "ar": "بيّن إبراهيم عليه السلام لقومه خطوة خطوة أن ما يطلع ثم يغيب لا يكون إلهًا، ثم توجّه بكليته إلى خالق كل شيء." }
+        },
+        {
+          "verse": "19:42",
+          "check": "O my father",
+          "title": { "en": "Gentle words to his father", "de": "Sanfte Worte an seinen Vater", "ar": "كلمات رقيقة لأبيه" },
+          "body": { "en": "His call began at home. Again and again he addressed his father with tenderness, even while rejecting his idols.", "de": "Sein Ruf begann zu Hause. Immer wieder sprach er seinen Vater liebevoll an, auch während er dessen Götzen ablehnte.", "ar": "بدأت دعوته في بيته، فخاطب أباه مرة بعد مرة بلطف، مع رفضه لأصنامه." }
+        },
+        {
+          "verse": "21:62-63",
+          "check": "largest of them",
+          "title": { "en": "Let the idols speak", "de": "Sollen die Götzen sprechen", "ar": "فلتنطق الأصنام" },
+          "body": { "en": "He broke the idols and left the largest standing. His answer made his people face the truth: their gods could not even speak.", "de": "Er zerschlug die Götzen und ließ den größten stehen. Seine Antwort zwang sein Volk, die Wahrheit zu sehen: Ihre Götter konnten nicht einmal sprechen.", "ar": "حطّم الأصنام وترك كبيرها، فكان جوابه سبيلًا ليواجه قومه الحقيقة: آلهتهم لا تنطق." }
+        },
+        {
+          "verse": "21:68-69",
+          "check": "coolness and safety",
+          "title": { "en": "A fire made cool", "de": "Ein Feuer, das kühl wurde", "ar": "نار لم تحرق" },
+          "body": { "en": "Their answer to his argument was fire. Allah commanded the fire, and it did him no harm.", "de": "Ihre Antwort auf sein Argument war Feuer. Allah befahl dem Feuer, und es schadete ihm nicht.", "ar": "كان ردّهم على حجته نارًا، فأمر الله النار فلم تضرّه." }
+        },
+        {
+          "verse": "37:99",
+          "check": "He will guide me",
+          "title": { "en": "Leaving home for Allah", "de": "Die Heimat verlassen für Allah", "ar": "هجرة إلى الله" },
+          "body": { "en": "Rejected by his people, he left his homeland, sure that his Lord would show him the way. Lut went with him (21:71).", "de": "Von seinem Volk abgelehnt, verließ er seine Heimat, gewiss, dass sein Herr ihm den Weg zeigen würde. Lut ging mit ihm (21:71).", "ar": "لما ردّه قومه هاجر من أرضه واثقًا بأن ربه سيهديه، وكان لوط معه (٢١:٧١)." }
+        },
+        {
+          "verse": "2:127",
+          "check": "raising the foundations",
+          "title": { "en": "Building the House", "de": "Der Bau des Hauses", "ar": "بناء البيت" },
+          "body": { "en": "With his son Isma'il he raised the foundations of the Ka'ba. While they worked, they prayed that Allah would accept it.", "de": "Mit seinem Sohn Ismail errichtete er die Grundmauern der Kaaba. Während der Arbeit beteten sie, dass Allah es annehme.", "ar": "رفع مع ابنه إسماعيل قواعد الكعبة، وكانا يدعوان وهما يعملان أن يتقبّل الله عملهما." }
+        },
+        {
+          "verse": "4:125",
+          "check": "intimate friend",
+          "title": { "en": "The friend of Allah", "de": "Der Freund Allahs", "ar": "خليل الله" },
+          "body": { "en": "Allah took Ibrahim as His khalil, an intimate friend. His upright way is the path believers are invited to follow.", "de": "Allah nahm Ibrahim zum Khalil, zum engen Freund. Sein aufrichtiger Weg ist der Pfad, dem die Gläubigen folgen sollen.", "ar": "جعل الله إبراهيم خليلًا له، وملّته الحنيفية هي الطريق الذي يُدعى المؤمنون إلى اتباعه." }
+        },
+        {
+          "title": { "en": "Lessons from Ibrahim's story", "de": "Lehren aus der Geschichte Ibrahims", "ar": "دروس من قصة إبراهيم" },
+          "body": { "en": "Allah tested him with commands, and he fulfilled them (2:124).", "de": "Allah prüfte ihn mit Geboten, und er erfüllte sie (2:124).", "ar": "ابتلاه الله بأوامر فأدّاها كاملة (٢:١٢٤)." },
+          "list": {
+            "en": ["Use your reason: what fades cannot be worshipped", "Speak to family gently, even when you disagree", "Trust Allah when everything stands against you", "Build good things and ask Allah to accept them"],
+            "de": ["Gebrauchen Sie Ihren Verstand: Was vergeht, verdient keine Anbetung", "Sprechen Sie sanft mit Ihrer Familie, auch bei Widerspruch", "Vertrauen Sie auf Allah, wenn alles gegen Sie steht", "Schaffen Sie Gutes und bitten Sie Allah, es anzunehmen"],
+            "ar": ["استعمل عقلك: ما يزول لا يستحق العبادة", "خاطب أهلك بلطف وإن خالفتهم", "ثق بالله وإن وقف كل شيء ضدك", "اعمل الخير واسأل الله أن يتقبله"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-07-lut",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 7", "de": "Geschichten der Propheten · 7", "ar": "قصص الأنبياء · ٧" },
+        "title": { "en": "The story of Lut in 8 slides", "de": "Die Geschichte Luts in 8 Folien", "ar": "قصة لوط في ٨ شرائح" },
+        "sub": { "en": "Lut (Lot): standing for decency in a town that mocked it", "de": "Lut (Lot): Einsatz für Anstand in einer Stadt, die ihn verspottete", "ar": "لوط: ثبات على الطهر في قرية سخرت منه" },
+        "arabic": "لوط عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "29:26",
+          "check": "Lot believed him",
+          "title": { "en": "He believed Ibrahim", "de": "Er glaubte Ibrahim", "ar": "آمن لإبراهيم" },
+          "body": { "en": "Lut believed Ibrahim's call and left with him when Ibrahim emigrated for the sake of his Lord (21:71).", "de": "Lut glaubte Ibrahims Ruf und zog mit ihm fort, als Ibrahim um seines Herrn willen auswanderte (21:71).", "ar": "آمن لوط عليه السلام بدعوة إبراهيم، وخرج معه حين هاجر إلى ربه (٢١:٧١)." }
+        },
+        {
+          "verse": "21:74-75",
+          "check": "judgement and knowledge",
+          "title": { "en": "Wisdom for a hard mission", "de": "Weisheit für eine schwere Sendung", "ar": "حكمة لمهمة شاقة" },
+          "body": { "en": "Allah gave Lut wisdom and knowledge and sent him to a town known for its wicked deeds.", "de": "Allah gab Lut Urteilskraft und Wissen und sandte ihn zu einer Stadt, die für ihre schlechten Taten bekannt war.", "ar": "منح الله لوطًا الحكمة والعلم، وأرسله إلى قرية عُرفت بسوء أعمالها." }
+        },
+        {
+          "verse": "29:28-29",
+          "check": "obstruct the road",
+          "title": { "en": "What he stood against", "de": "Wogegen er eintrat", "ar": "ما أنكره عليهم" },
+          "body": { "en": "He spoke out against an indecency done openly, against robbing travellers on the roads, and against evil committed in their gatherings.", "de": "Er erhob seine Stimme gegen eine offen begangene Schamlosigkeit, gegen das Ausrauben von Reisenden und gegen Böses in ihren Versammlungen.", "ar": "أنكر عليهم فاحشة يأتونها علنًا، والاعتداء على المسافرين في الطرق، وفعل المنكر في مجالسهم." }
+        },
+        {
+          "verse": "7:82",
+          "check": "keep themselves pure",
+          "title": { "en": "Accused of purity", "de": "Angeklagt wegen Reinheit", "ar": "تهمتهم الطهر" },
+          "body": { "en": "Their only answer was to drive him out. The charge against his family: they wanted to stay pure.", "de": "Ihre einzige Antwort war, ihn zu vertreiben. Der Vorwurf gegen seine Familie: Sie wollten rein bleiben.", "ar": "لم يكن جوابهم إلا إخراجه، وكانت تهمة أهله أنهم يريدون الطهر." }
+        },
+        {
+          "verse": "11:77",
+          "check": "trying day",
+          "title": { "en": "Guests in danger", "de": "Gäste in Gefahr", "ar": "ضيوف في خطر" },
+          "body": { "en": "When the angels came to him as guests, Lut did not yet know who they were. He was deeply distressed, fearing for them.", "de": "Als die Engel als Gäste zu ihm kamen, wusste Lut noch nicht, wer sie waren. Er war tief bedrückt und fürchtete um sie.", "ar": "لما جاءته الملائكة ضيوفًا لم يكن يعرفهم بعد، فضاق صدره خوفًا عليهم." }
+        },
+        {
+          "verse": "11:81",
+          "check": "set out with your family",
+          "title": { "en": "Leave by night", "de": "Aufbruch in der Nacht", "ar": "الخروج ليلًا" },
+          "body": { "en": "The guests revealed that they were angels. Lut was to leave at night with his family and not look back. His wife would stay behind.", "de": "Die Gäste gaben sich als Engel zu erkennen. Lut sollte nachts mit seiner Familie aufbrechen, ohne sich umzusehen. Seine Frau würde zurückbleiben.", "ar": "كشف الضيوف أنهم ملائكة، وأُمر لوط أن يخرج بأهله ليلًا دون التفات، وأن امرأته ستبقى مع الهالكين." }
+        },
+        {
+          "verse": "51:35-36",
+          "check": "single",
+          "title": { "en": "One household", "de": "Ein einziges Haus", "ar": "بيت واحد" },
+          "body": { "en": "When the town was overturned (11:82), only one household of believers was brought out of it.", "de": "Als die Stadt umgestürzt wurde (11:82), wurde nur ein einziges Haus von Gläubigen daraus gerettet.", "ar": "حين قُلبت القرية (١١:٨٢) لم يُخرج منها إلا بيت واحد من المؤمنين." }
+        },
+        {
+          "title": { "en": "Lessons from Lut's story", "de": "Lehren aus der Geschichte Luts", "ar": "دروس من قصة لوط" },
+          "body": { "en": "His wife is named as an example of those who did not believe (66:10).", "de": "Seine Frau wird als Beispiel für jene genannt, die nicht glaubten (66:10).", "ar": "وذُكرت امرأته مثلًا لمن لم يؤمن (٦٦:١٠)." },
+          "list": {
+            "en": ["Speak against wrong, even when you stand alone", "Purity may be mocked; it is still honour", "Protect guests and those who trust you", "Faith is personal: even a prophet's wife must choose it"],
+            "de": ["Treten Sie Unrecht entgegen, auch wenn Sie allein sind", "Reinheit mag verspottet werden; sie bleibt eine Ehre", "Schützen Sie Gäste und alle, die Ihnen vertrauen", "Glaube ist persönlich: Auch die Frau eines Propheten muss ihn wählen"],
+            "ar": ["أنكر المنكر ولو وقفت وحدك", "قد يُسخر من الطهر لكنه يبقى شرفًا", "احمِ ضيوفك ومن يثق بك", "الإيمان اختيار شخصي حتى لزوجة نبي"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-08-ismail",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 8", "de": "Geschichten der Propheten · 8", "ar": "قصص الأنبياء · ٨" },
+        "title": { "en": "The story of Isma'il in 8 slides", "de": "Die Geschichte Ismails in 8 Folien", "ar": "قصة إسماعيل في ٨ شرائح" },
+        "sub": { "en": "Isma'il (Ishmael): a son of trust, a valley and a House", "de": "Ismail (Ismael): ein Sohn des Vertrauens, ein Tal und ein Haus", "ar": "إسماعيل: ابن الثقة بالله، ووادٍ، وبيت" },
+        "arabic": "إسماعيل عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "37:100-101",
+          "check": "forbearing boy",
+          "title": { "en": "An answered prayer", "de": "Ein erhörtes Gebet", "ar": "دعاء مستجاب" },
+          "body": { "en": "Ibrahim asked Allah for a righteous child. The answer was a son described by one quality: forbearance.", "de": "Ibrahim bat Allah um ein rechtschaffenes Kind. Die Antwort war ein Sohn, beschrieben mit einer Eigenschaft: Nachsicht.", "ar": "سأل إبراهيم ربه ولدًا صالحًا، فجاءت البشارة بابن وُصف بالحِلم." }
+        },
+        {
+          "verse": "14:37",
+          "check": "uncultivated valley",
+          "title": { "en": "A valley without crops", "de": "Ein Tal ohne Saat", "ar": "وادٍ بلا زرع" },
+          "body": { "en": "Ibrahim settled part of his family by the Sacred House in a barren valley and prayed that people's hearts would turn toward them.", "de": "Ibrahim ließ einen Teil seiner Familie beim heiligen Haus in einem kargen Tal und betete, dass sich ihnen die Herzen der Menschen zuwenden.", "ar": "ترك إبراهيم بعض أهله عند البيت الحرام في وادٍ قاحل، ودعا أن تميل إليهم قلوب الناس." }
+        },
+        {
+          "hadith": "bukhari:2368",
+          "check": "mother of Ishmael",
+          "title": { "en": "The mother of Isma'il", "de": "Die Mutter Ismails", "ar": "أم إسماعيل" },
+          "body": { "en": "The Quran does not name her; other hadith call her Hajar. The Prophet prayed for mercy on her, and Zamzam is part of her story.", "de": "Der Koran nennt ihren Namen nicht; andere Hadithe nennen sie Hadschar. Der Prophet bat um Barmherzigkeit für sie, und Zamzam gehört zu ihrer Geschichte.", "ar": "لا يذكر القرآن اسمها، وتسمّيها أحاديث أخرى هاجر. وقد ترحّم عليها النبي صلى الله عليه وسلم، وزمزم جزء من قصتها." }
+        },
+        {
+          "verse": "37:102",
+          "check": "O my son",
+          "title": { "en": "The hardest test", "de": "Die schwerste Prüfung", "ar": "أشدّ الابتلاء" },
+          "body": { "en": "When the boy was old enough to work beside his father, Ibrahim saw a dream. The son's reply showed rare trust and patience.", "de": "Als der Junge alt genug war, an der Seite seines Vaters zu arbeiten, sah Ibrahim einen Traum. Die Antwort des Sohnes zeigte seltenes Vertrauen und Geduld.", "ar": "لما كبر الغلام وصار يعين أباه رأى إبراهيم رؤيا، فكان جواب الابن مثالًا نادرًا في الثقة والصبر." }
+        },
+        {
+          "verse": "37:106-107",
+          "check": "great sacrifice",
+          "title": { "en": "A great ransom", "de": "Eine große Auslösung", "ar": "فداء عظيم" },
+          "body": { "en": "Allah redeemed the son with a great sacrifice. Most scholars say the son was Isma'il, as the good news of Ishaq comes after the story (37:112).", "de": "Allah löste den Sohn mit einem großen Opfer aus. Die meisten Gelehrten sagen, es war Ismail, da die frohe Botschaft von Ishaq erst nach der Geschichte folgt (37:112).", "ar": "فدى الله الابن بذبيحة عظيمة. ويرى أكثر العلماء أنه إسماعيل، لأن البشارة بإسحاق جاءت بعد القصة (٣٧:١١٢)." }
+        },
+        {
+          "verse": "2:128-129",
+          "check": "send among them a messenger",
+          "title": { "en": "A prayer for a messenger", "de": "Ein Gebet um einen Gesandten", "ar": "دعاء برسول" },
+          "body": { "en": "Building the Ka'ba together, father and son prayed for a messenger from their descendants. Muslims see the answer in the Prophet Muhammad.", "de": "Beim gemeinsamen Bau der Kaaba beteten Vater und Sohn um einen Gesandten aus ihren Nachkommen. Muslime sehen die Erhörung im Propheten Muhammad.", "ar": "دعا الأب والابن وهما يبنيان الكعبة أن يبعث الله رسولًا من ذريتهما، ويرى المسلمون الإجابة في النبي محمد صلى الله عليه وسلم." }
+        },
+        {
+          "verse": "19:54-55",
+          "check": "true to his promise",
+          "title": { "en": "True to his word", "de": "Treu seinem Wort", "ar": "صادق الوعد" },
+          "body": { "en": "Allah praises him as a man who kept his promises, a messenger and prophet who urged his family to pray and give charity.", "de": "Allah lobt ihn als Mann, der seine Versprechen hielt, als Gesandten und Propheten, der seine Familie zu Gebet und Zakat anhielt.", "ar": "يثني الله عليه بالوفاء بالوعد، وبأنه رسول نبي يدعو أهله إلى الصلاة والزكاة." }
+        },
+        {
+          "title": { "en": "Lessons from Isma'il's story", "de": "Lehren aus der Geschichte Ismails", "ar": "دروس من قصة إسماعيل" },
+          "list": {
+            "en": ["Trust Allah when the road looks empty", "Meet hard tests with patience and trust", "Keep your promises", "Encourage your family to pray and give"],
+            "de": ["Vertrauen Sie Allah, wenn der Weg leer erscheint", "Begegnen Sie schweren Prüfungen mit Geduld und Vertrauen", "Halten Sie Ihre Versprechen", "Ermutigen Sie Ihre Familie zu Gebet und Zakat"],
+            "ar": ["ثق بالله وإن بدا الطريق خاليًا", "واجه الابتلاء بالصبر والثقة", "أوفِ بوعدك", "شجّع أهلك على الصلاة والزكاة"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 2635 (the names Sarah and Hajar)" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 37:101-113" }
+      ]
+    },
+    {
+      "id": "prophet-09-ishaq",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 9", "de": "Geschichten der Propheten · 9", "ar": "قصص الأنبياء · ٩" },
+        "title": { "en": "The story of Ishaq in 8 slides", "de": "Die Geschichte Ishaqs in 8 Folien", "ar": "قصة إسحاق في ٨ شرائح" },
+        "sub": { "en": "Ishaq (Isaac): a promise to an old couple and a line of prophets", "de": "Ishaq (Isaak): ein Versprechen an ein altes Paar und eine Reihe von Propheten", "ar": "إسحاق: بشارة لزوجين شيخين وسلسلة من الأنبياء" },
+        "arabic": "إسحاق عليه السلام"
+      },
+      "slides": [
+        {
+          "title": { "en": "The second son of Ibrahim", "de": "Der zweite Sohn Ibrahims", "ar": "الابن الثاني لإبراهيم" },
+          "body": { "en": "The Quran tells little about Ishaq's daily life. It focuses on his birth as a gift, his prophethood and the qualities Allah praised in him.", "de": "Über Ishaqs Alltag erzählt der Koran wenig. Er richtet den Blick auf seine Geburt als Geschenk, sein Prophetentum und die Eigenschaften, die Allah an ihm lobte.", "ar": "لا يذكر القرآن الكثير عن تفاصيل حياة إسحاق عليه السلام، بل يركّز على ولادته هبةً من الله، وعلى نبوته، وعلى صفاته التي أثنى الله عليها." }
+        },
+        {
+          "verse": "11:71",
+          "check": "good tidings of Isaac",
+          "title": { "en": "Two generations in one promise", "de": "Zwei Generationen in einem Versprechen", "ar": "جيلان في بشارة واحدة" },
+          "body": { "en": "His mother heard the news of Ishaq and, after him, of Ya'qub: a son and a grandson announced together.", "de": "Seine Mutter erhielt die frohe Botschaft von Ishaq und nach ihm von Yaqub: Sohn und Enkel wurden gemeinsam angekündigt.", "ar": "بُشّرت أمه بإسحاق ثم بيعقوب من بعده، فجاءت البشارة بالابن والحفيد معًا." }
+        },
+        {
+          "verse": "51:28",
+          "check": "learned boy",
+          "title": { "en": "A boy of knowledge", "de": "Ein Junge voller Wissen", "ar": "غلام ذو علم" },
+          "body": { "en": "The angels described the coming child by his knowledge. Most commentators say this refers to Ishaq.", "de": "Die Engel beschrieben das kommende Kind mit seinem Wissen. Die meisten Kommentatoren beziehen dies auf Ishaq.", "ar": "وصف الملائكة المولود المنتظر بالعلم، ويرى أكثر المفسرين أنه إسحاق." }
+        },
+        {
+          "verse": "14:39",
+          "check": "in old age",
+          "title": { "en": "A gift in old age", "de": "Ein Geschenk im Alter", "ar": "هبة في الكِبر" },
+          "body": { "en": "Ibrahim praised Allah for granting him Isma'il and Ishaq late in life, and for hearing his prayers.", "de": "Ibrahim pries Allah dafür, dass Er ihm spät im Leben Ismail und Ishaq schenkte und seine Gebete erhörte.", "ar": "حمد إبراهيم ربه على أن وهبه إسماعيل وإسحاق في آخر عمره، وعلى أنه يستجيب الدعاء." }
+        },
+        {
+          "verse": "37:112-113",
+          "check": "a prophet from among the righteous",
+          "title": { "en": "A prophet in his own right", "de": "Selbst ein Prophet", "ar": "نبوة بعد نبوة" },
+          "body": { "en": "Ishaq became a prophet himself, and blessing rested on him and his father. Yet each descendant is judged by his own deeds.", "de": "Ishaq wurde selbst Prophet, und Segen ruhte auf ihm und seinem Vater. Doch jeder Nachkomme wird nach seinen eigenen Taten beurteilt.", "ar": "صار إسحاق نبيًّا، وحلّت البركة عليه وعلى أبيه، لكن كل واحد من ذريتهما يُحاسب بعمله." }
+        },
+        {
+          "verse": "21:72-73",
+          "check": "leaders guiding",
+          "title": { "en": "Leaders who guide", "de": "Vorbilder, die leiten", "ar": "قادة إلى الخير" },
+          "body": { "en": "Ishaq and Ya'qub were made leaders who guide others, known for good deeds, prayer and charity.", "de": "Ishaq und Yaqub wurden zu Vorbildern, die andere leiten, bekannt für gute Taten, Gebet und Zakat.", "ar": "جعل الله إسحاق ويعقوب قدوة يهدون غيرهم، وعُرفوا بالعمل الصالح والصلاة والزكاة." }
+        },
+        {
+          "verse": "38:45-47",
+          "check": "strength and",
+          "title": { "en": "Strength and vision", "de": "Kraft und Einsicht", "ar": "قوة وبصيرة" },
+          "body": { "en": "Allah praises Ibrahim, Ishaq and Ya'qub for strength in deeds and insight in faith, and for keeping the Hereafter in mind.", "de": "Allah lobt Ibrahim, Ishaq und Yaqub für Kraft im Handeln und Einsicht im Glauben und dafür, dass sie das Jenseits vor Augen hatten.", "ar": "يثني الله على إبراهيم وإسحاق ويعقوب بالقوة في العمل والبصيرة في الدين، وبتذكّرهم الدار الآخرة." }
+        },
+        {
+          "title": { "en": "Lessons from Ishaq's story", "de": "Lehren aus der Geschichte Ishaqs", "ar": "دروس من قصة إسحاق" },
+          "list": {
+            "en": ["Allah's promise is not limited by age", "Blessing in a family is carried by deeds", "Keep the Hereafter in view", "Thank Allah for gifts that come late"],
+            "de": ["Allahs Versprechen kennt keine Altersgrenze", "Segen in einer Familie wird durch Taten getragen", "Behalten Sie das Jenseits im Blick", "Danken Sie Allah für Gaben, die spät kommen"],
+            "ar": ["وعد الله لا يحدّه عمر", "البركة في الأسرة تُحمل بالأعمال", "اجعل الآخرة نصب عينيك", "اشكر الله على النعم وإن تأخرت"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-10-yaqub",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 10", "de": "Geschichten der Propheten · 10", "ar": "قصص الأنبياء · ١٠" },
+        "title": { "en": "The story of Ya'qub in 8 slides", "de": "Die Geschichte Yaqubs in 8 Folien", "ar": "قصة يعقوب في ٨ شرائح" },
+        "sub": { "en": "Ya'qub (Jacob): a father's patience and a hope that never died", "de": "Yaqub (Jakob): die Geduld eines Vaters und eine Hoffnung, die nie erlosch", "ar": "يعقوب: صبر أب وأمل لم ينطفئ" },
+        "arabic": "يعقوب عليه السلام"
+      },
+      "slides": [
+        {
+          "title": { "en": "Also called Isra'il", "de": "Auch Israil genannt", "ar": "ويُسمّى إسرائيل" },
+          "arabic": "إسرائيل",
+          "body": { "en": "Ya'qub is the son of Ishaq and grandson of Ibrahim. The Quran also calls him Isra'il, and his descendants are the Children of Israel (3:93).", "de": "Yaqub ist der Sohn Ishaqs und Enkel Ibrahims. Der Koran nennt ihn auch Israil; seine Nachkommen sind die Kinder Israils (3:93).", "ar": "يعقوب عليه السلام ابن إسحاق وحفيد إبراهيم، ويسمّيه القرآن أيضًا إسرائيل، وذريته هم بنو إسرائيل (٣:٩٣)." }
+        },
+        {
+          "verse": "12:5",
+          "check": "do not relate your vision",
+          "title": { "en": "A father who protects", "de": "Ein Vater, der beschützt", "ar": "أب يحمي" },
+          "body": { "en": "When young Yusuf told him his dream, Ya'qub understood its weight and told him to keep it from his brothers.", "de": "Als der junge Yusuf ihm seinen Traum erzählte, erkannte Yaqub dessen Gewicht und riet ihm, ihn vor seinen Brüdern zu verbergen.", "ar": "لما حدّثه يوسف برؤياه أدرك يعقوب شأنها، وأوصاه أن يكتمها عن إخوته." }
+        },
+        {
+          "verse": "12:18",
+          "check": "patience is most fitting",
+          "title": { "en": "Beautiful patience", "de": "Schöne Geduld", "ar": "الصبر الجميل" },
+          "body": { "en": "Shown a shirt with false blood, he saw through the story. His answer was patience and seeking Allah's help.", "de": "Als man ihm ein Hemd mit falschem Blut zeigte, durchschaute er die Geschichte. Seine Antwort war Geduld und die Bitte um Allahs Hilfe.", "ar": "لما جاؤوه بقميص ملطّخ بدم كاذب لم تخدعه القصة، فكان جوابه الصبر والاستعانة بالله." }
+        },
+        {
+          "verse": "12:84",
+          "check": "eyes became white",
+          "title": { "en": "Grief held inside", "de": "Verhaltener Schmerz", "ar": "حزن مكتوم" },
+          "body": { "en": "Years later, when another son was held in Egypt, the old grief returned. He wept until his eyes turned white, yet kept his pain inside.", "de": "Jahre später, als ein weiterer Sohn in Ägypten festgehalten wurde, kehrte der alte Schmerz zurück. Er weinte, bis seine Augen weiß wurden, und hielt den Kummer doch in sich.", "ar": "بعد سنين، حين احتُجز ابن آخر في مصر، عاد الحزن القديم، فبكى حتى ابيضّت عيناه، وهو يكتم ألمه." }
+        },
+        {
+          "verse": "12:86",
+          "check": "complain of my suffering",
+          "title": { "en": "Complaining only to Allah", "de": "Klage nur vor Allah", "ar": "الشكوى إلى الله وحده" },
+          "body": { "en": "He did not hide his sorrow, but he brought it to Allah alone. Grief and faith can live in the same heart.", "de": "Er verbarg seinen Kummer nicht, doch er trug ihn allein vor Allah. Trauer und Glaube können im selben Herzen wohnen.", "ar": "لم يُخفِ حزنه، لكنه رفعه إلى الله وحده؛ فالحزن والإيمان قد يجتمعان في قلب واحد." }
+        },
+        {
+          "verse": "12:87",
+          "check": "despair not of relief",
+          "title": { "en": "Never lose hope", "de": "Niemals die Hoffnung aufgeben", "ar": "أمل لا ينقطع" },
+          "body": { "en": "Instead of giving up, he sent his sons to search, telling them never to lose hope in Allah's relief.", "de": "Statt aufzugeben, schickte er seine Söhne auf die Suche und mahnte sie, nie die Hoffnung auf Allahs Erleichterung zu verlieren.", "ar": "لم يستسلم، بل أرسل أبناءه يبحثون، وأوصاهم ألا يفقدوا الأمل في فرج الله." }
+        },
+        {
+          "verse": "12:96",
+          "check": "seeing",
+          "title": { "en": "The shirt and the sight", "de": "Das Hemd und das Augenlicht", "ar": "القميص والبصر" },
+          "body": { "en": "Yusuf's shirt was laid on his face and his sight returned. Then he forgave his sons and promised to ask Allah to forgive them (12:98).", "de": "Yusufs Hemd wurde ihm aufs Gesicht gelegt, und er konnte wieder sehen. Dann verzieh er seinen Söhnen und versprach, Allah um Vergebung für sie zu bitten (12:98).", "ar": "وُضع قميص يوسف على وجهه فعاد إليه بصره، ثم صفح عن أبنائه ووعدهم أن يطلب لهم المغفرة من الله (١٢:٩٨)." }
+        },
+        {
+          "title": { "en": "Lessons from Ya'qub's story", "de": "Lehren aus der Geschichte Yaqubs", "ar": "دروس من قصة يعقوب" },
+          "body": { "en": "On his deathbed he asked his sons whom they would worship after him (2:133).", "de": "Auf dem Sterbebett fragte er seine Söhne, wem sie nach ihm dienen würden (2:133).", "ar": "وعند موته سأل أبناءه عمّن سيعبدون بعده (٢:١٣٣)." },
+          "list": {
+            "en": ["Patience is not silence; it is trust in Allah", "Bring your grief to Allah", "Never give up hope in Allah's relief", "Forgive those who wronged you when they return"],
+            "de": ["Geduld ist kein Schweigen, sondern Vertrauen auf Allah", "Tragen Sie Ihren Kummer zu Allah", "Geben Sie die Hoffnung auf Allahs Erleichterung nie auf", "Vergeben Sie denen, die Ihnen Unrecht taten, wenn sie umkehren"],
+            "ar": ["الصبر ليس صمتًا بل ثقة بالله", "ارفع حزنك إلى الله", "لا تفقد الأمل في فرج الله", "اعفُ عمّن ظلمك إذا رجع"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-11-yusuf",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 11", "de": "Geschichten der Propheten · 11", "ar": "قصص الأنبياء · ١١" },
+        "title": { "en": "The story of Yusuf in 8 slides", "de": "Die Geschichte Yusufs in 8 Folien", "ar": "قصة يوسف في ٨ شرائح" },
+        "sub": { "en": "Yusuf (Joseph): from a well to a palace, with patience at every step", "de": "Yusuf (Josef): vom Brunnen zum Palast, mit Geduld bei jedem Schritt", "ar": "يوسف: من البئر إلى القصر، بالصبر في كل خطوة" },
+        "arabic": "يوسف عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "12:4",
+          "check": "eleven stars",
+          "title": { "en": "A boy's dream", "de": "Der Traum eines Jungen", "ar": "رؤيا غلام" },
+          "body": { "en": "The story opens with a child's dream of eleven stars, the sun and the moon. Its meaning becomes clear only at the end.", "de": "Die Geschichte beginnt mit dem Traum eines Kindes von elf Sternen, der Sonne und dem Mond. Seine Bedeutung wird erst am Ende klar.", "ar": "تبدأ القصة برؤيا طفل: أحد عشر كوكبًا مع الشمس والقمر، ولا يتضح معناها إلا في آخرها." }
+        },
+        {
+          "verse": "12:15",
+          "check": "bottom of the well",
+          "title": { "en": "Into the well", "de": "In den Brunnen", "ar": "في قاع البئر" },
+          "body": { "en": "Jealous brothers threw him into a well. At his lowest moment, Allah gave him a quiet promise: one day he would tell them of this.", "de": "Eifersüchtige Brüder warfen ihn in einen Brunnen. In seiner tiefsten Stunde gab Allah ihm ein stilles Versprechen: Eines Tages würde er ihnen davon erzählen.", "ar": "ألقاه إخوته الحاسدون في البئر، وفي أشدّ لحظاته أوحى الله إليه وعدًا خفيًّا بأنه سيخبرهم يومًا بما فعلوا." }
+        },
+        {
+          "verse": "12:23",
+          "check": "the refuge of Allah",
+          "title": { "en": "Refuge in Allah", "de": "Zuflucht bei Allah", "ar": "الاعتصام بالله" },
+          "body": { "en": "In his master's house he faced a strong temptation. He sought refuge in Allah and remembered the loyalty he owed.", "de": "Im Haus seines Herrn stand er vor einer starken Versuchung. Er suchte Zuflucht bei Allah und dachte an die Treue, die er schuldete.", "ar": "واجه في بيت سيده فتنة شديدة، فاستعاذ بالله وتذكّر حق من أحسن إليه." }
+        },
+        {
+          "verse": "12:33",
+          "check": "prison is more to my liking",
+          "title": { "en": "Prison over sin", "de": "Lieber Gefängnis als Sünde", "ar": "السجن قبل المعصية" },
+          "body": { "en": "He preferred prison to disobedience and asked Allah to protect him from his own weakness.", "de": "Er zog das Gefängnis dem Ungehorsam vor und bat Allah, ihn vor seiner eigenen Schwäche zu schützen.", "ar": "آثر السجن على المعصية، وسأل الله أن يحفظه من ضعف نفسه." }
+        },
+        {
+          "verse": "12:55",
+          "check": "storehouses",
+          "title": { "en": "From prison to the storehouses", "de": "Vom Gefängnis zu den Vorratskammern", "ar": "من السجن إلى خزائن البلاد" },
+          "body": { "en": "Cleared of all blame, he asked to manage the land's stores. His knowledge and honesty carried Egypt through years of famine.", "de": "Von jedem Vorwurf befreit, bat er darum, die Vorräte des Landes zu verwalten. Sein Wissen und seine Ehrlichkeit trugen Ägypten durch Jahre der Hungersnot.", "ar": "بعد أن ثبتت براءته طلب أن يتولى خزائن البلاد، فعبرت مصر سنوات القحط بعلمه وأمانته." }
+        },
+        {
+          "verse": "12:92",
+          "check": "No blame",
+          "title": { "en": "Forgiveness at the height of power", "de": "Vergebung auf dem Gipfel der Macht", "ar": "عفو عند المقدرة" },
+          "body": { "en": "When his brothers stood before him in need, he could have taken revenge. He forgave them at once and prayed for them.", "de": "Als seine Brüder bedürftig vor ihm standen, hätte er sich rächen können. Er vergab ihnen sofort und betete für sie.", "ar": "لما وقف إخوته بين يديه محتاجين كان قادرًا على الانتقام، فعفا عنهم في الحال ودعا لهم." }
+        },
+        {
+          "verse": "12:100",
+          "check": "explanation of my vision",
+          "title": { "en": "The dream comes true", "de": "Der Traum wird wahr", "ar": "تحقق الرؤيا" },
+          "body": { "en": "His parents and brothers bowed before him, and the childhood dream came true. Thanking Allah, he spoke of prison, not of the well.", "de": "Seine Eltern und Brüder verneigten sich vor ihm, und der Kindheitstraum wurde wahr. Dankend sprach er vom Gefängnis, nicht vom Brunnen.", "ar": "سجد له أبواه وإخوته فتحققت رؤيا الطفولة، وحين شكر الله ذكر السجن ولم يذكر البئر." }
+        },
+        {
+          "title": { "en": "Lessons from Yusuf's story", "de": "Lehren aus der Geschichte Yusufs", "ar": "دروس من قصة يوسف" },
+          "body": { "en": "Allah calls this the best of stories (12:3).", "de": "Allah nennt sie die schönste der Erzählungen (12:3).", "ar": "وصفها الله بأحسن القصص (١٢:٣)." },
+          "list": {
+            "en": ["Patience can turn a well into a path", "Choose obedience, even when it costs you", "Use your skills to serve people", "Forgive when you have the power not to"],
+            "de": ["Geduld kann einen Brunnen in einen Weg verwandeln", "Wählen Sie Gehorsam, auch wenn er Sie etwas kostet", "Setzen Sie Ihre Fähigkeiten im Dienst der Menschen ein", "Vergeben Sie, auch wenn Sie die Macht zur Vergeltung hätten"],
+            "ar": ["الصبر قد يحوّل البئر إلى طريق", "اختر الطاعة وإن كلّفتك", "سخّر مهاراتك لخدمة الناس", "اعفُ وأنت قادر"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-12-ayyub",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 12", "de": "Geschichten der Propheten · 12", "ar": "قصص الأنبياء · ١٢" },
+        "title": { "en": "The story of Ayyub in 7 slides", "de": "Die Geschichte Ayyubs in 7 Folien", "ar": "قصة أيوب في ٧ شرائح" },
+        "sub": { "en": "Ayyub (Job): patience in pain and a prayer full of courtesy", "de": "Ayyub (Hiob): Geduld im Leid und ein Gebet voller Anstand", "ar": "أيوب: صبر على البلاء ودعاء مليء بالأدب" },
+        "arabic": "أيوب عليه السلام"
+      },
+      "slides": [
+        {
+          "title": { "en": "A prophet tested", "de": "Ein geprüfter Prophet", "ar": "نبي مُبتلى" },
+          "body": { "en": "The Quran tells us that hardship struck Ayyub and that his family was later given back to him. It does not describe his illness in detail; graphic stories about it come from later reports.", "de": "Der Koran berichtet, dass Ayyub von Not getroffen wurde und dass ihm seine Familie später wiedergegeben wurde. Seine Krankheit beschreibt er nicht im Einzelnen; drastische Schilderungen stammen aus späteren Berichten.", "ar": "يخبرنا القرآن أن الضرّ أصاب أيوب عليه السلام، وأن الله ردّ إليه أهله بعد ذلك، ولا يصف مرضه بالتفصيل؛ أما الأوصاف المفزعة فمن روايات متأخرة." }
+        },
+        {
+          "verse": "21:83",
+          "check": "most merciful of the merciful",
+          "title": { "en": "A prayer full of courtesy", "de": "Ein Gebet voller Anstand", "ar": "دعاء بأدب" },
+          "body": { "en": "He did not demand or complain. He described his state, named Allah's mercy and left the rest to Him.", "de": "Er forderte nicht und klagte nicht an. Er beschrieb seinen Zustand, nannte Allahs Barmherzigkeit und überließ Ihm den Rest.", "ar": "لم يطالب ولم يتسخّط، بل وصف حاله وذكر رحمة ربه وفوّض الأمر إليه." }
+        },
+        {
+          "verse": "38:41-42",
+          "check": "cool bath",
+          "title": { "en": "A spring at his feet", "de": "Eine Quelle zu seinen Füßen", "ar": "عين عند قدميه" },
+          "body": { "en": "Relief came through a simple act: he struck the ground with his foot, and water came for washing and drinking.", "de": "Die Erleichterung kam durch eine einfache Handlung: Er stampfte mit dem Fuß auf, und Wasser zum Waschen und Trinken kam hervor.", "ar": "جاء الفرج بفعل يسير: ضرب الأرض بقدمه فنبع ماء للاغتسال والشرب." }
+        },
+        {
+          "verse": "21:84",
+          "check": "removed what afflicted",
+          "title": { "en": "More than he lost", "de": "Mehr, als er verlor", "ar": "أكثر مما فقد" },
+          "body": { "en": "Allah removed his suffering and gave him back his family and as many again, as a mercy and a reminder for all who worship.", "de": "Allah nahm sein Leiden von ihm und gab ihm seine Familie zurück und noch einmal so viele dazu, als Barmherzigkeit und Ermahnung für alle, die Ihm dienen.", "ar": "رفع الله عنه البلاء، وأعاد إليه أهله وضاعفهم، رحمة منه وتذكيرًا لكل عابد." }
+        },
+        {
+          "verse": "38:44",
+          "check": "excellent servant",
+          "title": { "en": "An excellent servant", "de": "Ein vortrefflicher Diener", "ar": "نعم العبد" },
+          "body": { "en": "Allah's verdict: patient, an excellent servant, always turning back to Him. The oath mentioned here is not explained in the Quran.", "de": "Allahs Urteil: geduldig, ein vortrefflicher Diener, der stets zu Ihm umkehrte. Der hier erwähnte Schwur wird im Koran nicht erklärt.", "ar": "حكم الله فيه: صابر، نعم العبد، كثير الرجوع إليه. أما اليمين المذكورة هنا فلم يفسّرها القرآن." }
+        },
+        {
+          "hadith": "bukhari:3391",
+          "check": "gold locusts",
+          "title": { "en": "Always in need of His blessing", "de": "Immer auf Seinen Segen angewiesen", "ar": "حاجة دائمة إلى فضل الله" },
+          "body": { "en": "Even after his relief, Ayyub knew he would always need what Allah gives.", "de": "Auch nach seiner Rettung wusste Ayyub, dass er immer auf Allahs Gaben angewiesen bleibt.", "ar": "حتى بعد الفرج بقي أيوب يعلم أنه محتاج إلى فضل ربه دائمًا." }
+        },
+        {
+          "title": { "en": "Lessons from Ayyub's story", "de": "Lehren aus der Geschichte Ayyubs", "ar": "دروس من قصة أيوب" },
+          "list": {
+            "en": ["Patience does not forbid asking for relief", "Describe your pain to Allah with courtesy", "Relief can come through simple means", "Never feel you have enough of Allah's blessing"],
+            "de": ["Geduld verbietet nicht, um Erleichterung zu bitten", "Schildern Sie Allah Ihren Schmerz mit Anstand", "Erleichterung kann durch einfache Mittel kommen", "Meinen Sie nie, genug von Allahs Segen zu haben"],
+            "ar": ["الصبر لا يمنع طلب الفرج", "اشكُ ألمك إلى الله بأدب", "قد يأتي الفرج بأسباب يسيرة", "لا تستغنِ أبدًا عن فضل الله"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-13-shuayb",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 13", "de": "Geschichten der Propheten · 13", "ar": "قصص الأنبياء · ١٣" },
+        "title": { "en": "The story of Shu'ayb in 8 slides", "de": "Die Geschichte Schu'aibs in 8 Folien", "ar": "قصة شعيب في ٨ شرائح" },
+        "sub": { "en": "Shu'ayb and Madyan: faith that shows in honest trade", "de": "Schu'aib und Madyan: Glaube, der sich im ehrlichen Handel zeigt", "ar": "شعيب ومدين: إيمان يظهر في الأمانة في التجارة" },
+        "arabic": "شعيب عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "11:84",
+          "check": "measure and the scale",
+          "title": { "en": "Sent to Madyan", "de": "Gesandt nach Madyan", "ar": "إلى مدين" },
+          "body": { "en": "Shu'ayb was sent to Madyan. With the call to worship one God came a very practical demand: honest measure.", "de": "Schu'aib wurde nach Madyan gesandt. Mit dem Ruf zum Dienst an dem einen Gott kam eine sehr praktische Forderung: ehrliches Maß.", "ar": "أُرسل شعيب عليه السلام إلى مدين، ومع الدعوة إلى التوحيد جاء مطلب عملي واضح: الأمانة في الكيل." }
+        },
+        {
+          "verse": "26:181-183",
+          "check": "even",
+          "title": { "en": "Honest weights", "de": "Ehrliche Gewichte", "ar": "ميزان عادل" },
+          "body": { "en": "Cheating in trade is no small matter. It robs people of their rights and spreads corruption on earth.", "de": "Betrug im Handel ist keine Kleinigkeit. Er nimmt Menschen ihr Recht und verbreitet Unheil auf der Erde.", "ar": "الغش في التجارة ليس أمرًا هيّنًا، فهو يسلب الناس حقوقهم وينشر الفساد في الأرض." }
+        },
+        {
+          "verse": "11:86",
+          "check": "best for you",
+          "title": { "en": "What remains is better", "de": "Was bleibt, ist besser", "ar": "الحلال خير وأبقى" },
+          "body": { "en": "A lawful profit that Allah leaves you is better than more taken unfairly. He advised them, but he forced no one.", "de": "Ein erlaubter Gewinn, den Allah einem lässt, ist besser als mehr, das man unrecht nimmt. Er riet ihnen, doch er zwang niemanden.", "ar": "الربح الحلال الذي يبقيه الله لك خير من الكثير المأخوذ ظلمًا. نصحهم ولم يُكره أحدًا." }
+        },
+        {
+          "verse": "11:87",
+          "check": "with our wealth what we please",
+          "title": { "en": "Faith and money", "de": "Glaube und Geld", "ar": "الإيمان والمال" },
+          "body": { "en": "His people saw no link between prayer and business. They mocked him for bringing his religion into their wealth.", "de": "Sein Volk sah keine Verbindung zwischen Gebet und Geschäft. Sie spotteten über ihn, weil er seine Religion in ihr Vermögen hineintrug.", "ar": "لم ير قومه صلة بين الصلاة والتجارة، فسخروا منه لأنه أدخل دينه في أموالهم." }
+        },
+        {
+          "verse": "11:88",
+          "check": "intend reform",
+          "title": { "en": "Only to set things right", "de": "Nur zum Besseren", "ar": "الإصلاح وحده" },
+          "body": { "en": "He practised what he preached and wanted only to set things right as far as he could, relying on Allah for success.", "de": "Er lebte, was er lehrte, und wollte nur verbessern, so weit er konnte, im Vertrauen auf Allah, der allein Gelingen schenkt.", "ar": "كان يعمل بما يدعو إليه، ولا غاية له سوى إصلاح ما يقدر عليه، متوكلًا على الله في التوفيق." }
+        },
+        {
+          "verse": "11:91-92",
+          "check": "if not for your family",
+          "title": { "en": "His clan or Allah?", "de": "Seine Sippe oder Allah?", "ar": "عشيرته أم الله؟" },
+          "body": { "en": "They spared him only out of respect for his clan. He asked them why they held his family in more awe than Allah.", "de": "Sie verschonten ihn nur aus Rücksicht auf seine Sippe. Er fragte sie, warum sie seine Familie mehr achteten als Allah.", "ar": "لم يتركوه إلا مراعاة لعشيرته، فسألهم: كيف تكون عشيرته أعظم في نفوسهم من الله؟" }
+        },
+        {
+          "verse": "11:94",
+          "check": "those who believed with him",
+          "title": { "en": "The end of Madyan", "de": "Das Ende von Madyan", "ar": "نهاية مدين" },
+          "body": { "en": "Shu'ayb and the believers were saved. The others were seized in their homes. Another surah speaks of an earthquake (7:91).", "de": "Schu'aib und die Gläubigen wurden gerettet. Die anderen wurden in ihren Häusern ergriffen. Eine andere Sure spricht von einem Beben (7:91).", "ar": "نجا شعيب والمؤمنون، وأُخذ الآخرون في ديارهم. وتذكر سورة أخرى الرجفة (٧:٩١)." }
+        },
+        {
+          "title": { "en": "Lessons from Shu'ayb's story", "de": "Lehren aus der Geschichte Schu'aibs", "ar": "دروس من قصة شعيب" },
+          "body": { "en": "Many scholars hold that the companions of the thicket (26:176) are the same people.", "de": "Viele Gelehrte sehen in den Leuten des Dickichts (26:176) dasselbe Volk.", "ar": "ويرى كثير من العلماء أن أصحاب الأيكة (٢٦:١٧٦) هم أهل مدين أنفسهم." },
+          "list": {
+            "en": ["Honesty in trade is part of faith", "Let your prayer shape how you earn and spend", "Practise what you preach", "Seek to do good as far as you can; success is from Allah"],
+            "de": ["Ehrlichkeit im Handel gehört zum Glauben", "Lassen Sie Ihr Gebet prägen, wie Sie verdienen und ausgeben", "Leben Sie, was Sie lehren", "Tun Sie Gutes, so weit Sie können; das Gelingen kommt von Allah"],
+            "ar": ["الأمانة في التجارة من الإيمان", "اجعل صلاتك تهذّب كسبك وإنفاقك", "اعمل بما تدعو إليه", "أصلح ما استطعت والتوفيق من الله"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-14-musa",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 14", "de": "Geschichten der Propheten · 14", "ar": "قصص الأنبياء · ١٤" },
+        "title": { "en": "The story of Musa in 8 slides", "de": "Die Geschichte Musas in 8 Folien", "ar": "قصة موسى في ٨ شرائح" },
+        "sub": { "en": "Musa (Moses): from a chest on the river to the parting of the sea", "de": "Musa (Mose): vom Kasten im Fluss bis zur Teilung des Meeres", "ar": "موسى: من تابوت في النهر إلى انفلاق البحر" },
+        "arabic": "موسى عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "28:7",
+          "check": "cast him into the river",
+          "title": { "en": "A mother's trust", "de": "Das Vertrauen einer Mutter", "ar": "ثقة أم" },
+          "body": { "en": "Pharaoh was killing the newborn sons of the Children of Israel. Allah inspired Musa's mother with a daring plan and a promise.", "de": "Pharao ließ die neugeborenen Söhne der Kinder Israils töten. Allah gab der Mutter Musas einen kühnen Plan und ein Versprechen ein.", "ar": "كان فرعون يقتل المواليد الذكور من بني إسرائيل، فألهم الله أم موسى خطة جريئة ووعدًا صادقًا." }
+        },
+        {
+          "verse": "28:16",
+          "check": "wronged myself",
+          "title": { "en": "A mistake and a quick return", "de": "Ein Fehler und schnelle Umkehr", "ar": "خطأ وتوبة سريعة" },
+          "body": { "en": "As a young man he struck a man in a fight, and the man died, though Musa had not meant to kill. He turned to Allah at once and was forgiven.", "de": "Als junger Mann schlug er in einem Streit einen Mann, der daran starb, obwohl Musa nicht töten wollte. Er wandte sich sofort an Allah und erhielt Vergebung.", "ar": "في شبابه ضرب رجلًا في شجار فمات، ولم يقصد موسى قتله، فرجع إلى الله في الحال فغفر له." }
+        },
+        {
+          "verse": "28:24",
+          "check": "in need",
+          "title": { "en": "In need of any good", "de": "Bedürftig nach jedem Guten", "ar": "فقير إلى كل خير" },
+          "body": { "en": "Fleeing to Madyan, he helped two women water their flocks. Then, alone in the shade, he asked Allah for whatever good He would send.", "de": "Auf der Flucht nach Madyan half er zwei Frauen, ihre Herden zu tränken. Dann, allein im Schatten, bat er Allah um jedes Gute, das Er ihm senden würde.", "ar": "في فراره إلى مدين سقى لامرأتين غنمهما، ثم جلس في الظل وحده يسأل الله ما يرزقه من خير." }
+        },
+        {
+          "verse": "20:12-14",
+          "check": "remove your sandals",
+          "title": { "en": "Called at Tuwa", "de": "Gerufen in Tuwa", "ar": "النداء في طوى" },
+          "body": { "en": "Years later, on his way back, he saw a fire. There Allah spoke to him and chose him as His messenger.", "de": "Jahre später, auf dem Rückweg, sah er ein Feuer. Dort sprach Allah zu ihm und erwählte ihn zu Seinem Gesandten.", "ar": "بعد سنين، وهو في طريق عودته، رأى نارًا، وهناك كلّمه الله واصطفاه رسولًا." }
+        },
+        {
+          "verse": "20:25-27",
+          "check": "expand",
+          "title": { "en": "A prayer for courage", "de": "Ein Gebet um Mut", "ar": "دعاء للثبات" },
+          "body": { "en": "He felt the weight of the task and asked for an open heart, an easier path and clear speech.", "de": "Er spürte das Gewicht der Aufgabe und bat um ein weites Herz, einen leichteren Weg und eine klare Rede.", "ar": "شعر بثقل المهمة فسأل الله انشراح الصدر وتيسير الأمر وفصاحة اللسان." }
+        },
+        {
+          "verse": "20:43-44",
+          "check": "gentle speech",
+          "title": { "en": "Gentle words to a tyrant", "de": "Sanfte Worte an einen Tyrannen", "ar": "قول ليّن لطاغية" },
+          "body": { "en": "Musa and Harun were sent to Pharaoh with a striking instruction: speak to him gently, so that he might reflect.", "de": "Musa und Harun wurden mit einer bemerkenswerten Anweisung zu Pharao gesandt: sanft mit ihm zu sprechen, damit er vielleicht nachdenkt.", "ar": "أُرسل موسى وهارون إلى فرعون بتوجيه لافت: أن يكلّماه بلين عسى أن يتذكر." }
+        },
+        {
+          "verse": "26:61-63",
+          "check": "with me is my Lord",
+          "title": { "en": "Between an army and the sea", "de": "Zwischen Heer und Meer", "ar": "بين الجيش والبحر" },
+          "body": { "en": "Trapped, his people panicked. Musa's certainty came first; the parting of the sea came after.", "de": "Eingeschlossen gerieten seine Leute in Panik. Zuerst kam Musas Gewissheit, danach die Teilung des Meeres.", "ar": "حوصر قومه فاضطربوا، فكان يقين موسى أولًا، ثم انفلق البحر." }
+        },
+        {
+          "title": { "en": "Lessons from Musa's story", "de": "Lehren aus der Geschichte Musas", "ar": "دروس من قصة موسى" },
+          "body": { "en": "No prophet is named more often in the Quran.", "de": "Kein Prophet wird im Koran öfter beim Namen genannt.", "ar": "لا يُذكر نبي في القرآن باسمه أكثر منه." },
+          "list": {
+            "en": ["Allah's plan can work through what you fear most", "Repent quickly after a mistake", "Ask Allah for any good, however small", "Speak gently, even to the hardest heart", "Certainty comes before the way opens"],
+            "de": ["Allahs Plan kann durch das wirken, was Sie am meisten fürchten", "Kehren Sie nach einem Fehler schnell um", "Bitten Sie Allah um jedes Gute, wie klein es auch sei", "Sprechen Sie sanft, selbst zum härtesten Herzen", "Gewissheit kommt, bevor sich der Weg öffnet"],
+            "ar": ["قد يجري تدبير الله فيما تخافه أكثر", "عجّل بالتوبة بعد الخطأ", "اسأل الله كل خير وإن صغر", "تكلّم بلين ولو مع أقسى القلوب", "اليقين يسبق انفتاح الطريق"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-15-harun",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 15", "de": "Geschichten der Propheten · 15", "ar": "قصص الأنبياء · ١٥" },
+        "title": { "en": "The story of Harun in 8 slides", "de": "Die Geschichte Haruns in 8 Folien", "ar": "قصة هارون في ٨ شرائح" },
+        "sub": { "en": "Harun (Aaron): the brother Musa asked for", "de": "Harun (Aaron): der Bruder, um den Musa bat", "ar": "هارون: الأخ الذي سأله موسى ربه" },
+        "arabic": "هارون عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "20:29-31",
+          "check": "Aaron, my brother",
+          "title": { "en": "A brother asked for", "de": "Ein erbetener Bruder", "ar": "أخ بالدعاء" },
+          "body": { "en": "When Musa was called to his mission, one of his first requests was for his brother as a helper to strengthen him.", "de": "Als Musa zu seiner Sendung berufen wurde, bat er als eines der ersten Dinge um seinen Bruder als Helfer, der ihn stärken sollte.", "ar": "حين كُلّف موسى بالرسالة كان من أول ما سأله ربه أن يجعل أخاه هارون عليه السلام عونًا يشدّ به أزره." }
+        },
+        {
+          "verse": "28:34",
+          "check": "more fluent",
+          "title": { "en": "The gift of speech", "de": "Die Gabe der Rede", "ar": "نعمة البيان" },
+          "body": { "en": "Musa praised his brother's eloquence and asked for him as a support who would confirm his words.", "de": "Musa lobte die Beredsamkeit seines Bruders und bat um ihn als Stütze, die seine Worte bestätigen würde.", "ar": "أثنى موسى على فصاحة أخيه، وطلبه عونًا يصدّقه." }
+        },
+        {
+          "verse": "19:53",
+          "check": "out of Our mercy",
+          "title": { "en": "A prophet out of mercy", "de": "Ein Prophet aus Barmherzigkeit", "ar": "نبوة هبةً ورحمة" },
+          "body": { "en": "Allah made Harun a prophet as an act of mercy, answering his brother's prayer.", "de": "Allah machte Harun aus Barmherzigkeit zum Propheten und erhörte damit das Gebet seines Bruders.", "ar": "جعل الله هارون نبيًّا رحمةً منه، استجابةً لدعاء أخيه." }
+        },
+        {
+          "verse": "7:142",
+          "check": "Take my place",
+          "title": { "en": "Leading in Musa's absence", "de": "Führung in Musas Abwesenheit", "ar": "خليفة موسى في قومه" },
+          "body": { "en": "When Musa went to meet his Lord for forty nights, Harun led the people in his place.", "de": "Als Musa für vierzig Nächte zur Begegnung mit seinem Herrn ging, führte Harun an seiner Stelle das Volk.", "ar": "حين ذهب موسى لميقات ربه أربعين ليلة، خلفه هارون في قومه." }
+        },
+        {
+          "verse": "20:90",
+          "check": "only being tested",
+          "title": { "en": "A clear warning", "de": "Eine klare Warnung", "ar": "تحذير واضح" },
+          "body": { "en": "When the people made a calf from their ornaments, Harun warned them plainly that it was a test and called them back to the Most Merciful.", "de": "Als das Volk aus seinem Schmuck ein Kalb machte, warnte Harun deutlich, dass dies eine Prüfung sei, und rief sie zum Allerbarmer zurück.", "ar": "لما صنع القوم عجلًا من حُليّهم حذّرهم هارون بوضوح أنها فتنة، ودعاهم إلى الرحمن." }
+        },
+        {
+          "verse": "20:92-94",
+          "check": "son of my mother",
+          "title": { "en": "Brothers in a hard moment", "de": "Brüder in einer schweren Stunde", "ar": "أخوان في لحظة صعبة" },
+          "body": { "en": "Musa returned in anger. Harun explained that he had feared splitting the people. Two prophets with one concern.", "de": "Musa kehrte voller Zorn zurück. Harun erklärte, er habe gefürchtet, das Volk zu spalten. Zwei Propheten mit einer Sorge.", "ar": "عاد موسى غاضبًا، فبيّن هارون أنه خشي أن يفرّق بين القوم. نبيّان يجمعهما همّ واحد." }
+        },
+        {
+          "verse": "7:151",
+          "check": "forgive me and my brother",
+          "title": { "en": "A prayer for both", "de": "Ein Gebet für beide", "ar": "دعاء لهما معًا" },
+          "body": { "en": "Musa's anger turned into a prayer for forgiveness and mercy, for himself and for his brother.", "de": "Musas Zorn wandelte sich in ein Gebet um Vergebung und Barmherzigkeit, für sich und für seinen Bruder.", "ar": "تحوّل غضب موسى إلى دعاء بالمغفرة والرحمة له ولأخيه." }
+        },
+        {
+          "title": { "en": "Lessons from Harun's story", "de": "Lehren aus der Geschichte Haruns", "ar": "دروس من قصة هارون" },
+          "body": { "en": "Allah sends peace upon Musa and Harun together (37:120).", "de": "Allah entbietet Musa und Harun gemeinsam den Frieden (37:120).", "ar": "وقد سلّم الله على موسى وهارون معًا (٣٧:١٢٠)." },
+          "list": {
+            "en": ["Ask Allah for good companions in your work", "Use your gifts to support others", "Guard unity, but never stay silent about wrong", "Turn anger into prayer"],
+            "de": ["Bitten Sie Allah um gute Weggefährten für Ihre Aufgaben", "Setzen Sie Ihre Gaben ein, um andere zu stützen", "Wahren Sie die Einheit, doch schweigen Sie nie zu Unrecht", "Verwandeln Sie Zorn in Gebet"],
+            "ar": ["اسأل الله رفقة صالحة في عملك", "سخّر مواهبك لعون غيرك", "حافظ على الوحدة دون أن تسكت عن الباطل", "حوّل غضبك إلى دعاء"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-16-dhul-kifl",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 16", "de": "Geschichten der Propheten · 16", "ar": "قصص الأنبياء · ١٦" },
+        "title": { "en": "Dhul-Kifl: what the Quran tells, in 5 slides", "de": "Dhul-Kifl: was der Koran erzählt, in 5 Folien", "ar": "ذو الكفل: ما يخبرنا به القرآن في ٥ شرائح" },
+        "sub": { "en": "A name honoured for patience, without a single story", "de": "Ein Name, geehrt für Geduld, ohne eine einzige Erzählung", "ar": "اسم كُرّم بالصبر دون قصة مفصّلة" },
+        "arabic": "ذو الكفل عليه السلام"
+      },
+      "slides": [
+        {
+          "title": { "en": "A name without a story", "de": "Ein Name ohne Erzählung", "ar": "اسم بلا قصة" },
+          "body": { "en": "Dhul-Kifl is named twice in the Quran, both times in lists of the best of people. The Quran tells no story about him, and that silence is part of the lesson.", "de": "Dhul-Kifl wird im Koran zweimal genannt, beide Male in Aufzählungen der Besten. Der Koran erzählt keine Geschichte über ihn, und gerade dieses Schweigen gehört zur Lehre.", "ar": "ذُكر ذو الكفل في القرآن مرتين، وفي الموضعين ضمن قوائم الأخيار، ولم يقصّ القرآن عنه قصة، وفي هذا السكوت درس أيضًا." }
+        },
+        {
+          "verse": "21:85-86",
+          "check": "Dhul-Kifl",
+          "title": { "en": "Among the patient", "de": "Unter den Standhaften", "ar": "من الصابرين" },
+          "body": { "en": "Allah places him beside Isma'il and Idris. The quality named for all three is patience.", "de": "Allah stellt ihn neben Ismail und Idris. Die Eigenschaft, die allen dreien zugeschrieben wird, ist Geduld.", "ar": "يذكره الله مع إسماعيل وإدريس، والصفة التي جمعتهم هي الصبر." }
+        },
+        {
+          "verse": "38:48",
+          "check": "outstanding",
+          "title": { "en": "Among the best", "de": "Unter den Besten", "ar": "من الأخيار" },
+          "body": { "en": "In Surah Sad he is named with Isma'il and al-Yasa', and all three are counted among the best.", "de": "In Sure Sad wird er mit Ismail und Alyasa genannt, und alle drei zählen zu den Besten.", "ar": "وفي سورة ص يُذكر مع إسماعيل واليسع، وكلهم من خيار عباد الله." }
+        },
+        {
+          "title": { "en": "Prophet or righteous man?", "de": "Prophet oder rechtschaffener Mann?", "ar": "نبي أم رجل صالح؟" },
+          "body": { "en": "Kifl can mean a share or a pledge; the Quran does not explain the name. Scholars differ on whether he was a prophet. Many count him among the prophets because he is listed with them.", "de": "Kifl kann Anteil oder Bürgschaft bedeuten; der Koran erklärt den Namen nicht. Ob er ein Prophet war, ist unter Gelehrten umstritten. Viele zählen ihn zu den Propheten, weil er mit ihnen genannt wird.", "ar": "الكِفل قد يعني الحظّ أو الكفالة، ولم يفسّر القرآن الاسم. واختلف العلماء في نبوته، وكثير منهم يعدّه من الأنبياء لذكره معهم." }
+        },
+        {
+          "title": { "en": "Lessons from Dhul-Kifl", "de": "Lehren von Dhul-Kifl", "ar": "دروس من ذي الكفل" },
+          "list": {
+            "en": ["Patience can be your whole legacy", "What Allah records matters more than fame", "Honour the righteous even when little is known", "Do not fill gaps in revelation with invented tales"],
+            "de": ["Geduld kann Ihr ganzes Vermächtnis sein", "Was Allah festhält, zählt mehr als Ruhm", "Ehren Sie die Rechtschaffenen, auch wenn wenig bekannt ist", "Füllen Sie Lücken der Offenbarung nicht mit erfundenen Geschichten"],
+            "ar": ["قد يكون الصبر إرثك كله", "ما يكتبه الله أعظم من الشهرة", "أكرم الصالحين وإن قلّ ما نعرفه عنهم", "لا تملأ ما سكت عنه الوحي بقصص مختلقة"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Qisas al-Anbiya (Stories of the Prophets)" }
+      ]
+    },
+    {
+      "id": "prophet-17-dawud",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 17", "de": "Geschichten der Propheten · 17", "ar": "قصص الأنبياء · ١٧" },
+        "title": { "en": "The story of Dawud in 8 slides", "de": "Die Geschichte Dawuds in 8 Folien", "ar": "قصة داود في ٨ شرائح" },
+        "sub": { "en": "Dawud (David): a king who worked with his hands and praised with the mountains", "de": "Dawud (David): ein König, der mit seinen Händen arbeitete und mit den Bergen lobpries", "ar": "داود: ملك يعمل بيده ويسبّح مع الجبال" },
+        "arabic": "داود عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "2:251",
+          "check": "David killed Goliath",
+          "title": { "en": "Dawud and Jalut", "de": "Dawud und Dschalut", "ar": "داود وجالوت" },
+          "body": { "en": "In the army of Talut, Dawud killed Jalut (Goliath). Allah then granted him rule, wisdom and knowledge of His choosing.", "de": "Im Heer Taluts tötete Dawud Dschalut (Goliath). Danach schenkte Allah ihm Herrschaft, Weisheit und Wissen nach Seinem Willen.", "ar": "في جيش طالوت قتل داود عليه السلام جالوت، فمنحه الله الملك والحكمة وعلّمه ما أراد." }
+        },
+        {
+          "verse": "17:55",
+          "check": "Psalms",
+          "title": { "en": "The Zabur", "de": "Der Zabur", "ar": "الزبور" },
+          "body": { "en": "Dawud was given a scripture, the Zabur, often identified with the Psalms.", "de": "Dawud erhielt eine Schrift, den Zabur, der oft mit den Psalmen gleichgesetzt wird.", "ar": "آتى الله داود كتابًا هو الزبور." }
+        },
+        {
+          "verse": "38:17-18",
+          "check": "possessor of strength",
+          "title": { "en": "Mountains praising with him", "de": "Berge, die mit ihm lobpreisen", "ar": "جبال تسبّح معه" },
+          "body": { "en": "A man of strength who kept turning back to Allah. The mountains joined his praise in the evening and after sunrise.", "de": "Ein Mann der Kraft, der immer wieder zu Allah umkehrte. Die Berge stimmten am Abend und nach Sonnenaufgang in seinen Lobpreis ein.", "ar": "رجل قوة كثير الرجوع إلى الله، تشاركه الجبال التسبيح في المساء وبعد الشروق." }
+        },
+        {
+          "verse": "34:10-11",
+          "check": "pliable for him iron",
+          "title": { "en": "Iron in his hands", "de": "Eisen in seinen Händen", "ar": "الحديد في يديه" },
+          "body": { "en": "Allah made iron soft for him, and he crafted armour with precision. Skill and worship went together.", "de": "Allah machte ihm das Eisen weich, und er fertigte mit Sorgfalt Panzerhemden. Handwerk und Gottesdienst gingen zusammen.", "ar": "ليّن الله له الحديد فصنع الدروع بإتقان، فاجتمع عنده الإتقان والعبادة." }
+        },
+        {
+          "hadith": "bukhari:2073",
+          "check": "manual labor",
+          "title": { "en": "Living from his own work", "de": "Leben von der eigenen Arbeit", "ar": "من كسب يده" },
+          "body": { "en": "A king and a prophet, yet he lived from what he earned with his own hands.", "de": "König und Prophet, und doch lebte er von dem, was er mit eigenen Händen verdiente.", "ar": "كان ملكًا ونبيًّا، ومع ذلك عاش مما يكسبه بيده." }
+        },
+        {
+          "verse": "38:24",
+          "check": "We had tried him",
+          "title": { "en": "A test and a return", "de": "Eine Prüfung und eine Umkehr", "ar": "ابتلاء ورجوع" },
+          "body": { "en": "Two disputants climbed into his prayer room with a case. He judged, then realised he was being tested, and bowed down in repentance.", "de": "Zwei Streitende stiegen mit einem Fall in seinen Gebetsraum. Er urteilte, erkannte dann, dass er geprüft wurde, und warf sich reuig nieder.", "ar": "تسوّر خصمان محرابه بقضية، فحكم بينهما، ثم أدرك أنه ابتُلي فخرّ ساجدًا تائبًا." }
+        },
+        {
+          "verse": "38:26",
+          "check": "judge between the people in truth",
+          "title": { "en": "Judge with truth", "de": "Mit Wahrheit richten", "ar": "الحكم بالحق" },
+          "body": { "en": "His kingship came with one clear warning: rule with justice and do not follow your own desires.", "de": "Seine Herrschaft kam mit einer klaren Mahnung: gerecht zu herrschen und nicht den eigenen Neigungen zu folgen.", "ar": "جاء ملكه مع تحذير واضح: أن يحكم بالعدل ولا ينقاد لهواه." }
+        },
+        {
+          "title": { "en": "Lessons from Dawud's story", "de": "Lehren aus der Geschichte Dawuds", "ar": "دروس من قصة داود" },
+          "body": { "en": "Stories that accuse Dawud of a scandal come from Israelite reports and are rejected by many scholars.", "de": "Erzählungen, die Dawud einen Skandal vorwerfen, stammen aus israelitischen Berichten und werden von vielen Gelehrten abgelehnt.", "ar": "أما القصص التي تنسب إلى داود فضيحة فمن الإسرائيليات، وقد ردّها كثير من العلماء." },
+          "list": {
+            "en": ["Value honest work with your own hands", "Let skill and worship go together", "Turn back to Allah quickly when tested", "Judge fairly and do not follow your desires"],
+            "de": ["Schätzen Sie ehrliche Arbeit mit eigenen Händen", "Lassen Sie Können und Gottesdienst zusammengehen", "Kehren Sie in der Prüfung schnell zu Allah um", "Urteilen Sie gerecht und folgen Sie nicht Ihren Neigungen"],
+            "ar": ["قدّر العمل الشريف بيدك", "اجمع بين الإتقان والعبادة", "ارجع إلى الله سريعًا عند الابتلاء", "احكم بالعدل ولا تتبع هواك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 38:21-25" }
+      ]
+    },
+    {
+      "id": "prophet-18-sulayman",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 18", "de": "Geschichten der Propheten · 18", "ar": "قصص الأنبياء · ١٨" },
+        "title": { "en": "The story of Sulayman in 8 slides", "de": "Die Geschichte Sulaimans in 8 Folien", "ar": "قصة سليمان في ٨ شرائح" },
+        "sub": { "en": "Sulayman (Solomon): a kingdom like no other and a grateful heart", "de": "Sulaiman (Salomo): ein Königreich wie kein anderes und ein dankbares Herz", "ar": "سليمان: ملك لا مثيل له وقلب شاكر" },
+        "arabic": "سليمان عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "38:30",
+          "check": "excellent servant",
+          "title": { "en": "A gift to Dawud", "de": "Ein Geschenk an Dawud", "ar": "هبة لداود" },
+          "body": { "en": "Sulayman was granted to Dawud as a son, praised as an excellent servant who kept turning back to Allah.", "de": "Sulaiman wurde Dawud als Sohn geschenkt und als vortrefflicher Diener gelobt, der immer wieder zu Allah umkehrte.", "ar": "وهب الله داود ابنه سليمان عليه السلام، وأثنى عليه بأنه نعم العبد كثير الرجوع إليه." }
+        },
+        {
+          "verse": "21:78-79",
+          "check": "understanding of it",
+          "title": { "en": "A case about a field", "de": "Ein Fall um ein Feld", "ar": "قضية الحرث" },
+          "body": { "en": "Father and son judged a case about sheep that ruined a field. Allah gave Sulayman the deeper understanding; both had wisdom.", "de": "Vater und Sohn urteilten über Schafe, die ein Feld verwüstet hatten. Allah gab Sulaiman das tiefere Verständnis; beide besaßen Weisheit.", "ar": "حكم الأب والابن في غنم أفسدت زرعًا، ففهّم الله سليمان الحكم الأدق، وكلاهما أوتي حكمة وعلمًا." }
+        },
+        {
+          "verse": "27:16",
+          "check": "language of birds",
+          "title": { "en": "The speech of birds", "de": "Die Sprache der Vögel", "ar": "منطق الطير" },
+          "body": { "en": "He inherited Dawud's role and was taught the speech of birds. He called it a clear favour, not his own merit.", "de": "Er erbte Dawuds Rolle und wurde die Sprache der Vögel gelehrt. Er nannte es eine offenkundige Gunst, nicht sein eigenes Verdienst.", "ar": "ورث سليمان مكانة داود وعُلّم لغة الطير، فعدّ ذلك فضلًا ظاهرًا من الله لا مزيّة لنفسه." }
+        },
+        {
+          "verse": "27:18-19",
+          "check": "valley of the ants",
+          "title": { "en": "The ant", "de": "Die Ameise", "ar": "النملة" },
+          "body": { "en": "An ant warned her colony of his army. Sulayman smiled and turned the moment into a prayer of gratitude.", "de": "Eine Ameise warnte ihr Volk vor seinem Heer. Sulaiman lächelte und machte den Augenblick zu einem Gebet der Dankbarkeit.", "ar": "حذّرت نملة قومها من جيشه، فتبسّم سليمان وجعل اللحظة دعاء شكر." }
+        },
+        {
+          "verse": "27:20-22",
+          "check": "hoopoe",
+          "title": { "en": "The hoopoe", "de": "Der Wiedehopf", "ar": "الهدهد" },
+          "body": { "en": "A king noticed one missing bird. The hoopoe returned with news from Saba and a lesson: a bird may know what a king does not.", "de": "Ein König bemerkte das Fehlen eines einzigen Vogels. Der Wiedehopf kehrte mit Nachrichten aus Saba zurück und mit einer Lehre: Ein Vogel kann wissen, was ein König nicht weiß.", "ar": "تفقّد الملك طائرًا واحدًا غائبًا، فعاد الهدهد بنبأ من سبأ وبدرس: قد يعلم الطائر ما لا يعلمه الملك." }
+        },
+        {
+          "verse": "27:40",
+          "check": "grateful or ungrateful",
+          "title": { "en": "A test of gratitude", "de": "Eine Prüfung der Dankbarkeit", "ar": "ابتلاء بالشكر" },
+          "body": { "en": "When the queen's throne appeared before him in an instant, he did not boast. He saw it as a test: would he be grateful?", "de": "Als der Thron der Königin in einem Augenblick vor ihm stand, prahlte er nicht. Er sah darin eine Prüfung: Würde er dankbar sein?", "ar": "لما رأى عرش الملكة أمامه في لمح البصر لم يتفاخر، بل رآه ابتلاء: أيشكر أم لا؟" }
+        },
+        {
+          "verse": "34:14",
+          "check": "eating his staff",
+          "title": { "en": "A quiet death", "de": "Ein stiller Tod", "ar": "موت هادئ" },
+          "body": { "en": "Even the jinn did not know he had died until a creature ate through his staff. Only Allah knows the unseen.", "de": "Selbst die Dschinn wussten nicht, dass er gestorben war, bis ein Tier seinen Stab zerfraß. Allein Allah kennt das Verborgene.", "ar": "لم يعلم الجن بموته حتى أكلت دابة عصاه، فالغيب لا يعلمه إلا الله." }
+        },
+        {
+          "title": { "en": "Lessons from Sulayman's story", "de": "Lehren aus der Geschichte Sulaimans", "ar": "دروس من قصة سليمان" },
+          "body": { "en": "The Quran clears him of the sorcery later attributed to him (2:102).", "de": "Der Koran spricht ihn von der Zauberei frei, die man ihm später zuschrieb (2:102).", "ar": "وقد برّأه القرآن من السحر الذي نُسب إليه (٢:١٠٢)." },
+          "list": {
+            "en": ["Let every blessing increase your gratitude", "Notice the small: an ant, a missing bird", "Power is a test, not a reward", "Only Allah knows the unseen"],
+            "de": ["Lassen Sie jede Gabe Ihre Dankbarkeit vermehren", "Achten Sie auf das Kleine: eine Ameise, einen fehlenden Vogel", "Macht ist eine Prüfung, kein Lohn", "Allein Allah kennt das Verborgene"],
+            "ar": ["اجعل كل نعمة تزيدك شكرًا", "انتبه للصغير: نملة، أو طائر غائب", "السلطة ابتلاء لا جائزة", "لا يعلم الغيب إلا الله"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-19-ilyas",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 19", "de": "Geschichten der Propheten · 19", "ar": "قصص الأنبياء · ١٩" },
+        "title": { "en": "The story of Ilyas in 6 slides", "de": "Die Geschichte von Ilyas in 6 Folien", "ar": "قصة إلياس في ٦ شرائح" },
+        "sub": { "en": "Ilyas (Elijah): one clear question to a people who worshipped Ba'l", "de": "Ilyas (Elija): eine klare Frage an ein Volk, das Baal anbetete", "ar": "إلياس: سؤال واضح لقوم عبدوا بعلًا" },
+        "arabic": "إلياس عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "37:123-124",
+          "check": "Elias",
+          "title": { "en": "One of the messengers", "de": "Einer der Gesandten", "ar": "من المرسلين" },
+          "body": { "en": "Ilyas appears in Surah al-An'am and Surah as-Saffat. Here the Quran states it plainly: he was a messenger who called his people to fear Allah.", "de": "Ilyas erscheint in Sure al-An'am und Sure as-Saffat. Hier sagt der Koran klar: Er war ein Gesandter, der sein Volk zur Gottesfurcht rief.", "ar": "يُذكر إلياس عليه السلام في سورتي الأنعام والصافات، وهنا يقرّر القرآن أنه رسول دعا قومه إلى تقوى الله." }
+        },
+        {
+          "verse": "37:125-126",
+          "check": "best of creators",
+          "title": { "en": "An idol or the Creator?", "de": "Ein Götze oder der Schöpfer?", "ar": "صنم أم الخالق؟" },
+          "body": { "en": "His people called on an idol named Ba'l. He asked how they could leave the Creator, their Lord and the Lord of their forefathers.", "de": "Sein Volk rief einen Götzen namens Baal an. Er fragte, wie sie den Schöpfer verlassen konnten, ihren Herrn und den Herrn ihrer Vorväter.", "ar": "كان قومه يدعون صنمًا اسمه بعل، فسألهم: كيف يتركون الخالق، ربهم ورب آبائهم الأولين؟" }
+        },
+        {
+          "verse": "37:127-128",
+          "check": "chosen servants",
+          "title": { "en": "Rejected", "de": "Abgelehnt", "ar": "التكذيب" },
+          "body": { "en": "His people denied him. Only Allah's sincere servants are spared the consequence.", "de": "Sein Volk leugnete ihn. Nur Allahs aufrichtige Diener bleiben von der Folge verschont.", "ar": "كذّبه قومه، ولا ينجو من العاقبة إلا عباد الله الذين أخلصهم لنفسه." }
+        },
+        {
+          "verse": "37:129-130",
+          "check": "Peace upon",
+          "title": { "en": "Peace upon him", "de": "Friede über ihm", "ar": "سلام عليه" },
+          "body": { "en": "Allah left him an honoured memory among later generations. The Arabic reads Il Yasin; most commentators see it as a form of his name.", "de": "Allah ließ ihm ein ehrendes Andenken bei den späteren Generationen. Im Arabischen steht Il Yasin; die meisten Kommentatoren sehen darin eine Form seines Namens.", "ar": "أبقى الله له ذكرًا حسنًا في الأجيال اللاحقة، وجاء اسمه هنا إل ياسين، ويرى أكثر المفسرين أنه صيغة من اسمه." }
+        },
+        {
+          "verse": "6:85",
+          "check": "Elias",
+          "title": { "en": "Among the righteous", "de": "Unter den Rechtschaffenen", "ar": "من الصالحين" },
+          "body": { "en": "He is listed with Zakariyya, Yahya and 'Isa. All of them, the verse says, were righteous.", "de": "Er wird mit Zakariyya, Yahya und Isa genannt. Alle, so der Vers, gehörten zu den Rechtschaffenen.", "ar": "يُذكر مع زكريا ويحيى وعيسى، ويصفهم الله جميعًا بالصلاح." }
+        },
+        {
+          "title": { "en": "Lessons from Ilyas", "de": "Lehren von Ilyas", "ar": "دروس من إلياس" },
+          "body": { "en": "Many identify him with Elijah of the Bible; the Quran keeps to the essentials.", "de": "Viele setzen ihn mit Elija aus der Bibel gleich; der Koran beschränkt sich auf das Wesentliche.", "ar": "ويرى كثيرون أنه إيليا المذكور في الكتاب المقدس، والقرآن يكتفي بالجوهر." },
+          "list": {
+            "en": ["Ask the clear question: why leave the Creator?", "Stand firm even when your people deny you", "A good name after you is a gift from Allah", "The heart of every prophet's message is the same"],
+            "de": ["Stellen Sie die klare Frage: Warum den Schöpfer verlassen?", "Bleiben Sie standhaft, auch wenn Ihr Umfeld Sie ablehnt", "Ein guter Name nach dem Tod ist ein Geschenk Allahs", "Der Kern jeder Prophetenbotschaft ist derselbe"],
+            "ar": ["اطرح السؤال الواضح: لماذا يُترك الخالق؟", "اثبت وإن كذّبك قومك", "الذكر الحسن بعدك هبة من الله", "جوهر رسالة الأنبياء واحد"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 37:123-132" }
+      ]
+    },
+    {
+      "id": "prophet-20-al-yasa",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 20", "de": "Geschichten der Propheten · 20", "ar": "قصص الأنبياء · ٢٠" },
+        "title": { "en": "Al-Yasa': what the Quran tells, in 6 slides", "de": "Alyasa: was der Koran erzählt, in 6 Folien", "ar": "اليسع: ما يخبرنا به القرآن في ٦ شرائح" },
+        "sub": { "en": "Al-Yasa' (Elisha): chosen, guided and among the best", "de": "Alyasa (Elisa): erwählt, rechtgeleitet und unter den Besten", "ar": "اليسع: مختار مهدي من الأخيار" },
+        "arabic": "اليسع عليه السلام"
+      },
+      "slides": [
+        {
+          "title": { "en": "Named twice", "de": "Zweimal genannt", "ar": "ذُكر مرتين" },
+          "body": { "en": "Al-Yasa' is named twice in the Quran, in Surah al-An'am and Surah Sad. Both times he appears in a list of chosen prophets, without a story.", "de": "Alyasa wird im Koran zweimal genannt, in Sure al-An'am und Sure Sad. Beide Male steht er in einer Reihe erwählter Propheten, ohne eine Erzählung.", "ar": "ذُكر اليسع عليه السلام في القرآن مرتين، في سورتي الأنعام وص، وفي كل مرة ضمن قائمة من الأنبياء المختارين دون قصة." }
+        },
+        {
+          "verse": "6:86",
+          "check": "Elisha",
+          "title": { "en": "Preferred over the worlds", "de": "Bevorzugt vor den Weltenbewohnern", "ar": "مفضّل على العالمين" },
+          "body": { "en": "He is named with Isma'il, Yunus and Lut. Allah says He favoured each of them over the worlds.", "de": "Er wird mit Ismail, Yunus und Lut genannt. Allah sagt, Er habe jeden von ihnen vor den Weltenbewohnern bevorzugt.", "ar": "يُذكر مع إسماعيل ويونس ولوط، ويخبر الله أنه فضّل كل واحد منهم على العالمين." }
+        },
+        {
+          "verse": "38:48",
+          "check": "Elisha",
+          "title": { "en": "Among the best", "de": "Unter den Besten", "ar": "من الأخيار" },
+          "body": { "en": "In Surah Sad he is remembered with Isma'il and Dhul-Kifl. All of them belong to the best.", "de": "In Sure Sad wird seiner zusammen mit Ismail und Dhul-Kifl gedacht. Sie alle gehören zu den Besten.", "ar": "وفي سورة ص يُذكر مع إسماعيل وذي الكفل، وكلهم من خيار عباد الله." }
+        },
+        {
+          "verse": "6:90",
+          "check": "take an example",
+          "title": { "en": "Follow their guidance", "de": "Ihrer Rechtleitung folgen", "ar": "الاقتداء بهداهم" },
+          "body": { "en": "After naming al-Yasa' and the other prophets, Allah tells the Prophet Muhammad to follow their guidance.", "de": "Nachdem Allah Alyasa und die anderen Propheten genannt hat, weist Er den Propheten Muhammad an, ihrer Rechtleitung zu folgen.", "ar": "بعد ذكر اليسع وغيره من الأنبياء أمر الله نبيه محمدًا صلى الله عليه وسلم أن يقتدي بهداهم." }
+        },
+        {
+          "title": { "en": "What we do not know", "de": "Was wir nicht wissen", "ar": "ما لا نعلمه" },
+          "body": { "en": "Many commentators identify him with Elisha of the Bible and describe him as a successor of Ilyas. The Quran itself gives no details of his life or his people.", "de": "Viele Kommentatoren setzen ihn mit Elisa aus der Bibel gleich und beschreiben ihn als Nachfolger von Ilyas. Der Koran selbst nennt keine Einzelheiten über sein Leben oder sein Volk.", "ar": "يرى كثير من المفسرين أنه أليشع المذكور في الكتاب المقدس، وأنه خلف إلياس، أما القرآن فلم يذكر تفاصيل عن حياته أو قومه." }
+        },
+        {
+          "title": { "en": "Lessons from al-Yasa'", "de": "Lehren von Alyasa", "ar": "دروس من اليسع" },
+          "list": {
+            "en": ["Being among Allah's chosen matters more than fame", "Every prophet is a model worth following", "Respect what revelation leaves unsaid", "Carry on the good work of those before you"],
+            "de": ["Zu Allahs Erwählten zu gehören zählt mehr als Ruhm", "Jeder Prophet ist ein Vorbild, dem es sich zu folgen lohnt", "Achten Sie, was die Offenbarung offenlässt", "Führen Sie das Gute derer fort, die vor Ihnen waren"],
+            "ar": ["أن تكون من المختارين عند الله أعظم من الشهرة", "كل نبي قدوة تستحق الاتباع", "احترم ما سكت عنه الوحي", "واصل الخير الذي بدأه من قبلك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Qisas al-Anbiya (Stories of the Prophets)" }
+      ]
+    },
+    {
+      "id": "prophet-21-yunus",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 21", "de": "Geschichten der Propheten · 21", "ar": "قصص الأنبياء · ٢١" },
+        "title": { "en": "The story of Yunus in 8 slides", "de": "Die Geschichte von Yunus in 8 Folien", "ar": "قصة يونس في ٨ شرائح" },
+        "sub": { "en": "Yunus (Jonah): a prayer from the darkness and a people who turned back", "de": "Yunus (Jona): ein Gebet aus der Finsternis und ein Volk, das umkehrte", "ar": "يونس: دعاء من الظلمات وقوم رجعوا" },
+        "arabic": "يونس عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "37:139-140",
+          "check": "laden ship",
+          "title": { "en": "He left in anger", "de": "Er ging im Zorn", "ar": "خرج غاضبًا" },
+          "body": { "en": "Yunus was a messenger. Frustrated with his people, he left them and boarded a fully loaded ship (21:87).", "de": "Yunus war ein Gesandter. Enttäuscht von seinem Volk verließ er es und bestieg ein voll beladenes Schiff (21:87).", "ar": "كان يونس عليه السلام رسولًا، فلما ضاق بقومه تركهم وركب سفينة مملوءة (٢١:٨٧)." }
+        },
+        {
+          "verse": "37:141-142",
+          "check": "drew lots",
+          "title": { "en": "Lots and the fish", "de": "Das Los und der Fisch", "ar": "القرعة والحوت" },
+          "body": { "en": "Lots were drawn on board, and the lot fell against him. A fish swallowed him while he was at fault.", "de": "An Bord wurde gelost, und das Los fiel gegen ihn. Ein Fisch verschluckte ihn, während er im Unrecht war.", "ar": "اقترع أهل السفينة فوقعت القرعة عليه، فابتلعه الحوت وقد أخطأ." }
+        },
+        {
+          "verse": "21:87",
+          "check": "within the darknesses",
+          "title": { "en": "A call from the darkness", "de": "Ein Ruf aus der Finsternis", "ar": "نداء من الظلمات" },
+          "body": { "en": "In layers of darkness he called on Allah: affirming His oneness, glorifying Him and admitting his own wrong.", "de": "In Schichten der Finsternis rief er Allah an: Er bezeugte Seine Einzigkeit, pries Ihn und gestand sein eigenes Unrecht.", "ar": "نادى ربه في الظلمات موحّدًا ومسبّحًا ومعترفًا بخطئه." }
+        },
+        {
+          "verse": "21:88",
+          "check": "save the believers",
+          "title": { "en": "Not only for Yunus", "de": "Nicht nur für Yunus", "ar": "ليس ليونس وحده" },
+          "body": { "en": "Allah answered him and promised to rescue believers in the same way. Another passage adds that his glorifying of Allah saved him (37:143-144).", "de": "Allah erhörte ihn und versprach, Gläubige ebenso zu retten. Eine andere Stelle ergänzt, dass sein Lobpreis Allahs ihn rettete (37:143-144).", "ar": "استجاب الله له ووعد بإنجاء المؤمنين كذلك، وتبيّن آيات أخرى أن تسبيحه كان سبب نجاته (٣٧:١٤٣-١٤٤)." }
+        },
+        {
+          "verse": "37:145-146",
+          "check": "gourd vine",
+          "title": { "en": "Shade on the shore", "de": "Schatten am Ufer", "ar": "ظلّ على الشاطئ" },
+          "body": { "en": "He was cast out weak onto open land, and Allah made a plant grow over him to shelter him.", "de": "Er wurde geschwächt an offenes Land geworfen, und Allah ließ eine Pflanze über ihm wachsen, die ihn schützte.", "ar": "أُلقي ضعيفًا على أرض مكشوفة، فأنبت الله فوقه نبتة تظلّه." }
+        },
+        {
+          "verse": "10:98",
+          "check": "people of Jonah",
+          "title": { "en": "A people who turned back", "de": "Ein Volk, das umkehrte", "ar": "قوم رجعوا" },
+          "body": { "en": "His people believed before the punishment fell, and it was lifted. The Quran singles them out for this.", "de": "Sein Volk glaubte, bevor die Strafe sie traf, und sie wurde aufgehoben. Der Koran hebt sie dafür besonders hervor.", "ar": "آمن قومه قبل أن يحلّ بهم العذاب فرُفع عنهم، وقد خصّهم القرآن بهذا الذكر." }
+        },
+        {
+          "hadith": "bukhari:3416",
+          "check": "Yunus bin Matta",
+          "title": { "en": "Respect for Yunus", "de": "Achtung vor Yunus", "ar": "مكانة يونس" },
+          "body": { "en": "Scholars explain this as a warning against belittling Yunus because of his slip. A mistake does not erase a prophet's rank.", "de": "Gelehrte verstehen dies als Warnung, Yunus wegen seines Fehltritts herabzusetzen. Ein Fehler löscht den Rang eines Propheten nicht aus.", "ar": "يفسّره العلماء بالنهي عن الانتقاص من يونس بسبب زلّته، فالخطأ لا يمحو مكانة النبي." }
+        },
+        {
+          "title": { "en": "Lessons from Yunus's story", "de": "Lehren aus der Geschichte von Yunus", "ar": "دروس من قصة يونس" },
+          "list": {
+            "en": ["No darkness is too deep for prayer", "Admit your own fault before blaming others", "Glorify Allah in good times; it carries you in hard times", "Never judge people by their lowest moment"],
+            "de": ["Keine Finsternis ist zu tief für ein Gebet", "Gestehen Sie Ihren eigenen Fehler, bevor Sie anderen die Schuld geben", "Preisen Sie Allah in guten Zeiten; das trägt Sie in schweren", "Beurteilen Sie Menschen nie nach ihrem schwächsten Moment"],
+            "ar": ["لا ظلمة أعمق من أن يبلغها الدعاء", "اعترف بخطئك قبل أن تلوم غيرك", "التسبيح في السعة عون في الضيق", "لا تحكم على الناس بأضعف لحظاتهم"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-22-zakariyya",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 22", "de": "Geschichten der Propheten · 22", "ar": "قصص الأنبياء · ٢٢" },
+        "title": { "en": "The story of Zakariyya in 8 slides", "de": "Die Geschichte Zakariyyas in 8 Folien", "ar": "قصة زكريا في ٨ شرائح" },
+        "sub": { "en": "Zakariyya (Zechariah): a quiet prayer in old age and a surprising answer", "de": "Zakariyya (Zacharias): ein leises Gebet im Alter und eine überraschende Antwort", "ar": "زكريا: دعاء خفي في الكِبر وجواب مدهش" },
+        "arabic": "زكريا عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "3:37",
+          "check": "care of Zechariah",
+          "title": { "en": "The guardian of Maryam", "de": "Der Vormund Maryams", "ar": "كافل مريم" },
+          "body": { "en": "Zakariyya cared for young Maryam. Each time he entered her prayer room, he found provision with her that he had not brought.", "de": "Zakariyya sorgte für die junge Maryam. Jedes Mal, wenn er ihren Gebetsraum betrat, fand er bei ihr Versorgung, die er nicht gebracht hatte.", "ar": "كفل زكريا عليه السلام مريم صغيرة، وكان يجد عندها رزقًا كلما زارها في مصلّاها، دون أن يكون هو من أتى به." }
+        },
+        {
+          "verse": "3:38",
+          "check": "good offspring",
+          "title": { "en": "A prayer born of what he saw", "de": "Ein Gebet aus dem, was er sah", "ar": "دعاء مما رأى" },
+          "body": { "en": "Seeing how Allah provided for her, the old man asked right there for a good child of his own.", "de": "Als er sah, wie Allah für sie sorgte, bat der alte Mann an Ort und Stelle um ein gutes Kind für sich selbst.", "ar": "لما رأى كيف يرزقها الله سأل ربه في مكانه ولدًا صالحًا له." }
+        },
+        {
+          "verse": "19:2-3",
+          "check": "private call",
+          "title": { "en": "A quiet prayer", "de": "Ein leises Gebet", "ar": "دعاء خفي" },
+          "body": { "en": "He called on his Lord in private. The Quran presents his story as a reminder of Allah's mercy.", "de": "Er rief seinen Herrn im Verborgenen an. Der Koran stellt seine Geschichte als Erinnerung an Allahs Barmherzigkeit vor.", "ar": "نادى ربه في خلوة، ويعرض القرآن قصته تذكيرًا برحمة الله." }
+        },
+        {
+          "verse": "19:4",
+          "check": "never have I been",
+          "title": { "en": "Never disappointed", "de": "Nie enttäuscht", "ar": "لم يخب دعاؤه" },
+          "body": { "en": "He spoke of weak bones and white hair, and of a lifetime in which his prayers to Allah had never left him disappointed.", "de": "Er sprach von schwachen Knochen und weißem Haar und von einem Leben, in dem ihn seine Gebete zu Allah nie enttäuscht hatten.", "ar": "ذكر ضعف عظامه وبياض شعره، وأن دعاءه لربه لم يخب قط طوال عمره." }
+        },
+        {
+          "verse": "19:7",
+          "check": "good tidings of a boy",
+          "title": { "en": "A name never given before", "de": "Ein Name, den niemand zuvor trug", "ar": "اسم لم يحمله أحد" },
+          "body": { "en": "The answer came with a name: Yahya, a name no one had carried before him.", "de": "Die Antwort kam mit einem Namen: Yahya, ein Name, den vor ihm niemand getragen hatte.", "ar": "جاءت الإجابة ومعها الاسم: يحيى، اسم لم يحمله أحد قبله." }
+        },
+        {
+          "verse": "19:8-9",
+          "check": "created you before",
+          "title": { "en": "Nothing is hard for Allah", "de": "Nichts ist für Allah schwer", "ar": "لا يعجز الله شيء" },
+          "body": { "en": "He wondered how, at his age and with a wife unable to bear children. The answer reminded him that he himself was once nothing.", "de": "Er fragte sich, wie das gehen solle, in seinem Alter und mit einer unfruchtbaren Frau. Die Antwort erinnerte ihn daran, dass er selbst einst nichts war.", "ar": "تعجّب كيف يكون ذلك مع كِبره وعقم امرأته، فذكّره الجواب بأنه هو نفسه لم يكن شيئًا من قبل." }
+        },
+        {
+          "verse": "21:89-90",
+          "check": "hasten to good deeds",
+          "title": { "en": "Why their prayers were answered", "de": "Warum ihre Gebete erhört wurden", "ar": "سرّ الإجابة" },
+          "body": { "en": "Zakariyya and his family hurried to do good, prayed with hope and fear, and were humble before Allah.", "de": "Zakariyya und seine Familie eilten zum Guten, beteten in Hoffnung und Furcht und waren demütig vor Allah.", "ar": "كانوا يبادرون إلى الطاعات، ويجمعون في دعائهم بين الرجاء والخوف، مع خشوع لله." }
+        },
+        {
+          "title": { "en": "Lessons from Zakariyya's story", "de": "Lehren aus der Geschichte Zakariyyas", "ar": "دروس من قصة زكريا" },
+          "list": {
+            "en": ["It is never too late to ask Allah", "Let blessings you see in others inspire your prayer", "Pray quietly and sincerely", "Hurry to good with hope and fear"],
+            "de": ["Es ist nie zu spät, Allah zu bitten", "Lassen Sie sich von Gaben bei anderen zum Gebet bewegen", "Beten Sie leise und aufrichtig", "Eilen Sie zum Guten, in Hoffnung und Furcht"],
+            "ar": ["لا يفوت أوان الدعاء أبدًا", "اجعل ما تراه من نعم عند غيرك دافعًا لدعائك", "ادعُ في خفاء وإخلاص", "بادر إلى الخير بين الرجاء والخوف"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-23-yahya",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 23", "de": "Geschichten der Propheten · 23", "ar": "قصص الأنبياء · ٢٣" },
+        "title": { "en": "The story of Yahya in 7 slides", "de": "Die Geschichte Yahyas in 7 Folien", "ar": "قصة يحيى في ٧ شرائح" },
+        "sub": { "en": "Yahya (John): wisdom as a child, gentleness and purity", "de": "Yahya (Johannes): Weisheit als Kind, Sanftmut und Reinheit", "ar": "يحيى: حكمة في الصغر، ورحمة، وطهارة" },
+        "arabic": "يحيى عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "19:7",
+          "check": "whose name will be John",
+          "title": { "en": "The answer to a prayer", "de": "Die Antwort auf ein Gebet", "ar": "ثمرة دعاء" },
+          "body": { "en": "Yahya was Allah's answer to Zakariyya's prayer in old age. Even his name was new.", "de": "Yahya war Allahs Antwort auf das Gebet Zakariyyas im Alter. Selbst sein Name war neu.", "ar": "كان يحيى عليه السلام إجابة الله لدعاء زكريا في كِبره، وحتى اسمه كان جديدًا." }
+        },
+        {
+          "verse": "3:39",
+          "check": "confirming a word",
+          "title": { "en": "Announced with his qualities", "de": "Angekündigt mit seinen Eigenschaften", "ar": "بشارة بصفاته" },
+          "body": { "en": "The angels described him before his birth: noble, chaste, a prophet. Many commentators say the word from Allah he would confirm is 'Isa.", "de": "Die Engel beschrieben ihn vor seiner Geburt: edel, keusch, ein Prophet. Viele Kommentatoren sagen, das Wort Allahs, das er bestätigen würde, sei Isa.", "ar": "وصفته الملائكة قبل مولده: سيد وعفيف ونبي. ويرى كثير من المفسرين أن الكلمة التي يصدّق بها هي عيسى." }
+        },
+        {
+          "verse": "19:12",
+          "check": "with determination",
+          "title": { "en": "Wisdom as a child", "de": "Weisheit als Kind", "ar": "حكمة في الصغر" },
+          "body": { "en": "Yahya was told to hold firmly to the scripture, and he was given wisdom while still a boy.", "de": "Yahya wurde aufgefordert, an der Schrift festzuhalten, und er erhielt Weisheit, als er noch ein Junge war.", "ar": "أُمر يحيى أن يتمسك بالكتاب بعزم، وأوتي الحكمة وهو صغير." }
+        },
+        {
+          "verse": "19:13-14",
+          "check": "dutiful to his parents",
+          "title": { "en": "A gentle and pure heart", "de": "Ein sanftes und reines Herz", "ar": "قلب رحيم طاهر" },
+          "body": { "en": "Tenderness, purity, awe of Allah and kindness to his parents: the Quran paints a character both gentle and strong.", "de": "Zärtlichkeit, Reinheit, Ehrfurcht vor Allah und Güte zu den Eltern: Der Koran zeichnet einen Charakter, der sanft und stark zugleich ist.", "ar": "حنان وطهارة وتقوى وبرّ بالوالدين: يرسم القرآن شخصية تجمع الرقة والقوة." }
+        },
+        {
+          "verse": "19:15",
+          "check": "the day he was born",
+          "title": { "en": "Peace at three moments", "de": "Friede in drei Momenten", "ar": "سلام في ثلاثة مواطن" },
+          "body": { "en": "Allah greets him with peace at birth, at death and on the day of resurrection. 'Isa says similar words about himself (19:33).", "de": "Allah grüßt ihn mit Frieden bei der Geburt, beim Tod und am Tag der Auferstehung. Isa sagt ähnliche Worte über sich selbst (19:33).", "ar": "يسلّم الله عليه يوم مولده ويوم موته ويوم بعثه، ويقول عيسى عن نفسه كلامًا قريبًا (١٩:٣٣)." }
+        },
+        {
+          "verse": "6:85",
+          "check": "John",
+          "title": { "en": "Among the righteous", "de": "Unter den Rechtschaffenen", "ar": "من الصالحين" },
+          "body": { "en": "He is named with his father Zakariyya, with 'Isa and with Ilyas, all of them among the righteous.", "de": "Er wird mit seinem Vater Zakariyya, mit Isa und mit Ilyas genannt, alle unter den Rechtschaffenen.", "ar": "يُذكر مع أبيه زكريا ومع عيسى وإلياس، وكلهم من أهل الصلاح." }
+        },
+        {
+          "title": { "en": "Lessons from Yahya", "de": "Lehren von Yahya", "ar": "دروس من يحيى" },
+          "list": {
+            "en": ["Wisdom is not only for the old", "Hold firmly to what Allah has given you", "Gentleness and strength belong together", "Honour your parents"],
+            "de": ["Weisheit ist nicht nur etwas für Ältere", "Halten Sie fest an dem, was Allah Ihnen gegeben hat", "Sanftmut und Stärke gehören zusammen", "Ehren Sie Ihre Eltern"],
+            "ar": ["الحكمة ليست حكرًا على الكبار", "تمسّك بما آتاك الله", "الرقة والقوة تجتمعان", "برّ والديك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-24-isa",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 24", "de": "Geschichten der Propheten · 24", "ar": "قصص الأنبياء · ٢٤" },
+        "title": { "en": "The story of 'Isa in 8 slides", "de": "Die Geschichte Isas in 8 Folien", "ar": "قصة عيسى في ٨ شرائح" },
+        "sub": { "en": "'Isa (Jesus): a word from Allah, a servant and a messenger", "de": "Isa (Jesus): ein Wort von Allah, ein Diener und ein Gesandter", "ar": "عيسى: كلمة من الله، عبد ورسول" },
+        "arabic": "عيسى عليه السلام"
+      },
+      "slides": [
+        {
+          "verse": "3:45",
+          "check": "the Messiah",
+          "title": { "en": "Good news to Maryam", "de": "Frohe Botschaft an Maryam", "ar": "بشرى لمريم" },
+          "body": { "en": "'Isa's story begins with an announcement to his mother: a word from Allah, the Messiah, honoured in this world and the next.", "de": "Isas Geschichte beginnt mit einer Ankündigung an seine Mutter: ein Wort von Allah, der Messias, angesehen im Diesseits und im Jenseits.", "ar": "تبدأ قصة عيسى عليه السلام ببشارة لأمه: كلمة من الله، المسيح، ذو مكانة في الدنيا والآخرة." }
+        },
+        {
+          "verse": "3:59",
+          "check": "like that of Adam",
+          "title": { "en": "Like Adam", "de": "Wie Adam", "ar": "مثل آدم" },
+          "body": { "en": "Born without a father, 'Isa is compared to Adam, who had neither father nor mother. Both came to be by Allah's command.", "de": "Ohne Vater geboren, wird Isa mit Adam verglichen, der weder Vater noch Mutter hatte. Beide entstanden durch Allahs Befehl.", "ar": "وُلد عيسى بلا أب، فشبّهه الله بآدم الذي خُلق بلا أب ولا أم، وكلاهما كان بأمر الله." }
+        },
+        {
+          "verse": "19:29-30",
+          "check": "in the cradle",
+          "title": { "en": "Speaking from the cradle", "de": "Sprechen aus der Wiege", "ar": "الكلام في المهد" },
+          "body": { "en": "When people accused Maryam, she pointed to the baby, and he spoke. His first words: he is a servant of Allah and a prophet.", "de": "Als man Maryam beschuldigte, zeigte sie auf das Kind, und es sprach. Seine ersten Worte: Er sei ein Diener Allahs und ein Prophet.", "ar": "لما اتُّهمت مريم أشارت إلى الطفل فتكلّم، وكان أول ما قاله أنه عبد لله ونبي." }
+        },
+        {
+          "title": { "en": "Signs by Allah's permission", "de": "Zeichen mit Allahs Erlaubnis", "ar": "آيات بإذن الله" },
+          "arabic": "بإذن الله",
+          "body": { "en": "The Quran lists his signs: a bird shaped from clay that came to life, healing the blind and the leper, and raising the dead. Each time it adds: by Allah's permission (3:49, 5:110).", "de": "Der Koran nennt seine Zeichen: ein Vogel aus Ton, der lebendig wurde, die Heilung von Blinden und Aussätzigen und die Erweckung von Toten. Jedes Mal heißt es: mit Allahs Erlaubnis (3:49, 5:110).", "ar": "يذكر القرآن آياته: طيرًا من طين صار حيًّا، وشفاء الأعمى والأبرص، وإحياء الموتى، ويؤكد في كل مرة أنها بإذن الله (٣:٤٩، ٥:١١٠)." }
+        },
+        {
+          "verse": "61:6",
+          "check": "whose name is Ahmad",
+          "title": { "en": "Good news of Ahmad", "de": "Frohe Botschaft von Ahmad", "ar": "البشارة بأحمد" },
+          "body": { "en": "'Isa confirmed the Torah before him and gave good news of a messenger to come after him, named Ahmad.", "de": "Isa bestätigte die Tora vor ihm und verkündete einen Gesandten, der nach ihm kommen sollte, namens Ahmad.", "ar": "صدّق عيسى بالتوراة التي قبله، وبشّر بنبي من بعده اسمه أحمد." }
+        },
+        {
+          "verse": "4:157-158",
+          "check": "raised him to Himself",
+          "title": { "en": "Raised by Allah", "de": "Von Allah erhoben", "ar": "الرفع" },
+          "body": { "en": "The Quran denies that he was killed or crucified and states that Allah raised him to Himself.", "de": "Der Koran verneint, dass er getötet oder gekreuzigt wurde, und sagt, dass Allah ihn zu Sich erhoben hat.", "ar": "ينفي القرآن أنه قُتل أو صُلب، ويقرّر أن الله رفعه إليه." }
+        },
+        {
+          "verse": "5:117",
+          "check": "my Lord and your Lord",
+          "title": { "en": "Only what he was told", "de": "Nur, was ihm befohlen wurde", "ar": "ما أُمر به فقط" },
+          "body": { "en": "On the Day of Judgement, 'Isa will testify that he only told people to worship Allah, his Lord and theirs.", "de": "Am Tag des Gerichts wird Isa bezeugen, dass er die Menschen nur dazu aufrief, Allah zu dienen, seinem und ihrem Herrn.", "ar": "يشهد عيسى يوم القيامة أنه لم يدعُ الناس إلا إلى عبادة الله، ربه وربهم." }
+        },
+        {
+          "title": { "en": "Lessons from 'Isa's story", "de": "Lehren aus der Geschichte Isas", "ar": "دروس من قصة عيسى" },
+          "list": {
+            "en": ["Allah creates as He wills, with a single command", "Miracles point to Allah, not to the one who shows them", "Honour your mother, as 'Isa did (19:32)", "Love the prophets without raising them above servanthood"],
+            "de": ["Allah erschafft, wie Er will, mit einem einzigen Befehl", "Wunder weisen auf Allah, nicht auf den, der sie zeigt", "Ehren Sie Ihre Mutter, wie Isa es tat (19:32)", "Lieben Sie die Propheten, ohne sie über das Dienersein zu erheben"],
+            "ar": ["يخلق الله بأمر واحد ما يريد", "المعجزات تدل على الله لا على من أجراها", "برّ أمك كما فعل عيسى (١٩:٣٢)", "أحبّ الأنبياء دون أن ترفعهم فوق العبودية"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "prophet-25-muhammad",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Stories of the prophets · 25", "de": "Geschichten der Propheten · 25", "ar": "قصص الأنبياء · ٢٥" },
+        "title": { "en": "The Prophet Muhammad in 7 slides", "de": "Der Prophet Muhammad in 7 Folien", "ar": "النبي محمد في ٧ شرائح" },
+        "sub": { "en": "The seal of the prophets in brief; his life story has its own series", "de": "Das Siegel der Propheten im Überblick; seine Lebensgeschichte hat eine eigene Reihe", "ar": "خاتم النبيين في لمحة، ولسيرته سلسلة خاصة" },
+        "arabic": "محمد صلى الله عليه وسلم"
+      },
+      "slides": [
+        {
+          "verse": "96:1-3",
+          "check": "Recite",
+          "title": { "en": "The first revelation", "de": "Die erste Offenbarung", "ar": "أول الوحي" },
+          "body": { "en": "Most scholars hold that these were the first verses revealed to him, in a cave near Makkah: a call to read in the name of the Creator.", "de": "Die meisten Gelehrten sehen hierin die ersten Verse, die ihm offenbart wurden, in einer Höhle bei Mekka: ein Ruf zum Lesen im Namen des Schöpfers.", "ar": "يرى أكثر العلماء أن هذه أول آيات نزلت عليه في غار قرب مكة: دعوة إلى القراءة باسم الخالق." }
+        },
+        {
+          "verse": "3:144",
+          "check": "passed on before him",
+          "title": { "en": "A messenger like those before", "de": "Ein Gesandter wie die vor ihm", "ar": "رسول كمن سبقه" },
+          "body": { "en": "He is one messenger in a long line. Abu Bakr recited this verse on the day the Prophet died: worship belongs to Allah, who never dies.", "de": "Er ist ein Gesandter in einer langen Reihe. Abu Bakr trug diesen Vers am Todestag des Propheten vor: Anbetung gebührt Allah, der niemals stirbt.", "ar": "هو رسول في سلسلة طويلة من الرسل، وقد تلا أبو بكر هذه الآية يوم وفاة النبي صلى الله عليه وسلم: العبادة لله الحي الباقي." }
+        },
+        {
+          "verse": "9:128",
+          "check": "Grievous to him",
+          "title": { "en": "He cares about you", "de": "Ihm liegt an Ihnen", "ar": "حريص عليكم" },
+          "body": { "en": "A messenger from among the people themselves, pained by their hardship, eager for their good, gentle and merciful to the believers.", "de": "Ein Gesandter aus der Mitte der Menschen, den ihre Not schmerzt, der ihr Wohl sucht und zu den Gläubigen gütig und barmherzig ist.", "ar": "رسول منهم، يشقّ عليه تعبهم، يحرص على هدايتهم، ويرحم المؤمنين ويرفق بهم." }
+        },
+        {
+          "verse": "68:4",
+          "check": "great moral character",
+          "title": { "en": "A great character", "de": "Ein großartiger Charakter", "ar": "خلق عظيم" },
+          "body": { "en": "Allah Himself praises his character. His manners were part of his message.", "de": "Allah selbst lobt seinen Charakter. Sein Verhalten war Teil seiner Botschaft.", "ar": "يثني الله نفسه على خُلقه، وكانت أخلاقه جزءًا من رسالته." }
+        },
+        {
+          "verse": "21:107",
+          "check": "mercy to the worlds",
+          "title": { "en": "A mercy to all the worlds", "de": "Eine Barmherzigkeit für alle Welten", "ar": "رحمة للعالمين" },
+          "body": { "en": "His mission is described as mercy, not only for Muslims but for all the worlds.", "de": "Seine Sendung wird als Barmherzigkeit beschrieben, nicht nur für Muslime, sondern für alle Welten.", "ar": "وُصفت رسالته بأنها رحمة، لا للمسلمين وحدهم بل للعالمين." }
+        },
+        {
+          "verse": "33:40",
+          "check": "seal",
+          "title": { "en": "The seal of the prophets", "de": "Das Siegel der Propheten", "ar": "خاتم النبيين" },
+          "body": { "en": "With him, the line of prophets that began with Adam is complete. No prophet comes after him.", "de": "Mit ihm ist die Reihe der Propheten, die mit Adam begann, vollendet. Nach ihm kommt kein Prophet.", "ar": "به اكتملت سلسلة الأنبياء التي بدأت بآدم، فلا نبي بعده." }
+        },
+        {
+          "title": { "en": "What the prophets teach us", "de": "Was uns die Propheten lehren", "ar": "ما يعلّمنا إياه الأنبياء" },
+          "body": { "en": "His life story is told in its own series.", "de": "Seine Lebensgeschichte wird in einer eigenen Reihe erzählt.", "ar": "وتُروى سيرته في سلسلة خاصة." },
+          "list": {
+            "en": ["Believe in all the prophets without distinction (2:285)", "Take his character as your model (33:21)", "Show mercy to all of creation", "Send blessings upon him often (33:56)"],
+            "de": ["Glauben Sie an alle Propheten, ohne Unterschied zu machen (2:285)", "Nehmen Sie seinen Charakter zum Vorbild (33:21)", "Seien Sie barmherzig zu allen Geschöpfen", "Sprechen Sie oft Segenswünsche über ihn (33:56)"],
+            "ar": ["آمن بالأنبياء جميعًا دون تفريق (٢:٢٨٥)", "اتخذ خُلقه قدوة لك (٣٣:٢١)", "ارحم الخلق جميعًا", "أكثر من الصلاة عليه (٣٣:٥٦)"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 1241-1242 (Abu Bakr on the day of the Prophet's death)" }
+      ]
+    }
+  ]
+}

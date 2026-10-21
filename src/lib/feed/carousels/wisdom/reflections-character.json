@@ -1,0 +1,120 @@
+{
+  "set": "reflections-character",
+  "kind": "reflection",
+  "theme": "character",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-character-01",
+      "text": {
+        "en": "Good character shows in how you treat the waiter when your food is late.",
+        "de": "Guter Charakter zeigt sich darin, wie Sie den Kellner behandeln, wenn Ihr Essen zu spät kommt.",
+        "ar": "حسن الخلق يظهر في معاملتك للنادل حين يتأخر طعامك."
+      }
+    },
+    {
+      "id": "wr-character-02",
+      "text": {
+        "en": "The way you speak when you are tired and hungry says more about your character than your best day ever could.",
+        "de": "Wie Sie sprechen, wenn Sie müde und hungrig sind, sagt mehr über Ihren Charakter, als es Ihr bester Tag je könnte.",
+        "ar": "طريقة كلامك وأنت متعب وجائع تقول عن خلقك أكثر مما يقوله أفضل أيامك."
+      }
+    },
+    {
+      "id": "wr-character-03",
+      "text": {
+        "en": "Anger offers a quick reply. Character waits, breathes and chooses a better one.",
+        "de": "Der Zorn bietet eine schnelle Antwort an. Der Charakter wartet, atmet und wählt eine bessere.",
+        "ar": "الغضب يعرض ردا سريعا، والخلق الحسن ينتظر، ويتنفس، ويختار ردا أفضل."
+      }
+    },
+    {
+      "id": "wr-character-04",
+      "text": {
+        "en": "Keep your promises to children. They are learning what a word is worth.",
+        "de": "Halten Sie Ihre Versprechen gegenüber Kindern. Sie lernen gerade, was ein Wort wert ist.",
+        "ar": "أوف بوعودك للأطفال، فهم يتعلمون الآن كم تساوي الكلمة."
+      }
+    },
+    {
+      "id": "wr-character-05",
+      "text": {
+        "en": "Character is not built in a day, but every day: one held tongue, one kept promise, one patient answer at a time.",
+        "de": "Charakter entsteht nicht an einem Tag, sondern an jedem Tag: eine gehütete Zunge, ein gehaltenes Versprechen, eine geduldige Antwort nach der anderen.",
+        "ar": "لا يبنى الخلق في يوم، بل في كل يوم: لسان محفوظ، ووعد موفى، وجواب صبور، واحدا بعد واحد."
+      }
+    },
+    {
+      "id": "wr-character-06",
+      "text": {
+        "en": "Being generous with praise and slow with criticism makes every home and office a gentler place.",
+        "de": "Großzügig mit Lob und zurückhaltend mit Kritik zu sein, macht jedes Zuhause und jedes Büro zu einem sanfteren Ort.",
+        "ar": "أن تكون كريما في الثناء متأنيا في النقد يجعل كل بيت وكل مكتب مكانا أرق."
+      }
+    },
+    {
+      "id": "wr-character-07",
+      "text": {
+        "en": "People will forget your achievements long before they forget how you treated them.",
+        "de": "Die Menschen vergessen Ihre Leistungen lange bevor sie vergessen, wie Sie sie behandelt haben.",
+        "ar": "ينسى الناس إنجازاتك قبل أن ينسوا كيف عاملتهم بزمن طويل."
+      }
+    },
+    {
+      "id": "wr-character-08",
+      "text": {
+        "en": "Excuse others the way you hope to be excused: assume a reason before you assume an insult.",
+        "de": "Entschuldigen Sie andere so, wie Sie selbst entschuldigt werden möchten: Vermuten Sie einen Grund, bevor Sie eine Beleidigung vermuten.",
+        "ar": "التمس الأعذار للآخرين كما تحب أن يلتمسوها لك، فافترض سببا قبل أن تفترض إساءة."
+      }
+    },
+    {
+      "id": "wr-character-09",
+      "text": {
+        "en": "Good manners at home, with the people who see you at your worst, are the truest test of character.",
+        "de": "Gute Umgangsformen zu Hause, bei den Menschen, die Sie in Ihren schlechtesten Momenten sehen, sind die wahrste Probe des Charakters.",
+        "ar": "حسن الأدب في البيت، مع من يرونك في أسوأ أحوالك، أصدق اختبار للخلق."
+      }
+    },
+    {
+      "id": "wr-character-10",
+      "text": {
+        "en": "Character shows in small places: returning the shopping trolley, keeping your voice low, leaving a clean seat behind.",
+        "de": "Charakter zeigt sich an kleinen Orten: den Einkaufswagen zurückbringen, die Stimme leise halten, einen sauberen Platz hinterlassen.",
+        "ar": "يظهر الخلق في المواضع الصغيرة: أن تعيد عربة التسوق، وتخفض صوتك، وتترك مقعدك نظيفا."
+      }
+    },
+    {
+      "id": "wr-character-11",
+      "text": {
+        "en": "Modesty is not weakness. It is a quiet strength that lets others shine without feeling threatened.",
+        "de": "Bescheidenheit ist keine Schwäche. Sie ist eine stille Stärke, die andere strahlen lässt, ohne sich bedroht zu fühlen.",
+        "ar": "التواضع ليس ضعفا، بل قوة هادئة تدع غيرك يتألق دون أن تشعر بالتهديد."
+      }
+    },
+    {
+      "id": "wr-character-12",
+      "text": {
+        "en": "Ask after a friend's sick mother a week later. Remembering what matters to others is the mark of a beautiful character.",
+        "de": "Fragen Sie eine Woche später nach der kranken Mutter eines Freundes. Sich zu merken, was anderen wichtig ist, ist das Zeichen eines schönen Charakters.",
+        "ar": "اسأل عن والدة صديقك المريضة بعد أسبوع، فتذكر ما يهم الآخرين علامة على خلق جميل."
+      }
+    },
+    {
+      "id": "wr-character-13",
+      "text": {
+        "en": "You cannot control how others behave, but you can decide that their bad manners will not become yours.",
+        "de": "Sie können nicht bestimmen, wie andere sich verhalten, aber Sie können entscheiden, dass ihre schlechten Manieren nicht zu Ihren werden.",
+        "ar": "لا تملك أن تتحكم في سلوك الآخرين، لكنك تستطيع أن تقرر ألا يصير سوء أدبهم أدبك."
+      }
+    },
+    {
+      "id": "wr-character-14",
+      "text": {
+        "en": "Apologise quickly, thank generously and listen fully: three simple habits that make a beautiful character.",
+        "de": "Entschuldigen Sie sich schnell, danken Sie großzügig und hören Sie ganz zu: drei einfache Gewohnheiten, die einen schönen Charakter ausmachen.",
+        "ar": "اعتذر سريعا، واشكر بسخاء، وأصغ بكليتك: ثلاث عادات بسيطة تصنع خلقا جميلا."
+      }
+    }
+  ]
+}

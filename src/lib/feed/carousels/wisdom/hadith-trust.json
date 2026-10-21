@@ -1,0 +1,12 @@
+{ "set": "hadith-trust", "kind": "hadith", "theme": "trust", "tradition": "sunni",
+  "items": [
+    {"id": "wh-trust-bukhari-5671", "hadith": "bukhari:5671", "check": "as long as life is better for me"},
+    {"id": "wh-trust-bukhari-6602", "hadith": "bukhari:6602", "check": "what He takes"},
+    {"id": "wh-trust-muslim-2127", "hadith": "muslim:2127", "check": "We belong to Allah"},
+    {"id": "wh-trust-muslim-6921", "hadith": "muslim:6921", "check": "time of trouble"},
+    {"id": "wh-trust-bukhari-4663", "hadith": "bukhari:4663", "check": "the third of whom is Allah"},
+    {"id": "wh-trust-muslim-6774", "hadith": "muslim:6774", "check": "strong believer"},
+    {"id": "wh-trust-bukhari-6472", "hadith": "bukhari:6472", "check": "put their trust in their Lord"},
+    {"id": "wh-trust-muslim-6884", "hadith": "muslim:6884", "check": "entrust my affair to Thee"},
+    {"id": "wh-trust-muslim-1071", "hadith": "muslim:1071", "check": "no one can withhold what Thou givest"}
+  ] }

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-guidance",
+  "kind": "reflection",
+  "theme": "guidance",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-guidance-01",
+      "text": {
+        "en": "Guidance is a gift never to be taken for granted. Ask for it every day as if you were asking for the first time.",
+        "de": "Rechtleitung ist ein Geschenk, das nie selbstverständlich ist. Bitten Sie jeden Tag darum, als bäten Sie zum ersten Mal.",
+        "ar": "الهداية هبة لا يصح أن تعد أمرا مضمونا، فاسألها كل يوم كأنك تسألها لأول مرة."
+      }
+    },
+    {
+      "id": "wr-guidance-02",
+      "text": {
+        "en": "Sometimes guidance comes as a book left on a table, a stranger's question, or a verse heard by chance in a taxi.",
+        "de": "Manchmal kommt Rechtleitung als Buch, das auf einem Tisch liegt, als Frage eines Fremden oder als Vers, den man zufällig in einem Taxi hört.",
+        "ar": "قد تأتي الهداية في كتاب ترك على طاولة، أو سؤال من غريب، أو آية سمعتها مصادفة في سيارة أجرة."
+      }
+    },
+    {
+      "id": "wr-guidance-03",
+      "text": {
+        "en": "You can be a lamp along someone's way without ever preaching. Let your kindness speak first.",
+        "de": "Sie können eine Lampe auf dem Weg eines anderen sein, ohne je zu predigen. Lassen Sie Ihre Güte zuerst sprechen.",
+        "ar": "يمكنك أن تكون مصباحا في طريق غيرك دون أن تعظه أبدا، فدع لطفك يتكلم أولا."
+      }
+    },
+    {
+      "id": "wr-guidance-04",
+      "text": {
+        "en": "Those who came to faith later in life often treasure it most. Never underestimate where someone's journey might lead.",
+        "de": "Wer erst spät im Leben zum Glauben gefunden hat, schätzt ihn oft am meisten. Unterschätzen Sie nie, wohin der Weg eines Menschen führen kann.",
+        "ar": "من وجدوا الإيمان متأخرين كثيرا ما يكونون أشد الناس حرصا عليه، فلا تستهن أبدا بما قد تنتهي إليه رحلة إنسان."
+      }
+    },
+    {
+      "id": "wr-guidance-05",
+      "text": {
+        "en": "When you feel lost, return to the basics: the five prayers, the Quran, a good friend and an honest heart.",
+        "de": "Wenn Sie sich verloren fühlen, kehren Sie zu den Grundlagen zurück: den fünf Gebeten, dem Koran, einem guten Freund und einem ehrlichen Herzen.",
+        "ar": "إذا شعرت بالضياع فعد إلى الأساسيات: الصلوات الخمس، والقرآن، وصديق صالح، وقلب صادق."
+      }
+    },
+    {
+      "id": "wr-guidance-06",
+      "text": {
+        "en": "Guidance is not a single moment but a road. Even those who have walked it for decades still ask to remain on it.",
+        "de": "Rechtleitung ist kein einzelner Moment, sondern ein Weg. Selbst wer ihn seit Jahrzehnten geht, bittet weiter darum, auf ihm zu bleiben.",
+        "ar": "الهداية ليست لحظة واحدة بل طريق، وحتى من يسلكونه منذ عقود يسألون الثبات عليه."
+      }
+    },
+    {
+      "id": "wr-guidance-07",
+      "text": {
+        "en": "A sincere question, asked humbly, is often the beginning of guidance. Never be ashamed of searching.",
+        "de": "Eine aufrichtige, demütig gestellte Frage ist oft der Anfang der Rechtleitung. Schämen Sie sich nie, zu suchen.",
+        "ar": "السؤال الصادق المتواضع كثيرا ما يكون بداية الهداية، فلا تخجل أبدا من البحث."
+      }
+    },
+    {
+      "id": "wr-guidance-08",
+      "text": {
+        "en": "A compass does not walk for you, but without one every step is a guess. Let revelation be your compass.",
+        "de": "Ein Kompass geht nicht für Sie, aber ohne ihn ist jeder Schritt ein Raten. Lassen Sie die Offenbarung Ihren Kompass sein.",
+        "ar": "البوصلة لا تمشي عنك، لكن كل خطوة بدونها تخمين، فاجعل الوحي بوصلتك."
+      }
+    },
+    {
+      "id": "wr-guidance-09",
+      "text": {
+        "en": "Pray for the guidance of those you love without nagging them. Hearts often turn in the quiet, not in the argument.",
+        "de": "Beten Sie für die Rechtleitung derer, die Sie lieben, ohne sie zu bedrängen. Herzen wenden sich oft in der Stille, nicht im Streit.",
+        "ar": "ادع بالهداية لمن تحب دون أن تلح عليهم، فالقلوب كثيرا ما تتحول في السكون لا في الجدال."
+      }
+    },
+    {
+      "id": "wr-guidance-10",
+      "text": {
+        "en": "A wrong turn is not the end of the journey. The road back is clearly marked for anyone who looks.",
+        "de": "Eine falsche Abzweigung ist nicht das Ende der Reise. Der Weg zurück ist für jeden deutlich ausgeschildert, der hinschaut.",
+        "ar": "المنعطف الخاطئ ليس نهاية الرحلة، فطريق العودة واضح العلامات لكل من ينظر."
+      }
+    },
+    {
+      "id": "wr-guidance-11",
+      "text": {
+        "en": "Light in the heart shows itself in small choices: the lowered gaze, the kept promise, the prayer not delayed.",
+        "de": "Licht im Herzen zeigt sich in kleinen Entscheidungen: im gesenkten Blick, im gehaltenen Versprechen, im Gebet, das nicht aufgeschoben wird.",
+        "ar": "النور في القلب يظهر في الخيارات الصغيرة: البصر المغضوض، والوعد الموفى، والصلاة التي لا تؤخر."
+      }
+    },
+    {
+      "id": "wr-guidance-12",
+      "text": {
+        "en": "Be grateful for the people who showed you the way: a parent, a teacher, an imam, a friend. Their reward grows with every step you take.",
+        "de": "Seien Sie dankbar für die Menschen, die Ihnen den Weg gezeigt haben: Eltern, Lehrer, Imame, Freunde. Ihr Lohn wächst mit jedem Schritt, den Sie gehen.",
+        "ar": "اشكر من دلوك على الطريق: والدا، أو معلما، أو إماما، أو صديقا، فأجرهم يتجدد مع كل خطوة تخطوها."
+      }
+    },
+    {
+      "id": "wr-guidance-13",
+      "text": {
+        "en": "No step toward Allah is ever taken alone. The way opens wider the further you walk.",
+        "de": "Kein Schritt auf Allah zu wird je allein gegangen. Der Weg öffnet sich weiter, je weiter Sie gehen.",
+        "ar": "لا تخطى خطوة نحو الله وحدها أبدا، والطريق يتسع كلما أبعدت في المسير."
+      }
+    },
+    {
+      "id": "wr-guidance-14",
+      "text": {
+        "en": "Read, ask, reflect and pray. Guidance rarely comes to those who never look for it.",
+        "de": "Lesen, fragen, nachdenken und beten Sie. Rechtleitung kommt selten zu denen, die nie nach ihr suchen.",
+        "ar": "اقرأ، واسأل، وتأمل، وصل، فالهداية قلما تأتي من لا يبحث عنها أبدا."
+      }
+    }
+  ]
+}

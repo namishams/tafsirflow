@@ -1,0 +1,120 @@
+{
+  "set": "reflections-supplication",
+  "kind": "reflection",
+  "theme": "supplication",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-supplication-01",
+      "text": {
+        "en": "Ask Allah for the small things too: a parking space, a kind reply, the right words. Nothing is too small for the One who hears everything.",
+        "de": "Bitten Sie Allah auch um die kleinen Dinge: einen Parkplatz, eine freundliche Antwort, die richtigen Worte. Nichts ist zu klein für Den, der alles hört.",
+        "ar": "اسأل الله الأشياء الصغيرة أيضا: مكانا لسيارتك، وردا لطيفا، والكلمات المناسبة، فلا شيء أصغر من أن يسمعه من يسمع كل شيء."
+      }
+    },
+    {
+      "id": "wr-supplication-02",
+      "text": {
+        "en": "A mother's dua follows her child to places she will never see: exam halls, night shifts, faraway airports.",
+        "de": "Das Bittgebet einer Mutter begleitet ihr Kind an Orte, die sie nie sehen wird: Prüfungssäle, Nachtschichten, ferne Flughäfen.",
+        "ar": "دعاء الأم يرافق ولدها إلى أماكن لن تراها أبدا: قاعات الامتحان، والنوبات الليلية، والمطارات البعيدة."
+      }
+    },
+    {
+      "id": "wr-supplication-03",
+      "text": {
+        "en": "You do not need beautiful Arabic to make dua. Your own language, your own tears and your own words are understood.",
+        "de": "Sie brauchen kein schönes Arabisch für ein Bittgebet. Ihre eigene Sprache, Ihre eigenen Tränen und Ihre eigenen Worte werden verstanden.",
+        "ar": "لا تحتاج إلى عربية بليغة لتدعو، فلغتك ودموعك وكلماتك أنت كلها مفهومة."
+      }
+    },
+    {
+      "id": "wr-supplication-04",
+      "text": {
+        "en": "Pray for someone by name tonight without telling them. It is one of the purest gifts one person can give another.",
+        "de": "Beten Sie heute Abend für jemanden mit Namen, ohne es ihm zu sagen. Es ist eines der reinsten Geschenke, die ein Mensch einem anderen machen kann.",
+        "ar": "ادع الليلة لشخص باسمه دون أن تخبره، فهذه من أنقى الهدايا التي يقدمها إنسان لآخر."
+      }
+    },
+    {
+      "id": "wr-supplication-05",
+      "text": {
+        "en": "Dua is not a vending machine. It is a conversation, and sometimes the greatest answer is that asking has changed you.",
+        "de": "Ein Bittgebet ist kein Automat. Es ist ein Gespräch, und manchmal ist die größte Antwort, dass das Bitten Sie verändert hat.",
+        "ar": "الدعاء ليس آلة بيع، بل حديث، وأحيانا يكون أعظم جواب أن السؤال نفسه قد غيرك."
+      }
+    },
+    {
+      "id": "wr-supplication-06",
+      "text": {
+        "en": "The last third of the night is quiet for a reason. Set an alarm once this week and spend five minutes asking.",
+        "de": "Das letzte Drittel der Nacht ist nicht ohne Grund still. Stellen Sie diese Woche einmal einen Wecker und verbringen Sie fünf Minuten im Bitten.",
+        "ar": "الثلث الأخير من الليل هادئ لسبب، فاضبط منبها مرة هذا الأسبوع واقض خمس دقائق في الدعاء."
+      }
+    },
+    {
+      "id": "wr-supplication-07",
+      "text": {
+        "en": "Keep asking. The persistence of your dua is itself a sign that you believe someone is listening.",
+        "de": "Bitten Sie weiter. Die Beharrlichkeit Ihres Bittgebets ist selbst ein Zeichen, dass Sie glauben, dass jemand zuhört.",
+        "ar": "واصل السؤال، فإلحاحك في الدعاء علامة بحد ذاته على أنك موقن بأن هناك من يسمع."
+      }
+    },
+    {
+      "id": "wr-supplication-08",
+      "text": {
+        "en": "Make a list of people who need your prayers. A dua list in your pocket is a quiet way of loving many people at once.",
+        "de": "Schreiben Sie eine Liste der Menschen, die Ihre Gebete brauchen. Eine Liste im Portemonnaie ist eine stille Art, viele Menschen zugleich zu lieben.",
+        "ar": "اكتب قائمة بمن يحتاجون إلى دعائك، فقائمة الدعاء في جيبك طريقة هادئة لتحب كثيرين في آن واحد."
+      }
+    },
+    {
+      "id": "wr-supplication-09",
+      "text": {
+        "en": "Some answers arrive years later, dressed as something you did not expect. Look back, and you will recognise them.",
+        "de": "Manche Antworten kommen Jahre später, verkleidet als etwas, das Sie nicht erwartet haben. Schauen Sie zurück, und Sie werden sie erkennen.",
+        "ar": "بعض الإجابات تصل بعد سنين في ثوب لم تتوقعه، فانظر إلى الوراء وستعرفها."
+      }
+    },
+    {
+      "id": "wr-supplication-10",
+      "text": {
+        "en": "Raising your hands is admitting you cannot do it alone. That admission is the beginning of strength, not weakness.",
+        "de": "Die Hände zu erheben heißt einzugestehen, dass Sie es allein nicht schaffen. Dieses Eingeständnis ist der Anfang von Stärke, nicht von Schwäche.",
+        "ar": "رفع يديك اعتراف بأنك لا تستطيع وحدك، وهذا الاعتراف بداية القوة لا الضعف."
+      }
+    },
+    {
+      "id": "wr-supplication-11",
+      "text": {
+        "en": "Between the adhan and the iqamah there are a few precious minutes. Spend them asking, not scrolling.",
+        "de": "Zwischen Gebetsruf und Iqama liegen ein paar kostbare Minuten. Verbringen Sie sie mit Bitten, nicht mit Scrollen.",
+        "ar": "بين الأذان والإقامة دقائق ثمينة، فاقضها في الدعاء لا في تصفح الهاتف."
+      }
+    },
+    {
+      "id": "wr-supplication-12",
+      "text": {
+        "en": "Ask for the big dream and for a good night's sleep, for yourself and for the stranger you passed today.",
+        "de": "Bitten Sie um den großen Traum und um eine gute Nachtruhe, für sich selbst und für den Fremden, an dem Sie heute vorbeigegangen sind.",
+        "ar": "اسأل الحلم الكبير والنوم الهانئ، لنفسك وللغريب الذي مررت به اليوم."
+      }
+    },
+    {
+      "id": "wr-supplication-13",
+      "text": {
+        "en": "When you cannot find words, sit quietly with your palms open. Even silence can be a dua.",
+        "de": "Wenn Ihnen die Worte fehlen, sitzen Sie still mit offenen Händen. Auch Schweigen kann ein Bittgebet sein.",
+        "ar": "إذا لم تجد الكلمات فاجلس بهدوء وكفاك مفتوحتان، فحتى الصمت قد يكون دعاء."
+      }
+    },
+    {
+      "id": "wr-supplication-14",
+      "text": {
+        "en": "Write down what you asked for this Ramadan. Next year, read the list again and count the answers you missed noticing.",
+        "de": "Schreiben Sie auf, worum Sie in diesem Ramadan gebeten haben. Lesen Sie die Liste im nächsten Jahr wieder und zählen Sie die Antworten, die Sie übersehen haben.",
+        "ar": "اكتب ما سألته في رمضان هذا، ثم اقرأ القائمة في العام القادم، وعد الإجابات التي فاتك أن تلاحظها."
+      }
+    }
+  ]
+}

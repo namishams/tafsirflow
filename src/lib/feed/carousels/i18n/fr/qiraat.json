@@ -1,0 +1,144 @@
+{
+ "qiraat-01-what-are-qiraat": {
+  "c.k": "Les qira'at expliquées · 1",
+  "c.t": "Que sont les qira'at ?",
+  "c.s": "Un seul Coran, récité de plusieurs façons authentiques, chacune remontant au Prophète",
+  "0.t": "Une lecture avec une chaîne",
+  "0.b": "Une qira'a est une manière de réciter le Coran qui porte le nom d'un des grands imams de la récitation. Elle a été transmise par une chaîne ininterrompue de maîtres remontant au Prophète, que la paix soit sur lui.",
+  "1.t": "Fait pour être récité",
+  "1.b": "Le Coran s'est toujours appris à voix haute et avec soin, de maître à élève. Les qira'at sont les formes dans lesquelles cette récitation a été conservée.",
+  "2.t": "Ce qui diffère",
+  "2.b": "La plupart des différences touchent la prononciation : la longueur d'un madd, l'allègement d'une hamza, l'inclinaison d'une voyelle, des lettres emphatiques ou légères. Certaines touchent la forme d'un mot dans la même graphie, chacune avec un sens valable.",
+  "3.t": "Trois conditions",
+  "3.b": "Ibn al-Jazari nomme trois conditions pour qu'une lecture soit acceptée :",
+  "3.l": [
+   "Une chaîne de transmission authentique",
+   "L'accord avec la grammaire arabe, au moins d'une manière valable",
+   "L'accord avec l'une des copies d'Othman, même implicitement"
+  ],
+  "4.t": "Quatre mots clés",
+  "4.l": [
+   "Qira'a : la lecture d'un imam, comme 'Asim",
+   "Riwaya : la version de son transmetteur, comme Hafs",
+   "Tariq : une voie après le transmetteur, comme ash-Shatibiyya",
+   "Wajh : une option que le récitant peut choisir"
+  ],
+  "5.t": "Plusieurs lectures, un Livre préservé",
+  "5.b": "La diversité des lectures n'affaiblit pas la préservation du Coran. Elle montre avec quel soin chaque lettre a été transmise."
+ },
+ "qiraat-02-ahruf-and-qiraat": {
+  "c.k": "Les qira'at expliquées · 2",
+  "c.t": "Les sept ahruf et les qira'at",
+  "c.s": "Deux notions souvent confondues, et comment les savants les relient",
+  "0.t": "Révélé selon sept modes",
+  "0.b": "Le Prophète demanda toujours plus de modes. Le hadith parle d'ahruf, des modes de récitation, et non de sept lecteurs nommés.",
+  "1.t": "Que sont les ahruf ?",
+  "1.b": "Les savants divergent largement. Certains disent sept dialectes arabes, d'autres sept types de variation dans les mots et les formes, d'autres que sept signifie beaucoup. Al-Suyuti rapporte une quarantaine d'avis.",
+  "2.t": "Pas les sept lecteurs",
+  "2.b": "Des générations plus tard, Ibn Mujahid (m. 324 H) choisit sept lecteurs célèbres pour son Kitab al-Sab'a. Le même nombre a conduit beaucoup à les confondre avec les sept ahruf, une confusion que les savants corrigent depuis longtemps.",
+  "3.t": "Leur lien",
+  "3.b": "De nombreux savants estiment que les qira'at préservent ce qui, des ahruf, s'accorde avec les copies d'Othman. Un seul harf ou plusieurs ? Ils divergent.",
+  "4.t": "En bref",
+  "4.l": [
+   "Ahruf : modes de révélation mentionnés par le Prophète",
+   "Qira'at : lectures nommées, chacune avec sa chaîne",
+   "Les sept lecteurs ne sont pas les sept ahruf",
+   "Toute lecture acceptée s'accorde avec les copies d'Othman"
+  ]
+ },
+ "qiraat-03-ten-readers": {
+  "c.k": "Les qira'at expliquées · 3",
+  "c.t": "Les dix lecteurs et leurs transmetteurs",
+  "c.s": "Dix imams de la récitation et les vingt transmetteurs qui ont porté leurs lectures",
+  "0.t": "Sept, puis dix",
+  "0.b": "Ibn Mujahid réunit sept lecteurs. Des siècles plus tard, Ibn al-Jazari en confirma trois autres comme authentiques, ce qui donne les dix. Chaque lecteur est connu par deux transmetteurs célèbres.",
+  "1.t": "Médine et La Mecque",
+  "1.l": [
+   "Nafi' (Médine) : Qalun et Warsh",
+   "Abou Ja'far (Médine) : Ibn Wardan et Ibn Jammaz",
+   "Ibn Kathir (La Mecque) : al-Bazzi et Qunbul"
+  ],
+  "2.t": "Bassora et Damas",
+  "2.l": [
+   "Abou 'Amr (Bassora) : ad-Duri et as-Susi",
+   "Ya'qub (Bassora) : Ruways et Rawh",
+   "Ibn 'Amir (Damas) : Hisham et Ibn Dhakwan"
+  ],
+  "3.t": "Koufa et Bagdad",
+  "3.l": [
+   "'Asim (Koufa) : Shu'ba et Hafs",
+   "Hamza (Koufa) : Khalaf et Khallad",
+   "al-Kisa'i (Koufa) : Abou l-Harith et ad-Duri",
+   "Khalaf al-'Ashir (Bagdad) : Ishaq et Idris"
+  ],
+  "4.t": "Des noms qui reviennent",
+  "4.b": "Ad-Duri transmet à la fois d'Abou 'Amr et d'al-Kisa'i : c'est le même homme. Et Khalaf, qui transmet la lecture de Hamza, est lui-même le dixième lecteur.",
+  "5.t": "Lues dans le monde aujourd'hui",
+  "5.b": "Hafs d'après 'Asim est aujourd'hui la plus répandue. Warsh d'après Nafi' est lue dans une grande partie de l'Afrique du Nord et de l'Ouest, Qalun en Libye et dans une partie de la Tunisie, et ad-Duri d'après Abou 'Amr dans certaines régions du Soudan."
+ },
+ "qiraat-04-hafs-and-warsh": {
+  "c.k": "Les qira'at expliquées · 4",
+  "c.t": "Hafs et Warsh comparés",
+  "c.s": "Les deux transmissions les plus répandues aujourd'hui, côte à côte",
+  "0.t": "Deux transmissions",
+  "0.b": "Hafs transmet la lecture de 'Asim de Koufa ; Warsh celle de Nafi' de Médine. Hafs est aujourd'hui la plus répandue, et Warsh est largement lue en Afrique du Nord et de l'Ouest.",
+  "1.t": "Maître ou Roi",
+  "1.b": "Hafs lit maliki avec un a long, le maître ; Warsh le lit court, le roi. Les deux décrivent Allah, et ensemble ils en disent plus.",
+  "2.t": "Madd plus longs",
+  "2.b": "Warsh, par la voie d'al-Azraq, donne six temps au madd joint et au madd séparé, et deux, quatre ou six au madd badal. Hafs par ash-Shatibiyya en utilise quatre ou cinq, et deux pour le badal.",
+  "3.t": "Une hamza allégée",
+  "3.b": "Là où Hafs dit yu'minuna avec une hamza, Warsh la remplace par une voyelle longue : yuminuna.",
+  "4.t": "Le mim du pluriel",
+  "4.b": "Devant une hamza, Warsh relie le mim du pluriel à un u long : 'alayhimu a'andhartahum. Hafs garde le mim avec soukoun.",
+  "5.t": "L'unique imala de Hafs",
+  "5.b": "Hafs incline le a vers le e dans un seul mot du Coran : majreha, ici. Warsh pratique une inclinaison plus légère dans de nombreux mots.",
+  "6.t": "Ce qui ne change pas",
+  "6.l": [
+   "Les deux sont authentiques, aux chaînes ininterrompues",
+   "Le sens est préservé, et souvent enrichi",
+   "Aucune n'est plus correcte que l'autre",
+   "Récitez dans la riwaya apprise de votre maître"
+  ]
+ },
+ "qiraat-05-transmission": {
+  "c.k": "Les qira'at expliquées · 5",
+  "c.t": "Comment les qira'at ont été transmises",
+  "c.s": "Du Prophète aux récitants d'aujourd'hui : chaînes, maîtres et deux poèmes célèbres",
+  "0.t": "Appris par l'écoute",
+  "0.b": "Même le Prophète a reçu le Coran en écoutant d'abord, puis en récitant. Chaque qira'a suit ce chemin.",
+  "1.t": "Face à face",
+  "1.b": "La récitation s'apprend face à face : l'élève récite tout le Coran à un maître, qui corrige chaque lettre. Un certificat, l'ijaza, consigne la chaîne (isnad) jusqu'au Prophète.",
+  "2.t": "Gardé dans les cœurs",
+  "2.b": "Le Coran vit dans la mémoire de ceux qui l'ont appris, pas seulement sur des pages.",
+  "3.t": "Les sept d'Ibn Mujahid",
+  "3.b": "Au 4e siècle de l'Hégire, Ibn Mujahid réunit à Bagdad sept lecteurs bien connus dans son Kitab al-Sab'a. Les ouvrages suivants se sont appuyés sur son choix.",
+  "4.t": "Ash-Shatibiyya",
+  "4.b": "L'imam al-Shatibi (m. 590 H) mit en un long poème rimé, Hirz al-Amani, le livre d'ad-Dani at-Taysir sur les sept lectures. Connu sous le nom d'ash-Shatibiyya, il s'apprend encore par cœur.",
+  "5.t": "Ad-Durra et les dix",
+  "5.b": "Ibn al-Jazari (m. 833 H) écrivit ad-Durra al-Mudiyya sur trois autres lecteurs : Abou Ja'far, Ya'qub et Khalaf. Avec ash-Shatibiyya, il complète les dix. Sa Tayyibat al-Nashr couvre les dix par bien d'autres voies.",
+  "6.t": "Une chaîne toujours vivante",
+  "6.b": "Des maîtres délivrent encore aujourd'hui des ijazas dont les chaînes passent par ces ouvrages. Si vous le pouvez, récitez à un maître qualifié : vous rejoignez une lignée qui remonte au Prophète."
+ },
+ "qiraat-06-why-they-matter": {
+  "c.k": "Les qira'at expliquées · 6",
+  "c.t": "Pourquoi les qira'at comptent",
+  "c.s": "Le sens, la préservation et une tradition vivante de récitation",
+  "0.t": "Un témoin vivant de la préservation",
+  "0.b": "Des lectures portées par de nombreux maîtres dans des contrées lointaines s'accordent toujours sur le même Coran et la même graphie d'Othman. Leurs différences ont été consignées avec soin, non perdues.",
+  "1.t": "Deux lectures, deux leçons",
+  "1.b": "Hafs lit fatabayyanu, enquêtez ; Hamza, al-Kisa'i et Khalaf lisent fatathabbatu, assurez-vous. Ensemble : vérifiez avec soin, ne vous précipitez pas.",
+  "2.t": "Mentir et démentir",
+  "2.b": "Hafs lit yakdhibun, ils mentaient ; Nafi', Ibn Kathir et d'autres lisent yukadhdhibun, ils démentaient. Les deux conviennent aux mêmes gens.",
+  "3.t": "D'où vient le tajwid",
+  "3.b": "Les règles que vous apprenez, de la ghunna à la longueur de chaque madd, sont celles d'une riwaya, généralement Hafs. Le savoir explique pourquoi les récitants diffèrent parfois, et pourquoi les deux peuvent avoir raison.",
+  "4.t": "Rendu facile à mémoriser",
+  "4.b": "Des générations, en tout pays, ont appris le Coran par cœur. La consignation minutieuse de ses lectures fait partie de cette histoire.",
+  "5.t": "Comment les aborder",
+  "5.l": [
+   "Récitez dans la riwaya que votre maître vous a enseignée",
+   "Écoutez des récitations en Warsh ou en Qalun",
+   "Ne qualifiez jamais d'erreur une lecture authentique",
+   "Étudiez avec un maître qualifié avant d'en réciter d'autres"
+  ]
+ }
+}

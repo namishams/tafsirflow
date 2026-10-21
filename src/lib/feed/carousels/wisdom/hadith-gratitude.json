@@ -1,0 +1,14 @@
+{ "set": "hadith-gratitude", "kind": "hadith", "theme": "gratitude", "tradition": "sunni",
+  "items": [
+    {"id": "wh-gratitude-muslim-7500", "hadith": "muslim:7500", "check": "Strange are the ways of a believer"},
+    {"id": "wh-gratitude-bukhari-6569", "hadith": "bukhari:6569", "check": "more thankful"},
+    {"id": "wh-gratitude-bukhari-4836", "hadith": "bukhari:4836", "check": "thankful slave"},
+    {"id": "wh-gratitude-bukhari-5459", "hadith": "bukhari:5459", "check": "Your favor cannot"},
+    {"id": "wh-gratitude-muslim-7430", "hadith": "muslim:7430", "check": "do not disparage Allah's favors"},
+    {"id": "wh-gratitude-muslim-6944", "hadith": "muslim:6944", "check": "withdrawal of Thine blessing"},
+    {"id": "wh-gratitude-muslim-1865", "hadith": "muslim:1865", "check": "gratitude"},
+    {"id": "wh-gratitude-muslim-6932", "hadith": "muslim:6932", "check": "Al-Hamdu lillah"},
+    {"id": "wh-gratitude-muslim-6894", "hadith": "muslim:6894", "check": "Who fed us"},
+    {"id": "wh-gratitude-bukhari-2566", "hadith": "bukhari:2566", "check": "look down upon the gift"},
+    {"id": "wh-gratitude-bukhari-3563", "hadith": "bukhari:3563", "check": "never criticized any food"}
+  ] }

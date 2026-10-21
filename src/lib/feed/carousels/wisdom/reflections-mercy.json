@@ -1,0 +1,120 @@
+{
+  "set": "reflections-mercy",
+  "kind": "reflection",
+  "theme": "mercy",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-mercy-01",
+      "text": {
+        "en": "The mercy you show a tired cashier at the end of her shift may be the gentlest moment of her whole day.",
+        "de": "Die Barmherzigkeit, die Sie einer müden Kassiererin am Ende ihrer Schicht zeigen, ist vielleicht der sanfteste Moment ihres ganzen Tages.",
+        "ar": "الرحمة التي تظهرها لعاملة متعبة في آخر نوبتها قد تكون ألطف لحظة في يومها كله."
+      }
+    },
+    {
+      "id": "wr-mercy-02",
+      "text": {
+        "en": "Every morning you wake up is a fresh page of mercy, given before you have done anything to deserve it.",
+        "de": "Jeder Morgen, an dem Sie aufwachen, ist eine neue Seite der Barmherzigkeit, geschenkt, bevor Sie irgendetwas dafür getan haben.",
+        "ar": "كل صباح تستيقظ فيه صفحة جديدة من الرحمة، وهبت لك قبل أن تفعل أي شيء تستحقها به."
+      }
+    },
+    {
+      "id": "wr-mercy-03",
+      "text": {
+        "en": "Leaving water out for the birds on a hot day is a small mercy. Small mercies are never small with Allah.",
+        "de": "An einem heißen Tag Wasser für die Vögel hinzustellen ist eine kleine Barmherzigkeit. Bei Allah ist kleine Barmherzigkeit nie klein.",
+        "ar": "أن تضع الماء للطيور في يوم حار رحمة صغيرة، والرحمة الصغيرة ليست صغيرة عند الله أبدا."
+      }
+    },
+    {
+      "id": "wr-mercy-04",
+      "text": {
+        "en": "Mercy is slowing down for the old man crossing the road, and not letting him feel that he made you late.",
+        "de": "Barmherzigkeit heißt, für den alten Mann, der die Straße überquert, langsamer zu werden und ihn nicht spüren zu lassen, dass er Sie aufgehalten hat.",
+        "ar": "الرحمة أن تبطئ للشيخ الذي يعبر الطريق، وألا تشعره بأنه أخرك."
+      }
+    },
+    {
+      "id": "wr-mercy-05",
+      "text": {
+        "en": "Be merciful with yourself on the days you fall short. The goal is to return, not to be perfect.",
+        "de": "Seien Sie barmherzig mit sich selbst an den Tagen, an denen Sie zurückbleiben. Das Ziel ist die Rückkehr, nicht die Vollkommenheit.",
+        "ar": "ارحم نفسك في الأيام التي تقصر فيها، فالغاية أن تعود، لا أن تكون كاملا."
+      }
+    },
+    {
+      "id": "wr-mercy-06",
+      "text": {
+        "en": "Rain does not choose whose garden it falls on. Let your kindness be a little like the rain.",
+        "de": "Der Regen sucht sich nicht aus, auf wessen Garten er fällt. Lassen Sie Ihre Güte ein wenig wie der Regen sein.",
+        "ar": "المطر لا يختار الحديقة التي يسقط عليها، فليكن لطفك شيئا من المطر."
+      }
+    },
+    {
+      "id": "wr-mercy-07",
+      "text": {
+        "en": "When you are tempted to judge someone harshly, remember how much of your own life Allah has kindly covered.",
+        "de": "Wenn Sie versucht sind, jemanden hart zu verurteilen, denken Sie daran, wie viel Ihres eigenen Lebens Allah gnädig bedeckt hat.",
+        "ar": "إذا هممت بأن تحكم على أحد بقسوة، فتذكر كم ستر الله من حياتك برحمته."
+      }
+    },
+    {
+      "id": "wr-mercy-08",
+      "text": {
+        "en": "Visiting the sick, sitting with the lonely, feeding the hungry: mercy is mostly made of showing up.",
+        "de": "Kranke besuchen, bei Einsamen sitzen, Hungrige speisen: Barmherzigkeit besteht vor allem darin, da zu sein.",
+        "ar": "أن تعود المريض، وتجالس الوحيد، وتطعم الجائع: الرحمة في أغلبها حضور."
+      }
+    },
+    {
+      "id": "wr-mercy-09",
+      "text": {
+        "en": "Every heartbeat that kept going through the night was a mercy you did not have to ask for.",
+        "de": "Jeder Herzschlag, der die Nacht hindurch weiterging, war eine Barmherzigkeit, um die Sie nicht bitten mussten.",
+        "ar": "كل نبضة استمرت طوال الليل كانت رحمة لم تحتج إلى أن تطلبها."
+      }
+    },
+    {
+      "id": "wr-mercy-10",
+      "text": {
+        "en": "Speak gently to children and animals, for they remember how you made them feel long after your words are gone.",
+        "de": "Sprechen Sie sanft mit Kindern und Tieren, denn sie erinnern sich an das Gefühl, das Sie ihnen gegeben haben, lange nachdem Ihre Worte verklungen sind.",
+        "ar": "كلم الأطفال والحيوانات برفق، فهم يتذكرون شعورهم معك زمنا طويلا بعد أن تتلاشى كلماتك."
+      }
+    },
+    {
+      "id": "wr-mercy-11",
+      "text": {
+        "en": "Mercy is not weakness. It takes strength to hold back what you could have said, and to give what you could have kept.",
+        "de": "Barmherzigkeit ist keine Schwäche. Es braucht Kraft, zurückzuhalten, was man hätte sagen können, und zu geben, was man hätte behalten können.",
+        "ar": "ليست الرحمة ضعفا، فكتم ما كان يمكن أن تقوله، وبذل ما كان يمكن أن تمسكه، يحتاجان إلى قوة."
+      }
+    },
+    {
+      "id": "wr-mercy-12",
+      "text": {
+        "en": "The One who taught the bird to feed its young is not going to forget you.",
+        "de": "Der, der den Vogel lehrte, seine Jungen zu füttern, wird Sie nicht vergessen.",
+        "ar": "من علم الطائر أن يطعم صغاره لن ينساك."
+      }
+    },
+    {
+      "id": "wr-mercy-13",
+      "text": {
+        "en": "Before you sleep, forgive one person in your heart. Let mercy be the last thing you hold tonight.",
+        "de": "Vergeben Sie vor dem Schlafen einem Menschen in Ihrem Herzen. Lassen Sie Barmherzigkeit das Letzte sein, was Sie heute Nacht festhalten.",
+        "ar": "قبل أن تنام سامح شخصا واحدا في قلبك، ولتكن الرحمة آخر ما تحمله الليلة."
+      }
+    },
+    {
+      "id": "wr-mercy-14",
+      "text": {
+        "en": "A nurse holding a frightened patient's hand at night is mercy in its plainest form, and it is never unseen.",
+        "de": "Eine Pflegerin, die nachts die Hand eines verängstigten Patienten hält, ist Barmherzigkeit in ihrer schlichtesten Form, und sie bleibt nie ungesehen.",
+        "ar": "الممرضة التي تمسك يد مريض خائف في الليل هي الرحمة في أبسط صورها، ولا تخفى أبدا."
+      }
+    }
+  ]
+}

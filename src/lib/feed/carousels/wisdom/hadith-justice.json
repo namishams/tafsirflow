@@ -1,0 +1,19 @@
+{ "set": "hadith-justice", "kind": "hadith", "theme": "justice", "tradition": "sunni",
+  "items": [
+    {"id": "wh-justice-nawawi-34", "hadith": "nawawi:34", "check": "change it with his hand"},
+    {"id": "wh-justice-bukhari-2400", "hadith": "bukhari:2400", "check": "injustice"},
+    {"id": "wh-justice-bukhari-2751", "hadith": "bukhari:2751", "check": "guardians"},
+    {"id": "wh-justice-bukhari-7150", "hadith": "bukhari:7150", "check": "honest manner"},
+    {"id": "wh-justice-bukhari-3603", "hadith": "bukhari:3603", "check": "ask your rights from Allah"},
+    {"id": "wh-justice-bukhari-7149", "hadith": "bukhari:7149", "check": "those who ask for it"},
+    {"id": "wh-justice-bukhari-6534", "hadith": "bukhari:6534", "check": "ask for his pardon"},
+    {"id": "wh-justice-bukhari-2447", "hadith": "bukhari:2447", "check": "darkness"},
+    {"id": "wh-justice-bukhari-2444", "hadith": "bukhari:2444", "check": "By preventing him"},
+    {"id": "wh-justice-bukhari-2448", "hadith": "bukhari:2448", "check": "curse of the oppressed"},
+    {"id": "wh-justice-muslim-4721", "hadith": "muslim:4721", "check": "pulpits of light"},
+    {"id": "wh-justice-muslim-4181", "hadith": "muslim:4181", "check": "equity"},
+    {"id": "wh-justice-bukhari-4686", "hadith": "bukhari:4686", "check": "respite to the oppressor"},
+    {"id": "wh-justice-nawawi-32", "hadith": "nawawi:32", "check": "neither harming"},
+    {"id": "wh-justice-bukhari-6967", "hadith": "bukhari:6967", "check": "piece of Fire"},
+    {"id": "wh-justice-muslim-6580", "hadith": "muslim:6580", "check": "hornless sheep"}
+  ] }

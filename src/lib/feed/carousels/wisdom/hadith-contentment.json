@@ -1,0 +1,13 @@
+{ "set": "hadith-contentment", "kind": "hadith", "theme": "contentment", "tradition": "sunni",
+  "items": [
+    {"id": "wh-contentment-bukhari-6442", "hadith": "bukhari:6442", "check": "wealth of his heirs"},
+    {"id": "wh-contentment-bukhari-6439", "hadith": "bukhari:6439", "check": "valley full of gold"},
+    {"id": "wh-contentment-bukhari-6446", "hadith": "bukhari:6446", "check": "sufficiency in the soul"},
+    {"id": "wh-contentment-muslim-2426", "hadith": "muslim:2426", "check": "contented"},
+    {"id": "wh-contentment-muslim-151", "hadith": "muslim:151", "check": "taste of faith"},
+    {"id": "wh-contentment-muslim-7420", "hadith": "muslim:7420", "check": "My wealth, my wealth"},
+    {"id": "wh-contentment-muslim-5370", "hadith": "muslim:5370", "check": "Food for one suffices two"},
+    {"id": "wh-contentment-bukhari-6456", "hadith": "bukhari:6456", "check": "palm fibres"},
+    {"id": "wh-contentment-bukhari-6454", "hadith": "bukhari:6454", "check": "wheat bread"},
+    {"id": "wh-contentment-muslim-2387", "hadith": "muslim:2387", "check": "green and sweet"}
+  ] }

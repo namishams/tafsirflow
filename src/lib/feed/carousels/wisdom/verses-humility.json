@@ -1,0 +1,31 @@
+{
+  "set": "verses-humility",
+  "kind": "verse",
+  "theme": "humility",
+  "tradition": "all",
+  "items": [
+    {"id": "wv-humility-25-63", "verse": "25:63", "check": "walk upon the earth easily"},
+    {"id": "wv-humility-31-18", "verse": "31:18", "check": "exultantly"},
+    {"id": "wv-humility-17-37", "verse": "17:37", "check": "exultantly"},
+    {"id": "wv-humility-28-83", "verse": "28:83", "check": "exaltedness"},
+    {"id": "wv-humility-53-32", "verse": "53:32", "check": "claim yourselves to be pure"},
+    {"id": "wv-humility-4-49", "verse": "4:49", "check": "claim themselves to be pure"},
+    {"id": "wv-humility-7-206", "verse": "7:206", "check": "arrogance"},
+    {"id": "wv-humility-32-15", "verse": "32:15", "check": "not arrogant"},
+    {"id": "wv-humility-57-16", "verse": "57:16", "check": "humbly submissive"},
+    {"id": "wv-humility-11-23", "verse": "11:23", "check": "humbled themselves"},
+    {"id": "wv-humility-3-26", "verse": "3:26", "check": "You humble whom You will"},
+    {"id": "wv-humility-96-6", "verse": "96:6-8", "check": "self-sufficient"},
+    {"id": "wv-humility-16-23", "verse": "16:23", "check": "does not like the arrogant"},
+    {"id": "wv-humility-18-23", "verse": "18:23-24", "check": "If Allah wills"},
+    {"id": "wv-humility-35-15", "verse": "35:15", "check": "in need of Allah"},
+    {"id": "wv-humility-19-67", "verse": "19:67", "check": "nothing"},
+    {"id": "wv-humility-82-6", "verse": "82:6-8", "check": "what has deceived you"},
+    {"id": "wv-humility-49-11", "verse": "49:11", "check": "ridicule"},
+    {"id": "wv-humility-12-53", "verse": "12:53", "check": "I do not acquit myself"},
+    {"id": "wv-humility-28-24", "verse": "28:24", "check": "in need"},
+    {"id": "wv-humility-4-172", "verse": "4:172", "check": "disdain"},
+    {"id": "wv-humility-7-12", "verse": "7:12", "check": "I am better than him"},
+    {"id": "wv-humility-18-65", "verse": "18:65-66", "check": "teach me"}
+  ]
+}

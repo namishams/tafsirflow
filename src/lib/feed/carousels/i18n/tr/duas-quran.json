@@ -1,0 +1,130 @@
+{
+ "duas-quran-rabbana-daily": {
+  "c.k": "Kur'an'dan dualar · 1",
+  "c.t": "Her gün için 5 Rabbenâ duası",
+  "c.s": "Kur'an'dan, 'Rabbimiz' diye başlayan kısa dualar. Her hafta birini öğrenin.",
+  "0.t": "Neden Rabbenâ?",
+  "0.b": "Rabbenâ, 'Rabbimiz' demektir. Kur'an'daki pek çok dua böyle başlar. Rab kelimesi özeni ve terbiyeyi anlatır; 'bizim' demek de yalnızca kendiniz için istemediğiniz anlamına gelir.",
+  "1.t": "Dengeli bir hayat için",
+  "1.b": "İki hayatı birden ister, hiçbirinden vazgeçmeden. Her namazdan sonra okunacak kadar kısa.",
+  "2.t": "Bir hatadan sonra",
+  "2.b": "Hz. Âdem ve eşi bunu sürçmelerinden sonra söyledi: mazeret yok, yalnızca dürüstlük ve ümit. Her eksik kaldığımızda okunacak bir dua.",
+  "3.t": "Bir karardan önce",
+  "3.b": "Ashâb-ı Kehf bunu her şeyi geride bıraktıklarında söyledi. Önümüzdeki yolun belirsiz olduğu an için bir dua.",
+  "4.t": "Temiz bir kalp için",
+  "4.b": "Bizden önce gelen müminler ve kendi kalplerimiz için bir dua: iman eden hiç kimseye karşı kin taşımayan bir kalp.",
+  "5.t": "Güzel bir son için",
+  "5.b": "Yaratılışı tefekkür edenler dualarını bununla bitirir: bağışlanma ve iyilerle birlikte son bulan bir hayat.",
+  "6.t": "Onları sahiplenin",
+  "6.l": [
+   "Her hafta birini anlamıyla öğrenin",
+   "Namazdan sonra ya da her dua ettiğinizde okuyun",
+   "Sevdiğiniz birine öğretin"
+  ]
+ },
+ "duas-quran-prophets-hard-times": {
+  "c.k": "Kur'an'dan dualar · 2",
+  "c.t": "Zor zamanlar için peygamberlerden 6 dua",
+  "c.s": "Karanlık, hastalık, ihtiyaç, keder, yalnızlık: peygamberler bunları yaşadı ve Allah'a yöneldi.",
+  "0.t": "Hz. Yunus: çıkışsız kaldığınızda",
+  "0.b": "Balığın karnındaki karanlıkta söylendi. Bir sonraki ayette Allah ona icabet eder ve aynı kurtuluşu müminlere de vaat eder.",
+  "1.t": "Hz. Eyyub: hastalıkta ve kayıpta",
+  "1.b": "İmtihanında hiçbir talepte bulunmaz. Acısını dile getirir, sonra Allah'ın rahmetini anar ve gerisini O'na bırakır.",
+  "2.t": "Hz. Musa: elinizde hiçbir şey yokken",
+  "2.b": "Medyen'de yorgun ve yalnız bir garipti; iki kadına yardım etti ve gölgeye oturdu. Duası tam bir muhtaçlığı itiraf eder.",
+  "3.t": "Hz. Nuh: artık devam edemediğinizde",
+  "3.b": "Kavmini asırlarca davet ettikten sonra Hz. Nuh'un duası yalnızca birkaç kelimedir. Bazen en samimi dua en kısa olandır.",
+  "4.t": "Hz. Yakub: kederinizi nereye götürmeli?",
+  "4.b": "Hz. Yakub, Yusuf'u ve sonra bir oğlunu daha kaybetti. Kederini gizlemedi; onu doğru adrese götürdü.",
+  "5.t": "Hz. Zekeriyya: yalnız hissettiğinizde",
+  "5.b": "Yaşlı ve varissizdi, yine de istedi. Duasını övgüyle bitirir: ne kaybedersek kaybedelim, Allah bâkidir.",
+  "6.t": "Bu duaların ortak yanı",
+  "6.l": [
+   "Allah'a doğrudan ve samimiyetle seslenirler",
+   "İstemeden önce ya da sonra O'nu överler",
+   "Zaaflarını gizlemek yerine itiraf ederler"
+  ]
+ },
+ "duas-quran-ibrahim": {
+  "c.k": "Kur'an'dan dualar · 3",
+  "c.t": "Hz. İbrahim'in 5 duası",
+  "c.s": "Allah'ın dostu; emeği, çocukları, şehri ve hiç tanımayacağı insanlar için dua etti.",
+  "0.t": "Çok dua eden bir insan",
+  "0.b": "Kur'an, Hz. İbrahim'in pek çok duasını korur. Bunlar çok çalışan, yine de her şeyi Allah'tan isteyen bir insanı gösterir: kabul, hidayet ve güzel bir miras.",
+  "1.t": "Güzel bir işi bitirince",
+  "1.b": "Hz. İbrahim ve Hz. İsmail Kâbe'yi kendi elleriyle inşa ettiler, yine de yalnızca kabulünü istediler. Her işin sonu için bir dua.",
+  "2.t": "Ailede iman için",
+  "2.b": "Teslim olmuş bir kalp, aynı şekilde yaşayacak çocuklar ve nasıl ibadet edileceğinin öğretilmesini ister.",
+  "3.t": "Asırlar sonra kabul olan dua",
+  "3.b": "Müslümanlar Hz. Muhammed'i bu duanın cevabı olarak görür: Mekke halkından, öğreten ve arındıran bir elçi.",
+  "4.t": "Güvenli bir yurt için",
+  "4.b": "Bir şehrin güvenliği ve çocuklarının imanı için dua eder. İkisi de önemlidir: güvenli bir yer ve putlardan uzak tutulan bir kalp.",
+  "5.t": "İyi bir nam ve cennet için",
+  "5.b": "Doğru hüküm, iyilerle beraberlik, sonraki nesiller arasında şerefli bir ad ve cennet ister. Müminler onu hâlâ hürmetle anar."
+ },
+ "duas-quran-family": {
+  "c.k": "Kur'an'dan dualar · 4",
+  "c.t": "Aileniz için 5 dua",
+  "c.s": "Anne baba, eş ve çocuklar için: sevdiklerinizi dualarınızda tutmak için Kur'an'dan sözler.",
+  "0.t": "Anne babanız için",
+  "0.b": "Kur'an bu duayı, anne babaya iyiliği emrettikten hemen sonra öğretir. Bizi kucaklarında taşıdıkları yılları anar.",
+  "1.t": "Hayatta olan ya da ölmüş anne baba için",
+  "1.b": "Hz. İbrahim'in, anne babanızı ve bütün müminleri kapsayan kısa bir duası. Her namazın sonuna yakışır.",
+  "2.t": "Eşiniz ve çocuklarınız için",
+  "2.b": "'Rahmân'ın kullarının' bir duası. Sevinç veren bir yuva ve güzel bir örnek olabilme gücü ister.",
+  "3.t": "Evlat umduğunuzda",
+  "3.b": "Hz. Zekeriyya bunu, Hz. Meryem'in yanında Allah'ın rızkını görünce söyledi. Sadece bir çocuk değil, hayırlı bir çocuk istedi.",
+  "4.t": "Namaz ailede yaşasın diye",
+  "4.b": "Hz. İbrahim önce kendisiyle, sonra çocuklarıyla başlar. Geride bırakılacak en güzel şey namaz kılan bir ailedir.",
+  "5.t": "Onları dualarınızda tutun",
+  "5.l": [
+   "Duanızda her birini adıyla anın",
+   "Onlar duymazken onlar için dua edin",
+   "Başarılarından önce imanlarını isteyin"
+  ]
+ },
+ "duas-quran-knowledge": {
+  "c.k": "Kur'an'dan dualar · 5",
+  "c.t": "İlim ve açık zihin için 5 dua",
+  "c.s": "Bir sınavdan, bir konuşmadan ya da zor bir sohbetten önce: Hz. Musa'nın, Hz. Süleyman'ın ve Hz. Muhammed'in duaları.",
+  "0.t": "Ders çalışmadan önce",
+  "0.b": "Allah, Peygamberine ilminin artmasını istemeyi öğretti. Her dersin başı için kısa bir dua.",
+  "1.t": "Konuşmadan önce",
+  "1.b": "Hz. Musa bunu Firavun'un karşısına çıkmadan önce istedi: ferah bir gönül, kolaylaşan bir iş ve insanlara ulaşan sözler.",
+  "2.t": "Hayret veren bir nimette",
+  "2.b": "Hz. Süleyman bir karıncanın sözünü anladı ve gülümsedi. Nadir bir nimete ilk karşılığı şükür istemek oldu.",
+  "3.t": "Yeni bir başlangıçtan önce",
+  "3.b": "Birçok müfessir onu hicretle ilişkilendirir. Yeni bir okul, iş ya da şehirden önce okuyun: güzel bir giriş, güzel bir çıkış ve Allah'ın desteği.",
+  "4.t": "Her namazdaki dua",
+  "4.b": "Hidayet olmadan ilim yetmez. Her Fâtiha okuyuşu onu yeniden ister.",
+  "5.t": "Bereketli öğrenmek",
+  "5.l": [
+   "Besmele ve net bir niyetle başlayın",
+   "Allah'tan yalnızca not değil, anlayış isteyin",
+   "Öğrendiğinizle amel edin, az da olsa"
+  ]
+ },
+ "duas-quran-steadfast": {
+  "c.k": "Kur'an'dan dualar · 6",
+  "c.t": "Sebatlı bir kalp için 6 dua",
+  "c.s": "Kalpler değişir. Bu dualar, iyi günde de zor günde de kalbinizi sabit tutmasını Allah'tan ister.",
+  "0.t": "Hidayetten sonra",
+  "0.b": "İlimde derinleşmiş olanlar kendi güçlerine güvenmez. Hidayete erdikten sonra hidayette kalmayı isterler.",
+  "1.t": "Zor bir işten önce",
+  "1.b": "Küçük bir topluluk bunu Câlût'un ordusuyla karşılaşmadan önce söyledi. Önce sabır, sonra sağlam adımlar, sonra zafer: bu sırayla.",
+  "2.t": "İman bir bedel istediğinde",
+  "2.b": "Firavun'un sihirbazları bunu iman ettikten hemen sonra, tehdit altında söyledi. Yeni bir iman, ama derin köklü.",
+  "3.t": "Eksik kaldığınızda",
+  "3.b": "Önceki peygamberlerin ardından gidenler, sebat istemeden önce kendi hatalarıyla başladı. Dürüstlük güçten önce gelir.",
+  "4.t": "İnsanlar size baskı yaptığında",
+  "4.b": "Hz. Musa'nın kavminden genç müminler bunu Firavun'un baskısı altında söyledi. Önce Allah'a tevekkül ederler, sonra korunma isterler.",
+  "5.t": "Başarının zirvesinde",
+  "5.b": "Hz. Yusuf yeniden güce, aileye ve izzete kavuşmuştu. Yine de duası dünyadan daha fazlası için değil, güzel bir son içindi.",
+  "6.t": "Sağlam bir kalp için küçük alışkanlıklar",
+  "6.l": [
+   "Ağır gelse bile namazı vaktinde kılın",
+   "Size Allah'ı hatırlatanlarla dost olun",
+   "Her gün biraz Kur'an okuyun"
+  ]
+ }
+}

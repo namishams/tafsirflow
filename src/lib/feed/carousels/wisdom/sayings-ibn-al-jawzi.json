@@ -1,0 +1,84 @@
+{
+  "set": "sayings-ibn-al-jawzi",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-ibn-al-jawzi-01",
+      "theme": "time",
+      "text": {
+        "en": "A person should know the nobility of his time and the worth of his moments, and not waste a single instant of it on anything that does not bring him nearer to Allah.",
+        "de": "Der Mensch sollte den Adel seiner Zeit und den Wert seiner Augenblicke kennen und keinen einzigen Moment davon mit etwas vergeuden, das ihn Allah nicht näherbringt.",
+        "ar": "ينبغي للإنسان أن يعرف شرف زمانه وقدر وقته، فلا يضيع منه لحظة في غير قربة."
+      },
+      "arabic": "ينبغي للإنسان أن يعرف شرف زمانه وقدر وقته، فلا يضيع منه لحظة في غير قربة.",
+      "by": { "en": "Ibn al-Jawzi", "de": "Ibn al-Dschauzi", "ar": "ابن الجوزي" },
+      "work": { "en": "Sayd al-Khatir", "de": "Said al-Chatir", "ar": "صيد الخاطر" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-jawzi-02",
+      "theme": "time",
+      "text": {
+        "en": "Know, my son, that days unfold into hours, and hours into breaths, and every breath is a treasure chest. So beware of letting a breath pass with nothing in it.",
+        "de": "Mein Sohn, die Tage entfalten sich zu Stunden und die Stunden zu Atemzügen, und jeder Atemzug ist eine Schatztruhe. Achten Sie darauf, dass kein Atemzug leer verstreicht.",
+        "ar": "واعلم يا بني أن الأيام تبسط ساعات، والساعات تبسط أنفاسا، وكل نفس خزانة، فاحذر أن يذهب نفس بغير شيء."
+      },
+      "arabic": "واعلم يا بني أن الأيام تبسط ساعات، والساعات تبسط أنفاسا، وكل نفس خزانة، فاحذر أن يذهب نفس بغير شيء.",
+      "by": { "en": "Ibn al-Jawzi, to his son", "de": "Ibn al-Dschauzi an seinen Sohn", "ar": "ابن الجوزي في وصيته لابنه" },
+      "work": { "en": "Laftat al-Kabid ila Nasihat al-Walad", "de": "Laftat al-Kabid ila Nasihat al-Walad", "ar": "لفتة الكبد إلى نصيحة الولد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-jawzi-03",
+      "theme": "worship",
+      "text": {
+        "en": "Whoever loves his inner states to be pure, let him strive to purify his deeds.",
+        "de": "Wer möchte, dass seine inneren Zustände rein werden, der bemühe sich, seine Taten zu läutern.",
+        "ar": "من أحب تصفية الأحوال فليجتهد في تصفية الأعمال."
+      },
+      "arabic": "من أحب تصفية الأحوال فليجتهد في تصفية الأعمال.",
+      "by": { "en": "Ibn al-Jawzi", "de": "Ibn al-Dschauzi", "ar": "ابن الجوزي" },
+      "work": { "en": "Sayd al-Khatir", "de": "Said al-Chatir", "ar": "صيد الخاطر" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-jawzi-04",
+      "theme": "supplication",
+      "text": {
+        "en": "A believer prays earnestly in hardship and sees no sign of an answer. When he nears despair, he looks at his heart: if it accepts the decree and still hopes in Allah, the answer usually comes soon.",
+        "de": "Ein Gläubiger betet in der Not inständig und sieht kein Zeichen einer Antwort. Nahe der Verzweiflung blickt er in sein Herz: Nimmt es die Fügung an und hofft weiter auf Allah, kommt die Antwort meist bald.",
+        "ar": "إن المؤمن تنزل به النازلة فيدعو ويبالغ فلا يرى أثرا للإجابة، فإذا قارب اليأس نظر إلى قلبه، فإن كان راضيا بالأقدار غير قنوط من فضل الله، فالغالب تعجيل الإجابة حينئذ."
+      },
+      "by": { "en": "Ibn al-Jawzi", "de": "Ibn al-Dschauzi", "ar": "ابن الجوزي" },
+      "work": { "en": "Sayd al-Khatir", "de": "Said al-Chatir", "ar": "صيد الخاطر" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-jawzi-05",
+      "theme": "knowledge",
+      "text": {
+        "en": "Let me tell you about myself: I never have enough of reading books. When I see a book I have not seen before, it is as if I had come upon a treasure.",
+        "de": "Ich erzähle von mir selbst: Ich werde des Bücherlesens nie satt. Sehe ich ein Buch, das ich noch nicht kenne, ist es, als hätte ich einen Schatz gefunden.",
+        "ar": "وإني أخبر عن حالي: ما أشبع من مطالعة الكتب، وإذا رأيت كتابا لم أره فكأني وقعت على كنز."
+      },
+      "arabic": "وإني أخبر عن حالي: ما أشبع من مطالعة الكتب، وإذا رأيت كتابا لم أره فكأني وقعت على كنز.",
+      "by": { "en": "Ibn al-Jawzi", "de": "Ibn al-Dschauzi", "ar": "ابن الجوزي" },
+      "work": { "en": "Sayd al-Khatir", "de": "Said al-Chatir", "ar": "صيد الخاطر" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-jawzi-06",
+      "theme": "reflection",
+      "text": {
+        "en": "The greatest punishment is that the one punished does not even feel the punishment.",
+        "de": "Die größte Strafe ist, dass der Bestrafte die Strafe nicht einmal spürt.",
+        "ar": "أعظم المعاقبة أن لا يحس المعاقب بالعقوبة."
+      },
+      "arabic": "أعظم المعاقبة أن لا يحس المعاقب بالعقوبة.",
+      "by": { "en": "Ibn al-Jawzi", "de": "Ibn al-Dschauzi", "ar": "ابن الجوزي" },
+      "work": { "en": "Sayd al-Khatir", "de": "Said al-Chatir", "ar": "صيد الخاطر" },
+      "needs_review": true
+    }
+  ]
+}

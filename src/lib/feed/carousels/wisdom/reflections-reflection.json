@@ -1,0 +1,120 @@
+{
+  "set": "reflections-reflection",
+  "kind": "reflection",
+  "theme": "reflection",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-reflection-01",
+      "text": {
+        "en": "Sit for five minutes tonight without a screen. Ask yourself what today taught you, and thank Allah for the lesson.",
+        "de": "Sitzen Sie heute Abend fünf Minuten ohne Bildschirm. Fragen Sie sich, was der Tag Sie gelehrt hat, und danken Sie Allah für die Lektion.",
+        "ar": "اجلس الليلة خمس دقائق بلا شاشة، واسأل نفسك ماذا علمك اليوم، واشكر الله على الدرس."
+      }
+    },
+    {
+      "id": "wr-reflection-02",
+      "text": {
+        "en": "The person you were five years ago would be amazed at what you have come through. Be gentle with the person you are now.",
+        "de": "Der Mensch, der Sie vor fünf Jahren waren, würde staunen, was Sie durchgestanden haben. Seien Sie sanft mit dem Menschen, der Sie jetzt sind.",
+        "ar": "الشخص الذي كنته قبل خمس سنين سيندهش مما اجتزته، فكن رفيقا بالشخص الذي أنت عليه الآن."
+      }
+    },
+    {
+      "id": "wr-reflection-03",
+      "text": {
+        "en": "Life moves fast, but the heart needs moments of stillness to understand where it is going.",
+        "de": "Das Leben bewegt sich schnell, doch das Herz braucht Momente der Stille, um zu verstehen, wohin es geht.",
+        "ar": "الحياة تمضي سريعة، لكن القلب يحتاج إلى لحظات سكون ليفهم إلى أين يمضي."
+      }
+    },
+    {
+      "id": "wr-reflection-04",
+      "text": {
+        "en": "Look at your hands: they have held, built, comforted and prayed. What will they do with tomorrow?",
+        "de": "Schauen Sie auf Ihre Hände: Sie haben gehalten, gebaut, getröstet und gebetet. Was werden sie mit dem Morgen tun?",
+        "ar": "انظر إلى يديك: أمسكتا، وبنتا، وواستا، وارتفعتا بالدعاء، فماذا ستفعلان بالغد؟"
+      }
+    },
+    {
+      "id": "wr-reflection-05",
+      "text": {
+        "en": "Every person you meet is carrying something you cannot see. Let that thought soften your judgement.",
+        "de": "Jeder Mensch, dem Sie begegnen, trägt etwas, das Sie nicht sehen. Lassen Sie diesen Gedanken Ihr Urteil mildern.",
+        "ar": "كل إنسان تلقاه يحمل شيئا لا تراه، فدع هذه الفكرة تلين حكمك."
+      }
+    },
+    {
+      "id": "wr-reflection-06",
+      "text": {
+        "en": "Moments of joy are worth pausing for. Notice them, name them, and say Alhamdulillah before they pass.",
+        "de": "Momente der Freude sind es wert, innezuhalten. Bemerken Sie sie, benennen Sie sie und sagen Sie Alhamdulillah, bevor sie vorübergehen.",
+        "ar": "لحظات الفرح تستحق أن تتوقف عندها، فلاحظها، وسمها، وقل الحمد لله قبل أن تمضي."
+      }
+    },
+    {
+      "id": "wr-reflection-07",
+      "text": {
+        "en": "One day this ordinary afternoon will be a memory you long for. Live it fully while it is here.",
+        "de": "Eines Tages wird dieser gewöhnliche Nachmittag eine Erinnerung sein, nach der Sie sich sehnen. Leben Sie ihn ganz, solange er da ist.",
+        "ar": "يوما ما سيصير هذا العصر العادي ذكرى تحن إليها، فعشه كاملا ما دام هنا."
+      }
+    },
+    {
+      "id": "wr-reflection-08",
+      "text": {
+        "en": "What would you do differently today if you knew you had one year left? Perhaps start with that.",
+        "de": "Was würden Sie heute anders machen, wenn Sie wüssten, dass Ihnen noch ein Jahr bleibt? Vielleicht beginnen Sie genau damit.",
+        "ar": "ماذا كنت ستفعل اليوم على نحو مختلف لو علمت أنه بقي لك عام واحد؟ لعلك تبدأ بذلك."
+      }
+    },
+    {
+      "id": "wr-reflection-09",
+      "text": {
+        "en": "The quiet after rain, the smell of bread, the sound of a child reading: small things carry big reminders.",
+        "de": "Die Stille nach dem Regen, der Duft von Brot, die Stimme eines lesenden Kindes: Kleine Dinge tragen große Erinnerungen.",
+        "ar": "السكون بعد المطر، ورائحة الخبز، وصوت طفل يقرأ: أشياء صغيرة تحمل تذكيرات كبيرة."
+      }
+    },
+    {
+      "id": "wr-reflection-10",
+      "text": {
+        "en": "Write a letter to your future self about what truly matters to you. Read it again in a year.",
+        "de": "Schreiben Sie Ihrem zukünftigen Ich einen Brief darüber, was Ihnen wirklich wichtig ist. Lesen Sie ihn in einem Jahr wieder.",
+        "ar": "اكتب رسالة إلى نفسك في المستقبل عما يهمك حقا، واقرأها بعد عام."
+      }
+    },
+    {
+      "id": "wr-reflection-11",
+      "text": {
+        "en": "Not every question needs an immediate answer. Some answers ripen slowly, like fruit on a tree.",
+        "de": "Nicht jede Frage braucht sofort eine Antwort. Manche Antworten reifen langsam, wie Früchte am Baum.",
+        "ar": "ليس كل سؤال يحتاج إلى جواب فوري، فبعض الأجوبة تنضج ببطء كالثمار على الشجر."
+      }
+    },
+    {
+      "id": "wr-reflection-12",
+      "text": {
+        "en": "Think of someone who shaped your faith. Pray for them now, wherever they are.",
+        "de": "Denken Sie an einen Menschen, der Ihren Glauben geprägt hat. Beten Sie jetzt für ihn, wo immer er ist.",
+        "ar": "تذكر شخصا شكل إيمانك، وادع له الآن أينما كان."
+      }
+    },
+    {
+      "id": "wr-reflection-13",
+      "text": {
+        "en": "A heart that pauses to reflect sees blessings that a hurried heart walks past.",
+        "de": "Ein Herz, das zum Nachdenken innehält, sieht Segnungen, an denen ein eiliges Herz vorbeigeht.",
+        "ar": "القلب الذي يتوقف ليتأمل يرى نعما يمر بها القلب المستعجل دون أن يراها."
+      }
+    },
+    {
+      "id": "wr-reflection-14",
+      "text": {
+        "en": "At the end of the day, the question is not how much you did, but whether you did it with a good heart.",
+        "de": "Am Ende des Tages ist die Frage nicht, wie viel Sie getan haben, sondern ob Sie es mit einem guten Herzen getan haben.",
+        "ar": "في نهاية اليوم ليس السؤال كم فعلت، بل هل فعلته بقلب طيب."
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-paradise",
+  "kind": "reflection",
+  "theme": "paradise",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-paradise-01",
+      "text": {
+        "en": "Imagine a place where no one is ever tired, no one says goodbye, and every heart is at peace. Then live today walking toward it.",
+        "de": "Stellen Sie sich einen Ort vor, an dem niemand je müde ist, niemand Abschied nimmt und jedes Herz Frieden hat. Dann leben Sie heute so, dass Sie darauf zugehen.",
+        "ar": "تخيل مكانا لا يتعب فيه أحد، ولا يودع فيه أحد، وكل قلب فيه مطمئن، ثم عش يومك سائرا نحوه."
+      }
+    },
+    {
+      "id": "wr-paradise-02",
+      "text": {
+        "en": "Every good deed is a seed planted in a garden you have not yet seen.",
+        "de": "Jede gute Tat ist ein Samen, gepflanzt in einem Garten, den Sie noch nicht gesehen haben.",
+        "ar": "كل عمل صالح بذرة تغرس في حديقة لم ترها بعد."
+      }
+    },
+    {
+      "id": "wr-paradise-03",
+      "text": {
+        "en": "The tiredness of this world is real, but it is not forever. Rest is waiting for those who keep going.",
+        "de": "Die Müdigkeit dieser Welt ist echt, aber sie ist nicht für immer. Ruhe wartet auf die, die weitergehen.",
+        "ar": "تعب الدنيا حقيقي، لكنه ليس دائما، والراحة تنتظر من يواصلون المسير."
+      }
+    },
+    {
+      "id": "wr-paradise-04",
+      "text": {
+        "en": "Paradise is not only a reward; it is a reunion. The people you loved for Allah's sake are part of the hope.",
+        "de": "Das Paradies ist nicht nur Lohn, sondern auch Wiedersehen. Die Menschen, die Sie um Allahs willen geliebt haben, gehören zur Hoffnung dazu.",
+        "ar": "الجنة ليست جزاء فحسب، بل لقاء أيضا، ومن أحببتهم في الله جزء من هذا الرجاء."
+      }
+    },
+    {
+      "id": "wr-paradise-05",
+      "text": {
+        "en": "What we long for in this world, a home, peace, beauty and the people we love, are only faint echoes of what is waiting.",
+        "de": "Wonach wir uns in dieser Welt sehnen, ein Zuhause, Frieden, Schönheit und geliebte Menschen, ist nur ein leises Echo dessen, was wartet.",
+        "ar": "ما نشتاق إليه في الدنيا من بيت وسلام وجمال وأحبة ليس إلا صدى خافتا لما ينتظرنا."
+      }
+    },
+    {
+      "id": "wr-paradise-06",
+      "text": {
+        "en": "The child who died young, the parent who left too early: in the hope of Paradise, broken stories become whole.",
+        "de": "Das Kind, das jung starb, die Eltern, die zu früh gingen: In der Hoffnung auf das Paradies werden zerbrochene Geschichten wieder ganz.",
+        "ar": "الطفل الذي رحل صغيرا، والوالد الذي غاب مبكرا: في رجاء الجنة تكتمل القصص المكسورة."
+      }
+    },
+    {
+      "id": "wr-paradise-07",
+      "text": {
+        "en": "A gentle word, a patient answer, a forgiven wrong: the road to Paradise is often paved with ordinary kindness.",
+        "de": "Ein sanftes Wort, eine geduldige Antwort, ein vergebenes Unrecht: Der Weg ins Paradies ist oft mit gewöhnlicher Güte gepflastert.",
+        "ar": "كلمة لينة، وجواب صبور، وخطأ مغفور: طريق الجنة كثيرا ما يمهد باللطف العادي."
+      }
+    },
+    {
+      "id": "wr-paradise-08",
+      "text": {
+        "en": "Whatever beauty you saw today, a sunrise, a child's laugh, a garden after rain, let it make you long for what lasts.",
+        "de": "Welche Schönheit Sie heute auch gesehen haben, einen Sonnenaufgang, das Lachen eines Kindes, einen Garten nach dem Regen: Lassen Sie sie Sehnsucht nach dem Bleibenden wecken.",
+        "ar": "أي جمال رأيته اليوم، شروق شمس، أو ضحكة طفل، أو حديقة بعد المطر، فليجعلك تشتاق إلى ما يبقى."
+      }
+    },
+    {
+      "id": "wr-paradise-09",
+      "text": {
+        "en": "People who are generous, humble and quick to forgive seem to carry a little of Paradise with them already.",
+        "de": "Menschen, die großzügig, demütig und schnell im Vergeben sind, scheinen schon ein wenig vom Paradies bei sich zu tragen.",
+        "ar": "الكرماء المتواضعون السريعون إلى العفو يبدون وكأنهم يحملون معهم شيئا من الجنة منذ الآن."
+      }
+    },
+    {
+      "id": "wr-paradise-10",
+      "text": {
+        "en": "Ask Allah for Paradise every day, even in a single sentence. It is the greatest thing you could ask for, and He is the most Generous.",
+        "de": "Bitten Sie Allah jeden Tag um das Paradies, und sei es in einem einzigen Satz. Es ist das Größte, worum Sie bitten können, und Er ist der Großzügigste.",
+        "ar": "اسأل الله الجنة كل يوم ولو بجملة واحدة، فهي أعظم ما يمكن أن تسأله، وهو أكرم الأكرمين."
+      }
+    },
+    {
+      "id": "wr-paradise-11",
+      "text": {
+        "en": "The longing for home that never quite leaves us may be a memory of where we are meant to return.",
+        "de": "Die Sehnsucht nach einem Zuhause, die uns nie ganz verlässt, ist vielleicht eine Erinnerung an den Ort, zu dem wir zurückkehren sollen.",
+        "ar": "الحنين إلى الوطن الذي لا يفارقنا تماما قد يكون ذكرى للمكان الذي خلقنا لنعود إليه."
+      }
+    },
+    {
+      "id": "wr-paradise-12",
+      "text": {
+        "en": "Hold on through the hard years. Every sorrow carried with faith is a step closer to a place without sorrow.",
+        "de": "Halten Sie durch in den schweren Jahren. Jeder im Glauben getragene Kummer ist ein Schritt näher an einen Ort ohne Kummer.",
+        "ar": "اصمد في السنين الصعبة، فكل حزن تحمله بإيمان خطوة أقرب إلى مكان لا حزن فيه."
+      }
+    },
+    {
+      "id": "wr-paradise-13",
+      "text": {
+        "en": "The doors of goodness are many: prayer, fasting, charity, kindness to parents. Find the one that is open to you today.",
+        "de": "Die Türen des Guten sind viele: Gebet, Fasten, Spenden, Güte zu den Eltern. Finden Sie die, die Ihnen heute offensteht.",
+        "ar": "أبواب الخير كثيرة: الصلاة، والصيام، والصدقة، وبر الوالدين، فابحث عن الباب المفتوح لك اليوم."
+      }
+    },
+    {
+      "id": "wr-paradise-14",
+      "text": {
+        "en": "A smile for your mother, a coin given in secret, a night prayer no one sees: the way to Paradise is built from moments like these.",
+        "de": "Ein Lächeln für Ihre Mutter, eine heimliche Spende, ein Nachtgebet, das niemand sieht: Aus solchen Momenten wird der Weg ins Paradies gebaut.",
+        "ar": "ابتسامة لأمك، وصدقة في السر، وقيام ليل لا يراه أحد: من لحظات كهذه يبنى الطريق إلى الجنة."
+      }
+    }
+  ]
+}

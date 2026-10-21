@@ -1,0 +1,120 @@
+{
+  "set": "reflections-gratitude",
+  "kind": "reflection",
+  "theme": "gratitude",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-gratitude-01",
+      "text": {
+        "en": "Gratitude begins with noticing: the warm water this morning, the key that turned, the voice that said your name kindly.",
+        "de": "Dankbarkeit beginnt mit dem Bemerken: das warme Wasser heute Morgen, der Schlüssel, der sich drehte, die Stimme, die freundlich Ihren Namen sagte.",
+        "ar": "يبدأ الشكر بالانتباه: الماء الدافئ هذا الصباح، والمفتاح الذي دار في القفل، والصوت الذي نادى اسمك بلطف."
+      }
+    },
+    {
+      "id": "wr-gratitude-02",
+      "text": {
+        "en": "Before you ask for something new tonight, thank Him for three things you asked for years ago and now take for granted.",
+        "de": "Bevor Sie heute Abend um etwas Neues bitten, danken Sie Ihm für drei Dinge, um die Sie vor Jahren gebeten haben und die heute selbstverständlich sind.",
+        "ar": "قبل أن تسأل الله شيئا جديدا الليلة، اشكره على ثلاثة أشياء سألته إياها قبل سنين وصارت اليوم مألوفة لديك."
+      }
+    },
+    {
+      "id": "wr-gratitude-03",
+      "text": {
+        "en": "Saying Alhamdulillah over a simple meal turns bread and tea into a conversation with the One who sent them.",
+        "de": "Wer über einer einfachen Mahlzeit Alhamdulillah sagt, macht aus Brot und Tee ein Gespräch mit Dem, der sie geschickt hat.",
+        "ar": "حين تقول الحمد لله على وجبة بسيطة، يصير الخبز والشاي حديثا مع من أرسلهما إليك."
+      }
+    },
+    {
+      "id": "wr-gratitude-04",
+      "text": {
+        "en": "The healthy body you woke up in is someone else's daily prayer. Use it gently, and use it for good.",
+        "de": "Der gesunde Körper, in dem Sie heute aufgewacht sind, ist das tägliche Gebet eines anderen Menschen. Gehen Sie behutsam mit ihm um und nutzen Sie ihn für Gutes.",
+        "ar": "الجسد المعافى الذي استيقظت فيه اليوم هو دعاء غيرك كل يوم، فاستعمله برفق، واستعمله في الخير."
+      }
+    },
+    {
+      "id": "wr-gratitude-05",
+      "text": {
+        "en": "Gratitude is not pretending everything is fine. It is finding the one thing that is, and holding on to it.",
+        "de": "Dankbarkeit heißt nicht, so zu tun, als sei alles gut. Sie heißt, das eine zu finden, das gut ist, und daran festzuhalten.",
+        "ar": "ليس الشكر أن تتظاهر بأن كل شيء على ما يرام، بل أن تجد الشيء الواحد الذي هو كذلك، وتتمسك به."
+      }
+    },
+    {
+      "id": "wr-gratitude-06",
+      "text": {
+        "en": "Thank the people who were sent your way: the teacher who was patient, the neighbour who waved, the stranger who held the door.",
+        "de": "Danken Sie den Menschen, die Ihnen geschickt wurden: der Lehrerin, die geduldig war, dem Nachbarn, der winkte, dem Fremden, der die Tür aufhielt.",
+        "ar": "اشكر الناس الذين سيقوا إليك: المعلم الذي صبر عليك، والجار الذي لوح لك، والغريب الذي أمسك لك الباب."
+      }
+    },
+    {
+      "id": "wr-gratitude-07",
+      "text": {
+        "en": "A grateful heart does not have more than others. It simply sees more of what it already has.",
+        "de": "Ein dankbares Herz besitzt nicht mehr als andere. Es sieht nur mehr von dem, was es schon hat.",
+        "ar": "القلب الشاكر لا يملك أكثر من غيره، لكنه يرى أكثر مما يملكه بالفعل."
+      }
+    },
+    {
+      "id": "wr-gratitude-08",
+      "text": {
+        "en": "Gratitude has hands too: sharing the meal, mending what is broken, using a gift for what it was given for.",
+        "de": "Dankbarkeit hat auch Hände: das Essen teilen, reparieren, was kaputt ist, eine Gabe für das nutzen, wofür sie geschenkt wurde.",
+        "ar": "للشكر يدان أيضا: أن تقتسم الطعام، وأن تصلح ما انكسر، وأن تستعمل النعمة فيما أعطيت من أجله."
+      }
+    },
+    {
+      "id": "wr-gratitude-09",
+      "text": {
+        "en": "On an ordinary weekday, nothing went wrong. That too is a blessing worth a prostration of thanks.",
+        "de": "An einem gewöhnlichen Wochentag ging nichts schief. Auch das ist ein Segen, der eine Niederwerfung des Dankes wert ist.",
+        "ar": "في يوم عادي من أيام الأسبوع لم يحدث فيه شيء سيئ، وتلك أيضا نعمة تستحق سجدة شكر."
+      }
+    },
+    {
+      "id": "wr-gratitude-10",
+      "text": {
+        "en": "Write down one blessing each night before you sleep. In a year, you will hold a book of mercy in your own handwriting.",
+        "de": "Schreiben Sie jeden Abend vor dem Schlafen einen Segen auf. Nach einem Jahr halten Sie ein Buch der Barmherzigkeit in Ihrer eigenen Handschrift.",
+        "ar": "اكتب نعمة واحدة كل ليلة قبل أن تنام، وبعد عام ستمسك بيدك كتابا من الرحمة بخط يدك."
+      }
+    },
+    {
+      "id": "wr-gratitude-11",
+      "text": {
+        "en": "Complaints grow louder when spoken; blessings grow larger when counted. Choose which one you feed today.",
+        "de": "Klagen werden lauter, wenn man sie ausspricht; Segnungen werden größer, wenn man sie zählt. Wählen Sie, was Sie heute nähren.",
+        "ar": "الشكوى تعلو كلما قيلت، والنعم تكبر كلما عددت، فاختر أيهما تغذي اليوم."
+      }
+    },
+    {
+      "id": "wr-gratitude-12",
+      "text": {
+        "en": "The breath you are taking right now was not earned. It was given, and that is reason enough to say thank you.",
+        "de": "Den Atemzug, den Sie gerade nehmen, haben Sie sich nicht verdient. Er wurde Ihnen geschenkt, und das ist Grund genug, Danke zu sagen.",
+        "ar": "النفس الذي تأخذه الآن لم تكسبه، بل وهب لك، وهذا سبب كاف لأن تقول: الحمد لله."
+      }
+    },
+    {
+      "id": "wr-gratitude-13",
+      "text": {
+        "en": "Gratitude in hard times is not denial. It is remembering that the One who gave you the good days has not left you in the hard ones.",
+        "de": "Dankbarkeit in schweren Zeiten ist kein Verdrängen. Sie ist die Erinnerung daran, dass Der, der Ihnen die guten Tage gab, Sie in den schweren nicht allein lässt.",
+        "ar": "الشكر في الأوقات الصعبة ليس إنكارا للألم، بل تذكر بأن من أعطاك الأيام الطيبة لم يتركك في الأيام الشاقة."
+      }
+    },
+    {
+      "id": "wr-gratitude-14",
+      "text": {
+        "en": "Look at the hands that cooked for you, and at your own hands that can still serve. Both are worth thanking Him for.",
+        "de": "Schauen Sie auf die Hände, die für Sie gekocht haben, und auf Ihre eigenen, die noch dienen können. Für beide lohnt es sich, Ihm zu danken.",
+        "ar": "انظر إلى الأيدي التي طبخت لك، وإلى يديك اللتين ما زالتا قادرتين على الخدمة، فكلتاهما تستحق أن تشكر الله عليها."
+      }
+    }
+  ]
+}

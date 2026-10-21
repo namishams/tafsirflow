@@ -1,0 +1,1386 @@
+{
+  "series": "arabic-roots",
+  "label": { "en": "Arabic word roots in the Quran", "de": "Arabische Wortwurzeln im Koran", "ar": "جذور الكلمات في القرآن" },
+  "topic": "quran",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "arabic-roots-r-h-m",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 1", "de": "Arabische Wurzeln · 1", "ar": "جذور عربية · ١" },
+        "title": { "en": "R-h-m: the root of mercy", "de": "R-ḥ-m: die Wurzel der Barmherzigkeit", "ar": "ر ح م: جذر الرحمة" },
+        "sub": { "en": "From the womb to a mercy that holds all the worlds", "de": "Vom Mutterleib bis zu einer Barmherzigkeit, die alle Welten trägt", "ar": "من رحم الأم إلى رحمة تسع العوالم كلها" },
+        "arabic": "ر ح م"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "R-h-m speaks of a tenderness that turns into care. It is the feeling of a mother bending over her child, and the help that follows from it. In Arabic, mercy is never only a mood: it acts.", "de": "R-ḥ-m steht für eine Zärtlichkeit, die zur Fürsorge wird. Es ist das Gefühl einer Mutter, die sich über ihr Kind beugt, und die Hilfe, die daraus folgt. Barmherzigkeit ist im Arabischen nie nur ein Gefühl: Sie handelt.", "ar": "يدل الجذر ر ح م على رقّة تتحول إلى رعاية، كحنوّ الأم على طفلها وما يتبعه من عون. فالرحمة في العربية ليست شعورًا فحسب، بل فعلٌ أيضًا." }
+        },
+        {
+          "title": { "en": "rahma: mercy", "de": "raḥma: Barmherzigkeit", "ar": "الرَّحمة" },
+          "arabic": "رَحْمَة",
+          "body": { "en": "Rahma is mercy itself: kindness that reaches the one who needs it. The Quran uses the word for rain, for revelation and for the mission of the Prophet.", "de": "Raḥma ist die Barmherzigkeit selbst: Güte, die den erreicht, der sie braucht. Der Koran nennt so den Regen, die Offenbarung und die Sendung des Propheten.", "ar": "الرحمة عطفٌ يبلغ من يحتاج إليه، ويطلقها القرآن على المطر وعلى الوحي وعلى بعثة النبي ﷺ." }
+        },
+        {
+          "title": { "en": "rahim: the womb", "de": "raḥim: der Mutterleib", "ar": "الرَّحِم" },
+          "arabic": "رَحِم",
+          "body": { "en": "The womb is called rahim, from the same root. Family ties are called arham, its plural. Caring for relatives is, in Arabic, literally caring for the bonds of the womb.", "de": "Der Mutterleib heißt raḥim, aus derselben Wurzel. Die Verwandtschaft heißt arḥām, seine Mehrzahl. Wer Verwandte pflegt, pflegt wörtlich die Bande des Mutterleibs.", "ar": "ومن الجذر نفسه الرَّحِم، وتُسمّى القرابة أرحامًا، فصلة الرحم في العربية رعايةٌ لرابطة الرحم بالمعنى الحرفي." }
+        },
+        {
+          "title": { "en": "ar-Rahman: the Entirely Merciful", "de": "ar-Raḥmān: der Allerbarmer", "ar": "الرحمن" },
+          "arabic": "الرَّحْمٰن",
+          "body": { "en": "Ar-Rahman is a name of Allah built on a form that expresses fullness and overflow. Surah 55 carries this name, and in the basmala it follows directly after the name Allah.", "de": "Ar-Raḥmān ist ein Name Allahs in einer Form, die Fülle und Überfluss ausdrückt. Sure 55 trägt diesen Namen, und in der Basmala folgt er direkt auf den Namen Allah.", "ar": "الرحمن اسم من أسماء الله على صيغة تدل على الامتلاء والسعة، وبه سُمّيت السورة الخامسة والخمسون، ويأتي في البسملة بعد لفظ الجلالة مباشرة." }
+        },
+        {
+          "title": { "en": "339 times in the Quran", "de": "339-mal im Koran", "ar": "٣٣٩ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from r-h-m occur 339 times in the Quran. The most frequent are rahim, merciful (116 times), and rahma, mercy (114 times).", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel r-ḥ-m 339-mal im Koran vor. Am häufigsten sind raḥīm, barmherzig (116-mal), und raḥma, Barmherzigkeit (114-mal).", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ر ح م في القرآن ٣٣٩ مرة، أكثرها «رحيم» (١١٦ مرة) و«رحمة» (١١٤ مرة)." }
+        },
+        {
+          "verse": "21:107",
+          "check": "mercy to the worlds",
+          "title": { "en": "One word for a whole mission", "de": "Ein Wort für eine ganze Sendung", "ar": "كلمة واحدة لرسالة كاملة" },
+          "body": { "en": "The mission of the Prophet is summed up with one word from this root.", "de": "Die Sendung des Propheten wird mit einem einzigen Wort dieser Wurzel zusammengefasst.", "ar": "تُلخَّص رسالة النبي ﷺ كلها بكلمة واحدة من هذا الجذر." }
+        },
+        {
+          "verse": "4:1",
+          "check": "the wombs",
+          "title": { "en": "Mindful of family ties", "de": "Achtsam gegenüber der Verwandtschaft", "ar": "وصيةٌ بالأرحام" },
+          "body": { "en": "The verse joins awareness of Allah with care for arham, the plural of rahim.", "de": "Der Vers verbindet die Ehrfurcht vor Allah mit der Sorge um die arḥām, die Mehrzahl von raḥim.", "ar": "تقرن الآية تقوى الله برعاية الأرحام، جمع رَحِم." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Every visit to a relative and every kind word at home carries the same root as the mercy of Allah. Which bond in your family could you strengthen this week?", "de": "Jeder Besuch bei Verwandten und jedes gute Wort zu Hause trägt dieselbe Wurzel wie die Barmherzigkeit Allahs. Welche Verbindung in Ihrer Familie könnten Sie diese Woche stärken?", "ar": "كل زيارة لقريب وكل كلمة طيبة في البيت من الجذر نفسه الذي منه رحمة الله. أيّ صلة في عائلتك يمكنك أن تقوّيها هذا الأسبوع؟" }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-ayn-l-m",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 2", "de": "Arabische Wurzeln · 2", "ar": "جذور عربية · ٢" },
+        "title": { "en": "'-l-m: the root of knowledge", "de": "ʿ-l-m: die Wurzel des Wissens", "ar": "ع ل م: جذر العلم" },
+        "sub": { "en": "Knowledge, the All-Knowing, and a world full of signs", "de": "Wissen, der Allwissende und eine Welt voller Zeichen", "ar": "العلم والعليم، وعالَمٌ مليء بالعلامات" },
+        "arabic": "ع ل م"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "'-l-m means to know something as it really is. A related word, 'alama, is a sign or a mark: something by which you know. In Arabic, knowledge and signs belong together.", "de": "ʿ-l-m bedeutet, etwas so zu erkennen, wie es wirklich ist. Verwandt ist ʿalāma, ein Zeichen oder Merkmal: etwas, woran man erkennt. Wissen und Zeichen gehören im Arabischen zusammen.", "ar": "يدل الجذر ع ل م على إدراك الشيء على حقيقته، ومنه العلامة: الأثر الذي يُعرف به الشيء. فالعلم والعلامة في العربية متلازمان." }
+        },
+        {
+          "title": { "en": "'ilm: knowledge", "de": "ʿilm: Wissen", "ar": "العِلم" },
+          "arabic": "عِلْم",
+          "body": { "en": "'Ilm is knowledge: of Allah, of His revelation and of His creation. In the Quran it is a gift that Allah teaches, not something people own by themselves.", "de": "ʿIlm ist Wissen: über Allah, Seine Offenbarung und Seine Schöpfung. Im Koran ist es eine Gabe, die Allah lehrt, kein Besitz, den Menschen aus sich selbst haben.", "ar": "العلم معرفة الله ووحيه وخلقه، وهو في القرآن عطاءٌ يعلّمه الله، لا مِلكٌ يحوزه الإنسان من تلقاء نفسه." }
+        },
+        {
+          "title": { "en": "al-'Alim: the All-Knowing", "de": "al-ʿAlīm: der Allwissende", "ar": "العليم" },
+          "arabic": "العَلِيم",
+          "body": { "en": "Al-'Alim is a name of Allah: His knowledge has no gaps and no beginning. It closes many verses, often paired with al-Hakim, the Wise.", "de": "Al-ʿAlīm ist ein Name Allahs: Sein Wissen hat keine Lücken und keinen Anfang. Er beschließt viele Verse, oft zusammen mit al-Ḥakīm, dem Weisen.", "ar": "العليم من أسماء الله، علمه لا نقص فيه ولا بداية له. ويُختم به كثير من الآيات، وكثيرًا ما يقترن بالحكيم." }
+        },
+        {
+          "title": { "en": "'alam: the world", "de": "ʿālam: die Welt", "ar": "العالَم" },
+          "arabic": "عالَم",
+          "body": { "en": "The 'worlds' in 'Lord of the worlds' come from this root too. Al-Raghib al-Isfahani explains that the world is named so because, like a sign, it points to its Maker.", "de": "Auch die Welten in „Herr der Welten“ stammen aus dieser Wurzel. Al-Rāghib al-Iṣfahānī erklärt, die Welt heiße so, weil sie wie ein Zeichen auf ihren Schöpfer hinweist.", "ar": "ومن هذا الجذر «العالَم» في قولنا رب العالمين. ويذكر الراغب الأصفهاني أنه سُمّي بذلك لأنه كالعلامة الدالة على صانعه." }
+        },
+        {
+          "title": { "en": "854 times in the Quran", "de": "854-mal im Koran", "ar": "٨٥٤ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from '-l-m occur 854 times, which makes it one of the most frequent roots of the Quran. The verb 'alima, to know, alone appears 382 times.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel ʿ-l-m 854-mal vor. Damit gehört sie zu den häufigsten Wurzeln des Korans. Allein das Verb ʿalima, wissen, erscheint 382-mal.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ع ل م ٨٥٤ مرة، فهو من أكثر جذور القرآن ورودًا، والفعل «علِم» وحده ٣٨٢ مرة." }
+        },
+        {
+          "verse": "96:4-5",
+          "check": "taught man",
+          "title": { "en": "Taught by the pen", "de": "Gelehrt durch das Schreibrohr", "ar": "التعليم بالقلم" },
+          "body": { "en": "In two short verses of the first revelation, this root appears three times.", "de": "In zwei kurzen Versen der ersten Offenbarung erscheint diese Wurzel dreimal.", "ar": "في آيتين قصيرتين من أول الوحي يرد هذا الجذر ثلاث مرات." }
+        },
+        {
+          "verse": "2:32",
+          "check": "taught us",
+          "title": { "en": "The angels' answer", "de": "Die Antwort der Engel", "ar": "جواب الملائكة" },
+          "body": { "en": "The angels confess that their knowledge is only what Allah taught them, and call Him al-'Alim.", "de": "Die Engel bekennen, dass ihr Wissen nur das ist, was Allah sie gelehrt hat, und nennen Ihn al-ʿAlīm.", "ar": "تعترف الملائكة بأن علمها ما علّمها الله، وتصفه بالعليم." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Everything you know was once taught to you by someone. Thank a teacher this week, and ask Allah for knowledge that benefits.", "de": "Alles, was Sie wissen, hat Ihnen einmal jemand beigebracht. Danken Sie in dieser Woche einem Lehrer und bitten Sie Allah um nützliches Wissen.", "ar": "كل ما تعرفه علّمك إياه أحدٌ يومًا. اشكر معلّمًا هذا الأسبوع، واسأل الله علمًا نافعًا." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "al-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an" }
+      ]
+    },
+    {
+      "id": "arabic-roots-s-b-r",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 3", "de": "Arabische Wurzeln · 3", "ar": "جذور عربية · ٣" },
+        "title": { "en": "S-b-r: the root of patience", "de": "Ṣ-b-r: die Wurzel der Geduld", "ar": "ص ب ر: جذر الصبر" },
+        "sub": { "en": "Holding firm when it is hard, and a reward without measure", "de": "Standhalten, wenn es schwer ist, und ein Lohn ohne Maß", "ar": "الثبات عند الشدة، وأجرٌ بلا حدود" },
+        "arabic": "ص ب ر"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "S-b-r means to hold back and to bind. Sabr is holding yourself firm: back from panic in hardship, back from sin in temptation, and steady in obedience when it is tiring.", "de": "Ṣ-b-r bedeutet zurückhalten und festbinden. Ṣabr heißt, sich selbst festzuhalten: zurück von Panik im Unglück, zurück von Sünde in der Versuchung und beständig im Gehorsam, wenn er mühsam ist.", "ar": "يدل الجذر ص ب ر على الحبس والإمساك. فالصبر حبسُ النفس عن الجزع في المصيبة، وعن المعصية عند الإغراء، وعلى الطاعة حين تشقّ." }
+        },
+        {
+          "title": { "en": "sabr: patience", "de": "ṣabr: Geduld", "ar": "الصَّبر" },
+          "arabic": "صَبْر",
+          "body": { "en": "Sabr is not passive waiting. It is active endurance: staying on course while the heart still feels the weight.", "de": "Ṣabr ist kein passives Warten. Es ist aktives Standhalten: auf dem Weg bleiben, während das Herz die Last noch spürt.", "ar": "الصبر ليس انتظارًا سلبيًا، بل ثباتٌ فاعل: أن تبقى على الطريق والقلبُ ما زال يحسّ بالثقل." }
+        },
+        {
+          "title": { "en": "sabir: the one who is patient", "de": "ṣābir: der Geduldige", "ar": "الصابر" },
+          "arabic": "صابِر",
+          "body": { "en": "Sabir describes a person who practises sabr. Its plural, sabirun or sabirin, appears in many of the Quran's promises of good news.", "de": "Ṣābir ist jemand, der Ṣabr übt. Die Mehrzahl, ṣābirūn oder ṣābirīn, steht in vielen frohen Verheißungen des Korans.", "ar": "الصابر من يتحلّى بالصبر، وتأتي صيغة الجمع «الصابرون» و«الصابرين» في كثير من بشارات القرآن." }
+        },
+        {
+          "title": { "en": "sabbar: rich in patience", "de": "ṣabbār: reich an Geduld", "ar": "الصبّار" },
+          "arabic": "صَبّار",
+          "body": { "en": "Sabbar is an intensive form: someone who is patient again and again. According to the corpus it appears 4 times, each time beside shakur, the deeply grateful.", "de": "Ṣabbār ist eine Steigerungsform: jemand, der immer wieder geduldig ist. Laut dem Corpus kommt es viermal vor, jedes Mal neben shakūr, dem zutiefst Dankbaren.", "ar": "الصبّار صيغة مبالغة لمن يتكرر صبره، وترد في القرآن أربع مرات بحسب المدونة، وفي كل مرة مقرونة بـ«شكور»." }
+        },
+        {
+          "title": { "en": "103 times in the Quran", "de": "103-mal im Koran", "ar": "١٠٣ مرات في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from s-b-r occur 103 times in the Quran. The verb sabara, to be patient, makes up 58 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel ṣ-b-r 103-mal im Koran vor. Das Verb ṣabara, geduldig sein, macht 58 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ص ب ر في القرآن ١٠٣ مرات، منها ٥٨ مرة للفعل «صبر»." }
+        },
+        {
+          "verse": "2:153",
+          "check": "with the patient",
+          "title": { "en": "Patience and prayer", "de": "Geduld und Gebet", "ar": "الصبر والصلاة" },
+          "body": { "en": "Sabr is named as a help, side by side with prayer, and Allah's company is promised.", "de": "Ṣabr wird als Hilfe genannt, Seite an Seite mit dem Gebet, und Allahs Beistand wird zugesagt.", "ar": "يُذكر الصبر عونًا إلى جانب الصلاة، ومعه وعدٌ بمعيّة الله." }
+        },
+        {
+          "verse": "39:10",
+          "check": "without account",
+          "title": { "en": "A reward without limit", "de": "Ein Lohn ohne Grenze", "ar": "أجرٌ بلا حدّ" },
+          "body": { "en": "Many deeds are rewarded by measure. For the patient, this verse names no limit.", "de": "Viele Taten werden nach Maß belohnt. Für die Geduldigen nennt dieser Vers keine Grenze.", "ar": "كثير من الأعمال يُجزى عليها بقدر، أما الصابرون فلا تذكر الآية لأجرهم حدًّا." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Think of one weight you are carrying right now. Sabr does not ask you to feel nothing. It asks you to keep walking, and to leave to Allah what you cannot carry.", "de": "Denken Sie an eine Last, die Sie gerade tragen. Ṣabr verlangt nicht, nichts zu fühlen. Es bittet Sie, weiterzugehen und Allah zu überlassen, was Sie nicht tragen können.", "ar": "فكّر في همٍّ تحمله الآن. الصبر لا يطلب منك ألا تشعر، بل أن تواصل السير، وأن تَكِلَ إلى الله ما لا تطيق حمله." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-sh-k-r",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 4", "de": "Arabische Wurzeln · 4", "ar": "جذور عربية · ٤" },
+        "title": { "en": "Sh-k-r: the root of gratitude", "de": "Sh-k-r: die Wurzel der Dankbarkeit", "ar": "ش ك ر: جذر الشكر" },
+        "sub": { "en": "Seeing a gift, saying it, and letting it show in your life", "de": "Eine Gabe sehen, aussprechen und im Leben sichtbar werden lassen", "ar": "أن ترى النعمة وتعترف بها وتُظهر أثرها في حياتك" },
+        "arabic": "ش ك ر"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "Al-Raghib al-Isfahani defines shukr as keeping a blessing in mind and making it visible. Many scholars add that gratitude lives in three places: the heart, the tongue and the deeds.", "de": "Al-Rāghib al-Iṣfahānī beschreibt shukr als das Vergegenwärtigen einer Gabe und ihr Sichtbarmachen. Viele Gelehrte ergänzen, dass Dank an drei Orten lebt: im Herzen, auf der Zunge und in den Taten.", "ar": "يعرّف الراغب الأصفهاني الشكر بأنه تصوّر النعمة وإظهارها. ويضيف كثير من العلماء أنه يكون بالقلب واللسان والجوارح." }
+        },
+        {
+          "title": { "en": "shukr: gratitude", "de": "shukr: Dankbarkeit", "ar": "الشُّكر" },
+          "arabic": "شُكْر",
+          "body": { "en": "Shukr is the answer to a gift. Its opposite in the Quran is often kufr, which first meant to cover up: hiding a blessing instead of showing it.", "de": "Shukr ist die Antwort auf eine Gabe. Sein Gegenteil ist im Koran oft kufr, das ursprünglich „zudecken“ bedeutet: eine Gabe verbergen, statt sie zu zeigen.", "ar": "الشكر جواب النعمة، ويقابله في القرآن كثيرًا الكفر، وأصله في اللغة التغطية: سترُ النعمة بدل إظهارها." }
+        },
+        {
+          "title": { "en": "shakir: the grateful one", "de": "shākir: der Dankbare", "ar": "الشاكر" },
+          "arabic": "شاكِر",
+          "body": { "en": "Shakir is a person who gives thanks. The Quran praises Ibrahim as shakir for the blessings of Allah (16:121).", "de": "Shākir ist jemand, der dankt. Der Koran lobt Ibrāhīm als dankbar für die Gaben Allahs (16:121).", "ar": "الشاكر من يؤدّي الشكر، وقد أثنى القرآن على إبراهيم عليه السلام بأنه شاكر لأنعم الله (النحل: ١٢١)." }
+        },
+        {
+          "title": { "en": "ash-Shakur: the Appreciative", "de": "ash-Shakūr: der Anerkennende", "ar": "الشكور" },
+          "arabic": "الشَّكُور",
+          "body": { "en": "Shakur can describe a deeply grateful servant. As a name of Allah, ash-Shakur means the One who rewards small deeds generously.", "de": "Shakūr kann einen zutiefst dankbaren Diener beschreiben. Als Name Allahs bedeutet ash-Shakūr: der, der kleine Taten großzügig belohnt.", "ar": "قد يوصف بالشكور العبد الكثير الشكر، وهو من أسماء الله بمعنى الذي يُثيب على القليل بالكثير." }
+        },
+        {
+          "title": { "en": "75 times in the Quran", "de": "75-mal im Koran", "ar": "٧٥ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from sh-k-r occur 75 times in the Quran. The verb shakara, to thank, makes up 46 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel sh-k-r 75-mal im Koran vor. Das Verb shakara, danken, macht 46 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ش ك ر في القرآن ٧٥ مرة، منها ٤٦ مرة للفعل «شكر»." }
+        },
+        {
+          "verse": "14:7",
+          "check": "If you are grateful",
+          "title": { "en": "Gratitude that grows", "de": "Dank, der wächst", "ar": "شكرٌ يزيد" },
+          "body": { "en": "A promise with a condition: thankfulness opens the door to more.", "de": "Ein Versprechen mit Bedingung: Dankbarkeit öffnet die Tür zu mehr.", "ar": "وعدٌ مشروط: الشكر بابٌ إلى المزيد." }
+        },
+        {
+          "verse": "34:13",
+          "check": "few of My servants are grateful",
+          "title": { "en": "The few who give thanks", "de": "Die wenigen, die danken", "ar": "القليل من الشاكرين" },
+          "body": { "en": "The family of Dawud is told to work as an act of shukr. Gratitude here is something you do.", "de": "Die Familie Dāwūds soll aus Dankbarkeit arbeiten. Dank ist hier etwas, das man tut.", "ar": "يُؤمر آل داود بالعمل شكرًا، فالشكر هنا عملٌ لا قولٌ فحسب." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Before you sleep tonight, name three gifts of today, quietly, one by one. Then ask yourself how one of them could show in what you do tomorrow.", "de": "Nennen Sie heute vor dem Schlafen still drei Gaben des Tages, eine nach der anderen. Fragen Sie sich dann, wie eine davon morgen in Ihrem Handeln sichtbar werden kann.", "ar": "قبل أن تنام الليلة، عدّد في نفسك ثلاث نعم من يومك، ثم اسأل نفسك: كيف يظهر أثر إحداها في عملك غدًا؟" }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "al-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an" }
+      ]
+    },
+    {
+      "id": "arabic-roots-q-l-b",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 5", "de": "Arabische Wurzeln · 5", "ar": "جذور عربية · ٥" },
+        "title": { "en": "Q-l-b: the turning heart", "de": "Q-l-b: das sich wendende Herz", "ar": "ق ل ب: القلب المتقلّب" },
+        "sub": { "en": "Why the Arabic word for heart comes from turning", "de": "Warum das arabische Wort für Herz vom Wenden kommt", "ar": "لماذا اشتُقّ اسم القلب من التقلّب" },
+        "arabic": "ق ل ب"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "Q-l-b means to turn something over. Many scholars note that the heart is called qalb because it turns so quickly: from hope to fear, from doubt to certainty.", "de": "Q-l-b bedeutet, etwas umzudrehen. Viele Gelehrte bemerken, dass das Herz qalb heißt, weil es sich so schnell wendet: von Hoffnung zu Furcht, von Zweifel zu Gewissheit.", "ar": "يدل الجذر ق ل ب على تحويل الشيء عن وجهه. ويذكر كثير من العلماء أن القلب سُمّي قلبًا لسرعة تقلّبه: من رجاء إلى خوف، ومن شكّ إلى يقين." }
+        },
+        {
+          "title": { "en": "qalb: the heart", "de": "qalb: das Herz", "ar": "القلب" },
+          "arabic": "قَلْب",
+          "body": { "en": "In the Quran the qalb is more than an organ. It understands, it believes, it can grow hard or find rest. It is the place where faith lives.", "de": "Im Koran ist das qalb mehr als ein Organ. Es versteht, es glaubt, es kann hart werden oder Ruhe finden. Es ist der Ort, an dem der Glaube wohnt.", "ar": "القلب في القرآن أكثر من عضو: يعقل ويؤمن، وقد يقسو أو يطمئن، وهو موضع الإيمان." }
+        },
+        {
+          "title": { "en": "inqalaba: to turn back", "de": "inqalaba: umkehren", "ar": "انقلب" },
+          "arabic": "انْقَلَبَ",
+          "body": { "en": "Inqalaba means to turn around and go back: to return home to one's family, or to turn away from faith. The same root describes movements of the body and of the soul.", "de": "Inqalaba heißt umkehren und zurückgehen: heim zur Familie oder weg vom Glauben. Dieselbe Wurzel beschreibt Bewegungen des Körpers und der Seele.", "ar": "انقلب: رجع وعاد، كالرجوع إلى الأهل أو الارتداد عن الإيمان. فالجذر نفسه يصف حركة البدن وحركة النفس." }
+        },
+        {
+          "title": { "en": "taqallub: moving to and fro", "de": "taqallub: das Hin und Her", "ar": "التقلّب" },
+          "arabic": "تَقَلُّب",
+          "body": { "en": "Taqallub is constant movement: people travelling through the lands, or a face turning toward the sky in hope (2:144).", "de": "Taqallub ist ständige Bewegung: Menschen, die durch die Länder ziehen, oder ein Gesicht, das sich hoffend zum Himmel wendet (2:144).", "ar": "التقلّب حركة دائمة: كتقلّب الناس في البلاد، أو تقلّب الوجه في السماء رجاءً (البقرة: ١٤٤)." }
+        },
+        {
+          "title": { "en": "168 times in the Quran", "de": "168-mal im Koran", "ar": "١٦٨ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from q-l-b occur 168 times in the Quran. The noun qalb, heart, makes up 132 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel q-l-b 168-mal im Koran vor. Das Nomen qalb, Herz, macht 132 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ق ل ب في القرآن ١٦٨ مرة، منها ١٣٢ مرة لكلمة «قلب»." }
+        },
+        {
+          "verse": "13:28",
+          "check": "hearts are assured",
+          "title": { "en": "Where the heart finds rest", "de": "Wo das Herz Ruhe findet", "ar": "حيث يطمئن القلب" },
+          "body": { "en": "A heart that keeps turning needs an anchor. This verse names it.", "de": "Ein Herz, das sich ständig wendet, braucht einen Anker. Dieser Vers nennt ihn.", "ar": "القلب الكثير التقلّب يحتاج إلى مرساة، وهذه الآية تسمّيها." }
+        },
+        {
+          "verse": "26:88-89",
+          "check": "sound heart",
+          "title": { "en": "A sound heart", "de": "Ein heiles Herz", "ar": "القلب السليم" },
+          "body": { "en": "On the Last Day, possessions and family cannot help. What counts is a heart that is salim: sound and whole.", "de": "Am Letzten Tag helfen weder Besitz noch Familie. Es zählt ein Herz, das salīm ist: heil und unversehrt.", "ar": "في اليوم الآخر لا يغني المال ولا الأهل، وإنما ينفع القلب السليم الخالص." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Your heart will turn many times today. Make the dua of 3:8 your own: ask Allah to keep it steady after He has guided it.", "de": "Ihr Herz wird sich heute viele Male wenden. Machen Sie das Bittgebet aus 3:8 zu Ihrem eigenen: Bitten Sie Allah, es festzuhalten, nachdem Er es rechtgeleitet hat.", "ar": "سيتقلّب قلبك اليوم مرات كثيرة. اجعل دعاء الآية الثامنة من آل عمران دعاءك: سل الله أن يثبّته بعد أن هداه." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-n-w-r",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 6", "de": "Arabische Wurzeln · 6", "ar": "جذور عربية · ٦" },
+        "title": { "en": "N-w-r: the root of light", "de": "N-w-r: die Wurzel des Lichts", "ar": "ن و ر: جذر النور" },
+        "sub": { "en": "Light, a lamp that shines, and a surprising relative: fire", "de": "Licht, eine leuchtende Lampe und ein überraschender Verwandter: das Feuer", "ar": "النور والسراج المنير، وقريبٌ مفاجئ: النار" },
+        "arabic": "ن و ر"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "N-w-r is about light and shining. Light makes things visible without being looked at itself. In the Quran it is also an image for guidance, revelation and faith.", "de": "N-w-r handelt von Licht und Leuchten. Licht macht Dinge sichtbar, ohne selbst betrachtet zu werden. Im Koran ist es zugleich ein Bild für Rechtleitung, Offenbarung und Glauben.", "ar": "يدل الجذر ن و ر على الضياء والإشراق. والنور يُظهر الأشياء دون أن يُنظر إليه هو، وهو في القرآن صورة للهداية والوحي والإيمان." }
+        },
+        {
+          "title": { "en": "nur: light", "de": "nūr: Licht", "ar": "النور" },
+          "arabic": "نُور",
+          "body": { "en": "Nur is light. The Quran calls revelation a light and describes believers on the Last Day whose light goes ahead of them.", "de": "Nūr ist Licht. Der Koran nennt die Offenbarung ein Licht und beschreibt Gläubige, deren Licht am Letzten Tag vor ihnen hergeht.", "ar": "النور الضياء، ويسمّي القرآنُ الوحيَ نورًا، ويصف المؤمنين يوم القيامة ونورهم يتقدّمهم." }
+        },
+        {
+          "title": { "en": "munir: giving light", "de": "munīr: Licht spendend", "ar": "المنير" },
+          "arabic": "مُنِير",
+          "body": { "en": "Munir is something that gives light to others. The Quran uses it for the moon (25:61) and for the Prophet, called an illuminating lamp.", "de": "Munīr ist etwas, das anderen Licht gibt. Der Koran verwendet es für den Mond (25:61) und für den Propheten, eine leuchtende Lampe.", "ar": "المنير ما يمنح غيره الضياء، ووُصف به في القرآن القمر (الفرقان: ٦١)، ووُصف النبي ﷺ بأنه سراجٌ منير." }
+        },
+        {
+          "title": { "en": "nar: fire", "de": "nār: Feuer", "ar": "النار" },
+          "arabic": "نار",
+          "body": { "en": "The Quranic Arabic Corpus lists nar, fire, under the same root. Fire also gives light, but it burns.", "de": "Das Quranic Arabic Corpus ordnet auch nār, Feuer, dieser Wurzel zu. Auch Feuer gibt Licht, doch es brennt.", "ar": "تُدرج مدونة القرآن اللغوية «النار» تحت هذا الجذر أيضًا، فالنار تضيء كذلك، لكنها تحرق." }
+        },
+        {
+          "title": { "en": "194 times in the Quran", "de": "194-mal im Koran", "ar": "١٩٤ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from n-w-r occur 194 times. The surprise: nar, fire, makes up 145 of them, and nur, light, 43.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel n-w-r 194-mal vor. Die Überraschung: nār, Feuer, macht 145 davon aus, nūr, Licht, 43.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ن و ر ١٩٤ مرة، والمفاجأة أن «النار» منها ١٤٥ مرة، و«النور» ٤٣ مرة." }
+        },
+        {
+          "verse": "24:35",
+          "check": "Light upon light",
+          "title": { "en": "The Verse of Light", "de": "Der Lichtvers", "ar": "آية النور" },
+          "body": { "en": "Nur appears five times in this one verse, and nar once.", "de": "Nūr erscheint in diesem einen Vers fünfmal, nār einmal.", "ar": "يرد «النور» في هذه الآية خمس مرات، و«النار» مرة واحدة." }
+        },
+        {
+          "verse": "33:45-46",
+          "check": "illuminating lamp",
+          "title": { "en": "A lamp for others", "de": "Eine Lampe für andere", "ar": "سراجٌ لغيره" },
+          "body": { "en": "The Prophet is described with munir: a lamp that lights the way for others.", "de": "Der Prophet wird mit munīr beschrieben: eine Lampe, die anderen den Weg erhellt.", "ar": "يوصف النبي ﷺ بالمنير: سراجٌ يضيء الطريق لغيره." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "A lamp does not shine for itself. Where could your knowledge, your patience or your kindness give light to someone else this week?", "de": "Eine Lampe leuchtet nicht für sich selbst. Wo könnten Ihr Wissen, Ihre Geduld oder Ihre Freundlichkeit diese Woche einem anderen Menschen Licht geben?", "ar": "السراج لا يضيء لنفسه. أين يمكن لعلمك أو صبرك أو لطفك أن يضيء لغيرك هذا الأسبوع؟" }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-h-d-y",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 7", "de": "Arabische Wurzeln · 7", "ar": "جذور عربية · ٧" },
+        "title": { "en": "H-d-y: the root of guidance", "de": "H-d-y: die Wurzel der Rechtleitung", "ar": "ه د ي: جذر الهداية" },
+        "sub": { "en": "What you ask for in every prayer, and a gift from the same root", "de": "Worum Sie in jedem Gebet bitten, und ein Geschenk aus derselben Wurzel", "ar": "ما تسأله في كل صلاة، وهديةٌ من الجذر نفسه" },
+        "arabic": "ه د ي"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "H-d-y means to lead someone to their goal and show the way. Al-Raghib al-Isfahani defines hidaya as guiding with gentleness. Guidance is not pressure: it is kindness that walks ahead and points.", "de": "H-d-y bedeutet, jemanden zu seinem Ziel zu führen und den Weg zu zeigen. Al-Rāghib al-Iṣfahānī beschreibt hidāya als Führung mit Sanftheit. Rechtleitung ist kein Druck, sondern Güte, die vorangeht und zeigt.", "ar": "يدل الجذر ه د ي على الإرشاد إلى الغاية وبيان الطريق، ويعرّف الراغب الأصفهاني الهداية بأنها دلالةٌ بلطف. فهي ليست إكراهًا، بل رفقٌ يتقدّم ويدلّ." }
+        },
+        {
+          "title": { "en": "huda: guidance", "de": "hudā: Rechtleitung", "ar": "الهدى" },
+          "arabic": "هُدًى",
+          "body": { "en": "Huda is guidance itself. Right after al-Fatiha, at its very beginning, the Quran describes itself as huda (2:2).", "de": "Hudā ist die Rechtleitung selbst. Gleich nach al-Fātiḥa, ganz am Anfang, beschreibt sich der Koran als hudā (2:2).", "ar": "الهدى هو الهداية نفسها، ويصف القرآن نفسه بالهدى في أوله بعد الفاتحة مباشرة (البقرة: ٢)." }
+        },
+        {
+          "title": { "en": "ihtada: to find the way", "de": "ihtadā: den Weg finden", "ar": "اهتدى" },
+          "arabic": "اهْتَدَى",
+          "body": { "en": "Ihtada means to accept guidance and follow it. Guidance is offered; ihtida is the step of the one who takes it.", "de": "Ihtadā heißt, Rechtleitung anzunehmen und ihr zu folgen. Rechtleitung wird angeboten; ihtidāʾ ist der Schritt dessen, der sie annimmt.", "ar": "اهتدى: قبِل الهداية وسار عليها. فالهداية تُعرض، والاهتداء خطوةُ من يأخذ بها." }
+        },
+        {
+          "title": { "en": "hadiyya: a gift", "de": "hadiyya: ein Geschenk", "ar": "الهديّة" },
+          "arabic": "هَدِيَّة",
+          "body": { "en": "A gift, hadiyya, comes from the same root. The Queen of Sheba sends one to Sulayman (27:35). Like guidance, a gift is brought to someone with care.", "de": "Auch das Geschenk, hadiyya, stammt aus dieser Wurzel. Die Königin von Saba schickt Sulaimān eines (27:35). Wie die Rechtleitung wird ein Geschenk mit Sorgfalt zu jemandem gebracht.", "ar": "ومن الجذر نفسه الهديّة، وقد أرسلت ملكة سبأ هدية إلى سليمان عليه السلام (النمل: ٣٥). فالهدية كالهداية: شيءٌ يُساق إلى أحدٍ بعناية." }
+        },
+        {
+          "title": { "en": "316 times in the Quran", "de": "316-mal im Koran", "ar": "٣١٦ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from h-d-y occur 316 times in the Quran. The verb hada, to guide, makes up 144 of them, and huda 85.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel h-d-y 316-mal im Koran vor. Das Verb hadā, leiten, macht 144 davon aus, hudā 85.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ه د ي في القرآن ٣١٦ مرة، منها ١٤٤ مرة للفعل «هدى» و٨٥ مرة لكلمة «هُدى»." }
+        },
+        {
+          "verse": "1:6",
+          "check": "Guide us",
+          "title": { "en": "The request in every prayer", "de": "Die Bitte in jedem Gebet", "ar": "الطلب في كل صلاة" },
+          "body": { "en": "The central request of al-Fatiha uses this root. You make it in every unit of prayer.", "de": "Die zentrale Bitte der Fātiḥa verwendet diese Wurzel. Sie sprechen sie in jeder Gebetseinheit.", "ar": "الطلب الأوسط في الفاتحة من هذا الجذر، وتسأله في كل ركعة." }
+        },
+        {
+          "verse": "93:7",
+          "check": "guided",
+          "title": { "en": "Found and guided", "de": "Gefunden und geleitet", "ar": "وجده فهداه" },
+          "body": { "en": "Allah reminds the Prophet of His care: guidance came when the way was not yet clear.", "de": "Allah erinnert den Propheten an Seine Fürsorge: Rechtleitung kam, als der Weg noch nicht klar war.", "ar": "يذكّر الله نبيّه ﷺ بعنايته: جاءت الهداية حين لم يكن الطريق قد اتّضح بعد." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "You ask for guidance many times a day. Next time you recite 'ihdina', pause for one breath and mean it: show me the way, and help me walk it.", "de": "Sie bitten täglich viele Male um Rechtleitung. Halten Sie beim nächsten „ihdinā“ einen Atemzug inne und meinen Sie es: Zeige mir den Weg und hilf mir, ihn zu gehen.", "ar": "تسأل الهداية مرات كثيرة كل يوم. في المرة القادمة حين تقرأ «اهدنا» توقّف لحظةً واقصد معناها: دُلّني على الطريق وأعنّي على السير فيه." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "al-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an" }
+      ]
+    },
+    {
+      "id": "arabic-roots-k-t-b",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 8", "de": "Arabische Wurzeln · 8", "ar": "جذور عربية · ٨" },
+        "title": { "en": "K-t-b: the root of the Book", "de": "K-t-b: die Wurzel des Buches", "ar": "ك ت ب: جذر الكتاب" },
+        "sub": { "en": "Writing, prescribing, and the Book that holds it all together", "de": "Schreiben, Vorschreiben und das Buch, das alles zusammenhält", "ar": "الكتابة والفرض، والكتاب الذي يجمع ذلك كله" },
+        "arabic": "ك ت ب"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "Al-Raghib al-Isfahani explains that k-t-b first meant joining things together, like stitching pieces of leather. Writing, then, is joining letters into words.", "de": "Al-Rāghib al-Iṣfahānī erklärt, dass k-t-b ursprünglich das Zusammenfügen bedeutete, etwa das Nähen von Lederstücken. Schreiben heißt dann, Buchstaben zu Wörtern zu fügen.", "ar": "يذكر الراغب الأصفهاني أن أصل الجذر ك ت ب ضمّ الشيء إلى الشيء، كضمّ قطع الجلد بالخياطة، ثم صار يدل على ضمّ الحروف بعضها إلى بعض بالخط." }
+        },
+        {
+          "title": { "en": "kitab: book, scripture", "de": "kitāb: Buch, Schrift", "ar": "الكتاب" },
+          "arabic": "كِتاب",
+          "body": { "en": "Kitab is a book or a written record. The Quran calls itself al-Kitab, and it also speaks of the earlier scriptures and of the record of every person's deeds.", "de": "Kitāb ist ein Buch oder eine Niederschrift. Der Koran nennt sich selbst al-Kitāb und spricht auch von früheren Schriften und vom Buch der Taten jedes Menschen.", "ar": "الكتاب: المكتوب أو السِّجل. ويسمّي القرآن نفسه الكتاب، ويذكر الكتب السابقة وكتاب أعمال كل إنسان." }
+        },
+        {
+          "title": { "en": "kataba: to write, to prescribe", "de": "kataba: schreiben, vorschreiben", "ar": "كتب" },
+          "arabic": "كَتَبَ",
+          "body": { "en": "Kataba means to write. When Allah 'writes' something upon people, it is prescribed, like fasting. And the Quran says He has prescribed mercy upon Himself (6:12).", "de": "Kataba heißt schreiben. Wenn Allah den Menschen etwas „schreibt“, ist es vorgeschrieben, etwa das Fasten. Und der Koran sagt, dass Er Sich selbst die Barmherzigkeit vorgeschrieben hat (6:12).", "ar": "كتب: خطّ. وإذا كتب الله على الناس شيئًا فقد فرضه، كالصيام. ويخبر القرآن أنه كتب على نفسه الرحمة (الأنعام: ١٢)." }
+        },
+        {
+          "title": { "en": "katib: scribe", "de": "kātib: Schreiber", "ar": "الكاتب" },
+          "arabic": "كاتِب",
+          "body": { "en": "A katib is a writer or scribe. The longest verse of the Quran, about recording debts, asks for a scribe who writes with justice (2:282).", "de": "Ein kātib ist ein Schreiber. Der längste Vers des Korans, über das Aufschreiben von Schulden, verlangt einen Schreiber, der gerecht schreibt (2:282).", "ar": "الكاتب من يكتب، وفي أطول آية في القرآن، آية الدَّين، أمرٌ بكاتبٍ يكتب بالعدل (البقرة: ٢٨٢)." }
+        },
+        {
+          "title": { "en": "319 times in the Quran", "de": "319-mal im Koran", "ar": "٣١٩ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from k-t-b occur 319 times in the Quran. The noun kitab alone makes up 260 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel k-t-b 319-mal im Koran vor. Allein das Nomen kitāb macht 260 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ك ت ب في القرآن ٣١٩ مرة، منها ٢٦٠ مرة لكلمة «كتاب» وحدها." }
+        },
+        {
+          "verse": "2:2",
+          "check": "This is the Book",
+          "title": { "en": "The Book introduces itself", "de": "Das Buch stellt sich vor", "ar": "الكتاب يعرّف بنفسه" },
+          "body": { "en": "Right after al-Fatiha, the Quran introduces itself as al-Kitab.", "de": "Direkt nach al-Fātiḥa stellt sich der Koran als al-Kitāb vor.", "ar": "بعد الفاتحة مباشرة يقدّم القرآن نفسه بأنه الكتاب." }
+        },
+        {
+          "verse": "2:183",
+          "check": "decreed upon you is fasting",
+          "title": { "en": "Written upon you", "de": "Als Pflicht geschrieben", "ar": "كُتب عليكم" },
+          "body": { "en": "Kutiba, 'it has been written', is the word for what Allah prescribes. Fasting stands in a long line with those who came before.", "de": "Kutiba, „es wurde geschrieben“, ist das Wort für das, was Allah vorschreibt. Das Fasten steht in einer langen Reihe mit denen, die vorher kamen.", "ar": "«كُتب» تعني فُرض، والصيام حلقة في سلسلة طويلة ممن كانوا قبلنا." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Your deeds are being written too. Picture the page of today: what would you like to add to it before the evening?", "de": "Auch Ihre Taten werden aufgeschrieben. Stellen Sie sich die Seite des heutigen Tages vor: Was möchten Sie vor dem Abend noch hinzufügen?", "ar": "أعمالك تُكتب أيضًا. تخيّل صفحة يومك هذا: ماذا تحب أن تضيف إليها قبل المساء؟" }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "al-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an" }
+      ]
+    },
+    {
+      "id": "arabic-roots-q-r-hamza",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 9", "de": "Arabische Wurzeln · 9", "ar": "جذور عربية · ٩" },
+        "title": { "en": "Q-r-': the root of the Quran", "de": "Q-r-ʾ: die Wurzel des Korans", "ar": "ق ر أ: جذر القرآن" },
+        "sub": { "en": "Read, recite, gather: what the name of the Quran tells you", "de": "Lesen, rezitieren, sammeln: was der Name des Korans erzählt", "ar": "القراءة والتلاوة والجمع: ما يخبرك به اسم القرآن" },
+        "arabic": "ق ر أ"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "Q-r-' means to read aloud and to recite. Some linguists also connect it with gathering: letters gathered into words, and verses gathered into one book.", "de": "Q-r-ʾ bedeutet laut lesen und rezitieren. Manche Sprachgelehrte verbinden die Wurzel auch mit Sammeln: Buchstaben, die zu Wörtern, und Verse, die zu einem Buch gesammelt werden.", "ar": "يدل الجذر ق ر أ على القراءة والتلاوة، ويربطه بعض اللغويين بمعنى الجمع: جمع الحروف في كلمات، وجمع الآيات في كتاب واحد." }
+        },
+        {
+          "title": { "en": "Qur'an: the recitation", "de": "Qurʾān: die Rezitation", "ar": "القرآن" },
+          "arabic": "قُرْآن",
+          "body": { "en": "Qur'an is a verbal noun: the reading, the recitation. Its name tells you how it lives: not only on paper, but in the voices that recite it.", "de": "Qurʾān ist ein Verbalnomen: das Lesen, die Rezitation. Sein Name sagt, wie er lebt: nicht nur auf Papier, sondern in den Stimmen, die ihn vortragen.", "ar": "القرآن مصدرٌ بمعنى القراءة، واسمه يدل على حياته: لا على الورق وحده، بل في الأصوات التي تتلوه." }
+        },
+        {
+          "title": { "en": "iqra': the command to read", "de": "iqraʾ: der Befehl zu lesen", "ar": "اقرأ: الأمر بالقراءة" },
+          "arabic": "اقْرَأْ",
+          "body": { "en": "Iqra' is the command form of qara'a. According to most scholars it is the first word that was revealed, given to a Prophet who could not read or write.", "de": "Iqraʾ ist die Befehlsform von qaraʾa. Nach Ansicht der meisten Gelehrten ist es das erste offenbarte Wort, gerichtet an einen Propheten, der weder lesen noch schreiben konnte.", "ar": "اقرأ فعل أمر من قرأ، وهي عند أكثر العلماء أول كلمة نزلت من الوحي، على نبيّ أمّيّ لا يقرأ ولا يكتب." }
+        },
+        {
+          "title": { "en": "88 times in the Quran", "de": "88-mal im Koran", "ar": "٨٨ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from q-r-' occur 88 times in the Quran. The word Qur'an itself makes up 70 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel q-r-ʾ 88-mal im Koran vor. Das Wort Qurʾān selbst macht 70 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ق ر أ في القرآن ٨٨ مرة، منها ٧٠ مرة لكلمة «قرآن» نفسها." }
+        },
+        {
+          "verse": "96:1",
+          "check": "Recite in the name",
+          "title": { "en": "The first command", "de": "Der erste Befehl", "ar": "الأمر الأول" },
+          "body": { "en": "Reading begins with the name of the Lord who created. Knowledge and worship start together.", "de": "Das Lesen beginnt mit dem Namen des Herrn, der erschaffen hat. Wissen und Anbetung beginnen gemeinsam.", "ar": "تبدأ القراءة باسم الرب الخالق، فيبدأ العلم والعبادة معًا." }
+        },
+        {
+          "verse": "7:204",
+          "check": "listen to it",
+          "title": { "en": "When it is recited", "de": "Wenn er vorgetragen wird", "ar": "إذا قُرئ القرآن" },
+          "body": { "en": "The Quran is meant to be heard. Listening with attention is itself a door to mercy.", "de": "Der Koran will gehört werden. Aufmerksames Zuhören ist selbst eine Tür zur Barmherzigkeit.", "ar": "القرآن ليُسمع، والإنصات بانتباه بابٌ من أبواب الرحمة." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "The Quran's own name invites you to read it aloud. Choose a short surah today and recite it slowly, with your voice and not only with your eyes.", "de": "Schon der Name des Korans lädt Sie ein, ihn laut zu lesen. Wählen Sie heute eine kurze Sure und rezitieren Sie sie langsam, mit Ihrer Stimme und nicht nur mit den Augen.", "ar": "اسم القرآن نفسه يدعوك إلى قراءته بصوتك. اختر اليوم سورة قصيرة واتلُها على مهل، بلسانك لا بعينيك فقط." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "al-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an" }
+      ]
+    },
+    {
+      "id": "arabic-roots-s-l-m",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 10", "de": "Arabische Wurzeln · 10", "ar": "جذور عربية · ١٠" },
+        "title": { "en": "S-l-m: the root of peace", "de": "S-l-m: die Wurzel des Friedens", "ar": "س ل م: جذر السلام" },
+        "sub": { "en": "Salam, islam, muslim: soundness, safety and surrender", "de": "Salām, islām, muslim: Unversehrtheit, Sicherheit und Hingabe", "ar": "السلام والإسلام والمسلم: سلامة وأمان وتسليم" },
+        "arabic": "س ل م"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "S-l-m means to be sound, whole and safe, free from harm. From there it moves to making peace and to handing yourself over: whoever surrenders to Allah is safe.", "de": "S-l-m bedeutet heil, ganz und sicher sein, frei von Schaden. Daraus entstehen Frieden schließen und sich hingeben: Wer sich Allah übergibt, ist in Sicherheit.", "ar": "يدل الجذر س ل م على السلامة والخلوص من الآفات، ومنه المسالمة والتسليم: فمن أسلم نفسه لله كان في أمان." }
+        },
+        {
+          "title": { "en": "salam: peace", "de": "salām: Frieden", "ar": "السلام" },
+          "arabic": "سَلام",
+          "body": { "en": "Salam is peace and safety. It is the greeting of Muslims and the greeting of Paradise, and as-Salam is a name of Allah (59:23).", "de": "Salām ist Frieden und Sicherheit. Es ist der Gruß der Muslime und der Gruß des Paradieses, und as-Salām ist ein Name Allahs (59:23).", "ar": "السلام: الأمن والسلامة، وهو تحية المسلمين وتحية أهل الجنة، والسلام من أسماء الله (الحشر: ٢٣)." }
+        },
+        {
+          "title": { "en": "islam: surrender", "de": "islām: Hingabe", "ar": "الإسلام" },
+          "arabic": "إِسْلام",
+          "body": { "en": "Islam is the verbal noun of aslama: to hand yourself over completely. It names a religion and, at the same time, an inner act of the heart.", "de": "Islām ist das Verbalnomen von aslama: sich vollständig übergeben. Es bezeichnet eine Religion und zugleich eine innere Handlung des Herzens.", "ar": "الإسلام مصدر أسلم، أي سلّم نفسه كلها. وهو اسمٌ للدين، وفعلٌ باطن من أفعال القلب كذلك." }
+        },
+        {
+          "title": { "en": "muslim: one who surrenders", "de": "muslim: der sich Hingebende", "ar": "المسلم" },
+          "arabic": "مُسْلِم",
+          "body": { "en": "A muslim is one who surrenders to Allah. In this sense the Quran calls Ibrahim and other prophets muslim (3:67).", "de": "Ein Muslim ist jemand, der sich Allah hingibt. In diesem Sinn nennt der Koran Ibrāhīm und andere Propheten muslim (3:67).", "ar": "المسلم من أسلم لله، وبهذا المعنى يصف القرآن إبراهيم وغيره من الأنبياء بالإسلام (آل عمران: ٦٧)." }
+        },
+        {
+          "title": { "en": "140 times in the Quran", "de": "140-mal im Koran", "ar": "١٤٠ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from s-l-m occur 140 times in the Quran. Salam makes up 42 of them, muslim 39.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel s-l-m 140-mal im Koran vor. Salām macht 42 davon aus, muslim 39.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر س ل م في القرآن ١٤٠ مرة، منها ٤٢ مرة لكلمة «سلام» و٣٩ مرة لكلمة «مسلم»." }
+        },
+        {
+          "verse": "36:58",
+          "check": "Peace",
+          "title": { "en": "A word of peace", "de": "Ein Wort des Friedens", "ar": "كلمة سلام" },
+          "body": { "en": "In Paradise, salam is the greeting that comes from Allah Himself.", "de": "Im Paradies ist Salām der Gruß, der von Allah selbst kommt.", "ar": "في الجنة يأتي السلام تحيةً من الله نفسه." }
+        },
+        {
+          "verse": "3:19",
+          "check": "Islam",
+          "title": { "en": "The religion with Allah", "de": "Die Religion bei Allah", "ar": "الدين عند الله" },
+          "body": { "en": "Here islam names the religion. Its root reminds you what it asks for: a heart handed over and at peace.", "de": "Hier bezeichnet islām die Religion. Ihre Wurzel erinnert daran, was sie verlangt: ein Herz, das sich hingibt und Frieden findet.", "ar": "الإسلام هنا اسمٌ للدين، وجذره يذكّرك بما يطلبه: قلبٌ مُسلِمٌ مطمئن." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Every time you say 'as-salamu 'alaykum', you promise the other person safety. Let your words and your hands keep that promise today.", "de": "Jedes Mal, wenn Sie „as-salāmu ʿalaikum“ sagen, versprechen Sie dem anderen Sicherheit. Lassen Sie heute Ihre Worte und Ihre Hände dieses Versprechen halten.", "ar": "كلما قلت «السلام عليكم» وعدتَ غيرك بالأمان، فاجعل لسانك ويدك تفيان بهذا الوعد اليوم." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-hamza-m-n",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 11", "de": "Arabische Wurzeln · 11", "ar": "جذور عربية · ١١" },
+        "title": { "en": "'-m-n: the root of faith", "de": "ʾ-m-n: die Wurzel des Glaubens", "ar": "أ م ن: جذر الإيمان" },
+        "sub": { "en": "Faith, safety and trust: three words from one root", "de": "Glaube, Sicherheit und Vertrauen: drei Wörter aus einer Wurzel", "ar": "الإيمان والأمن والأمانة: ثلاث كلمات من جذر واحد" },
+        "arabic": "أ م ن"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "'-m-n means to be safe and at ease, free from fear. Iman, faith, is the trust of the heart that brings this calm. The believer feels safe with Allah, and others feel safe with the believer.", "de": "ʾ-m-n bedeutet sicher und ruhig sein, frei von Angst. Īmān, Glaube, ist das Vertrauen des Herzens, das diese Ruhe schenkt. Der Gläubige fühlt sich bei Allah sicher, und andere fühlen sich bei ihm sicher.", "ar": "يدل الجذر أ م ن على الطمأنينة وزوال الخوف. والإيمان تصديقٌ يورث القلب هذه السكينة، فالمؤمن آمنٌ بالله، والناس آمنون منه." }
+        },
+        {
+          "title": { "en": "iman: faith", "de": "īmān: Glaube", "ar": "الإيمان" },
+          "arabic": "إِيمان",
+          "body": { "en": "Iman is faith that trusts. In the Quran it lives in the heart and shows in deeds, which is why belief and good deeds are so often named together.", "de": "Īmān ist Glaube, der vertraut. Im Koran wohnt er im Herzen und zeigt sich in Taten. Deshalb werden Glaube und gute Werke so oft zusammen genannt.", "ar": "الإيمان تصديقٌ وثقة، محلّه القلب ويظهر في العمل، ولذلك يكثر في القرآن اقتران الإيمان بالعمل الصالح." }
+        },
+        {
+          "title": { "en": "amn: safety", "de": "amn: Sicherheit", "ar": "الأمن" },
+          "arabic": "أَمْن",
+          "body": { "en": "Amn is safety and security. The Quran counts it among the great blessings: a life without fear is a gift, not something to take for granted.", "de": "Amn ist Sicherheit und Geborgenheit. Der Koran zählt sie zu den großen Gaben: Ein Leben ohne Angst ist ein Geschenk, nichts Selbstverständliches.", "ar": "الأمن: السلامة والطمأنينة، ويعدّه القرآن من النعم الكبرى، فالحياة بلا خوف هبةٌ لا أمرٌ مسلَّم به." }
+        },
+        {
+          "title": { "en": "amana: trust", "de": "amāna: anvertrautes Gut", "ar": "الأمانة" },
+          "arabic": "أَمانَة",
+          "body": { "en": "Amana is something entrusted to you: a deposit, a promise, a responsibility. A trustworthy person is amin, the title by which the people of Makkah knew the Prophet.", "de": "Amāna ist etwas, das Ihnen anvertraut wurde: ein Gut, ein Versprechen, eine Verantwortung. Wer vertrauenswürdig ist, heißt amīn; mit diesem Beinamen kannten die Menschen in Mekka den Propheten.", "ar": "الأمانة ما يُؤتمن عليه المرء: وديعةٌ أو عهدٌ أو مسؤولية. والأمين من يُوثق به، وبهذا اللقب عرف أهلُ مكة النبيَّ ﷺ." }
+        },
+        {
+          "title": { "en": "879 times in the Quran", "de": "879-mal im Koran", "ar": "٨٧٩ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from '-m-n occur 879 times, which makes it one of the most frequent roots of the Quran. The verb amana, to believe, makes up 537 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel ʾ-m-n 879-mal vor. Damit gehört sie zu den häufigsten Wurzeln des Korans. Das Verb āmana, glauben, macht 537 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر أ م ن ٨٧٩ مرة، فهو من أكثر جذور القرآن ورودًا، منها ٥٣٧ مرة للفعل «آمن»." }
+        },
+        {
+          "verse": "49:14",
+          "check": "faith has not yet entered",
+          "title": { "en": "Islam and iman", "de": "Islām und īmān", "ar": "الإسلام والإيمان" },
+          "body": { "en": "This verse distinguishes outward submission from a faith that has entered the heart.", "de": "Dieser Vers unterscheidet äußere Hingabe von einem Glauben, der ins Herz eingetreten ist.", "ar": "تفرّق هذه الآية بين الإسلام الظاهر والإيمان الذي دخل القلب." }
+        },
+        {
+          "verse": "106:4",
+          "check": "made them safe",
+          "title": { "en": "Safe from fear", "de": "Sicher vor Angst", "ar": "الأمن من الخوف" },
+          "body": { "en": "Amanahum, 'He made them safe', shares its root with iman. Faith and safety are family.", "de": "Āmanahum, „Er gab ihnen Sicherheit“, teilt die Wurzel mit īmān. Glaube und Sicherheit sind verwandt.", "ar": "«آمنهم» من جذر الإيمان نفسه، فالإيمان والأمن من أصل واحد." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Who feels safe around you? Faith grows not only in prayer but also when people can trust your word, your hands and your silence.", "de": "Wer fühlt sich in Ihrer Nähe sicher? Glaube wächst nicht nur im Gebet, sondern auch, wenn Menschen Ihrem Wort, Ihren Händen und Ihrem Schweigen vertrauen können.", "ar": "من يشعر بالأمان بقربك؟ لا ينمو الإيمان في الصلاة وحدها، بل أيضًا حين يأمن الناس كلمتك ويدك وصمتك." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-t-w-b",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 12", "de": "Arabische Wurzeln · 12", "ar": "جذور عربية · ١٢" },
+        "title": { "en": "T-w-b: the root of returning", "de": "T-w-b: die Wurzel der Umkehr", "ar": "ت و ب: جذر التوبة" },
+        "sub": { "en": "Repentance means coming back, and Allah turns toward you", "de": "Reue heißt zurückkehren, und Allah wendet Sich Ihnen zu", "ar": "التوبة رجوع، والله يتوب على من رجع إليه" },
+        "arabic": "ت و ب"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "T-w-b means to return. Tawba is not only feeling sorry: it is turning around and walking back. And the road home stays open.", "de": "T-w-b bedeutet zurückkehren. Tauba ist nicht nur Bedauern, sondern das Umkehren und Zurückgehen. Und der Weg nach Hause bleibt offen.", "ar": "يدل الجذر ت و ب على الرجوع. فالتوبة ليست ندمًا فحسب، بل التفاتٌ وعودة، وطريق الرجوع يبقى مفتوحًا." }
+        },
+        {
+          "title": { "en": "taba: to turn back", "de": "tāba: umkehren", "ar": "تاب" },
+          "arabic": "تابَ",
+          "body": { "en": "The same verb is used for the servant and for Allah. The servant turns to Allah (taba ila), and Allah turns to the servant (taba 'ala), accepting him.", "de": "Dasselbe Verb steht für den Diener und für Allah: Der Diener wendet sich Allah zu (tāba ilā), und Allah wendet Sich dem Diener zu (tāba ʿalā) und nimmt ihn an.", "ar": "يُستعمل الفعل نفسه للعبد ولله: فالعبد يتوب إلى الله، والله يتوب على العبد فيقبله." }
+        },
+        {
+          "title": { "en": "tawba: repentance", "de": "tauba: Reue, Umkehr", "ar": "التوبة" },
+          "arabic": "تَوْبَة",
+          "body": { "en": "Tawba is the act of returning. The Quran calls for tawba nasuha (66:8): a sincere repentance with the resolve not to go back to the sin.", "de": "Tauba ist die Rückkehr selbst. Der Koran ruft zu einer tauba naṣūḥ auf (66:8): einer aufrichtigen Umkehr mit dem festen Willen, nicht zur Sünde zurückzukehren.", "ar": "التوبة فعلُ الرجوع، ويدعو القرآن إلى التوبة النصوح (التحريم: ٨): رجوعٌ صادق مع العزم على عدم العودة إلى الذنب." }
+        },
+        {
+          "title": { "en": "at-Tawwab: He who accepts repentance", "de": "at-Tawwāb: der die Reue annimmt", "ar": "التوّاب" },
+          "arabic": "التَّوّاب",
+          "body": { "en": "At-Tawwab is a name of Allah in an intensive form: He accepts repentance again and again. The same word also describes servants who repent often (2:222).", "de": "At-Tawwāb ist ein Name Allahs in einer Steigerungsform: Er nimmt die Reue immer wieder an. Dasselbe Wort beschreibt auch Diener, die oft bereuen (2:222).", "ar": "التوّاب من أسماء الله على صيغة المبالغة: يقبل التوبة مرة بعد مرة. ويوصف به أيضًا العباد الذين يكثرون التوبة (البقرة: ٢٢٢)." }
+        },
+        {
+          "title": { "en": "87 times in the Quran", "de": "87-mal im Koran", "ar": "٨٧ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from t-w-b occur 87 times in the Quran. The verb taba makes up 63 of them, and tawwab 12.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel t-w-b 87-mal im Koran vor. Das Verb tāba macht 63 davon aus, tawwāb 12.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ت و ب في القرآن ٨٧ مرة، منها ٦٣ مرة للفعل «تاب» و١٢ مرة لكلمة «توّاب»." }
+        },
+        {
+          "verse": "2:37",
+          "check": "accepted his repentance",
+          "title": { "en": "The first tawba", "de": "Die erste Tauba", "ar": "التوبة الأولى" },
+          "body": { "en": "Adam's story already holds the whole pattern: words of repentance, and a Lord who turns to him.", "de": "Die Geschichte Ādams enthält schon das ganze Muster: Worte der Reue und einen Herrn, der Sich ihm zuwendet.", "ar": "في قصة آدم عليه السلام يكتمل المعنى: كلماتُ توبة، وربٌّ يتوب عليه." }
+        },
+        {
+          "verse": "110:3",
+          "check": "Accepting of Repentance",
+          "title": { "en": "At the height of success", "de": "Auf dem Höhepunkt des Erfolgs", "ar": "في ذروة النصر" },
+          "body": { "en": "Even after the great victory, the Prophet is told to seek forgiveness. Tawba is not only for beginners.", "de": "Selbst nach dem großen Sieg soll der Prophet um Vergebung bitten. Tauba ist nicht nur etwas für Anfänger.", "ar": "حتى بعد النصر العظيم يُؤمر النبي ﷺ بالاستغفار، فالتوبة ليست للمبتدئين وحدهم." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Is there something you have long wanted to turn back from? Tawba begins with one honest step. Allah turned to Adam, and the door has not been closed.", "de": "Gibt es etwas, von dem Sie schon lange umkehren möchten? Tauba beginnt mit einem ehrlichen Schritt. Allah wandte Sich Ādam zu, und die Tür ist nicht verschlossen.", "ar": "هل ثمّة أمرٌ تريد الرجوع عنه منذ زمن؟ التوبة تبدأ بخطوة صادقة واحدة. لقد تاب الله على آدم، والباب لم يُغلق." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-gh-f-r",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 13", "de": "Arabische Wurzeln · 13", "ar": "جذور عربية · ١٣" },
+        "title": { "en": "Gh-f-r: the root of forgiveness", "de": "Gh-f-r: die Wurzel der Vergebung", "ar": "غ ف ر: جذر المغفرة" },
+        "sub": { "en": "To cover and to protect: what forgiveness means in Arabic", "de": "Bedecken und schützen: was Vergebung im Arabischen bedeutet", "ar": "الستر والوقاية: معنى المغفرة في العربية" },
+        "arabic": "غ ف ر"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "Gh-f-r means to cover and to protect. A helmet is called mighfar because it covers the head and shields it. Maghfira is Allah covering a sin and protecting you from its harm.", "de": "Gh-f-r bedeutet bedecken und schützen. Ein Helm heißt mighfar, weil er den Kopf bedeckt und schirmt. Maghfira heißt: Allah bedeckt eine Sünde und schützt Sie vor ihrem Schaden.", "ar": "يدل الجذر غ ف ر على الستر والوقاية، ومنه المِغفَر: ما يُلبس على الرأس فيستره ويحميه. فالمغفرة سترُ الله للذنب ووقايةُ العبد من عاقبته." }
+        },
+        {
+          "title": { "en": "ghafara: to forgive", "de": "ghafara: vergeben", "ar": "غفر" },
+          "arabic": "غَفَرَ",
+          "body": { "en": "Ghafara is the verb: He forgave. In the Quran the one who forgives is mostly Allah, and His forgiveness is called vast (53:32).", "de": "Ghafara ist das Verb: Er vergab. Im Koran ist es meist Allah, der vergibt, und Seine Vergebung wird weit genannt (53:32).", "ar": "غفر هو الفعل، والغافر في القرآن هو الله في الأغلب، وتوصف مغفرته بالسعة (النجم: ٣٢)." }
+        },
+        {
+          "title": { "en": "istaghfara: to ask forgiveness", "de": "istaghfara: um Vergebung bitten", "ar": "استغفر" },
+          "arabic": "اسْتَغْفَرَ",
+          "body": { "en": "The form istaghfara means to ask for forgiveness. From it come istighfar and the phrase astaghfirullah: I ask Allah to cover and protect me.", "de": "Die Form istaghfara bedeutet um Vergebung bitten. Daraus kommen istighfār und der Satz astaghfirullāh: Ich bitte Allah, mich zu bedecken und zu schützen.", "ar": "استغفر: طلب المغفرة، ومنه الاستغفار وقولنا «أستغفر الله»: أي أطلب من الله أن يسترني ويقيني." }
+        },
+        {
+          "title": { "en": "Ghafur and Ghaffar", "de": "Ghafūr und Ghaffār", "ar": "الغفور والغفّار" },
+          "arabic": "غَفُور · غَفّار",
+          "body": { "en": "Two names of Allah from this root, both intensive forms. Ghafur is the most frequent form of the root; Ghaffar points to forgiving again and again.", "de": "Zwei Namen Allahs aus dieser Wurzel, beide Steigerungsformen. Ghafūr ist die häufigste Form der Wurzel; Ghaffār deutet auf ein Vergeben, immer und immer wieder.", "ar": "اسمان لله من هذا الجذر، كلاهما صيغة مبالغة: «الغفور» أكثر صيغ الجذر ورودًا، و«الغفّار» يدل على تكرار المغفرة." }
+        },
+        {
+          "title": { "en": "234 times in the Quran", "de": "234-mal im Koran", "ar": "٢٣٤ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from gh-f-r occur 234 times in the Quran. Ghafur, Most Forgiving, alone makes up 91 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel gh-f-r 234-mal im Koran vor. Allein ghafūr, der Allvergebende, macht 91 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر غ ف ر في القرآن ٢٣٤ مرة، منها ٩١ مرة لكلمة «غفور» وحدها." }
+        },
+        {
+          "verse": "71:10",
+          "check": "Ask forgiveness",
+          "title": { "en": "The advice of Nuh", "de": "Der Rat Nūḥs", "ar": "نصيحة نوح" },
+          "body": { "en": "Nuh calls his people to istighfar and describes Allah as ghaffar.", "de": "Nūḥ ruft sein Volk zum istighfār auf und beschreibt Allah als ghaffār.", "ar": "يدعو نوح عليه السلام قومه إلى الاستغفار، ويصف الله بأنه غفّار." }
+        },
+        {
+          "verse": "3:133",
+          "check": "hasten to forgiveness",
+          "title": { "en": "Hurry toward it", "de": "Eilen Sie ihr entgegen", "ar": "سارِعْ إليها" },
+          "body": { "en": "Maghfira is not something to wait for passively. The verse calls you to hurry toward it.", "de": "Auf maghfira wartet man nicht passiv. Der Vers ruft dazu auf, ihr entgegenzueilen.", "ar": "لا تُنتظر المغفرة انتظارًا، بل تدعو الآية إلى المسارعة إليها." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "When you say astaghfirullah, picture a helmet being placed on your head: covered, protected and free to walk on. Say it slowly three times today.", "de": "Wenn Sie astaghfirullāh sagen, stellen Sie sich einen Helm vor, der Ihnen aufgesetzt wird: bedeckt, geschützt und frei, weiterzugehen. Sprechen Sie es heute dreimal langsam.", "ar": "حين تقول «أستغفر الله» تخيّل مِغفَرًا يوضع على رأسك: مستورًا ومحميًا وحرًّا لتمضي. قلها اليوم ثلاثًا على مهل." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-dh-k-r",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 14", "de": "Arabische Wurzeln · 14", "ar": "جذور عربية · ١٤" },
+        "title": { "en": "Dh-k-r: the root of remembrance", "de": "Dh-k-r: die Wurzel des Gedenkens", "ar": "ذ ك ر: جذر الذكر" },
+        "sub": { "en": "Remembering, mentioning, and a Book that calls itself the Reminder", "de": "Erinnern, erwähnen und ein Buch, das sich selbst die Ermahnung nennt", "ar": "التذكّر والذِّكر، وكتابٌ يسمّي نفسه الذكر" },
+        "arabic": "ذ ك ر"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "Dh-k-r means to keep something present: in the heart, which is remembering, and on the tongue, which is mentioning. In Arabic, both are one word.", "de": "Dh-k-r bedeutet, etwas gegenwärtig zu halten: im Herzen, das ist Erinnern, und auf der Zunge, das ist Erwähnen. Im Arabischen ist beides ein Wort.", "ar": "يدل الجذر ذ ك ر على استحضار الشيء: في القلب وهو التذكّر، وعلى اللسان وهو الذِّكر، وكلاهما في العربية لفظ واحد." }
+        },
+        {
+          "title": { "en": "dhikr: remembrance", "de": "dhikr: Gedenken", "ar": "الذِّكر" },
+          "arabic": "ذِكْر",
+          "body": { "en": "Dhikr is the remembrance of Allah: in prayer, in words of praise and in quiet thought. The Quran asks for it much, not only now and then (33:41).", "de": "Dhikr ist das Gedenken Allahs: im Gebet, in Worten des Lobes und in stillem Nachdenken. Der Koran verlangt es reichlich, nicht nur ab und zu (33:41).", "ar": "الذكر استحضار الله في الصلاة وفي الثناء وفي التفكّر الهادئ، والقرآن يدعو إلى الذكر الكثير لا إلى ذكرٍ عابر (الأحزاب: ٤١)." }
+        },
+        {
+          "title": { "en": "tadhakkara: to take heed", "de": "tadhakkara: sich zu Herzen nehmen", "ar": "تذكّر" },
+          "arabic": "تَذَكَّرَ",
+          "body": { "en": "Tadhakkara is a remembering that changes you: taking a lesson to heart. Many verses end with the hope that people would do exactly this.", "de": "Tadhakkara ist ein Erinnern, das verändert: sich eine Lehre zu Herzen nehmen. Viele Verse enden mit der Hoffnung, dass Menschen genau das tun.", "ar": "تذكّر: اعتبر واتّعظ، أي تذكّرٌ يغيّر صاحبه. وكثير من الآيات تُختم بالحثّ على هذا التذكّر." }
+        },
+        {
+          "title": { "en": "dhikra: a reminder", "de": "dhikrā: Ermahnung", "ar": "الذكرى" },
+          "arabic": "ذِكْرَى",
+          "body": { "en": "Dhikra is a reminder. The Quran says that reminding benefits the believers (51:55), and it calls itself adh-dhikr, the Reminder.", "de": "Dhikrā ist eine Ermahnung. Der Koran sagt, dass Ermahnung den Gläubigen nützt (51:55), und nennt sich selbst adh-dhikr, die Ermahnung.", "ar": "الذكرى: التذكير، ويخبر القرآن أن الذكرى تنفع المؤمنين (الذاريات: ٥٥)، ويسمّي نفسه الذكر." }
+        },
+        {
+          "title": { "en": "292 times in the Quran", "de": "292-mal im Koran", "ar": "٢٩٢ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from dh-k-r occur 292 times. The corpus also counts dhakar, male, under this root: 18 times.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel dh-k-r 292-mal vor. Das Corpus zählt auch dhakar, männlich, zu dieser Wurzel: 18-mal.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ذ ك ر ٢٩٢ مرة، وتعدّ المدونة منها «الذَّكَر» بمعنى خلاف الأنثى: ١٨ مرة." }
+        },
+        {
+          "verse": "2:152",
+          "check": "remember Me",
+          "title": { "en": "Remembrance answered", "de": "Gedenken, das erwidert wird", "ar": "ذكرٌ يُقابَل بذكر" },
+          "body": { "en": "Remember Him, and He remembers you. Few promises are this direct.", "de": "Gedenken Sie Seiner, und Er gedenkt Ihrer. Kaum ein Versprechen ist so unmittelbar.", "ar": "اذكر الله يذكرك، وقلّما تجد وعدًا بهذا القرب." }
+        },
+        {
+          "verse": "15:9",
+          "check": "sent down the message",
+          "title": { "en": "The Reminder, preserved", "de": "Die bewahrte Ermahnung", "ar": "الذكر المحفوظ" },
+          "body": { "en": "Here the Quran is called adh-dhikr, and its protection is promised.", "de": "Hier heißt der Koran adh-dhikr, und sein Schutz wird zugesagt.", "ar": "يُسمّى القرآن هنا الذكر، ويأتي الوعد بحفظه." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Remembrance can live in small moments: waiting at a red light, washing the dishes, walking to the car. Pick one daily moment and make it yours for dhikr.", "de": "Gedenken kann in kleinen Momenten leben: an der roten Ampel, beim Abwasch, auf dem Weg zum Auto. Wählen Sie einen täglichen Moment und machen Sie ihn zu Ihrem Moment des Dhikr.", "ar": "يمكن للذكر أن يسكن اللحظات الصغيرة: عند انتظار الإشارة، أو غسل الأطباق، أو المشي إلى السيارة. اختر لحظة يومية واجعلها للذكر." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "al-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an" }
+      ]
+    },
+    {
+      "id": "arabic-roots-s-j-d",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 15", "de": "Arabische Wurzeln · 15", "ar": "جذور عربية · ١٥" },
+        "title": { "en": "S-j-d: the root of prostration", "de": "S-j-d: die Wurzel der Niederwerfung", "ar": "س ج د: جذر السجود" },
+        "sub": { "en": "Bowing low, and the place built for it: the masjid", "de": "Sich tief neigen, und der Ort, der dafür gebaut ist: die Moschee", "ar": "الخضوع والانحناء، والمكان المبنيّ له: المسجد" },
+        "arabic": "س ج د"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "S-j-d means to bow low and to yield in humility. In worship it is the prostration: the forehead on the ground, the highest part of the body in the lowest place.", "de": "S-j-d bedeutet, sich tief zu neigen und demütig zu fügen. Im Gebet ist es die Niederwerfung: die Stirn am Boden, der höchste Teil des Körpers am tiefsten Ort.", "ar": "يدل الجذر س ج د على الخضوع والتطامن، وفي العبادة هو السجود: وضع الجبهة على الأرض، فيصير أعلى ما في الإنسان في أدنى موضع." }
+        },
+        {
+          "title": { "en": "sujud: prostration", "de": "sujūd: Niederwerfung", "ar": "السجود" },
+          "arabic": "سُجُود",
+          "body": { "en": "Sujud is the act of prostrating. The Quran describes the stars, the trees, the shadows and all of creation bowing to Allah in their own way.", "de": "Sujūd ist der Akt der Niederwerfung. Der Koran beschreibt, wie Sterne, Bäume, Schatten und die ganze Schöpfung sich auf ihre Weise vor Allah niederwerfen.", "ar": "السجود فعل الخضوع بالجبهة، ويصف القرآن النجم والشجر والظلال والخلق كله ساجدًا لله على نحوٍ يليق به." }
+        },
+        {
+          "title": { "en": "masjid: place of prostration", "de": "masjid: Ort der Niederwerfung", "ar": "المسجد" },
+          "arabic": "مَسْجِد",
+          "body": { "en": "A masjid is the place where one prostrates. The English word mosque goes back to it.", "de": "Ein masjid ist der Ort, an dem man sich niederwirft. Auch das deutsche Wort Moschee geht darauf zurück.", "ar": "المسجد مكان السجود، ومنه أُخذت الكلمة الإنجليزية mosque والألمانية Moschee." }
+        },
+        {
+          "title": { "en": "sajid: one who prostrates", "de": "sājid: der sich Niederwerfende", "ar": "الساجد" },
+          "arabic": "ساجِد",
+          "body": { "en": "A sajid is someone in prostration. The Quran praises those who pass their nights in prayer, in sujud and in standing (25:64).", "de": "Ein sājid ist jemand in der Niederwerfung. Der Koran lobt Menschen, die ihre Nächte im Gebet verbringen, in Niederwerfung und im Stehen (25:64).", "ar": "الساجد من هو في سجوده، وقد أثنى القرآن على من يقضون لياليهم في الصلاة سجودًا وقيامًا (الفرقان: ٦٤)." }
+        },
+        {
+          "title": { "en": "92 times in the Quran", "de": "92-mal im Koran", "ar": "٩٢ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from s-j-d occur 92 times in the Quran. The word masjid makes up 28 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel s-j-d 92-mal im Koran vor. Das Wort masjid macht 28 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر س ج د في القرآن ٩٢ مرة، منها ٢٨ مرة لكلمة «مسجد»." }
+        },
+        {
+          "verse": "96:19",
+          "check": "prostrate and draw near",
+          "title": { "en": "Bow down and come close", "de": "Niederwerfen und nahekommen", "ar": "سجودٌ واقتراب" },
+          "body": { "en": "The surah of the first revelation ends with this command. Prostration is described as drawing near.", "de": "Die Sure der ersten Offenbarung endet mit diesem Befehl. Die Niederwerfung wird als Annäherung beschrieben.", "ar": "تُختم سورة أول ما نزل بهذا الأمر، فالسجود اقتراب." }
+        },
+        {
+          "verse": "17:1",
+          "check": "Masjid",
+          "title": { "en": "From one masjid to another", "de": "Von einer Moschee zur anderen", "ar": "من مسجد إلى مسجد" },
+          "body": { "en": "The Night Journey links two places of prostration: the Sacred Mosque and al-Masjid al-Aqsa.", "de": "Die Nachtreise verbindet zwei Orte der Niederwerfung: die Heilige Moschee und al-Masjid al-Aqṣā.", "ar": "تربط رحلة الإسراء بين مكانين للسجود: المسجد الحرام والمسجد الأقصى." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "In sujud your face is closest to the ground, and the Quran calls it drawing near. In your next prostration, stay one breath longer and say what is on your heart.", "de": "In der Niederwerfung ist Ihr Gesicht dem Boden am nächsten, und der Koran nennt es ein Nahekommen. Bleiben Sie bei der nächsten Niederwerfung einen Atemzug länger und sagen Sie, was Ihnen auf dem Herzen liegt.", "ar": "في السجود يكون وجهك أقرب ما يكون إلى الأرض، والقرآن يسمّيه اقترابًا. أطِل سجودك القادم نفَسًا واحدًا، وقل ما في قلبك." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-r-z-q",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 16", "de": "Arabische Wurzeln · 16", "ar": "جذور عربية · ١٦" },
+        "title": { "en": "R-z-q: the root of provision", "de": "R-z-q: die Wurzel der Versorgung", "ar": "ر ز ق: جذر الرزق" },
+        "sub": { "en": "Every creature's share, and the One who never stops giving", "de": "Der Anteil jedes Geschöpfes und der Eine, der nie aufhört zu geben", "ar": "نصيب كل مخلوق، والذي لا ينقطع عطاؤه" },
+        "arabic": "ر ز ق"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "R-z-q means to give someone their share, especially what keeps them alive. Rizq is more than money: it is food, health, knowledge, friends and time.", "de": "R-z-q bedeutet, jemandem seinen Anteil zu geben, vor allem das, was ihn am Leben erhält. Rizq ist mehr als Geld: Nahrung, Gesundheit, Wissen, Freunde und Zeit.", "ar": "يدل الجذر ر ز ق على إعطاء النصيب، ولا سيما ما تقوم به الحياة. والرزق أوسع من المال: طعامٌ وصحة وعلم وأصدقاء ووقت." }
+        },
+        {
+          "title": { "en": "rizq: provision", "de": "rizq: Versorgung", "ar": "الرِّزق" },
+          "arabic": "رِزْق",
+          "body": { "en": "Rizq is what is given. The Quran speaks of food from the earth and rain from the sky, and also of a good provision in the life to come.", "de": "Rizq ist das Gegebene. Der Koran spricht von Nahrung aus der Erde und Regen vom Himmel, aber auch von einer schönen Versorgung im kommenden Leben.", "ar": "الرزق ما يُعطى، ويذكر القرآن رزق الأرض وما ينزل من السماء، والرزقَ الحسن في الآخرة." }
+        },
+        {
+          "title": { "en": "razaqa: to provide", "de": "razaqa: versorgen", "ar": "رزق" },
+          "arabic": "رَزَقَ",
+          "body": { "en": "Razaqa is the verb. One of the first descriptions of the believers in al-Baqara is that they spend from what Allah has provided them (2:3).", "de": "Razaqa ist das Verb. Zu den ersten Beschreibungen der Gläubigen in al-Baqara gehört, dass sie von dem ausgeben, womit Allah sie versorgt hat (2:3).", "ar": "رزق هو الفعل، ومن أوائل صفات المؤمنين في سورة البقرة أنهم ينفقون مما رزقهم الله (البقرة: ٣)." }
+        },
+        {
+          "title": { "en": "ar-Razzaq: the Provider", "de": "ar-Razzāq: der Versorger", "ar": "الرزّاق" },
+          "arabic": "الرَّزّاق",
+          "body": { "en": "Ar-Razzaq is an intensive form: the One who provides constantly and abundantly. According to the corpus, this exact form appears once, in 51:58.", "de": "Ar-Razzāq ist eine Steigerungsform: der, der beständig und reichlich versorgt. Laut Corpus kommt genau diese Form einmal vor, in 51:58.", "ar": "الرزّاق صيغة مبالغة: كثير الرزق دائمه. وترد هذه الصيغة في القرآن مرة واحدة بحسب المدونة، في الآية ٥٨ من سورة الذاريات." }
+        },
+        {
+          "title": { "en": "123 times in the Quran", "de": "123-mal im Koran", "ar": "١٢٣ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from r-z-q occur 123 times in the Quran. The verb razaqa makes up 61 of them, the noun rizq 55.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel r-z-q 123-mal im Koran vor. Das Verb razaqa macht 61 davon aus, das Nomen rizq 55.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ر ز ق في القرآن ١٢٣ مرة، منها ٦١ مرة للفعل «رزق» و٥٥ مرة لكلمة «رِزق»." }
+        },
+        {
+          "verse": "51:58",
+          "check": "Provider",
+          "title": { "en": "The Provider", "de": "Der Versorger", "ar": "الرزّاق" },
+          "body": { "en": "The one place where the name ar-Razzaq appears, joined with strength and firmness.", "de": "Die einzige Stelle, an der der Name ar-Razzāq erscheint, verbunden mit Kraft und Festigkeit.", "ar": "الموضع الوحيد الذي يرد فيه اسم الرزّاق، مقرونًا بالقوة والمتانة." }
+        },
+        {
+          "verse": "11:6",
+          "check": "its provision",
+          "title": { "en": "No creature forgotten", "de": "Kein Geschöpf vergessen", "ar": "لا مخلوق منسيّ" },
+          "body": { "en": "From the smallest animal to you: every share is known and promised.", "de": "Vom kleinsten Tier bis zu Ihnen: Jeder Anteil ist bekannt und zugesagt.", "ar": "من أصغر دابّة إليك: كل رزقٍ معلومٌ ومضمون." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Worry about provision is human. Do your part with effort, then look at what you already have: health, a meal, a person who cares. That too is rizq.", "de": "Sorge um den Lebensunterhalt ist menschlich. Tun Sie Ihren Teil mit Mühe und schauen Sie dann auf das, was Sie schon haben: Gesundheit, eine Mahlzeit, einen Menschen, der sich kümmert. Auch das ist rizq.", "ar": "القلق على الرزق أمرٌ بشري. اسعَ بجهدك، ثم انظر إلى ما عندك: صحةٌ ووجبة وإنسانٌ يهتم بك. هذا أيضًا رزق." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-k-r-m",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 17", "de": "Arabische Wurzeln · 17", "ar": "جذور عربية · ١٧" },
+        "title": { "en": "K-r-m: the root of honour", "de": "K-r-m: die Wurzel der Würde", "ar": "ك ر م: جذر الكرم" },
+        "sub": { "en": "Generosity, nobility and the dignity given to every human", "de": "Großzügigkeit, Edelmut und die Würde, die jedem Menschen gegeben ist", "ar": "الجود والشرف، والكرامة الممنوحة لكل إنسان" },
+        "arabic": "ك ر م"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "K-r-m joins two ideas: generosity and nobility. In Arabic the noble person is the one who gives, and whatever is karim is the best and most excellent of its kind.", "de": "K-r-m verbindet zwei Gedanken: Großzügigkeit und Edelmut. Im Arabischen ist edel, wer gibt, und was karīm ist, ist das Beste und Vortrefflichste seiner Art.", "ar": "يجمع الجذر ك ر م بين الجود والشرف، فالكريم في العربية من يعطي، والكريم من كل شيء أفضله وأنفسه." }
+        },
+        {
+          "title": { "en": "karim: generous, noble", "de": "karīm: großzügig, edel", "ar": "الكريم" },
+          "arabic": "كَرِيم",
+          "body": { "en": "Karim describes Allah, the Generous, and also the Quran, a messenger, a reward and even a word spoken to parents (17:23). It is the most frequent form of the root.", "de": "Karīm beschreibt Allah, den Großzügigen, aber auch den Koran, einen Gesandten, einen Lohn und sogar ein Wort an die Eltern (17:23). Es ist die häufigste Form der Wurzel.", "ar": "يوصف بالكريم الله سبحانه، ويوصف به القرآن والرسول والأجر، بل والقولُ للوالدين (الإسراء: ٢٣)، وهو أكثر صيغ الجذر ورودًا." }
+        },
+        {
+          "title": { "en": "karrama: to honour", "de": "karrama: ehren", "ar": "كرّم" },
+          "arabic": "كَرَّمَ",
+          "body": { "en": "Karrama means to honour, to give dignity. The Quran uses it for all the children of Adam: human dignity is a gift from Allah.", "de": "Karrama bedeutet ehren, Würde verleihen. Der Koran verwendet es für alle Kinder Ādams: Die Würde des Menschen ist eine Gabe Allahs.", "ar": "كرّم: أعطى الكرامة، ويستعمله القرآن لبني آدم جميعًا، فكرامة الإنسان هبةٌ من الله." }
+        },
+        {
+          "title": { "en": "akram: most noble, most generous", "de": "akram: der Edelste, Großzügigste", "ar": "الأكرم" },
+          "arabic": "أَكْرَم",
+          "body": { "en": "Akram is the superlative. In the first revelation Allah is called al-Akram (96:3), and in 49:13 the most noble person is the one most mindful of Allah.", "de": "Akram ist der Superlativ. In der ersten Offenbarung heißt Allah al-Akram (96:3), und in 49:13 ist der Edelste, wer Allah am meisten fürchtet.", "ar": "أكرم صيغة تفضيل، ففي أول الوحي وُصف الله بالأكرم (العلق: ٣)، وفي سورة الحجرات أكرمُ الناس أتقاهم." }
+        },
+        {
+          "title": { "en": "47 times in the Quran", "de": "47-mal im Koran", "ar": "٤٧ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from k-r-m occur 47 times in the Quran. Karim makes up 30 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel k-r-m 47-mal im Koran vor. Karīm macht 30 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ك ر م في القرآن ٤٧ مرة، منها ٣٠ مرة لكلمة «كريم»." }
+        },
+        {
+          "verse": "17:70",
+          "check": "honored the children of Adam",
+          "title": { "en": "Dignity for every human", "de": "Würde für jeden Menschen", "ar": "كرامة لكل إنسان" },
+          "body": { "en": "Karramna: honour given to all the children of Adam, before any difference of origin or rank.", "de": "Karramnā: Ehre für alle Kinder Ādams, noch vor jedem Unterschied von Herkunft oder Rang.", "ar": "«كرّمنا»: كرامةٌ لبني آدم جميعًا، قبل أي فرقٍ في الأصل أو المنزلة." }
+        },
+        {
+          "verse": "49:13",
+          "check": "most noble of you",
+          "title": { "en": "Who is most noble?", "de": "Wer ist der Edelste?", "ar": "من الأكرم؟" },
+          "body": { "en": "Peoples and tribes exist to know one another. Nobility is measured by taqwa alone.", "de": "Völker und Stämme gibt es, damit sie einander kennenlernen. Edelmut wird allein an der Gottesfurcht gemessen.", "ar": "جُعلت الشعوب والقبائل للتعارف، أما الكرم فميزانه التقوى وحدها." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Every person you meet today carries a dignity Allah gave them. Let your words and your generosity honour it, especially with those others overlook.", "de": "Jeder Mensch, dem Sie heute begegnen, trägt eine Würde, die Allah ihm gab. Lassen Sie Ihre Worte und Ihre Großzügigkeit sie ehren, besonders bei denen, die andere übersehen.", "ar": "كل من تلقاه اليوم يحمل كرامةً منحه الله إياها. فلتكرمها كلماتك وعطاؤك، ولا سيما مع من يغفل عنهم الناس." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-h-q-q",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 18", "de": "Arabische Wurzeln · 18", "ar": "جذور عربية · ١٨" },
+        "title": { "en": "H-q-q: the root of truth", "de": "Ḥ-q-q: die Wurzel der Wahrheit", "ar": "ح ق ق: جذر الحق" },
+        "sub": { "en": "What is real, what is due, and the Day that is certain to come", "de": "Was wirklich ist, was zusteht, und der Tag, der gewiss kommt", "ar": "ما هو ثابت، وما هو واجب، واليوم الذي لا ريب فيه" },
+        "arabic": "ح ق ق"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "H-q-q means to be firm, fixed and certain. Haqq is what truly is, what matches reality, and what is due to someone. In Arabic, truth and rights share one word.", "de": "Ḥ-q-q bedeutet fest, beständig und gewiss sein. Ḥaqq ist, was wirklich ist, was der Wirklichkeit entspricht und was jemandem zusteht. Wahrheit und Recht teilen im Arabischen ein Wort.", "ar": "يدل الجذر ح ق ق على الثبوت واليقين. فالحقّ ما ثبت ووافق الواقع، وما يجب لأحد على غيره، فالحقيقة والحقوق في العربية لفظٌ واحد." }
+        },
+        {
+          "title": { "en": "haqq: truth, right", "de": "ḥaqq: Wahrheit, Recht", "ar": "الحق" },
+          "arabic": "حَقّ",
+          "body": { "en": "Haqq is truth and also a right that is owed. Al-Haqq is a name of Allah: the One whose existence is the most real of all.", "de": "Ḥaqq ist Wahrheit und zugleich ein Recht, das einem zusteht. Al-Ḥaqq ist ein Name Allahs: der, dessen Dasein das Wirklichste von allem ist.", "ar": "الحق: الصدق والثبوت، ويأتي بمعنى الحقّ الواجب. والحق من أسماء الله: الثابت وجوده أكمل ثبوت." }
+        },
+        {
+          "title": { "en": "ahaqq: more deserving", "de": "aḥaqq: würdiger", "ar": "أحقّ" },
+          "arabic": "أَحَقّ",
+          "body": { "en": "Ahaqq means more deserving, more entitled. The Quran uses it to ask who truly deserves to be feared, followed or pleased (9:13).", "de": "Aḥaqq bedeutet würdiger, mehr berechtigt. Der Koran fragt damit, wer es wirklich verdient, gefürchtet, befolgt oder zufriedengestellt zu werden (9:13).", "ar": "أحق: أولى وأجدر، ويستعمله القرآن في بيان من هو أولى بأن يُخشى أو يُتّبع أو يُرضى (التوبة: ١٣)." }
+        },
+        {
+          "title": { "en": "al-Haqqa: the certain reality", "de": "al-Ḥāqqa: die gewisse Wirklichkeit", "ar": "الحاقّة" },
+          "arabic": "الحاقَّة",
+          "body": { "en": "Al-Haqqa is a name of the Last Day and of Surah 69: the event that will certainly come and make every truth visible.", "de": "Al-Ḥāqqa ist ein Name des Letzten Tages und der Sure 69: das Ereignis, das gewiss eintritt und jede Wahrheit sichtbar macht.", "ar": "الحاقّة من أسماء يوم القيامة واسم السورة التاسعة والستين: الواقعة التي لا ريب فيها، تُظهر كل حقيقة." }
+        },
+        {
+          "title": { "en": "287 times in the Quran", "de": "287-mal im Koran", "ar": "٢٨٧ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from h-q-q occur 287 times in the Quran. The noun haqq alone makes up 247 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel ḥ-q-q 287-mal im Koran vor. Allein das Nomen ḥaqq macht 247 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ح ق ق في القرآن ٢٨٧ مرة، منها ٢٤٧ مرة لكلمة «حق» وحدها." }
+        },
+        {
+          "verse": "17:81",
+          "check": "Truth has come",
+          "title": { "en": "Truth arrives", "de": "Die Wahrheit kommt", "ar": "مجيء الحق" },
+          "body": { "en": "Falsehood is described as something that passes away by its nature. Haqq is what stays.", "de": "Das Falsche wird als etwas beschrieben, das seinem Wesen nach vergeht. Ḥaqq ist, was bleibt.", "ar": "يوصف الباطل بأنه زائلٌ بطبعه، والحق هو الباقي." }
+        },
+        {
+          "verse": "69:1-3",
+          "check": "Inevitable Reality",
+          "title": { "en": "The Inevitable Reality", "de": "Die unausweichliche Wirklichkeit", "ar": "الحاقّة" },
+          "body": { "en": "The surah opens by repeating the name three times, each time with more weight.", "de": "Die Sure beginnt damit, den Namen dreimal zu wiederholen, jedes Mal mit mehr Gewicht.", "ar": "تفتتح السورة بتكرار الاسم ثلاث مرات، وكل مرة أثقل وقعًا." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Haqq is both truth and what you owe others. Whose right have you not yet given: a parent, a friend, your own body? Choose one and give it this week.", "de": "Ḥaqq ist Wahrheit und zugleich das, was Sie anderen schulden. Wessen Recht haben Sie noch nicht erfüllt: das eines Elternteils, eines Freundes, Ihres eigenen Körpers? Wählen Sie eines und erfüllen Sie es diese Woche.", "ar": "الحق صدقٌ، وهو أيضًا ما عليك لغيرك. حقُّ من لم تؤدّه بعد: والدٍ، أو صديق، أو جسدك نفسه؟ اختر واحدًا وأدِّه هذا الأسبوع." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-f-t-h",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 19", "de": "Arabische Wurzeln · 19", "ar": "جذور عربية · ١٩" },
+        "title": { "en": "F-t-h: the root of opening", "de": "F-t-ḥ: die Wurzel des Öffnens", "ar": "ف ت ح: جذر الفتح" },
+        "sub": { "en": "Al-Fatiha, keys, victory, and doors that only Allah opens", "de": "Al-Fātiḥa, Schlüssel, Sieg und Türen, die nur Allah öffnet", "ar": "الفاتحة والمفاتح والفتح، وأبوابٌ لا يفتحها إلا الله" },
+        "arabic": "ف ت ح"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "F-t-h means to open what was closed: a door, a city, a heart, a matter between two people. Victory is also called fath: a way opening where it was blocked.", "de": "F-t-ḥ bedeutet öffnen, was verschlossen war: eine Tür, eine Stadt, ein Herz, eine Sache zwischen zwei Menschen. Auch der Sieg heißt fatḥ: ein Weg, der sich öffnet, wo er versperrt war.", "ar": "يدل الجذر ف ت ح على فتح المغلق: بابٍ أو مدينة أو قلب أو أمرٍ بين اثنين. ويُسمّى النصر فتحًا، لأنه طريقٌ انفتح بعد انسداد." }
+        },
+        {
+          "title": { "en": "fath: opening, victory", "de": "fatḥ: Öffnung, Sieg", "ar": "الفتح" },
+          "arabic": "فَتْح",
+          "body": { "en": "Fath is an opening and a victory. Surah 48 is named al-Fath, and Surah 110 joins Allah's help with the fath, which most commentators understand as the opening of Makkah.", "de": "Fatḥ ist Öffnung und Sieg. Sure 48 heißt al-Fatḥ, und Sure 110 verbindet die Hilfe Allahs mit dem fatḥ, den die meisten Kommentatoren als die Öffnung Mekkas verstehen.", "ar": "الفتح: الانفتاح والنصر، وبه سُمّيت سورة الفتح، وتقرن سورة النصر نصرَ الله بالفتح، وأكثر المفسرين على أنه فتح مكة." }
+        },
+        {
+          "title": { "en": "mafatih: keys", "de": "mafātiḥ: Schlüssel", "ar": "المفاتح" },
+          "arabic": "مَفاتِح",
+          "body": { "en": "Mafatih are keys, the things that open. The Quran says that the keys of the unseen are with Allah alone.", "de": "Mafātiḥ sind Schlüssel, die Dinge, die öffnen. Der Koran sagt, dass die Schlüssel des Verborgenen allein bei Allah sind.", "ar": "المفاتح: ما يُفتح به، ويخبر القرآن أن مفاتح الغيب عند الله وحده." }
+        },
+        {
+          "title": { "en": "al-Fatiha: the Opening", "de": "al-Fātiḥa: die Eröffnende", "ar": "الفاتحة" },
+          "arabic": "الفاتِحة",
+          "body": { "en": "The first surah is al-Fatiha: it opens the Book and opens every prayer. Al-Fattah, the One who opens and judges, is also a name of Allah (34:26).", "de": "Die erste Sure heißt al-Fātiḥa: Sie eröffnet das Buch und jedes Gebet. Auch al-Fattāḥ, der Öffnende und Richtende, ist ein Name Allahs (34:26).", "ar": "السورة الأولى هي الفاتحة: تفتتح الكتاب وتفتتح كل صلاة. ومن أسماء الله الفتّاح (سبأ: ٢٦)." }
+        },
+        {
+          "title": { "en": "38 times in the Quran", "de": "38-mal im Koran", "ar": "٣٨ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from f-t-h occur 38 times in the Quran. The verb fataha makes up 16 of them, and fath 12.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel f-t-ḥ 38-mal im Koran vor. Das Verb fataḥa macht 16 davon aus, fatḥ 12.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ف ت ح في القرآن ٣٨ مرة، منها ١٦ مرة للفعل «فتح» و١٢ مرة لكلمة «فَتْح»." }
+        },
+        {
+          "verse": "6:59",
+          "check": "keys of the unseen",
+          "title": { "en": "The keys of the unseen", "de": "Die Schlüssel des Verborgenen", "ar": "مفاتح الغيب" },
+          "body": { "en": "Everything hidden, from the future to a falling leaf, is opened only by Him.", "de": "Alles Verborgene, von der Zukunft bis zum fallenden Blatt, öffnet allein Er.", "ar": "كل غيب، من المستقبل إلى ورقةٍ تسقط، لا يفتحه إلا هو." }
+        },
+        {
+          "verse": "48:1",
+          "check": "clear conquest",
+          "title": { "en": "A clear opening", "de": "Eine klare Öffnung", "ar": "فتحٌ مبين" },
+          "body": { "en": "According to many commentators, this fath is the Treaty of Hudaybiyya: a peace agreement called a clear victory.", "de": "Nach vielen Kommentatoren ist dieser fatḥ der Vertrag von Ḥudaibiya: ein Friedensabkommen, das ein klarer Sieg genannt wird.", "ar": "يرى كثير من المفسرين أن الفتح هنا صلح الحديبية: صلحٌ سُمّي فتحًا مبينًا." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Some doors in your life feel locked. Knock with dua, with effort and with patience, and remember who holds the keys. Begin with al-Fatiha, the opening.", "de": "Manche Türen in Ihrem Leben scheinen verschlossen. Klopfen Sie an mit Bittgebet, Mühe und Geduld, und denken Sie daran, wer die Schlüssel hält. Beginnen Sie mit al-Fātiḥa, der Eröffnenden.", "ar": "بعض الأبواب في حياتك تبدو مغلقة. اطرقها بالدعاء والسعي والصبر، وتذكّر من يملك المفاتيح. وابدأ بالفاتحة." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-n-f-s",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 20", "de": "Arabische Wurzeln · 20", "ar": "جذور عربية · ٢٠" },
+        "title": { "en": "N-f-s: breath, self and soul", "de": "N-f-s: Atem, Selbst und Seele", "ar": "ن ف س: النَّفَس والنَّفْس" },
+        "sub": { "en": "How one root links breathing, the self and striving for what is precious", "de": "Wie eine Wurzel Atmen, das Selbst und das Streben nach Kostbarem verbindet", "ar": "كيف يجمع جذرٌ واحد بين التنفّس والذات والتنافس في النفيس" },
+        "arabic": "ن ف س"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "N-f-s is linked with breath. Nafas is a breath, nafs is the self, and nafis is something precious. Your self is as close to you as your breathing.", "de": "N-f-s ist mit dem Atem verbunden. Nafas ist ein Atemzug, nafs das Selbst, nafīs etwas Kostbares. Ihr Selbst ist Ihnen so nah wie Ihr Atem.", "ar": "يرتبط الجذر ن ف س بالنَّفَس، فالنَّفَس الهواء الداخل والخارج، والنَّفْس الذات، والنفيس الغالي. فنفسك قريبةٌ منك قرب أنفاسك." }
+        },
+        {
+          "title": { "en": "nafs: self, soul", "de": "nafs: Selbst, Seele", "ar": "النَّفْس" },
+          "arabic": "نَفْس",
+          "body": { "en": "Nafs is the self: the whole person, or the inner life with its desires. The Quran describes it as able to urge evil (12:53), to blame itself (75:2) and to find rest (89:27).", "de": "Nafs ist das Selbst: der ganze Mensch oder das Innere mit seinen Wünschen. Der Koran beschreibt sie als fähig, zum Bösen zu drängen (12:53), sich selbst zu tadeln (75:2) und Ruhe zu finden (89:27).", "ar": "النفس: الذات، أو الباطن بما فيه من رغبات. ويصفها القرآن بأنها قد تأمر بالسوء (يوسف: ٥٣)، وقد تلوم صاحبها (القيامة: ٢)، وقد تطمئن (الفجر: ٢٧)." }
+        },
+        {
+          "title": { "en": "tanaffasa: to breathe", "de": "tanaffasa: atmen", "ar": "تنفّس" },
+          "arabic": "تَنَفَّسَ",
+          "body": { "en": "Tanaffasa means to breathe out. The Quran swears by the morning when it breathes (81:18): dawn pictured as the first breath of the day.", "de": "Tanaffasa bedeutet ausatmen. Der Koran schwört beim Morgen, wenn er atmet (81:18): die Dämmerung als erster Atemzug des Tages.", "ar": "تنفّس: أخرج النَّفَس، ويُقسم القرآن بالصبح حين يتنفّس (التكوير: ١٨)، فكأن الفجر أول أنفاس النهار." }
+        },
+        {
+          "title": { "en": "tanafasa: to compete", "de": "tanāfasa: wetteifern", "ar": "تنافس" },
+          "arabic": "تَنافَسَ",
+          "body": { "en": "Tanafasa means to compete for something precious, as people strive for what is nafis. The Quran names what is truly worth competing for.", "de": "Tanāfasa bedeutet, um etwas Kostbares zu wetteifern, so wie Menschen nach dem Nafīs streben. Der Koran nennt, worum es sich wirklich zu wetteifern lohnt.", "ar": "تنافس: تسابق إلى النفيس، ويبيّن القرآن ما يستحق حقًّا هذا التنافس." }
+        },
+        {
+          "title": { "en": "298 times in the Quran", "de": "298-mal im Koran", "ar": "٢٩٨ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from n-f-s occur 298 times. Nafs alone makes up 295 of them. Breathing appears only once (81:18), and competing in a single verse (83:26).", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel n-f-s 298-mal vor. Allein nafs macht 295 davon aus. Das Atmen erscheint nur einmal (81:18), das Wetteifern in einem einzigen Vers (83:26).", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ن ف س ٢٩٨ مرة، منها ٢٩٥ مرة لكلمة «نفس». ويرد التنفّس مرة واحدة (التكوير: ١٨)، والتنافس في آية واحدة (المطففين: ٢٦)." }
+        },
+        {
+          "verse": "89:27-28",
+          "check": "O reassured soul",
+          "title": { "en": "The soul at peace", "de": "Die Seele, die Ruhe fand", "ar": "النفس المطمئنة" },
+          "body": { "en": "The nafs that has found rest is called back to its Lord, content and accepted.", "de": "Die Seele, die Ruhe gefunden hat, wird zu ihrem Herrn zurückgerufen, zufrieden und angenommen.", "ar": "النفس التي اطمأنت تُدعى إلى ربها راضيةً مقبولة." }
+        },
+        {
+          "verse": "83:26",
+          "check": "let the competitors compete",
+          "title": { "en": "Worth competing for", "de": "Wofür sich Wetteifern lohnt", "ar": "ميدان التنافس" },
+          "body": { "en": "After describing the drink of Paradise, the verse shows where real competition belongs.", "de": "Nach der Beschreibung des Trankes im Paradies zeigt der Vers, wohin echter Wettbewerb gehört.", "ar": "بعد وصف شراب الجنة تشير الآية إلى ميدان التنافس الحقيقي." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Take one slow breath now. The same root gives you breath, self and what is precious. Where is your nafs competing today, and is it worth your breath?", "de": "Atmen Sie jetzt einmal langsam. Dieselbe Wurzel schenkt Atem, Selbst und Kostbares. Worum wetteifert Ihre nafs heute, und ist es Ihren Atem wert?", "ar": "خذ نفَسًا بطيئًا الآن. من الجذر نفسه النَّفَس والنَّفْس والنفيس. في أي شيء تتنافس نفسك اليوم؟ وهل يستحق أنفاسك؟" }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-r-w-h",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 21", "de": "Arabische Wurzeln · 21", "ar": "جذور عربية · ٢١" },
+        "title": { "en": "R-w-h: spirit, wind and relief", "de": "R-w-ḥ: Geist, Wind und Erleichterung", "ar": "ر و ح: الروح والريح والرَّوح" },
+        "sub": { "en": "One root for the breath of life, the moving air and ease after hardship", "de": "Eine Wurzel für den Lebenshauch, die bewegte Luft und die Erleichterung nach der Not", "ar": "جذرٌ واحد لسرّ الحياة والهواء المتحرّك والفرج بعد الشدة" },
+        "arabic": "ر و ح"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "R-w-h is about moving air and ease. Rih is wind, ruh is spirit, rawh is relief, and rayhan is fragrance. You cannot hold any of them, yet you feel each one.", "de": "R-w-ḥ handelt von bewegter Luft und Erleichterung. Rīḥ ist Wind, rūḥ Geist, rauḥ Erleichterung und raiḥān Duft. Nichts davon kann man festhalten, doch man spürt alles.", "ar": "يدل الجذر ر و ح على حركة الهواء والسَّعة: فالريح الهواء، والروح سرّ الحياة، والرَّوح الفرج، والريحان الطيب. كلها لا تُمسك باليد، لكنها تُحسّ." }
+        },
+        {
+          "title": { "en": "ruh: spirit", "de": "rūḥ: Geist", "ar": "الروح" },
+          "arabic": "رُوح",
+          "body": { "en": "Ruh is the spirit. The Quran speaks of Allah breathing of His ruh into Adam (15:29), calls Jibril ar-Ruh (26:193), and says that our knowledge of it is small.", "de": "Rūḥ ist der Geist. Der Koran spricht davon, dass Allah Ādam von Seinem Geist einhauchte (15:29), nennt Jibrīl ar-Rūḥ (26:193) und sagt, dass unser Wissen darüber gering ist.", "ar": "الروح سرّ الحياة، ويذكر القرآن نفخ الروح في آدم (الحجر: ٢٩)، ويسمّي جبريل الروح (الشعراء: ١٩٣)، ويخبر أن علمنا بها قليل." }
+        },
+        {
+          "title": { "en": "rih: wind", "de": "rīḥ: Wind", "ar": "الريح" },
+          "arabic": "رِيح",
+          "body": { "en": "Rih is wind. In the Quran winds drive the clouds and bring good news of rain, and sometimes they carry punishment. According to the corpus, rih is the most frequent form of the root.", "de": "Rīḥ ist der Wind. Im Koran treiben Winde die Wolken und bringen frohe Botschaft vom Regen, manchmal tragen sie Strafe. Laut Corpus ist rīḥ die häufigste Form der Wurzel.", "ar": "الريح الهواء المتحرك، وفي القرآن تسوق الرياح السحاب وتبشّر بالمطر، وقد تحمل العذاب. وهي أكثر صيغ الجذر ورودًا بحسب المدونة." }
+        },
+        {
+          "title": { "en": "rawh: relief", "de": "rauḥ: Erleichterung", "ar": "الرَّوح" },
+          "arabic": "رَوْح",
+          "body": { "en": "Rawh is relief and rest, like a cool breeze after heat. Ya'qub tells his sons never to despair of the rawh of Allah.", "de": "Rauḥ ist Erleichterung und Ruhe, wie eine kühle Brise nach der Hitze. Yaʿqūb sagt seinen Söhnen, sie sollen niemals an Allahs rauḥ verzweifeln.", "ar": "الرَّوح: الراحة والفرج، كنسمةٍ باردة بعد حرّ، وقد أوصى يعقوب عليه السلام بنيه ألا ييأسوا من رَوح الله." }
+        },
+        {
+          "title": { "en": "57 times in the Quran", "de": "57-mal im Koran", "ar": "٥٧ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from r-w-h occur 57 times in the Quran: rih, wind, 29 times, and ruh, spirit, 21 times.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel r-w-ḥ 57-mal im Koran vor: rīḥ, Wind, 29-mal und rūḥ, Geist, 21-mal.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ر و ح في القرآن ٥٧ مرة: «الريح» ٢٩ مرة، و«الروح» ٢١ مرة." }
+        },
+        {
+          "verse": "12:87",
+          "check": "relief from Allah",
+          "title": { "en": "Never despair of relief", "de": "Nie an der Erleichterung verzweifeln", "ar": "لا يأس من الفرج" },
+          "body": { "en": "Said by a father who had lost two sons. Hope here is rawh: air to breathe again.", "de": "Gesagt von einem Vater, der zwei Söhne verloren hatte. Hoffnung ist hier rauḥ: Luft, um wieder zu atmen.", "ar": "قالها أبٌ فقد ابنين، فالرجاء هنا رَوحٌ: هواءٌ يعود به التنفّس." }
+        },
+        {
+          "verse": "17:85",
+          "check": "about the soul",
+          "title": { "en": "A question about the ruh", "de": "Eine Frage nach dem Geist", "ar": "سؤالٌ عن الروح" },
+          "body": { "en": "The answer is humble: some things belong to the command of Allah, and our knowledge is little.", "de": "Die Antwort ist demütig: Manches gehört zum Befehl Allahs, und unser Wissen ist gering.", "ar": "الجواب متواضع: بعض الأمور من أمر الله، وعلمنا قليل." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "In hard times, remember rawh: relief can come like a breeze you did not see coming. Open a window today, breathe deeply, and ask Allah for His ease.", "de": "Denken Sie in schweren Zeiten an rauḥ: Erleichterung kann kommen wie eine Brise, die man nicht kommen sah. Öffnen Sie heute ein Fenster, atmen Sie tief und bitten Sie Allah um Seine Erleichterung.", "ar": "في الشدة تذكّر الرَّوح: قد يأتي الفرج كنسمةٍ لم تتوقعها. افتح نافذةً اليوم، وتنفّس بعمق، واسأل الله فرجه." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-kh-l-q",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 22", "de": "Arabische Wurzeln · 22", "ar": "جذور عربية · ٢٢" },
+        "title": { "en": "Kh-l-q: the root of creation", "de": "Kh-l-q: die Wurzel der Schöpfung", "ar": "خ ل ق: جذر الخلق" },
+        "sub": { "en": "Creating, the Creator, and the character that shapes a person", "de": "Erschaffen, der Schöpfer und der Charakter, der einen Menschen formt", "ar": "الخَلق والخالق، والخُلُق الذي يصوغ الإنسان" },
+        "arabic": "خ ل ق"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "Al-Raghib al-Isfahani explains that kh-l-q first meant to measure and shape something with care. Creation in the Quran is never random: everything is made in due measure (54:49).", "de": "Al-Rāghib al-Iṣfahānī erklärt, dass kh-l-q ursprünglich bedeutete, etwas sorgfältig abzumessen und zu formen. Schöpfung ist im Koran nie zufällig: Alles ist nach Maß gemacht (54:49).", "ar": "يذكر الراغب الأصفهاني أن أصل الجذر خ ل ق التقدير المستقيم. والخلق في القرآن ليس عبثًا، فكل شيء مخلوقٌ بقدر (القمر: ٤٩)." }
+        },
+        {
+          "title": { "en": "khalaqa: to create", "de": "khalaqa: erschaffen", "ar": "خلق" },
+          "arabic": "خَلَقَ",
+          "body": { "en": "Khalaqa is the verb and the most frequent form of the root. In the Quran, bringing into being from nothing belongs to Allah alone.", "de": "Khalaqa ist das Verb und die häufigste Form der Wurzel. Im Koran gehört das Erschaffen aus dem Nichts allein Allah.", "ar": "خلق هو الفعل، وهو أكثر صيغ الجذر ورودًا، والإيجاد من العدم في القرآن لله وحده." }
+        },
+        {
+          "title": { "en": "al-Khaliq: the Creator", "de": "al-Khāliq: der Schöpfer", "ar": "الخالق" },
+          "arabic": "الخالِق",
+          "body": { "en": "Al-Khaliq is a name of Allah. Its intensive form, al-Khallaq, the One who creates again and again, also appears in the Quran (15:86).", "de": "Al-Khāliq ist ein Name Allahs. Auch die Steigerungsform al-Khallāq, der immer wieder Erschaffende, kommt im Koran vor (15:86).", "ar": "الخالق من أسماء الله، وترد في القرآن صيغة المبالغة «الخلّاق» أيضًا (الحجر: ٨٦)." }
+        },
+        {
+          "title": { "en": "khuluq: character", "de": "khuluq: Charakter", "ar": "الخُلُق" },
+          "arabic": "خُلُق",
+          "body": { "en": "Khuluq is character, the inner shape of a person. Creation and character share a root: your manners are part of how you were made, and part of what you shape.", "de": "Khuluq ist der Charakter, die innere Gestalt eines Menschen. Schöpfung und Charakter teilen eine Wurzel: Ihre Umgangsformen sind Teil dessen, wie Sie geschaffen sind, und Teil dessen, was Sie formen.", "ar": "الخُلُق: الطبع والسجيّة، أي صورة الإنسان الباطنة. فالخَلق والخُلُق من جذر واحد: أخلاقك من خِلقتك، ومما تصوغه بنفسك." }
+        },
+        {
+          "title": { "en": "261 times in the Quran", "de": "261-mal im Koran", "ar": "٢٦١ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from kh-l-q occur 261 times in the Quran. The verb khalaqa alone makes up 184 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel kh-l-q 261-mal im Koran vor. Allein das Verb khalaqa macht 184 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر خ ل ق في القرآن ٢٦١ مرة، منها ١٨٤ مرة للفعل «خلق» وحده." }
+        },
+        {
+          "verse": "96:1-2",
+          "check": "Created man",
+          "title": { "en": "Creation in the first revelation", "de": "Schöpfung in der ersten Offenbarung", "ar": "الخلق في أول الوحي" },
+          "body": { "en": "The first revealed verses use this root twice: for creation as a whole, and for the creation of the human being.", "de": "Die ersten offenbarten Verse verwenden diese Wurzel zweimal: für die Schöpfung als Ganzes und für die Erschaffung des Menschen.", "ar": "تستعمل أوائل الآيات نزولًا هذا الجذر مرتين: للخلق عمومًا، ولخلق الإنسان خصوصًا." }
+        },
+        {
+          "verse": "68:4",
+          "check": "great moral character",
+          "title": { "en": "A great character", "de": "Ein großartiger Charakter", "ar": "خُلُقٌ عظيم" },
+          "body": { "en": "The Prophet is praised with khuluq: the root of creation, here describing his character.", "de": "Der Prophet wird mit khuluq gelobt: die Wurzel der Schöpfung, hier für seinen Charakter.", "ar": "يُثنى على النبي ﷺ بالخُلُق: الجذر الذي منه الخَلق، يصف هنا أخلاقه." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "You did not choose how you were created, but you help shape your character every day. Which small good habit could you build this week?", "de": "Wie Sie erschaffen wurden, haben Sie nicht gewählt, doch Ihren Charakter formen Sie jeden Tag mit. Welche kleine gute Gewohnheit könnten Sie diese Woche aufbauen?", "ar": "لم تختر خِلقتك، لكنك تشارك في صوغ خُلُقك كل يوم. أيّ عادةٍ حسنة صغيرة تبنيها هذا الأسبوع؟" }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "al-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an" }
+      ]
+    },
+    {
+      "id": "arabic-roots-ayn-b-d",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 23", "de": "Arabische Wurzeln · 23", "ar": "جذور عربية · ٢٣" },
+        "title": { "en": "'-b-d: the root of worship", "de": "ʿ-b-d: die Wurzel der Anbetung", "ar": "ع ب د: جذر العبادة" },
+        "sub": { "en": "Servant, worship, and a road made smooth", "de": "Diener, Anbetung und ein geebneter Weg", "ar": "العبد والعبادة والطريق المعبَّد" },
+        "arabic": "ع ب د"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "'-b-d is about humility and devotion. A road walked on until it is smooth is called mu'abbad in Arabic. Worship makes the heart like that road: open and easy for good.", "de": "ʿ-b-d handelt von Demut und Hingabe. Ein Weg, der so oft begangen wurde, dass er eben ist, heißt im Arabischen muʿabbad. Anbetung macht das Herz wie diesen Weg: offen und leicht für das Gute.", "ar": "يدل الجذر ع ب د على الذلّ والخضوع، ويُقال للطريق المذلَّل بكثرة الوطء: طريقٌ معبَّد. والعبادة تجعل القلب كذلك: ليّنًا سهلًا للخير." }
+        },
+        {
+          "title": { "en": "'abd: servant", "de": "ʿabd: Diener", "ar": "العبد" },
+          "arabic": "عَبْد",
+          "body": { "en": "'Abd is a servant. Being a servant of Allah is a great honour in the Quran: on the night of the Isra' the Prophet is called His servant (17:1).", "de": "ʿAbd ist ein Diener. Diener Allahs zu sein ist im Koran eine große Ehre: In der Nacht der Isrāʾ wird der Prophet Sein Diener genannt (17:1).", "ar": "العبد: الخاضع المملوك، والعبودية لله شرفٌ عظيم في القرآن، فقد وُصف النبي ﷺ ليلة الإسراء بأنه عبده (الإسراء: ١)." }
+        },
+        {
+          "title": { "en": "'abada: to worship", "de": "ʿabada: anbeten", "ar": "عبد" },
+          "arabic": "عَبَدَ",
+          "body": { "en": "'Abada means to worship. The Quran sums up the purpose of creating jinn and humans with this verb (51:56).", "de": "ʿAbada bedeutet anbeten. Der Koran fasst den Zweck der Erschaffung von Dschinn und Menschen mit diesem Verb zusammen (51:56).", "ar": "عبد: أطاع وخضع تعبّدًا، وبهذا الفعل يلخّص القرآن الغاية من خلق الجن والإنس (الذاريات: ٥٦)." }
+        },
+        {
+          "title": { "en": "'ibada: worship", "de": "ʿibāda: Anbetung", "ar": "العبادة" },
+          "arabic": "عِبادَة",
+          "body": { "en": "'Ibada is worship in its widest sense: prayer and fasting, and also every good deed done for the sake of Allah.", "de": "ʿIbāda ist Anbetung im weitesten Sinn: Gebet und Fasten, aber auch jede gute Tat, die um Allahs willen geschieht.", "ar": "العبادة بمعناها الواسع: الصلاة والصيام، وكل عمل صالح يُبتغى به وجه الله." }
+        },
+        {
+          "title": { "en": "275 times in the Quran", "de": "275-mal im Koran", "ar": "٢٧٥ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from '-b-d occur 275 times in the Quran. The noun 'abd, servant, makes up 131 of them.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel ʿ-b-d 275-mal im Koran vor. Das Nomen ʿabd, Diener, macht 131 davon aus.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ع ب د في القرآن ٢٧٥ مرة، منها ١٣١ مرة لكلمة «عبد»." }
+        },
+        {
+          "verse": "1:5",
+          "check": "we worship",
+          "title": { "en": "Him alone", "de": "Allein Ihm", "ar": "إياك وحدك" },
+          "body": { "en": "In every prayer you say na'budu, 'we worship'. The plural joins you with everyone who prays.", "de": "In jedem Gebet sagen Sie naʿbudu, „wir beten an“. Die Mehrzahl verbindet Sie mit allen, die beten.", "ar": "في كل صلاة تقول «نعبد» بصيغة الجمع، فتصلك بكل المصلّين." }
+        },
+        {
+          "verse": "2:186",
+          "check": "My servants",
+          "title": { "en": "When My servants ask", "de": "Wenn Meine Diener fragen", "ar": "إذا سأل العباد" },
+          "body": { "en": "Allah calls people 'My servants' and answers them directly, without the usual 'say'. Servanthood here means closeness.", "de": "Allah nennt die Menschen „Meine Diener“ und antwortet ihnen direkt, ohne das sonst übliche „Sag“. Dienerschaft bedeutet hier Nähe.", "ar": "يسمّي الله الناسَ «عبادي» ويجيبهم مباشرة دون «قل» المعتادة، فالعبودية هنا قُرب." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Worship is not only what happens on the prayer mat. Choose one ordinary task today, your work, a meal or a kind word, and do it with the intention of 'ibada.", "de": "Anbetung geschieht nicht nur auf dem Gebetsteppich. Wählen Sie heute eine gewöhnliche Aufgabe, Ihre Arbeit, eine Mahlzeit oder ein freundliches Wort, und tun Sie sie mit der Absicht der ʿibāda.", "ar": "العبادة لا تقتصر على سجادة الصلاة. اختر اليوم عملًا عاديًا، كعملك أو طعامك أو كلمةٍ طيبة، وانوِ به العبادة." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    },
+    {
+      "id": "arabic-roots-w-l-y",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 24", "de": "Arabische Wurzeln · 24", "ar": "جذور عربية · ٢٤" },
+        "title": { "en": "W-l-y: the root of closeness", "de": "W-l-y: die Wurzel der Nähe", "ar": "و ل ي: جذر الولاية" },
+        "sub": { "en": "Friend, protector, ally: who stands close to you, and whom you stand close to", "de": "Freund, Beschützer, Verbündeter: wer Ihnen nahesteht und wem Sie nahestehen", "ar": "الوليّ والمولى والنصير: من يقرب منك، ومن تقرب منه" },
+        "arabic": "و ل ي"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "W-l-y means to be right next to something, or to follow directly after it. From closeness come friendship, protection and responsibility: the one closest to you takes care of you.", "de": "W-l-y bedeutet, unmittelbar neben etwas zu sein oder direkt darauf zu folgen. Aus Nähe entstehen Freundschaft, Schutz und Verantwortung: Wer Ihnen am nächsten ist, sorgt für Sie.", "ar": "يدل الجذر و ل ي على القرب والتتابع، ومنه الصداقة والنصرة وتولّي الأمر، فالأقرب إليك هو من يتولّى رعايتك." }
+        },
+        {
+          "title": { "en": "wali: ally, protector", "de": "walī: Verbündeter, Beschützer", "ar": "الوليّ" },
+          "arabic": "وَلِيّ",
+          "body": { "en": "A wali is a close friend and protector. Al-Wali is a name of Allah, and those who believe and are mindful of Him are called the awliya' of Allah: those close to Him.", "de": "Ein walī ist ein enger Freund und Beschützer. Al-Walī ist ein Name Allahs, und wer glaubt und Ihn fürchtet, gehört zu den auliyāʾ Allahs: den Ihm Nahen.", "ar": "الوليّ: الصديق القريب والنصير، والوليّ من أسماء الله، ويُسمّى المؤمنون المتقون أولياء الله، أي المقرّبين إليه." }
+        },
+        {
+          "title": { "en": "mawla: patron, protector", "de": "maulā: Schutzherr, Helfer", "ar": "المولى" },
+          "arabic": "مَوْلَى",
+          "body": { "en": "Mawla has many meanings: master, protector, helper, and also a freed person bound to a family. Said of Allah, it means the Protector you can always rely on (8:40).", "de": "Maulā hat viele Bedeutungen: Herr, Beschützer, Helfer, auch ein Freigelassener, der einer Familie verbunden ist. Für Allah bedeutet es den Beschützer, auf den man sich immer verlassen kann (8:40).", "ar": "للمولى معانٍ كثيرة: السيد والناصر والمعين، والعتيق المرتبط بأهل بيت. وإذا وُصف الله به فمعناه الناصر الذي يُعتمد عليه دائمًا (الأنفال: ٤٠)." }
+        },
+        {
+          "title": { "en": "tawalla: to ally, or to turn away", "de": "tawallā: sich anschließen oder abwenden", "ar": "تولّى" },
+          "arabic": "تَوَلَّى",
+          "body": { "en": "Tawalla can mean to take someone as your ally (5:56), or to turn your back. The same closeness can be chosen or refused.", "de": "Tawallā kann heißen, jemanden zum Verbündeten zu nehmen (5:56), oder sich abzuwenden. Dieselbe Nähe kann man wählen oder ablehnen.", "ar": "تولّى: اتخذه وليًّا (المائدة: ٥٦)، أو أعرض وأدبر. فالقرب نفسه يُختار أو يُرفض." }
+        },
+        {
+          "title": { "en": "232 times in the Quran", "de": "232-mal im Koran", "ar": "٢٣٢ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from w-l-y occur 232 times in the Quran. Wali makes up 86 of them, and the verb tawalla 78.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel w-l-y 232-mal im Koran vor. Walī macht 86 davon aus, das Verb tawallā 78.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر و ل ي في القرآن ٢٣٢ مرة، منها ٨٦ مرة لكلمة «وليّ» و٧٨ مرة للفعل «تولّى»." }
+        },
+        {
+          "verse": "2:257",
+          "check": "Ally of those who believe",
+          "title": { "en": "From darkness into light", "de": "Aus der Finsternis ins Licht", "ar": "من الظلمة إلى النور" },
+          "body": { "en": "Allah as wali does what a true friend does: He takes you by the hand out of darkness.", "de": "Allah als walī tut, was ein wahrer Freund tut: Er führt aus der Finsternis heraus.", "ar": "الله وليّ المؤمنين يفعل ما يفعله الصديق الحق: يأخذ بأيديهم من الظلمة إلى النور." }
+        },
+        {
+          "verse": "10:62",
+          "check": "allies of Allah",
+          "title": { "en": "No fear, no grief", "de": "Keine Furcht, keine Trauer", "ar": "لا خوف ولا حزن" },
+          "body": { "en": "Many commentators explain: no fear for what lies ahead, and no grief for what lies behind.", "de": "Viele Kommentatoren erklären: keine Furcht vor dem, was kommt, und keine Trauer über das, was war.", "ar": "يقول كثير من المفسرين: لا خوف مما يستقبلون، ولا حزن على ما مضى." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Closeness to Allah grows like any friendship: through time spent together. A few quiet minutes with the Quran each day are a good place to begin.", "de": "Nähe zu Allah wächst wie jede Freundschaft: durch gemeinsame Zeit. Ein paar stille Minuten täglich mit dem Koran sind ein guter Anfang.", "ar": "القرب من الله يُبنى كما تُبنى الصداقة: بالوقت المشترك. ودقائق هادئة مع القرآن كل يوم بدايةٌ طيبة." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" },
+        { "label": "al-Raghib al-Isfahani, al-Mufradat fi Gharib al-Qur'an" }
+      ]
+    },
+    {
+      "id": "arabic-roots-j-n-n",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Arabic roots · 25", "de": "Arabische Wurzeln · 25", "ar": "جذور عربية · ٢٥" },
+        "title": { "en": "J-n-n: the root of the hidden", "de": "J-n-n: die Wurzel des Verborgenen", "ar": "ج ن ن: جذر الستر والخفاء" },
+        "sub": { "en": "Garden, jinn, shield and the unborn child: all things that are covered", "de": "Garten, Dschinn, Schild und das ungeborene Kind: alles, was verhüllt ist", "ar": "الجنة والجن والجُنّة والجنين: كلها مستورة" },
+        "arabic": "ج ن ن"
+      },
+      "slides": [
+        {
+          "title": { "en": "The core meaning", "de": "Die Grundbedeutung", "ar": "المعنى الأصلي" },
+          "body": { "en": "J-n-n means to cover and to hide. Many words of this root describe something concealed from view: by leaves, by darkness, by a shield or by the womb.", "de": "J-n-n bedeutet bedecken und verbergen. Viele Wörter dieser Wurzel beschreiben etwas, das dem Blick entzogen ist: durch Blätter, Dunkelheit, einen Schild oder den Mutterleib.", "ar": "يدل الجذر ج ن ن على الستر والخفاء، وكثير من كلماته تصف ما استتر عن العين: بالشجر أو الظلام أو التُّرس أو الرحم." }
+        },
+        {
+          "title": { "en": "janna: garden, Paradise", "de": "janna: Garten, Paradies", "ar": "الجنة" },
+          "arabic": "جَنَّة",
+          "body": { "en": "Janna is a garden so dense that its trees cover the ground. The Quran uses it for earthly gardens and for Paradise, whose reality is hidden from us now.", "de": "Janna ist ein Garten, so dicht, dass seine Bäume den Boden bedecken. Der Koran nennt so irdische Gärten und das Paradies, dessen Wirklichkeit uns jetzt verborgen ist.", "ar": "الجنة: البستان الكثيف الذي تستر أشجاره الأرض، ويطلقها القرآن على بساتين الدنيا وعلى دار النعيم التي حقيقتها غيبٌ عنّا الآن." }
+        },
+        {
+          "title": { "en": "jinn: hidden beings", "de": "jinn: verborgene Wesen", "ar": "الجن" },
+          "arabic": "جِنّ",
+          "body": { "en": "The jinn are beings created from fire (55:15) who are hidden from human sight. Their name says exactly that.", "de": "Die Dschinn sind Wesen aus Feuer (55:15), die dem menschlichen Blick verborgen sind. Ihr Name sagt genau das.", "ar": "الجن خلقٌ من نار (الرحمن: ١٥) مستترون عن أعين البشر، واسمهم يدل على ذلك." }
+        },
+        {
+          "title": { "en": "junna and janin", "de": "junna und janīn", "ar": "الجُنّة والجنين" },
+          "arabic": "جُنَّة · جَنِين",
+          "body": { "en": "A junna is a shield that covers the fighter (58:16). A janin is a child hidden in the womb; the Quran uses its plural, ajinna, in 53:32.", "de": "Eine junna ist ein Schild, der den Kämpfer deckt (58:16). Ein janīn ist ein im Mutterleib verborgenes Kind; der Koran verwendet die Mehrzahl ajinna in 53:32.", "ar": "الجُنّة: التُّرس الذي يستر المقاتل (المجادلة: ١٦)، والجنين: الولد المستور في الرحم، وقد ورد جمعه «أجنّة» في سورة النجم (٣٢)." }
+        },
+        {
+          "title": { "en": "201 times in the Quran", "de": "201-mal im Koran", "ar": "٢٠١ مرة في القرآن" },
+          "body": { "en": "According to the Quranic Arabic Corpus, words from j-n-n occur 201 times in the Quran. Janna, garden, makes up 147 of them, and jinn 22.", "de": "Laut Quranic Arabic Corpus kommen Wörter der Wurzel j-n-n 201-mal im Koran vor. Janna, Garten, macht 147 davon aus, jinn 22.", "ar": "بحسب مدونة القرآن اللغوية (Quranic Arabic Corpus) ترد كلمات الجذر ج ن ن في القرآن ٢٠١ مرة، منها ١٤٧ مرة لكلمة «جنة» و٢٢ مرة لكلمة «جن»." }
+        },
+        {
+          "verse": "6:76",
+          "check": "night covered him",
+          "title": { "en": "Covered by the night", "de": "Von der Nacht bedeckt", "ar": "حين ستره الليل" },
+          "body": { "en": "Here the verb janna describes darkness covering Ibrahim: the root in its original sense.", "de": "Hier beschreibt das Verb janna, wie die Dunkelheit Ibrāhīm bedeckte: die Wurzel in ihrer Grundbedeutung.", "ar": "يصف الفعل «جَنّ» هنا ستر الليل لإبراهيم عليه السلام، وهو الجذر بمعناه الأصلي." }
+        },
+        {
+          "verse": "55:46",
+          "check": "two gardens",
+          "title": { "en": "Two gardens", "de": "Zwei Gärten", "ar": "جنّتان" },
+          "body": { "en": "For the one who stands in awe of his Lord, the reward is a garden, and then another.", "de": "Für den, der vor seinem Herrn in Ehrfurcht steht, ist der Lohn ein Garten und noch einer.", "ar": "لمن هاب الوقوف بين يدي ربه جزاءٌ: جنةٌ ثم أخرى." }
+        },
+        {
+          "title": { "en": "A reflection", "de": "Zum Nachdenken", "ar": "وقفة تأمل" },
+          "body": { "en": "Much of what matters is hidden now: Paradise, the angels, the future, the good you do in secret. Do one good deed today that no one else will see.", "de": "Vieles, was zählt, ist jetzt verborgen: das Paradies, die Engel, die Zukunft, das Gute, das Sie im Stillen tun. Tun Sie heute eine gute Tat, die niemand sonst sieht.", "ar": "كثيرٌ مما يهمّ مستورٌ الآن: الجنة والملائكة والمستقبل، والخير الذي تعمله في السر. اعمل اليوم خيرًا لا يراه أحد." }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus", "url": "https://corpus.quran.com" }
+      ]
+    }
+  ]
+}

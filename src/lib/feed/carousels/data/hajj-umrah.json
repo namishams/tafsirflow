@@ -1,0 +1,391 @@
+{
+  "series": "hajj-umrah",
+  "label": { "en": "Hajj and Umrah", "de": "Hadsch und Umra", "ar": "الحج والعمرة" },
+  "topic": "holy",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "hajj-umrah-umrah-step-by-step",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Hajj and Umrah · 1", "de": "Hadsch und Umra · 1", "ar": "الحج والعمرة · ١" },
+        "title": { "en": "Umrah step by step", "de": "Umra Schritt für Schritt", "ar": "العمرة خطوة بخطوة" },
+        "sub": { "en": "Four steps, from the miqat to the last snip of hair", "de": "Vier Schritte, vom Miqat bis zum letzten Haarschnitt", "ar": "أربع خطوات من الميقات إلى الحلق أو التقصير" },
+        "arabic": "العُمرة"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:1773",
+          "check": "expiation for the sins",
+          "title": { "en": "Why Umrah", "de": "Warum Umra", "ar": "لماذا العمرة؟" },
+          "body": { "en": "Each Umrah wipes away the sins since the last one, and it can be made in almost any month.", "de": "Jede Umra tilgt die Sünden seit der letzten, und sie ist in fast jedem Monat möglich.", "ar": "تمحو العمرة ذنوبًا مضت منذ العمرة السابقة، وتُؤدّى في عامة شهور السنة." }
+        },
+        {
+          "title": { "en": "The four steps", "de": "Die vier Schritte", "ar": "الخطوات الأربع" },
+          "list": {
+            "en": ["Ihram at the miqat, with intention and talbiyah", "Tawaf: seven circuits around the Ka'bah", "Sa'i: seven trips between Safa and Marwah", "Shaving or shortening the hair"],
+            "de": ["Ihram am Miqat, mit Absicht und Talbiya", "Tawaf: sieben Umrundungen der Kaaba", "Sai: sieben Gänge zwischen Safa und Marwa", "Rasieren oder Kürzen der Haare"],
+            "ar": ["الإحرام من الميقات بالنية والتلبية", "الطواف: سبعة أشواط حول الكعبة", "السعي: سبعة أشواط بين الصفا والمروة", "الحلق أو التقصير"]
+          },
+          "body": { "en": "Most schools count ihram, tawaf and sa'i as pillars; cutting the hair ends the state of ihram.", "de": "Die meisten Schulen zählen Ihram, Tawaf und Sai zu den Säulen; das Schneiden der Haare beendet den Ihram.", "ar": "تعدّ أكثر المذاهب الإحرام والطواف والسعي أركانًا، وبالحلق أو التقصير يتحلل المعتمر." }
+        },
+        {
+          "dua": "hisn:115:0",
+          "check": "Here I am O Allah",
+          "title": { "en": "1. Ihram and talbiyah", "de": "1. Ihram und Talbiya", "ar": "١. الإحرام والتلبية" },
+          "body": { "en": "After entering ihram at the miqat, repeat the talbiyah often until you begin tawaf.", "de": "Nach dem Eintritt in den Ihram am Miqat wiederholen Sie die Talbiya oft, bis Sie mit dem Tawaf beginnen.", "ar": "بعد الإحرام من الميقات أكثر من التلبية حتى تبدأ الطواف." }
+        },
+        {
+          "hadith": "bukhari:1647",
+          "check": "two-rak`at prayer",
+          "title": { "en": "2. Tawaf and two rak'at", "de": "2. Tawaf und zwei Rakaat", "ar": "٢. الطواف وركعتاه" },
+          "body": { "en": "Seven circuits, then two rak'at behind Maqam Ibrahim if you can, then a drink of Zamzam.", "de": "Sieben Umrundungen, dann zwei Rakaat hinter dem Maqam Ibrahim, wenn möglich, dann ein Schluck Zamzam.", "ar": "سبعة أشواط، ثم ركعتان خلف مقام إبراهيم إن تيسر، ثم شربة من زمزم." }
+        },
+        {
+          "dua": "hisn:117:0",
+          "check": "best in this life",
+          "title": { "en": "Between the Yemeni corner and the Stone", "de": "Zwischen der jemenitischen Ecke und dem Stein", "ar": "بين الركن اليماني والحجر" },
+          "body": { "en": "On each circuit, many recite this dua on the stretch before the Black Stone.", "de": "In jeder Runde sprechen viele dieses Bittgebet auf dem Abschnitt vor dem Schwarzen Stein.", "ar": "يدعو كثيرون بهذا الدعاء في كل شوط قبل الوصول إلى الحجر الأسود." }
+        },
+        {
+          "title": { "en": "3. Sa'i", "de": "3. Sai", "ar": "٣. السعي" },
+          "body": { "en": "Climb Safa, face the Ka'bah, praise Allah and make dua. Walk to Marwah and do the same: that is one trip. The seventh ends at Marwah. Men hurry between the green lights.", "de": "Steigen Sie auf Safa, wenden Sie sich zur Kaaba, preisen Sie Allah und bitten Sie. Gehen Sie nach Marwa und tun Sie dasselbe: Das ist ein Gang. Der siebte endet an Marwa. Männer eilen zwischen den grünen Lichtern.", "ar": "اصعد الصفا واستقبل الكعبة واحمد الله وادعُ، ثم امشِ إلى المروة وافعل مثل ذلك، فهذا شوط. والسابع ينتهي بالمروة، ويسرع الرجال بين العلمين الأخضرين." }
+        },
+        {
+          "hadith": "bukhari:1727",
+          "check": "Be merciful to those who have their head shaved",
+          "title": { "en": "4. Shaving or shortening", "de": "4. Rasieren oder Kürzen", "ar": "٤. الحلق أو التقصير" },
+          "body": { "en": "For men shaving is better, shortening is also valid. Women cut about a fingertip's length.", "de": "Für Männer ist Rasieren besser, Kürzen ist ebenfalls gültig. Frauen schneiden etwa eine Fingerkuppe lang ab.", "ar": "الحلق للرجال أفضل والتقصير جائز، وتقصّر المرأة قدر أنملة." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Qudama, al-Mughni, Book of Hajj: the description of Umrah" },
+        { "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, Book of Hajj" }
+      ]
+    },
+    {
+      "id": "hajj-umrah-hajj-day-by-day",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Hajj and Umrah · 2", "de": "Hadsch und Umra · 2", "ar": "الحج والعمرة · ٢" },
+        "title": { "en": "Hajj day by day: 8 to 13 Dhul-Hijjah", "de": "Hadsch Tag für Tag: 8. bis 13. Dhul-Hiddscha", "ar": "الحج يومًا بيوم: من ٨ إلى ١٣ ذي الحجة" },
+        "sub": { "en": "Mina, Arafah, Muzdalifah and back to Mina: the route of the pilgrim", "de": "Mina, Arafa, Muzdalifa und zurück nach Mina: der Weg der Pilger", "ar": "منى وعرفة ومزدلفة ثم منى: طريق الحاج" },
+        "arabic": "مَناسك الحج"
+      },
+      "slides": [
+        {
+          "verse": "3:97",
+          "check": "pilgrimage to the House",
+          "title": { "en": "A duty for those who are able", "de": "Eine Pflicht für die, die es vermögen", "ar": "فريضة على المستطيع" },
+          "body": { "en": "Once in a lifetime, for every adult Muslim with the health and the means to go.", "de": "Einmal im Leben, für jeden erwachsenen Muslim mit der Gesundheit und den Mitteln dazu.", "ar": "مرة في العمر على كل مسلم بالغ يملك الصحة والقدرة." }
+        },
+        {
+          "title": { "en": "8 Dhul-Hijjah: the day of Tarwiyah", "de": "8. Dhul-Hiddscha: der Tag der Tarwiya", "ar": "٨ ذو الحجة: يوم التروية" },
+          "body": { "en": "Pilgrims in ihram go to Mina; those on tamattu' enter ihram now. There they pray Dhuhr, Asr, Maghrib, Isha and the next Fajr, each in its own time, and spend the night.", "de": "Die Pilger im Ihram gehen nach Mina; wer Tamattu macht, tritt jetzt in den Ihram ein. Dort beten sie Zuhr, Asr, Maghrib, Ischa und das nächste Fadschr, jedes zu seiner Zeit, und übernachten.", "ar": "يتوجه الحجاج محرمين إلى منى، ويُحرم المتمتع في هذا اليوم، فيصلّون فيها الظهر والعصر والمغرب والعشاء وفجر الغد، كل صلاة في وقتها، ويبيتون بها." }
+        },
+        {
+          "title": { "en": "9 Dhul-Hijjah: Arafah", "de": "9. Dhul-Hiddscha: Arafa", "ar": "٩ ذو الحجة: عرفة" },
+          "body": { "en": "After sunrise, pilgrims move to Arafah. From noon until sunset they stand in dua and remembrance. This standing is the heart of Hajj: whoever misses it has missed Hajj.", "de": "Nach Sonnenaufgang ziehen die Pilger nach Arafa. Vom Mittag bis Sonnenuntergang verweilen sie in Bittgebet und Gedenken. Dieses Verweilen ist das Herz des Hadsch: Wer es verpasst, hat den Hadsch verpasst.", "ar": "بعد طلوع الشمس يسير الحجاج إلى عرفة، ومن الزوال إلى الغروب يقفون داعين ذاكرين. والوقوف بعرفة ركن الحج الأعظم، ومن فاته فاته الحج." }
+        },
+        {
+          "dua": "hisn:120:0",
+          "check": "faced the Qiblah",
+          "title": { "en": "Night of the 10th: Muzdalifah", "de": "Nacht zum 10.: Muzdalifa", "ar": "ليلة العاشر: مزدلفة" },
+          "body": { "en": "After sunset: Maghrib and Isha together, a night under the sky, then dhikr at dawn before moving on.", "de": "Nach Sonnenuntergang: Maghrib und Ischa zusammen, eine Nacht unter freiem Himmel, dann Gedenken im Morgengrauen vor dem Aufbruch.", "ar": "بعد الغروب: المغرب والعشاء جمعًا، ومبيتٌ تحت السماء، ثم ذكرٌ عند الفجر قبل المسير." }
+        },
+        {
+          "title": { "en": "10 Dhul-Hijjah: the Day of Sacrifice", "de": "10. Dhul-Hiddscha: der Opfertag", "ar": "١٠ ذو الحجة: يوم النحر" },
+          "list": {
+            "en": ["Stone Jamrat al-Aqabah with seven pebbles", "Offer the sacrifice if it is due", "Shave or shorten the hair", "Tawaf al-Ifadah, with sa'i if still due"],
+            "de": ["Bewerfen Sie die Dschamrat al-Aqaba mit sieben Steinchen", "Bringen Sie das Opfer dar, falls es fällig ist", "Rasieren oder kürzen Sie die Haare", "Tawaf al-Ifada, mit Sai, falls noch fällig"],
+            "ar": ["رمي جمرة العقبة بسبع حصيات", "ذبح الهدي إن وجب", "الحلق أو التقصير", "طواف الإفاضة، والسعي إن بقي"]
+          },
+          "body": { "en": "After the first of these steps most restrictions end; marital relations only after Tawaf al-Ifadah.", "de": "Nach den ersten dieser Schritte enden die meisten Verbote; eheliche Beziehungen erst nach dem Tawaf al-Ifada.", "ar": "بعد أوائل هذه الأعمال تحلّ أكثر المحظورات، ولا تحل المعاشرة إلا بعد طواف الإفاضة." }
+        },
+        {
+          "hadith": "bukhari:84",
+          "check": "There is no harm in that",
+          "title": { "en": "If the order changes", "de": "Wenn die Reihenfolge abweicht", "ar": "إذا اختلف الترتيب" },
+          "body": { "en": "Asked about rites done out of order on this day, he made it easy. Schools differ on whether an offering is due.", "de": "Gefragt nach Riten, die an diesem Tag in anderer Reihenfolge vollzogen wurden, machte er es leicht. Ob ein Opfer fällig wird, ist umstritten.", "ar": "سُئل عن تقديم بعض أعمال هذا اليوم على بعض فيسّر، ويختلف العلماء في وجوب الدم." }
+        },
+        {
+          "dua": "hisn:121:0",
+          "check": "each pebble",
+          "title": { "en": "11 to 13 Dhul-Hijjah: days in Mina", "de": "11. bis 13. Dhul-Hiddscha: Tage in Mina", "ar": "١١ إلى ١٣ ذي الحجة: أيام منى" },
+          "body": { "en": "Each day after noon: three jamarat, seven pebbles each, with takbir and a pause for dua after the first two.", "de": "Jeden Tag nach dem Mittag: drei Dschamarat, je sieben Steinchen, mit Takbir und einer Pause für Bittgebete nach den ersten beiden.", "ar": "كل يوم بعد الزوال: ثلاث جمرات، سبع حصيات لكل منها مع التكبير، ووقفة للدعاء بعد الأوليين." }
+        },
+        {
+          "verse": "2:203",
+          "check": "hastens",
+          "title": { "en": "Leave on the 12th or stay to the 13th", "de": "Am 12. aufbrechen oder bis zum 13. bleiben", "ar": "المغادرة في ١٢ أو البقاء إلى ١٣" },
+          "body": { "en": "Both are allowed. Before travelling home, pilgrims perform the farewell tawaf.", "de": "Beides ist erlaubt. Vor der Heimreise vollziehen die Pilger den Abschieds-Tawaf.", "ar": "كلاهما جائز، وقبل السفر يطوف الحاج طواف الوداع." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Qudama, al-Mughni, Book of Hajj" },
+        { "label": "Ibn Rushd, Bidayat al-Mujtahid, Book of Hajj" }
+      ]
+    },
+    {
+      "id": "hajj-umrah-ihram",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Hajj and Umrah · 3", "de": "Hadsch und Umra · 3", "ar": "الحج والعمرة · ٣" },
+        "title": { "en": "Ihram and its rules", "de": "Ihram und seine Regeln", "ar": "الإحرام وأحكامه" },
+        "sub": { "en": "The sacred state of the pilgrim: what changes and what is forbidden", "de": "Der geweihte Zustand der Pilger: was sich ändert und was verboten ist", "ar": "حال الحاج المحرم: ما الذي يتغير وما الذي يُحظر" },
+        "arabic": "الإحرام"
+      },
+      "slides": [
+        {
+          "title": { "en": "What ihram is", "de": "Was Ihram ist", "ar": "ما الإحرام؟" },
+          "body": { "en": "Ihram is the sacred state a pilgrim enters with the intention of Hajj or Umrah. The Hanafi school joins the intention with the talbiyah. From then on, some normally permitted things are forbidden.", "de": "Ihram ist der geweihte Zustand, in den Pilger mit der Absicht zu Hadsch oder Umra eintreten. Die Hanafiten verbinden die Absicht mit der Talbiya. Ab dann sind manche sonst erlaubte Dinge verboten.", "ar": "الإحرام حالٌ يدخلها الحاج أو المعتمر بنية النسك، ويقرن الحنفية النية بالتلبية. ومن حينها يحرم عليه بعض ما كان مباحًا." }
+        },
+        {
+          "hadith": "bukhari:1524",
+          "check": "Yalamlam",
+          "title": { "en": "The miqat: where ihram begins", "de": "Der Miqat: wo der Ihram beginnt", "ar": "الميقات: حيث يبدأ الإحرام" },
+          "body": { "en": "Pilgrims enter ihram at or before these points. Those flying do so before the plane passes level with a miqat.", "de": "Pilger treten an oder vor diesen Punkten in den Ihram ein. Wer fliegt, tut dies, bevor das Flugzeug auf Höhe eines Miqat ist.", "ar": "يُحرم الحاج من هذه المواقيت أو قبلها، والمسافر جوًّا يُحرم قبل أن تحاذي الطائرة الميقات." }
+        },
+        {
+          "title": { "en": "Getting ready", "de": "Vorbereitung", "ar": "الاستعداد" },
+          "list": {
+            "en": ["Clip nails, remove unwanted hair, take a ghusl", "Men: two plain unstitched sheets, usually white", "Women: ordinary modest clothing", "Pray two rak'at if it is not a disliked time", "Make the intention and begin the talbiyah"],
+            "de": ["Nägel schneiden, unerwünschte Haare entfernen, Ghusl nehmen", "Männer: zwei schlichte ungenähte Tücher, meist weiß", "Frauen: gewöhnliche, bedeckende Kleidung", "Zwei Rakaat beten, wenn es keine verpönte Zeit ist", "Absicht fassen und mit der Talbiya beginnen"],
+            "ar": ["قص الأظفار وإزالة الشعر المسنون إزالته والاغتسال", "للرجال: إزار ورداء غير مخيطين، غالبًا أبيضان", "للنساء: لباسهن الساتر المعتاد", "صلاة ركعتين إن لم يكن وقت كراهة", "النية ثم البدء بالتلبية"]
+          }
+        },
+        {
+          "hadith": "bukhari:1542",
+          "check": "a turban, trousers",
+          "title": { "en": "What men set aside", "de": "Was Männer ablegen", "ar": "ما يتركه الرجال" },
+          "body": { "en": "Men leave fitted, stitched clothing and head coverings aside for the time of ihram.", "de": "Männer legen für die Zeit des Ihram genähte, anliegende Kleidung und Kopfbedeckungen ab.", "ar": "يترك الرجل في الإحرام المخيط المفصّل على البدن وغطاء الرأس." }
+        },
+        {
+          "hadith": "bukhari:1838",
+          "check": "should not cover her face, or wear gloves",
+          "title": { "en": "For women", "de": "Für Frauen", "ar": "للمرأة" },
+          "body": { "en": "Women wear their normal covering, but no niqab and no gloves. Many scholars allow letting a cloth hang before the face near men.", "de": "Frauen tragen ihre übliche Bedeckung, aber keinen Niqab und keine Handschuhe. Viele Gelehrte erlauben, bei fremden Männern ein Tuch vor das Gesicht fallen zu lassen.", "ar": "تلبس المرأة لباسها المعتاد دون نقاب ولا قفازين، ويجيز كثير من العلماء أن تسدل ثوبًا على وجهها عند الرجال الأجانب." }
+        },
+        {
+          "title": { "en": "Forbidden in ihram", "de": "Verboten im Ihram", "ar": "محظورات الإحرام" },
+          "list": {
+            "en": ["Cutting hair or nails", "Using perfume", "Sexual relations, and in most schools a marriage contract", "Hunting land animals", "Men: covering the head; women: covering the face"],
+            "de": ["Haare oder Nägel schneiden", "Duft verwenden", "Geschlechtsverkehr, nach den meisten Schulen auch ein Ehevertrag", "Landtiere jagen", "Männer: den Kopf bedecken; Frauen: das Gesicht bedecken"],
+            "ar": ["قص الشعر أو الأظفار", "التطيب", "الجماع، وعقد النكاح عند أكثر المذاهب", "صيد البر", "للرجل تغطية الرأس، وللمرأة تغطية الوجه"]
+          }
+        },
+        {
+          "verse": "2:197",
+          "check": "no disputing",
+          "title": { "en": "The spirit of ihram", "de": "Der Geist des Ihram", "ar": "روح الإحرام" },
+          "body": { "en": "Beyond clothing: no quarrels, no sins, no bitter arguments. Patience is part of the rite.", "de": "Mehr als Kleidung: kein Streit, keine Sünden, keine erbitterten Auseinandersetzungen. Geduld gehört zum Ritus.", "ar": "ليس الإحرام لباسًا فحسب، بل تركٌ للخصومة والمعصية والمراء، والصبر جزء من النسك." }
+        },
+        {
+          "title": { "en": "If a rule is broken", "de": "Wenn eine Regel verletzt wird", "ar": "إذا وقع محظور" },
+          "body": { "en": "Several schools treat forgetting or not knowing more gently. A deliberate violation usually requires a fidyah: a sacrifice, fasting or feeding the poor, depending on the act and the school. Ask your group's scholar.", "de": "Mehrere Schulen behandeln Vergessen oder Unwissen milder. Ein absichtlicher Verstoß erfordert meist eine Fidya: ein Opfer, Fasten oder die Speisung Armer, je nach Handlung und Schule. Fragen Sie den Gelehrten Ihrer Gruppe.", "ar": "تخفف بعض المذاهب في حق الناسي والجاهل، أما المتعمد فعليه غالبًا فدية: ذبح أو صيام أو إطعام، بحسب الفعل والمذهب. اسأل عالم مجموعتك." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Qudama, al-Mughni, Book of Hajj: the prohibitions of ihram" },
+        { "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, Book of Hajj" }
+      ]
+    },
+    {
+      "id": "hajj-umrah-tawaf-and-sai",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Hajj and Umrah · 4", "de": "Hadsch und Umra · 4", "ar": "الحج والعمرة · ٤" },
+        "title": { "en": "Tawaf and sa'i, step by step", "de": "Tawaf und Sai Schritt für Schritt", "ar": "الطواف والسعي خطوة بخطوة" },
+        "sub": { "en": "Seven circuits around the House, seven trips between two hills", "de": "Sieben Runden um das Haus, sieben Gänge zwischen zwei Hügeln", "ar": "سبعة أشواط حول البيت، وسبعة بين جبلين" },
+        "arabic": "الطَّواف والسَّعي"
+      },
+      "slides": [
+        {
+          "title": { "en": "Tawaf needs purity", "de": "Tawaf erfordert Reinheit", "ar": "الطهارة للطواف" },
+          "body": { "en": "Tawaf is like a prayer around the House. Most scholars require wudu for it, and the body must be properly covered. The Hanafi school sees wudu as wajib rather than a condition of validity.", "de": "Tawaf ist wie ein Gebet um das Haus. Die meisten Gelehrten verlangen dafür Wudu, und der Körper muss ordentlich bedeckt sein. Die Hanafiten sehen Wudu als Wadschib, nicht als Gültigkeitsbedingung.", "ar": "الطواف كالصلاة حول البيت، ويشترط له أكثر العلماء الطهارة وستر العورة، ويرى الحنفية الطهارة له واجبة لا شرط صحة." }
+        },
+        {
+          "title": { "en": "Tawaf step by step", "de": "Tawaf Schritt für Schritt", "ar": "الطواف خطوة بخطوة" },
+          "list": {
+            "en": ["Start at the Black Stone, the Ka'bah on your left", "Touch, kiss or point to the Stone with takbir", "Walk seven circuits, each ending at the Stone", "Men: right shoulder bare; brisk pace in the first three", "Pray two rak'at behind Maqam Ibrahim if possible", "Drink Zamzam"],
+            "de": ["Beginnen Sie am Schwarzen Stein, die Kaaba zu Ihrer Linken", "Berühren, küssen oder grüßen Sie den Stein mit Takbir", "Gehen Sie sieben Runden, jede endet am Stein", "Männer: rechte Schulter frei; zügig in den ersten drei Runden", "Beten Sie zwei Rakaat hinter dem Maqam Ibrahim, wenn möglich", "Trinken Sie Zamzam"],
+            "ar": ["ابدأ من الحجر الأسود والكعبة عن يسارك", "استلم الحجر أو قبّله أو أشر إليه مكبّرًا", "طف سبعة أشواط ينتهي كل منها عند الحجر", "للرجال: الاضطباع، والرمل في الأشواط الثلاثة الأولى", "صلِّ ركعتين خلف مقام إبراهيم إن تيسر", "اشرب من زمزم"]
+          },
+          "body": { "en": "The bare shoulder and the brisk pace belong to the tawaf of Umrah or of arrival.", "de": "Freie Schulter und zügiger Gang gehören zum Tawaf der Umra oder der Ankunft.", "ar": "الاضطباع والرمل في طواف العمرة أو القدوم." }
+        },
+        {
+          "dua": "hisn:116:0",
+          "check": "black stone",
+          "title": { "en": "At the Black Stone", "de": "Am Schwarzen Stein", "ar": "عند الحجر الأسود" },
+          "body": { "en": "If you cannot reach it in the crowd, point toward it with your right hand and say Allahu akbar.", "de": "Wenn Sie ihn im Gedränge nicht erreichen, weisen Sie mit der rechten Hand darauf und sagen Sie Allahu akbar.", "ar": "إن لم تصل إليه في الزحام فأشر إليه بيمينك وقل: الله أكبر." }
+        },
+        {
+          "hadith": "bukhari:1597",
+          "check": "you are a stone",
+          "title": { "en": "Following, not venerating", "de": "Nachfolgen, nicht verehren", "ar": "اتباعٌ لا تقديس" },
+          "body": { "en": "'Umar kissed the Stone only because he had seen the Prophet do it. What matters is the Sunnah.", "de": "Umar küsste den Stein nur, weil er es beim Propheten gesehen hatte. Entscheidend ist die Sunna.", "ar": "قبّل عمر الحجر لأنه رأى النبي ﷺ يقبّله، فالعبرة بالاتباع." }
+        },
+        {
+          "hadith": "bukhari:1604",
+          "check": "Ramal in (first) three rounds",
+          "title": { "en": "Ramal: the brisk pace", "de": "Ramal: der zügige Gang", "ar": "الرَّمَل" },
+          "body": { "en": "Men walk briskly with short steps in the first three circuits, then at a normal pace.", "de": "Männer gehen in den ersten drei Runden zügig mit kurzen Schritten, danach normal.", "ar": "يسرع الرجل في مشيه مع مقاربة الخطى في الأشواط الثلاثة الأولى، ثم يمشي في الباقي." }
+        },
+        {
+          "verse": "2:158",
+          "check": "symbols of Allah",
+          "title": { "en": "Sa'i: between Safa and Marwah", "de": "Sai: zwischen Safa und Marwa", "ar": "السعي بين الصفا والمروة" },
+          "body": { "en": "Hajar ran between these hills searching for water for her son. Pilgrims retrace her steps.", "de": "Hadschar lief zwischen diesen Hügeln auf der Suche nach Wasser für ihren Sohn. Die Pilger gehen ihren Weg nach.", "ar": "سعت هاجر بين هذين الجبلين تطلب الماء لابنها، والحجاج يقتفون أثرها." }
+        },
+        {
+          "title": { "en": "Sa'i step by step", "de": "Sai Schritt für Schritt", "ar": "السعي خطوة بخطوة" },
+          "list": {
+            "en": ["Begin at Safa: climb, face the Ka'bah, raise your hands in dua", "Walk to Marwah: that is one trip", "Men hurry between the green lights", "Repeat; the seventh trip ends at Marwah", "Wudu is recommended, not required"],
+            "de": ["Beginnen Sie an Safa: hinaufsteigen, zur Kaaba wenden, Hände zum Bittgebet heben", "Gehen Sie nach Marwa: Das ist ein Gang", "Männer eilen zwischen den grünen Lichtern", "Wiederholen Sie; der siebte Gang endet an Marwa", "Wudu wird empfohlen, ist aber keine Pflicht"],
+            "ar": ["ابدأ بالصفا: اصعد واستقبل الكعبة وارفع يديك بالدعاء", "امشِ إلى المروة، فذلك شوط", "يسرع الرجال بين العلمين الأخضرين", "كرّر، وينتهي الشوط السابع بالمروة", "الوضوء مستحب وليس شرطًا"]
+          }
+        },
+        {
+          "hadith": "bukhari:1650",
+          "check": "do not perform Tawaf of the Ka`ba till you get clean",
+          "title": { "en": "During menstruation", "de": "Während der Menstruation", "ar": "في أثناء الحيض" },
+          "body": { "en": "Every rite may be performed except tawaf, which waits until she is pure.", "de": "Jeder Ritus darf vollzogen werden außer dem Tawaf; er wartet, bis sie rein ist.", "ar": "كل المناسك متاحة للحائض، ويُؤجَّل الطواف إلى طهرها." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Qudama, al-Mughni, Book of Hajj: tawaf and sa'i" },
+        { "label": "Sahih al-Bukhari 3364: the story of Hajar", "url": "https://sunnah.com/bukhari:3364" }
+      ]
+    },
+    {
+      "id": "hajj-umrah-day-of-arafah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Hajj and Umrah · 5", "de": "Hadsch und Umra · 5", "ar": "الحج والعمرة · ٥" },
+        "title": { "en": "The Day of Arafah", "de": "Der Tag von Arafa", "ar": "يوم عرفة" },
+        "sub": { "en": "The greatest day of Hajj, and a gift for those at home", "de": "Der größte Tag des Hadsch und ein Geschenk für die Daheimgebliebenen", "ar": "أعظم أيام الحج، وهدية لمن لم يحج" },
+        "arabic": "يوم عَرَفة"
+      },
+      "slides": [
+        {
+          "title": { "en": "The 9th of Dhul-Hijjah", "de": "Der 9. Dhul-Hiddscha", "ar": "التاسع من ذي الحجة" },
+          "body": { "en": "The Day of Arafah is the 9th of Dhul-Hijjah, the day before Eid al-Adha. Pilgrims stand on the plain of Arafah; Muslims everywhere fill the day with worship.", "de": "Der Tag von Arafa ist der 9. Dhul-Hiddscha, der Tag vor dem Opferfest. Die Pilger verweilen auf der Ebene von Arafa; Muslime überall füllen den Tag mit Anbetung.", "ar": "يوم عرفة هو التاسع من ذي الحجة، قبل عيد الأضحى بيوم، يقف فيه الحجاج بصعيد عرفة، ويملؤه المسلمون في كل مكان بالعبادة." }
+        },
+        {
+          "hadith": "muslim:3288",
+          "check": "sets free more servants",
+          "title": { "en": "The day of freedom from the Fire", "de": "Der Tag der Befreiung vom Feuer", "ar": "يوم العتق من النار" },
+          "body": { "en": "A day of overflowing mercy: come to it with hope.", "de": "Ein Tag überfließender Barmherzigkeit: Begegnen Sie ihm mit Hoffnung.", "ar": "يومٌ تفيض فيه الرحمة، فأقبل عليه بالرجاء." }
+        },
+        {
+          "hadith": "bukhari:45",
+          "check": "standing at 'Arafat",
+          "title": { "en": "The day the religion was completed", "de": "Der Tag, an dem die Religion vollendet wurde", "ar": "يوم إكمال الدين" },
+          "body": { "en": "The verse on the completion of the religion came down on a Friday, while the Prophet stood at Arafah.", "de": "Der Vers über die Vollendung der Religion wurde an einem Freitag herabgesandt, als der Prophet in Arafa stand.", "ar": "نزلت آية إكمال الدين يوم جمعة والنبي ﷺ واقف بعرفة." }
+        },
+        {
+          "dua": "hisn:119:0",
+          "check": "best of supplications",
+          "title": { "en": "The best dua", "de": "Das beste Bittgebet", "ar": "أفضل ما يُقال" },
+          "body": { "en": "The finest words of this day: the testimony of His oneness.", "de": "Die schönsten Worte dieses Tages: das Bekenntnis Seiner Einheit.", "ar": "أجمل ما يُقال في هذا اليوم: كلمة التوحيد." }
+        },
+        {
+          "hadith": "bukhari:1662",
+          "check": "Zuhr and Asr prayer together",
+          "title": { "en": "Two prayers, then dua", "de": "Zwei Gebete, dann Bittgebete", "ar": "صلاتان ثم دعاء" },
+          "body": { "en": "Pilgrims combine Dhuhr and Asr early, leaving the afternoon free for dua until sunset.", "de": "Die Pilger legen Zuhr und Asr früh zusammen und haben den Nachmittag bis Sonnenuntergang für Bittgebete frei.", "ar": "يجمع الحجاج الظهر والعصر تقديمًا، ليتفرغوا للدعاء حتى الغروب." }
+        },
+        {
+          "hadith": "muslim:2952",
+          "check": "whole of Arafat is a place for stay",
+          "title": { "en": "Anywhere on Arafah", "de": "Überall in Arafa", "ar": "في أي موضع من عرفة" },
+          "body": { "en": "Pilgrims need not reach the mount itself; the whole plain counts.", "de": "Die Pilger müssen nicht den Berg selbst erreichen; die ganze Ebene zählt.", "ar": "لا يلزم الحاج صعود الجبل، فالوقوف في أي جزء من عرفة يجزئ." }
+        },
+        {
+          "hadith": "bukhari:1661",
+          "check": "drank that milk",
+          "title": { "en": "Pilgrims do not fast", "de": "Die Pilger fasten nicht", "ar": "الحاج لا يصوم يومها" },
+          "body": { "en": "He drank in front of everyone at Arafah, so pilgrims keep their strength for dua.", "de": "Er trank vor aller Augen in Arafa; so bewahren die Pilger ihre Kraft für das Bittgebet.", "ar": "شرب النبي ﷺ أمام الناس بعرفة، فيحفظ الحاج قوته للدعاء." }
+        },
+        {
+          "title": { "en": "The day at home", "de": "Der Tag zu Hause", "ar": "اليوم لمن لم يحج" },
+          "list": {
+            "en": ["Fast the day; Sahih Muslim links it to forgiveness for two years", "Begin the takbirs of these days (schools differ on when)", "Increase dua and the testimony of oneness", "Give charity and keep your tongue clean"],
+            "de": ["Fasten Sie; Sahih Muslim verbindet es mit Vergebung für zwei Jahre", "Beginnen Sie die Takbire dieser Tage (der Beginn ist umstritten)", "Vermehren Sie Bittgebete und das Bekenntnis der Einheit", "Spenden Sie und halten Sie Ihre Zunge rein"],
+            "ar": ["صُمه، فقد ربطه صحيح مسلم بتكفير سنتين", "ابدأ تكبير هذه الأيام (ويختلف العلماء في بدايته)", "أكثر من الدعاء وكلمة التوحيد", "تصدّق واحفظ لسانك"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Sahih Muslim, Book of Fasting: the fast of the Day of Arafah (hadith of Abu Qatada)" }]
+    },
+    {
+      "id": "hajj-umrah-three-types-of-hajj",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Hajj and Umrah · 6", "de": "Hadsch und Umra · 6", "ar": "الحج والعمرة · ٦" },
+        "title": { "en": "The three types of Hajj", "de": "Die drei Arten des Hadsch", "ar": "أنواع الحج الثلاثة" },
+        "sub": { "en": "Tamattu', qiran and ifrad: one Hajj, three ways to combine it with Umrah", "de": "Tamattu, Qiran und Ifrad: ein Hadsch, drei Wege, ihn mit der Umra zu verbinden", "ar": "التمتع والقران والإفراد: حج واحد وثلاث صور لجمعه مع العمرة" },
+        "arabic": "أنواع النُّسُك"
+      },
+      "slides": [
+        {
+          "title": { "en": "Three ways, one Hajj", "de": "Drei Wege, ein Hadsch", "ar": "ثلاث صور لحج واحد" },
+          "body": { "en": "At the miqat every pilgrim chooses how to combine Hajj and Umrah: tamattu', qiran or ifrad. The rites of Hajj stay the same; the order, the ihram and the sacrifice differ.", "de": "Am Miqat wählt jeder Pilger, wie er Hadsch und Umra verbindet: Tamattu, Qiran oder Ifrad. Die Riten des Hadsch bleiben gleich; Reihenfolge, Ihram und Opfer unterscheiden sich.", "ar": "يختار الحاج عند الميقات صورة نسكه: التمتع أو القران أو الإفراد. ومناسك الحج واحدة، وإنما يختلف الترتيب والإحرام والهدي." }
+        },
+        {
+          "hadith": "bukhari:1562",
+          "check": "some for both Hajj and `Umra",
+          "title": { "en": "All three in the Prophet's Hajj", "de": "Alle drei beim Hadsch des Propheten", "ar": "الصور الثلاث في حجة النبي ﷺ" },
+          "body": { "en": "On the Farewell Pilgrimage, the Companions entered ihram in all three ways.", "de": "Bei der Abschiedswallfahrt traten die Gefährten auf alle drei Arten in den Ihram ein.", "ar": "في حجة الوداع أحرم الصحابة بالصور الثلاث جميعًا." }
+        },
+        {
+          "title": { "en": "Tamattu': Umrah, then Hajj", "de": "Tamattu: erst Umra, dann Hadsch", "ar": "التمتع: عمرة ثم حج" },
+          "body": { "en": "Umrah in the months of Hajj, then leaving ihram and living normally until the 8th of Dhul-Hijjah, when a new ihram for Hajj begins. A sacrifice is required.", "de": "Umra in den Monaten des Hadsch, dann Verlassen des Ihram und normales Leben bis zum 8. Dhul-Hiddscha, wenn ein neuer Ihram für den Hadsch beginnt. Ein Opfer ist Pflicht.", "ar": "عمرة في أشهر الحج، ثم التحلل والحياة المعتادة إلى الثامن من ذي الحجة، فيُحرم بالحج من جديد. ويجب فيه الهدي." }
+        },
+        {
+          "title": { "en": "Qiran: both together", "de": "Qiran: beides zusammen", "ar": "القران: الجمع بينهما" },
+          "body": { "en": "Hajj and Umrah in one ihram, kept until the Day of Sacrifice. A sacrifice is required. The schools differ on whether one tawaf and one sa'i suffice for both.", "de": "Hadsch und Umra in einem Ihram, der bis zum Opfertag bleibt. Ein Opfer ist Pflicht. Ob ein Tawaf und ein Sai für beides genügen, ist zwischen den Schulen umstritten.", "ar": "إحرام واحد بالحج والعمرة يبقى إلى يوم النحر، ويجب فيه الهدي. ويختلف العلماء: هل يكفي طواف واحد وسعي واحد عنهما؟" }
+        },
+        {
+          "title": { "en": "Ifrad: Hajj alone", "de": "Ifrad: nur Hadsch", "ar": "الإفراد: الحج وحده" },
+          "body": { "en": "Ihram for Hajj only, kept until the Day of Sacrifice. No sacrifice is required, though one may be offered voluntarily.", "de": "Ihram nur für den Hadsch, bis zum Opfertag. Ein Opfer ist nicht Pflicht, kann aber freiwillig dargebracht werden.", "ar": "إحرام بالحج وحده إلى يوم النحر، ولا يجب فيه هدي، وله أن يهدي تطوعًا." }
+        },
+        {
+          "title": { "en": "Which is best?", "de": "Welche ist die beste?", "ar": "أيها أفضل؟" },
+          "body": { "en": "The schools differ: Hanafis prefer qiran, Malikis and Shafi'is ifrad, Hanbalis tamattu'. All three are valid. Many pilgrims from abroad today choose tamattu'.", "de": "Die Schulen unterscheiden sich: Hanafiten bevorzugen Qiran, Malikiten und Schafiiten Ifrad, Hanbaliten Tamattu. Alle drei sind gültig. Viele Pilger aus dem Ausland wählen heute Tamattu.", "ar": "تختلف المذاهب: فالحنفية يفضلون القران، والمالكية والشافعية الإفراد، والحنابلة التمتع، والصور الثلاث صحيحة. ويختار كثير من الحجاج القادمين من الخارج اليوم التمتع." }
+        },
+        {
+          "title": { "en": "Quick comparison", "de": "Kurzer Vergleich", "ar": "مقارنة سريعة" },
+          "list": {
+            "en": ["Tamattu': two ihrams, sacrifice required", "Qiran: one ihram for both, sacrifice required", "Ifrad: one ihram for Hajj, no sacrifice required", "Residents of Mecca: special rules apply"],
+            "de": ["Tamattu: zwei Ihram, Opfer Pflicht", "Qiran: ein Ihram für beides, Opfer Pflicht", "Ifrad: ein Ihram für den Hadsch, kein Pflichtopfer", "Bewohner Mekkas: Es gelten besondere Regeln"],
+            "ar": ["التمتع: إحرامان، والهدي واجب", "القران: إحرام واحد لهما، والهدي واجب", "الإفراد: إحرام بالحج وحده، ولا هدي واجب", "لأهل مكة أحكام خاصة"]
+          },
+          "body": { "en": "If no animal can be found, fasting takes its place, as al-Baqarah 2:196 explains.", "de": "Wenn kein Tier zu finden ist, tritt Fasten an seine Stelle, wie al-Baqara 2:196 erklärt.", "ar": "ومن لم يجد الهدي انتقل إلى الصيام، كما تبيّنه الآية ١٩٦ من سورة البقرة." }
+        },
+        {
+          "verse": "22:27",
+          "check": "proclaim to the people",
+          "title": { "en": "The call of Ibrahim", "de": "Der Ruf Ibrahims", "ar": "نداء إبراهيم" },
+          "body": { "en": "Whichever way you choose, you are answering an ancient call.", "de": "Welchen Weg Sie auch wählen: Sie folgen einem uralten Ruf.", "ar": "أيًّا كانت الصورة التي تختارها، فأنت تجيب نداءً قديمًا." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Rushd, Bidayat al-Mujtahid, Book of Hajj: the types of ihram" },
+        { "label": "Ibn Qudama, al-Mughni, Book of Hajj" }
+      ]
+    }
+  ]
+}

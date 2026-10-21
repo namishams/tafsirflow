@@ -1,0 +1,16 @@
+{ "set": "hadith-mercy", "kind": "hadith", "theme": "mercy", "tradition": "sunni",
+  "items": [
+    {"id": "wh-mercy-bukhari-3194", "hadith": "bukhari:3194", "check": "My Mercy overpowers My Anger"},
+    {"id": "wh-mercy-bukhari-6000", "hadith": "bukhari:6000", "check": "one hundred parts"},
+    {"id": "wh-mercy-bukhari-5999", "hadith": "bukhari:5999", "check": "more merciful to His slaves"},
+    {"id": "wh-mercy-bukhari-7376", "hadith": "bukhari:7376", "check": "not merciful"},
+    {"id": "wh-mercy-bukhari-6003", "hadith": "bukhari:6003", "check": "as I am merciful to them"},
+    {"id": "wh-mercy-bukhari-6010", "hadith": "bukhari:6010", "check": "very vast"},
+    {"id": "wh-mercy-muslim-6613", "hadith": "muslim:6613", "check": "sent as mercy"},
+    {"id": "wh-mercy-muslim-6108", "hadith": "muslim:6108", "check": "Prophet of Mercy"},
+    {"id": "wh-mercy-bukhari-2076", "hadith": "bukhari:2076", "check": "lenient"},
+    {"id": "wh-mercy-bukhari-5998", "hadith": "bukhari:5998", "check": "mercy in your heart"},
+    {"id": "wh-mercy-bukhari-707", "hadith": "bukhari:707", "check": "cries of a child"},
+    {"id": "wh-mercy-bukhari-4392", "hadith": "bukhari:4392", "check": "Give guidance to the Daus"},
+    {"id": "wh-mercy-muslim-1214", "hadith": "muslim:1214", "check": "Umama"}
+  ] }

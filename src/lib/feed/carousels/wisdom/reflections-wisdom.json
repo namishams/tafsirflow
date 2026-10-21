@@ -1,0 +1,120 @@
+{
+  "set": "reflections-wisdom",
+  "kind": "reflection",
+  "theme": "wisdom",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-wisdom-01",
+      "text": {
+        "en": "Wisdom is knowing what to say, when to say it, and when to say nothing at all.",
+        "de": "Weisheit heißt zu wissen, was man sagt, wann man es sagt und wann man gar nichts sagt.",
+        "ar": "الحكمة أن تعرف ماذا تقول، ومتى تقوله، ومتى لا تقول شيئا على الإطلاق."
+      }
+    },
+    {
+      "id": "wr-wisdom-02",
+      "text": {
+        "en": "A wise person learns from every encounter: the kind teach by example, the unkind by contrast.",
+        "de": "Ein weiser Mensch lernt aus jeder Begegnung: Die Freundlichen lehren durch ihr Vorbild, die Unfreundlichen durch den Gegensatz.",
+        "ar": "الحكيم يتعلم من كل لقاء: الطيبون يعلمونه بقدوتهم، وغير الطيبين بنقيضهم."
+      }
+    },
+    {
+      "id": "wr-wisdom-03",
+      "text": {
+        "en": "Sleep on big decisions, pray istikhara and ask someone you trust. Wisdom is rarely in a hurry.",
+        "de": "Schlafen Sie über große Entscheidungen, beten Sie das Istikhara-Gebet und fragen Sie jemanden, dem Sie vertrauen. Weisheit hat es selten eilig.",
+        "ar": "نم على القرارات الكبيرة، وصل الاستخارة، واستشر من تثق به، فالحكمة قلما تكون على عجل."
+      }
+    },
+    {
+      "id": "wr-wisdom-04",
+      "text": {
+        "en": "Not every battle is worth fighting. Choose the ones that will still matter in a year.",
+        "de": "Nicht jeder Kampf ist es wert, geführt zu werden. Wählen Sie die, die in einem Jahr noch zählen.",
+        "ar": "ليست كل معركة تستحق أن تخاض، فاختر ما سيظل مهما بعد عام."
+      }
+    },
+    {
+      "id": "wr-wisdom-05",
+      "text": {
+        "en": "The elderly often know things no book contains. Sit with them, ask, and listen patiently.",
+        "de": "Alte Menschen wissen oft Dinge, die in keinem Buch stehen. Setzen Sie sich zu ihnen, fragen Sie und hören Sie geduldig zu.",
+        "ar": "كثيرا ما يعرف كبار السن ما لا تحويه الكتب، فاجلس إليهم، واسألهم، وأصغ بصبر."
+      }
+    },
+    {
+      "id": "wr-wisdom-06",
+      "text": {
+        "en": "Wisdom is not having all the answers, but asking better questions.",
+        "de": "Weisheit heißt nicht, alle Antworten zu haben, sondern bessere Fragen zu stellen.",
+        "ar": "ليست الحكمة أن تملك كل الأجوبة، بل أن تطرح أسئلة أفضل."
+      }
+    },
+    {
+      "id": "wr-wisdom-07",
+      "text": {
+        "en": "Anger and wisdom rarely sit at the same table. Let your anger leave the room before you decide anything.",
+        "de": "Zorn und Weisheit sitzen selten am selben Tisch. Lassen Sie Ihren Zorn den Raum verlassen, bevor Sie etwas entscheiden.",
+        "ar": "الغضب والحكمة قلما يجلسان إلى مائدة واحدة، فدع غضبك يغادر الغرفة قبل أن تقرر شيئا."
+      }
+    },
+    {
+      "id": "wr-wisdom-08",
+      "text": {
+        "en": "A wise heart sees mistakes as teachers, not as verdicts.",
+        "de": "Ein weises Herz sieht Fehler als Lehrer, nicht als Urteile.",
+        "ar": "القلب الحكيم يرى الأخطاء معلمين لا أحكاما."
+      }
+    },
+    {
+      "id": "wr-wisdom-09",
+      "text": {
+        "en": "Simple living leaves more room for what matters: time, family, worship and peace.",
+        "de": "Ein einfaches Leben lässt mehr Raum für das, was zählt: Zeit, Familie, Gottesdienst und Frieden.",
+        "ar": "العيش البسيط يترك مكانا أوسع لما يهم: الوقت، والأسرة، والعبادة، والسكينة."
+      }
+    },
+    {
+      "id": "wr-wisdom-10",
+      "text": {
+        "en": "When you are unsure, choose the path you would be at peace explaining to Allah.",
+        "de": "Wenn Sie unsicher sind, wählen Sie den Weg, den Sie Allah gegenüber mit ruhigem Gewissen erklären könnten.",
+        "ar": "إذا ترددت فاختر الطريق الذي تطمئن إلى أن تشرحه لله."
+      }
+    },
+    {
+      "id": "wr-wisdom-11",
+      "text": {
+        "en": "Wise people speak gently even when they are right, because they want to reach hearts, not just win points.",
+        "de": "Weise Menschen sprechen sanft, auch wenn sie recht haben, weil sie Herzen erreichen wollen und nicht nur Punkte sammeln.",
+        "ar": "الحكماء يتكلمون برفق حتى حين يكونون على حق، لأنهم يريدون الوصول إلى القلوب لا كسب النقاط فحسب."
+      }
+    },
+    {
+      "id": "wr-wisdom-12",
+      "text": {
+        "en": "A wise person knows the limits of their knowledge and is not ashamed to show them.",
+        "de": "Ein weiser Mensch kennt die Grenzen seines Wissens und schämt sich nicht, sie zu zeigen.",
+        "ar": "الحكيم يعرف حدود علمه، ولا يخجل من أن يظهرها."
+      }
+    },
+    {
+      "id": "wr-wisdom-13",
+      "text": {
+        "en": "The wisest choice is often the quiet one: the apology, the step back, the patient wait.",
+        "de": "Die weiseste Entscheidung ist oft die leise: die Entschuldigung, der Schritt zurück, das geduldige Warten.",
+        "ar": "أحكم الخيارات كثيرا ما يكون أهدأها: الاعتذار، والتراجع خطوة، والانتظار بصبر."
+      }
+    },
+    {
+      "id": "wr-wisdom-14",
+      "text": {
+        "en": "Wisdom grows where knowledge meets experience and both are watered with humility.",
+        "de": "Weisheit wächst dort, wo Wissen auf Erfahrung trifft und beides mit Demut begossen wird.",
+        "ar": "الحكمة تنمو حيث يلتقي العلم بالتجربة، ويسقى كلاهما بالتواضع."
+      }
+    }
+  ]
+}

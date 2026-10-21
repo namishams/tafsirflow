@@ -1,0 +1,292 @@
+{
+  "set": "sayings-ibn-al-qayyim",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-ibn-al-qayyim-01",
+      "theme": "time",
+      "text": {
+        "en": "Wasting time is worse than death, because wasting time cuts you off from Allah and the Hereafter, while death cuts you off only from this world and its people.",
+        "de": "Zeit zu vergeuden ist schlimmer als der Tod: Vergeudete Zeit trennt Sie von Allah und vom Jenseits, der Tod trennt Sie nur von dieser Welt und ihren Menschen.",
+        "ar": "إضاعة الوقت أشد من الموت، لأن إضاعة الوقت تقطعك عن الله والدار الآخرة، والموت يقطعك عن الدنيا وأهلها."
+      },
+      "arabic": "إضاعة الوقت أشد من الموت، لأن إضاعة الوقت تقطعك عن الله والدار الآخرة، والموت يقطعك عن الدنيا وأهلها.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-02",
+      "theme": "love-of-allah",
+      "text": {
+        "en": "In the heart there is a disarray that nothing mends but turning to Allah, and a loneliness that nothing removes but intimacy with Him in solitude.",
+        "de": "Im Herzen ist eine Zerrissenheit, die nur die Hinwendung zu Allah heilt, und eine Einsamkeit, die nur die Vertrautheit mit Ihm in der Stille vertreibt.",
+        "ar": "في القلب شعث لا يلمه إلا الإقبال على الله، وفيه وحشة لا يزيلها إلا الأنس به في خلوته."
+      },
+      "arabic": "في القلب شعث لا يلمه إلا الإقبال على الله، وفيه وحشة لا يزيلها إلا الأنس به في خلوته.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "Madarij al-Salikin", "de": "Madarij as-Salikin", "ar": "مدارج السالكين" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-03",
+      "theme": "sincerity",
+      "text": {
+        "en": "Sincerity cannot live in a heart together with the love of praise and craving for what people have, any more than water lives with fire, or the lizard with the fish.",
+        "de": "Aufrichtigkeit wohnt nicht zusammen mit der Liebe zum Lob und der Gier nach dem, was die Menschen besitzen, so wenig wie Wasser mit Feuer oder die Eidechse mit dem Fisch.",
+        "ar": "لا يجتمع الإخلاص في القلب ومحبة المدح والثناء والطمع فيما عند الناس إلا كما يجتمع الماء والنار والضب والحوت."
+      },
+      "arabic": "لا يجتمع الإخلاص في القلب ومحبة المدح والثناء والطمع فيما عند الناس إلا كما يجتمع الماء والنار والضب والحوت.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-04",
+      "theme": "trust",
+      "text": {
+        "en": "When a servant wakes and goes to sleep with no concern but Allah alone, Allah takes on all his needs and carries from him everything that worries him.",
+        "de": "Wenn ein Diener morgens und abends kein anderes Anliegen hat als Allah allein, übernimmt Allah alle seine Bedürfnisse und nimmt ihm alles ab, was ihn bekümmert.",
+        "ar": "إذا أصبح العبد وأمسى وليس همه إلا الله وحده، تحمل الله سبحانه حوائجه كلها، وحمل عنه كل ما أهمه."
+      },
+      "arabic": "إذا أصبح العبد وأمسى وليس همه إلا الله وحده، تحمل الله سبحانه حوائجه كلها، وحمل عنه كل ما أهمه.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-05",
+      "theme": "patience",
+      "text": {
+        "en": "Patience in holding back from a desire is easier than patience with what that desire brings after it.",
+        "de": "Geduld beim Verzicht auf eine Begierde ist leichter als Geduld mit dem, was diese Begierde nach sich zieht.",
+        "ar": "الصبر على الشهوة أسهل من الصبر على ما توجبه الشهوة."
+      },
+      "arabic": "الصبر على الشهوة أسهل من الصبر على ما توجبه الشهوة.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-06",
+      "theme": "time",
+      "text": {
+        "en": "Buy yourself free today, for the market is open, the price is at hand and the goods are cheap. A day will come when you can reach neither little nor much of them.",
+        "de": "Kaufen Sie sich heute frei, denn der Markt ist offen, der Preis liegt bereit und die Ware ist günstig. Es kommt ein Tag, an dem Sie davon weder wenig noch viel erreichen.",
+        "ar": "اشتر نفسك اليوم، فإن السوق قائمة، والثمن موجود، والبضائع رخيصة، وسيأتي على تلك السوق والبضائع يوم لا تصل فيه إلى قليل ولا كثير."
+      },
+      "arabic": "اشتر نفسك اليوم، فإن السوق قائمة، والثمن موجود، والبضائع رخيصة، وسيأتي على تلك السوق والبضائع يوم لا تصل فيه إلى قليل ولا كثير.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-07",
+      "theme": "time",
+      "text": {
+        "en": "The year is a tree: the months are its branches, the days its twigs, the hours its leaves and the breaths its fruit.",
+        "de": "Das Jahr ist ein Baum: Die Monate sind seine Äste, die Tage seine Zweige, die Stunden seine Blätter und die Atemzüge seine Früchte.",
+        "ar": "السنة شجرة، والشهور فروعها، والأيام أغصانها، والساعات أوراقها، والأنفاس ثمرها."
+      },
+      "arabic": "السنة شجرة، والشهور فروعها، والأيام أغصانها، والساعات أوراقها، والأنفاس ثمرها.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-08",
+      "theme": "love-of-allah",
+      "text": {
+        "en": "The wonder is not a servant who humbles himself before Allah in his need. The wonder is the Owner who wins His servant's love with every kind of blessing, though He needs nothing from him.",
+        "de": "Erstaunlich ist nicht der Diener, der sich in seiner Bedürftigkeit vor Allah demütigt. Erstaunlich ist der Herr, der um die Liebe Seines Dieners mit Gaben aller Art wirbt, obwohl Er ihn nicht braucht.",
+        "ar": "ليس العجب من مملوك يتذلل لله ويتعبد له مع حاجته وفقره إليه، إنما العجب من مالك يتحبب إلى مملوكه بصنوف إنعامه، ويتودد إليه بأنواع إحسانه، مع غناه عنه."
+      },
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-09",
+      "theme": "contentment",
+      "text": {
+        "en": "When people find their sufficiency in the world, find yours in Allah. When they rejoice in the world, rejoice in Allah. When they find comfort in their loved ones, find your comfort in Allah.",
+        "de": "Wenn die Menschen an der Welt genug haben, so haben Sie genug an Allah. Wenn sie sich an der Welt freuen, freuen Sie sich an Allah. Wenn sie Trost bei ihren Lieben finden, suchen Sie Ihren Trost bei Allah.",
+        "ar": "إذا استغنى الناس بالدنيا فاستغن أنت بالله، وإذا فرحوا بالدنيا فافرح أنت بالله، وإذا أنسوا بأحبابهم فاجعل أنسك بالله."
+      },
+      "arabic": "إذا استغنى الناس بالدنيا فاستغن أنت بالله، وإذا فرحوا بالدنيا فافرح أنت بالله، وإذا أنسوا بأحبابهم فاجعل أنسك بالله.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-10",
+      "theme": "gratitude",
+      "text": {
+        "en": "May Allah make you one who is grateful when given, patient when tested, and seeks forgiveness when he sins. These three are the mark of a servant's happiness.",
+        "de": "Möge Allah Sie zu denen machen, die dankbar sind, wenn sie beschenkt werden, geduldig, wenn sie geprüft werden, und um Vergebung bitten, wenn sie sündigen. Diese drei sind das Zeichen des Glücks eines Dieners.",
+        "ar": "ممن إذا أعطي شكر، وإذا ابتلي صبر، وإذا أذنب استغفر، فإن هذه الأمور الثلاثة عنوان سعادة العبد."
+      },
+      "arabic": "ممن إذا أعطي شكر، وإذا ابتلي صبر، وإذا أذنب استغفر، فإن هذه الأمور الثلاثة عنوان سعادة العبد.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Wabil al-Sayyib", "de": "al-Wabil as-Sayyib", "ar": "الوابل الصيب" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-11",
+      "theme": "remembrance",
+      "text": {
+        "en": "There is no doubt that the heart rusts as copper and silver rust, and its polish is remembrance.",
+        "de": "Ohne Zweifel rostet das Herz, wie Kupfer und Silber rosten, und seine Politur ist das Gedenken.",
+        "ar": "لا ريب أن القلب يصدأ كما يصدأ النحاس والفضة وغيرهما، وجلاؤه بالذكر."
+      },
+      "arabic": "لا ريب أن القلب يصدأ كما يصدأ النحاس والفضة وغيرهما، وجلاؤه بالذكر.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Wabil al-Sayyib", "de": "al-Wabil as-Sayyib", "ar": "الوابل الصيب" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-12",
+      "theme": "supplication",
+      "text": {
+        "en": "Supplication is among the most beneficial of remedies. It is the enemy of affliction: it repels it, treats it, prevents it from coming down, lifts it, or lightens it when it comes.",
+        "de": "Das Bittgebet gehört zu den heilsamsten Arzneien. Es ist der Feind des Unglücks: Es wehrt es ab, behandelt es, hält es fern, hebt es auf oder lindert es, wenn es eintrifft.",
+        "ar": "الدعاء من أنفع الأدوية، وهو عدو البلاء، يدافعه ويعالجه، ويمنع نزوله، ويرفعه، أو يخففه إذا نزل."
+      },
+      "arabic": "الدعاء من أنفع الأدوية، وهو عدو البلاء، يدافعه ويعالجه، ويمنع نزوله، ويرفعه، أو يخففه إذا نزل.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Da' wa-l-Dawa' (al-Jawab al-Kafi)", "de": "ad-Da' wa-d-Dawa' (al-Jawab al-Kafi)", "ar": "الداء والدواء (الجواب الكافي)" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-13",
+      "theme": "character",
+      "text": {
+        "en": "The whole of religion is character. Whoever surpasses you in character surpasses you in religion.",
+        "de": "Die ganze Religion ist Charakter. Wer Sie im Charakter übertrifft, übertrifft Sie in der Religion.",
+        "ar": "الدين كله خلق، فمن زاد عليك في الخلق زاد عليك في الدين."
+      },
+      "arabic": "الدين كله خلق، فمن زاد عليك في الخلق زاد عليك في الدين.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "Madarij al-Salikin", "de": "Madarij as-Salikin", "ar": "مدارج السالكين" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-14",
+      "theme": "hope",
+      "text": {
+        "en": "The heart on its journey to Allah is like a bird: love is its head, and fear and hope are its two wings.",
+        "de": "Das Herz ist auf seiner Reise zu Allah wie ein Vogel: Die Liebe ist sein Kopf, Furcht und Hoffnung sind seine beiden Flügel.",
+        "ar": "القلب في سيره إلى الله عز وجل بمنزلة الطائر، فالمحبة رأسه، والخوف والرجاء جناحاه."
+      },
+      "arabic": "القلب في سيره إلى الله عز وجل بمنزلة الطائر، فالمحبة رأسه، والخوف والرجاء جناحاه.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "Madarij al-Salikin", "de": "Madarij as-Salikin", "ar": "مدارج السالكين" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-15",
+      "theme": "trust",
+      "text": {
+        "en": "Reliance on Allah is half of religion, and the other half is turning back to Him.",
+        "de": "Das Vertrauen auf Allah ist die Hälfte der Religion, und die andere Hälfte ist die Rückkehr zu Ihm.",
+        "ar": "التوكل نصف الدين، والنصف الثاني الإنابة."
+      },
+      "arabic": "التوكل نصف الدين، والنصف الثاني الإنابة.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "Madarij al-Salikin", "de": "Madarij as-Salikin", "ar": "مدارج السالكين" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-16",
+      "theme": "sincerity",
+      "text": {
+        "en": "A deed without sincerity and without following the Prophet's way is like a traveller who fills his bag with sand: it weighs him down and does him no good.",
+        "de": "Ein Werk ohne Aufrichtigkeit und ohne Befolgung des prophetischen Weges gleicht einem Reisenden, der seinen Beutel mit Sand füllt: Er beschwert ihn und nützt ihm nichts.",
+        "ar": "العمل بغير إخلاص ولا اقتداء كالمسافر يملأ جرابه رملا يثقله ولا ينفعه."
+      },
+      "arabic": "العمل بغير إخلاص ولا اقتداء كالمسافر يملأ جرابه رملا يثقله ولا ينفعه.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-17",
+      "theme": "quran",
+      "text": {
+        "en": "If you want to benefit from the Quran, gather your heart when you recite or hear it, lend it your ear, and be present as one whom its Speaker is addressing.",
+        "de": "Wenn Sie aus dem Koran Nutzen ziehen wollen, sammeln Sie Ihr Herz beim Lesen und Hören, leihen Sie ihm Ihr Ohr und seien Sie gegenwärtig wie jemand, an den sich sein Sprecher wendet.",
+        "ar": "إذا أردت الانتفاع بالقرآن فاجمع قلبك عند تلاوته وسماعه، وألق سمعك، واحضر حضور من يخاطبه به من تكلم به سبحانه منه إليه."
+      },
+      "arabic": "إذا أردت الانتفاع بالقرآن فاجمع قلبك عند تلاوته وسماعه، وألق سمعك، واحضر حضور من يخاطبه به من تكلم به سبحانه منه إليه.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-18",
+      "theme": "quran",
+      "text": {
+        "en": "Nothing is more beneficial for the heart than reading the Quran with reflection and contemplation.",
+        "de": "Nichts ist dem Herzen zuträglicher als das Lesen des Korans mit Nachdenken und Besinnung.",
+        "ar": "فلا شيء أنفع للقلب من قراءة القرآن بالتدبر والتفكر."
+      },
+      "arabic": "فلا شيء أنفع للقلب من قراءة القرآن بالتدبر والتفكر.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "Miftah Dar al-Sa'ada", "de": "Miftah Dar as-Sa'ada", "ar": "مفتاح دار السعادة" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-19",
+      "theme": "charity",
+      "text": {
+        "en": "The generous person who does good to others has the widest chest of all people, the finest soul and the most joyful heart.",
+        "de": "Der Großzügige, der anderen Gutes tut, hat von allen Menschen die weiteste Brust, die beste Seele und das fröhlichste Herz.",
+        "ar": "فإن الكريم المحسن أشرح الناس صدرا، وأطيبهم نفسا، وأنعمهم قلبا."
+      },
+      "arabic": "فإن الكريم المحسن أشرح الناس صدرا، وأطيبهم نفسا، وأنعمهم قلبا.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "Zad al-Ma'ad", "de": "Zad al-Ma'ad", "ar": "زاد المعاد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-20",
+      "theme": "brotherhood",
+      "text": {
+        "en": "When fear grew strong in us, our thoughts turned dark and the earth felt narrow, we went to him. No sooner did we see him and hear his words than it all left us and turned into ease, strength, certainty and calm.",
+        "de": "Wenn die Furcht in uns stark wurde und die Erde uns eng erschien, gingen wir zu ihm. Kaum sahen wir ihn und hörten seine Worte, wich alles von uns und wurde zu Weite, Kraft, Gewissheit und Ruhe.",
+        "ar": "وكنا إذا اشتد بنا الخوف، وساءت منا الظنون، وضاقت بنا الأرض أتيناه، فما هو إلا أن نراه ونسمع كلامه فيذهب ذلك كله، وينقلب انشراحا وقوة ويقينا وطمأنينة."
+      },
+      "arabic": "وكنا إذا اشتد بنا الخوف، وساءت منا الظنون، وضاقت بنا الأرض أتيناه، فما هو إلا أن نراه ونسمع كلامه فيذهب ذلك كله، وينقلب انشراحا وقوة ويقينا وطمأنينة.",
+      "by": { "en": "Ibn al-Qayyim, on his teacher Ibn Taymiyya", "de": "Ibn al-Qayyim über seinen Lehrer Ibn Taymiyya", "ar": "ابن القيم عن شيخه ابن تيمية" },
+      "work": { "en": "al-Wabil al-Sayyib", "de": "al-Wabil as-Sayyib", "ar": "الوابل الصيب" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-21",
+      "theme": "humility",
+      "text": {
+        "en": "Whoever knows himself is too busy mending it to look at people's faults, and whoever knows his Lord is too busy with Him to follow his own desires.",
+        "de": "Wer sich selbst kennt, ist so mit seiner eigenen Besserung beschäftigt, dass er nicht auf die Fehler der Menschen schaut, und wer seinen Herrn kennt, ist so mit Ihm beschäftigt, dass er seinen Launen nicht folgt.",
+        "ar": "من عرف نفسه اشتغل بإصلاحها عن عيوب الناس، ومن عرف ربه اشتغل به عن هوى نفسه."
+      },
+      "arabic": "من عرف نفسه اشتغل بإصلاحها عن عيوب الناس، ومن عرف ربه اشتغل به عن هوى نفسه.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-qayyim-22",
+      "theme": "love-of-allah",
+      "text": {
+        "en": "Among the strangest of things is that you know Him and yet do not love Him, and that you hear His caller and yet are slow to answer.",
+        "de": "Zu den seltsamsten Dingen gehört, dass Sie Ihn kennen und Ihn doch nicht lieben, und dass Sie Seinen Rufer hören und doch zögern, ihm zu antworten.",
+        "ar": "من أعجب الأشياء أن تعرفه ثم لا تحبه، وأن تسمع داعيه ثم تتأخر عن الإجابة."
+      },
+      "arabic": "من أعجب الأشياء أن تعرفه ثم لا تحبه، وأن تسمع داعيه ثم تتأخر عن الإجابة.",
+      "by": { "en": "Ibn al-Qayyim", "de": "Ibn al-Qayyim", "ar": "ابن القيم" },
+      "work": { "en": "al-Fawa'id", "de": "al-Fawa'id", "ar": "الفوائد" },
+      "needs_review": true
+    }
+  ]
+}

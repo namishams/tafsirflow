@@ -1,0 +1,710 @@
+{
+  "series": "prayer-guide",
+  "label": { "en": "Prayer step by step", "de": "Gebet Schritt für Schritt", "ar": "الصلاة خطوة بخطوة" },
+  "topic": "prayer",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "prayer-guide-wudu",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 1", "de": "Gebet Schritt für Schritt · 1", "ar": "الصلاة خطوة بخطوة · ١" },
+        "title": { "en": "How to make wudu, step by step", "de": "Wudu Schritt für Schritt", "ar": "الوضوء خطوة بخطوة" },
+        "sub": { "en": "The washing before prayer, in the order the Prophet showed it", "de": "Die Waschung vor dem Gebet, in der Reihenfolge, die der Prophet zeigte", "ar": "الطهارة قبل الصلاة على الترتيب الذي علّمه النبي ﷺ" },
+        "arabic": "الوُضوء"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:135",
+          "check": "is not accepted till he performs the ablution",
+          "title": { "en": "No prayer without it", "de": "Kein Gebet ohne Wudu", "ar": "لا صلاة بلا وضوء" },
+          "body": { "en": "Wudu opens the door to prayer. After using the toilet or passing wind, it is renewed before praying.", "de": "Wudu öffnet die Tür zum Gebet. Nach dem Toilettengang oder einem Windabgang wird es vor dem Gebet erneuert.", "ar": "الوضوء مفتاح الصلاة، ويُجدَّد قبلها بعد قضاء الحاجة أو خروج الريح." }
+        },
+        {
+          "dua": "hisn:8:0",
+          "check": "In the name of Allah",
+          "title": { "en": "Begin with intention and His name", "de": "Mit Absicht und Seinem Namen beginnen", "ar": "ابدأ بالنية وباسم الله" },
+          "body": { "en": "The intention lives in the heart and need not be spoken. Then say Bismillah.", "de": "Die Absicht liegt im Herzen und muss nicht ausgesprochen werden. Dann sagen Sie Bismillah.", "ar": "النية محلها القلب ولا يلزم التلفظ بها، ثم قل: بسم الله." }
+        },
+        {
+          "title": { "en": "The steps in order", "de": "Die Schritte der Reihe nach", "ar": "الخطوات بالترتيب" },
+          "list": {
+            "en": ["Wash your hands up to the wrists", "Rinse your mouth, then your nose", "Wash your face from hairline to chin, ear to ear", "Wash your arms up to and including the elbows", "Wipe over your head with wet hands, then your ears", "Wash your feet up to and including the ankles"],
+            "de": ["Waschen Sie die Hände bis zu den Handgelenken", "Spülen Sie den Mund, dann die Nase", "Waschen Sie das Gesicht vom Haaransatz bis zum Kinn, von Ohr zu Ohr", "Waschen Sie die Arme bis einschließlich der Ellbogen", "Streichen Sie mit nassen Händen über den Kopf, dann über die Ohren", "Waschen Sie die Füße bis einschließlich der Knöchel"],
+            "ar": ["اغسل كفيك إلى الرسغين", "تمضمض ثم استنشق واستنثر", "اغسل وجهك من منابت الشعر إلى الذقن ومن الأذن إلى الأذن", "اغسل يديك إلى المرفقين مع إدخالهما", "امسح رأسك بيديك المبللتين ثم أذنيك", "اغسل قدميك إلى الكعبين مع إدخالهما"]
+          },
+          "body": { "en": "Washing each part once is the minimum; three times is the Sunnah. Begin with the right side.", "de": "Einmal zu waschen ist das Minimum, dreimal ist Sunna. Beginnen Sie jeweils mit der rechten Seite.", "ar": "غسل كل عضو مرة واحدة هو الحد الأدنى، والتثليث سنة، ويُبدأ باليمين." }
+        },
+        {
+          "hadith": "bukhari:159",
+          "check": "washed his face and forearms up to the elbows thrice",
+          "title": { "en": "Learned by watching", "de": "Durch Zusehen gelernt", "ar": "تعلّمٌ بالمشاهدة" },
+          "body": { "en": "'Uthman showed the Prophet's wudu in practice, and the reward of two rak'at prayed after it.", "de": "Uthman zeigte das Wudu des Propheten ganz praktisch, dazu den Lohn für zwei Rakaat danach.", "ar": "أرى عثمانُ الناسَ وضوءَ النبي ﷺ عمليًا، وذكر فضل ركعتين بعده." }
+        },
+        {
+          "hadith": "bukhari:165",
+          "check": "Save your heels",
+          "title": { "en": "Leave no spot dry", "de": "Keine Stelle trocken lassen", "ar": "لا تترك موضعًا جافًا" },
+          "body": { "en": "Let the water reach the heels, between the fingers and between the toes.", "de": "Lassen Sie das Wasser an die Fersen, zwischen die Finger und zwischen die Zehen gelangen.", "ar": "أوصل الماء إلى العقبين وبين أصابع اليدين والرجلين." }
+        },
+        {
+          "title": { "en": "Where the schools differ", "de": "Wo die Schulen sich unterscheiden", "ar": "مواضع الخلاف بين المذاهب" },
+          "body": { "en": "The four Sunni schools agree on washing the face, arms and feet and wiping the head. They differ on details: the Hanafi school, for example, counts the intention as Sunnah, the other three as obligatory.", "de": "Die vier sunnitischen Rechtsschulen sind sich über das Waschen von Gesicht, Armen und Füßen und das Bestreichen des Kopfes einig. Bei Details unterscheiden sie sich: Die Hanafiten zählen etwa die Absicht zur Sunna, die anderen drei zur Pflicht.", "ar": "تتفق المذاهب السنية الأربعة على غسل الوجه واليدين والرجلين ومسح الرأس، وتختلف في التفاصيل؛ فالحنفية مثلًا يعدّون النية سنة، والمذاهب الثلاثة الأخرى يعدّونها فرضًا." }
+        },
+        {
+          "dua": "hisn:9:0",
+          "check": "I bear witness that none has the right to be worshipped except Allah",
+          "title": { "en": "After wudu", "de": "Nach dem Wudu", "ar": "بعد الوضوء" },
+          "body": { "en": "Sahih Muslim reports that the gates of Paradise open for whoever completes wudu well and then says this.", "de": "Nach Sahih Muslim öffnen sich die Tore des Paradieses für den, der das Wudu gut vollendet und dies spricht.", "ar": "روى مسلم أن أبواب الجنة تُفتح لمن أحسن الوضوء ثم قال هذا الذكر." }
+        }
+      ],
+      "sources": [
+        { "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, chapter on wudu" },
+        { "label": "Sahih Muslim, Book of Purification: the testimony after wudu" }
+      ]
+    },
+    {
+      "id": "prayer-guide-ghusl",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 2", "de": "Gebet Schritt für Schritt · 2", "ar": "الصلاة خطوة بخطوة · ٢" },
+        "title": { "en": "Ghusl: the essentials", "de": "Ghusl: das Wichtigste", "ar": "الغسل: ما تحتاج إلى معرفته" },
+        "sub": { "en": "When the full bath is required and how the Prophet performed it", "de": "Wann die Ganzkörperwaschung Pflicht ist und wie der Prophet sie vollzog", "ar": "متى يجب الغسل وكيف كان النبي ﷺ يغتسل" },
+        "arabic": "الغُسل"
+      },
+      "slides": [
+        {
+          "title": { "en": "When ghusl is required", "de": "Wann Ghusl Pflicht ist", "ar": "موجبات الغسل" },
+          "list": {
+            "en": ["After sexual intercourse, even without emission", "After an emission of semen, also in a wet dream", "When menstruation ends", "When postnatal bleeding ends"],
+            "de": ["Nach Geschlechtsverkehr, auch ohne Samenerguss", "Nach einem Samenerguss, auch im Traum", "Nach dem Ende der Menstruation", "Nach dem Ende der Wochenbettblutung"],
+            "ar": ["بعد الجماع ولو بلا إنزال", "بعد خروج المني ولو في الاحتلام", "عند انقطاع دم الحيض", "عند انقطاع دم النفاس"]
+          },
+          "body": { "en": "The Sunni schools also teach washing the deceased, and recommend ghusl for Friday and the two Eids.", "de": "Die sunnitischen Schulen lehren zudem die Waschung Verstorbener und empfehlen Ghusl am Freitag und an beiden Festtagen.", "ar": "وتذكر المذاهب السنية أيضًا غسل الميت، وتستحب الغسل للجمعة والعيدين." }
+        },
+        {
+          "title": { "en": "The minimum that makes it valid", "de": "Das Minimum für die Gültigkeit", "ar": "الحد الأدنى لصحة الغسل" },
+          "body": { "en": "Water must reach the whole body, including the roots of the hair. Some schools add more: the Hanafi and Hanbali schools require rinsing the mouth and nose, the Maliki school rubbing the body.", "de": "Das Wasser muss den ganzen Körper erreichen, auch die Haarwurzeln. Manche Schulen verlangen mehr: Hanafiten und Hanbaliten das Ausspülen von Mund und Nase, Malikiten das Reiben des Körpers.", "ar": "يجب أن يعمّ الماء الجسد كله حتى أصول الشعر. وتزيد بعض المذاهب: فالحنفية والحنابلة يوجبون المضمضة والاستنشاق، والمالكية يوجبون الدَّلك." }
+        },
+        {
+          "title": { "en": "The Sunnah way", "de": "Der Weg der Sunna", "ar": "صفة الغسل المسنون" },
+          "list": {
+            "en": ["Make the intention and say Bismillah", "Wash your hands, then the private parts", "Make a complete wudu", "Run wet fingers through the roots of your hair", "Pour water over your head three times", "Wash the whole body, starting with the right side"],
+            "de": ["Fassen Sie die Absicht und sagen Sie Bismillah", "Waschen Sie die Hände, dann den Intimbereich", "Vollziehen Sie ein vollständiges Wudu", "Fahren Sie mit nassen Fingern durch die Haarwurzeln", "Gießen Sie dreimal Wasser über den Kopf", "Waschen Sie den ganzen Körper, rechts beginnend"],
+            "ar": ["انوِ وقل: بسم الله", "اغسل كفيك ثم موضع الأذى", "توضأ وضوءًا كاملًا", "خلّل أصول شعرك بأصابعك المبللة", "صبّ الماء على رأسك ثلاثًا", "اغسل سائر جسدك مبتدئًا بالشق الأيمن"]
+          }
+        },
+        {
+          "hadith": "bukhari:248",
+          "check": "move the roots of his hair",
+          "title": { "en": "As 'Aisha described it", "de": "Wie Aischa es beschrieb", "ar": "كما وصفته عائشة" },
+          "body": { "en": "Hands first, then wudu, then the hair, then water over the whole body.", "de": "Zuerst die Hände, dann Wudu, dann das Haar, dann Wasser über den ganzen Körper.", "ar": "اليدان أولًا، ثم الوضوء، ثم الشعر، ثم إفاضة الماء على الجسد كله." }
+        },
+        {
+          "hadith": "bukhari:249",
+          "check": "did not wash his feet",
+          "title": { "en": "The feet at the end", "de": "Die Füße zum Schluss", "ar": "القدمان في الختام" },
+          "body": { "en": "In Maimuna's report he washed his feet last, after stepping aside from where he bathed.", "de": "Nach Maimunas Bericht wusch er die Füße zuletzt, nachdem er vom Waschplatz zur Seite getreten war.", "ar": "وفي رواية ميمونة أنه غسل قدميه آخرًا بعد أن تنحّى عن موضعه." }
+        },
+        {
+          "verse": "2:222",
+          "check": "loves those who purify themselves",
+          "title": { "en": "Loved by Allah", "de": "Von Allah geliebt", "ar": "محبوبٌ عند الله" },
+          "body": { "en": "The verse speaks of purity after menstruation and closes with His love for people who keep themselves pure.", "de": "Der Vers spricht von Reinheit nach der Menstruation und endet mit Seiner Liebe zu denen, die sich rein halten.", "ar": "تتحدث الآية عن الطهارة بعد الحيض، وتُختم بذكر محبته لأهل الطهارة." }
+        }
+      ],
+      "sources": [{ "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, chapter on ghusl" }]
+    },
+    {
+      "id": "prayer-guide-tayammum",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 3", "de": "Gebet Schritt für Schritt · 3", "ar": "الصلاة خطوة بخطوة · ٣" },
+        "title": { "en": "Tayammum: purity without water", "de": "Tayammum: Reinheit ohne Wasser", "ar": "التيمم: طهارة بلا ماء" },
+        "sub": { "en": "When it is allowed and how to do it in a few simple steps", "de": "Wann er erlaubt ist und wie er in wenigen Schritten gelingt", "ar": "متى يُشرع وكيف يُؤدّى في خطوات يسيرة" },
+        "arabic": "التيمُّم"
+      },
+      "slides": [
+        {
+          "title": { "en": "When tayammum is allowed", "de": "Wann Tayammum erlaubt ist", "ar": "متى يجوز التيمم" },
+          "body": { "en": "When no water can be found, or when using it would cause harm, for example in illness. Tayammum then takes the place of wudu, and also of ghusl.", "de": "Wenn kein Wasser zu finden ist oder seine Verwendung schaden würde, etwa bei Krankheit. Dann ersetzt Tayammum das Wudu und auch den Ghusl.", "ar": "إذا لم يوجد الماء، أو كان استعماله يضرّ كما في المرض، قام التيمم مقام الوضوء ومقام الغسل كذلك." }
+        },
+        {
+          "hadith": "bukhari:3773",
+          "check": "Divine Verse of Tayammum was revealed",
+          "title": { "en": "A ruling born on a journey", "de": "Eine Regel, entstanden auf einer Reise", "ar": "حكمٌ نزل في سفر" },
+          "body": { "en": "A lost necklace kept the Companions where there was no water. Then the verse of tayammum came.", "de": "Eine verlorene Halskette hielt die Gefährten an einem Ort ohne Wasser fest. Dann kam der Vers über Tayammum.", "ar": "حبس عقدٌ ضائع الصحابةَ في موضع لا ماء فيه، فنزلت آية التيمم." }
+        },
+        {
+          "title": { "en": "The steps", "de": "Die Schritte", "ar": "الخطوات" },
+          "list": {
+            "en": ["Make the intention in your heart", "Say Bismillah", "Strike clean earth or dust with both palms", "Blow or shake off the excess lightly", "Wipe your face with your palms", "Wipe the back of each hand with the other palm"],
+            "de": ["Fassen Sie die Absicht im Herzen", "Sagen Sie Bismillah", "Schlagen Sie mit beiden Handflächen auf reine Erde oder Staub", "Blasen oder schütteln Sie den Überschuss leicht ab", "Streichen Sie mit den Handflächen über das Gesicht", "Streichen Sie über jeden Handrücken mit der anderen Handfläche"],
+            "ar": ["انوِ بقلبك", "قل: بسم الله", "اضرب بكفيك ترابًا أو أرضًا طاهرة", "انفخ فيهما أو انفضهما برفق", "امسح وجهك بكفيك", "امسح ظاهر كل كف بباطن الأخرى"]
+          }
+        },
+        {
+          "hadith": "bukhari:343",
+          "check": "backs of his hands",
+          "title": { "en": "As 'Ammar saw it", "de": "Wie Ammar es sah", "ar": "كما رآه عمار" },
+          "body": { "en": "One strike, then the face and the backs of the hands: the simplest form reported in al-Bukhari.", "de": "Ein Schlag, dann Gesicht und Handrücken: die einfachste Form, die al-Buchari überliefert.", "ar": "ضربة واحدة ثم مسح الوجه وظاهر الكفين: أيسر صفة رواها البخاري." }
+        },
+        {
+          "title": { "en": "Where the schools differ", "de": "Wo die Schulen sich unterscheiden", "ar": "مواضع الخلاف بين المذاهب" },
+          "body": { "en": "Hanafis and Shafi'is teach two strikes, wiping the arms up to the elbows. Malikis and Hanbalis see one strike and the hands to the wrists as enough. They also differ on whether stone and sand count or only dust.", "de": "Hanafiten und Schafiiten lehren zwei Schläge und das Bestreichen der Arme bis zu den Ellbogen. Malikiten und Hanbaliten halten einen Schlag und die Hände bis zum Handgelenk für ausreichend. Auch ob Stein und Sand genügen oder nur Staub, ist umstritten.", "ar": "يرى الحنفية والشافعية ضربتين ومسح اليدين إلى المرفقين، ويرى المالكية والحنابلة أن ضربة واحدة ومسح الكفين إلى الرسغين يكفي. ويختلفون كذلك: هل يجزئ الحجر والرمل أم التراب وحده؟" }
+        },
+        {
+          "hadith": "bukhari:335",
+          "check": "a thing to perform Tayammum",
+          "title": { "en": "The earth as a means of purity", "de": "Die Erde als Mittel der Reinheit", "ar": "الأرض وسيلة للطهارة" },
+          "body": { "en": "One of five gifts named in this hadith: the earth itself can purify when water is missing.", "de": "Eine der fünf Gaben in diesem Hadith: Die Erde selbst kann reinigen, wenn Wasser fehlt.", "ar": "من العطايا الخمس في هذا الحديث أن الأرض نفسها تطهّر عند فقد الماء." }
+        },
+        {
+          "title": { "en": "When it ends", "de": "Wann er endet", "ar": "متى ينتقض التيمم" },
+          "body": { "en": "Whatever breaks wudu also breaks tayammum. It also ends as soon as water is found and can be used. Prayers already prayed with it remain valid in the view of most scholars.", "de": "Was das Wudu bricht, bricht auch den Tayammum. Er endet außerdem, sobald Wasser vorhanden ist und benutzt werden kann. Bereits verrichtete Gebete bleiben nach den meisten Gelehrten gültig.", "ar": "ينقض التيممَ ما ينقض الوضوء، ويبطل كذلك بوجود الماء والقدرة على استعماله. والصلوات التي أُدّيت به صحيحة عند أكثر العلماء." }
+        }
+      ],
+      "sources": [{ "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, chapter on tayammum" }]
+    },
+    {
+      "id": "prayer-guide-five-prayers",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 4", "de": "Gebet Schritt für Schritt · 4", "ar": "الصلاة خطوة بخطوة · ٤" },
+        "title": { "en": "The five daily prayers and their times", "de": "Die fünf täglichen Gebete und ihre Zeiten", "ar": "الصلوات الخمس وأوقاتها" },
+        "sub": { "en": "Five meetings a day, each with its own window", "de": "Fünf Begegnungen am Tag, jede mit ihrem eigenen Zeitfenster", "ar": "خمسة لقاءات في اليوم، لكلٍّ منها وقته" },
+        "arabic": "مواقيت الصلاة"
+      },
+      "slides": [
+        {
+          "verse": "4:103",
+          "check": "decree of specified times",
+          "title": { "en": "Prayer has its times", "de": "Das Gebet hat seine Zeiten", "ar": "للصلاة أوقاتها" },
+          "body": { "en": "Each prayer has a window: it opens with one sign in the sky and closes with another.", "de": "Jedes Gebet hat ein Zeitfenster: Es beginnt mit einem Zeichen am Himmel und endet mit einem anderen.", "ar": "لكل صلاة وقت يبدأ بعلامة في السماء وينتهي بأخرى." }
+        },
+        {
+          "title": { "en": "The five at a glance", "de": "Die fünf auf einen Blick", "ar": "الصلوات الخمس في لمحة" },
+          "list": {
+            "en": ["Fajr: 2 rak'at, from true dawn until sunrise", "Dhuhr: 4 rak'at, from just after midday", "Asr: 4 rak'at, in the afternoon until sunset", "Maghrib: 3 rak'at, from sunset", "Isha: 4 rak'at, once the twilight has faded"],
+            "de": ["Fadschr: 2 Rakaat, von der echten Morgendämmerung bis Sonnenaufgang", "Zuhr: 4 Rakaat, ab kurz nach dem Mittag", "Asr: 4 Rakaat, am Nachmittag bis Sonnenuntergang", "Maghrib: 3 Rakaat, ab Sonnenuntergang", "Ischa: 4 Rakaat, wenn die Abenddämmerung verschwunden ist"],
+            "ar": ["الفجر: ركعتان، من الفجر الصادق إلى الشروق", "الظهر: أربع ركعات، من زوال الشمس", "العصر: أربع ركعات، بعد الظهر إلى الغروب", "المغرب: ثلاث ركعات، من غروب الشمس", "العشاء: أربع ركعات، بعد مغيب الشفق"]
+          },
+          "body": { "en": "Asr is best prayed before the sun turns pale.", "de": "Asr betet man am besten, bevor die Sonne fahl wird.", "ar": "والأفضل أداء العصر قبل اصفرار الشمس." }
+        },
+        {
+          "hadith": "muslim:1388",
+          "check": "when the sun passes the meridian",
+          "title": { "en": "The times as he taught them", "de": "Die Zeiten, wie er sie lehrte", "ar": "المواقيت كما علّمها" },
+          "body": { "en": "A short map of the day, from noon into the night and back to dawn.", "de": "Eine kurze Karte des Tages, vom Mittag bis in die Nacht und zurück zur Dämmerung.", "ar": "خريطة موجزة لليوم، من الظهر إلى الليل ثم إلى الفجر." }
+        },
+        {
+          "title": { "en": "When does Asr begin?", "de": "Wann beginnt Asr?", "ar": "متى يدخل وقت العصر؟" },
+          "body": { "en": "In most schools Asr begins when an object's shadow equals its length, beyond its shadow at noon. Abu Hanifa held that it begins at twice the length. Prayer apps let you choose either method.", "de": "In den meisten Schulen beginnt Asr, wenn der Schatten eines Gegenstands seiner Länge entspricht, zusätzlich zum Mittagsschatten. Abu Hanifa lehrte: bei doppelter Länge. Gebets-Apps bieten beide Berechnungen an.", "ar": "يدخل العصر عند أكثر المذاهب إذا صار ظل الشيء مثله بعد ظل الزوال، ويرى أبو حنيفة أنه يدخل إذا صار مثليه. وتتيح تطبيقات الصلاة الاختيار بين الطريقتين." }
+        },
+        {
+          "hadith": "bukhari:527",
+          "check": "early stated fixed times",
+          "title": { "en": "The deed dearest to Allah", "de": "Die Tat, die Allah am liebsten ist", "ar": "أحب الأعمال إلى الله" },
+          "body": { "en": "Asked which deed Allah loves most, the Prophet named prayer on time first.", "de": "Gefragt nach der Tat, die Allah am meisten liebt, nannte der Prophet zuerst das pünktliche Gebet.", "ar": "سُئل النبي ﷺ عن أحب الأعمال إلى الله، فقدّم أداء الصلاة في وقتها." }
+        },
+        {
+          "verse": "17:78",
+          "check": "recitation of dawn",
+          "title": { "en": "The times in the Quran", "de": "Die Zeiten im Koran", "ar": "المواقيت في القرآن" },
+          "body": { "en": "Many commentators read the five prayers into this verse, from noon into the night and at dawn.", "de": "Viele Kommentatoren sehen in diesem Vers die fünf Gebete, vom Mittag bis in die Nacht und in der Morgendämmerung.", "ar": "يرى كثير من المفسرين في هذه الآية إشارة إلى الصلوات الخمس من الزوال إلى الليل ثم الفجر." }
+        },
+        {
+          "hadith": "bukhari:528",
+          "check": "five times a day",
+          "title": { "en": "A river at your door", "de": "Ein Fluss vor Ihrer Tür", "ar": "نهرٌ على بابك" },
+          "body": { "en": "Five meetings a day keep the heart clean, like bathing again and again.", "de": "Fünf Begegnungen am Tag halten das Herz rein, wie ein Bad, immer wieder.", "ar": "خمسة لقاءات في اليوم تُبقي القلب نقيًا كالاغتسال مرة بعد مرة." }
+        }
+      ],
+      "sources": [{ "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 17:78" }]
+    },
+    {
+      "id": "prayer-guide-how-to-pray",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 5", "de": "Gebet Schritt für Schritt · 5", "ar": "الصلاة خطوة بخطوة · ٥" },
+        "title": { "en": "How to pray: the movements in order", "de": "So wird gebetet: die Bewegungen der Reihe nach", "ar": "صفة الصلاة: الحركات بالترتيب" },
+        "sub": { "en": "From the first Allahu akbar to the final salam", "de": "Vom ersten Allahu akbar bis zum abschließenden Salam", "ar": "من تكبيرة الإحرام إلى التسليم" },
+        "arabic": "صِفة الصلاة"
+      },
+      "slides": [
+        {
+          "title": { "en": "Before you begin", "de": "Bevor Sie beginnen", "ar": "قبل أن تبدأ" },
+          "list": {
+            "en": ["Be in wudu, with clean body, clothes and place", "Cover what must be covered", "Face the qibla", "Intend this particular prayer in your heart"],
+            "de": ["Seien Sie im Zustand des Wudu, mit reinem Körper, Kleidung und Ort", "Bedecken Sie, was bedeckt sein muss", "Wenden Sie sich zur Qibla", "Fassen Sie im Herzen die Absicht für dieses Gebet"],
+            "ar": ["كن على وضوء، طاهر البدن والثوب والمكان", "استر العورة", "استقبل القبلة", "انوِ هذه الصلاة بعينها في قلبك"]
+          },
+          "body": { "en": "Then stand still for a moment. The prayer begins with the first Allahu akbar.", "de": "Dann stehen Sie einen Moment still. Das Gebet beginnt mit dem ersten Allahu akbar.", "ar": "ثم قف لحظة بسكينة، فالصلاة تبدأ بتكبيرة الإحرام." }
+        },
+        {
+          "dua": "hisn:16:1",
+          "check": "Blessed be Your name",
+          "title": { "en": "1. Takbir and the opening", "de": "1. Takbir und Eröffnung", "ar": "١. التكبير والاستفتاح" },
+          "body": { "en": "Raise your hands and say Allahu akbar. Many then begin quietly with an opening praise such as this one.", "de": "Heben Sie die Hände und sagen Sie Allahu akbar. Viele beginnen dann leise mit einem Eröffnungslob wie diesem.", "ar": "ارفع يديك وقل: الله أكبر. ويستفتح كثيرون بعدها سرًّا بثناء كهذا." }
+        },
+        {
+          "hadith": "bukhari:756",
+          "check": "Al-Fatiha",
+          "title": { "en": "2. Al-Fatiha in every rak'ah", "de": "2. Al-Fatiha in jeder Raka", "ar": "٢. الفاتحة في كل ركعة" },
+          "body": { "en": "Recite al-Fatiha, and in the first two rak'at a further passage. Schools differ for those praying behind an imam.", "de": "Rezitieren Sie al-Fatiha, in den ersten beiden Rakaat dazu einen weiteren Abschnitt. Hinter einem Imam unterscheiden sich die Schulen.", "ar": "اقرأ الفاتحة، ومعها في الركعتين الأوليين ما تيسر من القرآن. ويختلف العلماء في حكمها للمأموم." }
+        },
+        {
+          "dua": "hisn:17:0",
+          "check": "my Lord is, The Supreme",
+          "title": { "en": "3. Ruku: bowing", "de": "3. Ruku: die Verbeugung", "ar": "٣. الركوع" },
+          "body": { "en": "Say Allahu akbar and bow, back straight, hands on the knees. Stay until you are at rest.", "de": "Sagen Sie Allahu akbar und verbeugen Sie sich, Rücken gerade, Hände auf den Knien. Verweilen Sie, bis Sie zur Ruhe kommen.", "ar": "كبّر واركع مستوي الظهر، واضعًا يديك على ركبتيك، واطمئن في ركوعك." }
+        },
+        {
+          "dua": "hisn:18:0",
+          "check": "praises Him",
+          "title": { "en": "4. Rising from ruku", "de": "4. Aufrichten nach dem Ruku", "ar": "٤. الرفع من الركوع" },
+          "body": { "en": "Rise until you stand straight and at rest. These are the words for rising; praise of your Lord follows.", "de": "Richten Sie sich auf, bis Sie gerade und ruhig stehen. Dies sind die Worte beim Aufrichten; danach folgt das Lob Ihres Herrn.", "ar": "ارفع حتى تعتدل قائمًا مطمئنًا. هذه كلمات الرفع، ثم يتبعها حمد الرب." }
+        },
+        {
+          "hadith": "bukhari:812",
+          "check": "seven bones",
+          "title": { "en": "5. Sujud on seven bones", "de": "5. Sudschud auf sieben Knochen", "ar": "٥. السجود على الأعضاء السبعة" },
+          "body": { "en": "Say Allahu akbar and go down. Seven parts of the body rest on the ground, from the forehead to the toes. Stay until you are at rest.", "de": "Sagen Sie Allahu akbar und werfen Sie sich nieder. Sieben Körperteile ruhen auf dem Boden, von der Stirn bis zu den Zehen. Verweilen Sie in Ruhe.", "ar": "كبّر واسجد بحيث تمسّ الأرضَ جبهتُك وأنفك وكفّاك وركبتاك وأصابع قدميك." }
+        },
+        {
+          "dua": "hisn:20:0",
+          "check": "My Lord forgive me",
+          "title": { "en": "6. Sitting between the two sujud", "de": "6. Sitzen zwischen den zwei Sudschud", "ar": "٦. الجلسة بين السجدتين" },
+          "body": { "en": "Sit up calmly and ask for forgiveness, then make a second sujud. That completes one rak'ah.", "de": "Setzen Sie sich ruhig auf und bitten Sie um Vergebung, dann folgt der zweite Sudschud. Damit ist eine Raka vollendet.", "ar": "اجلس مطمئنًا واستغفر، ثم اسجد السجدة الثانية، وبها تتم الركعة." }
+        },
+        {
+          "dua": "hisn:22:0",
+          "check": "At-tahiyyat",
+          "title": { "en": "7. Tashahhud and salam", "de": "7. Taschahhud und Salam", "ar": "٧. التشهد والتسليم" },
+          "body": { "en": "Sit for the tashahhud after the second rak'ah and at the end. In the last sitting add blessings on the Prophet, then end with the salam.", "de": "Zum Taschahhud sitzen Sie nach der zweiten Raka und am Ende. Im letzten Sitzen folgen Segenswünsche für den Propheten, dann der Salam.", "ar": "اجلس للتشهد بعد الركعة الثانية وفي آخر الصلاة، وفي الجلسة الأخيرة صلِّ على النبي ﷺ ثم سلّم." }
+        }
+      ],
+      "sources": [{ "label": "Ibn al-Qayyim, Zad al-Ma'ad, chapter on the Prophet's prayer" }]
+    },
+    {
+      "id": "prayer-guide-tahajjud",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 6", "de": "Gebet Schritt für Schritt · 6", "ar": "الصلاة خطوة بخطوة · ٦" },
+        "title": { "en": "Tahajjud step by step", "de": "Tahaddschud Schritt für Schritt", "ar": "التهجد خطوة بخطوة" },
+        "sub": { "en": "The night prayer: when to wake, how to begin, how to end", "de": "Das Nachtgebet: wann aufstehen, wie beginnen, wie beenden", "ar": "صلاة الليل: متى تقوم، وكيف تبدأ، وكيف تختم" },
+        "arabic": "التهجُّد"
+      },
+      "slides": [
+        {
+          "verse": "17:79",
+          "check": "additional",
+          "title": { "en": "An extra gift of the night", "de": "Ein zusätzliches Geschenk der Nacht", "ar": "هديةٌ إضافية من الليل" },
+          "body": { "en": "Tahajjud is the voluntary prayer after waking from sleep at night. The Quran names it as something extra.", "de": "Tahaddschud ist das freiwillige Gebet nach dem Schlaf in der Nacht. Der Koran nennt es eine zusätzliche Gabe.", "ar": "التهجد صلاة تطوع بعد النوم في الليل، وقد وصفها القرآن بأنها زيادة في الخير." }
+        },
+        {
+          "hadith": "muslim:2755",
+          "check": "prayer during the night",
+          "title": { "en": "The best prayer after the obligatory", "de": "Das beste Gebet nach den Pflichtgebeten", "ar": "في المرتبة الأولى بعد الفرائض" },
+          "body": { "en": "Of all voluntary prayers, none is praised more highly than prayer at night.", "de": "Kein freiwilliges Gebet wird höher gelobt als das Gebet in der Nacht.", "ar": "لا تُقدَّم صلاةُ تطوعٍ على صلاة الليل في الفضل." }
+        },
+        {
+          "title": { "en": "Prepare the night before", "de": "Am Abend vorbereiten", "ar": "استعدّ من أول الليل" },
+          "list": {
+            "en": ["Make the intention before sleeping", "Sleep early, in wudu if you can", "Set an alarm for the last third of the night", "Pray Witr before sleeping if you may not wake"],
+            "de": ["Fassen Sie die Absicht vor dem Schlafen", "Schlafen Sie früh, wenn möglich mit Wudu", "Stellen Sie einen Wecker für das letzte Drittel der Nacht", "Beten Sie Witr vor dem Schlaf, wenn Sie vielleicht nicht aufwachen"],
+            "ar": ["انوِ القيام قبل أن تنام", "نم مبكرًا وعلى وضوء إن استطعت", "اضبط منبهًا للثلث الأخير من الليل", "أوتر قبل النوم إن خشيت ألا تستيقظ"]
+          }
+        },
+        {
+          "hadith": "bukhari:1145",
+          "check": "last third of the night",
+          "title": { "en": "The best time", "de": "Die beste Zeit", "ar": "أفضل الأوقات" },
+          "body": { "en": "The last third of the night: a time when asking, praying and seeking forgiveness are met.", "de": "Das letzte Drittel der Nacht: eine Zeit, in der Bitten, Gebet und die Suche nach Vergebung Antwort finden.", "ar": "الثلث الأخير من الليل وقتٌ يُستجاب فيه الدعاء ويُرجى فيه الغفران." }
+        },
+        {
+          "hadith": "bukhari:1142",
+          "check": "three knots",
+          "title": { "en": "Wake, remember, wash, pray", "de": "Aufwachen, gedenken, waschen, beten", "ar": "استيقظ، اذكر، توضأ، صلِّ" },
+          "body": { "en": "Remember Allah as you wake, make wudu, then pray. Each step loosens the hold of laziness.", "de": "Gedenken Sie Allahs beim Aufwachen, nehmen Sie Wudu, dann beten Sie. Jeder Schritt löst den Griff der Trägheit.", "ar": "اذكر الله عند استيقاظك، ثم توضأ، ثم صلِّ؛ فكل خطوة تفكّ قيد الكسل." }
+        },
+        {
+          "title": { "en": "The prayer itself", "de": "Das Gebet selbst", "ar": "الصلاة نفسها" },
+          "list": {
+            "en": ["Begin with two light rak'at", "Pray in pairs, with a salam after every two", "Recite at length, at a calm pace", "Make your sujud long and full of dua", "End with Witr as your last prayer"],
+            "de": ["Beginnen Sie mit zwei leichten Rakaat", "Beten Sie paarweise, mit Salam nach je zwei", "Rezitieren Sie ausgiebig und ruhig", "Machen Sie den Sudschud lang und voller Bittgebete", "Schließen Sie mit Witr als letztem Gebet"],
+            "ar": ["ابدأ بركعتين خفيفتين", "صلِّ ركعتين ركعتين، تسلّم من كل اثنتين", "أطل القراءة بتأنٍّ", "أطل السجود وأكثر فيه الدعاء", "اختم صلاتك بالوتر"]
+          }
+        },
+        {
+          "hadith": "bukhari:1139",
+          "check": "seven, nine or eleven",
+          "title": { "en": "How many rak'at?", "de": "Wie viele Rakaat?", "ar": "كم ركعة؟" },
+          "body": { "en": "There is no fixed number. 'Aisha described seven, nine or eleven; two sincere rak'at also count.", "de": "Eine feste Zahl gibt es nicht. Aischa nannte sieben, neun oder elf; auch zwei aufrichtige Rakaat zählen.", "ar": "لا عدد محدد؛ ذكرت عائشة سبعًا وتسعًا وإحدى عشرة، وركعتان بإخلاص لهما قدرهما." }
+        },
+        {
+          "verse": "32:16",
+          "check": "fear and aspiration",
+          "title": { "en": "Leaving the bed for Him", "de": "Das Bett für Ihn verlassen", "ar": "يتركون الفراش لأجله" },
+          "body": { "en": "A portrait of believers who rise from their beds to call on their Lord in hope.", "de": "Ein Bild der Gläubigen, die ihr Bett verlassen, um ihren Herrn voller Hoffnung anzurufen.", "ar": "صورةٌ لمؤمنين يتركون فرشهم ليدعوا ربهم راجين." }
+        }
+      ]
+    },
+    {
+      "id": "prayer-guide-witr",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 7", "de": "Gebet Schritt für Schritt · 7", "ar": "الصلاة خطوة بخطوة · ٧" },
+        "title": { "en": "Witr: the prayer that closes the night", "de": "Witr: das Gebet, das die Nacht beschließt", "ar": "الوتر: صلاة تختم الليل" },
+        "sub": { "en": "What it is, how it is prayed, and where the schools differ", "de": "Was es ist, wie es gebetet wird und wo sich die Schulen unterscheiden", "ar": "ما هو، وكيف يُصلّى، وأين تختلف المذاهب" },
+        "arabic": "الوِتر"
+      },
+      "slides": [
+        {
+          "title": { "en": "What witr is", "de": "Was Witr ist", "ar": "ما الوتر؟" },
+          "body": { "en": "Witr means odd. It is an odd-numbered prayer that closes the prayers of the night. Its time runs from after Isha until true dawn.", "de": "Witr bedeutet ungerade. Es ist ein Gebet mit ungerader Zahl an Rakaat, das die Gebete der Nacht beschließt. Seine Zeit reicht vom Ischa bis zur echten Morgendämmerung.", "ar": "الوتر هو الفرد، وهو صلاة ذات عدد فردي تُختم بها صلاة الليل، ووقته من بعد العشاء إلى طلوع الفجر الصادق." }
+        },
+        {
+          "hadith": "bukhari:998",
+          "check": "last prayer at night",
+          "title": { "en": "Make it the last", "de": "Machen Sie es zum letzten", "ar": "ختام صلاة الليل" },
+          "body": { "en": "Whatever you pray at night, let Witr come last.", "de": "Was immer Sie nachts beten: Witr kommt zuletzt.", "ar": "مهما صليت في الليل فليكن الوتر في الختام." }
+        },
+        {
+          "title": { "en": "How important is it?", "de": "Wie wichtig ist es?", "ar": "ما حكمه؟" },
+          "body": { "en": "The Hanafi school counts Witr as wajib, a step above Sunnah. The Maliki, Shafi'i and Hanbali schools see it as a strongly emphasised Sunnah. All agree it should not be neglected.", "de": "Die hanafitische Schule zählt Witr als Wadschib, eine Stufe über der Sunna. Malikiten, Schafiiten und Hanbaliten sehen darin eine stark betonte Sunna. Alle sind sich einig: Man sollte es nicht vernachlässigen.", "ar": "يرى الحنفية أن الوتر واجب، وهو عندهم فوق السنة، ويرى المالكية والشافعية والحنابلة أنه سنة مؤكدة. والجميع متفقون على ألا يُترك." }
+        },
+        {
+          "title": { "en": "Common ways to pray it", "de": "Übliche Formen", "ar": "صفات شائعة لأدائه" },
+          "list": {
+            "en": ["One rak'ah after pairs of two", "Three: two rak'at, salam, then one", "Three with one salam and qunut before ruku (Hanafi)", "Up to eleven, as the Prophet often prayed at night"],
+            "de": ["Eine Raka nach Paaren von zwei", "Drei: zwei Rakaat, Salam, dann eine", "Drei mit einem Salam und Qunut vor dem Ruku (hanafitisch)", "Bis zu elf, wie der Prophet oft nachts betete"],
+            "ar": ["ركعة واحدة بعد ركعتين ركعتين", "ثلاث: ركعتان ثم تسليم ثم ركعة", "ثلاث بتسليمة واحدة وقنوت قبل الركوع (عند الحنفية)", "حتى إحدى عشرة ركعة كما كان النبي ﷺ يصلي كثيرًا"]
+          },
+          "body": { "en": "Follow the way of your school; each has its evidence.", "de": "Folgen Sie dem Weg Ihrer Schule; jede hat ihre Belege.", "ar": "اتبع ما عليه مذهبك، فلكلٍّ دليله." }
+        },
+        {
+          "hadith": "muslim:1766",
+          "check": "observe Witr in the first part of it",
+          "title": { "en": "Early or late?", "de": "Früh oder spät?", "ar": "في أول الليل أم آخره؟" },
+          "body": { "en": "Know yourself: secure it before sleep, or keep it for the precious last hours of the night.", "de": "Kennen Sie sich selbst: Sichern Sie es vor dem Schlaf, oder bewahren Sie es für die kostbaren letzten Stunden der Nacht.", "ar": "اعرف نفسك: إما أن تحتاط فتوتر قبل النوم، وإما أن تدّخره لساعات الليل الأخيرة." }
+        },
+        {
+          "dua": "hisn:32:2",
+          "check": "we seek Your aid",
+          "title": { "en": "Qunut in Witr", "de": "Qunut im Witr", "ar": "القنوت في الوتر" },
+          "body": { "en": "Many recite a qunut dua in Witr, before or after ruku depending on the school. This is one version.", "de": "Viele sprechen im Witr ein Qunut-Bittgebet, je nach Schule vor oder nach dem Ruku. Dies ist eine Fassung.", "ar": "يقنت كثيرون في الوتر قبل الركوع أو بعده بحسب المذهب، وهذه إحدى صيغ القنوت." }
+        },
+        {
+          "dua": "hisn:33:0",
+          "check": "The King, The Holy One",
+          "title": { "en": "After the salam", "de": "Nach dem Salam", "ar": "بعد التسليم" },
+          "body": { "en": "After Witr the Prophet glorified Allah three times, raising his voice on the third.", "de": "Nach dem Witr pries der Prophet Allah dreimal und erhob beim dritten Mal die Stimme.", "ar": "كان النبي ﷺ بعد الوتر يسبّح ثلاثًا ويرفع صوته في الثالثة." }
+        }
+      ],
+      "sources": [{ "label": "Ibn Rushd, Bidayat al-Mujtahid, chapter on witr" }]
+    },
+    {
+      "id": "prayer-guide-duha",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 8", "de": "Gebet Schritt für Schritt · 8", "ar": "الصلاة خطوة بخطوة · ٨" },
+        "title": { "en": "Duha: the prayer of the forenoon", "de": "Duha: das Gebet am Vormittag", "ar": "الضحى: صلاة أول النهار" },
+        "sub": { "en": "A short prayer between sunrise and noon, with a great reward", "de": "Ein kurzes Gebet zwischen Sonnenaufgang und Mittag, mit großem Lohn", "ar": "صلاة قصيرة بين الشروق والزوال، عظيمة الأجر" },
+        "arabic": "صلاة الضُّحى"
+      },
+      "slides": [
+        {
+          "title": { "en": "When to pray it", "de": "Wann man es betet", "ar": "وقتها" },
+          "body": { "en": "Duha begins once the sun has clearly risen, about a quarter of an hour after sunrise, and lasts until shortly before Dhuhr. Avoid the moment of sunrise and the moment of noon itself.", "de": "Duha beginnt, wenn die Sonne deutlich aufgegangen ist, etwa eine Viertelstunde nach Sonnenaufgang, und dauert bis kurz vor Zuhr. Meiden Sie den Moment des Sonnenaufgangs und den Mittag selbst.", "ar": "يبدأ وقت الضحى بعد ارتفاع الشمس، نحو ربع ساعة بعد الشروق، ويمتد إلى قبيل الظهر. وتُجتنب لحظة الشروق ولحظة الزوال نفسها." }
+        },
+        {
+          "hadith": "muslim:1746",
+          "check": "weaned camels feel the heat",
+          "title": { "en": "The best moment", "de": "Der beste Moment", "ar": "أفضل وقتها" },
+          "body": { "en": "Later in the forenoon, when the heat rises, is best. It is called the prayer of the penitent.", "de": "Später am Vormittag, wenn die Hitze steigt, ist es am besten. Es heißt das Gebet der Reumütigen.", "ar": "الأفضل أداؤها حين يشتد الحر في الضحى، وتُسمّى صلاة الأوّابين." }
+        },
+        {
+          "hadith": "muslim:1671",
+          "check": "two rak'ahs which one prays in the forenoon",
+          "title": { "en": "A charity for every joint", "de": "Eine Spende für jedes Gelenk", "ar": "صدقة عن كل مفصل" },
+          "body": { "en": "Each day the body owes thanks for every joint. Two rak'at of Duha cover it all.", "de": "Jeden Tag schuldet der Körper Dank für jedes Gelenk. Zwei Rakaat Duha decken alles ab.", "ar": "لكل مفصل في الجسد شكرٌ يومي، وركعتا الضحى تقومان بذلك كله." }
+        },
+        {
+          "hadith": "muslim:1665",
+          "check": "four rak'ahs",
+          "title": { "en": "Two, four or eight", "de": "Zwei, vier oder acht", "ar": "ركعتان أو أربع أو ثمان" },
+          "body": { "en": "Two is the minimum. 'Aisha reported four and sometimes more; Umm Hani saw eight on the day of the conquest.", "de": "Zwei sind das Minimum. Aischa berichtete von vier und manchmal mehr; Umm Hani sah acht am Tag der Eroberung.", "ar": "أقلها ركعتان، وذكرت عائشة أربعًا وربما زاد، ورأت أم هانئ ثماني ركعات يوم الفتح." }
+        },
+        {
+          "hadith": "bukhari:1178",
+          "check": "I shall not leave them till I die",
+          "title": { "en": "Advice for life", "de": "Ein Rat fürs Leben", "ar": "وصية العمر" },
+          "body": { "en": "Abu Huraira kept three habits until he died. Duha was one of them.", "de": "Abu Huraira hielt bis zu seinem Tod an drei Gewohnheiten fest. Duha war eine davon.", "ar": "حافظ أبو هريرة على ثلاث وصايا حتى مات، والضحى إحداها." }
+        },
+        {
+          "title": { "en": "Step by step", "de": "Schritt für Schritt", "ar": "خطوة بخطوة" },
+          "list": {
+            "en": ["Make wudu", "Intend the Duha prayer", "Pray two rak'at like any voluntary prayer", "Add further pairs if you wish", "Close with dhikr and dua for your day"],
+            "de": ["Nehmen Sie Wudu", "Fassen Sie die Absicht für das Duha-Gebet", "Beten Sie zwei Rakaat wie jedes freiwillige Gebet", "Fügen Sie nach Wunsch weitere Paare hinzu", "Schließen Sie mit Gedenken und Bittgebet für Ihren Tag"],
+            "ar": ["توضأ", "انوِ صلاة الضحى", "صلِّ ركعتين كسائر النوافل", "زد ركعتين ركعتين إن شئت", "اختم بالذكر والدعاء ليومك"]
+          }
+        }
+      ],
+      "sources": [{ "label": "an-Nawawi, Riyad as-Salihin, chapter on the Duha prayer" }]
+    },
+    {
+      "id": "prayer-guide-istikhara",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 9", "de": "Gebet Schritt für Schritt · 9", "ar": "الصلاة خطوة بخطوة · ٩" },
+        "title": { "en": "Istikhara: asking Allah to choose", "de": "Istichara: Allah um die Wahl bitten", "ar": "الاستخارة: طلب الخيرة من الله" },
+        "sub": { "en": "A short prayer for every decision, large or small", "de": "Ein kurzes Gebet für jede Entscheidung, ob groß oder klein", "ar": "صلاة قصيرة لكل قرار، كبيرًا كان أو صغيرًا" },
+        "arabic": "الاستِخارة"
+      },
+      "slides": [
+        {
+          "title": { "en": "What istikhara is", "de": "Was Istichara ist", "ar": "ما الاستخارة؟" },
+          "body": { "en": "Istikhara means asking Allah to choose what is good for you. It is a prayer of two voluntary rak'at followed by a special dua, for any permissible matter, large or small.", "de": "Istichara bedeutet, Allah zu bitten, das Gute für Sie zu wählen. Es ist ein Gebet von zwei freiwilligen Rakaat mit einem besonderen Bittgebet danach, für jede erlaubte Angelegenheit, ob groß oder klein.", "ar": "الاستخارة طلب الخيرة من الله، وهي ركعتان من غير الفريضة يتبعهما دعاء مخصوص، في كل أمر مباح صغيرًا كان أو كبيرًا." }
+        },
+        {
+          "title": { "en": "Taught with great care", "de": "Mit großer Sorgfalt gelehrt", "ar": "تعليمٌ بعناية بالغة" },
+          "body": { "en": "Jabir reported that the Prophet taught the Companions istikhara for all their affairs, with the same care he gave to teaching the Quran. Al-Bukhari records the full dua.", "de": "Dschabir berichtete, dass der Prophet den Gefährten die Istichara für alle Angelegenheiten lehrte, mit derselben Sorgfalt wie den Koran. Al-Buchari überliefert das vollständige Bittgebet.", "ar": "روى جابر أن النبي ﷺ اعتنى بتعليم أصحابه الاستخارة لكل شؤونهم عنايتَه بتعليم القرآن، وقد روى البخاري الدعاء كاملًا." }
+        },
+        {
+          "title": { "en": "Step by step", "de": "Schritt für Schritt", "ar": "خطوة بخطوة" },
+          "list": {
+            "en": ["Make wudu and a clear intention", "Pray two voluntary rak'at", "After the salam, recite the dua of istikhara", "Name your matter where the dua mentions it", "Then decide and act, trusting Allah"],
+            "de": ["Nehmen Sie Wudu und fassen Sie eine klare Absicht", "Beten Sie zwei freiwillige Rakaat", "Sprechen Sie nach dem Salam das Istichara-Bittgebet", "Nennen Sie Ihr Anliegen an der dafür vorgesehenen Stelle", "Entscheiden und handeln Sie dann im Vertrauen auf Allah"],
+            "ar": ["توضأ وانوِ نية واضحة", "صلِّ ركعتين نافلة", "بعد التسليم اقرأ دعاء الاستخارة", "سمِّ حاجتك في موضعها من الدعاء", "ثم اعزم وامضِ متوكلًا على الله"]
+          }
+        },
+        {
+          "title": { "en": "Where to find the dua", "de": "Wo Sie das Bittgebet finden", "ar": "أين تجد الدعاء؟" },
+          "body": { "en": "Learn the dua from a trusted source such as Sahih al-Bukhari or Hisnul Muslim. Reading it from a book or a screen is fine if you do not know it by heart.", "de": "Lernen Sie das Bittgebet aus einer verlässlichen Quelle wie Sahih al-Buchari oder Hisnul Muslim. Sie dürfen es aus einem Buch oder vom Bildschirm ablesen, wenn Sie es nicht auswendig können.", "ar": "تعلّم الدعاء من مصدر موثوق كصحيح البخاري أو حصن المسلم، ولا بأس بقراءته من كتاب أو شاشة إن لم تحفظه." }
+        },
+        {
+          "verse": "3:159",
+          "check": "consult them in the matter",
+          "title": { "en": "Consult, then rely", "de": "Beraten, dann vertrauen", "ar": "استشر ثم توكّل" },
+          "body": { "en": "Istikhara does not replace good advice. Ask people of knowledge and experience, then put your trust in Allah.", "de": "Istichara ersetzt keinen guten Rat. Fragen Sie kundige und erfahrene Menschen und vertrauen Sie dann auf Allah.", "ar": "الاستخارة لا تغني عن المشورة؛ استشر أهل العلم والخبرة، ثم توكل على الله." }
+        },
+        {
+          "title": { "en": "No dream required", "de": "Kein Traum nötig", "ar": "لا يُشترط منام" },
+          "body": { "en": "You do not need a dream or a special feeling. Go ahead with what seems best. If Allah makes it easy, that is a sign; if He turns it away, that is His choice for you too.", "de": "Sie brauchen weder einen Traum noch ein besonderes Gefühl. Gehen Sie den Weg, der am besten erscheint. Macht Allah ihn leicht, ist das ein Zeichen; wendet Er ihn ab, ist auch das Seine Wahl für Sie.", "ar": "لا يلزم منامٌ ولا شعور خاص. امضِ فيما تراه أصلح، فإن يسّره الله فتلك علامة، وإن صرفه عنك فذلك اختياره لك أيضًا." }
+        },
+        {
+          "verse": "2:216",
+          "check": "perhaps you hate a thing",
+          "title": { "en": "His knowledge, not ours", "de": "Sein Wissen, nicht unseres", "ar": "علمه لا علمنا" },
+          "body": { "en": "The heart of istikhara: Allah knows what we cannot see.", "de": "Der Kern der Istichara: Allah weiß, was wir nicht sehen.", "ar": "جوهر الاستخارة: أن الله يعلم ما لا نراه." }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 6382: the dua of istikhara", "url": "https://sunnah.com/bukhari:6382" },
+        { "label": "Hisnul Muslim, chapter 26: Istikharah" }
+      ]
+    },
+    {
+      "id": "prayer-guide-traveller",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 10", "de": "Gebet Schritt für Schritt · 10", "ar": "الصلاة خطوة بخطوة · ١٠" },
+        "title": { "en": "The prayer of the traveller", "de": "Das Gebet des Reisenden", "ar": "صلاة المسافر" },
+        "sub": { "en": "Shortening and combining: a gift of ease for the road", "de": "Verkürzen und Zusammenlegen: eine Erleichterung für unterwegs", "ar": "القصر والجمع: رخصة ميسّرة للطريق" },
+        "arabic": "القَصر والجَمع"
+      },
+      "slides": [
+        {
+          "verse": "4:101",
+          "check": "shortening the prayer",
+          "title": { "en": "A concession from Allah", "de": "Eine Erleichterung von Allah", "ar": "رخصة من الله" },
+          "body": { "en": "Travel brings relief: prayers of four rak'at may be shortened.", "de": "Die Reise bringt Erleichterung: Gebete mit vier Rakaat dürfen verkürzt werden.", "ar": "في السفر تخفيف: تُقصر الصلاة الرباعية." }
+        },
+        {
+          "title": { "en": "What is shortened", "de": "Was verkürzt wird", "ar": "ما الذي يُقصر؟" },
+          "list": {
+            "en": ["Dhuhr: 4 rak'at become 2", "Asr: 4 rak'at become 2", "Isha: 4 rak'at become 2", "Fajr and Maghrib stay as they are"],
+            "de": ["Zuhr: aus 4 Rakaat werden 2", "Asr: aus 4 Rakaat werden 2", "Ischa: aus 4 Rakaat werden 2", "Fadschr und Maghrib bleiben unverändert"],
+            "ar": ["الظهر: من أربع إلى ركعتين", "العصر: من أربع إلى ركعتين", "العشاء: من أربع إلى ركعتين", "الفجر والمغرب لا تُقصران"]
+          },
+          "body": { "en": "Behind a resident imam, the traveller prays the full four.", "de": "Hinter einem ansässigen Imam betet der Reisende die vollen vier.", "ar": "وإذا صلى المسافر خلف إمام مقيم أتمّ أربعًا." }
+        },
+        {
+          "hadith": "bukhari:1081",
+          "check": "offered two rak`at",
+          "title": { "en": "Two rak'at on the road", "de": "Zwei Rakaat unterwegs", "ar": "ركعتان في الطريق" },
+          "body": { "en": "Anas travelled with the Prophet from Medina to Mecca and back, praying two for every four.", "de": "Anas reiste mit dem Propheten von Medina nach Mekka und zurück und betete zwei statt vier.", "ar": "سافر أنس مع النبي ﷺ من المدينة إلى مكة ورجع، يصلي الرباعية ركعتين." }
+        },
+        {
+          "title": { "en": "Obligation or option?", "de": "Pflicht oder Wahl?", "ar": "واجب أم رخصة؟" },
+          "body": { "en": "The Hanafi school sees shortening on a journey as required. The other three schools see it as a concession: shortening is usually preferred, and the full prayer remains valid.", "de": "Die hanafitische Schule sieht das Verkürzen auf Reisen als verpflichtend an. Die drei anderen Schulen sehen darin eine Erleichterung: Verkürzen wird meist bevorzugt, das volle Gebet bleibt gültig.", "ar": "يرى الحنفية أن القصر في السفر واجب، وترى المذاهب الثلاثة الأخرى أنه رخصة، والقصر عندهم أفضل غالبًا، والإتمام صحيح." }
+        },
+        {
+          "title": { "en": "How far, how long?", "de": "Wie weit, wie lange?", "ar": "كم المسافة؟ وكم المدة؟" },
+          "body": { "en": "Scholars differ on the minimum distance, often given today as roughly 80 km, and on when a stay ends the concession: after an intended stay of 15 days in the Hanafi school, of four days in the Maliki and Shafi'i schools.", "de": "Die Gelehrten unterscheiden sich bei der Mindestentfernung, heute oft mit etwa 80 km angegeben, und dabei, wann ein Aufenthalt die Erleichterung beendet: bei geplanten 15 Tagen nach hanafitischer, bei vier Tagen nach malikitischer und schafiitischer Lehre.", "ar": "يختلف العلماء في أقل مسافة السفر، وتُقدَّر اليوم غالبًا بنحو ٨٠ كم، وفي مدة الإقامة التي ينتهي بها الترخص: نية خمسة عشر يومًا عند الحنفية، وأربعة أيام عند المالكية والشافعية." }
+        },
+        {
+          "hadith": "bukhari:1107",
+          "check": "Zuhr and `Asr prayers together",
+          "title": { "en": "Combining two prayers", "de": "Zwei Gebete zusammenlegen", "ar": "الجمع بين صلاتين" },
+          "body": { "en": "Dhuhr with Asr, Maghrib with Isha: prayed together in the time of the first or of the second.", "de": "Zuhr mit Asr, Maghrib mit Ischa: gemeinsam gebetet in der Zeit des ersten oder des zweiten.", "ar": "الظهر مع العصر، والمغرب مع العشاء، تُصلّيان معًا في وقت الأولى أو الثانية." }
+        },
+        {
+          "title": { "en": "Combining: where the schools differ", "de": "Zusammenlegen: wo die Schulen sich unterscheiden", "ar": "الجمع: مواضع الخلاف" },
+          "body": { "en": "The Maliki, Shafi'i and Hanbali schools allow the traveller to combine. The Hanafi school allows true combining only at Arafah and Muzdalifah; otherwise one prays the first late in its time and the second early in its own.", "de": "Malikiten, Schafiiten und Hanbaliten erlauben dem Reisenden das Zusammenlegen. Die Hanafiten erlauben echtes Zusammenlegen nur in Arafa und Muzdalifa; sonst betet man das erste spät in seiner Zeit und das zweite früh in der seinen.", "ar": "يجيز المالكية والشافعية والحنابلة الجمع للمسافر، ولا يجيز الحنفية الجمع الحقيقي إلا بعرفة ومزدلفة، وفيما سواهما تُؤخَّر الأولى إلى آخر وقتها وتُقدَّم الثانية في أول وقتها." }
+        },
+        {
+          "dua": "hisn:102:0",
+          "check": "went up a hill",
+          "title": { "en": "Remembrance on the road", "de": "Gedenken unterwegs", "ar": "الذكر في الطريق" },
+          "body": { "en": "Takbir when the road climbs, tasbih when it descends: the journey itself becomes dhikr.", "de": "Takbir, wenn der Weg steigt, Tasbih, wenn er fällt: So wird die Reise selbst zum Gedenken.", "ar": "تكبيرٌ في الصعود وتسبيحٌ في النزول، فيصير السفر نفسه ذكرًا." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Rushd, Bidayat al-Mujtahid, chapter on the traveller's prayer" },
+        { "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, chapter on shortening the prayer" }
+      ]
+    },
+    {
+      "id": "prayer-guide-sahw",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 11", "de": "Gebet Schritt für Schritt · 11", "ar": "الصلاة خطوة بخطوة · ١١" },
+        "title": { "en": "The prostration of forgetfulness", "de": "Die Niederwerfung des Vergessens", "ar": "سجود السهو" },
+        "sub": { "en": "Two extra sujud that repair a prayer when something slips", "de": "Zwei zusätzliche Niederwerfungen, die ein Gebet heilen, wenn etwas verrutscht", "ar": "سجدتان تجبران الصلاة إذا وقع فيها سهو" },
+        "arabic": "سجود السَّهو"
+      },
+      "slides": [
+        {
+          "title": { "en": "A mercy for human error", "de": "Barmherzigkeit für menschliche Fehler", "ar": "رحمة بالخطأ البشري" },
+          "body": { "en": "Everyone forgets, even in prayer. Sujud as-sahw is two extra prostrations that repair the prayer when something was added, left out or is in doubt.", "de": "Jeder vergisst etwas, auch im Gebet. Sudschud as-Sahw sind zwei zusätzliche Niederwerfungen, die das Gebet heilen, wenn etwas hinzugefügt, ausgelassen oder unsicher ist.", "ar": "كل إنسان ينسى حتى في صلاته. وسجود السهو سجدتان زائدتان تجبران الصلاة إذا زِيد فيها أو نُقص منها أو وقع فيها شك." }
+        },
+        {
+          "hadith": "bukhari:1230",
+          "check": "instead of the sitting he forgot",
+          "title": { "en": "Forgot the first tashahhud?", "de": "Den ersten Taschahhud vergessen?", "ar": "نسيت التشهد الأول؟" },
+          "body": { "en": "The Prophet stood up without sitting, then made two sujud before the salam.", "de": "Der Prophet stand auf, ohne zu sitzen, und machte dann vor dem Salam zwei Niederwerfungen.", "ar": "قام النبي ﷺ ولم يجلس، ثم سجد سجدتين قبل التسليم." }
+        },
+        {
+          "hadith": "bukhari:1228",
+          "check": "Dhul-Yadain",
+          "title": { "en": "Ended too early?", "de": "Zu früh beendet?", "ar": "سلّمت قبل التمام؟" },
+          "body": { "en": "He completed the missing rak'at, said the salam, then made two sujud.", "de": "Er holte die fehlenden Rakaat nach, sprach den Salam und machte dann zwei Niederwerfungen.", "ar": "أتمّ ما نقص من الركعات ثم سلّم ثم سجد سجدتين." }
+        },
+        {
+          "hadith": "muslim:1272",
+          "check": "base his prayer on what he is sure of",
+          "title": { "en": "In doubt about the count?", "de": "Unsicher bei der Zahl?", "ar": "شككت في العدد؟" },
+          "body": { "en": "Build on what you are sure of, the lower number, then make two sujud. Hanafis first follow their best estimate where they have one.", "de": "Bauen Sie auf das Sichere, die kleinere Zahl, und machen Sie dann zwei Niederwerfungen. Hanafiten folgen zuerst ihrer besten Einschätzung, wenn sie eine haben.", "ar": "ابنِ على اليقين وهو الأقل ثم اسجد سجدتين، ويعمل الحنفية أولًا بغالب الظن إن وُجد." }
+        },
+        {
+          "title": { "en": "How it is done", "de": "So wird es gemacht", "ar": "كيفيته" },
+          "list": {
+            "en": ["At the end of the prayer, say Allahu akbar", "Make one sujud as in any prayer", "Sit up briefly", "Make a second sujud", "Finish as your school teaches"],
+            "de": ["Sagen Sie am Ende des Gebets Allahu akbar", "Machen Sie einen Sudschud wie in jedem Gebet", "Setzen Sie sich kurz auf", "Machen Sie einen zweiten Sudschud", "Beenden Sie, wie es Ihre Schule lehrt"],
+            "ar": ["كبّر في آخر الصلاة", "اسجد سجدة كسجود الصلاة", "اجلس جلسة قصيرة", "اسجد سجدة ثانية", "أتمّ صلاتك كما يعلّم مذهبك"]
+          }
+        },
+        {
+          "title": { "en": "Before or after the salam?", "de": "Vor oder nach dem Salam?", "ar": "قبل السلام أم بعده؟" },
+          "body": { "en": "The schools differ. Hanafis prostrate after one salam, then repeat the tashahhud. Shafi'is prostrate before the salam. Malikis: before for something missing, after for something added. Hanbalis mostly before.", "de": "Die Schulen unterscheiden sich. Hanafiten werfen sich nach einem Salam nieder und wiederholen den Taschahhud. Schafiiten vor dem Salam. Malikiten vor dem Salam bei Fehlendem, danach bei Hinzugefügtem. Hanbaliten meist davor.", "ar": "تختلف المذاهب: فالحنفية يسجدون بعد تسليمة واحدة ثم يعيدون التشهد، والشافعية قبل السلام، والمالكية قبله للنقص وبعده للزيادة، والحنابلة قبله في الغالب." }
+        },
+        {
+          "title": { "en": "What it does not repair", "de": "Was es nicht heilt", "ar": "ما لا يجبره السجود" },
+          "body": { "en": "It does not replace an essential pillar such as a ruku or a sujud: that must be made up, and the prostrations follow. Scholars generally teach that leaving something out on purpose is not repaired this way.", "de": "Es ersetzt keinen wesentlichen Pfeiler wie einen Ruku oder Sudschud: Dieser wird nachgeholt, danach folgen die Niederwerfungen. Absichtliches Auslassen wird nach allgemeiner Lehre nicht auf diese Weise geheilt.", "ar": "لا يقوم السجود مقام ركن كالركوع أو السجود، بل يُؤتى بالركن ثم يُسجد للسهو. ويقرر العلماء عمومًا أن الترك العمد لا يُجبر بسجود السهو." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Qudama, al-Mughni, chapter on sujud as-sahw" },
+        { "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, chapter on sujud as-sahw" }
+      ]
+    },
+    {
+      "id": "prayer-guide-friday",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Prayer step by step · 12", "de": "Gebet Schritt für Schritt · 12", "ar": "الصلاة خطوة بخطوة · ١٢" },
+        "title": { "en": "The Friday prayer", "de": "Das Freitagsgebet", "ar": "صلاة الجمعة" },
+        "sub": { "en": "Jumu'ah: what it is, who attends, and the Sunnahs of the day", "de": "Dschumua: was es ist, wer teilnimmt und die Sunna des Tages", "ar": "الجمعة: ما هي، وعلى من تجب، وسنن يومها" },
+        "arabic": "الجُمُعة"
+      },
+      "slides": [
+        {
+          "verse": "62:9",
+          "check": "leave trade",
+          "title": { "en": "The call on Friday", "de": "Der Ruf am Freitag", "ar": "النداء يوم الجمعة" },
+          "body": { "en": "When the adhan for Jumu'ah sounds, work pauses and the believers head to the mosque.", "de": "Wenn der Adhan zur Dschumua erklingt, ruht die Arbeit und die Gläubigen gehen zur Moschee.", "ar": "إذا أُذّن للجمعة توقف العمل وتوجّه المؤمنون إلى المسجد." }
+        },
+        {
+          "title": { "en": "What Jumu'ah is", "de": "Was die Dschumua ist", "ar": "ما صلاة الجمعة؟" },
+          "body": { "en": "Two sermons, then two rak'at in congregation, recited aloud, in place of Dhuhr. The Sunni schools require it of adult, healthy, resident men. Women, travellers and the sick may attend, and it then counts for them.", "de": "Zwei Predigten, dann zwei Rakaat in Gemeinschaft mit lauter Rezitation, anstelle von Zuhr. Die sunnitischen Schulen verpflichten erwachsene, gesunde, ansässige Männer. Frauen, Reisende und Kranke dürfen teilnehmen; dann gilt es auch für sie.", "ar": "خطبتان ثم ركعتان جماعةً جهرًا بدل الظهر. وتوجبها المذاهب السنية على الرجل البالغ الصحيح المقيم، ويجوز للمرأة والمسافر والمريض حضورها فتجزئهم عن الظهر." }
+        },
+        {
+          "title": { "en": "Sunnahs of the day", "de": "Sunna des Tages", "ar": "من سنن يوم الجمعة" },
+          "list": {
+            "en": ["Ghusl, siwak and your best clothes", "Perfume for men", "Go early to the mosque", "Recite Surah al-Kahf, as many scholars advise", "Send many blessings on the Prophet", "Make dua, seeking the hour of answer"],
+            "de": ["Ghusl, Siwak und Ihre beste Kleidung", "Duft für Männer", "Gehen Sie früh zur Moschee", "Rezitieren Sie Sure al-Kahf, wie viele Gelehrte raten", "Sprechen Sie viele Segenswünsche für den Propheten", "Machen Sie Bittgebete und suchen Sie die Stunde der Erhörung"],
+            "ar": ["الغسل والسواك وأحسن الثياب", "الطيب للرجال", "التبكير إلى المسجد", "قراءة سورة الكهف كما يستحب كثير من العلماء", "الإكثار من الصلاة على النبي ﷺ", "الدعاء وتحرّي ساعة الإجابة"]
+          }
+        },
+        {
+          "hadith": "bukhari:883",
+          "check": "remains silent while the Imam is delivering the Khutba",
+          "title": { "en": "From one Friday to the next", "de": "Von einem Freitag zum nächsten", "ar": "من جمعة إلى جمعة" },
+          "body": { "en": "Bathing, going early, not pushing between people and listening: forgiveness for the week in between.", "de": "Waschen, früh gehen, sich nicht zwischen Menschen drängen und zuhören: Vergebung für die Woche dazwischen.", "ar": "الغسل والتبكير وترك التخطي والإنصات: سببٌ لمغفرة ما بين الجمعتين." }
+        },
+        {
+          "hadith": "bukhari:929",
+          "check": "angels stand at the gate",
+          "title": { "en": "The angels at the door", "de": "Die Engel an der Tür", "ar": "الملائكة على الأبواب" },
+          "body": { "en": "Early arrival is recorded. Once the imam comes out, the records close and the angels listen.", "de": "Frühes Kommen wird festgehalten. Sobald der Imam erscheint, schließen sich die Bücher und die Engel hören zu.", "ar": "يُكتب السابقون، فإذا خرج الإمام انتهى التسجيل وأنصتت الملائكة للخطبة." }
+        },
+        {
+          "hadith": "bukhari:934",
+          "check": "keep quiet and listen",
+          "title": { "en": "Silence during the sermon", "de": "Schweigen während der Predigt", "ar": "الإنصات للخطبة" },
+          "body": { "en": "Even telling a neighbour to be quiet is too much. Put the phone away and listen.", "de": "Selbst den Nachbarn zum Schweigen aufzufordern ist zu viel. Legen Sie das Telefon weg und hören Sie zu.", "ar": "حتى أمر جارك بالسكوت لا ينبغي حينها. ضع هاتفك جانبًا واستمع." }
+        },
+        {
+          "hadith": "bukhari:935",
+          "check": "There is an hour",
+          "title": { "en": "An hour of answered dua", "de": "Eine Stunde der Erhörung", "ar": "ساعة الإجابة" },
+          "body": { "en": "A short window on Friday when dua is answered. Scholars point to the sermon and prayer, or the last hour before sunset.", "de": "Ein kurzes Zeitfenster am Freitag, in dem Bittgebete erhört werden. Gelehrte nennen Predigt und Gebet oder die letzte Stunde vor Sonnenuntergang.", "ar": "ساعة قصيرة يوم الجمعة يُستجاب فيها الدعاء، ويرى العلماء أنها وقت الخطبة والصلاة أو آخر ساعة قبل الغروب." }
+        },
+        {
+          "title": { "en": "If you miss it", "de": "Wenn Sie es verpassen", "ar": "إن فاتتك الجمعة" },
+          "body": { "en": "Whoever misses Jumu'ah prays Dhuhr with four rak'at instead. Missing it repeatedly without an excuse is strongly warned against in the hadith.", "de": "Wer die Dschumua verpasst, betet stattdessen Zuhr mit vier Rakaat. Vor wiederholtem Versäumen ohne Entschuldigung warnen die Hadithe eindringlich.", "ar": "من فاتته الجمعة صلّى الظهر أربعًا، وقد ورد في الأحاديث تحذير شديد من تركها مرارًا بلا عذر." }
+        }
+      ],
+      "sources": [
+        { "label": "Sunan Abi Dawud 1067: who is excused from Jumu'ah", "url": "https://sunnah.com/abudawud:1067" },
+        { "label": "Ibn Hajar, Fath al-Bari, on the hour of Friday" }
+      ]
+    }
+  ]
+}

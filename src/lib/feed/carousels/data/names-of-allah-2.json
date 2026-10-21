@@ -1,0 +1,2690 @@
+{
+  "series": "names-of-allah-2",
+  "label": { "en": "Names of Allah", "de": "Die Namen Allahs", "ar": "أسماء الله الحسنى" },
+  "topic": "duas",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "name-51-al-haqq",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 51", "de": "Namen Allahs · 51", "ar": "أسماء الله · ٥١" },
+        "title": { "en": "Al-Haqq", "de": "Al-Ḥaqq", "ar": "الحق" },
+        "sub": { "en": "The Truth: the One who is real beyond all doubt", "de": "Die Wahrheit: der Eine, dessen Wirklichkeit über jeden Zweifel erhaben ist", "ar": "الثابت الذي لا شك في وجوده" },
+        "arabic": "الْحَقّ"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Haqq is the One whose existence is certain and never changes. Everything else exists because He brings it into being. His word is true, His promise is true, and His judgement is true.",
+            "de": "Al-Ḥaqq ist der Eine, dessen Dasein gewiss ist und sich nie verändert. Alles andere besteht nur, weil Er es ins Dasein ruft. Sein Wort ist wahr, Sein Versprechen ist wahr, Sein Urteil ist wahr.",
+            "ar": "الحق هو الثابت وجوده ثبوتًا لا يتغير، وكل ما سواه موجود بإيجاده. قوله حق، ووعده حق، وحكمه حق."
+          }
+        },
+        {
+          "title": { "en": "The root h-q-q", "de": "Die Wurzel ḥ-q-q", "ar": "الجذر ح ق ق" },
+          "arabic": "ح ق ق",
+          "body": {
+            "en": "The root carries the sense of something firm, established and due. From it come haqq, truth and right, and haqiqa, reality. In the Quran the root appears in 287 words.",
+            "de": "Die Wurzel trägt die Bedeutung von etwas Festem, Bestätigtem und Geschuldetem. Aus ihr stammen ḥaqq, Wahrheit und Recht, und ḥaqīqa, Wirklichkeit. Im Koran kommt die Wurzel in 287 Wörtern vor.",
+            "ar": "يدل الجذر على الثبوت والوجوب، ومنه الحق بمعنى الصدق والاستحقاق، ومنه الحقيقة. ويرد هذا الجذر في القرآن في ٢٨٧ كلمة."
+          }
+        },
+        {
+          "verse": "22:62",
+          "check": "True Reality",
+          "title": { "en": "Truth and its opposite", "de": "Die Wahrheit und ihr Gegenteil", "ar": "الحق وما يقابله" },
+          "body": { "en": "Allah, the Real, is set against everything people call upon besides Him.", "de": "Allah, der Wirkliche, wird allem gegenübergestellt, was Menschen neben Ihm anrufen.", "ar": "يقابل الله الحق كل ما يدعوه الناس من دونه." }
+        },
+        {
+          "verse": "20:114",
+          "check": "the Truth",
+          "title": { "en": "A prayer for knowledge", "de": "Ein Gebet um Wissen", "ar": "دعاء بزيادة العلم" },
+          "body": { "en": "Al-Haqq stands beside al-Malik here, followed by a short dua for more knowledge.", "de": "Hier steht al-Ḥaqq neben al-Malik, gefolgt von einem kurzen Bittgebet um mehr Wissen.", "ar": "يقترن الحق هنا بالملك، ثم يأتي دعاء قصير بزيادة العلم." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Speak the truth, even when it costs you", "Ask Allah every day to increase your knowledge", "Hold to what is real, not to what only glitters"],
+            "de": ["Sagen Sie die Wahrheit, auch wenn sie Sie etwas kostet", "Bitten Sie Allah jeden Tag um mehr Wissen", "Halten Sie sich an das Wirkliche, nicht an bloßen Glanz"],
+            "ar": ["قل الحق ولو كلّفك", "اسأل الله كل يوم أن يزيدك علمًا", "تمسّك بالحقيقة لا بما يلمع فقط"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root h-q-q", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Hqq" }
+      ]
+    },
+    {
+      "id": "name-52-al-wakil",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 52", "de": "Namen Allahs · 52", "ar": "أسماء الله · ٥٢" },
+        "title": { "en": "Al-Wakil", "de": "Al-Wakīl", "ar": "الوكيل" },
+        "sub": { "en": "The Trustee: the One to whom every affair can be entrusted", "de": "Der Sachwalter: der Eine, dem man jede Angelegenheit anvertrauen kann", "ar": "الذي تُفوَّض إليه الأمور كلها" },
+        "arabic": "الْوَكِيل"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "A wakil is someone you hand an affair over to. Allah as al-Wakil takes charge of the affairs of His creation, and He is enough for whoever relies on Him. No trust placed in Him is ever lost.",
+            "de": "Ein Wakīl ist jemand, dem man eine Angelegenheit überträgt. Allah als al-Wakīl nimmt sich der Angelegenheiten Seiner Schöpfung an und genügt jedem, der sich auf Ihn verlässt. Kein Vertrauen in Ihn geht je verloren.",
+            "ar": "الوكيل هو من تُسلَّم إليه الأمور. والله الوكيل يتولى شؤون خلقه، ويكفي من توكل عليه، ولا يضيع عنده تفويض أحد."
+          }
+        },
+        {
+          "title": { "en": "The root w-k-l", "de": "Die Wurzel w-k-l", "ar": "الجذر و ك ل" },
+          "arabic": "و ك ل",
+          "body": { "en": "Tawakkul, reliance on Allah, comes from the same root. It appears in 70 words in the Quran; 40 of them are forms of tawakkala, to rely.", "de": "Tawakkul, das Gottvertrauen, stammt aus derselben Wurzel. Sie kommt im Koran in 70 Wörtern vor; 40 davon sind Formen von tawakkala, sich verlassen.", "ar": "ومن هذا الجذر التوكل على الله. ويرد في القرآن في ٧٠ كلمة، منها ٤٠ من الفعل توكّل." }
+        },
+        {
+          "verse": "3:173",
+          "check": "Disposer of affairs",
+          "title": { "en": "Words for anxious moments", "de": "Worte für bange Momente", "ar": "كلمات للحظات الخوف" },
+          "body": { "en": "When the believers were threatened, these words strengthened their faith instead of their fear.", "de": "Als den Gläubigen gedroht wurde, stärkten diese Worte ihren Glauben statt ihrer Angst.", "ar": "حين هُدِّد المؤمنون قوّت هذه الكلمات إيمانهم بدل خوفهم." }
+        },
+        {
+          "verse": "65:3",
+          "check": "He is sufficient for him",
+          "title": { "en": "He is enough", "de": "Er genügt", "ar": "هو الكافي" },
+          "body": { "en": "Reliance is more than a feeling: it opens doors of provision no one expected.", "de": "Gottvertrauen ist mehr als ein Gefühl: Es öffnet Türen der Versorgung, mit denen niemand gerechnet hat.", "ar": "ليس التوكل شعورًا فحسب، بل يفتح أبواب رزق لم تكن في الحسبان." }
+        },
+        {
+          "hadith": "bukhari:4564",
+          "check": "Best Disposer",
+          "title": { "en": "The words of Ibrahim", "de": "Die Worte Ibrāhīms", "ar": "كلمات إبراهيم" },
+          "body": { "en": "Ibrahim spoke them as he faced the fire.", "de": "Ibrāhīm sprach sie, als er dem Feuer gegenüberstand.", "ar": "قالها إبراهيم عليه السلام وهو يواجه النار." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Do your part, then leave the outcome to Him", "Say hasbunallah wa ni'mal wakil when you are afraid", "Hand your worries over to Him in dua"],
+            "de": ["Tun Sie Ihren Teil und überlassen Sie Ihm das Ergebnis", "Sagen Sie in Angst: ḥasbunallāh wa niʿma l-wakīl", "Übergeben Sie Ihm Ihre Sorgen im Bittgebet"],
+            "ar": ["خذ بالأسباب ثم فوّض النتيجة إليه", "قل عند الخوف: حسبنا الله ونعم الوكيل", "سلّم همومك إليه بالدعاء"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root w-k-l", "url": "https://corpus.quran.com/qurandictionary.jsp?q=wkl" }
+      ]
+    },
+    {
+      "id": "name-53-al-qawiyy",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 53", "de": "Namen Allahs · 53", "ar": "أسماء الله · ٥٣" },
+        "title": { "en": "Al-Qawiyy", "de": "Al-Qawiyy", "ar": "القوي" },
+        "sub": { "en": "The Strong: a strength that never tires", "de": "Der Starke: eine Kraft, die nie ermüdet", "ar": "القوي الذي لا تضعف قوته" },
+        "arabic": "الْقَوِيّ"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "His strength is complete. It never tires, never fades, and nothing can overpower it. Every human strength is borrowed from Him and lasts only for a time.",
+            "de": "Seine Stärke ist vollkommen. Sie ermüdet nie, schwindet nie, und nichts kann sie überwinden. Jede menschliche Kraft ist von Ihm geliehen und währt nur eine Zeit.",
+            "ar": "قوته كاملة، لا تتعب ولا تزول، ولا يغلبها شيء. وكل قوة في البشر مستعارة منه، وتبقى إلى حين."
+          }
+        },
+        {
+          "title": { "en": "The root q-w-y", "de": "Die Wurzel q-w-y", "ar": "الجذر ق و ي" },
+          "arabic": "ق و ي",
+          "body": { "en": "From this root comes quwwa, strength. It appears in 42 words in the Quran; the word qawiyy itself occurs 11 times.", "de": "Aus dieser Wurzel stammt quwwa, Kraft. Sie kommt im Koran in 42 Wörtern vor; das Wort qawiyy selbst erscheint 11-mal.", "ar": "ومن هذا الجذر القوة. ويرد في القرآن في ٤٢ كلمة، وترد كلمة قوي وحدها ١١ مرة." }
+        },
+        {
+          "verse": "42:19",
+          "check": "Powerful",
+          "title": { "en": "Gentle and strong", "de": "Sanft und stark", "ar": "لطيف وقوي" },
+          "body": { "en": "Gentleness and strength appear together: He provides for His servants, and no one can overpower Him.", "de": "Sanftheit und Stärke stehen nebeneinander: Er versorgt Seine Diener, und niemand kann Ihn bezwingen.", "ar": "يجتمع اللطف والقوة: يرزق عباده ولا يغلبه أحد." }
+        },
+        {
+          "verse": "22:74",
+          "check": "true appraisal",
+          "title": { "en": "Measured as He deserves", "de": "Ermessen, wie es Ihm gebührt", "ar": "التقدير الذي يليق به" },
+          "body": { "en": "Whoever turns to powerless idols has not grasped how strong Allah truly is.", "de": "Wer sich machtlosen Götzen zuwendet, hat nicht erfasst, wie stark Allah wirklich ist.", "ar": "من لجأ إلى أصنام عاجزة لم يعرف قوة الله حقًّا." }
+        },
+        {
+          "hadith": "muslim:6774",
+          "check": "strong believer",
+          "title": { "en": "Strength that Allah loves", "de": "Stärke, die Allah liebt", "ar": "قوة يحبها الله" },
+          "body": { "en": "Strength of faith and will is praised, together with asking for His help and never giving up.", "de": "Gelobt wird die Stärke von Glauben und Willen, verbunden mit der Bitte um Seine Hilfe und ohne aufzugeben.", "ar": "تُمدَح قوة الإيمان والعزيمة، مع الاستعانة بالله وترك العجز." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Ask Him for strength before every hard task", "Use your strength to protect, never to oppress", "Say la hawla wa la quwwata illa billah often"],
+            "de": ["Bitten Sie Ihn vor jeder schweren Aufgabe um Kraft", "Nutzen Sie Ihre Kraft zum Schutz, nie zur Unterdrückung", "Sagen Sie oft: lā ḥawla wa lā quwwata illā billāh"],
+            "ar": ["اسأله القوة قبل كل مهمة شاقة", "استعمل قوتك في الحماية لا في الظلم", "أكثر من قول: لا حول ولا قوة إلا بالله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root q-w-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=qwy" }
+      ]
+    },
+    {
+      "id": "name-54-al-matin",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 54", "de": "Namen Allahs · 54", "ar": "أسماء الله · ٥٤" },
+        "title": { "en": "Al-Matin", "de": "Al-Matīn", "ar": "المتين" },
+        "sub": { "en": "The Firm: a strength that never wavers", "de": "Der Feste: eine Stärke, die nie wankt", "ar": "المتين الذي لا تتزعزع قوته" },
+        "arabic": "الْمَتِين"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Matin describes strength that is firm and unshakable. Many scholars explain: al-Qawiyy speaks of complete power, al-Matin of its steadiness. It never weakens and never needs support.",
+            "de": "Al-Matīn beschreibt eine Stärke, die fest und unerschütterlich ist. Viele Gelehrte erklären: al-Qawiyy spricht von vollkommener Macht, al-Matīn von ihrer Beständigkeit. Sie wird nie schwach und braucht keine Stütze.",
+            "ar": "المتين يدل على قوة ثابتة لا تتزعزع. ويقول كثير من العلماء: القوي يدل على كمال القدرة، والمتين على شدتها وثباتها، فلا تضعف ولا تحتاج إلى سند."
+          }
+        },
+        {
+          "title": { "en": "The root m-t-n", "de": "Die Wurzel m-t-n", "ar": "الجذر م ت ن" },
+          "arabic": "م ت ن",
+          "body": {
+            "en": "Matn is the firm back of something, its solid core. The word matin occurs only 3 times in the Quran: twice for His plan, once as His name.",
+            "de": "Matn ist der feste Rücken einer Sache, ihr tragender Kern. Das Wort matīn kommt im Koran nur 3-mal vor: zweimal für Seinen Plan, einmal als Sein Name.",
+            "ar": "المتن ظهر الشيء وصلبه. ولم ترد كلمة متين في القرآن إلا ٣ مرات: مرتين وصفًا لتدبيره، ومرة اسمًا له سبحانه."
+          }
+        },
+        {
+          "verse": "51:58",
+          "check": "firm possessor of strength",
+          "title": { "en": "Provider with firm strength", "de": "Versorger mit fester Kraft", "ar": "رزق عن قوة متينة" },
+          "body": { "en": "The name stands beside ar-Razzaq: His provision flows from a strength that never runs out.", "de": "Der Name steht neben ar-Razzāq: Seine Versorgung fließt aus einer Kraft, die nie versiegt.", "ar": "يقترن الاسم بالرزاق: فرزقه صادر عن قوة لا تنفد." }
+        },
+        {
+          "pair": ["7:183", "68:45"],
+          "check": ["plan is firm", "plan is firm"],
+          "title": { "en": "A plan that holds", "de": "Ein Plan, der hält", "ar": "تدبير محكم" },
+          "body": { "en": "The same words appear twice: no scheme against the truth can undo His plan.", "de": "Dieselben Worte erscheinen zweimal: Keine List gegen die Wahrheit kann Seinen Plan aufheben.", "ar": "تتكرر العبارة مرتين: لا يُبطل مكرُ أحد تدبيرَه." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Be steady in good deeds, even small ones", "When you feel weak, lean on the One who never weakens", "Keep your promises firm"],
+            "de": ["Bleiben Sie beständig in guten Taten, auch in kleinen", "Stützen Sie sich in Schwäche auf den, der nie schwach wird", "Halten Sie Ihre Versprechen fest"],
+            "ar": ["داوم على العمل الصالح ولو كان قليلًا", "إذا ضعفت فاستند إلى من لا يضعف", "كن ثابتًا في الوفاء بوعودك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root m-t-n", "url": "https://corpus.quran.com/qurandictionary.jsp?q=mtn" }
+      ]
+    },
+    {
+      "id": "name-55-al-waliyy",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 55", "de": "Namen Allahs · 55", "ar": "أسماء الله · ٥٥" },
+        "title": { "en": "Al-Waliyy", "de": "Al-Waliyy", "ar": "الولي" },
+        "sub": { "en": "The Protecting Friend: close to those who believe", "de": "Der schützende Freund: nah bei denen, die glauben", "ar": "القريب من المؤمنين الناصر لهم" },
+        "arabic": "الْوَلِيّ"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Waliyy is near to the believers. He loves them, supports them and takes care of their affairs. The name speaks of closeness and loyalty, not of distance.",
+            "de": "Al-Waliyy ist den Gläubigen nahe. Er liebt sie, steht ihnen bei und nimmt sich ihrer Angelegenheiten an. Der Name spricht von Nähe und Treue, nicht von Ferne.",
+            "ar": "الولي قريب من المؤمنين، يحبهم وينصرهم ويتولى أمورهم. فالاسم يدل على القرب والموالاة لا على البعد."
+          }
+        },
+        {
+          "title": { "en": "The root w-l-y", "de": "Die Wurzel w-l-y", "ar": "الجذر و ل ي" },
+          "arabic": "و ل ي",
+          "body": {
+            "en": "The root joins two ideas: being next to someone and taking charge of them. It appears in 232 words in the Quran; wali, friend and protector, occurs 86 times.",
+            "de": "Die Wurzel verbindet zwei Gedanken: jemandem nahe sein und sich seiner annehmen. Sie kommt im Koran in 232 Wörtern vor; walī, Freund und Beschützer, erscheint 86-mal.",
+            "ar": "يجمع الجذر معنيين: القرب وتولي الأمر. ويرد في القرآن في ٢٣٢ كلمة، منها كلمة ولي ٨٦ مرة."
+          }
+        },
+        {
+          "verse": "2:257",
+          "check": "Ally of those who believe",
+          "title": { "en": "Friendship with a direction", "de": "Freundschaft mit einer Richtung", "ar": "ولاية لها وجهة" },
+          "body": { "en": "His friendship leads somewhere: out of every darkness, toward light.", "de": "Seine Freundschaft führt irgendwohin: aus jeder Finsternis hin zum Licht.", "ar": "ولايته تقود إلى غاية: من كل ظلمة إلى النور." }
+        },
+        {
+          "verse": "42:28",
+          "check": "Protector, the Praiseworthy",
+          "title": { "en": "After despair, rain", "de": "Nach der Verzweiflung Regen", "ar": "الغيث بعد اليأس" },
+          "body": { "en": "The Protector sends relief when people have given up hope.", "de": "Der Beschützer schickt Erleichterung, wenn die Menschen die Hoffnung aufgegeben haben.", "ar": "الولي يرسل الفرج بعد أن ييأس الناس." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Make Allah your first friend in every matter", "Choose friends who bring you closer to Him", "Be loyal to the believers and fair to everyone"],
+            "de": ["Machen Sie Allah in jeder Sache zu Ihrem ersten Freund", "Wählen Sie Freunde, die Sie Ihm näherbringen", "Seien Sie den Gläubigen treu und zu allen gerecht"],
+            "ar": ["اجعل الله وليّك الأول في كل أمر", "اختر أصحابًا يقرّبونك إليه", "كن وفيًّا للمؤمنين عادلًا مع الجميع"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root w-l-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=wly" }
+      ]
+    },
+    {
+      "id": "name-56-al-hamid",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 56", "de": "Namen Allahs · 56", "ar": "أسماء الله · ٥٦" },
+        "title": { "en": "Al-Hamid", "de": "Al-Ḥamīd", "ar": "الحميد" },
+        "sub": { "en": "The Praiseworthy: worthy of all praise in Himself", "de": "Der Lobenswürdige: in Sich Selbst allen Lobes würdig", "ar": "المستحق للحمد كله بذاته" },
+        "arabic": "الْحَمِيد"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Hamid is praised in Himself, whether anyone praises Him or not. Every good thing in the world comes from Him, so in the end all praise returns to Him.",
+            "de": "Al-Ḥamīd ist in Sich Selbst lobenswert, ob jemand Ihn lobt oder nicht. Alles Gute in der Welt kommt von Ihm, darum kehrt am Ende alles Lob zu Ihm zurück.",
+            "ar": "الحميد محمود في ذاته، حمده الناس أم لم يحمدوه. وكل خير في الدنيا منه، فكل حمد يعود إليه في النهاية."
+          }
+        },
+        {
+          "title": { "en": "The root h-m-d", "de": "Die Wurzel ḥ-m-d", "ar": "الجذر ح م د" },
+          "arabic": "ح م د",
+          "body": {
+            "en": "In the Quran the root appears in 68 words: hamd, praise, 43 times and hamid 17 times. The name Muhammad, the one much praised, comes from the same root.",
+            "de": "Im Koran kommt die Wurzel in 68 Wörtern vor: ḥamd, Lob, 43-mal und ḥamīd 17-mal. Auch der Name Muḥammad, der viel Gelobte, stammt aus dieser Wurzel.",
+            "ar": "يرد الجذر في القرآن في ٦٨ كلمة: الحمد ٤٣ مرة، والحميد ١٧ مرة. ومن الجذر نفسه اسم محمد، أي كثير المحامد."
+          }
+        },
+        {
+          "verse": "1:2",
+          "check": "praise",
+          "title": { "en": "Where every prayer begins", "de": "Wo jedes Gebet beginnt", "ar": "من هنا تبدأ كل صلاة" },
+          "body": { "en": "Al-Fatiha opens with praise, before any request is made.", "de": "Al-Fātiḥa beginnt mit Lob, noch bevor irgendeine Bitte ausgesprochen wird.", "ar": "تبدأ الفاتحة بالحمد قبل أي سؤال." }
+        },
+        {
+          "verse": "14:8",
+          "check": "Free of need and Praiseworthy",
+          "title": { "en": "Praise that needs no one", "de": "Lob, das niemanden braucht", "ar": "حمد لا يحتاج إلى أحد" },
+          "body": { "en": "Even if all people were ungrateful, nothing would be taken from Him.", "de": "Selbst wenn alle Menschen undankbar wären, würde Ihm nichts genommen.", "ar": "لو جحد الناس كلهم ما نقص ذلك منه شيئًا." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Say alhamdulillah in ease and in hardship", "Notice one blessing each day and thank Him for it", "Thank people too: it is part of praising Him"],
+            "de": ["Sagen Sie alḥamdulillāh in leichten und in schweren Zeiten", "Bemerken Sie jeden Tag eine Gabe und danken Sie Ihm dafür", "Danken Sie auch Menschen: Das gehört zum Lob Allahs"],
+            "ar": ["قل الحمد لله في السراء والضراء", "تأمل كل يوم نعمة واحدة واحمده عليها", "اشكر الناس أيضًا فهو من حمد الله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root h-m-d", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Hmd" }
+      ]
+    },
+    {
+      "id": "name-57-al-muhsi",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 57", "de": "Namen Allahs · 57", "ar": "أسماء الله · ٥٧" },
+        "title": { "en": "Al-Muhsi", "de": "Al-Muḥṣī", "ar": "المحصي" },
+        "sub": { "en": "The One who counts: nothing escapes His knowledge", "de": "Der Zählende: nichts entgeht Seinem Wissen", "ar": "الذي لا يفوته شيء عدًّا وعلمًا" },
+        "arabic": "الْمُحْصِي"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Muhsi knows all things in number and detail: every leaf, every breath, every deed. Nothing is too small to be counted, and nothing counted is ever forgotten.",
+            "de": "Al-Muḥṣī kennt alle Dinge in Zahl und Einzelheit: jedes Blatt, jeden Atemzug, jede Tat. Nichts ist zu klein, um gezählt zu werden, und nichts Gezähltes wird je vergessen.",
+            "ar": "المحصي يعلم الأشياء عددًا وتفصيلًا: كل ورقة وكل نفَس وكل عمل. لا يصغر شيء عن الإحصاء، ولا يُنسى شيء أُحصي."
+          }
+        },
+        {
+          "title": { "en": "The root h-s-y", "de": "Die Wurzel ḥ-ṣ-y", "ar": "الجذر ح ص ي" },
+          "arabic": "ح ص ي",
+          "body": {
+            "en": "The root is linked with hasa, small pebbles once used for counting. It appears in 11 words in the Quran, all forms of ahsa, to count completely.",
+            "de": "Die Wurzel ist mit ḥaṣā verbunden, kleinen Kieselsteinen, mit denen man früher zählte. Sie kommt im Koran in 11 Wörtern vor, alle Formen von aḥṣā, vollständig zählen.",
+            "ar": "يرتبط الجذر بالحصى التي كان يُعدّ بها. ويرد في القرآن في ١١ كلمة، كلها من الفعل أحصى."
+          }
+        },
+        {
+          "verse": "19:94",
+          "check": "counted them",
+          "title": { "en": "Every one is known", "de": "Jeder ist bekannt", "ar": "كلٌّ معلوم عنده" },
+          "body": { "en": "No creature in the heavens or on earth is lost in the crowd.", "de": "Kein Geschöpf in den Himmeln oder auf der Erde geht in der Menge verloren.", "ar": "لا يضيع مخلوق في السماوات والأرض في الزحام." }
+        },
+        {
+          "verse": "14:34",
+          "check": "could not enumerate them",
+          "title": { "en": "We cannot count, He can", "de": "Wir können nicht zählen, Er kann es", "ar": "نعجز عن العدّ ولا يعجز" },
+          "body": { "en": "Our counting fails before His gifts, while He counts everything.", "de": "Unser Zählen scheitert an Seinen Gaben, während Er alles zählt.", "ar": "يعجز عدّنا عن نعمه، وهو يحصي كل شيء." }
+        },
+        {
+          "hadith": "bukhari:7392",
+          "check": "ninety-nine Names",
+          "title": { "en": "Counting the names", "de": "Die Namen zählen", "ar": "إحصاء الأسماء" },
+          "body": { "en": "The Arabic verb in this hadith comes from the same root as al-Muhsi.", "de": "Das arabische Verb in diesem Hadith stammt aus derselben Wurzel wie al-Muḥṣī.", "ar": "الفعل «أحصاها» في هذا الحديث من جذر اسم المحصي." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Count your blessings more often than your worries", "Remember that small deeds are counted too", "Review your day each evening before sleep"],
+            "de": ["Zählen Sie Ihre Gaben öfter als Ihre Sorgen", "Denken Sie daran, dass auch kleine Taten gezählt werden", "Gehen Sie jeden Abend vor dem Schlafen Ihren Tag durch"],
+            "ar": ["عُدّ نعمك أكثر مما تعدّ همومك", "تذكّر أن الأعمال الصغيرة تُحصى أيضًا", "حاسب نفسك كل مساء قبل النوم"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root h-s-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=HSy" }
+      ]
+    },
+    {
+      "id": "name-58-al-mubdi",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 58", "de": "Namen Allahs · 58", "ar": "أسماء الله · ٥٨" },
+        "title": { "en": "Al-Mubdi'", "de": "Al-Mubdiʾ", "ar": "المبدئ" },
+        "sub": { "en": "The Originator: the One who begins creation", "de": "Der Beginnende: der Eine, der die Schöpfung anfängt", "ar": "الذي بدأ الخلق من غير مثال" },
+        "arabic": "الْمُبْدِئ"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Mubdi' brings things into being for the first time, without any model before them. Every beginning in the universe, your own included, starts with Him.",
+            "de": "Al-Mubdiʾ bringt die Dinge zum ersten Mal ins Dasein, ohne ein Vorbild vor ihnen. Jeder Anfang im Universum, auch Ihr eigener, beginnt bei Ihm.",
+            "ar": "المبدئ هو الذي يوجد الأشياء أول مرة من غير مثال سابق. وكل بداية في الكون، وبدايتك أنت، تبدأ منه."
+          }
+        },
+        {
+          "title": { "en": "The root b-d-'", "de": "Die Wurzel b-d-ʾ", "ar": "الجذر ب د أ" },
+          "arabic": "ب د أ",
+          "body": {
+            "en": "The root means to begin. It appears in 15 words in the Quran; three of them are yubdi', He originates, the verb from which this name is formed.",
+            "de": "Die Wurzel bedeutet beginnen. Sie kommt im Koran in 15 Wörtern vor; drei davon sind yubdiʾ, Er beginnt, das Verb, aus dem dieser Name gebildet ist.",
+            "ar": "يدل الجذر على الابتداء، ويرد في القرآن في ١٥ كلمة، منها ٣ من الفعل يُبدئ الذي يُشتق منه هذا الاسم."
+          }
+        },
+        {
+          "verse": "85:13",
+          "check": "originates",
+          "title": { "en": "Two names in one verse", "de": "Zwei Namen in einem Vers", "ar": "اسمان في آية واحدة" },
+          "body": { "en": "He begins, and He brings back: al-Mubdi' and al-Mu'id belong together.", "de": "Er beginnt, und Er bringt zurück: al-Mubdiʾ und al-Muʿīd gehören zusammen.", "ar": "يبدأ ثم يعيد: المبدئ والمعيد اسمان متلازمان." }
+        },
+        {
+          "verse": "29:20",
+          "check": "began creation",
+          "title": { "en": "Travel and reflect", "de": "Reisen und nachdenken", "ar": "رحلة للتأمل" },
+          "body": { "en": "Studying how creation began is an invitation from the Quran itself.", "de": "Zu erforschen, wie die Schöpfung begann, ist eine Einladung des Korans selbst.", "ar": "البحث في كيفية بدء الخلق دعوة من القرآن نفسه." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Begin every good thing with Bismillah", "Remember your own beginning: once you were not", "After a fall, make a new beginning with Him"],
+            "de": ["Beginnen Sie jedes gute Werk mit Bismillāh", "Denken Sie an Ihren eigenen Anfang: Einst gab es Sie nicht", "Beginnen Sie nach einem Fehltritt neu mit Ihm"],
+            "ar": ["ابدأ كل عمل صالح بالبسملة", "تذكّر بدايتك: كنت لا شيء", "ابدأ بعد كل عثرة بداية جديدة معه"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root b-d-'", "url": "https://corpus.quran.com/qurandictionary.jsp?q=bdA" }
+      ]
+    },
+    {
+      "id": "name-59-al-muid",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 59", "de": "Namen Allahs · 59", "ar": "أسماء الله · ٥٩" },
+        "title": { "en": "Al-Mu'id", "de": "Al-Muʿīd", "ar": "المعيد" },
+        "sub": { "en": "The Restorer: the One who brings creation back", "de": "Der Zurückbringende: der Eine, der die Schöpfung wiederbringt", "ar": "الذي يعيد الخلق بعد فنائه" },
+        "arabic": "الْمُعِيد"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Mu'id brings back what has passed. He restores creation after death and returns every person for the Day of Judgement. What He began once, He can begin again.",
+            "de": "Al-Muʿīd bringt zurück, was vergangen ist. Er stellt die Schöpfung nach dem Tod wieder her und bringt jeden Menschen zum Tag des Gerichts zurück. Was Er einmal begann, kann Er erneut beginnen.",
+            "ar": "المعيد يعيد ما مضى: يعيد الخلق بعد الموت، ويردّ كل إنسان ليوم الحساب. ومن بدأ الخلق قادر على إعادته."
+          }
+        },
+        {
+          "title": { "en": "The root '-w-d", "de": "Die Wurzel ʿ-w-d", "ar": "الجذر ع و د" },
+          "arabic": "ع و د",
+          "body": { "en": "The root means to return. It appears in 63 words in the Quran. 'Id, the festival that comes back every year, is from the same root.", "de": "Die Wurzel bedeutet zurückkehren. Sie kommt im Koran in 63 Wörtern vor. Auch ʿĪd, das Fest, das jedes Jahr wiederkehrt, stammt aus ihr.", "ar": "يدل الجذر على الرجوع، ويرد في القرآن في ٦٣ كلمة. ومنه العيد لأنه يعود كل عام." }
+        },
+        {
+          "verse": "30:27",
+          "check": "then He repeats it",
+          "title": { "en": "Easier than the first time", "de": "Leichter als beim ersten Mal", "ar": "أهون من البدء" },
+          "body": { "en": "The Quran answers doubts about resurrection with a simple thought about beginnings.", "de": "Der Koran antwortet auf Zweifel an der Auferstehung mit einem einfachen Gedanken über den Anfang.", "ar": "يرد القرآن على الشك في البعث بحجة بسيطة عن البداية." }
+        },
+        {
+          "verse": "10:4",
+          "check": "repeats it",
+          "title": { "en": "A return with a purpose", "de": "Eine Rückkehr mit einem Sinn", "ar": "عودة لها غاية" },
+          "body": { "en": "Creation is brought back so that every deed meets its just reward.", "de": "Die Schöpfung wird zurückgebracht, damit jede Tat ihren gerechten Lohn findet.", "ar": "يُعاد الخلق ليُجزى كل عمل بالعدل." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Return to Allah often during the day", "Live today with the Day of Return in mind", "Repair what you broke: return is always possible"],
+            "de": ["Kehren Sie im Laufe des Tages oft zu Allah zurück", "Leben Sie heute im Bewusstsein des Tages der Rückkehr", "Reparieren Sie, was Sie zerbrochen haben: Rückkehr ist immer möglich"],
+            "ar": ["ارجع إلى الله مرات كثيرة في يومك", "عش يومك وأنت تذكر يوم المعاد", "أصلح ما أفسدت فالرجوع ممكن دائمًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root '-w-d", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Ewd" }
+      ]
+    },
+    {
+      "id": "name-60-al-muhyi",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 60", "de": "Namen Allahs · 60", "ar": "أسماء الله · ٦٠" },
+        "title": { "en": "Al-Muhyi", "de": "Al-Muḥyī", "ar": "المحيي" },
+        "sub": { "en": "The Giver of Life: to the earth, to hearts and to the dead", "de": "Der Lebenspendende: der Erde, den Herzen und den Toten", "ar": "يحيي الأرض والقلوب والموتى" },
+        "arabic": "الْمُحْيِي"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Muhyi gives life: to the seed in the soil, to the child in the womb, to hearts that had grown hard, and to the dead on the Day of Resurrection.",
+            "de": "Al-Muḥyī schenkt Leben: dem Samen in der Erde, dem Kind im Mutterleib, Herzen, die hart geworden waren, und den Toten am Tag der Auferstehung.",
+            "ar": "المحيي يهب الحياة: للبذرة في التراب، وللجنين في الرحم، وللقلوب بعد قسوتها، وللموتى يوم القيامة."
+          }
+        },
+        {
+          "title": { "en": "The root h-y-y", "de": "Die Wurzel ḥ-y-y", "ar": "الجذر ح ي ي" },
+          "arabic": "ح ي ي",
+          "body": { "en": "The root of life. It appears in 189 words in the Quran: hayat, life, 76 times, and ahya, to give life, 51 times.", "de": "Die Wurzel des Lebens. Sie kommt im Koran in 189 Wörtern vor: ḥayāt, Leben, 76-mal und aḥyā, Leben schenken, 51-mal.", "ar": "جذر الحياة، ويرد في القرآن في ١٨٩ كلمة: الحياة ٧٦ مرة، وأحيا ٥١ مرة." }
+        },
+        {
+          "verse": "30:50",
+          "check": "gives life to the earth",
+          "title": { "en": "Rain as a sign", "de": "Regen als Zeichen", "ar": "المطر آية" },
+          "body": { "en": "Green after dry ground: a sign of resurrection you can see every year.", "de": "Grün nach trockenem Boden: ein Zeichen der Auferstehung, das man jedes Jahr sehen kann.", "ar": "الخضرة بعد الجفاف آية على البعث تراها كل عام." }
+        },
+        {
+          "verse": "2:28",
+          "check": "brought you to life",
+          "title": { "en": "Your own story", "de": "Ihre eigene Geschichte", "ar": "قصتك أنت" },
+          "body": { "en": "The verse walks through the stages of every human life and points to the return.", "de": "Der Vers geht durch die Stationen jedes menschlichen Lebens und weist auf die Rückkehr.", "ar": "تمر الآية بمراحل حياة كل إنسان، وتشير إلى الرجوع." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Bring your heart to life with dhikr and Quran", "Give life: save, heal, plant and help", "In spring, remember the resurrection"],
+            "de": ["Beleben Sie Ihr Herz mit Gedenken und Koran", "Schenken Sie Leben: retten, heilen, pflanzen, helfen", "Denken Sie im Frühling an die Auferstehung"],
+            "ar": ["أحيِ قلبك بالذكر والقرآن", "كن سببًا للحياة: أنقذ وداوِ واغرس وأعِن", "تذكّر البعث حين ترى الربيع"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root h-y-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Hyy" }
+      ]
+    },
+    {
+      "id": "name-61-al-mumit",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 61", "de": "Namen Allahs · 61", "ar": "أسماء الله · ٦١" },
+        "title": { "en": "Al-Mumit", "de": "Al-Mumīt", "ar": "المميت" },
+        "sub": { "en": "The One who causes death: every life ends at His appointed time", "de": "Der sterben lässt: Jedes Leben endet zu der von Ihm bestimmten Zeit", "ar": "الذي قدّر لكل حي أجلًا" },
+        "arabic": "الْمُمِيت"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Mumit decrees the end of every life. Death is not chance and not a lapse in His care: it comes at the time He has set, neither earlier nor later, as a passage to what follows.",
+            "de": "Al-Mumīt bestimmt das Ende jedes Lebens. Der Tod ist kein Zufall und keine Lücke in Seiner Fürsorge: Er kommt zu der Zeit, die Er festgelegt hat, weder früher noch später, als Übergang zu dem, was folgt.",
+            "ar": "المميت هو الذي يقدّر نهاية كل حياة. فليس الموت صدفة ولا غيابًا لرعايته، بل يأتي في الوقت الذي حدده، لا يتقدم ولا يتأخر، وهو عبور إلى ما بعده."
+          }
+        },
+        {
+          "title": { "en": "The root m-w-t", "de": "Die Wurzel m-w-t", "ar": "الجذر م و ت" },
+          "arabic": "م و ت",
+          "body": {
+            "en": "The root of death appears in 165 words in the Quran; mawt, death, occurs 50 times. Giving life and causing death are often mentioned together.",
+            "de": "Die Wurzel des Todes kommt im Koran in 165 Wörtern vor; mawt, Tod, erscheint 50-mal. Leben schenken und sterben lassen werden oft zusammen genannt.",
+            "ar": "يرد جذر الموت في القرآن في ١٦٥ كلمة، ومنها الموت ٥٠ مرة. وكثيرًا ما يُذكر الإحياء والإماتة معًا."
+          }
+        },
+        {
+          "verse": "67:2",
+          "check": "created death and life",
+          "title": { "en": "Death named first", "de": "Der Tod zuerst genannt", "ar": "الموت قبل الحياة" },
+          "body": { "en": "Death is mentioned before life: both are part of the test of who does best.", "de": "Der Tod wird vor dem Leben genannt: Beide gehören zur Prüfung, wer am besten handelt.", "ar": "ذُكر الموت قبل الحياة، وكلاهما من الابتلاء ليظهر الأحسن عملًا." }
+        },
+        {
+          "verse": "57:2",
+          "check": "causes death",
+          "title": { "en": "Two sides of His dominion", "de": "Zwei Seiten Seiner Herrschaft", "ar": "وجهان لملكه" },
+          "body": { "en": "Giving life and taking it belong to the One who owns the heavens and the earth.", "de": "Leben geben und nehmen gehört dem, dem die Himmel und die Erde gehören.", "ar": "الإحياء والإماتة بيد مالك السماوات والأرض." }
+        },
+        {
+          "dua": "hisn:57:0",
+          "check": "belongs what He took",
+          "title": { "en": "For those who grieve", "de": "Für Trauernde", "ar": "لأهل المصيبة" },
+          "body": { "en": "Words of comfort the Prophet sent to his grieving daughter.", "de": "Trostworte, die der Prophet seiner trauernden Tochter sandte.", "ar": "كلمات عزاء أرسلها النبي إلى ابنته المحزونة." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Remember death to value your time", "Settle your debts and ask people's forgiveness", "Comfort the bereaved with patience and hope"],
+            "de": ["Denken Sie an den Tod, um Ihre Zeit zu schätzen", "Begleichen Sie Ihre Schulden und bitten Sie Menschen um Verzeihung", "Trösten Sie Trauernde mit Geduld und Hoffnung"],
+            "ar": ["تذكّر الموت لتعرف قيمة وقتك", "اقضِ ديونك واطلب السماح من الناس", "واسِ أهل المصيبة بالصبر والرجاء"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root m-w-t", "url": "https://corpus.quran.com/qurandictionary.jsp?q=mwt" }
+      ]
+    },
+    {
+      "id": "name-62-al-hayy",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 62", "de": "Namen Allahs · 62", "ar": "أسماء الله · ٦٢" },
+        "title": { "en": "Al-Hayy", "de": "Al-Ḥayy", "ar": "الحي" },
+        "sub": { "en": "The Ever-Living: a life without beginning and without end", "de": "Der Lebendige: ein Leben ohne Anfang und ohne Ende", "ar": "حياة لا أول لها ولا آخر" },
+        "arabic": "الْحَيّ"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Hayy has a life that has no beginning and no end, that never weakens and depends on nothing. All other life is a gift from Him, received for a time.",
+            "de": "Al-Ḥayy hat ein Leben ohne Anfang und ohne Ende, das nie schwächer wird und von nichts abhängt. Alles andere Leben ist ein Geschenk von Ihm, empfangen auf Zeit.",
+            "ar": "الحي له حياة لا بداية لها ولا نهاية، لا تضعف ولا تتوقف على شيء. وكل حياة سواها هبة منه إلى أجل."
+          }
+        },
+        {
+          "title": { "en": "The root h-y-y", "de": "Die Wurzel ḥ-y-y", "ar": "الجذر ح ي ي" },
+          "arabic": "ح ي ي",
+          "body": {
+            "en": "Al-Hayy shares its root with al-Muhyi. The word hayy, living, occurs 24 times in the Quran; several times it is said of Allah, sometimes beside al-Qayyum.",
+            "de": "Al-Ḥayy teilt seine Wurzel mit al-Muḥyī. Das Wort ḥayy, lebendig, kommt im Koran 24-mal vor; mehrfach wird es von Allah gesagt, manchmal neben al-Qayyūm.",
+            "ar": "يشترك الحي مع المحيي في الجذر. وترد كلمة حي في القرآن ٢٤ مرة، وتأتي وصفًا لله في مواضع، بعضها مقرون بالقيوم."
+          }
+        },
+        {
+          "verse": "25:58",
+          "check": "Ever-Living who does not die",
+          "title": { "en": "Lean on the Living", "de": "Stützen Sie sich auf den Lebendigen", "ar": "توكّل على الحي" },
+          "body": { "en": "Every other support will one day fall away; He will not.", "de": "Jede andere Stütze fällt eines Tages weg, Er nicht.", "ar": "كل سند غيره يزول يومًا، وهو لا يزول." }
+        },
+        {
+          "verse": "40:65",
+          "check": "He is the Ever-Living",
+          "title": { "en": "From His life, a call", "de": "Aus Seinem Leben ein Ruf", "ar": "دعوة تنبع من حياته" },
+          "body": { "en": "Because He alone is truly alive, He alone is called upon with a sincere heart.", "de": "Weil Er allein wahrhaft lebendig ist, wird Er allein mit aufrichtigem Herzen angerufen.", "ar": "لأنه وحده الحي حقًّا، فهو وحده يُدعى بقلب مخلص." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Rely on the Living, not on what passes away", "Use the life He gave you for what lasts", "Begin your day by remembering Him"],
+            "de": ["Verlassen Sie sich auf den Lebendigen, nicht auf das Vergängliche", "Nutzen Sie das Leben, das Er Ihnen gab, für das Bleibende", "Beginnen Sie Ihren Tag mit dem Gedenken an Ihn"],
+            "ar": ["توكل على الحي لا على ما يزول", "اصرف الحياة التي وهبك إياها فيما يبقى", "ابدأ يومك بذكره"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root h-y-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Hyy" }
+      ]
+    },
+    {
+      "id": "name-63-al-qayyum",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 63", "de": "Namen Allahs · 63", "ar": "أسماء الله · ٦٣" },
+        "title": { "en": "Al-Qayyum", "de": "Al-Qayyūm", "ar": "القيوم" },
+        "sub": { "en": "The Sustainer: He stands by Himself and holds up all things", "de": "Der Beständige: Er besteht durch Sich Selbst und trägt alle Dinge", "ar": "القائم بنفسه المقيم لغيره" },
+        "arabic": "الْقَيُّوم"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Qayyum stands by Himself and needs no one, while He keeps everything else in existence at every moment. The heavens, the earth and your own heartbeat continue because He sustains them.",
+            "de": "Al-Qayyūm besteht durch Sich Selbst und braucht niemanden, während Er alles andere in jedem Augenblick im Dasein hält. Die Himmel, die Erde und Ihr eigener Herzschlag bestehen fort, weil Er sie erhält.",
+            "ar": "القيوم قائم بنفسه لا يحتاج إلى أحد، ويقيم كل ما سواه في كل لحظة. فالسماوات والأرض ونبض قلبك باقية لأنه يقيمها."
+          }
+        },
+        {
+          "title": { "en": "The root q-w-m", "de": "Die Wurzel q-w-m", "ar": "الجذر ق و م" },
+          "arabic": "ق و م",
+          "body": { "en": "The root of standing appears in 660 words in the Quran. Qawm, people, qiyama, the Day of Standing, and mustaqim, straight, all come from it.", "de": "Die Wurzel des Stehens kommt im Koran in 660 Wörtern vor. Qawm, Volk, qiyāma, der Tag des Aufstehens, und mustaqīm, gerade, stammen alle aus ihr.", "ar": "يرد جذر القيام في القرآن في ٦٦٠ كلمة، ومنه القوم والقيامة والمستقيم." }
+        },
+        {
+          "verse": "3:2",
+          "check": "Self-Sustaining",
+          "title": { "en": "Two names together", "de": "Zwei Namen zusammen", "ar": "اسمان متلازمان" },
+          "body": { "en": "Al-Hayy and al-Qayyum appear side by side, as in Ayat al-Kursi.", "de": "Al-Ḥayy und al-Qayyūm stehen nebeneinander, wie im Thronvers.", "ar": "يقترن الحي بالقيوم كما في آية الكرسي." }
+        },
+        {
+          "verse": "20:111",
+          "check": "humbled",
+          "title": { "en": "On the Day of Judgement", "de": "Am Tag des Gerichts", "ar": "يوم الحساب" },
+          "body": { "en": "On that Day every pretence ends before Him.", "de": "An jenem Tag endet vor Ihm jede Verstellung.", "ar": "في ذلك اليوم يسقط كل ادعاء بين يديه." }
+        },
+        {
+          "dua": "hisn:27:13",
+          "check": "Self-Subsisting",
+          "title": { "en": "A dua for every morning", "de": "Ein Bittgebet für jeden Morgen", "ar": "دعاء لكل صباح" },
+          "body": { "en": "A short plea for the morning and evening that calls on both names.", "de": "Eine kurze Bitte für Morgen und Abend, die beide Namen anruft.", "ar": "دعاء قصير للصباح والمساء يُنادى فيه بالاسمين." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Ask Him to set right all your affairs", "Recite Ayat al-Kursi in the morning, evening and before sleep", "Stand upright in your prayer and your conduct"],
+            "de": ["Bitten Sie Ihn, all Ihre Angelegenheiten in Ordnung zu bringen", "Rezitieren Sie den Thronvers morgens, abends und vor dem Schlafen", "Stehen Sie aufrecht im Gebet und in Ihrem Verhalten"],
+            "ar": ["اسأله أن يصلح شأنك كله", "اقرأ آية الكرسي صباحًا ومساءً وقبل النوم", "استقم في صلاتك وفي سلوكك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root q-w-m", "url": "https://corpus.quran.com/qurandictionary.jsp?q=qwm" }
+      ]
+    },
+    {
+      "id": "name-64-al-wajid",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 64", "de": "Namen Allahs · 64", "ar": "أسماء الله · ٦٤" },
+        "title": { "en": "Al-Wajid", "de": "Al-Wājid", "ar": "الواجد" },
+        "sub": { "en": "The Finder: the One who lacks nothing", "de": "Der Findende: der Eine, dem nichts fehlt", "ar": "الذي لا يعوزه شيء" },
+        "arabic": "الْوَاجِد"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Wajid finds whatever He wills; nothing is out of His reach and nothing is missing for Him. Many scholars explain the name as the One who lacks nothing and possesses every perfection.",
+            "de": "Al-Wājid findet, was Er will; nichts liegt außerhalb Seiner Reichweite, und nichts fehlt Ihm. Viele Gelehrte erklären den Namen als den Einen, dem nichts mangelt und der jede Vollkommenheit besitzt.",
+            "ar": "الواجد يجد ما يريد، فلا يخرج شيء عن متناوله ولا ينقصه شيء. ويفسره كثير من العلماء بالذي لا يعوزه شيء وله كل كمال."
+          }
+        },
+        {
+          "title": { "en": "Where the name comes from", "de": "Woher der Name stammt", "ar": "مصدر الاسم" },
+          "body": {
+            "en": "Al-Wajid is not used as a name in the Quran. It belongs to the well-known list of ninety-nine names; scholars differ on whether that list was spoken by the Prophet or compiled by narrators.",
+            "de": "Al-Wājid wird im Koran nicht als Name verwendet. Er gehört zur bekannten Liste der neunundneunzig Namen; die Gelehrten sind uneins, ob diese Liste vom Propheten stammt oder von Überlieferern zusammengestellt wurde.",
+            "ar": "لم يرد الواجد اسمًا في القرآن، وهو من القائمة المشهورة للأسماء التسعة والتسعين، وقد اختلف العلماء: هل سردها النبي أم جمعها بعض الرواة؟"
+          }
+        },
+        {
+          "title": { "en": "The root w-j-d", "de": "Die Wurzel w-j-d", "ar": "الجذر و ج د" },
+          "arabic": "و ج د",
+          "body": { "en": "The root means to find. It appears in 107 words in the Quran, and 106 of them are forms of wajada, to find.", "de": "Die Wurzel bedeutet finden. Sie kommt im Koran in 107 Wörtern vor, 106 davon sind Formen von wajada, finden.", "ar": "يدل الجذر على الوجدان، ويرد في القرآن في ١٠٧ كلمات، منها ١٠٦ من الفعل وجد." }
+        },
+        {
+          "verse": "93:6-8",
+          "check": "found you",
+          "title": { "en": "Found, and cared for", "de": "Gefunden und versorgt", "ar": "وجده فرعاه" },
+          "body": { "en": "Three times the Prophet was found in need, and each time the need was met.", "de": "Dreimal wurde der Prophet in Not gefunden, und jedes Mal wurde die Not gestillt.", "ar": "وُجد النبي في حاجة ثلاث مرات، وفي كل مرة سُدّت حاجته." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Trust that He sees exactly where you are now", "Turn to Him in need: with Him nothing is lacking", "Be content: what is with Him is never lost"],
+            "de": ["Vertrauen Sie darauf, dass Er genau sieht, wo Sie jetzt stehen", "Wenden Sie sich in Not an Ihn: Bei Ihm fehlt nichts", "Seien Sie zufrieden: Was bei Ihm ist, geht nie verloren"],
+            "ar": ["ثق أنه يرى موضعك الآن تمامًا", "الجأ إليه عند الحاجة فلا ينقصه شيء", "اقنع فما عنده لا يضيع أبدًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "At-Tirmidhi, al-Jami', Book of Supplications (list of the ninety-nine names)" },
+        { "label": "Quranic Arabic Corpus, root w-j-d", "url": "https://corpus.quran.com/qurandictionary.jsp?q=wjd" }
+      ]
+    },
+    {
+      "id": "name-65-al-majid",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 65", "de": "Namen Allahs · 65", "ar": "أسماء الله · ٦٥" },
+        "title": { "en": "Al-Majid", "de": "Al-Mājid", "ar": "الماجد" },
+        "sub": { "en": "The Noble: glory joined with generous giving", "de": "Der Edle: Herrlichkeit verbunden mit großzügigem Geben", "ar": "ذو المجد والكرم" },
+        "arabic": "الْمَاجِد"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Majid is the One whose glory is vast and whose generosity is abundant. In Arabic, majd joins honour and nobility with generous giving: greatness that gives.",
+            "de": "Al-Mājid ist der Eine, dessen Herrlichkeit weit und dessen Großzügigkeit überreich ist. Im Arabischen verbindet majd Ehre und Adel mit freigebigem Geben: Größe, die schenkt.",
+            "ar": "الماجد واسع المجد كثير العطاء. والمجد في العربية يجمع الشرف والسؤدد مع سعة الكرم: عظمة تعطي."
+          }
+        },
+        {
+          "title": { "en": "The root m-j-d", "de": "Die Wurzel m-j-d", "ar": "الجذر م ج د" },
+          "arabic": "م ج د",
+          "body": {
+            "en": "The same root gives the sister name al-Majid, number 48. It appears in only 4 words in the Quran, all majid, glorious, said of Allah and of the Quran.",
+            "de": "Aus derselben Wurzel stammt der Schwestername al-Majīd, Nummer 48. Sie kommt im Koran nur in 4 Wörtern vor, alle majīd, ruhmreich, gesagt von Allah und vom Koran.",
+            "ar": "ومن الجذر نفسه الاسم الثامن والأربعون: المجيد. ولا يرد الجذر في القرآن إلا في ٤ كلمات، كلها «مجيد»، وصفًا لله وللقرآن."
+          }
+        },
+        {
+          "verse": "85:14-15",
+          "check": "Honorable Owner of the Throne",
+          "title": { "en": "Loving and glorious", "de": "Liebevoll und ruhmreich", "ar": "ودود ذو مجد" },
+          "body": { "en": "Forgiveness, love and glory stand side by side: His majesty does not make Him distant.", "de": "Vergebung, Liebe und Herrlichkeit stehen nebeneinander: Seine Majestät macht Ihn nicht fern.", "ar": "تجتمع المغفرة والود والمجد: فجلاله لا يبعده عن عباده." }
+        },
+        {
+          "pair": ["50:1", "85:21"],
+          "check": ["honored", "honored"],
+          "title": { "en": "A glorious Quran", "de": "Ein ruhmreicher Koran", "ar": "قرآن مجيد" },
+          "body": { "en": "The Quran is described with the same word: noble, like the One who sent it.", "de": "Der Koran wird mit demselben Wort beschrieben: edel wie der, der ihn herabsandte.", "ar": "يوصف القرآن بالكلمة نفسها: مجيد كمن أنزله." }
+        },
+        {
+          "dua": "hisn:23:1",
+          "check": "full of praise and majesty",
+          "title": { "en": "In every prayer", "de": "In jedem Gebet", "ar": "في كل صلاة" },
+          "body": { "en": "The blessings on the Prophet in the sitting of prayer end with two names: Hamid and Majid.", "de": "Der Segensgruß auf den Propheten im Sitzen des Gebets endet mit zwei Namen: Ḥamīd und Majīd.", "ar": "تُختم الصلاة على النبي في التشهد باسمين: حميد مجيد." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Give generously, without reminding people of it", "Honour the Quran: recite it with care", "Reflect on hamidun majid when you reach it in prayer"],
+            "de": ["Geben Sie großzügig, ohne andere daran zu erinnern", "Ehren Sie den Koran: Rezitieren Sie ihn mit Sorgfalt", "Halten Sie inne bei ḥamīdun majīd, wenn Sie im Gebet dort ankommen"],
+            "ar": ["أعطِ بسخاء ولا تمنّ على أحد", "عظّم القرآن واقرأه بعناية", "تدبّر الاسمين حين تبلغهما في الصلاة الإبراهيمية"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root m-j-d", "url": "https://corpus.quran.com/qurandictionary.jsp?q=mjd" }
+      ]
+    },
+    {
+      "id": "name-66-al-wahid",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 66", "de": "Namen Allahs · 66", "ar": "أسماء الله · ٦٦" },
+        "title": { "en": "Al-Wahid", "de": "Al-Wāḥid", "ar": "الواحد" },
+        "sub": { "en": "The One: without partner, rival or equal", "de": "Der Eine: ohne Teilhaber, Rivalen oder Gleichen", "ar": "الذي لا شريك له ولا ند" },
+        "arabic": "الْوَاحِد"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Wahid is One in His being, His attributes and His actions. He has no partner in creating, no rival in ruling and no equal in worship. This oneness is the heart of tawhid.",
+            "de": "Al-Wāḥid ist einer in Seinem Wesen, Seinen Eigenschaften und Seinen Taten. Er hat keinen Teilhaber im Erschaffen, keinen Rivalen im Herrschen und keinen Gleichen in der Anbetung. Diese Einheit ist das Herz des Tauḥīd.",
+            "ar": "الواحد واحد في ذاته وصفاته وأفعاله، لا شريك له في الخلق، ولا منازع له في الملك، ولا ند له في العبادة. وهذه الوحدانية قلب التوحيد."
+          }
+        },
+        {
+          "title": { "en": "The root w-h-d", "de": "Die Wurzel w-ḥ-d", "ar": "الجذر و ح د" },
+          "arabic": "و ح د",
+          "body": { "en": "The root of oneness appears in 68 words in the Quran. Tawhid, declaring Allah one, is formed from the same root.", "de": "Die Wurzel der Einheit kommt im Koran in 68 Wörtern vor. Auch Tauḥīd, das Bekenntnis zur Einheit Allahs, ist aus ihr gebildet.", "ar": "يرد جذر الوحدة في القرآن في ٦٨ كلمة، ومنه التوحيد، أي إفراد الله بالعبادة." }
+        },
+        {
+          "verse": "40:16",
+          "check": "the One, the Prevailing",
+          "title": { "en": "The question of that Day", "de": "Die Frage jenes Tages", "ar": "سؤال ذلك اليوم" },
+          "body": { "en": "When all is revealed, the question of who truly rules is answered with this name.", "de": "Wenn alles offenbar wird, beantwortet dieser Name die Frage, wem die Herrschaft wirklich gehört.", "ar": "حين ينكشف كل شيء، يكون هذا الاسم جواب السؤال عن الملك الحق." }
+        },
+        {
+          "verse": "2:163",
+          "check": "your god is one God",
+          "title": { "en": "Oneness, then mercy", "de": "Erst Einheit, dann Barmherzigkeit", "ar": "الوحدانية ثم الرحمة" },
+          "body": { "en": "His oneness is followed directly by two names of mercy.", "de": "Auf Seine Einheit folgen unmittelbar zwei Namen der Barmherzigkeit.", "ar": "تأتي بعد الوحدانية مباشرة صفتان من صفات الرحمة." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Make your intention for Him alone", "Do not let fear of people outweigh trust in Him", "Renew your tawhid with la ilaha illallah"],
+            "de": ["Richten Sie Ihre Absicht allein auf Ihn", "Lassen Sie Menschenfurcht nicht schwerer wiegen als Vertrauen in Ihn", "Erneuern Sie Ihren Tauḥīd mit lā ilāha illallāh"],
+            "ar": ["اجعل نيتك له وحده", "لا تجعل خوفك من الناس أكبر من ثقتك به", "جدّد توحيدك بقول لا إله إلا الله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root w-h-d", "url": "https://corpus.quran.com/qurandictionary.jsp?q=wHd" }
+      ]
+    },
+    {
+      "id": "name-67-al-ahad",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 67", "de": "Namen Allahs · 67", "ar": "أسماء الله · ٦٧" },
+        "title": { "en": "Al-Ahad", "de": "Al-Aḥad", "ar": "الأحد" },
+        "sub": { "en": "The Unique: One without division or likeness", "de": "Der Einzige: einer ohne Teilung und ohne Gleichnis", "ar": "الذي لا ينقسم ولا مثيل له" },
+        "arabic": "الْأَحَد"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Ahad is One in a way that admits no division and no likeness. Some scholars distinguish: al-Wahid denies any partner beside Him, al-Ahad denies any division within Him or comparison with Him.",
+            "de": "Al-Aḥad ist einer auf eine Weise, die weder Teilung noch Gleichnis zulässt. Manche Gelehrte unterscheiden: al-Wāḥid verneint jeden Teilhaber neben Ihm, al-Aḥad jede Teilung in Ihm und jeden Vergleich mit Ihm.",
+            "ar": "الأحد واحد لا يقبل الانقسام ولا المماثلة. ويفرّق بعض العلماء بأن الواحد ينفي الشريك، والأحد ينفي التجزؤ والمثيل."
+          }
+        },
+        {
+          "title": { "en": "The root '-h-d", "de": "Die Wurzel ʾ-ḥ-d", "ar": "الجذر أ ح د" },
+          "arabic": "أ ح د",
+          "body": {
+            "en": "The root appears in 85 words in the Quran; ahad occurs 74 times, often meaning anyone or no one. As a name of Allah it stands at the start of Surah al-Ikhlas.",
+            "de": "Die Wurzel kommt im Koran in 85 Wörtern vor; aḥad erscheint 74-mal, oft im Sinn von irgendjemand oder niemand. Als Name Allahs steht es am Anfang der Sure al-Ikhlāṣ.",
+            "ar": "يرد الجذر في القرآن في ٨٥ كلمة، ومنها أحد ٧٤ مرة، كثيرًا بمعنى أيّ أحد أو لا أحد. واسمًا لله يأتي في مطلع سورة الإخلاص."
+          }
+        },
+        {
+          "verse": "112:1",
+          "check": "One",
+          "title": { "en": "The opening of al-Ikhlas", "de": "Der Beginn von al-Ikhlāṣ", "ar": "مطلع سورة الإخلاص" },
+          "body": { "en": "The surah of sincerity opens by naming Him the One.", "de": "Die Sure der Aufrichtigkeit beginnt damit, Ihn den Einen zu nennen.", "ar": "تفتتح سورة الإخلاص بتسميته الأحد." }
+        },
+        {
+          "verse": "42:11",
+          "check": "nothing like unto Him",
+          "title": { "en": "Nothing like Him", "de": "Nichts ist wie Er", "ar": "لا مثيل له" },
+          "body": { "en": "The verse sets the rule for every thought about Allah: no comparison.", "de": "Der Vers gibt die Regel für jeden Gedanken über Allah vor: kein Vergleich.", "ar": "تضع الآية قاعدة لكل تفكر في الله: لا تشبيه." }
+        },
+        {
+          "hadith": "bukhari:5013",
+          "check": "one-third",
+          "title": { "en": "A third of the Quran", "de": "Ein Drittel des Korans", "ar": "ثلث القرآن" },
+          "body": { "en": "A short surah of great weight, because it is entirely about Him.", "de": "Eine kurze Sure von großem Gewicht, denn sie handelt ganz von Ihm.", "ar": "سورة قصيرة عظيمة الوزن لأنها كلها عن الله." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Recite al-Ikhlas often, also in the morning and evening", "Do not compare Allah with anything you know", "Let love for this surah grow in you"],
+            "de": ["Rezitieren Sie al-Ikhlāṣ oft, auch morgens und abends", "Vergleichen Sie Allah mit nichts, das Sie kennen", "Lassen Sie die Liebe zu dieser Sure in sich wachsen"],
+            "ar": ["أكثر من قراءة الإخلاص، وفي الصباح والمساء", "لا تشبّه الله بشيء مما تعرف", "نمِّ في قلبك حب هذه السورة"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root '-h-d", "url": "https://corpus.quran.com/qurandictionary.jsp?q=AHd" }
+      ]
+    },
+    {
+      "id": "name-68-as-samad",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 68", "de": "Namen Allahs · 68", "ar": "أسماء الله · ٦٨" },
+        "title": { "en": "As-Samad", "de": "Aṣ-Ṣamad", "ar": "الصمد" },
+        "sub": { "en": "The Eternal Refuge: all turn to Him, and He needs no one", "de": "Der Unabhängige: Alle wenden sich an Ihn, und Er braucht niemanden", "ar": "الذي يقصده الخلق في حوائجهم" },
+        "arabic": "الصَّمَد"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "As-Samad is the One to whom all creation turns in its needs, while He needs nothing. Scholars of tafsir gave several explanations: the Master sought in every need, and the One who is complete, without any lack.",
+            "de": "Aṣ-Ṣamad ist der Eine, an den sich die ganze Schöpfung in ihren Nöten wendet, während Er nichts braucht. Die Ausleger gaben mehrere Erklärungen: der Herr, der in jeder Not aufgesucht wird, und der Vollkommene ohne jeden Mangel.",
+            "ar": "الصمد هو الذي يقصده الخلق كلهم في حوائجهم، وهو لا يحتاج إلى شيء. وللمفسرين فيه أقوال، منها: السيد الذي يُصمد إليه في الحوائج، والكامل الذي لا نقص فيه."
+          }
+        },
+        {
+          "title": { "en": "The root s-m-d", "de": "Die Wurzel ṣ-m-d", "ar": "الجذر ص م د" },
+          "arabic": "ص م د",
+          "body": {
+            "en": "This root appears only once in the whole Quran: in the word samad in Surah al-Ikhlas. A single occurrence for a name that every believer knows.",
+            "de": "Diese Wurzel kommt im ganzen Koran nur ein einziges Mal vor: im Wort ṣamad in der Sure al-Ikhlāṣ. Ein einziges Vorkommen für einen Namen, den jeder Gläubige kennt.",
+            "ar": "لم يرد هذا الجذر في القرآن كله إلا مرة واحدة: في كلمة الصمد في سورة الإخلاص. موضع واحد لاسم يعرفه كل مؤمن."
+          }
+        },
+        {
+          "verse": "112:2",
+          "check": "Eternal Refuge",
+          "title": { "en": "The only place", "de": "Die einzige Stelle", "ar": "الموضع الوحيد" },
+          "body": { "en": "The verse that names Him as-Samad, right after al-Ahad.", "de": "Der Vers, der Ihn aṣ-Ṣamad nennt, direkt nach al-Aḥad.", "ar": "الآية التي تسميه الصمد بعد الأحد مباشرة." }
+        },
+        {
+          "dua": "hisn:24:8",
+          "check": "AS-Samad",
+          "title": { "en": "Asking through His names", "de": "Bitten mit Seinen Namen", "ar": "السؤال بأسمائه" },
+          "body": { "en": "A dua before ending the prayer that asks for forgiveness through al-Ahad and as-Samad.", "de": "Ein Bittgebet vor dem Ende des Gebets, das mit al-Aḥad und aṣ-Ṣamad um Vergebung bittet.", "ar": "دعاء قبل التسليم يُسأل فيه الغفران بالأحد والصمد." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Bring every need to Him first", "Ask people with dignity, depend on Him alone", "Be a support for others where you can"],
+            "de": ["Bringen Sie jede Not zuerst zu Ihm", "Bitten Sie Menschen mit Würde, verlassen Sie sich allein auf Ihn", "Seien Sie anderen eine Stütze, wo Sie können"],
+            "ar": ["اعرض كل حاجة عليه أولًا", "اسأل الناس بعزة واعتمد عليه وحده", "كن سندًا لغيرك ما استطعت"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root s-m-d", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Smd" }
+      ]
+    },
+    {
+      "id": "name-69-al-qadir",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 69", "de": "Namen Allahs · 69", "ar": "أسماء الله · ٦٩" },
+        "title": { "en": "Al-Qadir", "de": "Al-Qādir", "ar": "القادر" },
+        "sub": { "en": "The Able: nothing He wills is beyond Him", "de": "Der Mächtige: Nichts, was Er will, übersteigt Ihn", "ar": "الذي لا يعجزه شيء" },
+        "arabic": "الْقَادِر"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Qadir is able to do whatever He wills, without effort and without limit. What seems impossible to us is no burden to Him. His power is joined to His wisdom: He does what is right.",
+            "de": "Al-Qādir vermag alles, was Er will, ohne Mühe und ohne Grenze. Was uns unmöglich scheint, ist für Ihn keine Last. Seine Macht ist mit Seiner Weisheit verbunden: Er tut, was recht ist.",
+            "ar": "القادر يفعل ما يشاء بلا عناء ولا حدّ، فما يبدو لنا مستحيلًا لا يثقل عليه. وقدرته مقرونة بحكمته، فلا يفعل إلا الصواب."
+          }
+        },
+        {
+          "title": { "en": "The root q-d-r", "de": "Die Wurzel q-d-r", "ar": "الجذر ق د ر" },
+          "arabic": "ق د ر",
+          "body": {
+            "en": "The root appears in 132 words in the Quran. Its intensive form, ever able, occurs 45 times, the name's own form 14 times. Qadar, the divine decree and measure, comes from the same root.",
+            "de": "Die Wurzel kommt im Koran in 132 Wörtern vor; qadīr, allmächtig, erscheint 45-mal und qādir 14-mal. Auch qadar, die göttliche Bestimmung und das Maß, stammt aus ihr.",
+            "ar": "يرد الجذر في القرآن في ١٣٢ كلمة: قدير ٤٥ مرة، وقادر ١٤ مرة. ومنه القدر، أي التقدير الإلهي."
+          }
+        },
+        {
+          "verse": "75:40",
+          "check": "Able to give life",
+          "title": { "en": "The closing question", "de": "Die abschließende Frage", "ar": "السؤال الأخير" },
+          "body": { "en": "Surah al-Qiyamah ends with a question about this ability.", "de": "Die Sure al-Qiyāma endet mit einer Frage nach dieser Macht.", "ar": "تُختم سورة القيامة بسؤال عن هذه القدرة." }
+        },
+        {
+          "verse": "36:81",
+          "check": "Able to create",
+          "title": { "en": "The argument of the heavens", "de": "Das Argument der Himmel", "ar": "حجة السماوات" },
+          "body": { "en": "The One who made the vast heavens is not tired by bringing people back.", "de": "Den, der die weiten Himmel schuf, ermüdet es nicht, Menschen zurückzubringen.", "ar": "من خلق السماوات الواسعة لا يعجزه أن يعيد الناس." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["When something seems impossible, remember who is able", "Accept His decree, and still do what you can", "Ask Him for great things without hesitation"],
+            "de": ["Wenn etwas unmöglich scheint, denken Sie daran, wer es vermag", "Nehmen Sie Seine Bestimmung an und tun Sie dennoch, was Sie können", "Bitten Sie Ihn ohne Zögern um große Dinge"],
+            "ar": ["إذا بدا أمر مستحيلًا فتذكّر من هو القادر", "ارضَ بقدره واعمل ما تستطيع", "اسأله العظيم من غير تردد"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root q-d-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=qdr" }
+      ]
+    },
+    {
+      "id": "name-70-al-muqtadir",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 70", "de": "Namen Allahs · 70", "ar": "أسماء الله · ٧٠" },
+        "title": { "en": "Al-Muqtadir", "de": "Al-Muqtadir", "ar": "المقتدر" },
+        "sub": { "en": "The All-Powerful: power fully exercised over all things", "de": "Der Allmächtige: Macht, die über alles vollständig wirkt", "ar": "التام القدرة على كل شيء" },
+        "arabic": "الْمُقْتَدِر"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Muqtadir has power that is complete and always at work. The Arabic form adds intensity to al-Qadir: not only able, but exercising that power over everything, with nothing able to resist.",
+            "de": "Al-Muqtadir hat eine Macht, die vollkommen und stets wirksam ist. Die arabische Form verstärkt al-Qādir: nicht nur fähig, sondern diese Macht über alles ausübend, ohne dass etwas widerstehen kann.",
+            "ar": "المقتدر ذو قدرة تامة نافذة. وصيغته أبلغ من القادر: فهو لا يقدر فحسب، بل تنفذ قدرته في كل شيء فلا يمتنع عليه شيء."
+          }
+        },
+        {
+          "title": { "en": "Power and measure", "de": "Macht und Maß", "ar": "القدرة والتقدير" },
+          "arabic": "ق د ر",
+          "body": {
+            "en": "Al-Muqtadir shares its root with al-Qadir and with qadar, the decree. The root appears in 132 words in the Quran: power and measure belong together.",
+            "de": "Al-Muqtadir teilt die Wurzel mit al-Qādir und mit qadar, der Bestimmung. Die Wurzel kommt im Koran in 132 Wörtern vor: Macht und Maß gehören zusammen.",
+            "ar": "يشترك المقتدر مع القادر والقدر في جذر واحد يرد في القرآن في ١٣٢ كلمة: فالقدرة والتقدير متلازمان."
+          }
+        },
+        {
+          "verse": "54:55",
+          "check": "Perfect in Ability",
+          "title": { "en": "Close to the Sovereign", "de": "Nahe dem König", "ar": "قرب المليك المقتدر" },
+          "body": { "en": "The last verse of Surah al-Qamar: where the righteous will be honoured, close to Him.", "de": "Der letzte Vers der Sure al-Qamar: Dort werden die Gottesfürchtigen geehrt, in Seiner Nähe.", "ar": "آخر آية في سورة القمر: حيث يُكرَم المتقون قريبًا منه." }
+        },
+        {
+          "verse": "18:45",
+          "check": "Perfect in Ability",
+          "title": { "en": "A parable of this world", "de": "Ein Gleichnis für diese Welt", "ar": "مثل الحياة الزائلة" },
+          "body": { "en": "A parable of passing life ends with this name: everything changes, His power does not.", "de": "Ein Gleichnis für das vergängliche Leben endet mit diesem Namen: Alles verändert sich, Seine Macht nicht.", "ar": "يُختم مثل الحياة الزائلة بهذا الاسم: كل شيء يتغير إلا قدرته." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Do not be dazzled by worldly power", "Use the power you have with justice", "Remember His power when you are wronged"],
+            "de": ["Lassen Sie sich von weltlicher Macht nicht blenden", "Gebrauchen Sie Ihre Macht mit Gerechtigkeit", "Denken Sie an Seine Macht, wenn Ihnen Unrecht geschieht"],
+            "ar": ["لا تغترّ بسلطان الدنيا", "استعمل ما لديك من قدرة بالعدل", "تذكّر قدرته إذا ظُلمت"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root q-d-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=qdr" }
+      ]
+    },
+    {
+      "id": "name-71-al-muqaddim",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 71", "de": "Namen Allahs · 71", "ar": "أسماء الله · ٧١" },
+        "title": { "en": "Al-Muqaddim", "de": "Al-Muqaddim", "ar": "المقدم" },
+        "sub": { "en": "The One who brings forward: in time, in rank and in honour", "de": "Der Voranstellende: in Zeit, Rang und Ehre", "ar": "الذي يقدّم من يشاء وما يشاء" },
+        "arabic": "الْمُقَدِّم"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Muqaddim brings forward whom He wills and what He wills: in time, in rank and in honour. He placed the prophets ahead of others, and He lets each matter arrive at its right moment.",
+            "de": "Al-Muqaddim stellt voran, wen und was Er will: in der Zeit, im Rang und in der Ehre. Er stellte die Propheten anderen voran, und Er lässt jede Sache zu ihrem rechten Zeitpunkt kommen.",
+            "ar": "المقدّم يقدّم من يشاء وما يشاء: في الزمن والمنزلة والكرامة. قدّم الأنبياء على غيرهم، ويجعل كل أمر يأتي في وقته المناسب."
+          }
+        },
+        {
+          "title": { "en": "The root q-d-m", "de": "Die Wurzel q-d-m", "ar": "الجذر ق د م" },
+          "arabic": "ق د م",
+          "body": {
+            "en": "The root appears in 48 words in the Quran; qaddama, to send ahead, occurs 27 times, often for the deeds people send ahead for themselves.",
+            "de": "Die Wurzel kommt im Koran in 48 Wörtern vor; qaddama, vorausschicken, erscheint 27-mal, oft für die Taten, die Menschen für sich vorausschicken.",
+            "ar": "يرد الجذر في القرآن في ٤٨ كلمة، ومنه الفعل قدّم ٢٧ مرة، وكثيرًا ما يأتي في الأعمال التي يقدّمها الإنسان لنفسه."
+          }
+        },
+        {
+          "hadith": "bukhari:6398",
+          "check": "muqaddimu",
+          "title": { "en": "In the Prophet's dua", "de": "Im Bittgebet des Propheten", "ar": "في دعاء النبي" },
+          "body": { "en": "In a dua for forgiveness, the Prophet called on this name and its pair.", "de": "In einem Bittgebet um Vergebung rief der Prophet diesen Namen und sein Gegenstück an.", "ar": "في دعاء لطلب المغفرة نادى النبي ربه بهذا الاسم وقرينه." }
+        },
+        {
+          "verse": "59:18",
+          "check": "put forth for tomorrow",
+          "title": { "en": "What you send ahead", "de": "Was Sie vorausschicken", "ar": "ما تقدّمه لغدك" },
+          "body": { "en": "Every deed is sent forward to a tomorrow that is already waiting.", "de": "Jede Tat wird vorausgeschickt, in ein Morgen, das bereits wartet.", "ar": "كل عمل يُقدَّم إلى غدٍ ينتظره." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Put first what Allah puts first", "Send good deeds ahead for tomorrow", "Do not envy those brought forward: every rank is in His hand"],
+            "de": ["Stellen Sie voran, was Allah voranstellt", "Schicken Sie gute Taten für morgen voraus", "Beneiden Sie niemanden, der vorangestellt wird: Jeder Rang liegt in Seiner Hand"],
+            "ar": ["قدّم ما قدّمه الله", "قدّم لغدك عملًا صالحًا", "لا تحسد من قُدّم فكل منزلة بيده"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root q-d-m", "url": "https://corpus.quran.com/qurandictionary.jsp?q=qdm" }
+      ]
+    },
+    {
+      "id": "name-72-al-muakhkhir",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 72", "de": "Namen Allahs · 72", "ar": "أسماء الله · ٧٢" },
+        "title": { "en": "Al-Mu'akhkhir", "de": "Al-Muʾakhkhir", "ar": "المؤخر" },
+        "sub": { "en": "The One who puts back: every delay is in His hand", "de": "Der Zurückstellende: Jeder Aufschub liegt in Seiner Hand", "ar": "الذي يؤخر ما يشاء بحكمته" },
+        "arabic": "الْمُؤَخِّر"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Mu'akhkhir delays and puts back whom He wills and what He wills, always with wisdom. A delay from Him is not forgetting: it can be mercy, a test, or time to turn back.",
+            "de": "Al-Muʾakhkhir schiebt auf und stellt zurück, wen und was Er will, stets mit Weisheit. Ein Aufschub von Ihm ist kein Vergessen: Er kann Barmherzigkeit sein, eine Prüfung oder Zeit zur Umkehr.",
+            "ar": "المؤخِّر يؤخر من يشاء وما يشاء، بحكمة دائمًا. وتأخيره ليس نسيانًا: قد يكون رحمة، أو ابتلاء، أو مهلة للرجوع."
+          }
+        },
+        {
+          "title": { "en": "The root '-kh-r", "de": "Die Wurzel ʾ-kh-r", "ar": "الجذر أ خ ر" },
+          "arabic": "أ خ ر",
+          "body": { "en": "The root appears in 250 words in the Quran. Akhkhara, to delay, occurs 15 times. The name al-Akhir, the Last, comes from the same root.", "de": "Die Wurzel kommt im Koran in 250 Wörtern vor. Akhkhara, aufschieben, erscheint 15-mal. Auch der Name al-Ākhir, der Letzte, stammt aus ihr.", "ar": "يرد الجذر في القرآن في ٢٥٠ كلمة، ومنه الفعل أخّر ١٥ مرة. ومن الجذر نفسه اسم الآخر." }
+        },
+        {
+          "verse": "16:61",
+          "check": "defers them",
+          "title": { "en": "A delay that is mercy", "de": "Ein Aufschub, der Barmherzigkeit ist", "ar": "تأخير هو رحمة" },
+          "body": { "en": "The respite people are given is itself a gift: time to return.", "de": "Die Frist, die Menschen erhalten, ist selbst ein Geschenk: Zeit zur Umkehr.", "ar": "المهلة التي يُعطاها الناس هبة في ذاتها: وقت للرجوع." }
+        },
+        {
+          "verse": "14:42",
+          "check": "delays them",
+          "title": { "en": "Delay is not neglect", "de": "Aufschub ist kein Übersehen", "ar": "التأخير ليس غفلة" },
+          "body": { "en": "Injustice that seems to go unpunished is not unseen.", "de": "Unrecht, das ungestraft scheint, bleibt nicht ungesehen.", "ar": "الظلم الذي يبدو بلا عقاب ليس غائبًا عن علمه." }
+        },
+        {
+          "hadith": "bukhari:6317",
+          "check": "akhkhiru",
+          "title": { "en": "In the night prayer", "de": "Im Nachtgebet", "ar": "في صلاة الليل" },
+          "body": { "en": "Near the end of a long praise in his night prayer, the Prophet named this pair.", "de": "Gegen Ende eines langen Lobpreises in seinem Nachtgebet nannte der Prophet dieses Namenspaar.", "ar": "قرب ختام ثناء طويل في قيام الليل ذكر النبي هذين الاسمين." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Be patient when an answer seems delayed", "Use the time you have been given", "Do not put off repentance"],
+            "de": ["Seien Sie geduldig, wenn eine Antwort auf sich warten lässt", "Nutzen Sie die Zeit, die Ihnen geschenkt wurde", "Schieben Sie die Umkehr nicht auf"],
+            "ar": ["اصبر إذا بدا أن الإجابة تأخرت", "اغتنم الوقت الذي أُعطيته", "لا تؤخر التوبة"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root '-kh-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Axr" }
+      ]
+    },
+    {
+      "id": "name-73-al-awwal",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 73", "de": "Namen Allahs · 73", "ar": "أسماء الله · ٧٣" },
+        "title": { "en": "Al-Awwal", "de": "Al-Awwal", "ar": "الأول" },
+        "sub": { "en": "The First: before everything, without beginning", "de": "Der Erste: vor allem, ohne Anfang", "ar": "السابق لكل شيء بلا بداية" },
+        "arabic": "الْأَوَّل"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Awwal is before all things, without any beginning. Nothing preceded Him, and everything that exists began with Him. Time itself is His creation.",
+            "de": "Al-Awwal ist vor allen Dingen, ohne jeden Anfang. Nichts ging Ihm voraus, und alles, was existiert, begann mit Ihm. Auch die Zeit selbst ist Seine Schöpfung.",
+            "ar": "الأول سابق لكل شيء بلا بداية، لم يسبقه شيء، وكل موجود بدأ به. والزمن نفسه من خلقه."
+          }
+        },
+        {
+          "title": { "en": "The word awwal", "de": "Das Wort awwal", "ar": "كلمة أوّل" },
+          "arabic": "أ و ل",
+          "body": {
+            "en": "The word awwal, first, occurs 82 times in the Quran. As a name of Allah it appears together with three other names in one verse of Surah al-Hadid.",
+            "de": "Das Wort awwal, erster, kommt im Koran 82-mal vor. Als Name Allahs erscheint es zusammen mit drei weiteren Namen in einem Vers der Sure al-Ḥadīd.",
+            "ar": "ترد كلمة أوّل في القرآن ٨٢ مرة. واسمًا لله تأتي مع ثلاثة أسماء أخرى في آية واحدة من سورة الحديد."
+          }
+        },
+        {
+          "verse": "57:3",
+          "check": "the First and the Last",
+          "title": { "en": "Four names in one verse", "de": "Vier Namen in einem Vers", "ar": "أربعة أسماء في آية" },
+          "body": { "en": "Before all, after all, above all, and nearer than all: the whole of time and space in one verse.", "de": "Vor allem, nach allem, über allem und näher als alles: die ganze Zeit und der ganze Raum in einem Vers.", "ar": "قبل كل شيء، وبعد كل شيء، وفوق كل شيء، وأقرب من كل شيء: الزمان والمكان في آية واحدة." }
+        },
+        {
+          "verse": "112:3",
+          "check": "neither begets nor is born",
+          "title": { "en": "Not born", "de": "Nicht gezeugt", "ar": "لم يولد" },
+          "body": { "en": "Nothing came before Him and nothing produced Him: He is the First without a beginning.", "de": "Nichts kam vor Ihm, und nichts brachte Ihn hervor: Er ist der Erste ohne Anfang.", "ar": "لم يسبقه شيء ولم يصدر عن شيء: فهو الأول بلا بداية." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Begin your day with Him", "Before your worry existed, He was: let that calm you", "Give Him the first place in your plans"],
+            "de": ["Beginnen Sie Ihren Tag mit Ihm", "Bevor Ihre Sorge existierte, war Er: Lassen Sie sich davon beruhigen", "Geben Sie Ihm den ersten Platz in Ihren Plänen"],
+            "ar": ["ابدأ يومك به", "كان قبل همّك فليطمئن قلبك", "اجعل له المقام الأول في خططك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root '-w-l", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Awl" }
+      ]
+    },
+    {
+      "id": "name-74-al-akhir",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 74", "de": "Namen Allahs · 74", "ar": "أسماء الله · ٧٤" },
+        "title": { "en": "Al-Akhir", "de": "Al-Ākhir", "ar": "الآخر" },
+        "sub": { "en": "The Last: after everything, without end", "de": "Der Letzte: nach allem, ohne Ende", "ar": "الباقي بعد كل شيء بلا نهاية" },
+        "arabic": "الْآخِر"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Akhir remains after all things have passed. Everything has an end; He does not. Whatever we build, own or achieve, the last word belongs to Him.",
+            "de": "Al-Ākhir bleibt, wenn alle Dinge vergangen sind. Alles hat ein Ende, Er nicht. Was immer wir bauen, besitzen oder erreichen: Das letzte Wort gehört Ihm.",
+            "ar": "الآخر باقٍ بعد فناء كل شيء. لكل شيء نهاية إلا هو. ومهما بنينا أو ملكنا أو أنجزنا، فالكلمة الأخيرة له."
+          }
+        },
+        {
+          "title": { "en": "The root '-kh-r", "de": "Die Wurzel ʾ-kh-r", "ar": "الجذر أ خ ر" },
+          "arabic": "أ خ ر",
+          "body": { "en": "The root appears in 250 words in the Quran. Al-akhira, the Hereafter, and al-yawm al-akhir, the Last Day, are formed from it.", "de": "Die Wurzel kommt im Koran in 250 Wörtern vor. Al-ākhira, das Jenseits, und al-yaum al-ākhir, der Jüngste Tag, sind aus ihr gebildet.", "ar": "يرد الجذر في القرآن في ٢٥٠ كلمة، ومنه الآخرة واليوم الآخر." }
+        },
+        {
+          "verse": "57:3",
+          "check": "the First and the Last",
+          "title": { "en": "The Last, beside the First", "de": "Der Letzte neben dem Ersten", "ar": "الآخر بجوار الأول" },
+          "body": { "en": "No beginning before Him, no end after Him.", "de": "Kein Anfang vor Ihm, kein Ende nach Ihm.", "ar": "لا بداية قبله ولا نهاية بعده." }
+        },
+        {
+          "verse": "28:88",
+          "check": "except His Face",
+          "title": { "en": "Everything returns", "de": "Alles kehrt zurück", "ar": "إليه المرجع" },
+          "body": { "en": "The closing verse of Surah al-Qasas returns all things to Him.", "de": "Der Schlussvers der Sure al-Qaṣaṣ führt alle Dinge auf Ihn zurück.", "ar": "تردّ خاتمة سورة القصص كل شيء إليه." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Think of endings: how should this chapter of your life close?", "Invest in what remains with Him", "Ask Him for a good ending"],
+            "de": ["Denken Sie an das Ende: Wie soll dieser Abschnitt Ihres Lebens schließen?", "Investieren Sie in das, was bei Ihm bleibt", "Bitten Sie Ihn um ein gutes Ende"],
+            "ar": ["فكّر في الخواتيم: كيف تحب أن تُختم هذه المرحلة؟", "استثمر فيما يبقى عنده", "اسأله حسن الخاتمة"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root '-kh-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Axr" }
+      ]
+    },
+    {
+      "id": "name-75-az-zahir",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 75", "de": "Namen Allahs · 75", "ar": "أسماء الله · ٧٥" },
+        "title": { "en": "Az-Zahir", "de": "Aẓ-Ẓāhir", "ar": "الظاهر" },
+        "sub": { "en": "The Manifest: above all things and evident in His signs", "de": "Der Offenbare: über allen Dingen und sichtbar in Seinen Zeichen", "ar": "العالي فوق كل شيء الظاهر بآياته" },
+        "arabic": "الظَّاهِر"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Az-Zahir is understood in two ways: He is above all things, and His existence is evident through countless signs. Whoever looks with an open heart sees His traces everywhere.",
+            "de": "Aẓ-Ẓāhir wird auf zwei Weisen verstanden: Er ist über allen Dingen, und Sein Dasein ist durch unzählige Zeichen offenbar. Wer mit offenem Herzen schaut, sieht überall Seine Spuren.",
+            "ar": "للظاهر معنيان: العالي فوق كل شيء، والظاهر وجوده بآيات لا تُحصى. ومن نظر بقلب مفتوح رأى آثاره في كل مكان."
+          }
+        },
+        {
+          "title": { "en": "The root z-h-r", "de": "Die Wurzel ẓ-h-r", "ar": "الجذر ظ ه ر" },
+          "arabic": "ظ ه ر",
+          "body": { "en": "The root appears in 59 words in the Quran. It carries the ideas of appearing, rising above and prevailing; zahr, the back, comes from it too.", "de": "Die Wurzel kommt im Koran in 59 Wörtern vor. Sie trägt die Bedeutungen erscheinen, sich erheben und überlegen sein; auch ẓahr, der Rücken, stammt aus ihr.", "ar": "يرد الجذر في القرآن في ٥٩ كلمة، ويدل على البروز والعلو والغلبة، ومنه الظَّهر." }
+        },
+        {
+          "verse": "57:3",
+          "check": "Ascendant",
+          "title": { "en": "Above all", "de": "Über allem", "ar": "فوق كل شيء" },
+          "body": { "en": "Here az-Zahir stands beside three other names: the One above all things.", "de": "Hier steht aẓ-Ẓāhir neben drei weiteren Namen: der Eine, der über allen Dingen ist.", "ar": "يأتي الظاهر هنا مع ثلاثة أسماء أخرى: العالي فوق كل شيء." }
+        },
+        {
+          "verse": "41:53",
+          "check": "signs in the horizons",
+          "title": { "en": "Signs outside and within", "de": "Zeichen draußen und im Innern", "ar": "آيات في الآفاق والأنفس" },
+          "body": { "en": "The universe and the human self both point to Him.", "de": "Das Universum und das eigene Selbst weisen beide auf Ihn.", "ar": "الكون والنفس كلاهما يدلان عليه." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Read the signs: the sky, your body, the seasons", "Let your outward conduct match your faith", "Remember that He is above every power you fear"],
+            "de": ["Lesen Sie die Zeichen: den Himmel, Ihren Körper, die Jahreszeiten", "Lassen Sie Ihr äußeres Handeln zu Ihrem Glauben passen", "Denken Sie daran, dass Er über jeder Macht steht, die Sie fürchten"],
+            "ar": ["تأمل الآيات: السماء وجسدك والفصول", "اجعل سلوكك الظاهر موافقًا لإيمانك", "تذكّر أنه فوق كل قوة تخافها"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root z-h-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Zhr" }
+      ]
+    },
+    {
+      "id": "name-76-al-batin",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 76", "de": "Namen Allahs · 76", "ar": "أسماء الله · ٧٦" },
+        "title": { "en": "Al-Batin", "de": "Al-Bāṭin", "ar": "الباطن" },
+        "sub": { "en": "The Hidden: unseen by the eyes, yet nearer than anything", "de": "Der Verborgene: unsichtbar für die Augen und doch näher als alles", "ar": "المحتجب عن الأبصار الأقرب من كل شيء" },
+        "arabic": "الْبَاطِن"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": { "en": "Al-Batin is hidden from sight, and yet nothing is closer. No eye can grasp Him, while He knows the most hidden thoughts of every heart.", "de": "Al-Bāṭin ist dem Blick verborgen, und doch ist nichts näher. Kein Auge kann Ihn erfassen, während Er die verborgensten Gedanken jedes Herzens kennt.", "ar": "الباطن محتجب عن الأبصار، ولا شيء أقرب منه. لا تحيط به عين، وهو يعلم أخفى خواطر كل قلب." }
+        },
+        {
+          "title": { "en": "The root b-t-n", "de": "Die Wurzel b-ṭ-n", "ar": "الجذر ب ط ن" },
+          "arabic": "ب ط ن",
+          "body": { "en": "The root appears in 25 words in the Quran. Batn, the inside or the belly, occurs 17 times; the root speaks of what is inner and concealed.", "de": "Die Wurzel kommt im Koran in 25 Wörtern vor. Baṭn, das Innere oder der Bauch, erscheint 17-mal; die Wurzel spricht vom Inneren und Verborgenen.", "ar": "يرد الجذر في القرآن في ٢٥ كلمة، ومنها البطن ١٧ مرة، ويدل على الداخل الخفي." }
+        },
+        {
+          "verse": "57:3",
+          "check": "Intimate",
+          "title": { "en": "Hidden and near", "de": "Verborgen und nah", "ar": "محتجب وقريب" },
+          "body": { "en": "Here al-Batin closes the four names: hidden, and yet close.", "de": "Hier schließt al-Bāṭin die vier Namen ab: verborgen und doch nah.", "ar": "يختم الباطن هنا الأسماء الأربعة: محتجب وقريب." }
+        },
+        {
+          "verse": "6:103",
+          "check": "Vision perceives Him not",
+          "title": { "en": "Beyond the eyes", "de": "Jenseits der Augen", "ar": "فوق إدراك الأبصار" },
+          "body": { "en": "A verse about what our sight can never grasp, and what He always sees.", "de": "Ein Vers über das, was unser Blick nie erfassen kann, und was Er stets sieht.", "ar": "آية عما لا يبلغه بصرنا، وعما يراه هو دائمًا." }
+        },
+        {
+          "verse": "50:16",
+          "check": "jugular vein",
+          "title": { "en": "Closer than you think", "de": "Näher, als Sie denken", "ar": "أقرب مما تظن" },
+          "body": { "en": "His knowledge of us is described with a striking image of nearness.", "de": "Sein Wissen um uns wird mit einem eindrucksvollen Bild der Nähe beschrieben.", "ar": "يُصوَّر علمه بنا بصورة بليغة للقرب." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Purify what no one sees: your intention", "Do good in secret as well as in public", "Speak to Him in dua: He is near"],
+            "de": ["Reinigen Sie, was niemand sieht: Ihre Absicht", "Tun Sie Gutes im Verborgenen wie in der Öffentlichkeit", "Sprechen Sie im Bittgebet zu Ihm: Er ist nah"],
+            "ar": ["طهّر ما لا يراه أحد: نيتك", "اعمل الخير في السر كما في العلن", "ناجه بالدعاء فهو قريب"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root b-t-n", "url": "https://corpus.quran.com/qurandictionary.jsp?q=bTn" }
+      ]
+    },
+    {
+      "id": "name-77-al-wali",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 77", "de": "Namen Allahs · 77", "ar": "أسماء الله · ٧٧" },
+        "title": { "en": "Al-Wali", "de": "Al-Wālī", "ar": "الوالي" },
+        "sub": { "en": "The Governor: the One who manages all affairs", "de": "Der Verwalter: der Eine, der alle Angelegenheiten lenkt", "ar": "المتولي لأمور خلقه المدبر لها" },
+        "arabic": "الْوَالِي"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Wali governs and manages every affair of creation. Nothing in the universe runs by itself: every matter is under His administration, from the movement of stars to the details of your day.",
+            "de": "Al-Wālī regiert und lenkt jede Angelegenheit der Schöpfung. Nichts im Universum läuft von selbst: Jede Sache steht unter Seiner Verwaltung, vom Lauf der Sterne bis zu den Einzelheiten Ihres Tages.",
+            "ar": "الوالي يتولى شؤون الخلق ويدبرها. لا يجري شيء في الكون وحده، بل كل أمر تحت تدبيره، من حركة النجوم إلى تفاصيل يومك."
+          }
+        },
+        {
+          "title": { "en": "Two names, one root", "de": "Zwei Namen, eine Wurzel", "ar": "اسمان من جذر واحد" },
+          "arabic": "و ل ي",
+          "body": {
+            "en": "Al-Wali shares the root w-l-y with al-Waliyy, name 55. Many scholars explain: al-Waliyy stresses closeness and friendship, al-Wali governance and care for every affair.",
+            "de": "Al-Wālī teilt die Wurzel w-l-y mit al-Waliyy, Name 55. Viele Gelehrte erklären: al-Waliyy betont Nähe und Freundschaft, al-Wālī die Lenkung und Fürsorge für jede Angelegenheit.",
+            "ar": "يشترك الوالي مع الولي، الاسمِ الخامس والخمسين، في جذر و ل ي. ويقول كثير من العلماء: الولي يدل على القرب والنصرة، والوالي على التدبير والقيام بالأمور."
+          }
+        },
+        {
+          "verse": "13:11",
+          "check": "patron",
+          "title": { "en": "Change begins within", "de": "Veränderung beginnt im Innern", "ar": "التغيير يبدأ من الداخل" },
+          "body": { "en": "The verse that ends with this word is also the verse about inner change.", "de": "Der Vers, der mit diesem Wort endet, ist auch der Vers über die innere Veränderung.", "ar": "الآية التي تُختم بهذه الكلمة هي آية التغيير من الداخل أيضًا." }
+        },
+        {
+          "verse": "32:5",
+          "check": "He arranges",
+          "title": { "en": "Every matter arranged", "de": "Jede Sache geordnet", "ar": "كل أمر مدبَّر" },
+          "body": { "en": "Nothing is left unmanaged, in heaven or on earth.", "de": "Nichts bleibt ungelenkt, im Himmel oder auf der Erde.", "ar": "لا يُترك أمر بلا تدبير في السماء ولا في الأرض." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Hand your affairs to Him in dua", "If you hold responsibility, govern with justice and care", "Begin change with yourself"],
+            "de": ["Übergeben Sie Ihm Ihre Angelegenheiten im Bittgebet", "Wenn Sie Verantwortung tragen, führen Sie mit Gerechtigkeit und Fürsorge", "Beginnen Sie die Veränderung bei sich selbst"],
+            "ar": ["فوّض أمورك إليه بالدعاء", "إن توليت أمرًا فاحكم بالعدل والرعاية", "ابدأ التغيير بنفسك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root w-l-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=wly" }
+      ]
+    },
+    {
+      "id": "name-78-al-mutaali",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 78", "de": "Namen Allahs · 78", "ar": "أسماء الله · ٧٨" },
+        "title": { "en": "Al-Muta'ali", "de": "Al-Mutaʿālī", "ar": "المتعالي" },
+        "sub": { "en": "The Most Exalted: high above every flaw and every comparison", "de": "Der Erhabene: hoch über jedem Makel und jedem Vergleich", "ar": "المتعالي عن كل نقص وتشبيه" },
+        "arabic": "الْمُتَعَالِي"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Muta'ali is exalted far above everything: above any flaw, any comparison, and anything people wrongly attribute to Him. No thought of ours can reach His greatness.",
+            "de": "Al-Mutaʿālī ist weit erhaben über alles: über jeden Makel, jeden Vergleich und alles, was Menschen Ihm fälschlich zuschreiben. Kein Gedanke von uns reicht an Seine Größe heran.",
+            "ar": "المتعالي منزّه عن كل شيء لا يليق به: عن كل نقص، وعن كل تشبيه، وعن كل ما ينسبه الناس إليه باطلًا. ولا يبلغ فكرنا عظمته."
+          }
+        },
+        {
+          "title": { "en": "The root '-l-w", "de": "Die Wurzel ʿ-l-w", "ar": "الجذر ع ل و" },
+          "arabic": "ع ل و",
+          "body": { "en": "The root of height appears in 70 words in the Quran. Ta'ala, exalted is He, occurs 14 times, and 'aliyy, high, 11 times.", "de": "Die Wurzel der Höhe kommt im Koran in 70 Wörtern vor. Taʿālā, erhaben ist Er, erscheint 14-mal und ʿaliyy, hoch, 11-mal.", "ar": "يرد جذر العلو في القرآن في ٧٠ كلمة، ومنه «تعالى» ١٤ مرة، و«علي» ١١ مرة." }
+        },
+        {
+          "verse": "13:9",
+          "check": "the Grand, the Exalted",
+          "title": { "en": "Knowledge and majesty", "de": "Wissen und Erhabenheit", "ar": "العلم والعلو" },
+          "body": { "en": "His perfect knowledge and His highness are named together.", "de": "Sein vollkommenes Wissen und Seine Erhabenheit werden zusammen genannt.", "ar": "يجتمع في الآية كمال علمه وعلوه." }
+        },
+        {
+          "dua": "hisn:19:0",
+          "check": "Most High",
+          "title": { "en": "In every prostration", "de": "In jeder Niederwerfung", "ar": "في كل سجود" },
+          "body": { "en": "At the lowest point of the body, the tongue praises His highness.", "de": "Am tiefsten Punkt des Körpers preist die Zunge Seine Erhabenheit.", "ar": "حين يكون الجسد في أدنى وضع، يسبّح اللسان بعلوه." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Say your tasbih in sujud with presence of heart", "Be humble: highness belongs to Him", "Keep your thoughts about Allah exalted"],
+            "de": ["Sprechen Sie Ihren Lobpreis in der Niederwerfung mit Hingabe", "Seien Sie demütig: Erhabenheit gehört Ihm", "Halten Sie Ihre Gedanken über Allah erhaben"],
+            "ar": ["سبّح في سجودك بحضور قلب", "تواضع فالعلو له وحده", "نزّه ظنك بالله عن كل نقص"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root '-l-w", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Elw" }
+      ]
+    },
+    {
+      "id": "name-79-al-barr",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 79", "de": "Namen Allahs · 79", "ar": "أسماء الله · ٧٩" },
+        "title": { "en": "Al-Barr", "de": "Al-Barr", "ar": "البر" },
+        "sub": { "en": "The Source of all Goodness: kind, generous and true to His promise", "de": "Der Gütige: freundlich, großzügig und treu in Seinem Versprechen", "ar": "الواسع الإحسان الصادق الوعد" },
+        "arabic": "الْبَرّ"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Barr is the One whose goodness is abundant and gentle. He is kind to His servants, keeps His promise and gives far more than anyone deserves.",
+            "de": "Al-Barr ist der Eine, dessen Güte überreich und sanft ist. Er ist freundlich zu Seinen Dienern, hält Sein Versprechen und gibt weit mehr, als irgendjemand verdient.",
+            "ar": "البر كثير الخير لطيف في إحسانه، رفيق بعباده، يفي بوعده، ويعطي فوق ما يستحقه أحد."
+          }
+        },
+        {
+          "title": { "en": "The root b-r-r", "de": "Die Wurzel b-r-r", "ar": "الجذر ب ر ر" },
+          "arabic": "ب ر ر",
+          "body": {
+            "en": "The root appears in 32 words in the Quran. From it come birr, goodness and devotion, and barr, the one rich in goodness. Yahya is called barr to his parents, 'Isa to his mother.",
+            "de": "Die Wurzel kommt im Koran in 32 Wörtern vor. Aus ihr stammen birr, Güte und Hingabe, und barr, der Gütige. Yaḥyā wird barr zu seinen Eltern genannt, ʿĪsā zu seiner Mutter.",
+            "ar": "يرد الجذر في القرآن في ٣٢ كلمة، ومنه البِرّ والبَرّ. وبه وُصف يحيى في بره بوالديه، وعيسى في بره بأمه."
+          }
+        },
+        {
+          "verse": "52:28",
+          "check": "Beneficent",
+          "title": { "en": "Remembered in Paradise", "de": "Im Paradies erinnert", "ar": "ذكرى في الجنة" },
+          "body": { "en": "The people of Paradise recall their duas and name Him al-Barr.", "de": "Die Bewohner des Paradieses erinnern sich an ihre Bittgebete und nennen Ihn al-Barr.", "ar": "يتذكر أهل الجنة دعاءهم في الدنيا ويسمّونه البر." }
+        },
+        {
+          "verse": "3:92",
+          "check": "attain the good",
+          "title": { "en": "The price of goodness", "de": "Der Preis der Güte", "ar": "ثمن البر" },
+          "body": { "en": "Here the word is birr: a goodness that asks something of us.", "de": "Hier steht das Wort birr: eine Güte, die etwas von uns verlangt.", "ar": "الكلمة هنا البِرّ: خير يطلب منا شيئًا." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Be good to your parents: that is birr", "Give from what you love", "Thank Him for good you never asked for"],
+            "de": ["Seien Sie gut zu Ihren Eltern: Das ist birr", "Geben Sie von dem, was Sie lieben", "Danken Sie Ihm für Gutes, um das Sie nie gebeten haben"],
+            "ar": ["بِرّ والديك فهذا من البِرّ", "أنفق مما تحب", "اشكره على خير لم تسأله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root b-r-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=brr" }
+      ]
+    },
+    {
+      "id": "name-80-at-tawwab",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 80", "de": "Namen Allahs · 80", "ar": "أسماء الله · ٨٠" },
+        "title": { "en": "At-Tawwab", "de": "At-Tawwāb", "ar": "التواب" },
+        "sub": { "en": "The Accepter of Repentance: He turns to us again and again", "de": "Der die Reue annimmt: Er wendet Sich uns immer wieder zu", "ar": "الذي يتوب على عباده مرة بعد مرة" },
+        "arabic": "التَّوَّاب"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "At-Tawwab turns to His servants again and again. Scholars explain two steps: first He moves them to repent, then He accepts their repentance. The form tawwab means He does this often and never tires of it.",
+            "de": "At-Tawwāb wendet Sich Seinen Dienern immer wieder zu. Gelehrte erklären zwei Schritte: Zuerst bewegt Er sie zur Reue, dann nimmt Er ihre Reue an. Die Form tawwāb bedeutet, dass Er dies oft tut und nie müde wird.",
+            "ar": "التواب يتوب على عباده مرة بعد مرة. ويذكر العلماء أن توبته على العبد نوعان: يوفقه للتوبة أولًا، ثم يقبلها منه. وصيغة «تواب» تدل على الكثرة، فلا يملّ من ذلك."
+          }
+        },
+        {
+          "title": { "en": "The root t-w-b", "de": "Die Wurzel t-w-b", "ar": "الجذر ت و ب" },
+          "arabic": "ت و ب",
+          "body": { "en": "Tawba means to turn back. The root appears in 87 words in the Quran; taba, to turn in repentance, occurs 63 times and tawwab 12 times.", "de": "Tauba bedeutet umkehren. Die Wurzel kommt im Koran in 87 Wörtern vor; tāba, sich reuig zuwenden, erscheint 63-mal und tawwāb 12-mal.", "ar": "التوبة رجوع. ويرد الجذر في القرآن في ٨٧ كلمة، ومنه الفعل تاب ٦٣ مرة، والتواب ١٢ مرة." }
+        },
+        {
+          "verse": "2:37",
+          "check": "accepted his repentance",
+          "title": { "en": "The first repentance", "de": "Die erste Reue", "ar": "أول توبة" },
+          "body": { "en": "The story of human repentance begins with Adam and the words he received.", "de": "Die Geschichte der menschlichen Reue beginnt mit Ādam und den Worten, die er empfing.", "ar": "تبدأ قصة توبة الإنسان بآدم والكلمات التي تلقاها." }
+        },
+        {
+          "verse": "9:118",
+          "check": "turned to them so they could repent",
+          "title": { "en": "He turns first", "de": "Er wendet Sich zuerst zu", "ar": "يتوب عليهم أولًا" },
+          "body": { "en": "First He turns to them, then they repent: His help comes before our step.", "de": "Zuerst wendet Er Sich ihnen zu, dann bereuen sie: Seine Hilfe kommt vor unserem Schritt.", "ar": "تاب عليهم أولًا ليتوبوا: فعونه يسبق خطوتنا." }
+        },
+        {
+          "hadith": "bukhari:6309",
+          "check": "more pleased with the repentance",
+          "title": { "en": "His joy at your return", "de": "Seine Freude über Ihre Rückkehr", "ar": "فرحه بعودتك" },
+          "body": { "en": "An image every traveller understands: what it means to find what was lost.", "de": "Ein Bild, das jeder Reisende versteht: was es heißt, Verlorenes wiederzufinden.", "ar": "صورة يفهمها كل مسافر: فرحة من وجد ما أضاعه." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Repent quickly, without waiting for a perfect moment", "Ask forgiveness every day", "Accept people who turn back to you"],
+            "de": ["Bereuen Sie bald, ohne auf den perfekten Moment zu warten", "Bitten Sie jeden Tag um Vergebung", "Nehmen Sie Menschen an, die zu Ihnen zurückkehren"],
+            "ar": ["بادر بالتوبة ولا تنتظر لحظة مثالية", "استغفر الله كل يوم", "اقبل من يرجع إليك معتذرًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root t-w-b", "url": "https://corpus.quran.com/qurandictionary.jsp?q=twb" }
+      ]
+    },
+    {
+      "id": "name-81-al-muntaqim",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 81", "de": "Namen Allahs · 81", "ar": "أسماء الله · ٨١" },
+        "title": { "en": "Al-Muntaqim", "de": "Al-Muntaqim", "ar": "المنتقم" },
+        "sub": { "en": "The Requiter: justice for those who persist in wrongdoing", "de": "Der Vergeltende: Gerechtigkeit für die, die im Unrecht verharren", "ar": "الذي يعاقب المصرّين على الظلم بعدله" },
+        "arabic": "الْمُنْتَقِم"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Muntaqim brings just consequences upon those who persist in wrongdoing after being reminded and given time. It is not anger out of control, like human revenge, but justice that does not let oppression stand forever.",
+            "de": "Al-Muntaqim lässt gerechte Folgen über die kommen, die nach Ermahnung und Aufschub im Unrecht verharren. Es ist kein maßloser Zorn wie menschliche Rache, sondern Gerechtigkeit, die Unterdrückung nicht für immer bestehen lässt.",
+            "ar": "المنتقم يعاقب بعدله من أصرّ على الظلم بعد التذكير والإمهال. وليس انتقامه غضبًا منفلتًا كانتقام البشر، بل عدل لا يترك الظلم قائمًا إلى الأبد."
+          }
+        },
+        {
+          "title": { "en": "The root n-q-m", "de": "Die Wurzel n-q-m", "ar": "الجذر ن ق م" },
+          "arabic": "ن ق م",
+          "body": { "en": "The root appears in 17 words in the Quran: intaqama, to exact retribution, 6 times, intiqam, retribution, 4 times, and muntaqim 3 times.", "de": "Die Wurzel kommt im Koran in 17 Wörtern vor: intaqama, vergelten, 6-mal, intiqām, Vergeltung, 4-mal und muntaqim 3-mal.", "ar": "يرد الجذر في القرآن في ١٧ كلمة: انتقم ٦ مرات، وانتقام ٤ مرات، ومنتقم ٣ مرات." }
+        },
+        {
+          "verse": "32:22",
+          "check": "take retribution",
+          "title": { "en": "After a reminder", "de": "Nach einer Ermahnung", "ar": "بعد التذكير" },
+          "body": { "en": "Retribution follows a choice: turning away after the signs were made clear.", "de": "Die Vergeltung folgt einer Entscheidung: der Abkehr, nachdem die Zeichen klar waren.", "ar": "يأتي الانتقام بعد اختيار: الإعراض بعد وضوح الآيات." }
+        },
+        {
+          "verse": "14:47",
+          "check": "Owner of Retribution",
+          "title": { "en": "A promise to the oppressed", "de": "Ein Versprechen an die Unterdrückten", "ar": "وعد للمظلومين" },
+          "body": { "en": "His promise to the messengers will be kept: wrongdoing will not have the last word.", "de": "Sein Versprechen an die Gesandten wird sich erfüllen: Das Unrecht behält nicht das letzte Wort.", "ar": "وعده لرسله لا يتخلف: لن تكون الكلمة الأخيرة للظلم." }
+        },
+        {
+          "hadith": "bukhari:7422",
+          "check": "preceded My Anger",
+          "title": { "en": "Mercy comes first", "de": "Die Barmherzigkeit kommt zuerst", "ar": "الرحمة أسبق" },
+          "body": { "en": "Even when speaking of retribution, this is the order He wrote for Himself.", "de": "Selbst wenn von Vergeltung die Rede ist, gilt diese Ordnung, die Er für Sich niederschrieb.", "ar": "حتى عند الحديث عن الانتقام، هذا هو الترتيب الذي كتبه على نفسه." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Do not despair when you see injustice: justice will come", "Fear wronging anyone, even in small things", "When reminded, turn back, not away"],
+            "de": ["Verzweifeln Sie nicht, wenn Sie Unrecht sehen: Gerechtigkeit wird kommen", "Hüten Sie sich, jemandem Unrecht zu tun, auch im Kleinen", "Wenn Sie ermahnt werden, kehren Sie um, statt sich abzuwenden"],
+            "ar": ["لا تيأس حين ترى الظلم فالعدل آتٍ", "احذر أن تظلم أحدًا ولو في القليل", "إذا ذُكّرت فارجع ولا تُعرض"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root n-q-m", "url": "https://corpus.quran.com/qurandictionary.jsp?q=nqm" }
+      ]
+    },
+    {
+      "id": "name-82-al-afuww",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 82", "de": "Namen Allahs · 82", "ar": "أسماء الله · ٨٢" },
+        "title": { "en": "Al-'Afuww", "de": "Al-ʿAfuww", "ar": "العفو" },
+        "sub": { "en": "The Pardoner: He erases sins as if they had never been", "de": "Der Verzeihende: Er löscht Sünden, als wären sie nie gewesen", "ar": "الذي يمحو الذنوب كأنها لم تكن" },
+        "arabic": "الْعَفُوّ"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-'Afuww does more than forgive: He erases the sin and its traces. Many scholars note that 'afw originally means to wipe away, as wind wipes away footprints in the sand.",
+            "de": "Al-ʿAfuww tut mehr als vergeben: Er löscht die Sünde und ihre Spuren. Viele Gelehrte weisen darauf hin, dass ʿafw ursprünglich wegwischen bedeutet, so wie der Wind Fußspuren im Sand verwischt.",
+            "ar": "العفو لا يغفر فحسب، بل يمحو الذنب وأثره. ويذكر كثير من العلماء أن أصل العفو المحو، كما تمحو الريح آثار الأقدام على الرمل."
+          }
+        },
+        {
+          "title": { "en": "The root '-f-w", "de": "Die Wurzel ʿ-f-w", "ar": "الجذر ع ف و" },
+          "arabic": "ع ف و",
+          "body": { "en": "The root appears in 35 words in the Quran; 'afa, to pardon, occurs 27 times and 'afuww 5 times, often beside al-Ghafur.", "de": "Die Wurzel kommt im Koran in 35 Wörtern vor; ʿafā, verzeihen, erscheint 27-mal und ʿafuww 5-mal, oft neben al-Ghafūr.", "ar": "يرد الجذر في القرآن في ٣٥ كلمة، ومنه الفعل عفا ٢٧ مرة، والعفو ٥ مرات، وكثيرًا ما يقترن بالغفور." }
+        },
+        {
+          "verse": "4:99",
+          "check": "Pardoning and Forgiving",
+          "title": { "en": "Erasing and covering", "de": "Löschen und bedecken", "ar": "يمحو ويستر" },
+          "body": { "en": "Two names together: He erases the sin, and He covers it.", "de": "Zwei Namen zusammen: Er löscht die Sünde, und Er bedeckt sie.", "ar": "اسمان معًا: يمحو الذنب ويستره." }
+        },
+        {
+          "verse": "24:22",
+          "check": "pardon and overlook",
+          "title": { "en": "Pardon, to be pardoned", "de": "Verzeihen, um Verzeihung zu finden", "ar": "اعفُ يُعفَ عنك" },
+          "body": { "en": "Those who pardon others are reminded of their own need for His forgiveness.", "de": "Wer anderen verzeiht, wird an das eigene Bedürfnis nach Seiner Vergebung erinnert.", "ar": "يُذكَّر من يعفو عن الناس بحاجته هو إلى مغفرة الله." }
+        },
+        {
+          "dua": "hisn:27:9",
+          "check": "pardon and well-being",
+          "title": { "en": "Every morning and evening", "de": "Jeden Morgen und Abend", "ar": "كل صباح ومساء" },
+          "body": { "en": "A dua that asks for 'afw in this life and the next.", "de": "Ein Bittgebet, das um ʿafw in diesem und im nächsten Leben bittet.", "ar": "دعاء يُسأل فيه العفو في الدنيا والآخرة." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Ask Him for pardon and well-being every day", "Pardon people, hoping He pardons you", "Do not uncover the faults He has covered"],
+            "de": ["Bitten Sie Ihn jeden Tag um Verzeihung und Wohlergehen", "Verzeihen Sie Menschen in der Hoffnung, dass Er Ihnen verzeiht", "Decken Sie nicht auf, was Er bedeckt hat"],
+            "ar": ["اسأله العفو والعافية كل يوم", "اعفُ عن الناس رجاء عفوه عنك", "لا تكشف عيبًا ستره الله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root '-f-w", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Efw" }
+      ]
+    },
+    {
+      "id": "name-83-ar-rauf",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 83", "de": "Namen Allahs · 83", "ar": "أسماء الله · ٨٣" },
+        "title": { "en": "Ar-Ra'uf", "de": "Ar-Raʾūf", "ar": "الرؤوف" },
+        "sub": { "en": "The Most Kind: a tender mercy that spares and eases", "de": "Der Gütige: eine zarte Barmherzigkeit, die schont und erleichtert", "ar": "ذو الرأفة الذي يرفق بعباده" },
+        "arabic": "الرَّؤُوف"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Ar-Ra'uf has a tender, gentle mercy. Many scholars describe ra'fa as the most delicate form of mercy: it eases burdens and spares His servants hardship before it reaches them.",
+            "de": "Ar-Raʾūf hat eine zarte, sanfte Barmherzigkeit. Viele Gelehrte beschreiben raʾfa als die feinste Form der Barmherzigkeit: Sie erleichtert Lasten und bewahrt Seine Diener vor Härte, bevor sie sie trifft.",
+            "ar": "الرؤوف ذو رحمة رقيقة لطيفة. ويصف كثير من العلماء الرأفة بأنها أرقّ الرحمة: تخفف الأثقال وتدفع المشقة عن العباد قبل أن تصيبهم."
+          }
+        },
+        {
+          "title": { "en": "The root r-'-f", "de": "Die Wurzel r-ʾ-f", "ar": "الجذر ر أ ف" },
+          "arabic": "ر أ ف",
+          "body": { "en": "The root appears in 13 words in the Quran: ra'uf 11 times and ra'fa, tenderness, twice. Ra'uf often stands beside ar-Rahim.", "de": "Die Wurzel kommt im Koran in 13 Wörtern vor: raʾūf 11-mal und raʾfa, Zärtlichkeit, zweimal. Raʾūf steht oft neben ar-Raḥīm.", "ar": "يرد الجذر في القرآن في ١٣ كلمة: رؤوف ١١ مرة، ورأفة مرتين. وكثيرًا ما يقترن الرؤوف بالرحيم." }
+        },
+        {
+          "verse": "2:207",
+          "check": "Kind to",
+          "title": { "en": "Kind to His servants", "de": "Gütig zu Seinen Dienern", "ar": "رأفة بالعباد" },
+          "body": { "en": "Said after the one who gives everything to seek His pleasure.", "de": "Gesagt nach dem, der alles hingibt, um Sein Wohlgefallen zu suchen.", "ar": "تأتي بعد ذكر من يبذل نفسه طلبًا لرضاه." }
+        },
+        {
+          "verse": "9:128",
+          "check": "kind and merciful",
+          "title": { "en": "The Prophet's share", "de": "Der Anteil des Propheten", "ar": "نصيب النبي" },
+          "body": { "en": "The same two qualities are given to the Prophet: tender and merciful toward the believers.", "de": "Dieselben zwei Eigenschaften werden dem Propheten gegeben: zärtlich und barmherzig zu den Gläubigen.", "ar": "وُصف النبي بالصفتين نفسيهما: رأفة ورحمة بالمؤمنين." }
+        },
+        {
+          "verse": "59:10",
+          "check": "Kind and Merciful",
+          "title": { "en": "A dua without resentment", "de": "Ein Bittgebet ohne Groll", "ar": "دعاء بلا غل" },
+          "body": { "en": "A dua for those who came before us that ends with this name.", "de": "Ein Bittgebet für die, die vor uns kamen, das mit diesem Namen endet.", "ar": "دعاء لمن سبقونا يُختم بهذا الاسم." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Be gentle with those you lead or teach", "Ask for a heart free of resentment", "Ease people's burdens where you can"],
+            "de": ["Seien Sie sanft zu denen, die Sie führen oder lehren", "Bitten Sie um ein Herz ohne Groll", "Erleichtern Sie Menschen ihre Lasten, wo Sie können"],
+            "ar": ["كن رفيقًا بمن تقوده أو تعلّمه", "اسأل الله قلبًا خاليًا من الغل", "خفّف عن الناس أثقالهم ما استطعت"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root r-'-f", "url": "https://corpus.quran.com/qurandictionary.jsp?q=rAf" }
+      ]
+    },
+    {
+      "id": "name-84-malik-al-mulk",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 84", "de": "Namen Allahs · 84", "ar": "أسماء الله · ٨٤" },
+        "title": { "en": "Malik al-Mulk", "de": "Mālik al-Mulk", "ar": "مالك الملك" },
+        "sub": { "en": "The Owner of all Sovereignty: every power is a loan from Him", "de": "Der Herr aller Herrschaft: Jede Macht ist von Ihm geliehen", "ar": "له السلطان كله وكل سلطان عارية منه" },
+        "arabic": "مَالِكُ الْمُلْك"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Malik al-Mulk owns all dominion. Kingdoms rise and fall by His decision, and every human rule, however great, is a loan for a time.",
+            "de": "Mālik al-Mulk gehört alle Herrschaft. Reiche steigen auf und fallen nach Seiner Entscheidung, und jede menschliche Macht, so groß sie sei, ist eine Leihgabe auf Zeit.",
+            "ar": "مالك الملك له السلطان كله. تقوم الممالك وتسقط بأمره، وكل حكم بشري مهما عظم عارية إلى أجل."
+          }
+        },
+        {
+          "title": { "en": "The root m-l-k", "de": "Die Wurzel m-l-k", "ar": "الجذر م ل ك" },
+          "arabic": "م ل ك",
+          "body": { "en": "The root appears in 206 words in the Quran. Mulk, dominion, occurs 48 times; malik, owner, 4 times, among them in al-Fatiha.", "de": "Die Wurzel kommt im Koran in 206 Wörtern vor. Mulk, Herrschaft, erscheint 48-mal; mālik, Besitzer, 4-mal, darunter in al-Fātiḥa.", "ar": "يرد الجذر في القرآن في ٢٠٦ كلمات، ومنه المُلك ٤٨ مرة، ومالك ٤ مرات، منها في الفاتحة." }
+        },
+        {
+          "verse": "3:26",
+          "check": "Owner of Sovereignty",
+          "title": { "en": "A dua the Quran teaches", "de": "Ein Bittgebet aus dem Koran", "ar": "دعاء يعلّمه القرآن" },
+          "body": { "en": "Here the name is spoken as a dua: every rise and every fall is in His hand.", "de": "Hier wird der Name als Bittgebet gesprochen: Jeder Aufstieg und jeder Fall liegt in Seiner Hand.", "ar": "يأتي الاسم هنا دعاءً: كل رفعة وكل سقوط بيده." }
+        },
+        {
+          "verse": "67:1",
+          "check": "in whose hand is dominion",
+          "title": { "en": "The opening of al-Mulk", "de": "Der Beginn von al-Mulk", "ar": "مطلع سورة الملك" },
+          "body": { "en": "The surah of dominion begins by blessing the One who holds it.", "de": "Die Sure der Herrschaft beginnt mit dem Lobpreis dessen, der sie innehat.", "ar": "تبدأ سورة الملك بالثناء على صاحب الملك." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Do not fear those in power more than Him", "Use any authority you have as a trust", "Recite Surah al-Mulk regularly"],
+            "de": ["Fürchten Sie die Mächtigen nicht mehr als Ihn", "Nutzen Sie jede Autorität, die Sie haben, als anvertrautes Gut", "Rezitieren Sie regelmäßig die Sure al-Mulk"],
+            "ar": ["لا تخشَ أصحاب السلطان أكثر منه", "اجعل كل سلطة بيدك أمانة", "داوم على قراءة سورة الملك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root m-l-k", "url": "https://corpus.quran.com/qurandictionary.jsp?q=mlk" }
+      ]
+    },
+    {
+      "id": "name-85-dhul-jalali-wal-ikram",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 85", "de": "Namen Allahs · 85", "ar": "أسماء الله · ٨٥" },
+        "title": { "en": "Dhul-Jalali wal-Ikram", "de": "Dhul-Jalāli wal-Ikrām", "ar": "ذو الجلال والإكرام" },
+        "sub": { "en": "The Lord of Majesty and Honour: awe and generosity in one name", "de": "Der Herr der Majestät und Ehre: Ehrfurcht und Großzügigkeit in einem Namen", "ar": "العظمة والكرم في اسم واحد" },
+        "arabic": "ذُو الْجَلَالِ وَالْإِكْرَام"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Jalal is majesty that fills the heart with awe. Ikram is the honour and generosity He grants His creation. The name joins both: feared for His greatness, loved for His kindness.",
+            "de": "Jalāl ist Majestät, die das Herz mit Ehrfurcht erfüllt. Ikrām ist die Ehre und Großzügigkeit, die Er Seiner Schöpfung schenkt. Der Name verbindet beides: gefürchtet um Seiner Größe willen, geliebt um Seiner Güte willen.",
+            "ar": "الجلال عظمة تملأ القلب هيبة، والإكرام ما يمنحه لخلقه من تكريم وعطاء. ويجمع الاسم الأمرين: يُهاب لعظمته ويُحَب لإحسانه."
+          }
+        },
+        {
+          "title": { "en": "Two roots", "de": "Zwei Wurzeln", "ar": "جذران" },
+          "arabic": "ج ل ل · ك ر م",
+          "body": {
+            "en": "The word jalal occurs only twice in the Quran, both times in this name in Surah ar-Rahman. Its partner root k-r-m, generosity and honour, appears in 47 words.",
+            "de": "Das Wort jalāl kommt im Koran nur zweimal vor, beide Male in diesem Namen in der Sure ar-Raḥmān. Die Partnerwurzel k-r-m, Großzügigkeit und Ehre, kommt in 47 Wörtern vor.",
+            "ar": "لم ترد كلمة الجلال في القرآن إلا مرتين، كلتاهما في هذا الاسم في سورة الرحمن. أما جذر ك ر م، جذر الكرم والتكريم، فيرد في ٤٧ كلمة."
+          }
+        },
+        {
+          "verse": "55:26-27",
+          "check": "Majesty and Honor",
+          "title": { "en": "What remains", "de": "Was bleibt", "ar": "ما يبقى" },
+          "body": { "en": "The name appears where everything else is said to pass away.", "de": "Der Name erscheint dort, wo von allem anderen gesagt wird, dass es vergeht.", "ar": "يأتي الاسم حيث يُذكر فناء كل ما سواه." }
+        },
+        {
+          "verse": "55:78",
+          "check": "Blessed is the name",
+          "title": { "en": "The last word of ar-Rahman", "de": "Das letzte Wort von ar-Raḥmān", "ar": "خاتمة سورة الرحمن" },
+          "body": { "en": "Surah ar-Rahman closes with this name.", "de": "Die Sure ar-Raḥmān schließt mit diesem Namen.", "ar": "تُختم سورة الرحمن بهذا الاسم." }
+        },
+        {
+          "dua": "hisn:25:0",
+          "check": "majesty and honour",
+          "title": { "en": "After every prayer", "de": "Nach jedem Gebet", "ar": "بعد كل صلاة" },
+          "body": { "en": "Said right after the closing salam of the prayer.", "de": "Gesprochen direkt nach dem abschließenden Friedensgruß des Gebets.", "ar": "يُقال بعد السلام من الصلاة مباشرة." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Say this dhikr after each prayer", "Honour people: ikram is part of this name", "Let awe and love of Allah grow together"],
+            "de": ["Sprechen Sie dieses Gedenken nach jedem Gebet", "Ehren Sie Menschen: ikrām gehört zu diesem Namen", "Lassen Sie Ehrfurcht und Liebe zu Allah zusammen wachsen"],
+            "ar": ["قل هذا الذكر بعد كل صلاة", "أكرم الناس فالإكرام من هذا الاسم", "اجمع في قلبك هيبة الله ومحبته"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root j-l-l", "url": "https://corpus.quran.com/qurandictionary.jsp?q=jll" },
+        { "label": "Quranic Arabic Corpus, root k-r-m", "url": "https://corpus.quran.com/qurandictionary.jsp?q=krm" }
+      ]
+    },
+    {
+      "id": "name-86-al-muqsit",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 86", "de": "Namen Allahs · 86", "ar": "أسماء الله · ٨٦" },
+        "title": { "en": "Al-Muqsit", "de": "Al-Muqsiṭ", "ar": "المقسط" },
+        "sub": { "en": "The Equitable: perfect justice for every soul", "de": "Der Gerechte: vollkommene Gerechtigkeit für jede Seele", "ar": "العادل في حكمه بين خلقه" },
+        "arabic": "الْمُقْسِط"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Muqsit establishes perfect justice. He gives everyone their due, lets no wrong go unanswered, and settles every dispute between His creatures on the Day of Judgement.",
+            "de": "Al-Muqsiṭ errichtet vollkommene Gerechtigkeit. Er gibt jedem, was ihm zusteht, lässt kein Unrecht unbeantwortet und schlichtet am Tag des Gerichts jeden Streit zwischen Seinen Geschöpfen.",
+            "ar": "المقسط يقيم العدل التام: يعطي كل ذي حق حقه، ولا يترك مظلمة بلا جواب، ويقضي يوم القيامة بين خلقه في كل خصومة."
+          }
+        },
+        {
+          "title": { "en": "The root q-s-t", "de": "Die Wurzel q-s-ṭ", "ar": "الجذر ق س ط" },
+          "arabic": "ق س ط",
+          "body": {
+            "en": "The root appears in 25 words in the Quran; qist, justice, occurs 15 times. Interestingly, the same root also gives qasit, one who swerves from justice.",
+            "de": "Die Wurzel kommt im Koran in 25 Wörtern vor; qisṭ, Gerechtigkeit, erscheint 15-mal. Bemerkenswert: Aus derselben Wurzel stammt auch qāsiṭ, wer von der Gerechtigkeit abweicht.",
+            "ar": "يرد الجذر في القرآن في ٢٥ كلمة، ومنه القسط ١٥ مرة. ومن اللطيف أن منه أيضًا القاسط، أي الجائر عن العدل."
+          }
+        },
+        {
+          "verse": "3:18",
+          "check": "in justice",
+          "title": { "en": "A testimony with justice", "de": "Ein Zeugnis mit Gerechtigkeit", "ar": "شهادة وعدل" },
+          "body": { "en": "The testimony of oneness is joined with His upholding of justice.", "de": "Das Zeugnis der Einheit ist mit Seiner Aufrechterhaltung der Gerechtigkeit verbunden.", "ar": "تقترن شهادة التوحيد بقيامه بالعدل." }
+        },
+        {
+          "verse": "60:8",
+          "check": "loves those who act justly",
+          "title": { "en": "Justice toward everyone", "de": "Gerechtigkeit gegenüber allen", "ar": "العدل مع الجميع" },
+          "body": { "en": "Justice and kindness toward peaceful neighbours of other faiths are encouraged.", "de": "Gerechtigkeit und Güte gegenüber friedlichen Nachbarn anderen Glaubens werden ermutigt.", "ar": "العدل والبر مع المسالمين من غير المسلمين أمر محمود." }
+        },
+        {
+          "verse": "21:47",
+          "check": "scales of justice",
+          "title": { "en": "Nothing overlooked", "de": "Nichts wird übersehen", "ar": "لا يُغفل شيء" },
+          "body": { "en": "Even the smallest deed has its weight on the Day of Judgement.", "de": "Selbst die kleinste Tat hat am Tag des Gerichts ihr Gewicht.", "ar": "لكل عمل وزنه يوم القيامة ولو كان صغيرًا." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Be just at home, at work and in your words", "Do not let dislike of anyone make you unjust", "Return what you owe people while you can"],
+            "de": ["Seien Sie gerecht zu Hause, bei der Arbeit und in Ihren Worten", "Lassen Sie sich durch Abneigung gegen jemanden nicht zu Unrecht verleiten", "Geben Sie Menschen zurück, was Sie ihnen schulden, solange Sie können"],
+            "ar": ["اعدل في بيتك وعملك وكلامك", "لا يحملنّك بغض أحد على الظلم", "أدِّ إلى الناس حقوقهم ما دمت قادرًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root q-s-t", "url": "https://corpus.quran.com/qurandictionary.jsp?q=qsT" }
+      ]
+    },
+    {
+      "id": "name-87-al-jami",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 87", "de": "Namen Allahs · 87", "ar": "أسماء الله · ٨٧" },
+        "title": { "en": "Al-Jami'", "de": "Al-Jāmiʿ", "ar": "الجامع" },
+        "sub": { "en": "The Gatherer: of people, of hearts and of all that is scattered", "de": "Der Versammelnde: der Menschen, der Herzen und alles Zerstreuten", "ar": "الجامع للخلق والقلوب وكل متفرق" },
+        "arabic": "الْجَامِع"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Jami' gathers what is scattered: all creation on the Day of Judgement, hearts that were far apart, and countless different things in one ordered universe.",
+            "de": "Al-Jāmiʿ versammelt, was zerstreut ist: die ganze Schöpfung am Tag des Gerichts, Herzen, die weit voneinander entfernt waren, und unzählige verschiedene Dinge in einem geordneten Universum.",
+            "ar": "الجامع يجمع ما تفرّق: الخلائق كلها يوم القيامة، والقلوب بعد تباعدها، والأشياء المختلفة في كون منتظم."
+          }
+        },
+        {
+          "title": { "en": "The root j-m-'", "de": "Die Wurzel j-m-ʿ", "ar": "الجذر ج م ع" },
+          "arabic": "ج م ع",
+          "body": {
+            "en": "The root appears in 129 words in the Quran. Jumu'a, Friday, the day of gathering, comes from it, and so does jami', the mosque where people gather.",
+            "de": "Die Wurzel kommt im Koran in 129 Wörtern vor. Aus ihr stammt Jumuʿa, der Freitag, der Tag der Versammlung, und ebenso jāmiʿ, die Moschee, in der sich Menschen versammeln.",
+            "ar": "يرد الجذر في القرآن في ١٢٩ كلمة، ومنه الجمعة يوم الاجتماع، والجامع حيث يجتمع الناس."
+          }
+        },
+        {
+          "verse": "3:9",
+          "check": "gather the people",
+          "title": { "en": "Certain of the gathering", "de": "Gewiss über die Versammlung", "ar": "يقين بيوم الجمع" },
+          "body": { "en": "A dua of those firm in knowledge, certain of the Day He gathers everyone.", "de": "Ein Bittgebet der im Wissen Gefestigten, gewiss über den Tag, an dem Er alle versammelt.", "ar": "دعاء أهل العلم الراسخ، الموقنين بيوم يجمع فيه الناس." }
+        },
+        {
+          "verse": "8:63",
+          "check": "brought together their hearts",
+          "title": { "en": "Gathered hearts", "de": "Vereinte Herzen", "ar": "قلوب مؤتلفة" },
+          "body": { "en": "Unity between hearts cannot be bought; it is His gift.", "de": "Einheit zwischen Herzen lässt sich nicht kaufen; sie ist Sein Geschenk.", "ar": "ائتلاف القلوب لا يُشترى بالمال، بل هو عطاء منه." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Pray for unity in your family and community", "Honour Friday, the day of gathering", "Prepare for the Day when all will be gathered"],
+            "de": ["Beten Sie um Einheit in Ihrer Familie und Gemeinschaft", "Ehren Sie den Freitag, den Tag der Versammlung", "Bereiten Sie sich auf den Tag vor, an dem alle versammelt werden"],
+            "ar": ["ادعُ بالألفة في أسرتك ومجتمعك", "عظّم يوم الجمعة يوم الاجتماع", "استعد ليوم يُجمع فيه الخلق"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root j-m-'", "url": "https://corpus.quran.com/qurandictionary.jsp?q=jmE" }
+      ]
+    },
+    {
+      "id": "name-88-al-ghani",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 88", "de": "Namen Allahs · 88", "ar": "أسماء الله · ٨٨" },
+        "title": { "en": "Al-Ghani", "de": "Al-Ghanī", "ar": "الغني" },
+        "sub": { "en": "The Self-Sufficient: He needs nothing, and all need Him", "de": "Der Unabhängige: Er braucht nichts, und alle brauchen Ihn", "ar": "الغني عن كل شيء وكل شيء مفتقر إليه" },
+        "arabic": "الْغَنِيّ"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Ghani needs nothing and no one. Our worship adds nothing to Him, and our sins take nothing from Him. Everything we do benefits or harms only ourselves.",
+            "de": "Al-Ghanī braucht nichts und niemanden. Unsere Anbetung fügt Ihm nichts hinzu, und unsere Sünden nehmen Ihm nichts. Alles, was wir tun, nützt oder schadet nur uns selbst.",
+            "ar": "الغني لا يحتاج إلى شيء ولا إلى أحد. لا تزيده عبادتنا شيئًا، ولا تنقصه ذنوبنا شيئًا. وكل ما نعمله ينفعنا أو يضرنا نحن."
+          }
+        },
+        {
+          "title": { "en": "The root gh-n-y", "de": "Die Wurzel gh-n-y", "ar": "الجذر غ ن ي" },
+          "arabic": "غ ن ي",
+          "body": { "en": "The root appears in 73 words in the Quran; ghaniyy, rich and free of need, occurs 24 times. Al-Mughni, the Enricher, comes from the same root.", "de": "Die Wurzel kommt im Koran in 73 Wörtern vor; ghanī, reich und bedürfnislos, erscheint 24-mal. Auch al-Mughnī, der Bereichernde, stammt aus ihr.", "ar": "يرد الجذر في القرآن في ٧٣ كلمة، ومنه الغني ٢٤ مرة. ومن الجذر نفسه اسم المغني." }
+        },
+        {
+          "verse": "35:15",
+          "check": "those in need of Allah",
+          "title": { "en": "Our state and His", "de": "Unser Zustand und Seiner", "ar": "حالنا وحاله" },
+          "body": { "en": "One verse describes both sides: our need and His freedom from need.", "de": "Ein Vers beschreibt beide Seiten: unsere Bedürftigkeit und Seine Bedürfnislosigkeit.", "ar": "آية واحدة تصف الطرفين: فقرنا وغناه." }
+        },
+        {
+          "verse": "29:6",
+          "check": "Free from need of the worlds",
+          "title": { "en": "For your own good", "de": "Zu Ihrem eigenen Wohl", "ar": "لنفسك تعمل" },
+          "body": { "en": "Every effort in His way is, in the end, for the one who makes it.", "de": "Jede Anstrengung auf Seinem Weg dient am Ende dem, der sie unternimmt.", "ar": "كل جهد في سبيله يعود نفعه على صاحبه." }
+        },
+        {
+          "hadith": "muslim:2420",
+          "check": "richness of the soul",
+          "title": { "en": "True richness", "de": "Wahrer Reichtum", "ar": "الغنى الحقيقي" },
+          "body": { "en": "The Prophet pointed to a richness that money cannot buy.", "de": "Der Prophet wies auf einen Reichtum hin, den Geld nicht kaufen kann.", "ar": "أشار النبي إلى غنى لا يشتريه المال." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Remember that you need Him in every moment", "Seek richness of the heart, not only of the purse", "Give: with Him it brings you no loss"],
+            "de": ["Denken Sie daran, dass Sie Ihn in jedem Augenblick brauchen", "Suchen Sie den Reichtum des Herzens, nicht nur des Geldbeutels", "Geben Sie: Bei Ihm entsteht Ihnen daraus kein Verlust"],
+            "ar": ["تذكّر أنك محتاج إليه في كل لحظة", "اطلب غنى القلب لا غنى الجيب وحده", "أنفق فلن تخسر عنده شيئًا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root gh-n-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=gny" }
+      ]
+    },
+    {
+      "id": "name-89-al-mughni",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 89", "de": "Namen Allahs · 89", "ar": "أسماء الله · ٨٩" },
+        "title": { "en": "Al-Mughni", "de": "Al-Mughnī", "ar": "المغني" },
+        "sub": { "en": "The Enricher: He grants sufficiency to whom He wills", "de": "Der Bereichernde: Er schenkt Genüge, wem Er will", "ar": "الذي يغني من يشاء بفضله" },
+        "arabic": "الْمُغْنِي"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Mughni enriches whom He wills: with provision, with contentment, and with independence from people. Sufficiency is His gift, not merely a matter of how much one has.",
+            "de": "Al-Mughnī bereichert, wen Er will: mit Versorgung, mit Zufriedenheit und mit Unabhängigkeit von Menschen. Genüge ist Sein Geschenk, nicht bloß eine Frage der Menge.",
+            "ar": "المغني يغني من يشاء: بالرزق، وبالقناعة، وبالاستغناء عن الناس. فالكفاية عطاء منه، وليست مجرد مقدار ما يملكه المرء."
+          }
+        },
+        {
+          "title": { "en": "Rich and enriching", "de": "Reich und bereichernd", "ar": "الغني والمغني" },
+          "arabic": "غ ن ي",
+          "body": {
+            "en": "Al-Mughni shares the root gh-n-y with al-Ghani; it appears in 73 words in the Quran. The verb aghna can mean to enrich, and also to be of use.",
+            "de": "Al-Mughnī teilt die Wurzel gh-n-y mit al-Ghanī; sie kommt im Koran in 73 Wörtern vor. Das Verb aghnā kann bereichern bedeuten und auch nützen.",
+            "ar": "يشترك المغني مع الغني في جذر غ ن ي، ويرد في القرآن في ٧٣ كلمة. والفعل أغنى يأتي بمعنى جعله غنيًّا، وبمعنى نفع وكفى."
+          }
+        },
+        {
+          "verse": "53:48",
+          "check": "enriches",
+          "title": { "en": "Wealth from Him", "de": "Reichtum von Ihm", "ar": "الغنى منه" },
+          "body": { "en": "In a series of verses about His power, this one names the source of all wealth.", "de": "In einer Reihe von Versen über Seine Macht nennt dieser die Quelle allen Reichtums.", "ar": "في سلسلة آيات عن قدرته، تذكر هذه الآية مصدر كل غنى." }
+        },
+        {
+          "verse": "93:8",
+          "check": "self-sufficient",
+          "title": { "en": "From need to sufficiency", "de": "Von der Not zur Genüge", "ar": "من الحاجة إلى الكفاية" },
+          "body": { "en": "The Prophet himself once knew need, and was made sufficient.", "de": "Auch der Prophet kannte einst Not und wurde mit Genüge beschenkt.", "ar": "عرف النبي نفسه الحاجة، ثم أغناه الله." }
+        },
+        {
+          "dua": "hisn:20:1",
+          "check": "enrich me",
+          "title": { "en": "Between the two prostrations", "de": "Zwischen den zwei Niederwerfungen", "ar": "بين السجدتين" },
+          "body": { "en": "A short dua that asks, among other things, to be enriched.", "de": "Ein kurzes Bittgebet, das unter anderem um Bereicherung bittet.", "ar": "دعاء قصير يُسأل فيه الغنى مع غيره." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Ask Him for sufficiency in your prayer", "Work hard, and know that provision comes from Him", "Be content: richness lives in the heart"],
+            "de": ["Bitten Sie Ihn in Ihrem Gebet um Genüge", "Arbeiten Sie fleißig und wissen Sie, dass die Versorgung von Ihm kommt", "Seien Sie zufrieden: Reichtum wohnt im Herzen"],
+            "ar": ["اسأله الغنى في صلاتك", "اجتهد في عملك واعلم أن الرزق منه", "اقنع فالغنى في القلب"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root gh-n-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=gny" }
+      ]
+    },
+    {
+      "id": "name-90-al-mani",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 90", "de": "Namen Allahs · 90", "ar": "أسماء الله · ٩٠" },
+        "title": { "en": "Al-Mani'", "de": "Al-Māniʿ", "ar": "المانع" },
+        "sub": { "en": "The Withholder: what He holds back, He holds back with wisdom", "de": "Der Zurückhaltende: Was Er zurückhält, hält Er mit Weisheit zurück", "ar": "الذي يمنع بحكمته ما يشاء" },
+        "arabic": "الْمَانِع"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Mani' withholds what He wills from whom He wills. His withholding is never without wisdom: it may protect from harm, test patience, or make room for something better.",
+            "de": "Al-Māniʿ hält zurück, was Er will, von wem Er will. Sein Zurückhalten ist nie ohne Weisheit: Es kann vor Schaden schützen, die Geduld prüfen oder Raum für Besseres schaffen.",
+            "ar": "المانع يمنع ما يشاء عمن يشاء، ولا يخلو منعه من حكمة: فقد يحمي من ضرر، أو يبتلي الصبر، أو يفسح لما هو خير."
+          }
+        },
+        {
+          "title": { "en": "Name and root", "de": "Name und Wurzel", "ar": "الاسم والجذر" },
+          "arabic": "م ن ع",
+          "body": {
+            "en": "Al-Mani' is not used as a name in the Quran; it comes from the well-known list. The root appears in 17 words, most often mana'a, to prevent, 12 times.",
+            "de": "Al-Māniʿ wird im Koran nicht als Name verwendet; er stammt aus der bekannten Liste. Die Wurzel kommt in 17 Wörtern vor, am häufigsten manaʿa, verhindern, 12-mal.",
+            "ar": "لم يرد المانع اسمًا في القرآن، وهو من القائمة المشهورة. ويرد الجذر في ١٧ كلمة، أكثرها الفعل منع ١٢ مرة."
+          }
+        },
+        {
+          "verse": "35:2",
+          "check": "none can withhold it",
+          "title": { "en": "No one overrules Him", "de": "Niemand hebt Seine Entscheidung auf", "ar": "لا رادّ لأمره" },
+          "body": { "en": "His giving and His withholding cannot be reversed by anyone.", "de": "Sein Geben und Sein Zurückhalten kann niemand rückgängig machen.", "ar": "عطاؤه ومنعه لا يردّهما أحد." }
+        },
+        {
+          "hadith": "bukhari:6615",
+          "check": "withhold what You give",
+          "title": { "en": "A dhikr after prayer", "de": "Ein Gedenken nach dem Gebet", "ar": "ذكر بعد الصلاة" },
+          "body": { "en": "Words the Prophet used to say after the prayer.", "de": "Worte, die der Prophet nach dem Gebet zu sagen pflegte.", "ar": "كلمات كان النبي يقولها بعد الصلاة." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["When something is withheld, ask what you were protected from", "Say this dhikr after the prayer", "Do not seek from people what only He can give"],
+            "de": ["Wenn Ihnen etwas verwehrt wird, fragen Sie, wovor Sie bewahrt wurden", "Sprechen Sie dieses Gedenken nach dem Gebet", "Suchen Sie nicht bei Menschen, was nur Er geben kann"],
+            "ar": ["إذا مُنعت شيئًا فاسأل: مما حُميت؟", "قل هذا الذكر بعد الصلاة", "لا تطلب من الناس ما لا يعطيه إلا الله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "At-Tirmidhi, al-Jami', Book of Supplications (list of the ninety-nine names)" },
+        { "label": "Quranic Arabic Corpus, root m-n-'", "url": "https://corpus.quran.com/qurandictionary.jsp?q=mnE" }
+      ]
+    },
+    {
+      "id": "name-91-ad-darr",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 91", "de": "Namen Allahs · 91", "ar": "أسماء الله · ٩١" },
+        "title": { "en": "Ad-Darr", "de": "Aḍ-Ḍārr", "ar": "الضار" },
+        "sub": { "en": "The One in whose hand harm also lies: nothing touches you without His decree", "de": "Der, in dessen Hand auch Schaden liegt: Nichts trifft Sie ohne Seine Bestimmung", "ar": "لا يصيبك ضرّ إلا بتقديره" },
+        "arabic": "الضَّارّ"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Ad-Darr means that no harm reaches anyone except by His decree and within His wisdom. Scholars advise mentioning it together with an-Nafi': harm and benefit both lie in His hand alone.",
+            "de": "Aḍ-Ḍārr bedeutet, dass kein Schaden jemanden erreicht außer durch Seine Bestimmung und innerhalb Seiner Weisheit. Gelehrte empfehlen, den Namen zusammen mit an-Nāfiʿ zu nennen: Schaden und Nutzen liegen beide allein in Seiner Hand.",
+            "ar": "الضار معناه أنه لا يصيب أحدًا ضرّ إلا بتقديره وفي إطار حكمته. وينصح العلماء بذكره مقرونًا بالنافع: فالضر والنفع كلاهما بيده وحده."
+          }
+        },
+        {
+          "title": { "en": "Name and root", "de": "Name und Wurzel", "ar": "الاسم والجذر" },
+          "arabic": "ض ر ر",
+          "body": {
+            "en": "Ad-Darr is not used as a name in the Quran; it comes from the well-known list. The root of harm appears in 74 words, and the Quran often pairs harm with benefit.",
+            "de": "Aḍ-Ḍārr wird im Koran nicht als Name verwendet; er stammt aus der bekannten Liste. Die Wurzel des Schadens kommt in 74 Wörtern vor, und der Koran stellt Schaden oft neben Nutzen.",
+            "ar": "لم يرد الضار اسمًا في القرآن، وهو من القائمة المشهورة. ويرد جذر الضر في ٧٤ كلمة، وكثيرًا ما يقرن القرآن الضر بالنفع."
+          }
+        },
+        {
+          "verse": "10:107",
+          "check": "adversity",
+          "title": { "en": "Only He removes it", "de": "Nur Er nimmt es weg", "ar": "هو وحده يكشفه" },
+          "body": { "en": "A verse that frees the heart from fearing anyone but Him.", "de": "Ein Vers, der das Herz von der Furcht vor allen außer Ihm befreit.", "ar": "آية تحرر القلب من الخوف من غير الله." }
+        },
+        {
+          "verse": "48:11",
+          "check": "harm or intended for you benefit",
+          "title": { "en": "Harm and benefit side by side", "de": "Schaden und Nutzen nebeneinander", "ar": "الضر والنفع معًا" },
+          "body": { "en": "No excuse of wealth or family can stand between a person and what He intends.", "de": "Keine Ausrede mit Besitz oder Familie kann zwischen einem Menschen und dem stehen, was Er bestimmt.", "ar": "لا يحول مال ولا أهل بين الإنسان وما يريده الله." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["In hardship, turn to Him before turning to people", "Do not fear people's harm more than you trust Him", "Mention ad-Darr together with an-Nafi'"],
+            "de": ["Wenden Sie sich in der Not zuerst an Ihn, dann an Menschen", "Fürchten Sie den Schaden durch Menschen nicht mehr, als Sie Ihm vertrauen", "Nennen Sie aḍ-Ḍārr zusammen mit an-Nāfiʿ"],
+            "ar": ["في الشدة الجأ إليه قبل الناس", "لا تخف ضرر الناس أكثر من ثقتك به", "اذكر الضار مقرونًا بالنافع"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "At-Tirmidhi, al-Jami', Book of Supplications (list of the ninety-nine names)" },
+        { "label": "Quranic Arabic Corpus, root d-r-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Drr" }
+      ]
+    },
+    {
+      "id": "name-92-an-nafi",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 92", "de": "Namen Allahs · 92", "ar": "أسماء الله · ٩٢" },
+        "title": { "en": "An-Nafi'", "de": "An-Nāfiʿ", "ar": "النافع" },
+        "sub": { "en": "The Bringer of Benefit: every good comes by His permission", "de": "Der Nutzbringende: Jeder Nutzen geschieht mit Seiner Erlaubnis", "ar": "الذي لا ينفع شيء إلا بإذنه" },
+        "arabic": "النَّافِع"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "An-Nafi' brings benefit to whom He wills. Medicine heals, knowledge helps and friends support only by His permission. He is the true source behind every means.",
+            "de": "An-Nāfiʿ bringt Nutzen, wem Er will. Medizin heilt, Wissen hilft und Freunde stützen nur mit Seiner Erlaubnis. Er ist die wahre Quelle hinter jedem Mittel.",
+            "ar": "النافع يوصل النفع إلى من يشاء. فالدواء لا يشفي، والعلم لا ينفع، والصديق لا يعين إلا بإذنه. فهو المصدر الحق وراء كل سبب."
+          }
+        },
+        {
+          "title": { "en": "The root n-f-'", "de": "Die Wurzel n-f-ʿ", "ar": "الجذر ن ف ع" },
+          "arabic": "ن ف ع",
+          "body": {
+            "en": "The root appears in 50 words in the Quran, and naf', benefit, often stands beside darr, harm. Like ad-Darr, an-Nafi' comes from the well-known list of names.",
+            "de": "Die Wurzel kommt im Koran in 50 Wörtern vor, und nafʿ, Nutzen, steht oft neben ḍarr, Schaden. Wie aḍ-Ḍārr stammt an-Nāfiʿ aus der bekannten Liste der Namen.",
+            "ar": "يرد الجذر في القرآن في ٥٠ كلمة، وكثيرًا ما يقترن النفع بالضر. والنافع، مثل الضار، من القائمة المشهورة للأسماء."
+          }
+        },
+        {
+          "verse": "5:76",
+          "check": "harm or benefit",
+          "title": { "en": "Who truly benefits?", "de": "Wer nützt wirklich?", "ar": "من ينفع حقًّا؟" },
+          "body": { "en": "Only the One who truly holds benefit and harm deserves worship.", "de": "Nur der, der wirklich über Nutzen und Schaden verfügt, verdient Anbetung.", "ar": "لا يستحق العبادة إلا من يملك النفع والضر حقًّا." }
+        },
+        {
+          "verse": "26:88-89",
+          "check": "sound heart",
+          "title": { "en": "What benefits on that Day", "de": "Was an jenem Tag nützt", "ar": "ما ينفع يومئذ" },
+          "body": { "en": "On the Day of Judgement only one kind of heart brings benefit.", "de": "Am Tag des Gerichts nützt nur eine Art von Herz.", "ar": "يوم القيامة لا ينفع إلا نوع واحد من القلوب." }
+        },
+        {
+          "dua": "hisn:27:20",
+          "check": "beneficial",
+          "title": { "en": "Ask for beneficial knowledge", "de": "Bitten Sie um nützliches Wissen", "ar": "اسأل علمًا نافعًا" },
+          "body": { "en": "A short dua from the morning and evening remembrance.", "de": "Ein kurzes Bittgebet aus dem Morgen- und Abendgedenken.", "ar": "دعاء قصير من أذكار الصباح والمساء." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Ask for knowledge that benefits", "Be useful to people", "Seek cures, and know that healing is from Him"],
+            "de": ["Bitten Sie um Wissen, das nützt", "Seien Sie den Menschen nützlich", "Suchen Sie Heilmittel und wissen Sie, dass Heilung von Ihm kommt"],
+            "ar": ["اسأل الله علمًا نافعًا", "كن نافعًا للناس", "تداوَ واعلم أن الشفاء منه"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root n-f-'", "url": "https://corpus.quran.com/qurandictionary.jsp?q=nfE" }
+      ]
+    },
+    {
+      "id": "name-93-an-nur",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 93", "de": "Namen Allahs · 93", "ar": "أسماء الله · ٩٣" },
+        "title": { "en": "An-Nur", "de": "An-Nūr", "ar": "النور" },
+        "sub": { "en": "The Light: He illuminates the heavens, the earth and the heart", "de": "Das Licht: Er erleuchtet die Himmel, die Erde und das Herz", "ar": "منوّر السماوات والأرض والقلوب" },
+        "arabic": "النُّور"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "An-Nur is the Light by whom the heavens and the earth are illuminated and hearts are guided. Scholars explain the name in several ways: the One who gives light to creation, the light of revelation, and the light of faith in the heart.",
+            "de": "An-Nūr ist das Licht, durch das die Himmel und die Erde erleuchtet und die Herzen geleitet werden. Gelehrte erklären den Namen auf mehrere Weisen: der Eine, der der Schöpfung Licht gibt, das Licht der Offenbarung und das Licht des Glaubens im Herzen.",
+            "ar": "النور هو الذي أنار السماوات والأرض وهدى القلوب. وللعلماء في معناه أقوال: منوّر الخلق، ونور الوحي، ونور الإيمان في القلب."
+          }
+        },
+        {
+          "title": { "en": "The root n-w-r", "de": "Die Wurzel n-w-r", "ar": "الجذر ن و ر" },
+          "arabic": "ن و ر",
+          "body": { "en": "The root appears in 194 words in the Quran. Nur, light, occurs 43 times; nar, fire, 145 times. Light and fire share one root.", "de": "Die Wurzel kommt im Koran in 194 Wörtern vor. Nūr, Licht, erscheint 43-mal, nār, Feuer, 145-mal. Licht und Feuer teilen eine Wurzel.", "ar": "يرد الجذر في القرآن في ١٩٤ كلمة: النور ٤٣ مرة، والنار ١٤٥ مرة. فالنور والنار من جذر واحد." }
+        },
+        {
+          "verse": "39:69",
+          "check": "light of its Lord",
+          "title": { "en": "Light on the Day of Judgement", "de": "Licht am Tag des Gerichts", "ar": "نور يوم الحساب" },
+          "body": { "en": "The scene of the Judgement begins with light.", "de": "Die Szene des Gerichts beginnt mit Licht.", "ar": "يبدأ مشهد الحساب بالنور." }
+        },
+        {
+          "verse": "61:8",
+          "check": "perfect His light",
+          "title": { "en": "A light no one can put out", "de": "Ein Licht, das niemand löschen kann", "ar": "نور لا يُطفأ" },
+          "body": { "en": "Every effort against His guidance will fall short.", "de": "Jede Anstrengung gegen Seine Rechtleitung wird scheitern.", "ar": "كل سعي ضد هدايته لن يبلغ غايته." }
+        },
+        {
+          "dua": "hisn:34:0",
+          "check": "light of my breast",
+          "title": { "en": "The Quran as light", "de": "Der Koran als Licht", "ar": "القرآن نورًا" },
+          "body": { "en": "In this dua for grief, the Quran is asked to become the light of the heart.", "de": "In diesem Bittgebet bei Kummer wird darum gebeten, dass der Koran zum Licht des Herzens wird.", "ar": "في دعاء الهم هذا يُسأل أن يكون القرآن نور القلب." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Read the Quran every day: it is light", "Seek light through prayer and sincerity", "Be a light for others, not a shadow"],
+            "de": ["Lesen Sie jeden Tag im Koran: Er ist Licht", "Suchen Sie Licht durch Gebet und Aufrichtigkeit", "Seien Sie für andere ein Licht, kein Schatten"],
+            "ar": ["اقرأ القرآن كل يوم فهو نور", "اطلب النور بالصلاة والإخلاص", "كن نورًا لغيرك لا ظلًّا"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root n-w-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=nwr" }
+      ]
+    },
+    {
+      "id": "name-94-al-hadi",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 94", "de": "Namen Allahs · 94", "ar": "أسماء الله · ٩٤" },
+        "title": { "en": "Al-Hadi", "de": "Al-Hādī", "ar": "الهادي" },
+        "sub": { "en": "The Guide: He shows every creature its way", "de": "Der Rechtleitende: Er zeigt jedem Geschöpf seinen Weg", "ar": "الذي يهدي كل مخلوق إلى سبيله" },
+        "arabic": "الْهَادِي"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Hadi guides all creation. He gave each creature its nature and shows it its way: the bee to its flower, the bird to its nest. And He guides people to faith and to the straight path.",
+            "de": "Al-Hādī leitet die ganze Schöpfung. Er gab jedem Geschöpf seine Natur und zeigt ihm seinen Weg: der Biene zu ihrer Blüte, dem Vogel zu seinem Nest. Und Er leitet Menschen zum Glauben und zum geraden Weg.",
+            "ar": "الهادي يهدي الخلق كلهم: أعطى كل مخلوق طبيعته وهداه سبيله، النحلة إلى زهرتها والطائر إلى عشه. ويهدي الناس إلى الإيمان والطريق المستقيم."
+          }
+        },
+        {
+          "title": { "en": "The root h-d-y", "de": "Die Wurzel h-d-y", "ar": "الجذر ه د ي" },
+          "arabic": "ه د ي",
+          "body": {
+            "en": "The root appears in 316 words in the Quran: hada, to guide, 144 times and huda, guidance, 85 times. Guidance is one of the great themes of the Quran.",
+            "de": "Die Wurzel kommt im Koran in 316 Wörtern vor: hadā, leiten, 144-mal und hudā, Rechtleitung, 85-mal. Rechtleitung ist eines der großen Themen des Korans.",
+            "ar": "يرد الجذر في القرآن في ٣١٦ كلمة: الفعل هدى ١٤٤ مرة، والهدى ٨٥ مرة. فالهداية من أعظم موضوعات القرآن."
+          }
+        },
+        {
+          "verse": "20:50",
+          "check": "then guided",
+          "title": { "en": "Guidance built into creation", "de": "Rechtleitung in der Schöpfung angelegt", "ar": "هداية مودعة في الخلق" },
+          "body": { "en": "Musa's answer to Pharaoh: every creature has received its form and its way.", "de": "Mūsās Antwort an Pharao: Jedes Geschöpf hat seine Gestalt und seinen Weg erhalten.", "ar": "جواب موسى لفرعون: كل مخلوق أُعطي صورته وسبيله." }
+        },
+        {
+          "verse": "25:31",
+          "check": "guide and a helper",
+          "title": { "en": "Enough as a Guide", "de": "Genug als Leiter", "ar": "كفى به هاديًا" },
+          "body": { "en": "Comfort for the Prophet facing opposition: his Lord is enough.", "de": "Trost für den Propheten angesichts der Feindschaft: Sein Herr genügt.", "ar": "تسلية للنبي أمام العداوة: ربه يكفيه." }
+        },
+        {
+          "verse": "1:6",
+          "check": "straight path",
+          "title": { "en": "In every rak'a", "de": "In jeder Gebetseinheit", "ar": "في كل ركعة" },
+          "body": { "en": "The request for guidance that we repeat in every unit of prayer.", "de": "Die Bitte um Rechtleitung, die wir in jeder Gebetseinheit wiederholen.", "ar": "طلب الهداية الذي نكرره في كل ركعة." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Ask for guidance in every rak'a with presence", "Guide others gently, by your example", "When unsure, pray and ask Him to guide you"],
+            "de": ["Bitten Sie in jeder Gebetseinheit bewusst um Rechtleitung", "Leiten Sie andere sanft, durch Ihr Beispiel", "Wenn Sie unsicher sind, beten Sie und bitten Sie Ihn um Führung"],
+            "ar": ["اطلب الهداية في كل ركعة بحضور قلب", "اهدِ غيرك برفق وبقدوتك", "إذا ترددت فصلِّ واسأله أن يهديك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root h-d-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=hdy" }
+      ]
+    },
+    {
+      "id": "name-95-al-badi",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 95", "de": "Namen Allahs · 95", "ar": "أسماء الله · ٩٥" },
+        "title": { "en": "Al-Badi'", "de": "Al-Badīʿ", "ar": "البديع" },
+        "sub": { "en": "The Incomparable Originator: creation without any model", "de": "Der unvergleichliche Schöpfer: Schöpfung ohne jedes Vorbild", "ar": "الذي خلق على غير مثال" },
+        "arabic": "الْبَدِيع"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Badi' creates without any prior model, in a way that is new and unmatched. The heavens and the earth had no blueprint before Him; their design began with Him.",
+            "de": "Al-Badīʿ erschafft ohne jedes frühere Vorbild, auf eine Weise, die neu und unvergleichlich ist. Die Himmel und die Erde hatten vor Ihm keine Vorlage; ihr Entwurf begann bei Ihm.",
+            "ar": "البديع يخلق على غير مثال سابق، خلقًا جديدًا لا نظير له. لم يكن للسماوات والأرض قبله نموذج، بل بدأ تصميمها منه."
+          }
+        },
+        {
+          "title": { "en": "The root b-d-'", "de": "Die Wurzel b-d-ʿ", "ar": "الجذر ب د ع" },
+          "arabic": "ب د ع",
+          "body": {
+            "en": "The word badi' occurs only twice in the Quran, both times describing Him as Originator of the heavens and the earth. The root appears in 4 words in all.",
+            "de": "Das Wort badīʿ kommt im Koran nur zweimal vor, beide Male als Schöpfer der Himmel und der Erde. Die Wurzel erscheint insgesamt in 4 Wörtern.",
+            "ar": "لم ترد كلمة بديع في القرآن إلا مرتين، وصفًا له في المرتين بأنه مبدع السماوات والأرض. ويرد الجذر كله في ٤ كلمات."
+          }
+        },
+        {
+          "verse": "2:117",
+          "check": "Originator of the heavens",
+          "title": { "en": "A single command", "de": "Ein einziger Befehl", "ar": "أمر واحد" },
+          "body": { "en": "When He decrees something, nothing more than His command is needed.", "de": "Wenn Er etwas bestimmt, braucht es nicht mehr als Seinen Befehl.", "ar": "إذا أراد شيئًا فلا يحتاج إلا إلى أمره." }
+        },
+        {
+          "verse": "6:101",
+          "check": "Originator",
+          "title": { "en": "Originator of all", "de": "Schöpfer von allem", "ar": "مبدع كل شيء" },
+          "body": { "en": "Whoever originated everything needs neither son nor partner.", "de": "Wer alles erschaffen hat, braucht weder Sohn noch Teilhaber.", "ar": "من أبدع كل شيء لا يحتاج إلى ولد ولا شريك." }
+        },
+        {
+          "dua": "hisn:24:9",
+          "check": "Originator of the heavens and the Earth",
+          "title": { "en": "Calling Him by this name", "de": "Ihn mit diesem Namen anrufen", "ar": "الدعاء بهذا الاسم" },
+          "body": { "en": "A dua before ending the prayer that calls Him by this name, among others.", "de": "Ein Bittgebet vor dem Ende des Gebets, das Ihn unter anderem mit diesem Namen anruft.", "ar": "دعاء قبل التسليم يُنادى فيه بهذا الاسم مع غيره." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Reflect on the design of creation", "Be creative in doing good", "Call on Him by this name in your dua"],
+            "de": ["Denken Sie über die Gestaltung der Schöpfung nach", "Seien Sie kreativ im Guten", "Rufen Sie Ihn im Bittgebet mit diesem Namen an"],
+            "ar": ["تأمل إبداع الخلق", "كن مبدعًا في عمل الخير", "ادعُه بهذا الاسم في دعائك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root b-d-'", "url": "https://corpus.quran.com/qurandictionary.jsp?q=bdE" }
+      ]
+    },
+    {
+      "id": "name-96-al-baqi",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 96", "de": "Namen Allahs · 96", "ar": "أسماء الله · ٩٦" },
+        "title": { "en": "Al-Baqi", "de": "Al-Bāqī", "ar": "الباقي" },
+        "sub": { "en": "The Everlasting: He remains when all else has passed", "de": "Der Bleibende: Er bleibt, wenn alles andere vergangen ist", "ar": "الدائم بعد فناء كل شيء" },
+        "arabic": "الْبَاقِي"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Baqi remains forever; His existence has no end. Everything else will pass, except what He wills to keep. What is done for His sake shares in that permanence.",
+            "de": "Al-Bāqī bleibt für immer; Sein Dasein hat kein Ende. Alles andere vergeht, außer dem, was Er bewahren will. Was um Seinetwillen getan wird, hat Anteil an dieser Beständigkeit.",
+            "ar": "الباقي دائم لا نهاية لوجوده. وكل ما سواه يفنى إلا ما شاء أن يبقيه. وما عُمل لوجهه نال نصيبًا من هذا البقاء."
+          }
+        },
+        {
+          "title": { "en": "Name and root", "de": "Name und Wurzel", "ar": "الاسم والجذر" },
+          "arabic": "ب ق ي",
+          "body": {
+            "en": "Al-Baqi is not used as a name in the Quran, but its meaning lives in the verb of remaining. The root appears in 21 words; abqa, more lasting, occurs 7 times.",
+            "de": "Al-Bāqī wird im Koran nicht als Name verwendet, doch seine Bedeutung lebt im Verb des Bleibens. Die Wurzel kommt in 21 Wörtern vor; abqā, beständiger, erscheint 7-mal.",
+            "ar": "لم يرد الباقي اسمًا في القرآن، لكن معناه حاضر في فعل البقاء. ويرد الجذر في ٢١ كلمة، منها «أبقى» ٧ مرات."
+          }
+        },
+        {
+          "verse": "55:26-27",
+          "check": "will remain",
+          "title": { "en": "All passes, He remains", "de": "Alles vergeht, Er bleibt", "ar": "يفنى الكل ويبقى هو" },
+          "body": { "en": "Two short verses that put everything in perspective.", "de": "Zwei kurze Verse, die alles ins rechte Licht rücken.", "ar": "آيتان قصيرتان تضعان كل شيء في حجمه." }
+        },
+        {
+          "verse": "16:96",
+          "check": "is lasting",
+          "title": { "en": "Two kinds of possessions", "de": "Zwei Arten von Besitz", "ar": "نوعان من المتاع" },
+          "body": { "en": "One runs out, the other lasts: the choice is ours.", "de": "Das eine geht zu Ende, das andere bleibt: Die Wahl liegt bei uns.", "ar": "أحدهما ينفد والآخر يبقى، والاختيار لنا." }
+        },
+        {
+          "dua": "hisn:130:11",
+          "check": "endure",
+          "title": { "en": "Deeds that endure", "de": "Taten, die bleiben", "ar": "الباقيات الصالحات" },
+          "body": { "en": "Simple words of remembrance that last beyond this world.", "de": "Einfache Worte des Gedenkens, die über diese Welt hinaus bleiben.", "ar": "كلمات ذكر يسيرة يبقى أثرها بعد هذه الدنيا." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Spend on what lasts: charity, knowledge, kindness", "Do not grieve too long over what passes", "Fill your day with words of remembrance"],
+            "de": ["Investieren Sie in das Bleibende: Spenden, Wissen, Güte", "Trauern Sie nicht zu lange um Vergängliches", "Füllen Sie Ihren Tag mit Worten des Gedenkens"],
+            "ar": ["أنفق فيما يبقى: صدقة وعلم وإحسان", "لا تطل الحزن على ما يفنى", "املأ يومك بالذكر"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root b-q-y", "url": "https://corpus.quran.com/qurandictionary.jsp?q=bqy" }
+      ]
+    },
+    {
+      "id": "name-97-al-warith",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 97", "de": "Namen Allahs · 97", "ar": "أسماء الله · ٩٧" },
+        "title": { "en": "Al-Warith", "de": "Al-Wārith", "ar": "الوارث" },
+        "sub": { "en": "The Inheritor: all things return to Him", "de": "Der Erbe: Alle Dinge kehren zu Ihm zurück", "ar": "الذي يرجع إليه كل شيء" },
+        "arabic": "الْوَارِث"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Al-Warith remains when all creation has passed, and everything returns to Him. All we call our own is held in trust for a while and goes back to its true Owner.",
+            "de": "Al-Wārith bleibt, wenn die ganze Schöpfung vergangen ist, und alles kehrt zu Ihm zurück. Alles, was wir unser Eigen nennen, ist uns eine Weile anvertraut und kehrt zu seinem wahren Eigentümer zurück.",
+            "ar": "الوارث يبقى بعد فناء الخلق، وإليه يرجع كل شيء. وكل ما نسميه ملكنا أمانة عندنا إلى حين، ثم يعود إلى مالكه الحق."
+          }
+        },
+        {
+          "title": { "en": "The root w-r-th", "de": "Die Wurzel w-r-th", "ar": "الجذر و ر ث" },
+          "arabic": "و ر ث",
+          "body": { "en": "The root appears in 35 words in the Quran; warith, heir, occurs 7 times. The same root gives mirath, inheritance.", "de": "Die Wurzel kommt im Koran in 35 Wörtern vor; wārith, Erbe, erscheint 7-mal. Aus derselben Wurzel stammt mīrāth, das Erbe.", "ar": "يرد الجذر في القرآن في ٣٥ كلمة، ومنه وارث ٧ مرات، ومنه الميراث." }
+        },
+        {
+          "verse": "15:23",
+          "check": "Inheritor",
+          "title": { "en": "Life, death, inheritance", "de": "Leben, Tod, Erbe", "ar": "حياة وموت وميراث" },
+          "body": { "en": "After every life and every death, all returns to the One who remains.", "de": "Nach jedem Leben und jedem Tod kehrt alles zu dem zurück, der bleibt.", "ar": "بعد كل حياة وموت يعود كل شيء إلى الباقي." }
+        },
+        {
+          "verse": "21:89",
+          "check": "best of inheritors",
+          "title": { "en": "The dua of Zakariyya", "de": "Das Bittgebet Zakariyyās", "ar": "دعاء زكريا" },
+          "body": { "en": "An old man longing for a child calls Him the best of inheritors, and is answered.", "de": "Ein alter Mann, der sich nach einem Kind sehnt, nennt Ihn den besten Erben und wird erhört.", "ar": "شيخ يتوق إلى ولد يسمّيه خير الوارثين، فيُستجاب له." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Treat what you own as a trust", "Leave behind knowledge and good deeds", "Pray like Zakariyya when you long for something"],
+            "de": ["Behandeln Sie Ihren Besitz als anvertrautes Gut", "Hinterlassen Sie Wissen und gute Taten", "Beten Sie wie Zakariyyā, wenn Sie sich nach etwas sehnen"],
+            "ar": ["عامل ما تملكه على أنه أمانة", "اترك وراءك علمًا وعملًا صالحًا", "ادعُ كما دعا زكريا حين تشتاق إلى شيء"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Quranic Arabic Corpus, root w-r-th", "url": "https://corpus.quran.com/qurandictionary.jsp?q=wrv" }
+      ]
+    },
+    {
+      "id": "name-98-ar-rashid",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 98", "de": "Namen Allahs · 98", "ar": "أسماء الله · ٩٨" },
+        "title": { "en": "Ar-Rashid", "de": "Ar-Rashīd", "ar": "الرشيد" },
+        "sub": { "en": "The Guide to the Right Path: perfect wisdom in every plan", "de": "Der Wegweisende: vollkommene Weisheit in jedem Plan", "ar": "الذي يدبر الأمور بحكمة تامة" },
+        "arabic": "الرَّشِيد"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "Ar-Rashid directs all things to their right end with perfect wisdom. His planning never errs, and He leads His servants to maturity and sound judgement.",
+            "de": "Ar-Rashīd lenkt alle Dinge mit vollkommener Weisheit zu ihrem richtigen Ziel. Sein Planen irrt nie, und Er führt Seine Diener zu Reife und gesundem Urteil.",
+            "ar": "الرشيد يسوق الأمور إلى غاياتها الصحيحة بحكمة تامة. لا يخطئ تدبيره، ويرشد عباده إلى النضج وسداد الرأي."
+          }
+        },
+        {
+          "title": { "en": "Name and root", "de": "Name und Wurzel", "ar": "الاسم والجذر" },
+          "arabic": "ر ش د",
+          "body": {
+            "en": "Ar-Rashid is not used as a name of Allah in the Quran; it comes from the well-known list. The root appears in 19 words; rushd, right guidance and maturity, occurs 6 times.",
+            "de": "Ar-Rashīd wird im Koran nicht als Name Allahs verwendet; er stammt aus der bekannten Liste. Die Wurzel kommt in 19 Wörtern vor; rushd, rechte Leitung und Reife, erscheint 6-mal.",
+            "ar": "لم يرد الرشيد اسمًا لله في القرآن، وهو من القائمة المشهورة. ويرد الجذر في ١٩ كلمة، منها الرُّشد ٦ مرات."
+          }
+        },
+        {
+          "verse": "18:10",
+          "check": "right guidance",
+          "title": { "en": "The dua of the youths", "de": "Das Bittgebet der Jünglinge", "ar": "دعاء الفتية" },
+          "body": { "en": "In a frightening moment, the young believers in the cave asked for two things.", "de": "In einem beängstigenden Moment baten die jungen Gläubigen in der Höhle um zwei Dinge.", "ar": "في لحظة خوف، سأل الفتية المؤمنون في الكهف أمرين." }
+        },
+        {
+          "verse": "2:186",
+          "check": "I am near",
+          "title": { "en": "Near, so that they find the way", "de": "Nah, damit sie den Weg finden", "ar": "قريب ليرشدوا" },
+          "body": { "en": "The verse of His nearness ends with rushd: being rightly guided.", "de": "Der Vers Seiner Nähe endet mit rushd: dem rechten Weg.", "ar": "تُختم آية القرب بالرشد." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Use the dua of the youths of the cave before decisions", "Consult people of knowledge and pray for guidance", "Grow in sound judgement through learning"],
+            "de": ["Sprechen Sie vor Entscheidungen das Bittgebet der Jünglinge der Höhle", "Fragen Sie kundige Menschen um Rat und beten Sie um Leitung", "Wachsen Sie durch Lernen in gesundem Urteil"],
+            "ar": ["ادعُ بدعاء أهل الكهف قبل قراراتك", "استشر أهل العلم واسأل الله الهداية", "انمُ في سداد الرأي بالتعلم"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "At-Tirmidhi, al-Jami', Book of Supplications (list of the ninety-nine names)" },
+        { "label": "Quranic Arabic Corpus, root r-sh-d", "url": "https://corpus.quran.com/qurandictionary.jsp?q=r%24d" }
+      ]
+    },
+    {
+      "id": "name-99-as-sabur",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Names of Allah · 99", "de": "Namen Allahs · 99", "ar": "أسماء الله · ٩٩" },
+        "title": { "en": "As-Sabur", "de": "Aṣ-Ṣabūr", "ar": "الصبور" },
+        "sub": { "en": "The Patient: He does not hasten, and gives time to return", "de": "Der Geduldige: Er eilt nicht und gibt Zeit zur Umkehr", "ar": "الذي لا يعجل بالعقوبة ويمهل للتوبة" },
+        "arabic": "الصَّبُور"
+      },
+      "slides": [
+        {
+          "title": { "en": "What the name means", "de": "Was der Name bedeutet", "ar": "معنى الاسم" },
+          "body": {
+            "en": "As-Sabur does not hasten punishment. He sees disobedience and still gives time, provision and health, leaving the door to repentance open. His patience is not weakness but mercy joined with power.",
+            "de": "Aṣ-Ṣabūr eilt nicht mit der Strafe. Er sieht den Ungehorsam und gibt dennoch Zeit, Versorgung und Gesundheit und lässt die Tür zur Umkehr offen. Seine Geduld ist keine Schwäche, sondern Barmherzigkeit verbunden mit Macht.",
+            "ar": "الصبور لا يعجل بالعقوبة. يرى العصيان ويعطي مع ذلك المهلة والرزق والعافية، ويترك باب التوبة مفتوحًا. وصبره ليس ضعفًا، بل رحمة مقرونة بالقدرة."
+          }
+        },
+        {
+          "title": { "en": "Name and root", "de": "Name und Wurzel", "ar": "الاسم والجذر" },
+          "arabic": "ص ب ر",
+          "body": {
+            "en": "As-Sabur is the last name in the well-known list and does not appear as a name in the Quran. The root of patience appears in 103 words; sabara, to be patient, occurs 58 times.",
+            "de": "Aṣ-Ṣabūr ist der letzte Name der bekannten Liste und erscheint im Koran nicht als Name. Die Wurzel der Geduld kommt in 103 Wörtern vor; ṣabara, geduldig sein, erscheint 58-mal.",
+            "ar": "الصبور آخر اسم في القائمة المشهورة، ولم يرد اسمًا في القرآن. ويرد جذر الصبر في ١٠٣ كلمات، منها الفعل صبر ٥٨ مرة."
+          }
+        },
+        {
+          "hadith": "bukhari:6099",
+          "check": "more patient",
+          "title": { "en": "Patience beyond compare", "de": "Geduld ohne Vergleich", "ar": "صبر لا يُضاهى" },
+          "body": { "en": "His patience reaches even those who speak ill of Him.", "de": "Seine Geduld reicht selbst zu denen, die schlecht über Ihn sprechen.", "ar": "يشمل صبره حتى من يسيء القول فيه." }
+        },
+        {
+          "verse": "35:45",
+          "check": "defers them",
+          "title": { "en": "Time to return", "de": "Zeit zur Umkehr", "ar": "مهلة للرجوع" },
+          "body": { "en": "This verse shows the patience that gives every generation time.", "de": "Dieser Vers zeigt die Geduld, die jeder Generation Zeit schenkt.", "ar": "تُظهر هذه الآية صبرًا يمنح كل جيل وقتًا." }
+        },
+        {
+          "verse": "2:153",
+          "check": "with the patient",
+          "title": { "en": "Patience brings closeness", "de": "Geduld bringt Nähe", "ar": "الصبر يقرّب" },
+          "body": { "en": "For us, patience is a path to His company and help.", "de": "Für uns ist Geduld ein Weg zu Seiner Nähe und Hilfe.", "ar": "الصبر لنا طريق إلى معيته وعونه." }
+        },
+        {
+          "title": { "en": "Living with this name", "de": "Mit diesem Namen leben", "ar": "العيش مع هذا الاسم" },
+          "list": {
+            "en": ["Be patient with people, as He is patient with you", "Turn to patience and prayer when life is hard", "Do not hasten the answer to your dua"],
+            "de": ["Seien Sie geduldig mit Menschen, wie Er geduldig mit Ihnen ist", "Wenden Sie sich in schweren Zeiten der Geduld und dem Gebet zu", "Drängen Sie nicht auf die Antwort auf Ihr Bittgebet"],
+            "ar": ["اصبر على الناس كما يصبر عليك", "الجأ إلى الصبر والصلاة عند الشدة", "لا تستعجل إجابة دعائك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "At-Tirmidhi, al-Jami', Book of Supplications (list of the ninety-nine names)" },
+        { "label": "Quranic Arabic Corpus, root s-b-r", "url": "https://corpus.quran.com/qurandictionary.jsp?q=Sbr" }
+      ]
+    }
+  ]
+}

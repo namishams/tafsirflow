@@ -1,0 +1,260 @@
+{
+ "akhlaq-honesty": {
+  "c.k": "Ahlak · 1",
+  "c.t": "Doğruluk: iyiliğe götüren yol",
+  "c.s": "Kur'an ve Sünnet doğruluk hakkında ne öğretir?",
+  "0.t": "Yalan söylememekten fazlası",
+  "0.b": "Sıdk; sözde, niyette ve davranışta doğruluk demektir. Vahiyden çok önce Mekkeliler Peygamberimize el-Emîn, yani güvenilir derdi.",
+  "1.t": "Doğrularla beraber olun",
+  "1.b": "Doğruluk iyi arkadaşlıkla büyür. Etrafınızdaki insanlar, neyin normal geldiğini şekillendirir.",
+  "2.t": "Doğruluk bir yoldur",
+  "2.b": "Doğruluk, bir yönü olan yol olarak anlatılır. Her doğru söz bir adımdır ve karakter zamanla oluşur.",
+  "3.t": "Dürüst ticarette bereket",
+  "3.b": "Sattığınız malın kusurunu söylemek kayıp gibi gelebilir. Hadis, alışverişe bereketi getirenin bu olduğunu söyler.",
+  "4.t": "Bu hafta uygulayın",
+  "4.l": [
+   "Küçük sözleri tutun, çocuklara verdiklerinizi bile",
+   "Bir abartıyı fark eder etmez düzeltin",
+   "Bilmediğinizde 'bilmiyorum' deyin",
+   "Yorumlarda, özgeçmişlerde ve raporlarda dürüst kalın"
+  ]
+ },
+ "akhlaq-patience": {
+  "c.k": "Ahlak · 2",
+  "c.t": "Sabır: her durumda hayır",
+  "c.s": "Kur'an'da ve Sünnet'te sabır ve onu nasıl yaşayabileceğimiz",
+  "0.t": "Üç çeşit sabır",
+  "0.b": "Âlimler genellikle üç çeşit sayar: Allah'a itaatte sabır, O'nun yasakladıklarından uzak durmada sabır ve O'nun takdirine sabır.",
+  "1.t": "Sabır O'ndandır",
+  "1.b": "Peygamberimizin sabrı bile Allah'ın yardımıyla olduğu şeklinde anlatılır. Sabrı yalnızca kendinizden beklemek yerine O'ndan isteyin.",
+  "2.t": "Her iki hâlde de hayır",
+  "2.b": "Sevinç şükre, sıkıntı sabra çağırır. Her iki durumda da mümin kazançlıdır.",
+  "3.t": "İlk an",
+  "3.b": "Sonradan sabırlı olduğunu söylemek kolaydır. Asıl imtihan ilk tepki ve ilk sözlerdir.",
+  "4.t": "Hiçbir şey boşa gitmez",
+  "4.b": "Küçük acılar ve endişeler bile günahları silebilir. Sıkıntı asla anlamsız değildir.",
+  "5.t": "Sabra doğru küçük adımlar",
+  "5.l": [
+   "Kötü habere tepki vermeden önce durun",
+   "Bir kayıp yaşadığınızda 'İnnâ lillâh' deyin",
+   "Kalbiniz daraldığında namaza yönelin",
+   "Dualarınızda Allah'tan sabır isteyin"
+  ]
+ },
+ "akhlaq-gratitude": {
+  "c.k": "Ahlak · 3",
+  "c.t": "Şükür: nimeti görmek",
+  "c.s": "Kalpte, dilde ve davranışta şükür",
+  "0.t": "Şükrün üç yeri",
+  "0.b": "Âlimler şükrü şöyle anlatır: kalple nimeti tanımak, dille vereni övmek, azalarla da onu güzelce kullanmak.",
+  "1.t": "Yiyin, sonra şükredin",
+  "1.b": "Sıradan bir yemek bile şükür vesilesidir. Bir öğün ibadete dönüşebilir.",
+  "2.t": "Tek bir lokma için hamd",
+  "2.b": "Allah'ın rızası, yiyip içtikten sonra söylenen bir hamd sözüyle kazanılabilir. Hiçbir şeye mal olmaz.",
+  "3.t": "Daha azına sahip olanlara bakın",
+  "3.b": "Kıyaslamak sevinci çalabilir. Bu öğüt onu tersine çevirir ve böylece şükür büyür.",
+  "4.t": "Geceleri kıyama duran şükür",
+  "4.b": "Peygamberimizin uzun gece namazları onun teşekkür etme şekliydi. İbadet şükür olabilir.",
+  "5.t": "Bir şükür alışkanlığı",
+  "5.l": [
+   "Yemekten önce besmele, sonra elhamdülillah",
+   "Uyumadan önce üç nimeti sayın",
+   "Bugün size yardım edenlere teşekkür edin",
+   "Bir nimetinizi başkasına yardım için kullanın"
+  ]
+ },
+ "akhlaq-humility": {
+  "c.k": "Ahlak · 4",
+  "c.t": "Tevazu: alçaldıkça yükselmek",
+  "c.s": "Mütevazı olan neden yükselir ve kibir neden en ağır yüktür?",
+  "0.t": "Lokman'ın öğüdü",
+  "0.b": "Tevazu yüzde, yürüyüşte ve seste görünür. Küçük alışkanlıklar kalbi ele verir.",
+  "1.t": "Alçalmaz, yükselir",
+  "1.b": "Tevazu itibar kaybı gibi görünür. Peygamberimiz bunun tersini vaat etti.",
+  "2.t": "Kibir aslında nedir?",
+  "2.b": "Hadis güzelliği kibirden ayırır. Güzel giyinmeyi sevmek sorun değildir; önemli olan hakka ve insanlara nasıl davrandığımızdır.",
+  "3.t": "Peygamberimiz evde",
+  "3.b": "Bir toplumun önderi ev işlerine yardım ederdi. Mütevazı bir insana hiçbir iş küçük gelmez.",
+  "4.t": "Günlük hayatta tevazu",
+  "4.l": [
+   "Selamı ilk siz verin",
+   "Doğruyu kabul edin, sizden genç biri söylese de",
+   "Başkalarının kaçındığı işlere yardım edin",
+   "Övüldüğünüzde Allah'a hamd edin"
+  ]
+ },
+ "akhlaq-generosity": {
+  "c.k": "Ahlak · 5",
+  "c.t": "Cömertlik: açık bir el",
+  "c.s": "Sevdiğiniz şeylerden, gönül hoşluğuyla vermek",
+  "0.t": "Sevdiğinizden verin",
+  "0.b": "Artık ihtiyaç duymadığımızı vermek kolaydır. Ayet çıtayı daha yükseğe koyar.",
+  "1.t": "Peygamberimizin cömertliği",
+  "1.b": "Onun cömertliği, Kur'an ayı Ramazan'da daha da artardı.",
+  "2.t": "Vermek kaybetmek değildir",
+  "2.b": "Her gün verenler için bir dua getirir. Cömertliğe karşılıkla cevap verilir.",
+  "3.t": "Küçük bağışlar büyür",
+  "3.b": "Helal kazançtan bir hurma değeri bile ölçüsüzce büyüyebilir. Çok şeyiniz olmasını asla beklemeyin.",
+  "4.t": "Ensar'ın örneği",
+  "4.b": "Medineliler, kendi ihtiyaçlarına rağmen evlerini ve mallarını muhacirlerle paylaştı.",
+  "5.t": "Bugün vermenin yolları",
+  "5.l": [
+   "Az ama düzenli verin",
+   "Bir komşu ya da iş arkadaşıyla yemeğinizi paylaşın",
+   "Zamanınızı ve tüm dikkatinizi verin",
+   "Sessizce verin, kimseye başa kakmadan"
+  ]
+ },
+ "akhlaq-anger": {
+  "c.k": "Ahlak · 6",
+  "c.t": "Öfke: kendini tutabilme gücü",
+  "c.s": "Öfkenin yükseldiği an için nebevî öğüt",
+  "0.t": "Gerçek güç",
+  "0.b": "Güç yeniden tanımlanır: kavgayı kazanmak değil, kavganın sıcaklığında kendine hâkim olmak.",
+  "1.t": "Tekrarlanan öğüt",
+  "1.b": "Bir adam tekrar tekrar öğüt istedi ve her seferinde aynı cevabı aldı. Bazı dersler tekrar ister.",
+  "2.t": "Üç basamak",
+  "2.b": "Öfkeyi yutmak, sonra affetmek, sonra o kişiye iyilik etmek. Her basamak bir öncekinden yüksektir.",
+  "3.t": "Öfkeyi soğutan sözler",
+  "3.b": "Peygamberimiz öfkelenen bir adama Allah'a sığınmayı gösterdi. Hararetin yükseldiğini hissettiğiniz anda söyleyin.",
+  "4.t": "O anda affetmek",
+  "4.b": "Müminlerin vasıflarından: öfke gelir, ama ardından af gelir.",
+  "5.t": "Öfke yükseldiğinde",
+  "5.l": [
+   "Şeytandan Allah'a sığının",
+   "Sakinleşene kadar susun",
+   "Birkaç dakika uzaklaşın",
+   "Öfkeyle yazılmış mesajları göndermeyin"
+  ]
+ },
+ "akhlaq-backbiting": {
+  "c.k": "Ahlak · 7",
+  "c.t": "Gıybet: orada olmayanı korumak",
+  "c.s": "Başkalarını arkalarından konuşmak neden bu kadar ağırdır?",
+  "0.t": "Akılda kalan bir tasvir",
+  "0.b": "Kur'an, gıybetin gerçekte ne olduğunu hissedelim diye bilerek sarsıcı bir tasvir kullanır.",
+  "1.t": "Doğru olsa bile",
+  "1.b": "Pek çok kişi, anlatılan doğru olduğu sürece sorun olmadığını düşünür. Peygamberimizin tanımı bu mazereti ortadan kaldırır.",
+  "2.t": "Dili korumaya bir vaat",
+  "2.b": "Dili korumak o kadar ağır basar ki, iffetle birlikte onun için cennet vaat edilir.",
+  "3.t": "Laf taşımak",
+  "3.b": "Kattât, fitne çıkarmak için insanlar arasında laf taşıyan kişidir. Bu zinciri kırmak bir iyiliktir.",
+  "4.t": "Alay ve iftira",
+  "4.b": "Hümeze Suresi, başkalarını sözle ya da işaretle küçümseyenlere bir uyarıyla başlar.",
+  "5.t": "Söz orada olmayan birine geldiğinde",
+  "5.l": [
+   "Konuyu nazikçe değiştirin",
+   "O kişinin bir iyiliğini anın",
+   "Kendinize sorun: bunu yüzüne söyler miydim?",
+   "Bunun yerine onun için dua edin"
+  ]
+ },
+ "akhlaq-envy": {
+  "c.k": "Ahlak · 8",
+  "c.t": "Haset yerine başkalarına hayır dilemek",
+  "c.s": "İslam hasedi nasıl sevgiye ve sağlıklı bir gayrete dönüştürür?",
+  "0.t": "Onların payı değil, O'nun lütfu",
+  "0.b": "Ayet, başkalarının sahip olduklarına bakıp durmak yerine sizi Allah'tan hayır istemeye yöneltir.",
+  "1.t": "Hasedin zıddı",
+  "1.b": "Haset, bir nimetin birinden gitmesini ister. İman ise onda kalmasını ve size de ulaşmasını ister.",
+  "2.t": "Sağlıklı gıpta",
+  "2.b": "Birinin sahip olduğu hayrın, ondan gitmesini dilemeden aynısını istemek caizdir; bu iki durumda ise övülmüştür.",
+  "3.t": "Rakip değil, kardeş",
+  "3.b": "Haset, kin ve birbirinden kopmak birlikte anılır. Çaresi kardeşçe yaşamaktır.",
+  "4.t": "Korunma dilemek",
+  "4.b": "Felak Suresi, haset edenin şerrinden Allah'a sığınarak biter. Pek çok kişi onu sabah akşam okur.",
+  "5.t": "Haset hissettiğinizde",
+  "5.l": [
+   "Mâşallah deyin ve onun için bereket dileyin",
+   "Haset ettiğiniz kişiye dua edin",
+   "Kendi nimetlerinizi sayın",
+   "Onlarınkine bakmadan Allah'tan hayır isteyin"
+  ]
+ },
+ "akhlaq-neighbours": {
+  "c.k": "Ahlak · 9",
+  "c.t": "Komşular: yan kapının hakları",
+  "c.s": "İslam yanınızda yaşayan insanları ne kadar ciddiye alır?",
+  "0.t": "Yakın ve uzak komşular",
+  "0.b": "Komşular, ibadet ve anne babayla aynı ayette yer alır; hem yakın komşu hem de uzak komşu.",
+  "1.t": "Tekrar tekrar vurgulandı",
+  "1.b": "Cebrail, komşu hakkını Peygamberimize durmadan vurguladı. Bu tekrar, o hakkın ağırlığını gösterir.",
+  "2.t": "Önce güven",
+  "2.b": "En azından komşunuz sizden emin olmalıdır: gürültüden, zarardan ve düşmanlıktan.",
+  "3.t": "Biraz daha su",
+  "3.b": "Cömertlik için ziyafet gerekmez. Pişirdiğinizi biraz çoğaltın ve paylaşın.",
+  "4.t": "En yakın kapıdan başlayın",
+  "4.b": "Herkese veremediğinizde, size en yakın olandan başlayın.",
+  "5.t": "İyi bir komşu olmak",
+  "5.l": [
+   "Komşularınızı adıyla selamlayın",
+   "Özel günlerde yemek paylaşın",
+   "Gürültü ve park konusunda düşünceli olun",
+   "Yaşlı ya da hasta komşuları yoklayın"
+  ]
+ },
+ "akhlaq-parents": {
+  "c.k": "Ahlak · 10",
+  "c.t": "Anne babaya iyilik",
+  "c.s": "Allah'ın en sevdiği amellerden biri",
+  "0.t": "Sözde ve davranışta yumuşaklık",
+  "0.b": "Sözü, tavrı ve duayı kapsayan iki ayet. Onları yavaşça okuyun ve anne babanızı düşünün.",
+  "1.t": "Namazdan hemen sonra",
+  "1.b": "En sevimli ameller sorulduğunda Peygamberimiz, vaktinde kılınan namazdan hemen sonra anne babaya iyiliği saydı.",
+  "2.t": "Üç kez anneniz",
+  "2.b": "Anne, babadan önce üç kez anılır; bu, onun şefkatini, hamileliğini ve fedakârlığını onurlandırır.",
+  "3.t": "Kaçırılmış bir fırsat",
+  "3.b": "Yaşlı anne baba cennete açık bir kapıdır. Uyarı, bu fırsatı kaçıranlar içindir.",
+  "4.t": "Küçük iyilikler",
+  "4.l": [
+   "Meşgul olsanız bile onları arayın",
+   "Yumuşak konuşun, asla sabırsızca değil",
+   "Öğütlerini ve dualarını isteyin",
+   "Her namazda onlara dua edin"
+  ]
+ },
+ "akhlaq-promises": {
+  "c.k": "Ahlak · 11",
+  "c.t": "Sözünde durmak",
+  "c.s": "Tutulmayan söz İslam'da neden ağır basar?",
+  "0.t": "Hesabı sorulacak",
+  "0.b": "Verilen sözler yalnızca bir nezaket değildir. Her biri, hesabı sorulacak bir sorumluluktur.",
+  "1.t": "Kurtuluşa erenlerin işareti",
+  "1.b": "Mü'minûn Suresi'nin başında sayılan vasıflar arasında emanete ve söze riayetin ayrı bir yeri vardır.",
+  "2.t": "Kaçınılacak alamet",
+  "2.b": "Sözünden dönmek nifak alametleri arasında sayılır. Müminin sözü güvenilir olmalıdır.",
+  "3.t": "Muhalifleri bile bunu bilirdi",
+  "3.b": "O zaman henüz muhalif olan Ebû Süfyan, Bizans imparatoruna Peygamberimizin ne öğrettiğini anlattı. Sözünde durmak da bunun bir parçasıydı.",
+  "4.t": "Söz ve amel",
+  "4.b": "Yapmadığını söylemek, Allah katında çok sevimsiz olarak nitelenir. Daha az söz verin, daha çok tutun.",
+  "5.t": "Sözünüzü tutmak",
+  "5.l": [
+   "İnşallah deyin, sonra gerçekten çaba gösterin",
+   "Verdiğiniz sözü yazın",
+   "Tutamayacaksanız bunu erkenden söyleyin",
+   "Dakik olun: zaman da bir sözdür"
+  ]
+ },
+ "akhlaq-kind-words": {
+  "c.k": "Ahlak · 12",
+  "c.t": "Bir tebessüm ve güzel bir söz",
+  "c.s": "Herkesin verebileceği küçük sadaka",
+  "0.t": "Hiçbir iyilik küçük değildir",
+  "0.b": "Güler yüz gerçek bir iyilik sayılır. Hiçbir şeye mal olmaz ve birinin gününü değiştirebilir.",
+  "1.t": "Peygamberimizin tebessümü",
+  "1.b": "Cerîr, Peygamberimizin onu her gördüğünde gülümsediğini hatırlardı. İnsanlar onlara ne hissettirdiğimizi hatırlar.",
+  "2.t": "Parasız sadaka",
+  "2.b": "Sadaka yalnızca para değildir. Güzel bir söz, uzatılan bir el ve adil bir hüküm de sayılır.",
+  "3.t": "Nasıl verdiğimiz",
+  "3.b": "Nasıl verdiğimiz, ne verdiğimiz kadar önemlidir. Yumuşak bir söz hediyenin kendisi olabilir.",
+  "4.t": "En hayırlının ölçüsü",
+  "4.b": "Peygamberimiz asla kötü söz kullanmazdı ve insanların değerini ahlaklarıyla ölçerdi.",
+  "5.t": "Bugün deneyin",
+  "5.l": [
+   "Karşılaştığınız ilk kişiye gülümseyin",
+   "Birine adıyla teşekkür edin",
+   "Bir şikâyeti güzel bir sözle değiştirin",
+   "Cesaret veren bir mesaj gönderin"
+  ]
+ }
+}

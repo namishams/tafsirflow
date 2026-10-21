@@ -1,0 +1,120 @@
+{
+  "set": "reflections-creation",
+  "kind": "reflection",
+  "theme": "creation",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-creation-01",
+      "text": {
+        "en": "Look at a single leaf against the light: the veins, the green, the quiet design. A whole sermon fits on it.",
+        "de": "Betrachten Sie ein einzelnes Blatt im Gegenlicht: die Adern, das Grün, die stille Gestaltung. Eine ganze Predigt passt darauf.",
+        "ar": "تأمل ورقة شجر واحدة في الضوء: عروقها، وخضرتها، وتصميمها الهادئ، ففيها موعظة كاملة."
+      }
+    },
+    {
+      "id": "wr-creation-02",
+      "text": {
+        "en": "The night sky over a desert or a sea shows every worry its true size.",
+        "de": "Der Nachthimmel über einer Wüste oder einem Meer zeigt jeder Sorge ihre wahre Größe.",
+        "ar": "سماء الليل فوق صحراء أو بحر تظهر كل هم بحجمه الحقيقي."
+      }
+    },
+    {
+      "id": "wr-creation-03",
+      "text": {
+        "en": "A newborn's fingers, perfectly formed, grip yours with surprising strength. Few signs speak louder.",
+        "de": "Die Finger eines Neugeborenen, vollkommen geformt, umklammern Ihre mit erstaunlicher Kraft. Wenige Zeichen sprechen lauter.",
+        "ar": "أصابع المولود، مكتملة الخلق، تقبض على إصبعك بقوة مدهشة، وقليل من الآيات أبلغ منها."
+      }
+    },
+    {
+      "id": "wr-creation-04",
+      "text": {
+        "en": "Bees, ants and migrating birds follow paths no one taught them. Creation is full of quiet guidance.",
+        "de": "Bienen, Ameisen und Zugvögel folgen Wegen, die ihnen niemand beigebracht hat. Die Schöpfung ist voller stiller Leitung.",
+        "ar": "النحل والنمل والطيور المهاجرة تسلك دروبا لم يعلمها إياها أحد، فالخلق مليء بالهداية الصامتة."
+      }
+    },
+    {
+      "id": "wr-creation-05",
+      "text": {
+        "en": "Take one walk this week without headphones. The wind, the birds and the rustling trees have something to say.",
+        "de": "Machen Sie diese Woche einen Spaziergang ohne Kopfhörer. Der Wind, die Vögel und das Rauschen der Bäume haben etwas zu sagen.",
+        "ar": "امش مرة هذا الأسبوع دون سماعات، فالريح والطيور وحفيف الأشجار لها ما تقوله."
+      }
+    },
+    {
+      "id": "wr-creation-06",
+      "text": {
+        "en": "After the first autumn rain, the dry field smells of earth and new beginnings. Some signs are meant to be breathed in.",
+        "de": "Nach dem ersten Herbstregen riecht das trockene Feld nach Erde und Neubeginn. Manche Zeichen will man einatmen.",
+        "ar": "بعد أول مطر في الخريف تفوح من الحقل اليابس رائحة التراب والبدايات الجديدة، وبعض الآيات تتنفس تنفسا."
+      }
+    },
+    {
+      "id": "wr-creation-07",
+      "text": {
+        "en": "Every snowflake is different and every fingerprint unique. The variety of creation is a quiet signature.",
+        "de": "Jede Schneeflocke ist anders und jeder Fingerabdruck einzigartig. Die Vielfalt der Schöpfung ist eine stille Unterschrift.",
+        "ar": "كل ندفة ثلج مختلفة، وكل بصمة إصبع فريدة، وتنوع الخلق توقيع صامت."
+      }
+    },
+    {
+      "id": "wr-creation-08",
+      "text": {
+        "en": "The sunrise has happened billions of times, yet it still stops people in their tracks. Beauty that never wears out points beyond itself.",
+        "de": "Der Sonnenaufgang ist schon milliardenfach geschehen und lässt Menschen doch innehalten. Schönheit, die sich nie abnutzt, weist über sich hinaus.",
+        "ar": "شروق الشمس حدث مليارات المرات، ومع ذلك ما زال يستوقف الناس، والجمال الذي لا يبلى يشير إلى ما وراءه."
+      }
+    },
+    {
+      "id": "wr-creation-09",
+      "text": {
+        "en": "Your own heartbeat, your breath and your healing skin are signs you carry everywhere.",
+        "de": "Ihr eigener Herzschlag, Ihr Atem und Ihre heilende Haut sind Zeichen, die Sie überallhin mitnehmen.",
+        "ar": "نبض قلبك، وأنفاسك، وجلدك الذي يلتئم، آيات تحملها معك أينما ذهبت."
+      }
+    },
+    {
+      "id": "wr-creation-10",
+      "text": {
+        "en": "Mountains, rivers and forests were here long before us. Walk among them gently, like a guest in a house that is not your own.",
+        "de": "Berge, Flüsse und Wälder waren lange vor uns da. Gehen Sie behutsam zwischen ihnen umher, wie ein Gast in einem Haus, das nicht Ihnen gehört.",
+        "ar": "الجبال والأنهار والغابات كانت هنا قبلنا بزمن طويل، فامش بينها برفق، كضيف في بيت ليس بيتك."
+      }
+    },
+    {
+      "id": "wr-creation-11",
+      "text": {
+        "en": "A child asking why the sky is blue is doing what believers have always done: looking at creation with wonder.",
+        "de": "Ein Kind, das fragt, warum der Himmel blau ist, tut, was Gläubige schon immer getan haben: die Schöpfung mit Staunen betrachten.",
+        "ar": "الطفل الذي يسأل لماذا السماء زرقاء يفعل ما فعله المؤمنون دائما: ينظر إلى الخلق بدهشة."
+      }
+    },
+    {
+      "id": "wr-creation-12",
+      "text": {
+        "en": "Science that uncovers the order of the universe is, for a believing heart, another way of reading the signs.",
+        "de": "Wissenschaft, die die Ordnung des Universums aufdeckt, ist für ein gläubiges Herz eine weitere Art, die Zeichen zu lesen.",
+        "ar": "العلم الذي يكشف نظام الكون هو، للقلب المؤمن، طريقة أخرى لقراءة الآيات."
+      }
+    },
+    {
+      "id": "wr-creation-13",
+      "text": {
+        "en": "The moon keeps its appointment every month, quietly marking our fasts and our feasts.",
+        "de": "Der Mond hält jeden Monat seine Verabredung ein und markiert still unser Fasten und unsere Feste.",
+        "ar": "القمر يفي بموعده كل شهر، ويعلم بهدوء مواقيت صيامنا وأعيادنا."
+      }
+    },
+    {
+      "id": "wr-creation-14",
+      "text": {
+        "en": "Pause for a moment at the next tree you pass. Its roots, its shade and its patience have much to teach.",
+        "de": "Halten Sie beim nächsten Baum, an dem Sie vorbeigehen, einen Moment inne. Seine Wurzeln, sein Schatten und seine Geduld haben viel zu lehren.",
+        "ar": "توقف لحظة عند الشجرة التالية التي تمر بها، فجذورها وظلها وصبرها تعلم الكثير."
+      }
+    }
+  ]
+}

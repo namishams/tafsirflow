@@ -1,0 +1,33 @@
+{
+  "set": "sayings-al-fudayl",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-al-fudayl-01",
+      "theme": "sincerity",
+      "text": {
+        "en": "Leaving a deed because of people is showing off, and doing a deed for people is associating partners. Sincerity is that Allah frees you from both.",
+        "de": "Eine Tat wegen der Menschen zu unterlassen ist Augendienerei, und sie für die Menschen zu tun ist Beigesellung. Aufrichtigkeit ist, dass Allah Sie von beidem befreit.",
+        "ar": "ترك العمل لأجل الناس رياء، والعمل لأجل الناس شرك، والإخلاص أن يعافيك الله منهما."
+      },
+      "arabic": "ترك العمل لأجل الناس رياء، والعمل لأجل الناس شرك، والإخلاص أن يعافيك الله منهما.",
+      "by": { "en": "al-Fudayl ibn 'Iyad", "de": "al-Fudail ibn 'Iyad", "ar": "الفضيل بن عياض" },
+      "work": { "en": "Reported by al-Nawawi in al-Adhkar", "de": "Überliefert von an-Nawawi in al-Adhkar", "ar": "نقله النووي في الأذكار" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-fudayl-02",
+      "theme": "worship",
+      "text": {
+        "en": "A deed that is sincere but not correct is not accepted, and a deed that is correct but not sincere is not accepted, until it is both sincere and correct.",
+        "de": "Eine Tat, die aufrichtig, aber nicht richtig ist, wird nicht angenommen, und eine, die richtig, aber nicht aufrichtig ist, ebenso wenig, bis sie aufrichtig und richtig zugleich ist.",
+        "ar": "إن العمل إذا كان خالصا ولم يكن صوابا لم يقبل، وإذا كان صوابا ولم يكن خالصا لم يقبل، حتى يكون خالصا صوابا."
+      },
+      "arabic": "إن العمل إذا كان خالصا ولم يكن صوابا لم يقبل، وإذا كان صوابا ولم يكن خالصا لم يقبل، حتى يكون خالصا صوابا.",
+      "by": { "en": "al-Fudayl ibn 'Iyad", "de": "al-Fudail ibn 'Iyad", "ar": "الفضيل بن عياض" },
+      "work": { "en": "Reported by Abu Nu'aym in Hilyat al-Awliya'", "de": "Überliefert von Abu Nu'aym in Hilyat al-Awliya'", "ar": "رواه أبو نعيم في حلية الأولياء" },
+      "needs_review": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "set": "sayings-al-nawawi",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-al-nawawi-01",
+      "theme": "hereafter",
+      "text": {
+        "en": "This world is a place of passing away, not a home to stay forever; a vessel for crossing, not a house of delight; a watering place of parting, not a land of permanence.",
+        "de": "Diese Welt ist ein Ort des Vergehens, kein Ort der Ewigkeit; ein Fahrzeug zur Überfahrt, kein Haus der Freude; eine Tränke des Abschieds, kein Land der Beständigkeit.",
+        "ar": "إن الدنيا دار نفاد لا محل إخلاد، ومركب عبور لا منزل حبور، ومشرع انفصام لا موطن دوام."
+      },
+      "arabic": "إن الدنيا دار نفاد لا محل إخلاد، ومركب عبور لا منزل حبور، ومشرع انفصام لا موطن دوام.",
+      "by": { "en": "al-Nawawi", "de": "an-Nawawi", "ar": "الإمام النووي" },
+      "work": { "en": "Riyad al-Salihin, introduction", "de": "Riyad as-Salihin, Einleitung", "ar": "رياض الصالحين، المقدمة" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-nawawi-02",
+      "theme": "worship",
+      "text": {
+        "en": "Whoever learns of the virtue of a good deed should act on it, even once, so as to be among its people.",
+        "de": "Wer von der Vorzüglichkeit einer guten Tat erfährt, sollte sie tun, und sei es nur ein einziges Mal, um zu ihren Leuten zu gehören.",
+        "ar": "ينبغي لمن بلغه شيء في فضائل الأعمال أن يعمل به ولو مرة واحدة ليكون من أهله."
+      },
+      "arabic": "ينبغي لمن بلغه شيء في فضائل الأعمال أن يعمل به ولو مرة واحدة ليكون من أهله.",
+      "by": { "en": "al-Nawawi", "de": "an-Nawawi", "ar": "الإمام النووي" },
+      "work": { "en": "al-Adhkar", "de": "al-Adhkar", "ar": "الأذكار" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-nawawi-03",
+      "theme": "remembrance",
+      "text": {
+        "en": "The virtue of remembrance is not limited to words of glorification and praise. Everyone who does a deed of obedience for Allah is remembering Allah.",
+        "de": "Die Vorzüglichkeit des Gedenkens beschränkt sich nicht auf Worte der Lobpreisung. Jeder, der für Allah eine gehorsame Tat vollbringt, gedenkt Allahs.",
+        "ar": "اعلم أن فضيلة الذكر غير منحصرة في التسبيح والتهليل والتحميد والتكبير ونحوها، بل كل عامل لله تعالى بطاعة فهو ذاكر لله تعالى."
+      },
+      "arabic": "اعلم أن فضيلة الذكر غير منحصرة في التسبيح والتهليل والتحميد والتكبير ونحوها، بل كل عامل لله تعالى بطاعة فهو ذاكر لله تعالى.",
+      "by": { "en": "al-Nawawi", "de": "an-Nawawi", "ar": "الإمام النووي" },
+      "work": { "en": "al-Adhkar", "de": "al-Adhkar", "ar": "الأذكار" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-nawawi-04",
+      "theme": "remembrance",
+      "text": {
+        "en": "Remembrance is with the heart and with the tongue, and the best of it is with the heart and the tongue together.",
+        "de": "Das Gedenken geschieht mit dem Herzen und mit der Zunge, und am besten ist es mit Herz und Zunge zugleich.",
+        "ar": "الذكر يكون بالقلب، ويكون باللسان، والأفضل منه ما كان بالقلب واللسان جميعا."
+      },
+      "arabic": "الذكر يكون بالقلب، ويكون باللسان، والأفضل منه ما كان بالقلب واللسان جميعا.",
+      "by": { "en": "al-Nawawi", "de": "an-Nawawi", "ar": "الإمام النووي" },
+      "work": { "en": "al-Adhkar", "de": "al-Adhkar", "ar": "الأذكار" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-nawawi-05",
+      "theme": "quran",
+      "text": {
+        "en": "Weeping while reciting the Quran is the quality of those who know Allah and the mark of His righteous servants.",
+        "de": "Das Weinen beim Lesen des Korans ist die Eigenschaft derer, die Allah kennen, und das Kennzeichen Seiner rechtschaffenen Diener.",
+        "ar": "البكاء عند قراءة القرآن صفة العارفين، وشعار عباد الله الصالحين."
+      },
+      "arabic": "البكاء عند قراءة القرآن صفة العارفين، وشعار عباد الله الصالحين.",
+      "by": { "en": "al-Nawawi", "de": "an-Nawawi", "ar": "الإمام النووي" },
+      "work": { "en": "al-Tibyan fi Adab Hamalat al-Quran", "de": "at-Tibyan fi Adab Hamalat al-Qur'an", "ar": "التبيان في آداب حملة القرآن" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-nawawi-06",
+      "theme": "sincerity",
+      "text": {
+        "en": "The first thing a teacher and a reciter of the Quran should do is to seek by it the pleasure of Allah alone.",
+        "de": "Das Erste, was Lehrende und Lesende des Korans tun sollten, ist, damit allein das Wohlgefallen Allahs zu suchen.",
+        "ar": "أول ما ينبغي للمقرئ والقارئ أن يقصدا بذلك رضا الله تعالى."
+      },
+      "by": { "en": "al-Nawawi", "de": "an-Nawawi", "ar": "الإمام النووي" },
+      "work": { "en": "al-Tibyan fi Adab Hamalat al-Quran", "de": "at-Tibyan fi Adab Hamalat al-Qur'an", "ar": "التبيان في آداب حملة القرآن" },
+      "needs_review": true
+    }
+  ]
+}

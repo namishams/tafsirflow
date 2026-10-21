@@ -1,0 +1,13 @@
+{ "set": "hadith-love-of-allah", "kind": "hadith", "theme": "love-of-allah", "tradition": "sunni",
+  "items": [
+    {"id": "wh-love-of-allah-bukhari-6171", "hadith": "bukhari:6171", "check": "with those whom you love"},
+    {"id": "wh-love-of-allah-muslim-6548", "hadith": "muslim:6548", "check": "My Glory's sake"},
+    {"id": "wh-love-of-allah-bukhari-4440", "hadith": "bukhari:4440", "check": "highest"},
+    {"id": "wh-love-of-allah-nawawi-31", "hadith": "nawawi:31", "check": "Renounce the world"},
+    {"id": "wh-love-of-allah-bukhari-3209", "hadith": "bukhari:3209", "check": "If Allah loves a person"},
+    {"id": "wh-love-of-allah-bukhari-6941", "hadith": "bukhari:6941", "check": "sweetness of faith"},
+    {"id": "wh-love-of-allah-bukhari-6508", "hadith": "bukhari:6508", "check": "loves to meet Allah"},
+    {"id": "wh-love-of-allah-muslim-1890", "hadith": "muslim:1890", "check": "Allah loves him"},
+    {"id": "wh-love-of-allah-bukhari-15", "hadith": "bukhari:15", "check": "loves me more than"},
+    {"id": "wh-love-of-allah-muslim-7145", "hadith": "muslim:7145", "check": "most loved by me"}
+  ] }

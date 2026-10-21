@@ -1,0 +1,479 @@
+{
+  "series": "aqidah-basics",
+  "label": {"en": "Foundations of faith", "de": "Grundlagen des Glaubens", "ar": "أسس الإيمان"},
+  "topic": "quran",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "aqidah-basics-01-articles",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 1", "de": "Grundlagen des Glaubens · 1", "ar": "أسس الإيمان · ١"},
+        "title": {"en": "The articles of faith", "de": "Die Glaubensartikel", "ar": "أركان الإيمان"},
+        "sub": {"en": "What every Muslim believes, in the words of the Quran", "de": "Was jeder Muslim glaubt, in den Worten des Korans", "ar": "ما يؤمن به كل مسلم كما ذكره القرآن"},
+        "arabic": "أركان الإيمان"
+      },
+      "slides": [
+        {
+          "verse": "2:285",
+          "check": "His angels and His books and His messengers",
+          "title": {"en": "The believers' creed", "de": "Das Bekenntnis der Gläubigen", "ar": "إيمان المؤمنين"},
+          "body": {"en": "Near the end of al-Baqarah, the Quran names what the Messenger and the believers believe in together.", "de": "Gegen Ende von al-Baqara nennt der Koran, woran der Gesandte und die Gläubigen gemeinsam glauben.", "ar": "في أواخر سورة البقرة يذكر القرآن ما آمن به الرسول ﷺ والمؤمنون معًا."}
+        },
+        {
+          "verse": "4:136",
+          "check": "the Last Day",
+          "title": {"en": "Five named together", "de": "Fünf gemeinsam genannt", "ar": "خمسة في آية واحدة"},
+          "body": {"en": "This verse lists five things to believe in: Allah, the angels, the revealed books, the messengers and the Last Day.", "de": "Dieser Vers nennt fünf Inhalte des Glaubens: Allah, die Engel, die offenbarten Bücher, die Gesandten und den Jüngsten Tag.", "ar": "تذكر هذه الآية خمسة أمور يجب الإيمان بها: الله، والملائكة، والكتب المنزلة، والرسل، واليوم الآخر."}
+        },
+        {
+          "verse": "54:49",
+          "check": "predestination",
+          "title": {"en": "And the decree", "de": "Und die Vorherbestimmung", "ar": "والقدر"},
+          "body": {"en": "The Quran also teaches that all things are created according to Allah's measure and decree, al-qadar.", "de": "Der Koran lehrt auch, dass alle Dinge nach Allahs Maß und Bestimmung erschaffen sind, al-Qadar.", "ar": "ويقرر القرآن أيضًا أن كل شيء مخلوق بتقدير الله وقضائه."}
+        },
+        {
+          "title": {"en": "Six articles", "de": "Sechs Glaubensartikel", "ar": "أركان الإيمان الستة"},
+          "list": {
+            "en": ["Belief in Allah", "Belief in the angels", "Belief in the revealed books", "Belief in the messengers", "Belief in the Last Day", "Belief in al-qadar, the divine decree"],
+            "de": ["Der Glaube an Allah", "Der Glaube an die Engel", "Der Glaube an die offenbarten Bücher", "Der Glaube an die Gesandten", "Der Glaube an den Jüngsten Tag", "Der Glaube an al-Qadar, die göttliche Bestimmung"],
+            "ar": ["الإيمان بالله", "الإيمان بالملائكة", "الإيمان بالكتب المنزلة", "الإيمان بالرسل", "الإيمان باليوم الآخر", "الإيمان بالقدر"]
+          },
+          "body": {"en": "Sunni scholars list these six, following the hadith of Jibril.", "de": "Sunnitische Gelehrte zählen diese sechs auf, gestützt auf den Hadith Dschibrils.", "ar": "يعدّها علماء أهل السنة ستة أركان استنادًا إلى حديث جبريل."}
+        },
+        {
+          "title": {"en": "How Shia scholars teach it", "de": "Wie schiitische Gelehrte es lehren", "ar": "كيف يعرضها علماء الشيعة"},
+          "body": {"en": "Shia scholars teach the roots of religion, usul al-din: divine oneness, divine justice, prophethood, imamate and the resurrection. Belief in the angels, the books and the decree is affirmed within this framework.", "de": "Schiitische Gelehrte lehren die Wurzeln der Religion, Usul ad-Din: Einheit Gottes, göttliche Gerechtigkeit, Prophetentum, Imamat und Auferstehung. Der Glaube an Engel, Bücher und Bestimmung wird in diesem Rahmen bejaht.", "ar": "يعرض علماء الشيعة أصول الدين: التوحيد والعدل والنبوة والإمامة والمعاد، ويُقرّ الإيمان بالملائكة والكتب والقضاء والقدر ضمن هذا الإطار."}
+        },
+        {
+          "title": {"en": "Faith that lives", "de": "Ein Glaube, der lebt", "ar": "إيمان حيّ"},
+          "body": {"en": "In the Quran faith is never only an idea. Again and again it is named together with righteous deeds.", "de": "Im Koran ist Glaube nie nur eine Idee. Immer wieder wird er zusammen mit rechtschaffenen Taten genannt.", "ar": "الإيمان في القرآن ليس فكرة مجردة، فهو يُذكر مرة بعد مرة مقرونًا بالعمل الصالح."}
+        },
+        {
+          "title": {"en": "Living the articles", "de": "Die Glaubensinhalte leben", "ar": "العيش مع أركان الإيمان"},
+          "list": {
+            "en": ["Allah: turn to Him first in every need", "Angels: remember that your deeds are recorded", "Books and messengers: learn from their guidance", "The Last Day and the decree: act well, then trust Allah"],
+            "de": ["Allah: Wenden Sie sich in jeder Not zuerst an Ihn", "Engel: Denken Sie daran, dass Ihre Taten aufgezeichnet werden", "Bücher und Gesandte: Lernen Sie aus ihrer Rechtleitung", "Jüngster Tag und Bestimmung: Handeln Sie gut, dann vertrauen Sie auf Allah"],
+            "ar": ["الله: الجأ إليه أولًا في كل حاجة", "الملائكة: تذكّر أن أعمالك تُكتب", "الكتب والرسل: تعلّم من هديهم", "اليوم الآخر والقدر: أحسن العمل ثم توكل على الله"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-02-angels",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 2", "de": "Grundlagen des Glaubens · 2", "ar": "أسس الإيمان · ٢"},
+        "title": {"en": "Angels named in the Quran", "de": "Engel, die der Koran nennt", "ar": "ملائكة سمّاهم القرآن"},
+        "sub": {"en": "Who they are, what they do, and why it matters for us", "de": "Wer sie sind, was sie tun und was das für uns bedeutet", "ar": "من هم، وما عملهم، ولماذا يعنينا ذلك"},
+        "arabic": "الإيمان بالملائكة"
+      },
+      "slides": [
+        {
+          "verse": "35:1",
+          "check": "wings",
+          "title": {"en": "Messengers with wings", "de": "Gesandte mit Flügeln", "ar": "رسل ذوو أجنحة"},
+          "body": {"en": "Angels are a creation of Allah that we cannot see. The Quran describes them as messengers with wings.", "de": "Engel sind ein Geschöpf Allahs, das wir nicht sehen. Der Koran beschreibt sie als Gesandte mit Flügeln.", "ar": "الملائكة خلق من خلق الله لا نراهم، ويصفهم القرآن بأنهم رسل ذوو أجنحة."}
+        },
+        {
+          "verse": "2:97",
+          "check": "Gabriel",
+          "title": {"en": "Jibril", "de": "Dschibril", "ar": "جبريل"},
+          "body": {"en": "Jibril brought the revelation down upon the Prophet's heart. The Quran names him three times.", "de": "Dschibril brachte die Offenbarung auf das Herz des Propheten herab. Der Koran nennt ihn dreimal beim Namen.", "ar": "نزل جبريل بالوحي على قلب النبي ﷺ، وقد ذكره القرآن باسمه ثلاث مرات."}
+        },
+        {
+          "verse": "2:98",
+          "check": "Michael",
+          "title": {"en": "Mika'il", "de": "Mikail", "ar": "ميكائيل"},
+          "body": {"en": "Mika'il is named beside Jibril. Many commentators associate him with rain and provision.", "de": "Mikail wird neben Dschibril genannt. Viele Kommentatoren verbinden ihn mit Regen und Versorgung.", "ar": "ذُكر ميكائيل مع جبريل، ويربطه كثير من المفسرين بالمطر والرزق."}
+        },
+        {
+          "verse": "43:77",
+          "check": "Malik",
+          "title": {"en": "Malik, keeper of the Fire", "de": "Malik, der Wächter des Feuers", "ar": "مالك خازن النار"},
+          "body": {"en": "The people of Hell call out to Malik, the angel who guards it. His answer shows that the time for repentance has passed.", "de": "Die Bewohner der Hölle rufen Malik, den Engel, der sie bewacht. Seine Antwort zeigt, dass die Zeit der Reue vorbei ist.", "ar": "ينادي أهل النار مالكًا خازنها، وجوابه يبيّن أن وقت التوبة قد مضى."}
+        },
+        {
+          "title": {"en": "Harut and Marut", "de": "Harut und Marut", "ar": "هاروت وماروت"},
+          "body": {"en": "Surah al-Baqarah (2:102) names two angels in Babylon, Harut and Marut, who warned people that they were only a trial. Commentators discuss their story at length.", "de": "Sure al-Baqara (2:102) nennt zwei Engel in Babylon, Harut und Marut, die die Menschen warnten, sie seien nur eine Prüfung. Kommentatoren besprechen ihre Geschichte ausführlich.", "ar": "تذكر سورة البقرة (٢: ١٠٢) ملكين ببابل هما هاروت وماروت، كانا يحذّران الناس من أنهما فتنة، وقد أطال المفسرون في قصتهما."}
+        },
+        {
+          "title": {"en": "Known by their task", "de": "An ihrer Aufgabe erkannt", "ar": "ملائكة عُرفوا بأعمالهم"},
+          "list": {
+            "en": ["The angel of death (32:11)", "The noble recorders of deeds (82:10-12)", "Protectors before and behind each person (13:11)", "The bearers of the Throne (40:7)", "The keepers of Paradise and of Hell (39:73, 66:6)"],
+            "de": ["Der Engel des Todes (32:11)", "Die edlen Schreiber der Taten (82:10-12)", "Beschützer vor und hinter jedem Menschen (13:11)", "Die Träger des Thrones (40:7)", "Die Hüter des Paradieses und der Hölle (39:73, 66:6)"],
+            "ar": ["ملك الموت (٣٢: ١١)", "الكرام الكاتبون (٨٢: ١٠–١٢)", "المعقّبات من بين يدي الإنسان ومن خلفه (١٣: ١١)", "حملة العرش (٤٠: ٧)", "خزنة الجنة وخزنة النار (٣٩: ٧٣، ٦٦: ٦)"]
+          },
+          "body": {"en": "Names like Israfil or Azra'il come from hadith and tradition, not from the Quran.", "de": "Namen wie Israfil oder Azrail stammen aus Hadith und Überlieferung, nicht aus dem Koran.", "ar": "أسماء مثل إسرافيل وعزرائيل وردت في الحديث والتراث لا في القرآن."}
+        },
+        {
+          "verse": "66:6",
+          "check": "do not disobey",
+          "title": {"en": "Always obedient", "de": "Stets gehorsam", "ar": "طاعة دائمة"},
+          "body": {"en": "Angels do not disobey Allah. They are His servants, never partners and never to be worshipped.", "de": "Engel widersetzen sich Allah nicht. Sie sind Seine Diener, niemals Teilhaber und niemals anzubeten.", "ar": "الملائكة لا يعصون الله، فهم عباد له، لا شركاء ولا يُعبدون."}
+        },
+        {
+          "title": {"en": "Living with this belief", "de": "Mit diesem Glauben leben", "ar": "العيش مع هذا الإيمان"},
+          "list": {
+            "en": ["Remember that your words are written down", "Take comfort: angels ask forgiveness for believers", "Bring calm and cleanliness to places of worship"],
+            "de": ["Denken Sie daran, dass Ihre Worte aufgeschrieben werden", "Schöpfen Sie Trost: Engel bitten um Vergebung für Gläubige", "Bringen Sie Ruhe und Sauberkeit in Gebetsstätten"],
+            "ar": ["تذكّر أن كلامك يُكتب", "تعزَّ بأن الملائكة يستغفرون للمؤمنين", "احرص على السكينة والنظافة في أماكن العبادة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-03-books",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 3", "de": "Grundlagen des Glaubens · 3", "ar": "أسس الإيمان · ٣"},
+        "title": {"en": "The revealed books", "de": "Die offenbarten Bücher", "ar": "الكتب المنزلة"},
+        "sub": {"en": "One message sent again and again, preserved in the Quran", "de": "Eine Botschaft, immer wieder gesandt, bewahrt im Koran", "ar": "رسالة واحدة تتابعت، وحُفظت في القرآن"},
+        "arabic": "الإيمان بالكتب"
+      },
+      "slides": [
+        {
+          "verse": "3:3-4",
+          "check": "Torah and the Gospel",
+          "title": {"en": "Guidance before the Quran", "de": "Rechtleitung vor dem Koran", "ar": "هداية قبل القرآن"},
+          "body": {"en": "The Quran confirms that Allah revealed the Torah and the Gospel before it, as guidance for people.", "de": "Der Koran bestätigt, dass Allah vor ihm die Tora und das Evangelium als Rechtleitung für die Menschen offenbarte.", "ar": "يقرر القرآن أن الله أنزل التوراة والإنجيل من قبله هدى للناس."}
+        },
+        {
+          "verse": "4:163",
+          "check": "Psalms",
+          "title": {"en": "The Zabur of Dawud", "de": "Der Zabur Dawuds", "ar": "زبور داود"},
+          "body": {"en": "Many prophets received revelation. Dawud was given the Zabur, often identified with the Psalms.", "de": "Viele Propheten empfingen Offenbarung. Dawud erhielt den Zabur, der oft mit den Psalmen gleichgesetzt wird.", "ar": "تلقى أنبياء كثيرون الوحي، وأوتي داود الزبور الذي يُطابَق كثيرًا بالمزامير."}
+        },
+        {
+          "verse": "87:18-19",
+          "check": "scriptures of Abraham and Moses",
+          "title": {"en": "The scrolls of Ibrahim and Musa", "de": "Die Blätter Ibrahims und Musas", "ar": "صحف إبراهيم وموسى"},
+          "body": {"en": "The Quran also mentions scriptures, suhuf, given to Ibrahim and Musa.", "de": "Der Koran erwähnt auch Schriften, Suhuf, die Ibrahim und Musa gegeben wurden.", "ar": "يذكر القرآن أيضًا صحفًا أوتيها إبراهيم وموسى."}
+        },
+        {
+          "title": {"en": "Books named in the Quran", "de": "Im Koran genannte Schriften", "ar": "كتب ذكرها القرآن"},
+          "list": {
+            "en": ["The Tawrah, given to Musa", "The Zabur, given to Dawud", "The Injil, given to Isa", "The Suhuf of Ibrahim and Musa", "The Quran, given to Muhammad"],
+            "de": ["Die Tora, Musa gegeben", "Der Zabur, Dawud gegeben", "Das Evangelium, Isa gegeben", "Die Blätter Ibrahims und Musas", "Der Koran, Muhammad gegeben"],
+            "ar": ["التوراة التي أوتيها موسى", "الزبور الذي أوتيه داود", "الإنجيل الذي أوتيه عيسى", "صحف إبراهيم وموسى", "القرآن الذي أُنزل على محمد ﷺ"]
+          }
+        },
+        {
+          "title": {"en": "Confirming and safeguarding", "de": "Bestätigend und bewahrend", "ar": "مصدّق ومهيمن"},
+          "body": {"en": "The Quran describes itself as confirming the earlier books and as a criterion over them (5:48). Muslims honour the earlier revelations as they were sent, and follow the Quran as the final guidance.", "de": "Der Koran beschreibt sich als Bestätigung der früheren Bücher und als Maßstab über ihnen (5:48). Muslime ehren die früheren Offenbarungen, wie sie herabgesandt wurden, und folgen dem Koran als letzter Rechtleitung.", "ar": "يصف القرآن نفسه بأنه مصدّق لما قبله من الكتب ومهيمن عليها (٥: ٤٨)، فيؤمن المسلمون بالكتب السابقة كما أُنزلت، ويتبعون القرآن هدايةً خاتمة."}
+        },
+        {
+          "verse": "15:9",
+          "check": "guardian",
+          "title": {"en": "Protected by Allah", "de": "Von Allah bewahrt", "ar": "محفوظ بحفظ الله"},
+          "body": {"en": "Allah Himself promises to guard the Quran. Generation after generation has kept it in hearts and in writing.", "de": "Allah selbst verspricht, den Koran zu bewahren. Generation um Generation hat ihn in Herzen und Schrift bewahrt.", "ar": "تكفّل الله بحفظ القرآن، وحفظته الأجيال جيلًا بعد جيل في الصدور والسطور."}
+        },
+        {
+          "title": {"en": "Living with the Book", "de": "Mit dem Buch leben", "ar": "العيش مع الكتاب"},
+          "list": {
+            "en": ["Read a little of the Quran every day", "Learn its meaning in your own language", "Speak with respect of the earlier scriptures"],
+            "de": ["Lesen Sie jeden Tag ein wenig im Koran", "Lernen Sie seine Bedeutung in Ihrer Sprache", "Sprechen Sie mit Achtung von den früheren Schriften"],
+            "ar": ["اقرأ شيئًا من القرآن كل يوم", "تعلّم معانيه بلغتك", "تحدّث عن الكتب السابقة باحترام"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-04-messengers",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 4", "de": "Grundlagen des Glaubens · 4", "ar": "أسس الإيمان · ٤"},
+        "title": {"en": "The prophets and messengers", "de": "Die Propheten und Gesandten", "ar": "الأنبياء والرسل"},
+        "sub": {"en": "Sent to every nation with one call: worship Allah alone", "de": "Zu jedem Volk gesandt, mit einem Ruf: Allah allein anzubeten", "ar": "أُرسلوا إلى كل أمة بدعوة واحدة: عبادة الله وحده"},
+        "arabic": "الإيمان بالرسل"
+      },
+      "slides": [
+        {
+          "verse": "16:36",
+          "check": "every nation",
+          "title": {"en": "A messenger to every nation", "de": "Ein Gesandter für jedes Volk", "ar": "رسول لكل أمة"},
+          "body": {"en": "No people was left without guidance. Every messenger brought the same core call.", "de": "Kein Volk blieb ohne Rechtleitung. Jeder Gesandte brachte denselben Kern der Botschaft.", "ar": "لم تُترك أمة بلا هداية، وجاء كل رسول بجوهر الدعوة نفسه."}
+        },
+        {
+          "verse": "21:25",
+          "check": "no deity except Me",
+          "title": {"en": "One message", "de": "Eine Botschaft", "ar": "رسالة واحدة"},
+          "body": {"en": "Laws differed, but the heart of every message was tawhid: worship Allah alone.", "de": "Die Gesetze unterschieden sich, doch der Kern jeder Botschaft war Tauhid: Allah allein anbeten.", "ar": "اختلفت الشرائع، لكن قلب كل رسالة هو التوحيد: عبادة الله وحده."}
+        },
+        {
+          "verse": "4:164",
+          "check": "have not related",
+          "title": {"en": "Not all are named", "de": "Nicht alle werden genannt", "ar": "لم يُذكروا جميعًا"},
+          "body": {"en": "The Quran tells the stories of some messengers and not of others. We believe in all of them.", "de": "Der Koran erzählt die Geschichten mancher Gesandter und anderer nicht. Wir glauben an sie alle.", "ar": "قصّ القرآن أخبار بعض الرسل ولم يقصّ أخبار آخرين، ونحن نؤمن بهم جميعًا."}
+        },
+        {
+          "verse": "6:84",
+          "check": "Joseph",
+          "title": {"en": "Many names in one passage", "de": "Viele Namen in einem Abschnitt", "ar": "أسماء كثيرة في موضع واحد"},
+          "body": {"en": "Surah al-An'am names eighteen prophets in verses 83 to 86. In all, the Quran names twenty-five.", "de": "Sure al-Anam nennt in den Versen 83 bis 86 achtzehn Propheten. Insgesamt nennt der Koran fünfundzwanzig.", "ar": "تذكر سورة الأنعام في الآيات ٨٣–٨٦ ثمانية عشر نبيًا، ومجموع من سمّاهم القرآن خمسة وعشرون."}
+        },
+        {
+          "verse": "46:35",
+          "check": "those of determination",
+          "title": {"en": "Those of firm resolve", "de": "Die Standhaften", "ar": "أولو العزم"},
+          "body": {"en": "Many scholars count five as the messengers of firm resolve: Nuh, Ibrahim, Musa, Isa and Muhammad, peace be upon them.", "de": "Viele Gelehrte zählen fünf zu den standhaften Gesandten: Nuh, Ibrahim, Musa, Isa und Muhammad, Friede sei mit ihnen.", "ar": "يعدّ كثير من العلماء أولي العزم من الرسل خمسة: نوحًا وإبراهيم وموسى وعيسى ومحمدًا عليهم الصلاة والسلام."}
+        },
+        {
+          "verse": "33:40",
+          "check": "seal",
+          "title": {"en": "The Seal of the Prophets", "de": "Das Siegel der Propheten", "ar": "خاتم النبيين"},
+          "body": {"en": "Muhammad is the last of the prophets. No prophet comes after him.", "de": "Muhammad ist der letzte der Propheten. Nach ihm kommt kein Prophet mehr.", "ar": "محمد ﷺ آخر الأنبياء، فلا نبي بعده."}
+        },
+        {
+          "title": {"en": "Living with this belief", "de": "Mit diesem Glauben leben", "ar": "العيش مع هذا الإيمان"},
+          "list": {
+            "en": ["Learn the stories of the prophets in the Quran", "Love them all, without making distinctions", "Follow the final Messenger in daily life"],
+            "de": ["Lernen Sie die Geschichten der Propheten im Koran", "Lieben Sie sie alle, ohne Unterschiede zu machen", "Folgen Sie dem letzten Gesandten im Alltag"],
+            "ar": ["تعلّم قصص الأنبياء في القرآن", "أحبّهم جميعًا دون تفريق", "اتبع خاتم الرسل في حياتك اليومية"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-05-last-day",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 5", "de": "Grundlagen des Glaubens · 5", "ar": "أسس الإيمان · ٥"},
+        "title": {"en": "The Last Day", "de": "Der Jüngste Tag", "ar": "اليوم الآخر"},
+        "sub": {"en": "The Day every deed is weighed, down to an atom", "de": "Der Tag, an dem jede Tat gewogen wird, bis zum kleinsten Stäubchen", "ar": "يوم توزن فيه الأعمال كلها مهما صغرت"},
+        "arabic": "الإيمان باليوم الآخر"
+      },
+      "slides": [
+        {
+          "verse": "36:78-79",
+          "check": "Who will give life to bones",
+          "title": {"en": "The One who began it", "de": "Der, Der den Anfang schuf", "ar": "من بدأ الخلق يعيده"},
+          "body": {"en": "The Quran answers doubt with a simple argument: the One who created the first time can create again.", "de": "Der Koran antwortet dem Zweifel mit einem einfachen Argument: Wer beim ersten Mal erschuf, kann wieder erschaffen.", "ar": "يرد القرآن على الشك بحجة بسيطة: من خلق أول مرة قادر على الإعادة."}
+        },
+        {
+          "verse": "82:1-3",
+          "check": "the stars fall",
+          "title": {"en": "When the sky breaks apart", "de": "Wenn der Himmel sich spaltet", "ar": "حين تتشقق السماء"},
+          "body": {"en": "The Quran describes the end of this world in powerful images: a sky torn open, scattered stars, bursting seas.", "de": "Der Koran beschreibt das Ende dieser Welt in starken Bildern: ein aufgerissener Himmel, verstreute Sterne, aufbrechende Meere.", "ar": "يصف القرآن نهاية هذا العالم بصور قوية: سماء متشققة، ونجوم متناثرة، وبحار متفجرة."}
+        },
+        {
+          "title": {"en": "Names of the Day", "de": "Namen des Tages", "ar": "من أسماء اليوم الآخر"},
+          "list": {
+            "en": ["Yawm al-Qiyamah, the Day of Resurrection", "Yawm ad-Din, the Day of Judgement", "Al-Haqqah, the inevitable reality", "Al-Qari'ah, the striking calamity", "Yawm al-Hisab, the Day of Reckoning"],
+            "de": ["Yaum al-Qiyama, der Tag der Auferstehung", "Yaum ad-Din, der Tag des Gerichts", "Al-Haqqa, die unausweichliche Wirklichkeit", "Al-Qaria, das Pochende", "Yaum al-Hisab, der Tag der Abrechnung"],
+            "ar": ["يوم القيامة", "يوم الدين", "الحاقة", "القارعة", "يوم الحساب"]
+          },
+          "body": {"en": "Several surahs carry such names: al-Qiyamah, al-Haqqah, al-Qari'ah and al-Waqi'ah.", "de": "Mehrere Suren tragen solche Namen: al-Qiyama, al-Haqqa, al-Qaria und al-Waqia.", "ar": "تحمل سور عدة هذه الأسماء: القيامة والحاقة والقارعة والواقعة."}
+        },
+        {
+          "verse": "21:47",
+          "check": "scales of justice",
+          "title": {"en": "Perfect justice", "de": "Vollkommene Gerechtigkeit", "ar": "عدل تام"},
+          "body": {"en": "No one will be wronged in the least. Even the smallest deed is brought forward.", "de": "Niemandem wird auch nur das Geringste an Unrecht geschehen. Selbst die kleinste Tat wird hervorgebracht.", "ar": "لا يُظلم أحد شيئًا، وحتى أصغر عمل يُؤتى به."}
+        },
+        {
+          "verse": "99:7-8",
+          "check": "atom's weight",
+          "title": {"en": "Nothing is lost", "de": "Nichts geht verloren", "ar": "لا يضيع شيء"},
+          "body": {"en": "Every small good counts, and so does every small harm. This turns ordinary days into opportunities.", "de": "Jedes kleine Gute zählt, ebenso jedes kleine Unrecht. Das macht gewöhnliche Tage zu Gelegenheiten.", "ar": "كل خير صغير محسوب، وكل شر صغير كذلك، وهذا يجعل الأيام العادية فرصًا."}
+        },
+        {
+          "verse": "23:101-102",
+          "check": "no relationship",
+          "title": {"en": "Each soul for itself", "de": "Jede Seele für sich", "ar": "كل نفس وعملها"},
+          "body": {"en": "Family ties will not carry anyone that Day. What counts is what each person brings.", "de": "Verwandtschaft trägt an jenem Tag niemanden. Es zählt, was jeder Mensch mitbringt.", "ar": "لا تنفع الأنساب أحدًا في ذلك اليوم، وإنما ينفع ما يقدّمه كل إنسان."}
+        },
+        {
+          "title": {"en": "Preparing for that Day", "de": "Sich auf jenen Tag vorbereiten", "ar": "الاستعداد لذلك اليوم"},
+          "list": {
+            "en": ["Repent today, while the door is open", "Settle your debts and ask people's forgiveness", "Do small good deeds consistently", "Remember death without losing hope"],
+            "de": ["Bereuen Sie heute, solange die Tür offen ist", "Begleichen Sie Ihre Schulden und bitten Sie Menschen um Verzeihung", "Tun Sie beständig kleine gute Taten", "Denken Sie an den Tod, ohne die Hoffnung zu verlieren"],
+            "ar": ["تب اليوم ما دام الباب مفتوحًا", "أدِّ ديونك واطلب السماح من الناس", "داوم على الأعمال الصالحة الصغيرة", "تذكّر الموت دون أن تفقد الرجاء"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-06-qadar",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 6", "de": "Grundlagen des Glaubens · 6", "ar": "أسس الإيمان · ٦"},
+        "title": {"en": "Belief in the decree", "de": "Der Glaube an die Bestimmung", "ar": "الإيمان بالقدر"},
+        "sub": {"en": "Allah's knowledge and will, our choice and responsibility", "de": "Allahs Wissen und Wille, unsere Wahl und Verantwortung", "ar": "علم الله ومشيئته، واختيارنا ومسؤوليتنا"},
+        "arabic": "القضاء والقدر"
+      },
+      "slides": [
+        {
+          "verse": "54:49",
+          "check": "predestination",
+          "title": {"en": "Everything by measure", "de": "Alles nach Maß", "ar": "كل شيء بتقدير"},
+          "body": {"en": "Qadar means that nothing happens outside Allah's knowledge, decree and wisdom.", "de": "Qadar bedeutet, dass nichts außerhalb von Allahs Wissen, Bestimmung und Weisheit geschieht.", "ar": "معنى القدر أنه لا يقع شيء خارج علم الله وتقديره وحكمته."}
+        },
+        {
+          "verse": "57:22-23",
+          "check": "in a register",
+          "title": {"en": "Written before it happens", "de": "Geschrieben, bevor es geschieht", "ar": "مكتوب قبل وقوعه"},
+          "body": {"en": "The verses give the reason: so that we neither despair over loss nor grow arrogant in success.", "de": "Die Verse nennen den Grund: damit wir weder über Verlust verzweifeln noch im Erfolg überheblich werden.", "ar": "تذكر الآيتان الحكمة: ألا نيأس عند الفقد ولا نتكبر عند النجاح."}
+        },
+        {
+          "verse": "9:51",
+          "check": "decreed for us",
+          "title": {"en": "Trust in hardship", "de": "Vertrauen in der Not", "ar": "التوكل في الشدة"},
+          "body": {"en": "Belief in the decree brings calm in hardship, because the believer relies on Allah.", "de": "Der Glaube an die Bestimmung schenkt Ruhe in der Not, weil der Gläubige sich auf Allah verlässt.", "ar": "الإيمان بالقدر يورث الطمأنينة في الشدائد، لأن المؤمن يتوكل على الله."}
+        },
+        {
+          "verse": "81:28-29",
+          "check": "whoever wills",
+          "title": {"en": "Our will and His will", "de": "Unser Wille und Sein Wille", "ar": "مشيئتنا ومشيئته"},
+          "body": {"en": "We truly choose, and we are responsible. Yet our will never acts outside Allah's will.", "de": "Wir wählen wirklich und tragen Verantwortung. Doch unser Wille wirkt nie außerhalb von Allahs Willen.", "ar": "نحن نختار حقًا ونُسأل عن اختيارنا، لكن مشيئتنا لا تخرج عن مشيئة الله."}
+        },
+        {
+          "verse": "13:11",
+          "check": "change what is in themselves",
+          "title": {"en": "Our part in change", "de": "Unser Anteil am Wandel", "ar": "دورنا في التغيير"},
+          "body": {"en": "Belief in qadar is not passivity. The Quran links change in our condition to change within ourselves.", "de": "Der Glaube an den Qadar ist keine Untätigkeit. Der Koran verbindet die Änderung unserer Lage mit der Änderung in uns selbst.", "ar": "الإيمان بالقدر ليس تواكلًا، فالقرآن يربط تغيّر أحوالنا بتغيير ما في أنفسنا."}
+        },
+        {
+          "title": {"en": "How theologians explain it", "de": "Wie Theologen es erklären", "ar": "كيف شرحه المتكلمون"},
+          "body": {"en": "Schools explain this balance in different words. Sunni theologians speak of human acquisition (kasb); Shia scholars, after Imam Ja'far as-Sadiq, call it a matter between two matters. Both reject compulsion and independence from Allah.", "de": "Die Schulen beschreiben dieses Gleichgewicht mit verschiedenen Worten. Sunnitische Theologen sprechen vom menschlichen Erwerb (Kasb); schiitische Gelehrte nennen es nach Imam Dschafar as-Sadiq eine Sache zwischen zwei Sachen. Beide verwerfen Zwang und Unabhängigkeit von Allah.", "ar": "تعبّر المدارس عن هذا التوازن بألفاظ مختلفة: فيتحدث متكلمو أهل السنة عن الكسب، ويصفه علماء الشيعة تبعًا للإمام جعفر الصادق بأنه أمر بين أمرين، وكلاهما يرفض الجبر والاستقلال عن الله."}
+        },
+        {
+          "verse": "18:23-24",
+          "check": "If Allah wills",
+          "title": {"en": "In sha Allah", "de": "In scha Allah", "ar": "إن شاء الله"},
+          "body": {"en": "Saying 'in sha Allah' about tomorrow is a small daily act of belief in the decree.", "de": "‚In scha Allah‘ über das Morgen zu sagen, ist ein kleiner täglicher Ausdruck des Glaubens an die Bestimmung.", "ar": "قول إن شاء الله عن الغد عمل يومي صغير من الإيمان بالقدر."}
+        },
+        {
+          "title": {"en": "Living with qadar", "de": "Mit dem Qadar leben", "ar": "العيش مع القدر"},
+          "list": {
+            "en": ["Plan and work hard, then rely on Allah", "In loss, remember that we belong to Allah", "In success, thank Allah and stay humble", "Never use the decree as an excuse for sin"],
+            "de": ["Planen und arbeiten Sie fleißig, dann vertrauen Sie auf Allah", "Denken Sie im Verlust daran, dass wir Allah gehören", "Danken Sie im Erfolg Allah und bleiben Sie demütig", "Benutzen Sie die Bestimmung nie als Ausrede für Sünde"],
+            "ar": ["خطّط واجتهد ثم توكل على الله", "تذكّر عند المصيبة أننا لله", "اشكر الله عند النجاح وتواضع", "لا تحتج بالقدر على المعصية"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-07-barzakh",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 7", "de": "Grundlagen des Glaubens · 7", "ar": "أسس الإيمان · ٧"},
+        "title": {"en": "The grave and the barzakh", "de": "Das Grab und der Barzach", "ar": "القبر والبرزخ"},
+        "sub": {"en": "What the Quran says about the time between death and resurrection", "de": "Was der Koran über die Zeit zwischen Tod und Auferstehung sagt", "ar": "ما يقوله القرآن عن المدة بين الموت والبعث"},
+        "arabic": "عالم البرزخ"
+      },
+      "slides": [
+        {
+          "verse": "23:99-100",
+          "check": "barrier",
+          "title": {"en": "A barrier until the Day", "de": "Eine Schranke bis zum Tag", "ar": "حاجز إلى يوم البعث"},
+          "body": {"en": "Barzakh means a barrier. It is the stage between death and resurrection, from which no one returns.", "de": "Barzach bedeutet Schranke. Es ist die Stufe zwischen Tod und Auferstehung, aus der niemand zurückkehrt.", "ar": "البرزخ هو الحاجز، وهو المرحلة بين الموت والبعث، لا يرجع منها أحد."}
+        },
+        {
+          "title": {"en": "A wish that comes too late", "de": "Ein Wunsch, der zu spät kommt", "ar": "أمنية بعد فوات الأوان"},
+          "body": {"en": "The same verses describe a dying person asking to go back and do good. The lesson is for the living: the time to act is now.", "de": "Dieselben Verse beschreiben einen Sterbenden, der bittet, zurückkehren und Gutes tun zu dürfen. Die Lehre gilt den Lebenden: Die Zeit zu handeln ist jetzt.", "ar": "تصف الآيتان نفسهما من يحضره الموت فيطلب الرجوع ليعمل صالحًا، والعبرة للأحياء: وقت العمل هو الآن."}
+        },
+        {
+          "verse": "14:27",
+          "check": "firm word",
+          "title": {"en": "Kept firm", "de": "Standhaft gehalten", "ar": "التثبيت"},
+          "body": {"en": "Sunni and Shia commentators connect this verse with the questioning in the grave: Allah keeps the believers steady.", "de": "Sunnitische und schiitische Kommentatoren verbinden diesen Vers mit der Befragung im Grab: Allah hält die Gläubigen standhaft.", "ar": "يربط مفسرو السنة والشيعة هذه الآية بسؤال القبر، فالله يثبّت المؤمنين."}
+        },
+        {
+          "verse": "40:46",
+          "check": "morning and evening",
+          "title": {"en": "Before the Hour", "de": "Vor der Stunde", "ar": "قبل قيام الساعة"},
+          "body": {"en": "Many scholars see in this verse a sign that reward and punishment begin in the barzakh, before the Day of Judgement.", "de": "Viele Gelehrte sehen in diesem Vers ein Zeichen, dass Lohn und Strafe schon im Barzach beginnen, vor dem Tag des Gerichts.", "ar": "يرى كثير من العلماء في هذه الآية دليلًا على أن النعيم والعذاب يبدآن في البرزخ قبل يوم القيامة."}
+        },
+        {
+          "verse": "3:169-170",
+          "check": "alive with their Lord",
+          "title": {"en": "A real life we cannot see", "de": "Ein wirkliches Leben, das wir nicht sehen", "ar": "حياة حقيقية لا نراها"},
+          "body": {"en": "The martyrs are alive and rejoicing. The barzakh is not nothingness but a life beyond our perception.", "de": "Die Märtyrer sind lebendig und freuen sich. Der Barzach ist kein Nichts, sondern ein Leben jenseits unserer Wahrnehmung.", "ar": "الشهداء أحياء فرحون، فالبرزخ ليس عدمًا بل حياة لا ندركها."}
+        },
+        {
+          "title": {"en": "What we know and what we do not", "de": "Was wir wissen und was nicht", "ar": "ما نعلمه وما لا نعلمه"},
+          "body": {"en": "The Quran tells us enough to prepare, not every detail. Further descriptions come from hadith, and scholars of both traditions warn against speculating beyond the sources.", "de": "Der Koran sagt uns genug, um uns vorzubereiten, nicht jedes Detail. Weitere Beschreibungen stammen aus Hadithen, und Gelehrte beider Traditionen warnen davor, über die Quellen hinaus zu spekulieren.", "ar": "يخبرنا القرآن بما يكفي للاستعداد لا بكل التفاصيل، وتأتي أوصاف أخرى في الحديث، ويحذّر علماء الفريقين من الخوض فيما وراء النصوص."}
+        },
+        {
+          "title": {"en": "Preparing for the grave", "de": "Sich auf das Grab vorbereiten", "ar": "الاستعداد للقبر"},
+          "list": {
+            "en": ["Hold firm to tawhid in word and deed", "Guard the prayer", "Leave charity and knowledge that continue", "Visit graves to remember, and pray for the dead"],
+            "de": ["Halten Sie in Wort und Tat am Tauhid fest", "Bewahren Sie das Gebet", "Hinterlassen Sie fortwirkende Spenden und Wissen", "Besuchen Sie Gräber zur Besinnung und beten Sie für die Toten"],
+            "ar": ["اثبت على التوحيد قولًا وعملًا", "حافظ على الصلاة", "اترك صدقة جارية وعلمًا ينتفع به", "زر القبور للعبرة وادعُ للموتى"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqidah-basics-08-jannah",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Foundations of faith · 8", "de": "Grundlagen des Glaubens · 8", "ar": "أسس الإيمان · ٨"},
+        "title": {"en": "Jannah as the Quran describes it", "de": "Das Paradies, wie der Koran es beschreibt", "ar": "الجنة كما وصفها القرآن"},
+        "sub": {"en": "Rivers, peace and the good pleasure of Allah", "de": "Flüsse, Frieden und das Wohlgefallen Allahs", "ar": "أنهار وسلام ورضا الله"},
+        "arabic": "الجنة"
+      },
+      "slides": [
+        {
+          "verse": "3:133",
+          "check": "as wide as the heavens and earth",
+          "title": {"en": "As wide as the heavens", "de": "So weit wie die Himmel", "ar": "سعة لا تُتصوّر"},
+          "body": {"en": "The Quran describes a garden whose width is like the heavens and the earth, prepared for the God-conscious.", "de": "Der Koran beschreibt einen Garten, so breit wie die Himmel und die Erde, bereitet für die Gottesfürchtigen.", "ar": "يصف القرآن جنة عرضها كعرض السماوات والأرض، أُعدّت للمتقين."}
+        },
+        {
+          "verse": "47:15",
+          "check": "rivers of milk",
+          "title": {"en": "Rivers of delight", "de": "Flüsse der Freude", "ar": "أنهار النعيم"},
+          "body": {"en": "Water that never spoils, milk that never changes, pure honey: images of a delight beyond this world.", "de": "Wasser, das nie verdirbt, Milch, die sich nie verändert, reiner Honig: Bilder einer Freude jenseits dieser Welt.", "ar": "ماء لا يتغير، ولبن لا يفسد طعمه، وعسل مصفّى: صور لنعيم يفوق هذه الدنيا."}
+        },
+        {
+          "verse": "32:17",
+          "check": "comfort for eyes",
+          "title": {"en": "Beyond imagination", "de": "Jenseits aller Vorstellung", "ar": "فوق التصور"},
+          "body": {"en": "What is kept hidden for the believers is beyond anything a soul can picture.", "de": "Was für die Gläubigen verborgen bereitliegt, übersteigt alles, was eine Seele sich ausmalen kann.", "ar": "ما أُخفي للمؤمنين يفوق كل ما تتخيله نفس."}
+        },
+        {
+          "verse": "56:25-26",
+          "check": "peace",
+          "title": {"en": "Only words of peace", "de": "Nur Worte des Friedens", "ar": "كلام طيب وسلام"},
+          "body": {"en": "No harsh words, no hurtful talk. The tongue we train here is a preparation for that peace.", "de": "Keine harten Worte, kein verletzendes Gerede. Die Zunge, die wir hier erziehen, ist eine Vorbereitung auf diesen Frieden.", "ar": "لا كلمة قاسية ولا حديث جارح، وتهذيب اللسان هنا استعداد لذلك السلام."}
+        },
+        {
+          "verse": "15:47-48",
+          "check": "resentment",
+          "title": {"en": "Hearts made clean", "de": "Gereinigte Herzen", "ar": "قلوب صافية"},
+          "body": {"en": "Allah removes every grudge from the hearts of its people. They sit as brothers, facing one another.", "de": "Allah nimmt jeden Groll aus den Herzen seiner Bewohner. Sie sitzen als Brüder einander gegenüber.", "ar": "ينزع الله كل ضغينة من قلوب أهلها، فيجلسون إخوانًا متقابلين."}
+        },
+        {
+          "verse": "10:9-10",
+          "check": "Praise to Allah, Lord of the worlds",
+          "title": {"en": "Their words there", "de": "Ihre Worte dort", "ar": "كلامهم فيها"},
+          "body": {"en": "Glorification, greetings of peace and praise: the language of Paradise is the language of dhikr.", "de": "Lobpreis, Friedensgruß und Dank: Die Sprache des Paradieses ist die Sprache des Gottgedenkens.", "ar": "تسبيح وتحية بالسلام وحمد: لغة الجنة هي لغة الذكر."}
+        },
+        {
+          "verse": "9:72",
+          "check": "approval from Allah is greater",
+          "title": {"en": "The greatest gift", "de": "Das größte Geschenk", "ar": "أعظم النعيم"},
+          "body": {"en": "Above gardens and dwellings stands Allah's good pleasure. That is the true success.", "de": "Über Gärten und Wohnungen steht Allahs Wohlgefallen. Das ist der wahre Erfolg.", "ar": "فوق الجنات والمساكن رضا الله، وذلك هو الفوز الحقيقي."}
+        },
+        {
+          "title": {"en": "Walking toward Jannah", "de": "Auf dem Weg ins Paradies", "ar": "الطريق إلى الجنة"},
+          "list": {
+            "en": ["Hasten to forgiveness through repentance", "Keep your tongue clean and kind", "Free your heart from grudges now", "Ask Allah for Paradise often"],
+            "de": ["Eilen Sie durch Reue zur Vergebung", "Halten Sie Ihre Zunge rein und freundlich", "Befreien Sie Ihr Herz schon jetzt von Groll", "Bitten Sie Allah oft um das Paradies"],
+            "ar": ["سارع إلى المغفرة بالتوبة", "احفظ لسانك نقيًا لطيفًا", "طهّر قلبك من الضغائن من الآن", "أكثر من سؤال الله الجنة"]
+          }
+        }
+      ]
+    }
+  ]
+}

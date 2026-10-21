@@ -1,0 +1,17 @@
+{ "set": "hadith-charity", "kind": "hadith", "theme": "charity", "tradition": "sunni",
+  "items": [
+    {"id": "wh-charity-bukhari-2320", "hadith": "bukhari:2320", "check": "plants a tree"},
+    {"id": "wh-charity-bukhari-1417", "hadith": "bukhari:1417", "check": "half a date"},
+    {"id": "wh-charity-bukhari-1410", "hadith": "bukhari:1410", "check": "as big as a mountain"},
+    {"id": "wh-charity-bukhari-1429", "hadith": "bukhari:1429", "check": "upper hand is better"},
+    {"id": "wh-charity-bukhari-1430", "hadith": "bukhari:1430", "check": "piece of gold"},
+    {"id": "wh-charity-bukhari-1442", "hadith": "bukhari:1442", "check": "Compensate every person who spends"},
+    {"id": "wh-charity-bukhari-1479", "hadith": "bukhari:1479", "check": "has not enough"},
+    {"id": "wh-charity-muslim-2308", "hadith": "muslim:2308", "check": "I will spend on you"},
+    {"id": "wh-charity-muslim-2328", "hadith": "muslim:2328", "check": "Every act of goodness"},
+    {"id": "wh-charity-muslim-2375", "hadith": "muslim:2375", "check": "do not calculate"},
+    {"id": "wh-charity-muslim-6316", "hadith": "muslim:6316", "check": "longest hands"},
+    {"id": "wh-charity-nawawi-26", "hadith": "nawawi:26", "check": "Every joint"},
+    {"id": "wh-charity-bukhari-2748", "hadith": "bukhari:2748", "check": "healthy and greedy"},
+    {"id": "wh-charity-bukhari-6034", "hadith": "bukhari:6034", "check": "answer was 'no"}
+  ] }

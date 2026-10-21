@@ -1,0 +1,15 @@
+{ "set": "hadith-hope", "kind": "hadith", "theme": "hope", "tradition": "sunni",
+  "items": [
+    {"id": "wh-hope-bukhari-7405", "hadith": "bukhari:7405", "check": "as My slave thinks"},
+    {"id": "wh-hope-bukhari-7501", "hadith": "bukhari:7501", "check": "ten good deeds"},
+    {"id": "wh-hope-bukhari-6467", "hadith": "bukhari:6467", "check": "receive good news"},
+    {"id": "wh-hope-muslim-6721", "hadith": "muslim:6721", "check": "glad tidings"},
+    {"id": "wh-hope-muslim-7231", "hadith": "muslim:7231", "check": "hoping only good"},
+    {"id": "wh-hope-bukhari-7474", "hadith": "bukhari:7474", "check": "intercession"},
+    {"id": "wh-hope-bukhari-7509", "hadith": "bukhari:7509", "check": "mustard seed"},
+    {"id": "wh-hope-bukhari-6423", "hadith": "bukhari:6423", "check": "sincerely"},
+    {"id": "wh-hope-bukhari-6642", "hadith": "bukhari:6642", "check": "one-half of the people of Paradise"},
+    {"id": "wh-hope-bukhari-5754", "hadith": "bukhari:5754", "check": "good word"},
+    {"id": "wh-hope-muslim-372", "hadith": "muslim:372", "check": "good tidings for the stranger"},
+    {"id": "wh-hope-bukhari-5678", "hadith": "bukhari:5678", "check": "its treatment"}
+  ] }

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-justice",
+  "kind": "reflection",
+  "theme": "justice",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-justice-01",
+      "text": {
+        "en": "Justice begins at home: dividing the last piece of cake fairly between children teaches them more than any lecture.",
+        "de": "Gerechtigkeit beginnt zu Hause: Das letzte Stück Kuchen gerecht unter Kindern aufzuteilen, lehrt sie mehr als jeder Vortrag.",
+        "ar": "العدل يبدأ في البيت، فقسمة آخر قطعة من الحلوى بين الأطفال بإنصاف تعلمهم أكثر من أي محاضرة."
+      }
+    },
+    {
+      "id": "wr-justice-02",
+      "text": {
+        "en": "Listen to both sides before you decide, even at the dinner table. Half a story is never the whole truth.",
+        "de": "Hören Sie beide Seiten an, bevor Sie urteilen, auch am Esstisch. Eine halbe Geschichte ist nie die ganze Wahrheit.",
+        "ar": "استمع إلى الطرفين قبل أن تحكم، ولو على مائدة الطعام، فنصف القصة ليس الحقيقة كلها أبدا."
+      }
+    },
+    {
+      "id": "wr-justice-03",
+      "text": {
+        "en": "Paying a fair wage on time, without making anyone ask twice, is justice with a human face.",
+        "de": "Einen gerechten Lohn pünktlich zu zahlen, ohne dass jemand zweimal fragen muss, ist Gerechtigkeit mit menschlichem Gesicht.",
+        "ar": "أن تدفع الأجر العادل في وقته دون أن يضطر أحد إلى السؤال مرتين، ذلك عدل بوجه إنساني."
+      }
+    },
+    {
+      "id": "wr-justice-04",
+      "text": {
+        "en": "Speaking up for someone who is being mocked in their absence is a quiet act of justice.",
+        "de": "Für jemanden einzutreten, über den in seiner Abwesenheit gespottet wird, ist eine stille Tat der Gerechtigkeit.",
+        "ar": "أن تدافع عمن يسخر منه الناس في غيابه فعل هادئ من أفعال العدل."
+      }
+    },
+    {
+      "id": "wr-justice-05",
+      "text": {
+        "en": "Grading a paper, reviewing a colleague, settling a family dispute: wherever you decide about others, justice is in your hands.",
+        "de": "Eine Arbeit benoten, einen Kollegen beurteilen, einen Familienstreit schlichten: Wo immer Sie über andere entscheiden, liegt Gerechtigkeit in Ihrer Hand.",
+        "ar": "تصحيح ورقة امتحان، أو تقييم زميل، أو فض نزاع عائلي: حيثما قررت في شأن غيرك، فالعدل بين يديك."
+      }
+    },
+    {
+      "id": "wr-justice-06",
+      "text": {
+        "en": "Admitting that the other side has a point, even in an argument you are winning, is a beautiful kind of fairness.",
+        "de": "Zuzugeben, dass die andere Seite recht hat, selbst in einem Streit, den Sie gerade gewinnen, ist eine schöne Art von Fairness.",
+        "ar": "أن تعترف بأن للطرف الآخر وجها من الحق، ولو في جدال تكاد تكسبه، نوع جميل من الإنصاف."
+      }
+    },
+    {
+      "id": "wr-justice-07",
+      "text": {
+        "en": "A teacher who gives the quiet student the same attention as the bright, loud one is practising justice every day.",
+        "de": "Eine Lehrerin, die dem stillen Schüler dieselbe Aufmerksamkeit schenkt wie dem klugen, lauten, übt jeden Tag Gerechtigkeit.",
+        "ar": "المعلمة التي تمنح التلميذ الهادئ الاهتمام نفسه الذي تمنحه للنابه الصاخب تمارس العدل كل يوم."
+      }
+    },
+    {
+      "id": "wr-justice-08",
+      "text": {
+        "en": "Justice without mercy becomes harsh, and mercy without justice becomes weak. The heart needs both.",
+        "de": "Gerechtigkeit ohne Barmherzigkeit wird hart, und Barmherzigkeit ohne Gerechtigkeit wird schwach. Das Herz braucht beides.",
+        "ar": "العدل بلا رحمة يصير قسوة، والرحمة بلا عدل تصير ضعفا، والقلب يحتاج إليهما معا."
+      }
+    },
+    {
+      "id": "wr-justice-09",
+      "text": {
+        "en": "Before you pass on a rumour, ask whether you would want it said about you. Justice also lives in what we forward.",
+        "de": "Bevor Sie ein Gerücht weitergeben, fragen Sie sich, ob Sie wollten, dass man es über Sie sagt. Auch im Weiterleiten wohnt Gerechtigkeit.",
+        "ar": "قبل أن تنقل شائعة اسأل نفسك: هل تحب أن يقال هذا عنك؟ فالعدل يسكن أيضا فيما نعيد إرساله."
+      }
+    },
+    {
+      "id": "wr-justice-10",
+      "text": {
+        "en": "Returning what you borrowed in the condition you received it is a small act of justice that keeps trust alive.",
+        "de": "Geliehenes in dem Zustand zurückzugeben, in dem Sie es bekommen haben, ist eine kleine Tat der Gerechtigkeit, die Vertrauen am Leben hält.",
+        "ar": "أن ترد ما استعرته بالحال التي أخذته بها فعل صغير من العدل يبقي الثقة حية."
+      }
+    },
+    {
+      "id": "wr-justice-11",
+      "text": {
+        "en": "Be just with yourself as well: do not judge your past self more harshly than you would judge a friend.",
+        "de": "Seien Sie auch mit sich selbst gerecht: Urteilen Sie über Ihr früheres Ich nicht härter, als Sie über einen Freund urteilen würden.",
+        "ar": "كن عادلا مع نفسك أيضا، فلا تحكم على ماضيك بأقسى مما تحكم به على صديق."
+      }
+    },
+    {
+      "id": "wr-justice-12",
+      "text": {
+        "en": "A fair word in a heated family meeting can cool the room faster than any compromise.",
+        "de": "Ein gerechtes Wort in einem hitzigen Familienrat kann den Raum schneller abkühlen als jeder Kompromiss.",
+        "ar": "كلمة منصفة في اجتماع عائلي محتدم قد تهدئ الأجواء أسرع من أي تسوية."
+      }
+    },
+    {
+      "id": "wr-justice-13",
+      "text": {
+        "en": "Treat the customer who will never come back as fairly as the one who comes every week.",
+        "de": "Behandeln Sie den Kunden, der nie wiederkommt, so gerecht wie den, der jede Woche kommt.",
+        "ar": "عامل الزبون الذي لن يعود أبدا بالإنصاف نفسه الذي تعامل به من يأتيك كل أسبوع."
+      }
+    },
+    {
+      "id": "wr-justice-14",
+      "text": {
+        "en": "Standing for what is right can feel lonely. It is still the right place to stand.",
+        "de": "Für das Richtige einzustehen kann sich einsam anfühlen. Es ist trotzdem der richtige Platz.",
+        "ar": "الوقوف مع الحق قد يشعرك بالوحدة، لكنه يبقى المكان الصحيح للوقوف."
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-honesty",
+  "kind": "reflection",
+  "theme": "honesty",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-honesty-01",
+      "text": {
+        "en": "Telling the truth when a small lie would be easier is how trust is built, one ordinary day at a time.",
+        "de": "Die Wahrheit zu sagen, wenn eine kleine Lüge einfacher wäre, ist die Art, wie Vertrauen wächst, Tag für Tag.",
+        "ar": "أن تقول الحق حين تكون الكذبة الصغيرة أسهل، هكذا تبنى الثقة، يوما عاديا بعد يوم."
+      }
+    },
+    {
+      "id": "wr-honesty-02",
+      "text": {
+        "en": "An honest \"I made a mistake\" at work often earns more respect than a perfect record ever could.",
+        "de": "Ein ehrliches „Ich habe einen Fehler gemacht“ bei der Arbeit bringt oft mehr Respekt als jede makellose Bilanz.",
+        "ar": "قولك بصدق في العمل: أخطأت، كثيرا ما يكسبك احتراما أكبر مما يكسبه سجل خال من الأخطاء."
+      }
+    },
+    {
+      "id": "wr-honesty-03",
+      "text": {
+        "en": "Truthfulness is a quiet kind of freedom: you never have to remember what you said.",
+        "de": "Wahrhaftigkeit ist eine stille Art von Freiheit: Sie müssen sich nie merken, was Sie gesagt haben.",
+        "ar": "الصدق نوع هادئ من الحرية، فلا تحتاج أبدا إلى أن تتذكر ماذا قلت."
+      }
+    },
+    {
+      "id": "wr-honesty-04",
+      "text": {
+        "en": "A trader who points out the bruise on the fruit before selling it is rich in something money cannot measure.",
+        "de": "Ein Händler, der auf die Druckstelle an der Frucht hinweist, bevor er sie verkauft, ist reich an etwas, das Geld nicht messen kann.",
+        "ar": "التاجر الذي ينبه إلى عيب الثمرة قبل أن يبيعها غني بشيء لا يقاس بالمال."
+      }
+    },
+    {
+      "id": "wr-honesty-05",
+      "text": {
+        "en": "Be truthful with children, even when it is hard. They learn honesty far more from what you do than from what you say.",
+        "de": "Seien Sie ehrlich zu Kindern, auch wenn es schwerfällt. Sie lernen Wahrhaftigkeit viel mehr aus Ihrem Tun als aus Ihren Worten.",
+        "ar": "كن صادقا مع الأطفال وإن كان ذلك صعبا، فهم يتعلمون الصدق مما تفعله أكثر بكثير مما تقوله."
+      }
+    },
+    {
+      "id": "wr-honesty-06",
+      "text": {
+        "en": "Honesty with yourself comes first. The hardest truths are often the ones we speak to the mirror.",
+        "de": "Ehrlichkeit mit sich selbst kommt zuerst. Die schwersten Wahrheiten sind oft die, die wir vor dem Spiegel aussprechen.",
+        "ar": "الصدق مع النفس يأتي أولا، وأصعب الحقائق كثيرا ما تكون تلك التي نقولها أمام المرآة."
+      }
+    },
+    {
+      "id": "wr-honesty-07",
+      "text": {
+        "en": "Keep even the promise you made in passing: the call you said you would make, the book you said you would return.",
+        "de": "Halten Sie auch das beiläufige Versprechen: den Anruf, den Sie angekündigt haben, das Buch, das Sie zurückgeben wollten.",
+        "ar": "أوف حتى بالوعد الذي قطعته عابرا: المكالمة التي قلت إنك ستجريها، والكتاب الذي قلت إنك ستعيده."
+      }
+    },
+    {
+      "id": "wr-honesty-08",
+      "text": {
+        "en": "Truth spoken gently heals; truth thrown like a stone wounds. Honesty and kindness belong together.",
+        "de": "Sanft ausgesprochene Wahrheit heilt; wie ein Stein geworfene Wahrheit verletzt. Ehrlichkeit und Güte gehören zusammen.",
+        "ar": "الحق إذا قيل برفق داوى، وإذا رمي كالحجر جرح، فالصدق واللطف متلازمان."
+      }
+    },
+    {
+      "id": "wr-honesty-09",
+      "text": {
+        "en": "An honest answer on a tax form, a time sheet or an exam is worship no one applauds, and that is exactly its beauty.",
+        "de": "Eine ehrliche Angabe in der Steuererklärung, auf dem Stundenzettel oder in der Prüfung ist Gottesdienst, dem niemand applaudiert, und gerade darin liegt seine Schönheit.",
+        "ar": "الإجابة الصادقة في استمارة الضرائب أو كشف ساعات العمل أو الامتحان عبادة لا يصفق لها أحد، وفي ذلك بالضبط جمالها."
+      }
+    },
+    {
+      "id": "wr-honesty-10",
+      "text": {
+        "en": "A reputation for honesty takes years to build and one lie to damage. Guard it like something precious.",
+        "de": "Der Ruf der Ehrlichkeit braucht Jahre, um zu wachsen, und eine einzige Lüge, um Schaden zu nehmen. Hüten Sie ihn wie etwas Kostbares.",
+        "ar": "سمعة الصدق تبنى في سنين وتخدشها كذبة واحدة، فاحرسها كشيء ثمين."
+      }
+    },
+    {
+      "id": "wr-honesty-11",
+      "text": {
+        "en": "Even in jokes, stay truthful. Laughter built on the truth leaves no one hurt or deceived.",
+        "de": "Bleiben Sie auch im Scherz wahrhaftig. Ein Lachen, das auf der Wahrheit beruht, verletzt und täuscht niemanden.",
+        "ar": "كن صادقا حتى في المزاح، فالضحك القائم على الحق لا يجرح أحدا ولا يخدعه."
+      }
+    },
+    {
+      "id": "wr-honesty-12",
+      "text": {
+        "en": "When you are trusted with a secret, a key or a small sum of money, you are trusted with a piece of someone's heart.",
+        "de": "Wenn man Ihnen ein Geheimnis, einen Schlüssel oder eine kleine Geldsumme anvertraut, vertraut man Ihnen ein Stück seines Herzens an.",
+        "ar": "حين يأتمنك أحد على سر أو مفتاح أو مبلغ صغير، فإنه يأتمنك على قطعة من قلبه."
+      }
+    },
+    {
+      "id": "wr-honesty-13",
+      "text": {
+        "en": "Give back the extra change the cashier handed you by mistake. A few coins are a small price for an honest heart.",
+        "de": "Geben Sie das Wechselgeld zurück, das Ihnen an der Kasse versehentlich zu viel gegeben wurde. Ein paar Münzen sind ein kleiner Preis für ein ehrliches Herz.",
+        "ar": "رد الباقي الزائد الذي أعطيته عند الصندوق خطأ، فبضع قطع نقدية ثمن زهيد لقلب صادق."
+      }
+    },
+    {
+      "id": "wr-honesty-14",
+      "text": {
+        "en": "Tell the truth in your messages and reviews too. Honesty online is still honesty, and it still counts.",
+        "de": "Sagen Sie die Wahrheit auch in Ihren Nachrichten und Bewertungen. Ehrlichkeit im Netz ist immer noch Ehrlichkeit, und sie zählt.",
+        "ar": "قل الحق في رسائلك وتقييماتك أيضا، فالصدق على الإنترنت يبقى صدقا، ويبقى محسوبا."
+      }
+    }
+  ]
+}

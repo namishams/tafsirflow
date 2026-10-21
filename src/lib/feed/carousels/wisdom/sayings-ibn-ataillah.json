@@ -1,0 +1,163 @@
+{
+  "set": "sayings-ibn-ataillah",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-ibn-ataillah-01",
+      "theme": "trust",
+      "text": {
+        "en": "Sometimes He gives to you and thereby holds something back from you, and sometimes He holds something back from you and thereby gives to you.",
+        "de": "Manchmal gibt Er Ihnen und verwehrt Ihnen damit etwas, und manchmal verwehrt Er Ihnen etwas und beschenkt Sie gerade damit.",
+        "ar": "ربما أعطاك فمنعك، وربما منعك فأعطاك."
+      },
+      "arabic": "ربما أعطاك فمنعك، وربما منعك فأعطاك.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-02",
+      "theme": "supplication",
+      "text": {
+        "en": "Do not let a delayed gift, despite your persistent prayer, make you despair. He has promised you an answer in what He chooses for you, not what you choose, at the time He wills, not the time you wish.",
+        "de": "Lassen Sie sich nicht entmutigen, wenn die Gabe trotz beharrlichen Bittens ausbleibt. Er hat Ihnen Erhörung zugesagt, in dem, was Er für Sie wählt, nicht was Sie wählen, und zu Seiner Zeit, nicht zu Ihrer.",
+        "ar": "لا يكن تأخر أمد العطاء مع الإلحاح في الدعاء موجبا ليأسك، فهو ضمن لك الإجابة فيما يختاره لك لا فيما تختاره لنفسك، وفي الوقت الذي يريد لا في الوقت الذي تريد."
+      },
+      "arabic": "لا يكن تأخر أمد العطاء مع الإلحاح في الدعاء موجبا ليأسك، فهو ضمن لك الإجابة فيما يختاره لك لا فيما تختاره لنفسك، وفي الوقت الذي يريد لا في الوقت الذي تريد.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-03",
+      "theme": "humility",
+      "text": {
+        "en": "Bury your existence in the soil of obscurity, for whatever sprouts without first being buried never bears its full fruit.",
+        "de": "Begraben Sie Ihr Dasein in der Erde der Unscheinbarkeit, denn was keimt, ohne zuvor begraben worden zu sein, bringt nie seine volle Frucht.",
+        "ar": "ادفن وجودك في أرض الخمول، فما نبت مما لم يدفن لا يتم نتاجه."
+      },
+      "arabic": "ادفن وجودك في أرض الخمول، فما نبت مما لم يدفن لا يتم نتاجه.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-04",
+      "theme": "sincerity",
+      "text": {
+        "en": "Deeds are lifeless forms standing upright, and their spirit is the presence of the secret of sincerity within them.",
+        "de": "Taten sind aufgerichtete, leblose Gestalten, und ihre Seele ist das Geheimnis der Aufrichtigkeit in ihnen.",
+        "ar": "الأعمال صور قائمة، وأرواحها وجود سر الإخلاص فيها."
+      },
+      "arabic": "الأعمال صور قائمة، وأرواحها وجود سر الإخلاص فيها.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-05",
+      "theme": "remembrance",
+      "text": {
+        "en": "Do not abandon remembrance because your heart is not present with Allah in it. Your heedlessness without His remembrance is worse than your heedlessness while remembering Him.",
+        "de": "Geben Sie das Gedenken nicht auf, weil Ihr Herz dabei nicht bei Allah ist. Ihre Achtlosigkeit ohne Sein Gedenken wiegt schwerer als Ihre Achtlosigkeit mit Seinem Gedenken.",
+        "ar": "لا تترك الذكر لعدم حضورك مع الله فيه، لأن غفلتك عن وجود ذكره أشد من غفلتك في وجود ذكره."
+      },
+      "arabic": "لا تترك الذكر لعدم حضورك مع الله فيه، لأن غفلتك عن وجود ذكره أشد من غفلتك في وجود ذكره.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-06",
+      "theme": "provision",
+      "text": {
+        "en": "Your striving for what has been guaranteed to you, while neglecting what has been asked of you, shows that your inner sight has grown dim.",
+        "de": "Dass Sie sich um das mühen, was Ihnen zugesichert ist, und vernachlässigen, was von Ihnen verlangt wird, zeigt, dass Ihr inneres Auge trüb geworden ist.",
+        "ar": "اجتهادك فيما ضمن لك، وتقصيرك فيما طلب منك، دليل على انطماس البصيرة منك."
+      },
+      "arabic": "اجتهادك فيما ضمن لك، وتقصيرك فيما طلب منك، دليل على انطماس البصيرة منك.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-07",
+      "theme": "trust",
+      "text": {
+        "en": "Even the strongest resolve cannot break through the walls of destiny.",
+        "de": "Selbst der stärkste Entschluss durchbricht nicht die Mauern der Bestimmung.",
+        "ar": "سوابق الهمم لا تخرق أسوار الأقدار."
+      },
+      "arabic": "سوابق الهمم لا تخرق أسوار الأقدار.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-08",
+      "theme": "trust",
+      "text": {
+        "en": "Give yourself rest from anxious planning: what Another has already taken care of for you, do not take upon yourself.",
+        "de": "Gönnen Sie sich Ruhe vom sorgenvollen Planen: Was ein Anderer bereits für Sie übernommen hat, müssen Sie nicht selbst schultern.",
+        "ar": "أرح نفسك من التدبير، فما قام به غيرك عنك لا تقم به لنفسك."
+      },
+      "arabic": "أرح نفسك من التدبير، فما قام به غيرك عنك لا تقم به لنفسك.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-09",
+      "theme": "time",
+      "text": {
+        "en": "Many a life is long in years yet poor in blessing, and many a life is short in years yet rich in blessing.",
+        "de": "So manches Leben ist lang an Jahren und arm an Segen, und so manches ist kurz an Jahren und reich an Segen.",
+        "ar": "رب عمر اتسعت آماده وقلت أمداده، ورب عمر قليلة آماده كثيرة أمداده."
+      },
+      "arabic": "رب عمر اتسعت آماده وقلت أمداده، ورب عمر قليلة آماده كثيرة أمداده.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-10",
+      "theme": "hope",
+      "text": {
+        "en": "Let no sin seem so great to you that it keeps you from thinking well of Allah. Whoever knows his Lord sees his sin as small beside His generosity.",
+        "de": "Lassen Sie keine Sünde so groß werden, dass sie Sie davon abhält, Gutes von Allah zu denken. Wer seinen Herrn kennt, sieht seine Sünde neben Seiner Großzügigkeit als klein.",
+        "ar": "لا يعظم الذنب عندك عظمة تصدك عن حسن الظن بالله تعالى، فإن من عرف ربه استصغر في جنب كرمه ذنبه."
+      },
+      "arabic": "لا يعظم الذنب عندك عظمة تصدك عن حسن الظن بالله تعالى، فإن من عرف ربه استصغر في جنب كرمه ذنبه.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-11",
+      "theme": "contentment",
+      "text": {
+        "en": "The branches of humiliation grow only from the seed of greed.",
+        "de": "Die Zweige der Erniedrigung wachsen nur aus dem Samen der Gier.",
+        "ar": "ما بسقت أغصان ذل إلا على بذر طمع."
+      },
+      "arabic": "ما بسقت أغصان ذل إلا على بذر طمع.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-ataillah-12",
+      "theme": "humility",
+      "text": {
+        "en": "People praise you for what they assume is in you, so blame yourself for what you know is in you.",
+        "de": "Die Menschen loben Sie für das, was sie in Ihnen vermuten. Tadeln Sie sich selbst für das, was Sie von sich wissen.",
+        "ar": "الناس يمدحونك لما يظنونه فيك، فكن أنت ذاما لنفسك لما تعلمه منها."
+      },
+      "arabic": "الناس يمدحونك لما يظنونه فيك، فكن أنت ذاما لنفسك لما تعلمه منها.",
+      "by": { "en": "Ibn 'Ata'illah al-Iskandari", "de": "Ibn 'Ata'allah al-Iskandari", "ar": "ابن عطاء الله السكندري" },
+      "work": { "en": "al-Hikam", "de": "al-Hikam", "ar": "الحكم العطائية" },
+      "needs_review": true
+    }
+  ]
+}

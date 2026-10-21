@@ -1,0 +1,676 @@
+{
+  "series": "companions",
+  "label": { "en": "Companions of the Prophet", "de": "Gefährten des Propheten", "ar": "الصحابة" },
+  "topic": "seerah",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "companions-01-khadijah",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Companions · 1", "de": "Gefährten · 1", "ar": "الصحابة · ١" },
+        "title": { "en": "Khadijah bint Khuwaylid", "de": "Chadīdscha bint Chuwailid", "ar": "خديجة بنت خويلد" },
+        "sub": { "en": "The first to believe, and the Prophet's support in the hardest years", "de": "Die Erste, die glaubte, und die Stütze des Propheten in den schwersten Jahren", "ar": "أول من آمن، وسند النبي ﷺ في أشد السنين" },
+        "arabic": "أم المؤمنين خديجة"
+      },
+      "slides": [
+        {
+          "title": { "en": "A woman of standing", "de": "Eine angesehene Frau", "ar": "امرأة ذات مكانة" },
+          "body": { "en": "Khadijah was one of the most respected people of Makkah: a successful merchant from a noble family, known for her dignity and good judgement. She is reported to have been called at-Tahirah, the pure, even before Islam.", "de": "Chadīdscha gehörte zu den angesehensten Menschen Mekkas: eine erfolgreiche Kauffrau aus vornehmer Familie, bekannt für Würde und kluges Urteil. Schon vor dem Islam soll man sie at-Tāhira genannt haben, die Reine.", "ar": "كانت خديجة من أكرم أهل مكة: تاجرة ناجحة من بيت شريف، معروفة بالوقار وحسن الرأي، ويُروى أنها كانت تُلقّب في الجاهلية بالطاهرة." }
+        },
+        {
+          "title": { "en": "She chose him", "de": "Sie wählte ihn", "ar": "هي التي اختارته" },
+          "body": { "en": "She hired him for her trade, saw his honesty and proposed marriage herself. For about twenty-five years, until her death, she was his only wife.", "de": "Sie stellte ihn für ihren Handel ein, erkannte seine Ehrlichkeit und schlug ihm selbst die Ehe vor. Rund fünfundzwanzig Jahre, bis zu ihrem Tod, war sie seine einzige Frau.", "ar": "استأجرته في تجارتها فرأت أمانته، فعرضت عليه الزواج بنفسها، وظلت زوجته الوحيدة نحو خمس وعشرين سنة حتى توفيت." }
+        },
+        {
+          "title": { "en": "The first to believe", "de": "Die Erste im Glauben", "ar": "أول المؤمنين" },
+          "body": { "en": "When the first revelation came, Khadijah was the first person to believe in his message. She did not ask for proof; she knew the man.", "de": "Als die erste Offenbarung kam, war Chadīdscha der erste Mensch, der an seine Botschaft glaubte. Sie verlangte keinen Beweis; sie kannte den Menschen.", "ar": "لما نزل الوحي كانت خديجة أول من آمن برسالته، لم تطلب دليلًا، فقد كانت تعرف الرجل." }
+        },
+        {
+          "title": { "en": "Her wealth for the message", "de": "Ihr Vermögen für die Botschaft", "ar": "مالها في سبيل الدعوة" },
+          "body": { "en": "She spent her fortune on the message and on the believers. During the boycott she shared the hardship of the valley with the Prophet's clan, though she could have lived in comfort.", "de": "Sie gab ihr Vermögen für die Botschaft und die Gläubigen. Während des Boykotts teilte sie die Not im Tal mit der Sippe des Propheten, obwohl sie in Wohlstand hätte leben können.", "ar": "أنفقت مالها في سبيل الدعوة وعلى المؤمنين، وشاركت عشيرة النبي ﷺ شدة الشِّعب أيام المقاطعة، وكان بوسعها أن تعيش في رخاء." }
+        },
+        {
+          "verse": "66:11",
+          "check": "wife of Pharaoh",
+          "title": { "en": "Among the best of women", "de": "Unter den besten Frauen", "ar": "من خير النساء" },
+          "body": { "en": "The Quran holds up Asiyah and Maryam as examples. Hadith collections of both traditions name Khadijah beside them among the best of women.", "de": "Der Koran stellt Āsiya und Maryam als Vorbilder hin. Hadith-Sammlungen beider Traditionen nennen Chadīdscha neben ihnen unter den besten Frauen.", "ar": "يضرب القرآن آسية ومريم مثلًا للمؤمنين، وتذكر كتب الحديث عند الفريقين خديجة معهما في خير النساء." }
+        },
+        {
+          "title": { "en": "A greeting from her Lord", "de": "Ein Gruß ihres Herrn", "ar": "سلامٌ من ربها" },
+          "body": { "en": "Hadith reports tell that the angel Jibril once brought her a greeting of peace from her Lord, with good news of a home in Paradise.", "de": "Hadith-Berichte erzählen, dass der Engel Gabriel ihr einst einen Friedensgruß ihres Herrn überbrachte, mit der frohen Botschaft eines Hauses im Paradies.", "ar": "تروي الأحاديث أن جبريل عليه السلام حمل إليها السلام من ربها، وبشّرها ببيت في الجنة." }
+        },
+        {
+          "title": { "en": "Never forgotten", "de": "Nie vergessen", "ar": "لم تُنسَ أبدًا" },
+          "body": { "en": "She died around 619 CE, about three years before the Hijrah. Long afterwards, the Prophet still spoke of her with love and honoured her friends.", "de": "Sie starb um 619 n. Chr., etwa drei Jahre vor der Hidschra. Noch lange danach sprach der Prophet mit Liebe von ihr und ehrte ihre Freundinnen.", "ar": "توفيت نحو سنة ٦١٩م، قبل الهجرة بنحو ثلاث سنين، وظل النبي ﷺ بعدها زمنًا طويلًا يذكرها بحب ويكرم صديقاتها." }
+        },
+        {
+          "title": { "en": "What Khadijah teaches", "de": "Was Chadīdscha lehrt", "ar": "ما تعلّمنا خديجة" },
+          "list": {
+            "en": ["Believe in the good you see in people", "Use your means for what is right", "Loyalty in hard times is the truest love"],
+            "de": ["Glauben Sie an das Gute, das Sie in Menschen sehen", "Setzen Sie Ihre Mittel für das Richtige ein", "Treue in schweren Zeiten ist die wahrste Liebe"],
+            "ar": ["ثِق بالخير الذي تراه في الناس", "سخّر ما تملك لما هو حق", "الوفاء في الشدة أصدق الحب"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }]
+    },
+    {
+      "id": "companions-02-ali-ibn-abi-talib",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Companions · 2", "de": "Gefährten · 2", "ar": "الصحابة · ٢" },
+        "title": { "en": "'Ali ibn Abi Talib", "de": "ʿAlī ibn Abī Tālib", "ar": "علي بن أبي طالب" },
+        "sub": { "en": "Raised in the Prophet's house, among the first to believe, a man of knowledge and courage", "de": "Im Haus des Propheten aufgewachsen, einer der Ersten im Glauben, ein Mann des Wissens und des Mutes", "ar": "نشأ في بيت النبي ﷺ، ومن أوائل المؤمنين، صاحب علم وشجاعة" },
+        "arabic": "علي بن أبي طالب"
+      },
+      "slides": [
+        {
+          "title": { "en": "Raised by the Prophet", "de": "Vom Propheten aufgezogen", "ar": "في كنف النبي ﷺ" },
+          "body": { "en": "When Abu Talib faced hard times, the Prophet took his young cousin 'Ali into his own home. 'Ali grew up beside him, before and after the revelation.", "de": "Als Abū Tālib in Not geriet, nahm der Prophet seinen jungen Vetter ʿAlī in sein eigenes Haus auf. ʿAlī wuchs an seiner Seite auf, vor und nach der Offenbarung.", "ar": "لما ضاق الحال بأبي طالب ضمّ النبي ﷺ ابن عمه الصغير عليًّا إلى بيته، فنشأ إلى جانبه قبل الوحي وبعده." }
+        },
+        {
+          "title": { "en": "Faith as a boy", "de": "Glaube schon als Junge", "ar": "إيمان منذ الصبا" },
+          "body": { "en": "'Ali accepted Islam as a boy, among the very first believers. He never bowed to an idol.", "de": "ʿAlī nahm den Islam schon als Junge an, als einer der allerersten Gläubigen. Nie hat er sich vor einem Götzenbild verneigt.", "ar": "أسلم علي صبيًّا، فكان من أوائل المؤمنين، ولم يسجد لصنم قط." }
+        },
+        {
+          "title": { "en": "The night of the Hijrah", "de": "Die Nacht der Hidschra", "ar": "ليلة الهجرة" },
+          "body": { "en": "He slept in the Prophet's bed while enemies waited outside. Then he returned the trusts left with the Prophet to their owners before joining him in Madinah.", "de": "Er schlief im Bett des Propheten, während draußen die Feinde warteten. Dann gab er das dem Propheten anvertraute Gut seinen Besitzern zurück und folgte ihm nach Medina.", "ar": "نام في فراش النبي ﷺ والأعداء ينتظرون بالباب، ثم ردّ الأمانات التي كانت عند النبي ﷺ إلى أهلها، ولحق به إلى المدينة." }
+        },
+        {
+          "title": { "en": "The banner at Khaybar", "de": "Das Banner von Chaibar", "ar": "الراية يوم خيبر" },
+          "body": { "en": "At Khaybar the Prophet gave him the banner, and the fortress was opened under his leadership. Hadith collections of both traditions preserve the Prophet's praise of him that day.", "de": "Bei Chaibar übergab ihm der Prophet das Banner, und die Festung wurde unter seiner Führung geöffnet. Hadith-Sammlungen beider Traditionen bewahren das Lob, das der Prophet ihm an jenem Tag aussprach.", "ar": "يوم خيبر أعطاه النبي ﷺ الراية، ففُتح الحصن على يديه، وتحفظ كتب الحديث عند الفريقين ثناء النبي ﷺ عليه في ذلك اليوم." }
+        },
+        {
+          "verse": "76:8-9",
+          "check": "the needy, the orphan, and the captive",
+          "title": { "en": "Feeding for the sake of Allah", "de": "Speisen um Allahs willen", "ar": "إطعامٌ لوجه الله" },
+          "body": { "en": "Several commentators, Sunni and Shia, link these verses to 'Ali, Fatimah and their household; others read them as general.", "de": "Mehrere Kommentatoren, sunnitische wie schiitische, beziehen diese Verse auf ʿAlī, Fātima und ihr Haus; andere verstehen sie allgemein.", "ar": "يربط عدد من المفسرين، سنةً وشيعة، هاتين الآيتين بعلي وفاطمة وأهل بيتهما، ويحملهما آخرون على العموم." }
+        },
+        {
+          "title": { "en": "Knowledge and leadership", "de": "Wissen und Führung", "ar": "علمٌ وإمامة" },
+          "body": { "en": "He was known for deep knowledge of the Quran and for sound judgement. Sunni Muslims honour him as the fourth rightly guided caliph, Shia Muslims as the first Imam. He died in Kufa in 40 AH (661 CE).", "de": "Er war für tiefes Wissen über den Koran und für kluges Urteil bekannt. Sunniten ehren ihn als vierten rechtgeleiteten Kalifen, Schiiten als ersten Imam. Er starb 40 n. H. (661 n. Chr.) in Kufa.", "ar": "عُرف بعلمه الواسع بالقرآن وسداد قضائه، ويجلّه أهل السنة رابعًا للخلفاء الراشدين، ويجلّه الشيعة إمامًا أول. وتوفي بالكوفة سنة ٤٠هـ (٦٦١م)." }
+        },
+        {
+          "title": { "en": "Lessons from 'Ali", "de": "Lehren von ʿAlī", "ar": "دروس من علي" },
+          "list": {
+            "en": ["Let your faith begin early and stay firm", "Courage and knowledge belong together", "Keep every trust, even in danger"],
+            "de": ["Lassen Sie Ihren Glauben früh beginnen und fest bleiben", "Mut und Wissen gehören zusammen", "Bewahren Sie jedes anvertraute Gut, auch in Gefahr"],
+            "ar": ["ابدأ إيمانك مبكرًا واثبت عليه", "الشجاعة والعلم متلازمان", "أدِّ كل أمانة ولو في الخطر"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }, { "label": "Al-Qurtubi, al-Jami' li-Ahkam al-Qur'an, on 76:8" }]
+    },
+    {
+      "id": "companions-03-fatimah",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Companions · 3", "de": "Gefährten · 3", "ar": "الصحابة · ٣" },
+        "title": { "en": "Fatimah az-Zahra", "de": "Fātima az-Zahrāʾ", "ar": "فاطمة الزهراء" },
+        "sub": { "en": "The Prophet's daughter, close to him in manner and in heart", "de": "Die Tochter des Propheten, ihm nah in Wesen und Herz", "ar": "بنت النبي ﷺ، قريبة منه خُلقًا وقلبًا" },
+        "arabic": "فاطمة الزهراء"
+      },
+      "slides": [
+        {
+          "title": { "en": "Daughter of the Prophet and Khadijah", "de": "Tochter des Propheten und Chadīdschas", "ar": "بنت النبي ﷺ وخديجة" },
+          "body": { "en": "Fatimah grew up in Makkah, in the house where revelation came down. Her title az-Zahra means the radiant one.", "de": "Fātima wuchs in Mekka auf, in dem Haus, in das die Offenbarung herabkam. Ihr Beiname az-Zahrāʾ bedeutet die Strahlende.", "ar": "نشأت فاطمة في مكة في البيت الذي نزل فيه الوحي، ولقبها الزهراء يعني المشرقة." }
+        },
+        {
+          "title": { "en": "Beside her father", "de": "An der Seite ihres Vaters", "ar": "إلى جانب أبيها" },
+          "body": { "en": "In Makkah she stood by her father when he was mocked and harmed. Reports tell of her clearing away the filth that enemies had thrown on his back while he prayed at the Ka'bah.", "de": "In Mekka stand sie ihrem Vater bei, als man ihn verspottete und ihm schadete. Berichte erzählen, wie sie den Unrat entfernte, den Feinde ihm beim Gebet an der Kaaba auf den Rücken geworfen hatten.", "ar": "وقفت في مكة إلى جانب أبيها حين سُخر منه وأوذي، وتذكر الروايات أنها أزالت عن ظهره الأذى الذي ألقاه أعداؤه وهو يصلي عند الكعبة." }
+        },
+        {
+          "title": { "en": "So much like her father", "de": "Ihrem Vater so ähnlich", "ar": "شديدة الشبه بأبيها" },
+          "body": { "en": "Companions noticed how much she resembled him in the way she walked and spoke. Reports say that when she came to him, he rose to welcome her and seated her beside him.", "de": "Die Gefährten bemerkten, wie sehr sie ihm in Gang und Sprache glich. Berichten zufolge stand er auf, wenn sie zu ihm kam, hieß sie willkommen und ließ sie neben sich sitzen.", "ar": "لاحظ الصحابة شدة شبهها به في مشيتها وحديثها، وتذكر الروايات أنها إذا دخلت عليه قام إليها ورحّب بها وأجلسها إلى جانبه." }
+        },
+        {
+          "title": { "en": "A home in Madinah", "de": "Ein Zuhause in Medina", "ar": "بيت في المدينة" },
+          "body": { "en": "In Madinah she married 'Ali ibn Abi Talib. Their home was simple, and their sons al-Hasan and al-Husayn were dearly loved by the Prophet.", "de": "In Medina heiratete sie ʿAlī ibn Abī Tālib. Ihr Zuhause war schlicht, und ihre Söhne al-Hasan und al-Husain liebte der Prophet innig.", "ar": "تزوجت في المدينة علي بن أبي طالب، وكان بيتهما بسيطًا، وكان ابناهما الحسن والحسين أحب الناس إلى النبي ﷺ." }
+        },
+        {
+          "verse": "3:61",
+          "check": "our sons and your sons",
+          "title": { "en": "The day of mutual prayer", "de": "Der Tag der gegenseitigen Anrufung", "ar": "يوم المباهلة" },
+          "body": { "en": "Commentators and hadith works of both traditions report that for this occasion the Prophet brought 'Ali, Fatimah, al-Hasan and al-Husayn.", "de": "Kommentatoren und Hadith-Werke beider Traditionen berichten, dass der Prophet zu diesem Anlass ʿAlī, Fātima, al-Hasan und al-Husain mitbrachte.", "ar": "تروي كتب التفسير والحديث عند الفريقين أن النبي ﷺ خرج لهذه المباهلة بعلي وفاطمة والحسن والحسين." }
+        },
+        {
+          "title": { "en": "A dhikr instead of a servant", "de": "Ein Gedenken statt eines Dieners", "ar": "ذكرٌ خيرٌ من خادم" },
+          "arabic": "سبحان الله، الحمد لله، الله أكبر",
+          "body": { "en": "When Fatimah asked for a servant to ease her heavy work, the Prophet taught her and 'Ali a dhikr for bedtime: Allahu akbar 34 times, al-hamdu lillah and subhan Allah 33 times each. It is known as the tasbih of Fatimah.", "de": "Als Fātima um einen Diener bat, um ihre schwere Arbeit zu erleichtern, lehrte der Prophet sie und ʿAlī ein Gedenken vor dem Schlafen: Allāhu akbar 34-mal, al-hamdu lillāh und subhān Allāh je 33-mal. Es heißt Tasbīh der Fātima.", "ar": "لما طلبت فاطمة خادمًا يخفف عنها شدة العمل علّمها النبي ﷺ وعليًّا ذكرًا عند النوم: التكبير أربعًا وثلاثين، والتحميد والتسبيح ثلاثًا وثلاثين لكلٍّ منهما، ويُعرف بتسبيح فاطمة." }
+        },
+        {
+          "title": { "en": "A leader of the women of Paradise", "de": "Eine Herrin der Frauen des Paradieses", "ar": "سيدة نساء أهل الجنة" },
+          "body": { "en": "Hadith collections of both traditions report that the Prophet called her a leader of the women of Paradise. She died a few months after her father, the first of his family to follow him.", "de": "Hadith-Sammlungen beider Traditionen berichten, dass der Prophet sie eine Herrin der Frauen des Paradieses nannte. Sie starb wenige Monate nach ihrem Vater, als Erste seiner Familie, die ihm folgte.", "ar": "تروي كتب الحديث عند الفريقين أن النبي ﷺ سمّاها سيدة نساء أهل الجنة، وتوفيت بعد أبيها بأشهر قليلة، فكانت أول أهله لحوقًا به." }
+        },
+        {
+          "title": { "en": "What Fatimah teaches", "de": "Was Fātima lehrt", "ar": "ما تعلّمنا فاطمة" },
+          "list": {
+            "en": ["Stand by your parents when others turn against them", "Find strength in the remembrance of Allah", "Simplicity and dignity can live together"],
+            "de": ["Stehen Sie Ihren Eltern bei, wenn andere sich gegen sie wenden", "Schöpfen Sie Kraft aus dem Gedenken Allahs", "Schlichtheit und Würde passen zusammen"],
+            "ar": ["قف مع والديك حين ينقلب الناس عليهما", "استمد قوتك من ذكر الله", "البساطة والكرامة تجتمعان"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }, { "label": "Sahih Muslim, report of Sa'd ibn Abi Waqqas on 3:61" }, { "label": "Sahih al-Bukhari 3705 (the tasbih before sleep)" }]
+    },
+    {
+      "id": "companions-04-hamzah",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Companions · 4", "de": "Gefährten · 4", "ar": "الصحابة · ٤" },
+        "title": { "en": "Hamzah ibn 'Abd al-Muttalib", "de": "Hamza ibn ʿAbd al-Muttalib", "ar": "حمزة بن عبد المطلب" },
+        "sub": { "en": "The Prophet's uncle and foster brother, remembered as the lion of Allah", "de": "Onkel und Milchbruder des Propheten, in Erinnerung als Löwe Allahs", "ar": "عم النبي ﷺ وأخوه من الرضاعة، أسد الله" },
+        "arabic": "أسد الله"
+      },
+      "slides": [
+        {
+          "title": { "en": "Uncle and foster brother", "de": "Onkel und Milchbruder", "ar": "عمٌّ وأخ من الرضاعة" },
+          "body": { "en": "Hamzah was one of the Prophet's uncles and close to him in age. He was also his foster brother: they had been nursed by the same woman.", "de": "Hamza war einer der Onkel des Propheten und ihm im Alter nah. Er war auch sein Milchbruder: Dieselbe Frau hatte beide gestillt.", "ar": "كان حمزة من أعمام النبي ﷺ وقريبًا منه في السن، وكان أخاه من الرضاعة، إذ أرضعتهما امرأة واحدة." }
+        },
+        {
+          "title": { "en": "A hunter's anger", "de": "Der Zorn eines Jägers", "ar": "غضبة الصياد" },
+          "body": { "en": "Returning from a hunt one day, he heard that Abu Jahl had insulted his nephew. Sira works report that he confronted Abu Jahl in public and declared that he too followed Muhammad's religion.", "de": "Als er eines Tages von der Jagd heimkehrte, hörte er, dass Abū Dschahl seinen Neffen beleidigt hatte. Nach den Sīra-Werken stellte er Abū Dschahl öffentlich zur Rede und erklärte, auch er folge der Religion Muhammads.", "ar": "عاد يومًا من الصيد فبلغه أن أبا جهل نال من ابن أخيه، فتروي كتب السيرة أنه واجهه أمام الناس، وأعلن أنه على دين محمد." }
+        },
+        {
+          "title": { "en": "Strength for the believers", "de": "Stärke für die Gläubigen", "ar": "عزٌّ للمؤمنين" },
+          "body": { "en": "His acceptance of Islam in the early Makkan years gave the small community new courage. Quraysh now had to reckon with one of their strongest men.", "de": "Seine Annahme des Islam in den frühen mekkanischen Jahren gab der kleinen Gemeinschaft neuen Mut. Die Quraisch mussten nun mit einem ihrer stärksten Männer rechnen.", "ar": "كان إسلامه في السنوات المكية الأولى قوة جديدة للجماعة الصغيرة، وصار على قريش أن تحسب حساب واحد من أشد رجالها." }
+        },
+        {
+          "verse": "22:19",
+          "check": "two adversaries",
+          "title": { "en": "The first duel at Badr", "de": "Der erste Zweikampf bei Badr", "ar": "المبارزة الأولى يوم بدر" },
+          "body": { "en": "Abu Dharr is reported to have sworn that this verse refers to the duel at Badr, where Hamzah, 'Ali and 'Ubaydah ibn al-Harith stepped forward.", "de": "Abū Dharr soll geschworen haben, dass dieser Vers den Zweikampf bei Badr meint, bei dem Hamza, ʿAlī und ʿUbaida ibn al-Hārith hervortraten.", "ar": "يُروى أن أبا ذر أقسم أن هذه الآية نزلت في المبارزة يوم بدر، حين برز حمزة وعلي وعبيدة بن الحارث." }
+        },
+        {
+          "title": { "en": "Martyred at Uhud", "de": "Märtyrer bei Uhud", "ar": "شهيد أحد" },
+          "body": { "en": "At Uhud he was killed by Wahshi, an enslaved man who had been promised his freedom for the deed. His body was mutilated, and the Prophet's grief was deep.", "de": "Bei Uhud wurde er von Wahschī getötet, einem versklavten Mann, dem man für die Tat die Freiheit versprochen hatte. Sein Leichnam wurde verstümmelt, und die Trauer des Propheten war tief.", "ar": "قُتل يوم أحد على يد وحشي، وكان عبدًا وُعد بحريته إن قتله، ومُثّل بجسده، فاشتد حزن النبي ﷺ عليه." }
+        },
+        {
+          "verse": "3:169-170",
+          "check": "alive with their Lord",
+          "title": { "en": "Master of the martyrs", "de": "Herr der Märtyrer", "ar": "سيد الشهداء" },
+          "body": { "en": "Hamzah is often called Sayyid ash-Shuhada', the master of the martyrs. The Quran speaks of the martyrs as living and provided for.", "de": "Hamza wird oft Sayyid asch-Schuhadāʾ genannt, Herr der Märtyrer. Der Koran spricht von den Märtyrern als Lebenden, die versorgt werden.", "ar": "كثيرًا ما يُلقّب حمزة بسيد الشهداء، ويصف القرآن الشهداء بأنهم أحياء يُرزقون." }
+        },
+        {
+          "title": { "en": "Forgiveness after Uhud", "de": "Vergebung nach Uhud", "ar": "عفوٌ بعد أحد" },
+          "body": { "en": "Years later Wahshi accepted Islam, and the Prophet accepted it from him. He only asked Wahshi to keep out of his sight, so that his grief would not be renewed.", "de": "Jahre später nahm Wahschī den Islam an, und der Prophet nahm es von ihm an. Er bat Wahschī nur, ihm nicht vor Augen zu treten, damit seine Trauer nicht neu aufbreche.", "ar": "وبعد سنين أسلم وحشي فقبل النبي ﷺ إسلامه، ولم يطلب منه إلا أن يغيّب وجهه عنه حتى لا يتجدد حزنه." }
+        },
+        {
+          "title": { "en": "Lessons from Hamzah", "de": "Lehren von Hamza", "ar": "دروس من حمزة" },
+          "list": {
+            "en": ["Defend the honour of those who are wronged", "Strength is a trust to be used for good", "No past is too dark for faith to change"],
+            "de": ["Verteidigen Sie die Ehre derer, denen Unrecht geschieht", "Stärke ist ein anvertrautes Gut für das Gute", "Keine Vergangenheit ist zu dunkel, um durch Glauben verwandelt zu werden"],
+            "ar": ["دافع عن كرامة المظلومين", "القوة أمانة تُستعمل في الخير", "لا ماضيَ أظلم من أن يغيّره الإيمان"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Sahih al-Bukhari 4072 (the account of Wahshi)" }, { "label": "Sahih Muslim, report of Abu Dharr on 22:19" }]
+    },
+    {
+      "id": "companions-05-bilal",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Companions · 5", "de": "Gefährten · 5", "ar": "الصحابة · ٥" },
+        "title": { "en": "Bilal ibn Rabah", "de": "Bilāl ibn Rabāh", "ar": "بلال بن رباح" },
+        "sub": { "en": "From enslavement to the first muezzin of Islam", "de": "Von der Versklavung zum ersten Gebetsrufer des Islam", "ar": "من الرق إلى أول مؤذن في الإسلام" },
+        "arabic": "مؤذن الرسول ﷺ"
+      },
+      "slides": [
+        {
+          "title": { "en": "Born into slavery", "de": "In die Sklaverei geboren", "ar": "وُلد في الرق" },
+          "body": { "en": "Bilal was born in Makkah to an Abyssinian mother and was enslaved to Umayyah ibn Khalaf. He was among the first to accept Islam.", "de": "Bilāl wurde in Mekka als Sohn einer abessinischen Mutter geboren und war Umayya ibn Chalaf versklavt. Er gehörte zu den Ersten, die den Islam annahmen.", "ar": "وُلد بلال بمكة لأم حبشية، وكان عبدًا لأمية بن خلف، وكان من أوائل من أسلم." }
+        },
+        {
+          "title": { "en": "One, One", "de": "Einer, Einer", "ar": "أحدٌ أحد" },
+          "arabic": "أَحَدٌ أَحَد",
+          "body": { "en": "His master tried to break him, dragging him over hot sand and laying a rock on his chest. Bilal kept repeating one word, Ahad: Allah is One.", "de": "Sein Herr versuchte ihn zu brechen, schleifte ihn über heißen Sand und legte ihm einen Felsen auf die Brust. Bilāl wiederholte nur ein Wort, Ahad: Allah ist Einer.", "ar": "حاول سيده أن يكسره، فجرّه على الرمل المحرق ووضع الصخرة على صدره، وبلال يردد كلمة واحدة: أحدٌ أحد." }
+        },
+        {
+          "hadith": "bukhari:3754",
+          "check": "manumitted our chief",
+          "title": { "en": "Freed by Abu Bakr", "de": "Von Abū Bakr befreit", "ar": "أعتقه أبو بكر" },
+          "body": { "en": "'Umar's words show how the companions saw a man who had once been enslaved.", "de": "ʿUmars Worte zeigen, wie die Gefährten einen Mann sahen, der einst versklavt war.", "ar": "تكشف كلمة عمر كيف نظر الصحابة إلى رجل كان عبدًا يومًا." }
+        },
+        {
+          "hadith": "bukhari:604",
+          "check": "Bilal",
+          "title": { "en": "The first call to prayer", "de": "Der erste Gebetsruf", "ar": "الأذان الأول" },
+          "body": { "en": "When the companions in Madinah discussed how to call people to prayer, the Prophet asked Bilal to give the call.", "de": "Als die Gefährten in Medina berieten, wie man zum Gebet rufen solle, beauftragte der Prophet Bilāl mit dem Ruf.", "ar": "لما تشاور الصحابة في المدينة كيف يدعون الناس إلى الصلاة، أمر النبي ﷺ بلالًا أن ينادي بها." }
+        },
+        {
+          "verse": "49:13",
+          "check": "most noble of you",
+          "title": { "en": "Noble by piety", "de": "Edel durch Gottesfurcht", "ar": "الكرامة بالتقوى" },
+          "body": { "en": "Bilal's life is a picture of this verse: honour is measured by piety, not by birth or colour.", "de": "Bilāls Leben ist ein Bild dieses Verses: Ehre bemisst sich an Gottesfurcht, nicht an Herkunft oder Hautfarbe.", "ar": "حياة بلال صورة لهذه الآية: الكرامة تُقاس بالتقوى لا بالنسب ولا باللون." }
+        },
+        {
+          "title": { "en": "On top of the Ka'bah", "de": "Auf der Kaaba", "ar": "فوق الكعبة" },
+          "body": { "en": "When Makkah was opened, Bilal climbed onto the Ka'bah and gave the call to prayer in the city where he had once been tortured.", "de": "Als Mekka geöffnet wurde, stieg Bilāl auf die Kaaba und rief zum Gebet, in der Stadt, in der man ihn einst gefoltert hatte.", "ar": "يوم فتح مكة صعد بلال على ظهر الكعبة ورفع الأذان في البلد الذي عُذّب فيه يومًا." }
+        },
+        {
+          "hadith": "bukhari:1149",
+          "check": "footsteps",
+          "title": { "en": "Footsteps in Paradise", "de": "Schritte im Paradies", "ar": "خطوات في الجنة" },
+          "body": { "en": "The Prophet asked him what deed had earned this honour. His answer was simple.", "de": "Der Prophet fragte ihn, welche Tat ihm diese Ehre eingebracht habe. Seine Antwort war schlicht.", "ar": "سأله النبي ﷺ عن العمل الذي بلغ به هذه المنزلة، فكان جوابه بسيطًا." }
+        },
+        {
+          "title": { "en": "Lessons from Bilal", "de": "Lehren von Bilāl", "ar": "دروس من بلال" },
+          "list": {
+            "en": ["No one's worth depends on their origin", "Hold on to your faith when it costs you", "Small, constant deeds can lead to great honour"],
+            "de": ["Der Wert eines Menschen hängt nicht von seiner Herkunft ab", "Halten Sie am Glauben fest, auch wenn er Sie etwas kostet", "Kleine, beständige Taten können zu großer Ehre führen"],
+            "ar": ["قيمة الإنسان لا تتوقف على أصله", "تمسّك بإيمانك ولو كلّفك", "الأعمال الصغيرة الدائمة قد تبلغ بك منزلة عظيمة"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }]
+    },
+    {
+      "id": "companions-06-salman-al-farisi",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Companions · 6", "de": "Gefährten · 6", "ar": "الصحابة · ٦" },
+        "title": { "en": "Salman al-Farisi", "de": "Salmān al-Fārisī", "ar": "سلمان الفارسي" },
+        "sub": { "en": "A Persian who crossed lands and years in search of the truth", "de": "Ein Perser, der Länder und Jahre durchquerte, auf der Suche nach der Wahrheit", "ar": "فارسيّ قطع البلاد والسنين بحثًا عن الحق" },
+        "arabic": "سلمان الفارسي"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:3947",
+          "check": "Ram-Hurmuz",
+          "title": { "en": "From Persia", "de": "Aus Persien", "ar": "من بلاد فارس" },
+          "body": { "en": "Salman himself named the town he came from.", "de": "Salmān selbst nannte die Stadt, aus der er stammte.", "ar": "سمّى سلمان بنفسه البلدة التي جاء منها." }
+        },
+        {
+          "title": { "en": "A seeker", "de": "Ein Suchender", "ar": "باحثٌ عن الحق" },
+          "body": { "en": "Reports say he was raised in the Zoroastrian faith, then became a Christian and travelled from teacher to teacher. The last of them told him of a prophet who would appear in Arabia.", "de": "Berichten zufolge wuchs er im zoroastrischen Glauben auf, wurde dann Christ und zog von Lehrer zu Lehrer. Der letzte erzählte ihm von einem Propheten, der in Arabien erscheinen werde.", "ar": "تذكر الروايات أنه نشأ على المجوسية، ثم تنصّر وتنقّل من معلم إلى معلم، حتى أخبره آخرهم بنبي يُبعث في أرض العرب." }
+        },
+        {
+          "hadith": "bukhari:3946",
+          "check": "more than ten times",
+          "title": { "en": "Sold again and again", "de": "Immer wieder verkauft", "ar": "بِيع مرة بعد مرة" },
+          "body": { "en": "On his way he was betrayed and enslaved, passing from hand to hand.", "de": "Unterwegs wurde er verraten und versklavt und ging von Hand zu Hand.", "ar": "غُدر به في طريقه فاستُعبد، وتنقّل من يد إلى يد." }
+        },
+        {
+          "title": { "en": "Finding the Prophet", "de": "Er findet den Propheten", "ar": "لقاء النبي ﷺ" },
+          "body": { "en": "Enslaved in Madinah, he met the Prophet and recognised the signs his last teacher had described. The Prophet and the companions then helped him buy his freedom.", "de": "Als Versklavter in Medina begegnete er dem Propheten und erkannte die Zeichen, die sein letzter Lehrer beschrieben hatte. Der Prophet und die Gefährten halfen ihm dann, sich freizukaufen.", "ar": "لقي النبي ﷺ وهو عبد في المدينة، فعرف فيه العلامات التي وصفها له معلمه الأخير، ثم أعانه النبي ﷺ والصحابة على فكاك رقبته." }
+        },
+        {
+          "title": { "en": "The trench", "de": "Der Graben", "ar": "الخندق" },
+          "body": { "en": "Sira works report that at the Battle of the Trench it was Salman who suggested digging a trench to defend Madinah, a method known in Persia.", "de": "Nach den Sīra-Werken war es Salmān, der in der Grabenschlacht vorschlug, zur Verteidigung Medinas einen Graben auszuheben, eine in Persien bekannte Methode.", "ar": "تروي كتب السيرة أن سلمان هو الذي أشار يوم الأحزاب بحفر الخندق دفاعًا عن المدينة، وكانت طريقة معروفة في فارس." }
+        },
+        {
+          "hadith": "bukhari:4897",
+          "check": "Salman",
+          "title": { "en": "Faith that reaches far", "de": "Glaube, der weit reicht", "ar": "إيمانٌ يُنال من بعيد" },
+          "body": { "en": "The Prophet placed his hand on Salman when he spoke of people who would reach faith from far away.", "de": "Der Prophet legte Salmān die Hand auf, als er von Menschen sprach, die von weit her zum Glauben finden würden.", "ar": "وضع النبي ﷺ يده على سلمان حين تحدث عن قوم يبلغون الإيمان من بعيد." }
+        },
+        {
+          "title": { "en": "A brother's advice", "de": "Der Rat eines Bruders", "ar": "نصيحة أخ" },
+          "body": { "en": "The Prophet made him a brother of Abu ad-Darda'. When his brother neglected his family for worship, Salman told him to give each its due: his Lord, his body and his family. The Prophet confirmed his advice.", "de": "Der Prophet machte ihn zum Bruder von Abū ad-Dardāʾ. Als dieser über dem Gottesdienst seine Familie vernachlässigte, riet Salmān ihm, jedem sein Recht zu geben: seinem Herrn, seinem Körper und seiner Familie. Der Prophet bestätigte den Rat.", "ar": "آخى النبي ﷺ بينه وبين أبي الدرداء، فلما انشغل أخوه بالعبادة عن أهله نصحه سلمان أن يعطي كل ذي حق حقه: ربه وبدنه وأهله، فأقرّه النبي ﷺ." }
+        },
+        {
+          "title": { "en": "Lessons from Salman", "de": "Lehren von Salmān", "ar": "دروس من سلمان" },
+          "list": {
+            "en": ["Keep searching until you find the truth", "Faith belongs to no single people", "Balance worship with care for body and family"],
+            "de": ["Suchen Sie weiter, bis Sie die Wahrheit finden", "Der Glaube gehört keinem einzelnen Volk", "Verbinden Sie Gottesdienst mit Sorge für Körper und Familie"],
+            "ar": ["واصل البحث حتى تجد الحق", "الإيمان ليس حكرًا على قوم", "وازن بين العبادة ورعاية البدن والأهل"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Musnad Ahmad, Salman's account of his search" }, { "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Sahih al-Bukhari 1968 (Salman and Abu ad-Darda')" }]
+    },
+    {
+      "id": "companions-07-abu-dharr",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Companions · 7", "de": "Gefährten · 7", "ar": "الصحابة · ٧" },
+        "title": { "en": "Abu Dharr al-Ghifari", "de": "Abū Dharr al-Ghifārī", "ar": "أبو ذر الغفاري" },
+        "sub": { "en": "Truthful, outspoken and content with little", "de": "Wahrhaftig, freimütig und mit wenig zufrieden", "ar": "صادق اللهجة، جريء في الحق، قانع باليسير" },
+        "arabic": "أبو ذر الغفاري"
+      },
+      "slides": [
+        {
+          "title": { "en": "From the tribe of Ghifar", "de": "Vom Stamm der Ghifār", "ar": "من بني غفار" },
+          "body": { "en": "Abu Dharr came from Ghifar, a tribe living along the trade routes. He was among the earliest to accept Islam, and he declared his faith openly in Makkah, for which he was beaten.", "de": "Abū Dharr stammte von den Ghifār, einem Stamm an den Handelswegen. Er gehörte zu den Frühesten im Islam und bekannte seinen Glauben offen in Mekka, wofür man ihn schlug.", "ar": "كان أبو ذر من غفار، وهي قبيلة على طرق التجارة، ومن السابقين إلى الإسلام، وجهر بإيمانه في مكة فضُرب على ذلك." }
+        },
+        {
+          "hadith": "muslim:6429",
+          "check": "Ghifar",
+          "title": { "en": "Back to his people", "de": "Zurück zu seinem Volk", "ar": "العودة إلى قومه" },
+          "body": { "en": "He went back to his tribe as a caller to Islam, and the Prophet later spoke of them with a prayer.", "de": "Er kehrte als Rufer zum Islam zu seinem Stamm zurück, und der Prophet sprach später mit einem Gebet von ihnen.", "ar": "رجع إلى قومه داعيًا إلى الإسلام، ثم ذكرهم النبي ﷺ بدعاء." }
+        },
+        {
+          "hadith": "bukhari:30",
+          "check": "Your slaves are your brothers",
+          "title": { "en": "A lesson he never forgot", "de": "Eine Lehre, die er nie vergaß", "ar": "درسٌ لم ينسه" },
+          "body": { "en": "Corrected by the Prophet after an insult, he changed. Years later he still dressed his servant as he dressed himself.", "de": "Nach einer Beleidigung wies ihn der Prophet zurecht, und er änderte sich. Noch Jahre später kleidete er seinen Diener wie sich selbst.", "ar": "صحّح له النبي ﷺ بعد كلمة جارحة فتغيّر، وظل بعد سنين يُلبس خادمه مما يلبس." }
+        },
+        {
+          "hadith": "muslim:4719",
+          "check": "authority is a trust",
+          "title": { "en": "When he asked for office", "de": "Als er um ein Amt bat", "ar": "حين طلب الولاية" },
+          "body": { "en": "The Prophet answered him with honesty and with care.", "de": "Der Prophet antwortete ihm ehrlich und mit Fürsorge.", "ar": "أجابه النبي ﷺ بصدق وشفقة." }
+        },
+        {
+          "hadith": "muslim:6690",
+          "check": "cheerful countenance",
+          "title": { "en": "No good deed is small", "de": "Keine gute Tat ist klein", "ar": "لا تحقرنّ معروفًا" },
+          "body": { "en": "One of the pieces of advice Abu Dharr carried from the Prophet.", "de": "Einer der Ratschläge, die Abū Dharr vom Propheten weitertrug.", "ar": "من الوصايا التي حملها أبو ذر عن النبي ﷺ." }
+        },
+        {
+          "title": { "en": "A simple life", "de": "Ein einfaches Leben", "ar": "حياة الزهد" },
+          "body": { "en": "Abu Dharr was known for being content with very little and for warning openly against hoarding wealth. In his last years he lived at ar-Rabadha, a small place in the desert, where he died around 32 AH.", "de": "Abū Dharr war bekannt dafür, mit sehr wenig zufrieden zu sein und offen vor dem Horten von Reichtum zu warnen. In seinen letzten Jahren lebte er in ar-Rabadha, einem kleinen Ort in der Wüste, wo er um 32 n. H. starb.", "ar": "عُرف أبو ذر بقناعته باليسير وتحذيره الصريح من كنز المال، وعاش آخر سنيه بالربذة، وهي موضع صغير في البادية، وبها توفي نحو سنة ٣٢هـ." }
+        },
+        {
+          "title": { "en": "Lessons from Abu Dharr", "de": "Lehren von Abū Dharr", "ar": "دروس من أبي ذر" },
+          "list": {
+            "en": ["Speak the truth, gently but clearly", "Treat those who serve you as your equals", "Never belittle a small kindness"],
+            "de": ["Sprechen Sie die Wahrheit, sanft, aber klar", "Behandeln Sie die, die Ihnen dienen, als Ebenbürtige", "Unterschätzen Sie nie eine kleine Freundlichkeit"],
+            "ar": ["قل الحق برفق ووضوح", "عامل من يخدمك معاملة الند", "لا تستصغر معروفًا صغيرًا"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Sahih al-Bukhari 3522 (how Abu Dharr accepted Islam)" }, { "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }]
+    },
+    {
+      "id": "companions-08-musab-ibn-umayr",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Companions · 8", "de": "Gefährten · 8", "ar": "الصحابة · ٨" },
+        "title": { "en": "Mus'ab ibn 'Umayr", "de": "Musʿab ibn ʿUmair", "ar": "مصعب بن عمير" },
+        "sub": { "en": "From the best-dressed young man of Makkah to the first teacher of Madinah", "de": "Vom bestgekleideten jungen Mann Mekkas zum ersten Lehrer Medinas", "ar": "من أنعم فتيان مكة إلى أول معلّم في المدينة" },
+        "arabic": "مصعب الخير"
+      },
+      "slides": [
+        {
+          "title": { "en": "A life of comfort", "de": "Ein Leben im Wohlstand", "ar": "حياة النعيم" },
+          "body": { "en": "Mus'ab grew up in a wealthy Makkan family. Sira works describe him as the most elegantly dressed young man of the city, known for his fine clothes and perfume.", "de": "Musʿab wuchs in einer wohlhabenden mekkanischen Familie auf. Die Sīra-Werke beschreiben ihn als den elegantesten jungen Mann der Stadt, bekannt für feine Kleidung und Duft.", "ar": "نشأ مصعب في أسرة مكية ثرية، وتصفه كتب السيرة بأنه أنعم فتيان مكة لباسًا وأطيبهم ريحًا." }
+        },
+        {
+          "title": { "en": "Choosing faith", "de": "Er wählt den Glauben", "ar": "اختيار الإيمان" },
+          "body": { "en": "He accepted Islam in secret at the house of al-Arqam. When his family found out, his mother cut him off and he was confined, but he did not turn back.", "de": "Er nahm den Islam heimlich im Haus von al-Arqam an. Als seine Familie davon erfuhr, verstieß ihn seine Mutter, und man hielt ihn eingesperrt, doch er kehrte nicht um.", "ar": "أسلم سرًّا في دار الأرقم، فلما علم أهله قطعته أمه وحُبس، فلم يرجع عن دينه." }
+        },
+        {
+          "title": { "en": "Teacher in Yathrib", "de": "Lehrer in Yathrib", "ar": "معلّمٌ في يثرب" },
+          "body": { "en": "After the first pledge of 'Aqabah, the Prophet sent him to Yathrib to teach the Quran. Through his gentle, patient way, leaders of the Aws and the Khazraj accepted Islam.", "de": "Nach dem ersten Gelöbnis von ʿAqaba schickte ihn der Prophet nach Yathrib, um den Koran zu lehren. Durch seine sanfte, geduldige Art nahmen Führer der Aus und der Chazradsch den Islam an.", "ar": "بعد بيعة العقبة الأولى أرسله النبي ﷺ إلى يثرب يعلّم القرآن، فأسلم على يديه برفقه وصبره سادةٌ من الأوس والخزرج." }
+        },
+        {
+          "hadith": "bukhari:3925",
+          "check": "teaching Qur",
+          "title": { "en": "The first to arrive", "de": "Der Erste, der ankam", "ar": "أول القادمين" },
+          "body": { "en": "Al-Bara' remembered Mus'ab among the first emigrants in Madinah, already teaching the Quran.", "de": "Al-Barāʾ erinnerte sich an Musʿab als einen der ersten Auswanderer in Medina, der dort bereits den Koran lehrte.", "ar": "تذكّر البراء مصعبًا في أوائل المهاجرين إلى المدينة يعلّم الناس القرآن." }
+        },
+        {
+          "verse": "59:8",
+          "check": "poor emigrants",
+          "title": { "en": "He gave up everything", "de": "Er gab alles auf", "ar": "ترك كل شيء" },
+          "body": { "en": "Mus'ab left wealth and family for Allah, like the emigrants this verse describes.", "de": "Musʿab ließ Reichtum und Familie um Allahs willen zurück, wie die Auswanderer, die dieser Vers beschreibt.", "ar": "ترك مصعب المال والأهل لله، كالمهاجرين الذين تصفهم هذه الآية." }
+        },
+        {
+          "title": { "en": "The banner at Uhud", "de": "Das Banner bei Uhud", "ar": "اللواء يوم أحد" },
+          "body": { "en": "At Uhud he carried the banner of the Muslims, and he was killed while holding it.", "de": "Bei Uhud trug er das Banner der Muslime und wurde getötet, während er es hielt.", "ar": "حمل لواء المسلمين يوم أحد، واستُشهد وهو يحمله." }
+        },
+        {
+          "hadith": "bukhari:1276",
+          "check": "Burd to shroud him",
+          "title": { "en": "Not enough to cover him", "de": "Nicht genug, um ihn zu bedecken", "ar": "كفنٌ لا يكفيه" },
+          "body": { "en": "The once wealthy young man left this world with a single cloak.", "de": "Der einst reiche junge Mann verließ diese Welt mit einem einzigen Umhang.", "ar": "خرج الفتى الذي كان ثريًّا من الدنيا ببردة واحدة." }
+        },
+        {
+          "title": { "en": "Lessons from Mus'ab", "de": "Lehren von Musʿab", "ar": "دروس من مصعب" },
+          "list": {
+            "en": ["What you give up for Allah is never lost", "Teach with gentleness and patience", "Comfort is a gift, not a goal"],
+            "de": ["Was Sie für Allah aufgeben, geht nie verloren", "Lehren Sie mit Sanftmut und Geduld", "Wohlstand ist ein Geschenk, kein Ziel"],
+            "ar": ["ما تتركه لله لا يضيع", "علّم برفق وصبر", "الرفاهية نعمة لا غاية"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }]
+    },
+    {
+      "id": "companions-09-abdullah-ibn-masud",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Companions · 9", "de": "Gefährten · 9", "ar": "الصحابة · ٩" },
+        "title": { "en": "'Abdullah ibn Mas'ud", "de": "ʿAbdallāh ibn Masʿūd", "ar": "عبد الله بن مسعود" },
+        "sub": { "en": "A shepherd boy who became one of the great teachers of the Quran", "de": "Ein Hirtenjunge, der einer der großen Lehrer des Korans wurde", "ar": "راعي غنم صار من كبار معلّمي القرآن" },
+        "arabic": "ابن مسعود"
+      },
+      "slides": [
+        {
+          "title": { "en": "A young shepherd", "de": "Ein junger Hirte", "ar": "راعٍ صغير" },
+          "body": { "en": "'Abdullah ibn Mas'ud tended sheep in Makkah for one of the leaders of Quraysh. He was among the earliest to accept Islam and later served the Prophet closely.", "de": "ʿAbdallāh ibn Masʿūd hütete in Mekka die Schafe eines Anführers der Quraisch. Er gehörte zu den Frühesten im Islam und diente später dem Propheten aus nächster Nähe.", "ar": "كان عبد الله بن مسعود يرعى الغنم بمكة لسيد من سادة قريش، وكان من السابقين إلى الإسلام، ثم لازم النبي ﷺ في خدمته." }
+        },
+        {
+          "title": { "en": "Aloud at the Ka'bah", "de": "Laut an der Kaaba", "ar": "جهرًا عند الكعبة" },
+          "body": { "en": "Sira works report that, after the Prophet, he was the first to recite the Quran aloud near the Ka'bah. Quraysh beat him for it, and he was ready to do it again.", "de": "Nach den Sīra-Werken war er nach dem Propheten der Erste, der den Koran laut bei der Kaaba rezitierte. Die Quraisch schlugen ihn dafür, und er war bereit, es wieder zu tun.", "ar": "تروي كتب السيرة أنه أول من جهر بالقرآن عند الكعبة بعد النبي ﷺ، فضربته قريش، وكان مستعدًا أن يعود لمثلها." }
+        },
+        {
+          "hadith": "bukhari:3758",
+          "check": "four persons",
+          "title": { "en": "A teacher the Prophet named", "de": "Ein Lehrer, den der Prophet nannte", "ar": "معلّمٌ سمّاه النبي ﷺ" },
+          "body": { "en": "His name comes first in this list of teachers of the Quran.", "de": "Sein Name steht als Erster in dieser Liste von Lehrern des Korans.", "ar": "يأتي اسمه أولًا في هذه القائمة من معلّمي القرآن." }
+        },
+        {
+          "hadith": "bukhari:4582",
+          "check": "eyes were overflowing with tears",
+          "title": { "en": "When the Prophet listened", "de": "Als der Prophet zuhörte", "ar": "حين استمع النبي ﷺ" },
+          "body": { "en": "The Prophet asked to hear the Quran from him, and listened until a verse moved him to tears.", "de": "Der Prophet wollte den Koran von ihm hören und lauschte, bis ein Vers ihn zu Tränen rührte.", "ar": "طلب النبي ﷺ أن يسمع القرآن منه، فاستمع حتى أبكته آية." }
+        },
+        {
+          "verse": "4:41",
+          "check": "a witness",
+          "title": { "en": "The verse that stopped him", "de": "Der Vers, bei dem er innehielt", "ar": "الآية التي استوقفته" },
+          "body": { "en": "This is the verse at which the Prophet asked Ibn Mas'ud to stop.", "de": "Bei diesem Vers bat der Prophet Ibn Masʿūd innezuhalten.", "ar": "عند هذه الآية طلب النبي ﷺ من ابن مسعود أن يتوقف." }
+        },
+        {
+          "hadith": "bukhari:5002",
+          "check": "at what place it was revealed",
+          "title": { "en": "A lifelong student", "de": "Ein lebenslanger Schüler", "ar": "طالب علم مدى الحياة" },
+          "body": { "en": "Even with all his knowledge, he was ready to travel to anyone who knew more.", "de": "Trotz all seines Wissens war er bereit, zu jedem zu reisen, der mehr wusste.", "ar": "مع سعة علمه كان مستعدًا أن يرحل إلى من هو أعلم منه." }
+        },
+        {
+          "title": { "en": "Teacher of Kufa", "de": "Lehrer von Kufa", "ar": "معلّم الكوفة" },
+          "body": { "en": "Later he taught in Kufa, where generations of students learned the Quran and its rulings from him. He died in Madinah around 32 AH (653 CE).", "de": "Später lehrte er in Kufa, wo Generationen von Schülern den Koran und seine Bestimmungen von ihm lernten. Er starb um 32 n. H. (653 n. Chr.) in Medina.", "ar": "علّم بعد ذلك في الكوفة، فأخذ عنه أجيال من الطلاب القرآن وأحكامه، وتوفي بالمدينة نحو سنة ٣٢هـ (٦٥٣م)." }
+        },
+        {
+          "title": { "en": "Lessons from Ibn Mas'ud", "de": "Lehren von Ibn Masʿūd", "ar": "دروس من ابن مسعود" },
+          "list": {
+            "en": ["Your background is no barrier to knowledge", "Let the Quran move your heart", "Stay a student all your life"],
+            "de": ["Ihre Herkunft ist kein Hindernis für Wissen", "Lassen Sie den Koran Ihr Herz bewegen", "Bleiben Sie ein Leben lang ein Lernender"],
+            "ar": ["أصلك ليس حاجزًا دون العلم", "دع القرآن يحرك قلبك", "كن طالب علم طوال حياتك"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }]
+    },
+    {
+      "id": "companions-10-ubayy-ibn-kab",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Companions · 10", "de": "Gefährten · 10", "ar": "الصحابة · ١٠" },
+        "title": { "en": "Ubayy ibn Ka'b", "de": "Ubaiy ibn Kaʿb", "ar": "أُبيّ بن كعب" },
+        "sub": { "en": "A master of the Quran from Madinah, mentioned by name to the Prophet", "de": "Ein Meister des Korans aus Medina, dem Propheten beim Namen genannt", "ar": "سيد القراء من الأنصار، سمّاه الله لنبيه ﷺ" },
+        "arabic": "سيد القراء"
+      },
+      "slides": [
+        {
+          "title": { "en": "A scribe from the Ansar", "de": "Ein Schreiber der Ansār", "ar": "كاتبٌ من الأنصار" },
+          "body": { "en": "Ubayy ibn Ka'b belonged to the Khazraj of Madinah. He could read and write before Islam, which was rare, and he became one of the scribes of the revelation.", "de": "Ubaiy ibn Kaʿb gehörte zu den Chazradsch von Medina. Er konnte schon vor dem Islam lesen und schreiben, was selten war, und wurde einer der Schreiber der Offenbarung.", "ar": "كان أبيّ بن كعب من خزرج المدينة، يقرأ ويكتب قبل الإسلام، وكان ذلك نادرًا، فصار من كتّاب الوحي." }
+        },
+        {
+          "title": { "en": "From 'Aqabah to Badr", "de": "Von ʿAqaba bis Badr", "ar": "من العقبة إلى بدر" },
+          "body": { "en": "He was among those who gave the second pledge at 'Aqabah, and he took part in Badr and the battles after it.", "de": "Er gehörte zu denen, die das zweite Gelöbnis von ʿAqaba ablegten, und nahm an Badr und den späteren Schlachten teil.", "ar": "كان ممن شهدوا بيعة العقبة الثانية، وشهد بدرًا وما بعدها." }
+        },
+        {
+          "hadith": "bukhari:3810",
+          "check": "Ubai",
+          "title": { "en": "He gathered the whole Quran", "de": "Er sammelte den ganzen Koran", "ar": "ممن جمعوا القرآن" },
+          "body": { "en": "Anas counts him among the Ansar who knew the whole Quran in the Prophet's lifetime.", "de": "Anas zählt ihn zu den Ansār, die den ganzen Koran schon zu Lebzeiten des Propheten beherrschten.", "ar": "يعدّه أنس في الأنصار الذين جمعوا القرآن في حياة النبي ﷺ." }
+        },
+        {
+          "hadith": "bukhari:4961",
+          "check": "Ubai burst into tears",
+          "title": { "en": "Mentioned by name", "de": "Beim Namen genannt", "ar": "سمّاه الله" },
+          "body": { "en": "Allah commanded the Prophet to recite to Ubayy, and Ubayy could hardly believe it.", "de": "Allah befahl dem Propheten, Ubaiy vorzutragen, und Ubaiy konnte es kaum fassen.", "ar": "أمر الله نبيه ﷺ أن يقرأ على أبيّ، فلم يكد أبيّ يصدّق." }
+        },
+        {
+          "verse": "98:1-3",
+          "check": "clear evidence",
+          "title": { "en": "The surah recited to him", "de": "Die Sure, die ihm vorgetragen wurde", "ar": "السورة التي قُرئت عليه" },
+          "body": { "en": "Narrations name Surah al-Bayyinah as the surah the Prophet recited to him on that occasion.", "de": "Die Überlieferungen nennen Sure al-Bayyina als die Sure, die der Prophet ihm damals vortrug.", "ar": "تذكر الروايات أن السورة التي قرأها عليه النبي ﷺ يومئذ هي سورة البيّنة." }
+        },
+        {
+          "hadith": "muslim:1885",
+          "check": "the greatest",
+          "title": { "en": "The greatest verse", "de": "Der größte Vers", "ar": "أعظم آية" },
+          "body": { "en": "The Prophet tested his knowledge, and his answer earned a warm blessing.", "de": "Der Prophet prüfte sein Wissen, und seine Antwort brachte ihm einen herzlichen Segenswunsch ein.", "ar": "اختبر النبي ﷺ علمه، فنال بجوابه دعاءً طيبًا." }
+        },
+        {
+          "title": { "en": "Teacher of many", "de": "Lehrer vieler", "ar": "معلّم الكثيرين" },
+          "body": { "en": "'Umar called him the best reciter among them. Many in Madinah learned the Quran from him, and his name appears in the chains of several of the canonical readings.", "de": "ʿUmar nannte ihn den besten Rezitator unter ihnen. Viele in Medina lernten den Koran von ihm, und sein Name steht in den Überlieferungsketten mehrerer kanonischer Lesarten.", "ar": "سمّاه عمر أقرأ الصحابة، وأخذ عنه القرآنَ كثيرون في المدينة، ويرد اسمه في أسانيد عدد من القراءات المتواترة." }
+        },
+        {
+          "title": { "en": "Lessons from Ubayy", "de": "Lehren von Ubaiy", "ar": "دروس من أبيّ" },
+          "list": {
+            "en": ["Put your skills in the service of the Quran", "Let knowledge make you humble, not proud", "Pass on what you have learned"],
+            "de": ["Stellen Sie Ihre Fähigkeiten in den Dienst des Korans", "Lassen Sie Wissen Sie demütig machen, nicht stolz", "Geben Sie weiter, was Sie gelernt haben"],
+            "ar": ["سخّر مهاراتك لخدمة القرآن", "ليجعلك العلم متواضعًا لا متكبرًا", "علّم غيرك ما تعلّمت"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }, { "label": "Sahih al-Bukhari 5005 ('Umar on Ubayy's recitation)" }]
+    },
+    {
+      "id": "companions-11-zayd-ibn-thabit",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Companions · 11", "de": "Gefährten · 11", "ar": "الصحابة · ١١" },
+        "title": { "en": "Zayd ibn Thabit", "de": "Zaid ibn Thābit", "ar": "زيد بن ثابت" },
+        "sub": { "en": "The young scribe who gathered the Quran into one book", "de": "Der junge Schreiber, der den Koran in einem Buch zusammenführte", "ar": "الكاتب الشاب الذي جمع القرآن في مصحف" },
+        "arabic": "كاتب الوحي"
+      },
+      "slides": [
+        {
+          "title": { "en": "Too young for Badr", "de": "Zu jung für Badr", "ar": "أصغر من أن يشهد بدرًا" },
+          "body": { "en": "Zayd was an orphan of the Ansar, about eleven when the Prophet came to Madinah. Sira works report that he was sent back from Badr as too young, though he already knew many surahs by heart.", "de": "Zaid war ein Waisenkind der Ansār und etwa elf Jahre alt, als der Prophet nach Medina kam. Nach den Sīra-Werken wurde er bei Badr als zu jung zurückgeschickt, obwohl er schon viele Suren auswendig kannte.", "ar": "كان زيد يتيمًا من الأنصار، في نحو الحادية عشرة حين قدم النبي ﷺ المدينة، وتروي كتب السيرة أنه رُدّ يوم بدر لصغره، وكان يحفظ سورًا كثيرة." }
+        },
+        {
+          "title": { "en": "Scribe of the revelation", "de": "Schreiber der Offenbarung", "ar": "كاتب الوحي" },
+          "body": { "en": "Because he wrote well, he became one of the main scribes who wrote down the revelation for the Prophet.", "de": "Weil er gut schreiben konnte, wurde er einer der wichtigsten Schreiber, die für den Propheten die Offenbarung niederschrieben.", "ar": "لإتقانه الكتابة صار من أبرز كتّاب الوحي للنبي ﷺ." }
+        },
+        {
+          "title": { "en": "A new script in weeks", "de": "Eine neue Schrift in Wochen", "ar": "خطٌّ جديد في أسابيع" },
+          "body": { "en": "Sahih al-Bukhari reports that the Prophet asked him to learn the script of the Jews of Madinah, so he could write and read the Prophet's letters. Other reports say he mastered it within weeks.", "de": "Sahīh al-Buchārī berichtet, dass der Prophet ihn bat, die Schrift der Juden Medinas zu lernen, damit er die Briefe des Propheten schreiben und lesen konnte. Andere Berichte sagen, er habe sie in wenigen Wochen beherrscht.", "ar": "يروي صحيح البخاري أن النبي ﷺ أمره أن يتعلم كتابة يهود المدينة ليكتب رسائله ويقرأها، وتذكر روايات أخرى أنه أتقنها في أسابيع." }
+        },
+        {
+          "hadith": "bukhari:5003",
+          "check": "Zaid bin Thabit",
+          "title": { "en": "Among those who knew it all", "de": "Unter denen, die alles kannten", "ar": "ممن حفظوا القرآن كله" },
+          "body": { "en": "Anas names Zayd among the Ansar who had collected the whole Quran in the Prophet's lifetime.", "de": "Anas nennt Zaid unter den Ansār, die den ganzen Koran zu Lebzeiten des Propheten gesammelt hatten.", "ar": "يذكر أنس زيدًا في الأنصار الذين جمعوا القرآن في حياة النبي ﷺ." }
+        },
+        {
+          "hadith": "bukhari:4989",
+          "check": "Divine Revelations",
+          "title": { "en": "A heavy task", "de": "Eine schwere Aufgabe", "ar": "مهمة ثقيلة" },
+          "body": { "en": "After the Battle of Yamamah, Abu Bakr chose Zayd to gather the Quran into one copy.", "de": "Nach der Schlacht von Yamāma wählte Abū Bakr Zaid aus, den Koran in einer Abschrift zu sammeln.", "ar": "بعد معركة اليمامة اختار أبو بكر زيدًا ليجمع القرآن في مصحف واحد." }
+        },
+        {
+          "verse": "15:9",
+          "check": "We will be its guardian",
+          "title": { "en": "A promise kept", "de": "Ein gehaltenes Versprechen", "ar": "وعدٌ تحقق" },
+          "body": { "en": "Zayd checked every passage against written records and witnesses. His care was part of how this promise was fulfilled.", "de": "Zaid prüfte jede Stelle anhand schriftlicher Aufzeichnungen und Zeugen. Seine Sorgfalt war Teil der Erfüllung dieses Versprechens.", "ar": "كان زيد يتثبّت من كل موضع بالمكتوب والشهود، وكانت دقته من أسباب تحقق هذا الوعد." }
+        },
+        {
+          "hadith": "bukhari:4984",
+          "check": "Zaid bin Thabit",
+          "title": { "en": "The copies of 'Uthman", "de": "Die Abschriften ʿUthmāns", "ar": "مصاحف عثمان" },
+          "body": { "en": "Under 'Uthman, Zayd led the team that wrote the copies sent to the great cities.", "de": "Unter ʿUthmān leitete Zaid die Gruppe, die die Abschriften für die großen Städte anfertigte.", "ar": "في عهد عثمان قاد زيد الفريق الذي كتب المصاحف التي أُرسلت إلى الأمصار." }
+        },
+        {
+          "title": { "en": "Lessons from Zayd", "de": "Lehren von Zaid", "ar": "دروس من زيد" },
+          "list": {
+            "en": ["Young people can carry great trust", "Precision is a form of worship", "Serve the Quran with the skills you have"],
+            "de": ["Junge Menschen können großes Vertrauen tragen", "Genauigkeit ist eine Form des Gottesdienstes", "Dienen Sie dem Koran mit Ihren Fähigkeiten"],
+            "ar": ["الشباب أهلٌ للأمانات الكبيرة", "الإتقان عبادة", "اخدم القرآن بما تملك من مهارات"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }, { "label": "Sahih al-Bukhari 4986 and 7195" }]
+    },
+    {
+      "id": "companions-12-abu-bakr",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Companions · 12", "de": "Gefährten · 12", "ar": "الصحابة · ١٢" },
+        "title": { "en": "Abu Bakr as-Siddiq", "de": "Abū Bakr as-Siddīq", "ar": "أبو بكر الصديق" },
+        "sub": { "en": "The Prophet's friend from youth, his companion in the cave, and the first caliph", "de": "Freund des Propheten seit der Jugend, sein Gefährte in der Höhle und der erste Kalif", "ar": "صديق النبي ﷺ منذ شبابه، وصاحبه في الغار، وأول الخلفاء" },
+        "arabic": "الصدّيق"
+      },
+      "slides": [
+        {
+          "title": { "en": "A friend before the call", "de": "Ein Freund vor der Berufung", "ar": "صديقٌ قبل البعثة" },
+          "body": { "en": "Abu Bakr, 'Abdullah ibn Abi Quhafah, was a merchant of Makkah, known for his gentle manner and his knowledge of Arab genealogy. He was the Prophet's friend long before the revelation.", "de": "Abū Bakr, ʿAbdallāh ibn Abī Quhāfa, war ein Kaufmann in Mekka, bekannt für seine sanfte Art und sein Wissen über die Abstammung der Araber. Er war der Freund des Propheten lange vor der Offenbarung.", "ar": "كان أبو بكر، عبد الله بن أبي قحافة، تاجرًا بمكة معروفًا بلين الجانب والعلم بأنساب العرب، وكان صديقًا للنبي ﷺ قبل البعثة بزمن طويل." }
+        },
+        {
+          "title": { "en": "Among the first", "de": "Unter den Ersten", "ar": "من السابقين" },
+          "body": { "en": "When the Prophet told him of the revelation, he believed at once. Sira works report that several early companions came to Islam through him.", "de": "Als der Prophet ihm von der Offenbarung erzählte, glaubte er sofort. Nach den Sīra-Werken fanden mehrere frühe Gefährten durch ihn zum Islam.", "ar": "لما أخبره النبي ﷺ بالوحي آمن من فوره، وتروي كتب السيرة أن عددًا من السابقين أسلموا على يديه." }
+        },
+        {
+          "title": { "en": "As-Siddiq", "de": "As-Siddīq", "ar": "الصدّيق" },
+          "body": { "en": "He is called as-Siddiq, the one who affirms the truth. Sunni sources connect the name with how he believed the Prophet's account of the Night Journey without hesitation.", "de": "Man nennt ihn as-Siddīq, den, der die Wahrheit bestätigt. Sunnitische Quellen verbinden den Namen damit, dass er dem Bericht des Propheten von der Nachtreise ohne Zögern glaubte.", "ar": "لُقّب بالصدّيق، وتربط المصادر السنية هذا اللقب بتصديقه خبر الإسراء دون تردد." }
+        },
+        {
+          "hadith": "bukhari:3678",
+          "check": "My Lord is Allah",
+          "title": { "en": "Standing up for the Prophet", "de": "Er stellte sich vor den Propheten", "ar": "يدافع عن النبي ﷺ" },
+          "body": { "en": "When an enemy tried to strangle the Prophet at the Ka'bah, Abu Bakr pushed him away.", "de": "Als ein Feind versuchte, den Propheten an der Kaaba zu würgen, stieß Abū Bakr ihn weg.", "ar": "لما حاول أحد الأعداء خنق النبي ﷺ عند الكعبة دفعه أبو بكر عنه." }
+        },
+        {
+          "title": { "en": "Wealth to free the oppressed", "de": "Reichtum zur Befreiung der Unterdrückten", "ar": "مالٌ لتحرير المستضعفين" },
+          "body": { "en": "He used his wealth to buy and free enslaved believers who were being tortured for their faith, Bilal among them.", "de": "Er nutzte seinen Reichtum, um versklavte Gläubige freizukaufen, die wegen ihres Glaubens gefoltert wurden, unter ihnen Bilāl.", "ar": "أنفق ماله في شراء المؤمنين المستعبَدين الذين عُذّبوا على دينهم وإعتاقهم، ومنهم بلال." }
+        },
+        {
+          "hadith": "bukhari:3653",
+          "check": "third of whom is Allah",
+          "title": { "en": "Companion in the cave", "de": "Gefährte in der Höhle", "ar": "صاحب الغار" },
+          "body": { "en": "The Quran calls him the Prophet's companion in the cave (9:40). Here he recalls that moment.", "de": "Der Koran nennt ihn den Gefährten des Propheten in der Höhle (9:40). Hier erinnert er sich an jenen Augenblick.", "ar": "يسمّيه القرآن صاحبَ النبي ﷺ في الغار (التوبة ٤٠)، وهنا يتذكر تلك اللحظة." }
+        },
+        {
+          "title": { "en": "The first caliph", "de": "Der erste Kalif", "ar": "أول الخلفاء" },
+          "body": { "en": "After the Prophet's death he became the first caliph. In about two years he held the community together and had the Quran gathered into one copy. He died in 13 AH (634 CE) and was buried beside the Prophet.", "de": "Nach dem Tod des Propheten wurde er der erste Kalif. In etwa zwei Jahren hielt er die Gemeinschaft zusammen und ließ den Koran in einer Abschrift sammeln. Er starb 13 n. H. (634 n. Chr.) und wurde neben dem Propheten begraben.", "ar": "صار بعد وفاة النبي ﷺ أول الخلفاء، فجمع الكلمة في نحو سنتين، وأمر بجمع القرآن في مصحف واحد، وتوفي سنة ١٣هـ (٦٣٤م) ودُفن إلى جوار النبي ﷺ." }
+        },
+        {
+          "title": { "en": "Lessons from Abu Bakr", "de": "Lehren von Abū Bakr", "ar": "دروس من أبي بكر" },
+          "list": {
+            "en": ["Believe the truth when it comes, without delay", "Use your wealth to lift others up", "Stand by your friends in danger"],
+            "de": ["Glauben Sie der Wahrheit ohne Zögern, wenn sie kommt", "Nutzen Sie Ihren Reichtum, um andere aufzurichten", "Stehen Sie Ihren Freunden in der Gefahr bei"],
+            "ar": ["صدّق الحق إذا جاءك دون تردد", "استعمل مالك في رفع الآخرين", "قف مع أصدقائك في الشدائد"]
+          }
+        }
+      ],
+      "sources": [{ "label": "Ibn Hisham, as-Sira an-Nabawiyya" }, { "label": "Ibn Sa'd, at-Tabaqat al-Kubra" }]
+    }
+  ]
+}

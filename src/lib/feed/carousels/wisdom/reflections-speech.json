@@ -1,0 +1,120 @@
+{
+  "set": "reflections-speech",
+  "kind": "reflection",
+  "theme": "speech",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-speech-01",
+      "text": {
+        "en": "A word spoken in anger can take years to heal. A word held back for one breath can save a friendship.",
+        "de": "Ein im Zorn gesprochenes Wort kann Jahre brauchen, um zu heilen. Ein Wort, das einen Atemzug lang zurückgehalten wird, kann eine Freundschaft retten.",
+        "ar": "الكلمة التي تقال في الغضب قد تحتاج إلى سنين لتلتئم، والكلمة التي تحبس نفسا واحدا قد تنقذ صداقة."
+      }
+    },
+    {
+      "id": "wr-speech-02",
+      "text": {
+        "en": "A kind word to a nervous student before an exam may be remembered long after the grade is forgotten.",
+        "de": "Ein freundliches Wort an eine nervöse Schülerin vor einer Prüfung bleibt vielleicht in Erinnerung, lange nachdem die Note vergessen ist.",
+        "ar": "كلمة لطيفة لطالب قلق قبل الامتحان قد تبقى في ذاكرته بعد أن ينسى درجته بزمن طويل."
+      }
+    },
+    {
+      "id": "wr-speech-03",
+      "text": {
+        "en": "Silence is sometimes the most eloquent reply, especially to someone who is looking for an argument.",
+        "de": "Schweigen ist manchmal die beredteste Antwort, besonders für jemanden, der Streit sucht.",
+        "ar": "الصمت أحيانا أبلغ رد، ولا سيما على من يبحث عن جدال."
+      }
+    },
+    {
+      "id": "wr-speech-04",
+      "text": {
+        "en": "Speak about absent people as if they were standing right beside you.",
+        "de": "Sprechen Sie über Abwesende so, als stünden sie direkt neben Ihnen.",
+        "ar": "تحدث عن الغائبين كأنهم واقفون إلى جانبك."
+      }
+    },
+    {
+      "id": "wr-speech-05",
+      "text": {
+        "en": "Your tone often matters more than your words. The same sentence can open a door or slam it shut.",
+        "de": "Ihr Tonfall zählt oft mehr als Ihre Worte. Derselbe Satz kann eine Tür öffnen oder zuschlagen.",
+        "ar": "نبرة صوتك كثيرا ما تهم أكثر من كلماتك، فالجملة نفسها قد تفتح بابا أو توصده بعنف."
+      }
+    },
+    {
+      "id": "wr-speech-06",
+      "text": {
+        "en": "Not every thought needs to become a comment. The send button can wait one more minute.",
+        "de": "Nicht jeder Gedanke muss zu einem Kommentar werden. Die Senden-Taste kann noch eine Minute warten.",
+        "ar": "ليس كل خاطر بحاجة إلى أن يصير تعليقا، فزر الإرسال يستطيع أن ينتظر دقيقة أخرى."
+      }
+    },
+    {
+      "id": "wr-speech-07",
+      "text": {
+        "en": "Saying \"please\" and \"thank you\" to the people who serve you is speech that honours you both.",
+        "de": "„Bitte“ und „danke“ zu den Menschen zu sagen, die Sie bedienen, ist eine Rede, die Sie beide ehrt.",
+        "ar": "قولك: من فضلك، وشكرا، لمن يخدمونك كلام يكرمك ويكرمهم."
+      }
+    },
+    {
+      "id": "wr-speech-08",
+      "text": {
+        "en": "A tongue that is quick to praise others and slow to complain makes every gathering lighter.",
+        "de": "Eine Zunge, die schnell lobt und langsam klagt, macht jede Runde leichter.",
+        "ar": "اللسان السريع إلى مدح الآخرين البطيء في الشكوى يجعل كل مجلس أخف."
+      }
+    },
+    {
+      "id": "wr-speech-09",
+      "text": {
+        "en": "Ask before you assume. Many misunderstandings end with one honest question about what was meant.",
+        "de": "Fragen Sie, bevor Sie etwas unterstellen. Viele Missverständnisse enden mit einer ehrlichen Frage, wie etwas gemeint war.",
+        "ar": "اسأل قبل أن تفترض، فكثير من سوء الفهم ينتهي بسؤال صادق عما كان مقصودا."
+      }
+    },
+    {
+      "id": "wr-speech-10",
+      "text": {
+        "en": "Gossip feels small while you speak it and heavy once it is spoken. Leave the conversation rather than join it.",
+        "de": "Klatsch fühlt sich klein an, während man ihn ausspricht, und schwer, sobald er ausgesprochen ist. Verlassen Sie das Gespräch, statt sich anzuschließen.",
+        "ar": "الغيبة تبدو صغيرة وأنت تقولها، وثقيلة بعد أن تقال، فانسحب من الحديث بدل أن تشارك فيه."
+      }
+    },
+    {
+      "id": "wr-speech-11",
+      "text": {
+        "en": "Encouragement costs a few words and can change someone's whole year. Say the good thing you were thinking.",
+        "de": "Ermutigung kostet ein paar Worte und kann das ganze Jahr eines Menschen verändern. Sagen Sie das Gute, das Sie gerade denken.",
+        "ar": "التشجيع لا يكلف إلا كلمات قليلة، وقد يغير عام إنسان كله، فقل الخير الذي يدور في ذهنك."
+      }
+    },
+    {
+      "id": "wr-speech-12",
+      "text": {
+        "en": "A few words chosen carefully carry more weight than many words spoken carelessly.",
+        "de": "Wenige, sorgfältig gewählte Worte haben mehr Gewicht als viele, achtlos gesprochene.",
+        "ar": "الكلمات القليلة المختارة بعناية أثقل وزنا من الكلمات الكثيرة التي تقال بلا مبالاة."
+      }
+    },
+    {
+      "id": "wr-speech-13",
+      "text": {
+        "en": "When you must correct someone, do it privately and gently. The aim is to help, not to win.",
+        "de": "Wenn Sie jemanden korrigieren müssen, tun Sie es unter vier Augen und behutsam. Das Ziel ist zu helfen, nicht zu gewinnen.",
+        "ar": "إذا اضطررت إلى تصحيح أحد فافعل ذلك على انفراد وبرفق، فالغاية أن تعين لا أن تنتصر."
+      }
+    },
+    {
+      "id": "wr-speech-14",
+      "text": {
+        "en": "The best conversations leave both people a little closer to Allah and a little kinder to each other.",
+        "de": "Die besten Gespräche bringen beide ein wenig näher zu Allah und machen sie ein wenig freundlicher zueinander.",
+        "ar": "أجمل الأحاديث ما ترك الطرفين أقرب قليلا إلى الله، وألطف قليلا أحدهما بالآخر."
+      }
+    }
+  ]
+}

@@ -1,0 +1,951 @@
+{
+  "series": "duas-daily",
+  "label": { "en": "Duas for every day", "de": "Bittgebete für jeden Tag", "ar": "أدعية كل يوم" },
+  "topic": "duas",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "duas-daily-hard-times",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 1", "de": "Bittgebete für jeden Tag · 1", "ar": "أدعية كل يوم · ١" },
+        "title": { "en": "5 duas for hard times", "de": "5 Bittgebete für schwere Zeiten", "ar": "خمسة أدعية للشدائد" },
+        "sub": { "en": "From Hisnul Muslim: words the Prophet taught for moments of distress and difficulty.", "de": "Aus Hisnul Muslim: Worte, die der Prophet für Momente der Bedrängnis und der Schwierigkeit lehrte.", "ar": "من حصن المسلم: كلمات علّمها النبي ﷺ لساعات الكرب والعسر." },
+        "arabic": "دعاء الكرب"
+      },
+      "slides": [
+        {
+          "dua": "hisn:35:0",
+          "check": "Lord of the magnificent throne",
+          "title": { "en": "When distress overwhelms you", "de": "Wenn die Bedrängnis Sie überwältigt", "ar": "حين يشتد الكرب" },
+          "body": { "en": "The Prophet said this in times of distress. It contains no request, only praise: it reminds the heart how great its Lord is.", "de": "Der Prophet sprach es in Zeiten der Bedrängnis. Es enthält keine Bitte, nur Lobpreis: Es erinnert das Herz daran, wie groß sein Herr ist.", "ar": "كان النبي ﷺ يقوله عند الكرب، وليس فيه سؤال بل ثناء، يذكّر القلب بعظمة ربه." }
+        },
+        {
+          "dua": "hisn:35:1",
+          "check": "Your mercy that I hope for",
+          "title": { "en": "When you cannot manage alone", "de": "Wenn Sie es allein nicht schaffen", "ar": "حين تعجز وحدك" },
+          "body": { "en": "A dua for the moment you realise how little is in your hands. It places every affair back with Allah.", "de": "Ein Bittgebet für den Moment, in dem Sie merken, wie wenig in Ihrer Hand liegt. Es legt jede Angelegenheit zurück in Allahs Hand.", "ar": "دعاء للحظة التي تدرك فيها أن القليل بيدك، فتفوّض فيه أمرك كله إلى الله." }
+        },
+        {
+          "dua": "hisn:35:2",
+          "check": "among the wrong-doers",
+          "title": { "en": "The dua of Yunus", "de": "Das Bittgebet von Yunus", "ar": "دعوة ذي النون" },
+          "body": { "en": "The words Yunus said inside the fish, listed here among the duas of distress: tawhid, praise and honesty about oneself.", "de": "Die Worte, die Yunus im Bauch des Fisches sprach, hier unter den Bittgebeten der Bedrängnis: Tauhid, Lobpreis und Ehrlichkeit über sich selbst.", "ar": "كلمات يونس في بطن الحوت، وهي هنا من أدعية الكرب: توحيد وتسبيح واعتراف." }
+        },
+        {
+          "dua": "hisn:35:3",
+          "check": "I do not associate anything with Him",
+          "title": { "en": "When you have no words left", "de": "Wenn Ihnen die Worte fehlen", "ar": "حين لا تجد الكلمات" },
+          "body": { "en": "One of the shortest duas in the book. When everything else falls silent, the heart can still say this.", "de": "Eines der kürzesten Bittgebete des Buches. Wenn alles andere verstummt, kann das Herz noch dies sagen.", "ar": "من أقصر الأدعية في الكتاب؛ حين يسكت كل شيء يبقى القلب قادرًا على قوله." }
+        },
+        {
+          "dua": "hisn:43:0",
+          "check": "no ease except",
+          "title": { "en": "When a task feels too hard", "de": "Wenn eine Aufgabe zu schwer erscheint", "ar": "حين يصعب عليك أمر" },
+          "body": { "en": "For exams, paperwork and difficult conversations: ease is Allah's to give, and He can make the hardest thing light.", "de": "Für Prüfungen, Behördengänge und schwierige Gespräche: Leichtigkeit schenkt Allah, und Er kann das Schwerste leicht machen.", "ar": "للامتحانات والمعاملات والأحاديث الصعبة: التيسير بيد الله، وهو قادر على تهوين الصعب." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-anxiety-grief",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 2", "de": "Bittgebete für jeden Tag · 2", "ar": "أدعية كل يوم · ٢" },
+        "title": { "en": "Duas for anxiety and grief", "de": "Bittgebete bei Sorge und Kummer", "ar": "أدعية الهمّ والحزن" },
+        "sub": { "en": "Worry about tomorrow, sorrow about yesterday: the Prophet taught words for both.", "de": "Sorge um morgen, Kummer über gestern: Der Prophet lehrte Worte für beides.", "ar": "همّ لما هو آت وحزن على ما فات: علّمنا النبي ﷺ كلمات لكليهما." },
+        "arabic": "الهمّ والحزن"
+      },
+      "slides": [
+        {
+          "title": { "en": "Two kinds of heaviness", "de": "Zwei Arten von Schwere", "ar": "ثقلان في القلب" },
+          "body": { "en": "Scholars often distinguish: hamm is worry about what may come, huzn is sorrow over what has passed. The duas of this chapter speak to both.", "de": "Gelehrte unterscheiden oft: Hamm ist die Sorge um das Kommende, Huzn der Kummer über das Vergangene. Die Bittgebete dieses Kapitels sprechen beides an.", "ar": "يفرّق العلماء كثيرًا بين الهمّ، وهو القلق مما سيأتي، والحزن على ما مضى. وأدعية هذا الباب تخاطب الاثنين." }
+        },
+        {
+          "dua": "hisn:34:0",
+          "check": "release for my anxiety",
+          "title": { "en": "When sorrow will not leave", "de": "Wenn der Kummer nicht weicht", "ar": "حين لا يفارقك الحزن" },
+          "body": { "en": "A longer dua, worth learning by heart. It turns to the Quran as the cure for a heavy heart.", "de": "Ein längeres Bittgebet, das sich auswendig zu lernen lohnt. Es sucht im Koran die Heilung für ein schweres Herz.", "ar": "دعاء أطول يستحق الحفظ، يلتمس في القرآن شفاءً للقلب المثقل." }
+        },
+        {
+          "dua": "hisn:34:1",
+          "check": "anxiety and sorrow",
+          "title": { "en": "A daily shield", "de": "Ein täglicher Schutz", "ar": "حصن يومي" },
+          "body": { "en": "Eight burdens in four pairs, from worry to debt. A short dua many Muslims say every day.", "de": "Acht Lasten in vier Paaren, von Sorge bis Schulden. Ein kurzes Bittgebet, das viele Muslime täglich sprechen.", "ar": "ثمانية أثقال في أربعة أزواج، من الهمّ إلى الدَّين. دعاء قصير يردّده كثير من المسلمين كل يوم." }
+        },
+        {
+          "dua": "hisn:27:13",
+          "check": "O Ever Living",
+          "title": { "en": "When everything feels out of control", "de": "Wenn alles außer Kontrolle scheint", "ar": "حين تفلت الأمور من يدك" },
+          "body": { "en": "It calls on Allah as the Ever-Living and Self-Sustaining, the One who never tires, and hands your affairs to Him.", "de": "Es ruft Allah als den Lebendigen und Beständigen an, der nie ermüdet, und übergibt Ihm Ihre Angelegenheiten.", "ar": "تنادي الله باسمَيه الحيّ القيّوم، الذي لا يتعب، وتفوّض إليه أمرك." }
+        },
+        {
+          "dua": "hisn:53:0",
+          "check": "replace it for me with something better",
+          "title": { "en": "When you lose something or someone", "de": "Wenn Sie etwas oder jemanden verlieren", "ar": "عند المصيبة والفقد" },
+          "body": { "en": "It begins with words from Surah al-Baqarah (2:156) and ends with hope for something better.", "de": "Es beginnt mit Worten aus Sure al-Baqara (2:156) und endet mit der Hoffnung auf etwas Besseres.", "ar": "يبدأ بكلمات من سورة البقرة (٢:١٥٦) وينتهي برجاء العوض الأفضل." }
+        },
+        {
+          "title": { "en": "When the heart is heavy", "de": "Wenn das Herz schwer ist", "ar": "حين يثقل القلب" },
+          "list": {
+            "en": ["Say these duas slowly, with their meaning", "Make wudu and pray two rak'ahs", "Talk to someone you trust, and seek help when needed"],
+            "de": ["Sprechen Sie diese Bittgebete langsam, mit ihrer Bedeutung", "Nehmen Sie die Waschung vor und beten Sie zwei Rakaat", "Sprechen Sie mit einem vertrauten Menschen und holen Sie sich Hilfe, wenn nötig"],
+            "ar": ["ادعُ بهذه الأدعية بتمهّل مع فهم معناها", "توضأ وصلِّ ركعتين", "تحدّث إلى من تثق به، واطلب المساعدة عند الحاجة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-before-sleep",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 3", "de": "Bittgebete für jeden Tag · 3", "ar": "أدعية كل يوم · ٣" },
+        "title": { "en": "Before you sleep", "de": "Vor dem Einschlafen", "ar": "قبل أن تنام" },
+        "sub": { "en": "Six sunnahs for the last minutes of the day, from the three Quls to your final words.", "de": "Sechs Sunna-Gewohnheiten für die letzten Minuten des Tages, von den drei Schutzsuren bis zu Ihren letzten Worten.", "ar": "ست سنن لآخر دقائق اليوم، من المعوّذات إلى آخر كلامك." },
+        "arabic": "أذكار النوم"
+      },
+      "slides": [
+        {
+          "dua": "hisn:28:0",
+          "check": "the last three chapters",
+          "title": { "en": "The three Quls", "de": "Die drei Schutzsuren", "ar": "المعوّذات" },
+          "body": { "en": "Recite al-Ikhlas, al-Falaq and an-Nas into your palms, then wipe over your body. Three times.", "de": "Rezitieren Sie al-Ikhlas, al-Falaq und an-Nas in Ihre Handflächen und streichen Sie dann über den Körper. Dreimal.", "ar": "اقرأ الإخلاص والفلق والناس في كفّيك ثم امسح بهما جسدك. ثلاث مرات." }
+        },
+        {
+          "dua": "hisn:28:7",
+          "check": "thirty-three times",
+          "title": { "en": "33, 33, 34", "de": "33, 33, 34", "ar": "٣٣ و٣٣ و٣٤" },
+          "body": { "en": "The Prophet taught this to Fatimah and Ali when they asked for a servant, and said it was better for them.", "de": "Der Prophet lehrte es Fatima und Ali, als sie um eine Hilfe im Haus baten, und sagte, es sei besser für sie.", "ar": "علّمه النبي ﷺ فاطمة وعليًّا حين سألا خادمًا، وأخبرهما أنه خير لهما." }
+        },
+        {
+          "dua": "hisn:28:3",
+          "check": "In Your name my Lord, I lie down",
+          "title": { "en": "As you lie down", "de": "Beim Hinlegen", "ar": "عند الاضطجاع" },
+          "body": { "en": "Sleep is a small farewell. This dua hands your soul to Allah, whether He returns it in the morning or not.", "de": "Der Schlaf ist ein kleiner Abschied. Dieses Bittgebet übergibt Ihre Seele Allah, ob Er sie am Morgen zurückgibt oder nicht.", "ar": "النوم وداع صغير، وفي هذا الدعاء تسلّم روحك إلى الله، ردّها في الصباح أو أمسكها." }
+        },
+        {
+          "dua": "hisn:28:5",
+          "check": "protect me from Your punishment",
+          "title": { "en": "Remembering the Day of Return", "de": "Im Gedenken an den Tag der Rückkehr", "ar": "تذكّرًا ليوم البعث" },
+          "body": { "en": "Sleep resembles death, waking resembles resurrection. This short dua prepares the heart for the day all will wake again.", "de": "Der Schlaf gleicht dem Tod, das Erwachen der Auferstehung. Dieses kurze Bittgebet bereitet das Herz auf den Tag vor, an dem alle erwachen.", "ar": "النوم يشبه الموت والاستيقاظ يشبه البعث، وهذا الدعاء القصير يهيّئ القلب ليوم يُبعث فيه الجميع." }
+        },
+        {
+          "dua": "hisn:28:6",
+          "check": "I live and die",
+          "title": { "en": "The shortest one", "de": "Das kürzeste", "ar": "أقصرها" },
+          "body": { "en": "Al-Bukhari reports that the Prophet said this on going to bed. The dua for waking up is its answer.", "de": "Al-Buchari berichtet, dass der Prophet es beim Schlafengehen sprach. Das Bittgebet beim Aufwachen ist seine Antwort.", "ar": "روى البخاري أن النبي ﷺ كان يقوله إذا أوى إلى فراشه، ودعاء الاستيقاظ جوابه." }
+        },
+        {
+          "dua": "hisn:28:12",
+          "check": "I submit my soul unto You",
+          "title": { "en": "Your last words of the day", "de": "Ihre letzten Worte des Tages", "ar": "آخر كلامك في يومك" },
+          "body": { "en": "The Prophet taught al-Bara to make these his last words before sleep. Lie on your right side, then hand everything over.", "de": "Der Prophet lehrte al-Bara, dies als letzte Worte vor dem Schlaf zu sprechen. Legen Sie sich auf die rechte Seite und übergeben Sie alles.", "ar": "علّم النبي ﷺ البراءَ أن يجعلها آخر كلامه قبل النوم. اضطجع على شقك الأيمن وفوّض أمرك كله." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-waking-up",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 4", "de": "Bittgebete für jeden Tag · 4", "ar": "أدعية كل يوم · ٤" },
+        "title": { "en": "When you wake up", "de": "Beim Aufwachen", "ar": "عند الاستيقاظ" },
+        "sub": { "en": "The first words of the day belong to Allah: duas for waking up in the morning and in the night.", "de": "Die ersten Worte des Tages gehören Allah: Bittgebete für das Aufwachen am Morgen und in der Nacht.", "ar": "أول كلمات اليوم لله: أدعية للاستيقاظ صباحًا وفي الليل." },
+        "arabic": "الحمد لله"
+      },
+      "slides": [
+        {
+          "verse": "39:42",
+          "check": "during their sleep",
+          "title": { "en": "Sleep, a small death", "de": "Schlaf, ein kleiner Tod", "ar": "النوم وفاة صغرى" },
+          "body": { "en": "The Quran describes sleep as a kind of taking of the soul. Waking up is a gift renewed each morning.", "de": "Der Koran beschreibt den Schlaf als eine Art Abberufung der Seele. Das Erwachen ist ein Geschenk, das sich jeden Morgen erneuert.", "ar": "يصف القرآن النوم بأنه نوع من قبض الروح، فالاستيقاظ نعمة تتجدد كل صباح." }
+        },
+        {
+          "dua": "hisn:1:0",
+          "check": "gave us life after having taken it",
+          "title": { "en": "As you open your eyes", "de": "Wenn Sie die Augen öffnen", "ar": "عند فتح العينين" },
+          "body": { "en": "The answer to the dua before sleep. Al-Bukhari reports that the Prophet said it when he woke up.", "de": "Die Antwort auf das Bittgebet vor dem Schlaf. Al-Buchari berichtet, dass der Prophet es beim Aufwachen sprach.", "ar": "جواب دعاء النوم، وقد روى البخاري أن النبي ﷺ كان يقوله إذا استيقظ." }
+        },
+        {
+          "dua": "hisn:1:2",
+          "check": "restored to me my health",
+          "title": { "en": "Thankful for a healthy morning", "de": "Dankbar für einen gesunden Morgen", "ar": "شكرًا على عافية الصباح" },
+          "body": { "en": "Before the phone, before the news: begin by noticing what you were given overnight.", "de": "Vor dem Handy, vor den Nachrichten: Beginnen Sie damit, wahrzunehmen, was Ihnen über Nacht geschenkt wurde.", "ar": "قبل الهاتف وقبل الأخبار: ابدأ يومك بتأمّل ما وُهب لك في ليلتك." }
+        },
+        {
+          "dua": "hisn:1:1",
+          "check": "O my Lord forgive me",
+          "title": { "en": "If you wake in the night", "de": "Wenn Sie nachts aufwachen", "ar": "إذا استيقظت في الليل" },
+          "body": { "en": "A hadith in al-Bukhari promises that a dua made after these words is answered.", "de": "Ein Hadith bei al-Buchari verheißt, dass ein Bittgebet nach diesen Worten erhört wird.", "ar": "وفي حديث عند البخاري أن من دعا بعد هذه الكلمات استُجيب له." }
+        },
+        {
+          "title": { "en": "A gentle start", "de": "Ein sanfter Beginn", "ar": "بداية هادئة" },
+          "list": {
+            "en": ["Say the dua before you reach for your phone", "Make wudu and pray Fajr on time", "Choose one intention for the day"],
+            "de": ["Sprechen Sie das Bittgebet, bevor Sie zum Handy greifen", "Nehmen Sie die Waschung vor und beten Sie Fadschr rechtzeitig", "Fassen Sie eine Absicht für den Tag"],
+            "ar": ["ادعُ قبل أن تمسك هاتفك", "توضأ وصلِّ الفجر في وقته", "اختر نية واحدة ليومك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-morning-adhkar",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 5", "de": "Bittgebete für jeden Tag · 5", "ar": "أدعية كل يوم · ٥" },
+        "title": { "en": "Morning adhkar in 7 slides", "de": "Die Morgen-Adhkar in 7 Folien", "ar": "أذكار الصباح في سبع شرائح" },
+        "sub": { "en": "Seven remembrances from Hisnul Muslim to begin the day under Allah's care, ideally after Fajr.", "de": "Sieben Gedenkworte aus Hisnul Muslim, um den Tag in Allahs Obhut zu beginnen, am besten nach dem Fadschr-Gebet.", "ar": "سبعة أذكار من حصن المسلم تبدأ بها يومك في رعاية الله، ويحسن قولها بعد الفجر." },
+        "arabic": "أذكار الصباح"
+      },
+      "slides": [
+        {
+          "dua": "hisn:27:15",
+          "check": "fitrah of Islam",
+          "title": { "en": "To begin with who you are", "de": "Um mit dem zu beginnen, wer Sie sind", "ar": "لتبدأ بهويتك" },
+          "body": { "en": "Before anything else, the morning renews who you are and whose path you follow. Once.", "de": "Vor allem anderen erneuert der Morgen, wer Sie sind und wessen Weg Sie folgen. Einmal.", "ar": "قبل كل شيء تجدد في الصباح هويتك والطريق الذي تسير عليه. مرة واحدة." }
+        },
+        {
+          "dua": "hisn:27:3",
+          "check": "by your leave we have reached the morning",
+          "title": { "en": "As the day begins", "de": "Wenn der Tag beginnt", "ar": "مع بداية اليوم" },
+          "body": { "en": "Life, death and the return all lie in His hands. Say the morning wording now; the source also gives the evening one. Once.", "de": "Leben, Tod und Rückkehr liegen in Seiner Hand. Sprechen Sie jetzt die Morgenfassung; die Quelle nennt auch die für den Abend. Einmal.", "ar": "الحياة والموت والمصير بيده. قل صيغة الصباح الآن، والمصدر يذكر صيغة المساء أيضًا. مرة واحدة." }
+        },
+        {
+          "dua": "hisn:27:4",
+          "check": "You created me and I am Your servant",
+          "title": { "en": "The master of seeking forgiveness", "de": "Das vorzüglichste Bittgebet um Vergebung", "ar": "سيد الاستغفار" },
+          "body": { "en": "Al-Bukhari reports it as the best way to seek forgiveness. Said with conviction during the day, it carries a promise of Paradise. Once.", "de": "Al-Buchari überliefert es als beste Form der Bitte um Vergebung. Mit Überzeugung am Tag gesprochen, trägt es die Verheißung des Paradieses. Einmal.", "ar": "رواه البخاري بوصفه أفضل صيغ الاستغفار، ويحمل لمن قاله بيقين وعدًا بالجنة. مرة واحدة." }
+        },
+        {
+          "dua": "hisn:27:7",
+          "check": "grant my body health",
+          "title": { "en": "For health and protection", "de": "Für Gesundheit und Schutz", "ar": "للعافية والحماية" },
+          "body": { "en": "A dua for body and senses, and for refuge from what harms faith and life. Each part three times.", "de": "Ein Bittgebet für Körper und Sinne und um Zuflucht vor dem, was Glauben und Leben schadet. Jeder Teil dreimal.", "ar": "دعاء لعافية البدن والحواس، واستعاذة مما يضر الدين والدنيا. كل جزء ثلاث مرات." }
+        },
+        {
+          "dua": "hisn:27:11",
+          "check": "nothing is harmed",
+          "title": { "en": "For protection through the day", "de": "Für Schutz durch den Tag", "ar": "للحفظ طوال اليوم" },
+          "body": { "en": "A short shield for the hours ahead, said in the morning and the evening. Three times.", "de": "Ein kurzer Schutz für die kommenden Stunden, morgens und abends gesprochen. Dreimal.", "ar": "حصن قصير للساعات القادمة، يقال صباحًا ومساءً. ثلاث مرات." }
+        },
+        {
+          "dua": "hisn:27:12",
+          "check": "pleased with Allah as a Lord",
+          "title": { "en": "To renew your contentment", "de": "Um Ihre Zufriedenheit zu erneuern", "ar": "لتجديد الرضا" },
+          "body": { "en": "Three short lines that anchor the heart before the day pulls at it. Three times.", "de": "Drei kurze Zeilen, die das Herz verankern, bevor der Tag an ihm zieht. Dreimal.", "ar": "كلمات قصيرة تثبّت القلب قبل أن تتجاذبه مشاغل اليوم. ثلاث مرات." }
+        },
+        {
+          "dua": "hisn:27:16",
+          "check": "How perfect Allah is and I praise Him",
+          "title": { "en": "One hundred times", "de": "Hundertmal", "ar": "مئة مرة" },
+          "body": { "en": "About two minutes. Al-Bukhari reports a vast forgiveness for whoever says it a hundred times a day.", "de": "Etwa zwei Minuten. Al-Buchari überliefert eine weite Vergebung für jeden, der es hundertmal am Tag sagt.", "ar": "دقيقتان تقريبًا، وقد روى البخاري في فضله مغفرة واسعة لمن قاله مئة مرة في يومه." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-evening-adhkar",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 6", "de": "Bittgebete für jeden Tag · 6", "ar": "أدعية كل يوم · ٦" },
+        "title": { "en": "Evening adhkar", "de": "Die Abend-Adhkar", "ar": "أذكار المساء" },
+        "sub": { "en": "Six remembrances to close the day. Scholars differ on the time: from Asr or from sunset.", "de": "Sechs Gedenkworte zum Abschluss des Tages. Zur Zeit gibt es zwei Ansichten: ab dem Asr oder ab Sonnenuntergang.", "ar": "ستة أذكار تختم بها يومك. واختلف العلماء في وقتها: من العصر أو من المغرب." },
+        "arabic": "أذكار المساء"
+      },
+      "slides": [
+        {
+          "dua": "hisn:27:0",
+          "check": "Neither drowsiness overtakes Him",
+          "title": { "en": "Ayat al-Kursi", "de": "Ayat al-Kursi", "ar": "آية الكرسي" },
+          "body": { "en": "Al-Baqarah 2:255. Al-Bukhari connects it with Allah's protection through the night. Once.", "de": "Al-Baqara 2:255. Al-Buchari verbindet sie mit Allahs Schutz durch die Nacht. Einmal.", "ar": "البقرة ٢:٢٥٥، وقد ربطها البخاري بحفظ الله طوال الليل. مرة واحدة." }
+        },
+        {
+          "dua": "hisn:27:22",
+          "check": "perfect words",
+          "title": { "en": "Refuge for the night", "de": "Zuflucht für die Nacht", "ar": "تحصّن لليل" },
+          "body": { "en": "A short refuge from every harm in creation. Three times in the evening.", "de": "Eine kurze Zufluchtnahme vor jedem Schaden in der Schöpfung. Dreimal am Abend.", "ar": "استعاذة قصيرة من كل شرّ في الخلق. ثلاث مرات في المساء." }
+        },
+        {
+          "dua": "hisn:27:8",
+          "check": "Allah is Sufficient for me",
+          "title": { "en": "Trust, seven times", "de": "Gottvertrauen, siebenmal", "ar": "التوكل سبع مرات" },
+          "body": { "en": "Hand the worries of the day back to Allah before the night. Seven times.", "de": "Geben Sie die Sorgen des Tages vor der Nacht an Allah zurück. Siebenmal.", "ar": "أعد همومَ يومك إلى الله قبل الليل. سبع مرات." }
+        },
+        {
+          "dua": "hisn:27:9",
+          "check": "pardon and well-being",
+          "title": { "en": "For well-being in all things", "de": "Für Wohlergehen in allem", "ar": "للعافية في كل شيء" },
+          "body": { "en": "One of the most complete duas for safety, asked for this life and the next. Once.", "de": "Eines der umfassendsten Bittgebete um Wohlergehen, für dieses und das nächste Leben. Einmal.", "ar": "من أجمع الأدعية في سؤال العافية في الدنيا والآخرة. مرة واحدة." }
+        },
+        {
+          "dua": "hisn:27:5",
+          "check": "bearers of Your throne",
+          "title": { "en": "Four times, as a witness", "de": "Viermal, als Zeugnis", "ar": "أربع مرات شهادةً" },
+          "body": { "en": "You call all creation to witness your faith. Four times; in the evening, 'morning' becomes 'evening'.", "de": "Sie rufen die ganze Schöpfung als Zeugen Ihres Glaubens an. Viermal; am Abend wird „Morgen“ zu „Abend“.", "ar": "تُشهد الخلق كلهم على إيمانك. أربع مرات، وفي المساء تقول «أمسيتُ» بدل «أصبحتُ»." }
+        },
+        {
+          "dua": "hisn:27:17",
+          "check": "ten times",
+          "title": { "en": "Ten times before you rest", "de": "Zehnmal vor der Ruhe", "ar": "عشر مرات قبل الراحة" },
+          "body": { "en": "The heart of tawhid in one sentence. Ten times; the source allows once on a tired day.", "de": "Der Kern des Tauhid in einem Satz. Zehnmal; die Quelle erlaubt an müden Tagen auch einmal.", "ar": "خلاصة التوحيد في جملة واحدة. عشر مرات، ويجيز المصدر مرة واحدة عند الفتور." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-home",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 7", "de": "Bittgebete für jeden Tag · 7", "ar": "أدعية كل يوم · ٧" },
+        "title": { "en": "Leaving and entering the home", "de": "Das Haus verlassen und betreten", "ar": "الخروج من البيت ودخوله" },
+        "sub": { "en": "Three short duas and one reminder: the door of your home is a place of remembrance.", "de": "Drei kurze Bittgebete und eine Erinnerung: Die Tür Ihres Hauses ist ein Ort des Gedenkens.", "ar": "ثلاثة أدعية قصيرة وتذكير: باب بيتك موضع للذكر." },
+        "arabic": "بسم الله"
+      },
+      "slides": [
+        {
+          "dua": "hisn:10:0",
+          "check": "I place my trust in Allah",
+          "title": { "en": "As you step out", "de": "Beim Hinausgehen", "ar": "عند الخروج" },
+          "body": { "en": "Before keys, phone and wallet: one sentence that puts the whole day in Allah's hands.", "de": "Vor Schlüssel, Handy und Geldbeutel: ein Satz, der den ganzen Tag in Allahs Hände legt.", "ar": "قبل المفاتيح والهاتف والمحفظة: جملة واحدة تضع يومك كله بين يدي الله." }
+        },
+        {
+          "dua": "hisn:10:1",
+          "check": "lest I should stray",
+          "title": { "en": "Also when leaving", "de": "Ebenfalls beim Hinausgehen", "ar": "وعند الخروج أيضًا" },
+          "body": { "en": "Outside we meet people. This dua guards both sides: what we might do to others and what others might do to us.", "de": "Draußen begegnen wir Menschen. Dieses Bittgebet schützt beide Seiten: was wir anderen antun könnten und was andere uns antun könnten.", "ar": "في الخارج نلقى الناس، وهذا الدعاء يحمي الجانبين: ما قد نفعله بغيرنا وما قد يفعله غيرنا بنا." }
+        },
+        {
+          "dua": "hisn:11:0",
+          "check": "In the name of Allah we enter",
+          "title": { "en": "As you come home", "de": "Beim Heimkommen", "ar": "عند دخول البيت" },
+          "body": { "en": "Say it at the door, then greet the people of the house with salam.", "de": "Sprechen Sie es an der Tür und grüßen Sie dann die Bewohner mit dem Salam.", "ar": "قلها عند الباب، ثم سلّم على أهل البيت." }
+        },
+        {
+          "hadith": "muslim:5262",
+          "check": "no place to spend the night",
+          "title": { "en": "Why it matters", "de": "Warum es zählt", "ar": "لماذا يهم ذلك" },
+          "body": { "en": "Mentioning Allah at the door and at the table closes the home to Shaytan.", "de": "Allahs Namen an der Tür und am Tisch zu nennen, verschließt das Haus vor dem Satan.", "ar": "ذكر الله عند الباب وعلى الطعام يغلق البيت في وجه الشيطان." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-travel",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 8", "de": "Bittgebete für jeden Tag · 8", "ar": "أدعية كل يوم · ٨" },
+        "title": { "en": "Duas for travel", "de": "Bittgebete für die Reise", "ar": "أدعية السفر" },
+        "sub": { "en": "From saying goodbye to coming home: six duas for the journey.", "de": "Vom Abschied bis zur Heimkehr: sechs Bittgebete für unterwegs.", "ar": "من الوداع إلى العودة: ستة أدعية للطريق." },
+        "arabic": "دعاء السفر"
+      },
+      "slides": [
+        {
+          "dua": "hisn:100:0",
+          "check": "I place you in the trust of Allah",
+          "title": { "en": "Saying goodbye", "de": "Beim Abschied", "ar": "عند الوداع" },
+          "body": { "en": "The traveller says this to those staying behind. Leave your family in the safest hands.", "de": "Der Reisende sagt es zu denen, die zurückbleiben. Lassen Sie Ihre Familie in den sichersten Händen.", "ar": "يقوله المسافر لمن يبقى خلفه؛ استودع أهلك أوثق الأيدي." }
+        },
+        {
+          "dua": "hisn:101:0",
+          "check": "the ends of your deeds",
+          "title": { "en": "For the one who travels", "de": "Für den, der reist", "ar": "لمن يسافر" },
+          "body": { "en": "Those staying behind say this to the traveller: a farewell that thinks of faith, not only of safety.", "de": "Die Zurückbleibenden sagen es zum Reisenden: ein Abschied, der an den Glauben denkt, nicht nur an die Sicherheit.", "ar": "يقوله المقيم للمسافر: وداع يهتم بالدين لا بالسلامة وحدها." }
+        },
+        {
+          "dua": "hisn:95:0",
+          "check": "at our service",
+          "title": { "en": "When you set off", "de": "Beim Losfahren", "ar": "عند الركوب" },
+          "body": { "en": "For car, train, plane or bike. Its middle part echoes Surah az-Zukhruf (43:13-14).", "de": "Für Auto, Zug, Flugzeug oder Fahrrad. Der mittlere Teil greift Sure az-Zuchruf (43:13-14) auf.", "ar": "للسيارة والقطار والطائرة والدراجة، ووسطه من سورة الزخرف (٤٣:١٣-١٤)." }
+        },
+        {
+          "dua": "hisn:102:0",
+          "check": "went up a hill",
+          "title": { "en": "Uphill and downhill", "de": "Bergauf und bergab", "ar": "صعودًا ونزولًا" },
+          "body": { "en": "The companions said Allahu akbar going up and subhan Allah going down. Many apply it to take-off and landing too.", "de": "Die Gefährten sagten bergauf Allahu akbar und bergab Subhan Allah. Viele übertragen es auch auf Start und Landung.", "ar": "كان الصحابة يكبّرون إذا صعدوا ويسبّحون إذا نزلوا، ويطبّقه كثيرون عند إقلاع الطائرة وهبوطها." }
+        },
+        {
+          "dua": "hisn:104:0",
+          "check": "the evil that He has created",
+          "title": { "en": "When you stop on the way", "de": "Bei einer Rast unterwegs", "ar": "عند النزول في الطريق" },
+          "body": { "en": "At a hotel, a rest stop or a friend's house: seek refuge with these words wherever you stop.", "de": "Im Hotel, an der Raststätte oder bei Freunden: Suchen Sie mit diesen Worten Zuflucht, wo immer Sie haltmachen.", "ar": "في فندق أو استراحة أو بيت صديق: تحصّن بهذه الكلمات حيث نزلت." }
+        },
+        {
+          "dua": "hisn:105:0",
+          "check": "We return, repent, worship and praise our Lord",
+          "title": { "en": "On the way home", "de": "Auf dem Heimweg", "ar": "عند العودة" },
+          "body": { "en": "The Prophet said this on returning from a journey. Come home grateful, not only tired.", "de": "Der Prophet sprach es bei der Rückkehr von einer Reise. Kommen Sie dankbar heim, nicht nur müde.", "ar": "كان النبي ﷺ يقوله إذا رجع من سفر. عُد شاكرًا لا متعبًا فحسب." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-rain",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 9", "de": "Bittgebete für jeden Tag · 9", "ar": "أدعية كل يوم · ٩" },
+        "title": { "en": "Rain, wind and thunder", "de": "Regen, Wind und Donner", "ar": "المطر والريح والرعد" },
+        "sub": { "en": "Weather is one of Allah's signs. Six short duas for the sky above you.", "de": "Das Wetter ist eines der Zeichen Allahs. Sechs kurze Bittgebete für den Himmel über Ihnen.", "ar": "الطقس آية من آيات الله. ستة أدعية قصيرة للسماء فوقك." },
+        "arabic": "دعاء المطر"
+      },
+      "slides": [
+        {
+          "dua": "hisn:61:1",
+          "check": "the good it was sent with",
+          "title": { "en": "When the wind blows", "de": "Wenn der Wind weht", "ar": "عند هبوب الريح" },
+          "body": { "en": "Wind can bring mercy or harm. The Prophet met both possibilities with a dua.", "de": "Wind kann Barmherzigkeit oder Schaden bringen. Der Prophet begegnete beiden Möglichkeiten mit einem Bittgebet.", "ar": "قد تحمل الريح رحمة أو أذى، وكان النبي ﷺ يستقبل الاحتمالين بالدعاء." }
+        },
+        {
+          "dua": "hisn:62:0",
+          "check": "Whom the thunder declares His perfection",
+          "title": { "en": "When it thunders", "de": "Wenn es donnert", "ar": "عند سماع الرعد" },
+          "body": { "en": "The words echo Surah ar-Ra'd (13:13): the thunder itself glorifies Allah. Pause and join in.", "de": "Die Worte greifen Sure ar-Ra'd (13:13) auf: Selbst der Donner preist Allah. Halten Sie inne und stimmen Sie ein.", "ar": "تستلهم كلماته سورة الرعد (١٣:١٣): الرعد نفسه يسبّح الله. توقّف وشاركه التسبيح." }
+        },
+        {
+          "dua": "hisn:63:0",
+          "check": "helpful, wholesome and healthy rain",
+          "title": { "en": "In times of drought", "de": "In Zeiten der Dürre", "ar": "عند القحط" },
+          "body": { "en": "A dua for rain that brings benefit, not damage. It fits every land that waits for water.", "de": "Ein Bittgebet um Regen, der Nutzen bringt und keinen Schaden. Es passt zu jedem Land, das auf Wasser wartet.", "ar": "دعاء بمطر نافع لا ضار، يناسب كل أرض تنتظر الماء." }
+        },
+        {
+          "dua": "hisn:64:0",
+          "check": "beneficial rain cloud",
+          "title": { "en": "When the rain begins", "de": "Wenn der Regen beginnt", "ar": "عند نزول المطر" },
+          "body": { "en": "Short enough for the first drops. Many scholars count rainfall among the times dua is hoped to be answered.", "de": "Kurz genug für die ersten Tropfen. Viele Gelehrte zählen den Regen zu den Zeiten, in denen man auf Erhörung hofft.", "ar": "قصير يقال مع أول القطرات، ويعدّ كثير من العلماء نزول المطر من أوقات رجاء الإجابة." }
+        },
+        {
+          "dua": "hisn:65:0",
+          "check": "by the grace and mercy of Allah",
+          "title": { "en": "After the rain", "de": "Nach dem Regen", "ar": "بعد المطر" },
+          "body": { "en": "Credit the rain to Allah's grace, not to luck or the stars. A small sentence that shapes how we see the world.", "de": "Schreiben Sie den Regen Allahs Huld zu, nicht dem Zufall oder den Sternen. Ein kleiner Satz, der unseren Blick auf die Welt prägt.", "ar": "انسب المطر إلى فضل الله لا إلى الحظ أو النجوم؛ جملة صغيرة تشكّل نظرتنا إلى العالم." }
+        },
+        {
+          "dua": "hisn:66:0",
+          "check": "around us and not upon us",
+          "title": { "en": "When there is too much rain", "de": "Wenn es zu viel regnet", "ar": "عند كثرة المطر" },
+          "body": { "en": "Even with too much rain the Prophet did not ask for it to stop, but for it to fall where it helps.", "de": "Selbst bei zu viel Regen bat der Prophet nicht um sein Ende, sondern darum, dass er dort fällt, wo er nützt.", "ar": "حتى عند كثرة المطر لم يسأل النبي ﷺ انقطاعه، بل أن ينزل حيث ينفع." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-visiting-the-sick",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 10", "de": "Bittgebete für jeden Tag · 10", "ar": "أدعية كل يوم · ١٠" },
+        "title": { "en": "Visiting the sick", "de": "Kranke besuchen", "ar": "عيادة المريض" },
+        "sub": { "en": "A visit is an act of worship. What to say at the bedside, and when you feel pain yourself.", "de": "Ein Krankenbesuch ist ein Gottesdienst. Was man am Krankenbett sagt und was bei eigenen Schmerzen.", "ar": "عيادة المريض عبادة. ماذا تقول عنده، وماذا تقول عند ألمك." },
+        "arabic": "عيادة المريض"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:5649",
+          "check": "visit the sick",
+          "title": { "en": "A command of kindness", "de": "Ein Gebot der Güte", "ar": "من أعمال البرّ" },
+          "body": { "en": "Visiting the sick stands beside feeding the hungry in one short command.", "de": "Kranke zu besuchen steht in einem kurzen Gebot neben dem Speisen der Hungrigen.", "ar": "تأتي عيادة المريض مع إطعام الجائع في أمر نبوي قصير." }
+        },
+        {
+          "dua": "hisn:50:0",
+          "check": "reaping the fruits of Paradise",
+          "title": { "en": "The reward of a visit", "de": "Der Lohn eines Besuchs", "ar": "أجر الزيارة" },
+          "body": { "en": "Hisnul Muslim records a great reward for it, in the morning and in the evening alike.", "de": "Hisnul Muslim überliefert dafür einen großen Lohn, am Morgen wie am Abend.", "ar": "يذكر حصن المسلم لها أجرًا عظيمًا صباحًا ومساءً." }
+        },
+        {
+          "dua": "hisn:49:0",
+          "check": "purification",
+          "title": { "en": "At the bedside", "de": "Am Krankenbett", "ar": "عند المريض" },
+          "body": { "en": "Comforting words the Prophet said to the sick: illness is not only pain, it can also cleanse.", "de": "Tröstende Worte, die der Prophet zu Kranken sagte: Krankheit ist nicht nur Schmerz, sie kann auch reinigen.", "ar": "كلمات مواساة كان النبي ﷺ يقولها للمريض: المرض ليس ألمًا فقط، بل قد يكون تطهيرًا." }
+        },
+        {
+          "dua": "hisn:49:1",
+          "check": "Lord of the magnificent throne to cure you",
+          "title": { "en": "A dua for healing", "de": "Ein Bittgebet um Heilung", "ar": "دعاء بالشفاء" },
+          "body": { "en": "Said for the sick person seven times, as the source states.", "de": "Für den Kranken siebenmal gesprochen, wie die Quelle angibt.", "ar": "يقال للمريض سبع مرات كما في المصدر." }
+        },
+        {
+          "dua": "hisn:124:0",
+          "check": "Place your hand at the site of the pain",
+          "title": { "en": "When you feel pain yourself", "de": "Wenn Sie selbst Schmerzen haben", "ar": "عند ألمك أنت" },
+          "body": { "en": "Hand on the place that hurts: Bismillah three times, then the refuge seven times. Alongside medical care, not instead of it.", "de": "Die Hand auf die schmerzende Stelle: dreimal Bismillah, dann siebenmal die Zufluchtnahme. Ergänzend zur ärztlichen Behandlung, nicht an ihrer Stelle.", "ar": "ضع يدك على موضع الألم: البسملة ثلاثًا ثم الاستعاذة سبعًا، مع العلاج لا بديلًا عنه." }
+        },
+        {
+          "title": { "en": "Etiquette of the visit", "de": "Gute Sitten beim Besuch", "ar": "آداب العيادة" },
+          "list": {
+            "en": ["Keep the visit short unless they want you to stay", "Speak of hope, not of other people's illnesses", "Ask what they need, then help"],
+            "de": ["Halten Sie den Besuch kurz, außer man wünscht Ihr Bleiben", "Sprechen Sie von Hoffnung, nicht von den Krankheiten anderer", "Fragen Sie, was gebraucht wird, und helfen Sie dann"],
+            "ar": ["اجعل الزيارة قصيرة إلا إن رغب في بقائك", "تحدّث بالأمل لا بأمراض الآخرين", "اسأله عن حاجته ثم أعِنه"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-parents",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 11", "de": "Bittgebete für jeden Tag · 11", "ar": "أدعية كل يوم · ١١" },
+        "title": { "en": "Duas for your parents", "de": "Bittgebete für Ihre Eltern", "ar": "أدعية للوالدين" },
+        "sub": { "en": "While they live and after they are gone: your dua is a gift that keeps reaching them.", "de": "Zu Lebzeiten und nach ihrem Tod: Ihr Bittgebet ist ein Geschenk, das sie weiter erreicht.", "ar": "في حياتهما وبعد رحيلهما: دعاؤك هدية تصل إليهما دائمًا." },
+        "arabic": "برّ الوالدين"
+      },
+      "slides": [
+        {
+          "verse": "17:24",
+          "check": "as they brought me up",
+          "title": { "en": "The dua the Quran teaches", "de": "Das Bittgebet, das der Koran lehrt", "ar": "دعاء علّمه القرآن" },
+          "body": { "en": "Say it daily, with their names if you like. It asks for the mercy they showed us when we were small.", "de": "Sprechen Sie es täglich, gern mit ihren Namen. Es bittet um die Barmherzigkeit, die sie uns als Kinder schenkten.", "ar": "ادعُ به كل يوم، ولك أن تسمّيهما. فيه سؤال الرحمة التي منحاك إياها صغيرًا." }
+        },
+        {
+          "hadith": "muslim:4223",
+          "check": "a pious son, who prays for him",
+          "title": { "en": "A deed that does not end", "de": "Eine Tat, die nicht endet", "ar": "عمل لا ينقطع" },
+          "body": { "en": "When parents die, a child who prays for them keeps their good alive.", "de": "Wenn Eltern sterben, hält ein Kind, das für sie betet, ihr Gutes am Leben.", "ar": "إذا مات الوالدان، فإن الولد الذي يدعو لهما يُبقي خيرهما حيًّا." }
+        },
+        {
+          "dua": "hisn:101:1",
+          "check": "May Allah endow you with taqwa",
+          "title": { "en": "When they travel", "de": "Wenn sie verreisen", "ar": "عند سفرهما" },
+          "body": { "en": "A farewell dua for a parent setting off, full of care for this life and the next.", "de": "Ein Abschiedsgebet für einen Elternteil, der aufbricht, voller Fürsorge für dieses und das nächste Leben.", "ar": "دعاء وداع لأحد الوالدين عند سفره، فيه عناية بالدنيا والآخرة." }
+        },
+        {
+          "dua": "hisn:55:1",
+          "check": "forgive our living and our dead",
+          "title": { "en": "For the living and the departed", "de": "Für Lebende und Verstorbene", "ar": "للأحياء والأموات" },
+          "body": { "en": "From the funeral prayer, yet fitting at any time. It includes your parents, whether they are with you or not.", "de": "Aus dem Totengebet, doch zu jeder Zeit passend. Es schließt Ihre Eltern ein, ob sie bei Ihnen sind oder nicht.", "ar": "من دعاء صلاة الجنازة، ويصلح في كل وقت، ويشمل والديك حاضرَين كانا أو غائبَين." }
+        },
+        {
+          "dua": "hisn:60:0",
+          "check": "inhabitants of the graves",
+          "title": { "en": "At their graves", "de": "An ihrem Grab", "ar": "عند قبرهما" },
+          "body": { "en": "Visiting a parent's grave is a moment to greet them and pray for them, not to despair.", "de": "Der Besuch am Grab der Eltern ist ein Moment, sie zu grüßen und für sie zu beten, nicht zu verzweifeln.", "ar": "زيارة قبر الوالدين لحظة للسلام عليهما والدعاء لهما، لا لليأس." }
+        },
+        {
+          "hadith": "muslim:6927",
+          "check": "supplicates for his brother behind his back",
+          "title": { "en": "Pray for them in private", "de": "Beten Sie im Stillen für sie", "ar": "ادعُ لهما في السرّ" },
+          "body": { "en": "A dua made in someone's absence returns to you as well. How much more for those who raised you.", "de": "Ein Bittgebet in Abwesenheit des anderen kommt auch Ihnen zugute. Wie viel mehr für die, die Sie großgezogen haben.", "ar": "الدعاء بظهر الغيب يعود عليك بمثله، فكيف بمن ربّياك؟" }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-eating-drinking",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 12", "de": "Bittgebete für jeden Tag · 12", "ar": "أدعية كل يوم · ١٢" },
+        "title": { "en": "Eating and drinking: 5 duas", "de": "Essen und Trinken: 5 Bittgebete", "ar": "الطعام والشراب: خمسة أدعية" },
+        "sub": { "en": "Before the first bite, after the last one, and for the person who fed you.", "de": "Vor dem ersten Bissen, nach dem letzten und für den, der Sie bewirtet hat.", "ar": "قبل اللقمة الأولى وبعد الأخيرة، ولمن أطعمك." },
+        "arabic": "آداب الطعام"
+      },
+      "slides": [
+        {
+          "dua": "hisn:69:0",
+          "check": "beginning and end",
+          "title": { "en": "Before you eat", "de": "Vor dem Essen", "ar": "قبل الطعام" },
+          "body": { "en": "Bismillah before the first bite. Forgot? Say the longer form as soon as you remember.", "de": "Bismillah vor dem ersten Bissen. Vergessen? Sprechen Sie die längere Form, sobald Sie sich erinnern.", "ar": "البسملة قبل اللقمة الأولى، وإن نسيت فقل الصيغة الأطول حين تتذكر." }
+        },
+        {
+          "dua": "hisn:69:1",
+          "check": "bless it for us",
+          "title": { "en": "For barakah in your food", "de": "Für Segen im Essen", "ar": "للبركة في الطعام" },
+          "body": { "en": "A dua for barakah in what is on the table, with its own wording for milk.", "de": "Ein Bittgebet um Segen für das, was auf dem Tisch steht, mit einer eigenen Form für Milch.", "ar": "دعاء بالبركة فيما على المائدة، وله صيغة خاصة باللبن." }
+        },
+        {
+          "dua": "hisn:70:0",
+          "check": "without any might nor power from myself",
+          "title": { "en": "After you eat", "de": "Nach dem Essen", "ar": "بعد الطعام" },
+          "body": { "en": "Food reaches us through countless hands, yet the gratitude goes to the One who provided it.", "de": "Das Essen erreicht uns durch unzählige Hände, doch der Dank gilt Dem, der es gewährt hat.", "ar": "يصلنا الطعام عبر أيدٍ لا تحصى، والشكر لمن رزقنا إياه." }
+        },
+        {
+          "dua": "hisn:71:0",
+          "check": "bless for them",
+          "title": { "en": "As a guest", "de": "Als Gast", "ar": "دعاء الضيف" },
+          "body": { "en": "The finest thank-you to a host costs nothing: a dua for them before you leave.", "de": "Der schönste Dank an Gastgeber kostet nichts: ein Bittgebet für sie, bevor Sie gehen.", "ar": "أجمل شكر للمضيف لا يكلّف شيئًا: دعاء له قبل أن تنصرف." }
+        },
+        {
+          "dua": "hisn:72:0",
+          "check": "feed him who fed me",
+          "title": { "en": "For whoever gives you a drink", "de": "Für den, der Ihnen zu trinken gibt", "ar": "لمن سقاك" },
+          "body": { "en": "A cup of tea or a glass of water is a small kindness. Answer it with a dua.", "de": "Eine Tasse Tee oder ein Glas Wasser ist eine kleine Güte. Antworten Sie mit einem Bittgebet.", "ar": "كوب شاي أو ماء معروف صغير، فقابله بدعاء." }
+        },
+        {
+          "verse": "7:31",
+          "check": "eat and drink, but be not excessive",
+          "title": { "en": "The Quranic rule of the table", "de": "Die koranische Regel für den Tisch", "ar": "قاعدة قرآنية للمائدة" },
+          "body": { "en": "Enjoy what is good, without excess. Moderation is part of gratitude.", "de": "Genießen Sie das Gute, ohne Maßlosigkeit. Maß zu halten gehört zur Dankbarkeit.", "ar": "استمتع بالطيبات دون إسراف؛ فالاعتدال من الشكر." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-mosque",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 13", "de": "Bittgebete für jeden Tag · 13", "ar": "أدعية كل يوم · ١٣" },
+        "title": { "en": "The adhan and the mosque", "de": "Gebetsruf und Moschee", "ar": "الأذان والمسجد" },
+        "sub": { "en": "Five duas from the first call to the moment you leave the mosque.", "de": "Fünf Bittgebete vom ersten Ruf bis zum Verlassen der Moschee.", "ar": "خمسة أدعية من أول النداء حتى الخروج من المسجد." },
+        "arabic": "بيوت الله"
+      },
+      "slides": [
+        {
+          "dua": "hisn:15:0",
+          "check": "repeats just as",
+          "title": { "en": "While the adhan is called", "de": "Während des Gebetsrufs", "ar": "عند سماع الأذان" },
+          "body": { "en": "Repeat after the caller, with one change at 'come to prayer' and 'come to success'.", "de": "Sprechen Sie dem Rufer nach, mit einer Änderung bei „kommt zum Gebet“ und „kommt zum Erfolg“.", "ar": "ردّد مع المؤذن، إلا عند «حيّ على الصلاة» و«حيّ على الفلاح» فتقول غيرها." }
+        },
+        {
+          "dua": "hisn:15:3",
+          "check": "Owner of this perfect call",
+          "title": { "en": "After the adhan", "de": "Nach dem Gebetsruf", "ar": "بعد الأذان" },
+          "body": { "en": "A dua for the Prophet after the call. Muslim reports that whoever asks the Wasila for him is assured of his intercession.", "de": "Ein Bittgebet für den Propheten nach dem Ruf. Muslim überliefert, dass wer für ihn um die Wasila bittet, seiner Fürsprache gewiss ist.", "ar": "دعاء للنبي ﷺ بعد الأذان، وقد روى مسلم أن من سأل له الوسيلة نال شفاعته." }
+        },
+        {
+          "dua": "hisn:15:4",
+          "check": "between the athan and the iqamah",
+          "title": { "en": "Between adhan and iqamah", "de": "Zwischen Gebetsruf und Iqama", "ar": "بين الأذان والإقامة" },
+          "body": { "en": "A precious window that the source singles out for dua. Bring your own requests.", "de": "Ein kostbares Zeitfenster, das die Quelle für das Bittgebet hervorhebt. Bringen Sie Ihre eigenen Anliegen.", "ar": "وقت ثمين يخصّه المصدر بالدعاء، فاحمل إليه حاجاتك." }
+        },
+        {
+          "dua": "hisn:13:0",
+          "check": "open the gates of Your mercy",
+          "title": { "en": "Entering the mosque", "de": "Beim Betreten der Moschee", "ar": "عند دخول المسجد" },
+          "body": { "en": "Enter with your right foot first. Then, if time allows, pray two rak'ahs before you sit.", "de": "Treten Sie mit dem rechten Fuß zuerst ein. Beten Sie dann, wenn die Zeit es erlaubt, zwei Rakaat, bevor Sie sich setzen.", "ar": "قدّم رجلك اليمنى، ثم صلِّ ركعتين قبل أن تجلس إن اتسع الوقت." }
+        },
+        {
+          "dua": "hisn:14:0",
+          "check": "I ask You from Your favour",
+          "title": { "en": "Leaving the mosque", "de": "Beim Verlassen der Moschee", "ar": "عند الخروج من المسجد" },
+          "body": { "en": "Inside you asked for mercy; outside you ask for His bounty. Step out with your left foot first.", "de": "Drinnen baten Sie um Barmherzigkeit, draußen bitten Sie um Seine Huld. Gehen Sie mit dem linken Fuß zuerst hinaus.", "ar": "في الداخل سألت الرحمة، وفي الخارج تسأل فضله. قدّم رجلك اليسرى عند الخروج." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-wudu",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 14", "de": "Bittgebete für jeden Tag · 14", "ar": "أدعية كل يوم · ١٤" },
+        "title": { "en": "Duas of wudu", "de": "Bittgebete der Gebetswaschung", "ar": "أذكار الوضوء" },
+        "sub": { "en": "Water cleans the body, these words turn the heart: what to say before and after ablution.", "de": "Wasser reinigt den Körper, diese Worte wenden das Herz: was man vor und nach der Waschung sagt.", "ar": "الماء يطهّر البدن، وهذه الكلمات توجّه القلب: ما يقال قبل الوضوء وبعده." },
+        "arabic": "الوضوء"
+      },
+      "slides": [
+        {
+          "dua": "hisn:8:0",
+          "check": "In the name of Allah",
+          "title": { "en": "Before you begin", "de": "Bevor Sie beginnen", "ar": "قبل الوضوء" },
+          "body": { "en": "Begin with Bismillah. Scholars differ on whether it is obligatory or recommended, but all encourage it.", "de": "Beginnen Sie mit Bismillah. Ob es Pflicht oder empfohlen ist, darüber sind die Gelehrten uneins, doch alle raten dazu.", "ar": "ابدأ بالبسملة. واختلف العلماء في وجوبها أو استحبابها، وكلهم يحثّ عليها." }
+        },
+        {
+          "hadith": "muslim:578",
+          "check": "from under his nails",
+          "title": { "en": "What wudu does", "de": "Was die Waschung bewirkt", "ar": "ما يفعله الوضوء" },
+          "body": { "en": "Done well, wudu is more than washing. Every drop carries away more than dust.", "de": "Gut verrichtet ist die Waschung mehr als Waschen. Jeder Tropfen trägt mehr fort als Staub.", "ar": "الوضوء المتقَن أكثر من غسل؛ كل قطرة تحمل معها أكثر من الغبار." }
+        },
+        {
+          "dua": "hisn:9:0",
+          "check": "I bear witness",
+          "title": { "en": "When you finish", "de": "Wenn Sie fertig sind", "ar": "بعد الفراغ من الوضوء" },
+          "body": { "en": "The shahadah after wudu. Sahih Muslim reports that the eight gates of Paradise open for whoever says it.", "de": "Die Schahada nach der Waschung. Sahih Muslim überliefert, dass sich für den, der sie spricht, die acht Tore des Paradieses öffnen.", "ar": "الشهادة بعد الوضوء، وقد روى مسلم أن أبواب الجنة الثمانية تُفتح لمن قالها." }
+        },
+        {
+          "dua": "hisn:9:1",
+          "check": "return to You often in repentance",
+          "title": { "en": "Then add this", "de": "Dann fügen Sie hinzu", "ar": "ثم أضف" },
+          "body": { "en": "Outer and inner purity in one dua: water for the body, repentance for the heart.", "de": "Äußere und innere Reinheit in einem Bittgebet: Wasser für den Körper, Reue für das Herz.", "ar": "طهارة الظاهر والباطن في دعاء واحد: الماء للبدن والتوبة للقلب." }
+        },
+        {
+          "dua": "hisn:9:2",
+          "check": "How perfect You are O Allah, and I praise You",
+          "title": { "en": "A seal for your wudu", "de": "Ein Siegel für die Waschung", "ar": "ختم للوضوء" },
+          "body": { "en": "Glorification, testimony and seeking forgiveness: the same words that also close a gathering.", "de": "Lobpreis, Bezeugung und Bitte um Vergebung: dieselben Worte, die auch eine Versammlung abschließen.", "ar": "تسبيح وشهادة واستغفار، وهي الكلمات نفسها التي تُختم بها المجالس." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-istikhara",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 15", "de": "Bittgebete für jeden Tag · 15", "ar": "أدعية كل يوم · ١٥" },
+        "title": { "en": "Istikhara: asking Allah to choose", "de": "Istichara: Allah um die Wahl bitten", "ar": "الاستخارة: أن تطلب من الله الخيرة" },
+        "sub": { "en": "For a job, a move or a marriage: how the prayer of seeking guidance works, step by step.", "de": "Für eine Stelle, einen Umzug oder eine Ehe: wie das Gebet um Leitung funktioniert, Schritt für Schritt.", "ar": "لعمل أو انتقال أو زواج: كيف تُصلّى الاستخارة خطوة بخطوة." },
+        "arabic": "الاستخارة"
+      },
+      "slides": [
+        {
+          "title": { "en": "What istikhara is", "de": "Was Istichara ist", "ar": "ما الاستخارة" },
+          "body": { "en": "Istikhara means asking Allah to choose what is best for you. Jabir reports that the Prophet taught it with great care, for big and small decisions alike.", "de": "Istichara heißt, Allah zu bitten, das Beste für Sie zu wählen. Jabir berichtet, dass der Prophet sie mit großer Sorgfalt lehrte, für große wie kleine Entscheidungen.", "ar": "الاستخارة أن تطلب من الله أن يختار لك الأفضل، وقد روى جابر أن النبي ﷺ كان يعتني بتعليمها لأصحابه في صغير الأمور وكبيرها." }
+        },
+        {
+          "title": { "en": "How to pray it", "de": "So wird sie gebetet", "ar": "كيفيتها" },
+          "list": {
+            "en": ["Make wudu and form your intention", "Pray two rak'ahs that are not obligatory", "Then say the dua of istikhara", "Name your matter where the dua mentions it"],
+            "de": ["Nehmen Sie die Waschung vor und fassen Sie die Absicht", "Beten Sie zwei Rakaat, die nicht Pflicht sind", "Sprechen Sie danach das Bittgebet der Istichara", "Nennen Sie Ihr Anliegen an der Stelle, die das Bittgebet vorsieht"],
+            "ar": ["توضأ واستحضر النية", "صلِّ ركعتين من غير الفريضة", "ثم ادعُ بدعاء الاستخارة", "سمِّ حاجتك في موضعها من الدعاء"]
+          },
+          "body": { "en": "The full dua is in Sahih al-Bukhari and in Hisnul Muslim, chapter 26.", "de": "Das vollständige Bittgebet steht in Sahih al-Buchari und in Hisnul Muslim, Kapitel 26.", "ar": "نص الدعاء كاملًا في صحيح البخاري وفي حصن المسلم، الباب ٢٦." }
+        },
+        {
+          "title": { "en": "After istikhara", "de": "Nach der Istichara", "ar": "بعد الاستخارة" },
+          "body": { "en": "You do not need to wait for a dream. Some scholars say: follow what your heart then inclines to. Others say: go ahead, and see whether Allah makes it easy or turns it away.", "de": "Sie müssen nicht auf einen Traum warten. Manche Gelehrte sagen: Folgen Sie dem, wozu Ihr Herz dann neigt. Andere sagen: Gehen Sie voran und sehen Sie, ob Allah es erleichtert oder abwendet.", "ar": "لا يلزمك انتظار رؤيا. قال بعض العلماء: امضِ فيما ينشرح له صدرك، وقال آخرون: امضِ في الأمر وانظر أييسّره الله أم يصرفه." }
+        },
+        {
+          "verse": "3:159",
+          "check": "rely upon Allah",
+          "title": { "en": "Consult, then trust", "de": "Beraten, dann vertrauen", "ar": "شاوِر ثم توكّل" },
+          "body": { "en": "Istikhara does not replace advice from people. Ask those who know, then decide and rely on Allah.", "de": "Die Istichara ersetzt nicht den Rat von Menschen. Fragen Sie Kundige, entscheiden Sie dann und vertrauen Sie auf Allah.", "ar": "الاستخارة لا تُغني عن مشورة الناس؛ استشر أهل الخبرة ثم اعزم وتوكّل على الله." }
+        },
+        {
+          "verse": "2:216",
+          "check": "perhaps you hate a thing and it is good for you",
+          "title": { "en": "When the answer surprises you", "de": "Wenn die Antwort Sie überrascht", "ar": "حين تفاجئك النتيجة" },
+          "body": { "en": "Sometimes the door that closes was the wrong one. Allah sees what we cannot.", "de": "Manchmal war die Tür, die sich schließt, die falsche. Allah sieht, was wir nicht sehen.", "ar": "أحيانًا يكون الباب الذي أُغلق هو الباب الخطأ؛ فالله يرى ما لا نرى." }
+        }
+      ],
+      "sources": [
+        { "label": "Sahih al-Bukhari 6382, Book of Invocations", "url": "https://sunnah.com/bukhari:6382" },
+        { "label": "Hisnul Muslim, chapter 26: Istikharah" }
+      ]
+    },
+    {
+      "id": "duas-daily-when-pleased",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 16", "de": "Bittgebete für jeden Tag · 16", "ar": "أدعية كل يوم · ١٦" },
+        "title": { "en": "When something pleases you", "de": "Wenn Sie etwas erfreut", "ar": "حين يسرّك أمر" },
+        "sub": { "en": "Good news, a surprise, a blessing you see in others: how the Prophet met joy.", "de": "Gute Nachrichten, eine Überraschung, ein Segen bei anderen: wie der Prophet der Freude begegnete.", "ar": "خبر سار، مفاجأة، نعمة تراها عند غيرك: كيف كان النبي ﷺ يستقبل الفرح." },
+        "arabic": "الحمد لله"
+      },
+      "slides": [
+        {
+          "dua": "hisn:106:0",
+          "check": "all good things are perfected",
+          "title": { "en": "Good news and bad news", "de": "Gute und schlechte Nachrichten", "ar": "عند الخبر السار والمكروه" },
+          "body": { "en": "One sentence for good news, one for bad. Either way, the heart begins with praise.", "de": "Ein Satz für gute Nachrichten, einer für schlechte. So oder so beginnt das Herz mit Lobpreis.", "ar": "جملة للخبر السار وأخرى للمكروه، وفي الحالين يبدأ القلب بالحمد." }
+        },
+        {
+          "dua": "hisn:123:0",
+          "check": "prostrate in gratitude",
+          "title": { "en": "A prostration of thanks", "de": "Eine Niederwerfung des Dankes", "ar": "سجدة الشكر" },
+          "body": { "en": "Big news deserves more than words. Scholars differ on whether wudu is required for this prostration.", "de": "Große Nachrichten verdienen mehr als Worte. Ob für diese Niederwerfung die Waschung nötig ist, darüber sind die Gelehrten uneins.", "ar": "الخبر الكبير يستحق أكثر من الكلمات. واختلف العلماء في اشتراط الوضوء لهذه السجدة." }
+        },
+        {
+          "dua": "hisn:122:0",
+          "check": "How perfect Allah is",
+          "title": { "en": "When you are amazed", "de": "Wenn Sie staunen", "ar": "عند التعجب" },
+          "body": { "en": "Subhan Allah is the believer's way of saying wow: amazement that turns into glorification.", "de": "Subhan Allah ist das Staunen des Gläubigen: Verwunderung, die zu Lobpreis wird.", "ar": "«سبحان الله» تعبير المؤمن عن الدهشة: تعجّب يتحول إلى تسبيح." }
+        },
+        {
+          "dua": "hisn:122:1",
+          "check": "Allah is the greatest",
+          "title": { "en": "When something big happens", "de": "Wenn etwas Großes geschieht", "ar": "عند الأمر العظيم" },
+          "body": { "en": "Allahu akbar puts every great moment in its place: Allah is greater still.", "de": "Allahu akbar rückt jeden großen Moment zurecht: Allah ist noch größer.", "ar": "التكبير يضع كل لحظة عظيمة في حجمها: الله أعظم منها." }
+        },
+        {
+          "dua": "hisn:125:0",
+          "check": "the envious eye is real",
+          "title": { "en": "When you admire what others have", "de": "Wenn Sie bewundern, was andere haben", "ar": "حين يعجبك ما عند غيرك" },
+          "body": { "en": "A new baby, a home, a success: ask Allah to bless it for them. Admiration becomes a gift instead of a harm.", "de": "Ein Baby, ein Zuhause, ein Erfolg: Bitten Sie Allah, es für sie zu segnen. So wird Bewunderung zum Geschenk statt zum Schaden.", "ar": "مولود أو بيت أو نجاح: ادعُ الله أن يبارك لهم فيه، فيصير الإعجاب هدية لا أذى." }
+        },
+        {
+          "verse": "18:39",
+          "check": "there is no power except in",
+          "title": { "en": "Ma sha Allah", "de": "Ma scha Allah", "ar": "ما شاء الله" },
+          "body": { "en": "The lesson of the story of two gardens: credit every blessing to Allah's will and power.", "de": "Die Lehre aus der Geschichte der zwei Gärten: Jeden Segen Allahs Willen und Macht zuschreiben.", "ar": "درس قصة صاحب الجنتين: انسب كل نعمة إلى مشيئة الله وقوته." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-anger",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 17", "de": "Bittgebete für jeden Tag · 17", "ar": "أدعية كل يوم · ١٧" },
+        "title": { "en": "When anger rises", "de": "Wenn Zorn aufsteigt", "ar": "عند الغضب" },
+        "sub": { "en": "One dua, two hadith and one verse to cool the heart before words do damage.", "de": "Ein Bittgebet, zwei Hadithe und ein Vers, um das Herz zu kühlen, bevor Worte Schaden anrichten.", "ar": "دعاء وحديثان وآية تبرّد القلب قبل أن تؤذي الكلمات." },
+        "arabic": "كظم الغيظ"
+      },
+      "slides": [
+        {
+          "dua": "hisn:82:0",
+          "check": "accursed devil",
+          "title": { "en": "The moment it starts", "de": "Im ersten Moment", "ar": "في أول لحظة" },
+          "body": { "en": "Al-Bukhari reports that the Prophet named these words as a way to make anger leave.", "de": "Al-Buchari berichtet, dass der Prophet diese Worte als Weg nannte, den Zorn weichen zu lassen.", "ar": "روى البخاري أن النبي ﷺ دلّ على هذه الكلمات ليذهب الغضب." }
+        },
+        {
+          "hadith": "bukhari:6114",
+          "check": "controls himself while in anger",
+          "title": { "en": "Real strength", "de": "Wahre Stärke", "ar": "القوة الحقيقية" },
+          "body": { "en": "Strength is not winning the argument. It is holding yourself back.", "de": "Stärke heißt nicht, den Streit zu gewinnen. Sie heißt, sich selbst zurückzuhalten.", "ar": "ليست القوة أن تنتصر في الجدال، بل أن تملك نفسك." }
+        },
+        {
+          "hadith": "bukhari:6116",
+          "check": "Do not become angry",
+          "title": { "en": "Advice repeated", "de": "Ein wiederholter Rat", "ar": "وصية مكرّرة" },
+          "body": { "en": "A man asked for advice again and again. The answer never changed.", "de": "Ein Mann bat immer wieder um Rat. Die Antwort blieb dieselbe.", "ar": "طلب رجل الوصية مرارًا، فلم يتغير الجواب." }
+        },
+        {
+          "verse": "3:134",
+          "check": "restrain anger",
+          "title": { "en": "Those Allah loves", "de": "Die Allah liebt", "ar": "من يحبهم الله" },
+          "body": { "en": "Swallowing anger is one step; pardoning is the next. The verse names both among the doers of good.", "de": "Den Zorn hinunterzuschlucken ist ein Schritt, zu vergeben der nächste. Der Vers nennt beides bei denen, die Gutes tun.", "ar": "كظم الغيظ خطوة، والعفو خطوة أعلى، والآية تذكرهما في صفات المحسنين." }
+        },
+        {
+          "title": { "en": "Practical steps", "de": "Praktische Schritte", "ar": "خطوات عملية" },
+          "list": {
+            "en": ["Seek refuge with Allah", "Stay silent until it passes", "Sit down or step away for a moment", "Return to the talk when you are calm"],
+            "de": ["Suchen Sie Zuflucht bei Allah", "Schweigen Sie, bis es vorübergeht", "Setzen Sie sich oder gehen Sie kurz hinaus", "Sprechen Sie weiter, wenn Sie ruhig sind"],
+            "ar": ["استعذ بالله", "اسكت حتى يهدأ غضبك", "اجلس أو ابتعد قليلًا", "عُد إلى الحديث حين تهدأ"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-debt",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 18", "de": "Bittgebete für jeden Tag · 18", "ar": "أدعية كل يوم · ١٨" },
+        "title": { "en": "Duas for debt", "de": "Bittgebete bei Schulden", "ar": "أدعية قضاء الدين" },
+        "sub": { "en": "Debt weighs on the heart. Two duas from Hisnul Muslim and two verses for both sides of a loan.", "de": "Schulden lasten auf dem Herzen. Zwei Bittgebete aus Hisnul Muslim und zwei Verse für beide Seiten eines Darlehens.", "ar": "الدَّين يثقل القلب. دعاءان من حصن المسلم وآيتان لطرفي القرض." },
+        "arabic": "قضاء الدين"
+      },
+      "slides": [
+        {
+          "dua": "hisn:41:0",
+          "check": "make what is lawful enough for me",
+          "title": { "en": "When you need to pay back", "de": "Wenn Sie zurückzahlen müssen", "ar": "حين تحتاج إلى السداد" },
+          "body": { "en": "From the chapter on debt in Hisnul Muslim. It seeks sufficiency through halal means only.", "de": "Aus dem Kapitel über Schulden in Hisnul Muslim. Es sucht Genüge allein auf erlaubtem Weg.", "ar": "من باب قضاء الدين في حصن المسلم، يطلب الكفاية من الحلال وحده." }
+        },
+        {
+          "dua": "hisn:41:1",
+          "check": "the burden of debts",
+          "title": { "en": "Refuge from the weight of debt", "de": "Zuflucht vor der Last der Schulden", "ar": "التعوذ من غلبة الدين" },
+          "body": { "en": "The same refuge from worry and grief also names debt. It can weigh as heavily as sorrow.", "de": "Dieselbe Zufluchtnahme vor Sorge und Kummer nennt auch Schulden. Sie können so schwer wiegen wie Trauer.", "ar": "الاستعاذة نفسها من الهمّ والحزن تذكر الدَّين أيضًا، فقد يثقل كما يثقل الحزن." }
+        },
+        {
+          "verse": "65:3",
+          "check": "provide for him from where he does not expect",
+          "title": { "en": "Trust while you work on it", "de": "Vertrauen, während Sie daran arbeiten", "ar": "توكّل وأنت تسعى" },
+          "body": { "en": "Make a plan, pay what you can, and leave the rest to Allah's provision.", "de": "Machen Sie einen Plan, zahlen Sie, was Sie können, und überlassen Sie den Rest Allahs Versorgung.", "ar": "ضع خطة، وسدّد ما تستطيع، واترك الباقي لرزق الله." }
+        },
+        {
+          "verse": "2:280",
+          "check": "postponement",
+          "title": { "en": "If you are the lender", "de": "Wenn Sie der Gläubiger sind", "ar": "إن كنت الدائن" },
+          "body": { "en": "The Quran asks for patience with a debtor in hardship, and praises letting the debt go.", "de": "Der Koran bittet um Geduld mit einem Schuldner in Not und lobt den Erlass der Schuld.", "ar": "يدعو القرآن إلى إمهال المدين المعسر، ويثني على التصدق عليه بالدين." }
+        },
+        {
+          "title": { "en": "Practical steps", "de": "Praktische Schritte", "ar": "خطوات عملية" },
+          "list": {
+            "en": ["Write every debt down, as the Quran advises", "Pay small amounts regularly", "Avoid new debt for things you can live without"],
+            "de": ["Schreiben Sie jede Schuld auf, wie der Koran rät", "Zahlen Sie regelmäßig kleine Beträge", "Vermeiden Sie neue Schulden für Verzichtbares"],
+            "ar": ["اكتب كل دين كما يوصي القرآن", "سدّد مبالغ صغيرة بانتظام", "تجنّب دينًا جديدًا لما يمكنك الاستغناء عنه"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-fear",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 19", "de": "Bittgebete für jeden Tag · 19", "ar": "أدعية كل يوم · ١٩" },
+        "title": { "en": "5 duas when you are afraid", "de": "5 Bittgebete, wenn Sie Angst haben", "ar": "خمسة أدعية عند الخوف" },
+        "sub": { "en": "Fear of people, of the night, of what may come: words that put the heart back in Allah's care.", "de": "Angst vor Menschen, vor der Nacht, vor dem Kommenden: Worte, die das Herz in Allahs Obhut zurücklegen.", "ar": "خوف من الناس أو من الليل أو مما سيأتي: كلمات تعيد القلب إلى رعاية الله." },
+        "arabic": "حسبنا الله"
+      },
+      "slides": [
+        {
+          "dua": "hisn:36:2",
+          "check": "Allah is sufficient for us",
+          "title": { "en": "When people threaten you", "de": "Wenn Menschen Ihnen drohen", "ar": "حين يهددك الناس" },
+          "body": { "en": "Also found in the Quran (3:173). Al-Bukhari reports that Ibrahim said these words when he was thrown into the fire.", "de": "Auch im Koran (3:173). Al-Buchari berichtet, dass Ibrahim diese Worte sprach, als er ins Feuer geworfen wurde.", "ar": "وردت أيضًا في القرآن (٣:١٧٣)، وروى البخاري أن إبراهيم قالها حين أُلقي في النار." }
+        },
+        {
+          "dua": "hisn:39:0",
+          "check": "protect me from them with what You choose",
+          "title": { "en": "When you fear harm from others", "de": "Wenn Sie Schaden durch andere fürchten", "ar": "حين تخشى أذى قوم" },
+          "body": { "en": "Short and complete: you do not tell Allah how to protect you, you leave the way to Him.", "de": "Kurz und vollständig: Sie schreiben Allah nicht vor, wie Er Sie schützt, Sie überlassen Ihm den Weg.", "ar": "قصير جامع: لا تحدّد لله كيف يحميك، بل تترك له الطريقة." }
+        },
+        {
+          "dua": "hisn:36:0",
+          "check": "we place You before them",
+          "title": { "en": "Facing someone powerful", "de": "Vor einem Mächtigen", "ar": "أمام صاحب سلطة" },
+          "body": { "en": "When you must face someone stronger than you, put Allah between you and them.", "de": "Wenn Sie jemandem gegenübertreten müssen, der stärker ist, stellen Sie Allah zwischen sich und ihn.", "ar": "حين تواجه من هو أقوى منك، اجعل الله بينك وبينه." }
+        },
+        {
+          "dua": "hisn:30:0",
+          "check": "from His anger and punishment",
+          "title": { "en": "Fear at night or loneliness", "de": "Angst in der Nacht oder Einsamkeit", "ar": "الفزع في الليل والوحشة" },
+          "body": { "en": "For children who wake up frightened and for adults who feel alone in the dark.", "de": "Für Kinder, die verängstigt aufwachen, und für Erwachsene, die sich im Dunkeln allein fühlen.", "ar": "للأطفال الذين يستيقظون فزعين، وللكبار الذين يستوحشون في الظلام." }
+        },
+        {
+          "dua": "hisn:27:11",
+          "check": "nothing is harmed",
+          "title": { "en": "Protection before it begins", "de": "Schutz, bevor es beginnt", "ar": "حماية قبل البداية" },
+          "body": { "en": "Part of the morning and evening adhkar, three times each. Protection is easier to build before fear arrives.", "de": "Teil der Morgen- und Abend-Adhkar, jeweils dreimal. Schutz lässt sich leichter aufbauen, bevor die Angst kommt.", "ar": "من أذكار الصباح والمساء، ثلاثًا في كل منهما؛ فالتحصّن قبل الخوف أيسر." }
+        },
+        {
+          "verse": "20:46",
+          "check": "Fear not",
+          "title": { "en": "What Allah told Musa", "de": "Was Allah zu Musa sagte", "ar": "ما قاله الله لموسى" },
+          "body": { "en": "Said to Musa and Harun before they faced Pharaoh. Fear is human; Allah's company is greater.", "de": "Gesagt zu Musa und Harun, bevor sie vor Pharao traten. Angst ist menschlich, Allahs Beistand ist größer.", "ar": "قيلت لموسى وهارون قبل لقاء فرعون. الخوف طبع بشري، ومعيّة الله أعظم." }
+        }
+      ]
+    },
+    {
+      "id": "duas-daily-gratitude",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Duas for every day · 20", "de": "Bittgebete für jeden Tag · 20", "ar": "أدعية كل يوم · ٢٠" },
+        "title": { "en": "5 duas of gratitude", "de": "5 Bittgebete der Dankbarkeit", "ar": "خمسة أدعية للشكر" },
+        "sub": { "en": "Gratitude is more than a feeling. These duas turn it into words, from morning to night.", "de": "Dankbarkeit ist mehr als ein Gefühl. Diese Bittgebete machen sie zu Worten, vom Morgen bis zur Nacht.", "ar": "الشكر أكثر من شعور؛ هذه الأدعية تجعله كلمات من الصباح إلى الليل." },
+        "arabic": "الشكر"
+      },
+      "slides": [
+        {
+          "verse": "14:7",
+          "check": "If you are grateful, I will surely increase you",
+          "title": { "en": "The promise", "de": "Die Verheißung", "ar": "الوعد" },
+          "body": { "en": "Gratitude is not only a reply to blessings. In this verse it opens the door to more.", "de": "Dankbarkeit ist nicht nur eine Antwort auf Segen. In diesem Vers öffnet sie die Tür zu mehr.", "ar": "الشكر ليس ردًّا على النعمة فقط، بل هو في هذه الآية باب للمزيد." }
+        },
+        {
+          "dua": "hisn:27:6",
+          "check": "for You is all praise and unto You all thanks",
+          "title": { "en": "Morning and evening thanks", "de": "Dank am Morgen und am Abend", "ar": "شكر الصباح والمساء" },
+          "body": { "en": "Say it in the morning to give thanks for the day, in the evening for the night. Once.", "de": "Sprechen Sie es am Morgen als Dank für den Tag und am Abend für die Nacht. Einmal.", "ar": "قله صباحًا شكرًا ليومك، ومساءً شكرًا لليلتك. مرة واحدة." }
+        },
+        {
+          "dua": "hisn:24:4",
+          "check": "help me to remember You, to thank You",
+          "title": { "en": "Asking for the strength to thank", "de": "Um die Kraft zum Danken bitten", "ar": "طلب العون على الشكر" },
+          "body": { "en": "Even gratitude needs Allah's help. Hisnul Muslim places it after the final tashahhud, before the salam.", "de": "Selbst Dankbarkeit braucht Allahs Hilfe. Hisnul Muslim nennt es nach dem letzten Taschahhud, vor dem Salam.", "ar": "حتى الشكر يحتاج إلى عون الله، وهو في حصن المسلم بعد التشهد الأخير قبل السلام." }
+        },
+        {
+          "dua": "hisn:2:0",
+          "check": "clothed me with this garment",
+          "title": { "en": "When you get dressed", "de": "Beim Anziehen", "ar": "عند لبس الثوب" },
+          "body": { "en": "Even a shirt is a blessing worth naming. Gratitude begins with ordinary things.", "de": "Selbst ein Hemd ist ein Segen, den man benennen kann. Dankbarkeit beginnt bei gewöhnlichen Dingen.", "ar": "حتى القميص نعمة تستحق أن تُذكر؛ فالشكر يبدأ من الأشياء العادية." }
+        },
+        {
+          "dua": "hisn:28:9",
+          "check": "sheltered us",
+          "title": { "en": "Before you sleep", "de": "Vor dem Schlafen", "ar": "عند النوم" },
+          "body": { "en": "A roof, a meal, enough: things many people lack tonight. Notice them before you close your eyes.", "de": "Ein Dach, eine Mahlzeit, genug: Dinge, die vielen Menschen heute Nacht fehlen. Nehmen Sie sie wahr, bevor Sie die Augen schließen.", "ar": "سقف ووجبة وكفاية: أشياء يفتقدها كثيرون الليلة، فتأمّلها قبل أن تغمض عينيك." }
+        },
+        {
+          "dua": "hisn:87:0",
+          "check": "May Allah reward you with goodness",
+          "title": { "en": "Thanking people", "de": "Menschen danken", "ar": "شكر الناس" },
+          "body": { "en": "Gratitude to Allah includes thanking the people He sent your way. These few words are a complete thank-you.", "de": "Dank an Allah schließt den Dank an die Menschen ein, die Er Ihnen geschickt hat. Diese wenigen Worte sind ein vollkommener Dank.", "ar": "شكر الله يشمل شكر من ساقهم إليك من الناس، وهذه الكلمات القليلة شكر كامل." }
+        }
+      ]
+    }
+  ]
+}

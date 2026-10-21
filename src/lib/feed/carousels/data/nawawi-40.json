@@ -1,0 +1,4434 @@
+{
+  "series": "nawawi-40",
+  "label": {"en":"40 Hadith an-Nawawi","de":"Die 40 Hadithe an-Nawawis","ar":"الأربعون النووية"},
+  "topic": "hadith",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "nawawi-01-intentions",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 1",
+          "de": "40 Hadithe · 1",
+          "ar": "الأربعون النووية · ١"
+        },
+        "title": {
+          "en": "Every deed is weighed by its intention",
+          "de": "Jede Tat wird an ihrer Absicht gemessen",
+          "ar": "كل عمل يوزن بنيّته"
+        },
+        "sub": {
+          "en": "The hadith that opens the collection, and the key to every act of worship",
+          "de": "Der Hadith, der die Sammlung eröffnet, und der Schlüssel zu jeder Anbetung",
+          "ar": "الحديث الذي تفتتح به المجموعة، ومفتاح كل عبادة"
+        },
+        "arabic": "النية أساس العمل"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:1",
+          "check": "intended",
+          "title": {
+            "en": "The first hadith",
+            "de": "Der erste Hadith",
+            "ar": "الحديث الأول"
+          },
+          "body": {
+            "en": "Narrated by Umar ibn al-Khattab and reported by al-Bukhari and Muslim.",
+            "de": "Überliefert von Umar ibn al-Khattab, berichtet von al-Bukhari und Muslim.",
+            "ar": "رواه عمر بن الخطاب، وأخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Why it comes first",
+            "de": "Warum er am Anfang steht",
+            "ar": "لماذا جاء أولًا"
+          },
+          "body": {
+            "en": "Al-Bukhari also opened his Sahih with this hadith. Placing it first is a quiet reminder: before you learn, teach or act, look at the aim in your heart.",
+            "de": "Auch al-Bukhari eröffnete seinen Sahih mit diesem Hadith. Ihn an den Anfang zu stellen, ist eine leise Erinnerung: Prüfen Sie Ihr Ziel im Herzen, bevor Sie lernen, lehren oder handeln.",
+            "ar": "افتتح البخاري صحيحه بهذا الحديث أيضًا. وفي تقديمه تذكير هادئ: انظر في مقصد قلبك قبل أن تتعلم أو تعلّم أو تعمل."
+          }
+        },
+        {
+          "title": {
+            "en": "Two key words",
+            "de": "Zwei Schlüsselwörter",
+            "ar": "كلمتان مفتاحيتان"
+          },
+          "arabic": "نِيَّة · هِجْرَة",
+          "body": {
+            "en": "Niyyah is the aim of the heart behind an act. Hijrah is leaving a place for the sake of Allah. The hadith uses hijrah as an example that applies to every deed.",
+            "de": "Niyya ist das Ziel des Herzens hinter einer Tat. Hidschra bedeutet, einen Ort um Allahs willen zu verlassen. Der Hadith nimmt die Hidschra als Beispiel, das für jede Tat gilt.",
+            "ar": "النية قصد القلب وراء العمل، والهجرة ترك المكان ابتغاء وجه الله. ويضرب الحديث الهجرة مثالًا ينطبق على كل عمل."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons",
+            "de": "Lehren",
+            "ar": "دروس"
+          },
+          "list": {
+            "en": [
+              "The same act can be worship or mere habit",
+              "Its value lies in the aim behind it",
+              "Worldly motives are not hidden from Allah",
+              "A good intention turns daily routine into reward"
+            ],
+            "de": [
+              "Dieselbe Handlung kann Anbetung oder bloße Gewohnheit sein",
+              "Ihr Wert liegt im Ziel dahinter",
+              "Weltliche Beweggründe sind vor Allah nicht verborgen",
+              "Eine gute Absicht macht den Alltag zu Lohn"
+            ],
+            "ar": [
+              "الفعل الواحد قد يكون عبادة أو مجرد عادة",
+              "قيمته في المقصد الذي وراءه",
+              "الدوافع الدنيوية لا تخفى على الله",
+              "النية الصالحة تجعل العادات اليومية أجرًا"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "body": {
+            "en": "Pause for a moment before work, study or a meal and ask: for whom am I doing this? Renew your intention quietly and often.",
+            "de": "Halten Sie vor der Arbeit, dem Lernen oder einer Mahlzeit kurz inne und fragen Sie: Für wen tue ich das? Erneuern Sie Ihre Absicht still und oft.",
+            "ar": "توقف لحظة قبل العمل أو الدراسة أو الطعام واسأل نفسك: لمن أفعل هذا؟ وجدّد نيتك في هدوء وباستمرار."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-02-jibril",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 2",
+          "de": "40 Hadithe · 2",
+          "ar": "الأربعون النووية · ٢"
+        },
+        "title": {
+          "en": "Islam, Iman and Ihsan: the religion in one scene",
+          "de": "Islam, Iman und Ihsan: die Religion in einer Szene",
+          "ar": "الإسلام والإيمان والإحسان في مشهد واحد"
+        },
+        "sub": {
+          "en": "An angel came as a questioner and laid out the whole religion in a few questions",
+          "de": "Ein Engel kam als Fragender und legte mit wenigen Fragen die ganze Religion dar",
+          "ar": "جاء ملك في صورة سائل فبيّن الدين كله في أسئلة قليلة"
+        },
+        "arabic": "مراتب الدين"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A visitor no one knew",
+            "de": "Ein Besucher, den niemand kannte",
+            "ar": "زائر لا يعرفه أحد"
+          },
+          "body": {
+            "en": "Umar ibn al-Khattab tells of a stranger in pure white who showed no sign of a journey. He sat right in front of the Prophet and began to ask. The hadith is reported by Muslim.",
+            "de": "Umar ibn al-Khattab erzählt von einem Fremden in reinem Weiß, an dem keine Spur einer Reise zu sehen war. Er setzte sich direkt vor den Propheten und begann zu fragen. Muslim überliefert den Hadith.",
+            "ar": "يحكي عمر بن الخطاب عن غريب في ثياب ناصعة البياض، لا يظهر عليه أثر سفر، جلس قبالة النبي وأخذ يسأله. والحديث أخرجه مسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Three levels of the religion",
+            "de": "Drei Stufen der Religion",
+            "ar": "ثلاث مراتب للدين"
+          },
+          "list": {
+            "en": [
+              "Islam: the outward acts, built on the five pillars",
+              "Iman: the six articles of faith, including qadar",
+              "Ihsan: worship with full awareness of Allah"
+            ],
+            "de": [
+              "Islam: die äußeren Taten, gebaut auf den fünf Säulen",
+              "Iman: die sechs Glaubensartikel, einschließlich des Qadar",
+              "Ihsan: Anbetung im vollen Bewusstsein Allahs"
+            ],
+            "ar": [
+              "الإسلام: الأعمال الظاهرة القائمة على الأركان الخمسة",
+              "الإيمان: أركانه الستة ومنها القدر",
+              "الإحسان: عبادة الله مع تمام استحضار مراقبته"
+            ]
+          }
+        },
+        {
+          "verse": "2:285",
+          "check": "angels",
+          "title": {
+            "en": "The articles of faith in the Quran",
+            "de": "Die Glaubensartikel im Koran",
+            "ar": "أركان الإيمان في القرآن"
+          },
+          "body": {
+            "en": "Much of what the visitor asked about is also named in the closing verses of al-Baqarah.",
+            "de": "Vieles, wonach der Besucher fragte, nennen auch die letzten Verse von al-Baqara.",
+            "ar": "كثير مما سأل عنه الزائر تذكره أيضًا خواتيم سورة البقرة."
+          }
+        },
+        {
+          "title": {
+            "en": "The Hour and the teacher",
+            "de": "Die Stunde und der Lehrer",
+            "ar": "الساعة والمعلّم"
+          },
+          "body": {
+            "en": "Asked about the Hour, the Prophet said he knew no more than the one asking, and named some of its signs. Afterwards he told Umar that the visitor was Jibril, sent so they could learn their faith.",
+            "de": "Nach der Stunde gefragt, sagte der Prophet, er wisse darüber nicht mehr als der Fragende, und nannte einige ihrer Zeichen. Danach erklärte er Umar, der Besucher sei Dschibril gewesen, gesandt, damit sie ihren Glauben lernen.",
+            "ar": "لما سُئل النبي عن الساعة بيّن أنه لا يعلم من وقتها أكثر من السائل، وذكر بعض علاماتها. ثم أخبر عمر أن الزائر هو جبريل، جاء ليتعلموا أمر دينهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Ask about your religion without shyness",
+              "Come to learning with good manners and attention",
+              "Check your outward acts, your beliefs and your heart",
+              "Aim for ihsan in one act of worship each day"
+            ],
+            "de": [
+              "Fragen Sie ohne Scheu nach Ihrer Religion",
+              "Kommen Sie mit gutem Benehmen und Aufmerksamkeit zum Lernen",
+              "Prüfen Sie Ihre Taten, Ihren Glauben und Ihr Herz",
+              "Streben Sie jeden Tag in einer Anbetung nach Ihsan"
+            ],
+            "ar": [
+              "اسأل عن دينك دون حياء",
+              "أقبل على العلم بأدب وانتباه",
+              "راجع أعمالك الظاهرة وعقيدتك وقلبك",
+              "اجتهد في الإحسان في عبادة واحدة كل يوم"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 2",
+          "url": "https://sunnah.com/nawawi40:2"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-03-five-pillars",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 3",
+          "de": "40 Hadithe · 3",
+          "ar": "الأربعون النووية · ٣"
+        },
+        "title": {
+          "en": "Five pillars that hold up a life of faith",
+          "de": "Fünf Säulen, die ein Leben im Glauben tragen",
+          "ar": "خمسة أركان تحمل حياة الإيمان"
+        },
+        "sub": {
+          "en": "Islam pictured as a building: what carries it, and why each pillar matters",
+          "de": "Der Islam als Gebäude: was es trägt und warum jede Säule zählt",
+          "ar": "الإسلام في صورة بناء: ما الذي يحمله، ولماذا يهم كل ركن"
+        },
+        "arabic": "أركان الإسلام"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:3",
+          "check": "five",
+          "title": {
+            "en": "A building on five",
+            "de": "Ein Bau auf fünf Säulen",
+            "ar": "بناء على خمسة"
+          },
+          "body": {
+            "en": "Narrated by Abdullah, the son of Umar, and reported by al-Bukhari and Muslim.",
+            "de": "Überliefert von Abdullah, dem Sohn Umars, berichtet von al-Bukhari und Muslim.",
+            "ar": "رواه عبد الله بن عمر، وأخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "The image of a building",
+            "de": "Das Bild eines Gebäudes",
+            "ar": "صورة البناء"
+          },
+          "body": {
+            "en": "A house stands on its pillars. Take one away and the whole structure is at risk. The testimony of faith comes first, and the acts of worship stand on it.",
+            "de": "Ein Haus steht auf seinen Säulen. Fehlt eine, ist der ganze Bau in Gefahr. Das Glaubensbekenntnis kommt zuerst, und die Anbetung steht darauf.",
+            "ar": "يقوم البيت على أعمدته، فإن سقط واحد منها تعرّض البناء كله للخطر. والشهادة أولًا، وعليها تقوم العبادات."
+          }
+        },
+        {
+          "title": {
+            "en": "The five in brief",
+            "de": "Die fünf in Kürze",
+            "ar": "الأركان الخمسة باختصار"
+          },
+          "list": {
+            "en": [
+              "Shahada: the testimony of faith",
+              "Salah: the five daily prayers",
+              "Zakat: the yearly due on wealth",
+              "Hajj: the pilgrimage, for those able",
+              "Sawm: fasting in Ramadan"
+            ],
+            "de": [
+              "Schahada: das Glaubensbekenntnis",
+              "Salah: die fünf täglichen Gebete",
+              "Zakat: die jährliche Abgabe auf Vermögen",
+              "Haddsch: die Pilgerfahrt, für alle, die es vermögen",
+              "Saum: das Fasten im Ramadan"
+            ],
+            "ar": [
+              "الشهادتان",
+              "الصلوات الخمس",
+              "الزكاة الواجبة في المال",
+              "الحج لمن استطاع",
+              "صوم رمضان"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "More than the pillars",
+            "de": "Mehr als die Säulen",
+            "ar": "أكثر من الأركان"
+          },
+          "body": {
+            "en": "Pillars are what keeps the house standing. The light and warmth inside come from good character, voluntary worship and service to others.",
+            "de": "Die Säulen halten das Haus aufrecht. Licht und Wärme im Inneren kommen aus gutem Charakter, freiwilliger Anbetung und dem Dienst an anderen.",
+            "ar": "الأركان هي ما يُبقي البيت قائمًا، أما النور والدفء في داخله فمن حسن الخلق والنوافل وخدمة الناس."
+          }
+        },
+        {
+          "title": {
+            "en": "Check your pillars",
+            "de": "Prüfen Sie Ihre Säulen",
+            "ar": "راجع أركانك"
+          },
+          "list": {
+            "en": [
+              "Which pillar stands firm in your life?",
+              "Which one needs care this week?",
+              "Learn the rulings of one pillar more deeply"
+            ],
+            "de": [
+              "Welche Säule steht in Ihrem Leben fest?",
+              "Welche braucht diese Woche Pflege?",
+              "Lernen Sie die Regeln einer Säule gründlicher"
+            ],
+            "ar": [
+              "أي ركن ثابت في حياتك؟",
+              "وأيها يحتاج إلى عناية هذا الأسبوع؟",
+              "تعلّم أحكام ركن منها بعمق أكبر"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-04-destiny",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 4",
+          "de": "40 Hadithe · 4",
+          "ar": "الأربعون النووية · ٤"
+        },
+        "title": {
+          "en": "From a drop to a destiny",
+          "de": "Vom Tropfen zur Bestimmung",
+          "ar": "من نطفة إلى قدر مكتوب"
+        },
+        "sub": {
+          "en": "How we are formed, what is written for us, and why the ending counts",
+          "de": "Wie wir geformt werden, was für uns geschrieben ist und warum das Ende zählt",
+          "ar": "كيف نُخلق، وما الذي كُتب لنا، ولماذا العبرة بالخاتمة"
+        },
+        "arabic": "الخلق والقدر"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Stages in the womb",
+            "de": "Stufen im Mutterleib",
+            "ar": "أطوار في الرحم"
+          },
+          "arabic": "نُطْفَة · عَلَقَة · مُضْغَة",
+          "body": {
+            "en": "Abdullah ibn Mas'ud reports that the Prophet described stages of growth in the womb, each lasting a set time, after which an angel is sent. Al-Bukhari and Muslim report it.",
+            "de": "Abdullah ibn Mas'ud berichtet, dass der Prophet Stufen des Wachsens im Mutterleib beschrieb, jede von bestimmter Dauer, nach denen ein Engel gesandt wird. Al-Bukhari und Muslim überliefern es.",
+            "ar": "يروي عبد الله بن مسعود أن النبي وصف أطوار الخلق في الرحم، لكل طور مدة معلومة، ثم يُرسل الملك. أخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "verse": "23:14",
+          "check": "clinging clot",
+          "title": {
+            "en": "The same stages in the Quran",
+            "de": "Dieselben Stufen im Koran",
+            "ar": "الأطوار نفسها في القرآن"
+          },
+          "body": {
+            "en": "Surah al-Mu'minun names these stages of creation one after another.",
+            "de": "Sure al-Mu'minun nennt diese Stufen der Schöpfung nacheinander.",
+            "ar": "تذكر سورة المؤمنون هذه الأطوار واحدًا بعد آخر."
+          }
+        },
+        {
+          "title": {
+            "en": "Four things written",
+            "de": "Vier Dinge werden geschrieben",
+            "ar": "أربع كلمات تُكتب"
+          },
+          "body": {
+            "en": "The angel records four matters: provision, lifespan, deeds, and whether the person will end among the blessed or the lost. Nothing in a life lies outside Allah's knowledge.",
+            "de": "Der Engel schreibt vier Dinge nieder: Versorgung, Lebensdauer, Taten und ob der Mensch zu den Glückseligen oder den Verlorenen gehören wird. Nichts in einem Leben liegt außerhalb von Allahs Wissen.",
+            "ar": "يكتب الملك أربعة أمور: الرزق والأجل والعمل، وهل يكون الإنسان من السعداء أو الأشقياء. ولا شيء في الحياة يخرج عن علم الله."
+          }
+        },
+        {
+          "title": {
+            "en": "The ending counts",
+            "de": "Das Ende zählt",
+            "ar": "العبرة بالخواتيم"
+          },
+          "body": {
+            "en": "The hadith warns that a person may do good for years and turn away near the end, while another turns back at the last moment. Scholars note that this concerns what was hidden in the heart. So no one should feel safe, and no one should despair.",
+            "de": "Der Hadith warnt: Ein Mensch kann jahrelang Gutes tun und sich am Ende abwenden, ein anderer kehrt im letzten Augenblick um. Gelehrte erklären, dass es um das Verborgene im Herzen geht. Niemand sei also sicher, und niemand verzweifle.",
+            "ar": "يحذّر الحديث من أن المرء قد يعمل الخير سنين ثم ينصرف في آخر أمره، وآخر يرجع في اللحظة الأخيرة. ويبيّن العلماء أن ذلك يتعلق بما خفي في القلب. فلا يأمن أحد، ولا ييأس أحد."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Ask Allah often for a good ending",
+              "Never look down on someone still searching",
+              "Combine real effort with trust in His decree",
+              "Keep the inside as sound as the outside"
+            ],
+            "de": [
+              "Bitten Sie Allah oft um ein gutes Ende",
+              "Schauen Sie nie auf jemanden herab, der noch sucht",
+              "Verbinden Sie echte Mühe mit Vertrauen in Seine Bestimmung",
+              "Halten Sie das Innere so rein wie das Äußere"
+            ],
+            "ar": [
+              "أكثر من سؤال الله حسن الخاتمة",
+              "لا تحتقر من لا يزال يبحث",
+              "اجمع بين الجد والتوكل والرضا بقدره",
+              "أصلح باطنك كما تصلح ظاهرك"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 4",
+          "url": "https://sunnah.com/nawawi40:4"
+        },
+        {
+          "label": "Ibn Rajab, Jami' al-'Ulum wa-l-Hikam, on hadith 4"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-05-innovation",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 5",
+          "de": "40 Hadithe · 5",
+          "ar": "الأربعون النووية · ٥"
+        },
+        "title": {
+          "en": "Worship as it was taught",
+          "de": "Anbetung, wie sie gelehrt wurde",
+          "ar": "العبادة كما عُلّمت"
+        },
+        "sub": {
+          "en": "A short hadith that protects the religion from additions",
+          "de": "Ein kurzer Hadith, der die Religion vor Zusätzen schützt",
+          "ar": "حديث قصير يحفظ الدين من الزيادة فيه"
+        },
+        "arabic": "الاتباع في العبادة"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:5",
+          "check": "rejected",
+          "title": {
+            "en": "A measure for every act",
+            "de": "Ein Maßstab für jede Tat",
+            "ar": "ميزان لكل عمل"
+          },
+          "body": {
+            "en": "Narrated by Aisha and reported by al-Bukhari and Muslim. Muslim also has a second wording.",
+            "de": "Überliefert von Aischa, berichtet von al-Bukhari und Muslim. Bei Muslim gibt es eine zweite Fassung.",
+            "ar": "روته عائشة، وأخرجه البخاري ومسلم، ولمسلم لفظ آخر."
+          }
+        },
+        {
+          "title": {
+            "en": "Two scales",
+            "de": "Zwei Waagen",
+            "ar": "ميزانان"
+          },
+          "body": {
+            "en": "Scholars often pair it with the hadith of intentions. That one weighs the inner side of a deed, this one its outer form. An accepted deed needs both: sincerity and the right way.",
+            "de": "Gelehrte stellen ihn oft neben den Hadith über die Absicht. Jener wiegt die innere Seite einer Tat, dieser ihre äußere Form. Eine angenommene Tat braucht beides: Aufrichtigkeit und den richtigen Weg.",
+            "ar": "يقرن العلماء كثيرًا بينه وبين حديث النية؛ فذاك ميزان الباطن، وهذا ميزان الظاهر. والعمل المقبول يحتاج إلى الأمرين: الإخلاص وموافقة السنة."
+          }
+        },
+        {
+          "title": {
+            "en": "What bid'ah means",
+            "de": "Was Bid'a bedeutet",
+            "ar": "معنى البدعة"
+          },
+          "arabic": "بِدْعَة",
+          "body": {
+            "en": "In language, bid'ah is something new without precedent. Here it means adding to the religion a form of worship that has no basis in it. Scholars differ on how to classify new matters outside worship.",
+            "de": "Sprachlich ist Bid'a etwas Neues ohne Vorbild. Hier ist gemeint, der Religion eine Form der Anbetung hinzuzufügen, die keine Grundlage in ihr hat. Wie man neue Dinge außerhalb der Anbetung einordnet, darin unterscheiden sich die Gelehrten.",
+            "ar": "البدعة لغةً ما أُحدث على غير مثال سابق، والمقصود هنا إحداث عبادة في الدين لا أصل لها فيه. واختلف العلماء في تقسيم ما يُستحدث خارج العبادات."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons",
+            "de": "Lehren",
+            "ar": "دروس"
+          },
+          "list": {
+            "en": [
+              "Good intentions alone are not enough",
+              "The form of worship matters too",
+              "Worldly inventions are not meant here",
+              "Ask for the evidence before adopting a practice"
+            ],
+            "de": [
+              "Gute Absichten allein genügen nicht",
+              "Auch die Form der Anbetung zählt",
+              "Weltliche Erfindungen sind hier nicht gemeint",
+              "Fragen Sie nach dem Beleg, bevor Sie eine Praxis übernehmen"
+            ],
+            "ar": [
+              "النية الحسنة وحدها لا تكفي",
+              "صفة العبادة مهمة أيضًا",
+              "المخترعات الدنيوية غير مقصودة هنا",
+              "اسأل عن الدليل قبل أن تأخذ بعمل"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "body": {
+            "en": "Learn the basics of prayer, fasting and dua from reliable teachers. When a practice is new to you, ask kindly where it comes from, and keep good manners with those who see it differently.",
+            "de": "Lernen Sie die Grundlagen von Gebet, Fasten und Bittgebet bei verlässlichen Lehrern. Wenn Ihnen eine Praxis neu ist, fragen Sie freundlich nach ihrer Herkunft, und bleiben Sie höflich mit denen, die es anders sehen.",
+            "ar": "تعلّم أصول الصلاة والصيام والدعاء من معلمين موثوقين. وإذا رأيت عملًا جديدًا عليك فاسأل بلطف عن أصله، والزم الأدب مع من يخالفك."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-06-halal-haram",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 6",
+          "de": "40 Hadithe · 6",
+          "ar": "الأربعون النووية · ٦"
+        },
+        "title": {
+          "en": "Clear, unclear, and the heart",
+          "de": "Klar, unklar und das Herz",
+          "ar": "الواضح والمشتبه والقلب"
+        },
+        "sub": {
+          "en": "On grey areas, guarding your faith, and the one part of you everything depends on",
+          "de": "Über Grauzonen, den Schutz des Glaubens und den Teil von Ihnen, von dem alles abhängt",
+          "ar": "عن المشتبهات وحماية الدين، والعضو الذي يتوقف عليه كل شيء"
+        },
+        "arabic": "الورع وصلاح القلب"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Three kinds of matters",
+            "de": "Drei Arten von Dingen",
+            "ar": "ثلاثة أنواع من الأمور"
+          },
+          "body": {
+            "en": "An-Nu'man ibn Bashir reports that the Prophet spoke of three areas: what is plainly permitted, what is plainly forbidden, and a middle zone that many people do not understand. Al-Bukhari and Muslim report it.",
+            "de": "An-Nu'man ibn Baschir berichtet, dass der Prophet von drei Bereichen sprach: dem eindeutig Erlaubten, dem eindeutig Verbotenen und einer Zone dazwischen, die viele Menschen nicht verstehen. Al-Bukhari und Muslim überliefern es.",
+            "ar": "يروي النعمان بن بشير أن النبي تحدث عن ثلاث دوائر: ما هو مباح بوضوح، وما هو محرم بوضوح، ومنطقة بينهما يجهلها كثير من الناس. أخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "The shepherd at the border",
+            "de": "Der Hirte an der Grenze",
+            "ar": "الراعي عند الحدود"
+          },
+          "body": {
+            "en": "He compared the one who drifts into doubtful things to a shepherd grazing his flock at the edge of a protected pasture: sooner or later the animals wander in. What Allah has forbidden is that boundary.",
+            "de": "Er verglich den, der in zweifelhafte Dinge abgleitet, mit einem Hirten, der seine Herde am Rand einer geschützten Weide hütet: Früher oder später laufen die Tiere hinein. Was Allah verboten hat, ist diese Grenze.",
+            "ar": "شبّه من يتهاون في المشتبهات براعٍ يرعى غنمه على حافة أرض محمية، فيوشك أن تدخلها غنمه. وما حرّمه الله هو تلك الحدود."
+          }
+        },
+        {
+          "title": {
+            "en": "Wara': caution out of love",
+            "de": "Wara': Vorsicht aus Liebe",
+            "ar": "الورع: حذر المحب"
+          },
+          "arabic": "وَرَع",
+          "body": {
+            "en": "Avoiding the doubtful is called wara'. It is not anxiety or harshness. It is the care of someone who does not want to lose something precious.",
+            "de": "Das Meiden des Zweifelhaften nennt man Wara'. Es ist weder Angst noch Härte, sondern die Sorgfalt eines Menschen, der etwas Kostbares nicht verlieren will.",
+            "ar": "اجتناب المشتبهات يسمى ورعًا، وليس قلقًا ولا تشددًا، بل هو حرص من يخاف أن يفقد شيئًا ثمينًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Everything depends on the heart",
+            "de": "Alles hängt am Herzen",
+            "ar": "كل شيء يتوقف على القلب"
+          },
+          "body": {
+            "en": "The hadith ends by pointing to the heart: when it is sound, the whole person follows. Outward choices and the inner state shape each other.",
+            "de": "Der Hadith endet mit einem Hinweis auf das Herz: Ist es gesund, folgt ihm der ganze Mensch. Äußere Entscheidungen und der innere Zustand prägen einander.",
+            "ar": "يختم الحديث بالإشارة إلى القلب: إذا صلح تبعه الإنسان كله. فالاختيارات الظاهرة والحال الباطنة يؤثر بعضها في بعض."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "When unsure, ask someone knowledgeable",
+              "Leave a doubtful thing when you easily can",
+              "Do not burden others with your own caution",
+              "Care for the heart: remembrance, good company, repentance"
+            ],
+            "de": [
+              "Fragen Sie im Zweifel einen kundigen Menschen",
+              "Lassen Sie Zweifelhaftes, wenn es Ihnen leicht möglich ist",
+              "Legen Sie Ihre eigene Vorsicht nicht anderen auf",
+              "Pflegen Sie das Herz: Gedenken, gute Gesellschaft, Reue"
+            ],
+            "ar": [
+              "إذا شككت فاسأل أهل العلم",
+              "دع المشتبه إذا تيسر لك تركه",
+              "لا تُلزم غيرك بما تحتاط به لنفسك",
+              "تعاهد قلبك بالذكر والصحبة الصالحة والتوبة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 6",
+          "url": "https://sunnah.com/nawawi40:6"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-07-sincerity",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 7",
+          "de": "40 Hadithe · 7",
+          "ar": "الأربعون النووية · ٧"
+        },
+        "title": {
+          "en": "Sincerity in five directions",
+          "de": "Aufrichtigkeit in fünf Richtungen",
+          "ar": "النصيحة في خمسة اتجاهات"
+        },
+        "sub": {
+          "en": "A very short hadith that turns the religion into an attitude of the heart",
+          "de": "Ein sehr kurzer Hadith, der die Religion zu einer Haltung des Herzens macht",
+          "ar": "حديث قصير جدًا يجعل الدين موقفًا من مواقف القلب"
+        },
+        "arabic": "النصيحة جوهر الدين"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:7",
+          "check": "naseehah",
+          "title": {
+            "en": "One word, many layers",
+            "de": "Ein Wort, viele Schichten",
+            "ar": "كلمة واحدة ومعانٍ كثيرة"
+          },
+          "body": {
+            "en": "Narrated by Tamim ad-Dari and reported by Muslim.",
+            "de": "Überliefert von Tamim ad-Dari, berichtet von Muslim.",
+            "ar": "رواه تميم الداري، وأخرجه مسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "What naseehah means",
+            "de": "Was Nasiha bedeutet",
+            "ar": "معنى النصيحة"
+          },
+          "arabic": "نَصِيحَة",
+          "body": {
+            "en": "Naseehah is wider than advice. The root carries the idea of making something pure and sound. It means wishing the best for someone and acting on that wish.",
+            "de": "Nasiha ist mehr als ein Rat. Die Wurzel trägt die Bedeutung, etwas rein und heil zu machen. Gemeint ist, jemandem das Beste zu wünschen und danach zu handeln.",
+            "ar": "النصيحة أوسع من مجرد المشورة، وأصلها يدل على الخلوص والإصلاح. ومعناها أن تريد الخير لغيرك وتعمل بمقتضى ذلك."
+          }
+        },
+        {
+          "title": {
+            "en": "Five directions",
+            "de": "Fünf Richtungen",
+            "ar": "خمسة اتجاهات"
+          },
+          "list": {
+            "en": [
+              "To Allah: worship Him alone, with love and honesty",
+              "To His Book: read it, understand it, live by it",
+              "To His Messenger: honour and follow his way",
+              "To leaders: support what is right, advise with respect",
+              "To all Muslims: want what is good for them"
+            ],
+            "de": [
+              "Zu Allah: Ihn allein anbeten, mit Liebe und Ehrlichkeit",
+              "Zu Seinem Buch: es lesen, verstehen und danach leben",
+              "Zu Seinem Gesandten: seinen Weg ehren und ihm folgen",
+              "Zu den Verantwortlichen: das Rechte stützen, respektvoll raten",
+              "Zu allen Muslimen: ihnen das Gute wünschen"
+            ],
+            "ar": [
+              "لله: عبادته وحده بمحبة وصدق",
+              "لكتابه: تلاوته وفهمه والعمل به",
+              "لرسوله: توقيره واتباع سنته",
+              "لأئمة المسلمين: إعانتهم على الحق ونصحهم بأدب",
+              "لعامة المسلمين: محبة الخير لهم"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "body": {
+            "en": "Give honest feedback gently and in private, and accept it from others. Sincerity begins with being honest with Allah about yourself.",
+            "de": "Geben Sie ehrliche Rückmeldung behutsam und unter vier Augen, und nehmen Sie sie von anderen an. Aufrichtigkeit beginnt damit, vor Allah ehrlich über sich selbst zu sein.",
+            "ar": "انصح بلطف وفي السر، واقبل النصح من غيرك. والصدق يبدأ بأن تكون صادقًا مع الله في شأن نفسك."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-08-sanctity",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 8",
+          "de": "40 Hadithe · 8",
+          "ar": "الأربعون النووية · ٨"
+        },
+        "title": {
+          "en": "What protects a person's life and wealth",
+          "de": "Was Leben und Besitz eines Menschen schützt",
+          "ar": "ما يعصم الدم والمال"
+        },
+        "sub": {
+          "en": "A hadith that is often misread: its context, its limits and its message of protection",
+          "de": "Ein oft missverstandener Hadith: sein Zusammenhang, seine Grenzen und seine Botschaft des Schutzes",
+          "ar": "حديث يُساء فهمه كثيرًا: سياقه وحدوده ورسالته في حفظ النفوس"
+        },
+        "arabic": "حرمة الدم والمال"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:8",
+          "check": "protection",
+          "title": {
+            "en": "A hadith that needs its context",
+            "de": "Ein Hadith, der seinen Zusammenhang braucht",
+            "ar": "حديث يحتاج إلى سياقه"
+          },
+          "body": {
+            "en": "Narrated by Abdullah ibn Umar and reported by al-Bukhari and Muslim. It is best read with the explanations of the scholars.",
+            "de": "Überliefert von Abdullah ibn Umar, berichtet von al-Bukhari und Muslim. Man liest ihn am besten mit den Erklärungen der Gelehrten.",
+            "ar": "رواه عبد الله بن عمر، وأخرجه البخاري ومسلم. ويُقرأ على الوجه الصحيح مع شروح العلماء."
+          }
+        },
+        {
+          "title": {
+            "en": "The historical setting",
+            "de": "Der historische Rahmen",
+            "ar": "السياق التاريخي"
+          },
+          "body": {
+            "en": "Many scholars explain that it refers to the wars of that time against those fighting the Muslims in Arabia. It is not a command to force belief on anyone.",
+            "de": "Viele Gelehrte erklären, dass er sich auf die Kriege jener Zeit gegen diejenigen bezieht, die die Muslime in Arabien bekämpften. Er ist kein Befehl, jemandem den Glauben aufzuzwingen.",
+            "ar": "يبيّن كثير من العلماء أنه يتعلق بحروب ذلك الزمان مع من قاتلوا المسلمين في جزيرة العرب، وليس أمرًا بإكراه أحد على الإيمان."
+          }
+        },
+        {
+          "verse": "2:256",
+          "check": "compulsion",
+          "title": {
+            "en": "No compulsion",
+            "de": "Kein Zwang",
+            "ar": "لا إكراه"
+          },
+          "body": {
+            "en": "The Quran draws the line clearly: faith is a choice of the heart.",
+            "de": "Der Koran zieht die Linie klar: Glaube ist eine Entscheidung des Herzens.",
+            "ar": "يرسم القرآن الحد بوضوح: الإيمان اختيار القلب."
+          }
+        },
+        {
+          "title": {
+            "en": "A message of protection",
+            "de": "Eine Botschaft des Schutzes",
+            "ar": "رسالة حماية"
+          },
+          "body": {
+            "en": "The hadith also teaches that whoever outwardly accepts Islam is safe: life and property are inviolable, and what lies in the heart is left to Allah alone.",
+            "de": "Der Hadith lehrt auch: Wer den Islam äußerlich annimmt, ist geschützt. Leben und Besitz sind unantastbar, und was im Herzen liegt, bleibt allein Allah überlassen.",
+            "ar": "ويعلّم الحديث أيضًا أن من أظهر الإسلام فهو في أمان: دمه وماله معصومان، وما في قلبه موكول إلى الله وحده."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons",
+            "de": "Lehren",
+            "ar": "دروس"
+          },
+          "list": {
+            "en": [
+              "Judge people by what they show, leave hearts to Allah",
+              "Life and property are sacred",
+              "Read hadith with their context and commentary"
+            ],
+            "de": [
+              "Beurteilen Sie Menschen nach dem Sichtbaren, die Herzen kennt Allah",
+              "Leben und Besitz sind heilig",
+              "Lesen Sie Hadithe mit Zusammenhang und Erklärung"
+            ],
+            "ar": [
+              "احكم على الناس بالظاهر، واترك القلوب لله",
+              "للدماء والأموال حرمة عظيمة",
+              "اقرأ الحديث مع سياقه وشرحه"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-09-within-ability",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 9",
+          "de": "40 Hadithe · 9",
+          "ar": "الأربعون النووية · ٩"
+        },
+        "title": {
+          "en": "A religion within your ability",
+          "de": "Eine Religion nach Ihrem Vermögen",
+          "ar": "دين على قدر الاستطاعة"
+        },
+        "sub": {
+          "en": "On leaving what is forbidden, doing your best, and asking the right questions",
+          "de": "Über das Meiden des Verbotenen, das eigene Bestes und die richtigen Fragen",
+          "ar": "عن ترك المحرمات، وبذل الوسع، وحسن السؤال"
+        },
+        "arabic": "الدين يسر"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:9",
+          "check": "excessive questioning",
+          "title": {
+            "en": "Two commands, two measures",
+            "de": "Zwei Gebote, zwei Maßstäbe",
+            "ar": "أمران وميزانان"
+          },
+          "body": {
+            "en": "Narrated by Abu Hurayrah and reported by al-Bukhari and Muslim.",
+            "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari und Muslim.",
+            "ar": "رواه أبو هريرة، وأخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Why the difference",
+            "de": "Warum der Unterschied",
+            "ar": "سرّ الفرق"
+          },
+          "body": {
+            "en": "Leaving something is always possible, so the forbidden is to be left completely. Doing something needs strength and means, so commands are carried out within one's capacity.",
+            "de": "Etwas zu lassen ist immer möglich, darum wird das Verbotene ganz gemieden. Etwas zu tun braucht Kraft und Mittel, darum werden Gebote nach dem eigenen Vermögen erfüllt.",
+            "ar": "الترك مقدور عليه دائمًا، فيُجتنب المحرم كله. أما الفعل فيحتاج إلى قوة ووسيلة، فتُؤدّى الأوامر على قدر الطاقة."
+          }
+        },
+        {
+          "verse": "64:16",
+          "check": "as much as you are able",
+          "title": {
+            "en": "The same principle in the Quran",
+            "de": "Dasselbe Prinzip im Koran",
+            "ar": "المبدأ نفسه في القرآن"
+          },
+          "body": {
+            "en": "Taqwa is measured by what a person is able to do.",
+            "de": "Gottesfurcht wird an dem gemessen, was ein Mensch zu tun vermag.",
+            "ar": "التقوى تقاس بما يستطيعه الإنسان."
+          }
+        },
+        {
+          "title": {
+            "en": "Questions that help",
+            "de": "Fragen, die helfen",
+            "ar": "أسئلة نافعة"
+          },
+          "body": {
+            "en": "The hadith warns against piling up questions that make religion heavy, as happened to earlier nations. Asking in order to learn and act is praised; asking to argue or to complicate is not.",
+            "de": "Der Hadith warnt davor, Fragen anzuhäufen, die die Religion schwer machen, wie es früheren Völkern geschah. Fragen, um zu lernen und zu handeln, ist lobenswert; Fragen, um zu streiten oder zu verkomplizieren, nicht.",
+            "ar": "يحذّر الحديث من كثرة الأسئلة التي تثقل الدين كما وقع لأمم سابقة. أما السؤال للتعلم والعمل فمحمود، والسؤال للجدال والتعقيد مذموم."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Leave clear wrongs completely and at once",
+              "Do good deeds at a level you can keep up",
+              "Ask to learn and to act, not to argue"
+            ],
+            "de": [
+              "Lassen Sie klares Unrecht ganz und sofort",
+              "Tun Sie Gutes in einem Maß, das Sie durchhalten",
+              "Fragen Sie, um zu lernen und zu handeln, nicht um zu streiten"
+            ],
+            "ar": [
+              "اترك المحرم الواضح كله ومن فورك",
+              "اعمل الخير بقدر تستطيع المداومة عليه",
+              "اسأل لتتعلم وتعمل، لا لتجادل"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-10-pure-earnings",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 10",
+          "de": "40 Hadithe · 10",
+          "ar": "الأربعون النووية · ١٠"
+        },
+        "title": {
+          "en": "Pure earnings, answered prayers",
+          "de": "Reiner Verdienst, erhörte Gebete",
+          "ar": "كسب طيب ودعاء مستجاب"
+        },
+        "sub": {
+          "en": "Why what we earn and consume shapes our worship and our dua",
+          "de": "Warum unser Verdienst und unser Verzehr Anbetung und Bittgebet prägen",
+          "ar": "كيف يؤثر ما نكسبه ونأكله في عبادتنا ودعائنا"
+        },
+        "arabic": "طيب المطعم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "At-Tayyib, the Good",
+            "de": "At-Tayyib, der Gute",
+            "ar": "الطيّب سبحانه"
+          },
+          "arabic": "طَيِّب",
+          "body": {
+            "en": "Abu Hurayrah reports a hadith, recorded by Muslim, that begins with a quality of Allah: He is Tayyib, good and pure, and He receives only what is pure.",
+            "de": "Abu Huraira überliefert einen Hadith, den Muslim festhielt. Er beginnt mit einer Eigenschaft Allahs: Er ist Tayyib, gut und rein, und Er nimmt nur Reines an.",
+            "ar": "يروي أبو هريرة حديثًا أخرجه مسلم، يبدأ بصفة من صفات الله: فهو طيّب، ولا يقبل إلا ما كان طيبًا."
+          }
+        },
+        {
+          "pair": [
+            "23:51",
+            "2:172"
+          ],
+          "check": [
+            "good foods",
+            "good"
+          ],
+          "title": {
+            "en": "Messengers and believers alike",
+            "de": "Gesandte und Gläubige gleichermaßen",
+            "ar": "الرسل والمؤمنون سواء"
+          },
+          "body": {
+            "en": "The Prophet cited both verses: the same command to eat what is good is given to the messengers and to the believers.",
+            "de": "Der Prophet zitierte beide Verse: Dasselbe Gebot, Gutes zu essen, gilt den Gesandten und den Gläubigen.",
+            "ar": "استشهد النبي بالآيتين: فالأمر بالأكل من الطيبات موجّه إلى الرسل وإلى المؤمنين."
+          }
+        },
+        {
+          "title": {
+            "en": "The traveller with raised hands",
+            "de": "Der Reisende mit erhobenen Händen",
+            "ar": "المسافر الرافع يديه"
+          },
+          "body": {
+            "en": "He then spoke of a weary traveller calling on his Lord, a situation in which dua is often answered. Yet his food, drink and clothing came from unlawful sources, and the Prophet asked how such a prayer could be accepted.",
+            "de": "Dann sprach er von einem erschöpften Reisenden, der zu seinem Herrn ruft, in einer Lage, in der Bittgebete oft erhört werden. Doch Speise, Trank und Kleidung stammten aus Verbotenem, und der Prophet fragte, wie ein solches Gebet angenommen werden solle.",
+            "ar": "ثم ذكر مسافرًا متعبًا يدعو ربه في حال يُرجى فيها القبول، لكن طعامه وشرابه ولباسه من حرام، فتساءل النبي كيف يُستجاب لمثله."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons",
+            "de": "Lehren",
+            "ar": "دروس"
+          },
+          "list": {
+            "en": [
+              "Lawful income is part of worship",
+              "What we consume affects our prayers",
+              "Outward effort cannot replace inner purity",
+              "Good intentions do not make unlawful wealth pure"
+            ],
+            "de": [
+              "Erlaubter Verdienst ist Teil der Anbetung",
+              "Was wir verzehren, wirkt auf unsere Gebete",
+              "Äußere Mühe ersetzt keine innere Reinheit",
+              "Gute Absichten machen unrechtes Gut nicht rein"
+            ],
+            "ar": [
+              "الكسب الحلال جزء من العبادة",
+              "ما نأكله يؤثر في دعائنا",
+              "الجهد الظاهر لا يغني عن طهارة الباطن",
+              "النية الحسنة لا تطهّر المال الحرام"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "body": {
+            "en": "Look honestly at how your income is earned. Pay wages and debts on time, avoid deception in trade, and choose what is wholesome, not only what is permitted.",
+            "de": "Schauen Sie ehrlich darauf, wie Ihr Einkommen entsteht. Zahlen Sie Löhne und Schulden pünktlich, meiden Sie Täuschung im Handel und wählen Sie das Bekömmliche, nicht nur das Erlaubte.",
+            "ar": "انظر بصدق في مصدر دخلك، وأدِّ الأجور والديون في وقتها، واجتنب الغش في البيع، واختر الطيب لا المباح وحده."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 10",
+          "url": "https://sunnah.com/nawawi40:10"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-11-doubt",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 11",
+          "de": "40 Hadithe · 11",
+          "ar": "الأربعون النووية · ١١"
+        },
+        "title": {
+          "en": "Choose certainty over doubt",
+          "de": "Wählen Sie Gewissheit statt Zweifel",
+          "ar": "اختر اليقين على الشك"
+        },
+        "sub": {
+          "en": "A short hadith about the peace of a clear conscience",
+          "de": "Ein kurzer Hadith über den Frieden eines reinen Gewissens",
+          "ar": "حديث قصير عن سكينة الضمير المطمئن"
+        },
+        "arabic": "طمأنينة اليقين"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:11",
+          "check": "doubt",
+          "title": {
+            "en": "Words the grandson kept",
+            "de": "Worte, die der Enkel bewahrte",
+            "ar": "كلمات حفظها السبط"
+          },
+          "body": {
+            "en": "Al-Hasan ibn Ali, the Prophet's grandson, memorised them. Reported by at-Tirmidhi and an-Nasa'i.",
+            "de": "Al-Hasan ibn Ali, der Enkel des Propheten, prägte sie sich ein. Berichtet von at-Tirmidhi und an-Nasa'i.",
+            "ar": "حفظها الحسن بن علي سبط النبي، وأخرجها الترمذي والنسائي."
+          }
+        },
+        {
+          "title": {
+            "en": "A rule for daily choices",
+            "de": "Eine Regel für tägliche Entscheidungen",
+            "ar": "قاعدة للاختيارات اليومية"
+          },
+          "body": {
+            "en": "When two paths are open and one leaves you uneasy, take the one about which your heart is calm. The hadith turns caution into a simple habit.",
+            "de": "Wenn zwei Wege offenstehen und einer Sie beunruhigt, nehmen Sie den, bei dem Ihr Herz ruhig ist. Der Hadith macht Vorsicht zu einer einfachen Gewohnheit.",
+            "ar": "إذا كان أمامك طريقان وأحدهما يقلقك، فاسلك الطريق الذي يطمئن إليه قلبك. فالحديث يجعل الاحتياط عادة سهلة."
+          }
+        },
+        {
+          "title": {
+            "en": "A link to hadith 6",
+            "de": "Eine Verbindung zu Hadith 6",
+            "ar": "صلة بالحديث السادس"
+          },
+          "body": {
+            "en": "It echoes the sixth hadith on doubtful matters. Both teach that stepping back from the unclear protects faith and brings peace to the heart.",
+            "de": "Er klingt wie ein Echo des sechsten Hadith über zweifelhafte Dinge. Beide lehren: Wer vom Unklaren Abstand nimmt, schützt seinen Glauben und findet Ruhe im Herzen.",
+            "ar": "يتصل بالحديث السادس في المشتبهات؛ فكلاهما يعلّم أن الابتعاد عن الغامض يحفظ الدين ويورث القلب سكينة."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Pause when something feels unclear",
+              "Ask before you act, not afterwards",
+              "Do not let caution grow into obsessive doubt"
+            ],
+            "de": [
+              "Halten Sie inne, wenn etwas unklar erscheint",
+              "Fragen Sie vor dem Handeln, nicht danach",
+              "Lassen Sie Vorsicht nicht zu zwanghaftem Zweifel werden"
+            ],
+            "ar": [
+              "توقف إذا بدا لك أمر غير واضح",
+              "اسأل قبل أن تعمل لا بعده",
+              "لا تدع الاحتياط يتحول إلى وسواس"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-12-what-concerns-you",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 12",
+          "de": "40 Hadithe · 12",
+          "ar": "الأربعون النووية · ١٢"
+        },
+        "title": {
+          "en": "The beauty of minding your own matters",
+          "de": "Die Schönheit, sich dem Eigenen zu widmen",
+          "ar": "جمال الانشغال بما ينفعك"
+        },
+        "sub": {
+          "en": "A short hadith about focus, privacy and a quieter heart",
+          "de": "Ein kurzer Hadith über Fokus, Privatsphäre und ein ruhigeres Herz",
+          "ar": "حديث قصير عن التركيز وحفظ الخصوصية وهدوء القلب"
+        },
+        "arabic": "حسن الإسلام"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:12",
+          "check": "concern",
+          "title": {
+            "en": "A sign of excellence",
+            "de": "Ein Zeichen der Vollkommenheit",
+            "ar": "علامة على الإحسان"
+          },
+          "body": {
+            "en": "Narrated by Abu Hurayrah and reported by at-Tirmidhi and others, graded hasan.",
+            "de": "Überliefert von Abu Huraira, berichtet von at-Tirmidhi und anderen, als hasan eingestuft.",
+            "ar": "رواه أبو هريرة، وأخرجه الترمذي وغيره، وهو حديث حسن."
+          }
+        },
+        {
+          "title": {
+            "en": "What does not concern you",
+            "de": "Was Sie nicht betrifft",
+            "ar": "ما لا يعنيك"
+          },
+          "body": {
+            "en": "Words, looks and pursuits that bring no benefit in this life or the next: idle curiosity about others, empty talk, endless scrolling.",
+            "de": "Worte, Blicke und Beschäftigungen, die weder im Diesseits noch im Jenseits nützen: müßige Neugier auf andere, leeres Gerede, endloses Scrollen.",
+            "ar": "كل قول أو نظر أو انشغال لا نفع فيه في الدنيا ولا في الآخرة: الفضول في شؤون الناس، والكلام الفارغ، والتصفح بلا نهاية."
+          }
+        },
+        {
+          "title": {
+            "en": "Not indifference",
+            "de": "Keine Gleichgültigkeit",
+            "ar": "ليس لامبالاة"
+          },
+          "body": {
+            "en": "This is not a call to ignore others. The needs of family and neighbours, justice and kindness do concern you. The hadith trims away the useless, not the good.",
+            "de": "Das ist kein Aufruf, andere zu übersehen. Die Not von Familie und Nachbarn, Gerechtigkeit und Güte gehen Sie sehr wohl an. Der Hadith schneidet das Nutzlose weg, nicht das Gute.",
+            "ar": "ليست دعوة إلى إهمال الآخرين؛ فحاجات الأهل والجيران والعدل والإحسان من شأنك. إنما يقطع الحديث ما لا فائدة فيه، لا الخير."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Before you ask, ask yourself why you want to know",
+              "Step out of conversations that turn into gossip",
+              "Guard your time as you guard your wealth",
+              "Spend the freed time on what benefits you"
+            ],
+            "de": [
+              "Fragen Sie sich vor einer Frage, warum Sie es wissen wollen",
+              "Verlassen Sie Gespräche, die zu Klatsch werden",
+              "Hüten Sie Ihre Zeit wie Ihr Vermögen",
+              "Nutzen Sie die gewonnene Zeit für Nützliches"
+            ],
+            "ar": [
+              "قبل أن تسأل، اسأل نفسك لماذا تريد أن تعرف",
+              "انسحب من الحديث إذا صار غيبة",
+              "احفظ وقتك كما تحفظ مالك",
+              "اصرف الوقت الذي توفّره فيما ينفعك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-13-love-for-others",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 13",
+          "de": "40 Hadithe · 13",
+          "ar": "الأربعون النووية · ١٣"
+        },
+        "title": {
+          "en": "Faith that wishes others well",
+          "de": "Ein Glaube, der anderen Gutes wünscht",
+          "ar": "إيمان يحب الخير للناس"
+        },
+        "sub": {
+          "en": "On a heart free of envy and full of goodwill",
+          "de": "Über ein Herz ohne Neid und voller Wohlwollen",
+          "ar": "عن قلب خالٍ من الحسد مملوء بالمودة"
+        },
+        "arabic": "محبة الخير للغير"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:13",
+          "check": "loves for his brother",
+          "title": {
+            "en": "A measure of faith",
+            "de": "Ein Maßstab des Glaubens",
+            "ar": "ميزان للإيمان"
+          },
+          "body": {
+            "en": "Narrated by Anas ibn Malik, who served the Prophet, and reported by al-Bukhari and Muslim.",
+            "de": "Überliefert von Anas ibn Malik, der dem Propheten diente, berichtet von al-Bukhari und Muslim.",
+            "ar": "رواه أنس بن مالك خادم النبي، وأخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Complete faith",
+            "de": "Vollständiger Glaube",
+            "ar": "كمال الإيمان"
+          },
+          "body": {
+            "en": "Scholars explain that the hadith speaks of complete faith. Someone who lacks this quality has not left Islam, but his faith is not yet whole.",
+            "de": "Gelehrte erklären, dass der Hadith vom vollständigen Glauben spricht. Wem diese Eigenschaft fehlt, der hat den Islam nicht verlassen, doch sein Glaube ist noch nicht vollkommen.",
+            "ar": "يبيّن العلماء أن المقصود كمال الإيمان؛ فمن فقد هذه الصفة لم يخرج من الإسلام، لكن إيمانه لم يكتمل بعد."
+          }
+        },
+        {
+          "title": {
+            "en": "The cure for envy",
+            "de": "Das Heilmittel gegen Neid",
+            "ar": "دواء الحسد"
+          },
+          "list": {
+            "en": [
+              "Envy shrinks when goodwill grows",
+              "Treat others as you hope to be treated",
+              "Be glad when others succeed",
+              "Wish guidance and good for every person"
+            ],
+            "de": [
+              "Neid schrumpft, wenn Wohlwollen wächst",
+              "Behandeln Sie andere, wie Sie behandelt werden möchten",
+              "Freuen Sie sich am Erfolg anderer",
+              "Wünschen Sie jedem Menschen Rechtleitung und Gutes"
+            ],
+            "ar": [
+              "يضعف الحسد كلما قويت المودة",
+              "عامل الناس بما تحب أن يعاملوك به",
+              "افرح بنجاح غيرك",
+              "تمنَّ الهداية والخير لكل إنسان"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "body": {
+            "en": "Make dua today for someone by name, especially a person you find hard to like. Congratulate a colleague sincerely on a success you wished were yours.",
+            "de": "Sprechen Sie heute ein Bittgebet für jemanden mit Namen, besonders für einen Menschen, mit dem Sie sich schwertun. Gratulieren Sie einem Kollegen aufrichtig zu einem Erfolg, den Sie sich selbst gewünscht hätten.",
+            "ar": "ادعُ اليوم لشخص باسمه، ولا سيما من يصعب عليك وده، وهنّئ زميلك بصدق على نجاح كنت تتمناه لنفسك."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-14-sanctity-of-life",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 14",
+          "de": "40 Hadithe · 14",
+          "ar": "الأربعون النووية · ١٤"
+        },
+        "title": {
+          "en": "A Muslim's life is sacred",
+          "de": "Das Leben eines Muslims ist unantastbar",
+          "ar": "دم المسلم معصوم"
+        },
+        "sub": {
+          "en": "A hadith that makes protection of life the rule and places the rare exceptions with the courts",
+          "de": "Ein Hadith, der den Schutz des Lebens zur Regel macht und die seltenen Ausnahmen den Gerichten zuweist",
+          "ar": "حديث يجعل حفظ النفس هو الأصل، ويضع الاستثناءات النادرة في يد القضاء"
+        },
+        "arabic": "عصمة النفس"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:14",
+          "check": "permissible",
+          "title": {
+            "en": "The default is protection",
+            "de": "Der Grundsatz ist Schutz",
+            "ar": "الأصل هو العصمة"
+          },
+          "body": {
+            "en": "Narrated by Ibn Mas'ud and reported by al-Bukhari and Muslim.",
+            "de": "Überliefert von Ibn Mas'ud, berichtet von al-Bukhari und Muslim.",
+            "ar": "رواه ابن مسعود، وأخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Protection is the rule",
+            "de": "Schutz ist die Regel",
+            "ar": "الحماية هي القاعدة"
+          },
+          "body": {
+            "en": "The hadith opens with a prohibition. The exceptions it names are few and grave, and the jurists discussed their conditions and proofs in great detail.",
+            "de": "Der Hadith beginnt mit einem Verbot. Die genannten Ausnahmen sind wenige und schwerwiegend, und die Rechtsgelehrten haben ihre Bedingungen und Beweise sehr ausführlich behandelt.",
+            "ar": "يبدأ الحديث بالنهي، والاستثناءات التي يذكرها قليلة وخطيرة، وقد فصّل الفقهاء شروطها وطرق إثباتها تفصيلًا كبيرًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Only for a lawful court",
+            "de": "Nur Sache eines rechtmäßigen Gerichts",
+            "ar": "للقضاء وحده"
+          },
+          "body": {
+            "en": "Scholars agree that such cases belong to a lawful judge, with proof and due process. No individual may take the law into their own hands.",
+            "de": "Die Gelehrten sind sich einig: Solche Fälle gehören vor einen rechtmäßigen Richter, mit Beweisen und geordnetem Verfahren. Kein Einzelner darf das Recht selbst in die Hand nehmen.",
+            "ar": "اتفق العلماء على أن هذه الأحكام من شأن القاضي الشرعي، بالبينة والإجراءات الصحيحة، وليس لأحد من الأفراد أن يتولاها بنفسه."
+          }
+        },
+        {
+          "verse": "5:32",
+          "check": "saved mankind",
+          "title": {
+            "en": "The weight of one life",
+            "de": "Das Gewicht eines Lebens",
+            "ar": "وزن نفس واحدة"
+          },
+          "body": {
+            "en": "The Quran shows how much a single human life weighs.",
+            "de": "Der Koran zeigt, wie schwer ein einziges Menschenleben wiegt.",
+            "ar": "يبيّن القرآن عظم شأن النفس الإنسانية الواحدة."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons",
+            "de": "Lehren",
+            "ar": "دروس"
+          },
+          "list": {
+            "en": [
+              "Human life is sacred",
+              "Exceptions are narrow and belong to courts",
+              "Read legal hadith with the explanations of jurists"
+            ],
+            "de": [
+              "Menschliches Leben ist heilig",
+              "Ausnahmen sind eng und Sache der Gerichte",
+              "Lesen Sie Rechtshadithe mit den Erklärungen der Rechtsgelehrten"
+            ],
+            "ar": [
+              "النفس الإنسانية محترمة",
+              "الاستثناءات ضيقة ومردّها إلى القضاء",
+              "اقرأ أحاديث الأحكام مع شروح الفقهاء"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-15-speech-neighbour-guest",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 15",
+          "de": "40 Hadithe · 15",
+          "ar": "الأربعون النووية · ١٥"
+        },
+        "title": {
+          "en": "Three signs of living faith",
+          "de": "Drei Zeichen gelebten Glaubens",
+          "ar": "ثلاث علامات للإيمان الحي"
+        },
+        "sub": {
+          "en": "Good words, a caring neighbour and an honoured guest",
+          "de": "Gute Worte, ein fürsorglicher Nachbar und ein geehrter Gast",
+          "ar": "كلمة طيبة، وجار مكرَّم، وضيف معزَّز"
+        },
+        "arabic": "أدب اللسان والجوار والضيافة"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:15",
+          "check": "neighbour",
+          "title": {
+            "en": "Faith that shows",
+            "de": "Glaube, der sichtbar wird",
+            "ar": "إيمان يظهر أثره"
+          },
+          "body": {
+            "en": "Narrated by Abu Hurayrah and reported by al-Bukhari and Muslim.",
+            "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari und Muslim.",
+            "ar": "رواه أبو هريرة، وأخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Words: good or nothing",
+            "de": "Worte: gut oder gar nicht",
+            "ar": "الكلام: خير أو صمت"
+          },
+          "body": {
+            "en": "Before speaking, weigh your words. If they are good, say them; if not, silence is the better choice. Much regret begins with a sentence that could have stayed unsaid.",
+            "de": "Wägen Sie Ihre Worte ab, bevor Sie sprechen. Sind sie gut, sagen Sie sie; wenn nicht, ist Schweigen besser. Viel Reue beginnt mit einem Satz, der ungesagt hätte bleiben können.",
+            "ar": "زن كلامك قبل أن تتكلم؛ فإن كان خيرًا فقله، وإلا فالسكوت أولى. وكثير من الندم يبدأ بجملة كان يمكن ألا تقال."
+          }
+        },
+        {
+          "verse": "4:36",
+          "check": "near neighbor",
+          "title": {
+            "en": "Neighbours near and far",
+            "de": "Nahe und ferne Nachbarn",
+            "ar": "الجار القريب والبعيد"
+          },
+          "body": {
+            "en": "The Quran places neighbours in the same verse as worship and parents.",
+            "de": "Der Koran nennt die Nachbarn im selben Vers wie die Anbetung und die Eltern.",
+            "ar": "يذكر القرآن الجيران في الآية نفسها مع العبادة والوالدين."
+          }
+        },
+        {
+          "title": {
+            "en": "Neighbour and guest",
+            "de": "Nachbar und Gast",
+            "ar": "الجار والضيف"
+          },
+          "body": {
+            "en": "Generosity to neighbours means greeting, gifts, help and never causing harm, and scholars count neighbours of every faith. Honouring a guest means a warm welcome and making them feel at home within your means.",
+            "de": "Großzügigkeit gegenüber Nachbarn heißt Grüßen, Geschenke, Hilfe und niemals Schaden, und die Gelehrten zählen Nachbarn jedes Glaubens dazu. Einen Gast ehren heißt, ihn herzlich zu empfangen, im Rahmen der eigenen Mittel.",
+            "ar": "إكرام الجار سلام وهدية وعون وكفّ أذى، ويعدّ العلماء الجار من أي دين كان. وإكرام الضيف استقبال دافئ وراحة له بحسب ما تستطيع."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Take a breath before a sharp reply",
+              "Greet your neighbours and learn their names",
+              "Welcome guests without turning it into a burden"
+            ],
+            "de": [
+              "Atmen Sie durch vor einer scharfen Antwort",
+              "Grüßen Sie Ihre Nachbarn und lernen Sie ihre Namen",
+              "Empfangen Sie Gäste, ohne es zur Last zu machen"
+            ],
+            "ar": [
+              "خذ نفسًا قبل أي رد حاد",
+              "سلّم على جيرانك وتعرّف إلى أسمائهم",
+              "أكرم ضيفك دون أن تتكلف ما يشق عليك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-16-anger",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 16",
+          "de": "40 Hadithe · 16",
+          "ar": "الأربعون النووية · ١٦"
+        },
+        "title": {
+          "en": "One piece of advice, repeated",
+          "de": "Ein einziger Rat, mehrmals wiederholt",
+          "ar": "وصية واحدة تتكرر"
+        },
+        "sub": {
+          "en": "Why a request for counsel was answered with a short word about anger",
+          "de": "Warum eine Bitte um Rat mit einem kurzen Wort über den Zorn beantwortet wurde",
+          "ar": "لماذا جاء جواب طلب النصيحة كلمة قصيرة عن الغضب"
+        },
+        "arabic": "ضبط النفس عند الغضب"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:16",
+          "check": "angry",
+          "title": {
+            "en": "Asked again and again",
+            "de": "Wieder und wieder gefragt",
+            "ar": "سأل مرة بعد مرة"
+          },
+          "body": {
+            "en": "Narrated by Abu Hurayrah and reported by al-Bukhari. The answer never changed.",
+            "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari. Die Antwort blieb jedes Mal dieselbe.",
+            "ar": "رواه أبو هريرة، وأخرجه البخاري. وبقي الجواب واحدًا في كل مرة."
+          }
+        },
+        {
+          "title": {
+            "en": "Why anger?",
+            "de": "Warum der Zorn?",
+            "ar": "لماذا الغضب؟"
+          },
+          "body": {
+            "en": "Anger opens the door to many wrongs: harsh words, broken ties, unjust decisions. Guarding this one door protects much of the house.",
+            "de": "Der Zorn öffnet die Tür zu vielem Unrecht: harte Worte, zerbrochene Bande, ungerechte Entscheidungen. Wer diese eine Tür bewacht, schützt einen großen Teil des Hauses.",
+            "ar": "الغضب باب لكثير من الشر: كلام جارح، وقطيعة، وأحكام ظالمة. ومن حرس هذا الباب حفظ كثيرًا من بيته."
+          }
+        },
+        {
+          "title": {
+            "en": "A feeling and a reaction",
+            "de": "Ein Gefühl und eine Reaktion",
+            "ar": "شعور وردّ فعل"
+          },
+          "body": {
+            "en": "Scholars explain two meanings: avoid what stirs anger, and do not act on it when it rises. Feeling anger is human; letting it rule is the problem.",
+            "de": "Gelehrte nennen zwei Bedeutungen: Meiden Sie, was Zorn auslöst, und handeln Sie nicht nach ihm, wenn er aufsteigt. Zorn zu fühlen ist menschlich; ihn herrschen zu lassen ist das Problem.",
+            "ar": "يذكر العلماء معنيين: اجتنب أسباب الغضب، ولا تعمل بمقتضاه إذا ثار. فالشعور بالغضب طبع بشري، والمشكلة أن يتحكم فيك."
+          }
+        },
+        {
+          "verse": "3:134",
+          "check": "restrain anger",
+          "title": {
+            "en": "Praised in the Quran",
+            "de": "Im Koran gelobt",
+            "ar": "ثناء في القرآن"
+          },
+          "body": {
+            "en": "Holding back anger and pardoning others are named among the marks of those who do good.",
+            "de": "Den Zorn zurückhalten und anderen verzeihen gehören zu den Kennzeichen derer, die Gutes tun.",
+            "ar": "كظم الغيظ والعفو عن الناس من صفات المحسنين."
+          }
+        },
+        {
+          "title": {
+            "en": "When anger rises",
+            "de": "Wenn der Zorn aufsteigt",
+            "ar": "إذا ثار الغضب"
+          },
+          "list": {
+            "en": [
+              "Seek refuge with Allah from Satan",
+              "Change your position: sit down if you are standing",
+              "Stay silent until it passes",
+              "Return to the matter when you are calm"
+            ],
+            "de": [
+              "Suchen Sie Zuflucht bei Allah vor dem Satan",
+              "Ändern Sie Ihre Haltung: Setzen Sie sich, wenn Sie stehen",
+              "Schweigen Sie, bis es vorübergeht",
+              "Kehren Sie zur Sache zurück, wenn Sie ruhig sind"
+            ],
+            "ar": [
+              "استعذ بالله من الشيطان",
+              "غيّر هيئتك: اجلس إن كنت قائمًا",
+              "اسكت حتى يهدأ غضبك",
+              "عد إلى الأمر وأنت هادئ"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-17-excellence",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 17",
+          "de": "40 Hadithe · 17",
+          "ar": "الأربعون النووية · ١٧"
+        },
+        "title": {
+          "en": "Excellence in everything you do",
+          "de": "Vortrefflichkeit in allem, was Sie tun",
+          "ar": "الإحسان في كل شيء"
+        },
+        "sub": {
+          "en": "Even in the hardest tasks, Allah asks for care, skill and mercy",
+          "de": "Selbst bei den schwersten Aufgaben verlangt Allah Sorgfalt, Können und Barmherzigkeit",
+          "ar": "حتى في أشق الأعمال يطلب الله الإتقان والرحمة"
+        },
+        "arabic": "الإتقان والرحمة"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:17",
+          "check": "ihsan",
+          "title": {
+            "en": "Written for all things",
+            "de": "Für alle Dinge vorgeschrieben",
+            "ar": "مكتوب على كل شيء"
+          },
+          "body": {
+            "en": "Narrated by Shaddad ibn Aws and reported by Muslim.",
+            "de": "Überliefert von Schaddad ibn Aus, berichtet von Muslim.",
+            "ar": "رواه شداد بن أوس، وأخرجه مسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Ihsan: doing it beautifully",
+            "de": "Ihsan: es schön tun",
+            "ar": "الإحسان: إتقان العمل وتجميله"
+          },
+          "arabic": "إِحْسَان",
+          "body": {
+            "en": "Ihsan means doing a thing well and beautifully. In hadith 2 it describes worship; here it reaches every action and every creature.",
+            "de": "Ihsan bedeutet, eine Sache gut und schön zu tun. In Hadith 2 beschreibt es die Anbetung; hier erstreckt es sich auf jede Handlung und jedes Geschöpf.",
+            "ar": "الإحسان أن تؤدي العمل على أحسن وجه وأجمله. وفي الحديث الثاني وُصفت به العبادة، وهنا يشمل كل عمل وكل مخلوق."
+          }
+        },
+        {
+          "title": {
+            "en": "A striking example",
+            "de": "Ein eindrückliches Beispiel",
+            "ar": "مثال لافت"
+          },
+          "body": {
+            "en": "The Prophet chose the slaughter of an animal as his example: a sharp blade and no needless suffering. If mercy is required even there, how much more in teaching, working, parenting and caring.",
+            "de": "Der Prophet wählte das Schlachten eines Tieres als Beispiel: eine scharfe Klinge und kein unnötiges Leid. Wenn selbst dort Barmherzigkeit geboten ist, wie viel mehr beim Lehren, Arbeiten, Erziehen und Pflegen.",
+            "ar": "اختار النبي ذبح الحيوان مثالًا: شفرة حادة ولا ألم بلا داع. فإذا وجبت الرحمة هناك، فهي أوجب في التعليم والعمل والتربية والرعاية."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Finish tasks properly, not just quickly",
+              "Give your best in small things too",
+              "Be gentle with animals in every situation",
+              "Bring kindness into the tasks you dislike"
+            ],
+            "de": [
+              "Erledigen Sie Aufgaben gründlich, nicht nur schnell",
+              "Geben Sie auch im Kleinen Ihr Bestes",
+              "Seien Sie in jeder Lage sanft zu Tieren",
+              "Bringen Sie Freundlichkeit in ungeliebte Aufgaben"
+            ],
+            "ar": [
+              "أتقن عملك ولا تكتفِ بالسرعة",
+              "ابذل أحسن ما عندك في الصغير أيضًا",
+              "كن رفيقًا بالحيوان في كل حال",
+              "أدخل اللطف حتى في الأعمال التي لا تحبها"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-18-taqwa",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 18",
+          "de": "40 Hadithe · 18",
+          "ar": "الأربعون النووية · ١٨"
+        },
+        "title": {
+          "en": "Three keys for every place and time",
+          "de": "Drei Schlüssel für jeden Ort und jede Zeit",
+          "ar": "ثلاثة مفاتيح لكل زمان ومكان"
+        },
+        "sub": {
+          "en": "Mindfulness of Allah, erasing mistakes with good, and beautiful character",
+          "de": "Bewusstsein für Allah, Fehler mit Gutem tilgen und schöner Charakter",
+          "ar": "تقوى الله، ومحو السيئة بالحسنة، وحسن الخلق"
+        },
+        "arabic": "التقوى وحسن الخلق"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:18",
+          "check": "wherever you may be",
+          "title": {
+            "en": "Advice for every place",
+            "de": "Ein Rat für jeden Ort",
+            "ar": "وصية لكل مكان"
+          },
+          "body": {
+            "en": "Narrated by Abu Dharr and Mu'adh ibn Jabal and reported by at-Tirmidhi, who graded it hasan.",
+            "de": "Überliefert von Abu Dharr und Mu'adh ibn Dschabal, berichtet von at-Tirmidhi, der ihn als hasan einstufte.",
+            "ar": "رواه أبو ذر ومعاذ بن جبل، وأخرجه الترمذي وحسّنه."
+          }
+        },
+        {
+          "title": {
+            "en": "What taqwa means",
+            "de": "Was Taqwa bedeutet",
+            "ar": "معنى التقوى"
+          },
+          "arabic": "تَقْوَى",
+          "body": {
+            "en": "Taqwa comes from a root meaning to shield. It is placing a protection between yourself and Allah's displeasure, by doing what He commands and leaving what He forbids.",
+            "de": "Taqwa stammt von einer Wurzel, die schützen bedeutet. Es heißt, einen Schutz zwischen sich und Allahs Missfallen zu stellen, indem man tut, was Er gebietet, und lässt, was Er verbietet.",
+            "ar": "التقوى من الوقاية، وهي أن تجعل بينك وبين سخط الله وقاية بفعل ما أمر وترك ما نهى."
+          }
+        },
+        {
+          "verse": "11:114",
+          "check": "good deeds do away",
+          "title": {
+            "en": "Good that erases",
+            "de": "Gutes, das tilgt",
+            "ar": "حسنات تمحو"
+          },
+          "body": {
+            "en": "The second piece of advice has a clear root in the Quran.",
+            "de": "Der zweite Rat hat eine klare Grundlage im Koran.",
+            "ar": "للوصية الثانية أصل واضح في القرآن."
+          }
+        },
+        {
+          "title": {
+            "en": "Faith with people",
+            "de": "Glaube im Umgang mit Menschen",
+            "ar": "الإيمان في معاملة الناس"
+          },
+          "body": {
+            "en": "The third piece of advice turns to people. Taqwa is not only private worship; it shows in patience, honesty and kindness in everyday dealings.",
+            "de": "Der dritte Rat wendet sich den Menschen zu. Taqwa ist nicht nur private Anbetung; sie zeigt sich in Geduld, Ehrlichkeit und Freundlichkeit im täglichen Umgang.",
+            "ar": "تتجه الوصية الثالثة إلى الناس؛ فالتقوى ليست عبادة خاصة فحسب، بل تظهر في الصبر والصدق واللطف في المعاملة اليومية."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Remember Allah when no one is watching",
+              "After a mistake, do a good deed straight away",
+              "Treat people well, even when you are tired"
+            ],
+            "de": [
+              "Denken Sie an Allah, wenn niemand zusieht",
+              "Tun Sie nach einem Fehler sofort etwas Gutes",
+              "Behandeln Sie Menschen gut, auch wenn Sie müde sind"
+            ],
+            "ar": [
+              "اذكر الله حين لا يراك أحد",
+              "أتبع الخطأ بعمل صالح فورًا",
+              "أحسن إلى الناس ولو كنت متعبًا"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-19-trust-in-allah",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 19",
+          "de": "40 Hadithe · 19",
+          "ar": "الأربعون النووية · ١٩"
+        },
+        "title": {
+          "en": "Advice to a young man on trusting Allah",
+          "de": "Ein Rat an einen jungen Mann über das Vertrauen auf Allah",
+          "ar": "وصية لشاب في التوكل على الله"
+        },
+        "sub": {
+          "en": "Ibn Abbas rode behind the Prophet and received words for a whole life",
+          "de": "Ibn Abbas ritt hinter dem Propheten und erhielt Worte für ein ganzes Leben",
+          "ar": "ركب ابن عباس خلف النبي فتلقى كلمات تصلح لعمر كامل"
+        },
+        "arabic": "وصية لابن عباس"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Behind the Prophet",
+            "de": "Hinter dem Propheten",
+            "ar": "رديف النبي"
+          },
+          "body": {
+            "en": "Abdullah ibn Abbas was a boy riding behind the Prophet on the same mount when he heard this advice. At-Tirmidhi reports it and graded it good and sound.",
+            "de": "Abdullah ibn Abbas war ein Junge und ritt hinter dem Propheten auf demselben Reittier, als er diesen Rat hörte. At-Tirmidhi überliefert ihn und stufte ihn als gut und gesund ein.",
+            "ar": "كان عبد الله بن عباس غلامًا يركب خلف النبي على دابة واحدة حين سمع هذه الوصية. أخرجها الترمذي وقال: حسن صحيح."
+          }
+        },
+        {
+          "title": {
+            "en": "Guard, and be guarded",
+            "de": "Bewahren und bewahrt werden",
+            "ar": "احفظ تُحفظ"
+          },
+          "arabic": "حِفْظ",
+          "body": {
+            "en": "The advice opens with a promise: whoever keeps the rights and limits of Allah in mind is protected and guided by Him. The reward matches the deed.",
+            "de": "Der Rat beginnt mit einem Versprechen: Wer die Rechte und Grenzen Allahs achtet, wird von Ihm beschützt und geleitet. Der Lohn entspricht der Tat.",
+            "ar": "تبدأ الوصية بوعد: من رعى حقوق الله وحدوده حفظه الله وهداه، والجزاء من جنس العمل."
+          }
+        },
+        {
+          "title": {
+            "en": "Ask Him alone",
+            "de": "Bitten Sie Ihn allein",
+            "ar": "اسأل الله وحده"
+          },
+          "body": {
+            "en": "It teaches that requests and help are to be sought from Allah, and that no gathering of people can bring benefit or harm beyond what He has decreed. This frees the heart from fear of people.",
+            "de": "Er lehrt, Bitten und Hilfe bei Allah zu suchen, und dass keine Versammlung von Menschen Nutzen oder Schaden bringen kann über das hinaus, was Er bestimmt hat. Das befreit das Herz von der Furcht vor Menschen.",
+            "ar": "تعلّم الوصية أن يُطلب السؤال والعون من الله، وأن اجتماع الناس لا ينفع ولا يضر إلا بما قدّره. وهذا يحرر القلب من الخوف من الناس."
+          }
+        },
+        {
+          "verse": "65:3",
+          "check": "sufficient for him",
+          "title": {
+            "en": "He is enough",
+            "de": "Er genügt",
+            "ar": "هو حسبه"
+          },
+          "body": {
+            "en": "The Quran gives the same assurance to those who rely on Allah.",
+            "de": "Der Koran gibt allen, die sich auf Allah verlassen, dieselbe Zusicherung.",
+            "ar": "يمنح القرآن الطمأنينة نفسها لمن توكل على الله."
+          }
+        },
+        {
+          "verse": "94:5-6",
+          "check": "hardship",
+          "title": {
+            "en": "Ease with hardship",
+            "de": "Erleichterung mit der Erschwernis",
+            "ar": "مع العسر يسر"
+          },
+          "body": {
+            "en": "Another narration of the hadith ends with hope after difficulty, a theme these two verses also carry.",
+            "de": "Eine andere Überlieferung des Hadith endet mit Hoffnung nach der Not, ein Gedanke, den auch diese beiden Verse tragen.",
+            "ar": "تنتهي رواية أخرى للحديث بالأمل بعد الشدة، وهو معنى تحمله هاتان الآيتان أيضًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Remember Allah in good days, not only in hard ones",
+              "Turn to Allah first, then use the means",
+              "Accept with calm what you have missed",
+              "Keep working: trust is not idleness"
+            ],
+            "de": [
+              "Denken Sie an Allah in guten Tagen, nicht nur in schweren",
+              "Wenden Sie sich zuerst an Allah, dann nutzen Sie die Mittel",
+              "Nehmen Sie gelassen an, was Ihnen entgangen ist",
+              "Arbeiten Sie weiter: Vertrauen ist kein Nichtstun"
+            ],
+            "ar": [
+              "اذكر الله في الرخاء لا في الشدة وحدها",
+              "توجّه إلى الله أولًا ثم خذ بالأسباب",
+              "تقبّل ما فاتك بطمأنينة",
+              "واصل العمل، فالتوكل ليس تواكلًا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 19",
+          "url": "https://sunnah.com/nawawi40:19"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-20-modesty",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 20",
+          "de": "40 Hadithe · 20",
+          "ar": "الأربعون النووية · ٢٠"
+        },
+        "title": {
+          "en": "Haya: the modesty that guards the soul",
+          "de": "Haya: die Scham, die die Seele schützt",
+          "ar": "الحياء حارس النفس"
+        },
+        "sub": {
+          "en": "Words from the earliest prophets that people never forgot",
+          "de": "Worte der frühesten Propheten, die die Menschen nie vergaßen",
+          "ar": "كلمات من النبوة الأولى لم ينسها الناس"
+        },
+        "arabic": "خُلُق الحياء"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:20",
+          "check": "earliest prophecy",
+          "title": {
+            "en": "From the first prophets",
+            "de": "Von den ersten Propheten",
+            "ar": "من النبوة الأولى"
+          },
+          "body": {
+            "en": "Narrated by Abu Mas'ud al-Ansari and reported by al-Bukhari.",
+            "de": "Überliefert von Abu Mas'ud al-Ansari, berichtet von al-Bukhari.",
+            "ar": "رواه أبو مسعود الأنصاري، وأخرجه البخاري."
+          }
+        },
+        {
+          "title": {
+            "en": "Two readings",
+            "de": "Zwei Lesarten",
+            "ar": "فهمان للحديث"
+          },
+          "body": {
+            "en": "Scholars read it in two ways: as a warning, since without modesty a person will do anything; and as a guide, since an act you need not be ashamed of before Allah may be done.",
+            "de": "Gelehrte lesen ihn auf zwei Arten: als Warnung, denn ohne Scham tut ein Mensch alles; und als Wegweiser, denn was man vor Allah nicht zu verbergen braucht, darf man tun.",
+            "ar": "فهمه العلماء على وجهين: تحذير، لأن من فقد الحياء لا يبالي بما يفعل؛ وإرشاد، فما لا يُستحيا منه أمام الله فلا حرج في فعله."
+          }
+        },
+        {
+          "title": {
+            "en": "Haya and life",
+            "de": "Haya und Leben",
+            "ar": "الحياء والحياة"
+          },
+          "arabic": "حَيَاء · حَيَاة",
+          "body": {
+            "en": "Haya shares its root with hayat, life. A heart with haya is alive: it feels shy before Allah and pulls back from what is shameful.",
+            "de": "Haya teilt seine Wurzel mit Hayat, dem Leben. Ein Herz mit Haya ist lebendig: Es empfindet Scheu vor Allah und weicht vor dem Schändlichen zurück.",
+            "ar": "الحياء والحياة من جذر واحد؛ فالقلب الذي فيه حياء قلب حي، يستحيي من الله وينقبض عن القبيح."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Ask: would I do this before someone I respect?",
+              "Let modesty shape your words and posts online",
+              "Haya never means being too shy to learn or speak truth"
+            ],
+            "de": [
+              "Fragen Sie sich: Täte ich das vor jemandem, den ich achte?",
+              "Lassen Sie Scham Ihre Worte und Beiträge im Netz prägen",
+              "Haya heißt nie, zu scheu zum Lernen oder für die Wahrheit zu sein"
+            ],
+            "ar": [
+              "اسأل نفسك: هل أفعل هذا أمام من أحترمه؟",
+              "اجعل الحياء يهذب كلامك ومنشوراتك على الإنترنت",
+              "الحياء لا يمنع من التعلم ولا من قول الحق"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-21-steadfastness",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 21",
+          "de": "40 Hadithe · 21",
+          "ar": "الأربعون النووية · ٢١"
+        },
+        "title": {
+          "en": "Believe, then stay the course",
+          "de": "Glauben und dann auf dem Weg bleiben",
+          "ar": "إيمان ثم ثبات على الطريق"
+        },
+        "sub": {
+          "en": "A man asked for one final answer and received the whole religion in two steps",
+          "de": "Ein Mann bat um eine endgültige Antwort und erhielt die ganze Religion in zwei Schritten",
+          "ar": "طلب رجل جوابًا جامعًا فنال الدين كله في خطوتين"
+        },
+        "arabic": "الاستقامة بعد الإيمان"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:21",
+          "check": "steadfast",
+          "title": {
+            "en": "A question for a lifetime",
+            "de": "Eine Frage für ein Leben",
+            "ar": "سؤال للعمر كله"
+          },
+          "body": {
+            "en": "Narrated by Sufyan ibn Abdullah ath-Thaqafi and reported by Muslim.",
+            "de": "Überliefert von Sufyan ibn Abdullah ath-Thaqafi, berichtet von Muslim.",
+            "ar": "رواه سفيان بن عبد الله الثقفي، وأخرجه مسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "What istiqamah means",
+            "de": "Was Istiqama bedeutet",
+            "ar": "معنى الاستقامة"
+          },
+          "arabic": "اِسْتِقَامَة",
+          "body": {
+            "en": "Istiqamah means standing straight and keeping to the path without turning aside. It is consistency, not perfection: falling short and returning is part of it.",
+            "de": "Istiqama bedeutet, aufrecht zu stehen und auf dem Weg zu bleiben, ohne abzuweichen. Gemeint ist Beständigkeit, nicht Vollkommenheit: Straucheln und Zurückkehren gehören dazu.",
+            "ar": "الاستقامة لزوم الطريق المستقيم دون انحراف، وهي ثبات لا كمال؛ فالتقصير ثم الرجوع جزء منها."
+          }
+        },
+        {
+          "verse": "41:30",
+          "check": "right course",
+          "title": {
+            "en": "The reward of steadfastness",
+            "de": "Der Lohn der Standhaftigkeit",
+            "ar": "جزاء الاستقامة"
+          },
+          "body": {
+            "en": "The Quran joins the same two steps, faith and then steadfastness, and promises peace without fear.",
+            "de": "Der Koran verbindet dieselben zwei Schritte, Glaube und dann Standhaftigkeit, und verspricht Frieden ohne Furcht.",
+            "ar": "يجمع القرآن الخطوتين نفسيهما، الإيمان ثم الاستقامة، ويعد بالأمن من الخوف."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Choose one good deed and keep it every day",
+              "When you slip, return without delay",
+              "Small and steady is better than large and rare"
+            ],
+            "de": [
+              "Wählen Sie eine gute Tat und halten Sie sie täglich",
+              "Kehren Sie nach einem Fehltritt ohne Zögern zurück",
+              "Klein und beständig ist besser als groß und selten"
+            ],
+            "ar": [
+              "اختر عملًا صالحًا وداوم عليه كل يوم",
+              "إذا زللت فعد بلا تأخير",
+              "القليل الدائم خير من الكثير المنقطع"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-22-obligations",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 22",
+          "de": "40 Hadithe · 22",
+          "ar": "الأربعون النووية · ٢٢"
+        },
+        "title": {
+          "en": "The obligations: a path to Paradise",
+          "de": "Die Pflichten: ein Weg ins Paradies",
+          "ar": "الفرائض طريق إلى الجنة"
+        },
+        "sub": {
+          "en": "A man asked whether the basics are enough. The answer is full of hope.",
+          "de": "Ein Mann fragte, ob die Grundlagen genügen. Die Antwort ist voller Hoffnung.",
+          "ar": "سأل رجل: هل تكفي الفرائض؟ فجاء الجواب مملوءًا بالرجاء"
+        },
+        "arabic": "الفرائض أولًا"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:22",
+          "check": "obligatory prayers",
+          "title": {
+            "en": "Is the basic enough?",
+            "de": "Genügt das Grundlegende?",
+            "ar": "هل يكفي الأساس؟"
+          },
+          "body": {
+            "en": "Narrated by Jabir ibn Abdullah and reported by Muslim.",
+            "de": "Überliefert von Dschabir ibn Abdullah, berichtet von Muslim.",
+            "ar": "رواه جابر بن عبد الله، وأخرجه مسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "A wide open door",
+            "de": "Eine weit geöffnete Tür",
+            "ar": "باب مفتوح"
+          },
+          "body": {
+            "en": "The Prophet answered with a clear yes. Whoever holds to the obligations and respects what is lawful and what is forbidden is on the path to Paradise.",
+            "de": "Der Prophet antwortete mit einem klaren Ja. Wer an den Pflichten festhält und Erlaubtes wie Verbotenes achtet, ist auf dem Weg ins Paradies.",
+            "ar": "أجاب النبي بنعم واضحة. فمن حافظ على الفرائض، وعامل الحلال حلالًا والحرام حرامًا، فهو على طريق الجنة."
+          }
+        },
+        {
+          "title": {
+            "en": "Why voluntary deeds, then?",
+            "de": "Wozu dann freiwillige Taten?",
+            "ar": "فلماذا النوافل إذن؟"
+          },
+          "body": {
+            "en": "Voluntary prayers and fasts make up for gaps in the obligatory ones, bring a person closer to Allah and raise their rank. Hadith 38 speaks of this nearness.",
+            "de": "Freiwillige Gebete und Fasten gleichen Lücken in den Pflichten aus, bringen den Menschen Allah näher und erhöhen seinen Rang. Hadith 38 spricht von dieser Nähe.",
+            "ar": "النوافل تجبر النقص في الفرائض، وتقرّب العبد من ربه، وترفع درجته. ويتحدث الحديث الثامن والثلاثون عن هذا القرب."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons",
+            "de": "Lehren",
+            "ar": "دروس"
+          },
+          "list": {
+            "en": [
+              "Begin with the obligations",
+              "Treat the lawful as lawful and the forbidden as forbidden",
+              "Do not make religion heavy for beginners",
+              "Add voluntary deeds step by step"
+            ],
+            "de": [
+              "Beginnen Sie mit den Pflichten",
+              "Behandeln Sie Erlaubtes als erlaubt und Verbotenes als verboten",
+              "Machen Sie Anfängern die Religion nicht schwer",
+              "Fügen Sie freiwillige Taten Schritt für Schritt hinzu"
+            ],
+            "ar": [
+              "ابدأ بالفرائض",
+              "اجعل الحلال حلالًا والحرام حرامًا",
+              "لا تثقل الدين على المبتدئين",
+              "أضف النوافل خطوة بعد خطوة"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-23-purity-and-light",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 23",
+          "de": "40 Hadithe · 23",
+          "ar": "الأربعون النووية · ٢٣"
+        },
+        "title": {
+          "en": "Purity, praise and light",
+          "de": "Reinheit, Lobpreis und Licht",
+          "ar": "الطهارة والحمد والنور"
+        },
+        "sub": {
+          "en": "One hadith full of images: cleanliness, remembrance, prayer, charity and patience",
+          "de": "Ein Hadith voller Bilder: Reinheit, Gedenken, Gebet, Spende und Geduld",
+          "ar": "حديث مليء بالصور: الطهارة والذكر والصلاة والصدقة والصبر"
+        },
+        "arabic": "أنوار الطاعة"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:23",
+          "check": "fills the scales",
+          "title": {
+            "en": "A hadith of images",
+            "de": "Ein Hadith der Bilder",
+            "ar": "حديث الصور"
+          },
+          "body": {
+            "en": "Narrated by Abu Malik al-Ash'ari and reported by Muslim.",
+            "de": "Überliefert von Abu Malik al-Asch'ari, berichtet von Muslim.",
+            "ar": "رواه أبو مالك الأشعري، وأخرجه مسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Words that weigh",
+            "de": "Worte, die wiegen",
+            "ar": "كلمات ثقيلة في الميزان"
+          },
+          "arabic": "سُبْحَانَ الله · الحَمْدُ لله",
+          "body": {
+            "en": "Short phrases of remembrance carry great weight on the scales. They take seconds to say and fit into any moment of the day.",
+            "de": "Kurze Worte des Gedenkens haben großes Gewicht auf der Waage. Sie sind in Sekunden gesagt und passen in jeden Moment des Tages.",
+            "ar": "عبارات الذكر القصيرة عظيمة الوزن في الميزان، تقال في ثوانٍ وتناسب كل لحظة من اليوم."
+          }
+        },
+        {
+          "title": {
+            "en": "What the images teach",
+            "de": "Was die Bilder lehren",
+            "ar": "ما تعلّمه الصور"
+          },
+          "list": {
+            "en": [
+              "Prayer lights the way, here and hereafter",
+              "Giving shows that faith is real",
+              "Patience shines, but it also burns: it costs effort",
+              "The Quran testifies for us or against us"
+            ],
+            "de": [
+              "Das Gebet erhellt den Weg, hier und im Jenseits",
+              "Geben zeigt, dass der Glaube echt ist",
+              "Geduld leuchtet, aber sie brennt auch: Sie kostet Mühe",
+              "Der Koran zeugt für uns oder gegen uns"
+            ],
+            "ar": [
+              "الصلاة تضيء الطريق في الدنيا والآخرة",
+              "العطاء دليل على صدق الإيمان",
+              "الصبر ضياء فيه حرارة، فهو يكلّف جهدًا",
+              "القرآن شاهد لنا أو علينا"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Every day a trade",
+            "de": "Jeder Tag ein Handel",
+            "ar": "كل يوم تجارة"
+          },
+          "body": {
+            "en": "The hadith closes with an image of trade: each day we spend our soul on something. The question is whether that sets it free or ruins it.",
+            "de": "Der Hadith schließt mit einem Bild des Handels: Jeden Tag setzen wir unsere Seele für etwas ein. Die Frage ist, ob sie dadurch frei wird oder zugrunde geht.",
+            "ar": "يختم الحديث بصورة التجارة: كل يوم نبذل أنفسنا في شيء، والسؤال: هل يحررها ذلك أم يهلكها؟"
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Renew your wudu during the day",
+              "Glorify and praise Allah on your way",
+              "Give something small every day"
+            ],
+            "de": [
+              "Erneuern Sie Ihre Gebetswaschung im Laufe des Tages",
+              "Preisen und loben Sie Allah unterwegs",
+              "Geben Sie jeden Tag etwas Kleines"
+            ],
+            "ar": [
+              "جدّد وضوءك خلال اليوم",
+              "سبّح الله واحمده في طريقك",
+              "تصدّق بشيء يسير كل يوم"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-24-injustice-forbidden",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 24",
+          "de": "40 Hadithe · 24",
+          "ar": "الأربعون النووية · ٢٤"
+        },
+        "title": {
+          "en": "A hadith qudsi on justice and our need for Allah",
+          "de": "Ein Hadith Qudsi über Gerechtigkeit und unsere Bedürftigkeit",
+          "ar": "حديث قدسي في العدل والافتقار إلى الله"
+        },
+        "sub": {
+          "en": "Allah addresses His servants on injustice, guidance, provision and forgiveness",
+          "de": "Allah spricht Seine Diener an: über Unrecht, Rechtleitung, Versorgung und Vergebung",
+          "ar": "خطاب الله لعباده في الظلم والهداية والرزق والمغفرة"
+        },
+        "arabic": "تحريم الظلم"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A hadith qudsi",
+            "de": "Ein Hadith Qudsi",
+            "ar": "حديث قدسي"
+          },
+          "arabic": "حَدِيث قُدْسِيّ",
+          "body": {
+            "en": "In a hadith qudsi the Prophet conveys words from his Lord. This one, narrated by Abu Dharr and reported by Muslim, addresses all of Allah's servants again and again.",
+            "de": "In einem Hadith Qudsi gibt der Prophet Worte seines Herrn weiter. Dieser, überliefert von Abu Dharr und berichtet von Muslim, wendet sich immer wieder an alle Diener Allahs.",
+            "ar": "في الحديث القدسي ينقل النبي كلامًا عن ربه. وهذا الحديث رواه أبو ذر وأخرجه مسلم، ويتكرر فيه نداء الله لعباده جميعًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Injustice is forbidden",
+            "de": "Unrecht ist verboten",
+            "ar": "الظلم محرّم"
+          },
+          "body": {
+            "en": "It begins with justice: Allah has made injustice forbidden for Himself and among people. Every other teaching of the hadith stands on this ground.",
+            "de": "Er beginnt mit der Gerechtigkeit: Allah hat das Unrecht sich selbst und den Menschen untereinander verboten. Alle weiteren Lehren des Hadith stehen auf diesem Grund.",
+            "ar": "يبدأ الحديث بالعدل: فقد حرّم الله الظلم على نفسه وجعله محرمًا بين الناس، وعلى هذا الأساس تقوم سائر معاني الحديث."
+          }
+        },
+        {
+          "title": {
+            "en": "We need Him, He needs nothing",
+            "de": "Wir brauchen Ihn, Er braucht nichts",
+            "ar": "نحن الفقراء وهو الغني"
+          },
+          "body": {
+            "en": "Guidance, food, clothing and forgiveness all come from Allah, so we are invited to ask Him for them. Our obedience adds nothing to Him, and our sins take nothing away from Him.",
+            "de": "Rechtleitung, Nahrung, Kleidung und Vergebung kommen alle von Allah, darum sind wir eingeladen, Ihn darum zu bitten. Unser Gehorsam fügt Ihm nichts hinzu, und unsere Sünden nehmen Ihm nichts.",
+            "ar": "الهداية والطعام والكسوة والمغفرة كلها من الله، فنحن مدعوون إلى سؤاله إياها. وطاعتنا لا تزيده شيئًا، ومعاصينا لا تنقصه شيئًا."
+          }
+        },
+        {
+          "verse": "35:15",
+          "check": "in need of",
+          "title": {
+            "en": "The same truth in the Quran",
+            "de": "Dieselbe Wahrheit im Koran",
+            "ar": "الحقيقة نفسها في القرآن"
+          },
+          "body": {
+            "en": "One short verse sums up this side of the hadith.",
+            "de": "Ein kurzer Vers fasst diese Seite des Hadith zusammen.",
+            "ar": "آية قصيرة تلخّص هذا الجانب من الحديث."
+          }
+        },
+        {
+          "title": {
+            "en": "Our deeds, our record",
+            "de": "Unsere Taten, unsere Bilanz",
+            "ar": "أعمالنا وحسابنا"
+          },
+          "body": {
+            "en": "It closes with responsibility: what we find at the end is the result of our own deeds. Gratitude for the good, honest self-reflection for the rest.",
+            "de": "Er schließt mit der Verantwortung: Was wir am Ende vorfinden, ist das Ergebnis unserer eigenen Taten. Dankbarkeit für das Gute, ehrliche Selbstprüfung für den Rest.",
+            "ar": "يختم الحديث بالمسؤولية: ما نجده في النهاية ثمرة أعمالنا؛ فشكر على الخير، ومحاسبة صادقة للنفس على ما سواه."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Avoid every injustice, small or large",
+              "Ask Allah for guidance, provision and forgiveness",
+              "Remember that worship benefits you, not Him"
+            ],
+            "de": [
+              "Meiden Sie jedes Unrecht, ob klein oder groß",
+              "Bitten Sie Allah um Rechtleitung, Versorgung und Vergebung",
+              "Denken Sie daran: Anbetung nützt Ihnen, nicht Ihm"
+            ],
+            "ar": [
+              "اجتنب كل ظلم صغيرًا كان أو كبيرًا",
+              "اسأل الله الهداية والرزق والمغفرة",
+              "تذكّر أن العبادة تنفعك أنت لا الله"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 24",
+          "url": "https://sunnah.com/nawawi40:24"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-25-every-good-is-charity",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 25",
+          "de": "40 Hadithe · 25",
+          "ar": "الأربعون النووية · ٢٥"
+        },
+        "title": {
+          "en": "Charity without money",
+          "de": "Spenden ohne Geld",
+          "ar": "صدقة بلا مال"
+        },
+        "sub": {
+          "en": "When poorer Companions worried about reward, the Prophet showed them doors open to everyone",
+          "de": "Als ärmere Gefährten um ihren Lohn besorgt waren, zeigte der Prophet ihnen Türen, die allen offenstehen",
+          "ar": "لما قلق الصحابة الفقراء على الأجر، دلّهم النبي على أبواب مفتوحة للجميع"
+        },
+        "arabic": "أبواب الصدقة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A worry about reward",
+            "de": "Sorge um den Lohn",
+            "ar": "قلق على الأجر"
+          },
+          "body": {
+            "en": "Abu Dharr reports that some Companions without wealth felt the rich were moving ahead: they worshipped alike, but the rich could also give. Muslim reports the hadith.",
+            "de": "Abu Dharr berichtet, dass einige Gefährten ohne Vermögen fürchteten, die Reichen zögen davon: Sie beteten und fasteten gleich, doch die Reichen konnten zudem spenden. Muslim überliefert den Hadith.",
+            "ar": "يروي أبو ذر أن بعض الصحابة ممن لا مال لهم شعروا بأن الأغنياء سبقوهم: يعبدون كعبادتهم، ثم يتصدقون بأموالهم. أخرجه مسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Doors open to all",
+            "de": "Türen, die allen offenstehen",
+            "ar": "أبواب مفتوحة للجميع"
+          },
+          "arabic": "سبحان الله · الحمد لله · الله أكبر",
+          "list": {
+            "en": [
+              "Glorifying and praising Allah",
+              "Declaring His greatness and His oneness",
+              "Encouraging what is good",
+              "Discouraging what is wrong"
+            ],
+            "de": [
+              "Allah preisen und loben",
+              "Seine Größe und Seine Einheit bezeugen",
+              "Zum Guten ermutigen",
+              "Vom Unrecht abhalten"
+            ],
+            "ar": [
+              "التسبيح والتحميد",
+              "التكبير والتهليل",
+              "الأمر بالمعروف",
+              "النهي عن المنكر"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Even private life",
+            "de": "Selbst das Privatleben",
+            "ar": "حتى الحياة الخاصة"
+          },
+          "body": {
+            "en": "He even counted lawful intimacy between spouses as charity. Asked how, he reasoned that what is sinful when done unlawfully becomes rewarded when done lawfully.",
+            "de": "Er zählte sogar die erlaubte Nähe zwischen Ehepartnern als Spende. Gefragt, wie das sein könne, erklärte er: Was auf verbotenem Weg Sünde wäre, wird auf erlaubtem Weg belohnt.",
+            "ar": "بل عدّ العلاقة الحلال بين الزوجين صدقة، ولما سُئل عن ذلك بيّن أن ما يكون إثمًا في الحرام يكون أجرًا في الحلال."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons",
+            "de": "Lehren",
+            "ar": "دروس"
+          },
+          "list": {
+            "en": [
+              "Reward is not reserved for the wealthy",
+              "Competing in good deeds is praiseworthy",
+              "Lawful pleasures can bring reward with the right intention",
+              "Remembrance is open to everyone, at any time"
+            ],
+            "de": [
+              "Lohn ist nicht den Reichen vorbehalten",
+              "Wetteifern im Guten ist lobenswert",
+              "Erlaubte Freuden können mit der richtigen Absicht Lohn bringen",
+              "Gedenken steht jedem jederzeit offen"
+            ],
+            "ar": [
+              "الأجر ليس حكرًا على الأغنياء",
+              "التنافس في الخير محمود",
+              "المباحات قد تصير أجرًا بالنية الصالحة",
+              "الذكر متاح لكل أحد في كل وقت"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "body": {
+            "en": "Turn waiting times into remembrance: in traffic, in a queue, before sleep. And see your family life as part of your worship, not apart from it.",
+            "de": "Machen Sie Wartezeiten zu Gedenken: im Stau, in der Schlange, vor dem Schlafen. Und sehen Sie Ihr Familienleben als Teil Ihrer Anbetung, nicht als etwas davon Getrenntes.",
+            "ar": "اجعل أوقات الانتظار ذكرًا: في الزحام، وفي الطابور، وقبل النوم. وانظر إلى حياتك الأسرية على أنها جزء من عبادتك لا شيء منفصل عنها."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 25",
+          "url": "https://sunnah.com/nawawi40:25"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-26-daily-charity",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 26",
+          "de": "40 Hadithe · 26",
+          "ar": "الأربعون النووية · ٢٦"
+        },
+        "title": {
+          "en": "Gratitude for the body, every single day",
+          "de": "Dankbarkeit für den Körper, an jedem Tag",
+          "ar": "شكر نعمة البدن كل يوم"
+        },
+        "sub": {
+          "en": "Small acts of good that thank Allah for every joint that moves",
+          "de": "Kleine gute Taten als Dank an Allah für jedes Gelenk, das sich bewegt",
+          "ar": "أعمال خير صغيرة تشكر الله على كل مفصل يتحرك"
+        },
+        "arabic": "شكر نعمة البدن"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:26",
+          "check": "joint",
+          "title": {
+            "en": "Thanks owed daily",
+            "de": "Täglicher Dank",
+            "ar": "شكر واجب كل يوم"
+          },
+          "body": {
+            "en": "Narrated by Abu Hurayrah and reported by al-Bukhari and Muslim.",
+            "de": "Überliefert von Abu Huraira, berichtet von al-Bukhari und Muslim.",
+            "ar": "رواه أبو هريرة، وأخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "The body as a gift",
+            "de": "Der Körper als Geschenk",
+            "ar": "البدن نعمة"
+          },
+          "body": {
+            "en": "The joints that let us walk, bend and hold are daily gifts we rarely notice. The hadith turns gratitude for them into small, concrete acts of good.",
+            "de": "Die Gelenke, mit denen wir gehen, uns beugen und greifen, sind tägliche Geschenke, die wir selten bemerken. Der Hadith macht den Dank dafür zu kleinen, greifbaren guten Taten.",
+            "ar": "المفاصل التي نمشي بها وننحني ونمسك نعم يومية قلّما ننتبه إليها، والحديث يحوّل شكرها إلى أعمال خير صغيرة ملموسة."
+          }
+        },
+        {
+          "title": {
+            "en": "Charity in daily life",
+            "de": "Spende im Alltag",
+            "ar": "الصدقة في الحياة اليومية"
+          },
+          "list": {
+            "en": [
+              "Settling a dispute fairly",
+              "Helping someone with a load",
+              "A kind word",
+              "Each step towards prayer",
+              "Clearing an obstacle from a path"
+            ],
+            "de": [
+              "Einen Streit gerecht schlichten",
+              "Jemandem mit einer Last helfen",
+              "Ein freundliches Wort",
+              "Jeder Schritt zum Gebet",
+              "Ein Hindernis vom Weg räumen"
+            ],
+            "ar": [
+              "الإصلاح بين متخاصمين بالعدل",
+              "إعانة أحد على حمل متاعه",
+              "الكلمة الطيبة",
+              "كل خطوة إلى الصلاة",
+              "إزالة ما يؤذي من الطريق"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "body": {
+            "en": "Choose one small act each morning: help a colleague, clear the pavement, send a kind message. Count it as your thanks for a body that still works.",
+            "de": "Wählen Sie jeden Morgen eine kleine Tat: einem Kollegen helfen, den Gehweg freiräumen, eine freundliche Nachricht senden. Sehen Sie darin Ihren Dank für einen Körper, der noch trägt.",
+            "ar": "اختر كل صباح عملًا صغيرًا: أعن زميلًا، أو أزل عائقًا من الرصيف، أو أرسل رسالة طيبة، واجعله شكرًا لبدن ما زال يحملك."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-27-righteousness",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 27",
+          "de": "40 Hadithe · 27",
+          "ar": "الأربعون النووية · ٢٧"
+        },
+        "title": {
+          "en": "Righteousness and the voice of the heart",
+          "de": "Rechtschaffenheit und die Stimme des Herzens",
+          "ar": "البر وصوت القلب"
+        },
+        "sub": {
+          "en": "Two narrations on good character and the unease that warns us of wrong",
+          "de": "Zwei Überlieferungen über guten Charakter und die Unruhe, die vor Unrecht warnt",
+          "ar": "روايتان عن حسن الخلق والقلق الذي ينبّه إلى الإثم"
+        },
+        "arabic": "البر وطمأنينة القلب"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Two narrations",
+            "de": "Zwei Überlieferungen",
+            "ar": "روايتان"
+          },
+          "body": {
+            "en": "An-Nawawi joins two narrations here: one from an-Nawwas ibn Sam'an, reported by Muslim, and one from Wabisah ibn Ma'bad, from the Musnads of Ahmad and ad-Darimi.",
+            "de": "An-Nawawi verbindet hier zwei Überlieferungen: eine von an-Nawwas ibn Sam'an, berichtet von Muslim, und eine von Wabisa ibn Ma'bad aus den Musnad-Werken von Ahmad und ad-Darimi.",
+            "ar": "يجمع النووي هنا روايتين: رواية النواس بن سمعان، وأخرجها مسلم، ورواية وابصة بن معبد من مسندي أحمد والدارمي."
+          }
+        },
+        {
+          "title": {
+            "en": "What birr means",
+            "de": "Was Birr bedeutet",
+            "ar": "معنى البر"
+          },
+          "arabic": "بِرّ",
+          "body": {
+            "en": "Birr is a broad word for goodness and righteousness. The first narration ties it closely to good character: the way we treat Allah's creation.",
+            "de": "Birr ist ein weites Wort für Güte und Rechtschaffenheit. Die erste Überlieferung verbindet es eng mit gutem Charakter: mit der Art, wie wir Allahs Geschöpfe behandeln.",
+            "ar": "البر كلمة جامعة لكل خير وصلاح، وتربطه الرواية الأولى بحسن الخلق، أي بطريقة معاملتنا لخلق الله."
+          }
+        },
+        {
+          "title": {
+            "en": "The inner alarm",
+            "de": "Der innere Alarm",
+            "ar": "جرس الإنذار الداخلي"
+          },
+          "body": {
+            "en": "Wrongdoing is described by what it does inside us: it unsettles the soul and makes us want to keep it hidden. The heart has a sense for what is wrong.",
+            "de": "Unrecht wird daran beschrieben, was es in uns auslöst: Es beunruhigt die Seele und weckt den Wunsch, es zu verbergen. Das Herz hat ein Gespür für das Falsche.",
+            "ar": "يوصف الإثم بأثره في النفس: يقلقها ويجعل صاحبه يحب أن يخفيه. فللقلب حسّ بما هو خطأ."
+          }
+        },
+        {
+          "title": {
+            "en": "Ask your heart",
+            "de": "Fragen Sie Ihr Herz",
+            "ar": "استفتِ قلبك"
+          },
+          "body": {
+            "en": "Wabisah came to ask about righteousness, and the Prophet named his question before he spoke. He then pointed him to his own heart: calm points to good, unease to wrong, even when others say it is allowed.",
+            "de": "Wabisa kam, um nach Rechtschaffenheit zu fragen, und der Prophet nannte seine Frage, bevor er sprach. Dann verwies er ihn auf sein eigenes Herz: Ruhe weist auf das Gute, Unruhe auf das Falsche, selbst wenn andere es erlauben.",
+            "ar": "جاء وابصة يسأل عن البر، فذكر النبي سؤاله قبل أن يتكلم، ثم أحاله إلى قلبه: فالطمأنينة علامة الخير، والقلق علامة الإثم، وإن أذن فيه الناس."
+          }
+        },
+        {
+          "title": {
+            "en": "A careful balance",
+            "de": "Ein sorgfältiges Gleichgewicht",
+            "ar": "توازن دقيق"
+          },
+          "body": {
+            "en": "Scholars explain that this applies to a heart shaped by faith and knowledge, and to matters that are unclear. It does not replace clear texts or the need to learn.",
+            "de": "Gelehrte erklären, dass dies für ein Herz gilt, das von Glauben und Wissen geprägt ist, und für unklare Fragen. Es ersetzt weder klare Texte noch das Lernen.",
+            "ar": "يبيّن العلماء أن هذا خاص بقلب عمره الإيمان والعلم، وبالأمور المشتبهة، ولا يغني عن النصوص الواضحة ولا عن التعلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Notice what you would rather hide from others",
+              "Pause when your heart feels uneasy",
+              "Make good character your daily worship"
+            ],
+            "de": [
+              "Achten Sie darauf, was Sie lieber vor anderen verbergen würden",
+              "Halten Sie inne, wenn Ihr Herz unruhig ist",
+              "Machen Sie guten Charakter zu Ihrer täglichen Anbetung"
+            ],
+            "ar": [
+              "انتبه لما تحب أن تخفيه عن الناس",
+              "توقف إذا شعرت بقلق في قلبك",
+              "اجعل حسن الخلق عبادتك اليومية"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 27",
+          "url": "https://sunnah.com/nawawi40:27"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-28-farewell-counsel",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 28",
+          "de": "40 Hadithe · 28",
+          "ar": "الأربعون النووية · ٢٨"
+        },
+        "title": {
+          "en": "A counsel that moved hearts to tears",
+          "de": "Ein Rat, der die Herzen zu Tränen rührte",
+          "ar": "موعظة أبكت القلوب"
+        },
+        "sub": {
+          "en": "When the Companions sensed a farewell, they asked for advice to hold on to",
+          "de": "Als die Gefährten einen Abschied ahnten, baten sie um einen Rat zum Festhalten",
+          "ar": "لما أحس الصحابة بالوداع طلبوا وصية يتمسكون بها"
+        },
+        "arabic": "وصية مودّع"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A moving sermon",
+            "de": "Eine bewegende Predigt",
+            "ar": "موعظة مؤثرة"
+          },
+          "body": {
+            "en": "Al-Irbad ibn Sariyah describes a sermon that moved hearts and brought tears. Sensing a farewell, the Companions asked for lasting advice. Abu Dawud and at-Tirmidhi report it.",
+            "de": "Al-Irbad ibn Sariya beschreibt eine Predigt, die die Herzen bewegte und Tränen hervorrief. Die Gefährten ahnten einen Abschied und baten um einen bleibenden Rat. Abu Dawud und at-Tirmidhi überliefern es.",
+            "ar": "يصف العرباض بن سارية موعظة حرّكت القلوب وأبكت العيون، فأحس الصحابة أنها موعظة وداع وطلبوا وصية باقية. أخرجه أبو داود والترمذي."
+          }
+        },
+        {
+          "title": {
+            "en": "The counsel",
+            "de": "Der Rat",
+            "ar": "الوصية"
+          },
+          "list": {
+            "en": [
+              "Mindfulness of Allah",
+              "Listening to those in authority, in what is right",
+              "Holding to the Sunnah and the way of the rightly guided caliphs",
+              "Staying away from additions to the religion"
+            ],
+            "de": [
+              "Bewusstsein für Allah",
+              "Auf die Verantwortlichen hören, im Rechten",
+              "An der Sunna und dem Weg der rechtgeleiteten Kalifen festhalten",
+              "Sich von Zusätzen in der Religion fernhalten"
+            ],
+            "ar": [
+              "تقوى الله",
+              "السمع والطاعة لولاة الأمر في المعروف",
+              "لزوم السنة وسنة الخلفاء الراشدين",
+              "اجتناب المحدثات في الدين"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Holding on with the teeth",
+            "de": "Mit den Zähnen festhalten",
+            "ar": "العض بالنواجذ"
+          },
+          "arabic": "نَوَاجِذ",
+          "body": {
+            "en": "The Prophet used a vivid image: grip the Sunnah as firmly as with your back teeth. It speaks of a loyalty that does not let go when times become confusing.",
+            "de": "Der Prophet gebrauchte ein lebendiges Bild: Halten Sie die Sunna so fest wie mit den Backenzähnen. Es spricht von einer Treue, die nicht loslässt, wenn die Zeiten verwirrend werden.",
+            "ar": "استعمل النبي صورة حية: أن يُتمسك بالسنة كما يُعضّ على الشيء بالأضراس، وهي صورة وفاء لا يفلت في أزمنة الاضطراب."
+          }
+        },
+        {
+          "title": {
+            "en": "In times of disagreement",
+            "de": "In Zeiten der Uneinigkeit",
+            "ar": "في زمن الاختلاف"
+          },
+          "body": {
+            "en": "He foresaw that those who lived long would see much disagreement. The remedy he gave is a reference point, not a new path: return to the Sunnah with knowledge and good manners.",
+            "de": "Er sah voraus, dass die, die lange leben, viel Uneinigkeit erleben würden. Das Heilmittel, das er gab, ist ein Bezugspunkt, kein neuer Weg: die Rückkehr zur Sunna mit Wissen und gutem Benehmen.",
+            "ar": "أخبر أن من يعيش طويلًا سيرى اختلافًا كثيرًا، وجعل العلاج مرجعًا لا طريقًا جديدًا: الرجوع إلى السنة بعلم وأدب."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Learn the Sunnah from reliable sources",
+              "In disputes, return calmly to the sources",
+              "Support what is right with respect and wisdom"
+            ],
+            "de": [
+              "Lernen Sie die Sunna aus verlässlichen Quellen",
+              "Kehren Sie im Streit ruhig zu den Quellen zurück",
+              "Stützen Sie das Rechte mit Respekt und Weisheit"
+            ],
+            "ar": [
+              "تعلّم السنة من مصادر موثوقة",
+              "ارجع عند الخلاف إلى الأصول بهدوء",
+              "انصر الحق باحترام وحكمة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 28",
+          "url": "https://sunnah.com/nawawi40:28"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-29-doors-of-good",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 29",
+          "de": "40 Hadithe · 29",
+          "ar": "الأربعون النووية · ٢٩"
+        },
+        "title": {
+          "en": "Doors of good and the power of the tongue",
+          "de": "Türen des Guten und die Macht der Zunge",
+          "ar": "أبواب الخير وخطر اللسان"
+        },
+        "sub": {
+          "en": "Mu'adh asked about the way to Paradise and received a map of the whole religion",
+          "de": "Mu'adh fragte nach dem Weg ins Paradies und erhielt eine Karte der ganzen Religion",
+          "ar": "سأل معاذ عن طريق الجنة فنال خريطة للدين كله"
+        },
+        "arabic": "أبواب الخير"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A weighty question",
+            "de": "Eine gewichtige Frage",
+            "ar": "سؤال عظيم"
+          },
+          "body": {
+            "en": "Mu'adh ibn Jabal asked for a deed that leads to Paradise and away from the Fire. The Prophet called it weighty but made easy by Allah, and began with the pillars. At-Tirmidhi reports it.",
+            "de": "Mu'adh ibn Dschabal fragte nach einer Tat, die ins Paradies führt und vom Feuer fernhält. Der Prophet nannte die Frage gewichtig, doch von Allah leicht gemacht, und begann mit den Säulen. At-Tirmidhi überliefert es.",
+            "ar": "سأل معاذ بن جبل عن عمل يدخله الجنة ويبعده عن النار، فوصف النبي سؤاله بالعظيم الذي ييسّره الله، وبدأ بالأركان. أخرجه الترمذي."
+          }
+        },
+        {
+          "title": {
+            "en": "Doors of good",
+            "de": "Türen des Guten",
+            "ar": "أبواب الخير"
+          },
+          "list": {
+            "en": [
+              "Fasting, which protects like a shield",
+              "Charity, which puts out the fire of sins",
+              "Prayer in the depth of the night"
+            ],
+            "de": [
+              "Das Fasten, das wie ein Schild schützt",
+              "Die Spende, die das Feuer der Sünden löscht",
+              "Das Gebet in der Tiefe der Nacht"
+            ],
+            "ar": [
+              "الصوم يحمي كالدرع",
+              "الصدقة تطفئ نار الخطايا",
+              "الصلاة في جوف الليل"
+            ]
+          }
+        },
+        {
+          "verse": "32:16-17",
+          "check": "beds",
+          "title": {
+            "en": "The verses he recited",
+            "de": "Die Verse, die er rezitierte",
+            "ar": "الآيتان اللتان تلاهما"
+          },
+          "body": {
+            "en": "Speaking of the night prayer, the Prophet recited these two verses of as-Sajdah.",
+            "de": "Als er vom Nachtgebet sprach, rezitierte der Prophet diese beiden Verse der Sure as-Sadschda.",
+            "ar": "لما ذكر النبي صلاة الليل تلا هاتين الآيتين من سورة السجدة."
+          }
+        },
+        {
+          "title": {
+            "en": "Head, pillar and peak",
+            "de": "Haupt, Säule und Gipfel",
+            "ar": "الرأس والعمود والذروة"
+          },
+          "body": {
+            "en": "He then named what heads the whole matter, what holds it up and what crowns it: Islam, prayer, and striving in the way of Allah.",
+            "de": "Dann nannte er, was an der Spitze der ganzen Sache steht, was sie trägt und was sie krönt: der Islam, das Gebet und das Bemühen auf dem Weg Allahs.",
+            "ar": "ثم بيّن رأس الأمر وما يقوم عليه وما يعلوه: الإسلام، والصلاة، والجهاد في سبيل الله."
+          }
+        },
+        {
+          "title": {
+            "en": "Guard the tongue",
+            "de": "Hüten Sie die Zunge",
+            "ar": "احفظ لسانك"
+          },
+          "body": {
+            "en": "Finally he grasped his own tongue and told Mu'adh to restrain it. Mu'adh was surprised, and the Prophet explained that much of what ruins people comes from what they say.",
+            "de": "Zuletzt fasste er seine eigene Zunge und gebot Mu'adh, sie im Zaum zu halten. Mu'adh war überrascht, und der Prophet erklärte, dass vieles, was Menschen zugrunde richtet, aus ihren Worten kommt.",
+            "ar": "وأخيرًا أمسك بلسانه وأمر معاذًا أن يكفّه، فتعجب معاذ، فبيّن النبي أن كثيرًا مما يهلك الناس يأتي من كلامهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Add one voluntary fast or a short night prayer",
+              "Give charity after a mistake",
+              "Think before you speak or post"
+            ],
+            "de": [
+              "Fügen Sie ein freiwilliges Fasten oder ein kurzes Nachtgebet hinzu",
+              "Spenden Sie nach einem Fehler",
+              "Denken Sie nach, bevor Sie sprechen oder posten"
+            ],
+            "ar": [
+              "أضف صيام تطوع أو قيامًا قصيرًا",
+              "تصدّق بعد الخطأ",
+              "فكّر قبل أن تتكلم أو تنشر"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 29",
+          "url": "https://sunnah.com/nawawi40:29"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-30-limits",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 30",
+          "de": "40 Hadithe · 30",
+          "ar": "الأربعون النووية · ٣٠"
+        },
+        "title": {
+          "en": "Duties, limits and a merciful silence",
+          "de": "Pflichten, Grenzen und ein barmherziges Schweigen",
+          "ar": "فرائض وحدود وسكوت رحيم"
+        },
+        "sub": {
+          "en": "Four guidelines that show the shape of Islamic law",
+          "de": "Vier Leitlinien, die die Gestalt des islamischen Rechts zeigen",
+          "ar": "أربع قواعد تبيّن معالم الشريعة"
+        },
+        "arabic": "حدود الله وعفوه"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:30",
+          "check": "compassion",
+          "title": {
+            "en": "Four guidelines",
+            "de": "Vier Leitlinien",
+            "ar": "أربع قواعد"
+          },
+          "body": {
+            "en": "Narrated by Abu Tha'labah al-Khushani and reported by ad-Daraqutni and others, graded hasan.",
+            "de": "Überliefert von Abu Tha'laba al-Chuschani, berichtet von ad-Daraqutni und anderen, als hasan eingestuft.",
+            "ar": "رواه أبو ثعلبة الخشني، وأخرجه الدارقطني وغيره، وهو حديث حسن."
+          }
+        },
+        {
+          "title": {
+            "en": "The four in brief",
+            "de": "Die vier in Kürze",
+            "ar": "الأربعة باختصار"
+          },
+          "list": {
+            "en": [
+              "Duties to fulfil",
+              "Boundaries to respect",
+              "Prohibitions to keep away from",
+              "Matters left open, out of mercy"
+            ],
+            "de": [
+              "Pflichten, die zu erfüllen sind",
+              "Grenzen, die zu achten sind",
+              "Verbote, von denen man sich fernhält",
+              "Dinge, die aus Barmherzigkeit offen bleiben"
+            ],
+            "ar": [
+              "فرائض تؤدّى",
+              "حدود تُحترم",
+              "محرمات تُجتنب",
+              "أمور تُركت رحمة"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "A merciful silence",
+            "de": "Ein barmherziges Schweigen",
+            "ar": "سكوت رحيم"
+          },
+          "body": {
+            "en": "What the law leaves unmentioned is not forgotten. It is space given out of compassion. Many jurists derive from this that things are permitted unless there is evidence otherwise.",
+            "de": "Was das Gesetz nicht erwähnt, ist nicht vergessen. Es ist ein Freiraum aus Barmherzigkeit. Viele Rechtsgelehrte leiten daraus ab, dass die Dinge erlaubt sind, solange kein Beleg dagegen spricht.",
+            "ar": "ما سكت عنه الشرع ليس نسيانًا، بل سعة رحمة. ويستنبط كثير من الفقهاء من ذلك أن الأصل في الأشياء الإباحة ما لم يقم دليل على خلافه."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Know your duties before your extras",
+              "Do not declare forbidden what Allah allowed",
+              "Avoid hair-splitting about what was left open"
+            ],
+            "de": [
+              "Kennen Sie Ihre Pflichten vor dem Zusätzlichen",
+              "Erklären Sie nicht für verboten, was Allah erlaubt hat",
+              "Meiden Sie Haarspaltereien über das offen Gelassene"
+            ],
+            "ar": [
+              "اعرف فرائضك قبل النوافل",
+              "لا تحرّم ما أحلّه الله",
+              "اترك التنقيب عما سُكت عنه"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-31-zuhd",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 31",
+          "de": "40 Hadithe · 31",
+          "ar": "الأربعون النووية · ٣١"
+        },
+        "title": {
+          "en": "Loved by Allah, loved by people",
+          "de": "Von Allah geliebt, von Menschen geliebt",
+          "ar": "محبة الله ومحبة الناس"
+        },
+        "sub": {
+          "en": "A short hadith on letting go of the world and of what others own",
+          "de": "Ein kurzer Hadith über das Loslassen der Welt und dessen, was andere besitzen",
+          "ar": "حديث قصير عن التخفف من الدنيا ومما في أيدي الناس"
+        },
+        "arabic": "الزهد طريق المحبة"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:31",
+          "check": "love me",
+          "title": {
+            "en": "A question about love",
+            "de": "Eine Frage nach Liebe",
+            "ar": "سؤال عن المحبة"
+          },
+          "body": {
+            "en": "Narrated by Sahl ibn Sa'd and reported by Ibn Majah and others, graded hasan.",
+            "de": "Überliefert von Sahl ibn Sa'd, berichtet von Ibn Madscha und anderen, als hasan eingestuft.",
+            "ar": "رواه سهل بن سعد، وأخرجه ابن ماجه وغيره، وهو حديث حسن."
+          }
+        },
+        {
+          "title": {
+            "en": "What zuhd is",
+            "de": "Was Zuhd ist",
+            "ar": "ما الزهد؟"
+          },
+          "arabic": "زُهْد",
+          "body": {
+            "en": "Zuhd is not poverty or contempt for the world. It means the world sits in your hand, not in your heart. You may own much and still not be owned by it.",
+            "de": "Zuhd ist weder Armut noch Verachtung der Welt. Es bedeutet: Die Welt liegt in Ihrer Hand, nicht in Ihrem Herzen. Man kann viel besitzen, ohne von seinem Besitz beherrscht zu werden.",
+            "ar": "ليس الزهد فقرًا ولا احتقارًا للدنيا، بل أن تكون الدنيا في يدك لا في قلبك؛ فقد تملك الكثير ولا يملكك."
+          }
+        },
+        {
+          "title": {
+            "en": "Why people love it",
+            "de": "Warum Menschen das lieben",
+            "ar": "لماذا يحبه الناس"
+          },
+          "body": {
+            "en": "People naturally keep their distance from those who compete for what they have. Whoever does not eye their possessions earns their trust and affection.",
+            "de": "Menschen halten Abstand zu denen, die mit ihnen um ihren Besitz wetteifern. Wer nicht auf ihr Hab und Gut schielt, gewinnt ihr Vertrauen und ihre Zuneigung.",
+            "ar": "ينفر الناس بطبعهم ممن ينافسهم على ما في أيديهم، ومن لم يتطلع إلى أموالهم نال ثقتهم ومودتهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Use what you have without clinging to it",
+              "Do not measure yourself by what others own",
+              "Give away one thing you do not need",
+              "Ask others only when you truly need to"
+            ],
+            "de": [
+              "Nutzen Sie, was Sie haben, ohne daran zu hängen",
+              "Messen Sie sich nicht an dem, was andere besitzen",
+              "Verschenken Sie etwas, das Sie nicht brauchen",
+              "Bitten Sie andere nur, wenn Sie es wirklich brauchen"
+            ],
+            "ar": [
+              "انتفع بما عندك دون تعلق به",
+              "لا تقِس نفسك بما يملكه غيرك",
+              "تصدّق بشيء لا تحتاج إليه",
+              "لا تسأل الناس إلا عند الحاجة"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-32-no-harm",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 32",
+          "de": "40 Hadithe · 32",
+          "ar": "الأربعون النووية · ٣٢"
+        },
+        "title": {
+          "en": "A principle that protects everyone",
+          "de": "Ein Grundsatz, der alle schützt",
+          "ar": "قاعدة تحمي الجميع"
+        },
+        "sub": {
+          "en": "Four Arabic words that became a pillar of Islamic law",
+          "de": "Vier arabische Wörter, die zu einer Säule des islamischen Rechts wurden",
+          "ar": "أربع كلمات صارت أصلًا من أصول الفقه"
+        },
+        "arabic": "رفع الضرر"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:32",
+          "check": "harming",
+          "title": {
+            "en": "Short and far-reaching",
+            "de": "Kurz und weitreichend",
+            "ar": "قصير بعيد الأثر"
+          },
+          "body": {
+            "en": "Narrated by Abu Sa'id al-Khudri; reported by Ibn Majah, ad-Daraqutni and others, and by Malik in mursal form.",
+            "de": "Überliefert von Abu Sa'id al-Chudri; berichtet von Ibn Madscha, ad-Daraqutni und anderen, und von Malik in mursal-Form.",
+            "ar": "رواه أبو سعيد الخدري، وأخرجه ابن ماجه والدارقطني وغيرهما، ورواه مالك مرسلًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Two words, two meanings",
+            "de": "Zwei Wörter, zwei Bedeutungen",
+            "ar": "كلمتان ومعنيان"
+          },
+          "arabic": "ضَرَر · ضِرَار",
+          "body": {
+            "en": "Darar is harming someone. Dirar is answering harm with harm, or causing it on purpose. Scholars explain the difference in several ways; both are ruled out.",
+            "de": "Darar heißt, jemandem zu schaden. Dirar heißt, Schaden mit Schaden zu vergelten oder absichtlich zu schaden. Die Gelehrten erklären den Unterschied auf verschiedene Weise; beides ist ausgeschlossen.",
+            "ar": "الضرر إلحاق الأذى بالغير، والضرار مقابلة الضرر بالضرر أو قصد الإضرار. وللعلماء في الفرق بينهما أقوال، وكلاهما منفي."
+          }
+        },
+        {
+          "title": {
+            "en": "A legal maxim",
+            "de": "Eine Rechtsmaxime",
+            "ar": "قاعدة فقهية"
+          },
+          "body": {
+            "en": "Jurists turned it into a general rule: harm must be removed. It shapes rulings on neighbours, trade, family life, the environment and much more.",
+            "de": "Die Rechtsgelehrten machten daraus eine allgemeine Regel: Schaden ist zu beseitigen. Sie prägt Urteile über Nachbarschaft, Handel, Familie, Umwelt und vieles mehr.",
+            "ar": "جعل الفقهاء منه قاعدة عامة: الضرر يزال، وعليها تقوم أحكام كثيرة في الجوار والتجارة والأسرة والبيئة وغيرها."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Check whether your plans harm anyone",
+              "Do not answer a wrong beyond what is just",
+              "Respect your neighbours' peace and space",
+              "Consider harm to people and to nature"
+            ],
+            "de": [
+              "Prüfen Sie, ob Ihre Pläne jemandem schaden",
+              "Vergelten Sie Unrecht nicht über das Gerechte hinaus",
+              "Achten Sie Ruhe und Raum Ihrer Nachbarn",
+              "Bedenken Sie den Schaden für Menschen und Natur"
+            ],
+            "ar": [
+              "تأكد أن خططك لا تضر أحدًا",
+              "لا تقابل الإساءة بأكثر مما يقتضيه العدل",
+              "احترم راحة جيرانك وخصوصيتهم",
+              "راعِ الضرر الواقع على الناس والطبيعة"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-33-burden-of-proof",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 33",
+          "de": "40 Hadithe · 33",
+          "ar": "الأربعون النووية · ٣٣"
+        },
+        "title": {
+          "en": "Justice needs evidence",
+          "de": "Gerechtigkeit braucht Beweise",
+          "ar": "العدل يحتاج إلى بيّنة"
+        },
+        "sub": {
+          "en": "A hadith that laid a foundation for fair courts",
+          "de": "Ein Hadith, der ein Fundament für gerechte Gerichte legte",
+          "ar": "حديث وضع أساسًا للقضاء العادل"
+        },
+        "arabic": "أساس القضاء العادل"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:33",
+          "check": "claimant",
+          "title": {
+            "en": "Claims need proof",
+            "de": "Ansprüche brauchen Beweise",
+            "ar": "الدعوى تحتاج إلى دليل"
+          },
+          "body": {
+            "en": "Narrated by Ibn Abbas and reported by al-Bayhaqi and others, graded hasan; a portion appears in the two Sahihs.",
+            "de": "Überliefert von Ibn Abbas, berichtet von al-Baihaqi und anderen, als hasan eingestuft; ein Teil steht in den beiden Sahih-Werken.",
+            "ar": "رواه ابن عباس، وأخرجه البيهقي وغيره، وهو حديث حسن، وبعضه في الصحيحين."
+          }
+        },
+        {
+          "title": {
+            "en": "Why proof matters",
+            "de": "Warum Beweise wichtig sind",
+            "ar": "لماذا تهم البيّنة"
+          },
+          "body": {
+            "en": "If a claim alone were enough, anyone could take what belongs to others or harm them with words. Evidence protects the weak and the honest.",
+            "de": "Wenn eine bloße Behauptung genügte, könnte jeder anderen ihr Eigentum nehmen oder ihnen mit Worten schaden. Beweise schützen die Schwachen und die Ehrlichen.",
+            "ar": "لو كفى مجرد الادعاء لاستطاع كل أحد أن يأخذ ما للناس أو يؤذيهم بكلامه. فالبيّنة تحمي الضعيف والصادق."
+          }
+        },
+        {
+          "title": {
+            "en": "Two roles in a dispute",
+            "de": "Zwei Rollen im Streit",
+            "ar": "دوران في الخصومة"
+          },
+          "arabic": "بَيِّنَة · يَمِين",
+          "body": {
+            "en": "The one who makes a claim must bring evidence; the one who denies it may clear himself by an oath. Jurists built much of their law of procedure on this.",
+            "de": "Wer etwas behauptet, muss Beweise bringen; wer es bestreitet, kann sich durch einen Eid entlasten. Die Rechtsgelehrten bauten einen großen Teil ihres Verfahrensrechts darauf auf.",
+            "ar": "على صاحب الدعوى أن يأتي بالبيّنة، ولمن ينكر أن يبرّئ نفسه باليمين. وقد بنى الفقهاء على هذا كثيرًا من أحكام القضاء."
+          }
+        },
+        {
+          "verse": "49:6",
+          "check": "investigate",
+          "title": {
+            "en": "Verify before you act",
+            "de": "Prüfen Sie, bevor Sie handeln",
+            "ar": "تثبّت قبل أن تحكم"
+          },
+          "body": {
+            "en": "The Quran asks for the same care with every piece of news.",
+            "de": "Der Koran verlangt dieselbe Sorgfalt bei jeder Nachricht.",
+            "ar": "يطلب القرآن الحرص نفسه مع كل خبر."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Do not accuse anyone without proof",
+              "Hear both sides before you judge",
+              "Do not share claims you cannot verify"
+            ],
+            "de": [
+              "Beschuldigen Sie niemanden ohne Beweis",
+              "Hören Sie beide Seiten, bevor Sie urteilen",
+              "Teilen Sie keine Behauptungen, die Sie nicht prüfen können"
+            ],
+            "ar": [
+              "لا تتهم أحدًا بلا بيّنة",
+              "اسمع من الطرفين قبل أن تحكم",
+              "لا تنشر دعاوى لا تستطيع التحقق منها"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-34-changing-wrong",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 34",
+          "de": "40 Hadithe · 34",
+          "ar": "الأربعون النووية · ٣٤"
+        },
+        "title": {
+          "en": "Responding to wrong: three levels",
+          "de": "Auf Unrecht reagieren: drei Stufen",
+          "ar": "مراتب إنكار المنكر"
+        },
+        "sub": {
+          "en": "Hand, word and heart, each according to ability, role and wisdom",
+          "de": "Hand, Wort und Herz, je nach Vermögen, Rolle und Weisheit",
+          "ar": "اليد واللسان والقلب، كلٌّ بحسب القدرة والمسؤولية والحكمة"
+        },
+        "arabic": "تغيير المنكر بحكمة"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:34",
+          "check": "weakest of faith",
+          "title": {
+            "en": "Three levels",
+            "de": "Drei Stufen",
+            "ar": "ثلاث مراتب"
+          },
+          "body": {
+            "en": "Narrated by Abu Sa'id al-Khudri and reported by Muslim.",
+            "de": "Überliefert von Abu Sa'id al-Chudri, berichtet von Muslim.",
+            "ar": "رواه أبو سعيد الخدري، وأخرجه مسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Within ability and role",
+            "de": "Nach Vermögen und Rolle",
+            "ar": "بحسب القدرة والولاية"
+          },
+          "body": {
+            "en": "Scholars explain that acting by hand belongs to those with responsibility, such as parents at home or officials in their role, and only where it does not lead to a greater harm.",
+            "de": "Gelehrte erklären, dass das Handeln mit der Hand denen zukommt, die Verantwortung tragen, etwa Eltern zu Hause oder Amtsträgern in ihrer Rolle, und nur, wo es nicht zu größerem Schaden führt.",
+            "ar": "يبيّن العلماء أن التغيير باليد لمن له ولاية، كالوالدين في البيت وأصحاب السلطة في حدود مسؤوليتهم، وبشرط ألا يؤدي إلى منكر أكبر."
+          }
+        },
+        {
+          "verse": "16:125",
+          "check": "wisdom",
+          "title": {
+            "en": "Words with wisdom",
+            "de": "Worte mit Weisheit",
+            "ar": "كلمة بالحكمة"
+          },
+          "body": {
+            "en": "Changing wrong with words means wisdom, gentleness and the right moment.",
+            "de": "Unrecht mit Worten zu ändern heißt: Weisheit, Sanftheit und der richtige Augenblick.",
+            "ar": "التغيير باللسان يكون بالحكمة واللين واختيار الوقت المناسب."
+          }
+        },
+        {
+          "title": {
+            "en": "The heart never stops",
+            "de": "Das Herz hört nie auf",
+            "ar": "القلب لا يتوقف"
+          },
+          "body": {
+            "en": "The minimum is in the heart: to dislike what is wrong and never get used to it. This level is open to everyone, at every moment.",
+            "de": "Das Mindeste geschieht im Herzen: das Unrecht abzulehnen und sich nie daran zu gewöhnen. Diese Stufe steht jedem in jedem Augenblick offen.",
+            "ar": "أدنى المراتب في القلب: أن تكره المنكر ولا تألفه أبدًا، وهذه المرتبة متاحة لكل أحد في كل لحظة."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Start with your own home and habits",
+              "Advise privately and kindly",
+              "Never cause a greater harm by your reaction"
+            ],
+            "de": [
+              "Beginnen Sie bei Ihrem eigenen Zuhause und Ihren Gewohnheiten",
+              "Raten Sie unter vier Augen und freundlich",
+              "Verursachen Sie mit Ihrer Reaktion nie größeren Schaden"
+            ],
+            "ar": [
+              "ابدأ ببيتك وعاداتك",
+              "انصح في السر وبلطف",
+              "لا تجلب بردّ فعلك ضررًا أكبر"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-35-brotherhood",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 35",
+          "de": "40 Hadithe · 35",
+          "ar": "الأربعون النووية · ٣٥"
+        },
+        "title": {
+          "en": "Rules for a brotherhood that lasts",
+          "de": "Regeln für eine Geschwisterlichkeit, die hält",
+          "ar": "قواعد لأخوّة تدوم"
+        },
+        "sub": {
+          "en": "What breaks a community apart, and how believers stand by each other",
+          "de": "Was eine Gemeinschaft zerbricht und wie Gläubige zueinander stehen",
+          "ar": "ما يمزق الجماعة، وكيف يقف المؤمنون بعضهم مع بعض"
+        },
+        "arabic": "حقوق الأخوّة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A hadith of community",
+            "de": "Ein Hadith der Gemeinschaft",
+            "ar": "حديث الجماعة"
+          },
+          "body": {
+            "en": "Abu Hurayrah reports a hadith, recorded by Muslim, that names what tears people apart and what holds them together as brothers and sisters.",
+            "de": "Abu Huraira überliefert einen Hadith, den Muslim festhielt. Er nennt, was Menschen entzweit und was sie als Geschwister zusammenhält.",
+            "ar": "يروي أبو هريرة حديثًا أخرجه مسلم، يذكر ما يفرّق الناس وما يجمعهم إخوة."
+          }
+        },
+        {
+          "title": {
+            "en": "What to avoid",
+            "de": "Was zu meiden ist",
+            "ar": "ما يُجتنب"
+          },
+          "list": {
+            "en": [
+              "Envy",
+              "Bidding up prices to mislead a buyer",
+              "Hatred and turning your back on others",
+              "Undercutting someone else's deal"
+            ],
+            "de": [
+              "Neid",
+              "Preise hochtreiben, um einen Käufer zu täuschen",
+              "Hass und einander den Rücken kehren",
+              "Einem anderen sein Geschäft wegnehmen"
+            ],
+            "ar": [
+              "الحسد",
+              "رفع الأسعار لخداع المشتري",
+              "البغض والتدابر",
+              "إفساد صفقة غيرك عليه"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "What we owe each other",
+            "de": "Was wir einander schulden",
+            "ar": "ما بيننا من حقوق"
+          },
+          "body": {
+            "en": "The hadith describes a loyalty that never wrongs, abandons, deceives or belittles. The life, wealth and honour of others are sacred.",
+            "de": "Der Hadith beschreibt eine Treue, die nie Unrecht tut, nie im Stich lässt, nie täuscht und nie herabsetzt. Leben, Besitz und Ehre der anderen sind unantastbar.",
+            "ar": "يصف الحديث وفاءً لا يظلم ولا يخذل ولا يكذب ولا يحتقر، ويجعل دم الآخرين ومالهم وعرضهم حرامًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Piety lives in the heart",
+            "de": "Gottesfurcht wohnt im Herzen",
+            "ar": "التقوى محلها القلب"
+          },
+          "body": {
+            "en": "The Prophet gestured three times to his chest. Taqwa is inside, out of sight, so no one can judge another person's worth by appearance or status.",
+            "de": "Der Prophet zeigte dreimal auf seine Brust. Taqwa liegt im Inneren, unsichtbar, darum kann niemand den Wert eines anderen nach Aussehen oder Stand beurteilen.",
+            "ar": "أشار النبي إلى صدره ثلاث مرات؛ فالتقوى في الباطن لا تُرى، ولذلك لا يحكم أحد على قيمة غيره بمظهره أو مكانته."
+          }
+        },
+        {
+          "verse": "49:10",
+          "check": "brothers",
+          "title": {
+            "en": "Brothers in faith",
+            "de": "Geschwister im Glauben",
+            "ar": "إخوة في الإيمان"
+          },
+          "body": {
+            "en": "The Quran gives the bond its name and asks us to mend it when it breaks.",
+            "de": "Der Koran gibt dem Band seinen Namen und fordert, es zu heilen, wenn es bricht.",
+            "ar": "يسمّي القرآن هذه الرابطة ويأمر بإصلاحها إذا انكسرت."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Replace envy with dua for the other person",
+              "Be honest in buying and selling",
+              "Defend the honour of those who are absent",
+              "Never look down on anyone"
+            ],
+            "de": [
+              "Ersetzen Sie Neid durch ein Bittgebet für den anderen",
+              "Seien Sie ehrlich beim Kaufen und Verkaufen",
+              "Verteidigen Sie die Ehre der Abwesenden",
+              "Schauen Sie auf niemanden herab"
+            ],
+            "ar": [
+              "استبدل الحسد بالدعاء لصاحبك",
+              "كن صادقًا في البيع والشراء",
+              "دافع عن عرض الغائب",
+              "لا تحتقر أحدًا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 35",
+          "url": "https://sunnah.com/nawawi40:35"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-36-ease-and-knowledge",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 36",
+          "de": "40 Hadithe · 36",
+          "ar": "الأربعون النووية · ٣٦"
+        },
+        "title": {
+          "en": "Help others, and Allah helps you",
+          "de": "Helfen Sie anderen, und Allah hilft Ihnen",
+          "ar": "أعِن غيرك يُعِنك الله"
+        },
+        "sub": {
+          "en": "On easing hardship, covering faults and the reward of seeking knowledge",
+          "de": "Über das Erleichtern von Not, das Bedecken von Fehlern und den Lohn des Lernens",
+          "ar": "عن تفريج الكرب وستر العيوب وأجر طلب العلم"
+        },
+        "arabic": "الجزاء من جنس العمل"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "As you do, so it is done",
+            "de": "Wie Sie handeln, so wird Ihnen begegnet",
+            "ar": "كما تَفعل يُفعل بك"
+          },
+          "body": {
+            "en": "Abu Hurayrah reports this hadith, recorded by Muslim. Its thread is simple: Allah's response mirrors what we do for others.",
+            "de": "Abu Huraira überliefert diesen Hadith, den Muslim festhielt. Sein Faden ist einfach: Allahs Antwort spiegelt, was wir für andere tun.",
+            "ar": "يروي أبو هريرة هذا الحديث، وأخرجه مسلم. وخيطه الجامع بسيط: جزاء الله يشبه ما نصنعه للآخرين."
+          }
+        },
+        {
+          "title": {
+            "en": "Deeds that come back to you",
+            "de": "Taten, die zu Ihnen zurückkehren",
+            "ar": "أعمال تعود إليك"
+          },
+          "list": {
+            "en": [
+              "Relieving someone's distress",
+              "Making things easier for someone in difficulty",
+              "Keeping others' faults covered",
+              "Standing by a brother or sister in need"
+            ],
+            "de": [
+              "Jemandem Kummer abnehmen",
+              "Einem Menschen in Not die Lage erleichtern",
+              "Die Fehler anderer bedeckt halten",
+              "Einem Bruder oder einer Schwester in Not beistehen"
+            ],
+            "ar": [
+              "تفريج كربة عن أحد",
+              "التيسير على من وقع في ضيق",
+              "ستر عيوب الآخرين",
+              "الوقوف مع أخيك أو أختك عند الحاجة"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "The path of knowledge",
+            "de": "Der Weg des Wissens",
+            "ar": "طريق العلم"
+          },
+          "body": {
+            "en": "Whoever sets out to seek knowledge is promised an easier way to Paradise. Every class, every book and every sincere question is a step on that way.",
+            "de": "Wer sich aufmacht, Wissen zu suchen, dem wird ein leichterer Weg ins Paradies verheißen. Jeder Unterricht, jedes Buch und jede aufrichtige Frage ist ein Schritt auf diesem Weg.",
+            "ar": "من خرج يطلب العلم وُعد بتيسير طريقه إلى الجنة، وكل درس وكتاب وسؤال صادق خطوة على هذا الطريق."
+          }
+        },
+        {
+          "title": {
+            "en": "Gatherings around the Quran",
+            "de": "Zusammenkünfte um den Koran",
+            "ar": "مجالس القرآن"
+          },
+          "arabic": "سَكِينَة",
+          "body": {
+            "en": "Groups who meet in a mosque to read and study the Quran together are promised four gifts: tranquillity, mercy, the presence of angels, and mention by Allah.",
+            "de": "Gruppen, die sich in einer Moschee treffen, um den Koran gemeinsam zu lesen und zu studieren, werden vier Gaben verheißen: Ruhe, Barmherzigkeit, die Nähe der Engel und Allahs Erwähnung.",
+            "ar": "الجماعة التي تجتمع في المسجد لتلاوة القرآن ومدارسته موعودة بأربع عطايا: السكينة، والرحمة، وحضور الملائكة، وذكر الله لهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Lineage does not carry you",
+            "de": "Herkunft trägt Sie nicht",
+            "ar": "النسب لا يحملك"
+          },
+          "body": {
+            "en": "The hadith ends with a reminder: family background cannot make up for missing deeds. What counts is what each person does.",
+            "de": "Der Hadith endet mit einer Erinnerung: Die Herkunft kann fehlende Taten nicht ersetzen. Es zählt, was jeder Einzelne tut.",
+            "ar": "يختم الحديث بتذكير: لا يعوّض النسب نقص العمل، والعبرة بما يقدّمه كل إنسان."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Help one person with a concrete problem this week",
+              "Keep the mistakes of others private",
+              "Join a class or study circle"
+            ],
+            "de": [
+              "Helfen Sie diese Woche einem Menschen bei einem konkreten Problem",
+              "Behalten Sie die Fehler anderer für sich",
+              "Schließen Sie sich einem Kurs oder Lernkreis an"
+            ],
+            "ar": [
+              "أعن شخصًا في مشكلة محددة هذا الأسبوع",
+              "استر أخطاء الآخرين",
+              "انضم إلى درس أو حلقة علم"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 36",
+          "url": "https://sunnah.com/nawawi40:36"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-37-generous-record",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 37",
+          "de": "40 Hadithe · 37",
+          "ar": "الأربعون النووية · ٣٧"
+        },
+        "title": {
+          "en": "How Allah records our deeds",
+          "de": "Wie Allah unsere Taten verzeichnet",
+          "ar": "كيف يكتب الله أعمالنا"
+        },
+        "sub": {
+          "en": "A hadith of generosity: good intentions count, and a sin left for Allah counts in your favour",
+          "de": "Ein Hadith der Großzügigkeit: Gute Absichten zählen, und eine um Allahs willen gelassene Sünde zählt für Sie",
+          "ar": "حديث في كرم الله: النية الصالحة تُحسب، والسيئة المتروكة لله تُكتب لك"
+        },
+        "arabic": "فضل الله في الحسنات"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "From his Lord",
+            "de": "Von seinem Herrn",
+            "ar": "فيما يرويه عن ربه"
+          },
+          "body": {
+            "en": "Ibn Abbas reports that the Prophet related from his Lord how good and bad deeds are written. Al-Bukhari and Muslim report it.",
+            "de": "Ibn Abbas berichtet, dass der Prophet von seinem Herrn weitergab, wie gute und schlechte Taten geschrieben werden. Al-Bukhari und Muslim überliefern es.",
+            "ar": "يروي ابن عباس أن النبي أخبر عن ربه كيف تُكتب الحسنات والسيئات. أخرجه البخاري ومسلم."
+          }
+        },
+        {
+          "title": {
+            "en": "Four cases",
+            "de": "Vier Fälle",
+            "ar": "أربع حالات"
+          },
+          "list": {
+            "en": [
+              "Good intended, not done: written as a full good deed",
+              "Good done: multiplied ten times and far beyond",
+              "Bad intended, then left: written as a good deed",
+              "Bad done: written as only one"
+            ],
+            "de": [
+              "Gutes beabsichtigt, nicht getan: eine volle gute Tat",
+              "Gutes getan: zehnfach und weit darüber hinaus",
+              "Schlechtes beabsichtigt, dann gelassen: eine gute Tat",
+              "Schlechtes getan: nur eine einzige"
+            ],
+            "ar": [
+              "حسنة نواها ولم يعملها: تُكتب حسنة كاملة",
+              "حسنة عملها: تُضاعف عشرًا وأكثر بكثير",
+              "سيئة نواها ثم تركها: تُكتب حسنة",
+              "سيئة عملها: تُكتب واحدة فقط"
+            ]
+          }
+        },
+        {
+          "verse": "6:160",
+          "check": "ten times",
+          "title": {
+            "en": "Ten for one",
+            "de": "Zehn für eins",
+            "ar": "العشر بواحدة"
+          },
+          "body": {
+            "en": "The Quran states the same generous measure.",
+            "de": "Der Koran nennt dasselbe großzügige Maß.",
+            "ar": "يذكر القرآن الميزان الكريم نفسه."
+          }
+        },
+        {
+          "title": {
+            "en": "Leaving a sin for Allah",
+            "de": "Eine Sünde um Allahs willen lassen",
+            "ar": "ترك السيئة لله"
+          },
+          "body": {
+            "en": "Scholars explain that the bad deed left undone is rewarded when it is left for Allah's sake, out of awareness of Him, not merely because the chance was missing.",
+            "de": "Gelehrte erklären, dass die unterlassene schlechte Tat belohnt wird, wenn sie um Allahs willen gelassen wird, aus Bewusstsein für Ihn, nicht nur weil die Gelegenheit fehlte.",
+            "ar": "يبيّن العلماء أن السيئة المتروكة يؤجر عليها صاحبها إذا تركها لله ومراقبةً له، لا لمجرد فوات الفرصة."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Intend good often, even before you can act",
+              "Walk away from a sin for Allah's sake",
+              "Never think a good deed is too small"
+            ],
+            "de": [
+              "Nehmen Sie sich oft Gutes vor, auch bevor Sie handeln können",
+              "Wenden Sie sich um Allahs willen von einer Sünde ab",
+              "Halten Sie keine gute Tat für zu klein"
+            ],
+            "ar": [
+              "أكثر من نية الخير ولو لم تقدر على العمل بعد",
+              "اترك المعصية لوجه الله",
+              "لا تحقرنّ عملًا صالحًا مهما صغر"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 37",
+          "url": "https://sunnah.com/nawawi40:37"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-38-nearness",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 38",
+          "de": "40 Hadithe · 38",
+          "ar": "الأربعون النووية · ٣٨"
+        },
+        "title": {
+          "en": "The path to Allah's love",
+          "de": "Der Weg zu Allahs Liebe",
+          "ar": "الطريق إلى محبة الله"
+        },
+        "sub": {
+          "en": "A hadith qudsi on obligations, voluntary deeds and drawing near to Allah",
+          "de": "Ein Hadith Qudsi über Pflichten, freiwillige Taten und die Nähe zu Allah",
+          "ar": "حديث قدسي في الفرائض والنوافل والقرب من الله"
+        },
+        "arabic": "طريق الولاية"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The friends of Allah",
+            "de": "Die Freunde Allahs",
+            "ar": "أولياء الله"
+          },
+          "arabic": "وَلِيّ",
+          "body": {
+            "en": "In this hadith qudsi, narrated by Abu Hurayrah and reported by al-Bukhari, Allah stands up for His friends. A wali is a believer close to Allah through obedience, not a title people give.",
+            "de": "In diesem Hadith Qudsi, überliefert von Abu Huraira und berichtet von al-Bukhari, steht Allah für Seine Freunde ein. Ein Wali ist ein Gläubiger, der Allah durch Gehorsam nahe ist, kein Titel, den Menschen vergeben.",
+            "ar": "في هذا الحديث القدسي، الذي رواه أبو هريرة وأخرجه البخاري، ينتصر الله لأوليائه. والولي مؤمن قريب من الله بطاعته، لا لقب يمنحه الناس."
+          }
+        },
+        {
+          "verse": "10:62-63",
+          "check": "allies",
+          "title": {
+            "en": "Who they are",
+            "de": "Wer sie sind",
+            "ar": "من هم"
+          },
+          "body": {
+            "en": "The Quran describes Allah's friends by two qualities: faith and mindfulness of Him.",
+            "de": "Der Koran beschreibt die Freunde Allahs mit zwei Eigenschaften: Glaube und Gottesbewusstsein.",
+            "ar": "يصف القرآن أولياء الله بصفتين: الإيمان والتقوى."
+          }
+        },
+        {
+          "title": {
+            "en": "Obligations first",
+            "de": "Zuerst die Pflichten",
+            "ar": "الفرائض أولًا"
+          },
+          "body": {
+            "en": "The hadith teaches that the obligations are the most beloved way to draw near to Allah. Voluntary deeds come after them and build on them, never in their place.",
+            "de": "Der Hadith lehrt, dass die Pflichten der liebste Weg sind, sich Allah zu nähern. Freiwillige Taten kommen danach und bauen darauf auf, nie an ihrer Stelle.",
+            "ar": "يعلّم الحديث أن الفرائض أحب ما يُتقرب به إلى الله، وأن النوافل تأتي بعدها وتبني عليها، لا تحل محلها."
+          }
+        },
+        {
+          "title": {
+            "en": "Then the voluntary",
+            "de": "Dann das Freiwillige",
+            "ar": "ثم النوافل"
+          },
+          "body": {
+            "en": "Through voluntary deeds the servant keeps drawing near until Allah loves him. Scholars explain that Allah then guides his hearing, sight, hands and steps to what pleases Him, and answers his prayers.",
+            "de": "Durch freiwillige Taten nähert sich der Diener immer weiter, bis Allah ihn liebt. Gelehrte erklären, dass Allah dann sein Hören, Sehen, Handeln und Gehen zu dem leitet, was Ihm gefällt, und seine Bitten erhört.",
+            "ar": "بالنوافل يزداد العبد قربًا حتى يحبه الله. ويبيّن العلماء أن الله حينئذ يوفّق سمعه وبصره ويده وخطاه إلى ما يرضيه، ويستجيب دعاءه."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Guard the obligations before anything else",
+              "Choose one voluntary deed and keep it",
+              "Respect the righteous and never show them hostility"
+            ],
+            "de": [
+              "Wahren Sie die Pflichten vor allem anderen",
+              "Wählen Sie eine freiwillige Tat und bleiben Sie dabei",
+              "Achten Sie die Rechtschaffenen und feinden Sie sie nie an"
+            ],
+            "ar": [
+              "حافظ على الفرائض قبل كل شيء",
+              "اختر نافلة وداوم عليها",
+              "احترم الصالحين ولا تعادهم أبدًا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "an-Nawawi, al-Arba'un, hadith 38",
+          "url": "https://sunnah.com/nawawi40:38"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-39-mercy-in-mistakes",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 39",
+          "de": "40 Hadithe · 39",
+          "ar": "الأربعون النووية · ٣٩"
+        },
+        "title": {
+          "en": "Mercy for mistakes, forgetting and force",
+          "de": "Barmherzigkeit bei Irrtum, Vergessen und Zwang",
+          "ar": "رحمة في الخطأ والنسيان والإكراه"
+        },
+        "sub": {
+          "en": "Why you are not held to account for what was beyond your control",
+          "de": "Warum Sie nicht für das zur Rechenschaft gezogen werden, was außerhalb Ihrer Kontrolle lag",
+          "ar": "لماذا لا تؤاخذ على ما خرج عن إرادتك"
+        },
+        "arabic": "رفع الحرج"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:39",
+          "check": "forgetfulness",
+          "title": {
+            "en": "A gift to the ummah",
+            "de": "Ein Geschenk an die Umma",
+            "ar": "هدية للأمة"
+          },
+          "body": {
+            "en": "Narrated by Ibn Abbas and reported by Ibn Majah, al-Bayhaqi and others, graded hasan.",
+            "de": "Überliefert von Ibn Abbas, berichtet von Ibn Madscha, al-Baihaqi und anderen, als hasan eingestuft.",
+            "ar": "رواه ابن عباس، وأخرجه ابن ماجه والبيهقي وغيرهما، وهو حديث حسن."
+          }
+        },
+        {
+          "title": {
+            "en": "Three cases",
+            "de": "Drei Fälle",
+            "ar": "ثلاث حالات"
+          },
+          "arabic": "خَطَأ · نِسْيَان · إِكْرَاه",
+          "list": {
+            "en": [
+              "Khata': an honest mistake",
+              "Nisyan: forgetting",
+              "Ikrah: acting under real coercion"
+            ],
+            "de": [
+              "Chata': ein ehrlicher Irrtum",
+              "Nisyan: das Vergessen",
+              "Ikrah: Handeln unter echtem Zwang"
+            ],
+            "ar": [
+              "الخطأ غير المقصود",
+              "النسيان",
+              "الإكراه الحقيقي"
+            ]
+          }
+        },
+        {
+          "verse": "33:5",
+          "check": "erred",
+          "title": {
+            "en": "What the heart intended",
+            "de": "Was das Herz beabsichtigte",
+            "ar": "ما تعمّدته القلوب"
+          },
+          "body": {
+            "en": "The end of this verse states the same principle: blame follows intention.",
+            "de": "Das Ende dieses Verses nennt denselben Grundsatz: Schuld folgt der Absicht.",
+            "ar": "في آخر هذه الآية المبدأ نفسه: المؤاخذة تتبع القصد."
+          }
+        },
+        {
+          "title": {
+            "en": "Sin lifted, duties may remain",
+            "de": "Sünde aufgehoben, Pflichten bleiben",
+            "ar": "يرتفع الإثم وقد تبقى الحقوق"
+          },
+          "body": {
+            "en": "Scholars explain that the sin is lifted in these cases. Some practical consequences can remain, such as praying a forgotten prayer or compensating damage caused by mistake.",
+            "de": "Gelehrte erklären, dass in diesen Fällen die Sünde aufgehoben ist. Manche praktischen Folgen können bleiben, etwa ein vergessenes Gebet nachzuholen oder einen versehentlich verursachten Schaden zu ersetzen.",
+            "ar": "يبيّن العلماء أن الإثم يرتفع في هذه الأحوال، وقد تبقى بعض الآثار العملية، كقضاء الصلاة المنسية وضمان ما أُتلف خطأً."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "body": {
+            "en": "Be gentle with yourself after an honest mistake, and gentler still with others. Put right what you can, and let go of the guilt Allah has lifted.",
+            "de": "Seien Sie nach einem ehrlichen Fehler sanft mit sich selbst und noch sanfter mit anderen. Machen Sie gut, was Sie können, und lassen Sie die Schuld los, die Allah aufgehoben hat.",
+            "ar": "ترفّق بنفسك بعد الخطأ غير المقصود، وترفّق بغيرك أكثر. أصلح ما تستطيع، ودع الشعور بالذنب الذي رفعه الله عنك."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-40-traveller",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 40",
+          "de": "40 Hadithe · 40",
+          "ar": "الأربعون النووية · ٤٠"
+        },
+        "title": {
+          "en": "Live like a traveller passing through",
+          "de": "Leben Sie wie ein Reisender auf der Durchreise",
+          "ar": "عش كمسافر عابر"
+        },
+        "sub": {
+          "en": "A hand on the shoulder and advice that changes how we see this world",
+          "de": "Eine Hand auf der Schulter und ein Rat, der unseren Blick auf diese Welt verändert",
+          "ar": "يد على الكتف ونصيحة تغيّر نظرتنا إلى الدنيا"
+        },
+        "arabic": "الدنيا دار عبور"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:40",
+          "check": "wayfarer",
+          "title": {
+            "en": "A hand on the shoulder",
+            "de": "Eine Hand auf der Schulter",
+            "ar": "يد على الكتف"
+          },
+          "body": {
+            "en": "Narrated by Abdullah ibn Umar and reported by al-Bukhari. The second part is Ibn Umar's own advice.",
+            "de": "Überliefert von Abdullah ibn Umar, berichtet von al-Bukhari. Der zweite Teil ist Ibn Umars eigener Rat.",
+            "ar": "رواه عبد الله بن عمر، وأخرجه البخاري. والجزء الثاني من كلام ابن عمر نفسه."
+          }
+        },
+        {
+          "title": {
+            "en": "Stranger and traveller",
+            "de": "Fremder und Reisender",
+            "ar": "الغريب وعابر السبيل"
+          },
+          "body": {
+            "en": "A stranger does not put down roots too deeply; a traveller carries only what the journey needs. Both live fully, but with their eyes on home.",
+            "de": "Ein Fremder schlägt keine zu tiefen Wurzeln; ein Reisender trägt nur, was die Reise braucht. Beide leben ganz, doch mit dem Blick auf die Heimat.",
+            "ar": "الغريب لا يتعلق بالمكان كثيرًا، والمسافر لا يحمل إلا ما يحتاجه سفره. كلاهما يعيش حياته، لكن عينه على الوطن."
+          }
+        },
+        {
+          "title": {
+            "en": "Ibn Umar's lesson",
+            "de": "Ibn Umars Lehre",
+            "ar": "درس ابن عمر"
+          },
+          "body": {
+            "en": "Ibn Umar drew a practical lesson from it: do not count on tomorrow, and use your health and your life while you still have them.",
+            "de": "Ibn Umar zog daraus eine praktische Lehre: Rechnen Sie nicht fest mit morgen, und nutzen Sie Gesundheit und Leben, solange Sie sie haben.",
+            "ar": "استخلص ابن عمر منه درسًا عمليًا: لا تعوّل على الغد، واغتنم صحتك وحياتك ما دامتا لك."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Do today the good you planned for later",
+              "Hold possessions lightly",
+              "Use your health for worship and service",
+              "Remember that every stay here is temporary"
+            ],
+            "de": [
+              "Tun Sie heute das Gute, das Sie für später geplant haben",
+              "Halten Sie Besitz mit leichter Hand",
+              "Nutzen Sie Ihre Gesundheit für Anbetung und Dienst",
+              "Denken Sie daran: Jeder Aufenthalt hier ist vorübergehend"
+            ],
+            "ar": [
+              "افعل اليوم الخير الذي أجّلته",
+              "أمسك متاعك بيد خفيفة",
+              "اغتنم صحتك في العبادة وخدمة الناس",
+              "تذكّر أن كل إقامة هنا مؤقتة"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "nawawi-41-desires",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 41",
+          "de": "40 Hadithe · 41",
+          "ar": "الأربعون النووية · ٤١"
+        },
+        "title": {
+          "en": "When desire follows guidance",
+          "de": "Wenn das Verlangen der Rechtleitung folgt",
+          "ar": "حين يتبع الهوى الهدى"
+        },
+        "sub": {
+          "en": "On bringing our wishes in line with what the Prophet brought",
+          "de": "Darüber, unsere Wünsche mit dem in Einklang zu bringen, was der Prophet brachte",
+          "ar": "عن موافقة رغباتنا لما جاء به النبي"
+        },
+        "arabic": "تهذيب الهوى"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:41",
+          "check": "desires",
+          "title": {
+            "en": "Desire and guidance",
+            "de": "Verlangen und Rechtleitung",
+            "ar": "الهوى والهدى"
+          },
+          "body": {
+            "en": "Narrated by Abdullah ibn Amr ibn al-As. An-Nawawi cites it from Kitab al-Hujjah with a chain he graded sahih.",
+            "de": "Überliefert von Abdullah ibn Amr ibn al-As. An-Nawawi zitiert ihn aus Kitab al-Hudscha mit einer Kette, die er als sahih einstufte.",
+            "ar": "رواه عبد الله بن عمرو بن العاص، وذكره النووي من كتاب الحجة بإسناد صححه."
+          }
+        },
+        {
+          "title": {
+            "en": "About its grading",
+            "de": "Zu seiner Bewertung",
+            "ar": "عن درجته"
+          },
+          "body": {
+            "en": "Some scholars, among them Ibn Rajab, questioned its chain of narration. Its meaning, however, is supported by many verses and authentic hadith.",
+            "de": "Einige Gelehrte, darunter Ibn Radschab, stellten seine Überlieferungskette in Frage. Seine Bedeutung wird jedoch von vielen Versen und authentischen Hadithen gestützt.",
+            "ar": "تكلّم بعض العلماء، ومنهم ابن رجب، في إسناده، لكن معناه تشهد له آيات كثيرة وأحاديث صحيحة."
+          }
+        },
+        {
+          "title": {
+            "en": "What hawa means",
+            "de": "Was Hawa bedeutet",
+            "ar": "معنى الهوى"
+          },
+          "arabic": "هَوَى",
+          "body": {
+            "en": "Hawa is inclination or desire. It is not evil in itself; the question is whether it leads or follows. Faith is complete when desire follows revelation.",
+            "de": "Hawa ist Neigung oder Verlangen. Es ist nicht an sich schlecht; die Frage ist, ob es führt oder folgt. Der Glaube ist vollkommen, wenn das Verlangen der Offenbarung folgt.",
+            "ar": "الهوى ميل النفس ورغبتها، وليس شرًّا في ذاته، وإنما السؤال: هل يقود أم يتبع؟ ويكمل الإيمان حين يتبع الهوى الوحي."
+          }
+        },
+        {
+          "verse": "4:65",
+          "check": "discomfort",
+          "title": {
+            "en": "Wholehearted acceptance",
+            "de": "Annahme von ganzem Herzen",
+            "ar": "تسليم من القلب"
+          },
+          "body": {
+            "en": "The Quran speaks of accepting the Prophet's judgement without inner resistance.",
+            "de": "Der Koran spricht davon, das Urteil des Propheten ohne inneren Widerstand anzunehmen.",
+            "ar": "يتحدث القرآن عن قبول حكم النبي دون حرج في النفس."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "list": {
+            "en": [
+              "Notice when you look for answers that suit you",
+              "Train your desires gently, step by step",
+              "Love what Allah loves, even when it is hard"
+            ],
+            "de": [
+              "Achten Sie darauf, wann Sie bequeme Antworten suchen",
+              "Erziehen Sie Ihre Wünsche sanft, Schritt für Schritt",
+              "Lieben Sie, was Allah liebt, auch wenn es schwerfällt"
+            ],
+            "ar": [
+              "انتبه حين تبحث عن الجواب الذي يوافق رغبتك",
+              "روّض هواك برفق خطوة بعد خطوة",
+              "أحب ما يحبه الله ولو شق عليك"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Rajab, Jami' al-'Ulum wa-l-Hikam, on hadith 41"
+        }
+      ]
+    },
+    {
+      "id": "nawawi-42-forgiveness",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "40 Hadith · 42",
+          "de": "40 Hadithe · 42",
+          "ar": "الأربعون النووية · ٤٢"
+        },
+        "title": {
+          "en": "Never too late to be forgiven",
+          "de": "Nie zu spät für Vergebung",
+          "ar": "لا يفوت أوان المغفرة"
+        },
+        "sub": {
+          "en": "The last hadith of the collection: a hadith qudsi full of hope",
+          "de": "Der letzte Hadith der Sammlung: ein Hadith Qudsi voller Hoffnung",
+          "ar": "آخر أحاديث المجموعة: حديث قدسي مملوء بالرجاء"
+        },
+        "arabic": "سعة المغفرة"
+      },
+      "slides": [
+        {
+          "hadith": "nawawi:42",
+          "check": "Son of Adam",
+          "title": {
+            "en": "The door that stays open",
+            "de": "Die Tür, die offen bleibt",
+            "ar": "الباب الذي يبقى مفتوحًا"
+          },
+          "body": {
+            "en": "Narrated by Anas ibn Malik and reported by at-Tirmidhi, who graded it hasan.",
+            "de": "Überliefert von Anas ibn Malik, berichtet von at-Tirmidhi, der ihn als hasan einstufte.",
+            "ar": "رواه أنس بن مالك، وأخرجه الترمذي وحسّنه."
+          }
+        },
+        {
+          "title": {
+            "en": "Three keys to forgiveness",
+            "de": "Drei Schlüssel zur Vergebung",
+            "ar": "ثلاثة مفاتيح للمغفرة"
+          },
+          "list": {
+            "en": [
+              "Calling on Allah with hope",
+              "Asking Him for forgiveness",
+              "Meeting Him without associating partners with Him"
+            ],
+            "de": [
+              "Allah voller Hoffnung anrufen",
+              "Ihn um Vergebung bitten",
+              "Ihm begegnen, ohne Ihm etwas beizugesellen"
+            ],
+            "ar": [
+              "دعاء الله مع الرجاء",
+              "الاستغفار",
+              "لقاء الله على التوحيد"
+            ]
+          }
+        },
+        {
+          "verse": "39:53",
+          "check": "forgives all sins",
+          "title": {
+            "en": "Do not despair",
+            "de": "Verzweifeln Sie nicht",
+            "ar": "لا تقنطوا"
+          },
+          "body": {
+            "en": "The Quran opens the same door to everyone who has wronged themselves.",
+            "de": "Der Koran öffnet dieselbe Tür für alle, die sich selbst Unrecht getan haben.",
+            "ar": "يفتح القرآن الباب نفسه لكل من أسرف على نفسه."
+          }
+        },
+        {
+          "title": {
+            "en": "Hope, not carelessness",
+            "de": "Hoffnung, nicht Leichtsinn",
+            "ar": "رجاء لا تهاون"
+          },
+          "body": {
+            "en": "Scholars note that this hope belongs to the one who turns back to Allah. It is an invitation to return, not permission to persist in sin.",
+            "de": "Gelehrte betonen, dass diese Hoffnung dem gilt, der zu Allah umkehrt. Sie ist eine Einladung zur Rückkehr, keine Erlaubnis, in der Sünde zu verharren.",
+            "ar": "ينبّه العلماء إلى أن هذا الرجاء لمن رجع إلى الله، فهو دعوة إلى التوبة لا إذن بالإصرار على الذنب."
+          }
+        },
+        {
+          "title": {
+            "en": "Living it today",
+            "de": "Im Alltag leben",
+            "ar": "العمل به اليوم"
+          },
+          "body": {
+            "en": "Make istighfar part of your day: after prayers, in the evening, after a slip. However heavy the past, the next step can always be towards Allah.",
+            "de": "Machen Sie das Bitten um Vergebung zu einem Teil Ihres Tages: nach den Gebeten, am Abend, nach einem Fehltritt. Wie schwer die Vergangenheit auch ist, der nächste Schritt kann immer zu Allah führen.",
+            "ar": "اجعل الاستغفار جزءًا من يومك: بعد الصلوات، وفي المساء، وبعد كل زلة. ومهما ثقل الماضي، فالخطوة التالية يمكن دائمًا أن تكون إلى الله."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Rajab, Jami' al-'Ulum wa-l-Hikam, on hadith 42"
+        }
+      ]
+    }
+  ]
+}

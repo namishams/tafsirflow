@@ -1,0 +1,2210 @@
+{
+  "series": "verses-for-the-heart",
+  "label": {
+    "en": "Verses for the heart",
+    "de": "Verse für das Herz",
+    "ar": "آيات للقلب"
+  },
+  "topic": "tafsir",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "verses-for-the-heart-patience",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 1",
+          "de": "Verse für das Herz · 1",
+          "ar": "آيات للقلب · ١"
+        },
+        "title": {
+          "en": "6 verses for when patience runs thin",
+          "de": "6 Verse, wenn die Geduld knapp wird",
+          "ar": "٦ آيات حين ينفد الصبر"
+        },
+        "sub": {
+          "en": "Short verses on sabr to read slowly, one at a time",
+          "de": "Kurze Verse über Sabr, langsam zu lesen, einer nach dem anderen",
+          "ar": "آيات قصيرة عن الصبر، تُقرأ على مهل واحدة بعد أخرى"
+        },
+        "arabic": "الصَّبْر"
+      },
+      "slides": [
+        {
+          "verse": "2:153",
+          "check": "patience and prayer",
+          "title": {
+            "en": "Two helpers",
+            "de": "Zwei Helfer",
+            "ar": "عونان"
+          },
+          "body": {
+            "en": "Patience is not meant to be carried alone: prayer is its companion, and His company is the promise.",
+            "de": "Geduld muss man nicht allein tragen: Das Gebet begleitet sie, und Seine Nähe ist die Zusage.",
+            "ar": "لا يُحمل الصبر وحده؛ فالصلاة رفيقته، ومعيّة الله وعدٌ لأهله."
+          }
+        },
+        {
+          "verse": "2:155-157",
+          "check": "give good tidings to the patient",
+          "title": {
+            "en": "Tests are announced",
+            "de": "Prüfungen sind angekündigt",
+            "ar": "الابتلاء مُعلَن"
+          },
+          "body": {
+            "en": "Loss is not a sign that you were forgotten. The verses name the trials in advance, and the words to say when they come.",
+            "de": "Verlust ist kein Zeichen, dass Sie vergessen wurden. Die Verse nennen die Prüfungen im Voraus und die Worte für diesen Moment.",
+            "ar": "ليست الخسارة علامة على أنك نُسيت؛ فالآيات تذكر الابتلاء مسبقًا، والكلمات التي تُقال عند وقوعه."
+          }
+        },
+        {
+          "verse": "12:83",
+          "check": "patience is most fitting",
+          "title": {
+            "en": "Jacob's beautiful patience",
+            "de": "Jakobs schöne Geduld",
+            "ar": "صبر يعقوب"
+          },
+          "body": {
+            "en": "After losing a second son, Jacob chose patience without bitterness, and still spoke of hope.",
+            "de": "Nach dem Verlust eines zweiten Sohnes wählte Jakob Geduld ohne Bitterkeit und sprach dennoch von Hoffnung.",
+            "ar": "بعد فقد ابنٍ ثانٍ اختار يعقوب صبرًا بلا مرارة، وبقي يتكلم بالرجاء."
+          }
+        },
+        {
+          "verse": "70:5",
+          "check": "gracious patience",
+          "title": {
+            "en": "Patience with grace",
+            "de": "Geduld mit Anmut",
+            "ar": "صبرٌ بلا تذمّر"
+          },
+          "body": {
+            "en": "Scholars describe it as patience without complaint to people. The heart may ache; the tongue stays gentle.",
+            "de": "Gelehrte beschreiben sie als Geduld ohne Klage bei den Menschen. Das Herz darf schmerzen, die Zunge bleibt sanft.",
+            "ar": "يصفه العلماء بأنه صبر لا شكوى معه إلى الخلق؛ قد يتألم القلب ويبقى اللسان رفيقًا."
+          }
+        },
+        {
+          "verse": "39:10",
+          "check": "without account",
+          "title": {
+            "en": "A reward beyond measure",
+            "de": "Ein Lohn ohne Maß",
+            "ar": "أجرٌ فوق العدّ"
+          },
+          "body": {
+            "en": "Most deeds have a known measure. The reward of patience is described as beyond counting.",
+            "de": "Die meisten Taten haben ein bekanntes Maß. Der Lohn der Geduld wird als unzählbar beschrieben.",
+            "ar": "لأكثر الأعمال مقدار معلوم، أما أجر الصبر فموصوف بأنه فوق العدّ."
+          }
+        },
+        {
+          "verse": "103:1-3",
+          "check": "advised each other to patience",
+          "title": {
+            "en": "Patience is shared",
+            "de": "Geduld teilt man",
+            "ar": "الصبر يُتواصى به"
+          },
+          "body": {
+            "en": "Al-Asr ends with people who remind each other. Find someone who helps you hold on, and be that person for others.",
+            "de": "Al-Asr endet mit Menschen, die einander erinnern. Suchen Sie jemanden, der Ihnen beim Durchhalten hilft, und seien Sie es für andere.",
+            "ar": "تُختم سورة العصر بقوم يتواصون؛ فابحث عمّن يعينك على الثبات، وكن أنت عونًا لغيرك."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-hope",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 2",
+          "de": "Verse für das Herz · 2",
+          "ar": "آيات للقلب · ٢"
+        },
+        "title": {
+          "en": "6 verses of hope after hardship",
+          "de": "6 Verse der Hoffnung nach schweren Zeiten",
+          "ar": "٦ آيات تبعث الأمل بعد الشدة"
+        },
+        "sub": {
+          "en": "For the days when the way out is not yet visible",
+          "de": "Für Tage, an denen der Ausweg noch nicht sichtbar ist",
+          "ar": "للأيام التي لم يظهر فيها المخرج بعد"
+        },
+        "arabic": "الفَرَج"
+      },
+      "slides": [
+        {
+          "verse": "94:5-6",
+          "check": "with hardship",
+          "title": {
+            "en": "Said twice",
+            "de": "Zweimal gesagt",
+            "ar": "قيلت مرتين"
+          },
+          "body": {
+            "en": "The promise is repeated, and ease is placed with the hardship, not only after it.",
+            "de": "Die Zusage wird wiederholt, und die Erleichterung steht bei der Not, nicht erst danach.",
+            "ar": "تكرّر الوعد، وجُعل التيسير مقرونًا بالشدة لا بعدها فقط."
+          }
+        },
+        {
+          "verse": "65:7",
+          "check": "after hardship",
+          "title": {
+            "en": "A promise for those with little",
+            "de": "Eine Zusage für die, die wenig haben",
+            "ar": "وعدٌ لمن قلّ ما في يده"
+          },
+          "body": {
+            "en": "This verse speaks to someone whose means are tight, and closes with a promise that the tightness will not last.",
+            "de": "Dieser Vers spricht zu jemandem mit knappen Mitteln und endet mit der Zusage, dass die Enge nicht bleibt.",
+            "ar": "تخاطب الآية من ضاق رزقه، وتُختم بوعدٍ أن الضيق لا يدوم."
+          }
+        },
+        {
+          "verse": "12:87",
+          "check": "despair not of relief",
+          "title": {
+            "en": "Jacob refused to give up",
+            "de": "Jakob gab nicht auf",
+            "ar": "يعقوب لم ييأس"
+          },
+          "body": {
+            "en": "Years after losing Joseph, Jacob sent his sons to search again. Hope, here, is an action.",
+            "de": "Jahre nach dem Verlust Josefs schickte Jakob seine Söhne erneut auf die Suche. Hoffnung ist hier ein Handeln.",
+            "ar": "بعد سنين من فقد يوسف أرسل يعقوب أبناءه ليبحثوا من جديد؛ فالرجاء هنا عمل."
+          }
+        },
+        {
+          "verse": "21:87-88",
+          "check": "saved him from the distress",
+          "title": {
+            "en": "A call from the darkness",
+            "de": "Ein Ruf aus der Finsternis",
+            "ar": "نداءٌ من الظلمات"
+          },
+          "body": {
+            "en": "Jonah called from the depths and was answered. The last line extends the same rescue to the believers.",
+            "de": "Jona rief aus der Tiefe und wurde erhört. Die letzte Zeile weitet dieselbe Rettung auf die Gläubigen aus.",
+            "ar": "نادى يونس من الأعماق فاستُجيب له، والجملة الأخيرة تمدّ النجاة نفسها إلى المؤمنين."
+          }
+        },
+        {
+          "verse": "2:214",
+          "check": "help of Allāh is near",
+          "title": {
+            "en": "Even the best were shaken",
+            "de": "Selbst die Besten wurden erschüttert",
+            "ar": "حتى خيار الناس اشتدّ عليهم البلاء"
+          },
+          "body": {
+            "en": "Feeling the strain is not weak faith. Messengers and their companions asked when help would come, and it was close.",
+            "de": "Die Last zu spüren ist kein schwacher Glaube. Gesandte und ihre Gefährten fragten, wann Hilfe kommt, und sie war nah.",
+            "ar": "الشعور بالشدة ليس ضعف إيمان؛ فقد سأل الرسل وأتباعهم عن موعد النصر، وكان قريبًا."
+          }
+        },
+        {
+          "verse": "93:3-5",
+          "check": "has not taken leave of you",
+          "title": {
+            "en": "You were not abandoned",
+            "de": "Sie wurden nicht verlassen",
+            "ar": "لم تُترك"
+          },
+          "body": {
+            "en": "Revealed after a pause in revelation that grieved the Prophet. It speaks to every heart that feels forgotten.",
+            "de": "Offenbart nach einer Pause der Offenbarung, die den Propheten bedrückte. Sie spricht zu jedem Herzen, das sich vergessen fühlt.",
+            "ar": "نزلت بعد فترة تأخّر فيها الوحي فحزن النبي ﷺ، وهي تخاطب كل قلب يشعر بأنه منسيّ."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sahih al-Bukhari 4950–4951, on the revelation of Surah ad-Duha",
+          "url": "https://sunnah.com/bukhari:4950"
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-anxiety",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 3",
+          "de": "Verse für das Herz · 3",
+          "ar": "آيات للقلب · ٣"
+        },
+        "title": {
+          "en": "6 verses for when you feel anxious",
+          "de": "6 Verse, wenn Sie sich ängstlich fühlen",
+          "ar": "٦ آيات حين يثقل القلق"
+        },
+        "sub": {
+          "en": "Read them slowly, breathe, and let one stay with you today",
+          "de": "Lesen Sie langsam, atmen Sie, und nehmen Sie einen Vers mit in den Tag",
+          "ar": "اقرأها على مهل، وتنفّس، واحمل واحدة منها معك اليوم"
+        },
+        "arabic": "السَّكِينَة"
+      },
+      "slides": [
+        {
+          "verse": "13:28",
+          "check": "hearts are assured",
+          "title": {
+            "en": "Where the heart settles",
+            "de": "Wo das Herz zur Ruhe kommt",
+            "ar": "حيث يطمئن القلب"
+          },
+          "body": {
+            "en": "Calm is not only the absence of a problem. The verse ties it to remembering Allah, which you can begin right now.",
+            "de": "Ruhe ist nicht nur die Abwesenheit eines Problems. Der Vers verbindet sie mit dem Gedenken an Allah, das Sie sofort beginnen können.",
+            "ar": "ليست السكينة غياب المشكلة فقط، فالآية تربطها بذكر الله، وهو بابٌ تستطيع أن تبدأه الآن."
+          }
+        },
+        {
+          "verse": "20:46",
+          "check": "Fear not",
+          "title": {
+            "en": "Before the hardest meeting",
+            "de": "Vor der schwersten Begegnung",
+            "ar": "قبل أصعب لقاء"
+          },
+          "body": {
+            "en": "Moses and Aaron were afraid to face Pharaoh. The answer did not remove the task; it promised company in it.",
+            "de": "Mose und Aaron fürchteten sich vor Pharao. Die Antwort nahm ihnen die Aufgabe nicht ab, sie versprach Begleitung darin.",
+            "ar": "خاف موسى وهارون من مواجهة فرعون، فلم تُرفع عنهما المهمة، بل وُعدا بالمعيّة فيها."
+          }
+        },
+        {
+          "verse": "28:7",
+          "check": "do not fear and do not grieve",
+          "title": {
+            "en": "A mother's impossible step",
+            "de": "Der unmögliche Schritt einer Mutter",
+            "ar": "خطوة أمٍّ مستحيلة"
+          },
+          "body": {
+            "en": "The mother of Moses had to let go of what she feared for most, and was promised his return. She lived to see it.",
+            "de": "Die Mutter Moses musste loslassen, worum sie am meisten bangte, und erhielt die Zusage seiner Rückkehr. Sie erlebte es.",
+            "ar": "كان على أم موسى أن تُفلت أعزّ ما تخاف عليه، ووُعدت بردّه إليها، فعاشت حتى رأت الوعد."
+          }
+        },
+        {
+          "verse": "3:173",
+          "check": "Sufficient for us is Allāh",
+          "title": {
+            "en": "When the news is frightening",
+            "de": "Wenn die Nachrichten Angst machen",
+            "ar": "حين تكون الأخبار مخيفة"
+          },
+          "body": {
+            "en": "Warned that a great force had gathered, the believers grew firmer. Their words became a dhikr many repeat in fear.",
+            "de": "Als man den Gläubigen von einer großen Streitmacht berichtete, wurden sie standhafter. Ihre Worte wurden ein Dhikr in Zeiten der Angst.",
+            "ar": "حين أُخبر المؤمنون بجمعٍ كبير ازدادوا ثباتًا، وصارت كلمتهم ذكرًا يردده كثيرون عند الخوف."
+          }
+        },
+        {
+          "verse": "48:4",
+          "check": "sent down tranquility",
+          "title": {
+            "en": "Calm is sent down",
+            "de": "Ruhe wird herabgesandt",
+            "ar": "السكينة تتنزّل"
+          },
+          "body": {
+            "en": "Sakina is described as a gift placed in hearts. Ask for it by name in your dua.",
+            "de": "Sakina wird als Gabe beschrieben, die in die Herzen gelegt wird. Bitten Sie in Ihrem Bittgebet ausdrücklich darum.",
+            "ar": "توصف السكينة بأنها عطاءٌ يُنزل في القلوب، فاسأل الله إياها باسمها في دعائك."
+          }
+        },
+        {
+          "verse": "10:62",
+          "check": "no fear concerning them",
+          "title": {
+            "en": "Those close to Him",
+            "de": "Die Ihm nahe sind",
+            "ar": "أولياء الله"
+          },
+          "body": {
+            "en": "The next verse explains who they are: people of faith and mindfulness of Allah. That path is open to everyone.",
+            "de": "Der folgende Vers erklärt, wer sie sind: Menschen mit Glauben und Gottesfurcht. Dieser Weg steht allen offen.",
+            "ar": "تبيّن الآية التالية من هم: أهل الإيمان والتقوى، وهذا طريق مفتوح لكل أحد."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-gratitude",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 4",
+          "de": "Verse für das Herz · 4",
+          "ar": "آيات للقلب · ٤"
+        },
+        "title": {
+          "en": "6 verses on gratitude",
+          "de": "6 Verse über Dankbarkeit",
+          "ar": "٦ آيات عن الشكر"
+        },
+        "sub": {
+          "en": "Gratitude that increases, and gratitude that becomes action",
+          "de": "Dankbarkeit, die vermehrt, und Dankbarkeit, die zur Tat wird",
+          "ar": "شكرٌ يزيد النعم، وشكرٌ يصير عملًا"
+        },
+        "arabic": "الشُّكْر"
+      },
+      "slides": [
+        {
+          "verse": "14:7",
+          "check": "If you are grateful",
+          "title": {
+            "en": "Gratitude multiplies",
+            "de": "Dankbarkeit vermehrt",
+            "ar": "الشكر يزيد"
+          },
+          "body": {
+            "en": "Thankfulness is not only a response to blessings. Here it is a cause of more.",
+            "de": "Dankbarkeit ist nicht nur eine Antwort auf Gaben. Hier ist sie ein Grund für mehr.",
+            "ar": "ليس الشكر ردًّا على النعمة فحسب، بل هو هنا سببٌ لزيادتها."
+          }
+        },
+        {
+          "verse": "2:152",
+          "check": "remember Me",
+          "title": {
+            "en": "A two-way remembrance",
+            "de": "Ein Gedenken in beide Richtungen",
+            "ar": "ذكرٌ متبادل"
+          },
+          "body": {
+            "en": "You remember Him, and He remembers you. Gratitude belongs to that same bond.",
+            "de": "Sie gedenken Seiner, und Er gedenkt Ihrer. Dankbarkeit gehört zu dieser Verbindung.",
+            "ar": "تذكره فيذكرك، والشكر جزء من هذه الصلة نفسها."
+          }
+        },
+        {
+          "verse": "16:18",
+          "check": "could not enumerate them",
+          "title": {
+            "en": "Try to count",
+            "de": "Versuchen Sie zu zählen",
+            "ar": "حاول أن تعدّ"
+          },
+          "body": {
+            "en": "Write down ten blessings from today. The list never ends, and the verse closes with forgiveness for our shortfall.",
+            "de": "Notieren Sie zehn Gaben von heute. Die Liste endet nie, und der Vers schließt mit Vergebung für unser Zurückbleiben.",
+            "ar": "اكتب عشر نعم من يومك؛ لن تنتهي القائمة، وتُختم الآية بالمغفرة لتقصيرنا."
+          }
+        },
+        {
+          "verse": "31:12",
+          "check": "Be grateful to Allāh",
+          "title": {
+            "en": "Luqman's wisdom",
+            "de": "Luqmans Weisheit",
+            "ar": "حكمة لقمان"
+          },
+          "body": {
+            "en": "The first fruit of wisdom named here is gratitude. Its benefit returns to the one who gives thanks.",
+            "de": "Die erste Frucht der Weisheit, die hier genannt wird, ist Dankbarkeit. Ihr Nutzen kehrt zum Dankenden zurück.",
+            "ar": "أول ثمرة للحكمة تُذكر هنا هي الشكر، ونفعه عائد على الشاكر."
+          }
+        },
+        {
+          "verse": "27:19",
+          "check": "enable me to be grateful",
+          "title": {
+            "en": "Solomon asks for help to thank",
+            "de": "Salomo bittet um Hilfe beim Danken",
+            "ar": "سليمان يسأل العون على الشكر"
+          },
+          "body": {
+            "en": "A king with every gift still asked to be enabled to thank, and included his parents in it.",
+            "de": "Ein König mit allen Gaben bat dennoch um die Fähigkeit zu danken und schloss seine Eltern darin ein.",
+            "ar": "ملكٌ أوتي من كل شيء سأل الله أن يعينه على الشكر، وذكر والديه في دعائه."
+          }
+        },
+        {
+          "verse": "34:13",
+          "check": "few of My servants are grateful",
+          "title": {
+            "en": "Gratitude in action",
+            "de": "Dankbarkeit als Tat",
+            "ar": "الشكر عمل"
+          },
+          "body": {
+            "en": "The family of David were told to work in gratitude. Thankfulness shows in how we use what we were given.",
+            "de": "Die Familie Davids sollte aus Dankbarkeit handeln. Dank zeigt sich darin, wie wir das Gegebene nutzen.",
+            "ar": "أُمر آل داود أن يعملوا شكرًا؛ فالشكر يظهر في طريقة استعمال ما أُعطينا."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-closeness",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 5",
+          "de": "Verse für das Herz · 5",
+          "ar": "آيات للقلب · ٥"
+        },
+        "title": {
+          "en": "6 verses on how near Allah is",
+          "de": "6 Verse darüber, wie nah Allah ist",
+          "ar": "٦ آيات عن قرب الله"
+        },
+        "sub": {
+          "en": "For moments when you feel far away",
+          "de": "Für Momente, in denen Sie sich fern fühlen",
+          "ar": "للحظات التي تشعر فيها بالبعد"
+        },
+        "arabic": "القَرِيب"
+      },
+      "slides": [
+        {
+          "verse": "2:186",
+          "check": "I am near",
+          "title": {
+            "en": "An answer without a messenger",
+            "de": "Eine Antwort ohne Vermittler",
+            "ar": "جوابٌ بلا واسطة"
+          },
+          "body": {
+            "en": "Many answers in the Quran begin with 'Say'. This one comes directly, in the middle of the verses on fasting.",
+            "de": "Viele Antworten im Koran beginnen mit 'Sprich'. Diese kommt direkt, mitten in den Versen über das Fasten.",
+            "ar": "تبدأ أجوبة كثيرة في القرآن بالأمر بالقول، أما هنا فجاء الجواب مباشرة، في وسط آيات الصيام."
+          }
+        },
+        {
+          "verse": "50:16",
+          "check": "jugular vein",
+          "title": {
+            "en": "Closer than your own pulse",
+            "de": "Näher als der eigene Puls",
+            "ar": "أقرب من نبضك"
+          },
+          "body": {
+            "en": "He knows your quietest thoughts. Nothing you feel goes unseen.",
+            "de": "Er kennt Ihre leisesten Gedanken. Nichts, was Sie fühlen, bleibt ungesehen.",
+            "ar": "يعلم خواطرك الخفية، فلا شيء مما تشعر به يغيب عنه."
+          }
+        },
+        {
+          "verse": "57:4",
+          "check": "with you wherever you are",
+          "title": {
+            "en": "Wherever you are",
+            "de": "Wo immer Sie sind",
+            "ar": "أينما كنت"
+          },
+          "body": {
+            "en": "On a night shift, in a hospital bed or far from home, His knowledge and care reach you there.",
+            "de": "In der Nachtschicht, im Krankenhausbett oder fern der Heimat: Sein Wissen und Seine Fürsorge erreichen Sie dort.",
+            "ar": "في نوبة ليلية أو على سرير مرض أو بعيدًا عن الوطن، يصل إليك علمه ورعايته هناك."
+          }
+        },
+        {
+          "verse": "40:60",
+          "check": "Call upon Me",
+          "title": {
+            "en": "An open invitation",
+            "de": "Eine offene Einladung",
+            "ar": "دعوةٌ مفتوحة"
+          },
+          "body": {
+            "en": "Dua is not a last resort. It is an invitation with a promise of response attached.",
+            "de": "Das Bittgebet ist kein letzter Ausweg. Es ist eine Einladung, mit der die Zusage einer Antwort verbunden ist.",
+            "ar": "ليس الدعاء آخر الحيل، بل دعوةٌ مقرونة بوعد الإجابة."
+          }
+        },
+        {
+          "verse": "11:61",
+          "check": "near and responsive",
+          "title": {
+            "en": "Near and answering",
+            "de": "Nah und erhörend",
+            "ar": "قريبٌ مجيب"
+          },
+          "body": {
+            "en": "Salih joined two names: the Near and the Responsive. Turning back to Him is never ignored.",
+            "de": "Salih verband zwei Namen: der Nahe und der Erhörende. Wer sich Ihm zuwendet, wird nie übergangen.",
+            "ar": "جمع صالح بين اسمين: القريب والمجيب، فمن رجع إليه لم يُهمَل."
+          }
+        },
+        {
+          "verse": "2:115",
+          "check": "Face of Allāh",
+          "title": {
+            "en": "Every direction is His",
+            "de": "Jede Richtung gehört Ihm",
+            "ar": "كل الجهات له"
+          },
+          "body": {
+            "en": "East and west belong to Him. No place on earth is too far for a sincere heart to turn to Him.",
+            "de": "Osten und Westen gehören Ihm. Kein Ort der Erde ist zu fern, um sich Ihm aufrichtig zuzuwenden.",
+            "ar": "المشرق والمغرب ملكه، فلا مكان في الأرض أبعد من أن يتوجه منه قلب صادق إليه."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-forgiveness",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 6",
+          "de": "Verse für das Herz · 6",
+          "ar": "آيات للقلب · ٦"
+        },
+        "title": {
+          "en": "6 verses about forgiveness",
+          "de": "6 Verse über Vergebung",
+          "ar": "٦ آيات عن المغفرة"
+        },
+        "sub": {
+          "en": "His forgiveness for us, and ours for each other",
+          "de": "Seine Vergebung für uns und unsere füreinander",
+          "ar": "مغفرته لنا، وعفو بعضنا عن بعض"
+        },
+        "arabic": "الغَفُور"
+      },
+      "slides": [
+        {
+          "verse": "39:53",
+          "check": "do not despair",
+          "title": {
+            "en": "No sin closes the door",
+            "de": "Keine Sünde schließt die Tür",
+            "ar": "لا ذنبَ يغلق الباب"
+          },
+          "body": {
+            "en": "It addresses people who have wronged themselves, and still calls them 'My servants'. The bond remains.",
+            "de": "Angesprochen sind Menschen, die sich selbst Unrecht getan haben, und sie heißen dennoch 'Meine Diener'. Die Bindung bleibt.",
+            "ar": "تخاطب المسرفين في الذنوب وتضيفهم إليه سبحانه بوصف العبودية، فالصلة باقية."
+          }
+        },
+        {
+          "verse": "4:110",
+          "check": "seeks forgiveness of Allāh",
+          "title": {
+            "en": "Whatever it was",
+            "de": "Was immer es war",
+            "ar": "مهما كان"
+          },
+          "body": {
+            "en": "A wrong against others or against yourself: the way back is the same, and it is open.",
+            "de": "Ein Unrecht an anderen oder an sich selbst: Der Weg zurück ist derselbe, und er ist offen.",
+            "ar": "ظلمٌ للآخرين أو للنفس، طريق العودة واحد، وهو مفتوح."
+          }
+        },
+        {
+          "verse": "3:135",
+          "check": "seek forgiveness for their sins",
+          "title": {
+            "en": "Remember, then return",
+            "de": "Sich besinnen, dann umkehren",
+            "ar": "تذكّر ثم عُد"
+          },
+          "body": {
+            "en": "The righteous are not people who never slip. They remember quickly and do not insist on the wrong.",
+            "de": "Die Rechtschaffenen sind keine Menschen, die nie straucheln. Sie besinnen sich schnell und beharren nicht auf dem Unrecht.",
+            "ar": "ليس المتقون من لا يخطئون، بل من يتذكرون سريعًا ولا يُصرّون على الخطأ."
+          }
+        },
+        {
+          "verse": "25:70",
+          "check": "replace their evil deeds with good",
+          "title": {
+            "en": "More than erased",
+            "de": "Mehr als ausgelöscht",
+            "ar": "أكثر من المحو"
+          },
+          "body": {
+            "en": "Sincere repentance can do more than clear the record. The verse speaks of bad deeds turned into good ones.",
+            "de": "Aufrichtige Reue kann mehr als die Akte leeren. Der Vers spricht davon, dass schlechte Taten in gute verwandelt werden.",
+            "ar": "التوبة الصادقة لا تمحو السجل فقط، بل تتحدث الآية عن تحويل السيئ إلى حسن."
+          }
+        },
+        {
+          "verse": "24:22",
+          "check": "pardon and overlook",
+          "title": {
+            "en": "Forgive as you hope to be forgiven",
+            "de": "Vergeben, wie man auf Vergebung hofft",
+            "ar": "اعفُ كما ترجو العفو"
+          },
+          "body": {
+            "en": "Revealed when Abu Bakr vowed to stop supporting a relative who had hurt his family. He resumed the support.",
+            "de": "Offenbart, als Abu Bakr schwor, einen Verwandten nicht mehr zu unterstützen, der seiner Familie geschadet hatte. Er half ihm wieder.",
+            "ar": "نزلت حين حلف أبو بكر ألا ينفق على قريبٍ أساء إلى أهله، فعاد إلى الإنفاق عليه."
+          }
+        },
+        {
+          "verse": "42:43",
+          "check": "patient and forgives",
+          "title": {
+            "en": "A sign of strength",
+            "de": "Ein Zeichen von Stärke",
+            "ar": "علامة قوة"
+          },
+          "body": {
+            "en": "Forgiving is not weakness. The verse counts it among the matters that need real resolve.",
+            "de": "Vergeben ist keine Schwäche. Der Vers zählt es zu den Dingen, die echte Entschlossenheit verlangen.",
+            "ar": "ليس العفو ضعفًا، فالآية تعدّه من الأمور التي تحتاج إلى عزمٍ حقيقي."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sahih al-Bukhari 4750, on the occasion of 24:22",
+          "url": "https://sunnah.com/bukhari:4750"
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-parents",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 7",
+          "de": "Verse für das Herz · 7",
+          "ar": "آيات للقلب · ٧"
+        },
+        "title": {
+          "en": "6 verses about parents",
+          "de": "6 Verse über die Eltern",
+          "ar": "٦ آيات عن الوالدين"
+        },
+        "sub": {
+          "en": "Kindness, words and duas for the people who raised you",
+          "de": "Güte, Worte und Bittgebete für die Menschen, die Sie großgezogen haben",
+          "ar": "برٌّ وكلمة طيبة ودعاء لمن ربّاك"
+        },
+        "arabic": "بِرُّ الوالِدَيْن"
+      },
+      "slides": [
+        {
+          "verse": "17:23",
+          "check": "to parents, good treatment",
+          "title": {
+            "en": "Right after worship",
+            "de": "Direkt nach der Anbetung",
+            "ar": "بعد عبادة الله مباشرة"
+          },
+          "body": {
+            "en": "Kindness to parents follows directly on worshipping Allah. In their old age, not even a sigh of irritation.",
+            "de": "Die Güte zu den Eltern folgt direkt auf die Anbetung Allahs. In ihrem Alter nicht einmal ein Seufzer des Unmuts.",
+            "ar": "جاء الإحسان إلى الوالدين بعد عبادة الله مباشرة، ولا تبرّم منهما ولو بزفرة عند كبرهما."
+          }
+        },
+        {
+          "verse": "17:24",
+          "check": "wing of humility",
+          "title": {
+            "en": "Lower the wing",
+            "de": "Den Flügel senken",
+            "ar": "اخفض الجناح"
+          },
+          "body": {
+            "en": "The image recalls a bird lowering its wing in tenderness. Now you shelter them, and pray for them too.",
+            "de": "Das Bild erinnert an einen Vogel, der zärtlich den Flügel senkt. Nun schützen Sie die Eltern und beten für sie.",
+            "ar": "تذكّر الصورة بطائر يخفض جناحه حنانًا، فأنت الآن من يحنو عليهما ويدعو لهما."
+          }
+        },
+        {
+          "verse": "31:14",
+          "check": "weakness upon weakness",
+          "title": {
+            "en": "Remembering the mother",
+            "de": "An die Mutter denken",
+            "ar": "تذكّر الأم"
+          },
+          "body": {
+            "en": "The mother's hardship is named in detail. Gratitude to parents is joined to gratitude to Allah.",
+            "de": "Die Mühe der Mutter wird ausdrücklich genannt. Der Dank an die Eltern ist mit dem Dank an Allah verbunden.",
+            "ar": "تُذكر مشقة الأم بالتفصيل، ويُقرن شكر الوالدين بشكر الله."
+          }
+        },
+        {
+          "verse": "29:8",
+          "check": "goodness to parents",
+          "title": {
+            "en": "Kind, even when you disagree",
+            "de": "Gütig, auch wenn Sie anderer Meinung sind",
+            "ar": "البرّ مع الاختلاف"
+          },
+          "body": {
+            "en": "Obedience has limits where faith is concerned, but kindness does not end. A similar verse asks for good company in this world.",
+            "de": "Gehorsam hat Grenzen, wo es um den Glauben geht, die Güte aber endet nicht. Ein ähnlicher Vers verlangt gute Begleitung im Diesseits.",
+            "ar": "للطاعة حدود فيما يمسّ الإيمان، أما البرّ فلا ينقطع، وفي آية أخرى أمرٌ بمصاحبتهما بالمعروف."
+          }
+        },
+        {
+          "verse": "19:14",
+          "check": "dutiful to his parents",
+          "title": {
+            "en": "A prophet described this way",
+            "de": "Ein Prophet, so beschrieben",
+            "ar": "نبيٌّ وُصف بهذا"
+          },
+          "body": {
+            "en": "John (Yahya) is praised for being dutiful to his parents. It stands among the qualities of prophets.",
+            "de": "Johannes (Yahya) wird dafür gelobt, seinen Eltern ergeben zu sein. Es gehört zu den Eigenschaften der Propheten.",
+            "ar": "يُثنى على يحيى ببرّه بوالديه، فهو من صفات الأنبياء."
+          }
+        },
+        {
+          "verse": "14:41",
+          "check": "forgive me and my parents",
+          "title": {
+            "en": "Abraham's dua",
+            "de": "Abrahams Bittgebet",
+            "ar": "دعاء إبراهيم"
+          },
+          "body": {
+            "en": "Abraham included his parents in his dua for the Day of Reckoning. Keep yours in your duas, in life and after.",
+            "de": "Abraham schloss seine Eltern in sein Bittgebet für den Tag der Abrechnung ein. Behalten Sie Ihre darin, im Leben und danach.",
+            "ar": "ذكر إبراهيم والديه في دعائه ليوم الحساب، فاجعل والديك في دعائك في حياتهما وبعدها."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-tawakkul",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 8",
+          "de": "Verse für das Herz · 8",
+          "ar": "آيات للقلب · ٨"
+        },
+        "title": {
+          "en": "6 verses on trusting Allah",
+          "de": "6 Verse über Gottvertrauen",
+          "ar": "٦ آيات عن التوكل"
+        },
+        "sub": {
+          "en": "Tawakkul: do your part, then leave the outcome to Him",
+          "de": "Tawakkul: Ihren Teil tun und das Ergebnis Ihm überlassen",
+          "ar": "التوكل: أن تأخذ بالأسباب ثم تفوّض النتيجة إليه"
+        },
+        "arabic": "التَّوَكُّل"
+      },
+      "slides": [
+        {
+          "verse": "65:3",
+          "check": "sufficient for him",
+          "title": {
+            "en": "Enough",
+            "de": "Genug",
+            "ar": "حسبُه"
+          },
+          "body": {
+            "en": "Whoever relies on Him finds Him enough. It does not mean everything goes your way; it means you are not alone with it.",
+            "de": "Wer sich auf Ihn verlässt, dem genügt Er. Das heißt nicht, dass alles nach Wunsch läuft, sondern dass Sie nicht allein sind.",
+            "ar": "من توكّل عليه كفاه، وليس المعنى أن تجري الأمور كما تشتهي، بل أنك لست وحدك فيها."
+          }
+        },
+        {
+          "verse": "3:159",
+          "check": "rely upon Allāh",
+          "title": {
+            "en": "Consult, decide, then trust",
+            "de": "Beraten, entscheiden, dann vertrauen",
+            "ar": "شاوِر ثم اعزِم ثم توكّل"
+          },
+          "body": {
+            "en": "Trust comes after consultation and a clear decision, not instead of them.",
+            "de": "Vertrauen kommt nach Beratung und klarer Entscheidung, nicht an ihrer Stelle.",
+            "ar": "يأتي التوكل بعد المشورة والعزم، لا بدلًا منهما."
+          }
+        },
+        {
+          "verse": "12:67",
+          "check": "upon Him I have relied",
+          "title": {
+            "en": "Jacob takes precautions",
+            "de": "Jakob trifft Vorkehrungen",
+            "ar": "يعقوب يأخذ بالأسباب"
+          },
+          "body": {
+            "en": "He advised his sons to enter by different gates, then said the decision is Allah's. Means and trust go together.",
+            "de": "Er riet seinen Söhnen, durch verschiedene Tore zu gehen, und sagte dann, die Entscheidung liege bei Allah. Mittel und Vertrauen gehören zusammen.",
+            "ar": "أوصى أبناءه بالدخول من مداخل مختلفة، ثم ردّ الأمر إلى الله؛ فالأسباب والتوكل متلازمان."
+          }
+        },
+        {
+          "verse": "25:58",
+          "check": "Ever-Living who does not die",
+          "title": {
+            "en": "Rely on the One who remains",
+            "de": "Auf den verlassen, der bleibt",
+            "ar": "توكّل على الباقي"
+          },
+          "body": {
+            "en": "People and plans can fail or pass away. The verse points to the One who never does.",
+            "de": "Menschen und Pläne können scheitern oder vergehen. Der Vers weist auf Den, der niemals vergeht.",
+            "ar": "قد يخذل الناس وتفشل الخطط أو تزول، والآية تدلّ على من لا يزول."
+          }
+        },
+        {
+          "verse": "9:51",
+          "check": "decreed for us",
+          "title": {
+            "en": "Nothing outside His decree",
+            "de": "Nichts außerhalb Seiner Bestimmung",
+            "ar": "لا شيء خارج قدره"
+          },
+          "body": {
+            "en": "This is not passivity. It gives calm after effort: what reaches you was written, and He is your protector.",
+            "de": "Das ist keine Untätigkeit. Es schenkt Ruhe nach der Anstrengung: Was Sie trifft, war bestimmt, und Er ist Ihr Beschützer.",
+            "ar": "ليس هذا تواكلًا، بل طمأنينة بعد السعي: ما أصابك مكتوب، والله مولاك."
+          }
+        },
+        {
+          "verse": "9:129",
+          "check": "Sufficient for me is Allāh",
+          "title": {
+            "en": "When people turn away",
+            "de": "Wenn Menschen sich abwenden",
+            "ar": "حين يُعرض الناس"
+          },
+          "body": {
+            "en": "The closing verse of at-Tawba. When support from people falls away, these words remain.",
+            "de": "Der letzte Vers der Sure at-Tawba. Wenn die Unterstützung der Menschen wegfällt, bleiben diese Worte.",
+            "ar": "خاتمة سورة التوبة، فإذا انصرف عنك دعم الناس بقيت هذه الكلمات."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-rizq",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 9",
+          "de": "Verse für das Herz · 9",
+          "ar": "آيات للقلب · ٩"
+        },
+        "title": {
+          "en": "6 verses about provision",
+          "de": "6 Verse über die Versorgung",
+          "ar": "٦ آيات عن الرزق"
+        },
+        "sub": {
+          "en": "For worries about work, money and tomorrow",
+          "de": "Für Sorgen um Arbeit, Geld und das Morgen",
+          "ar": "لهموم العمل والمال والغد"
+        },
+        "arabic": "الرِّزْق"
+      },
+      "slides": [
+        {
+          "verse": "11:6",
+          "check": "upon Allāh is its provision",
+          "title": {
+            "en": "Every creature is provided for",
+            "de": "Jedes Geschöpf wird versorgt",
+            "ar": "لكل مخلوق رزقه"
+          },
+          "body": {
+            "en": "From the smallest insect to you: none was created and then forgotten.",
+            "de": "Vom kleinsten Insekt bis zu Ihnen: Keines wurde erschaffen und dann vergessen.",
+            "ar": "من أصغر حشرة إليك، لم يُخلق مخلوق ثم يُنسى."
+          }
+        },
+        {
+          "verse": "51:22",
+          "check": "in the heaven is your provision",
+          "title": {
+            "en": "Decided above",
+            "de": "Oben bestimmt",
+            "ar": "مقدّرٌ في السماء"
+          },
+          "body": {
+            "en": "Your provision is decided with Allah, not by the moods of a boss or a market. You still work, but without panic.",
+            "de": "Ihre Versorgung wird bei Allah bestimmt, nicht durch Launen von Chefs oder Märkten. Sie arbeiten weiter, aber ohne Panik.",
+            "ar": "رزقك مقدّر عند الله لا بمزاج مدير أو سوق، فاعمل ولا تهلع."
+          }
+        },
+        {
+          "verse": "29:60",
+          "check": "Allāh provides for it",
+          "title": {
+            "en": "Creatures that store nothing",
+            "de": "Geschöpfe, die nichts aufheben",
+            "ar": "مخلوقات لا تدّخر"
+          },
+          "body": {
+            "en": "Many creatures keep nothing for tomorrow, yet are fed each day. The same Provider provides for you.",
+            "de": "Viele Geschöpfe legen nichts für morgen zurück und werden doch jeden Tag ernährt. Derselbe Versorger sorgt für Sie.",
+            "ar": "مخلوقات كثيرة لا تدّخر لغدها، ومع ذلك تُرزق كل يوم، والرازق نفسه يرزقك."
+          }
+        },
+        {
+          "verse": "3:37",
+          "check": "without account",
+          "title": {
+            "en": "Mary's provision",
+            "de": "Marias Versorgung",
+            "ar": "رزق مريم"
+          },
+          "body": {
+            "en": "Zechariah found provision with Mary and asked where it came from. Her answer teaches where to look.",
+            "de": "Zacharias fand bei Maria Versorgung und fragte, woher sie komme. Ihre Antwort lehrt, wohin man blicken soll.",
+            "ar": "وجد زكريا عند مريم رزقًا فسألها عن مصدره، وفي جوابها درسٌ في أين ننظر."
+          }
+        },
+        {
+          "verse": "42:27",
+          "check": "an amount which He wills",
+          "title": {
+            "en": "Measured with wisdom",
+            "de": "Mit Weisheit bemessen",
+            "ar": "بقدرٍ وحكمة"
+          },
+          "body": {
+            "en": "Not having more is not always deprivation. Sometimes the measure itself is a mercy.",
+            "de": "Nicht mehr zu haben ist nicht immer Entbehrung. Manchmal ist das Maß selbst eine Barmherzigkeit.",
+            "ar": "ليس قلة المال حرمانًا دائمًا، فقد يكون المقدار نفسه رحمة."
+          }
+        },
+        {
+          "verse": "62:10",
+          "check": "seek from the bounty of Allāh",
+          "title": {
+            "en": "Pray, then go out and seek",
+            "de": "Beten, dann hinausgehen und suchen",
+            "ar": "صلِّ ثم اسعَ في طلب الرزق"
+          },
+          "body": {
+            "en": "Work becomes worship when it is done with remembrance. The verse sends you from prayer straight to earning.",
+            "de": "Arbeit wird zum Gottesdienst, wenn sie mit Gedenken geschieht. Der Vers schickt Sie vom Gebet direkt zum Erwerb.",
+            "ar": "يصير العمل عبادة إذا صاحبه الذكر، والآية تنقلك من الصلاة إلى السعي مباشرة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-meaning",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 10",
+          "de": "Verse für das Herz · 10",
+          "ar": "آيات للقلب · ١٠"
+        },
+        "title": {
+          "en": "6 verses on death and the meaning of life",
+          "de": "6 Verse über den Tod und den Sinn des Lebens",
+          "ar": "٦ آيات عن الموت ومعنى الحياة"
+        },
+        "sub": {
+          "en": "Not to frighten, but to remind us what matters",
+          "de": "Nicht um zu ängstigen, sondern um an das Wesentliche zu erinnern",
+          "ar": "لا للتخويف، بل للتذكير بما يستحق"
+        },
+        "arabic": "المَعْنَى"
+      },
+      "slides": [
+        {
+          "verse": "3:185",
+          "check": "taste death",
+          "title": {
+            "en": "The one certain appointment",
+            "de": "Der eine sichere Termin",
+            "ar": "الموعد الأكيد"
+          },
+          "body": {
+            "en": "Every plan is uncertain except this one. Remembering it can make today lighter, not heavier.",
+            "de": "Jeder Plan ist ungewiss, außer diesem. Daran zu denken kann den heutigen Tag leichter machen, nicht schwerer.",
+            "ar": "كل خطة غير مؤكدة إلا هذه، وتذكّرها قد يجعل يومك أخفّ لا أثقل."
+          }
+        },
+        {
+          "verse": "67:2",
+          "check": "best in deed",
+          "title": {
+            "en": "How well, not how much",
+            "de": "Wie gut, nicht wie viel",
+            "ar": "الإحسان لا الكثرة"
+          },
+          "body": {
+            "en": "Scholars often point out that the measure here is the quality of deeds, not their number.",
+            "de": "Gelehrte betonen oft, dass hier die Güte der Taten zählt, nicht ihre Anzahl.",
+            "ar": "يلفت العلماء كثيرًا إلى أن المعيار هنا جودة العمل لا كثرته."
+          }
+        },
+        {
+          "verse": "51:56",
+          "check": "except to worship Me",
+          "title": {
+            "en": "Why you are here",
+            "de": "Warum Sie hier sind",
+            "ar": "لماذا أنت هنا"
+          },
+          "body": {
+            "en": "Worship in its wide sense: prayer, but also honest work, kindness and care done for His sake.",
+            "de": "Anbetung im weiten Sinn: das Gebet, aber auch ehrliche Arbeit, Güte und Fürsorge um Seinetwillen.",
+            "ar": "العبادة بمعناها الواسع: الصلاة، والعمل الصادق، والإحسان، والرعاية ابتغاء وجهه."
+          }
+        },
+        {
+          "verse": "23:115",
+          "check": "created you uselessly",
+          "title": {
+            "en": "Nothing is pointless",
+            "de": "Nichts ist sinnlos",
+            "ar": "لا شيء عبث"
+          },
+          "body": {
+            "en": "A question that answers despair: your life was not created without purpose, and it returns to Him.",
+            "de": "Eine Frage, die der Verzweiflung antwortet: Ihr Leben wurde nicht ohne Sinn erschaffen, und es kehrt zu Ihm zurück.",
+            "ar": "سؤالٌ يجيب اليأس: لم تُخلق حياتك بلا غاية، وإليه المرجع."
+          }
+        },
+        {
+          "verse": "18:46",
+          "check": "enduring good deeds",
+          "title": {
+            "en": "What stays",
+            "de": "Was bleibt",
+            "ar": "ما يبقى"
+          },
+          "body": {
+            "en": "Wealth and children are a joy for this life. The good you do continues after you.",
+            "de": "Besitz und Kinder sind eine Freude für dieses Leben. Das Gute, das Sie tun, wirkt über Sie hinaus.",
+            "ar": "المال والأولاد بهجة هذه الحياة، أما الخير الذي تعمله فيبقى بعدك."
+          }
+        },
+        {
+          "verse": "89:27-28",
+          "check": "reassured soul",
+          "title": {
+            "en": "How it can end",
+            "de": "Wie es enden kann",
+            "ar": "كيف تكون الخاتمة"
+          },
+          "body": {
+            "en": "Death can be a homecoming for a soul at peace. Many ask Allah for such an ending.",
+            "de": "Der Tod kann für eine Seele in Frieden eine Heimkehr sein. Viele bitten Allah um ein solches Ende.",
+            "ar": "قد يكون الموت عودةً إلى الوطن لنفسٍ مطمئنة، وكثيرون يسألون الله مثل هذه الخاتمة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-jannah",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 11",
+          "de": "Verse für das Herz · 11",
+          "ar": "آيات للقلب · ١١"
+        },
+        "title": {
+          "en": "6 verses about Paradise",
+          "de": "6 Verse über das Paradies",
+          "ar": "٦ آيات عن الجنة"
+        },
+        "sub": {
+          "en": "A glimpse of the home that waits",
+          "de": "Ein Blick auf das Zuhause, das wartet",
+          "ar": "لمحةٌ عن الدار التي تنتظر"
+        },
+        "arabic": "الجَنَّة"
+      },
+      "slides": [
+        {
+          "verse": "3:133",
+          "check": "as wide as the heavens and earth",
+          "title": {
+            "en": "Hasten to it",
+            "de": "Eilen Sie dorthin",
+            "ar": "المسارعة إليها"
+          },
+          "body": {
+            "en": "Paradise is not a reward to wait for passively. The verse calls us to hurry toward it.",
+            "de": "Das Paradies ist kein Lohn, auf den man untätig wartet. Der Vers ruft zur Eile.",
+            "ar": "ليست الجنة جزاءً يُنتظر بلا عمل، فالآية تدعو إلى المسارعة إليها."
+          }
+        },
+        {
+          "verse": "32:17",
+          "check": "comfort for eyes",
+          "title": {
+            "en": "Beyond imagination",
+            "de": "Jenseits der Vorstellung",
+            "ar": "فوق الخيال"
+          },
+          "body": {
+            "en": "Whatever you picture, the reality is greater. No imagination can reach it.",
+            "de": "Was immer Sie sich ausmalen, die Wirklichkeit ist größer. Keine Vorstellung reicht heran.",
+            "ar": "مهما تخيّلت فالحقيقة أعظم، ولا يبلغها خيال."
+          }
+        },
+        {
+          "verse": "15:46-48",
+          "check": "resentment",
+          "title": {
+            "en": "Hearts without grudges",
+            "de": "Herzen ohne Groll",
+            "ar": "قلوبٌ بلا ضغينة"
+          },
+          "body": {
+            "en": "Among the first gifts named: resentment removed from the heart. Peace between people is part of Paradise.",
+            "de": "Unter den ersten genannten Gaben: Groll wird aus dem Herzen genommen. Frieden zwischen Menschen gehört zum Paradies.",
+            "ar": "من أول ما يُذكر من النعيم: زوال الضغينة من القلوب، فسلام القلوب من الجنة."
+          }
+        },
+        {
+          "verse": "13:23-24",
+          "check": "their spouses and their descendants",
+          "title": {
+            "en": "Families reunited",
+            "de": "Familien vereint",
+            "ar": "اجتماع الأسرة"
+          },
+          "body": {
+            "en": "The righteous among parents, spouses and children enter together, and angels greet them for their patience.",
+            "de": "Die Rechtschaffenen unter Eltern, Ehepartnern und Kindern treten gemeinsam ein, und Engel grüßen sie für ihre Geduld.",
+            "ar": "يدخلها الصالحون من الآباء والأزواج والأبناء معًا، وتحيّيهم الملائكة على صبرهم."
+          }
+        },
+        {
+          "verse": "56:25-26",
+          "check": "ill speech",
+          "title": {
+            "en": "No hurtful words",
+            "de": "Keine verletzenden Worte",
+            "ar": "لا كلمة جارحة"
+          },
+          "body": {
+            "en": "No gossip, no insult, no harsh tone, only peace. Practising that now is a small taste of it.",
+            "de": "Kein Gerede, keine Beleidigung, kein harter Ton, nur Frieden. Wer das jetzt übt, kostet schon ein wenig davon.",
+            "ar": "لا غيبة ولا شتم ولا قسوة، بل سلام فقط، ومن تعوّده الآن ذاق شيئًا منه."
+          }
+        },
+        {
+          "verse": "50:34-35",
+          "check": "with Us is more",
+          "title": {
+            "en": "And still more",
+            "de": "Und noch mehr",
+            "ar": "وفوق ذلك مزيد"
+          },
+          "body": {
+            "en": "Every wish is granted, and there is still more. Scholars explain this 'more' in several ways.",
+            "de": "Jeder Wunsch wird erfüllt, und es gibt noch mehr. Die Gelehrten erklären dieses 'Mehr' auf verschiedene Weise.",
+            "ar": "يُعطَون كل ما يشاؤون، وفوق ذلك مزيد، وللعلماء في تفسير هذا المزيد أقوال."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-justice",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 12",
+          "de": "Verse für das Herz · 12",
+          "ar": "آيات للقلب · ١٢"
+        },
+        "title": {
+          "en": "6 verses about justice",
+          "de": "6 Verse über Gerechtigkeit",
+          "ar": "٦ آيات عن العدل"
+        },
+        "sub": {
+          "en": "Fairness at home, at work and with people you dislike",
+          "de": "Fairness zu Hause, bei der Arbeit und gegenüber Menschen, die Sie nicht mögen",
+          "ar": "العدل في البيت والعمل ومع من لا تحب"
+        },
+        "arabic": "العَدْل"
+      },
+      "slides": [
+        {
+          "verse": "4:135",
+          "check": "even if it be against yourselves",
+          "title": {
+            "en": "Even against yourself",
+            "de": "Auch gegen sich selbst",
+            "ar": "ولو على نفسك"
+          },
+          "body": {
+            "en": "Justice is tested when it costs you or your family. The verse asks for the truth even then.",
+            "de": "Gerechtigkeit wird geprüft, wenn sie Sie oder Ihre Familie etwas kostet. Der Vers verlangt die Wahrheit auch dann.",
+            "ar": "يُختبر العدل حين يكلّفك أو يكلّف أهلك، والآية تطلب الحق حتى عندئذ."
+          }
+        },
+        {
+          "verse": "5:8",
+          "check": "hatred of a people",
+          "title": {
+            "en": "Fair to those you dislike",
+            "de": "Fair zu denen, die Sie nicht mögen",
+            "ar": "العدل مع من تكره"
+          },
+          "body": {
+            "en": "Anger at a group is no excuse to wrong them. Fairness is called the nearest thing to taqwa.",
+            "de": "Ärger über eine Gruppe ist keine Entschuldigung, ihr Unrecht zu tun. Gerechtigkeit steht der Gottesfurcht am nächsten.",
+            "ar": "ليس الغضب من قومٍ مسوّغًا لظلمهم، والعدل أقرب ما يكون إلى التقوى."
+          }
+        },
+        {
+          "verse": "16:90",
+          "check": "orders justice",
+          "title": {
+            "en": "Justice and beyond",
+            "de": "Gerechtigkeit und mehr",
+            "ar": "العدل وما فوقه"
+          },
+          "body": {
+            "en": "Justice is the foundation; ihsan, excellence and kindness, is built on it. This verse is often heard in Friday sermons.",
+            "de": "Gerechtigkeit ist das Fundament, Ihsan, Vortrefflichkeit und Güte, wird darauf gebaut. Der Vers ist oft in Freitagspredigten zu hören.",
+            "ar": "العدل هو الأساس، والإحسان بناءٌ فوقه، وهذه الآية تُسمع كثيرًا في خطب الجمعة."
+          }
+        },
+        {
+          "verse": "4:58",
+          "check": "render trusts",
+          "title": {
+            "en": "Trusts and judgements",
+            "de": "Anvertrautes und Urteile",
+            "ar": "الأمانات والحكم"
+          },
+          "body": {
+            "en": "From a borrowed book to a public office: everything entrusted to you is to be returned or handled fairly.",
+            "de": "Vom geliehenen Buch bis zum öffentlichen Amt: Alles Anvertraute ist zurückzugeben oder gerecht zu verwalten.",
+            "ar": "من كتابٍ مستعار إلى منصبٍ عام، كل ما اؤتمنت عليه يُردّ أو يُدار بالعدل."
+          }
+        },
+        {
+          "verse": "55:7-9",
+          "check": "the balance",
+          "title": {
+            "en": "The balance of creation",
+            "de": "Das Gleichgewicht der Schöpfung",
+            "ar": "ميزان الخلق"
+          },
+          "body": {
+            "en": "The universe runs on order and balance. We are asked to keep that balance in trade, speech and judgement.",
+            "de": "Das Universum beruht auf Ordnung und Gleichgewicht. Wir sollen dieses Maß in Handel, Rede und Urteil wahren.",
+            "ar": "في الكون نظام وتوازن، ونحن مدعوون إلى حفظ هذا التوازن في البيع والكلام والحكم."
+          }
+        },
+        {
+          "verse": "83:1-3",
+          "check": "give less",
+          "title": {
+            "en": "Small unfairness counts",
+            "de": "Auch kleine Ungerechtigkeit zählt",
+            "ar": "الظلم الصغير محسوب"
+          },
+          "body": {
+            "en": "A surah opens with those who shortchange others. Today that can be working hours, quality or a hidden fee.",
+            "de": "Eine Sure beginnt mit denen, die andere übervorteilen. Heute können das Arbeitsstunden, Qualität oder versteckte Gebühren sein.",
+            "ar": "تبدأ سورة بمن يبخسون الناس، واليوم قد يكون ذلك في ساعات العمل أو الجودة أو رسوم خفية."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-knowledge",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 13",
+          "de": "Verse für das Herz · 13",
+          "ar": "آيات للقلب · ١٣"
+        },
+        "title": {
+          "en": "6 verses about knowledge",
+          "de": "6 Verse über Wissen",
+          "ar": "٦ آيات عن العلم"
+        },
+        "sub": {
+          "en": "A faith whose revelation began with the word: read",
+          "de": "Ein Glaube, dessen Offenbarung mit dem Wort 'Lies' begann",
+          "ar": "دينٌ بدأ وحيه بكلمة: اقرأ"
+        },
+        "arabic": "العِلْم"
+      },
+      "slides": [
+        {
+          "verse": "96:1-3",
+          "check": "Recite in the name of your Lord",
+          "title": {
+            "en": "The first revealed words",
+            "de": "Die ersten offenbarten Worte",
+            "ar": "أول ما نزل"
+          },
+          "body": {
+            "en": "Revelation began with reading and learning, in the name of the One who creates.",
+            "de": "Die Offenbarung begann mit Lesen und Lernen, im Namen Dessen, der erschafft.",
+            "ar": "بدأ الوحي بالقراءة والتعلم، باسم الخالق سبحانه."
+          }
+        },
+        {
+          "verse": "20:114",
+          "check": "increase me in knowledge",
+          "title": {
+            "en": "A dua for more",
+            "de": "Ein Bittgebet um mehr",
+            "ar": "دعاء الاستزادة"
+          },
+          "body": {
+            "en": "The Prophet is taught a short dua for more knowledge. You can say it before every lesson.",
+            "de": "Der Prophet lernt ein kurzes Bittgebet um mehr Wissen. Sie können es vor jeder Lerneinheit sprechen.",
+            "ar": "عُلّم النبي ﷺ دعاءً قصيرًا يسأل فيه الزيادة من العلم، ويمكنك أن تقوله قبل كل درس."
+          }
+        },
+        {
+          "verse": "39:9",
+          "check": "those who know equal",
+          "title": {
+            "en": "Not the same",
+            "de": "Nicht gleich",
+            "ar": "لا يستويان"
+          },
+          "body": {
+            "en": "The question needs no answer. Knowledge here sits beside night prayer and hope in His mercy.",
+            "de": "Die Frage braucht keine Antwort. Wissen steht hier neben dem Nachtgebet und der Hoffnung auf Seine Barmherzigkeit.",
+            "ar": "السؤال لا يحتاج إلى جواب، والعلم هنا يقترن بقيام الليل ورجاء الرحمة."
+          }
+        },
+        {
+          "verse": "2:31-32",
+          "check": "taught Adam the names",
+          "title": {
+            "en": "Humans were taught",
+            "de": "Der Mensch wurde belehrt",
+            "ar": "الإنسان المتعلِّم"
+          },
+          "body": {
+            "en": "Adam's honour came with knowledge. The angels' reply teaches humility: all we know, He taught.",
+            "de": "Adams Würde kam mit dem Wissen. Die Antwort der Engel lehrt Demut: Alles, was wir wissen, hat Er gelehrt.",
+            "ar": "اقترن تكريم آدم بالعلم، وجواب الملائكة يعلّمنا التواضع: كل علمٍ عندنا فهو من تعليمه."
+          }
+        },
+        {
+          "verse": "35:28",
+          "check": "who have knowledge",
+          "title": {
+            "en": "Knowledge that softens",
+            "de": "Wissen, das weich macht",
+            "ar": "علمٌ يورث الخشية"
+          },
+          "body": {
+            "en": "Right after the colours of nature, true knowledge is linked with awe of Allah. Learning should humble.",
+            "de": "Direkt nach den Farben der Natur wird wahres Wissen mit Ehrfurcht vor Allah verbunden. Lernen sollte demütig machen.",
+            "ar": "بعد ذكر ألوان الطبيعة يُربط العلم الحق بخشية الله، فالعلم ينبغي أن يورث التواضع."
+          }
+        },
+        {
+          "verse": "17:85",
+          "check": "except a little",
+          "title": {
+            "en": "Only a little",
+            "de": "Nur wenig",
+            "ar": "قليلٌ مهما كثر"
+          },
+          "body": {
+            "en": "However much we learn, it is little. That keeps a student curious and a scholar humble.",
+            "de": "Wie viel wir auch lernen, es ist wenig. Das hält Lernende neugierig und Gelehrte demütig.",
+            "ar": "مهما تعلّمنا فهو قليل، وهذا يُبقي الطالب شغوفًا والعالم متواضعًا."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sahih al-Bukhari 3, on the beginning of revelation",
+          "url": "https://sunnah.com/bukhari:3"
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-family",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 14",
+          "de": "Verse für das Herz · 14",
+          "ar": "آيات للقلب · ١٤"
+        },
+        "title": {
+          "en": "6 verses about marriage and family",
+          "de": "6 Verse über Ehe und Familie",
+          "ar": "٦ آيات عن الزواج والأسرة"
+        },
+        "sub": {
+          "en": "Tranquillity, kindness and a home built on mercy",
+          "de": "Ruhe, Güte und ein Zuhause, das auf Barmherzigkeit gebaut ist",
+          "ar": "سكنٌ ومودّة وبيتٌ قائم على الرحمة"
+        },
+        "arabic": "المَوَدَّة والرَّحْمَة"
+      },
+      "slides": [
+        {
+          "verse": "30:21",
+          "check": "affection and mercy",
+          "title": {
+            "en": "A sign of Allah",
+            "de": "Ein Zeichen Allahs",
+            "ar": "آيةٌ من آيات الله"
+          },
+          "body": {
+            "en": "Marriage is listed among the signs of Allah, like the heavens. Its aim is rest, love and mercy.",
+            "de": "Die Ehe wird unter den Zeichen Allahs genannt, wie der Himmel. Ihr Ziel ist Ruhe, Liebe und Barmherzigkeit.",
+            "ar": "يُذكر الزواج بين آيات الله كالسماوات، وغايته السكن والمحبة والرحمة."
+          }
+        },
+        {
+          "verse": "4:1",
+          "check": "from one soul",
+          "title": {
+            "en": "One origin",
+            "de": "Ein Ursprung",
+            "ar": "أصلٌ واحد"
+          },
+          "body": {
+            "en": "All people come from one soul. The verse also asks us to honour the ties of kinship.",
+            "de": "Alle Menschen stammen von einer Seele. Der Vers mahnt auch, die Bande der Verwandtschaft zu achten.",
+            "ar": "يرجع الناس جميعًا إلى نفس واحدة، والآية توصي أيضًا بصلة الأرحام."
+          }
+        },
+        {
+          "verse": "4:19",
+          "check": "live with them in kindness",
+          "title": {
+            "en": "Live in kindness",
+            "de": "In Güte zusammenleben",
+            "ar": "المعاشرة بالمعروف"
+          },
+          "body": {
+            "en": "Kindness is not only for good days. Even in times of dislike, the verse points to good we may not yet see.",
+            "de": "Güte gilt nicht nur an guten Tagen. Selbst in Zeiten der Abneigung weist der Vers auf Gutes, das wir noch nicht sehen.",
+            "ar": "ليس المعروف للأيام الطيبة فقط، فحتى عند النفور تذكّر الآية بخيرٍ قد لا نراه بعد."
+          }
+        },
+        {
+          "verse": "4:128",
+          "check": "settlement is best",
+          "title": {
+            "en": "Making peace is best",
+            "de": "Versöhnung ist das Beste",
+            "ar": "الإصلاح أولى"
+          },
+          "body": {
+            "en": "Conflict happens in every home. The Quran's advice is to seek a settlement, and to be generous in it.",
+            "de": "Streit gibt es in jedem Zuhause. Der Rat des Korans ist, eine Einigung zu suchen und dabei großzügig zu sein.",
+            "ar": "الخلاف يقع في كل بيت، ونصيحة القرآن أن نسعى إلى التصالح ونتسامح فيه."
+          }
+        },
+        {
+          "verse": "25:74",
+          "check": "comfort to our eyes",
+          "title": {
+            "en": "A dua for the family",
+            "de": "Ein Bittgebet für die Familie",
+            "ar": "دعاءٌ للأسرة"
+          },
+          "body": {
+            "en": "The servants of the Most Merciful ask for spouses and children who bring joy, and to be good examples themselves.",
+            "de": "Die Diener des Allerbarmers bitten um Ehepartner und Kinder, die Freude schenken, und darum, selbst Vorbilder zu sein.",
+            "ar": "يسأل عباد الرحمن أزواجًا وأبناءً تسعد بهم النفوس، وأن يكونوا هم قدوة صالحة."
+          }
+        },
+        {
+          "verse": "20:132",
+          "check": "enjoin prayer upon your family",
+          "title": {
+            "en": "Prayer at the centre",
+            "de": "Das Gebet in der Mitte",
+            "ar": "الصلاة في قلب البيت"
+          },
+          "body": {
+            "en": "Encourage prayer at home with patience, and keep at it yourself. Provision is His concern.",
+            "de": "Fördern Sie das Gebet zu Hause mit Geduld und bleiben Sie selbst beständig. Die Versorgung ist Seine Sache.",
+            "ar": "شجّع على الصلاة في بيتك بصبر، واثبت عليها أنت، فالرزق بيده سبحانه."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-orphans",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 15",
+          "de": "Verse für das Herz · 15",
+          "ar": "آيات للقلب · ١٥"
+        },
+        "title": {
+          "en": "6 verses about the poor and orphans",
+          "de": "6 Verse über Arme und Waisen",
+          "ar": "٦ آيات عن الفقراء والأيتام"
+        },
+        "sub": {
+          "en": "Faith that shows in how we treat the vulnerable",
+          "de": "Glaube, der sich im Umgang mit den Schwachen zeigt",
+          "ar": "إيمانٌ يظهر في معاملة الضعفاء"
+        },
+        "arabic": "اليَتِيم"
+      },
+      "slides": [
+        {
+          "verse": "93:9-10",
+          "check": "orphan",
+          "title": {
+            "en": "From one orphan to all orphans",
+            "de": "Von einem Waisen für alle Waisen",
+            "ar": "من يتيمٍ إلى كل يتيم"
+          },
+          "body": {
+            "en": "The Prophet grew up an orphan. The surah reminds him of it, then asks him to care for orphans and those who ask.",
+            "de": "Der Prophet wuchs als Waise auf. Die Sure erinnert ihn daran und bittet ihn dann, sich um Waisen und Bittende zu kümmern.",
+            "ar": "نشأ النبي ﷺ يتيمًا، والسورة تذكّره بذلك ثم توصيه باليتيم والسائل."
+          }
+        },
+        {
+          "verse": "107:1-3",
+          "check": "drives away the orphan",
+          "title": {
+            "en": "Faith in practice",
+            "de": "Glaube in der Praxis",
+            "ar": "الدين في الواقع"
+          },
+          "body": {
+            "en": "Al-Ma'un links denying the Judgement with pushing away the orphan. Belief shows in behaviour.",
+            "de": "Al-Maun verbindet das Leugnen des Gerichts mit dem Wegstoßen der Waise. Glaube zeigt sich im Verhalten.",
+            "ar": "تربط سورة الماعون التكذيب بيوم الجزاء بقسوة المعاملة لليتيم، فالإيمان يظهر في السلوك."
+          }
+        },
+        {
+          "verse": "76:8-9",
+          "check": "give food in spite of love for it",
+          "title": {
+            "en": "Giving without expecting thanks",
+            "de": "Geben, ohne Dank zu erwarten",
+            "ar": "عطاءٌ بلا انتظار شكر"
+          },
+          "body": {
+            "en": "The highest giving looks for no return at all. Its only aim is Allah's pleasure.",
+            "de": "Das höchste Geben sucht keinerlei Gegenleistung. Sein einziges Ziel ist Allahs Wohlgefallen.",
+            "ar": "أسمى العطاء ما لا ينتظر مقابلًا، وغايته رضا الله وحده."
+          }
+        },
+        {
+          "verse": "90:14-16",
+          "check": "day of severe hunger",
+          "title": {
+            "en": "The steep path",
+            "de": "Der steile Weg",
+            "ar": "العقبة"
+          },
+          "body": {
+            "en": "Surah al-Balad calls feeding the hungry a steep climb. It is hard on the self, and that is its worth.",
+            "de": "Sure al-Balad nennt das Speisen der Hungernden einen steilen Aufstieg. Er ist mühsam für das Ego, und darin liegt sein Wert.",
+            "ar": "تجعل سورة البلد إطعام الجائع عقبة تُقتحم، فهو شاقّ على النفس، وفي ذلك قيمته."
+          }
+        },
+        {
+          "verse": "51:19",
+          "check": "the deprived",
+          "title": {
+            "en": "A right, not a favour",
+            "de": "Ein Recht, keine Gunst",
+            "ar": "حقٌّ لا منّة"
+          },
+          "body": {
+            "en": "What the needy receive from your wealth is called their right. Giving becomes fairness, not condescension.",
+            "de": "Was Bedürftige von Ihrem Besitz erhalten, wird ihr Recht genannt. Geben wird so zur Gerechtigkeit, nicht zur Herablassung.",
+            "ar": "ما يأخذه المحتاج من مالك يسمّى حقًّا له، فيصير العطاء عدلًا لا تفضّلًا."
+          }
+        },
+        {
+          "verse": "2:215",
+          "check": "orphans and the needy",
+          "title": {
+            "en": "Start close",
+            "de": "Nah beginnen",
+            "ar": "ابدأ بالأقرب"
+          },
+          "body": {
+            "en": "The order teaches: begin with those closest to you, then widen the circle. Every good deed is known to Him.",
+            "de": "Die Reihenfolge lehrt: Beginnen Sie bei den Nächsten, dann weiten Sie den Kreis. Jede gute Tat ist Ihm bekannt.",
+            "ar": "يعلّمنا الترتيب أن نبدأ بالأقرب ثم نوسّع الدائرة، وكل خيرٍ معلوم عنده."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-speech",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 16",
+          "de": "Verse für das Herz · 16",
+          "ar": "آيات للقلب · ١٦"
+        },
+        "title": {
+          "en": "6 verses about the words we speak",
+          "de": "6 Verse über unsere Worte",
+          "ar": "٦ آيات عن الكلمة"
+        },
+        "sub": {
+          "en": "Before you speak, post or reply",
+          "de": "Bevor Sie sprechen, posten oder antworten",
+          "ar": "قبل أن تتكلم أو تنشر أو تردّ"
+        },
+        "arabic": "الكَلِمَة الطَّيِّبَة"
+      },
+      "slides": [
+        {
+          "verse": "17:53",
+          "check": "say that which is best",
+          "title": {
+            "en": "Choose the best words",
+            "de": "Die besten Worte wählen",
+            "ar": "اختر الأحسن"
+          },
+          "body": {
+            "en": "Not just true or allowed, but the best. Harsh words open a door to division.",
+            "de": "Nicht nur wahr oder erlaubt, sondern die besten. Harte Worte öffnen der Spaltung die Tür.",
+            "ar": "لا يكفي أن يكون الكلام صحيحًا أو جائزًا، بل الأحسن، فالكلمة القاسية تفتح باب الفرقة."
+          }
+        },
+        {
+          "verse": "14:24",
+          "check": "a good word like a good tree",
+          "title": {
+            "en": "A good word grows",
+            "de": "Ein gutes Wort wächst",
+            "ar": "الكلمة الطيبة تنمو"
+          },
+          "body": {
+            "en": "Like a tree, a kind word keeps giving long after it was spoken.",
+            "de": "Wie ein Baum gibt ein gutes Wort noch lange, nachdem es gesagt wurde.",
+            "ar": "كالشجرة، يبقى خير الكلمة الطيبة بعد قولها بزمن طويل."
+          }
+        },
+        {
+          "verse": "20:44",
+          "check": "gentle speech",
+          "title": {
+            "en": "Gentle, even with Pharaoh",
+            "de": "Sanft, sogar mit Pharao",
+            "ar": "اللين حتى مع فرعون"
+          },
+          "body": {
+            "en": "If Moses was told to speak softly to a tyrant, how should we speak to family and friends?",
+            "de": "Wenn Mose mit einem Tyrannen sanft reden sollte, wie sollten wir dann mit Familie und Freunden sprechen?",
+            "ar": "إذا أُمر موسى باللين مع طاغية، فكيف ينبغي أن نكلّم أهلنا وأصدقاءنا؟"
+          }
+        },
+        {
+          "verse": "33:70-71",
+          "check": "speak words of appropriate justice",
+          "title": {
+            "en": "Straight words",
+            "de": "Aufrichtige Worte",
+            "ar": "القول السديد"
+          },
+          "body": {
+            "en": "Honest, fitting speech is linked to two gifts: better deeds and forgiven sins.",
+            "de": "Aufrichtige, treffende Rede ist mit zwei Gaben verbunden: besseren Taten und vergebenen Sünden.",
+            "ar": "يرتبط القول السديد بعطاءين: صلاح الأعمال ومغفرة الذنوب."
+          }
+        },
+        {
+          "verse": "49:6",
+          "check": "investigate",
+          "title": {
+            "en": "Check before you share",
+            "de": "Prüfen, bevor Sie teilen",
+            "ar": "تثبّت قبل أن تنشر"
+          },
+          "body": {
+            "en": "A rule for every forwarded message: verify first, or you may harm people and regret it.",
+            "de": "Eine Regel für jede weitergeleitete Nachricht: erst prüfen, sonst schaden Sie vielleicht Menschen und bereuen es.",
+            "ar": "قاعدة لكل رسالة تُعاد: تثبّت أولًا، وإلا فقد تؤذي الناس ثم تندم."
+          }
+        },
+        {
+          "verse": "50:18",
+          "check": "utters no word",
+          "title": {
+            "en": "Every word is recorded",
+            "de": "Jedes Wort wird aufgezeichnet",
+            "ar": "كل كلمة مكتوبة"
+          },
+          "body": {
+            "en": "Spoken, typed or whispered: nothing is lost. That makes us careful, and hopeful for every good word.",
+            "de": "Gesprochen, getippt oder geflüstert: Nichts geht verloren. Das macht vorsichtig und hoffnungsvoll für jedes gute Wort.",
+            "ar": "منطوقة أو مكتوبة أو همسًا، لا يضيع شيء، فلنحذر، ولنرجُ ثواب كل كلمة طيبة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-humility",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 17",
+          "de": "Verse für das Herz · 17",
+          "ar": "آيات للقلب · ١٧"
+        },
+        "title": {
+          "en": "6 verses about humility",
+          "de": "6 Verse über Demut",
+          "ar": "٦ آيات عن التواضع"
+        },
+        "sub": {
+          "en": "Walking gently on the earth",
+          "de": "Sanft über die Erde gehen",
+          "ar": "المشي على الأرض بسكينة"
+        },
+        "arabic": "التَّوَاضُع"
+      },
+      "slides": [
+        {
+          "verse": "25:63",
+          "check": "walk upon the earth easily",
+          "title": {
+            "en": "The way they walk",
+            "de": "Wie sie gehen",
+            "ar": "مِشيتهم"
+          },
+          "body": {
+            "en": "The first trait of the servants of the Most Merciful is how they move, and how they answer rudeness.",
+            "de": "Das erste Merkmal der Diener des Allerbarmers ist, wie sie gehen und wie sie auf Grobheit antworten.",
+            "ar": "أول صفات عباد الرحمن طريقة مشيهم، وطريقة ردّهم على الجاهل."
+          }
+        },
+        {
+          "verse": "31:18",
+          "check": "do not turn your cheek",
+          "title": {
+            "en": "Luqman's advice to his son",
+            "de": "Luqmans Rat an seinen Sohn",
+            "ar": "وصية لقمان لابنه"
+          },
+          "body": {
+            "en": "Do not look down on people. A father's advice that fits every age, social media included.",
+            "de": "Schauen Sie nicht auf Menschen herab. Ein väterlicher Rat für jede Zeit, auch für soziale Medien.",
+            "ar": "لا تتعالَ على الناس؛ وصية أبٍ تصلح لكل زمان، حتى لوسائل التواصل."
+          }
+        },
+        {
+          "verse": "17:37",
+          "check": "never reach the mountains in height",
+          "title": {
+            "en": "Perspective",
+            "de": "Perspektive",
+            "ar": "اعرف قدرك"
+          },
+          "body": {
+            "en": "However tall we stand, the mountains are taller. Pride forgets its true size.",
+            "de": "Wie groß wir auch dastehen, die Berge sind höher. Stolz vergisst die eigene Größe.",
+            "ar": "مهما علونا فالجبال أعلى، والكِبر ينسى حجمه الحقيقي."
+          }
+        },
+        {
+          "verse": "28:83",
+          "check": "do not desire exaltedness",
+          "title": {
+            "en": "The home is for the humble",
+            "de": "Das Zuhause gehört den Demütigen",
+            "ar": "الدار للمتواضعين"
+          },
+          "body": {
+            "en": "The Hereafter is promised to those who do not seek to rise above others, not even in their wishes.",
+            "de": "Das Jenseits wird denen verheißen, die sich nicht über andere erheben wollen, nicht einmal in ihren Wünschen.",
+            "ar": "وُعدت الدار الآخرة لمن لا يطلب الترفّع على الناس، ولو في رغباته."
+          }
+        },
+        {
+          "verse": "7:55",
+          "check": "in humility and privately",
+          "title": {
+            "en": "Humble in dua",
+            "de": "Demütig im Bittgebet",
+            "ar": "التواضع في الدعاء"
+          },
+          "body": {
+            "en": "Humility includes how we ask: quietly, sincerely, without show.",
+            "de": "Demut zeigt sich auch darin, wie wir bitten: leise, aufrichtig, ohne Zurschaustellung.",
+            "ar": "من التواضع طريقة الدعاء: بخفاء وصدق وبلا رياء."
+          }
+        },
+        {
+          "verse": "53:32",
+          "check": "do not claim yourselves to be pure",
+          "title": {
+            "en": "Do not praise yourself",
+            "de": "Loben Sie sich nicht selbst",
+            "ar": "لا تمدح نفسك"
+          },
+          "body": {
+            "en": "He knew us before we were born. That is reason enough not to boast of our own goodness.",
+            "de": "Er kannte uns, bevor wir geboren wurden. Das ist Grund genug, nicht mit der eigenen Güte zu prahlen.",
+            "ar": "علِمَنا قبل أن نولد، وهذا كافٍ كي لا نتباهى بصلاحنا."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-steadfastness",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 18",
+          "de": "Verse für das Herz · 18",
+          "ar": "آيات للقلب · ١٨"
+        },
+        "title": {
+          "en": "6 verses for staying steadfast",
+          "de": "6 Verse für Standhaftigkeit",
+          "ar": "٦ آيات عن الثبات"
+        },
+        "sub": {
+          "en": "When motivation fades and you want to keep going",
+          "de": "Wenn die Motivation nachlässt und Sie weitermachen wollen",
+          "ar": "حين يفتر الحماس وتريد أن تستمر"
+        },
+        "arabic": "الاسْتِقَامَة"
+      },
+      "slides": [
+        {
+          "verse": "11:112",
+          "check": "remain on a right course",
+          "title": {
+            "en": "Stay on course",
+            "de": "Auf Kurs bleiben",
+            "ar": "الاستقامة"
+          },
+          "body": {
+            "en": "Istiqama means staying upright and consistent, without excess and without falling short.",
+            "de": "Istiqama bedeutet, aufrecht und beständig zu bleiben, ohne Übertreibung und ohne Nachlassen.",
+            "ar": "الاستقامة ثباتٌ واعتدال، بلا غلوّ ولا تقصير."
+          }
+        },
+        {
+          "verse": "41:30",
+          "check": "remained on a right course",
+          "title": {
+            "en": "Angels for the steadfast",
+            "de": "Engel für die Standhaften",
+            "ar": "ملائكة للمستقيمين"
+          },
+          "body": {
+            "en": "Two steps: believe, then keep going. The reward is angels bringing calm and good news.",
+            "de": "Zwei Schritte: glauben und dann dabei bleiben. Der Lohn sind Engel, die Ruhe und frohe Botschaft bringen.",
+            "ar": "خطوتان: الإيمان ثم الثبات عليه، والجزاء ملائكة تتنزّل بالطمأنينة والبشرى."
+          }
+        },
+        {
+          "verse": "14:27",
+          "check": "keeps firm those who believe",
+          "title": {
+            "en": "Firmness is a gift",
+            "de": "Festigkeit ist ein Geschenk",
+            "ar": "الثبات هبة"
+          },
+          "body": {
+            "en": "Steadfastness is not only willpower. Allah grants it, in this life and the next, so ask Him for it.",
+            "de": "Standhaftigkeit ist nicht nur Willenskraft. Allah schenkt sie, im Diesseits und im Jenseits, also bitten Sie Ihn darum.",
+            "ar": "ليس الثبات قوة إرادة فقط، بل يهبه الله في الدنيا والآخرة، فاسأله إياه."
+          }
+        },
+        {
+          "verse": "3:8",
+          "check": "let not our hearts deviate",
+          "title": {
+            "en": "A dua for a steady heart",
+            "de": "Ein Bittgebet für ein festes Herz",
+            "ar": "دعاءٌ لثبات القلب"
+          },
+          "body": {
+            "en": "Those firm in knowledge still ask for this. Guidance received is never to be taken for granted.",
+            "de": "Selbst die im Wissen Gefestigten bitten darum. Empfangene Rechtleitung ist nie selbstverständlich.",
+            "ar": "حتى الراسخون في العلم يدعون بهذا، فالهداية لا تُعدّ أمرًا مضمونًا."
+          }
+        },
+        {
+          "verse": "3:146",
+          "check": "loves the steadfast",
+          "title": {
+            "en": "They did not weaken",
+            "de": "Sie wurden nicht schwach",
+            "ar": "لم يضعفوا"
+          },
+          "body": {
+            "en": "Many before us suffered for their faith and kept going. Their example is meant to steady ours.",
+            "de": "Viele vor uns litten für ihren Glauben und machten weiter. Ihr Beispiel soll uns festigen.",
+            "ar": "كثيرون قبلنا أصابتهم الشدائد في سبيل إيمانهم فثبتوا، ومثالهم يثبّتنا."
+          }
+        },
+        {
+          "verse": "29:69",
+          "check": "strive for Us",
+          "title": {
+            "en": "Effort is answered",
+            "de": "Mühe wird beantwortet",
+            "ar": "المجاهدة تُثمر"
+          },
+          "body": {
+            "en": "Every sincere effort toward Him is met with guidance. Small, consistent steps count.",
+            "de": "Jede aufrichtige Mühe um Ihn wird mit Rechtleitung beantwortet. Kleine, beständige Schritte zählen.",
+            "ar": "كل جهدٍ صادق في سبيله يقابَل بالهداية، وللخطوات الصغيرة الدائمة وزن."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-prayer",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 19",
+          "de": "Verse für das Herz · 19",
+          "ar": "آيات للقلب · ١٩"
+        },
+        "title": {
+          "en": "6 verses about prayer",
+          "de": "6 Verse über das Gebet",
+          "ar": "٦ آيات عن الصلاة"
+        },
+        "sub": {
+          "en": "Why salah is the heart of the day",
+          "de": "Warum das Gebet das Herz des Tages ist",
+          "ar": "لماذا الصلاة قلب اليوم"
+        },
+        "arabic": "الصَّلَاة"
+      },
+      "slides": [
+        {
+          "verse": "20:14",
+          "check": "establish prayer for My remembrance",
+          "title": {
+            "en": "Prayer is remembrance",
+            "de": "Gebet ist Gedenken",
+            "ar": "الصلاة ذكر"
+          },
+          "body": {
+            "en": "Said to Moses at the very start of his mission: prayer exists so that we remember Him.",
+            "de": "Zu Mose gesagt, ganz am Anfang seiner Sendung: Das Gebet ist da, damit wir Seiner gedenken.",
+            "ar": "قيلت لموسى في أول رسالته: الصلاة لذكر الله."
+          }
+        },
+        {
+          "verse": "29:45",
+          "check": "prayer prohibits immorality",
+          "title": {
+            "en": "Prayer shapes character",
+            "de": "Gebet formt den Charakter",
+            "ar": "الصلاة تهذّب"
+          },
+          "body": {
+            "en": "A living prayer changes how we act between prayers. If it does not yet, keep praying and keep improving it.",
+            "de": "Ein lebendiges Gebet verändert unser Verhalten zwischen den Gebeten. Wenn noch nicht, beten Sie weiter und verbessern Sie es.",
+            "ar": "الصلاة الحية تغيّر سلوكنا بين الصلوات، فإن لم يظهر ذلك بعد فداوم عليها وأحسِنها."
+          }
+        },
+        {
+          "verse": "2:238",
+          "check": "Maintain with care",
+          "title": {
+            "en": "Guard your prayers",
+            "de": "Wahren Sie Ihre Gebete",
+            "ar": "المحافظة على الصلاة"
+          },
+          "body": {
+            "en": "In the middle of verses on family law comes a call to guard the prayers. Busy or painful times are no exception.",
+            "de": "Mitten in Versen über Familienrecht steht der Aufruf, die Gebete zu wahren. Auch volle oder schmerzliche Zeiten sind keine Ausnahme.",
+            "ar": "في وسط آيات أحكام الأسرة يأتي الأمر بالمحافظة على الصلاة، فلا استثناء حتى في أوقات الانشغال والألم."
+          }
+        },
+        {
+          "verse": "11:114",
+          "check": "good deeds do away with misdeeds",
+          "title": {
+            "en": "Prayer washes",
+            "de": "Gebet wäscht rein",
+            "ar": "الصلاة تمحو"
+          },
+          "body": {
+            "en": "Prayer at both ends of the day is linked to good deeds erasing bad ones. Each prayer is a fresh start.",
+            "de": "Das Gebet an beiden Enden des Tages wird damit verbunden, dass gute Taten schlechte tilgen. Jedes Gebet ist ein Neuanfang.",
+            "ar": "تُربط الصلاة في طرفي النهار بمحو الحسنات للسيئات، فكل صلاة بداية جديدة."
+          }
+        },
+        {
+          "verse": "23:1-2",
+          "check": "humbly intent",
+          "title": {
+            "en": "Success begins here",
+            "de": "Erfolg beginnt hier",
+            "ar": "الفلاح يبدأ هنا"
+          },
+          "body": {
+            "en": "The first quality of successful believers is presence in prayer. Start by slowing down one prayer a day.",
+            "de": "Die erste Eigenschaft der erfolgreichen Gläubigen ist Gegenwart im Gebet. Beginnen Sie damit, ein Gebet am Tag langsamer zu verrichten.",
+            "ar": "أول صفات المؤمنين المفلحين الخشوع في الصلاة، فابدأ بأن تتمهّل في صلاة واحدة كل يوم."
+          }
+        },
+        {
+          "verse": "96:19",
+          "check": "prostrate and draw near",
+          "title": {
+            "en": "Closest in sujud",
+            "de": "Am nächsten in der Niederwerfung",
+            "ar": "القرب في السجود"
+          },
+          "body": {
+            "en": "Surah al-Alaq ends with prostration as a way of drawing near. Make your sujud a little longer today.",
+            "de": "Sure al-Alaq endet mit der Niederwerfung als Weg der Annäherung. Verweilen Sie heute etwas länger im Sudschud.",
+            "ar": "تُختم سورة العلق بالسجود سبيلًا إلى القرب، فأطِل سجودك قليلًا اليوم."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verses-for-the-heart-creation",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Verses for the heart · 20",
+          "de": "Verse für das Herz · 20",
+          "ar": "آيات للقلب · ٢٠"
+        },
+        "title": {
+          "en": "6 verses on the beauty of creation",
+          "de": "6 Verse über die Schönheit der Schöpfung",
+          "ar": "٦ آيات عن جمال الخلق"
+        },
+        "sub": {
+          "en": "An invitation to look up, look around and reflect",
+          "de": "Eine Einladung, aufzublicken, sich umzusehen und nachzudenken",
+          "ar": "دعوةٌ إلى النظر والتأمل"
+        },
+        "arabic": "التَّفَكُّر"
+      },
+      "slides": [
+        {
+          "verse": "3:190-191",
+          "check": "give thought to the creation",
+          "title": {
+            "en": "Reflection as worship",
+            "de": "Nachdenken als Gottesdienst",
+            "ar": "التفكر عبادة"
+          },
+          "body": {
+            "en": "Looking at the sky with a thinking heart is counted as remembrance. Try it tonight for five minutes.",
+            "de": "Den Himmel mit nachdenkendem Herzen zu betrachten zählt als Gedenken. Versuchen Sie es heute Abend für fünf Minuten.",
+            "ar": "النظر إلى السماء بقلبٍ متفكر من الذكر، فجرّب ذلك الليلة خمس دقائق."
+          }
+        },
+        {
+          "verse": "67:3",
+          "check": "any inconsistency",
+          "title": {
+            "en": "Look again",
+            "de": "Schauen Sie noch einmal",
+            "ar": "انظر مرة أخرى"
+          },
+          "body": {
+            "en": "The verse invites a second look, then another. The more you look, the more order you find.",
+            "de": "Der Vers lädt zu einem zweiten Blick ein, dann zu einem weiteren. Je mehr Sie schauen, desto mehr Ordnung finden Sie.",
+            "ar": "تدعوك الآية إلى نظرة ثانية ثم أخرى، وكلما نظرت وجدت مزيدًا من الإتقان."
+          }
+        },
+        {
+          "verse": "88:17-19",
+          "check": "camels",
+          "title": {
+            "en": "Everyday wonders",
+            "de": "Alltägliche Wunder",
+            "ar": "عجائب مألوفة"
+          },
+          "body": {
+            "en": "Camels, sky and mountains were the daily view of the first listeners. Wonder starts with what is in front of you.",
+            "de": "Kamele, Himmel und Berge waren der tägliche Anblick der ersten Zuhörer. Staunen beginnt mit dem, was vor Ihnen liegt.",
+            "ar": "الإبل والسماء والجبال كانت مشهد السامعين الأوائل كل يوم، والتأمل يبدأ بما أمامك."
+          }
+        },
+        {
+          "verse": "30:22",
+          "check": "diversity of your languages",
+          "title": {
+            "en": "Diversity as a sign",
+            "de": "Vielfalt als Zeichen",
+            "ar": "التنوع آية"
+          },
+          "body": {
+            "en": "Different languages and colours are not a problem to solve. They are signs, for those who know.",
+            "de": "Unterschiedliche Sprachen und Hautfarben sind kein Problem, das gelöst werden muss. Sie sind Zeichen für die Wissenden.",
+            "ar": "تعدّد اللغات والألوان ليس مشكلة تُحل، بل آيةٌ لأهل العلم."
+          }
+        },
+        {
+          "verse": "35:27",
+          "check": "fruits of varying colors",
+          "title": {
+            "en": "A palette of colours",
+            "de": "Eine Palette von Farben",
+            "ar": "لوحةٌ من الألوان"
+          },
+          "body": {
+            "en": "The Quran pays attention to colour, in fruit and in rock. Beauty itself points to its Maker.",
+            "de": "Der Koran achtet auf Farben, in Früchten und im Gestein. Schönheit selbst weist auf ihren Schöpfer.",
+            "ar": "يلتفت القرآن إلى الألوان في الثمار والصخور، والجمال نفسه يدلّ على صانعه."
+          }
+        },
+        {
+          "verse": "24:41",
+          "check": "birds with wings spread",
+          "title": {
+            "en": "Everything is praising",
+            "de": "Alles lobpreist",
+            "ar": "كل شيء يسبّح"
+          },
+          "body": {
+            "en": "Birds in flight have their own way of glorifying Him. When you hear birdsong, join in.",
+            "de": "Vögel im Flug haben ihre eigene Weise, Ihn zu preisen. Wenn Sie Vogelgesang hören, stimmen Sie mit ein.",
+            "ar": "للطير في أعالي السماء تسبيحها الخاص، فإذا سمعت تغريدها فشاركها التسبيح."
+          }
+        }
+      ]
+    }
+  ]
+}

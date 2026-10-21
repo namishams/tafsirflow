@@ -1,0 +1,120 @@
+{
+  "set": "reflections-ease",
+  "kind": "reflection",
+  "theme": "ease",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-ease-01",
+      "text": {
+        "en": "The knot that seemed impossible this morning may loosen by evening. Many hard days end gentler than they began.",
+        "de": "Der Knoten, der heute Morgen unlösbar schien, lockert sich vielleicht bis zum Abend. Viele schwere Tage enden sanfter, als sie begonnen haben.",
+        "ar": "العقدة التي بدت مستحيلة هذا الصباح قد تنحل قبل المساء، وكثير من الأيام الصعبة تنتهي أرق مما بدأت."
+      }
+    },
+    {
+      "id": "wr-ease-02",
+      "text": {
+        "en": "Winter never cancels spring. The bare branches outside your window are already preparing their leaves.",
+        "de": "Der Winter hebt den Frühling nie auf. Die kahlen Äste vor Ihrem Fenster bereiten schon ihre Blätter vor.",
+        "ar": "الشتاء لا يلغي الربيع أبدا، فالأغصان العارية خارج نافذتك تعد أوراقها منذ الآن."
+      }
+    },
+    {
+      "id": "wr-ease-03",
+      "text": {
+        "en": "Look back at the hardest year of your life. You are still here, and you learned to carry what you once thought impossible.",
+        "de": "Schauen Sie zurück auf das schwerste Jahr Ihres Lebens. Sie sind noch hier, und Sie haben gelernt, zu tragen, was Sie einst für unmöglich hielten.",
+        "ar": "انظر إلى أصعب عام في حياتك: ما زلت هنا، وتعلمت أن تحمل ما كنت تظنه يوما مستحيلا."
+      }
+    },
+    {
+      "id": "wr-ease-04",
+      "text": {
+        "en": "Relief often arrives quietly: a phone call, a letter, a kind word at the right moment. Keep your heart open to notice it.",
+        "de": "Erleichterung kommt oft leise: ein Anruf, ein Brief, ein freundliches Wort im richtigen Moment. Halten Sie Ihr Herz offen, um sie zu bemerken.",
+        "ar": "كثيرا ما يأتي الفرج بهدوء: مكالمة، أو رسالة، أو كلمة طيبة في اللحظة المناسبة، فأبق قلبك منفتحا لتلاحظه."
+      }
+    },
+    {
+      "id": "wr-ease-05",
+      "text": {
+        "en": "The tunnel feels endless only while you are in the middle of it. Keep walking; light has a way of appearing.",
+        "de": "Der Tunnel scheint nur endlos, solange Sie mitten darin sind. Gehen Sie weiter; das Licht hat seine Art, zu erscheinen.",
+        "ar": "النفق يبدو بلا نهاية ما دمت في وسطه، فواصل السير، فللنور طريقته في الظهور."
+      }
+    },
+    {
+      "id": "wr-ease-06",
+      "text": {
+        "en": "A fever breaks in the night, a debt is finally paid, a long-awaited letter arrives. Remember these moments when the next storm comes.",
+        "de": "Ein Fieber sinkt in der Nacht, eine Schuld ist endlich bezahlt, ein lang erwarteter Brief kommt an. Erinnern Sie sich an diese Momente, wenn der nächste Sturm kommt.",
+        "ar": "حمى تنكسر في الليل، ودين يسدد أخيرا، ورسالة طال انتظارها تصل: تذكر هذه اللحظات حين تأتي العاصفة القادمة."
+      }
+    },
+    {
+      "id": "wr-ease-07",
+      "text": {
+        "en": "The hardest part of a climb is often just before the view opens up.",
+        "de": "Der schwerste Teil eines Aufstiegs liegt oft kurz bevor sich die Aussicht öffnet.",
+        "ar": "أصعب جزء في الصعود كثيرا ما يكون قبيل أن ينكشف المنظر."
+      }
+    },
+    {
+      "id": "wr-ease-08",
+      "text": {
+        "en": "Breathe. This moment is heavy, but it is only one moment, and moments pass.",
+        "de": "Atmen Sie. Dieser Moment ist schwer, aber er ist nur ein Moment, und Momente vergehen.",
+        "ar": "تنفس، فهذه اللحظة ثقيلة، لكنها لحظة واحدة، واللحظات تمضي."
+      }
+    },
+    {
+      "id": "wr-ease-09",
+      "text": {
+        "en": "The storm that bent the tree also deepened its roots. Some of your strength was born in your hardest seasons.",
+        "de": "Der Sturm, der den Baum bog, hat auch seine Wurzeln vertieft. Ein Teil Ihrer Stärke wurde in Ihren schwersten Zeiten geboren.",
+        "ar": "العاصفة التي أحنت الشجرة عمقت جذورها أيضا، وبعض قوتك ولد في أصعب مواسمك."
+      }
+    },
+    {
+      "id": "wr-ease-10",
+      "text": {
+        "en": "When everything feels closed, open the one door that never closes: turn to Allah and tell Him plainly what hurts.",
+        "de": "Wenn sich alles verschlossen anfühlt, öffnen Sie die eine Tür, die sich nie schließt: Wenden Sie sich an Allah und sagen Sie Ihm schlicht, was wehtut.",
+        "ar": "حين تبدو الأبواب كلها مغلقة، افتح الباب الذي لا يغلق أبدا: توجه إلى الله وأخبره ببساطة بما يؤلمك."
+      }
+    },
+    {
+      "id": "wr-ease-11",
+      "text": {
+        "en": "Rain clouds look dark, yet they carry exactly what the dry land has been waiting for.",
+        "de": "Regenwolken sehen dunkel aus, und doch tragen sie genau das, worauf das trockene Land gewartet hat.",
+        "ar": "تبدو سحب المطر داكنة، لكنها تحمل بالضبط ما انتظرته الأرض العطشى."
+      }
+    },
+    {
+      "id": "wr-ease-12",
+      "text": {
+        "en": "Some prayers are answered by changing the situation, others by giving you the strength to carry it. Both are relief.",
+        "de": "Manche Gebete werden erhört, indem sich die Lage ändert, andere, indem Sie die Kraft bekommen, sie zu tragen. Beides ist Erleichterung.",
+        "ar": "بعض الدعوات يستجاب لها بتغير الحال، وبعضها بأن تمنح القوة على حمله، وكلاهما فرج."
+      }
+    },
+    {
+      "id": "wr-ease-13",
+      "text": {
+        "en": "Hard times shrink when they are shared. Tell a trusted friend, and let someone help you carry it for a while.",
+        "de": "Schwere Zeiten schrumpfen, wenn man sie teilt. Erzählen Sie es einem vertrauten Freund und lassen Sie sich eine Weile beim Tragen helfen.",
+        "ar": "الأوقات الصعبة تصغر حين تتقاسمها، فحدث صديقا تثق به، ودع أحدا يساعدك على حملها قليلا."
+      }
+    },
+    {
+      "id": "wr-ease-14",
+      "text": {
+        "en": "Years from now, this chapter may be the part of your story you are most grateful for. It just does not feel like it yet.",
+        "de": "In einigen Jahren ist dieses Kapitel vielleicht der Teil Ihrer Geschichte, für den Sie am dankbarsten sind. Es fühlt sich nur noch nicht so an.",
+        "ar": "بعد سنين قد يكون هذا الفصل أكثر ما تشكر الله عليه في قصتك، لكنه لا يبدو كذلك بعد."
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-hereafter",
+  "kind": "reflection",
+  "theme": "hereafter",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-hereafter-01",
+      "text": {
+        "en": "Every evening is a small rehearsal: the day ends, the lights go out, and we hope to wake to something better.",
+        "de": "Jeder Abend ist eine kleine Probe: Der Tag endet, die Lichter gehen aus, und wir hoffen, zu etwas Besserem zu erwachen.",
+        "ar": "كل مساء تمرين صغير: ينتهي النهار، وتنطفئ الأنوار، ونرجو أن نستيقظ على ما هو أفضل."
+      }
+    },
+    {
+      "id": "wr-hereafter-02",
+      "text": {
+        "en": "Nothing you do for Allah is lost. Your unseen, sincere deeds are waiting for you where nothing is ever wasted.",
+        "de": "Nichts, was Sie für Allah tun, geht verloren. Ihre unsichtbaren, aufrichtigen Taten warten auf Sie dort, wo nichts je vergeudet wird.",
+        "ar": "لا يضيع شيء مما تفعله لله، فأعمالك الخفية الصادقة تنتظرك حيث لا يضيع شيء أبدا."
+      }
+    },
+    {
+      "id": "wr-hereafter-03",
+      "text": {
+        "en": "Visit a graveyard once in a while. It is the quietest teacher in any city.",
+        "de": "Besuchen Sie hin und wieder einen Friedhof. Er ist der stillste Lehrer jeder Stadt.",
+        "ar": "زر المقبرة بين حين وآخر، فهي أهدأ معلم في كل مدينة."
+      }
+    },
+    {
+      "id": "wr-hereafter-04",
+      "text": {
+        "en": "This world is a long journey, not the final address. Pack lightly and travel kindly.",
+        "de": "Diese Welt ist eine lange Reise, nicht die letzte Adresse. Packen Sie leicht und reisen Sie freundlich.",
+        "ar": "الدنيا رحلة طويلة لا العنوان الأخير، فاحمل متاعا خفيفا وسافر بلطف."
+      }
+    },
+    {
+      "id": "wr-hereafter-05",
+      "text": {
+        "en": "Ask yourself tonight: if today were placed on the scales, what would you want it to hold? Then let tomorrow hold it.",
+        "de": "Fragen Sie sich heute Abend: Wenn der heutige Tag auf die Waage käme, was sollte er enthalten? Dann lassen Sie den morgigen Tag genau das enthalten.",
+        "ar": "اسأل نفسك الليلة: لو وضع هذا اليوم في الميزان، فماذا تحب أن يحمل؟ ثم اجعل الغد يحمله."
+      }
+    },
+    {
+      "id": "wr-hereafter-06",
+      "text": {
+        "en": "Those we have lost are not gone forever. Believing in the meeting to come changes the way we grieve.",
+        "de": "Die Menschen, die wir verloren haben, sind nicht für immer fort. Der Glaube an das kommende Wiedersehen verändert, wie wir trauern.",
+        "ar": "من فقدناهم لم يرحلوا إلى الأبد، والإيمان باللقاء القادم يغير طريقة حزننا."
+      }
+    },
+    {
+      "id": "wr-hereafter-07",
+      "text": {
+        "en": "The Hereafter gives meaning to unseen goodness: the patient caregiver, the honest worker, the parent who sacrificed in silence.",
+        "de": "Das Jenseits gibt dem unsichtbaren Guten seinen Sinn: der geduldigen Pflegerin, dem ehrlichen Arbeiter, den Eltern, die im Stillen Opfer brachten.",
+        "ar": "الآخرة تعطي معنى للخير الخفي: الراعية الصبورة، والعامل الأمين، والوالد الذي ضحى في صمت."
+      }
+    },
+    {
+      "id": "wr-hereafter-08",
+      "text": {
+        "en": "One day every injustice will be set right. Until then, do not add to it, and ease it wherever you can.",
+        "de": "Eines Tages wird jedes Unrecht wiedergutgemacht. Bis dahin vermehren Sie es nicht und lindern Sie es, wo Sie können.",
+        "ar": "يوما ما سيرد كل ظلم إلى نصابه، وإلى ذلك الحين لا تزد الظلم، وخففه ما استطعت."
+      }
+    },
+    {
+      "id": "wr-hereafter-09",
+      "text": {
+        "en": "We spend years preparing for exams, careers and retirement. A few minutes a day preparing for the eternal is not too much.",
+        "de": "Wir bereiten uns jahrelang auf Prüfungen, Karrieren und den Ruhestand vor. Ein paar Minuten am Tag für das Ewige sind nicht zu viel.",
+        "ar": "نقضي سنين نستعد للامتحانات والوظائف والتقاعد، وبضع دقائق في اليوم استعدادا لما يبقى ليست كثيرة."
+      }
+    },
+    {
+      "id": "wr-hereafter-10",
+      "text": {
+        "en": "What you cannot take with you, use well. What you can take with you, gather often.",
+        "de": "Was Sie nicht mitnehmen können, nutzen Sie gut. Was Sie mitnehmen können, sammeln Sie oft.",
+        "ar": "ما لا تستطيع أن تأخذه معك فأحسن استعماله، وما تستطيع أن تأخذه فأكثر من جمعه."
+      }
+    },
+    {
+      "id": "wr-hereafter-11",
+      "text": {
+        "en": "Remembering the Hereafter does not make life darker. It makes the small, good moments shine with meaning.",
+        "de": "An das Jenseits zu denken macht das Leben nicht dunkler. Es lässt die kleinen, guten Momente voller Bedeutung leuchten.",
+        "ar": "تذكر الآخرة لا يجعل الحياة أكثر قتامة، بل يجعل اللحظات الطيبة الصغيرة تتلألأ بالمعنى."
+      }
+    },
+    {
+      "id": "wr-hereafter-12",
+      "text": {
+        "en": "Live so that those who wash and wrap you one day will remember you with a prayer and a smile.",
+        "de": "Leben Sie so, dass jene, die Sie eines Tages waschen und einhüllen, sich mit einem Gebet und einem Lächeln an Sie erinnern.",
+        "ar": "عش بحيث يذكرك من سيغسلونك ويكفنونك يوما بدعاء وابتسامة."
+      }
+    },
+    {
+      "id": "wr-hereafter-13",
+      "text": {
+        "en": "Every kind word, every hidden tear for Allah, every patient night is being kept safe for a day you have not yet seen.",
+        "de": "Jedes freundliche Wort, jede verborgene Träne für Allah, jede geduldige Nacht wird aufbewahrt für einen Tag, den Sie noch nicht gesehen haben.",
+        "ar": "كل كلمة طيبة، وكل دمعة خفية لله، وكل ليلة صبر، محفوظة ليوم لم تره بعد."
+      }
+    },
+    {
+      "id": "wr-hereafter-14",
+      "text": {
+        "en": "The road is short and the destination lasts long. Choose your companions and your luggage wisely.",
+        "de": "Der Weg ist kurz, und das Ziel währt lange. Wählen Sie Ihre Weggefährten und Ihr Gepäck mit Bedacht.",
+        "ar": "الطريق قصير والمقام طويل، فأحسن اختيار رفاقك ومتاعك."
+      }
+    }
+  ]
+}

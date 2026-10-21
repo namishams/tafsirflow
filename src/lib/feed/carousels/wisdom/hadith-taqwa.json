@@ -1,0 +1,12 @@
+{ "set": "hadith-taqwa", "kind": "hadith", "theme": "taqwa", "tradition": "sunni",
+  "items": [
+    {"id": "wh-taqwa-bukhari-6487", "hadith": "bukhari:6487", "check": "surrounded"},
+    {"id": "wh-taqwa-nawawi-18", "hadith": "nawawi:18", "check": "wherever you may be"},
+    {"id": "wh-taqwa-nawawi-11", "hadith": "nawawi:11", "check": "Leave that which makes you doubt"},
+    {"id": "wh-taqwa-nawawi-21", "hadith": "nawawi:21", "check": "be steadfast"},
+    {"id": "wh-taqwa-bukhari-6479", "hadith": "bukhari:6479", "check": "flooded with tears"},
+    {"id": "wh-taqwa-bukhari-6485", "hadith": "bukhari:6485", "check": "laugh little"},
+    {"id": "wh-taqwa-bukhari-3490", "hadith": "bukhari:3490", "check": "most honorable"},
+    {"id": "wh-taqwa-bukhari-2051", "hadith": "bukhari:2051", "check": "doubtful"},
+    {"id": "wh-taqwa-muslim-6541", "hadith": "muslim:6541", "check": "The piety is here"}
+  ] }

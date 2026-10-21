@@ -1,0 +1,325 @@
+{
+  "series": "quran-phrases",
+  "label": { "en": "Phrases every Muslim says", "de": "Worte, die Muslime täglich sagen", "ar": "عبارات يقولها المسلم" },
+  "topic": "duas",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "quran-phrases-bismillah-alhamdulillah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Daily phrases · 1", "de": "Worte des Alltags · 1", "ar": "عبارات يومية · ١" },
+        "title": { "en": "Bismillah and Alhamdulillah", "de": "Bismillāh und Alḥamdulillāh", "ar": "بسم الله والحمد لله" },
+        "sub": { "en": "The words that open and close almost everything a Muslim does", "de": "Die Worte, mit denen Muslime fast alles beginnen und beenden", "ar": "كلمتان يفتتح بهما المسلم أعماله ويختمها" },
+        "arabic": "بِسْمِ الله · الحَمْدُ لِله"
+      },
+      "slides": [
+        {
+          "title": { "en": "Bismillah: in the name of Allah", "de": "Bismillāh: im Namen Allahs", "ar": "بسم الله: أبدأ باسم الله" },
+          "arabic": "بِسْمِ الله",
+          "body": { "en": "Saying Bismillah before an action places it under the name of Allah: you begin with Him, you rely on His help, and you do it for His sake.", "de": "Wer vor einer Handlung Bismillāh sagt, stellt sie unter den Namen Allahs: Man beginnt mit Ihm, verlässt sich auf Seine Hilfe und tut es um Seinetwillen.", "ar": "من قال «بسم الله» قبل عملٍ جعله تحت اسم الله: يبدأ به، ويستعين به، ويقصد به وجهه." }
+        },
+        {
+          "verse": "1:1",
+          "check": "In the name of",
+          "title": { "en": "Where it begins", "de": "Wo es beginnt", "ar": "من هنا البداية" },
+          "body": { "en": "The basmala opens the Quran and stands at the start of every surah except one, at-Tawba.", "de": "Die Basmala eröffnet den Koran und steht am Anfang jeder Sure außer einer, at-Tauba.", "ar": "تفتتح البسملة القرآن، وتأتي في أول كل سورة إلا سورة التوبة." }
+        },
+        {
+          "hadith": "muslim:5269",
+          "check": "mention the name of Allah",
+          "title": { "en": "A lesson at the table", "de": "Eine Lehre bei Tisch", "ar": "درسٌ على المائدة" },
+          "body": { "en": "The Prophet taught a young boy, gently and at the meal itself, to begin with the name of Allah.", "de": "Der Prophet lehrte einen Jungen sanft und mitten beim Essen, mit dem Namen Allahs zu beginnen.", "ar": "علّم النبي ﷺ غلامًا برفقٍ وعلى الطعام نفسه أن يبدأ باسم الله." }
+        },
+        {
+          "title": { "en": "When to say Bismillah", "de": "Wann man Bismillāh sagt", "ar": "متى تُقال البسملة" },
+          "list": { "en": ["Before eating and drinking", "Before wudu", "When leaving and entering the home", "When getting into a car or onto a bus", "Before work, study or anything that matters"], "de": ["Vor dem Essen und Trinken", "Vor der Gebetswaschung", "Beim Verlassen und Betreten des Hauses", "Beim Einsteigen ins Auto oder in den Bus", "Vor der Arbeit, dem Lernen und allem, was zählt"], "ar": ["قبل الطعام والشراب", "قبل الوضوء", "عند الخروج من البيت ودخوله", "عند ركوب السيارة أو الحافلة", "قبل العمل والدراسة وكل أمر ذي بال"]}
+        },
+        {
+          "title": { "en": "Alhamdulillah: all praise is for Allah", "de": "Alḥamdulillāh: alles Lob gebührt Allah", "ar": "الحمد لله: الثناء كله لله" },
+          "arabic": "الحَمْدُ لِله",
+          "body": { "en": "Alhamdulillah says that all praise and thanks belong to Allah. It is said in joy, and also in difficulty: praise does not depend on how the day went.", "de": "Alḥamdulillāh sagt, dass alles Lob und aller Dank Allah gebühren. Man sagt es in der Freude und auch in der Not: Das Lob hängt nicht davon ab, wie der Tag verlief.", "ar": "«الحمد لله» إقرارٌ بأن الثناء والشكر كلهما لله، وتُقال في الفرح وفي الشدة، فالحمد لا يتوقف على أحوال اليوم." }
+        },
+        {
+          "dua": "hisn:106:0",
+          "check": "in all circumstances",
+          "title": { "en": "In good times and hard times", "de": "In guten und in schweren Zeiten", "ar": "في السرّاء والضرّاء" },
+          "body": { "en": "Two short forms of praise the Prophet used: one for what pleases, one for what does not.", "de": "Zwei kurze Lobpreisungen, die der Prophet verwendete: eine für das, was erfreut, und eine für das, was nicht erfreut.", "ar": "صيغتان قصيرتان للحمد كان النبي ﷺ يقولهما: واحدة لما يسرّ، وأخرى لما لا يسرّ." }
+        },
+        {
+          "hadith": "muslim:534",
+          "check": "fills the scale",
+          "title": { "en": "Heavier than you think", "de": "Schwerer, als man denkt", "ar": "أثقل مما تظن" },
+          "body": { "en": "A short phrase that carries great weight on the scale of deeds.", "de": "Ein kurzer Satz mit großem Gewicht auf der Waage der Taten.", "ar": "كلمة قصيرة ثقيلة في ميزان الأعمال." }
+        },
+        {
+          "title": { "en": "Try it today", "de": "Probieren Sie es heute", "ar": "جرّبها اليوم" },
+          "body": { "en": "Start every task today with Bismillah and finish it with Alhamdulillah. Notice how two small words can frame a whole day.", "de": "Beginnen Sie heute jede Aufgabe mit Bismillāh und beenden Sie sie mit Alḥamdulillāh. Achten Sie darauf, wie zwei kleine Worte einen ganzen Tag einrahmen können.", "ar": "ابدأ كل عمل اليوم بـ«بسم الله» واختمه بـ«الحمد لله»، ولاحظ كيف تؤطّر كلمتان صغيرتان يومًا كاملًا." }
+        }
+      ]
+    },
+    {
+      "id": "quran-phrases-subhanallah-allahu-akbar",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Daily phrases · 2", "de": "Worte des Alltags · 2", "ar": "عبارات يومية · ٢" },
+        "title": { "en": "SubhanAllah and Allahu akbar", "de": "Subḥānallāh und Allāhu akbar", "ar": "سبحان الله والله أكبر" },
+        "sub": { "en": "Two words of wonder: one declares Allah perfect, the other declares Him greater", "de": "Zwei Worte des Staunens: Das eine erklärt Allah für vollkommen, das andere für größer", "ar": "كلمتا تعظيم: الأولى تنزّه الله، والثانية تكبّره" },
+        "arabic": "سُبْحانَ الله · اللهُ أَكْبَر"
+      },
+      "slides": [
+        {
+          "title": { "en": "SubhanAllah: far above any flaw", "de": "Subḥānallāh: erhaben über jeden Makel", "ar": "سبحان الله: تنزيهٌ عن كل نقص" },
+          "arabic": "سُبْحانَ الله",
+          "body": { "en": "SubhanAllah declares Allah free of every flaw and above every limit we could imagine. Many say it when they see something beautiful or astonishing.", "de": "Subḥānallāh erklärt Allah frei von jedem Makel und erhaben über jede Grenze, die wir uns vorstellen könnten. Viele sagen es, wenn sie etwas Schönes oder Erstaunliches sehen.", "ar": "«سبحان الله» تنزيهٌ لله عن كل نقص، وعن كل حدّ قد نتخيّله، ويقولها كثيرون عند رؤية ما يُدهش أو يُعجب." }
+        },
+        {
+          "title": { "en": "Allahu akbar: Allah is greater", "de": "Allāhu akbar: Allah ist größer", "ar": "الله أكبر" },
+          "arabic": "اللهُ أَكْبَر",
+          "body": { "en": "Allahu akbar means that Allah is greater: greater than anything you fear, want or admire. It opens every prayer and accompanies its movements.", "de": "Allāhu akbar bedeutet: Allah ist größer, größer als alles, was Sie fürchten, wünschen oder bewundern. Es eröffnet jedes Gebet und begleitet seine Bewegungen.", "ar": "«الله أكبر» أي إن الله أكبر من كل ما تخافه أو ترجوه أو تُعجب به، وبها تُفتتح الصلاة وتصحب حركاتها." }
+        },
+        {
+          "verse": "87:1",
+          "check": "Exalt the name",
+          "title": { "en": "A command to glorify", "de": "Ein Gebot zu preisen", "ar": "أمرٌ بالتسبيح" },
+          "body": { "en": "Tasbih, from the same root as SubhanAllah, is commanded here directly.", "de": "Tasbīḥ, aus derselben Wurzel wie Subḥānallāh, wird hier direkt geboten.", "ar": "التسبيح، من جذر «سبحان الله»، مأمورٌ به هنا مباشرة." }
+        },
+        {
+          "verse": "17:111",
+          "check": "glorify Him",
+          "title": { "en": "Takbir in the Quran", "de": "Takbīr im Koran", "ar": "التكبير في القرآن" },
+          "body": { "en": "The surah closes with praise and with the command to declare His greatness: takbir.", "de": "Die Sure schließt mit Lob und mit dem Gebot, Seine Größe zu verkünden: takbīr.", "ar": "تُختم السورة بالحمد وبالأمر بالتكبير." }
+        },
+        {
+          "hadith": "muslim:6846",
+          "check": "light on the tongue",
+          "title": { "en": "Light on the tongue", "de": "Leicht auf der Zunge", "ar": "خفيفتان على اللسان" },
+          "body": { "en": "Two short phrases of tasbih: easy to say, heavy on the scale.", "de": "Zwei kurze Sätze des Tasbīḥ: leicht zu sagen, schwer auf der Waage.", "ar": "عبارتان قصيرتان من التسبيح: سهلتان على اللسان، ثقيلتان في الميزان." }
+        },
+        {
+          "dua": "hisn:102:0",
+          "check": "went up a hill",
+          "title": { "en": "Going up, going down", "de": "Bergauf, bergab", "ar": "صعودًا ونزولًا" },
+          "body": { "en": "A simple habit of the Companions for every hill and every staircase.", "de": "Eine einfache Gewohnheit der Gefährten für jeden Hügel und jede Treppe.", "ar": "عادةٌ يسيرة من عادات الصحابة لكل مرتفعٍ وكل درج." }
+        },
+        {
+          "dua": "hisn:25:3",
+          "check": "thirty-three times",
+          "title": { "en": "After the prayer", "de": "Nach dem Gebet", "ar": "بعد الصلاة" },
+          "body": { "en": "Sunni and Shia Muslims both keep this remembrance after prayer, with small differences in order and count.", "de": "Sunnitische und schiitische Muslime pflegen dieses Gedenken nach dem Gebet, mit kleinen Unterschieden in Reihenfolge und Anzahl.", "ar": "يحافظ المسلمون سنةً وشيعةً على هذا الذكر بعد الصلاة، مع فروق يسيرة في الترتيب والعدد." }
+        },
+        {
+          "title": { "en": "Try it today", "de": "Probieren Sie es heute", "ar": "جرّبها اليوم" },
+          "body": { "en": "Say Allahu akbar on the next staircase up and SubhanAllah on the way down. When something amazes you today, let one of these words come first.", "de": "Sagen Sie auf der nächsten Treppe nach oben Allāhu akbar und auf dem Weg nach unten Subḥānallāh. Wenn Sie heute etwas staunen lässt, lassen Sie eines dieser Worte zuerst kommen.", "ar": "قل «الله أكبر» على الدرج صعودًا، و«سبحان الله» نزولًا. وإذا أدهشك شيءٌ اليوم فلتكن إحدى هاتين الكلمتين أول ما تقول." }
+        }
+      ]
+    },
+    {
+      "id": "quran-phrases-astaghfirullah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Daily phrases · 3", "de": "Worte des Alltags · 3", "ar": "عبارات يومية · ٣" },
+        "title": { "en": "Astaghfirullah", "de": "Astaghfirullāh", "ar": "أستغفر الله" },
+        "sub": { "en": "I ask Allah's forgiveness: a phrase for every day, not only for big mistakes", "de": "Ich bitte Allah um Vergebung: ein Satz für jeden Tag, nicht nur für große Fehler", "ar": "أطلب مغفرة الله: كلمة لكل يوم، لا للأخطاء الكبيرة وحدها" },
+        "arabic": "أَسْتَغْفِرُ الله"
+      },
+      "slides": [
+        {
+          "title": { "en": "What it means", "de": "Was es bedeutet", "ar": "معناها" },
+          "body": { "en": "Astaghfirullah means 'I ask Allah for forgiveness'. Its root gh-f-r means to cover and protect: you ask Allah to cover your mistakes and to shield you from their harm.", "de": "Astaghfirullāh bedeutet „Ich bitte Allah um Vergebung“. Die Wurzel gh-f-r heißt bedecken und schützen: Sie bitten Allah, Ihre Fehler zu bedecken und Sie vor ihrem Schaden zu bewahren.", "ar": "«أستغفر الله» أي أطلب من الله المغفرة، وأصل الجذر غ ف ر الستر والوقاية: فأنت تسأل الله أن يستر خطأك ويقيك عاقبته." }
+        },
+        {
+          "verse": "3:135",
+          "check": "seek forgiveness for their sins",
+          "title": { "en": "Turning back right away", "de": "Sofort umkehren", "ar": "الرجوع فورًا" },
+          "body": { "en": "The people praised here are not sinless. They remember Allah after a mistake and do not persist in it.", "de": "Die hier Gelobten sind nicht ohne Sünde. Sie gedenken Allahs nach einem Fehler und beharren nicht darauf.", "ar": "الممدوحون هنا ليسوا معصومين، بل يذكرون الله بعد الخطأ ولا يُصرّون عليه." }
+        },
+        {
+          "hadith": "bukhari:6307",
+          "check": "more than seventy times a day",
+          "title": { "en": "The Prophet's own habit", "de": "Die Gewohnheit des Propheten", "ar": "عادة النبي ﷺ" },
+          "body": { "en": "If the Prophet asked forgiveness this often, no one is too good for it.", "de": "Wenn der Prophet so oft um Vergebung bat, ist niemand zu gut dafür.", "ar": "إذا كان النبي ﷺ يستغفر بهذه الكثرة، فلا أحد في غنى عن الاستغفار." }
+        },
+        {
+          "dua": "hisn:25:0",
+          "check": "I ask Allah for forgiveness",
+          "title": { "en": "Right after the prayer", "de": "Direkt nach dem Gebet", "ar": "بعد السلام مباشرة" },
+          "body": { "en": "The first words after the salam: istighfar three times, then a short praise of Allah, the Source of peace.", "de": "Die ersten Worte nach dem Salām: dreimal istighfār, dann ein kurzes Lob Allahs, der Quelle des Friedens.", "ar": "أول ما يُقال بعد السلام: الاستغفار ثلاثًا، ثم ثناءٌ قصير على الله السلام." }
+        },
+        {
+          "dua": "hisn:129:2",
+          "check": "turn to Him in repentance",
+          "title": { "en": "A fuller form", "de": "Eine ausführlichere Form", "ar": "صيغةٌ أتمّ" },
+          "body": { "en": "A longer istighfar that joins forgiveness with tawhid and repentance.", "de": "Ein längeres istighfār, das Vergebung mit tauḥīd und Reue verbindet.", "ar": "استغفارٌ أطول يجمع بين طلب المغفرة والتوحيد والتوبة." }
+        },
+        {
+          "verse": "51:18",
+          "check": "before dawn",
+          "title": { "en": "The hours before dawn", "de": "Die Stunden vor der Morgendämmerung", "ar": "في الأسحار" },
+          "body": { "en": "The Quran praises people who ask forgiveness in the quiet hours before dawn.", "de": "Der Koran lobt Menschen, die in den stillen Stunden vor der Morgendämmerung um Vergebung bitten.", "ar": "يُثني القرآن على من يستغفرون في ساعات السحر الهادئة." }
+        },
+        {
+          "title": { "en": "Moments for istighfar", "de": "Momente für istighfār", "ar": "أوقاتٌ للاستغفار" },
+          "list": { "en": ["Right after a mistake, big or small", "After every obligatory prayer", "In the hours before dawn", "At the end of a gathering", "While walking, waiting or driving"], "de": ["Direkt nach einem Fehler, ob groß oder klein", "Nach jedem Pflichtgebet", "In den Stunden vor der Morgendämmerung", "Am Ende einer Zusammenkunft", "Beim Gehen, Warten oder Fahren"], "ar": ["بعد الخطأ مباشرة، كبيرًا كان أو صغيرًا", "بعد كل صلاة مفروضة", "في الأسحار قبل الفجر", "في ختام المجلس", "أثناء المشي أو الانتظار أو القيادة"]}
+        },
+        {
+          "title": { "en": "Try it today", "de": "Probieren Sie es heute", "ar": "جرّبها اليوم" },
+          "body": { "en": "After your next prayer, say astaghfirullah three times slowly. With each one, think of one specific thing you want Allah to cover and set right.", "de": "Sagen Sie nach Ihrem nächsten Gebet dreimal langsam astaghfirullāh. Denken Sie bei jedem Mal an eine bestimmte Sache, die Allah bedecken und in Ordnung bringen möge.", "ar": "بعد صلاتك القادمة قل «أستغفر الله» ثلاثًا على مهل، واستحضر مع كل مرة أمرًا بعينه تسأل الله أن يستره ويصلحه." }
+        }
+      ]
+    },
+    {
+      "id": "quran-phrases-in-sha-allah-ma-sha-allah",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Daily phrases · 4", "de": "Worte des Alltags · 4", "ar": "عبارات يومية · ٤" },
+        "title": { "en": "In sha' Allah and Ma sha' Allah", "de": "In shāʾ Allāh und Mā shāʾ Allāh", "ar": "إن شاء الله وما شاء الله" },
+        "sub": { "en": "One looks to the future, one looks at a blessing: both return everything to Allah's will", "de": "Das eine blickt in die Zukunft, das andere auf eine Gabe: Beide führen alles auf Allahs Willen zurück", "ar": "الأولى تنظر إلى المستقبل، والثانية إلى النعمة، وكلتاهما تردّ الأمر إلى مشيئة الله" },
+        "arabic": "إِنْ شاءَ الله · ما شاءَ الله"
+      },
+      "slides": [
+        {
+          "title": { "en": "In sha' Allah: if Allah wills", "de": "In shāʾ Allāh: wenn Allah will", "ar": "إن شاء الله" },
+          "arabic": "إِنْ شاءَ الله",
+          "body": { "en": "In sha' Allah means 'if Allah wills'. It belongs to plans for the future: you make the plan and do your part, and you remember that the outcome is in His hands.", "de": "In shāʾ Allāh bedeutet „wenn Allah will“. Es gehört zu Plänen für die Zukunft: Sie machen den Plan und tun Ihren Teil, und Sie denken daran, dass das Ergebnis in Seiner Hand liegt.", "ar": "«إن شاء الله» تقال عند الحديث عن المستقبل: تضع خطتك وتبذل جهدك، وتتذكّر أن النتيجة بيد الله." }
+        },
+        {
+          "verse": "18:23-24",
+          "check": "If Allah wills",
+          "title": { "en": "Never 'tomorrow' on its own", "de": "Nie nur „morgen“", "ar": "لا «غدًا» وحدها" },
+          "body": { "en": "The Quran teaches this phrase directly, for any plan about tomorrow.", "de": "Der Koran lehrt diesen Satz direkt, für jeden Plan, der das Morgen betrifft.", "ar": "يعلّم القرآن هذه العبارة صراحةً لكل عزمٍ على أمرٍ في الغد." }
+        },
+        {
+          "title": { "en": "A promise, not an excuse", "de": "Ein Versprechen, keine Ausrede", "ar": "وعدٌ لا تهرّب" },
+          "body": { "en": "In sha' Allah is a sincere statement, not a polite way of saying no. When you say it, intend to do it, and leave the result to Allah.", "de": "In shāʾ Allāh ist eine aufrichtige Aussage, keine höfliche Art, Nein zu sagen. Wenn Sie es sagen, nehmen Sie sich die Sache wirklich vor und überlassen Sie das Ergebnis Allah.", "ar": "«إن شاء الله» عبارةٌ صادقة، لا طريقةٌ مهذّبة للرفض. فإذا قلتها فاعزم على الفعل، واترك النتيجة لله." }
+        },
+        {
+          "title": { "en": "Ma sha' Allah: what Allah has willed", "de": "Mā shāʾ Allāh: was Allah gewollt hat", "ar": "ما شاء الله" },
+          "arabic": "ما شاءَ الله",
+          "body": { "en": "Ma sha' Allah means 'what Allah has willed'. It is said when you see something good, in yourself or in others: this blessing came by His will, not by our power alone.", "de": "Mā shāʾ Allāh bedeutet „was Allah gewollt hat“. Man sagt es, wenn man etwas Gutes sieht, bei sich oder bei anderen: Diese Gabe kam durch Seinen Willen, nicht allein durch unsere Kraft.", "ar": "«ما شاء الله» تقال عند رؤية الخير في نفسك أو في غيرك: هذه النعمة كانت بمشيئته، لا بقوتنا وحدها." }
+        },
+        {
+          "verse": "18:39",
+          "check": "What Allah willed",
+          "title": { "en": "The man with the gardens", "de": "Der Mann mit den Gärten", "ar": "صاحب الجنتين" },
+          "body": { "en": "A man proud of his gardens is reminded what he should have said when he entered them.", "de": "Ein Mann, der stolz auf seine Gärten ist, wird daran erinnert, was er beim Betreten hätte sagen sollen.", "ar": "يُذكَّر رجلٌ مغترّ بجنتيه بما كان ينبغي أن يقوله حين دخلها." }
+        },
+        {
+          "title": { "en": "Two phrases, one humility", "de": "Zwei Sätze, eine Demut", "ar": "عبارتان وتواضعٌ واحد" },
+          "body": { "en": "One phrase is for what is coming, the other for what is already here. Both protect from arrogance: neither your plans nor your blessings are yours alone.", "de": "Der eine Satz gilt dem, was kommt, der andere dem, was schon da ist. Beide schützen vor Hochmut: Weder Ihre Pläne noch Ihre Gaben gehören Ihnen allein.", "ar": "الأولى لما هو آتٍ، والثانية لما هو حاضر، وكلتاهما تحمي من الغرور: فلا خططك ولا نعمك ملكٌ لك وحدك." }
+        },
+        {
+          "title": { "en": "Where to use them", "de": "Wo man sie verwendet", "ar": "متى تقولهما" },
+          "list": { "en": ["Making a plan or a promise: In sha' Allah", "Admiring a child, a home or a talent: Ma sha' Allah", "Noticing a blessing in your own life: Ma sha' Allah", "Hoping for good news: In sha' Allah"], "de": ["Bei einem Plan oder Versprechen: In shāʾ Allāh", "Beim Bewundern eines Kindes, Hauses oder Talents: Mā shāʾ Allāh", "Bei einer Gabe im eigenen Leben: Mā shāʾ Allāh", "Beim Hoffen auf gute Nachrichten: In shāʾ Allāh"], "ar": ["عند التخطيط أو الوعد: إن شاء الله", "عند الإعجاب بطفلٍ أو بيتٍ أو موهبة: ما شاء الله", "عند ملاحظة نعمةٍ في حياتك: ما شاء الله", "عند رجاء خبرٍ سار: إن شاء الله"]}
+        }
+      ]
+    },
+    {
+      "id": "quran-phrases-jazakallahu-khayran-barakallahu-fik",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Daily phrases · 5", "de": "Worte des Alltags · 5", "ar": "عبارات يومية · ٥" },
+        "title": { "en": "Jazakallahu khayran and Barakallahu fik", "de": "Jazākallāhu khairan und Bārakallāhu fīk", "ar": "جزاك الله خيرًا وبارك الله فيك" },
+        "sub": { "en": "How Muslims say thank you: by asking Allah to reward and bless the other person", "de": "Wie Muslime danken: indem sie Allah bitten, den anderen zu belohnen und zu segnen", "ar": "هكذا يشكر المسلم: يدعو الله أن يجزي غيره ويبارك له" },
+        "arabic": "جَزاكَ اللهُ خَيْرًا"
+      },
+      "slides": [
+        {
+          "title": { "en": "Jazakallahu khayran: may Allah reward you", "de": "Jazākallāhu khairan: möge Allah Sie belohnen", "ar": "جزاك الله خيرًا" },
+          "arabic": "جَزاكَ اللهُ خَيْرًا",
+          "body": { "en": "Jazakallahu khayran means 'may Allah reward you with good'. Instead of trying to repay a favour yourself, you ask the One who rewards best to repay it.", "de": "Jazākallāhu khairan bedeutet „möge Allah Sie mit Gutem belohnen“. Statt eine Gefälligkeit selbst zu vergelten, bitten Sie den, der am besten belohnt, sie zu vergelten.", "ar": "«جزاك الله خيرًا» دعاءٌ بأن يكافئ الله صاحب المعروف بالخير، فبدل أن تردّ المعروف بنفسك تسأل خير المجازين أن يجزيه." }
+        },
+        {
+          "dua": "hisn:87:0",
+          "check": "May Allah reward you with goodness",
+          "title": { "en": "The best way to thank", "de": "Die beste Art zu danken", "ar": "أحسن الشكر" },
+          "body": { "en": "Hisnul Muslim records this phrase as an excellent way to praise someone who has done you a favour.", "de": "Ḥiṣn al-Muslim überliefert diesen Satz als vortreffliche Art, jemanden zu loben, der Ihnen Gutes getan hat.", "ar": "يذكر حصن المسلم هذه العبارة بوصفها أبلغ ثناءٍ على من صنع إليك معروفًا." }
+        },
+        {
+          "hadith": "bukhari:336",
+          "check": "May Allah reward you",
+          "title": { "en": "Words of a Companion", "de": "Worte eines Gefährten", "ar": "كلمة صحابيّ" },
+          "body": { "en": "Usayd ibn Hudayr said this to 'A'isha after her lost necklace led to the verse of tayammum.", "de": "Usaid ibn Ḥuḍair sagte dies zu ʿĀʾisha, nachdem ihre verlorene Halskette zur Offenbarung des Tayammum-Verses geführt hatte.", "ar": "قالها أسيد بن حضير لعائشة رضي الله عنها بعد أن كان ضياع عقدها سببًا في نزول آية التيمم." }
+        },
+        {
+          "title": { "en": "Barakallahu fik: may Allah bless you", "de": "Bārakallāhu fīk: möge Allah Sie segnen", "ar": "بارك الله فيك" },
+          "arabic": "بارَكَ اللهُ فِيك",
+          "body": { "en": "Barakallahu fik means 'may Allah bless you'. Baraka is good that lasts and grows: you wish the other person a blessing that stays and increases.", "de": "Bārakallāhu fīk bedeutet „möge Allah Sie segnen“. Baraka ist Gutes, das bleibt und wächst: Sie wünschen dem anderen einen Segen, der beständig ist und zunimmt.", "ar": "«بارك الله فيك» دعاءٌ بالبركة، والبركة خيرٌ ثابتٌ ينمو، فأنت تتمنى لغيرك خيرًا يدوم ويزيد." }
+        },
+        {
+          "hadith": "bukhari:5155",
+          "check": "May Allah bless you",
+          "title": { "en": "At a wedding", "de": "Bei einer Hochzeit", "ar": "عند الزواج" },
+          "body": { "en": "The Prophet blessed 'Abd ar-Rahman ibn 'Awf with these words when he heard of his marriage.", "de": "Der Prophet segnete ʿAbd ar-Raḥmān ibn ʿAuf mit diesen Worten, als er von seiner Heirat hörte.", "ar": "دعا النبي ﷺ بهذه الكلمة لعبد الرحمن بن عوف حين علم بزواجه." }
+        },
+        {
+          "dua": "hisn:93:0",
+          "check": "and may Allah bless them",
+          "title": { "en": "Returning the blessing", "de": "Den Segen erwidern", "ar": "ردّ الدعاء بمثله" },
+          "body": { "en": "When someone blesses you, bless them back. 'A'isha returned the blessings of others in the same words.", "de": "Wenn jemand Sie segnet, segnen Sie ihn zurück. ʿĀʾisha erwiderte die Segenswünsche anderer mit denselben Worten.", "ar": "إذا دعا لك أحدٌ بالبركة فادعُ له بمثلها، فقد كانت عائشة رضي الله عنها تردّ الدعاء بمثله." }
+        },
+        {
+          "title": { "en": "Try it this week", "de": "Probieren Sie es diese Woche", "ar": "جرّبها هذا الأسبوع" },
+          "body": { "en": "The next time someone helps you, say jazakallahu khayran instead of a quick thanks. When someone says barakallahu fik, answer wa fik barakallah: and may Allah bless you too.", "de": "Sagen Sie beim nächsten Mal, wenn Ihnen jemand hilft, jazākallāhu khairan statt eines schnellen Dankes. Sagt jemand bārakallāhu fīk, antworten Sie wa fīk bārakallāh: und möge Allah auch Sie segnen.", "ar": "حين يساعدك أحدٌ في المرة القادمة قل «جزاك الله خيرًا» بدل شكرٍ عابر، وإذا قال لك أحد «بارك الله فيك» فقل: «وفيك بارك الله»." }
+        }
+      ]
+    },
+    {
+      "id": "quran-phrases-inna-lillahi",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Daily phrases · 6", "de": "Worte des Alltags · 6", "ar": "عبارات يومية · ٦" },
+        "title": { "en": "Inna lillahi wa inna ilayhi raji'un", "de": "Innā lillāhi wa innā ilaihi rājiʿūn", "ar": "إنا لله وإنا إليه راجعون" },
+        "sub": { "en": "The words a Muslim says at every loss, and the comfort they hold", "de": "Die Worte, die Muslime bei jedem Verlust sagen, und der Trost, der in ihnen liegt", "ar": "كلماتٌ يقولها المسلم عند كل مصيبة، وما فيها من عزاء" },
+        "arabic": "إنّا لله وإنّا إليه راجعون"
+      },
+      "slides": [
+        {
+          "title": { "en": "Two halves, one truth", "de": "Zwei Hälften, eine Wahrheit", "ar": "شطران وحقيقةٌ واحدة" },
+          "body": { "en": "The phrase has two halves. Inna lillahi: we belong to Allah, with all we have. Wa inna ilayhi raji'un: and we are all on our way back to Him.", "de": "Der Satz hat zwei Hälften. Innā lillāhi: Wir gehören Allah, mit allem, was wir haben. Wa innā ilaihi rājiʿūn: und wir alle sind auf dem Weg zurück zu Ihm.", "ar": "للعبارة شطران: «إنا لله» أي نحن ملكٌ لله بكل ما نملك، و«إنا إليه راجعون» أي كلنا في طريق العودة إليه." }
+        },
+        {
+          "verse": "2:155-157",
+          "check": "Indeed we belong to Allah",
+          "title": { "en": "Where it comes from", "de": "Woher er stammt", "ar": "أصل العبارة" },
+          "body": { "en": "The Quran teaches these words for the moment of loss and promises blessings, mercy and guidance to those who meet it with patience.", "de": "Der Koran lehrt diese Worte für den Moment des Verlusts und verheißt denen, die ihm mit Geduld begegnen, Segen, Barmherzigkeit und Rechtleitung.", "ar": "يعلّم القرآن هذه الكلمات لساعة المصيبة، ويعد من يلقاها بالصبر بالصلوات والرحمة والهداية." }
+        },
+        {
+          "title": { "en": "When to say it", "de": "Wann man es sagt", "ar": "متى تُقال" },
+          "list": { "en": ["When someone dies", "When you hear of a disaster", "When you lose something, small or large", "When a hope or a plan falls apart"], "de": ["Wenn jemand stirbt", "Wenn Sie von einem Unglück hören", "Wenn Sie etwas verlieren, ob klein oder groß", "Wenn eine Hoffnung oder ein Plan zerbricht"], "ar": ["عند موت أحد", "عند سماع خبر مصيبة", "عند فقد شيء، صغيرًا كان أو كبيرًا", "حين يتبدّد رجاءٌ أو تخيب خطة"]}
+        },
+        {
+          "dua": "hisn:53:0",
+          "check": "recompense me for my affliction",
+          "title": { "en": "What to add", "de": "Was man hinzufügt", "ar": "ما يُضاف إليها" },
+          "body": { "en": "A dua for the moment of tragedy: ask Allah to reward you for the loss and to replace it with something better.", "de": "Ein Bittgebet für den Moment des Unglücks: Bitten Sie Allah, Sie für den Verlust zu belohnen und ihn durch Besseres zu ersetzen.", "ar": "دعاءٌ لساعة المصيبة: تسأل الله أن يأجرك فيها ويعوّضك خيرًا منها." }
+        },
+        {
+          "title": { "en": "Not only for funerals", "de": "Nicht nur für Beerdigungen", "ar": "ليست للجنائز وحدها" },
+          "body": { "en": "These words describe the whole of life: everything we hold is on loan, and every road leads back to Allah. Said with the heart, they turn grief into trust.", "de": "Diese Worte beschreiben das ganze Leben: Alles, was wir haben, ist geliehen, und jeder Weg führt zurück zu Allah. Mit dem Herzen gesprochen, verwandeln sie Trauer in Vertrauen.", "ar": "تصف هذه الكلمات الحياة كلها: فكل ما بأيدينا عاريةٌ مستردّة، وكل طريقٍ يعود إلى الله. وإذا قيلت بالقلب حوّلت الحزن إلى ثقة." }
+        },
+        {
+          "dua": "hisn:57:0",
+          "check": "belongs what He took",
+          "title": { "en": "Comforting the bereaved", "de": "Trauernde trösten", "ar": "تعزية المصاب" },
+          "body": { "en": "Words of the Prophet for someone in grief. They can still comfort a bereaved friend today.", "de": "Worte des Propheten für einen trauernden Menschen. Sie können auch heute einen trauernden Freund trösten.", "ar": "كلماتٌ نبوية لأهل المصيبة، ما زالت تواسي المحزون اليوم." }
+        },
+        {
+          "title": { "en": "When you hear of a loss", "de": "Wenn Sie von einem Verlust hören", "ar": "حين تسمع بمصيبة" },
+          "body": { "en": "Say the words slowly, and add the dua for the afflicted. Then ask yourself one question: how can I help the person who is grieving?", "de": "Sprechen Sie die Worte langsam und fügen Sie das Bittgebet für den Betroffenen hinzu. Fragen Sie sich dann: Wie kann ich dem trauernden Menschen helfen?", "ar": "قل الكلمات على مهل، وأضف دعاء المصيبة، ثم اسأل نفسك: كيف أعين المحزون؟" }
+        }
+      ]
+    }
+  ]
+}

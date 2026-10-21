@@ -1,0 +1,15 @@
+{ "set": "hadith-humility", "kind": "hadith", "theme": "humility", "tradition": "sunni",
+  "items": [
+    {"id": "wh-humility-muslim-265", "hadith": "muslim:265", "check": "mustard seed of pride"},
+    {"id": "wh-humility-muslim-6592", "hadith": "muslim:6592", "check": "humbles himself"},
+    {"id": "wh-humility-bukhari-2262", "hadith": "bukhari:2262", "check": "shepherded sheep"},
+    {"id": "wh-humility-bukhari-6501", "hadith": "bukhari:6501", "check": "Al-`Adba"},
+    {"id": "wh-humility-bukhari-1337", "hadith": "bukhari:1337", "check": "clean the Mosque"},
+    {"id": "wh-humility-bukhari-4918", "hadith": "bukhari:4918", "check": "weak and poor obscure person"},
+    {"id": "wh-humility-bukhari-3445", "hadith": "bukhari:3445", "check": "only a Slave"},
+    {"id": "wh-humility-bukhari-2568", "hadith": "bukhari:2568", "check": "trotter"},
+    {"id": "wh-humility-bukhari-6060", "hadith": "bukhari:6060", "check": "exaggerating in his praise"},
+    {"id": "wh-humility-bukhari-3108", "hadith": "bukhari:3108", "check": "patched woollen garment"},
+    {"id": "wh-humility-bukhari-6247", "hadith": "bukhari:6247", "check": "greeted them"},
+    {"id": "wh-humility-bukhari-5398", "hadith": "bukhari:5398", "check": "while leaning"}
+  ] }

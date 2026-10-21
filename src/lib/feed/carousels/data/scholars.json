@@ -1,0 +1,443 @@
+{
+  "series": "scholars",
+  "label": {"en": "Great scholars", "de": "Große Gelehrte", "ar": "أعلام العلماء"},
+  "topic": "scholars",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "scholars-01-abu-hanifa",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Great scholars · 1", "de": "Große Gelehrte · 1", "ar": "أعلام العلماء · ١"},
+        "title": {"en": "Abu Hanifa", "de": "Abu Hanifa", "ar": "أبو حنيفة النعمان"},
+        "sub": {"en": "The jurist of Kufa who reasoned carefully and refused high office", "de": "Der Rechtsgelehrte von Kufa, der sorgfältig abwog und hohe Ämter ablehnte", "ar": "فقيه الكوفة الذي أعمل النظر وأبى المناصب"},
+        "arabic": "الإمام الأعظم أبو حنيفة"
+      },
+      "slides": [
+        {
+          "title": {"en": "A merchant of Kufa", "de": "Ein Kaufmann aus Kufa", "ar": "تاجر من الكوفة"},
+          "body": {"en": "An-Nu'man ibn Thabit, known as Abu Hanifa, was born in Kufa in 80 AH (699 CE). He earned his living trading in silk cloth, and his biographers praise his honesty in business.", "de": "An-Numan ibn Thabit, bekannt als Abu Hanifa, wurde 80 n. H. (699) in Kufa geboren. Er lebte vom Handel mit Seidenstoffen, und seine Biographen loben seine Ehrlichkeit im Geschäft.", "ar": "وُلد النعمان بن ثابت المعروف بأبي حنيفة في الكوفة سنة ٨٠هـ (٦٩٩م)، وكان يكسب رزقه من تجارة الخز، ويثني مترجموه على أمانته في البيع والشراء."}
+        },
+        {
+          "title": {"en": "Teachers and students", "de": "Lehrer und Schüler", "ar": "شيوخه وتلاميذه"},
+          "body": {"en": "He studied for many years with Hammad ibn Abi Sulayman and succeeded him as the leading jurist of Kufa. Reports also name Ja'far as-Sadiq among his teachers. His students Abu Yusuf and al-Shaybani carried his school on.", "de": "Er lernte viele Jahre bei Hammad ibn Abi Sulaiman und folgte ihm als führender Jurist Kufas. Berichte nennen auch Dschafar as-Sadiq unter seinen Lehrern. Seine Schüler Abu Yusuf und asch-Schaibani führten seine Schule weiter.", "ar": "لازم حماد بن أبي سليمان سنين طويلة وخلفه في رئاسة الفقه بالكوفة، وتذكر الروايات جعفرًا الصادق في شيوخه، وحمل مذهبه من بعده تلميذاه أبو يوسف ومحمد بن الحسن الشيباني."}
+        },
+        {
+          "hadith": "bukhari:71",
+          "check": "comprehend the religion",
+          "title": {"en": "The gift of understanding", "de": "Die Gabe des Verstehens", "ar": "نعمة الفقه في الدين"},
+          "body": {"en": "Fiqh means deep understanding. This hadith counts it among the signs that Allah wants good for a person.", "de": "Fiqh bedeutet tiefes Verständnis. Dieser Hadith zählt es zu den Zeichen, dass Allah einem Menschen Gutes will.", "ar": "الفقه هو الفهم العميق، وهذا الحديث يجعله من علامات إرادة الله الخير بعبده."}
+        },
+        {
+          "title": {"en": "A method for new questions", "de": "Eine Methode für neue Fragen", "ar": "منهج للمسائل الجديدة"},
+          "body": {"en": "When no clear text answered a new case, his school reasoned by analogy (qiyas) and juristic preference (istihsan), always bound to the Quran and the Sunnah.", "de": "Wenn kein klarer Text einen neuen Fall beantwortete, urteilte seine Schule durch Analogie (Qiyas) und juristische Vorzugswahl (Istihsan), stets gebunden an Koran und Sunna.", "ar": "إذا لم يجد نصًا صريحًا في مسألة جديدة لجأ مذهبه إلى القياس والاستحسان، مع التقيد الدائم بالكتاب والسنة."}
+        },
+        {
+          "title": {"en": "He refused to be a judge", "de": "Er lehnte das Richteramt ab", "ar": "أبى أن يتولى القضاء"},
+          "body": {"en": "When the Abbasid caliph al-Mansur offered him the post of chief judge, he refused. He was imprisoned and died in prison in Baghdad in 150 AH (767 CE).", "de": "Als der abbasidische Kalif al-Mansur ihm das Amt des obersten Richters anbot, lehnte er ab. Er wurde eingekerkert und starb 150 n. H. (767) im Gefängnis in Bagdad.", "ar": "عرض عليه الخليفة العباسي أبو جعفر المنصور منصب قاضي القضاة فأبى، فسُجن، وتوفي في سجنه ببغداد سنة ١٥٠هـ (٧٦٧م)."}
+        },
+        {
+          "title": {"en": "A school that spread widely", "de": "Eine weit verbreitete Schule", "ar": "مذهب انتشر في الآفاق"},
+          "body": {"en": "The Hanafi school became the most widely followed school of Sunni law, from Turkey and the Balkans to Central and South Asia.", "de": "Die hanafitische Schule wurde zur meistverbreiteten sunnitischen Rechtsschule, von der Türkei und dem Balkan bis nach Zentral- und Südasien.", "ar": "صار المذهب الحنفي أوسع المذاهب الفقهية السنية انتشارًا، من تركيا والبلقان إلى آسيا الوسطى وجنوبها."}
+        },
+        {
+          "title": {"en": "Lessons from Abu Hanifa", "de": "Lehren von Abu Hanifa", "ar": "دروس من أبي حنيفة"},
+          "list": {
+            "en": ["Earn a lawful living and deal honestly", "Think carefully before you give an answer", "Keep your independence from power"],
+            "de": ["Verdienen Sie Ihren Unterhalt rechtmäßig und handeln Sie ehrlich", "Denken Sie gründlich nach, bevor Sie antworten", "Bewahren Sie Ihre Unabhängigkeit gegenüber der Macht"],
+            "ar": ["اكسب رزقك من الحلال وتعامل بأمانة", "تأنَّ وتفكّر قبل أن تجيب", "احفظ استقلالك عن السلطة"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Abu Hanifa", "url": "https://en.wikipedia.org/wiki/Abu_Hanifa"}
+      ]
+    },
+    {
+      "id": "scholars-02-malik",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Great scholars · 2", "de": "Große Gelehrte · 2", "ar": "أعلام العلماء · ٢"},
+        "title": {"en": "Malik ibn Anas", "de": "Malik ibn Anas", "ar": "مالك بن أنس"},
+        "sub": {"en": "The imam of Medina and his book al-Muwatta", "de": "Der Imam von Medina und sein Buch al-Muwatta", "ar": "إمام دار الهجرة وصاحب الموطأ"},
+        "arabic": "إمام دار الهجرة"
+      },
+      "slides": [
+        {
+          "title": {"en": "A life in Medina", "de": "Ein Leben in Medina", "ar": "حياة في المدينة"},
+          "body": {"en": "Malik ibn Anas was born in Medina in 93 AH (711 CE) and died there in 179 AH (795 CE). He spent his life in the city of the Prophet, learning and teaching.", "de": "Malik ibn Anas wurde 93 n. H. (711) in Medina geboren und starb dort 179 n. H. (795). Er verbrachte sein Leben in der Stadt des Propheten, lernend und lehrend.", "ar": "وُلد مالك بن أنس في المدينة سنة ٩٣هـ (٧١١م) وتوفي فيها سنة ١٧٩هـ (٧٩٥م)، وقضى عمره في مدينة النبي ﷺ متعلمًا ومعلمًا."}
+        },
+        {
+          "title": {"en": "His teachers", "de": "Seine Lehrer", "ar": "شيوخه"},
+          "body": {"en": "He learned from the scholars of Medina, among them Nafi', the freed slave of Ibn Umar, Ibn Shihab al-Zuhri and Ja'far as-Sadiq. Hadith experts praised the chain Malik, from Nafi', from Ibn Umar, as one of the soundest.", "de": "Er lernte bei den Gelehrten Medinas, darunter Nafi, der Freigelassene Ibn Umars, Ibn Schihab az-Zuhri und Dschafar as-Sadiq. Hadithkenner lobten die Kette Malik, von Nafi, von Ibn Umar als eine der zuverlässigsten.", "ar": "أخذ عن علماء المدينة، ومنهم نافع مولى ابن عمر وابن شهاب الزهري وجعفر الصادق، وعدّ أهل الحديث سلسلة مالك عن نافع عن ابن عمر من أصح الأسانيد."}
+        },
+        {
+          "title": {"en": "Al-Muwatta", "de": "Al-Muwatta", "ar": "الموطأ"},
+          "body": {"en": "Al-Muwatta, the well-trodden path, joins hadith with the practice of the people of Medina and the views of the Companions and their students. His student al-Shafi'i praised it highly.", "de": "Al-Muwatta, der gebahnte Weg, verbindet Hadithe mit der Praxis der Menschen Medinas und den Ansichten der Gefährten und ihrer Schüler. Sein Schüler asch-Schafii lobte das Werk sehr.", "ar": "يجمع الموطأ بين الحديث وعمل أهل المدينة وأقوال الصحابة والتابعين، وقد أثنى عليه تلميذه الشافعي ثناءً عظيمًا."}
+        },
+        {
+          "verse": "16:116",
+          "check": "This is lawful and this is unlawful",
+          "title": {"en": "Careful with halal and haram", "de": "Vorsicht bei halal und haram", "ar": "الحذر في الحلال والحرام"},
+          "body": {"en": "Biographers describe Malik's caution: when unsure, he declined to answer. This verse shows why scholars feared speaking without knowledge.", "de": "Biographen beschreiben Maliks Vorsicht: War er unsicher, lehnte er eine Antwort ab. Dieser Vers zeigt, warum Gelehrte das Reden ohne Wissen fürchteten.", "ar": "يصف مترجموه ورع مالك في الفتوى، فكان يمتنع عن الجواب إذا لم يتيقن، وهذه الآية تبين سبب خوف العلماء من القول بلا علم."}
+        },
+        {
+          "title": {"en": "Firm under pressure", "de": "Standhaft unter Druck", "ar": "ثبات أمام السلطة"},
+          "body": {"en": "The governor of Medina had him flogged, reportedly over his view that an oath taken under coercion does not bind. Reports say he bore it with patience and went on teaching.", "de": "Der Statthalter von Medina ließ ihn auspeitschen, angeblich wegen seiner Ansicht, dass ein erzwungener Eid nicht bindet. Berichten zufolge ertrug er es geduldig und lehrte weiter.", "ar": "أمر والي المدينة بجلده، ويُروى أن ذلك كان بسبب فتواه بأن يمين المكره لا تلزمه، وتذكر الأخبار أنه صبر واستمر في التدريس."}
+        },
+        {
+          "title": {"en": "Unity without force", "de": "Einheit ohne Zwang", "ar": "وحدة بلا إكراه"},
+          "body": {"en": "When the caliph al-Mansur wanted to impose Malik's teaching on the whole empire, Malik declined. People in each region, he said, already followed what their own scholars had taught them.", "de": "Als der Kalif al-Mansur Maliks Lehre im ganzen Reich durchsetzen wollte, lehnte Malik ab. Die Menschen jeder Region, sagte er, folgten bereits dem, was ihre eigenen Gelehrten sie gelehrt hatten.", "ar": "لما أراد الخليفة المنصور أن يحمل الناس في الدولة كلها على علم مالك أبى ذلك، وبيّن أن أهل كل بلد قد أخذوا بما علّمهم علماؤهم."}
+        },
+        {
+          "title": {"en": "Lessons from Malik", "de": "Lehren von Malik", "ar": "دروس من مالك"},
+          "list": {
+            "en": ["Treat hadith with calm and careful study", "Saying 'I do not know' is part of knowledge", "Respect the scholars of other places"],
+            "de": ["Begegnen Sie dem Hadith mit ruhigem, sorgfältigem Studium", "Zu sagen ‚Ich weiß es nicht‘ gehört zum Wissen", "Achten Sie die Gelehrten anderer Orte"],
+            "ar": ["تعامل مع الحديث بسكينة ودراسة متأنية", "قول لا أدري من العلم", "احترم علماء البلاد الأخرى"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Malik ibn Anas", "url": "https://en.wikipedia.org/wiki/Malik_ibn_Anas"},
+        {"label": "Qadi Iyad, Tartib al-Madarik"}
+      ]
+    },
+    {
+      "id": "scholars-03-al-shafii",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Great scholars · 3", "de": "Große Gelehrte · 3", "ar": "أعلام العلماء · ٣"},
+        "title": {"en": "Al-Shafi'i", "de": "Asch-Schafii", "ar": "الإمام الشافعي"},
+        "sub": {"en": "From a poor orphan in Mecca to the founder of legal theory", "de": "Vom armen Waisenkind in Mekka zum Begründer der Rechtsmethodik", "ar": "من يتيم فقير في مكة إلى واضع علم أصول الفقه"},
+        "arabic": "محمد بن إدريس الشافعي"
+      },
+      "slides": [
+        {
+          "title": {"en": "Born in Gaza in 150 AH", "de": "Geboren in Gaza im Jahr 150 n. H.", "ar": "مولده في غزة سنة ١٥٠هـ"},
+          "body": {"en": "Muhammad ibn Idris al-Shafi'i was born in Gaza in 150 AH (767 CE), the year Abu Hanifa died. After his father's death he grew up in Mecca, poor but devoted to learning.", "de": "Muhammad ibn Idris asch-Schafii wurde 150 n. H. (767) in Gaza geboren, im Todesjahr Abu Hanifas. Nach dem Tod seines Vaters wuchs er in Mekka auf, arm, aber dem Lernen hingegeben.", "ar": "وُلد محمد بن إدريس الشافعي في غزة سنة ١٥٠هـ (٧٦٧م)، وهي السنة التي توفي فيها أبو حنيفة، ونشأ بعد وفاة أبيه في مكة فقيرًا محبًا للعلم."}
+        },
+        {
+          "title": {"en": "Student of Malik", "de": "Schüler Maliks", "ar": "تلميذ مالك"},
+          "body": {"en": "Biographers report that he memorised the Quran as a boy and al-Muwatta soon after. He went to Medina to study with Malik, whom he honoured as his teacher all his life.", "de": "Biographen berichten, dass er den Koran schon als Junge auswendig lernte und bald darauf al-Muwatta. Er ging nach Medina, um bei Malik zu lernen, den er sein Leben lang als Lehrer ehrte.", "ar": "يذكر مترجموه أنه حفظ القرآن صغيرًا ثم الموطأ بعده، ورحل إلى المدينة ليتعلم على مالك، وظل يجلّه شيخًا له طوال حياته."}
+        },
+        {
+          "title": {"en": "Between two schools", "de": "Zwischen zwei Schulen", "ar": "بين مدرستين"},
+          "body": {"en": "In Iraq he studied with Muhammad al-Shaybani, the student of Abu Hanifa. He brought together the hadith learning of Medina and the legal reasoning of Iraq.", "de": "Im Irak lernte er bei Muhammad asch-Schaibani, dem Schüler Abu Hanifas. Er verband die Hadithgelehrsamkeit Medinas mit der juristischen Argumentation des Irak.", "ar": "تعلّم في العراق على محمد بن الحسن الشيباني تلميذ أبي حنيفة، فجمع بين علم الحديث عند أهل المدينة والنظر الفقهي عند أهل العراق."}
+        },
+        {
+          "title": {"en": "Al-Risala", "de": "Al-Risala", "ar": "الرسالة"},
+          "body": {"en": "His al-Risala is one of the earliest works on usul al-fiqh, the principles of jurisprudence. It sets out how the Quran, the Sunnah, consensus and analogy work together.", "de": "Seine Risala ist eines der frühesten Werke über Usul al-Fiqh, die Grundlagen der Rechtsfindung. Sie zeigt, wie Koran, Sunna, Konsens und Analogie zusammenwirken.", "ar": "كتابه الرسالة من أوائل ما أُلّف في أصول الفقه، وفيه بيان كيف تتكامل أدلة الكتاب والسنة والإجماع والقياس."}
+        },
+        {
+          "verse": "4:59",
+          "check": "refer it to Allah",
+          "title": {"en": "Back to the sources", "de": "Zurück zu den Quellen", "ar": "الرد إلى الكتاب والسنة"},
+          "body": {"en": "Usul al-fiqh asks exactly this: how do we return a question to the Quran and the Sunnah?", "de": "Usul al-Fiqh fragt genau das: Wie führen wir eine Frage auf Koran und Sunna zurück?", "ar": "هذا هو سؤال علم الأصول: كيف نرد المسألة إلى الكتاب والسنة؟"}
+        },
+        {
+          "title": {"en": "Old and new", "de": "Alt und neu", "ar": "القديم والجديد"},
+          "body": {"en": "In Egypt he revised many of his earlier views. Scholars speak of his old school in Iraq and his new school in Egypt: a sign of honesty, not weakness. He died in Fustat in 204 AH (820 CE).", "de": "In Ägypten überarbeitete er viele seiner früheren Ansichten. Gelehrte sprechen von seiner alten Lehre im Irak und seiner neuen in Ägypten: ein Zeichen der Ehrlichkeit, nicht der Schwäche. Er starb 204 n. H. (820) in Fustat.", "ar": "راجع في مصر كثيرًا من آرائه السابقة، فتحدث العلماء عن مذهبه القديم في العراق ومذهبه الجديد في مصر، وذلك دليل صدق لا ضعف. وتوفي في الفسطاط سنة ٢٠٤هـ (٨٢٠م)."}
+        },
+        {
+          "title": {"en": "Lessons from al-Shafi'i", "de": "Lehren von asch-Schafii", "ar": "دروس من الشافعي"},
+          "list": {
+            "en": ["Poverty need not stop a seeker of knowledge", "Honour your teachers, even when you differ", "Change your view when better evidence comes"],
+            "de": ["Armut muss niemanden vom Lernen abhalten", "Ehren Sie Ihre Lehrer, auch wenn Sie anderer Meinung sind", "Ändern Sie Ihre Ansicht, wenn bessere Belege kommen"],
+            "ar": ["الفقر لا يمنع طالب العلم", "أكرم شيوخك وإن خالفتهم", "ارجع عن رأيك إذا ظهر دليل أقوى"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Al-Shafi'i", "url": "https://en.wikipedia.org/wiki/Al-Shafi%27i"},
+        {"label": "Al-Shafi'i, al-Risala"}
+      ]
+    },
+    {
+      "id": "scholars-04-ahmad-ibn-hanbal",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Great scholars · 4", "de": "Große Gelehrte · 4", "ar": "أعلام العلماء · ٤"},
+        "title": {"en": "Ahmad ibn Hanbal", "de": "Ahmad ibn Hanbal", "ar": "أحمد بن حنبل"},
+        "sub": {"en": "The scholar of hadith who stood firm in the Mihna", "de": "Der Hadithgelehrte, der in der Mihna standhaft blieb", "ar": "إمام أهل الحديث الذي ثبت في المحنة"},
+        "arabic": "الإمام أحمد بن حنبل"
+      },
+      "slides": [
+        {
+          "title": {"en": "A seeker of hadith", "de": "Auf der Suche nach Hadithen", "ar": "رحلة في طلب الحديث"},
+          "body": {"en": "Ahmad ibn Hanbal was born in Baghdad in 164 AH (780 CE). As a young man he travelled to the cities of Iraq, the Hijaz, Yemen and Syria to hear hadith from their narrators.", "de": "Ahmad ibn Hanbal wurde 164 n. H. (780) in Bagdad geboren. Als junger Mann reiste er in die Städte des Irak, des Hidschas, des Jemen und Syriens, um Hadithe von ihren Überlieferern zu hören.", "ar": "وُلد أحمد بن حنبل في بغداد سنة ١٦٤هـ (٧٨٠م)، ورحل شابًا إلى مدن العراق والحجاز واليمن والشام ليسمع الحديث من رواته."}
+        },
+        {
+          "title": {"en": "Student of al-Shafi'i", "de": "Schüler asch-Schafiis", "ar": "تلميذ الشافعي"},
+          "body": {"en": "In Baghdad he studied law with al-Shafi'i, and the two became close. Later his students collected his answers, and the Hanbali school grew from them.", "de": "In Bagdad lernte er Recht bei asch-Schafii, und beide verband eine enge Freundschaft. Später sammelten seine Schüler seine Antworten, und daraus erwuchs die hanbalitische Schule.", "ar": "تفقّه في بغداد على الشافعي ونشأت بينهما مودة، ثم جمع تلاميذه أجوبته، فنشأ منها المذهب الحنبلي."}
+        },
+        {
+          "title": {"en": "The Musnad", "de": "Der Musnad", "ar": "المسند"},
+          "body": {"en": "His Musnad arranges hadith by the Companion who narrated them. It is among the largest hadith collections of its kind.", "de": "Sein Musnad ordnet die Hadithe nach dem Gefährten, der sie überliefert hat. Er gehört zu den größten Hadithsammlungen dieser Art.", "ar": "رتّب في مسنده الأحاديث على أسماء الصحابة الذين رووها، وهو من أكبر كتب الحديث من نوعه."}
+        },
+        {
+          "title": {"en": "The Mihna", "de": "Die Mihna", "ar": "المحنة"},
+          "body": {"en": "Under al-Ma'mun and his successors, scholars were pressed to declare that the Quran was created. Ahmad held that it is the uncreated word of Allah and refused.", "de": "Unter al-Mamun und seinen Nachfolgern wurden Gelehrte gedrängt zu erklären, der Koran sei erschaffen. Ahmad hielt daran fest, dass er das unerschaffene Wort Allahs ist, und weigerte sich.", "ar": "في عهد المأمون ومن بعده أُلزم العلماء بالقول بخلق القرآن، فثبت أحمد على أن القرآن كلام الله غير مخلوق وأبى."}
+        },
+        {
+          "title": {"en": "Prison and the whip", "de": "Gefängnis und Peitsche", "ar": "السجن والسياط"},
+          "body": {"en": "He was imprisoned, and under al-Mu'tasim he was flogged until he lost consciousness. The trial ended under al-Mutawakkil. Ahmad died in Baghdad in 241 AH (855 CE).", "de": "Er wurde eingekerkert und unter al-Mutasim ausgepeitscht, bis er das Bewusstsein verlor. Die Prüfung endete unter al-Mutawakkil. Ahmad starb 241 n. H. (855) in Bagdad.", "ar": "سُجن وضُرب بالسياط في عهد المعتصم حتى غُشي عليه، وانتهت المحنة في عهد المتوكل، وتوفي أحمد في بغداد سنة ٢٤١هـ (٨٥٥م)."}
+        },
+        {
+          "verse": "29:2-3",
+          "check": "will not be tried",
+          "title": {"en": "Faith is tested", "de": "Der Glaube wird geprüft", "ar": "الإيمان يُمتحن"},
+          "body": {"en": "His patience became an example for Muslims pressed to say what they do not believe.", "de": "Seine Geduld wurde zum Vorbild für Muslime, die gedrängt werden, zu sagen, was sie nicht glauben.", "ar": "صار صبره قدوة للمسلمين حين يُضغط عليهم ليقولوا ما لا يعتقدون."}
+        },
+        {
+          "hadith": "bukhari:5645",
+          "check": "afflicts him with trials",
+          "title": {"en": "Trials as a sign of good", "de": "Prüfungen als Zeichen des Guten", "ar": "البلاء علامة خير"},
+          "body": {"en": "Hardship can be a door to good. Imam Ahmad's life is often read in the light of this hadith.", "de": "Not kann eine Tür zum Guten sein. Das Leben Imam Ahmads wird oft im Licht dieses Hadith gelesen.", "ar": "قد يكون البلاء بابًا إلى الخير، وكثيرًا ما تُقرأ حياة الإمام أحمد في ضوء هذا الحديث."}
+        },
+        {
+          "title": {"en": "Lessons from Imam Ahmad", "de": "Lehren von Imam Ahmad", "ar": "دروس من الإمام أحمد"},
+          "list": {
+            "en": ["Travel, even far, for sound knowledge", "Hold to the truth with patience and dignity", "Let your study end only with your life"],
+            "de": ["Reisen Sie, auch weit, für gesichertes Wissen", "Halten Sie mit Geduld und Würde an der Wahrheit fest", "Lassen Sie Ihr Lernen erst mit Ihrem Leben enden"],
+            "ar": ["ارحل ولو بعيدًا في طلب العلم الصحيح", "اثبت على الحق بصبر ووقار", "لا تجعل لطلبك العلم نهاية إلا الموت"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Ahmad ibn Hanbal", "url": "https://en.wikipedia.org/wiki/Ahmad_ibn_Hanbal"}
+      ]
+    },
+    {
+      "id": "scholars-05-al-bukhari",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Great scholars · 5", "de": "Große Gelehrte · 5", "ar": "أعلام العلماء · ٥"},
+        "title": {"en": "Imam al-Bukhari", "de": "Imam al-Buchari", "ar": "الإمام البخاري"},
+        "sub": {"en": "The scholar behind the most trusted hadith collection of Sunni Islam", "de": "Der Gelehrte hinter der angesehensten Hadithsammlung des sunnitischen Islam", "ar": "صاحب أصح كتب الحديث عند أهل السنة"},
+        "arabic": "محمد بن إسماعيل البخاري"
+      },
+      "slides": [
+        {
+          "title": {"en": "Born in Bukhara", "de": "Geboren in Buchara", "ar": "مولده في بخارى"},
+          "body": {"en": "Muhammad ibn Isma'il al-Bukhari was born in Bukhara in 194 AH (810 CE). He lost his father young and was raised by his mother. As a youth he went on Hajj and stayed in the Hijaz to study.", "de": "Muhammad ibn Ismail al-Buchari wurde 194 n. H. (810) in Buchara geboren. Er verlor früh seinen Vater und wuchs bei seiner Mutter auf. Als junger Mann pilgerte er nach Mekka und blieb zum Lernen im Hidschas.", "ar": "وُلد محمد بن إسماعيل البخاري في بخارى سنة ١٩٤هـ (٨١٠م)، وتوفي أبوه وهو صغير فربّته أمه، وحج في شبابه ثم أقام في الحجاز طالبًا للعلم."}
+        },
+        {
+          "title": {"en": "Journeys for hadith", "de": "Reisen für den Hadith", "ar": "الرحلة في طلب الحديث"},
+          "body": {"en": "He travelled to the Hijaz, Iraq, Syria and Egypt, heard hadith from a great many teachers and examined every chain of narrators with care.", "de": "Er reiste in den Hidschas, in den Irak, nach Syrien und Ägypten, hörte Hadithe von sehr vielen Lehrern und prüfte jede Überliefererkette sorgfältig.", "ar": "رحل إلى الحجاز والعراق والشام ومصر، وسمع من شيوخ كثيرين، وفحص كل إسناد بعناية."}
+        },
+        {
+          "title": {"en": "Al-Jami' as-Sahih", "de": "Al-Dschami as-Sahih", "ar": "الجامع الصحيح"},
+          "body": {"en": "He chose only narrations that met strict conditions on the reliability of every narrator and their contact with each other. Sunni scholars regard his Sahih as the most authentic book after the Quran.", "de": "Er wählte nur Überlieferungen aus, die strenge Bedingungen erfüllten: Zuverlässigkeit jedes Überlieferers und ihre Verbindung untereinander. Sunnitische Gelehrte sehen seinen Sahih als das authentischste Buch nach dem Koran.", "ar": "لم يُخرج إلا ما استوفى شروطًا صارمة في عدالة كل راوٍ وضبطه واتصال السند، ويعد علماء أهل السنة صحيحه أصح كتاب بعد القرآن."}
+        },
+        {
+          "hadith": "bukhari:1",
+          "check": "intentions",
+          "title": {"en": "It opens with intention", "de": "Es beginnt mit der Absicht", "ar": "يبدأ بالنية"},
+          "body": {"en": "Al-Bukhari placed this hadith first, as a reminder to check one's intention before anything else.", "de": "Al-Buchari stellte diesen Hadith an den Anfang, als Erinnerung, vor allem anderen die Absicht zu prüfen.", "ar": "قدّم البخاري هذا الحديث في أول كتابه تذكيرًا بتصحيح النية قبل كل شيء."}
+        },
+        {
+          "hadith": "bukhari:7563",
+          "check": "heavy in weight",
+          "title": {"en": "It closes with the scale", "de": "Es endet mit der Waage", "ar": "يُختم بالميزان"},
+          "body": {"en": "The last hadith of the book speaks of two light words that weigh heavy on the scale: an ending full of hope.", "de": "Der letzte Hadith des Buches spricht von zwei leichten Worten, die auf der Waage schwer wiegen: ein Schluss voller Hoffnung.", "ar": "آخر حديث في الكتاب عن كلمتين خفيفتين ثقيلتين في الميزان، فهي خاتمة مليئة بالرجاء."}
+        },
+        {
+          "title": {"en": "Prayer before writing", "de": "Gebet vor dem Schreiben", "ar": "صلاة قبل الكتابة"},
+          "body": {"en": "Biographers report that he made ghusl and prayed two rak'ahs before entering each hadith into his book.", "de": "Biographen berichten, dass er die Ganzkörperwaschung vollzog und zwei Gebetseinheiten betete, bevor er einen Hadith in sein Buch aufnahm.", "ar": "يروي مترجموه أنه كان يغتسل ويصلي ركعتين قبل أن يضع كل حديث في كتابه."}
+        },
+        {
+          "title": {"en": "His final years", "de": "Seine letzten Jahre", "ar": "سنواته الأخيرة"},
+          "body": {"en": "Late in life he faced hostility and had to leave Bukhara. He died in Khartank near Samarkand in 256 AH (870 CE).", "de": "Spät im Leben erfuhr er Anfeindungen und musste Buchara verlassen. Er starb 256 n. H. (870) in Chartank bei Samarkand.", "ar": "لقي في آخر عمره عداوة اضطرته إلى مغادرة بخارى، وتوفي في خَرْتَنْك قرب سمرقند سنة ٢٥٦هـ (٨٧٠م)."}
+        },
+        {
+          "title": {"en": "Lessons from al-Bukhari", "de": "Lehren von al-Buchari", "ar": "دروس من البخاري"},
+          "list": {
+            "en": ["Check your sources before you share", "Begin and end your work with Allah", "Patience in study brings lasting fruit"],
+            "de": ["Prüfen Sie Ihre Quellen, bevor Sie etwas weitergeben", "Beginnen und beenden Sie Ihre Arbeit mit Allah", "Geduld beim Lernen bringt bleibende Frucht"],
+            "ar": ["تثبّت من مصادرك قبل أن تنشر", "ابدأ عملك واختمه بالله", "الصبر على العلم يثمر ثمرًا باقيًا"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Muhammad al-Bukhari", "url": "https://en.wikipedia.org/wiki/Muhammad_al-Bukhari"},
+        {"label": "Ibn Hajar al-Asqalani, Hady al-Sari (introduction to Fath al-Bari)"}
+      ]
+    },
+    {
+      "id": "scholars-06-jafar-as-sadiq",
+      "tradition": "all",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Great scholars · 6", "de": "Große Gelehrte · 6", "ar": "أعلام العلماء · ٦"},
+        "title": {"en": "Imam Ja'far as-Sadiq", "de": "Imam Dschafar as-Sadiq", "ar": "الإمام جعفر الصادق"},
+        "sub": {"en": "A teacher of Medina honoured by Sunni and Shia scholars", "de": "Ein Lehrer aus Medina, geehrt von sunnitischen und schiitischen Gelehrten", "ar": "معلّم من المدينة يجلّه علماء السنة والشيعة"},
+        "arabic": "جعفر بن محمد الصادق"
+      },
+      "slides": [
+        {
+          "title": {"en": "From the house of the Prophet", "de": "Aus dem Haus des Propheten", "ar": "من بيت النبوة"},
+          "body": {"en": "Ja'far ibn Muhammad was born in Medina around 83 AH (702 CE). His father, Muhammad al-Baqir, descended from the Prophet through al-Husayn. His mother, Umm Farwa, descended from Abu Bakr.", "de": "Dschafar ibn Muhammad wurde um 83 n. H. (702) in Medina geboren. Sein Vater Muhammad al-Baqir stammte über al-Husain vom Propheten ab. Seine Mutter Umm Farwa stammte von Abu Bakr ab.", "ar": "وُلد جعفر بن محمد في المدينة نحو سنة ٨٣هـ (٧٠٢م)، وأبوه محمد الباقر من ذرية النبي ﷺ من جهة الحسين، وأمه أم فروة من ذرية أبي بكر."}
+        },
+        {
+          "title": {"en": "Called the Truthful", "de": "Der Wahrhaftige genannt", "ar": "لُقّب بالصادق"},
+          "body": {"en": "He became known as as-Sadiq, the Truthful. In a time of political upheaval, as Umayyad rule gave way to the Abbasids, he devoted himself to teaching in Medina.", "de": "Er wurde als as-Sadiq bekannt, der Wahrhaftige. In einer Zeit politischer Umbrüche, als die Umayyaden den Abbasiden wichen, widmete er sich in Medina der Lehre.", "ar": "عُرف بالصادق، وفي زمن اضطراب سياسي انتقل فيه الحكم من الأمويين إلى العباسيين تفرّغ للتعليم في المدينة."}
+        },
+        {
+          "title": {"en": "Many students", "de": "Viele Schüler", "ar": "تلاميذ كثيرون"},
+          "body": {"en": "Sources speak of thousands of students and narrators. Malik ibn Anas narrated from him, and reports name Abu Hanifa among those who learned from him.", "de": "Quellen sprechen von Tausenden Schülern und Überlieferern. Malik ibn Anas überlieferte von ihm, und Berichte nennen Abu Hanifa unter denen, die bei ihm lernten.", "ar": "تتحدث المصادر عن آلاف التلاميذ والرواة، وقد روى عنه مالك بن أنس، وتذكر الروايات أبا حنيفة فيمن أخذ عنه."}
+        },
+        {
+          "title": {"en": "Imam of the Shia", "de": "Imam der Schiiten", "ar": "إمام عند الشيعة"},
+          "body": {"en": "For Twelver Shia Muslims he is the sixth Imam. Their school of law, the Ja'fari school, is named after him.", "de": "Für Zwölfer-Schiiten ist er der sechste Imam. Ihre Rechtsschule, die dschafaritische, trägt seinen Namen.", "ar": "هو عند الشيعة الإمامية الإمام السادس، وإليه يُنسب مذهبهم الفقهي المعروف بالمذهب الجعفري."}
+        },
+        {
+          "title": {"en": "Honoured by Sunni scholars", "de": "Von sunnitischen Gelehrten geehrt", "ar": "مكانته عند أهل السنة"},
+          "body": {"en": "Sunni scholars respect him as a trustworthy narrator and jurist from the Prophet's family. Narrations through him appear in Sahih Muslim, among them the long account of the Prophet's Hajj.", "de": "Sunnitische Gelehrte achten ihn als vertrauenswürdigen Überlieferer und Juristen aus der Familie des Propheten. Überlieferungen über ihn stehen in Sahih Muslim, darunter der lange Bericht über die Pilgerfahrt des Propheten.", "ar": "يجلّه علماء أهل السنة راويًا ثقة وفقيهًا من آل البيت، وفي صحيح مسلم روايات من طريقه، منها حديث جابر الطويل في صفة حجة النبي ﷺ."}
+        },
+        {
+          "title": {"en": "A school recognised by many", "de": "Eine weithin anerkannte Rechtsschule", "ar": "مذهب معترف به"},
+          "body": {"en": "In 1959 Shaykh Mahmud Shaltut of al-Azhar declared worship according to the Ja'fari school valid. The Amman Message of 2005 also lists it among the recognised schools of law.", "de": "1959 erklärte Scheich Mahmud Schaltut von der Azhar den Gottesdienst nach der dschafaritischen Schule für gültig. Auch die Amman-Botschaft von 2005 zählt sie zu den anerkannten Rechtsschulen.", "ar": "أفتى شيخ الأزهر محمود شلتوت سنة ١٩٥٩م بصحة التعبد على المذهب الجعفري، وعدّته رسالة عمّان سنة ٢٠٠٥م من المذاهب الفقهية المعتبرة."}
+        },
+        {
+          "verse": "20:114",
+          "check": "increase me in knowledge",
+          "title": {"en": "A prayer for more knowledge", "de": "Ein Gebet um mehr Wissen", "ar": "دعاء الاستزادة من العلم"},
+          "body": {"en": "A life given to teaching is a living answer to this prayer.", "de": "Ein Leben, das der Lehre gewidmet ist, ist eine lebendige Antwort auf dieses Gebet.", "ar": "حياة وُهبت للتعليم جواب حيّ لهذا الدعاء."}
+        },
+        {
+          "title": {"en": "Resting in al-Baqi", "de": "Seine Ruhestätte in al-Baqi", "ar": "مرقده في البقيع"},
+          "body": {"en": "He died in Medina in 148 AH (765 CE) and was buried in the cemetery of al-Baqi. Shia sources report that he was poisoned at the instigation of the caliph al-Mansur.", "de": "Er starb 148 n. H. (765) in Medina und wurde auf dem Friedhof al-Baqi beigesetzt. Schiitische Quellen berichten, er sei auf Veranlassung des Kalifen al-Mansur vergiftet worden.", "ar": "توفي في المدينة سنة ١٤٨هـ (٧٦٥م) ودُفن في البقيع، وتذكر المصادر الشيعية أنه مات مسمومًا بتدبير من الخليفة المنصور."}
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Ja'far al-Sadiq", "url": "https://en.wikipedia.org/wiki/Ja%27far_al-Sadiq"},
+        {"label": "Wikipedia: Amman Message", "url": "https://en.wikipedia.org/wiki/Amman_Message"},
+        {"label": "Wikipedia: Mahmud Shaltut", "url": "https://en.wikipedia.org/wiki/Mahmud_Shaltut"}
+      ]
+    },
+    {
+      "id": "scholars-07-al-tabari",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Great scholars · 7", "de": "Große Gelehrte · 7", "ar": "أعلام العلماء · ٧"},
+        "title": {"en": "Al-Tabari", "de": "At-Tabari", "ar": "الإمام الطبري"},
+        "sub": {"en": "The commentator and historian who gathered the voices before him", "de": "Der Koranausleger und Historiker, der die Stimmen vor ihm sammelte", "ar": "المفسر والمؤرخ الذي جمع أقوال من سبقه"},
+        "arabic": "محمد بن جرير الطبري"
+      },
+      "slides": [
+        {
+          "title": {"en": "From Tabaristan to Baghdad", "de": "Von Tabaristan nach Bagdad", "ar": "من طبرستان إلى بغداد"},
+          "body": {"en": "Muhammad ibn Jarir al-Tabari was born in Amol, Tabaristan, in 224 AH (839 CE). After years of study travel he settled in Baghdad, where he died in 310 AH (923 CE).", "de": "Muhammad ibn Dscharir at-Tabari wurde 224 n. H. (839) in Amol in Tabaristan geboren. Nach Jahren der Studienreisen ließ er sich in Bagdad nieder, wo er 310 n. H. (923) starb.", "ar": "وُلد محمد بن جرير الطبري في آمل بطبرستان سنة ٢٢٤هـ (٨٣٩م)، وبعد سنوات من الرحلة في طلب العلم استقر في بغداد وتوفي فيها سنة ٣١٠هـ (٩٢٣م)."}
+        },
+        {
+          "title": {"en": "A commentary built on narrations", "de": "Ein Kommentar aus Überlieferungen", "ar": "تفسير قائم على المأثور"},
+          "body": {"en": "His Jami' al-Bayan collects, verse by verse, what the Companions and their students said about the Quran, with their chains of narration.", "de": "Sein Dschami al-Bayan sammelt Vers für Vers, was die Gefährten und ihre Schüler über den Koran sagten, mit ihren Überlieferungsketten.", "ar": "يجمع كتابه جامع البيان عن تأويل آي القرآن، آيةً آية، أقوال الصحابة والتابعين في التفسير بأسانيدها."}
+        },
+        {
+          "title": {"en": "Weighing the views", "de": "Ansichten abwägen", "ar": "الترجيح بين الأقوال"},
+          "arabic": "أولى الأقوال بالصواب",
+          "body": {"en": "He does not only list opinions. He tests them against the Arabic language, the context and other verses, then says which view he considers most correct.", "de": "Er zählt Meinungen nicht nur auf. Er prüft sie an der arabischen Sprache, am Zusammenhang und an anderen Versen und sagt dann, welche Ansicht er für die richtigste hält.", "ar": "لا يكتفي بسرد الأقوال، بل يعرضها على اللغة والسياق والآيات الأخرى، ثم يبيّن أي الأقوال أولى بالصواب عنده."}
+        },
+        {
+          "verse": "38:29",
+          "check": "reflect upon its verses",
+          "title": {"en": "Sent down to be understood", "de": "Herabgesandt, um verstanden zu werden", "ar": "أُنزل ليُتدبّر"},
+          "body": {"en": "Tafsir exists because the Quran asks to be reflected upon. Al-Tabari gave decades of his life to that task.", "de": "Tafsir gibt es, weil der Koran dazu auffordert, über ihn nachzudenken. At-Tabari widmete dieser Aufgabe Jahrzehnte seines Lebens.", "ar": "وُجد علم التفسير لأن القرآن يدعو إلى تدبره، وقد أفنى الطبري عقودًا من عمره في هذه المهمة."}
+        },
+        {
+          "title": {"en": "History of prophets and kings", "de": "Geschichte der Propheten und Könige", "ar": "تاريخ الرسل والملوك"},
+          "body": {"en": "His Tarikh al-Rusul wa al-Muluk tells history from creation to his own time, again through reports with their chains. Later historians relied on it heavily.", "de": "Sein Tarich ar-Rusul wa-l-Muluk erzählt die Geschichte von der Schöpfung bis in seine Zeit, wieder durch Berichte mit ihren Ketten. Spätere Historiker stützten sich stark darauf.", "ar": "يروي كتابه تاريخ الرسل والملوك التاريخ من بدء الخلق إلى زمانه، بالأخبار وأسانيدها أيضًا، وقد اعتمد عليه المؤرخون بعده اعتمادًا كبيرًا."}
+        },
+        {
+          "title": {"en": "Reports, not verdicts", "de": "Berichte, keine Urteile", "ar": "أخبار لا أحكام"},
+          "body": {"en": "In the introduction to his history he explains that he passes reports on as they reached him, with their chains. Readers must weigh each chain, so not every report in it is authentic.", "de": "In der Einleitung seiner Geschichte erklärt er, dass er Berichte so weitergibt, wie sie ihn erreichten, mit ihren Ketten. Leser müssen jede Kette prüfen; nicht jeder Bericht darin ist authentisch.", "ar": "يوضح في مقدمة تاريخه أنه ينقل الأخبار كما وصلته بأسانيدها، فعلى القارئ أن ينظر في كل إسناد، وليس كل خبر فيه صحيحًا."}
+        },
+        {
+          "title": {"en": "Lessons from al-Tabari", "de": "Lehren von at-Tabari", "ar": "دروس من الطبري"},
+          "list": {
+            "en": ["Know what earlier scholars said before you speak", "Compare views fairly, then choose with reasons", "Check every report before you rely on it"],
+            "de": ["Kennen Sie die Aussagen früherer Gelehrter, bevor Sie sprechen", "Vergleichen Sie Ansichten fair und wählen Sie mit Begründung", "Prüfen Sie jeden Bericht, bevor Sie sich darauf stützen"],
+            "ar": ["اعرف أقوال من سبقك قبل أن تتكلم", "قارن بين الآراء بإنصاف ثم رجّح بدليل", "تثبّت من كل خبر قبل أن تعتمد عليه"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Al-Tabari", "url": "https://en.wikipedia.org/wiki/Al-Tabari"},
+        {"label": "Al-Tabari, Jami' al-Bayan 'an Ta'wil Ay al-Qur'an"},
+        {"label": "Al-Tabari, Tarikh al-Rusul wa al-Muluk, introduction"}
+      ]
+    },
+    {
+      "id": "scholars-08-an-nawawi",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Great scholars · 8", "de": "Große Gelehrte · 8", "ar": "أعلام العلماء · ٨"},
+        "title": {"en": "Imam an-Nawawi", "de": "Imam an-Nawawi", "ar": "الإمام النووي"},
+        "sub": {"en": "A short life and books still read across the Muslim world", "de": "Ein kurzes Leben und Bücher, die in der ganzen muslimischen Welt gelesen werden", "ar": "عمر قصير وكتب ما زالت تُقرأ في أرجاء العالم الإسلامي"},
+        "arabic": "يحيى بن شرف النووي"
+      },
+      "slides": [
+        {
+          "title": {"en": "From Nawa to Damascus", "de": "Von Nawa nach Damaskus", "ar": "من نوى إلى دمشق"},
+          "body": {"en": "Yahya ibn Sharaf an-Nawawi was born in Nawa, south of Damascus, in 631 AH (1233 CE). As a young man he moved to Damascus and gave himself fully to study.", "de": "Yahya ibn Scharaf an-Nawawi wurde 631 n. H. (1233) in Nawa südlich von Damaskus geboren. Als junger Mann zog er nach Damaskus und widmete sich ganz dem Studium.", "ar": "وُلد يحيى بن شرف النووي في نوى جنوب دمشق سنة ٦٣١هـ (١٢٣٣م)، ثم انتقل شابًا إلى دمشق وتفرغ للعلم تفرغًا تامًا."}
+        },
+        {
+          "title": {"en": "A short, full life", "de": "Ein kurzes, erfülltes Leben", "ar": "عمر قصير مبارك"},
+          "body": {"en": "He died in Nawa in 676 AH (1277 CE), aged about 45. In those few years he wrote works that are still read every day.", "de": "Er starb 676 n. H. (1277) in Nawa, mit etwa 45 Jahren. In diesen wenigen Jahren schrieb er Werke, die bis heute täglich gelesen werden.", "ar": "توفي في نوى سنة ٦٧٦هـ (١٢٧٧م) عن نحو خمس وأربعين سنة، وكتب في هذه السنوات القليلة مؤلفات ما زالت تُقرأ كل يوم."}
+        },
+        {
+          "title": {"en": "Some of his books", "de": "Einige seiner Bücher", "ar": "من مؤلفاته"},
+          "list": {
+            "en": ["Riyad as-Salihin, Gardens of the Righteous", "Al-Arba'in, his Forty Hadith", "Al-Adhkar, on remembrance and supplication", "Al-Minhaj, his commentary on Sahih Muslim", "Minhaj at-Talibin, a manual of Shafi'i fiqh"],
+            "de": ["Riyad as-Salihin, Die Gärten der Rechtschaffenen", "Al-Arbain, seine vierzig Hadithe", "Al-Adhkar, über Gottgedenken und Bittgebet", "Al-Minhadsch, sein Kommentar zu Sahih Muslim", "Minhadsch at-Talibin, ein Handbuch schafiitischen Rechts"],
+            "ar": ["رياض الصالحين", "الأربعون النووية", "الأذكار", "المنهاج في شرح صحيح مسلم", "منهاج الطالبين في الفقه الشافعي"]
+          }
+        },
+        {
+          "hadith": "nawawi:1",
+          "check": "what he intended",
+          "title": {"en": "The first of the forty", "de": "Der erste der vierzig", "ar": "أول الأربعين"},
+          "body": {"en": "Like al-Bukhari, an-Nawawi opened his Forty Hadith with intention. Students around the world memorise this collection.", "de": "Wie al-Buchari begann an-Nawawi seine vierzig Hadithe mit der Absicht. Lernende in aller Welt lernen diese Sammlung auswendig.", "ar": "افتتح النووي أربعينه بحديث النية كما فعل البخاري، ويحفظ هذه المجموعة طلاب في أنحاء العالم."}
+        },
+        {
+          "hadith": "nawawi:12",
+          "check": "does not concern him",
+          "title": {"en": "Leaving what does not concern you", "de": "Lassen, was einen nichts angeht", "ar": "ترك ما لا يعني"},
+          "body": {"en": "He chose this hadith for his collection. His own life is remembered for exactly this focus.", "de": "Er wählte diesen Hadith für seine Sammlung. Sein eigenes Leben steht für genau diese Konzentration auf das Wesentliche.", "ar": "اختار هذا الحديث في أربعينه، وتُذكر حياته بهذا التركيز نفسه."}
+        },
+        {
+          "title": {"en": "Simple and outspoken", "de": "Schlicht und mutig", "ar": "زهد وصدع بالحق"},
+          "body": {"en": "His student Ibn al-Attar describes a simple life of plain food and plain clothes. He also wrote to the sultan Baybars to defend the people of Damascus against unjust taxes.", "de": "Sein Schüler Ibn al-Attar beschreibt ein schlichtes Leben mit einfacher Nahrung und einfacher Kleidung. Er schrieb auch an Sultan Baibars, um die Menschen von Damaskus gegen ungerechte Abgaben zu verteidigen.", "ar": "يصف تلميذه ابن العطار حياته البسيطة في طعامه ولباسه، وقد كتب إلى السلطان الظاهر بيبرس يدافع عن أهل دمشق في وجه ضرائب ظالمة."}
+        },
+        {
+          "title": {"en": "Lessons from an-Nawawi", "de": "Lehren von an-Nawawi", "ar": "دروس من النووي"},
+          "list": {
+            "en": ["Use your time: a short life can achieve much", "Write what benefits ordinary believers", "Speak up for justice with good manners"],
+            "de": ["Nutzen Sie Ihre Zeit: Ein kurzes Leben kann viel bewirken", "Schreiben Sie, was einfachen Gläubigen nützt", "Treten Sie mit gutem Benehmen für Gerechtigkeit ein"],
+            "ar": ["اغتنم وقتك، فالعمر القصير قد يثمر كثيرًا", "اكتب ما ينفع عامة المؤمنين", "انصر العدل بأدب وحكمة"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Al-Nawawi", "url": "https://en.wikipedia.org/wiki/Al-Nawawi"},
+        {"label": "Ibn al-Attar, Tuhfat al-Talibin fi Tarjamat al-Imam al-Nawawi"}
+      ]
+    }
+  ]
+}

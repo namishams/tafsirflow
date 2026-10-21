@@ -1,0 +1,279 @@
+{
+  "set": "sayings-al-shafii",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-al-shafii-01",
+      "theme": "patience",
+      "text": {
+        "en": "Let the days do as they will, and be at peace when destiny decides. Do not despair at what the nights bring, for nothing that happens in this world lasts.",
+        "de": "Lassen Sie die Tage tun, was sie wollen, und seien Sie gelassen, wenn das Schicksal entscheidet. Verzagen Sie nicht an dem, was die Nächte bringen, denn nichts in dieser Welt hat Bestand.",
+        "ar": "دع الأيام تفعل ما تشاء، وطب نفسا إذا حكم القضاء، ولا تجزع لحادثة الليالي، فما لحوادث الدنيا بقاء."
+      },
+      "arabic": "دع الأيام تفعل ما تشاء، وطب نفسا إذا حكم القضاء، ولا تجزع لحادثة الليالي، فما لحوادث الدنيا بقاء.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-02",
+      "theme": "ease",
+      "text": {
+        "en": "Many a hardship leaves a young man helpless, while with Allah lies the way out. It tightened, and when its rings were closed fast, it opened, though I thought it never would.",
+        "de": "So manche Not macht einen jungen Mann ratlos, doch bei Allah liegt der Ausweg. Sie wurde eng, und als ihre Ringe sich fest schlossen, öffnete sie sich, obwohl ich glaubte, sie öffne sich nie.",
+        "ar": "ولرب نازلة يضيق لها الفتى ذرعا، وعند الله منها المخرج، ضاقت فلما استحكمت حلقاتها، فرجت وكنت أظنها لا تفرج."
+      },
+      "arabic": "ولرب نازلة يضيق لها الفتى ذرعا، وعند الله منها المخرج، ضاقت فلما استحكمت حلقاتها، فرجت وكنت أظنها لا تفرج.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-03",
+      "theme": "knowledge",
+      "text": {
+        "en": "I complained to Waki' about my weak memory, and he guided me to leave sins. He told me that knowledge is light, and the light of Allah is not given to one who disobeys.",
+        "de": "Ich klagte Waki' über mein schwaches Gedächtnis, und er riet mir, die Sünden zu lassen. Er sagte mir, Wissen sei Licht, und das Licht Allahs werde dem Ungehorsamen nicht geschenkt.",
+        "ar": "شكوت إلى وكيع سوء حفظي، فأرشدني إلى ترك المعاصي، وأخبرني بأن العلم نور، ونور الله لا يهدى لعاصي."
+      },
+      "arabic": "شكوت إلى وكيع سوء حفظي، فأرشدني إلى ترك المعاصي، وأخبرني بأن العلم نور، ونور الله لا يهدى لعاصي.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-04",
+      "theme": "reflection",
+      "text": {
+        "en": "We blame our times, while the fault lies in us. Our times have no fault but us.",
+        "de": "Wir tadeln unsere Zeit, doch der Fehler liegt in uns. Unsere Zeit hat keinen anderen Fehler als uns.",
+        "ar": "نعيب زماننا والعيب فينا، وما لزماننا عيب سوانا."
+      },
+      "arabic": "نعيب زماننا والعيب فينا، وما لزماننا عيب سوانا.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-05",
+      "theme": "wisdom",
+      "text": {
+        "en": "I have seen that standing water spoils: if it flows, it turns sweet, and if it does not run, it does not.",
+        "de": "Ich habe gesehen, dass stehendes Wasser verdirbt: Wenn es fließt, wird es gut, und wenn es nicht strömt, wird es nicht gut.",
+        "ar": "إني رأيت وقوف الماء يفسده، إن ساح طاب وإن لم يجر لم يطب."
+      },
+      "arabic": "إني رأيت وقوف الماء يفسده، إن ساح طاب وإن لم يجر لم يطب.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-06",
+      "theme": "brotherhood",
+      "text": {
+        "en": "I love the righteous, though I am not one of them, hoping that through them I may be granted intercession.",
+        "de": "Ich liebe die Rechtschaffenen, obwohl ich nicht zu ihnen gehöre, in der Hoffnung, durch sie Fürsprache zu erlangen.",
+        "ar": "أحب الصالحين ولست منهم، لعلي أن أنال بهم شفاعة."
+      },
+      "arabic": "أحب الصالحين ولست منهم، لعلي أن أنال بهم شفاعة.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-07",
+      "theme": "speech",
+      "text": {
+        "en": "Let your tongue never speak of another's faults, for you are all faults yourself, and people have eyes.",
+        "de": "Lassen Sie Ihre Zunge niemals von den Blößen eines anderen sprechen, denn Sie selbst bestehen aus Blößen, und die Menschen haben Augen.",
+        "ar": "لسانك لا تذكر به عورة امرئ، فكلك عورات وللناس أعين."
+      },
+      "arabic": "لسانك لا تذكر به عورة امرئ، فكلك عورات وللناس أعين.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-08",
+      "theme": "hope",
+      "text": {
+        "en": "When my heart grew hard and my ways grew narrow, I made my hope in Your pardon a ladder. My sin seemed enormous to me, but when I set it beside Your pardon, my Lord, Your pardon was greater.",
+        "de": "Als mein Herz hart wurde und meine Wege eng, machte ich die Hoffnung auf die Vergebung meines Herrn zur Leiter. Meine Sünde erschien mir gewaltig, doch neben Seine Vergebung gestellt, war Seine Vergebung größer.",
+        "ar": "ولما قسا قلبي وضاقت مذاهبي، جعلت الرجا مني لعفوك سلما، تعاظمني ذنبي فلما قرنته، بعفوك ربي كان عفوك أعظما."
+      },
+      "arabic": "ولما قسا قلبي وضاقت مذاهبي، جعلت الرجا مني لعفوك سلما، تعاظمني ذنبي فلما قرنته، بعفوك ربي كان عفوك أعظما.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-09",
+      "theme": "humility",
+      "text": {
+        "en": "Do you not see that the sea carries what is lifeless on its surface, while pearls settle in its deepest depths?",
+        "de": "Sehen Sie nicht, dass das Meer das Leblose an seiner Oberfläche treibt, während die Perlen in seiner tiefsten Tiefe ruhen?",
+        "ar": "أما ترى البحر تعلو فوقه جيف، وتستقر بأقصى قعره الدرر."
+      },
+      "arabic": "أما ترى البحر تعلو فوقه جيف، وتستقر بأقصى قعره الدرر.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-10",
+      "theme": "character",
+      "text": {
+        "en": "The fool speaks to me with every ugliness, and I dislike answering him. He grows in foolishness and I grow in forbearance, like aloeswood whose burning only adds to its fragrance.",
+        "de": "Der Tor spricht mich mit jeder Hässlichkeit an, und ich mag ihm nicht antworten. Er nimmt an Torheit zu und ich an Sanftmut, wie Adlerholz, dessen Verbrennen seinen Duft nur vermehrt.",
+        "ar": "يخاطبني السفيه بكل قبح، فأكره أن أكون له مجيبا، يزيد سفاهة فأزيد حلما، كعود زاده الإحراق طيبا."
+      },
+      "arabic": "يخاطبني السفيه بكل قبح، فأكره أن أكون له مجيبا، يزيد سفاهة فأزيد حلما، كعود زاده الإحراق طيبا.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-11",
+      "theme": "speech",
+      "text": {
+        "en": "They said: you kept silent when you were provoked. I told them: an answer is the key to the door of evil. Silence before the ignorant is honour, and it also keeps one's dignity safe.",
+        "de": "Man sagte: Sie haben geschwiegen, als man mit Ihnen stritt. Ich sagte: Die Antwort ist der Schlüssel zur Tür des Übels. Schweigen vor dem Unwissenden ist Ehre, und es schützt zugleich die Würde.",
+        "ar": "قالوا سكت وقد خوصمت قلت لهم، إن الجواب لباب الشر مفتاح، والصمت عن جاهل أو أحمق شرف، وفيه أيضا لصون العرض إصلاح."
+      },
+      "arabic": "قالوا سكت وقد خوصمت قلت لهم، إن الجواب لباب الشر مفتاح، والصمت عن جاهل أو أحمق شرف، وفيه أيضا لصون العرض إصلاح.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-12",
+      "theme": "knowledge",
+      "text": {
+        "en": "Knowledge is what benefits. Knowledge is not what is merely memorised.",
+        "de": "Wissen ist, was nützt. Wissen ist nicht das, was bloß auswendig gelernt wird.",
+        "ar": "العلم ما نفع، ليس العلم ما حفظ."
+      },
+      "arabic": "العلم ما نفع، ليس العلم ما حفظ.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Reported by Abu Nu'aym in Hilyat al-Awliya'", "de": "Überliefert von Abu Nu'aym in Hilyat al-Awliya'", "ar": "رواه أبو نعيم في حلية الأولياء" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-13",
+      "theme": "knowledge",
+      "text": {
+        "en": "My knowledge is with me wherever I go, and it benefits me. My heart is its vessel, not the inside of a chest.",
+        "de": "Mein Wissen ist bei mir, wohin ich auch gehe, und es nützt mir. Mein Herz ist sein Gefäß, nicht das Innere einer Truhe.",
+        "ar": "علمي معي حيثما يممت ينفعني، قلبي وعاء له لا بطن صندوق."
+      },
+      "arabic": "علمي معي حيثما يممت ينفعني، قلبي وعاء له لا بطن صندوق.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-14",
+      "theme": "knowledge",
+      "text": {
+        "en": "My brother, you will only gain knowledge through six things: intelligence, eagerness, effort, enough to live on, the company of a teacher, and a long time.",
+        "de": "Mein Bruder, Wissen erlangen Sie nur durch sechs Dinge: Verstand, Eifer, Anstrengung, genug zum Leben, die Begleitung eines Lehrers und eine lange Zeit.",
+        "ar": "أخي لن تنال العلم إلا بستة، سأنبيك عن تفصيلها ببيان: ذكاء وحرص واجتهاد وبلغة، وصحبة أستاذ وطول زمان."
+      },
+      "arabic": "أخي لن تنال العلم إلا بستة، سأنبيك عن تفصيلها ببيان: ذكاء وحرص واجتهاد وبلغة، وصحبة أستاذ وطول زمان.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-15",
+      "theme": "brotherhood",
+      "text": {
+        "en": "Give me your advice when I am alone, and spare me advice in company, for advice in front of people is a kind of rebuke I do not wish to hear.",
+        "de": "Geben Sie mir Ihren Rat, wenn ich allein bin, und ersparen Sie mir den Rat vor anderen, denn ein Rat vor den Leuten ist eine Art Tadel, den ich nicht hören mag.",
+        "ar": "تعمدني بنصحك في انفرادي، وجنبني النصيحة في الجماعة، فإن النصح بين الناس نوع، من التوبيخ لا أرضى استماعه."
+      },
+      "arabic": "تعمدني بنصحك في انفرادي، وجنبني النصيحة في الجماعة، فإن النصح بين الناس نوع، من التوبيخ لا أرضى استماعه.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-16",
+      "theme": "contentment",
+      "text": {
+        "en": "If I live, I will not lack my daily bread, and if I die, I will not lack a grave.",
+        "de": "Wenn ich lebe, wird mir das tägliche Brot nicht fehlen, und wenn ich sterbe, wird mir ein Grab nicht fehlen.",
+        "ar": "أنا إن عشت لست أعدم قوتا، وإذا مت لست أعدم قبرا."
+      },
+      "arabic": "أنا إن عشت لست أعدم قوتا، وإذا مت لست أعدم قبرا.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-17",
+      "theme": "provision",
+      "text": {
+        "en": "I have trusted Allah, my Creator, with my provision, and I am certain that Allah is my Provider. What is meant for me will not pass me by, even if it lay at the bottom of the deepest seas.",
+        "de": "Ich habe meine Versorgung Allah, meinem Schöpfer, anvertraut und bin gewiss, dass Allah mich versorgt. Was mir bestimmt ist, entgeht mir nicht, selbst wenn es auf dem Grund der tiefsten Meere läge.",
+        "ar": "توكلت في رزقي على الله خالقي، وأيقنت أن الله لا شك رازقي، وما يك من رزقي فليس يفوتني، ولو كان في قاع البحار العوامق."
+      },
+      "arabic": "توكلت في رزقي على الله خالقي، وأيقنت أن الله لا شك رازقي، وما يك من رزقي فليس يفوتني، ولو كان في قاع البحار العوامق.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-18",
+      "theme": "contentment",
+      "text": {
+        "en": "If you have a contented heart, you and the owner of the whole world are equal.",
+        "de": "Wenn Sie ein genügsames Herz haben, sind Sie dem Besitzer der ganzen Welt gleich.",
+        "ar": "إذا ما كنت ذا قلب قنوع، فأنت ومالك الدنيا سواء."
+      },
+      "arabic": "إذا ما كنت ذا قلب قنوع، فأنت ومالك الدنيا سواء.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-19",
+      "theme": "ease",
+      "text": {
+        "en": "No sorrow lasts, and no joy; no hardship stays with you, and no ease.",
+        "de": "Kein Kummer währt ewig und keine Freude; keine Not bleibt Ihnen und kein Wohlstand.",
+        "ar": "ولا حزن يدوم ولا سرور، ولا بؤس عليك ولا رخاء."
+      },
+      "arabic": "ولا حزن يدوم ولا سرور، ولا بؤس عليك ولا رخاء.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Diwan al-Shafi'i", "de": "Diwan asch-Schafi'i", "ar": "ديوان الشافعي" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-20",
+      "theme": "sincerity",
+      "text": {
+        "en": "I wish that people would learn this knowledge without a single letter of it being attributed to me.",
+        "de": "Ich wünschte, die Menschen lernten dieses Wissen, ohne dass mir auch nur ein Buchstabe davon zugeschrieben wird.",
+        "ar": "وددت أن الخلق تعلموا هذا العلم على أن لا ينسب إلي حرف منه."
+      },
+      "arabic": "وددت أن الخلق تعلموا هذا العلم على أن لا ينسب إلي حرف منه.",
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Reported by Abu Nu'aym in Hilyat al-Awliya'", "de": "Überliefert von Abu Nu'aym in Hilyat al-Awliya'", "ar": "رواه أبو نعيم في حلية الأولياء" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-al-shafii-21",
+      "theme": "time",
+      "text": {
+        "en": "I kept company with the Sufis and gained two sayings from them: Time is a sword; if you do not cut it, it cuts you. And if you do not keep your soul busy with truth, it keeps you busy with falsehood.",
+        "de": "Ich war mit den Sufis zusammen und gewann von ihnen zwei Sätze: Die Zeit ist ein Schwert; schneiden Sie es nicht, schneidet es Sie. Und beschäftigen Sie Ihre Seele nicht mit Wahrem, beschäftigt sie Sie mit Falschem.",
+        "ar": "صحبت الصوفية فلم أستفد منهم سوى حرفين: الوقت سيف، فإن قطعته وإلا قطعك، ونفسك إن لم تشغلها بالحق شغلتك بالباطل."
+      },
+      "by": { "en": "al-Shafi'i", "de": "asch-Schafi'i", "ar": "الإمام الشافعي" },
+      "work": { "en": "Reported by Ibn al-Qayyim in al-Jawab al-Kafi", "de": "Überliefert von Ibn al-Qayyim in al-Jawab al-Kafi", "ar": "نقله ابن القيم في الجواب الكافي" },
+      "needs_review": true
+    }
+  ]
+}

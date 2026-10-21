@@ -1,0 +1,15 @@
+{ "set": "hadith-knowledge", "kind": "hadith", "theme": "knowledge", "tradition": "sunni",
+  "items": [
+    {"id": "wh-knowledge-muslim-4223", "hadith": "muslim:4223", "check": "recurring charity"},
+    {"id": "wh-knowledge-bukhari-73", "hadith": "bukhari:73", "check": "teaches it"},
+    {"id": "wh-knowledge-bukhari-71", "hadith": "bukhari:71", "check": "comprehend the religion"},
+    {"id": "wh-knowledge-bukhari-75", "hadith": "bukhari:75", "check": "knowledge of the Book"},
+    {"id": "wh-knowledge-bukhari-68", "hadith": "bukhari:68", "check": "suitable time"},
+    {"id": "wh-knowledge-bukhari-7307", "hadith": "bukhari:7307", "check": "death of the religious learned men"},
+    {"id": "wh-knowledge-muslim-6804", "hadith": "muslim:6804", "check": "called (people) to righteousness"},
+    {"id": "wh-knowledge-bukhari-3461", "hadith": "bukhari:3461", "check": "single sentence"},
+    {"id": "wh-knowledge-bukhari-6145", "hadith": "bukhari:6145", "check": "poetry contains wisdom"},
+    {"id": "wh-knowledge-bukhari-2736", "hadith": "bukhari:2736", "check": "ninety-nine names"},
+    {"id": "wh-knowledge-bukhari-5376", "hadith": "bukhari:5376", "check": "O boy"},
+    {"id": "wh-knowledge-bukhari-62", "hadith": "bukhari:62", "check": "date-palm tree"}
+  ] }

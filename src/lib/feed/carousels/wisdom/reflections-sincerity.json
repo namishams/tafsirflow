@@ -1,0 +1,120 @@
+{
+  "set": "reflections-sincerity",
+  "kind": "reflection",
+  "theme": "sincerity",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-sincerity-01",
+      "text": {
+        "en": "Sincerity is doing the same good deed whether the room is full or empty.",
+        "de": "Aufrichtigkeit heißt, dieselbe gute Tat zu tun, ob der Raum voll oder leer ist.",
+        "ar": "الإخلاص أن تفعل الخير نفسه، سواء كانت الغرفة ممتلئة أو خالية."
+      }
+    },
+    {
+      "id": "wr-sincerity-02",
+      "text": {
+        "en": "Before you begin, ask quietly: for whom am I doing this? The answer can turn an ordinary task into worship.",
+        "de": "Fragen Sie sich leise, bevor Sie beginnen: Für wen tue ich das? Die Antwort kann eine gewöhnliche Aufgabe in Gottesdienst verwandeln.",
+        "ar": "قبل أن تبدأ اسأل نفسك بهدوء: لمن أفعل هذا؟ فالجواب قد يحول مهمة عادية إلى عبادة."
+      }
+    },
+    {
+      "id": "wr-sincerity-03",
+      "text": {
+        "en": "A good deed you did not post, mention or hint at is a secret between you and your Lord. Keep a few of those.",
+        "de": "Eine gute Tat, die Sie nicht gepostet, erwähnt oder angedeutet haben, ist ein Geheimnis zwischen Ihnen und Ihrem Herrn. Bewahren Sie ein paar davon.",
+        "ar": "العمل الصالح الذي لم تنشره ولم تذكره ولم تلمح إليه سر بينك وبين ربك، فاحتفظ ببعض هذه الأسرار."
+      }
+    },
+    {
+      "id": "wr-sincerity-04",
+      "text": {
+        "en": "Intentions drift like a boat on water. Renewing them each morning keeps you pointed toward the shore.",
+        "de": "Absichten treiben wie ein Boot auf dem Wasser. Sie jeden Morgen zu erneuern, hält Sie auf Kurs zum Ufer.",
+        "ar": "النيات تنجرف كالقارب على الماء، وتجديدها كل صباح يبقيك متجها نحو الشاطئ."
+      }
+    },
+    {
+      "id": "wr-sincerity-05",
+      "text": {
+        "en": "Do not wait for perfect sincerity before doing good. Begin, and keep correcting your intention along the way.",
+        "de": "Warten Sie nicht auf vollkommene Aufrichtigkeit, bevor Sie Gutes tun. Fangen Sie an und korrigieren Sie Ihre Absicht unterwegs.",
+        "ar": "لا تنتظر إخلاصا كاملا قبل أن تفعل الخير، بل ابدأ، وأصلح نيتك في الطريق."
+      }
+    },
+    {
+      "id": "wr-sincerity-06",
+      "text": {
+        "en": "Cooking for your family, studying for an exam, going to work: with the right intention, each of them can count as worship.",
+        "de": "Für die Familie kochen, für eine Prüfung lernen, zur Arbeit gehen: Mit der richtigen Absicht kann all das als Gottesdienst zählen.",
+        "ar": "الطبخ لأسرتك، والمذاكرة لامتحانك، والذهاب إلى عملك: كل ذلك قد يحسب عبادة بالنية الصالحة."
+      }
+    },
+    {
+      "id": "wr-sincerity-07",
+      "text": {
+        "en": "Applause fades within minutes. What was done for Allah alone does not fade.",
+        "de": "Applaus verklingt in wenigen Minuten. Was allein für Allah getan wurde, verblasst nicht.",
+        "ar": "التصفيق يخفت في دقائق، وما عمل لله وحده لا يخفت."
+      }
+    },
+    {
+      "id": "wr-sincerity-08",
+      "text": {
+        "en": "Sincerity frees you from the exhausting work of trying to impress people.",
+        "de": "Aufrichtigkeit befreit Sie von der ermüdenden Arbeit, Menschen beeindrucken zu wollen.",
+        "ar": "الإخلاص يحررك من عناء محاولة إبهار الناس."
+      }
+    },
+    {
+      "id": "wr-sincerity-09",
+      "text": {
+        "en": "Some of the most sincere people are the ones no one has heard of: the night cleaner who prays quietly, the grandmother who gives in secret.",
+        "de": "Manche der aufrichtigsten Menschen sind die, von denen niemand gehört hat: die Nachtputzkraft, die leise betet, die Großmutter, die heimlich gibt.",
+        "ar": "بعض أكثر الناس إخلاصا لا يعرفهم أحد: عامل النظافة الليلي الذي يصلي في صمت، والجدة التي تعطي في السر."
+      }
+    },
+    {
+      "id": "wr-sincerity-10",
+      "text": {
+        "en": "If praise begins to sweeten a deed for you, do another one in secret to bring the heart back into balance.",
+        "de": "Wenn Lob anfängt, Ihnen eine Tat zu versüßen, tun Sie eine zweite im Verborgenen, um das Herz wieder ins Gleichgewicht zu bringen.",
+        "ar": "إذا بدأ المدح يحلي لك عملا، فاعمل آخر في السر ليعود القلب إلى توازنه."
+      }
+    },
+    {
+      "id": "wr-sincerity-11",
+      "text": {
+        "en": "A small deed done sincerely is like a single pure pearl; a large deed done for show is a heap of glass.",
+        "de": "Eine kleine, aufrichtig getane Tat ist wie eine einzige reine Perle; eine große Tat, die gesehen werden will, ist ein Haufen Glas.",
+        "ar": "العمل الصغير بإخلاص كلؤلؤة واحدة نقية، والعمل الكبير رياء كومة من الزجاج."
+      }
+    },
+    {
+      "id": "wr-sincerity-12",
+      "text": {
+        "en": "Sincerity is the root and good deeds are the branches. Water the root, and the tree will take care of itself.",
+        "de": "Aufrichtigkeit ist die Wurzel, gute Taten sind die Zweige. Bewässern Sie die Wurzel, und der Baum sorgt für sich selbst.",
+        "ar": "الإخلاص هو الجذر، والأعمال الصالحة هي الأغصان، فاسق الجذر تعتن الشجرة بنفسها."
+      }
+    },
+    {
+      "id": "wr-sincerity-13",
+      "text": {
+        "en": "When no one thanks you, remember who you were really doing it for.",
+        "de": "Wenn Ihnen niemand dankt, erinnern Sie sich, für wen Sie es eigentlich getan haben.",
+        "ar": "حين لا يشكرك أحد، فتذكر لمن كنت تعمل في الحقيقة."
+      }
+    },
+    {
+      "id": "wr-sincerity-14",
+      "text": {
+        "en": "Pray two rak'ahs this week that no one knows about. Let them be a gift only Allah sees.",
+        "de": "Beten Sie diese Woche zwei Gebetseinheiten, von denen niemand weiß. Lassen Sie sie ein Geschenk sein, das nur Allah sieht.",
+        "ar": "صل هذا الأسبوع ركعتين لا يعلم بهما أحد، ولتكونا هدية لا يراها إلا الله."
+      }
+    }
+  ]
+}

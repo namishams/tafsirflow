@@ -1,0 +1,94 @@
+{
+  "set": "sayings-ibn-hazm",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-ibn-hazm-01",
+      "theme": "reflection",
+      "text": {
+        "en": "I looked for a goal that all people agree is good and worth seeking, and found only one: driving away worry. And I found no true road to it except turning to Allah by working for the Hereafter.",
+        "de": "Ich suchte ein Ziel, das alle Menschen für gut und erstrebenswert halten, und fand nur eines: die Sorge zu vertreiben. Und ich fand keinen wahren Weg dorthin außer der Hinwendung zu Allah durch das Wirken für das Jenseits.",
+        "ar": "تطلبت غرضا يستوي الناس كلهم في استحسانه وفي طلبه، فلم أجده إلا واحدا، وهو طرد الهم، ولم أجد سبيلا موصلة إليه على الحقيقة إلا التوجه إلى الله عز وجل بالعمل للآخرة."
+      },
+      "by": { "en": "Ibn Hazm", "de": "Ibn Hazm", "ar": "ابن حزم الأندلسي" },
+      "work": { "en": "al-Akhlaq wa-l-Siyar", "de": "al-Achlaq wa-s-Siyar", "ar": "الأخلاق والسير في مداواة النفوس" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-hazm-02",
+      "theme": "knowledge",
+      "text": {
+        "en": "If the only virtue of knowledge were that the ignorant hold you in awe and the learned love and honour you, that alone would be reason enough to seek it.",
+        "de": "Wäre der einzige Vorzug des Wissens, dass die Unwissenden Sie achten und die Gelehrten Sie lieben und ehren, so wäre schon das Grund genug, es zu suchen.",
+        "ar": "لو لم يكن من فضل العلم إلا أن الجهال يهابونك ويجلونك، وأن العلماء يحبونك ويكرمونك، لكان ذلك سببا إلى وجوب طلبه."
+      },
+      "arabic": "لو لم يكن من فضل العلم إلا أن الجهال يهابونك ويجلونك، وأن العلماء يحبونك ويكرمونك، لكان ذلك سببا إلى وجوب طلبه.",
+      "by": { "en": "Ibn Hazm", "de": "Ibn Hazm", "ar": "ابن حزم الأندلسي" },
+      "work": { "en": "al-Akhlaq wa-l-Siyar", "de": "al-Achlaq wa-s-Siyar", "ar": "الأخلاق والسير في مداواة النفوس" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-hazm-03",
+      "theme": "justice",
+      "text": {
+        "en": "Whoever wants to be fair, let him imagine himself in his opponent's place. The face of his own unfairness will then appear to him.",
+        "de": "Wer gerecht sein will, versetze sich in die Lage seines Gegners. Dann zeigt sich ihm das Gesicht seiner eigenen Ungerechtigkeit.",
+        "ar": "من أراد الإنصاف فليتوهم نفسه مكان خصمه، فإنه يلوح له وجه تعسفه."
+      },
+      "arabic": "من أراد الإنصاف فليتوهم نفسه مكان خصمه، فإنه يلوح له وجه تعسفه.",
+      "by": { "en": "Ibn Hazm", "de": "Ibn Hazm", "ar": "ابن حزم الأندلسي" },
+      "work": { "en": "al-Akhlaq wa-l-Siyar", "de": "al-Achlaq wa-s-Siyar", "ar": "الأخلاق والسير في مداواة النفوس" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-hazm-04",
+      "theme": "paradise",
+      "text": {
+        "en": "The wise person sees no price for himself but Paradise.",
+        "de": "Der Verständige sieht für sich keinen anderen Preis als das Paradies.",
+        "ar": "العاقل لا يرى لنفسه ثمنا إلا الجنة."
+      },
+      "arabic": "العاقل لا يرى لنفسه ثمنا إلا الجنة.",
+      "by": { "en": "Ibn Hazm", "de": "Ibn Hazm", "ar": "ابن حزم الأندلسي" },
+      "work": { "en": "al-Akhlaq wa-l-Siyar", "de": "al-Achlaq wa-s-Siyar", "ar": "الأخلاق والسير في مداواة النفوس" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-hazm-05",
+      "theme": "knowledge",
+      "text": {
+        "en": "When you attend a gathering of knowledge, attend only as one seeking more knowledge and reward, not as one content with what he has, looking for a slip to spread.",
+        "de": "Wenn Sie an einer Runde des Wissens teilnehmen, dann nur als jemand, der mehr Wissen und Lohn sucht, nicht als jemand, der sich mit dem Seinen begnügt und nach einem Fehler sucht, um ihn zu verbreiten.",
+        "ar": "إذا حضرت مجلس علم فلا يكن حضورك إلا حضور مستزيد علما وأجرا، لا حضور مستغن بما عندك، طالبا عثرة تشيعها."
+      },
+      "by": { "en": "Ibn Hazm", "de": "Ibn Hazm", "ar": "ابن حزم الأندلسي" },
+      "work": { "en": "al-Akhlaq wa-l-Siyar", "de": "al-Achlaq wa-s-Siyar", "ar": "الأخلاق والسير في مداواة النفوس" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-hazm-06",
+      "theme": "wisdom",
+      "text": {
+        "en": "A great door to wisdom and peace of mind is to stop worrying about what people say, and to care instead about what the Creator says.",
+        "de": "Ein großes Tor zu Verstand und innerer Ruhe ist, sich nicht mehr um das Gerede der Menschen zu kümmern und stattdessen auf das Wort des Schöpfers zu achten.",
+        "ar": "باب عظيم من أبواب العقل والراحة، وهو اطراح المبالاة بكلام الناس، واستعمال المبالاة بكلام الخالق عز وجل."
+      },
+      "by": { "en": "Ibn Hazm", "de": "Ibn Hazm", "ar": "ابن حزم الأندلسي" },
+      "work": { "en": "al-Akhlaq wa-l-Siyar", "de": "al-Achlaq wa-s-Siyar", "ar": "الأخلاق والسير في مداواة النفوس" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-hazm-07",
+      "theme": "brotherhood",
+      "text": {
+        "en": "Do not pass on to your friend what will hurt him and does him no good to know. That is the deed of base people.",
+        "de": "Tragen Sie Ihrem Freund nichts zu, was ihn verletzt und dessen Kenntnis ihm nichts nützt. Das ist das Tun niedriger Menschen.",
+        "ar": "لا تنقل إلى صديقك ما يؤلم نفسه ولا ينتفع بمعرفته، فهذا فعل الأرذال."
+      },
+      "by": { "en": "Ibn Hazm", "de": "Ibn Hazm", "ar": "ابن حزم الأندلسي" },
+      "work": { "en": "al-Akhlaq wa-l-Siyar", "de": "al-Achlaq wa-s-Siyar", "ar": "الأخلاق والسير في مداواة النفوس" },
+      "needs_review": true
+    }
+  ]
+}

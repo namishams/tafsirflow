@@ -1,0 +1,20 @@
+{ "set": "hadith-supplication", "kind": "hadith", "theme": "supplication", "tradition": "sunni",
+  "items": [
+    {"id": "wh-supplication-muslim-1776", "hadith": "muslim:1776", "check": "lowest heaven"},
+    {"id": "wh-supplication-bukhari-7477", "hadith": "bukhari:7477", "check": "firm in his request"},
+    {"id": "wh-supplication-muslim-1090", "hadith": "muslim:1090", "check": "refuge in Thy pleasure"},
+    {"id": "wh-supplication-bukhari-6369", "hadith": "bukhari:6369", "check": "worry and grief"},
+    {"id": "wh-supplication-muslim-6927", "hadith": "muslim:6927", "check": "behind his back"},
+    {"id": "wh-supplication-muslim-6936", "hadith": "muslim:6936", "check": "impatient"},
+    {"id": "wh-supplication-muslim-6851", "hadith": "muslim:6851", "check": "sums up"},
+    {"id": "wh-supplication-bukhari-5675", "hadith": "bukhari:5675", "check": "Take away the disease"},
+    {"id": "wh-supplication-muslim-6903", "hadith": "muslim:6903", "check": "set right for me my religion"},
+    {"id": "wh-supplication-muslim-6904", "hadith": "muslim:6904", "check": "freedom from want"},
+    {"id": "wh-supplication-muslim-6896", "hadith": "muslim:6896", "check": "evil of what I have done"},
+    {"id": "wh-supplication-muslim-6887", "hadith": "muslim:6887", "check": "Thine Name"},
+    {"id": "wh-supplication-muslim-1083", "hadith": "muslim:1083", "check": "nearest a servant comes to his Lord"},
+    {"id": "wh-supplication-muslim-6751", "hadith": "muslim:6751", "check": "Turner of the hearts"},
+    {"id": "wh-supplication-bukhari-6389", "hadith": "bukhari:6389", "check": "most frequent invocation"},
+    {"id": "wh-supplication-muslim-6911", "hadith": "muslim:6911", "check": "direct me to the right path"},
+    {"id": "wh-supplication-bukhari-6616", "hadith": "bukhari:6616", "check": "severe calamities"}
+  ] }

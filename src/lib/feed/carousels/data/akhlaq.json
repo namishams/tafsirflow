@@ -1,0 +1,1434 @@
+{
+  "series": "akhlaq",
+  "label": {
+    "en": "Character",
+    "de": "Charakter",
+    "ar": "الأخلاق"
+  },
+  "topic": "duas",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "akhlaq-honesty",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Character · 1",
+          "de": "Charakter · 1",
+          "ar": "الأخلاق · ١"
+        },
+        "title": {
+          "en": "Honesty: the path that leads to good",
+          "de": "Ehrlichkeit: der Weg, der zum Guten führt",
+          "ar": "الصدق: طريقٌ يهدي إلى الخير"
+        },
+        "sub": {
+          "en": "What the Quran and the Sunnah teach about truthfulness",
+          "de": "Was Koran und Sunna über Wahrhaftigkeit lehren",
+          "ar": "ما يعلّمه القرآن والسنة عن الصدق"
+        },
+        "arabic": "الصِّدْق"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "More than not lying",
+            "de": "Mehr als nicht lügen",
+            "ar": "أكثر من ترك الكذب"
+          },
+          "body": {
+            "en": "Sidq means truth in words, intentions and actions. Long before revelation, the people of Makkah called the Prophet al-Amin, the trustworthy.",
+            "de": "Sidq bedeutet Wahrheit in Worten, Absichten und Taten. Schon vor der Offenbarung nannten die Mekkaner den Propheten al-Amin, den Vertrauenswürdigen.",
+            "ar": "الصدق يكون في القول والنية والعمل، وقد عرف أهل مكة النبي ﷺ قبل البعثة بالأمين."
+          }
+        },
+        {
+          "verse": "9:119",
+          "check": "be with those who are true",
+          "title": {
+            "en": "Choose truthful company",
+            "de": "Wählen Sie wahrhaftige Gesellschaft",
+            "ar": "اصحب الصادقين"
+          },
+          "body": {
+            "en": "Honesty grows in good company. The people around you shape what feels normal.",
+            "de": "Ehrlichkeit wächst in guter Gesellschaft. Die Menschen um Sie herum prägen, was normal erscheint.",
+            "ar": "ينمو الصدق في الصحبة الصالحة، فمن حولك يصنعون ما تراه مألوفًا."
+          }
+        },
+        {
+          "hadith": "bukhari:6094",
+          "check": "Truthfulness leads to righteousness",
+          "title": {
+            "en": "Truth is a path",
+            "de": "Wahrheit ist ein Weg",
+            "ar": "الصدق طريق"
+          },
+          "body": {
+            "en": "Honesty is described as a road with a direction. Each true word is a step, and character forms over time.",
+            "de": "Ehrlichkeit wird als Weg mit einer Richtung beschrieben. Jedes wahre Wort ist ein Schritt, und Charakter entsteht mit der Zeit.",
+            "ar": "يُوصف الصدق بأنه طريقٌ له وجهة، وكل كلمة صادقة خطوة، والخُلق يتكوّن مع الزمن."
+          }
+        },
+        {
+          "hadith": "bukhari:2079",
+          "check": "spoke the truth",
+          "title": {
+            "en": "Blessing in honest trade",
+            "de": "Segen im ehrlichen Handel",
+            "ar": "البركة في البيع الصادق"
+          },
+          "body": {
+            "en": "Naming the faults of what you sell can feel like a loss. The hadith says it is what brings blessing into the deal.",
+            "de": "Die Mängel einer Ware zu nennen kann sich wie ein Verlust anfühlen. Der Hadith sagt, dass gerade das Segen bringt.",
+            "ar": "قد يبدو ذكر عيوب السلعة خسارة، لكن الحديث يجعله سبب البركة في البيع."
+          }
+        },
+        {
+          "title": {
+            "en": "Practise it this week",
+            "de": "Üben Sie es diese Woche",
+            "ar": "تدرّب عليه هذا الأسبوع"
+          },
+          "list": {
+            "en": [
+              "Keep small promises, even to children",
+              "Correct an exaggeration as soon as you notice it",
+              "Say 'I do not know' when you do not know",
+              "Stay honest in reviews, CVs and reports"
+            ],
+            "de": [
+              "Halten Sie kleine Versprechen, auch gegenüber Kindern",
+              "Korrigieren Sie eine Übertreibung, sobald Sie sie bemerken",
+              "Sagen Sie 'Ich weiß es nicht', wenn Sie es nicht wissen",
+              "Bleiben Sie ehrlich in Bewertungen, Lebensläufen und Berichten"
+            ],
+            "ar": [
+              "أوفِ بالوعود الصغيرة ولو للأطفال",
+              "صحّح المبالغة حين تنتبه لها",
+              "قل «لا أعلم» حين لا تعلم",
+              "كن صادقًا في التقييمات والسيرة الذاتية والتقارير"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-patience",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Character · 2",
+          "de": "Charakter · 2",
+          "ar": "الأخلاق · ٢"
+        },
+        "title": {
+          "en": "Patience: good in every situation",
+          "de": "Geduld: Gutes in jeder Lage",
+          "ar": "الصبر: خيرٌ في كل حال"
+        },
+        "sub": {
+          "en": "Sabr in the Quran and the Sunnah, and how to practise it",
+          "de": "Sabr in Koran und Sunna und wie man ihn übt",
+          "ar": "الصبر في القرآن والسنة، وكيف نتدرّب عليه"
+        },
+        "arabic": "الصَّبْر"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Three kinds of patience",
+            "de": "Drei Arten von Geduld",
+            "ar": "أنواع الصبر الثلاثة"
+          },
+          "body": {
+            "en": "Scholars often describe three: patience in obeying Allah, patience in staying away from what He forbids, and patience with what He decrees.",
+            "de": "Gelehrte beschreiben oft drei Arten: Geduld im Gehorsam gegenüber Allah, Geduld beim Meiden des Verbotenen und Geduld mit Seiner Bestimmung.",
+            "ar": "يذكر العلماء كثيرًا ثلاثة أنواع: صبرٌ على طاعة الله، وصبرٌ عن معصيته، وصبرٌ على أقداره."
+          }
+        },
+        {
+          "verse": "16:127",
+          "check": "your patience is not but through Allāh",
+          "title": {
+            "en": "Patience comes from Him",
+            "de": "Geduld kommt von Ihm",
+            "ar": "الصبر بعون الله"
+          },
+          "body": {
+            "en": "Even the Prophet's patience is described as coming through Allah. Ask Him for it, instead of only demanding it of yourself.",
+            "de": "Selbst die Geduld des Propheten kommt von Allah. Bitten Sie Ihn darum, statt sie nur von sich selbst zu fordern.",
+            "ar": "حتى صبر النبي ﷺ يوصف بأنه بعون الله، فاسأله الصبر ولا تطالب به نفسك وحدها."
+          }
+        },
+        {
+          "hadith": "muslim:7500",
+          "check": "Strange are the ways of a believer",
+          "title": {
+            "en": "Good either way",
+            "de": "Gut in jedem Fall",
+            "ar": "خيرٌ في الحالين"
+          },
+          "body": {
+            "en": "Joy invites gratitude, hardship invites patience. Either way, the believer gains.",
+            "de": "Freude lädt zur Dankbarkeit ein, Not zur Geduld. So oder so gewinnt der Gläubige.",
+            "ar": "الفرح يدعو إلى الشكر، والشدة تدعو إلى الصبر، والمؤمن رابحٌ في الحالين."
+          }
+        },
+        {
+          "hadith": "bukhari:1302",
+          "check": "first stroke of a calamity",
+          "title": {
+            "en": "The first moment",
+            "de": "Der erste Moment",
+            "ar": "اللحظة الأولى"
+          },
+          "body": {
+            "en": "Patience is easy to claim later. Its real test is the first reaction and the first words.",
+            "de": "Geduld lässt sich später leicht behaupten. Ihre eigentliche Prüfung ist die erste Reaktion, sind die ersten Worte.",
+            "ar": "يسهل ادّعاء الصبر لاحقًا، أما امتحانه الحقيقي ففي ردّة الفعل الأولى والكلمات الأولى."
+          }
+        },
+        {
+          "hadith": "bukhari:5641",
+          "check": "thorn",
+          "title": {
+            "en": "Nothing is wasted",
+            "de": "Nichts ist umsonst",
+            "ar": "لا شيء يضيع"
+          },
+          "body": {
+            "en": "Even small pains and worries can wipe away sins. Hardship is never meaningless.",
+            "de": "Selbst kleine Schmerzen und Sorgen können Sünden tilgen. Not ist nie bedeutungslos.",
+            "ar": "حتى الآلام والهموم الصغيرة قد تكفّر الذنوب، فالشدة ليست بلا معنى."
+          }
+        },
+        {
+          "title": {
+            "en": "Small steps toward patience",
+            "de": "Kleine Schritte zur Geduld",
+            "ar": "خطوات صغيرة نحو الصبر"
+          },
+          "list": {
+            "en": [
+              "Pause before reacting to bad news",
+              "Say the istirja' when something is lost",
+              "Turn to prayer when your heart is heavy",
+              "Ask Allah for patience in your dua"
+            ],
+            "de": [
+              "Halten Sie inne, bevor Sie auf schlechte Nachrichten reagieren",
+              "Sprechen Sie bei einem Verlust das Istirdscha",
+              "Wenden Sie sich dem Gebet zu, wenn das Herz schwer ist",
+              "Bitten Sie Allah in Ihrem Bittgebet um Geduld"
+            ],
+            "ar": [
+              "توقّف قبل أن تردّ على الخبر السيئ",
+              "استرجِع عند المصيبة",
+              "الجأ إلى الصلاة حين يثقل قلبك",
+              "اسأل الله الصبر في دعائك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-gratitude",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Character · 3",
+          "de": "Charakter · 3",
+          "ar": "الأخلاق · ٣"
+        },
+        "title": {
+          "en": "Gratitude: seeing the gift",
+          "de": "Dankbarkeit: die Gabe sehen",
+          "ar": "الشكر: أن ترى النعمة"
+        },
+        "sub": {
+          "en": "Thankfulness in the heart, on the tongue and in action",
+          "de": "Dankbarkeit im Herzen, auf der Zunge und in der Tat",
+          "ar": "الشكر بالقلب واللسان والعمل"
+        },
+        "arabic": "الحَمْد"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Three places of gratitude",
+            "de": "Drei Orte der Dankbarkeit",
+            "ar": "مواضع الشكر الثلاثة"
+          },
+          "body": {
+            "en": "Scholars describe gratitude in the heart by recognising the gift, on the tongue by praising the Giver, and in the limbs by using it well.",
+            "de": "Gelehrte beschreiben Dankbarkeit im Herzen durch das Erkennen der Gabe, auf der Zunge durch das Lob des Gebers und in den Gliedern durch guten Gebrauch.",
+            "ar": "يصف العلماء الشكر بالقلب اعترافًا بالنعمة، وباللسان ثناءً على المنعم، وبالجوارح استعمالًا لها فيما يرضيه."
+          }
+        },
+        {
+          "verse": "16:114",
+          "check": "be grateful for the favor of Allāh",
+          "title": {
+            "en": "Eat, then give thanks",
+            "de": "Essen, dann danken",
+            "ar": "كُل ثم اشكر"
+          },
+          "body": {
+            "en": "Ordinary food is a place for gratitude. A meal can become an act of worship.",
+            "de": "Gewöhnliches Essen ist ein Ort der Dankbarkeit. Eine Mahlzeit kann zum Gottesdienst werden.",
+            "ar": "الطعام العادي موضعٌ للشكر، والوجبة قد تصير عبادة."
+          }
+        },
+        {
+          "hadith": "muslim:6932",
+          "check": "Al-Hamdu lillah",
+          "title": {
+            "en": "Praise for a single bite",
+            "de": "Lob für einen einzigen Bissen",
+            "ar": "حمدٌ على لقمة"
+          },
+          "body": {
+            "en": "Allah's pleasure can be earned with a word of praise over food and drink. It costs nothing.",
+            "de": "Allahs Wohlgefallen lässt sich mit einem Lobwort bei Essen und Trinken gewinnen. Es kostet nichts.",
+            "ar": "يُنال رضا الله بكلمة حمد على الطعام والشراب، وهي لا تكلّف شيئًا."
+          }
+        },
+        {
+          "hadith": "muslim:7430",
+          "check": "lower level than you",
+          "title": {
+            "en": "Compare with those who have less",
+            "de": "Vergleichen Sie sich mit denen, die weniger haben",
+            "ar": "قارن بمن هو أقل منك"
+          },
+          "body": {
+            "en": "Comparison can steal joy. This advice turns it around so that gratitude grows instead.",
+            "de": "Vergleiche können die Freude rauben. Dieser Rat dreht sie um, sodass stattdessen Dankbarkeit wächst.",
+            "ar": "المقارنة قد تسرق الفرح، وهذه النصيحة تقلبها فينمو الشكر بدلها."
+          }
+        },
+        {
+          "hadith": "bukhari:1130",
+          "check": "thankful slave",
+          "title": {
+            "en": "Gratitude that stands at night",
+            "de": "Dankbarkeit, die nachts steht",
+            "ar": "شكرٌ في قيام الليل"
+          },
+          "body": {
+            "en": "The Prophet's long night prayers were his way of saying thank you. Worship can be gratitude.",
+            "de": "Die langen Nachtgebete des Propheten waren seine Art, Danke zu sagen. Gottesdienst kann Dankbarkeit sein.",
+            "ar": "كان قيام النبي ﷺ الطويل طريقته في الشكر، فالعبادة قد تكون شكرًا."
+          }
+        },
+        {
+          "title": {
+            "en": "A gratitude habit",
+            "de": "Eine Gewohnheit der Dankbarkeit",
+            "ar": "عادةٌ للشكر"
+          },
+          "list": {
+            "en": [
+              "Bismillah before meals, alhamdulillah after",
+              "Name three blessings before you sleep",
+              "Thank the people who helped you today",
+              "Use one blessing to help someone else"
+            ],
+            "de": [
+              "Bismillah vor dem Essen, Alhamdulillah danach",
+              "Nennen Sie vor dem Schlafen drei Gaben",
+              "Danken Sie den Menschen, die Ihnen heute geholfen haben",
+              "Nutzen Sie eine Gabe, um jemand anderem zu helfen"
+            ],
+            "ar": [
+              "سمِّ الله قبل الطعام واحمده بعده",
+              "عدّد ثلاث نعم قبل النوم",
+              "اشكر من أعانك اليوم",
+              "استعمل نعمةً في مساعدة غيرك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-humility",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Character · 4",
+          "de": "Charakter · 4",
+          "ar": "الأخلاق · ٤"
+        },
+        "title": {
+          "en": "Humility: raised by lowering yourself",
+          "de": "Demut: erhöht durch Bescheidenheit",
+          "ar": "التواضع: رفعةٌ بخفض الجناح"
+        },
+        "sub": {
+          "en": "Why the humble are raised, and pride is the heaviest weight",
+          "de": "Warum die Demütigen erhöht werden und Stolz die schwerste Last ist",
+          "ar": "لماذا يرتفع المتواضع، ولماذا الكِبر أثقل الأحمال"
+        },
+        "arabic": "التَّوَاضُع"
+      },
+      "slides": [
+        {
+          "verse": "31:18-19",
+          "check": "lower your voice",
+          "title": {
+            "en": "Luqman's advice",
+            "de": "Luqmans Rat",
+            "ar": "وصية لقمان"
+          },
+          "body": {
+            "en": "Humility shows in the face, the walk and the voice. Small habits reveal the heart.",
+            "de": "Demut zeigt sich im Gesicht, im Gang und in der Stimme. Kleine Gewohnheiten verraten das Herz.",
+            "ar": "يظهر التواضع في الوجه والمشية والصوت، والعادات الصغيرة تكشف القلب."
+          }
+        },
+        {
+          "hadith": "muslim:6592",
+          "check": "humbles himself",
+          "title": {
+            "en": "Raised, not lowered",
+            "de": "Erhöht, nicht erniedrigt",
+            "ar": "رفعةٌ لا ذِلّة"
+          },
+          "body": {
+            "en": "Humility looks like a loss of status. The Prophet promised the opposite.",
+            "de": "Demut sieht aus wie ein Verlust an Ansehen. Der Prophet versprach das Gegenteil.",
+            "ar": "يبدو التواضع خسارةً للمكانة، والنبي ﷺ وعد بعكس ذلك."
+          }
+        },
+        {
+          "hadith": "muslim:265",
+          "check": "mustard seed of pride",
+          "title": {
+            "en": "What pride really is",
+            "de": "Was Stolz wirklich ist",
+            "ar": "حقيقة الكِبر"
+          },
+          "body": {
+            "en": "The hadith separates beauty from arrogance. Liking good clothes is fine; what matters is how we treat truth and people.",
+            "de": "Der Hadith trennt Schönheit von Hochmut. Schöne Kleidung zu mögen ist in Ordnung; entscheidend ist, wie wir mit Wahrheit und Menschen umgehen.",
+            "ar": "يفرّق الحديث بين الجمال والكِبر؛ فحبّ الثوب الحسن لا بأس به، والعبرة بموقفنا من الحق ومن الناس."
+          }
+        },
+        {
+          "hadith": "bukhari:676",
+          "check": "serving his family",
+          "title": {
+            "en": "The Prophet at home",
+            "de": "Der Prophet zu Hause",
+            "ar": "النبي ﷺ في بيته"
+          },
+          "body": {
+            "en": "The leader of a community helped with housework. No task is beneath a humble person.",
+            "de": "Das Oberhaupt einer Gemeinschaft half im Haushalt. Keine Aufgabe ist unter der Würde eines demütigen Menschen.",
+            "ar": "كان قائد الأمة يعين أهله في البيت، فلا عمل يصغر عن المتواضع."
+          }
+        },
+        {
+          "title": {
+            "en": "Humility in daily life",
+            "de": "Demut im Alltag",
+            "ar": "التواضع في الحياة اليومية"
+          },
+          "list": {
+            "en": [
+              "Greet people before they greet you",
+              "Accept the truth, even from someone younger",
+              "Help with tasks others avoid",
+              "Thank Allah when you are praised"
+            ],
+            "de": [
+              "Grüßen Sie andere, bevor sie Sie grüßen",
+              "Nehmen Sie die Wahrheit an, auch von Jüngeren",
+              "Helfen Sie bei Aufgaben, die andere meiden",
+              "Danken Sie Allah, wenn man Sie lobt"
+            ],
+            "ar": [
+              "ابدأ الناس بالسلام",
+              "اقبل الحق ولو ممن هو أصغر منك",
+              "شارك في الأعمال التي يتجنبها غيرك",
+              "احمد الله إذا مُدحت"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-generosity",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Character · 5",
+          "de": "Charakter · 5",
+          "ar": "الأخلاق · ٥"
+        },
+        "title": {
+          "en": "Generosity: an open hand",
+          "de": "Großzügigkeit: eine offene Hand",
+          "ar": "الكرم: يدٌ معطاءة"
+        },
+        "sub": {
+          "en": "Giving from what you love, with a light heart",
+          "de": "Geben von dem, was man liebt, mit leichtem Herzen",
+          "ar": "العطاء مما تحب، بقلبٍ طيب"
+        },
+        "arabic": "الكَرَم"
+      },
+      "slides": [
+        {
+          "verse": "3:92",
+          "check": "from that which you love",
+          "title": {
+            "en": "Give what you love",
+            "de": "Geben Sie, was Sie lieben",
+            "ar": "العطاء من المحبوب"
+          },
+          "body": {
+            "en": "Giving what we no longer need is easy. The verse sets the bar higher.",
+            "de": "Zu geben, was wir nicht mehr brauchen, ist leicht. Der Vers legt die Messlatte höher.",
+            "ar": "سهلٌ أن نعطي ما لم نعد نحتاجه، والآية ترفع المعيار."
+          }
+        },
+        {
+          "hadith": "bukhari:6",
+          "check": "most generous",
+          "title": {
+            "en": "The Prophet's generosity",
+            "de": "Die Großzügigkeit des Propheten",
+            "ar": "كرم النبي ﷺ"
+          },
+          "body": {
+            "en": "His giving grew even more in Ramadan, the month of the Quran.",
+            "de": "Sein Geben wuchs im Ramadan, dem Monat des Korans, noch weiter.",
+            "ar": "كان عطاؤه يتضاعف في رمضان، شهر القرآن."
+          }
+        },
+        {
+          "hadith": "bukhari:1442",
+          "check": "Compensate every person who spends",
+          "title": {
+            "en": "Spending is not losing",
+            "de": "Ausgeben ist kein Verlieren",
+            "ar": "الإنفاق ليس خسارة"
+          },
+          "body": {
+            "en": "Every day brings a dua for those who give. Generosity is answered with return.",
+            "de": "Jeder Tag bringt ein Bittgebet für die Gebenden. Großzügigkeit wird mit Ausgleich beantwortet.",
+            "ar": "كل يوم يحمل دعاءً لمن ينفق، والكرم يقابَل بالعِوض."
+          }
+        },
+        {
+          "hadith": "bukhari:1410",
+          "check": "one date-fruit",
+          "title": {
+            "en": "Small gifts grow",
+            "de": "Kleine Gaben wachsen",
+            "ar": "العطاء القليل ينمو"
+          },
+          "body": {
+            "en": "Even the value of one date, from honest income, can grow beyond measure. Never wait until you have much.",
+            "de": "Selbst der Wert einer Dattel aus ehrlichem Einkommen kann unermesslich wachsen. Warten Sie nie, bis Sie viel haben.",
+            "ar": "حتى قيمة تمرة من كسبٍ طيب قد تنمو نموًّا عظيمًا، فلا تنتظر أن تملك الكثير."
+          }
+        },
+        {
+          "verse": "59:9",
+          "check": "preference over themselves",
+          "title": {
+            "en": "The example of the Ansar",
+            "de": "Das Beispiel der Ansar",
+            "ar": "مثال الأنصار"
+          },
+          "body": {
+            "en": "The people of Madinah shared their homes and wealth with the emigrants, despite their own need.",
+            "de": "Die Menschen Medinas teilten Häuser und Besitz mit den Auswanderern, trotz eigener Not.",
+            "ar": "شارك أهل المدينة المهاجرين بيوتهم وأموالهم رغم حاجتهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Ways to give today",
+            "de": "Wege, heute zu geben",
+            "ar": "طرق للعطاء اليوم"
+          },
+          "list": {
+            "en": [
+              "Give something small, but regularly",
+              "Share food with a neighbour or colleague",
+              "Give your time and full attention",
+              "Give quietly, without reminding anyone"
+            ],
+            "de": [
+              "Geben Sie etwas Kleines, aber regelmäßig",
+              "Teilen Sie Essen mit Nachbarn oder Kollegen",
+              "Schenken Sie Zeit und volle Aufmerksamkeit",
+              "Geben Sie still, ohne daran zu erinnern"
+            ],
+            "ar": [
+              "أعطِ قليلًا ولكن بانتظام",
+              "شارك طعامك مع جار أو زميل",
+              "امنح وقتك واهتمامك الكامل",
+              "أعطِ بصمت ولا تمنّ على أحد"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-anger",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Character · 6",
+          "de": "Charakter · 6",
+          "ar": "الأخلاق · ٦"
+        },
+        "title": {
+          "en": "Anger: the strength to hold back",
+          "de": "Zorn: die Stärke, sich zurückzuhalten",
+          "ar": "الغضب: قوةُ ضبط النفس"
+        },
+        "sub": {
+          "en": "Prophetic advice for the moment anger rises",
+          "de": "Prophetischer Rat für den Moment, in dem Zorn aufsteigt",
+          "ar": "هديٌ نبوي للحظة التي يشتعل فيها الغضب"
+        },
+        "arabic": "الحِلْم"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6114",
+          "check": "controls himself while in anger",
+          "title": {
+            "en": "Real strength",
+            "de": "Wahre Stärke",
+            "ar": "القوة الحقيقية"
+          },
+          "body": {
+            "en": "Strength is redefined: not winning the fight, but mastering yourself in the heat of it.",
+            "de": "Stärke wird neu bestimmt: nicht den Kampf gewinnen, sondern sich selbst in der Hitze beherrschen.",
+            "ar": "يُعاد تعريف القوة: ليست الغلبة في الخصام، بل ملك النفس في لحظته."
+          }
+        },
+        {
+          "hadith": "bukhari:6116",
+          "check": "Do not become angry",
+          "title": {
+            "en": "Advice repeated",
+            "de": "Ein wiederholter Rat",
+            "ar": "نصيحةٌ مكرّرة"
+          },
+          "body": {
+            "en": "A man asked again and again for advice and received the same answer each time. Some lessons need repeating.",
+            "de": "Ein Mann bat immer wieder um Rat und erhielt jedes Mal dieselbe Antwort. Manche Lektionen müssen wiederholt werden.",
+            "ar": "سأل رجلٌ النصيحة مرارًا، فكان الجواب واحدًا في كل مرة؛ فبعض الدروس تحتاج إلى تكرار."
+          }
+        },
+        {
+          "verse": "3:134",
+          "check": "restrain anger",
+          "title": {
+            "en": "Three levels",
+            "de": "Drei Stufen",
+            "ar": "ثلاث درجات"
+          },
+          "body": {
+            "en": "Holding anger in, then pardoning, then doing good to the person. Each step is higher than the last.",
+            "de": "Den Zorn zurückhalten, dann verzeihen, dann dem Menschen Gutes tun. Jede Stufe ist höher als die vorige.",
+            "ar": "كظم الغيظ، ثم العفو، ثم الإحسان إلى الشخص، وكل درجة أعلى مما قبلها."
+          }
+        },
+        {
+          "dua": "hisn:82:0",
+          "check": "take refuge with Allah",
+          "title": {
+            "en": "Words that cool anger",
+            "de": "Worte, die den Zorn abkühlen",
+            "ar": "كلماتٌ تُطفئ الغضب"
+          },
+          "body": {
+            "en": "The Prophet pointed an angry man to seeking refuge in Allah. Say it the moment you feel the heat rise.",
+            "de": "Der Prophet wies einen zornigen Mann darauf hin, Zuflucht bei Allah zu suchen. Sprechen Sie es, sobald Sie die Hitze spüren.",
+            "ar": "أرشد النبي ﷺ رجلًا غاضبًا إلى الاستعاذة بالله، فقلها حين تشعر بحرارة الغضب."
+          }
+        },
+        {
+          "verse": "42:37",
+          "check": "when they are angry, they forgive",
+          "title": {
+            "en": "Forgiving in the moment",
+            "de": "Im Moment vergeben",
+            "ar": "المغفرة عند الغضب"
+          },
+          "body": {
+            "en": "Among the qualities of believers: anger comes, but forgiveness follows it.",
+            "de": "Zu den Eigenschaften der Gläubigen gehört: Der Zorn kommt, aber Vergebung folgt ihm.",
+            "ar": "من صفات المؤمنين أن الغضب يأتي، لكن المغفرة تتبعه."
+          }
+        },
+        {
+          "title": {
+            "en": "When anger rises",
+            "de": "Wenn Zorn aufsteigt",
+            "ar": "حين يشتد الغضب"
+          },
+          "list": {
+            "en": [
+              "Seek refuge in Allah from Satan",
+              "Stay silent until you are calm",
+              "Step away for a few minutes",
+              "Do not send messages written in anger"
+            ],
+            "de": [
+              "Suchen Sie Zuflucht bei Allah vor dem Satan",
+              "Schweigen Sie, bis Sie ruhig sind",
+              "Gehen Sie für einige Minuten hinaus",
+              "Schicken Sie im Zorn geschriebene Nachrichten nicht ab"
+            ],
+            "ar": [
+              "استعذ بالله من الشيطان",
+              "اسكت حتى تهدأ",
+              "ابتعد عن الموقف بضع دقائق",
+              "لا ترسل رسائل كتبتها وأنت غاضب"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sahih al-Bukhari 3282, the angry man and seeking refuge",
+          "url": "https://sunnah.com/bukhari:3282"
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-backbiting",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Character · 7",
+          "de": "Charakter · 7",
+          "ar": "الأخلاق · ٧"
+        },
+        "title": {
+          "en": "Backbiting: guarding the absent",
+          "de": "Üble Nachrede: die Abwesenden schützen",
+          "ar": "الغيبة: صون الغائب"
+        },
+        "sub": {
+          "en": "Why talking about others behind their backs weighs so much",
+          "de": "Warum es so schwer wiegt, hinter dem Rücken anderer über sie zu reden",
+          "ar": "لماذا يثقل الحديث عن الناس في غيابهم"
+        },
+        "arabic": "حِفْظ اللِّسَان"
+      },
+      "slides": [
+        {
+          "verse": "49:12",
+          "check": "backbite",
+          "title": {
+            "en": "An image that stays",
+            "de": "Ein Bild, das bleibt",
+            "ar": "صورةٌ لا تُنسى"
+          },
+          "body": {
+            "en": "The Quran uses a deliberately shocking image so that we feel what backbiting really is.",
+            "de": "Der Koran verwendet ein bewusst erschütterndes Bild, damit wir spüren, was üble Nachrede wirklich ist.",
+            "ar": "يستعمل القرآن صورة صادمة عمدًا كي نشعر بحقيقة الغيبة."
+          }
+        },
+        {
+          "hadith": "muslim:6593",
+          "check": "what is backbiting",
+          "title": {
+            "en": "Even if it is true",
+            "de": "Auch wenn es stimmt",
+            "ar": "ولو كان صحيحًا"
+          },
+          "body": {
+            "en": "Many think it is fine as long as the story is true. The Prophet's definition closes that excuse.",
+            "de": "Viele meinen, es sei in Ordnung, solange es stimmt. Die Definition des Propheten schließt diese Ausrede aus.",
+            "ar": "يظن كثيرون أن الكلام جائز ما دام صحيحًا، وتعريف النبي ﷺ يسدّ هذا العذر."
+          }
+        },
+        {
+          "hadith": "bukhari:6474",
+          "check": "between his two jaw-bones",
+          "title": {
+            "en": "A promise for guarding the tongue",
+            "de": "Eine Zusage für den Schutz der Zunge",
+            "ar": "وعدٌ لمن حفظ لسانه"
+          },
+          "body": {
+            "en": "Guarding the tongue weighs so much that Paradise is promised for it, together with chastity.",
+            "de": "Die Zunge zu hüten wiegt so schwer, dass dafür, zusammen mit Keuschheit, das Paradies zugesagt wird.",
+            "ar": "حفظ اللسان عظيمٌ حتى وُعد عليه بالجنة مع حفظ العفة."
+          }
+        },
+        {
+          "hadith": "bukhari:6056",
+          "check": "Qattat",
+          "title": {
+            "en": "Carrying tales",
+            "de": "Gerede weitertragen",
+            "ar": "النميمة"
+          },
+          "body": {
+            "en": "A qattat carries words between people to stir up trouble. Breaking that chain is a good deed.",
+            "de": "Ein Qattat trägt Worte zwischen Menschen hin und her, um Unfrieden zu stiften. Diese Kette zu durchbrechen ist eine gute Tat.",
+            "ar": "القتّات من ينقل الكلام بين الناس ليفسد بينهم، وقطع هذه السلسلة عملٌ صالح."
+          }
+        },
+        {
+          "verse": "104:1",
+          "check": "scorner",
+          "title": {
+            "en": "Mockery and slander",
+            "de": "Spott und Verleumdung",
+            "ar": "الهمز واللمز"
+          },
+          "body": {
+            "en": "Surah al-Humaza opens with a warning to those who belittle others, in word or gesture.",
+            "de": "Sure al-Humaza beginnt mit einer Warnung an die, die andere herabsetzen, in Wort oder Geste.",
+            "ar": "تبدأ سورة الهمزة بتحذير من يحتقر الناس بالقول أو الإشارة."
+          }
+        },
+        {
+          "title": {
+            "en": "When the talk turns to someone absent",
+            "de": "Wenn das Gespräch sich um Abwesende dreht",
+            "ar": "حين يدور الحديث عن غائب"
+          },
+          "list": {
+            "en": [
+              "Change the subject kindly",
+              "Mention something good about the person",
+              "Ask yourself: would I say this to their face?",
+              "Make dua for them instead"
+            ],
+            "de": [
+              "Wechseln Sie freundlich das Thema",
+              "Erwähnen Sie etwas Gutes über die Person",
+              "Fragen Sie sich: Würde ich das vor ihr sagen?",
+              "Sprechen Sie stattdessen ein Bittgebet für sie"
+            ],
+            "ar": [
+              "غيّر الموضوع بلطف",
+              "اذكر شيئًا حسنًا عن الشخص",
+              "اسأل نفسك: هل أقول هذا أمامه؟",
+              "ادعُ له بدل ذلك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-envy",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Character · 8",
+          "de": "Charakter · 8",
+          "ar": "الأخلاق · ٨"
+        },
+        "title": {
+          "en": "Envy: wishing others well instead",
+          "de": "Neid: anderen stattdessen Gutes wünschen",
+          "ar": "الحسد: أن تتمنى الخير لغيرك"
+        },
+        "sub": {
+          "en": "How Islam turns envy into love and healthy ambition",
+          "de": "Wie der Islam Neid in Liebe und gesunden Ehrgeiz verwandelt",
+          "ar": "كيف يحوّل الإسلام الحسد إلى محبة وطموح محمود"
+        },
+        "arabic": "سَلَامَة الصَّدْر"
+      },
+      "slides": [
+        {
+          "verse": "4:32",
+          "check": "do not wish for that",
+          "title": {
+            "en": "Not their share, but His bounty",
+            "de": "Nicht ihr Anteil, sondern Seine Huld",
+            "ar": "لا تنظر إلى نصيب غيرك"
+          },
+          "body": {
+            "en": "Instead of staring at what others have, the verse turns you toward asking Allah for good.",
+            "de": "Statt auf das zu starren, was andere haben, wendet der Vers Sie dem Bitten an Allah zu.",
+            "ar": "بدل التحديق فيما عند الآخرين، توجّهك الآية إلى أن تطلب الخير من عطاء الله."
+          }
+        },
+        {
+          "hadith": "nawawi:13",
+          "check": "loves for his brother",
+          "title": {
+            "en": "The opposite of envy",
+            "de": "Das Gegenteil von Neid",
+            "ar": "ضدّ الحسد"
+          },
+          "body": {
+            "en": "Envy wants the good to leave someone. Faith wants it to stay with them, and to reach you too.",
+            "de": "Neid will, dass das Gute jemanden verlässt. Glaube will, dass es bleibt, und dass es auch Sie erreicht.",
+            "ar": "الحسد يتمنى زوال النعمة عن غيرك، والإيمان يتمنى بقاءها له ووصولها إليك أيضًا."
+          }
+        },
+        {
+          "hadith": "bukhari:73",
+          "check": "except in two cases",
+          "title": {
+            "en": "Healthy ambition",
+            "de": "Gesunder Ehrgeiz",
+            "ar": "الغبطة المحمودة"
+          },
+          "body": {
+            "en": "Wanting the same good as someone, without wishing it away from them, is allowed and in these two cases even praised.",
+            "de": "Dasselbe Gute wie jemand zu wünschen, ohne es ihm zu missgönnen, ist erlaubt und in diesen zwei Fällen sogar gelobt.",
+            "ar": "أن تتمنى مثل خير غيرك دون تمنّي زواله عنه جائز، بل محمود في هاتين الحالتين."
+          }
+        },
+        {
+          "hadith": "muslim:6526",
+          "check": "jealousy",
+          "title": {
+            "en": "Brothers and sisters, not rivals",
+            "de": "Geschwister, keine Rivalen",
+            "ar": "إخوةٌ لا خصوم"
+          },
+          "body": {
+            "en": "Envy, hatred and cutting each other off are named together. The cure is to live as brothers and sisters.",
+            "de": "Neid, Hass und gegenseitiger Kontaktabbruch werden zusammen genannt. Das Heilmittel ist, als Geschwister zu leben.",
+            "ar": "يُذكر الحسد والبغض والتقاطع معًا، والعلاج أن نعيش إخوة."
+          }
+        },
+        {
+          "verse": "113:5",
+          "check": "envier",
+          "title": {
+            "en": "Seeking protection",
+            "de": "Schutz suchen",
+            "ar": "الاستعاذة"
+          },
+          "body": {
+            "en": "Al-Falaq ends by seeking refuge from the harm of an envier. Many recite it morning and evening.",
+            "de": "Al-Falaq endet mit der Zuflucht vor dem Schaden eines Neiders. Viele rezitieren die Sure morgens und abends.",
+            "ar": "تُختم سورة الفلق بالاستعاذة من شر الحاسد، ويقرؤها كثيرون صباحًا ومساءً."
+          }
+        },
+        {
+          "title": {
+            "en": "When you feel envy",
+            "de": "Wenn Sie Neid spüren",
+            "ar": "حين تشعر بالحسد"
+          },
+          "list": {
+            "en": [
+              "Say ma sha Allah and ask for blessing for them",
+              "Make dua for the person you envy",
+              "Count your own blessings",
+              "Ask Allah for good without looking at theirs"
+            ],
+            "de": [
+              "Sagen Sie Ma scha Allah und bitten Sie um Segen für sie",
+              "Sprechen Sie ein Bittgebet für die Person",
+              "Zählen Sie Ihre eigenen Gaben",
+              "Bitten Sie Allah um Gutes, ohne auf das der anderen zu schauen"
+            ],
+            "ar": [
+              "قل ما شاء الله وادعُ لهم بالبركة",
+              "ادعُ لمن تجد في نفسك حسدًا له",
+              "عدّد نعم الله عليك",
+              "اسأل الله الخير دون أن تنظر إلى ما عند غيرك"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-neighbours",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Character · 9",
+          "de": "Charakter · 9",
+          "ar": "الأخلاق · ٩"
+        },
+        "title": {
+          "en": "Neighbours: the rights next door",
+          "de": "Nachbarn: die Rechte nebenan",
+          "ar": "الجار: حقوقٌ عند الباب"
+        },
+        "sub": {
+          "en": "How seriously Islam takes the people who live beside you",
+          "de": "Wie ernst der Islam die Menschen nimmt, die neben Ihnen wohnen",
+          "ar": "كيف يعظّم الإسلام حقّ من يسكن بجوارك"
+        },
+        "arabic": "حَقُّ الجَار"
+      },
+      "slides": [
+        {
+          "verse": "4:36",
+          "check": "the near neighbor",
+          "title": {
+            "en": "Near and far neighbours",
+            "de": "Nahe und ferne Nachbarn",
+            "ar": "الجار القريب والبعيد"
+          },
+          "body": {
+            "en": "Neighbours appear in the same verse as worship and parents, both the one close by and the one further away.",
+            "de": "Nachbarn stehen im selben Vers wie Anbetung und Eltern, der nahe wie der fernere.",
+            "ar": "يُذكر الجيران في الآية نفسها مع العبادة والوالدين، القريب منهم والبعيد."
+          }
+        },
+        {
+          "hadith": "bukhari:6014",
+          "check": "Gabriel continued to recommend me",
+          "title": {
+            "en": "Emphasised again and again",
+            "de": "Immer wieder betont",
+            "ar": "وصيةٌ متكررة"
+          },
+          "body": {
+            "en": "Jibril kept stressing the neighbour's rights to the Prophet. That repetition shows their weight.",
+            "de": "Dschibril betonte dem Propheten die Rechte des Nachbarn immer wieder. Diese Wiederholung zeigt ihr Gewicht.",
+            "ar": "ظلّ جبريل يوصي النبي ﷺ بالجار، وفي هذا التكرار بيانٌ لعِظم حقه."
+          }
+        },
+        {
+          "hadith": "bukhari:6016",
+          "check": "neighbor does not feel safe",
+          "title": {
+            "en": "Safety first",
+            "de": "Sicherheit zuerst",
+            "ar": "الأمان أولًا"
+          },
+          "body": {
+            "en": "The minimum is that your neighbour feels safe from you: from noise, harm and hostility.",
+            "de": "Das Mindeste ist, dass Ihr Nachbar sich vor Ihnen sicher fühlt: vor Lärm, Schaden und Feindseligkeit.",
+            "ar": "أقل الحقوق أن يأمن جارك أذاك: من الإزعاج والضرر والعداوة."
+          }
+        },
+        {
+          "hadith": "muslim:6688",
+          "check": "add water",
+          "title": {
+            "en": "A little more water",
+            "de": "Etwas mehr Wasser",
+            "ar": "قليلٌ من الماء يكفي"
+          },
+          "body": {
+            "en": "Generosity does not need a feast. Stretch what you cook and share it.",
+            "de": "Großzügigkeit braucht kein Festmahl. Strecken Sie, was Sie kochen, und teilen Sie es.",
+            "ar": "لا يحتاج الكرم إلى وليمة، فزد في طعامك قليلًا وشارك جيرانك."
+          }
+        },
+        {
+          "hadith": "bukhari:2259",
+          "check": "whose door is nearer",
+          "title": {
+            "en": "Start with the nearest door",
+            "de": "Beginnen Sie bei der nächsten Tür",
+            "ar": "ابدأ بالأقرب بابًا"
+          },
+          "body": {
+            "en": "When you cannot give to everyone, begin with the one closest to you.",
+            "de": "Wenn Sie nicht allen etwas geben können, beginnen Sie bei dem, der Ihnen am nächsten ist.",
+            "ar": "إذا لم تستطع أن تعطي الجميع فابدأ بالأقرب إليك."
+          }
+        },
+        {
+          "title": {
+            "en": "Being a good neighbour",
+            "de": "Ein guter Nachbar sein",
+            "ar": "كن جارًا طيبًا"
+          },
+          "list": {
+            "en": [
+              "Greet your neighbours by name",
+              "Share food on special days",
+              "Be considerate with noise and parking",
+              "Check on elderly or sick neighbours"
+            ],
+            "de": [
+              "Grüßen Sie Ihre Nachbarn mit Namen",
+              "Teilen Sie an besonderen Tagen Essen",
+              "Nehmen Sie Rücksicht bei Lärm und Parken",
+              "Schauen Sie nach älteren oder kranken Nachbarn"
+            ],
+            "ar": [
+              "سلّم على جيرانك بأسمائهم",
+              "شاركهم الطعام في المناسبات",
+              "راعِ الهدوء ومواقف السيارات",
+              "تفقّد الجيران المسنين والمرضى"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-parents",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Character · 10",
+          "de": "Charakter · 10",
+          "ar": "الأخلاق · ١٠"
+        },
+        "title": {
+          "en": "Kindness to parents",
+          "de": "Güte zu den Eltern",
+          "ar": "برّ الوالدين"
+        },
+        "sub": {
+          "en": "A deed among those most beloved to Allah",
+          "de": "Eine der Taten, die Allah am meisten liebt",
+          "ar": "من أحبّ الأعمال إلى الله"
+        },
+        "arabic": "البِرّ"
+      },
+      "slides": [
+        {
+          "verse": "17:23-24",
+          "check": "wing of humility",
+          "title": {
+            "en": "Gentle in word and deed",
+            "de": "Sanft in Wort und Tat",
+            "ar": "لينٌ في القول والفعل"
+          },
+          "body": {
+            "en": "Two verses that cover speech, attitude and dua. Read them slowly and think of your parents.",
+            "de": "Zwei Verse über Rede, Haltung und Bittgebet. Lesen Sie sie langsam und denken Sie an Ihre Eltern.",
+            "ar": "آيتان تجمعان القول والسلوك والدعاء، فاقرأهما على مهل واذكر والديك."
+          }
+        },
+        {
+          "hadith": "bukhari:527",
+          "check": "dutiful to your parents",
+          "title": {
+            "en": "Right after prayer",
+            "de": "Gleich nach dem Gebet",
+            "ar": "بعد الصلاة مباشرة"
+          },
+          "body": {
+            "en": "Asked about the dearest deeds, the Prophet named kindness to parents right after prayer on time.",
+            "de": "Nach den liebsten Taten gefragt, nannte der Prophet die Güte zu den Eltern direkt nach dem pünktlichen Gebet.",
+            "ar": "سُئل النبي ﷺ عن أحب الأعمال، فذكر برّ الوالدين بعد الصلاة في وقتها."
+          }
+        },
+        {
+          "hadith": "bukhari:5971",
+          "check": "Your mother",
+          "title": {
+            "en": "Your mother, three times",
+            "de": "Ihre Mutter, dreimal",
+            "ar": "الأم ثلاثًا"
+          },
+          "body": {
+            "en": "The mother is named three times before the father, honouring her care, pregnancy and sacrifice.",
+            "de": "Die Mutter wird dreimal vor dem Vater genannt, zu Ehren ihrer Fürsorge, Schwangerschaft und Opfer.",
+            "ar": "ذُكرت الأم ثلاث مرات قبل الأب، تكريمًا لرعايتها وحملها وتضحيتها."
+          }
+        },
+        {
+          "hadith": "muslim:6511",
+          "check": "finds his parents in old age",
+          "title": {
+            "en": "A missed opportunity",
+            "de": "Eine verpasste Gelegenheit",
+            "ar": "فرصةٌ ضائعة"
+          },
+          "body": {
+            "en": "Elderly parents are an open door to Paradise. The warning is for those who let that chance pass.",
+            "de": "Alte Eltern sind eine offene Tür zum Paradies. Die Warnung gilt denen, die diese Gelegenheit verstreichen lassen.",
+            "ar": "الوالدان في كبرهما بابٌ مفتوح إلى الجنة، والتحذير لمن يفوّت هذه الفرصة."
+          }
+        },
+        {
+          "title": {
+            "en": "Small acts of kindness",
+            "de": "Kleine Taten der Güte",
+            "ar": "أعمال برٍّ صغيرة"
+          },
+          "list": {
+            "en": [
+              "Call them, even when you are busy",
+              "Speak softly, never with impatience",
+              "Ask for their advice and their dua",
+              "Make dua for them in every prayer"
+            ],
+            "de": [
+              "Rufen Sie sie an, auch wenn Sie beschäftigt sind",
+              "Sprechen Sie sanft, nie ungeduldig",
+              "Bitten Sie sie um Rat und um ihr Bittgebet",
+              "Beten Sie in jedem Gebet für sie"
+            ],
+            "ar": [
+              "اتصل بهما ولو كنت مشغولًا",
+              "كلّمهما بلين لا بضيق",
+              "اطلب نصيحتهما ودعاءهما",
+              "ادعُ لهما في كل صلاة"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-promises",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Character · 11",
+          "de": "Charakter · 11",
+          "ar": "الأخلاق · ١١"
+        },
+        "title": {
+          "en": "Keeping promises",
+          "de": "Versprechen halten",
+          "ar": "الوفاء بالوعد"
+        },
+        "sub": {
+          "en": "Why a broken word weighs heavily in Islam",
+          "de": "Warum ein gebrochenes Wort im Islam schwer wiegt",
+          "ar": "لماذا يثقل نقض الوعد في الإسلام"
+        },
+        "arabic": "الوَفَاء"
+      },
+      "slides": [
+        {
+          "verse": "17:34",
+          "check": "commitment",
+          "title": {
+            "en": "You will be asked",
+            "de": "Sie werden gefragt werden",
+            "ar": "ستُسأل عنه"
+          },
+          "body": {
+            "en": "Promises are not just social courtesy. Each one is a responsibility that will be asked about.",
+            "de": "Versprechen sind nicht nur Höflichkeit. Jedes ist eine Verantwortung, nach der gefragt wird.",
+            "ar": "ليست الوعود مجاملة اجتماعية، بل كل وعد مسؤولية يُسأل عنها."
+          }
+        },
+        {
+          "verse": "23:8",
+          "check": "their trusts and their promises",
+          "title": {
+            "en": "A mark of the successful",
+            "de": "Ein Merkmal der Erfolgreichen",
+            "ar": "صفة المفلحين"
+          },
+          "body": {
+            "en": "Among the qualities listed at the start of al-Mu'minun, keeping trusts and promises has its own place.",
+            "de": "Unter den Eigenschaften am Anfang von al-Muminun haben Treue und gehaltene Versprechen ihren eigenen Platz.",
+            "ar": "في صفات المؤمنين أول سورة المؤمنون، لرعاية الأمانة والعهد مكانها الخاص."
+          }
+        },
+        {
+          "hadith": "bukhari:33",
+          "check": "Whenever he promises",
+          "title": {
+            "en": "A sign to avoid",
+            "de": "Ein Zeichen, das man meidet",
+            "ar": "علامةٌ يُحذر منها"
+          },
+          "body": {
+            "en": "Breaking promises is listed among the signs of hypocrisy. A believer's word should be reliable.",
+            "de": "Gebrochene Versprechen werden zu den Zeichen der Heuchelei gezählt. Das Wort eines Gläubigen sollte verlässlich sein.",
+            "ar": "يُعدّ إخلاف الوعد من علامات النفاق، وكلمة المؤمن ينبغي أن يُعتمد عليها."
+          }
+        },
+        {
+          "hadith": "bukhari:2681",
+          "check": "to keep promises",
+          "title": {
+            "en": "Even his opponents knew it",
+            "de": "Selbst seine Gegner wussten es",
+            "ar": "حتى خصومه عرفوا ذلك"
+          },
+          "body": {
+            "en": "Abu Sufyan, then still an opponent, told the Byzantine emperor what the Prophet taught. Keeping promises was part of it.",
+            "de": "Abu Sufyan, damals noch ein Gegner, berichtete dem byzantinischen Kaiser, was der Prophet lehrte. Versprechen halten gehörte dazu.",
+            "ar": "أخبر أبو سفيان، وهو يومئذ خصم، ملكَ الروم بما يأمر به النبي ﷺ، وكان الوفاء بالعهد منه."
+          }
+        },
+        {
+          "verse": "61:2-3",
+          "check": "say what you do not do",
+          "title": {
+            "en": "Words and deeds",
+            "de": "Worte und Taten",
+            "ar": "القول والعمل"
+          },
+          "body": {
+            "en": "Saying without doing is described as deeply disliked by Allah. Promise less, keep more.",
+            "de": "Reden ohne Handeln wird als Allah zutiefst verhasst beschrieben. Versprechen Sie weniger, halten Sie mehr.",
+            "ar": "يوصف القول بلا عمل بأنه مما يمقته الله كثيرًا، فقلّل الوعود وأكثِر الوفاء."
+          }
+        },
+        {
+          "title": {
+            "en": "Keeping your word",
+            "de": "Zu seinem Wort stehen",
+            "ar": "الوفاء بالكلمة"
+          },
+          "list": {
+            "en": [
+              "Say in sha Allah, and then really try",
+              "Write down what you promised",
+              "If you cannot keep it, say so early",
+              "Be on time: time is also a promise"
+            ],
+            "de": [
+              "Sagen Sie In scha Allah und bemühen Sie sich dann wirklich",
+              "Notieren Sie, was Sie versprochen haben",
+              "Wenn Sie es nicht halten können, sagen Sie es früh",
+              "Seien Sie pünktlich: Auch Zeit ist ein Versprechen"
+            ],
+            "ar": [
+              "قل إن شاء الله ثم اجتهد فعلًا",
+              "دوّن ما وعدت به",
+              "إن عجزت عن الوفاء فأخبر مبكرًا",
+              "احترم الموعد، فالوقت وعدٌ أيضًا"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "akhlaq-kind-words",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Character · 12",
+          "de": "Charakter · 12",
+          "ar": "الأخلاق · ١٢"
+        },
+        "title": {
+          "en": "A smile and a kind word",
+          "de": "Ein Lächeln und ein gutes Wort",
+          "ar": "ابتسامةٌ وكلمةٌ طيبة"
+        },
+        "sub": {
+          "en": "The small charity that everyone can give",
+          "de": "Die kleine Spende, die jeder geben kann",
+          "ar": "الصدقة الصغيرة التي يقدر عليها كل أحد"
+        },
+        "arabic": "البَشَاشَة"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:6690",
+          "check": "cheerful countenance",
+          "title": {
+            "en": "No good deed is small",
+            "de": "Keine gute Tat ist klein",
+            "ar": "لا معروف صغير"
+          },
+          "body": {
+            "en": "A friendly face is counted as a real good deed. It costs nothing and can change someone's day.",
+            "de": "Ein freundliches Gesicht zählt als echte gute Tat. Es kostet nichts und kann den Tag eines Menschen verändern.",
+            "ar": "الوجه البشوش معروفٌ حقيقي، لا يكلّف شيئًا وقد يغيّر يوم إنسان."
+          }
+        },
+        {
+          "hadith": "bukhari:6089",
+          "check": "receive me with a smile",
+          "title": {
+            "en": "The Prophet's smile",
+            "de": "Das Lächeln des Propheten",
+            "ar": "ابتسامة النبي ﷺ"
+          },
+          "body": {
+            "en": "Jarir remembered that the Prophet smiled every time he saw him. People remember how we made them feel.",
+            "de": "Dscharir erinnerte sich, dass der Prophet ihn bei jeder Begegnung anlächelte. Menschen erinnern sich, wie wir ihnen begegnet sind.",
+            "ar": "تذكّر جرير أن النبي ﷺ كان يبتسم له كلما رآه، والناس يتذكرون كيف عاملناهم."
+          }
+        },
+        {
+          "hadith": "nawawi:26",
+          "check": "the good word is a charity",
+          "title": {
+            "en": "Charity without money",
+            "de": "Spende ohne Geld",
+            "ar": "صدقةٌ بلا مال"
+          },
+          "body": {
+            "en": "Charity is not only money. A good word, a helping hand and fair judgement are all counted.",
+            "de": "Sadaqa ist nicht nur Geld. Ein gutes Wort, eine helfende Hand und ein gerechtes Urteil zählen alle.",
+            "ar": "ليست الصدقة مالًا فقط، فالكلمة الطيبة والعون والعدل كلها تُحسب."
+          }
+        },
+        {
+          "verse": "2:263",
+          "check": "Kind speech",
+          "title": {
+            "en": "How we give",
+            "de": "Wie wir geben",
+            "ar": "طريقة العطاء"
+          },
+          "body": {
+            "en": "How we give matters as much as what we give. Gentle words can be the gift itself.",
+            "de": "Wie wir geben, zählt so viel wie das, was wir geben. Sanfte Worte können selbst die Gabe sein.",
+            "ar": "طريقة العطاء لا تقل أهمية عن العطاء نفسه، وقد تكون الكلمة اللينة هي الهدية."
+          }
+        },
+        {
+          "hadith": "bukhari:6029",
+          "check": "best manners and character",
+          "title": {
+            "en": "The measure of the best",
+            "de": "Der Maßstab der Besten",
+            "ar": "معيار الخيرية"
+          },
+          "body": {
+            "en": "The Prophet never used foul language, and he measured people's worth by their character.",
+            "de": "Der Prophet gebrauchte nie unflätige Worte, und er maß den Wert der Menschen an ihrem Charakter.",
+            "ar": "لم يكن النبي ﷺ بذيء اللسان، وكان يجعل حسن الخلق ميزان الخيرية."
+          }
+        },
+        {
+          "title": {
+            "en": "Try this today",
+            "de": "Probieren Sie es heute",
+            "ar": "جرّب هذا اليوم"
+          },
+          "list": {
+            "en": [
+              "Smile at the first person you meet",
+              "Thank someone by name",
+              "Replace a complaint with a kind word",
+              "Send an encouraging message"
+            ],
+            "de": [
+              "Lächeln Sie die erste Person an, der Sie begegnen",
+              "Danken Sie jemandem mit Namen",
+              "Ersetzen Sie eine Klage durch ein freundliches Wort",
+              "Schicken Sie eine ermutigende Nachricht"
+            ],
+            "ar": [
+              "ابتسم لأول شخص تلقاه",
+              "اشكر أحدهم باسمه",
+              "استبدل الشكوى بكلمة طيبة",
+              "أرسل رسالة تشجيع"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

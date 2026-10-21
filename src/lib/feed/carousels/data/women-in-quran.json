@@ -1,0 +1,562 @@
+{
+  "series": "women-in-quran",
+  "label": { "en": "Women in the Quran", "de": "Frauen im Koran", "ar": "نساء في القرآن" },
+  "topic": "seerah",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "women-01-maryam",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 1", "de": "Frauen im Koran · 1", "ar": "نساء في القرآن · ١" },
+        "title": { "en": "The story of Maryam in 8 slides", "de": "Die Geschichte Maryams in 8 Folien", "ar": "قصة مريم في ٨ شرائح" },
+        "sub": { "en": "Maryam (Mary): chosen, purified and honoured with a surah in her name", "de": "Maryam (Maria): erwählt, gereinigt und geehrt mit einer Sure, die ihren Namen trägt", "ar": "مريم: اصطفاء وطهر وسورة تحمل اسمها" },
+        "arabic": "مريم عليها السلام"
+      },
+      "slides": [
+        {
+          "title": { "en": "The only woman named", "de": "Die einzige namentlich genannte Frau", "ar": "المرأة الوحيدة المسمّاة" },
+          "body": { "en": "Maryam is the only woman the Quran calls by name, and Surah 19 carries her name. Her story is told in Surah Al 'Imran and Surah Maryam.", "de": "Maryam ist die einzige Frau, die der Koran beim Namen nennt, und Sure 19 trägt ihren Namen. Ihre Geschichte wird in Sure Al Imran und Sure Maryam erzählt.", "ar": "مريم عليها السلام هي المرأة الوحيدة التي سمّاها القرآن باسمها، وتحمل السورة التاسعة عشرة اسمها، وتُروى قصتها في سورتي آل عمران ومريم." }
+        },
+        {
+          "verse": "3:42",
+          "check": "chosen you and purified you",
+          "title": { "en": "Chosen and purified", "de": "Erwählt und gereinigt", "ar": "اصطفاء وتطهير" },
+          "body": { "en": "The angels told her that Allah had chosen her, purified her and raised her above the women of all peoples.", "de": "Die Engel sagten ihr, dass Allah sie erwählt, gereinigt und über die Frauen aller Völker erhoben hat.", "ar": "أخبرتها الملائكة أن الله اختارها وطهّرها وفضّلها على نساء الأمم." }
+        },
+        {
+          "verse": "19:18-19",
+          "check": "pure boy",
+          "title": { "en": "A visitor in her retreat", "de": "Ein Besucher in ihrer Zurückgezogenheit", "ar": "زائر في خلوتها" },
+          "body": { "en": "In her place of retreat, an angel appeared to her in human form. Her first reaction was to seek refuge in the Most Merciful.", "de": "An ihrem Rückzugsort erschien ihr ein Engel in Menschengestalt. Ihre erste Reaktion war, Zuflucht beim Allerbarmer zu suchen.", "ar": "في خلوتها جاءها ملك في صورة بشر، فكان أول ما فعلته أن استعاذت بالرحمن." }
+        },
+        {
+          "verse": "19:20-21",
+          "check": "easy for Me",
+          "title": { "en": "An honest question", "de": "Eine ehrliche Frage", "ar": "سؤال صادق" },
+          "body": { "en": "She asked how she could have a child when no man had touched her. The answer: it is easy for Allah, and the child will be a sign and a mercy.", "de": "Sie fragte, wie sie ein Kind bekommen könne, da kein Mann sie berührt hatte. Die Antwort: Für Allah ist es leicht, und das Kind wird ein Zeichen und eine Barmherzigkeit sein.", "ar": "سألت كيف يكون لها ولد ولم يقربها رجل، فكان الجواب: هو على الله يسير، وسيكون الولد آية ورحمة." }
+        },
+        {
+          "verse": "19:23",
+          "check": "trunk of a palm tree",
+          "title": { "en": "Alone in labour", "de": "Allein in den Wehen", "ar": "وحيدة في المخاض" },
+          "body": { "en": "The pain of birth drove her to a palm tree. In her distress she wished she had been forgotten. The Quran does not hide her human pain.", "de": "Die Geburtswehen trieben sie zu einer Palme. In ihrer Not wünschte sie, vergessen zu sein. Der Koran verschweigt ihren menschlichen Schmerz nicht.", "ar": "اضطرها ألم الولادة إلى نخلة، وتمنّت في شدتها لو كانت منسيّة. ولا يخفي القرآن ألمها الإنساني." }
+        },
+        {
+          "verse": "19:24-25",
+          "check": "ripe, fresh dates",
+          "title": { "en": "Comfort at her feet", "de": "Trost zu ihren Füßen", "ar": "عزاء عند قدميها" },
+          "body": { "en": "She was told not to grieve: a stream flowed beneath her, and the palm would drop fresh dates if she shook its trunk.", "de": "Man sagte ihr, sie solle nicht traurig sein: Unter ihr floss ein Bach, und die Palme würde frische Datteln fallen lassen, wenn sie den Stamm schüttelte.", "ar": "قيل لها ألا تحزن: فتحتها جدول ماء، والنخلة تُسقط رطبًا إن هزّت جذعها." }
+        },
+        {
+          "verse": "66:12",
+          "check": "guarded her chastity",
+          "title": { "en": "An example for all believers", "de": "Ein Vorbild für alle Gläubigen", "ar": "مثل للمؤمنين" },
+          "body": { "en": "The Quran sets Maryam as an example for every believer, man or woman: chaste, trusting in her Lord's words and devout.", "de": "Der Koran stellt Maryam allen Gläubigen als Beispiel vor, Männern wie Frauen: keusch, den Worten ihres Herrn vertrauend und andächtig.", "ar": "يضرب القرآن مريم مثلًا لكل مؤمن ومؤمنة: عفيفة، واثقة بكلام ربها، خاشعة في عبادتها." }
+        },
+        {
+          "title": { "en": "Lessons from Maryam", "de": "Lehren von Maryam", "ar": "دروس من مريم" },
+          "list": {
+            "en": ["Purity and devotion are a source of honour", "Seek refuge in Allah when you are afraid", "Pain and faith can exist together", "Trust Allah when others doubt you"],
+            "de": ["Reinheit und Hingabe sind eine Quelle der Ehre", "Suchen Sie Zuflucht bei Allah, wenn Sie Angst haben", "Schmerz und Glaube können zusammen bestehen", "Vertrauen Sie Allah, wenn andere an Ihnen zweifeln"],
+            "ar": ["الطهر والعبادة مصدر للكرامة", "استعذ بالله إذا خفت", "الألم والإيمان قد يجتمعان", "ثق بالله إذا شكّ فيك الناس"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "women-02-asiya",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 2", "de": "Frauen im Koran · 2", "ar": "نساء في القرآن · ٢" },
+        "title": { "en": "Asiya, the wife of Pharaoh, in 6 slides", "de": "Asiya, die Frau Pharaos, in 6 Folien", "ar": "آسية امرأة فرعون في ٦ شرائح" },
+        "sub": { "en": "Faith inside the palace of a tyrant", "de": "Glaube im Palast eines Tyrannen", "ar": "إيمان في قصر طاغية" },
+        "arabic": "آسية امرأة فرعون"
+      },
+      "slides": [
+        {
+          "title": { "en": "Unnamed in the Quran", "de": "Im Koran ohne Namen", "ar": "بلا اسم في القرآن" },
+          "body": { "en": "The Quran calls her only the wife of Pharaoh. Her name, Asiya, comes from the hadith. She lived beside a man who claimed to be the highest lord (79:24).", "de": "Der Koran nennt sie nur die Frau Pharaos. Ihr Name, Asiya, stammt aus dem Hadith. Sie lebte an der Seite eines Mannes, der sich zum höchsten Herrn erklärte (79:24).", "ar": "يسمّيها القرآن امرأة فرعون فحسب، واسمها آسية مأخوذ من الحديث. وقد عاشت مع رجل ادّعى أنه الرب الأعلى (٧٩:٢٤)." }
+        },
+        {
+          "verse": "28:9",
+          "check": "comfort of the eye",
+          "title": { "en": "She saved a baby", "de": "Sie rettete ein Kind", "ar": "أنقذت طفلًا" },
+          "body": { "en": "When the baby Musa was found in the river, she spoke up for him and saved his life. She saw in him a joy, not a threat.", "de": "Als das Baby Musa im Fluss gefunden wurde, setzte sie sich für ihn ein und rettete sein Leben. Sie sah in ihm eine Freude, keine Gefahr.", "ar": "لما التُقط موسى رضيعًا من النهر دافعت عنه فنجا من القتل، ورأت فيه فرحة لا خطرًا." }
+        },
+        {
+          "verse": "66:11",
+          "check": "build for me near You a house",
+          "title": { "en": "A house near Allah", "de": "Ein Haus bei Allah", "ar": "بيت عند الله" },
+          "body": { "en": "Living in a palace, she asked for a house near Allah in Paradise, and to be saved from Pharaoh and his deeds.", "de": "Sie lebte in einem Palast und bat um ein Haus bei Allah im Paradies und um Rettung vor Pharao und seinen Taten.", "ar": "عاشت في قصر، وسألت ربها بيتًا عنده في الجنة، وأن يخلّصها من فرعون وظلمه." }
+        },
+        {
+          "title": { "en": "The neighbour before the house", "de": "Der Nachbar vor dem Haus", "ar": "الجار قبل الدار" },
+          "body": { "en": "Many scholars note that she asked to be near Allah before she asked for the house. As the Arabic saying goes: the neighbour before the house.", "de": "Viele Gelehrte bemerken, dass sie zuerst um Allahs Nähe bat und dann um das Haus. Ein arabisches Sprichwort sagt: erst der Nachbar, dann das Haus.", "ar": "يلاحظ كثير من العلماء أنها طلبت القرب من الله قبل البيت، وفي المثل: الجار قبل الدار." }
+        },
+        {
+          "hadith": "bukhari:3769",
+          "check": "Asiya, the wife of Pharaoh",
+          "title": { "en": "Among the most perfect", "de": "Unter den Vollkommensten", "ar": "من الكُمَّل" },
+          "body": { "en": "The Prophet named her with Maryam as women who reached perfection in faith.", "de": "Der Prophet nannte sie zusammen mit Maryam als Frauen, die Vollkommenheit im Glauben erreichten.", "ar": "ذكرها النبي صلى الله عليه وسلم مع مريم في النساء اللاتي بلغن الكمال." }
+        },
+        {
+          "title": { "en": "Lessons from Asiya", "de": "Lehren von Asiya", "ar": "دروس من آسية" },
+          "list": {
+            "en": ["Faith can grow anywhere, even in a tyrant's house", "Use your position to protect the weak", "Seek nearness to Allah before anything else", "No one is defined by the person they live with"],
+            "de": ["Glaube kann überall wachsen, selbst im Haus eines Tyrannen", "Nutzen Sie Ihre Stellung, um Schwache zu schützen", "Suchen Sie zuerst die Nähe Allahs", "Niemand wird durch den Menschen bestimmt, mit dem er lebt"],
+            "ar": ["الإيمان قد ينمو في أي مكان حتى في بيت طاغية", "استعمل مكانتك لحماية الضعفاء", "اطلب القرب من الله قبل كل شيء", "لا يُعرّف الإنسان بمن يعيش معه"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 66:11" }
+      ]
+    },
+    {
+      "id": "women-03-mother-of-musa",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 3", "de": "Frauen im Koran · 3", "ar": "نساء في القرآن · ٣" },
+        "title": { "en": "The mother of Musa in 7 slides", "de": "Die Mutter Musas in 7 Folien", "ar": "أم موسى في ٧ شرائح" },
+        "sub": { "en": "A mother who let go and trusted Allah's promise", "de": "Eine Mutter, die losließ und Allahs Versprechen vertraute", "ar": "أم أطلقت ولدها وثقت بوعد الله" },
+        "arabic": "أم موسى"
+      },
+      "slides": [
+        {
+          "title": { "en": "A mother without a name", "de": "Eine Mutter ohne Namen", "ar": "أم بلا اسم" },
+          "body": { "en": "The Quran does not name her; it calls her the mother of Musa. She lived when Pharaoh was killing the newborn boys of her people (28:4).", "de": "Der Koran nennt ihren Namen nicht; er nennt sie die Mutter Musas. Sie lebte, als Pharao die neugeborenen Jungen ihres Volkes töten ließ (28:4).", "ar": "لا يذكر القرآن اسمها، بل يسمّيها أم موسى. عاشت في زمن كان فرعون يقتل فيه المواليد الذكور من قومها (٢٨:٤)." }
+        },
+        {
+          "verse": "28:7",
+          "check": "inspired to the mother of Moses",
+          "title": { "en": "An inspiration and a promise", "de": "Eine Eingebung und ein Versprechen", "ar": "إلهام ووعد" },
+          "body": { "en": "Allah inspired her to nurse him and, when afraid, to place him in the river, with two promises: he will return and become a messenger.", "de": "Allah gab ihr ein, ihn zu stillen und ihn, wenn sie Angst hätte, dem Fluss anzuvertrauen, mit zwei Versprechen: Er kehrt zurück und wird ein Gesandter.", "ar": "ألهمها الله أن ترضعه، فإذا خافت عليه وضعته في النهر، ومع ذلك وعدان: سيعود إليها وسيكون رسولًا." }
+        },
+        {
+          "verse": "20:39",
+          "check": "into the chest",
+          "title": { "en": "Into the river", "de": "In den Fluss", "ar": "في اليمّ" },
+          "body": { "en": "She placed him in a chest on the water. Allah promised that the river would carry him to the bank and that he would grow up under His eye.", "de": "Sie legte ihn in einen Kasten auf dem Wasser. Allah versprach, dass der Fluss ihn ans Ufer tragen und er unter Seinen Augen aufwachsen würde.", "ar": "وضعته في تابوت على الماء، ووعد الله أن يلقيه النهر إلى الشاطئ، وأن يُربّى تحت عينه." }
+        },
+        {
+          "verse": "28:10",
+          "check": "heart of Moses",
+          "title": { "en": "An empty heart", "de": "Ein leeres Herz", "ar": "قلب فارغ" },
+          "body": { "en": "After letting him go, her heart was empty of everything but him. She almost gave away her secret, but Allah made her heart firm.", "de": "Nachdem sie ihn losgelassen hatte, war ihr Herz von allem außer ihm leer. Fast hätte sie ihr Geheimnis verraten, doch Allah festigte ihr Herz.", "ar": "بعد أن أطلقته صار قلبها خاليًا إلا منه، وكادت تكشف سرّها لولا أن ثبّت الله قلبها." }
+        },
+        {
+          "verse": "28:11",
+          "check": "Follow him",
+          "title": { "en": "A daughter sent to watch", "de": "Eine Tochter als Beobachterin", "ar": "ابنة ترقب" },
+          "body": { "en": "She sent her daughter to follow the chest. The girl watched from a distance without being noticed.", "de": "Sie schickte ihre Tochter, dem Kasten zu folgen. Das Mädchen beobachtete aus der Ferne, ohne bemerkt zu werden.", "ar": "أرسلت ابنتها تتبع التابوت، فراقبته من بعيد دون أن يشعر بها أحد." }
+        },
+        {
+          "verse": "28:13",
+          "check": "restored him to his mother",
+          "title": { "en": "The promise kept", "de": "Das gehaltene Versprechen", "ar": "وعد تحقق" },
+          "body": { "en": "Musa refused every wet nurse until he was brought back to her. She nursed her own son in peace and saw that Allah's promise is true.", "de": "Musa verweigerte jede Amme, bis er zu ihr zurückgebracht wurde. Sie stillte ihren eigenen Sohn in Frieden und sah, dass Allahs Versprechen wahr ist.", "ar": "رفض موسى المراضع كلها حتى رُدّ إليها، فأرضعت ابنها مطمئنة، وأيقنت بصدق وعد الله." }
+        },
+        {
+          "title": { "en": "Lessons from the mother of Musa", "de": "Lehren von der Mutter Musas", "ar": "دروس من أم موسى" },
+          "list": {
+            "en": ["Trust can mean letting go", "Allah's promises arrive on time", "Allah steadies the hearts of those who rely on Him", "A mother's faith can shape a prophet"],
+            "de": ["Vertrauen kann bedeuten loszulassen", "Allahs Versprechen erfüllen sich zur rechten Zeit", "Allah festigt die Herzen derer, die auf Ihn vertrauen", "Der Glaube einer Mutter kann einen Propheten prägen"],
+            "ar": ["الثقة قد تعني أن تُفلت ما تحب", "وعود الله تأتي في وقتها", "يثبّت الله قلوب المتوكلين عليه", "إيمان أمٍّ قد يصنع نبيًّا"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "women-04-sister-of-musa",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 4", "de": "Frauen im Koran · 4", "ar": "نساء في القرآن · ٤" },
+        "title": { "en": "The sister of Musa in 5 slides", "de": "Die Schwester Musas in 5 Folien", "ar": "أخت موسى في ٥ شرائح" },
+        "sub": { "en": "A girl whose courage and quick thinking brought a prophet home", "de": "Ein Mädchen, dessen Mut und Klugheit einen Propheten heimbrachte", "ar": "فتاة أعادت بشجاعتها وفطنتها نبيًّا إلى بيته" },
+        "arabic": "أخت موسى"
+      },
+      "slides": [
+        {
+          "title": { "en": "Known only as his sister", "de": "Nur als seine Schwester bekannt", "ar": "تُعرف بأنها أخته" },
+          "body": { "en": "The Quran does not name her. She appears in Surah al-Qasas and Surah Ta-Ha, and in a few verses shows courage, patience and intelligence.", "de": "Der Koran nennt ihren Namen nicht. Sie erscheint in Sure al-Qasas und Sure Ta-Ha und zeigt in wenigen Versen Mut, Geduld und Klugheit.", "ar": "لا يذكر القرآن اسمها، وتظهر في سورتي القصص وطه، وفي آيات قليلة تتجلّى شجاعتها وصبرها وذكاؤها." }
+        },
+        {
+          "verse": "28:11",
+          "check": "watched him from a distance",
+          "title": { "en": "Watching from a distance", "de": "Aus der Ferne beobachten", "ar": "المراقبة من بعيد" },
+          "body": { "en": "Her mother sent her after the chest. She kept her eyes on her brother without being noticed by Pharaoh's people.", "de": "Ihre Mutter schickte sie dem Kasten hinterher. Sie behielt ihren Bruder im Blick, ohne dass Pharaos Leute sie bemerkten.", "ar": "أرسلتها أمها في أثر التابوت، فظلّت تراقب أخاها دون أن يفطن لها آل فرعون." }
+        },
+        {
+          "verse": "28:12",
+          "check": "Shall I direct you",
+          "title": { "en": "The right words at the right time", "de": "Die richtigen Worte zur rechten Zeit", "ar": "الكلمة المناسبة في وقتها" },
+          "body": { "en": "When the baby refused every wet nurse, she calmly offered a household that would care for him, without revealing who she was.", "de": "Als das Baby jede Amme verweigerte, bot sie ruhig eine Familie an, die für ihn sorgen würde, ohne zu verraten, wer sie war.", "ar": "لما رفض الرضيع المراضع عرضت بهدوء أهل بيت يكفلونه، دون أن تكشف من هي." }
+        },
+        {
+          "verse": "20:40",
+          "check": "your sister went",
+          "title": { "en": "Remembered by Allah", "de": "Von Allah erwähnt", "ar": "ذكرها الله" },
+          "body": { "en": "Years later, Allah reminds Musa of His favours to him, and his sister's errand to Pharaoh's household is among them.", "de": "Jahre später erinnert Allah Musa an Seine Gunsterweise, und der Gang seiner Schwester zu Pharaos Haus gehört dazu.", "ar": "بعد سنين يذكّر الله موسى بنعمه عليه، ومن بينها سعي أخته إلى بيت فرعون." }
+        },
+        {
+          "title": { "en": "Lessons from the sister of Musa", "de": "Lehren von der Schwester Musas", "ar": "دروس من أخت موسى" },
+          "list": {
+            "en": ["Courage can be quiet", "Wisdom knows when to speak and when to stay silent", "Small acts can be part of Allah's great plan", "Look after your siblings"],
+            "de": ["Mut kann leise sein", "Weisheit weiß, wann man spricht und wann man schweigt", "Kleine Taten können Teil von Allahs großem Plan sein", "Kümmern Sie sich um Ihre Geschwister"],
+            "ar": ["الشجاعة قد تكون هادئة", "الحكمة أن تعرف متى تتكلم ومتى تسكت", "الأعمال الصغيرة قد تكون جزءًا من تدبير الله العظيم", "اعتنِ بإخوتك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "women-05-queen-of-saba",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 5", "de": "Frauen im Koran · 5", "ar": "نساء في القرآن · ٥" },
+        "title": { "en": "The Queen of Saba in 8 slides", "de": "Die Königin von Saba in 8 Folien", "ar": "ملكة سبأ في ٨ شرائح" },
+        "sub": { "en": "A ruler who consulted, reasoned and submitted to Allah with Sulayman", "de": "Eine Herrscherin, die beriet, abwog und sich mit Sulaiman Allah ergab", "ar": "ملكة شاورت وتدبّرت وأسلمت لله مع سليمان" },
+        "arabic": "ملكة سبأ"
+      },
+      "slides": [
+        {
+          "verse": "27:23",
+          "check": "woman ruling them",
+          "title": { "en": "A woman who ruled", "de": "Eine Frau, die herrschte", "ar": "امرأة تحكم" },
+          "body": { "en": "The hoopoe found a people ruled by a woman with great wealth and a mighty throne. The Quran does not name her; later sources call her Bilqis.", "de": "Der Wiedehopf fand ein Volk, das von einer Frau mit großem Reichtum und gewaltigem Thron regiert wurde. Der Koran nennt ihren Namen nicht; spätere Quellen nennen sie Bilqis.", "ar": "وجد الهدهد قومًا تحكمهم امرأة ذات ثراء وعرش عظيم. ولا يذكر القرآن اسمها، وتسمّيها مصادر لاحقة بلقيس." }
+        },
+        {
+          "verse": "27:24",
+          "check": "prostrating to the sun",
+          "title": { "en": "A people who worshipped the sun", "de": "Ein Volk, das die Sonne anbetete", "ar": "قوم يعبدون الشمس" },
+          "body": { "en": "Her people bowed to the sun instead of Allah. Power and wealth had not given them guidance.", "de": "Ihr Volk warf sich vor der Sonne nieder statt vor Allah. Macht und Reichtum hatten ihnen keine Rechtleitung gebracht.", "ar": "كان قومها يعبدون الشمس بدل الله، ولم تهدهم القوة والثروة." }
+        },
+        {
+          "verse": "27:29-31",
+          "check": "noble letter",
+          "title": { "en": "A noble letter", "de": "Ein edler Brief", "ar": "كتاب كريم" },
+          "body": { "en": "She received Sulayman's letter, opening with Bismillah, and called it noble. She took it seriously instead of dismissing it.", "de": "Sie erhielt Sulaimans Brief, der mit der Basmala begann, und nannte ihn edel. Sie nahm ihn ernst, statt ihn abzutun.", "ar": "وصلها كتاب سليمان مفتتحًا بالبسملة فوصفته بالكريم، وأخذته بجدية ولم تستخفّ به." }
+        },
+        {
+          "verse": "27:32-33",
+          "check": "until you witness",
+          "title": { "en": "She consulted", "de": "Sie beriet sich", "ar": "شاورت قومها" },
+          "body": { "en": "She did not decide alone. Her advisers offered military force, but left the decision to her.", "de": "Sie entschied nicht allein. Ihre Berater boten militärische Stärke an, überließen ihr aber die Entscheidung.", "ar": "لم تنفرد بالرأي، فعرض عليها مستشاروها القوة والبأس، وتركوا لها القرار." }
+        },
+        {
+          "verse": "27:34-35",
+          "check": "send to them a gift",
+          "title": { "en": "Wisdom before war", "de": "Weisheit vor Krieg", "ar": "الحكمة قبل الحرب" },
+          "body": { "en": "She knew what invading kings do to a land and its people. So she sent a gift first, to test Sulayman's intentions.", "de": "Sie wusste, was eindringende Könige einem Land und seinem Volk antun. Darum schickte sie zuerst ein Geschenk, um Sulaimans Absichten zu prüfen.", "ar": "عرفت ما يفعله الملوك الغزاة بالبلاد وأهلها، فأرسلت هدية أولًا لتختبر مقصد سليمان." }
+        },
+        {
+          "verse": "27:42",
+          "check": "as though it was it",
+          "title": { "en": "A careful answer", "de": "Eine vorsichtige Antwort", "ar": "جواب حذر" },
+          "body": { "en": "Shown her own throne, disguised, she answered with care: it seems to be the same. She neither denied nor claimed too much.", "de": "Als man ihr den eigenen, veränderten Thron zeigte, antwortete sie mit Bedacht: Er scheint derselbe zu sein. Sie leugnete nicht und behauptete nicht zu viel.", "ar": "لما عُرض عليها عرشها مغيَّرًا أجابت بحذر: يشبهه. فلم تنكر ولم تجزم." }
+        },
+        {
+          "verse": "27:44",
+          "check": "with Solomon",
+          "title": { "en": "Submission with Sulayman", "de": "Hingabe mit Sulaiman", "ar": "إسلام مع سليمان" },
+          "body": { "en": "Seeing the palace of glass, she admitted her wrong and submitted to Allah, Lord of the worlds, together with Sulayman, not to him.", "de": "Beim Anblick des gläsernen Palastes gestand sie ihr Unrecht ein und ergab sich Allah, dem Herrn der Welten, gemeinsam mit Sulaiman, nicht ihm.", "ar": "لما رأت الصرح الزجاجي اعترفت بظلمها لنفسها، فأسلمت لله رب العالمين، شريكةً لسليمان في الإسلام لا تابعةً له." }
+        },
+        {
+          "title": { "en": "Lessons from the Queen of Saba", "de": "Lehren von der Königin von Saba", "ar": "دروس من ملكة سبأ" },
+          "list": {
+            "en": ["Consult others before big decisions", "Seek peace before conflict", "Weigh evidence with care", "Accepting the truth is strength, not defeat"],
+            "de": ["Beraten Sie sich vor großen Entscheidungen", "Suchen Sie Frieden vor dem Konflikt", "Wägen Sie Belege sorgfältig ab", "Die Wahrheit anzunehmen ist Stärke, keine Niederlage"],
+            "ar": ["شاور قبل القرارات الكبيرة", "اطلب السلم قبل النزاع", "زِن الأدلة بعناية", "قبول الحق قوة لا هزيمة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "women-06-wife-of-imran",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 6", "de": "Frauen im Koran · 6", "ar": "نساء في القرآن · ٦" },
+        "title": { "en": "The wife of 'Imran in 6 slides", "de": "Die Frau Imrans in 6 Folien", "ar": "امرأة عمران في ٦ شرائح" },
+        "sub": { "en": "A mother's vow and the daughter who became Maryam", "de": "Das Gelübde einer Mutter und die Tochter, die Maryam wurde", "ar": "نذر أم وابنة صارت مريم" },
+        "arabic": "امرأة عمران"
+      },
+      "slides": [
+        {
+          "title": { "en": "The mother of Maryam", "de": "Die Mutter Maryams", "ar": "أم مريم" },
+          "body": { "en": "The Quran calls her the wife of 'Imran and does not give her name. Surah 3, Al 'Imran, is named after her family.", "de": "Der Koran nennt sie die Frau Imrans und gibt ihren Namen nicht an. Sure 3, Al Imran, ist nach ihrer Familie benannt.", "ar": "يسمّيها القرآن امرأة عمران ولا يذكر اسمها، وسُمّيت السورة الثالثة آل عمران باسم أسرتها." }
+        },
+        {
+          "verse": "3:35",
+          "check": "pledged to You what is in my womb",
+          "title": { "en": "A vow before birth", "de": "Ein Gelübde vor der Geburt", "ar": "نذر قبل الولادة" },
+          "body": { "en": "While still pregnant, she dedicated her child to Allah's service and asked Him to accept it.", "de": "Noch während der Schwangerschaft weihte sie ihr Kind dem Dienst Allahs und bat Ihn, es anzunehmen.", "ar": "وهي حامل جعلت جنينها خالصًا لخدمة الله، وسألته أن يتقبّل ذلك منها." }
+        },
+        {
+          "verse": "3:36",
+          "check": "named her Mary",
+          "title": { "en": "A daughter, and a name", "de": "Eine Tochter und ein Name", "ar": "ابنة واسم" },
+          "body": { "en": "She gave birth to a daughter, not the son she expected. She named her Maryam and sought Allah's protection for her and her offspring.", "de": "Sie gebar eine Tochter, nicht den erwarteten Sohn. Sie nannte sie Maryam und stellte sie und ihre Nachkommen unter Allahs Schutz.", "ar": "وضعت بنتًا لا الابن الذي كانت ترجوه، فسمّتها مريم واستعاذت بالله لها ولذريتها." }
+        },
+        {
+          "hadith": "bukhari:4548",
+          "check": "except Mary and her son",
+          "title": { "en": "A prayer that was answered", "de": "Ein erhörtes Gebet", "ar": "دعاء مستجاب" },
+          "body": { "en": "Maryam and her son were protected at birth. Abu Huraira then recited the prayer of her mother (3:36).", "de": "Maryam und ihr Sohn wurden bei der Geburt beschützt. Abu Huraira trug daraufhin das Gebet ihrer Mutter vor (3:36).", "ar": "حُفظت مريم وابنها عند الولادة، ثم تلا أبو هريرة دعاء أمها (٣:٣٦)." }
+        },
+        {
+          "verse": "3:37",
+          "check": "good acceptance",
+          "title": { "en": "Accepted beautifully", "de": "Auf schöne Weise angenommen", "ar": "قبول حسن" },
+          "body": { "en": "Allah accepted the vow, though the child was a girl, and let her grow up well under the care of Zakariyya.", "de": "Allah nahm das Gelübde an, obwohl das Kind ein Mädchen war, und ließ es unter der Obhut Zakariyyas gut heranwachsen.", "ar": "تقبّل الله النذر وإن كانت المولودة أنثى، ونشّأها نشأة حسنة في رعاية زكريا." }
+        },
+        {
+          "title": { "en": "Lessons from the wife of 'Imran", "de": "Lehren von der Frau Imrans", "ar": "دروس من امرأة عمران" },
+          "list": {
+            "en": ["Intend good for your children before they are born", "Allah's choice can be better than your expectation", "Pray for your children and their children", "A sincere intention is accepted, whatever the outcome"],
+            "de": ["Wünschen Sie Ihren Kindern das Gute, schon vor der Geburt", "Allahs Wahl kann besser sein als Ihre Erwartung", "Beten Sie für Ihre Kinder und deren Kinder", "Eine aufrichtige Absicht wird angenommen, wie es auch ausgeht"],
+            "ar": ["انوِ لأبنائك الخير قبل أن يولدوا", "قد يكون اختيار الله خيرًا مما توقعت", "ادعُ لأبنائك وذرياتهم", "النية الصادقة مقبولة مهما كانت النتيجة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "women-07-women-of-madyan",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 7", "de": "Frauen im Koran · 7", "ar": "نساء في القرآن · ٧" },
+        "title": { "en": "The women of Madyan in 7 slides", "de": "Die Frauen von Madyan in 7 Folien", "ar": "امرأتا مدين في ٧ شرائح" },
+        "sub": { "en": "Two daughters at a well, modesty and a wise suggestion", "de": "Zwei Töchter am Brunnen, Schamhaftigkeit und ein kluger Rat", "ar": "ابنتان عند البئر، وحياء، ورأي حكيم" },
+        "arabic": "امرأتا مدين"
+      },
+      "slides": [
+        {
+          "verse": "28:23",
+          "check": "two women",
+          "title": { "en": "Waiting at the well", "de": "Warten am Brunnen", "ar": "الانتظار عند البئر" },
+          "body": { "en": "Two women held back their flock until the shepherds were done. Their father was old, so they did the work themselves, with dignity.", "de": "Zwei Frauen hielten ihre Herde zurück, bis die Hirten fertig waren. Ihr Vater war alt, also verrichteten sie die Arbeit selbst, mit Würde.", "ar": "أمسكت امرأتان غنمهما حتى ينتهي الرعاة، فأبوهما طاعن في السن، فقامتا بالعمل بأنفسهما في وقار." }
+        },
+        {
+          "verse": "28:24",
+          "check": "watered",
+          "title": { "en": "Help without being asked", "de": "Hilfe ungefragt", "ar": "عون دون طلب" },
+          "body": { "en": "Musa, a tired stranger, watered their flock for them, then withdrew to the shade without asking for anything.", "de": "Musa, ein müder Fremder, tränkte ihre Herde und zog sich dann in den Schatten zurück, ohne etwas zu verlangen.", "ar": "سقى لهما موسى، وهو غريب متعب، ثم انصرف إلى الظل دون أن يطلب شيئًا." }
+        },
+        {
+          "verse": "28:25",
+          "check": "walking with shyness",
+          "title": { "en": "Walking with modesty", "de": "Mit Schamhaftigkeit", "ar": "مشية حياء" },
+          "body": { "en": "One of them came back walking with modesty and spoke clearly: her father invited him to be rewarded. Modesty and confidence went together.", "de": "Eine von ihnen kam mit Schamhaftigkeit zurück und sprach klar: Ihr Vater lade ihn ein, um ihn zu belohnen. Schamhaftigkeit und Selbstsicherheit gingen zusammen.", "ar": "عادت إليه إحداهما تمشي على حياء، وتكلّمت بوضوح: أبوها يدعوه ليكافئه. فاجتمع الحياء والثقة." }
+        },
+        {
+          "verse": "28:26",
+          "check": "strong and the trustworthy",
+          "title": { "en": "Strong and trustworthy", "de": "Stark und vertrauenswürdig", "ar": "القوي الأمين" },
+          "body": { "en": "One daughter advised her father to hire him and named two qualities that still define a good worker: strength and trustworthiness.", "de": "Eine Tochter riet ihrem Vater, ihn einzustellen, und nannte zwei Eigenschaften, die bis heute einen guten Mitarbeiter ausmachen: Stärke und Vertrauenswürdigkeit.", "ar": "أشارت إحداهما على أبيها أن يستأجره، وذكرت صفتين ما زالتا معيار العامل الصالح: القوة والأمانة." }
+        },
+        {
+          "verse": "28:27",
+          "check": "my two daughters",
+          "title": { "en": "A proposal", "de": "Ein Heiratsangebot", "ar": "عرض زواج" },
+          "body": { "en": "Their father offered Musa one of his daughters in marriage, in return for eight or ten years of work. Musa agreed (28:28).", "de": "Ihr Vater bot Musa eine seiner Töchter zur Ehe an, gegen acht oder zehn Jahre Arbeit. Musa willigte ein (28:28).", "ar": "عرض أبوهما على موسى أن يزوّجه إحدى ابنتيه على أن يعمل عنده ثماني سنين أو عشرًا، فقبل موسى (٢٨:٢٨)." }
+        },
+        {
+          "title": { "en": "Who was their father?", "de": "Wer war ihr Vater?", "ar": "من أبوهما؟" },
+          "body": { "en": "The Quran names neither the daughters nor their father. Many say he was the prophet Shu'ayb; other scholars disagree. The Quran leaves it open, and so do we.", "de": "Der Koran nennt weder die Töchter noch ihren Vater. Viele sagen, er sei der Prophet Schu'aib gewesen; andere Gelehrte widersprechen. Der Koran lässt es offen, und wir ebenso.", "ar": "لا يسمّي القرآن الابنتين ولا أباهما. ويقول كثيرون إنه النبي شعيب، ويخالفهم علماء آخرون. والقرآن يترك الأمر مفتوحًا، ونحن كذلك." }
+        },
+        {
+          "title": { "en": "Lessons from the women of Madyan", "de": "Lehren von den Frauen von Madyan", "ar": "دروس من امرأتي مدين" },
+          "list": {
+            "en": ["Modesty and confidence belong together", "Honour your parents by carrying their load", "Judge people by strength and trustworthiness", "Thank those who help you"],
+            "de": ["Schamhaftigkeit und Selbstvertrauen gehören zusammen", "Ehren Sie Ihre Eltern, indem Sie ihre Last mittragen", "Beurteilen Sie Menschen nach Stärke und Vertrauenswürdigkeit", "Danken Sie denen, die Ihnen helfen"],
+            "ar": ["الحياء والثقة يجتمعان", "برّ والديك بحمل أعبائهما", "قيّم الناس بالقوة والأمانة", "اشكر من يعينك"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 28:23-28" }
+      ]
+    },
+    {
+      "id": "women-08-the-pleading-woman",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 8", "de": "Frauen im Koran · 8", "ar": "نساء في القرآن · ٨" },
+        "title": { "en": "The pleading woman in 6 slides", "de": "Die Frau, die vor Allah klagte, in 6 Folien", "ar": "المجادِلة في ٦ شرائح" },
+        "sub": { "en": "A wife's complaint, heard by Allah, ended an unjust custom", "de": "Die Klage einer Ehefrau, von Allah erhört, beendete einen ungerechten Brauch", "ar": "شكوى زوجة سمعها الله فأبطلت عادة ظالمة" },
+        "arabic": "المجادِلة"
+      },
+      "slides": [
+        {
+          "title": { "en": "A surah named after her", "de": "Eine Sure, nach ihr benannt", "ar": "سورة باسمها" },
+          "body": { "en": "Surah 58, al-Mujadila, takes its name from her. The Quran does not name her; commentators call her Khawla bint Tha'laba, and reports differ on the exact form of her name.", "de": "Sure 58, al-Mudschadila, ist nach ihr benannt. Der Koran nennt ihren Namen nicht; Kommentatoren nennen sie Khawla bint Tha'laba, wobei die Berichte in der genauen Namensform voneinander abweichen.", "ar": "سُمّيت السورة الثامنة والخمسون، المجادلة، بها. ولا يذكر القرآن اسمها، ويسمّيها المفسرون خولة بنت ثعلبة، مع اختلاف الروايات في صيغة اسمها." }
+        },
+        {
+          "title": { "en": "What happened", "de": "Was geschah", "ar": "ما الذي حدث" },
+          "body": { "en": "Her husband had used zihar, an old Arabian formula comparing a wife to one's mother. In pre-Islamic custom it ended a marriage. She came to the Prophet and pleaded her case.", "de": "Ihr Mann hatte den Zihar ausgesprochen, eine alte arabische Formel, die die Ehefrau mit der eigenen Mutter vergleicht. Nach vorislamischem Brauch beendete sie die Ehe. Sie kam zum Propheten und trug ihren Fall vor.", "ar": "كان زوجها قد ظاهر منها، والظهار قول جاهلي يشبّه فيه الرجل زوجته بأمه، وكان عندهم ينهي الزواج. فجاءت إلى النبي صلى الله عليه وسلم تعرض أمرها." }
+        },
+        {
+          "verse": "58:1",
+          "check": "argues",
+          "title": { "en": "Allah heard her", "de": "Allah hörte sie", "ar": "سمعها الله" },
+          "body": { "en": "She pleaded with the Prophet and took her complaint to Allah. The answer came in revelation: Allah had heard every word of their conversation.", "de": "Sie stritt mit dem Propheten und trug ihre Klage Allah vor. Die Antwort kam als Offenbarung: Allah hatte jedes Wort ihres Gesprächs gehört.", "ar": "حاورت النبي صلى الله عليه وسلم واشتكت إلى الله، فنزل الجواب وحيًا: لقد سمع الله كل كلمة من حوارهما." }
+        },
+        {
+          "verse": "58:2",
+          "check": "Their mothers are none but",
+          "title": { "en": "A wife is not a mother", "de": "Eine Ehefrau ist keine Mutter", "ar": "الزوجة ليست أمًّا" },
+          "body": { "en": "Allah declared the zihar formula false and objectionable: saying it does not turn a wife into a mother.", "de": "Allah erklärte die Zihar-Formel für falsch und verwerflich: Ihr Aussprechen macht eine Ehefrau nicht zur Mutter.", "ar": "أبطل الله قول الظهار ووصفه بالمنكر والزور، فقولُه لا يجعل الزوجة أمًّا." }
+        },
+        {
+          "verse": "58:3",
+          "check": "go back on what they said",
+          "title": { "en": "A new ruling", "de": "Eine neue Regelung", "ar": "حكم جديد" },
+          "body": { "en": "The custom was not simply left in place. A husband who wants to return must first make an expiation, set out in these verses (58:3-4).", "de": "Der Brauch blieb nicht einfach bestehen. Ein Ehemann, der zurückkehren will, muss zuerst eine Sühne leisten, die diese Verse festlegen (58:3-4).", "ar": "لم يبقَ الظهار على حاله، فمن أراد العودة إلى زوجته فعليه كفارة قبل ذلك، بيّنتها هذه الآيات (٥٨:٣-٤)." }
+        },
+        {
+          "title": { "en": "Lessons from her story", "de": "Lehren aus ihrer Geschichte", "ar": "دروس من قصتها" },
+          "list": {
+            "en": ["Bring your complaint to Allah; He hears", "Speaking up for justice is not disrespect", "One honest voice can change an unjust custom", "No private pain is too small for Allah"],
+            "de": ["Tragen Sie Ihre Klage zu Allah; Er hört", "Für Gerechtigkeit einzutreten ist keine Respektlosigkeit", "Eine ehrliche Stimme kann einen ungerechten Brauch ändern", "Kein persönlicher Schmerz ist zu klein für Allah"],
+            "ar": ["ارفع شكواك إلى الله فإنه يسمع", "المطالبة بالعدل ليست قلة أدب", "صوت صادق واحد قد يغيّر عادة ظالمة", "لا ألم خاص أصغر من أن يسمعه الله"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 58:1-4" }
+      ]
+    },
+    {
+      "id": "women-09-wife-of-ibrahim",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 9", "de": "Frauen im Koran · 9", "ar": "نساء في القرآن · ٩" },
+        "title": { "en": "The wife of Ibrahim in 7 slides", "de": "Die Frau Ibrahims in 7 Folien", "ar": "امرأة إبراهيم في ٧ شرائح" },
+        "sub": { "en": "She laughed at news that seemed impossible, and it came true", "de": "Sie lachte über eine Nachricht, die unmöglich schien, und sie wurde wahr", "ar": "ضحكت لبشارة بدت مستحيلة فتحققت" },
+        "arabic": "امرأة إبراهيم"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:2635",
+          "check": "migrated with Sarah",
+          "title": { "en": "Her name in the hadith", "de": "Ihr Name im Hadith", "ar": "اسمها في الحديث" },
+          "body": { "en": "The Quran calls her the wife of Ibrahim. The hadith names her Sarah; she shared his migration and his trials.", "de": "Der Koran nennt sie die Frau Ibrahims. Der Hadith nennt sie Sara; sie teilte seine Auswanderung und seine Prüfungen.", "ar": "يسمّيها القرآن امرأة إبراهيم، ويسمّيها الحديث سارة، وقد شاركته هجرته ومحنه." }
+        },
+        {
+          "verse": "11:69-70",
+          "check": "roasted calf",
+          "title": { "en": "Guests who did not eat", "de": "Gäste, die nicht aßen", "ar": "ضيوف لا يأكلون" },
+          "body": { "en": "Angels came to Ibrahim as guests. He quickly served a roasted calf, but they did not touch it, and he grew uneasy.", "de": "Engel kamen als Gäste zu Ibrahim. Er setzte ihnen rasch ein gebratenes Kalb vor, doch sie rührten es nicht an, und er wurde unruhig.", "ar": "جاءت الملائكة ضيوفًا إلى إبراهيم، فقدّم لهم عجلًا مشويًّا بسرعة، فلم يمدّوا أيديهم إليه، فقلق منهم." }
+        },
+        {
+          "verse": "11:71",
+          "check": "his wife was standing",
+          "title": { "en": "She laughed", "de": "Sie lachte", "ar": "ضحكت" },
+          "body": { "en": "She was standing nearby and laughed; commentators differ on why. Then the good news was given to her directly: Ishaq, and after him Ya'qub.", "de": "Sie stand in der Nähe und lachte; die Kommentatoren sind sich über den Grund uneins. Dann erhielt sie selbst die frohe Botschaft: Ishaq und nach ihm Yaqub.", "ar": "كانت قائمة فضحكت، واختلف المفسرون في سبب ضحكها، ثم بُشّرت هي نفسها بإسحاق ومن بعده يعقوب." }
+        },
+        {
+          "verse": "11:72",
+          "check": "old woman",
+          "title": { "en": "An honest surprise", "de": "Ehrliches Staunen", "ar": "دهشة صادقة" },
+          "body": { "en": "She reacted as anyone would: an old woman, an old husband, a child? The Quran keeps her very human reaction.", "de": "Sie reagierte, wie jeder reagieren würde: eine alte Frau, ein alter Mann, ein Kind? Der Koran bewahrt ihre sehr menschliche Reaktion.", "ar": "تعجّبت كما يتعجّب أي إنسان: امرأة مسنّة وزوج شيخ، فكيف يولد لهما؟ ويحفظ القرآن ردّها الإنساني." }
+        },
+        {
+          "verse": "51:29-30",
+          "check": "barren old woman",
+          "title": { "en": "The same moment, another surah", "de": "Derselbe Moment, eine andere Sure", "ar": "اللحظة نفسها في سورة أخرى" },
+          "body": { "en": "Surah adh-Dhariyat shows her coming forward in astonishment. The angels' reply: this is what her Lord has said.", "de": "Sure adh-Dhariyat zeigt, wie sie voller Staunen herantrat. Die Antwort der Engel: So hat es ihr Herr gesagt.", "ar": "تصوّرها سورة الذاريات وهي تُقبل متعجبة، فيجيبها الملائكة بأن هذا قول ربها." }
+        },
+        {
+          "verse": "11:73",
+          "check": "people of the house",
+          "title": { "en": "Mercy on the household", "de": "Barmherzigkeit für das Haus", "ar": "رحمة على أهل البيت" },
+          "body": { "en": "The angels answered her surprise with a blessing: Allah's mercy and blessings on Ibrahim's household.", "de": "Die Engel antworteten auf ihr Staunen mit einem Segen: Allahs Barmherzigkeit und Segen über dem Haus Ibrahims.", "ar": "أجاب الملائكة عجبها بدعاء: رحمة الله وبركاته على بيت إبراهيم." }
+        },
+        {
+          "title": { "en": "Lessons from the wife of Ibrahim", "de": "Lehren von der Frau Ibrahims", "ar": "دروس من امرأة إبراهيم" },
+          "list": {
+            "en": ["Nothing is too hard for Allah", "Surprise is human; faith still accepts", "Hospitality opens doors to blessing", "A household of faith is a household of mercy"],
+            "de": ["Nichts ist für Allah zu schwer", "Staunen ist menschlich; der Glaube nimmt dennoch an", "Gastfreundschaft öffnet Türen zum Segen", "Ein Haus des Glaubens ist ein Haus der Barmherzigkeit"],
+            "ar": ["لا يعجز الله شيء", "الدهشة طبع بشري والإيمان يقبل", "الكرم باب للبركة", "بيت الإيمان بيت رحمة"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "women-10-wife-of-al-aziz",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Women in the Quran · 10", "de": "Frauen im Koran · 10", "ar": "نساء في القرآن · ١٠" },
+        "title": { "en": "The wife of al-'Aziz in 8 slides", "de": "Die Frau des 'Aziz in 8 Folien", "ar": "امرأة العزيز في ٨ شرائح" },
+        "sub": { "en": "A story of temptation and blame, and in the end an honest admission", "de": "Eine Geschichte von Versuchung und Schuld und am Ende einem ehrlichen Eingeständnis", "ar": "قصة فتنة ولوم، ثم اعتراف صادق في النهاية" },
+        "arabic": "امرأة العزيز"
+      },
+      "slides": [
+        {
+          "title": { "en": "Who she was", "de": "Wer sie war", "ar": "من هي" },
+          "body": { "en": "The Quran calls her the wife of al-'Aziz, a high official in Egypt. It does not name her; the name Zulaikha comes from later sources.", "de": "Der Koran nennt sie die Frau des 'Aziz, eines hohen Würdenträgers in Ägypten. Ihren Namen nennt er nicht; der Name Zulaikha stammt aus späteren Quellen.", "ar": "يسمّيها القرآن امرأة العزيز، وهو من كبار رجال مصر، ولا يذكر اسمها؛ واسم زليخا من مصادر لاحقة." }
+        },
+        {
+          "verse": "12:21",
+          "check": "Make his residence comfortable",
+          "title": { "en": "A boy in her house", "de": "Ein Junge in ihrem Haus", "ar": "غلام في بيتها" },
+          "body": { "en": "Her husband bought Yusuf and asked her to treat him with honour, hoping he would be useful or become like a son.", "de": "Ihr Mann kaufte Yusuf und bat sie, ihn ehrenvoll zu behandeln, in der Hoffnung, er werde nützlich sein oder wie ein Sohn werden.", "ar": "اشترى زوجها يوسف وأوصاها بإكرامه، راجيًا أن ينفعهما أو يكون لهما كالولد." }
+        },
+        {
+          "verse": "12:23",
+          "check": "sought to seduce him",
+          "title": { "en": "The temptation", "de": "Die Versuchung", "ar": "المراودة" },
+          "body": { "en": "When he had grown into a man, she tried to seduce him and closed the doors. Yusuf refused and sought refuge in Allah.", "de": "Als er zum Mann herangewachsen war, versuchte sie, ihn zu verführen, und verschloss die Türen. Yusuf weigerte sich und suchte Zuflucht bei Allah.", "ar": "لما بلغ يوسف أشدّه حاولت إغواءه وأوصدت الأبواب، فامتنع واستعاذ بالله." }
+        },
+        {
+          "verse": "12:30",
+          "check": "women in the city",
+          "title": { "en": "Talk in the city", "de": "Gerede in der Stadt", "ar": "حديث المدينة" },
+          "body": { "en": "The story spread, and women of the city criticised her. She decided to let them see Yusuf for themselves.", "de": "Die Geschichte verbreitete sich, und Frauen der Stadt kritisierten sie. Sie beschloss, sie Yusuf selbst sehen zu lassen.", "ar": "انتشر الخبر وعابتها نساء المدينة، فقررت أن يرين يوسف بأعينهن." }
+        },
+        {
+          "verse": "12:32",
+          "check": "firmly refused",
+          "title": { "en": "She admits, but threatens", "de": "Sie gibt es zu, doch sie droht", "ar": "اعتراف مع تهديد" },
+          "body": { "en": "When the women were overwhelmed by his beauty (12:31), she admitted she had tried to seduce him, yet threatened him with prison.", "de": "Als die Frauen von seiner Schönheit überwältigt waren (12:31), gab sie zu, ihn verführen gewollt zu haben, drohte ihm aber mit Gefängnis.", "ar": "لما بُهرت النسوة بجماله (١٢:٣١) أقرّت بأنها حاولت إغواءه، لكنها هدّدته بالسجن." }
+        },
+        {
+          "verse": "12:51",
+          "check": "the truth has become evident",
+          "title": { "en": "The truth comes out", "de": "Die Wahrheit kommt ans Licht", "ar": "ظهور الحق" },
+          "body": { "en": "Years later, when the king looked into the matter, she confessed openly and declared Yusuf truthful, clearing his name.", "de": "Jahre später, als der König die Sache untersuchte, gestand sie offen und erklärte Yusuf für wahrhaftig. So reinigte sie seinen Namen.", "ar": "بعد سنين، حين حقّق الملك في الأمر، اعترفت علنًا وشهدت بصدق يوسف، فبرّأت اسمه." }
+        },
+        {
+          "verse": "12:53",
+          "check": "persistent enjoiner of evil",
+          "title": { "en": "Who speaks here?", "de": "Wer spricht hier?", "ar": "من القائل؟" },
+          "body": { "en": "Scholars differ: are these her words or Yusuf's? Ibn Kathir and others say hers, a soul admitting its weakness and hoping for mercy.", "de": "Die Gelehrten sind uneins: Sind dies ihre Worte oder die Yusufs? Ibn Kathir und andere sagen, ihre: eine Seele, die ihre Schwäche eingesteht und auf Barmherzigkeit hofft.", "ar": "اختلف العلماء: أهذا كلامها أم كلام يوسف؟ ويرى ابن كثير وغيره أنه كلامها، نفس تعترف بضعفها وترجو الرحمة." }
+        },
+        {
+          "title": { "en": "Lessons from her story", "de": "Lehren aus ihrer Geschichte", "ar": "دروس من قصتها" },
+          "body": { "en": "The Quran tells nothing of her later life; stories that she married Yusuf are not confirmed.", "de": "Über ihr späteres Leben sagt der Koran nichts; Erzählungen, sie habe Yusuf geheiratet, sind nicht bestätigt.", "ar": "لا يذكر القرآن شيئًا عن حياتها بعد ذلك، وما يُروى من زواجها بيوسف لا يثبت." },
+          "list": {
+            "en": ["Temptation is real; refuge in Allah is stronger", "Do not join the gossip about others' faults", "It is never too late to tell the truth", "Admitting a wrong can be the start of change"],
+            "de": ["Versuchung ist real; die Zuflucht bei Allah ist stärker", "Beteiligen Sie sich nicht am Gerede über die Fehler anderer", "Es ist nie zu spät, die Wahrheit zu sagen", "Unrecht einzugestehen kann der Anfang einer Veränderung sein"],
+            "ar": ["الفتنة حقيقية والاعتصام بالله أقوى", "لا تشارك في الحديث عن عيوب الناس", "لم يفت الأوان أبدًا لقول الحق", "الاعتراف بالخطأ قد يكون بداية التغيير"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on 12:52-53" }
+      ]
+    }
+  ]
+}

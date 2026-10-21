@@ -1,0 +1,120 @@
+{
+  "set": "reflections-fasting",
+  "kind": "reflection",
+  "theme": "fasting",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-fasting-01",
+      "text": {
+        "en": "The first sip of water at sunset after a long summer fast teaches more about gratitude than a hundred lectures.",
+        "de": "Der erste Schluck Wasser bei Sonnenuntergang nach einem langen Sommerfasten lehrt mehr über Dankbarkeit als hundert Vorträge.",
+        "ar": "أول رشفة ماء عند الغروب بعد صيام صيفي طويل تعلم الشكر أكثر من مئة محاضرة."
+      }
+    },
+    {
+      "id": "wr-fasting-02",
+      "text": {
+        "en": "No one can check whether you are truly fasting except Allah. That quiet honesty is part of what makes the fast so precious.",
+        "de": "Niemand kann prüfen, ob Sie wirklich fasten, außer Allah. Diese stille Ehrlichkeit macht das Fasten so kostbar.",
+        "ar": "لا أحد يستطيع أن يتحقق من صيامك إلا الله، وهذا الصدق الهادئ جزء مما يجعل الصوم ثمينا."
+      }
+    },
+    {
+      "id": "wr-fasting-03",
+      "text": {
+        "en": "Hunger for a few hours opens your eyes to those who are hungry for days. Let your fast end with a gift.",
+        "de": "Hunger für ein paar Stunden öffnet Ihnen die Augen für die, die tagelang hungern. Lassen Sie Ihr Fasten mit einer Gabe enden.",
+        "ar": "الجوع لساعات يفتح عينيك على من يجوعون أياما، فاجعل صيامك ينتهي بعطاء."
+      }
+    },
+    {
+      "id": "wr-fasting-04",
+      "text": {
+        "en": "Keeping the tongue from harsh words matters as much as keeping the stomach from food.",
+        "de": "Die Zunge von harten Worten fernzuhalten, ist ebenso wichtig, wie den Magen vom Essen fernzuhalten.",
+        "ar": "صيام اللسان عن الكلام القاسي لا يقل أهمية عن صيام البطن عن الطعام."
+      }
+    },
+    {
+      "id": "wr-fasting-05",
+      "text": {
+        "en": "Suhoor before dawn, eaten half asleep in a quiet kitchen, is one of the most peaceful meals of the year.",
+        "de": "Das Suhur vor der Morgendämmerung, halb verschlafen in einer stillen Küche gegessen, ist eine der friedlichsten Mahlzeiten des Jahres.",
+        "ar": "السحور قبل الفجر، تتناوله نصف نائم في مطبخ هادئ، من أكثر وجبات العام سكينة."
+      }
+    },
+    {
+      "id": "wr-fasting-06",
+      "text": {
+        "en": "Every evening of Ramadan, families across the world wait for the same moment. Few things unite hearts so quietly.",
+        "de": "An jedem Abend des Ramadan warten Familien auf der ganzen Welt auf denselben Moment. Wenige Dinge verbinden Herzen so leise.",
+        "ar": "في كل مساء من رمضان تنتظر أسر في أنحاء العالم اللحظة نفسها، وقليل من الأشياء يجمع القلوب بهذا الهدوء."
+      }
+    },
+    {
+      "id": "wr-fasting-07",
+      "text": {
+        "en": "If illness keeps you from fasting, your sincere intention and your charity still keep you close to the blessing.",
+        "de": "Wenn eine Krankheit Sie vom Fasten abhält, halten Ihre aufrichtige Absicht und Ihre Spende Sie dennoch nah am Segen.",
+        "ar": "إن منعك المرض من الصيام، فنيتك الصادقة وصدقتك تبقيانك قريبا من البركة."
+      }
+    },
+    {
+      "id": "wr-fasting-08",
+      "text": {
+        "en": "Fasting teaches you that you can say no to yourself. That strength stays long after Ramadan has ended.",
+        "de": "Das Fasten lehrt Sie, dass Sie zu sich selbst Nein sagen können. Diese Kraft bleibt, lange nachdem der Ramadan vorbei ist.",
+        "ar": "الصيام يعلمك أنك تستطيع أن تقول لنفسك: لا، وهذه القوة تبقى معك بعد انتهاء رمضان بزمن طويل."
+      }
+    },
+    {
+      "id": "wr-fasting-09",
+      "text": {
+        "en": "Invite someone to break the fast with you this week: a neighbour, a student far from home, a colleague.",
+        "de": "Laden Sie diese Woche jemanden zum Fastenbrechen ein: einen Nachbarn, eine Studentin fern der Heimat, einen Kollegen.",
+        "ar": "ادع هذا الأسبوع أحدا ليفطر معك: جارا، أو طالبا بعيدا عن أهله، أو زميلا."
+      }
+    },
+    {
+      "id": "wr-fasting-10",
+      "text": {
+        "en": "The last ten nights are a gift that comes once a year. Clear your evenings for them as you would for an honoured guest.",
+        "de": "Die letzten zehn Nächte sind ein Geschenk, das einmal im Jahr kommt. Halten Sie Ihre Abende für sie frei wie für einen geehrten Gast.",
+        "ar": "الليالي العشر الأواخر هدية تأتي مرة في العام، فأفرغ لها أمسياتك كما تفرغها لضيف عزيز."
+      }
+    },
+    {
+      "id": "wr-fasting-11",
+      "text": {
+        "en": "A voluntary fast on an ordinary Monday or Thursday brings a little Ramadan into the rest of the year.",
+        "de": "Ein freiwilliges Fasten an einem gewöhnlichen Montag oder Donnerstag bringt ein wenig Ramadan in den Rest des Jahres.",
+        "ar": "صيام تطوع في يوم اثنين أو خميس عادي يحمل شيئا من رمضان إلى بقية العام."
+      }
+    },
+    {
+      "id": "wr-fasting-12",
+      "text": {
+        "en": "Children who fast their first half day remember the pride for the rest of their lives. Celebrate their small steps.",
+        "de": "Kinder, die zum ersten Mal einen halben Tag fasten, erinnern sich ihr Leben lang an den Stolz. Feiern Sie ihre kleinen Schritte.",
+        "ar": "الأطفال الذين يصومون أول نصف يوم لهم يتذكرون ذلك الفخر طوال حياتهم، فاحتف بخطواتهم الصغيرة."
+      }
+    },
+    {
+      "id": "wr-fasting-13",
+      "text": {
+        "en": "When the stomach is empty, the heart often becomes more attentive. Use the fasting hours to reflect, not only to wait.",
+        "de": "Wenn der Magen leer ist, wird das Herz oft aufmerksamer. Nutzen Sie die Fastenstunden zum Nachdenken, nicht nur zum Warten.",
+        "ar": "حين تفرغ المعدة يصير القلب في الغالب أكثر انتباها، فاستعمل ساعات الصيام للتأمل لا للانتظار فقط."
+      }
+    },
+    {
+      "id": "wr-fasting-14",
+      "text": {
+        "en": "Breaking the fast with a date and water is simple, yet after a long day it tastes like a feast.",
+        "de": "Das Fasten mit einer Dattel und Wasser zu brechen ist einfach, und doch schmeckt es nach einem langen Tag wie ein Festmahl.",
+        "ar": "الإفطار على تمرة وماء أمر بسيط، لكنه بعد يوم طويل يحلو كأنه وليمة."
+      }
+    }
+  ]
+}

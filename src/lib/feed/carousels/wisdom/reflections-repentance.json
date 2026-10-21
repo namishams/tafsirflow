@@ -1,0 +1,120 @@
+{
+  "set": "reflections-repentance",
+  "kind": "reflection",
+  "theme": "repentance",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-repentance-01",
+      "text": {
+        "en": "Repentance is rarely one dramatic moment. Most of the time it is a quiet turning, made again each morning.",
+        "de": "Reue ist selten ein einzelner dramatischer Moment. Meistens ist sie ein stilles Umkehren, das jeden Morgen neu geschieht.",
+        "ar": "نادرا ما تكون التوبة لحظة مثيرة واحدة، بل هي في الغالب رجوع هادئ يتجدد كل صباح."
+      }
+    },
+    {
+      "id": "wr-repentance-02",
+      "text": {
+        "en": "The regret you feel right now is not your enemy. It is a sign that your heart is still alive.",
+        "de": "Das Bedauern, das Sie gerade spüren, ist nicht Ihr Feind. Es ist ein Zeichen, dass Ihr Herz noch lebt.",
+        "ar": "الندم الذي تشعر به الآن ليس عدوك، بل علامة على أن قلبك ما زال حيا."
+      }
+    },
+    {
+      "id": "wr-repentance-03",
+      "text": {
+        "en": "Falling again after repenting does not cancel your repentance. Get up, make wudu, and turn back once more.",
+        "de": "Erneut zu fallen, nachdem Sie bereut haben, macht Ihre Reue nicht zunichte. Stehen Sie auf, vollziehen Sie die Waschung und kehren Sie noch einmal um.",
+        "ar": "السقوط بعد التوبة لا يمحو توبتك، فانهض، وتوضأ، وعد مرة أخرى."
+      }
+    },
+    {
+      "id": "wr-repentance-04",
+      "text": {
+        "en": "Delete the app, change the route home, find a better friend: real repentance often looks very practical.",
+        "de": "Die App löschen, einen anderen Heimweg nehmen, einen besseren Freund finden: Echte Reue sieht oft sehr praktisch aus.",
+        "ar": "أن تحذف التطبيق، وتغير طريق العودة إلى البيت، وتجد صديقا أفضل: التوبة الصادقة كثيرا ما تبدو عملية جدا."
+      }
+    },
+    {
+      "id": "wr-repentance-05",
+      "text": {
+        "en": "No one is too far gone to come home. The road back is open as long as there is breath in your chest.",
+        "de": "Niemand ist zu weit weg, um heimzukehren. Der Weg zurück steht offen, solange Atem in Ihrer Brust ist.",
+        "ar": "لا أحد أبعد من أن يعود إلى البيت، فطريق الرجوع مفتوح ما دام في صدرك نفس."
+      }
+    },
+    {
+      "id": "wr-repentance-06",
+      "text": {
+        "en": "If you wronged someone, repentance includes them: return what you took, apologise, and make it right where you can.",
+        "de": "Wenn Sie jemandem Unrecht getan haben, gehört er zur Reue dazu: Geben Sie zurück, was Sie genommen haben, entschuldigen Sie sich und machen Sie es gut, wo Sie können.",
+        "ar": "إن ظلمت أحدا فتوبتك تشمله: رد ما أخذت، واعتذر، وأصلح ما استطعت."
+      }
+    },
+    {
+      "id": "wr-repentance-07",
+      "text": {
+        "en": "Shame can push you away from Allah or toward Him. Let it be the hand that turns you back, not the wall that keeps you out.",
+        "de": "Scham kann Sie von Allah wegtreiben oder zu Ihm hin. Lassen Sie sie die Hand sein, die Sie umkehren lässt, nicht die Mauer, die Sie aussperrt.",
+        "ar": "قد يبعدك الخجل عن الله وقد يقربك إليه، فاجعله اليد التي تعيدك، لا الجدار الذي يصدك."
+      }
+    },
+    {
+      "id": "wr-repentance-08",
+      "text": {
+        "en": "Two rak'ahs in the stillness of the night, a few honest tears and a promise to do better: that is how many new beginnings start.",
+        "de": "Zwei Gebetseinheiten in der Stille der Nacht, ein paar ehrliche Tränen und das Versprechen, es besser zu machen: So beginnen viele Neuanfänge.",
+        "ar": "ركعتان في سكون الليل، ودموع صادقة قليلة، ووعد بأن تكون أفضل: هكذا تبدأ بدايات جديدة كثيرة."
+      }
+    },
+    {
+      "id": "wr-repentance-09",
+      "text": {
+        "en": "The past cannot be changed, but the next hour can. Repentance lives in the next hour.",
+        "de": "Die Vergangenheit lässt sich nicht ändern, die nächste Stunde schon. Die Reue wohnt in der nächsten Stunde.",
+        "ar": "لا يمكن تغيير الماضي، أما الساعة القادمة فيمكن، والتوبة تسكن في الساعة القادمة."
+      }
+    },
+    {
+      "id": "wr-repentance-10",
+      "text": {
+        "en": "Do not wait to feel worthy before you return. Returning is what makes the heart worthy.",
+        "de": "Warten Sie nicht darauf, sich würdig zu fühlen, bevor Sie umkehren. Erst die Umkehr macht das Herz würdig.",
+        "ar": "لا تنتظر أن تشعر بأنك أهل قبل أن تعود، فالعودة هي التي تجعل القلب أهلا."
+      }
+    },
+    {
+      "id": "wr-repentance-11",
+      "text": {
+        "en": "A sincere \"I was wrong\" said to Allah is often the first sentence of the best chapter of a life.",
+        "de": "Ein aufrichtiges „Ich lag falsch“ vor Allah ist oft der erste Satz des schönsten Kapitels eines Lebens.",
+        "ar": "قولك لله بصدق: أخطأت، كثيرا ما يكون أول جملة في أجمل فصل من فصول العمر."
+      }
+    },
+    {
+      "id": "wr-repentance-12",
+      "text": {
+        "en": "Repentance is spring cleaning for the soul: open the windows, let the light in, and do not be afraid of the dust you find.",
+        "de": "Reue ist ein Frühjahrsputz für die Seele: Öffnen Sie die Fenster, lassen Sie das Licht herein und fürchten Sie den Staub nicht, den Sie finden.",
+        "ar": "التوبة تنظيف ربيعي للروح: افتح النوافذ، وأدخل النور، ولا تخف من الغبار الذي تجده."
+      }
+    },
+    {
+      "id": "wr-repentance-13",
+      "text": {
+        "en": "The one who repents today is not defined by yesterday. Let others see who you are becoming, not only who you were.",
+        "de": "Wer heute bereut, wird nicht durch gestern bestimmt. Lassen Sie andere sehen, wer Sie werden, nicht nur, wer Sie waren.",
+        "ar": "من يتوب اليوم لا يعرف بأمسه، فدع الناس يرون من تصير، لا من كنت فحسب."
+      }
+    },
+    {
+      "id": "wr-repentance-14",
+      "text": {
+        "en": "Turning back to Allah is never a defeat. It is the bravest walk a person ever takes.",
+        "de": "Die Umkehr zu Allah ist nie eine Niederlage. Sie ist der mutigste Weg, den ein Mensch je geht.",
+        "ar": "الرجوع إلى الله ليس هزيمة أبدا، بل هو أشجع طريق يسلكه إنسان."
+      }
+    }
+  ]
+}

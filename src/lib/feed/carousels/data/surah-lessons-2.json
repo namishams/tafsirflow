@@ -1,0 +1,4421 @@
+{
+  "series": "surah-lessons-2",
+  "label": {
+    "en": "Surahs in slides",
+    "de": "Suren in Bildern",
+    "ar": "السور في شرائح"
+  },
+  "topic": "tafsir",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "surah-039-az-zumar",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Surah 39 · Makki",
+          "de": "Sure 39 · mekkanisch",
+          "ar": "سورة ٣٩ · مكية"
+        },
+        "title": {
+          "en": "5 lessons from Surah az-Zumar",
+          "de": "5 Lehren aus der Sure az-Zumar",
+          "ar": "خمسة دروس من سورة الزمر"
+        },
+        "sub": {
+          "en": "Az-Zumar means “The Troops”: people led in groups to their final home",
+          "de": "Az-Zumar bedeutet „Die Scharen“: Menschen, die in Gruppen zu ihrer letzten Heimat geführt werden",
+          "ar": "الزمر: الجماعات، وفي ختامها يُساق الناس جماعات إلى دارهم الأخيرة"
+        },
+        "arabic": "سورة الزمر"
+      },
+      "slides": [
+        {
+          "verse": "39:11",
+          "check": "sincere to Him in religion",
+          "title": {
+            "en": "Sincerity first",
+            "de": "Aufrichtigkeit zuerst",
+            "ar": "الإخلاص أولًا"
+          },
+          "body": {
+            "en": "Sincerity (ikhlas) runs through the whole surah: worship meant for Allah alone, not for the praise of people.",
+            "de": "Aufrichtigkeit (Ikhlas) zieht sich durch die ganze Sure: Gottesdienst allein für Allah, nicht für das Lob der Menschen.",
+            "ar": "الإخلاص خيط يمتد في السورة كلها: عبادة لله وحده، لا لثناء الناس."
+          }
+        },
+        {
+          "verse": "39:9",
+          "check": "those who know",
+          "title": {
+            "en": "Knowledge that bows",
+            "de": "Wissen, das sich niederwirft",
+            "ar": "علم يقود إلى السجود"
+          },
+          "body": {
+            "en": "Night prayer, fear and hope stand right beside the question about knowledge. True knowledge leads to worship.",
+            "de": "Nachtgebet, Furcht und Hoffnung stehen direkt neben der Frage nach dem Wissen. Wahres Wissen führt zur Anbetung.",
+            "ar": "يقترن قيام الليل والخوف والرجاء بالسؤال عن العلم، فالعلم الحق يقود إلى العبادة."
+          }
+        },
+        {
+          "verse": "39:10",
+          "check": "without account",
+          "title": {
+            "en": "Patience beyond measure",
+            "de": "Geduld ohne Maß",
+            "ar": "صبر بلا حساب"
+          },
+          "body": {
+            "en": "Most deeds have a measured reward. Patience is promised a reward beyond counting.",
+            "de": "Die meisten Taten haben einen bemessenen Lohn. Der Geduld wird ein Lohn verheißen, der nicht gezählt wird.",
+            "ar": "لأكثر الأعمال أجر مقدَّر، أما الصبر فموعود بأجر لا يُحصى."
+          }
+        },
+        {
+          "verse": "39:53",
+          "check": "do not despair",
+          "title": {
+            "en": "No sin is bigger than His mercy",
+            "de": "Keine Sünde ist größer als Seine Barmherzigkeit",
+            "ar": "لا ذنب أكبر من رحمته"
+          },
+          "body": {
+            "en": "Many scholars count this among the most hopeful verses of the Quran. It speaks to those who have wronged themselves.",
+            "de": "Viele Gelehrte zählen ihn zu den hoffnungsvollsten Versen des Korans. Er richtet sich an jene, die sich selbst Unrecht getan haben.",
+            "ar": "يعدّها كثير من العلماء من أرجى آيات القرآن، وهي خطاب لمن ظلموا أنفسهم."
+          }
+        },
+        {
+          "verse": "39:73",
+          "check": "in groups",
+          "title": {
+            "en": "Two processions",
+            "de": "Zwei Züge",
+            "ar": "موكبان"
+          },
+          "body": {
+            "en": "The surah closes with two groups: one driven to the Fire, one welcomed into Paradise with peace. Its name comes from here.",
+            "de": "Die Sure endet mit zwei Scharen: Die eine wird zum Feuer getrieben, die andere mit Frieden im Paradies empfangen. Daher ihr Name.",
+            "ar": "تُختم السورة بجماعتين: واحدة تُساق إلى النار، وأخرى تُستقبل في الجنة بالسلام، ومن هنا جاء اسمها."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah az-Zumar",
+          "url": "https://quran.com/39"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-040-ghafir",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Surah 40 · Makki",
+          "de": "Sure 40 · mekkanisch",
+          "ar": "سورة ٤٠ · مكية"
+        },
+        "title": {
+          "en": "Surah Ghafir in 6 slides",
+          "de": "Die Sure Ghafir in 6 Bildern",
+          "ar": "سورة غافر في ست شرائح"
+        },
+        "sub": {
+          "en": "Ghafir means “The Forgiver”: the surah opens with the One who forgives sin and accepts repentance",
+          "de": "Ghafir bedeutet „Der Vergebende“: Die Sure beginnt mit Dem, der Sünden vergibt und Reue annimmt",
+          "ar": "غافر: الذي يغفر الذنوب، وبهذا الوصف تبدأ السورة"
+        },
+        "arabic": "سورة غافر"
+      },
+      "slides": [
+        {
+          "verse": "40:3",
+          "check": "acceptor of repentance",
+          "title": {
+            "en": "Hope comes first",
+            "de": "Die Hoffnung kommt zuerst",
+            "ar": "الرجاء أولًا"
+          },
+          "body": {
+            "en": "Before His severity is mentioned, Allah is named as the One who forgives and accepts repentance.",
+            "de": "Bevor Seine Strenge erwähnt wird, wird Allah als Der genannt, der vergibt und die Reue annimmt.",
+            "ar": "قبل ذكر شدة العقاب يُذكر الله بأنه يغفر ويقبل التوبة."
+          }
+        },
+        {
+          "verse": "40:7",
+          "check": "ask forgiveness for those who have believed",
+          "title": {
+            "en": "Angels who pray for you",
+            "de": "Engel, die für Sie beten",
+            "ar": "ملائكة يدعون لك"
+          },
+          "body": {
+            "en": "The bearers of the Throne ask forgiveness for the believers who repent. Their dua begins with mercy and knowledge.",
+            "de": "Die Träger des Throns bitten um Vergebung für die Gläubigen, die bereuen. Ihr Bittgebet beginnt mit Barmherzigkeit und Wissen.",
+            "ar": "حملة العرش يستغفرون للمؤمنين التائبين، ويبدأ دعاؤهم بذكر الرحمة والعلم."
+          }
+        },
+        {
+          "title": {
+            "en": "A believer who hid his faith",
+            "de": "Ein Gläubiger, der seinen Glauben verbarg",
+            "ar": "مؤمن يكتم إيمانه"
+          },
+          "body": {
+            "en": "In Pharaoh's own court, a man who had kept his faith secret speaks up for Musa. He argues calmly and wisely. Courage does not always need to be loud.",
+            "de": "Mitten am Hof Pharaos ergreift ein Mann, der seinen Glauben verborgen hatte, das Wort für Musa. Er argumentiert ruhig und klug. Mut muss nicht immer laut sein.",
+            "ar": "في بلاط فرعون نفسه يقف رجل كان يخفي إيمانه مدافعًا عن موسى، يحاجّ بهدوء وحكمة. فالشجاعة لا تحتاج دائمًا إلى صوت عالٍ."
+          }
+        },
+        {
+          "verse": "40:44",
+          "check": "entrust my affair",
+          "title": {
+            "en": "Leave the outcome to Allah",
+            "de": "Das Ergebnis Allah überlassen",
+            "ar": "فوّض أمرك إلى الله"
+          },
+          "body": {
+            "en": "After saying all he could, he handed his affair to Allah. Trust comes after effort, not instead of it.",
+            "de": "Nachdem er alles gesagt hatte, was er konnte, überließ er seine Sache Allah. Vertrauen folgt der Mühe, es ersetzt sie nicht.",
+            "ar": "بعد أن قال كل ما يستطيع، فوّض أمره إلى الله. فالتوكل يأتي بعد السعي لا بدلًا منه."
+          }
+        },
+        {
+          "verse": "40:60",
+          "check": "Call upon Me",
+          "title": {
+            "en": "An open invitation",
+            "de": "Eine offene Einladung",
+            "ar": "دعوة مفتوحة"
+          },
+          "body": {
+            "en": "Dua is itself worship. Allah invites His servants to ask and promises to answer.",
+            "de": "Das Bittgebet ist selbst Gottesdienst. Allah lädt Seine Diener zum Bitten ein und verspricht zu antworten.",
+            "ar": "الدعاء عبادة في ذاته، والله يدعو عباده إلى سؤاله ويعدهم بالإجابة."
+          }
+        },
+        {
+          "title": {
+            "en": "Did you know?",
+            "de": "Wussten Sie schon?",
+            "ar": "هل تعلم؟"
+          },
+          "arabic": "الحواميم",
+          "body": {
+            "en": "Ghafir opens a family of seven surahs, 40 to 46, that all begin with the letters Ha Mim. Scholars call them al-Hawamim. Ghafir is also known as Surah al-Mu'min, after the believer of verse 28.",
+            "de": "Ghafir eröffnet eine Familie von sieben Suren, 40 bis 46, die alle mit den Buchstaben Ha Mim beginnen. Gelehrte nennen sie al-Hawamim. Ghafir heißt auch Sure al-Mu'min, nach dem Gläubigen aus Vers 28.",
+            "ar": "غافر أولى سبع سور، من الأربعين إلى السادسة والأربعين، تبدأ كلها بالحرفين حاء ميم، ويسميها العلماء الحواميم. وتُسمى أيضًا سورة المؤمن نسبة إلى مؤمن آل فرعون."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah Ghafir",
+          "url": "https://quran.com/40"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-041-fussilat",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Surah 41 · Makki",
+          "de": "Sure 41 · mekkanisch",
+          "ar": "سورة ٤١ · مكية"
+        },
+        "title": {
+          "en": "What Surah Fussilat teaches about steadfastness",
+          "de": "Was die Sure Fussilat über Standhaftigkeit lehrt",
+          "ar": "ماذا تعلّمنا سورة فصلت عن الاستقامة"
+        },
+        "sub": {
+          "en": "Fussilat means “Explained in Detail”: a Book whose verses are made clear",
+          "de": "Fussilat bedeutet „Ausführlich dargelegt“: ein Buch, dessen Verse klar erklärt sind",
+          "ar": "فصلت: أي بُيّنت آياتها ووُضّحت تفصيلًا"
+        },
+        "arabic": "سورة فصلت"
+      },
+      "slides": [
+        {
+          "verse": "41:2-3",
+          "check": "verses have been detailed",
+          "title": {
+            "en": "A Book made clear",
+            "de": "Ein klar dargelegtes Buch",
+            "ar": "كتاب مفصَّل"
+          },
+          "body": {
+            "en": "The name comes from these opening verses: a revelation from the Merciful, set out in detail, in clear Arabic.",
+            "de": "Der Name stammt aus diesen ersten Versen: eine Offenbarung vom Barmherzigen, ausführlich dargelegt, in klarem Arabisch.",
+            "ar": "من هذه الآيات الأولى جاء الاسم: وحي من الرحمن، مبيَّن مفصَّل بلغة عربية واضحة."
+          }
+        },
+        {
+          "verse": "41:30",
+          "check": "remained on a right course",
+          "title": {
+            "en": "Say it, then stay on it",
+            "de": "Es sagen und dabei bleiben",
+            "ar": "قلها ثم اثبت عليها"
+          },
+          "body": {
+            "en": "Faith is a word followed by a straight path. To those who stay steady, the angels bring calm and good news.",
+            "de": "Glaube ist ein Wort, dem ein gerader Weg folgt. Zu denen, die standhaft bleiben, kommen Engel mit Ruhe und froher Botschaft.",
+            "ar": "الإيمان كلمة يتبعها طريق مستقيم، ومن ثبت عليه نزلت عليه الملائكة بالطمأنينة والبشرى."
+          }
+        },
+        {
+          "hadith": "nawawi:21",
+          "check": "be steadfast",
+          "title": {
+            "en": "Advice for a lifetime",
+            "de": "Ein Rat für das ganze Leben",
+            "ar": "وصية للعمر كله"
+          },
+          "body": {
+            "en": "A companion asked for advice so complete he would need no one else. The answer echoes this surah.",
+            "de": "Ein Gefährte bat um einen Rat, so vollständig, dass er niemanden sonst fragen müsste. Die Antwort klingt wie ein Echo dieser Sure.",
+            "ar": "طلب صحابي نصيحة جامعة لا يحتاج بعدها إلى سؤال أحد، فجاء الجواب صدى لهذه السورة."
+          }
+        },
+        {
+          "verse": "41:34",
+          "check": "Repel",
+          "title": {
+            "en": "Answer harm with the better",
+            "de": "Auf Böses mit Besserem antworten",
+            "ar": "قابل الإساءة بالإحسان"
+          },
+          "body": {
+            "en": "A demanding path: meet hostility with goodness, and an enemy may become a close friend.",
+            "de": "Ein anspruchsvoller Weg: Feindseligkeit mit Güte beantworten, und aus einem Feind kann ein enger Freund werden.",
+            "ar": "طريق شاق: أن تقابل العداوة بالإحسان، فقد يصير العدو صديقًا قريبًا."
+          }
+        },
+        {
+          "verse": "41:53",
+          "check": "horizons",
+          "title": {
+            "en": "Signs outside and within",
+            "de": "Zeichen draußen und im Inneren",
+            "ar": "آيات في الكون وفي النفس"
+          },
+          "body": {
+            "en": "Allah promises to show His signs in the wide world and in our own selves, until the truth becomes clear.",
+            "de": "Allah verspricht, Seine Zeichen in der weiten Welt und in uns selbst zu zeigen, bis die Wahrheit klar wird.",
+            "ar": "يعد الله أن يُري الناس آياته في الكون الفسيح وفي ذواتهم، حتى يتضح الحق."
+          }
+        },
+        {
+          "title": {
+            "en": "Steadfastness in daily life",
+            "de": "Standhaftigkeit im Alltag",
+            "ar": "الاستقامة في الحياة اليومية"
+          },
+          "list": {
+            "en": [
+              "Renew your intention each morning",
+              "Keep one small deed, even on hard days",
+              "Answer a harsh word with a kind one",
+              "Look for His signs in nature and in yourself"
+            ],
+            "de": [
+              "Erneuern Sie jeden Morgen Ihre Absicht",
+              "Bleiben Sie bei einer kleinen Tat, auch an schweren Tagen",
+              "Antworten Sie auf ein hartes Wort mit einem freundlichen",
+              "Suchen Sie Seine Zeichen in der Natur und in sich selbst"
+            ],
+            "ar": [
+              "جدّد نيتك كل صباح",
+              "داوم على عمل صغير ولو في الأيام الصعبة",
+              "قابل الكلمة القاسية بكلمة طيبة",
+              "تأمل آياته في الطبيعة وفي نفسك"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah Fussilat",
+          "url": "https://quran.com/41"
+        }
+      ]
+    },
+    {
+      "id": "surah-042-ash-shura",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Surah 42 · Makki",
+          "de": "Sure 42 · mekkanisch",
+          "ar": "سورة ٤٢ · مكية"
+        },
+        "title": {
+          "en": "What Surah ash-Shura teaches about deciding together",
+          "de": "Was die Sure ash-Shura über gemeinsames Entscheiden lehrt",
+          "ar": "ماذا تعلّمنا سورة الشورى عن القرار المشترك"
+        },
+        "sub": {
+          "en": "Ash-Shura means “The Consultation”: believers settle their affairs by counsel",
+          "de": "Ash-Shura bedeutet „Die Beratung“: Gläubige regeln ihre Angelegenheiten durch gegenseitigen Rat",
+          "ar": "الشورى: أن يتشاور المؤمنون في شؤونهم"
+        },
+        "arabic": "سورة الشورى"
+      },
+      "slides": [
+        {
+          "verse": "42:11",
+          "check": "nothing like unto Him",
+          "title": {
+            "en": "Nothing is like Him",
+            "de": "Nichts ist Ihm gleich",
+            "ar": "لا شبيه له"
+          },
+          "body": {
+            "en": "The surah lays the foundation: Allah is unlike anything He created, and yet He hears and sees all.",
+            "de": "Die Sure legt das Fundament: Allah gleicht nichts von dem, was Er erschaffen hat, und doch hört und sieht Er alles.",
+            "ar": "تضع السورة الأساس: الله لا يشبه شيئًا من خلقه، ومع ذلك يسمع كل شيء ويراه."
+          }
+        },
+        {
+          "verse": "42:38",
+          "check": "consultation",
+          "title": {
+            "en": "Affairs settled by counsel",
+            "de": "Angelegenheiten durch Beratung",
+            "ar": "شؤون تُدار بالتشاور"
+          },
+          "body": {
+            "en": "Consultation stands between prayer and giving: a mark of the believers, not just a method of management.",
+            "de": "Die Beratung steht zwischen Gebet und Spenden: ein Kennzeichen der Gläubigen, nicht nur eine Methode.",
+            "ar": "تأتي الشورى بين الصلاة والإنفاق: صفة من صفات المؤمنين، لا مجرد أسلوب إداري."
+          }
+        },
+        {
+          "title": {
+            "en": "Why counsel matters",
+            "de": "Warum Beratung wichtig ist",
+            "ar": "لماذا الشورى؟"
+          },
+          "body": {
+            "en": "The Prophet, peace be upon him, often asked his companions for their view. Counsel guards against arrogance, gives every voice its place and brings hearts together.",
+            "de": "Der Prophet, Friede sei mit ihm, fragte seine Gefährten oft nach ihrer Meinung. Beratung schützt vor Hochmut, gibt jeder Stimme ihren Platz und verbindet die Herzen.",
+            "ar": "كان النبي صلى الله عليه وسلم كثيرًا ما يستشير أصحابه. والشورى تحمي من الكِبر، وتعطي كل صوت مكانه، وتؤلف بين القلوب."
+          }
+        },
+        {
+          "verse": "42:40",
+          "check": "whoever pardons",
+          "title": {
+            "en": "Justice, then something higher",
+            "de": "Gerechtigkeit und etwas Höheres",
+            "ar": "العدل ثم ما هو أسمى"
+          },
+          "body": {
+            "en": "Fair retribution is permitted. But whoever pardons and makes peace has a reward with Allah Himself.",
+            "de": "Gerechte Vergeltung ist erlaubt. Doch wer verzeiht und Frieden stiftet, dessen Lohn liegt bei Allah selbst.",
+            "ar": "المعاقبة بالمثل جائزة، أما العفو والإصلاح فثوابهما من الله مباشرة."
+          }
+        },
+        {
+          "verse": "42:43",
+          "check": "patient and forgives",
+          "title": {
+            "en": "The strength to forgive",
+            "de": "Die Stärke zu verzeihen",
+            "ar": "قوة العفو"
+          },
+          "body": {
+            "en": "Patience and forgiveness are called matters of firm resolve: not weakness, but strength of character.",
+            "de": "Geduld und Vergebung gelten als Sache fester Entschlossenheit: keine Schwäche, sondern Charakterstärke.",
+            "ar": "يوصف الصبر والمغفرة بأنهما من عزائم الأمور: ليسا ضعفًا بل قوة في الخُلُق."
+          }
+        },
+        {
+          "title": {
+            "en": "Counsel at home and at work",
+            "de": "Beratung zu Hause und bei der Arbeit",
+            "ar": "الشورى في البيت والعمل"
+          },
+          "list": {
+            "en": [
+              "Ask before deciding for others",
+              "Listen to the view you did not expect",
+              "Decide, then put your trust in Allah",
+              "Stay kind to those who disagreed"
+            ],
+            "de": [
+              "Fragen Sie, bevor Sie für andere entscheiden",
+              "Hören Sie auch die Meinung, die Sie nicht erwartet haben",
+              "Entscheiden Sie und vertrauen Sie dann auf Allah",
+              "Bleiben Sie freundlich zu denen, die anderer Meinung waren"
+            ],
+            "ar": [
+              "استشر قبل أن تقرر عن غيرك",
+              "استمع إلى الرأي الذي لم تتوقعه",
+              "اعزم ثم توكل على الله",
+              "كن لطيفًا مع من خالفك الرأي"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah ash-Shura",
+          "url": "https://quran.com/42"
+        }
+      ]
+    },
+    {
+      "id": "surah-043-az-zukhruf",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Surah 43 · Makki",
+          "de": "Sure 43 · mekkanisch",
+          "ar": "سورة ٤٣ · مكية"
+        },
+        "title": {
+          "en": "Surah az-Zukhruf: what gold cannot buy",
+          "de": "Die Sure az-Zukhruf: was Gold nicht kaufen kann",
+          "ar": "سورة الزخرف: ما لا يشتريه الذهب"
+        },
+        "sub": {
+          "en": "Az-Zukhruf means “The Ornaments of Gold”: the shine of this world against what lasts",
+          "de": "Az-Zukhruf bedeutet „Der Goldschmuck“: der Glanz dieser Welt im Vergleich mit dem, was bleibt",
+          "ar": "الزخرف: زينة الذهب، وبريق الدنيا في مقابل ما يبقى"
+        },
+        "arabic": "سورة الزخرف"
+      },
+      "slides": [
+        {
+          "verse": "43:35",
+          "check": "gold ornament",
+          "title": {
+            "en": "The shine of this world",
+            "de": "Der Glanz dieser Welt",
+            "ar": "بريق الدنيا"
+          },
+          "body": {
+            "en": "Gold and comfort are real, but brief. The surah weighs them against the Hereafter, kept for the God-conscious.",
+            "de": "Gold und Bequemlichkeit sind wirklich, aber vergänglich. Die Sure wiegt sie gegen das Jenseits ab, das den Gottesfürchtigen bleibt.",
+            "ar": "الذهب والرفاهية حقيقيان لكنهما زائلان، والسورة تزنهما بالآخرة المدّخرة للمتقين."
+          }
+        },
+        {
+          "verse": "43:13-14",
+          "check": "subjected this to us",
+          "title": {
+            "en": "A dua for every journey",
+            "de": "Ein Bittgebet für jede Reise",
+            "ar": "دعاء لكل سفر"
+          },
+          "body": {
+            "en": "Riding becomes a moment of gratitude. These words are part of the well-known dua for travel.",
+            "de": "Das Reiten wird zu einem Moment der Dankbarkeit. Diese Worte sind Teil des bekannten Reisebittgebets.",
+            "ar": "يصبح الركوب لحظة شكر، وهذه الكلمات جزء من دعاء السفر المعروف."
+          }
+        },
+        {
+          "verse": "43:22",
+          "check": "found our fathers",
+          "title": {
+            "en": "Custom is not proof",
+            "de": "Gewohnheit ist kein Beweis",
+            "ar": "العادة ليست دليلًا"
+          },
+          "body": {
+            "en": "Honouring one's parents is good. The surah criticises following them blindly once the truth has come.",
+            "de": "Die Eltern zu ehren ist gut. Die Sure kritisiert, ihnen blind zu folgen, wenn die Wahrheit gekommen ist.",
+            "ar": "برّ الآباء خير، لكن السورة تذم اتباعهم اتباعًا أعمى بعد أن جاء الحق."
+          }
+        },
+        {
+          "verse": "43:36",
+          "check": "devil",
+          "title": {
+            "en": "What fills an empty heart",
+            "de": "Was ein leeres Herz füllt",
+            "ar": "ما يملأ القلب الفارغ"
+          },
+          "body": {
+            "en": "When the remembrance of the Merciful leaves a heart, another companion moves in. Dhikr guards the heart.",
+            "de": "Wenn das Gedenken an den Allerbarmer ein Herz verlässt, zieht ein anderer Begleiter ein. Dhikr schützt das Herz.",
+            "ar": "إذا غاب ذكر الرحمن عن القلب سكنه قرين آخر، فالذكر حصن القلب."
+          }
+        },
+        {
+          "verse": "43:67",
+          "check": "Close friends",
+          "title": {
+            "en": "Friendship that lasts",
+            "de": "Freundschaft, die bleibt",
+            "ar": "صداقة تدوم"
+          },
+          "body": {
+            "en": "On that Day close friends turn against each other, except those whose bond was built on taqwa.",
+            "de": "An jenem Tag wenden sich enge Freunde gegeneinander, außer denen, deren Bund auf Gottesfurcht gebaut war.",
+            "ar": "في ذلك اليوم ينقلب الأصدقاء خصومًا، إلا من قامت صحبتهم على التقوى."
+          }
+        },
+        {
+          "title": {
+            "en": "Take with you",
+            "de": "Zum Mitnehmen",
+            "ar": "خذ معك"
+          },
+          "list": {
+            "en": [
+              "Measure success by what lasts",
+              "Say the travel dua when you set out",
+              "Ask whether a habit is truth or only custom",
+              "Choose friends who remind you of Allah"
+            ],
+            "de": [
+              "Messen Sie Erfolg an dem, was bleibt",
+              "Sprechen Sie beim Aufbruch das Reisebittgebet",
+              "Prüfen Sie, ob eine Gewohnheit Wahrheit ist oder nur Brauch",
+              "Wählen Sie Freunde, die Sie an Allah erinnern"
+            ],
+            "ar": [
+              "قِس النجاح بما يبقى",
+              "ردّد دعاء السفر عند الانطلاق",
+              "اسأل: هل هذه العادة حق أم مجرد عرف؟",
+              "اختر أصدقاء يذكّرونك بالله"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah az-Zukhruf",
+          "url": "https://quran.com/43"
+        }
+      ]
+    },
+    {
+      "id": "surah-044-ad-dukhan",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Surah 44 · Makki",
+          "de": "Sure 44 · mekkanisch",
+          "ar": "سورة ٤٤ · مكية"
+        },
+        "title": {
+          "en": "Surah ad-Dukhan in 5 slides",
+          "de": "Die Sure ad-Dukhan in 5 Bildern",
+          "ar": "سورة الدخان في خمس شرائح"
+        },
+        "sub": {
+          "en": "Ad-Dukhan means “The Smoke”, after a sign described in verse 10",
+          "de": "Ad-Dukhan bedeutet „Der Rauch“, nach einem Zeichen, das in Vers 10 beschrieben wird",
+          "ar": "الدخان: اسم مأخوذ من علامة تصفها الآية العاشرة"
+        },
+        "arabic": "سورة الدخان"
+      },
+      "slides": [
+        {
+          "verse": "44:2-4",
+          "check": "blessed night",
+          "title": {
+            "en": "Sent down in a blessed night",
+            "de": "In einer gesegneten Nacht herabgesandt",
+            "ar": "ليلة مباركة"
+          },
+          "body": {
+            "en": "Most commentators understand this night as Laylat al-Qadr in Ramadan, the night in which every wise matter is decided.",
+            "de": "Die meisten Kommentatoren verstehen diese Nacht als Laylat al-Qadr im Ramadan, die Nacht, in der jede weise Angelegenheit entschieden wird.",
+            "ar": "يرى أكثر المفسرين أنها ليلة القدر في رمضان، الليلة التي تُقضى فيها الأمور بحكمة."
+          }
+        },
+        {
+          "verse": "44:10-12",
+          "check": "visible smoke",
+          "title": {
+            "en": "The sign of the smoke",
+            "de": "Das Zeichen des Rauchs",
+            "ar": "علامة الدخان"
+          },
+          "body": {
+            "en": "Scholars differ: some companions saw it as a hardship that struck Mecca, others as a sign still to come before the Hour.",
+            "de": "Die Gelehrten sind sich uneinig: Manche Gefährten sahen darin eine Not, die Mekka traf, andere ein Zeichen, das vor der Stunde noch kommt.",
+            "ar": "اختلف العلماء: فمن الصحابة من رآه شدة أصابت مكة، ومنهم من رآه علامة آتية قبل قيام الساعة."
+          }
+        },
+        {
+          "verse": "44:25-27",
+          "check": "gardens and springs",
+          "title": {
+            "en": "What Pharaoh left behind",
+            "de": "Was Pharao zurückließ",
+            "ar": "ما تركه فرعون"
+          },
+          "body": {
+            "en": "Gardens, springs, fine dwellings and comfort: left in a moment and inherited by others (verse 28).",
+            "de": "Gärten, Quellen, edle Wohnstätten und Behaglichkeit: in einem Augenblick verlassen und von anderen geerbt (Vers 28).",
+            "ar": "بساتين وينابيع ومساكن فاخرة ورغد عيش، تُركت كلها في لحظة وورثها غيرهم (الآية ٢٨)."
+          }
+        },
+        {
+          "verse": "44:38-39",
+          "check": "in play",
+          "title": {
+            "en": "Nothing was created in vain",
+            "de": "Nichts wurde zum Spiel erschaffen",
+            "ar": "لم يُخلق شيء عبثًا"
+          },
+          "body": {
+            "en": "The heavens and the earth have a purpose, and so does every human life.",
+            "de": "Die Himmel und die Erde haben einen Sinn, und ebenso jedes menschliche Leben.",
+            "ar": "للسماوات والأرض غاية، وكذلك لكل حياة إنسان."
+          }
+        },
+        {
+          "title": {
+            "en": "Take with you",
+            "de": "Zum Mitnehmen",
+            "ar": "خذ معك"
+          },
+          "list": {
+            "en": [
+              "Seek Laylat al-Qadr in the nights of Ramadan",
+              "Do not tie your heart to what you must leave",
+              "Live with purpose: your life has one",
+              "Read a little Quran daily: it was made easy (verse 58)"
+            ],
+            "de": [
+              "Suchen Sie Laylat al-Qadr in den Nächten des Ramadan",
+              "Hängen Sie Ihr Herz nicht an das, was Sie zurücklassen müssen",
+              "Leben Sie mit Sinn: Ihr Leben hat einen",
+              "Lesen Sie täglich ein wenig Koran: Er wurde leicht gemacht (Vers 58)"
+            ],
+            "ar": [
+              "تحرَّ ليلة القدر في ليالي رمضان",
+              "لا تعلّق قلبك بما ستتركه",
+              "عش لغاية، فلحياتك غاية",
+              "اقرأ شيئًا من القرآن كل يوم، فقد يسّره الله (الآية ٥٨)"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah ad-Dukhan",
+          "url": "https://quran.com/44"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-045-al-jathiyah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Surah 45 · Makki",
+          "de": "Sure 45 · mekkanisch",
+          "ar": "سورة ٤٥ · مكية"
+        },
+        "title": {
+          "en": "What Surah al-Jathiyah teaches about signs and desire",
+          "de": "Was die Sure al-Jathiyah über Zeichen und Begierde lehrt",
+          "ar": "ماذا تعلّمنا سورة الجاثية عن الآيات والهوى"
+        },
+        "sub": {
+          "en": "Al-Jathiyah means “The Crouching”: every nation kneeling on the Day of Judgement",
+          "de": "Al-Jathiyah bedeutet „Die Kniende“: jede Gemeinschaft auf Knien am Tag des Gerichts",
+          "ar": "الجاثية: الأمم تجثو على الركب يوم الحساب"
+        },
+        "arabic": "سورة الجاثية"
+      },
+      "slides": [
+        {
+          "verse": "45:3-5",
+          "check": "signs for a people who reason",
+          "title": {
+            "en": "Signs everywhere",
+            "de": "Überall Zeichen",
+            "ar": "آيات في كل مكان"
+          },
+          "body": {
+            "en": "Sky and earth, our own bodies, night and day, rain and wind: the surah opens with an invitation to look and think.",
+            "de": "Himmel und Erde, unser eigener Körper, Nacht und Tag, Regen und Wind: Die Sure beginnt mit einer Einladung zum Schauen und Nachdenken.",
+            "ar": "السماء والأرض، وأجسادنا، والليل والنهار، والمطر والرياح: تبدأ السورة بدعوة إلى النظر والتفكر."
+          }
+        },
+        {
+          "verse": "45:13",
+          "check": "subjected to you",
+          "title": {
+            "en": "All of it in your service",
+            "de": "Alles in Ihren Dienst gestellt",
+            "ar": "كل ذلك مسخَّر لك"
+          },
+          "body": {
+            "en": "Creation is a trust, not a possession. What serves us is a gift that calls for gratitude and care.",
+            "de": "Die Schöpfung ist anvertraut, kein Besitz. Was uns dient, ist ein Geschenk, das Dankbarkeit und Sorgfalt verlangt.",
+            "ar": "الخلق أمانة لا ملك، وما سُخّر لنا نعمة تستوجب الشكر والرعاية."
+          }
+        },
+        {
+          "verse": "45:23",
+          "check": "taken as his god",
+          "title": {
+            "en": "When desire becomes a god",
+            "de": "Wenn die Begierde zum Gott wird",
+            "ar": "حين يصير الهوى إلهًا"
+          },
+          "body": {
+            "en": "One can worship without any idol, simply by obeying every wish. The surah warns of this hidden form of worship.",
+            "de": "Man kann ohne jedes Götzenbild anbeten, indem man jedem Wunsch gehorcht. Die Sure warnt vor dieser verborgenen Form der Anbetung.",
+            "ar": "قد يعبد الإنسان بلا صنم، بأن يطيع كل رغبة. والسورة تحذر من هذه العبادة الخفية."
+          }
+        },
+        {
+          "hadith": "bukhari:4826",
+          "check": "I am Time",
+          "title": {
+            "en": "Do not blame time",
+            "de": "Schelten Sie nicht die Zeit",
+            "ar": "لا تلُم الزمان"
+          },
+          "body": {
+            "en": "In verse 24 the deniers blame time for death. In this hadith qudsi, Allah teaches that He is the One who turns night and day.",
+            "de": "In Vers 24 machen die Leugner die Zeit für den Tod verantwortlich. In diesem Hadith Qudsi lehrt Allah, dass Er Nacht und Tag wechseln lässt.",
+            "ar": "في الآية ٢٤ ينسب المنكرون الموت إلى الدهر، وفي هذا الحديث القدسي يبيّن الله أنه هو الذي يقلّب الليل والنهار."
+          }
+        },
+        {
+          "verse": "45:28",
+          "check": "kneeling",
+          "title": {
+            "en": "Every nation kneeling",
+            "de": "Jede Gemeinschaft auf Knien",
+            "ar": "كل أمة على ركبها"
+          },
+          "body": {
+            "en": "The surah takes its name from this scene. Each community will be called to its own record.",
+            "de": "Die Sure hat ihren Namen von dieser Szene. Jede Gemeinschaft wird zu ihrem eigenen Buch gerufen.",
+            "ar": "من هذا المشهد أخذت السورة اسمها، وستُنادى كل جماعة إلى سجل أعمالها."
+          }
+        },
+        {
+          "title": {
+            "en": "Living with these verses",
+            "de": "Mit diesen Versen leben",
+            "ar": "العيش مع هذه الآيات"
+          },
+          "list": {
+            "en": [
+              "Pause once a day to notice one sign of Allah",
+              "Treat nature as a trust",
+              "Before a choice ask: His will or my wish?",
+              "Do not curse time; turn to its Lord"
+            ],
+            "de": [
+              "Halten Sie einmal am Tag inne und bemerken Sie ein Zeichen Allahs",
+              "Behandeln Sie die Natur als anvertrautes Gut",
+              "Fragen Sie vor einer Wahl: Sein Wille oder mein Wunsch?",
+              "Schelten Sie nicht die Zeit, wenden Sie sich an ihren Herrn"
+            ],
+            "ar": [
+              "توقف مرة كل يوم لتلاحظ آية من آيات الله",
+              "تعامل مع الطبيعة كأمانة",
+              "اسأل قبل أي اختيار: مراده أم رغبتي؟",
+              "لا تلُم الزمان، بل توجّه إلى ربه"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Jathiyah",
+          "url": "https://quran.com/45"
+        }
+      ]
+    },
+    {
+      "id": "surah-046-al-ahqaf",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Surah 46 · Makki",
+          "de": "Sure 46 · mekkanisch",
+          "ar": "سورة ٤٦ · مكية"
+        },
+        "title": {
+          "en": "6 lessons from Surah al-Ahqaf",
+          "de": "6 Lehren aus der Sure al-Ahqaf",
+          "ar": "ستة دروس من سورة الأحقاف"
+        },
+        "sub": {
+          "en": "Al-Ahqaf means “The Wind-Curved Sandhills”, the land where the people of 'Ad were warned",
+          "de": "Al-Ahqaf bedeutet „Die vom Wind gewundenen Sanddünen“, das Land, in dem das Volk der 'Ad gewarnt wurde",
+          "ar": "الأحقاف: كثبان الرمل المعوجّة، الأرض التي أُنذر فيها قوم عاد"
+        },
+        "arabic": "سورة الأحقاف"
+      },
+      "slides": [
+        {
+          "verse": "46:13",
+          "check": "remained on a right course",
+          "title": {
+            "en": "Faith that stays",
+            "de": "Ein Glaube, der bleibt",
+            "ar": "إيمان ثابت"
+          },
+          "body": {
+            "en": "Those who declare Allah their Lord and then stay steady are promised freedom from fear and grief.",
+            "de": "Wer Allah als seinen Herrn bekennt und dann standhaft bleibt, dem wird verheißen: keine Furcht und keine Trauer.",
+            "ar": "من أقرّ بأن الله ربه ثم ثبت، وُعد بالأمان من الخوف والحزن."
+          }
+        },
+        {
+          "title": {
+            "en": "A mother's hardship",
+            "de": "Die Mühe einer Mutter",
+            "ar": "مشقة الأم"
+          },
+          "body": {
+            "en": "Verse 15 commands kindness to parents and then turns to the mother: the long months of pregnancy, the pain of birth, the years of nursing. The Quran asks us to remember what we ourselves cannot remember.",
+            "de": "Vers 15 gebietet Güte gegenüber den Eltern und wendet sich dann der Mutter zu: die langen Monate der Schwangerschaft, der Schmerz der Geburt, die Zeit des Stillens. Der Koran lässt uns an das denken, woran wir uns selbst nicht erinnern können.",
+            "ar": "تأمر الآية ١٥ بالإحسان إلى الوالدين ثم تلتفت إلى الأم: أشهر الحمل الطويلة، وألم الولادة، ومدة الرضاع. يذكّرنا القرآن بما لا نستطيع نحن أن نتذكره."
+          }
+        },
+        {
+          "hadith": "bukhari:5971",
+          "check": "Your mother",
+          "title": {
+            "en": "Your mother, three times",
+            "de": "Ihre Mutter, dreimal",
+            "ar": "أمك ثلاث مرات"
+          },
+          "body": {
+            "en": "The Prophet's answer mirrors the verse: a mother's right to kind companionship comes first.",
+            "de": "Die Antwort des Propheten spiegelt den Vers: Das Recht der Mutter auf gute Begleitung steht an erster Stelle.",
+            "ar": "جواب النبي صلى الله عليه وسلم يوافق الآية: حق الأم في حسن الصحبة مقدَّم."
+          }
+        },
+        {
+          "title": {
+            "en": "Forty: a turning point",
+            "de": "Vierzig: ein Wendepunkt",
+            "ar": "الأربعون: نقطة تحول"
+          },
+          "body": {
+            "en": "The same verse names the age of forty, when a person reaches full maturity, asks Allah for gratitude, good deeds and righteous children, and turns to Him in repentance.",
+            "de": "Derselbe Vers nennt das Alter von vierzig Jahren, in dem der Mensch volle Reife erlangt, Allah um Dankbarkeit, gute Taten und rechtschaffene Kinder bittet und sich Ihm reumütig zuwendet.",
+            "ar": "وتذكر الآية نفسها سن الأربعين، حين يبلغ الإنسان تمام نضجه، فيسأل الله الشكر والعمل الصالح وصلاح الذرية، ويتوب إليه."
+          }
+        },
+        {
+          "verse": "46:29-30",
+          "check": "listening to the Qur",
+          "title": {
+            "en": "The jinn who listened",
+            "de": "Die Dschinn, die zuhörten",
+            "ar": "الجن الذين استمعوا"
+          },
+          "body": {
+            "en": "A group of jinn heard the Quran, believed and went back to their people as warners. Listening well can change a people.",
+            "de": "Eine Gruppe von Dschinn hörte den Koran, glaubte und kehrte als Warner zu ihrem Volk zurück. Gutes Zuhören kann ein Volk verändern.",
+            "ar": "سمعت جماعة من الجن القرآن فآمنوا، ثم عادوا إلى قومهم يحذّرونهم. حسن الاستماع قد يغيّر قومًا بأكملهم."
+          }
+        },
+        {
+          "verse": "46:35",
+          "check": "determination among the messengers",
+          "title": {
+            "en": "Patience of the firm-hearted",
+            "de": "Die Geduld der Entschlossenen",
+            "ar": "صبر أولي العزم"
+          },
+          "body": {
+            "en": "The Prophet is told to be patient like the messengers of firm resolve. Seen from the end, this life will feel like an hour.",
+            "de": "Dem Propheten wird gesagt, geduldig zu sein wie die Gesandten fester Entschlossenheit. Vom Ende her gesehen wirkt dieses Leben wie eine Stunde.",
+            "ar": "يؤمر النبي بأن يصبر مثل أصحاب العزم من المرسلين، ومن منظر النهاية ستبدو هذه الحياة كساعة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Ahqaf",
+          "url": "https://quran.com/46"
+        }
+      ]
+    },
+    {
+      "id": "surah-047-muhammad",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Surah 47 · Madani",
+          "de": "Sure 47 · medinensisch",
+          "ar": "سورة ٤٧ · مدنية"
+        },
+        "title": {
+          "en": "Surah Muhammad in 5 slides",
+          "de": "Die Sure Muhammad in 5 Bildern",
+          "ar": "سورة محمد في خمس شرائح"
+        },
+        "sub": {
+          "en": "Named after the Prophet, peace be upon him, whose name appears in verse 2",
+          "de": "Benannt nach dem Propheten, Friede sei mit ihm, dessen Name in Vers 2 steht",
+          "ar": "سُميت باسم النبي صلى الله عليه وسلم الوارد في الآية الثانية"
+        },
+        "arabic": "سورة محمد"
+      },
+      "slides": [
+        {
+          "verse": "47:2",
+          "check": "sent down upon Muhammad",
+          "title": {
+            "en": "Faith that sets a life right",
+            "de": "Ein Glaube, der das Leben ordnet",
+            "ar": "إيمان يصلح الحال"
+          },
+          "body": {
+            "en": "Belief, good deeds and trust in what was revealed to Muhammad: Allah removes misdeeds and sets the believers' state right.",
+            "de": "Glaube, gute Taten und Vertrauen in das, was Muhammad offenbart wurde: Allah tilgt die Verfehlungen und bringt den Zustand der Gläubigen in Ordnung.",
+            "ar": "إيمان وعمل صالح وتصديق بما أُنزل على النبي ﷺ: فيمحو الله الخطايا ويقوّم أحوال المؤمنين."
+          }
+        },
+        {
+          "verse": "47:7",
+          "check": "plant firmly your feet",
+          "title": {
+            "en": "Stand for His cause",
+            "de": "Für Seine Sache einstehen",
+            "ar": "نصرة تعود عليك"
+          },
+          "body": {
+            "en": "Supporting Allah means standing up for His religion and His commands. The promise in return: steady feet.",
+            "de": "Allah zu unterstützen heißt, für Seine Religion und Seine Gebote einzustehen. Die Verheißung dafür: feste Füße.",
+            "ar": "نصرة الله هي نصرة دينه والقيام بأمره، والوعد في المقابل: ثبات الأقدام."
+          }
+        },
+        {
+          "verse": "47:19",
+          "check": "no deity except Allah",
+          "title": {
+            "en": "Know first, then act",
+            "de": "Erst wissen, dann handeln",
+            "ar": "العلم قبل القول والعمل"
+          },
+          "body": {
+            "en": "Imam al-Bukhari titled a chapter with this idea: knowledge comes before speech and action. First tawhid, then seeking forgiveness.",
+            "de": "Imam al-Bukhari überschrieb ein Kapitel mit diesem Gedanken: Wissen kommt vor Wort und Tat. Zuerst der Tawhid, dann die Bitte um Vergebung.",
+            "ar": "بوّب الإمام البخاري بهذا المعنى: العلم قبل القول والعمل. فالتوحيد أولًا، ثم الاستغفار."
+          }
+        },
+        {
+          "verse": "47:24",
+          "check": "reflect upon the Qur",
+          "title": {
+            "en": "Read with a living heart",
+            "de": "Mit lebendigem Herzen lesen",
+            "ar": "اقرأ بقلب حي"
+          },
+          "body": {
+            "en": "Reading is not enough. The Quran asks to be pondered, and warns of hearts that stay locked.",
+            "de": "Lesen allein genügt nicht. Der Koran will bedacht werden und warnt vor Herzen, die verschlossen bleiben.",
+            "ar": "لا تكفي القراءة وحدها؛ فالقرآن يدعو إلى التدبر، ويحذّر من القلوب المغلقة."
+          }
+        },
+        {
+          "title": {
+            "en": "Did you know?",
+            "de": "Wussten Sie schon?",
+            "ar": "هل تعلم؟"
+          },
+          "arabic": "مُحَمَّد",
+          "body": {
+            "en": "The name Muhammad appears four times in the Quran: in 3:144, 33:40, here in 47:2 and in 48:29. The surah is also known as al-Qital, as much of it addresses the struggles of Medina.",
+            "de": "Der Name Muhammad kommt im Koran viermal vor: in 3:144, 33:40, hier in 47:2 und in 48:29. Die Sure heißt auch al-Qital, da sie viel von den Kämpfen in Medina handelt.",
+            "ar": "ورد اسم محمد في القرآن أربع مرات: في ٣:١٤٤ و٣٣:٤٠ وهنا في ٤٧:٢ وفي ٤٨:٢٩. وتُسمى السورة أيضًا سورة القتال لأن كثيرًا منها يتناول مواجهات المدينة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah Muhammad",
+          "url": "https://quran.com/47"
+        },
+        {
+          "label": "Sahih al-Bukhari, Book of Knowledge, chapter: Knowledge before speech and action"
+        }
+      ]
+    },
+    {
+      "id": "surah-048-al-fath",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Surah 48 · Madani",
+          "de": "Sure 48 · medinensisch",
+          "ar": "سورة ٤٨ · مدنية"
+        },
+        "title": {
+          "en": "Surah al-Fath: when a setback became a victory",
+          "de": "Die Sure al-Fath: als ein Rückschlag zum Sieg wurde",
+          "ar": "سورة الفتح: حين صار التراجع فتحًا"
+        },
+        "sub": {
+          "en": "Al-Fath means “The Victory”. It came after the Treaty of Hudaybiyyah",
+          "de": "Al-Fath bedeutet „Der Sieg“. Sie kam nach dem Vertrag von Hudaybiyyah",
+          "ar": "الفتح: نزلت بعد صلح الحديبية"
+        },
+        "arabic": "سورة الفتح"
+      },
+      "slides": [
+        {
+          "verse": "48:1-3",
+          "check": "clear conquest",
+          "title": {
+            "en": "A victory no one expected",
+            "de": "Ein Sieg, den niemand erwartet hatte",
+            "ar": "فتح لم يتوقعه أحد"
+          },
+          "body": {
+            "en": "Some companions felt the treaty was a loss. Allah called it a clear victory: peace opened doors that battles could not.",
+            "de": "Manche Gefährten empfanden den Vertrag als Niederlage. Allah nannte ihn einen klaren Sieg: Der Frieden öffnete Türen, die kein Kampf öffnen konnte.",
+            "ar": "رأى بعض الصحابة في الصلح خسارة، فسمّاه الله فتحًا واضحًا؛ إذ فتح السلم أبوابًا لم تفتحها المعارك."
+          }
+        },
+        {
+          "verse": "48:4",
+          "check": "tranquility",
+          "title": {
+            "en": "Calm sent into hearts",
+            "de": "Ruhe, in die Herzen gesandt",
+            "ar": "سكينة في القلوب"
+          },
+          "body": {
+            "en": "Sakinah, a deep calm, is a gift from Allah. With it faith grows, even when circumstances are hard.",
+            "de": "Sakina, eine tiefe Ruhe, ist ein Geschenk Allahs. Mit ihr wächst der Glaube, auch wenn die Umstände schwer sind.",
+            "ar": "السكينة هبة من الله، يزداد بها الإيمان ولو اشتدت الظروف."
+          }
+        },
+        {
+          "verse": "48:18",
+          "check": "under the tree",
+          "title": {
+            "en": "The pledge under the tree",
+            "de": "Der Treueid unter dem Baum",
+            "ar": "بيعة تحت الشجرة"
+          },
+          "body": {
+            "en": "Allah declared His pleasure with those who pledged loyalty at Hudaybiyyah. He knew what was in their hearts.",
+            "de": "Allah erklärte Sein Wohlgefallen an denen, die in Hudaybiyyah den Treueid leisteten. Er wusste, was in ihren Herzen war.",
+            "ar": "أعلن الله رضاه عن الذين بايعوا في الحديبية، وقد علم صدق قلوبهم."
+          }
+        },
+        {
+          "hadith": "bukhari:4835",
+          "check": "Al-Fath",
+          "title": {
+            "en": "Recited on the day Mecca opened",
+            "de": "Rezitiert am Tag der Öffnung Mekkas",
+            "ar": "تلاوتها يوم فتح مكة"
+          },
+          "body": {
+            "en": "Less than two years after the treaty, Mecca was opened. On that day the Prophet recited this surah with a beautiful voice.",
+            "de": "Weniger als zwei Jahre nach dem Vertrag wurde Mekka geöffnet. An diesem Tag rezitierte der Prophet diese Sure mit schöner Stimme.",
+            "ar": "بعد أقل من عامين من الصلح فُتحت مكة، وفي ذلك اليوم قرأ النبي صلى الله عليه وسلم هذه السورة بصوت حسن."
+          }
+        },
+        {
+          "title": {
+            "en": "Did you know?",
+            "de": "Wussten Sie schon?",
+            "ar": "هل تعلم؟"
+          },
+          "body": {
+            "en": "This surah was revealed on the way back from Hudaybiyyah. Sahih al-Bukhari reports that the Prophet said he loved it more than the whole world.",
+            "de": "Diese Sure wurde auf dem Rückweg von Hudaybiyyah offenbart. Sahih al-Bukhari berichtet, dass der Prophet sagte, er liebe sie mehr als die ganze Welt.",
+            "ar": "نزلت هذه السورة في طريق العودة من الحديبية، وفي صحيح البخاري أن النبي صلى الله عليه وسلم أخبر أنها أحب إليه من الدنيا كلها."
+          }
+        },
+        {
+          "title": {
+            "en": "Lessons for hard times",
+            "de": "Lehren für schwere Zeiten",
+            "ar": "دروس للأوقات الصعبة"
+          },
+          "list": {
+            "en": [
+              "A setback may be the start of an opening",
+              "Ask Allah for sakinah when you are anxious",
+              "Keep your word, even when it costs you",
+              "Judge by the outcome, not the first moment"
+            ],
+            "de": [
+              "Ein Rückschlag kann der Anfang einer Öffnung sein",
+              "Bitten Sie Allah um Sakina, wenn Sie unruhig sind",
+              "Halten Sie Ihr Wort, auch wenn es Sie etwas kostet",
+              "Urteilen Sie nach dem Ausgang, nicht nach dem ersten Moment"
+            ],
+            "ar": [
+              "قد يكون التراجع بداية فتح",
+              "اسأل الله السكينة حين يقلقك أمر",
+              "أوفِ بكلمتك ولو كلّفك ذلك",
+              "احكم بالعاقبة لا باللحظة الأولى"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Fath",
+          "url": "https://quran.com/48"
+        },
+        {
+          "label": "Sahih al-Bukhari, Book of Tafsir, Surat al-Fath"
+        }
+      ]
+    },
+    {
+      "id": "surah-049-al-hujurat",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Surah 49 · Madani",
+          "de": "Sure 49 · medinensisch",
+          "ar": "سورة ٤٩ · مدنية"
+        },
+        "title": {
+          "en": "What Surah al-Hujurat teaches about manners",
+          "de": "Was die Sure al-Hujurat über gutes Benehmen lehrt",
+          "ar": "ماذا تعلّمنا سورة الحجرات عن الأدب"
+        },
+        "sub": {
+          "en": "Al-Hujurat means “The Rooms”, the private chambers of the Prophet's household (verse 4)",
+          "de": "Al-Hujurat bedeutet „Die Gemächer“, die privaten Räume des Prophetenhauses (Vers 4)",
+          "ar": "الحجرات: غرف بيوت النبي صلى الله عليه وسلم (الآية ٤)"
+        },
+        "arabic": "سورة الحجرات"
+      },
+      "slides": [
+        {
+          "verse": "49:2",
+          "check": "raise your voices",
+          "title": {
+            "en": "Manners with the Prophet",
+            "de": "Anstand gegenüber dem Propheten",
+            "ar": "الأدب مع النبي"
+          },
+          "body": {
+            "en": "The surah begins with respect: not rushing ahead of Allah and His Messenger, and not raising one's voice over his.",
+            "de": "Die Sure beginnt mit Respekt: Allah und Seinem Gesandten nicht vorauseilen und die Stimme nicht über seine erheben.",
+            "ar": "تبدأ السورة بالأدب: ألا يسبق المؤمن حكم الله ورسوله، وألا يعلو صوته على صوت النبي."
+          }
+        },
+        {
+          "verse": "49:6",
+          "check": "investigate",
+          "title": {
+            "en": "Check the news",
+            "de": "Nachrichten prüfen",
+            "ar": "تثبّت من الخبر"
+          },
+          "body": {
+            "en": "Before acting on a report, verify it. One unchecked message can harm a whole people. A lesson for the age of forwarding.",
+            "de": "Bevor man auf eine Nachricht hin handelt, soll man sie prüfen. Eine ungeprüfte Meldung kann vielen schaden. Eine Lehre für das Zeitalter des Weiterleitens.",
+            "ar": "قبل أن تبني على خبر تثبّت منه، فرسالة واحدة بلا تحقق قد تؤذي قومًا. درس لعصر المشاركة السريعة."
+          }
+        },
+        {
+          "verse": "49:10",
+          "check": "brothers",
+          "title": {
+            "en": "One family of faith",
+            "de": "Eine Familie im Glauben",
+            "ar": "أسرة واحدة في الإيمان"
+          },
+          "body": {
+            "en": "Believers are brothers and sisters. When two of them quarrel, the others are asked to make peace between them.",
+            "de": "Die Gläubigen sind Geschwister. Wenn zwei von ihnen streiten, sollen die anderen Frieden zwischen ihnen stiften.",
+            "ar": "المؤمنون إخوة، وإذا تخاصم اثنان منهم فعلى الآخرين أن يصلحوا بينهما."
+          }
+        },
+        {
+          "verse": "49:11",
+          "check": "ridicule",
+          "title": {
+            "en": "No mockery, no nicknames",
+            "de": "Kein Spott, keine Spitznamen",
+            "ar": "لا سخرية ولا ألقاب جارحة"
+          },
+          "body": {
+            "en": "The one you laugh at may be better than you before Allah. Words that wound are named as disobedience.",
+            "de": "Wer verspottet wird, ist vor Allah vielleicht besser als der Spötter. Verletzende Worte werden als Ungehorsam bezeichnet.",
+            "ar": "من تسخر منه قد يكون عند الله خيرًا منك، والكلمات الجارحة توصف بالفسوق."
+          }
+        },
+        {
+          "verse": "49:12",
+          "check": "backbite",
+          "title": {
+            "en": "Guard the absent",
+            "de": "Die Abwesenden schützen",
+            "ar": "احفظ الغائب"
+          },
+          "body": {
+            "en": "Bad assumptions, spying and backbiting are forbidden. The image is strong on purpose: backbiting is a meal no one would want.",
+            "de": "Schlechte Vermutungen, Spionieren und üble Nachrede sind verboten. Das Bild ist absichtlich stark: Üble Nachrede ist ein Mahl, das niemand wollte.",
+            "ar": "سوء الظن والتجسس والغيبة محرّمة، والتشبيه قوي عن قصد: الغيبة طعام لا يرضاه أحد."
+          }
+        },
+        {
+          "hadith": "bukhari:6724",
+          "check": "Beware of suspicion",
+          "title": {
+            "en": "The same values from the Prophet",
+            "de": "Dieselben Werte vom Propheten",
+            "ar": "القيم نفسها على لسان النبي"
+          },
+          "body": {
+            "en": "No suspicion, no spying, no hatred, no cutting ties: the Prophet's words describe a community that holds together.",
+            "de": "Kein Argwohn, kein Spionieren, kein Hass, kein Abbrechen der Beziehungen: Die Worte des Propheten beschreiben eine Gemeinschaft, die zusammenhält.",
+            "ar": "لا سوء ظن ولا تجسس ولا تباغض ولا قطيعة: كلمات النبي صلى الله عليه وسلم ترسم مجتمعًا متماسكًا."
+          }
+        },
+        {
+          "verse": "49:13",
+          "check": "most noble",
+          "title": {
+            "en": "The only ranking that counts",
+            "de": "Die einzige Rangordnung, die zählt",
+            "ar": "الميزان الوحيد"
+          },
+          "body": {
+            "en": "Peoples and tribes exist so we may know one another. Before Allah, honour is measured by taqwa alone.",
+            "de": "Völker und Stämme gibt es, damit wir einander kennenlernen. Vor Allah zählt allein die Gottesfurcht.",
+            "ar": "جُعل تنوع الأمم والقبائل للتعارف، والكرامة عند الله بالتقوى وحدها."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Hujurat",
+          "url": "https://quran.com/49"
+        }
+      ]
+    },
+    {
+      "id": "surah-050-qaf",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Surah 50 · Makki",
+          "de": "Sure 50 · mekkanisch",
+          "ar": "سورة ٥٠ · مكية"
+        },
+        "title": {
+          "en": "Surah Qaf in 6 slides",
+          "de": "Die Sure Qaf in 6 Bildern",
+          "ar": "سورة ق في ست شرائح"
+        },
+        "sub": {
+          "en": "Named after the letter Qaf that opens it: a surah about death, resurrection and the One who is near",
+          "de": "Benannt nach dem Buchstaben Qaf, mit dem sie beginnt: eine Sure über Tod, Auferstehung und Den, der nahe ist",
+          "ar": "سُميت بحرف القاف الذي تبدأ به: سورة عن الموت والبعث وقرب الله"
+        },
+        "arabic": "سورة ق"
+      },
+      "slides": [
+        {
+          "verse": "50:6-7",
+          "check": "beautiful kind",
+          "title": {
+            "en": "Look up, look around",
+            "de": "Schauen Sie nach oben und umher",
+            "ar": "انظر إلى السماء والأرض"
+          },
+          "body": {
+            "en": "The surah answers doubt about resurrection with creation itself: a sky without cracks, an earth full of beautiful growth.",
+            "de": "Die Sure antwortet auf Zweifel an der Auferstehung mit der Schöpfung selbst: ein Himmel ohne Risse, eine Erde voller schöner Pflanzen.",
+            "ar": "تجيب السورة عن الشك في البعث بالخلق نفسه: سماء بلا شقوق، وأرض مليئة بالنبات البهيج."
+          }
+        },
+        {
+          "verse": "50:16",
+          "check": "jugular vein",
+          "title": {
+            "en": "Nearer than you think",
+            "de": "Näher, als Sie denken",
+            "ar": "أقرب مما تظن"
+          },
+          "body": {
+            "en": "Allah knows even the thoughts we never speak, and He is nearer to us than we are to ourselves.",
+            "de": "Allah kennt selbst die Gedanken, die wir nie aussprechen, und Er ist uns näher als wir uns selbst.",
+            "ar": "يعلم الله حتى الخواطر التي لا ننطق بها، وهو أقرب إلينا من أنفسنا."
+          }
+        },
+        {
+          "verse": "50:18",
+          "check": "observer",
+          "title": {
+            "en": "Every word is recorded",
+            "de": "Jedes Wort wird aufgezeichnet",
+            "ar": "كل كلمة مكتوبة"
+          },
+          "body": {
+            "en": "Nothing we say is lost. A good reason to choose words with care.",
+            "de": "Nichts von dem, was wir sagen, geht verloren. Ein guter Grund, Worte sorgfältig zu wählen.",
+            "ar": "لا تضيع كلمة نقولها، وهذا سبب كافٍ لنختار كلماتنا بعناية."
+          }
+        },
+        {
+          "verse": "50:31-33",
+          "check": "heart returning",
+          "title": {
+            "en": "A heart that keeps returning",
+            "de": "Ein Herz, das immer wieder umkehrt",
+            "ar": "قلب يعود إلى ربه"
+          },
+          "body": {
+            "en": "Paradise is brought close to those who feared their Lord without seeing Him and turned back to Him again and again.",
+            "de": "Das Paradies wird denen nahegebracht, die ihren Herrn fürchteten, ohne Ihn zu sehen, und sich Ihm immer wieder zuwandten.",
+            "ar": "تقترب الجنة ممن خاف ربه وهو لا يراه، وأقبل عليه تائبًا مرة بعد مرة."
+          }
+        },
+        {
+          "hadith": "muslim:2012",
+          "check": "pulpit",
+          "title": {
+            "en": "A Friday sermon surah",
+            "de": "Eine Sure der Freitagspredigt",
+            "ar": "على المنبر كل جمعة"
+          },
+          "body": {
+            "en": "The Prophet recited Qaf so often in his Friday sermon that a woman of Medina learned it from him by heart.",
+            "de": "Der Prophet rezitierte Qaf so oft in seiner Freitagspredigt, dass eine Frau aus Medina die Sure von ihm auswendig lernte.",
+            "ar": "كان النبي صلى الله عليه وسلم يقرأ سورة ق في خطبة الجمعة حتى حفظتها امرأة من أهل المدينة من فمه."
+          }
+        },
+        {
+          "title": {
+            "en": "Take with you",
+            "de": "Zum Mitnehmen",
+            "ar": "خذ معك"
+          },
+          "list": {
+            "en": [
+              "Speak as if every word is written down",
+              "Remember that Allah is near in every moment",
+              "Turn back to Him after every slip",
+              "Read Qaf on a Friday and reflect on it"
+            ],
+            "de": [
+              "Sprechen Sie, als würde jedes Wort aufgeschrieben",
+              "Denken Sie daran, dass Allah in jedem Moment nahe ist",
+              "Kehren Sie nach jedem Fehltritt zu Ihm zurück",
+              "Lesen Sie Qaf an einem Freitag und denken Sie darüber nach"
+            ],
+            "ar": [
+              "تكلّم كأن كل كلمة تُكتب",
+              "تذكّر أن الله قريب في كل لحظة",
+              "ارجع إليه بعد كل زلة",
+              "اقرأ سورة ق يوم الجمعة وتدبّرها"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah Qaf",
+          "url": "https://quran.com/50"
+        }
+      ]
+    },
+    {
+      "id": "surah-051-adh-dhariyat",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Surah 51 · Makki",
+          "de": "Sure 51 · mekkanisch",
+          "ar": "سورة ٥١ · مكية"
+        },
+        "title": {
+          "en": "Why were we created? Surah adh-Dhariyat answers",
+          "de": "Wozu wurden wir erschaffen? Die Sure adh-Dhariyat antwortet",
+          "ar": "لماذا خُلقنا؟ سورة الذاريات تجيب"
+        },
+        "sub": {
+          "en": "Adh-Dhariyat means “The Winnowing Winds”, the scattering winds by which the surah swears",
+          "de": "Adh-Dhariyat bedeutet „Die Aufwirbelnden“: die zerstreuenden Winde, bei denen die Sure schwört",
+          "ar": "الذاريات: الرياح التي تذرو، وبها تُقسم السورة في مطلعها"
+        },
+        "arabic": "سورة الذاريات"
+      },
+      "slides": [
+        {
+          "verse": "51:56",
+          "check": "worship Me",
+          "title": {
+            "en": "The reason we exist",
+            "de": "Der Grund unseres Daseins",
+            "ar": "غاية الوجود"
+          },
+          "body": {
+            "en": "The surah's central answer: we were created to worship Allah. Worship includes every good deed done for His sake.",
+            "de": "Die zentrale Antwort der Sure: Wir wurden erschaffen, um Allah zu dienen. Dazu gehört jede gute Tat, die um Seinetwillen geschieht.",
+            "ar": "الجواب المحوري في السورة: خُلقنا لعبادة الله، والعبادة تشمل كل عمل صالح يُبتغى به وجهه."
+          }
+        },
+        {
+          "verse": "51:20-21",
+          "check": "in yourselves",
+          "title": {
+            "en": "Signs on earth and within",
+            "de": "Zeichen auf der Erde und in Ihnen",
+            "ar": "آيات في الأرض وفي النفس"
+          },
+          "body": {
+            "en": "The surah points to the earth and then to the human self. Your own body and mind are a sign worth pondering.",
+            "de": "Die Sure weist auf die Erde und dann auf den Menschen selbst. Ihr eigener Körper und Geist sind ein Zeichen, das Nachdenken verdient.",
+            "ar": "تشير السورة إلى الأرض ثم إلى الإنسان نفسه؛ فجسدك وعقلك آية تستحق التأمل."
+          }
+        },
+        {
+          "verse": "51:22",
+          "check": "provision",
+          "title": {
+            "en": "Your provision is written",
+            "de": "Ihre Versorgung ist bestimmt",
+            "ar": "رزقك مكتوب"
+          },
+          "body": {
+            "en": "Provision is decreed with Allah. Work for it with effort, but without anxiety.",
+            "de": "Die Versorgung ist bei Allah bestimmt. Arbeiten Sie mit Einsatz dafür, aber ohne Angst.",
+            "ar": "الرزق مقدَّر عند الله، فاسعَ إليه بجدّ ولكن بلا قلق."
+          }
+        },
+        {
+          "verse": "51:24-26",
+          "check": "honored guests",
+          "title": {
+            "en": "Honour your guests",
+            "de": "Ehren Sie Ihre Gäste",
+            "ar": "أكرم ضيفك"
+          },
+          "body": {
+            "en": "Ibrahim greeted strangers with peace and hurried to serve them his best food without asking who they were.",
+            "de": "Ibrahim grüßte Fremde mit Frieden und eilte, ihnen sein bestes Essen aufzutragen, ohne zu fragen, wer sie waren.",
+            "ar": "حيّا إبراهيم الغرباء بالسلام، وأسرع يقدّم لهم أطيب طعامه دون أن يسألهم من هم."
+          }
+        },
+        {
+          "verse": "51:17-18",
+          "check": "ask forgiveness",
+          "title": {
+            "en": "The secret of the night",
+            "de": "Das Geheimnis der Nacht",
+            "ar": "سر الليل"
+          },
+          "body": {
+            "en": "The righteous slept little and sought forgiveness before dawn, in the quiet hours of the night.",
+            "de": "Die Rechtschaffenen schliefen wenig und baten vor der Morgendämmerung um Vergebung, in den stillen Stunden der Nacht.",
+            "ar": "كان الصالحون قليلي النوم، يستغفرون قبيل الفجر في ساعات الليل الهادئة."
+          }
+        },
+        {
+          "hadith": "bukhari:1145",
+          "check": "last third of the night",
+          "title": {
+            "en": "A call in the last third of the night",
+            "de": "Ein Ruf im letzten Drittel der Nacht",
+            "ar": "نداء في آخر الليل"
+          },
+          "body": {
+            "en": "This hadith shows why the hours before dawn are so precious for dua and seeking forgiveness.",
+            "de": "Dieser Hadith zeigt, warum die Stunden vor der Morgendämmerung für Bittgebet und Vergebung so kostbar sind.",
+            "ar": "يبيّن هذا الحديث لماذا كانت ساعات السَّحَر ثمينة للدعاء والاستغفار."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah adh-Dhariyat",
+          "url": "https://quran.com/51"
+        }
+      ]
+    },
+    {
+      "id": "surah-052-at-tur",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Surah 52 · Makki",
+          "de": "Sure 52 · mekkanisch",
+          "ar": "سورة ٥٢ · مكية"
+        },
+        "title": {
+          "en": "Surah at-Tur: the questions that moved a heart",
+          "de": "Die Sure at-Tur: Fragen, die ein Herz bewegten",
+          "ar": "سورة الطور: أسئلة هزّت قلبًا"
+        },
+        "sub": {
+          "en": "At-Tur means “The Mount”, the mountain where Allah spoke to Musa",
+          "de": "At-Tur bedeutet „Der Berg“, der Berg, an dem Allah zu Musa sprach",
+          "ar": "الطور: الجبل الذي كلّم الله عنده موسى عليه السلام"
+        },
+        "arabic": "سورة الطور"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Five oaths",
+            "de": "Fünf Schwüre",
+            "ar": "خمسة أقسام"
+          },
+          "body": {
+            "en": "The surah opens by swearing by the Mount, a written Book, the Frequented House, the raised canopy of the sky and the sea. Then comes what they confirm: the Day of Judgement is certain.",
+            "de": "Die Sure beginnt mit Schwüren beim Berg, bei einem geschriebenen Buch, beim viel besuchten Haus, beim erhobenen Himmelsdach und beim Meer. Dann folgt, was sie bekräftigen: Der Tag des Gerichts ist gewiss.",
+            "ar": "تبدأ السورة بالقسم بالطور، وبكتاب مكتوب، وبالبيت المعمور، وبالسماء المرفوعة، وبالبحر، ثم يأتي ما تؤكده هذه الأقسام: يوم الحساب واقع لا محالة."
+          }
+        },
+        {
+          "hadith": "bukhari:4854",
+          "check": "my heart was about to fly",
+          "title": {
+            "en": "Jubayr's moment",
+            "de": "Jubayrs Moment",
+            "ar": "لحظة جبير"
+          },
+          "body": {
+            "en": "Jubayr ibn Mut'im heard this surah in the Maghrib prayer before he became Muslim. Verses 35 to 37 shook him deeply.",
+            "de": "Jubayr ibn Mut'im hörte diese Sure im Maghrib-Gebet, bevor er Muslim wurde. Die Verse 35 bis 37 erschütterten ihn tief.",
+            "ar": "سمع جبير بن مطعم هذه السورة في صلاة المغرب قبل إسلامه، فهزّته الآيات من ٣٥ إلى ٣٧."
+          }
+        },
+        {
+          "verse": "52:35-36",
+          "check": "created by nothing",
+          "title": {
+            "en": "Three questions",
+            "de": "Drei Fragen",
+            "ar": "ثلاثة أسئلة"
+          },
+          "body": {
+            "en": "The verses ask where we came from, who made us and who made the sky. Each honest answer points to the Creator.",
+            "de": "Die Verse fragen, woher wir kommen, wer uns gemacht hat und wer den Himmel gemacht hat. Jede ehrliche Antwort weist auf den Schöpfer.",
+            "ar": "تسأل الآيات: من أين جئنا؟ ومن أوجدنا؟ ومن رفع السماء؟ وكل جواب صادق يدل على الخالق."
+          }
+        },
+        {
+          "verse": "52:21",
+          "check": "descendants",
+          "title": {
+            "en": "Families reunited",
+            "de": "Familien wieder vereint",
+            "ar": "لمّ شمل الأسر"
+          },
+          "body": {
+            "en": "Believers will be joined with their believing children in Paradise, without any loss to their own deeds.",
+            "de": "Gläubige werden im Paradies mit ihren gläubigen Kindern vereint, ohne dass ihre eigenen Taten geschmälert werden.",
+            "ar": "يجمع الله المؤمنين بأبنائهم المؤمنين في الجنة دون أن ينقص من أعمالهم شيئًا."
+          }
+        },
+        {
+          "verse": "52:48",
+          "check": "in Our eyes",
+          "title": {
+            "en": "Under His care",
+            "de": "Unter Seiner Obhut",
+            "ar": "في رعاية الله"
+          },
+          "body": {
+            "en": "In hard days the Prophet was told to be patient, for he was under Allah's watchful care. A comfort for every believer.",
+            "de": "In schweren Tagen wurde dem Propheten Geduld geboten, denn er stand unter Allahs wachsamer Obhut. Ein Trost für jeden Gläubigen.",
+            "ar": "في الأيام الصعبة أُمر النبي صلى الله عليه وسلم بالصبر، فهو في رعاية الله وحفظه. وفي ذلك سلوى لكل مؤمن."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah at-Tur",
+          "url": "https://quran.com/52"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-053-an-najm",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Surah 53 · Makki",
+          "de": "Sure 53 · mekkanisch",
+          "ar": "سورة ٥٣ · مكية"
+        },
+        "title": {
+          "en": "5 lessons from Surah an-Najm",
+          "de": "5 Lehren aus der Sure an-Najm",
+          "ar": "خمسة دروس من سورة النجم"
+        },
+        "sub": {
+          "en": "An-Najm means “The Star”: a surah about revelation, effort and humility",
+          "de": "An-Najm bedeutet „Der Stern“: eine Sure über Offenbarung, Mühe und Demut",
+          "ar": "النجم: سورة عن الوحي والسعي والتواضع"
+        },
+        "arabic": "سورة النجم"
+      },
+      "slides": [
+        {
+          "verse": "53:2-4",
+          "check": "inclination",
+          "title": {
+            "en": "He speaks from revelation",
+            "de": "Er spricht aus Offenbarung",
+            "ar": "ينطق عن وحي"
+          },
+          "body": {
+            "en": "The surah opens with an oath: the Prophet has not strayed. What he conveys is revelation, not personal desire.",
+            "de": "Die Sure beginnt mit einem Schwur: Der Prophet ist nicht abgeirrt. Was er übermittelt, ist Offenbarung, nicht eigene Neigung.",
+            "ar": "تبدأ السورة بقسم يؤكد أن النبي لم يضل، وأن ما يبلّغه وحي لا رغبة شخصية."
+          }
+        },
+        {
+          "verse": "53:32",
+          "check": "do not claim yourselves to be pure",
+          "title": {
+            "en": "Do not praise yourself",
+            "de": "Loben Sie sich nicht selbst",
+            "ar": "لا تمدح نفسك"
+          },
+          "body": {
+            "en": "Allah knew us when we were still in our mothers' wombs. He knows best who is truly God-fearing.",
+            "de": "Allah kannte uns schon, als wir im Mutterleib waren. Er weiß am besten, wer wirklich gottesfürchtig ist.",
+            "ar": "عرفنا الله ونحن بعدُ في أرحام أمهاتنا، وهو أدرى بالتقي حقًا."
+          }
+        },
+        {
+          "verse": "53:39-41",
+          "check": "strives",
+          "title": {
+            "en": "Your effort will be seen",
+            "de": "Ihre Mühe wird gesehen",
+            "ar": "سعيك سيُرى"
+          },
+          "body": {
+            "en": "Each person has what they strive for. No effort is wasted, and every effort will be rewarded in full.",
+            "de": "Jeder Mensch hat das, wofür er sich bemüht. Keine Mühe geht verloren, und jede wird voll vergolten.",
+            "ar": "لكل إنسان ثمرة جهده، فلا يضيع عمل، وكل سعي يُجزى كاملًا."
+          }
+        },
+        {
+          "verse": "53:43-44",
+          "check": "laugh and weep",
+          "title": {
+            "en": "Laughter and tears are from Him",
+            "de": "Lachen und Tränen kommen von Ihm",
+            "ar": "الضحك والبكاء بيده"
+          },
+          "body": {
+            "en": "Joy and sorrow, life and death: all of it is in Allah's hand. Turn to Him in both.",
+            "de": "Freude und Trauer, Leben und Tod: Alles liegt in Allahs Hand. Wenden Sie sich in beidem an Ihn.",
+            "ar": "الفرح والحزن والحياة والموت كلها بيد الله، فتوجّه إليه في كل حال."
+          }
+        },
+        {
+          "hadith": "bukhari:4862",
+          "check": "prostration",
+          "title": {
+            "en": "A surah that ends in sujud",
+            "de": "Eine Sure, die in der Niederwerfung endet",
+            "ar": "سورة تُختم بالسجود"
+          },
+          "body": {
+            "en": "When the Prophet completed an-Najm, he prostrated, and everyone present went down with him.",
+            "de": "Als der Prophet an-Najm vollendet hatte, warf er sich nieder, und alle Anwesenden taten es ihm gleich.",
+            "ar": "لما أتم النبي صلى الله عليه وسلم سورة النجم سجد، وسجد معه كل من حضر."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah an-Najm",
+          "url": "https://quran.com/53"
+        }
+      ]
+    },
+    {
+      "id": "surah-054-al-qamar",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Surah 54 · Makki",
+          "de": "Sure 54 · mekkanisch",
+          "ar": "سورة ٥٤ · مكية"
+        },
+        "title": {
+          "en": "Surah al-Qamar and the verse repeated four times",
+          "de": "Die Sure al-Qamar und der Vers, der viermal wiederkehrt",
+          "ar": "سورة القمر والآية التي تتكرر أربع مرات"
+        },
+        "sub": {
+          "en": "Al-Qamar means “The Moon”. It opens with the Hour drawing near and the moon split",
+          "de": "Al-Qamar bedeutet „Der Mond“. Sie beginnt mit der nahenden Stunde und dem gespaltenen Mond",
+          "ar": "القمر: تبدأ السورة باقتراب الساعة وانشقاق القمر"
+        },
+        "arabic": "سورة القمر"
+      },
+      "slides": [
+        {
+          "verse": "54:1",
+          "check": "moon has split",
+          "title": {
+            "en": "The split moon",
+            "de": "Der gespaltene Mond",
+            "ar": "انشقاق القمر"
+          },
+          "body": {
+            "en": "The surah opens with the Hour drawing near and the moon split, a sign shown in the Prophet's time.",
+            "de": "Die Sure beginnt mit der nahenden Stunde und dem gespaltenen Mond, einem Zeichen zur Zeit des Propheten.",
+            "ar": "تبدأ السورة باقتراب الساعة وانشقاق القمر، آية وقعت في زمن النبي صلى الله عليه وسلم."
+          }
+        },
+        {
+          "hadith": "bukhari:3636",
+          "check": "moon was split",
+          "title": {
+            "en": "A sign with witnesses",
+            "de": "Ein Zeichen mit Zeugen",
+            "ar": "آية لها شهود"
+          },
+          "body": {
+            "en": "Abdullah ibn Mas'ud reports the event and the Prophet's call to those who were present.",
+            "de": "Abdullah ibn Mas'ud berichtet von dem Ereignis und dem Aufruf des Propheten an die Anwesenden.",
+            "ar": "يروي عبد الله بن مسعود الحادثة ونداء النبي صلى الله عليه وسلم لمن حضر."
+          }
+        },
+        {
+          "verse": "54:17",
+          "check": "easy for remembrance",
+          "title": {
+            "en": "Made easy to remember",
+            "de": "Leicht gemacht zum Erinnern",
+            "ar": "ميسَّر للذكر"
+          },
+          "body": {
+            "en": "This verse appears four times in the surah (17, 22, 32, 40), each time after the story of a people who denied.",
+            "de": "Dieser Vers erscheint viermal in der Sure (17, 22, 32, 40), jedes Mal nach der Geschichte eines Volkes, das leugnete.",
+            "ar": "تتكرر هذه الآية أربع مرات في السورة (١٧، ٢٢، ٣٢، ٤٠)، بعد قصة كل قوم كذّبوا."
+          }
+        },
+        {
+          "title": {
+            "en": "Four peoples, one pattern",
+            "de": "Vier Völker, ein Muster",
+            "ar": "أربعة أقوام ونمط واحد"
+          },
+          "body": {
+            "en": "The people of Nuh, 'Ad, Thamud and the people of Lut: each was warned, each denied, each was seized. Then comes Pharaoh's people. The stories are short and fast, like warnings.",
+            "de": "Das Volk Nuhs, die 'Ad, die Thamud und das Volk Luts: Jedes wurde gewarnt, jedes leugnete, jedes wurde erfasst. Danach folgt das Volk Pharaos. Die Geschichten sind kurz und schnell, wie Warnungen.",
+            "ar": "قوم نوح وعاد وثمود وقوم لوط: أُنذر كل منهم فكذّب فأُخذ، ثم يأتي آل فرعون. قصص قصيرة سريعة كأنها إنذارات."
+          }
+        },
+        {
+          "verse": "54:49",
+          "check": "predestination",
+          "title": {
+            "en": "Everything in due measure",
+            "de": "Alles nach rechtem Maß",
+            "ar": "خلق بمقدار"
+          },
+          "body": {
+            "en": "Nothing in creation is random. Allah created all things with a precise measure and decree.",
+            "de": "Nichts in der Schöpfung ist zufällig. Allah hat alles nach genauem Maß und Ratschluss erschaffen.",
+            "ar": "لا شيء في الخلق صدفة، فقد خلق الله كل شيء بمقدار وتقدير."
+          }
+        },
+        {
+          "hadith": "muslim:2060",
+          "check": "The Hour drew near",
+          "title": {
+            "en": "Recited on Eid",
+            "de": "Am Festtag rezitiert",
+            "ar": "تُقرأ في العيد"
+          },
+          "body": {
+            "en": "Asked what the Prophet recited in the Eid prayer, a companion named this surah and Surah Qaf.",
+            "de": "Auf die Frage, was der Prophet im Festgebet rezitierte, nannte ein Gefährte diese Sure und die Sure Qaf.",
+            "ar": "سُئل صحابي عمّا كان النبي صلى الله عليه وسلم يقرأ في صلاة العيد، فذكر هذه السورة وسورة ق."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Qamar",
+          "url": "https://quran.com/54"
+        }
+      ]
+    },
+    {
+      "id": "surah-055-ar-rahman",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Surah 55 · Madani",
+          "de": "Sure 55 · medinensisch",
+          "ar": "سورة ٥٥ · مدنية"
+        },
+        "title": {
+          "en": "Surah ar-Rahman in 6 slides",
+          "de": "Die Sure ar-Rahman in 6 Bildern",
+          "ar": "سورة الرحمن في ست شرائح"
+        },
+        "sub": {
+          "en": "Ar-Rahman means “The Beneficent”: a surah that counts His favours one by one",
+          "de": "Ar-Rahman bedeutet „Der Allerbarmer“: eine Sure, die Seine Gaben eine nach der anderen aufzählt",
+          "ar": "الرحمن: سورة تعدّد نعم الله واحدة بعد أخرى"
+        },
+        "arabic": "سورة الرحمن"
+      },
+      "slides": [
+        {
+          "verse": "55:2-4",
+          "check": "Taught the Qur",
+          "title": {
+            "en": "Mercy begins with the Quran",
+            "de": "Barmherzigkeit beginnt mit dem Koran",
+            "ar": "الرحمة تبدأ بالقرآن"
+          },
+          "body": {
+            "en": "Before the creation of man is mentioned, the surah names the teaching of the Quran. Then comes the gift of clear speech.",
+            "de": "Noch vor der Erschaffung des Menschen nennt die Sure das Lehren des Korans. Dann folgt die Gabe der klaren Rede.",
+            "ar": "قبل ذكر خلق الإنسان تذكر السورة تعليم القرآن، ثم نعمة البيان والإفصاح."
+          }
+        },
+        {
+          "verse": "55:13",
+          "check": "favors of your Lord",
+          "title": {
+            "en": "The question asked 31 times",
+            "de": "Die Frage, die 31-mal gestellt wird",
+            "ar": "سؤال يتكرر ٣١ مرة"
+          },
+          "body": {
+            "en": "This verse returns 31 times, addressed to humans and jinn alike. Each time it invites us to recognise a blessing.",
+            "de": "Dieser Vers kehrt 31-mal wieder und richtet sich an Menschen und Dschinn. Jedes Mal lädt er ein, eine Gabe zu erkennen.",
+            "ar": "تتكرر هذه الآية ٣١ مرة، خطابًا للإنس والجن، وفي كل مرة دعوة إلى الاعتراف بنعمة."
+          }
+        },
+        {
+          "verse": "55:7-9",
+          "check": "balance",
+          "title": {
+            "en": "Keep the balance",
+            "de": "Das Gleichgewicht wahren",
+            "ar": "حافظ على الميزان"
+          },
+          "body": {
+            "en": "The sky is raised and the balance set. Justice in weights, words and dealings mirrors the order of creation.",
+            "de": "Der Himmel ist erhoben und das Gleichgewicht gesetzt. Gerechtigkeit in Gewicht, Wort und Handel spiegelt die Ordnung der Schöpfung.",
+            "ar": "رُفعت السماء ووُضع الميزان، والعدل في الوزن والقول والمعاملة صدى لنظام الخلق."
+          }
+        },
+        {
+          "verse": "55:26-27",
+          "check": "Face of your Lord",
+          "title": {
+            "en": "Everything passes, He remains",
+            "de": "Alles vergeht, Er bleibt",
+            "ar": "كل شيء يفنى ويبقى هو"
+          },
+          "body": {
+            "en": "In the middle of so many blessings, a reminder: all on earth will pass. Only Allah, Lord of majesty and honour, remains.",
+            "de": "Inmitten so vieler Gaben eine Erinnerung: Alles auf der Erde vergeht. Nur Allah, voller Majestät und Ehre, bleibt.",
+            "ar": "وسط النعم الكثيرة تذكير: كل ما على الأرض زائل، ولا يبقى إلا الله صاحب الجلال والإكرام."
+          }
+        },
+        {
+          "verse": "55:60",
+          "check": "reward for good",
+          "title": {
+            "en": "Good is repaid with good",
+            "de": "Gutes wird mit Gutem vergolten",
+            "ar": "الإحسان لا يضيع"
+          },
+          "body": {
+            "en": "After describing the gardens of Paradise, the surah asks a simple question. Excellence (ihsan) is never lost with Allah.",
+            "de": "Nachdem die Sure die Gärten des Paradieses beschrieben hat, stellt sie eine einfache Frage. Vortrefflichkeit (Ihsan) geht bei Allah nie verloren.",
+            "ar": "بعد وصف جنان الخلد تطرح السورة سؤالًا بسيطًا، فالإحسان لا يضيع عند الله."
+          }
+        },
+        {
+          "title": {
+            "en": "Did you know?",
+            "de": "Wussten Sie schon?",
+            "ar": "هل تعلم؟"
+          },
+          "body": {
+            "en": "Scholars differ on whether ar-Rahman was revealed in Mecca or in Medina. Its refrain uses the Arabic dual form: it speaks to two audiences at once, humans and jinn.",
+            "de": "Die Gelehrten sind sich uneinig, ob ar-Rahman in Mekka oder in Medina offenbart wurde. Ihr Kehrvers verwendet im Arabischen den Dual: Er spricht zwei Zuhörerschaften zugleich an, Menschen und Dschinn.",
+            "ar": "اختلف العلماء في سورة الرحمن: أمكية هي أم مدنية. ويأتي الخطاب في آيتها المتكررة بصيغة المثنى، موجّهًا إلى الإنس والجن معًا."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah ar-Rahman",
+          "url": "https://quran.com/55"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-056-al-waqiah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Surah 56 · Makki",
+          "de": "Sure 56 · mekkanisch",
+          "ar": "سورة ٥٦ · مكية"
+        },
+        "title": {
+          "en": "Surah al-Waqi'ah: three groups on one Day",
+          "de": "Die Sure al-Waqi'ah: drei Gruppen an einem Tag",
+          "ar": "سورة الواقعة: ثلاثة أصناف في يوم واحد"
+        },
+        "sub": {
+          "en": "Al-Waqi'ah means “The Inevitable”: the Event that will surely come",
+          "de": "Al-Waqi'ah bedeutet „Das Unausweichliche“: das Ereignis, das gewiss eintreten wird",
+          "ar": "الواقعة: الحدث الذي سيقع لا محالة"
+        },
+        "arabic": "سورة الواقعة"
+      },
+      "slides": [
+        {
+          "verse": "56:7-9",
+          "check": "three kinds",
+          "title": {
+            "en": "Three kinds of people",
+            "de": "Drei Arten von Menschen",
+            "ar": "ثلاثة أصناف"
+          },
+          "body": {
+            "en": "On that Day humanity divides into three: the companions of the right, the companions of the left and the forerunners.",
+            "de": "An jenem Tag teilt sich die Menschheit in drei Gruppen: die Gefährten der Rechten, die Gefährten der Linken und die Vorausgehenden.",
+            "ar": "في ذلك اليوم ينقسم الناس ثلاثة أصناف: أصحاب اليمين، وأصحاب الشمال، والسابقون."
+          }
+        },
+        {
+          "verse": "56:10-12",
+          "check": "forerunners",
+          "title": {
+            "en": "Be among the forerunners",
+            "de": "Zu den Vorausgehenden gehören",
+            "ar": "كن من السابقين"
+          },
+          "body": {
+            "en": "The forerunners hurried to good in this life, so they are brought nearest to Allah in the next.",
+            "de": "Die Vorausgehenden eilten in diesem Leben zum Guten, darum werden sie im nächsten Allah am nächsten gebracht.",
+            "ar": "سبقوا إلى الخير في الدنيا، فكانوا أقرب الناس إلى الله في الآخرة."
+          }
+        },
+        {
+          "hadith": "muslim:7136",
+          "check": "hundred years",
+          "title": {
+            "en": "A shade without end",
+            "de": "Ein Schatten ohne Ende",
+            "ar": "ظل لا ينتهي"
+          },
+          "body": {
+            "en": "Verse 30 speaks of extended shade in Paradise. This hadith gives a glimpse of its size.",
+            "de": "Vers 30 spricht von ausgedehntem Schatten im Paradies. Dieser Hadith gibt einen Eindruck von seiner Größe.",
+            "ar": "تذكر الآية ٣٠ ظلًا ممدودًا في الجنة، وهذا الحديث يعطي لمحة عن سعته."
+          }
+        },
+        {
+          "verse": "56:63-64",
+          "check": "sow",
+          "title": {
+            "en": "Who makes it grow?",
+            "de": "Wer lässt es wachsen?",
+            "ar": "من يُنبته؟"
+          },
+          "body": {
+            "en": "We plant the seed, but growth is not in our hands. The surah turns everyday things into signs.",
+            "de": "Wir säen den Samen, doch das Wachstum liegt nicht in unserer Hand. Die Sure macht Alltägliches zu Zeichen.",
+            "ar": "نحن نضع البذرة، لكن الإنبات ليس بأيدينا. والسورة تجعل الأشياء اليومية آيات."
+          }
+        },
+        {
+          "verse": "56:68-70",
+          "check": "water that you drink",
+          "title": {
+            "en": "A glass of water",
+            "de": "Ein Glas Wasser",
+            "ar": "كوب ماء"
+          },
+          "body": {
+            "en": "Sweet water falls from the clouds. It could have been bitter. Every sip is a reason for gratitude.",
+            "de": "Süßes Wasser fällt aus den Wolken. Es hätte auch salzig sein können. Jeder Schluck ist ein Grund zur Dankbarkeit.",
+            "ar": "ينزل الماء العذب من السحاب، ولو شاء الله لجعله مالحًا. وكل رشفة سبب للشكر."
+          }
+        },
+        {
+          "verse": "56:77-79",
+          "check": "noble Qur",
+          "title": {
+            "en": "A noble Quran",
+            "de": "Ein edler Koran",
+            "ar": "قرآن كريم"
+          },
+          "body": {
+            "en": "Many scholars derive from here respect for the mushaf, such as touching it in purity. The schools differ in the details.",
+            "de": "Viele Gelehrte leiten hieraus Ehrfurcht vor dem Mushaf ab, etwa ihn nur rein zu berühren. Die Rechtsschulen unterscheiden sich in Einzelheiten.",
+            "ar": "استنبط كثير من العلماء من هنا تعظيم المصحف، كمسّه على طهارة، وتختلف المذاهب في التفاصيل."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Waqi'ah",
+          "url": "https://quran.com/56"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-057-al-hadid",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Surah 57 · Madani",
+          "de": "Sure 57 · medinensisch",
+          "ar": "سورة ٥٧ · مدنية"
+        },
+        "title": {
+          "en": "What Surah al-Hadid teaches about a softened heart",
+          "de": "Was die Sure al-Hadid über ein weiches Herz lehrt",
+          "ar": "ماذا تعلّمنا سورة الحديد عن رقة القلب"
+        },
+        "sub": {
+          "en": "Al-Hadid means “The Iron”, sent down with great strength and benefit (verse 25)",
+          "de": "Al-Hadid bedeutet „Das Eisen“, herabgesandt mit großer Kraft und Nutzen (Vers 25)",
+          "ar": "الحديد: معدن أنزله الله فيه قوة ونفع للناس (الآية ٢٥)"
+        },
+        "arabic": "سورة الحديد"
+      },
+      "slides": [
+        {
+          "verse": "57:1-2",
+          "check": "exalts Allah",
+          "title": {
+            "en": "All creation glorifies Him",
+            "de": "Die ganze Schöpfung preist Ihn",
+            "ar": "الكون كله يسبّح"
+          },
+          "body": {
+            "en": "Al-Hadid is the first of five surahs (57, 59, 61, 62, 64) that open with all in the heavens and earth glorifying Allah.",
+            "de": "Al-Hadid ist die erste von fünf Suren (57, 59, 61, 62, 64), die damit beginnen, dass alles in den Himmeln und auf der Erde Allah preist.",
+            "ar": "الحديد أولى خمس سور (٥٧، ٥٩، ٦١، ٦٢، ٦٤) تبدأ بذكر تسبيح الكون كله لله."
+          }
+        },
+        {
+          "verse": "57:3",
+          "check": "the First and the Last",
+          "title": {
+            "en": "Before and after everything",
+            "de": "Vor allem und nach allem",
+            "ar": "قبل كل شيء وبعده"
+          },
+          "body": {
+            "en": "Four names in one verse: before everything, after everything, above everything and nearer than everything.",
+            "de": "Vier Namen in einem Vers: vor allem, nach allem, über allem und näher als alles.",
+            "ar": "أربعة أسماء في آية واحدة: قبل كل شيء، وبعد كل شيء، وفوق كل شيء، وأقرب من كل شيء."
+          }
+        },
+        {
+          "verse": "57:4",
+          "check": "He is with you",
+          "title": {
+            "en": "Never alone",
+            "de": "Nie allein",
+            "ar": "لست وحدك"
+          },
+          "body": {
+            "en": "The verse speaks of the Throne and then of Allah being with you in every place. Scholars explain: by His knowledge and sight.",
+            "de": "Der Vers spricht vom Thron und dann davon, dass Allah an jedem Ort bei Ihnen ist. Gelehrte erklären: mit Seinem Wissen und Seinem Blick.",
+            "ar": "تذكر الآية العرش ثم تذكر أن الله معك في كل مكان، ويفسّر العلماء ذلك بعلمه واطلاعه."
+          }
+        },
+        {
+          "verse": "57:16",
+          "check": "hearts should become humbly submissive",
+          "title": {
+            "en": "A question for every heart",
+            "de": "Eine Frage an jedes Herz",
+            "ar": "سؤال لكل قلب"
+          },
+          "body": {
+            "en": "A gentle call that has moved many to repent: hearts are meant to grow soft when Allah is remembered, not hard with time.",
+            "de": "Ein sanfter Ruf, der viele zur Umkehr bewegt hat: Herzen sollen weich werden, wenn Allahs gedacht wird, nicht hart mit der Zeit.",
+            "ar": "نداء رقيق حرّك كثيرين إلى التوبة: ينبغي أن تلين القلوب عند ذكر الله، لا أن تقسو مع مرور الزمن."
+          }
+        },
+        {
+          "verse": "57:22-23",
+          "check": "not despair over what has eluded you",
+          "title": {
+            "en": "Calm in loss and in gain",
+            "de": "Gelassen bei Verlust und Gewinn",
+            "ar": "سكينة في الفقد والعطاء"
+          },
+          "body": {
+            "en": "Everything is written before it happens. Knowing this protects from despair over losses and from arrogance over gains.",
+            "de": "Alles ist geschrieben, bevor es geschieht. Dieses Wissen bewahrt vor Verzweiflung über Verluste und vor Hochmut über Gewinne.",
+            "ar": "كل شيء مكتوب قبل وقوعه، وهذا اليقين يحمي من اليأس عند الفقد ومن الكبر عند العطاء."
+          }
+        },
+        {
+          "verse": "57:25",
+          "check": "We sent down iron",
+          "title": {
+            "en": "Iron and the scales",
+            "de": "Eisen und Waage",
+            "ar": "الحديد والميزان"
+          },
+          "body": {
+            "en": "Messengers came with Scripture and the balance so people would uphold justice. Iron brings strength and benefit, and must serve justice too.",
+            "de": "Die Gesandten kamen mit Schrift und Waage, damit die Menschen Gerechtigkeit üben. Eisen bringt Kraft und Nutzen und soll ebenfalls der Gerechtigkeit dienen.",
+            "ar": "جاء الرسل بالكتاب والميزان ليقيم الناس العدل، والحديد قوة ومنفعة ينبغي أن تخدم العدل أيضًا."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Hadid",
+          "url": "https://quran.com/57"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-058-al-mujadila",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Surah 58 · Madani",
+          "de": "Sure 58 · medinensisch",
+          "ar": "سورة ٥٨ · مدنية"
+        },
+        "title": {
+          "en": "Surah al-Mujadila: the woman Allah heard",
+          "de": "Die Sure al-Mujadila: die Frau, die Allah erhörte",
+          "ar": "سورة المجادلة: المرأة التي سمعها الله"
+        },
+        "sub": {
+          "en": "Al-Mujadila means “The Pleading Woman”: it opens with a wife whose complaint was heard",
+          "de": "Al-Mujadila bedeutet „Die Streitende“: Sie beginnt mit einer Ehefrau, deren Klage gehört wurde",
+          "ar": "المجادلة: تبدأ بامرأة سمع الله شكواها"
+        },
+        "arabic": "سورة المجادلة"
+      },
+      "slides": [
+        {
+          "verse": "58:1",
+          "check": "argues",
+          "title": {
+            "en": "Every voice is heard",
+            "de": "Jede Stimme wird gehört",
+            "ar": "كل صوت مسموع"
+          },
+          "body": {
+            "en": "A woman pleaded with the Prophet about her husband and took her complaint to Allah. Allah heard her and answered her case.",
+            "de": "Eine Frau sprach mit dem Propheten über ihren Ehemann und brachte ihre Klage vor Allah. Allah hörte sie und beantwortete ihren Fall.",
+            "ar": "حاورت امرأة النبي في أمر زوجها ورفعت شكواها إلى الله، فسمعها الله وأجاب عن قضيتها."
+          }
+        },
+        {
+          "title": {
+            "en": "No worry is too small",
+            "de": "Keine Sorge ist zu klein",
+            "ar": "لا همّ صغير عند الله"
+          },
+          "body": {
+            "en": "Her case was a family matter that others might have dismissed. Allah answered it in the Quran. No worry brought to Him is too small, and no person too unimportant.",
+            "de": "Ihr Anliegen war eine Familienangelegenheit, die andere vielleicht abgetan hätten. Allah beantwortete es im Koran. Keine Sorge, die man zu Ihm bringt, ist zu klein, und kein Mensch zu unbedeutend.",
+            "ar": "كانت قضيتها شأنًا أسريًا قد يستهين به غيرها، فأجاب الله عنها في القرآن. لا همّ يُرفع إليه صغير، ولا إنسان عنده مهمل."
+          }
+        },
+        {
+          "verse": "58:7",
+          "check": "He is the fourth of them",
+          "title": {
+            "en": "No secret meeting without Him",
+            "de": "Kein Geheimgespräch ohne Ihn",
+            "ar": "لا نجوى بعيدة عن علمه"
+          },
+          "body": {
+            "en": "However few or many gather in secret, Allah is with them by His knowledge. A reason to keep private talk clean.",
+            "de": "Ob wenige oder viele sich heimlich treffen: Allah ist mit Seinem Wissen bei ihnen. Ein Grund, auch vertrauliche Gespräche rein zu halten.",
+            "ar": "مهما قلّ المتناجون أو كثروا، فالله معهم بعلمه، وهذا داعٍ إلى تطهير الأحاديث الخاصة."
+          }
+        },
+        {
+          "verse": "58:11",
+          "check": "make space",
+          "title": {
+            "en": "Make room, rise higher",
+            "de": "Platz machen, höher steigen",
+            "ar": "التواضع يرفع"
+          },
+          "body": {
+            "en": "Making room for others in a gathering is answered with space from Allah. Faith and knowledge raise people by degrees.",
+            "de": "Wer in einer Versammlung anderen Platz macht, dem schafft Allah Raum. Glaube und Wissen erheben die Menschen um Stufen.",
+            "ar": "من أفسح لغيره في المجلس أفسح الله له، والإيمان والعلم يرفعان أصحابهما درجات."
+          }
+        },
+        {
+          "title": {
+            "en": "Manners from this surah",
+            "de": "Umgangsformen aus dieser Sure",
+            "ar": "آداب من هذه السورة"
+          },
+          "list": {
+            "en": [
+              "Bring every worry to Allah, however small",
+              "Do not whisper in a way that hurts others",
+              "Make room for those who arrive late",
+              "Honour people of faith and knowledge"
+            ],
+            "de": [
+              "Bringen Sie jede Sorge vor Allah, auch die kleinste",
+              "Flüstern Sie nicht so, dass es andere verletzt",
+              "Machen Sie Platz für die, die später kommen",
+              "Ehren Sie Menschen des Glaubens und des Wissens"
+            ],
+            "ar": [
+              "ارفع كل همّ إلى الله مهما صغر",
+              "لا تتناجَ بما يؤذي الآخرين",
+              "أفسح لمن يأتي متأخرًا",
+              "أكرم أهل الإيمان والعلم"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Mujadila",
+          "url": "https://quran.com/58"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-059-al-hashr",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Surah 59 · Madani",
+          "de": "Sure 59 · medinensisch",
+          "ar": "سورة ٥٩ · مدنية"
+        },
+        "title": {
+          "en": "6 lessons from Surah al-Hashr",
+          "de": "6 Lehren aus der Sure al-Hashr",
+          "ar": "ستة دروس من سورة الحشر"
+        },
+        "sub": {
+          "en": "Al-Hashr means “The Exile”. It ends with a cluster of the beautiful names of Allah",
+          "de": "Al-Hashr bedeutet „Die Vertreibung“. Sie endet mit einer Reihe der schönen Namen Allahs",
+          "ar": "الحشر: تُختم السورة بجملة من أسماء الله الحسنى"
+        },
+        "arabic": "سورة الحشر"
+      },
+      "slides": [
+        {
+          "verse": "59:9",
+          "check": "preference over themselves",
+          "title": {
+            "en": "Preferring others",
+            "de": "Andere vorziehen",
+            "ar": "الإيثار"
+          },
+          "body": {
+            "en": "The Ansar of Medina loved those who came to them and put them first, even in their own need. Generosity defeats the stinginess of the soul.",
+            "de": "Die Ansar von Medina liebten die Ankommenden und stellten sie an erste Stelle, selbst in eigener Not. Großzügigkeit besiegt den Geiz der Seele.",
+            "ar": "أحبّ الأنصار إخوانهم المهاجرين وقدّموهم على أنفسهم رغم حاجتهم، فالكرم يغلب شحّ النفس."
+          }
+        },
+        {
+          "verse": "59:10",
+          "check": "preceded us in faith",
+          "title": {
+            "en": "A dua for those before us",
+            "de": "Ein Bittgebet für die, die vor uns waren",
+            "ar": "دعاء لمن سبقونا"
+          },
+          "body": {
+            "en": "Later generations pray for those who came before and ask for hearts free of resentment toward any believer.",
+            "de": "Spätere Generationen beten für die, die vor ihnen kamen, und bitten um Herzen ohne Groll gegen irgendeinen Gläubigen.",
+            "ar": "تدعو الأجيال اللاحقة لمن سبقها، وتسأل الله قلوبًا خالية من الضغينة تجاه أي مؤمن."
+          }
+        },
+        {
+          "verse": "59:18",
+          "check": "put forth for tomorrow",
+          "title": {
+            "en": "What are you sending ahead?",
+            "de": "Was schicken Sie voraus?",
+            "ar": "ماذا أعددت لغدك؟"
+          },
+          "body": {
+            "en": "Every soul is asked to look at what it has prepared for tomorrow. A daily self-check, framed by taqwa.",
+            "de": "Jede Seele soll darauf schauen, was sie für morgen vorbereitet hat. Eine tägliche Selbstprüfung, eingerahmt von Gottesfurcht.",
+            "ar": "كل نفس مدعوة إلى النظر فيما أعدّته لغدها: محاسبة يومية تحيط بها التقوى."
+          }
+        },
+        {
+          "verse": "59:19",
+          "check": "forgot Allah",
+          "title": {
+            "en": "Forgetting Allah, forgetting yourself",
+            "de": "Allah vergessen heißt sich selbst vergessen",
+            "ar": "من نسي الله نسي نفسه"
+          },
+          "body": {
+            "en": "Whoever forgets Allah ends up forgetting their own soul and what is truly good for it.",
+            "de": "Wer Allah vergisst, vergisst am Ende sich selbst und das, was ihm wirklich guttut.",
+            "ar": "من غفل عن الله انتهى به الأمر إلى الغفلة عن نفسه وما ينفعها حقًا."
+          }
+        },
+        {
+          "verse": "59:21",
+          "check": "upon a mountain",
+          "title": {
+            "en": "If it came down on a mountain",
+            "de": "Wäre er auf einen Berg herabgesandt",
+            "ar": "لو نزل على جبل"
+          },
+          "body": {
+            "en": "A mountain would humble itself and split from awe. What then should the Quran do to a human heart?",
+            "de": "Ein Berg würde sich demütigen und vor Ehrfurcht zerbersten. Was sollte der Koran dann mit einem menschlichen Herzen tun?",
+            "ar": "لو نزل على جبل لخضع وتشقق من هيبة الله، فكيف ينبغي أن يكون أثره في قلب الإنسان؟"
+          }
+        },
+        {
+          "verse": "59:24",
+          "check": "best names",
+          "title": {
+            "en": "The most beautiful names",
+            "de": "Die schönsten Namen",
+            "ar": "الأسماء الحسنى"
+          },
+          "body": {
+            "en": "The surah ends with a series of Allah's names in verses 22 to 24, a beloved passage for reflection and remembrance.",
+            "de": "Die Sure endet mit einer Reihe von Namen Allahs in den Versen 22 bis 24, einer geliebten Stelle zum Nachdenken und Gedenken.",
+            "ar": "تُختم السورة بسلسلة من أسماء الله في الآيات ٢٢ إلى ٢٤، وهي مقطع محبوب للتدبر والذكر."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Hashr",
+          "url": "https://quran.com/59"
+        }
+      ]
+    },
+    {
+      "id": "surah-060-al-mumtahanah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Surah 60 · Madani",
+          "de": "Sure 60 · medinensisch",
+          "ar": "سورة ٦٠ · مدنية"
+        },
+        "title": {
+          "en": "Surah al-Mumtahanah: loyalty and kindness together",
+          "de": "Die Sure al-Mumtahanah: Treue und Güte zugleich",
+          "ar": "سورة الممتحنة: الولاء والبر معًا"
+        },
+        "sub": {
+          "en": "Al-Mumtahanah means “She Who Is Examined”, after the test of women who emigrated (verse 10)",
+          "de": "Al-Mumtahanah bedeutet „Die Geprüfte“, nach der Prüfung der Frauen, die auswanderten (Vers 10)",
+          "ar": "الممتحنة: سُميت بامتحان المؤمنات المهاجرات (الآية ١٠)"
+        },
+        "arabic": "سورة الممتحنة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "The example of Ibrahim",
+            "de": "Das Vorbild Ibrahims",
+            "ar": "أسوة إبراهيم"
+          },
+          "body": {
+            "en": "Verse 4 calls Ibrahim and those with him an excellent example: clear about their faith, and turning to Allah in trust and dua (verses 4 and 5).",
+            "de": "Vers 4 nennt Ibrahim und die mit ihm ein schönes Vorbild: klar in ihrem Glauben und Allah zugewandt in Vertrauen und Bittgebet (Verse 4 und 5).",
+            "ar": "تصف الآية الرابعة إبراهيم ومن معه بأنهم قدوة حسنة: واضحون في عقيدتهم، متوجهون إلى الله بالتوكل والدعاء (الآيتان ٤ و٥)."
+          }
+        },
+        {
+          "verse": "60:7",
+          "check": "affection",
+          "title": {
+            "en": "Hearts can change",
+            "de": "Herzen können sich ändern",
+            "ar": "القلوب تتغير"
+          },
+          "body": {
+            "en": "Today's opponent may become tomorrow's friend. The surah keeps the door of hope open.",
+            "de": "Der Gegner von heute kann der Freund von morgen sein. Die Sure hält die Tür der Hoffnung offen.",
+            "ar": "خصم اليوم قد يصبح صديق الغد، والسورة تُبقي باب الأمل مفتوحًا."
+          }
+        },
+        {
+          "verse": "60:8",
+          "check": "act justly",
+          "title": {
+            "en": "Kindness and fairness to all",
+            "de": "Güte und Gerechtigkeit gegenüber allen",
+            "ar": "البر والعدل مع الجميع"
+          },
+          "body": {
+            "en": "Allah does not forbid kindness and fairness toward people of other faiths who live in peace with us. He loves the just.",
+            "de": "Allah verbietet nicht, Andersgläubigen, die mit uns in Frieden leben, Güte und Gerechtigkeit zu erweisen. Er liebt die Gerechten.",
+            "ar": "لا يمنع الله من البر والإنصاف مع غير المسلمين المسالمين، وهو يحب أهل العدل."
+          }
+        },
+        {
+          "hadith": "bukhari:2620",
+          "check": "keep good relation",
+          "title": {
+            "en": "Asma and her mother",
+            "de": "Asma und ihre Mutter",
+            "ar": "أسماء وأمها"
+          },
+          "body": {
+            "en": "Asma bint Abi Bakr asked whether to be good to her mother, who did not share her faith. The answer reflects the spirit of verse 8.",
+            "de": "Asma bint Abi Bakr fragte, ob sie ihrer Mutter, die ihren Glauben nicht teilte, Gutes tun solle. Die Antwort entspricht dem Geist von Vers 8.",
+            "ar": "سألت أسماء بنت أبي بكر عن صلة أمها التي لم تكن على دينها، فجاء الجواب موافقًا لروح الآية الثامنة."
+          }
+        },
+        {
+          "title": {
+            "en": "Take with you",
+            "de": "Zum Mitnehmen",
+            "ar": "خذ معك"
+          },
+          "list": {
+            "en": [
+              "Be clear about your faith",
+              "Be kind and fair to peaceful neighbours of any faith",
+              "Keep family ties, even across differences",
+              "Never give up hope that hearts can change"
+            ],
+            "de": [
+              "Seien Sie klar in Ihrem Glauben",
+              "Seien Sie gütig und fair zu friedlichen Nachbarn jeden Glaubens",
+              "Pflegen Sie die Familienbande, auch über Unterschiede hinweg",
+              "Geben Sie die Hoffnung nie auf, dass sich Herzen ändern"
+            ],
+            "ar": [
+              "كن واضحًا في عقيدتك",
+              "كن بارًّا عادلًا مع جيرانك المسالمين من أي دين",
+              "صِل رحمك ولو اختلفتم",
+              "لا تيأس من تغيّر القلوب"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Mumtahanah",
+          "url": "https://quran.com/60"
+        }
+      ]
+    },
+    {
+      "id": "surah-061-as-saf",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Surah 61 · Madani",
+          "de": "Sure 61 · medinensisch",
+          "ar": "سورة ٦١ · مدنية"
+        },
+        "title": {
+          "en": "Surah as-Saf: say it, then do it",
+          "de": "Die Sure as-Saf: sagen und dann tun",
+          "ar": "سورة الصف: قل ثم افعل"
+        },
+        "sub": {
+          "en": "As-Saf means “The Ranks”: believers standing together like a solid structure (verse 4)",
+          "de": "As-Saf bedeutet „Die Reihe“: Gläubige, die zusammenstehen wie ein fester Bau (Vers 4)",
+          "ar": "الصف: مؤمنون متراصّون كالبناء المتين (الآية ٤)"
+        },
+        "arabic": "سورة الصف"
+      },
+      "slides": [
+        {
+          "verse": "61:2-3",
+          "check": "say what you do not do",
+          "title": {
+            "en": "Words and deeds",
+            "de": "Worte und Taten",
+            "ar": "القول والعمل"
+          },
+          "body": {
+            "en": "Allah strongly dislikes promises we do not keep and claims we do not live. Integrity means our deeds match our words.",
+            "de": "Allah missfällt es sehr, wenn wir Versprechen nicht halten und nicht leben, was wir behaupten. Integrität heißt: Unsere Taten passen zu unseren Worten.",
+            "ar": "يبغض الله وعودًا لا تُنفَّذ ودعاوى لا تُعاش، والصدق أن توافق الأفعالُ الأقوال."
+          }
+        },
+        {
+          "verse": "61:4",
+          "check": "single structure",
+          "title": {
+            "en": "United like one building",
+            "de": "Vereint wie ein Bau",
+            "ar": "متراصّون كالبناء"
+          },
+          "body": {
+            "en": "Unity is beloved to Allah. Each believer is a brick: when one is missing, the whole wall is weaker.",
+            "de": "Einheit ist Allah lieb. Jeder Gläubige ist ein Stein: Fehlt einer, wird die ganze Mauer schwächer.",
+            "ar": "الوحدة محبوبة عند الله، وكل مؤمن لبنة إذا غابت ضعف الجدار كله."
+          }
+        },
+        {
+          "verse": "61:6",
+          "check": "whose name is Ahmad",
+          "title": {
+            "en": "The good news of Isa",
+            "de": "Die frohe Botschaft Isas",
+            "ar": "بشارة عيسى"
+          },
+          "body": {
+            "en": "Isa, son of Maryam, gave good news of a messenger to come after him named Ahmad, a name of the Prophet Muhammad.",
+            "de": "Isa, Sohn Maryams, verkündete einen Gesandten, der nach ihm kommen werde, mit dem Namen Ahmad, einem Namen des Propheten Muhammad.",
+            "ar": "بشّر عيسى ابن مريم بنبي يأتي بعده يُدعى أحمد، وهو من أسماء نبينا محمد صلى الله عليه وسلم."
+          }
+        },
+        {
+          "hadith": "muslim:6108",
+          "check": "Muhammad, Ahmad",
+          "title": {
+            "en": "The Prophet's names",
+            "de": "Die Namen des Propheten",
+            "ar": "أسماء النبي"
+          },
+          "body": {
+            "en": "The Prophet himself listed his names, and Ahmad is among them.",
+            "de": "Der Prophet selbst zählte seine Namen auf, und Ahmad ist darunter.",
+            "ar": "عدّد النبي صلى الله عليه وسلم أسماءه بنفسه، ومنها أحمد."
+          }
+        },
+        {
+          "verse": "61:10-11",
+          "check": "transaction",
+          "title": {
+            "en": "The best trade",
+            "de": "Der beste Handel",
+            "ar": "أربح تجارة"
+          },
+          "body": {
+            "en": "The surah speaks in the language of merchants: faith and striving with wealth and self are the trade that saves.",
+            "de": "Die Sure spricht in der Sprache der Händler: Glaube und Einsatz mit Besitz und eigener Person sind der Handel, der rettet.",
+            "ar": "تخاطب السورة الناس بلغة التجارة: الإيمان والجهاد بالمال والنفس تجارة منجية."
+          }
+        },
+        {
+          "verse": "61:14",
+          "check": "supporters of Allah",
+          "title": {
+            "en": "Helpers of Allah",
+            "de": "Helfer Allahs",
+            "ar": "أنصار الله"
+          },
+          "body": {
+            "en": "Like the disciples of Isa, believers are called to stand up for what is right, together.",
+            "de": "Wie die Jünger Isas sind die Gläubigen aufgerufen, gemeinsam für das Rechte einzustehen.",
+            "ar": "كما فعل حواريو عيسى، يُدعى المؤمنون إلى نصرة الحق معًا."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah as-Saf",
+          "url": "https://quran.com/61"
+        }
+      ]
+    },
+    {
+      "id": "surah-062-al-jumuah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Surah 62 · Madani",
+          "de": "Sure 62 · medinensisch",
+          "ar": "سورة ٦٢ · مدنية"
+        },
+        "title": {
+          "en": "What Surah al-Jumu'ah teaches about Friday",
+          "de": "Was die Sure al-Jumu'ah über den Freitag lehrt",
+          "ar": "ماذا تعلّمنا سورة الجمعة عن يوم الجمعة"
+        },
+        "sub": {
+          "en": "Al-Jumu'ah means “Friday” or “The Congregation”: the weekly day of gathering",
+          "de": "Al-Jumu'ah bedeutet „Der Freitag“ oder „Die Versammlung“: der wöchentliche Tag der Zusammenkunft",
+          "ar": "الجمعة: يوم اجتماع المسلمين كل أسبوع"
+        },
+        "arabic": "سورة الجمعة"
+      },
+      "slides": [
+        {
+          "verse": "62:2",
+          "check": "purifying them",
+          "title": {
+            "en": "Recite, purify, teach",
+            "de": "Vortragen, läutern, lehren",
+            "ar": "تلاوة وتزكية وتعليم"
+          },
+          "body": {
+            "en": "The Prophet's mission in three words: he recited the verses, purified hearts and taught the Book and wisdom.",
+            "de": "Die Sendung des Propheten in drei Worten: Er trug die Verse vor, läuterte die Herzen und lehrte das Buch und die Weisheit.",
+            "ar": "رسالة النبي في ثلاث: تلاوة الآيات، وتزكية النفوس، وتعليم الكتاب والحكمة."
+          }
+        },
+        {
+          "verse": "62:5",
+          "check": "donkey",
+          "title": {
+            "en": "Knowledge carried or lived",
+            "de": "Wissen, getragen oder gelebt",
+            "ar": "علم يُحمل أم يُعاش"
+          },
+          "body": {
+            "en": "Carrying books is not the same as living by them. The image warns every reader of Scripture, including us.",
+            "de": "Bücher zu tragen ist nicht dasselbe, wie nach ihnen zu leben. Das Bild warnt jeden Leser der Schrift, auch uns.",
+            "ar": "حمل الكتب غير العمل بها، والمثل تحذير لكل قارئ للكتاب، ونحن منهم."
+          }
+        },
+        {
+          "verse": "62:9",
+          "check": "leave trade",
+          "title": {
+            "en": "Pause trade, hurry to remembrance",
+            "de": "Den Handel ruhen lassen, zum Gedenken eilen",
+            "ar": "اترك البيع وأسرع إلى الذكر"
+          },
+          "body": {
+            "en": "When the call for Friday prayer is made, business pauses. The sermon and prayer are the heart of the week.",
+            "de": "Wenn zum Freitagsgebet gerufen wird, ruht der Handel. Predigt und Gebet sind das Herz der Woche.",
+            "ar": "إذا أُذّن لصلاة الجمعة توقّف البيع، فالخطبة والصلاة قلب الأسبوع."
+          }
+        },
+        {
+          "verse": "62:10",
+          "check": "disperse within the land",
+          "title": {
+            "en": "Then back to work",
+            "de": "Dann zurück an die Arbeit",
+            "ar": "ثم عُد إلى عملك"
+          },
+          "body": {
+            "en": "Islam does not ask us to leave the world. After the prayer, seek your living, and keep Allah in mind while you do.",
+            "de": "Der Islam verlangt nicht, die Welt zu verlassen. Nach dem Gebet suchen Sie Ihren Lebensunterhalt und denken dabei weiter an Allah.",
+            "ar": "لا يطلب الإسلام ترك الدنيا؛ فبعد الصلاة اطلب رزقك، وابقَ ذاكرًا لله."
+          }
+        },
+        {
+          "hadith": "muslim:1976",
+          "check": "best day",
+          "title": {
+            "en": "The best day of the week",
+            "de": "Der beste Tag der Woche",
+            "ar": "خير الأيام"
+          },
+          "body": {
+            "en": "Friday holds a special place in the week, and this hadith names some of the reasons.",
+            "de": "Der Freitag hat einen besonderen Platz in der Woche, und dieser Hadith nennt einige Gründe dafür.",
+            "ar": "للجمعة مكانة خاصة بين أيام الأسبوع، وهذا الحديث يذكر بعض أسبابها."
+          }
+        },
+        {
+          "title": {
+            "en": "A Friday checklist",
+            "de": "Eine Freitags-Checkliste",
+            "ar": "قائمة ليوم الجمعة"
+          },
+          "list": {
+            "en": [
+              "Take a bath and wear clean clothes",
+              "Come early and listen to the sermon attentively",
+              "Send many blessings upon the Prophet",
+              "Make dua: many scholars mention an hour of answer on Friday"
+            ],
+            "de": [
+              "Nehmen Sie ein Bad und tragen Sie saubere Kleidung",
+              "Kommen Sie früh und hören Sie der Predigt aufmerksam zu",
+              "Sprechen Sie viele Segenswünsche für den Propheten",
+              "Machen Sie Bittgebete: Viele Gelehrte nennen eine Stunde der Erhörung am Freitag"
+            ],
+            "ar": [
+              "اغتسل والبس ثيابًا نظيفة",
+              "بكّر وأنصت إلى الخطبة",
+              "أكثر من الصلاة على النبي صلى الله عليه وسلم",
+              "أكثر من الدعاء، فقد ذكر العلماء ساعة إجابة يوم الجمعة"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Jumu'ah",
+          "url": "https://quran.com/62"
+        }
+      ]
+    },
+    {
+      "id": "surah-063-al-munafiqun",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Surah 63 · Madani",
+          "de": "Sure 63 · medinensisch",
+          "ar": "سورة ٦٣ · مدنية"
+        },
+        "title": {
+          "en": "Surah al-Munafiqun: an honest look in the mirror",
+          "de": "Die Sure al-Munafiqun: ein ehrlicher Blick in den Spiegel",
+          "ar": "سورة المنافقون: نظرة صادقة في المرآة"
+        },
+        "sub": {
+          "en": "Al-Munafiqun means “The Hypocrites”: a warning about the gap between tongue and heart",
+          "de": "Al-Munafiqun bedeutet „Die Heuchler“: eine Warnung vor dem Riss zwischen Zunge und Herz",
+          "ar": "المنافقون: تحذير من افتراق اللسان عن القلب"
+        },
+        "arabic": "سورة المنافقون"
+      },
+      "slides": [
+        {
+          "verse": "63:1",
+          "check": "hypocrites are liars",
+          "title": {
+            "en": "Words without the heart",
+            "de": "Worte ohne Herz",
+            "ar": "كلام بلا قلب"
+          },
+          "body": {
+            "en": "They said the right words but did not mean them. The surah opens by showing that faith lives in the heart, not only on the tongue.",
+            "de": "Sie sagten die richtigen Worte, meinten sie aber nicht. Die Sure zeigt gleich zu Beginn: Glaube lebt im Herzen, nicht nur auf der Zunge.",
+            "ar": "قالوا الكلام الصحيح ولم يقصدوه. تبيّن السورة من أولها أن الإيمان مكانه القلب لا اللسان وحده."
+          }
+        },
+        {
+          "verse": "63:4",
+          "check": "their forms please you",
+          "title": {
+            "en": "Impressive on the outside",
+            "de": "Beeindruckend nach außen",
+            "ar": "مظهر يخدع"
+          },
+          "body": {
+            "en": "Fine appearance and eloquent speech can hide an empty inside. What counts with Allah is the heart and its deeds.",
+            "de": "Schönes Aussehen und gewandte Rede können ein leeres Inneres verbergen. Bei Allah zählen das Herz und seine Taten.",
+            "ar": "قد يخفي المظهر الحسن والكلام البليغ باطنًا فارغًا، والمعتبر عند الله القلب وما يصدر عنه من عمل."
+          }
+        },
+        {
+          "hadith": "bukhari:33",
+          "check": "signs of a hypocrite",
+          "title": {
+            "en": "Three warning signs",
+            "de": "Drei Warnzeichen",
+            "ar": "ثلاث علامات"
+          },
+          "body": {
+            "en": "Hypocrisy is not only a label for others. The Prophet named signs that every believer should look for in himself.",
+            "de": "Heuchelei ist nicht nur ein Etikett für andere. Der Prophet nannte Zeichen, die jeder Gläubige bei sich selbst prüfen sollte.",
+            "ar": "النفاق ليس وصفًا للآخرين فقط، فقد ذكر النبي صلى الله عليه وسلم علامات ينبغي لكل مؤمن أن يتفقدها في نفسه."
+          }
+        },
+        {
+          "verse": "63:8",
+          "check": "honor",
+          "title": {
+            "en": "True honour",
+            "de": "Wahre Ehre",
+            "ar": "العزة الحقيقية"
+          },
+          "body": {
+            "en": "Some thought power and status made them mighty. The surah answers: honour belongs to Allah, His Messenger and the believers.",
+            "de": "Manche hielten Macht und Stellung für Stärke. Die Sure antwortet: Die Ehre gehört Allah, Seinem Gesandten und den Gläubigen.",
+            "ar": "ظن بعضهم أن السلطة والمكانة عزة، فبيّنت السورة أن العزة الحقة لله ثم لرسوله والمؤمنين."
+          }
+        },
+        {
+          "verse": "63:9",
+          "check": "divert you",
+          "title": {
+            "en": "Do not let them distract you",
+            "de": "Lassen Sie sich nicht ablenken",
+            "ar": "لا تُشغلك النعم"
+          },
+          "body": {
+            "en": "Wealth and children are blessings. The danger begins when they push the remembrance of Allah out of our days.",
+            "de": "Besitz und Kinder sind Segen. Gefährlich wird es, wenn sie das Gedenken an Allah aus unseren Tagen verdrängen.",
+            "ar": "المال والأولاد نعمة، والخطر أن يُخرجا ذكر الله من أيامنا."
+          }
+        },
+        {
+          "verse": "63:10-11",
+          "check": "delay me",
+          "title": {
+            "en": "Give before it is too late",
+            "de": "Geben Sie, bevor es zu spät ist",
+            "ar": "أنفق قبل فوات الأوان"
+          },
+          "body": {
+            "en": "At death a person wishes for one more moment to give charity. The surah says: do it now.",
+            "de": "Im Sterben wünscht sich der Mensch noch einen Augenblick, um zu spenden. Die Sure sagt: Tun Sie es jetzt.",
+            "ar": "عند الموت يتمنى الإنسان لحظة أخرى ليتصدق، والسورة تقول: افعل ذلك الآن."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Munafiqun",
+          "url": "https://quran.com/63"
+        }
+      ]
+    },
+    {
+      "id": "surah-064-at-taghabun",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Surah 64 · Madani",
+          "de": "Sure 64 · medinensisch",
+          "ar": "سورة ٦٤ · مدنية"
+        },
+        "title": {
+          "en": "5 lessons from Surah at-Taghabun",
+          "de": "5 Lehren aus der Sure at-Taghabun",
+          "ar": "خمسة دروس من سورة التغابن"
+        },
+        "sub": {
+          "en": "At-Taghabun means “The Mutual Disillusion”: the Day when real loss and gain become clear",
+          "de": "At-Taghabun bedeutet „Die gegenseitige Übervorteilung“: der Tag, an dem wahrer Verlust und Gewinn sichtbar werden",
+          "ar": "التغابن: يوم يظهر فيه الربح الحقيقي والخسارة الحقيقية"
+        },
+        "arabic": "سورة التغابن"
+      },
+      "slides": [
+        {
+          "verse": "64:9",
+          "check": "Day of Deprivation",
+          "title": {
+            "en": "The real balance sheet",
+            "de": "Die wahre Bilanz",
+            "ar": "الحساب الحقيقي"
+          },
+          "body": {
+            "en": "On the Day of Gathering it becomes clear who truly gained and who lost. Worldly profit may turn out to be a loss.",
+            "de": "Am Tag der Versammlung wird klar, wer wirklich gewonnen und wer verloren hat. Weltlicher Gewinn kann sich als Verlust erweisen.",
+            "ar": "في يوم الجمع يتضح من ربح حقًا ومن خسر، وقد يتبين أن ربح الدنيا خسارة."
+          }
+        },
+        {
+          "verse": "64:11",
+          "check": "guide his heart",
+          "title": {
+            "en": "Guidance in hardship",
+            "de": "Rechtleitung im Unglück",
+            "ar": "هداية في المصيبة"
+          },
+          "body": {
+            "en": "Nothing befalls us without Allah's permission. Whoever believes this is given a guided heart that finds calm.",
+            "de": "Nichts trifft uns ohne Allahs Erlaubnis. Wer daran glaubt, dessen Herz wird geleitet und findet Ruhe.",
+            "ar": "لا يصيبنا شيء إلا بإذن الله، والمؤمن بذلك يهدي الله قلبه إلى السكينة."
+          }
+        },
+        {
+          "verse": "64:15",
+          "check": "trial",
+          "title": {
+            "en": "Blessings that test",
+            "de": "Gaben, die prüfen",
+            "ar": "نعم تختبر"
+          },
+          "body": {
+            "en": "Wealth and children are a test: do they bring us closer to Allah or pull us away? With Him is a far greater reward.",
+            "de": "Besitz und Kinder sind eine Prüfung: Bringen sie uns Allah näher oder ziehen sie uns von Ihm weg? Bei Ihm ist ein weit größerer Lohn.",
+            "ar": "المال والأولاد اختبار: هل يقرّبوننا من الله أم يبعدوننا عنه؟ وعنده أجر أعظم."
+          }
+        },
+        {
+          "verse": "64:16",
+          "check": "as much as you are able",
+          "title": {
+            "en": "As much as you can",
+            "de": "So viel Sie können",
+            "ar": "قدر استطاعتك"
+          },
+          "body": {
+            "en": "Allah does not ask for the impossible. Taqwa means doing your honest best, then trusting Him with the rest.",
+            "de": "Allah verlangt nichts Unmögliches. Gottesfurcht heißt, ehrlich sein Bestes zu geben und Ihm den Rest anzuvertrauen.",
+            "ar": "لا يطلب الله المستحيل؛ فالتقوى أن تبذل وسعك بصدق ثم تتوكل عليه فيما بقي."
+          }
+        },
+        {
+          "hadith": "nawawi:9",
+          "check": "as much of it as you can",
+          "title": {
+            "en": "The same principle in the Sunnah",
+            "de": "Dasselbe Prinzip in der Sunna",
+            "ar": "المبدأ نفسه في السنة"
+          },
+          "body": {
+            "en": "This hadith draws a clear line between prohibitions and commands, echoing verse 16.",
+            "de": "Dieser Hadith zieht eine klare Linie zwischen Verboten und Geboten und klingt wie ein Echo von Vers 16.",
+            "ar": "يفرّق هذا الحديث بوضوح بين النواهي والأوامر، وهو صدى للآية ١٦."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah at-Taghabun",
+          "url": "https://quran.com/64"
+        }
+      ]
+    },
+    {
+      "id": "surah-065-at-talaq",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Surah 65 · Madani",
+          "de": "Sure 65 · medinensisch",
+          "ar": "سورة ٦٥ · مدنية"
+        },
+        "title": {
+          "en": "Surah at-Talaq: taqwa in life's hardest moments",
+          "de": "Die Sure at-Talaq: Gottesfurcht in den schwersten Momenten",
+          "ar": "سورة الطلاق: التقوى في أصعب اللحظات"
+        },
+        "sub": {
+          "en": "At-Talaq means “The Divorce”. Between its rulings stand some of the Quran's most hopeful promises",
+          "de": "At-Talaq bedeutet „Die Scheidung“. Zwischen ihren Regeln stehen einige der hoffnungsvollsten Verheißungen des Korans",
+          "ar": "الطلاق: بين أحكامها وعود من أرجى ما في القرآن"
+        },
+        "arabic": "سورة الطلاق"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Rulings with a human face",
+            "de": "Regeln mit menschlichem Gesicht",
+            "ar": "أحكام بوجه إنساني"
+          },
+          "body": {
+            "en": "The surah sets out rules for divorce, waiting periods and maintenance. Scholars explain the details in works of fiqh. What stands out is the tone: fairness, dignity and taqwa at every step.",
+            "de": "Die Sure legt Regeln für Scheidung, Wartezeit und Unterhalt fest. Die Einzelheiten erklären Gelehrte in Werken des Fiqh. Auffällig ist der Ton: Fairness, Würde und Gottesfurcht bei jedem Schritt.",
+            "ar": "تضع السورة أحكام الطلاق والعدة والنفقة، ويشرح العلماء تفاصيلها في كتب الفقه. واللافت هو الروح: العدل والكرامة والتقوى في كل خطوة."
+          }
+        },
+        {
+          "title": {
+            "en": "You do not know what comes next",
+            "de": "Sie wissen nicht, was danach kommt",
+            "ar": "لا تعلم ما يأتي بعد"
+          },
+          "body": {
+            "en": "Verse 1 ends with a gentle hint: Allah may yet bring about a new situation. Even in a separation, the door to change and reconciliation stays open.",
+            "de": "Vers 1 endet mit einem sanften Hinweis: Allah kann noch eine neue Lage herbeiführen. Selbst bei einer Trennung bleibt die Tür zu Veränderung und Versöhnung offen.",
+            "ar": "تُختم الآية الأولى بإشارة رقيقة: ربما يغيّر الله الحال إلى حال جديدة. فحتى عند الفراق يبقى باب التغيير والصلح مفتوحًا."
+          }
+        },
+        {
+          "verse": "65:3",
+          "check": "from where he does not expect",
+          "title": {
+            "en": "Provision you never expected",
+            "de": "Versorgung, mit der Sie nie gerechnet hätten",
+            "ar": "رزق لم يخطر بالبال"
+          },
+          "body": {
+            "en": "Verse 2 promises a way out to the God-fearing. Verse 3 adds unexpected provision, and Allah's sufficiency for whoever trusts Him.",
+            "de": "Vers 2 verheißt den Gottesfürchtigen einen Ausweg. Vers 3 fügt unerwartete Versorgung hinzu und Allahs Genügen für jeden, der Ihm vertraut.",
+            "ar": "تعد الآية الثانية المتقين بالمخرج، وتضيف الثالثة رزقًا غير متوقع، وكفاية الله لمن توكل عليه."
+          }
+        },
+        {
+          "verse": "65:7",
+          "check": "after hardship, ease",
+          "title": {
+            "en": "After hardship, ease",
+            "de": "Nach der Not die Erleichterung",
+            "ar": "بعد الضيق فرج"
+          },
+          "body": {
+            "en": "Each gives according to their means, and no one is burdened beyond what Allah has given them. Hard times do not last.",
+            "de": "Jeder gibt nach seinen Möglichkeiten, und niemandem wird mehr auferlegt, als Allah ihm gegeben hat. Schwere Zeiten bleiben nicht.",
+            "ar": "ينفق كل واحد بحسب سعته، ولا يُكلَّف أحد فوق ما آتاه الله، والضيق لا يدوم."
+          }
+        },
+        {
+          "title": {
+            "en": "Taqwa in hard moments",
+            "de": "Gottesfurcht in schweren Momenten",
+            "ar": "التقوى في اللحظات الصعبة"
+          },
+          "list": {
+            "en": [
+              "Stay fair, even when you are hurt",
+              "Keep your dignity in a dispute",
+              "Trust Allah to open a way out",
+              "Give what you can, not what you cannot"
+            ],
+            "de": [
+              "Bleiben Sie fair, auch wenn Sie verletzt sind",
+              "Bewahren Sie Ihre Würde im Streit",
+              "Vertrauen Sie darauf, dass Allah einen Ausweg öffnet",
+              "Geben Sie, was Sie können, nicht was Sie nicht können"
+            ],
+            "ar": [
+              "كن عادلًا ولو كنت مجروحًا",
+              "حافظ على كرامتك عند الخلاف",
+              "ثق بأن الله سيفتح لك مخرجًا",
+              "أعطِ ما تستطيع لا ما لا تطيق"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah at-Talaq",
+          "url": "https://quran.com/65"
+        }
+      ]
+    },
+    {
+      "id": "surah-066-at-tahrim",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Surah 66 · Madani",
+          "de": "Sure 66 · medinensisch",
+          "ar": "سورة ٦٦ · مدنية"
+        },
+        "title": {
+          "en": "What Surah at-Tahrim teaches about family and faith",
+          "de": "Was die Sure at-Tahrim über Familie und Glauben lehrt",
+          "ar": "ماذا تعلّمنا سورة التحريم عن الأسرة والإيمان"
+        },
+        "sub": {
+          "en": "At-Tahrim means “The Prohibition”, after its first verse about forbidding what Allah made lawful",
+          "de": "At-Tahrim bedeutet „Das Verbieten“, nach dem ersten Vers über das Verbieten von Erlaubtem",
+          "ar": "التحريم: سُميت بآيتها الأولى عن الامتناع عن الحلال"
+        },
+        "arabic": "سورة التحريم"
+      },
+      "slides": [
+        {
+          "verse": "66:6",
+          "check": "protect yourselves and your families",
+          "title": {
+            "en": "Protect your family",
+            "de": "Schützen Sie Ihre Familie",
+            "ar": "احمِ أهلك"
+          },
+          "body": {
+            "en": "Faith is not only personal. Believers are asked to guard themselves and their families with knowledge, example and care.",
+            "de": "Glaube ist nicht nur Privatsache. Gläubige sollen sich und ihre Familien mit Wissen, Vorbild und Fürsorge schützen.",
+            "ar": "الإيمان ليس شأنًا فرديًا فقط؛ فالمؤمن مطالب بأن يحمي نفسه وأهله بالعلم والقدوة والرعاية."
+          }
+        },
+        {
+          "hadith": "bukhari:5200",
+          "check": "guardians",
+          "title": {
+            "en": "A shared responsibility",
+            "de": "Eine gemeinsame Verantwortung",
+            "ar": "مسؤولية مشتركة"
+          },
+          "body": {
+            "en": "The Prophet described each member of a household as a guardian, each with a trust of their own.",
+            "de": "Der Prophet beschrieb jedes Mitglied eines Haushalts als Hüter, jedes mit einem eigenen anvertrauten Gut.",
+            "ar": "وصف النبي صلى الله عليه وسلم كل فرد في البيت بأنه راعٍ، ولكل منهم أمانته."
+          }
+        },
+        {
+          "verse": "66:8",
+          "check": "sincere repentance",
+          "title": {
+            "en": "Sincere repentance",
+            "de": "Aufrichtige Reue",
+            "ar": "التوبة الصادقة"
+          },
+          "body": {
+            "en": "Scholars describe tawbah nasuhah as regret, leaving the sin and resolving not to return. It ends in a light that goes ahead of the believers.",
+            "de": "Gelehrte beschreiben Tawba nasuha als Bedauern, Ablassen von der Sünde und den Vorsatz, nicht zurückzukehren. Sie mündet in ein Licht, das den Gläubigen vorausgeht.",
+            "ar": "يصف العلماء التوبة النصوح بأنها ندم وإقلاع عن الذنب وعزم على عدم العودة، وعاقبتها نور يتقدم المؤمنين."
+          }
+        },
+        {
+          "verse": "66:11",
+          "check": "wife of Pharaoh",
+          "title": {
+            "en": "Faith inside Pharaoh's palace",
+            "de": "Glaube in Pharaos Palast",
+            "ar": "إيمان في قصر فرعون"
+          },
+          "body": {
+            "en": "Living with a tyrant did not break her faith. Her dua asks for a house near Allah, the greatest wish of all.",
+            "de": "Das Leben mit einem Tyrannen brach ihren Glauben nicht. Ihr Bittgebet erbittet ein Haus nahe bei Allah, den größten aller Wünsche.",
+            "ar": "لم تكسر الحياة مع الطاغية إيمانها، ودعاؤها يطلب بيتًا عند الله، وهو أعظم الأماني."
+          }
+        },
+        {
+          "verse": "66:12",
+          "check": "Mary",
+          "title": {
+            "en": "Maryam, an example for all",
+            "de": "Maryam, ein Vorbild für alle",
+            "ar": "مريم قدوة للجميع"
+          },
+          "body": {
+            "en": "The surah ends with Maryam: chaste, true to her Lord's words and devout. She is an example for men and women alike.",
+            "de": "Die Sure endet mit Maryam: keusch, treu gegenüber den Worten ihres Herrn und demütig ergeben. Sie ist ein Vorbild für Männer und Frauen.",
+            "ar": "تُختم السورة بمريم: العفيفة الصادقة الإيمان بكلام ربها، الخاشعة. وهي قدوة للرجال والنساء معًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Four women, one lesson",
+            "de": "Vier Frauen, eine Lehre",
+            "ar": "أربع نساء ودرس واحد"
+          },
+          "body": {
+            "en": "The surah sets four women side by side. The wives of Nuh and Lut lived with prophets, yet that did not save them. The wife of Pharaoh and Maryam were raised by their own faith. No one is saved by family ties alone.",
+            "de": "Die Sure stellt vier Frauen nebeneinander. Die Frauen Nuhs und Luts lebten mit Propheten, und doch rettete sie das nicht. Die Frau Pharaos und Maryam erhob ihr eigener Glaube. Niemand wird allein durch Verwandtschaft gerettet.",
+            "ar": "تضع السورة أربع نساء جنبًا إلى جنب: امرأتا نوح ولوط عاشتا مع نبيين فلم ينفعهما ذلك، وامرأة فرعون ومريم رفعهما إيمانهما. لا ينجو أحد بالقرابة وحدها."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah at-Tahrim",
+          "url": "https://quran.com/66"
+        }
+      ]
+    },
+    {
+      "id": "surah-067-al-mulk",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Surah 67 · Makki",
+          "de": "Sure 67 · mekkanisch",
+          "ar": "سورة ٦٧ · مكية"
+        },
+        "title": {
+          "en": "Surah al-Mulk in 6 slides",
+          "de": "Die Sure al-Mulk in 6 Bildern",
+          "ar": "سورة الملك في ست شرائح"
+        },
+        "sub": {
+          "en": "Al-Mulk means “The Sovereignty”: all dominion is in His hand",
+          "de": "Al-Mulk bedeutet „Die Herrschaft“: Alle Herrschaft liegt in Seiner Hand",
+          "ar": "الملك: كل السلطان بيد الله سبحانه"
+        },
+        "arabic": "سورة الملك"
+      },
+      "slides": [
+        {
+          "verse": "67:1-2",
+          "check": "best in deed",
+          "title": {
+            "en": "Life as a test",
+            "de": "Das Leben als Prüfung",
+            "ar": "الحياة اختبار"
+          },
+          "body": {
+            "en": "Death and life were created to show who does the best deeds. Not the most deeds, but the best.",
+            "de": "Tod und Leben wurden erschaffen, um zu zeigen, wer die besten Taten vollbringt. Nicht die meisten, sondern die besten.",
+            "ar": "خُلق الموت والحياة ليظهر من هو أحسن عملًا: ليس الأكثر عملًا بل الأحسن."
+          }
+        },
+        {
+          "verse": "67:3-4",
+          "check": "inconsistency",
+          "title": {
+            "en": "Look again, and again",
+            "de": "Schauen Sie wieder und wieder",
+            "ar": "انظر مرة بعد مرة"
+          },
+          "body": {
+            "en": "The surah invites us to search the sky for a flaw. Our sight returns tired, and creation remains flawless.",
+            "de": "Die Sure lädt ein, den Himmel nach einem Fehler abzusuchen. Der Blick kehrt müde zurück, und die Schöpfung bleibt makellos.",
+            "ar": "تدعونا السورة إلى البحث عن خلل في السماء، فيعود البصر متعبًا ويبقى الخلق متقنًا."
+          }
+        },
+        {
+          "verse": "67:13-14",
+          "check": "Subtle",
+          "title": {
+            "en": "He knows what is in the hearts",
+            "de": "Er kennt, was in den Herzen ist",
+            "ar": "يعلم ما في القلوب"
+          },
+          "body": {
+            "en": "Whether we whisper or speak aloud, Allah knows. How could the Creator not know what He created?",
+            "de": "Ob wir flüstern oder laut sprechen, Allah weiß es. Wie sollte der Schöpfer nicht kennen, was Er erschaffen hat?",
+            "ar": "سواء أسررنا أم جهرنا فالله يعلم، وكيف يخفى على الخالق ما خلق؟"
+          }
+        },
+        {
+          "verse": "67:15",
+          "check": "walk among its slopes",
+          "title": {
+            "en": "Go out and seek",
+            "de": "Gehen Sie hinaus und suchen Sie",
+            "ar": "اسعَ في الأرض"
+          },
+          "body": {
+            "en": "The earth was made easy for us to walk and earn. Work is part of faith, as long as we remember where we will return.",
+            "de": "Die Erde wurde uns zugänglich gemacht, um zu gehen und zu verdienen. Arbeit gehört zum Glauben, solange wir bedenken, wohin wir zurückkehren.",
+            "ar": "ذُلّلت الأرض لنمشي فيها ونكسب، والعمل جزء من الإيمان ما دمنا نذكر إلى أين المصير."
+          }
+        },
+        {
+          "verse": "67:19",
+          "check": "birds",
+          "title": {
+            "en": "Who holds the birds?",
+            "de": "Wer hält die Vögel?",
+            "ar": "من يمسك الطير؟"
+          },
+          "body": {
+            "en": "Wings spread and folded, gliding in the air: only the Most Merciful keeps them aloft. A sign we see every day.",
+            "de": "Ausgebreitete und angelegte Flügel, gleitend in der Luft: Nur der Allerbarmer hält sie oben. Ein Zeichen, das wir jeden Tag sehen.",
+            "ar": "أجنحة تُبسط وتُطوى في الهواء، والرحمن وحده يحفظها. آية نراها كل يوم."
+          }
+        },
+        {
+          "verse": "67:30",
+          "check": "sunken",
+          "title": {
+            "en": "If the water disappeared",
+            "de": "Wenn das Wasser verschwände",
+            "ar": "لو غار الماء"
+          },
+          "body": {
+            "en": "The surah closes with a simple question about the water we drink. Every blessing we take for granted comes from Him.",
+            "de": "Die Sure endet mit einer einfachen Frage nach dem Wasser, das wir trinken. Jede Gabe, die wir für selbstverständlich halten, kommt von Ihm.",
+            "ar": "تُختم السورة بسؤال بسيط عن الماء الذي نشربه، فكل نعمة نعدّها بديهية هي منه."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Mulk",
+          "url": "https://quran.com/67"
+        }
+      ]
+    },
+    {
+      "id": "surah-068-al-qalam",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Surah 68 · Makki",
+          "de": "Sure 68 · mekkanisch",
+          "ar": "سورة ٦٨ · مكية"
+        },
+        "title": {
+          "en": "Surah al-Qalam: the pen, the character and the garden",
+          "de": "Die Sure al-Qalam: das Schreibrohr, der Charakter und der Garten",
+          "ar": "سورة القلم: القلم والخلق والبستان"
+        },
+        "sub": {
+          "en": "Al-Qalam means “The Pen”: the surah opens with an oath by the pen and what is written",
+          "de": "Al-Qalam bedeutet „Das Schreibrohr“: Die Sure beginnt mit einem Schwur beim Schreibrohr und dem Geschriebenen",
+          "ar": "القلم: تبدأ السورة بالقسم بالقلم وما يُكتب به"
+        },
+        "arabic": "سورة القلم"
+      },
+      "slides": [
+        {
+          "verse": "68:1",
+          "check": "pen",
+          "title": {
+            "en": "An oath by the pen",
+            "de": "Ein Schwur beim Schreibrohr",
+            "ar": "قسم بالقلم"
+          },
+          "body": {
+            "en": "In one of the earliest revealed surahs, Allah swears by the pen. Writing and knowledge are honoured from the very start.",
+            "de": "In einer der frühesten offenbarten Suren schwört Allah beim Schreibrohr. Schrift und Wissen werden von Anfang an geehrt.",
+            "ar": "في واحدة من أوائل السور نزولًا يُقسم الله بالقلم، فالكتابة والعلم مكرَّمان منذ البداية."
+          }
+        },
+        {
+          "verse": "68:4",
+          "check": "great moral character",
+          "title": {
+            "en": "A magnificent character",
+            "de": "Ein gewaltiger Charakter",
+            "ar": "خلق عظيم"
+          },
+          "body": {
+            "en": "While others insulted him, Allah described His Prophet with the highest praise: a magnificent character.",
+            "de": "Während andere ihn beleidigten, beschrieb Allah Seinen Propheten mit höchstem Lob: ein gewaltiger Charakter.",
+            "ar": "بينما كان غيره يسيئون إليه، أثنى الله على نبيه بأعلى ثناء: خلق رفيع عظيم."
+          }
+        },
+        {
+          "title": {
+            "en": "Character is faith made visible",
+            "de": "Charakter ist sichtbarer Glaube",
+            "ar": "الخلق إيمان ظاهر"
+          },
+          "body": {
+            "en": "The best commentary on this verse is the Prophet's life: patience with insults, mercy with the weak, honesty in every deal. Good character is faith that others can see.",
+            "de": "Die beste Erklärung dieses Verses ist das Leben des Propheten: Geduld bei Beleidigungen, Barmherzigkeit mit den Schwachen, Ehrlichkeit in jedem Geschäft. Guter Charakter ist Glaube, den andere sehen können.",
+            "ar": "خير تفسير لهذه الآية سيرة النبي صلى الله عليه وسلم: صبر على الأذى، ورحمة بالضعيف، وصدق في كل معاملة. فحسن الخلق إيمان يراه الناس."
+          }
+        },
+        {
+          "verse": "68:17",
+          "check": "companions of the garden",
+          "title": {
+            "en": "The owners of the garden",
+            "de": "Die Besitzer des Gartens",
+            "ar": "أصحاب البستان"
+          },
+          "body": {
+            "en": "They planned an early harvest so the poor would get nothing, then woke to find the garden destroyed. Stinginess ruins what it tries to keep.",
+            "de": "Sie planten eine frühe Ernte, damit die Armen nichts bekämen, und fanden den Garten am Morgen zerstört. Geiz zerstört, was er behalten will.",
+            "ar": "دبّروا أن يقطفوا الثمر مبكرًا كي لا ينال المساكين شيئًا، فأصبحوا والبستان قد هلك. البخل يُهلك ما يريد حفظه."
+          }
+        },
+        {
+          "title": {
+            "en": "Turning back after a mistake",
+            "de": "Umkehr nach einem Fehler",
+            "ar": "الرجوع بعد الخطأ"
+          },
+          "body": {
+            "en": "The story does not end in ruin. The owners blamed each other, then admitted their wrong and turned to their Lord with hope. Repentance is possible even after loss.",
+            "de": "Die Geschichte endet nicht im Ruin. Die Besitzer gaben einander die Schuld, gestanden dann ihr Unrecht ein und wandten sich hoffnungsvoll an ihren Herrn. Reue ist auch nach einem Verlust möglich.",
+            "ar": "لا تنتهي القصة بالخراب؛ فقد تلاوم أصحاب البستان ثم اعترفوا بظلمهم ورجعوا إلى ربهم راجين. فالتوبة ممكنة حتى بعد الخسارة."
+          }
+        },
+        {
+          "verse": "68:48",
+          "check": "companion of the fish",
+          "title": {
+            "en": "Patience, not haste",
+            "de": "Geduld statt Eile",
+            "ar": "صبر لا استعجال"
+          },
+          "body": {
+            "en": "The Prophet is told to wait for Allah's decision with patience, unlike Yunus, who called out in distress from inside the fish.",
+            "de": "Dem Propheten wird geboten, geduldig auf Allahs Entscheidung zu warten, anders als Yunus, der in Bedrängnis aus dem Fisch rief.",
+            "ar": "يؤمر النبي صلى الله عليه وسلم بالصبر لحكم ربه، لا كيونس الذي نادى مكروبًا من بطن الحوت."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Qalam",
+          "url": "https://quran.com/68"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-069-al-haqqah",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Surah 69 · Makki",
+          "de": "Sure 69 · mekkanisch",
+          "ar": "سورة ٦٩ · مكية"
+        },
+        "title": {
+          "en": "Surah al-Haqqah: two records, two hands",
+          "de": "Die Sure al-Haqqah: zwei Bücher, zwei Hände",
+          "ar": "سورة الحاقة: كتابان ويدان"
+        },
+        "sub": {
+          "en": "Al-Haqqah means “The Reality”: the Day that will surely come true",
+          "de": "Al-Haqqah bedeutet „Die Wirklichkeit“: der Tag, der sich gewiss bewahrheiten wird",
+          "ar": "الحاقة: اليوم الذي يتحقق لا محالة"
+        },
+        "arabic": "سورة الحاقة"
+      },
+      "slides": [
+        {
+          "verse": "69:1-3",
+          "check": "Inevitable Reality",
+          "title": {
+            "en": "A name that repeats itself",
+            "de": "Ein Name, der sich wiederholt",
+            "ar": "اسم يتكرر"
+          },
+          "body": {
+            "en": "The surah opens by repeating its own name three times, as a question. The repetition makes the listener stop and pay attention.",
+            "de": "Die Sure beginnt damit, ihren eigenen Namen dreimal als Frage zu wiederholen. Die Wiederholung lässt den Zuhörer innehalten.",
+            "ar": "تبدأ السورة بتكرار اسمها ثلاث مرات في صيغة سؤال، فيتوقف السامع وينتبه."
+          }
+        },
+        {
+          "verse": "69:13-15",
+          "check": "Horn is blown",
+          "title": {
+            "en": "When the Horn is blown",
+            "de": "Wenn in das Horn geblasen wird",
+            "ar": "يوم النفخ في الصور"
+          },
+          "body": {
+            "en": "One blast, and mountains and earth are levelled. What seemed permanent turns out to be fragile.",
+            "de": "Ein einziger Stoß, und Berge und Erde werden eingeebnet. Was dauerhaft schien, erweist sich als zerbrechlich.",
+            "ar": "نفخة واحدة فتُدكّ الأرض والجبال، وما بدا ثابتًا يتبيّن أنه هش."
+          }
+        },
+        {
+          "verse": "69:19-20",
+          "check": "right hand",
+          "title": {
+            "en": "The record in the right hand",
+            "de": "Das Buch in der rechten Hand",
+            "ar": "الكتاب باليمين"
+          },
+          "body": {
+            "en": "Joy so great that one wants everyone to read it. Its secret: living with certainty that the meeting with Allah will come.",
+            "de": "Eine Freude so groß, dass man will, dass alle es lesen. Ihr Geheimnis: mit der Gewissheit zu leben, dass die Begegnung mit Allah kommt.",
+            "ar": "فرح عظيم يجعل صاحبه يدعو الجميع إلى قراءة كتابه، وسرّه أنه عاش موقنًا بلقاء الله."
+          }
+        },
+        {
+          "verse": "69:25-27",
+          "check": "left hand",
+          "title": {
+            "en": "The record in the left hand",
+            "de": "Das Buch in der linken Hand",
+            "ar": "الكتاب بالشمال"
+          },
+          "body": {
+            "en": "Regret without remedy. Verses 28 and 29 add that neither wealth nor power helped him in the end.",
+            "de": "Reue ohne Ausweg. Die Verse 28 und 29 fügen hinzu, dass ihm am Ende weder Besitz noch Macht halfen.",
+            "ar": "ندم لا علاج له، وتضيف الآيتان ٢٨ و٢٩ أن المال والسلطان لم ينفعاه في النهاية."
+          }
+        },
+        {
+          "verse": "69:40-42",
+          "check": "not the word of a poet",
+          "title": {
+            "en": "Not poetry, not soothsaying",
+            "de": "Keine Dichtung, keine Wahrsagerei",
+            "ar": "ليس شعرًا ولا كهانة"
+          },
+          "body": {
+            "en": "The surah ends by affirming the source of the Quran: conveyed by a noble Messenger, revealed by the Lord of the worlds.",
+            "de": "Die Sure endet mit der Bekräftigung der Quelle des Korans: überbracht von einem edlen Gesandten, offenbart vom Herrn der Welten.",
+            "ar": "تُختم السورة بتأكيد مصدر القرآن: بلّغه رسول كريم، وهو وحي من رب العالمين."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Haqqah",
+          "url": "https://quran.com/69"
+        }
+      ]
+    },
+    {
+      "id": "surah-070-al-maarij",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Surah 70 · Makki",
+          "de": "Sure 70 · mekkanisch",
+          "ar": "سورة ٧٠ · مكية"
+        },
+        "title": {
+          "en": "What Surah al-Ma'arij teaches about the anxious heart",
+          "de": "Was die Sure al-Ma'arij über das unruhige Herz lehrt",
+          "ar": "ماذا تعلّمنا سورة المعارج عن القلب القلق"
+        },
+        "sub": {
+          "en": "Al-Ma'arij means “The Ascending Stairways”: the ways by which the angels rise to Allah",
+          "de": "Al-Ma'arij bedeutet „Die Aufstiegswege“: die Wege, auf denen die Engel zu Allah aufsteigen",
+          "ar": "المعارج: المصاعد التي ترتقي فيها الملائكة إلى الله"
+        },
+        "arabic": "سورة المعارج"
+      },
+      "slides": [
+        {
+          "verse": "70:4",
+          "check": "fifty thousand years",
+          "title": {
+            "en": "A Day like no other",
+            "de": "Ein Tag wie kein anderer",
+            "ar": "يوم لا كالأيام"
+          },
+          "body": {
+            "en": "The surah describes a Day of fifty thousand years. Scholars differ on how to understand this measure; all agree on its gravity.",
+            "de": "Die Sure beschreibt einen Tag von fünfzigtausend Jahren. Die Gelehrten deuten dieses Maß unterschiedlich; über seine Schwere sind sich alle einig.",
+            "ar": "تصف السورة يومًا مقداره خمسون ألف عام، وقد اختلف العلماء في فهم هذا المقدار، واتفقوا على عظمته."
+          }
+        },
+        {
+          "verse": "70:5",
+          "check": "gracious patience",
+          "title": {
+            "en": "Beautiful patience",
+            "de": "Schöne Geduld",
+            "ar": "الصبر الجميل"
+          },
+          "body": {
+            "en": "Sabr jamil: patience without complaining to people, while still pouring out one's heart to Allah.",
+            "de": "Sabr jamil: Geduld, ohne sich bei Menschen zu beklagen, während man sein Herz weiterhin vor Allah ausschüttet.",
+            "ar": "الصبر الجميل: صبر بلا شكوى إلى الناس، مع بثّ الهم إلى الله."
+          }
+        },
+        {
+          "verse": "70:19-21",
+          "check": "created anxious",
+          "title": {
+            "en": "Our restless nature",
+            "de": "Unsere unruhige Natur",
+            "ar": "طبيعتنا القلقة"
+          },
+          "body": {
+            "en": "The Quran describes us honestly: anxious in hardship, holding back in good times. Recognising this is the first step.",
+            "de": "Der Koran beschreibt uns ehrlich: ängstlich in der Not, zurückhaltend in guten Zeiten. Das zu erkennen ist der erste Schritt.",
+            "ar": "يصف القرآن الإنسان بصدق: جزوع عند الشدة، ممسك عند الرخاء، ومعرفة ذلك أول خطوة."
+          }
+        },
+        {
+          "verse": "70:22-23",
+          "check": "constant in their prayer",
+          "title": {
+            "en": "The remedy: prayer",
+            "de": "Das Heilmittel: das Gebet",
+            "ar": "العلاج: الصلاة"
+          },
+          "body": {
+            "en": "The exception is those who pray, and stay constant in it. Regular prayer steadies a restless heart.",
+            "de": "Ausgenommen sind die Betenden, die beständig dabei bleiben. Regelmäßiges Gebet beruhigt ein unruhiges Herz.",
+            "ar": "يُستثنى المصلّون المداومون على صلاتهم، فالمداومة على الصلاة تسكّن القلب القلق."
+          }
+        },
+        {
+          "verse": "70:32-34",
+          "check": "trusts and promises",
+          "title": {
+            "en": "Character that protects",
+            "de": "Charakter, der schützt",
+            "ar": "أخلاق تحمي"
+          },
+          "body": {
+            "en": "The traits of those who pray include honesty with trusts, kept promises and upright testimony. Prayer shapes everyday life.",
+            "de": "Zu den Eigenschaften der Betenden gehören Treue bei anvertrautem Gut, gehaltene Versprechen und aufrichtiges Zeugnis. Das Gebet prägt den Alltag.",
+            "ar": "من صفات المصلين: حفظ الأمانات، والوفاء بالعهود، وإقامة الشهادة. فالصلاة تصوغ الحياة اليومية."
+          }
+        },
+        {
+          "title": {
+            "en": "For an anxious day",
+            "de": "Für einen unruhigen Tag",
+            "ar": "ليوم قلق"
+          },
+          "list": {
+            "en": [
+              "Pray on time, even when it is hard",
+              "Give something, especially when you feel tight",
+              "Bring your complaint to Allah, not to everyone",
+              "Keep one promise today, however small"
+            ],
+            "de": [
+              "Beten Sie pünktlich, auch wenn es schwerfällt",
+              "Geben Sie etwas, gerade wenn Sie sich eng fühlen",
+              "Bringen Sie Ihre Klage vor Allah, nicht vor jeden",
+              "Halten Sie heute ein Versprechen, so klein es ist"
+            ],
+            "ar": [
+              "صلِّ في الوقت ولو شقّ عليك",
+              "أعطِ شيئًا خاصة حين تشعر بالضيق",
+              "اشكُ همّك إلى الله لا إلى كل أحد",
+              "أوفِ اليوم بوعد ولو كان صغيرًا"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Ma'arij",
+          "url": "https://quran.com/70"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-071-nuh",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Surah 71 · Makki",
+          "de": "Sure 71 · mekkanisch",
+          "ar": "سورة ٧١ · مكية"
+        },
+        "title": {
+          "en": "What Surah Nuh teaches about never giving up",
+          "de": "Was die Sure Nuh über das Nicht-Aufgeben lehrt",
+          "ar": "ماذا تعلّمنا سورة نوح عن عدم الاستسلام"
+        },
+        "sub": {
+          "en": "Named after the prophet Nuh, peace be upon him: the whole surah tells of his call to his people",
+          "de": "Benannt nach dem Propheten Nuh, Friede sei mit ihm: Die ganze Sure erzählt von seinem Ruf an sein Volk",
+          "ar": "سُميت باسم نبي الله نوح عليه السلام، وهي كلها في دعوته لقومه"
+        },
+        "arabic": "سورة نوح"
+      },
+      "slides": [
+        {
+          "verse": "71:5-6",
+          "check": "night and day",
+          "title": {
+            "en": "Calling night and day",
+            "de": "Rufen bei Nacht und Tag",
+            "ar": "دعوة ليلًا ونهارًا"
+          },
+          "body": {
+            "en": "Nuh tells his Lord how he called his people at every hour. Patience in calling to good is a prophetic quality.",
+            "de": "Nuh berichtet seinem Herrn, wie er sein Volk zu jeder Stunde rief. Geduld beim Rufen zum Guten ist eine prophetische Eigenschaft.",
+            "ar": "يخبر نوح ربه أنه دعا قومه في كل وقت، والصبر في الدعوة إلى الخير صفة الأنبياء."
+          }
+        },
+        {
+          "verse": "71:7",
+          "check": "fingers in their ears",
+          "title": {
+            "en": "When people refuse to listen",
+            "de": "Wenn Menschen nicht zuhören wollen",
+            "ar": "حين يأبى الناس السماع"
+          },
+          "body": {
+            "en": "Fingers in ears, garments over heads: the refusal was total. Yet Nuh kept trying different ways, in public and in private.",
+            "de": "Finger in den Ohren, Gewänder über den Köpfen: Die Ablehnung war vollständig. Doch Nuh versuchte es weiter auf verschiedene Weise, öffentlich und im Stillen.",
+            "ar": "أصابع في الآذان وثياب على الرؤوس: رفض تام، ومع ذلك واصل نوح بطرق شتى، جهرًا وسرًّا."
+          }
+        },
+        {
+          "verse": "71:10-12",
+          "check": "Perpetual Forgiver",
+          "title": {
+            "en": "The gifts of istighfar",
+            "de": "Die Gaben des Istighfar",
+            "ar": "ثمرات الاستغفار"
+          },
+          "body": {
+            "en": "Seeking forgiveness is linked here to rain, wealth, children, gardens and rivers. It opens doors in this life too.",
+            "de": "Die Bitte um Vergebung wird hier mit Regen, Besitz, Kindern, Gärten und Flüssen verbunden. Sie öffnet auch in diesem Leben Türen.",
+            "ar": "يرتبط الاستغفار هنا بالمطر والمال والبنين والجنات والأنهار، فهو يفتح الأبواب في الدنيا أيضًا."
+          }
+        },
+        {
+          "verse": "71:13-14",
+          "check": "in stages",
+          "title": {
+            "en": "Created in stages",
+            "de": "In Stufen erschaffen",
+            "ar": "خلق على مراحل"
+          },
+          "body": {
+            "en": "Nuh asks why people do not hold Allah in awe, when He brought them into being stage by stage. Reflecting on ourselves leads to reverence.",
+            "de": "Nuh fragt, warum die Menschen Allah nicht in Ehrfurcht achten, wo Er sie doch Stufe um Stufe erschaffen hat. Nachdenken über uns selbst führt zur Ehrfurcht.",
+            "ar": "يسأل نوح قومه: لماذا لا تعظّمون الله وقد أوجدكم مرحلة بعد مرحلة؟ فالتأمل في النفس يقود إلى التعظيم."
+          }
+        },
+        {
+          "verse": "71:28",
+          "check": "my parents",
+          "title": {
+            "en": "A dua for everyone",
+            "de": "Ein Bittgebet für alle",
+            "ar": "دعاء يشمل الجميع"
+          },
+          "body": {
+            "en": "Nuh's last prayer begins with himself, then his parents, his household and all believing men and women. A fine order for our own dua.",
+            "de": "Nuhs letztes Bittgebet beginnt bei ihm selbst, dann bei seinen Eltern, seinem Haus und allen gläubigen Männern und Frauen. Eine schöne Reihenfolge für das eigene Bittgebet.",
+            "ar": "يبدأ دعاء نوح الأخير بنفسه، ثم بوالديه، ثم بأهل بيته، ثم بالمؤمنين والمؤمنات. ترتيب جميل لدعائنا."
+          }
+        },
+        {
+          "title": {
+            "en": "For anyone who calls to good",
+            "de": "Für alle, die zum Guten rufen",
+            "ar": "لكل من يدعو إلى الخير"
+          },
+          "list": {
+            "en": [
+              "Keep going, even when results are slow",
+              "Try new ways: in public, in private, gently",
+              "Begin with istighfar",
+              "Include others in your dua"
+            ],
+            "de": [
+              "Machen Sie weiter, auch wenn Ergebnisse auf sich warten lassen",
+              "Versuchen Sie neue Wege: öffentlich, im Stillen, sanft",
+              "Beginnen Sie mit der Bitte um Vergebung",
+              "Schließen Sie andere in Ihr Bittgebet ein"
+            ],
+            "ar": [
+              "واصل ولو تأخرت النتائج",
+              "جرّب طرقًا جديدة: جهرًا وسرًّا وبلين",
+              "ابدأ بالاستغفار",
+              "اجعل لغيرك نصيبًا من دعائك"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah Nuh",
+          "url": "https://quran.com/71"
+        }
+      ]
+    },
+    {
+      "id": "surah-072-al-jinn",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Surah 72 · Makki",
+          "de": "Sure 72 · mekkanisch",
+          "ar": "سورة ٧٢ · مكية"
+        },
+        "title": {
+          "en": "Surah al-Jinn: when the unseen listened",
+          "de": "Die Sure al-Jinn: als das Verborgene zuhörte",
+          "ar": "سورة الجن: حين أصغى عالم الغيب"
+        },
+        "sub": {
+          "en": "Al-Jinn means “The Jinn”: a group of them heard the Quran and believed",
+          "de": "Al-Jinn bedeutet „Die Dschinn“: Eine Gruppe von ihnen hörte den Koran und glaubte",
+          "ar": "الجن: سمعت جماعة منهم القرآن فآمنت به"
+        },
+        "arabic": "سورة الجن"
+      },
+      "slides": [
+        {
+          "verse": "72:1-2",
+          "check": "amazing Qur",
+          "title": {
+            "en": "An amazing recitation",
+            "de": "Eine wunderbare Rezitation",
+            "ar": "تلاوة مدهشة"
+          },
+          "body": {
+            "en": "The jinn heard the Quran, were amazed, recognised its guidance and believed at once. An open heart makes all the difference.",
+            "de": "Die Dschinn hörten den Koran, staunten, erkannten seine Rechtleitung und glaubten sofort. Ein offenes Herz macht den Unterschied.",
+            "ar": "سمع الجن القرآن فتعجبوا، وعرفوا هدايته فآمنوا به فورًا. والقلب المنفتح يصنع الفرق."
+          }
+        },
+        {
+          "verse": "72:13",
+          "check": "fear deprivation",
+          "title": {
+            "en": "No fear of loss",
+            "de": "Keine Angst vor Verlust",
+            "ar": "لا خوف من النقص"
+          },
+          "body": {
+            "en": "Whoever believes in his Lord need not fear being wronged or overburdened. Faith brings security.",
+            "de": "Wer an seinen Herrn glaubt, muss weder Benachteiligung noch Überlastung fürchten. Glaube schenkt Sicherheit.",
+            "ar": "من آمن بربه أمن من الظلم والإرهاق، فالإيمان طمأنينة."
+          }
+        },
+        {
+          "verse": "72:18",
+          "check": "masjids",
+          "title": {
+            "en": "Houses of Allah",
+            "de": "Häuser Allahs",
+            "ar": "بيوت الله"
+          },
+          "body": {
+            "en": "Places of prostration are for Allah alone. In them, no one is called upon besides Him.",
+            "de": "Die Orte der Niederwerfung gehören allein Allah. Dort wird niemand neben Ihm angerufen.",
+            "ar": "مواضع السجود لله وحده، فلا يُدعى فيها أحد سواه."
+          }
+        },
+        {
+          "verse": "72:26-27",
+          "check": "Knower of the unseen",
+          "title": {
+            "en": "The unseen belongs to Allah",
+            "de": "Das Verborgene gehört Allah",
+            "ar": "الغيب لله"
+          },
+          "body": {
+            "en": "Not even the jinn know the unseen. Allah reveals of it only what He wills, and only to messengers He chooses.",
+            "de": "Nicht einmal die Dschinn kennen das Verborgene. Allah enthüllt davon nur, was Er will, und nur Gesandten, die Er erwählt.",
+            "ar": "حتى الجن لا يعلمون الغيب، ولا يُطلع الله عليه إلا لمن يختاره من رسله بما يشاء."
+          }
+        },
+        {
+          "title": {
+            "en": "Did you know?",
+            "de": "Wussten Sie schon?",
+            "ar": "هل تعلم؟"
+          },
+          "body": {
+            "en": "Much of Surah al-Jinn is told in the jinn's own words, as revealed to the Prophet. Together with al-Ahqaf (46:29-32), it shows that the Quran's message reaches beyond humankind.",
+            "de": "Ein großer Teil der Sure al-Jinn ist in den eigenen Worten der Dschinn erzählt, wie sie dem Propheten offenbart wurden. Zusammen mit al-Ahqaf (46:29-32) zeigt sie, dass die Botschaft des Korans über die Menschheit hinausreicht.",
+            "ar": "يُروى جزء كبير من سورة الجن على لسان الجن أنفسهم كما أُوحي إلى النبي صلى الله عليه وسلم. ومع سورة الأحقاف (٤٦:٢٩-٣٢) تبيّن أن رسالة القرآن تتجاوز البشر."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Jinn",
+          "url": "https://quran.com/72"
+        }
+      ]
+    },
+    {
+      "id": "surah-073-al-muzzammil",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Surah 73 · Makki",
+          "de": "Sure 73 · mekkanisch",
+          "ar": "سورة ٧٣ · مكية"
+        },
+        "title": {
+          "en": "Surah al-Muzzammil: a guide to the night prayer",
+          "de": "Die Sure al-Muzzammil: ein Wegweiser zum Nachtgebet",
+          "ar": "سورة المزمل: دليل إلى قيام الليل"
+        },
+        "sub": {
+          "en": "Al-Muzzammil means “The Enshrouded One”: a call to the Prophet to rise at night",
+          "de": "Al-Muzzammil bedeutet „Der Eingehüllte“: ein Ruf an den Propheten, nachts aufzustehen",
+          "ar": "المزمل: نداء للنبي صلى الله عليه وسلم ليقوم الليل"
+        },
+        "arabic": "سورة المزمل"
+      },
+      "slides": [
+        {
+          "verse": "73:2-4",
+          "check": "measured recitation",
+          "title": {
+            "en": "Rise at night",
+            "de": "Nachts aufstehen",
+            "ar": "قيام الليل"
+          },
+          "body": {
+            "en": "Half the night, a little less or a little more, with the Quran recited slowly and clearly. The night prayer shaped the early believers.",
+            "de": "Die Hälfte der Nacht, etwas weniger oder etwas mehr, mit langsam und deutlich vorgetragenem Koran. Das Nachtgebet prägte die frühen Gläubigen.",
+            "ar": "نصف الليل أو أقل قليلًا أو أكثر، مع قراءة القرآن بتؤدة ووضوح. هكذا صاغ قيام الليل المؤمنين الأوائل."
+          }
+        },
+        {
+          "title": {
+            "en": "Tartil: recite with care",
+            "de": "Tartil: mit Sorgfalt rezitieren",
+            "ar": "الترتيل: قراءة بتأنٍّ"
+          },
+          "arabic": "تَرْتِيل",
+          "body": {
+            "en": "Tartil means reciting slowly and distinctly, giving each letter its due and pausing to reflect. The science of tajwid grows from this command. Quality before quantity.",
+            "de": "Tartil bedeutet, langsam und deutlich zu rezitieren, jedem Buchstaben sein Recht zu geben und zum Nachdenken innezuhalten. Aus diesem Gebot erwächst die Wissenschaft des Tajwid. Qualität vor Menge.",
+            "ar": "الترتيل قراءة متأنية واضحة، تعطي كل حرف حقه وتقف للتدبر، ومن هذا الأمر نشأ علم التجويد. الجودة قبل الكثرة."
+          }
+        },
+        {
+          "verse": "73:5-6",
+          "check": "heavy word",
+          "title": {
+            "en": "Why the night?",
+            "de": "Warum die Nacht?",
+            "ar": "لماذا الليل؟"
+          },
+          "body": {
+            "en": "A weighty message was coming. The hours of the night bring heart and tongue together, and words sink deeper.",
+            "de": "Eine gewichtige Botschaft stand bevor. Die Stunden der Nacht bringen Herz und Zunge zusammen, und Worte dringen tiefer.",
+            "ar": "كانت رسالة ثقيلة على وشك أن تنزل، وساعات الليل تجمع القلب واللسان، فتنفذ الكلمات أعمق."
+          }
+        },
+        {
+          "verse": "73:8-9",
+          "check": "devote yourself to Him",
+          "title": {
+            "en": "Devote yourself completely",
+            "de": "Sich ganz Ihm widmen",
+            "ar": "الانقطاع إلى الله"
+          },
+          "body": {
+            "en": "Remember His name and turn to Him wholeheartedly. He is Lord of every horizon, so let Him be the one you rely on.",
+            "de": "Seines Namens gedenken und sich Ihm ganz zuwenden. Er ist der Herr aller Himmelsrichtungen, darum verlassen Sie sich auf Ihn.",
+            "ar": "داوم على ذكره وأقبل عليه بقلبك كله، فهو رب الجهات كلها، فتوكل عليه."
+          }
+        },
+        {
+          "verse": "73:10",
+          "check": "gracious avoidance",
+          "title": {
+            "en": "Patience with words that hurt",
+            "de": "Geduld bei verletzenden Worten",
+            "ar": "الصبر على الكلام الجارح"
+          },
+          "body": {
+            "en": "Bear what people say and step away graciously, without bitterness or revenge.",
+            "de": "Ertragen Sie, was die Leute sagen, und ziehen Sie sich in Würde zurück, ohne Bitterkeit und ohne Rache.",
+            "ar": "اصبر على أذى كلامهم، وابتعد عنهم بلطف، بلا مرارة ولا انتقام."
+          }
+        },
+        {
+          "title": {
+            "en": "Then came ease",
+            "de": "Dann kam Erleichterung",
+            "ar": "ثم جاء التخفيف"
+          },
+          "body": {
+            "en": "The last verse eases the command: recite what is easy, for some are ill, some travel, some work. Aisha reports in Sahih Muslim that it came about a year later, and the night prayer became voluntary.",
+            "de": "Der letzte Vers erleichtert das Gebot: Rezitieren, was leicht fällt, denn manche sind krank, manche reisen, manche arbeiten. Aischa berichtet in Sahih Muslim, dass er etwa ein Jahr später kam und das Nachtgebet freiwillig wurde.",
+            "ar": "تخفف الآية الأخيرة الأمر: قراءة ما تيسر، فمن الناس المريض والمسافر والعامل. وتروي عائشة في صحيح مسلم أنها نزلت بعد نحو عام، فصار قيام الليل تطوعًا."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Muzzammil",
+          "url": "https://quran.com/73"
+        },
+        {
+          "label": "Sahih Muslim, Book of the Prayer of Travellers, report of Aisha to Sa'd ibn Hisham"
+        }
+      ]
+    },
+    {
+      "id": "surah-074-al-muddaththir",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Surah 74 · Makki",
+          "de": "Sure 74 · mekkanisch",
+          "ar": "سورة ٧٤ · مكية"
+        },
+        "title": {
+          "en": "5 lessons from Surah al-Muddaththir",
+          "de": "5 Lehren aus der Sure al-Muddaththir",
+          "ar": "خمسة دروس من سورة المدثر"
+        },
+        "sub": {
+          "en": "Al-Muddaththir means “The Cloaked One”: the Prophet, called to rise and begin his mission",
+          "de": "Al-Muddaththir bedeutet „Der Zugedeckte“: der Prophet, gerufen aufzustehen und seine Sendung zu beginnen",
+          "ar": "المدثر: نداء للنبي صلى الله عليه وسلم ليقوم ويبدأ رسالته"
+        },
+        "arabic": "سورة المدثر"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:6214",
+          "check": "pause in the revelation",
+          "title": {
+            "en": "After a pause",
+            "de": "Nach einer Pause",
+            "ar": "بعد فترة الوحي"
+          },
+          "body": {
+            "en": "After a pause in revelation, the Prophet saw the angel of Hira again. Then the opening of this surah was revealed, as Jabir reports.",
+            "de": "Nach einer Pause der Offenbarung sah der Prophet den Engel von Hira wieder. Dann wurde der Anfang dieser Sure offenbart, wie Jabir berichtet.",
+            "ar": "بعد فترة انقطاع الوحي رأى النبي صلى الله عليه وسلم ملَك حراء مرة أخرى، ثم نزل مطلع هذه السورة كما يروي جابر."
+          }
+        },
+        {
+          "verse": "74:1-3",
+          "check": "Arise and warn",
+          "title": {
+            "en": "Rise and warn",
+            "de": "Aufstehen und warnen",
+            "ar": "النهوض بالرسالة"
+          },
+          "body": {
+            "en": "The call to begin: get up, warn people and magnify your Lord. Every mission begins with standing up.",
+            "de": "Der Ruf zum Anfang: aufstehen, die Menschen warnen und den Herrn groß machen. Jede Aufgabe beginnt mit dem Aufstehen.",
+            "ar": "نداء البداية: انهض، وأنذر الناس، وعظّم ربك. وكل رسالة تبدأ بالنهوض."
+          }
+        },
+        {
+          "verse": "74:4-5",
+          "check": "clothing purify",
+          "title": {
+            "en": "Purity inside and out",
+            "de": "Reinheit innen und außen",
+            "ar": "طهارة الظاهر والباطن"
+          },
+          "body": {
+            "en": "Clean clothes and avoiding impurity: scholars understand this both literally and as purity of heart and deed.",
+            "de": "Saubere Kleidung und das Meiden von Unreinem: Gelehrte verstehen dies wörtlich und zugleich als Reinheit von Herz und Tat.",
+            "ar": "تطهير الثياب وهجر الرجس: فهمه العلماء على ظاهره، وعلى طهارة القلب والعمل أيضًا."
+          }
+        },
+        {
+          "verse": "74:6-7",
+          "check": "confer favor",
+          "title": {
+            "en": "Give without expecting more",
+            "de": "Geben, ohne mehr zu erwarten",
+            "ar": "عطاء بلا انتظار مقابل"
+          },
+          "body": {
+            "en": "Real generosity expects nothing back. And the path of calling to Allah needs patience for His sake.",
+            "de": "Echte Großzügigkeit erwartet nichts zurück. Und der Weg des Rufens zu Allah braucht Geduld um Seinetwillen.",
+            "ar": "الكرم الحقيقي لا ينتظر مقابلًا، وطريق الدعوة إلى الله يحتاج صبرًا لوجهه."
+          }
+        },
+        {
+          "verse": "74:38",
+          "check": "Every soul",
+          "title": {
+            "en": "Each soul is held by its deeds",
+            "de": "Jede Seele ist an ihre Taten gebunden",
+            "ar": "كل نفس مرهونة بعملها"
+          },
+          "body": {
+            "en": "No one carries another's account. Verses 42 to 44 name what holds people back: neglecting prayer and not feeding the poor.",
+            "de": "Niemand trägt die Rechnung eines anderen. Die Verse 42 bis 44 nennen, was Menschen festhält: das Gebet vernachlässigen und die Armen nicht speisen.",
+            "ar": "لا يحمل أحد حساب غيره، وتذكر الآيات ٤٢ إلى ٤٤ ما يحبس الناس: ترك الصلاة وعدم إطعام المسكين."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Muddaththir",
+          "url": "https://quran.com/74"
+        },
+        {
+          "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim"
+        }
+      ]
+    },
+    {
+      "id": "surah-075-al-qiyamah",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Surah 75 · Makki",
+          "de": "Sure 75 · mekkanisch",
+          "ar": "سورة ٧٥ · مكية"
+        },
+        "title": {
+          "en": "Surah al-Qiyamah in 6 slides",
+          "de": "Die Sure al-Qiyamah in 6 Bildern",
+          "ar": "سورة القيامة في ست شرائح"
+        },
+        "sub": {
+          "en": "Al-Qiyamah means “The Resurrection”: from fingertips to faces that shine",
+          "de": "Al-Qiyamah bedeutet „Die Auferstehung“: von den Fingerspitzen bis zu strahlenden Gesichtern",
+          "ar": "القيامة: من أطراف الأصابع إلى الوجوه المشرقة"
+        },
+        "arabic": "سورة القيامة"
+      },
+      "slides": [
+        {
+          "verse": "75:1-2",
+          "check": "reproaching soul",
+          "title": {
+            "en": "The self that blames itself",
+            "de": "Die Seele, die sich selbst tadelt",
+            "ar": "النفس اللوامة"
+          },
+          "body": {
+            "en": "Allah swears by the reproaching soul: the conscience that blames us after a mistake. Its voice is a sign of a living heart.",
+            "de": "Allah schwört bei der tadelnden Seele: dem Gewissen, das uns nach einem Fehler anklagt. Seine Stimme ist ein Zeichen eines lebendigen Herzens.",
+            "ar": "يُقسم الله بالنفس اللوامة: الضمير الذي يلومنا بعد الخطأ، وصوته علامة قلب حي."
+          }
+        },
+        {
+          "verse": "75:3-4",
+          "check": "fingertips",
+          "title": {
+            "en": "Down to the fingertips",
+            "de": "Bis zu den Fingerspitzen",
+            "ar": "حتى أطراف الأصابع"
+          },
+          "body": {
+            "en": "Doubters asked how scattered bones could be gathered. The answer goes further: even the fingertips will be restored in perfect form.",
+            "de": "Zweifler fragten, wie verstreute Knochen gesammelt werden könnten. Die Antwort geht weiter: Selbst die Fingerspitzen werden vollkommen wiederhergestellt.",
+            "ar": "تساءل المشككون كيف تُجمع العظام المتفرقة، فجاء الجواب أبعد: حتى أطراف الأصابع تُسوّى كما كانت."
+          }
+        },
+        {
+          "verse": "75:14-15",
+          "check": "witness",
+          "title": {
+            "en": "Your own witness",
+            "de": "Ihr eigener Zeuge",
+            "ar": "شاهد على نفسه"
+          },
+          "body": {
+            "en": "Deep down every person knows the truth about themselves, whatever excuses they present.",
+            "de": "Im Innersten kennt jeder Mensch die Wahrheit über sich selbst, welche Ausreden er auch vorbringt.",
+            "ar": "يعرف كل إنسان في أعماقه حقيقة نفسه، مهما قدّم من أعذار."
+          }
+        },
+        {
+          "hadith": "bukhari:4927",
+          "check": "move his tongue",
+          "title": {
+            "en": "Do not rush the revelation",
+            "de": "Die Offenbarung nicht überstürzen",
+            "ar": "لا عجلة مع الوحي"
+          },
+          "body": {
+            "en": "The Prophet moved his lips quickly to memorise. Verses 16 to 19 reassured him: Allah would gather it in his heart and make it clear.",
+            "de": "Der Prophet bewegte schnell die Lippen, um auswendig zu lernen. Die Verse 16 bis 19 beruhigten ihn: Allah werde es in seinem Herzen sammeln und erklären.",
+            "ar": "كان النبي صلى الله عليه وسلم يحرّك شفتيه سريعًا ليحفظ، فطمأنته الآيات ١٦ إلى ١٩ بأن الله سيجمعه في قلبه ويبيّنه."
+          }
+        },
+        {
+          "verse": "75:22-23",
+          "check": "Looking at their Lord",
+          "title": {
+            "en": "Faces that shine",
+            "de": "Strahlende Gesichter",
+            "ar": "وجوه مشرقة"
+          },
+          "body": {
+            "en": "Radiant faces turned toward their Lord. Sunni scholars see here the greatest joy of Paradise: seeing Allah.",
+            "de": "Strahlende Gesichter, ihrem Herrn zugewandt. Sunnitische Gelehrte sehen hier die größte Freude des Paradieses: Allah zu schauen.",
+            "ar": "وجوه مشرقة متجهة إلى ربها، ويرى علماء أهل السنة في الآية أعظم نعيم الجنة: رؤية الله."
+          }
+        },
+        {
+          "verse": "75:36",
+          "check": "left neglected",
+          "title": {
+            "en": "Not without purpose",
+            "de": "Nicht ohne Sinn",
+            "ar": "لسنا بلا غاية"
+          },
+          "body": {
+            "en": "Near its end, the surah asks every human: did you think you would be left without purpose or account?",
+            "de": "Gegen Ende fragt die Sure jeden Menschen: Dachten Sie, Sie würden ohne Sinn und ohne Rechenschaft gelassen?",
+            "ar": "قرب ختامها تسأل السورة كل إنسان: هل ظننت أنك ستُترك بلا غاية ولا حساب؟"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Qiyamah",
+          "url": "https://quran.com/75"
+        }
+      ]
+    },
+    {
+      "id": "surah-076-al-insan",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Surah 76 · Madani",
+          "de": "Sure 76 · medinensisch",
+          "ar": "سورة ٧٦ · مدنية"
+        },
+        "title": {
+          "en": "Surah al-Insan: giving for the sake of Allah",
+          "de": "Die Sure al-Insan: Geben um Allahs willen",
+          "ar": "سورة الإنسان: العطاء لوجه الله"
+        },
+        "sub": {
+          "en": "Al-Insan means “The Man”, the human being. It is also called ad-Dahr, “Time”",
+          "de": "Al-Insan bedeutet „Der Mensch“. Sie heißt auch ad-Dahr, „Die Zeit“",
+          "ar": "الإنسان: وتُسمى أيضًا سورة الدهر"
+        },
+        "arabic": "سورة الإنسان"
+      },
+      "slides": [
+        {
+          "verse": "76:1-3",
+          "check": "grateful or be he ungrateful",
+          "title": {
+            "en": "From nothing to a choice",
+            "de": "Vom Nichts zur Wahl",
+            "ar": "من العدم إلى الاختيار"
+          },
+          "body": {
+            "en": "There was a time when we were nothing worth mentioning. Then Allah gave us hearing, sight and a clear path. Gratitude is now our choice.",
+            "de": "Es gab eine Zeit, da waren wir nichts Erwähnenswertes. Dann gab Allah uns Gehör, Sehkraft und einen klaren Weg. Dankbarkeit ist nun unsere Wahl.",
+            "ar": "مرّ زمن لم نكن فيه شيئًا يُذكر، ثم وهبنا الله السمع والبصر وطريقًا واضحًا، والشكر الآن اختيارنا."
+          }
+        },
+        {
+          "verse": "76:8-9",
+          "check": "give food in spite of love for it",
+          "title": {
+            "en": "Feeding for His sake",
+            "de": "Speisen um Seinetwillen",
+            "ar": "إطعام لوجه الله"
+          },
+          "body": {
+            "en": "They fed the needy, the orphan and the captive, though they loved that food themselves, and expected neither reward nor thanks.",
+            "de": "Sie speisten Bedürftige, Waisen und Gefangene, obwohl sie dieses Essen selbst begehrten, und erwarteten weder Lohn noch Dank.",
+            "ar": "أطعموا المسكين واليتيم والأسير مع حبهم للطعام، ولم ينتظروا من الناس مكافأة ولا ثناء."
+          }
+        },
+        {
+          "title": {
+            "en": "Sincerity, the hidden ingredient",
+            "de": "Aufrichtigkeit, die verborgene Zutat",
+            "ar": "الإخلاص سرّ العمل"
+          },
+          "body": {
+            "en": "The surah praises not only the meal but the intention behind it. Giving quietly, for Allah alone, turns a simple plate of food into an act of worship.",
+            "de": "Die Sure lobt nicht nur die Mahlzeit, sondern die Absicht dahinter. Leise geben, allein für Allah, macht aus einem einfachen Teller Essen einen Gottesdienst.",
+            "ar": "لا تمدح السورة الطعام وحده بل النية التي وراءه؛ فالعطاء الخفي لله وحده يجعل طبقًا بسيطًا عبادة."
+          }
+        },
+        {
+          "verse": "76:12",
+          "check": "patiently endured",
+          "title": {
+            "en": "Patience rewarded",
+            "de": "Belohnte Geduld",
+            "ar": "صبر مُجازى"
+          },
+          "body": {
+            "en": "Paradise and silk as a reward for patience: what they held back in this life is returned to them many times over.",
+            "de": "Paradies und Seide als Lohn für Geduld: Was sie in diesem Leben zurückhielten, wird ihnen vielfach zurückgegeben.",
+            "ar": "الجنة والحرير جزاء الصبر، فما أمسكوه عن أنفسهم في الدنيا يُردّ إليهم أضعافًا."
+          }
+        },
+        {
+          "verse": "76:25-26",
+          "check": "morning and evening",
+          "title": {
+            "en": "A daily rhythm of remembrance",
+            "de": "Ein täglicher Rhythmus des Gedenkens",
+            "ar": "إيقاع يومي للذكر"
+          },
+          "body": {
+            "en": "The surah gives the Prophet a daily rhythm: remembrance in the morning and evening, and long prostration at night.",
+            "de": "Die Sure gibt dem Propheten einen Tagesrhythmus: Gedenken am Morgen und Abend und lange Niederwerfung in der Nacht.",
+            "ar": "تمنح السورة النبي صلى الله عليه وسلم إيقاعًا يوميًا: ذكرًا في الصباح والمساء، وسجودًا طويلًا في الليل."
+          }
+        },
+        {
+          "hadith": "bukhari:1068",
+          "check": "Fajr prayer",
+          "title": {
+            "en": "A Friday morning surah",
+            "de": "Eine Sure für den Freitagmorgen",
+            "ar": "سورة لفجر الجمعة"
+          },
+          "body": {
+            "en": "The Prophet used to recite this surah in the Fajr prayer on Fridays, together with Surah as-Sajda.",
+            "de": "Der Prophet rezitierte diese Sure im Morgengebet am Freitag, zusammen mit der Sure as-Sajda.",
+            "ar": "كان النبي صلى الله عليه وسلم يقرأ هذه السورة في صلاة فجر الجمعة مع سورة السجدة."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Quran.com, Surah al-Insan",
+          "url": "https://quran.com/76"
+        }
+      ]
+    }
+  ]
+}

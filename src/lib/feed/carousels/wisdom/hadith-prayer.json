@@ -1,0 +1,21 @@
+{ "set": "hadith-prayer", "kind": "hadith", "theme": "prayer", "tradition": "sunni",
+  "items": [
+    {"id": "wh-prayer-muslim-1652", "hadith": "muslim:1652", "check": "doors of Thy mercy"},
+    {"id": "wh-prayer-muslim-1511", "hadith": "muslim:1511", "check": "waiting for the prayer"},
+    {"id": "wh-prayer-muslim-1190", "hadith": "muslim:1190", "check": "built a mosque"},
+    {"id": "wh-prayer-muslim-552", "hadith": "muslim:552", "check": "five (daily) prayers"},
+    {"id": "wh-prayer-muslim-543", "hadith": "muslim:543", "check": "with humility"},
+    {"id": "wh-prayer-bukhari-1142", "hadith": "bukhari:1142", "check": "three knots"},
+    {"id": "wh-prayer-bukhari-4719", "hadith": "bukhari:4719", "check": "Lord of this complete call"},
+    {"id": "wh-prayer-muslim-587", "hadith": "muslim:587", "check": "waiting for the next prayer"},
+    {"id": "wh-prayer-bukhari-794", "hadith": "bukhari:794", "check": "Subhanaka"},
+    {"id": "wh-prayer-bukhari-3425", "hadith": "bukhari:3425", "check": "all the earth is a place of worshipping"},
+    {"id": "wh-prayer-bukhari-528", "hadith": "bukhari:528", "check": "river"},
+    {"id": "wh-prayer-bukhari-574", "hadith": "bukhari:574", "check": "two cool prayers"},
+    {"id": "wh-prayer-bukhari-645", "hadith": "bukhari:645", "check": "twenty seven times"},
+    {"id": "wh-prayer-muslim-1491", "hadith": "muslim:1491", "check": "whole night"},
+    {"id": "wh-prayer-muslim-1694", "hadith": "muslim:1694", "check": "twelve rak'ahs"},
+    {"id": "wh-prayer-muslim-1688", "hadith": "muslim:1688", "check": "better than this world"},
+    {"id": "wh-prayer-muslim-1359", "hadith": "muslim:1359", "check": "tranquillity"},
+    {"id": "wh-prayer-bukhari-1190", "hadith": "bukhari:1190", "check": "one thousand prayers"}
+  ] }

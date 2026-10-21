@@ -1,0 +1,14 @@
+{ "set": "hadith-patience", "kind": "hadith", "theme": "patience", "tradition": "sunni",
+  "items": [
+    {"id": "wh-patience-bukhari-6424", "hadith": "bukhari:6424", "check": "remains patient"},
+    {"id": "wh-patience-bukhari-1283", "hadith": "bukhari:1283", "check": "first stroke of a calamity"},
+    {"id": "wh-patience-bukhari-5641", "hadith": "bukhari:5641", "check": "No fatigue"},
+    {"id": "wh-patience-bukhari-5645", "hadith": "bukhari:5645", "check": "afflicts him with trials"},
+    {"id": "wh-patience-bukhari-5647", "hadith": "bukhari:5647", "check": "leaves of a tree"},
+    {"id": "wh-patience-bukhari-5653", "hadith": "bukhari:5653", "check": "two beloved things"},
+    {"id": "wh-patience-bukhari-5644", "hadith": "bukhari:5644", "check": "fresh tender plant"},
+    {"id": "wh-patience-bukhari-6099", "hadith": "bukhari:6099", "check": "None is more patient than Allah"},
+    {"id": "wh-patience-muslim-2424", "hadith": "muslim:2424", "check": "endurance"},
+    {"id": "wh-patience-muslim-6570", "hadith": "muslim:6570", "check": "Don't curse fever"},
+    {"id": "wh-patience-bukhari-1303", "hadith": "bukhari:1303", "check": "eyes are shedding tears"}
+  ] }

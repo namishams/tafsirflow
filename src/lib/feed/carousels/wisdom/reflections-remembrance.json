@@ -1,0 +1,120 @@
+{
+  "set": "reflections-remembrance",
+  "kind": "reflection",
+  "theme": "remembrance",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-remembrance-01",
+      "text": {
+        "en": "Keep a few words of remembrance for the in-between moments: the queue, the lift, the kettle. They turn waiting into worship.",
+        "de": "Halten Sie ein paar Worte des Gedenkens für die Zwischenmomente bereit: die Warteschlange, den Aufzug, den Wasserkocher. Sie machen aus Warten Gottesdienst.",
+        "ar": "احتفظ بكلمات من الذكر للحظات العابرة: الطابور، والمصعد، وغليان الماء، فهي تحول الانتظار إلى عبادة."
+      }
+    },
+    {
+      "id": "wr-remembrance-02",
+      "text": {
+        "en": "SubhanAllah at the sunset, Alhamdulillah when the food is good, Allahu akbar when a view takes your breath away.",
+        "de": "SubhanAllah beim Sonnenuntergang, Alhamdulillah, wenn das Essen gut ist, Allahu akbar, wenn ein Ausblick Ihnen den Atem raubt.",
+        "ar": "سبحان الله حين ترى الغروب، والحمد لله حين يطيب الطعام، والله أكبر حين يأسرك منظر جميل."
+      }
+    },
+    {
+      "id": "wr-remembrance-03",
+      "text": {
+        "en": "A tongue that is busy with remembrance has less time for gossip, complaints and empty words.",
+        "de": "Eine Zunge, die mit dem Gedenken beschäftigt ist, hat weniger Zeit für Klatsch, Klagen und leere Worte.",
+        "ar": "اللسان المشغول بالذكر لا يجد وقتا كثيرا للغيبة والشكوى والكلام الفارغ."
+      }
+    },
+    {
+      "id": "wr-remembrance-04",
+      "text": {
+        "en": "Prayer beads moving slowly through a grandfather's fingers after Fajr are one of the most peaceful sights in the world.",
+        "de": "Eine Gebetskette, die nach dem Morgengebet langsam durch die Finger eines Großvaters gleitet, ist einer der friedlichsten Anblicke der Welt.",
+        "ar": "مسبحة تنساب ببطء بين أصابع جد بعد الفجر من أكثر المناظر سكينة في الدنيا."
+      }
+    },
+    {
+      "id": "wr-remembrance-05",
+      "text": {
+        "en": "When anxiety races, slow your breath and pair it with a word of remembrance. The heart often follows the tongue.",
+        "de": "Wenn die Angst rast, verlangsamen Sie Ihren Atem und verbinden Sie ihn mit einem Wort des Gedenkens. Das Herz folgt oft der Zunge.",
+        "ar": "إذا تسارع القلق فأبطئ أنفاسك واقرنها بكلمة من الذكر، فكثيرا ما يتبع القلب اللسان."
+      }
+    },
+    {
+      "id": "wr-remembrance-06",
+      "text": {
+        "en": "Remembering Allah is not only words. Pausing before a wrong choice because He sees you is remembrance too.",
+        "de": "Allahs zu gedenken sind nicht nur Worte. Vor einer falschen Entscheidung innezuhalten, weil Er Sie sieht, ist auch Gedenken.",
+        "ar": "ليس ذكر الله كلمات فحسب، فأن تتوقف قبل خيار خاطئ لأنه يراك ذكر أيضا."
+      }
+    },
+    {
+      "id": "wr-remembrance-07",
+      "text": {
+        "en": "The morning and evening remembrances are like a coat: put it on before you step out into the cold of the day.",
+        "de": "Die Morgen- und Abendgedenken sind wie ein Mantel: Ziehen Sie ihn an, bevor Sie in die Kälte des Tages hinausgehen.",
+        "ar": "أذكار الصباح والمساء كالمعطف، فالبسه قبل أن تخرج إلى برد النهار."
+      }
+    },
+    {
+      "id": "wr-remembrance-08",
+      "text": {
+        "en": "A heart that remembers is never truly alone, not in an empty flat, not in a strange city, not in a hospital bed.",
+        "de": "Ein Herz, das gedenkt, ist nie wirklich allein, nicht in einer leeren Wohnung, nicht in einer fremden Stadt, nicht in einem Krankenhausbett.",
+        "ar": "القلب الذاكر لا يكون وحيدا حقا، لا في شقة خالية، ولا في مدينة غريبة، ولا على سرير المستشفى."
+      }
+    },
+    {
+      "id": "wr-remembrance-09",
+      "text": {
+        "en": "Teach your children one small remembrance for leaving the house. One day they will say it at their own door and think of you.",
+        "de": "Bringen Sie Ihren Kindern ein kleines Gedenken für das Verlassen des Hauses bei. Eines Tages sagen sie es an ihrer eigenen Tür und denken an Sie.",
+        "ar": "علم أطفالك ذكرا صغيرا عند الخروج من البيت، فسيقولونه يوما عند باب بيتهم ويتذكرونك."
+      }
+    },
+    {
+      "id": "wr-remembrance-10",
+      "text": {
+        "en": "Remembrance is the gentlest alarm clock: it wakes the heart without frightening it.",
+        "de": "Das Gedenken ist der sanfteste Wecker: Es weckt das Herz, ohne es zu erschrecken.",
+        "ar": "الذكر أرق منبه: يوقظ القلب دون أن يفزعه."
+      }
+    },
+    {
+      "id": "wr-remembrance-11",
+      "text": {
+        "en": "On days when you cannot do much, a few quiet words of praise on the way to work still keep the connection warm.",
+        "de": "An Tagen, an denen Sie nicht viel schaffen, halten ein paar leise Worte des Lobes auf dem Weg zur Arbeit die Verbindung dennoch warm.",
+        "ar": "في الأيام التي لا تستطيع فيها الكثير، تبقي كلمات حمد قليلة هادئة في طريقك إلى العمل الصلة دافئة."
+      }
+    },
+    {
+      "id": "wr-remembrance-12",
+      "text": {
+        "en": "Before you open the news, open your morning with His name. Let the first voice of your day be a calm one.",
+        "de": "Bevor Sie die Nachrichten öffnen, beginnen Sie Ihren Morgen mit Seinem Namen. Lassen Sie die erste Stimme Ihres Tages eine ruhige sein.",
+        "ar": "قبل أن تفتح الأخبار افتتح صباحك باسمه، وليكن أول صوت في يومك صوتا هادئا."
+      }
+    },
+    {
+      "id": "wr-remembrance-13",
+      "text": {
+        "en": "The birds at dawn, the wind in the trees, the river over stones: the whole world hums with remembrance. Join in.",
+        "de": "Die Vögel im Morgengrauen, der Wind in den Bäumen, der Fluss über den Steinen: Die ganze Welt summt vom Gedenken. Stimmen Sie mit ein.",
+        "ar": "طيور الفجر، والريح في الأشجار، والنهر فوق الحجارة: الكون كله يلهج بالذكر، فشاركه."
+      }
+    },
+    {
+      "id": "wr-remembrance-14",
+      "text": {
+        "en": "You do not need a quiet room to remember Allah. A crowded bus can become a small mosque in your heart.",
+        "de": "Sie brauchen keinen stillen Raum, um Allahs zu gedenken. Ein voller Bus kann zu einer kleinen Moschee in Ihrem Herzen werden.",
+        "ar": "لا تحتاج إلى غرفة هادئة لتذكر الله، فالحافلة المزدحمة قد تصير مسجدا صغيرا في قلبك."
+      }
+    }
+  ]
+}

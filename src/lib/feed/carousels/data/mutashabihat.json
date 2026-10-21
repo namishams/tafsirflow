@@ -1,0 +1,599 @@
+{
+  "series": "mutashabihat",
+  "label": { "en": "Similar verses", "de": "Ähnliche Verse", "ar": "المتشابهات" },
+  "topic": "quran",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "mutashabihat-town",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Similar verses · 1", "de": "Ähnliche Verse · 1", "ar": "المتشابهات · ١" },
+        "title": { "en": "Don't mix them up: 2:58 and 7:161", "de": "Nicht verwechseln: 2:58 und 7:161", "ar": "لا تخلط بينهما: البقرة ٥٨ والأعراف ١٦١" },
+        "sub": { "en": "The Children of Israel and the town: entering, eating, forgiveness", "de": "Die Kinder Israels und die Stadt: Eintreten, Essen, Vergebung", "ar": "بنو إسرائيل والقرية: الدخول والأكل والمغفرة" }
+      },
+      "slides": [
+        {
+          "verse": "2:58",
+          "check": "Enter this city",
+          "title": { "en": "First: al-Baqara 58", "de": "Zuerst: al-Baqara 58", "ar": "أولًا: البقرة ٥٨" },
+          "body": { "en": "Read it slowly. Notice who speaks, what the first command is, and how the verse ends.", "de": "Lesen Sie langsam. Achten Sie darauf, wer spricht, was der erste Befehl ist und wie der Vers endet.", "ar": "اقرأ على مهل، وانتبه إلى المتكلم، وإلى أول أمر، وإلى خاتمة الآية." }
+        },
+        {
+          "verse": "7:161",
+          "check": "Dwell in this city",
+          "title": { "en": "Then: al-A'raf 161", "de": "Dann: al-A'raf 161", "ar": "ثم: الأعراف ١٦١" },
+          "body": { "en": "The same story, but almost every phrase has moved a little. How many changes can you find?", "de": "Dieselbe Geschichte, doch fast jede Wendung hat sich ein wenig verschoben. Wie viele Unterschiede finden Sie?", "ar": "القصة نفسها، لكن كل عبارة تقريبًا تحرّكت قليلًا. كم فرقًا تجد؟" }
+        },
+        {
+          "title": { "en": "Who speaks, and what is commanded", "de": "Wer spricht und was befohlen wird", "ar": "من المتكلم؟ وما الأمر؟" },
+          "body": { "en": "Al-Baqara: wa idh qulna, 'when We said', and the command udkhulu, 'enter'. Al-A'raf: wa idh qila lahum, 'when it was said to them', and the command uskunu, 'dwell'.", "de": "Al-Baqara: wa idh qulna, „als Wir sagten“, und der Befehl udkhulu, „eintreten“. Al-A'raf: wa idh qila lahum, „als zu ihnen gesagt wurde“, und der Befehl uskunu, „wohnen“.", "ar": "في البقرة يُسند الله القول إلى نفسه بضمير المتكلمين، والأمر فيها بالدخول. وفي الأعراف يأتي القول مبنيًّا للمجهول موجّهًا إليهم، والأمر فيها بالسكنى." }
+        },
+        {
+          "title": { "en": "Fa or wa, and one extra word", "de": "Fa oder wa, und ein zusätzliches Wort", "ar": "الفاء أو الواو، وكلمة زائدة" },
+          "body": { "en": "Al-Baqara: fa-kulu, 'then eat', and it adds raghadan, 'in abundance'. Al-A'raf: wa kulu, 'and eat', without raghadan.", "de": "Al-Baqara: fa-kulu, „dann essen“, und dazu raghadan, „in Fülle“. Al-A'raf: wa kulu, „und essen“, ohne raghadan.", "ar": "في البقرة يُعطف الأمر بالأكل بالفاء، وتزيد كلمةً تصف الأكل بالسعة والهناء. وفي الأعراف يُعطف بالواو دون هذا الوصف." }
+        },
+        {
+          "title": { "en": "Order and ending", "de": "Reihenfolge und Schluss", "ar": "الترتيب والخاتمة" },
+          "body": { "en": "Al-Baqara puts the gate first, then hittatun; al-A'raf reverses them. The sins: khatayakum in al-Baqara, khati'atikum in al-A'raf. The ending: wa sanazidu in al-Baqara, just sanazidu in al-A'raf.", "de": "Al-Baqara nennt zuerst das Tor, dann hittatun; al-A'raf dreht es um. Die Sünden: khatayakum in al-Baqara, khati'atikum in al-A'raf. Der Schluss: wa sanazidu in al-Baqara, nur sanazidu in al-A'raf.", "ar": "في البقرة يتقدّم دخول الباب على الكلمة التي أُمروا بقولها، وفي الأعراف العكس. والذنوب في البقرة بجمع التكسير، وفي الأعراف بجمع المؤنث السالم. والوعد بالزيادة في البقرة بالواو، وفي الأعراف بلا واو." }
+        },
+        {
+          "title": { "en": "Why it fits", "de": "Warum es passt", "ar": "سرّ الاختلاف" },
+          "body": { "en": "Al-Kirmani explains: entering is a short act, so eating follows it with fa. Dwelling lasts, so eating goes along with it, with wa. And where Allah says 'We said', the gift of raghadan is mentioned.", "de": "Al-Kirmani erklärt: Eintreten ist ein kurzer Akt, also folgt das Essen mit fa. Wohnen dauert an, also geschieht das Essen dabei, mit wa. Und wo Allah „Wir sagten“ spricht, wird die Gabe raghadan genannt.", "ar": "يذكر الكرماني أن الدخول فعلٌ سريع الانقضاء فعُطف الأكل عليه بالفاء، أما السكنى فإقامةٌ ممتدة يكون الأكل معها فعُطف بالواو. وحيث أسند الله القول إلى نفسه ذُكر وصف الأكل بالسعة." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Al-Baqara, the longest surah, gets the extras: raghadan and the extra wa before sanazidu. Al-A'raf is about living there: uskunu, wa kulu, and the words hittatun before the gate.", "de": "Al-Baqara, die längste Sure, bekommt die Zugaben: raghadan und das zusätzliche wa vor sanazidu. Al-A'raf handelt vom Wohnen: uskunu, wa kulu und die Worte hittatun vor dem Tor.", "ar": "البقرة أطول السور فلها الزيادات: وصف الأكل بالسعة، والواو قبل الوعد بالزيادة. والأعراف سورة السكنى: الأمر بالسكنى ثم الأكل بالواو، والكلمة المأمور بها قبل الباب." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Write the five spots on a card: qulna or qila, udkhulu or uskunu, fa or wa, gate or hittatun first, khatayakum or khati'atikum. Recite both verses from memory once a day for a week.", "de": "Schreiben Sie die fünf Stellen auf eine Karte: qulna oder qila, udkhulu oder uskunu, fa oder wa, Tor oder hittatun zuerst, khatayakum oder khati'atikum. Rezitieren Sie beide Verse eine Woche lang täglich aus dem Gedächtnis.", "ar": "اكتب المواضع الخمسة على بطاقة: ضمير المتكلمين أو المبني للمجهول، الدخول أو السكنى، الفاء أو الواو، الباب أو الكلمة أولًا، جمع التكسير أو جمع المؤنث. ثم اقرأ الآيتين غيبًا كل يوم مدة أسبوع." }
+        }
+      ],
+      "sources": [
+        { "label": "al-Kirmani, al-Burhan fi Tawjih Mutashabih al-Qur'an" }
+      ]
+    },
+    {
+      "id": "mutashabihat-town-change",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Similar verses · 2", "de": "Ähnliche Verse · 2", "ar": "المتشابهات · ٢" },
+        "title": { "en": "Don't mix them up: 2:59 and 7:162", "de": "Nicht verwechseln: 2:59 und 7:162", "ar": "لا تخلط بينهما: البقرة ٥٩ والأعراف ١٦٢" },
+        "sub": { "en": "The wrongdoers changed the word: the sequel to the town verses", "de": "Die Ungerechten vertauschten das Wort: die Fortsetzung der Stadt-Verse", "ar": "تبديل الظالمين للقول: تتمة آيتي القرية" }
+      },
+      "slides": [
+        {
+          "pair": ["2:59", "7:162"],
+          "check": ["those who wronged", "among them"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "Read them slowly, side by side. Try to find three differences before you move on.", "de": "Lesen Sie beide langsam nebeneinander. Versuchen Sie, drei Unterschiede zu finden, bevor Sie weitergehen.", "ar": "اقرأهما على مهل جنبًا إلى جنب، وحاول أن تجد ثلاثة فروق قبل أن تنتقل." }
+        },
+        {
+          "title": { "en": "Difference 1: minhum", "de": "Unterschied 1: minhum", "ar": "الفرق الأول: «مِن» التبعيضية" },
+          "body": { "en": "Al-A'raf adds minhum, 'among them', after alladhina zalamu. A few verses earlier (7:159), al-A'raf mentions a group of Musa's people who guide by the truth. Minhum keeps them apart from the wrongdoers.", "de": "Al-A'raf fügt minhum, „unter ihnen“, nach alladhina zalamu hinzu. Wenige Verse vorher (7:159) erwähnt al-A'raf eine Gruppe aus dem Volk Musas, die mit der Wahrheit leitet. Minhum trennt sie von den Ungerechten.", "ar": "تزيد الأعراف بعد ذكر الظالمين «مِن» التبعيضية متصلةً بضمير الغائبين. وقبلها بآيات (الأعراف: ١٥٩) ذُكرت أمةٌ مهتدية من أتباع موسى، فجاء التبعيض ليميّز الظالمين عنها." }
+        },
+        {
+          "title": { "en": "Difference 2: the punishment", "de": "Unterschied 2: die Strafe", "ar": "الفرق الثاني: العذاب" },
+          "body": { "en": "Al-Baqara: fa-anzalna, 'We sent down', and it repeats alladhina zalamu. Al-A'raf: fa-arsalna, 'We sent', and shortens it to 'alayhim, 'upon them'.", "de": "Al-Baqara: fa-anzalna, „Wir sandten herab“, und wiederholt alladhina zalamu. Al-A'raf: fa-arsalna, „Wir sandten“, und kürzt es zu 'alayhim, „über sie“.", "ar": "في البقرة فعل الإنزال مع إعادة ذكر الظالمين بالاسم الموصول، وفي الأعراف فعل الإرسال مع الاكتفاء بالضمير." }
+        },
+        {
+          "title": { "en": "Difference 3: the last word", "de": "Unterschied 3: das letzte Wort", "ar": "الفرق الثالث: الكلمة الأخيرة" },
+          "body": { "en": "Al-Baqara ends with yafsuqun, from the root f-s-q: open disobedience. Al-A'raf ends with yazlimun, from z-l-m: wrongdoing.", "de": "Al-Baqara endet mit yafsuqun, von der Wurzel f-s-q: offener Ungehorsam. Al-A'raf endet mit yazlimun, von z-l-m: Unrecht tun.", "ar": "تُختم البقرة بفعلٍ مضارع من الفسق، وتُختم الأعراف بفعلٍ مضارع من الظلم." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Al-A'raf and arsalna both begin with a-r. Al-A'raf also stays with one root: zalamu at the start, yazlimun at the end. Al-Baqara switches to yafsuqun.", "de": "Al-A'raf und arsalna beginnen beide mit a-r. Al-A'raf bleibt außerdem bei einer Wurzel: zalamu am Anfang, yazlimun am Ende. Al-Baqara wechselt zu yafsuqun.", "ar": "الأعراف تبقى مع جذر واحد: الظلم في أولها وفي آخرها، أما البقرة فتنتقل في خاتمتها إلى الفسق. وفي الأعراف التبعيض لأن قبلها ذكر الأمة المهتدية." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Learn 2:58-59 and 7:161-162 as two blocks of two verses. Whoever mixes up the first pair usually mixes up this one too, so revise them together.", "de": "Lernen Sie 2:58-59 und 7:161-162 als zwei Blöcke zu je zwei Versen. Wer das erste Paar verwechselt, verwechselt meist auch dieses, also wiederholen Sie sie gemeinsam.", "ar": "احفظ البقرة ٥٨-٥٩ والأعراف ١٦١-١٦٢ كتلتين من آيتين، فمن خلط بين الأوليين خلط غالبًا بين هاتين، فراجعهما معًا." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-baqara-48-123",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Similar verses · 3", "de": "Ähnliche Verse · 3", "ar": "المتشابهات · ٣" },
+        "title": { "en": "Don't mix them up: 2:48 and 2:123", "de": "Nicht verwechseln: 2:48 und 2:123", "ar": "لا تخلط بينهما: البقرة ٤٨ و١٢٣" },
+        "sub": { "en": "The Day no soul avails another: intercession and ransom in a different order", "de": "Der Tag, an dem keine Seele einer anderen nützt: Fürsprache und Lösegeld in anderer Reihenfolge", "ar": "حين لا يُغني أحدٌ عن أحد: الشفاعة والعدل بترتيبين" }
+      },
+      "slides": [
+        {
+          "pair": ["2:48", "2:123"],
+          "check": ["intercession be accepted", "compensation will be accepted"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "The openings are identical word for word. The difference sits in the middle.", "de": "Die Anfänge sind Wort für Wort gleich. Der Unterschied liegt in der Mitte.", "ar": "البداية واحدة حرفًا بحرف، والفرق في الوسط." }
+        },
+        {
+          "title": { "en": "Verse 48", "de": "Vers 48", "ar": "الآية ٤٨" },
+          "body": { "en": "First la yuqbalu minha shafa'a: intercession is not accepted. Then la yu'khadhu minha 'adl: compensation is not taken.", "de": "Zuerst la yuqbalu minha shafa'a: Fürsprache wird nicht angenommen. Dann la yu'khadhu minha 'adl: Ausgleich wird nicht genommen.", "ar": "أولًا نفي قبول الشفاعة بفعل القبول، ثم نفي أخذ العدل بفعل الأخذ، وكلا الفعلين مبنيٌّ للمجهول." }
+        },
+        {
+          "title": { "en": "Verse 123", "de": "Vers 123", "ar": "الآية ١٢٣" },
+          "body": { "en": "First la yuqbalu minha 'adl: compensation is not accepted. Then la tanfa'uha shafa'a: intercession does not benefit.", "de": "Zuerst la yuqbalu minha 'adl: Ausgleich wird nicht angenommen. Dann la tanfa'uha shafa'a: Fürsprache nützt nicht.", "ar": "أولًا نفي قبول العدل بفعل القبول، ثم نفي نفع الشفاعة بفعل النفع." }
+        },
+        {
+          "title": { "en": "What changes", "de": "Was sich ändert", "ar": "ما الذي تغيّر؟" },
+          "body": { "en": "The two nouns swap places. Yuqbalu stays first in both verses, but the second verb changes: yu'khadhu only in 48, tanfa'uha only in 123.", "de": "Die beiden Nomen tauschen die Plätze. Yuqbalu steht in beiden Versen zuerst, doch das zweite Verb wechselt: yu'khadhu nur in 48, tanfa'uha nur in 123.", "ar": "تبادل الاسمان مكانيهما، وبقي فعل القبول أولًا في الآيتين، أما الفعل الثاني ففعل الأخذ في ٤٨ وحدها، وفعل النفع في ١٢٣ وحدها." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "In 48, shafa'a comes first. In 123, count 1-2-3 like coins: 'adl, the ransom, comes first. And the verb of benefit, tanfa', only appears in the later verse.", "de": "In 48 kommt shafa'a zuerst. Bei 123 zählen Sie 1-2-3 wie Münzen: 'adl, das Lösegeld, kommt zuerst. Und das Verb des Nutzens, tanfa', steht nur im späteren Vers.", "ar": "في ٤٨ الشفاعة أولًا، وفي ١٢٣ عُدّ «١-٢-٣» كما تُعدّ النقود: فالعدل، أي الفدية، أولًا. وفعل النفع في الآية المتأخرة وحدها." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "The verses before them, 2:47 and 2:122, are identical as well. Recite 2:47-48 and 2:122-123 as twin passages, and say the order 'shafa'a, 'adl' or ''adl, shafa'a' before each one.", "de": "Auch die Verse davor, 2:47 und 2:122, sind gleich. Rezitieren Sie 2:47-48 und 2:122-123 als Zwillingsabschnitte und sagen Sie vor jedem die Reihenfolge: „shafa'a, 'adl“ oder „'adl, shafa'a“.", "ar": "الآيتان قبلهما، ٤٧ و١٢٢، متطابقتان أيضًا. فاقرأ ٤٧-٤٨ و١٢٢-١٢٣ مقطعين توأمين، وقل الترتيب قبل كل منهما: «شفاعة ثم عدل» أو «عدل ثم شفاعة»." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-pharaoh",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Similar verses · 4", "de": "Ähnliche Verse · 4", "ar": "المتشابهات · ٤" },
+        "title": { "en": "Don't mix them up: 2:49 and 7:141", "de": "Nicht verwechseln: 2:49 und 7:141", "ar": "لا تخلط بينهما: البقرة ٤٩ والأعراف ١٤١" },
+        "sub": { "en": "Rescue from Pharaoh's people: three verses, three verbs", "de": "Rettung vor dem Volk Pharaos: drei Verse, drei Verben", "ar": "النجاة من آل فرعون: ثلاث آيات وثلاثة أفعال" }
+      },
+      "slides": [
+        {
+          "pair": ["2:49", "7:141"],
+          "check": ["slaughtering", "killing"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "Nearly the same verse twice. Watch the first verb and the verb used for the sons.", "de": "Fast zweimal derselbe Vers. Achten Sie auf das erste Verb und auf das Verb für die Söhne.", "ar": "آيتان متقاربتان جدًا، فانتبه إلى الفعل الأول وإلى الفعل الواقع على الأبناء." }
+        },
+        {
+          "title": { "en": "The verb of rescue", "de": "Das Verb der Rettung", "ar": "فعل النجاة" },
+          "body": { "en": "Al-Baqara: najjaynakum, 'We saved you', from the form najja. Al-A'raf: anjaynakum, from the form anja. Same meaning, different form.", "de": "Al-Baqara: najjaynakum, „Wir retteten“, von der Form najja. Al-A'raf: anjaynakum, von der Form anja. Gleiche Bedeutung, andere Form.", "ar": "في البقرة فعل النجاة على وزن «فعّل» بالتضعيف، وفي الأعراف على وزن «أفعل» بالهمزة. المعنى واحد والصيغة مختلفة." }
+        },
+        {
+          "title": { "en": "The verb for the sons", "de": "Das Verb für die Söhne", "ar": "الفعل الواقع على الأبناء" },
+          "body": { "en": "Al-Baqara: yudhabbihuna abna'akum, from dhabh, slaughter. Al-A'raf: yuqattiluna abna'akum, from qatl, killing.", "de": "Al-Baqara: yudhabbihuna abna'akum, von dhabh, Schlachten. Al-A'raf: yuqattiluna abna'akum, von qatl, Töten.", "ar": "في البقرة فعلٌ من الذبح، وفي الأعراف فعلٌ من القتل، وكلاهما مضارعٌ مضعّف العين يدل على الكثرة." }
+        },
+        {
+          "verse": "14:6",
+          "check": "slaughtering",
+          "title": { "en": "The third verse: Ibrahim 6", "de": "Der dritte Vers: Ibrahim 6", "ar": "الآية الثالثة: إبراهيم ٦" },
+          "body": { "en": "Here Musa speaks, so it is anjakum, 'He saved you'. And the verb comes with wa: wa yudhabbihuna.", "de": "Hier spricht Musa, daher anjakum, „Er rettete“. Und das Verb kommt mit wa: wa yudhabbihuna.", "ar": "المتكلم هنا موسى عليه السلام، فجاء فعل النجاة مسندًا إلى الله بضمير الغائب، وجاء فعل الذبح معطوفًا بالواو." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Al-Baqara is the surah of the cow that was to be slaughtered (2:67), so its verse has yudhabbihuna, from dhabh. Al-A'raf has yuqattiluna. Ibrahim has dhabh too, but with an extra wa.", "de": "Al-Baqara ist die Sure der Kuh, die geschlachtet werden sollte (2:67), daher steht dort yudhabbihuna, von dhabh. Al-A'raf hat yuqattiluna. Ibrahim hat ebenfalls dhabh, aber mit zusätzlichem wa.", "ar": "البقرة سورة البقرة التي أُمروا بذبحها (البقرة: ٦٧)، فجاء فيها فعل الذبح. وفي الأعراف فعل القتل، وفي إبراهيم الذبح أيضًا لكن بزيادة الواو." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Say the three combinations in a row: najjaynakum and yudhabbihuna; anjaynakum and yuqattiluna; anjakum and wa yudhabbihuna. Then recite each verse once a day this week.", "de": "Sprechen Sie die drei Kombinationen nacheinander: najjaynakum und yudhabbihuna; anjaynakum und yuqattiluna; anjakum und wa yudhabbihuna. Rezitieren Sie dann diese Woche jeden Vers einmal täglich.", "ar": "ردّد الثلاثية متتابعة: التضعيف مع الذبح في البقرة، والهمزة مع القتل في الأعراف، والهمزة مع الذبح بالواو في إبراهيم. ثم اقرأ كل آية مرة كل يوم هذا الأسبوع." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-adam-garden",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Similar verses · 5", "de": "Ähnliche Verse · 5", "ar": "المتشابهات · ٥" },
+        "title": { "en": "Don't mix them up: 2:35 and 7:19", "de": "Nicht verwechseln: 2:35 und 7:19", "ar": "لا تخلط بينهما: البقرة ٣٥ والأعراف ١٩" },
+        "sub": { "en": "Adam and his wife in the Garden: the command to eat", "de": "Adam und seine Frau im Garten: das Gebot zu essen", "ar": "آدم وزوجه في الجنة: الأمر بالأكل" }
+      },
+      "slides": [
+        {
+          "pair": ["2:35", "7:19"],
+          "check": ["And We said", "eat from wherever"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "The second half is identical. The differences are all in the first half.", "de": "Die zweite Hälfte ist gleich. Alle Unterschiede liegen in der ersten Hälfte.", "ar": "النصف الثاني متطابق، والفروق كلها في النصف الأول." }
+        },
+        {
+          "title": { "en": "The opening", "de": "Der Anfang", "ar": "البداية" },
+          "body": { "en": "Al-Baqara: wa qulna ya Adam, 'and We said: O Adam'. Al-A'raf begins simply with wa ya Adam, without qulna.", "de": "Al-Baqara: wa qulna ya Adam, „und Wir sagten: O Adam“. Al-A'raf beginnt einfach mit wa ya Adam, ohne qulna.", "ar": "في البقرة يسبق النداءَ فعلُ القول مسندًا إلى ضمير المتكلمين، وفي الأعراف يبدأ النداء بالواو مباشرةً دون فعل القول." }
+        },
+        {
+          "title": { "en": "The eating", "de": "Das Essen", "ar": "الأكل" },
+          "body": { "en": "Al-Baqara: wa kula minha raghadan. Al-A'raf: fa-kula min haythu, with fa, without minha and without raghadan.", "de": "Al-Baqara: wa kula minha raghadan. Al-A'raf: fa-kula min haythu, mit fa, ohne minha und ohne raghadan.", "ar": "في البقرة يُعطف الأمر بالأكل بالواو، ويليه الجار والمجرور ووصف الأكل بالسعة. وفي الأعراف يُعطف بالفاء، بلا الجار والمجرور ولا ذلك الوصف." }
+        },
+        {
+          "title": { "en": "Watch the trap", "de": "Achtung, Falle", "ar": "احذر الفخّ" },
+          "body": { "en": "In the town verses (2:58 and 7:161), al-Baqara has fa-kulu and al-A'raf wa kulu. Here it is the other way round: al-Baqara wa kula, al-A'raf fa-kula.", "de": "In den Stadt-Versen (2:58 und 7:161) hat al-Baqara fa-kulu und al-A'raf wa kulu. Hier ist es umgekehrt: al-Baqara wa kula, al-A'raf fa-kula.", "ar": "في آيتي القرية (البقرة ٥٨ والأعراف ١٦١) عُطف الأكل في البقرة بالفاء وفي الأعراف بالواو، أما هنا فالعكس: الواو في البقرة، والفاء في الأعراف." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Raghadan, 'in abundance', belongs to al-Baqara: it appears in both of its stories (2:35 and 2:58) and in neither of the al-A'raf parallels. Qulna, 'We said', also appears in both al-Baqara verses.", "de": "Raghadan, „in Fülle“, gehört zu al-Baqara: Es steht in beiden Geschichten dort (2:35 und 2:58) und in keiner der Parallelen in al-A'raf. Auch qulna, „Wir sagten“, steht in beiden Versen von al-Baqara.", "ar": "وصف الأكل بالسعة من خصائص البقرة: جاء في قصتيها (٣٥ و٥٨) ولم يأتِ في نظيرتيهما في الأعراف، وكذلك إسناد القول إلى ضمير المتكلمين في آيتي البقرة كلتيهما." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Draw a small table with two rows, al-Baqara and al-A'raf, and three columns: qulna, wa or fa, raghadan. Fill it in for this pair and for the town pair, then recite all four verses.", "de": "Zeichnen Sie eine kleine Tabelle mit zwei Zeilen, al-Baqara und al-A'raf, und drei Spalten: qulna, wa oder fa, raghadan. Füllen Sie sie für dieses Paar und das Stadt-Paar aus und rezitieren Sie dann alle vier Verse.", "ar": "ارسم جدولًا صغيرًا بصفّين: البقرة والأعراف، وثلاثة أعمدة: فعل القول، الواو أو الفاء، وصف الأكل بالسعة. املأه لهذه الآيات ولآيتي القرية، ثم اقرأ الآيات الأربع." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-believers-sabians",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Similar verses · 6", "de": "Ähnliche Verse · 6", "ar": "المتشابهات · ٦" },
+        "title": { "en": "Don't mix them up: 2:62, 5:69 and 22:17", "de": "Nicht verwechseln: 2:62, 5:69 und 22:17", "ar": "لا تخلط بينها: البقرة ٦٢ والمائدة ٦٩ والحج ١٧" },
+        "sub": { "en": "Believers, Jews, Christians and Sabians: who comes first?", "de": "Gläubige, Juden, Christen und Sabier: Wer steht zuerst?", "ar": "المؤمنون واليهود والنصارى والصابئة: من يتقدّم؟" }
+      },
+      "slides": [
+        {
+          "verse": "2:62",
+          "check": "Sabeans",
+          "title": { "en": "Al-Baqara 62", "de": "Al-Baqara 62", "ar": "البقرة ٦٢" },
+          "body": { "en": "The order here: an-nasara, then as-sabi'in. And only this verse adds fa-lahum ajruhum 'inda rabbihim.", "de": "Die Reihenfolge hier: an-nasara, dann as-sabi'in. Und nur dieser Vers fügt fa-lahum ajruhum 'inda rabbihim hinzu.", "ar": "الترتيب هنا: النصارى ثم الصابئة، وتنفرد الآية بذكر الأجر الذي يجدونه عند الله." }
+        },
+        {
+          "pair": ["5:69", "22:17"],
+          "check": ["Sabeans", "Magians"],
+          "title": { "en": "Al-Ma'ida 69 and al-Hajj 17", "de": "Al-Ma'ida 69 und al-Hajj 17", "ar": "المائدة ٦٩ والحج ١٧" },
+          "body": { "en": "In both, the Sabians come before the Christians. But al-Hajj names two more groups and ends differently.", "de": "In beiden stehen die Sabier vor den Christen. Doch al-Hajj nennt zwei weitere Gruppen und endet anders.", "ar": "في الآيتين يتقدّم الصابئون على النصارى، لكن آية الحج تزيد فريقين وتختلف خاتمتها." }
+        },
+        {
+          "title": { "en": "Sabi'un or sabi'in", "de": "Sabi'un oder sabi'in", "ar": "اسم الصابئة: بالواو أو بالياء" },
+          "body": { "en": "Al-Baqara and al-Hajj say as-sabi'in. Al-Ma'ida says as-sabi'un, ending in -un. This ending is a famous point of Arabic grammar, and scholars explain it in different ways.", "de": "Al-Baqara und al-Hajj sagen as-sabi'in. Al-Ma'ida sagt as-sabi'un, mit der Endung -un. Diese Endung ist eine berühmte Frage der arabischen Grammatik, die Gelehrte unterschiedlich erklären.", "ar": "في البقرة والحج جاء اسم الصابئة بالياء على النصب، وفي المائدة بالواو على الرفع، وهي مسألة نحوية مشهورة اختلف العلماء في توجيهها." }
+        },
+        {
+          "title": { "en": "Three endings", "de": "Drei Schlüsse", "ar": "ثلاث خواتيم" },
+          "body": { "en": "Al-Baqara: the reward with their Lord, then no fear and no grief. Al-Ma'ida: straight to fa-la khawfun 'alayhim. Al-Hajj adds al-majus and alladhina ashraku, then: inna llaha yafsilu baynahum.", "de": "Al-Baqara: der Lohn bei ihrem Herrn, dann keine Furcht und keine Trauer. Al-Ma'ida: direkt fa-la khawfun 'alayhim. Al-Hajj fügt al-majus und alladhina ashraku hinzu, dann: inna llaha yafsilu baynahum.", "ar": "البقرة: ذكر الأجر، ثم نفي الخوف والحزن. المائدة: نفي الخوف والحزن مباشرةً بلا ذكر الأجر. الحج: تزيد المجوس والمشركين، ثم تُختم بأن الله يحكم بين الفرق كلها في الآخرة." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Al-Baqara follows the alphabet: N before S, nasara before sabi'in, and it alone names the reward. Al-Ma'ida is the odd one with -un. Al-Hajj, the surah of the pilgrimage, gathers the most groups.", "de": "Al-Baqara folgt dem Alphabet: N vor S, nasara vor sabi'in, und nur sie nennt den Lohn. Al-Ma'ida ist die Ausnahme mit -un. Al-Hajj, die Sure der Pilgerfahrt, versammelt die meisten Gruppen.", "ar": "البقرة وحدها تقدّم النصارى وتذكر الأجر، والمائدة وحدها تذكر الصابئة بالواو على الرفع، والحج سورة اجتماع الناس، فهي أكثرها ذكرًا للفرق." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Recite the three verses back to back once a day. Before each one, say the order of the groups out loud, then check yourself with the mushaf.", "de": "Rezitieren Sie die drei Verse einmal täglich hintereinander. Sagen Sie vor jedem die Reihenfolge der Gruppen laut und prüfen Sie sich dann mit dem Muṣḥaf.", "ar": "اقرأ الآيات الثلاث متتابعةً مرة كل يوم، وقل قبل كل آية ترتيب الفرق بصوت مسموع، ثم راجع نفسك من المصحف." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-glad-tidings",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Similar verses · 7", "de": "Ähnliche Verse · 7", "ar": "المتشابهات · ٧" },
+        "title": { "en": "Don't mix them up: 3:126 and 8:10", "de": "Nicht verwechseln: 3:126 und 8:10", "ar": "لا تخلط بينهما: آل عمران ١٢٦ والأنفال ١٠" },
+        "sub": { "en": "The help of the angels: good tidings and hearts at rest", "de": "Die Hilfe der Engel: frohe Botschaft und beruhigte Herzen", "ar": "المدد بالملائكة: بشرى وطمأنينة القلوب" }
+      },
+      "slides": [
+        {
+          "pair": ["3:126", "8:10"],
+          "check": ["good tidings for you", "good tidings and"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "Both are about the help of the angels. Three small changes: one word, one order, one ending.", "de": "Beide handeln von der Hilfe der Engel. Drei kleine Änderungen: ein Wort, eine Reihenfolge, ein Schluss.", "ar": "كلتاهما في المدد بالملائكة، وفيهما ثلاثة فروق صغيرة: كلمة، وترتيب، وخاتمة." }
+        },
+        {
+          "title": { "en": "Lakum, or not", "de": "Lakum oder nicht", "ar": "البشرى: مخصوصةٌ بهم أم مطلقة؟" },
+          "body": { "en": "Al 'Imran: bushra lakum, 'good tidings for you'. Al-Anfal: just bushra, without lakum.", "de": "Al 'Imran: bushra lakum, frohe Botschaft mit dem Zusatz lakum. Al-Anfal: nur bushra, ohne lakum.", "ar": "في آل عمران تأتي البشرى ومعها لام الاختصاص متصلةً بضمير المخاطَبين، وفي الأنفال تأتي البشرى وحدها." }
+        },
+        {
+          "title": { "en": "Where bihi stands", "de": "Wo bihi steht", "ar": "موضع الجار والمجرور" },
+          "body": { "en": "Al 'Imran: qulubukum bihi, the hearts before bihi. Al-Anfal: bihi qulubukum, bihi first.", "de": "Al 'Imran: qulubukum bihi, die Herzen vor bihi. Al-Anfal: bihi qulubukum, bihi zuerst.", "ar": "في آل عمران تتقدّم القلوب على الجار والمجرور العائد على المدد، وفي الأنفال يتقدّم الجار والمجرور على القلوب." }
+        },
+        {
+          "title": { "en": "The ending", "de": "Der Schluss", "ar": "الخاتمة" },
+          "body": { "en": "Al 'Imran attaches the two names directly: l-'azizi l-hakim. Al-Anfal stops after min 'indi llah and starts a new sentence with inna: 'azizun hakim.", "de": "Al 'Imran hängt die beiden Namen direkt an: l-'azizi l-hakim. Al-Anfal hält nach min 'indi llah an und beginnt einen neuen Satz mit inna: 'azizun hakim.", "ar": "في آل عمران يأتي الاسمان العزيز والحكيم صفتين معرّفتين متصلتين بلفظ الجلالة. وفي الأنفال يتمّ الكلام بحصر النصر في الله، ثم تأتي جملةٌ جديدة مؤكدة بـ«إنّ» والاسمان فيها نكرتان." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Al 'Imran keeps everything together: lakum, qulubukum bihi, and the names attached. Al-Anfal breaks it apart: no lakum, bihi jumps forward, and the ending becomes its own sentence with inna.", "de": "Al 'Imran hält alles zusammen: lakum, qulubukum bihi und die angehängten Namen. Al-Anfal löst es auf: kein lakum, bihi springt nach vorn, und der Schluss wird ein eigener Satz mit inna.", "ar": "آل عمران تجمع الكلام متصلًا: البشرى مخصوصة بهم، والقلوب قبل الجار والمجرور، والاسمان صفتان متصلتان. والأنفال تفرّقه: البشرى مطلقة، والجار والمجرور يتقدّم، والخاتمة جملة مستقلة بـ«إنّ»." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Read 3:123-126 and then 8:9-10. Repeat only the middle of each verse ten times, lakum ... qulubukum bihi and bihi qulubukum, until your tongue knows the difference.", "de": "Lesen Sie 3:123-126 und dann 8:9-10. Wiederholen Sie nur die Mitte jedes Verses zehnmal, lakum ... qulubukum bihi und bihi qulubukum, bis Ihre Zunge den Unterschied kennt.", "ar": "اقرأ آل عمران ١٢٣-١٢٦ ثم الأنفال ٩-١٠، وكرّر وسط كل آية من المصحف عشر مرات، منتبهًا إلى موضع الجار والمجرور، حتى يعتاد لسانك الفرق." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-creator",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Similar verses · 8", "de": "Ähnliche Verse · 8", "ar": "المتشابهات · ٨" },
+        "title": { "en": "Don't mix them up: 6:102 and 40:62", "de": "Nicht verwechseln: 6:102 und 40:62", "ar": "لا تخلط بينهما: الأنعام ١٠٢ وغافر ٦٢" },
+        "sub": { "en": "That is Allah, your Lord: which clause comes first?", "de": "„Das ist Allah“: Welcher Satzteil kommt zuerst?", "ar": "التوحيد والخلق: أيّ الجملتين تتقدّم؟" }
+      },
+      "slides": [
+        {
+          "pair": ["6:102", "40:62"],
+          "check": ["no deity except Him, the Creator", "Creator of all things; there is no deity"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "Same beginning, same building blocks, but two of them have swapped places.", "de": "Gleicher Anfang, gleiche Bausteine, doch zwei davon haben die Plätze getauscht.", "ar": "البداية واحدة واللبنات واحدة، لكن اثنتين منها تبادلتا المكان." }
+        },
+        {
+          "title": { "en": "Swapped clauses", "de": "Vertauschte Satzteile", "ar": "جملتان متبادلتان" },
+          "body": { "en": "Both begin the same way. Then al-An'am says la ilaha illa huwa first and khaliqu kulli shay' second. Ghafir reverses the two: khaliq first, la ilaha illa huwa second.", "de": "Beide beginnen gleich. Dann sagt al-An'am zuerst la ilaha illa huwa und danach khaliqu kulli shay'. Ghafir dreht beides um: zuerst khaliq, danach la ilaha illa huwa.", "ar": "تبدأ الآيتان بداية واحدة، ثم تتقدّم في الأنعام جملة التوحيد على جملة الخلق، وفي غافر العكس." }
+        },
+        {
+          "title": { "en": "Different endings", "de": "Verschiedene Schlüsse", "ar": "خاتمتان مختلفتان" },
+          "body": { "en": "Al-An'am goes on to fa'buduhu, a command to worship Him, and ends with wakil. Ghafir ends with a question: fa-anna tu'fakun.", "de": "Al-An'am fährt fort mit fa'buduhu, dem Gebot, Ihm zu dienen, und endet mit wakil. Ghafir endet mit einer Frage: fa-anna tu'fakun.", "ar": "تمضي الأنعام إلى الأمر بعبادته، وتُختم بوصفه وكيلًا. وتُختم غافر بسؤالٍ إنكاري: كيف يُصرفون عن الحق؟" }
+        },
+        {
+          "title": { "en": "Look at the verses before", "de": "Schauen Sie auf die Verse davor", "ar": "انظر إلى ما قبلها" },
+          "body": { "en": "In al-An'am the verses before (6:100-101) answer those who gave Allah partners and children, so tawhid comes first. In Ghafir the verses before (40:57-61) speak of creation, night and day, so khaliq comes first.", "de": "In al-An'am antworten die Verse davor (6:100-101) denen, die Allah Partner und Kinder zuschrieben, daher steht tauhid zuerst. In Ghafir sprechen die Verse davor (40:57-61) von Schöpfung, Nacht und Tag, daher steht khaliq zuerst.", "ar": "قبل آية الأنعام (١٠٠-١٠١) ردٌّ على من نسبوا إلى الله الشركاء والبنين، فتقدّم التوحيد. وقبل آية غافر (٥٧-٦١) حديثٌ عن الخلق والليل والنهار، فتقدّم ذكر الخلق." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Ask what the passage was just talking about. Partners: la ilaha illa huwa comes first. Creation: khaliqu kulli shay' comes first.", "de": "Fragen Sie, wovon der Abschnitt gerade sprach. Von Partnern: la ilaha illa huwa kommt zuerst. Von der Schöpfung: khaliqu kulli shay' kommt zuerst.", "ar": "اسأل: عمّ كان الحديث قبلها؟ إن كان عن الشركاء تقدّمت جملة التوحيد، وإن كان عن الخلق تقدّمت جملة الخلق." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Read 6:100-102 and 40:61-62 aloud. Before each verse, name the theme of the previous one in one word, partners or creation, and then recite.", "de": "Lesen Sie 6:100-102 und 40:61-62 laut. Nennen Sie vor jedem Vers das Thema des vorigen in einem Wort, Partner oder Schöpfung, und rezitieren Sie dann.", "ar": "اقرأ الأنعام ١٠٠-١٠٢ وغافر ٦١-٦٢ بصوت مسموع، وقبل كل آية سمِّ موضوع ما قبلها بكلمة: الشركاء أو الخلق، ثم اقرأ." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-worldly-life",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Similar verses · 9", "de": "Ähnliche Verse · 9", "ar": "المتشابهات · ٩" },
+        "title": { "en": "Don't mix them up: 6:32 and 29:64", "de": "Nicht verwechseln: 6:32 und 29:64", "ar": "لا تخلط بينهما: الأنعام ٣٢ والعنكبوت ٦٤" },
+        "sub": { "en": "The worldly life: play and amusement, or amusement and play?", "de": "Das diesseitige Leben: Spiel und Zerstreuung oder Zerstreuung und Spiel?", "ar": "الحياة الدنيا: أيتقدّم اللعب أم اللهو؟" }
+      },
+      "slides": [
+        {
+          "pair": ["6:32", "29:64"],
+          "check": ["amusement and diversion", "diversion and amusement"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "The same thought, but one extra word, two words swapped and two different endings.", "de": "Derselbe Gedanke, aber ein zusätzliches Wort, zwei vertauschte Wörter und zwei verschiedene Schlüsse.", "ar": "المعنى واحد، لكن فيهما كلمة زائدة، وكلمتان متبادلتان، وخاتمتان مختلفتان." }
+        },
+        {
+          "title": { "en": "The extra word: hadhihi", "de": "Das zusätzliche Wort: hadhihi", "ar": "الكلمة الزائدة: اسم الإشارة" },
+          "body": { "en": "Al-'Ankabut adds hadhihi, 'this', before l-hayatu d-dunya. Al-An'am has no hadhihi.", "de": "Al-'Ankabut fügt hadhihi, „dieses“, vor l-hayatu d-dunya ein. Al-An'am hat kein hadhihi.", "ar": "تزيد العنكبوت اسم إشارةٍ للقريب المؤنث قبل ذكر الحياة الدنيا، ولا إشارة في الأنعام." }
+        },
+        {
+          "title": { "en": "La'ib and lahw", "de": "La'ib und lahw", "ar": "اللعب واللهو" },
+          "body": { "en": "Al-An'am: la'ibun wa lahw, play first. Al-'Ankabut: lahwun wa la'ib, amusement first. When the Quran describes worldly life with these two words, al-'Ankabut is the only place where lahw leads (compare 47:36 and 57:20).", "de": "Al-An'am: la'ibun wa lahw, Spiel zuerst. Al-'Ankabut: lahwun wa la'ib, Zerstreuung zuerst. Wo der Koran das diesseitige Leben mit diesen zwei Wörtern beschreibt, steht lahw nur in al-'Ankabut vorn (vergleichen Sie 47:36 und 57:20).", "ar": "في الأنعام يتقدّم اللعب على اللهو، وفي العنكبوت يتقدّم اللهو على اللعب. وحيث وُصفت الحياة الدنيا بهاتين الكلمتين لم يتقدّم اللهو إلا في العنكبوت (قارن محمد ٣٦ والحديد ٢٠)." }
+        },
+        {
+          "title": { "en": "Two endings", "de": "Zwei Schlüsse", "ar": "خاتمتان" },
+          "body": { "en": "Al-An'am calls the next life khayr, better, for the mindful, and asks afala ta'qilun. Al-'Ankabut calls it al-hayawan, true life, and ends with law kanu ya'lamun.", "de": "Al-An'am nennt das jenseitige Leben khayr, besser, für die Gottesfürchtigen, und fragt afala ta'qilun. Al-'Ankabut nennt es al-hayawan, das wahre Leben, und endet mit law kanu ya'lamun.", "ar": "في الأنعام توصف الآخرة بالخيرية للمتقين، ثم سؤالٌ يستحثّ العقل. وفي العنكبوت توصف بلفظٍ من الحياة على وزن «فَعَلان» يدل على الحياة الحقة الكاملة، ثم تُختم بالتحسّر على جهلهم." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "The spider, al-'ankabut, spins a web that distracts and traps: in its surah, lahw, distraction, comes first. And the surah points at the web: hadhihi, 'this' life.", "de": "Die Spinne, al-'ankabut, spinnt ein Netz, das ablenkt und fängt: In ihrer Sure kommt lahw, die Zerstreuung, zuerst. Und die Sure zeigt auf das Netz: hadhihi, „dieses“ Leben.", "ar": "العنكبوت تنسج شبكةً تُلهي وتصطاد، ففي سورتها يتقدّم اللهو، وفيها اسم الإشارة كأنه يشير إلى الشبكة." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Recite 6:32, 47:36, 57:20 and 29:64 in a row. Tap the table each time lahw comes first. It should happen only once.", "de": "Rezitieren Sie 6:32, 47:36, 57:20 und 29:64 hintereinander. Tippen Sie jedes Mal auf den Tisch, wenn lahw zuerst kommt. Es sollte nur einmal geschehen.", "ar": "اقرأ الأنعام ٣٢ ومحمد ٣٦ والحديد ٢٠ والعنكبوت ٦٤ متتابعة، وانقر على الطاولة كلما تقدّم اللهو. ينبغي أن يحدث ذلك مرة واحدة فقط." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-prophets-7",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Similar verses · 10", "de": "Ähnliche Verse · 10", "ar": "المتشابهات · ١٠" },
+        "title": { "en": "Don't mix them up: 7:59 and 7:65", "de": "Nicht verwechseln: 7:59 und 7:65", "ar": "لا تخلط بينهما: الأعراف ٥٩ و٦٥" },
+        "sub": { "en": "Nuh and Hud in al-A'raf: the same call, different frames", "de": "Nuh und Hud in al-A'raf: derselbe Ruf, ein anderer Rahmen", "ar": "نوح وهود في الأعراف: دعوةٌ واحدة بإطارين" }
+      },
+      "slides": [
+        {
+          "pair": ["7:59", "7:65"],
+          "check": ["sent Noah", "brother Hud"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "The core call is the same. The differences are in how each prophet is introduced and how his speech ends.", "de": "Der Kern des Rufes ist gleich. Die Unterschiede liegen darin, wie jeder Prophet eingeführt wird und wie seine Rede endet.", "ar": "لبّ الدعوة واحد، والفروق في تقديم كل نبي وفي خاتمة كلامه." }
+        },
+        {
+          "title": { "en": "How they are introduced", "de": "Wie sie eingeführt werden", "ar": "كيف يُقدَّم كل نبي" },
+          "body": { "en": "Nuh: laqad arsalna, with the verb 'We sent'. Hud: wa ila 'Adin, with no verb, and Hud is called akhahum, 'their brother'.", "de": "Nuh: laqad arsalna, mit dem Verb „Wir sandten“. Hud: wa ila 'Adin, ohne Verb, und Hud wird akhahum, „ihr Bruder“, genannt.", "ar": "نوح: تبدأ الآية بفعل الإرسال مؤكدًا باللام و«قد». وهود: تبدأ بحرف الجر واسم القوم بلا فعل، مع وصف هود بأنه أخوهم." }
+        },
+        {
+          "title": { "en": "Fa-qala or qala", "de": "Fa-qala oder qala", "ar": "القول بالفاء أو بدونها" },
+          "body": { "en": "Nuh: fa-qala, with fa. Hud: qala, without fa. The same holds for Salih (7:73) and Shu'ayb (7:85): in this series only Nuh's speech starts with fa.", "de": "Nuh: fa-qala, mit fa. Hud: qala, ohne fa. Ebenso bei Salih (7:73) und Shu'ayb (7:85): In dieser Reihe beginnt nur die Rede Nuhs mit fa.", "ar": "نوح: فعل القول بالفاء، وهود: فعل القول بلا فاء، وكذلك صالح (٧٣) وشعيب (٨٥)، فلم تأتِ الفاء في هذه السلسلة إلا مع نوح." }
+        },
+        {
+          "title": { "en": "How the speech ends", "de": "Wie die Rede endet", "ar": "كيف يُختم الكلام" },
+          "body": { "en": "Nuh ends with a warning of 'adhaba yawmin 'azim, the punishment of a mighty Day. Hud ends with a question: afala tattaqun. Salih and Shu'ayb continue with qad ja'atkum bayyinatun.", "de": "Nuh endet mit einer Warnung vor 'adhaba yawmin 'azim, der Strafe eines gewaltigen Tages. Hud endet mit einer Frage: afala tattaqun. Salih und Shu'ayb fahren fort mit qad ja'atkum bayyinatun.", "ar": "يُختم كلام نوح بتحذيرهم من عقوبة يومٍ هائل، وكلام هود بسؤالٍ يحثّ على التقوى، ويمضي صالح وشعيب إلى ذكر البيّنة التي جاءت قومهما." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Nuh is the first in the series, so he gets the full opening: laqad arsalna and fa-qala. From Hud on, the pattern is fixed: wa ila [people] akhahum [prophet], qala.", "de": "Nuh ist der Erste der Reihe, daher bekommt er den vollen Anfang: laqad arsalna und fa-qala. Ab Hud steht das Muster fest: wa ila [Volk] akhahum [Prophet], qala.", "ar": "نوح أول السلسلة فله الافتتاح الكامل: فعل الإرسال المؤكد، والقول بالفاء. ومن هود فصاعدًا يثبت القالب: حرف الجر ثم القوم، ثم أخوهم ثم اسم النبي، ثم القول بلا فاء." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Recite the four openings in a row: 7:59, 7:65, 7:73, 7:85. Before each, say the people and the prophet: Nuh; 'Ad and Hud; Thamud and Salih; Madyan and Shu'ayb.", "de": "Rezitieren Sie die vier Anfänge nacheinander: 7:59, 7:65, 7:73, 7:85. Nennen Sie vor jedem Volk und Prophet: Nuh; 'Ad und Hud; Thamud und Salih; Madyan und Shu'ayb.", "ar": "اقرأ المطالع الأربعة متتابعة: ٥٩ و٦٥ و٧٣ و٨٥، وقل قبل كل منها القوم والنبي: نوح، عاد وهود، ثمود وصالح، مدين وشعيب." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-prophets-11",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Similar verses · 11", "de": "Ähnliche Verse · 11", "ar": "المتشابهات · ١١" },
+        "title": { "en": "Don't mix them up: 11:50 and 11:61", "de": "Nicht verwechseln: 11:50 und 11:61", "ar": "لا تخلط بينهما: هود ٥٠ و٦١" },
+        "sub": { "en": "Hud, Salih and Shu'ayb in Surah Hud: one call, three endings", "de": "Hud, Salih und Shu'ayb in Sure Hud: ein Ruf, drei Schlüsse", "ar": "هود وصالح وشعيب في سورة هود: دعوةٌ واحدة وثلاث خواتيم" }
+      },
+      "slides": [
+        {
+          "pair": ["11:50", "11:61"],
+          "check": ["brother Hud", "brother Salih"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "The first half is built the same way. Then the two verses part completely.", "de": "Die erste Hälfte ist gleich gebaut. Danach gehen die beiden Verse völlig auseinander.", "ar": "النصف الأول على بناءٍ واحد، ثم تفترق الآيتان تمامًا." }
+        },
+        {
+          "title": { "en": "The shared opening", "de": "Der gemeinsame Anfang", "ar": "المطلع المشترك" },
+          "body": { "en": "Until ghayruh, 'other than Him', both verses follow the same pattern. Only the people and the prophet change: 'Ad and Hud, Thamud and Salih.", "de": "Bis ghayruh, „außer Ihm“, folgen beide Verse demselben Muster. Nur Volk und Prophet wechseln: 'Ad und Hud, Thamud und Salih.", "ar": "حتى نفي وجود إلهٍ سواه تسير الآيتان على قالب واحد، ولا يتغيّر إلا القوم والنبي: عاد وهود، وثمود وصالح." }
+        },
+        {
+          "title": { "en": "Two different endings", "de": "Zwei verschiedene Schlüsse", "ar": "خاتمتان مختلفتان" },
+          "body": { "en": "Hud's verse ends at once with muftarun, 'inventors'. Salih's verse goes on much longer: ansha'akum mina l-ard, a call to istighfar and tawba, and qaribun mujib at the end.", "de": "Huds Vers endet sofort mit muftarun, „Erfinder“. Salihs Vers geht viel weiter: ansha'akum mina l-ard, ein Ruf zu istighfar und tauba, und am Ende qaribun mujib.", "ar": "تنتهي آية هود سريعًا بوصف قومه بالافتراء، وتطول آية صالح: تذكيرٌ بأن الله خلقهم من الأرض، ثم الأمر بالاستغفار والتوبة، وتُختم باسمَي القريب والمجيب." }
+        },
+        {
+          "verse": "11:84",
+          "check": "measure and the scale",
+          "title": { "en": "And the third: Shu'ayb", "de": "Und der dritte: Shu'ayb", "ar": "والثالثة: شعيب" },
+          "body": { "en": "The same opening again, and then the sin of Madyan: cheating in measure and weight.", "de": "Wieder derselbe Anfang, und dann die Sünde von Madyan: Betrug bei Maß und Gewicht.", "ar": "المطلع نفسه، ثم ذنب مدين: التطفيف في الكيل والوزن." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Each ending fits its people. 'Ad: muftarun, they invented false gods. Thamud: ansha'akum mina l-ard, made from the earth and settled in it. Madyan: al-mikyal wal-mizan, the measure and the scale.", "de": "Jeder Schluss passt zu seinem Volk. 'Ad: muftarun, sie erfanden falsche Götter. Thamud: ansha'akum mina l-ard, aus der Erde geschaffen und auf ihr angesiedelt. Madyan: al-mikyal wal-mizan, Maß und Waage.", "ar": "كل خاتمة تناسب قومها: عادٌ وُصفوا بالافتراء لأنهم اختلقوا آلهة، وثمود ذُكّروا بنشأتهم من الأرض وإعمارهم فيها، ومدين نُهوا عن نقص الكيل والوزن." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Recite 11:50, 11:61 and 11:84 back to back. After the shared opening, pause for a moment and name the people before you continue.", "de": "Rezitieren Sie 11:50, 11:61 und 11:84 hintereinander. Halten Sie nach dem gemeinsamen Anfang kurz inne und nennen Sie das Volk, bevor Sie weitermachen.", "ar": "اقرأ هود ٥٠ و٦١ و٨٤ متتابعة، وتوقف بعد المطلع المشترك لحظةً وسمِّ القوم قبل أن تكمل." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-challenge",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Similar verses · 12", "de": "Ähnliche Verse · 12", "ar": "المتشابهات · ١٢" },
+        "title": { "en": "Don't mix them up: 2:23 and 10:38", "de": "Nicht verwechseln: 2:23 und 10:38", "ar": "لا تخلط بينهما: البقرة ٢٣ ويونس ٣٨" },
+        "sub": { "en": "The challenge: one surah, or ten surahs?", "de": "Die Herausforderung: eine Sure oder zehn Suren?", "ar": "التحدّي: بسورةٍ واحدة أم بعشرٍ من السور؟" }
+      },
+      "slides": [
+        {
+          "pair": ["2:23", "10:38"],
+          "check": ["produce a surah", "bring forth a surah"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "Both challenge the doubters to bring one surah, and both end the same way. Watch the beginning and the middle.", "de": "Beide fordern die Zweifler heraus, eine Sure zu bringen, und beide enden gleich. Achten Sie auf Anfang und Mitte.", "ar": "كلتاهما تتحدّى المكذّبين بسورة واحدة، وخاتمتهما واحدة، فانتبه إلى البداية والوسط." }
+        },
+        {
+          "title": { "en": "How each begins", "de": "Wie jeder beginnt", "ar": "كيف تبدأ كل آية" },
+          "body": { "en": "Al-Baqara: wa in kuntum fi raybin, 'if you are in doubt'. Yunus: am yaquluna ftarahu, 'or do they say he invented it', followed by qul.", "de": "Al-Baqara: wa in kuntum fi raybin, ein Bedingungssatz über den Zweifel, rayb. Yunus: am yaquluna ftarahu, „oder sagen sie, er habe ihn erfunden?“, gefolgt von qul.", "ar": "البقرة تبدأ بشرطٍ يخاطب الشاكّين، ويونس تبدأ باستفهامٍ عن زعمهم أنه مفترى، ثم الأمر بالقول." }
+        },
+        {
+          "title": { "en": "Min mithlihi, or mithlihi", "de": "Min mithlihi oder mithlihi", "ar": "بزيادة «مِن» أو بدونها" },
+          "body": { "en": "Al-Baqara: bi-suratin min mithlihi, with min. Yunus: bi-suratin mithlihi, without min.", "de": "Al-Baqara: bi-suratin min mithlihi, mit min. Yunus: bi-suratin mithlihi, ohne min.", "ar": "البقرة: يأتي حرف الجر «مِن» قبل كلمة المثل، ويونس: تأتي كلمة المثل صفةً للسورة مباشرةً بدونه." }
+        },
+        {
+          "title": { "en": "Whom to call", "de": "Wen man rufen soll", "ar": "من يُدعى" },
+          "body": { "en": "Al-Baqara: wad'u shuhada'akum, 'call your witnesses'. Yunus: wad'u mani stata'tum, 'call whomever you can'. After that, both end the same way.", "de": "Al-Baqara: wad'u shuhada'akum, die Zeugen rufen. Yunus: wad'u mani stata'tum, rufen, wen man nur kann. Danach enden beide gleich.", "ar": "البقرة: الأمر بدعوة شهدائهم، ويونس: الأمر بدعوة كل من يقدرون عليه، ثم تتفق الخاتمتان." }
+        },
+        {
+          "verse": "11:13",
+          "check": "ten surahs",
+          "title": { "en": "The third: Hud 13", "de": "Der dritte: Hud 13", "ar": "الثالثة: هود ١٣" },
+          "body": { "en": "Same opening as Yunus, but the challenge is bi-'ashri suwarin: ten surahs, with the added word muftarayat.", "de": "Derselbe Anfang wie in Yunus, doch die Herausforderung lautet bi-'ashri suwarin: zehn Suren, mit dem Zusatz muftarayat.", "ar": "مطلعها كمطلع يونس، لكن التحدّي فيها بعشرٍ من السور لا بسورة واحدة، مع زيادة وصفها بالافتراء." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Only al-Baqara has raybin, min mithlihi and shuhada'akum. Yunus and Hud share am yaquluna ftarahu and mani stata'tum. Hud is the 'ten' verse.", "de": "Nur al-Baqara hat raybin, min mithlihi und shuhada'akum. Yunus und Hud teilen am yaquluna ftarahu und mani stata'tum. Hud ist der „Zehner“-Vers.", "ar": "تنفرد البقرة بذكر الريب، وبحرف الجر قبل المثل، وبدعوة الشهداء. وتشترك يونس وهود في الاستفهام عن دعوى الافتراء، وفي دعوة كل من يقدرون عليه، وهود آية العشر." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Recite 2:23, 10:38 and 11:13 in a row. Hold up one finger for the one-surah verses and ten fingers for Hud.", "de": "Rezitieren Sie 2:23, 10:38 und 11:13 hintereinander. Zeigen Sie einen Finger bei den Versen mit einer Sure und zehn Finger bei Hud.", "ar": "اقرأ البقرة ٢٣ ويونس ٣٨ وهود ١٣ متتابعة، وارفع إصبعًا واحدًا لآيتي السورة الواحدة، وعشرة أصابع لآية هود." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-saffat",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Similar verses · 13", "de": "Ähnliche Verse · 13", "ar": "المتشابهات · ١٣" },
+        "title": { "en": "Don't mix them up: 37:80 and 37:110", "de": "Nicht verwechseln: 37:80 und 37:110", "ar": "لا تخلط بينهما: الصافات ٨٠ و١١٠" },
+        "sub": { "en": "As-Saffat: one refrain, and the one time it comes without inna", "de": "As-Saffat: ein Kehrvers und das eine Mal, in dem er ohne inna kommt", "ar": "الصافات: لازمةٌ واحدة، ومرةٌ واحدة جاءت فيها بلا حرف التوكيد" }
+      },
+      "slides": [
+        {
+          "pair": ["37:80", "37:110"],
+          "check": ["reward the doers of good", "reward the doers of good"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "In the translation they look identical. In the Arabic, the second one is missing a word.", "de": "In der Übersetzung sehen sie gleich aus. Im Arabischen fehlt dem zweiten ein Wort.", "ar": "تبدوان متطابقتين في الترجمة، أما في العربية فالثانية تنقصها كلمة." }
+        },
+        {
+          "title": { "en": "The refrain of as-Saffat", "de": "Der Kehrvers von as-Saffat", "ar": "لازمة سورة الصافات" },
+          "body": { "en": "As-Saffat closes the stories of the prophets with the same line, beginning inna kadhalika. It comes after Nuh (37:80), Ibrahim (37:105 and 37:110), Musa and Harun (37:121) and Ilyas (37:131).", "de": "As-Saffat schließt die Prophetengeschichten mit derselben Zeile, die mit inna kadhalika beginnt. Sie steht nach Nuh (37:80), Ibrahim (37:105 und 37:110), Musa und Harun (37:121) und Ilyas (37:131).", "ar": "تختم الصافات قصص الأنبياء بلازمة واحدة: بعد نوح (٨٠)، وإبراهيم (١٠٥ و١١٠)، وموسى وهارون (١٢١)، وإلياس (١٣١)." }
+        },
+        {
+          "title": { "en": "The one without inna", "de": "Der eine ohne inna", "ar": "الموضع الخالي من التوكيد" },
+          "body": { "en": "At 37:110 the line begins directly with kadhalika, without inna. It is the second time the refrain appears in Ibrahim's story: the first, at 37:105, has inna.", "de": "In 37:110 beginnt die Zeile direkt mit kadhalika, ohne inna. Es ist das zweite Mal, dass der Kehrvers in der Geschichte Ibrahims erscheint: das erste Mal, in 37:105, steht inna.", "ar": "في الآية ١١٠ جاءت اللازمة بلا حرف التوكيد المتصل بضمير المتكلمين، وهي المرة الثانية في قصة إبراهيم عليه السلام، أما الأولى (١٠٥) ففيها التوكيد." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Ibrahim is the only prophet in as-Saffat who receives the refrain twice. The second time it is lighter: inna has already been said in his story, so it falls away.", "de": "Ibrahim ist der einzige Prophet in as-Saffat, dem der Kehrvers zweimal gilt. Beim zweiten Mal ist er leichter: inna wurde in seiner Geschichte schon gesagt, also fällt es weg.", "ar": "إبراهيم وحده في الصافات تتكرر له اللازمة مرتين، وفي الثانية تخفّ: فقد جاء التوكيد في قصته من قبل، فسقط." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Read the end of each story in as-Saffat. Every time the refrain comes, say whose story it closes before you recite it, and say 'second Ibrahim' at 37:110.", "de": "Lesen Sie das Ende jeder Geschichte in as-Saffat. Nennen Sie jedes Mal, wenn der Kehrvers kommt, wessen Geschichte er schließt, bevor Sie ihn rezitieren, und sagen Sie bei 37:110 „zweiter Ibrahim“.", "ar": "اقرأ خواتيم القصص في الصافات، وقل قبل كل لازمة: لمن هذه القصة؟ وعند الآية ١١٠ قل: «إبراهيم الثانية»." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-tasbih",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Similar verses · 14", "de": "Ähnliche Verse · 14", "ar": "المتشابهات · ١٤" },
+        "title": { "en": "Don't mix them up: 56:74 and 87:1", "de": "Nicht verwechseln: 56:74 und 87:1", "ar": "لا تخلط بينهما: الواقعة ٧٤ والأعلى ١" },
+        "sub": { "en": "Glorify the name of your Lord: al-'Azim or al-A'la?", "de": "Preisen Sie den Namen Ihres Herrn: al-'Azim oder al-A'la?", "ar": "التسبيح باسم الرب: العظيم أم الأعلى؟" }
+      },
+      "slides": [
+        {
+          "pair": ["56:74", "87:1"],
+          "check": ["Most Great", "Most High"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "Two short verses, three differences. The last word is the easy one.", "de": "Zwei kurze Verse, drei Unterschiede. Das letzte Wort ist der leichte Teil.", "ar": "آيتان قصيرتان وثلاثة فروق، والكلمة الأخيرة أسهلها." }
+        },
+        {
+          "title": { "en": "Three small differences", "de": "Drei kleine Unterschiede", "ar": "ثلاثة فروق صغيرة" },
+          "body": { "en": "Al-Waqi'a: fa-sabbih bi-smi ... l-'azim, with fa and with bi. Al-A'la: sabbihi sma ... l-a'la, without fa and without bi. And the last word differs.", "de": "Al-Waqi'a: fa-sabbih bi-smi ... l-'azim, mit fa und mit bi. Al-A'la: sabbihi sma ... l-a'la, ohne fa und ohne bi. Und das letzte Wort ist verschieden.", "ar": "في الواقعة يأتي الأمر بالتسبيح بالفاء، ويدخل حرف الباء على الاسم، وتُختم الآية بالعظيم. وفي الأعلى يأتي الأمر بلا فاء، والاسم بلا باء، وتُختم بالأعلى." }
+        },
+        {
+          "title": { "en": "Where else", "de": "Wo noch", "ar": "مواضع أخرى" },
+          "body": { "en": "The al-Waqi'a form appears three times: 56:74, 56:96 and 69:52. The al-A'la form opens Surah 87 and gives the surah its name.", "de": "Die Form aus al-Waqi'a steht dreimal: 56:74, 56:96 und 69:52. Die Form aus al-A'la eröffnet Sure 87 und gibt ihr den Namen.", "ar": "صيغة الواقعة وردت ثلاث مرات: الواقعة ٧٤ و٩٦ والحاقة ٥٢، وصيغة الأعلى افتُتحت بها السورة ٨٧ وبها سُمّيت." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Your prayer already knows: in ruku' you say subhana rabbiya l-'azim, in sujud subhana rabbiya l-a'la. 'Azim goes with fa-sabbih bi-smi; A'la goes with sabbihi sma, the opening of its own surah.", "de": "Ihr Gebet weiß es schon: Im Rukūʿ sagen Sie subhana rabbiya l-'azim, in der Niederwerfung subhana rabbiya l-a'la. 'Azim gehört zu fa-sabbih bi-smi; A'la gehört zu sabbihi sma, dem Anfang seiner eigenen Sure.", "ar": "صلاتك تعرف الجواب: في الركوع «سبحان ربي العظيم»، وفي السجود «سبحان ربي الأعلى». فالعظيم مع الصيغة التي فيها الفاء والباء، والأعلى مع الصيغة المجرّدة منهما في مطلع سورتها." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Recite the end of al-Waqi'a, the end of al-Haqqa and the opening of al-A'la one after another. Stress the fa and the bi in the first two, and their absence in the third.", "de": "Rezitieren Sie das Ende von al-Waqi'a, das Ende von al-Haqqa und den Anfang von al-A'la nacheinander. Betonen Sie fa und bi in den ersten beiden und ihr Fehlen im dritten.", "ar": "اقرأ خاتمة الواقعة وخاتمة الحاقة ومطلع الأعلى متتابعة، وانتبه إلى الفاء والباء في الأوليين، وغيابهما في الثالثة." }
+        }
+      ]
+    },
+    {
+      "id": "mutashabihat-kafirun",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Similar verses · 15", "de": "Ähnliche Verse · 15", "ar": "المتشابهات · ١٥" },
+        "title": { "en": "Don't mix them up: 109:2 and 109:4", "de": "Nicht verwechseln: 109:2 und 109:4", "ar": "لا تخلط بينهما: الكافرون ٢ و٤" },
+        "sub": { "en": "Al-Kafirun: a verb and a noun, the present and the past", "de": "Al-Kafirun: ein Verb und ein Nomen, Gegenwart und Vergangenheit", "ar": "الكافرون: فعلٌ واسم، وحاضرٌ وماضٍ" }
+      },
+      "slides": [
+        {
+          "pair": ["109:2", "109:4"],
+          "check": ["I do not worship", "Nor will I be a worshipper"],
+          "title": { "en": "Read both verses", "de": "Lesen Sie beide Verse", "ar": "اقرأ الآيتين" },
+          "body": { "en": "A short surah, yet many memorisers slip here. Compare the first word and the last word of each verse.", "de": "Eine kurze Sure, und doch stolpern hier viele, die den Koran auswendig lernen. Vergleichen Sie das erste und das letzte Wort jedes Verses.", "ar": "سورة قصيرة، ومع ذلك يتعثّر فيها كثير من الحفّاظ. قارن أول كلمة وآخر كلمة في كل آية." }
+        },
+        {
+          "title": { "en": "Verb or noun", "de": "Verb oder Nomen", "ar": "فعلٌ أو اسم" },
+          "body": { "en": "109:2 uses a verb: la a'budu. 109:4 uses a noun with ana: wa la ana 'abidun.", "de": "109:2 verwendet ein Verb: la a'budu. 109:4 verwendet ein Nomen mit ana: wa la ana 'abidun.", "ar": "في الآية الثانية يأتي النفي بفعلٍ مضارع، وفي الرابعة باسم فاعل يسبقه ضمير المتكلم." }
+        },
+        {
+          "title": { "en": "Present or past", "de": "Gegenwart oder Vergangenheit", "ar": "مضارعٌ أو ماضٍ" },
+          "body": { "en": "109:2 ends ma ta'budun, in the present tense. 109:4 ends ma 'abadtum, in the past tense.", "de": "109:2 endet mit ma ta'budun, in der Gegenwartsform. 109:4 endet mit ma 'abadtum, in der Vergangenheitsform.", "ar": "تُختم الثانية بفعل العبادة مضارعًا، والرابعة بفعل العبادة ماضيًا." }
+        },
+        {
+          "title": { "en": "The refrain between them", "de": "Der Kehrvers dazwischen", "ar": "اللازمة بينهما" },
+          "body": { "en": "Verses 3 and 5 are identical, word for word. Because the same line comes twice, it is easy to jump from one to the other and lose your place.", "de": "Die Verse 3 und 5 sind Wort für Wort gleich. Weil dieselbe Zeile zweimal kommt, springt man leicht von einer zur anderen und verliert den Faden.", "ar": "الآيتان الثالثة والخامسة متطابقتان، ولأن السطر نفسه يتكرر يسهل القفز من موضع إلى آخر." }
+        },
+        {
+          "title": { "en": "Why the repetition?", "de": "Warum die Wiederholung?", "ar": "لماذا التكرار؟" },
+          "body": { "en": "Scholars differ. Many explain it with time: the present and future in one pair, the past in the other. Others see in it strong emphasis, fitting a surah of clear separation.", "de": "Die Gelehrten sind unterschiedlicher Meinung. Viele erklären es mit der Zeit: Gegenwart und Zukunft im einen Paar, Vergangenheit im anderen. Andere sehen darin eine starke Betonung, passend zu einer Sure der klaren Trennung.", "ar": "اختلف العلماء: فكثيرٌ منهم يفسّره باختلاف الزمن، الحاضر والمستقبل في موضع والماضي في آخر، ويرى آخرون أنه توكيدٌ يناسب سورة المفاصلة." }
+        },
+        {
+          "title": { "en": "Memory tip", "de": "Merkhilfe", "ar": "طريقة للحفظ" },
+          "body": { "en": "Short before long: verse 2 has four words, verse 4 has five, because ana is added. And the verse with the noun 'abidun ends with the past, 'abadtum.", "de": "Kurz vor lang: Vers 2 hat vier Wörter, Vers 4 hat fünf, weil ana hinzukommt. Und der Vers mit dem Nomen 'abidun endet mit der Vergangenheit, 'abadtum.", "ar": "القصيرة قبل الطويلة: الثانية أربع كلمات، والرابعة خمس بزيادة ضمير المتكلم. والآية التي فيها اسم الفاعل تُختم بالفعل الماضي." }
+        },
+        {
+          "title": { "en": "Practice", "de": "Übung", "ar": "تمرين" },
+          "body": { "en": "Recite the surah slowly and touch the table at verses 2 and 4. Whisper 'now' before verse 2 and 'before' before verse 4.", "de": "Rezitieren Sie die Sure langsam und berühren Sie bei den Versen 2 und 4 den Tisch. Flüstern Sie „jetzt“ vor Vers 2 und „früher“ vor Vers 4.", "ar": "اقرأ السورة على مهل، وضع يدك على الطاولة عند الآيتين الثانية والرابعة، وقل همسًا «الآن» قبل الثانية و«من قبل» قبل الرابعة." }
+        }
+      ]
+    }
+  ]
+}

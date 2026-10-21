@@ -1,0 +1,95 @@
+{
+  "set": "sayings-hasan-al-basri",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-hasan-al-basri-01",
+      "theme": "time",
+      "text": {
+        "en": "Son of Adam, you are nothing but days. Whenever a day passes, a part of you passes with it.",
+        "de": "Mensch, Sie sind nichts als Tage. Mit jedem Tag, der vergeht, vergeht ein Teil von Ihnen.",
+        "ar": "يا ابن آدم، إنما أنت أيام، كلما ذهب يوم ذهب بعضك."
+      },
+      "arabic": "يا ابن آدم، إنما أنت أيام، كلما ذهب يوم ذهب بعضك.",
+      "by": { "en": "Hasan al-Basri", "de": "Hasan al-Basri", "ar": "الحسن البصري" },
+      "work": { "en": "Reported by Abu Nu'aym in Hilyat al-Awliya'", "de": "Überliefert von Abu Nu'aym in Hilyat al-Awliya'", "ar": "رواه أبو نعيم في حلية الأولياء" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-hasan-al-basri-02",
+      "theme": "taqwa",
+      "text": {
+        "en": "The believer combines doing good with fear of falling short, while the hypocrite combines doing wrong with feeling safe.",
+        "de": "Der Gläubige verbindet gutes Tun mit der Sorge, nicht zu genügen, der Heuchler dagegen schlechtes Tun mit Sorglosigkeit.",
+        "ar": "إن المؤمن جمع إحسانا وشفقة، وإن المنافق جمع إساءة وأمنا."
+      },
+      "arabic": "إن المؤمن جمع إحسانا وشفقة، وإن المنافق جمع إساءة وأمنا.",
+      "by": { "en": "Hasan al-Basri", "de": "Hasan al-Basri", "ar": "الحسن البصري" },
+      "work": { "en": "Reported by Ibn Kathir in his Tafsir", "de": "Überliefert von Ibn Kathir in seinem Tafsir", "ar": "نقله ابن كثير في تفسيره" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-hasan-al-basri-03",
+      "theme": "hereafter",
+      "text": {
+        "en": "The believer in this world is like a stranger: he does not despair at its lowliness, nor compete for its glory. People have their state, and he has his.",
+        "de": "Der Gläubige ist in dieser Welt wie ein Fremder: Er verzagt nicht an ihrer Niedrigkeit und wetteifert nicht um ihren Ruhm. Die Menschen haben ihren Zustand, und er hat seinen.",
+        "ar": "المؤمن في الدنيا كالغريب، لا يجزع من ذلها، ولا ينافس في عزها، للناس حال وله حال."
+      },
+      "by": { "en": "Hasan al-Basri", "de": "Hasan al-Basri", "ar": "الحسن البصري" },
+      "work": { "en": "Reported by Ibn Rajab in Jami' al-'Ulum wa-l-Hikam", "de": "Überliefert von Ibn Radschab in Dschami' al-'Ulum wa-l-Hikam", "ar": "نقله ابن رجب في جامع العلوم والحكم" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-hasan-al-basri-04",
+      "theme": "forgiveness",
+      "text": {
+        "en": "Ask forgiveness often: in your homes, at your tables, on your roads, in your markets and gatherings, wherever you are, for you do not know when forgiveness comes down.",
+        "de": "Bitten Sie oft um Vergebung: in Ihren Häusern, an Ihren Tischen, auf Ihren Wegen, auf Ihren Märkten und in Ihren Runden, wo immer Sie sind, denn Sie wissen nicht, wann die Vergebung herabkommt.",
+        "ar": "أكثروا من الاستغفار في بيوتكم، وعلى موائدكم، وفي طرقكم، وفي أسواقكم، وفي مجالسكم، وأينما كنتم، فإنكم ما تدرون متى تنزل المغفرة."
+      },
+      "by": { "en": "Hasan al-Basri", "de": "Hasan al-Basri", "ar": "الحسن البصري" },
+      "work": { "en": "Reported by Ibn Rajab in Jami' al-'Ulum wa-l-Hikam", "de": "Überliefert von Ibn Radschab in Dschami' al-'Ulum wa-l-Hikam", "ar": "نقله ابن رجب في جامع العلوم والحكم" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-hasan-al-basri-05",
+      "theme": "sincerity",
+      "text": {
+        "en": "May Allah have mercy on a servant who pauses at his intention: if it is for Allah, he goes ahead, and if it is for anything else, he holds back.",
+        "de": "Allah erbarme Sich eines Dieners, der bei seinem Vorhaben innehält: Ist es für Allah, geht er voran, und ist es für etwas anderes, hält er sich zurück.",
+        "ar": "رحم الله عبدا وقف عند همه، فإن كان لله مضى، وإن كان لغيره تأخر."
+      },
+      "arabic": "رحم الله عبدا وقف عند همه، فإن كان لله مضى، وإن كان لغيره تأخر.",
+      "by": { "en": "Hasan al-Basri", "de": "Hasan al-Basri", "ar": "الحسن البصري" },
+      "work": { "en": "Reported by Ibn al-Qayyim in Ighathat al-Lahfan", "de": "Überliefert von Ibn al-Qayyim in Ighathat al-Lahfan", "ar": "نقله ابن القيم في إغاثة اللهفان" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-hasan-al-basri-06",
+      "theme": "time",
+      "text": {
+        "en": "A sign that Allah has turned away from a servant is that He lets him busy himself with what does not concern him.",
+        "de": "Ein Zeichen dafür, dass Allah Sich von einem Diener abgewandt hat, ist, dass Er ihn sich mit dem beschäftigen lässt, was ihn nichts angeht.",
+        "ar": "من علامة إعراض الله تعالى عن العبد أن يجعل شغله فيما لا يعنيه."
+      },
+      "arabic": "من علامة إعراض الله تعالى عن العبد أن يجعل شغله فيما لا يعنيه.",
+      "by": { "en": "Hasan al-Basri", "de": "Hasan al-Basri", "ar": "الحسن البصري" },
+      "work": { "en": "Reported by Ibn Rajab in Jami' al-'Ulum wa-l-Hikam", "de": "Überliefert von Ibn Radschab in Dschami' al-'Ulum wa-l-Hikam", "ar": "نقله ابن رجب في جامع العلوم والحكم" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-hasan-al-basri-07",
+      "theme": "sincerity",
+      "text": {
+        "en": "Faith is not adornment, nor wishful thinking. It is what settles in the heart and is confirmed by deeds.",
+        "de": "Glaube ist weder Schmuck noch Wunschdenken. Er ist das, was sich im Herzen festsetzt und durch Taten bestätigt wird.",
+        "ar": "ليس الإيمان بالتحلي ولا بالتمني، ولكن ما وقر في القلب وصدقته الأعمال."
+      },
+      "by": { "en": "Hasan al-Basri", "de": "Hasan al-Basri", "ar": "الحسن البصري" },
+      "work": { "en": "Reported by Ibn Abi Shayba in al-Musannaf", "de": "Überliefert von Ibn Abi Schaiba in al-Musannaf", "ar": "رواه ابن أبي شيبة في المصنف" },
+      "needs_review": true
+    }
+  ]
+}

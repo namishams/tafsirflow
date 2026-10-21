@@ -1,0 +1,13 @@
+{ "set": "hadith-worship", "kind": "hadith", "theme": "worship", "tradition": "sunni",
+  "items": [
+    {"id": "wh-worship-muslim-3291", "hadith": "muslim:3291", "check": "as on the (very first day) his mother bore him"},
+    {"id": "wh-worship-bukhari-1152", "hadith": "bukhari:1152", "check": "stopped the night prayer"},
+    {"id": "wh-worship-bukhari-1131", "hadith": "bukhari:1131", "check": "most beloved prayer"},
+    {"id": "wh-worship-bukhari-1987", "hadith": "bukhari:1987", "check": "regular"},
+    {"id": "wh-worship-muslim-113", "hadith": "muslim:113", "check": "five (pillars)"},
+    {"id": "wh-worship-bukhari-1981", "hadith": "bukhari:1981", "check": "three things"},
+    {"id": "wh-worship-bukhari-1773", "hadith": "bukhari:1773", "check": "Hajj Mabrur"},
+    {"id": "wh-worship-bukhari-432", "hadith": "bukhari:432", "check": "do not take your houses as graves"},
+    {"id": "wh-worship-muslim-3403", "hadith": "muslim:3403", "check": "turns away from my Sunnah"},
+    {"id": "wh-worship-muslim-108", "hadith": "muslim:108", "check": "enter Paradise"}
+  ] }

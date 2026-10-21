@@ -1,0 +1,354 @@
+{
+  "series": "adab-student",
+  "label": {"en": "Adab of the student of knowledge", "de": "Umgangsformen des Wissensuchenden", "ar": "آداب طالب العلم"},
+  "topic": "scholars",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "adab-student-01-intention",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Adab of the student · 1", "de": "Adab des Lernenden · 1", "ar": "آداب طالب العلم · ١"},
+        "title": {"en": "It starts with intention", "de": "Alles beginnt mit der Absicht", "ar": "كل شيء يبدأ بالنية"},
+        "sub": {"en": "Why a sincere intention comes before every lesson", "de": "Warum die aufrichtige Absicht vor jeder Lektion steht", "ar": "لماذا تسبق النية الصادقة كل درس"},
+        "arabic": "إخلاص النية"
+      },
+      "slides": [
+        {
+          "title": {"en": "Learning is worship", "de": "Lernen ist Gottesdienst", "ar": "طلب العلم عبادة"},
+          "body": {"en": "Seeking knowledge of the religion is an act of worship. Like every act of worship, its value depends on the heart behind it.", "de": "Religiöses Wissen zu suchen ist ein Gottesdienst. Wie bei jedem Gottesdienst hängt sein Wert vom Herzen dahinter ab.", "ar": "طلب العلم الشرعي عبادة، وقيمته كقيمة كل عبادة تتوقف على القلب الذي وراءها."}
+        },
+        {
+          "hadith": "bukhari:1",
+          "check": "intentions",
+          "title": {"en": "The first hadith", "de": "Der erste Hadith", "ar": "الحديث الأول"},
+          "body": {"en": "Al-Bukhari and an-Nawawi both opened their books with this hadith, as if to say: check your intention first.", "de": "Al-Buchari und an-Nawawi begannen ihre Bücher mit diesem Hadith, als wollten sie sagen: Prüfen Sie zuerst Ihre Absicht.", "ar": "افتتح البخاري والنووي كتابيهما بهذا الحديث، كأنهما يقولان: صحّح نيتك أولًا."}
+        },
+        {
+          "verse": "98:5",
+          "check": "sincere to Him",
+          "title": {"en": "Sincere to Him alone", "de": "Aufrichtig allein für Ihn", "ar": "الإخلاص لله وحده"},
+          "body": {"en": "Ikhlas means doing a deed for Allah alone: not for praise, not for status, not to win arguments.", "de": "Ichlas bedeutet, eine Tat allein für Allah zu tun: nicht für Lob, nicht für Ansehen, nicht um Streit zu gewinnen.", "ar": "الإخلاص أن يكون العمل لله وحده، لا للثناء ولا للمكانة ولا للغلبة في الجدال."}
+        },
+        {
+          "verse": "6:162-163",
+          "check": "my living and my dying",
+          "title": {"en": "A whole life for Allah", "de": "Ein ganzes Leben für Allah", "ar": "الحياة كلها لله"},
+          "body": {"en": "Study, too, becomes part of a life lived for Allah when the intention is renewed.", "de": "Auch das Lernen wird Teil eines Lebens für Allah, wenn die Absicht erneuert wird.", "ar": "يصير طلب العلم أيضًا جزءًا من حياة لله حين تتجدد النية."}
+        },
+        {
+          "dua": "hisn:25:7",
+          "check": "knowledge which is beneficial",
+          "title": {"en": "Ask for beneficial knowledge", "de": "Um nützliches Wissen bitten", "ar": "سؤال العلم النافع"},
+          "body": {"en": "A short supplication after the Fajr prayer: knowledge is asked for together with good provision and accepted deeds.", "de": "Ein kurzes Bittgebet nach dem Morgengebet: Wissen wird zusammen mit gutem Unterhalt und angenommenen Taten erbeten.", "ar": "دعاء قصير بعد صلاة الفجر، يُسأل فيه العلم مع الرزق الطيب والعمل المقبول."}
+        },
+        {
+          "title": {"en": "Signs of a sincere student", "de": "Zeichen eines aufrichtigen Lernenden", "ar": "علامات الطالب المخلص"},
+          "list": {
+            "en": ["Learns in order to act, not to impress", "Is glad when the truth appears, whoever says it", "Makes the same effort whether people watch or not", "Corrects the intention quickly when it slips"],
+            "de": ["Lernt, um zu handeln, nicht um zu beeindrucken", "Freut sich, wenn die Wahrheit sichtbar wird, gleich wer sie sagt", "Bemüht sich gleich, ob Menschen zusehen oder nicht", "Korrigiert die Absicht schnell, wenn sie abgleitet"],
+            "ar": ["يتعلم ليعمل لا ليتباهى", "يفرح بظهور الحق على لسان أي أحد", "يجتهد سواء رآه الناس أم لم يروه", "يسارع إلى تصحيح نيته إذا مالت"]
+          }
+        },
+        {
+          "title": {"en": "Renewing your intention", "de": "Die Absicht erneuern", "ar": "تجديد النية"},
+          "list": {
+            "en": ["Pause for a moment before each lesson", "Intend to remove your own ignorance first", "Intend to benefit your family and others", "Ask Allah to make your learning sincere"],
+            "de": ["Halten Sie vor jeder Lektion kurz inne", "Beabsichtigen Sie zuerst, Ihre eigene Unwissenheit zu beheben", "Beabsichtigen Sie, Ihrer Familie und anderen zu nützen", "Bitten Sie Allah, Ihr Lernen aufrichtig zu machen"],
+            "ar": ["توقف لحظة قبل كل درس", "انوِ أولًا أن ترفع الجهل عن نفسك", "انوِ أن تنفع أهلك وغيرهم", "اسأل الله أن يجعل طلبك خالصًا"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "adab-student-02-patience",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Adab of the student · 2", "de": "Adab des Lernenden · 2", "ar": "آداب طالب العلم · ٢"},
+        "title": {"en": "Patience and small steps", "de": "Geduld und kleine Schritte", "ar": "الصبر والتدرج"},
+        "sub": {"en": "Knowledge grows slowly, just as the Quran came down in stages", "de": "Wissen wächst langsam, so wie der Koran in Etappen herabkam", "ar": "ينمو العلم شيئًا فشيئًا كما نزل القرآن منجّمًا"},
+        "arabic": "التدرج في الطلب"
+      },
+      "slides": [
+        {
+          "verse": "17:106",
+          "check": "over a prolonged period",
+          "title": {"en": "Revealed in stages", "de": "In Etappen offenbart", "ar": "نزل منجّمًا"},
+          "body": {"en": "The Quran came down over about twenty-three years. Learning step by step follows the way the first generation was taught.", "de": "Der Koran kam über etwa dreiundzwanzig Jahre herab. Schrittweises Lernen folgt dem Weg, auf dem die erste Generation gelehrt wurde.", "ar": "نزل القرآن في نحو ثلاث وعشرين سنة، والتدرج في التعلم سير على الطريقة التي تعلّم بها الجيل الأول."}
+        },
+        {
+          "verse": "25:32",
+          "check": "all at once",
+          "title": {"en": "Strength for the heart", "de": "Stärke für das Herz", "ar": "تثبيت للقلب"},
+          "body": {"en": "Learning in portions gives the heart time to absorb, to act and to grow firm.", "de": "Lernen in Abschnitten gibt dem Herzen Zeit, aufzunehmen, zu handeln und fest zu werden.", "ar": "التعلم على أجزاء يمنح القلب وقتًا ليستوعب ويعمل ويثبت."}
+        },
+        {
+          "hadith": "bukhari:68",
+          "check": "suitable time",
+          "title": {"en": "How the Prophet taught", "de": "Wie der Prophet lehrte", "ar": "هدي النبي ﷺ في التعليم"},
+          "body": {"en": "He did not overload his companions. Short, well-timed lessons keep the love of learning alive.", "de": "Er überforderte seine Gefährten nicht. Kurze Lektionen zur rechten Zeit halten die Liebe zum Lernen lebendig.", "ar": "لم يكن يثقل على أصحابه، فالدروس القصيرة في وقتها المناسب تحفظ محبة العلم."}
+        },
+        {
+          "hadith": "bukhari:6465",
+          "check": "regular constant deeds",
+          "title": {"en": "Small but constant", "de": "Klein, aber beständig", "ar": "قليل دائم"},
+          "body": {"en": "A page a day for a year achieves more than a burst of enthusiasm that soon fades.", "de": "Eine Seite am Tag ein Jahr lang bewirkt mehr als ein Strohfeuer der Begeisterung.", "ar": "صفحة كل يوم طوال عام تثمر أكثر من حماسة عابرة تخبو سريعًا."}
+        },
+        {
+          "hadith": "bukhari:4937",
+          "check": "double reward",
+          "title": {"en": "When it is hard", "de": "Wenn es schwerfällt", "ar": "حين يصعب الطريق"},
+          "body": {"en": "Struggling with recitation is not failure. The effort itself is rewarded twice.", "de": "Mühe beim Rezitieren ist kein Versagen. Die Anstrengung selbst wird doppelt belohnt.", "ar": "التعثر في القراءة ليس فشلًا، فالمجاهدة نفسها لها أجران."}
+        },
+        {
+          "verse": "18:66-68",
+          "check": "teach me",
+          "title": {"en": "Musa, the patient student", "de": "Musa, der geduldige Schüler", "ar": "موسى طالبًا صبورًا"},
+          "body": {"en": "Even a great prophet travelled to learn, and was told at once that learning needs patience.", "de": "Sogar ein großer Prophet reiste, um zu lernen, und hörte sofort, dass Lernen Geduld braucht.", "ar": "حتى النبي العظيم رحل ليتعلم، فقيل له من أول الطريق إن العلم يحتاج إلى صبر."}
+        },
+        {
+          "title": {"en": "A plan with small steps", "de": "Ein Plan mit kleinen Schritten", "ar": "خطة بخطوات صغيرة"},
+          "list": {
+            "en": ["Choose one book or course and finish it", "Set a small daily portion you can keep", "Review before you move on", "Ask your teacher when you are stuck"],
+            "de": ["Wählen Sie ein Buch oder einen Kurs und bringen Sie ihn zu Ende", "Legen Sie ein kleines tägliches Pensum fest, das Sie halten können", "Wiederholen Sie, bevor Sie weitergehen", "Fragen Sie Ihren Lehrer, wenn Sie nicht weiterkommen"],
+            "ar": ["اختر كتابًا أو دورة واحدة وأتمّها", "حدّد وِردًا يوميًا صغيرًا تقدر على المداومة عليه", "راجع قبل أن تنتقل", "اسأل معلمك إذا توقفت"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "adab-student-03-teachers",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Adab of the student · 3", "de": "Adab des Lernenden · 3", "ar": "آداب طالب العلم · ٣"},
+        "title": {"en": "Respect for teachers", "de": "Respekt vor Lehrenden", "ar": "توقير المعلمين"},
+        "sub": {"en": "What Musa and al-Khidr teach about learning from others", "de": "Was Musa und al-Chidr über das Lernen von anderen lehren", "ar": "ما تعلّمنا قصة موسى والخضر عن الأخذ عن الآخرين"},
+        "arabic": "توقير أهل العلم"
+      },
+      "slides": [
+        {
+          "verse": "18:66",
+          "check": "May I follow you",
+          "title": {"en": "Asking permission to learn", "de": "Um Erlaubnis zum Lernen bitten", "ar": "الاستئذان في التعلم"},
+          "body": {"en": "Musa was a prophet, yet he asked politely to follow and to learn. Respect begins with how we ask.", "de": "Musa war ein Prophet und bat dennoch höflich darum, folgen und lernen zu dürfen. Respekt beginnt mit der Art, wie wir fragen.", "ar": "كان موسى نبيًا، ومع ذلك استأذن بأدب في أن يتبعه ويتعلم منه، والتوقير يبدأ من طريقة السؤال."}
+        },
+        {
+          "verse": "18:69-70",
+          "check": "patient",
+          "title": {"en": "A promise of patience", "de": "Ein Versprechen der Geduld", "ar": "وعد بالصبر"},
+          "body": {"en": "He promised patience and agreed to wait for explanations. A good student lets the lesson unfold.", "de": "Er versprach Geduld und war bereit, auf Erklärungen zu warten. Ein guter Schüler lässt die Lektion sich entfalten.", "ar": "وعد بالصبر ورضي أن ينتظر البيان، والطالب الجيد يدع الدرس يتكشف شيئًا فشيئًا."}
+        },
+        {
+          "verse": "49:2-3",
+          "check": "lower their voices",
+          "title": {"en": "Lowered voices", "de": "Gedämpfte Stimmen", "ar": "خفض الصوت"},
+          "body": {"en": "These verses concern the Prophet. Scholars drew from them a lasting adab of calm voices in gatherings of knowledge.", "de": "Diese Verse betreffen den Propheten. Gelehrte leiteten daraus eine bleibende Etikette ruhiger Stimmen in Lernkreisen ab.", "ar": "نزلت هذه الآيات في شأن النبي ﷺ، واستنبط منها العلماء أدبًا دائمًا في خفض الصوت في مجالس العلم."}
+        },
+        {
+          "verse": "58:11",
+          "check": "make space",
+          "title": {"en": "Room in the circle", "de": "Platz im Kreis", "ar": "الإفساح في المجلس"},
+          "body": {"en": "Making room for others is part of adab, and the same verse speaks of Allah raising those given knowledge.", "de": "Anderen Platz zu machen gehört zum Anstand, und derselbe Vers spricht davon, dass Allah die Wissenden erhöht.", "ar": "الإفساح للآخرين من الأدب، والآية نفسها تذكر رفع الله لأهل العلم درجات."}
+        },
+        {
+          "title": {"en": "What respect looks like", "de": "Wie Respekt aussieht", "ar": "صور التوقير"},
+          "list": {
+            "en": ["Arrive on time and prepared", "Listen fully before you ask", "Speak well of your teacher, also in their absence", "Thank them and pray for them"],
+            "de": ["Kommen Sie pünktlich und vorbereitet", "Hören Sie ganz zu, bevor Sie fragen", "Sprechen Sie gut über Ihren Lehrer, auch in seiner Abwesenheit", "Danken Sie ihm und beten Sie für ihn"],
+            "ar": ["احضر في الوقت مستعدًا", "أنصت تمامًا قبل أن تسأل", "اذكر معلمك بخير في حضوره وغيابه", "اشكره وادعُ له"]
+          }
+        },
+        {
+          "title": {"en": "Respect is not blind following", "de": "Respekt ist keine blinde Gefolgschaft", "ar": "التوقير ليس تقليدًا أعمى"},
+          "body": {"en": "Teachers are human and can err. If you notice a mistake, ask privately and politely. The great imams honoured their teachers and still differed with them on evidence.", "de": "Lehrende sind Menschen und können irren. Wenn Sie einen Fehler bemerken, fragen Sie unter vier Augen und höflich nach. Die großen Imame ehrten ihre Lehrer und widersprachen ihnen dennoch, wo die Belege es verlangten.", "ar": "المعلم بشر يخطئ ويصيب، فإن رأيت خطأً فاسأل على انفراد وبأدب. وقد أجلّ الأئمة الكبار شيوخهم وخالفوهم مع ذلك حين اقتضى الدليل."}
+        },
+        {
+          "title": {"en": "Classic books on this adab", "de": "Klassische Bücher zu diesem Anstand", "ar": "كتب في هذا الأدب"},
+          "list": {
+            "en": ["Al-Zarnuji, Ta'lim al-Muta'allim", "Al-Khatib al-Baghdadi, al-Jami' li-Akhlaq al-Rawi", "Ibn Jama'a, Tadhkirat al-Sami' wa al-Mutakallim", "Al-Shahid al-Thani, Munyat al-Murid"],
+            "de": ["Az-Zarnudschi, Talim al-Mutaallim", "Al-Chatib al-Baghdadi, al-Dschami li-Achlaq ar-Rawi", "Ibn Dschamaa, Tadhkirat as-Sami wa-l-Mutakallim", "Asch-Schahid ath-Thani, Munyat al-Murid"],
+            "ar": ["الزرنوجي، تعليم المتعلم طريق التعلم", "الخطيب البغدادي، الجامع لأخلاق الراوي وآداب السامع", "ابن جماعة، تذكرة السامع والمتكلم", "الشهيد الثاني، منية المريد"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Al-Zarnuji, Ta'lim al-Muta'allim Tariq al-Ta'allum"},
+        {"label": "Ibn Jama'a, Tadhkirat al-Sami' wa al-Mutakallim fi Adab al-'Alim wa al-Muta'allim"},
+        {"label": "Al-Shahid al-Thani, Munyat al-Murid fi Adab al-Mufid wa al-Mustafid"}
+      ]
+    },
+    {
+      "id": "adab-student-04-acting",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Adab of the student · 4", "de": "Adab des Lernenden · 4", "ar": "آداب طالب العلم · ٤"},
+        "title": {"en": "Knowledge that becomes action", "de": "Wissen, das zur Tat wird", "ar": "علم يصير عملًا"},
+        "sub": {"en": "The goal of learning is a changed life", "de": "Das Ziel des Lernens ist ein verändertes Leben", "ar": "غاية التعلم حياة تتغير"},
+        "arabic": "العلم للعمل"
+      },
+      "slides": [
+        {
+          "verse": "61:2-3",
+          "check": "say what you do not do",
+          "title": {"en": "Words and deeds", "de": "Worte und Taten", "ar": "القول والعمل"},
+          "body": {"en": "Few verses are this direct. Knowledge that stays on the tongue becomes a burden, not an honour.", "de": "Kaum ein Vers ist so deutlich. Wissen, das auf der Zunge bleibt, wird zur Last statt zur Ehre.", "ar": "قلّما تكون آية بهذا الوضوح؛ فالعلم الذي يبقى على اللسان يصير عبئًا لا شرفًا."}
+        },
+        {
+          "verse": "2:44",
+          "check": "forget yourselves",
+          "title": {"en": "Do not forget yourself", "de": "Vergessen Sie sich nicht selbst", "ar": "لا تنسَ نفسك"},
+          "body": {"en": "Addressed first to the learned of an earlier people, the lesson holds for every teacher and student.", "de": "Zuerst an die Gelehrten eines früheren Volkes gerichtet, gilt die Lehre für jeden Lehrer und Schüler.", "ar": "الخطاب أولًا لعلماء أمة سابقة، لكن العبرة لكل معلم ومتعلم."}
+        },
+        {
+          "hadith": "bukhari:73",
+          "check": "acts according to it",
+          "title": {"en": "Wisdom lived and taught", "de": "Gelebte und gelehrte Weisheit", "ar": "حكمة يُعمل بها وتُعلَّم"},
+          "body": {"en": "The scholar praised here does two things: he acts on what he knows, and he teaches it.", "de": "Der hier gelobte Gelehrte tut zweierlei: Er handelt nach seinem Wissen, und er lehrt es.", "ar": "العالم الممدوح هنا يجمع أمرين: يعمل بما يعلم، ويعلّمه غيره."}
+        },
+        {
+          "hadith": "muslim:6906",
+          "check": "knowledge which does not benefit",
+          "title": {"en": "Refuge from useless knowledge", "de": "Zuflucht vor nutzlosem Wissen", "ar": "الاستعاذة من علم لا ينفع"},
+          "body": {"en": "The Prophet sought refuge from knowledge without benefit, alongside laziness and a heart without humility.", "de": "Der Prophet suchte Zuflucht vor Wissen ohne Nutzen, neben Trägheit und einem Herzen ohne Demut.", "ar": "استعاذ النبي ﷺ من العلم الذي لا ينفع، كما استعاذ من الكسل ومن القلب الذي لا يخشع."}
+        },
+        {
+          "hadith": "muslim:4223",
+          "check": "recurring charity",
+          "title": {"en": "Knowledge that outlives you", "de": "Wissen, das Sie überdauert", "ar": "علم يبقى بعدك"},
+          "body": {"en": "Beneficial knowledge keeps rewarding its owner after death, through everyone who learned and acted on it.", "de": "Nützliches Wissen belohnt seinen Besitzer noch nach dem Tod, durch alle, die es gelernt und danach gehandelt haben.", "ar": "يبقى العلم النافع يثمر لصاحبه بعد موته بكل من تعلّمه وعمل به."}
+        },
+        {
+          "title": {"en": "Small ways to act today", "de": "Kleine Schritte für heute", "ar": "خطوات صغيرة اليوم"},
+          "list": {
+            "en": ["Apply one thing from every lesson", "Teach what you learned to one person", "Let your character show your knowledge", "Ask Allah for knowledge that benefits"],
+            "de": ["Setzen Sie aus jeder Lektion eine Sache um", "Geben Sie das Gelernte an einen Menschen weiter", "Lassen Sie Ihren Charakter Ihr Wissen zeigen", "Bitten Sie Allah um nützliches Wissen"],
+            "ar": ["طبّق أمرًا واحدًا من كل درس", "علّم ما تعلمته لشخص واحد", "اجعل أخلاقك دليلًا على علمك", "اسأل الله علمًا نافعًا"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "adab-student-05-questions",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Adab of the student · 5", "de": "Adab des Lernenden · 5", "ar": "آداب طالب العلم · ٥"},
+        "title": {"en": "Good questions, humble hearts", "de": "Gute Fragen, demütige Herzen", "ar": "سؤال حسن وقلب متواضع"},
+        "sub": {"en": "How to ask, and how to say: I do not know", "de": "Wie man fragt und wie man sagt: Ich weiß es nicht", "ar": "كيف تسأل، وكيف تقول: لا أدري"},
+        "arabic": "أدب السؤال"
+      },
+      "slides": [
+        {
+          "verse": "16:43",
+          "check": "if you do not know",
+          "title": {"en": "Ask those who know", "de": "Fragen Sie die Wissenden", "ar": "سؤال أهل العلم"},
+          "body": {"en": "Not knowing is no shame. The Quran's answer is simple: ask the people of knowledge.", "de": "Nichtwissen ist keine Schande. Die Antwort des Korans ist einfach: Fragen Sie die Leute des Wissens.", "ar": "الجهل بالشيء ليس عيبًا، وجواب القرآن بسيط: اسأل أهل العلم."}
+        },
+        {
+          "hadith": "muslim:6517",
+          "check": "virtue and vice",
+          "title": {"en": "A question worth a year", "de": "Eine Frage, die ein Jahr wert war", "ar": "سؤال يستحق عامًا"},
+          "body": {"en": "An-Nawwas stayed a year in Medina to keep asking. His question drew an answer about good character that is still remembered.", "de": "An-Nawwas blieb ein Jahr in Medina, um weiter fragen zu können. Seine Frage brachte eine Antwort über guten Charakter, an die man sich bis heute erinnert.", "ar": "أقام النواس عامًا في المدينة ليواصل السؤال، فجاء جواب سؤاله عن حسن الخلق باقيًا إلى اليوم."}
+        },
+        {
+          "hadith": "bukhari:7288",
+          "check": "their questions",
+          "title": {"en": "Not every question helps", "de": "Nicht jede Frage hilft", "ar": "ليس كل سؤال نافعًا"},
+          "body": {"en": "Questions that only complicate, or that look for a way out of acting, were discouraged. Ask in order to act.", "de": "Fragen, die nur verkomplizieren oder einen Ausweg vom Handeln suchen, wurden missbilligt. Fragen Sie, um zu handeln.", "ar": "كُره السؤال الذي يعقّد الأمور أو يبحث عن مخرج من العمل، فاسأل لتعمل."}
+        },
+        {
+          "verse": "17:85",
+          "check": "except a little",
+          "title": {"en": "We know only a little", "de": "Wir wissen nur wenig", "ar": "علمنا قليل"},
+          "body": {"en": "Even the most learned person knows only a little. That thought keeps a student humble.", "de": "Selbst der Gelehrteste weiß nur wenig. Dieser Gedanke hält einen Lernenden demütig.", "ar": "مهما بلغ علم الإنسان فهو قليل، وهذه الفكرة تحفظ على الطالب تواضعه."}
+        },
+        {
+          "verse": "2:32",
+          "check": "no knowledge except what You have taught us",
+          "title": {"en": "The angels' answer", "de": "Die Antwort der Engel", "ar": "جواب الملائكة"},
+          "body": {"en": "When they did not know, the angels said so and glorified Allah. Admitting what we do not know can be an act of worship.", "de": "Als sie es nicht wussten, sagten die Engel es offen und priesen Allah. Nichtwissen einzugestehen kann ein Gottesdienst sein.", "ar": "لما لم يعلم الملائكة اعترفوا بذلك ونزّهوا الله، فالاعتراف بعدم العلم قد يكون عبادة."}
+        },
+        {
+          "dua": "hisn:114:0",
+          "check": "forgive me for what they have no knowledge of",
+          "title": {"en": "When people praise you", "de": "Wenn man Sie lobt", "ar": "إذا مُدحت"},
+          "body": {"en": "Praise is a test for a student. This supplication turns it into humility and hope.", "de": "Lob ist eine Prüfung für Lernende. Dieses Bittgebet verwandelt es in Demut und Hoffnung.", "ar": "المدح امتحان لطالب العلم، وهذا الدعاء يحوّله إلى تواضع ورجاء."}
+        },
+        {
+          "title": {"en": "The adab of asking", "de": "Die Etikette des Fragens", "ar": "أدب السؤال"},
+          "list": {
+            "en": ["Wait for the right moment to ask", "Ask clearly and briefly", "Ask in order to act, never to embarrass", "Write down the answer and thank the teacher"],
+            "de": ["Warten Sie den richtigen Moment für Ihre Frage ab", "Fragen Sie klar und kurz", "Fragen Sie, um zu handeln, nie um bloßzustellen", "Schreiben Sie die Antwort auf und danken Sie dem Lehrer"],
+            "ar": ["تحيّن الوقت المناسب للسؤال", "اسأل بوضوح وإيجاز", "اسأل لتعمل لا لتُحرج أحدًا", "دوّن الجواب واشكر معلمك"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "adab-student-06-mushaf",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Adab of the student · 6", "de": "Adab des Lernenden · 6", "ar": "آداب طالب العلم · ٦"},
+        "title": {"en": "Etiquette with the mushaf", "de": "Der Umgang mit dem Mushaf", "ar": "آداب المصحف"},
+        "sub": {"en": "Honouring the Book we learn from", "de": "Das Buch ehren, aus dem wir lernen", "ar": "تعظيم الكتاب الذي نتعلم منه"},
+        "arabic": "تعظيم المصحف"
+      },
+      "slides": [
+        {
+          "verse": "56:77-79",
+          "check": "noble Qur",
+          "title": {"en": "A noble Quran", "de": "Ein edler Koran", "ar": "قرآن كريم"},
+          "body": {"en": "Commentators differ: are 'the purified' the angels, or people in a state of purity?", "de": "Die Kommentatoren sind sich uneins: Sind ‚die Gereinigten‘ die Engel oder Menschen im Zustand der Reinheit?", "ar": "اختلف المفسرون في المطهَّرين: أهم الملائكة أم الناس على طهارة؟"}
+        },
+        {
+          "title": {"en": "Wudu before touching", "de": "Wudu vor dem Berühren", "ar": "الوضوء قبل المس"},
+          "body": {"en": "Most jurists of the Sunni schools and of the Ja'fari school hold that wudu is needed to touch the text of the mushaf. They differ on details, such as children who are learning or carrying it in a cover.", "de": "Die meisten Juristen der sunnitischen Schulen und der dschafaritischen Schule sehen die Gebetswaschung als nötig an, um den Text des Mushaf zu berühren. In Einzelheiten unterscheiden sie sich, etwa bei lernenden Kindern oder beim Tragen in einer Hülle.", "ar": "يرى جمهور فقهاء المذاهب السنية والمذهب الجعفري اشتراط الوضوء لمسّ كتابة المصحف، ويختلفون في التفاصيل، كحكم الصبيان المتعلمين وحمله في غلاف."}
+        },
+        {
+          "verse": "16:98",
+          "check": "seek refuge",
+          "title": {"en": "Seek refuge first", "de": "Zuerst Zuflucht suchen", "ar": "الاستعاذة أولًا"},
+          "body": {"en": "Recitation begins by seeking refuge in Allah from Satan.", "de": "Die Rezitation beginnt damit, bei Allah Zuflucht vor dem Satan zu suchen.", "ar": "تبدأ التلاوة بالاستعاذة بالله من الشيطان."}
+        },
+        {
+          "verse": "73:4",
+          "check": "measured recitation",
+          "title": {"en": "Recite with care", "de": "Mit Sorgfalt rezitieren", "ar": "الترتيل"},
+          "body": {"en": "Tartil means reciting calmly and clearly, giving each letter its due.", "de": "Tartil bedeutet, ruhig und deutlich zu rezitieren und jedem Buchstaben sein Recht zu geben.", "ar": "الترتيل قراءة بتمهل ووضوح تعطي كل حرف حقه."}
+        },
+        {
+          "verse": "7:204",
+          "check": "listen to it",
+          "title": {"en": "When it is recited", "de": "Wenn er rezitiert wird", "ar": "إذا قُرئ القرآن"},
+          "body": {"en": "Adab includes listening: phone away, conversation paused, heart present.", "de": "Zum Anstand gehört das Zuhören: Telefon weg, Gespräch unterbrochen, Herz gegenwärtig.", "ar": "من الأدب حسن الاستماع: الهاتف جانبًا، والحديث متوقف، والقلب حاضر."}
+        },
+        {
+          "title": {"en": "Practical adab", "de": "Praktischer Anstand", "ar": "آداب عملية"},
+          "list": {
+            "en": ["Hold it with clean hands, in a clean place", "Keep it off the floor and above other books", "Sit with dignity, facing the qibla if you can", "Close it gently and return it to its place"],
+            "de": ["Halten Sie ihn mit sauberen Händen an einem sauberen Ort", "Legen Sie ihn nicht auf den Boden, sondern über andere Bücher", "Sitzen Sie würdevoll, wenn möglich in Gebetsrichtung", "Schließen Sie ihn behutsam und stellen Sie ihn zurück"],
+            "ar": ["أمسكه بيدين نظيفتين في مكان نظيف", "لا تضعه على الأرض، واجعله فوق سائر الكتب", "اجلس بوقار مستقبلًا القبلة إن تيسر", "أغلقه برفق وأعده إلى مكانه"]
+          }
+        },
+        {
+          "verse": "38:29",
+          "check": "reflect upon its verses",
+          "title": {"en": "Respect means reflection", "de": "Respekt heißt Nachdenken", "ar": "التعظيم تدبّر"},
+          "body": {"en": "The highest respect for the mushaf is to understand it and live by it. A Quran app deserves the same calm and focus.", "de": "Der höchste Respekt vor dem Mushaf ist, ihn zu verstehen und nach ihm zu leben. Eine Koran-App verdient dieselbe Ruhe und Sammlung.", "ar": "أعلى تعظيم للمصحف أن يُفهم ويُعمل به، وتطبيق القرآن على الهاتف يستحق السكينة والتركيز نفسيهما."}
+        }
+      ],
+      "sources": [
+        {"label": "An-Nawawi, al-Tibyan fi Adab Hamalat al-Qur'an"}
+      ]
+    }
+  ]
+}

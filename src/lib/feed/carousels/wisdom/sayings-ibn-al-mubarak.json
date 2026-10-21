@@ -1,0 +1,46 @@
+{
+  "set": "sayings-ibn-al-mubarak",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-ibn-al-mubarak-01",
+      "theme": "sincerity",
+      "text": {
+        "en": "Many a small deed is made great by its intention, and many a great deed is made small by its intention.",
+        "de": "So manche kleine Tat wird durch ihre Absicht groß, und so manche große Tat wird durch ihre Absicht klein.",
+        "ar": "رب عمل صغير تعظمه النية، ورب عمل كبير تصغره النية."
+      },
+      "arabic": "رب عمل صغير تعظمه النية، ورب عمل كبير تصغره النية.",
+      "by": { "en": "'Abdullah ibn al-Mubarak", "de": "'Abdullah ibn al-Mubarak", "ar": "عبد الله بن المبارك" },
+      "work": { "en": "Reported by Ibn Rajab in Jami' al-'Ulum wa-l-Hikam", "de": "Überliefert von Ibn Radschab in Dschami' al-'Ulum wa-l-Hikam", "ar": "نقله ابن رجب في جامع العلوم والحكم" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-mubarak-02",
+      "theme": "character",
+      "text": {
+        "en": "We are in greater need of a little good manners than of a great deal of knowledge.",
+        "de": "Wir brauchen ein wenig gutes Benehmen dringender als viel Wissen.",
+        "ar": "نحن إلى قليل من الأدب أحوج منا إلى كثير من العلم."
+      },
+      "arabic": "نحن إلى قليل من الأدب أحوج منا إلى كثير من العلم.",
+      "by": { "en": "'Abdullah ibn al-Mubarak", "de": "'Abdullah ibn al-Mubarak", "ar": "عبد الله بن المبارك" },
+      "work": { "en": "Reported by Ibn al-Qayyim in Madarij al-Salikin", "de": "Überliefert von Ibn al-Qayyim in Madarij as-Salikin", "ar": "نقله ابن القيم في مدارج السالكين" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-al-mubarak-03",
+      "theme": "repentance",
+      "text": {
+        "en": "I have seen that sins make hearts die, and clinging to them brings disgrace. Leaving sins is the life of hearts, and it is best for your soul that you refuse it.",
+        "de": "Ich habe gesehen, dass Sünden die Herzen sterben lassen und das Festhalten an ihnen Schmach bringt. Die Sünden zu lassen ist das Leben der Herzen, und es ist am besten für Ihre Seele, ihr nicht nachzugeben.",
+        "ar": "رأيت الذنوب تميت القلوب، وقد يورث الذل إدمانها، وترك الذنوب حياة القلوب، وخير لنفسك عصيانها."
+      },
+      "arabic": "رأيت الذنوب تميت القلوب، وقد يورث الذل إدمانها، وترك الذنوب حياة القلوب، وخير لنفسك عصيانها.",
+      "by": { "en": "'Abdullah ibn al-Mubarak", "de": "'Abdullah ibn al-Mubarak", "ar": "عبد الله بن المبارك" },
+      "work": { "en": "Reported by Ibn al-Qayyim in al-Jawab al-Kafi", "de": "Überliefert von Ibn al-Qayyim in al-Jawab al-Kafi", "ar": "نقله ابن القيم في الجواب الكافي" },
+      "needs_review": true
+    }
+  ]
+}

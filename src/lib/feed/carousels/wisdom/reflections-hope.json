@@ -1,0 +1,120 @@
+{
+  "set": "reflections-hope",
+  "kind": "reflection",
+  "theme": "hope",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-hope-01",
+      "text": {
+        "en": "The night feels longest just before Fajr, yet the call to prayer has never once failed to come.",
+        "de": "Die Nacht fühlt sich kurz vor dem Morgengebet am längsten an, und doch ist der Gebetsruf noch nie ausgeblieben.",
+        "ar": "يبدو الليل أطول ما يكون قبيل الفجر، ومع ذلك لم يتخلف الأذان يوما عن موعده."
+      }
+    },
+    {
+      "id": "wr-hope-02",
+      "text": {
+        "en": "No door you knock on in sincere prayer is answered with silence. Sometimes the answer is simply a better door.",
+        "de": "Keine Tür, an die Sie im aufrichtigen Gebet klopfen, bleibt stumm. Manchmal ist die Antwort einfach eine bessere Tür.",
+        "ar": "لا يقابل باب طرقته بدعاء صادق بالصمت، وأحيانا يكون الجواب ببساطة بابا أفضل."
+      }
+    },
+    {
+      "id": "wr-hope-03",
+      "text": {
+        "en": "Hope is planting a date palm you may never sit under. Someone after you will rest in its shade and pray for you.",
+        "de": "Hoffnung heißt, eine Dattelpalme zu pflanzen, unter der Sie vielleicht nie sitzen werden. Jemand nach Ihnen wird in ihrem Schatten ruhen und für Sie beten.",
+        "ar": "الرجاء أن تغرس نخلة قد لا تجلس في ظلها أبدا، فيستريح تحتها من يأتي بعدك ويدعو لك."
+      }
+    },
+    {
+      "id": "wr-hope-04",
+      "text": {
+        "en": "However far you have wandered, the way back is never longer than one honest step toward Him.",
+        "de": "Wie weit Sie sich auch entfernt haben, der Weg zurück ist nie länger als ein ehrlicher Schritt auf Ihn zu.",
+        "ar": "مهما ابتعدت، فطريق العودة ليس أطول من خطوة صادقة نحوه."
+      }
+    },
+    {
+      "id": "wr-hope-05",
+      "text": {
+        "en": "Despair says the story is over. Hope remembers that the last page has not been written yet.",
+        "de": "Die Verzweiflung sagt, die Geschichte sei zu Ende. Die Hoffnung weiß, dass die letzte Seite noch nicht geschrieben ist.",
+        "ar": "اليأس يقول إن القصة انتهت، والرجاء يذكر أن الصفحة الأخيرة لم تكتب بعد."
+      }
+    },
+    {
+      "id": "wr-hope-06",
+      "text": {
+        "en": "A grandmother's quiet dua for a grandchild she will never meet is hope that travels further than any of us.",
+        "de": "Das leise Bittgebet einer Großmutter für ein Enkelkind, das sie nie kennenlernen wird, ist Hoffnung, die weiter reist als wir alle.",
+        "ar": "دعاء الجدة الخافت لحفيد لن تراه أبدا رجاء يسافر أبعد منا جميعا."
+      }
+    },
+    {
+      "id": "wr-hope-07",
+      "text": {
+        "en": "Hope is not wishing things were different. It is trusting that the One who allowed this is also the One who can heal it.",
+        "de": "Hoffnung heißt nicht, sich alles anders zu wünschen. Sie heißt zu vertrauen, dass Der, der dies zugelassen hat, es auch heilen kann.",
+        "ar": "ليس الرجاء أن تتمنى لو كانت الأمور مختلفة، بل أن توقن بأن من قدر هذا قادر أيضا على أن يشفيه."
+      }
+    },
+    {
+      "id": "wr-hope-08",
+      "text": {
+        "en": "The rain that falls tonight on dry ground does not argue with the drought. It simply arrives.",
+        "de": "Der Regen, der heute Nacht auf trockenen Boden fällt, streitet nicht mit der Dürre. Er kommt einfach.",
+        "ar": "المطر الذي يهطل الليلة على الأرض اليابسة لا يجادل الجفاف، بل يأتي فحسب."
+      }
+    },
+    {
+      "id": "wr-hope-09",
+      "text": {
+        "en": "Even a heart that feels empty can still say Ya Allah. That small word is where hope begins again.",
+        "de": "Selbst ein Herz, das sich leer anfühlt, kann noch Ya Allah sagen. Mit diesem kleinen Wort beginnt die Hoffnung von Neuem.",
+        "ar": "حتى القلب الذي يشعر بالفراغ يستطيع أن يقول: يا الله، ومن هذه الكلمة الصغيرة يبدأ الرجاء من جديد."
+      }
+    },
+    {
+      "id": "wr-hope-10",
+      "text": {
+        "en": "Hope keeps the lamp burning in the window for the one who has not come home yet.",
+        "de": "Die Hoffnung lässt die Lampe im Fenster brennen für den, der noch nicht nach Hause gekommen ist.",
+        "ar": "الرجاء يبقي المصباح مضاء في النافذة لمن لم يعد إلى البيت بعد."
+      }
+    },
+    {
+      "id": "wr-hope-11",
+      "text": {
+        "en": "Your worst day is not your last chapter. Many of the people you admire once stood exactly where you are standing now.",
+        "de": "Ihr schlimmster Tag ist nicht Ihr letztes Kapitel. Viele Menschen, die Sie bewundern, standen einmal genau dort, wo Sie jetzt stehen.",
+        "ar": "أسوأ أيامك ليس فصلك الأخير، فكثير ممن تعجب بهم وقفوا يوما حيث تقف الآن."
+      }
+    },
+    {
+      "id": "wr-hope-12",
+      "text": {
+        "en": "Hoping in Allah is never naive. It is the most reasonable thing a weak creature can do before an endlessly generous Lord.",
+        "de": "Auf Allah zu hoffen ist nie naiv. Es ist das Vernünftigste, was ein schwaches Geschöpf vor einem unendlich großzügigen Herrn tun kann.",
+        "ar": "الرجاء في الله ليس سذاجة، بل هو أعقل ما يفعله مخلوق ضعيف أمام رب لا حد لكرمه."
+      }
+    },
+    {
+      "id": "wr-hope-13",
+      "text": {
+        "en": "A sick person who still makes plans for next spring is teaching everyone around them what hope looks like.",
+        "de": "Ein kranker Mensch, der noch Pläne für den nächsten Frühling schmiedet, zeigt allen um sich herum, wie Hoffnung aussieht.",
+        "ar": "المريض الذي ما زال يخطط للربيع القادم يعلم كل من حوله كيف يبدو الرجاء."
+      }
+    },
+    {
+      "id": "wr-hope-14",
+      "text": {
+        "en": "Hope and effort walk together: you send the application, you study for the exam, and then you leave the outcome with Him.",
+        "de": "Hoffnung und Mühe gehen zusammen: Sie schicken die Bewerbung ab, Sie lernen für die Prüfung, und dann legen Sie das Ergebnis in Seine Hände.",
+        "ar": "الرجاء والسعي يسيران معا: ترسل الطلب، وتذاكر للامتحان، ثم تترك النتيجة لله."
+      }
+    }
+  ]
+}

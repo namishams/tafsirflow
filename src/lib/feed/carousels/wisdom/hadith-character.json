@@ -1,0 +1,17 @@
+{ "set": "hadith-character", "kind": "hadith", "theme": "character", "tradition": "sunni",
+  "items": [
+    {"id": "wh-character-bukhari-6035", "hadith": "bukhari:6035", "check": "best in character"},
+    {"id": "wh-character-muslim-6516", "hadith": "muslim:6516", "check": "Virtue is a kind disposition"},
+    {"id": "wh-character-muslim-153", "hadith": "muslim:153", "check": "seventy branches"},
+    {"id": "wh-character-nawawi-20", "hadith": "nawawi:20", "check": "feel no shame"},
+    {"id": "wh-character-bukhari-6102", "hadith": "bukhari:6102", "check": "more shy"},
+    {"id": "wh-character-muslim-6017", "hadith": "muslim:6017", "check": "best amongst people in disposition"},
+    {"id": "wh-character-bukhari-6114", "hadith": "bukhari:6114", "check": "controls himself"},
+    {"id": "wh-character-bukhari-6116", "hadith": "bukhari:6116", "check": "Do not become angry"},
+    {"id": "wh-character-bukhari-6038", "hadith": "bukhari:6038", "check": "never blamed me"},
+    {"id": "wh-character-bukhari-6290", "hadith": "bukhari:6290", "check": "secret counsel"},
+    {"id": "wh-character-bukhari-2101", "hadith": "bukhari:2101", "check": "musk seller"},
+    {"id": "wh-character-muslim-2429", "hadith": "muslim:2429", "check": "smiled"},
+    {"id": "wh-character-bukhari-6133", "hadith": "bukhari:6133", "check": "stung twice"},
+    {"id": "wh-character-bukhari-6092", "hadith": "bukhari:6092", "check": "he always used to smile"}
+  ] }

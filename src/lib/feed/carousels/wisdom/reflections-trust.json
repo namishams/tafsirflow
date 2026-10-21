@@ -1,0 +1,120 @@
+{
+  "set": "reflections-trust",
+  "kind": "reflection",
+  "theme": "trust",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-trust-01",
+      "text": {
+        "en": "Trust is studying, locking the door and taking the medicine, and then sleeping without carrying tomorrow on your chest.",
+        "de": "Vertrauen heißt lernen, die Tür abschließen, die Medizin nehmen und dann schlafen, ohne das Morgen auf der Brust zu tragen.",
+        "ar": "التوكل أن تذاكر، وتغلق الباب، وتأخذ الدواء، ثم تنام دون أن تحمل الغد على صدرك."
+      }
+    },
+    {
+      "id": "wr-trust-02",
+      "text": {
+        "en": "You cannot see the whole road, only the next street lamp. Walk to it, and trust that the next one will light up.",
+        "de": "Sie sehen nicht den ganzen Weg, nur die nächste Laterne. Gehen Sie bis dorthin und vertrauen Sie darauf, dass die nächste aufleuchtet.",
+        "ar": "لا ترى الطريق كله، بل المصباح التالي فقط، فامش إليه، وثق بأن ما بعده سيضيء."
+      }
+    },
+    {
+      "id": "wr-trust-03",
+      "text": {
+        "en": "Worry rehearses a future that may never come. Trust lets you live in the hour you were actually given.",
+        "de": "Die Sorge probt eine Zukunft, die vielleicht nie kommt. Das Vertrauen lässt Sie in der Stunde leben, die Ihnen tatsächlich geschenkt wurde.",
+        "ar": "القلق يتدرب على مستقبل قد لا يأتي أبدا، والتوكل يجعلك تعيش الساعة التي أعطيتها فعلا."
+      }
+    },
+    {
+      "id": "wr-trust-04",
+      "text": {
+        "en": "When the doctor's call is late and the results are not in, say: I have done what I can, and the rest is with Allah.",
+        "de": "Wenn der Anruf des Arztes auf sich warten lässt und die Ergebnisse noch fehlen, sagen Sie: Ich habe getan, was ich konnte, der Rest liegt bei Allah.",
+        "ar": "حين يتأخر اتصال الطبيب ولم تصل النتائج بعد، قل: فعلت ما أستطيع، والباقي على الله."
+      }
+    },
+    {
+      "id": "wr-trust-05",
+      "text": {
+        "en": "Some doors close to protect you from rooms you were never meant to enter.",
+        "de": "Manche Türen schließen sich, um Sie vor Räumen zu schützen, die Sie nie betreten sollten.",
+        "ar": "بعض الأبواب تغلق لتحميك من غرف لم يكن مقدرا لك أن تدخلها."
+      }
+    },
+    {
+      "id": "wr-trust-06",
+      "text": {
+        "en": "Trusting Allah does not mean everything will go your way. It means that whatever happens, you will not face it alone.",
+        "de": "Auf Allah zu vertrauen heißt nicht, dass alles nach Ihrem Willen läuft. Es heißt, dass Sie dem, was kommt, nicht allein begegnen.",
+        "ar": "التوكل على الله لا يعني أن كل شيء سيجري كما تريد، بل يعني أنك لن تواجه ما يحدث وحدك."
+      }
+    },
+    {
+      "id": "wr-trust-07",
+      "text": {
+        "en": "A child asleep in the back seat does not check the map. Some nights, let your heart rest like that.",
+        "de": "Ein Kind, das auf dem Rücksitz schläft, schaut nicht auf die Karte. Lassen Sie Ihr Herz in manchen Nächten so ruhen.",
+        "ar": "الطفل النائم في المقعد الخلفي لا يتفقد الخريطة، فدع قلبك يستريح هكذا في بعض الليالي."
+      }
+    },
+    {
+      "id": "wr-trust-08",
+      "text": {
+        "en": "Plan carefully, work honestly and hold the results loosely. That is what trust looks like on a Monday morning.",
+        "de": "Planen Sie sorgfältig, arbeiten Sie ehrlich und halten Sie die Ergebnisse locker in der Hand. So sieht Vertrauen an einem Montagmorgen aus.",
+        "ar": "خطط بعناية، واعمل بأمانة، وأمسك النتائج بيد مرتخية، هكذا يبدو التوكل صباح يوم الاثنين."
+      }
+    },
+    {
+      "id": "wr-trust-09",
+      "text": {
+        "en": "The plans that fell apart taught you things the successful ones never could. Trust includes trusting the detours.",
+        "de": "Die Pläne, die zerbrochen sind, haben Sie gelehrt, was die gelungenen nie gekonnt hätten. Zum Vertrauen gehört, auch den Umwegen zu vertrauen.",
+        "ar": "الخطط التي انهارت علمتك ما لم تكن الخطط الناجحة لتعلمك إياه، ومن التوكل أن تثق بالطرق الملتوية أيضا."
+      }
+    },
+    {
+      "id": "wr-trust-10",
+      "text": {
+        "en": "Say Bismillah before the hard conversation, the interview, the first day. Then step in, knowing you did not come alone.",
+        "de": "Sagen Sie Bismillah vor dem schweren Gespräch, dem Vorstellungsgespräch, dem ersten Tag. Dann treten Sie ein, im Wissen, dass Sie nicht allein gekommen sind.",
+        "ar": "قل بسم الله قبل الحديث الصعب، وقبل المقابلة، وقبل اليوم الأول، ثم ادخل وأنت تعلم أنك لم تأت وحدك."
+      }
+    },
+    {
+      "id": "wr-trust-11",
+      "text": {
+        "en": "Trust is a muscle. Every small worry you hand over makes the next big one a little easier to carry.",
+        "de": "Vertrauen ist ein Muskel. Jede kleine Sorge, die Sie abgeben, macht die nächste große ein wenig leichter zu tragen.",
+        "ar": "التوكل عضلة، وكل هم صغير تسلمه لله يجعل الهم الكبير التالي أخف قليلا."
+      }
+    },
+    {
+      "id": "wr-trust-12",
+      "text": {
+        "en": "You were cared for before you knew how to ask: in the womb, in the cradle, in a thousand moments you never noticed.",
+        "de": "Für Sie wurde gesorgt, bevor Sie bitten konnten: im Mutterleib, in der Wiege, in tausend Momenten, die Sie nie bemerkt haben.",
+        "ar": "رعيت قبل أن تعرف كيف تسأل: في بطن أمك، وفي المهد، وفي ألف لحظة لم تنتبه إليها."
+      }
+    },
+    {
+      "id": "wr-trust-13",
+      "text": {
+        "en": "When the outcome is no longer in your hands, leave it with Allah. There is no safer place for it.",
+        "de": "Wenn das Ergebnis nicht mehr in Ihren Händen liegt, überlassen Sie es Allah. Es gibt keinen sichereren Ort dafür.",
+        "ar": "إذا خرجت النتيجة من يديك فاتركها لله، فلا مكان أكثر أمانا لها."
+      }
+    },
+    {
+      "id": "wr-trust-14",
+      "text": {
+        "en": "A traveller who trusts the captain still packs his bag carefully. Trust and effort were never enemies.",
+        "de": "Ein Reisender, der dem Kapitän vertraut, packt seine Tasche trotzdem sorgfältig. Vertrauen und Mühe waren nie Feinde.",
+        "ar": "المسافر الذي يثق بالربان يحزم حقيبته بعناية مع ذلك، فالتوكل والسعي لم يكونا عدوين قط."
+      }
+    }
+  ]
+}

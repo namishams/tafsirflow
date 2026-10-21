@@ -1,0 +1,420 @@
+{
+  "series": "golden-age",
+  "label": {"en": "The golden age of knowledge", "de": "Das goldene Zeitalter des Wissens", "ar": "العصر الذهبي للعلم"},
+  "topic": "history",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "golden-age-01-house-of-wisdom",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Golden age of knowledge · 1", "de": "Goldenes Zeitalter des Wissens · 1", "ar": "العصر الذهبي للعلم · ١"},
+        "title": {"en": "The House of Wisdom", "de": "Das Haus der Weisheit", "ar": "بيت الحكمة"},
+        "sub": {"en": "Baghdad, where the books of many nations became Arabic", "de": "Bagdad, wo die Bücher vieler Völker arabisch wurden", "ar": "بغداد، حيث نُقلت كتب الأمم إلى العربية"},
+        "arabic": "بيت الحكمة"
+      },
+      "slides": [
+        {
+          "verse": "96:3-5",
+          "check": "taught by the pen",
+          "title": {"en": "A faith that begins with reading", "de": "Ein Glaube, der mit Lesen beginnt", "ar": "دين يبدأ بالقراءة"},
+          "body": {"en": "The first revealed words speak of reading and of the pen. Generations of Muslims took them as a call to learn.", "de": "Die ersten offenbarten Worte sprechen vom Lesen und vom Schreibrohr. Generationen von Muslimen verstanden sie als Ruf zum Lernen.", "ar": "تتحدث أول الآيات نزولًا عن القراءة والقلم، وفهمتها أجيال من المسلمين دعوة إلى طلب العلم."}
+        },
+        {
+          "title": {"en": "Baghdad under the Abbasids", "de": "Bagdad unter den Abbasiden", "ar": "بغداد في عهد العباسيين"},
+          "body": {"en": "The House of Wisdom grew in Abbasid Baghdad under Harun al-Rashid and above all al-Ma'mun, who ruled from 813 to 833. It brought together books, scholars and translators.", "de": "Das Haus der Weisheit entstand im abbasidischen Bagdad unter Harun ar-Raschid und vor allem unter al-Mamun, der von 813 bis 833 regierte. Es vereinte Bücher, Gelehrte und Übersetzer.", "ar": "نشأ بيت الحكمة في بغداد العباسية في عهد هارون الرشيد، ثم ازدهر خاصة في عهد المأمون الذي حكم من ٨١٣ إلى ٨٣٣م، فجمع الكتب والعلماء والمترجمين."}
+        },
+        {
+          "title": {"en": "The great translation", "de": "Die große Übersetzung", "ar": "حركة الترجمة"},
+          "body": {"en": "Works of Greek science and philosophy were translated into Arabic, often by way of Syriac, along with Persian and Sanskrit texts. Ideas that might have been lost were kept, corrected and extended.", "de": "Werke griechischer Wissenschaft und Philosophie wurden ins Arabische übersetzt, oft über das Syrische, dazu persische und Sanskrit-Texte. Ideen, die verloren gehen konnten, wurden bewahrt, berichtigt und weitergedacht.", "ar": "تُرجمت كتب العلم والفلسفة اليونانية إلى العربية، وكثيرًا ما مرّت عبر السريانية، ومعها نصوص فارسية وسنسكريتية، فحُفظت أفكار كادت تضيع، ثم صُحّحت وطُوّرت."}
+        },
+        {
+          "title": {"en": "Names linked to it", "de": "Namen, die damit verbunden sind", "ar": "أعلام ارتبطوا به"},
+          "list": {
+            "en": ["Al-Khwarizmi, the mathematician", "Hunayn ibn Ishaq, a Christian translator of medical works", "The Banu Musa, three brothers known for ingenious devices", "Al-Kindi, called the philosopher of the Arabs"],
+            "de": ["Al-Chwarizmi, der Mathematiker", "Hunain ibn Ishaq, ein christlicher Übersetzer medizinischer Werke", "Die Banu Musa, drei Brüder, bekannt für erfinderische Geräte", "Al-Kindi, genannt der Philosoph der Araber"],
+            "ar": ["الخوارزمي عالم الرياضيات", "حنين بن إسحاق، مترجم نصراني لكتب الطب", "بنو موسى، ثلاثة إخوة عُرفوا بالحيل والآلات", "الكندي الملقب بفيلسوف العرب"]
+          }
+        },
+        {
+          "title": {"en": "Library or academy?", "de": "Bibliothek oder Akademie?", "ar": "مكتبة أم أكاديمية؟"},
+          "body": {"en": "Historians debate what it was. Some see a formal academy; others, like Dimitri Gutas, think it was mainly a palace library. Either way, Baghdad became a capital of learning.", "de": "Historiker streiten darüber, was es war. Manche sehen eine Akademie; andere, wie Dimitri Gutas, vor allem eine Palastbibliothek. So oder so wurde Bagdad zu einer Hauptstadt des Wissens.", "ar": "يختلف المؤرخون في حقيقته: فبعضهم يراه أكاديمية منظمة، ويرى آخرون، مثل ديمتري غوتاس، أنه كان في الأساس مكتبة للقصر. وفي الحالين صارت بغداد عاصمة للعلم."}
+        },
+        {
+          "title": {"en": "The end in 1258", "de": "Das Ende im Jahr 1258", "ar": "النهاية سنة ١٢٥٨م"},
+          "body": {"en": "When the Mongols took Baghdad in 1258, the House of Wisdom was destroyed. Later accounts describe books thrown into the Tigris. By then, its knowledge had already spread to many cities.", "de": "Als die Mongolen 1258 Bagdad einnahmen, wurde das Haus der Weisheit zerstört. Spätere Berichte erzählen von Büchern, die in den Tigris geworfen wurden. Sein Wissen hatte sich da längst in viele Städte verbreitet.", "ar": "لما اجتاح المغول بغداد سنة ١٢٥٨م دُمّر بيت الحكمة، وتروي أخبار لاحقة أن الكتب أُلقيت في دجلة. لكن علمه كان قد انتشر قبل ذلك في مدن كثيرة."}
+        },
+        {
+          "verse": "39:9",
+          "check": "those who know",
+          "title": {"en": "Those who know", "de": "Die Wissenden", "ar": "أهل العلم"},
+          "body": {"en": "In the Quran knowledge raises a person when it is joined with worship and humility.", "de": "Im Koran erhebt Wissen den Menschen, wenn es mit Anbetung und Demut verbunden ist.", "ar": "يرفع العلم صاحبه في القرآن إذا اقترن بالعبادة والتواضع."}
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: House of Wisdom", "url": "https://en.wikipedia.org/wiki/House_of_Wisdom"},
+        {"label": "Dimitri Gutas, Greek Thought, Arabic Culture (Routledge, 1998)"}
+      ]
+    },
+    {
+      "id": "golden-age-02-al-khwarizmi",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Golden age of knowledge · 2", "de": "Goldenes Zeitalter des Wissens · 2", "ar": "العصر الذهبي للعلم · ٢"},
+        "title": {"en": "Al-Khwarizmi", "de": "Al-Chwarizmi", "ar": "الخوارزمي"},
+        "sub": {"en": "The scholar whose name became the word algorithm", "de": "Der Gelehrte, dessen Name zum Wort Algorithmus wurde", "ar": "العالم الذي صار اسمه مصطلح الخوارزمية"},
+        "arabic": "محمد بن موسى الخوارزمي"
+      },
+      "slides": [
+        {
+          "title": {"en": "A scholar of Baghdad", "de": "Ein Gelehrter Bagdads", "ar": "عالم من بغداد"},
+          "body": {"en": "Muhammad ibn Musa al-Khwarizmi lived from about 780 to about 850. His name points to Khwarazm in Central Asia. Around 820 he worked at the House of Wisdom under al-Ma'mun.", "de": "Muhammad ibn Musa al-Chwarizmi lebte etwa von 780 bis 850. Sein Name weist auf Choresmien in Zentralasien. Um 820 arbeitete er unter al-Mamun im Haus der Weisheit.", "ar": "عاش محمد بن موسى الخوارزمي نحو ٧٨٠ إلى نحو ٨٥٠م، ويدل اسمه على خوارزم في آسيا الوسطى، وعمل نحو سنة ٨٢٠م في بيت الحكمة في عهد المأمون."}
+        },
+        {
+          "title": {"en": "The book of al-jabr", "de": "Das Buch al-dschabr", "ar": "كتاب الجبر"},
+          "arabic": "الجبر والمقابلة",
+          "body": {"en": "Around 820 he wrote a short book on calculation by al-jabr and al-muqabala. From al-jabr, restoring, comes the word algebra.", "de": "Um 820 schrieb er ein kurzes Buch über das Rechnen durch al-dschabr und al-muqabala. Aus al-dschabr, dem Ergänzen, wurde das Wort Algebra.", "ar": "ألّف نحو سنة ٨٢٠م كتابه المختصر في حساب الجبر والمقابلة، ومن كلمة الجبر جاءت تسمية علم الجبر في اللغات الأوروبية."}
+        },
+        {
+          "title": {"en": "Mathematics for daily life", "de": "Mathematik für den Alltag", "ar": "رياضيات لحياة الناس"},
+          "body": {"en": "In its preface he says he wrote it for what people constantly need: inheritance and wills, trade and lawsuits, measuring land and digging canals.", "de": "Im Vorwort schreibt er, er habe es für das verfasst, was Menschen ständig brauchen: Erbschaften und Testamente, Handel und Rechtsstreit, Landvermessung und Kanalbau.", "ar": "يذكر في مقدمته أنه ألّفه لما يحتاج إليه الناس دائمًا: المواريث والوصايا، والتجارة والخصومات، ومساحة الأرضين وكري الأنهار."}
+        },
+        {
+          "verse": "72:28",
+          "check": "enumerated all things in number",
+          "title": {"en": "All things in number", "de": "Alles in Zahl erfasst", "ar": "كل شيء بحساب"},
+          "body": {"en": "Number is part of the order of creation. For Muslim mathematicians, counting precisely was one way of reading that order.", "de": "Zahl gehört zur Ordnung der Schöpfung. Für muslimische Mathematiker war genaues Rechnen ein Weg, diese Ordnung zu lesen.", "ar": "العدد جزء من نظام الخلق، وكان الحساب الدقيق عند علماء الرياضيات المسلمين طريقًا لقراءة هذا النظام."}
+        },
+        {
+          "title": {"en": "Numbers that travelled", "de": "Zahlen auf Reisen", "ar": "أرقام سافرت"},
+          "body": {"en": "His book on calculating with Indian numerals spread the decimal place-value system. Its Latin translation in the 12th century brought it to Europe, and his name became Algoritmi.", "de": "Sein Buch über das Rechnen mit indischen Ziffern verbreitete das dezimale Stellenwertsystem. Seine lateinische Übersetzung im 12. Jahrhundert brachte es nach Europa, und aus seinem Namen wurde Algoritmi.", "ar": "نشر كتابه في الحساب بالأرقام الهندية نظام الخانات العشري، وحملته ترجمته اللاتينية في القرن الثاني عشر إلى أوروبا، فصار اسمه هناك ألغوريتمي."}
+        },
+        {
+          "title": {"en": "Stars and maps", "de": "Sterne und Karten", "ar": "النجوم والخرائط"},
+          "body": {"en": "He also compiled astronomical tables, the Zij al-Sindhind, and a geography, Kitab Surat al-Ard, that revised Ptolemy's coordinates for cities and places.", "de": "Er stellte auch astronomische Tafeln zusammen, den Zidsch as-Sindhind, und eine Geographie, Kitab Surat al-Ard, die die Koordinaten des Ptolemäus für Städte und Orte überarbeitete.", "ar": "وضع أيضًا جداول فلكية هي زيج السند هند، وكتابًا في الجغرافيا هو صورة الأرض، راجع فيه إحداثيات بطليموس للمدن والأماكن."}
+        },
+        {
+          "title": {"en": "Lessons from al-Khwarizmi", "de": "Lehren von al-Chwarizmi", "ar": "دروس من الخوارزمي"},
+          "list": {
+            "en": ["Make knowledge useful for people's needs", "Write clearly so that others can learn", "Build on the work of others and name your sources"],
+            "de": ["Machen Sie Wissen nützlich für die Bedürfnisse der Menschen", "Schreiben Sie klar, damit andere lernen können", "Bauen Sie auf der Arbeit anderer auf und nennen Sie Ihre Quellen"],
+            "ar": ["اجعل العلم نافعًا لحاجات الناس", "اكتب بوضوح ليتعلم غيرك", "ابنِ على عمل من سبقك واذكر مصادرك"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Al-Khwarizmi", "url": "https://en.wikipedia.org/wiki/Al-Khwarizmi"},
+        {"label": "Al-Khwarizmi, The Algebra, preface, tr. Frederic Rosen (London, 1831)"}
+      ]
+    },
+    {
+      "id": "golden-age-03-ibn-al-haytham",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Golden age of knowledge · 3", "de": "Goldenes Zeitalter des Wissens · 3", "ar": "العصر الذهبي للعلم · ٣"},
+        "title": {"en": "Ibn al-Haytham", "de": "Ibn al-Haitham", "ar": "ابن الهيثم"},
+        "sub": {"en": "How light reaches the eye, and why a scientist must doubt", "de": "Wie Licht ins Auge gelangt und warum ein Forscher zweifeln muss", "ar": "كيف يصل الضوء إلى العين، ولماذا يشك الباحث"},
+        "arabic": "الحسن بن الهيثم"
+      },
+      "slides": [
+        {
+          "title": {"en": "From Basra to Cairo", "de": "Von Basra nach Kairo", "ar": "من البصرة إلى القاهرة"},
+          "body": {"en": "Al-Hasan ibn al-Haytham was born around 965 in Basra and spent most of his working life in Cairo, where he died around 1040. In Europe he became known as Alhazen.", "de": "Al-Hasan ibn al-Haitham wurde um 965 in Basra geboren und verbrachte den größten Teil seines Schaffens in Kairo, wo er um 1040 starb. In Europa wurde er als Alhazen bekannt.", "ar": "وُلد الحسن بن الهيثم نحو سنة ٩٦٥م في البصرة، وقضى معظم حياته العلمية في القاهرة حيث توفي نحو سنة ١٠٤٠م، وعرفته أوروبا باسم الهازن."}
+        },
+        {
+          "title": {"en": "The Book of Optics", "de": "Das Buch der Optik", "ar": "كتاب المناظر"},
+          "body": {"en": "Between 1011 and 1021 he wrote Kitab al-Manazir in seven volumes. He argued that we see because light reflects from objects into the eye, not because the eye sends out rays.", "de": "Zwischen 1011 und 1021 schrieb er Kitab al-Manazir in sieben Bänden. Er zeigte, dass wir sehen, weil Licht von den Dingen ins Auge fällt, und nicht, weil das Auge Strahlen aussendet.", "ar": "ألّف كتاب المناظر في سبع مقالات بين سنتي ١٠١١ و١٠٢١م، وبيّن أن الإبصار يحدث بضوء ينعكس من الأشياء إلى العين، لا بأشعة تخرج من العين."}
+        },
+        {
+          "title": {"en": "Testing, not assuming", "de": "Prüfen statt annehmen", "ar": "الاختبار قبل التسليم"},
+          "body": {"en": "He tested ideas with careful experiments, for example with light entering a dark room through a small opening, the camera obscura. Historians count him among the early champions of experiment.", "de": "Er prüfte Ideen mit sorgfältigen Versuchen, etwa mit Licht, das durch eine kleine Öffnung in einen dunklen Raum fällt, der Camera obscura. Historiker zählen ihn zu den frühen Verfechtern des Experiments.", "ar": "اختبر الأفكار بتجارب دقيقة، كالضوء الداخل إلى غرفة مظلمة من ثقب صغير، أي البيت المظلم، ويعده المؤرخون من أوائل الداعين إلى التجربة."}
+        },
+        {
+          "verse": "17:36",
+          "check": "the sight",
+          "title": {"en": "Knowledge needs evidence", "de": "Wissen braucht Belege", "ar": "العلم يحتاج إلى دليل"},
+          "body": {"en": "The Quran warns against following what we do not know, and reminds us that hearing, sight and heart are a trust.", "de": "Der Koran warnt davor, dem zu folgen, wovon man kein Wissen hat, und erinnert daran, dass Gehör, Blick und Herz anvertraut sind.", "ar": "ينهى القرآن عن اتباع ما لا علم لنا به، ويذكّر بأن السمع والبصر والقلب أمانة."}
+        },
+        {
+          "title": {"en": "Doubts concerning Ptolemy", "de": "Zweifel an Ptolemäus", "ar": "الشكوك على بطليموس"},
+          "body": {"en": "In al-Shukuk ala Batlamyus he criticised contradictions in the great astronomer. He urged readers to examine every book critically, even respected ones, and to watch for their own bias too.", "de": "In al-Schukuk ala Batlamyus kritisierte er Widersprüche des großen Astronomen. Er riet, jedes Buch kritisch zu prüfen, auch angesehene, und auch auf die eigene Voreingenommenheit zu achten.", "ar": "انتقد في كتابه الشكوك على بطليموس تناقضات عند ذلك الفلكي الكبير، ودعا القارئ إلى فحص كل كتاب بعين ناقدة مهما عظمت مكانته، وإلى الحذر من هوى نفسه أيضًا."}
+        },
+        {
+          "title": {"en": "A thousand years later", "de": "Tausend Jahre später", "ar": "بعد ألف عام"},
+          "body": {"en": "Translated into Latin around 1200, his optics influenced scholars such as Roger Bacon and Kepler. Unesco's International Year of Light in 2015 marked a thousand years of his work on optics.", "de": "Um 1200 ins Lateinische übersetzt, beeinflusste seine Optik Gelehrte wie Roger Bacon und Kepler. Das Internationale Jahr des Lichts der Unesco 2015 erinnerte an tausend Jahre seiner Optik.", "ar": "تُرجم كتابه إلى اللاتينية نحو سنة ١٢٠٠م فأثّر في علماء مثل روجر بيكون وكبلر، واحتفت اليونسكو في السنة الدولية للضوء ٢٠١٥م بمرور ألف عام على أعماله في البصريات."}
+        },
+        {
+          "title": {"en": "Lessons from Ibn al-Haytham", "de": "Lehren von Ibn al-Haitham", "ar": "دروس من ابن الهيثم"},
+          "list": {
+            "en": ["Check claims before you accept them", "Respect great teachers and still ask questions", "Let your conclusions follow the evidence"],
+            "de": ["Prüfen Sie Behauptungen, bevor Sie sie annehmen", "Achten Sie große Lehrer und stellen Sie dennoch Fragen", "Lassen Sie Ihre Schlüsse den Belegen folgen"],
+            "ar": ["تثبّت من الدعاوى قبل قبولها", "احترم كبار العلماء ولا تترك السؤال", "اجعل نتائجك تابعة للدليل"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Ibn al-Haytham", "url": "https://en.wikipedia.org/wiki/Ibn_al-Haytham"},
+        {"label": "Ibn al-Haytham, al-Shukuk 'ala Batlamyus (Doubts concerning Ptolemy)"}
+      ]
+    },
+    {
+      "id": "golden-age-04-ibn-sina",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Golden age of knowledge · 4", "de": "Goldenes Zeitalter des Wissens · 4", "ar": "العصر الذهبي للعلم · ٤"},
+        "title": {"en": "Ibn Sina", "de": "Ibn Sina", "ar": "ابن سينا"},
+        "sub": {"en": "The physician of the Canon, read in Europe for centuries", "de": "Der Arzt des Kanons, jahrhundertelang auch in Europa gelesen", "ar": "صاحب القانون في الطب الذي قُرئ في أوروبا قرونًا"},
+        "arabic": "الشيخ الرئيس ابن سينا"
+      },
+      "slides": [
+        {
+          "title": {"en": "A gifted child of Bukhara", "de": "Ein begabtes Kind aus Buchara", "ar": "نابغة من بخارى"},
+          "body": {"en": "Ibn Sina was born around 980 near Bukhara and died in Hamadan in 1037. In his account of his own life, he says he knew the Quran by heart at the age of ten.", "de": "Ibn Sina wurde um 980 bei Buchara geboren und starb 1037 in Hamadan. In seiner Lebensbeschreibung sagt er, er habe den Koran mit zehn Jahren auswendig gekonnt.", "ar": "وُلد ابن سينا نحو سنة ٩٨٠م قرب بخارى، وتوفي في همذان سنة ١٠٣٧م، ويذكر في سيرته التي رواها عن نفسه أنه حفظ القرآن في العاشرة من عمره."}
+        },
+        {
+          "title": {"en": "The Canon of Medicine", "de": "Der Kanon der Medizin", "ar": "القانون في الطب"},
+          "body": {"en": "His al-Qanun fi al-Tibb gathered the medicine of his time into one ordered system. In Latin translation it served as a standard textbook in Europe for centuries.", "de": "Sein al-Qanun fi at-Tibb fasste die Medizin seiner Zeit in einem geordneten System zusammen. In lateinischer Übersetzung war er jahrhundertelang ein Standardlehrbuch in Europa.", "ar": "جمع كتابه القانون في الطب علم الطب في عصره في نظام مرتب، وظل بترجمته اللاتينية كتابًا معتمدًا في تعليم الطب في أوروبا قرونًا."}
+        },
+        {
+          "verse": "26:80",
+          "check": "cures me",
+          "title": {"en": "Who truly heals", "de": "Wer wirklich heilt", "ar": "الشافي هو الله"},
+          "body": {"en": "Ibrahim's words keep medicine humble: the doctor treats, Allah heals.", "de": "Ibrahims Worte halten die Medizin demütig: Der Arzt behandelt, Allah heilt.", "ar": "كلمات إبراهيم تُبقي الطب متواضعًا: الطبيب يعالج، والله هو الشافي."}
+        },
+        {
+          "verse": "16:69",
+          "check": "healing for people",
+          "title": {"en": "Healing placed in creation", "de": "Heilung in der Schöpfung", "ar": "شفاء أودعه الله في خلقه"},
+          "body": {"en": "The Quran points to healing placed in creation, as in honey. Muslim physicians searched nature for remedies.", "de": "Der Koran weist auf Heilung hin, die in die Schöpfung gelegt ist, wie im Honig. Muslimische Ärzte suchten in der Natur nach Heilmitteln.", "ar": "يشير القرآن إلى شفاء أودعه الله في خلقه كالعسل، فبحث الأطباء المسلمون في الطبيعة عن الدواء."}
+        },
+        {
+          "title": {"en": "The Book of Healing", "de": "Das Buch der Heilung", "ar": "كتاب الشفاء"},
+          "body": {"en": "Despite its name, Kitab al-Shifa is not a medical book. It is a vast encyclopedia of logic, natural sciences, mathematics and metaphysics.", "de": "Trotz seines Namens ist Kitab asch-Schifa kein medizinisches Buch. Es ist eine riesige Enzyklopädie der Logik, der Naturwissenschaften, der Mathematik und der Metaphysik.", "ar": "كتاب الشفاء رغم اسمه ليس كتابًا في الطب، بل موسوعة واسعة في المنطق والطبيعيات والرياضيات والإلهيات."}
+        },
+        {
+          "title": {"en": "Admired and criticised", "de": "Bewundert und kritisiert", "ar": "إعجاب ونقد"},
+          "body": {"en": "Al-Ghazali sharply criticised some of his philosophical views, for example on the eternity of the world. Scholars still separate his medicine, widely honoured, from his debated metaphysics.", "de": "Al-Ghazali kritisierte einige seiner philosophischen Ansichten scharf, etwa zur Ewigkeit der Welt. Gelehrte trennen bis heute seine viel geehrte Medizin von seiner umstrittenen Metaphysik.", "ar": "انتقد الغزالي بشدة بعض آرائه الفلسفية، كقوله بقدم العالم، وما زال العلماء يفرّقون بين طبه الذي نال تقديرًا واسعًا وإلهياته التي اختُلف فيها."}
+        },
+        {
+          "title": {"en": "Lessons from Ibn Sina", "de": "Lehren von Ibn Sina", "ar": "دروس من ابن سينا"},
+          "list": {
+            "en": ["Start with the Quran and keep it close", "Serve people with the skills you gain", "Remember that great minds can also err"],
+            "de": ["Beginnen Sie mit dem Koran und bleiben Sie ihm nahe", "Dienen Sie den Menschen mit Ihrem Können", "Bedenken Sie, dass auch große Geister irren können"],
+            "ar": ["ابدأ بالقرآن وابقَ قريبًا منه", "اخدم الناس بما تكتسب من مهارة", "تذكّر أن العقول الكبيرة قد تخطئ أيضًا"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Avicenna", "url": "https://en.wikipedia.org/wiki/Avicenna"},
+        {"label": "The Life of Ibn Sina, ed. and tr. William E. Gohlman (SUNY Press, 1974)"},
+        {"label": "Al-Ghazali, Tahafut al-Falasifa (The Incoherence of the Philosophers)"}
+      ]
+    },
+    {
+      "id": "golden-age-05-al-zahrawi",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Golden age of knowledge · 5", "de": "Goldenes Zeitalter des Wissens · 5", "ar": "العصر الذهبي للعلم · ٥"},
+        "title": {"en": "Al-Zahrawi", "de": "Az-Zahrawi", "ar": "الزهراوي"},
+        "sub": {"en": "The surgeon of Cordoba who drew his instruments", "de": "Der Chirurg von Córdoba, der seine Instrumente zeichnete", "ar": "جرّاح قرطبة الذي رسم أدواته"},
+        "arabic": "أبو القاسم الزهراوي"
+      },
+      "slides": [
+        {
+          "title": {"en": "A doctor of al-Andalus", "de": "Ein Arzt aus al-Andalus", "ar": "طبيب من الأندلس"},
+          "body": {"en": "Abu al-Qasim al-Zahrawi was born around 936 in Madinat al-Zahra near Cordoba and died around 1013. Europe knew him as Abulcasis.", "de": "Abu al-Qasim az-Zahrawi wurde um 936 in Madinat az-Zahra bei Córdoba geboren und starb um 1013. Europa kannte ihn als Abulcasis.", "ar": "وُلد أبو القاسم الزهراوي نحو سنة ٩٣٦م في مدينة الزهراء قرب قرطبة، وتوفي نحو سنة ١٠١٣م، وعرفته أوروبا باسم أبولكاسيس."}
+        },
+        {
+          "title": {"en": "Thirty books in one", "de": "Dreißig Bücher in einem", "ar": "ثلاثون مقالة في كتاب"},
+          "body": {"en": "His Kitab al-Tasrif is a medical encyclopedia in thirty parts, completed around the year 1000. Its last part is devoted to surgery and its instruments.", "de": "Sein Kitab at-Tasrif ist eine medizinische Enzyklopädie in dreißig Teilen, um das Jahr 1000 vollendet. Ihr letzter Teil ist der Chirurgie und ihren Instrumenten gewidmet.", "ar": "كتابه التصريف لمن عجز عن التأليف موسوعة طبية في ثلاثين مقالة أتمّها نحو سنة ١٠٠٠م، وخصّص آخرها للجراحة وأدواتها."}
+        },
+        {
+          "title": {"en": "Instruments on paper", "de": "Instrumente auf Papier", "ar": "أدوات على الورق"},
+          "body": {"en": "He drew the instruments he used and explained how to handle them. This makes his surgery one of the first illustrated surgical guides.", "de": "Er zeichnete die Instrumente, die er benutzte, und erklärte ihren Gebrauch. Damit gehört seine Chirurgie zu den ersten bebilderten chirurgischen Lehrbüchern.", "ar": "رسم الأدوات التي استعملها وشرح طريقة استخدامها، فصار قسم الجراحة في كتابه من أوائل كتب الجراحة المصورة."}
+        },
+        {
+          "verse": "5:32",
+          "check": "saves one",
+          "title": {"en": "Saving one life", "de": "Ein Leben retten", "ar": "إحياء نفس واحدة"},
+          "body": {"en": "The Quran gives every single life immense weight. A surgeon's careful hands serve this value.", "de": "Der Koran gibt jedem einzelnen Leben ein großes Gewicht. Die sorgfältigen Hände eines Chirurgen dienen diesem Wert.", "ar": "يعطي القرآن لكل نفس قيمة عظيمة، ويد الجراح المتقنة في خدمة هذه القيمة."}
+        },
+        {
+          "title": {"en": "Read in Europe", "de": "In Europa gelesen", "ar": "قُرئ في أوروبا"},
+          "body": {"en": "In the 12th century Gerard of Cremona translated the surgery into Latin. It was studied in medical schools such as Salerno and Montpellier.", "de": "Im 12. Jahrhundert übersetzte Gerhard von Cremona die Chirurgie ins Lateinische. Sie wurde an medizinischen Schulen wie Salerno und Montpellier studiert.", "ar": "ترجم جيرار الكريموني قسم الجراحة إلى اللاتينية في القرن الثاني عشر، فدُرّس في مدارس الطب مثل ساليرنو ومونبلييه."}
+        },
+        {
+          "title": {"en": "Lessons from al-Zahrawi", "de": "Lehren von az-Zahrawi", "ar": "دروس من الزهراوي"},
+          "list": {
+            "en": ["Practise your craft with precision and care", "Teach with clear examples others can follow", "See each patient as a trust from Allah"],
+            "de": ["Üben Sie Ihr Handwerk genau und sorgfältig aus", "Lehren Sie mit klaren Beispielen, denen andere folgen können", "Sehen Sie jeden Kranken als anvertrautes Gut Allahs"],
+            "ar": ["أتقن عملك بدقة وعناية", "علّم بأمثلة واضحة يمكن لغيرك اتباعها", "انظر إلى كل مريض على أنه أمانة من الله"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Al-Zahrawi", "url": "https://en.wikipedia.org/wiki/Al-Zahrawi"}
+      ]
+    },
+    {
+      "id": "golden-age-06-al-qarawiyyin",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Golden age of knowledge · 6", "de": "Goldenes Zeitalter des Wissens · 6", "ar": "العصر الذهبي للعلم · ٦"},
+        "title": {"en": "Fatima al-Fihri and al-Qarawiyyin", "de": "Fatima al-Fihri und al-Qarawiyyin", "ar": "فاطمة الفهرية وجامع القرويين"},
+        "sub": {"en": "A mosque in Fez that became a home of learning", "de": "Eine Moschee in Fès, die zu einem Ort der Gelehrsamkeit wurde", "ar": "مسجد في فاس صار دارًا للعلم"},
+        "arabic": "جامع القرويين"
+      },
+      "slides": [
+        {
+          "title": {"en": "A family from Kairouan", "de": "Eine Familie aus Kairouan", "ar": "أسرة من القيروان"},
+          "body": {"en": "In the early 9th century the family of the merchant Muhammad al-Fihri moved from Kairouan to Fez. The Qarawiyyin takes its name from the people of Kairouan.", "de": "Im frühen 9. Jahrhundert zog die Familie des Kaufmanns Muhammad al-Fihri von Kairouan nach Fès. Al-Qarawiyyin trägt den Namen der Menschen aus Kairouan.", "ar": "انتقلت أسرة التاجر محمد الفهري في أوائل القرن التاسع من القيروان إلى فاس، ومن أهل القيروان أخذ جامع القرويين اسمه."}
+        },
+        {
+          "title": {"en": "Founded by a woman", "de": "Von einer Frau gegründet", "ar": "أسسته امرأة"},
+          "body": {"en": "According to the historical tradition, his daughter Fatima used her inheritance to found the mosque around 857 to 859. Her sister Maryam is said to have founded the Andalusian Mosque of Fez.", "de": "Nach der historischen Überlieferung gründete seine Tochter Fatima um 857 bis 859 mit ihrem Erbe die Moschee. Ihre Schwester Maryam soll die Andalusier-Moschee von Fès gegründet haben.", "ar": "تذكر الرواية التاريخية أن ابنته فاطمة أسست الجامع من ميراثها بين سنتي ٨٥٧ و٨٥٩م تقريبًا، وأن أختها مريم أسست جامع الأندلس في فاس."}
+        },
+        {
+          "verse": "2:261",
+          "check": "seven spikes",
+          "title": {"en": "A seed that keeps growing", "de": "Ein Samenkorn, das weiter wächst", "ar": "حبة ما زالت تنبت"},
+          "body": {"en": "Spending for Allah's sake multiplies. A mosque founded more than eleven centuries ago is still a place of prayer and study.", "de": "Was um Allahs willen gegeben wird, vervielfacht sich. Eine vor mehr als elf Jahrhunderten gegründete Moschee ist bis heute ein Ort des Gebets und des Lernens.", "ar": "ما يُنفق لوجه الله يتضاعف، وهذا جامع أُسس قبل أكثر من أحد عشر قرنًا ما زال مكانًا للصلاة والعلم."}
+        },
+        {
+          "title": {"en": "A centre of learning", "de": "Ein Zentrum der Gelehrsamkeit", "ar": "منارة للعلم"},
+          "body": {"en": "Over the centuries its study circles taught Quran, fiqh and Arabic, and sciences such as astronomy too. Ibn Khaldun is among the famous scholars linked to it.", "de": "Über Jahrhunderte lehrten seine Lernkreise Koran, Fiqh und Arabisch, aber auch Wissenschaften wie die Astronomie. Ibn Chaldun gehört zu den berühmten Gelehrten, die damit verbunden sind.", "ar": "دُرّست في حلقاته عبر القرون علوم القرآن والفقه والعربية، ومعها علوم كالفلك، ومن أشهر العلماء المرتبطين به ابن خلدون."}
+        },
+        {
+          "title": {"en": "Still teaching today", "de": "Bis heute eine Stätte der Lehre", "ar": "ما زال يعلّم إلى اليوم"},
+          "body": {"en": "Unesco and Guinness World Records have cited it as the oldest continually operating institution of higher learning in the world. It became a state university in 1963.", "de": "Unesco und Guinness World Records nennen sie die älteste ununterbrochen bestehende Hochschule der Welt. Seit 1963 ist sie eine staatliche Universität.", "ar": "وصفته اليونسكو وموسوعة غينيس بأنه أقدم مؤسسة للتعليم العالي ما زالت تعمل دون انقطاع، وصار جامعة رسمية سنة ١٩٦٣م."}
+        },
+        {
+          "title": {"en": "What historians ask", "de": "Was Historiker fragen", "ar": "ما يسأله المؤرخون"},
+          "body": {"en": "The founding story is told in later chronicles, and some historians question parts of it. What no one disputes is the long life of the institution.", "de": "Die Gründungsgeschichte steht in späteren Chroniken, und manche Historiker bezweifeln Teile davon. Unbestritten ist das lange Leben dieser Einrichtung.", "ar": "تُروى قصة التأسيس في كتب تاريخ متأخرة، ويشكك بعض المؤرخين في تفاصيلها، أما طول عمر هذه المؤسسة فلا خلاف فيه."}
+        },
+        {
+          "title": {"en": "Lessons from Fatima al-Fihri", "de": "Lehren von Fatima al-Fihri", "ar": "دروس من فاطمة الفهرية"},
+          "list": {
+            "en": ["Wealth can become knowledge for others", "Women have shaped Muslim learning from early on", "Plant something that others will harvest"],
+            "de": ["Vermögen kann zu Wissen für andere werden", "Frauen haben die muslimische Gelehrsamkeit früh geprägt", "Pflanzen Sie etwas, das andere ernten werden"],
+            "ar": ["قد يصير المال علمًا ينتفع به الآخرون", "أسهمت النساء في صناعة العلم عند المسلمين منذ وقت مبكر", "اغرس ما يحصده غيرك"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: University of al-Qarawiyyin", "url": "https://en.wikipedia.org/wiki/University_of_al-Qarawiyyin"},
+        {"label": "Unesco: Medina of Fez", "url": "https://whc.unesco.org/en/list/170"}
+      ]
+    },
+    {
+      "id": "golden-age-07-al-biruni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Golden age of knowledge · 7", "de": "Goldenes Zeitalter des Wissens · 7", "ar": "العصر الذهبي للعلم · ٧"},
+        "title": {"en": "Al-Biruni", "de": "Al-Biruni", "ar": "البيروني"},
+        "sub": {"en": "Measuring the Earth and listening to other cultures", "de": "Die Erde vermessen und anderen Kulturen zuhören", "ar": "قياس الأرض والإصغاء إلى ثقافات الآخرين"},
+        "arabic": "أبو الريحان البيروني"
+      },
+      "slides": [
+        {
+          "title": {"en": "Born in Khwarazm", "de": "Geboren in Choresmien", "ar": "مولده في خوارزم"},
+          "body": {"en": "Abu al-Rayhan al-Biruni was born in 973 in Kath, in Khwarazm, today's Uzbekistan. He died in Ghazni, in today's Afghanistan, around 1050.", "de": "Abu ar-Raihan al-Biruni wurde 973 in Kath in Choresmien geboren, im heutigen Usbekistan. Er starb um 1050 in Ghazni im heutigen Afghanistan.", "ar": "وُلد أبو الريحان البيروني سنة ٩٧٣م في كاث بخوارزم، في أوزبكستان اليوم، وتوفي نحو سنة ١٠٥٠م في غزنة، في أفغانستان اليوم."}
+        },
+        {
+          "title": {"en": "Measuring the Earth from a hill", "de": "Die Erde von einem Hügel aus vermessen", "ar": "قياس الأرض من فوق جبل"},
+          "body": {"en": "Near Nandana, in today's Pakistan, he measured the height of a hill and the dip of the horizon seen from its top. From this he calculated the radius of the Earth.", "de": "Bei Nandana im heutigen Pakistan maß er die Höhe eines Hügels und die Senkung des Horizonts, von oben gesehen. Daraus berechnete er den Radius der Erde.", "ar": "قاس قرب نندنة، في باكستان اليوم، ارتفاع جبل وانحطاط الأفق كما يُرى من قمته، ثم حسب من ذلك نصف قطر الأرض."}
+        },
+        {
+          "verse": "55:5",
+          "check": "precise calculation",
+          "title": {"en": "Creation by measure", "de": "Schöpfung nach Maß", "ar": "خلق بحساب"},
+          "body": {"en": "Sun and moon move by exact reckoning. For al-Biruni, astronomy and calendars were ways of reading this order.", "de": "Sonne und Mond laufen nach genauer Berechnung. Für al-Biruni waren Astronomie und Kalender Wege, diese Ordnung zu lesen.", "ar": "تجري الشمس والقمر بحساب دقيق، وكان الفلك والتقاويم عند البيروني طريقًا لقراءة هذا النظام."}
+        },
+        {
+          "title": {"en": "A book about India", "de": "Ein Buch über Indien", "ar": "كتاب عن الهند"},
+          "body": {"en": "He learned Sanskrit, studied with Hindu scholars and wrote Tahqiq ma li-l-Hind. He described Indian beliefs on their own terms, often comparing them with Greek ideas.", "de": "Er lernte Sanskrit, studierte bei hinduistischen Gelehrten und schrieb Tahqiq ma li-l-Hind. Er beschrieb indische Glaubenslehren aus ihnen selbst heraus und verglich sie oft mit griechischen Ideen.", "ar": "تعلّم السنسكريتية ودرس على علماء الهندوس وألّف كتاب تحقيق ما للهند، فوصف عقائد الهنود كما هي عندهم، وكثيرًا ما قارنها بآراء اليونان."}
+        },
+        {
+          "verse": "49:13",
+          "check": "know one another",
+          "title": {"en": "That you may know one another", "de": "Damit Sie einander kennenlernen", "ar": "التعارف بين الشعوب"},
+          "body": {"en": "His careful and fair study of another civilisation is a rare example of this verse at work.", "de": "Seine sorgfältige und faire Erforschung einer anderen Kultur ist ein seltenes Beispiel für diesen Vers in der Praxis.", "ar": "دراسته الدقيقة المنصفة لحضارة أخرى مثال نادر على العمل بهذه الآية."}
+        },
+        {
+          "title": {"en": "Calendars of the nations", "de": "Kalender der Völker", "ar": "تقاويم الأمم"},
+          "body": {"en": "In al-Athar al-Baqiya he compared the calendars and festivals of many peoples. His astronomical work al-Qanun al-Mas'udi was dedicated to the Ghaznavid ruler Mas'ud.", "de": "In al-Athar al-Baqiya verglich er die Kalender und Feste vieler Völker. Sein astronomisches Werk al-Qanun al-Masudi widmete er dem ghaznawidischen Herrscher Masud.", "ar": "قارن في كتاب الآثار الباقية بين تقاويم كثير من الأمم وأعيادها، وأهدى كتابه الفلكي القانون المسعودي إلى السلطان الغزنوي مسعود."}
+        },
+        {
+          "title": {"en": "Lessons from al-Biruni", "de": "Lehren von al-Biruni", "ar": "دروس من البيروني"},
+          "list": {
+            "en": ["Describe others fairly before you judge", "Measure carefully and know the limits of your method", "Learn languages to understand people"],
+            "de": ["Beschreiben Sie andere fair, bevor Sie urteilen", "Messen Sie sorgfältig und kennen Sie die Grenzen Ihrer Methode", "Lernen Sie Sprachen, um Menschen zu verstehen"],
+            "ar": ["صِف الآخرين بإنصاف قبل أن تحكم", "قِس بدقة واعرف حدود طريقتك", "تعلّم اللغات لتفهم الناس"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Al-Biruni", "url": "https://en.wikipedia.org/wiki/Al-Biruni"}
+      ]
+    },
+    {
+      "id": "golden-age-08-ibn-battuta",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Golden age of knowledge · 8", "de": "Goldenes Zeitalter des Wissens · 8", "ar": "العصر الذهبي للعلم · ٨"},
+        "title": {"en": "Ibn Battuta", "de": "Ibn Battuta", "ar": "ابن بطوطة"},
+        "sub": {"en": "A pilgrim from Tangier who kept travelling for decades", "de": "Ein Pilger aus Tanger, der jahrzehntelang weiterreiste", "ar": "حاجّ من طنجة واصل الترحال عقودًا"},
+        "arabic": "ابن بطوطة"
+      },
+      "slides": [
+        {
+          "title": {"en": "Setting out for Hajj", "de": "Aufbruch zur Pilgerfahrt", "ar": "الخروج إلى الحج"},
+          "body": {"en": "In June 1325 a young man of 21 left Tangier to perform the Hajj. He would not return to Morocco for some 24 years.", "de": "Im Juni 1325 verließ ein 21-jähriger junger Mann Tanger, um die Pilgerfahrt zu vollziehen. Erst nach etwa 24 Jahren sollte er nach Marokko zurückkehren.", "ar": "في يونيو سنة ١٣٢٥م خرج شاب في الحادية والعشرين من طنجة قاصدًا الحج، ولم يعد إلى المغرب إلا بعد نحو أربعة وعشرين عامًا."}
+        },
+        {
+          "verse": "22:27",
+          "check": "every distant pass",
+          "title": {"en": "Answering the call", "de": "Dem Ruf folgen", "ar": "تلبية النداء"},
+          "body": {"en": "Like countless pilgrims before him, he answered the call of Hajj. For him it became the first step of a life on the road.", "de": "Wie unzählige Pilger vor ihm folgte er dem Ruf zur Pilgerfahrt. Für ihn wurde sie der erste Schritt eines Lebens unterwegs.", "ar": "لبّى نداء الحج كما لبّاه حجاج لا يُحصون قبله، فكان حجه أول خطوة في حياة من الترحال."}
+        },
+        {
+          "title": {"en": "Across the known world", "de": "Quer durch die bekannte Welt", "ar": "عبر العالم المعروف"},
+          "body": {"en": "Over some thirty years his journeys led through North Africa, Arabia, Persia, Anatolia, Central Asia, India and the Maldives, to the Mali Empire and al-Andalus, and by his account to China.", "de": "In rund dreißig Jahren führten ihn seine Reisen durch Nordafrika, Arabien, Persien, Anatolien, Zentralasien, Indien und die Malediven, ins Reich Mali und nach al-Andalus und nach seinem Bericht bis China.", "ar": "قادته رحلاته في نحو ثلاثين عامًا عبر شمال إفريقيا والجزيرة العربية وفارس والأناضول وآسيا الوسطى والهند وجزر المالديف، إلى مملكة مالي والأندلس، وإلى الصين كما يروي."}
+        },
+        {
+          "title": {"en": "A judge on the road", "de": "Ein Richter unterwegs", "ar": "قاضٍ في الطريق"},
+          "body": {"en": "Trained in Maliki law, he served as a qadi in Delhi under Sultan Muhammad bin Tughluq and later in the Maldives. His learning opened doors wherever Muslims lived.", "de": "Als ausgebildeter malikitischer Jurist diente er als Richter in Delhi unter Sultan Muhammad bin Tughluq und später auf den Malediven. Sein Wissen öffnete ihm Türen, wo immer Muslime lebten.", "ar": "تفقّه على المذهب المالكي، فتولى القضاء في دلهي في عهد السلطان محمد بن تغلق، ثم في جزر المالديف، وفتح له علمه الأبواب حيثما وُجد المسلمون."}
+        },
+        {
+          "verse": "29:20",
+          "check": "Travel through the land",
+          "title": {"en": "Travel and reflect", "de": "Reisen und nachdenken", "ar": "السير والتأمل"},
+          "body": {"en": "The Quran invites travel with open eyes. His account is full of wonder at people, cities and nature.", "de": "Der Koran lädt zum Reisen mit offenen Augen ein. Sein Bericht ist voller Staunen über Menschen, Städte und Natur.", "ar": "يدعو القرآن إلى السير في الأرض بعين متأملة، ورحلته مليئة بالدهشة من الناس والمدن والطبيعة."}
+        },
+        {
+          "title": {"en": "The Rihla", "de": "Die Rihla", "ar": "الرحلة"},
+          "body": {"en": "Back in Morocco, he dictated his memories to the scholar Ibn Juzayy at the request of the Marinid sultan Abu Inan. The book is known simply as the Rihla, the Journey.", "de": "Zurück in Marokko diktierte er seine Erinnerungen dem Gelehrten Ibn Dschuzayy, auf Wunsch des Meriniden-Sultans Abu Inan. Das Buch ist einfach als Rihla bekannt, die Reise.", "ar": "لما عاد إلى المغرب أملى ذكرياته على العالم ابن جُزَيّ بطلب من السلطان المريني أبي عنان، فعُرف الكتاب باسم الرحلة، واسمه تحفة النظار في غرائب الأمصار وعجائب الأسفار."}
+        },
+        {
+          "title": {"en": "Lessons from Ibn Battuta", "de": "Lehren von Ibn Battuta", "ar": "دروس من ابن بطوطة"},
+          "list": {
+            "en": ["Begin with a sincere intention, as he began with Hajj", "Let travel teach you humility and gratitude", "Write down what you learn for those after you"],
+            "de": ["Beginnen Sie mit aufrichtiger Absicht, wie er mit der Pilgerfahrt", "Lassen Sie sich vom Reisen Demut und Dankbarkeit lehren", "Schreiben Sie auf, was Sie lernen, für die Nachkommenden"],
+            "ar": ["ابدأ بنية صادقة كما بدأ هو بالحج", "دع السفر يعلمك التواضع والشكر", "دوّن ما تتعلمه لمن يأتي بعدك"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Ibn Battuta", "url": "https://en.wikipedia.org/wiki/Ibn_Battuta"},
+        {"label": "Ibn Battuta and Ibn Juzayy, Tuhfat al-Nuzzar fi Ghara'ib al-Amsar (the Rihla)"}
+      ]
+    }
+  ]
+}

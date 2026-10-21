@@ -1,0 +1,17 @@
+{ "set": "hadith-remembrance", "kind": "hadith", "theme": "remembrance", "tradition": "sunni",
+  "items": [
+    {"id": "wh-remembrance-muslim-912", "hadith": "muslim:912", "check": "bless him ten times"},
+    {"id": "wh-remembrance-bukhari-7563", "hadith": "bukhari:7563", "check": "Subhan Allah wa-bi hamdihi"},
+    {"id": "wh-remembrance-muslim-534", "hadith": "muslim:534", "check": "fills the scale"},
+    {"id": "wh-remembrance-muslim-1349", "hadith": "muslim:1349", "check": "never be caused disappointment"},
+    {"id": "wh-remembrance-muslim-6847", "hadith": "muslim:6847", "check": "dearer to me than anything over which the sun rises"},
+    {"id": "wh-remembrance-bukhari-6407", "hadith": "bukhari:6407", "check": "living creature compared to a dead one"},
+    {"id": "wh-remembrance-bukhari-6405", "hadith": "bukhari:6405", "check": "foam of the sea"},
+    {"id": "wh-remembrance-muslim-6808", "hadith": "muslim:6808", "check": "remember Allah much"},
+    {"id": "wh-remembrance-muslim-6855", "hadith": "muslim:6855", "check": "surrounded by angels"},
+    {"id": "wh-remembrance-bukhari-6409", "hadith": "bukhari:6409", "check": "treasure of Paradise"},
+    {"id": "wh-remembrance-muslim-826", "hadith": "muslim:826", "check": "at all moments"},
+    {"id": "wh-remembrance-bukhari-6330", "hadith": "bukhari:6330", "check": "wahdahu"},
+    {"id": "wh-remembrance-muslim-1334", "hadith": "muslim:1334", "check": "Thou art Peace"},
+    {"id": "wh-remembrance-muslim-376", "hadith": "muslim:376", "check": "Allah, Allah"}
+  ] }

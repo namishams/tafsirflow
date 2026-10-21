@@ -1,0 +1,14 @@
+{
+  "set": "verses-fasting",
+  "kind": "verse",
+  "theme": "fasting",
+  "tradition": "all",
+  "items": [
+    {"id": "wv-fasting-2-183", "verse": "2:183", "check": "fasting"},
+    {"id": "wv-fasting-97-4", "verse": "97:4-5", "check": "Peace it is until the emergence of dawn"},
+    {"id": "wv-fasting-44-3", "verse": "44:3-4", "check": "blessed night"},
+    {"id": "wv-fasting-19-26", "verse": "19:26", "check": "abstention"},
+    {"id": "wv-fasting-7-31", "verse": "7:31", "check": "eat and drink, but be not excessive"},
+    {"id": "wv-fasting-69-24", "verse": "69:24", "check": "days past"}
+  ]
+}

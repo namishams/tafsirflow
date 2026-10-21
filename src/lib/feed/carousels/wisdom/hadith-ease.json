@@ -1,0 +1,15 @@
+{ "set": "hadith-ease", "kind": "hadith", "theme": "ease", "tradition": "sunni",
+  "items": [
+    {"id": "wh-ease-bukhari-39", "hadith": "bukhari:39", "check": "Religion is very easy"},
+    {"id": "wh-ease-bukhari-6125", "hadith": "bukhari:6125", "check": "Make things easy"},
+    {"id": "wh-ease-muslim-6048", "hadith": "muslim:6048", "check": "easier one"},
+    {"id": "wh-ease-bukhari-1117", "hadith": "bukhari:1117", "check": "Lying on your side"},
+    {"id": "wh-ease-bukhari-2996", "hadith": "bukhari:2996", "check": "falls ill or travels"},
+    {"id": "wh-ease-bukhari-1150", "hadith": "bukhari:1150", "check": "when you get tired, sit down"},
+    {"id": "wh-ease-nawawi-39", "hadith": "nawawi:39", "check": "pardoned"},
+    {"id": "wh-ease-bukhari-704", "hadith": "bukhari:704", "check": "the weak, the old and the needy"},
+    {"id": "wh-ease-bukhari-5199", "hadith": "bukhari:5199", "check": "Your body has a right over you"},
+    {"id": "wh-ease-bukhari-887", "hadith": "bukhari:887", "check": "Siwak"},
+    {"id": "wh-ease-muslim-4000", "hadith": "muslim:4000", "check": "respite to the insolvent"},
+    {"id": "wh-ease-bukhari-43", "hadith": "bukhari:43", "check": "within your capacity"}
+  ] }

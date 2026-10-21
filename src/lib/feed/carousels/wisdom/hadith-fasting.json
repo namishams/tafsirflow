@@ -1,0 +1,19 @@
+{ "set": "hadith-fasting", "kind": "hadith", "theme": "fasting", "tradition": "sunni",
+  "items": [
+    {"id": "wh-fasting-bukhari-2017", "hadith": "bukhari:2017", "check": "Night of Qadr"},
+    {"id": "wh-fasting-bukhari-2024", "hadith": "bukhari:2024", "check": "last ten days"},
+    {"id": "wh-fasting-muslim-2750", "hadith": "muslim:2750", "check": "I was born"},
+    {"id": "wh-fasting-muslim-2495", "hadith": "muslim:2495", "check": "gates of mercy"},
+    {"id": "wh-fasting-muslim-2703", "hadith": "muslim:2703", "check": "I am fasting"},
+    {"id": "wh-fasting-bukhari-3554", "hadith": "bukhari:3554", "check": "more generous than the fast wind"},
+    {"id": "wh-fasting-bukhari-6057", "hadith": "bukhari:6057", "check": "false statements"},
+    {"id": "wh-fasting-bukhari-38", "hadith": "bukhari:38", "check": "out of sincere faith"},
+    {"id": "wh-fasting-bukhari-35", "hadith": "bukhari:35", "check": "night of Qadr"},
+    {"id": "wh-fasting-bukhari-3257", "hadith": "bukhari:3257", "check": "Ar-Raiyan"},
+    {"id": "wh-fasting-bukhari-1923", "hadith": "bukhari:1923", "check": "Suhur"},
+    {"id": "wh-fasting-muslim-2707", "hadith": "muslim:2707", "check": "two occasions of joy"},
+    {"id": "wh-fasting-bukhari-6669", "hadith": "bukhari:6669", "check": "forgetfully"},
+    {"id": "wh-fasting-muslim-2758", "hadith": "muslim:2758", "check": "six (fasts) of Shawwal"},
+    {"id": "wh-fasting-muslim-2755", "hadith": "muslim:2755", "check": "al-Muharram"},
+    {"id": "wh-fasting-bukhari-1957", "hadith": "bukhari:1957", "check": "hasten the breaking of the fast"}
+  ] }

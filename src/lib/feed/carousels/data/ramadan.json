@@ -1,0 +1,491 @@
+{
+  "series": "ramadan",
+  "label": { "en": "Ramadan", "de": "Ramadan", "ar": "رمضان" },
+  "topic": "prayer",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ramadan-checklist",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Ramadan · 1", "de": "Ramadan · 1", "ar": "رمضان · ١" },
+        "title": { "en": "Your Ramadan checklist", "de": "Ihre Ramadan-Checkliste", "ar": "قائمتك لشهر رمضان" },
+        "sub": { "en": "Before, during and in the last ten nights: a simple plan for the month", "de": "Vorher, währenddessen und in den letzten zehn Nächten: ein einfacher Plan für den Monat", "ar": "قبل الشهر وفي أثنائه وفي العشر الأواخر: خطة يسيرة" },
+        "arabic": "رَمَضان"
+      },
+      "slides": [
+        {
+          "verse": "2:183",
+          "check": "decreed upon you is fasting",
+          "title": { "en": "Why we fast", "de": "Warum wir fasten", "ar": "لماذا نصوم؟" },
+          "body": { "en": "The goal is named in the verse itself: taqwa, a heart that stays aware of Allah.", "de": "Das Ziel nennt der Vers selbst: Taqwa, ein Herz, das sich Allahs bewusst bleibt.", "ar": "تذكر الآية الغاية نفسها: التقوى، قلبٌ يبقى مراقبًا لله." }
+        },
+        {
+          "title": { "en": "Before Ramadan", "de": "Vor dem Ramadan", "ar": "قبل رمضان" },
+          "list": {
+            "en": ["Make up missed fasts from last year", "Learn the basic rules of fasting", "Plan your daily Quran portion", "Set aside your zakat and charity", "Ask forgiveness and mend broken ties"],
+            "de": ["Holen Sie versäumte Fastentage des Vorjahres nach", "Lernen Sie die Grundregeln des Fastens", "Planen Sie Ihren täglichen Koranabschnitt", "Legen Sie Zakat und Spenden bereit", "Bitten Sie um Vergebung und versöhnen Sie sich"],
+            "ar": ["اقضِ ما فاتك من صيام العام الماضي", "تعلّم أحكام الصيام الأساسية", "خطّط لوِردك اليومي من القرآن", "جهّز زكاتك وصدقاتك", "استغفر وصِل ما انقطع من رحم"]
+          }
+        },
+        {
+          "hadith": "bukhari:38",
+          "check": "out of sincere faith",
+          "title": { "en": "Faith and hope", "de": "Glaube und Hoffnung", "ar": "الإيمان والرجاء" },
+          "body": { "en": "Fast with conviction and hope for reward, not out of habit.", "de": "Fasten Sie aus Überzeugung und in Hoffnung auf Lohn, nicht aus Gewohnheit.", "ar": "صُم عن يقين ورجاءٍ للأجر، لا عن عادة." }
+        },
+        {
+          "title": { "en": "Every day", "de": "Jeden Tag", "ar": "كل يوم" },
+          "list": {
+            "en": ["Renew your intention to fast", "Eat suhoor before dawn", "Pray the five prayers on time", "Read your Quran portion", "Break the fast on time", "Pray tarawih or a night prayer"],
+            "de": ["Erneuern Sie Ihre Absicht zu fasten", "Essen Sie Suhur vor der Dämmerung", "Beten Sie die fünf Gebete pünktlich", "Lesen Sie Ihren Koranabschnitt", "Brechen Sie das Fasten pünktlich", "Beten Sie Tarawih oder ein Nachtgebet"],
+            "ar": ["جدّد نية الصيام", "تسحّر قبل الفجر", "صلِّ الخمس في أوقاتها", "اقرأ وِردك من القرآن", "أفطر عند الغروب دون تأخير", "صلِّ التراويح أو قيام الليل"]
+          },
+          "body": { "en": "The Maliki school allows one intention at the start for the whole month.", "de": "Die malikitische Schule erlaubt eine Absicht zu Beginn für den ganzen Monat.", "ar": "ويجيز المالكية نية واحدة في أول الشهر عن الشهر كله." }
+        },
+        {
+          "hadith": "bukhari:1903",
+          "check": "forged speech",
+          "title": { "en": "The tongue fasts too", "de": "Auch die Zunge fastet", "ar": "صيام اللسان أيضًا" },
+          "body": { "en": "Hunger alone is not the point. Guard your words and your actions.", "de": "Hunger allein ist nicht der Sinn. Hüten Sie Ihre Worte und Taten.", "ar": "ليس المقصود الجوع وحده؛ احفظ لسانك وأفعالك." }
+        },
+        {
+          "dua": "hisn:75:0",
+          "check": "I am fasting",
+          "title": { "en": "When someone provokes you", "de": "Wenn jemand Sie provoziert", "ar": "إذا استفزك أحد" },
+          "body": { "en": "A short answer for moments of anger while fasting, taught by the Prophet.", "de": "Eine kurze Antwort für Momente des Ärgers beim Fasten, gelehrt vom Propheten.", "ar": "جوابٌ قصير علّمه النبي ﷺ للصائم عند الغضب." }
+        },
+        {
+          "title": { "en": "The last ten nights", "de": "Die letzten zehn Nächte", "ar": "العشر الأواخر" },
+          "list": {
+            "en": ["Increase night prayer and dua", "Seek Laylat al-Qadr in the odd nights", "Consider i'tikaf in the mosque", "Pay zakat al-fitr before the Eid prayer"],
+            "de": ["Vermehren Sie Nachtgebet und Bittgebete", "Suchen Sie Laylat al-Qadr in den ungeraden Nächten", "Erwägen Sie Itikaf in der Moschee", "Entrichten Sie Zakat al-Fitr vor dem Eid-Gebet"],
+            "ar": ["أكثر من القيام والدعاء", "تحرَّ ليلة القدر في الليالي الفردية", "فكّر في الاعتكاف في المسجد", "أخرج زكاة الفطر قبل صلاة العيد"]
+          }
+        },
+        {
+          "verse": "2:186",
+          "check": "I am near",
+          "title": { "en": "He is near", "de": "Er ist nahe", "ar": "إنه قريب" },
+          "body": { "en": "Placed among the verses on fasting: a reminder that Allah answers those who call on Him.", "de": "Mitten in den Versen über das Fasten: eine Erinnerung, dass Allah denen antwortet, die Ihn anrufen.", "ar": "جاءت بين آيات الصيام لتذكّر بأن الله يجيب من يدعوه." }
+        }
+      ]
+    },
+    {
+      "id": "ramadan-what-breaks-the-fast",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": { "en": "Ramadan · 2", "de": "Ramadan · 2", "ar": "رمضان · ٢" },
+        "title": { "en": "What breaks the fast", "de": "Was das Fasten bricht", "ar": "مفسدات الصيام" },
+        "sub": { "en": "The points scholars agree on, and when to ask for more", "de": "Die Punkte, über die Einigkeit besteht, und wann Sie nachfragen sollten", "ar": "ما اتفق عليه العلماء، ومتى تسأل أهل العلم" },
+        "arabic": "مُفسِدات الصوم"
+      },
+      "slides": [
+        {
+          "title": { "en": "The basics", "de": "Die Grundlagen", "ar": "الأساس" },
+          "body": { "en": "The fast runs from true dawn until sunset. It is broken by deliberately eating, drinking or having intercourse in this time, and by the start of menstruation or postnatal bleeding.", "de": "Das Fasten reicht von der echten Morgendämmerung bis Sonnenuntergang. Es wird gebrochen durch absichtliches Essen, Trinken oder Geschlechtsverkehr in dieser Zeit sowie durch den Beginn der Menstruation oder Wochenbettblutung.", "ar": "يمتد الصيام من طلوع الفجر الصادق إلى غروب الشمس، ويفسد بالأكل أو الشرب أو الجماع عمدًا في هذا الوقت، وبنزول دم الحيض أو النفاس." }
+        },
+        {
+          "title": { "en": "Breaks the fast", "de": "Bricht das Fasten", "ar": "ما يُفسد الصوم" },
+          "list": {
+            "en": ["Eating or drinking on purpose", "Sexual intercourse", "Menstruation or postnatal bleeding, even shortly before sunset", "Deliberately causing ejaculation", "Vomiting on purpose (details differ)"],
+            "de": ["Absichtliches Essen oder Trinken", "Geschlechtsverkehr", "Menstruation oder Wochenbettblutung, auch kurz vor Sonnenuntergang", "Absichtlich herbeigeführter Samenerguss", "Absichtliches Erbrechen (Einzelheiten umstritten)"],
+            "ar": ["الأكل أو الشرب عمدًا", "الجماع", "الحيض أو النفاس ولو قبيل الغروب", "إنزال المني عمدًا", "القيء عمدًا (على تفصيل)"]
+          },
+          "body": { "en": "Intercourse on a Ramadan day also brings a heavy expiation in all four Sunni schools.", "de": "Geschlechtsverkehr an einem Ramadantag erfordert in allen vier sunnitischen Schulen zudem eine schwere Sühne.", "ar": "ويوجب الجماع في نهار رمضان كفارةً مغلظة في المذاهب السنية الأربعة." }
+        },
+        {
+          "hadith": "bukhari:1933",
+          "check": "eats or drinks forgetfully",
+          "title": { "en": "Forgot you were fasting?", "de": "Vergessen, dass Sie fasten?", "ar": "نسيت أنك صائم؟" },
+          "body": { "en": "Most scholars hold the fast stays valid: stop once you remember. The Maliki school asks for a make-up day in an obligatory fast.", "de": "Die meisten Gelehrten halten das Fasten für gültig: Hören Sie auf, sobald Sie sich erinnern. Die Malikiten verlangen bei Pflichtfasten einen Nachholtag.", "ar": "يرى أكثر العلماء أن الصوم صحيح، فأمسك متى تذكّرت. ويرى المالكية قضاء يوم في الصوم الواجب." }
+        },
+        {
+          "title": { "en": "Does not break the fast", "de": "Bricht das Fasten nicht", "ar": "ما لا يُفسد الصوم" },
+          "list": {
+            "en": ["Swallowing your own saliva", "Showering, or rinsing the mouth without swallowing", "A wet dream while asleep", "Unintended vomiting", "Dust or smoke you could not avoid"],
+            "de": ["Das Schlucken des eigenen Speichels", "Duschen oder Mundausspülen ohne Schlucken", "Ein Samenerguss im Schlaf", "Unbeabsichtigtes Erbrechen", "Unvermeidbarer Staub oder Rauch"],
+            "ar": ["ابتلاع الريق", "الاغتسال أو المضمضة دون ابتلاع", "الاحتلام في النوم", "القيء بغير قصد", "غبار أو دخان لا يمكن التحرز منه"]
+          },
+          "body": { "en": "Injections, inhalers, drips and other medical cases: ask a qualified scholar, as views differ.", "de": "Spritzen, Inhalatoren, Infusionen und andere medizinische Fälle: Fragen Sie einen qualifizierten Gelehrten, die Ansichten gehen auseinander.", "ar": "الحقن والبخاخ والمحاليل وسائر الحالات الطبية: اسأل عالمًا مؤهلًا، فالآراء فيها مختلفة." }
+        },
+        {
+          "hadith": "bukhari:1925",
+          "check": "state of Janaba",
+          "title": { "en": "Waking up in janabah", "de": "Im Zustand der Dschanaba aufwachen", "ar": "الإصباح على جنابة" },
+          "body": { "en": "Needing a ghusl at dawn does not affect the fast. Bathe and continue fasting.", "de": "Ein nötiger Ghusl bei Tagesanbruch beeinträchtigt das Fasten nicht. Waschen Sie sich und fasten Sie weiter.", "ar": "الحاجة إلى الغسل عند الفجر لا تؤثر في الصوم؛ اغتسل وأتمّ صيامك." }
+        },
+        {
+          "verse": "2:184",
+          "check": "ill or on a journey",
+          "title": { "en": "Ill or travelling", "de": "Krank oder auf Reisen", "ar": "المريض والمسافر" },
+          "body": { "en": "Those who are ill or travelling may break the fast and make up the days later.", "de": "Wer krank oder auf Reisen ist, darf das Fasten brechen und die Tage später nachholen.", "ar": "يجوز للمريض والمسافر الفطر، ثم يقضيان الأيام بعد ذلك." }
+        },
+        {
+          "hadith": "muslim:763",
+          "check": "complete the fasts",
+          "title": { "en": "During menstruation", "de": "Während der Menstruation", "ar": "في أيام الحيض" },
+          "body": { "en": "Missed fasts are made up later; missed prayers are not.", "de": "Versäumte Fastentage werden nachgeholt, versäumte Gebete nicht.", "ar": "ما فات من الصيام يُعاد في أيام أخرى، أما الصلوات الفائتة فلا تُعاد." }
+        },
+        {
+          "title": { "en": "Make-up and expiation", "de": "Nachholen und Sühne", "ar": "القضاء والكفارة" },
+          "body": { "en": "A day broken without a valid excuse must be made up. The schools differ on further penalties for deliberate eating; for intercourse, all four require an expiation. Ask a scholar about your case.", "de": "Ein ohne gültigen Grund gebrochener Tag muss nachgeholt werden. Über weitere Folgen bei absichtlichem Essen sind sich die Schulen uneins; bei Geschlechtsverkehr verlangen alle vier eine Sühne. Fragen Sie für Ihren Fall einen Gelehrten.", "ar": "يجب قضاء اليوم الذي أُفطر فيه بلا عذر. وتختلف المذاهب في الكفارة على من أكل عمدًا، أما الجماع فتوجب فيه المذاهب الأربعة الكفارة. اسأل عالمًا عن حالتك." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Rushd, Bidayat al-Mujtahid, Book of Fasting" },
+        { "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, Book of Fasting" }
+      ]
+    },
+    {
+      "id": "ramadan-suhoor-and-iftar",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Ramadan · 3", "de": "Ramadan · 3", "ar": "رمضان · ٣" },
+        "title": { "en": "Suhoor and iftar: the Sunnahs", "de": "Suhur und Iftar: die Sunna", "ar": "السحور والإفطار: السنن" },
+        "sub": { "en": "Small habits at the start and the end of the fasting day", "de": "Kleine Gewohnheiten am Anfang und am Ende des Fastentages", "ar": "عادات صغيرة في أول يوم الصيام وآخره" },
+        "arabic": "السَّحور والإفطار"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:1923",
+          "check": "blessing in it",
+          "title": { "en": "Do not skip suhoor", "de": "Lassen Sie Suhur nicht aus", "ar": "لا تترك السحور" },
+          "body": { "en": "Even a few dates and a glass of water carry the blessing of suhoor.", "de": "Schon einige Datteln und ein Glas Wasser tragen den Segen des Suhur.", "ar": "ولو تمرات وكوب ماء ففيهما بركة السحور." }
+        },
+        {
+          "hadith": "bukhari:1921",
+          "check": "fifty verses",
+          "title": { "en": "Late, not early", "de": "Spät, nicht früh", "ar": "أخّر السحور" },
+          "body": { "en": "The Sunnah is to eat suhoor close to dawn. The gap before the prayer was only a short recitation.", "de": "Sunna ist es, Suhur nahe der Morgendämmerung zu essen. Bis zum Gebet blieb nur die Zeit einer kurzen Rezitation.", "ar": "السنة تأخير السحور إلى قرب الفجر، فلم يكن بينه وبين الصلاة إلا قدر قراءة يسيرة." }
+        },
+        {
+          "title": { "en": "Suhoor tips", "de": "Tipps für Suhur", "ar": "نصائح للسحور" },
+          "list": {
+            "en": ["Eat something, even a little", "Drink enough water", "Stop when true dawn begins, not at sunrise", "Use the quiet minutes to ask forgiveness", "Pray Fajr afterwards"],
+            "de": ["Essen Sie etwas, und sei es wenig", "Trinken Sie genug Wasser", "Hören Sie bei echter Morgendämmerung auf, nicht bei Sonnenaufgang", "Nutzen Sie die stillen Minuten, um um Vergebung zu bitten", "Beten Sie danach Fadschr"],
+            "ar": ["كُل ولو قليلًا", "اشرب ماءً كافيًا", "أمسك عند طلوع الفجر الصادق لا عند الشروق", "اغتنم دقائق السحر في الاستغفار", "صلِّ الفجر بعده"]
+          }
+        },
+        {
+          "hadith": "bukhari:1957",
+          "check": "hasten the breaking of the fast",
+          "title": { "en": "Do not delay iftar", "de": "Zögern Sie den Iftar nicht hinaus", "ar": "لا تؤخّر الإفطار" },
+          "body": { "en": "Break the fast as soon as the sun has set.", "de": "Brechen Sie das Fasten, sobald die Sonne untergegangen ist.", "ar": "أفطر بمجرد غروب الشمس." }
+        },
+        {
+          "title": { "en": "Begin with dates or water", "de": "Mit Datteln oder Wasser beginnen", "ar": "ابدأ بالتمر أو الماء" },
+          "body": { "en": "The Prophet began his iftar with dates or a little water before praying Maghrib, as reported in Sunan Abi Dawud. Then comes the meal, without excess.", "de": "Der Prophet begann sein Iftar mit Datteln oder etwas Wasser vor dem Maghrib-Gebet, wie Sunan Abi Dawud berichtet. Dann folgt die Mahlzeit, ohne Übermaß.", "ar": "كان النبي ﷺ يبدأ فطره بتمرات أو بشيء من الماء قبل صلاة المغرب، كما في سنن أبي داود، ثم يأتي الطعام بلا إسراف." }
+        },
+        {
+          "dua": "hisn:68:0",
+          "check": "thirst has gone",
+          "title": { "en": "The dua at iftar", "de": "Das Bittgebet beim Iftar", "ar": "دعاء الإفطار" },
+          "body": { "en": "Words of thanks as the first sip ends the day's thirst.", "de": "Worte des Dankes, wenn der erste Schluck den Durst des Tages beendet.", "ar": "كلمات شكر حين تُنهي أولُ رشفةٍ عطشَ النهار." }
+        },
+        {
+          "title": { "en": "A moment for dua", "de": "Ein Moment für Bittgebete", "ar": "وقتٌ للدعاء" },
+          "body": { "en": "The last minutes before iftar are precious. Hadith collections list the dua of the fasting person among those not turned away. Ask for yourself, your family and the world.", "de": "Die letzten Minuten vor dem Iftar sind kostbar. Hadithsammlungen zählen das Bittgebet des Fastenden zu denen, die nicht abgewiesen werden. Bitten Sie für sich, Ihre Familie und die Welt.", "ar": "الدقائق الأخيرة قبل الإفطار ثمينة، وقد عدّت كتب الحديث دعوة الصائم من الدعوات المقبولة. ادعُ لنفسك ولأهلك وللعالم." }
+        },
+        {
+          "dua": "hisn:73:0",
+          "check": "break their fast in your home",
+          "title": { "en": "Thank your host", "de": "Danken Sie Ihren Gastgebern", "ar": "ادعُ لمن فطّرك" },
+          "body": { "en": "When someone hosts you for iftar, answer their kindness with this dua.", "de": "Wenn jemand Sie zum Iftar einlädt, erwidern Sie die Güte mit diesem Bittgebet.", "ar": "إذا دعاك أحد إلى الإفطار فقابل كرمه بهذا الدعاء." }
+        }
+      ],
+      "sources": [{ "label": "Sunan Abi Dawud 2356: breaking the fast with dates", "url": "https://sunnah.com/abudawud:2356" }]
+    },
+    {
+      "id": "ramadan-last-ten-nights",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Ramadan · 4", "de": "Ramadan · 4", "ar": "رمضان · ٤" },
+        "title": { "en": "The last ten nights", "de": "Die letzten zehn Nächte", "ar": "العشر الأواخر" },
+        "sub": { "en": "The most precious nights of the year, and how the Prophet spent them", "de": "Die kostbarsten Nächte des Jahres und wie der Prophet sie verbrachte", "ar": "أغلى ليالي العام، وكيف كان النبي ﷺ يحييها" },
+        "arabic": "العَشر الأواخر"
+      },
+      "slides": [
+        {
+          "hadith": "muslim:2788",
+          "check": "exert himself in devotion",
+          "title": { "en": "The peak of the month", "de": "Der Höhepunkt des Monats", "ar": "ذروة الشهر" },
+          "body": { "en": "No time of the year saw the Prophet strive in worship as he did in these nights.", "de": "Zu keiner Zeit des Jahres mühte sich der Prophet so sehr um Anbetung wie in diesen Nächten.", "ar": "كانت هذه الليالي أعظم مواسم الاجتهاد في عبادة النبي ﷺ." }
+        },
+        {
+          "hadith": "bukhari:2024",
+          "check": "tighten his waist belt",
+          "title": { "en": "A model for every home", "de": "Ein Vorbild für jedes Zuhause", "ar": "قدوة لكل بيت" },
+          "body": { "en": "Night prayer, a family woken for worship, and full devotion.", "de": "Nachtgebet, eine zur Anbetung geweckte Familie und volle Hingabe.", "ar": "قيامٌ، وأسرةٌ توقَظ للعبادة، وتفرّغٌ تام." }
+        },
+        {
+          "title": { "en": "A plan for each night", "de": "Ein Plan für jede Nacht", "ar": "خطة لكل ليلة" },
+          "list": {
+            "en": ["Pray Isha and tarawih in congregation", "Rest a little, then rise before dawn", "Read the Quran with reflection", "Make long dua, also for others", "Give a little charity every night"],
+            "de": ["Beten Sie Ischa und Tarawih in Gemeinschaft", "Ruhen Sie kurz, dann stehen Sie vor der Dämmerung auf", "Lesen Sie den Koran mit Nachdenken", "Machen Sie lange Bittgebete, auch für andere", "Spenden Sie jede Nacht ein wenig"],
+            "ar": ["صلِّ العشاء والتراويح جماعة", "استرح قليلًا ثم قم قبل الفجر", "اقرأ القرآن بتدبر", "أطل الدعاء ولا تنسَ غيرك", "تصدّق كل ليلة ولو بالقليل"]
+          }
+        },
+        {
+          "hadith": "bukhari:2017",
+          "check": "odd nights",
+          "title": { "en": "Seek it in the odd nights", "de": "Suchen Sie sie in den ungeraden Nächten", "ar": "في الليالي الفردية" },
+          "body": { "en": "The 21st, 23rd, 25th, 27th and 29th nights deserve special effort.", "de": "Die 21., 23., 25., 27. und 29. Nacht verdienen besonderen Einsatz.", "ar": "ليالي ٢١ و٢٣ و٢٥ و٢٧ و٢٩ أحقّ بمزيد من الاجتهاد." }
+        },
+        {
+          "title": { "en": "Which night is it?", "de": "Welche Nacht ist es?", "ar": "أي ليلة هي؟" },
+          "body": { "en": "Allah has kept the exact night hidden, so that people seek it in all ten. Many scholars consider the 27th most likely; others hold that it moves from year to year.", "de": "Allah hat die genaue Nacht verborgen, damit die Menschen sie in allen zehn suchen. Viele Gelehrte halten die 27. für am wahrscheinlichsten; andere meinen, sie wechselt von Jahr zu Jahr.", "ar": "أخفى الله الليلة بعينها ليجتهد الناس في العشر كلها. ويرى كثير من العلماء أن ليلة السابع والعشرين أرجاها، ويرى آخرون أنها تتنقل من عام إلى عام." }
+        },
+        {
+          "hadith": "bukhari:2020",
+          "check": "Look for the Night of Qadr in the last ten nights",
+          "title": { "en": "Retreat and search", "de": "Rückzug und Suche", "ar": "اعتكافٌ وتحرٍّ" },
+          "body": { "en": "He spent these nights in i'tikaf in the mosque, searching for the Night of Decree.", "de": "Er verbrachte diese Nächte im Itikaf in der Moschee, auf der Suche nach der Nacht der Bestimmung.", "ar": "كان يعتكف في المسجد في هذه الليالي متحريًا ليلة القدر." }
+        },
+        {
+          "title": { "en": "When you cannot do much", "de": "Wenn Sie nicht viel tun können", "ar": "إن لم تستطع الكثير" },
+          "body": { "en": "Illness, work or a period may limit you. Fill the nights with dhikr, dua and charity, even in small amounts. Women in their period can still remember Allah and make dua.", "de": "Krankheit, Arbeit oder die Periode können Sie einschränken. Füllen Sie die Nächte mit Gedenken, Bittgebeten und Spenden, auch in kleinem Maß. Frauen in ihrer Periode können Allahs gedenken und Bittgebete sprechen.", "ar": "قد يحدّك المرض أو العمل أو الحيض، فاملأ الليالي بالذكر والدعاء والصدقة ولو بالقليل. والحائض تذكر الله وتدعوه كغيرها." }
+        }
+      ]
+    },
+    {
+      "id": "ramadan-laylat-al-qadr",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": { "en": "Ramadan · 5", "de": "Ramadan · 5", "ar": "رمضان · ٥" },
+        "title": { "en": "Laylat al-Qadr: the Night of Decree", "de": "Laylat al-Qadr: die Nacht der Bestimmung", "ar": "ليلة القدر" },
+        "sub": { "en": "One night worth more than a lifetime, and how to meet it", "de": "Eine Nacht, wertvoller als ein ganzes Leben, und wie man ihr begegnet", "ar": "ليلة تفوق في فضلها عمرًا كاملًا، وكيف نستقبلها" },
+        "arabic": "ليلة القَدر"
+      },
+      "slides": [
+        {
+          "verse": "97:1-3",
+          "check": "better than a thousand months",
+          "title": { "en": "A night beyond measure", "de": "Eine Nacht ohne Maß", "ar": "ليلة لا تُقاس" },
+          "body": { "en": "A thousand months is more than eighty-three years: a lifetime of worship in a single night.", "de": "Tausend Monate sind mehr als dreiundachtzig Jahre: ein Leben voller Anbetung in einer einzigen Nacht.", "ar": "ألف شهر تزيد على ثلاث وثمانين سنة: عمرٌ من العبادة في ليلة واحدة." }
+        },
+        {
+          "verse": "97:4-5",
+          "check": "angels and the Spirit",
+          "title": { "en": "A night full of angels", "de": "Eine Nacht voller Engel", "ar": "ليلة تملؤها الملائكة" },
+          "body": { "en": "Jibril and the angels come down, and calm fills the night until daybreak.", "de": "Dschibril und die Engel kommen herab, und Ruhe erfüllt die Nacht bis zum Tagesanbruch.", "ar": "ينزل جبريل والملائكة، وتعمّ السكينة إلى طلوع النهار." }
+        },
+        {
+          "verse": "44:3",
+          "check": "blessed night",
+          "title": { "en": "The night of revelation", "de": "Die Nacht der Offenbarung", "ar": "ليلة نزول القرآن" },
+          "body": { "en": "The Quran was sent down in a blessed night, and that night falls in Ramadan.", "de": "Der Koran wurde in einer gesegneten Nacht herabgesandt, und diese Nacht liegt im Ramadan.", "ar": "نزل القرآن في هذه الليلة المباركة من شهر رمضان." }
+        },
+        {
+          "hadith": "bukhari:1901",
+          "check": "night of Qadr",
+          "title": { "en": "A night of forgiveness", "de": "Eine Nacht der Vergebung", "ar": "ليلة المغفرة" },
+          "body": { "en": "Stand in prayer with faith and hope, and past sins are wiped away.", "de": "Stehen Sie im Gebet mit Glauben und Hoffnung, und vergangene Sünden werden getilgt.", "ar": "قم مصليًا مؤمنًا راجيًا، تُمحَ عنك ذنوب ما مضى." }
+        },
+        {
+          "hadith": "muslim:2763",
+          "check": "odd number",
+          "title": { "en": "When to look for it", "de": "Wann man sie sucht", "ar": "متى نتحرّاها" },
+          "body": { "en": "In the last ten nights, and above all in the odd ones.", "de": "In den letzten zehn Nächten, vor allem in den ungeraden.", "ar": "في العشر الأواخر، ولا سيما لياليها الفردية." }
+        },
+        {
+          "title": { "en": "The dua for this night", "de": "Das Bittgebet dieser Nacht", "ar": "دعاء هذه الليلة" },
+          "arabic": "العَفو",
+          "body": { "en": "'Aisha asked what she should say if she found the night. The Prophet taught her a short dua asking Allah for His pardon, recorded by at-Tirmidhi.", "de": "Aischa fragte, was sie sagen solle, wenn sie diese Nacht erlebt. Der Prophet lehrte sie ein kurzes Bittgebet um Allahs Verzeihung, überliefert bei at-Tirmidhi.", "ar": "سألت عائشة: ماذا تقول إن وافقت هذه الليلة؟ فعلّمها النبي ﷺ دعاءً قصيرًا تسأل فيه الله العفو، رواه الترمذي." }
+        },
+        {
+          "title": { "en": "How to spend it", "de": "Wie man sie verbringt", "ar": "كيف نحييها" },
+          "list": {
+            "en": ["Pray at night, even a few rak'at", "Repeat the dua for pardon", "Read the Quran slowly and reflect", "Give charity, even a little", "Keep worshipping rather than chasing signs"],
+            "de": ["Beten Sie in der Nacht, und seien es wenige Rakaat", "Wiederholen Sie das Bittgebet um Verzeihung", "Lesen Sie den Koran langsam und nachdenklich", "Spenden Sie, und sei es wenig", "Beten Sie weiter, statt Zeichen zu suchen"],
+            "ar": ["صلِّ في الليل ولو ركعات قليلة", "كرّر دعاء العفو", "اقرأ القرآن بتمهل وتدبر", "تصدّق ولو بالقليل", "داوم على العبادة ولا تنشغل بتتبع العلامات"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Jami' at-Tirmidhi 3513: the dua for pardon", "url": "https://sunnah.com/tirmidhi:3513" },
+        { "label": "Ibn Kathir, Tafsir al-Qur'an al-'Azim, on Surah al-Qadr" }
+      ]
+    },
+    {
+      "id": "ramadan-itikaf",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": { "en": "Ramadan · 6", "de": "Ramadan · 6", "ar": "رمضان · ٦" },
+        "title": { "en": "I'tikaf: a retreat in the mosque", "de": "Itikaf: Rückzug in der Moschee", "ar": "الاعتكاف: خلوة في المسجد" },
+        "sub": { "en": "Leaving the world for a few days to be with Allah", "de": "Für einige Tage die Welt hinter sich lassen, um bei Allah zu sein", "ar": "أيامٌ تنقطع فيها عن الدنيا لتخلو بربك" },
+        "arabic": "الاعتِكاف"
+      },
+      "slides": [
+        {
+          "title": { "en": "What i'tikaf is", "de": "Was Itikaf ist", "ar": "ما الاعتكاف؟" },
+          "body": { "en": "I'tikaf means staying in a mosque with the intention of worship, stepping away from daily business to be with Allah. It is a Sunnah, above all in the last ten days of Ramadan.", "de": "Itikaf bedeutet, mit der Absicht der Anbetung in einer Moschee zu verweilen und sich von den Alltagsgeschäften zurückzuziehen, um bei Allah zu sein. Es ist Sunna, vor allem in den letzten zehn Tagen des Ramadan.", "ar": "الاعتكاف لزوم المسجد بنية العبادة، والانقطاع عن شواغل الدنيا للخلوة بالله، وهو سنة، وآكده في العشر الأواخر من رمضان." }
+        },
+        {
+          "verse": "2:125",
+          "check": ["staying", "for worship"],
+          "title": { "en": "Rooted in Ibrahim's House", "de": "Verwurzelt im Haus Ibrahims", "ar": "جذورٌ في بيت إبراهيم" },
+          "body": { "en": "Those who stay in the House for worship are named among the people it must be kept pure for.", "de": "Wer zur Anbetung im Haus verweilt, wird unter denen genannt, für die es rein gehalten werden soll.", "ar": "ذُكر المقيمون في البيت للعبادة فيمن يُطهَّر البيت لأجلهم." }
+        },
+        {
+          "hadith": "bukhari:2026",
+          "check": "his wives used to practice I`tikaf after him",
+          "title": { "en": "A practice for men and women", "de": "Eine Praxis für Männer und Frauen", "ar": "سنة للرجال والنساء" },
+          "body": { "en": "A lifelong habit of the Prophet, carried on by his wives after his death.", "de": "Eine lebenslange Gewohnheit des Propheten, die seine Frauen nach seinem Tod fortführten.", "ar": "واظب عليه النبي ﷺ طوال حياته، وواصلته زوجاته بعد وفاته." }
+        },
+        {
+          "title": { "en": "Rules most schools share", "de": "Regeln, die die meisten Schulen teilen", "ar": "أحكام تتفق عليها أكثر المذاهب" },
+          "list": {
+            "en": ["Stay in the mosque; leave only for real needs", "No marital relations during i'tikaf", "Fill the time with prayer, Quran and dhikr", "Avoid idle talk and unnecessary business"],
+            "de": ["Bleiben Sie in der Moschee; verlassen Sie sie nur bei echtem Bedarf", "Keine ehelichen Beziehungen während des Itikaf", "Füllen Sie die Zeit mit Gebet, Koran und Gedenken", "Meiden Sie leeres Gerede und unnötige Geschäfte"],
+            "ar": ["الزم المسجد ولا تخرج إلا لحاجة", "لا معاشرة زوجية في أثناء الاعتكاف", "اشغل وقتك بالصلاة والقرآن والذكر", "تجنب فضول الكلام والانشغال بالدنيا"]
+          }
+        },
+        {
+          "hadith": "bukhari:2029",
+          "check": "except for a need",
+          "title": { "en": "Only for a need", "de": "Nur bei Bedarf", "ar": "الخروج للضرورة فقط" },
+          "body": { "en": "Even his own home he entered only when he had to.", "de": "Selbst sein eigenes Haus betrat er nur, wenn es nötig war.", "ar": "حتى بيته ما كان يدخله إلا اضطرارًا." }
+        },
+        {
+          "title": { "en": "Where the schools differ", "de": "Wo die Schulen sich unterscheiden", "ar": "مواضع الخلاف" },
+          "body": { "en": "On the minimum length, from a short while to a day and a night; on whether fasting is required; and on where women may observe it: the Hanafi school allows a prayer room at home.", "de": "Bei der Mindestdauer, von einer kurzen Weile bis zu einem Tag und einer Nacht; ob Fasten Bedingung ist; und wo Frauen es halten dürfen: Die Hanafiten erlauben einen Gebetsraum zu Hause.", "ar": "يختلفون في أقل مدته من لحظة إلى يوم وليلة، وفي اشتراط الصوم له، وفي مكان اعتكاف المرأة؛ إذ يجيزه الحنفية في مصلّى بيتها." }
+        },
+        {
+          "hadith": "bukhari:2042",
+          "check": "for one night",
+          "title": { "en": "Even one night", "de": "Auch eine einzige Nacht", "ar": "ولو ليلة واحدة" },
+          "body": { "en": "'Umar fulfilled a vow of a single night. Shorter retreats have their place too.", "de": "Umar erfüllte ein Gelübde für eine einzige Nacht. Auch kürzere Rückzüge haben ihren Platz.", "ar": "وفّى عمر بنذر اعتكاف ليلة واحدة، فللاعتكاف القصير مكانه أيضًا." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Qudama, al-Mughni, Book of I'tikaf" },
+        { "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, chapter on i'tikaf" }
+      ]
+    },
+    {
+      "id": "ramadan-zakat-al-fitr",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": { "en": "Ramadan · 7", "de": "Ramadan · 7", "ar": "رمضان · ٧" },
+        "title": { "en": "Zakat al-fitr: the charity of Eid", "de": "Zakat al-Fitr: die Spende zum Fest", "ar": "زكاة الفطر" },
+        "sub": { "en": "Who pays, how much, and when it must reach the poor", "de": "Wer zahlt, wie viel und wann sie die Bedürftigen erreichen muss", "ar": "على من تجب، وكم مقدارها، ومتى تصل إلى الفقراء" },
+        "arabic": "زكاة الفِطر"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:1503",
+          "check": "before the people went out",
+          "title": { "en": "Who must pay", "de": "Wer zahlen muss", "ar": "على من تجب" },
+          "body": { "en": "It is due for every Muslim in the household, young and old. The one who provides for them pays it.", "de": "Sie ist für jeden Muslim im Haushalt fällig, ob jung oder alt. Wer für sie sorgt, entrichtet sie.", "ar": "تجب عن كل مسلم في البيت صغيرًا وكبيرًا، ويخرجها من يعولهم." }
+        },
+        {
+          "title": { "en": "Why it exists", "de": "Warum es sie gibt", "ar": "حكمتها" },
+          "body": { "en": "It cleanses the fast of small slips and makes sure the poor can celebrate too. This purpose is reported in Sunan Abi Dawud.", "de": "Sie reinigt das Fasten von kleinen Fehltritten und sorgt dafür, dass auch die Armen feiern können. Dieser Zweck wird in Sunan Abi Dawud überliefert.", "ar": "تطهّر الصيام من الهفوات الصغيرة، وتجعل الفقراء يفرحون بالعيد كغيرهم، وقد ورد ذلك في سنن أبي داود." }
+        },
+        {
+          "title": { "en": "How much", "de": "Wie viel", "ar": "مقدارها" },
+          "body": { "en": "One sa' per person: a measure of volume, often given as about 2.5 to 3 kg of a staple food such as dates, rice, wheat or barley. The Hanafi school accepts half a sa' of wheat. Local mosques usually announce the amount.", "de": "Ein Sa pro Person: ein Hohlmaß, oft mit etwa 2,5 bis 3 kg eines Grundnahrungsmittels wie Datteln, Reis, Weizen oder Gerste angegeben. Die Hanafiten akzeptieren einen halben Sa Weizen. Moscheen vor Ort nennen meist den Betrag.", "ar": "صاعٌ عن كل شخص، وهو مكيال يُقدَّر غالبًا بنحو ٢٫٥ إلى ٣ كغ من قوت البلد كالتمر والأرز والقمح والشعير. ويجيز الحنفية نصف صاع من القمح. وتعلن المساجد عادةً المقدار." }
+        },
+        {
+          "title": { "en": "Food or money?", "de": "Lebensmittel oder Geld?", "ar": "طعامًا أم نقدًا؟" },
+          "body": { "en": "The Maliki, Shafi'i and Hanbali schools require food. The Hanafi school allows paying its value in money, which many organisations collect today.", "de": "Malikiten, Schafiiten und Hanbaliten verlangen Lebensmittel. Die Hanafiten erlauben, den Gegenwert in Geld zu geben, wie ihn viele Organisationen heute sammeln.", "ar": "يشترط المالكية والشافعية والحنابلة إخراجها طعامًا، ويجيز الحنفية إخراج قيمتها نقدًا، وهو ما تجمعه كثير من المؤسسات اليوم." }
+        },
+        {
+          "hadith": "bukhari:1511",
+          "check": "a day or two before",
+          "title": { "en": "When to pay", "de": "Wann zahlen", "ar": "وقت إخراجها" },
+          "body": { "en": "Before the Eid prayer at the latest. A day or two earlier is well established; some schools allow the whole month.", "de": "Spätestens vor dem Eid-Gebet. Ein oder zwei Tage früher ist gut belegt; manche Schulen erlauben den ganzen Monat.", "ar": "قبل صلاة العيد على الأكثر، وتقديمها بيوم أو يومين ثابت، وتجيز بعض المذاهب إخراجها طوال الشهر." }
+        },
+        {
+          "title": { "en": "Your checklist", "de": "Ihre Checkliste", "ar": "قائمتك" },
+          "list": {
+            "en": ["Count everyone you provide for", "Choose food, or money where your school allows it", "Give it to people in need or a trusted collector", "Make sure it arrives before the Eid prayer"],
+            "de": ["Zählen Sie alle, für die Sie sorgen", "Wählen Sie Lebensmittel oder Geld, wo Ihre Schule es erlaubt", "Geben Sie sie Bedürftigen oder einer vertrauenswürdigen Sammelstelle", "Sorgen Sie dafür, dass sie vor dem Eid-Gebet ankommt"],
+            "ar": ["احسب كل من تعولهم", "اختر الطعام، أو النقد حيث يجيزه مذهبك", "أعطها للمحتاجين أو لجهة جمع موثوقة", "تأكد من وصولها قبل صلاة العيد"]
+          }
+        }
+      ],
+      "sources": [
+        { "label": "Sunan Abi Dawud 1609: the purpose of zakat al-fitr", "url": "https://sunnah.com/abudawud:1609" },
+        { "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, chapter on zakat al-fitr" }
+      ]
+    },
+    {
+      "id": "ramadan-eid-sunnahs",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": { "en": "Ramadan · 8", "de": "Ramadan · 8", "ar": "رمضان · ٨" },
+        "title": { "en": "The Sunnahs of Eid", "de": "Die Sunna des Festes", "ar": "سنن العيد" },
+        "sub": { "en": "Eid al-Fitr: a day of thanks, prayer and family", "de": "Eid al-Fitr: ein Tag des Dankes, des Gebets und der Familie", "ar": "عيد الفطر: يوم شكر وصلاة وصلة" },
+        "arabic": "عيد الفِطر"
+      },
+      "slides": [
+        {
+          "title": { "en": "A day of joy and worship", "de": "Ein Tag der Freude und Anbetung", "ar": "يوم فرح وعبادة" },
+          "body": { "en": "Eid al-Fitr marks the end of Ramadan on the first of Shawwal. It is a day of thanks, prayer, family and generosity. Fasting on the day of Eid is not allowed.", "de": "Eid al-Fitr markiert am ersten Schawwal das Ende des Ramadan. Es ist ein Tag des Dankes, des Gebets, der Familie und der Großzügigkeit. Am Festtag selbst wird nicht gefastet.", "ar": "عيد الفطر في أول شوال، به يُختم رمضان، وهو يوم شكر وصلاة وصلة وكرم، ولا يجوز صيامه." }
+        },
+        {
+          "title": { "en": "Before you leave home", "de": "Bevor Sie das Haus verlassen", "ar": "قبل أن تخرج" },
+          "list": {
+            "en": ["Take a ghusl", "Wear your best clothes", "Men: put on perfume", "Eat an odd number of dates", "Pay zakat al-fitr if not yet done"],
+            "de": ["Nehmen Sie einen Ghusl", "Tragen Sie Ihre beste Kleidung", "Männer: Legen Sie Duft auf", "Essen Sie eine ungerade Zahl Datteln", "Entrichten Sie Zakat al-Fitr, falls noch nicht geschehen"],
+            "ar": ["اغتسل", "البس أحسن ثيابك", "تطيّب إن كنت رجلًا", "كُل تمرات بعدد فردي", "أخرج زكاة الفطر إن لم تخرجها بعد"]
+          }
+        },
+        {
+          "hadith": "bukhari:953",
+          "check": "odd number of dates",
+          "title": { "en": "Eat before you go", "de": "Essen Sie vor dem Gehen", "ar": "كُل قبل الخروج" },
+          "body": { "en": "On Eid al-Fitr, eat first. On Eid al-Adha, many wait until after the prayer.", "de": "Am Eid al-Fitr wird zuerst gegessen. Am Eid al-Adha warten viele bis nach dem Gebet.", "ar": "في عيد الفطر يُؤكل قبل الخروج، وفي عيد الأضحى يؤخّر كثيرون الأكل إلى ما بعد الصلاة." }
+        },
+        {
+          "title": { "en": "Takbir on the way", "de": "Takbir auf dem Weg", "ar": "التكبير في الطريق" },
+          "body": { "en": "Many scholars begin the takbir at sunset on the eve of Eid and continue until the prayer. Its wording comes from the Companions. Schools differ on saying it aloud on Eid al-Fitr.", "de": "Viele Gelehrte beginnen den Takbir mit dem Sonnenuntergang am Vorabend des Festes und setzen ihn bis zum Gebet fort. Sein Wortlaut stammt von den Gefährten. Ob man ihn am Eid al-Fitr laut spricht, ist umstritten.", "ar": "يبدأ كثير من العلماء التكبير من غروب شمس ليلة العيد إلى الصلاة، وصيغته مأثورة عن الصحابة. ويختلف العلماء في الجهر به في عيد الفطر." }
+        },
+        {
+          "hadith": "bukhari:971",
+          "check": "Takbir along with them",
+          "title": { "en": "Everyone comes out", "de": "Alle kommen heraus", "ar": "خروج الجميع" },
+          "body": { "en": "Women and girls were encouraged to join the gathering, its takbir and its dua.", "de": "Frauen und Mädchen wurden ermutigt, sich der Versammlung, ihrem Takbir und ihren Bittgebeten anzuschließen.", "ar": "دُعيت النساء والفتيات إلى حضور الجمع ومشاركة التكبير والدعاء." }
+        },
+        {
+          "title": { "en": "The Eid prayer", "de": "Das Eid-Gebet", "ar": "صلاة العيد" },
+          "body": { "en": "Two rak'at with extra takbirs, followed by a sermon, without adhan or iqamah. The Hanafi school counts it as wajib, the Maliki and Shafi'i schools as a strong Sunnah, the Hanbali school as a communal duty.", "de": "Zwei Rakaat mit zusätzlichen Takbiren, danach eine Predigt, ohne Adhan und Iqama. Die Hanafiten zählen es als Wadschib, Malikiten und Schafiiten als betonte Sunna, die Hanbaliten als Gemeinschaftspflicht.", "ar": "ركعتان بتكبيرات زوائد تعقبهما خطبة، بلا أذان ولا إقامة. ويراها الحنفية واجبة، والمالكية والشافعية سنة مؤكدة، والحنابلة فرض كفاية." }
+        },
+        {
+          "hadith": "bukhari:986",
+          "check": "a way different from that by which he went",
+          "title": { "en": "Return by another way", "de": "Auf einem anderen Weg zurück", "ar": "العودة من طريق آخر" },
+          "body": { "en": "Go to the prayer on one road and come back on another, greeting more people on the way.", "de": "Gehen Sie auf einem Weg zum Gebet und kehren Sie auf einem anderen zurück, und grüßen Sie unterwegs mehr Menschen.", "ar": "اذهب إلى الصلاة من طريق وارجع من غيره، فتلقى مزيدًا من الناس." }
+        },
+        {
+          "hadith": "muslim:2758",
+          "check": "followed it with six",
+          "title": { "en": "After Eid: six days of Shawwal", "de": "Nach dem Fest: sechs Tage im Schawwal", "ar": "بعد العيد: صيام ستة أيام من شوال" },
+          "body": { "en": "Most scholars encourage these six fasts after Eid; Imam Malik was cautious about them.", "de": "Die meisten Gelehrten empfehlen diese sechs Fastentage nach dem Fest; Imam Malik war zurückhaltend.", "ar": "يستحبها أكثر العلماء بعد العيد، وكان الإمام مالك متحفظًا فيها." }
+        }
+      ],
+      "sources": [
+        { "label": "Ibn Rushd, Bidayat al-Mujtahid, chapter on the Eid prayer" },
+        { "label": "al-Jaziri, al-Fiqh 'ala al-Madhahib al-Arba'a, chapter on the two Eids" }
+      ]
+    }
+  ]
+}

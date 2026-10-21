@@ -1,0 +1,120 @@
+{
+  "set": "reflections-kindness",
+  "kind": "reflection",
+  "theme": "kindness",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-kindness-01",
+      "text": {
+        "en": "Kindness is learning the name of the security guard you pass every day, and using it.",
+        "de": "Güte heißt, den Namen des Wachmanns zu lernen, an dem Sie jeden Tag vorbeigehen, und ihn auch zu benutzen.",
+        "ar": "الإحسان أن تعرف اسم الحارس الذي تمر به كل يوم، وأن تناديه به."
+      }
+    },
+    {
+      "id": "wr-kindness-02",
+      "text": {
+        "en": "Do your work beautifully even when no one will check it. Excellence in the unseen corners is where character shows.",
+        "de": "Machen Sie Ihre Arbeit schön, auch wenn niemand sie prüfen wird. In den unsichtbaren Ecken zeigt sich der Charakter.",
+        "ar": "أتقن عملك ولو لم يراجعه أحد، ففي الزوايا التي لا ترى يظهر الخلق."
+      }
+    },
+    {
+      "id": "wr-kindness-03",
+      "text": {
+        "en": "A smile for a tired stranger costs nothing and may be the only warmth they receive all day.",
+        "de": "Ein Lächeln für einen müden Fremden kostet nichts und ist vielleicht die einzige Wärme, die er den ganzen Tag bekommt.",
+        "ar": "ابتسامة لغريب متعب لا تكلفك شيئا، وقد تكون الدفء الوحيد الذي يصله طوال يومه."
+      }
+    },
+    {
+      "id": "wr-kindness-04",
+      "text": {
+        "en": "Leave the shared kitchen a little cleaner than you found it. Small kindnesses that nobody notices are still seen.",
+        "de": "Hinterlassen Sie die Gemeinschaftsküche etwas sauberer, als Sie sie vorgefunden haben. Kleine Freundlichkeiten, die niemand bemerkt, werden trotzdem gesehen.",
+        "ar": "اترك المطبخ المشترك أنظف قليلا مما وجدته، فاللطائف الصغيرة التي لا يلاحظها أحد مرئية مع ذلك."
+      }
+    },
+    {
+      "id": "wr-kindness-05",
+      "text": {
+        "en": "When someone struggles to speak your language, slow down and help them find the words. That is kindness too.",
+        "de": "Wenn jemand mit Ihrer Sprache ringt, sprechen Sie langsamer und helfen Sie ihm, die Worte zu finden. Auch das ist Güte.",
+        "ar": "حين يجد أحد صعوبة في التحدث بلغتك، تمهل وساعده على إيجاد الكلمات، فذلك إحسان أيضا."
+      }
+    },
+    {
+      "id": "wr-kindness-06",
+      "text": {
+        "en": "Feeding the street cat and not overloading a working animal are part of faith, not an extra.",
+        "de": "Die Straßenkatze zu füttern und ein Arbeitstier nicht zu überladen, gehört zum Glauben und ist keine Zugabe.",
+        "ar": "إطعام قطة الشارع وعدم تحميل الدابة فوق طاقتها جزء من الإيمان، لا زيادة عليه."
+      }
+    },
+    {
+      "id": "wr-kindness-07",
+      "text": {
+        "en": "Hold the door, carry the bag, offer your seat. Kindness is mostly made of small movements.",
+        "de": "Die Tür aufhalten, die Tasche tragen, den Sitzplatz anbieten: Güte besteht vor allem aus kleinen Bewegungen.",
+        "ar": "أمسك الباب، واحمل الحقيبة، وقدم مقعدك، فالإحسان في أغلبه حركات صغيرة."
+      }
+    },
+    {
+      "id": "wr-kindness-08",
+      "text": {
+        "en": "Kindness is not only for those who are kind back. It is a light you carry, not a payment you make.",
+        "de": "Güte gilt nicht nur denen, die sie erwidern. Sie ist ein Licht, das Sie tragen, keine Bezahlung, die Sie leisten.",
+        "ar": "الإحسان ليس لمن يرده عليك فحسب، بل هو نور تحمله، لا ثمن تدفعه."
+      }
+    },
+    {
+      "id": "wr-kindness-09",
+      "text": {
+        "en": "The new colleague eating lunch alone will remember for years who sat down beside them on the first day.",
+        "de": "Die neue Kollegin, die allein zu Mittag isst, wird sich jahrelang daran erinnern, wer sich am ersten Tag zu ihr gesetzt hat.",
+        "ar": "الزميل الجديد الذي يتناول غداءه وحده سيتذكر سنين طويلة من جلس إلى جانبه في يومه الأول."
+      }
+    },
+    {
+      "id": "wr-kindness-10",
+      "text": {
+        "en": "Being kind to someone who cannot repay you is one of the clearest signs that you did it for Allah.",
+        "de": "Gütig zu jemandem zu sein, der es Ihnen nicht vergelten kann, ist eines der klarsten Zeichen, dass Sie es für Allah getan haben.",
+        "ar": "أن تحسن إلى من لا يستطيع أن يكافئك من أوضح العلامات على أنك فعلت ذلك لله."
+      }
+    },
+    {
+      "id": "wr-kindness-11",
+      "text": {
+        "en": "A kind word to a waiter, a thank-you note to a teacher, a patient reply to a customer: kindness lives in ordinary days.",
+        "de": "Ein freundliches Wort an den Kellner, ein Dankesbrief an die Lehrerin, eine geduldige Antwort an einen Kunden: Güte wohnt in gewöhnlichen Tagen.",
+        "ar": "كلمة طيبة للنادل، ورسالة شكر للمعلمة، ورد صبور على زبون: الإحسان يسكن في الأيام العادية."
+      }
+    },
+    {
+      "id": "wr-kindness-12",
+      "text": {
+        "en": "Excellence is kindness toward your work: the careful stitch, the clean code, the well-swept floor.",
+        "de": "Sorgfalt ist Güte gegenüber der eigenen Arbeit: der genaue Stich, der saubere Code, der gut gefegte Boden.",
+        "ar": "الإتقان إحسان إلى عملك: الغرزة الدقيقة، والبرمجة النظيفة، والأرض المكنوسة جيدا."
+      }
+    },
+    {
+      "id": "wr-kindness-13",
+      "text": {
+        "en": "When you visit someone who is ill, bring a little food, gentle news and a calm face. Your presence can heal more than you think.",
+        "de": "Wenn Sie einen kranken Menschen besuchen, bringen Sie etwas zu essen, gute Nachrichten und ein ruhiges Gesicht mit. Ihre Gegenwart kann mehr heilen, als Sie denken.",
+        "ar": "إذا عدت مريضا فاحمل له قليلا من الطعام، وأخبارا طيبة، ووجها هادئا، فحضورك قد يشفي أكثر مما تظن."
+      }
+    },
+    {
+      "id": "wr-kindness-14",
+      "text": {
+        "en": "Kindness spreads quietly: the person you helped this morning may be helping someone else by evening.",
+        "de": "Güte breitet sich leise aus: Der Mensch, dem Sie heute Morgen geholfen haben, hilft vielleicht schon am Abend einem anderen.",
+        "ar": "الإحسان ينتشر بهدوء، فمن ساعدته هذا الصباح قد يساعد غيره قبل المساء."
+      }
+    }
+  ]
+}

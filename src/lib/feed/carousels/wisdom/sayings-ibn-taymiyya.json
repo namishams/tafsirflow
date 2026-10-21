@@ -1,0 +1,108 @@
+{
+  "set": "sayings-ibn-taymiyya",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-ibn-taymiyya-01",
+      "theme": "paradise",
+      "text": {
+        "en": "In this world there is a paradise: whoever does not enter it will not enter the Paradise of the Hereafter.",
+        "de": "In dieser Welt gibt es ein Paradies: Wer es nicht betritt, wird das Paradies des Jenseits nicht betreten.",
+        "ar": "إن في الدنيا جنة من لم يدخلها لم يدخل جنة الآخرة."
+      },
+      "arabic": "إن في الدنيا جنة من لم يدخلها لم يدخل جنة الآخرة.",
+      "by": { "en": "Ibn Taymiyya", "de": "Ibn Taymiyya", "ar": "ابن تيمية" },
+      "work": { "en": "Reported by Ibn al-Qayyim in al-Wabil al-Sayyib", "de": "Überliefert von Ibn al-Qayyim in al-Wabil as-Sayyib", "ar": "نقله ابن القيم في الوابل الصيب" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-taymiyya-02",
+      "theme": "contentment",
+      "text": {
+        "en": "What can my enemies do to me? My paradise and my garden are in my heart. Wherever I go, they are with me and never leave me.",
+        "de": "Was können meine Feinde mir antun? Mein Paradies und mein Garten sind in meiner Brust. Wohin ich auch gehe, sie sind bei mir und verlassen mich nicht.",
+        "ar": "ما يصنع أعدائي بي؟ أنا جنتي وبستاني في صدري، أين رحت فهي معي لا تفارقني."
+      },
+      "arabic": "ما يصنع أعدائي بي؟ أنا جنتي وبستاني في صدري، أين رحت فهي معي لا تفارقني.",
+      "by": { "en": "Ibn Taymiyya", "de": "Ibn Taymiyya", "ar": "ابن تيمية" },
+      "work": { "en": "Reported by Ibn al-Qayyim in al-Wabil al-Sayyib", "de": "Überliefert von Ibn al-Qayyim in al-Wabil as-Sayyib", "ar": "نقله ابن القيم في الوابل الصيب" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-taymiyya-03",
+      "theme": "taqwa",
+      "text": {
+        "en": "The real prisoner is the one whose heart is imprisoned away from his Lord, and the real captive is the one held captive by his own desires.",
+        "de": "Der wahre Gefangene ist der, dessen Herz von seinem Herrn ferngehalten wird, und der wahre Gefesselte ist der, den seine eigenen Launen gefangen halten.",
+        "ar": "المحبوس من حبس قلبه عن ربه تعالى، والمأسور من أسره هواه."
+      },
+      "arabic": "المحبوس من حبس قلبه عن ربه تعالى، والمأسور من أسره هواه.",
+      "by": { "en": "Ibn Taymiyya", "de": "Ibn Taymiyya", "ar": "ابن تيمية" },
+      "work": { "en": "Reported by Ibn al-Qayyim in al-Wabil al-Sayyib", "de": "Überliefert von Ibn al-Qayyim in al-Wabil as-Sayyib", "ar": "نقله ابن القيم في الوابل الصيب" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-taymiyya-04",
+      "theme": "remembrance",
+      "text": {
+        "en": "Remembrance is to the heart what water is to a fish. So what becomes of the fish when it leaves the water?",
+        "de": "Das Gedenken ist für das Herz, was das Wasser für den Fisch ist. Wie ergeht es dem Fisch, wenn er das Wasser verlässt?",
+        "ar": "الذكر للقلب مثل الماء للسمك، فكيف يكون حال السمك إذا فارق الماء؟"
+      },
+      "arabic": "الذكر للقلب مثل الماء للسمك، فكيف يكون حال السمك إذا فارق الماء؟",
+      "by": { "en": "Ibn Taymiyya", "de": "Ibn Taymiyya", "ar": "ابن تيمية" },
+      "work": { "en": "Reported by Ibn al-Qayyim in al-Wabil al-Sayyib", "de": "Überliefert von Ibn al-Qayyim in al-Wabil as-Sayyib", "ar": "نقله ابن القيم في الوابل الصيب" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-taymiyya-05",
+      "theme": "remembrance",
+      "text": {
+        "en": "After the dawn prayer he would sit remembering Allah until the day was high, and he said: This is my morning meal. If I did not take it, my strength would fail.",
+        "de": "Nach dem Morgengebet saß er im Gedenken Allahs, bis der Tag fortgeschritten war, und sagte: Das ist mein Frühstück. Würde ich es nicht zu mir nehmen, verließe mich meine Kraft.",
+        "ar": "كان يجلس بعد صلاة الفجر يذكر الله حتى يتعالى النهار، ويقول: هذه غدوتي، ولو لم أتغد هذا الغداء لسقطت قوتي."
+      },
+      "by": { "en": "Ibn Taymiyya", "de": "Ibn Taymiyya", "ar": "ابن تيمية" },
+      "work": { "en": "Reported by Ibn al-Qayyim in al-Wabil al-Sayyib", "de": "Überliefert von Ibn al-Qayyim in al-Wabil as-Sayyib", "ar": "نقله ابن القيم في الوابل الصيب" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-taymiyya-06",
+      "theme": "worship",
+      "text": {
+        "en": "Whoever wants everlasting happiness, let him hold fast to the threshold of servanthood.",
+        "de": "Wer ewiges Glück will, der halte sich an die Schwelle der Dienerschaft.",
+        "ar": "من أراد السعادة الأبدية فليلزم عتبة العبودية."
+      },
+      "arabic": "من أراد السعادة الأبدية فليلزم عتبة العبودية.",
+      "by": { "en": "Ibn Taymiyya", "de": "Ibn Taymiyya", "ar": "ابن تيمية" },
+      "work": { "en": "Reported by Ibn al-Qayyim in Madarij al-Salikin", "de": "Überliefert von Ibn al-Qayyim in Madarij as-Salikin", "ar": "نقله ابن القيم في مدارج السالكين" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-taymiyya-07",
+      "theme": "guidance",
+      "text": {
+        "en": "Do not make your heart like a sponge that soaks up every doubt. Make it like solid glass: doubts pass over its surface and do not settle in it.",
+        "de": "Machen Sie Ihr Herz nicht zu einem Schwamm, der jeden Zweifel aufsaugt. Machen Sie es wie festes Glas: Die Zweifel gleiten über seine Oberfläche und setzen sich nicht darin fest.",
+        "ar": "لا تجعل قلبك للإيرادات والشبهات مثل السفنجة فيتشربها، ولكن اجعله كالزجاجة المصمتة، تمر الشبهات بظاهرها ولا تستقر فيها."
+      },
+      "by": { "en": "Ibn Taymiyya, advising Ibn al-Qayyim", "de": "Ibn Taymiyya in einem Rat an Ibn al-Qayyim", "ar": "ابن تيمية في وصيته لابن القيم" },
+      "work": { "en": "Reported by Ibn al-Qayyim in Miftah Dar al-Sa'ada", "de": "Überliefert von Ibn al-Qayyim in Miftah Dar as-Sa'ada", "ar": "نقله ابن القيم في مفتاح دار السعادة" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ibn-taymiyya-08",
+      "theme": "gratitude",
+      "text": {
+        "en": "The servant is always between a blessing from Allah that calls for gratitude and a sin of his own that calls for seeking forgiveness.",
+        "de": "Der Diener steht immer zwischen einer Gabe Allahs, die Dank verlangt, und einer eigenen Sünde, die die Bitte um Vergebung verlangt.",
+        "ar": "العبد دائما بين نعمة من الله يحتاج فيها إلى شكر، وذنب منه يحتاج فيه إلى الاستغفار."
+      },
+      "by": { "en": "Ibn Taymiyya", "de": "Ibn Taymiyya", "ar": "ابن تيمية" },
+      "work": { "en": "Majmu' al-Fatawa", "de": "Majmu' al-Fatawa", "ar": "مجموع الفتاوى" },
+      "needs_review": true
+    }
+  ]
+}

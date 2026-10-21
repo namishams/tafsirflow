@@ -1,0 +1,120 @@
+{
+  "set": "reflections-provision",
+  "kind": "reflection",
+  "theme": "provision",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-provision-01",
+      "text": {
+        "en": "The bread on your table passed through many hands: the farmer, the miller, the baker, the driver. Provision is a chain of mercy.",
+        "de": "Das Brot auf Ihrem Tisch ging durch viele Hände: den Bauern, den Müller, den Bäcker, den Fahrer. Versorgung ist eine Kette der Barmherzigkeit.",
+        "ar": "الخبز على مائدتك مر بأيد كثيرة: الفلاح، والطحان، والخباز، والسائق، فالرزق سلسلة من الرحمة."
+      }
+    },
+    {
+      "id": "wr-provision-02",
+      "text": {
+        "en": "Provision is not only money. A good friend, a calm heart, a healthy child and a quiet night's sleep are provision too.",
+        "de": "Versorgung ist nicht nur Geld. Ein guter Freund, ein ruhiges Herz, ein gesundes Kind und eine stille Nachtruhe sind auch Versorgung.",
+        "ar": "الرزق ليس مالا فحسب، فالصديق الصالح، والقلب الهادئ، والطفل المعافى، والنوم الهانئ رزق أيضا."
+      }
+    },
+    {
+      "id": "wr-provision-03",
+      "text": {
+        "en": "Work hard and earn honestly, then let go of comparison. What is meant for you was never meant for anyone else.",
+        "de": "Arbeiten Sie fleißig und verdienen Sie ehrlich, dann lassen Sie den Vergleich los. Was Ihnen bestimmt ist, war nie für jemand anderen gedacht.",
+        "ar": "اجتهد واكسب بالحلال، ثم دع المقارنة، فما قدر لك لم يكن لغيرك."
+      }
+    },
+    {
+      "id": "wr-provision-04",
+      "text": {
+        "en": "A halal income, even a modest one, carries a blessing that no amount of doubtful money can buy.",
+        "de": "Ein erlaubtes Einkommen, auch ein bescheidenes, trägt einen Segen, den keine Menge zweifelhaften Geldes kaufen kann.",
+        "ar": "الكسب الحلال، ولو كان متواضعا، يحمل بركة لا يشتريها أي قدر من المال المشتبه."
+      }
+    },
+    {
+      "id": "wr-provision-05",
+      "text": {
+        "en": "Your provision was arranged before your first cry. Worry less about it, and more about how you will use it.",
+        "de": "Ihre Versorgung war geregelt, bevor Sie zum ersten Mal geschrien haben. Sorgen Sie sich weniger darum und mehr darum, wie Sie sie nutzen.",
+        "ar": "رتب رزقك قبل صرختك الأولى، فانشغل أقل بأمره وأكثر بكيف ستستعمله."
+      }
+    },
+    {
+      "id": "wr-provision-06",
+      "text": {
+        "en": "When a guest arrives unexpectedly, there always seems to be enough. Open tables have a way of stretching.",
+        "de": "Wenn unerwartet ein Gast kommt, scheint es immer genug zu geben. Offene Tische haben die Art, sich zu dehnen.",
+        "ar": "حين يأتي ضيف على غير موعد يبدو الطعام كافيا دائما، فللموائد المفتوحة طريقتها في الاتساع."
+      }
+    },
+    {
+      "id": "wr-provision-07",
+      "text": {
+        "en": "Early mornings carry a special blessing. Start your work after Fajr and see how the day opens.",
+        "de": "Die frühen Morgenstunden tragen einen besonderen Segen. Beginnen Sie Ihre Arbeit nach dem Morgengebet und sehen Sie, wie sich der Tag öffnet.",
+        "ar": "للبكور بركة خاصة، فابدأ عملك بعد الفجر وانظر كيف ينفتح يومك."
+      }
+    },
+    {
+      "id": "wr-provision-08",
+      "text": {
+        "en": "Losing a job is not losing your provision. The door that closed was one of many, and the Provider has not changed.",
+        "de": "Eine Arbeit zu verlieren heißt nicht, die Versorgung zu verlieren. Die Tür, die sich schloss, war eine von vielen, und der Versorger ist derselbe geblieben.",
+        "ar": "فقدان العمل ليس فقدانا للرزق، فالباب الذي أغلق واحد من أبواب كثيرة، والرزاق لم يتغير."
+      }
+    },
+    {
+      "id": "wr-provision-09",
+      "text": {
+        "en": "Pay your bills, help your parents, give a little away. Money that flows through good channels brings a quiet kind of peace.",
+        "de": "Zahlen Sie Ihre Rechnungen, helfen Sie Ihren Eltern, geben Sie ein wenig weiter. Geld, das durch gute Kanäle fließt, bringt eine stille Art von Frieden.",
+        "ar": "سدد فواتيرك، وأعن والديك، وتصدق بالقليل، فالمال الذي يجري في قنوات الخير يجلب نوعا هادئا من السكينة."
+      }
+    },
+    {
+      "id": "wr-provision-10",
+      "text": {
+        "en": "Comparing your salary with your neighbour's steals the joy from both. Count what has been given to you instead.",
+        "de": "Ihr Gehalt mit dem des Nachbarn zu vergleichen, raubt beiden die Freude. Zählen Sie stattdessen, was Ihnen gegeben wurde.",
+        "ar": "مقارنة راتبك براتب جارك تسرق الفرحة من كليكما، فعد بدلا من ذلك ما أعطيته."
+      }
+    },
+    {
+      "id": "wr-provision-11",
+      "text": {
+        "en": "Sometimes provision arrives through a person: the colleague who recommended you, the stranger who showed you the way. Thank them.",
+        "de": "Manchmal kommt Versorgung durch einen Menschen: den Kollegen, der Sie empfohlen hat, den Fremden, der Ihnen den Weg zeigte. Danken Sie ihnen.",
+        "ar": "أحيانا يأتي الرزق على يد إنسان: الزميل الذي زكاك، والغريب الذي دلك على الطريق، فاشكرهم."
+      }
+    },
+    {
+      "id": "wr-provision-12",
+      "text": {
+        "en": "Provision is not only what reaches your hands but what reaches your heart. Contentment is the richest provision of all.",
+        "de": "Versorgung ist nicht nur, was Ihre Hände erreicht, sondern was Ihr Herz erreicht. Zufriedenheit ist die reichste Versorgung von allen.",
+        "ar": "الرزق ليس ما يصل إلى يديك فحسب، بل ما يصل إلى قلبك، والقناعة أغنى الأرزاق جميعا."
+      }
+    },
+    {
+      "id": "wr-provision-13",
+      "text": {
+        "en": "Do your part with excellence, and leave the size of the harvest to the One who sends the rain.",
+        "de": "Tun Sie Ihren Teil mit Sorgfalt und überlassen Sie die Größe der Ernte Dem, der den Regen schickt.",
+        "ar": "أد ما عليك بإتقان، واترك حجم الحصاد لمن يرسل المطر."
+      }
+    },
+    {
+      "id": "wr-provision-14",
+      "text": {
+        "en": "A small business that never cheats may grow slowly, but it grows on solid ground.",
+        "de": "Ein kleines Geschäft, das nie betrügt, wächst vielleicht langsam, aber es wächst auf festem Grund.",
+        "ar": "المشروع الصغير الذي لا يغش قد ينمو ببطء، لكنه ينمو على أرض صلبة."
+      }
+    }
+  ]
+}

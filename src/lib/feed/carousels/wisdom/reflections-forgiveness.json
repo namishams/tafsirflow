@@ -1,0 +1,120 @@
+{
+  "set": "reflections-forgiveness",
+  "kind": "reflection",
+  "theme": "forgiveness",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-forgiveness-01",
+      "text": {
+        "en": "Forgiving someone does not mean what they did was fine. It means you no longer want to carry it into every new day.",
+        "de": "Jemandem zu vergeben heißt nicht, dass sein Tun in Ordnung war. Es heißt, dass Sie es nicht mehr in jeden neuen Tag mitschleppen wollen.",
+        "ar": "أن تسامح أحدا لا يعني أن ما فعله كان صوابا، بل يعني أنك لم تعد تريد أن تحمله معك إلى كل يوم جديد."
+      }
+    },
+    {
+      "id": "wr-forgiveness-02",
+      "text": {
+        "en": "On the same evening you ask Allah to forgive you, look at your phone and forgive the message that hurt you.",
+        "de": "Am selben Abend, an dem Sie Allah um Vergebung bitten, schauen Sie auf Ihr Telefon und vergeben Sie der Nachricht, die Sie verletzt hat.",
+        "ar": "في المساء نفسه الذي تسأل فيه الله المغفرة، انظر إلى هاتفك واغفر للرسالة التي جرحتك."
+      }
+    },
+    {
+      "id": "wr-forgiveness-03",
+      "text": {
+        "en": "Astaghfirullah, whispered at a red light or while washing the dishes, is never too small to be heard.",
+        "de": "Astaghfirullah, geflüstert an einer roten Ampel oder beim Abwaschen, ist nie zu klein, um gehört zu werden.",
+        "ar": "أستغفر الله، تهمس بها عند إشارة حمراء أو وأنت تغسل الصحون، ليست أصغر من أن تسمع."
+      }
+    },
+    {
+      "id": "wr-forgiveness-04",
+      "text": {
+        "en": "Holding a grudge is like carrying a stone up a mountain to prove how heavy it is. Put it down and keep climbing.",
+        "de": "Groll festzuhalten ist, als trüge man einen Stein auf einen Berg, um zu beweisen, wie schwer er ist. Legen Sie ihn ab und steigen Sie weiter.",
+        "ar": "التمسك بالضغينة كحمل حجر إلى قمة جبل لتثبت كم هو ثقيل، فضعه وواصل الصعود."
+      }
+    },
+    {
+      "id": "wr-forgiveness-05",
+      "text": {
+        "en": "Hope for Allah's forgiveness the way a child hopes for a parent's pardon: knowing that love is greater than the mistake.",
+        "de": "Hoffen Sie auf Allahs Vergebung, wie ein Kind auf die Vergebung seiner Eltern hofft: im Wissen, dass die Liebe größer ist als der Fehler.",
+        "ar": "ارج مغفرة الله كما يرجو الطفل عفو والديه، عالما بأن الحب أكبر من الخطأ."
+      }
+    },
+    {
+      "id": "wr-forgiveness-06",
+      "text": {
+        "en": "You can forgive and still keep a healthy distance. Mercy toward others does not require cruelty toward yourself.",
+        "de": "Sie können vergeben und dennoch einen gesunden Abstand halten. Barmherzigkeit mit anderen verlangt keine Härte gegen sich selbst.",
+        "ar": "يمكنك أن تسامح وتحتفظ مع ذلك بمسافة صحية، فالرحمة بالآخرين لا تقتضي القسوة على نفسك."
+      }
+    },
+    {
+      "id": "wr-forgiveness-07",
+      "text": {
+        "en": "Some apologies never come. Forgiveness can still arrive without them, and set your own heart free first.",
+        "de": "Manche Entschuldigungen kommen nie. Vergebung kann trotzdem kommen und zuerst Ihr eigenes Herz befreien.",
+        "ar": "بعض الاعتذارات لا تأتي أبدا، ومع ذلك يمكن أن يأتي العفو بدونها، فيحرر قلبك أولا."
+      }
+    },
+    {
+      "id": "wr-forgiveness-08",
+      "text": {
+        "en": "Every night, the door of forgiveness opens again. No mistake of yours is older than the mercy waiting behind it.",
+        "de": "Jede Nacht öffnet sich die Tür der Vergebung von Neuem. Kein Fehler von Ihnen ist älter als die Barmherzigkeit, die dahinter wartet.",
+        "ar": "كل ليلة ينفتح باب المغفرة من جديد، ولا خطأ من أخطائك أقدم من الرحمة التي تنتظر خلفه."
+      }
+    },
+    {
+      "id": "wr-forgiveness-09",
+      "text": {
+        "en": "Forgive your younger self for what you did not yet know. You are learning, and learning is not a sin.",
+        "de": "Vergeben Sie Ihrem jüngeren Ich, was es noch nicht wusste. Sie lernen, und Lernen ist keine Sünde.",
+        "ar": "سامح نفسك الصغيرة على ما لم تكن تعرفه بعد، فأنت تتعلم، والتعلم ليس ذنبا."
+      }
+    },
+    {
+      "id": "wr-forgiveness-10",
+      "text": {
+        "en": "A family that forgives quickly sleeps peacefully. Let no argument in your home outlast the evening.",
+        "de": "Eine Familie, die schnell vergibt, schläft in Frieden. Lassen Sie keinen Streit in Ihrem Haus länger dauern als bis zum Abend.",
+        "ar": "الأسرة التي تسامح سريعا تنام في سلام، فلا تدع خلافا في بيتك يتجاوز المساء."
+      }
+    },
+    {
+      "id": "wr-forgiveness-11",
+      "text": {
+        "en": "Remembering how often you need forgiveness makes it far easier to give it.",
+        "de": "Wer sich erinnert, wie oft er selbst Vergebung braucht, dem fällt es viel leichter, sie zu schenken.",
+        "ar": "حين تتذكر كم تحتاج أنت إلى العفو، يصير منحه للآخرين أيسر بكثير."
+      }
+    },
+    {
+      "id": "wr-forgiveness-12",
+      "text": {
+        "en": "The heaviest mistakes feel lighter the moment they are confessed to the One who already knows them.",
+        "de": "Die schwersten Fehler fühlen sich leichter an, sobald man sie Dem gesteht, der sie ohnehin kennt.",
+        "ar": "أثقل الأخطاء تخف لحظة الاعتراف بها لمن يعلمها أصلا."
+      }
+    },
+    {
+      "id": "wr-forgiveness-13",
+      "text": {
+        "en": "Forgiveness is a gift you give twice: once to the other person, and once to your own tired heart.",
+        "de": "Vergebung ist ein Geschenk, das Sie zweimal machen: einmal dem anderen und einmal Ihrem eigenen müden Herzen.",
+        "ar": "العفو هدية تمنحها مرتين: مرة للآخر، ومرة لقلبك المتعب."
+      }
+    },
+    {
+      "id": "wr-forgiveness-14",
+      "text": {
+        "en": "Sitting quietly after prayer and asking forgiveness for the day is like washing the dust of a long road from your feet.",
+        "de": "Nach dem Gebet still zu sitzen und um Vergebung für den Tag zu bitten, ist, als wüschen Sie den Staub eines langen Weges von den Füßen.",
+        "ar": "أن تجلس بعد الصلاة في سكينة وتستغفر عن يومك، كأنك تغسل غبار طريق طويل عن قدميك."
+      }
+    }
+  ]
+}

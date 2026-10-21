@@ -1,0 +1,32 @@
+{
+  "set": "sayings-ahmad-ibn-hanbal",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-ahmad-ibn-hanbal-01",
+      "theme": "knowledge",
+      "text": {
+        "en": "With the inkwell until the grave.",
+        "de": "Mit dem Tintenfass bis ins Grab.",
+        "ar": "مع المحبرة إلى المقبرة."
+      },
+      "arabic": "مع المحبرة إلى المقبرة.",
+      "by": { "en": "Ahmad ibn Hanbal", "de": "Ahmad ibn Hanbal", "ar": "الإمام أحمد بن حنبل" },
+      "work": { "en": "Reported by Ibn al-Jawzi in Manaqib al-Imam Ahmad", "de": "Überliefert von Ibn al-Dschauzi in Manaqib al-Imam Ahmad", "ar": "رواه ابن الجوزي في مناقب الإمام أحمد" },
+      "needs_review": true
+    },
+    {
+      "id": "ws-ahmad-ibn-hanbal-02",
+      "theme": "paradise",
+      "text": {
+        "en": "He was asked: When does the servant find the taste of rest? He said: With the first step he sets in Paradise.",
+        "de": "Man fragte ihn: Wann findet der Diener den Geschmack der Ruhe? Er sagte: Mit dem ersten Schritt, den er ins Paradies setzt.",
+        "ar": "سئل: متى يجد العبد طعم الراحة؟ فقال: عند أول قدم يضعها في الجنة."
+      },
+      "by": { "en": "Ahmad ibn Hanbal", "de": "Ahmad ibn Hanbal", "ar": "الإمام أحمد بن حنبل" },
+      "work": { "en": "Reported by Ibn Abi Ya'la in Tabaqat al-Hanabila", "de": "Überliefert von Ibn Abi Ya'la in Tabaqat al-Hanabila", "ar": "رواه ابن أبي يعلى في طبقات الحنابلة" },
+      "needs_review": true
+    }
+  ]
+}

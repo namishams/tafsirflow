@@ -1,0 +1,14 @@
+{ "set": "hadith-time", "kind": "hadith", "theme": "time", "tradition": "sunni",
+  "items": [
+    {"id": "wh-time-bukhari-6412", "hadith": "bukhari:6412", "check": "free time"},
+    {"id": "wh-time-bukhari-6416", "hadith": "bukhari:6416", "check": "stranger"},
+    {"id": "wh-time-muslim-2412", "hadith": "muslim:2412", "check": "grows old"},
+    {"id": "wh-time-bukhari-6418", "hadith": "bukhari:6418", "check": "nearer line"},
+    {"id": "wh-time-muslim-5863", "hadith": "muslim:5863", "check": "I alternate the night and the day"},
+    {"id": "wh-time-muslim-1976", "hadith": "muslim:1976", "check": "best day"},
+    {"id": "wh-time-muslim-313", "hadith": "muslim:313", "check": "Be prompt in doing good deeds"},
+    {"id": "wh-time-muslim-3288", "hadith": "muslim:3288", "check": "Day of 'Arafa"},
+    {"id": "wh-time-bukhari-935", "hadith": "bukhari:935", "check": "an hour"},
+    {"id": "wh-time-bukhari-6419", "hadith": "bukhari:6419", "check": "sixty years"},
+    {"id": "wh-time-muslim-256", "hadith": "muslim:256", "check": "prayer at its proper time"}
+  ] }

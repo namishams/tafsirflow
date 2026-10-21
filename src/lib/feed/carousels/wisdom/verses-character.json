@@ -1,0 +1,27 @@
+{
+  "set": "verses-character",
+  "kind": "verse",
+  "theme": "character",
+  "tradition": "all",
+  "items": [
+    {"id": "wv-character-68-3", "verse": "68:3-4", "check": "great moral character"},
+    {"id": "wv-character-7-199", "verse": "7:199", "check": "enjoin what is good"},
+    {"id": "wv-character-7-200", "verse": "7:200", "check": "seek refuge in Allah"},
+    {"id": "wv-character-3-114", "verse": "3:114-115", "check": "hasten to good deeds"},
+    {"id": "wv-character-25-73", "verse": "25:73", "check": "deaf and blind"},
+    {"id": "wv-character-24-27", "verse": "24:27-28", "check": "greet their inhabitants"},
+    {"id": "wv-character-13-20", "verse": "13:20-21", "check": "fulfill the covenant"},
+    {"id": "wv-character-19-12", "verse": "19:12-14", "check": "dutiful to his parents"},
+    {"id": "wv-character-2-124", "verse": "2:124", "check": "leader for the people"},
+    {"id": "wv-character-30-44", "verse": "30:44", "check": "does righteousness"},
+    {"id": "wv-character-45-15", "verse": "45:15", "check": "good deed"},
+    {"id": "wv-character-41-8", "verse": "41:8", "check": "righteous deeds"},
+    {"id": "wv-character-29-9", "verse": "29:9", "check": "righteous"},
+    {"id": "wv-character-17-27", "verse": "17:27", "check": "wasteful"},
+    {"id": "wv-character-104-1", "verse": "104:1-3", "check": "scorner"},
+    {"id": "wv-character-66-12", "verse": "66:12", "check": "guarded her chastity"},
+    {"id": "wv-character-38-28", "verse": "38:28", "check": "righteous deeds"},
+    {"id": "wv-character-40-58", "verse": "40:58", "check": "not equal"},
+    {"id": "wv-character-45-21", "verse": "45:21", "check": "righteous deeds"}
+  ]
+}

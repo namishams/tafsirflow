@@ -1,0 +1,33 @@
+{
+  "set": "verses-sincerity",
+  "kind": "verse",
+  "theme": "sincerity",
+  "tradition": "all",
+  "items": [
+    {"id": "wv-sincerity-92-18", "verse": "92:18-20", "check": "seeking the face"},
+    {"id": "wv-sincerity-76-8", "verse": "76:8-9", "check": "face"},
+    {"id": "wv-sincerity-2-264", "verse": "2:264", "check": "to be seen by the people"},
+    {"id": "wv-sincerity-74-6", "verse": "74:6", "check": "confer favor"},
+    {"id": "wv-sincerity-98-5", "verse": "98:5", "check": "sincere to Him in religion"},
+    {"id": "wv-sincerity-39-2", "verse": "39:2", "check": "sincere to Him in religion"},
+    {"id": "wv-sincerity-39-11", "verse": "39:11-12", "check": "sincere to Him in religion"},
+    {"id": "wv-sincerity-39-14", "verse": "39:14", "check": "sincere to Him in my religion"},
+    {"id": "wv-sincerity-40-14", "verse": "40:14", "check": "sincere to Him in religion"},
+    {"id": "wv-sincerity-2-139", "verse": "2:139", "check": "sincere"},
+    {"id": "wv-sincerity-2-225", "verse": "2:225", "check": "your hearts have earned"},
+    {"id": "wv-sincerity-2-284", "verse": "2:284", "check": "conceal"},
+    {"id": "wv-sincerity-31-22", "verse": "31:22", "check": "submits his face"},
+    {"id": "wv-sincerity-37-83", "verse": "37:83-84", "check": "sound heart"},
+    {"id": "wv-sincerity-100-9", "verse": "100:9-11", "check": "within the breasts"},
+    {"id": "wv-sincerity-86-9", "verse": "86:9-10", "check": "secrets"},
+    {"id": "wv-sincerity-107-4", "verse": "107:4-6", "check": "make show"},
+    {"id": "wv-sincerity-49-14", "verse": "49:14", "check": "faith has not yet entered your hearts"},
+    {"id": "wv-sincerity-22-11", "verse": "22:11", "check": "on an edge"},
+    {"id": "wv-sincerity-10-105", "verse": "10:105", "check": "Direct your face"},
+    {"id": "wv-sincerity-22-31", "verse": "22:31", "check": "Inclining"},
+    {"id": "wv-sincerity-18-38", "verse": "18:38", "check": "my Lord"},
+    {"id": "wv-sincerity-28-69", "verse": "28:69", "check": "breasts conceal"},
+    {"id": "wv-sincerity-16-19", "verse": "16:19", "check": "conceal"},
+    {"id": "wv-sincerity-33-54", "verse": "33:54", "check": "reveal a thing or conceal it"}
+  ]
+}

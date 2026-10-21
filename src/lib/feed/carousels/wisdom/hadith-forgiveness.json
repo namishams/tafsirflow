@@ -1,0 +1,15 @@
+{ "set": "hadith-forgiveness", "kind": "hadith", "theme": "forgiveness", "tradition": "sunni",
+  "items": [
+    {"id": "wh-forgiveness-bukhari-2472", "hadith": "bukhari:2472", "check": "thorny branch"},
+    {"id": "wh-forgiveness-bukhari-3477", "hadith": "bukhari:3477", "check": "Forgive my nation"},
+    {"id": "wh-forgiveness-nawawi-42", "hadith": "nawawi:42", "check": "reach the clouds of the sky"},
+    {"id": "wh-forgiveness-bukhari-7387", "hadith": "bukhari:7387", "check": "none forgives the sins but You"},
+    {"id": "wh-forgiveness-bukhari-7514", "hadith": "bukhari:7514", "check": "I screened your sins"},
+    {"id": "wh-forgiveness-bukhari-6664", "hadith": "bukhari:6664", "check": "whisper"},
+    {"id": "wh-forgiveness-muslim-6681", "hadith": "muslim:6681", "check": "adjures"},
+    {"id": "wh-forgiveness-muslim-1084", "hadith": "muslim:1084", "check": "small and great"},
+    {"id": "wh-forgiveness-muslim-3998", "hadith": "muslim:3998", "check": "overlooked his faults"},
+    {"id": "wh-forgiveness-muslim-6858", "hadith": "muslim:6858", "check": "shade upon my heart"},
+    {"id": "wh-forgiveness-bukhari-781", "hadith": "bukhari:781", "check": "Amin"},
+    {"id": "wh-forgiveness-muslim-577", "hadith": "muslim:577", "check": "last drop of water"}
+  ] }

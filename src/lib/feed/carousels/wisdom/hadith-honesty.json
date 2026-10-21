@@ -1,0 +1,15 @@
+{ "set": "hadith-honesty", "kind": "hadith", "theme": "honesty", "tradition": "sunni",
+  "items": [
+    {"id": "wh-honesty-bukhari-6095", "hadith": "bukhari:6095", "check": "signs of a hypocrite"},
+    {"id": "wh-honesty-bukhari-6094", "hadith": "bukhari:6094", "check": "Truthfulness leads to righteousness"},
+    {"id": "wh-honesty-bukhari-2260", "hadith": "bukhari:2260", "check": "honest treasurer"},
+    {"id": "wh-honesty-bukhari-6496", "hadith": "bukhari:6496", "check": "When honesty is lost"},
+    {"id": "wh-honesty-bukhari-7276", "hadith": "bukhari:7276", "check": "Honesty descended from the Heavens"},
+    {"id": "wh-honesty-muslim-284", "hadith": "muslim:284", "check": "He who deceives"},
+    {"id": "wh-honesty-bukhari-2087", "hadith": "bukhari:2087", "check": "deprived of Allah's blessing"},
+    {"id": "wh-honesty-bukhari-6919", "hadith": "bukhari:6919", "check": "false witness"},
+    {"id": "wh-honesty-bukhari-2387", "hadith": "bukhari:2387", "check": "intention of repaying"},
+    {"id": "wh-honesty-bukhari-2227", "hadith": "bukhari:2227", "check": "does not pay him his wages"},
+    {"id": "wh-honesty-bukhari-2603", "hadith": "bukhari:2603", "check": "gave me more than he owed me"},
+    {"id": "wh-honesty-bukhari-6058", "hadith": "bukhari:6058", "check": "double faced"}
+  ] }

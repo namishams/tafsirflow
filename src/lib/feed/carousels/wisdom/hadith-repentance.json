@@ -1,0 +1,13 @@
+{ "set": "hadith-repentance", "kind": "hadith", "theme": "repentance", "tradition": "sunni",
+  "items": [
+    {"id": "wh-repentance-muslim-1069", "hadith": "muslim:1069", "check": "purify me with snow"},
+    {"id": "wh-repentance-bukhari-6309", "hadith": "bukhari:6309", "check": "lost in the desert"},
+    {"id": "wh-repentance-bukhari-6307", "hadith": "bukhari:6307", "check": "seventy times a day"},
+    {"id": "wh-repentance-muslim-6861", "hadith": "muslim:6861", "check": "rising of the sun from the west"},
+    {"id": "wh-repentance-muslim-6989", "hadith": "muslim:6989", "check": "Stretches out His Hand"},
+    {"id": "wh-repentance-muslim-6965", "hadith": "muslim:6965", "check": "sweep you out of existence"},
+    {"id": "wh-repentance-muslim-7485", "hadith": "muslim:7485", "check": "publicise"},
+    {"id": "wh-repentance-bukhari-6323", "hadith": "bukhari:6323", "check": "most superior way of asking for forgiveness"},
+    {"id": "wh-repentance-muslim-1086", "hadith": "muslim:1086", "check": "return to Thee"},
+    {"id": "wh-repentance-bukhari-7235", "hadith": "bukhari:7235", "check": "stop the evil deeds and repent"}
+  ] }

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-taqwa",
+  "kind": "reflection",
+  "theme": "taqwa",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-taqwa-01",
+      "text": {
+        "en": "Taqwa is the pause between the temptation and the choice, when you remember that Allah sees.",
+        "de": "Gottesfurcht ist die Pause zwischen der Versuchung und der Entscheidung, in der Sie sich erinnern, dass Allah sieht.",
+        "ar": "التقوى هي الوقفة بين الإغراء والاختيار، حين تتذكر أن الله يراك."
+      }
+    },
+    {
+      "id": "wr-taqwa-02",
+      "text": {
+        "en": "Taqwa is closing the laptop when no one would ever know what you were about to open.",
+        "de": "Gottesfurcht heißt, den Laptop zuzuklappen, obwohl niemand je erfahren würde, was Sie gerade öffnen wollten.",
+        "ar": "التقوى أن تغلق الحاسوب مع أن أحدا لن يعرف أبدا ما كنت توشك أن تفتحه."
+      }
+    },
+    {
+      "id": "wr-taqwa-03",
+      "text": {
+        "en": "God-consciousness is not a fear that freezes you, but an awareness that guides you.",
+        "de": "Gottesbewusstsein ist keine Angst, die Sie lähmt, sondern ein Bewusstsein, das Sie leitet.",
+        "ar": "التقوى ليست خوفا يشلك، بل وعي يهديك."
+      }
+    },
+    {
+      "id": "wr-taqwa-04",
+      "text": {
+        "en": "The honest shopkeeper who weighs exactly, even when the customer is a child, is living taqwa in the market.",
+        "de": "Der ehrliche Händler, der genau abwiegt, auch wenn der Kunde ein Kind ist, lebt Gottesfurcht auf dem Markt.",
+        "ar": "البائع الأمين الذي يزن بدقة حتى لو كان الزبون طفلا يعيش التقوى في السوق."
+      }
+    },
+    {
+      "id": "wr-taqwa-05",
+      "text": {
+        "en": "Taqwa grows in private. What you do when the door is closed shapes who you are when it is open.",
+        "de": "Gottesfurcht wächst im Verborgenen. Was Sie tun, wenn die Tür geschlossen ist, prägt, wer Sie sind, wenn sie offen ist.",
+        "ar": "التقوى تنمو في الخلوة، فما تفعله والباب مغلق يصوغ من تكون والباب مفتوح."
+      }
+    },
+    {
+      "id": "wr-taqwa-06",
+      "text": {
+        "en": "Taqwa is choosing the halal sandwich at the airport, the honest answer at the interview, the decent word at the party.",
+        "de": "Gottesfurcht heißt, am Flughafen das erlaubte Brot zu wählen, im Vorstellungsgespräch die ehrliche Antwort und auf der Feier das anständige Wort.",
+        "ar": "التقوى أن تختار الشطيرة الحلال في المطار، والجواب الصادق في المقابلة، والكلمة العفيفة في الحفل."
+      }
+    },
+    {
+      "id": "wr-taqwa-07",
+      "text": {
+        "en": "Taqwa protects like a good umbrella: it does not stop the rain, but it keeps you from being soaked by it.",
+        "de": "Gottesfurcht schützt wie ein guter Regenschirm: Sie hält den Regen nicht auf, aber sie bewahrt Sie davor, durchnässt zu werden.",
+        "ar": "التقوى تحمي كمظلة جيدة: لا توقف المطر، لكنها تقيك من أن تبتل به."
+      }
+    },
+    {
+      "id": "wr-taqwa-08",
+      "text": {
+        "en": "Whoever is mindful of Allah in small matters will find it easier to be mindful in great ones.",
+        "de": "Wer in kleinen Dingen an Allah denkt, dem fällt es leichter, auch in großen Dingen an Ihn zu denken.",
+        "ar": "من راقب الله في الأمور الصغيرة سهل عليه أن يراقبه في الأمور الكبيرة."
+      }
+    },
+    {
+      "id": "wr-taqwa-09",
+      "text": {
+        "en": "Taqwa makes a person gentle with others and strict with themselves, never the other way round.",
+        "de": "Gottesfurcht macht einen Menschen sanft mit anderen und streng mit sich selbst, nie umgekehrt.",
+        "ar": "التقوى تجعل المرء لينا مع غيره، حازما مع نفسه، لا العكس أبدا."
+      }
+    },
+    {
+      "id": "wr-taqwa-10",
+      "text": {
+        "en": "Lowering your gaze on a crowded street is a small, invisible act that keeps the heart clean.",
+        "de": "Den Blick auf einer belebten Straße zu senken, ist eine kleine, unsichtbare Tat, die das Herz rein hält.",
+        "ar": "غض البصر في شارع مزدحم فعل صغير خفي يحفظ القلب نقيا."
+      }
+    },
+    {
+      "id": "wr-taqwa-11",
+      "text": {
+        "en": "Taqwa is not about looking pious. It is about being the same person in public and in private.",
+        "de": "Bei Gottesfurcht geht es nicht darum, fromm auszusehen. Es geht darum, öffentlich und im Verborgenen derselbe Mensch zu sein.",
+        "ar": "ليست التقوى أن تبدو تقيا، بل أن تكون الشخص نفسه في العلن والخفاء."
+      }
+    },
+    {
+      "id": "wr-taqwa-12",
+      "text": {
+        "en": "Each morning, resolve to avoid one thing you know displeases Allah. That is how taqwa grows.",
+        "de": "Nehmen Sie sich jeden Morgen vor, eine Sache zu meiden, von der Sie wissen, dass sie Allah missfällt. So wächst Gottesfurcht.",
+        "ar": "اعزم كل صباح على أن تجتنب أمرا واحدا تعلم أنه لا يرضي الله، فهكذا تنمو التقوى."
+      }
+    },
+    {
+      "id": "wr-taqwa-13",
+      "text": {
+        "en": "A mindful person leaves a gathering having said nothing they would be ashamed to hear repeated.",
+        "de": "Ein gottesfürchtiger Mensch verlässt eine Runde, ohne etwas gesagt zu haben, das er sich schämen würde, wiederholt zu hören.",
+        "ar": "التقي يغادر المجلس ولم يقل شيئا يخجل من أن يسمعه يعاد."
+      }
+    },
+    {
+      "id": "wr-taqwa-14",
+      "text": {
+        "en": "The mindful heart sleeps restlessly on doubtful money and deeply on an honest wage.",
+        "de": "Das achtsame Herz schläft unruhig über zweifelhaftem Geld und tief über ehrlichem Lohn.",
+        "ar": "القلب اليقظ ينام قلقا على المال المشتبه، وعميقا على الأجر الحلال."
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "set": "reflections-humility",
+  "kind": "reflection",
+  "theme": "humility",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "wr-humility-01",
+      "text": {
+        "en": "Humility is sweeping the mosque floor after an event when no one asked you to and no one is watching.",
+        "de": "Demut heißt, nach einer Veranstaltung den Boden der Moschee zu fegen, wenn niemand Sie darum gebeten hat und niemand zusieht.",
+        "ar": "التواضع أن تكنس أرض المسجد بعد مناسبة دون أن يطلب منك أحد ودون أن يراك أحد."
+      }
+    },
+    {
+      "id": "wr-humility-02",
+      "text": {
+        "en": "Every talent you have was given to you. Remembering that keeps the head bowed even when the hands are full.",
+        "de": "Jede Begabung, die Sie haben, wurde Ihnen geschenkt. Daran zu denken hält den Kopf geneigt, auch wenn die Hände voll sind.",
+        "ar": "كل موهبة لديك هبة، وتذكر ذلك يبقي الرأس منحنيا ولو امتلأت اليدان."
+      }
+    },
+    {
+      "id": "wr-humility-03",
+      "text": {
+        "en": "The tallest stalks of wheat bend lowest, because they are heavy with grain.",
+        "de": "Die höchsten Weizenhalme neigen sich am tiefsten, weil sie schwer von Körnern sind.",
+        "ar": "أطول سنابل القمح أكثرها انحناء، لأنها مثقلة بالحب."
+      }
+    },
+    {
+      "id": "wr-humility-04",
+      "text": {
+        "en": "Learn from anyone who knows something you do not: a child, a cleaner, a stranger. Wisdom does not check job titles.",
+        "de": "Lernen Sie von jedem, der etwas weiß, was Sie nicht wissen: einem Kind, einer Reinigungskraft, einem Fremden. Weisheit prüft keine Berufsbezeichnungen.",
+        "ar": "تعلم ممن يعرف ما لا تعرفه: طفل، أو عامل نظافة، أو غريب، فالحكمة لا تنظر في المسميات الوظيفية."
+      }
+    },
+    {
+      "id": "wr-humility-05",
+      "text": {
+        "en": "Admitting in front of others that you were wrong is one of the hardest and most beautiful acts of humility.",
+        "de": "Vor anderen zuzugeben, dass man sich geirrt hat, ist eine der schwersten und schönsten Taten der Demut.",
+        "ar": "أن تعترف أمام الناس بأنك كنت مخطئا من أصعب أفعال التواضع وأجملها."
+      }
+    },
+    {
+      "id": "wr-humility-06",
+      "text": {
+        "en": "A humble person is not quiet for lack of something to say, but because they are listening.",
+        "de": "Ein demütiger Mensch schweigt nicht, weil er nichts zu sagen hätte, sondern weil er zuhört.",
+        "ar": "المتواضع لا يصمت لأنه لا يملك ما يقوله، بل لأنه يصغي."
+      }
+    },
+    {
+      "id": "wr-humility-07",
+      "text": {
+        "en": "Greet the cleaner and the director with the same warmth. That is where humility becomes visible.",
+        "de": "Grüßen Sie die Reinigungskraft und den Direktor mit derselben Herzlichkeit. Dort wird Demut sichtbar.",
+        "ar": "سلم على عامل النظافة وعلى المدير بالدفء نفسه، فهناك يظهر التواضع."
+      }
+    },
+    {
+      "id": "wr-humility-08",
+      "text": {
+        "en": "In prostration, the face we show the world rests on the floor. No posture teaches humility more gently.",
+        "de": "In der Niederwerfung liegt das Gesicht, das wir der Welt zeigen, auf dem Boden. Keine Haltung lehrt Demut sanfter.",
+        "ar": "في السجود يستقر على الأرض الوجه الذي نريه للعالم، ولا هيئة تعلم التواضع برفق أكثر منها."
+      }
+    },
+    {
+      "id": "wr-humility-09",
+      "text": {
+        "en": "Praise is as much a test as criticism. Receive both with a quiet Alhamdulillah and keep walking.",
+        "de": "Lob ist ebenso eine Prüfung wie Kritik. Nehmen Sie beides mit einem leisen Alhamdulillah an und gehen Sie weiter.",
+        "ar": "المدح امتحان كما أن النقد امتحان، فتلقهما بحمد هادئ وواصل المسير."
+      }
+    },
+    {
+      "id": "wr-humility-10",
+      "text": {
+        "en": "The more you truly know, the more gently you hold your opinions.",
+        "de": "Je mehr Sie wirklich wissen, desto behutsamer halten Sie an Ihren Meinungen fest.",
+        "ar": "كلما ازددت علما حقيقيا أمسكت آراءك برفق أكبر."
+      }
+    },
+    {
+      "id": "wr-humility-11",
+      "text": {
+        "en": "Help in the kitchen at the family gathering, even if you are the guest of honour. Humility looks good on everyone.",
+        "de": "Helfen Sie beim Familientreffen in der Küche, auch wenn Sie der Ehrengast sind. Demut steht jedem gut.",
+        "ar": "ساعد في المطبخ في اجتماع العائلة ولو كنت ضيف الشرف، فالتواضع يليق بالجميع."
+      }
+    },
+    {
+      "id": "wr-humility-12",
+      "text": {
+        "en": "Remember the time you were carried in your mother's arms, unable to do anything. Every strength since then has been a gift.",
+        "de": "Denken Sie an die Zeit, als Ihre Mutter Sie trug und Sie nichts selbst konnten. Jede Kraft seither war ein Geschenk.",
+        "ar": "تذكر أيام حملتك أمك بين ذراعيها لا تقدر على شيء، فكل قوة منذ ذلك الحين هبة."
+      }
+    },
+    {
+      "id": "wr-humility-13",
+      "text": {
+        "en": "A humble heart is a spacious one: it has room for other people's success without feeling smaller.",
+        "de": "Ein demütiges Herz ist ein weites Herz: Es hat Platz für den Erfolg anderer, ohne sich kleiner zu fühlen.",
+        "ar": "القلب المتواضع واسع، يتسع لنجاح غيره دون أن يشعر بأنه صغر."
+      }
+    },
+    {
+      "id": "wr-humility-14",
+      "text": {
+        "en": "Arrogance needs an audience; humility is content to serve in the background.",
+        "de": "Hochmut braucht ein Publikum; Demut ist zufrieden, im Hintergrund zu dienen.",
+        "ar": "الكبر يحتاج إلى جمهور، والتواضع يرضى بأن يخدم في الظل."
+      }
+    }
+  ]
+}

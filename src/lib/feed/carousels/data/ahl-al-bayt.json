@@ -1,0 +1,369 @@
+{
+  "series": "ahl-al-bayt",
+  "label": {"en": "Ahl al-Bayt", "de": "Ahl al-Bait", "ar": "أهل البيت"},
+  "topic": "seerah",
+  "tradition": "shia",
+  "items": [
+    {
+      "id": "ahl-al-bayt-01-twelve-imams",
+      "tradition": "shia",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Ahl al-Bayt · 1", "de": "Ahl al-Bait · 1", "ar": "أهل البيت · ١"},
+        "title": {"en": "The Twelve Imams", "de": "Die zwölf Imame", "ar": "الأئمة الاثنا عشر"},
+        "sub": {"en": "Names and order of the Imams from the Prophet's family, as Twelver Shia Muslims hold them", "de": "Namen und Reihenfolge der Imame aus der Familie des Propheten nach dem Glauben der Zwölfer-Schiiten", "ar": "أسماء الأئمة من آل البيت وترتيبهم عند الشيعة الإمامية"},
+        "arabic": "الأئمة الاثنا عشر"
+      },
+      "slides": [
+        {
+          "title": {"en": "Who are the Imams?", "de": "Wer sind die Imame?", "ar": "من هم الأئمة؟"},
+          "body": {"en": "In Twelver Shia belief, guidance after the Prophet continues through twelve Imams from his family, each designated by the one before. The line begins with Imam Ali and continues through the descendants of Ali and Fatima.", "de": "Nach dem Glauben der Zwölfer-Schiiten setzt sich die Rechtleitung nach dem Propheten durch zwölf Imame aus seiner Familie fort, jeder vom vorherigen bestimmt. Die Reihe beginnt mit Imam Ali und führt über die Nachkommen Alis und Fatimas weiter.", "ar": "يعتقد الشيعة الإمامية أن الهداية بعد النبي ﷺ تستمر في اثني عشر إمامًا من أهل بيته، ينص كل إمام على من بعده، أولهم الإمام علي ثم أبناؤه من فاطمة الزهراء."}
+        },
+        {
+          "verse": "2:124",
+          "check": "leader for the people",
+          "title": {"en": "Imamate as a covenant", "de": "Das Imamat als Bund", "ar": "الإمامة عهد إلهي"},
+          "body": {"en": "Shia commentators cite this verse: Ibrahim was made an imam, and Allah's covenant does not reach the wrongdoers.", "de": "Schiitische Kommentatoren führen diesen Vers an: Ibrahim wurde zum Imam gemacht, und Allahs Bund erreicht die Ungerechten nicht.", "ar": "يستدل مفسرو الشيعة بهذه الآية: جُعل إبراهيم إمامًا، وعهد الله لا يناله الظالمون."}
+        },
+        {
+          "title": {"en": "The first six Imams", "de": "Die ersten sechs Imame", "ar": "الأئمة الستة الأوائل"},
+          "list": {
+            "en": ["Ali ibn Abi Talib, al-Murtada", "Al-Hasan ibn Ali, al-Mujtaba", "Al-Husayn ibn Ali, Sayyid ash-Shuhada", "Ali ibn al-Husayn, Zayn al-Abidin", "Muhammad ibn Ali, al-Baqir", "Ja'far ibn Muhammad, as-Sadiq"],
+            "de": ["Ali ibn Abi Talib, al-Murtada", "Al-Hasan ibn Ali, al-Mudschtaba", "Al-Husain ibn Ali, Sayyid asch-Schuhada", "Ali ibn al-Husain, Zain al-Abidin", "Muhammad ibn Ali, al-Baqir", "Dschafar ibn Muhammad, as-Sadiq"],
+            "ar": ["علي بن أبي طالب المرتضى", "الحسن بن علي المجتبى", "الحسين بن علي سيد الشهداء", "علي بن الحسين زين العابدين", "محمد بن علي الباقر", "جعفر بن محمد الصادق"]
+          }
+        },
+        {
+          "title": {"en": "The next six Imams", "de": "Die nächsten sechs Imame", "ar": "الأئمة الستة التالون"},
+          "list": {
+            "en": ["Musa ibn Ja'far, al-Kazim", "Ali ibn Musa, ar-Rida", "Muhammad ibn Ali, al-Jawad", "Ali ibn Muhammad, al-Hadi", "Al-Hasan ibn Ali, al-Askari", "Muhammad ibn al-Hasan, al-Mahdi"],
+            "de": ["Musa ibn Dschafar, al-Kazim", "Ali ibn Musa, ar-Rida", "Muhammad ibn Ali, al-Dschawad", "Ali ibn Muhammad, al-Hadi", "Al-Hasan ibn Ali, al-Askari", "Muhammad ibn al-Hasan, al-Mahdi"],
+            "ar": ["موسى بن جعفر الكاظم", "علي بن موسى الرضا", "محمد بن علي الجواد", "علي بن محمد الهادي", "الحسن بن علي العسكري", "محمد بن الحسن المهدي"]
+          }
+        },
+        {
+          "title": {"en": "Where they rest", "de": "Wo sie ruhen", "ar": "مراقدهم"},
+          "list": {
+            "en": ["Najaf: Imam Ali", "Karbala: Imam al-Husayn", "Al-Baqi, Medina: al-Hasan, Zayn al-Abidin, al-Baqir, as-Sadiq", "Kadhimiya, Baghdad: al-Kazim and al-Jawad", "Mashhad: ar-Rida", "Samarra: al-Hadi and al-Askari"],
+            "de": ["Nadschaf: Imam Ali", "Kerbela: Imam al-Husain", "Al-Baqi, Medina: al-Hasan, Zain al-Abidin, al-Baqir, as-Sadiq", "Kazimiyya, Bagdad: al-Kazim und al-Dschawad", "Maschhad: ar-Rida", "Samarra: al-Hadi und al-Askari"],
+            "ar": ["النجف: الإمام علي", "كربلاء: الإمام الحسين", "البقيع في المدينة: الحسن والسجاد والباقر والصادق", "الكاظمية في بغداد: الكاظم والجواد", "مشهد: الرضا", "سامراء: الهادي والعسكري"]
+          }
+        },
+        {
+          "title": {"en": "The twelfth Imam", "de": "Der zwölfte Imam", "ar": "الإمام الثاني عشر"},
+          "body": {"en": "Twelver Shia Muslims believe that Imam Muhammad al-Mahdi went into occultation: the Minor Occultation from 260 AH (874 CE) and the Major Occultation from 329 AH (941 CE). His return is awaited.", "de": "Zwölfer-Schiiten glauben, dass Imam Muhammad al-Mahdi in die Verborgenheit ging: die kleine Verborgenheit ab 260 n. H. (874) und die große Verborgenheit ab 329 n. H. (941). Seine Wiederkehr wird erwartet.", "ar": "يعتقد الشيعة الإمامية أن الإمام محمد المهدي غاب غيبتين: الصغرى منذ سنة ٢٦٠هـ (٨٧٤م)، والكبرى منذ سنة ٣٢٩هـ (٩٤١م)، وهم ينتظرون ظهوره."}
+        },
+        {
+          "title": {"en": "Twelve successors", "de": "Zwölf Nachfolger", "ar": "اثنا عشر خليفة"},
+          "body": {"en": "Both Sunni and Shia collections report the Prophet speaking of twelve successors from Quraysh. Shia scholars understand them as the twelve Imams; Sunni scholars interpret the report in other ways.", "de": "Sunnitische und schiitische Sammlungen berichten, dass der Prophet von zwölf Nachfolgern aus Quraisch sprach. Schiitische Gelehrte verstehen darunter die zwölf Imame; sunnitische Gelehrte deuten den Bericht anders.", "ar": "تروي كتب السنة والشيعة حديث النبي ﷺ عن اثني عشر خليفة كلهم من قريش، ويفهمهم علماء الشيعة بالأئمة الاثني عشر، ويفسره علماء السنة بوجوه أخرى."}
+        },
+        {
+          "verse": "32:24",
+          "check": "leaders guiding by Our command",
+          "title": {"en": "Leadership through patience", "de": "Führung durch Geduld", "ar": "إمامة بالصبر واليقين"},
+          "body": {"en": "The Quran ties guiding leadership to patience and certainty, qualities the Shia tradition sees in the Imams.", "de": "Der Koran verbindet rechtleitende Führung mit Geduld und Gewissheit, Eigenschaften, die die schiitische Tradition in den Imamen sieht.", "ar": "يربط القرآن الإمامة الهادية بالصبر واليقين، وهي صفات يراها التراث الشيعي في الأئمة."}
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: The Twelve Imams", "url": "https://en.wikipedia.org/wiki/The_Twelve_Imams"}
+      ]
+    },
+    {
+      "id": "ahl-al-bayt-02-husayn-karbala",
+      "tradition": "shia",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {"en": "Ahl al-Bayt · 2", "de": "Ahl al-Bait · 2", "ar": "أهل البيت · ٢"},
+        "title": {"en": "Imam Husayn and Karbala", "de": "Imam Husain und Kerbela", "ar": "الإمام الحسين وكربلاء"},
+        "sub": {"en": "10 Muharram 61 AH: a sacrifice that shaped history and hearts", "de": "10. Muharram 61 n. H.: ein Opfer, das Geschichte und Herzen prägte", "ar": "العاشر من محرم سنة ٦١هـ: تضحية صنعت التاريخ وسكنت القلوب"},
+        "arabic": "السلام على الحسين"
+      },
+      "slides": [
+        {
+          "title": {"en": "The Prophet's grandson", "de": "Der Enkel des Propheten", "ar": "سبط النبي ﷺ"},
+          "body": {"en": "Al-Husayn ibn Ali, son of Ali and Fatima, was born in Medina in 4 AH. Sunni and Shia collections alike report the Prophet's deep love for him and his brother al-Hasan.", "de": "Al-Husain ibn Ali, Sohn Alis und Fatimas, wurde 4 n. H. in Medina geboren. Sunnitische wie schiitische Sammlungen berichten von der tiefen Liebe des Propheten zu ihm und seinem Bruder al-Hasan.", "ar": "وُلد الحسين بن علي، ابن علي وفاطمة، في المدينة سنة ٤هـ، وتروي كتب السنة والشيعة معًا محبة النبي ﷺ العظيمة له ولأخيه الحسن."}
+        },
+        {
+          "title": {"en": "Refusing allegiance", "de": "Die Huldigung verweigert", "ar": "رفض البيعة"},
+          "body": {"en": "When Yazid ibn Mu'awiya came to power in 60 AH, al-Husayn refused to pledge allegiance to him. Invited by letters from Kufa, he set out from Mecca with his family and companions.", "de": "Als Yazid ibn Muawiya 60 n. H. an die Macht kam, verweigerte al-Husain ihm die Huldigung. Von Briefen aus Kufa eingeladen, brach er mit seiner Familie und seinen Gefährten von Mekka auf.", "ar": "لما تولى يزيد بن معاوية الحكم سنة ٦٠هـ أبى الحسين أن يبايعه، ثم خرج من مكة بأهله وأصحابه بعد أن دعته رسائل أهل الكوفة."}
+        },
+        {
+          "title": {"en": "His stated purpose", "de": "Sein erklärtes Ziel", "ar": "غاية نهضته"},
+          "body": {"en": "In his testament to his brother Muhammad ibn al-Hanafiyya, as the sources report it, he said he did not rise out of pride or to spread corruption, but to seek reform in his grandfather's nation and to enjoin good and forbid wrong.", "de": "In seinem Vermächtnis an seinen Bruder Muhammad ibn al-Hanafiyya sagte er nach den Quellen, er erhebe sich nicht aus Hochmut oder um Unheil zu stiften, sondern um in der Gemeinschaft seines Großvaters Besserung zu suchen und das Gute zu gebieten und das Schlechte zu verbieten.", "ar": "ذكر في وصيته لأخيه محمد بن الحنفية، كما تنقلها المصادر، أنه لم يخرج بطرًا ولا مفسدًا، وإنما خرج لطلب الإصلاح في أمة جده والأمر بالمعروف والنهي عن المنكر."}
+        },
+        {
+          "title": {"en": "The plain of Karbala", "de": "Die Ebene von Kerbela", "ar": "أرض كربلاء"},
+          "body": {"en": "Stopped by an Umayyad army, the caravan camped at Karbala on 2 Muharram. According to the reports, they were cut off from the water of the Euphrates in the days before the battle.", "de": "Von einem umayyadischen Heer aufgehalten, lagerte die Karawane am 2. Muharram in Kerbela. Nach den Berichten wurde ihr in den Tagen vor der Schlacht das Wasser des Euphrat abgeschnitten.", "ar": "اعترض جيش أموي الركب فنزل كربلاء في الثاني من محرم، وتذكر الروايات أنهم مُنعوا ماء الفرات في الأيام التي سبقت المعركة."}
+        },
+        {
+          "title": {"en": "Ashura, 10 Muharram 61 AH", "de": "Aschura, 10. Muharram 61 n. H.", "ar": "عاشوراء، العاشر من محرم ٦١هـ"},
+          "body": {"en": "On 10 Muharram 61 AH (10 October 680 CE) al-Husayn was martyred together with members of his family and his companions. The women and children were taken captive to Kufa and then to Damascus.", "de": "Am 10. Muharram 61 n. H. (10. Oktober 680) starb al-Husain als Märtyrer, zusammen mit Angehörigen seiner Familie und seinen Gefährten. Frauen und Kinder wurden gefangen nach Kufa und dann nach Damaskus gebracht.", "ar": "في العاشر من محرم سنة ٦١هـ (١٠ أكتوبر ٦٨٠م) استُشهد الحسين مع أهل بيته وأصحابه، وسيقت النساء والأطفال أسرى إلى الكوفة ثم إلى الشام."}
+        },
+        {
+          "verse": "2:156-157",
+          "check": "Indeed we belong to Allah",
+          "title": {"en": "Grief with patience", "de": "Trauer mit Geduld", "ar": "حزن مع صبر"},
+          "body": {"en": "Mourning for al-Husayn is joined with patience and with the words of return to Allah.", "de": "Die Trauer um al-Husain ist mit Geduld verbunden und mit den Worten der Rückkehr zu Allah.", "ar": "يقترن الحزن على الحسين بالصبر وبكلمة الاسترجاع."}
+        },
+        {
+          "verse": "89:27-28",
+          "check": "reassured soul",
+          "title": {"en": "The surah of al-Husayn", "de": "Die Sure al-Husains", "ar": "سورة الحسين"},
+          "body": {"en": "In Shia tradition Imam as-Sadiq called Surah al-Fajr the surah of al-Husayn. Many read these verses with him in mind.", "de": "In der schiitischen Überlieferung nannte Imam as-Sadiq die Sure al-Fadschr die Sure al-Husains. Viele lesen diese Verse im Gedenken an ihn.", "ar": "في الروايات الشيعية سمّى الإمام الصادق سورة الفجر سورة الحسين، ويقرأ كثيرون هذه الآيات وهم يستحضرونه."}
+        },
+        {
+          "title": {"en": "Keeping his memory alive", "de": "Sein Andenken bewahren", "ar": "إحياء ذكراه"},
+          "body": {"en": "Each Muharram, gatherings recount Karbala. On Arba'in, forty days after Ashura, millions walk to his shrine in Karbala. The lesson many draw: never bow to injustice.", "de": "Jeden Muharram erzählen Versammlungen von Kerbela. Zu Arbain, vierzig Tage nach Aschura, gehen Millionen zu seinem Schrein in Kerbela. Die Lehre, die viele ziehen: sich niemals dem Unrecht beugen.", "ar": "في كل محرم تُعقد المجالس لذكر كربلاء، وفي الأربعين بعد عاشوراء يمشي الملايين إلى مرقده في كربلاء، والعبرة التي يستخلصها كثيرون: لا خضوع للظلم."}
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Battle of Karbala", "url": "https://en.wikipedia.org/wiki/Battle_of_Karbala"},
+        {"label": "Al-Majlisi, Bihar al-Anwar, vol. 44"},
+        {"label": "Ibn A'tham al-Kufi, Kitab al-Futuh"},
+        {"label": "Shaykh al-Saduq, Thawab al-A'mal, on Surah al-Fajr"}
+      ]
+    },
+    {
+      "id": "ahl-al-bayt-03-zaynab",
+      "tradition": "shia",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {"en": "Ahl al-Bayt · 3", "de": "Ahl al-Bait · 3", "ar": "أهل البيت · ٣"},
+        "title": {"en": "Lady Zaynab", "de": "Sayyida Zainab", "ar": "السيدة زينب"},
+        "sub": {"en": "The voice of Karbala: patience, eloquence and care", "de": "Die Stimme von Kerbela: Geduld, Beredsamkeit und Fürsorge", "ar": "صوت كربلاء: صبر وبلاغة ورعاية"},
+        "arabic": "عقيلة بني هاشم"
+      },
+      "slides": [
+        {
+          "title": {"en": "Daughter of Ali and Fatima", "de": "Tochter Alis und Fatimas", "ar": "ابنة علي وفاطمة"},
+          "body": {"en": "Zaynab bint Ali was the eldest daughter of Ali and Fatima and a granddaughter of the Prophet. She was born in Medina; the sources differ on the exact year.", "de": "Zainab bint Ali war die älteste Tochter Alis und Fatimas und eine Enkelin des Propheten. Sie wurde in Medina geboren; zum genauen Jahr machen die Quellen unterschiedliche Angaben.", "ar": "زينب بنت علي كبرى بنات علي وفاطمة وحفيدة النبي ﷺ، وُلدت في المدينة، واختلفت المصادر في سنة مولدها."}
+        },
+        {
+          "title": {"en": "Titles of honour", "de": "Ehrentitel", "ar": "ألقابها"},
+          "list": {
+            "en": ["Al-Aqila, the wise woman of Banu Hashim", "Zaynab al-Kubra, the elder Zaynab", "The heroine of Karbala"],
+            "de": ["Al-Aqila, die Weise der Banu Haschim", "Zainab al-Kubra, die ältere Zainab", "Die Heldin von Kerbela"],
+            "ar": ["عقيلة بني هاشم", "زينب الكبرى", "بطلة كربلاء"]
+          }
+        },
+        {
+          "title": {"en": "At Karbala", "de": "In Kerbela", "ar": "في كربلاء"},
+          "body": {"en": "She was with her brother al-Husayn at Karbala. After the battle she cared for the women and children and, as the sources describe, protected her sick nephew Ali Zayn al-Abidin.", "de": "Sie war mit ihrem Bruder al-Husain in Kerbela. Nach der Schlacht sorgte sie für Frauen und Kinder und schützte, wie die Quellen berichten, ihren kranken Neffen Ali Zain al-Abidin.", "ar": "كانت مع أخيها الحسين في كربلاء، وبعد المعركة رعت النساء والأطفال، وحمت ابن أخيها المريض علي زين العابدين كما تذكر المصادر."}
+        },
+        {
+          "title": {"en": "Words in Kufa and Damascus", "de": "Worte in Kufa und Damaskus", "ar": "خطبتاها في الكوفة والشام"},
+          "body": {"en": "As a captive she spoke in Kufa and at Yazid's court in Damascus. Her speeches are preserved in Shia sources such as al-Tabrisi's al-Ihtijaj and Ibn Tawus' al-Luhuf; some attribute parts to her sister Umm Kulthum.", "de": "Als Gefangene sprach sie in Kufa und am Hof Yazids in Damaskus. Ihre Reden sind in schiitischen Quellen wie al-Ihtidschadsch von at-Tabrisi und al-Luhuf von Ibn Tawus überliefert; manche schreiben Teile ihrer Schwester Umm Kulthum zu.", "ar": "خطبت وهي أسيرة في الكوفة وفي مجلس يزيد بالشام، وحفظت خطبتيها مصادر شيعية مثل الاحتجاج للطبرسي واللهوف لابن طاووس، وينسب بعضهم أجزاء منهما إلى أختها أم كلثوم."}
+        },
+        {
+          "title": {"en": "Nothing but beauty", "de": "Nichts als Schönheit", "ar": "ما رأيت إلا جميلًا"},
+          "body": {"en": "Ibn Tawus reports that when she was taunted about what had befallen her family, she answered that she had seen nothing but beauty: trust in Allah's wisdom in the deepest grief.", "de": "Ibn Tawus berichtet, dass sie auf den Hohn über das Schicksal ihrer Familie antwortete, sie habe nichts als Schönheit gesehen: Vertrauen in Allahs Weisheit im tiefsten Schmerz.", "ar": "يروي ابن طاووس أنها لما عُيّرت بما أصاب أهلها قالت إنها ما رأت إلا جميلًا، وهي ثقة بحكمة الله في أشد الحزن."}
+        },
+        {
+          "verse": "39:10",
+          "check": "without account",
+          "title": {"en": "Patience without measure", "de": "Geduld ohne Maß", "ar": "صبر بغير حساب"},
+          "body": {"en": "Her life is often read in the light of this verse: patience rewarded beyond any measure.", "de": "Ihr Leben wird oft im Licht dieses Verses gelesen: Geduld, die über jedes Maß hinaus belohnt wird.", "ar": "كثيرًا ما تُقرأ سيرتها في ضوء هذه الآية: صبر يُجزى بلا حد."}
+        },
+        {
+          "verse": "2:153",
+          "check": "patience and prayer",
+          "title": {"en": "Patience and prayer", "de": "Geduld und Gebet", "ar": "الصبر والصلاة"},
+          "body": {"en": "Strength in the hardest days came from patience and prayer.", "de": "Die Kraft in den schwersten Tagen kam aus Geduld und Gebet.", "ar": "جاءت القوة في أشد الأيام من الصبر والصلاة."}
+        },
+        {
+          "title": {"en": "Her shrine", "de": "Ihr Schrein", "ar": "مرقدها"},
+          "body": {"en": "Her burial place is debated. The shrine of Sayyida Zaynab near Damascus receives many pilgrims; a shrine in Cairo also bears her name, and some reports place her grave in Medina.", "de": "Ihr Grab ist umstritten. Der Schrein der Sayyida Zainab bei Damaskus empfängt viele Pilger; auch in Kairo trägt ein Schrein ihren Namen, und manche Berichte verorten ihr Grab in Medina.", "ar": "اختُلف في موضع قبرها؛ فمقام السيدة زينب قرب دمشق يقصده كثير من الزائرين، وفي القاهرة مشهد يحمل اسمها، وتذكر بعض الروايات أنها دُفنت في المدينة."}
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Zaynab bint Ali", "url": "https://en.wikipedia.org/wiki/Zaynab_bint_Ali"},
+        {"label": "Ibn Tawus, al-Luhuf 'ala Qatla al-Tufuf"},
+        {"label": "Al-Tabrisi, al-Ihtijaj"}
+      ]
+    },
+    {
+      "id": "ahl-al-bayt-04-sajjad",
+      "tradition": "shia",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {"en": "Ahl al-Bayt · 4", "de": "Ahl al-Bait · 4", "ar": "أهل البيت · ٤"},
+        "title": {"en": "Imam Zayn al-Abidin", "de": "Imam Zain al-Abidin", "ar": "الإمام زين العابدين"},
+        "sub": {"en": "The fourth Imam and al-Sahifa al-Sajjadiyya, the Psalms of the Prophet's family", "de": "Der vierte Imam und as-Sahifa as-Saddschadiyya, die Psalmen der Familie des Propheten", "ar": "الإمام الرابع والصحيفة السجادية، زبور آل محمد"},
+        "arabic": "الإمام السجاد"
+      },
+      "slides": [
+        {
+          "title": {"en": "The survivor of Karbala", "de": "Der Überlebende von Kerbela", "ar": "الناجي من كربلاء"},
+          "body": {"en": "Ali ibn al-Husayn was born in Medina around 38 AH. At Karbala he was too ill to fight, and his life was spared. He died in Medina in 94 or 95 AH and rests in al-Baqi.", "de": "Ali ibn al-Husain wurde um 38 n. H. in Medina geboren. In Kerbela war er zu krank zum Kämpfen, und sein Leben wurde verschont. Er starb 94 oder 95 n. H. in Medina und ruht in al-Baqi.", "ar": "وُلد علي بن الحسين في المدينة نحو سنة ٣٨هـ، وكان في كربلاء مريضًا لا يقدر على القتال فنجا، وتوفي في المدينة سنة ٩٤ أو ٩٥هـ ودُفن في البقيع."}
+        },
+        {
+          "title": {"en": "Ornament of the worshippers", "de": "Zierde der Anbetenden", "ar": "زينة العابدين"},
+          "body": {"en": "He is known as Zayn al-Abidin, the ornament of the worshippers, and as al-Sajjad, the one who prostrates much. Sunni scholars such as al-Zuhri also held him in high esteem.", "de": "Er ist bekannt als Zain al-Abidin, Zierde der Anbetenden, und als as-Saddschad, der sich viel Niederwerfende. Auch sunnitische Gelehrte wie az-Zuhri schätzten ihn sehr.", "ar": "يُلقّب بزين العابدين وبالسجاد لكثرة سجوده، وقد أجلّه علماء من أهل السنة أيضًا كالزهري."}
+        },
+        {
+          "title": {"en": "Al-Sahifa al-Sajjadiyya", "de": "As-Sahifa as-Saddschadiyya", "ar": "الصحيفة السجادية"},
+          "body": {"en": "His supplications were gathered in al-Sahifa al-Sajjadiyya. Its core holds 54 supplications: on praise and repentance, parents and children, neighbours, illness and the defenders of the frontiers.", "de": "Seine Bittgebete wurden in as-Sahifa as-Saddschadiyya gesammelt. Ihr Kern umfasst 54 Bittgebete: über Lobpreis und Reue, Eltern und Kinder, Nachbarn, Krankheit und die Verteidiger der Grenzen.", "ar": "جُمعت أدعيته في الصحيفة السجادية، وأصلها أربعة وخمسون دعاءً: في التحميد والتوبة، وللوالدين والأولاد، وللجيران، وعند المرض، ولأهل الثغور."}
+        },
+        {
+          "title": {"en": "Psalms of the family of Muhammad", "de": "Psalmen der Familie Muhammads", "ar": "زبور آل محمد"},
+          "body": {"en": "Shia tradition calls it the Psalms of the family of Muhammad and the sister of the Quran. William Chittick translated it into English as The Psalms of Islam (1987).", "de": "Die schiitische Überlieferung nennt sie die Psalmen der Familie Muhammads und die Schwester des Korans. William Chittick übersetzte sie als The Psalms of Islam (1987) ins Englische.", "ar": "يسميها التراث الشيعي زبور آل محمد وأخت القرآن، وقد ترجمها وليام تشيتك إلى الإنجليزية بعنوان مزامير الإسلام سنة ١٩٨٧م."}
+        },
+        {
+          "verse": "76:8-9",
+          "check": "give food",
+          "title": {"en": "Charity in secret", "de": "Spenden im Verborgenen", "ar": "صدقة السر"},
+          "body": {"en": "Shia and Sunni sources report that he carried food to the poor of Medina at night, unrecognised. They learned who had fed them only after his death.", "de": "Schiitische und sunnitische Quellen berichten, dass er nachts unerkannt Essen zu armen Familien Medinas trug. Erst nach seinem Tod erfuhren sie, wer sie versorgt hatte.", "ar": "تروي مصادر الشيعة والسنة أنه كان يحمل الطعام ليلًا إلى فقراء المدينة متخفيًا، فلم يعرفوا من كان يطعمهم إلا بعد وفاته."}
+        },
+        {
+          "title": {"en": "The Treatise of Rights", "de": "Die Abhandlung über die Rechte", "ar": "رسالة الحقوق"},
+          "body": {"en": "Risalat al-Huquq, attributed to him, sets out the rights owed to Allah, to one's own soul and limbs, to parents, children, teachers, neighbours and many others.", "de": "Risalat al-Huquq, die ihm zugeschrieben wird, beschreibt die Rechte Allahs, der eigenen Seele und Glieder, der Eltern, Kinder, Lehrer, Nachbarn und vieler anderer.", "ar": "تبيّن رسالة الحقوق المنسوبة إليه حقوق الله، وحقوق النفس والجوارح، والوالدين والأولاد، والمعلم والجار، وغيرهم كثير."}
+        },
+        {
+          "verse": "40:60",
+          "check": "Call upon Me",
+          "title": {"en": "A life of supplication", "de": "Ein Leben im Bittgebet", "ar": "حياة في الدعاء"},
+          "body": {"en": "The Sahifa answers this invitation: a whole life turned into conversation with Allah.", "de": "Die Sahifa antwortet auf diese Einladung: ein ganzes Leben als Zwiegespräch mit Allah.", "ar": "الصحيفة جواب لهذه الدعوة: حياة كاملة صارت مناجاة لله."}
+        },
+        {
+          "title": {"en": "Lessons from Imam al-Sajjad", "de": "Lehren von Imam as-Saddschad", "ar": "دروس من الإمام السجاد"},
+          "list": {
+            "en": ["Turn grief into worship and service", "Give in secret and protect people's dignity", "Know the rights of everyone around you", "Make dua part of every day"],
+            "de": ["Verwandeln Sie Trauer in Gottesdienst und Dienst am Menschen", "Geben Sie im Verborgenen und wahren Sie die Würde anderer", "Kennen Sie die Rechte aller Menschen um Sie herum", "Machen Sie das Bittgebet zu einem Teil jedes Tages"],
+            "ar": ["حوّل الحزن إلى عبادة وخدمة", "تصدّق في السر واحفظ كرامة الناس", "اعرف حقوق كل من حولك", "اجعل الدعاء جزءًا من كل يوم"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Ali al-Sajjad", "url": "https://en.wikipedia.org/wiki/Ali_al-Sajjad"},
+        {"label": "Wikipedia: Al-Sahifa al-Sajjadiyya", "url": "https://en.wikipedia.org/wiki/Al-Sahifa_al-Sajjadiyya"},
+        {"label": "W. C. Chittick (tr.), The Psalms of Islam (Muhammadi Trust, 1987)"}
+      ]
+    },
+    {
+      "id": "ahl-al-bayt-05-sadiq-school",
+      "tradition": "shia",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {"en": "Ahl al-Bayt · 5", "de": "Ahl al-Bait · 5", "ar": "أهل البيت · ٥"},
+        "title": {"en": "The school of Imam as-Sadiq", "de": "Die Schule Imam as-Sadiqs", "ar": "مدرسة الإمام الصادق"},
+        "sub": {"en": "How Medina became home to a great circle of learning", "de": "Wie Medina zur Heimat eines großen Lernkreises wurde", "ar": "كيف صارت المدينة موطن حلقة علمية كبرى"},
+        "arabic": "مدرسة أهل البيت"
+      },
+      "slides": [
+        {
+          "title": {"en": "A window in history", "de": "Ein Fenster in der Geschichte", "ar": "فرصة في التاريخ"},
+          "body": {"en": "Imam Ja'far as-Sadiq, the sixth Imam (83–148 AH), lived as Umayyad rule collapsed and the Abbasids rose. In these years of transition he could teach openly in Medina.", "de": "Imam Dschafar as-Sadiq, der sechste Imam (83–148 n. H.), erlebte den Zusammenbruch der Umayyaden und den Aufstieg der Abbasiden. In diesen Jahren des Umbruchs konnte er in Medina offen lehren.", "ar": "عاش الإمام جعفر الصادق، الإمام السادس (٨٣–١٤٨هـ)، زمن سقوط الدولة الأموية وقيام العباسية، فأتاحت له سنوات الانتقال هذه أن يعلّم في المدينة علنًا."}
+        },
+        {
+          "title": {"en": "Four thousand narrators", "de": "Viertausend Überlieferer", "ar": "أربعة آلاف راوٍ"},
+          "body": {"en": "Shaykh al-Mufid writes in al-Irshad that scholars of hadith counted four thousand trustworthy narrators who transmitted from him, despite their different views.", "de": "Schaikh al-Mufid schreibt in al-Irschad, dass Hadithgelehrte viertausend vertrauenswürdige Überlieferer zählten, die von ihm berichteten, trotz ihrer unterschiedlichen Ansichten.", "ar": "يذكر الشيخ المفيد في الإرشاد أن أصحاب الحديث جمعوا أسماء الرواة عنه من الثقات على اختلافهم في الآراء فكانوا أربعة آلاف رجل."}
+        },
+        {
+          "title": {"en": "Among his students", "de": "Unter seinen Schülern", "ar": "من تلاميذه"},
+          "list": {
+            "en": ["Zurara ibn A'yan", "Muhammad ibn Muslim", "Aban ibn Taghlib", "Hisham ibn al-Hakam"],
+            "de": ["Zurara ibn Ayan", "Muhammad ibn Muslim", "Aban ibn Taghlib", "Hischam ibn al-Hakam"],
+            "ar": ["زرارة بن أعين", "محمد بن مسلم", "أبان بن تغلب", "هشام بن الحكم"]
+          },
+          "body": {"en": "Sunni scholars such as Malik ibn Anas also narrated from him.", "de": "Auch sunnitische Gelehrte wie Malik ibn Anas überlieferten von ihm.", "ar": "وروى عنه أيضًا علماء من أهل السنة كمالك بن أنس."}
+        },
+        {
+          "title": {"en": "The Ja'fari school", "de": "Die dschafaritische Schule", "ar": "المذهب الجعفري"},
+          "body": {"en": "Twelver Shia jurisprudence is called the Ja'fari school after him. Much of its hadith goes back to his teaching and that of his father, Imam al-Baqir.", "de": "Die Rechtslehre der Zwölfer-Schiiten heißt nach ihm die dschafaritische Schule. Viele ihrer Überlieferungen gehen auf seine Lehre und die seines Vaters Imam al-Baqir zurück.", "ar": "يُسمّى فقه الشيعة الإمامية بالمذهب الجعفري نسبةً إليه، ويرجع كثير من أحاديثه إلى تعليمه وتعليم أبيه الإمام الباقر."}
+        },
+        {
+          "title": {"en": "The four hundred notebooks", "de": "Die vierhundert Hefte", "ar": "الأصول الأربعمائة"},
+          "body": {"en": "His students wrote down what they heard in notebooks known as the usul. Later scholars drew on them for the great Shia hadith collections, such as al-Kafi.", "de": "Seine Schüler schrieben das Gehörte in Hefte, die als Usul bekannt sind. Spätere Gelehrte schöpften daraus für die großen schiitischen Hadithsammlungen wie al-Kafi.", "ar": "دوّن تلاميذه ما سمعوه في كتب عُرفت بالأصول، واستقى منها العلماء بعدهم في جوامع الحديث الشيعية الكبرى كالكافي."}
+        },
+        {
+          "verse": "39:9",
+          "check": "those who know",
+          "title": {"en": "The worth of knowledge", "de": "Der Wert des Wissens", "ar": "فضل العلم"},
+          "body": {"en": "A school is built on this conviction: knowledge raises people when it leads to worship.", "de": "Eine Schule baut auf dieser Überzeugung auf: Wissen erhebt den Menschen, wenn es zur Anbetung führt.", "ar": "تقوم المدرسة على هذه القناعة: العلم يرفع صاحبه إذا قاده إلى العبادة."}
+        },
+        {
+          "title": {"en": "A bridge between Muslims", "de": "Eine Brücke zwischen Muslimen", "ar": "جسر بين المسلمين"},
+          "body": {"en": "In 1959 Shaykh Mahmud Shaltut of al-Azhar declared worship according to the Ja'fari school valid, and the Amman Message of 2005 lists it among the recognised schools of law.", "de": "1959 erklärte Scheich Mahmud Schaltut von der Azhar den Gottesdienst nach der dschafaritischen Schule für gültig, und die Amman-Botschaft von 2005 zählt sie zu den anerkannten Rechtsschulen.", "ar": "أفتى شيخ الأزهر محمود شلتوت سنة ١٩٥٩م بصحة التعبد على المذهب الجعفري، وعدّته رسالة عمّان سنة ٢٠٠٥م من المذاهب المعتبرة."}
+        },
+        {
+          "title": {"en": "Lessons from his school", "de": "Lehren aus seiner Schule", "ar": "دروس من مدرسته"},
+          "list": {
+            "en": ["Use calm times to teach and to build", "Write knowledge down and pass it on with care", "Welcome learners of every background"],
+            "de": ["Nutzen Sie ruhige Zeiten zum Lehren und Aufbauen", "Schreiben Sie Wissen auf und geben Sie es sorgfältig weiter", "Heißen Sie Lernende jeder Herkunft willkommen"],
+            "ar": ["اغتنم أوقات الهدوء للتعليم والبناء", "دوّن العلم وانقله بأمانة", "رحّب بالمتعلمين من كل خلفية"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Al-Shaykh al-Mufid, Kitab al-Irshad, chapter on Imam as-Sadiq"},
+        {"label": "Wikipedia: Ja'far al-Sadiq", "url": "https://en.wikipedia.org/wiki/Ja%27far_al-Sadiq"},
+        {"label": "Wikipedia: Amman Message", "url": "https://en.wikipedia.org/wiki/Amman_Message"}
+      ]
+    },
+    {
+      "id": "ahl-al-bayt-06-verses",
+      "tradition": "shia",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {"en": "Ahl al-Bayt · 6", "de": "Ahl al-Bait · 6", "ar": "أهل البيت · ٦"},
+        "title": {"en": "Two verses about the Ahl al-Bayt", "de": "Zwei Verse über die Ahl al-Bait", "ar": "آيتان في أهل البيت"},
+        "sub": {"en": "The verse of purification and the verse of mubahala in Shia understanding", "de": "Der Vers der Reinigung und der Vers der Mubahala im schiitischen Verständnis", "ar": "آية التطهير وآية المباهلة في الفهم الشيعي"},
+        "arabic": "آية التطهير وآية المباهلة"
+      },
+      "slides": [
+        {
+          "verse": "33:33",
+          "check": "remove from you the impurity",
+          "title": {"en": "The verse of purification", "de": "Der Vers der Reinigung", "ar": "آية التطهير"},
+          "body": {"en": "Its final sentence speaks of Allah's will to remove impurity from the people of the house and to purify them.", "de": "Ihr letzter Satz spricht von Allahs Willen, den Makel von den Leuten des Hauses zu entfernen und sie zu reinigen.", "ar": "تتحدث خاتمة الآية عن إرادة الله إذهاب الرجس عن أهل البيت وتطهيرهم."}
+        },
+        {
+          "title": {"en": "The people of the cloak", "de": "Die Leute des Mantels", "ar": "أصحاب الكساء"},
+          "body": {"en": "Shia and Sunni collections, including Sahih Muslim, report that the Prophet gathered Ali, Fatima, al-Hasan and al-Husayn under his cloak in connection with this verse. They are called the Ahl al-Kisa.", "de": "Schiitische und sunnitische Sammlungen, darunter Sahih Muslim, berichten, dass der Prophet Ali, Fatima, al-Hasan und al-Husain im Zusammenhang mit diesem Vers unter seinem Mantel versammelte. Sie heißen Ahl al-Kisa.", "ar": "تروي كتب الشيعة والسنة، ومنها صحيح مسلم، أن النبي ﷺ جمع عليًا وفاطمة والحسن والحسين تحت كسائه مقرونًا بهذه الآية، فسُمّوا أصحاب الكساء."}
+        },
+        {
+          "title": {"en": "How it is understood", "de": "Wie er verstanden wird", "ar": "كيف تُفهم الآية"},
+          "body": {"en": "In Shia understanding, the verse refers to the five of the cloak and points to their protection from sin, 'isma. Many Sunni commentators read it more widely, including the Prophet's wives because of the context.", "de": "Im schiitischen Verständnis bezieht sich der Vers auf die fünf des Mantels und weist auf ihre Bewahrung vor Sünde hin, die Isma. Viele sunnitische Kommentatoren verstehen ihn weiter und schließen wegen des Zusammenhangs die Frauen des Propheten ein.", "ar": "يرى الشيعة أن الآية في الخمسة أصحاب الكساء وأنها تدل على عصمتهم، ويفهمها كثير من مفسري السنة بمعنى أوسع يشمل زوجات النبي ﷺ بدلالة السياق."}
+        },
+        {
+          "verse": "3:61",
+          "check": "our sons and your sons",
+          "title": {"en": "The verse of mubahala", "de": "Der Vers der Mubahala", "ar": "آية المباهلة"},
+          "body": {"en": "Revealed when a Christian delegation from Najran disputed with the Prophet about Isa, peace be upon him.", "de": "Herabgesandt, als eine christliche Gesandtschaft aus Nadschran mit dem Propheten über Isa, Friede sei mit ihm, stritt.", "ar": "نزلت حين جادل وفد نصارى نجران النبي ﷺ في شأن عيسى عليه السلام."}
+        },
+        {
+          "title": {"en": "Whom he brought", "de": "Wen er mitbrachte", "ar": "من خرج بهم"},
+          "body": {"en": "Shia and Sunni reports, among them Sahih Muslim, say the Prophet came out with Ali, Fatima, al-Hasan and al-Husayn. In Shia understanding, Ali is the one meant by 'ourselves' in the verse.", "de": "Schiitische und sunnitische Berichte, darunter Sahih Muslim, sagen, dass der Prophet mit Ali, Fatima, al-Hasan und al-Husain hinausging. Im schiitischen Verständnis ist mit ‚uns selbst‘ im Vers Ali gemeint.", "ar": "تذكر روايات الشيعة والسنة، ومنها صحيح مسلم، أن النبي ﷺ خرج بعلي وفاطمة والحسن والحسين، ويرى الشيعة أن المقصود بقوله أنفسنا هو علي."}
+        },
+        {
+          "title": {"en": "The day of mubahala", "de": "Der Tag der Mubahala", "ar": "يوم المباهلة"},
+          "body": {"en": "The delegation chose not to go through with the mutual invocation and agreed to a peace treaty instead. Shia Muslims commemorate the day, commonly on 24 Dhul-Hijjah.", "de": "Die Gesandtschaft verzichtete auf das gegenseitige Anrufen und schloss stattdessen einen Friedensvertrag. Schiiten gedenken dieses Tages, meist am 24. Dhu l-Hiddscha.", "ar": "امتنع الوفد عن المباهلة وصالح النبي ﷺ على عهد، ويحيي الشيعة ذكرى هذا اليوم غالبًا في الرابع والعشرين من ذي الحجة."}
+        },
+        {
+          "verse": "42:23",
+          "check": "kinship",
+          "title": {"en": "Love for the near kin", "de": "Liebe zu den Nahestehenden", "ar": "مودة القربى"},
+          "body": {"en": "Shia commentators, and some Sunni ones, read this verse as a call to love the Prophet's family, al-qurba.", "de": "Schiitische und manche sunnitische Kommentatoren verstehen diesen Vers als Aufruf, die Familie des Propheten zu lieben, al-Qurba.", "ar": "يفهم مفسرو الشيعة وبعض مفسري السنة هذه الآية دعوة إلى مودة قربى النبي ﷺ."}
+        },
+        {
+          "title": {"en": "Living with these verses", "de": "Mit diesen Versen leben", "ar": "العيش مع هذه الآيات"},
+          "list": {
+            "en": ["Love the Prophet's family and learn their lives", "Seek purity of heart and of deed", "Speak about differences with knowledge and respect"],
+            "de": ["Lieben Sie die Familie des Propheten und lernen Sie ihr Leben kennen", "Streben Sie nach Reinheit des Herzens und der Tat", "Sprechen Sie über Unterschiede mit Wissen und Respekt"],
+            "ar": ["أحبّ آل بيت النبي ﷺ وتعرّف على سيرهم", "اطلب طهارة القلب والعمل", "تحدّث عن الخلاف بعلم واحترام"]
+          }
+        }
+      ],
+      "sources": [
+        {"label": "Wikipedia: Verse of purification", "url": "https://en.wikipedia.org/wiki/Verse_of_Purification"},
+        {"label": "Wikipedia: Event of the mubahala", "url": "https://en.wikipedia.org/wiki/Event_of_Mubahala"}
+      ]
+    }
+  ]
+}

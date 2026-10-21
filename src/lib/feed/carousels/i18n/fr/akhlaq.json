@@ -1,0 +1,260 @@
+{
+ "akhlaq-honesty": {
+  "c.k": "Le bon caractère · 1",
+  "c.t": "La sincérité : le chemin qui mène au bien",
+  "c.s": "Ce que le Coran et la Sunna enseignent sur la véracité",
+  "0.t": "Plus que ne pas mentir",
+  "0.b": "Le sidq, c'est la vérité dans les paroles, les intentions et les actes. Bien avant la révélation, les gens de La Mecque appelaient le Prophète al-Amin, le digne de confiance.",
+  "1.t": "Choisissez des compagnons sincères",
+  "1.b": "La sincérité grandit en bonne compagnie. Les gens qui vous entourent façonnent ce qui vous semble normal.",
+  "2.t": "La vérité est un chemin",
+  "2.b": "La sincérité est décrite comme une route qui a une direction. Chaque parole vraie est un pas, et le caractère se forme avec le temps.",
+  "3.t": "La bénédiction du commerce honnête",
+  "3.b": "Signaler les défauts de ce que l'on vend peut sembler une perte. Le hadith dit que c'est ce qui apporte la bénédiction dans la vente.",
+  "4.t": "À pratiquer cette semaine",
+  "4.l": [
+   "Tenez les petites promesses, même aux enfants",
+   "Corrigez une exagération dès que vous la remarquez",
+   "Dites « je ne sais pas » quand vous ne savez pas",
+   "Restez honnête dans les avis, CV et rapports"
+  ]
+ },
+ "akhlaq-patience": {
+  "c.k": "Le bon caractère · 2",
+  "c.t": "La patience : un bien en toute situation",
+  "c.s": "Le sabr dans le Coran et la Sunna, et comment le pratiquer",
+  "0.t": "Trois sortes de patience",
+  "0.b": "Les savants en décrivent souvent trois : la patience dans l'obéissance à Allah, la patience pour s'écarter de ce qu'Il interdit, et la patience face à ce qu'Il décrète.",
+  "1.t": "La patience vient de Lui",
+  "1.b": "Même la patience du Prophète est décrite comme venant d'Allah. Demandez-la-Lui, au lieu de seulement l'exiger de vous-même.",
+  "2.t": "Toujours un bien",
+  "2.b": "La joie appelle la gratitude, l'épreuve appelle la patience. Dans les deux cas, le croyant y gagne.",
+  "3.t": "Le premier instant",
+  "3.b": "Il est facile de se dire patient après coup. Le vrai test, c'est la première réaction et les premiers mots.",
+  "4.t": "Rien n'est perdu",
+  "4.b": "Même les petites douleurs et soucis peuvent effacer des péchés. L'épreuve n'est jamais vide de sens.",
+  "5.t": "Petits pas vers la patience",
+  "5.l": [
+   "Attendez avant de réagir à une mauvaise nouvelle",
+   "Dites l'istirja' quand vous perdez quelque chose",
+   "Tournez-vous vers la prière quand le cœur est lourd",
+   "Demandez la patience à Allah dans votre dou'a"
+  ]
+ },
+ "akhlaq-gratitude": {
+  "c.k": "Le bon caractère · 3",
+  "c.t": "La gratitude : voir le don",
+  "c.s": "La reconnaissance dans le cœur, sur la langue et dans les actes",
+  "0.t": "Trois lieux de la gratitude",
+  "0.b": "Les savants décrivent la gratitude du cœur, qui reconnaît le don, celle de la langue, qui loue le Donateur, et celle des membres, qui en font bon usage.",
+  "1.t": "Mangez, puis remerciez",
+  "1.b": "La nourriture ordinaire est un lieu de gratitude. Un repas peut devenir un acte d'adoration.",
+  "2.t": "La louange pour une bouchée",
+  "2.b": "On peut gagner l'agrément d'Allah par un mot de louange après avoir mangé ou bu. Cela ne coûte rien.",
+  "3.t": "Regardez ceux qui ont moins",
+  "3.b": "La comparaison peut voler la joie. Ce conseil la retourne pour que la gratitude grandisse à la place.",
+  "4.t": "Une gratitude qui veille la nuit",
+  "4.b": "Les longues prières nocturnes du Prophète étaient sa façon de dire merci. L'adoration peut être gratitude.",
+  "5.t": "Une habitude de gratitude",
+  "5.l": [
+   "Bismillah avant le repas, alhamdulillah après",
+   "Nommez trois bienfaits avant de dormir",
+   "Remerciez ceux qui vous ont aidé aujourd'hui",
+   "Servez-vous d'un bienfait pour aider quelqu'un"
+  ]
+ },
+ "akhlaq-humility": {
+  "c.k": "Le bon caractère · 4",
+  "c.t": "L'humilité : élevé en s'abaissant",
+  "c.s": "Pourquoi les humbles sont élevés, et pourquoi l'orgueil est le plus lourd fardeau",
+  "0.t": "Le conseil de Louqman",
+  "0.b": "L'humilité se voit au visage, à la démarche et à la voix. De petites habitudes révèlent le cœur.",
+  "1.t": "Élevé, non rabaissé",
+  "1.b": "L'humilité ressemble à une perte de rang. Le Prophète a promis le contraire.",
+  "2.t": "Ce qu'est vraiment l'orgueil",
+  "2.b": "Le hadith distingue la beauté de l'arrogance. Aimer les beaux habits est permis ; ce qui compte, c'est notre attitude envers la vérité et les gens.",
+  "3.t": "Le Prophète chez lui",
+  "3.b": "Le chef d'une communauté aidait aux tâches ménagères. Aucune tâche n'est indigne d'une personne humble.",
+  "4.t": "L'humilité au quotidien",
+  "4.l": [
+   "Saluez les gens avant qu'ils ne vous saluent",
+   "Acceptez la vérité, même d'un plus jeune",
+   "Aidez aux tâches que d'autres évitent",
+   "Remerciez Allah quand on vous fait des éloges"
+  ]
+ },
+ "akhlaq-generosity": {
+  "c.k": "Le bon caractère · 5",
+  "c.t": "La générosité : une main ouverte",
+  "c.s": "Donner de ce que l'on aime, le cœur léger",
+  "0.t": "Donnez ce que vous aimez",
+  "0.b": "Donner ce dont on n'a plus besoin est facile. Le verset place la barre plus haut.",
+  "1.t": "La générosité du Prophète",
+  "1.b": "Ses dons augmentaient encore en Ramadan, le mois du Coran.",
+  "2.t": "Dépenser n'est pas perdre",
+  "2.b": "Chaque jour apporte une invocation pour ceux qui donnent. La générosité reçoit sa contrepartie.",
+  "3.t": "Le petit don grandit",
+  "3.b": "Même la valeur d'une datte, issue d'un gain honnête, peut grandir sans mesure. N'attendez jamais d'avoir beaucoup.",
+  "4.t": "L'exemple des Ansar",
+  "4.b": "Les gens de Médine partagèrent leurs maisons et leurs biens avec les émigrés, malgré leur propre besoin.",
+  "5.t": "Donner, dès aujourd'hui",
+  "5.l": [
+   "Donnez peu, mais régulièrement",
+   "Partagez un repas avec un voisin ou un collègue",
+   "Donnez votre temps et toute votre attention",
+   "Donnez discrètement, sans le rappeler à personne"
+  ]
+ },
+ "akhlaq-anger": {
+  "c.k": "Le bon caractère · 6",
+  "c.t": "La colère : la force de se retenir",
+  "c.s": "Les conseils du Prophète pour le moment où la colère monte",
+  "0.t": "La vraie force",
+  "0.b": "La force est redéfinie : non pas gagner le combat, mais se maîtriser au cœur de la tempête.",
+  "1.t": "Un conseil répété",
+  "1.b": "Un homme demanda conseil encore et encore et reçut chaque fois la même réponse. Certaines leçons doivent être répétées.",
+  "2.t": "Trois degrés",
+  "2.b": "Contenir sa colère, puis pardonner, puis faire du bien à la personne. Chaque degré est plus élevé que le précédent.",
+  "3.t": "Des mots qui apaisent",
+  "3.b": "Le Prophète indiqua à un homme en colère de chercher refuge auprès d'Allah. Dites-le dès que vous sentez la chaleur monter.",
+  "4.t": "Pardonner sur le moment",
+  "4.b": "Parmi les qualités des croyants : la colère vient, mais le pardon la suit.",
+  "5.t": "Quand la colère monte",
+  "5.l": [
+   "Cherchez refuge auprès d'Allah contre Satan",
+   "Taisez-vous jusqu'à ce que vous soyez calme",
+   "Éloignez-vous quelques minutes",
+   "N'envoyez pas de messages écrits sous la colère"
+  ]
+ },
+ "akhlaq-backbiting": {
+  "c.k": "Le bon caractère · 7",
+  "c.t": "La médisance : protéger l'absent",
+  "c.s": "Pourquoi parler des autres dans leur dos pèse si lourd",
+  "0.t": "Une image qui marque",
+  "0.b": "Le Coran emploie une image volontairement choquante pour que nous ressentions ce qu'est vraiment la médisance.",
+  "1.t": "Même si c'est vrai",
+  "1.b": "Beaucoup pensent que c'est permis tant que l'histoire est vraie. La définition du Prophète ferme cette excuse.",
+  "2.t": "Une promesse pour qui garde sa langue",
+  "2.b": "Garder sa langue pèse si lourd que le Paradis est promis pour cela, avec la chasteté.",
+  "3.t": "Colporter les paroles",
+  "3.b": "Le qattat transporte les paroles entre les gens pour semer la discorde. Rompre cette chaîne est une bonne action.",
+  "4.t": "Moquerie et calomnie",
+  "4.b": "La sourate al-Humaza s'ouvre sur un avertissement à ceux qui rabaissent les autres, en paroles ou en gestes.",
+  "5.t": "Quand on parle d'un absent",
+  "5.l": [
+   "Changez de sujet avec tact",
+   "Mentionnez une qualité de la personne",
+   "Demandez-vous : le dirais-je en face ?",
+   "Faites plutôt une dou'a pour elle"
+  ]
+ },
+ "akhlaq-envy": {
+  "c.k": "Le bon caractère · 8",
+  "c.t": "L'envie : souhaiter plutôt le bien aux autres",
+  "c.s": "Comment l'islam transforme l'envie en amour et en saine ambition",
+  "0.t": "Non leur part, mais Sa grâce",
+  "0.b": "Au lieu de fixer ce que les autres possèdent, le verset vous tourne vers la demande du bien à Allah.",
+  "1.t": "Le contraire de l'envie",
+  "1.b": "L'envie veut que le bien quitte quelqu'un. La foi veut qu'il reste chez lui, et qu'il vous parvienne aussi.",
+  "2.t": "Une saine ambition",
+  "2.b": "Vouloir le même bien que quelqu'un, sans souhaiter qu'il le perde, est permis, et dans ces deux cas même loué.",
+  "3.t": "Frères et sœurs, non rivaux",
+  "3.b": "L'envie, la haine et la rupture sont citées ensemble. Le remède est de vivre en frères et sœurs.",
+  "4.t": "Chercher protection",
+  "4.b": "Al-Falaq se termine par la demande de refuge contre le mal d'un envieux. Beaucoup la récitent matin et soir.",
+  "5.t": "Quand l'envie vous gagne",
+  "5.l": [
+   "Dites ma sha Allah et demandez la bénédiction pour eux",
+   "Faites une dou'a pour celui que vous enviez",
+   "Comptez vos propres bienfaits",
+   "Demandez le bien à Allah sans regarder le leur"
+  ]
+ },
+ "akhlaq-neighbours": {
+  "c.k": "Le bon caractère · 9",
+  "c.t": "Les voisins : les droits de la porte d'à côté",
+  "c.s": "Avec quel sérieux l'islam considère ceux qui vivent à côté de vous",
+  "0.t": "Voisins proches et lointains",
+  "0.b": "Les voisins figurent dans le même verset que l'adoration et les parents, celui qui est proche comme celui qui est plus loin.",
+  "1.t": "Rappelé encore et encore",
+  "1.b": "Jibril ne cessait d'insister auprès du Prophète sur les droits du voisin. Cette répétition montre leur poids.",
+  "2.t": "Sécurité d'abord",
+  "2.b": "Le minimum est que votre voisin se sente à l'abri de vous : du bruit, du mal et de l'hostilité.",
+  "3.t": "Un peu plus d'eau",
+  "3.b": "La générosité n'a pas besoin d'un festin. Allongez ce que vous cuisinez et partagez-le.",
+  "4.t": "Commencez par la porte la plus proche",
+  "4.b": "Quand vous ne pouvez pas donner à tous, commencez par le plus proche.",
+  "5.t": "Être un bon voisin",
+  "5.l": [
+   "Saluez vos voisins par leur nom",
+   "Partagez un plat les jours de fête",
+   "Soyez attentif au bruit et au stationnement",
+   "Prenez des nouvelles des voisins âgés ou malades"
+  ]
+ },
+ "akhlaq-parents": {
+  "c.k": "Le bon caractère · 10",
+  "c.t": "La bonté envers les parents",
+  "c.s": "Une œuvre parmi les plus aimées d'Allah",
+  "0.t": "Doux en paroles et en actes",
+  "0.b": "Deux versets qui couvrent la parole, l'attitude et l'invocation. Lisez-les lentement en pensant à vos parents.",
+  "1.t": "Juste après la prière",
+  "1.b": "Interrogé sur les œuvres les plus aimées, le Prophète cita la bonté envers les parents juste après la prière à l'heure.",
+  "2.t": "Votre mère, trois fois",
+  "2.b": "La mère est nommée trois fois avant le père, pour honorer ses soins, sa grossesse et ses sacrifices.",
+  "3.t": "Une occasion manquée",
+  "3.b": "Des parents âgés sont une porte ouverte vers le Paradis. L'avertissement vise ceux qui laissent passer cette chance.",
+  "4.t": "Petits gestes de bonté",
+  "4.l": [
+   "Appelez-les, même quand vous êtes occupé",
+   "Parlez doucement, jamais avec impatience",
+   "Demandez leur conseil et leurs dou'as",
+   "Invoquez Allah pour eux à chaque prière"
+  ]
+ },
+ "akhlaq-promises": {
+  "c.k": "Le bon caractère · 11",
+  "c.t": "Tenir ses promesses",
+  "c.s": "Pourquoi une parole rompue pèse lourd en islam",
+  "0.t": "Vous serez interrogé",
+  "0.b": "Les promesses ne sont pas qu'une politesse sociale. Chacune est une responsabilité dont on sera interrogé.",
+  "1.t": "Une marque de ceux qui réussissent",
+  "1.b": "Parmi les qualités citées au début d'al-Mu'minun, le respect des dépôts et des promesses a sa propre place.",
+  "2.t": "Un signe à éviter",
+  "2.b": "Manquer à ses promesses figure parmi les signes de l'hypocrisie. La parole d'un croyant doit être fiable.",
+  "3.t": "Même ses adversaires le savaient",
+  "3.b": "Abou Soufyan, encore adversaire à l'époque, décrivit à l'empereur byzantin ce qu'enseignait le Prophète. Tenir ses promesses en faisait partie.",
+  "4.t": "Paroles et actes",
+  "4.b": "Dire sans faire est décrit comme profondément détesté par Allah. Promettez moins, tenez davantage.",
+  "5.t": "Tenir parole",
+  "5.l": [
+   "Dites in sha Allah, puis faites vraiment l'effort",
+   "Notez ce que vous avez promis",
+   "Si vous ne pouvez pas tenir, dites-le tôt",
+   "Soyez à l'heure : le temps aussi est une promesse"
+  ]
+ },
+ "akhlaq-kind-words": {
+  "c.k": "Le bon caractère · 12",
+  "c.t": "Un sourire et une bonne parole",
+  "c.s": "La petite aumône que chacun peut donner",
+  "0.t": "Aucune bonne action n'est petite",
+  "0.b": "Un visage souriant compte comme une vraie bonne action. Cela ne coûte rien et peut changer la journée de quelqu'un.",
+  "1.t": "Le sourire du Prophète",
+  "1.b": "Jarir se souvenait que le Prophète lui souriait chaque fois qu'il le voyait. Les gens se souviennent de ce que nous leur avons fait ressentir.",
+  "2.t": "L'aumône sans argent",
+  "2.b": "L'aumône n'est pas que de l'argent. Une bonne parole, un coup de main et un jugement équitable comptent tous.",
+  "3.t": "Comment donner",
+  "3.b": "La manière de donner compte autant que ce que l'on donne. Des mots doux peuvent être le cadeau lui-même.",
+  "4.t": "La mesure des meilleurs",
+  "4.b": "Le Prophète n'employait jamais de propos grossiers, et il mesurait la valeur des gens à leur caractère.",
+  "5.t": "Essayez aujourd'hui",
+  "5.l": [
+   "Souriez à la première personne que vous croisez",
+   "Remerciez quelqu'un par son nom",
+   "Remplacez une plainte par une bonne parole",
+   "Envoyez un message d'encouragement"
+  ]
+ }
+}

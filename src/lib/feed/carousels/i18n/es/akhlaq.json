@@ -1,0 +1,260 @@
+{
+ "akhlaq-honesty": {
+  "c.k": "Carácter · 1",
+  "c.t": "La sinceridad: el camino que lleva al bien",
+  "c.s": "Lo que el Corán y la Sunna enseñan sobre la veracidad",
+  "0.t": "Más que no mentir",
+  "0.b": "Sidq es verdad en las palabras, las intenciones y los actos. Mucho antes de la revelación, la gente de La Meca llamaba al Profeta al-Amin, el digno de confianza.",
+  "1.t": "Elija compañía veraz",
+  "1.b": "La sinceridad crece en buena compañía. Las personas que le rodean moldean lo que a usted le parece normal.",
+  "2.t": "La verdad es un camino",
+  "2.b": "La sinceridad se describe como un camino con dirección. Cada palabra verdadera es un paso, y el carácter se forma con el tiempo.",
+  "3.t": "Bendición en el comercio honrado",
+  "3.b": "Mencionar los defectos de lo que vende puede parecer una pérdida. El hadiz dice que es justo eso lo que trae bendición al trato.",
+  "4.t": "Practíquela esta semana",
+  "4.l": [
+   "Cumpla las promesas pequeñas, también a los niños",
+   "Corrija una exageración en cuanto la note",
+   "Diga «no lo sé» cuando no lo sepa",
+   "Sea sincero en reseñas, currículos e informes"
+  ]
+ },
+ "akhlaq-patience": {
+  "c.k": "Carácter · 2",
+  "c.t": "La paciencia: un bien en toda situación",
+  "c.s": "El sabr en el Corán y la Sunna, y cómo practicarlo",
+  "0.t": "Tres clases de paciencia",
+  "0.b": "Los sabios suelen describir tres: paciencia en obedecer a Allah, paciencia en apartarse de lo que Él prohíbe y paciencia ante lo que Él decreta.",
+  "1.t": "La paciencia viene de Él",
+  "1.b": "Incluso la paciencia del Profeta se describe como venida de Allah. Pídasela a Él, en lugar de solo exigírsela a usted mismo.",
+  "2.t": "Un bien en ambos casos",
+  "2.b": "La alegría invita a la gratitud; la dificultad, a la paciencia. En ambos casos, el creyente sale ganando.",
+  "3.t": "El primer momento",
+  "3.b": "Es fácil decir más tarde que se tuvo paciencia. Su verdadera prueba es la primera reacción y las primeras palabras.",
+  "4.t": "Nada se pierde",
+  "4.b": "Incluso los pequeños dolores y preocupaciones pueden borrar pecados. La dificultad nunca carece de sentido.",
+  "5.t": "Pequeños pasos hacia la paciencia",
+  "5.l": [
+   "Haga una pausa antes de reaccionar a una mala noticia",
+   "Diga el istirja' cuando pierda algo",
+   "Acuda a la oración cuando su corazón pese",
+   "Pida paciencia a Allah en su súplica"
+  ]
+ },
+ "akhlaq-gratitude": {
+  "c.k": "Carácter · 3",
+  "c.t": "La gratitud: ver el regalo",
+  "c.s": "Agradecimiento en el corazón, en la lengua y en los actos",
+  "0.t": "Tres lugares de la gratitud",
+  "0.b": "Los sabios describen la gratitud en el corazón al reconocer el regalo, en la lengua al alabar a Quien lo da, y en los miembros al usarlo bien.",
+  "1.t": "Coma y después agradezca",
+  "1.b": "La comida de cada día es un lugar para la gratitud. Una comida puede convertirse en un acto de adoración.",
+  "2.t": "Alabanza por un solo bocado",
+  "2.b": "La complacencia de Allah puede ganarse con una palabra de alabanza por la comida y la bebida. No cuesta nada.",
+  "3.t": "Compárese con quien tiene menos",
+  "3.b": "Compararse puede robar la alegría. Este consejo le da la vuelta para que, en cambio, crezca la gratitud.",
+  "4.t": "Gratitud que se pone en pie de noche",
+  "4.b": "Las largas oraciones nocturnas del Profeta eran su forma de dar las gracias. La adoración puede ser gratitud.",
+  "5.t": "Un hábito de gratitud",
+  "5.l": [
+   "Bismillah antes de comer, alhamdulillah después",
+   "Nombre tres bendiciones antes de dormir",
+   "Agradezca a quienes le ayudaron hoy",
+   "Use una bendición para ayudar a otra persona"
+  ]
+ },
+ "akhlaq-humility": {
+  "c.k": "Carácter · 4",
+  "c.t": "La humildad: elevado al rebajarse",
+  "c.s": "Por qué los humildes son elevados y el orgullo es la carga más pesada",
+  "0.t": "El consejo de Luqman",
+  "0.b": "La humildad se nota en el rostro, en el andar y en la voz. Los pequeños hábitos revelan el corazón.",
+  "1.t": "Elevado, no rebajado",
+  "1.b": "La humildad parece una pérdida de rango. El Profeta prometió lo contrario.",
+  "2.t": "Qué es en realidad el orgullo",
+  "2.b": "El hadiz separa la belleza de la arrogancia. Gustar de la buena ropa está bien; lo que importa es cómo tratamos la verdad y a las personas.",
+  "3.t": "El Profeta en casa",
+  "3.b": "El líder de una comunidad ayudaba en las tareas de la casa. Ninguna tarea es indigna de una persona humilde.",
+  "4.t": "La humildad en la vida diaria",
+  "4.l": [
+   "Salude a los demás antes de que le saluden",
+   "Acepte la verdad, aunque venga de alguien más joven",
+   "Ayude en las tareas que otros evitan",
+   "Agradezca a Allah cuando le elogien"
+  ]
+ },
+ "akhlaq-generosity": {
+  "c.k": "Carácter · 5",
+  "c.t": "La generosidad: una mano abierta",
+  "c.s": "Dar de lo que se ama, con el corazón ligero",
+  "0.t": "Dé de lo que ama",
+  "0.b": "Dar lo que ya no necesitamos es fácil. La aleya pone el listón más alto.",
+  "1.t": "La generosidad del Profeta",
+  "1.b": "Su generosidad crecía aún más en Ramadán, el mes del Corán.",
+  "2.t": "Gastar no es perder",
+  "2.b": "Cada día trae una súplica por quienes dan. La generosidad recibe respuesta.",
+  "3.t": "Los regalos pequeños crecen",
+  "3.b": "Incluso el valor de un dátil, de ganancia honrada, puede crecer sin medida. No espere nunca a tener mucho.",
+  "4.t": "El ejemplo de los Ansar",
+  "4.b": "La gente de Medina compartió sus casas y sus bienes con los emigrantes, pese a su propia necesidad.",
+  "5.t": "Formas de dar hoy",
+  "5.l": [
+   "Dé algo pequeño, pero con regularidad",
+   "Comparta comida con un vecino o un compañero",
+   "Dé su tiempo y toda su atención",
+   "Dé en silencio, sin recordárselo a nadie"
+  ]
+ },
+ "akhlaq-anger": {
+  "c.k": "Carácter · 6",
+  "c.t": "La ira: la fuerza de contenerse",
+  "c.s": "Consejos proféticos para el momento en que sube la ira",
+  "0.t": "La verdadera fuerza",
+  "0.b": "La fuerza se redefine: no es ganar la pelea, sino dominarse a uno mismo en pleno acaloramiento.",
+  "1.t": "Un consejo repetido",
+  "1.b": "Un hombre pidió consejo una y otra vez y recibió siempre la misma respuesta. Algunas lecciones necesitan repetirse.",
+  "2.t": "Tres niveles",
+  "2.b": "Contener la ira, después perdonar y después hacer el bien a esa persona. Cada paso está más alto que el anterior.",
+  "3.t": "Palabras que enfrían la ira",
+  "3.b": "El Profeta indicó a un hombre airado que buscara refugio en Allah. Dígalo en cuanto sienta que sube el calor.",
+  "4.t": "Perdonar en el momento",
+  "4.b": "Entre las cualidades de los creyentes: llega la ira, pero el perdón la sigue.",
+  "5.t": "Cuando sube la ira",
+  "5.l": [
+   "Busque refugio en Allah contra Satanás",
+   "Guarde silencio hasta calmarse",
+   "Apártese unos minutos",
+   "No envíe mensajes escritos con ira"
+  ]
+ },
+ "akhlaq-backbiting": {
+  "c.k": "Carácter · 7",
+  "c.t": "La murmuración: proteger al ausente",
+  "c.s": "Por qué hablar de otros a sus espaldas pesa tanto",
+  "0.t": "Una imagen que se queda",
+  "0.b": "El Corán usa una imagen deliberadamente impactante para que sintamos lo que es de verdad la murmuración.",
+  "1.t": "Aunque sea verdad",
+  "1.b": "Muchos piensan que no pasa nada mientras la historia sea cierta. La definición del Profeta cierra esa excusa.",
+  "2.t": "Una promesa por guardar la lengua",
+  "2.b": "Guardar la lengua pesa tanto que por ello se promete el Paraíso, junto con la castidad.",
+  "3.t": "Llevar chismes",
+  "3.b": "Un qattat lleva palabras de unos a otros para sembrar discordia. Romper esa cadena es una buena obra.",
+  "4.t": "Burla y difamación",
+  "4.b": "La sura al-Humaza se abre con una advertencia a quienes menosprecian a otros, de palabra o con gestos.",
+  "5.t": "Cuando se habla de alguien ausente",
+  "5.l": [
+   "Cambie de tema con amabilidad",
+   "Mencione algo bueno de esa persona",
+   "Pregúntese: ¿se lo diría a la cara?",
+   "En su lugar, haga una súplica por ella"
+  ]
+ },
+ "akhlaq-envy": {
+  "c.k": "Carácter · 8",
+  "c.t": "La envidia: desear el bien a los demás",
+  "c.s": "Cómo el islam convierte la envidia en amor y en sana ambición",
+  "0.t": "No su parte, sino Su favor",
+  "0.b": "En lugar de mirar fijamente lo que otros tienen, la aleya le orienta a pedir el bien a Allah.",
+  "1.t": "Lo contrario de la envidia",
+  "1.b": "La envidia quiere que el bien abandone a alguien. La fe quiere que se quede con esa persona y que también le llegue a usted.",
+  "2.t": "Sana ambición",
+  "2.b": "Desear el mismo bien que alguien, sin desear que lo pierda, está permitido y en estos dos casos incluso es elogiado.",
+  "3.t": "Hermanos y hermanas, no rivales",
+  "3.b": "La envidia, el odio y el romper los lazos se nombran juntos. El remedio es vivir como hermanos y hermanas.",
+  "4.t": "Buscar protección",
+  "4.b": "Al-Falaq termina buscando refugio del mal del envidioso. Muchos la recitan por la mañana y por la tarde.",
+  "5.t": "Cuando sienta envidia",
+  "5.l": [
+   "Diga ma sha Allah y pida bendición para la persona",
+   "Haga una súplica por la persona a quien envidia",
+   "Cuente sus propias bendiciones",
+   "Pida el bien a Allah sin mirar lo de otros"
+  ]
+ },
+ "akhlaq-neighbours": {
+  "c.k": "Carácter · 9",
+  "c.t": "Los vecinos: el derecho de quien vive al lado",
+  "c.s": "Con cuánta seriedad toma el islam a quienes viven a su lado",
+  "0.t": "Vecinos cercanos y lejanos",
+  "0.b": "Los vecinos aparecen en la misma aleya que la adoración y los padres: tanto el que está cerca como el que está más lejos.",
+  "1.t": "Recalcado una y otra vez",
+  "1.b": "Yibril insistía una y otra vez al Profeta en los derechos del vecino. Esa repetición muestra su peso.",
+  "2.t": "Primero, la seguridad",
+  "2.b": "Lo mínimo es que su vecino se sienta a salvo de usted: del ruido, del daño y de la hostilidad.",
+  "3.t": "Un poco más de agua",
+  "3.b": "La generosidad no necesita un banquete. Estire lo que cocina y compártalo.",
+  "4.t": "Empiece por la puerta más cercana",
+  "4.b": "Cuando no pueda dar a todos, empiece por quien está más cerca de usted.",
+  "5.t": "Ser un buen vecino",
+  "5.l": [
+   "Salude a sus vecinos por su nombre",
+   "Comparta comida en los días especiales",
+   "Sea considerado con el ruido y el aparcamiento",
+   "Interésese por los vecinos mayores o enfermos"
+  ]
+ },
+ "akhlaq-parents": {
+  "c.k": "Carácter · 10",
+  "c.t": "La bondad con los padres",
+  "c.s": "Una de las obras más amadas por Allah",
+  "0.t": "Suave de palabra y de obra",
+  "0.b": "Dos aleyas que abarcan el habla, la actitud y la súplica. Léalas despacio y piense en sus padres.",
+  "1.t": "Justo después de la oración",
+  "1.b": "Preguntado por las obras más amadas, el Profeta nombró la bondad con los padres justo después de la oración a su hora.",
+  "2.t": "Su madre, tres veces",
+  "2.b": "La madre se nombra tres veces antes que el padre, honrando sus cuidados, su embarazo y su sacrificio.",
+  "3.t": "Una oportunidad perdida",
+  "3.b": "Los padres ancianos son una puerta abierta al Paraíso. La advertencia es para quienes dejan pasar esa ocasión.",
+  "4.t": "Pequeños gestos de bondad",
+  "4.l": [
+   "Llámelos, aunque esté ocupado",
+   "Hábleles con suavidad, nunca con impaciencia",
+   "Pídales consejo y que hagan súplica por usted",
+   "Haga súplica por ellos en cada oración"
+  ]
+ },
+ "akhlaq-promises": {
+  "c.k": "Carácter · 11",
+  "c.t": "Cumplir las promesas",
+  "c.s": "Por qué una palabra rota pesa tanto en el islam",
+  "0.t": "Se le preguntará",
+  "0.b": "Las promesas no son solo cortesía social. Cada una es una responsabilidad por la que se preguntará.",
+  "1.t": "Una marca de los triunfadores",
+  "1.b": "Entre las cualidades enumeradas al comienzo de al-Mu'minun, cumplir los depósitos y las promesas tiene un lugar propio.",
+  "2.t": "Una señal que evitar",
+  "2.b": "Romper las promesas figura entre las señales de la hipocresía. La palabra de un creyente debe ser fiable.",
+  "3.t": "Hasta sus adversarios lo sabían",
+  "3.b": "Abu Sufyan, entonces aún adversario, contó al emperador bizantino lo que enseñaba el Profeta. Cumplir las promesas era parte de ello.",
+  "4.t": "Palabras y obras",
+  "4.b": "Decir sin hacer se describe como algo que Allah detesta profundamente. Prometa menos y cumpla más.",
+  "5.t": "Cumplir su palabra",
+  "5.l": [
+   "Diga in sha Allah y después inténtelo de verdad",
+   "Anote lo que prometió",
+   "Si no puede cumplir, dígalo pronto",
+   "Sea puntual: el tiempo también es una promesa"
+  ]
+ },
+ "akhlaq-kind-words": {
+  "c.k": "Carácter · 12",
+  "c.t": "Una sonrisa y una palabra amable",
+  "c.s": "La pequeña caridad que todos pueden dar",
+  "0.t": "Ninguna buena obra es pequeña",
+  "0.b": "Un rostro amable cuenta como una verdadera buena obra. No cuesta nada y puede cambiar el día de alguien.",
+  "1.t": "La sonrisa del Profeta",
+  "1.b": "Yarir recordaba que el Profeta le sonreía cada vez que lo veía. La gente recuerda cómo la hicimos sentir.",
+  "2.t": "Caridad sin dinero",
+  "2.b": "La caridad no es solo dinero. Una buena palabra, una mano que ayuda y un juicio justo, todo cuenta.",
+  "3.t": "Cómo damos",
+  "3.b": "Cómo damos importa tanto como lo que damos. Las palabras amables pueden ser el regalo mismo.",
+  "4.t": "La medida de los mejores",
+  "4.b": "El Profeta nunca usó palabras groseras y medía el valor de las personas por su carácter.",
+  "5.t": "Pruebe esto hoy",
+  "5.l": [
+   "Sonría a la primera persona que encuentre",
+   "Dé las gracias a alguien por su nombre",
+   "Cambie una queja por una palabra amable",
+   "Envíe un mensaje de ánimo"
+  ]
+ }
+}

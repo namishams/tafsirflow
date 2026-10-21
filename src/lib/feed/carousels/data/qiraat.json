@@ -1,0 +1,817 @@
+{
+  "series": "qiraat",
+  "label": {
+    "en": "Qira'at explained",
+    "de": "Die Lesarten erklärt",
+    "ar": "القراءات"
+  },
+  "topic": "quran",
+  "tradition": "all",
+  "items": [
+    {
+      "id": "qiraat-01-what-are-qiraat",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Qira'at explained · 1",
+          "de": "Die Lesarten erklärt · 1",
+          "ar": "القراءات · ١"
+        },
+        "title": {
+          "en": "What are the qira'at?",
+          "de": "Was sind die Qira'at?",
+          "ar": "ما القراءات؟"
+        },
+        "sub": {
+          "en": "One Quran, recited in several authentic ways, each traced back to the Prophet",
+          "de": "Ein Koran, in mehreren authentischen Weisen rezitiert, jede bis zum Propheten zurückgeführt",
+          "ar": "قرآن واحد يُتلى بأوجه ثابتة، كل منها متصل السند إلى النبي ﷺ"
+        },
+        "arabic": "القراءات"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A reading with a chain",
+            "de": "Eine Lesart mit Kette",
+            "ar": "قراءة لها سند"
+          },
+          "arabic": "القراءات",
+          "body": {
+            "en": "A qira'ah is a way of reciting the Quran named after one of the great imams of recitation. It was passed down through an unbroken chain of teachers reaching back to the Prophet, peace be upon him.",
+            "de": "Eine Qira'a ist eine Weise, den Koran zu rezitieren, benannt nach einem der großen Imame der Rezitation. Sie wurde über eine ununterbrochene Kette von Lehrern überliefert, die bis zum Propheten, Friede sei mit ihm, zurückreicht.",
+            "ar": "القراءة وجه من أوجه تلاوة القرآن يُنسب إلى أحد أئمة الإقراء، وقد رُوي بسند متصل من المعلمين يرجع إلى النبي ﷺ."
+          }
+        },
+        {
+          "verse": "73:4",
+          "check": "measured recitation",
+          "title": {
+            "en": "Made to be recited",
+            "de": "Zum Rezitieren bestimmt",
+            "ar": "نزل ليُتلى"
+          },
+          "body": {
+            "en": "The Quran was always learned aloud and with care, from teacher to student. The qira'at are the forms in which this recitation was kept.",
+            "de": "Der Koran wurde stets laut und sorgfältig gelernt, vom Lehrer zum Schüler. Die Qira'at sind die Formen, in denen diese Rezitation bewahrt wurde.",
+            "ar": "ما زال القرآن يُتلقى مشافهة بعناية من المعلم إلى المتعلم، والقراءات هي الصور التي حُفظت بها هذه التلاوة."
+          }
+        },
+        {
+          "title": {
+            "en": "What differs?",
+            "de": "Was unterscheidet sich?",
+            "ar": "فيم تختلف؟"
+          },
+          "body": {
+            "en": "Most differences concern pronunciation: the length of a madd, softening a hamza, tilting a vowel, heavy or light letters. Some concern the form of a word within the same script, each with a valid meaning.",
+            "de": "Die meisten Unterschiede betreffen die Aussprache: die Länge einer Dehnung, ein erleichtertes Hamza, einen geneigten Vokal, schwere oder leichte Buchstaben. Manche betreffen die Form eines Wortes im selben Schriftbild, jede mit gültiger Bedeutung.",
+            "ar": "أكثر الاختلاف في الأداء: مقادير المد، وتسهيل الهمز، والإمالة، والتفخيم والترقيق، وبعضه في صيغة الكلمة ضمن الرسم نفسه، ولكل وجه معنى صحيح."
+          }
+        },
+        {
+          "title": {
+            "en": "Three conditions",
+            "de": "Drei Bedingungen",
+            "ar": "الأركان الثلاثة"
+          },
+          "body": {
+            "en": "Ibn al-Jazari names three conditions for an accepted reading:",
+            "de": "Ibn al-Dschazari nennt drei Bedingungen für eine anerkannte Lesart:",
+            "ar": "ذكر ابن الجزري ثلاثة أركان للقراءة المقبولة:"
+          },
+          "list": {
+            "en": [
+              "A sound chain of transmission",
+              "Agreement with Arabic grammar, at least in one valid way",
+              "Agreement with one of the 'Uthmani copies, even if only implicitly"
+            ],
+            "de": [
+              "Eine gesunde Überlieferungskette",
+              "Übereinstimmung mit der arabischen Grammatik, zumindest in einer gültigen Weise",
+              "Übereinstimmung mit einer der 'uthmanischen Abschriften, sei es auch nur der Möglichkeit nach"
+            ],
+            "ar": [
+              "صحة السند",
+              "موافقة العربية ولو بوجه",
+              "موافقة أحد المصاحف العثمانية ولو احتمالًا"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Four key words",
+            "de": "Vier Schlüsselbegriffe",
+            "ar": "أربعة مصطلحات"
+          },
+          "list": {
+            "en": [
+              "Qira'ah: the reading of an imam, such as 'Asim",
+              "Riwayah: the version of his transmitter, such as Hafs",
+              "Tariq: a path after the transmitter, such as ash-Shatibiyyah",
+              "Wajh: an option the reciter may choose"
+            ],
+            "de": [
+              "Qira'a: die Lesart eines Imams, etwa 'Asim",
+              "Riwaya: die Fassung seines Überlieferers, etwa Hafs",
+              "Tariq: ein Weg nach dem Überlieferer, etwa asch-Schatibiyya",
+              "Wadschh: eine Wahlmöglichkeit des Rezitators"
+            ],
+            "ar": [
+              "القراءة: ما يُنسب إلى الإمام كعاصم",
+              "الرواية: ما يُنسب إلى الراوي عنه كحفص",
+              "الطريق: ما يُنسب إلى من بعد الراوي كطريق الشاطبية",
+              "الوجه: ما يُخيَّر فيه القارئ"
+            ]
+          }
+        },
+        {
+          "verse": "15:9",
+          "check": "guardian",
+          "title": {
+            "en": "Many readings, one protected Book",
+            "de": "Viele Lesarten, ein bewahrtes Buch",
+            "ar": "قراءات كثيرة وكتاب محفوظ"
+          },
+          "body": {
+            "en": "The variety of readings does not weaken the Quran's preservation. It shows how carefully every letter was handed on.",
+            "de": "Die Vielfalt der Lesarten schwächt die Bewahrung des Korans nicht. Sie zeigt, wie sorgfältig jeder Buchstabe weitergegeben wurde.",
+            "ar": "تعدد القراءات لا ينقص من حفظ القرآن، بل يدل على دقة نقل كل حرف منه."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Jazari, al-Nashr fi al-Qira'at al-'Ashr"
+        },
+        {
+          "label": "Ibn al-Jazari, Tayyibat al-Nashr fi al-Qira'at al-'Ashr"
+        }
+      ]
+    },
+    {
+      "id": "qiraat-02-ahruf-and-qiraat",
+      "tradition": "sunni",
+      "needs_review": true,
+      "palette": "emerald",
+      "cover": {
+        "kicker": {
+          "en": "Qira'at explained · 2",
+          "de": "Die Lesarten erklärt · 2",
+          "ar": "القراءات · ٢"
+        },
+        "title": {
+          "en": "The seven ahruf and the qira'at",
+          "de": "Die sieben Ahruf und die Qira'at",
+          "ar": "الأحرف السبعة والقراءات"
+        },
+        "sub": {
+          "en": "Two ideas that are often mixed up, and how scholars relate them",
+          "de": "Zwei Begriffe, die oft verwechselt werden, und wie Gelehrte sie verbinden",
+          "ar": "مفهومان يكثر الخلط بينهما، وكيف ربط العلماء بينهما"
+        },
+        "arabic": "الأحرف السبعة"
+      },
+      "slides": [
+        {
+          "hadith": "bukhari:4991",
+          "check": "seven different ways",
+          "title": {
+            "en": "Revealed in seven ways",
+            "de": "In sieben Weisen offenbart",
+            "ar": "نزل على سبعة أحرف"
+          },
+          "body": {
+            "en": "The Prophet asked for more and more ways. The hadith speaks of ahruf, modes of recitation, not of seven named readers.",
+            "de": "Der Prophet bat um immer weitere Weisen. Der Hadith spricht von Ahruf, Weisen der Rezitation, nicht von sieben namentlichen Lesern.",
+            "ar": "استزاد النبي ﷺ حتى بلغ سبعة أحرف، والحديث يتحدث عن أحرف، أي أوجه للقراءة، لا عن سبعة قراء بأسمائهم."
+          }
+        },
+        {
+          "title": {
+            "en": "What are the ahruf?",
+            "de": "Was sind die Ahruf?",
+            "ar": "ما الأحرف السبعة؟"
+          },
+          "arabic": "الأحرف السبعة",
+          "body": {
+            "en": "Scholars differ widely. Some say seven Arabic dialects, others seven kinds of variation in words and forms, others that seven means plenty. Al-Suyuti reports around forty opinions.",
+            "de": "Die Gelehrten sind sich hier sehr uneinig. Manche sagen: sieben arabische Dialekte, andere: sieben Arten von Abweichungen in Wörtern und Formen, wieder andere: sieben steht für Fülle. As-Suyuti nennt rund vierzig Meinungen.",
+            "ar": "اختلف العلماء في معناها كثيرًا: فقيل سبع لغات من لغات العرب، وقيل سبعة أوجه من التغاير في الألفاظ والصيغ، وقيل العدد للكثرة، وذكر السيوطي نحو أربعين قولًا."
+          }
+        },
+        {
+          "title": {
+            "en": "Not the seven readers",
+            "de": "Nicht die sieben Leser",
+            "ar": "ليست القراءات السبع"
+          },
+          "body": {
+            "en": "Generations later, Ibn Mujahid (d. 324 AH) chose seven famous readers for his Kitab al-Sab'ah. The matching number led many to confuse them with the seven ahruf, a confusion scholars have long corrected.",
+            "de": "Generationen später wählte Ibn Mudschahid (gest. 324 n. H.) sieben berühmte Leser für sein Kitab as-Sab'a. Die gleiche Zahl ließ viele sie mit den sieben Ahruf verwechseln, ein Irrtum, den Gelehrte seit Langem richtigstellen.",
+            "ar": "بعد أجيال اختار ابن مجاهد (ت ٣٢٤هـ) سبعة قراء مشهورين في كتابه «السبعة»، فظن كثيرون لاتفاق العدد أنها الأحرف السبعة، وقد نبّه العلماء على هذا الخلط قديمًا."
+          }
+        },
+        {
+          "title": {
+            "en": "How they relate",
+            "de": "Wie sie zusammenhängen",
+            "ar": "العلاقة بينهما"
+          },
+          "body": {
+            "en": "Many scholars hold that the qira'at preserve what of the ahruf fits the 'Uthmani copies. Whether that is one harf or several, they differ.",
+            "de": "Viele Gelehrte vertreten, dass die Qira'at das von den Ahruf bewahren, was zu den 'uthmanischen Abschriften passt. Ob das ein Harf ist oder mehrere, darüber gehen die Meinungen auseinander.",
+            "ar": "يرى كثير من العلماء أن القراءات تحفظ ما وافق المصاحف العثمانية من الأحرف السبعة، واختلفوا: أهي حرف واحد منها أم أكثر."
+          }
+        },
+        {
+          "title": {
+            "en": "In short",
+            "de": "Kurz gesagt",
+            "ar": "خلاصة"
+          },
+          "list": {
+            "en": [
+              "Ahruf: modes of revelation mentioned by the Prophet",
+              "Qira'at: named readings, each with its chain",
+              "Seven readers are not the seven ahruf",
+              "All accepted readings fit the 'Uthmani copies"
+            ],
+            "de": [
+              "Ahruf: Weisen der Offenbarung, die der Prophet nannte",
+              "Qira'at: benannte Lesarten, jede mit ihrer Kette",
+              "Die sieben Leser sind nicht die sieben Ahruf",
+              "Alle anerkannten Lesarten passen zu den 'uthmanischen Abschriften"
+            ],
+            "ar": [
+              "الأحرف: أوجه نزول ذكرها النبي ﷺ",
+              "القراءات: روايات منسوبة إلى أئمتها بأسانيدها",
+              "القراء السبعة ليسوا الأحرف السبعة",
+              "كل قراءة مقبولة توافق المصاحف العثمانية"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Jalal al-Din al-Suyuti, al-Itqan fi 'Ulum al-Qur'an"
+        },
+        {
+          "label": "Ibn al-Jazari, al-Nashr fi al-Qira'at al-'Ashr"
+        },
+        {
+          "label": "Ibn Mujahid, Kitab al-Sab'ah fi al-Qira'at"
+        }
+      ]
+    },
+    {
+      "id": "qiraat-03-ten-readers",
+      "needs_review": true,
+      "palette": "dawn",
+      "cover": {
+        "kicker": {
+          "en": "Qira'at explained · 3",
+          "de": "Die Lesarten erklärt · 3",
+          "ar": "القراءات · ٣"
+        },
+        "title": {
+          "en": "The ten readers and their transmitters",
+          "de": "Die zehn Leser und ihre Überlieferer",
+          "ar": "القراء العشرة ورواتهم"
+        },
+        "sub": {
+          "en": "Ten imams of recitation and the twenty transmitters who carried their readings",
+          "de": "Zehn Imame der Rezitation und die zwanzig Überlieferer, die ihre Lesarten weitertrugen",
+          "ar": "عشرة أئمة للقراءة وعشرون راويًا حملوا قراءاتهم"
+        },
+        "arabic": "القراء العشرة"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Seven, then ten",
+            "de": "Sieben, dann zehn",
+            "ar": "سبعة ثم عشرة"
+          },
+          "arabic": "القراء العشرة",
+          "body": {
+            "en": "Ibn Mujahid gathered seven readers. Centuries later Ibn al-Jazari confirmed three more as authentic, which gives the ten. Each reader is known through two famous transmitters.",
+            "de": "Ibn Mudschahid stellte sieben Leser zusammen. Jahrhunderte später bestätigte Ibn al-Dschazari drei weitere als authentisch, so ergeben sich die zehn. Jeder Leser ist durch zwei berühmte Überlieferer bekannt.",
+            "ar": "جمع ابن مجاهد سبعة قراء، وبعد قرون أثبت ابن الجزري صحة ثلاثة آخرين فصاروا عشرة، ولكل إمام راويان مشهوران."
+          }
+        },
+        {
+          "title": {
+            "en": "Madinah and Makkah",
+            "de": "Medina und Mekka",
+            "ar": "المدينة ومكة"
+          },
+          "list": {
+            "en": [
+              "Nafi' (Madinah): Qalun and Warsh",
+              "Abu Ja'far (Madinah): Ibn Wardan and Ibn Jammaz",
+              "Ibn Kathir (Makkah): al-Bazzi and Qunbul"
+            ],
+            "de": [
+              "Nafi' (Medina): Qalun und Warsch",
+              "Abu Dscha'far (Medina): Ibn Wardan und Ibn Dschammaz",
+              "Ibn Kathir (Mekka): al-Bazzi und Qunbul"
+            ],
+            "ar": [
+              "نافع (المدينة): قالون وورش",
+              "أبو جعفر (المدينة): ابن وردان وابن جماز",
+              "ابن كثير (مكة): البزي وقنبل"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Basrah and Damascus",
+            "de": "Basra und Damaskus",
+            "ar": "البصرة ودمشق"
+          },
+          "list": {
+            "en": [
+              "Abu 'Amr (Basrah): ad-Duri and as-Susi",
+              "Ya'qub (Basrah): Ruways and Rawh",
+              "Ibn 'Amir (Damascus): Hisham and Ibn Dhakwan"
+            ],
+            "de": [
+              "Abu 'Amr (Basra): ad-Duri und as-Susi",
+              "Ya'qub (Basra): Ruwais und Rauh",
+              "Ibn 'Amir (Damaskus): Hischam und Ibn Dhakwan"
+            ],
+            "ar": [
+              "أبو عمرو (البصرة): الدوري والسوسي",
+              "يعقوب (البصرة): رويس وروح",
+              "ابن عامر (دمشق): هشام وابن ذكوان"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Kufa and Baghdad",
+            "de": "Kufa und Bagdad",
+            "ar": "الكوفة وبغداد"
+          },
+          "list": {
+            "en": [
+              "'Asim (Kufa): Shu'bah and Hafs",
+              "Hamzah (Kufa): Khalaf and Khallad",
+              "al-Kisa'i (Kufa): Abu l-Harith and ad-Duri",
+              "Khalaf al-'Ashir (Baghdad): Ishaq and Idris"
+            ],
+            "de": [
+              "'Asim (Kufa): Schu'ba und Hafs",
+              "Hamza (Kufa): Chalaf und Challad",
+              "al-Kisa'i (Kufa): Abu l-Harith und ad-Duri",
+              "Chalaf al-'Aschir (Bagdad): Ishaq und Idris"
+            ],
+            "ar": [
+              "عاصم (الكوفة): شعبة وحفص",
+              "حمزة (الكوفة): خلف وخلاد",
+              "الكسائي (الكوفة): أبو الحارث والدوري",
+              "خلف العاشر (بغداد): إسحاق وإدريس"
+            ]
+          }
+        },
+        {
+          "title": {
+            "en": "Names that appear twice",
+            "de": "Namen, die zweimal erscheinen",
+            "ar": "أسماء تتكرر"
+          },
+          "body": {
+            "en": "Ad-Duri transmits from both Abu 'Amr and al-Kisa'i: it is the same man. And Khalaf, who transmits the reading of Hamzah, is himself the tenth reader.",
+            "de": "Ad-Duri überliefert sowohl von Abu 'Amr als auch von al-Kisa'i: es ist derselbe Mann. Und Chalaf, der die Lesart Hamzas überliefert, ist selbst der zehnte Leser.",
+            "ar": "الدوري راوٍ عن أبي عمرو وعن الكسائي معًا، وهو رجل واحد، وخلف راوي حمزة هو نفسه الإمام العاشر."
+          }
+        },
+        {
+          "title": {
+            "en": "Read around the world today",
+            "de": "Heute weltweit gelesen",
+            "ar": "المقروء اليوم في العالم"
+          },
+          "body": {
+            "en": "Hafs from 'Asim is the most widespread today. Warsh from Nafi' is read across much of North and West Africa, Qalun in Libya and parts of Tunisia, and ad-Duri from Abu 'Amr in parts of Sudan.",
+            "de": "Hafs nach 'Asim ist heute am weitesten verbreitet. Warsch nach Nafi' wird in weiten Teilen Nord- und Westafrikas gelesen, Qalun in Libyen und Teilen Tunesiens, ad-Duri nach Abu 'Amr in Teilen des Sudan.",
+            "ar": "رواية حفص عن عاصم أوسع الروايات انتشارًا اليوم، وتُقرأ رواية ورش عن نافع في كثير من شمال إفريقيا وغربها، وقالون في ليبيا وأجزاء من تونس، والدوري عن أبي عمرو في أجزاء من السودان."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Jazari, al-Nashr fi al-Qira'at al-'Ashr"
+        },
+        {
+          "label": "Ibn Mujahid, Kitab al-Sab'ah fi al-Qira'at"
+        },
+        {
+          "label": "al-Qasim ibn Firruh al-Shatibi, Hirz al-Amani wa Wajh al-Tahani (ash-Shatibiyyah)"
+        },
+        {
+          "label": "Ibn al-Jazari, al-Durrah al-Mudiyyah fi al-Qira'at al-Thalath"
+        }
+      ]
+    },
+    {
+      "id": "qiraat-04-hafs-and-warsh",
+      "needs_review": true,
+      "palette": "parchment",
+      "cover": {
+        "kicker": {
+          "en": "Qira'at explained · 4",
+          "de": "Die Lesarten erklärt · 4",
+          "ar": "القراءات · ٤"
+        },
+        "title": {
+          "en": "Hafs and Warsh compared",
+          "de": "Hafs und Warsch im Vergleich",
+          "ar": "بين حفص وورش"
+        },
+        "sub": {
+          "en": "The two most widespread transmissions today, side by side",
+          "de": "Die zwei heute verbreitetsten Überlieferungen nebeneinander",
+          "ar": "أشهر روايتين اليوم جنبًا إلى جنب"
+        },
+        "arabic": "حفص وورش"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "Two transmissions",
+            "de": "Zwei Überlieferungen",
+            "ar": "روايتان"
+          },
+          "arabic": "حفص · ورش",
+          "body": {
+            "en": "Hafs transmits the reading of 'Asim of Kufa; Warsh transmits that of Nafi' of Madinah. Hafs is the most widespread today, and Warsh is widely read in North and West Africa.",
+            "de": "Hafs überliefert die Lesart von 'Asim aus Kufa, Warsch die von Nafi' aus Medina. Hafs ist heute am weitesten verbreitet, Warsch wird vor allem in Nord- und Westafrika gelesen.",
+            "ar": "يروي حفص قراءة عاصم الكوفي، ويروي ورش قراءة نافع المدني، ورواية حفص أوسع انتشارًا اليوم، ورواية ورش منتشرة في شمال إفريقيا وغربها."
+          }
+        },
+        {
+          "verse": "1:4",
+          "check": "Sovereign",
+          "title": {
+            "en": "Owner or King",
+            "de": "Eigentümer oder König",
+            "ar": "المالك أو الملِك"
+          },
+          "body": {
+            "en": "Hafs reads maliki with a long a, owner; Warsh reads it short, king. Both describe Allah, and together they say more.",
+            "de": "Hafs liest māliki mit langem a, Eigentümer; Warsch liest maliki kurz, König. Beides beschreibt Allah, und zusammen sagen sie mehr.",
+            "ar": "يقرأ حفص الكلمة الأولى من الآية المعروضة بألف بعد الميم بمعنى المالك، ويقرؤها ورش بغير ألف بمعنى الملِك، وكلاهما وصف لله تعالى، ومعًا يزيدان المعنى."
+          }
+        },
+        {
+          "title": {
+            "en": "Longer stretches",
+            "de": "Längere Dehnungen",
+            "ar": "مدود أطول"
+          },
+          "body": {
+            "en": "Warsh, through al-Azraq, gives the connected and the separated madd six counts, and madd badal two, four or six. Hafs via ash-Shatibiyyah uses four or five, and two for badal.",
+            "de": "Warsch über al-Azraq dehnt die verbundene und die getrennte Dehnung sechs Zählzeiten, Madd badal zwei, vier oder sechs. Hafs über asch-Schatibiyya dehnt vier oder fünf, Badal zwei.",
+            "ar": "يمد ورش من طريق الأزرق المتصل والمنفصل ست حركات، والبدل حركتين أو أربعًا أو ستًا، ويمدهما حفص من طريق الشاطبية أربعًا أو خمسًا، والبدل حركتين."
+          }
+        },
+        {
+          "verse": "2:3",
+          "check": "believe in the unseen",
+          "title": {
+            "en": "A softened hamza",
+            "de": "Ein erleichtertes Hamza",
+            "ar": "همز مُبدل"
+          },
+          "body": {
+            "en": "Where Hafs says yu'minuna with a hamza, Warsh replaces the hamza with a long vowel: yuminuna.",
+            "de": "Wo Hafs yu'minuna mit Hamza spricht, ersetzt Warsch das Hamza durch einen langen Vokal: yuminuna.",
+            "ar": "في الكلمة الثانية من الآية المعروضة همزة ساكنة بعد ضم يقرؤها حفص محققة، ويبدلها ورش واوًا مدية."
+          }
+        },
+        {
+          "verse": "2:6",
+          "check": "warn them",
+          "title": {
+            "en": "The plural mim",
+            "de": "Das Plural-Mim",
+            "ar": "ميم الجمع"
+          },
+          "body": {
+            "en": "Before a hamza, Warsh joins the plural mim to a long u: 'alayhimu a'andhartahum. Hafs keeps the mim with sukun.",
+            "de": "Vor einem Hamza verbindet Warsch das Plural-Mim mit einem langen u: 'alaihimu a'andhartahum. Hafs belässt das Mim mit Sukun.",
+            "ar": "يصل ورش ميم الجمع بواو إذا جاء بعدها همز، كالميم التي تسبق همزة الاستفهام في الآية المعروضة، ويسكّنها حفص."
+          }
+        },
+        {
+          "verse": "11:41",
+          "check": "its course",
+          "title": {
+            "en": "Hafs's single imala",
+            "de": "Die einzige Imala bei Hafs",
+            "ar": "الإمالة الوحيدة عند حفص"
+          },
+          "body": {
+            "en": "Hafs tilts the a towards e in only one word of the Quran: majreha, here. Warsh uses a lighter tilt in many words.",
+            "de": "Hafs neigt das a nur in einem Wort des Korans zum e: majreha, hier. Warsch verwendet eine leichtere Neigung in vielen Wörtern.",
+            "ar": "لا يميل حفص إلا في كلمة واحدة في القرآن، وهي في الآية المعروضة، أما ورش فيقلل في كلمات كثيرة."
+          }
+        },
+        {
+          "title": {
+            "en": "What stays the same",
+            "de": "Was gleich bleibt",
+            "ar": "ما لا يتغير"
+          },
+          "list": {
+            "en": [
+              "Both are authentic, with unbroken chains",
+              "The meaning is kept, and often enriched",
+              "Neither is more correct than the other",
+              "Recite in the riwayah you learned from your teacher"
+            ],
+            "de": [
+              "Beide sind authentisch, mit ununterbrochenen Ketten",
+              "Der Sinn bleibt erhalten und wird oft bereichert",
+              "Keine ist richtiger als die andere",
+              "Rezitieren Sie in der Riwaya, die Sie bei Ihrem Lehrer gelernt haben"
+            ],
+            "ar": [
+              "كلتاهما ثابتة بسند متصل",
+              "المعنى محفوظ، ويزداد ثراء في الغالب",
+              "ليست إحداهما أصح من الأخرى",
+              "اقرأ بالرواية التي تلقيتها عن شيخك"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "al-Qasim ibn Firruh al-Shatibi, Hirz al-Amani wa Wajh al-Tahani (ash-Shatibiyyah)"
+        },
+        {
+          "label": "Ibn al-Jazari, al-Nashr fi al-Qira'at al-'Ashr"
+        }
+      ]
+    },
+    {
+      "id": "qiraat-05-transmission",
+      "needs_review": true,
+      "palette": "marble",
+      "cover": {
+        "kicker": {
+          "en": "Qira'at explained · 5",
+          "de": "Die Lesarten erklärt · 5",
+          "ar": "القراءات · ٥"
+        },
+        "title": {
+          "en": "How the qira'at were passed on",
+          "de": "Wie die Qira'at weitergegeben wurden",
+          "ar": "كيف نُقلت القراءات"
+        },
+        "sub": {
+          "en": "From the Prophet to today's reciters: chains, teachers and two famous poems",
+          "de": "Vom Propheten bis zu den heutigen Rezitatoren: Ketten, Lehrer und zwei berühmte Lehrgedichte",
+          "ar": "من النبي ﷺ إلى قراء اليوم: أسانيد ومعلمون ومنظومتان شهيرتان"
+        },
+        "arabic": "الإسناد"
+      },
+      "slides": [
+        {
+          "verse": "75:16-18",
+          "check": "follow its recitation",
+          "title": {
+            "en": "Learned by listening",
+            "de": "Durch Zuhören gelernt",
+            "ar": "التلقي بالسماع"
+          },
+          "body": {
+            "en": "Even the Prophet received the Quran by listening first, then reciting. Every qira'ah follows this path.",
+            "de": "Selbst der Prophet empfing den Koran, indem er zuerst zuhörte und dann rezitierte. Jede Qira'a folgt diesem Weg.",
+            "ar": "تلقى النبي ﷺ القرآن سماعًا ثم تلاوة، وعلى هذا النهج سارت كل قراءة."
+          }
+        },
+        {
+          "title": {
+            "en": "Face to face",
+            "de": "Von Angesicht zu Angesicht",
+            "ar": "المشافهة"
+          },
+          "arabic": "المشافهة والإجازة",
+          "body": {
+            "en": "Recitation is learned face to face: the student recites the whole Quran to a teacher, who corrects every letter. A certificate, the ijazah, records the chain (isnad) back to the Prophet.",
+            "de": "Rezitation wird von Angesicht zu Angesicht gelernt: der Schüler trägt den ganzen Koran einem Lehrer vor, der jeden Buchstaben korrigiert. Ein Zeugnis, die Idschaza, hält die Kette (Isnad) bis zum Propheten fest.",
+            "ar": "تُتلقى التلاوة مشافهة: يقرأ الطالب القرآن كله على شيخه فيصحح له كل حرف، ثم تُوثق الإجازة سنده المتصل إلى النبي ﷺ."
+          }
+        },
+        {
+          "verse": "29:49",
+          "check": "breasts",
+          "title": {
+            "en": "Kept in hearts",
+            "de": "In Herzen bewahrt",
+            "ar": "محفوظ في الصدور"
+          },
+          "body": {
+            "en": "The Quran lives in the memories of those who learned it, not only on pages.",
+            "de": "Der Koran lebt im Gedächtnis derer, die ihn gelernt haben, nicht nur auf Seiten.",
+            "ar": "يحيا القرآن في صدور حفظته، لا في الصحف وحدها."
+          }
+        },
+        {
+          "title": {
+            "en": "Ibn Mujahid's seven",
+            "de": "Die sieben des Ibn Mudschahid",
+            "ar": "سبعة ابن مجاهد"
+          },
+          "body": {
+            "en": "In the 4th century AH, Ibn Mujahid in Baghdad gathered seven well-known readers in his Kitab al-Sab'ah. Later works built on his choice.",
+            "de": "Im 4. Jahrhundert n. H. stellte Ibn Mudschahid in Bagdad in seinem Kitab as-Sab'a sieben bekannte Leser zusammen. Spätere Werke bauten auf dieser Auswahl auf.",
+            "ar": "في القرن الرابع الهجري جمع ابن مجاهد في بغداد سبعة قراء مشهورين في كتابه «السبعة»، وبنت المؤلفات اللاحقة على اختياره."
+          }
+        },
+        {
+          "title": {
+            "en": "Ash-Shatibiyyah",
+            "de": "Asch-Schatibiyya",
+            "ar": "الشاطبية"
+          },
+          "arabic": "حرز الأماني ووجه التهاني",
+          "body": {
+            "en": "Imam al-Shatibi (d. 590 AH) put ad-Dani's book at-Taysir on the seven readings into a long rhyming poem, Hirz al-Amani. Known as ash-Shatibiyyah, it is still learned by heart.",
+            "de": "Imam asch-Schatibi (gest. 590 n. H.) fasste ad-Danis Buch at-Taysir über die sieben Lesarten in ein langes Reimgedicht, Hirz al-Amani. Als asch-Schatibiyya bekannt, wird es bis heute auswendig gelernt.",
+            "ar": "نظم الإمام الشاطبي (ت ٥٩٠هـ) كتاب «التيسير» للداني في القراءات السبع في قصيدة طويلة سماها «حرز الأماني»، وتُعرف بالشاطبية، ولا تزال تُحفظ إلى اليوم."
+          }
+        },
+        {
+          "title": {
+            "en": "Ad-Durrah and the ten",
+            "de": "Ad-Durra und die zehn",
+            "ar": "الدرة والعشر"
+          },
+          "arabic": "الدرة المضية",
+          "body": {
+            "en": "Ibn al-Jazari (d. 833 AH) wrote ad-Durrah al-Mudiyyah on three further readers: Abu Ja'far, Ya'qub and Khalaf. With ash-Shatibiyyah it completes the ten. His Tayyibat al-Nashr covers the ten through many more paths.",
+            "de": "Ibn al-Dschazari (gest. 833 n. H.) schrieb ad-Durra al-Mudiyya über drei weitere Leser: Abu Dscha'far, Ya'qub und Chalaf. Mit der Schatibiyya ergibt das die zehn. Seine Tayyibat an-Naschr umfasst die zehn über viele weitere Wege.",
+            "ar": "ألّف ابن الجزري (ت ٨٣٣هـ) «الدرة المضية» في قراءات أبي جعفر ويعقوب وخلف، فتمت بها مع الشاطبية القراءات العشر، ثم جمع في «طيبة النشر» العشر من طرق كثيرة."
+          }
+        },
+        {
+          "title": {
+            "en": "A chain still alive",
+            "de": "Eine Kette, die noch lebt",
+            "ar": "سند ما زال حيًا"
+          },
+          "body": {
+            "en": "Teachers today still grant ijazahs with chains running through these works. If you can, recite to a qualified teacher: you join a line that reaches back to the Prophet.",
+            "de": "Lehrer vergeben bis heute Idschazas mit Ketten, die durch diese Werke laufen. Wenn Sie können, tragen Sie einem qualifizierten Lehrer vor: so treten Sie in eine Linie, die bis zum Propheten reicht.",
+            "ar": "لا يزال المقرئون يمنحون الإجازات بأسانيد تمر بهذه الكتب، فإن استطعت فاقرأ على شيخ متقن، لتتصل بسلسلة تمتد إلى النبي ﷺ."
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn Mujahid, Kitab al-Sab'ah fi al-Qira'at"
+        },
+        {
+          "label": "Abu 'Amr al-Dani, al-Taysir fi al-Qira'at al-Sab'"
+        },
+        {
+          "label": "al-Qasim ibn Firruh al-Shatibi, Hirz al-Amani wa Wajh al-Tahani (ash-Shatibiyyah)"
+        },
+        {
+          "label": "Ibn al-Jazari, al-Durrah al-Mudiyyah fi al-Qira'at al-Thalath"
+        },
+        {
+          "label": "Ibn al-Jazari, Tayyibat al-Nashr fi al-Qira'at al-'Ashr"
+        }
+      ]
+    },
+    {
+      "id": "qiraat-06-why-they-matter",
+      "needs_review": true,
+      "palette": "night",
+      "cover": {
+        "kicker": {
+          "en": "Qira'at explained · 6",
+          "de": "Die Lesarten erklärt · 6",
+          "ar": "القراءات · ٦"
+        },
+        "title": {
+          "en": "Why the qira'at matter",
+          "de": "Warum die Qira'at wichtig sind",
+          "ar": "لماذا نهتم بالقراءات؟"
+        },
+        "sub": {
+          "en": "Meaning, preservation and a living tradition of recitation",
+          "de": "Bedeutung, Bewahrung und eine lebendige Tradition der Rezitation",
+          "ar": "المعنى والحفظ وتراث حي من التلاوة"
+        },
+        "arabic": "القراءات"
+      },
+      "slides": [
+        {
+          "title": {
+            "en": "A living record of preservation",
+            "de": "Ein lebendiges Zeugnis der Bewahrung",
+            "ar": "شاهد حي على الحفظ"
+          },
+          "body": {
+            "en": "Readings carried by many teachers across distant lands still agree on the same Quran and the same 'Uthmani script. Their differences were recorded with care, not lost.",
+            "de": "Lesarten, getragen von vielen Lehrern in fernen Ländern, stimmen bis heute im selben Koran und im selben 'uthmanischen Schriftbild überein. Ihre Unterschiede wurden sorgfältig festgehalten, nicht verloren.",
+            "ar": "قراءات نقلها معلمون كثيرون في بلاد متباعدة، وما زالت تتفق على قرآن واحد ورسم عثماني واحد، ودُوّنت فروقها بعناية فلم يضع منها شيء."
+          }
+        },
+        {
+          "verse": "49:6",
+          "check": "investigate",
+          "title": {
+            "en": "Two readings, two lessons",
+            "de": "Zwei Lesarten, zwei Lehren",
+            "ar": "قراءتان ودرسان"
+          },
+          "body": {
+            "en": "Hafs reads fatabayyanu, investigate; Hamzah, al-Kisa'i and Khalaf read fatathabbatu, make sure. Together: check carefully, do not rush.",
+            "de": "Hafs liest fatabayyanu, nachprüfen; Hamza, al-Kisa'i und Chalaf lesen fatathabbatu, sich vergewissern. Zusammen: genau prüfen, nicht vorschnell handeln.",
+            "ar": "يقرأ حفص الفعل في الآية المعروضة من التبيّن، ويقرؤه حمزة والكسائي وخلف من التثبّت، ومعًا: تحقق بعناية ولا تتعجل."
+          }
+        },
+        {
+          "verse": "2:10",
+          "check": "used to lie",
+          "title": {
+            "en": "Lying and denying",
+            "de": "Lügen und Leugnen",
+            "ar": "الكذب والتكذيب"
+          },
+          "body": {
+            "en": "Hafs reads yakdhibun, they lied; Nafi', Ibn Kathir and others read yukadhdhibun, they denied. Both fit the same people.",
+            "de": "Hafs liest yakdhibun, sie logen; Nafi', Ibn Kathir und andere lesen yukadhdhibun, sie leugneten. Beides trifft auf dieselben Menschen zu.",
+            "ar": "يقرأ حفص الفعل في آخر الآية المعروضة بالتخفيف من الكذب، ويقرؤه نافع وابن كثير وغيرهما بالتشديد من التكذيب، وكلا الوصفين ثابت لهم."
+          }
+        },
+        {
+          "title": {
+            "en": "Where tajweed comes from",
+            "de": "Woher die Tadschwid-Regeln kommen",
+            "ar": "مصدر أحكام التجويد"
+          },
+          "body": {
+            "en": "The rules you learn, from ghunnah to the length of each madd, are the rules of a riwayah, usually Hafs. Knowing this explains why reciters sometimes differ, and why both can be right.",
+            "de": "Die Regeln, die Sie lernen, von der Ghunna bis zur Länge jeder Dehnung, sind die Regeln einer Riwaya, meist Hafs. Das erklärt, warum Rezitatoren sich manchmal unterscheiden und warum beide richtig sein können.",
+            "ar": "الأحكام التي تتعلمها، من الغنة إلى مقادير المدود، هي أحكام رواية بعينها، وهي حفص في الغالب، وبهذا تفهم سبب اختلاف القراء أحيانًا مع صحة الوجهين."
+          }
+        },
+        {
+          "verse": "54:17",
+          "check": "easy for remembrance",
+          "title": {
+            "en": "Made easy to remember",
+            "de": "Leicht gemacht zum Erinnern",
+            "ar": "ميسر للذكر"
+          },
+          "body": {
+            "en": "Generations in every land learned the Quran by heart. The careful record of its readings is part of that story.",
+            "de": "Generationen in allen Ländern lernten den Koran auswendig. Die sorgfältige Aufzeichnung seiner Lesarten gehört zu dieser Geschichte.",
+            "ar": "حفظت الأجيال القرآن في كل بلد، وتدوين قراءاته بعناية جزء من هذه القصة."
+          }
+        },
+        {
+          "title": {
+            "en": "How to approach them",
+            "de": "Wie man ihnen begegnet",
+            "ar": "كيف نتعامل معها"
+          },
+          "list": {
+            "en": [
+              "Recite in the riwayah your teacher taught you",
+              "Listen to recitations in Warsh or Qalun",
+              "Never call an authentic reading a mistake",
+              "Study with a qualified teacher before reciting others"
+            ],
+            "de": [
+              "Rezitieren Sie in der Riwaya Ihres Lehrers",
+              "Hören Sie Rezitationen nach Warsch oder Qalun",
+              "Nennen Sie eine authentische Lesart nie einen Fehler",
+              "Lernen Sie bei einem qualifizierten Lehrer, bevor Sie andere rezitieren"
+            ],
+            "ar": [
+              "اقرأ بالرواية التي علمك إياها شيخك",
+              "استمع إلى تلاوات برواية ورش أو قالون",
+              "لا تخطّئ قراءة ثابتة أبدًا",
+              "تعلّم على شيخ متقن قبل أن تقرأ بغير روايتك"
+            ]
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ibn al-Jazari, al-Nashr fi al-Qira'at al-'Ashr"
+        }
+      ]
+    }
+  ]
+}

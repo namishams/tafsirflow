@@ -1,0 +1,20 @@
+{
+  "set": "sayings-sufyan-al-thawri",
+  "kind": "saying",
+  "tradition": "sunni",
+  "items": [
+    {
+      "id": "ws-sufyan-al-thawri-01",
+      "theme": "sincerity",
+      "text": {
+        "en": "I have never tended to anything harder for me than my intention, for it keeps turning on me.",
+        "de": "Nichts war für mich schwerer zu pflegen als meine Absicht, denn sie wendet sich immer wieder gegen mich.",
+        "ar": "ما عالجت شيئا أشد علي من نيتي، إنها تتقلب علي."
+      },
+      "arabic": "ما عالجت شيئا أشد علي من نيتي، إنها تتقلب علي.",
+      "by": { "en": "Sufyan al-Thawri", "de": "Sufyan ath-Thauri", "ar": "سفيان الثوري" },
+      "work": { "en": "Reported by Ibn Rajab in Jami' al-'Ulum wa-l-Hikam", "de": "Überliefert von Ibn Radschab in Dschami' al-'Ulum wa-l-Hikam", "ar": "نقله ابن رجب في جامع العلوم والحكم" },
+      "needs_review": true
+    }
+  ]
+}
