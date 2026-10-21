@@ -2,7 +2,7 @@
 // Layered, misty, softly lit vector paintings (an Islamic take on the new East Asian landscape style): distant
 // mountains and dunes, a horizon of domes and minarets, cypress and palm groves, an Alhambra arcade and a Mughal
 // pavilion. Each scene layer comes in a day and a night variant; the app cross-fades them with the prayer times.
-// Run: node scripts/gen-garden-art.mjs  (needs sharp from the repository root)
+// Run: node scripts/gen-garden-art.mjs  (needs sharp from the repository root); --only makkah,desert,sand for single layers
 import { createRequire } from "node:module";
 import { mkdirSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -259,6 +259,120 @@ function mist() {
   return [svg(W, H, `<g filter="url(#blur26)">${b}</g>`), W, H];
 }
 
+// ---------- the panorama wings (owner extension, 21.10.2026): Makkah to the right, the open desert to the left ----------
+// Seen only when the learner swipes the garden sideways; the centre view stays as approved.
+const WING = {
+  day: {
+    hills: ["#d3d8c0", "#bcc6a7", "#a5b48f", "#93a481"], mist: "#f4f1e2", sand: ["#ead8ac", "#dcc391", "#cdb07a", "#bb9c66"], crest: "#f8ecc8", trail: "#94733f",
+    haram: { body: "#ece6d2", sh: "#c9c1a5", arch: "#a59d80", court: "#f8f3e4", gold: "#d6b46c", glow: 0 }, palm: "#3d6a4c", palmHi: "#89b27c", water: "#5f9c86", waterHi: "#cfe9dc",
+  },
+  night: {
+    hills: ["#17392f", "#13322a", "#0f2b23", "#0c241d"], mist: "#3b6656", sand: ["#1d3a2f", "#183327", "#142c22", "#10251c"], crest: "#2f5546", trail: "#0b1d16",
+    haram: { body: "#30473c", sh: "#22382f", arch: "#f2c46a", court: "#f6e3a8", gold: "#c9a24e", glow: 1 }, palm: "#071c15", palmHi: null, water: "#123a30", waterHi: "#f2c46a",
+  },
+};
+/** a soft mist band */
+const mistBand = (y, h, col, o) => `<rect x="-80" y="${y}" width="1560" height="${h}" fill="${col}" opacity="${o}" filter="url(#blur26)"/>`;
+
+/** Makkah al-Mukarrama far away in the valley: the Hijaz mountains with Jabal an-Nur, the Masjid al-Haram with its
+ *  minarets and the Kaaba (a simple silhouette: black, the gold band, the gold door; no people) */
+function makkah(P, night) {
+  const W = 1400, H = 720, hb = 606, cx = 560, h = P.haram;
+  let b = `<defs>${vgrad("k1", [[0, P.hills[0]], [1, P.hills[0], 0.25]])}${vgrad("k2", [[0, P.hills[1]], [1, P.hills[1], 0.4]])}${vgrad("k3", [[0, P.hills[2]], [1, P.hills[3]]])}${vgrad("ks", [[0, P.sand[1]], [1, P.sand[2]]])}
+    <radialGradient id="hg" cx="0.5" cy="0.6" r="0.5"><stop offset="0" stop-color="#ffe3a0" stop-opacity="${night ? 0.55 : 0.18}"/><stop offset="1" stop-color="#ffe3a0" stop-opacity="0"/></radialGradient></defs>`;
+  // the high ranges, then Jabal an-Nur (the mountain of the cave of Hira) with its sharp peak on the right
+  b += `<g filter="url(#brush)"><path d="${fill(ridge(-20, 1420, 210, 200, 0.55, 41), H)}" fill="url(#k1)" opacity="0.8"/></g>`;
+  b += mistBand(300, 70, P.mist, night ? 0.2 : 0.55);
+  b += `<g filter="url(#brush)"><path d="M880 ${H} Q990 470 1060 330 Q1078 296 1096 330 Q1170 470 1320 ${H} Z" fill="url(#k2)"/>`;
+  b += `<path d="${fill(ridge(-20, 760, 390, 130, 0.5, 43), H)}" fill="url(#k2)"/><path d="${fill(ridge(1040, 1420, 420, 90, 0.55, 47), H)}" fill="url(#k2)" opacity="0.85"/></g>`;
+  b += mistBand(450, 70, P.mist, night ? 0.25 : 0.65);
+  // the hills that close the valley
+  b += `<g filter="url(#brush)"><path d="${fill(ridge(-20, 330, 520, 70, 0.5, 51), H)}" fill="url(#k3)"/><path d="${fill(ridge(800, 1420, 525, 70, 0.5, 53), H)}" fill="url(#k3)"/></g>`;
+  // the light over the Haram
+  b += `<ellipse cx="${cx}" cy="${hb - 40}" rx="330" ry="150" fill="url(#hg)"/>`;
+  // the Masjid al-Haram: the colonnades in two storeys around the court
+  const x0 = cx - 230, x1 = cx + 230;
+  b += `<rect x="${x0}" y="${hb - 74}" width="${x1 - x0}" height="80" fill="${h.body}"/><rect x="${x0 - 4}" y="${hb - 80}" width="${x1 - x0 + 8}" height="7" fill="${h.sh}"/>`;
+  for (let x = x0 + 6; x < x1 - 10; x += 19) {
+    b += `<path d="${pointed(x, hb - 44, 11, 24)}" fill="${h.arch}" opacity="${night ? 0.95 : 0.7}"/>`;
+    b += `<path d="${pointed(x, hb + 4, 11, 32)}" fill="${h.arch}" opacity="${night ? 0.85 : 0.6}"/>`;
+  }
+  // the minarets (square shafts, balconies, a lantern, a small dome and the crescent)
+  for (const [dx, mh] of [[-262, 178], [-214, 186], [-120, 196], [120, 196], [214, 186], [262, 178]]) {
+    b += minaret(cx + dx, hb + 6, 13, mh, "hemi", { body: h.body, dome: h.body, gold: h.gold, win: night ? "#f6d98a" : null });
+    if (night) b += `<circle cx="${cx + dx}" cy="${hb + 6 - mh - 10}" r="9" fill="#ffe3a0" opacity="0.35" filter="url(#glow)"/>`;
+  }
+  // the court (mataf) in white marble, the Kaaba in its middle
+  b += `<ellipse cx="${cx}" cy="${hb + 24}" rx="190" ry="26" fill="${h.court}"/>`;
+  if (night) b += `<ellipse cx="${cx}" cy="${hb + 24}" rx="200" ry="30" fill="#fff1c8" opacity="0.35" filter="url(#glow)"/>`;
+  const kw = 50, kh = 54, kt = hb + 24 - kh + 4;
+  b += `<path d="M${cx - kw / 2} ${kt} L${cx - kw / 2 + 10} ${kt - 7} L${cx + kw / 2 + 10} ${kt - 7} L${cx + kw / 2} ${kt} Z" fill="#1c1c1a"/>`;
+  b += `<path d="M${cx + kw / 2} ${kt} L${cx + kw / 2 + 10} ${kt - 7} L${cx + kw / 2 + 10} ${kt + kh - 7} L${cx + kw / 2} ${kt + kh} Z" fill="#050505"/>`;
+  b += `<rect x="${cx - kw / 2}" y="${kt}" width="${kw}" height="${kh}" fill="#0b0b0a"/>`;
+  b += `<rect x="${cx - kw / 2}" y="${kt + 11}" width="${kw}" height="5" fill="#d6b46c"/><path d="M${cx + kw / 2} ${kt + 11} l10 -7 v5 l-10 7 Z" fill="#b8954f"/>`;
+  b += `<rect x="${cx + 8}" y="${kt + 24}" width="9" height="20" fill="#c9a24e"/>`;
+  // the front colonnade, low, and the valley floor
+  b += `<rect x="${x0 + 30}" y="${hb + 50}" width="${x1 - x0 - 60}" height="24" fill="${h.body}"/>`;
+  for (let x = x0 + 36; x < x1 - 40; x += 16) b += `<path d="${pointed(x, hb + 74, 9, 18)}" fill="${h.arch}" opacity="${night ? 0.9 : 0.6}"/>`;
+  b += `<g filter="url(#brush)"><path d="${fill(dunes(-20, 1420, hb + 84, 8, 61), H)}" fill="url(#ks)"/></g>`;
+  b += mistBand(hb + 46, 60, P.mist, night ? 0.18 : 0.45);
+  // seen from far away: a thin veil of haze over the whole valley
+  b += `<rect x="0" y="${hb - 230}" width="${W}" height="330" fill="${P.mist}" opacity="${night ? 0.06 : 0.16}" filter="url(#blur26)"/>`;
+  return [svg(W, H, `<g>${b}</g>`), W, H];
+}
+
+/** the open desert: dunes into the distance, a lone caravan trail, an oasis with palms and a pool, streaks of sand */
+function desert(P, night) {
+  const W = 1400, H = 720;
+  let b = `<defs>${vgrad("d1", [[0, P.hills[1]], [1, P.hills[1], 0.3]])}${vgrad("d2", [[0, P.sand[0]], [1, P.sand[1]]])}${vgrad("d3", [[0, P.sand[1]], [1, P.sand[2]]])}${vgrad("d4", [[0, P.sand[2]], [1, P.sand[3]]])}</defs>`;
+  // low mesas far away, then the dune sea
+  b += `<g filter="url(#brush)"><path d="${fill(ridge(-20, 1420, 470, 60, 0.45, 71, 6), H)}" fill="url(#d1)" opacity="0.75"/></g>`;
+  b += mistBand(470, 70, P.mist, night ? 0.22 : 0.6);
+  b += `<g filter="url(#brush)"><path d="${fill(dunes(-20, 1420, 545, 22, 73), H)}" fill="url(#d2)" opacity="0.9"/></g>`;
+  b += mistBand(540, 50, P.mist, night ? 0.2 : 0.5);
+  // the oasis on a far dune: a pool and a few palms
+  const ox = 935, oy = 600;
+  b += `<ellipse cx="${ox}" cy="${oy + 6}" rx="70" ry="9" fill="${P.water}"/><path d="M${ox - 50} ${oy + 5} q25 -3 50 0 t50 0" stroke="${P.waterHi}" stroke-width="1.6" fill="none" opacity="0.7"/>`;
+  b += bush(ox - 70, oy + 6, 46, 26, 75, P.palm, P.palmHi) + bush(ox + 76, oy + 6, 40, 22, 76, P.palm, P.palmHi);
+  for (const [x, hh, l] of [[ox - 34, 120, -0.1], [ox - 8, 150, 0.06], [ox + 30, 104, 0.14]]) b += palm(x, oy + 4, hh, l, x, P.palm, P.palmHi);
+  b += `<g filter="url(#brush)"><path d="${fill(dunes(-20, 1420, 625, 30, 79), H)}" fill="url(#d3)"/></g>`;
+  // the crests catch the light
+  { const pts = dunes(-20, 1420, 625, 30, 79); b += `<path d="M${pts.map(([x, y]) => `${f(x)} ${f(y + 1)}`).join(" L")}" stroke="${P.crest}" stroke-width="2.4" fill="none" opacity="${night ? 0.5 : 0.7}"/>`; }
+  b += `<g filter="url(#brush)"><path d="${fill(dunes(-20, 1420, 690, 22, 83), H)}" fill="url(#d4)"/></g>`;
+  // a lone caravan trail winding from the near dunes towards the oasis (paired prints, smaller with distance)
+  for (let i = 0; i < 46; i++) {
+    const t = i / 45, x = 160 + t * 700 + Math.sin(t * 7) * 60 * (1 - t), y = 712 - t * 100 - Math.sin(t * 3.2) * 14;
+    const s = 4.6 * (1 - t * 0.7);
+    b += `<ellipse cx="${f(x - s)}" cy="${f(y)}" rx="${f(s)}" ry="${f(s * 0.45)}" fill="${P.trail}" opacity="${f(0.75 * (1 - t * 0.45))}"/><ellipse cx="${f(x + s * 1.2)}" cy="${f(y + s * 0.6)}" rx="${f(s)}" ry="${f(s * 0.45)}" fill="${P.trail}" opacity="${f(0.7 * (1 - t * 0.45))}"/>`;
+  }
+  // streaks of blowing sand
+  const r = rng(85);
+  for (let i = 0; i < 14; i++) { const x = r() * 1400, y = 560 + r() * 140, l = 60 + r() * 120; b += `<path d="M${f(x)} ${f(y)} q${f(l / 2)} -4 ${f(l)} 0" stroke="${P.crest}" stroke-width="1.4" fill="none" opacity="${f(0.25 + r() * 0.25)}"/>`; }
+  b += mistBand(650, 50, P.mist, night ? 0.12 : 0.3);
+  return [svg(W, H, `<g>${b}</g>`), W, H];
+}
+
+/** the near dunes beyond the end of the terrace (left edge feathered where they meet the terrace; mirrored on the
+ *  other side) */
+function sand(P, night) {
+  const W = 1200, H = 340;
+  let b = `<defs>${vgrad("n1", [[0, P.sand[1]], [1, P.sand[2]]])}${vgrad("n2", [[0, P.sand[0]], [1, P.sand[2]]])}
+    <linearGradient id="fe" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.05" stop-color="#fff" stop-opacity="1"/></linearGradient><mask id="fm"><rect width="${W}" height="${H}" fill="url(#fe)"/></mask></defs>`;
+  const back = [], front = [];
+  for (let x = -40; x <= W + 40; x += 10) {
+    const k = Math.min(1, Math.max(0, x / 420));
+    back.push([x, 137 - k * 26 - Math.sin(x / 120) * 8 * k - Math.abs(Math.sin(x / 260 + 1)) * 14 * k]);
+    front.push([x, 152 - k * 14 - Math.sin(x / 90 + 2) * 6 * k]);
+  }
+  const area = (pts) => `M${pts.map(([x, y]) => `${f(x)} ${f(y)}`).join(" L")} L${W + 40} ${H} L-40 ${H} Z`;
+  b += `<g mask="url(#fm)"><g filter="url(#brush)"><path d="${area(back)}" fill="url(#n1)"/><path d="${area(front)}" fill="url(#n2)"/></g>`;
+  b += `<path d="M${back.map(([x, y]) => `${f(x)} ${f(y + 1)}`).join(" L")}" stroke="${P.crest}" stroke-width="2.2" fill="none" opacity="${night ? 0.45 : 0.75}"/>`;
+  // wind ripples
+  for (let row = 0; row < 7; row++) { const y = 190 + row * 20; let d = `M-20 ${y}`; for (let x = -20; x < W + 20; x += 40) d += ` q10 -${3 + (row % 3)} 20 0 t20 0`; b += `<path d="${d}" stroke="${night ? "#0b1d16" : P.sand[3]}" stroke-width="1.1" fill="none" opacity="${0.3 - row * 0.02}"/>`; }
+  b += `</g>`;
+  return [svg(W, H, b), W, H];
+}
+
 // ---------- render ----------
 const jobs = [];
 for (const [name, fn, scale] of [["far", far, 1], ["city", city, 1], ["mid", mid, 1], ["arcade", arcade, 1], ["iwan", iwan, 1]]) {
@@ -266,10 +380,17 @@ for (const [name, fn, scale] of [["far", far, 1], ["city", city, 1], ["mid", mid
   jobs.push([`${name}-night`, fn(NIGHT, true), scale]);
 }
 jobs.push(["frond", frond(), 1], ["mist", mist(), 0.5]);
+for (const [name, fn, scale] of [["makkah", makkah, 1], ["desert", desert, 1], ["sand", sand, 0.75]]) {
+  jobs.push([`${name}-day`, fn(WING.day, false), scale]);
+  jobs.push([`${name}-night`, fn(WING.night, true), scale]);
+}
+// --only makkah,desert,sand renders just those layers (the approved ones stay untouched)
+const only = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1].split(",") : null;
+if (only) jobs.splice(0, jobs.length, ...jobs.filter(([n]) => only.some((o) => n === o || n.startsWith(`${o}-`))));
 let total = 0;
 for (const [name, [s, W], scale] of jobs) {
   const file = join(OUT, `${name}.webp`);
-  await sharp(Buffer.from(s), { density: 72 }).resize(Math.round(W * scale)).webp({ quality: name.startsWith("far") || name === "mist" ? 70 : 82, alphaQuality: 80, effort: 6 }).toFile(file);
+  await sharp(Buffer.from(s), { density: 72 }).resize(Math.round(W * scale)).webp({ quality: name.startsWith("far") || name === "mist" || name.startsWith("makkah") || name.startsWith("desert") || name.startsWith("sand") ? 70 : 82, alphaQuality: 80, effort: 6 }).toFile(file);
   if (process.argv.includes("--png")) await sharp(Buffer.from(s)).png().toFile(join(process.argv[process.argv.indexOf("--png") + 1], `${name}.png`));
   const kb = statSync(file).size / 1024; total += kb;
   console.log(name.padEnd(14), `${kb.toFixed(0)} KB`);

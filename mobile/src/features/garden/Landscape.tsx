@@ -1,13 +1,15 @@
 // DESIGN FROZEN (owner approved, tag garten-design-v1) — do not change visuals; only bug fixes.
+// Owner extension (21.10.2026): the panorama wings (Makkah to the right, the desert to the left) seen only while the
+// garden is swiped sideways; the centre view is unchanged.
 import { memo, useEffect, useMemo, useState, type ReactNode } from "react";
-import { AccessibilityInfo, Image, Pressable, StyleSheet, View, type ImageSourcePropType } from "react-native";
+import { AccessibilityInfo, Image, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient as SvgLinear, Path, Pattern, Polygon, RadialGradient, Rect, Stop } from "react-native-svg";
 import Animated, { Easing, cancelAnimation, interpolate, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming, type SharedValue } from "react-native-reanimated";
 import { CITIES, dayFor, type Prayer, type Spot } from "@/web/prayer";
 import { useStored, writeJSON } from "@/lib/store";
 import { spotNow } from "@/features/feed/Extras";
-import { stage as stageC } from "@/lib/theme";
+import { ARABIC_FONT, FONT, stage as stageC } from "@/lib/theme";
 import { tick } from "@/features/feed/haptics";
 
 // The living landscape behind the garden and the onboarding: painted layers (assets/garden, made by
@@ -27,9 +29,12 @@ const ART = {
   iwan: [require("../../../assets/garden/iwan-day.webp"), require("../../../assets/garden/iwan-night.webp")],
   frond: require("../../../assets/garden/frond.webp"),
   mist: require("../../../assets/garden/mist.webp"),
+  makkah: [require("../../../assets/garden/makkah-day.webp"), require("../../../assets/garden/makkah-night.webp")],
+  desert: [require("../../../assets/garden/desert-day.webp"), require("../../../assets/garden/desert-night.webp")],
+  sand: [require("../../../assets/garden/sand-day.webp"), require("../../../assets/garden/sand-night.webp")],
 } as const;
 /* eslint-enable @typescript-eslint/no-require-imports */
-const ASPECT = { far: 420 / 1200, city: 360 / 1600, mid: 560 / 1800, arcade: 300 / 1800, iwan: 560 / 700, frond: 820 / 520, mist: 220 / 1200 };
+const ASPECT = { far: 420 / 1200, city: 360 / 1600, mid: 560 / 1800, arcade: 300 / 1800, iwan: 560 / 700, frond: 820 / 520, mist: 220 / 1200, wing: 720 / 1400, sand: 340 / 1200 };
 
 /** what unlocks with the stage of the oldest tree */
 export const UNLOCK = { flowers: 3, lanterns: 4, arcade: 5, fountains: 6, iwan: 8, archLights: 10, aura: 12 } as const;
@@ -308,10 +313,15 @@ export type PanoramaProps = {
   withSky?: boolean;
   /** width of the painted layers relative to the view (1.4 … 2) */
   scale?: number;
+  /** the panorama look (garden swipe): > 0 turns towards the desert on the left, < 0 towards Makkah on the right;
+   *  the approved layers dissolve into the wings. Omitted: no wings at all (onboarding, share cards). */
+  look?: SharedValue<number>;
+  /** how far the look can turn (px); the wings are laid out so that it ends centred on the Haram and the oasis */
+  lookMax?: number;
 };
 
 /** sky + heavens + far mountains + mist + horizon city + groves + arcade + pavilion, in parallax */
-export const Panorama = memo(function Panorama({ width, height, ground, sky, level = 12, reveal, px, still = false, withSky = true, scale = 1.4 }: PanoramaProps) {
+export const Panorama = memo(function Panorama({ width, height, ground, sky, level = 12, reveal, px, still = false, withSky = true, scale = 1.4, look, lookMax = width * 1.2 }: PanoramaProps) {
   const night = useFollow(sky.night, still);
   const one = useSharedValue(1);
   const rv = reveal ?? one;
@@ -331,9 +341,12 @@ export const Panorama = memo(function Panorama({ width, height, ground, sky, lev
       cityMist: { top: cityBase - PW * 0.06, h: PW * 0.16 },
     };
   }, [PW, left, ground]);
-  const p1 = useAnimatedStyle(() => ({ transform: [{ translateX: pan.value * 0.12 }] }));
-  const p2 = useAnimatedStyle(() => ({ transform: [{ translateX: pan.value * 0.28 }] }));
-  const p3 = useAnimatedStyle(() => ({ transform: [{ translateX: pan.value * 0.55 }] }));
+  const lk = look ?? zero;
+  // turning the camera: the approved layers slide away (a little parallax by depth) and dissolve before their edges show
+  const fadeOut = (v: number) => { "worklet"; return interpolate(Math.abs(v), [width * 0.18, width * 0.48], [1, 0], "clamp"); };
+  const p1 = useAnimatedStyle(() => ({ opacity: fadeOut(lk.value), transform: [{ translateX: pan.value * 0.12 + lk.value * 0.75 }] }));
+  const p2 = useAnimatedStyle(() => ({ opacity: fadeOut(lk.value), transform: [{ translateX: pan.value * 0.28 + lk.value * 0.88 }] }));
+  const p3 = useAnimatedStyle(() => ({ opacity: fadeOut(lk.value), transform: [{ translateX: pan.value * 0.55 + lk.value }] }));
   const warmSt = useAnimatedStyle(() => ({ opacity: interpolate(rv.value, [0.4, 1], [0, 1], "clamp") * sky.warm * 0.24 }));
   return (
     <View pointerEvents="none" style={[StyleSheet.absoluteFill, { overflow: "hidden" }]}>
@@ -352,11 +365,70 @@ export const Panorama = memo(function Panorama({ width, height, ground, sky, lev
         {level >= UNLOCK.aura ? <Aura x={L.iwan.left + L.iwan.w / 2} y={L.iwan.top + L.iwan.h * 0.2} r={L.iwan.w * 0.8} still={still} /> : null}
         <Painted l={L.mid} night={night} reveal={rv} from={0.35} to={0.65} />
       </Animated.View>
+      {look && !still ? <Wings width={width} night={night} pan={pan} look={look} max={lookMax} cityBase={L.city.top + L.city.h * (300 / 360)} /> : null}
       {/* golden light washing over everything near sunrise and Maghrib */}
       <Animated.View style={[StyleSheet.absoluteFill, warmSt]}><LinearGradient colors={["#ffcf7a00", "#ffcf7a", "#ffcf7a00"]} locations={[0, 0.7, 1]} style={StyleSheet.absoluteFill} /></Animated.View>
     </View>
   );
 });
+// ---------- the panorama wings: Makkah al-Mukarrama to the right, the open desert to the left ----------
+/** the far wings: each a painted valley (day and night cross-faded) that fades in as the camera turns; the Haram and
+ *  the oasis stand in the middle of the screen when the look is at its end */
+function Wings({ width, night, pan, look, max, cityBase }: { width: number; night: SharedValue<number>; pan: SharedValue<number>; look: SharedValue<number>; max: number; cityBase: number }) {
+  const WW = width * 1.45, WH = WW * ASPECT.wing;
+  // the Haram base (y 606 of 720) sits on the horizon of the city, the valley floor reaches the ground
+  const top = cityBase - WW * (606 / 1400);
+  const hx = 560 / 1400, ox = 935 / 1400; // the Haram and the oasis within their paintings
+  const mk = { src: ART.makkah, w: WW, h: WH, left: width / 2 + max - WW * hx, top };
+  const ds = { src: ART.desert, w: WW, h: WH, left: width / 2 - max - WW * ox, top };
+  const one = useSharedValue(1);
+  const move = useAnimatedStyle(() => ({ transform: [{ translateX: pan.value * 0.28 + look.value }] }));
+  const right = useAnimatedStyle(() => ({ opacity: interpolate(-look.value, [width * 0.1, width * 0.45], [0, 1], "clamp") }));
+  const left = useAnimatedStyle(() => ({ opacity: interpolate(look.value, [width * 0.1, width * 0.45], [0, 1], "clamp") }));
+  const label = useAnimatedStyle(() => ({ opacity: interpolate(-look.value, [max * 0.72, max * 0.95], [0, 1], "clamp"), transform: [{ translateY: interpolate(-look.value, [max * 0.72, max], [6, 0], "clamp") }] }));
+  const lx = width / 2 + max, ly = top + WH * (390 / 720);
+  return (
+    <Animated.View pointerEvents="none" style={[StyleSheet.absoluteFill, move]}>
+      <Animated.View style={[StyleSheet.absoluteFill, left]}>
+        <Painted l={ds} night={night} reveal={one} />
+        <SandDrift x={ds.left + WW * 0.2} y={top + WH * 0.78} w={WW * 0.7} h={WH * 0.18} />
+      </Animated.View>
+      <Animated.View style={[StyleSheet.absoluteFill, right]}>
+        <Painted l={mk} night={night} reveal={one} />
+      </Animated.View>
+      <Animated.View accessible accessibilityRole="text" accessibilityLabel="Makkah al-Mukarrama" style={[{ position: "absolute", left: lx - 140, width: 280, top: ly - 46, alignItems: "center" }, label]}>
+        <Text style={{ fontFamily: ARABIC_FONT, fontSize: 19, color: "#f6ead0", textShadowColor: "rgba(0,0,0,0.45)", textShadowRadius: 6 }}>مكة المكرمة</Text>
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#f6ead0", opacity: 0.9, textShadowColor: "rgba(0,0,0,0.45)", textShadowRadius: 5 }}>Makkah al-Mukarrama</Text>
+      </Animated.View>
+    </Animated.View>
+  );
+}
+/** wind-blown sand low over the dunes (6 pooled grains of light) */
+function SandDrift({ x, y, w, h }: { x: number; y: number; w: number; h: number }) {
+  return <View style={{ position: "absolute", left: x, top: y, width: w, height: h }}>{Array.from({ length: 6 }, (_, i) => <Grain key={i} i={i} w={w} h={h} />)}</View>;
+}
+function Grain({ i, w, h }: { i: number; w: number; h: number }) {
+  const t = useSharedValue(0);
+  useEffect(() => { t.value = withDelay(i * 420, withRepeat(withTiming(1, { duration: 2600 + (i % 3) * 700, easing: Easing.linear }), -1, false)); return () => cancelAnimation(t); }, [i, t]);
+  const y0 = ((i * 37) % 100) / 100 * h;
+  const st = useAnimatedStyle(() => ({ opacity: interpolate(t.value, [0, 0.15, 0.8, 1], [0, 0.75, 0.6, 0]), transform: [{ translateX: t.value * w }, { translateY: y0 - Math.sin(t.value * Math.PI) * 14 - t.value * 6 }] }));
+  return <Animated.View style={[{ position: "absolute", width: 26 + (i % 3) * 12, height: 1.6, borderRadius: 1, backgroundColor: "#f8ecc8" }, st]} />;
+}
+/** the near dunes beyond both ends of the terrace (placed in the moving garden world, so they arrive with it) */
+export const NearSand = memo(function NearSand({ worldW, width, night, still }: { worldW: number; width: number; night: number; still: boolean }) {
+  const n = useFollow(night, still);
+  const one = useSharedValue(1);
+  const w = width * 1.8, h = w * ASPECT.sand, ov = 70;
+  // the dune line meets the top of the terrace (y 137 of 340 in the painting); the rest runs below the scene
+  const box = { position: "absolute" as const, bottom: TERRACE_H - h * (1 - 137 / 340), width: w, height: h };
+  return (
+    <>
+      <View pointerEvents="none" style={[box, { left: worldW - ov }]}><Painted l={{ src: ART.sand, w, h, left: 0, top: 0 }} night={n} reveal={one} /></View>
+      <View pointerEvents="none" style={[box, { left: -w + ov, transform: [{ scaleX: -1 }] }]}><Painted l={{ src: ART.sand, w, h, left: 0, top: 0 }} night={n} reveal={one} /></View>
+    </>
+  );
+});
+
 function Aura({ x, y, r, still }: { x: number; y: number; r: number; still: boolean }) {
   const v = useSharedValue(0.7);
   useEffect(() => { if (still) return; v.value = withRepeat(withTiming(1, { duration: 3600, easing: Easing.inOut(Easing.sin) }), -1, true); return () => cancelAnimation(v); }, [still, v]);

@@ -21,7 +21,8 @@ import { MAX_STAGE, SRCS, treeStage, type Tree, holdCelebrations, STICKER_GP_HIN
 import { CATALOG_SIZE, RARITY_GP, SERIES, SERIES_SIZE, countOf, dailyPackReady, duplicates, isGiven, itemAt, openDailyPack, rarityOf, seriesOwned, totalOwned, useCatalog } from "./catalog";
 import { CatalogArt } from "./CatalogArt";
 import { Petals, Zellige } from "./Scene";
-import { Fronds, Heavens, Motes, setSkyPlace, useSkyPlace, Panorama, SKIES, SkyFill, TERRACE_H, Terrace, gardenLevel, inkFor, useSky, type Sky } from "./Landscape";
+import { scheduleOnRN } from "react-native-worklets";
+import { Fronds, Heavens, Motes, NearSand, setSkyPlace, useSkyPlace, Panorama, SKIES, SkyFill, TERRACE_H, Terrace, gardenLevel, inkFor, useSky, type Sky } from "./Landscape";
 import { Plaque, TREE_H, TREE_W, TreeArt, geom } from "./Tree";
 import { PlantFlow } from "./PlantFlow";
 import { GardenNotifySetting, ProgressBar, StageCinematic, chime, useGardenTick } from "./widgets";
@@ -31,7 +32,7 @@ const SCENE_H = 520;
 
 export default function GardenScreen() {
   useGardenTick();
-  const params = useLocalSearchParams<{ plant?: string; share?: string; sky?: string; cine?: string; level?: string }>();
+  const params = useLocalSearchParams<{ plant?: string; share?: string; sky?: string; cine?: string; level?: string; look?: string }>();
   const tx = useGardenText();
   const ageTx = useAgeText();
   const t = useTheme();
@@ -58,12 +59,28 @@ export default function GardenScreen() {
   const worldW = Math.max(width + 80, plots * plotW + 40); // wider than the screen, so the idle camera drift never shows an edge
   const maxX = Math.max(0, (worldW - width) / 2 + 40);
   const pinch = Gesture.Pinch().onStart(() => { sx.value = scale.value; }).onUpdate((e) => { scale.value = Math.min(2.2, Math.max(0.8, sx.value * e.scale)); }).onEnd(() => { if (scale.value < 1) scale.value = withSpring(1); });
-  const pan = Gesture.Pan().minDistance(8).onStart(() => { tx0.value = px.value; ty0.value = py.value; }).onUpdate((e) => {
+  // the panorama look (owner extension): dragging past the edge of the garden turns the camera, towards Makkah on
+  // the right and the open desert on the left; on release it springs back to the tree. Reduce Motion: no look.
+  const LOOK = width * 1.2, GAIN = 2;
+  const look = useSharedValue(0), edged = useSharedValue(0);
+  const lookC = useDerivedValue(() => Math.min(LOOK, Math.max(-LOOK, look.value)));
+  const pan = Gesture.Pan().minDistance(8).onStart(() => { cancelAnimation(look); tx0.value = px.value + look.value / GAIN; ty0.value = py.value; }).onUpdate((e) => {
     const lim = maxX + (scale.value - 1) * width * 0.5;
-    px.value = Math.min(lim, Math.max(-lim, tx0.value + e.translationX));
+    const raw = tx0.value + e.translationX;
+    px.value = Math.min(lim, Math.max(-lim, raw));
     py.value = Math.min(120 * scale.value, Math.max(-120 * scale.value, ty0.value + e.translationY));
+    if (reduce || scale.value > 1.05) return;
+    look.value = Math.min(LOOK, Math.max(-LOOK, (raw - px.value) * GAIN));
+    // a haptic tick when the look reaches its end (once per arrival)
+    const atEdge = Math.abs(look.value) >= LOOK - 0.5;
+    if (atEdge && !edged.value) { edged.value = 1; scheduleOnRN(tick); } else if (!atEdge && Math.abs(look.value) < LOOK * 0.9) edged.value = 0;
+  }).onEnd((e) => {
+    if (look.value === 0) return;
+    edged.value = 0;
+    look.value = withSpring(0, { damping: 17, stiffness: 95, mass: 1, velocity: Math.max(-1500, Math.min(1500, e.velocityX)) });
+    px.value = withSpring(0, { damping: 18, stiffness: 120 });
   });
-  const dbl = Gesture.Tap().numberOfTaps(2).onEnd(() => { scale.value = withSpring(1); px.value = withSpring(0); py.value = withSpring(0); });
+  const dbl = Gesture.Tap().numberOfTaps(2).onEnd(() => { scale.value = withSpring(1); px.value = withSpring(0); py.value = withSpring(0); look.value = withSpring(0); });
   const gesture = Gesture.Simultaneous(pinch, pan, dbl);
   // the camera: a gentle idle drift (parallax through every layer) and a soft push-in on events
   const drift = useSharedValue(0), cam = useSharedValue(1);
@@ -73,8 +90,12 @@ export default function GardenScreen() {
     return () => cancelAnimation(drift);
   }, [reduce, drift]);
   const camX = useDerivedValue(() => px.value + drift.value);
+  // "?look=-1|1" (dev only) holds the camera turned to Makkah or the desert (store previews)
+  useEffect(() => { if (__DEV__ && params.look && !reduce) look.value = Math.max(-1, Math.min(1, Number(params.look) || 0)) * LOOK; }, [params.look, reduce, LOOK, look]);
+  const frondX = useDerivedValue(() => camX.value + lookC.value * 0.8);
+  const petalSt = useAnimatedStyle(() => ({ opacity: interpolate(Math.abs(lookC.value), [0, width * 0.4], [1, 0], "clamp") }));
   const focus = () => { if (!reduce) cam.value = withSequence(withTiming(1.07, { duration: 650, easing: Easing.out(Easing.cubic) }), withDelay(1100, withTiming(1, { duration: 1100, easing: Easing.inOut(Easing.quad) }))); };
-  const world = useAnimatedStyle(() => ({ transform: [{ translateX: px.value + drift.value }, { translateY: py.value + (cam.value - 1) * 260 }, { scale: scale.value * cam.value }] }));
+  const world = useAnimatedStyle(() => ({ transform: [{ translateX: px.value + drift.value + lookC.value }, { translateY: py.value + (cam.value - 1) * 260 }, { scale: scale.value * cam.value }] }));
   // a new decoration (from a gift) arrives with a dust of light around the tree
   const [dust, setDust] = useState(0);
   const traitsN = useRef(s.traits.length);
@@ -99,12 +120,13 @@ export default function GardenScreen() {
         <View style={{ height: H, overflow: "hidden" }}>
         <GestureDetector gesture={gesture}>
           <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} accessibilityLabel={tx.zoomHint}>
-            <Panorama width={width} height={H} ground={H - TERRACE_H + 6} sky={sky} level={level} px={camX} still={reduce} scale={1.9} />
-            <Petals width={width} height={SCENE_H} color={petal} still={reduce} />
+            <Panorama width={width} height={H} ground={H - TERRACE_H + 6} sky={sky} level={level} px={camX} still={reduce} scale={1.9} look={lookC} lookMax={LOOK} />
+            <Animated.View pointerEvents="none" style={[StyleSheet.absoluteFill, petalSt]}><Petals width={width} height={SCENE_H} color={petal} still={reduce} /></Animated.View>
             <Animated.View style={[{ position: "absolute", left: (width - worldW) / 2, width: worldW, bottom: 0, height: SCENE_H - 40 }, world]}>
               <View style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
                 <Terrace width={worldW} level={level} night={sky.night} still={reduce} fountain={s.traits.includes("fountain")} bench={s.traits.includes("bench")} interactive />
               </View>
+              {!reduce ? <NearSand worldW={worldW} width={width} night={sky.night} still={reduce} /> : null}
               <View style={{ position: "absolute", bottom: TERRACE_H - 12 - 30 - plotW * (48 / 360), left: 0, right: 0, flexDirection: "row", justifyContent: "center", alignItems: "flex-end" }}>
                 {Array.from({ length: plots }, (_, i) => {
                   const tr = s.trees[i];
@@ -114,7 +136,7 @@ export default function GardenScreen() {
               </View>
             </Animated.View>
             <Motes width={width} height={H} night={sky.night} still={reduce} />
-            <Fronds width={width} height={H} px={camX} />
+            <Fronds width={width} height={H} px={frondX} />
           </View>
         </GestureDetector>
             {/* top bar: outside the scene's gestures, whose double tap would swallow the buttons' taps */}
