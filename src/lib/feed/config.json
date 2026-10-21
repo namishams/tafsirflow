@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-21",
+  "minAppBuild": 1,
+  "kindWeights": { "editorial": 3, "hadith-of-day": 2, "verse-of-day": 2, "islamic-date": 1, "featured-surah": 1, "tafsir": 2, "dua": 2, "seerah": 1, "history": 1, "art": 1 },
+  "enabledKinds": ["editorial", "hadith-of-day", "verse-of-day", "islamic-date", "featured-surah", "tafsir", "hadith", "shia-hadith", "dua", "asma", "surah-info", "word-of-day", "reciter-bio", "seerah", "history", "art", "mosque", "scholar-bio", "prophets"],
+  "promo": {
+    "frequencyCap": { "everyNItems": 12, "maxPerSession": 2, "maxPerDay": 4 },
+    "items": [
+      { "id": "shams", "title": { "de": "Shams – Ihr Begleiter", "en": "Shams – your companion" }, "image": "/images/promo/shams.png", "deeplink": "tafsirflow://shams" },
+      { "id": "pro", "title": { "de": "Pro freischalten", "en": "Unlock Pro" }, "image": "/images/promo/pro.png", "deeplink": "tafsirflow://pro" },
+      { "id": "duas", "title": { "de": "Duas für jeden Tag", "en": "Duas for every day" }, "image": "/images/promo/duas.png", "deeplink": "tafsirflow://duas" },
+      { "id": "name-report", "title": { "de": "Die Bedeutung Ihres Namens", "en": "The meaning of your name" }, "image": "/images/promo/name-report.png", "deeplink": "tafsirflow://names" }
+    ]
+  },
+  "topicChipGroups": [
+    { "id": "quran", "label": { "de": "Quran", "en": "Quran" }, "kinds": ["verse-of-day", "tafsir", "surah-info", "featured-surah", "word-of-day"] },
+    { "id": "hadith", "label": { "de": "Hadith", "en": "Hadith" }, "kinds": ["hadith-of-day", "hadith", "shia-hadith"] },
+    { "id": "dua", "label": { "de": "Duas", "en": "Duas" }, "kinds": ["dua", "asma"] },
+    { "id": "history", "label": { "de": "Geschichte", "en": "History" }, "kinds": ["seerah", "history", "scholar-bio", "prophets"] },
+    { "id": "culture", "label": { "de": "Kunst & Orte", "en": "Art & places" }, "kinds": ["art", "mosque", "reciter-bio"] },
+    { "id": "news", "label": { "de": "Neu", "en": "New" }, "kinds": ["editorial", "islamic-date"] }
+  ],
+  "flags": { "newPostsTab": true, "serverPage": true, "promos": true, "announcements": true },
+  "announcements": [
+    { "id": "ramadan-1448", "title": { "de": "Ramadan Mubarak", "en": "Ramadan Mubarak" }, "image": "/images/promo/ramadan.png", "deeplink": "tafsirflow://ramadan", "startsAt": "2027-02-07T00:00:00Z", "endsAt": "2027-03-09T00:00:00Z", "tradition": "all" },
+    { "id": "eid-fitr-1448", "title": { "de": "Eid Mubarak", "en": "Eid Mubarak" }, "image": "/images/promo/eid.png", "deeplink": "tafsirflow://eid", "startsAt": "2027-03-09T00:00:00Z", "endsAt": "2027-03-13T00:00:00Z", "tradition": "all" }
+  ]
+}

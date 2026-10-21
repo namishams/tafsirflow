@@ -1,0 +1,8 @@
+{
+  "id": "welcome-feed",
+  "kind": "announcement",
+  "title": { "de": "Neu: Beiträge der Redaktion", "en": "New: posts from the editors" },
+  "body": { "de": "Hier finden Sie ab jetzt regelmäßig neue Beiträge zu Quran, Hadith und Geschichte.", "en": "From now on you will find new posts on Quran, hadith and history here." },
+  "source": "Quran Masterclass", "sourceUrl": "https://tafsirflow.com",
+  "tradition": "all", "publishAt": "2026-10-21T00:00:00Z"
+}

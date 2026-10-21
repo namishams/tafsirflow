@@ -1,0 +1,9 @@
+{
+  "id": "hadith-intentions",
+  "kind": "hadith",
+  "hadithId": "bukhari:1",
+  "title": { "de": "Taten nach Absichten", "en": "Deeds by intentions" },
+  "body": { "de": "Der erste Hadith in Sahih al-Bukhari. Der Text wird aus der Quelle geladen.", "en": "The first hadith in Sahih al-Bukhari. The text is loaded from the source." },
+  "source": "Sahih al-Bukhari", "sourceUrl": "https://sunnah.com/bukhari:1",
+  "tradition": "sunni", "publishAt": "2026-10-21T00:00:00Z"
+}
