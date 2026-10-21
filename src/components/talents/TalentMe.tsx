@@ -4,11 +4,13 @@ import { Link } from "@/i18n/navigation";
 import { BadgeIcon, type WebBadge } from "./BadgeIcon";
 import { sijillText, type SwKey } from "@/lib/sijillWeb";
 import { momentLine } from "@/lib/sijillMoment";
+import { profileText } from "@/lib/profileWeb";
+import { DefaultAvatar } from "./DefaultAvatar";
 
 // /talents/me on the website: the signed-in member's talent profile (create or edit), age confirmation, badges with the
 // YouTube connection for the official star, and notifications. Same API as the app.
 type Tx = Record<string, string>;
-type Me = { username: string; name: string; bio: string; country: string | null; role: string; style: string; ijaza: boolean; public: boolean; rewaya: string; maqam: string; ijazahChain: string; private: boolean; messagePolicy: "connections" | "nobody"; badge: WebBadge | null };
+type Me = { username: string; name: string; bio: string; country: string | null; role: string; style: string; ijaza: boolean; public: boolean; rewaya: string; maqam: string; ijazahChain: string; private: boolean; messagePolicy: "connections" | "nobody"; badge: WebBadge | null; avatar?: string | null };
 type Badges = { badge: WebBadge | null; emerald: { ok: boolean; email: boolean; phone: boolean | null; age: boolean; profile: boolean; guidelines: boolean }; gold: { ok: boolean; level: number; need: number }; official: { ok: boolean; channel: string | null; minSubscribers: number; available: boolean } };
 type Note = { id: string; kind: string; at: string; read: boolean; verseKey: string | null; moment?: { kind: string; data: unknown; title: string | null }; reaction?: string; actor: { username: string; name: string; badge?: WebBadge | null } | null };
 const f = (s: string, v: Record<string, string | number>) => Object.entries(v).reduce((a, [k, x]) => a.split(`{${k}}`).join(String(x)), s);
@@ -65,6 +67,56 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
     if (!r.ok) { setMsg(err(r.data.error)); return; }
     setMsg(""); void load();
   };
+  // profile photo: cropped square and re-encoded as a 512 px JPEG in the browser (drops EXIF/location), then uploaded;
+  // the server re-encodes again and bumps avatar_version, so the new URL shows at once
+  const px = profileText(locale);
+  const [photoBusy, setPhotoBusy] = useState(false);
+  const [photoMsg, setPhotoMsg] = useState("");
+  const [photoFailed, setPhotoFailed] = useState(false);
+  const uploadPhoto = async (file: File | undefined) => {
+    if (!file || !me) return;
+    setPhotoMsg("");
+    if (file.size > 15 * 1024 * 1024) { setPhotoMsg(px.photoTooBig); return; }
+    setPhotoBusy(true);
+    try {
+      const bmp = await createImageBitmap(file);
+      const side = Math.min(bmp.width, bmp.height);
+      const c = document.createElement("canvas");
+      c.width = 512; c.height = 512;
+      c.getContext("2d")!.drawImage(bmp, (bmp.width - side) / 2, (bmp.height - side) / 2, side, side, 0, 0, 512, 512);
+      const blob = await new Promise<Blob | null>((ok) => c.toBlob(ok, "image/jpeg", 0.85));
+      if (!blob) throw new Error("encode");
+      const fd = new FormData();
+      fd.append("image", blob, "avatar.jpg");
+      const r = await fetch("/api/community/avatar", { method: "POST", body: fd });
+      const d = (await r.json().catch(() => ({}))) as { avatar?: string; error?: string };
+      if (!r.ok || !d.avatar) { setPhotoMsg(err(d.error)); return; }
+      setPhotoFailed(false); setMe({ ...me, avatar: d.avatar });
+    } catch { setPhotoMsg(px.error); } finally { setPhotoBusy(false); }
+  };
+  const removePhoto = async () => {
+    if (!me) return;
+    setPhotoBusy(true); setPhotoMsg("");
+    const r = await call<{ avatar: null }>("/api/community/avatar", { method: "DELETE" }).catch(() => null);
+    setPhotoBusy(false);
+    if (!r?.ok) { setPhotoMsg(err(r?.data.error)); return; }
+    setMe({ ...me, avatar: null });
+  };
+  // live check of the @username while typing (format, reserved, word filter, taken)
+  const [nameState, setNameState] = useState<"" | "checking" | "ok" | "format" | "reserved" | "taken" | "inappropriate">("");
+  useEffect(() => {
+    const u = form.username;
+    if (!u || u === me?.username) { setNameState(""); return; }
+    if (!/^[a-z0-9_.]{3,20}$/.test(u)) { setNameState("format"); return; }
+    setNameState("checking");
+    let live = true;
+    const h = setTimeout(() => {
+      call<{ ok: boolean; reason?: "format" | "reserved" | "taken" | "inappropriate" }>(`/api/community/username?u=${encodeURIComponent(u)}`)
+        .then((r) => { if (live) setNameState(r.ok ? (r.data.ok ? "ok" : r.data.reason ?? "taken") : ""); }).catch(() => live && setNameState(""));
+    }, 400);
+    return () => { live = false; clearTimeout(h); };
+  }, [form.username, me?.username]);
+  const nameBad = nameState === "format" || nameState === "reserved" || nameState === "taken" || nameState === "inappropriate";
   const youtube = async () => {
     const r = await call<{ url: string }>("/api/community/official", { method: "POST", body: JSON.stringify({ target: "web", locale }) });
     if (!r.ok) { setMsg(err(r.data.error)); return; }
@@ -93,9 +145,32 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
       {official ? <p role="status" className={`rounded-md p-4 font-semibold ${official === "ok" ? "bg-accent/10 text-accent" : "bg-red-600/10 text-red-700 dark:text-red-400"}`}>{tx[`official_${official}`] ?? tx.error}</p> : null}
       {me ? <Link href={`/talents/${me.username}`} className="btn-gold inline-flex h-12 w-fit items-center rounded-md px-6 font-bold">{tx.viewProfile}</Link> : <p className="text-[16px]">{tx.noProfile}</p>}
 
+      {me ? (
+        <section aria-labelledby="photo" className="flex flex-wrap items-center gap-5 rounded-lg border border-line bg-surface p-6">
+          <span className={`grid h-24 w-24 shrink-0 place-items-center overflow-hidden rounded-full ring-2 ${me.badge === "gold" || me.badge === "official" ? "ring-[#E2C77F]" : "ring-[rgb(var(--hm-gold))]/70"}`}>
+            {me.avatar && !photoFailed
+              ? <img src={me.avatar} alt="" width={96} height={96} className="h-full w-full object-cover" onError={() => setPhotoFailed(true)} /> // eslint-disable-line @next/next/no-img-element
+              : <DefaultAvatar />}
+          </span>
+          <div className="grid flex-1 gap-2">
+            <h2 id="photo" className="font-display text-xl">{px.photoTitle}</h2>
+            <p className="text-[13.5px] text-muted">{px.photoHint}</p>
+            <div className="flex flex-wrap gap-2">
+              <label className={`btn-gold inline-flex h-11 cursor-pointer items-center rounded-md px-5 font-bold focus-within:outline focus-within:outline-2 ${photoBusy ? "pointer-events-none opacity-60" : ""}`}>
+                {photoBusy ? px.photoSaving : px.photoChoose}
+                <input type="file" accept="image/jpeg,image/png" className="sr-only" disabled={photoBusy} onChange={(e) => { void uploadPhoto(e.target.files?.[0]); e.target.value = ""; }} />
+              </label>
+              {me.avatar ? <button type="button" onClick={() => void removePhoto()} disabled={photoBusy} className="inline-flex h-11 items-center rounded-md border border-line px-5 font-semibold text-red-700 disabled:opacity-60 dark:text-red-400">{px.photoRemove}</button> : null}
+            </div>
+            {photoMsg ? <p role="alert" className="text-[14px] text-red-700 dark:text-red-400">{photoMsg}</p> : null}
+          </div>
+        </section>
+      ) : null}
+
       <section className="grid gap-4 rounded-lg border border-line bg-surface p-6">
         <h2 className="font-display text-2xl">{tx.edit}</h2>
-        <label className="grid gap-1.5 font-semibold">{tx.username}<input className={input} dir="ltr" maxLength={20} value={form.username} onChange={(e) => setForm({ ...form, username: e.target.value.toLowerCase().replace(/[^a-z0-9_.]/g, "") })} /><span className="text-[13px] font-normal text-muted">{tx.usernameHint}</span></label>
+        <label className="grid gap-1.5 font-semibold">{tx.username}<input className={input} dir="ltr" maxLength={20} value={form.username} onChange={(e) => setForm({ ...form, username: e.target.value.toLowerCase().replace(/[^a-z0-9_.]/g, "") })} /><span className="text-[13px] font-normal text-muted">{tx.usernameHint}</span>
+          {nameState ? <span role="status" className={`text-[13px] font-semibold ${nameState === "ok" ? "text-accent" : nameState === "checking" ? "text-muted" : "text-red-700 dark:text-red-400"}`}>{px[nameState === "ok" ? "usernameFree" : nameState === "checking" ? "usernameChecking" : (`username_${nameState}` as const)]}</span> : null}</label>
         <label className="grid gap-1.5 font-semibold">{tx.name}<input className={input} maxLength={40} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></label>
         <label className="grid gap-1.5 font-semibold">{tx.bio}<textarea className="min-h-24 w-full rounded-md border border-line bg-surface p-3 text-[16px]" maxLength={160} value={form.bio} onChange={(e) => setForm({ ...form, bio: e.target.value })} /></label>
         <label className="grid gap-1.5 font-semibold">{tx.country}
@@ -116,7 +191,7 @@ export default function TalentMe({ locale, tx, countries, official }: { locale: 
         {!accepted ? <label className="flex gap-3"><input type="checkbox" checked={guidelines} onChange={(e) => setGuidelines(e.target.checked)} /><span>{tx.acceptGuidelines} <Link href="/talents" className="text-accent hover:underline">{tx.guidelines}</Link> · <Link href="/legal/terms" className="text-accent hover:underline">Terms</Link></span></label> : null}
         {msg ? <p role="alert" className="text-red-700 dark:text-red-400">{msg}</p> : null}
         {saved ? <p role="status" className="font-semibold text-accent">{tx.saved}</p> : null}
-        <button type="button" onClick={save} disabled={form.username.length < 3 || !form.name.trim() || (!me && !guidelines)} className="btn-gold h-12 w-fit rounded-md px-8 font-bold disabled:opacity-50">{tx.save}</button>
+        <button type="button" onClick={save} disabled={nameBad || form.username.length < 3 || !form.name.trim() || (!me && !guidelines)} className="btn-gold h-12 w-fit rounded-md px-8 font-bold disabled:opacity-50">{tx.save}</button>
       </section>
 
       {badges ? (

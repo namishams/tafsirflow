@@ -72,7 +72,7 @@ export default function RecordClip() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} eyebrow={tt("network")} title={tt("newClip")} lead={tt("recordLead")} />
+        <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("newClip")} lead={tt("recordLead")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 16 }}>
             {status && status.enabled === false ? (

@@ -1,4 +1,5 @@
 "use client";
+import { DefaultAvatar } from "./DefaultAvatar";
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { BadgeIcon, type WebBadge } from "./BadgeIcon";
@@ -32,7 +33,7 @@ export default function TalentList({ username, kind, l }: { username: string; ki
           <li key={c.username}>
             <Link href={`/talents/${c.username}`} className="flex items-center gap-3 p-4 hover:bg-bg">
               <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full bg-[rgb(8,58,44)] ring-2 ring-[rgb(var(--hm-gold))]/60">
-                {c.avatar ? <img src={c.avatar} alt="" className="h-full w-full object-cover" /> /* eslint-disable-line @next/next/no-img-element */ : <span aria-hidden className="font-callig text-lg text-[#e8d3a0]">{(Array.from(c.name.trim())[0] ?? "?").toUpperCase()}</span>}
+                {c.avatar ? <img src={c.avatar} alt="" className="h-full w-full object-cover" /> /* eslint-disable-line @next/next/no-img-element */ : <DefaultAvatar />}
               </span>
               <span className="min-w-0 flex-1">
                 <span className="flex items-center gap-1.5 font-semibold">{c.name}{c.badge ? <BadgeIcon badge={c.badge} size={15} /> : null}</span>

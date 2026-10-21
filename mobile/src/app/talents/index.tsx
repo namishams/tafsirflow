@@ -96,7 +96,7 @@ export default function DiscoverTalents() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
       <Page>
-        <PageHero back eyebrow={tt("network")} title={tt("discoverTitle")} lead={tt("discoverLead")} arcade={false} />
+        <PageHero back topInset eyebrow={tt("network")} title={tt("discoverTitle")} lead={tt("discoverLead")} arcade={false} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 16 }}>
             <RowGroup>

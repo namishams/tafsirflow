@@ -1,3 +1,4 @@
+import type { Moment } from "@/features/sijill/api";
 import { Platform } from "react-native";
 import { api, ApiError, SITE } from "@/lib/api";
 import { getToken } from "@/lib/storage";
@@ -7,7 +8,7 @@ import type { Badge } from "./badges";
 export type Level = "talent" | "rising" | "master" | "sheikh";
 export const LEVELS: Level[] = ["talent", "rising", "master", "sheikh"];
 export type Connection = "none" | "outgoing" | "incoming" | "connected";
-export type TalentCard = { username: string; name: string; country: string | null; role: string; rewaya: string; level: Level; verified: boolean; badge?: Badge | null; sharerTier: number; followers: number; avatar?: string | null; followed?: boolean; mine?: boolean };
+export type TalentCard = { username: string; name: string; country: string | null; role: string; rewaya: string; level: Level; verified: boolean; badge?: Badge | null; sharerTier: number; followers: number; avatar?: string | null; followed?: boolean; mine?: boolean; followsMe?: boolean };
 export type TalentProfile = TalentCard & {
   bio: string; style: string; ijaza: boolean; public: boolean; following: number; shares: number; maqam: string; ijazahChain: string;
   progress: { treeStage: number; treeType: string; certJuz: number[]; hidden?: boolean } | null;
@@ -17,6 +18,14 @@ export type TalentProfile = TalentCard & {
   posts: number; likes: number; liveStory: boolean; reciterLevel?: number;
   /** false: posting is switched off on the server (achievement showcase only) */
   postingEnabled?: boolean;
+  /** achievement "posts": MashaAllah total (gold hearts + "MashaAllah" reactions), count and first page of moments */
+  mashaallahTotal?: number; momentCount?: number; moments?: Moment[]; momentsMore?: string | null;
+  /** people the viewer follows who follow this member ("Followed by X and 3 others") */
+  followedBy?: { total: number; users: { username: string; name: string; avatar: string | null }[] } | null;
+  /** this member follows the viewer ("Follow back") */
+  followsMe?: boolean;
+  /** public profile link and its QR code (rows of 0/1) */
+  shareUrl?: string; shareQr?: string[];
 };
 export type Post = {
   id: string; type: "story" | "post"; verseKey: string | null; durationMs: number | null; hasVideo: boolean; waveform: number[]; caption: string;
@@ -56,7 +65,7 @@ export const T = {
   age: () => api<AgeStatus>("/api/community/age"),
   confirmAge: (birthYear: number | undefined) => api<AgeStatus>("/api/community/age", { method: "POST", body: { birthYear, confirm: true } }),
   talents: (q: Record<string, string>) => api<{ talents: TalentCard[]; next: string | null }>(`/api/community/talents?${new URLSearchParams(q).toString()}`),
-  profile: (name: string) => api<{ profile: TalentProfile }>(`/api/community/talents/${u(name)}`),
+  profile: (name: string, locale?: string) => api<{ profile: TalentProfile }>(`/api/community/talents/${u(name)}${locale ? `?locale=${u(locale)}` : ""}`),
   follows: (name: string, kind: "followers" | "following", cursor?: string) =>
     api<{ list: TalentCard[]; next: string | null }>(`/api/community/talents/${u(name)}/${kind}${cursor ? `?cursor=${u(cursor)}` : ""}`),
   follow: (name: string, on: boolean) => api<{ followed: boolean; followers: number; requested?: boolean }>(`/api/community/follow/${u(name)}`, { method: on ? "POST" : "DELETE" }),

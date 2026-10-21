@@ -30,7 +30,7 @@ export default function Moderation() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
       <Page>
-        <PageHero back arcade={false} eyebrow={tt("network")} title={tt("adminTitle")} />
+        <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("adminTitle")} />
         {user?.role !== "admin" ? <Muted>{tt("e_forbidden")}</Muted> : (
           <View style={{ padding: 16, gap: 16 }}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>

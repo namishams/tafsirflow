@@ -28,6 +28,7 @@ import { fmt, usePlanT } from "./texts";
 import { useO2 } from "./texts2";
 import { CHALLENGES, GOALS_V2, INTERESTS, primaryGoal, readName, readV2, saveName, saveV2, type Challenge, type GoalV2, type Interest, type V2Answers } from "./v2";
 import { MethodIntro, PathView, PeopleOfQuran, ReplyCard, useGoalLabel } from "./Onboard2";
+import { ProfileSetupStep } from "@/features/talents/ProfileSetup";
 
 // The first-run funnel (onboarding v2): language, an optional name, then multi-select goals, interests and challenges,
 // and the v1 single-select questions (level, minutes, reciter, tradition, prayer, motivation). After every answer a
@@ -35,7 +36,8 @@ import { MethodIntro, PathView, PeopleOfQuran, ReplyCard, useGoalLabel } from ".
 // + the 30-day plan + courses) → the planting ceremony (only without a tree) → the day-1 paywall → the feed.
 // Answers so far are kept in qmc.quiz.draft, so the reload a right-to-left language needs resumes at the same step.
 // "?personalise=1" (Masterclass tab): the same questions for an existing plan; keeps the plan's start date and tree.
-const Q = ["lang", "name", "goals", "interests", "challenges", "level", "minutes", "reciter", "tradition", "prayer", "motivation"] as const;
+// "profile" (owner, build 20): display name, @username and an optional photo for the Talents community (ProfileSetup).
+const Q_ALL = ["lang", "name", "profile", "goals", "interests", "challenges", "level", "minutes", "reciter", "tradition", "prayer", "motivation"] as const;
 type Phase = "quiz" | "story" | "method" | "building" | "plan" | "garden" | "paywall";
 type Draft = QuizDraft & { goals?: GoalV2[]; interests?: Interest[]; challenges?: Challenge[]; v?: 2 };
 
@@ -54,6 +56,8 @@ export function Funnel() {
   const goalLabel = useGoalLabel();
   const { personalise, preview } = useLocalSearchParams<{ personalise?: string; preview?: string }>();
   const pers = personalise === "1";
+  // personalising an existing plan skips the profile step (the profile is edited under Edit profile)
+  const Q = useMemo(() => (pers ? Q_ALL.filter((x) => x !== "profile") : [...Q_ALL]), [pers]);
   const { lang, setSetting } = useLang();
   const { pro } = usePro();
   const insets = useSafeAreaInsets();
@@ -188,6 +192,7 @@ export function Funnel() {
             ) : null}
           </>
         ) : null}
+        {q === "profile" ? <ProfileSetupStep name={name} onDone={() => { tick(); save({}, step + 1); setStep(step + 1); }} /> : null}
         {q === "goals" ? (
           <>
             {title(o.qGoals)}

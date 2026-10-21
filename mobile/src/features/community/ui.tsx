@@ -1,4 +1,5 @@
 import { Pressable, Text, View } from "react-native";
+import Svg, { Circle, Path, Rect } from "react-native-svg";
 import { router, type Href } from "expo-router";
 import { ApiError } from "@/lib/api";
 import { FONT, R, goldButton, useTheme } from "@/lib/theme";
@@ -14,11 +15,22 @@ export type Profile = {
 
 export const initials = (n: string) => (n.trim().split(/\s+/).slice(0, 2).map((w) => Array.from(w)[0] ?? "").join("") || "?").toUpperCase();
 
-export function Avatar({ name, size = 52 }: { name: string; size?: number }) {
-  const t = useTheme();
+/** the default profile picture without a photo (and for members under 16): a neutral head-and-shoulders silhouette like
+ *  Instagram, soft sage and cream to sit inside the gold rim. Same drawing on the website (components/talents/DefaultAvatar). */
+export function DefaultAvatar({ size }: { size: number }) {
   return (
-    <View accessible={false} importantForAccessibility="no-hide-descendants" style={{ width: size, height: size, borderRadius: size / 2, backgroundColor: t.accentSoft, borderWidth: 2, borderColor: goldButton.line, alignItems: "center", justifyContent: "center" }}>
-      <Text allowFontScaling={false} style={{ fontFamily: FONT.bold, fontSize: size * 0.36, color: t.accent }}>{initials(name)}</Text>
+    <Svg width={size} height={size} viewBox="0 0 100 100">
+      <Rect width={100} height={100} fill="#DCE5E0" />
+      <Circle cx={50} cy={39} r={17} fill="#F8F6EF" />
+      <Path d="M17 100c0-20 14.8-33 33-33s33 13 33 33z" fill="#F8F6EF" />
+    </Svg>
+  );
+}
+
+export function Avatar({ name, size = 52 }: { name: string; size?: number }) {
+  return (
+    <View accessible={false} importantForAccessibility="no-hide-descendants" accessibilityLabel={name} style={{ width: size, height: size, borderRadius: size / 2, borderWidth: 2, borderColor: goldButton.line, overflow: "hidden" }}>
+      <DefaultAvatar size={size - 4} />
     </View>
   );
 }

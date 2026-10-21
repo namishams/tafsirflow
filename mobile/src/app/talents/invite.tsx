@@ -28,7 +28,7 @@ export default function RedeemInvite() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} eyebrow={tt("network")} title={tt("inviteTitle")} lead={tt("inviteLead")} />
+        <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("inviteTitle")} lead={tt("inviteLead")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 16 }}>
             {!mine ? (

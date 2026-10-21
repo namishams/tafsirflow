@@ -36,7 +36,7 @@ export default function StudyBuddies() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
         <Page>
-          <PageHero back arcade={false} eyebrow={st("sijill")} title={st("buddies")} lead={st("buddiesLead")} />
+          <PageHero back topInset arcade={false} eyebrow={st("sijill")} title={st("buddies")} lead={st("buddiesLead")} />
           <AccessGate a={a}>
             <View style={{ padding: 16, gap: 14 }}>
               {!a.age?.interact ? <Muted>{tt("age16")}</Muted> : !list ? <Loading /> : need ? (

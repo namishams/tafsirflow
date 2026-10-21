@@ -45,7 +45,7 @@ export default function Requests() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
       <Page>
-        <PageHero back arcade={false} eyebrow={tt("network")} title={tt("requestsTitle")} />
+        <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("requestsTitle")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 22 }}>
             {follows.length ? section(tt("followRequests"), follows, "", (c) => (

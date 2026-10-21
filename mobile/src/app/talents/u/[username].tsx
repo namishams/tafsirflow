@@ -22,6 +22,7 @@ import { sijillApi, type Moment, type Sijill } from "@/features/sijill/api";
 import { pickAvatar } from "@/features/talents/avatar";
 import { MomentFeed, MomentGrid, MomentsEmpty, maOf } from "@/features/talents/MomentPosts";
 import { usePT } from "@/features/talents/profileText";
+import { Completeness, FollowedBy, Highlights, ShareSheet, Suggested } from "@/features/talents/ProfileExtras";
 import type { SKey } from "@/features/sijill/text";
 import { syncSijill } from "@/features/sijill/summary";
 import { SijillShowcase, TreeBanner } from "@/features/sijill/Showcase";
@@ -57,6 +58,9 @@ export default function TalentProfileScreen() {
   const [moments, setMoments] = useState<Moment[] | null>(null);
   const [momentsMore, setMomentsMore] = useState<string | null>(null);
   const [feedAt, setFeedAt] = useState<number | null>(null);
+  const [feedIds, setFeedIds] = useState<string[] | null>(null);
+  const [sharing, setSharing] = useState(false);
+  const [justFollowed, setJustFollowed] = useState(false);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState("");
   const [reporting, setReporting] = useState(false);
@@ -105,6 +109,7 @@ export default function TalentProfileScreen() {
     if (p.requested) { await T.follow(p.username, false); setP({ ...p, requested: false }); return; }
     const d = await T.follow(p.username, !p.followed);
     setP({ ...p, followed: d.followed, followers: d.followers, requested: !!d.requested });
+    if (d.followed || d.requested) setJustFollowed(true);
     if (d.followed && p.restricted) await load();
   });
   const connect = () => p && run(async () => {
@@ -117,7 +122,7 @@ export default function TalentProfileScreen() {
   const block = () => p && (p.blocked
     ? run(async () => { await T.block(p.username, false); await load(); })
     : confirm(tt("block"), tt("confirmBlock"), tt("block"), () => void run(async () => { await T.block(p.username, true); setP({ ...p, blocked: true, followed: false, connection: "none", canMessage: false }); })));
-  const share = () => p && void Share.share({ message: `${p.name} (@${p.username}) · Quran Masterclass Talents\n${SITE}/${lang}/talents/${p.username}` }).catch(() => undefined);
+  const share = () => p && (p.shareQr?.length ? setSharing(true) : void Share.share({ message: `${p.name} (@${p.username}) · Quran Masterclass Talents\n${SITE}/${lang}/talents/${p.username}` }).catch(() => undefined));
 
   const nf = (n: number) => { try { return Intl.NumberFormat(lang, { notation: n >= 1000 ? "compact" : "standard", maximumFractionDigits: 1 }).format(n); } catch { return String(n); } };
   const stat = (n: number, label: string, onPress?: () => void) => (
@@ -156,7 +161,7 @@ export default function TalentProfileScreen() {
     setMoments((l) => l?.map((x) => (x.id === m.id ? m : x)) ?? null);
   };
   const connLabel = p ? { none: tt("connect"), outgoing: tt("requested"), incoming: tt("accept"), connected: tt("connected") }[p.connection] : "";
-  const followLabel = p ? (p.followed ? tt("followingBtn") : p.requested ? tt("requested") : tt("follow")) : "";
+  const followLabel = p ? (p.followed ? tt("followingBtn") : p.requested ? tt("requested") : p.followsMe ? pt("followBack") : tt("follow")) : "";
 
   return (
     <>
@@ -203,6 +208,7 @@ export default function TalentProfileScreen() {
                   <SharerBadge tier={p.sharerTier} />
                   {p.officialChannel ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.gold }}>{tt("officialChannel", { c: p.officialChannel })}</Text> : null}
                   {p.bio ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink, textAlign: "center" }}>{p.bio}</Text> : null}
+                  <FollowedBy p={p} />
                 </View>
 
                 {/* actions */}
@@ -238,6 +244,9 @@ export default function TalentProfileScreen() {
                   </Pressable>
                 ) : null}
                 {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: t.muted }}>{msg}</Text> : null}
+                {p.mine ? <Completeness p={p} onPhoto={changePhoto} /> : null}
+                {(p.mine || justFollowed) && !p.blocked ? <Suggested exclude={p.username} /> : null}
+                {!postingOn && !p.restricted && !p.blocked && moments?.length ? <Highlights moments={moments} onOpen={(ids) => { setFeedIds(ids); setFeedAt(0); }} /> : null}
 
                 {/* highlights */}
                 {postingOn && !p.restricted && !p.blocked && (highlights.length || p.mine) ? (
@@ -289,7 +298,7 @@ export default function TalentProfileScreen() {
                       ))}
                     </View>
                     {tab === "sijill" ? (sijill === null ? <Loading /> : sijill === "restricted" ? <Muted>{st("restricted")}</Muted> : <SijillShowcase s={sijill} mine={p.mine} name={p.name} username={p.username} noTree />)
-                      : tab === "moments" ? <MomentGrid moments={moments} width={Math.min(winW, 860) - 32} onOpen={setFeedAt} empty={<MomentsEmpty mine={p.mine} />} />
+                      : tab === "moments" ? <MomentGrid moments={moments} width={Math.min(winW, 860) - 32} onOpen={(i) => { setFeedIds(null); setFeedAt(i); }} empty={<MomentsEmpty mine={p.mine} />} />
                       : tab === "posts" ? <Grid posts={posts} src={`user&u=${p.username}&type=post`} empty={p.mine ? tt("noClipsMine") : tt("noClips")} own={p.mine} />
                       : tab === "saved" ? <Grid posts={saved} src="saved" empty={tt("noSaved")} />
                       : <Awards p={p} />}
@@ -304,9 +313,10 @@ export default function TalentProfileScreen() {
       </BadgeSheetHost>
       {p ? <ReportSheet visible={reporting} title={tt("reportProfile")} onClose={() => setReporting(false)} onSubmit={(c, r) => T.reportProfile(p.username, c, r).then(() => undefined)} /> : null}
       {p && moments && feedAt !== null ? (
-        <MomentFeed visible moments={moments} start={feedAt} username={p.username} more={momentsMore} onClose={() => setFeedAt(null)} onChange={onMoment}
+        <MomentFeed visible moments={feedIds ? moments.filter((m) => feedIds.includes(m.id)) : moments} start={feedAt} username={p.username} more={feedIds ? null : momentsMore} onClose={() => setFeedAt(null)} onChange={onMoment}
           onMore={(l, more) => { setMoments((old) => [...(old ?? []), ...l.filter((x) => !old?.some((y) => y.id === x.id))]); setMomentsMore(more); }} />
       ) : null}
+      {p ? <ShareSheet p={p} visible={sharing} onClose={() => setSharing(false)} /> : null}
       {p?.mine ? <HighlightSheet visible={newHighlight} username={p.username} onClose={() => setNewHighlight(false)} onCreated={() => { setNewHighlight(false); void load(); }} /> : null}
     </>
   );

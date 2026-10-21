@@ -12,9 +12,10 @@ import { useAuth } from "@/lib/auth";
 import { countryName } from "@/lib/countries";
 import { useLang, useT } from "@/i18n";
 import { SharerBadge, SharerRing } from "@/features/share/SharerUI";
-import { initials } from "@/features/community/ui";
+import { DefaultAvatar } from "@/features/community/ui";
 import { REPORT_CATEGORIES, T, errCode, type AgeStatus, type Level, type MeInfo, type ReportCategory, type TalentCard } from "./api";
 import { useTT, type TKey } from "./text";
+import { syncPendingProfile } from "./pendingProfile";
 
 // Building blocks of the Quran Talents screens (Masterclass design): calligraphic avatar, gold verified tick, level
 // badge, list rows, the safety bar (guidelines, report, block), the report sheet and the age step.
@@ -32,7 +33,7 @@ export function useTalentErr() {
   };
 }
 
-/** avatar: the profile picture or calligraphic initials on emerald; gold rim (thicker for gold and official badges) */
+/** avatar: the profile picture or the default silhouette (owner, build 20; also for members under 16); gold rim (thicker for gold and official badges) */
 export function TalentAvatar({ name, size = 52, uri, badge }: { name: string; size?: number; uri?: string | null; badge?: Badge | null }) {
   const [failed, setFailed] = useState(false);
   const strong = badge === "gold" || badge === "official";
@@ -43,7 +44,7 @@ export function TalentAvatar({ name, size = 52, uri, badge }: { name: string; si
       {uri && !failed ? (
         <Image source={{ uri: `${SITE}${uri}` }} onError={() => setFailed(true)} style={{ width: size - rim * 2, height: size - rim * 2, borderRadius: size / 2 }} />
       ) : (
-        <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: size * 0.38, lineHeight: size * 0.62, color: "#e8d3a0" }}>{initials(name)}</Text>
+        <DefaultAvatar size={size - rim * 2} />
       )}
     </View>
   );
@@ -237,6 +238,7 @@ export function useTalentAccess(): Access {
       setAgeS(a);
       if (!a.known) { setState("age"); return; }
       if (!a.community) { setState("under13"); return; }
+      await syncPendingProfile(); // a profile set up in the onboarding before sign-in
       setMe(await T.me());
       setState("ok");
     } catch { setState("error"); }

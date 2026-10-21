@@ -20,6 +20,8 @@ import { EMPTY_TESTS, TESTS_KEY, type TestStore } from "@/features/srs/gate";
 import { TalentAvatar, AgeStep, SmallButton } from "@/features/talents/ui";
 import { CountryPicker } from "@/features/talents/CountryPicker";
 import { pickAvatar } from "@/features/talents/avatar";
+import { readPending } from "@/features/talents/pendingProfile";
+import { UsernameStatus, useUsernameCheck, usernameBlocked } from "@/features/talents/UsernameCheck";
 import { countryName } from "@/lib/countries";
 import { useLang } from "@/i18n";
 import { Icon } from "@/components/icons";
@@ -37,6 +39,8 @@ export default function MyProfile() {
   const [ready, setReady] = useState(false);
   const [exists, setExists] = useState(false);
   const [username, setUsername] = useState("");
+  const [savedName, setSavedName] = useState<string | null>(null);
+  const nameCheck = useUsernameCheck(username, savedName);
   const [name, setName] = useState("");
   const [bio, setBio] = useState("");
   const [role, setRole] = useState<(typeof ROLES)[number]>("learner");
@@ -70,12 +74,16 @@ export default function MyProfile() {
       const p = d.profile;
       if (d.talent?.guidelines) { setAccepted(true); setGuidelines(true); }
       if (p) {
-        setExists(true); setUsername(p.username); setName(p.name); setBio(p.bio); setRole(p.role); setStyle(p.style); setIjaza(p.ijaza); setPublic(p.public);
+        setExists(true); setUsername(p.username); setSavedName(p.username); setName(p.name); setBio(p.bio); setRole(p.role); setStyle(p.style); setIjaza(p.ijaza); setPublic(p.public);
         const x = p as Profile & { rewaya?: string; maqam?: string; ijazahChain?: string; progress?: unknown; avatar?: string | null };
         setRewaya(x.rewaya ?? ""); setMaqam(x.maqam ?? ""); setChain(x.ijazahChain ?? ""); setShowProgress(!!x.progress);
         setCountry(p.country); setAvatar(x.avatar ?? null);
       }
-      else setName(user.name ?? "");
+      else {
+        // a profile set up in the onboarding that is not created yet (e.g. age not confirmed): prefill it
+        const pend = readPending();
+        setName(pend?.name || user.name || ""); if (pend?.username) setUsername(pend.username);
+      }
     }).catch((e) => setErr(errText(e, c))).finally(() => setReady(true));
   }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -86,7 +94,7 @@ export default function MyProfile() {
       if (guidelines) setAccepted(true);
       // Quran Talents: garden and certificates only when the member chose to show them (status only)
       await Talents.progress({ show: showProgress, treeStage: ring.planted ? ring.stage : 0, treeType: ring.planted ? ring.type : "", certJuz: tests.certs.map((c) => c.juz) }).catch(() => undefined);
-      setExists(true); setOk(true);
+      setExists(true); setOk(true); setSavedName(username.trim().toLowerCase());
       void syncSharer();
     } catch (e) { setErr(errText(e, c)); } finally { setBusy(false); }
   };
@@ -122,6 +130,7 @@ export default function MyProfile() {
             </View>
             <LabeledField label={c("username")} hint={c("usernameHint")} value={username} onChangeText={(v) => setUsername(v.toLowerCase().replace(/[^a-z0-9_.]/g, ""))}
               autoCapitalize="none" autoCorrect={false} maxLength={20} style={{ textAlign: "left", writingDirection: "ltr" }} />
+            <UsernameStatus state={nameCheck} />
             <LabeledField label={c("name")} value={name} onChangeText={setName} maxLength={40} />
             <LabeledField label={c("bio")} hint={`${c("bioHint")} ${bio.length}/160`} value={bio} onChangeText={setBio} maxLength={160} multiline />
             <View style={{ gap: 6 }}>
@@ -167,7 +176,7 @@ export default function MyProfile() {
             ) : null}
             <FormError text={err} />
             {ok ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{c("saved")}</Text> : null}
-            <GoldButton title={c("save")} onPress={save} busy={busy} disabled={busy || username.length < 3 || !name.trim() || (!exists && !guidelines)} />
+            <GoldButton title={c("save")} onPress={save} busy={busy} disabled={busy || usernameBlocked(nameCheck) || username.length < 3 || !name.trim() || (!exists && !guidelines)} />
             {exists ? <Pressable onPress={() => router.push(`/community/u/${username}` as Href)} accessibilityRole="link" style={{ minHeight: 44, justifyContent: "center", alignItems: "center" }}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.accent }}>{c("myProfile")}</Text></Pressable> : null}
             {exists ? <Pressable onPress={() => router.push(`/talents/u/${username}` as Href)} accessibilityRole="link" style={{ minHeight: 44, justifyContent: "center", alignItems: "center" }}>

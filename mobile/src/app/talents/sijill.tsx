@@ -59,7 +59,7 @@ export default function MySijill() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} eyebrow={st("sijill")} title={st("title")} lead={st("leadMine")} />
+        <PageHero back topInset arcade={false} eyebrow={st("sijill")} title={st("title")} lead={st("leadMine")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 18 }}>
             {!a.me?.profile ? <Muted>{msg || "…"}</Muted> : !s ? (msg ? <Muted>{msg}</Muted> : <Loading />) : (

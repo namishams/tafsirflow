@@ -14,7 +14,12 @@ import TalentActions from "@/components/talents/TalentActions";
 import ClipCard from "@/components/talents/ClipCard";
 import SijillShowcase, { TreeBannerWeb } from "@/components/talents/SijillShowcase";
 import { publicSijill } from "@/lib/sijillPublic";
-import { sijillText } from "@/lib/sijillWeb";
+import { sijillText, type SwKey } from "@/lib/sijillWeb";
+import { NO_MOMENTS, publicProfileMoments } from "@/lib/profileMoments";
+import { profileText } from "@/lib/profileWeb";
+import MomentGrid, { MashaAllahStat, type GridMoment } from "@/components/talents/MomentGrid";
+import ProfileTabs from "@/components/talents/ProfileTabs";
+import { DefaultAvatar } from "@/components/talents/DefaultAvatar";
 import { fillRw, rankingsText } from "@/lib/rankingsWeb";
 import { rankOf } from "@/lib/rankings";
 
@@ -22,6 +27,8 @@ import { rankOf } from "@/lib/rankings";
 // message, highlights, recitations, achievements. Only public members aged 16+; badged profiles are indexed.
 // Owner decision 21.10.2026: with posting switched off the profile shows the Sijill (academic record): the garden tree,
 // the sections the member shows, and achievement moments with preset encouragements; clips stay hidden.
+// Owner 21.10.2026 ("like Instagram / early TikTok, only the likes are MashaAllahs"): centred header with the counters
+// Following · Followers · MashaAllah, then tabs Achievements (3-column grid, full-screen feed) · Sijill · Badges.
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; username: string }> }): Promise<Metadata> {
@@ -41,6 +48,8 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
   const tx = talentsText(locale);
   const sx = sijillText(locale);
   const sj = p.private ? null : await publicSijill(p.username, locale);
+  const ach = p.private || p.posting ? NO_MOMENTS : await publicProfileMoments(p.username, locale);
+  const px = profileText(locale);
   const nf = new Intl.NumberFormat(locale, { notation: "compact" });
   // verse text from Quran.com (never typed by hand), first verse of each clip
   const texts = await Promise.all(p.clips.slice(0, 24).map((c) => {
@@ -52,7 +61,8 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
   const place = p.private ? null : await rankOf(p.username).catch(() => null);
   const placeText = place?.world ? [fillRw(rl.profileRank, { n: place.world }), place.country && place.countryCode ? fillRw(rl.profileRankCountry, { n: place.country, c: countryNameOf(place.countryCode, locale) }) : ""].filter(Boolean).join(" · ") : "";
   const badgeLabel = p.badge ? tx[`badge_${p.badge}` as TwKey] : "";
-  const facts = [p.rewaya && `${tx.rewaya}: ${p.rewaya}`, p.maqam && `${tx.maqam}: ${p.maqam}`, p.country && countryNameOf(p.country, locale)].filter(Boolean) as string[];
+  const stageName = sj?.sijill.level?.stage ? sx[`stage_${sj.sijill.level.stage}` as SwKey] : "";
+  const facts = [p.rewaya, p.country && countryNameOf(p.country, locale), stageName].filter(Boolean) as string[];
   const ld = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
@@ -63,49 +73,70 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
       "@type": "Person", name: p.name, alternateName: `@${p.username}`, description: p.bio || undefined, image: p.avatar ? abs(p.avatar) : undefined,
       interactionStatistic: [
         { "@type": "InteractionCounter", interactionType: "https://schema.org/FollowAction", userInteractionCount: p.followers },
-        { "@type": "InteractionCounter", interactionType: "https://schema.org/LikeAction", userInteractionCount: p.likes },
+        { "@type": "InteractionCounter", interactionType: "https://schema.org/LikeAction", userInteractionCount: p.posting ? p.likes : ach.mashaallah },
       ],
     },
     isPartOf: { "@id": abs("/#site") },
   };
   const stat = (n: number, label: string, href?: string) => {
-    const inner = <><span className="block text-xl font-bold text-white">{nf.format(n)}</span><span className="block text-[12.5px] text-white/60">{label}</span></>;
-    return href && !p.private ? <Link href={href} className="min-w-[72px] text-center hover:opacity-80">{inner}</Link> : <span className="min-w-[72px] text-center">{inner}</span>;
+    const inner = <><span className="block text-2xl font-extrabold text-white">{nf.format(n)}</span><span className="block text-[13px] text-white/60">{label}</span></>;
+    return href && !p.private ? <Link href={href} className="min-w-[84px] text-center hover:opacity-80">{inner}</Link> : <span className="min-w-[84px] text-center">{inner}</span>;
   };
+  const badgesPanel = (
+    <div className="grid gap-4">
+          {p.progress?.certJuz.length ? (
+            <div><h3 className="font-bold">{tx.certificates}</h3><ul className="mt-2 flex flex-wrap gap-2">{p.progress.certJuz.map((j) => <li key={j} className="rounded-full border border-[rgb(var(--hm-gold))]/50 px-3 py-1 text-[13px] font-semibold">{fill(tx.juzN, { n: j })}</li>)}</ul></div>
+          ) : null}
+          {p.progress && p.progress.treeStage > 0 ? <p className="text-[15px]">{fill(tx.treeStage, { n: p.progress.treeStage })}</p> : null}
+          {p.ijazahChain ? <div><h3 className="font-bold">{tx.ijazahChain}</h3><p className="mt-1 whitespace-pre-line text-[15px] leading-relaxed">{p.ijazahChain}</p><p className="mt-1 text-[13px] text-muted">{tx.unverifiedChain}</p></div> : null}
+          <details className="rounded-lg border border-line bg-surface p-5" open={!!p.badge}>
+            <summary className="cursor-pointer font-bold">{tx.badgeWhat}</summary>
+            <ul className="mt-4 grid gap-4">
+              {(["emerald", "gold", "official"] as const).map((b) => (
+                <li key={b} className={`flex gap-3 rounded-md p-3 ${p.badge === b ? "bg-[rgb(var(--hm-gold))]/10 ring-1 ring-[rgb(var(--hm-gold))]/50" : ""}`}>
+                  <BadgeIcon badge={b} size={26} />
+                  <div><p className="font-semibold">{tx[`badge_${b}` as TwKey]}</p><p className="text-[14px] leading-relaxed text-muted">{tx[`badge_${b}_text` as TwKey]}</p></div>
+                </li>
+              ))}
+            </ul>
+          </details>
+          <p className="text-[13px] text-muted"><Link href="/talents" className="font-semibold text-accent hover:underline">{tx.guidelines}</Link> · {tx.reportInApp}</p>
+    </div>
+  );
   return (
     <div>
       <JsonLd data={ld} />
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
         <div className="relative mx-auto max-w-4xl px-5 pb-12 pt-10 sm:pt-14">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))] rtl:tracking-normal"><Link href="/talents" className="hover:underline">{tx.network}</Link></p>
-          <div className="mt-6 flex flex-wrap items-center gap-6">
-            <span className={`grid h-28 w-28 shrink-0 place-items-center overflow-hidden rounded-full bg-[rgb(8,58,44)] ${p.badge === "gold" || p.badge === "official" ? "ring-4 ring-[#E2C77F]" : "ring-2 ring-[rgb(var(--gold))]/70"}`}>
-              {p.avatar
-                ? <img src={p.avatar} alt="" width={112} height={112} className="h-full w-full object-cover" /> // eslint-disable-line @next/next/no-img-element
-                : <span aria-hidden className="font-callig text-4xl text-[#e8d3a0]">{(p.name.trim().split(/\s+/).slice(0, 2).map((w) => Array.from(w)[0] ?? "").join("") || "?").toUpperCase()}</span>}
+          <div className="mt-6 flex flex-col items-center text-center">
+            <span className={`rounded-full p-[3px] ${p.badge === "gold" || p.badge === "official" ? "ring-[3px] ring-[#E2C77F]" : "ring-2 ring-[rgb(var(--gold))]/70"}`}>
+              <span className={`grid h-28 w-28 shrink-0 place-items-center overflow-hidden rounded-full bg-[rgb(8,58,44)] ${p.badge === "emerald" ? "ring-2 ring-[#0F8A63]" : ""}`}>
+                {p.avatar
+                  ? <img src={p.avatar} alt="" width={112} height={112} className="h-full w-full object-cover" /> // eslint-disable-line @next/next/no-img-element
+                  : <DefaultAvatar />}
+              </span>
             </span>
-            <div className="flex flex-1 flex-wrap justify-start gap-4 sm:gap-8">
-              {p.posting ? stat(p.posts, tx.posts) : stat(sj?.sijill.moments ?? 0, sx.tabMoments)}
-              {stat(p.followers, tx.followers, `/talents/${p.username}/followers`)}
+            <h1 className="font-display mt-5 flex flex-wrap items-center justify-center gap-2 text-3xl leading-tight sm:text-4xl">
+              {p.name}
+              {p.badge ? <a href="#badges" className="inline-flex" aria-label={`${badgeLabel}. ${tx.badgeWhat}`}><BadgeIcon badge={p.badge} size={26} title={badgeLabel} /></a> : null}
+              <span className="rounded-full border border-[rgb(var(--gold))]/50 bg-[rgb(var(--gold))]/10 px-3 py-1 font-sans text-[13px] font-semibold text-[rgb(var(--gold))]">{tx[`level_${p.level}` as TwKey] ?? p.level}</span>
+            </h1>
+            <p className="mt-1 text-[16px] font-semibold text-white/70" dir="ltr">@{p.username}</p>
+            {p.private ? <span className="mt-2 rounded-full border border-white/20 px-3 py-1 text-[13px] text-white/70">{tx.private}</span> : null}
+            <div className="mt-5 flex justify-center gap-6 sm:gap-10">
               {stat(p.following, tx.following, `/talents/${p.username}/following`)}
-              {p.posting ? stat(p.likes, tx.likes) : stat(sj?.sijill.reactions ?? 0, sx.statEncouragements)}
+              {stat(p.followers, tx.followers, `/talents/${p.username}/followers`)}
+              {p.posting ? stat(p.likes, tx.likes) : p.private ? null : <MashaAllahStat initial={ach.mashaallah} locale={locale} label={px.mashaallah} />}
             </div>
+            {facts.length ? <p className="mt-4 text-[15px] font-semibold text-white/85">{facts.join(" · ")}</p> : null}
+            {p.maqam ? <p className="mt-1 text-[13.5px] text-white/60">{`${tx.maqam}: ${p.maqam}`}</p> : null}
+            {placeText ? <p className="mt-3"><Link href="/ranking" title={rl.profileLink} className="inline-flex items-center gap-2 rounded-full border border-[rgb(var(--gold))]/60 bg-[rgb(var(--gold))]/10 px-3.5 py-1.5 text-[13.5px] font-semibold text-[#e8d3a0] hover:bg-[rgb(var(--gold))]/20">{placeText}</Link></p> : null}
+            {p.officialChannel ? <p className="mt-1 text-[14px] text-[rgb(var(--gold))]">{fill(tx.officialChannel, { c: p.officialChannel })}</p> : null}
+            {p.bio ? <p className="mt-3 max-w-2xl whitespace-pre-line text-[16px] leading-relaxed text-white/75">{p.bio}</p> : null}
           </div>
-          <h1 className="font-display mt-6 flex flex-wrap items-center gap-2 text-4xl leading-tight sm:text-5xl">
-            {p.name}
-            {p.badge ? <a href="#badges" className="inline-flex" aria-label={`${badgeLabel}. ${tx.badgeWhat}`}><BadgeIcon badge={p.badge} size={28} title={badgeLabel} /></a> : null}
-          </h1>
-          <p className="mt-1 text-white/60" dir="ltr">@{p.username}</p>
-          <div className="mt-3 flex flex-wrap items-center gap-2 text-[13px]">
-            <span className="rounded-full border border-[rgb(var(--gold))]/50 bg-[rgb(var(--gold))]/10 px-3 py-1 font-semibold text-[rgb(var(--gold))]">{tx[`level_${p.level}` as TwKey] ?? p.level}</span>
-            {p.private ? <span className="rounded-full border border-white/20 px-3 py-1 text-white/70">{tx.private}</span> : null}
-          </div>
-          {facts.length ? <p className="mt-4 text-[15px] font-semibold text-white/85">{facts.join(" · ")}</p> : null}
-          {placeText ? <p className="mt-3"><Link href="/ranking" title={rl.profileLink} className="inline-flex items-center gap-2 rounded-full border border-[rgb(var(--gold))]/60 bg-[rgb(var(--gold))]/10 px-3.5 py-1.5 text-[13.5px] font-semibold text-[#e8d3a0] hover:bg-[rgb(var(--gold))]/20">{placeText}</Link></p> : null}
-          {p.officialChannel ? <p className="mt-1 text-[14px] text-[rgb(var(--gold))]">{fill(tx.officialChannel, { c: p.officialChannel })}</p> : null}
-          {p.bio ? <p className="mt-3 max-w-2xl whitespace-pre-line text-[16px] leading-relaxed text-white/75">{p.bio}</p> : null}
-          <div className="mt-7">
-            <TalentActions username={p.username} appUrl={appStoreUrl()} l={{ follow: tx.follow, followingBtn: tx.followingBtn, requested: tx.requested, message: tx.message, signIn: tx.signIn, signInToFollow: tx.signInToFollow, messageInApp: tx.messageInApp, getApp: tx.getApp, error: tx.error }} />
+          <div className="mt-7 flex justify-center">
+            <TalentActions username={p.username} appUrl={appStoreUrl()} url={abs(`/${locale}/talents/${p.username}`)} l={{ share: px.share, copied: px.copied, editProfile: px.editProfile, follow: tx.follow, followingBtn: tx.followingBtn, requested: tx.requested, message: tx.message, signIn: tx.signIn, signInToFollow: tx.signInToFollow, messageInApp: tx.messageInApp, getApp: tx.getApp, error: tx.error }} />
           </div>
         </div>
       </section>
@@ -114,11 +145,14 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
         {p.private ? (
           <p className="callout rounded-lg p-6 text-center text-[16px]">{tx.privateText}</p>
         ) : !p.posting ? (
-          <section aria-labelledby="sijill" className="grid gap-5">
+          <div className="grid gap-6">
             {sj?.sijill.tree ? <TreeBannerWeb tree={sj.sijill.tree} locale={locale} /> : null}
-            <h2 id="sijill" className="font-display text-2xl">{sx.sijill} · {sx.title}</h2>
-            {sj ? <SijillShowcase s={sj.sijill} moments={sj.moments} locale={locale} /> : <p className="text-muted">{sx.hiddenAll}</p>}
-          </section>
+            <ProfileTabs tabs={[
+              { id: "achievements", label: px.tabAchievements, panel: <MomentGrid username={p.username} locale={locale} initial={ach.moments as GridMoment[]} /> },
+              { id: "sijill", label: px.tabSijill, panel: sj ? <SijillShowcase s={sj.sijill} moments={[]} locale={locale} /> : <p className="text-muted">{sx.hiddenAll}</p> },
+              { id: "badges", label: px.tabBadges, panel: badgesPanel },
+            ]} />
+          </div>
         ) : (
           <>
             {p.highlights.length ? (
@@ -142,26 +176,7 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
           </>
         )}
 
-        <section id="badges" className="mt-12 grid gap-4">
-          <h2 className="font-display text-2xl">{tx.tabAwards}</h2>
-          {p.progress?.certJuz.length ? (
-            <div><h3 className="font-bold">{tx.certificates}</h3><ul className="mt-2 flex flex-wrap gap-2">{p.progress.certJuz.map((j) => <li key={j} className="rounded-full border border-[rgb(var(--hm-gold))]/50 px-3 py-1 text-[13px] font-semibold">{fill(tx.juzN, { n: j })}</li>)}</ul></div>
-          ) : null}
-          {p.progress && p.progress.treeStage > 0 ? <p className="text-[15px]">{fill(tx.treeStage, { n: p.progress.treeStage })}</p> : null}
-          {p.ijazahChain ? <div><h3 className="font-bold">{tx.ijazahChain}</h3><p className="mt-1 whitespace-pre-line text-[15px] leading-relaxed">{p.ijazahChain}</p><p className="mt-1 text-[13px] text-muted">{tx.unverifiedChain}</p></div> : null}
-          <details className="rounded-lg border border-line bg-surface p-5" open={!!p.badge}>
-            <summary className="cursor-pointer font-bold">{tx.badgeWhat}</summary>
-            <ul className="mt-4 grid gap-4">
-              {(["emerald", "gold", "official"] as const).map((b) => (
-                <li key={b} className={`flex gap-3 rounded-md p-3 ${p.badge === b ? "bg-[rgb(var(--hm-gold))]/10 ring-1 ring-[rgb(var(--hm-gold))]/50" : ""}`}>
-                  <BadgeIcon badge={b} size={26} />
-                  <div><p className="font-semibold">{tx[`badge_${b}` as TwKey]}</p><p className="text-[14px] leading-relaxed text-muted">{tx[`badge_${b}_text` as TwKey]}</p></div>
-                </li>
-              ))}
-            </ul>
-          </details>
-          <p className="text-[13px] text-muted"><Link href="/talents" className="font-semibold text-accent hover:underline">{tx.guidelines}</Link> · {tx.reportInApp}</p>
-        </section>
+        {p.posting || p.private ? <section id="badges" className="mt-12 grid gap-4"><h2 className="font-display text-2xl">{tx.tabAwards}</h2>{badgesPanel}</section> : null}
       </div>
     </div>
   );

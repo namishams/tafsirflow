@@ -56,7 +56,7 @@ export default function SijillPreview() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} eyebrow={st("sijill")} title={v === "friends" ? st("friends") : v === "moments" ? st("tabMoments") : st("title")} lead={v === "mine" ? st("leadMine") : v === "friends" ? st("friendsLead") : st("lead")} />
+        <PageHero back topInset arcade={false} eyebrow={st("sijill")} title={v === "friends" ? st("friends") : v === "moments" ? st("tabMoments") : st("title")} lead={v === "mine" ? st("leadMine") : v === "friends" ? st("friendsLead") : st("lead")} />
         <View style={{ padding: 16, gap: 14 }}>
           {v === "friends" || v === "moments" ? moments.map((m) => <MomentCard key={m.id} m={m} showAuthor={v === "friends"} onChange={(x) => setMoments((l) => l.map((y) => (y.id === x.id ? x : y)))} />) : (
             <>

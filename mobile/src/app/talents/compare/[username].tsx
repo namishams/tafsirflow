@@ -50,7 +50,7 @@ export default function Compare() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} eyebrow={st("sijill")} title={st("compareTitle")} lead={d ? st("compareLead", { u: d.them.name }) : undefined} />
+        <PageHero back topInset arcade={false} eyebrow={st("sijill")} title={st("compareTitle")} lead={d ? st("compareLead", { u: d.them.name }) : undefined} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 14 }}>
             {!d ? (msg ? <Muted>{msg}</Muted> : <Loading />) : (

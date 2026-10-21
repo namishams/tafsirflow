@@ -32,7 +32,7 @@ export default function TalentSettings() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} eyebrow={tt("network")} title={tt("settings")} />
+        <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("settings")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 18 }}>
             {!me ? (msg ? <Muted>{msg}</Muted> : a.me && !a.me.profile ? <Muted>{tt("needProfile")}</Muted> : <Loading />) : (

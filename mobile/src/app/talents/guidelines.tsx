@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Linking, Text, View } from "react-native";
 import { Stack } from "expo-router";
 import { FONT, R, goldButton, useTheme } from "@/lib/theme";
 import { Page, PageHero } from "@/components/page";
@@ -14,7 +14,7 @@ export default function Guidelines() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} eyebrow={tt("network")} title={tt("guidelines")} lead={tt("guidelinesLead")} />
+        <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("guidelines")} lead={tt("guidelinesLead")} />
         <View style={{ padding: 16, gap: 10 }}>
           {RULES.map((k, i) => (
             <View key={k} style={{ flexDirection: "row", gap: 12, padding: 14, borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
@@ -24,6 +24,9 @@ export default function Guidelines() {
               <Text style={{ flex: 1, fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{tt(k)}</Text>
             </View>
           ))}
+          {/* published contact for safety and moderation (App Store guideline 1.2) */}
+          <Text onPress={() => void Linking.openURL("mailto:info@quranmasterclass.com").catch(() => undefined)} accessibilityRole="link"
+            style={{ fontFamily: FONT.semibold, fontSize: 14.5, lineHeight: 21, color: t.accent, paddingVertical: 8 }}>{tt("contactMod")}</Text>
         </View>
       </Page>
     </>

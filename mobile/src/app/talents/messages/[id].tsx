@@ -72,7 +72,7 @@ export default function Chat() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1, backgroundColor: t.bg }}>
-        <PageHero back arcade={false} eyebrow={tt("messages")} title={who?.name ?? ""} />
+        <PageHero back topInset arcade={false} eyebrow={tt("messages")} title={who?.name ?? ""} />
         <AccessGate a={a}>
           {!msgs ? <Loading /> : (
             <>

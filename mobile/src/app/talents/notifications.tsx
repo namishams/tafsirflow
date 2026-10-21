@@ -41,7 +41,7 @@ export default function Notifications() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
         <Page>
-          <PageHero back arcade={false} eyebrow={tt("network")} title={tt("notifications")} />
+          <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("notifications")} />
           <AccessGate a={a}>
             <View style={{ padding: 16, gap: 16 }}>
               {!list ? <Loading /> : !list.length ? <Muted>{msg || tt("noNotifications")}</Muted> : (

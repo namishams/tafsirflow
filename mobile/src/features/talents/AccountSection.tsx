@@ -5,6 +5,7 @@ import { FONT, useTheme } from "@/lib/theme";
 import { LinkRow, RowGroup } from "@/components/page";
 import { useAuth } from "@/lib/auth";
 import { T } from "./api";
+import { syncPendingProfile } from "./pendingProfile";
 import { useTT } from "./text";
 import { usePro } from "@/lib/pro";
 import { syncSijill } from "@/features/sijill/summary";
@@ -26,7 +27,7 @@ export function TalentsAccount() {
   useEffect(() => {
     if (!user) { setUsername(null); return; }
     // Sijill: keep the record (and the achievement moments of followers) current; throttled inside syncSijill
-    T.me().then((d) => { setUsername(d.profile?.username ?? null); if (d.profile) void syncSijill(pro); }).catch(() => setUsername(null));
+    syncPendingProfile().then(() => T.me()).then((d) => { setUsername(d.profile?.username ?? null); if (d.profile) void syncSijill(pro); }).catch(() => setUsername(null));
   }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!user) return null;
   const go = (href: string) => router.push(href as Href);

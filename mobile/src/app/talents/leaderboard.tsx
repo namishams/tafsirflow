@@ -37,7 +37,7 @@ export default function Leaderboard() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
         <Page>
-          <PageHero back arcade={false} eyebrow={st("sijill")} title={st("leaderboards")} />
+          <PageHero back topInset arcade={false} eyebrow={st("sijill")} title={st("leaderboards")} />
           <AccessGate a={a}>
             <View style={{ padding: 16, gap: 14 }}>
               <Segmented<Kind> value={kind} onChange={setKind} options={[["following", st("lbFollowing")], ["consistent", st("lbConsistent")]]} />

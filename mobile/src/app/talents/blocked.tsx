@@ -21,7 +21,7 @@ export default function Blocked() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
         <Page>
-          <PageHero back arcade={false} eyebrow={tt("network")} title={tt("blockedTitle")} />
+          <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("blockedTitle")} />
           <AccessGate a={a}>
             <View style={{ padding: 16, gap: 16 }}>
               {!list ? <Loading /> : !list.length ? <Muted>{msg || tt("noBlocked")}</Muted> : (

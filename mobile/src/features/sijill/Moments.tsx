@@ -78,7 +78,7 @@ export function MomentCard({ m, onChange, showAuthor = true }: { m: Moment; onCh
               <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 14.5, color: t.ink }}>{m.own ? st("yourMoment") : m.author.name}</Text>
               {!m.own ? <BadgeButton badge={m.author.badge} size={13} /> : null}
             </View>
-            <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{new Date(m.at).toLocaleDateString(lang, { day: "numeric", month: "short" })}</Text>
+            <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{`@${m.author.username} · ${new Date(m.at).toLocaleDateString(lang, { day: "numeric", month: "short" })}`}</Text>
           </View>
         </Pressable>
       ) : null}

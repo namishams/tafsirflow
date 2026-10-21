@@ -16,7 +16,7 @@ export default function FriendsAchievements() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
         <Page>
-          <PageHero back arcade={false} eyebrow={st("sijill")} title={st("friends")} lead={st("friendsLead")} />
+          <PageHero back topInset arcade={false} eyebrow={st("sijill")} title={st("friends")} lead={st("friendsLead")} />
           <AccessGate a={a}>
             <View style={{ padding: 16, gap: 16 }}>
               <MomentsFeed />

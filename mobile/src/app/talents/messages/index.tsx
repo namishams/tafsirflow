@@ -32,7 +32,7 @@ export default function Inbox() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
       <Page>
-        <PageHero back arcade={false} eyebrow={tt("network")} title={tt("messages")} />
+        <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("messages")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 16 }}>
             {!a.age?.interact ? <Muted>{tt("age16")}</Muted> : msg ? <Muted>{msg}</Muted> : list && !list.length ? <Muted>{tt("noMessages")}</Muted> : list ? (

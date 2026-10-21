@@ -66,7 +66,7 @@ export default function Badges() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        <PageHero back arcade={false} eyebrow={tt("network")} title={tt("badgeMine")} lead={tt("badgesLead")} />
+        <PageHero back topInset arcade={false} eyebrow={tt("network")} title={tt("badgeMine")} lead={tt("badgesLead")} />
         <AccessGate a={a}>
           <View style={{ padding: 16, gap: 14 }}>
             {result ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14.5, lineHeight: 21, color: result === "ok" ? t.accent : t.danger }}>{tt(`official_${result}` as TKey) || tt("e_generic")}</Text> : null}
