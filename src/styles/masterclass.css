@@ -1,0 +1,23 @@
+/* Masterclass sections (src/components/masterclass/Sections.tsx): fine gold hairlines only, no heavy effects. */
+
+/* Reciter Path ladder: a vertical gold hairline runs through the star medallions, brightest at the top level */
+.mc-ladder::before { content: ""; position: absolute; inset-block: 28px; inset-inline-start: 21.5px; width: 1px; pointer-events: none;
+  background: linear-gradient(180deg, rgb(var(--gold) / .15), rgb(var(--gold) / .45) 70%, rgb(var(--gold) / .9)); }
+.mc-ladder > li + li { border-top: 1px solid rgb(var(--gold) / .1); }
+.mc-ladder-top { margin-top: 6px; padding-block: 18px !important; border-top-color: rgb(var(--gold) / .35) !important; }
+.mc-ladder-top::after { content: ""; position: absolute; inset-inline-start: -10px; top: 50%; width: 64px; height: 64px; translate: 0 -50%; border-radius: 999px; pointer-events: none;
+  background: radial-gradient(circle, rgb(var(--gold) / .22), transparent 70%); }
+
+/* School stages: on wide screens a dashed gold hairline links the four arches, under their finials */
+@media (min-width: 1024px) {
+  .mc-stages::before { content: ""; position: absolute; inset-inline: 10%; top: 4px; border-top: 1px dashed rgb(var(--hm-gold) / .5); pointer-events: none; }
+}
+
+/* a short centred hairline with a star in the middle */
+.mc-rule { display: flex; align-items: center; gap: 12px; width: 180px; color: rgb(var(--hm-gold)); }
+.mc-rule::before, .mc-rule::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgb(var(--hm-gold) / .8)); }
+.mc-rule::after { transform: scaleX(-1); }
+
+/* CEFR band for the Arabic course */
+.mc-cefr > li + li { border-inline-start: 1px solid rgb(var(--hm-gold) / .25); }
+@media (max-width: 639px) { .mc-cefr > li + li { border-inline-start: 0; border-top: 1px solid rgb(var(--hm-gold) / .25); } }

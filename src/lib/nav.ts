@@ -14,13 +14,13 @@ export const PRIMARY: NavItem[] = [
 
 export const GROUPS: NavGroup[] = [
   { title: "groupLearn", items: [
-    { href: "/today", key: "today" }, { href: "/academy", key: "courses" }, { href: "/shams", key: "shams" }, { href: "/arabic", key: "arabic" },
+    { href: "/today", key: "today" }, { href: "/masterclass", key: "masterclass" }, { href: "/academy", key: "courses" }, { href: "/shams", key: "shams" }, { href: "/arabic", key: "arabic" },
     { href: "/salah", key: "salah" }, { href: "/wudu", key: "wudu" }, { href: "/tajweed", key: "tajweed" }, { href: "/vocab", key: "vocab" }, { href: "/plan", key: "plan" }, { href: "/map", key: "map" },
     { href: "/stats", key: "stats" }, { href: "/ranking", key: "ranking" },
   ] },
   { title: "groupQuran", items: [
     { href: "/quran", key: "quran" }, { href: "/search", key: "search" }, { href: "/reciters", key: "reciters" }, { href: "/radio", key: "radio" },
-    { href: "/khatm", key: "khatm" }, { href: "/duas", key: "duas" }, { href: "/dua-generator", key: "duagen" }, { href: "/prayer", key: "prayer" }, { href: "/community", key: "community" },
+    { href: "/khatm", key: "khatm" }, { href: "/duas", key: "duas" }, { href: "/dua-generator", key: "duagen" }, { href: "/prayer", key: "prayer" }, { href: "/community", key: "community" }, { href: "/talents", key: "talents" },
   ] },
   { title: "islam", items: [
     { href: "/islam", key: "islam" }, { href: "/secrets", key: "secrets" }, { href: "/world", key: "world" }, { href: "/assistant", key: "assistant" }, { href: "/guides", key: "guides" },

@@ -5,6 +5,12 @@ import Logo from "@/components/Logo";
 import { pageMeta } from "@/lib/site";
 import AppShowcase from "@/components/AppShowcase";
 import { appStoreUrl } from "@/lib/appstore";
+import JsonLd from "@/components/JsonLd";
+import { Link } from "@/i18n/navigation";
+import { abs } from "@/lib/site";
+import { organizationLd } from "@/lib/company";
+import { mc, mobileAppLd } from "@/lib/masterclass";
+import { MasterclassPillars, McHead, PricingPlans } from "@/components/masterclass/Sections";
 
 export const dynamic = "force-dynamic"; // PLAY_STORE_URL is read from the server environment at request time
 
@@ -67,8 +73,11 @@ export default async function AppPage({ params }: { params: Promise<{ locale: st
   const { locale } = await params;
   setRequestLocale(locale);
   const c = content(locale);
+  const m = mc(locale);
+  const ld = { "@context": "https://schema.org", "@graph": [organizationLd(abs), mobileAppLd(locale, abs, appStoreUrl(), c.lead)] };
   return (
     <div>
+      <JsonLd data={ld} />
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
         <div className="relative mx-auto grid max-w-5xl gap-10 px-5 py-14 sm:py-20 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
@@ -83,6 +92,15 @@ export default async function AppPage({ params }: { params: Promise<{ locale: st
         </div>
       </section>
       <div className="border-t border-white/10"><AppShowcase locale={locale} showMore={false} /></div>
+      {/* the whole curriculum in the app, then Free vs Pro */}
+      <section className="hm-warm">
+        <div className="mx-auto max-w-6xl px-5 pt-16 sm:pt-20">
+          <McHead locale={locale} title={m.appPage.title} lead={m.appPage.lead} />
+          <Link href="/masterclass" className="mt-7 inline-flex h-11 items-center rounded-md border border-[rgb(var(--hm-gold))]/60 px-5 text-sm font-bold transition hover:border-[rgb(var(--hm-gold))] hover:bg-[rgb(var(--hm-gold))]/10">{m.appPage.cta} <span aria-hidden className="ms-2 rtl:-scale-x-100">→</span></Link>
+        </div>
+        <div className="-mt-6"><MasterclassPillars locale={locale} /></div>
+      </section>
+      <PricingPlans locale={locale} />
       <section className="mx-auto max-w-5xl px-5 py-14">
         <h2 className="font-display text-3xl">{c.waysTitle}</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">

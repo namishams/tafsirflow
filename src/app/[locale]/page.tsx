@@ -24,6 +24,9 @@ import { organizationLd } from "@/lib/company";
 import { ArrowNext } from "@/components/Icons";
 import { HomeArch, HomeCorners, HomeDome, HomeFrieze, HomeGlowLayer, HomeRain, HomeStar, HomeVerse, StarGlyph } from "@/components/art/HomeOrnaments";
 import HomeGlow from "@/components/art/HomeGlow";
+import { courseLd, mc, mobileAppLd, TESTIMONIALS } from "@/lib/masterclass";
+import { appStoreUrl } from "@/lib/appstore";
+import { MasterclassPillars, PricingPlans, ReciterLadder, SchoolStages, TalentsTeaser, Voices } from "@/components/masterclass/Sections";
 
 export const revalidate = 3600; // the verse of the day changes daily; the page refreshes hourly
 
@@ -57,6 +60,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
   const chapters = await getChapters(locale).catch(() => []);
   const btnP = "inline-flex h-12 items-center rounded-md bg-accent px-6 text-[15px] font-bold text-white shadow-[inset_0_0_0_1px_rgb(233_207_153/.35),0_12px_26px_-16px_rgb(6_108_78/.9)] transition hover:brightness-110";
   const btnS = "inline-flex h-12 items-center rounded-md border border-[rgb(var(--hm-gold))]/60 px-6 text-[15px] font-bold transition hover:border-[rgb(var(--hm-gold))] hover:bg-[rgb(var(--hm-gold))]/10";
+  const m = mc(locale);
   const faqText = (i: number, kind: "q" | "a") => (i <= 5 ? t(`landing.${kind}${i}`) : t(`home2.${kind}${i}`));
   const ld = {
     "@context": "https://schema.org",
@@ -64,6 +68,8 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
       organizationLd(abs),
       { "@type": "WebSite", "@id": abs("/#site"), url: abs(`/${locale}`), name: "Quran Masterclass", inLanguage: routing.locales, publisher: { "@id": abs("/#org") } },
       { "@type": "SoftwareApplication", name: "Quran Masterclass", applicationCategory: "EducationalApplication", operatingSystem: "Web", description: t("seo.homeDesc", { n }), inLanguage: locale, offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" } },
+      mobileAppLd(locale, abs, appStoreUrl(), m.hero.lead),
+      ...courseLd(locale, abs),
       { "@type": "FAQPage", inLanguage: locale, mainEntity: FAQ.map((i) => ({ "@type": "Question", name: faqText(i, "q"), acceptedAnswer: { "@type": "Answer", text: faqText(i, "a") } })) },
       { "@type": "DefinedTermSet", name: t("home2.glossTitle"), inLanguage: locale, hasDefinedTerm: GLOSSARY.map((i) => ({ "@type": "DefinedTerm", name: t(`home2.gT${i}`), description: t(`home2.gD${i}`) })) },
     ],
@@ -86,11 +92,12 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
             <div>
               <p className="rise font-arabic mb-5 text-[26px] leading-none text-[rgb(var(--gold))] sm:text-[30px]"><Ink>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</Ink></p>
               <p className="rise hm-k !text-[12px] text-[rgb(var(--gold))]" style={{ animationDelay: "120ms" }}>{t("home2.heroKicker", { n })}</p>
-              <h1 className="rise font-display mt-5 text-[44px] leading-[1.02] sm:text-7xl" style={{ animationDelay: "240ms" }}>{t("home2.heroTitle")}</h1>
-              <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70 sm:text-lg">{t("home2.heroLead")}</p>
+              <h1 className="rise font-display mt-5 text-[42px] leading-[1.04] [hyphens:manual] sm:text-6xl xl:text-7xl" style={{ animationDelay: "240ms" }}>{m.hero.title} <span className="gold-sheen block">{m.hero.accent}</span></h1>
+              <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/70 sm:text-lg">{m.hero.lead}</p>
               <div className="mt-9 flex flex-wrap gap-3">
-                <Link href="/academy" className="inline-flex h-12 items-center rounded-md btn-gold px-6 text-[15px] font-bold">{t("home2.heroCta")}</Link>
+                <Link href="/masterclass" className="inline-flex h-12 items-center rounded-md btn-gold px-6 text-[15px] font-bold">{m.hero.cta}</Link>
                 <Link href="/shams" className="inline-flex h-12 items-center rounded-md border border-[rgb(var(--gold))]/40 px-6 text-[15px] font-bold transition hover:border-[rgb(var(--gold))] hover:bg-white/[0.04]">{t("home2.heroCta2")}</Link>
+                <Link href="/academy" className="inline-flex h-12 items-center px-2 text-[15px] font-bold text-[rgb(var(--gold))] underline-offset-4 hover:underline">{m.hero.ctaFree} <span aria-hidden className="ms-1.5 rtl:-scale-x-100">→</span></Link>
               </div>
               <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[rgb(var(--gold))]/40 bg-[rgb(var(--gold))]/[0.06] px-3 py-1 text-xs font-semibold text-[rgb(var(--gold))]"><StarGlyph size={10} />{t("free.badge")}</p>
               <TrustLine className="mt-3 flex text-white/70" />
@@ -139,6 +146,11 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           </div>
         </section>
 
+        {/* 1b2 The Masterclass: nine pillars, four school stages, the Reciter Path */}
+        <MasterclassPillars locale={locale} />
+        <SchoolStages locale={locale} />
+        <ReciterLadder locale={locale} />
+
         <Divider className="py-10" />
 
         {/* 1c Surah of the day and of the month, dua of the month */}
@@ -155,6 +167,10 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
         {/* 2b The iOS app */}
         <AppShowcase locale={locale} />
+
+        {/* 2c The Talents community and Free vs Pro */}
+        <TalentsTeaser locale={locale} />
+        <PricingPlans locale={locale} />
 
         {/* 3 Why */}
         <section className="hm-warm overflow-hidden">
@@ -369,6 +385,9 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
             </div>
           </section>
         )}
+
+        {/* 12d Voices of learners (real, approved testimonials only) */}
+        <Voices locale={locale} items={TESTIMONIALS} />
 
         {/* 13 FAQ */}
         <section className="hm-warm">
