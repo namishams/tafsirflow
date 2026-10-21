@@ -66,3 +66,15 @@ Built on the existing reciters community (`community_profiles`, `community_follo
 - **Safety (Apple 1.2):** guidelines, report and block on every screen; blocked members disappear; profanity/link filter (`moderate()`) on bios, comments, messages; moderation in the app (`/talents/admin`) and on the web (`/[locale]/admin/talents`); every admin step in `community_admin_actions`. Admin = `users.role = 'admin'` or `ADMIN_EMAIL` with a confirmed address. Account deletion removes all community rows and files.
 - **Privacy:** no e-mail, real name, birth year or user ids in responses; avatars and public pages only for members 16+.
 - **Server env:** `MEDIA_DIR` (absolute, writable; uploads answer 503 without it), optional `FFMPEG_PATH`, `GOOGLE_OAUTH_CLIENT_ID` / `GOOGLE_OAUTH_CLIENT_SECRET` (redirect URI `https://quranmasterclass.com/api/community/official/callback`), optional `YOUTUBE_MIN_SUBSCRIBERS`. Nginx `client_max_body_size` ≥ 50 MB for `/api/community/posts`.
+
+## 8. Frozen framework (owner rule, 21.10.2026)
+
+Before and after launch these parts are the fixed frame of the app. Prompts may only **add** to them (new stickers, new series, new stages at the end, new score sources, new profile sections), never change or replace what exists:
+
+- **Stickers:** existing ids, series, rarities, art style and album. New stickers get new ids; existing ids keep their meaning and look.
+- **Tree and garden:** scene, tree art, planting ceremony, onboarding journey visuals (tag `garten-design-v1`, see `src/features/garden/Scene.tsx` header). Growth points, stage thresholds and the 365-day calendar gate only change with the owner's explicit OK; stages are never taken away from a user.
+- **Profiles (Sijill):** sections, badges (emerald, gold, official star) and their meaning, levels and app ranks.
+- **Scores:** XP, levels, streaks, Darajat al-Hifz, hifz quality, exam pass marks, report-card grades (Mumtaz … Maqbul), certificate rules. Formulas are versioned; a change needs a new version and a migration that never lowers what a user already earned.
+- **Storage keys and sync keys:** never renamed or reused; new data gets new keys.
+
+The feed (content, post types, server config) stays flexible and grows over time.
