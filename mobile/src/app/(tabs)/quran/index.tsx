@@ -193,21 +193,20 @@ export default function QuranIndex() {
               <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{wh("searchVerses")} · „{q}“ · {wsr("go")}</Text>
             </Pressable>
           ) : null}
-          <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
-            <QSeg pal={pal} compact={width <= 440} label={wh("surahs")} value={mode} onChange={changeMode}
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
+            <QSeg fill pal={pal} compact={width <= 440} label={wh("surahs")} value={mode} onChange={changeMode}
               options={[{ id: "surah", label: wh("surahs") }, { id: "juz", label: wm("juz") }]} />
-            <QSeg pal={pal} compact={width <= 440} label={`${wh("makki")} / ${wh("madani")}`} value={place} onChange={setPlace}
-              options={[
-                { id: "all", label: wf("all") },
-                { id: "makki", label: wh("makki"), icon: (c) => <PlaceIcon place="makki" color={c} gold={pal.gold} /> },
-                { id: "madani", label: wh("madani"), icon: (c) => <PlaceIcon place="madani" color={c} gold={pal.gold} /> },
-              ]} />
-            <Pressable onPress={() => router.push("/map" as Href)} accessibilityRole="link" accessibilityLabel={wn("map")}
-              style={({ pressed }) => [s_.chip, { height: 42, backgroundColor: pressed ? "rgba(201,166,94,0.07)" : pal.surface, borderColor: pressed ? "rgba(201,166,94,0.8)" : "rgba(201,166,94,0.35)" }]}>
-              <Icon name="map" size={15} color={pal.gold} />
-              <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13, color: pal.ink }}>{wn("map")}</Text>
+            <Pressable onPress={() => router.push("/map" as Href)} accessibilityRole="link" accessibilityLabel={wn("map")} hitSlop={4}
+              style={({ pressed }) => ({ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center", borderWidth: 1, backgroundColor: pressed ? "rgba(201,166,94,0.07)" : pal.surface, borderColor: pressed ? "rgba(201,166,94,0.8)" : "rgba(201,166,94,0.35)" })}>
+              <Icon name="map" size={17} color={pal.gold} />
             </Pressable>
           </View>
+          <QSeg fill pal={pal} compact={width <= 440} label={`${wh("makki")} / ${wh("madani")}`} value={place} onChange={setPlace}
+            options={[
+              { id: "all", label: wf("all") },
+              { id: "makki", label: wh("makki"), icon: (c) => <PlaceIcon place="makki" color={c} gold={pal.gold} /> },
+              { id: "madani", label: wh("madani"), icon: (c) => <PlaceIcon place="madani" color={c} gold={pal.gold} /> },
+            ]} />
         </View>
         <View style={{ height: 24 }} />
       </View>
@@ -426,11 +425,11 @@ function SearchField({ value, onChange, pal, placeholder }: { value: string; onC
 }
 
 /** .q-seg: segmented control in gold and emerald */
-function QSeg<T extends string>({ value, options, onChange, label, pal, compact }: {
-  value: T; options: { id: T; label: string; icon?: (color: string) => ReactNode }[]; onChange: (v: T) => void; label: string; pal: QPal; compact: boolean;
+function QSeg<T extends string>({ value, options, onChange, label, pal, compact, fill }: {
+  value: T; options: { id: T; label: string; icon?: (color: string) => ReactNode }[]; onChange: (v: T) => void; label: string; pal: QPal; compact: boolean; fill?: boolean;
 }) {
   return (
-    <View accessibilityLabel={label} style={{ flexDirection: "row", maxWidth: "100%", padding: 3, gap: 2, borderRadius: 999, borderWidth: 1, borderColor: "rgba(201,166,94,0.35)", backgroundColor: pal.surface }}>
+    <View accessibilityLabel={label} style={{ flexDirection: "row", maxWidth: "100%", flex: fill ? 1 : undefined, padding: 3, gap: 2, borderRadius: 999, borderWidth: 1, borderColor: "rgba(201,166,94,0.35)", backgroundColor: pal.surface }}>
       {options.map((o) => {
         const on = o.id === value;
         const color = on ? "#f3e2b6" : pal.muted;
@@ -442,7 +441,7 @@ function QSeg<T extends string>({ value, options, onChange, label, pal, compact 
         );
         return (
           <Pressable key={o.id} onPress={() => onChange(o.id)} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={o.label}
-            style={[{ minWidth: 0, borderRadius: 999 }, on && s_.segShadow]}>
+            style={[{ minWidth: 0, borderRadius: 999, flex: fill ? 1 : undefined }, on && s_.segShadow]}>
             {on ? <LinearGradient colors={EMERALD} style={s_.segOn}>{inner}</LinearGradient> : <View style={s_.segOff}>{inner}</View>}
           </Pressable>
         );
