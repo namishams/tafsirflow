@@ -3,7 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
-import { GoldButton, GoldCard, GoldProgress, OutlineButton, SectionTitle, StarNumber, SurahBanner } from "@/components/brand";
+import { GoldButton, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, StarNumber, SurahBanner, gradientColors } from "@/components/brand";
+import { tile, routeOf } from "@/lib/features";
 import { Icon } from "@/components/icons";
 import { Page, PageHero, ProBadge } from "@/components/page";
 import { useLang } from "@/i18n";
@@ -112,6 +113,15 @@ export default function Masterclass() {
 
         </View>
         {/* every course, tool and section directly (no "more" button); the endless discovery lives in the Feed */}
+        <View style={{ paddingHorizontal: 16, marginTop: 32 }}>
+          <SectionTitle title={lt("toolsTitle")} />
+          <PosterGrid>
+            {["courses", "arabic", "tajweed", "vocab", "salah", "wudu", "plan", "map"].map((k) => tile(k)).filter((x) => !!x).map((x) => (
+              <Poster key={x!.key} title={w(`nav.${x!.key}`)} desc={w(`home2.${x!.desc}`)} badge={w(`home2.badge_${x!.badge}`)} arabic={x!.ar}
+                colors={gradientColors(x!.bg)} cta={w("home2.open")} onPress={() => router.push(routeOf(x!) as Href)} />
+            ))}
+          </PosterGrid>
+        </View>
         <View style={{ marginTop: 32 }}><DiscoverRows /></View>
       </Page>
     </>
