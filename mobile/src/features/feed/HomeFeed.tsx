@@ -558,7 +558,6 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         <View style={{ height: BAR_H, flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 14 }}>
           <Pressable onPress={toTop} accessibilityRole="button" accessibilityLabel="Quran Masterclass" style={{ flexDirection: "row", alignItems: "center", gap: 9, flexShrink: 1 }}>
             <Wordmark variant="stacked" height={32} />
-            <Text numberOfLines={1} style={{ fontFamily: FONT.medium, fontSize: 17, letterSpacing: -0.2, color: t.gold, flexShrink: 1 }}>{tx.feedButton}</Text>
           </Pressable>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <HeadBtn label={tx.explore} onPress={() => setSheet("explore")}><Icon name="compass" color={t.ink} size={23} /></HeadBtn>
