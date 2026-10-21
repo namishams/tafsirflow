@@ -1,6 +1,7 @@
 // Contracts of /api/feed/*. Quran and hadith text is never in the feed: items reference verseKey / hadithId and the app resolves the text.
 export type FeedTradition = "all" | "sunni" | "shia";
-export type FeedLocale = "de" | "en";
+export const FEED_LOCALES = ["de", "en", "ar", "tr", "ur", "fa", "ps", "fr", "es", "id", "ms", "bn", "ru", "zh"] as const;
+export type FeedLocale = (typeof FEED_LOCALES)[number];
 export type Localized = Partial<Record<FeedLocale, string>> & { en?: string };
 
 export type FeedConfig = {
@@ -11,7 +12,7 @@ export type FeedConfig = {
   enabledKinds: string[];
   promo: {
     frequencyCap: { everyNItems: number; maxPerSession: number; maxPerDay: number };
-    items: { id: string; title: string; image: string; deeplink: string }[];
+    items: { id: string; title: string; image?: string; deeplink: string }[];
   };
   topicChipGroups: { id: string; label: string; kinds: string[] }[];
   flags: Record<string, boolean>;

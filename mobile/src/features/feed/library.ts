@@ -7,6 +7,7 @@ import { markSeen, wasSeen } from "./seen";
 const servedUrls = new Set<string>();
 const urlSeen = (u: string) => !!u && (servedUrls.has(u) || wasSeen(`u:${u}`));
 import { interestOf, takeBoredom } from "./interest";
+import { fetchFeedNew, fetchFeedPage, flagOn, remoteConfig, resolveAll } from "./remote";
 
 // The weighted scheduler of the content libraries (src/content/sources and src/content/extra) for Home, Reels and
 // Explore. Items become feed ids "x:<item id>" (one post) or "xc:<first id>" (a carousel of 3–5 items of the
@@ -50,6 +51,7 @@ function tradition() {
 }
 /** the topic of any kind; new extra kinds (src/content/extra EXTRA_KINDS) plug in automatically by their name */
 export function topicOfKind(kind: string): LibTopic {
+  for (const g of remoteConfig()?.topicChipGroups ?? []) if ((LIB_TOPICS as string[]).includes(g.id) && g.kinds.includes(kind)) return g.id as LibTopic;
   for (const t of LIB_TOPICS) if (TOPIC_KINDS[t].includes(kind)) return t;
   if (/callig|architect|art/.test(kind)) return "art";
   if (/mosque|holy|heritage|makkah|madinah/.test(kind)) return "holy";
@@ -67,7 +69,45 @@ export function kindsOf(topic: LibTopic | "all"): LibKind[] {
   const allowed = new Set<LibKind>([...kindsFor(tradition()), ...EXTRA_KINDS]);
   const all = [...new Set<LibKind>([...(LIB_TOPICS.flatMap((t) => TOPIC_KINDS[t]) as LibKind[]), ...EXTRA_KINDS])];
   const list = topic === "all" ? all : all.filter((k) => topicOfKind(k) === topic);
-  return list.filter((k) => allowed.has(k));
+  return list.filter((k) => allowed.has(k) && remoteEnabled(k));
+}
+/** remote enabledKinds is an allowlist over the kinds the server knows (named in its weights or chip groups);
+ *  kinds it does not know (new local libraries) stay on, and without a config everything is on */
+function remoteEnabled(k: string) {
+  const c = remoteConfig();
+  if (!c?.enabledKinds?.length) return true;
+  const known = new Set([...Object.keys(c.kindWeights ?? {}), ...(c.topicChipGroups ?? []).flatMap((g) => g.kinds)]);
+  return !known.has(k) || c.enabledKinds.includes(k);
+}
+const weightOf = (k: string) => remoteConfig()?.kindWeights?.[k] ?? WEIGHT[k as LibKind] ?? 1;
+
+// ---- the server as one more source (website /api/feed): /new and /page items, resolved to library items ----
+// They join the pool; they never replace the local libraries. De-duplicated by server id.
+const remoteState = { lang: "", items: [] as LibItem[], cursor: null as string | null, done: false, loading: false, known: new Set<string>(), retryAt: 0 };
+function remoteFor(lang: string) {
+  if (remoteState.lang !== lang) Object.assign(remoteState, { lang, items: [], cursor: null, done: false, loading: false, known: new Set<string>(), retryAt: 0 });
+  return remoteState;
+}
+function fetchRemotePage(lang: string) {
+  const r = remoteFor(lang);
+  if (r.loading || r.done || r.items.length >= 4 || Date.now() < r.retryAt || !flagOn("serverPage")) return;
+  r.loading = true;
+  void fetchFeedPage(lang, r.cursor).then(async (p) => {
+    if (!p) { r.retryAt = Date.now() + 60000; return; }
+    r.cursor = p.nextCursor; r.done = !p.nextCursor;
+    const got = (await resolveAll(p.items, lang, r.known)).filter((i) => !wasSeen(`x:${i.id}`));
+    if (remoteState !== r || r.lang !== lang) return;
+    r.items.push(...got);
+    if (got.length) listeners.forEach((f) => f()); else if (!r.done) setTimeout(() => fetchRemotePage(lang), 0);
+  }).catch(() => { r.retryAt = Date.now() + 60000; }).finally(() => { r.loading = false; });
+}
+/** /new: resolves the newest server items and returns their feed ids (registered as posts); unseen ones first */
+export async function takeRemoteNew(lang: string, since?: string): Promise<string[]> {
+  const res = await fetchFeedNew(lang, since);
+  if (!res) return [];
+  const got = await resolveAll(res.items, lang, remoteFor(lang).known);
+  const ids = got.map((i) => { const id = `x:${i.id}`; LIB.set(id, { id, kind: i.kind, items: [i] }); return id; });
+  return [...ids.filter((id) => !wasSeen(id)), ...ids.filter((id) => wasSeen(id))];
 }
 
 // Endless: the sources page through their catalogs and wrap around; items not seen in the last 7 days come first, and
@@ -131,6 +171,17 @@ export class LibScheduler {
   }
 
   private one(): string | null {
+    // the server's items: with the weight of "editorial" against the local kinds, when they fit the topic
+    fetchRemotePage(this.lang);
+    const r = remoteFor(this.lang);
+    const ri = r.items.findIndex((i) => this.topic === "all" || topicOfKind(i.kind) === this.topic);
+    if (ri >= 0 && rand() < Math.min(0.5, weightOf("editorial") / 12)) {
+      const [it] = r.items.splice(ri, 1);
+      const id = `x:${it.id}`;
+      LIB.set(id, { id, kind: it.kind, items: [it] });
+      this.recent.push(it.kind);
+      return id;
+    }
     const kinds = kindsOf(this.topic);
     kinds.forEach((k) => fetchKind(k, this.lang));
     const last6 = this.recent.slice(-6);
@@ -150,7 +201,7 @@ export class LibScheduler {
     } else if (this.count % 8 === 0) {
       kind = [...pool].sort((a, b) => (this.seenCount.get(a) ?? 0) * interestOf(a) - (this.seenCount.get(b) ?? 0) * interestOf(b))[0];
     } else {
-      const raw = pool.map((k) => (WEIGHT[k] ?? 1) * interestOf(k) * (this.shown.has(k) ? 1 : 2.5));
+      const raw = pool.map((k) => weightOf(k) * interestOf(k) * (this.shown.has(k) ? 1 : 2.5));
       const sum = raw.reduce((a, b) => a + b, 0);
       const w = raw.map((r) => 0.85 * (r / sum) + 0.15 / pool.length);
       let x = rand();

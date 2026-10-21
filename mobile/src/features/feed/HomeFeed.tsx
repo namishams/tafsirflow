@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Animated, AppState, Easing, FlatList, Modal, Pressable, RefreshControl, ScrollView, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
+import { Animated, AppState, Easing, FlatList, Linking, Modal, Platform, Pressable, RefreshControl, ScrollView, Text, View, useWindowDimensions, type ListViewToken } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "expo-blur";
 import { router, useNavigation, type Href } from "expo-router";
@@ -41,7 +41,9 @@ import { HadithShare } from "@/features/hadith/ui";
 import { SAVED_KEY as HADITH_SAVED_KEY, toggleSaved as toggleSavedHadith, type HadithItem } from "@/features/hadith/data";
 import { readTradition } from "@/lib/tradition";
 import { HeartBurst, useTapGestures } from "./ui";
-import { LIB_TOPICS, LibScheduler, isLibId, onLibData, type LibTopic } from "./library";
+import { LIB_TOPICS, LibScheduler, isLibId, onLibData, takeRemoteNew, type LibTopic } from "./library";
+import { flagOn, loadRemoteConfig, updateAvailable, useRemoteConfig } from "./remote";
+import Constants from "expo-constants";
 import { statLike, statPost, statSave, statVerse, kindOfItem, useFeedTimer } from "./statsStore";
 import { LIB } from "./library";
 import { TodayRings } from "./Rings";
@@ -250,12 +252,28 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   keysLenRef.current = keys.length + trimmed.current;
   useEffect(() => onLibData(() => { if (keysLen.current - activeRef.current < 6) moreRef.current(); }), []);
 
+  // pull-to-refresh as on Instagram: haptic, then /config and /new from the server (offline: cache / local), fresh
+  // rings, the new server posts on top, then a rebuilt pool with unseen posts before already seen ones; short fade
+  const fade = useRef(new Animated.Value(1)).current;
   const refresh = useCallback(() => {
     setRefreshing(true);
+    tick();
     engine.stop();
     setNewPill(false);
-    setTimeout(() => { setKeys(build()); setActive(0); setRefreshing(false); }, reduce ? 0 : 450);
-  }, [build, engine, reduce]);
+    const started = Date.now();
+    void Promise.all([loadRemoteConfig(lang).catch(() => null), takeRemoteNew(lang).catch(() => [] as string[])]).then(([, fresh]) => {
+      pendingNew.current = [];
+      const wait = reduce ? 0 : Math.max(0, 450 - (Date.now() - started));
+      setTimeout(() => {
+        const built = build();
+        const rest = [...built.filter((k) => !wasSeen(k)), ...built.filter((k) => wasSeen(k))].filter((k) => !fresh.includes(k));
+        setKeys([...fresh.filter((k) => !wasSeen(k)), ...rest, ...fresh.filter((k) => wasSeen(k))]);
+        setActive(0);
+        setRefreshing(false);
+        if (!reduce) { fade.setValue(0.4); Animated.timing(fade, { toValue: 1, duration: 260, easing: Easing.out(Easing.quad), useNativeDriver: true }).start(); }
+      }, wait);
+    });
+  }, [build, engine, reduce, lang, fade]);
 
   const onViewable = useRef(({ viewableItems }: { viewableItems: ListViewToken[] }) => {
     const first = viewableItems.find((x) => x.isViewable && x.index !== null);
@@ -293,7 +311,9 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   }, [activeItem, focused, muted, tab]);
   // "New for you": items not seen before, counted when a batch is built; the pill after returning a while later
   const freshCount = useMemo(() => keys.filter((k) => !wasSeen(k)).length, [keys]); // eslint-disable-line react-hooks/exhaustive-deps
+  const [updateHidden, setUpdateHidden] = useState(false);
   const [newPill, setNewPill] = useState(false);
+  const pendingNew = useRef<string[]>([]);
   useEffect(() => {
     const away = Date.now() - lastVisit();
     if (lastVisit() && away > 30 * 60000) setNewPill(true);
@@ -304,7 +324,30 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     });
     return () => { sub.remove(); touchVisit(); };
   }, []);
-  const takeNew = useCallback(() => { setNewPill(false); engine.stop(); setKeys(build()); setActive(0); list.current?.scrollToOffset({ offset: 0, animated: !reduce }); }, [build, engine, reduce]);
+  const takeNew = useCallback(() => {
+    setNewPill(false); engine.stop();
+    const fresh = pendingNew.current; pendingNew.current = [];
+    const built = build();
+    setKeys([...fresh, ...built.filter((k) => !fresh.includes(k))]); setActive(0);
+    list.current?.scrollToOffset({ offset: 0, animated: !reduce });
+  }, [build, engine, reduce]);
+  // the server's /new: unseen items wait behind the "New posts" pill (flags.newPostsTab); config is loaded alongside
+  const remote = useRemoteConfig();
+  useEffect(() => {
+    let alive = true;
+    const check = () => {
+      void loadRemoteConfig(lang).catch(() => null);
+      void takeRemoteNew(lang, new Date(lastVisit() || Date.now() - 86400000).toISOString()).then((ids) => {
+        const fresh = ids.filter((k) => !wasSeen(k));
+        if (!alive || !fresh.length) return;
+        pendingNew.current = [...fresh, ...pendingNew.current.filter((k) => !fresh.includes(k))];
+        if (flagOn("newPostsTab")) setNewPill(true);
+      }).catch(() => undefined);
+    };
+    check();
+    const sub = AppState.addEventListener("change", (st) => { if (st === "active") check(); });
+    return () => { alive = false; sub.remove(); };
+  }, [lang]);
   useEffect(() => { if (!/^[vwr]:/.test(activeItem) || tab !== "home") engine.pause(); }, [activeItem, tab, engine]);
   const close = useCallback(() => { engine.stop(); goBack(); }, [engine]);
   const toggleMute = useCallback(() => { setMuted((m) => { const n = !m; writeJSON(MUTE_KEY, n, true); if (n) engine.pause(); return n; }); }, [engine]);
@@ -339,7 +382,12 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   }, [navigation, inTab, refresh, toTop]);
 
   // story circles of every category in one rail
-  const groups = useMemo<StoryGroup[]>(() => (["prophet", "reciters", "islam", "tips", "secrets"] as const).flatMap((c) => stories.groups[c]), [stories]);
+  // unseen groups first (after a refresh new ones move to the front with the gradient ring)
+  const groups = useMemo<StoryGroup[]>(() => {
+    const all = (["prophet", "reciters", "islam", "tips", "secrets"] as const).flatMap((c) => stories.groups[c]);
+    const fresh = (g: StoryGroup) => g.stories.some((x) => !seen.includes(x.id));
+    return [...all.filter(fresh), ...all.filter((g) => !fresh(g))];
+  }, [stories, refreshing]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // the story viewer: a story-style card of our own products after every few groups (none for Pro users)
   const viewerGroups = useMemo<StoryGroup[]>(() => {
@@ -403,7 +451,10 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   }, [share, lang, nameOf, tx.nameTitle, tx.nameSource]);
 
   const topicLabel: Record<Topic, string> = { all: tx.topicAll, verses: pt.catVerses, names: tx.topicNames, stories: tx.topicStories, hadith: tx.hadith,
-    ...(Object.fromEntries(LIB_TOPICS.filter((x) => x !== "hadith").map((x) => [x, libTopicLabel(tx, x)])) as Record<Exclude<LibTopic, "hadith">, string>) };
+    ...(Object.fromEntries(LIB_TOPICS.filter((x) => x !== "hadith").map((x) => [x, libTopicLabel(tx, x)])) as Record<Exclude<LibTopic, "hadith">, string>),
+    // labels of the remote topic chip groups (same ids as the app's topics) win
+    ...(Object.fromEntries((remote?.topicChipGroups ?? []).filter((g) => g.label && (TOPICS as string[]).includes(g.id)).map((g) => [g.id, g.label])) as Partial<Record<Topic, string>>) };
+  const showUpdate = updateAvailable(remote) && !updateHidden;
   const header = (
     <View style={{ paddingTop: 8, paddingBottom: 10, borderBottomWidth: 1, borderBottomColor: t.line, marginBottom: 6 }}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 14, paddingHorizontal: 14, paddingVertical: 4 }} accessibilityLabel={tx.stories}>
@@ -422,6 +473,16 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
           );
         })}
       </ScrollView>
+      {showUpdate ? (
+        <View style={{ marginHorizontal: 14, marginTop: 12, padding: 14, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, gap: 6 }}>
+          <Text accessibilityRole="header" style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{tx.updateTitle}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: t.muted }}>{tx.updateBody}</Text>
+          <View style={{ flexDirection: "row", justifyContent: "flex-end", gap: 18 }}>
+            <Text onPress={() => setUpdateHidden(true)} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted, paddingVertical: 4 }}>{tx.gotIt}</Text>
+            <Text onPress={() => { const pkg = Constants.expoConfig?.android?.package; void Linking.openURL(Platform.OS === "android" && pkg ? `market://details?id=${pkg}` : SITE).catch(() => undefined); }} accessibilityRole="button" style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent, paddingVertical: 4 }}>{tx.updateCta}</Text>
+          </View>
+        </View>
+      ) : null}
       {hintSeen ? null : (
         <View style={{ marginHorizontal: 14, marginTop: 12, padding: 14, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, gap: 6 }}>
           <Text accessibilityRole="header" style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{tx.hintTitle}</Text>
@@ -446,6 +507,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       <StatusBar style={t.dark ? "light" : "dark"} />
       <Animated.FlatList
         ref={list as never}
+        style={{ opacity: fade }}
         data={keys}
         keyExtractor={(k: Item, i: number) => `${k}-${i + trimmed.current}`}
         maintainVisibleContentPosition={{ minIndexForVisible: 0 }}
@@ -468,7 +530,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
         removeClippedSubviews
         onViewableItemsChanged={onViewable}
         viewabilityConfig={viewConfig}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={refresh} progressViewOffset={headerH} tintColor={t.accent} accessibilityLabel={tx.refresh} />}
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={refresh} progressViewOffset={headerH} tintColor={t.accent} colors={[t.accent]} accessibilityLabel={tx.refresh} />}
       />
 
       <Animated.View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: 0, paddingTop: insets.top, backgroundColor: t.bg, borderBottomWidth: 1, borderBottomColor: t.line, transform: [{ translateY: barY }] }}>

@@ -16,10 +16,14 @@ import { spotNow } from "./Extras";
 import { streakOf, useFeedStats } from "./statsStore";
 import { statPromo } from "./statsStore";
 import { useFeedText } from "./texts";
+import { flagOn, openDeeplink, useRemoteConfig } from "./remote";
+import { readJSON, useStored, writeJSON } from "@/lib/store";
+
+const ANN_SEEN = "qmc.feed-ann-seen";
 
 // Today's key cards as rings at the start of the Home stories rail: next prayer, countdown to the next Islamic day,
 // feed streak, radio live, verse of the day, feed statistics, the Shams Method and (without Pro) Pro.
-type Ring = { id: string; label: string; value: string; icon: IconName; tone: [string, string]; on: () => void; live?: boolean };
+type Ring = { id: string; label: string; value: string; icon: IconName; tone: [string, string]; on: () => void; live?: boolean; fresh?: boolean };
 
 export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item: string) => void }) {
   const t = useTheme();
@@ -40,7 +44,17 @@ export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item
   }, [lang]);
   const days = useMemo(() => { try { return countdown(readTradition(), todayUtc(), 1)?.days ?? null; } catch { return null; } }, []);
   const votd = VERSES_OF_THE_DAY[Math.floor(Date.now() / 86400000) % VERSES_OF_THE_DAY.length];
+  // announcements of the remote config: first in the rail, with the unseen ring until opened
+  const rc = useRemoteConfig();
+  const annSeen = useStored<string[]>(ANN_SEEN, []);
+  const now = Date.now();
+  const ann: Ring[] = flagOn("announcements") ? (rc?.announcements ?? [])
+    .filter((a) => Date.parse(a.startsAt) <= now && Date.parse(a.endsAt) > now)
+    .map((a) => ({ id: `ann:${a.id}`, label: a.title, value: "", icon: "moon" as IconName, tone: ["#3d2a0b", "#8c6a1d"] as [string, string], fresh: !annSeen.includes(a.id),
+      on: () => { writeJSON(ANN_SEEN, [...readJSON<string[]>(ANN_SEEN, []).filter((x) => x !== a.id), a.id].slice(-50), true); statPromo(`ann:${a.id}`, "tap"); openDeeplink(a.deeplink); } }))
+    .sort((a, b) => Number(!!b.fresh) - Number(!!a.fresh)) : [];
   const rings: Ring[] = [
+    ...ann,
     { id: "prayer", label: next ? wp(next.p) : tx.ringPrayer, value: next?.time ?? "", icon: "mosque", tone: ["#0b3d2e", "#1d6b52"], on: () => router.push("/prayer" as Href) },
     { id: "countdown", label: tx.ringCountdown, value: days !== null ? fillDays(days) : "", icon: "moon", tone: ["#1f2b47", "#3e5a8c"], on: () => router.push("/calendar" as Href) },
     { id: "streak", label: tx.ringStreak, value: String(streakOf(stats)), icon: "flame", tone: ["#47301f", "#b0662a"], on: () => router.push("/feed-stats" as Href) },
@@ -56,7 +70,7 @@ export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item
       {rings.map((r) => (
         <Pressable key={r.id} onPress={r.on} accessibilityRole="button" accessibilityLabel={[r.label, r.value].filter(Boolean).join(", ")}
           style={({ pressed }) => ({ width: 78, alignItems: "center", gap: 5, transform: pressed ? [{ scale: 0.97 }] : undefined })}>
-          <LinearGradient colors={r.id === "radio" && radioOn ? ["#ff5a6e", "#d63031"] : ["#f3e2b6", "#c6a65e"]} style={{ width: 72, height: 72, borderRadius: 36, padding: 2.5 }}>
+          <LinearGradient colors={r.id === "radio" && radioOn ? ["#ff5a6e", "#d63031"] : r.fresh === false ? [t.line, t.line] : r.fresh ? ["#f3e2b6", "#c6a65e", "#8a6a2c"] : ["#f3e2b6", "#c6a65e"]} style={{ width: 72, height: 72, borderRadius: 36, padding: 2.5 }}>
             <View style={{ flex: 1, borderRadius: 34, padding: 2, backgroundColor: t.bg }}>
               <LinearGradient colors={r.tone} style={{ flex: 1, borderRadius: 32, alignItems: "center", justifyContent: "center", gap: 1 }}>
                 <Icon name={r.icon} color="rgb(233,207,153)" size={r.value ? 17 : 24} />

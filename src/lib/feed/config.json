@@ -1,29 +1,440 @@
 {
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-10-21",
   "minAppBuild": 1,
-  "kindWeights": { "editorial": 3, "hadith-of-day": 2, "verse-of-day": 2, "islamic-date": 1, "featured-surah": 1, "tafsir": 2, "dua": 2, "seerah": 1, "history": 1, "art": 1 },
-  "enabledKinds": ["editorial", "hadith-of-day", "verse-of-day", "islamic-date", "featured-surah", "tafsir", "hadith", "shia-hadith", "dua", "asma", "surah-info", "word-of-day", "reciter-bio", "seerah", "history", "art", "mosque", "scholar-bio", "prophets"],
+  "kindWeights": {
+    "editorial": 3,
+    "hadith-of-day": 3,
+    "verse-of-day": 2,
+    "islamic-date": 2,
+    "featured-surah": 1,
+    "word-of-day": 2,
+    "dua": 1.6,
+    "tafsir": 1.4,
+    "hadith": 1.4,
+    "mosque": 1.3,
+    "art": 1.2,
+    "met-art": 1.2
+  },
+  "enabledKinds": [
+    "editorial",
+    "announcement",
+    "verse-of-day",
+    "hadith-of-day",
+    "islamic-date",
+    "featured-surah",
+    "tafsir",
+    "hadith",
+    "shia-hadith",
+    "dua",
+    "asma",
+    "surah-info",
+    "word-root",
+    "word-of-day",
+    "seerah",
+    "history",
+    "art",
+    "met-art",
+    "mosque",
+    "scholar-bio",
+    "prophets"
+  ],
   "promo": {
-    "frequencyCap": { "everyNItems": 12, "maxPerSession": 2, "maxPerDay": 4 },
+    "frequencyCap": {
+      "everyNItems": 15,
+      "maxPerSession": 2,
+      "maxPerDay": 4
+    },
     "items": [
-      { "id": "shams", "title": { "de": "Shams – Ihr Begleiter", "en": "Shams – your companion" }, "image": "/images/promo/shams.png", "deeplink": "tafsirflow://shams" },
-      { "id": "pro", "title": { "de": "Pro freischalten", "en": "Unlock Pro" }, "image": "/images/promo/pro.png", "deeplink": "tafsirflow://pro" },
-      { "id": "duas", "title": { "de": "Duas für jeden Tag", "en": "Duas for every day" }, "image": "/images/promo/duas.png", "deeplink": "tafsirflow://duas" },
-      { "id": "name-report", "title": { "de": "Die Bedeutung Ihres Namens", "en": "The meaning of your name" }, "image": "/images/promo/name-report.png", "deeplink": "tafsirflow://names" }
+      {
+        "id": "shams",
+        "title": {
+          "de": "Die Shams-Methode",
+          "en": "The Shams Method",
+          "ar": "منهج شمس",
+          "tr": "Shams Yöntemi",
+          "ur": "شمس طریقہ",
+          "fa": "روش شمس",
+          "ps": "د شمس طریقه",
+          "fr": "La méthode Shams",
+          "es": "El método Shams",
+          "id": "Metode Shams",
+          "ms": "Kaedah Shams",
+          "bn": "শামস পদ্ধতি",
+          "ru": "Метод Шамс",
+          "zh": "Shams 方法"
+        },
+        "deeplink": "quranmasterclass://shams"
+      },
+      {
+        "id": "pro",
+        "title": {
+          "de": "Pro freischalten",
+          "en": "Unlock Pro",
+          "ar": "افتح Pro",
+          "tr": "Pro'yu açın",
+          "ur": "Pro کھولیں",
+          "fa": "Pro را فعال کنید",
+          "ps": "Pro پرانیزئ",
+          "fr": "Débloquer Pro",
+          "es": "Desbloquear Pro",
+          "id": "Buka Pro",
+          "ms": "Buka Pro",
+          "bn": "Pro চালু করুন",
+          "ru": "Открыть Pro",
+          "zh": "解锁 Pro"
+        },
+        "deeplink": "quranmasterclass://pro"
+      },
+      {
+        "id": "dua",
+        "title": {
+          "de": "Ihre persönliche Dua",
+          "en": "Your personal dua",
+          "ar": "دعاؤك الشخصي",
+          "tr": "Kişisel duanız",
+          "ur": "آپ کی ذاتی دعا",
+          "fa": "دعای شخصی شما",
+          "ps": "ستاسو شخصي دعا",
+          "fr": "Votre doua personnelle",
+          "es": "Su dua personal",
+          "id": "Doa pribadi Anda",
+          "ms": "Doa peribadi anda",
+          "bn": "আপনার ব্যক্তিগত দোয়া",
+          "ru": "Ваше личное дуа",
+          "zh": "您的专属祈祷词"
+        },
+        "deeplink": "quranmasterclass://dua-generator"
+      },
+      {
+        "id": "name",
+        "title": {
+          "de": "Die Bedeutung Ihres Namens",
+          "en": "The meaning of your name",
+          "ar": "معنى اسمك",
+          "tr": "İsminizin anlamı",
+          "ur": "آپ کے نام کا مطلب",
+          "fa": "معنای نام شما",
+          "ps": "ستاسو د نوم مانا",
+          "fr": "Le sens de votre prénom",
+          "es": "El significado de su nombre",
+          "id": "Arti nama Anda",
+          "ms": "Maksud nama anda",
+          "bn": "আপনার নামের অর্থ",
+          "ru": "Значение вашего имени",
+          "zh": "您名字的含义"
+        },
+        "deeplink": "quranmasterclass://names"
+      }
     ]
   },
   "topicChipGroups": [
-    { "id": "quran", "label": { "de": "Quran", "en": "Quran" }, "kinds": ["verse-of-day", "tafsir", "surah-info", "featured-surah", "word-of-day"] },
-    { "id": "hadith", "label": { "de": "Hadith", "en": "Hadith" }, "kinds": ["hadith-of-day", "hadith", "shia-hadith"] },
-    { "id": "dua", "label": { "de": "Duas", "en": "Duas" }, "kinds": ["dua", "asma"] },
-    { "id": "history", "label": { "de": "Geschichte", "en": "History" }, "kinds": ["seerah", "history", "scholar-bio", "prophets"] },
-    { "id": "culture", "label": { "de": "Kunst & Orte", "en": "Art & places" }, "kinds": ["art", "mosque", "reciter-bio"] },
-    { "id": "news", "label": { "de": "Neu", "en": "New" }, "kinds": ["editorial", "islamic-date"] }
+    {
+      "id": "tafsir",
+      "label": {
+        "de": "Tafsir",
+        "en": "Tafsir",
+        "ar": "التفسير",
+        "tr": "Tefsir",
+        "ur": "تفسیر",
+        "fa": "تفسیر",
+        "ps": "تفسیر",
+        "fr": "Tafsir",
+        "es": "Tafsir",
+        "id": "Tafsir",
+        "ms": "Tafsir",
+        "bn": "তাফসীর",
+        "ru": "Тафсир",
+        "zh": "经注"
+      },
+      "kinds": [
+        "tafsir",
+        "surah-info",
+        "word-root",
+        "word-of-day",
+        "verse-of-day",
+        "featured-surah"
+      ]
+    },
+    {
+      "id": "hadith",
+      "label": {
+        "de": "Hadith",
+        "en": "Hadith",
+        "ar": "الحديث",
+        "tr": "Hadis",
+        "ur": "حدیث",
+        "fa": "حدیث",
+        "ps": "حدیث",
+        "fr": "Hadith",
+        "es": "Hadiz",
+        "id": "Hadis",
+        "ms": "Hadis",
+        "bn": "হাদীস",
+        "ru": "Хадисы",
+        "zh": "圣训"
+      },
+      "kinds": [
+        "hadith",
+        "hadith-of-day",
+        "shia-hadith"
+      ]
+    },
+    {
+      "id": "duas",
+      "label": {
+        "de": "Duas",
+        "en": "Duas",
+        "ar": "الأدعية",
+        "tr": "Dualar",
+        "ur": "دعائیں",
+        "fa": "دعاها",
+        "ps": "دعاګانې",
+        "fr": "Douas",
+        "es": "Duas",
+        "id": "Doa",
+        "ms": "Doa",
+        "bn": "দোয়া",
+        "ru": "Дуа",
+        "zh": "祈祷词"
+      },
+      "kinds": [
+        "dua",
+        "asma",
+        "phrases",
+        "akhlaq"
+      ]
+    },
+    {
+      "id": "prayer",
+      "label": {
+        "de": "Gebet",
+        "en": "Prayer",
+        "ar": "الصلاة",
+        "tr": "Namaz",
+        "ur": "نماز",
+        "fa": "نماز",
+        "ps": "لمونځ",
+        "fr": "Prière",
+        "es": "Oración",
+        "id": "Salat",
+        "ms": "Solat",
+        "bn": "নামাজ",
+        "ru": "Молитва",
+        "zh": "礼拜"
+      },
+      "kinds": [
+        "salah",
+        "pillars",
+        "islamic-months"
+      ]
+    },
+    {
+      "id": "holy",
+      "label": {
+        "de": "Heilige Orte",
+        "en": "Holy places",
+        "ar": "الأماكن المقدسة",
+        "tr": "Kutsal mekânlar",
+        "ur": "مقدس مقامات",
+        "fa": "اماکن مقدس",
+        "ps": "سپیڅلي ځایونه",
+        "fr": "Lieux saints",
+        "es": "Lugares santos",
+        "id": "Tempat suci",
+        "ms": "Tempat suci",
+        "bn": "পবিত্র স্থান",
+        "ru": "Святые места",
+        "zh": "圣地"
+      },
+      "kinds": [
+        "mosque",
+        "holy-places",
+        "saudi-heritage"
+      ]
+    },
+    {
+      "id": "seerah",
+      "label": {
+        "de": "Sira",
+        "en": "Seerah",
+        "ar": "السيرة",
+        "tr": "Siyer",
+        "ur": "سیرت",
+        "fa": "سیره",
+        "ps": "سیرت",
+        "fr": "Sîra",
+        "es": "Sira",
+        "id": "Sirah",
+        "ms": "Sirah",
+        "bn": "সীরাত",
+        "ru": "Сира",
+        "zh": "先知传记"
+      },
+      "kinds": [
+        "seerah",
+        "prophets",
+        "prophet-family",
+        "battles"
+      ]
+    },
+    {
+      "id": "quran",
+      "label": {
+        "de": "Quran",
+        "en": "Quran",
+        "ar": "القرآن",
+        "tr": "Kuran",
+        "ur": "قرآن",
+        "fa": "قرآن",
+        "ps": "قرآن",
+        "fr": "Coran",
+        "es": "Corán",
+        "id": "Al-Qur'an",
+        "ms": "Al-Quran",
+        "bn": "কুরআন",
+        "ru": "Коран",
+        "zh": "古兰经"
+      },
+      "kinds": [
+        "quran-facts",
+        "angels-unseen",
+        "arabic-word"
+      ]
+    },
+    {
+      "id": "scholars",
+      "label": {
+        "de": "Gelehrte",
+        "en": "Scholars",
+        "ar": "العلماء",
+        "tr": "Âlimler",
+        "ur": "علما",
+        "fa": "علما",
+        "ps": "عالمان",
+        "fr": "Savants",
+        "es": "Eruditos",
+        "id": "Ulama",
+        "ms": "Ulama",
+        "bn": "আলেমগণ",
+        "ru": "Учёные",
+        "zh": "学者"
+      },
+      "kinds": [
+        "scholar-bio",
+        "scholar-work",
+        "scholar-timeline",
+        "reciter-bio",
+        "reciter-fact",
+        "women"
+      ]
+    },
+    {
+      "id": "history",
+      "label": {
+        "de": "Geschichte",
+        "en": "History",
+        "ar": "التاريخ",
+        "tr": "Tarih",
+        "ur": "تاریخ",
+        "fa": "تاریخ",
+        "ps": "تاریخ",
+        "fr": "Histoire",
+        "es": "Historia",
+        "id": "Sejarah",
+        "ms": "Sejarah",
+        "bn": "ইতিহাস",
+        "ru": "История",
+        "zh": "历史"
+      },
+      "kinds": [
+        "history",
+        "islamic-date",
+        "editorial",
+        "announcement",
+        "islam-country",
+        "spread",
+        "golden-age"
+      ]
+    },
+    {
+      "id": "art",
+      "label": {
+        "de": "Kunst",
+        "en": "Art",
+        "ar": "الفن",
+        "tr": "Sanat",
+        "ur": "فن",
+        "fa": "هنر",
+        "ps": "هنر",
+        "fr": "Art",
+        "es": "Arte",
+        "id": "Seni",
+        "ms": "Seni",
+        "bn": "শিল্প",
+        "ru": "Искусство",
+        "zh": "艺术"
+      },
+      "kinds": [
+        "art",
+        "met-art",
+        "calligraphy-style",
+        "architecture-style"
+      ]
+    }
   ],
-  "flags": { "newPostsTab": true, "serverPage": true, "promos": true, "announcements": true },
+  "flags": {
+    "newPostsTab": true,
+    "serverPage": true,
+    "promos": true,
+    "announcements": true
+  },
   "announcements": [
-    { "id": "ramadan-1448", "title": { "de": "Ramadan Mubarak", "en": "Ramadan Mubarak" }, "image": "/images/promo/ramadan.png", "deeplink": "tafsirflow://ramadan", "startsAt": "2027-02-07T00:00:00Z", "endsAt": "2027-03-09T00:00:00Z", "tradition": "all" },
-    { "id": "eid-fitr-1448", "title": { "de": "Eid Mubarak", "en": "Eid Mubarak" }, "image": "/images/promo/eid.png", "deeplink": "tafsirflow://eid", "startsAt": "2027-03-09T00:00:00Z", "endsAt": "2027-03-13T00:00:00Z", "tradition": "all" }
+    {
+      "id": "ramadan-1448",
+      "title": {
+        "de": "Ramadan Mubarak",
+        "en": "Ramadan Mubarak",
+        "ar": "رمضان مبارك",
+        "tr": "Hayırlı Ramazanlar",
+        "ur": "رمضان مبارک",
+        "fa": "رمضان مبارک",
+        "ps": "روژه مو مبارک",
+        "fr": "Ramadan Moubarak",
+        "es": "Ramadán Mubarak",
+        "id": "Selamat Ramadan",
+        "ms": "Salam Ramadan",
+        "bn": "রমজান মোবারক",
+        "ru": "Рамадан Мубарак",
+        "zh": "斋月吉庆"
+      },
+      "deeplink": "quranmasterclass://calendar",
+      "startsAt": "2027-02-07T00:00:00Z",
+      "endsAt": "2027-03-09T00:00:00Z",
+      "tradition": "all"
+    },
+    {
+      "id": "eid-fitr-1448",
+      "title": {
+        "de": "Eid Mubarak",
+        "en": "Eid Mubarak",
+        "ar": "عيد مبارك",
+        "tr": "Bayramınız mübarek olsun",
+        "ur": "عید مبارک",
+        "fa": "عید مبارک",
+        "ps": "اختر مو مبارک",
+        "fr": "Aïd Moubarak",
+        "es": "Eid Mubarak",
+        "id": "Selamat Idulfitri",
+        "ms": "Selamat Hari Raya",
+        "bn": "ঈদ মোবারক",
+        "ru": "Ид Мубарак",
+        "zh": "开斋节快乐"
+      },
+      "deeplink": "quranmasterclass://calendar",
+      "startsAt": "2027-03-09T00:00:00Z",
+      "endsAt": "2027-03-13T00:00:00Z",
+      "tradition": "all"
+    }
   ]
 }

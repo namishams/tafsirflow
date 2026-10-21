@@ -4,8 +4,12 @@ import { toHijri, todayUtc, hijriMonthName, countdown } from "@/lib/hijri";
 import type { FeedItem, FeedLocale, FeedTradition } from "./types";
 
 // well-known hadith references (ids only; the app loads text from hadith-api / Thaqalayn)
-const SUNNI_HADITH = ["bukhari:1", "bukhari:13", "bukhari:6018", "muslim:2564", "muslim:2699", "tirmidhi:1987", "tirmidhi:2516", "nawawi40:2", "nawawi40:13", "nawawi40:18", "riyadussalihin:1", "abudawud:4811"];
-const SHIA_HADITH = ["thaqalayn:al-kafi:1:1:1:1", "thaqalayn:al-kafi:1:1:1:2", "thaqalayn:al-amali-saduq:1:1", "thaqalayn:nahj-al-balagha:1"];
+// ids the app can resolve: "<collection>:<n>" in fawazahmed0/hadith-api numbering (bukhari, muslim, nawawi), and
+// "thaqalayn:<bookId>:<n>" as in thaqalayn-api.net v2. Each id checked against the APIs on 2026-10-21 (non-empty text,
+// no book prefaces). Muslim is left out: hadith-api numbers it differently from sunnah.com.
+const SUNNI_HADITH = ["bukhari:1", "bukhari:13", "bukhari:52", "bukhari:6018", "bukhari:6114", "bukhari:6136", "nawawi:1", "nawawi:2", "nawawi:13", "nawawi:15", "nawawi:18", "nawawi:40"];
+const SHIA_HADITH = ["thaqalayn:Al-Kafi-Volume-1-Kulayni:2", "thaqalayn:Al-Kafi-Volume-2-Kulayni:1", "thaqalayn:Kitab-al-Mumin-Ahwazi:1"];
+const sunnahUrl = (id: string) => { const [c, n] = id.split(":"); return `https://sunnah.com/${c === "nawawi" ? "nawawi40" : c}:${n}`; };
 
 const T = {
   de: { votd: "Vers des Tages", hotd: "Hadith des Tages", date: "Heute im islamischen Kalender", surah: "Sure des Tages", kahf: "Freitag: Sure al-Kahf", hb: "Der Text wird aus der Quelle geladen.", until: (n: number) => `Noch ${n} Tage bis zum nächsten besonderen Tag.`, sb: (n: number) => `Heute empfohlen: Sure ${n}.` },
@@ -17,7 +21,7 @@ export const dayNumber = (d: Date) => Math.floor(Date.UTC(d.getUTCFullYear(), d.
 
 /** items for a given day (also used for previous days in the endless page) */
 export function generatedForDay(day: Date, locale: FeedLocale, tradition: FeedTradition): FeedItem[] {
-  const t = T[locale], key = dayKey(day), n = dayNumber(day), at = `${key}T00:00:00.000Z`;
+  const t = T[locale === "de" ? "de" : "en"], key = dayKey(day), n = dayNumber(day), at = `${key}T00:00:00.000Z`;
   const base = { lang: locale, publishedAt: at } as const;
   const items: FeedItem[] = [];
   const vk = verseOfDayKey(day);
@@ -25,7 +29,7 @@ export function generatedForDay(day: Date, locale: FeedLocale, tradition: FeedTr
   const shia = tradition === "shia" || (tradition === "all" && n % 3 === 0);
   const list = shia ? SHIA_HADITH : SUNNI_HADITH;
   const hid = list[n % list.length];
-  items.push({ ...base, id: `hotd:${key}`, kind: "hadith-of-day", title: t.hotd, body: t.hb, hadithId: hid, source: shia ? "Thaqalayn" : "Sunnah.com", sourceUrl: shia ? "https://thaqalayn.net" : `https://sunnah.com/${hid}`, tradition: shia ? "shia" : "sunni" });
+  items.push({ ...base, id: `hotd:${key}`, kind: "hadith-of-day", title: t.hotd, body: t.hb, hadithId: hid, source: shia ? "Thaqalayn" : "Sunnah.com", sourceUrl: shia ? "https://thaqalayn.net" : sunnahUrl(hid), tradition: shia ? "shia" : "sunni" });
   const s = surahOfDay(new Date(Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate(), 12)));
   items.push({ ...base, id: `surah:${key}`, kind: "featured-surah", title: s.friday ? t.kahf : t.surah, body: t.sb(s.surah), surah: s.surah, source: "Quran.com", sourceUrl: `https://quran.com/${s.surah}`, tradition: "all" });
   try {

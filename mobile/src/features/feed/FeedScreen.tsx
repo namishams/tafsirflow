@@ -24,7 +24,9 @@ import { HadithPage, NamePage, ProPage, StoryPage } from "./StoryPage";
 import { HADITH_AVAILABLE, hadithFeedItems, type HadithFeedItem } from "./hadith";
 import { ShareSheet } from "./share";
 import { tick } from "./haptics";
-import { LibScheduler, isLibId } from "./library";
+import { LibScheduler, isLibId, takeRemoteNew } from "./library";
+import { loadRemoteConfig } from "./remote";
+import { wasSeen } from "./seen";
 import { LibraryPost } from "./LibraryPost";
 import { LIB } from "./library";
 import { kindOfItem, statPost, statVerse, useFeedTimer } from "./statsStore";
@@ -85,6 +87,8 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
   activeRef.current = active;
   // swipe down at the top: a fresh sequence
   const [gen, setGen] = useState(0);
+  const [refreshing, setRefreshing] = useState(false);
+  const freshIds = useRef<string[]>([]);
   const lib = useRef<LibScheduler | null>(null);
   const hadith = useRef<{ byId: Map<string, HadithFeedItem>; cursor: string | null; loading: boolean; gen: number }>({ byId: new Map(), cursor: null, loading: false, gen: 0 });
   const latest = useRef({ stories, quota });
@@ -140,7 +144,10 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
         if (start.startsWith("h:") && startHadith) { hadith.current.byId.set(start, startHadith); first.unshift(start); }
         else if (!start.startsWith("h:")) first.unshift(start);
       }
-      setKeys(first);
+      // after a pull-to-refresh: the new server posts first, then unseen before already seen
+      const fresh = cat === "foryou" ? freshIds.current : [];
+      freshIds.current = [];
+      setKeys([...fresh, ...first.filter((k) => !wasSeen(k) && !fresh.includes(k)), ...first.filter((k) => wasSeen(k) && !fresh.includes(k))]);
     } else {
       const v = surah === startS ? Math.min(VERSE_COUNTS[surah - 1], Math.max(1, Number(params.v) || 1)) : 1;
       loadedSurahs.current.add(surah);
@@ -322,7 +329,13 @@ export function FeedScreen({ onHome, start, startHadith, bottomSpace = 0 }: { on
           snapToAlignment="start"
           disableIntervalMomentum
           decelerationRate="fast"
-          refreshControl={<RefreshControl refreshing={false} tintColor="#fff" onRefresh={() => { engine.stop(); setGen((g) => g + 1); }} />}
+          refreshControl={<RefreshControl refreshing={refreshing} tintColor={stage.gold} colors={[stage.gold]} onRefresh={() => {
+            engine.stop(); tick(); setRefreshing(true);
+            void Promise.all([loadRemoteConfig(lang).catch(() => null), takeRemoteNew(lang).catch(() => [] as string[])]).then(([, ids]) => {
+              freshIds.current = ids.filter((k) => !wasSeen(k));
+              setGen((g) => g + 1); setRefreshing(false);
+            });
+          }} />}
           showsVerticalScrollIndicator={false}
           getItemLayout={(_, i) => ({ length: pageH, offset: pageH * i, index: i })}
           initialScrollIndex={Math.min(initialIndex.current, keys.length - 1)}

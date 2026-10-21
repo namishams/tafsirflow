@@ -4,6 +4,9 @@ import { pick, useLang } from "@/i18n";
 // Texts that exist on the website (Like, Share, Bookmark, Open in the reader …) come from useWebT instead.
 const TEXT = {
   en: {
+    updateTitle: "Update available",
+    updateBody: "A new version of the app is ready with new feed features.",
+    updateCta: "Update",
     title: "Quran Feed",
     lead: "One verse at a time: swipe through beautiful verses with recitation and translation.",
     open: "Open the feed",
@@ -193,6 +196,9 @@ const TEXT = {
     ringShams: "Shams",
   },
   de: {
+    updateTitle: "Update verfügbar",
+    updateBody: "Eine neue Version der App ist bereit, mit neuen Funktionen im Feed.",
+    updateCta: "Aktualisieren",
     title: "Quran Feed",
     lead: "Vers für Vers: Wische durch schöne Verse mit Rezitation und Übersetzung.",
     open: "Feed öffnen",
@@ -382,6 +388,9 @@ const TEXT = {
     ringShams: "Shams",
   },
   ar: {
+    updateTitle: "تحديث متاح",
+    updateBody: "إصدار جديد من التطبيق جاهز بميزات جديدة.",
+    updateCta: "تحديث",
     title: "موجز القرآن",
     lead: "آية تلو الأخرى: تصفّح آيات جميلة مع التلاوة والترجمة.",
     open: "افتح الموجز",
@@ -571,6 +580,9 @@ const TEXT = {
     ringShams: "شمس",
   },
   tr: {
+    updateTitle: "Güncelleme mevcut",
+    updateBody: "Uygulamanın yeni bir sürümü yeni özelliklerle hazır.",
+    updateCta: "Güncelle",
     title: "Kur'an Akışı",
     lead: "Ayet ayet: tilavet ve mealiyle güzel ayetler arasında kaydırın.",
     open: "Akışı açın",
@@ -760,6 +772,9 @@ const TEXT = {
     ringShams: "Shams",
   },
   ur: {
+    updateTitle: "اپ ڈیٹ دستیاب ہے",
+    updateBody: "ایپ کا نیا ورژن نئی خصوصیات کے ساتھ تیار ہے۔",
+    updateCta: "اپ ڈیٹ کریں",
     title: "قرآن فیڈ",
     lead: "ایک ایک آیت: تلاوت اور ترجمے کے ساتھ خوبصورت آیات دیکھیں۔",
     open: "فیڈ کھولیں",
@@ -949,6 +964,9 @@ const TEXT = {
     ringShams: "شمس",
   },
   fa: {
+    updateTitle: "به\u200cروزرسانی موجود است",
+    updateBody: "نسخهٔ تازهٔ برنامه با امکانات جدید آماده است.",
+    updateCta: "به\u200cروزرسانی",
     title: "فید قرآن",
     lead: "آیه به آیه: آیات زیبا را همراه با تلاوت و ترجمه مرور کنید.",
     open: "باز کردن فید",
@@ -1138,6 +1156,9 @@ const TEXT = {
     ringShams: "شمس",
   },
   ps: {
+    updateTitle: "تازه نسخه شته",
+    updateBody: "د اپ نوې نسخه له نویو ځانګړتیاوو سره چمتو ده.",
+    updateCta: "تازه کول",
     title: "د قرآن فیډ",
     lead: "آیت په آیت: ښکلي آیتونه له تلاوت او ژباړې سره وګورئ.",
     open: "فیډ پرانیزئ",
@@ -1327,6 +1348,9 @@ const TEXT = {
     ringShams: "شمس",
   },
   fr: {
+    updateTitle: "Mise à jour disponible",
+    updateBody: "Une nouvelle version de l’app est prête, avec de nouvelles fonctions.",
+    updateCta: "Mettre à jour",
     title: "Fil du Coran",
     lead: "Verset par verset : faites défiler de beaux versets avec récitation et traduction.",
     open: "Ouvrir le fil",
@@ -1516,6 +1540,9 @@ const TEXT = {
     ringShams: "Shams",
   },
   es: {
+    updateTitle: "Actualización disponible",
+    updateBody: "Hay una nueva versión de la app con nuevas funciones.",
+    updateCta: "Actualizar",
     title: "Feed del Corán",
     lead: "Aleya a aleya: desliza entre bellas aleyas con recitación y traducción.",
     open: "Abrir el feed",
@@ -1705,6 +1732,9 @@ const TEXT = {
     ringShams: "Shams",
   },
   id: {
+    updateTitle: "Pembaruan tersedia",
+    updateBody: "Versi baru aplikasi siap dengan fitur baru.",
+    updateCta: "Perbarui",
     title: "Feed Al-Qur'an",
     lead: "Ayat demi ayat: geser ayat-ayat indah dengan tilawah dan terjemahan.",
     open: "Buka feed",
@@ -1894,6 +1924,9 @@ const TEXT = {
     ringShams: "Shams",
   },
   ms: {
+    updateTitle: "Kemas kini tersedia",
+    updateBody: "Versi baharu aplikasi sedia dengan ciri baharu.",
+    updateCta: "Kemas kini",
     title: "Suapan Al-Quran",
     lead: "Ayat demi ayat: leret ayat-ayat indah dengan bacaan dan terjemahan.",
     open: "Buka suapan",
@@ -2083,6 +2116,9 @@ const TEXT = {
     ringShams: "Shams",
   },
   bn: {
+    updateTitle: "আপডেট উপলব্ধ",
+    updateBody: "অ্যাপের নতুন সংস্করণ নতুন সুবিধাসহ প্রস্তুত।",
+    updateCta: "আপডেট করুন",
     title: "কুরআন ফিড",
     lead: "আয়াতের পর আয়াত: তিলাওয়াত ও অনুবাদসহ সুন্দর আয়াতগুলো দেখুন।",
     open: "ফিড খুলুন",
@@ -2272,6 +2308,9 @@ const TEXT = {
     ringShams: "শামস",
   },
   ru: {
+    updateTitle: "Доступно обновление",
+    updateBody: "Новая версия приложения готова, с новыми функциями.",
+    updateCta: "Обновить",
     title: "Лента Корана",
     lead: "Аят за аятом: листайте прекрасные аяты с чтением и переводом.",
     open: "Открыть ленту",
@@ -2461,6 +2500,9 @@ const TEXT = {
     ringShams: "Шамс",
   },
   zh: {
+    updateTitle: "有可用更新",
+    updateBody: "新版应用已就绪，带来新功能。",
+    updateCta: "更新",
     title: "古兰经动态",
     lead: "一节接一节：滑动浏览配有诵读和译文的优美经文。",
     open: "打开动态",

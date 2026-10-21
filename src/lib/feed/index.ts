@@ -4,10 +4,11 @@ import { clientIp, rateLimited } from "@/lib/http";
 import raw from "./config.json";
 import { editorialItems, traditionOk } from "./posts";
 import { generatedForDay, dayKey } from "./generated";
+import { FEED_LOCALES } from "./types";
 import type { FeedConfig, FeedItem, FeedLocale, FeedTradition, Localized } from "./types";
 
 export type FeedParams = { locale: FeedLocale; tradition: FeedTradition };
-const LOCALES: FeedLocale[] = ["de", "en"];
+const LOCALES: readonly FeedLocale[] = FEED_LOCALES;
 const TRADS: FeedTradition[] = ["all", "sunni", "shia"];
 
 export function parseParams(req: NextRequest): FeedParams {

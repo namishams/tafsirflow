@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { FlatList, Modal, ScrollView, Pressable, Text, View, useWindowDimensions } from "react-native";
+import { FlatList, Modal, RefreshControl, ScrollView, Pressable, Text, View, useWindowDimensions } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Icon } from "@/components/icons";
@@ -17,7 +17,10 @@ import { useFeedText } from "./texts";
 import { useFeedVoice } from "./voice";
 import { useReducedMotionX } from "@/features/extra/motion";
 import { Image, TextInput } from "react-native";
-import { LIB, LIB_TOPICS, LibScheduler, isLibId, onLibData, type LibTopic } from "./library";
+import { LIB, LIB_TOPICS, LibScheduler, isLibId, onLibData, takeRemoteNew, type LibTopic } from "./library";
+import { loadRemoteConfig } from "./remote";
+import { tick } from "./haptics";
+import { wasSeen } from "./seen";
 import { kindTopic, libText, topicLabel as libTopicLabel } from "./LibraryPost";
 
 // Explore (a 3-column grid of square tiles, like Instagram Explore) and the Saved collection. A tile opens the Reels
@@ -60,7 +63,7 @@ const Tile = memo(function Tile({ e, size, onPress, big }: { e: Entry; size: num
 
 /** Explore like Instagram: rows of three, and every other block of six has one large 2x2 tile (alternating sides) */
 type Block = { id: string; items: Entry[]; big: boolean; left: boolean };
-function Grid({ data, onOpen, onEnd, empty }: { data: Entry[]; onOpen: OpenItem; onEnd?: () => void; empty?: React.ReactNode }) {
+function Grid({ data, onOpen, onEnd, empty, refresh }: { data: Entry[]; onOpen: OpenItem; onEnd?: () => void; empty?: React.ReactNode; refresh?: React.ReactElement<React.ComponentProps<typeof RefreshControl>> }) {
   const { width } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const size = Math.floor(Math.min(width, 700) / 3);
@@ -87,6 +90,7 @@ function Grid({ data, onOpen, onEnd, empty }: { data: Entry[]; onOpen: OpenItem;
       )}
       contentContainerStyle={{ alignSelf: "center", width: size * 3, paddingBottom: insets.bottom + 24 }}
       onEndReached={onEnd}
+      refreshControl={refresh}
       onEndReachedThreshold={3}
       maxToRenderPerBatch={4}
       removeClippedSubviews
@@ -178,6 +182,19 @@ export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOp
   }, [fetchHadith]);
 
   const ready = stories.byId.size > 0;
+  // pull-to-refresh: haptic, /config and /new from the server, then a reshuffled grid with the new tiles first
+  const [gen, setGen] = useState(0);
+  const [refreshing, setRefreshing] = useState(false);
+  const freshIds = useRef<string[]>([]);
+  const refresh = useCallback(() => {
+    setRefreshing(true);
+    tick();
+    void Promise.all([loadRemoteConfig(lang).catch(() => null), takeRemoteNew(lang).catch(() => [] as string[])]).then(([, ids]) => {
+      freshIds.current = ids.filter((k) => !wasSeen(k));
+      setGen((g) => g + 1);
+      setRefreshing(false);
+    });
+  }, [lang]);
   useEffect(() => {
     if (!active) return;
     const st = latest.current.stories;
@@ -186,8 +203,11 @@ export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOp
     hadith.current = { queue: [], cursor: null, loading: false };
     lib.current = new LibScheduler(lang, isLibTopic(topicRef.current) ? topicRef.current : "all");
     fetchHadith();
-    setData(page(30));
-  }, [active, ready, lang, topic, fetchHadith, page]);
+    const fresh = topicRef.current === "all" ? freshIds.current.map((item) => ({ item })) : [];
+    freshIds.current = [];
+    const got = page(30).filter((e) => !fresh.some((f) => f.item === e.item));
+    setData([...fresh, ...got.filter((e) => !wasSeen(e.item)), ...got.filter((e) => wasSeen(e.item))]);
+  }, [active, ready, lang, topic, fetchHadith, page, gen]);
   // library topics fill as their pages arrive
   const dataLen = useRef(0);
   dataLen.current = data.length;
@@ -230,7 +250,8 @@ export function ExploreBody({ active, onOpen, top = 0 }: { active: boolean; onOp
           );
         })}
       </ScrollView>
-      <Grid key={topic} data={shown} onOpen={onOpen} onEnd={query ? undefined : () => setData((d) => [...d, ...page(24)])} />
+      <Grid key={topic} data={shown} onOpen={onOpen} onEnd={query ? undefined : () => setData((d) => [...d, ...page(24)])}
+        refresh={query ? undefined : <RefreshControl refreshing={refreshing} onRefresh={refresh} tintColor={t.accent} colors={[t.accent]} />} />
     </View>
   );
 }

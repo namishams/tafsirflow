@@ -11,6 +11,7 @@ import { readJSON, writeJSON } from "@/lib/store";
 import { useDuaPrice, useNamesPrice, useProPrice, withPrice } from "@/lib/purchases";
 import { statPromo } from "./statsStore";
 import { useFeedText } from "./texts";
+import { flagOn, openDeeplink, remoteConfig } from "./remote";
 
 // Our own products in the feed, drawn like a post with a clear "From Quran Masterclass" label (never disguised):
 // the Shams Method, Pro, the personal dua and the name report. Frequency cap: none in the first 10 posts of a session, then at most one
@@ -18,15 +19,31 @@ import { useFeedText } from "./texts";
 // Taps open the existing paywall / purchase screens. Impressions and taps are counted locally (statsStore).
 
 export type PromoId = "shams" | "pro" | "dua" | "name";
+// The remote config (website /api/feed/config) may set the cap (every N posts, per session, per day), switch promos
+// off (flags.promos) and choose / order the items; offline the local defaults below apply.
+const DAY_KEY = "qmc.promo-day";
 export class PromoCap {
   private last = -100;
   private turn = 0;
+  private session = 0;
   /** the promo to place at feed position `index` (or null) */
   at(index: number, pro: boolean): string | null {
-    const gap = pro ? 30 : 15;
+    if (!flagOn("promos")) return null;
+    const rc = remoteConfig()?.promo;
+    const cap = rc?.frequencyCap;
+    const gap = Math.max(5, cap?.everyNItems ?? 15) * (pro ? 2 : 1);
     if (index < 10 || index - this.last < gap) return null;
+    if (cap && this.session >= cap.maxPerSession) return null;
+    const today = new Date().toDateString();
+    const d = readJSON<{ day: string; n: number }>(DAY_KEY, { day: today, n: 0 });
+    const n = d.day === today ? d.n : 0;
+    if (cap && n >= cap.maxPerDay) return null;
+    const local: string[] = pro ? ["shams", "dua", "name"] : ["shams", "pro", "dua", "name"];
+    const ids = rc?.items?.length ? rc.items.map((i) => i.id).filter((id) => !(pro && id === "pro")) : local;
+    if (!ids.length) return null;
     this.last = index;
-    const ids: PromoId[] = pro ? ["shams", "dua", "name"] : ["shams", "pro", "dua", "name"];
+    this.session++;
+    writeJSON(DAY_KEY, { day: today, n: n + 1 }, true);
     return `ad:${ids[this.turn++ % ids.length]}`;
   }
 }
@@ -50,7 +67,12 @@ export const PromoPost = memo(function PromoPost({ item, width }: { item: string
     dua: { title: tx.promoDuaTitle, body: tx.promoDuaBody, cta: withPrice(tx.promoDuaCta, dua), go: () => router.push("/dua-generator" as Href) },
     name: { title: tx.promoNameTitle, body: tx.promoNameBody, cta: withPrice(tx.promoNameCta, names), go: () => router.push("/names" as Href) },
   }[id];
-  if (!text) return <View style={{ height: 1 }} />;
+  if (!text) {
+    // a promo only the server knows: its title and deeplink, same labelled card
+    const r = remoteConfig()?.promo.items.find((x) => x.id === id);
+    if (!r) return <View style={{ height: 1 }} />;
+    return <RemotePromo title={r.title} label={tx.promoLabel} onPress={() => { statPromo(id, "tap"); openDeeplink(r.deeplink); }} width={width} />;
+  }
   const m = META[id];
   const open = () => { statPromo(id, "tap"); text.go(); };
   return (
@@ -77,6 +99,21 @@ export const PromoPost = memo(function PromoPost({ item, width }: { item: string
     </View>
   );
 });
+
+function RemotePromo({ title, label, onPress, width }: { title: string; label: string; onPress: () => void; width: number }) {
+  const tone: [string, string] = ["#0b3d2e", "#1d6b52"];
+  return (
+    <View style={{ width, alignSelf: "center", paddingBottom: 16, paddingHorizontal: 12 }}>
+      <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${title}. ${label}`} style={({ pressed }) => ({ transform: pressed ? [{ scale: 0.97 }] : undefined })}>
+        <LinearGradient colors={tone} style={{ borderRadius: R.card, padding: 24, gap: 10, alignItems: "center" }}>
+          <Icon name="starBig" color={stage.gold} size={36} />
+          <Text style={{ fontFamily: FONT.display, fontSize: 22, color: "#fff", textAlign: "center" }}>{title}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: "rgba(255,255,255,0.75)" }}>{label}</Text>
+        </LinearGradient>
+      </Pressable>
+    </View>
+  );
+}
 
 // ---------- the account nudge (Apple 5.1.1: everything works without an account; the sheet only offers one) ----------
 // TODO(sync): story saves, local likes and feed stats are stored on this device only; verse bookmarks already sync
