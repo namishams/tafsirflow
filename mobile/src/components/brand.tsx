@@ -1,8 +1,11 @@
-import { type ReactNode } from "react";
-import { ActivityIndicator, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
+import { useId, type ReactNode } from "react";
+import { ActivityIndicator, Image, Platform, Pressable, StyleSheet, Text, View, useWindowDimensions, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
 import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
 import { LinearGradient } from "expo-linear-gradient";
-import Svg, { Circle, Defs, G, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, G, LinearGradient as SvgLinearGradient, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
+import { WORDMARK, WORDMARK_FOIL } from "./wordmark-paths";
+import { ARABIC_VARIANT, WORDMARK_FILES, type WordmarkFile } from "./wordmark-files";
+import { useLang } from "@/i18n";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, TONES, goldButton, stage, type, useTheme } from "@/lib/theme";
 import { Icon, type IconName } from "./icons";
 
@@ -54,7 +57,10 @@ export function Eyebrow({ children, onStage, style }: { children: ReactNode; onS
 /** headline in the website's display face (Plus Jakarta Sans ExtraBold, tight tracking) */
 export function Display({ children, size = "display", onStage, style, numberOfLines }: { children: ReactNode; size?: "display" | "largeTitle" | "title1" | "title2"; onStage?: boolean; style?: StyleProp<TextStyle>; numberOfLines?: number }) {
   const t = useTheme();
-  return <Text accessibilityRole="header" numberOfLines={numberOfLines} style={[type[size], { color: onStage ? "#ffffff" : t.ink }, style]}>{children}</Text>;
+  const { lang } = useLang();
+  // Arabic titles in the calligraphy of the Arabic wordmark (Aref Ruqaa); Quran text never goes through Display
+  const callig = lang === "ar" ? { fontFamily: CALLIG_FONT, letterSpacing: 0, lineHeight: Math.round(type[size].fontSize * 1.5) } : null;
+  return <Text accessibilityRole="header" numberOfLines={numberOfLines} style={[type[size], callig, { color: onStage ? "#ffffff" : t.ink }, style]}>{children}</Text>;
 }
 
 /** btn-gold: the main action; full width by default, always the same height */
@@ -298,7 +304,46 @@ export function Segmented<T extends string>({ value, options, onChange }: { valu
   );
 }
 
-/** the logo mark: an open mushaf on a rehal under a star (Logo.tsx, same as the app icon) */
+/** the brand: "Quran Masterclass" written in gold foil, nothing else (website public/brand/wordmark-*.svg).
+ *  tone "gold" = light foil for the emerald stage, "deep" = darker gold for light canvases, "auto" follows the theme.
+ *  variant "inline" = one line (headers), "stacked" = Quran over MASTERCLASS, "stackedAr" = plus the Arabic line. */
+/** the gold wordmark as PNG files (assets/brand, rendered from the website's SVGs); Arabic app → calligraphic Arabic lockup */
+export function Wordmark({ height = 26, variant = "inline", tone = "auto" }: { height?: number; variant?: WordmarkFile; tone?: "gold" | "deep" | "auto" }) {
+  const t = useTheme();
+  const { lang } = useLang();
+  const v = (lang === "ar" && ARABIC_VARIANT[variant]) || variant;
+  const file = WORDMARK_FILES[v];
+  const h = v === "ar" ? Math.round(height * 1.3) : height; // the calligraphy needs a little more height to read as large as the Latin
+  const src = tone === "gold" || (tone === "auto" && t.dark) ? file.gold : file.deep;
+  return (
+    <View accessible accessibilityRole="image" accessibilityLabel={v === "ar" || v === "arStacked" ? "ماستركلاس القرآن" : "Quran Masterclass"}>
+      <Image source={src} style={{ width: (h * file.w) / file.h, height: h }} resizeMode="contain" fadeDuration={0} />
+    </View>
+  );
+}
+
+/** fallback: the v1 wordmark drawn from inline outlines (wordmark-paths.ts) */
+export function WordmarkVector({ height = 26, variant = "inline", tone = "auto" }: { height?: number; variant?: keyof typeof WORDMARK; tone?: "gold" | "deep" | "auto" }) {
+  const t = useTheme();
+  const id = `qmfoil${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
+  const foil = WORDMARK_FOIL[tone === "gold" || (tone === "auto" && t.dark) ? "light" : "deep"];
+  const { box, parts } = WORDMARK[variant];
+  const [x, y, w, h] = box;
+  return (
+    <View accessible accessibilityRole="image" accessibilityLabel="Quran Masterclass">
+      <Svg width={(height * w) / h} height={height} viewBox={`${x} ${y} ${w} ${h}`}>
+        <Defs>
+          <SvgLinearGradient id={id} gradientUnits="userSpaceOnUse" x1={0} y1={y} x2={0} y2={y + h}>
+            {foil.map(([o, c]) => <Stop key={o} offset={o} stopColor={c} />)}
+          </SvgLinearGradient>
+        </Defs>
+        <G fill={`url(#${id})`}>{parts.map((p, i) => <Path key={i} d={p.d} translateX={p.x} translateY={p.y} />)}</G>
+      </Svg>
+    </View>
+  );
+}
+
+/** the old logo mark (kept for reference; the brand is now the gold Wordmark): an open mushaf on a rehal under a star */
 export function LogoMark({ size = 30 }: { size?: number }) {
   const t = useTheme();
   const accent = t.dark ? "rgb(6,108,78)" : t.accent;

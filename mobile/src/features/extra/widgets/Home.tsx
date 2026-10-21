@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Animated, Pressable, Text, View } from "react-native";
 import { router, type Href } from "expo-router";
-import { Display, GoldButton, OutlineButton, Poster, PosterGrid, Stage, gradientColors } from "@/components/brand";
+import { Display, GoldButton, OutlineButton, Poster, PosterGrid, Stage, Wordmark, gradientColors } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
 import { LANGS } from "@/i18n";
@@ -50,7 +50,7 @@ export function HomeHero({ topInset = 0 }: { topInset?: number }) {
     <Stage hairlines={false}>
       <View style={{ paddingHorizontal: 20, paddingTop: topInset + 36, paddingBottom: 40 }}>
         {basmala ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 24, lineHeight: 44, color: stage.gold, writingDirection: "rtl", textAlign: "left" }}>{basmala}</Text> : <View style={{ height: 44 }} />}
-        <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2.4, textTransform: "uppercase", color: stage.gold, marginTop: 14 }}>Quran Masterclass</Text>
+        <View style={{ marginTop: 14, alignSelf: "flex-start" }}><Wordmark tone="gold" height={22} /></View>
         <Display onStage style={{ fontSize: 40, lineHeight: 42, marginTop: 14 }}>{w("heroTitle")}</Display>
         <Lead onStage>{w("heroLead")}</Lead>
         <View style={{ gap: 12, marginTop: 26 }}>
@@ -222,7 +222,7 @@ export function HomeFeatures() {
 export function HomeMapTeaser() {
   const w = useWebT("home2");
   const cells = Array.from({ length: 114 }, (_, i) => (i >= 100 ? 3 : i >= 92 ? (i % 3 ? 3 : 2) : i >= 84 ? (i % 4 === 0 ? 1 : 2) : i < 2 ? 3 : i === 66 || i === 35 ? 2 : 0));
-  const bg = ["rgba(255,255,255,0.08)", "rgba(190,98,76,0.85)", "rgba(214,180,108,0.85)", "rgba(58,190,146,0.85)"];
+  const bg = ["rgba(255,255,255,0.08)", "rgba(233,207,153,0.5)", "rgba(214,180,108,0.85)", "rgba(58,190,146,0.85)"];
   const [w0, setW] = useState(0);
   const cw = w0 ? Math.floor(((w0 - 12 - 18 * 3) / 19) * 100) / 100 : 0; // 19 columns × 6 rows like the website
   return (
@@ -284,7 +284,7 @@ export function HomeTajweed() {
   return (
     <View style={{ paddingHorizontal: 16, paddingVertical: 44, gap: 14 }}>
       <HmCard style={{ padding: 24 }}>
-        {medal("volume", "rgb(14,74,82)")}
+        {medal("volume", "rgb(12,74,58)")}
         <View style={{ marginTop: 18 }}><H2>{w("tajTitle")}</H2></View>
         <Lead>{w("tajBody")}</Lead>
         <View style={{ marginTop: 18 }}><QuranQuote verseKey="73:4" size={24} color={hm.goldD} /></View>

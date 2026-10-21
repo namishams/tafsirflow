@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Pressable, Text, View } from "react-native";
 import { router, type Href } from "expo-router";
 import Svg, { Path, Rect } from "react-native-svg";
-import { GoldButton, OutlineButton, SmallStar, Stage } from "@/components/brand";
+import { GoldButton, OutlineButton, SmallStar, Stage, Wordmark } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { intlLocale, useLang } from "@/i18n";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
@@ -210,7 +210,7 @@ export function VerifiedCertCard({ cert, width }: { cert: MyCertificate; width?:
     <Stage rounded={R.card} style={{ width, borderWidth: 1.5, borderColor: stage.gold }}>
       <View style={{ padding: 22, alignItems: "center", gap: 8 }}>
         <SmallStar size={16} color={stage.gold} />
-        <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2.2, textTransform: "uppercase", color: stage.gold }}>Quran Masterclass</Text>
+        <Wordmark tone="gold" height={18} />
         <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, color: stage.gold }}>{"شهادة"}</Text>
         {cert.holder ? <Text style={{ fontFamily: FONT.display, fontSize: 24, color: "#fff", textAlign: "center" }}>{cert.holder}</Text> : null}
         <Text style={{ fontFamily: FONT.display, fontSize: 19, lineHeight: 25, color: stage.cream, textAlign: "center" }}>{cert.title}</Text>

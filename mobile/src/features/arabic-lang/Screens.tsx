@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, Pressable, ScrollView, Share, Text, TextInput, View } from "react-native";
 import { router, Stack, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Arcade, GoldButton, GoldCard, GoldProgress, OutlineButton, SmallStar, Stage, StarNumber } from "@/components/brand";
+import { Arcade, GoldButton, GoldCard, GoldProgress, OutlineButton, SmallStar, Stage, StarNumber, Wordmark } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { goBack } from "@/components/page";
 import { useLang, useT } from "@/i18n";
@@ -469,7 +469,7 @@ export function LangCertificateScreen() {
             <Stage key={level} rounded={R.card} style={{ borderWidth: 1, borderColor: "rgba(201,166,94,0.6)" }}>
               <View style={{ padding: 24, alignItems: "center", gap: 6 }}>
                 <SmallStar size={14} color={ST.gold} />
-                <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 2, textTransform: "uppercase", color: ST.gold }}>Quran Masterclass</Text>
+                <Wordmark tone="gold" height={18} />
                 <Text style={{ fontFamily: FONT.display, fontSize: 44, color: "#fff" }}>{level}</Text>
                 <Text style={{ fontFamily: FONT.display, fontSize: 20, color: "#fff", textAlign: "center" }}>{lt("certTitle", { level })}</Text>
                 <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 22, color: "rgba(255,255,255,0.78)", textAlign: "center" }}>{`${lt("certYou")} · ${lt("certFor", { level })}`}</Text>

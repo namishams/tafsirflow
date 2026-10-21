@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Pressable, Share, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { Page, PageHero } from "@/components/page";
-import { Arcade, Eyebrow, GoldButton, OutlineButton, SmallStar, Stage, TextLink } from "@/components/brand";
+import { Arcade, Eyebrow, GoldButton, OutlineButton, SmallStar, Stage, TextLink, Wordmark } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { isRTL, pick, useLang } from "@/i18n";
 import { ARABIC_FONT, FONT, useTheme } from "@/lib/theme";
@@ -236,7 +236,7 @@ function Quiz({ quiz, onDone }: { quiz: Q[]; onDone: (score: number) => void }) 
         return (
           <View key={k} style={isWrong ? nudge.style : undefined}>
             <Pressable onPress={() => choose(k)} accessibilityRole="button" accessibilityState={{ disabled: chosen !== null, selected: chosen === k }}
-              style={{ borderRadius: 12, borderWidth: 1.5, padding: 14, borderColor: isRight ? t.gold : isWrong ? "rgb(190,84,104)" : t.line, backgroundColor: t.bg }}>
+              style={{ borderRadius: 12, borderWidth: 1.5, padding: 14, borderColor: isRight ? t.gold : isWrong ? "rgb(160,58,52)" : t.line, backgroundColor: t.bg }}>
               <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.ink, writingDirection: rtl ? "rtl" : "ltr" }}>{pick(o, lang)}</Text>
               <GoldRing on={isRight} />
             </Pressable>
@@ -245,7 +245,7 @@ function Quiz({ quiz, onDone }: { quiz: Q[]; onDone: (score: number) => void }) 
       })}
       {chosen !== null ? (
         <View accessibilityLiveRegion="polite" style={{ gap: 8 }}>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: chosen === q.answer ? t.gold : "rgb(190,84,104)" }}>{c(chosen === q.answer ? "right" : "wrong")}</Text>
+          <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: chosen === q.answer ? t.gold : "rgb(160,58,52)" }}>{c(chosen === q.answer ? "right" : "wrong")}</Text>
           {q.why ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted, writingDirection: rtl ? "rtl" : "ltr" }}>{pick(q.why, lang)}</Text> : null}
           <GoldButton title={c("next")} onPress={next} />
         </View>
@@ -345,7 +345,7 @@ export function CourseCertificateScreen({ def }: { def: CourseDef }) {
             <Stage rounded={14} style={{ borderWidth: 1, borderColor: "rgba(201,166,94,0.6)" }}>
               <View style={{ padding: 24, alignItems: "center", gap: 6 }}>
                 <SmallStar size={14} />
-                <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 2, textTransform: "uppercase", color: "#c9a65e" }}>Quran Masterclass</Text>
+                <Wordmark tone="gold" height={18} />
                 <Text style={{ fontFamily: FONT.display, fontSize: 22, color: "#fff", textAlign: "center" }}>{title}</Text>
                 <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, color: "rgba(255,255,255,0.78)", textAlign: "center" }}>{c("certYou")}</Text>
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: "#f3e7c9" }}>{`${p.cert.pct} % · ${new Date(p.cert.at).toLocaleDateString(lang)}`}</Text>

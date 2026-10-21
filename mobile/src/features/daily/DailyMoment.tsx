@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Modal, Pressable, Text, View } from "react-native";
 import { router, useGlobalSearchParams, type Href } from "expo-router";
 import { ARABIC_FONT, FONT, R, stage } from "@/lib/theme";
-import { Arcade, Display, Eyebrow, GoldButton, OutlineButton, SmallStar, Stage } from "@/components/brand";
+import { Arcade, Display, GoldButton, OutlineButton, SmallStar, Stage, Wordmark } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useLang } from "@/i18n";
 import { readJSON, writeJSON } from "@/lib/store";
@@ -65,7 +65,7 @@ export function DailyMoment() {
             <Pressable onPress={close} accessibilityRole="button" accessibilityLabel={tx.later} hitSlop={10} style={{ position: "absolute", right: 14, top: 14, zIndex: 2, width: 32, height: 32, borderRadius: 16, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.1)" }}>
               <Icon name="close" color="#fff" size={16} />
             </Pressable>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><SmallStar size={11} color={stage.gold} /><Eyebrow onStage>Quran Masterclass</Eyebrow></View>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><SmallStar size={11} color={stage.gold} /><Wordmark tone="gold" height={18} /></View>
             <Display size="title1" onStage style={{ marginTop: 12, paddingEnd: 30 }}>{tx.title}</Display>
             {verse ? (
               <>

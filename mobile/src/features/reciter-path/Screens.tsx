@@ -2,7 +2,7 @@ import { DoneShare } from "@/features/share/SharePrompt";
 import { useMemo, useState, type ReactNode } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
-import { GoldButton, GoldCard, GoldProgress, OutlineButton, SectionTitle, SmallStar } from "@/components/brand";
+import { GoldButton, GoldCard, GoldProgress, OutlineButton, SectionTitle, SmallStar, Wordmark } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { Page, PageHero, ProBadge } from "@/components/page";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
@@ -291,7 +291,7 @@ function CertificateCard({ level, name, date, format }: { level: number; name: s
         <Text style={{ fontFamily: FONT.bold, fontSize: 18, color: "#fff", textAlign: "center" }}>{c.levels[level].title}</Text>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.gold }}>{`${rt("title")} · ${date}`}</Text>
         <Text style={{ fontFamily: FONT.regular, fontSize: 11, lineHeight: 15, color: "rgba(255,255,255,0.65)", textAlign: "center", marginTop: 8 }}>{rt("certNote")}</Text>
-        <Text style={{ fontFamily: FONT.bold, fontSize: 12, color: "rgba(255,255,255,0.9)" }}>Quran Masterclass</Text>
+        <Wordmark tone="gold" height={16} />
         <Text style={{ fontFamily: FONT.regular, fontSize: 10.5, color: "rgba(255,255,255,0.7)" }}>quranmasterclass.com/app</Text>
       </View>
     </View>

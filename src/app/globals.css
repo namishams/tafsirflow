@@ -45,6 +45,8 @@ html[lang="bn"] body { font-family: "Noto Sans Bengali Variable", "Plus Jakarta 
 html[lang="zh"] body { font-family: "Noto Sans SC Variable", "PingFang SC", "Microsoft YaHei", "Inter Variable", sans-serif; }
 .font-display { font-family: "Plus Jakarta Sans Variable", "Inter Variable", system-ui, sans-serif; font-weight: 800 !important; letter-spacing: -0.025em; }
 html[lang="fa"] .font-display, html[lang="ar"] .font-display { font-family: "Vazirmatn Variable", sans-serif; font-weight: 700 !important; letter-spacing: 0; }
+/* Arabic brand titles (page heroes, h1) in the calligraphy of the Arabic wordmark (Aref Ruqaa); Quran text keeps its mushaf font */
+html[lang="ar"] h1.font-display, html[lang="ar"] .brand-title { font-family: "Aref Ruqaa", "Amiri", serif; font-weight: 700 !important; letter-spacing: 0; line-height: 1.45; }
 html[lang="ur"] .font-display, html[lang="ps"] .font-display { font-family: "Noto Sans Arabic Variable", sans-serif; font-weight: 700 !important; letter-spacing: 0; }
 html[lang="bn"] .font-display { font-family: "Noto Sans Bengali Variable", sans-serif; font-weight: 700 !important; letter-spacing: 0; }
 html[lang="zh"] .font-display { font-family: "Noto Sans SC Variable", sans-serif; font-weight: 600 !important; letter-spacing: 0; }
