@@ -36,3 +36,10 @@ export const engaged = (kind: string, strength: "like" | "save" | "share" | "lea
 /** true once after a run of fast skips */
 export function takeBoredom(): boolean { const b = bored; bored = false; return b; }
 export const isBored = () => bored;
+
+/** initial boosts from the onboarding interests: raises these kinds to at least `to` (never lowers a learned score) */
+export function seedInterests(kinds: string[], to = 1.8) {
+  const s = load();
+  for (const k of kinds) if (k) s.s[k] = Math.min(3, Math.max(s.s[k] ?? 1, to));
+  save();
+}

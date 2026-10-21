@@ -1,3 +1,4 @@
+import { PersonaliseCard } from "@/features/plan/Onboard2";
 import { GardenWidget } from "@/features/garden/widgets";
 import { useEffect, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
@@ -69,6 +70,7 @@ export default function Masterclass() {
         <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 28 }}>
           <GardenWidget />
           <TodayPlanCard />
+          <PersonaliseCard />
           <QaidaCard />
           <LangCourseCard />
           <ReciterPathCard />

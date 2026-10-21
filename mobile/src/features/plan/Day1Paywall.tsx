@@ -17,6 +17,9 @@ import { alpha } from "@/features/extra/art";
 import type { IntroOffer, ProPlan } from "@/lib/iap";
 import { STEPS, type Plan } from "./plan";
 import { fmt, usePlanT } from "./texts";
+import { useO2 } from "./texts2";
+import { readName, readV2 } from "./v2";
+import { joinList, useGoalLabel } from "./Onboard2";
 
 // The paywall right after the personal plan (App Review 3.1.1 / 3.1.2): what Pro adds to this plan, the real store
 // price in the buyer's currency, an intro offer only when the store reports one for this buyer, the renewal terms
@@ -35,7 +38,14 @@ function duration(o: IntroOffer, lang: string): string {
 
 export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () => void }) {
   const p = usePlanT();
+  const o = useO2();
+  const goalLabel = useGoalLabel();
   const tr = useT();
+  // personal copy: the name and the chosen goals (onboarding v2), the neutral texts without them
+  const [who] = useState(() => readName());
+  const [goals] = useState(() => readV2()?.goals ?? []);
+  const pwTitle = who ? fmt(o.pwTitleName, { name: who }) : p.pwTitle;
+  const pwLead = goals.length ? fmt(o.pwLeadGoals, { goals: joinList(goals.slice(0, 3).map(goalLabel)) }) : p.pwLead;
   const { lang } = useLang();
   const { user, refresh } = useAuth();
   const insets = useSafeAreaInsets();
@@ -164,8 +174,8 @@ export function Day1Paywall({ plan, onDone }: { plan: Plan | null; onDone: () =>
         <View style={{ alignItems: "center" }}>
           <LogoMark size={46} />
           <Eyebrow onStage style={{ marginTop: 12 }}>{tr("pro.name")}</Eyebrow>
-          <Display onStage size="largeTitle" style={{ marginTop: 8, textAlign: "center" }}>{p.pwTitle}</Display>
-          <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: stage.textSoft, marginTop: 8, textAlign: "center" }}>{p.pwLead}</Text>
+          <Display onStage size="largeTitle" style={{ marginTop: 8, textAlign: "center" }}>{pwTitle}</Display>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: stage.textSoft, marginTop: 8, textAlign: "center" }}>{pwLead}</Text>
         </View>
         {compact ? priceCards : benefitList}
         {compact ? benefitList : priceCards}
