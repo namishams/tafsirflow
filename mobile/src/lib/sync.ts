@@ -9,6 +9,8 @@ import { configureListen, mergeListen, type Listen } from "@/web/listen";
 // the verse player's anonymous listening totals (web/listen.ts) go to the website's server, marked as app requests
 configureListen({ base: SITE, headers: { "x-qmc-app": Platform.OS } });
 import type { Srs } from "@/web/learning";
+import { FEED_SYNC_KEYS, feedSnapshot, mergeFeed, reloadFeedCaches } from "@/features/feed/feedSync";
+import { sendOfferStats } from "@/features/feed/statsStore";
 
 // Progress sync with the account, the same merge rules as the website (src/lib/sync.ts): what you learn in the app
 // shows up on quranmasterclass.com and the other way round.
@@ -19,7 +21,7 @@ type Notes = Record<string, { text: string; at: number }>;
 const bestScores = (a: unknown, b: unknown) => {
   const out: Record<string, number> = { ...((b as Record<string, number>) ?? {}) };
   for (const [k, v] of Object.entries((a as Record<string, number>) ?? {})) out[k] = Math.max(out[k] ?? 0, v);
-  return out;
+  return { ...out, ...feedSnapshot(readJSON) };
 };
 type ArabicP = { done?: Record<string, { best: number; stars: number; at?: number }>; xp?: number; mistakes?: Record<string, number> };
 function mergeArabic(a: ArabicP | undefined, b: ArabicP | undefined) {
@@ -45,7 +47,7 @@ function merge(local: Record<string, unknown>, remote: Record<string, unknown>) 
   return { "tf:bookmarks": bm, "tf:srs": srs, "tf:days": days, "tf:notes": notes, "tf:academy": newer("tf:academy") ?? undefined, "tf:khatm": newer("tf:khatm") ?? undefined, "tf:plan": newer("tf:plan") ?? undefined, "tf:goal": newer("tf:goal") ?? undefined, "tf:wudu": newer("tf:wudu") ?? undefined, "tf:jv": { ...((remote["tf:jv"] as object) ?? {}), ...((local["tf:jv"] as object) ?? {}) }, "tf:points": mergePoints(local["tf:points"] as Points | undefined, remote["tf:points"] as Points | undefined), "tf:listen": mergeListen(local["tf:listen"] as Listen | undefined, remote["tf:listen"] as Listen | undefined), "tf:mnemo": { ...((remote["tf:mnemo"] as object) ?? {}), ...((local["tf:mnemo"] as object) ?? {}) }, "tf:vocab": { ...((remote["tf:vocab"] as object) ?? {}), ...((local["tf:vocab"] as object) ?? {}) }, "tf:tajweed": bestScores(local["tf:tajweed"], remote["tf:tajweed"]), "tf:arabic": mergeArabic(local["tf:arabic"] as ArabicP | undefined, remote["tf:arabic"] as ArabicP | undefined), "tf:duafav": Array.from(new Set([...((local["tf:duafav"] as string[]) ?? []), ...((remote["tf:duafav"] as string[]) ?? [])])), ...(last ? { "tf:last": last } : {}) } as Record<string, unknown>;
 }
 
-export const SYNC_KEYS = ["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen", "tf:jv"] as const;
+export const SYNC_KEYS = ["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes", "tf:academy", "tf:khatm", "tf:plan", "tf:mnemo", "tf:vocab", "tf:tajweed", "tf:duafav", "tf:arabic", "tf:goal", "tf:wudu", "tf:points", "tf:listen", "tf:jv", ...FEED_SYNC_KEYS] as const;
 const snapshot = (): Record<string, unknown> => {
   const out: Record<string, unknown> = {};
   for (const k of SYNC_KEYS) { const v = readJSON<unknown>(k, undefined); if (v !== undefined && v !== null) out[k] = v; }
@@ -60,8 +62,10 @@ const push = () => api("/api/sync", { method: "PUT", body: snapshot() }).catch((
 export async function startSync(): Promise<boolean> {
   try {
     const remote = await api<Record<string, unknown>>("/api/sync");
-    const merged = merge(snapshot(), remote);
+    const local = snapshot();
+    const merged = { ...merge(local, remote), ...mergeFeed(local, remote) };
     for (const k of SYNC_KEYS) if (merged[k] !== undefined) writeJSON(k, merged[k], true);
+    reloadFeedCaches();
     await push();
     setWriteHook(() => { if (timer) clearTimeout(timer); timer = setTimeout(push, 1500); });
     return true;
@@ -74,6 +78,12 @@ export async function startSync(): Promise<boolean> {
 /** starts syncing when someone is signed in, again when the app returns to the foreground */
 export function SyncBridge() {
   const { user } = useAuth();
+  // anonymous offer counters go out once per day whether or not someone is signed in (no user id in the request)
+  useEffect(() => { void sendOfferStats(async (body) => {
+    // plain fetch without the session token, so the counters cannot be tied to an account
+    const r = await fetch(`${SITE}/api/feed/events`, { method: "POST", headers: { "Content-Type": "application/json", "x-qmc-app": Platform.OS }, body: JSON.stringify(body) });
+    if (!r.ok) throw new Error(String(r.status));
+  }); }, []);
   useEffect(() => {
     if (!user) { setWriteHook(null); return; }
     void startSync();

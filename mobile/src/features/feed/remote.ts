@@ -40,7 +40,8 @@ export type FeedMonetize = {
   offers?: Partial<Record<string, boolean>>;
   context?: { everyNItems?: number; maxPerSession?: number };
   premium?: { everyNItems?: number; maxPerSession?: number; freePerDay?: number; kinds?: string[] };
-  paywall?: { maxPerSession?: number; trialDays?: number };
+  paywall?: { maxPerSession?: number; trialDays?: number; day1?: { enabled?: boolean; variant?: "plan" | "compact"; defaultPlan?: "yearly" | "monthly"; showCompare?: boolean } };
+  limits?: { cardsPerDay?: number; testsPerDay?: number };
   moments?: { streakDays?: number; words?: number; saves?: number };
 };
 export type FeedItemKind = "editorial" | "announcement" | "verse-of-day" | "hadith-of-day" | "islamic-date" | "featured-surah";

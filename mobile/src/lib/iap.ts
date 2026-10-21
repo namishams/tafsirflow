@@ -1,11 +1,11 @@
 import { Platform } from "react-native";
 import {
-  deepLinkToSubscriptions, fetchProducts, finishTransaction, getAvailablePurchases, initConnection, isUserCancelledError,
+  deepLinkToSubscriptions, fetchProducts, isEligibleForIntroOfferIOS, finishTransaction, getAvailablePurchases, initConnection, isUserCancelledError,
   purchaseErrorListener, purchaseUpdatedListener, requestPurchase, restorePurchases, type Purchase,
 } from "expo-iap";
 import { api } from "./api";
 import { PRO_PRODUCT } from "./pro";
-import { DUA_PACK_PRODUCT, DUA_PRODUCT, DUA_PRODUCTS, NAMES_PRODUCT } from "./purchases";
+import { DUA_PACK_PRODUCT, DUA_PRODUCT, DUA_PRODUCTS, NAMES_PRODUCT, PRO_YEARLY_SKU } from "./purchases";
 import { writeJSON } from "./store";
 import { getToken } from "./storage";
 
@@ -18,6 +18,53 @@ let connection: Promise<boolean> | null = null;
 function connect(): Promise<boolean> {
   connection ??= initConnection().then(() => true).catch(() => { connection = null; return false; });
   return connection;
+}
+
+/** every Pro subscription product (monthly, and yearly once PRO_YEARLY_SKU is set) */
+export const PRO_SKUS: string[] = PRO_YEARLY_SKU ? [PRO_PRODUCT, PRO_YEARLY_SKU] : [PRO_PRODUCT];
+const isPro = (sku: string) => PRO_SKUS.includes(sku);
+
+/** an introductory offer exactly as the store reports it (only shown when the store has one for this buyer) */
+export type IntroOffer = { mode: "free-trial" | "pay-as-you-go" | "pay-up-front"; price: string; unit: "day" | "week" | "month" | "year"; count: number };
+export type ProPlan = { sku: string; period: "month" | "year"; price: string; amount: number | null; intro: IntroOffer | null };
+
+type SubProduct = {
+  id: string; displayPrice: string; price?: number | null; subscriptionGroupIdIOS?: string | null;
+  subscriptionOffers?: { type: string; paymentMode?: string | null; displayPrice: string; period?: { unit: string; value: number } | null; periodCount?: number | null;
+    pricingPhasesAndroid?: { pricingPhaseList?: { formattedPrice: string; priceAmountMicros: string; billingPeriod: string; billingCycleCount: number }[] } | null }[] | null;
+};
+const UNITS = ["day", "week", "month", "year"] as const;
+function introOf(p: SubProduct): IntroOffer | null {
+  const o = (p.subscriptionOffers ?? []).find((x) => x.type === "introductory");
+  if (!o) return null;
+  const mode = o.paymentMode === "free-trial" || o.paymentMode === "pay-as-you-go" || o.paymentMode === "pay-up-front" ? o.paymentMode : null;
+  const unit = UNITS.find((u) => u === o.period?.unit);
+  if (!mode || !unit) return null;
+  const count = Math.max(1, (o.period?.value ?? 1) * (mode === "pay-as-you-go" ? o.periodCount ?? 1 : 1));
+  return { mode, price: o.displayPrice, unit, count };
+}
+
+/** the Pro plans the store sells to this buyer, in the buyer's currency; an intro offer only when the store has one
+ *  and (iOS) the account is still eligible for it. Empty when the store is not reachable: then no price is shown. */
+export async function loadProPlans(): Promise<ProPlan[]> {
+  if (!(await connect())) return [];
+  try {
+    const subs = ((await fetchProducts({ skus: PRO_SKUS, type: "subs" })) ?? []) as unknown as SubProduct[];
+    const out: ProPlan[] = [];
+    for (const sku of PRO_SKUS) {
+      const p = subs.find((x) => x.id === sku);
+      if (!p) continue;
+      let intro = introOf(p);
+      if (intro && Platform.OS === "ios" && p.subscriptionGroupIdIOS) {
+        const ok = await isEligibleForIntroOfferIOS(p.subscriptionGroupIdIOS).catch(() => false);
+        if (!ok) intro = null;
+      }
+      out.push({ sku, period: sku === PRO_YEARLY_SKU ? "year" : "month", price: p.displayPrice, amount: typeof p.price === "number" ? p.price : null, intro });
+    }
+    return out;
+  } catch {
+    return [];
+  }
 }
 
 export type StorePrices = { pro: string | null; dua: string | null; duaPack: string | null; names: string | null };
@@ -54,7 +101,7 @@ async function verify(p: Purchase): Promise<Verified> {
 
 /** consumables: personal duas and personal name reports */
 const isConsumable = (sku: string) => sku in DUA_PRODUCTS || sku === NAMES_PRODUCT;
-const isOurs = (sku: string) => isConsumable(sku) || sku === PRO_PRODUCT;
+const isOurs = (sku: string) => isConsumable(sku) || isPro(sku);
 /** verify one store transaction with the server and finish it only then (finishing acknowledges it on Android, so
  *  Google does not refund it after three days; a dua credit is booked once per transaction by the server) */
 async function settle(p: Purchase): Promise<boolean> {
@@ -89,7 +136,8 @@ async function buy(sku: string, type: "subs" | "in-app"): Promise<BuyResult> {
   });
 }
 
-export const purchasePro = () => buy(PRO_PRODUCT, "subs");
+/** buy Pro: the monthly plan, or another Pro plan of PRO_SKUS (yearly) */
+export const purchasePro = (sku: string = PRO_PRODUCT) => buy(isPro(sku) ? sku : PRO_PRODUCT, "subs");
 export async function purchaseConsumable(sku: string): Promise<boolean> {
   return (await buy(sku, "in-app")) === "ok";
 }
@@ -102,7 +150,7 @@ export async function restore(): Promise<"restored" | "none" | "failed"> {
     const list = (await getAvailablePurchases()) ?? [];
     let any = false;
     for (const p of list) {
-      if (p.productId !== PRO_PRODUCT) continue;
+      if (!isPro(p.productId)) continue;
       const v = await verify(p);
       if (v.ok && v.pro) any = true;
     }
@@ -124,7 +172,7 @@ export function settlePending(): Promise<void> {
       const list = ((await getAvailablePurchases()) ?? []).filter((p) => isOurs(p.productId) && !buying.has(p.productId));
       for (const p of list) if (isConsumable(p.productId)) await settle(p);
       // Pro: the newest transaction carries the latest expiry; older renewals only need finishing once it is confirmed
-      const pro = list.filter((p) => p.productId === PRO_PRODUCT).sort((a, b) => (b.transactionDate ?? 0) - (a.transactionDate ?? 0));
+      const pro = list.filter((p) => isPro(p.productId)).sort((a, b) => (b.transactionDate ?? 0) - (a.transactionDate ?? 0));
       if (pro[0] && (await settle(pro[0]))) for (const p of pro.slice(1)) await finishTransaction({ purchase: p, isConsumable: false }).catch(() => undefined);
     } catch { /* try again next time */ }
   })().finally(() => { settling = null; });

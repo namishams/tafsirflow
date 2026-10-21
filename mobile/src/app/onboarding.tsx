@@ -1,12 +1,13 @@
 import { Stack } from "expo-router";
-import { Onboarding } from "@/features/extra/Onboarding";
+import { Funnel } from "@/features/plan/Funnel";
 
-// First start: who is learning, can you read Arabic, your goal, your time – then the personal path (website Onboarding)
+// First start: eight short questions, "building your plan", the personal 30-day plan and the day-1 paywall
+// (features/plan). Also opened from "Adjust plan" on the Masterclass tab.
 export default function OnboardingScreen() {
   return (
     <>
       <Stack.Screen options={{ headerShown: false, gestureEnabled: true }} />
-      <Onboarding force fullScreen />
+      <Funnel />
     </>
   );
 }

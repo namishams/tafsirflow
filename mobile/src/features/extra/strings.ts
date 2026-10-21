@@ -1,7 +1,7 @@
 import { useLang } from "@/i18n";
 import { moduleText } from "@/i18n/app";
 
-// App-only texts of the extra screens (search, assistant, feedback, legal, onboarding, kids mode, social, widgets).
+// App-only texts of the extra screens (search, assistant, feedback, legal, social, widgets).
 // Texts the website already has are read with useWebT(); the assistant and the 404 page keep their texts in the
 // website's component files (AssistantChat.tsx, not-found.tsx), so they are copied here word for word.
 const de = {
@@ -53,25 +53,6 @@ const de = {
     imprintOpen: "Impressum auf der Website",
   },
   notFound: { code: "404", title: "Diese Seite gibt es nicht", body: "Der Link ist vielleicht veraltet oder falsch geschrieben. Hier geht es weiter:", home: "Zur Startseite", quran: "Zum Koran" },
-  onboard: {
-    qAge: "Wer lernt hier?",
-    qAgeD: "Kinder und Ältere bekommen ruhigere Rezitation, mehr Wiederholungen und mehr Zeit bei den Tests.",
-    a_child: "Ein Kind",
-    a_childD: "6 bis 12 Jahre",
-    a_teen: "Jugendliche",
-    a_teenD: "13 bis 17 Jahre",
-    a_adult: "Erwachsene",
-    a_adultD: "18 bis 59 Jahre",
-    a_senior: "Ab 60",
-    a_seniorD: "In ruhigerem Tempo",
-    kidsHint: "Für Kinder gibt es den Kinder-Modus: große Schrift, helle Farben, Wort-für-Wort-Hilfe und weniger Bedienelemente.",
-    sessionCta: "Zur heutigen Sitzung",
-  },
-  kids: {
-    title: "Kinder-Modus",
-    on: "Große Schrift, helle Farben, Wort-für-Wort-Hilfe und weniger Bedienelemente.",
-    off: "Die ruhige Standard-Ansicht.",
-  },
   social: {
     signIn: "Melde dich an, um Verse mit einem Herz zu markieren und zu kommentieren.",
     likes: "{n} Herzen",
@@ -142,25 +123,6 @@ const en: typeof de = {
     imprintOpen: "Imprint on the website",
   },
   notFound: { code: "404", title: "This page does not exist", body: "The link may be outdated or mistyped. Here is where to go next:", home: "Back to the home page", quran: "Open the Quran" },
-  onboard: {
-    qAge: "Who is learning?",
-    qAgeD: "Children and older learners get calmer recitation, more repetitions and more time in the tests.",
-    a_child: "A child",
-    a_childD: "6 to 12 years",
-    a_teen: "A teenager",
-    a_teenD: "13 to 17 years",
-    a_adult: "An adult",
-    a_adultD: "18 to 59 years",
-    a_senior: "60 and older",
-    a_seniorD: "At a calmer pace",
-    kidsHint: "For children there is kids mode: large text, bright colours, word-by-word help and fewer controls.",
-    sessionCta: "Go to today's session",
-  },
-  kids: {
-    title: "Kids mode",
-    on: "Large text, bright colours, word-by-word help and fewer controls.",
-    off: "The calm standard view.",
-  },
   social: {
     signIn: "Sign in to mark verses with a heart and to comment.",
     likes: "{n} hearts",

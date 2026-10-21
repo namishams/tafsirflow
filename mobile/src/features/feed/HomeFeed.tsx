@@ -84,7 +84,7 @@ function useLocalFlag(storageKey: string, id: string) {
   const on = list.includes(id);
   const toggle = useCallback(() => {
     const cur = readJSON<string[]>(storageKey, []);
-    writeJSON(storageKey, cur.includes(id) ? cur.filter((k) => k !== id) : [...cur, id], true);
+    writeJSON(storageKey, cur.includes(id) ? cur.filter((k) => k !== id) : [...cur, id]);
   }, [storageKey, id]);
   return [on, toggle] as const;
 }

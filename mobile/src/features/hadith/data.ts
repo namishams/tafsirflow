@@ -273,6 +273,6 @@ export const isSaved = (id: string) => readSaved().some((x) => x.id === id);
 export function toggleSaved(h: HadithItem): boolean {
   const all = readSaved();
   const on = !all.some((x) => x.id === h.id);
-  writeJSON(SAVED_KEY, on ? [h, ...all].slice(0, 500) : all.filter((x) => x.id !== h.id), true);
+  writeJSON(SAVED_KEY, on ? [h, ...all].slice(0, 500) : all.filter((x) => x.id !== h.id));
   return on;
 }

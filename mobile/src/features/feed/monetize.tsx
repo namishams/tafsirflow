@@ -66,14 +66,16 @@ export function offerTap(id: string) {
   statOffer(id, v, "tap");
   writeJSON(LAST_KEY, { id, v, at: Date.now() }, true);
 }
+/** a purchase (Pro, a personal dua or a name report) within 30 minutes of an offer tap is credited to that offer */
+export function creditOfferPurchase() {
+  const l = readJSON<{ id: string; v: string; at: number } | null>(LAST_KEY, null);
+  if (l && Date.now() - l.at < 30 * 60000) { statOffer(l.id, l.v, "buy"); writeJSON(LAST_KEY, null, true); }
+}
 /** call with the Pro state: when it turns on shortly after an offer tap, that offer gets the purchase */
 export function usePurchaseAttribution(pro: boolean) {
   const was = useRef(pro);
   useEffect(() => {
-    if (pro && !was.current) {
-      const l = readJSON<{ id: string; v: string; at: number } | null>(LAST_KEY, null);
-      if (l && Date.now() - l.at < 30 * 60000) { statOffer(l.id, l.v, "buy"); writeJSON(LAST_KEY, null, true); }
-    }
+    if (pro && !was.current) creditOfferPurchase();
     was.current = pro;
   }, [pro]);
 }

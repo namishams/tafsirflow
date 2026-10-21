@@ -2,7 +2,7 @@ import { Pressable, Switch, Text, View } from "react-native";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { useWebT } from "@/i18n/web";
 import { useReaderT, type ReaderKey } from "./texts";
-import { KIDS_TOOLS, LEVELS, TOOLS, type Level, type Memo, type Tool } from "./memo";
+import { LEVELS, TOOLS, type Level, type Memo, type Tool } from "./memo";
 
 // The memorising controls shared by the active verse card and the whole-surah bar, so both always show the same mode:
 // a segmented control for the mode, the practise levels as a numbered progression, short explanations of each.
@@ -43,15 +43,15 @@ const TOOL_D: Record<Tool, ReaderKey> = { read: "modeReadD", practice: "modePrac
 const LEVEL_D: Record<Level, ReaderKey> = { 1: "lvl1D", 2: "lvl2D", 3: "lvl3D", 4: "lvl4D", 5: "lvl5D" };
 
 /** mode, level, explanations (and in the whole-surah bar: "cover every verse") */
-export function MemoControls({ memo, kids, onTool, onLevel, onShuffle, onAll, compact }: {
-  memo: Memo; kids: boolean; onTool: (t: Tool) => void; onLevel: (l: Level) => void; onShuffle?: () => void; onAll?: (on: boolean) => void; compact?: boolean;
+export function MemoControls({ memo, onTool, onLevel, onShuffle, onAll, compact }: {
+  memo: Memo; onTool: (t: Tool) => void; onLevel: (l: Level) => void; onShuffle?: () => void; onAll?: (on: boolean) => void; compact?: boolean;
 }) {
   const t = useTheme();
   const w = useWebT("player");
   const r = useReaderT();
   const toolLabel = useToolLabels();
   const levelLabel = useLevelLabels();
-  const tools = kids ? KIDS_TOOLS : TOOLS;
+  const tools = TOOLS;
   const tool = tools.includes(memo.tool) ? memo.tool : "read";
   const small = { fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted } as const;
   return (

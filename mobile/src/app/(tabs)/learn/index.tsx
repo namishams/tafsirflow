@@ -14,6 +14,9 @@ import { learner, surahProgress, type SurahProgress } from "@/web/coach";
 import { shamsContent } from "@/web/shamsContent";
 import { tile, routeOf } from "@/lib/features";
 import { ProPromo } from "@/features/learn/ProPromo";
+import { TodayPlanCard } from "@/features/plan/TodayPlanCard";
+import { SrsEntryCard } from "@/features/srs";
+import { ReciterPathCard } from "@/features/reciter-path/Screens";
 import { useLearnT } from "@/features/learn/texts";
 import { useFeedText } from "@/features/feed/texts";
 import { I18nManager } from "react-native";
@@ -64,6 +67,8 @@ export default function Masterclass() {
         </PageHero>
 
         <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 28 }}>
+          <TodayPlanCard />
+          <ReciterPathCard />
           {next && nextChapter ? (
             <GoldCard>
               <SurahBanner arabic={nextChapter.name_arabic} onStage={false} />
@@ -71,6 +76,8 @@ export default function Masterclass() {
               <GoldButton title={lt("continue")} onPress={() => open(next.surah, next.verse)} style={{ marginTop: 14 }} />
             </GoldCard>
           ) : null}
+
+          <SrsEntryCard />
 
           <View>
             <SectionTitle title={lt("pathTitle")} />

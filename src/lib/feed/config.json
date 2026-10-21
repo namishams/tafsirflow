@@ -67,6 +67,26 @@
         "deeplink": "quranmasterclass://shams"
       },
       {
+        "id": "reciter-path",
+        "title": {
+          "de": "Der Rezitationspfad",
+          "en": "The Reciter Path",
+          "ar": "مسار القارئ",
+          "tr": "Kâri Yolu",
+          "ur": "قاری کا راستہ",
+          "fa": "مسیر قاری",
+          "ps": "د قاري لار",
+          "fr": "Le parcours du récitateur",
+          "es": "El camino del recitador",
+          "id": "Jalur Qari",
+          "ms": "Laluan Qari",
+          "bn": "ক্বারী পথ",
+          "ru": "Путь чтеца",
+          "zh": "诵读者之路"
+        },
+        "deeplink": "quranmasterclass://reciter-path"
+      },
+      {
         "id": "pro",
         "title": {
           "de": "Pro freischalten",
@@ -125,6 +145,26 @@
           "zh": "您名字的含义"
         },
         "deeplink": "quranmasterclass://names"
+      },
+      {
+        "id": "cards",
+        "title": {
+          "de": "Karten wiederholen",
+          "en": "Review cards",
+          "ar": "مراجعة البطاقات",
+          "tr": "Kartları tekrar edin",
+          "ur": "کارڈز دہرائیں",
+          "fa": "مرور کارت‌ها",
+          "ps": "کارتونه تکرار کړئ",
+          "fr": "Réviser les cartes",
+          "es": "Repasar tarjetas",
+          "id": "Ulangi kartu",
+          "ms": "Ulang kaji kad",
+          "bn": "কার্ড পুনরালোচনা",
+          "ru": "Повторение карточек",
+          "zh": "复习卡片"
+        },
+        "deeplink": "quranmasterclass://cards"
       }
     ]
   },

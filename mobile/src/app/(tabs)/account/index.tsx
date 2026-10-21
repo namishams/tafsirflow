@@ -12,7 +12,6 @@ import { ApiError } from "@/lib/api";
 import { removeKey, storedKeys } from "@/lib/store";
 import { useWebT } from "@/i18n/web";
 import { request } from "@/features/extra/http";
-import { KidsToggle } from "@/features/extra/KidsToggle";
 import { TraditionSetting } from "@/features/hadith/cards";
 import { useHadithText } from "@/features/hadith/texts";
 import { useSettings } from "@/lib/settings";
@@ -22,7 +21,7 @@ import { ProPromo } from "@/features/learn/ProPromo";
 import type { AppearanceSetting } from "@/lib/theme";
 import { FeedLinks, FeedStatsRow } from "@/features/feed/FeedStats";
 
-// Account: Pro, sign-in, confirm the e-mail, appearance, language, kids mode, learning progress, legal, report a
+// Account: Pro, sign-in, confirm the e-mail, appearance, language, learning progress, legal, report a
 // problem, delete the account
 export default function AccountScreen() {
   const t = useT();
@@ -108,9 +107,6 @@ export default function AccountScreen() {
           </Section>
           <Section title={hx.tradTitle}>
             <TraditionSetting />
-          </Section>
-          <Section title={wn("kids")}>
-            <RowGroup><KidsToggle variant="row" /></RowGroup>
           </Section>
 
           <Section title={t("account.dailyTitle")}>

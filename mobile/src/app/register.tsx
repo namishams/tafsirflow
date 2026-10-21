@@ -14,7 +14,7 @@ import { countryList, countryName } from "@/lib/countries";
 import { useWebT } from "@/i18n/web";
 
 // learning goals of the website's registration form (src/lib/countries.ts GOALS), texts account.goal<Name>
-const GOALS = [["hifz", "goalHifz"], ["fahm", "goalFahm"], ["tilawa", "goalTilawa"], ["kids", "goalKids"], ["all", "goalAll"]] as const;
+const GOALS = [["hifz", "goalHifz"], ["fahm", "goalFahm"], ["tilawa", "goalTilawa"], ["all", "goalAll"]] as const;
 
 // Create the account (the same account as on the website). Nothing is preselected: country and consent are chosen
 // by the learner; the year of birth lets the Shams Method adapt to children and seniors. City and goal are optional,

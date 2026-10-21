@@ -42,7 +42,7 @@ export function useVerseLike(key: string, active: boolean) {
     if (!liked) statLike();
     if (!server) {
       const cur = readJSON<string[]>(LOCAL, []);
-      writeJSON(LOCAL, cur.includes(key) ? cur.filter((k) => k !== key) : [...cur, key], true);
+      writeJSON(LOCAL, cur.includes(key) ? cur.filter((k) => k !== key) : [...cur, key]);
       return;
     }
     const was = !!s?.liked;

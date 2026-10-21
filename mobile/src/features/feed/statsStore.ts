@@ -3,7 +3,7 @@ import { AppState } from "react-native";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { gEvent, isFrozen } from "./gamify";
 
-// Local statistics of the feed (this device only, never uploaded): time in the feed (counted only while a feed
+// Statistics of the feed (kept on this device; synced with the account when signed in, see feedSync.ts): time in the feed (counted only while a feed
 // screen is focused and the app is active), posts seen, verses heard, words learned, what was read per kind, likes,
 // saves, shares, the longest session and the daily streak. Days are kept for 120 days, totals forever (bounded maps).
 export const STATS2_KEY = "qmc.feed-stats2";
@@ -18,6 +18,8 @@ const empty = (): Stats => ({ days: {}, total: emptyDay(), longestMs: 0, firstDa
 let cache: Stats | null = null;
 let timer: ReturnType<typeof setTimeout> | null = null;
 function load(): Stats { cache ??= { ...empty(), ...readJSON<Stats>(STATS2_KEY, empty()) }; return cache; }
+/** forget the in-memory record (after the account sync wrote a merged one) */
+export const reloadStats = () => { cache = null; };
 function save() {
   timer ??= setTimeout(() => {
     timer = null;
@@ -103,11 +105,37 @@ export function longestStreak(s: Stats): number {
 /** in-feed promotion of our own products: impressions and taps, counted locally */
 export const statPromo = (id: string, what: "imp" | "tap") => bump((d) => { const k = `promo:${id}:${what}`; d.kinds[k] = (d.kinds[k] ?? 0) + 1; });
 
-/** the funnel of the feed offers per offer and A/B variant: impressions, taps and purchases (this device only).
- * TODO(analytics): the website has no event endpoint yet; once it has one, send these counters as anonymous daily
- * aggregates (offer, variant, counts – no ids, no content) instead of keeping them only here. */
+/** the funnel of the feed offers per offer and A/B variant: impressions, taps and purchases. Finished days are sent
+ * once per day as anonymous aggregates (offer, variant, counts; no ids, no content) to /api/feed/events. */
 export type OfferStep = "imp" | "tap" | "buy";
 export const statOffer = (offer: string, variant: string, what: OfferStep) => bump((d) => { const k = `offer:${offer}:${variant}:${what}`; d.kinds[k] = (d.kinds[k] ?? 0) + 1; });
 /** totals over all days, for the thresholds of the celebration cards */
 export const totals = (): DayStats => load().total;
 export const currentStreak = (): number => streakOf(load());
+
+// ---------- anonymous daily offer counters to the website (once per day, finished days only) ----------
+const SENT_KEY = "qmc.offer-sent-day";
+export async function sendOfferStats(post: (body: unknown) => Promise<unknown>) {
+  const today = dayNum();
+  const sent = readJSON<number>(SENT_KEY, 0);
+  if (sent >= today - 1) return;
+  const s = load();
+  const events: { variant: string; offer: string; imp: number; tap: number; buy: number; date: string }[] = [];
+  for (const [d, st] of Object.entries(s.days)) {
+    const n = Number(d);
+    if (n >= today || n <= sent || n < today - 7) continue;
+    const by: Record<string, { imp: number; tap: number; buy: number }> = {};
+    for (const [k, v] of Object.entries(st.kinds)) {
+      const m = /^offer:([^:]+):([^:]+):(imp|tap|buy)$/.exec(k);
+      if (!m) continue;
+      const e = (by[`${m[1]}\u0000${m[2]}`] ??= { imp: 0, tap: 0, buy: 0 });
+      e[m[3] as OfferStep] += v;
+    }
+    const date = new Date(n * 86400000).toISOString().slice(0, 10);
+    for (const [key, c] of Object.entries(by)) { const [offer, variant] = key.split("\u0000"); events.push({ variant, offer, ...c, date }); }
+  }
+  try {
+    if (events.length) await post({ events: events.slice(0, 200) });
+    writeJSON(SENT_KEY, today - 1, true);
+  } catch { /* try again next time */ }
+}

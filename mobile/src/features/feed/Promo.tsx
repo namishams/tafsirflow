@@ -116,8 +116,6 @@ function RemotePromo({ title, label, onPress, width }: { title: string; label: s
 }
 
 // ---------- the account nudge (Apple 5.1.1: everything works without an account; the sheet only offers one) ----------
-// TODO(sync): story saves, local likes and feed stats are stored on this device only; verse bookmarks already sync
-// (lib/sync.ts SYNC_KEYS). Add them to the account sync once the server merges these keys.
 const NUDGE_KEY = "qmc.account-nudge-at";
 const subs = new Set<() => void>();
 /** ask to create an account (shown at most every 3 days, never when signed in) */

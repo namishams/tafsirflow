@@ -108,7 +108,6 @@ function VocabTrainer() {
   const { pro } = usePro();
   const { width } = useWindowDimensions();
   const rtl = localeMeta(lang).dir === "rtl";
-  const kids = useStored<unknown>("tf:kids", "0") === "1";
   const auto = useStored<boolean>(AUTO_KEY, false);
   const decks = useMemo(() => vocabFor(lang), [lang]);
   const allWords = useMemo(() => decks.flatMap((d) => d.words), [decks]);
@@ -181,7 +180,7 @@ function VocabTrainer() {
     <View style={{ marginTop: 16, flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: 8 }}>
       <BigButton title={w("cards")} height={40} radius={R.pill} onPress={() => onStart("cards")} />
       <BigButton variant="outline" title={w("quiz")} height={40} radius={R.pill} onPress={() => onStart("quiz")} />
-      {!kids ? <BigButton variant="outline" title={w("reverse")} height={40} radius={R.pill} onPress={() => onStart("reverse")} /> : null}
+      <BigButton variant="outline" title={w("reverse")} height={40} radius={R.pill} onPress={() => onStart("reverse")} />
       {canListen(words) ? <BigButton variant="outline" icon="speaker" title={w("listen")} height={40} radius={R.pill} onPress={() => onStart("listen")} /> : null}
     </View>
   );
@@ -200,7 +199,7 @@ function VocabTrainer() {
   if (session) {
     const pct = score.n ? score.ok / score.n : 0;
     const ask = mode === "quiz" ? w("askMeaning") : mode === "reverse" ? w("askArabic") : mode === "listen" ? w("askHeard") : null;
-    const arOpt = kids ? 34 : 26;
+    const arOpt = 26;
     return (
       <View style={{ marginTop: 16 }}>
         <Pressable onPress={leave} accessibilityRole="button" hitSlop={8} style={{ minHeight: 40, flexDirection: "row", alignItems: "center", gap: 6, alignSelf: "flex-start" }}>
@@ -255,14 +254,14 @@ function VocabTrainer() {
                       <Icon name="speaker" size={40} color="#f6e7bf" />
                     </Pressable>
                   ) : (
-                    <Text allowFontScaling={false} style={{ fontFamily: ARABIC_FONT, fontSize: kids ? 72 : 54, lineHeight: kids ? 124 : 94, color: "#f6e7bf", textAlign: "center", writingDirection: "rtl", textShadowColor: "rgba(233,207,153,0.3)", textShadowRadius: 22 }}>{cur.ar}</Text>
+                    <Text allowFontScaling={false} style={{ fontFamily: ARABIC_FONT, fontSize: 54, lineHeight: 94, color: "#f6e7bf", textAlign: "center", writingDirection: "rtl", textShadowColor: "rgba(233,207,153,0.3)", textShadowRadius: 22 }}>{cur.ar}</Text>
                   )}
                   {mode !== "cards" && pick !== null ? (
                     mode === "quiz"
                       ? <Text style={{ marginTop: 4, fontFamily: FONT.italic, fontSize: 15, color: "rgb(233,207,153)" }}>{cur.tr}</Text>
                       : (
                         <View style={{ marginTop: 6, alignItems: "center" }}>
-                          {mode === "listen" ? <Text allowFontScaling={false} style={{ fontFamily: ARABIC_FONT, fontSize: kids ? 54 : 40, lineHeight: kids ? 94 : 70, color: "#f6e7bf", textAlign: "center", writingDirection: "rtl" }}>{cur.ar}</Text> : null}
+                          {mode === "listen" ? <Text allowFontScaling={false} style={{ fontFamily: ARABIC_FONT, fontSize: 40, lineHeight: 70, color: "#f6e7bf", textAlign: "center", writingDirection: "rtl" }}>{cur.ar}</Text> : null}
                           <Text style={{ fontFamily: FONT.italic, fontSize: 15, color: "rgb(233,207,153)", textAlign: "center" }}>{mode === "listen" ? `${cur.tr} · ${mean(cur)}` : cur.tr}</Text>
                         </View>
                       )
@@ -272,7 +271,7 @@ function VocabTrainer() {
               )}
               back={mode === "cards" ? (
                 <View style={{ alignItems: "center" }}>
-                  <Text allowFontScaling={false} style={{ fontFamily: ARABIC_FONT, fontSize: kids ? 48 : 34, lineHeight: kids ? 84 : 60, color: t.gold, textAlign: "center", writingDirection: "rtl" }}>{cur.ar}</Text>
+                  <Text allowFontScaling={false} style={{ fontFamily: ARABIC_FONT, fontSize: 34, lineHeight: 60, color: t.gold, textAlign: "center", writingDirection: "rtl" }}>{cur.ar}</Text>
                   <Text style={{ fontFamily: FONT.italic, fontSize: 15, color: t.gold, textAlign: "center" }}>{`${cur.tr}${cur.root ? ` · ${w("root")}: ${cur.root}` : ""}`}</Text>
                   <Text style={{ marginTop: 8, fontFamily: FONT.display, fontSize: 24, lineHeight: rtl ? 38 : 29, color: t.ink, textAlign: "center" }}>{mean(cur)}</Text>
                   {playButton()}
@@ -362,7 +361,7 @@ function VocabTrainer() {
                   <Gate done={all} style={{ flex: 1 }}>
                     <View style={{ flex: 1, alignItems: "center", paddingHorizontal: 16, paddingTop: 20, paddingBottom: 20 }}>
                       <PracticeStarNum n={all ? "✓" : i + 1} size={34} filled={all} />
-                      <Text allowFontScaling={false} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.6} style={{ marginTop: 4, fontFamily: ARABIC_FONT, fontSize: kids ? 44 : 34, lineHeight: kids ? 76 : 58, color: t.gold, writingDirection: "rtl" }}>{d.words[0]?.ar}</Text>
+                      <Text allowFontScaling={false} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.6} style={{ marginTop: 4, fontFamily: ARABIC_FONT, fontSize: 34, lineHeight: 58, color: t.gold, writingDirection: "rtl" }}>{d.words[0]?.ar}</Text>
                       <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: rtl ? 0 : 1.4, textTransform: rtl ? "none" : "uppercase", color: t.gold }}>{w("deck", { n: i + 1 })}</Text>
                       <Text style={{ marginTop: 6, fontFamily: FONT.bold, fontSize: 17, lineHeight: rtl ? 28 : 22, color: t.ink, textAlign: "center" }}>{deckTitle(d, lang)}</Text>
                       <Text style={{ marginTop: 4, flexGrow: 1, fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: t.muted, textAlign: "center" }}>{deckDesc(d, lang)}</Text>

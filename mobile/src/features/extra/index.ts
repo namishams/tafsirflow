@@ -7,8 +7,6 @@ export { SocialBar, CommentsSheet, compact as compactNumber } from "./SocialBar"
 export { MyLikes } from "./MyLikes";
 export { ReciteCheck } from "./ReciteCheck";
 export { Onboarding, shouldOnboard, pathFor } from "./Onboarding";
-export { KidsToggle } from "./KidsToggle";
-export { useKids, readKids, setKids, KIDS_KEY, KIDS_PALETTE } from "./kids";
 export { useSiteConfig, loadSiteConfig, type SiteConfig } from "./config";
 export { Markdown } from "./Markdown";
 export { NotFoundView } from "./NotFound";
@@ -20,5 +18,5 @@ export { WhyQuran } from "./widgets/WhyQuran";
 export { Skyline, MadeInDubai, CountUp, Reveal } from "./widgets/Signature";
 export { SiteFooter } from "./widgets/SiteFooter";
 export { ProTeaser } from "./widgets/ProTeaser";
-export { HomeHero, HomeCourses, HomeWhy, HomePaths, HomeMethod, HomeFeatures, HomeMapTeaser, HomePopular, HomeKidsTajweed, HomeGlossary, HomeTools, HomeFaq, HomeFinalCta } from "./widgets/Home";
+export { HomeHero, HomeCourses, HomeWhy, HomePaths, HomeMethod, HomeFeatures, HomeMapTeaser, HomePopular, HomeTajweed, HomeGlossary, HomeTools, HomeFaq, HomeFinalCta } from "./widgets/Home";
 export { HomeStar, StarGlyph, Rosette, HmCard, WarmSection, MarbleHero, QuranQuote, Arch, IllumFrame, QKey, useVerseText } from "./art";

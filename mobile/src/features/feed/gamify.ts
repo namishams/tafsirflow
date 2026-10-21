@@ -43,6 +43,8 @@ function save(now = false) {
   if (now) { if (timer) clearTimeout(timer); write(); return; }
   timer ??= setTimeout(write, 2500);
 }
+/** forget the in-memory record (after the account sync wrote a merged one) */
+export const reloadGamify = () => { cache = null; };
 export function useGamify(): Gamify { useStored(GAMIFY_KEY, {}); return g(); }
 
 // ---------- levels ----------

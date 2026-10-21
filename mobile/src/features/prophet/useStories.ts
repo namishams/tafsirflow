@@ -63,7 +63,7 @@ export const SAVED_KEY = "tf:story-saves";
 export const SEEN_KEY = "qmc.stories-seen";
 export function toggleSavedStory(id: string) {
   const cur = readJSON<string[]>(SAVED_KEY, []);
-  writeJSON(SAVED_KEY, cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id], true);
+  writeJSON(SAVED_KEY, cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id]);
 }
 export function markSeen(id: string) {
   const cur = readJSON<string[]>(SEEN_KEY, []);

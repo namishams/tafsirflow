@@ -5,7 +5,7 @@ import { Divider } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useX } from "@/features/extra/strings";
 import { Featured } from "@/features/extra/widgets/Featured";
-import { HomeCourses, HomeFaq, HomeFeatures, HomeFinalCta, HomeGlossary, HomeHero, HomeKidsTajweed, HomeMapTeaser, HomeMethod, HomePaths, HomePopular, HomeTools, HomeWhy } from "@/features/extra/widgets/Home";
+import { HomeCourses, HomeFaq, HomeFeatures, HomeFinalCta, HomeGlossary, HomeHero, HomeTajweed, HomeMapTeaser, HomeMethod, HomePaths, HomePopular, HomeTools, HomeWhy } from "@/features/extra/widgets/Home";
 import { ProTeaser } from "@/features/extra/widgets/ProTeaser";
 import { SiteFooter } from "@/features/extra/widgets/SiteFooter";
 import { WhyQuran } from "@/features/extra/widgets/WhyQuran";
@@ -34,7 +34,7 @@ export default function Welcome() {
         <HomeFeatures />
         <HomeMapTeaser />
         <HomePopular />
-        <HomeKidsTajweed />
+        <HomeTajweed />
         <View style={{ paddingHorizontal: 16, paddingBottom: 12 }}><ProTeaser /></View>
         <HomeGlossary />
         <HomeTools />

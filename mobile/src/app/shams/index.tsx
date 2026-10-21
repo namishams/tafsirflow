@@ -16,6 +16,7 @@ import { guideOf } from "@/features/library/content";
 import { openHref } from "@/features/library/links";
 import { Curve, DayIcon, Ladder, PrincipleIcon, ShamsDemo, ShamsPlanner, StepIcon, Sun } from "@/features/library/shamsArt";
 import { CUES, W } from "@/features/library/content/shams";
+import { ReciterPathCard } from "@/features/reciter-path/Screens";
 
 // /shams – the Shams Method: hero with the sun over the arcade, why "Shams", problems and solution, the seven steps as
 // a journey towards the sun, one verse in four stages, roots in the hifz tradition, why it works, the forgetting curve,
@@ -66,6 +67,7 @@ export default function ShamsPage() {
           </View>
         ) : null}
       </IslHero>
+      <View style={{ paddingHorizontal: 16, marginTop: 24 }}><ReciterPathCard /></View>
 
       <Marble>
         {/* Why "Shams" */}

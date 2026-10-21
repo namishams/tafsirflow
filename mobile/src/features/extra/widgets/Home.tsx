@@ -9,7 +9,6 @@ import { useAuth } from "@/lib/auth";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme, AR_RIGHT } from "@/lib/theme";
 import { HOME_TILES, TILES } from "@/web/tiles";
 import { Arch, GOLD, GOLD_L, HmCard, HomeStar, IllumFrame, QuranQuote, StarGlyph, WarmSection, alpha, useHm, useVerseText } from "../art";
-import { KidsToggle } from "../KidsToggle";
 import { appHref } from "../links";
 import { useReducedMotionX } from "../motion";
 import { CountUp } from "./Signature";
@@ -272,27 +271,18 @@ export function HomePopular() {
   );
 }
 
-/** 10 For children and families (with the kids-mode switch) + learn to recite beautifully (verse 73:4) */
-export function HomeKidsTajweed() {
+/** 10 Learn to recite beautifully (verse 73:4) */
+export function HomeTajweed() {
   const t = useTheme();
   const hm = useHm(t);
   const w = useWebT("home2");
-  const medal = (icon: "kid" | "volume", tone: string) => (
+  const medal = (icon: "volume", tone: string) => (
     <View style={{ width: 64, height: 64, borderRadius: 32, alignItems: "center", justifyContent: "center", backgroundColor: tone, borderWidth: 2, borderColor: GOLD }}>
       <Icon name={icon} size={28} color={GOLD_L} />
     </View>
   );
   return (
     <View style={{ paddingHorizontal: 16, paddingVertical: 44, gap: 14 }}>
-      <HmCard style={{ padding: 24 }}>
-        {medal("kid", "rgb(120,74,10)")}
-        <View style={{ marginTop: 18 }}><H2>{w("kidsTitle")}</H2></View>
-        <Lead>{w("kidsBody")}</Lead>
-        <View style={{ marginTop: 18, gap: 12 }}>
-          <KidsToggle />
-          <OutlineButton title={w("kidsCta")} compact onPress={() => go("/surah/112")} style={{ borderColor: alpha(GOLD, 0.6) }} />
-        </View>
-      </HmCard>
       <HmCard style={{ padding: 24 }}>
         {medal("volume", "rgb(14,74,82)")}
         <View style={{ marginTop: 18 }}><H2>{w("tajTitle")}</H2></View>

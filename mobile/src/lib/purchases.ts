@@ -13,6 +13,12 @@ export const PRO_DUAS_PER_MONTH = 5;
 /** a personal name report of the baby-name finder (consumable, 0,99 €; not part of Pro) */
 export const NAMES_PRODUCT = "com.quranmasterclass.app.names";
 
+/** Pro yearly subscription (same subscription group as the monthly one in App Store Connect).
+ *  TODO: create "com.quranmasterclass.app.pro.yearly" in App Store Connect / Google Play, let the server accept it
+ *  (website src/lib/appleIap.ts PRO_SUBSCRIPTION, /api/iap/apple + notifications, /api/iap/google), then set it here.
+ *  While null the paywalls show the monthly plan only. */
+export const PRO_YEARLY_SKU: string | null = null;
+
 export type AiCredits = { dua: number; proDuaLeft: number; assistantLeft: number | null; names?: number };
 
 /** credits of the signed-in account (null while loading or signed out) */
@@ -30,7 +36,12 @@ export function useAiCredits(): { credits: AiCredits | null; refresh: () => Prom
 /** buy personal duas (one, or the pack of five); resolves true when the server has added the credits */
 export async function buyPersonalDua(pack = false): Promise<boolean> {
   const { purchaseConsumable } = await import("./iap");
-  return purchaseConsumable(pack ? DUA_PACK_PRODUCT : DUA_PRODUCT);
+  return credited(await purchaseConsumable(pack ? DUA_PACK_PRODUCT : DUA_PRODUCT));
+}
+/** a completed consumable purchase counts for the last tapped feed offer (30 minutes, see feed/monetize.tsx) */
+async function credited(ok: boolean): Promise<boolean> {
+  if (ok) await import("@/features/feed/monetize").then((m) => m.creditOfferPurchase()).catch(() => undefined);
+  return ok;
 }
 
 // Every price shown in the app is Apple's, in the buyer's own currency (Hamburg 4,99 €, Dubai AED 14.99). Until the
@@ -61,7 +72,7 @@ export async function duaPrices(): Promise<{ one: string | null; pack: string | 
 /** buy one personal name report; resolves true when the server has added the credit */
 export async function buyNameReport(): Promise<boolean> {
   const { purchaseConsumable } = await import("./iap");
-  return purchaseConsumable(NAMES_PRODUCT);
+  return credited(await purchaseConsumable(NAMES_PRODUCT));
 }
 
 /** the store price of one name report in the buyer's currency (null until the store has answered) */

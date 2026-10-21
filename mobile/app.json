@@ -130,6 +130,13 @@
             "video"
           ]
         }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording or the word check. Your recording stays on this device and is not uploaded.",
+          "speechRecognitionPermission": "The word check in the Reciter Path recognises the words you recite on this device to show which words were heard. It is not a tajweed assessment and nothing is uploaded."
+        }
       ]
     ],
     "experiments": {

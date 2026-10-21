@@ -17,7 +17,6 @@ import { getChapter, getChapters, getVerses, type Chapter, type Verse, reciterNa
 import { rate, type Rating } from "@/web/learning";
 import { useReciter, isFreeReciter, freeReciter } from "@/features/quran/reciter";
 import { toAr, useEngine } from "@/features/quran/useVerseAudio";
-import { useKids } from "@/features/extra/kids";
 import { VerseWords, wordAt } from "@/features/quran/VerseWords";
 import { TafsirPanel } from "@/features/quran/TafsirPanel";
 import { useClip } from "@/features/coursekit/audio";
@@ -29,7 +28,7 @@ import { MemoControls } from "@/features/reader/MemoControls";
 import { FocusMode } from "@/features/reader/FocusMode";
 import { ReaderTopBar, TOP_BAR_H } from "@/features/reader/ReaderTopBar";
 import { useReaderT } from "@/features/reader/texts";
-import { KIDS_TOOLS, drillOf, hideOf, ratingOfScore, readMemo, type Level, type Memo, type Tool } from "@/features/reader/memo";
+import { drillOf, hideOf, ratingOfScore, readMemo, type Level, type Memo, type Tool } from "@/features/reader/memo";
 import { PlayerDock, type Turn } from "@/features/reader/PlayerDock";
 import { ReaderNowPlaying } from "@/features/reader/ReaderNowPlaying";
 import { loadText, localVerseUri, removeSurah, saveSurah, saveText, savedInfo } from "@/features/reader/offline";
@@ -41,7 +40,6 @@ import * as vp from "@/features/reader/versePlayback";
 // mode (continuous / learn), repeat, speed, pause to repeat ("your turn"), sleep timer, loop range, what to show, saving
 // the surah offline) and the floating jewel dock with a full player. Playback continues verse after verse in the
 // background, on the lock screen and after leaving the reader (features/reader/versePlayback.ts + the verse mini bar).
-// Kids mode (tf:kids) like the website: word by word with transliteration, no tafsir, notes, Shams Method, extras.
 // memo: the memorising mode and practise level (features/reader/memo.ts), remembered per user; drill: the earlier
 // whole-surah cover value, read once to carry an old choice over
 type Prefs = { translit: boolean; translation: boolean; words: boolean; size: number; repeat: number; speed: number; drill: number; mode: vp.Mode; memo?: Memo };
@@ -113,7 +111,6 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const reduce = useReduceMotion();
   const clip = useClip();
   const { pro } = usePro();
-  const [kids] = useKids();
   const [reciter, setReciter, reciters] = useReciter();
   const prefs = { ...PREFS, ...useStored<Partial<Prefs>>("qmc.reader", {}) };
   const setPref = (p: Partial<Prefs>) => writeJSON("qmc.reader", { ...prefs, ...p }, true);
@@ -121,22 +118,21 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const memoKey = JSON.stringify(prefs.memo ?? null);
   const memo = useMemo(() => {
     const m = readMemo(prefs.memo, prefs.drill);
-    return kids && !KIDS_TOOLS.includes(m.tool) ? { ...m, tool: "read" as const } : m; // kids: only Read and Listen & repeat
-  }, [memoKey, prefs.drill, kids]); // eslint-disable-line react-hooks/exhaustive-deps
+    return m;
+  }, [memoKey, prefs.drill]); // eslint-disable-line react-hooks/exhaustive-deps
   const setMemo = (p: Partial<Memo>) => setPref({ memo: { ...memo, ...p }, drill: 0 });
   const listen = memo.tool === "listen";
-  // kids mode: word by word with transliteration, continuous, no pause to repeat (website Player.tsx)
-  const showWords = prefs.words || kids;
-  const showTranslit = prefs.translit || kids;
-  const mode: vp.Mode = kids || listen ? "continuous" : prefs.mode ?? "continuous";
+  const showWords = prefs.words;
+  const showTranslit = prefs.translit;
+  const mode: vp.Mode = listen ? "continuous" : prefs.mode ?? "continuous";
   const gapPref = useStored<number>("tf:gap", 0);
   // Listen & repeat: after every recitation a pause as long as the verse ("your turn")
-  const gap = listen ? -1 : kids ? 0 : gapPref;
+  const gap = listen ? -1 : gapPref;
   const setGap = (g: number) => writeJSON("tf:gap", g, true);
   const [view, setViewState] = useState<"verses" | "reading">(() => (readJSON<string>("tf:view", "verses") === "reading" ? "reading" : "verses"));
   const setView = (v: "verses" | "reading") => { setViewState(v); writeJSON("tf:view", v, true); };
   const [idx, setIdx] = useState(Math.max(0, Math.min(verses.length - 1, (start || 1) - 1)));
-  const [tafsirFor, setTafsirFor] = useState<Verse | null>(openTafsir && start && !kids ? verses[start - 1] ?? null : null);
+  const [tafsirFor, setTafsirFor] = useState<Verse | null>(openTafsir && start ? verses[start - 1] ?? null : null);
   const [settings, setSettings] = useState(false);
   const [nowOpen, setNowOpen] = useState(false);
   const [jumpOpen, setJumpOpen] = useState(false);
@@ -150,8 +146,8 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const [noteOpen, setNoteOpen] = useState<string | null>(null);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   // memorising tools of the active verse (website Player.tsx)
-  const hide = hideOf(memo, kids);
-  const drill = drillOf(memo, kids);
+  const hide = hideOf(memo);
+  const drill = drillOf(memo);
   const [seed, setSeed] = useState(1);
   const [revealed, setRevealed] = useState(false);
   const [shown, setShown] = useState<number[]>([]); // single words revealed by a tap
@@ -428,7 +424,7 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
     rate: (r: Rating) => {
       const days = rate(verse.verse_key, r);
       setToast(days ? w("saved", { days }) : w("savedToday"));
-      if (memo.tool === "check" && !kids) { startCheck(); return; }
+      if (memo.tool === "check") { startCheck(); return; }
       if (idx < verses.length - 1) goTo(idx + 1, false);
     },
     tafsir: (v: Verse) => setTafsirFor(v),
@@ -472,8 +468,8 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
   const markSet = useMemo(() => new Set(marksKey ? marksKey.split("|") : []), [marksKey]);
   const renderItem = useCallback(({ item: v, index: i }: { item: Verse; index: number }) => (
     <VerseCard v={v} i={i} active={i === idx} marked={markSet.has(v.verse_key)} note={notes[v.verse_key]?.text} noteOpen={noteOpen === v.verse_key}
-      translit={showTranslit} translation={prefs.translation} words={showWords} scale={prefs.size} kids={kids} st={i === idx ? activeState : idleState} h={cardHandlers} />
-  ), [idx, markSet, notes, noteOpen, showTranslit, prefs.translation, showWords, prefs.size, kids, activeState, idleState, cardHandlers]);
+      translit={showTranslit} translation={prefs.translation} words={showWords} scale={prefs.size} st={i === idx ? activeState : idleState} h={cardHandlers} />
+  ), [idx, markSet, notes, noteOpen, showTranslit, prefs.translation, showWords, prefs.size, activeState, idleState, cardHandlers]);
 
   // offline (Pro): every verse file of this surah for this reciter
   const saveOffline = async () => {
@@ -525,13 +521,13 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
         {view === "verses" ? (
           <View style={{ marginTop: 14, borderRadius: 16, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 14, gap: 8 }}>
             <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.5, textTransform: "uppercase", color: t.muted }} accessibilityRole="header">{w("memorize")}</Text>
-            <MemoControls memo={memo} kids={kids} onTool={cardHandlers.setTool} onLevel={cardHandlers.setLevel} onShuffle={cardHandlers.shuffle} onAll={(on) => setAll.current(on)} />
+            <MemoControls memo={memo} onTool={cardHandlers.setTool} onLevel={cardHandlers.setLevel} onShuffle={cardHandlers.shuffle} onAll={(on) => setAll.current(on)} />
             {drill > 0 ? <Text maxFontSizeMultiplier={1.8} style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{w("tapToReveal")}</Text> : null}
           </View>
         ) : null}
       </View>
     </View>
-  ), [chapter, chapters, verse.page, verse.juz, verse.hizb, view, insets.top, reduce, t, w, wh, drill, memo, kids, cardHandlers]);
+  ), [chapter, chapters, verse.page, verse.juz, verse.hizb, view, insets.top, reduce, t, w, wh, drill, memo, cardHandlers]);
   const shownSet = useMemo(() => new Set(shown), [shown]);
   const dockBottom = tabSpace - 4;
   const bottomSpace = tabSpace + 150;
@@ -691,35 +687,30 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
                 ))}
               </View>
             </Setting>
-            {kids ? null : (
-              <Setting label={w("mode")}>
+            <Setting label={w("mode")}>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
                   {([["learn", w("modeLearn")], ["continuous", w("modeContinuous")]] as const).map(([k, l]) => <Chip key={k} label={l} selected={mode === k} onPress={() => { setPref({ mode: k }); if (k === "continuous" && waiting) setWaiting(false); }} />)}
                 </View>
               </Setting>
-            )}
             <Setting label={w("repeat")}>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>{[1, 2, 3, 5, 10].map((n) => <Chip key={n} label={`×${n}`} selected={prefs.repeat === n} onPress={() => setPref({ repeat: n })} />)}</View>
             </Setting>
             <Setting label={w("speed")}>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>{[0.5, 0.75, 1, 1.25, 1.5].map((n) => <Chip key={n} label={`${n}×`} selected={prefs.speed === n} onPress={() => setSpeed(n)} />)}</View>
             </Setting>
-            {kids ? null : (
-              <Setting label={w("gap")}>
+            <Setting label={w("gap")}>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
                   {[0, 2, 5, 10, -1].map((n) => <Chip key={n} label={n === 0 ? w("gapOff") : n === -1 ? w("gapVerse") : `${n} s`} selected={gap === n} onPress={() => setGap(n)} />)}
                 </View>
                 <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: t.muted }}>{w("gapHint")}</Text>
               </Setting>
-            )}
             <Setting label={w("sleep")}>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
                 {[0, 15, 30, 60, -1].map((n) => <Chip key={n} label={n === 0 ? w("sleepOff") : n === -1 ? w("sleepEnd") : `${n} min`} selected={sleep.mode === n} onPress={() => setSleepMode(n)} />)}
               </View>
               {sleep.mode > 0 ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>{w("sleepLeft", { m: sleepMin ?? 1 })}</Text> : null}
             </Setting>
-            {kids ? null : (
-              <Setting label={w("loop")}>
+            <Setting label={w("loop")}>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: 10, rowGap: 8 }}>
                   <Switch value={loop.on} onValueChange={(on) => setLoop((l) => ({ ...l, on }))} trackColor={{ true: t.accent }} accessibilityLabel={w("loop")} />
                   <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted, opacity: loop.on ? 1 : 0.5 }}>{w("loopFrom")}</Text>
@@ -728,15 +719,14 @@ function Reader({ chapter, verses, start, openTafsir }: { chapter: Chapter; vers
                   <Stepper value={loop.to} min={loop.from} max={verses.length} disabled={!loop.on} label={`${w("loop")} ${w("loopTo")}`} onChange={(n) => setLoop((l) => ({ ...l, to: n }))} />
                 </View>
               </Setting>
-            )}
-            {kids ? null : <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
+            <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
               {([["translit", w("transliteration")], ["translation", w("translation")], ["words", w("wordByWord")]] as [keyof Prefs, string][]).map(([k, label], i) => (
                 <View key={k} style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 14, paddingVertical: 10, borderTopWidth: i ? 1 : 0, borderTopColor: t.line }}>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.ink, flex: 1 }}>{label}</Text>
                   <Switch value={!!prefs[k]} onValueChange={(on) => setPref({ [k]: on } as Partial<Prefs>)} trackColor={{ true: t.accent }} accessibilityLabel={label} />
                 </View>
               ))}
-            </View>}
+            </View>
             <Setting label={w("offline")}>
               {offline.state === "saving" ? (
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: verses.length, now: offline.done }}>

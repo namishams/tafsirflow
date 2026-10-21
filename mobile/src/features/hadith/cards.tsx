@@ -16,7 +16,7 @@ import { useHadithText } from "./texts";
 const go = (href: string) => router.push(href as Href);
 
 // --- the tradition question (Today, once) and the setting (Account) -------------------------------------------
-const ASK_DONE_KEY = "qmc.traditionAsked";
+export const ASK_DONE_KEY = "qmc.traditionAsked";
 
 /** asked once on Today, respectfully, with "I'd rather not say / show both"; "Later" also counts as asked
  *  (the choice stays in Account). Hidden while the first-run onboarding is open. */

@@ -21,7 +21,6 @@ import type { Level, Memo, Tool } from "./memo";
 // levels 1–5 · Test · Listen & repeat · Random check), reveal and self-rating, recite & check, bookmark, note, copy, share,
 // play, focus mode, likes and comments, Tafsir and the Shams Method. With "cover every verse" (st.hide on quiet cards)
 // every card is covered too; tapping uncovers it. Covered words: tap reveals that word (and plays it), long-press the verse.
-// Kids mode (website Player.tsx): only Read and Listen & repeat; no note, copy, share, Shams Method, recite check, social bar or tafsir.
 export type Hide = 0 | 1 | 2 | 3 | 4 | 5 | 6; // 0 all, 1 every 2nd word, 2 hard, 3 first letters, 4 random, 5 soft, 6 test word by word
 export type CardHandlers = {
   goTo: (i: number) => void;
@@ -95,9 +94,9 @@ function LinePill({ label, onPress, flex }: { label: string; onPress: () => void
   );
 }
 
-export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, noteOpen, translit, translation, words: showWords, scale, kids, st, h }: {
+export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, noteOpen, translit, translation, words: showWords, scale, st, h }: {
   v: Verse; i: number; active: boolean; marked: boolean; note?: string; noteOpen: boolean;
-  translit: boolean; translation: boolean; words: boolean; scale: number; kids: boolean; st: CardState; h: CardHandlers;
+  translit: boolean; translation: boolean; words: boolean; scale: number; st: CardState; h: CardHandlers;
 }) {
   const t = useTheme();
   const w = useWebT("player");
@@ -180,16 +179,16 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
         {active ? (
           <View style={{ flexDirection: "row", alignItems: "center", flexShrink: 1, flexWrap: "wrap", justifyContent: "flex-end" }}>
             <ActionIcon icon="bookmark" label={marked ? w("bookmarked") : w("bookmark")} filled={marked} color={marked ? gold : t.muted} onPress={() => h.toggleMark(v.verse_key)} />
-            {kids ? null : <ActionIcon icon="note" label={w("note")} color={note ? t.accent : t.muted} onPress={() => h.openNote(noteOpen ? null : v.verse_key)} />}
-            {kids ? null : <ActionIcon icon="copy" label={w("copy")} color={t.muted} onPress={() => h.copy(v)} />}
-            {kids ? null : <ActionIcon icon="share" label={w("share")} color={t.muted} onPress={() => h.share(v)} />}
+            <ActionIcon icon="note" label={w("note")} color={note ? t.accent : t.muted} onPress={() => h.openNote(noteOpen ? null : v.verse_key)} />
+            <ActionIcon icon="copy" label={w("copy")} color={t.muted} onPress={() => h.copy(v)} />
+            <ActionIcon icon="share" label={w("share")} color={t.muted} onPress={() => h.share(v)} />
             <ActionIcon icon="eye" label={r("focusOpen")} color={t.muted} onPress={h.focus} />
             <ActionIcon icon={st.playing ? "pause" : "playSm"} label={st.playing ? w("pause") : w("playVerse")} color={t.muted} onPress={() => h.playVerse(i)} />
           </View>
         ) : marked ? <View accessibilityLabel={w("bookmarked")}><Icon name="bookmark" color={gold} size={18} filled /></View> : null}
       </View>
 
-      {active && tool === "check" && !kids ? (
+      {active && tool === "check" ? (
         <Text maxFontSizeMultiplier={1.6} style={{ fontFamily: FONT.semibold, fontSize: 13, color: gold, marginBottom: 6 }} accessibilityRole="header">{r("checkTitle", { n: v.verse_number })}</Text>
       ) : null}
       {active ? arabicActive : covered ? coveredQuiet : (
@@ -204,16 +203,14 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
 
       {active ? (
         <View style={{ marginTop: 18, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 16, gap: 12 }}>
-          <MemoControls memo={m} kids={kids} onTool={h.setTool} onLevel={h.setLevel} onShuffle={h.shuffle} />
+          <MemoControls memo={m} onTool={h.setTool} onLevel={h.setLevel} onShuffle={h.shuffle} />
           {anyCovered ? <Text maxFontSizeMultiplier={1.8} style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{r("wordHint")}</Text> : null}
-          {kids ? null : (
-            <Pressable onPress={() => h.shams(v)} accessibilityRole="button" accessibilityLabel={w("toolShams")}>
+          <Pressable onPress={() => h.shams(v)} accessibilityRole="button" accessibilityLabel={w("toolShams")}>
               <LinearGradient colors={[goldButton.from, goldButton.to]} style={{ minHeight: 44, borderRadius: R.pill, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7 }}>
                 <SunMark color={goldButton.text} />
                 <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.bold, fontSize: 13.5, color: goldButton.text }}>{w("toolShams")}</Text>
               </LinearGradient>
             </Pressable>
-          )}
         </View>
       ) : null}
 
@@ -259,7 +256,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
               <GoldPill label={w("reveal")} onPress={h.reveal} />
             </View>
           ) : null}
-          {!revealed && !kids ? (
+          {!revealed ? (
             <View style={{ marginTop: 12 }}>
               <ReciteCheck words={words.map((x) => x.text_uthmani)} onResult={() => h.reveal()} onPlayReciter={h.replay} pauseOthers={h.pause} />
             </View>
@@ -288,9 +285,9 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
         </View>
       ) : null}
 
-      {active && !kids ? <View style={{ marginTop: 14, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 4 }}><SocialBar verseKey={v.verse_key} shareText={v.translation} /></View> : null}
+      {active ? <View style={{ marginTop: 14, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 4 }}><SocialBar verseKey={v.verse_key} shareText={v.translation} /></View> : null}
 
-      {(noteOpen || note) && !kids ? (
+      {(noteOpen || note) ? (
         <View style={{ marginTop: 16, borderTopWidth: 1, borderTopColor: t.line, paddingTop: 14 }}>
           {noteOpen ? (
             <TextInput autoFocus multiline value={draft ?? note ?? ""} onChangeText={setDraft} placeholder={w("notePlaceholder")} placeholderTextColor={t.muted} accessibilityLabel={w("note")}
@@ -311,7 +308,7 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
         </View>
       ) : null}
 
-      {active && !kids ? (
+      {active ? (
         <Pressable onPress={() => h.tafsir(v)} accessibilityRole="button" accessibilityLabel={w("tafsir")}
           style={({ pressed }) => ({ alignSelf: "flex-start", marginTop: 16, minHeight: 44, paddingHorizontal: 16, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? gold : t.line, backgroundColor: t.surface, flexDirection: "row", alignItems: "center", gap: 8 })}>
           <Icon name="book" color={gold} size={16} />
