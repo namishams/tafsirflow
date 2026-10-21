@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Alert, Modal, Platform, Pressable, ScrollView, Share, Text, View, useWindowDimensions } from "react-native";
+import { ActionSheetIOS, Alert, Modal, Platform, Pressable, ScrollView, Share, Text, View, useWindowDimensions } from "react-native";
 import { Stack, router, useFocusEffect, useLocalSearchParams, type Href } from "expo-router";
 import { FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
 import { Page, PageHero, Loading } from "@/components/page";
@@ -18,17 +18,25 @@ import { PostingChecklist } from "@/features/talents/Checklist";
 import { AccessGate, LevelBadge, Muted, ReportSheet, SafetyBar, SmallButton, TalentAvatar, useTalentAccess, useTalentErr } from "@/features/talents/ui";
 import { usePro } from "@/lib/pro";
 import { usePostingOn, useSijillFlags } from "@/features/sijill/config";
-import { sijillApi, type Sijill } from "@/features/sijill/api";
+import { sijillApi, type Moment, type Sijill } from "@/features/sijill/api";
+import { pickAvatar } from "@/features/talents/avatar";
+import { MomentFeed, MomentGrid, MomentsEmpty, maOf } from "@/features/talents/MomentPosts";
+import { usePT } from "@/features/talents/profileText";
+import type { SKey } from "@/features/sijill/text";
 import { syncSijill } from "@/features/sijill/summary";
 import { SijillShowcase, TreeBanner } from "@/features/sijill/Showcase";
-import { MomentsFeed } from "@/features/sijill/Moments";
 import { useST } from "@/features/sijill/text";
+import { RankLine } from "@/features/rankings/RankLine";
 
 // /talents/u/[username] – the talent profile, built like Instagram/TikTok in the Masterclass design: avatar with a gold
 // ring (live story), stats (clips · followers · following · likes), name with badge and level, rewaya/maqam/country,
 // bio, follow / message / connect, story highlights, tabs (clips grid, saved, achievements), the path to posting.
 // Owner decision 21.10.2026: with posting switched off (config posting.enabled) the profile is an achievement showcase:
 // tabs Sijill (academic record), achievement moments and badges; clips, highlights and the posting path stay hidden.
+// Owner 21.10.2026 ("like Instagram / early TikTok, only the likes are MashaAllahs"): TikTok header (avatar with a gold
+// ring, name + badge + level, @username, big counters Following · Followers · MashaAllah, bio line, Follow / Message /
+// share), the tree as a compact banner, tabs Achievements (3-column grid of moment cards, tap opens a full-screen
+// vertical feed with double-tap MashaAllah) · Sijill · Badges. Own profile: tap the avatar to change the photo.
 type Tab = "posts" | "saved" | "awards" | "sijill" | "moments";
 export default function TalentProfileScreen() {
   const t = useTheme();
@@ -43,7 +51,12 @@ export default function TalentProfileScreen() {
   const [saved, setSaved] = useState<Post[] | null>(null);
   const [highlights, setHighlights] = useState<Highlight[]>([]);
   const [posting, setPosting] = useState<PostingStatus | null>(null);
-  const [tab, setTab] = useState<Tab>("sijill");
+  const [tab, setTab] = useState<Tab>("moments");
+  const pt = usePT();
+  const { width: winW } = useWindowDimensions();
+  const [moments, setMoments] = useState<Moment[] | null>(null);
+  const [momentsMore, setMomentsMore] = useState<string | null>(null);
+  const [feedAt, setFeedAt] = useState<number | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState("");
   const [reporting, setReporting] = useState(false);
@@ -56,13 +69,14 @@ export default function TalentProfileScreen() {
   postingRef.current = postingFlag;
   const postingOn = postingFlag && p?.postingEnabled !== false;
   const [sijill, setSijill] = useState<Sijill | null | "restricted">(null);
-  useEffect(() => { if (!postingOn && (tab === "posts" || tab === "saved")) setTab("sijill"); else if (postingOn && (tab === "sijill" || tab === "moments")) setTab("posts"); }, [postingOn]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (!postingOn && (tab === "posts" || tab === "saved")) setTab("moments"); else if (postingOn && (tab === "sijill" || tab === "moments")) setTab("posts"); }, [postingOn]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const load = useCallback(async () => {
     if (!username) return;
     try {
-      const d = (await T.profile(username)).profile;
+      const d = (await T.profile(username, lang)).profile;
       setP(d); setState("ok");
+      setMoments(d.moments ?? []); setMomentsMore(d.momentsMore ?? null);
       // Sijill: the own record is brought up to date from this device first
       if (!d.blocked) {
         (d.mine ? syncSijill(pro).then(() => sijillApi.mine(lang)) : sijillApi.of(d.username, lang))
@@ -105,13 +119,42 @@ export default function TalentProfileScreen() {
     : confirm(tt("block"), tt("confirmBlock"), tt("block"), () => void run(async () => { await T.block(p.username, true); setP({ ...p, blocked: true, followed: false, connection: "none", canMessage: false }); })));
   const share = () => p && void Share.share({ message: `${p.name} (@${p.username}) · Quran Masterclass Talents\n${SITE}/${lang}/talents/${p.username}` }).catch(() => undefined);
 
-  const nf = (n: number) => Intl.NumberFormat(lang, { notation: n >= 10000 ? "compact" : "standard" }).format(n);
+  const nf = (n: number) => { try { return Intl.NumberFormat(lang, { notation: n >= 1000 ? "compact" : "standard", maximumFractionDigits: 1 }).format(n); } catch { return String(n); } };
   const stat = (n: number, label: string, onPress?: () => void) => (
-    <Pressable key={label} onPress={onPress} disabled={!onPress} accessibilityRole={onPress ? "button" : undefined} accessibilityLabel={`${n} ${label}`} style={{ flex: 1, alignItems: "center", minHeight: 48, justifyContent: "center" }}>
-      <Text style={{ fontFamily: FONT.bold, fontSize: 18, color: t.ink }}>{nf(n)}</Text>
-      <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted }}>{label}</Text>
+    <Pressable key={label} onPress={onPress} disabled={!onPress} accessibilityRole={onPress ? "button" : undefined} accessibilityLabel={`${n} ${label}`}
+      style={({ pressed }) => ({ flex: 1, maxWidth: 130, alignItems: "center", minHeight: 52, justifyContent: "center", opacity: pressed ? 0.6 : 1 })}>
+      <Text style={{ fontFamily: FONT.display, fontSize: 22, color: t.ink }}>{nf(n)}</Text>
+      <Text numberOfLines={1} style={{ fontFamily: FONT.medium, fontSize: 13, color: t.muted }}>{label}</Text>
     </Pressable>
   );
+  // own profile: change the photo (library, camera, remove); the new URL carries avatar_version, so it shows at once
+  const [photoMsg, setPhotoMsg] = useState("");
+  const pick = (src: "library" | "camera") => p && void pickAvatar(src)
+    .then((uri) => { if (uri) setP({ ...p, avatar: uri }); })
+    .catch((e) => setPhotoMsg(e instanceof Error && e.message === "permission" ? tt("photoDenied") : err(e)));
+  const removePhoto = () => p && void T.deleteAvatar().then(() => setP({ ...p, avatar: null })).catch((e) => setPhotoMsg(err(e)));
+  const changePhoto = () => {
+    if (!p) return;
+    setPhotoMsg("");
+    const opts = [tt("photoPick"), tt("photoTake"), ...(p.avatar ? [tt("photoRemove")] : []), tt("cancel")];
+    const choose = (i: number) => { if (i === 0) pick("library"); else if (i === 1) pick("camera"); else if (i === 2 && p.avatar) removePhoto(); };
+    if (Platform.OS === "ios") {
+      ActionSheetIOS.showActionSheetWithOptions({ title: pt("photoTitle"), message: pt("photoHint"), options: opts, cancelButtonIndex: opts.length - 1, destructiveButtonIndex: p.avatar ? 2 : undefined }, choose);
+    } else if (Platform.OS === "web") pick("library");
+    else Alert.alert(pt("photoTitle"), pt("photoHint"), [
+      { text: tt("photoPick"), onPress: () => pick("library") }, { text: tt("photoTake"), onPress: () => pick("camera") },
+      ...(p.avatar ? [{ text: tt("photoRemove"), style: "destructive" as const, onPress: removePhoto }] : []), { text: tt("cancel"), style: "cancel" as const },
+    ]);
+  };
+  const ring = p?.badge === "gold" || p?.badge === "official" ? "#E2C77F" : goldButton.line;
+  const sj = sijill && sijill !== "restricted" ? sijill : null;
+  const maTotal = p?.mashaallahTotal ?? 0;
+  const bioLine = p ? [p.rewaya, p.country && countryName(p.country, lang), sj?.level?.stage ? st(`stage_${sj.level.stage}` as SKey) : ""].filter(Boolean).join(" · ") : "";
+  const onMoment = (m: Moment) => {
+    const old = moments?.find((x) => x.id === m.id);
+    if (old) setP((x) => (x ? { ...x, mashaallahTotal: Math.max(0, (x.mashaallahTotal ?? 0) + maOf(m) - maOf(old)) } : x));
+    setMoments((l) => l?.map((x) => (x.id === m.id ? m : x)) ?? null);
+  };
   const connLabel = p ? { none: tt("connect"), outgoing: tt("requested"), incoming: tt("accept"), connected: tt("connected") }[p.connection] : "";
   const followLabel = p ? (p.followed ? tt("followingBtn") : p.requested ? tt("requested") : tt("follow")) : "";
 
@@ -120,41 +163,46 @@ export default function TalentProfileScreen() {
       <Stack.Screen options={{ headerShown: false }} />
       <BadgeSheetHost>
         <Page>
-          <PageHero back arcade={false} eyebrow={tt("network")} title={`@${username ?? ""}`} />
+          <PageHero back topInset arcade={false} eyebrow={tt("network")} title={`@${username ?? ""}`} />
           <AccessGate a={a}>
             {state === "load" ? <Loading /> : state === "missing" ? <Muted>{tt("notFound")}</Muted> : state === "error" || !p ? (
               <View style={{ padding: 20 }}><OutlineButton title={tt("retry")} onPress={() => void load()} /></View>
             ) : (
               <View style={{ padding: 16, gap: 16 }}>
-                {/* header */}
-                <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-                  <Pressable onPress={p.liveStory && postingOn ? () => router.push(`/talents/player?src=user&u=${p.username}&type=story` as Href) : undefined} disabled={!p.liveStory}
-                    accessibilityRole={p.liveStory ? "button" : undefined} accessibilityLabel={p.liveStory ? tt("watchStory") : p.name}
-                    style={{ padding: 3, borderRadius: 52, borderWidth: p.liveStory ? 2.5 : 0, borderColor: goldButton.to }}>
-                    <SharerRing tier={p.sharerTier} size={88}><TalentAvatar name={p.name} size={88} uri={p.avatar} badge={p.badge} /></SharerRing>
+                {/* header (TikTok): avatar with gold ring, name + badge + level, @username, counters, bio line */}
+                <View style={{ alignItems: "center", gap: 8 }}>
+                  <Pressable onPress={p.liveStory && postingOn ? () => router.push(`/talents/player?src=user&u=${p.username}&type=story` as Href) : p.mine ? changePhoto : undefined}
+                    disabled={!(p.liveStory && postingOn) && !p.mine} accessibilityRole={p.mine || p.liveStory ? "button" : "image"}
+                    accessibilityLabel={p.liveStory && postingOn ? tt("watchStory") : p.mine ? pt("changePhoto") : p.name}
+                    style={{ padding: 3, borderRadius: 70, borderWidth: 2.5, borderColor: p.liveStory && postingOn ? goldButton.from : ring }}>
+                    <View style={{ borderRadius: 60, borderWidth: p.badge === "emerald" ? 2 : 0, borderColor: "#0F8A63" }}>
+                      <SharerRing tier={p.sharerTier} size={100}><TalentAvatar name={p.name} size={100} uri={p.avatar} badge={p.badge} /></SharerRing>
+                    </View>
+                    {p.mine ? (
+                      <View style={{ position: "absolute", right: 2, bottom: 2, width: 30, height: 30, borderRadius: 15, backgroundColor: goldButton.to, borderWidth: 2, borderColor: t.bg, alignItems: "center", justifyContent: "center" }}>
+                        <Icon name="plus" color={goldButton.text} size={16} weight={2.6} />
+                      </View>
+                    ) : null}
                   </Pressable>
-                  <View style={{ flex: 1, flexDirection: "row" }}>
-                    {postingOn ? stat(p.posts, tt("statClips")) : stat(sijill && sijill !== "restricted" ? sijill.moments : 0, st("tabMoments"))}
-                    {stat(p.followers, tt("followers"), p.restricted ? undefined : () => router.push(`/talents/list?u=${p.username}&kind=followers` as Href))}
-                    {stat(p.following, tt("following"), p.restricted ? undefined : () => router.push(`/talents/list?u=${p.username}&kind=following` as Href))}
-                    {postingOn ? stat(p.likes, tt("statLikes")) : stat(sijill && sijill !== "restricted" ? sijill.reactions : 0, st("statEncouragements"))}
-                  </View>
-                </View>
-                <View style={{ gap: 6 }}>
-                  <View style={{ flexDirection: "row", alignItems: "center", gap: 7, flexWrap: "wrap" }}>
-                    <Text accessibilityRole="header" style={{ flexShrink: 1, fontFamily: FONT.display, fontSize: 21, color: t.ink }}>{p.name}</Text>
+                  {photoMsg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.danger, textAlign: "center" }}>{photoMsg}</Text> : null}
+                  <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7, flexWrap: "wrap" }}>
+                    <Text accessibilityRole="header" style={{ flexShrink: 1, fontFamily: FONT.display, fontSize: 21, color: t.ink, textAlign: "center" }}>{p.name}</Text>
                     <BadgeButton badge={p.badge} size={20} />
                     <LevelBadge level={p.level} />
                     {p.private ? <Icon name="lock" color={t.muted} size={15} /> : null}
                   </View>
-                  <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap" }}><SharerBadge tier={p.sharerTier} /></View>
-                  {[p.rewaya && `${tt("rewaya")}: ${p.rewaya}`, p.maqam && `${tt("maqam")}: ${p.maqam}`, p.country && countryName(p.country, lang)].filter(Boolean).length ? (
-                    <Text style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: t.ink }}>
-                      {[p.rewaya && `${tt("rewaya")}: ${p.rewaya}`, p.maqam && `${tt("maqam")}: ${p.maqam}`, p.country && countryName(p.country, lang)].filter(Boolean).join(" · ")}
-                    </Text>
-                  ) : null}
+                  <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: t.muted, writingDirection: "ltr" }}>@{p.username}</Text>
+                  <View style={{ flexDirection: "row", alignSelf: "stretch", justifyContent: "center", marginTop: 4 }}>
+                    {stat(p.following, tt("following"), p.restricted ? undefined : () => router.push(`/talents/list?u=${p.username}&kind=following` as Href))}
+                    {stat(p.followers, tt("followers"), p.restricted ? undefined : () => router.push(`/talents/list?u=${p.username}&kind=followers` as Href))}
+                    {postingOn ? stat(p.likes, tt("statLikes")) : stat(maTotal, pt("statMashaAllah"), p.restricted || !moments?.length ? undefined : () => setTab("moments"))}
+                  </View>
+                  {bioLine ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: t.ink, textAlign: "center" }}>{bioLine}</Text> : null}
+                  {!p.private ? <RankLine username={p.username} /> : null}
+                  {p.maqam ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{`${tt("maqam")}: ${p.maqam}`}</Text> : null}
+                  <SharerBadge tier={p.sharerTier} />
                   {p.officialChannel ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.gold }}>{tt("officialChannel", { c: p.officialChannel })}</Text> : null}
-                  {p.bio ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink }}>{p.bio}</Text> : null}
+                  {p.bio ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: t.ink, textAlign: "center" }}>{p.bio}</Text> : null}
                 </View>
 
                 {/* actions */}
@@ -162,7 +210,7 @@ export default function TalentProfileScreen() {
                   <View style={{ flexDirection: "row", gap: 8 }}>
                     <View style={{ flex: 1 }}><SmallButton title={tt("editProfile")} onPress={() => router.push("/community/me" as Href)} /></View>
                     <View style={{ flex: 1 }}><SmallButton title={tt("shareProfile")} onPress={share} /></View>
-                    <SmallButton title={tt("settings")} onPress={() => router.push("/talents/settings" as Href)} label={tt("settings")} />
+                    <IconBtn icon="settings" label={tt("settings")} onPress={() => router.push("/talents/settings" as Href)} />
                   </View>
                 ) : null}
                 {p.mine && !postingOn ? (
@@ -177,6 +225,7 @@ export default function TalentProfileScreen() {
                     <View style={{ flex: 1 }}><SmallButton title={followLabel} tone={p.followed || p.requested ? "plain" : "gold"} onPress={follow} disabled={busy} label={`${followLabel}, ${p.name}`} /></View>
                     {p.canMessage ? <View style={{ flex: 1 }}><SmallButton title={tt("message")} onPress={message} disabled={busy} /></View> : null}
                     {a.age?.interact ? <View style={{ flex: 1 }}><SmallButton title={connLabel} onPress={connect} disabled={busy} label={`${connLabel}, ${p.name}`} /></View> : null}
+                    <IconBtn icon="share" label={tt("shareProfile")} onPress={share} />
                   </View>
                 )}
                 {/* Sijill: compare (mutual follows or connections; the server checks) */}
@@ -217,7 +266,7 @@ export default function TalentProfileScreen() {
                   : <PostingChecklist s={posting} />) : null}
 
                 {/* Sijill: the garden tree as a banner (only when the member shows the tree section) */}
-                {!postingOn && sijill && sijill !== "restricted" && sijill.tree ? <TreeBanner tree={sijill.tree} /> : null}
+                {!postingOn && sijill && sijill !== "restricted" && sijill.tree ? <TreeBanner tree={sijill.tree} height={130} /> : null}
 
                 {/* tabs */}
                 {p.restricted ? (
@@ -231,7 +280,7 @@ export default function TalentProfileScreen() {
                     <View accessibilityRole="tablist" style={{ flexDirection: "row", borderBottomWidth: 1, borderBottomColor: t.line }}>
                       {(postingOn
                         ? [["posts", tt("tabClips")], ...(p.mine ? [["saved", tt("tabSaved")]] : []), ["awards", tt("tabAwards")]]
-                        : [["sijill", st("tabSijill")], ["moments", st("tabMoments")], ["awards", tt("tabAwards")]]
+                        : [["moments", pt("tabAchievements")], ["sijill", st("tabSijill")], ["awards", pt("tabBadges")]]
                       ).map(([k, label]) => [k as Tab, label] as const).map(([k, label]) => (
                         <Pressable key={k} onPress={() => setTab(k)} accessibilityRole="tab" accessibilityState={{ selected: tab === k }}
                           style={{ flex: 1, minHeight: 44, alignItems: "center", justifyContent: "center", borderBottomWidth: 2, borderBottomColor: tab === k ? goldButton.to : "transparent" }}>
@@ -240,7 +289,7 @@ export default function TalentProfileScreen() {
                       ))}
                     </View>
                     {tab === "sijill" ? (sijill === null ? <Loading /> : sijill === "restricted" ? <Muted>{st("restricted")}</Muted> : <SijillShowcase s={sijill} mine={p.mine} name={p.name} username={p.username} noTree />)
-                      : tab === "moments" ? <MomentsFeed username={p.username} empty={st("nothingYet")} />
+                      : tab === "moments" ? <MomentGrid moments={moments} width={Math.min(winW, 860) - 32} onOpen={setFeedAt} empty={<MomentsEmpty mine={p.mine} />} />
                       : tab === "posts" ? <Grid posts={posts} src={`user&u=${p.username}&type=post`} empty={p.mine ? tt("noClipsMine") : tt("noClips")} own={p.mine} />
                       : tab === "saved" ? <Grid posts={saved} src="saved" empty={tt("noSaved")} />
                       : <Awards p={p} />}
@@ -254,8 +303,23 @@ export default function TalentProfileScreen() {
         </Page>
       </BadgeSheetHost>
       {p ? <ReportSheet visible={reporting} title={tt("reportProfile")} onClose={() => setReporting(false)} onSubmit={(c, r) => T.reportProfile(p.username, c, r).then(() => undefined)} /> : null}
+      {p && moments && feedAt !== null ? (
+        <MomentFeed visible moments={moments} start={feedAt} username={p.username} more={momentsMore} onClose={() => setFeedAt(null)} onChange={onMoment}
+          onMore={(l, more) => { setMoments((old) => [...(old ?? []), ...l.filter((x) => !old?.some((y) => y.id === x.id))]); setMomentsMore(more); }} />
+      ) : null}
       {p?.mine ? <HighlightSheet visible={newHighlight} username={p.username} onClose={() => setNewHighlight(false)} onCreated={() => { setNewHighlight(false); void load(); }} /> : null}
     </>
+  );
+}
+
+/** a square outline button with an icon (share, settings) next to the text buttons */
+function IconBtn({ icon, label, onPress }: { icon: "share" | "settings"; label: string; onPress: () => void }) {
+  const t = useTheme();
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label}
+      style={({ pressed }) => ({ width: 44, minHeight: 40, borderRadius: R.md, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.6 : 1 })}>
+      <Icon name={icon} color={t.ink} size={18} />
+    </Pressable>
   );
 }
 

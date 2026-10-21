@@ -15,6 +15,8 @@ import ClipCard from "@/components/talents/ClipCard";
 import SijillShowcase, { TreeBannerWeb } from "@/components/talents/SijillShowcase";
 import { publicSijill } from "@/lib/sijillPublic";
 import { sijillText } from "@/lib/sijillWeb";
+import { fillRw, rankingsText } from "@/lib/rankingsWeb";
+import { rankOf } from "@/lib/rankings";
 
 // Public talent profile on the website (same structure as the app profile): avatar, badge, level, stats, bio, follow /
 // message, highlights, recitations, achievements. Only public members aged 16+; badged profiles are indexed.
@@ -45,6 +47,10 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
     const first = c.verseKey?.split("-")[0] ?? "";
     return /^\d+:\d+$/.test(first) ? getVerseByKey(first, locale, 20).then((v) => v.text_uthmani + (c.verseKey?.includes("-") ? " …" : "")).catch(() => "") : Promise.resolve("");
   }));
+  // worldwide place (only members who joined the rankings by name): "#123 worldwide · #4 in Germany"
+  const rl = rankingsText(locale);
+  const place = p.private ? null : await rankOf(p.username).catch(() => null);
+  const placeText = place?.world ? [fillRw(rl.profileRank, { n: place.world }), place.country && place.countryCode ? fillRw(rl.profileRankCountry, { n: place.country, c: countryNameOf(place.countryCode, locale) }) : ""].filter(Boolean).join(" · ") : "";
   const badgeLabel = p.badge ? tx[`badge_${p.badge}` as TwKey] : "";
   const facts = [p.rewaya && `${tx.rewaya}: ${p.rewaya}`, p.maqam && `${tx.maqam}: ${p.maqam}`, p.country && countryNameOf(p.country, locale)].filter(Boolean) as string[];
   const ld = {
@@ -95,6 +101,7 @@ export default async function TalentPage({ params }: { params: Promise<{ locale:
             {p.private ? <span className="rounded-full border border-white/20 px-3 py-1 text-white/70">{tx.private}</span> : null}
           </div>
           {facts.length ? <p className="mt-4 text-[15px] font-semibold text-white/85">{facts.join(" · ")}</p> : null}
+          {placeText ? <p className="mt-3"><Link href="/ranking" title={rl.profileLink} className="inline-flex items-center gap-2 rounded-full border border-[rgb(var(--gold))]/60 bg-[rgb(var(--gold))]/10 px-3.5 py-1.5 text-[13.5px] font-semibold text-[#e8d3a0] hover:bg-[rgb(var(--gold))]/20">{placeText}</Link></p> : null}
           {p.officialChannel ? <p className="mt-1 text-[14px] text-[rgb(var(--gold))]">{fill(tx.officialChannel, { c: p.officialChannel })}</p> : null}
           {p.bio ? <p className="mt-3 max-w-2xl whitespace-pre-line text-[16px] leading-relaxed text-white/75">{p.bio}</p> : null}
           <div className="mt-7">

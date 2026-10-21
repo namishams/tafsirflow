@@ -682,3 +682,182 @@ CREATE TABLE IF NOT EXISTS community_reaction_credits (
 CREATE INDEX IF NOT EXISTS community_reaction_credits_receiver ON community_reaction_credits(receiver_id, day);
 CREATE INDEX IF NOT EXISTS community_reaction_credits_giver ON community_reaction_credits(giver_id, day);
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+
+-- Worldwide rankings (opt-in, privacy-safe; src/lib/rankings.ts). Names appear only for members who switched leaderboards
+-- on, accepted the worldwide listing (rankings_world) and are 16+; count_country lets any member count anonymously into
+-- the country totals. The snapshot is rebuilt at most every 10 minutes; seasons keep the history (hall of fame).
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS rankings_world boolean NOT NULL DEFAULT false;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS count_country boolean NOT NULL DEFAULT false;
+CREATE TABLE IF NOT EXISTS ranking_meta (
+  key        text PRIMARY KEY,
+  value      text NOT NULL,
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS ranking_snapshot (
+  user_id        bigint PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  username       text NOT NULL,
+  display_name   text NOT NULL DEFAULT '',
+  avatar_path    text,
+  avatar_version integer NOT NULL DEFAULT 0,
+  country        text,
+  badge          text,
+  level          text NOT NULL DEFAULT 'talent',
+  named          boolean NOT NULL DEFAULT false,   -- may appear by name in the worldwide lists
+  circle         boolean NOT NULL DEFAULT false,   -- on the leaderboards among people who follow each other
+  is_public      boolean NOT NULL DEFAULT true,
+  counted        boolean NOT NULL DEFAULT false,   -- counts into the country totals (anonymous)
+  xp_week        integer NOT NULL DEFAULT 0,
+  xp_total       bigint  NOT NULL DEFAULT 0,
+  streak         integer NOT NULL DEFAULT 0,
+  verses         integer NOT NULL DEFAULT 0,
+  verses_week    integer NOT NULL DEFAULT 0,
+  stickers       integer NOT NULL DEFAULT 0,
+  stickers_week  integer NOT NULL DEFAULT 0,
+  mashaallah     integer NOT NULL DEFAULT 0,
+  active7        boolean NOT NULL DEFAULT false,
+  active30       boolean NOT NULL DEFAULT false
+);
+CREATE INDEX IF NOT EXISTS ranking_snapshot_country ON ranking_snapshot(country) WHERE named;
+CREATE TABLE IF NOT EXISTS ranking_countries (
+  period   text NOT NULL CHECK (period IN ('week','all')),
+  country  text NOT NULL,
+  members  integer NOT NULL,   -- members counted (only countries with enough members are stored)
+  active   integer NOT NULL,   -- active this week (week) or in the last 30 days (all)
+  xp       bigint NOT NULL DEFAULT 0,
+  stickers bigint NOT NULL DEFAULT 0,
+  verses   bigint NOT NULL DEFAULT 0,
+  PRIMARY KEY (period, country)
+);
+-- XP of every closed week and the sticker/verse counts at the start of the week (for weekly gains and monthly/yearly sums)
+CREATE TABLE IF NOT EXISTS ranking_week_xp (
+  week_monday integer NOT NULL,
+  user_id     bigint  NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  xp          integer NOT NULL,
+  PRIMARY KEY (week_monday, user_id)
+);
+CREATE TABLE IF NOT EXISTS ranking_week_base (
+  week_monday integer NOT NULL,
+  user_id     bigint  NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  stickers    integer NOT NULL DEFAULT 0,
+  verses      integer NOT NULL DEFAULT 0,
+  PRIMARY KEY (week_monday, user_id)
+);
+-- seasons: week (key = Monday), month (2026-10), ramadan (hijri year), year (2026); results stay forever
+CREATE TABLE IF NOT EXISTS ranking_seasons (
+  id           bigserial PRIMARY KEY,
+  kind         text NOT NULL CHECK (kind IN ('week','month','ramadan','year')),
+  key          text NOT NULL,
+  starts_on    date NOT NULL,
+  ends_on      date NOT NULL,
+  participants integer NOT NULL DEFAULT 0,
+  closed_at    timestamptz NOT NULL DEFAULT now(),
+  UNIQUE (kind, key)
+);
+CREATE TABLE IF NOT EXISTS ranking_results (
+  season_id bigint  NOT NULL REFERENCES ranking_seasons(id) ON DELETE CASCADE,
+  metric    text    NOT NULL,   -- xp_season | xp_total | streak | verses | stickers | mashaallah
+  pos       integer NOT NULL,   -- 1..100 (row order)
+  rank      integer NOT NULL,   -- competition rank (ties share it)
+  user_id   bigint  NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  score     bigint  NOT NULL,
+  country   text,
+  PRIMARY KEY (season_id, metric, pos)
+);
+CREATE INDEX IF NOT EXISTS ranking_results_user ON ranking_results(user_id, season_id);
+CREATE TABLE IF NOT EXISTS ranking_country_results (
+  season_id bigint  NOT NULL REFERENCES ranking_seasons(id) ON DELETE CASCADE,
+  metric    text    NOT NULL CHECK (metric IN ('xp','stickers','verses')),
+  mode      text    NOT NULL CHECK (mode IN ('total','per_capita')),
+  pos       integer NOT NULL,
+  rank      integer NOT NULL,
+  country   text    NOT NULL,
+  members   integer NOT NULL,
+  active    integer NOT NULL,
+  score     numeric(16,2) NOT NULL,
+  PRIMARY KEY (season_id, metric, mode, pos)
+);
+-- ===== Mishary track (21.10.2026): mentoring (text + audio review, no video) and talent seasons =====
+-- Mentoring is connection-based: a member asks a verified master (level master/sheikh, gold or official badge) whom
+-- they are connected with; the master accepts. Recordings are audio only (30–60 s, recorded in the app), private in
+-- MEDIA_DIR/mentoring and deleted 60 days after upload (files first, then the row keeps the feedback).
+CREATE TABLE IF NOT EXISTS mentoring_links (
+  id           bigserial PRIMARY KEY,
+  master_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  student_id   bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  status       text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','accepted','declined','ended')),
+  note         text NOT NULL DEFAULT '' CHECK (char_length(note) <= 200),
+  created_at   timestamptz NOT NULL DEFAULT now(),
+  responded_at timestamptz,
+  UNIQUE (master_id, student_id),
+  CHECK (master_id <> student_id)
+);
+CREATE INDEX IF NOT EXISTS mentoring_links_student ON mentoring_links(student_id, status);
+CREATE INDEX IF NOT EXISTS mentoring_links_master ON mentoring_links(master_id, status);
+-- talent seasons: monthly / Ramadan / special challenges on a verse range; results feed the Hall of Fame and rankings
+CREATE TABLE IF NOT EXISTS talent_seasons (
+  id               bigserial PRIMARY KEY,
+  slug             text NOT NULL UNIQUE CHECK (slug ~ '^[a-z0-9-]{3,40}$'),
+  kind             text NOT NULL CHECK (kind IN ('month','ramadan','special')),
+  title            text NOT NULL DEFAULT '' CHECK (char_length(title) <= 80),
+  verses           text NOT NULL,                      -- "67:1-5" (one surah, a verse range)
+  starts_on        date NOT NULL,
+  ends_on          date NOT NULL,
+  max_seconds      integer NOT NULL DEFAULT 180 CHECK (max_seconds BETWEEN 30 AND 300),
+  reward_mythic    text NOT NULL,                      -- new sticker id for the winner (never reuses an existing id)
+  reward_legendary text NOT NULL,                      -- new sticker id for places 2 and 3
+  status           text NOT NULL DEFAULT 'open' CHECK (status IN ('open','judging','closed')),
+  published_at     timestamptz,
+  created_by       bigint REFERENCES users(id) ON DELETE SET NULL,
+  created_at       timestamptz NOT NULL DEFAULT now(),
+  CHECK (ends_on >= starts_on)
+);
+CREATE TABLE IF NOT EXISTS mentoring_submissions (
+  id          bigserial PRIMARY KEY,
+  student_id  bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  master_id   bigint REFERENCES users(id) ON DELETE CASCADE,          -- mentoring: the master asked for feedback
+  season_id   bigint REFERENCES talent_seasons(id) ON DELETE CASCADE, -- season: reviewed by masters and admins
+  verse_key   text NOT NULL,
+  duration_ms integer NOT NULL,
+  note        text NOT NULL DEFAULT '' CHECK (char_length(note) <= 300),
+  media_path  text,                                    -- inside MEDIA_DIR (never a public URL); null once deleted
+  media_mime  text,
+  status      text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','reviewed','withdrawn')),
+  created_at  timestamptz NOT NULL DEFAULT now(),
+  expires_at  timestamptz NOT NULL DEFAULT now() + interval '60 days',
+  deleted_at  timestamptz,
+  CHECK ((master_id IS NULL) <> (season_id IS NULL))
+);
+CREATE INDEX IF NOT EXISTS mentoring_submissions_student ON mentoring_submissions(student_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS mentoring_submissions_master ON mentoring_submissions(master_id, status, created_at DESC);
+CREATE INDEX IF NOT EXISTS mentoring_submissions_season ON mentoring_submissions(season_id, status);
+CREATE INDEX IF NOT EXISTS mentoring_submissions_expiry ON mentoring_submissions(expires_at) WHERE media_path IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS mentoring_submissions_one_entry ON mentoring_submissions(season_id, student_id) WHERE season_id IS NOT NULL AND status <> 'withdrawn';
+-- structured feedback: rubric 1..5 per area plus a short text (checked by moderate()); one review per reviewer
+CREATE TABLE IF NOT EXISTS mentoring_reviews (
+  id            bigserial PRIMARY KEY,
+  submission_id bigint NOT NULL REFERENCES mentoring_submissions(id) ON DELETE CASCADE,
+  reviewer_id   bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  makharij      smallint NOT NULL CHECK (makharij BETWEEN 1 AND 5),
+  tajweed       smallint NOT NULL CHECK (tajweed BETWEEN 1 AND 5),
+  waqf          smallint NOT NULL CHECK (waqf BETWEEN 1 AND 5),
+  pace          smallint NOT NULL CHECK (pace BETWEEN 1 AND 5),
+  maqam         smallint NOT NULL CHECK (maqam BETWEEN 1 AND 5),
+  body          text NOT NULL DEFAULT '' CHECK (char_length(body) <= 600),
+  flagged       text,                                  -- soft hit of moderate(), for the admin
+  created_at    timestamptz NOT NULL DEFAULT now(),
+  UNIQUE (submission_id, reviewer_id)
+);
+-- published season results (hook for rankings: one row per placed member; score = average rubric total 5..25)
+CREATE TABLE IF NOT EXISTS season_results (
+  season_id    bigint NOT NULL REFERENCES talent_seasons(id) ON DELETE CASCADE,
+  user_id      bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  place        smallint NOT NULL CHECK (place BETWEEN 1 AND 10),
+  score        numeric(5,2) NOT NULL,
+  sticker_id   text,                                   -- reward sticker (talent_seasons.reward_mythic / reward_legendary)
+  rarity       text CHECK (rarity IN ('mythic','legendary')),
+  published_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (season_id, user_id)
+);
+CREATE INDEX IF NOT EXISTS season_results_user ON season_results(user_id);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;

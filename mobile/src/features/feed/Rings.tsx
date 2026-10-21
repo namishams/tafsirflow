@@ -25,6 +25,8 @@ import { dayNum } from "./statsStore";
 import { useGardenRing } from "@/features/garden/garden";
 import { useGardenText } from "@/features/garden/texts";
 import { TreeArt } from "@/features/garden/Tree";
+import { useMyRanking } from "@/features/rankings/api";
+import { useRT } from "@/features/rankings/text";
 
 const ANN_SEEN = "qmc.feed-ann-seen";
 
@@ -71,6 +73,8 @@ export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item
   // the garden: the tree with its progress to the next stage (a seed until it is planted)
   const gr = useGardenRing(pro);
   const gtx = useGardenText();
+  const rk = useMyRanking();
+  const rkt = useRT();
   const rings: Ring[] = [
     { id: "garden", label: gtx.ring, value: "", icon: "heart", tone: ["#0b3d2e", "#1d6b52"], progress: gr.frac, fresh: gr.fruits > 0, node: <TreeArt id={gr.id} type={gr.type} stage={gr.planted ? Math.min(gr.stage, 8) : 0} size={46} still />, on: () => router.push((gr.planted ? "/garden" : "/garden?plant=1") as Href) },
     ...ann,
@@ -81,6 +85,7 @@ export const TodayRings = memo(function TodayRings({ onVerse }: { onVerse: (item
     { id: "streak", label: tx.ringStreak, value: String(streakOf(stats)), icon: "flame", tone: ["#3d2a0b", "#a67c2e"], on: () => router.push("/feed-stats" as Href) },
     { id: "radio", label: tx.ringRadio, value: "", icon: "radio", tone: ["#473614", "#a27a29"], on: () => router.push("/radio" as Href), live: true },
     { id: "verse", label: tx.ringVerse, value: votd, icon: "book", tone: ["#473a1f", "#8c723e"], on: () => onVerse(`v:${votd}`) },
+    { id: "ranking", label: rkt("ringLabel"), value: rk?.week?.rank ? `#${Intl.NumberFormat(lang).format(rk.week.rank)}` : "", icon: "trophy", tone: ["#3d2a0b", "#a67c2e"], fresh: rk?.settings.world ? undefined : true, on: () => router.push("/ranking" as Href) },
     { id: "stats", label: tx.statsOpen, value: "", icon: "trophy", tone: ["#10382c", "#1f6953"], on: () => router.push("/feed-stats" as Href) },
     { id: "shams", label: tx.ringShams, value: "", icon: "sun", tone: ["#3d2a0b", "#8c6a1d"], on: () => { statPromo("shams-ring", "tap"); router.push("/shams" as Href); } },
     ...(pro ? [] : [{ id: "pro", label: tx.ringPro, value: "", icon: "starBig" as IconName, tone: ["#0b3d2e", "#c6a65e"] as [string, string], on: () => { statPromo("pro-ring", "tap"); openPro("general"); } }]),

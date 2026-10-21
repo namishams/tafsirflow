@@ -1,7 +1,6 @@
-import { Stack } from "expo-router";
-import { RankingScreen } from "@/features/progress/screens";
+import { RankingsScreen } from "@/features/rankings/RankingsScreen";
 
-// /ranking – same path as quranmasterclass.com/ranking
+// /ranking – worldwide rankings (website: /ranking). The older points ranking of all learners lives at /ranking-points.
 export default function RankingRoute() {
-  return <><Stack.Screen options={{ headerShown: false }} /><RankingScreen /></>;
+  return <RankingsScreen />;
 }

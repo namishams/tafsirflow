@@ -9,6 +9,8 @@ import { useTT } from "./text";
 import { usePro } from "@/lib/pro";
 import { syncSijill } from "@/features/sijill/summary";
 import { useST } from "@/features/sijill/text";
+import { useMyRanking } from "@/features/rankings/api";
+import { useRT } from "@/features/rankings/text";
 
 // Account tab: my talent profile, discover, notifications, messages, requests, badges, privacy settings, redeem an
 // invitation, guidelines and – for admins only – moderation. Nothing here without a signed-in account.
@@ -18,6 +20,8 @@ export function TalentsAccount() {
   const { user } = useAuth();
   const st = useST();
   const { pro } = usePro();
+  const rt = useRT();
+  const mine = useMyRanking();
   const [username, setUsername] = useState<string | null>(null);
   useEffect(() => {
     if (!user) { setUsername(null); return; }
@@ -33,6 +37,7 @@ export function TalentsAccount() {
         <LinkRow first icon="user" title={username ? tt("myTalentProfile") : tt("createProfile")} subtitle={username ? `@${username}` : undefined}
           onPress={() => go(username ? `/talents/u/${username}` : "/community/me")} />
         {username ? <LinkRow icon="trophy" title={st("title")} subtitle={st("privacyBtn")} onPress={() => go("/talents/sijill")} /> : null}
+        {username ? <LinkRow icon="trophy" title={rt("title")} subtitle={mine?.week?.rank ? rt("rankWorld", { n: mine.week.rank }) : rt("eyebrow")} onPress={() => go("/ranking")} /> : null}
         {username ? <LinkRow icon="starBig" title={st("friends")} onPress={() => go("/talents/friends")} /> : null}
         <LinkRow icon="search" title={tt("discoverTitle")} onPress={() => go("/talents")} />
         <LinkRow icon="heart" title={tt("notifications")} onPress={() => go("/talents/notifications")} />
