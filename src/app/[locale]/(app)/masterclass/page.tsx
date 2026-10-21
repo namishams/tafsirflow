@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import LearnHub, { LEARN_LINKS } from "@/components/learn/LearnHub";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
@@ -36,6 +37,8 @@ export default async function MasterclassPage({ params }: { params: Promise<{ lo
       ] },
     ],
   };
+  const tn = await getTranslations("nav");
+  const learnLabels = Object.fromEntries(LEARN_LINKS.map(([, k]) => [k, tn(k)]));
   const trio: [string, string, string, string][] = [[c.tajweedT, c.tajweedD, "/tajweed", "تجويد"], [c.hifzT, c.hifzD, "/plan", "حفظ"], [c.gardenT, c.gardenD, "/app", "حديقة"]];
 
   return (
@@ -69,6 +72,8 @@ export default async function MasterclassPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
+      {/* the courses of the app, free on the website (src/components/learn) */}
+      <LearnHub labels={learnLabels} />
       <MasterclassPillars locale={locale} />
       <SchoolStages locale={locale} detailed />
       <ReciterLadder locale={locale} />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import AdminTalents from "@/components/talents/AdminTalents";
+import { postingEnabled } from "@/lib/talentPosting";
 
 // /admin/talents – Quran Talents moderation on the web (admins only, checked by every API call)
 export const dynamic = "force-dynamic";
@@ -12,7 +13,7 @@ export default async function AdminTalentsPage({ params }: { params: Promise<{ l
   return (
     <div className="mx-auto max-w-4xl px-5 py-10">
       <h1 className="font-display text-4xl">Quran Talents · Moderation</h1>
-      <AdminTalents locale={locale} />
+      <AdminTalents locale={locale} posting={postingEnabled()} />
     </div>
   );
 }

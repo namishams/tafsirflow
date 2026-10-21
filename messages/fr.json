@@ -312,7 +312,18 @@
     "wudu": "Apprendre les ablutions (wudu)",
     "community": "Communauté",
     "duagen": "Générateur d'invocations",
-    "premium": "Pro"
+    "premium": "Pro",
+    "groupSchool": "Madrasa",
+    "school": "École madrasa",
+    "academyCourses": "Cours de l'Académie",
+    "arabicRead": "Cours de lecture",
+    "arabicLang": "Arabe A1–C1",
+    "reciterPath": "Parcours du récitant",
+    "cards": "Cartes de révision",
+    "tests": "Tests et examens",
+    "abrahamic": "Abraham dans le Coran",
+    "haramain": "Les Haramain",
+    "certificates": "Mes certificats"
   },
   "today": {
     "title": "Aujourd'hui",

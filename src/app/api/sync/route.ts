@@ -9,7 +9,10 @@ const KEYS = new Set(["tf:last", "tf:bookmarks", "tf:srs", "tf:days", "tf:notes"
   // feed data of the app (saves, likes, stats, gamification, stickers); merged on the device, bounded there
   "tf:story-saves", "qmc.hadithSaved", "tf:feed-likes", "tf:stickers", "qmc.feed-gamify", "qmc.feed-stats2",
   // the garden of the app (tree growth, decorations) and its sticker collection (verse bitset + counts); merged on the device
-  "qmc.garden", "qmc.stickers2"]);
+  "qmc.garden", "qmc.stickers2",
+  // the learning courses (website src/lib/learn/sync.ts merges them; same keys as the app)
+  "qmc.courses.v1", "qmc.qaida", "qmc.arabicLang.v1", "qmc.reciterPath", "qmc.srs.v1", "qmc.srs.tests",
+  "qmc.abrahamic.course.v1", "qmc.haramain.course.v1", "qmc.haramain.guide.v1", "qmc.school.v1"]);
 
 export async function GET() {
   const u = await currentUser();

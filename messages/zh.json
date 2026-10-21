@@ -312,7 +312,18 @@
     "wudu": "学习小净",
     "community": "社区",
     "duagen": "祈祷词生成器",
-    "premium": "Pro"
+    "premium": "Pro",
+    "groupSchool": "学堂",
+    "school": "古兰经学堂",
+    "academyCourses": "学院课程",
+    "arabicRead": "阅读课程",
+    "arabicLang": "阿拉伯语 A1–C1",
+    "reciterPath": "诵读者之路",
+    "cards": "复习卡片",
+    "tests": "测验与考试",
+    "abrahamic": "《古兰经》中的易卜拉欣",
+    "haramain": "两圣寺",
+    "certificates": "我的证书"
   },
   "today": {
     "title": "今天",

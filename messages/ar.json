@@ -314,7 +314,18 @@
     "duagen": "صانع الدعاء",
     "premium": "Pro",
     "masterclass": "الماستركلاس",
-    "talents": "المواهب"
+    "talents": "المواهب",
+    "groupSchool": "المدرسة",
+    "school": "المدرسة القرآنية",
+    "academyCourses": "دورات الأكاديمية",
+    "arabicRead": "دورة القراءة",
+    "arabicLang": "العربية A1–C1",
+    "reciterPath": "مسار القارئ",
+    "cards": "بطاقات المراجعة",
+    "tests": "الاختبارات",
+    "abrahamic": "إبراهيم في القرآن",
+    "haramain": "الحرمان الشريفان",
+    "certificates": "شهاداتي"
   },
   "today": {
     "title": "اليوم",

@@ -312,7 +312,18 @@
     "wudu": "Aprender la ablución (wudu)",
     "community": "Comunidad",
     "duagen": "Generador de duas",
-    "premium": "Pro"
+    "premium": "Pro",
+    "groupSchool": "Madrasa",
+    "school": "Escuela madrasa",
+    "academyCourses": "Cursos de la Academia",
+    "arabicRead": "Curso de lectura",
+    "arabicLang": "Árabe A1–C1",
+    "reciterPath": "Camino del recitador",
+    "cards": "Tarjetas de repaso",
+    "tests": "Pruebas y exámenes",
+    "abrahamic": "Abraham en el Corán",
+    "haramain": "Los Haramain",
+    "certificates": "Mis certificados"
   },
   "today": {
     "title": "Hoy",

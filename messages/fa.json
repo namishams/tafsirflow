@@ -312,7 +312,18 @@
     "wudu": "آموزش وضو",
     "community": "جامعه",
     "duagen": "دعاساز",
-    "premium": "Pro"
+    "premium": "Pro",
+    "groupSchool": "مدرسه",
+    "school": "مدرسه",
+    "academyCourses": "دوره‌های آکادمی",
+    "arabicRead": "دوره خواندن",
+    "arabicLang": "عربی A1–C1",
+    "reciterPath": "مسیر قاری",
+    "cards": "کارت‌های مرور",
+    "tests": "آزمون‌ها",
+    "abrahamic": "ابراهیم در قرآن",
+    "haramain": "حرمین",
+    "certificates": "گواهی‌های من"
   },
   "today": {
     "title": "امروز",

@@ -312,7 +312,18 @@
     "wudu": "اودس زده کړئ",
     "community": "ټولنه",
     "duagen": "د دعا جوړونکی",
-    "premium": "Pro"
+    "premium": "Pro",
+    "groupSchool": "مدرسه",
+    "school": "مدرسه",
+    "academyCourses": "د اکاډمۍ کورسونه",
+    "arabicRead": "د لوستلو کورس",
+    "arabicLang": "عربي A1–C1",
+    "reciterPath": "د قاري لاره",
+    "cards": "د بیاکتنې کارتونه",
+    "tests": "ازموینې",
+    "abrahamic": "په قرآن کې ابراهیم",
+    "haramain": "حرمین",
+    "certificates": "زما سندونه"
   },
   "today": {
     "title": "نن",

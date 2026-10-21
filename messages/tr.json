@@ -312,7 +312,18 @@
     "wudu": "Abdest öğren",
     "community": "Topluluk",
     "duagen": "Dua oluşturucu",
-    "premium": "Pro"
+    "premium": "Pro",
+    "groupSchool": "Medrese",
+    "school": "Medrese okulu",
+    "academyCourses": "Akademi kursları",
+    "arabicRead": "Okuma kursu",
+    "arabicLang": "Arapça A1–C1",
+    "reciterPath": "Kâri yolu",
+    "cards": "Tekrar kartları",
+    "tests": "Testler ve sınavlar",
+    "abrahamic": "Kur'an'da Hz. İbrahim",
+    "haramain": "Harameyn",
+    "certificates": "Sertifikalarım"
   },
   "today": {
     "title": "Bugün",

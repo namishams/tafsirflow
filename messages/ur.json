@@ -312,7 +312,18 @@
     "wudu": "وضو سیکھیں",
     "community": "کمیونٹی",
     "duagen": "دعا جنریٹر",
-    "premium": "Pro"
+    "premium": "Pro",
+    "groupSchool": "مدرسہ",
+    "school": "مدرسہ",
+    "academyCourses": "اکیڈمی کورسز",
+    "arabicRead": "پڑھنے کا کورس",
+    "arabicLang": "عربی A1–C1",
+    "reciterPath": "قاری کا راستہ",
+    "cards": "دہرائی کارڈز",
+    "tests": "ٹیسٹ اور امتحانات",
+    "abrahamic": "قرآن میں ابراہیم",
+    "haramain": "حرمین شریفین",
+    "certificates": "میرے سرٹیفکیٹ"
   },
   "today": {
     "title": "آج",

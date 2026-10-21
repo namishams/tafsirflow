@@ -314,7 +314,18 @@
     "duagen": "Dua generator",
     "premium": "Pro",
     "masterclass": "Masterclass",
-    "talents": "Talents"
+    "talents": "Talents",
+    "groupSchool": "Madrasa",
+    "school": "Madrasa school",
+    "academyCourses": "Academy courses",
+    "arabicRead": "Reading course",
+    "arabicLang": "Arabic A1–C1",
+    "reciterPath": "Reciter Path",
+    "cards": "Review cards",
+    "tests": "Tests and exams",
+    "abrahamic": "Abraham in the Quran",
+    "haramain": "The Haramain",
+    "certificates": "My certificates"
   },
   "today": {
     "title": "Today",

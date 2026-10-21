@@ -312,7 +312,18 @@
     "wudu": "Изучить омовение (вуду)",
     "community": "Сообщество",
     "duagen": "Генератор дуа",
-    "premium": "Pro"
+    "premium": "Pro",
+    "groupSchool": "Медресе",
+    "school": "Школа медресе",
+    "academyCourses": "Курсы академии",
+    "arabicRead": "Курс чтения",
+    "arabicLang": "Арабский A1–C1",
+    "reciterPath": "Путь чтеца",
+    "cards": "Карточки",
+    "tests": "Тесты и экзамены",
+    "abrahamic": "Авраам в Коране",
+    "haramain": "Харамейн",
+    "certificates": "Мои сертификаты"
   },
   "today": {
     "title": "Сегодня",

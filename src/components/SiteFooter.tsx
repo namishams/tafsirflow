@@ -22,7 +22,7 @@ export default async function SiteFooter() {
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">{t("app.tagline")}</p>
             <div className="mt-6"><TrustStrip compact /></div>
           </div>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:col-span-4">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:col-span-4 lg:grid-cols-5">
             {GROUPS.map((g) => (
               <nav key={g.title} aria-label={t(`nav.${g.title}`)}>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">{t(`nav.${g.title}`)}</p>

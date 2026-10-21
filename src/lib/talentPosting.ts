@@ -10,13 +10,15 @@ import { certifiedReciterLevel, displayBadge, refreshBadges } from "./talentBadg
 // reported by the app) and a verified profile (application approved by an admin). Pro only when requirePro is
 // switched on (default off: all social features are free). The numbers come from `posting` in
 // src/lib/feed/config.json, so they can change without an app update.
-export type PostingRules = { requirePro: boolean; minReciterLevel: number; requireVerified: boolean; minAge: number; minSeconds: number; maxSeconds: number; storyHours: number; postsPerDay: number };
-const DEFAULTS: PostingRules = { requirePro: false, minReciterLevel: 3, requireVerified: true, minAge: MIN_POST_AGE, minSeconds: 10, maxSeconds: 30, storyHours: 24, postsPerDay: 5 };
+export type PostingRules = { enabled: boolean; requirePro: boolean; minReciterLevel: number; requireVerified: boolean; minAge: number; minSeconds: number; maxSeconds: number; storyHours: number; postsPerDay: number };
+const DEFAULTS: PostingRules = { enabled: false, requirePro: false, minReciterLevel: 3, requireVerified: true, minAge: MIN_POST_AGE, minSeconds: 10, maxSeconds: 30, storyHours: 24, postsPerDay: 5 };
 
 export function postingRules(): PostingRules {
   const p = ((raw as { posting?: Partial<PostingRules> }).posting ?? {}) as Partial<PostingRules>;
   const num = (v: unknown, d: number, min: number, max: number) => (typeof v === "number" && Number.isFinite(v) ? Math.max(min, Math.min(max, Math.floor(v))) : d);
   return {
+    // owner decision 21.10.2026: the network shows learning achievements only; posting is off unless switched on
+    enabled: p.enabled === true,
     requirePro: typeof p.requirePro === "boolean" ? p.requirePro : DEFAULTS.requirePro,
     requireVerified: typeof p.requireVerified === "boolean" ? p.requireVerified : DEFAULTS.requireVerified,
     minReciterLevel: num(p.minReciterLevel, DEFAULTS.minReciterLevel, 0, 20),
@@ -28,8 +30,15 @@ export function postingRules(): PostingRules {
   };
 }
 
+/** clips, stories, comments and likes on clips are available (posting.enabled in config.json) */
+export const postingEnabled = () => postingRules().enabled;
+/** the answer of the clip endpoints while posting is switched off */
+export const POSTING_OFF = { error: "posting_disabled" } as const;
+
 export type PostingStatus = {
   ok: boolean;
+  /** false: posting is switched off for everybody (the checklist is not shown) */
+  enabled: boolean;
   rules: PostingRules;
   age: { ok: boolean };
   pro: { ok: boolean; required: boolean };
@@ -55,7 +64,7 @@ export async function postingStatus(me: User): Promise<PostingStatus> {
     ...(app?.status === "rejected" && app.reject_reason ? { reason: String(app.reject_reason) } : {}),
   };
   const profile = !!prof && !prof.suspended;
-  return { ok: profile && age.ok && pro.ok && level.ok && verified.ok, rules, age, pro, level, verified, profile };
+  return { ok: rules.enabled && profile && age.ok && pro.ok && level.ok && verified.ok, enabled: rules.enabled, rules, age, pro, level, verified, profile };
 }
 
 /** "2:255" or "2:255-257" inside the Quran; returns the normalised key or null */

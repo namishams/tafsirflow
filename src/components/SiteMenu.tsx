@@ -54,7 +54,7 @@ export default function SiteMenu({ variant = "sheet" }: { variant?: "sheet" | "p
         </button>
         {open && (
           <div className="absolute inset-x-0 top-full z-50 border-b border-line bg-surface shadow-[0_18px_40px_-24px_rgb(0_0_0/0.35)]">
-            <nav aria-label={t("menu")} className="mx-auto max-w-6xl px-5 py-8">{list("grid-cols-4")}</nav>
+            <nav aria-label={t("menu")} className="mx-auto max-w-6xl px-5 py-8">{list("grid-cols-5")}</nav>
           </div>
         )}
       </div>
@@ -70,7 +70,7 @@ export default function SiteMenu({ variant = "sheet" }: { variant?: "sheet" | "p
             <button onClick={() => setOpen(false)} aria-label={t("close")} className="grid h-9 w-9 place-items-center rounded-full hover:bg-bg"><IconClose /></button>
           </div>
           <nav className="flex-1 overflow-y-auto px-5 pb-[calc(2rem+env(safe-area-inset-bottom))] pt-6">
-            <div className="mx-auto max-w-3xl">{list("grid-cols-2 sm:grid-cols-4")}</div>
+            <div className="mx-auto max-w-3xl">{list("grid-cols-2 sm:grid-cols-3 lg:grid-cols-5")}</div>
           </nav>
         </div>,
         document.body,

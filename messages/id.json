@@ -312,7 +312,18 @@
     "wudu": "Belajar wudhu",
     "community": "Komunitas",
     "duagen": "Penyusun doa",
-    "premium": "Pro"
+    "premium": "Pro",
+    "groupSchool": "Madrasah",
+    "school": "Sekolah madrasah",
+    "academyCourses": "Kursus Akademi",
+    "arabicRead": "Kursus membaca",
+    "arabicLang": "Bahasa Arab A1–C1",
+    "reciterPath": "Jalur Qari",
+    "cards": "Kartu ulasan",
+    "tests": "Tes dan ujian",
+    "abrahamic": "Ibrahim dalam Al-Qur'an",
+    "haramain": "Haramain",
+    "certificates": "Sertifikat saya"
   },
   "today": {
     "title": "Hari ini",

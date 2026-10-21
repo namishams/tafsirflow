@@ -2,6 +2,7 @@ import { readJSON, setWriteHook, writeJSON } from "./storage";
 import { mergePoints, type Points } from "./points";
 import { mergeListen, type Listen } from "./listen";
 import type { Srs } from "./learning";
+import { learnMerge, learnSnapshot } from "./learn/sync";
 
 type Last = { chapter: number; verse: number; at?: number };
 type Days = Record<string, number>;
@@ -76,6 +77,9 @@ let timer: ReturnType<typeof setTimeout> | null = null;
 
 async function push() {
   await fetch("/api/sync", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify(snapshot()) }).catch(() => undefined);
+  // the courses ported from the app (src/lib/learn/sync.ts) go in their own request, with the app's keys
+  const learn = learnSnapshot();
+  if (Object.keys(learn).length) await fetch("/api/sync", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify(learn) }).catch(() => undefined);
 }
 
 // Call after sign-in or page load: merges the account's data into this browser and starts auto-upload
@@ -83,8 +87,10 @@ export async function startSync(): Promise<boolean> {
   try {
     const r = await fetch("/api/sync", { cache: "no-store" });
     if (!r.ok) { setWriteHook(null); return false; }
-    const merged = merge(snapshot(), (await r.json()) as Record<string, unknown>);
+    const remote = (await r.json()) as Record<string, unknown>;
+    const merged = merge(snapshot(), remote);
     for (const k of KEYS) if (merged[k] !== undefined) writeJSON(k, merged[k], true);
+    for (const [k, v] of Object.entries(learnMerge(learnSnapshot(), remote))) if (v !== undefined) writeJSON(k, v, true);
     await push();
     setWriteHook(() => {
       if (timer) clearTimeout(timer);

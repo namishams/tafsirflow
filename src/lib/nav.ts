@@ -18,6 +18,12 @@ export const GROUPS: NavGroup[] = [
     { href: "/salah", key: "salah" }, { href: "/wudu", key: "wudu" }, { href: "/tajweed", key: "tajweed" }, { href: "/vocab", key: "vocab" }, { href: "/plan", key: "plan" }, { href: "/map", key: "map" },
     { href: "/stats", key: "stats" }, { href: "/ranking", key: "ranking" },
   ] },
+  // the courses ported from the app (school, courses, Arabic, Reciter Path, cards, tests) – free on the website
+  { title: "groupSchool", items: [
+    { href: "/school", key: "school" }, { href: "/courses", key: "academyCourses" }, { href: "/arabic/read", key: "arabicRead" }, { href: "/arabic/lang", key: "arabicLang" },
+    { href: "/reciter-path", key: "reciterPath" }, { href: "/cards", key: "cards" }, { href: "/tests", key: "tests" }, { href: "/abrahamic", key: "abrahamic" },
+    { href: "/haramain", key: "haramain" }, { href: "/school/certificates", key: "certificates" },
+  ] },
   { title: "groupQuran", items: [
     { href: "/quran", key: "quran" }, { href: "/search", key: "search" }, { href: "/reciters", key: "reciters" }, { href: "/radio", key: "radio" },
     { href: "/khatm", key: "khatm" }, { href: "/duas", key: "duas" }, { href: "/dua-generator", key: "duagen" }, { href: "/prayer", key: "prayer" }, { href: "/community", key: "community" }, { href: "/talents", key: "talents" },
