@@ -37,7 +37,7 @@ export function BigButton({ title, onPress, variant = "gold", disabled, height =
         </LinearGradient>
       ) : (
         <View style={{ height, borderRadius: radius, justifyContent: "center",
-          backgroundColor: variant === "rose" ? "rgb(176,72,96)" : variant === "ink" ? t.ink : t.surface,
+          backgroundColor: variant === "rose" ? "rgb(150,52,48)" : variant === "ink" ? t.ink : t.surface,
           borderWidth: variant === "outline" ? 1 : 0, borderColor: t.line }}>
           {inner}
         </View>

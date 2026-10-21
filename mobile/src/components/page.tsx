@@ -3,7 +3,7 @@ import { ActivityIndicator, Pressable, ScrollView, Text, View, useWindowDimensio
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, goldButton, stage, type Theme, type, useTheme } from "@/lib/theme";
-import { Arcade, Display, Eyebrow, GoldButton, LogoMark, OutlineButton, SmallStar, Stage } from "./brand";
+import { Arcade, Display, Eyebrow, GoldButton, OutlineButton, SmallStar, Stage, Wordmark } from "./brand";
 import { Icon, type IconName } from "./icons";
 import { openPro, usePro, type ProFeature } from "@/lib/pro";
 import { useT } from "@/i18n";
@@ -73,15 +73,14 @@ export function PageHero({ eyebrow, title, lead, arabic, children, topInset = fa
   );
 }
 
-/** app bar with the logo, like the website header (used on the Today tab) */
+/** app bar with the gold wordmark, like the website header (used on the Today tab) */
 export function BrandBar() {
   const t = useTheme();
   const insets = useSafeAreaInsets();
   return (
     <View style={{ paddingTop: insets.top, backgroundColor: t.surface, borderBottomWidth: 1, borderBottomColor: t.line }}>
       <View style={{ height: 52, flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 16 }}>
-        <LogoMark size={30} />
-        <Text style={{ fontFamily: FONT.bold, fontSize: 16.5, letterSpacing: -0.3, color: t.ink }} accessibilityRole="header">Quran Masterclass</Text>
+        <View accessibilityRole="header"><Wordmark height={26} /></View>
       </View>
     </View>
   );

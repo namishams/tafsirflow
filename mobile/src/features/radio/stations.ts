@@ -44,7 +44,7 @@ export const STATIONS: Station[] = [
 ];
 
 // jewel tones of Islamic art (emerald, lapis, garnet, Iznik turquoise, amber, aubergine, olive)
-export const J = { emerald: "linear-gradient(165deg,#13644b 0%,#073024 55%,#04190f 100%)", lapis: "linear-gradient(165deg,#244a86 0%,#0e2348 55%,#070f22 100%)", garnet: "linear-gradient(165deg,#7a2433 0%,#3a0d16 55%,#1a0509 100%)", turquoise: "linear-gradient(165deg,#0f6b6c 0%,#06393b 55%,#031b1c 100%)", amber: "linear-gradient(165deg,#7c5617 0%,#3b2707 55%,#1c1203 100%)", aubergine: "linear-gradient(165deg,#4d2760 0%,#25102f 55%,#110616 100%)", olive: "linear-gradient(165deg,#4f5a22 0%,#262c0d 55%,#111405 100%)" };
+export const J = { emerald: "linear-gradient(165deg,#13644b 0%,#073024 55%,#04190f 100%)", lapis: "linear-gradient(165deg,#268468 0%,#134334 55%,#070f22 100%)", garnet: "linear-gradient(165deg,#7a5d24 0%,#392b0e 55%,#1a0509 100%)", turquoise: "linear-gradient(165deg,#0f6b6c 0%,#06393b 55%,#031b1c 100%)", amber: "linear-gradient(165deg,#7c5617 0%,#3b2707 55%,#1c1203 100%)", aubergine: "linear-gradient(165deg,#604d27 0%,#2f2510 55%,#110616 100%)", olive: "linear-gradient(165deg,#4f5a22 0%,#262c0d 55%,#111405 100%)" };
 // station posters: calligraphy and colour per station
 export const POSTER: Record<string, { ar: string; bg: string }> = {
   quran: { ar: "القرآن", bg: J.emerald },

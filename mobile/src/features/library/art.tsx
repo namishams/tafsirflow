@@ -183,7 +183,7 @@ export function Mosque({ width = 240, color }: { width?: number; color: string }
 // ---------- arch window of coloured inlay (chapter cards, secrets) ----------
 const ARCH = "M34 300V158C34 92 118 46 200 14C282 46 366 92 366 158V300Z";
 const ARCH_OUT = "M22 300V156C22 84 110 34 200 0C290 34 378 84 378 156V300";
-const JEWELS = [["#0c4a37", "#06221a"], ["#3a2f12", "#14110a"], ["#173640", "#081418"], ["#1f2b44", "#0b101b"], ["#3b1f2b", "#160b10"], ["#2c3a1a", "#10160a"], ["#30254a", "#100c19"], ["#401c14", "#170a07"]];
+const JEWELS = [["#0c4a37", "#06221a"], ["#3a2f12", "#14110a"], ["#174034", "#081418"], ["#1f4439", "#0b101b"], ["#3b321f", "#160b10"], ["#2c3a1a", "#10160a"], ["#4a3e25", "#100c19"], ["#403114", "#170a07"]];
 
 /** a pointed-arch window of coloured inlay with the Arabic word in gold (IslamArchWindow, aspect 4:3) */
 export function ArchWindow({ i, ar }: { i: number; ar: string }) {

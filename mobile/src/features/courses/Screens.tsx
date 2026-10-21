@@ -335,7 +335,7 @@ export function Quiz({ qs, onDone, header }: { qs: RunQ[]; onDone: (right: numbe
           const isRight = pick !== null && k === q.answer, isWrong = pick === k && k !== q.answer;
           return (
             <Pressable key={k} onPress={() => choose(k)} accessibilityRole="button" accessibilityState={{ selected: pick === k, disabled: pick !== null }} accessibilityLabel={o}
-              style={{ padding: 14, borderRadius: R.md, borderWidth: 1.5, borderColor: isRight ? t.accent : isWrong ? "rgb(190,84,104)" : t.line, backgroundColor: isRight ? t.accentSoft : t.surface }}>
+              style={{ padding: 14, borderRadius: R.md, borderWidth: 1.5, borderColor: isRight ? t.accent : isWrong ? "rgb(160,58,52)" : t.line, backgroundColor: isRight ? t.accentSoft : t.surface }}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, lineHeight: 22, color: t.ink }}>{o}</Text>
             </Pressable>
           );
@@ -343,7 +343,7 @@ export function Quiz({ qs, onDone, header }: { qs: RunQ[]; onDone: (right: numbe
       </View>
       {pick !== null ? (
         <View style={{ gap: 10 }}>
-          <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.bold, fontSize: 15, color: pick === q.answer ? t.accent : "rgb(190,84,104)" }}>{pick === q.answer ? c("right") : `${c("wrong")}: ${q.options[q.answer]}`}</Text>
+          <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.bold, fontSize: 15, color: pick === q.answer ? t.accent : "rgb(160,58,52)" }}>{pick === q.answer ? c("right") : `${c("wrong")}: ${q.options[q.answer]}`}</Text>
           {q.explain ? <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 22, color: t.muted }}>{q.explain}</Text> : null}
           <GoldButton title={c("next")} onPress={next} />
         </View>

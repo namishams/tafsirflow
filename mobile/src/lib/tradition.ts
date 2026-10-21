@@ -48,6 +48,15 @@ export function useTradition() {
  *  feed for Shia only. Not chosen yet counts as "both". */
 export const showsSunni = (t: TraditionChoice | null) => t !== "shia";
 export const showsShia = (t: TraditionChoice | null) => t !== "sunni";
-export const showsNahj = (t: TraditionChoice | null) => t === "shia";
+export const NAHJ_OPTIN_KEY = "qmc.nahjOptIn";
+/** Shia mode shows the Nahj al-Balagha by default; everyone else switches it on ("Show Nahj al-Balagha" in Account or on its Discover card) */
+export const showsNahj = (t: TraditionChoice | null, optIn: boolean = readJSON<boolean>(NAHJ_OPTIN_KEY, false)) => t === "shia" || optIn;
+export const setNahjOptIn = (on: boolean) => writeJSON(NAHJ_OPTIN_KEY, on, true);
+/** reactive: the Nahj al-Balagha is visible for the current tradition and opt-in */
+export function useNahjVisible(): boolean {
+  const { tradition } = useTradition();
+  const optIn = useStored<boolean>(NAHJ_OPTIN_KEY, false);
+  return showsNahj(tradition, optIn);
+}
 /** the library chapter on how to pray in this tradition */
 export const prayerChapter = (t: TraditionChoice | null) => (t === "shia" ? "/islam/prayer-shia" : "/islam/prayer-sunni");

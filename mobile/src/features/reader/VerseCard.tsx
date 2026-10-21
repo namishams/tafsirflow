@@ -266,8 +266,8 @@ export const VerseCard = memo(function VerseCard({ v, i, active, marked, note, n
               <Text maxFontSizeMultiplier={1.8} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink, marginBottom: 10 }}>{w("rateQ")}</Text>
               <View style={{ flexDirection: "row", gap: 8 }}>
                 <Pressable onPress={() => h.rate("again")} accessibilityRole="button" accessibilityLabel={w("again")}
-                  style={({ pressed }) => ({ flex: 1, minHeight: 44, borderRadius: R.md, borderWidth: 1, borderColor: t.dark ? "rgba(239,68,68,0.4)" : "rgb(252,165,165)", backgroundColor: pressed ? "rgba(239,68,68,0.08)" : t.surface, alignItems: "center", justifyContent: "center" })}>
-                  <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.dark ? "rgb(252,165,165)" : "rgb(185,28,28)" }}>↺ {w("again")}</Text>
+                  style={({ pressed }) => ({ flex: 1, minHeight: 44, borderRadius: R.md, borderWidth: 1, borderColor: t.dark ? "rgba(178,72,64,0.4)" : "rgb(232,176,164)", backgroundColor: pressed ? "rgba(178,72,64,0.08)" : t.surface, alignItems: "center", justifyContent: "center" })}>
+                  <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.dark ? "rgb(232,176,164)" : "rgb(130,40,36)" }}>↺ {w("again")}</Text>
                 </Pressable>
                 <Pressable onPress={() => h.rate("good")} accessibilityRole="button" accessibilityLabel={w("good")}
                   style={({ pressed }) => ({ flex: 1, minHeight: 44, borderRadius: R.md, backgroundColor: t.accent, opacity: pressed ? 0.88 : 1, alignItems: "center", justifyContent: "center" })}>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { Animated, Pressable, Text, View } from "react-native";
+import { Animated, Easing, Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -57,11 +57,11 @@ export function SharerCelebration() {
   useEffect(() => onSharerTierUp((n) => {
     setTier(n);
     v.setValue(0);
-    const show = reduce ? Animated.timing(v, { toValue: 1, duration: 1, useNativeDriver: true }) : Animated.spring(v, { toValue: 1, friction: 5, tension: 90, useNativeDriver: true });
+    const show = reduce ? Animated.timing(v, { toValue: 1, duration: 1, useNativeDriver: true }) : Animated.timing(v, { toValue: 1, duration: 480, easing: Easing.out(Easing.cubic), useNativeDriver: true });
     Animated.sequence([show, Animated.delay(2600), Animated.timing(v, { toValue: 0, duration: 260, useNativeDriver: true })]).start(({ finished }) => { if (finished) setTier(null); });
   }), [reduce, v]);
   if (tier === null) return null;
-  const scale = reduce ? 1 : v.interpolate({ inputRange: [0, 1], outputRange: [0.6, 1] });
+  const scale = reduce ? 1 : v.interpolate({ inputRange: [0, 1], outputRange: [0.94, 1] });
   return (
     <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, top: insets.top + 12, alignItems: "center", zIndex: 1000 }}>
       <Animated.View accessibilityLiveRegion="assertive" accessible accessibilityLabel={`${fillText(s.tierUp, { n: tier })}. ${s.tierUpLead}`}

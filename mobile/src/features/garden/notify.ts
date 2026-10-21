@@ -47,7 +47,7 @@ export async function scheduleGardenNotification(g: Garden, pro: boolean, lang: 
     const perm = await Notifications.getPermissionsAsync();
     if (!perm.granted) return;
     const tx = gardenText(lang);
-    const p = progressOf(t.gp, pro);
+    const p = progressOf(t, pro);
     const name = t.name || tx[`t_${t.type}`];
     let title: string, body: string;
     if (g.notifyStage) { title = fillG(tx.stageUp, { n: g.notifyStage }); body = fillG(tx.nStageB, { name, stage: tx[`s${p.stage}` as "s0"] }); clearNotifyStage(); }

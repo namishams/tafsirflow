@@ -10,7 +10,7 @@ import { align } from "@/web/recite";
 import { useRpT } from "./texts";
 import { wordsOf } from "./useVerse";
 
-const RED = "rgb(220,38,38)";
+const RED = "rgb(160,58,52)";
 const SPEEDS = [0.5, 0.75, 1] as const;
 
 /** the verse from the word data, right to left; `mark` highlights words (rule examples, test answers) */
@@ -275,7 +275,7 @@ export function WordCheck({ verse }: { verse: Verse }) {
       {ok ? (
         <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 6 }}>
           {words.map((w, i) => (
-            <View key={w.position} style={{ paddingHorizontal: 6, borderRadius: R.md, backgroundColor: ok[i] ? t.accentSoft : "rgba(220,38,38,0.08)" }}>
+            <View key={w.position} style={{ paddingHorizontal: 6, borderRadius: R.md, backgroundColor: ok[i] ? t.accentSoft : "rgba(160,58,52,0.08)" }}>
               <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 40, color: ok[i] ? t.accent : RED }}>{w.text_uthmani}</Text>
             </View>
           ))}

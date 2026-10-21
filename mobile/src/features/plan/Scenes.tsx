@@ -1,9 +1,10 @@
+// DESIGN FROZEN (owner approved, tag garten-design-v1) — do not change visuals; only bug fixes.
 import { memo, useEffect, useState } from "react";
 import { View } from "react-native";
 import Svg, { Circle, Defs, G, Line, Path, RadialGradient, Stop, Text as SvgText } from "react-native-svg";
 import Animated, { Easing, cancelAnimation, interpolate, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withSpring, withTiming, type SharedValue } from "react-native-reanimated";
 import { Icon, type IconName } from "@/components/icons";
-import { stage } from "@/lib/theme";
+import { ARABIC_FONT, FONT, stage } from "@/lib/theme";
 import { TreeArt } from "@/features/garden/Tree";
 
 // Illustrated, gently animated scenes for the Shams Method screens and the personal path: an arcade of five arches
@@ -200,4 +201,46 @@ export function MapPath({ ys, height, still }: { ys: number[]; height: number; s
       ))}
     </View>
   );
+}
+
+/** the story's opening picture: an open mushaf on a carved wooden stand (rahle), light rising from its pages */
+export const QuranStand = memo(function QuranStand({ still, size = 200 }: { still: boolean; size?: number }) {
+  const v = useLoop(still, 4200);
+  const glow = useAnimatedStyle(() => ({ opacity: 0.55 + Math.sin(v.value * Math.PI * 2) * 0.25, transform: [{ scale: 0.95 + Math.sin(v.value * Math.PI * 2) * 0.04 }] }));
+  const w = size, h = size * 0.9, c = w / 2;
+  return (
+    <View accessible={false} style={{ width: w, height: h, alignSelf: "center" }}>
+      <Animated.View style={[{ position: "absolute", left: c - w * 0.6, top: -h * 0.2, width: w * 1.2, height: w * 1.2 }, glow]}>
+        <Svg width={w * 1.2} height={w * 1.2}><Defs>{glowDef("qs", "#ffe2a0", 0.6)}</Defs><Circle cx={w * 0.6} cy={w * 0.6} r={w * 0.6} fill="url(#qs)" /></Svg>
+      </Animated.View>
+      <Svg width={w} height={h} style={{ position: "absolute" }}>
+        {/* the rahle: two crossed boards */}
+        <Path d={`M${c - w * 0.32} ${h * 0.98} L${c + w * 0.18} ${h * 0.5} L${c + w * 0.26} ${h * 0.56} L${c - w * 0.22} ${h * 0.98} Z`} fill="#6b4a26" stroke={GOLD} strokeWidth={1} />
+        <Path d={`M${c + w * 0.32} ${h * 0.98} L${c - w * 0.18} ${h * 0.5} L${c - w * 0.26} ${h * 0.56} L${c + w * 0.22} ${h * 0.98} Z`} fill="#7a5530" stroke={GOLD} strokeWidth={1} />
+        {/* the open book */}
+        <Path d={`M${c} ${h * 0.58} Q${c - w * 0.18} ${h * 0.46} ${c - w * 0.38} ${h * 0.52} L${c - w * 0.36} ${h * 0.24} Q${c - w * 0.18} ${h * 0.18} ${c} ${h * 0.3} Z`} fill="#f6ead0" stroke={GOLD} strokeWidth={1.2} />
+        <Path d={`M${c} ${h * 0.58} Q${c + w * 0.18} ${h * 0.46} ${c + w * 0.38} ${h * 0.52} L${c + w * 0.36} ${h * 0.24} Q${c + w * 0.18} ${h * 0.18} ${c} ${h * 0.3} Z`} fill="#fbf2dc" stroke={GOLD} strokeWidth={1.2} />
+        {[0, 1, 2, 3, 4].map((i) => <G key={i}>
+          <Path d={`M${c - w * 0.31} ${h * (0.3 + i * 0.045)} Q${c - w * 0.17} ${h * (0.26 + i * 0.045)} ${c - w * 0.05} ${h * (0.34 + i * 0.045)}`} stroke="#8a6a2c" strokeWidth={1.1} fill="none" opacity={0.55} />
+          <Path d={`M${c + w * 0.05} ${h * (0.34 + i * 0.045)} Q${c + w * 0.17} ${h * (0.26 + i * 0.045)} ${c + w * 0.31} ${h * (0.3 + i * 0.045)}`} stroke="#8a6a2c" strokeWidth={1.1} fill="none" opacity={0.55} />
+        </G>)}
+        <Path d={`M${c} ${h * 0.3} V${h * 0.58}`} stroke={GOLD} strokeWidth={1.4} />
+        <Path d={`M${c - w * 0.34} ${h * 0.22} q${w * 0.02} -${h * 0.03} ${w * 0.05} 0 M${c + w * 0.29} ${h * 0.22} q${w * 0.02} -${h * 0.03} ${w * 0.05} 0`} stroke={GOLD} strokeWidth={1.2} fill="none" />
+      </Svg>
+    </View>
+  );
+});
+
+/** a quiet quotation with its reference (hadith or verse) */
+export function RefQuote({ text, source, arabic }: { text: string; source: string; arabic?: string }) {
+  return (
+    <View style={{ borderLeftWidth: 2, borderLeftColor: GOLD, paddingLeft: 12, paddingVertical: 4, gap: 4 }}>
+      {arabic ? <SvgFreeArabic text={arabic} /> : null}
+      <Animated.Text style={{ fontFamily: FONT.italic, fontSize: 15.5, lineHeight: 23, color: CREAM }}>{text}</Animated.Text>
+      <Animated.Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 0.4, color: "rgba(214,180,108,0.9)" }}>{source}</Animated.Text>
+    </View>
+  );
+}
+function SvgFreeArabic({ text }: { text: string }) {
+  return <Animated.Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 50, color: CREAM, writingDirection: "rtl", textAlign: "right" }}>{text}</Animated.Text>;
 }

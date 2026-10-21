@@ -189,15 +189,15 @@ export function ProfileView({ initialTab = "overview" }: { initialTab?: ProfileT
       ? <Pressable onPress={() => go(href)} accessibilityRole="link" style={({ pressed }) => ({ flex: 1, backgroundColor: pressed ? t.bg : t.surface, padding: 20 })}>{inner}</Pressable>
       : <View style={{ flex: 1, backgroundColor: t.surface, padding: 20 }}>{inner}</View>;
   };
-  const statusText = (k: string) => msg[k] ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 14, color: k === "del" ? "rgb(220,38,38)" : t.accent }}>{msg[k]}</Text> : null;
+  const statusText = (k: string) => msg[k] ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 14, color: k === "del" ? "rgb(160,58,52)" : t.accent }}>{msg[k]}</Text> : null;
   const inkButton = (title: string, onPress: () => void, disabled = false) => (
     <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityState={{ disabled }} style={({ pressed }) => ({ height: 44, borderRadius: R.sm, backgroundColor: t.ink, paddingHorizontal: 20, alignItems: "center", justifyContent: "center", opacity: disabled ? 0.4 : pressed ? 0.85 : 1, alignSelf: "flex-start" })}>
       <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: t.bg }}>{title}</Text>
     </Pressable>
   );
   const lineButton = (title: string, onPress: () => void, danger = false, disabled = false) => (
-    <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityState={{ disabled }} style={({ pressed }) => ({ minHeight: 44, borderRadius: R.sm, borderWidth: 1, borderColor: danger ? "rgb(239,68,68)" : pressed ? t.ink : t.line, paddingHorizontal: 20, paddingVertical: 10, alignItems: "center", justifyContent: "center", opacity: disabled ? 0.4 : 1, alignSelf: "flex-start" })}>
-      <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: danger ? "rgb(220,38,38)" : t.ink }}>{title}</Text>
+    <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityState={{ disabled }} style={({ pressed }) => ({ minHeight: 44, borderRadius: R.sm, borderWidth: 1, borderColor: danger ? "rgb(178,72,64)" : pressed ? t.ink : t.line, paddingHorizontal: 20, paddingVertical: 10, alignItems: "center", justifyContent: "center", opacity: disabled ? 0.4 : 1, alignSelf: "flex-start" })}>
+      <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: danger ? "rgb(160,58,52)" : t.ink }}>{title}</Text>
     </Pressable>
   );
   const years = Array.from({ length: new Date().getFullYear() - 3 - MIN_YEAR + 1 }, (_, i) => String(new Date().getFullYear() - 3 - i));
@@ -370,7 +370,7 @@ export function ProfileView({ initialTab = "overview" }: { initialTab?: ProfileT
             </View>
             {statusText("export")}
             <View style={{ marginTop: 24, paddingTop: 20, borderTopWidth: 1, borderTopColor: t.line }}>
-              <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 15, color: "rgb(220,38,38)" }}>{tr("delete")}</Text>
+              <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 15, color: "rgb(160,58,52)" }}>{tr("delete")}</Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: t.muted, marginTop: 4 }}>{tr("deleteText")}</Text>
               <View style={{ gap: 12, marginTop: 12 }}>
                 <TextField label={tr("pwCurrent")} value={del} onChangeText={setDel} secureTextEntry autoComplete="current-password" textContentType="password" />

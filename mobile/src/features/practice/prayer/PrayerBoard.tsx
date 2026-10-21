@@ -377,7 +377,7 @@ function DayArc({ times, now, tz, locale, t }: { times: Record<Prayer, Date>; no
         <Defs>
           <SvgLinear id="pb-horizon" x1="0" y1="0" x2="1" y2="0"><Stop offset="0" stopColor="#d6b46c" stopOpacity={0} /><Stop offset="0.5" stopColor="#d6b46c" stopOpacity={0.8} /><Stop offset="1" stopColor="#d6b46c" stopOpacity={0} /></SvgLinear>
           <RadialGradient id="pb-sky" cx="50%" cy="100%" r="70%"><Stop offset="0" stopColor="#e9cf99" stopOpacity={0.16} /><Stop offset="1" stopColor="#e9cf99" stopOpacity={0} /></RadialGradient>
-          <SvgLinear id="pb-night" x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor="#0b1631" stopOpacity={0.45} /><Stop offset="1" stopColor="#0b1631" stopOpacity={0} /></SvgLinear>
+          <SvgLinear id="pb-night" x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor="#0d2f25" stopOpacity={0.45} /><Stop offset="1" stopColor="#0d2f25" stopOpacity={0} /></SvgLinear>
         </Defs>
         <Path d={`M${L} ${base} A ${rx} ${ry} 0 0 1 ${Rr} ${base} Z`} fill="url(#pb-sky)" />
         <Rect x={8} y={base} width={W - 16} height={56} fill="url(#pb-night)" />

@@ -57,5 +57,5 @@ export function SelectRow({ label, value, placeholder, onPress }: { label: strin
 export function FormError({ text }: { text: string }) {
   const t = useTheme();
   if (!text) return null;
-  return <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: t.danger, backgroundColor: "rgba(190,84,104,0.08)", borderRadius: R.sm, padding: 12 }}>{text}</Text>;
+  return <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: t.danger, backgroundColor: "rgba(160,58,52,0.08)", borderRadius: R.sm, padding: 12 }}>{text}</Text>;
 }

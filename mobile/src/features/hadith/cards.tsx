@@ -8,7 +8,9 @@ import { CALLIG_FONT, FONT, R, TONES, stage, useTheme } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { useStored, writeJSON } from "@/lib/store";
 import { shouldOnboard } from "@/features/extra/Onboarding";
-import { prayerChapter, showsNahj, useTradition, type TraditionChoice } from "@/lib/tradition";
+import { prayerChapter, useNahjVisible, useTradition, type TraditionChoice } from "@/lib/tradition";
+import { NahjOptInSetting } from "@/features/nahj-course/Screens";
+import { useNahjText } from "@/features/nahj-course/text";
 import { getDailyHadith, type HadithItem } from "./data";
 import { HadithCard, LoadState } from "./ui";
 import { useHadithText } from "./texts";
@@ -62,6 +64,7 @@ export function TraditionSetting() {
     <View style={{ gap: 8 }}>
       <Segmented<TraditionChoice> value={tradition} options={[["sunni", x.sunni], ["shia", x.shia], ["both", x.both]]} onChange={(v) => { set(v, lang); writeJSON(ASK_DONE_KEY, true, true); }} />
       <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 18, color: t.muted }}>{x.tradNote}</Text>
+      <NahjOptInSetting />
     </View>
   );
 }
@@ -159,25 +162,23 @@ function Spot({ title, lead, cta, arabic, colors, onPress }: { title: string; le
   );
 }
 
-/** the Nahj al-Balagha card – Shia mode only */
+/** the Nahj al-Balagha card: the course when it is shown (Shia mode by default), otherwise the offer to show it */
 export function NahjCard() {
-  const x = useHadithText();
-  const { tradition } = useTradition();
-  if (!showsNahj(tradition)) return null;
-  return <Spot title={x.nahj} lead={x.nahjLead} cta={x.nahjOpen} arabic="نهج البلاغة" colors={TONES[3] ?? [stage.bg, stage.deep]} onPress={() => go("/nahj")} />;
+  const x = useNahjText();
+  const on = useNahjVisible();
+  return <Spot title={on ? x.title : x.optInTitle} lead={on ? x.lead : x.optInNote} cta={on ? x.start : x.optInOn} arabic="نهج البلاغة" colors={TONES[3] ?? [stage.bg, stage.deep]} onPress={() => go("/nahj-studies")} />;
 }
 
 /** Discover: How to pray, Hadith and (Shia mode) Nahj al-Balagha */
 export function HadithSpotlight() {
   const x = useHadithText();
   const { width } = useWindowDimensions();
-  const { tradition } = useTradition();
   return (
     <View style={{ gap: 12 }}>
       <HowToPrayCard />
       <View style={{ flexDirection: width >= 640 ? "row" : "column", gap: 12 }}>
         <Spot title={x.title} lead={x.lead} cta={x.open} arabic="حديث" colors={TONES[0] ?? [stage.bg, stage.deep]} onPress={() => go("/hadith")} />
-        {showsNahj(tradition) ? <NahjCard /> : null}
+        <NahjCard />
       </View>
     </View>
   );

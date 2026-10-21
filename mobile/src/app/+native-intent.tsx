@@ -11,6 +11,11 @@ export function redirectSystemPath({ path }: { path: string; initial: boolean })
     const p = url.pathname.replace(LOCALES, "") || "/";
     if (p === "/account/reset") return `/reset-password${url.search}`;
     if (p === "/account") return "/account";
+    // Quran Talents: website profiles /talents/<username>(/followers|/following) open the app's profile screens
+    const tal = /^\/talents\/([a-z0-9_.]{3,20})(?:\/(followers|following))?\/?$/.exec(p);
+    const APP_TALENT_ROUTES = new Set(["me", "record", "player", "badges", "notifications", "blocked", "settings", "list", "requests", "messages", "guidelines", "admin", "invite"]);
+    if (tal && !APP_TALENT_ROUTES.has(tal[1])) return tal[2] ? `/talents/list?u=${tal[1]}&kind=${tal[2]}` : `/talents/u/${tal[1]}`;
+    if (p === "/talents/me") return "/talents";
     return `${p}${url.search}`;
   } catch {
     return path;

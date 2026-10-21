@@ -10,7 +10,7 @@ import { FONT, stage, useTheme, type Theme } from "@/lib/theme";
 export const HM_GOLD = "rgb(201,166,94)";
 export const HM_GOLD_L = "rgb(233,207,153)";
 export const STAGE = "rgb(8,38,29)";
-export const RED = "rgb(239,68,68)";
+export const RED = "rgb(178,72,64)";
 export const hmIvory = (t: Theme) => (t.dark ? "rgb(15,35,28)" : "rgb(252,249,241)");
 export const hmGoldD = (t: Theme) => (t.dark ? "rgb(214,178,106)" : "rgb(150,116,52)");
 /** text in --q-ink-gold */

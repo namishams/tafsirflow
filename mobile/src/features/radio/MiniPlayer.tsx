@@ -204,7 +204,7 @@ const s = StyleSheet.create({
   title: { fontFamily: FONT.bold, fontSize: 14 },
   sub: { fontFamily: FONT.regular, fontSize: 12 },
   btn: { width: 44, height: 44, alignItems: "center", justifyContent: "center" },
-  live: { flexDirection: "row", alignItems: "center", gap: 4, borderRadius: 3, paddingHorizontal: 5, paddingVertical: 1.5, backgroundColor: "rgb(220,38,38)" },
+  live: { flexDirection: "row", alignItems: "center", gap: 4, borderRadius: 3, paddingHorizontal: 5, paddingVertical: 1.5, backgroundColor: "rgb(160,58,52)" },
   liveDot: { width: 5, height: 5, borderRadius: 2.5, backgroundColor: "#ffffff" },
   liveText: { fontFamily: FONT.display, fontSize: 9.5, color: "#ffffff" },
 });

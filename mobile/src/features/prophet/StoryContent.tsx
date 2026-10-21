@@ -9,7 +9,7 @@ import { useProphetText } from "./texts";
 // paragraphs taken from the library, "known for" points, the original sources and the way to the full text.
 
 export function Badge({ badge }: { badge: NonNullable<Story["badge"]> }) {
-  const bg = badge.tone === "no" ? "rgba(190,84,104,0.55)" : badge.tone === "info" ? "rgba(214,180,108,0.32)" : "rgba(58,190,146,0.38)";
+  const bg = badge.tone === "no" ? "rgba(160,58,52,0.55)" : badge.tone === "info" ? "rgba(214,180,108,0.32)" : "rgba(58,190,146,0.38)";
   return <Text style={{ alignSelf: "flex-start", fontFamily: FONT.bold, fontSize: 12, color: "#fff", paddingHorizontal: 10, paddingVertical: 4, borderRadius: 999, backgroundColor: bg, overflow: "hidden" }}>{badge.text}</Text>;
 }
 

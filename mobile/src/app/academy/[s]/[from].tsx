@@ -97,7 +97,7 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
     const base = { borderRadius: R.lg, borderWidth: 2, padding: 14 };
     if (!answered) return { ...base, borderColor: t.line, backgroundColor: t.surface };
     if (n === ans) return { ...base, borderColor: "rgb(201,166,94)", backgroundColor: "rgba(201,166,94,0.15)" };
-    if (n === picked) return { ...base, borderColor: "rgb(190,84,104)", backgroundColor: "rgba(190,84,104,0.1)" };
+    if (n === picked) return { ...base, borderColor: "rgb(160,58,52)", backgroundColor: "rgba(160,58,52,0.1)" };
     return { ...base, borderColor: t.line, backgroundColor: t.surface, opacity: 0.6 };
   };
 
@@ -134,8 +134,8 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
             <>
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted }}>{w("question", { n: i + 1, total: qs.length })}</Text>
-                <View style={{ paddingHorizontal: 10, height: 26, justifyContent: "center", borderRadius: R.pill, borderWidth: 1, borderColor: left <= 5 && !answered ? "rgba(190,84,104,0.5)" : t.line }}>
-                  <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: left <= 5 && !answered ? "rgb(190,84,104)" : t.muted }}>{Math.max(0, left)}s</Text>
+                <View style={{ paddingHorizontal: 10, height: 26, justifyContent: "center", borderRadius: R.pill, borderWidth: 1, borderColor: left <= 5 && !answered ? "rgba(160,58,52,0.5)" : t.line }}>
+                  <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: left <= 5 && !answered ? "rgb(160,58,52)" : t.muted }}>{Math.max(0, left)}s</Text>
                 </View>
               </View>
               <GoldProgress value={i / qs.length} />
@@ -175,8 +175,8 @@ function Runner({ chapter, verses, from }: { chapter: Chapter; verses: Verse[]; 
               </GoldCard>
 
               {answered ? (
-                <View style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, borderRadius: R.lg, borderWidth: 1, borderColor: wasRight ? "rgba(201,166,94,0.45)" : "rgba(190,84,104,0.3)", backgroundColor: wasRight ? "rgba(201,166,94,0.12)" : "rgba(190,84,104,0.08)" }} accessibilityLiveRegion="polite">
-                  <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: wasRight ? t.gold : "rgb(190,84,104)", flex: 1 }}>{wasRight ? w("right") : picked === -1 ? w("timeUp") : w("wrong")} <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>· {q.key}</Text></Text>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: 14, borderRadius: R.lg, borderWidth: 1, borderColor: wasRight ? "rgba(201,166,94,0.45)" : "rgba(160,58,52,0.3)", backgroundColor: wasRight ? "rgba(201,166,94,0.12)" : "rgba(160,58,52,0.08)" }} accessibilityLiveRegion="polite">
+                  <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: wasRight ? t.gold : "rgb(160,58,52)", flex: 1 }}>{wasRight ? w("right") : picked === -1 ? w("timeUp") : w("wrong")} <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>· {q.key}</Text></Text>
                   <GoldButton compact title={i + 1 >= qs.length ? w("finish") : w("next")} onPress={next} />
                 </View>
               ) : null}

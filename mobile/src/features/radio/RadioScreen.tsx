@@ -82,7 +82,7 @@ export default function RadioScreen() {
               <Icon name="chevronLeft" color="#ffffff" size={24} />
             </Pressable>
             <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 10, marginTop: 6 }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 3, paddingHorizontal: 8, paddingVertical: 3, backgroundColor: "rgb(220,38,38)" }}
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 3, paddingHorizontal: 8, paddingVertical: 3, backgroundColor: "rgb(160,58,52)" }}
                 accessibilityLabel={t("onAir")}>
                 <LiveDot on={r.playing && !reduce} />
                 <Text style={{ fontFamily: FONT.display, fontSize: 11, letterSpacing: 1.2, color: "#ffffff" }}>{t("onAir")}</Text>
@@ -246,9 +246,9 @@ const StationRow = memo(function StationRow({ id, title, desc, word, bg, current
         <Text numberOfLines={2} style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: th.muted, marginTop: 2 }}>{desc}</Text>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 5, borderRadius: 3, paddingHorizontal: 7, paddingVertical: 3,
-        backgroundColor: playing ? "rgb(220,38,38)" : "transparent", borderWidth: 1, borderColor: playing ? "rgb(220,38,38)" : "rgba(220,38,38,0.55)" }}>
+        backgroundColor: playing ? "rgb(160,58,52)" : "transparent", borderWidth: 1, borderColor: playing ? "rgb(160,58,52)" : "rgba(160,58,52,0.55)" }}>
         {playing ? <LiveDot on={!reduce} /> : null}
-        <Text style={{ fontFamily: FONT.display, fontSize: 10, letterSpacing: 1.1, color: playing ? "#ffffff" : "rgb(220,38,38)" }}>{onAir}</Text>
+        <Text style={{ fontFamily: FONT.display, fontSize: 10, letterSpacing: 1.1, color: playing ? "#ffffff" : "rgb(160,58,52)" }}>{onAir}</Text>
       </View>
     </Pressable>
   );

@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 import { router, type Href } from "expo-router";
-import { LogoMark } from "@/components/brand";
+import { Wordmark } from "@/components/brand";
 import { useWebT } from "@/i18n/web";
 import { FONT, useTheme } from "@/lib/theme";
 import { MadeInDubai, Skyline } from "./Signature";
@@ -22,9 +22,8 @@ export function SiteFooter() {
     <View style={{ borderTopWidth: 1, borderTopColor: t.line, backgroundColor: t.surface }}>
       <View style={{ paddingHorizontal: 20, paddingTop: 32 }}><Skyline /></View>
       <View style={{ paddingHorizontal: 20, paddingTop: 28, paddingBottom: 28, gap: 14 }}>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
-          <LogoMark size={26} />
-          <Text style={{ fontFamily: FONT.display, fontSize: 15.5, letterSpacing: -0.3, color: t.ink }}>Quran Masterclass</Text>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Wordmark height={28} />
         </View>
         <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: t.muted }}>{w("app.tagline")}</Text>
         <View style={{ marginTop: 6 }}><TrustStrip variant="compact" /></View>

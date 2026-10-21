@@ -102,3 +102,13 @@ export function nahjFeed(lang: string, cursor: string | null, size = 8): { items
   const items = Array.from({ length: size }, (_, i) => nahjAt(ed, s, k + i));
   return { items, cursor: `${s}:${k + size}` };
 }
+
+/** every bundled passage of an edition (the course reads from these; the whole list is never shown as a table of contents) */
+export const nahjAllPassages = (ed: NahjEdition): NahjPassage[] => book(ed).items.map((it) => passage(ed, it));
+const byId = new Map<string, NahjPassage | null>();
+/** one passage by its id ("k3.2", "h31"), or null when this edition does not carry it */
+export function nahjPassageById(ed: NahjEdition, id: string): NahjPassage | null {
+  const key = `${ed}:${id}`;
+  if (!byId.has(key)) { const it = book(ed).items.find((x) => x.id === id); byId.set(key, it ? passage(ed, it) : null); }
+  return byId.get(key) ?? null;
+}

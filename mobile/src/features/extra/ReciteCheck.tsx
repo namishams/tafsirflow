@@ -7,7 +7,7 @@ import { useWebT } from "@/i18n/web";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { useX } from "./strings";
 
-const RED = "rgb(220,38,38)";
+const RED = "rgb(160,58,52)";
 
 /**
  * "Recite & check" of the website (ReciteCheck.tsx) for the reader. The app part that works today: record yourself

@@ -714,3 +714,54 @@ export const GIFT_FULL: Record<string, string> = {
   en: "Your tree has had enough stickers for today. Give more tomorrow; learning still makes it grow.",
   de: "Ihr Baum hat für heute genug Sticker bekommen. Morgen können Sie wieder schenken; Lernen lässt ihn weiter wachsen.",
 };
+
+/** the calendar of the tree: its age and the days the next stage still needs (all app languages, polite form) */
+export const AGE_TEXT: Record<string, { age: string; age1: string; wait: string; wait1: string }> = {
+  en: { age: "Your tree is {n} days old", age1: "Your tree was planted today", wait: "Next stage in at least {n} days", wait1: "Next stage from tomorrow at the earliest" },
+  de: { age: "Ihr Baum ist {n} Tage alt", age1: "Ihr Baum wurde heute gepflanzt", wait: "Nächste Stufe frühestens in {n} Tagen", wait1: "Nächste Stufe frühestens ab morgen" },
+  ar: { age: "عمر شجرتك {n} يومًا", age1: "زُرعت شجرتك اليوم", wait: "المرحلة التالية بعد {n} يومًا على الأقل", wait1: "المرحلة التالية من الغد على أقرب تقدير" },
+  tr: { age: "Ağacınız {n} günlük", age1: "Ağacınız bugün dikildi", wait: "Sonraki aşama en erken {n} gün sonra", wait1: "Sonraki aşama en erken yarın" },
+  ur: { age: "آپ کا درخت {n} دن کا ہے", age1: "آپ کا درخت آج لگایا گیا", wait: "اگلا مرحلہ کم از کم {n} دن بعد", wait1: "اگلا مرحلہ جلد از جلد کل سے" },
+  fa: { age: "درخت شما {n} روزه است", age1: "درخت شما امروز کاشته شد", wait: "مرحلهٔ بعد دست‌کم پس از {n} روز", wait1: "مرحلهٔ بعد زودتر از فردا نیست" },
+  ps: { age: "ستاسو ونه {n} ورځې عمر لري", age1: "ستاسو ونه نن کرل شوه", wait: "بل پړاو لږ تر لږه {n} ورځې وروسته", wait1: "بل پړاو تر ټولو ژر له سبا څخه" },
+  fr: { age: "Votre arbre a {n} jours", age1: "Votre arbre a été planté aujourd'hui", wait: "Prochaine étape dans {n} jours au plus tôt", wait1: "Prochaine étape demain au plus tôt" },
+  es: { age: "Su árbol tiene {n} días", age1: "Su árbol se plantó hoy", wait: "Siguiente etapa en {n} días como mínimo", wait1: "Siguiente etapa a partir de mañana como pronto" },
+  id: { age: "Pohon Anda berumur {n} hari", age1: "Pohon Anda ditanam hari ini", wait: "Tahap berikutnya paling cepat {n} hari lagi", wait1: "Tahap berikutnya paling cepat besok" },
+  ms: { age: "Pokok anda berusia {n} hari", age1: "Pokok anda ditanam hari ini", wait: "Peringkat seterusnya sekurang-kurangnya {n} hari lagi", wait1: "Peringkat seterusnya paling awal esok" },
+  bn: { age: "আপনার গাছের বয়স {n} দিন", age1: "আপনার গাছটি আজ লাগানো হয়েছে", wait: "পরবর্তী ধাপ অন্তত {n} দিন পরে", wait1: "পরবর্তী ধাপ সবচেয়ে আগে আগামীকাল" },
+  ru: { age: "Вашему дереву {n} дн.", age1: "Ваше дерево посажено сегодня", wait: "Следующая ступень не раньше чем через {n} дн.", wait1: "Следующая ступень не раньше завтрашнего дня" },
+  zh: { age: "您的树已经 {n} 天了", age1: "您的树今天刚种下", wait: "至少 {n} 天后进入下一阶段", wait1: "最早明天进入下一阶段" },
+};
+/** "Your tree is 12 days old" and "Next stage in at least 3 days" (empty when nothing to wait for) */
+export function useAgeText(): (age: number, wait: number) => { age: string; wait: string } {
+  const { lang } = useLang();
+  const t = AGE_TEXT[lang] ?? AGE_TEXT.en;
+  return (age, wait) => ({ age: age <= 0 ? t.age1 : fillG(t.age, { n: age }), wait: wait <= 0 ? "" : wait === 1 ? t.wait1 : fillG(t.wait, { n: wait }) });
+}
+
+/** the sky of the garden: over Makkah or the learner's place, and the next prayer (all app languages) */
+type SkyT = { over: string; overHere: string; inMin: string; inH: string; label: string; mecca: string; local: string; p: Record<"fajr" | "sunrise" | "dhuhr" | "asr" | "maghrib" | "isha", string> };
+export const SKY_TEXT: Record<string, SkyT> = {
+  en: { over: "Sky over Makkah", overHere: "Sky over your location", inMin: "{p} in {n} min", inH: "{p} in {h} h {m} min", label: "Sky of the garden", mecca: "Makkah", local: "My location", p: { fajr: "Fajr", sunrise: "Sunrise", dhuhr: "Dhuhr", asr: "Asr", maghrib: "Maghrib", isha: "Isha" } },
+  de: { over: "Himmel über Mekka", overHere: "Himmel über Ihrem Ort", inMin: "{p} in {n} Min.", inH: "{p} in {h} Std. {m} Min.", label: "Himmel des Gartens", mecca: "Mekka", local: "Mein Ort", p: { fajr: "Fadschr", sunrise: "Sonnenaufgang", dhuhr: "Dhuhr", asr: "Asr", maghrib: "Maghrib", isha: "Ischa" } },
+  ar: { over: "سماء مكة المكرمة", overHere: "السماء فوق موقعك", inMin: "{p} بعد {n} دقيقة", inH: "{p} بعد {h} س {m} د", label: "سماء الحديقة", mecca: "مكة المكرمة", local: "موقعي", p: { fajr: "الفجر", sunrise: "الشروق", dhuhr: "الظهر", asr: "العصر", maghrib: "المغرب", isha: "العشاء" } },
+  tr: { over: "Mekke semâsı", overHere: "Bulunduğunuz yerin göğü", inMin: "{p} {n} dk sonra", inH: "{p} {h} sa {m} dk sonra", label: "Bahçenin göğü", mecca: "Mekke", local: "Konumum", p: { fajr: "İmsak", sunrise: "Güneş", dhuhr: "Öğle", asr: "İkindi", maghrib: "Akşam", isha: "Yatsı" } },
+  ur: { over: "مکہ مکرمہ کا آسمان", overHere: "آپ کے مقام کا آسمان", inMin: "{p} {n} منٹ میں", inH: "{p} {h} گھنٹے {m} منٹ میں", label: "باغ کا آسمان", mecca: "مکہ مکرمہ", local: "میرا مقام", p: { fajr: "فجر", sunrise: "طلوع آفتاب", dhuhr: "ظہر", asr: "عصر", maghrib: "مغرب", isha: "عشاء" } },
+  fa: { over: "آسمان مکه", overHere: "آسمان محل شما", inMin: "{p} تا {n} دقیقه دیگر", inH: "{p} تا {h} ساعت و {m} دقیقه دیگر", label: "آسمان باغ", mecca: "مکه", local: "محل من", p: { fajr: "صبح", sunrise: "طلوع آفتاب", dhuhr: "ظهر", asr: "عصر", maghrib: "مغرب", isha: "عشا" } },
+  ps: { over: "د مکې آسمان", overHere: "ستاسو د ځای آسمان", inMin: "{p} په {n} دقیقو کې", inH: "{p} په {h} ساعته {m} دقیقو کې", label: "د باغ آسمان", mecca: "مکه", local: "زما ځای", p: { fajr: "سهار", sunrise: "لمرختل", dhuhr: "ماسپښین", asr: "مازدیگر", maghrib: "ماښام", isha: "ماخستن" } },
+  fr: { over: "Ciel de La Mecque", overHere: "Ciel de votre lieu", inMin: "{p} dans {n} min", inH: "{p} dans {h} h {m} min", label: "Ciel du jardin", mecca: "La Mecque", local: "Mon lieu", p: { fajr: "Fajr", sunrise: "Lever du soleil", dhuhr: "Dhuhr", asr: "Asr", maghrib: "Maghrib", isha: "Isha" } },
+  es: { over: "Cielo de La Meca", overHere: "Cielo de su ubicación", inMin: "{p} en {n} min", inH: "{p} en {h} h {m} min", label: "Cielo del jardín", mecca: "La Meca", local: "Mi ubicación", p: { fajr: "Fajr", sunrise: "Amanecer", dhuhr: "Dhuhr", asr: "Asr", maghrib: "Magrib", isha: "Isha" } },
+  id: { over: "Langit Makkah", overHere: "Langit di lokasi Anda", inMin: "{p} dalam {n} menit", inH: "{p} dalam {h} jam {m} menit", label: "Langit taman", mecca: "Makkah", local: "Lokasi saya", p: { fajr: "Subuh", sunrise: "Terbit", dhuhr: "Zuhur", asr: "Asar", maghrib: "Magrib", isha: "Isya" } },
+  ms: { over: "Langit Makkah", overHere: "Langit di lokasi anda", inMin: "{p} dalam {n} minit", inH: "{p} dalam {h} jam {m} minit", label: "Langit taman", mecca: "Makkah", local: "Lokasi saya", p: { fajr: "Subuh", sunrise: "Syuruk", dhuhr: "Zohor", asr: "Asar", maghrib: "Maghrib", isha: "Isyak" } },
+  bn: { over: "মক্কার আকাশ", overHere: "আপনার অবস্থানের আকাশ", inMin: "{n} মিনিটে {p}", inH: "{h} ঘণ্টা {m} মিনিটে {p}", label: "বাগানের আকাশ", mecca: "মক্কা", local: "আমার অবস্থান", p: { fajr: "ফজর", sunrise: "সূর্যোদয়", dhuhr: "যোহর", asr: "আসর", maghrib: "মাগরিব", isha: "এশা" } },
+  ru: { over: "Небо над Меккой", overHere: "Небо над вашим местом", inMin: "{p} через {n} мин", inH: "{p} через {h} ч {m} мин", label: "Небо сада", mecca: "Мекка", local: "Моё место", p: { fajr: "Фаджр", sunrise: "Восход", dhuhr: "Зухр", asr: "Аср", maghrib: "Магриб", isha: "Иша" } },
+  zh: { over: "麦加的天空", overHere: "您所在地的天空", inMin: "{n} 分钟后{p}", inH: "{h} 小时 {m} 分钟后{p}", label: "花园的天空", mecca: "麦加", local: "我的位置", p: { fajr: "晨礼", sunrise: "日出", dhuhr: "晌礼", asr: "晡礼", maghrib: "昏礼", isha: "宵礼" } },
+};
+export function useSkyText(): SkyT { const { lang } = useLang(); return SKY_TEXT[lang] ?? SKY_TEXT.en; }
+/** "Sky over Makkah · Maghrib in 23 min" */
+export function skyLabel(t: SkyT, mecca: boolean, next: { prayer: keyof SkyT["p"]; at: number } | undefined, now = Date.now()): string {
+  const head = mecca ? t.over : t.overHere;
+  if (!next) return head;
+  const mins = Math.max(0, Math.round((next.at - now) / 60000)), p = t.p[next.prayer];
+  return `${head} · ${mins < 60 ? fillG(t.inMin, { p, n: mins }) : fillG(t.inH, { p, h: Math.floor(mins / 60), m: mins % 60 })}`;
+}

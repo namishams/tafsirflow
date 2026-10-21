@@ -10,7 +10,7 @@ const APP_ROUTES = new Set([
   "/khatm", "/assistant", "/world", "/prayer", "/guides", "/secrets", "/how", "/stats", "/ranking", "/dua-generator",
   "/community", "/wudu", "/calendar", "/names", "/search",
   "/feed", "/prophet-stories", // app-only: the Quran Feed and the stories (entry cards on Discover)
-  "/hadith", "/nahj", // app-only: hadith collections and the Nahj al-Balagha feed (Shia mode)
+  "/hadith", "/nahj", "/nahj-studies", // app-only: hadith collections and the Nahj al-Balagha feed (Shia mode)
 ]);
 export const hasAppRoute = (href: string) => APP_ROUTES.has(href.split("?")[0]);
 
@@ -20,8 +20,8 @@ export const APP_TILES: Tile[] = Object.values(TILES).filter((t) => hasAppRoute(
 /** tools that are not poster tiles on the website but reachable from its menu (title and text resolved by the screen) */
 export type ExtraTool = { key: "search" | "calendar" | "names"; href: string; ar: string; badge: string; bg: string };
 export const EXTRA_TOOLS: Record<ExtraTool["key"], ExtraTool> = {
-  search: { key: "search", href: "/search", ar: "بحث", badge: "library", bg: "linear-gradient(160deg,#1f3340 0%,#0a1218 100%)" },
-  calendar: { key: "calendar", href: "/calendar", ar: "هجري", badge: "plan", bg: "linear-gradient(160deg,#2b2a44 0%,#0d0c18 100%)" },
+  search: { key: "search", href: "/search", ar: "بحث", badge: "library", bg: "linear-gradient(160deg,#1f4036 0%,#0a1218 100%)" },
+  calendar: { key: "calendar", href: "/calendar", ar: "هجري", badge: "plan", bg: "linear-gradient(160deg,#2a443c 0%,#0d0c18 100%)" },
   names: { key: "names", href: "/names", ar: "أسماء", badge: "library", bg: "linear-gradient(160deg,#3a2a1c 0%,#140e09 100%)" },
 };
 

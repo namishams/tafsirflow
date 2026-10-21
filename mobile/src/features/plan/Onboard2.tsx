@@ -12,7 +12,12 @@ import { useReducedMotion } from "@/features/library/motion";
 import { TreeArt } from "@/features/garden/Tree";
 import { PlanMilestones } from "@/features/garden/widgets";
 import { JourneyStage } from "@/features/garden/Landscape";
-import { ArcadeOfSteps, Astrolabe, GrowingTerraces, MapPath, Rosette } from "./Scenes";
+import { ArcadeOfSteps, Astrolabe, GrowingTerraces, MapPath, QuranStand, RefQuote, Rosette } from "./Scenes";
+import { fillS, useStory } from "./story";
+import { RECITERS } from "@/lib/quran";
+import { readTradition } from "@/lib/tradition";
+import { useHadithText } from "@/features/hadith/texts";
+import { useWebT } from "@/i18n/web";
 import { STEPS, usePlan, type Plan } from "./plan";
 import { fmt, usePlanT } from "./texts";
 import { useO2 } from "./texts2";
@@ -46,11 +51,51 @@ export function ReplyCard({ title, body, cta, onNext }: { title: string; body: s
   );
 }
 
+/** The story begins: "the people of the Quran" (the honour of learning and teaching it, from the app's own hadith
+ *  texts; Quran references only for the Shia tradition), personal with name, goal, reciter and tradition. */
+export function PeopleOfQuran({ plan, goals, name, onDone }: { plan: Plan | null; goals: GoalV2[]; name: string; onDone: () => void }) {
+  const st = useStory();
+  const p = usePlanT();
+  const hx = useHadithText();
+  const web = useWebT("shams");
+  const label = useGoalLabel();
+  const insets = useSafeAreaInsets();
+  const reduce = useReducedMotion();
+  const [trad] = useState(() => readTradition());
+  const reciter = RECITERS.find((r) => r.folder === plan?.answers.reciter);
+  const goal = label(goals[0] ?? "daily");
+  const line = (s: string, n: number) => <Animated.Text key={s} entering={reduce ? undefined : FadeInDown.delay(500 + n * 140).duration(380)} style={{ fontFamily: FONT.medium, fontSize: 15, lineHeight: 22, color: "#ffffff" }}>{s}</Animated.Text>;
+  return (
+    <JourneyStage progress={1} horizon={0.37} veil={0.6}>
+      <ScrollView contentContainerStyle={{ padding: 22, paddingTop: insets.top + 18, paddingBottom: insets.bottom + 24, flexGrow: 1, gap: 16 }}>
+        <View style={{ height: 230, justifyContent: "flex-end" }}><QuranStand still={reduce} size={210} /></View>
+        <Animated.View entering={reduce ? undefined : FadeInDown.duration(420)} style={{ gap: 10 }}>
+          <Text style={kicker}>{st.kicker}</Text>
+          <Display size="title1" onStage>{name ? fillS(st.peopleT, { name }) : st.peopleT0}</Display>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 24, color: stage.textSoft }}>{st.peopleB}</Text>
+        </Animated.View>
+        <Animated.View entering={reduce ? undefined : FadeIn.delay(300).duration(500)}>
+          {trad === "shia" ? <RefQuote text={st.shiaQ} source={st.shiaQs} /> : <RefQuote text={web("why1")} source={web("why1s")} />}
+        </Animated.View>
+        <View style={{ gap: 6 }}>
+          {line(fillS(st.goalLine, { goal }), 0)}
+          {reciter ? line(fillS(st.reciterLine, { reciter: reciter.name }), 1) : null}
+          {trad ? line(fillS(st.tradLine, { trad: trad === "sunni" ? hx.sunni : trad === "shia" ? hx.shia : hx.both }), 2) : null}
+        </View>
+        <View style={{ flex: 1 }} />
+        <GoldButton title={p.next} onPress={() => { tick(); onDone(); }} />
+      </ScrollView>
+    </JourneyStage>
+  );
+}
+
 const METHOD_STEPS: [string, IconName][] = [["listen", "volume"], ["understand", "book"], ["repeat", "repeat"], ["recite", "speaker"], ["review", "grid"]];
 
 /** The Shams Method in four screens: the five steps, why it works, the tree that grows with it, made for your goals */
 export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: string; onDone: () => void }) {
   const o = useO2();
+  const st = useStory();
+  const [trad] = useState(() => readTradition());
   const p = usePlanT();
   const label = useGoalLabel();
   const insets = useSafeAreaInsets();
@@ -112,6 +157,13 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
             <>
               <Display size="title1" onStage>{o.m3T}</Display>
               <Text style={{ fontFamily: FONT.regular, fontSize: 16, lineHeight: 24, color: stage.textSoft }}>{o.m3B}</Text>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, lineHeight: 23, color: "#ffffff" }}>{st.treeB}</Text>
+              <View style={{ gap: 12 }}>
+                <RefQuote text={st.goodTree} source={st.goodTreeS} />
+                {trad !== "shia" ? <RefQuote text={st.hearts} source={st.heartsS} /> : null}
+                {trad !== "shia" ? <RefQuote text={st.paradise} source={st.paradiseS} /> : null}
+              </View>
+              <Text style={{ fontFamily: FONT.italic, fontSize: 14.5, lineHeight: 21, color: stage.gold }}>{st.sabr}</Text>
             </>
           ) : null}
           {i === 3 ? (
@@ -131,6 +183,7 @@ export function MethodIntro({ goals, name, onDone }: { goals: GoalV2[]; name: st
 /** "Your personal path": name, goals, interests, daily minutes, courses, feed, and the 30-day plan */
 export function PathView({ plan, v2, name, hasTree, onNext }: { plan: Plan; v2: V2Answers; name: string; hasTree: boolean; onNext: () => void }) {
   const p = usePlanT();
+  const st = useStory();
   const o = useO2();
   const label = useGoalLabel();
   const insets = useSafeAreaInsets();
@@ -156,6 +209,7 @@ export function PathView({ plan, v2, name, hasTree, onNext }: { plan: Plan; v2: 
       <ScrollView contentContainerStyle={{ padding: 20, paddingTop: insets.top + 220, paddingBottom: insets.bottom + 24, gap: 12 }}>
         <Text style={kicker}>{o.pathKicker}</Text>
         <Display onStage>{name ? fmt(o.pathTName, { name }) : o.pathT}</Display>
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, lineHeight: 22, color: "#f3e2b6" }}>{name ? fillS(st.begins, { name, goal: label(v2.goals[0] ?? a.goal) }) : fillS(st.begins0, { goal: label(v2.goals[0] ?? a.goal) })}</Text>
         {a.motivation ? <Text style={{ fontFamily: FONT.italic, fontSize: 14, color: stage.gold }}>{p[`m_${a.motivation}`]}</Text> : null}
         {section(o.pathGoals, <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>{(v2.goals.length ? v2.goals : [a.goal]).map((g) => chip(label(g)))}</View>, 0)}
         {interests.length ? section(o.pathInterests, (

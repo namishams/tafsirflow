@@ -23,7 +23,9 @@ export const RARE_TRAIT: Record<string, Trait> = {
 };
 export type HistKind = "plant" | "stage" | "gift" | "harvest" | "water";
 export type Hist = { d: number; k: HistKind; n?: number };
-export type Tree = { id: string; type: TreeType; name: string; planted: number; gp: number; fruits: number; fruitDay: number; harvested: number; hist: Hist[] };
+export type Tree = { id: string; type: TreeType; name: string; planted: number; gp: number; fruits: number; fruitDay: number; harvested: number; hist: Hist[];
+  /** the highest stage this tree has reached (points and age); a stage once reached is never taken away */
+  floor?: number };
 export type Garden = {
   trees: Tree[]; active: string | null; traits: Trait[];
   /** unique stickers already given (each only once) */
@@ -70,12 +72,40 @@ export const MAX_STAGE = STAGES.length - 1;
 export const FREE_STAGE = 6;
 let proNow = false;
 const rawStage = (gp: number) => { let s = 0; while (s < MAX_STAGE && gp >= STAGES[s + 1]) s++; return s; };
+/** the calendar gate: a stage also needs the tree to be at least this many days old, so that even the most diligent
+ *  learner sees the majestic tree only after a year. A stage is reached when both the points and the age are there;
+ *  points beyond a stage carry over. Boosts (Ramadan, Fridays) speed up the points, never the calendar. */
+export const MIN_DAYS = [0, 3, 7, 14, 24, 38, 56, 80, 110, 150, 200, 270, 365];
+/** age of a tree in days since planting */
+export const ageOf = (t: Pick<Tree, "planted">) => Math.max(0, dayNum() - (t.planted || dayNum()));
+/** the stage for given points and age (without the free limit) */
+export const gatedStage = (gp: number, age: number) => { let s = rawStage(gp); while (s > 0 && age < MIN_DAYS[s]) s--; return s; };
+/** the stage a tree has reached (never below what it already had), without the free limit */
+const reachedOf = (t: Tree) => Math.max(t.floor ?? 0, gatedStage(t.gp, ageOf(t)));
+const capFree = (st: number, pro: boolean) => (pro ? st : Math.min(FREE_STAGE, st));
+/** a tree's stage (points, age and the free limit) */
+export const treeStage = (t: Tree, pro = proNow) => capFree(reachedOf(t), pro);
+/** records a newly reached stage (history, celebration); returns true on a stage-up */
+function settle(t: Tree): boolean {
+  const reached = reachedOf(t), before = capFree(t.floor ?? 0, proNow), after = capFree(reached, proNow);
+  if (reached === (t.floor ?? 0)) return false;
+  t.floor = reached;
+  if (after <= before) return false;
+  for (let k = before + 1; k <= after; k++) t.hist.push({ d: dayNum(), k: "stage", n: k });
+  const s = g(); s.notifyStage = after; emitStageUp({ tree: t, stage: after });
+  return true;
+}
 export const stageOf = (gp: number, pro = proNow) => (pro ? rawStage(gp) : Math.min(FREE_STAGE, rawStage(gp)));
-export function progressOf(gp: number, pro = proNow): { stage: number; frac: number; left: number; held: boolean } {
-  const s = stageOf(gp, pro);
-  if (!pro && s >= FREE_STAGE) return { stage: s, frac: 1, left: 0, held: true };
-  if (s >= MAX_STAGE) return { stage: s, frac: 1, left: 0, held: false };
-  return { stage: s, frac: (gp - STAGES[s]) / (STAGES[s + 1] - STAGES[s]), left: STAGES[s + 1] - gp, held: false };
+export type Progress = { stage: number; frac: number; left: number; held: boolean; age: number; wait: number };
+/** progress to the next stage: points (frac, left) and, for a tree, its age and the days the calendar still asks (wait) */
+export function progressOf(x: number | Tree, pro = proNow): Progress {
+  const tree = typeof x === "number" ? null : x, gp = tree ? tree.gp : (x as number);
+  const age = tree ? ageOf(tree) : 0;
+  const s = tree ? treeStage(tree, pro) : stageOf(gp, pro);
+  if (!pro && s >= FREE_STAGE) return { stage: s, frac: 1, left: 0, held: true, age, wait: 0 };
+  if (s >= MAX_STAGE) return { stage: s, frac: 1, left: 0, held: false, age, wait: 0 };
+  const wait = tree ? Math.max(0, MIN_DAYS[s + 1] - age) : 0;
+  return { stage: s, frac: Math.min(1, Math.max(0, (gp - STAGES[s]) / (STAGES[s + 1] - STAGES[s]))), left: Math.max(0, STAGES[s + 1] - gp), held: false, age, wait };
 }
 /** 4 feed XP make 1 growth point, at most 40 a day from learning; watering adds 15 */
 const WATER_GP = 5, FRUIT_XP = 10;
@@ -87,7 +117,12 @@ export const stickerGp = (d: StickerDef, unique: boolean) => (d.rare ? 8 : d.ton
 
 let cache: Garden | null = null;
 function g(): Garden {
-  if (!cache) { const r = migrate(readJSON<Partial<Garden>>(GARDEN_KEY, {})); cache = { ...empty(), ...r, trees: Array.isArray(r.trees) ? r.trees : [], traits: r.traits ?? [], given: r.given ?? [] }; }
+  if (!cache) {
+    const r = migrate(readJSON<Partial<Garden>>(GARDEN_KEY, {}));
+    cache = { ...empty(), ...r, trees: Array.isArray(r.trees) ? r.trees : [], traits: r.traits ?? [], given: r.given ?? [] };
+    // trees from before the calendar gate keep the stage they had (by points), nothing is taken away
+    for (const t of cache.trees) if (t.floor === undefined) t.floor = rawStage(t.gp ?? 0);
+  }
   return cache;
 }
 function save() { const s = g(); s.at = Date.now(); for (const t of s.trees) t.hist = t.hist.slice(-60); writeJSON(GARDEN_KEY, s); }
@@ -96,7 +131,7 @@ export const readGarden = (): Garden => g();
 export const markFlourishSeen = () => { const s = g(); if (!s.flourishSeen) { s.flourishSeen = true; save(); } };
 export function useGarden(): Garden { useStored(GARDEN_KEY, {}); return g(); }
 
-export const plotsOf = (s: Garden) => 1 + PLOT_STAGES.filter((n) => s.trees[0] && rawStage(s.trees[0].gp) >= n).length;
+export const plotsOf = (s: Garden) => 1 + PLOT_STAGES.filter((n) => s.trees[0] && reachedOf(s.trees[0]) >= n).length;
 export const activeTree = (s: Garden, pro: boolean): Tree | null => ((proNow = pro) ? s.trees.find((t) => t.id === s.active) : null) ?? s.trees[0] ?? null;
 export const canPlant = (s: Garden, pro: boolean) => s.trees.length === 0 || (pro && s.trees.length < plotsOf(s));
 export const resting = (s: Garden) => s.trees.length > 0 && s.lastActive > 0 && dayNum() - s.lastActive >= 3;
@@ -129,16 +164,12 @@ export function growthBoost(): number {
 }
 function grow(t: Tree, gp0: number, src: Src) {
   const gp = Math.round(gp0 * growthBoost());
-  const before = stageOf(t.gp);
   t.gp = Math.round(t.gp + gp);
   const s = g(), d = String(dayNum());
   const log = { ...(s.log ?? {}) }; const day = { ...(typeof log[d] === "object" ? log[d] : {}) }; day[src] = (day[src] ?? 0) + Math.round(gp); log[d] = day;
   s.log = Object.fromEntries(Object.entries(log).sort((a, b) => Number(a[0]) - Number(b[0])).slice(-60));
   burst += Math.round(gp);
-  const after = stageOf(t.gp);
-  for (let k = before + 1; k <= after; k++) t.hist.push({ d: dayNum(), k: "stage", n: k });
-  if (after > before) { s.notifyStage = after; emitStageUp({ tree: t, stage: after }); }
-  return after > before;
+  return settle(t);
 }
 /** growth gained since the last call (the "+N" burst on completion screens) */
 let burst = 0;
@@ -185,7 +216,7 @@ export function plantTree(type: TreeType, name: string, pro: boolean): Tree | nu
   const s = g();
   if (!canPlant(s, pro) || (TREE_TYPES.find((x) => x.id === type)?.pro && !pro)) return null;
   const d = dayNum();
-  const t: Tree = { id: `${Date.now().toString(36)}${Math.floor(Math.random() * 1e4).toString(36)}`, type, name: name.trim().slice(0, 30), planted: d, gp: 0, fruits: 0, fruitDay: d, harvested: 0, hist: [{ d, k: "plant" }] };
+  const t: Tree = { id: `${Date.now().toString(36)}${Math.floor(Math.random() * 1e4).toString(36)}`, type, name: name.trim().slice(0, 30), planted: d, gp: 0, fruits: 0, fruitDay: d, harvested: 0, hist: [{ d, k: "plant" }], floor: 0 };
   s.trees.push(t);
   s.active = t.id;
   if (s.lastActive === 0) s.lastActive = d;
@@ -238,9 +269,11 @@ export function tickGarden(xp: number, questsDone: boolean, pro: boolean, names:
   claimSeries(t);
   if (!s.traits.includes("garland") && ramadanComplete()) { s.traits.push("garland"); grow(t, 100, "stickers"); changed = true; }
   // fruits: one a day per tree from stage 6 (two with the "fruits" decoration), none while resting
+  // the calendar alone can open the next stage (the points were already there)
+  for (const tr of s.trees) if (reachedOf(tr) !== (tr.floor ?? 0)) { up = settle(tr) || up; changed = true; }
   for (const tr of s.trees) {
     if (tr.fruitDay >= d) continue;
-    if (stageOf(tr.gp) >= FRUIT_STAGE && !resting(s)) tr.fruits = Math.min(fruitCap(s), tr.fruits + Math.min(3, d - tr.fruitDay) * (s.traits.includes("fruits") ? 2 : 1));
+    if (treeStage(tr) >= FRUIT_STAGE && !resting(s)) tr.fruits = Math.min(fruitCap(s), tr.fruits + Math.min(3, d - tr.fruitDay) * (s.traits.includes("fruits") ? 2 : 1));
     tr.fruitDay = d; changed = true;
   }
   if (changed) save();
@@ -330,7 +363,7 @@ export function useGardenRing(pro: boolean): { planted: boolean; stage: number; 
   useGamify();
   const t = activeTree(s, pro);
   if (!t) return { planted: false, stage: 0, frac: 0, fruits: 0, type: "olive", id: "seed" };
-  const p = progressOf(t.gp, pro);
+  const p = progressOf(t, pro);
   return { planted: true, stage: p.stage, frac: p.frac, fruits: t.fruits, type: t.type, id: t.id };
 }
 
@@ -345,7 +378,7 @@ export function mergeGarden(a0: Garden | undefined, b0: Garden | undefined): Gar
     if (!o) { byId.set(t.id, t); continue; }
     const n = newer.trees?.find((x) => x.id === t.id) ?? t;
     const hist = [...o.hist, ...t.hist].filter((h, i, arr) => arr.findIndex((x) => x.d === h.d && x.k === h.k && x.n === h.n) === i).sort((x, y) => x.d - y.d).slice(-60);
-    byId.set(t.id, { ...n, gp: Math.max(o.gp, t.gp), harvested: Math.max(o.harvested, t.harvested), planted: Math.min(o.planted, t.planted), fruitDay: Math.max(o.fruitDay, t.fruitDay), fruits: Math.min(n.fruits, Math.max(o.fruits, t.fruits)), hist });
+    byId.set(t.id, { ...n, gp: Math.max(o.gp, t.gp), harvested: Math.max(o.harvested, t.harvested), planted: Math.min(o.planted, t.planted), floor: Math.max(o.floor ?? rawStage(o.gp), t.floor ?? rawStage(t.gp)), fruitDay: Math.max(o.fruitDay, t.fruitDay), fruits: Math.min(n.fruits, Math.max(o.fruits, t.fruits)), hist });
   }
   const trees = [...byId.values()].sort((x, y) => x.planted - y.planted).slice(0, 8);
   return {

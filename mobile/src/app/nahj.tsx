@@ -8,7 +8,7 @@ import { Icon, type IconName } from "@/components/icons";
 import { CALLIG_FONT, FONT, R, stage } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { useStored } from "@/lib/store";
-import { showsNahj, useTradition } from "@/lib/tradition";
+import { useNahjVisible } from "@/lib/tradition";
 import { NAHJ_EDITION_KEY, nahjAt, nahjEdition, nahjPosition, saveNahjPosition, setNahjEdition, type NahjEdition, type NahjPassage } from "@/features/hadith/nahj";
 import { nahjItem, toggleSaved } from "@/features/hadith/data";
 import { HadithShare, useSavedState } from "@/features/hadith/ui";
@@ -19,10 +19,10 @@ import { useHadithText } from "@/features/hadith/texts";
 // last passage a new shuffled pass begins; the position is remembered per edition (Deutsch / English).
 export default function NahjFeed() {
   const { lang } = useLang();
-  const { tradition } = useTradition();
+  const visible = useNahjVisible();
   useStored<string | null>(NAHJ_EDITION_KEY, null); // re-render when the edition is switched
   const ed = nahjEdition(lang);
-  if (!showsNahj(tradition)) return <Redirect href={"/hadith" as Href} />;
+  if (!visible) return <Redirect href={"/hadith" as Href} />;
   return <Feed key={ed} ed={ed} />;
 }
 

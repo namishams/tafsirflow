@@ -16,7 +16,7 @@ import { fill, useX } from "./strings";
 
 type Stats = { views: number; shares: number; likes: number; comments: number; liked: boolean; signedIn?: boolean; verified?: boolean };
 type Comment = { id: number; parentId: number | null; body: string; pending: boolean; mine: boolean; author: string; country: string | null; at: string };
-export const HEART = "#c9405a";
+export const HEART = "#b8913f"; // a liked heart in deep gold (noble, not rose)
 
 /** 1234 -> 1.2K (compact like the website, Latin digits) */
 export function compact(n: number, lang: string): string {

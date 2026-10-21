@@ -125,7 +125,7 @@ export function Featured({ layout = "carousel", title = true }: { layout?: "caro
     </Stage>,
     <Pressable key="gen" onPress={() => router.push("/dua-generator" as Href)} accessibilityRole="button" accessibilityLabel={w("genTitle")}
       style={({ pressed }) => [{ width: cardW, borderRadius: R.card, overflow: "hidden", borderWidth: 1, borderColor: alpha(GOLD, 0.4), minHeight: 250 }, pressed && { transform: [{ scale: 0.99 }] }]}>
-      <LinearGradient colors={["#2f2a44", "#0e0c18"]} start={{ x: 0.2, y: 0 }} end={{ x: 0.8, y: 1 }} style={{ flex: 1, padding: 22 }}>
+      <LinearGradient colors={["#2a443c", "#0e0c18"]} start={{ x: 0.2, y: 0 }} end={{ x: 0.8, y: 1 }} style={{ flex: 1, padding: 22 }}>
         <Niche color="rgba(233,207,153,0.16)" />
         <Rosette size={34} color="rgb(214,180,108)" />
         <Text allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 34, lineHeight: 56, color: GOLD_L, writingDirection: "rtl", textAlign: "left", marginTop: 6 }}>دعاء</Text>

@@ -87,7 +87,7 @@ export default function NowPlaying() {
           </Pressable>
           <View style={{ flex: 1, alignItems: "center" }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-              <View accessibilityLabel={t("onAir")} style={{ flexDirection: "row", alignItems: "center", gap: 5, borderRadius: 3, paddingHorizontal: 6, paddingVertical: 2, backgroundColor: "rgb(220,38,38)" }}>
+              <View accessibilityLabel={t("onAir")} style={{ flexDirection: "row", alignItems: "center", gap: 5, borderRadius: 3, paddingHorizontal: 6, paddingVertical: 2, backgroundColor: "rgb(160,58,52)" }}>
                 <View style={{ width: 5, height: 5, borderRadius: 2.5, backgroundColor: "#ffffff", opacity: r.playing ? 1 : 0.6 }} />
                 <Text style={{ fontFamily: FONT.display, fontSize: 10, letterSpacing: 1, color: "#ffffff" }}>{t("onAir")}</Text>
               </View>

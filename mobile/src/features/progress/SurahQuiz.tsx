@@ -123,7 +123,7 @@ export function SurahQuiz({ surah, learned, dark = false, onClose }: { surah: nu
           </View>
           {picked !== null ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, marginTop: 12 }}>
-              <Text accessibilityLiveRegion="polite" style={{ flex: 1, minWidth: 160, fontFamily: FONT.semibold, fontSize: 14, color: picked === q.answer ? t.accent : dark ? "rgb(252,165,165)" : "rgb(220,38,38)" }}>
+              <Text accessibilityLiveRegion="polite" style={{ flex: 1, minWidth: 160, fontFamily: FONT.semibold, fontSize: 14, color: picked === q.answer ? t.accent : dark ? "rgb(232,176,164)" : "rgb(160,58,52)" }}>
                 {picked === q.answer ? T.right : fill(learned.includes(q.v + 1) ? T.wrongNote : T.wrong, { v: nf(q.v + 1) })}
               </Text>
               <GoldPill pill={false} arrow={false} title={i + 1 >= qs.length ? T.finish : T.next} onPress={() => { setI(i + 1); setPicked(null); }} />

@@ -1,3 +1,4 @@
+// DESIGN FROZEN (owner approved, tag garten-design-v1) — do not change visuals; only bug fixes.
 import { memo, useEffect, useMemo } from "react";
 import { View } from "react-native";
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient as SvgLinear, Line, Path, RadialGradient, Rect, Stop, Text as SvgText } from "react-native-svg";

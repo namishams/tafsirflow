@@ -5,7 +5,8 @@ import { Chip, SectionTitle } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
 import { useStored } from "@/lib/store";
-import { showsNahj, showsShia, showsSunni, useTradition } from "@/lib/tradition";
+import { showsShia, showsSunni, useNahjVisible, useTradition } from "@/lib/tradition";
+import { useNahjText } from "@/features/nahj-course/text";
 import { SUNNI_COLLECTIONS, SHIA_BOOKS } from "@/features/hadith/catalog";
 import { SAVED_KEY, SUNNI_NAMES, shiaBookTitle, type HadithItem } from "@/features/hadith/data";
 import { HadithCard, LoadState } from "@/features/hadith/ui";
@@ -20,6 +21,8 @@ export default function HadithHome() {
   const t = useTheme();
   const { lang } = useLang();
   const { tradition } = useTradition();
+  const nahjOn = useNahjVisible();
+  const nc = useNahjText();
   const daily = useDailyHadith();
   const saved = useStored<HadithItem[]>(SAVED_KEY, []);
   const go = (href: string) => router.push(href as Href);
@@ -29,8 +32,9 @@ export default function HadithHome() {
       <Page>
         <PageHero topInset back eyebrow="Quran Masterclass" title={x.title} lead={x.lead} arabic="الحديث" />
         <View style={{ paddingHorizontal: 16, gap: 32, marginTop: 24 }}>
-          {showsNahj(tradition) ? (
+          {nahjOn ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+              <Chip label={nc.short} onPress={() => go("/nahj-studies")} />
               <Chip label={x.nahj} onPress={() => go("/nahj")} />
             </View>
           ) : null}

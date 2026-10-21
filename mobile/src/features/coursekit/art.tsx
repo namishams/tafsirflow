@@ -13,8 +13,8 @@ export const goldA = (t: Theme, a: number) => (t.dark ? `rgba(214,178,106,${a})`
 export const stageGoldA = (a: number) => `rgba(214,180,108,${a})`;
 /** the fixed gold of answers and frames: rgb(201 166 94) */
 export const solidGoldA = (a: number) => `rgba(201,166,94,${a})`;
-export const ROSE = "rgb(190,84,104)";
-export const roseA = (a: number) => `rgba(190,84,104,${a})`;
+export const ROSE = "rgb(160,58,52)";
+export const roseA = (a: number) => `rgba(160,58,52,${a})`;
 
 // a pointed arch between x0 and x1: springs at ySpring, apex at yApex, standing on yBase (PracticeArt.archPath)
 export function archPath(x0: number, x1: number, yBase: number, ySpring: number, yApex: number) {

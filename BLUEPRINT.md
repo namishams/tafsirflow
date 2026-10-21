@@ -80,3 +80,14 @@ Before and after launch these parts are the fixed frame of the app. Prompts may 
 - **Storage keys and sync keys:** never renamed or reused; new data gets new keys.
 
 The feed (content, post types, server config) stays flexible and grows over time.
+
+## 9. Frozen designs (owner approved, tag `garten-design-v1`)
+
+These visuals are approved and frozen: do not change their look, composition, palette, tree shapes or landscape layout; only bug fixes. Files carry a `DESIGN FROZEN` header.
+
+- **Garden scene**: the living landscape (`mobile/src/features/garden/Landscape.tsx`, `Scene.tsx`, painted layers in `mobile/assets/garden/*.webp` from `mobile/scripts/gen-garden-art.mjs`): parallax mountains, dunes, domes and minarets in mist, groves, arcade and Mughal pavilion that unlock with the tree's stage, terrace with zellige, water channel, lanterns and fountains, the real sky over Makkah or the learner's place (prayer-time twilights, sun arc, real moon phase, star field, Milky Way).
+- **Tree art**: `mobile/src/features/garden/Tree.tsx` (per type and stage, layered foliage, marble basin, gold blossoms and fruits, layered wind motion).
+- **Planting ceremony**: `mobile/src/features/garden/PlantFlow.tsx` (Bismillah and niyyah, glowing seed, soil, rain with the du'a of Quran 20:114, sprout at sunrise).
+- **Onboarding journey visuals**: `mobile/src/features/plan/Scenes.tsx` and the scene layer of `Funnel.tsx`, `Onboard2.tsx`, `Day1Paywall.tsx` (the landscape revealing itself from night to dawn, the arcade of five steps, the rosette, terraces, astrolabe, the Quran stand, the map of the 30 days, the stage-up cinematic in `garden/widgets.tsx`).
+
+Growth rule (owner): a stage needs both its growth points and a minimum age of the tree (`MIN_DAYS` in `garden.ts`: 0, 3, 7, 14, 24, 38, 56, 80, 110, 150, 200, 270, 365 days); a reached stage is never taken away.

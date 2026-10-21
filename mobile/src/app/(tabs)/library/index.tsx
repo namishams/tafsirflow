@@ -6,6 +6,7 @@ import { FeedSpotlight } from "@/features/feed/EntryCards";
 import { StoryRails } from "@/features/prophet/Rails";
 import { HadithSpotlight } from "@/features/hadith/cards";
 import { CommunityCard } from "@/features/community/ui";
+import { TalentsCard } from "@/features/talents/ui";
 import { AbrahamicCard } from "@/features/abrahamic/AbrahamicScreen";
 import { HaramainCard } from "@/features/haramain/HaramainScreen";
 import { DiscoverRows } from "@/features/library/Discover";
@@ -32,6 +33,7 @@ export default function Discover() {
         <View style={{ marginTop: 20, gap: 20 }}>
           <View style={{ paddingHorizontal: 16 }}><FeedSpotlight /></View>
           <View style={{ paddingHorizontal: 16 }}><HadithSpotlight /></View>
+          <View style={{ paddingHorizontal: 16 }}><TalentsCard /></View>
           <View style={{ paddingHorizontal: 16 }}><CommunityCard /></View>
           <View style={{ paddingHorizontal: 16 }}><AbrahamicCard onPress={() => router.push("/abrahamic" as Href)} /></View>
           <View style={{ paddingHorizontal: 16 }}><HaramainCard onPress={() => router.push("/haramain" as Href)} /></View>

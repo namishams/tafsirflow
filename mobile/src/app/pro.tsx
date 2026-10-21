@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import * as WebBrowser from "expo-web-browser";
 import Svg, { Circle, G, Path } from "react-native-svg";
 import { CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
-import { Arcade, Display, Eyebrow, GoldButton, GoldCard, LogoMark, OutlineButton, SmallStar, Stage, TextLink } from "@/components/brand";
+import { Arcade, Display, Eyebrow, GoldButton, GoldCard, OutlineButton, SmallStar, Stage, TextLink, Wordmark } from "@/components/brand";
 import { Icon, type IconName } from "@/components/icons";
 import { intlLocale, useLang, useT } from "@/i18n";
 import { useAuth } from "@/lib/auth";
@@ -135,7 +135,7 @@ export default function ProSheet() {
           {!pro ? (
             <GoldCard>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-                <LogoMark size={40} />
+                <Wordmark variant="stacked" height={38} />
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{tr("pro.priceTitle")}</Text>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{tr("pro.summaryTerm")}</Text>
@@ -177,7 +177,7 @@ function Seal() {
         <Circle cx={50} cy={50} r={36} fill="rgba(5,28,21,0.6)" stroke={stage.gold} strokeWidth={0.8} />
         <Circle cx={50} cy={50} r={32} fill="none" stroke={stage.gold} strokeOpacity={0.4} strokeWidth={0.6} strokeDasharray="1.2 2.2" />
       </Svg>
-      <LogoMark size={44} />
+      <Wordmark variant="stacked" tone="gold" height={28} />
     </View>
   );
 }

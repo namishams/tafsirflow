@@ -1,9 +1,11 @@
+// DESIGN FROZEN (owner approved, tag garten-design-v1) — do not change visuals; only bug fixes.
 import { memo, useEffect, useMemo, useState, type ReactNode } from "react";
 import { AccessibilityInfo, Image, Pressable, StyleSheet, View, type ImageSourcePropType } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import Svg, { Circle, Defs, G, LinearGradient as SvgLinear, Path, Pattern, Polygon, RadialGradient, Rect, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, Ellipse, G, LinearGradient as SvgLinear, Path, Pattern, Polygon, RadialGradient, Rect, Stop } from "react-native-svg";
 import Animated, { Easing, cancelAnimation, interpolate, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming, type SharedValue } from "react-native-reanimated";
-import { dayFor } from "@/web/prayer";
+import { CITIES, dayFor, type Prayer, type Spot } from "@/web/prayer";
+import { useStored, writeJSON } from "@/lib/store";
 import { spotNow } from "@/features/feed/Extras";
 import { stage as stageC } from "@/lib/theme";
 import { tick } from "@/features/feed/haptics";
@@ -33,37 +35,72 @@ const ASPECT = { far: 420 / 1200, city: 360 / 1600, mid: 560 / 1800, arcade: 300
 export const UNLOCK = { flowers: 3, lanterns: 4, arcade: 5, fountains: 6, iwan: 8, archLights: 10, aura: 12 } as const;
 
 // ---------- the sky by the prayer times ----------
-export type Sky = { colors: [string, string, string]; night: number; warm: number; sun: { x: number; y: number } | null; moon: boolean };
+/** the moon: position in the sky (0 … 1), phase (0 new, 0.5 full), lit fraction */
+export type Moon = { x: number; y: number; phase: number; illum: number };
+export type Sky = { colors: [string, string, string]; night: number; warm: number; sun: { x: number; y: number } | null; moon: Moon | null; next?: { prayer: Prayer; at: number } };
 type Key = { t: number; c: [string, string, string]; night: number; warm: number };
+type C3 = [string, string, string];
+// colours of the sky through the day: night, astronomical (Fajr), nautical and civil twilight, sunrise, morning,
+// noon, Asr, golden hour, sunset, then the twilights again until Isha. Emerald, jade and gold only.
 const K = {
-  night: { c: ["#020c09", "#06211a", "#0f382d"] as [string, string, string], night: 1, warm: 0 },
-  predawn: { c: ["#041a14", "#174235", "#4f6248"] as [string, string, string], night: 0.8, warm: 0.1 },
-  sunrise: { c: ["#123f35", "#8c845a", "#f0d49c"] as [string, string, string], night: 0.3, warm: 0.6 },
-  morning: { c: ["#2a6b58", "#97c2aa", "#f0ecda"] as [string, string, string], night: 0, warm: 0.15 },
-  noon: { c: ["#256a56", "#9cc9b2", "#f3f1e2"] as [string, string, string], night: 0, warm: 0 },
-  asr: { c: ["#2b6650", "#a9c4a0", "#f3e6c2"] as [string, string, string], night: 0, warm: 0.2 },
-  golden: { c: ["#173a2e", "#b08a45", "#f3d48e"] as [string, string, string], night: 0.12, warm: 0.85 },
-  sunset: { c: ["#0f2c25", "#8f5f36", "#e2ac62"] as [string, string, string], night: 0.4, warm: 1 },
-  dusk: { c: ["#061914", "#24453a", "#5d6040"] as [string, string, string], night: 0.78, warm: 0.3 },
+  night: { c: ["#020c09", "#06211a", "#0f382d"] as C3, night: 1, warm: 0 },
+  astro: { c: ["#03110d", "#0a2a21", "#21423a"] as C3, night: 0.92, warm: 0.02 },
+  nautical: { c: ["#072019", "#1c4337", "#566650"] as C3, night: 0.75, warm: 0.12 },
+  civil: { c: ["#0e3328", "#5a6a4c", "#cfae76"] as C3, night: 0.5, warm: 0.42 },
+  predawn: { c: ["#041a14", "#174235", "#4f6248"] as C3, night: 0.8, warm: 0.1 },
+  sunrise: { c: ["#123f35", "#8c845a", "#f0d49c"] as C3, night: 0.3, warm: 0.6 },
+  morning: { c: ["#2a6b58", "#97c2aa", "#f0ecda"] as C3, night: 0, warm: 0.15 },
+  noon: { c: ["#256a56", "#9cc9b2", "#f3f1e2"] as C3, night: 0, warm: 0 },
+  asr: { c: ["#2b6650", "#a9c4a0", "#f3e6c2"] as C3, night: 0, warm: 0.2 },
+  golden: { c: ["#173a2e", "#b08a45", "#f3d48e"] as C3, night: 0.12, warm: 0.85 },
+  sunset: { c: ["#0f2c25", "#8f5f36", "#e2ac62"] as C3, night: 0.4, warm: 1 },
+  dusk: { c: ["#0b261f", "#5b4a35", "#b08050"] as C3, night: 0.58, warm: 0.55 },
+  nauticalDusk: { c: ["#061914", "#24453a", "#5d6040"] as C3, night: 0.8, warm: 0.25 },
 };
 const hex = (h: string) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
 const mix = (a: string, b: string, k: number) => { const x = hex(a), y = hex(b); return `#${x.map((v, i) => Math.round(v + (y[i] - v) * k).toString(16).padStart(2, "0")).join("")}`; };
 
-export function skyAt(now = new Date()): Sky {
-  let times: Record<string, number>;
+// ---------- where the sky is: Makkah (default) or the learner's own place ----------
+export const SKY_PLACE_KEY = "qmc.garden.sky";
+export type SkyPlace = "mecca" | "local";
+const MECCA: Spot = CITIES.find((c) => c.id === "makkah") ?? CITIES[0];
+export const skySpot = (place: SkyPlace): Spot => (place === "local" ? spotNow() : MECCA);
+export const useSkyPlace = (): SkyPlace => (useStored<SkyPlace>(SKY_PLACE_KEY, "mecca") === "local" ? "local" : "mecca");
+export const setSkyPlace = (p: SkyPlace) => writeJSON(SKY_PLACE_KEY, p, true);
+
+// ---------- the moon ----------
+const SYNODIC = 29.530588853, NEW_MOON = Date.UTC(2000, 0, 6, 18, 14);
+/** the moon's phase now: 0 new, 0.25 first quarter, 0.5 full, 0.75 last quarter */
+export function moonPhase(now = new Date()): number { const d = (now.getTime() - NEW_MOON) / 86400000; return (((d % SYNODIC) + SYNODIC) % SYNODIC) / SYNODIC; }
+/** where the moon stands: it crosses the meridian about phase × 24 h after the sun (rises ~50 min later each day) */
+function moonAt(ms: number, noon: number): Moon | null {
+  const phase = moonPhase(new Date(ms)), illum = (1 - Math.cos(phase * Math.PI * 2)) / 2;
+  if (illum < 0.015) return null; // the new moon cannot be seen
+  let h = ((ms - (noon + phase * 86400000)) / 3600000) % 24;
+  if (h > 12) h -= 24; if (h < -12) h += 24;
+  if (Math.abs(h) > 6.2) return null; // below the horizon
+  const k = h / 6.2;
+  return { x: 0.5 + k * 0.42, y: 0.66 - Math.cos(k * Math.PI / 2) * 0.5, phase, illum };
+}
+
+export function skyAt(now = new Date(), spot: Spot = MECCA): Sky {
+  let times: Record<string, number>, next: Sky["next"];
   try {
-    const d = dayFor(spotNow(), now).times;
-    times = Object.fromEntries(Object.entries(d).map(([k, v]) => [k, (v as Date).getTime()]));
+    const d = dayFor(spot, now);
+    times = Object.fromEntries(Object.entries(d.times).map(([k, v]) => [k, (v as Date).getTime()]));
+    next = { prayer: d.next, at: d.nextAt.getTime() };
   } catch {
     const base = new Date(now); base.setHours(0, 0, 0, 0); const h = (n: number) => base.getTime() + n * 3600000;
     times = { fajr: h(5), sunrise: h(6.5), dhuhr: h(12.5), asr: h(15.5), maghrib: h(19), isha: h(20.5) };
   }
-  const M = 60000;
+  const M = 60000, sr = times.sunrise, ss = times.maghrib;
   const keys: Key[] = [
-    { t: times.fajr - 30 * M, ...K.night }, { t: times.fajr + 10 * M, ...K.predawn }, { t: times.sunrise, ...K.sunrise },
-    { t: times.sunrise + 60 * M, ...K.morning }, { t: times.dhuhr, ...K.noon }, { t: times.asr, ...K.asr },
-    { t: times.maghrib - 45 * M, ...K.golden }, { t: times.maghrib, ...K.sunset }, { t: (times.maghrib + times.isha) / 2, ...K.dusk }, { t: times.isha, ...K.night },
-  ];
+    { t: times.fajr - 25 * M, ...K.night }, { t: times.fajr, ...K.astro },
+    { t: Math.max(times.fajr + 5 * M, sr - 48 * M), ...K.nautical }, { t: Math.max(times.fajr + 10 * M, sr - 24 * M), ...K.civil },
+    { t: sr, ...K.sunrise }, { t: sr + 60 * M, ...K.morning }, { t: times.dhuhr, ...K.noon }, { t: times.asr, ...K.asr },
+    { t: ss - 45 * M, ...K.golden }, { t: ss, ...K.sunset },
+    { t: Math.min(times.isha - 10 * M, ss + 24 * M), ...K.dusk }, { t: Math.min(times.isha - 5 * M, ss + 48 * M), ...K.nauticalDusk }, { t: times.isha, ...K.night },
+  ].sort((x, y) => x.t - y.t);
   const ms = now.getTime();
   let c = K.night.c, night = 1, warm = 0;
   for (let i = 0; i < keys.length - 1; i++) {
@@ -75,22 +112,24 @@ export function skyAt(now = new Date()): Sky {
       break;
     }
   }
-  const dayK = (ms - times.sunrise) / Math.max(1, times.maghrib - times.sunrise);
+  // the sun follows its real arc from sunrise to Maghrib (east on the left)
+  const dayK = (ms - sr) / Math.max(1, ss - sr);
   const sun = dayK > -0.04 && dayK < 1.04 ? { x: 0.1 + dayK * 0.8, y: 0.62 - Math.sin(Math.max(0, Math.min(1, dayK)) * Math.PI) * 0.5 } : null;
-  return { colors: c, night, warm, sun, moon: night > 0.55 };
+  return { colors: c, night, warm, sun, moon: moonAt(ms, times.dhuhr), next };
 }
-/** a few fixed skies for the onboarding journey and share cards */
+const fixedMoon = (x: number, y: number): Moon | null => { const phase = moonPhase(), illum = (1 - Math.cos(phase * Math.PI * 2)) / 2; return illum < 0.015 ? null : { x, y, phase, illum }; };
+/** a few fixed skies for the onboarding journey, share cards and previews (the moon in today's real phase) */
 export const SKIES: Record<"night" | "predawn" | "dawn" | "day" | "golden", Sky> = {
-  night: { colors: K.night.c, night: 1, warm: 0, sun: null, moon: true },
-  predawn: { colors: K.predawn.c, night: 0.8, warm: 0.1, sun: null, moon: true },
-  dawn: { colors: K.sunrise.c, night: 0.3, warm: 0.6, sun: { x: 0.24, y: 0.6 }, moon: false },
-  day: { colors: K.morning.c, night: 0, warm: 0.15, sun: { x: 0.72, y: 0.16 }, moon: false },
-  golden: { colors: K.golden.c, night: 0.12, warm: 0.85, sun: { x: 0.8, y: 0.48 }, moon: false },
+  night: { colors: K.night.c, night: 1, warm: 0, sun: null, moon: fixedMoon(0.64, 0.3) },
+  predawn: { colors: K.predawn.c, night: 0.8, warm: 0.1, sun: null, moon: fixedMoon(0.78, 0.4) },
+  dawn: { colors: K.sunrise.c, night: 0.3, warm: 0.6, sun: { x: 0.24, y: 0.6 }, moon: null },
+  day: { colors: K.morning.c, night: 0, warm: 0.15, sun: { x: 0.72, y: 0.16 }, moon: null },
+  golden: { colors: K.golden.c, night: 0.12, warm: 0.85, sun: { x: 0.8, y: 0.48 }, moon: null },
 };
-/** the sky now, refreshed every minute */
-export function useSky(): Sky {
-  const [s, setS] = useState(() => skyAt());
-  useEffect(() => { const id = setInterval(() => setS(skyAt()), 60000); return () => clearInterval(id); }, []);
+/** the sky now over the chosen place, refreshed every minute */
+export function useSky(place: SkyPlace = "mecca"): Sky {
+  const [s, setS] = useState(() => skyAt(new Date(), skySpot(place)));
+  useEffect(() => { setS(skyAt(new Date(), skySpot(place))); const id = setInterval(() => setS(skyAt(new Date(), skySpot(place))), 60000); return () => clearInterval(id); }, [place]);
   return s;
 }
 /** readable ink on top of a sky */
@@ -108,37 +147,88 @@ export const SkyFill = memo(function SkyFill({ sky }: { sky: Sky }) {
   return <LinearGradient colors={sky.colors} locations={[0, 0.62, 1]} style={StyleSheet.absoluteFill} />;
 });
 
+/** a deterministic star field: many faint stars, fewer bright ones (like the real sky), a few with a warm tint */
+function starField(width: number, height: number) {
+  let x = 2463534242;
+  const r = () => { x ^= x << 13; x >>>= 0; x ^= x >>> 17; x ^= x << 5; x >>>= 0; return (x % 100000) / 100000; };
+  return Array.from({ length: 110 }, (_, i) => {
+    const m = Math.pow(r(), 3.2); // magnitude: most stars faint
+    return { x: r() * width, y: Math.pow(r(), 1.25) * height * 0.92, r: 0.45 + m * 1.6, o: 0.35 + m * 0.65, g: i % 3, warm: r() < 0.12 };
+  });
+}
 export const Heavens = memo(function Heavens({ sky, width, height, still, noMoon }: { sky: Sky; width: number; height: number; still: boolean; noMoon?: boolean }) {
-  const stars = useMemo(() => Array.from({ length: 54 }, (_, i) => ({ x: ((i * 97 + 13) % 100) / 100 * width, y: ((i * 53 + 7) % 64) / 100 * height, r: i % 9 === 0 ? 1.7 : i % 3 === 0 ? 1.1 : 0.7, g: i % 3 })), [width, height]);
+  const stars = useMemo(() => starField(width, height), [width, height]);
   const nightO = Math.max(0, (sky.night - 0.35) / 0.65);
+  // the Milky Way: only on dark, moon-poor nights
+  const milky = nightO * (1 - (sky.moon?.illum ?? 0) * 0.85) * 0.9;
   return (
     <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+      {milky > 0.08 ? <MilkyWay width={width} height={height} o={milky} /> : null}
       {nightO > 0.02 ? [0, 1, 2].map((g) => (
         <Twinkle key={g} group={g} still={still} base={nightO}>
-          <Svg width={width} height={height}>{stars.filter((s) => s.g === g).map((s, i) => <Circle key={i} cx={s.x} cy={s.y} r={s.r} fill={s.r > 1.5 ? "#fff3cf" : "#ffffff"} />)}</Svg>
+          <Svg width={width} height={height}>
+            {stars.filter((st) => st.g === g).map((st, i) => <Circle key={i} cx={st.x} cy={st.y} r={st.r} fill={st.warm ? "#ffe7b8" : "#fbfbf4"} opacity={st.o} />)}
+          </Svg>
         </Twinkle>
       )) : null}
-      {sky.moon && !noMoon ? <Moon x={width * 0.64} y={Math.max(150, height * 0.3)} o={nightO} /> : null}
+      {nightO > 0.3 ? <Planet x={width * 0.18} y={height * 0.2} o={nightO} /> : null}
+      {sky.moon && !noMoon ? <MoonDisc moon={sky.moon} x={sky.moon.x * width} y={Math.max(120, sky.moon.y * height)} o={Math.max(0.45, nightO)} /> : null}
       {sky.sun ? <Sun x={sky.sun.x * width} y={sky.sun.y * height} warm={sky.warm} width={width} height={height} still={still} /> : null}
     </View>
   );
 });
+/** a faint band of the galaxy across the sky */
+function MilkyWay({ width, height, o }: { width: number; height: number; o: number }) {
+  const w = Math.hypot(width, height);
+  return (
+    <Svg width={width} height={height} style={{ position: "absolute", opacity: o }}>
+      <Defs>
+        <RadialGradient id="mw" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#e9f0e4" stopOpacity={0.16} /><Stop offset="0.6" stopColor="#d9e6d6" stopOpacity={0.06} /><Stop offset="1" stopColor="#d9e6d6" stopOpacity={0} /></RadialGradient>
+        <RadialGradient id="mw2" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#f6e7c6" stopOpacity={0.12} /><Stop offset="1" stopColor="#f6e7c6" stopOpacity={0} /></RadialGradient>
+      </Defs>
+      <G transform={`rotate(-28 ${width / 2} ${height / 2})`}>
+        <Ellipse cx={width / 2} cy={height * 0.42} rx={w * 0.62} ry={height * 0.16} fill="url(#mw)" />
+        <Ellipse cx={width * 0.42} cy={height * 0.44} rx={w * 0.22} ry={height * 0.07} fill="url(#mw2)" />
+        <Ellipse cx={width * 0.62} cy={height * 0.4} rx={w * 0.16} ry={height * 0.05} fill="url(#mw2)" />
+      </G>
+    </Svg>
+  );
+}
+/** a bright planet (steady light, no twinkle) */
+function Planet({ x, y, o }: { x: number; y: number; o: number }) {
+  return (
+    <Svg width={30} height={30} style={{ position: "absolute", left: x - 15, top: y - 15, opacity: o }}>
+      <Defs><RadialGradient id="pl" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#fff4d6" stopOpacity={0.7} /><Stop offset="1" stopColor="#fff4d6" stopOpacity={0} /></RadialGradient></Defs>
+      <Circle cx={15} cy={15} r={15} fill="url(#pl)" /><Circle cx={15} cy={15} r={2.1} fill="#fffaf0" />
+    </Svg>
+  );
+}
 function Twinkle({ group, still, base, children }: { group: number; still: boolean; base: number; children: ReactNode }) {
   const v = useSharedValue(1);
   useEffect(() => {
     if (still) return;
-    v.value = withDelay(group * 900, withRepeat(withSequence(withTiming(0.45, { duration: 1800 + group * 500, easing: Easing.inOut(Easing.sin) }), withTiming(1, { duration: 1800 + group * 500, easing: Easing.inOut(Easing.sin) })), -1, false));
+    v.value = withDelay(group * 900, withRepeat(withSequence(withTiming(0.55, { duration: 1800 + group * 500, easing: Easing.inOut(Easing.sin) }), withTiming(1, { duration: 1800 + group * 500, easing: Easing.inOut(Easing.sin) })), -1, false));
     return () => cancelAnimation(v);
   }, [still, group, v]);
   const st = useAnimatedStyle(() => ({ opacity: v.value * base }));
   return <Animated.View style={[StyleSheet.absoluteFill, st]}>{children}</Animated.View>;
 }
-function Moon({ x, y, o }: { x: number; y: number; o: number }) {
+/** the moon in its real phase: lit limb plus terminator, the dark part faintly visible (earthshine), tilted like
+ *  the crescent seen in Arabia */
+function MoonDisc({ moon, x, y, o }: { moon: Moon; x: number; y: number; o: number }) {
+  const R = 24, c = 70, k = Math.cos(moon.phase * Math.PI * 2), rx = Math.abs(k) * R;
+  const waxing = moon.phase < 0.5;
+  // lit half (right while waxing), closed by the terminator ellipse
+  const d = `M${c} ${c - R} A${R} ${R} 0 0 1 ${c} ${c + R} A${rx.toFixed(2)} ${R} 0 0 ${k > 0 ? 0 : 1} ${c} ${c - R} Z`;
   return (
     <Svg width={140} height={140} style={{ position: "absolute", left: x - 70, top: y - 70, opacity: o }}>
-      <Defs><RadialGradient id="mg" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#f3e2b6" stopOpacity={0.35} /><Stop offset="1" stopColor="#f3e2b6" stopOpacity={0} /></RadialGradient></Defs>
-      <Circle cx={70} cy={70} r={70} fill="url(#mg)" />
-      <Path d="M76 46 a25 25 0 1 0 0 48 a20 20 0 1 1 0 -48 Z" fill="#f6e7bf" />
+      <Defs><RadialGradient id="mg" cx="0.5" cy="0.5" r="0.5"><Stop offset="0" stopColor="#f3e2b6" stopOpacity={0.18 + moon.illum * 0.3} /><Stop offset="1" stopColor="#f3e2b6" stopOpacity={0} /></RadialGradient></Defs>
+      <Circle cx={c} cy={c} r={70} fill="url(#mg)" />
+      <G transform={`rotate(${waxing ? -35 : 35} ${c} ${c})${waxing ? "" : ` translate(${2 * c} 0) scale(-1 1)`}`}>
+        <Circle cx={c} cy={c} r={R} fill="#f6e7bf" opacity={0.1} />
+        <Path d={d} fill="#f6e7bf" />
+        {moon.illum > 0.85 ? <><Circle cx={c - 6} cy={c - 5} r={4} fill="#e2cf9e" opacity={0.5} /><Circle cx={c + 7} cy={c + 6} r={3} fill="#e2cf9e" opacity={0.45} /><Circle cx={c + 2} cy={c - 10} r={2} fill="#e2cf9e" opacity={0.4} /></> : null}
+      </G>
     </Svg>
   );
 }
@@ -493,7 +583,7 @@ export function journeySky(p: number): Sky {
   return {
     colors: [mix(a.colors[0], b.colors[0], k), mix(a.colors[1], b.colors[1], k), mix(a.colors[2], b.colors[2], k)],
     night: a.night + (b.night - a.night) * k, warm: a.warm + (b.warm - a.warm) * k,
-    sun: p > 0.7 ? { x: 0.26, y: 0.95 - (p - 0.7) * 1.2 } : null, moon: p < 0.6,
+    sun: p > 0.7 ? { x: 0.26, y: 0.95 - (p - 0.7) * 1.2 } : null, moon: p < 0.6 ? fixedMoon(0.8, 0.3) : null,
   };
 }
 /** the dark stage of the onboarding with the landscape revealing itself behind it as the answers come in */

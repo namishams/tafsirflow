@@ -9,7 +9,8 @@ import { useWebT } from "@/i18n/web";
 import { calText } from "@/web/hijri";
 import { namesText } from "@/web/names";
 import { extraTool, routeOf, tile } from "@/lib/features";
-import { showsNahj, useTradition, type TraditionChoice } from "@/lib/tradition";
+import { useNahjVisible, useTradition, type TraditionChoice } from "@/lib/tradition";
+import { nahjCourseText } from "@/features/nahj-course/text";
 import { EXTRA_KINDS, extraFeedItems, type ExtraItem } from "@/content/extra";
 import { kindsFor, sourceFeedItems, type SourceItem } from "@/content/sources";
 import { toneOf } from "@/features/feed/art";
@@ -28,25 +29,26 @@ type AppOnly = { key: keyof DiscoverText; href: string; ar: string; colors: [str
 const APP_ONLY: Record<string, AppOnly> = {
   reciterPath: { key: "reciterPath", href: "/reciter-path", ar: "تلاوة", colors: ["#1d4a3a", "#08140f"], badge: "course" },
   cards: { key: "cards", href: "/cards", ar: "حفظ", colors: ["#3b2f12", "#14110a"], badge: "progress" },
-  tests: { key: "tests", href: "/tests", ar: "امتحان", colors: ["#2a2148", "#0d0a18"], badge: "progress" },
+  tests: { key: "tests", href: "/tests", ar: "امتحان", colors: ["#21483c", "#0d0a18"], badge: "progress" },
   abrahamic: { key: "abrahamic", href: "/abrahamic", ar: "إبراهيم", colors: ["#42301b", "#140e09"], badge: "library" },
-  haramain: { key: "haramain", href: "/haramain", ar: "الحرمين", colors: ["#1b3a40", "#08161a"], badge: "library" },
+  haramain: { key: "haramain", href: "/haramain", ar: "الحرمين", colors: ["#1b4035", "#08161a"], badge: "library" },
   hadith: { key: "hadith", href: "/hadith", ar: "حديث", colors: ["#2b3b1b", "#0d140a"], badge: "library" },
-  nahj: { key: "nahj", href: "/nahj", ar: "نهج", colors: ["#1b2b44", "#090d18"], badge: "library" },
+  nahj: { key: "nahj", href: "/nahj", ar: "نهج", colors: ["#1b4438", "#090d18"], badge: "library" },
   qibla: { key: "qibla", href: "/qibla", ar: "قبلة", colors: ["#123a2c", "#06140f"], badge: "live" },
-  stories: { key: "stories", href: "/prophet-stories", ar: "قصص", colors: ["#46241b", "#160b08"], badge: "library" },
-  feed: { key: "feed", href: "/feed", ar: "آية", colors: ["#2e1f47", "#0e0a18"], badge: "live" },
+  stories: { key: "stories", href: "/prophet-stories", ar: "قصص", colors: ["#46381b", "#160b08"], badge: "library" },
+  feed: { key: "feed", href: "/feed", ar: "آية", colors: ["#473a1f", "#0e0a18"], badge: "live" },
 };
 
 const ROWS: { title: keyof DiscoverText; keys: string[] }[] = [
   { title: "rowLearn", keys: ["shams", "reciterPath", "courses", "arabic", "tajweed", "vocab", "cards", "tests", "plan", "how"] },
   { title: "rowQuran", keys: ["feed", "radio", "reciters", "search", "khatm", "map"] },
   { title: "rowDaily", keys: ["prayer", "qibla", "calendar", "salah", "wudu", "duas", "duagen", "names"] },
-  { title: "rowHeritage", keys: ["hadith", "nahj", "stories", "abrahamic", "haramain", "islam", "secrets", "guides", "world"] },
+  { title: "rowHeritage", keys: ["hadith", "nahjStudy", "nahj", "stories", "abrahamic", "haramain", "islam", "secrets", "guides", "world"] },
   { title: "rowCommunity", keys: ["community", "ranking", "stats", "assistant"] },
 ];
 
-function useCards(tradition: TraditionChoice | null) {
+function useCards(_tradition: TraditionChoice | null) {
+  const nahjOn = useNahjVisible();
   const w = useWebT();
   const d = useDiscoverText();
   const { lang } = useLang();
@@ -55,7 +57,11 @@ function useCards(tradition: TraditionChoice | null) {
   return ROWS.map((row) => ({
     title: d[row.title],
     cards: row.keys.flatMap((k): Card[] => {
-      if (k === "nahj" && !showsNahj(tradition)) return [];
+      if (k === "nahj" && !nahjOn) return [];
+      if (k === "nahjStudy") {
+        const nc = nahjCourseText(lang);
+        return [{ key: k, href: "/nahj-studies", title: nahjOn ? nc.short : nc.optInTitle, desc: nahjOn ? nc.lead : nc.optInNote, badge: w("home2.badge_course"), ar: "نهج", colors: ["#1b4438", "#090d18"] }];
+      }
       const t = tile(k);
       if (t) return [{ key: k, href: routeOf(t), title: w(`nav.${t.key}`), desc: w(`home2.${t.desc}`), badge: w(`home2.badge_${t.badge}`), ar: t.ar, colors: gradientColors(t.bg) }];
       const x = extraTool(k);

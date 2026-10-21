@@ -14,7 +14,7 @@ import { qwordAudio, type QWord } from "./words";
 // The exercise cards of the reading course. Arabic is always shown right to left; the system layout direction (RTL
 // languages) is left to React Native. Motion stays still under Reduce Motion.
 
-export const RED = "rgb(190,84,104)";
+export const RED = "rgb(160,58,52)";
 
 export function Ar({ children, size = 40, color, center = true }: { children: string; size?: number; color?: string; center?: boolean }) {
   const t = useTheme();
@@ -84,7 +84,7 @@ export function ChooseCard({ ex, picked, checked, onPick }: { ex: Extract<Ex, { 
           return (
             <Pressable key={i} disabled={checked} onPress={() => onPick(i)} accessibilityRole="button" accessibilityState={{ selected: picked === i }} accessibilityLabel={o.text ?? o.ar}
               style={{ width: wide ? "100%" : "47%", minHeight: wide ? 56 : 92, borderRadius: R.card, borderWidth: 1.5, alignItems: "center", justifyContent: "center", paddingHorizontal: 10,
-                borderColor: right ? t.accent : wrong ? RED : sel ? t.gold : t.line, backgroundColor: right ? t.accentSoft : wrong ? "rgba(190,84,104,0.08)" : t.surface }}>
+                borderColor: right ? t.accent : wrong ? RED : sel ? t.gold : t.line, backgroundColor: right ? t.accentSoft : wrong ? "rgba(160,58,52,0.08)" : t.surface }}>
               {o.ar ? <Ar size={wide ? 30 : 44}>{o.ar}</Ar> : <Text style={{ fontFamily: FONT.semibold, fontSize: 16, color: t.ink, textAlign: "center" }}>{o.text}</Text>}
               <GoldRing on={right} />
             </Pressable>
@@ -246,7 +246,7 @@ export function ReadCard({ words, onResult, highlight }: { words: QWord[]; onRes
       <View style={{ flexDirection: "row-reverse", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
         {words.map((w, i) => (
           <Pressable key={w.ref} onPress={() => say({ word: w })} accessibilityRole="button" accessibilityLabel={w.tr || w.ar}
-            style={{ paddingHorizontal: 6, borderRadius: R.md, backgroundColor: ok ? (ok[i] ? t.accentSoft : "rgba(190,84,104,0.08)") : "transparent" }}>
+            style={{ paddingHorizontal: 6, borderRadius: R.md, backgroundColor: ok ? (ok[i] ? t.accentSoft : "rgba(160,58,52,0.08)") : "transparent" }}>
             <Ar size={words.length > 4 ? 28 : 38} color={ok ? (ok[i] ? t.accent : RED) : undefined}>{w.ar}</Ar>
           </Pressable>
         ))}

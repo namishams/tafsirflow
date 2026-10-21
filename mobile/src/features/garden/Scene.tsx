@@ -1,3 +1,4 @@
+// DESIGN FROZEN (owner approved, tag garten-design-v1) — do not change visuals; only bug fixes.
 import { memo, useEffect, useMemo, type ReactNode } from "react";
 import { View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";

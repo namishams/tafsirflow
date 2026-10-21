@@ -5,7 +5,12 @@ import Animated, { Easing, FadeIn, FadeInDown, cancelAnimation, interpolate, use
 import Svg, { Circle, Defs, Path, RadialGradient, Stop } from "react-native-svg";
 import { JourneyStage } from "./Landscape";
 import { Display, GoldButton, OutlineButton, Stage } from "@/components/brand";
-import { FONT, R, stage } from "@/lib/theme";
+import { ARABIC_FONT, FONT, R, stage } from "@/lib/theme";
+import { getVerseByKey } from "@/lib/quran";
+import { useLang } from "@/i18n";
+import { BISMILLAH, DUA_KEY, fillS, useStory } from "@/features/plan/story";
+import { readName, readV2 } from "@/features/plan/v2";
+import { useGoalLabel } from "@/features/plan/Onboard2";
 import { openPro, usePro } from "@/lib/pro";
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
@@ -21,6 +26,7 @@ type Step = "mission" | "choose" | "plant" | "water" | "done";
 
 export function PlantFlow({ minutes, onDone, onLater, demo }: { minutes?: number; onDone: () => void; onLater?: () => void; /** development only: the ceremony with a tree that is not saved (design previews) */ demo?: boolean }) {
   const tx = useGardenText();
+  const story = useStory();
   const insets = useSafeAreaInsets();
   const { pro } = usePro();
   const reduce = useReducedMotion();
@@ -41,15 +47,17 @@ export function PlantFlow({ minutes, onDone, onLater, demo }: { minutes?: number
       <ScrollView contentContainerStyle={{ padding: 22, paddingTop: insets.top + 28, paddingBottom: insets.bottom + 28, flexGrow: 1 }} keyboardShouldPersistTaps="handled" automaticallyAdjustKeyboardInsets keyboardDismissMode="interactive">
         {step === "mission" ? (
           <Animated.View entering={reduce ? undefined : FadeInDown.duration(500)} style={{ gap: 14, flex: 1 }}>
+            <Text accessibilityLabel="Bismillah" style={{ fontFamily: ARABIC_FONT, fontSize: 30, lineHeight: 56, color: "#f3e2b6", textAlign: "center" }}>{BISMILLAH}</Text>
             <Text style={kicker}>{tx.missionKicker}</Text>
             <Display onStage>{tx.missionTitle}</Display>
             <Text style={body}>{tx.missionLead}</Text>
             <View style={{ alignItems: "center", marginVertical: 8 }}><GlowSeed size={200} still={reduce} /></View>
-            {minutes ? (
-              <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.35)", padding: 16, backgroundColor: "rgba(6,30,23,0.72)" }}>
-                <Text style={{ fontFamily: FONT.italic, fontSize: 17, lineHeight: 25, color: "#f3e2b6" }}>{fillG(tx.pledge, { n: minutes })}</Text>
-              </View>
-            ) : null}
+            {/* the seed is the intention (niyyah): the learner confirms it with the button below */}
+            <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.45)", padding: 16, gap: 8, backgroundColor: "rgba(6,30,23,0.78)" }}>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.8, textTransform: "uppercase", color: stage.gold }}>{story.niyyahT}</Text>
+              <Text style={{ fontFamily: FONT.italic, fontSize: 17, lineHeight: 25, color: "#f3e2b6" }}>{minutes ? fillS(story.niyyah, { n: minutes }) : story.niyyah0}</Text>
+              {minutes ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: stage.textSoft }}>{fillG(tx.pledge, { n: minutes })}</Text> : null}
+            </View>
             <View style={{ flex: 1 }} />
             <GoldButton title={tx.pledgeBtn} onPress={() => { success(); setStep("choose"); }} />
             {onLater ? <OutlineButton title={tx.later} onStage onPress={onLater} /> : null}
@@ -89,6 +97,11 @@ export function PlantFlow({ minutes, onDone, onLater, demo }: { minutes?: number
 
 function Ceremony({ tree, step, reduce, onPlanted, onWatered, onDone }: { tree: Tree; step: Step; reduce: boolean; onPlanted: () => void; onWatered: () => void; onDone: () => void }) {
   const tx = useGardenText();
+  const story = useStory();
+  const goalLabel = useGoalLabel();
+  const [who] = useState(() => readName());
+  const [goal] = useState(() => readV2()?.goals?.[0]);
+  const ending = goal ? (who ? fillS(story.begins, { name: who, goal: goalLabel(goal) }) : fillS(story.begins0, { goal: goalLabel(goal) })) : "";
   const seedY = useSharedValue(reduce ? 0 : -260), land = useSharedValue(reduce ? 1 : 0), rain = useSharedValue(0), sprout = useSharedValue(reduce ? 1 : 0), burst = useSharedValue(0);
   useEffect(() => {
     if (step !== "plant") return;
@@ -134,6 +147,9 @@ function Ceremony({ tree, step, reduce, onPlanted, onWatered, onDone }: { tree: 
         {!reduce ? Array.from({ length: 14 }, (_, i) => <RainDrop key={i} i={i} v={rain} bottom={BASE} />) : null}
       </View>
       <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 22, color: stage.textSoft, textAlign: "center" }}>{tx.ceremonyLead}</Text>
+      {step === "water" ? <Dua /> : null}
+      {step === "done" ? <Text style={{ fontFamily: FONT.semibold, fontSize: 16, lineHeight: 23, color: "#f3e2b6", textAlign: "center" }}>{ending}</Text> : null}
+      {step === "done" ? <Text style={{ fontFamily: FONT.italic, fontSize: 14, lineHeight: 20, color: stage.gold, textAlign: "center" }}>{story.sabr}</Text> : null}
       {step === "water" ? <GoldButton title={tx.waterFirst} onPress={water} style={{ alignSelf: "stretch" }} /> : null}
       {step === "done" ? <GoldButton title={tx.cont} onPress={onDone} style={{ alignSelf: "stretch" }} /> : null}
     </View>
@@ -170,4 +186,25 @@ function RainDrop({ i, v, bottom }: { i: number; v: SharedValue<number>; bottom:
     return { opacity: k > 0 && k < 1 ? 0.9 : 0, transform: [{ translateX: x + k * 6 }, { translateY: -40 + k * (bottom + 34) }, { scaleY: 1.4 }] };
   });
   return <Animated.View pointerEvents="none" style={[{ position: "absolute", left: 0, top: 0, width: 3, height: 9, borderRadius: 2, backgroundColor: "#dff8ee" }, st]} />;
+}
+
+/** the du'a for beneficial knowledge before the first watering: the words "Rabbi zidni 'ilma" from the app's Quran
+ *  data (Quran 20:114), the meaning and the reference */
+function Dua() {
+  const story = useStory();
+  const { lang } = useLang();
+  const [ar, setAr] = useState<string | null>(null);
+  useEffect(() => {
+    let live = true;
+    getVerseByKey(DUA_KEY, lang).then((v) => { if (live) setAr(v.text_uthmani.trim().split(/\s+/).slice(-3).join(" ")); }).catch(() => undefined);
+    return () => { live = false; };
+  }, [lang]);
+  return (
+    <View style={{ alignSelf: "stretch", borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.4)", backgroundColor: "rgba(6,30,23,0.78)", padding: 14, gap: 4 }}>
+      <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 1.8, textTransform: "uppercase", color: stage.gold }}>{story.duaT}</Text>
+      {ar ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 28, lineHeight: 52, color: "#f3e2b6", textAlign: "center", writingDirection: "rtl" }}>{ar}</Text> : null}
+      <Text style={{ fontFamily: FONT.italic, fontSize: 15.5, lineHeight: 22, color: "#ffffff", textAlign: "center" }}>{story.duaM}</Text>
+      <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: stage.gold, textAlign: "center" }}>{story.duaS}</Text>
+    </View>
+  );
 }

@@ -13,13 +13,13 @@ import { useLang } from "@/i18n";
 import { useGamify } from "@/features/feed/gamify";
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
-import { FREE_STAGE, MAX_STAGE, activeTree, markFlourishSeen, onSeriesReward, onStageUp, progressOf, readGarden, resting, stageOf, seasonNow, shamsGrow, takeBurst, tickGarden, useGarden, type SeriesReward, type StageUp } from "./garden";
+import { FREE_STAGE, MAX_STAGE, gatedStage, activeTree, markFlourishSeen, onSeriesReward, onStageUp, progressOf, readGarden, resting, stageOf, seasonNow, shamsGrow, takeBurst, tickGarden, useGarden, type SeriesReward, type StageUp } from "./garden";
 import { onDrops, type Drop } from "./catalog";
 import { readGardenNotify, rescheduleGarden, setGardenNotify } from "./notify";
 import { TreeArt } from "./Tree";
 import { Motes, Panorama, SKIES } from "./Landscape";
 import { CatalogArt } from "./CatalogArt";
-import { fillG, useGardenText } from "./texts";
+import { fillG, useAgeText, useGardenText } from "./texts";
 
 /** keeps the garden up to date with learning (on mount and whenever feed XP or quests change) */
 export function useGardenTick() {
@@ -49,12 +49,13 @@ export function ProgressBar({ frac, color = "#c6a65e", track }: { frac: number; 
 export function GardenWidget({ lead }: { lead?: string }) {
   useGardenTick();
   const tx = useGardenText();
+  const ageTx = useAgeText();
   const s = useGarden();
   const { pro } = usePro();
   const reduce = useReducedMotion();
   const tree = activeTree(s, pro);
   if (!tree) return <SeedCard />;
-  const p = progressOf(tree.gp, pro);
+  const p = progressOf(tree, pro);
   return (
     <Pressable onPress={() => router.push("/garden" as Href)} accessibilityRole="button" accessibilityLabel={`${tx.title}: ${tree.name}, ${fillG(tx.stageN, { n: p.stage, m: MAX_STAGE })}`}
       style={({ pressed }) => ({ borderRadius: R.card, overflow: "hidden", borderWidth: 1, borderColor: "rgba(214,178,106,0.3)", opacity: pressed ? 0.92 : 1 })}>
@@ -65,7 +66,8 @@ export function GardenWidget({ lead }: { lead?: string }) {
           <Text numberOfLines={1} style={{ fontFamily: FONT.display, fontSize: 19, color: "#fff" }}>{tree.name || tx[`t_${tree.type}`]}</Text>
           <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: stageC.textSoft }}>{tx[`s${p.stage}` as "s0"]} · {fillG(tx.stageN, { n: p.stage, m: MAX_STAGE })}</Text>
           <ProgressBar frac={p.frac} track="rgba(255,255,255,0.14)" />
-          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: stageC.textMuted }}>{p.held ? tx.held : p.left ? fillG(tx.next, { n: p.left }) : tx.maxed}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: stageC.textMuted }}>{p.held ? tx.held : p.left ? fillG(tx.next, { n: p.left }) : p.wait ? ageTx(p.age, p.wait).wait : tx.maxed}</Text>
+          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: stageC.textMuted }}>{ageTx(p.age, 0).age}</Text>
           {lead ? <Text style={{ fontFamily: FONT.italic, fontSize: 12.5, color: stageC.gold }}>{lead}</Text> : null}
           {tree.fruits > 0 ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: "#f3b14a" }}>{fillG(tx.fruitsReady, { n: tree.fruits })}</Text> : null}
         </View>
@@ -95,6 +97,7 @@ export function SeedCard() {
 /** "Your tree grew +N" on the Shams completion screen: counts the session, then a bloom of light around the tree */
 export function GardenBurst({ kind }: { kind: "session" | "surah" }) {
   const tx = useGardenText();
+  const ageTx = useAgeText();
   const { pro } = usePro();
   const reduce = useReducedMotion();
   const s = useGarden();
@@ -110,7 +113,7 @@ export function GardenBurst({ kind }: { kind: "session" | "surah" }) {
   const tx2 = useAnimatedStyle(() => ({ opacity: rise.value, transform: [{ translateY: (1 - rise.value) * 16 }] }));
   const tree = activeTree(s, pro);
   if (!tree) return <SeedCard />;
-  const p = progressOf(tree.gp, pro);
+  const p = progressOf(tree, pro);
   return (
     <View style={{ alignItems: "center", gap: 6 }} accessibilityLiveRegion="polite">
       <View style={{ width: 150, height: 170, alignItems: "center", justifyContent: "center" }}>
@@ -121,7 +124,7 @@ export function GardenBurst({ kind }: { kind: "session" | "surah" }) {
       </View>
       {n > 0 ? <Animated.Text style={[{ fontFamily: FONT.display, fontSize: 20, color: stageC.gold }, tx2]}>{fillG(tx.shamsGrew, { n })}</Animated.Text> : null}
       <View style={{ width: 200 }}><ProgressBar frac={p.frac} track="rgba(255,255,255,0.14)" /></View>
-      <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stageC.textMuted }}>{p.held ? tx.held : p.left ? fillG(tx.next, { n: p.left }) : tx.maxed}</Text>
+      <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: stageC.textMuted }}>{p.held ? tx.held : p.left ? fillG(tx.next, { n: p.left }) : p.wait ? ageTx(p.age, p.wait).wait : tx.maxed}</Text>
       {pro ? <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: stageC.gold }}>{tx.proDouble}</Text> : null}
     </View>
   );
@@ -283,7 +286,7 @@ export function PlanMilestones({ minutes }: { minutes: number }) {
   const tx = useGardenText();
   // a realistic day of growth for the daily minutes (free, without stickers), on the same scale as the garden
   const perDay = minutes >= 30 ? 45 : minutes >= 20 ? 35 : minutes >= 10 ? 25 : 15;
-  const stages = [1, 2, 3, 4].map((w) => Math.min(FREE_STAGE, stageOf(w * 7 * perDay, false)));
+  const stages = [1, 2, 3, 4].map((w) => Math.min(FREE_STAGE, gatedStage(w * 7 * perDay, w * 7)));
   return (
     <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.3)", backgroundColor: "rgba(255,255,255,0.04)", padding: 16, gap: 10 }}>
       <Text style={{ fontFamily: FONT.bold, fontSize: 11.5, letterSpacing: 1.6, textTransform: "uppercase", color: stageC.gold }}>{tx.milestones}</Text>

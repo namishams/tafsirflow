@@ -14,6 +14,11 @@ import { HARAMAIN_COURSE } from "@/features/haramain/lessons";
 import type { CourseDef } from "@/features/abrahamic/courseKit";
 import { QUIZ_KEY, type QuizAnswers } from "@/features/plan/plan";
 import { readExamLog } from "@/features/exam/integrity";
+import { deviceLang } from "@/i18n";
+import { readTradition, showsNahj } from "@/lib/tradition";
+import { nahjEdition } from "@/features/hadith/nahj";
+import { courseState as nahjCourseState } from "@/features/nahj-course/data";
+import { nahjCourseText } from "@/features/nahj-course/text";
 
 // The Madrasa: the app's existing courses arranged like a classical Islamic school. Nothing is copied or changed:
 // every course of the school points at an existing course and reads its progress from that course's own store.
@@ -66,8 +71,11 @@ type Source =
   | { k: "arabic"; level: "A1" | "A2" | "B1" | "B2" | "C1" }
   | { k: "juz"; juz: number[] }
   | { k: "shams"; surahs: number[] }
-  | { k: "kit"; def: CourseDef };
+  | { k: "kit"; def: CourseDef }
+  | { k: "nahj" };
 export type SchoolCourse = { id: string; stage: StageId; subject: SubjectId; required: boolean; src: Source };
+/** the Nahj al-Balagha elective is part of the school only when the learner shows the Nahj al-Balagha (Shia mode by default, opt-in otherwise) */
+const visibleCourse = (c: SchoolCourse) => c.src.k !== "nahj" || showsNahj(readTradition());
 
 const range = (a: number, b: number) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 const C = (id: string, stage: StageId, subject: SubjectId, required: boolean, src: Source): SchoolCourse => ({ id, stage, subject, required, src });
@@ -106,6 +114,7 @@ export const CURRICULUM: SchoolCourse[] = [
   C("ulum", "thanawi", "tafsir", true, { k: "course", id: "ulum" }),
   C("shams-mid", "thanawi", "tafsir", true, { k: "shams", surahs: [67, 36, 55, 56, 18, 32] }),
   C("abrahamic", "thanawi", "aqidah", false, { k: "kit", def: ABRAHAMIC_COURSE }),
+  C("nahj", "thanawi", "aqidah", false, { k: "nahj" }), // elective in Kulliyyat Uṣūl ad-Dīn
   // ʿĀlī – higher: the reciter's last levels, juz exams, Arabic C1, long surahs
   C("rp-9-10", "ali", "quran", true, { k: "rp", from: 9, to: 10 }),
   C("juz-1-2", "ali", "quran", true, { k: "juz", juz: [1, 2] }),
@@ -115,7 +124,7 @@ export const CURRICULUM: SchoolCourse[] = [
 /** academy courses not placed in the curriculum yet (shown in the stage view as further electives) */
 export const unplacedCourses = () => COURSES.filter((c) => !CURRICULUM.some((x) => x.src.k === "course" && x.src.id === c.id));
 
-export const coursesOf = (stage: StageId) => CURRICULUM.filter((c) => c.stage === stage);
+export const coursesOf = (stage: StageId) => CURRICULUM.filter((c) => c.stage === stage && visibleCourse(c));
 
 // ---------- progress of one course, read from its own store ----------
 export type CourseState = { done: number; grade: number | null; graded: number };
@@ -176,6 +185,10 @@ export function stateOf(c: SchoolCourse): CourseState {
       const total = rows.reduce((a, r) => a + r.total, 0), learned = rows.reduce((a, r) => a + r.learned, 0);
       return { done: total ? learned / total : 0, grade: null, graded: 0 };
     }
+    case "nahj": {
+      const cs = nahjCourseState(nahjEdition(deviceLang()));
+      return { done: cs.done, grade: cs.grade, graded: cs.graded };
+    }
     case "kit": {
       const p = readJSON<{ done: Record<string, { score: number; of: number }> }>(s.def.storeKey, { done: {} });
       const rows = s.def.lessons.map((l) => p.done?.[l.id]).filter(Boolean) as { score: number; of: number }[];
@@ -197,6 +210,7 @@ export function hrefOf(c: SchoolCourse): string {
     case "juz": return `/tests/juz?ref=${s.juz[0]}`;
     case "shams": return `/shams/${s.surahs.find((n) => { const r = surahProgress()[n - 1]; return r && r.learned < r.total; }) ?? s.surahs[0]}`;
     case "kit": return s.def.route;
+    case "nahj": return "/nahj-studies";
   }
 }
 
@@ -211,6 +225,7 @@ export function titleOf(c: SchoolCourse, lang: string, st: (k: "c_qaida" | "c_ta
     case "arabic": return st("c_ar", { level: s.level });
     case "juz": return st("c_juz", { list: s.juz.join(", ") });
     case "shams": return st("c_shams", { n: s.surahs.length });
+    case "nahj": return nahjCourseText(lang).short;
     case "kit": return (s.def.title as Record<string, string | undefined>)[lang] ?? s.def.title.en;
   }
 }
@@ -231,7 +246,7 @@ export type SubjectGrade = { subject: SubjectId; grade: number | null; done: num
 /** subject grades over the stages up to and including the learner's stage (graded courses only) */
 export function subjectGrades(upTo: StageId = currentStage()): SubjectGrade[] {
   const n = STAGES.find((s) => s.id === upTo)!.n;
-  const cs = CURRICULUM.filter((c) => STAGES.find((s) => s.id === c.stage)!.n <= n);
+  const cs = CURRICULUM.filter((c) => STAGES.find((s) => s.id === c.stage)!.n <= n && visibleCourse(c));
   return SUBJECTS.map(({ id }) => {
     const mine = cs.filter((c) => c.subject === id).map((c) => ({ c, st: stateOf(c) }));
     const graded = mine.filter((x) => x.st.grade !== null && x.st.graded > 0);

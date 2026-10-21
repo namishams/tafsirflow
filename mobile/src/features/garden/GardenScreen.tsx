@@ -17,15 +17,15 @@ import { StickerArt } from "@/features/feed/Sticker";
 import { BrandFoot, CARD_SIZE, ShareSheet, type ShareFormat } from "@/features/feed/share";
 import { success, tick } from "@/features/feed/haptics";
 import { useReducedMotion } from "@/features/library/motion";
-import { MAX_STAGE, SRCS, stageOf, type Tree, holdCelebrations, STICKER_GP_HINT, activeTree, canPlant, giveSticker, harvest, plotsOf, PLOT_STAGES, progressOf, resting, seasonNow, setActive, shamsRun, useGarden, weekGrowth, type Garden, type HistKind } from "./garden";
+import { MAX_STAGE, SRCS, treeStage, type Tree, holdCelebrations, STICKER_GP_HINT, activeTree, canPlant, giveSticker, harvest, plotsOf, PLOT_STAGES, progressOf, resting, seasonNow, setActive, shamsRun, useGarden, weekGrowth, type Garden, type HistKind } from "./garden";
 import { CATALOG_SIZE, RARITY_GP, SERIES, SERIES_SIZE, countOf, dailyPackReady, duplicates, isGiven, itemAt, openDailyPack, rarityOf, seriesOwned, totalOwned, useCatalog } from "./catalog";
 import { CatalogArt } from "./CatalogArt";
 import { Petals, Zellige } from "./Scene";
-import { Fronds, Heavens, Motes, Panorama, SKIES, SkyFill, TERRACE_H, Terrace, gardenLevel, inkFor, useSky, type Sky } from "./Landscape";
+import { Fronds, Heavens, Motes, setSkyPlace, useSkyPlace, Panorama, SKIES, SkyFill, TERRACE_H, Terrace, gardenLevel, inkFor, useSky, type Sky } from "./Landscape";
 import { Plaque, TREE_H, TREE_W, TreeArt, geom } from "./Tree";
 import { PlantFlow } from "./PlantFlow";
 import { GardenNotifySetting, ProgressBar, StageCinematic, chime, useGardenTick } from "./widgets";
-import { GIFT_FULL, fillG, useGardenText } from "./texts";
+import { GIFT_FULL, fillG, skyLabel, useAgeText, useGardenText, useSkyText } from "./texts";
 
 const SCENE_H = 520;
 
@@ -33,6 +33,7 @@ export default function GardenScreen() {
   useGardenTick();
   const params = useLocalSearchParams<{ plant?: string; share?: string; sky?: string; cine?: string; level?: string }>();
   const tx = useGardenText();
+  const ageTx = useAgeText();
   const t = useTheme();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
@@ -43,7 +44,9 @@ export default function GardenScreen() {
   const [planting, setPlanting] = useState(params.plant === "1" || params.plant === "demo" || s.trees.length === 0);
   const [gift, setGift] = useState(false);
   const [share, setShare] = useState(params.share === "1");
-  const liveSky = useSky();
+  const place = useSkyPlace();
+  const skyT = useSkyText();
+  const liveSky = useSky(place);
   // "?sky=night|dawn|day|golden" pins the light (previews and store screenshots)
   const sky = params.sky && params.sky in SKIES ? SKIES[params.sky as keyof typeof SKIES] : liveSky;
   const season = seasonNow();
@@ -83,10 +86,10 @@ export default function GardenScreen() {
     );
   }
   if (!tree) return null;
-  const p = progressOf(tree.gp, pro);
+  const p = progressOf(tree, pro);
   const ink = inkFor(sky);
   const petal = tree.type === "pomegranate" ? "#e0c184" : s.traits.includes("blossoms") ? "#f5ebd7" : "#9fd28a";
-  const level = __DEV__ && params.level ? Number(params.level) : gardenLevel(s.trees.map((x) => stageOf(x.gp, pro)));
+  const level = __DEV__ && params.level ? Number(params.level) : gardenLevel(s.trees.map((x) => treeStage(x, pro)));
   const H = SCENE_H + insets.top;
 
   return (
@@ -120,6 +123,7 @@ export default function GardenScreen() {
               <View style={{ flex: 1 }}>
                 <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.8, textTransform: "uppercase", color: ink, opacity: 0.85 }}>{season === "ramadan" ? tx.ramadan : season === "eid" ? tx.eid : tx.kicker}</Text>
                 <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 22, color: ink }}>{tx.missionTitle}</Text>
+                <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: ink, opacity: 0.78, marginTop: 1, textShadowColor: "rgba(0,0,0,0.35)", textShadowRadius: 4 }}>{skyLabel(skyT, place === "mecca", sky.next)}</Text>
               </View>
               <RoundBtn icon="grid" label={tx.album} onPress={() => router.push("/sticker-collection" as Href)} />
               <RoundBtn icon="send" label={tx.share} onPress={() => setShare(true)} />
@@ -132,7 +136,8 @@ export default function GardenScreen() {
             <Text style={{ fontFamily: FONT.display, fontSize: 22, color: t.ink }}>{tree.name || tx[`t_${tree.type}`]}</Text>
             <Text style={{ fontFamily: FONT.regular, fontSize: 14, color: t.muted }}>{tx[`t_${tree.type}`]} · {tx[`s${p.stage}` as "s0"]} · {fillG(tx.stageN, { n: p.stage, m: MAX_STAGE })}</Text>
             <ProgressBar frac={p.frac} />
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.ink }}>{p.held ? tx.held : p.left ? fillG(tx.next, { n: p.left }) : tx.maxed}</Text>
+            <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.ink }}>{p.held ? tx.held : p.left ? fillG(tx.next, { n: p.left }) : p.wait ? ageTx(p.age, p.wait).wait : tx.maxed}</Text>
+            <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, color: t.muted }}>{ageTx(p.age, 0).age}{!p.held && p.left && p.wait ? ` · ${ageTx(p.age, p.wait).wait}` : ""}</Text>
             {resting(s) ? <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, color: t.muted }}>{tx.resting}</Text> : null}
             <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, color: t.muted }}>{s.watered === todayNum() ? tx.watered : tx.waterHint}</Text>
             {shamsRun(s) >= 2 ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.gold }}>{fillG(tx.shamsRunT, { n: shamsRun(s) })}</Text> : null}
@@ -155,7 +160,18 @@ export default function GardenScreen() {
           {!pro && s.trees.length > 0 ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{tx.proMore}</Text> : null}
 
           <History s={s} treeId={tree.id} />
-          <View style={{ borderRadius: R.card, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, paddingHorizontal: 16, paddingVertical: 6 }}><GardenNotifySetting /></View>
+          <View style={{ borderRadius: R.card, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line, paddingHorizontal: 16, paddingVertical: 6 }}>
+            <GardenNotifySetting />
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 8, paddingVertical: 10, borderTopWidth: 1, borderTopColor: t.line }}>
+              <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{skyT.label}</Text>
+              {(["mecca", "local"] as const).map((k) => (
+                <Pressable key={k} onPress={() => { tick(); setSkyPlace(k); }} accessibilityRole="radio" accessibilityState={{ selected: place === k }}
+                  style={{ paddingHorizontal: 12, paddingVertical: 7, borderRadius: 999, borderWidth: 1, borderColor: place === k ? t.gold : t.line, backgroundColor: place === k ? "rgba(214,180,108,0.14)" : "transparent" }}>
+                  <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.ink }}>{k === "mecca" ? skyT.mecca : skyT.local}</Text>
+                </Pressable>
+              ))}
+            </View>
+          </View>
         </View>
       </ScrollView>
       {gift ? <GiftSheet onClose={() => setGift(false)} /> : null}
@@ -171,7 +187,7 @@ type BurstKind = "water" | "fruit" | "dust";
 function TreePlot({ tr, w, active, s, season, reduce, dust, onEvent }: { tr: Tree; w: number; active: boolean; s: Garden; season: ReturnType<typeof seasonNow>; reduce: boolean; dust: number; onEvent: () => void }) {
   const tx = useGardenText();
   const { pro } = usePro();
-  const pp = progressOf(tr.gp, pro);
+  const pp = progressOf(tr, pro);
   const [nudge, setNudge] = useState(0);
   const [burst, setBurst] = useState<{ id: number; kind: BurstKind; xp: number } | null>(null);
   useEffect(() => { if (dust) { success(); setBurst({ id: dust, kind: "dust", xp: 0 }); setNudge((n) => n + 1); } }, [dust]);
@@ -462,7 +478,7 @@ function GardenCard({ format }: { format: ShareFormat }) {
   const { pro } = usePro();
   const s = useGarden();
   const tree = activeTree(s, pro)!;
-  const p = progressOf(tree.gp, pro);
+  const p = progressOf(tree, pro);
   const { w, h } = CARD_SIZE[format];
   const sky: Sky = useMemo(() => SKIES.golden, []);
   const ground = h - 20 - 46 - w * 0.9 * (48 / 360) + 14;
@@ -470,7 +486,7 @@ function GardenCard({ format }: { format: ShareFormat }) {
     <View style={{ width: w, height: h, overflow: "hidden", alignItems: "center", justifyContent: "flex-end" }}>
       <SkyFill sky={sky} />
       <Heavens sky={sky} width={w} height={ground} still />
-      <Panorama width={w} height={h} ground={ground} sky={sky} level={stageOf(tree.gp, pro)} still withSky={false} />
+      <Panorama width={w} height={h} ground={ground} sky={sky} level={treeStage(tree, pro)} still withSky={false} />
       <View style={{ position: "absolute", top: format === "story" ? 70 : 26, left: 0, right: 0, alignItems: "center", gap: 4 }}>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: inkFor(sky) }}>{tx.title}</Text>
         <Text style={{ fontFamily: FONT.display, fontSize: 26, color: inkFor(sky) }}>{tx[`s${p.stage}` as "s0"]}</Text>

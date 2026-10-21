@@ -9,14 +9,14 @@ import { starPolygon } from "./art";
 // line drawing in the middle (website: src/components/Sticker.tsx). Locked stickers are grey and faint, with a gold
 // ring showing how close they are.
 const TONES: Record<Tone, [string, string, string]> = {
-  earth: ["#b9854f", "#3a2412", "#f3dcb6"],
+  earth: ["#a8834a", "#33250f", "#f3dcb6"],
   leaf: ["#46936a", "#0f2d20", "#d8f0d0"],
   gold: ["#d9b86e", "#4a3612", "#fff3d6"],
-  night: ["#41629f", "#0b1631", "#e3eaff"],
-  dawn: ["#cf7f8e", "#2c1530", "#ffe4d9"],
-  sun: ["#f4c45e", "#7a3e08", "#fff6dc"],
-  sea: ["#3f93a9", "#0a2a35", "#dbf5fb"],
-  rose: ["#bd5a70", "#3a0f1c", "#ffdbe2"],
+  night: ["#2f7a62", "#0d2f25", "#e6efe9"],
+  dawn: ["#cfb47f", "#302715", "#f7f0e1"],
+  sun: ["#e2c27d", "#5c4210", "#fff6dc"],
+  sea: ["#3fa989", "#0e3126", "#e0f6ef"],
+  rose: ["#bd9c5a", "#3a2c0f", "#f8f1e2"],
 };
 const MEDAL = ["#f6e7bf", "#c9a65e", "#efe2bf", "#8f7238"];
 

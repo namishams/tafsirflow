@@ -26,7 +26,7 @@ function make(dark: boolean, v: Record<"bg" | "surface" | "ink" | "muted" | "lin
     dark,
     bg: rgb(v.bg), surface: rgb(v.surface), ink: rgb(v.ink), muted: rgb(v.muted), line: rgb(v.line),
     accent: rgb(v.accent), accentSoft: rgb(v.accentSoft), gold: rgb(v.gold), onAccent: dark ? "#04140F" : "#FFFFFF",
-    danger: "rgb(190,84,104)", arabic: rgb(v.ink),
+    danger: dark ? "rgb(214,120,110)" : "rgb(160,58,52)", arabic: rgb(v.ink),
     card: rgb(v.surface), text: rgb(v.ink), secondary: rgb(v.muted), tertiary: rgb(v.muted, 0.6), separator: rgb(v.line),
     fill: rgb(v.line, 0.6), tint: rgb(v.accent), tintText: dark ? "#04140F" : "#FFFFFF", tintSoft: rgb(v.accentSoft),
   };
@@ -43,11 +43,18 @@ export const stage = {
 };
 // btn-gold: linear-gradient(180deg, #dcc48c, #c6a65e) with dark green text
 export const goldButton = { from: "#dcc48c", to: "#c6a65e", text: "rgb(8,38,29)", line: "rgb(201,166,94)" };
-// Poster tiles of the course catalogue (PosterTiles.tsx TONES)
+// Poster tiles of the course catalogue (PosterTiles.tsx TONES): only emerald, jade, malachite and antique gold,
+// like the bindings of a fine mushaf (no blue, purple or rose)
 export const TONES: [string, string][] = [
-  ["#0c4a37", "#06221a"], ["#3a2f12", "#14110a"], ["#173640", "#081418"], ["#1f2b44", "#0b101b"],
-  ["#3b1f2b", "#160b10"], ["#2c3a1a", "#10160a"], ["#30254a", "#100c19"], ["#401c14", "#170a07"],
+  ["#0c4a37", "#06221a"], ["#3a2f12", "#14110a"], ["#0f3f3a", "#061c19"], ["#13392b", "#071a13"],
+  ["#33290f", "#120e06"], ["#24381c", "#0d160a"], ["#0b3a30", "#041814"], ["#1d4434", "#0a1d16"],
 ];
+/** gold foil: the gradient of embossed gold (medallions, rings, seals) and the hairline gold of frames */
+export const GOLD_FOIL = ["#f6e7bf", "#d6b46c", "#a9802f", "#e9cf99", "#b98f45"] as const;
+export const GOLD_RING = ["#f3e2b6", "#c6a65e", "#8a6a2c"] as const;
+export const goldHair = "rgba(214,180,108,0.45)";
+/** a restrained garnet for errors and the live mark (instead of bright red or rose) */
+export const GARNET = "rgb(150,52,52)";
 
 
 export function useTheme(): Theme {

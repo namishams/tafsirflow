@@ -357,7 +357,7 @@ function LessonRun({ exs, lesson, stage }: { exs: Ex[]; lesson: QLesson | null; 
         </StepIn>
       </ScrollView>
       <View style={{ position: "absolute", left: 0, right: 0, bottom: 0, paddingHorizontal: 16, paddingTop: 14, paddingBottom: insets.bottom + 14, borderTopWidth: 1, borderColor: t.line,
-        backgroundColor: graded === null ? t.bg : graded ? t.accentSoft : "rgba(190,84,104,0.10)", gap: 10 }}>
+        backgroundColor: graded === null ? t.bg : graded ? t.accentSoft : "rgba(160,58,52,0.10)", gap: 10 }}>
         {graded !== null && ex.t !== "match" ? (
           <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.bold, fontSize: 16, color: graded ? t.accent : RED }}>
             {graded ? qt("right") : ex.t === "choose" ? `${qt("wrong")} ${ex.options[ex.answer].text ?? ex.options[ex.answer].ar}` : qt("wrong")}

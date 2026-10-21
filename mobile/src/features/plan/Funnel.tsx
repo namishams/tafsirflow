@@ -27,7 +27,7 @@ import { LEVELS, MINUTES, MOTIVATIONS, STEPS, readDraft, readPlan, savePlan, wri
 import { fmt, usePlanT } from "./texts";
 import { useO2 } from "./texts2";
 import { CHALLENGES, GOALS_V2, INTERESTS, primaryGoal, readName, readV2, saveName, saveV2, type Challenge, type GoalV2, type Interest, type V2Answers } from "./v2";
-import { MethodIntro, PathView, ReplyCard, useGoalLabel } from "./Onboard2";
+import { MethodIntro, PathView, PeopleOfQuran, ReplyCard, useGoalLabel } from "./Onboard2";
 
 // The first-run funnel (onboarding v2): language, an optional name, then multi-select goals, interests and challenges,
 // and the v1 single-select questions (level, minutes, reciter, tradition, prayer, motivation). After every answer a
@@ -36,7 +36,7 @@ import { MethodIntro, PathView, ReplyCard, useGoalLabel } from "./Onboard2";
 // Answers so far are kept in qmc.quiz.draft, so the reload a right-to-left language needs resumes at the same step.
 // "?personalise=1" (Masterclass tab): the same questions for an existing plan; keeps the plan's start date and tree.
 const Q = ["lang", "name", "goals", "interests", "challenges", "level", "minutes", "reciter", "tradition", "prayer", "motivation"] as const;
-type Phase = "quiz" | "method" | "building" | "plan" | "garden" | "paywall";
+type Phase = "quiz" | "story" | "method" | "building" | "plan" | "garden" | "paywall";
 type Draft = QuizDraft & { goals?: GoalV2[]; interests?: Interest[]; challenges?: Challenge[]; v?: 2 };
 
 /** the website's goal (tf:goal, synced with the account) from the quiz answers */
@@ -102,7 +102,7 @@ export function Funnel() {
     if (old) { made.createdAt = old.createdAt; writeJSON("qmc.plan", made, true); }
     setPlan(made);
     setV2(saveV2(goals, d.interests ?? [], d.challenges ?? []));
-    setPhase("method");
+    setPhase("story");
   };
   const back = () => { tick(); if (reply) { setReply(null); return; } if (step > 0) setStep(step - 1); else leave(); };
   const leave = () => { if (!pers) writeJSON("tf:onboardSkip", true); writeDraft(null); if (router.canGoBack()) goBack(); else router.replace("/" as Href); };
@@ -113,6 +113,7 @@ export function Funnel() {
   };
   const hi = name ? fmt(o.hiName, { name }) : o.hi;
 
+  if (phase === "story") return <PeopleOfQuran plan={plan} goals={v2?.goals ?? []} name={name} onDone={() => setPhase("method")} />;
   if (phase === "method") return <MethodIntro goals={v2?.goals ?? []} name={name} onDone={() => setPhase("building")} />;
   if (phase === "building") return <Building onDone={() => { success(); setPhase("plan"); }} />;
   // the tree is planted right after the plan (the mission of the Shams Method), unless one already grows

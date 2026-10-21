@@ -3,7 +3,7 @@ import { Animated, Platform, Pressable, StyleSheet, Text, View } from "react-nat
 import { BlurView } from "expo-blur";
 import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
 import { CALLIG_FONT, FONT, useTheme } from "@/lib/theme";
-import { LogoMark } from "@/components/brand";
+import { Wordmark } from "@/components/brand";
 import { Icon, type IconName } from "@/components/icons";
 
 // The reader's pinned top bar in the website's style: back on the start side; in the centre the gold logo mark,
@@ -48,12 +48,9 @@ export function ReaderTopBar({ top, solid, reduce, arabicName, brand, backLabel,
         <View style={{ width: 92, flexDirection: "row", justifyContent: "flex-start" }}>
           <BarButton icon="chevronLeft" label={backLabel} onPress={onBack} />
         </View>
-        <View style={{ flex: 1, minWidth: 0, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8 }} accessible accessibilityRole="header" accessibilityLabel={`${brand}, ${arabicName}`}>
-          <LogoMark size={26} />
-          <View style={{ minWidth: 0, alignItems: "flex-start" }}>
-            <Text numberOfLines={1} maxFontSizeMultiplier={1.3} style={{ fontFamily: FONT.semibold, fontSize: 12.5, lineHeight: 16, color: t.ink }}>{brand}</Text>
-            <Text numberOfLines={1} allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 14, lineHeight: 22, color: t.gold, writingDirection: "rtl" }}>{arabicName}</Text>
-          </View>
+        <View style={{ flex: 1, minWidth: 0, alignItems: "center", justifyContent: "center" }} accessible accessibilityRole="header" accessibilityLabel={`${brand}, ${arabicName}`}>
+          <Wordmark height={15} />
+          <Text numberOfLines={1} allowFontScaling={false} style={{ fontFamily: CALLIG_FONT, fontSize: 14, lineHeight: 22, color: t.gold, writingDirection: "rtl" }}>{arabicName}</Text>
         </View>
         <View style={{ width: 92, flexDirection: "row", justifyContent: "flex-end" }}>
           <BarButton icon="eye" label={focusLabel} onPress={onFocus} />
