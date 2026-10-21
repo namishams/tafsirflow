@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Pressable, Text, View } from "react-native";
-import { Stack } from "expo-router";
+import { Stack, router, type Href } from "expo-router";
+import { CATALOG_SIZE, totalOwned, useCatalog } from "@/features/garden/catalog";
 import { LinearGradient } from "expo-linear-gradient";
 import { Page } from "@/components/page";
 import { useLang } from "@/i18n";
@@ -29,6 +30,8 @@ export default function StickerAlbum() {
   useEffect(() => { const id = setTimeout(markStickersSeen, 800); return () => clearTimeout(id); }, []);
   const nf = (n: number) => Intl.NumberFormat(lang).format(n);
   const have = STICKERS.filter((s) => gm.stickers[s.id]).length;
+  useCatalog();
+  const bigOwned = totalOwned();
   const date = (d: number) => new Intl.DateTimeFormat(lang, { dateStyle: "medium" }).format(new Date(d * 86400000 + new Date().getTimezoneOffset() * 60000 + 43200000));
   const sel = open ? STICKER.get(open) : undefined;
   const regular = STICKERS.filter((s) => !s.rare);
@@ -61,6 +64,14 @@ export default function StickerAlbum() {
     <Page padded>
       <Stack.Screen options={{ title: gt.album }} />
       <View style={{ gap: 14 }}>
+        {/* the big collection (every verse, surah, juz, the 99 names …) that feeds the tree */}
+        <Pressable onPress={() => router.push("/sticker-collection" as Href)} accessibilityRole="button" accessibilityLabel={`${lang === "de" ? "Große Sammlung" : "Big collection"}: ${nf(bigOwned)} / ${nf(CATALOG_SIZE)}`}
+          style={({ pressed }) => ({ borderRadius: R.card, overflow: "hidden", transform: [{ scale: pressed ? 0.98 : 1 }] })}>
+          <LinearGradient colors={[stage.bg, stage.deep]} style={{ padding: 18, gap: 6 }}>
+            <Text style={{ fontFamily: FONT.display, fontSize: 20, color: "#f3e2b6" }}>{lang === "de" ? "Große Sammlung" : lang === "ar" ? "المجموعة الكبرى" : "Big collection"} · {nf(CATALOG_SIZE)}</Text>
+            <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 20, color: "rgba(255,255,255,0.85)" }}>{lang === "de" ? `Jeder Vers, jede Sure, jeder Juz, die 99 Namen und mehr. Sie haben ${nf(bigOwned)}. Für Ihren Baum.` : `Every verse, surah, juz, the 99 names and more. You have ${nf(bigOwned)}. For your tree.`}</Text>
+          </LinearGradient>
+        </Pressable>
         <View style={{ borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, padding: 16, gap: 10 }}>
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 18, color: t.ink }}>{fillText(gt.albumProgress, { n: nf(have), m: nf(STICKERS.length) })}</Text>
           <View style={{ height: 8, borderRadius: 4, backgroundColor: t.line }} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: STICKERS.length, now: have }}>
