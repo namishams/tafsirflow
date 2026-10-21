@@ -2,7 +2,7 @@ import type { IslamChapter } from "../../types";
 const c: IslamChapter = {
   title: "Kur'an",
   kicker: "Kitap",
-  lead: "Müslümanlar için Kur'an, melek Cebrâil aracılığıyla yaklaşık yirmi üç yıl boyunca Peygamber Muhammed ﷺ'e indirilen Allah kelamıdır. On dört asırdır okunuyor, ezberleniyor ve açıklanıyor – dünyanın her yerinde camilerde, ailelerde ve Kur'an kurslarında. Burada nasıl bir yapıya sahip olduğunu, nasıl korunduğunu ve onunla kendin nasıl başlayabileceğini öğreneceksin.",
+  lead: "Müslümanlar için Kur'an, melek Cebrâil aracılığıyla yaklaşık yirmi üç yıl boyunca Peygamber Muhammed ﷺ'e indirilen Allah kelamıdır. On dört asırdır okunuyor, ezberleniyor ve açıklanıyor – dünyanın her yerinde camilerde, ailelerde ve Kur'an kurslarında. Burada nasıl bir yapıya sahip olduğunu, nasıl korunduğunu ve onunla kendiniz nasıl başlayabileceğinizi öğreneceksiniz.",
   facts: [
     { n: "114", l: "Sure" },
     { n: "6.236", l: "Ayet (Kûfe sayımı)" },
@@ -40,7 +40,7 @@ Kitaptaki surelerin sırası kronolojik değildir. Peygamber ﷺ'in bizzat öğr
 
 Peygamber ﷺ hayattayken Kur'an hem ezberleniyor hem de vahiy kâtipleri tarafından hurma dallarına, deri parşömenlere, yassı taşlara ve kemiklere yazılıyordu. Vefatından sonra Kur'an'ı ezbere bilen pek çok sahabe Yemâme Savaşı'nda şehit düştü. Bunun üzerine **Ömer**, ilk halife **Ebû Bekir**'i Kur'an'ı tek bir derlemede toplamaya teşvik etti. Ebû Bekir bu görevi Peygamber ﷺ'in kâtiplerinden **Zeyd bin Sâbit**'e verdi; Zeyd de yalnızca yazılı olarak mevcut olan ve şahitlerce doğrulanan şeyleri almak için son derece titiz davrandı. Buhârî bunu *Sahîh*'inde böyle rivayet eder.
 
-Bu sayfalar daha sonra Ömer'in kızı **Hafsa**'nın yanında muhafaza edildi. Üçüncü halife **Osman** döneminde, Zeyd'in başkanlığında bunlardan nüshalar çoğaltıldı ve herkes tek ve birleşik bir metinden okusun diye İslam dünyasının büyük şehirlerine gönderildi. Bu **Osman mushafı**, bugün elinde tuttuğun her Kur'an nüshasının temelidir.
+Bu sayfalar daha sonra Ömer'in kızı **Hafsa**'nın yanında muhafaza edildi. Üçüncü halife **Osman** döneminde, Zeyd'in başkanlığında bunlardan nüshalar çoğaltıldı ve herkes tek ve birleşik bir metinden okusun diye İslam dünyasının büyük şehirlerine gönderildi. Bu **Osman mushafı**, bugün elinizde tuttuğunuz her Kur'an nüshasının temelidir.
 
 ## Korunması ve hafızlar
 
@@ -66,7 +66,7 @@ Kur'an'ı ilk açıklayan Peygamber ﷺ'dir (Kur'an 16:44), ardından sahabeleri
 - Kur'an'ı her şeyden önce yine Kur'an'la ve hadislerle açıklayan ve bugün hâlâ çok okunan **İbn Kesîr** tefsiri;
 - özellikle fıkhî ve dilsel açıklamalar bakımından zengin olan **Kurtubî** tefsiri (*el-Câmi' li-Ahkâmi'l-Kur'ân*).
 
-Platformumuzda her ayet için açıklamaları, kaynağı her zaman belirtilmiş olarak okuyabilirsin.
+Platformumuzda her ayet için açıklamaları, kaynağı her zaman belirtilmiş olarak okuyabilirsiniz.
 
 ## Ana temalar
 
@@ -90,15 +90,15 @@ Peygamber ﷺ şöyle buyurmuştur: "Sizin en hayırlınız Kur'an'ı öğrenen 
 
 Burada, Emirlikler'de Kur'an'ın gündelik ve kamusal hayatta sağlam bir yeri vardır. **Dubai Uluslararası Kur'an-ı Kerim Ödülü** 1997'den beri düzenlenmektedir ve her yıl pek çok ülkeden genç kurraları bir araya getirir. Bütün emirliklerde, çocukların ve yetişkinlerin, Emirlilerin ve burada yaşayanların deneyimli hocalarla öğrendiği **Kur'an hafızlık merkezleri** vardır. 2019'da Dubai'nin Al Khawaneej bölgesinde, Kur'an'daki bitkileri ve kıssaları aileler için canlandıran bir park olan **Quranic Park** (Kur'an Parkı) açıldı. Abu Dabi'deki Şeyh Zayed Büyük Camii'nde de dünyanın her yerinden gelen ziyaretçiler Kur'an tilavetini dinler.
 
-## Bizimle nasıl başlarsın?
+## Bizimle nasıl başlarsınız?
 
-Her şeyi bir anda öğrenmen gerekmiyor. Bugün sana uyanla başla:
+Her şeyi bir anda öğrenmeniz gerekmiyor. Bugün size uyanla başlayın:
 
-1. [Kur'an](/quran) sayfasını aç ve meal ve tefsirle ayet ayet dinle. Okunan kelime sen dinlerken vurgulanır.
-2. [Shams Metodu](/shams) ile kısa sureleri ezberle.
-3. [Tecvid kursunda](/tajweed) telaffuzunu geliştir.
-4. [Akademi](/academy)'de 114 surenin hepsini adım adım çalış.
-5. Ya da her gün küçük bir bölüm okumak için [365 günlük planı](/plan) takip et.
+1. [Kur'an](/quran) sayfasını açın ve meal ve tefsirle ayet ayet dinleyin. Okunan kelime siz dinlerken vurgulanır.
+2. [Shams Metodu](/shams) ile kısa sureleri ezberleyin.
+3. [Tecvid kursunda](/tajweed) telaffuzunuzu geliştirin.
+4. [Akademi](/academy)'de 114 surenin hepsini adım adım çalışın.
+5. Ya da her gün küçük bir bölüm okumak için [365 günlük planı](/plan) takip edin.
 
 Kalpten okunan günde bir ayet, hiç başlanmayan büyük bir karardan daha değerlidir.`,
   faq: [
@@ -106,7 +106,7 @@ Kalpten okunan günde bir ayet, hiç başlanmayan büyük bir karardan daha değ
     { q: "Kur'an'da kaç sure ve kaç ayet vardır?", a: "114 sure ve bugün nüshaların çoğunun takip ettiği Kûfe sayımına göre 6.236 ayet." },
     { q: "Bir meal de Kur'an mıdır?", a: "Meal anlamları aktarır ve büyük bir yardımcıdır, ama Kur'an'ın kendisi Arapça metindir. Bu yüzden çevirilere “anlamların tercümesi” denir." },
     { q: "Hafs an Âsım nedir?", a: "Kur'an'ın kabul görmüş kıraatleri arasında dünyada en yaygın olanıdır. Basılan nüshaların çoğu ve platformumuzdaki tilavetler bunu takip eder." },
-    { q: "Arapça bilmiyorum – yine de başlayabilir miyim?", a: "Evet. Dinle, meali oku ve kısa sureleri yavaş yavaş öğren. Peygamber ﷺ, zorlanarak okuyana iki kat ecir bile vaat etmiştir (Buhârî ve Müslim)." },
+    { q: "Arapça bilmiyorum – yine de başlayabilir miyim?", a: "Evet. Dinleyin, meali okuyun ve kısa sureleri yavaş yavaş öğrenin. Peygamber ﷺ, zorlanarak okuyana iki kat ecir bile vaat etmiştir (Buhârî ve Müslim)." },
   ],
   sources: [
     "Kur'an 7:204, 12:2, 15:9, 16:44, 16:98, 17:9, 38:29, 54:17, 56:79, 73:4, 96:1–5",

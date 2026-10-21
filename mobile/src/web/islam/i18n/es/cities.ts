@@ -19,9 +19,9 @@ La Meca se encuentra en un valle árido entre montañas. Aquí se alza la **Kaab
 
 Ibrahim dejó a su esposa Hayar y al pequeño Ismail en este valle, confiando en Allah, y pidió que los corazones de la gente se inclinaran hacia ellos (14:37). Hayar corrió de un lado a otro entre las colinas de Safa y Marwa en busca de agua, hasta que brotó el manantial de **Zamzam**. Hasta hoy los peregrinos recorren de nuevo sus pasos, y hasta hoy beben de esa agua.
 
-Alrededor de la Kaaba se extiende **al-Masyid al-Haram**, la Mezquita Sagrada. Es el destino del **Hajj**, la gran peregrinación que todo musulmán debe realizar una vez en la vida si puede (3:97), y de la **Umra**, la peregrinación menor, que puede hacerse durante todo el año. Y los musulmanes de todo el mundo se orientan hacia La Meca en cada oración: la Kaaba es la **quibla** (2:144). Dondequiera que ores, en Londres, Dubái o Yakarta, estás orientado hacia el mismo punto que millones de personas.
+Alrededor de la Kaaba se extiende **al-Masyid al-Haram**, la Mezquita Sagrada. Es el destino del **Hajj**, la gran peregrinación que todo musulmán debe realizar una vez en la vida si puede (3:97), y de la **Umra**, la peregrinación menor, que puede hacerse durante todo el año. Y los musulmanes de todo el mundo se orientan hacia La Meca en cada oración: la Kaaba es la **quibla** (2:144). Dondequiera que ore, en Londres, Dubái o Yakarta, está orientado hacia el mismo punto que millones de personas.
 
-La Meca es también el lugar donde nació el Profeta Muhammad ﷺ, y en un monte cercano, en la cueva de Hira, recibió la primera revelación. Puedes saber más sobre su vida en el capítulo sobre [el Profeta ﷺ](/islam/prophet).
+La Meca es también el lugar donde nació el Profeta Muhammad ﷺ, y en un monte cercano, en la cueva de Hira, recibió la primera revelación. Puede saber más sobre su vida en el capítulo sobre [el Profeta ﷺ](/islam/prophet).
 
 ### Medina – la ciudad luminosa
 
@@ -97,7 +97,7 @@ En 2019, el Gran Imam de al-Azhar, el jeque Ahmad al-Tayyeb, y el papa Francisco
 
 En Dubái, donde se crea nuestra plataforma, la **Mezquita de Jumeirah** es un símbolo de la puerta abierta. Con el lema "Open Doors. Open Minds." ("Puertas abiertas. Mentes abiertas."), el Sheikh Mohammed Centre for Cultural Understanding invita a los visitantes a conocer la mezquita, hacer preguntas y conversar con café árabe y dátiles: hospitalidad tal como la entendemos aquí.
 
-Desde 1997, el **Premio Internacional del Sagrado Corán de Dubái** honra a jóvenes de todo el mundo que han memorizado el Corán. Y en el **Quranic Park** de Al Khawaneej, inaugurado en 2019, puedes pasear entre jardines de plantas mencionadas en el Corán, como palmeras datileras, olivos, higueras y granados, y descubrir de una manera nueva las maravillas de las que habla el Corán.
+Desde 1997, el **Premio Internacional del Sagrado Corán de Dubái** honra a jóvenes de todo el mundo que han memorizado el Corán. Y en el **Quranic Park** de Al Khawaneej, inaugurado en 2019, puede pasear entre jardines de plantas mencionadas en el Corán, como palmeras datileras, olivos, higueras y granados, y descubrir de una manera nueva las maravillas de las que habla el Corán.
 
 ## Lo que une a estas ciudades
 
@@ -107,7 +107,7 @@ Por distintas que sean, todas estas ciudades cuentan la misma historia:
 - **El saber** siempre ha formado parte de la fe; la primera palabra de la revelación fue "¡Lee!" (96:1).
 - **La hospitalidad y la convivencia** hicieron grandes a estas ciudades, desde la hermandad de Medina hasta la vida en común en los Emiratos.
 
-Si quieres escuchar tú mismo los versículos sobre estos lugares, empieza por la [sura al-Isra'](/surah/17) o la [sura Al Imran](/surah/3). Y si alguna vez tienes la oportunidad de visitar una de estas ciudades, ve con el corazón abierto, como invitado.`,
+Si quiere escuchar usted mismo los versículos sobre estos lugares, empiece por la [sura al-Isra'](/surah/17) o la [sura Al Imran](/surah/3). Y si alguna vez tiene la oportunidad de visitar una de estas ciudades, vaya con el corazón abierto, como invitado.`,
   faq: [
     { q: "¿Qué tres ciudades son santas en el islam?", a: "La Meca, con la Mezquita Sagrada y la Kaaba; Medina, con la Mezquita del Profeta; y Jerusalén (al-Quds), con la Mezquita al-Aqsa. El Profeta ﷺ nombró estas tres mezquitas como los únicos destinos por los que vale la pena emprender un viaje (al-Bujari, Muslim)." },
     { q: "¿Por qué los musulmanes oran hacia La Meca?", a: "Allah hizo de la Kaaba de La Meca la dirección de la oración (quibla) (2:144). Así, los musulmanes de todo el mundo se orientan hacia el mismo punto cuando oran." },

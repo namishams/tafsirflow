@@ -233,7 +233,7 @@ const ending = (shia: boolean): WuduStep => ({
       ms: "Apabila selesai, bersaksilah tentang keesaan Allah dan mohonlah kepada-Nya agar menjadikan anda antara orang yang menyucikan diri.",
       bn: "শেষ করার পর আল্লাহর একত্বের সাক্ষ্য দিন এবং তাঁর কাছে প্রার্থনা করুন যেন তিনি আপনাকে যারা নিজেদের পবিত্র করে তাদের অন্তর্ভুক্ত করেন।",
       ru: "Закончив, засвидетельствуйте единственность Аллаха и попросите Его причислить вас к тем, кто очищается.",
-      zh: "做完之后，作证安拉的独一，并求祂把你列入洁净自己的人之中。",
+      zh: "做完之后，作证安拉的独一，并求祂把您列入洁净自己的人之中。",
     }),
   note: shia ? L("Auch in der Dscha'fari-Tradition werden während und nach dem Wudu Bittgebete empfohlen – lernen Sie ihre Formen bei einem Lehrer Ihrer Schule.",
     "In the Ja'fari tradition, too, du'as are recommended during and after wudu – learn their wording with a teacher of your school.",
@@ -248,7 +248,7 @@ const ending = (shia: boolean): WuduStep => ({
       ms: "Dalam tradisi Ja'fari juga, doa digalakkan semasa dan selepas wudhu – pelajari lafaznya daripada guru mazhab anda.",
       bn: "জাফরি ধারায়ও ওযুর সময় ও পরে দোয়া মুস্তাহাব – সেগুলোর শব্দবিন্যাস আপনার মাযহাবের একজন শিক্ষকের কাছ থেকে শিখুন।",
       ru: "В джафаритской традиции тоже рекомендуются дуа во время омовения и после него – изучите их текст у наставника своей школы.",
-      zh: "贾法里传统中同样建议在小净期间和之后作祈祷——请向你所属学派的老师学习其措辞。",
+      zh: "贾法里传统中同样建议在小净期间和之后作祈祷——请向您所属学派的老师学习其措辞。",
     }) : undefined,
   duas: END_DUAS,
 });

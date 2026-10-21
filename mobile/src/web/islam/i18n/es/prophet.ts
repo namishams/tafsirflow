@@ -25,7 +25,7 @@ Su honradez en el comercio impresionó también a Jadiya bint Juwáylid, una res
 
 Con el paso de los años, a Muhammad ﷺ le gustaba retirarse a reflexionar en la cueva de Hira, en un monte cercano a La Meca. Allí, hacia los 40 años, el ángel Yibril (Gabriel) vino a él con los primeros versículos del Corán: "Lee en el nombre de tu Señor, que creó" (96:1–5). Volvió a casa temblando. Jadiya lo consoló con palabras que recoge al-Bujari: Allah nunca lo deshonraría, pues mantenía los lazos de parentesco, cargaba con las cargas de los débiles, ayudaba a los necesitados, honraba a los huéspedes y apoyaba a la gente en tiempos de dificultad.
 
-A lo largo de 23 años, el Corán le fue revelado fragmento a fragmento, a menudo en respuesta a situaciones reales. Cuando escuchas versículo a versículo en nuestra plataforma, sigues ese mismo camino de la revelación.
+A lo largo de 23 años, el Corán le fue revelado fragmento a fragmento, a menudo en respuesta a situaciones reales. Cuando escucha versículo a versículo en nuestra plataforma, sigue ese mismo camino de la revelación.
 
 ## Los años de La Meca: paciencia en tiempos difíciles
 
@@ -35,7 +35,7 @@ Hacia el décimo año de la profecía murieron, uno tras otro, Jadiya y Abu Tali
 
 ## El Viaje Nocturno y la Ascensión
 
-En este periodo difícil, Allah honró a Su Mensajero con un signo especial: **al-Isra' wal-Mi'ray**. En una sola noche fue llevado desde la Mezquita Sagrada de La Meca hasta la Mezquita Lejana de Jerusalén (17:1) y, desde allí, elevado a través de los cielos. En esa noche se prescribieron para los musulmanes las cinco oraciones diarias, un regalo que sostiene cada día de nuestras vidas hasta hoy. Puedes leer más en nuestra página sobre la [oración](/prayer).
+En este periodo difícil, Allah honró a Su Mensajero con un signo especial: **al-Isra' wal-Mi'ray**. En una sola noche fue llevado desde la Mezquita Sagrada de La Meca hasta la Mezquita Lejana de Jerusalén (17:1) y, desde allí, elevado a través de los cielos. En esa noche se prescribieron para los musulmanes las cinco oraciones diarias, un regalo que sostiene cada día de nuestras vidas hasta hoy. Puede leer más en nuestra página sobre la [oración](/prayer).
 
 ## La Hégira a Medina
 
@@ -103,14 +103,14 @@ Honramos igualmente a los **Sahaba**, los Compañeros que estuvieron a su lado y
 
 Seguir al Profeta ﷺ empieza por lo pequeño, en medio de la vida cotidiana:
 
-1. **Sonríe y saluda:** "Tu sonrisa ante tu hermano es una caridad" (at-Tirmidi). Difunde el saludo de paz, "as-salamu alaykum".
-2. **Empieza con Bismillah:** enseñó a un niño: "Menciona el nombre de Allah, come con tu mano derecha y come de lo que tienes delante" (al-Bujari, Muslim).
-3. **Facilita las cosas:** "Facilitad y no dificultéis, dad buenas noticias y no ahuyentéis a la gente" (al-Bujari, Muslim). Este es el espíritu del justo medio, la **wasatiyya**.
-4. **Honra a tus padres y visita a tus parientes:** en el Corán, la bondad con los padres está justo al lado de adorar solo a Allah (17:23).
-5. **Sé honesto:** en el trabajo, en el comercio y en tus palabras, como al-Amin.
-6. **Vive el Corán:** escucha cada día unos pocos versículos, compréndelos y actúa según ellos. Podrías empezar ahora mismo con la [sura al-Ahzab](/surah/33) o la [sura al-Isra'](/surah/17).
+1. **Sonría y salude:** "Tu sonrisa ante tu hermano es una caridad" (at-Tirmidi). Difunda el saludo de paz, "as-salamu alaykum".
+2. **Empiece con Bismillah:** enseñó a un niño: "Menciona el nombre de Allah, come con tu mano derecha y come de lo que tienes delante" (al-Bujari, Muslim).
+3. **Facilite las cosas:** "Facilitad y no dificultéis, dad buenas noticias y no ahuyentéis a la gente" (al-Bujari, Muslim). Este es el espíritu del justo medio, la **wasatiyya**.
+4. **Honre a sus padres y visite a sus parientes:** en el Corán, la bondad con los padres está justo al lado de adorar solo a Allah (17:23).
+5. **Sea honesto:** en el trabajo, en el comercio y en sus palabras, como al-Amin.
+6. **Viva el Corán:** escuche cada día unos pocos versículos, compréndalos y actúe según ellos. Podría empezar ahora mismo con la [sura al-Ahzab](/surah/33) o la [sura al-Isra'](/surah/17).
 
-Así, la Sira, la historia de la vida del Profeta ﷺ, se convierte en algo más que historia: se convierte en un camino que tú mismo puedes recorrer.`,
+Así, la Sira, la historia de la vida del Profeta ﷺ, se convierte en algo más que historia: se convierte en un camino que usted mismo puede recorrer.`,
   faq: [
     { q: "¿Cuándo y dónde nació el Profeta Muhammad ﷺ?", a: "Hacia el año 570 en La Meca, en el llamado \"Año del Elefante\". Pertenecía al clan de Banu Hashim, de la tribu de Quraish." },
     { q: "¿Qué significa \"al-Amin\"?", a: "\"El digno de confianza\". La gente de La Meca lo llamaba así ya antes de su profecía por su honradez y fiabilidad." },

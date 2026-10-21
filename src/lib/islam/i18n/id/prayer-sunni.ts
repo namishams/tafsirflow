@@ -2,7 +2,7 @@ import type { IslamChapter } from "../../types";
 const c: IslamChapter = {
   title: "Cara shalat – dalam Islam Sunni",
   kicker: "Shalat · Salat",
-  lead: "Shalat adalah percakapan harian seseorang dengan Penciptanya: lima kali sehari, pada waktu yang telah ditentukan, dengan badan, lisan, dan hati. Bab ini menuntunmu langkah demi langkah mengenai cara Muslim Sunni shalat – dari wudu dan azan hingga salam di akhir shalat. Pada bagian yang terdapat perbedaan di antara empat mazhab fikih, kami menyebutkannya secara terbuka; keempatnya diakui dan sah.",
+  lead: "Shalat adalah percakapan harian seseorang dengan Penciptanya: lima kali sehari, pada waktu yang telah ditentukan, dengan badan, lisan, dan hati. Bab ini menuntun Anda langkah demi langkah mengenai cara Muslim Sunni shalat – dari wudu dan azan hingga salam di akhir shalat. Pada bagian yang terdapat perbedaan di antara empat mazhab fikih, kami menyebutkannya secara terbuka; keempatnya diakui dan sah.",
   facts: [
     { n: "5", l: "shalat wajib setiap hari" },
     { n: "17", l: "rakaat wajib setiap hari (2 + 4 + 4 + 3 + 4)" },
@@ -20,7 +20,7 @@ Nabi Muhammad ﷺ bersabda bahwa amal seorang hamba yang pertama kali diperiksa 
 Agar shalat sah, beberapa syarat harus terpenuhi:
 
 - **Muslim, berakal, dan baligh:** Shalat wajib bagi setiap Muslim yang berakal sejak baligh. Anak-anak dibiasakan dengan lembut sejak sekitar usia tujuh tahun.
-- **Kesucian ritual:** Kamu memerlukan wudu; setelah hadas besar (misalnya hubungan suami istri) diperlukan mandi besar (ghusl).
+- **Kesucian ritual:** Anda memerlukan wudu; setelah hadas besar (misalnya hubungan suami istri) diperlukan mandi besar (ghusl).
 - **Pakaian, badan, dan tempat yang bersih:** bebas dari najis seperti air seni atau darah. Sajadah itu baik tetapi tidak wajib.
 - **Menutup aurat:** bagi laki-laki minimal dari pusar hingga lutut; bagi perempuan seluruh tubuh kecuali wajah dan telapak tangan (mazhab Hanafi juga mengecualikan telapak kaki).
 - **Menghadap kiblat:** ke arah Ka'bah di Makkah.
@@ -35,7 +35,7 @@ Agar shalat sah, beberapa syarat harus terpenuhi:
 4. **Magrib** (matahari terbenam): 3 rakaat – tepat setelah matahari terbenam.
 5. **Isya** (malam): 4 rakaat – setelah mega merah senja menghilang.
 
-Waktu yang tepat untuk lokasimu dapat kamu temukan di [Waktu shalat](/prayer). Pada shalat Subuh, Magrib, dan Isya, dua rakaat pertama dibaca dengan suara keras (oleh imam, atau oleh laki-laki yang shalat sendirian); Zuhur dan Asar dibaca dengan pelan.
+Waktu yang tepat untuk lokasi Anda dapat Anda temukan di [Waktu shalat](/prayer). Pada shalat Subuh, Magrib, dan Isya, dua rakaat pertama dibaca dengan suara keras (oleh imam, atau oleh laki-laki yang shalat sendirian); Zuhur dan Asar dibaca dengan pelan.
 
 ## Wudu
 
@@ -79,7 +79,7 @@ Azan memanggil untuk shalat:
 Di sini digunakan contoh shalat dua rakaat (seperti Subuh). Satu rakaat adalah satu rangkaian berdiri, rukuk, dan dua sujud.
 
 1. **Niat:** Berdirilah menghadap kiblat dan berniatlah dalam hati, misalnya "Aku shalat dua rakaat wajib Subuh karena Allah."
-2. **Takbiratul ihram:** Angkat kedua tanganmu setinggi bahu atau telinga dan ucapkan *Allahu akbar* (الله أكبر) – "Allah Maha Besar". Sejak saat ini kamu berada dalam shalat.
+2. **Takbiratul ihram:** Angkat kedua tangan Anda setinggi bahu atau telinga dan ucapkan *Allahu akbar* (الله أكبر) – "Allah Maha Besar". Sejak saat ini Anda berada dalam shalat.
 3. **Berdiri (qiyam):** Letakkan tangan kanan di atas tangan kiri – di dada atau di atas pusar menurut mazhab Syafi'i dan banyak ulama Hanbali, di bawah pusar menurut mazhab Hanafi. Banyak ulama Maliki membiarkan tangan lurus di sisi badan. Semua ini adalah praktik yang diriwayatkan. Pandanglah tempat sujud.
 4. **Doa iftitah (tsana'):** dengan pelan *Subhanaka Allahumma wa bihamdika, wa tabaraka smuka, wa ta'ala jadduka, wa la ilaha ghayruk* – "Mahasuci Engkau, ya Allah, dan segala puji bagi-Mu; diberkahi nama-Mu, Mahatinggi keagungan-Mu, dan tiada tuhan selain Engkau" (Abu Dawud, at-Tirmidzi). Mazhab Syafi'i sering memakai doa iftitah lain yang diriwayatkan; mazhab Maliki biasanya tidak membacanya dalam shalat wajib.
 5. **Ta'awudz dan basmalah:** dengan pelan *A'udhu billahi mina sh-shaytani r-rajim* – "Aku berlindung kepada Allah dari setan yang terkutuk", lalu *Bismillahi r-Rahmani r-Rahim* – "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang".
@@ -94,9 +94,9 @@ Di sini digunakan contoh shalat dua rakaat (seperti Subuh). Satu rakaat adalah s
 14. **Duduk dan tasyahud:** Setelah sujud kedua tetaplah duduk dan ucapkan: *At-tahiyyatu lillahi wa s-salawatu wa t-tayyibat. As-salamu 'alayka ayyuha n-nabiyyu wa rahmatullahi wa barakatuh. As-salamu 'alayna wa 'ala 'ibadillahi s-salihin. Ash-hadu an la ilaha illallah, wa ash-hadu anna Muhammadan 'abduhu wa rasuluh* – "Segala penghormatan, shalawat, dan kebaikan hanyalah milik Allah. Salam sejahtera atasmu, wahai Nabi, begitu pula rahmat Allah dan berkah-Nya. Salam sejahtera atas kami dan atas hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya" (Sahih al-Bukhari, Sahih Muslim). Jari telunjuk kanan diangkat pada saat bersaksi.
 15. **Shalawat atas Nabi (shalawat Ibrahimiyah):** *Allahumma salli 'ala Muhammadin wa 'ala ali Muhammad, kama sallayta 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Majid. Allahumma barik 'ala Muhammadin wa 'ala ali Muhammad, kama barakta 'ala Ibrahima wa 'ala ali Ibrahim, innaka Hamidun Majid* – "Ya Allah, limpahkanlah shalawat atas Muhammad dan keluarga Muhammad, sebagaimana Engkau melimpahkan shalawat atas Ibrahim dan keluarga Ibrahim; Engkau Maha Terpuji lagi Maha Mulia …" (Sahih al-Bukhari).
 16. **Doa penutup:** misalnya *Rabbana atina fi d-dunya hasanah, wa fi l-akhirati hasanah, wa qina 'adhaba n-nar* – "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka" ([2:201](/surah/2)).
-17. **Salam (taslim):** Palingkan kepalamu ke kanan: *As-salamu 'alaykum wa rahmatullah* – "Semoga keselamatan dan rahmat Allah tercurah atas kalian", lalu ke kiri. Banyak ulama Maliki mengucapkan satu salam saja. Shalat pun selesai.
+17. **Salam (taslim):** Palingkan kepala Anda ke kanan: *As-salamu 'alaykum wa rahmatullah* – "Semoga keselamatan dan rahmat Allah tercurah atas kalian", lalu ke kiri. Banyak ulama Maliki mengucapkan satu salam saja. Shalat pun selesai.
 
-**Untuk shalat tiga atau empat rakaat:** Setelah rakaat kedua kamu hanya membaca tasyahud (langkah 14) lalu berdiri dengan *Allahu akbar*. Pada rakaat ketiga dan keempat kamu hanya membaca Al-Fatihah, dengan pelan. Pada duduk terakhir dibaca tasyahud, shalawat, doa, dan salam.
+**Untuk shalat tiga atau empat rakaat:** Setelah rakaat kedua Anda hanya membaca tasyahud (langkah 14) lalu berdiri dengan *Allahu akbar*. Pada rakaat ketiga dan keempat Anda hanya membaca Al-Fatihah, dengan pelan. Pada duduk terakhir dibaca tasyahud, shalawat, doa, dan salam.
 
 ## Shalat Jumat dan shalat berjamaah
 
@@ -110,7 +110,7 @@ Selain shalat-shalat wajib, Nabi ﷺ secara rutin melaksanakan shalat sunnah (ra
 
 ## Zikir setelah shalat
 
-Setelah shalat wajib, disunnahkan mengucapkan 33× *Subhanallah* ("Mahasuci Allah"), 33× *Alhamdulillah* ("Segala puji bagi Allah"), dan 33× *Allahu akbar*, lalu menggenapkan menjadi seratus dengan *La ilaha illallahu wahdahu la sharika lah, lahu l-mulku wa lahu l-hamdu wa huwa 'ala kulli shay'in qadir* – atau mengucapkan *Allahu akbar* 34× (kedua bentuk terdapat dalam Sahih Muslim). Doa-doa lainnya dapat kamu temukan di [Doa](/duas).
+Setelah shalat wajib, disunnahkan mengucapkan 33× *Subhanallah* ("Mahasuci Allah"), 33× *Alhamdulillah* ("Segala puji bagi Allah"), dan 33× *Allahu akbar*, lalu menggenapkan menjadi seratus dengan *La ilaha illallahu wahdahu la sharika lah, lahu l-mulku wa lahu l-hamdu wa huwa 'ala kulli shay'in qadir* – atau mengucapkan *Allahu akbar* 34× (kedua bentuk terdapat dalam Sahih Muslim). Doa-doa lainnya dapat Anda temukan di [Doa](/duas).
 
 ## Kesalahan yang umum
 
@@ -121,15 +121,15 @@ Setelah shalat wajib, disunnahkan mengucapkan 33× *Subhanallah* ("Mahasuci Alla
 - Mendahului imam dalam shalat berjamaah.
 - Menunda shalat hingga lewat waktunya tanpa alasan.
 
-Jika kamu lupa sesuatu dalam shalat, kamu menggantinya dengan dua sujud lupa (sujud sahwi) – para mazhab mengatur rinciannya secara berbeda.
+Jika Anda lupa sesuatu dalam shalat, Anda menggantinya dengan dua sujud lupa (sujud sahwi) – para mazhab mengatur rinciannya secara berbeda.
 
 ## Empat mazhab fikih
 
-Mazhab Hanafi, Maliki, Syafi'i, dan Hanbali shalat pada dasarnya dengan cara yang sama. Perbedaannya menyangkut hal-hal rinci seperti posisi tangan, doa iftitah, lafal tasyahud, atau apakah diucapkan satu atau dua salam. Setiap mazhab bersandar pada praktik Nabi ﷺ dan para sahabatnya yang diriwayatkan. Keragaman ini adalah rahmat, bukan pertengkaran: siapa pun yang shalat di samping orang dari mazhab lain sedang shalat bersama saudara atau saudarinya. Kamu dapat membaca tentang praktik Syiah di [Cara shalat – dalam Islam Syiah](/islam/prayer-shia).
+Mazhab Hanafi, Maliki, Syafi'i, dan Hanbali shalat pada dasarnya dengan cara yang sama. Perbedaannya menyangkut hal-hal rinci seperti posisi tangan, doa iftitah, lafal tasyahud, atau apakah diucapkan satu atau dua salam. Setiap mazhab bersandar pada praktik Nabi ﷺ dan para sahabatnya yang diriwayatkan. Keragaman ini adalah rahmat, bukan pertengkaran: siapa pun yang shalat di samping orang dari mazhab lain sedang shalat bersama saudara atau saudarinya. Anda dapat membaca tentang praktik Syiah di [Cara shalat – dalam Islam Syiah](/islam/prayer-shia).
 
 ## Untuk pemula, perempuan, musafir, dan orang sakit
 
-**Pemula:** Mulailah dari apa yang kamu mampu. Pertama-tama pelajari [Al-Fatihah](/surah/1) dan sebuah surah pendek seperti [Al-Ikhlas](/surah/112) – di pemutar kami kamu dapat mendengarkannya ayat demi ayat dan mengulanginya. Sampai kamu hafal semuanya, teruslah shalat dengan apa yang sudah kamu ketahui dan berkembanglah selangkah demi selangkah. Allah tidak membebani seseorang melebihi kesanggupannya ([2:286](/surah/2)).
+**Pemula:** Mulailah dari apa yang Anda mampu. Pertama-tama pelajari [Al-Fatihah](/surah/1) dan sebuah surah pendek seperti [Al-Ikhlas](/surah/112) – di pemutar kami Anda dapat mendengarkannya ayat demi ayat dan mengulanginya. Sampai Anda hafal semuanya, teruslah shalat dengan apa yang sudah Anda ketahui dan berkembanglah selangkah demi selangkah. Allah tidak membebani seseorang melebihi kesanggupannya ([2:286](/surah/2)).
 
 **Perempuan** shalat dengan cara yang sama. Selama haid dan nifas tidak ada shalat, dan shalat-shalat itu tidak perlu diganti (Sahih Muslim). Perempuan boleh shalat di masjid; shalat di rumah sama berharganya.
 
@@ -139,10 +139,10 @@ Mazhab Hanafi, Maliki, Syafi'i, dan Hanbali shalat pada dasarnya dengan cara yan
 
 ## Belajar bersama seorang guru
 
-Bab ini memberimu gambaran umum yang dapat diandalkan, tetapi tidak menggantikan pengajaran langsung. Pelajari rinciannya dari guru yang kompeten dan ikutilah mazhab fikih yang diajarkan di komunitasmu. Semoga Allah menerima shalatmu.`,
+Bab ini memberi Anda gambaran umum yang dapat diandalkan, tetapi tidak menggantikan pengajaran langsung. Pelajari rinciannya dari guru yang kompeten dan ikutilah mazhab fikih yang diajarkan di komunitas Anda. Semoga Allah menerima shalat Anda.`,
   faq: [
     { q: "Apakah saya harus mengucapkan niat dengan lisan?", a: "Tidak. Niat adalah urusan hati. Sebagian ulama memandang melafalkannya dengan pelan sebagai penolong itu diperbolehkan, tetapi hal itu tidak diwajibkan." },
-    { q: "Bagaimana jika saya belum hafal Al-Fatihah?", a: "Pelajarilah sesegera mungkin, dan untuk sementara shalatlah dengan apa yang kamu ketahui, misalnya dengan tasbih seperti Subhanallah dan Alhamdulillah. Shalat berjamaah di belakang imam memudahkan permulaan. Kamu dapat melatih Al-Fatihah ayat demi ayat di pemutar kami." },
+    { q: "Bagaimana jika saya belum hafal Al-Fatihah?", a: "Pelajarilah sesegera mungkin, dan untuk sementara shalatlah dengan apa yang Anda ketahui, misalnya dengan tasbih seperti Subhanallah dan Alhamdulillah. Shalat berjamaah di belakang imam memudahkan permulaan. Anda dapat melatih Al-Fatihah ayat demi ayat di pemutar kami." },
     { q: "Bisakah saya mengganti shalat yang terlewat?", a: "Ya. Shalat wajib yang terlewat karena tertidur atau lupa dikerjakan segera setelah teringat (Sahih al-Bukhari, Sahih Muslim). Menunda shalat dengan sengaja harus dihindari." },
     { q: "Di mana saya meletakkan tangan saat berdiri?", a: "Tergantung mazhab: di dada atau di atas pusar (mazhab Syafi'i, banyak ulama Hanbali), di bawah pusar (mazhab Hanafi), atau lurus di sisi badan (banyak ulama Maliki). Semuanya sah." },
     { q: "Bolehkah saya shalat di masjid bersama orang dari mazhab lain?", a: "Ya, tentu saja. Muslim dari semua mazhab shalat berdampingan – di Uni Emirat Arab dan di seluruh dunia. Perbedaan kecil dalam sikap shalat tidak memengaruhi shalat bersama." },

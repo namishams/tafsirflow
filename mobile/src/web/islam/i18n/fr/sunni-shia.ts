@@ -86,7 +86,7 @@ Celui qui voit pour la première fois des musulmans sunnites et chiites prier c�
 - **Le regroupement des prières :** les musulmans chiites regroupent souvent les prières de midi et de l'après-midi ainsi que celles du coucher du soleil et de la nuit, et prient ainsi à trois moments de la journée – ce sont toujours cinq prières. Les sunnites prient généralement à cinq moments distincts et regroupent les prières surtout en voyage ou pour des raisons particulières.
 - **Se prosterner sur la terre (turba) :** les musulmans chiites se prosternent sur une matière naturelle comme la terre, la pierre ou les végétaux, souvent sur une petite tablette d'argile cuite. Les sunnites prient aussi sur des tapis.
 
-Tu trouveras des guides détaillés ici : [La prière dans la pratique sunnite](/islam/prayer-sunni) et [La prière dans la pratique chiite](/islam/prayer-shia).
+Vous trouverez des guides détaillés ici : [La prière dans la pratique sunnite](/islam/prayer-sunni) et [La prière dans la pratique chiite](/islam/prayer-shia).
 
 ## Le Message d'Amman
 
@@ -120,7 +120,7 @@ Sur Quran Masterclass, musulmans sunnites et chiites écoutent les mêmes verset
     { q: "Les sunnites et les chiites ont-ils un Coran différent ?", a: "Non. Les uns comme les autres récitent le même Coran avec les mêmes 114 sourates. Les différences portent sur l'interprétation de certains passages et sur les recueils de hadiths sur lesquels s'appuie chaque tradition, non sur le texte du Coran." },
     { q: "D'où vient cette distinction ?", a: "De la question de savoir qui devait diriger la communauté après la mort du Prophète ﷺ en 632. Les sunnites reconnaissent les quatre califes bien guidés dans leur ordre ; les musulmans chiites considèrent Ali ibn Abi Talib et les imams parmi ses descendants comme les guides légitimes." },
     { q: "Pourquoi les sunnites jeûnent-ils le jour d'Achoura tandis que les chiites sont en deuil ?", a: "Les sunnites jeûnent en suivant la Sunna, car ce jour-là Allah a sauvé Moussa (que la paix soit sur lui) (al-Bukhari, Muslim). Les musulmans chiites commémorent particulièrement ce jour-là le martyre de Hussein à Karbala en l'an 61 H. Les deux significations méritent le respect." },
-    { q: "Un sunnite peut-il prier derrière un musulman chiite et inversement ?", a: "De nombreux savants des deux côtés le permettent, et à La Mecque et à Médine, des musulmans de toutes les traditions prient ensemble. Pour les détails propres à ton école, le mieux est de demander à un savant en qui tu as confiance." },
+    { q: "Un sunnite peut-il prier derrière un musulman chiite et inversement ?", a: "De nombreux savants des deux côtés le permettent, et à La Mecque et à Médine, des musulmans de toutes les traditions prient ensemble. Pour les détails propres à votre école, le mieux est de demander à un savant en qui vous avez confiance." },
     { q: "Qu'est-ce que le Message d'Amman ?", a: "Une déclaration de 2004, approuvée en 2005 par des savants de nombreux pays. Elle reconnaît huit écoles juridiques, dont la ja'farite et la zaydite, et interdit de déclarer mécréants les adeptes de ces écoles." },
   ],
   sources: [

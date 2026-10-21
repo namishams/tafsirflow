@@ -85,16 +85,16 @@ const T = {
     zh: "我求安拉护佑，免遭被驱逐的恶魔之害。",
   }) },
   fatiha: { ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ …", translit: "Bismillāhi r-raḥmāni r-raḥīm. Al-ḥamdu lillāhi rabbi l-ʿālamīn …", meaning: L("Die ganze Al-Fatiha – ohne sie ist kein Gebet gültig. Lernen Sie sie Vers für Vers im Player.", "The whole of Al-Fatiha – no prayer is valid without it. Learn it verse by verse in the player.", "سورةُ الفاتحة كاملةً، فـ«لا صلاةَ لمن لم يقرأ بفاتحة الكتاب». تعلَّمها آيةً آيةً في المشغِّل.", {
-    tr: "Fâtiha'nın tamamı – onsuz hiçbir namaz geçerli değildir. Onu oynatıcıda ayet ayet öğren.",
+    tr: "Fâtiha'nın tamamı – onsuz hiçbir namaz geçerli değildir. Onu oynatıcıda ayet ayet öğrenin.",
     ur: "پوری سورۂ فاتحہ – اس کے بغیر کوئی نماز درست نہیں۔ پلیئر میں اسے آیت بہ آیت سیکھیں۔",
     fa: "تمام سورهٔ فاتحه – بدون آن هیچ نمازی صحیح نیست. آن را آیه به آیه در پخش‌کننده بیاموزید.",
     ps: "ټوله الفاتحه – پرته له دې هېڅ لمونځ سم نه دی. په پلیر کې یې آیت په آیت زده کړئ.",
-    fr: "Al-Fatiha en entier – sans elle, aucune prière n'est valide. Apprends-la verset par verset dans le lecteur.",
-    es: "Al-Fatiha completa: sin ella no es válida ninguna oración. Apréndela aleya por aleya en el reproductor.",
+    fr: "Al-Fatiha en entier – sans elle, aucune prière n'est valide. Apprenez-la verset par verset dans le lecteur.",
+    es: "Al-Fatiha completa: sin ella no es válida ninguna oración. Apréndala aleya por aleya en el reproductor.",
     id: "Seluruh Al-Fatihah – tanpanya shalat tidak sah. Pelajari ayat demi ayat di pemutar.",
     ms: "Keseluruhan Al-Fatihah – tanpanya tiada solat yang sah. Pelajarilah ayat demi ayat dalam pemain.",
     bn: "পুরো আল-ফাতিহা – এটি ছাড়া কোনো নামাজ বৈধ নয়। প্লেয়ারে এটি আয়াত ধরে ধরে শিখুন।",
-    ru: "Вся Аль-Фатиха – без неё ни один намаз не действителен. Учи её аят за аятом в плеере.",
+    ru: "Вся Аль-Фатиха – без неё ни один намаз не действителен. Учите её аят за аятом в плеере.",
     zh: "完整的开端章——没有它，任何礼拜都不成立。在播放器中逐节学习。",
   }) },
   ikhlas: { ar: "قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ", translit: "Qul huwa llāhu aḥad. Allāhu ṣ-ṣamad. Lam yalid wa lam yūlad. Wa lam yakun lahū kufuwan aḥad.", meaning: L("Zum Beispiel Al-Ikhlas (Sure 112) – jede andere Sure oder einige Verse sind ebenso möglich.", "For example Al-Ikhlas (Surah 112) – any other surah or a few verses are also fine.", "مثلُ سورة الإخلاص (السورة 112)، ويجوز أن تقرأ غيرها من السور أو آياتٍ منها.", {
@@ -384,7 +384,7 @@ const N = {
     ms: "Angkat kedua-dua tangan setinggi telinga atau bahu. Mulai sekarang anda berada dalam solat.",
     bn: "দুই হাত কান বা কাঁধ পর্যন্ত তুলুন। এখন থেকে আপনি নামাজে আছেন।",
     ru: "Поднимите руки до ушей или до плеч. С этого момента вы в намазе.",
-    zh: "把双手举到耳边或肩旁。从现在起，你就在礼拜中了。",
+    zh: "把双手举到耳边或肩旁。从现在起，您就在礼拜中了。",
   }),
   thana: L("Leise. Hanafiten und Hanbaliten halten die Hände unter dem Nabel bzw. auf der Brust, Schafiiten auf der Brust; viele Malikiten lassen sie seitlich hängen – alles ist überliefert.", "Silently. Hands are held below the navel or on the chest depending on the school; many Malikis let them hang – all of this is transmitted.", "يُقال سرًّا. وتوضع اليدان تحت السُّرّة أو على الصدر بحسب المذهب، وكثيرٌ من المالكية يُرسلونهما (السَّدْل) – وكلُّ ذلك مأثور.", {
     tr: "Sessizce. Eller, mezhebe göre göbeğin altında ya da göğüs üzerinde tutulur; birçok Mâlikî ellerini yanlarına salar – bunların hepsi nakledilmiştir.",
@@ -462,7 +462,7 @@ const N = {
     ms: "Pada rakaat ke-3 dan ke-4 anda boleh membaca “empat tasbih” sebagai ganti Al-Fatihah (langkah seterusnya).",
     bn: "তৃতীয় ও চতুর্থ রাকাতে আল-ফাতিহার বদলে আপনি “চার তাসবিহ” বলতে পারেন (পরের ধাপ)।",
     ru: "В 3-м и 4-м ракаате можно сказать «четыре славословия» вместо Аль-Фатихи (следующий шаг).",
-    zh: "在第3、第4拉克尔提，你可以念“四项赞颂”来代替开端章（见下一步）。",
+    zh: "在第3、第4拉克尔提，您可以念“四项赞颂”来代替开端章（见下一步）。",
   }),
   fourGlorifications: L("Leise, dreimal – oder einmal die Fatiha.", "Silently, three times – or Al-Fatiha once.", "تُقال سرًّا ثلاثَ مرات – أو تُقرأ الفاتحة مرةً واحدة.", {
     tr: "Sessizce, üç kez – ya da bir kez Fâtiha.",
@@ -618,7 +618,7 @@ const N = {
     ms: "Selepas itu anda boleh berdoa dengan doa sendiri.",
     bn: "এরপর আপনি নিজের দোয়া করতে পারেন।",
     ru: "После этого можно обратиться с собственной мольбой.",
-    zh: "之后你可以作自己的祈祷。",
+    zh: "之后您可以作自己的祈祷。",
   }),
   salamLeft: L("Das Gebet ist beendet. Danach: 33× Subḥāna llāh, 33× al-ḥamdu lillāh, 34× Allāhu akbar (Sahih Muslim).", "The prayer is complete. Afterwards: 33× Subḥāna llāh, 33× al-ḥamdu lillāh, 34× Allāhu akbar (Sahih Muslim).", "تمَّت الصلاة. ثم تُسبِّح: «سبحان الله» 33 مرة، و«الحمد لله» 33 مرة، و«الله أكبر» 34 مرة (صحيح مسلم).", {
     tr: "Namaz tamamlandı. Ardından: 33× Subḥāna llāh, 33× al-ḥamdu lillāh, 34× Allāhu akbar (Sahih Muslim).",

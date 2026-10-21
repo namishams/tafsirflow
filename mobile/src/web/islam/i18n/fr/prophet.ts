@@ -25,7 +25,7 @@ Son honnêteté dans le commerce impressionna aussi Khadija bint Khuwaylid, une 
 
 Au fil des années, Muhammad ﷺ aimait se retirer pour méditer dans la grotte de Hira, sur une montagne près de La Mecque. C'est là, vers l'âge de 40 ans, que l'ange Jibril (Gabriel) vint à lui avec les premiers versets du Coran : « Lis, au nom de ton Seigneur qui a créé » (96:1–5). Il rentra chez lui tout tremblant. Khadija le réconforta par des paroles rapportées par al-Bukhari : Allah ne l'humilierait jamais, car il entretenait les liens de parenté, portait les fardeaux des faibles, aidait les nécessiteux, honorait ses hôtes et soutenait les gens dans l'adversité.
 
-Pendant 23 ans, le Coran lui fut révélé fragment par fragment, souvent en réponse à des situations réelles. Lorsque tu écoutes verset par verset sur notre plateforme, tu suis précisément ce chemin de la révélation.
+Pendant 23 ans, le Coran lui fut révélé fragment par fragment, souvent en réponse à des situations réelles. Lorsque vous écoutez verset par verset sur notre plateforme, vous suivez précisément ce chemin de la révélation.
 
 ## Les années mecquoises : la patience dans l'épreuve
 
@@ -35,7 +35,7 @@ Vers la dixième année de la prophétie, Khadija et Abou Talib moururent l'un a
 
 ## Le Voyage nocturne et l'Ascension
 
-En cette période difficile, Allah honora Son Messager d'un signe particulier : **al-Isra' wal-Mi'raj**. En une seule nuit, il fut transporté de la Mosquée sacrée de La Mecque à la Mosquée la plus lointaine à Jérusalem (17:1), et de là élevé à travers les cieux. Cette nuit-là, les cinq prières quotidiennes furent prescrites aux musulmans, un don qui porte chaque jour de notre vie jusqu'à aujourd'hui. Tu peux en lire davantage sur notre page [prière](/prayer).
+En cette période difficile, Allah honora Son Messager d'un signe particulier : **al-Isra' wal-Mi'raj**. En une seule nuit, il fut transporté de la Mosquée sacrée de La Mecque à la Mosquée la plus lointaine à Jérusalem (17:1), et de là élevé à travers les cieux. Cette nuit-là, les cinq prières quotidiennes furent prescrites aux musulmans, un don qui porte chaque jour de notre vie jusqu'à aujourd'hui. Vous pouvez en lire davantage sur notre page [prière](/prayer).
 
 ## L'Hégire vers Médine
 
@@ -103,14 +103,14 @@ Nous honorons tout autant les **Sahaba**, les Compagnons qui l'ont soutenu et qu
 
 Suivre le Prophète ﷺ commence par de petites choses, au cœur du quotidien :
 
-1. **Sourire et saluer :** « Ton sourire face à ton frère est une aumône » (at-Tirmidhi). Répands la salutation de paix, « as-salamu alaykum ».
+1. **Sourire et saluer :** « Ton sourire face à ton frère est une aumône » (at-Tirmidhi). Répandez la salutation de paix, « as-salamu alaykum ».
 2. **Commencer par Bismillah :** il enseigna à un enfant : « Prononce le nom d'Allah, mange de ta main droite et mange de ce qui est devant toi » (al-Bukhari, Muslim).
 3. **Faciliter les choses :** « Facilitez et ne rendez pas les choses difficiles, annoncez la bonne nouvelle et ne faites pas fuir les gens » (al-Bukhari, Muslim). C'est l'esprit du juste milieu, la **wasatiyya**.
-4. **Honorer tes parents et rendre visite à tes proches :** dans le Coran, la bonté envers les parents se tient juste à côté de l'adoration d'Allah seul (17:23).
-5. **Être honnête :** au travail, dans le commerce et dans tes paroles, comme al-Amin.
-6. **Vivre le Coran :** écoute quelques versets chaque jour, comprends-les et mets-les en pratique. Tu pourrais commencer tout de suite avec la [sourate al-Ahzab](/surah/33) ou la [sourate al-Isra'](/surah/17).
+4. **Honorer vos parents et rendre visite à vos proches :** dans le Coran, la bonté envers les parents se tient juste à côté de l'adoration d'Allah seul (17:23).
+5. **Être honnête :** au travail, dans le commerce et dans vos paroles, comme al-Amin.
+6. **Vivre le Coran :** écoutez quelques versets chaque jour, comprenez-les et mettez-les en pratique. Vous pourriez commencer tout de suite avec la [sourate al-Ahzab](/surah/33) ou la [sourate al-Isra'](/surah/17).
 
-Ainsi, la Sira, la biographie du Prophète ﷺ, devient plus qu'une histoire : elle devient un chemin que tu peux toi-même parcourir.`,
+Ainsi, la Sira, la biographie du Prophète ﷺ, devient plus qu'une histoire : elle devient un chemin que vous pouvez vous-même parcourir.`,
   faq: [
     { q: "Quand et où le Prophète Muhammad ﷺ est-il né ?", a: "Vers l'an 570 à La Mecque, durant la fameuse « Année de l'Éléphant ». Il appartenait au clan des Banou Hachim de la tribu de Quraych." },
     { q: "Que signifie « al-Amin » ?", a: "« Le digne de confiance ». Les gens de La Mecque l'appelaient ainsi avant même sa prophétie, en raison de son honnêteté et de sa fiabilité." },

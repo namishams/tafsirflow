@@ -2,7 +2,7 @@ import type { IslamChapter } from "../../types";
 const c: IslamChapter = {
   title: "El Corán",
   kicker: "El Libro",
-  lead: "Para los musulmanes, el Corán es la palabra de Allah, revelada al Profeta Muhammad ﷺ a través del ángel Yibril a lo largo de unos veintitrés años. Desde hace catorce siglos se recita, se memoriza y se explica: en las mezquitas, en las familias y en las escuelas coránicas de todo el mundo. Aquí aprenderás cómo está estructurado, cómo se ha preservado y cómo puedes empezar tú mismo con él.",
+  lead: "Para los musulmanes, el Corán es la palabra de Allah, revelada al Profeta Muhammad ﷺ a través del ángel Yibril a lo largo de unos veintitrés años. Desde hace catorce siglos se recita, se memoriza y se explica: en las mezquitas, en las familias y en las escuelas coránicas de todo el mundo. Aquí aprenderá cómo está estructurado, cómo se ha preservado y cómo puede empezar usted mismo con él.",
   facts: [
     { n: "114", l: "Suras" },
     { n: "6236", l: "Versículos (cómputo de Kufa)" },
@@ -40,7 +40,7 @@ El orden de las suras en el libro no es cronológico. Sigue la disposición que 
 
 En vida del Profeta ﷺ, el Corán se memorizaba y, al mismo tiempo, los escribas lo ponían por escrito sobre tallos de palmera, pergamino, piedras planas y huesos. Tras su fallecimiento, muchos Compañeros que sabían el Corán de memoria cayeron en la batalla de Yamama. **Umar** instó entonces al primer califa, **Abu Bakr**, a reunir el Corán en una sola colección. Abu Bakr encomendó la tarea a **Zayd ibn Zabit**, uno de los escribas del Profeta ﷺ, y Zayd puso el máximo cuidado en incluir solo lo que existía por escrito y estaba confirmado por testigos. Así lo narra al-Bujari en su *Sahih*.
 
-Estas hojas se guardaron más tarde con **Hafsa**, la hija de Umar. Bajo el tercer califa, **Uzman**, se hicieron copias a partir de ellas bajo la dirección de Zayd y se enviaron a las principales ciudades del mundo musulmán, para que todos leyeran de un único texto unificado. Este **mushaf uzmaní** es la base de toda copia del Corán que tienes hoy en tus manos.
+Estas hojas se guardaron más tarde con **Hafsa**, la hija de Umar. Bajo el tercer califa, **Uzman**, se hicieron copias a partir de ellas bajo la dirección de Zayd y se enviaron a las principales ciudades del mundo musulmán, para que todos leyeran de un único texto unificado. Este **mushaf uzmaní** es la base de toda copia del Corán que tiene hoy en sus manos.
 
 ## La preservación y los huffaz
 
@@ -66,7 +66,7 @@ El Profeta ﷺ fue el primero en explicar el Corán (Corán 16:44), seguido por 
 - el tafsir de **Ibn Kazir**, que explica el Corán sobre todo mediante el propio Corán y mediante el hadiz, y que sigue siendo muy leído hoy;
 - el tafsir de **al-Qurtubi** (*al-Yami' li-Ahkam al-Qur'an*), especialmente rico en explicaciones jurídicas y lingüísticas.
 
-En nuestra plataforma puedes leer explicaciones de cada versículo, siempre con la fuente indicada.
+En nuestra plataforma puede leer explicaciones de cada versículo, siempre con la fuente indicada.
 
 ## Los temas principales
 
@@ -92,13 +92,13 @@ Aquí, en los Emiratos, el Corán tiene un lugar firme en la vida cotidiana y p�
 
 ## Cómo empezar con nosotros
 
-No tienes que dominarlo todo de una vez. Empieza por lo que encaje hoy:
+No tiene que dominarlo todo de una vez. Empiece por lo que encaje hoy:
 
-1. Abre el [Corán](/quran) y escucha versículo a versículo, con traducción y tafsir. La palabra que se está recitando se resalta a medida que avanzas.
-2. Memoriza suras cortas con el [Método Shams](/shams).
-3. Mejora tu pronunciación en el [curso de tayuid](/tajweed).
-4. Recorre paso a paso las 114 suras en la [Academia](/academy).
-5. O sigue el [plan de 365 días](/plan) para leer una pequeña porción cada día.
+1. Abra el [Corán](/quran) y escuche versículo a versículo, con traducción y tafsir. La palabra que se está recitando se resalta a medida que avanza.
+2. Memorice suras cortas con el [Método Shams](/shams).
+3. Mejore su pronunciación en el [curso de tayuid](/tajweed).
+4. Recorra paso a paso las 114 suras en la [Academia](/academy).
+5. O siga el [plan de 365 días](/plan) para leer una pequeña porción cada día.
 
 Un versículo al día, leído con el corazón, vale más que un gran propósito que nunca empieza.`,
   faq: [
@@ -106,7 +106,7 @@ Un versículo al día, leído con el corazón, vale más que un gran propósito 
     { q: "¿Cuántas suras y versículos tiene el Corán?", a: "114 suras y, según el cómputo de Kufa que siguen hoy la mayoría de las ediciones, 6236 versículos." },
     { q: "¿Una traducción es también el Corán?", a: "Una traducción transmite los significados y es una gran ayuda, pero el Corán en sí es el texto árabe. Por eso las traducciones se llaman \"traducciones de los significados\"." },
     { q: "¿Qué es Hafs 'an 'Asim?", a: "La más extendida en todo el mundo de las lecturas reconocidas del Corán. La siguen la mayoría de las ediciones impresas y las recitaciones de nuestra plataforma." },
-    { q: "No sé árabe, ¿puedo empezar igualmente?", a: "Sí. Escucha, lee la traducción y aprende suras cortas poco a poco. El Profeta ﷺ prometió incluso una doble recompensa a quien recita con dificultad (al-Bujari y Muslim)." },
+    { q: "No sé árabe, ¿puedo empezar igualmente?", a: "Sí. Escuche, lea la traducción y aprenda suras cortas poco a poco. El Profeta ﷺ prometió incluso una doble recompensa a quien recita con dificultad (al-Bujari y Muslim)." },
   ],
   sources: [
     "Corán 7:204, 12:2, 15:9, 16:44, 16:98, 17:9, 38:29, 54:17, 56:79, 73:4, 96:1–5",

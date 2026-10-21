@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Easing, Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, ClipPath, Defs, Ellipse, G, Path, Rect } from "react-native-svg";
-import { RULE, WUDU, WUDU_KEY, type L3, type Scene, type Tradition, type WuduDone, type WuduStep } from "@/web/wudu";
+import { RULE, WUDU, WUDU_KEY, langOf, type L3, type Scene, type Tradition, type WuduDone, type WuduStep } from "@/web/wudu";
 import { award } from "@/web/points";
 import { readJSON, writeJSON } from "@/lib/store";
 import { useLang } from "@/i18n";
@@ -16,7 +16,7 @@ import { trainerTradition } from "@/lib/tradition";
 const goldC = GOLD.replace(/rgb\((\d+) (\d+) (\d+)\)/, "rgb($1,$2,$3)");
 const waterC = WATER.replace(/rgb\((\d+) (\d+) (\d+)\)/, "rgb($1,$2,$3)");
 const ink = "#ffffff";
-// <span dir="ltr"> of the website: "3 / 12" keeps its order inside right-to-left text
+// <span dir="ltr"> of the website: "3 / 12" and the Latin transliteration keep their order inside right-to-left text
 const ltr = (s: string) => `\u2066${s}\u2069`;
 
 // ---------- motion: every animated part is a pure function of the scene clock (seconds) ----------
@@ -368,10 +368,11 @@ function Celebrate() {
 }
 
 // Wudu trainer (website WuduTrainer.tsx): every step drawn and explained, obligatory and recommended marked, a tap
-// counter for the rounds, and an order quiz at the end (progress tf:wudu, points "wudu")
+// counter for the rounds, and an order quiz at the end (progress tf:wudu, points "wudu"). Every site language the wudu
+// data has, otherwise English (website: langOf(locale)).
 export default function WuduTrainer() {
   const { lang, rtl } = useLang();
-  const l: Lang = lang === "de" ? "de" : lang === "ar" ? "ar" : "en";
+  const l: Lang = langOf(lang);
   const u = UI[l];
   const tx = (v?: L3) => (v ? v[l] : "");
   const [tradition, setTradition] = useState<Tradition>(() => trainerTradition());
@@ -478,7 +479,7 @@ export default function WuduTrainer() {
               {step.duas?.map((d) => (
                 <View key={d.ar} style={{ marginTop: 20, borderTopWidth: 1, borderTopColor: "rgba(214,180,108,0.25)", paddingTop: 16 }}>
                   <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 52, color: "#ffffff", writingDirection: "rtl", textAlign: AR_RIGHT }}>{d.ar}</Text>
-                  {l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 8 }}>{d.translit}</Text> : null}
+                  {l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 8 }}>{rtl ? ltr(d.translit) : d.translit}</Text> : null}
                   {l !== "ar" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 8 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{u.meaning}: </Text>{d.meaning[l]}</Text> : null}
                   {d.src ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: "rgba(255,255,255,0.5)", marginTop: 6 }}>{tx(d.src)}</Text> : null}
                 </View>

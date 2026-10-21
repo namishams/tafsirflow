@@ -2,7 +2,7 @@ import type { IslamChapter } from "../../types";
 const c: IslamChapter = {
   title: "İslam nedir?",
   kicker: "Temeller",
-  lead: "İslam, tek olan Allah'a huzur içinde teslim olmak ve bu teslimiyetten doğan merhamet, adalet ve dengeyle yaşamak demektir. Bu sayfada Müslümanların neye inandığını, inançlarını nasıl yaşadıklarını ve Kur'an'ın bir arada yaşama hakkında ne söylediğini sakin ve sade bir dille anlatıyoruz. İster Müslüman ol, ister yeni merak etmeye başlamış ol, ister sadece anlamak iste – burada gönülden hoş geldin.",
+  lead: "İslam, tek olan Allah'a huzur içinde teslim olmak ve bu teslimiyetten doğan merhamet, adalet ve dengeyle yaşamak demektir. Bu sayfada Müslümanların neye inandığını, inançlarını nasıl yaşadıklarını ve Kur'an'ın bir arada yaşama hakkında ne söylediğini sakin ve sade bir dille anlatıyoruz. İster Müslüman olun, ister yeni merak etmeye başlamış olun, ister sadece anlamak isteyin – burada gönülden hoş geldiniz.",
   facts: [
     { n: "1", l: "Allah – inancın kalbi (tevhid)" },
     { n: "5", l: "İslam'ın şartı" },
@@ -30,7 +30,7 @@ Tevhid büyük bir özgürlük getirir: Yalnızca Allah'a kulluk eden kişi para
 Peygamber ﷺ, İslam'ın beş şey üzerine bina edildiğini söylemiştir (Buhârî ve Müslim rivayet etmiştir). İnsanlar bunları çoğu zaman bir evi ayakta tutan sütunlar gibi düşünür:
 
 1. **Şehadet** – Allah'a ve O'nun Resulü ﷺ'e iman tanıklığı.
-2. **Namaz** – günde beş vakit. Güne ritmini verir ve insanı tekrar tekrar Allah'a döndürür. Bulunduğun yerin namaz vakitlerini [namaz vakitleri](/prayer) sayfamızda bulabilirsin.
+2. **Namaz** – günde beş vakit. Güne ritmini verir ve insanı tekrar tekrar Allah'a döndürür. Bulunduğunuz yerin namaz vakitlerini [namaz vakitleri](/prayer) sayfamızda bulabilirsiniz.
 3. **Zekât** – ihtiyaç sahipleri için maldan verilen farz sadaka. Malı temizler ve toplumu güçlendirir.
 4. **Oruç** – Ramazan ayında tan ağarmasından gün batımına kadar oruç tutmak; sabrın ve şükrün okulu.
 5. **Hac** – bedenen ve maddi olarak gücü yeten herkes için ömürde bir kez Mekke'ye hac yolculuğu.
@@ -52,7 +52,7 @@ Bu altı inanç hayata bir çerçeve verir: Hiçbir şey anlamsız olmaz, hiçbi
 
 Aynı hadiste Cebrâil son olarak imanın en yüksek mertebesi olan **ihsanı** sorar. Peygamber ﷺ'in cevabı bildiğimiz en güzel cümlelerden biridir: "Allah'a O'nu görüyormuş gibi kulluk etmendir; sen O'nu görmesen de O seni görür."
 
-İhsan, her şeyi elinden geldiğince güzel ve samimi yapmak demektir – namazını, işini, anne babana, komşularına ve yabancılara davranışını. Dış amel ile iç hâl arasındaki köprüdür.
+İhsan, insanın her şeyi elinden geldiğince güzel ve samimi yapması demektir – namazını, işini, anne babasına, komşularına ve yabancılara davranışını. Dış amel ile iç hâl arasındaki köprüdür.
 
 ## Vasatiyye – orta yol
 
@@ -68,7 +68,7 @@ Merhamet küçük şeylerde görünür: bir gülümsemede, yemeği paylaşmakta,
 
 ## Adalet
 
-"Şüphesiz Allah adaleti, ihsanı ve akrabaya vermeyi emreder; hayâsızlığı, kötülüğü ve zulmü yasaklar" (Kur'an 16:90). Bu ayet birçok camide hâlâ cuma hutbesinin sonunda okunur. Adalet istisnasız geçerlidir, görüş ayrılığında olduğun insanlara karşı bile: "Bir topluluğa olan kininiz sizi adaletsizliğe sürüklemesin. Adaletli olun; bu takvaya daha yakındır" (Kur'an 5:8).
+"Şüphesiz Allah adaleti, ihsanı ve akrabaya vermeyi emreder; hayâsızlığı, kötülüğü ve zulmü yasaklar" (Kur'an 16:90). Bu ayet birçok camide hâlâ cuma hutbesinin sonunda okunur. Adalet istisnasız geçerlidir, görüş ayrılığında olduğunuz insanlara karşı bile: "Bir topluluğa olan kininiz sizi adaletsizliğe sürüklemesin. Adaletli olun; bu takvaya daha yakındır" (Kur'an 5:8).
 
 ## Aile, anne baba ve toplum
 
@@ -76,7 +76,7 @@ Merhamet küçük şeylerde görünür: bir gülümsemede, yemeği paylaşmakta,
 
 ## İlim
 
-Kur'an'ın ilk inen kelimesi "Oku!"dur (Kur'an 96:1). Allah, Peygamber ﷺ'e şu duayı öğretmiştir: "Rabbim, ilmimi artır" (Kur'an 20:114). Peygamber ﷺ de şöyle buyurmuştur: "Kim ilim talep etmek için bir yola girerse, Allah ona cennete giden bir yolu kolaylaştırır" (Müslim). İslam'da öğrenmek ibadettir – ister Kur'an ayetleri ezberle, ister tıp oku, ister bir zanaatta ustalaş.
+Kur'an'ın ilk inen kelimesi "Oku!"dur (Kur'an 96:1). Allah, Peygamber ﷺ'e şu duayı öğretmiştir: "Rabbim, ilmimi artır" (Kur'an 20:114). Peygamber ﷺ de şöyle buyurmuştur: "Kim ilim talep etmek için bir yola girerse, Allah ona cennete giden bir yolu kolaylaştırır" (Müslim). İslam'da öğrenmek ibadettir – ister Kur'an ayetleri ezberleyin, ister tıp okuyun, ister bir zanaatta ustalaşın.
 
 ## Ahlak
 
@@ -102,20 +102,20 @@ Emirlikler'de yaklaşık iki yüz milletten insan barış içinde bir arada yaş
 
 ## İlk adımlar
 
-Daha fazlasını öğrenmek istiyorsan, sadece başla – ve Kur'an'ın kendisiyle başla:
+Daha fazlasını öğrenmek istiyorsanız, sadece başlayın – ve Kur'an'ın kendisiyle başlayın:
 
-- Kur'an'ı [Kur'an](/quran) sayfamızda meal ve tefsirle ayet ayet dinle ve oku. Pek çok kişi açılış suresi Fâtiha ile ve Kur'an'ın sonundaki kısa surelerle başlar.
-- [Shams Metodu](/shams) ile ayet ezberle – adım adım, kendi hızında.
-- Namazı öğren ve bulunduğun yerin namaz vakitlerini [namaz vakitleri](/prayer) sayfamızda bul.
-- Yakınındaki bir camide insanlarla konuş. Orada sorular hoş karşılanır ve neredeyse her zaman bir bardak çay ya da kahve ikram edilir.
+- Kur'an'ı [Kur'an](/quran) sayfamızda meal ve tefsirle ayet ayet dinleyin ve okuyun. Pek çok kişi açılış suresi Fâtiha ile ve Kur'an'ın sonundaki kısa surelerle başlar.
+- [Shams Metodu](/shams) ile ayet ezberleyin – adım adım, kendi hızınızda.
+- Namazı öğrenin ve bulunduğunuz yerin namaz vakitlerini [namaz vakitleri](/prayer) sayfamızda bulun.
+- Yakınınızdaki bir camide insanlarla konuşun. Orada sorular hoş karşılanır ve neredeyse her zaman bir bardak çay ya da kahve ikram edilir.
 
-Acele etme. İslam yirmi üç yıl boyunca adım adım indirildi. Senin yolun da yavaş yavaş büyüyebilir.`,
+Acele etmeyin. İslam yirmi üç yıl boyunca adım adım indirildi. Sizin yolunuz da yavaş yavaş büyüyebilir.`,
   faq: [
     { q: "“İslam” kelimesi ne anlama gelir?", a: "İslam, Allah'a “teslim olmak” demektir ve dil bakımından barış anlamına gelen “selam” ile akrabadır. Müslüman, Allah'a teslim olan kişidir." },
     { q: "Müslümanlar Yahudiler ve Hristiyanlarla aynı Allah'a mı inanır?", a: "Müslümanlar, İbrahim'in tek İlahına, her şeyin Yaratıcısına inanır. Kur'an, Ehl-i Kitab'a hitaben şöyle der: “Bizim İlahımız da sizin İlahınız da birdir” (Kur'an 29:46)." },
     { q: "İslam'ın beş şartı nelerdir?", a: "İman tanıklığı (şehadet), günlük namaz, farz sadaka (zekât), Ramazan orucu ve gücü yetenler için Mekke'ye hac." },
     { q: "İslam inançta zorlamaya izin verir mi?", a: "Hayır. Kur'an açıkça şöyle der: “Dinde zorlama yoktur” (Kur'an 2:256). İman kalpten gelmelidir." },
-    { q: "İslam hakkında daha fazla öğrenmeye nasıl başlarım?", a: "Kur'an'ı meal ve açıklamasıyla oku ve dinle, örneğin /quran sayfamızda; namazın temellerini öğren ve yakınındaki bir camide bilgili insanlarla konuş." },
+    { q: "İslam hakkında daha fazla öğrenmeye nasıl başlarım?", a: "Kur'an'ı meal ve açıklamasıyla okuyun ve dinleyin, örneğin /quran sayfamızda; namazın temellerini öğrenin ve yakınınızdaki bir camide bilgili insanlarla konuşun." },
   ],
   sources: [
     "Kur'an 2:136, 2:143, 2:185, 2:256, 4:59, 5:8, 5:32, 16:90, 17:23, 20:114, 21:107, 29:46, 30:21, 49:13, 59:23, 60:8, 68:4, 96:1, 112:1–4",

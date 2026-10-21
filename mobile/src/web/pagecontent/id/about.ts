@@ -3,7 +3,7 @@ const c: AboutContent = {
   eyebrow: "Tentang kami",
   title: "Lahir di Dubai – untuk setiap orang yang ingin belajar Quran",
   lead: "Quran Masterclass adalah platform gratis untuk mendengarkan, memahami, menghafal, dan membaca Quran dengan indah – dalam 13 bahasa, untuk anak-anak dan orang dewasa, di mana pun mereka tinggal. Inilah kisah di baliknya.",
-  facts: [{ n: "13", l: "bahasa" }, { n: "114", l: "surah, ayat demi ayat" }, { n: "Rp0", l: "biaya bagimu" }, { n: "0", l: "iklan" }],
+  facts: [{ n: "13", l: "bahasa" }, { n: "114", l: "surah, ayat demi ayat" }, { n: "Rp0", l: "biaya bagi Anda" }, { n: "0", l: "iklan" }],
   story: `## Sebuah pemikiran yang tak mau pergi
 
 Ada malam-malam di Dubai ketika kota menjadi hening. Lalu lintas di Sheikh Zayed Road terus melaju, menara-menara berkilau, tetapi dari sebuah masjid di lingkungan sekitar terdengar bacaan sang imam – dan untuk sesaat tidak ada hal lain yang penting. Siapa pun yang pernah merasakannya akan memahami mengapa Quran bukan sekadar buku biasa bagi umat Muslim. Ia adalah firman Allah. Ia adalah apa yang kita ucapkan dalam shalat, apa yang kita ajarkan kepada anak-anak kita, dan apa yang kita harapkan tetap tersimpan di hati kita di akhir hayat.
@@ -18,30 +18,30 @@ Quran Masterclass lahir dari kontras itu. **Nami Shams** mendirikan platform ini
 
 Nabi ﷺ bersabda: "Sebaik-baik kalian adalah orang yang mempelajari Quran dan mengajarkannya." (Shahih al-Bukhari) Beliau juga bersabda bahwa pada Hari Kiamat Quran akan datang sebagai pemberi syafaat bagi para pembacanya (Shahih Muslim). Bagi seorang mukmin, hampir tidak ada ilmu yang lebih bernilai.
 
-Itulah sebabnya Quran Masterclass bukan aplikasi hiburan yang menawarkan sedikit agama sebagai pelengkap. Di sini Quran berada di pusat – setiap ayatnya, dengan bunyinya, maknanya, dan penjelasannya. Segala yang lain, rencana, peta, akademi, radio, melayani satu tujuan: agar semakin banyak Quran masuk ke dalam hatimu dan menetap di sana.
+Itulah sebabnya Quran Masterclass bukan aplikasi hiburan yang menawarkan sedikit agama sebagai pelengkap. Di sini Quran berada di pusat – setiap ayatnya, dengan bunyinya, maknanya, dan penjelasannya. Segala yang lain, rencana, peta, akademi, radio, melayani satu tujuan: agar semakin banyak Quran masuk ke dalam hati Anda dan menetap di sana.
 
 ## Apa yang telah kami bangun
 
-Intinya adalah [Metode Shams](/shams): tujuh langkah per ayat – dengarkan, susun dari belakang, pahami kata per kata, baca penjelasannya, ingat kembali dari hafalan, buat pengait ingatanmu sendiri, renungkan. Sebuah model ingatan mempelajari ayat mana yang terasa mudah bagimu dan mana yang tidak, lalu mengembalikan setiap ayat tepat ketika ia hampir memudar. Di [peta Quran](/map) milikmu, kamu melihat setiap hari apa yang sudah kuat dan apa yang perlu dirawat.
+Intinya adalah [Metode Shams](/shams): tujuh langkah per ayat – dengarkan, susun dari belakang, pahami kata per kata, baca penjelasannya, ingat kembali dari hafalan, buat pengait ingatan Anda sendiri, renungkan. Sebuah model ingatan mempelajari ayat mana yang terasa mudah bagi Anda dan mana yang tidak, lalu mengembalikan setiap ayat tepat ketika ia hampir memudar. Di [peta Quran](/map) milik Anda, setiap hari Anda melihat apa yang sudah kuat dan apa yang perlu dirawat.
 
 Di sekelilingnya: [rencana belajar](/plan) dari yang ringan hingga tahfizh intensif, sebuah [akademi](/academy) dengan pelajaran, tes, dan target harian, [pelajaran tajwid](/tajweed), [pelatih kosakata](/vocab), [perencana khatam](/khatm), [doa-doa dari Sunnah](/duas), [waktu shalat dengan azan](/prayer), dan [radio Quran](/radio) yang tak pernah berhenti mengudara.
 
-Apa yang tidak kami lakukan: kami tidak menciptakan penafsiran kami sendiri. Teks Quran, terjemahan, dan tafsir berasal dari sumber-sumber yang diakui dan selalu menyebutkan asalnya. Metode Shams adalah metode belajar – bukan tafsir baru dan bukan pengganti guru yang menyimak bacaanmu.`,
+Apa yang tidak kami lakukan: kami tidak menciptakan penafsiran kami sendiri. Teks Quran, terjemahan, dan tafsir berasal dari sumber-sumber yang diakui dan selalu menyebutkan asalnya. Metode Shams adalah metode belajar – bukan tafsir baru dan bukan pengganti guru yang menyimak bacaan Anda.`,
   valuesTitle: "Apa yang menuntun kami",
   values: [
     { t: "Gratis untuk semua orang", d: "Quran adalah milik setiap Muslim. Tidak seorang pun boleh berhenti belajar karena langganan terlalu mahal." },
     { t: "Sumber yang autentik", d: "Teks, terjemahan, dan tafsir dari sumber-sumber yang diakui – selalu menunjukkan asalnya." },
-    { t: "Menghormati datamu", d: "Tanpa iklan, tanpa layanan analitik, tanpa penjualan data. Kata sandi di-hash, koneksi terenkripsi, ekspor dan penghapusan kapan saja." },
+    { t: "Menghormati data Anda", d: "Tanpa iklan, tanpa layanan analitik, tanpa penjualan data. Kata sandi di-hash, koneksi terenkripsi, ekspor dan penghapusan kapan saja." },
     { t: "Martabat bersama", d: "Komentar ditinjau sebelum ditampilkan. Apa yang ditulis di sini harus pantas bagi tempat di mana Quran dibaca." },
-    { t: "Untuk segala usia", d: "Dari ayat pertama seorang anak hingga jalur tahfizh, metodenya menyesuaikan dengan usia dan tempomu." },
+    { t: "Untuk segala usia", d: "Dari ayat pertama seorang anak hingga jalur tahfizh, metodenya menyesuaikan dengan usia dan tempo Anda." },
     { t: "Kejujuran", d: "Tanpa janji-janji yang dibuat-buat, tanpa angka yang dibesar-besarkan. Apa yang masih kurang tercantum di catatan perubahan – dan sedang dibangun." },
   ],
   freeTitle: "Gratis – dan mengapa akan tetap begitu",
-  free: `Quran Masterclass tidak memungutmu biaya apa pun. Tidak ada masa uji coba yang berakhir setelah tujuh hari. Tidak ada iklan di antara dua ayat. Tidak ada fitur yang baru terbuka setelah membayar.
+  free: `Quran Masterclass tidak memungut biaya apa pun dari Anda. Tidak ada masa uji coba yang berakhir setelah tujuh hari. Tidak ada iklan di antara dua ayat. Tidak ada fitur yang baru terbuka setelah membayar.
 
 Platform ini **didanai secara pribadi oleh Nami Shams** – server, pengembangan, audio, semuanya. Ia dibangun karena Allah, dengan harapan agar setiap ayat yang dipelajari seseorang di sini menjadi amal kebaikan yang terus mengalir (sedekah jariyah).
 
-Jika kamu ingin membantu, kamu bisa: dengan masukan, laporan kesalahan, terjemahan – dan dengan doa.`,
+Jika Anda ingin membantu, Anda bisa: dengan masukan, laporan kesalahan, terjemahan – dan dengan doa.`,
   dubaiEyebrow: "Dubai dan Quran",
   dubaiTitle: "Kota kaca dan baja – dengan hati yang memuliakan Quran",
   dubaiLead: "Ketika orang memikirkan Dubai, mereka membayangkan gedung pencakar langit, gurun dan laut, sebuah kota yang menciptakan dirinya kembali setiap tahun. Mereka yang tinggal di sini mengenal sisi yang lain.",
@@ -74,7 +74,7 @@ Rumah yang aman, toleransi antara orang-orang dari seluruh dunia, penghormatan t
 
 Saya berharap seorang anak di Hamburg, seorang nenek di Sarajevo, seorang mahasiswa di Jakarta, dan seorang sopir taksi di Dubai semuanya memiliki kesempatan yang sama – gratis, dalam bahasa mereka, sesuai tempo mereka. Agar mereka melangkah sedikit lebih jauh setiap hari. Dan agar suatu hari mereka membaca dalam shalat sebuah surah yang mereka pelajari di sini.
 
-Jika platform ini membantumu, saya hanya meminta satu hal: doakanlah semua orang yang telah berkontribusi di dalamnya – dan ceritakan kepada orang lain yang ingin belajar.`,
+Jika platform ini membantu Anda, saya hanya meminta satu hal: doakanlah semua orang yang telah berkontribusi di dalamnya – dan ceritakan kepada orang lain yang ingin belajar.`,
   signature: "Nami Shams",
   signatureRole: "Pendiri Quran Masterclass · Dubai",
   contactTitle: "Tulis kepada kami",

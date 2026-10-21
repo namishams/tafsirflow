@@ -11,9 +11,9 @@ const c: IslamChapter = {
   ],
   body: `## Makna Islam bagi individu
 
-Cepat atau lambat, setiap orang mengajukan pertanyaan-pertanyaan besar: Dari mana aku berasal? Untuk apa aku hidup? Ke mana aku akan pergi? Islam memberikan jawaban yang jelas sekaligus menenteramkan. Kamu tidak berada di sini secara kebetulan. Allah menciptakanmu, Dia mengenalmu, dan hidupmu memiliki tujuan: mengenal-Nya, beribadah kepada-Nya, dan membawa kebaikan ke dunia.
+Cepat atau lambat, setiap orang mengajukan pertanyaan-pertanyaan besar: Dari mana saya berasal? Untuk apa saya hidup? Ke mana saya akan pergi? Islam memberikan jawaban yang jelas sekaligus menenteramkan. Anda tidak berada di sini secara kebetulan. Allah menciptakan Anda, Dia mengenal Anda, dan hidup Anda memiliki tujuan: mengenal-Nya, beribadah kepada-Nya, dan membawa kebaikan ke dunia.
 
-Jawaban ini menjadi hidup dalam keseharian. Lima kali sehari, shalat menghentikan hiruk-pikuk segala urusan. Kamu menyisihkan apa yang menyibukkanmu, menghadap Ka'bah, dan berdiri di hadapan Tuhanmu. Siapa pun yang pernah mengalaminya tahu bahwa shalat bukanlah beban, melainkan ruang bernapas bagi jiwa.
+Jawaban ini menjadi hidup dalam keseharian. Lima kali sehari, shalat menghentikan hiruk-pikuk segala urusan. Anda menyisihkan apa yang menyibukkan Anda, menghadap Ka'bah, dan berdiri di hadapan Tuhan Anda. Siapa pun yang pernah mengalaminya tahu bahwa shalat bukanlah beban, melainkan ruang bernapas bagi jiwa.
 
 Allah berfirman: "Orang-orang yang beriman dan hati mereka menjadi tenteram dengan mengingat Allah – ingatlah, hanya dengan mengingat Allah hati menjadi tenteram" (13:28). Di zaman yang penuh kebisingan, tekanan, dan kegelisahan, ketenangan batin ini adalah anugerah yang berharga.
 
@@ -57,7 +57,7 @@ Pada tahun 2015 Pew Research Center menerbitkan **proyeksi** yang banyak diperha
 
 ### Muslim muda dan pembelajaran digital
 
-Generasi muda ini belajar secara berbeda dari kakek-neneknya. Mereka mendengarkan lantunan bacaan di ponsel pintar, membaca terjemahan dalam bahasanya sendiri, dan mengajukan pertanyaan yang tidak persis diajukan oleh generasi-generasi sebelumnya. Itu adalah peluang besar: belum pernah semudah ini mendengar, memahami, dan mempelajari Al-Qur'an – baik kamu tinggal di Dubai, Berlin, Jakarta, maupun Toronto. Kini Al-Qur'an berbicara kepada manusia dalam hampir setiap bahasa, sementara lafal Arabnya tetap terjaga tanpa perubahan.
+Generasi muda ini belajar secara berbeda dari kakek-neneknya. Mereka mendengarkan lantunan bacaan di ponsel pintar, membaca terjemahan dalam bahasanya sendiri, dan mengajukan pertanyaan yang tidak persis diajukan oleh generasi-generasi sebelumnya. Itu adalah peluang besar: belum pernah semudah ini mendengar, memahami, dan mempelajari Al-Qur'an – baik Anda tinggal di Dubai, Berlin, Jakarta, maupun Toronto. Kini Al-Qur'an berbicara kepada manusia dalam hampir setiap bahasa, sementara lafal Arabnya tetap terjaga tanpa perubahan.
 
 ## Tantangan-tantangan
 
@@ -85,15 +85,15 @@ Yang terpenting adalah ini: toleransi ini tidak muncul meski ada iman, melainkan
 
 Seperti apa masa depan Islam? Itu lebih bergantung pada hati daripada pada angka. Nabi ﷺ bersabda: "Sebaik-baik kalian adalah orang yang belajar Al-Qur'an dan mengajarkannya" (al-Bukhari). Dan: "Barang siapa menempuh suatu jalan untuk mencari ilmu, Allah mudahkan baginya jalan menuju surga" (Muslim).
 
-Itulah tepatnya mengapa Quran Masterclass ada. Di sini kamu dapat mendengarkan ayat demi ayat, memahami maknanya, dan membaca tafsirnya sekaligus – gratis, dalam bahasa Jerman dan Inggris. Biarkan [Shams](/shams) menemanimu, perdalam ilmumu di [Akademi](/academy), dan jadikan niat baik sebagai kebiasaan harian dengan [rencana belajar](/plan) pribadimu.
+Itulah tepatnya mengapa Quran Masterclass ada. Di sini Anda dapat mendengarkan ayat demi ayat, memahami maknanya, dan membaca tafsirnya sekaligus – gratis, dalam bahasa Jerman dan Inggris. Biarkan [Shams](/shams) menemani Anda, perdalam ilmu Anda di [Akademi](/academy), dan jadikan niat baik sebagai kebiasaan harian dengan [rencana belajar](/plan) pribadi Anda.
 
-Masa depan Islam ditulis oleh mereka yang mempelajari dan menjalani Al-Qur'an. Mungkin sebagian dari masa depan itu dimulai hari ini – denganmu dan satu ayat saja.`,
+Masa depan Islam ditulis oleh mereka yang mempelajari dan menjalani Al-Qur'an. Mungkin sebagian dari masa depan itu dimulai hari ini – dengan Anda dan satu ayat saja.`,
   faq: [
     { q: "Mengapa Islam begitu bermakna bagi banyak orang?", a: "Karena Islam menjawab pertanyaan-pertanyaan besar kehidupan, memberi ketenangan batin melalui shalat dan zikir (13:28), dan meletakkan fondasi yang jelas bagi keluarga, keadilan, dan kasih sayang." },
     { q: "Berapa jumlah Muslim?", a: "Hampir seperempat umat manusia menganut Islam. Pada 2015 Pew Research Center memproyeksikan bahwa jumlah Muslim akan tumbuh lebih cepat daripada populasi dunia hingga 2050 dan dapat hampir menyamai jumlah umat Kristen – sebuah proyeksi, bukan kepastian." },
     { q: "Apa kata Islam tentang ekstremisme?", a: "Islam menolaknya. Menghilangkan nyawa orang yang tidak bersalah seperti membunuh seluruh manusia (5:32), dan Muslim adalah umat pertengahan (2:143). Moderasi, kasih sayang, dan ilmu adalah jalannya." },
     { q: "Apa itu Dokumen Persaudaraan Manusia?", a: "Deklarasi bersama yang ditandatangani di Abu Dhabi pada Februari 2019 oleh Paus Fransiskus dan Imam Besar al-Azhar, Syekh Ahmed al-Tayeb. Dokumen ini menyerukan perdamaian, saling menghormati, dan hidup bersama." },
-    { q: "Bagaimana saya sendiri dapat berkontribusi bagi masa depan Islam?", a: "Dengan belajar, dan menjalani apa yang kamu pelajari: beberapa ayat beserta maknanya setiap hari, berperilaku baik kepada keluarga dan tetangga, serta menghormati semua orang. Rencana belajar di Quran Masterclass membantumu tetap konsisten." },
+    { q: "Bagaimana saya sendiri dapat berkontribusi bagi masa depan Islam?", a: "Dengan belajar, dan menjalani apa yang Anda pelajari: beberapa ayat beserta maknanya setiap hari, berperilaku baik kepada keluarga dan tetangga, serta menghormati semua orang. Rencana belajar di Quran Masterclass membantu Anda tetap konsisten." },
   ],
   sources: [
     "Al-Qur'an 2:30, 2:143, 4:135, 5:32, 7:31, 13:28, 20:114, 21:107, 49:13, 96:1",

@@ -52,7 +52,7 @@ Enam keyakinan ini memberi kerangka pada kehidupan: tidak ada yang terjadi tanpa
 
 Dalam hadis yang sama, Jibril akhirnya bertanya tentang **ihsan**, tingkatan iman yang tertinggi. Jawaban Nabi ﷺ termasuk kalimat terindah yang kita kenal: "Engkau menyembah Allah seakan-akan engkau melihat-Nya; dan meskipun engkau tidak melihat-Nya, sesungguhnya Dia melihatmu."
 
-Ihsan berarti melakukan segala sesuatu sebaik dan seikhlas mungkin – shalatmu, pekerjaanmu, caramu memperlakukan orang tua, tetangga, dan orang asing. Ihsan adalah jembatan antara amalan lahir dan keadaan batin.
+Ihsan berarti melakukan segala sesuatu sebaik dan seikhlas mungkin – shalat Anda, pekerjaan Anda, cara Anda memperlakukan orang tua, tetangga, dan orang asing. Ihsan adalah jembatan antara amalan lahir dan keadaan batin.
 
 ## Wasathiyyah – jalan tengah
 

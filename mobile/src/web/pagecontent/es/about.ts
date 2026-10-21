@@ -3,7 +3,7 @@ const c: AboutContent = {
   eyebrow: "Sobre nosotros",
   title: "Hecho en Dubái – para todo aquel que quiera aprender el Corán",
   lead: "Quran Masterclass es una plataforma gratuita para escuchar, entender, memorizar y recitar con belleza el Corán – en 13 idiomas, para niños y adultos, vivan donde vivan. Esta es la historia que hay detrás.",
-  facts: [{ n: "13", l: "idiomas" }, { n: "114", l: "suras, aleya por aleya" }, { n: "$0", l: "de coste para ti" }, { n: "0", l: "anuncios" }],
+  facts: [{ n: "13", l: "idiomas" }, { n: "114", l: "suras, aleya por aleya" }, { n: "$0", l: "de coste para usted" }, { n: "0", l: "anuncios" }],
   story: `## Una idea que no me dejaba en paz
 
 Hay noches en Dubái en las que la ciudad se queda en silencio. El tráfico de la Sheikh Zayed Road sigue corriendo, las torres brillan, pero desde una mezquita del barrio se eleva la recitación del imam – y por un momento nada más importa. Quien lo ha sentido entiende por qué el Corán no es un libro cualquiera para los musulmanes. Es la palabra de Allah. Es lo que pronunciamos en la oración, lo que enseñamos a nuestros hijos y lo que esperamos llevar en el corazón al final de nuestra vida.
@@ -18,30 +18,30 @@ Quran Masterclass nació de ese contraste. **Nami Shams** fundó la plataforma e
 
 El Profeta ﷺ dijo: "Los mejores de vosotros son quienes aprenden el Corán y lo enseñan." (Sahih al-Bujari) También dijo que el Día de la Resurrección el Corán vendrá como intercesor de quienes lo leen (Sahih Muslim). Para un creyente, apenas hay conocimiento que cuente más.
 
-Por eso Quran Masterclass no es una aplicación de entretenimiento que ofrece un poco de religión de paso. Aquí el Corán está en el centro – cada aleya, con su sonido, su significado y su explicación. Todo lo demás, los planes, el mapa, la academia, la radio, sirve a un solo objetivo: que más del Corán entre en tu corazón y se quede allí.
+Por eso Quran Masterclass no es una aplicación de entretenimiento que ofrece un poco de religión de paso. Aquí el Corán está en el centro – cada aleya, con su sonido, su significado y su explicación. Todo lo demás, los planes, el mapa, la academia, la radio, sirve a un solo objetivo: que más del Corán entre en su corazón y se quede allí.
 
 ## Lo que hemos construido
 
-En el núcleo está el [Método Shams](/shams): siete pasos por aleya – escucharla, construirla hacia atrás, entenderla palabra por palabra, leer la explicación, recordarla de memoria, crear tu propio gancho de memoria, reflexionar. Un modelo de memoria aprende qué aleyas te resultan fáciles y cuáles no, y te trae cada aleya justo cuando está a punto de desvanecerse. En tu [mapa del Corán](/map) ves cada día lo que está bien asentado y lo que necesita cuidado.
+En el núcleo está el [Método Shams](/shams): siete pasos por aleya – escucharla, construirla hacia atrás, entenderla palabra por palabra, leer la explicación, recordarla de memoria, crear su propio gancho de memoria, reflexionar. Un modelo de memoria aprende qué aleyas le resultan fáciles y cuáles no, y le trae cada aleya justo cuando está a punto de desvanecerse. En su [mapa del Corán](/map) ve cada día lo que está bien asentado y lo que necesita cuidado.
 
 A su alrededor: [planes de aprendizaje](/plan) desde el suave hasta el hifz intensivo, una [academia](/academy) con lecciones, pruebas y metas diarias, [lecciones de tayuid](/tajweed), un [entrenador de vocabulario](/vocab), un [planificador de jatm](/khatm), [súplicas de la Sunna](/duas), [horarios de oración con adhan](/prayer) y una [radio del Corán](/radio) que nunca deja de sonar.
 
-Lo que no hacemos: no inventamos nuestra propia interpretación. El texto del Corán, las traducciones y el tafsir proceden de fuentes reconocidas y siempre indican su origen. El Método Shams es un método de aprendizaje – no un nuevo tafsir ni un sustituto de un maestro que escuche tu recitación.`,
+Lo que no hacemos: no inventamos nuestra propia interpretación. El texto del Corán, las traducciones y el tafsir proceden de fuentes reconocidas y siempre indican su origen. El Método Shams es un método de aprendizaje – no un nuevo tafsir ni un sustituto de un maestro que escuche su recitación.`,
   valuesTitle: "Lo que nos guía",
   values: [
     { t: "Gratis para todos", d: "El Corán pertenece a cada musulmán. Nadie debería dejar de aprender porque una suscripción sea demasiado cara." },
     { t: "Fuentes auténticas", d: "Texto, traducciones y tafsir de fuentes reconocidas – indicando siempre su origen." },
-    { t: "Respeto por tus datos", d: "Sin anuncios, sin servicios de analítica, sin venta de datos. Contraseñas con hash, conexiones cifradas, exportación y eliminación en cualquier momento." },
+    { t: "Respeto por sus datos", d: "Sin anuncios, sin servicios de analítica, sin venta de datos. Contraseñas con hash, conexiones cifradas, exportación y eliminación en cualquier momento." },
     { t: "Dignidad en comunidad", d: "Los comentarios se revisan antes de publicarse. Lo que se escribe aquí debe estar a la altura de un lugar donde se lee el Corán." },
-    { t: "Para todas las edades", d: "Desde la primera aleya de un niño hasta la ruta de hafiz, el método se adapta a tu edad y a tu ritmo." },
+    { t: "Para todas las edades", d: "Desde la primera aleya de un niño hasta la ruta de hafiz, el método se adapta a su edad y a su ritmo." },
     { t: "Honestidad", d: "Sin promesas inventadas, sin cifras infladas. Lo que aún falta está en las novedades – y se está construyendo." },
   ],
   freeTitle: "Gratis – y por qué seguirá siéndolo",
-  free: `Quran Masterclass no te cuesta nada. Ninguna prueba que termine a los siete días. Ningún anuncio entre dos aleyas. Ninguna función que solo se desbloquee tras pagar.
+  free: `Quran Masterclass no le cuesta nada. Ninguna prueba que termine a los siete días. Ningún anuncio entre dos aleyas. Ninguna función que solo se desbloquee tras pagar.
 
 La plataforma está **financiada de forma privada por Nami Shams** – servidores, desarrollo, audio, todo. Se construye por la causa de Allah, con la esperanza de que cada aleya que alguien aprenda aquí se convierta en una buena obra continua (sadaqa yariya).
 
-Si quieres ayudar, puedes hacerlo: con comentarios, avisos de errores, traducciones – y con du'a.`,
+Si quiere ayudar, puede hacerlo: con comentarios, avisos de errores, traducciones – y con du'a.`,
   dubaiEyebrow: "Dubái y el Corán",
   dubaiTitle: "Una ciudad de cristal y acero – con un corazón que honra el Corán",
   dubaiLead: "Cuando la gente piensa en Dubái, piensa en rascacielos, desierto y mar, una ciudad que se reinventa cada año. Quienes viven aquí conocen otra cara.",
@@ -74,10 +74,10 @@ Un hogar seguro, la tolerancia entre personas de todo el mundo, el respeto por l
 
 Deseo que un niño en Hamburgo, una abuela en Sarajevo, una estudiante en Yakarta y un taxista en Dubái tengan todos la misma oportunidad – gratis, en su idioma, a su ritmo. Que avancen un poco más cada día. Y que un día reciten en la oración una sura que aprendieron aquí.
 
-Si esta plataforma te ayuda, solo te pido una cosa: haz du'a por todos los que han contribuido a ella – y cuéntaselo a alguien más que quiera aprender.`,
+Si esta plataforma le ayuda, solo le pido una cosa: haga du'a por todos los que han contribuido a ella – y cuénteselo a alguien más que quiera aprender.`,
   signature: "Nami Shams",
   signatureRole: "Fundador de Quran Masterclass · Dubái",
-  contactTitle: "Escríbenos",
-  contact: "Preguntas, ideas, un error en el texto, deseos de nuevas fuentes de tafsir o idiomas: escribe a **info@quranmasterclass.com** o usa nuestra [página de comentarios](/feedback). Lo que construimos aparece en las [novedades](/changelog).",
+  contactTitle: "Escríbanos",
+  contact: "Preguntas, ideas, un error en el texto, deseos de nuevas fuentes de tafsir o idiomas: escriba a **info@quranmasterclass.com** o use nuestra [página de comentarios](/feedback). Lo que construimos aparece en las [novedades](/changelog).",
 };
 export default c;

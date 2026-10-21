@@ -19,9 +19,9 @@ Mekke, dağlar arasında çorak bir vadide yer alır. Burada, Allah'ın "insanla
 
 İbrahim, Allah'a tevekkül ederek eşi Hâcer'i ve küçük İsmail'i bu vadide bıraktı ve insanların kalplerinin onlara meyletmesi için dua etti (14:37). Hâcer su aramak için Safâ ve Merve tepeleri arasında koşup durdu; sonunda **Zemzem** suyu fışkırdı. Bugün hâlâ hacılar onun adımlarını takip eder ve bugün hâlâ o sudan içerler.
 
-Kâbe'nin etrafında Kutsal Mescit, **Mescid-i Haram** uzanır. Burası, gücü yeten her Müslümanın ömründe bir kez yapması gereken büyük ziyaret olan **haccın** (3:97) ve yıl boyunca yapılabilen küçük ziyaret olan **umrenin** hedefidir. Dünyanın her yerindeki Müslümanlar her namazda Mekke'ye yönelir: Kâbe **kıbledir** (2:144). Nerede namaz kılarsan kıl – Londra'da, Dubai'de ya da Cakarta'da – milyonlarca insanla aynı noktaya dönmüş olursun.
+Kâbe'nin etrafında Kutsal Mescit, **Mescid-i Haram** uzanır. Burası, gücü yeten her Müslümanın ömründe bir kez yapması gereken büyük ziyaret olan **haccın** (3:97) ve yıl boyunca yapılabilen küçük ziyaret olan **umrenin** hedefidir. Dünyanın her yerindeki Müslümanlar her namazda Mekke'ye yönelir: Kâbe **kıbledir** (2:144). Nerede namaz kılarsanız kılın – Londra'da, Dubai'de ya da Cakarta'da – milyonlarca insanla aynı noktaya dönmüş olursunuz.
 
-Mekke aynı zamanda Peygamber Muhammed ﷺ'in doğduğu yerdir; yakındaki bir dağda, Hira mağarasında ilk vahyi almıştır. Onun hayatı hakkında daha fazlasını [Peygamber ﷺ](/islam/prophet) bölümünde öğrenebilirsin.
+Mekke aynı zamanda Peygamber Muhammed ﷺ'in doğduğu yerdir; yakındaki bir dağda, Hira mağarasında ilk vahyi almıştır. Onun hayatı hakkında daha fazlasını [Peygamber ﷺ](/islam/prophet) bölümünde öğrenebilirsiniz.
 
 ### Medine – nurlu şehir
 
@@ -97,7 +97,7 @@ Abu Dabi'deki **Şeyh Zayed Büyük Camii**, beyaz kubbeleri, çiçek desenli s�
 
 Platformumuzun yapıldığı Dubai'de **Jumeirah Camii** açık kapının sembolüdür. "Open Doors. Open Minds." (Açık Kapılar. Açık Zihinler.) sloganıyla Sheikh Mohammed Centre for Cultural Understanding (Şeyh Muhammed Kültürel Anlayış Merkezi), ziyaretçileri camiyi tanımaya, soru sormaya ve Arap kahvesi ve hurma eşliğinde sohbet etmeye davet eder: burada anladığımız şekliyle misafirperverlik.
 
-1997'den beri **Dubai Uluslararası Kur'an-ı Kerim Ödülü**, dünyanın dört bir yanından Kur'an'ı ezberlemiş gençleri onurlandırır. 2019'da açılan Al Khawaneej'deki **Quranic Park**'ta (Kur'an Parkı) ise hurma, zeytin, incir ve nar gibi Kur'an'da geçen bitkilerin bahçelerinde dolaşabilir ve Kur'an'ın sözünü ettiği harikaları yeni bir şekilde keşfedebilirsin.
+1997'den beri **Dubai Uluslararası Kur'an-ı Kerim Ödülü**, dünyanın dört bir yanından Kur'an'ı ezberlemiş gençleri onurlandırır. 2019'da açılan Al Khawaneej'deki **Quranic Park**'ta (Kur'an Parkı) ise hurma, zeytin, incir ve nar gibi Kur'an'da geçen bitkilerin bahçelerinde dolaşabilir ve Kur'an'ın sözünü ettiği harikaları yeni bir şekilde keşfedebilirsiniz.
 
 ## Bu şehirleri birleştiren şey
 
@@ -107,7 +107,7 @@ Ne kadar farklı olsalar da bu şehirlerin hepsi aynı hikâyeyi anlatır:
 - **İlim** her zaman imanın bir parçası olmuştur; vahyin ilk kelimesi "Oku!" idi (96:1).
 - **Misafirperverlik ve birliktelik**, Medine'deki kardeşlikten Emirlikler'deki bir arada yaşamaya kadar bu şehirleri büyük yaptı.
 
-Bu yerler hakkındaki ayetleri kendin dinlemek istersen [İsrâ Suresi](/surah/17) ya da [Âl-i İmrân Suresi](/surah/3) ile başla. Ve bir gün bu şehirlerden birini ziyaret etme fırsatın olursa, oraya açık bir kalple, bir misafir olarak git.`,
+Bu yerler hakkındaki ayetleri kendiniz dinlemek isterseniz [İsrâ Suresi](/surah/17) ya da [Âl-i İmrân Suresi](/surah/3) ile başlayın. Ve bir gün bu şehirlerden birini ziyaret etme fırsatınız olursa, oraya açık bir kalple, bir misafir olarak gidin.`,
   faq: [
     { q: "İslam'da hangi üç şehir kutsaldır?", a: "Mescid-i Haram ve Kâbe ile Mekke, Mescid-i Nebevî ile Medine ve Mescid-i Aksâ ile Kudüs (el-Kuds). Peygamber ﷺ bu üç mescidi, yolculuk için yola çıkmaya değer tek hedefler olarak saymıştır (Buhârî, Müslim)." },
     { q: "Müslümanlar neden Mekke'ye doğru namaz kılar?", a: "Allah, Mekke'deki Kâbe'yi namazın yönü (kıble) kılmıştır (2:144). Böylece dünyanın her yerindeki Müslümanlar namaz kılarken aynı noktaya yönelir." },

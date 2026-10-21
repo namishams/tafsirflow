@@ -5,10 +5,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Icon } from "@/components/icons";
 import { GoldButton, GoldCard, OutlineButton, Stage, Arcade } from "@/components/brand";
-import { courseLang } from "./lang";
+import { pageLang, type PageLang } from "./lang";
 import { useLang, useT } from "@/i18n";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
-import { LESSONS } from "@/web/arabic";
+import { LESSONS, type L2 } from "@/web/arabic";
 import { TILES } from "@/web/tiles";
 import { ArchSoft, Girih, PracticeStar, PracticeStarNum, PracticeWindow, goldA, stageGoldA } from "../coursekit/art";
 import { Callout } from "../coursekit/ui";
@@ -27,9 +27,9 @@ import { LangCourseCard } from "../arabic-lang/Screens";
 
 export function ArabicPage() {
   const t = useTheme();
-  const lang = courseLang(useLang().lang);
+  const lang = pageLang(useLang().lang);
   const c = PAGE_C[lang];
-  const tx = (v: { de: string; en: string; ar?: string }) => v[lang] ?? v.en;
+  const tx = (v: L2) => v[lang] ?? v.en;
   const scroll = useRef<ScrollViewInstance>(null);
   const pathY = useRef(0);
   const reduce = useReduceMotion();
@@ -141,7 +141,7 @@ export function ArabicPage() {
 }
 
 function Hero({ onPath }: { onPath: () => void }) {
-  const lang = courseLang(useLang().lang);
+  const lang = pageLang(useLang().lang);
   const c = PAGE_C[lang];
   return (
     <Stage hairlines={false} pattern={false}>
@@ -156,7 +156,7 @@ function Hero({ onPath }: { onPath: () => void }) {
   );
 }
 
-function HeroText({ c, onPath }: { c: (typeof PAGE_C)["en"]; onPath: () => void }) {
+function HeroText({ c, onPath }: { c: (typeof PAGE_C)[PageLang]; onPath: () => void }) {
   const insets = useSafeAreaInsets();
   const tr = useT();
   return (

@@ -86,7 +86,7 @@ Quien ve por primera vez a musulmanes suníes y chiíes orando uno junto a otro 
 - **Combinar oraciones:** los musulmanes chiíes a menudo combinan las oraciones del mediodía y de la tarde, y las del ocaso y de la noche, orando en tres momentos del día; siguen siendo cinco oraciones. Los suníes suelen orar en cinco momentos separados y combinan oraciones principalmente en viaje o por motivos concretos.
 - **Postrarse sobre tierra (turba):** los musulmanes chiíes se postran sobre material natural como tierra, piedra o plantas, a menudo usando una pequeña tablilla de arcilla cocida. Los suníes también oran sobre alfombras.
 
-Encontrarás guías detalladas aquí: [La oración en la práctica suní](/islam/prayer-sunni) y [La oración en la práctica chií](/islam/prayer-shia).
+Encontrará guías detalladas aquí: [La oración en la práctica suní](/islam/prayer-sunni) y [La oración en la práctica chií](/islam/prayer-shia).
 
 ## El Mensaje de Ammán
 
@@ -110,7 +110,7 @@ Allah dice en el Corán: "Y aferraos todos juntos a la cuerda de Allah y no os d
 
 El diálogo respetuoso significa:
 
-- hablar de tu propia tradición con amor, sin menospreciar a los demás;
+- hablar de su propia tradición con amor, sin menospreciar a los demás;
 - mencionar siempre con reverencia a los Compañeros del Profeta ﷺ y a su familia;
 - llevar las preguntas a sabios cualificados y no a las discusiones en las redes sociales;
 - fortalecer lo que compartimos: la oración, el Corán, las buenas obras y el servicio a las personas.
@@ -120,7 +120,7 @@ En Quran Masterclass, musulmanes suníes y chiíes escuchan los mismos versícul
     { q: "¿Tienen suníes y chiíes un Corán distinto?", a: "No. Ambos recitan el mismo Corán con las mismas 114 suras. Hay diferencias en la interpretación de algunos pasajes y en las colecciones de hadices en las que se apoya cada tradición, no en el texto del Corán." },
     { q: "¿De dónde viene la distinción?", a: "De la cuestión de quién debía dirigir la comunidad después de que el Profeta ﷺ falleciera en el año 632. Los suníes reconocen a los cuatro Califas Bien Guiados en su orden; los musulmanes chiíes consideran a Ali ibn Abi Talib y a los imames de entre sus descendientes como los líderes legítimos." },
     { q: "¿Por qué los suníes ayunan en Ashura mientras los chiíes hacen duelo?", a: "Los suníes ayunan siguiendo la Sunna, porque en este día Allah salvó a Musa (la paz sea con él) (al-Bujari, Muslim). Los musulmanes chiíes recuerdan especialmente en este día el martirio de Husain en Karbala en el año 61 de la Hégira. Ambos significados merecen respeto." },
-    { q: "¿Puede un suní orar detrás de un chií y viceversa?", a: "Muchos sabios de ambos lados lo permiten, y en La Meca y Medina musulmanes de todas las tradiciones oran juntos. Para los detalles de tu propia escuela, lo mejor es preguntar a un sabio de tu confianza." },
+    { q: "¿Puede un suní orar detrás de un chií y viceversa?", a: "Muchos sabios de ambos lados lo permiten, y en La Meca y Medina musulmanes de todas las tradiciones oran juntos. Para los detalles de su propia escuela, lo mejor es preguntar a un sabio de su confianza." },
     { q: "¿Qué es el Mensaje de Ammán?", a: "Una declaración de 2004, respaldada en 2005 por sabios de muchos países. Reconoce ocho escuelas jurídicas, entre ellas la yafarí y la zaydí, y prohíbe declarar incrédulos a los seguidores de estas escuelas." },
   ],
   sources: [

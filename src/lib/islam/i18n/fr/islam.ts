@@ -2,7 +2,7 @@ import type { IslamChapter } from "../../types";
 const c: IslamChapter = {
   title: "Qu'est-ce que l'islam ?",
   kicker: "Fondements",
-  lead: "Islam signifie s'en remettre à Allah, l'Unique, dans la paix – et, à partir de cette soumission, vivre avec miséricorde, justice et mesure. Sur cette page, nous t'expliquons calmement et simplement ce que croient les musulmans, comment ils vivent leur foi et ce que dit le Coran sur la vie en commun. Que tu sois musulman, nouvellement curieux ou que tu veuilles simplement comprendre, tu es ici le bienvenu.",
+  lead: "Islam signifie s'en remettre à Allah, l'Unique, dans la paix – et, à partir de cette soumission, vivre avec miséricorde, justice et mesure. Sur cette page, nous vous expliquons calmement et simplement ce que croient les musulmans, comment ils vivent leur foi et ce que dit le Coran sur la vie en commun. Que vous soyez musulman, nouvellement curieux ou que vous vouliez simplement comprendre, vous êtes ici le bienvenu.",
   facts: [
     { n: "1", l: "Dieu – le cœur de la foi (tawhid)" },
     { n: "5", l: "Piliers de l'islam" },
@@ -11,9 +11,9 @@ const c: IslamChapter = {
   ],
   body: `## Soumission et paix
 
-Le mot arabe **islam** vient de la racine s-l-m, la même racine qui donne **salam** – la paix. Islam signifie littéralement « soumission » : une personne se remet consciemment et librement à Allah, son Créateur, et y trouve la paix intérieure. Un **musulman** est donc quelqu'un qui se soumet à Allah. Ce n'est pas un hasard si *as-Salam*, « la Source de la Paix », est l'un des beaux noms d'Allah (Coran 59:23), ni si les musulmans du monde entier se saluent par *as-salamu alaykum* – « que la paix soit sur toi ».
+Le mot arabe **islam** vient de la racine s-l-m, la même racine qui donne **salam** – la paix. Islam signifie littéralement « soumission » : une personne se remet consciemment et librement à Allah, son Créateur, et y trouve la paix intérieure. Un **musulman** est donc quelqu'un qui se soumet à Allah. Ce n'est pas un hasard si *as-Salam*, « la Source de la Paix », est l'un des beaux noms d'Allah (Coran 59:23), ni si les musulmans du monde entier se saluent par *as-salamu alaykum* – « que la paix soit sur vous ».
 
-Ici, aux Émirats, tu entends cette salutation partout : à la mosquée, au souk, au bureau. C'est plus qu'une politesse. C'est une petite promesse : tu n'as rien à craindre de moi.
+Ici, aux Émirats, vous entendez cette salutation partout : à la mosquée, au souk, au bureau. C'est plus qu'une politesse. C'est une petite promesse : vous n'avez rien à craindre de moi.
 
 ## Le tawhid – la foi en l'Unique
 
@@ -30,7 +30,7 @@ On devient musulman en prononçant sincèrement la **chahada**, l'attestation de
 Le Prophète ﷺ a dit que l'islam est bâti sur cinq choses (rapporté par al-Bukhari et Muslim). On se les représente souvent comme les piliers qui soutiennent une maison :
 
 1. **La chahada** – l'attestation de foi en Allah et en Son Messager ﷺ.
-2. **La salât** – la prière, cinq fois par jour. Elle donne son rythme à la journée et ramène sans cesse la personne vers Allah. Tu trouveras les horaires de prière pour ton lieu sur notre page [horaires de prière](/prayer).
+2. **La salât** – la prière, cinq fois par jour. Elle donne son rythme à la journée et ramène sans cesse la personne vers Allah. Vous trouverez les horaires de prière pour votre lieu sur notre page [horaires de prière](/prayer).
 3. **La zakât** – l'aumône obligatoire prélevée sur les biens au profit des nécessiteux. Elle purifie les possessions et renforce la communauté.
 4. **Le sawm** – le jeûne du mois de Ramadan, de l'aube au coucher du soleil, une école de patience et de gratitude.
 5. **Le hajj** – le pèlerinage à La Mecque, une fois dans la vie pour toute personne qui en a la capacité physique et financière.
@@ -52,7 +52,7 @@ Ces six croyances donnent à la vie son cadre : rien n'arrive sans raison, aucun
 
 Dans le même hadith, Jibril interroge enfin sur l'**ihsan**, le plus haut degré de la foi. La réponse du Prophète ﷺ est l'une des plus belles phrases que nous connaissions : « C'est que tu adores Allah comme si tu Le voyais ; et si tu ne Le vois pas, Lui te voit. »
 
-L'ihsan, c'est faire toute chose aussi bien et aussi sincèrement que tu le peux – ta prière, ton travail, ta manière de traiter tes parents, tes voisins et les étrangers. C'est le pont entre la pratique extérieure et l'état intérieur.
+L'ihsan, c'est faire toute chose aussi bien et aussi sincèrement que vous le pouvez – votre prière, votre travail, votre manière de traiter vos parents, vos voisins et les étrangers. C'est le pont entre la pratique extérieure et l'état intérieur.
 
 ## La wasatiyya – le juste milieu
 
@@ -68,7 +68,7 @@ La miséricorde se montre dans les petites choses : un sourire, un repas partag�
 
 ## La justice
 
-« Certes, Allah commande la justice, la bienfaisance et l'assistance aux proches, et Il interdit la turpitude, le blâmable et l'oppression » (Coran 16:90). Ce verset est aujourd'hui encore récité à la fin du sermon du vendredi dans de nombreuses mosquées. La justice s'applique sans exception, même envers ceux avec qui tu n'es pas d'accord : « Que la haine pour un peuple ne vous incite pas à être injustes. Soyez justes : cela est plus proche de la piété » (Coran 5:8).
+« Certes, Allah commande la justice, la bienfaisance et l'assistance aux proches, et Il interdit la turpitude, le blâmable et l'oppression » (Coran 16:90). Ce verset est aujourd'hui encore récité à la fin du sermon du vendredi dans de nombreuses mosquées. La justice s'applique sans exception, même envers ceux avec qui vous n'êtes pas d'accord : « Que la haine pour un peuple ne vous incite pas à être injustes. Soyez justes : cela est plus proche de la piété » (Coran 5:8).
 
 ## La famille, les parents et la communauté
 
@@ -76,7 +76,7 @@ En islam, la famille est un espace protégé. Juste après l'ordre de n'adorer q
 
 ## Le savoir
 
-Le tout premier mot révélé du Coran est « Lis ! » (Coran 96:1). Allah a enseigné au Prophète ﷺ cette invocation : « Mon Seigneur, accroît mon savoir » (Coran 20:114). Et le Prophète ﷺ a dit : « Quiconque emprunte un chemin à la recherche du savoir, Allah lui facilite un chemin vers le Paradis » (Muslim). En islam, apprendre est une adoration – que tu mémorises des versets du Coran, étudies la médecine ou maîtrises un métier.
+Le tout premier mot révélé du Coran est « Lis ! » (Coran 96:1). Allah a enseigné au Prophète ﷺ cette invocation : « Mon Seigneur, accroît mon savoir » (Coran 20:114). Et le Prophète ﷺ a dit : « Quiconque emprunte un chemin à la recherche du savoir, Allah lui facilite un chemin vers le Paradis » (Muslim). En islam, apprendre est une adoration – que vous mémorisiez des versets du Coran, étudiiez la médecine ou maîtrisiez un métier.
 
 ## Le caractère – l'akhlaq
 
@@ -102,20 +102,20 @@ Aux Émirats, des personnes issues d'environ deux cents nations vivent ensemble 
 
 ## Premiers pas
 
-Si tu souhaites en apprendre davantage, commence simplement – et commence par le Coran lui-même :
+Si vous souhaitez en apprendre davantage, commencez simplement – et commencez par le Coran lui-même :
 
-- Écoute et lis le Coran verset par verset, avec traduction et tafsir, sur notre page [Coran](/quran). Beaucoup commencent par la sourate d'ouverture, al-Fatiha, et par les courtes sourates de la fin du Coran.
-- Mémorise des versets avec la [méthode Shams](/shams) – pas à pas, à ton propre rythme.
-- Découvre la prière et trouve les horaires de prière pour ton lieu sur notre page [horaires de prière](/prayer).
-- Parle avec les gens d'une mosquée près de chez toi. Les questions y sont les bienvenues, et on t'y offre presque toujours une tasse de thé ou de café.
+- Écoutez et lisez le Coran verset par verset, avec traduction et tafsir, sur notre page [Coran](/quran). Beaucoup commencent par la sourate d'ouverture, al-Fatiha, et par les courtes sourates de la fin du Coran.
+- Mémorisez des versets avec la [méthode Shams](/shams) – pas à pas, à votre propre rythme.
+- Découvrez la prière et trouvez les horaires de prière pour votre lieu sur notre page [horaires de prière](/prayer).
+- Parlez avec les gens d'une mosquée près de chez vous. Les questions y sont les bienvenues, et on vous y offre presque toujours une tasse de thé ou de café.
 
-Prends ton temps. L'islam a été révélé sur vingt-trois ans, pas à pas. Ton propre chemin a, lui aussi, le droit de grandir en douceur.`,
+Prenez votre temps. L'islam a été révélé sur vingt-trois ans, pas à pas. Votre propre chemin a, lui aussi, le droit de grandir en douceur.`,
   faq: [
     { q: "Que signifie le mot « islam » ?", a: "Islam signifie « soumission » à Allah et est linguistiquement apparenté à « salam », la paix. Un musulman est quelqu'un qui se soumet à Allah." },
     { q: "Les musulmans croient-ils au même Dieu que les juifs et les chrétiens ?", a: "Les musulmans croient au Dieu unique d'Abraham, le Créateur de toute chose. S'adressant aux gens du Livre, le Coran dit : « Notre Dieu et votre Dieu est le même » (Coran 29:46)." },
     { q: "Quels sont les cinq piliers de l'islam ?", a: "L'attestation de foi (chahada), la prière quotidienne (salât), l'aumône obligatoire (zakât), le jeûne du Ramadan (sawm) et le pèlerinage à La Mecque (hajj) pour ceux qui en ont la capacité." },
     { q: "L'islam permet-il la contrainte dans la foi ?", a: "Non. Le Coran le dit clairement : « Nulle contrainte en religion » (Coran 2:256). La foi doit venir du cœur." },
-    { q: "Comment commencer à en apprendre davantage sur l'islam ?", a: "Lis et écoute le Coran avec traduction et explication, par exemple sur notre page /quran, apprends les bases de la prière et parle avec des personnes instruites dans une mosquée près de chez toi." },
+    { q: "Comment commencer à en apprendre davantage sur l'islam ?", a: "Lisez et écoutez le Coran avec traduction et explication, par exemple sur notre page /quran, apprenez les bases de la prière et parlez avec des personnes instruites dans une mosquée près de chez vous." },
   ],
   sources: [
     "Coran 2:136, 2:143, 2:185, 2:256, 4:59, 5:8, 5:32, 16:90, 17:23, 20:114, 21:107, 29:46, 30:21, 49:13, 59:23, 60:8, 68:4, 96:1, 112:1–4",

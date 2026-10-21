@@ -3,7 +3,7 @@ const c: AboutContent = {
   eyebrow: "Hakkımızda",
   title: "Dubai'de doğdu – Kur'an'ı öğrenmek isteyen herkes için",
   lead: "Quran Masterclass, Kur'an'ı dinlemek, anlamak, ezberlemek ve güzel okumak için ücretsiz bir platformdur – 13 dilde, çocuklar ve yetişkinler için, nerede yaşarlarsa yaşasınlar. Bu, onun arkasındaki hikâyedir.",
-  facts: [{ n: "13", l: "dil" }, { n: "114", l: "sure, ayet ayet" }, { n: "0 ₺", l: "sana maliyeti" }, { n: "0", l: "reklam" }],
+  facts: [{ n: "13", l: "dil" }, { n: "114", l: "sure, ayet ayet" }, { n: "0 ₺", l: "size maliyeti" }, { n: "0", l: "reklam" }],
   story: `## Peşimi bırakmayan bir düşünce
 
 Dubai'de şehrin sessizleştiği akşamlar vardır. Şeyh Zayed Yolu'ndaki trafik akmaya devam eder, kuleler parlar, ama mahalledeki bir camiden imamın kıraati yükselir – ve bir anlığına başka hiçbir şeyin önemi kalmaz. Bunu bir kez hisseden, Kur'an'ın Müslümanlar için neden herhangi bir kitap olmadığını anlar. O, Allah'ın kelamıdır. Namazda okuduğumuz, çocuklarımıza öğrettiğimiz ve hayatımızın sonunda kalbimizde taşımayı umduğumuz şeydir.
@@ -22,7 +22,7 @@ Bu yüzden Quran Masterclass, yan tarafta biraz din sunan bir eğlence uygulamas
 
 ## Neler inşa ettik
 
-Merkezde [Shams Metodu](/shams) yer alır: ayet başına yedi adım – dinle, sondan başa doğru kur, kelime kelime anla, açıklamayı oku, ezberden hatırla, kendi hafıza kancanı oluştur, tefekkür et. Bir hafıza modeli hangi ayetlerin sana kolay geldiğini, hangilerinin gelmediğini öğrenir ve her ayeti tam da solmak üzereyken geri getirir. [Kur'an haritanda](/map) her gün neyin sağlam oturduğunu ve neyin özen beklediğini görürsün.
+Merkezde [Shams Metodu](/shams) yer alır: ayet başına yedi adım – dinleyin, sondan başa doğru kurun, kelime kelime anlayın, açıklamayı okuyun, ezberden hatırlayın, kendi hafıza kancanızı oluşturun, tefekkür edin. Bir hafıza modeli hangi ayetlerin size kolay geldiğini, hangilerinin gelmediğini öğrenir ve her ayeti tam da solmak üzereyken geri getirir. [Kur'an haritanızda](/map) her gün neyin sağlam oturduğunu ve neyin özen beklediğini görürsünüz.
 
 Etrafında ise: hafiften yoğun hafızlığa kadar [öğrenme planları](/plan), dersler, testler ve günlük hedeflerle bir [akademi](/academy), [tecvid dersleri](/tajweed), bir [kelime çalıştırıcı](/vocab), bir [hatim planlayıcı](/khatm), [Sünnet'ten dualar](/duas), [ezanlı namaz vakitleri](/prayer) ve hiç susmayan bir [Kur'an radyosu](/radio).
 
@@ -31,17 +31,17 @@ Yapmadığımız şey: kendi yorumumuzu uydurmayız. Kur'an metni, mealler ve te
   values: [
     { t: "Herkes için ücretsiz", d: "Kur'an her Müslümana aittir. Hiç kimse bir abonelik çok pahalı olduğu için öğrenmeyi bırakmamalı." },
     { t: "Sahih kaynaklar", d: "Tanınmış kaynaklardan metin, mealler ve tefsir – her zaman nereden geldikleri gösterilerek." },
-    { t: "Verilerine saygı", d: "Reklam yok, analiz servisleri yok, veri satışı yok. Şifreler hash'lenmiş, bağlantılar şifreli, dışa aktarma ve silme her zaman mümkün." },
+    { t: "Verilerinize saygı", d: "Reklam yok, analiz servisleri yok, veri satışı yok. Şifreler hash'lenmiş, bağlantılar şifreli, dışa aktarma ve silme her zaman mümkün." },
     { t: "Birlikte vakar", d: "Yorumlar görünmeden önce incelenir. Burada yazılanlar, Kur'an okunan bir yere yakışmalı." },
-    { t: "Her yaş için", d: "Bir çocuğun ilk ayetinden hafızlık yoluna kadar, metot yaşına ve temposuna uyum sağlar." },
+    { t: "Her yaş için", d: "Bir çocuğun ilk ayetinden hafızlık yoluna kadar, metot yaşınıza ve temponuza uyum sağlar." },
     { t: "Dürüstlük", d: "Uydurma vaatler yok, şişirilmiş rakamlar yok. Hâlâ eksik olanlar değişiklik günlüğünde – ve üzerinde çalışılıyor." },
   ],
   freeTitle: "Ücretsiz – ve neden öyle kalacak",
-  free: `Quran Masterclass sana hiçbir şeye mal olmaz. Yedi gün sonra biten bir deneme süresi yok. İki ayet arasında reklam yok. Yalnızca ödeme sonrası açılan bir özellik yok.
+  free: `Quran Masterclass size hiçbir şeye mal olmaz. Yedi gün sonra biten bir deneme süresi yok. İki ayet arasında reklam yok. Yalnızca ödeme sonrası açılan bir özellik yok.
 
 Platform **Nami Shams tarafından özel olarak finanse edilmektedir** – sunucular, geliştirme, ses kayıtları, her şey. Allah rızası için, burada birinin öğrendiği her ayetin sadaka-i câriye olması umuduyla inşa edildi.
 
-Yardım etmek istersen edebilirsin: geri bildirimle, hata bildirimleriyle, çevirilerle – ve duayla.`,
+Yardım etmek isterseniz edebilirsiniz: geri bildirimle, hata bildirimleriyle, çevirilerle – ve duayla.`,
   dubaiEyebrow: "Dubai ve Kur'an",
   dubaiTitle: "Camdan ve çelikten bir şehir – Kur'an'ı yücelten bir kalple",
   dubaiLead: "İnsanlar Dubai'yi düşündüğünde gökdelenleri, çölü ve denizi, her yıl kendini yeniden icat eden bir şehri düşünür. Burada yaşayanlar ise başka bir yüzünü bilir.",
@@ -74,10 +74,10 @@ Güvenli bir yuva, dünyanın dört bir yanından gelen insanlar arasında hoşg
 
 Dilerim ki Hamburg'daki bir çocuk, Saraybosna'daki bir nine, Cakarta'daki bir öğrenci ve Dubai'deki bir taksi şoförü aynı şansa sahip olsun – ücretsiz, kendi dillerinde, kendi tempolarında. Her gün biraz daha ilerlesinler. Ve bir gün namazda, burada öğrendikleri bir sureyi okusunlar.
 
-Bu platform sana yardımcı oluyorsa senden tek bir şey istiyorum: ona katkıda bulunan herkes için dua et – ve öğrenmek isteyen bir başkasına da anlat.`,
+Bu platform size yardımcı oluyorsa sizden tek bir şey istiyorum: ona katkıda bulunan herkes için dua edin – ve öğrenmek isteyen bir başkasına da anlatın.`,
   signature: "Nami Shams",
   signatureRole: "Quran Masterclass kurucusu · Dubai",
-  contactTitle: "Bize yaz",
-  contact: "Sorular, fikirler, metinde bir hata, yeni tefsir kaynakları veya diller için istekler: **info@quranmasterclass.com** adresine yaz ya da [geri bildirim sayfamızı](/feedback) kullan. İnşa ettiklerimiz [değişiklik günlüğünde](/changelog) listelenir.",
+  contactTitle: "Bize yazın",
+  contact: "Sorular, fikirler, metinde bir hata, yeni tefsir kaynakları veya diller için istekler: **info@quranmasterclass.com** adresine yazın ya da [geri bildirim sayfamızı](/feedback) kullanın. İnşa ettiklerimiz [değişiklik günlüğünde](/changelog) listelenir.",
 };
 export default c;

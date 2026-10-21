@@ -19,9 +19,9 @@ La Mecque se trouve dans une vallée aride entre les montagnes. Là se dresse la
 
 Ibrahim laissa son épouse Hajar et le jeune Ismaïl dans cette vallée, confiant en Allah, et pria pour que les cœurs des gens s'inclinent vers eux (14:37). Hajar courut entre les collines de Safa et Marwa à la recherche d'eau, jusqu'à ce que jaillisse la source de **Zamzam**. Aujourd'hui encore, les pèlerins refont ses pas, et aujourd'hui encore, ils boivent de cette eau.
 
-Autour de la Kaaba s'étend **al-Masjid al-Haram**, la Mosquée sacrée. C'est la destination du **Hajj**, le grand pèlerinage que tout musulman devrait accomplir une fois dans sa vie s'il en a la capacité (3:97), et de la **Omra**, le petit pèlerinage, que l'on peut accomplir toute l'année. Et les musulmans du monde entier se tournent vers La Mecque à chaque prière : la Kaaba est la **qibla** (2:144). Où que tu pries, à Londres, Dubaï ou Jakarta, tu es tourné vers le même point que des millions d'autres.
+Autour de la Kaaba s'étend **al-Masjid al-Haram**, la Mosquée sacrée. C'est la destination du **Hajj**, le grand pèlerinage que tout musulman devrait accomplir une fois dans sa vie s'il en a la capacité (3:97), et de la **Omra**, le petit pèlerinage, que l'on peut accomplir toute l'année. Et les musulmans du monde entier se tournent vers La Mecque à chaque prière : la Kaaba est la **qibla** (2:144). Où que vous priiez, à Londres, Dubaï ou Jakarta, vous êtes tourné vers le même point que des millions d'autres.
 
-La Mecque est aussi le lieu de naissance du Prophète Muhammad ﷺ, et c'est sur une montagne voisine, dans la grotte de Hira, qu'il reçut la première révélation. Tu peux en apprendre davantage sur sa vie dans le chapitre consacré au [Prophète ﷺ](/islam/prophet).
+La Mecque est aussi le lieu de naissance du Prophète Muhammad ﷺ, et c'est sur une montagne voisine, dans la grotte de Hira, qu'il reçut la première révélation. Vous pouvez en apprendre davantage sur sa vie dans le chapitre consacré au [Prophète ﷺ](/islam/prophet).
 
 ### Médine – la ville illuminée
 
@@ -97,7 +97,7 @@ En 2019, le Grand Imam d'al-Azhar, Cheikh Ahmad al-Tayyeb, et le pape François 
 
 À Dubaï, où notre plateforme est conçue, la **mosquée de Jumeirah** est un symbole de la porte ouverte. Sous la devise « Open Doors. Open Minds. », le Sheikh Mohammed Centre for Cultural Understanding invite les visiteurs à découvrir la mosquée, à poser des questions et à échanger autour d'un café arabe et de dattes : l'hospitalité telle que nous la comprenons ici.
 
-Depuis 1997, le **Dubai International Holy Quran Award** honore des jeunes du monde entier qui ont mémorisé le Coran. Et dans le **Quranic Park** d'Al Khawaneej, ouvert en 2019, tu peux flâner dans des jardins de plantes mentionnées dans le Coran, comme le palmier dattier, l'olivier, le figuier et le grenadier, et découvrir d'une manière nouvelle les merveilles dont parle le Coran.
+Depuis 1997, le **Dubai International Holy Quran Award** honore des jeunes du monde entier qui ont mémorisé le Coran. Et dans le **Quranic Park** d'Al Khawaneej, ouvert en 2019, vous pouvez flâner dans des jardins de plantes mentionnées dans le Coran, comme le palmier dattier, l'olivier, le figuier et le grenadier, et découvrir d'une manière nouvelle les merveilles dont parle le Coran.
 
 ## Ce qui unit ces villes
 
@@ -107,7 +107,7 @@ Aussi différentes soient-elles, toutes ces villes racontent la même histoire :
 - **Le savoir** a toujours fait partie de la foi ; le premier mot de la révélation fut « Lis ! » (96:1).
 - **L'hospitalité et la vie ensemble** ont fait la grandeur de ces villes, de la fraternité de Médine à la vie commune aux Émirats.
 
-Si tu souhaites entendre toi-même les versets sur ces lieux, commence par la [sourate al-Isra'](/surah/17) ou la [sourate Al Imran](/surah/3). Et si tu as un jour l'occasion de visiter l'une de ces villes, vas-y le cœur ouvert, en invité.`,
+Si vous souhaitez entendre vous-même les versets sur ces lieux, commencez par la [sourate al-Isra'](/surah/17) ou la [sourate Al Imran](/surah/3). Et si vous avez un jour l'occasion de visiter l'une de ces villes, allez-y le cœur ouvert, en invité.`,
   faq: [
     { q: "Quelles sont les trois villes saintes de l'islam ?", a: "La Mecque avec la Mosquée sacrée et la Kaaba, Médine avec la Mosquée du Prophète, et Jérusalem (al-Quds) avec la mosquée al-Aqsa. Le Prophète ﷺ a désigné ces trois mosquées comme les seules destinations qui valent qu'on entreprenne un voyage (al-Bukhari, Muslim)." },
     { q: "Pourquoi les musulmans prient-ils en direction de La Mecque ?", a: "Allah a fait de la Kaaba à La Mecque la direction de la prière (qibla) (2:144). Ainsi, les musulmans du monde entier se tournent vers le même point lorsqu'ils prient." },

@@ -152,10 +152,10 @@ export const UI: Record<Lang, Ui> = {
     right: "右", left: "左", each: "每侧", tapHint: "每完成一遍就点一下——这样便于计数。", again: "重新计数", count: "计数",
     play: "播放", pause: "暂停", prev: "上一步", next: "下一步", steps: "全部步骤", restart: "重新开始", toQuiz: "去做测验", quiz: "顺序测验", back: "返回训练",
     meaning: "含义", passed: "已通过测验",
-    note: "本训练展示通行的顺序。各学派的细节有所不同——请再向你所属学派的老师学习小净。",
+    note: "本训练展示通行的顺序。各学派的细节有所不同——请再向您所属学派的老师学习小净。",
     quizTitle: "正确的顺序是？", quizLead: "步骤的顺序被打乱了。请按正确的顺序点击它们。",
     wrong: "还不对——想一想前面应该是什么。", hint: "小提示：发光的那一步是下一步。", good: "正确。",
-    doneTitle: "你已经知道小净的顺序了。", doneText: "现在你可以准备礼拜了。", clean: "一个错误也没有。", slips1: "绕了一个小弯——我们正是这样学习的。", slipsN: "绕了{n}个小弯——我们正是这样学习的。",
+    doneTitle: "您已经知道小净的顺序了。", doneText: "现在您可以准备礼拜了。", clean: "一个错误也没有。", slips1: "绕了一个小弯——我们正是这样学习的。", slipsN: "绕了{n}个小弯——我们正是这样学习的。",
     practise: "再练一次", toSalah: "前往礼拜训练", toVerse: "收听小净经文（5:6）",
   },
 };

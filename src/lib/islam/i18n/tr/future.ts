@@ -11,9 +11,9 @@ const c: IslamChapter = {
   ],
   body: `## İslam'ın birey için anlamı
 
-Her insan er ya da geç büyük soruları sorar: Nereden geliyorum? Ne için yaşıyorum? Nereye gidiyorum? İslam hem açık hem de teselli edici bir cevap verir. Buraya tesadüfen gelmedin. Allah seni yarattı, seni bilir ve hayatının bir amacı var: O'nu tanımak, O'na kulluk etmek ve dünyaya iyilik getirmek.
+Her insan er ya da geç büyük soruları sorar: Nereden geliyorum? Ne için yaşıyorum? Nereye gidiyorum? İslam hem açık hem de teselli edici bir cevap verir. Buraya tesadüfen gelmediniz. Allah sizi yarattı, sizi bilir ve hayatınızın bir amacı var: O'nu tanımak, O'na kulluk etmek ve dünyaya iyilik getirmek.
 
-Bu cevap günlük hayatta canlanır. Günde beş kez namaz, işlerin telaşını keser. Seni meşgul edeni bir kenara bırakır, Kâbe'ye yönelir ve Rabbinin huzuruna durursun. Bunu yaşayan herkes bilir ki namaz bir yük değil, ruh için bir nefes alma alanıdır.
+Bu cevap günlük hayatta canlanır. Günde beş kez namaz, işlerin telaşını keser. Sizi meşgul edeni bir kenara bırakır, Kâbe'ye yönelir ve Rabbinizin huzuruna durursunuz. Bunu yaşayan herkes bilir ki namaz bir yük değil, ruh için bir nefes alma alanıdır.
 
 Allah şöyle buyurur: "İman edenler ve kalpleri Allah'ı anmakla huzur bulanlar – dikkat edin, kalpler ancak Allah'ı anmakla huzur bulur" (13:28). Gürültü, baskı ve huzursuzlukla dolu bir çağda bu iç huzur kıymetli bir armağandır.
 
@@ -57,7 +57,7 @@ Bugün insanlığın neredeyse dörtte biri İslam'ı takip ediyor. Müslümanla
 
 ### Genç Müslümanlar ve dijital öğrenme
 
-Bu genç nesil dedelerinden farklı öğreniyor. Tilavetleri akıllı telefonlardan dinliyor, mealleri kendi dilinde okuyor ve önceki nesillerin tam olarak böyle sormadığı sorular soruyor. Bu büyük bir fırsat: Kur'an'ı duymak, anlamak ve öğrenmek hiç bu kadar kolay olmamıştı – ister Dubai'de, ister Berlin'de, Cakarta'da ya da Toronto'da yaşa. Bugün Kur'an pratikte her dilde insanlara hitap ediyor, Arapça lafzı ise değişmeden korunuyor.
+Bu genç nesil dedelerinden farklı öğreniyor. Tilavetleri akıllı telefonlardan dinliyor, mealleri kendi dilinde okuyor ve önceki nesillerin tam olarak böyle sormadığı sorular soruyor. Bu büyük bir fırsat: Kur'an'ı duymak, anlamak ve öğrenmek hiç bu kadar kolay olmamıştı – ister Dubai'de, ister Berlin'de, Cakarta'da ya da Toronto'da yaşayın. Bugün Kur'an pratikte her dilde insanlara hitap ediyor, Arapça lafzı ise değişmeden korunuyor.
 
 ## Zorluklar
 
@@ -85,15 +85,15 @@ En önemlisi şudur: bu hoşgörü imana rağmen değil, imandan gelir. Allah, i
 
 İslam'ın geleceği nasıl görünecek? Bu, sayılardan çok kalplere bağlıdır. Peygamber ﷺ şöyle buyurmuştur: "Sizin en hayırlınız Kur'an'ı öğrenen ve öğretendir" (Buhârî). Ve: "Kim ilim aramak için bir yola girerse, Allah ona cennete giden bir yolu kolaylaştırır" (Müslim).
 
-Quran Masterclass tam da bu yüzden var. Burada ayet ayet dinleyebilir, anlamı kavrayabilir ve tefsiri yanında okuyabilirsin – ücretsiz, Almanca ve İngilizce olarak. [Shams](/shams) sana eşlik etsin, bilgini [Akademi](/academy)de derinleştir ve iyi niyetleri kişisel [öğrenme planın](/plan) ile günlük bir alışkanlığa dönüştür.
+Quran Masterclass tam da bu yüzden var. Burada ayet ayet dinleyebilir, anlamı kavrayabilir ve tefsiri yanında okuyabilirsiniz – ücretsiz, Almanca ve İngilizce olarak. [Shams](/shams) size eşlik etsin, bilginizi [Akademi](/academy)de derinleştirin ve iyi niyetleri kişisel [öğrenme planınız](/plan) ile günlük bir alışkanlığa dönüştürün.
 
-İslam'ın geleceğini Kur'an'ı öğrenenler ve yaşayanlar yazar. Belki o geleceğin bir parçası bugün başlıyor – seninle ve tek bir ayetle.`,
+İslam'ın geleceğini Kur'an'ı öğrenenler ve yaşayanlar yazar. Belki o geleceğin bir parçası bugün başlıyor – sizinle ve tek bir ayetle.`,
   faq: [
     { q: "İslam neden bu kadar çok insan için anlamlı?", a: "Çünkü hayatın büyük sorularına cevap verir, namaz ve zikirle iç huzur sağlar (13:28) ve aile, adalet ve merhamet için açık bir temel atar." },
     { q: "Kaç Müslüman var?", a: "İnsanlığın neredeyse dörtte biri İslam'ı takip ediyor. 2015'te Pew Araştırma Merkezi, Müslümanların sayısının 2050'ye kadar dünya nüfusundan daha hızlı artacağını ve Hristiyanların sayısına neredeyse eşit olabileceğini öngördü – bu bir projeksiyondur, kesinlik değil." },
     { q: "İslam aşırıcılık hakkında ne der?", a: "Onu reddeder. Masum bir cana kıymak bütün insanlığı öldürmek gibidir (5:32) ve Müslümanlar bir orta ümmettir (2:143). İtidal, merhamet ve ilim yoldur." },
     { q: "İnsani Kardeşlik Belgesi nedir?", a: "Şubat 2019'da Abu Dabi'de Papa Franciscus ile Ezher Şeyhi Ahmed et-Tayyib tarafından imzalanan ortak bir bildiri. Barışı, karşılıklı saygıyı ve birlikte yaşamayı çağırır." },
-    { q: "İslam'ın geleceğine kendim nasıl katkıda bulunabilirim?", a: "Öğrenerek ve öğrendiğini yaşayarak: her gün anlamıyla birkaç ayet, aileye ve komşulara karşı güzel davranış ve bütün insanlara saygı. Quran Masterclass'taki bir öğrenme planı devam etmene yardımcı olur." },
+    { q: "İslam'ın geleceğine kendim nasıl katkıda bulunabilirim?", a: "Öğrenerek ve öğrendiğinizi yaşayarak: her gün anlamıyla birkaç ayet, aileye ve komşulara karşı güzel davranış ve bütün insanlara saygı. Quran Masterclass'taki bir öğrenme planı devam etmenize yardımcı olur." },
   ],
   sources: [
     "Kur'an 2:30, 2:143, 4:135, 5:32, 7:31, 13:28, 20:114, 21:107, 49:13, 96:1",

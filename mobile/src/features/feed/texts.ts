@@ -1864,7 +1864,7 @@ const TEXT = {
     updateBody: "Hay una nueva versión de la app con nuevas funciones.",
     updateCta: "Actualizar",
     title: "Feed del Corán",
-    lead: "Aleya a aleya: desliza entre bellas aleyas con recitación y traducción.",
+    lead: "Aleya a aleya: deslice entre bellas aleyas con recitación y traducción.",
     open: "Abrir el feed",
     feedButton: "Feed",
     discover: "Descubrir",

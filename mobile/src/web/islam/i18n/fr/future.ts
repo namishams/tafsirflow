@@ -11,9 +11,9 @@ const c: IslamChapter = {
   ],
   body: `## Ce que l'islam signifie pour l'individu
 
-Tôt ou tard, chaque personne se pose les grandes questions : d'où est-ce que je viens ? Pour quoi est-ce que je vis ? Où est-ce que je vais ? L'islam apporte une réponse à la fois claire et réconfortante. Tu n'es pas ici par hasard. Allah t'a créé(e), Il te connaît, et ta vie a un but : Le connaître, L'adorer et apporter du bien dans le monde.
+Tôt ou tard, chaque personne se pose les grandes questions : d'où est-ce que je viens ? Pour quoi est-ce que je vis ? Où est-ce que je vais ? L'islam apporte une réponse à la fois claire et réconfortante. Vous n'êtes pas ici par hasard. Allah vous a créé(e), Il vous connaît, et votre vie a un but : Le connaître, L'adorer et apporter du bien dans le monde.
 
-Cette réponse prend vie au quotidien. Cinq fois par jour, la prière interrompt la course des choses. Tu laisses de côté ce qui t'occupe, tu te tournes vers la Kaaba et tu te tiens devant ton Seigneur. Celui qui l'a vécu sait que la prière n'est pas un fardeau mais un souffle pour l'âme.
+Cette réponse prend vie au quotidien. Cinq fois par jour, la prière interrompt la course des choses. Vous laissez de côté ce qui vous occupe, vous vous tournez vers la Kaaba et vous vous tenez devant votre Seigneur. Celui qui l'a vécu sait que la prière n'est pas un fardeau mais un souffle pour l'âme.
 
 Allah dit : « Ceux qui croient et dont les cœurs s'apaisent à l'évocation d'Allah – n'est-ce pas par l'évocation d'Allah que les cœurs s'apaisent ? » (13:28). À une époque pleine de bruit, de pression et d'agitation, cette paix intérieure est un précieux cadeau.
 
@@ -57,7 +57,7 @@ En 2015, le Pew Research Center a publié une **projection** très remarquée : 
 
 ### Les jeunes musulmans et l'apprentissage numérique
 
-Cette jeune génération apprend autrement que ses grands-parents. Elle écoute des récitations sur smartphone, lit des traductions dans sa propre langue et pose des questions que les générations précédentes ne posaient pas tout à fait de la même façon. C'est une grande chance : jamais auparavant il n'a été aussi facile d'entendre, de comprendre et d'apprendre le Coran – que tu vives à Dubaï, à Berlin, à Jakarta ou à Toronto. Aujourd'hui, le Coran parle aux gens dans pratiquement toutes les langues, tandis que son texte arabe reste préservé sans changement.
+Cette jeune génération apprend autrement que ses grands-parents. Elle écoute des récitations sur smartphone, lit des traductions dans sa propre langue et pose des questions que les générations précédentes ne posaient pas tout à fait de la même façon. C'est une grande chance : jamais auparavant il n'a été aussi facile d'entendre, de comprendre et d'apprendre le Coran – que vous viviez à Dubaï, à Berlin, à Jakarta ou à Toronto. Aujourd'hui, le Coran parle aux gens dans pratiquement toutes les langues, tandis que son texte arabe reste préservé sans changement.
 
 ## Les défis
 
@@ -85,15 +85,15 @@ Ce qui compte le plus, c'est ceci : cette tolérance ne naît pas malgré la foi
 
 À quoi ressemblera l'avenir de l'islam ? Cela dépend moins des chiffres que des cœurs. Le Prophète ﷺ a dit : « Les meilleurs d'entre vous sont ceux qui apprennent le Coran et l'enseignent » (al-Bukhari). Et : « Quiconque emprunte un chemin à la recherche du savoir, Allah lui facilite un chemin vers le Paradis » (Muslim).
 
-C'est précisément pour cela que Quran Masterclass existe. Ici, tu peux écouter verset par verset, comprendre le sens et lire le tafsir en parallèle – gratuitement, en allemand et en anglais. Laisse [Shams](/shams) t'accompagner, approfondis tes connaissances dans l'[Académie](/academy) et transforme de bonnes intentions en habitude quotidienne avec ton [plan d'apprentissage](/plan) personnel.
+C'est précisément pour cela que Quran Masterclass existe. Ici, vous pouvez écouter verset par verset, comprendre le sens et lire le tafsir en parallèle – gratuitement, en allemand et en anglais. Laissez [Shams](/shams) vous accompagner, approfondissez vos connaissances dans l'[Académie](/academy) et transformez de bonnes intentions en habitude quotidienne avec votre [plan d'apprentissage](/plan) personnel.
 
-L'avenir de l'islam est écrit par ceux qui apprennent et vivent le Coran. Peut-être qu'une partie de cet avenir commence aujourd'hui – avec toi et un seul verset.`,
+L'avenir de l'islam est écrit par ceux qui apprennent et vivent le Coran. Peut-être qu'une partie de cet avenir commence aujourd'hui – avec vous et un seul verset.`,
   faq: [
     { q: "Pourquoi l'islam a-t-il tant de sens pour tant de gens ?", a: "Parce qu'il répond aux grandes questions de la vie, donne la paix intérieure par la prière et l'évocation d'Allah (13:28), et pose un fondement clair pour la famille, la justice et la miséricorde." },
     { q: "Combien y a-t-il de musulmans ?", a: "Près d'un quart de l'humanité suit l'islam. En 2015, le Pew Research Center a projeté que le nombre de musulmans croîtrait plus vite que la population mondiale jusqu'en 2050 et pourrait presque égaler celui des chrétiens – une projection, non une certitude." },
     { q: "Que dit l'islam de l'extrémisme ?", a: "Il le rejette. Ôter une vie innocente, c'est comme tuer l'humanité entière (5:32), et les musulmans sont une communauté du juste milieu (2:143). La modération, la miséricorde et le savoir sont la voie." },
     { q: "Qu'est-ce que le Document sur la fraternité humaine ?", a: "Une déclaration commune signée à Abou Dhabi en février 2019 par le pape François et le grand imam d'al-Azhar, cheikh Ahmed al-Tayeb. Elle appelle à la paix, au respect mutuel et au vivre-ensemble." },
-    { q: "Comment puis-je moi-même contribuer à l'avenir de l'islam ?", a: "En apprenant, et en vivant ce que tu apprends : quelques versets avec leur sens chaque jour, une bonne conduite envers la famille et les voisins, et le respect de tous les êtres humains. Un plan d'apprentissage sur Quran Masterclass t'aide à persévérer." },
+    { q: "Comment puis-je moi-même contribuer à l'avenir de l'islam ?", a: "En apprenant, et en vivant ce que vous apprenez : quelques versets avec leur sens chaque jour, une bonne conduite envers la famille et les voisins, et le respect de tous les êtres humains. Un plan d'apprentissage sur Quran Masterclass vous aide à persévérer." },
   ],
   sources: [
     "Coran 2:30, 2:143, 4:135, 5:32, 7:31, 13:28, 20:114, 21:107, 49:13, 96:1",

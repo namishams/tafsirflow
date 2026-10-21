@@ -9,7 +9,7 @@ const T: Record<Lang, { tap: string; hear: string; joins: string; alone: string;
   en: { tap: "Tap a letter", hear: "Listen", joins: "joins on both sides", alone: "joins only to the right", formsLbl: "Start · middle · end" },
   ar: { tap: "اضغط على حرفٍ لتتعرّف عليه", hear: "استمع", joins: "يتصل بما قبله وبما بعده", alone: "يتصل بما قبله فقط", formsLbl: "أول · وسط · آخر" },
   tr: {
-    tap: "Bir harfe dokun", hear: "Dinle", joins: "iki yandan bağlanır", alone: "yalnızca sağdan bağlanır", formsLbl: "Baş · orta · son",
+    tap: "Bir harfe dokunun", hear: "Dinle", joins: "iki yandan bağlanır", alone: "yalnızca sağdan bağlanır", formsLbl: "Baş · orta · son",
   },
   ur: {
     tap: "کسی حرف پر ٹیپ کریں", hear: "سنیں", joins: "دونوں طرف سے جڑتا ہے", alone: "صرف دائیں طرف جڑتا ہے", formsLbl: "شروع · بیچ · آخر",
@@ -21,11 +21,11 @@ const T: Record<Lang, { tap: string; hear: string; joins: string; alone: string;
     tap: "پر یوه توري ټک وکړئ", hear: "واورئ", joins: "په دواړو خواوو نښلېږي", alone: "یوازې ښي خوا ته نښلېږي", formsLbl: "پیل · منځ · پای",
   },
   fr: {
-    tap: "Appuie sur une lettre", hear: "Écouter", joins: "se relie des deux côtés", alone: "se relie seulement à droite",
+    tap: "Appuyez sur une lettre", hear: "Écouter", joins: "se relie des deux côtés", alone: "se relie seulement à droite",
     formsLbl: "Début · milieu · fin",
   },
   es: {
-    tap: "Toca una letra", hear: "Escuchar", joins: "se une por ambos lados", alone: "se une solo por la derecha", formsLbl: "Inicio · medio · final",
+    tap: "Toque una letra", hear: "Escuchar", joins: "se une por ambos lados", alone: "se une solo por la derecha", formsLbl: "Inicio · medio · final",
   },
   id: {
     tap: "Ketuk sebuah huruf", hear: "Dengarkan", joins: "bersambung ke kedua sisi", alone: "hanya bersambung ke kanan",
@@ -39,7 +39,7 @@ const T: Record<Lang, { tap: string; hear: string; joins: string; alone: string;
     tap: "একটি হরফে ট্যাপ করুন", hear: "শুনুন", joins: "দুই পাশেই যুক্ত হয়", alone: "শুধু ডানদিকে যুক্ত হয়", formsLbl: "শুরু · মাঝ · শেষ",
   },
   ru: {
-    tap: "Нажми на букву", hear: "Послушать", joins: "соединяется с обеих сторон", alone: "соединяется только справа",
+    tap: "Нажмите на букву", hear: "Послушать", joins: "соединяется с обеих сторон", alone: "соединяется только справа",
     formsLbl: "Начало · середина · конец",
   },
   zh: {

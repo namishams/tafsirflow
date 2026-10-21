@@ -5,8 +5,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { GoldCard, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
-import { courseLang } from "./lang";
-import { useLang } from "@/i18n";
+import { pageLang } from "./lang";
+import { isRTL, useLang } from "@/i18n";
 import { FREE, openPro, usePro } from "@/lib/pro";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, useTheme, AR_RIGHT, FWD } from "@/lib/theme";
 import {
@@ -65,7 +65,7 @@ function Missing() {
 function LessonProWall({ lesson }: { lesson: Lesson }) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
-  const lang = courseLang(useLang().lang);
+  const lang = pageLang(useLang().lang);
   const ct = useCourseT();
   const unit = UNITS.find((u) => u.n === lesson.unit);
   return (
@@ -75,7 +75,7 @@ function LessonProWall({ lesson }: { lesson: Lesson }) {
         <CloseButton />
         <View style={{ alignItems: "center", marginTop: 24 }}>
           <PracticeStarNum n={LESSONS.indexOf(lesson) + 1} size={58} />
-          <Text style={{ marginTop: 14, fontFamily: FONT.bold, fontSize: 12, letterSpacing: lang === "ar" ? 0 : 1.9, textTransform: "uppercase", color: t.gold }}>{unit ? `${LESSON_T[lang].unitWord} ${unit.n} · ${unit.title[lang] ?? unit.title.en}` : ""}</Text>
+          <Text style={{ marginTop: 14, fontFamily: FONT.bold, fontSize: 12, letterSpacing: isRTL(lang) ? 0 : 1.9, textTransform: "uppercase", color: t.gold }}>{unit ? `${LESSON_T[lang].unitWord} ${unit.n} · ${unit.title[lang] ?? unit.title.en}` : ""}</Text>
           <Text style={{ marginTop: 8, fontFamily: FONT.display, fontSize: 30, lineHeight: 35, color: t.ink, textAlign: "center" }}>{lesson.title[lang] ?? lesson.title.en}</Text>
           <Text style={{ marginTop: 10, fontFamily: FONT.regular, fontSize: 16, lineHeight: 25, color: t.muted, textAlign: "center" }}>{lesson.goal[lang] ?? lesson.goal.en}</Text>
         </View>
@@ -87,7 +87,7 @@ function LessonProWall({ lesson }: { lesson: Lesson }) {
 
 function CloseButton() {
   const t = useTheme();
-  const T = LESSON_T[courseLang(useLang().lang)];
+  const T = LESSON_T[pageLang(useLang().lang)];
   return (
     <Pressable onPress={leave} accessibilityRole="button" accessibilityLabel={T.quit} hitSlop={6}
       style={({ pressed }) => ({ width: 40, height: 40, borderRadius: 20, borderWidth: 1, borderColor: pressed ? solidGoldA(1) : t.line, alignItems: "center", justifyContent: "center" })}>
@@ -99,7 +99,7 @@ function CloseButton() {
 function LessonRun({ lesson }: { lesson: Lesson }) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
-  const lang = courseLang(useLang().lang);
+  const lang = pageLang(useLang().lang);
   const { pro } = usePro();
   const T = LESSON_T[lang];
   const isPlacement = !!lesson.placement;

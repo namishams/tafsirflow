@@ -86,7 +86,7 @@ Sünni ve Şii Müslümanların yan yana namaz kıldığını ilk kez gören bir
 - **Namazları birleştirme:** Şii Müslümanlar çoğu zaman öğle ile ikindi, akşam ile yatsı namazlarını birleştirir ve günün üç vaktinde namaz kılar – yine beş vakit namazdır. Sünniler genellikle beş ayrı vakitte kılar ve namazları esas olarak yolculukta ya da belirli sebeplerle birleştirir.
 - **Toprak üzerine secde (türbe):** Şii Müslümanlar toprak, taş veya bitki gibi doğal bir maddeye secde eder; çoğu zaman pişmiş kilden küçük bir tablet kullanır. Sünniler halı üzerinde de namaz kılar.
 
-Ayrıntılı rehberleri burada bulabilirsin: [Sünni uygulamasında namaz](/islam/prayer-sunni) ve [Şii uygulamasında namaz](/islam/prayer-shia).
+Ayrıntılı rehberleri burada bulabilirsiniz: [Sünni uygulamasında namaz](/islam/prayer-sunni) ve [Şii uygulamasında namaz](/islam/prayer-shia).
 
 ## Amman Mesajı
 
@@ -110,9 +110,9 @@ Allah Kur'an'da şöyle buyurur: "Hepiniz birlikte Allah'ın ipine sımsıkı sa
 
 Saygılı diyalog şu demektir:
 
-- kendi geleneğin hakkında sevgiyle konuşmak, başkalarını küçümsememek;
+- kendi geleneğiniz hakkında sevgiyle konuşmak, başkalarını küçümsememek;
 - Peygamber ﷺ'in sahabelerini ve ailesini her zaman saygıyla anmak;
-- sorularını sosyal medyadaki tartışmalara değil, nitelikli âlimlere götürmek;
+- sorularınızı sosyal medyadaki tartışmalara değil, nitelikli âlimlere götürmek;
 - ortak olanı güçlendirmek: namazı, Kur'an'ı, güzel amelleri ve insanlara hizmeti.
 
 Quran Masterclass'ta Sünni ve Şii Müslümanlar aynı ayetleri aynı tilavetle dinler. Bizi neyin birleştirdiği sorusuna belki de en güzel cevap budur: birlikte öğrendiğimiz Allah'ın kelamı.`,
@@ -120,7 +120,7 @@ Quran Masterclass'ta Sünni ve Şii Müslümanlar aynı ayetleri aynı tilavetle
     { q: "Sünnilerin ve Şiilerin Kur'an'ı farklı mı?", a: "Hayır. İkisi de aynı 114 sureden oluşan aynı Kur'an'ı okur. Farklar, bazı bölümlerin yorumunda ve her geleneğin dayandığı hadis derlemelerinde vardır; Kur'an'ın metninde yoktur." },
     { q: "Bu ayrım nereden gelir?", a: "Peygamber ﷺ'in 632'de vefatından sonra topluluğa kimin önderlik edeceği sorusundan. Sünniler dört Râşid Halifeyi sıralarıyla tanır; Şii Müslümanlar Ali bin Ebî Tâlib'i ve onun soyundan gelen İmamları haklı önderler olarak görür." },
     { q: "Sünniler neden Âşûrâ'da oruç tutarken Şiiler yas tutar?", a: "Sünniler Sünnet'e uyarak oruç tutar, çünkü Allah bu günde Mûsâ'yı (ona selam olsun) kurtarmıştır (Buhârî, Müslim). Şii Müslümanlar ise bu günde özellikle Hüseyin'in hicri 61'de Kerbelâ'da şehit edilişini anar. Her iki anlam da saygıyı hak eder." },
-    { q: "Bir Sünni bir Şiinin, bir Şii de bir Sünninin arkasında namaz kılabilir mi?", a: "Her iki taraftan birçok âlim buna izin verir ve Mekke ile Medine'de her gelenekten Müslümanlar birlikte namaz kılar. Kendi mezhebinin ayrıntıları için güvendiğin bir âlime sormak en iyisidir." },
+    { q: "Bir Sünni bir Şiinin, bir Şii de bir Sünninin arkasında namaz kılabilir mi?", a: "Her iki taraftan birçok âlim buna izin verir ve Mekke ile Medine'de her gelenekten Müslümanlar birlikte namaz kılar. Kendi mezhebinizin ayrıntıları için güvendiğiniz bir âlime sormak en iyisidir." },
     { q: "Amman Mesajı nedir?", a: "2004 tarihli, 2005'te birçok ülkeden âlimler tarafından onaylanan bir bildiri. Caferî ve Zeydî dahil sekiz fıkıh mezhebini tanır ve bu mezheplere uyanları kâfir ilan etmeyi yasaklar." },
   ],
   sources: [

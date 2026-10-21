@@ -2,7 +2,7 @@ import type { IslamChapter } from "../../types";
 const c: IslamChapter = {
   title: "¿Qué es el islam?",
   kicker: "Fundamentos",
-  lead: "Islam significa entregarse a Allah, el Único, en paz – y, desde esa entrega, vivir con misericordia, justicia y equilibrio. En esta página te explicamos, con calma y de forma sencilla, qué creen los musulmanes, cómo viven su fe y qué dice el Corán sobre la convivencia. Seas musulmán, sientas una nueva curiosidad o simplemente quieras entender, aquí eres muy bienvenido.",
+  lead: "Islam significa entregarse a Allah, el Único, en paz – y, desde esa entrega, vivir con misericordia, justicia y equilibrio. En esta página le explicamos, con calma y de forma sencilla, qué creen los musulmanes, cómo viven su fe y qué dice el Corán sobre la convivencia. Sea usted musulmán, sienta una nueva curiosidad o simplemente quiera entender, aquí es muy bienvenido.",
   facts: [
     { n: "1", l: "Dios – el corazón de la fe (tawhid)" },
     { n: "5", l: "Pilares del islam" },
@@ -13,7 +13,7 @@ const c: IslamChapter = {
 
 La palabra árabe **islam** procede de la raíz s-l-m, la misma raíz que nos da **salam**, paz. Islam significa literalmente "entrega": una persona se entrega consciente y libremente a Allah, su Creador, y al hacerlo encuentra la paz interior. Un **musulmán** es, por tanto, alguien que se entrega a Allah. No es casualidad que *as-Salam*, "la Fuente de la Paz", sea uno de los hermosos nombres de Allah (Corán 59:23), ni que los musulmanes de todo el mundo se saluden con *as-salamu alaykum*, "la paz sea contigo".
 
-Aquí, en los Emiratos, oyes este saludo en todas partes: en la mezquita, en el zoco, en la oficina. Es más que cortesía. Es una pequeña promesa: no tienes nada que temer de mí.
+Aquí, en los Emiratos, oye este saludo en todas partes: en la mezquita, en el zoco, en la oficina. Es más que cortesía. Es una pequeña promesa: no tiene nada que temer de mí.
 
 ## Tawhid – la fe en el Único
 
@@ -30,7 +30,7 @@ Una persona se hace musulmana al pronunciar con sinceridad la **shahada**, el te
 El Profeta ﷺ dijo que el islam está edificado sobre cinco cosas (lo narran al-Bujari y Muslim). A menudo se imaginan como las columnas que sostienen una casa:
 
 1. **Shahada** – el testimonio de fe en Allah y en Su Mensajero ﷺ.
-2. **Salat** – la oración, cinco veces al día. Da ritmo a la jornada y devuelve una y otra vez a la persona hacia Allah. Puedes encontrar los horarios de oración de tu ubicación en nuestra página de [horarios de oración](/prayer).
+2. **Salat** – la oración, cinco veces al día. Da ritmo a la jornada y devuelve una y otra vez a la persona hacia Allah. Puede encontrar los horarios de oración de su ubicación en nuestra página de [horarios de oración](/prayer).
 3. **Zakat** – la limosna obligatoria sobre los bienes para quienes la necesitan. Purifica las propias posesiones y fortalece la comunidad.
 4. **Sawm** – el ayuno en el mes de Ramadán, desde el alba hasta la puesta del sol, una escuela de paciencia y gratitud.
 5. **Hajj** – la peregrinación a La Meca, una vez en la vida para todo aquel que pueda física y económicamente.
@@ -48,11 +48,11 @@ En un famoso hadiz recogido por Muslim en su *Sahih*, el ángel Yibril se presen
 
 Estas seis creencias dan a la vida su marco: nada sucede sin sentido, ninguna buena obra se pierde jamás y, al final, está la justicia perfecta de Allah.
 
-## Ihsan – adorar a Allah como si lo vieras
+## Ihsan – adorar a Allah como si lo viera
 
 En el mismo hadiz, Yibril pregunta finalmente por el **ihsan**, el grado más alto de la fe. La respuesta del Profeta ﷺ es una de las frases más hermosas que conocemos: "Que adores a Allah como si lo vieras; y aunque tú no lo veas, Él sí te ve".
 
-Ihsan significa hacerlo todo lo mejor y con la mayor sinceridad posible: tu oración, tu trabajo, la manera en que tratas a tus padres, a tus vecinos y a los desconocidos. Es el puente entre la práctica exterior y el estado interior.
+Ihsan significa hacerlo todo lo mejor y con la mayor sinceridad posible: su oración, su trabajo, la manera en que trata a sus padres, a sus vecinos y a los desconocidos. Es el puente entre la práctica exterior y el estado interior.
 
 ## Wasatiyya – el justo medio
 
@@ -68,7 +68,7 @@ La misericordia se muestra en las cosas pequeñas: una sonrisa, compartir la com
 
 ## Justicia
 
-"Ciertamente, Allah ordena la justicia, la excelencia y dar a los parientes, y prohíbe la indecencia, la maldad y la opresión" (Corán 16:90). Este versículo se sigue recitando al final del sermón del viernes en muchas mezquitas. La justicia se aplica sin excepción, incluso con personas con las que no estás de acuerdo: "Que el odio hacia un pueblo no os lleve a ser injustos. Sed justos; eso está más cerca de la piedad" (Corán 5:8).
+"Ciertamente, Allah ordena la justicia, la excelencia y dar a los parientes, y prohíbe la indecencia, la maldad y la opresión" (Corán 16:90). Este versículo se sigue recitando al final del sermón del viernes en muchas mezquitas. La justicia se aplica sin excepción, incluso con personas con las que no está de acuerdo: "Que el odio hacia un pueblo no os lleve a ser injustos. Sed justos; eso está más cerca de la piedad" (Corán 5:8).
 
 ## Familia, padres y comunidad
 
@@ -76,7 +76,7 @@ En el islam, la familia es un espacio protegido. Inmediatamente después del man
 
 ## Conocimiento
 
-La primerísima palabra revelada del Corán es "¡Lee!" (Corán 96:1). Allah enseñó al Profeta ﷺ la súplica: "Señor mío, auméntame en conocimiento" (Corán 20:114). Y el Profeta ﷺ dijo: "Quien recorre un camino buscando conocimiento, Allah le facilitará un camino hacia el Paraíso" (Muslim). En el islam, aprender es adoración, ya sea que estés memorizando versículos del Corán, estudiando medicina o dominando un oficio.
+La primerísima palabra revelada del Corán es "¡Lee!" (Corán 96:1). Allah enseñó al Profeta ﷺ la súplica: "Señor mío, auméntame en conocimiento" (Corán 20:114). Y el Profeta ﷺ dijo: "Quien recorre un camino buscando conocimiento, Allah le facilitará un camino hacia el Paraíso" (Muslim). En el islam, aprender es adoración, ya sea que esté memorizando versículos del Corán, estudiando medicina o dominando un oficio.
 
 ## El carácter – ajlaq
 
@@ -102,20 +102,20 @@ En los Emiratos conviven en paz personas de unas doscientas nacionalidades. En f
 
 ## Primeros pasos
 
-Si quieres aprender más, simplemente empieza, y empieza por el propio Corán:
+Si quiere aprender más, simplemente empiece, y empiece por el propio Corán:
 
-- Escucha y lee el Corán versículo a versículo, con traducción y tafsir, en nuestra página del [Corán](/quran). Muchas personas empiezan por la sura de apertura, al-Fatiha, y por las suras cortas del final del Corán.
-- Memoriza versículos con el [Método Shams](/shams), paso a paso y a tu propio ritmo.
-- Infórmate sobre la oración y encuentra los horarios de oración de tu ubicación en nuestra página de [horarios de oración](/prayer).
-- Habla con la gente de una mezquita cercana. Allí las preguntas son bienvenidas y casi siempre te ofrecerán una taza de té o de café.
+- Escuche y lea el Corán versículo a versículo, con traducción y tafsir, en nuestra página del [Corán](/quran). Muchas personas empiezan por la sura de apertura, al-Fatiha, y por las suras cortas del final del Corán.
+- Memorice versículos con el [Método Shams](/shams), paso a paso y a su propio ritmo.
+- Infórmese sobre la oración y encuentre los horarios de oración de su ubicación en nuestra página de [horarios de oración](/prayer).
+- Hable con la gente de una mezquita cercana. Allí las preguntas son bienvenidas y casi siempre le ofrecerán una taza de té o de café.
 
-Tómate tu tiempo. El islam fue revelado a lo largo de veintitrés años, paso a paso. Tu propio camino también puede crecer con suavidad.`,
+Tómese su tiempo. El islam fue revelado a lo largo de veintitrés años, paso a paso. Su propio camino también puede crecer con suavidad.`,
   faq: [
     { q: "¿Qué significa la palabra \"islam\"?", a: "Islam significa \"entrega\" a Allah y está emparentada lingüísticamente con \"salam\", paz. Un musulmán es alguien que se entrega a Allah." },
     { q: "¿Creen los musulmanes en el mismo Dios que judíos y cristianos?", a: "Los musulmanes creen en el Dios único de Abraham, el Creador de todas las cosas. Dirigiéndose a la Gente del Libro, el Corán dice: \"Nuestro Dios y vuestro Dios es uno\" (Corán 29:46)." },
     { q: "¿Cuáles son los cinco pilares del islam?", a: "El testimonio de fe (shahada), la oración diaria (salat), la limosna obligatoria (zakat), el ayuno en Ramadán (sawm) y la peregrinación a La Meca (hajj) para quienes puedan realizarla." },
     { q: "¿Permite el islam la coacción en la fe?", a: "No. El Corán lo dice claramente: \"No hay coacción en la religión\" (Corán 2:256). La fe tiene que nacer del corazón." },
-    { q: "¿Cómo empiezo a aprender más sobre el islam?", a: "Lee y escucha el Corán con traducción y explicación, por ejemplo en nuestra página /quran, aprende lo básico de la oración y habla con personas con conocimiento en una mezquita cercana." },
+    { q: "¿Cómo empiezo a aprender más sobre el islam?", a: "Lea y escuche el Corán con traducción y explicación, por ejemplo en nuestra página /quran, aprenda lo básico de la oración y hable con personas con conocimiento en una mezquita cercana." },
   ],
   sources: [
     "Corán 2:136, 2:143, 2:185, 2:256, 4:59, 5:8, 5:32, 16:90, 17:23, 20:114, 21:107, 29:46, 30:21, 49:13, 59:23, 60:8, 68:4, 96:1, 112:1–4",

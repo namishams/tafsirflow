@@ -2,7 +2,7 @@ import type { IslamChapter } from "../../types";
 const c: IslamChapter = {
   title: "Le Coran",
   kicker: "Le Livre",
-  lead: "Pour les musulmans, le Coran est la parole d'Allah, révélée au Prophète Muhammad ﷺ par l'intermédiaire de l'ange Jibril sur environ vingt-trois ans. Depuis quatorze siècles, il est récité, mémorisé et expliqué – dans les mosquées, dans les familles et dans les écoles coraniques du monde entier. Ici, tu découvriras comment il est structuré, comment il a été préservé et comment tu peux toi-même commencer avec lui.",
+  lead: "Pour les musulmans, le Coran est la parole d'Allah, révélée au Prophète Muhammad ﷺ par l'intermédiaire de l'ange Jibril sur environ vingt-trois ans. Depuis quatorze siècles, il est récité, mémorisé et expliqué – dans les mosquées, dans les familles et dans les écoles coraniques du monde entier. Ici, vous découvrirez comment il est structuré, comment il a été préservé et comment vous pouvez vous-même commencer avec lui.",
   facts: [
     { n: "114", l: "Sourates" },
     { n: "6 236", l: "Versets (décompte de Koufa)" },
@@ -40,7 +40,7 @@ L'ordre des sourates dans le livre n'est pas chronologique. Il suit l'agencement
 
 Du vivant du Prophète ﷺ, le Coran était mémorisé et, en même temps, mis par écrit par des scribes sur des tiges de palmier, du parchemin, des pierres plates et des os. Après sa mort, de nombreux Compagnons qui connaissaient le Coran par cœur tombèrent à la bataille de Yamama. **Omar** pressa alors le premier calife, **Abou Bakr**, de rassembler le Coran en un seul recueil. Abou Bakr confia cette tâche à **Zayd ibn Thabit**, l'un des scribes du Prophète ﷺ, et Zayd veilla avec le plus grand soin à n'inclure que ce qui existait par écrit et était confirmé par des témoins. C'est ainsi qu'al-Bukhari le rapporte dans son *Sahih*.
 
-Ces feuillets furent ensuite conservés chez **Hafsa**, la fille d'Omar. Sous le troisième calife, **Othman**, des copies en furent faites sous la direction de Zayd et envoyées dans les grandes villes du monde musulman, afin que tous lisent un seul et même texte unifié. Ce **mushaf othmanien** est la base de chaque exemplaire du Coran que tu tiens aujourd'hui entre tes mains.
+Ces feuillets furent ensuite conservés chez **Hafsa**, la fille d'Omar. Sous le troisième calife, **Othman**, des copies en furent faites sous la direction de Zayd et envoyées dans les grandes villes du monde musulman, afin que tous lisent un seul et même texte unifié. Ce **mushaf othmanien** est la base de chaque exemplaire du Coran que vous tenez aujourd'hui entre vos mains.
 
 ## La préservation et les huffaz
 
@@ -66,7 +66,7 @@ Le Prophète ﷺ fut le premier à expliquer le Coran (Coran 16:44), suivi de se
 - le tafsir d'**Ibn Kathir**, qui explique le Coran avant tout par le Coran lui-même et par les hadiths, et qui reste aujourd'hui très largement lu ;
 - le tafsir d'**al-Qurtubi** (*al-Jami' li-Ahkam al-Qur'an*), particulièrement riche en explications juridiques et linguistiques.
 
-Sur notre plateforme, tu peux lire des explications pour chaque verset, toujours avec la source indiquée.
+Sur notre plateforme, vous pouvez lire des explications pour chaque verset, toujours avec la source indiquée.
 
 ## Les grands thèmes
 
@@ -92,13 +92,13 @@ Ici, aux Émirats, le Coran occupe une place solide dans la vie quotidienne et p
 
 ## Comment commencer avec nous
 
-Tu n'as pas besoin de tout maîtriser d'un coup. Commence par ce qui te convient aujourd'hui :
+Vous n'avez pas besoin de tout maîtriser d'un coup. Commencez par ce qui vous convient aujourd'hui :
 
-1. Ouvre le [Coran](/quran) et écoute verset par verset, avec traduction et tafsir. Le mot récité est mis en surbrillance au fur et à mesure.
-2. Mémorise de courtes sourates avec la [méthode Shams](/shams).
-3. Améliore ta prononciation dans le [cours de tajwid](/tajweed).
-4. Parcours pas à pas les 114 sourates dans l'[Académie](/academy).
-5. Ou suis le [plan de 365 jours](/plan) pour lire une petite portion chaque jour.
+1. Ouvrez le [Coran](/quran) et écoutez verset par verset, avec traduction et tafsir. Le mot récité est mis en surbrillance au fur et à mesure.
+2. Mémorisez de courtes sourates avec la [méthode Shams](/shams).
+3. Améliorez votre prononciation dans le [cours de tajwid](/tajweed).
+4. Parcourez pas à pas les 114 sourates dans l'[Académie](/academy).
+5. Ou suivez le [plan de 365 jours](/plan) pour lire une petite portion chaque jour.
 
 Un verset par jour, lu avec le cœur, vaut plus qu'une grande résolution qui ne commence jamais.`,
   faq: [
@@ -106,7 +106,7 @@ Un verset par jour, lu avec le cœur, vaut plus qu'une grande résolution qui ne
     { q: "Combien de sourates et de versets compte le Coran ?", a: "114 sourates et, selon le décompte de Koufa que suivent aujourd'hui la plupart des exemplaires, 6 236 versets." },
     { q: "Une traduction est-elle aussi le Coran ?", a: "Une traduction transmet le sens et constitue une grande aide, mais le Coran lui-même est le texte arabe. C'est pourquoi on parle de « traductions du sens »." },
     { q: "Qu'est-ce que Hafs 'an 'Asim ?", a: "La plus répandue au monde des lectures reconnues du Coran. La plupart des exemplaires imprimés et les récitations de notre plateforme la suivent." },
-    { q: "Je ne connais pas l'arabe – puis-je quand même commencer ?", a: "Oui. Écoute, lis la traduction et apprends de courtes sourates petit à petit. Le Prophète ﷺ a même promis une double récompense à celui qui récite avec difficulté (al-Bukhari et Muslim)." },
+    { q: "Je ne connais pas l'arabe – puis-je quand même commencer ?", a: "Oui. Écoutez, lisez la traduction et apprenez de courtes sourates petit à petit. Le Prophète ﷺ a même promis une double récompense à celui qui récite avec difficulté (al-Bukhari et Muslim)." },
   ],
   sources: [
     "Coran 7:204, 12:2, 15:9, 16:44, 16:98, 17:9, 38:29, 54:17, 56:79, 73:4, 96:1–5",

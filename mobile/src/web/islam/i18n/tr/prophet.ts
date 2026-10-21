@@ -25,7 +25,7 @@ Ticaretteki dürüstlüğü, saygın bir iş kadını olan Hatice binti Huveylid
 
 Yıllar geçtikçe Muhammed ﷺ tefekkür için Mekke yakınlarındaki bir dağda bulunan Hira mağarasına çekilmeyi sever oldu. Orada, yaklaşık 40 yaşındayken melek Cebrâil (Gabriel) Kur'an'ın ilk ayetleriyle ona geldi: "Yaratan Rabbinin adıyla oku" (96:1–5). Eve titreyerek döndü. Hatice onu, Buhârî'nin kaydettiği sözlerle teselli etti: Allah onu asla rezil etmezdi; çünkü o akrabalık bağlarını gözetir, zayıfların yükünü taşır, muhtaçlara yardım eder, misafiri ağırlar ve zor zamanlarda insanların yanında dururdu.
 
-Kur'an ona 23 yıl boyunca parça parça, çoğu zaman gerçek olaylara cevap olarak indirildi. Platformumuzda ayet ayet dinlediğinde, vahyin bu yolunu takip etmiş olursun.
+Kur'an ona 23 yıl boyunca parça parça, çoğu zaman gerçek olaylara cevap olarak indirildi. Platformumuzda ayet ayet dinlediğinizde, vahyin bu yolunu takip etmiş olursunuz.
 
 ## Mekke yılları: zor zamanlarda sabır
 
@@ -35,7 +35,7 @@ Peygamberliğin onuncu yılı civarında Hatice ve Ebû Tâlib art arda vefat et
 
 ## İsrâ ve Mi'râc
 
-Bu zor dönemde Allah Resulünü özel bir mucizeyle şereflendirdi: **İsrâ ve Mi'râc**. Tek bir gecede Mekke'deki Mescid-i Haram'dan Kudüs'teki Mescid-i Aksâ'ya götürüldü (17:1) ve oradan göklere yükseltildi. O gece beş vakit namaz Müslümanlara farz kılındı; bu, bugün hâlâ hayatımızın her gününü taşıyan bir hediyedir. Daha fazlasını [namaz](/prayer) sayfamızda okuyabilirsin.
+Bu zor dönemde Allah Resulünü özel bir mucizeyle şereflendirdi: **İsrâ ve Mi'râc**. Tek bir gecede Mekke'deki Mescid-i Haram'dan Kudüs'teki Mescid-i Aksâ'ya götürüldü (17:1) ve oradan göklere yükseltildi. O gece beş vakit namaz Müslümanlara farz kılındı; bu, bugün hâlâ hayatımızın her gününü taşıyan bir hediyedir. Daha fazlasını [namaz](/prayer) sayfamızda okuyabilirsiniz.
 
 ## Medine'ye hicret
 
@@ -103,14 +103,14 @@ Aynı şekilde, onun yanında duran ve Kur'an'ı koruyup aktaran **sahabelere** 
 
 Peygamber ﷺ'e uymak, gündelik hayatın tam ortasında küçük adımlarla başlar:
 
-1. **Gülümse ve selam ver:** "Kardeşinin yüzüne gülümsemen sadakadır" (Tirmizî). "Es-selâmu aleyküm" selamını yay.
-2. **Besmele ile başla:** Bir çocuğa şöyle öğretti: "Allah'ın adını an, sağ elinle ye ve önünden ye" (Buhârî, Müslim).
-3. **Kolaylaştır:** "Kolaylaştırın, zorlaştırmayın; müjdeleyin, nefret ettirmeyin" (Buhârî, Müslim). Bu, orta yolun, **vasatiyyenin** ruhudur.
-4. **Anne babana saygı göster ve akrabalarını ziyaret et:** Kur'an'da anne babaya iyilik, yalnızca Allah'a kulluk etmenin hemen yanında yer alır (17:23).
-5. **Dürüst ol:** işte, ticarette ve sözlerinde, tıpkı el-Emîn gibi.
-6. **Kur'an'ı yaşa:** Her gün birkaç ayet dinle, anla ve onunla amel et. Hemen [Ahzâb Suresi](/surah/33) ya da [İsrâ Suresi](/surah/17) ile başlayabilirsin.
+1. **Gülümseyin ve selam verin:** "Kardeşinin yüzüne gülümsemen sadakadır" (Tirmizî). "Es-selâmu aleyküm" selamını yayın.
+2. **Besmele ile başlayın:** Bir çocuğa şöyle öğretti: "Allah'ın adını an, sağ elinle ye ve önünden ye" (Buhârî, Müslim).
+3. **Kolaylaştırın:** "Kolaylaştırın, zorlaştırmayın; müjdeleyin, nefret ettirmeyin" (Buhârî, Müslim). Bu, orta yolun, **vasatiyyenin** ruhudur.
+4. **Anne babanıza saygı gösterin ve akrabalarınızı ziyaret edin:** Kur'an'da anne babaya iyilik, yalnızca Allah'a kulluk etmenin hemen yanında yer alır (17:23).
+5. **Dürüst olun:** işte, ticarette ve sözlerinizde, tıpkı el-Emîn gibi.
+6. **Kur'an'ı yaşayın:** Her gün birkaç ayet dinleyin, anlayın ve onunla amel edin. Hemen [Ahzâb Suresi](/surah/33) ya da [İsrâ Suresi](/surah/17) ile başlayabilirsiniz.
 
-Böylece siyer, yani Peygamber ﷺ'in hayat hikâyesi, tarihten daha fazlası olur: senin de yürüyebileceğin bir yol hâline gelir.`,
+Böylece siyer, yani Peygamber ﷺ'in hayat hikâyesi, tarihten daha fazlası olur: sizin de yürüyebileceğiniz bir yol hâline gelir.`,
   faq: [
     { q: "Peygamber Muhammed ﷺ ne zaman ve nerede doğdu?", a: "Yaklaşık 570 yılında Mekke'de, “Fil Yılı” denilen yılda. Kureyş kabilesinin Hâşimoğulları ailesine mensuptu." },
     { q: "“el-Emîn” ne demektir?", a: "“Güvenilir olan”. Mekkeliler onu dürüstlüğü ve güvenilirliği sebebiyle daha peygamberliğinden önce böyle çağırırdı." },

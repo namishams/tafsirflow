@@ -155,7 +155,7 @@
  "deletedFile": "Rakaman telah dipadam selepas 60 hari.",
  "sendTo": "Hantar rakaman kepada {name}",
  "record3060": "Rakam 30–60 saat daripada ayat tersebut.",
- "tooShort": "Sekurang-kurangnya 30 saat, ya.",
+ "tooShort": "Sila rakam sekurang-kurangnya 30 saat.",
  "autoStop": "Rakaman berhenti secara automatik pada {s} saat.",
  "noteLabel": "Nota (pilihan)",
  "sendBtn": "Hantar",

@@ -4,12 +4,12 @@ import { router, type Href } from "expo-router";
 import Svg, { Path } from "react-native-svg";
 import { GoldButton, GoldCard, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
-import { courseLang, type CourseLang } from "./lang";
+import { pageLang, type PageLang } from "./lang";
 import { useLang } from "@/i18n";
 import { FREE, openPro, usePro } from "@/lib/pro";
 import { useStoreVersion } from "@/lib/store";
 import { ARABIC_FONT, CALLIG_FONT, FONT, R, useTheme, FWD } from "@/lib/theme";
-import { LESSONS, PASS_PCT, UNITS, arabicPercent, nextArabic, readArabic, unlocked, type ArabicProgress, type Lesson } from "@/web/arabic";
+import { LESSONS, PASS_PCT, UNITS, arabicPercent, nextArabic, readArabic, unlocked, type ArabicProgress, type L2, type Lesson } from "@/web/arabic";
 import { Gate, IllumFrame, MedalText, PracticeMedallion, PracticeStar, PracticeStarNum, Rail } from "../coursekit/art";
 import { ChipButton, ProCard } from "../coursekit/ui";
 import { useCourseT } from "../coursekit/strings";
@@ -31,7 +31,7 @@ export function useOpenLesson() {
 
 export function ArabicHome() {
   const t = useTheme();
-  const lang = courseLang(useLang().lang);
+  const lang = pageLang(useLang().lang);
   const T = HOME_T[lang];
   const ct = useCourseT();
   const { pro } = usePro();
@@ -43,7 +43,7 @@ export function ArabicHome() {
   const passedN = LESSONS.filter((l) => (p.done[l.id]?.best ?? 0) >= PASS_PCT).length;
   const nxUnit = nx ? UNITS.find((u) => u.n === nx.unit)! : null;
   const started = Object.keys(p.done).length > 0;
-  const tx = (v: { de: string; en: string; ar?: string }) => v[lang] ?? v.en;
+  const tx = (v: L2) => v[lang] ?? v.en;
   const lastFreeUnit = LESSONS[FREE.arabicLessons - 1]?.unit ?? 1;
   const ctx: GateCtx = { p, nx, pro, started, T, lang, openLesson };
 
@@ -123,13 +123,13 @@ export function ArabicHome() {
   );
 }
 
-type GateCtx = { p: ArabicProgress; nx: Lesson | null; pro: boolean; started: boolean; T: (typeof HOME_T)["en"]; lang: CourseLang; openLesson: (l: Lesson) => void };
+type GateCtx = { p: ArabicProgress; nx: Lesson | null; pro: boolean; started: boolean; T: (typeof HOME_T)["en"]; lang: PageLang; openLesson: (l: Lesson) => void };
 
 function LessonGate({ l, c }: { l: Lesson; c: GateCtx }) {
   const t = useTheme();
   const ct = useCourseT();
   const { p, nx, pro, started, T, lang, openLesson } = c;
-  const tx = (v: { de: string; en: string; ar?: string }) => v[lang] ?? v.en;
+  const tx = (v: L2) => v[lang] ?? v.en;
   const d = p.done[l.id];
   const open = unlocked(p, l.id);
   const passed = (d?.best ?? 0) >= PASS_PCT;

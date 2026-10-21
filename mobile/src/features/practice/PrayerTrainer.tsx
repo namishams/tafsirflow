@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, G, Line, LinearGradient as SvgLinear, Path, Polyline, Rect, Stop, Text as SvgText } from "react-native-svg";
-import { PRAYERS, buildPrayer, type Posture, type Tradition } from "@/web/salah";
+import { PRAYERS, buildPrayer, langOf, type Posture, type Tradition } from "@/web/salah";
 import { useLang } from "@/i18n";
 import { ARABIC_FONT, FONT, R, goldButton, stage, AR_RIGHT } from "@/lib/theme";
 import { Stage } from "@/components/brand";
@@ -12,7 +12,7 @@ import { POSES, UI, ease, lerpPose, type Lang, type Pose, type Tx } from "./web/
 import { trainerTradition } from "@/lib/tradition";
 
 const pts = (...p: [number, number][]) => p.map((x) => x.join(",")).join(" ");
-// <span dir="ltr"> of the website: "1 / 12" keeps its order inside right-to-left text
+// <span dir="ltr"> of the website: "1 / 12" and the Latin transliteration keep their order inside right-to-left text
 const ltr = (s: string) => `\u2066${s}\u2069`;
 
 // the figure moves smoothly from one posture to the next (750 ms), or jumps when the system asks for less motion
@@ -57,10 +57,11 @@ function Figure({ posture, qibla, label }: { posture: Posture; qibla: string; la
 }
 
 // Prayer trainer (website PrayerTrainer.tsx): the five daily prayers step by step, Sunni and Ja'fari, with the figure,
-// the Arabic words, transliteration and meaning (Arabic readers get the Arabic words only); play the sequence or go step by step
+// the Arabic words, transliteration and meaning (Arabic readers get the Arabic words only); play the sequence or go step by step.
+// Every site language the prayer data has, otherwise English (website: langOf(locale)).
 export default function PrayerTrainer() {
   const { lang, rtl } = useLang();
-  const l: Lang = lang === "de" ? "de" : lang === "ar" ? "ar" : "en";
+  const l: Lang = langOf(lang);
   const u = UI[l];
   const tx = (v?: Tx) => (v ? v[l] ?? v.en : "");
   const [tradition, setTradition] = useState<Tradition>(() => trainerTradition());
@@ -120,7 +121,7 @@ export default function PrayerTrainer() {
               <Text style={{ fontFamily: ARABIC_FONT, fontSize: 26, lineHeight: 52, color: "#fbf3dc", writingDirection: "rtl", textAlign: AR_RIGHT }}>{step.ar}</Text>
             </View>
           ) : null}
-          {step.translit && l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 12 }}>{step.translit}</Text> : null}
+          {step.translit && l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 12 }}>{rtl ? ltr(step.translit) : step.translit}</Text> : null}
           {step.meaning && l !== "ar" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 12 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{u.meaning}: </Text>{tx(step.meaning)}</Text> : null}
           {step.note ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: "rgba(255,255,255,0.75)", marginTop: 16, borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.25)", backgroundColor: "rgba(255,255,255,0.05)", padding: 12, overflow: "hidden" }}>{tx(step.note)}</Text> : null}
         </View>

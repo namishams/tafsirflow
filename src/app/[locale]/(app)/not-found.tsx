@@ -13,12 +13,12 @@ const T: Record<AppLocale, Text> = {
   fa: { code: "404", title: "این صفحه وجود ندارد", body: "شاید پیوند قدیمی یا نادرست نوشته شده باشد. از اینجا ادامه دهید:", home: "بازگشت به صفحه اصلی", quran: "باز کردن قرآن" },
   ps: { code: "404", title: "دا پاڼه نشته", body: "کېدای شي لینک زوړ وي یا په لیکلو کې یې تېروتنه شوې وي. له دې ځایه مخکې ولاړ شئ:", home: "اصلي پاڼې ته بیرته ورشئ", quran: "قرآن خلاص کړئ" },
   fr: { code: "404", title: "Cette page n’existe pas", body: "Le lien est peut-être périmé ou mal saisi. Voici où aller :", home: "Retour à l’accueil", quran: "Ouvrir le Coran" },
-  es: { code: "404", title: "Esta página no existe", body: "Puede que el enlace esté desactualizado o tenga un error. Desde aquí puedes continuar:", home: "Volver al inicio", quran: "Abrir el Corán" },
+  es: { code: "404", title: "Esta página no existe", body: "Puede que el enlace esté desactualizado o tenga un error. Desde aquí puede continuar:", home: "Volver al inicio", quran: "Abrir el Corán" },
   id: { code: "404", title: "Halaman ini tidak ada", body: "Tautan mungkin sudah usang atau salah ketik. Silakan lanjut ke:", home: "Kembali ke beranda", quran: "Buka Al-Qur'an" },
   ms: { code: "404", title: "Halaman ini tidak wujud", body: "Pautan mungkin sudah lapuk atau tersalah taip. Teruskan ke:", home: "Kembali ke laman utama", quran: "Buka Quran" },
   bn: { code: "404", title: "এই পৃষ্ঠাটি নেই", body: "লিংকটি হয়তো পুরোনো, নয়তো ভুল লেখা হয়েছে। এখান থেকে এগিয়ে যান:", home: "হোম পেজে ফিরে যান", quran: "কুরআন খুলুন" },
   ru: { code: "404", title: "Такой страницы нет", body: "Возможно, ссылка устарела или в ней опечатка. Вот куда можно перейти:", home: "На главную", quran: "Открыть Коран" },
-  zh: { code: "404", title: "该页面不存在", body: "链接可能已过期或输入有误。你可以前往：", home: "返回首页", quran: "打开古兰经" },
+  zh: { code: "404", title: "该页面不存在", body: "链接可能已过期或输入有误。您可以前往：", home: "返回首页", quran: "打开古兰经" },
 };
 
 export default async function NotFound() {

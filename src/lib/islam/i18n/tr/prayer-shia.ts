@@ -18,7 +18,7 @@ Ayrıntılara bakmadan önce en önemli nokta: Şii ve Sünni Müslümanların n
 - **Aynı şartlar:** taharet, temiz elbise ve yer, uygun örtünme, doğru vakit ve niyet.
 - **Aynı rükünler:** iftitah tekbiri, kıyam, Fâtiha, rükû, her rekâtta iki secde, şahadet ve selam.
 
-Allah şöyle buyurur: "Namazı dosdoğru kılın, zekâtı verin ve rükû edenlerle birlikte rükû edin" ([2:43](/surah/2)) ve: "Şüphesiz namaz, hayâsızlıktan ve kötülükten alıkoyar" ([29:45](/surah/29)). Bu ayetler bütün Müslümanlar için aynı şekilde geçerlidir. Sünni anlatımı [Namaz nasıl kılınır – Sünni İslam'da](/islam/prayer-sunni) bölümünde bulabilirsin.
+Allah şöyle buyurur: "Namazı dosdoğru kılın, zekâtı verin ve rükû edenlerle birlikte rükû edin" ([2:43](/surah/2)) ve: "Şüphesiz namaz, hayâsızlıktan ve kötülükten alıkoyar" ([29:45](/surah/29)). Bu ayetler bütün Müslümanlar için aynı şekilde geçerlidir. Sünni anlatımı [Namaz nasıl kılınır – Sünni İslam'da](/islam/prayer-sunni) bölümünde bulabilirsiniz.
 
 ## Namaz vakitleri ve namazları birleştirme
 
@@ -28,18 +28,18 @@ Caferî mezhebinde öğle ile ikindi namazlarını, aynı şekilde akşam ile ya
 
 Abdest ayeti herkes için aynıdır ([5:6](/surah/5)). Caferî mezhebi baş ve ayakların kalan ıslaklıkla meshedilmesi (mesh) gerektiğini anlar. Abdest şöyle alınır:
 
-1. **Niyet:** Kalbinde Allah için abdest almaya niyet et. Öncesinde ellerin yıkanması, ağız ve burnun çalkalanması tavsiye edilir.
-2. **Yüz:** Yüzü yukarıdan aşağıya yıka – saç çizgisinden çeneye, genişlikte ise uzatılmış orta parmak ile baş parmak arasında kalan kısım.
-3. **Sağ kol:** Dirsekten parmak uçlarına kadar yıka – yukarıdan aşağıya.
+1. **Niyet:** Kalbinizde Allah için abdest almaya niyet edin. Öncesinde ellerin yıkanması, ağız ve burnun çalkalanması tavsiye edilir.
+2. **Yüz:** Yüzü yukarıdan aşağıya yıkayın – saç çizgisinden çeneye, genişlikte ise uzatılmış orta parmak ile baş parmak arasında kalan kısım.
+3. **Sağ kol:** Dirsekten parmak uçlarına kadar yıkayın – yukarıdan aşağıya.
 4. **Sol kol:** aynı şekilde, dirsekten parmak uçlarına kadar.
-5. **Baş:** Sağ elde kalan ıslaklıkla başın ön kısmını meshet – yeni su almadan.
-6. **Ayaklar:** Kalan ıslaklıkla ayağın üstünü, ayak parmaklarının uçlarından bileğe (eklem) kadar meshet – sağ ayağı sağ elle, sol ayağı sol elle.
+5. **Baş:** Sağ elde kalan ıslaklıkla başın ön kısmını meshedin – yeni su almadan.
+6. **Ayaklar:** Kalan ıslaklıkla ayağın üstünü, ayak parmaklarının uçlarından bileğe (eklem) kadar meshedin – sağ ayağı sağ elle, sol ayağı sol elle.
 
 Yüz ve kolların bir kez yıkanması farzdır, ikinci kez yıkamak caizdir, daha fazlası yapılmaz. Sıra (tertip) ve ara vermeden yapmak (muvâlât) farzdır.
 
 **Gusül** (boy abdesti), cinsel ilişkiden sonra ve aybaşı (hayız) ile lohusalık kanamasından sonra alınır – ya sırayla (önce baş ve boyun, sonra vücudun sağ tarafı, sonra sol tarafı) ya da tamamen suya dalarak.
 
-**Teyemmüm** (kuru arınma, [5:6](/surah/5), [4:43](/surah/4)), su bulunmadığında ya da zararlı olduğunda: iki avucunu temiz toprağa vur, onlarla alnı saç çizgisinden burun ucuna kadar meshet, sonra sol avuçla sağ elin üstünü, sağ avuçla sol elin üstünü meshet.
+**Teyemmüm** (kuru arınma, [5:6](/surah/5), [4:43](/surah/4)), su bulunmadığında ya da zararlı olduğunda: iki avucunuzu temiz toprağa vurun, onlarla alnı saç çizgisinden burun ucuna kadar meshedin, sonra sol avuçla sağ elin üstünü, sağ avuçla sol elin üstünü meshedin.
 
 ## Ezan ve kamet
 
@@ -62,23 +62,23 @@ Peygamber ﷺ'e dair şahitlikten sonra birçok mümin *Eşhedü enne Aliyyen ve
 
 Örnek olarak iki rekâtlık bir namaz (sabah) ile:
 
-1. **Niyet:** Kıbleye dönerek ayakta dur ve kalbinle niyet et; örneğin "Allah'a yakınlık dileyerek sabah namazını, iki rekât, kılıyorum."
-2. **İftitah tekbiri (tekbîretü'l-ihrâm):** Ellerini kulak hizasına kaldır ve *Allâhü ekber* (الله أكبر) – "Allah en büyüktür" de.
-3. **Kıyam (ayakta durmak):** Kollar sakin bir şekilde yanlarda sarkar, eller uyluklar üzerinde durur. Eller gövdenin önünde kavuşturulmaz. Bakışın secde yerinde durur.
-4. **Fâtiha:** [Fâtiha Suresi](/surah/1)ni *Bismillâhirrahmânirrahîm* ile başlayarak oku. Fâtiha'dan sonra *Âmîn* denmez; Caferî öğretisine göre namazda söylenmez.
+1. **Niyet:** Kıbleye dönerek ayakta durun ve kalbinizle niyet edin; örneğin "Allah'a yakınlık dileyerek sabah namazını, iki rekât, kılıyorum."
+2. **İftitah tekbiri (tekbîretü'l-ihrâm):** Ellerinizi kulak hizasına kaldırın ve *Allâhü ekber* (الله أكبر) – "Allah en büyüktür" deyin.
+3. **Kıyam (ayakta durmak):** Kollar sakin bir şekilde yanlarda sarkar, eller uyluklar üzerinde durur. Eller gövdenin önünde kavuşturulmaz. Bakışınız secde yerinde durur.
+4. **Fâtiha:** [Fâtiha Suresi](/surah/1)ni *Bismillâhirrahmânirrahîm* ile başlayarak okuyun. Fâtiha'dan sonra *Âmîn* denmez; Caferî öğretisine göre namazda söylenmez.
 5. **Tam bir sure:** İlk iki rekâtta, besmelesiyle birlikte bütün bir sure daha gelir; örneğin [İhlâs](/surah/112) ya da Kadr.
-6. **Kunût (ikinci rekâtta):** Surenin ardından ve rükûdan önce, ellerini yüzünün önüne, avuçlar yukarı bakacak şekilde kaldır ve bir dua et; örneğin *Rabbenâ âtinâ fid-dünyâ haseneten ve fil-âhirati haseneten ve kınâ azâbe'n-nâr* – "Rabbimiz, bize dünyada iyilik ver, âhirette de iyilik ver ve bizi ateşin azabından koru" ([2:201](/surah/2)). Kunût kuvvetle tavsiye edilir.
-7. **Rükû (eğilmek):** *Allâhü ekber* de, ellerin dizlerinde olacak şekilde eğil ve *Sübhâne Rabbiye'l-Azîmi ve bihamdih* (سبحان ربي العظيم وبحمده) – "Büyük olan Rabbimi tesbih ederim, hamd O'nadır" de.
-8. **Doğrulmak:** Tamamen dik dur ve bir an sakin kal. *Semiallâhü limen hamideh* – "Allah, kendisine hamdedeni işitir" demek tavsiye edilir.
-9. **Secde:** *Allâhü ekber* de ve vücudun yedi yeri üzerine secde et: alın, iki avuç, iki diz ve iki ayağın başparmakları. Alın, toprak üzerine ya da topraktan bitip yenmeyen ve giyilmeyen bir şeyin üzerine konur – genellikle bir türbe (turbah). *Sübhâne Rabbiye'l-A'lâ ve bihamdih* (سبحان ربي الأعلى وبحمده) – "En yüce olan Rabbimi tesbih ederim, hamd O'nadır" de.
-10. **İki secde arasında oturmak:** *Allâhü ekber*, sakince otur. *Estağfirullâhe Rabbî ve etûbü ileyh* – "Rabbim Allah'tan bağışlanma dilerim ve O'na tövbe ederek dönerim" demek tavsiye edilir.
+6. **Kunût (ikinci rekâtta):** Surenin ardından ve rükûdan önce, ellerinizi yüzünüzün önüne, avuçlar yukarı bakacak şekilde kaldırın ve bir dua edin; örneğin *Rabbenâ âtinâ fid-dünyâ haseneten ve fil-âhirati haseneten ve kınâ azâbe'n-nâr* – "Rabbimiz, bize dünyada iyilik ver, âhirette de iyilik ver ve bizi ateşin azabından koru" ([2:201](/surah/2)). Kunût kuvvetle tavsiye edilir.
+7. **Rükû (eğilmek):** *Allâhü ekber* deyin, elleriniz dizlerinizde olacak şekilde eğilin ve *Sübhâne Rabbiye'l-Azîmi ve bihamdih* (سبحان ربي العظيم وبحمده) – "Büyük olan Rabbimi tesbih ederim, hamd O'nadır" deyin.
+8. **Doğrulmak:** Tamamen dik durun ve bir an sakin kalın. *Semiallâhü limen hamideh* – "Allah, kendisine hamdedeni işitir" demek tavsiye edilir.
+9. **Secde:** *Allâhü ekber* deyin ve vücudun yedi yeri üzerine secde edin: alın, iki avuç, iki diz ve iki ayağın başparmakları. Alın, toprak üzerine ya da topraktan bitip yenmeyen ve giyilmeyen bir şeyin üzerine konur – genellikle bir türbe (turbah). *Sübhâne Rabbiye'l-A'lâ ve bihamdih* (سبحان ربي الأعلى وبحمده) – "En yüce olan Rabbimi tesbih ederim, hamd O'nadır" deyin.
+10. **İki secde arasında oturmak:** *Allâhü ekber*, sakince oturun. *Estağfirullâhe Rabbî ve etûbü ileyh* – "Rabbim Allah'tan bağışlanma dilerim ve O'na tövbe ederek dönerim" demek tavsiye edilir.
 11. **İkinci secde:** *Allâhü ekber*, öncekiyle aynı, aynı tesbihle.
-12. **İkinci rekât için kalkmak:** Kalkarken *Bihavlillâhi ve kuvvetihî ekûmü ve ek'ud* – "Allah'ın gücü ve kuvvetiyle kalkar ve otururum" demek tavsiye edilir. İkinci rekâtta 4. adımdan 11. adıma kadar olanları, kunût (6. adım) dahil, tekrarla.
-13. **Teşehhüd:** İkinci secdeden sonra oturmaya devam et ve şunu söyle: *Eşhedü en lâ ilâhe illallâhü vahdehû lâ şerîke leh, ve eşhedü enne Muhammeden abdühû ve resûlüh. Allâhümme salli alâ Muhammedin ve âli Muhammed* – "Şahitlik ederim ki Allah'tan başka ilah yoktur, O tektir, ortağı yoktur ve şahitlik ederim ki Muhammed O'nun kulu ve resulüdür. Allah'ım, Muhammed'e ve Muhammed'in âline salât et."
+12. **İkinci rekât için kalkmak:** Kalkarken *Bihavlillâhi ve kuvvetihî ekûmü ve ek'ud* – "Allah'ın gücü ve kuvvetiyle kalkar ve otururum" demek tavsiye edilir. İkinci rekâtta 4. adımdan 11. adıma kadar olanları, kunût (6. adım) dahil, tekrarlayın.
+13. **Teşehhüd:** İkinci secdeden sonra oturmaya devam edin ve şunu söyleyin: *Eşhedü en lâ ilâhe illallâhü vahdehû lâ şerîke leh, ve eşhedü enne Muhammeden abdühû ve resûlüh. Allâhümme salli alâ Muhammedin ve âli Muhammed* – "Şahitlik ederim ki Allah'tan başka ilah yoktur, O tektir, ortağı yoktur ve şahitlik ederim ki Muhammed O'nun kulu ve resulüdür. Allah'ım, Muhammed'e ve Muhammed'in âline salât et."
 14. **Selam:** *Es-selâmü aleyke eyyühen-nebiyyü ve rahmetullâhi ve berekâtüh. Es-selâmü aleynâ ve alâ ibâdillâhis-sâlihîn. Es-selâmü aleyküm ve rahmetullâhi ve berekâtüh* – "Selam sana, ey Peygamber, Allah'ın rahmeti ve bereketleri de üzerine olsun. Selam bize ve Allah'ın salih kulları üzerine olsun. Selam hepinize ve Allah'ın rahmeti ve bereketleri üzerinize olsun." Bununla namaz tamamlanmış olur.
-15. **Sonda üç tekbir:** Ardından her seferinde ellerini kulaklara kaldırarak üç kez *Allâhü ekber* demek tavsiye edilir.
+15. **Sonda üç tekbir:** Ardından her seferinde elleri kulaklara kaldırarak üç kez *Allâhü ekber* demek tavsiye edilir.
 
-**Üç ya da dört rekâtlık namazlarda:** İkinci rekâttan sonra yalnızca teşehhüdü (13. adım) okur ve ayağa kalkarsın. Üçüncü ve dördüncü rekâtlarda sessizce ya Fâtiha'yı ya da "dört tesbih"i (et-tesbîhâtü'l-erbaa) okursun: *Sübhânallâhi vel-hamdü lillâhi ve lâ ilâhe illallâhü vallâhü ekber* – "Allah'ı tesbih ederim, hamd Allah'a mahsustur, Allah'tan başka ilah yoktur ve Allah en büyüktür". Bunlar genellikle üç kez söylenir. Son oturuşta teşehhüd ve selam gelir.
+**Üç ya da dört rekâtlık namazlarda:** İkinci rekâttan sonra yalnızca teşehhüdü (13. adım) okur ve ayağa kalkarsınız. Üçüncü ve dördüncü rekâtlarda sessizce ya Fâtiha'yı ya da "dört tesbih"i (et-tesbîhâtü'l-erbaa) okursunuz: *Sübhânallâhi vel-hamdü lillâhi ve lâ ilâhe illallâhü vallâhü ekber* – "Allah'ı tesbih ederim, hamd Allah'a mahsustur, Allah'tan başka ilah yoktur ve Allah en büyüktür". Bunlar genellikle üç kez söylenir. Son oturuşta teşehhüd ve selam gelir.
 
 ## Neden toprak üzerine secde edilir?
 
@@ -86,7 +86,7 @@ Peygamber ﷺ şöyle buyurmuştur: "Yeryüzü benim için mescit (secde yeri) v
 
 ## Namazdan sonra: Fâtıma tesbihi
 
-Namazdan sonra birçok kişi **Fâtıma ez-Zehrâ'nın (عليها السلام) tesbihini** çeker: 34× *Allâhü ekber*, 33× *Elhamdülillah* ve 33× *Sübhânallah*. Peygamber ﷺ bu tesbihi kızı Fâtıma'ya ve Ali'ye (عليه السلام) öğretmiştir; rivayet Sahîh-i Buhârî ve Sahîh-i Müslim'de de bulunur. Daha fazla duayı [Dualar](/duas) bölümünde bulabilirsin.
+Namazdan sonra birçok kişi **Fâtıma ez-Zehrâ'nın (عليها السلام) tesbihini** çeker: 34× *Allâhü ekber*, 33× *Elhamdülillah* ve 33× *Sübhânallah*. Peygamber ﷺ bu tesbihi kızı Fâtıma'ya ve Ali'ye (عليه السلام) öğretmiştir; rivayet Sahîh-i Buhârî ve Sahîh-i Müslim'de de bulunur. Daha fazla duayı [Dualar](/duas) bölümünde bulabilirsiniz.
 
 ## Yolcular, kadınlar ve hastalar
 
@@ -100,15 +100,15 @@ Sünni ve Şii Müslümanlar aynı Rabbe namaz kılar, aynı Kur'an'ı okur, ayn
 
 Birleşik Arap Emirlikleri'nde her mezhepten Müslümanlar yan yana namaz kılar: camilerde, iş yerinde, yolculukta. Ellerini farklı tutan ya da türbe üzerinde namaz kılan birinin yanında duran kişi, namazda bir kardeşinin yanında durmaktadır.
 
-## Kendi mezhebinin bir öğretmeniyle öğren
+## Kendi mezhebinizin bir öğretmeniyle öğrenin
 
-Bu bölüm Caferî uygulamasına dair özenli bir genel bakış sunar, ama eğitimin yerini tutmaz. Kesin hükümler âlimlerin amelî fıkıh kılavuzlarında (Tevzîhu'l-Mesâil) bulunur. Ayrıntıları topluluğundaki nitelikli bir öğretmenden öğren ve merciinin hükümlerine uy. Allah namazını kabul etsin.`,
+Bu bölüm Caferî uygulamasına dair özenli bir genel bakış sunar, ama eğitimin yerini tutmaz. Kesin hükümler âlimlerin amelî fıkıh kılavuzlarında (Tevzîhu'l-Mesâil) bulunur. Ayrıntıları topluluğunuzdaki nitelikli bir öğretmenden öğrenin ve merciinizin hükümlerine uyun. Allah namazınızı kabul etsin.`,
   faq: [
     { q: "Şii Müslümanlar günde yalnızca üç kez mi namaz kılar?", a: "Hayır. Toplam 17 rekâtlık beş farz namazın hepsini kılarlar. Caferî mezhebinde öğle ile ikindi, akşam ile yatsı birleştirilebilir; böylece beş namaz günün üç vaktinde eda edilebilir." },
     { q: "Türbe (turbah) nedir?", a: "Secdede alnın üzerine konduğu saf kilden küçük bir tablettir. Caferî mezhebinin gerektirdiği şekilde alnın toprak üzerinde durmasını sağlar. Ona tapılmaz; herhangi bir saf toprak, taş ya da hurma yaprağı aynı amaca hizmet eder." },
     { q: "Ali'ye dair şahitlik ezanın bir parçası mı?", a: "Şii âlimlerin çoğu “Eşhedü enne Aliyyen veliyyullah” ifadesini tavsiye edilen bir ilave sayar, zorunlu ezanın bir parçası saymaz." },
     { q: "Neden ayakta dururken eller kavuşturulmaz?", a: "Caferî mezhebinin dayandığı rivayetlere göre ibadet edenler kolları yanlarda sarkık, elleri uyluklarının üzerinde olacak şekilde durur. Birçok Mâlikî de ellerini yanlarda tutarak namaz kılar." },
-    { q: "Başka bir mezhebin imamının arkasında namaz kılabilir miyim?", a: "Birlikte namaz kılmak, Emirlikler dahil birçok camide günlük gerçekliktir. Geçerlilikle ilgili kesin kurallar için merciine ya da yerel âlimine sormak en iyisidir." },
+    { q: "Başka bir mezhebin imamının arkasında namaz kılabilir miyim?", a: "Birlikte namaz kılmak, Emirlikler dahil birçok camide günlük gerçekliktir. Geçerlilikle ilgili kesin kurallar için merciinize ya da yerel âliminize sormak en iyisidir." },
   ],
   sources: [
     "Kur'an 2:43, 2:201, 2:286, 4:43, 4:101, 5:6, 29:45, 62:9",

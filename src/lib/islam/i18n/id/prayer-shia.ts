@@ -63,11 +63,11 @@ Setelah kesaksian tentang Nabi ﷺ, banyak orang beriman menambahkan *Ash-hadu a
 Dengan contoh shalat dua rakaat (Subuh):
 
 1. **Niat:** Berdirilah menghadap kiblat dan berniatlah dalam hati, misalnya "Aku shalat Subuh, dua rakaat, untuk mendekatkan diri kepada Allah."
-2. **Takbiratul ihram:** Angkat kedua tanganmu setinggi telinga dan ucapkan *Allahu akbar* (الله أكبر) – "Allah Maha Besar".
-3. **Berdiri (qiyam):** Kedua lengan dibiarkan lurus dengan tenang di sisi badan, kedua tangan bertumpu di paha. Tangan tidak disedekapkan di depan badan. Pandanganmu tertuju pada tempat sujud.
+2. **Takbiratul ihram:** Angkat kedua tangan Anda setinggi telinga dan ucapkan *Allahu akbar* (الله أكبر) – "Allah Maha Besar".
+3. **Berdiri (qiyam):** Kedua lengan dibiarkan lurus dengan tenang di sisi badan, kedua tangan bertumpu di paha. Tangan tidak disedekapkan di depan badan. Pandangan Anda tertuju pada tempat sujud.
 4. **Al-Fatihah:** Bacalah [surah pembuka](/surah/1), diawali dengan *Bismillahi r-Rahmani r-Rahim*. Tidak diucapkan *Amin* setelah Al-Fatihah; menurut ajaran Ja'fari, hal itu tidak boleh diucapkan dalam shalat.
 5. **Satu surah lengkap:** Pada dua rakaat pertama dibaca satu surah penuh lainnya, beserta basmalahnya, misalnya [Al-Ikhlas](/surah/112) atau Al-Qadr.
-6. **Qunut (pada rakaat kedua):** Setelah surah dan sebelum rukuk, angkat kedua tanganmu di depan wajah, telapak menghadap ke atas, dan panjatkan doa, misalnya *Rabbana atina fi d-dunya hasanah, wa fi l-akhirati hasanah, wa qina 'adhaba n-nar* – "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka" ([2:201](/surah/2)). Qunut sangat dianjurkan.
+6. **Qunut (pada rakaat kedua):** Setelah surah dan sebelum rukuk, angkat kedua tangan Anda di depan wajah, telapak menghadap ke atas, dan panjatkan doa, misalnya *Rabbana atina fi d-dunya hasanah, wa fi l-akhirati hasanah, wa qina 'adhaba n-nar* – "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka" ([2:201](/surah/2)). Qunut sangat dianjurkan.
 7. **Rukuk:** Ucapkan *Allahu akbar*, rukuklah dengan kedua tangan di atas lutut dan ucapkan *Subhana Rabbiyal-'Azimi wa bihamdih* (سبحان ربي العظيم وبحمده) – "Mahasuci Tuhanku Yang Mahaagung, dan segala puji bagi-Nya".
 8. **Bangkit:** Berdirilah tegak sepenuhnya dan diamlah sejenak. Dianjurkan mengucapkan *Sami'a llahu liman hamidah* – "Allah mendengar orang yang memuji-Nya".
 9. **Sujud:** Ucapkan *Allahu akbar* dan bersujudlah pada tujuh anggota tubuh: dahi, kedua telapak tangan, kedua lutut, dan kedua ibu jari kaki. Dahi diletakkan di atas tanah atau sesuatu yang tumbuh dari tanah dan tidak dimakan maupun dipakai – biasanya turbah. Ucapkan *Subhana Rabbiyal-A'la wa bihamdih* (سبحان ربي الأعلى وبحمده) – "Mahasuci Tuhanku Yang Mahatinggi, dan segala puji bagi-Nya".
@@ -78,7 +78,7 @@ Dengan contoh shalat dua rakaat (Subuh):
 14. **Salam:** *As-salamu 'alayka ayyuha n-nabiyyu wa rahmatullahi wa barakatuh. As-salamu 'alayna wa 'ala 'ibadillahi s-salihin. As-salamu 'alaykum wa rahmatullahi wa barakatuh* – "Salam sejahtera atasmu, wahai Nabi, begitu pula rahmat Allah dan berkah-Nya. Salam sejahtera atas kami dan atas hamba-hamba Allah yang saleh. Salam sejahtera atas kalian semua beserta rahmat Allah dan berkah-Nya." Dengan ini shalat selesai.
 15. **Tiga takbir di akhir:** Dianjurkan setelah itu mengucapkan *Allahu akbar* tiga kali, dengan mengangkat kedua tangan setinggi telinga setiap kali.
 
-**Untuk shalat tiga atau empat rakaat:** Setelah rakaat kedua kamu hanya membaca tasyahud (langkah 13) lalu berdiri. Pada rakaat ketiga dan keempat kamu membaca dengan pelan Al-Fatihah atau "empat tasbih" (at-tasbihat al-arba'ah): *Subhanallahi wa l-hamdu lillahi wa la ilaha illallahu wallahu akbar* – "Mahasuci Allah, segala puji bagi Allah, tiada tuhan selain Allah, dan Allah Maha Besar". Biasanya diucapkan tiga kali. Pada duduk terakhir dibaca tasyahud dan salam.
+**Untuk shalat tiga atau empat rakaat:** Setelah rakaat kedua Anda hanya membaca tasyahud (langkah 13) lalu berdiri. Pada rakaat ketiga dan keempat Anda membaca dengan pelan Al-Fatihah atau "empat tasbih" (at-tasbihat al-arba'ah): *Subhanallahi wa l-hamdu lillahi wa la ilaha illallahu wallahu akbar* – "Mahasuci Allah, segala puji bagi Allah, tiada tuhan selain Allah, dan Allah Maha Besar". Biasanya diucapkan tiga kali. Pada duduk terakhir dibaca tasyahud dan salam.
 
 ## Mengapa bersujud di atas tanah?
 
@@ -86,11 +86,11 @@ Nabi ﷺ bersabda: "Bumi dijadikan bagiku sebagai tempat sujud dan sarana bersuc
 
 ## Setelah shalat: tasbih Fatimah
 
-Setelah shalat banyak orang membaca **tasbih Fatimah az-Zahra (عليها السلام)**: 34× *Allahu akbar*, 33× *Alhamdulillah*, dan 33× *Subhanallah*. Nabi ﷺ mengajarkan tasbih ini kepada putrinya Fatimah dan kepada Ali (عليه السلام); riwayatnya juga terdapat dalam Sahih al-Bukhari dan Sahih Muslim. Doa-doa lainnya dapat kamu temukan di [Doa](/duas).
+Setelah shalat banyak orang membaca **tasbih Fatimah az-Zahra (عليها السلام)**: 34× *Allahu akbar*, 33× *Alhamdulillah*, dan 33× *Subhanallah*. Nabi ﷺ mengajarkan tasbih ini kepada putrinya Fatimah dan kepada Ali (عليه السلام); riwayatnya juga terdapat dalam Sahih al-Bukhari dan Sahih Muslim. Doa-doa lainnya dapat Anda temukan di [Doa](/duas).
 
 ## Musafir, perempuan, dan orang sakit
 
-**Musafir** wajib meringkas shalat empat rakaat menjadi dua (qasar, [4:101](/surah/4)) apabila perjalanannya mencapai jarak minimal tertentu (sekitar 44 km, menurut fatwa marja' kamu). Subuh dan Magrib tidak berubah. **Perempuan** shalat dengan cara yang sama; selama haid dan nifas tidak ada shalat, dan tidak perlu diganti. **Orang sakit** shalat sesuai kemampuannya – sambil duduk atau berbaring; Allah tidak membebani seseorang melebihi kesanggupannya ([2:286](/surah/2)). **Shalat Jumat** ([62:9](/surah/62)) diselenggarakan di banyak komunitas Syiah; mengenai kedudukannya yang tepat, seseorang mengikuti marja'-nya sendiri.
+**Musafir** wajib meringkas shalat empat rakaat menjadi dua (qasar, [4:101](/surah/4)) apabila perjalanannya mencapai jarak minimal tertentu (sekitar 44 km, menurut fatwa marja' Anda). Subuh dan Magrib tidak berubah. **Perempuan** shalat dengan cara yang sama; selama haid dan nifas tidak ada shalat, dan tidak perlu diganti. **Orang sakit** shalat sesuai kemampuannya – sambil duduk atau berbaring; Allah tidak membebani seseorang melebihi kesanggupannya ([2:286](/surah/2)). **Shalat Jumat** ([62:9](/surah/62)) diselenggarakan di banyak komunitas Syiah; mengenai kedudukannya yang tepat, seseorang mengikuti marja'-nya sendiri.
 
 ## Sumber bersama dan saling menghormati
 
@@ -100,15 +100,15 @@ Muslim Sunni dan Syiah shalat kepada Tuhan yang sama, membaca Al-Qur'an yang sam
 
 Di Uni Emirat Arab, Muslim dari semua mazhab shalat berdampingan: di masjid, di tempat kerja, dalam perjalanan. Siapa pun yang berdiri di samping orang yang meletakkan tangannya secara berbeda atau bersujud di atas turbah sedang berdiri di samping saudara atau saudarinya dalam shalat.
 
-## Belajar bersama guru dari mazhabmu
+## Belajar bersama guru dari mazhab Anda
 
-Bab ini memberikan gambaran umum yang cermat tentang praktik Ja'fari, tetapi tidak menggantikan pengajaran langsung. Hukum-hukum yang rinci terdapat dalam buku panduan fikih praktis (Tawdih al-Masa'il) karya para ulama. Pelajari rinciannya dari guru yang kompeten di komunitasmu dan ikutilah fatwa marja' kamu. Semoga Allah menerima shalatmu.`,
+Bab ini memberikan gambaran umum yang cermat tentang praktik Ja'fari, tetapi tidak menggantikan pengajaran langsung. Hukum-hukum yang rinci terdapat dalam buku panduan fikih praktis (Tawdih al-Masa'il) karya para ulama. Pelajari rinciannya dari guru yang kompeten di komunitas Anda dan ikutilah fatwa marja' Anda. Semoga Allah menerima shalat Anda.`,
   faq: [
     { q: "Apakah Muslim Syiah shalat hanya tiga kali sehari?", a: "Tidak. Mereka melaksanakan kelima shalat wajib dengan total 17 rakaat. Dalam mazhab Ja'fari, Zuhur dengan Asar, serta Magrib dengan Isya, boleh dijamak, sehingga kelima shalat dapat dilaksanakan pada tiga waktu dalam sehari." },
     { q: "Apa itu turbah?", a: "Sebuah lempengan kecil dari tanah liat murni tempat dahi diletakkan saat sujud. Ia memastikan dahi bertumpu pada tanah, sebagaimana disyaratkan mazhab Ja'fari. Ia tidak disembah; tanah murni apa pun, batu, atau daun kurma memenuhi tujuan yang sama." },
     { q: "Apakah kesaksian tentang Ali bagian dari azan?", a: "Sebagian besar ulama Syiah memandang \"Ash-hadu anna 'Aliyyan waliyyullah\" sebagai tambahan yang dianjurkan, tetapi bukan bagian dari azan yang wajib." },
     { q: "Mengapa tangan tidak disedekapkan saat berdiri?", a: "Menurut riwayat-riwayat yang menjadi pegangan mazhab Ja'fari, orang yang shalat berdiri dengan lengan lurus di sisi badan dan kedua tangan di atas paha. Banyak ulama Maliki juga shalat dengan tangan di sisi badan." },
-    { q: "Bolehkah saya shalat di belakang imam dari mazhab lain?", a: "Shalat bersama adalah kenyataan sehari-hari di banyak masjid, termasuk di Emirat. Untuk aturan keabsahan yang tepat, sebaiknya tanyakan kepada marja' kamu atau ulama setempat." },
+    { q: "Bolehkah saya shalat di belakang imam dari mazhab lain?", a: "Shalat bersama adalah kenyataan sehari-hari di banyak masjid, termasuk di Emirat. Untuk aturan keabsahan yang tepat, sebaiknya tanyakan kepada marja' Anda atau ulama setempat." },
   ],
   sources: [
     "Al-Qur'an 2:43, 2:201, 2:286, 4:43, 4:101, 5:6, 29:45, 62:9",

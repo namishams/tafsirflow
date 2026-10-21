@@ -4,7 +4,7 @@ const c: AboutContent = {
   eyebrow: "À propos",
   title: "Conçu à Dubaï – pour tous ceux qui veulent apprendre le Coran",
   lead: "Quran Masterclass est une plateforme gratuite pour écouter, comprendre, mémoriser et réciter magnifiquement le Coran – en 13 langues, pour les enfants et les adultes, où qu'ils vivent. Voici l'histoire qui se cache derrière.",
-  facts: [{ n: "13", l: "langues" }, { n: "114", l: "sourates, verset par verset" }, { n: "0 €", l: "de frais pour toi" }, { n: "0", l: "publicité" }],
+  facts: [{ n: "13", l: "langues" }, { n: "114", l: "sourates, verset par verset" }, { n: "0 €", l: "de frais pour vous" }, { n: "0", l: "publicité" }],
   story: `## Une pensée qui ne m'a plus quitté
 
 Il y a des soirs à Dubaï où la ville devient silencieuse. La circulation continue de gronder sur la Sheikh Zayed Road, les tours brillent, mais d'une mosquée du quartier s'élève la récitation de l'imam – et pendant un instant, plus rien d'autre ne compte. Quiconque a vécu cela comprend pourquoi le Coran n'est pas un livre comme les autres pour les musulmans. C'est la parole d'Allah. C'est ce que nous prononçons dans la prière, ce que nous enseignons à nos enfants et ce que nous espérons porter dans notre cœur à la fin de notre vie.
@@ -19,30 +19,30 @@ Quran Masterclass est né de ce contraste. **Nami Shams** a fondé la plateforme
 
 Le Prophète ﷺ a dit : « Le meilleur d'entre vous est celui qui apprend le Coran et l'enseigne. » (Sahih al-Bukhari) Il a dit aussi que le Coran viendra le Jour de la Résurrection comme intercesseur pour ceux qui l'ont lu (Sahih Muslim). Pour un croyant, il n'existe guère de savoir qui compte davantage.
 
-C'est pourquoi Quran Masterclass n'est pas une application de divertissement qui propose un peu de religion en passant. Ici, le Coran est au centre – chaque verset, avec son son, son sens et son explication. Tout le reste, les plans, la carte, l'académie, la radio, sert un seul but : que davantage de Coran entre dans ton cœur et y reste.
+C'est pourquoi Quran Masterclass n'est pas une application de divertissement qui propose un peu de religion en passant. Ici, le Coran est au centre – chaque verset, avec son son, son sens et son explication. Tout le reste, les plans, la carte, l'académie, la radio, sert un seul but : que davantage de Coran entre dans votre cœur et y reste.
 
 ## Ce que nous avons construit
 
-Au cœur se trouve la [Méthode Shams](/shams) : sept étapes par verset – écouter, le construire à rebours, le comprendre mot à mot, lire l'explication, le rappeler de mémoire, créer ton propre ancrage mémoriel, méditer. Un modèle de mémoire apprend quels versets te viennent facilement et lesquels non, et ramène chaque verset exactement au moment où il est sur le point de s'effacer. Sur ta [carte du Coran](/map), tu vois chaque jour ce qui est bien ancré et ce qui a besoin d'attention.
+Au cœur se trouve la [Méthode Shams](/shams) : sept étapes par verset – écouter, le construire à rebours, le comprendre mot à mot, lire l'explication, le rappeler de mémoire, créer votre propre ancrage mémoriel, méditer. Un modèle de mémoire apprend quels versets vous viennent facilement et lesquels non, et ramène chaque verset exactement au moment où il est sur le point de s'effacer. Sur votre [carte du Coran](/map), vous voyez chaque jour ce qui est bien ancré et ce qui a besoin d'attention.
 
 Autour : des [plans d'apprentissage](/plan) du rythme doux au hifz intensif, une [académie](/academy) avec leçons, tests et objectifs quotidiens, des [leçons de tajwid](/tajweed), un [entraîneur de vocabulaire](/vocab), un [planificateur de khatm](/khatm), des [invocations de la Sunna](/duas), les [heures de prière avec l'adhan](/prayer) et une [radio Coran](/radio) qui ne s'arrête jamais.
 
-Ce que nous ne faisons pas : nous n'inventons pas notre propre interprétation. Le texte du Coran, les traductions et le tafsir proviennent de sources reconnues et indiquent toujours leur origine. La Méthode Shams est une méthode d'apprentissage – ni un nouveau tafsir, ni un substitut à un professeur qui écoute ta récitation.`,
+Ce que nous ne faisons pas : nous n'inventons pas notre propre interprétation. Le texte du Coran, les traductions et le tafsir proviennent de sources reconnues et indiquent toujours leur origine. La Méthode Shams est une méthode d'apprentissage – ni un nouveau tafsir, ni un substitut à un professeur qui écoute votre récitation.`,
   valuesTitle: "Ce qui nous guide",
   values: [
     { t: "Gratuit pour tous", d: "Le Coran appartient à chaque musulman. Personne ne devrait arrêter d'apprendre parce qu'un abonnement est trop cher." },
     { t: "Sources authentiques", d: "Texte, traductions et tafsir issus de sources reconnues – toujours avec leur origine indiquée." },
-    { t: "Respect de tes données", d: "Pas de publicité, pas de services d'analyse, pas de vente de données. Mots de passe hachés, connexions chiffrées, export et suppression à tout moment." },
+    { t: "Respect de vos données", d: "Pas de publicité, pas de services d'analyse, pas de vente de données. Mots de passe hachés, connexions chiffrées, export et suppression à tout moment." },
     { t: "Dignité dans les échanges", d: "Les commentaires sont vérifiés avant d'apparaître. Ce qui est écrit ici doit être digne d'un lieu où l'on lit le Coran." },
-    { t: "Pour tous les âges", d: "Du premier verset d'un enfant au parcours hafiz, la méthode s'adapte à ton âge et à ton rythme." },
+    { t: "Pour tous les âges", d: "Du premier verset d'un enfant au parcours hafiz, la méthode s'adapte à votre âge et à votre rythme." },
     { t: "Honnêteté", d: "Pas de promesses inventées, pas de chiffres gonflés. Ce qui manque encore figure dans les nouveautés – et est en cours de construction." },
   ],
   freeTitle: "Gratuit – et pourquoi cela le restera",
-  free: `Quran Masterclass ne te coûte rien. Pas de période d'essai qui se termine au bout de sept jours. Pas de publicité entre deux versets. Pas de fonctionnalité qui ne se débloque qu'après paiement.
+  free: `Quran Masterclass ne vous coûte rien. Pas de période d'essai qui se termine au bout de sept jours. Pas de publicité entre deux versets. Pas de fonctionnalité qui ne se débloque qu'après paiement.
 
 La plateforme est **financée à titre privé par Nami Shams** – serveurs, développement, audio, tout. Elle est construite pour l'amour d'Allah, dans l'espoir que chaque verset que quelqu'un apprend ici devienne une bonne action continue (sadaqa jariya).
 
-Si tu veux aider, tu le peux : avec tes retours, en signalant des erreurs, avec des traductions – et avec tes du'a.`,
+Si vous voulez aider, vous le pouvez : avec vos retours, en signalant des erreurs, avec des traductions – et avec vos du'a.`,
   dubaiEyebrow: "Dubaï et le Coran",
   dubaiTitle: "Une ville de verre et d'acier – avec un cœur qui honore le Coran",
   dubaiLead: "Quand on pense à Dubaï, on pense aux gratte-ciel, au désert et à la mer, à une ville qui se réinvente chaque année. Ceux qui y vivent en connaissent une autre facette.",
@@ -75,11 +75,11 @@ Un foyer sûr, la tolérance entre des personnes venues du monde entier, le resp
 
 Je souhaite qu'un enfant à Hambourg, une grand-mère à Sarajevo, un étudiant à Jakarta et un chauffeur de taxi à Dubaï aient tous la même chance – gratuitement, dans leur langue, à leur rythme. Qu'ils avancent un peu plus chaque jour. Et qu'un jour, ils récitent dans la prière une sourate qu'ils ont apprise ici.
 
-Si cette plateforme t'aide, je ne te demande qu'une chose : fais des du'a pour tous ceux qui y ont contribué – et parles-en à quelqu'un d'autre qui veut apprendre.`,
+Si cette plateforme vous aide, je ne vous demande qu'une chose : faites des du'a pour tous ceux qui y ont contribué – et parlez-en à quelqu'un d'autre qui veut apprendre.`,
   signature: "Nami Shams",
   signatureRole: "Fondateur de Quran Masterclass · Dubaï",
-  contactTitle: "Écris-nous",
-  contact: "Questions, idées, une erreur dans le texte, des souhaits de nouvelles sources de tafsir ou de nouvelles langues : écris à **info@quranmasterclass.com** ou utilise notre [page de retours](/feedback). Ce que nous construisons est listé dans les [nouveautés](/changelog).",
+  contactTitle: "Écrivez-nous",
+  contact: "Questions, idées, une erreur dans le texte, des souhaits de nouvelles sources de tafsir ou de nouvelles langues : écrivez à **info@quranmasterclass.com** ou utilisez notre [page de retours](/feedback). Ce que nous construisons est listé dans les [nouveautés](/changelog).",
 };
 
 export default c;

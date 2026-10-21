@@ -11,9 +11,9 @@ const c: IslamChapter = {
   ],
   body: `## Lo que el islam significa para la persona
 
-Tarde o temprano, toda persona se hace las grandes preguntas: ¿de dónde vengo?, ¿para qué vivo?, ¿adónde voy? El islam da una respuesta que es a la vez clara y reconfortante. No estás aquí por casualidad. Allah te creó, Él te conoce, y tu vida tiene un propósito: conocerlo, adorarlo y llevar el bien al mundo.
+Tarde o temprano, toda persona se hace las grandes preguntas: ¿de dónde vengo?, ¿para qué vivo?, ¿adónde voy? El islam da una respuesta que es a la vez clara y reconfortante. No está aquí por casualidad. Allah le creó, Él le conoce, y su vida tiene un propósito: conocerlo, adorarlo y llevar el bien al mundo.
 
-Esta respuesta cobra vida en lo cotidiano. Cinco veces al día, la oración interrumpe el ajetreo. Dejas a un lado lo que te ocupa, te orientas hacia la Kaaba y te pones ante tu Señor. Quien lo ha vivido sabe que la oración no es una carga, sino un respiro para el alma.
+Esta respuesta cobra vida en lo cotidiano. Cinco veces al día, la oración interrumpe el ajetreo. Deja a un lado lo que le ocupa, se orienta hacia la Kaaba y se pone ante su Señor. Quien lo ha vivido sabe que la oración no es una carga, sino un respiro para el alma.
 
 Allah dice: "Aquellos que creen y cuyos corazones encuentran sosiego en el recuerdo de Allah; ciertamente, en el recuerdo de Allah encuentran sosiego los corazones" (13:28). En una época llena de ruido, presión e inquietud, esta paz interior es un regalo precioso.
 
@@ -57,7 +57,7 @@ En 2015, el Pew Research Center publicó una **proyección** muy comentada: seg�
 
 ### Jóvenes musulmanes y aprendizaje digital
 
-Esta generación joven aprende de forma distinta a la de sus abuelos. Escucha recitaciones en el teléfono, lee traducciones en su propio idioma y hace preguntas que las generaciones anteriores no se hacían exactamente de la misma manera. Es una gran oportunidad: nunca fue tan fácil escuchar, comprender y aprender el Corán, vivas en Dubái, Berlín, Yakarta o Toronto. Hoy el Corán habla a las personas en prácticamente todos los idiomas, mientras que su texto árabe se conserva sin cambios.
+Esta generación joven aprende de forma distinta a la de sus abuelos. Escucha recitaciones en el teléfono, lee traducciones en su propio idioma y hace preguntas que las generaciones anteriores no se hacían exactamente de la misma manera. Es una gran oportunidad: nunca fue tan fácil escuchar, comprender y aprender el Corán, viva en Dubái, Berlín, Yakarta o Toronto. Hoy el Corán habla a las personas en prácticamente todos los idiomas, mientras que su texto árabe se conserva sin cambios.
 
 ## Los desafíos
 
@@ -85,15 +85,15 @@ Lo más importante es esto: esta tolerancia no existe a pesar de la fe, sino por
 
 ¿Cómo será el futuro del islam? Depende menos de las cifras que de los corazones. El Profeta ﷺ dijo: "Los mejores de vosotros son quienes aprenden el Corán y lo enseñan" (al-Bujari). Y: "A quien emprende un camino en busca de conocimiento, Allah le facilita un camino al Paraíso" (Muslim).
 
-Precisamente por eso existe Quran Masterclass. Aquí puedes escuchar versículo a versículo, comprender el significado y leer el tafsir junto a él, de forma gratuita, en alemán e inglés. Deja que [Shams](/shams) te acompañe, profundiza tus conocimientos en la [Academia](/academy) y convierte las buenas intenciones en un hábito diario con tu [plan de aprendizaje](/plan) personal.
+Precisamente por eso existe Quran Masterclass. Aquí puede escuchar versículo a versículo, comprender el significado y leer el tafsir junto a él, de forma gratuita, en alemán e inglés. Deje que [Shams](/shams) le acompañe, profundice sus conocimientos en la [Academia](/academy) y convierta las buenas intenciones en un hábito diario con su [plan de aprendizaje](/plan) personal.
 
-El futuro del islam lo escriben quienes aprenden y viven el Corán. Quizá una parte de ese futuro comience hoy, contigo y con un solo versículo.`,
+El futuro del islam lo escriben quienes aprenden y viven el Corán. Quizá una parte de ese futuro comience hoy, con usted y con un solo versículo.`,
   faq: [
     { q: "¿Por qué el islam tiene tanto significado para tanta gente?", a: "Porque responde a las grandes preguntas de la vida, da paz interior mediante la oración y el recuerdo de Allah (13:28) y sienta una base clara para la familia, la justicia y la misericordia." },
     { q: "¿Cuántos musulmanes hay?", a: "Casi una cuarta parte de la humanidad sigue el islam. En 2015, el Pew Research Center proyectó que el número de musulmanes crecerá hasta 2050 más rápido que la población mundial y podría llegar a igualar casi al de cristianos: una proyección, no una certeza." },
     { q: "¿Qué dice el islam sobre el extremismo?", a: "Lo rechaza. Quitar una vida inocente es como matar a toda la humanidad (5:32), y los musulmanes son una comunidad del justo medio (2:143). La moderación, la misericordia y el conocimiento son el camino." },
     { q: "¿Qué es el Documento sobre la Fraternidad Humana?", a: "Una declaración conjunta firmada en Abu Dabi en febrero de 2019 por el papa Francisco y el Gran Imam de al-Azhar, el jeque Ahmed al-Tayeb. Hace un llamamiento a la paz, al respeto mutuo y a la convivencia." },
-    { q: "¿Cómo puedo contribuir yo mismo al futuro del islam?", a: "Aprendiendo y viviendo lo que aprendes: unos pocos versículos con su significado cada día, buena conducta con la familia y los vecinos, y respeto a todas las personas. Un plan de aprendizaje en Quran Masterclass te ayuda a mantener la constancia." },
+    { q: "¿Cómo puedo contribuir yo mismo al futuro del islam?", a: "Aprendiendo y viviendo lo que aprende: unos pocos versículos con su significado cada día, buena conducta con la familia y los vecinos, y respeto a todas las personas. Un plan de aprendizaje en Quran Masterclass le ayuda a mantener la constancia." },
   ],
   sources: [
     "Corán 2:30, 2:143, 4:135, 5:32, 7:31, 13:28, 20:114, 21:107, 49:13, 96:1",
