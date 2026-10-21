@@ -19,6 +19,7 @@ import { ExamBar, ExamBlocked, ExamVerdict } from "@/features/exam/ExamUI";
 import { shuffleWith, useExamSession } from "@/features/exam/integrity";
 import { rpRecitePlan } from "@/features/exam/plans";
 import { VerifiedCertLink } from "@/features/exam/Certificates";
+import { MisharyCard } from "@/features/mishary/Home";
 
 const unitHref = (id: string) => `/reciter-path/${id}` as Href;
 const examHref = (n: number) => `/reciter-path/exam/${n}` as Href;
@@ -115,6 +116,7 @@ export function PathHome() {
               </View>
             );
           })}
+          <MisharyCard />
           <Pressable onPress={() => router.push("/reciter-path/teacher" as Href)} accessibilityRole="button">
             <GoldCard>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}><Icon name="user" color={t.gold} /><Text style={{ flex: 1, fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{rt("teacherTitle")}</Text><Icon name="chevronRight" size={16} color={t.muted} /></View>

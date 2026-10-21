@@ -24,6 +24,7 @@ import {
   type FacultyId, type SchoolCourse, type StageId,
 } from "@/features/school/model";
 import { useCampusT, type CampusKey } from "./text";
+import { misharyTile } from "@/features/mishary/texts";
 import { WISDOM, WISDOM_REVIEW, tipOfDay, wisdomText, type Wisdom } from "./wisdom";
 
 // The campus: the Madrasa hero (stage, next step, today's wird, faculties, records) at the top of Discover and the
@@ -265,6 +266,7 @@ function useCampusRails(): { rails: Rail[]; stageItems: CampusItem[]; stageTitle
       item("wird", ct("wird"), ct("wirdD"), "ورد", "/shams/wird", null, 1),
       item("shams", ct("shams"), ct("shamsD"), "شمس", "/shams", shamsAll, 2),
       item("rp", ct("reciterPath"), ct("reciterPathD"), "تلاوة", "/reciter-path", progressOf({ k: "rp", from: 1, to: 10 }), 3),
+      item("mishary", misharyTile(lang).title, misharyTile(lang).sub, "قارئ", "/mishary", null, 4),
       item("tajweed", ct("tajweed"), ct("tajweedD"), "تجويد", "/tajweed", progressOf({ k: "tajweed" }), 4),
       ...course("tajweed-deep", 5),
       ...course("ulum", 6),
