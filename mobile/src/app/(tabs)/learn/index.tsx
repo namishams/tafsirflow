@@ -5,7 +5,6 @@ import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
 import { Eyebrow, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, gradientColors } from "@/components/brand";
-import { CampusRails, MadrasaHero } from "@/features/campus/Campus";
 import { ShamsModeChooser } from "@/features/shams2/ModeChooser";
 import { continueHref, useShamsMode } from "@/features/shams2/mode";
 import { useModeT } from "@/features/shams2/modeText";
@@ -22,6 +21,7 @@ import { shamsContent } from "@/web/shamsContent";
 import { ProPromo } from "@/features/learn/ProPromo";
 import { TodayPlanCard } from "@/features/plan/TodayPlanCard";
 import { SrsEntryCard } from "@/features/srs";
+import { SwipeEntryCard } from "@/features/swipe";
 import { ReciterPathCard } from "@/features/reciter-path/Screens";
 import { SchoolEntryCard } from "@/features/school/Screens";
 import { JourneyEntryCard } from "@/features/journey/JourneyScreen";
@@ -62,11 +62,8 @@ export default function Masterclass() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
-        {/* the Madrasa leads: stage, next step, today's wird, faculties and records */}
-        <MadrasaHero />
-
+        {/* tab 3 is the Shams Method (owner): Shams first; the Madrasa (hero, faculty rails) lives in Discover */}
         <View style={{ paddingHorizontal: 16, marginTop: 24, gap: 28 }}>
-          <GardenWidget />
           {/* the Shams Method (the former page hero) with the Shams Method 2.0 hub */}
           <Stage rounded={R.card} hairlines={false} style={{ borderWidth: 1, borderColor: "rgba(214,180,108,0.45)" }}>
             <View style={{ padding: 20, gap: 12 }}>
@@ -89,11 +86,10 @@ export default function Masterclass() {
             </View>
           </Stage>
           <TodayPlanCard />
+          <GardenWidget />
+          <SwipeEntryCard />
           <QbankEntryCard />
         </View>
-
-        {/* every course and tool by faculty, with progress, and what is in progress first */}
-        <View style={{ marginTop: 32 }}><CampusRails /></View>
 
         <View style={{ paddingHorizontal: 16, marginTop: 32, gap: 28 }}>
           <PersonaliseCard />
