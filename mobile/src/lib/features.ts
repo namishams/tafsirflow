@@ -10,6 +10,7 @@ const APP_ROUTES = new Set([
   "/khatm", "/assistant", "/world", "/prayer", "/guides", "/secrets", "/how", "/stats", "/ranking", "/dua-generator",
   "/community", "/wudu", "/calendar", "/names", "/search",
   "/feed", "/prophet-stories", // app-only: the Quran Feed and the stories (entry cards on Discover)
+  "/hadith", "/nahj", // app-only: hadith collections and the Nahj al-Balagha feed (Shia mode)
 ]);
 export const hasAppRoute = (href: string) => APP_ROUTES.has(href.split("?")[0]);
 

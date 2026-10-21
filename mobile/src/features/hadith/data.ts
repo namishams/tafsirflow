@@ -250,13 +250,12 @@ const feedItem = (h: HadithItem): HadithFeedItem => ({
  * loaded (offline, empty number) are skipped; a page may be shorter than `size` but is empty only when offline.
  */
 export async function hadithFeedItems(lang: string, tradition: TraditionChoice | null, cursor: string | null, size = 6): Promise<HadithFeedPage> {
-  const [seed, i0, nahjK] = cursor ? cursor.split(":").map(Number) : [Math.floor(Math.random() * 1e9), 0, -1];
   const plan = schedule(tradition);
   const ed = nahjEdition(lang);
-  // the Nahj part continues where the Nahj reader stopped, in its own shuffled order
-  const start = nahjK >= 0 ? nahjK : plan.some((p) => p.kind === "nahj") ? nahjPosition(ed).k : 0;
-  const nahjSeed = plan.some((p) => p.kind === "nahj") ? nahjPosition(ed).seed : 0;
-  let k = start;
+  const pos = !cursor && plan.some((p) => p.kind === "nahj") ? nahjPosition(ed) : { seed: 0, k: 0 };
+  // cursor = seed : next index : next Nahj passage : Nahj seed (the Nahj part starts where the Nahj reader stopped)
+  const [seed, i0, nahjK, nahjSeed] = cursor ? cursor.split(":").map(Number) : [Math.floor(Math.random() * 1e9), 0, pos.k, pos.seed];
+  let k = nahjK;
   const jobs = Array.from({ length: size }, (_, j) => {
     const i = i0 + j;
     const p = plan[i % plan.length];
@@ -264,7 +263,7 @@ export async function hadithFeedItems(lang: string, tradition: TraditionChoice |
     return pickOne(p, hash(seed, i), lang).catch(() => null);
   });
   const got = (await Promise.all(jobs)).filter((x): x is HadithItem => !!x);
-  return { items: got.map(feedItem), cursor: `${seed}:${i0 + size}:${k}` };
+  return { items: got.map(feedItem), cursor: `${seed}:${i0 + size}:${k}:${nahjSeed}` };
 }
 
 // --- saved -----------------------------------------------------------------------------------------------------------

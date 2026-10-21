@@ -29,6 +29,7 @@ import { CoachCard, MapCard, RewardsCard, WeekCard } from "@/features/progress";
 import { PrayerSetupCard } from "@/features/practice";
 import { Onboarding } from "@/features/extra/Onboarding";
 import { HadithOfTheDay, HowToPrayCard, NahjCard, TraditionAsk } from "@/features/hadith/cards";
+import { CommunityCard } from "@/features/community/ui";
 import { Announcement } from "@/features/extra/widgets/Announcement";
 import { courseLang } from "@/features/arabic/lang";
 import { FeedButton, FeedSpotlight } from "@/features/feed/EntryCards";
@@ -161,6 +162,7 @@ export default function Today() {
           <CoachCard />
           <VerseOfTheDay />
           <HadithOfTheDay />
+          <CommunityCard />
           <NahjCard />
           <PrayerSetupCard />
           <WeekCard />

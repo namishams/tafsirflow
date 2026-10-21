@@ -80,7 +80,8 @@ export function nahjPosition(ed: NahjEdition): NahjPos {
   const p = all[ed];
   if (p && Number.isFinite(p.seed) && Number.isFinite(p.k)) return p;
   const fresh = { seed: Math.floor(Math.random() * 1e9), k: 0 };
-  writeJSON(NAHJ_POS_KEY, { ...all, [ed]: fresh }, true);
+  // stored after the current render (this is read while rendering; a write now would re-render other screens mid-render)
+  setTimeout(() => { if (!readJSON<Partial<Record<NahjEdition, NahjPos>>>(NAHJ_POS_KEY, {})[ed]) saveNahjPosition(ed, fresh); }, 0);
   return fresh;
 }
 export function saveNahjPosition(ed: NahjEdition, pos: NahjPos) {

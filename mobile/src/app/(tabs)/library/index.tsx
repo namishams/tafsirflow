@@ -10,6 +10,7 @@ import { GROUPS, extraTool, routeOf, tile } from "@/lib/features";
 import { FeedSpotlight } from "@/features/feed/EntryCards";
 import { StoryRails } from "@/features/prophet/Rails";
 import { HadithSpotlight } from "@/features/hadith/cards";
+import { CommunityCard } from "@/features/community/ui";
 
 // Discover: every course and tool of the website as poster tiles, grouped like the website menu; search, the
 // Islamic calendar and the names finder (website menu items without a poster) in the same look
@@ -28,6 +29,7 @@ export default function Discover() {
         <View style={{ marginTop: 20, gap: 20 }}>
           <View style={{ paddingHorizontal: 16 }}><FeedSpotlight /></View>
           <View style={{ paddingHorizontal: 16 }}><HadithSpotlight /></View>
+          <View style={{ paddingHorizontal: 16 }}><CommunityCard /></View>
           <StoryRails />
         </View>
         <View style={{ paddingHorizontal: 16, gap: 32, marginTop: 28 }}>

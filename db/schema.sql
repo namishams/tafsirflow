@@ -252,6 +252,43 @@ CREATE TABLE IF NOT EXISTS ai_usage (
   PRIMARY KEY (user_id, kind, month)
 );
 
+-- reciters community (mini): profiles, follows, blocks, reports for the admin
+CREATE TABLE IF NOT EXISTS community_profiles (
+  user_id      bigint PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  username     text NOT NULL CHECK (username ~ '^[a-z0-9_.]{3,20}$'),
+  display_name text NOT NULL DEFAULT '',
+  bio          text NOT NULL DEFAULT '' CHECK (char_length(bio) <= 160),
+  country      text,
+  role         text NOT NULL DEFAULT 'learner' CHECK (role IN ('learner','reciter','teacher')),
+  style        text NOT NULL DEFAULT '',
+  has_ijaza    boolean NOT NULL DEFAULT false,
+  public       boolean NOT NULL DEFAULT true,
+  created_at   timestamptz NOT NULL DEFAULT now()
+);
+CREATE UNIQUE INDEX IF NOT EXISTS community_profiles_username ON community_profiles(username);
+CREATE TABLE IF NOT EXISTS community_follows (
+  follower_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  followee_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  created_at  timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (follower_id, followee_id),
+  CHECK (follower_id <> followee_id)
+);
+CREATE INDEX IF NOT EXISTS community_follows_followee ON community_follows(followee_id);
+CREATE TABLE IF NOT EXISTS community_blocks (
+  blocker_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  blocked_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (blocker_id, blocked_id)
+);
+CREATE TABLE IF NOT EXISTS community_reports (
+  id          bigserial PRIMARY KEY,
+  reporter_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  reported_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  reason      text NOT NULL DEFAULT '',
+  status      text NOT NULL DEFAULT 'open',
+  created_at  timestamptz NOT NULL DEFAULT now()
+);
+
 -- keep last: the app user needs rights on every table above
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
