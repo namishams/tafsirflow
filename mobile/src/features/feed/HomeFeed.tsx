@@ -48,6 +48,7 @@ import { statLike, statPost, statSave, statVerse, kindOfItem, useFeedTimer } fro
 import { LIB } from "./library";
 import { TodayRings } from "./Rings";
 import { AccountNudge, PromoCap, PromoPost, nudgeAccount } from "./Promo";
+import { MomentCard, MonetizeCap, OfferWrap, PaywallCard, PremiumPost, markShareMoment, usePurchaseAttribution } from "./monetize";
 import { dwell, engaged, isBored } from "./interest";
 import { LibraryPost, topicLabel as libTopicLabel } from "./LibraryPost";
 
@@ -157,6 +158,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
   const lib = useRef<LibScheduler | null>(null);
   // our own products: frequency-capped (Promo.tsx); the position counts from the start of the session
   const promo = useRef(new PromoCap());
+  // Pro posts, the paywall card and the celebration cards (monetize.tsx)
+  const mon = useRef(new MonetizeCap());
   const keysLenRef = useRef(0);
   const proRef = useRef(false);
   proRef.current = voice.pro;
@@ -212,6 +215,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       if (rand() < 0.5) out.push(...(lib.current?.take(1) ?? []));
       const ad = promo.current.at(keysLenRef.current + out.length, proRef.current);
       if (ad) out.push(ad);
+      else { const m = mon.current.at(keysLenRef.current + out.length, proRef.current); if (m) out.push(m); }
       if (out.length % (HADITH_EVERY + 1) === HADITH_EVERY && hq.current.queue.length) out.push(hq.current.queue.shift()!);
     }
     return out;
@@ -410,12 +414,16 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
     if (/^[vw]:/.test(item)) router.push(`/feed?key=${item.slice(2)}` as Href);
     else onTab("reels");
   }, [engine, onOpen, onTab]);
-  const render = useCallback(({ item, index }: { item: Item; index: number }) => {
+  usePurchaseAttribution(voice.pro);
+  const renderPost = useCallback(({ item, index }: { item: Item; index: number }) => {
     const ex = { item, width: colW, lang, reciter: voice.voiceFor(item), nameOf, reduce };
     if (item.startsWith("q:")) return <QuizPost {...ex} />;
     if (item.startsWith("c:")) return <CarouselPost {...ex} />;
     if (item.startsWith("m:")) return <MemoPost {...ex} />;
     if (item.startsWith("ad:")) return <PromoPost item={item} width={colW} />;
+    if (item.startsWith("pp:")) return <PremiumPost item={item} width={colW} pro={voice.pro} />;
+    if (item.startsWith("pw:")) return voice.pro ? <View style={{ height: 1 }} /> : <PaywallCard width={colW} />;
+    if (item.startsWith("mo:")) return <MomentCard item={item} width={colW} />;
     if (isLibId(item)) return <LibraryPost id={item} width={colW} reduce={reduce} />;
     if (item.startsWith("r:")) return <RecitersPost {...ex} voices={voices} engine={engine} active={index === active && tab === "home"} sound={focused && tab === "home"} />;
     if (item.startsWith("t:")) return <TranslitPost {...ex} />;
@@ -432,6 +440,8 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       engine={engine} lang={lang} reciter={voice.voiceFor(item)} nameOf={nameOf} reduce={reduce} stories={stories} quota={quota}
       onShare={setShare} onComments={setComments} onMenu={setMenu} />;
   }, [colW, active, tab, focused, muted, toggleMute, engine, lang, voice, voices, groups, nameOf, reduce, stories, quota]);
+  // contextual offers (personal dua, name report, Shams lesson, more reciters) under fitting posts
+  const render = useCallback((a: { item: Item; index: number }) => <OfferWrap item={a.item} pro={voice.pro} width={colW}>{renderPost(a)}</OfferWrap>, [renderPost, voice.pro, colW]);
 
   const sh = useMemo(() => {
     if (!share) return null;
@@ -574,7 +584,7 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
       <ExploreSheet visible={sheet === "explore"} onClose={() => setSheet(null)} onOpen={openItem} />
       <SavedSheet visible={sheet === "saved"} onClose={() => { setSheet(null); setTimeout(nudgeAccount, 500); }} onOpen={openItem} />
       <ReciterSheet visible={sheet === "voices"} onClose={() => setSheet(null)} />
-      {share?.kind === "hadith" ? <HadithShare item={share.h.item} onClose={() => setShare(null)} /> : null}
+      {share?.kind === "hadith" ? <HadithShare item={share.h.item} onClose={() => { markShareMoment(); setShare(null); }} /> : null}
       <AccountNudge />
       <CommentsSheet visible={!!comments} verseKey={comments ?? "1:1"} onClose={() => setComments(null)} />
       <StoryViewer groups={viewerGroups} start={viewer ? { group: viewer.group + Math.floor(viewer.group / PROMO_EVERY) * (voice.pro ? 0 : 1), story: viewer.story } : null} onClose={() => setViewer(null)} />
@@ -814,7 +824,7 @@ const Post = memo(function Post(p: PostProps) {
       <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 8, height: 46 }}>
         <IconBtn label={ws("like")} selected={liked} onPress={doLike} scale={pop}><Icon name="heart" filled={liked} color={liked ? HEART : t.ink} size={25} /></IconBtn>
         {verseKey ? <IconBtn label={tx.viewComments} onPress={() => p.onComments(verseKey)}><Icon name="comment" color={t.ink} size={24} /></IconBtn> : null}
-        <IconBtn label={ws("share")} onPress={onShare} disabled={!!verseKey && !data}><Icon name="share" color={t.ink} size={24} /></IconBtn>
+        <IconBtn label={ws("share")} onPress={onShare} disabled={!!verseKey && !data}><Icon name="send" color={t.ink} size={24} /></IconBtn>
         <View style={{ flex: 1 }} />
         <IconBtn label={saved ? wp("bookmarked") : wp("bookmark")} selected={saved} onPress={doSave} scale={popSave}><Icon name="bookmark" filled={saved} color={saved ? stage.gold : t.ink} size={24} /></IconBtn>
       </View>

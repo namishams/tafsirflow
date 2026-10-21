@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Text, View, type ScrollViewInstance } from "react-native";
-import { Stack } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import { useWebT } from "@/i18n/web";
 import { FONT, R, useTheme } from "@/lib/theme";
 import DuaGenerator from "@/features/practice/DuaGenerator";
@@ -13,6 +13,8 @@ export default function DuaGeneratorScreen() {
   const t = useWebT("duagen");
   const th = useTheme();
   const scroll = useRef<ScrollViewInstance>(null);
+  // the feed opens the generator with the topic of the dua post it came from (?topic=worry)
+  const { topic } = useLocalSearchParams<{ topic?: string }>();
   const base = useRef(0);
   return (
     <>
@@ -20,7 +22,7 @@ export default function DuaGeneratorScreen() {
       <PageScroll scrollRef={scroll}>
         <Hero kicker={t("kicker")} title={t("title")} lead={t("lead")} word={HEROES.duaGenerator.word} arabic={HEROES.duaGenerator.ar} arabicRef={HEROES.duaGenerator.ref} arcade={false} />
         <View style={{ paddingHorizontal: 16, paddingVertical: 40 }} onLayout={(e) => { base.current = e.nativeEvent.layout.y; }}>
-          <DuaGenerator scrollTo={(y) => scroll.current?.scrollTo({ y: Math.max(0, base.current + y - 16), animated: true })} />
+          <DuaGenerator initialTopic={topic} scrollTo={(y) => scroll.current?.scrollTo({ y: Math.max(0, base.current + y - 16), animated: true })} />
         </View>
         <View style={{ borderTopWidth: 1, borderBottomWidth: 1, borderColor: th.line, backgroundColor: th.surface, paddingHorizontal: 20, paddingVertical: 56, gap: 40 }}>
           <View>

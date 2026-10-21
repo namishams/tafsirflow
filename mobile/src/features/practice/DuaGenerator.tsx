@@ -27,7 +27,7 @@ type Made = { topic: Topic; text: string; who: Who; key: number };
 // blessings on the Prophet ﷺ, the fitting names of Allah, the request, closing – and shows the authentic duas of the
 // Quran and the Sunnah (Arabic readers get no translation lines). Free, no AI. A personal dua written by the server (AI)
 // is a paid extra in the app.
-export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => void }) {
+export default function DuaGenerator({ scrollTo, initialTopic }: { scrollTo?: (y: number) => void; initialTopic?: string }) {
   const t = useWebT("duagen");
   const th = useTheme();
   const g = useGold();
@@ -37,7 +37,7 @@ export default function DuaGenerator({ scrollTo }: { scrollTo?: (y: number) => v
   // the AI phrasing exists only while the owner has it switched on (admin: ai + features.duaAi)
   const cfg = useSiteConfig();
   const aiOn = cfg.ai && cfg.features.duaAi;
-  const [topic, setTopic] = useState<Topic | null>(null);
+  const [topic, setTopic] = useState<Topic | null>((TOPICS as readonly string[]).includes(initialTopic ?? "") ? (initialTopic as Topic) : null);
   const [text, setText] = useState("");
   const [who, setWho] = useState<Who>("me");
   const [made, setMade] = useState<Made | null>(null);

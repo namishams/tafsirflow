@@ -2,8 +2,8 @@
 import { I18nManager } from "react-native";
 import Svg, { Circle, Path, Rect } from "react-native-svg";
 
-export type IconName = "play" | "pause" | "prev" | "next" | "playSm" | "copy" | "share" | "note" | "bookmark" | "volume" | "grid" | "book" | "search" | "menu" | "lock" | "repeat" | "user" | "kid" | "cap" | "shield" | "logout" | "close" | "clock" | "radio" | "hands" | "heart" | "comment" | "eye" | "flag" | "flame" | "starBig" | "trophy" | "speaker" | "moon" | "checkCircle" | "chevronRight" | "chevronLeft" | "chevronDown" | "check" | "plus" | "sun" | "map" | "compass" | "calendar" | "download" | "settings" | "globe" | "mosque" | "list" | "pen" | "speed" | "stop" | "reels";
-const KIND: Record<IconName, "ln" | "sm" | "fill"> = {play: "fill", pause: "fill", prev: "fill", next: "fill", playSm: "sm", copy: "sm", share: "sm", note: "sm", bookmark: "sm", volume: "sm", grid: "ln", book: "ln", search: "ln", menu: "ln", lock: "ln", repeat: "ln", user: "ln", kid: "ln", cap: "ln", shield: "ln", logout: "ln", close: "ln", clock: "ln", radio: "ln", hands: "ln", heart: "sm", comment: "sm", eye: "sm", flag: "sm", flame: "ln", starBig: "fill", trophy: "ln", speaker: "ln", moon: "ln", checkCircle: "ln", chevronRight: "ln", chevronLeft: "ln", chevronDown: "ln", check: "ln", plus: "ln", sun: "ln", map: "ln", compass: "ln", calendar: "ln", download: "ln", settings: "ln", globe: "ln", mosque: "ln", list: "ln", pen: "sm", speed: "ln", stop: "fill", reels: "ln"};
+export type IconName = "play" | "pause" | "prev" | "next" | "playSm" | "copy" | "share" | "note" | "bookmark" | "volume" | "grid" | "book" | "search" | "menu" | "lock" | "repeat" | "user" | "kid" | "cap" | "shield" | "logout" | "close" | "clock" | "radio" | "hands" | "heart" | "comment" | "eye" | "flag" | "flame" | "starBig" | "trophy" | "speaker" | "moon" | "checkCircle" | "chevronRight" | "chevronLeft" | "chevronDown" | "check" | "plus" | "sun" | "map" | "compass" | "calendar" | "download" | "settings" | "globe" | "mosque" | "list" | "pen" | "speed" | "stop" | "reels" | "send";
+const KIND: Record<IconName, "ln" | "sm" | "fill"> = {play: "fill", pause: "fill", prev: "fill", next: "fill", playSm: "sm", copy: "sm", share: "sm", note: "sm", bookmark: "sm", volume: "sm", grid: "ln", book: "ln", search: "ln", menu: "ln", lock: "ln", repeat: "ln", user: "ln", kid: "ln", cap: "ln", shield: "ln", logout: "ln", close: "ln", clock: "ln", radio: "ln", hands: "ln", heart: "sm", comment: "sm", eye: "sm", flag: "sm", flame: "ln", starBig: "fill", trophy: "ln", speaker: "ln", moon: "ln", checkCircle: "ln", chevronRight: "ln", chevronLeft: "ln", chevronDown: "ln", check: "ln", plus: "ln", sun: "ln", map: "ln", compass: "ln", calendar: "ln", download: "ln", settings: "ln", globe: "ln", mosque: "ln", list: "ln", pen: "sm", speed: "ln", stop: "fill", reels: "ln", send: "ln"};
 
 function shape(name: IconName) {
   switch (name) {
@@ -15,6 +15,7 @@ function shape(name: IconName) {
     case "playSm": return <><Path d="M8 5.5v13l11-6.5z" /></>;
     case "copy": return <><Rect x="9" y="9" width="11" height="11" rx="2" /><Path d="M5 15V6a2 2 0 0 1 2-2h9" /></>;
     case "share": return <><Path d="M12 15V4M8 8l4-4 4 4" /><Path d="M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" /></>;
+    case "send": return <><Path d="M21.5 3 3 10.2l7.4 3.1L21.5 3z" /><Path d="M21.5 3 15 21l-4.6-7.7" /></>;
     case "note": return <><Path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z" /><Path d="M13.5 6.5l4 4" /></>;
     case "bookmark": return <><Path d="M6 4h12v17l-6-4-6 4z" /></>;
     case "volume": return <><Path d="M4 10v4h4l5 4V6L8 10z" /><Path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" /></>;

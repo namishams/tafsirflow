@@ -436,5 +436,46 @@
       "endsAt": "2027-03-13T00:00:00Z",
       "tradition": "all"
     }
-  ]
+  ],
+  "monetize": {
+    "variants": [
+      "a",
+      "b"
+    ],
+    "offers": {
+      "context-dua": true,
+      "context-name": true,
+      "context-lesson": true,
+      "context-reciters": true,
+      "premium": true,
+      "paywall": true,
+      "moment-streak": true,
+      "moment-words": true,
+      "moment-saves": true,
+      "moment-share": true
+    },
+    "context": {
+      "everyNItems": 6,
+      "maxPerSession": 4
+    },
+    "premium": {
+      "everyNItems": 20,
+      "maxPerSession": 3,
+      "freePerDay": 2,
+      "kinds": [
+        "tafsir-deep",
+        "all-reciters",
+        "root-deep",
+        "stories"
+      ]
+    },
+    "paywall": {
+      "maxPerSession": 1
+    },
+    "moments": {
+      "streakDays": 7,
+      "words": 20,
+      "saves": 5
+    }
+  }
 }

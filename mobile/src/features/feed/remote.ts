@@ -30,6 +30,16 @@ export type FeedConfig = {
   topicChipGroups: { id: string; label: string; kinds: string[] }[];
   flags: Record<string, boolean>;
   announcements: { id: string; title: string; image?: string; deeplink?: string; startsAt: string; endsAt: string }[];
+  monetize?: FeedMonetize;
+};
+/** see the website's FeedMonetize; every field optional, local defaults in monetize.tsx */
+export type FeedMonetize = {
+  variants?: string[];
+  offers?: Partial<Record<string, boolean>>;
+  context?: { everyNItems?: number; maxPerSession?: number };
+  premium?: { everyNItems?: number; maxPerSession?: number; freePerDay?: number; kinds?: string[] };
+  paywall?: { maxPerSession?: number; trialDays?: number };
+  moments?: { streakDays?: number; words?: number; saves?: number };
 };
 export type FeedItemKind = "editorial" | "announcement" | "verse-of-day" | "hadith-of-day" | "islamic-date" | "featured-surah";
 export type FeedItem = {

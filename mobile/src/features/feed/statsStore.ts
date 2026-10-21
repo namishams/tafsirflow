@@ -93,3 +93,12 @@ export function longestStreak(s: Stats): number {
 
 /** in-feed promotion of our own products: impressions and taps, counted locally */
 export const statPromo = (id: string, what: "imp" | "tap") => bump((d) => { const k = `promo:${id}:${what}`; d.kinds[k] = (d.kinds[k] ?? 0) + 1; });
+
+/** the funnel of the feed offers per offer and A/B variant: impressions, taps and purchases (this device only).
+ * TODO(analytics): the website has no event endpoint yet; once it has one, send these counters as anonymous daily
+ * aggregates (offer, variant, counts – no ids, no content) instead of keeping them only here. */
+export type OfferStep = "imp" | "tap" | "buy";
+export const statOffer = (offer: string, variant: string, what: OfferStep) => bump((d) => { const k = `offer:${offer}:${variant}:${what}`; d.kinds[k] = (d.kinds[k] ?? 0) + 1; });
+/** totals over all days, for the thresholds of the celebration cards */
+export const totals = (): DayStats => load().total;
+export const currentStreak = (): number => streakOf(load());

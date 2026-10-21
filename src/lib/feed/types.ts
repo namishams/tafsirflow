@@ -18,6 +18,27 @@ export type FeedConfig = {
   flags: Record<string, boolean>;
   /** only those active now and matching the tradition */
   announcements: { id: string; title: string; image?: string; deeplink?: string; startsAt: string; endsAt: string }[];
+  /** monetisation of the feed (optional; the app falls back to its local defaults for every missing field) */
+  monetize?: FeedMonetize;
+};
+
+/** Offers in the feed. Only real store prices are shown (the app reads them from the store); no countdowns, no discounts. */
+export type FeedOfferId =
+  | "context-dua" | "context-name" | "context-lesson" | "context-reciters"
+  | "premium" | "paywall" | "moment-streak" | "moment-words" | "moment-saves" | "moment-share";
+export type FeedMonetize = {
+  /** A/B variant ids; each install picks one at random and keeps it while it stays in this list */
+  variants?: string[];
+  /** switch single offers off (missing = on) */
+  offers?: Partial<Record<FeedOfferId, boolean>>;
+  /** contextual offers below a post: at most one per N posts and this many per session */
+  context?: { everyNItems?: number; maxPerSession?: number };
+  /** Pro-only posts: one per N posts, at most this many per session; free users may open `freePerDay` of them per day */
+  premium?: { everyNItems?: number; maxPerSession?: number; freePerDay?: number; kinds?: string[] };
+  /** the paywall card after the free premium posts of the day are used up; trialDays only if the store offers that trial */
+  paywall?: { maxPerSession?: number; trialDays?: number };
+  /** thresholds of the celebration cards (each shown once per install) */
+  moments?: { streakDays?: number; words?: number; saves?: number };
 };
 
 export type FeedItemKind = "editorial" | "announcement" | "verse-of-day" | "hadith-of-day" | "islamic-date" | "featured-surah";
