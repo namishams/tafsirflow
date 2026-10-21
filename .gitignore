@@ -14,3 +14,6 @@ ios/QuranMasterclass.xcodeproj/xcuserdata
 ios/QuranMasterclass.xcodeproj/project.xcworkspace/xcuserdata
 ios/build
 ios/.team-id
+
+# Nahj al-Balagha passages (app bundle only, never committed or published)
+mobile/assets/content/nahj-*.json

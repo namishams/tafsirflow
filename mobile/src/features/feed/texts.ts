@@ -41,6 +41,8 @@ const TEXT = {
     videoFailed: "The video could not be made. The image is shared instead.",
     slow: "Slower (hold)",
     hint: "Tap to pause, double tap to like, hold to slow down",
+    autoplay: "Auto-play",
+    hadith: "Hadith",
   },
   de: {
     title: "Quran Feed",
@@ -80,6 +82,8 @@ const TEXT = {
     videoFailed: "Das Video konnte nicht erstellt werden. Stattdessen wird das Bild geteilt.",
     slow: "Langsamer (halten)",
     hint: "Tippen zum Anhalten, doppelt tippen zum Liken, halten für langsamer",
+    autoplay: "Automatisch weiter",
+    hadith: "Hadith",
   },
 };
 export type FeedText = typeof TEXT.en;

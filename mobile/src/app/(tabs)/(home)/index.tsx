@@ -28,8 +28,10 @@ import { ProPromo } from "@/features/learn/ProPromo";
 import { CoachCard, MapCard, RewardsCard, WeekCard } from "@/features/progress";
 import { PrayerSetupCard } from "@/features/practice";
 import { Onboarding } from "@/features/extra/Onboarding";
+import { HadithOfTheDay, HowToPrayCard, NahjCard, TraditionAsk } from "@/features/hadith/cards";
 import { Announcement } from "@/features/extra/widgets/Announcement";
 import { courseLang } from "@/features/arabic/lang";
+import { FeedButton, FeedSpotlight } from "@/features/feed/EntryCards";
 
 // "Today" (website TodayDashboard.tsx): the daily hub – the greeting stage with the ring of today's tasks and the next
 // prayer, one big button for today's guided session, the checklist that ticks itself off, verse of the day, paths,
@@ -121,6 +123,7 @@ export default function Today() {
             <View style={{ marginTop: 22, gap: 10 }}>
               <GoldButton title={open ? ws("resume", { n: open.i + 1, total: open.items.length }) : ws("start", { min: plan.minutes })} icon="play" onPress={startDay} />
               {v.last ? <OutlineButton onStage title={w("continueTitle", { surah: name(v.last.chapter), verse: v.last.verse })} onPress={() => go(`/quran/${v.last!.chapter}?v=${v.last!.verse}`)} /> : null}
+              <FeedButton />
             </View>
           </View>
           <Arcade />
@@ -128,7 +131,10 @@ export default function Today() {
         <Announcement />
 
         <View style={{ paddingHorizontal: 16, gap: 28, marginTop: 24 }}>
+          <FeedSpotlight />
           <Onboarding />
+          <TraditionAsk />
+          <HowToPrayCard />
           <RewardsCard />
           {/* checklist */}
           <View>
@@ -154,6 +160,8 @@ export default function Today() {
 
           <CoachCard />
           <VerseOfTheDay />
+          <HadithOfTheDay />
+          <NahjCard />
           <PrayerSetupCard />
           <WeekCard />
           <MapCard />

@@ -7,6 +7,9 @@ import { useWebT } from "@/i18n/web";
 import { calText } from "@/web/hijri";
 import { namesText } from "@/web/names";
 import { GROUPS, extraTool, routeOf, tile } from "@/lib/features";
+import { FeedSpotlight } from "@/features/feed/EntryCards";
+import { StoryRails } from "@/features/prophet/Rails";
+import { HadithSpotlight } from "@/features/hadith/cards";
 
 // Discover: every course and tool of the website as poster tiles, grouped like the website menu; search, the
 // Islamic calendar and the names finder (website menu items without a poster) in the same look
@@ -22,7 +25,12 @@ export default function Discover() {
       <Stack.Screen options={{ headerShown: false }} />
       <Page>
         <PageHero topInset eyebrow="Quran Masterclass" title={w("home2.toolsTitle") === "home2.toolsTitle" ? w("nav.more") : w("home2.toolsTitle")} />
-        <View style={{ paddingHorizontal: 16, gap: 32, marginTop: 24 }}>
+        <View style={{ marginTop: 20, gap: 20 }}>
+          <View style={{ paddingHorizontal: 16 }}><FeedSpotlight /></View>
+          <View style={{ paddingHorizontal: 16 }}><HadithSpotlight /></View>
+          <StoryRails />
+        </View>
+        <View style={{ paddingHorizontal: 16, gap: 32, marginTop: 28 }}>
           {GROUPS.map((g) => (
             <View key={g.id}>
               <SectionTitle title={w(g.title)} />

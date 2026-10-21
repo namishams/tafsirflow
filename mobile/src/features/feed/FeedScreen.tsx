@@ -20,7 +20,8 @@ import { StoryShareCard } from "@/features/prophet/StoryShareCard";
 import type { AllahName, Story } from "@/features/prophet/stories";
 import { SpeakerIcon, toneOf } from "./art";
 import { FeedPage } from "./FeedPage";
-import { NamePage, ProPage, StoryPage } from "./StoryPage";
+import { HadithPage, NamePage, ProPage, StoryPage } from "./StoryPage";
+import { HADITH_AVAILABLE, hadithFeedItems, type HadithFeedItem } from "./hadith";
 import { ShareSheet } from "./share";
 import { DiscoverFeed, FEED_CATS, keyOfItem, preloadSurah, surahKeys, validKey, type FeedCat, type FeedMode, type FeedVerse } from "./source";
 import { countShare } from "./useLike";
@@ -33,6 +34,9 @@ import { VerseShareCard } from "./VerseShareCard";
 // Free accounts get every verse and FREE_STORIES_PER_DAY story cards a day, then the Pro card.
 // Route params: ?mode=surah&s=18&v=10, ?key=2:255 (Discover starting with that verse), ?cat=prophet.
 const MUTE_KEY = "qmc.feed-muted";
+const AUTO_KEY = "qmc.feed-autoplay";
+const STORY_MS = 8000; // story cards in "For you" stay about 8 s
+const MUTED_VERSE_MS = 10000; // a muted verse (no recitation to wait for)
 type ShareItem = { kind: "verse"; v: FeedVerse } | { kind: "story"; s: Story } | { kind: "name"; n: AllahName };
 
 export function FeedScreen() {
@@ -50,7 +54,8 @@ export function FeedScreen() {
   const quota = useStoryQuota();
 
   const startS = Math.min(114, Math.max(1, Number(params.s) || 1));
-  const [mode, setMode] = useState<FeedMode>(params.mode === "surah" || params.s ? "surah" : "discover");
+  const [mode, setMode] = useState<FeedMode>(params.mode === "surah" || params.s ? "surah" : params.mode === "hadith" && HADITH_AVAILABLE ? "hadith" : "discover");
+  const [autoplay, setAutoplay] = useState(() => readJSON<boolean>(AUTO_KEY, true));
   const [cat, setCat] = useState<FeedCat>(FEED_CATS.includes(params.cat as FeedCat) ? (params.cat as FeedCat) : "foryou");
   const [surah, setSurah] = useState(startS);
   const [keys, setKeys] = useState<string[]>([]);
@@ -67,6 +72,7 @@ export function FeedScreen() {
   const initialIndex = useRef(0);
   const activeRef = useRef(0);
   activeRef.current = active;
+  const hadith = useRef<{ byId: Map<string, HadithFeedItem>; cursor: string | null }>({ byId: new Map(), cursor: null });
   const latest = useRef({ stories, quota });
   latest.current = { stories, quota };
 
@@ -75,6 +81,16 @@ export function FeedScreen() {
 
   // pause when another screen (reader, Shams, Pro) opens on top; play again when the feed is visible
   useFocusEffect(useCallback(() => { setFocused(true); return () => { setFocused(false); engine.pause(); }; }, [engine]));
+
+  // the hadith stream (features/hadith via ./hadith): loops – when the source is through it starts again
+  const nextHadith = useCallback((): string[] => {
+    const h = hadith.current;
+    let page = hadithFeedItems(lang, "all", h.cursor);
+    if (!page.items.length && h.cursor !== null) page = hadithFeedItems(lang, "all", null);
+    h.cursor = page.cursor;
+    const round = h.byId.size;
+    return page.items.map((it, i) => { const id = `h:${round + i}`; h.byId.set(id, it); return id; });
+  }, [lang]);
 
   const newDiscover = useCallback((c: FeedCat, first?: string) => {
     const { stories: st } = latest.current;
@@ -85,7 +101,11 @@ export function FeedScreen() {
   // (re)build the list when the mode, the category, the surah, the language or the voice changes
   useEffect(() => {
     loadedSurahs.current = new Set();
-    if (mode === "discover") {
+    if (mode === "hadith") {
+      hadith.current = { byId: new Map(), cursor: null };
+      initialIndex.current = 0;
+      setKeys(nextHadith());
+    } else if (mode === "discover") {
       discover.current = newDiscover(cat, cat === "foryou" || cat === "verses" ? (params.key && validKey(params.key) ? params.key : undefined) : undefined);
       initialIndex.current = 0;
       setKeys(discover.current.next(10, latest.current.quota.left));
@@ -98,9 +118,10 @@ export function FeedScreen() {
     }
     setActive(initialIndex.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, cat, surah, lang, reciter.folder, stories.groups.secrets.length > 0]);
+  }, [mode, cat, surah, lang, reciter.folder]);
 
   const more = useCallback(() => {
+    if (mode === "hadith") { const add = nextHadith(); if (add.length) setKeys((k) => [...k, ...add]); return; }
     if (mode === "discover") {
       const d = discover.current;
       if (d) {
@@ -111,11 +132,11 @@ export function FeedScreen() {
       }
       return;
     }
+    // never-ending: after the last verse of a surah the next one, after an-Nas back to al-Fatiha
     setKeys((k) => {
+      if (k.length - activeRef.current > 40) return k;
       const last = Number(k[k.length - 1]?.split(":")[1] ?? surah);
-      const next = last + 1;
-      if (next > 114 || loadedSurahs.current.has(next)) return k;
-      loadedSurahs.current.add(next);
+      const next = last >= 114 ? 1 : last + 1;
       void preloadSurah(next, lang, reciter).catch(() => undefined);
       return [...k, ...surahKeys(next)];
     });
@@ -127,6 +148,7 @@ export function FeedScreen() {
   }).current;
   const viewConfig = useRef({ itemVisiblePercentThreshold: 60 }).current;
 
+  const toggleAuto = () => { const a = !autoplay; setAutoplay(a); writeJSON(AUTO_KEY, a, true); };
   const toggleMute = () => { const m = !muted; setMuted(m); writeJSON(MUTE_KEY, m, true); if (m) engine.pause(); };
   const switchMode = (m: FeedMode) => { if (m === mode) { if (m === "surah") setPicker(true); return; } engine.stop(); setMode(m); };
   const pickSurah = (s: number) => { setPicker(false); engine.stop(); setSurah(s); setMode("surah"); };
@@ -136,6 +158,38 @@ export function FeedScreen() {
     const i = activeRef.current + 1;
     list.current?.scrollToIndex({ index: Math.min(i, keys.length - 1), animated: !reduce });
   }, [cat, keys.length, reduce]);
+
+  // ---------- auto-play like Reels: when the recitation of a verse ends, the feed moves on by itself ----------
+  const advance = useCallback(() => {
+    const i = activeRef.current + 1;
+    if (i >= keys.length) return;
+    list.current?.scrollToIndex({ index: i, animated: !reduce }); // Reduce Motion: a cut instead of a scroll
+  }, [keys.length, reduce]);
+  const touched = useRef(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const autoRef = useRef({ autoplay, focused, advance, item: "" });
+  autoRef.current = { autoplay, focused, advance, item: keys[active] ?? "" };
+  useEffect(() => { touched.current = false; }, [active]);
+  useEffect(() => {
+    let was = engine.getSnapshot().ended;
+    return engine.subscribe(() => {
+      const snap = engine.getSnapshot();
+      const r = autoRef.current;
+      if (snap.ended && !was && r.autoplay && r.focused && !touched.current && /^[vw]:/.test(r.item)) r.advance();
+      was = snap.ended;
+    });
+  }, [engine]);
+  useEffect(() => {
+    if (timer.current) { clearTimeout(timer.current); timer.current = null; }
+    const item = keys[active] ?? "";
+    if (!autoplay || !focused || !item) return;
+    const verse = /^[vw]:/.test(item);
+    const ms = verse ? (muted ? MUTED_VERSE_MS : 0) : (mode === "discover" && cat === "foryou" && /^[sn]:/.test(item)) || mode === "hadith" ? STORY_MS : 0;
+    if (!ms) return;
+    timer.current = setTimeout(() => { if (!touched.current) advance(); }, ms);
+    return () => { if (timer.current) clearTimeout(timer.current); };
+  }, [active, autoplay, focused, muted, mode, cat, keys, advance]);
+  const onTouch = () => { touched.current = true; if (timer.current) { clearTimeout(timer.current); timer.current = null; } };
 
   const activeKey = keyOfItem(keys[active] ?? "");
   const activeSurah = activeKey ? Number(activeKey.split(":")[0]) : surah;
@@ -159,6 +213,10 @@ export function FeedScreen() {
       const n = stories.names[Number(item.slice(2))];
       if (!n) return <View style={{ width, height: pageH }} />;
       return <NamePage {...common} name={n} onShare={(x) => setShare({ kind: "name", n: x })} />;
+    }
+    if (item.startsWith("h:")) {
+      const h = hadith.current.byId.get(item);
+      return h ? <HadithPage {...common} item={h} /> : <View style={{ width, height: pageH }} />;
     }
     return <ProPage {...common} onLater={later} />;
   }, [width, pageH, active, focused, muted, lang, reciter, reciterLabel, nameOf, insets.top, insets.bottom, chrome, reduce, engine, stories, quota, later]);
@@ -185,7 +243,7 @@ export function FeedScreen() {
   const catLabel: Record<FeedCat, string> = { foryou: pt.catForYou, verses: pt.catVerses, prophet: pt.catProphet, reciters: pt.catReciters, islam: pt.catIslam, tips: pt.catTips };
 
   return (
-    <View style={{ flex: 1, backgroundColor: stage.deep }} onLayout={(e) => {
+    <View style={{ flex: 1, backgroundColor: stage.deep }} onTouchStart={onTouch} onLayout={(e) => {
       // a new size (rotation, iPad split view): the list is rebuilt at the page that was visible
       const h = Math.round(e.nativeEvent.layout.height);
       if (h !== pageH) { initialIndex.current = activeRef.current; setPageH(h); }
@@ -220,9 +278,11 @@ export function FeedScreen() {
         <View pointerEvents="box-none" style={{ paddingHorizontal: 12, flexDirection: "row", alignItems: "center", gap: 10 }}>
           <RoundButton label={tx.close} onPress={() => goBack()}><Icon name="chevronLeft" color="#fff" size={22} /></RoundButton>
           <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", gap: 6 }}>
-            <Pill label={tx.discover} selected={mode === "discover"} onPress={() => switchMode("discover")} />
+            <Pill label={pt.catForYou} selected={mode === "discover"} onPress={() => switchMode("discover")} />
             <Pill label={mode === "surah" ? nameOf(activeSurah) : tx.surah} selected={mode === "surah"} onPress={() => switchMode("surah")} hint={tx.chooseSurah} chevron={mode === "surah"} />
+            {HADITH_AVAILABLE ? <Pill label={tx.hadith} selected={mode === "hadith"} onPress={() => switchMode("hadith")} /> : null}
           </View>
+          <RoundButton label={tx.autoplay} selected={autoplay} onPress={toggleAuto}><Icon name="repeat" color={autoplay ? stage.gold : "rgba(255,255,255,0.6)"} size={20} /></RoundButton>
           <RoundButton label={muted ? tx.unmute : tx.mute} selected={!muted} onPress={toggleMute}><SpeakerIcon muted={muted} color="#fff" /></RoundButton>
         </View>
         {mode === "discover" ? (

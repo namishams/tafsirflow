@@ -47,7 +47,7 @@ function Karaoke({ data, engine, live, size, color, mark }: { data: FeedVerse; e
   const cur = mine && data.segments.length ? data.segments.find((s) => snap.positionMs >= s.start && snap.positionMs < s.end)?.word ?? -1 : -1;
   const words = data.words.filter((w) => w.char_type_name === "word" || w.char_type_name === "end");
   const style = { fontFamily: ARABIC_FONT, fontSize: size, lineHeight: size * 1.9, color, textAlign: AR_RIGHT, writingDirection: "rtl" as const };
-  if (!words.length) return <Text accessibilityLanguage="ar" selectable style={style}>{data.arabic}</Text>;
+  if (!words.length) return <Text accessibilityLanguage="ar" style={style}>{data.arabic}</Text>;
   return (
     <Text accessibilityLanguage="ar" accessibilityLabel={data.arabic} style={style}>
       {words.map((w, i) => {
@@ -166,7 +166,7 @@ export const FeedPage = memo(function FeedPage(p: PageProps) {
                   ) : null}
                   <Karaoke data={data} engine={a} live={p.active} size={arSize} color={showWord ? "rgba(255,255,255,0.85)" : "#fff"} mark={showWord ? word?.position : undefined} />
                   {data.translation ? (
-                    <Text selectable style={{ fontFamily: FONT.regular, fontSize: wide ? 19 : data.translation.length > 400 || showWord ? 15 : 17, lineHeight: wide ? 29 : data.translation.length > 400 || showWord ? 23 : 26, color: "rgba(255,255,255,0.88)", marginTop: 20 }}>{data.translation}</Text>
+                    <Text style={{ fontFamily: FONT.regular, fontSize: wide ? 19 : data.translation.length > 400 || showWord ? 15 : 17, lineHeight: wide ? 29 : data.translation.length > 400 || showWord ? 23 : 26, color: "rgba(255,255,255,0.88)", marginTop: 20 }}>{data.translation}</Text>
                   ) : null}
                 </>
               ) : failed ? (

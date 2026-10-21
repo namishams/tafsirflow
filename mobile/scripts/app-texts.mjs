@@ -21,6 +21,7 @@ export const MODULES = {
   alerts: ["src/features/practice/prayer/alerts.ts", "TX", "en"],
   dailyReminder: ["src/lib/daily.ts", "TEXTS", "en"],
   reader: ["src/features/reader/texts.ts", "T", "en"],
+  hadith: ["src/features/hadith/texts.ts", "T", "en"],
 };
 
 function english(file, variable, prop) {

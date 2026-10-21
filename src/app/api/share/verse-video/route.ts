@@ -57,11 +57,13 @@ export async function GET(req: NextRequest) {
   });
 }
 
-/** PNG of exactly 1080×1920 (the IHDR chunk right after the signature) */
+/** a PNG of about 1080×1920 (read from the IHDR chunk right after the signature) */
 function checkPng(buf: Buffer): boolean {
   const sig = buf.subarray(0, 8).toString("hex") === "89504e470d0a1a0a";
   if (!sig || buf.length < 24 || buf.subarray(12, 16).toString("ascii") !== "IHDR") return false;
-  return buf.readUInt32BE(16) === 1080 && buf.readUInt32BE(20) === 1920;
+  const w = buf.readUInt32BE(16), h = buf.readUInt32BE(20);
+  // about 1080×1920 (device rounding may give a pixel more or less); ffmpeg scales it to exactly 1080×1920
+  return w >= 1000 && w <= 1200 && Math.abs(h / w - 16 / 9) < 0.02;
 }
 
 /** the recitation: the self-hosted file if it is there, else the Quran.com file the reader falls back to */

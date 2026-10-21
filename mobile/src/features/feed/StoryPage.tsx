@@ -1,7 +1,8 @@
 import { memo, useEffect, useRef, useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { router, type Href } from "expo-router";
-import { ARABIC_FONT, FONT, stage } from "@/lib/theme";
+import { AR_RIGHT, ARABIC_FONT, FONT, stage } from "@/lib/theme";
+import type { HadithFeedItem } from "./hadith";
 import { openPro } from "@/lib/pro";
 import { useStored } from "@/lib/store";
 import { reciterName } from "@/lib/quran";
@@ -106,6 +107,21 @@ export const ProPage = memo(function ProPage(p: Common & { onLater: () => void }
       <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: 22, paddingTop: p.topInset + 60, paddingBottom: p.bottomInset + 24, maxWidth: 560, alignSelf: "center", width: "100%" }}>
         <ProCard onPro={() => openPro("general")} onLater={p.onLater} />
       </View>
+    </View>
+  );
+});
+
+export const HadithPage = memo(function HadithPage(p: Common & { item: HadithFeedItem }) {
+  useEffect(() => { if (p.active) p.engine.pause(); }, [p.active, p.engine]);
+  const wide = p.width >= 700;
+  return (
+    <View style={{ width: p.width, height: p.height, overflow: "hidden" }}>
+      <FeedBackdrop tone={toneOf(`hadith:${p.item.source}`)} width={p.width} height={p.height} animate={p.active && !p.reduce} still={p.reduce} />
+      <ScrollView style={{ flex: 1 }} nestedScrollEnabled contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingHorizontal: 22, paddingTop: p.topInset + 70, paddingBottom: p.bottomInset + 24, gap: 16, maxWidth: 700, alignSelf: "center", width: "100%" }}>
+        {p.item.arabic ? <Text accessibilityLanguage="ar" style={{ fontFamily: ARABIC_FONT, fontSize: wide ? 30 : 25, lineHeight: (wide ? 30 : 25) * 1.9, color: "#fff", textAlign: AR_RIGHT, writingDirection: "rtl" }}>{p.item.arabic}</Text> : null}
+        <Text selectable style={{ fontFamily: FONT.regular, fontSize: wide ? 20 : 17, lineHeight: wide ? 31 : 27, color: "rgba(255,255,255,0.92)" }}>{p.item.text}</Text>
+        <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: stage.gold }}>{[p.item.narrator, p.item.source, p.item.grade].filter(Boolean).join(" · ")}</Text>
+      </ScrollView>
     </View>
   );
 });

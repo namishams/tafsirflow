@@ -10,7 +10,7 @@ import { VERSE_COUNTS } from "@/web/counts";
 // of every category; Surah mode walks through a surah verse by verse and then on into the next one.
 
 export type FeedVerse = { key: string; s: number; v: number; arabic: string; translation: string; audio: string; fallback: string; words: Word[]; segments: Segment[] };
-export type FeedMode = "discover" | "surah";
+export type FeedMode = "discover" | "surah" | "hadith";
 export type FeedCat = "foryou" | "verses" | "prophet" | "reciters" | "islam" | "tips";
 export const FEED_CATS: FeedCat[] = ["foryou", "verses", "prophet", "reciters", "islam", "tips"];
 

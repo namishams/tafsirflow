@@ -9,6 +9,7 @@ import { Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { DarkChip, PracticeWindow, RoundButton, go, starPath, useReducedMotion } from "./art";
 import { POSES, UI, ease, lerpPose, type Lang, type Pose, type Tx } from "./web/prayerTrainer";
+import { trainerTradition } from "@/lib/tradition";
 
 const pts = (...p: [number, number][]) => p.map((x) => x.join(",")).join(" ");
 // <span dir="ltr"> of the website: "1 / 12" keeps its order inside right-to-left text
@@ -62,7 +63,7 @@ export default function PrayerTrainer() {
   const l: Lang = lang === "de" ? "de" : lang === "ar" ? "ar" : "en";
   const u = UI[l];
   const tx = (v?: Tx) => (v ? v[l] ?? v.en : "");
-  const [tradition, setTradition] = useState<Tradition>("sunni");
+  const [tradition, setTradition] = useState<Tradition>(() => trainerTradition());
   const [prayer, setPrayer] = useState<(typeof PRAYERS)[number]["id"]>("fajr");
   const steps = useMemo(() => buildPrayer(prayer, tradition), [prayer, tradition]);
   const [i, setI] = useState(0);

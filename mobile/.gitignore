@@ -39,3 +39,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Nahj al-Balagha passages (owner's licensed editions, bundled in the app only, never committed)
+assets/content/nahj-*.json

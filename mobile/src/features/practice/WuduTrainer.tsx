@@ -11,6 +11,7 @@ import { Stage as StageBg } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { DarkChip, PracticeWindow, RoundButton, StageButton, go, useClock, useReducedMotion } from "./art";
 import { AR_TIMES, ARM, DONE_AR as DONE_AR_TEXT, DROP, EAR, FACE, FOOT, GOLD, HAIR, HAND, HEAD, INSTEP, LIPS, NOSE, UI, WATER, arc, shuffle, slips, type Lang } from "./web/wuduTrainer";
+import { trainerTradition } from "@/lib/tradition";
 
 const goldC = GOLD.replace(/rgb\((\d+) (\d+) (\d+)\)/, "rgb($1,$2,$3)");
 const waterC = WATER.replace(/rgb\((\d+) (\d+) (\d+)\)/, "rgb($1,$2,$3)");
@@ -373,7 +374,7 @@ export default function WuduTrainer() {
   const l: Lang = lang === "de" ? "de" : lang === "ar" ? "ar" : "en";
   const u = UI[l];
   const tx = (v?: L3) => (v ? v[l] : "");
-  const [tradition, setTradition] = useState<Tradition>("sunni");
+  const [tradition, setTradition] = useState<Tradition>(() => trainerTradition());
   const steps = WUDU[tradition];
   const order = useMemo(() => steps.filter((s) => s.quiz), [steps]);
   const [i, setI] = useState(0);

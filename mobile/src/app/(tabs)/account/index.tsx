@@ -13,6 +13,8 @@ import { removeKey, storedKeys } from "@/lib/store";
 import { useWebT } from "@/i18n/web";
 import { request } from "@/features/extra/http";
 import { KidsToggle } from "@/features/extra/KidsToggle";
+import { TraditionSetting } from "@/features/hadith/cards";
+import { useHadithText } from "@/features/hadith/texts";
 import { useSettings } from "@/lib/settings";
 import { openPro, usePro } from "@/lib/pro";
 import { manageSubscriptions } from "@/lib/iap";
@@ -26,6 +28,7 @@ export default function AccountScreen() {
   const theme = useTheme();
   const { lang, setting } = useLang();
   const { appearance, setAppearance } = useSettings();
+  const hx = useHadithText();
   const { user, logout, deleteAccount } = useAuth();
   const { pro, until } = usePro();
   const [deleting, setDeleting] = useState(false);
@@ -99,6 +102,9 @@ export default function AccountScreen() {
             <RowGroup>
               <LinkRow first title={setting === "system" ? `${t("account.languageSystem")} · ${langLabel(lang)}` : langLabel(setting)} icon="globe" onPress={() => go("/language")} />
             </RowGroup>
+          </Section>
+          <Section title={hx.tradTitle}>
+            <TraditionSetting />
           </Section>
           <Section title={wn("kids")}>
             <RowGroup><KidsToggle variant="row" /></RowGroup>
