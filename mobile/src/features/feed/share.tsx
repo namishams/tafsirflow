@@ -285,10 +285,15 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose} statusBarTranslucent>
       <Pressable style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.5)" }} onPress={onClose} accessibilityRole="button" accessibilityLabel={tx.close} />
-      <Animated.View style={{ maxHeight: winH * 0.94, transform: [{ translateY: drag }], backgroundColor: stage.bg, borderTopLeftRadius: 22, borderTopRightRadius: 22, borderTopWidth: 1, borderColor: stage.goldSoft, paddingBottom: Math.max(insets.bottom, 16) }}>
+      <Animated.View style={{ maxHeight: winH * 0.88, transform: [{ translateY: drag }], backgroundColor: stage.bg, borderTopLeftRadius: 22, borderTopRightRadius: 22, borderTopWidth: 1, borderColor: stage.goldSoft, paddingBottom: Math.max(insets.bottom, 16) }}>
         <View {...pan.panHandlers} style={{ paddingTop: 10, paddingBottom: 8, alignItems: "center" }} accessible accessibilityRole="adjustable" accessibilityLabel={tx.close} accessibilityActions={[{ name: "decrement" }]} onAccessibilityAction={onClose}>
           <View style={{ width: 40, height: 4, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.3)" }} />
         </View>
+        {/* always-visible close button (the handle alone was easy to miss) */}
+        <Pressable onPress={onClose} accessibilityRole="button" accessibilityLabel={tx.close} hitSlop={12}
+          style={{ position: "absolute", top: 8, right: 12, zIndex: 30, elevation: 30, width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.12)", borderWidth: 1, borderColor: stage.goldSoft }}>
+          <Icon name="close" color="#fff" size={18} />
+        </Pressable>
         <ScrollView bounces={false} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
           {/* the image as it will be shared, scaled down; the snapshot is taken from the unscaled inner view */}
           <View accessible accessibilityRole="image" accessibilityLabel={format === "story" ? tx.storyPreview : tx.previewLabel}
