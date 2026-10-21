@@ -615,5 +615,21 @@
     "firstAfter": 8,
     "maxPerSession": 3,
     "provider": "none"
+  },
+  "posting": {
+    "requirePro": false,
+    "minReciterLevel": 3,
+    "requireVerified": true,
+    "minAge": 16,
+    "minSeconds": 10,
+    "maxSeconds": 30,
+    "storyHours": 24,
+    "postsPerDay": 5,
+    "requireBadge": "emerald"
+  },
+  "badges": {
+    "requirePhone": false,
+    "goldMinLevel": 6,
+    "officialMinSubscribers": 100000
   }
 }

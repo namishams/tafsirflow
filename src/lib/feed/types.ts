@@ -22,6 +22,14 @@ export type FeedConfig = {
   monetize?: FeedMonetize;
   /** placeholder slots for future ad posts in the app's Home stream (no ad SDK yet); off by default */
   adSlots?: FeedAdSlots;
+  /** Quran Talents: who may post recitation clips (server-enforced; the app shows the checklist from it) */
+  posting?: FeedPosting;
+};
+
+/** posting rules for recitation clips; every field optional (defaults in src/lib/talentPosting.ts) */
+export type FeedPosting = {
+  requirePro?: boolean; minReciterLevel?: number; requireVerified?: boolean; minAge?: number;
+  minSeconds?: number; maxSeconds?: number; storyHours?: number; postsPerDay?: number;
 };
 
 /** Ad slots: the app reserves a position in the stream when `enabled`; until an ad provider is wired in the slot stays

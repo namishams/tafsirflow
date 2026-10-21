@@ -5,7 +5,7 @@
     "scheme": "quranmasterclass",
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon-gold.png",
     "userInterfaceStyle": "automatic",
     "ios": {
       "bundleIdentifier": "com.quranmasterclass.app",
@@ -62,8 +62,9 @@
     "android": {
       "package": "com.quranmasterclass.app",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png",
+        "foregroundImage": "./assets/android-icon-foreground-gold.png",
+        "backgroundImage": "./assets/android-icon-background-gold.png",
+        "monochromeImage": "./assets/android-icon-monochrome-gold.png",
         "backgroundColor": "#08261D"
       },
       "predictiveBackGestureEnabled": true,
@@ -79,7 +80,7 @@
     },
     "web": {
       "output": "single",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon-gold.png"
     },
     "plugins": [
       "expo-router",
@@ -87,7 +88,7 @@
         "expo-audio",
         {
           "enableBackgroundPlayback": true,
-          "microphonePermission": "Quran Masterclass uses the microphone only when you start the recitation check. Your recording stays on this device and is not uploaded."
+          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. Recordings stay on this device unless you choose to publish a recitation clip or send a verification sample."
         }
       ],
       "expo-secure-store",
@@ -98,9 +99,9 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/splash-icon.png",
-          "imageWidth": 120,
-          "backgroundColor": "#F5F7F6",
+          "image": "./assets/splash-icon-gold.png",
+          "imageWidth": 160,
+          "backgroundColor": "#08261D",
           "dark": {
             "backgroundColor": "#071611"
           }
@@ -134,8 +135,25 @@
       [
         "expo-speech-recognition",
         {
-          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording or the word check. Your recording stays on this device and is not uploaded.",
+          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. Recordings stay on this device unless you choose to publish a recitation clip or send a verification sample.",
           "speechRecognitionPermission": "The word check in the Reciter Path recognises the words you recite on this device to show which words were heard. It is not a tajweed assessment and nothing is uploaded."
+        }
+      ],
+      "expo-video",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Quran Masterclass uses the camera only when you switch on video for a recitation clip. Nothing is recorded until you start, and the clip is only published if you choose to.",
+          "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. Recordings stay on this device unless you choose to publish a recitation clip or send a verification sample.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Quran Masterclass opens your photos only when you choose a profile picture. Only the picture you pick is uploaded, without its location data.",
+          "cameraPermission": "Quran Masterclass uses the camera only when you take a profile picture or switch on video for a recitation clip.",
+          "microphonePermission": false
         }
       ]
     ],

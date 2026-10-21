@@ -11,7 +11,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ user
   const { username } = await params;
   const c = await findByName(username);
   const mine = c && Number(c.user_id) === g.me.id;
-  if (!c || (!c.public && !mine)) return json({ error: "not_found" }, 404);
+  if (!c || ((!c.public || c.suspended) && !mine)) return json({ error: "not_found" }, 404);
   const p = pool()!;
   const b = await p.query("SELECT blocker_id FROM community_blocks WHERE (blocker_id = $1 AND blocked_id = $2) OR (blocker_id = $2 AND blocked_id = $1)", [g.me.id, c.user_id]);
   const iBlocked = b.rows.some((x) => Number(x.blocker_id) === g.me.id);

@@ -5,7 +5,7 @@ import { findByName, gate } from "@/lib/communityProfiles";
 
 export const dynamic = "force-dynamic";
 
-// POST blocks, DELETE unblocks. Blocking also removes follows in both directions.
+// POST blocks, DELETE unblocks. Blocking also removes follows and connections in both directions.
 async function run(req: NextRequest, params: Promise<{ username: string }>, block: boolean) {
   const g = await gate(req, "block", 20, 60_000, true);
   if (g.res) return g.res;
@@ -17,6 +17,8 @@ async function run(req: NextRequest, params: Promise<{ username: string }>, bloc
   if (block) {
     await p.query("INSERT INTO community_blocks (blocker_id, blocked_id) VALUES ($1,$2) ON CONFLICT DO NOTHING", [g.me.id, id]);
     await p.query("DELETE FROM community_follows WHERE (follower_id = $1 AND followee_id = $2) OR (follower_id = $2 AND followee_id = $1)", [g.me.id, id]);
+    // Quran Talents: a block also ends a connection or open request between the two
+    await p.query("DELETE FROM community_connections WHERE (requester_id = $1 AND addressee_id = $2) OR (requester_id = $2 AND addressee_id = $1)", [g.me.id, id]);
   } else {
     await p.query("DELETE FROM community_blocks WHERE blocker_id = $1 AND blocked_id = $2", [g.me.id, id]);
   }

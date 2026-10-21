@@ -8,12 +8,14 @@ import { useAuth } from "@/lib/auth";
 import { Page, PageHero, Loading, ErrorState } from "@/components/page";
 import { GoldButton, OutlineButton } from "@/components/brand";
 import { useCT } from "@/features/community/text";
+import { useTT } from "@/features/talents/text";
 import { Avatar, FollowButton, RoleBadge, errText, type Profile } from "@/features/community/ui";
 
 // /community/u/[username] – profile header like Instagram: avatar, counts, follow, block, report
 export default function UserProfile() {
   const t = useTheme();
   const c = useCT();
+  const tt = useTT();
   const { user } = useAuth();
   const { username } = useLocalSearchParams<{ username: string }>();
   const [p, setP] = useState<Profile | null>(null);
@@ -106,6 +108,15 @@ export default function UserProfile() {
               </View>
             )}
             {msg ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.semibold, fontSize: 14, lineHeight: 20, color: t.muted }}>{msg}</Text> : null}
+            {/* Quran Talents: the fuller talent profile (connect, message) and the community guidelines */}
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 16 }}>
+              <Pressable onPress={() => router.push(`/talents/u/${p.username}` as Href)} accessibilityRole="link" style={{ minHeight: 44, justifyContent: "center" }}>
+                <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{tt("network")}</Text>
+              </Pressable>
+              <Pressable onPress={() => router.push("/talents/guidelines" as Href)} accessibilityRole="link" style={{ minHeight: 44, justifyContent: "center" }}>
+                <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{tt("guidelines")}</Text>
+              </Pressable>
+            </View>
           </View>
         )}
       </Page>

@@ -46,6 +46,7 @@ export function feedConfig({ locale, tradition }: FeedParams, now = new Date()):
       .map(({ tradition: _t, ...a }) => ({ ...a, title: loc((a as unknown as { title: Localized }).title, locale) })) as FeedConfig["announcements"],
     ...((c as { monetize?: FeedConfig["monetize"] }).monetize ? { monetize: (c as { monetize?: FeedConfig["monetize"] }).monetize } : {}),
     ...((c as { adSlots?: FeedConfig["adSlots"] }).adSlots ? { adSlots: (c as { adSlots?: FeedConfig["adSlots"] }).adSlots } : {}),
+    ...((c as { posting?: FeedConfig["posting"] }).posting ? { posting: (c as { posting?: FeedConfig["posting"] }).posting } : {}),
   };
 }
 

@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
             (SELECT count(*)::int FROM community_follows f WHERE f.follower_id = c.user_id) AS following,
             EXISTS (SELECT 1 FROM community_follows f WHERE f.follower_id = $1 AND f.followee_id = c.user_id) AS followed
        FROM community_profiles c
-      WHERE c.public AND c.user_id <> $1
+      WHERE c.public AND NOT c.suspended AND c.user_id <> $1
         AND ($2::text IS NULL OR c.role = $2)
         AND ($3 = '' OR lower(c.username) LIKE $3 || '%' ESCAPE '\\' OR lower(c.display_name) LIKE '%' || $3 || '%' ESCAPE '\\')
         AND NOT EXISTS (SELECT 1 FROM community_blocks b WHERE (b.blocker_id = $1 AND b.blocked_id = c.user_id) OR (b.blocker_id = c.user_id AND b.blocked_id = $1))

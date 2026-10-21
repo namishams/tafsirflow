@@ -2,45 +2,147 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import JsonLd from "@/components/JsonLd";
+import { abs, pageMeta } from "@/lib/site";
 import { appStoreUrl } from "@/lib/appstore";
-import { mc } from "@/lib/masterclass";
-import { HomeStar, StarGlyph } from "@/components/art/HomeOrnaments";
-import { Ink } from "@/components/Ornaments";
+import { getVerseByKey } from "@/lib/quran";
+import { countryName as countryNameOf } from "@/lib/countries";
+import { publicProfile } from "@/lib/talentsPublic";
+import { fill, talentsText, type TwKey } from "@/lib/talentsWeb";
+import { BadgeIcon } from "@/components/talents/BadgeIcon";
+import TalentActions from "@/components/talents/TalentActions";
+import ClipCard from "@/components/talents/ClipCard";
 
-// Placeholder for public reciter profiles (/talents/<username>). The profiles will be filled from the Talents API
-// (src/app/api/community/talents/[username]) later; until then the page says "coming soon" and is not indexed.
-// Nothing is looked up here: the username is only shown back after a strict format check.
+// Public talent profile on the website (same structure as the app profile): avatar, badge, level, stats, bio, follow /
+// message, highlights, recitations, achievements. Only public members aged 16+; badged profiles are indexed.
 export const dynamic = "force-dynamic";
 
-const USERNAME = /^[a-z0-9][a-z0-9_.]{1,29}$/i;
-
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; username: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  const c = mc(locale).talents;
-  return { title: `${c.soonTitle} | ${c.kicker}`, description: c.soonBody, robots: { index: false, follow: true } };
+  const { locale, username } = await params;
+  const p = await publicProfile(username.toLowerCase());
+  const tx = talentsText(locale);
+  if (!p) return { title: "Quran Masterclass Talents", robots: { index: false, follow: false } };
+  const meta = pageMeta(locale, `/talents/${p.username}`, `${p.name} (@${p.username}) | Quran Masterclass Talents`, fill(tx.metaDesc, { u: p.name }));
+  return p.badge && !p.private ? meta : { ...meta, robots: { index: false, follow: true } };
 }
 
-export default async function TalentProfilePlaceholder({ params }: { params: Promise<{ locale: string; username: string }> }) {
+export default async function TalentPage({ params }: { params: Promise<{ locale: string; username: string }> }) {
   const { locale, username } = await params;
   setRequestLocale(locale);
-  const name = decodeURIComponent(username);
-  if (!USERNAME.test(name)) notFound();
-  const c = mc(locale).talents;
+  const p = await publicProfile(username.toLowerCase());
+  if (!p) notFound();
+  const tx = talentsText(locale);
+  const nf = new Intl.NumberFormat(locale, { notation: "compact" });
+  // verse text from Quran.com (never typed by hand), first verse of each clip
+  const texts = await Promise.all(p.clips.slice(0, 24).map((c) => {
+    const first = c.verseKey?.split("-")[0] ?? "";
+    return /^\d+:\d+$/.test(first) ? getVerseByKey(first, locale, 20).then((v) => v.text_uthmani + (c.verseKey?.includes("-") ? " …" : "")).catch(() => "") : Promise.resolve("");
+  }));
+  const badgeLabel = p.badge ? tx[`badge_${p.badge}` as TwKey] : "";
+  const facts = [p.rewaya && `${tx.rewaya}: ${p.rewaya}`, p.maqam && `${tx.maqam}: ${p.maqam}`, p.country && countryNameOf(p.country, locale)].filter(Boolean) as string[];
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": abs(`/${locale}/talents/${p.username}`),
+    url: abs(`/${locale}/talents/${p.username}`),
+    inLanguage: locale,
+    mainEntity: {
+      "@type": "Person", name: p.name, alternateName: `@${p.username}`, description: p.bio || undefined, image: p.avatar ? abs(p.avatar) : undefined,
+      interactionStatistic: [
+        { "@type": "InteractionCounter", interactionType: "https://schema.org/FollowAction", userInteractionCount: p.followers },
+        { "@type": "InteractionCounter", interactionType: "https://schema.org/LikeAction", userInteractionCount: p.likes },
+      ],
+    },
+    isPartOf: { "@id": abs("/#site") },
+  };
+  const stat = (n: number, label: string, href?: string) => {
+    const inner = <><span className="block text-xl font-bold text-white">{nf.format(n)}</span><span className="block text-[12.5px] text-white/60">{label}</span></>;
+    return href && !p.private ? <Link href={href} className="min-w-[72px] text-center hover:opacity-80">{inner}</Link> : <span className="min-w-[72px] text-center">{inner}</span>;
+  };
   return (
-    <section className="stage girih relative overflow-hidden text-[#eef0f3]">
-      <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 50% 0%, rgb(var(--gold) / .16) 0, transparent 50%)" }} />
-      <div className="relative mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center px-5 py-20 text-center">
-        <HomeStar size={64} tone="gold" />
-        <p className="hm-k mt-6 flex items-center gap-2 text-[rgb(var(--gold))]"><StarGlyph size={9} />{c.kicker}</p>
-        <p className="mt-3 text-[15px] font-semibold text-white/60" dir="ltr">@{name}</p>
-        <h1 className="font-display mt-4 text-4xl leading-[1.1] sm:text-5xl">{c.soonTitle}</h1>
-        <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-white/70">{c.soonBody}</p>
-        <p aria-hidden className="font-arabic mt-6 text-[22px] text-[rgb(var(--gold))]/85" dir="rtl"><Ink>خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</Ink></p>
-        <div className="mt-9 flex flex-wrap justify-center gap-3">
-          <a href={appStoreUrl()} rel="noopener" className="btn-gold inline-flex h-12 items-center rounded-md px-6 text-[15px] font-bold">{c.cta}</a>
-          <Link href="/talents" className="inline-flex h-12 items-center rounded-md border border-[rgb(var(--gold))]/40 px-6 text-[15px] font-bold transition hover:border-[rgb(var(--gold))] hover:bg-white/[0.04]">{c.soonBack}</Link>
+    <div>
+      <JsonLd data={ld} />
+      <section className="stage girih relative overflow-hidden text-[#eef0f3]">
+        <div className="relative mx-auto max-w-4xl px-5 pb-12 pt-10 sm:pt-14">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))] rtl:tracking-normal"><Link href="/talents" className="hover:underline">{tx.network}</Link></p>
+          <div className="mt-6 flex flex-wrap items-center gap-6">
+            <span className={`grid h-28 w-28 shrink-0 place-items-center overflow-hidden rounded-full bg-[rgb(8,58,44)] ${p.badge === "gold" || p.badge === "official" ? "ring-4 ring-[#E2C77F]" : "ring-2 ring-[rgb(var(--gold))]/70"}`}>
+              {p.avatar
+                ? <img src={p.avatar} alt="" width={112} height={112} className="h-full w-full object-cover" /> // eslint-disable-line @next/next/no-img-element
+                : <span aria-hidden className="font-callig text-4xl text-[#e8d3a0]">{(p.name.trim().split(/\s+/).slice(0, 2).map((w) => Array.from(w)[0] ?? "").join("") || "?").toUpperCase()}</span>}
+            </span>
+            <div className="flex flex-1 flex-wrap justify-start gap-4 sm:gap-8">
+              {stat(p.posts, tx.posts)}
+              {stat(p.followers, tx.followers, `/talents/${p.username}/followers`)}
+              {stat(p.following, tx.following, `/talents/${p.username}/following`)}
+              {stat(p.likes, tx.likes)}
+            </div>
+          </div>
+          <h1 className="font-display mt-6 flex flex-wrap items-center gap-2 text-4xl leading-tight sm:text-5xl">
+            {p.name}
+            {p.badge ? <a href="#badges" className="inline-flex" aria-label={`${badgeLabel}. ${tx.badgeWhat}`}><BadgeIcon badge={p.badge} size={28} title={badgeLabel} /></a> : null}
+          </h1>
+          <p className="mt-1 text-white/60" dir="ltr">@{p.username}</p>
+          <div className="mt-3 flex flex-wrap items-center gap-2 text-[13px]">
+            <span className="rounded-full border border-[rgb(var(--gold))]/50 bg-[rgb(var(--gold))]/10 px-3 py-1 font-semibold text-[rgb(var(--gold))]">{tx[`level_${p.level}` as TwKey] ?? p.level}</span>
+            {p.private ? <span className="rounded-full border border-white/20 px-3 py-1 text-white/70">{tx.private}</span> : null}
+          </div>
+          {facts.length ? <p className="mt-4 text-[15px] font-semibold text-white/85">{facts.join(" · ")}</p> : null}
+          {p.officialChannel ? <p className="mt-1 text-[14px] text-[rgb(var(--gold))]">{fill(tx.officialChannel, { c: p.officialChannel })}</p> : null}
+          {p.bio ? <p className="mt-3 max-w-2xl whitespace-pre-line text-[16px] leading-relaxed text-white/75">{p.bio}</p> : null}
+          <div className="mt-7">
+            <TalentActions username={p.username} appUrl={appStoreUrl()} l={{ follow: tx.follow, followingBtn: tx.followingBtn, requested: tx.requested, message: tx.message, signIn: tx.signIn, signInToFollow: tx.signInToFollow, messageInApp: tx.messageInApp, getApp: tx.getApp, error: tx.error }} />
+          </div>
         </div>
+      </section>
+
+      <div className="mx-auto max-w-4xl px-5 py-10">
+        {p.private ? (
+          <p className="callout rounded-lg p-6 text-center text-[16px]">{tx.privateText}</p>
+        ) : (
+          <>
+            {p.highlights.length ? (
+              <section aria-label={tx.highlights} className="mb-8 flex gap-5 overflow-x-auto pb-2">
+                {p.highlights.map((h) => (
+                  <a key={h.id} href={appStoreUrl()} rel="noopener" className="grid w-20 shrink-0 justify-items-center gap-1.5 text-center">
+                    <span className="stage grid h-16 w-16 place-items-center rounded-full ring-2 ring-[rgb(var(--gold))]/70 text-[rgb(var(--gold))]">{h.count}</span>
+                    <span className="line-clamp-1 text-[12.5px] font-semibold">{h.title}</span>
+                  </a>
+                ))}
+              </section>
+            ) : null}
+            <h2 className="font-display text-2xl">{tx.tabPosts}</h2>
+            {p.clips.length ? (
+              <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {p.clips.slice(0, 24).map((c, i) => (
+                  <ClipCard key={c.id} id={c.id} verseKey={c.verseKey} arabic={texts[i] ?? ""} likes={c.likes} l={{ listen: tx.listen, pause: tx.pause, listenSignIn: tx.listenSignIn, likes: tx.likes }} />
+                ))}
+              </div>
+            ) : <p className="mt-4 text-muted">{tx.noPosts}</p>}
+          </>
+        )}
+
+        <section id="badges" className="mt-12 grid gap-4">
+          <h2 className="font-display text-2xl">{tx.tabAwards}</h2>
+          {p.progress?.certJuz.length ? (
+            <div><h3 className="font-bold">{tx.certificates}</h3><ul className="mt-2 flex flex-wrap gap-2">{p.progress.certJuz.map((j) => <li key={j} className="rounded-full border border-[rgb(var(--hm-gold))]/50 px-3 py-1 text-[13px] font-semibold">{fill(tx.juzN, { n: j })}</li>)}</ul></div>
+          ) : null}
+          {p.progress && p.progress.treeStage > 0 ? <p className="text-[15px]">{fill(tx.treeStage, { n: p.progress.treeStage })}</p> : null}
+          {p.ijazahChain ? <div><h3 className="font-bold">{tx.ijazahChain}</h3><p className="mt-1 whitespace-pre-line text-[15px] leading-relaxed">{p.ijazahChain}</p><p className="mt-1 text-[13px] text-muted">{tx.unverifiedChain}</p></div> : null}
+          <details className="rounded-lg border border-line bg-surface p-5" open={!!p.badge}>
+            <summary className="cursor-pointer font-bold">{tx.badgeWhat}</summary>
+            <ul className="mt-4 grid gap-4">
+              {(["emerald", "gold", "official"] as const).map((b) => (
+                <li key={b} className={`flex gap-3 rounded-md p-3 ${p.badge === b ? "bg-[rgb(var(--hm-gold))]/10 ring-1 ring-[rgb(var(--hm-gold))]/50" : ""}`}>
+                  <BadgeIcon badge={b} size={26} />
+                  <div><p className="font-semibold">{tx[`badge_${b}` as TwKey]}</p><p className="text-[14px] leading-relaxed text-muted">{tx[`badge_${b}_text` as TwKey]}</p></div>
+                </li>
+              ))}
+            </ul>
+          </details>
+          <p className="text-[13px] text-muted"><Link href="/talents" className="font-semibold text-accent hover:underline">{tx.guidelines}</Link> · {tx.reportInApp}</p>
+        </section>
       </div>
-    </section>
+    </div>
   );
 }
