@@ -359,7 +359,7 @@ const ContinueCard = memo(function ContinueCard({ chapter, verse, sm, tiny, plai
             </ArchWindow>
           ) : null}
           <View style={{ flex: 1, minWidth: 0 }}>
-            <Text numberOfLines={1} style={[kicker(plain), { color: stage.gold }]}>{label}</Text>
+            <Text numberOfLines={2} style={[kicker(plain), { color: stage.gold }]}>{label}</Text>
             <Text style={{ marginTop: 4, fontFamily: FONT.display, fontSize: size, lineHeight: size * 1.375, letterSpacing: plain ? 0 : -0.025 * size, color: "#eef0f3" }}>{title}</Text>
             <View style={{ marginTop: 12, flexDirection: "row", alignItems: "center", gap: 12 }}>
               <View style={{ flex: 1, minWidth: 0, height: 3, borderRadius: 3, backgroundColor: "rgba(255,255,255,0.12)", overflow: "hidden" }}>

@@ -55,7 +55,7 @@ export function SharePromptCard({ width }: { width?: number }) {
   const [open, setOpen] = useState<"verse" | "hadith" | null>(null);
   if (!p.show && !open) return null;
   return (
-    <View style={{ width, alignSelf: "center", marginVertical: 10, padding: 14, gap: 10, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
+    <View style={{ width: width ?? "100%", alignSelf: "center", marginVertical: 10, padding: 14, gap: 10, borderRadius: R.card, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
       <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 10 }}>
         <Icon name="send" color={t.accent} size={22} />
         <View style={{ flex: 1 }}>
