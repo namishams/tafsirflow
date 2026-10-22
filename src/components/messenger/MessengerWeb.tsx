@@ -26,6 +26,27 @@ type Info = { id: string; kind: Row["kind"]; title: string; audience: string; wi
 type Me = Person & { pro: boolean };
 type T = ReturnType<typeof messengerText>;
 
+// sample data for screenshots: only with ?demo=1 outside production (src/app/[locale]/(app)/messages/page.tsx)
+const ago0 = (min: number) => new Date(Date.now() - min * 60_000).toISOString();
+const DP = (username: string, name: string, badge: Badge = null): Person => ({ username, name, avatar: null, badge });
+const DEMO_ROWS: Row[] = [
+  { id: "d1", kind: "direct", title: "Yusuf Rahman", with: DP("yusuf.r", "Yusuf Rahman", "gold"), photo: null, request: null, last: { kind: "text", text: "Ich habe heute Al-Mulk bis Vers 12 geschafft.", mine: false, name: "Yusuf", gone: false }, at: ago0(4), unread: 2, pro: true, active: true },
+  { id: "d2", kind: "circle", title: "Hifz-Kreis Hamburg", with: null, photo: null, request: null, last: { kind: "text", text: "Morgen nach Fajr wiederholen wir Juz 30.", mine: false, name: "Maryam", gone: false }, at: ago0(38), unread: 5 },
+  { id: "d3", kind: "direct", title: "Maryam Siddiqui", with: DP("maryam.s", "Maryam Siddiqui"), photo: null, request: null, last: { kind: "voice", text: null, mine: true, name: "", gone: false }, at: ago0(180), unread: 0, seen: true, active: true },
+  { id: "d4", kind: "group", title: "Tajwid Anfänger", with: null, photo: null, request: null, last: { kind: "share", text: null, mine: false, name: "Omar", gone: false }, at: ago0(1500), unread: 0 },
+  { id: "d5", kind: "direct", title: "Aisha Khan", with: DP("aisha.k", "Aisha Khan"), photo: null, request: null, last: { kind: "text", text: "Barakallahu fik für die Erklärung.", mine: false, name: "Aisha", gone: false }, at: ago0(4000), unread: 0 },
+];
+const DEMO_INFO: Info = { id: "d1", kind: "direct", title: "Yusuf Rahman", audience: "all", with: DP("yusuf.r", "Yusuf Rahman", "gold"), photo: null, me: { role: "member", quiet: false }, members: [], memberCount: 2,
+  request: null, typing: [], readUpTo: 104, readers: null, canManage: false, card: { country: "DE", level: "talent", mutual: 3 }, active: true, canViewOnce: true };
+const dm = (id: number, mine: boolean, text: string | null, min: number, extra: Partial<Msg> = {}): Msg => ({ id: String(id), kind: "text", mine, sender: mine ? null : DP("yusuf.r", "Yusuf Rahman"), text, card: null, system: null, deleted: false, removed: false, media: null, durationMs: null, reply: null, reactions: {}, myReaction: null, at: ago0(min), ...extra });
+const DEMO_MSGS: Msg[] = [
+  dm(100, false, "As-salamu alaykum. Wie läuft Ihre Wiederholung diese Woche?", 95),
+  dm(101, true, "Wa alaykum as-salam. Gut, ich bin bei Vers 8 von Al-Mulk.", 90, { reactions: { mashallah: 1 } }),
+  dm(102, false, null, 60, { kind: "share", card: { type: "verse", ref: "67:2", title: "Al-Mulk 67:2", subtitle: "Der den Tod und das Leben erschaffen hat, um Sie zu prüfen, wer von Ihnen die besten Taten verrichtet.", url: "/quran/67" } }),
+  dm(103, true, "Danke, genau diesen Vers wiederhole ich morgen.", 45),
+  dm(104, false, "Ich habe heute Al-Mulk bis Vers 12 geschafft.", 4, { reply: { id: "103", name: "", kind: "text", text: "Danke, genau diesen Vers wiederhole ich morgen.", gone: false } }),
+];
+
 const CATS = ["spam", "harassment", "inappropriate", "impersonation", "minor_safety", "other"] as const;
 const REACTIONS: Reaction[] = ["mashallah", "heart", "dua"];
 class ApiErr extends Error { constructor(public code: string) { super(code); } }
@@ -123,19 +144,20 @@ async function reencode(file: File, max = 1600): Promise<Blob> {
   return await new Promise<Blob>((res, rej) => c.toBlob((b) => (b ? res(b) : rej(new Error("encode"))), "image/jpeg", 0.82));
 }
 
-const field = "min-h-10 w-full rounded-xl bg-[rgb(var(--surface))] px-3 outline-none ring-1 ring-[rgb(var(--line))] focus:ring-[rgb(var(--accent))]";
-const soft = (on: boolean) => `inline-flex h-8 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-sm font-semibold ring-1 ${on ? "bg-[rgb(var(--accent-soft))] text-[rgb(var(--accent))] ring-[rgb(var(--accent))]" : "bg-[rgb(var(--surface))] ring-[rgb(var(--line))]"}`;
-const btn = "inline-flex min-h-10 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold ring-1 ring-[rgb(var(--line))] hover:bg-[rgb(var(--surface))] disabled:opacity-50";
-const gold = "inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-b from-[#E8CF8A] to-[#C6A65E] px-5 text-sm font-bold text-[rgb(40,30,8)] disabled:opacity-50";
-const iconBtn = "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full hover:bg-[rgb(var(--surface))]";
+const field = "min-h-11 w-full rounded-xl bg-[rgb(var(--surface))] px-3.5 text-[15px] outline-none ring-1 ring-[rgb(var(--line))] transition focus:ring-2 focus:ring-[rgb(var(--accent))]";
+const soft = (on: boolean) => `inline-flex h-8 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-[13px] font-semibold ring-1 transition ${on ? "bg-[rgb(var(--accent))] text-white ring-[rgb(var(--accent))]" : "bg-[rgb(var(--surface))] text-[rgb(var(--ink))] ring-[rgb(var(--line))] hover:ring-[rgb(var(--accent))]/50"}`;
+const btn = "inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-[rgb(var(--surface))] px-4 text-sm font-semibold ring-1 ring-[rgb(var(--line))] transition hover:bg-[rgb(var(--bg))] hover:ring-[rgb(var(--ink))]/30 disabled:opacity-50";
+const gold = "btn-gold inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold disabled:opacity-50";
+const iconBtn = "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[rgb(var(--ink))] transition hover:bg-[rgb(var(--accent-soft))] hover:text-[rgb(var(--accent))]";
+const shell = "md:rounded-2xl md:border md:border-[rgb(var(--line))] md:bg-[rgb(var(--surface))] md:shadow-[0_1px_2px_rgb(0_0_0/0.04),0_8px_24px_-12px_rgb(6_60_44/0.14)]";
 
-export default function MessengerWeb({ locale }: { locale: string }) {
+export default function MessengerWeb({ locale, demo = false }: { locale: string; demo?: boolean }) {
   const t = useMemo(() => messengerText(locale), [locale]);
   const [box, setBox] = useState<"inbox" | "requests" | "unread" | "unanswered">("inbox");
-  const [rows, setRows] = useState<Row[] | null>(null);
-  const [me, setMe] = useState<Me | null>(null);
-  const [unread, setUnread] = useState({ inbox: 0, requests: 0 });
-  const [state, setState] = useState<"load" | "ok" | "out">("load");
+  const [rows, setRows] = useState<Row[] | null>(demo ? DEMO_ROWS : null);
+  const [me, setMe] = useState<Me | null>(demo ? { ...DP("amina.k", "Amina Karimi", "gold"), pro: true } : null);
+  const [unread, setUnread] = useState(demo ? { inbox: 7, requests: 1 } : { inbox: 0, requests: 0 });
+  const [state, setState] = useState<"load" | "ok" | "out">(demo ? "ok" : "load");
   const [err, setErr] = useState("");
   const [q, setQ] = useState("");
   const [hits, setHits] = useState<{ threadId: string; title: string; snippet: string | null }[] | null>(null);
@@ -145,15 +167,16 @@ export default function MessengerWeb({ locale }: { locale: string }) {
   const [aud, setAud] = useState("all");
   const [people, setPeople] = useState<(Person & { country?: string | null; mine?: boolean })[]>([]);
   const [needPro, setNeedPro] = useState(false);
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<string | null>(demo ? "d1" : null);
   const [prefs, setPrefs] = useState<{ readReceipts: boolean; activeStatus: boolean } | null>(null);
 
   const loadList = useCallback(async () => {
+    if (demo) return;
     try {
       const d = await call<{ threads: Row[]; unread: { inbox: number; requests: number }; me: Me | null }>(`threads?box=${box === "requests" ? "requests" : "inbox"}`);
       setRows(d.threads); setUnread(d.unread); setMe(d.me); setState("ok");
     } catch (e) { const c = codeOf(e); if (c === "login" || c === "verify" || c === "profile_required" || c.startsWith("age")) setState("out"); setErr(errorText(t, c)); setRows((r) => r ?? []); }
-  }, [box, t]);
+  }, [box, t, demo]);
   useEffect(() => { void loadList(); const h = setInterval(() => void loadList(), 15000); return () => clearInterval(h); }, [loadList]);
   useEffect(() => { if (settings) void call<{ readReceipts: boolean; activeStatus: boolean }>("prefs").then(setPrefs).catch(() => undefined); }, [settings]);
   useEffect(() => { const code = new URLSearchParams(window.location.search).get("join"); if (code) { setCompose("join"); setVal(code); } }, []);
@@ -200,18 +223,27 @@ export default function MessengerWeb({ locale }: { locale: string }) {
     return `${who}${what} · ${when}`;
   };
 
-  if (state === "out") return <div className="mx-auto max-w-2xl px-5 py-16 text-center"><h1 className="font-display text-3xl">{t.title}</h1><p className="mt-4 text-muted">{err || t.signIn}</p></div>;
+  if (state === "out") return (
+    <div className="mx-auto max-w-xl px-4 py-12 sm:py-20">
+      <div className="rounded-2xl border border-[rgb(var(--line))] bg-[rgb(var(--surface))] p-8 text-center shadow-[0_8px_24px_-12px_rgb(6_60_44/0.14)]">
+        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[rgb(var(--accent-soft))] text-[rgb(var(--accent))]"><Ico n="send" size={24} /></span>
+        <h1 className="mt-5 font-display text-[28px] font-semibold">{t.title}</h1>
+        <p className="mx-auto mt-3 max-w-sm text-[15px] leading-relaxed text-muted">{err || t.signIn}</p>
+        <a href={`/${locale}/account`} className={`${gold} mt-6`}>{t.title}</a>
+      </div>
+    </div>
+  );
 
   return (
-    <div className="mx-auto grid max-w-6xl md:grid-cols-[380px_1fr] md:gap-4 md:px-4 md:py-6">
-      <aside className={`${active ? "hidden md:block" : ""} min-w-0 pb-28 md:pb-0`}>
-        <header className="flex items-center gap-1 px-3 pt-3">
-          <h1 className="flex min-w-0 flex-1 items-center gap-1.5 px-1 text-xl font-bold"><span className="truncate">{me ? me.username : t.title}</span><Tick badge={me?.badge} /></h1>
+    <div className="mx-auto grid max-w-6xl md:grid-cols-[380px_1fr] md:gap-5 md:px-4 md:py-6">
+      <aside className={`${active ? "hidden md:flex" : "flex"} min-w-0 flex-col pb-28 md:sticky md:top-6 md:h-[calc(100dvh-3rem)] md:min-h-[560px] md:overflow-hidden md:pb-0 ${shell}`}>
+        <header className="flex items-center gap-1 px-3 pt-3 md:border-b md:border-[rgb(var(--line))] md:px-4 md:pb-3 md:pt-4">
+          <h1 className="flex min-w-0 flex-1 items-center gap-1.5 px-1 font-display text-[22px] font-semibold"><span className="truncate">{me ? me.username : t.title}</span><Tick badge={me?.badge} /></h1>
           <button className={iconBtn} aria-label={t.settings} onClick={() => setSettings(true)}><Ico n="gear" /></button>
           <button className={iconBtn} aria-label={t.compose} onClick={() => { setCompose("new"); setVal(""); setErr(""); }}><Ico n="pen" /></button>
         </header>
-        <div className="space-y-3 px-4 pt-2">
-          <label className="flex h-10 items-center gap-2 rounded-xl bg-[rgb(var(--surface))] px-3 text-muted">
+        <div className="space-y-3 px-4 pt-3">
+          <label className="flex h-11 items-center gap-2 rounded-xl bg-[rgb(var(--bg))] px-3.5 text-muted ring-1 ring-[rgb(var(--line))] transition focus-within:ring-2 focus-within:ring-[rgb(var(--accent))]">
             <Ico n="search" size={16} />
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t.searchPh} aria-label={t.searchPh} className="min-w-0 flex-1 bg-transparent text-[rgb(var(--ink))] outline-none" />
           </label>
@@ -237,34 +269,41 @@ export default function MessengerWeb({ locale }: { locale: string }) {
           {err && !compose ? <p role="alert" className="text-sm font-semibold text-red-500">{err}</p> : null}
           {box === "requests" && !hits ? <p className="text-sm text-muted">{t.requestsHint}</p> : null}
         </div>
-        <ul className="mt-2">
+        <ul className="mt-2 flex-1 space-y-0.5 px-2 pb-3 md:overflow-y-auto">
+          {!rows && !hits ? Array.from({ length: 6 }, (_, i) => (
+            <li key={`sk${i}`} aria-hidden className="flex min-h-[76px] items-center gap-3 px-2 py-2">
+              <span className="h-[60px] w-[60px] shrink-0 animate-pulse rounded-full bg-[rgb(var(--line))]" />
+              <span className="grid flex-1 gap-2"><span className="h-3.5 w-2/5 animate-pulse rounded bg-[rgb(var(--line))]" /><span className="h-3 w-4/5 animate-pulse rounded bg-[rgb(var(--line))]" /></span>
+            </li>
+          )) : null}
           {hits ? (hits.length ? hits.map((h, i) => (
-            <li key={`${h.threadId}-${i}`}><button className="w-full px-4 py-2.5 text-start hover:bg-[rgb(var(--surface))]" onClick={() => setActive(h.threadId)}>
+            <li key={`${h.threadId}-${i}`}><button className="w-full rounded-xl px-3 py-2.5 text-start transition hover:bg-[rgb(var(--accent-soft))]/60" onClick={() => setActive(h.threadId)}>
               <span className="block font-semibold">{h.title}</span>{h.snippet ? <span className="block truncate text-sm text-muted">{h.snippet}</span> : null}</button></li>
           )) : <li className="p-4 text-center text-muted">{t.noResults}</li>)
             : shown && !shown.length ? (box === "inbox" ? (
-              <li className="flex items-center gap-3 px-4 py-3 text-sm text-muted">
-                <span className="flex-1">{t.emptyHint}</span>
-                <button className="font-semibold text-[rgb(var(--accent))] md:hidden" onClick={() => setCompose("new")}>{t.startChat}</button>
+              <li className="m-2 rounded-xl border border-dashed border-[rgb(var(--line))] p-5 text-center text-sm text-muted">
+                <span className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(var(--accent-soft))] text-[rgb(var(--accent))]"><Ico n="pen" size={18} /></span>
+                <span className="block">{t.emptyHint}</span>
+                <button className="mt-3 font-semibold text-[rgb(var(--accent))] hover:underline" onClick={() => setCompose("new")}>{t.startChat}</button>
               </li>
-            ) : <li className="px-4 py-3 text-sm text-muted">{box === "requests" ? t.emptyRequests : t.noResults}</li>)
+            ) : <li className="m-2 rounded-xl border border-dashed border-[rgb(var(--line))] p-5 text-center text-sm text-muted">{box === "requests" ? t.emptyRequests : t.noResults}</li>)
             : (shown ?? []).map((c) => (
               <li key={c.id}>
                 <button onClick={() => setActive(c.id)} aria-label={`${c.title}${c.unread ? `, ${c.unread}` : ""}, ${sub(c)}`}
-                  className={`flex min-h-[76px] w-full items-center gap-3 px-4 py-2 text-start hover:bg-[rgb(var(--surface))] ${active === c.id ? "bg-[rgb(var(--surface))]" : ""}`}>
+                  className={`flex min-h-[76px] w-full items-center gap-3 rounded-xl px-2 py-2 text-start transition ${active === c.id ? "bg-[rgb(var(--accent-soft))]" : "hover:bg-[rgb(var(--bg))]"}`}>
                   <Avatar name={c.title} src={c.kind === "direct" ? c.with?.avatar ?? null : c.photo} ring={!!c.pro} active={!!c.active} />
                   <span className="min-w-0 flex-1">
                     <span className="flex items-center gap-1.5"><span className={`truncate ${c.unread ? "font-bold" : "font-semibold"}`}>{c.title}</span><Tick badge={c.with?.badge} /></span>
                     <span className={`block truncate text-sm ${c.unread ? "font-semibold" : "text-muted"}`}>{sub(c)}</span>
                   </span>
-                  {c.unread ? <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[rgb(var(--gold))]" /> : null}
+                  {c.unread ? <span className="min-w-[20px] shrink-0 rounded-full bg-[rgb(var(--accent))] px-1.5 text-center text-[11px] font-bold leading-5 text-white">{c.unread > 99 ? "99+" : c.unread}</span> : null}
                 </button>
               </li>
             ))}
         </ul>
       </aside>
-      <section className={`${active ? "flex" : "hidden md:flex"} min-h-[100dvh] min-w-0 flex-col overflow-hidden md:sticky md:top-6 md:h-[calc(100dvh-3rem)] md:min-h-[560px] md:rounded-3xl md:ring-1 md:ring-[rgb(var(--line))]`}>
-        {active ? <ChatPane key={active} id={active} t={t} locale={locale} pro={!!rows?.find((r) => r.id === active)?.pro} onBack={() => { setActive(null); void loadList(); }} />
+      <section className={`${active ? "flex" : "hidden md:flex"} min-h-[100dvh] min-w-0 flex-col overflow-hidden md:sticky md:top-6 md:h-[calc(100dvh-3rem)] md:min-h-[560px] ${shell}`}>
+        {active ? <ChatPane key={active} id={active} demo={demo} t={t} locale={locale} pro={!!rows?.find((r) => r.id === active)?.pro} onBack={() => { setActive(null); void loadList(); }} />
           : <Welcome t={t} onCompose={() => setCompose("new")} onMessage={(u) => void go(() => call<{ id: string }>("threads", { method: "POST", json: { username: u } }))} />}
       </section>
 
@@ -333,8 +372,8 @@ function Welcome({ t, onCompose, onMessage }: { t: T; onCompose: () => void; onM
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-4 overflow-y-auto p-8 text-center">
       <GardenArt size={220} />
-      <h2 className="font-display text-3xl">{t.welcomeTitle}</h2>
-      <p className="max-w-sm text-muted">{t.welcomeLine}</p>
+      <h2 className="font-display text-[28px] font-semibold">{t.welcomeTitle}</h2>
+      <p className="max-w-sm text-[15px] leading-relaxed text-muted">{t.welcomeLine}</p>
       <button className={gold} onClick={onCompose}><Ico n="pen" size={16} />{t.compose}</button>
       <div className="mt-6 w-full max-w-lg">
         {!on ? <button className="text-sm font-semibold text-[rgb(var(--accent))]" onClick={show}>{t.showSuggest}</button> : people && people.length ? (
@@ -342,7 +381,7 @@ function Welcome({ t, onCompose, onMessage }: { t: T; onCompose: () => void; onM
             <h3 className="mb-3 text-start text-sm font-semibold text-muted">{t.suggestTitle}</h3>
             <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {people.map((p) => (
-                <li key={p.username} className="flex flex-col items-center gap-1.5 rounded-2xl bg-[rgb(var(--surface))] p-3 ring-1 ring-[rgb(var(--line))]">
+                <li key={p.username} className="flex flex-col items-center gap-1.5 rounded-2xl bg-[rgb(var(--bg))] p-3 ring-1 ring-[rgb(var(--line))] transition hover:ring-[rgb(var(--accent))]/40">
                   <Avatar name={p.name} src={p.avatar} size={56} />
                   <span className="flex max-w-full items-center gap-1 text-sm font-semibold"><span className="truncate">{p.name}</span><Tick badge={p.badge ?? (p.verified ? "gold" : null)} /></span>
                   <span className="max-w-full truncate text-xs text-muted">@{p.username}</span>
@@ -357,7 +396,7 @@ function Welcome({ t, onCompose, onMessage }: { t: T; onCompose: () => void; onM
   );
 }
 
-function ChatPane({ id, t, locale, onBack, pro = false }: { id: string; t: T; locale: string; onBack: () => void; pro?: boolean }) {
+function ChatPane({ id, t, locale, onBack, pro = false, demo = false }: { id: string; t: T; locale: string; onBack: () => void; pro?: boolean; demo?: boolean }) {
   const [info, setInfo] = useState<Info | null>(null);
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [more, setMore] = useState<string | null>(null);
@@ -387,14 +426,15 @@ function ChatPane({ id, t, locale, onBack, pro = false }: { id: string; t: T; lo
   const groupPhoto = useRef<HTMLInputElement>(null);
 
   const load = useCallback(async () => {
+    if (demo) { setInfo(DEMO_INFO); setMsgs(DEMO_MSGS); setCanSend(true); return; }
     try {
       const d = await call<{ thread: Info; messages: Msg[]; more: string | null; canSend: boolean; sendProblem: string | null }>(`threads/${id}`);
       setInfo(d.thread); setCanSend(d.canSend); setProblem(d.sendProblem);
       setMsgs((old) => { const first = d.messages[0]?.id; const keep = first ? old.filter((m) => Number(m.id) < Number(first)) : []; return [...keep, ...d.messages]; });
       setMore((m) => m ?? d.more);
     } catch (e) { setErr(errorText(t, codeOf(e))); }
-  }, [id, t]);
-  useEffect(() => { void load(); const h = setInterval(() => void load(), 4000); return () => clearInterval(h); }, [load]);
+  }, [id, t, demo]);
+  useEffect(() => { void load(); if (demo) return; const h = setInterval(() => void load(), 4000); return () => clearInterval(h); }, [load, demo]);
   const count = msgs.length;
   useEffect(() => { endRef.current?.scrollIntoView({ block: "end" }); }, [count]);
 
@@ -482,7 +522,7 @@ function ChatPane({ id, t, locale, onBack, pro = false }: { id: string; t: T; lo
 
   return (
     <>
-      <header className="sticky top-0 z-10 flex items-center gap-2 border-b border-[rgb(var(--line))] bg-[rgb(var(--bg))] p-3">
+      <header className="sticky top-0 z-10 flex items-center gap-2 border-b border-[rgb(var(--line))] bg-[rgb(var(--surface))]/95 px-3 py-2.5 backdrop-blur md:px-4">
         <button onClick={onBack} className={`${iconBtn} md:hidden`} aria-label={t.cancel}><Ico n="back" /></button>
         {info ? (
           info.kind === "direct" && info.with ? (
@@ -543,12 +583,12 @@ function ChatPane({ id, t, locale, onBack, pro = false }: { id: string; t: T; lo
           {info.kind === "group" ? <button className={btn} onClick={() => window.confirm(t.leaveConfirm) && void run(async () => { await call(`threads/${id}/leave`, { method: "POST", json: {} }); onBack(); })}>{t.leave}</button> : null}
         </div>
       ) : null}
-      <div className="flex-1 space-y-2 overflow-y-auto p-4">
+      <div className="flex-1 space-y-2.5 overflow-y-auto bg-[rgb(var(--bg))] p-4 md:px-6">
         {more ? <button className="mx-auto block text-sm font-semibold text-gold" onClick={() => void run(async () => { const d = await call<{ messages: Msg[]; more: string | null }>(`threads/${id}?before=${more}`); setMsgs((o) => [...d.messages, ...o]); setMore(d.more); })}>{t.loadOlder}</button> : null}
         {msgs.map((m) => m.kind === "system" ? <p key={m.id} className="text-center text-xs text-muted">{systemLine(t, m.system)}</p> : (
           <div key={m.id} className={`flex flex-col ${m.mine ? "items-end" : "items-start"}`}>
             {info && info.kind !== "direct" && !m.mine && m.sender ? <span className="mx-2 text-xs font-semibold text-gold">{m.sender.name}</span> : null}
-            <div className={`group relative max-w-[80%] rounded-2xl px-3 py-2 ${m.mine ? "bg-[rgb(8,58,44)] text-white" : "bg-[rgb(var(--surface))] ring-1 ring-[rgb(var(--line))]"}`}
+            <div className={`group relative max-w-[80%] rounded-2xl px-3.5 py-2 text-[15px] leading-relaxed shadow-[0_1px_2px_rgb(0_0_0/0.06)] ${m.mine ? "rounded-ee-md bg-[rgb(8,58,44)] text-white" : "rounded-es-md bg-[rgb(var(--surface))] ring-1 ring-[rgb(var(--line))]"}`}
               onClick={() => { const now = Date.now(); if (lastTap.current.id === m.id && now - lastTap.current.at < 320 && !m.deleted && !m.removed && m.myReaction !== "mashallah") void react(m, "mashallah"); lastTap.current = { id: m.id, at: now }; }}>
               {m.reply ? <div className="mb-1 border-s-2 border-[rgb(var(--gold))] ps-2 text-xs opacity-80"><b>{m.reply.name || t.you}</b><br />{m.reply.gone ? t.deleted : label(m.reply)}</div> : null}
               {m.deleted || m.removed ? <i className="opacity-70">{m.deleted ? t.deleted : t.removed}</i> : m.viewOnce ? (
@@ -610,7 +650,7 @@ function ChatPane({ id, t, locale, onBack, pro = false }: { id: string; t: T; lo
           </div>
         </div>
       ) : canSend ? (
-        <div className="sticky bottom-0 bg-[rgb(var(--bg))] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <div className="sticky bottom-0 border-t border-[rgb(var(--line))] bg-[rgb(var(--surface))] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           {problem === "request_text_only" || (info?.request && !info.request.incoming) ? <p className="pb-2 text-xs text-muted">{t.requestWait}</p> : null}
           {reply || editing ? (
             <p className="flex items-center gap-2 pb-2 text-xs text-muted">
@@ -619,7 +659,7 @@ function ChatPane({ id, t, locale, onBack, pro = false }: { id: string; t: T; lo
             </p>
           ) : null}
           <input ref={fileRef} type="file" hidden onChange={(e) => { void pick(e.target.files?.[0]); e.target.value = ""; }} />
-          <form onSubmit={(e) => { e.preventDefault(); void send(); }} className="flex items-end gap-1.5 rounded-[28px] bg-[rgb(var(--surface))] p-1.5 ring-1 ring-[rgb(var(--line))]">
+          <form onSubmit={(e) => { e.preventDefault(); void send(); }} className="flex items-end gap-1.5 rounded-[28px] bg-[rgb(var(--bg))] p-1.5 ring-1 ring-[rgb(var(--line))] transition focus-within:ring-2 focus-within:ring-[rgb(var(--accent))]">
             {rec ? (
               <>
                 <button type="button" className={iconBtn} aria-label={t.cancel} onClick={() => stopRec(false)}><Ico n="close" /></button>

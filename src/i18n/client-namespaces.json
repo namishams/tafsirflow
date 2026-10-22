@@ -10,6 +10,7 @@
  "routes": {
   "[...rest]": [],
   "@account": [
+   "dashboard",
    "free",
    "security",
    "signin",
@@ -118,6 +119,8 @@
   ],
   "messages": [],
   "mishary": [],
+  "nahj": [],
+  "nahj-studies": [],
   "names": [
    "donate"
   ],

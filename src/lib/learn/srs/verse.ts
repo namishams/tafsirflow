@@ -1,7 +1,10 @@
-// mirrors mobile/src/features/srs/verse.ts (copied for the website; keep both in step). No React here, so server modules
-// can import loadVerse; the two hooks (useVerseData, useWordPosition) live in ./verseHooks.ts.
+// mirrors mobile/src/features/srs/verse.ts (copied for the website; keep both in step)
+import { useEffect, useState } from "react";
 import { api } from "@/lib/learn/api";
 import { RECITERS, audioUrl, stripFootnotes, translationFor } from "@/lib/learn/quran";
+import { readJSON, writeJSON } from "@/lib/learn/store";
+import { findWordPosition, hasAudio } from "@/lib/vocabStudy";
+import type { Word as VocabWord } from "@/lib/vocab";
 
 // Verse text for cards and exams always comes from the Quran API (never typed by hand): the words of a verse with
 // their position, transliteration and word meaning, plus the verse translation. Cached in memory per session.
@@ -28,6 +31,38 @@ export function loadVerse(key: string, lang: string): Promise<VerseData> {
     cache.set(ck, p);
   }
   return p;
+}
+
+export function useVerseData(key: string | null, lang: string) {
+  const [st, setSt] = useState<{ key: string; data?: VerseData; error?: boolean } | null>(null);
+  useEffect(() => {
+    if (!key) { setSt(null); return; }
+    let live = true;
+    setSt({ key });
+    loadVerse(key, lang).then((data) => { if (live) setSt({ key, data }); }).catch(() => { if (live) setSt({ key, error: true }); });
+    return () => { live = false; };
+  }, [key, lang]);
+  return st && st.key === key ? st : null;
+}
+
+const POS_KEY = "qmc.vocab.pos"; // shared with the vocabulary trainer: { wordId: position | 0 }
+/** the position of a vocabulary word in its example verse (for the word recording) */
+export function useWordPosition(word: VocabWord | undefined, lang: string): number | null {
+  const [pos, setPos] = useState<number | null>(null);
+  useEffect(() => {
+    setPos(null);
+    if (!word?.ex || !hasAudio(word)) return;
+    const cached = readJSON<Record<string, number>>(POS_KEY, {})[word.id];
+    if (cached !== undefined) { setPos(cached || null); return; }
+    let live = true;
+    loadVerse(word.ex.key, lang).then((d) => {
+      const p = findWordPosition(word, d.words.map((w) => ({ position: w.position, text: w.text })));
+      writeJSON(POS_KEY, { ...readJSON<Record<string, number>>(POS_KEY, {}), [word.id]: p ?? 0 }, true);
+      if (live) setPos(p);
+    }).catch(() => undefined);
+    return () => { live = false; };
+  }, [word, lang]);
+  return pos;
 }
 
 /** a few word positions of the verse to hide for a cloze (deterministic per card and review, so it does not jump) */
