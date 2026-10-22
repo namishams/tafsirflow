@@ -178,8 +178,8 @@ export function Funnel() {
       <View style={{ paddingTop: insets.top + 8, paddingHorizontal: 20 }}>
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
           <GlassIconButton onStage icon="chevronLeft" label={p.back} onPress={back} size={36} />
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 2, textTransform: "uppercase", color: stage.gold }}>{p.kicker} · {step + 1}/{Q.length}</Text>
-          <Text onPress={leave} accessibilityRole="button" style={{ fontFamily: FONT.medium, fontSize: 14, color: stage.textMuted, paddingVertical: 8 }}>{p.skip}</Text>
+          <Text numberOfLines={1} style={{ flexShrink: 1, marginHorizontal: 8, textAlign: "center", fontFamily: FONT.semibold, fontSize: 11.5, letterSpacing: 2, textTransform: "uppercase", color: stage.gold }}>{p.kicker} · {step + 1}/{Q.length}</Text>
+          <Text onPress={leave} accessibilityRole="button" style={{ minHeight: 44, lineHeight: 44, paddingHorizontal: 4, fontFamily: FONT.medium, fontSize: 14, color: stage.textMuted }}>{p.skip}</Text>
         </View>
         <View style={{ height: 4, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.12)", marginTop: 12, overflow: "hidden" }} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: Q.length, now: step + 1 }}>
           <Animated.View style={{ height: 4, borderRadius: 2, backgroundColor: stage.gold, width: bar.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] }) }} />

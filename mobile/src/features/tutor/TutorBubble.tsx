@@ -29,7 +29,7 @@ export function TutorBubble() {
     <View pointerEvents="box-none" style={[StyleSheet.absoluteFill, { zIndex: 40 }]}>
       <Pressable onPress={() => openTutor(ctx)} accessibilityRole="button" accessibilityLabel={label} hitSlop={6}
         style={({ pressed }) => ({ position: "absolute", top, end: Math.max(0, insets.right), flexDirection: "row", alignItems: "center", gap: 4, paddingVertical: 4, paddingStart: 4, paddingEnd: 6,
-          borderTopLeftRadius: 999, borderBottomLeftRadius: 999, borderWidth: StyleSheet.hairlineWidth, borderRightWidth: 0, borderColor: alpha(GOLD, 0.7),
+          borderTopStartRadius: 999, borderBottomStartRadius: 999, borderWidth: StyleSheet.hairlineWidth, borderEndWidth: 0, borderColor: alpha(GOLD, 0.7),
           backgroundColor: t.dark ? "rgba(12,40,32,0.9)" : "rgba(255,255,255,0.92)", opacity: pressed ? 0.85 : 1,
           shadowColor: "#06281e", shadowOpacity: 0.18, shadowRadius: 12, shadowOffset: { width: 0, height: 6 }, elevation: 6 })}>
         <TutorFace persona={persona} size={40} still />
