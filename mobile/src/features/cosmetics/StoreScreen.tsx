@@ -254,9 +254,10 @@ function RareCard({ r, shop, prices, buy, busy }: { r: ShopRare; shop: Shop; pri
           <GlassButton compact icon="starBig" title={pinned ? s.unpin : s.pin} onPress={() => void setShowcase(pinned ? show.filter((y) => y !== r.slug) : [...show, r.slug].slice(-3))} />
         ) : r.tier === "rare" && st ? (
           <>
-            {/* the buyer sees the number before buying; founder numbers 1-10 are their own, higher-priced product */}
-            {st.founderNext && r.founder && prices[r.founder] ? <GoldButton compact title={`${fill(l.founder, { n: st.founderNext })} · ${prices[r.founder]}`} disabled={busy} onPress={() => void buy(r.founder!)} /> : null}
-            {st.next && prices[r.product] ? <GlassButton compact title={`${fill(l.youGet, { n: st.next })} · ${prices[r.product]}`} disabled={busy} onPress={() => void buy(r.product)} /> : null}
+            {/* numbers are not reserved, so the button promises the next free number only; the number itself is shown
+                after the purchase. Founder numbers 1-10 are their own, higher-priced product */}
+            {st.founderNext && r.founder && prices[r.founder] ? <GoldButton compact title={`${l.founderNextFree} · ${prices[r.founder]}`} disabled={busy} onPress={() => void buy(r.founder!)} /> : null}
+            {st.next && prices[r.product] ? <GlassButton compact title={`${l.nextFree} · ${prices[r.product]}`} disabled={busy} onPress={() => void buy(r.product)} /> : null}
             {!prices[r.product] && st.next ? <Text style={{ color: t.muted, fontFamily: FONT.regular, fontSize: 13 }}>{x.waiting}</Text> : null}
           </>
         ) : r.tier === "unique" && st && !st.owner ? (
