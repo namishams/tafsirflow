@@ -1,14 +1,15 @@
 import { TUTORS, TUTOR_LIMITS, tutorModel, type Address, type LearnerData, type Persona, type Tradition, type TutorContext } from "./config";
 import { learnerDoc } from "./learner";
 import type { Doc } from "./corpus";
-import { tutorMsg } from "./messages";
+import { DUA_REQUEST, duaMsg, generalLabel, tutorMsg } from "./messages";
+import { VERSE_COUNTS } from "../counts";
 import type { ChatCall, ModerationCall } from "./openai";
 import { QuotaError } from "./openai";
-import { ANSWER_SCHEMA, PLAN_RULES, PLAN_SCHEMA, answerRules, contextBlock, sourcesBlock, type Plan, type PlanCategory } from "./prompt";
+import { ANSWER_SCHEMA, PLAN_RULES, PLAN_SCHEMA, answerRules, contextBlock, generalRules, sourcesBlock, type Plan, type PlanCategory } from "./prompt";
 import { scrub } from "./privacy";
 import { contextDocs, search } from "./retrieve";
 import { fold, isVerseKey, verseRefsIn } from "./text";
-import { checkAnswer } from "./validate";
+import { checkAnswer, checkGeneral } from "./validate";
 import { answerId } from "./store";
 
 // One question to Dalil, from the raw text to a checked, grounded answer:
@@ -34,7 +35,38 @@ export type TutorInput = {
   memory?: string[];
 };
 export type TutorSource = { n: number; title: string; link: string; kind: string };
-export type TutorStatus = "answered" | "views" | "not_found" | "greeting" | "refused" | "crisis" | "flagged";
+export type TutorStatus = "answered" | "views" | "general" | "dua" | "not_found" | "greeting" | "refused" | "crisis" | "flagged";
+const DUA_TITLE: Record<string, string> = { en: "Personal Dua", de: "Persönliche Dua", ar: "الدعاء الشخصي", tr: "Kişisel Dua", ur: "ذاتی دعا", fa: "دعای شخصی", ps: "شخصي دعا", fr: "Dua personnelle", es: "Dua personal", id: "Doa Pribadi", ms: "Doa Peribadi", bn: "ব্যক্তিগত দোয়া", ru: "Личная дуа", zh: "个人杜阿" };
+const GENERAL_CATS = new Set<PlanCategory>(["islam", "quran", "fiqh_ruling"]);
+
+/** checks verse keys against the Quran's verse counts and hadith references against their source (deps.verify) */
+async function verified(deps: TutorDeps, verses: string[], hadith: string[], lang: string) {
+  const vs = verses.filter((k) => { const [s, v] = k.split(":").map(Number); return s >= 1 && s <= 114 && v >= 1 && v <= VERSE_COUNTS[s - 1]; });
+  if (!deps.verify) return { verses: vs, hadith: [] as string[] };
+  const r = await deps.verify(vs, hadith, lang).catch(() => ({ verses: [] as string[], hadith: [] as string[] }));
+  return { verses: vs.filter((k) => r.verses.includes(k)), hadith: hadith.filter((h) => r.hadith.includes(h)) };
+}
+
+/** the second mode: an Islamic question the lessons do not cover, from the model's general knowledge, labelled */
+async function general(i: TutorInput, deps: TutorDeps, asked: string, history: { role: "user" | "assistant"; content: string }[], stats: Partial<TutorResult>, related: TutorSource[]): Promise<TutorResult | null> {
+  let tIn = stats.tokensIn ?? 0, tOut = stats.tokensOut ?? 0;
+  const a = await deps.chat({ system: generalRules({ lang: i.lang, address: i.address, tradition: i.tradition, persona: i.persona }), messages: [...history, { role: "user", content: `QUESTION: ${asked}` }], schema: { ...ANSWER_SCHEMA, name: "general" }, maxTokens: TUTOR_LIMITS.answerTokens });
+  tIn += a.tokensIn; tOut += a.tokensOut;
+  const c = checkGeneral(a.json);
+  if (process.env.TUTOR_DEBUG && !c.ok) console.log("   [tutor] general rejected:", c.reason, c.notes.join("; "));
+  if (!c.ok) return null;
+  const out = deps.moderate ? await deps.moderate(c.answer) : null;
+  const m = tutorMsg(i.lang);
+  if (out?.flagged) return fixed("flagged", m.flagged, asked, { ...stats, tokensIn: tIn, tokensOut: tOut });
+  const ok = await verified(deps, c.verses, c.hadith, i.lang);
+  const views = c.status === "views" || stats.category === "fiqh_ruling";
+  return {
+    id: answerId(["general", asked, c.answer]), status: "general", answer: c.answer,
+    notice: [generalLabel(i.lang), views ? m.scholar : ""].filter(Boolean).join(" "),
+    sources: [], verses: ok.verses, hadith: ok.hadith, followups: c.followups, related: related.slice(0, 3),
+    category: stats.category, passages: 0, tokensIn: tIn, tokensOut: tOut, asked,
+  };
+}
 export type TutorResult = {
   id: string;
   status: TutorStatus;
@@ -62,6 +94,9 @@ export type TutorDeps = {
   corpus: () => Promise<Doc[]>;
   /** passages for one verse: its translation and classical tafsir from the sources (Quran.com) */
   verseDocs?: (key: string, lang: string) => Promise<Doc[]>;
+  /** general-knowledge mode: which verse keys and hadith references load from their sources (Quran API, hadith-api);
+   *  without it no hadith reference is shown */
+  verify?: (verses: string[], hadith: string[], lang: string) => Promise<{ verses: string[]; hadith: string[] }>;
 };
 
 // ---- cache of identical first questions (same words, language, form of address, tradition and place) ----
@@ -102,6 +137,8 @@ export async function askTutor(i: TutorInput, deps: TutorDeps): Promise<TutorRes
   const mod = deps.moderate ? await deps.moderate(asked) : null;
   if (mod?.selfHarm) return fixed("crisis", m.crisis, asked, { category: "crisis" });
   if (mod?.flagged) return fixed("refused", m.harmful, asked, { category: "harmful" });
+  // a personal dua is not composed by the tutor (owner rule: it is its own product): point to "Persönliche Dua"
+  if (DUA_REQUEST.test(asked)) return fixed("dua", duaMsg(i.lang), asked, { related: [{ n: 1, title: DUA_TITLE[i.lang] ?? DUA_TITLE.en, link: "/dua-generator", kind: "dua" }] });
 
   // 2. cache (first questions only: a follow-up depends on the conversation)
   const key = history.length || i.learner || memory.length ? null : cacheKey(i, asked);
@@ -147,7 +184,13 @@ export async function askTutor(i: TutorInput, deps: TutorDeps): Promise<TutorRes
   const passages = [...mine, ...verseOwn, ...own, ...strong].filter((d) => (seen.has(d.base) ? false : (seen.add(d.base), true))).slice(0, TUTOR_LIMITS.passages);
   if (process.env.TUTOR_DEBUG) console.log("   [tutor] plan:", plan.category, "|", plan.query_en, "| passages:", [...verseOwn, ...own, ...strong].slice(0, 6).map((d) => d.title.slice(0, 50)).join(" ; "));
   const related = hits.slice(0, 3).map((h, n) => ({ n: n + 1, title: h.doc.title, link: h.doc.link, kind: h.doc.kind }));
-  if (!passages.length) return fixed("not_found", notFoundText(m.notFound, related.length), asked, { ...base, related });
+  if (!passages.length) {
+    if (GENERAL_CATS.has(plan.category)) {
+      const g = await general(i, deps, asked, history, { ...base, passages: 0 }, related);
+      if (g) return g;
+    }
+    return fixed("not_found", notFoundText(m.notFound, related.length), asked, { ...base, related });
+  }
 
   // 5. the answer, from the passages only (one more try when the server rejects the first one)
   const system = answerRules({ lang: i.lang, address: i.address, tradition: i.tradition, persona: i.persona });
@@ -167,6 +210,10 @@ export async function askTutor(i: TutorInput, deps: TutorDeps): Promise<TutorRes
   const stats = { ...base, tokensIn, tokensOut, passages: passages.length };
   if (!checked || !checked.ok) {
     const rel = passages.filter((d) => d.kind !== "progress").slice(0, 3).map((d, n) => ({ n: n + 1, title: d.title, link: d.link, kind: d.kind }));
+    if (GENERAL_CATS.has(plan.category)) {
+      const g = await general(i, deps, asked, history, stats, rel);
+      if (g) return g;
+    }
     return fixed("not_found", notFoundText(m.notFound, rel.length), asked, { ...stats, related: rel });
   }
 

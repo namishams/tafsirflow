@@ -58,6 +58,37 @@ function inventedNumbers(answer: string, docs: Doc[], extra: string): string[] {
   return out;
 }
 
+export type CheckedGeneral =
+  | { ok: true; status: "answered" | "views"; answer: string; verses: string[]; hadith: string[]; followups: string[] }
+  | { ok: false; reason: "not_found" | "format" | "empty" | "scripture_text"; notes: string[] };
+
+/** an answer of the general-knowledge mode: no scripture text, no quotations at all, references only as candidates
+ *  (the caller verifies them against the Quran API and hadith-api); references written into the text are removed */
+export function checkGeneral(a: unknown): CheckedGeneral {
+  if (!a || typeof a !== "object") return { ok: false, reason: "format", notes: [] };
+  const x = a as Partial<ModelAnswer>;
+  if (x.status === "not_found") return { ok: false, reason: "not_found", notes: [] };
+  if (x.status !== "answered" && x.status !== "views") return { ok: false, reason: "format", notes: [] };
+  let answer = String(x.answer ?? "").trim();
+  if (answer.length < 20) return { ok: false, reason: "empty", notes: [] };
+  if (heavyTashkeel(answer)) return { ok: false, reason: "scripture_text", notes: ["vowelled arabic"] };
+  const plainQ = answer.replace(/(\p{L}\p{M}*)[’‘'](?=\p{L})/gu, "$1");
+  const quoted = /["“„«»‚‘]([^"“”„«»‚‘’]{25,})["”“»«’‘]/.exec(plainQ);
+  if (quoted && quoted[1].trim().split(/\s+/).length >= 6) return { ok: false, reason: "scripture_text", notes: [`quotation: ${quoted[1].slice(0, 60)}`] };
+  // references belong below the answer (verified), never in the text
+  answer = answer
+    .replace(/\[(S?\d{1,2})\]/gi, "")
+    .replace(/\(?\b(?:Quran|Qur'an|Qurʾān|Koran|Sure|Surah|Q\.?)\s*\d{1,3}\s*:\s*\d{1,3}(?:\s*[–-]\s*\d{1,3})?\)?/gi, "")
+    .replace(/\(\s*\d{1,3}:\d{1,3}(?:\s*[–-]\s*\d{1,3})?\s*\)/g, "")
+    .replace(/\b\d{1,3}:\d{1,3}(?:\s*[–-]\s*\d{1,3})?\b(?!\s?(?:am|pm|a\.m\.|p\.m\.|uhr|h)\b)/gi, (k) => (/^\d{1,2}:\d{2}$/.test(k) && Number(k.split(":")[1]) % 5 === 0 && Number(k.split(":")[0]) <= 23 ? k : ""));
+  answer = answer.replace(/\(?\b(?:Sahih\s+)?(?:al-)?(?:Bukhari|Muslim|Abu\s?Dawud|Abi\s?Dawud|Tirmidhi|Nasa'?i|Ibn\s?Majah)\s*(?:No\.?\s*|#)?\d{1,5}\)?/gi, (m) => m.replace(/\s*(?:No\.?\s*|#)?\d{1,5}\)?$/, "").replace(/^\(/, ""));
+  answer = answer.replace(/[ \t]{2,}/g, " ").replace(/\s+([.,;:])/g, "$1").replace(/\n{3,}/g, "\n\n").trim();
+  const verses = [...new Set((Array.isArray(x.verses) ? x.verses : []).map(String).filter(isVerseKey))].slice(0, 6);
+  const hadith = [...new Set((Array.isArray(x.hadith) ? x.hadith : []).map((h) => String(h).toLowerCase().replace(/\s+/g, "")).filter(isHadithRef))].slice(0, 4);
+  const followups = (Array.isArray(x.followups) ? x.followups : []).map((f) => String(f).trim()).filter((f) => f.length > 3 && f.length < 160).slice(0, 3);
+  return { ok: true, status: x.status, answer: answer.slice(0, 4000), verses, hadith, followups };
+}
+
 export function checkAnswer(a: unknown, docs: Doc[], extraVerses: string[] = [], question = ""): Checked {
   const notes: string[] = [];
   if (!a || typeof a !== "object") return { ok: false, reason: "format", notes };

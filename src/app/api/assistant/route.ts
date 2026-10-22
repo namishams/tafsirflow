@@ -136,7 +136,11 @@ export async function POST(req: NextRequest) {
   try {
     r = await askTutor(
       { question, history, lang: locale, address, tradition, context, names: [me?.name, me?.email?.split("@")[0]], learner, persona: personaFor(b.persona, address), memory },
-      { chat: openAiChat(key), moderate: openAiModeration(key), corpus, verseDocs },
+      {
+        chat: openAiChat(key), moderate: openAiModeration(key), corpus, verseDocs,
+        // general-knowledge mode: only references that load from the Quran API and hadith-api are kept
+        verify: async (vs, hs, lang) => { const r = await resolveScripture(vs, hs, lang); return { verses: r.verses.map((v) => v.key), hadith: r.hadith.map((h) => h.id) }; },
+      },
     );
   } catch (e) {
     await refund();

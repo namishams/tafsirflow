@@ -154,3 +154,44 @@ export function tutorMsg(lang: string, name = "Dalil", nameAr = "دليل"): Tut
   return { ...m, greeting };
 }
 export const TUTOR_LANGS = Object.keys(M);
+
+/** the label under an answer from the model's general knowledge (no app passage found), in all 14 languages */
+const GENERAL: Record<string, string> = {
+  de: "Allgemeines Wissen der KI – nicht aus unseren geprüften Lektionen. Bitte bei wichtigen Fragen eine Gelehrte oder einen Gelehrten fragen.",
+  en: "General knowledge of the AI – not from our reviewed lessons. For important questions, please ask a scholar.",
+  ar: "معرفة عامة من الذكاء الاصطناعي – ليست من دروسنا المراجَعة. في المسائل المهمة يُرجى سؤال عالمة أو عالم.",
+  tr: "Yapay zekânın genel bilgisi – incelenmiş derslerimizden değil. Önemli sorularda lütfen bir âlime danışın.",
+  ur: "AI کی عمومی معلومات – ہمارے جانچے ہوئے اسباق سے نہیں۔ اہم سوالات میں براہِ کرم کسی عالمہ یا عالم سے پوچھیں۔",
+  fa: "دانش عمومی هوش مصنوعی – نه از درس‌های بررسی‌شدهٔ ما. در پرسش‌های مهم لطفاً از یک عالم بپرسید.",
+  ps: "د AI عمومي پوهه – زموږ له کتل شویو لوستونو نه نه ده. په مهمو پوښتنو کې مهرباني وکړئ له یوې عالمې یا عالم وپوښتئ.",
+  fr: "Connaissances générales de l'IA – pas issues de nos leçons vérifiées. Pour les questions importantes, veuillez consulter une savante ou un savant.",
+  es: "Conocimiento general de la IA – no procede de nuestras lecciones revisadas. Para preguntas importantes, consulte a una erudita o un erudito.",
+  id: "Pengetahuan umum AI – bukan dari pelajaran kami yang telah ditinjau. Untuk pertanyaan penting, mohon tanyakan kepada seorang ulama.",
+  ms: "Pengetahuan umum AI – bukan daripada pelajaran kami yang telah disemak. Untuk soalan penting, sila tanya seorang ulama.",
+  bn: "AI-এর সাধারণ জ্ঞান – আমাদের যাচাইকৃত পাঠ থেকে নয়। গুরুত্বপূর্ণ প্রশ্নে অনুগ্রহ করে একজন আলেমা বা আলেমকে জিজ্ঞাসা করুন।",
+  ru: "Общие знания ИИ – не из наших проверенных уроков. По важным вопросам, пожалуйста, обратитесь к учёной или учёному.",
+  zh: "AI 的一般知识——并非来自我们审核过的课程。重要问题请请教学者。",
+};
+/** a request to compose a personal dua: the tutor points to "Persönliche Dua" (the dua journey) and may name
+ *  authentic duas only by reference (owner rule: the personal dua is its own product) */
+const DUA: Record<string, string> = {
+  de: "Eine persönliche Dua formuliere ich nicht selbst – dafür gibt es in der App „Persönliche Dua“: Sie wählen Anliegen und Worte, und die Dua wird für Sie gestaltet. Gern nenne ich Ihnen authentische Bittgebete aus dem Koran und der Sunna.",
+  en: "I do not compose a personal dua myself – for that the app has “Personal Dua”: you choose your concern and words, and the dua is prepared for you. I am glad to point you to authentic duas from the Quran and the Sunnah.",
+  ar: "لا أصوغ دعاءً شخصيًا بنفسي – لذلك يوجد في التطبيق «الدعاء الشخصي»: تختار حاجتك وكلماتك ويُعدّ الدعاء لك. ويسعدني أن أدلّك على أدعية ثابتة من القرآن والسنة.",
+  tr: "Kişisel bir dua kendim yazmıyorum – bunun için uygulamada “Kişisel Dua” var: dileğinizi ve kelimelerinizi seçersiniz, dua sizin için hazırlanır. Kur'an ve Sünnet'ten sahih duaları memnuniyetle gösteririm.",
+  ur: "میں خود ذاتی دعا نہیں لکھتا – اس کے لیے ایپ میں «ذاتی دعا» ہے: آپ اپنی حاجت اور الفاظ چنیں، دعا آپ کے لیے تیار ہو جاتی ہے۔ قرآن و سنت کی مستند دعائیں بتانے میں مجھے خوشی ہوگی۔",
+  fa: "من خودم دعای شخصی نمی‌نویسم – برای این کار در برنامه «دعای شخصی» هست: حاجت و واژه‌هایتان را برمی‌گزینید و دعا برایتان آماده می‌شود. با کمال میل دعاهای معتبر قرآن و سنت را معرفی می‌کنم.",
+  ps: "زه پخپله شخصي دعا نه لیکم – د دې لپاره په اپ کې «شخصي دعا» شته: تاسو خپله اړتیا او کلمې غوره کوئ او دعا ستاسو لپاره چمتو کېږي. د قرآن او سنتو مستندې دعاګانې په خوښۍ درښیم.",
+  fr: "Je ne compose pas moi-même de dua personnelle – pour cela, l'application propose « Dua personnelle » : vous choisissez votre demande et vos mots, et la dua est préparée pour vous. Je vous indique volontiers des duas authentiques du Coran et de la Sunna.",
+  es: "No compongo yo mismo una dua personal – para eso la aplicación ofrece «Dua personal»: usted elige su petición y sus palabras, y la dua se prepara para usted. Con gusto le indico duas auténticas del Corán y la Sunna.",
+  id: "Saya tidak menyusun doa pribadi sendiri – untuk itu aplikasi menyediakan “Doa Pribadi”: Anda memilih hajat dan kata-kata, lalu doa disiapkan untuk Anda. Dengan senang hati saya tunjukkan doa-doa sahih dari Al-Qur'an dan Sunnah.",
+  ms: "Saya tidak mengarang doa peribadi sendiri – untuk itu aplikasi menyediakan “Doa Peribadi”: anda memilih hajat dan kata-kata, lalu doa disediakan untuk anda. Dengan senang hati saya tunjukkan doa sahih daripada al-Quran dan Sunnah.",
+  bn: "আমি নিজে ব্যক্তিগত দোয়া রচনা করি না – এর জন্য অ্যাপে «ব্যক্তিগত দোয়া» আছে: আপনি আপনার প্রয়োজন ও শব্দ বেছে নিন, দোয়া আপনার জন্য প্রস্তুত হবে। কুরআন ও সুন্নাহর বিশুদ্ধ দোয়াগুলো দেখাতে পেরে আমি আনন্দিত।",
+  ru: "Я не составляю личную дуа сам – для этого в приложении есть «Личная дуа»: вы выбираете просьбу и слова, и дуа готовится для вас. С радостью укажу вам достоверные дуа из Корана и Сунны.",
+  zh: "我不亲自撰写个人祈祷词——为此应用中有“个人杜阿”：您选择所求与措辞，杜阿将为您准备。我很乐意为您指出《古兰经》和圣行中的可靠祈祷。",
+};
+export const duaMsg = (lang: string) => DUA[lang] ?? DUA.en;
+/** "write / make me a dua" in the app's languages (a request to compose, not a question about duas) */
+export const DUA_REQUEST = /\b(write|make|compose|create|formulate)\b[^?.!]{0,30}\b(dua|du'a|duaa|supplication|prayer for)\b|\b(schreib\w*|formulier\w*|erstell\w*|mach\w*|verfass\w*)\b[^?.!]{0,30}\b(dua|bittgebet|gebet für)\b|اكتب\s*(لي)?\s*دعاء|ألّف\s*(لي)?\s*دعاء|صغ\s*(لي)?\s*دعاء|\bdua\s+(yaz|oluştur)|دعا\s*لکھ|\bécri\w*\b[^?.!]{0,20}\bdou?a\b|\bescrib\w*\b[^?.!]{0,20}\bdua\b|\b(tulis|buat|karang)\w*\b[^?.!]{0,20}\bdoa\b|\b(напиши|составь)\w*\b[^?.!]{0,20}\bду[аъ]/iu;
+export const generalLabel =(lang: string) => GENERAL[lang] ?? GENERAL.en;
+export const GENERAL_LANGS = Object.keys(GENERAL);
