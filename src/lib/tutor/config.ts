@@ -40,8 +40,8 @@ export const TUTOR_LIMITS = {
   appFreePerDay: Number(process.env.TUTOR_APP_FREE_PER_DAY ?? 3),
   /** questions per minute per IP (burst protection) */
   perMinute: 6,
-  /** all questions of the platform per day – a hard cost ceiling (cached answers do not count) */
-  globalPerDay: Number(process.env.TUTOR_GLOBAL_PER_DAY ?? 4000),
+  /** all questions of the platform per day – a safety ceiling against abuse; the owner pays the mini model, so it is set high (cached answers do not count) */
+  globalPerDay: Number(process.env.TUTOR_GLOBAL_PER_DAY ?? 100000),
   /** identical grounded first questions are answered from the cache */
   cacheEntries: 800,
   cacheMs: 3 * 24 * 60 * 60_000,
