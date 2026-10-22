@@ -3,8 +3,8 @@ import { setRequestLocale } from "next-intl/server";
 import AppInstall from "@/components/AppInstall";
 import Logo from "@/components/Logo";
 import { pageMeta } from "@/lib/site";
-import AppShowcase from "@/components/AppShowcase";
-import { appStoreUrl } from "@/lib/appstore";
+import AppScreens from "@/components/AppScreens";
+import { appStoreLink, appStoreUrl } from "@/lib/appstore";
 import JsonLd from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
 import { abs } from "@/lib/site";
@@ -74,7 +74,7 @@ export default async function AppPage({ params }: { params: Promise<{ locale: st
   setRequestLocale(locale);
   const c = content(locale);
   const m = mc(locale);
-  const ld = { "@context": "https://schema.org", "@graph": [organizationLd(abs), mobileAppLd(locale, abs, appStoreUrl(), c.lead)] };
+  const ld = { "@context": "https://schema.org", "@graph": [organizationLd(abs), mobileAppLd(locale, abs, appStoreLink(), c.lead)] };
   return (
     <div>
       <JsonLd data={ld} />
@@ -84,14 +84,14 @@ export default async function AppPage({ params }: { params: Promise<{ locale: st
             <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[rgb(var(--gold))]">{c.kicker}</p>
             <h1 className="font-display mt-4 text-[38px] leading-[1.06] sm:text-6xl">{c.title}</h1>
             <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-white/70">{c.lead}</p>
-            <div className="mt-8"><AppInstall t={{ ...c.buttons, appStore: APP_STORE_LABEL[locale] ?? APP_STORE_LABEL.en }} playUrl={process.env.PLAY_STORE_URL ?? ""} appStoreUrl={appStoreUrl()} /></div>
+            <div className="mt-8"><AppInstall t={{ ...c.buttons, appStore: APP_STORE_LABEL[locale] ?? APP_STORE_LABEL.en }} playUrl={process.env.PLAY_STORE_URL ?? ""} appStoreUrl={appStoreLink() ?? ""} /></div>
           </div>
           <div aria-hidden className="mx-auto grid h-56 w-32 place-items-center rounded-[2rem] border-4 border-white/15 bg-[rgb(var(--stage))] shadow-2xl sm:h-72 sm:w-40">
             <Logo size={72} />
           </div>
         </div>
       </section>
-      <div className="border-t border-white/10"><AppShowcase locale={locale} showMore={false} /></div>
+      <div className="border-t border-white/10"><AppScreens locale={locale} showMore={false} /></div>
       {/* the whole curriculum in the app, then Free vs Pro */}
       <section className="hm-warm">
         <div className="mx-auto max-w-6xl px-5 pt-16 sm:pt-20">

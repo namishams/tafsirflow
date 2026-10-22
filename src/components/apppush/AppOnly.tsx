@@ -33,7 +33,7 @@ export default function AppOnly({ topics, url, className = "" }: { topics: AppOn
               </li>
             ))}
           </ul>
-          <div className="mt-5 md:hidden"><AppStoreButton label={t("appStore")} /></div>
+          <div className="mt-5 md:hidden"><AppStoreButton label={t("appStore")} soon={t("appSoon")} top={t("appBadgeTop")} /></div>
         </div>
         <div className="hidden flex-col items-center gap-2 md:flex">
           <AppQr url={url} size={132} alt={t("aoQrAlt")} />

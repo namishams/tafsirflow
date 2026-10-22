@@ -12,7 +12,7 @@ import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import WhyQuran from "@/components/WhyQuran";
-import AppShowcase from "@/components/AppShowcase";
+import AppScreens from "@/components/AppScreens";
 import { CarouselShowcase, SyncSection } from "@/components/HomePromo";
 import AppOnly from "@/components/apppush/AppOnly";
 import FeedSection from "@/components/feed/FeedSection";
@@ -32,7 +32,7 @@ import { ArrowNext } from "@/components/Icons";
 import { HomeArch, HomeCorners, HomeDome, HomeFrieze, HomeGlowLayer, HomeRain, HomeStar, HomeVerse, StarGlyph } from "@/components/art/HomeOrnaments";
 import HomeGlow from "@/components/art/HomeGlow";
 import { courseLd, mc, mobileAppLd, TESTIMONIALS } from "@/lib/masterclass";
-import { appStoreUrl } from "@/lib/appstore";
+import { appStoreLink, appStoreUrl } from "@/lib/appstore";
 import { MasterclassPillars, PricingPlans, ReciterLadder, SchoolStages, TalentsTeaser, Voices } from "@/components/masterclass/Sections";
 
 export const revalidate = 3600; // the verse of the day changes daily; the page refreshes hourly
@@ -83,7 +83,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
       { "@type": "WebSite", "@id": abs("/#site"), url: abs(`/${locale}`), name: "Quran Masterclass", inLanguage: routing.locales, publisher: { "@id": abs("/#org") },
         potentialAction: { "@type": "SearchAction", target: { "@type": "EntryPoint", urlTemplate: abs(`/${locale}/search?q={search_term_string}`) }, "query-input": "required name=search_term_string" } },
       { "@type": "SoftwareApplication", name: "Quran Masterclass", applicationCategory: "EducationalApplication", operatingSystem: "Web", description: t("seo.homeDesc", { n }), inLanguage: locale, offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" } },
-      mobileAppLd(locale, abs, appStoreUrl(), m.hero.lead),
+      mobileAppLd(locale, abs, appStoreLink(), m.hero.lead),
       ...courseLd(locale, abs),
       { "@type": "FAQPage", inLanguage: locale, mainEntity: FAQ.map((i) => ({ "@type": "Question", name: faqText(i, "q"), acceptedAnswer: { "@type": "Answer", text: faqText(i, "a") } })) },
       { "@type": "DefinedTermSet", name: t("home2.glossTitle"), inLanguage: locale, hasDefinedTerm: GLOSSARY.map((i) => ({ "@type": "DefinedTerm", name: t(`home2.gT${i}`), description: t(`home2.gD${i}`) })) },
@@ -183,7 +183,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         <FeedSection locale={locale} />
 
         {/* 2b The iOS app, the carousels and the one-account promise */}
-        <AppShowcase locale={locale} />
+        <AppScreens locale={locale} />
         <CarouselShowcase locale={locale} appUrl={appStoreUrl()} />
         <SyncSection locale={locale} />
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-5"><AppOnly topics={["stickers", "tree", "dua", "celebrations", "widgets", "offline"]} url={appStoreUrl()} /></div>

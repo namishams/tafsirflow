@@ -313,10 +313,10 @@ export function courseLd(locale: string, abs: (p: string) => string) {
 }
 
 /** schema.org MobileApplication for the iOS app */
-export function mobileAppLd(locale: string, abs: (p: string) => string, storeUrl: string, description: string) {
+export function mobileAppLd(locale: string, abs: (p: string) => string, storeUrl: string | null, description: string) {
   return {
     "@type": "MobileApplication", "@id": abs("/#ios-app"), name: "Quran Masterclass", operatingSystem: "iOS", applicationCategory: "EducationalApplication",
-    description, inLanguage: locale, url: abs(`/${locale}/app`), downloadUrl: storeUrl, installUrl: storeUrl, publisher: { "@id": abs("/#org") },
+    description, inLanguage: locale, url: abs(`/${locale}/app`), ...(storeUrl ? { downloadUrl: storeUrl, installUrl: storeUrl } : {}), publisher: { "@id": abs("/#org") },
     // no price here: the download is free, but Quran Masterclass Pro is a paid subscription in the app
   };
 }

@@ -22,7 +22,7 @@ export async function SyncSection({ locale }: { locale: string }) {
           </ul>
         </div>
         <div className="flex flex-col items-start gap-4 lg:items-center">
-          <AppStoreButton label={t("appStore")} />
+          <AppStoreButton label={t("appStore")} soon={t("appSoon")} top={t("appBadgeTop")} />
           <Link href="/app" className="text-[15px] font-semibold text-[rgb(var(--gold))] underline-offset-4 hover:underline">{t("appCta")} →</Link>
           <ShareAppButton label={t("shareApp")} text={t("shareText")} copied={t("shareCopied")} url={appStoreUrl()} className="text-[15px] font-semibold text-white/80 underline-offset-4 hover:underline" />
         </div>
