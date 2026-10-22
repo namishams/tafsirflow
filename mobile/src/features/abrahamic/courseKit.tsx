@@ -2,6 +2,8 @@
 // rendered from the app's verse data, plus a neutral explanation and tradition-aware tags), quiz, completion
 // certificate and rewards (feed XP and stickers via gamify, tree growth via the garden). Progress lives under a new
 // key per course; the older unit/section screens and their keys are untouched.
+import { RewardCard } from "@/features/cosmetics/RewardCard";
+import { isLevelFree } from "@/lib/freeLevels";
 import { useEffect, useState } from "react";
 import { Pressable, Share, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
@@ -157,7 +159,7 @@ export function CourseList({ def: base }: { def: CourseDef }) {
       <Bar frac={n / m} />
       <View>
         {def.lessons.map((l, i) => {
-          const locked = i > 0 && !ent.allowed, done = !!p.done[l.id], current = i === nextIdx;
+          const locked = !isLevelFree(def.id, i) && !ent.allowed, done = !!p.done[l.id], current = i === nextIdx;
           return (
             <Pressable key={l.id} accessibilityRole="button"
               accessibilityLabel={`${c("lesson")} ${i + 1}: ${pick(l.title, lang)}${done ? `, ${c("done")}` : ""}${locked ? ", Pro" : ""}`}
@@ -290,7 +292,7 @@ export function CourseLessonScreen({ def: base, id }: { def: CourseDef; id: stri
   const [res, setRes] = useState<{ score: number; burst: number; complete: boolean } | null>(null);
   useEffect(() => { setPhase("read"); setRes(null); }, [id]);
   if (!lesson) return <Page><PageHero back topInset title={c("notFound")} /></Page>;
-  const locked = idx > 0 && !ent.allowed;
+  const locked = !isLevelFree(def.id, idx) && !ent.allowed;
   const finish = (score: number) => {
     const r = markDone(def, lesson.id, score, lesson.quiz.length);
     if (r.first) { award("lesson"); gEvent({ t: "verse" }); }
@@ -339,6 +341,7 @@ export function CourseLessonScreen({ def: base, id }: { def: CourseDef; id: stri
               {nextL ? <GoldButton title={c("nextLesson")} onPress={() => (!ent.allowed ? ent.upsell() : router.replace(lessonHref(def, nextL.id)))} /> : null}
               <OutlineButton title={c("retry")} onPress={() => setPhase("quiz")} />
               <TextLink title={c("overview")} onPress={() => router.back()} style={{ alignSelf: "center" }} />
+              <RewardCard session={`${def.id}:${lesson.id}`} />
             </StepIn>
           ) : null}
         </View>

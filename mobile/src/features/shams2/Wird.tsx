@@ -1,3 +1,4 @@
+import { RewardCard } from "@/features/cosmetics/RewardCard";
 import { Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { Page, PageHero } from "@/components/page";
@@ -176,6 +177,7 @@ export function WirdScreen() {
           {v3 ? <StepIn delay={210}><V3Steps /></StepIn> : null}
           {v3 ? <StepIn delay={240}><AdabTodayCard /></StepIn> : null}
           {allDone ? <Card gold><Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink }}>{s("wirdDone")}</Text><ContinueNext /></Card> : null}
+          {allDone ? <RewardCard session="wird" /> : null}
           <Card>
             <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{s("settings")}</Text>
             <LevelChooser light />

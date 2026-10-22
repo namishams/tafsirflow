@@ -46,6 +46,7 @@ function Routes() {
       <Stack.Screen name="sign-in" options={{ presentation: "modal", headerShown: false, title: t("auth.signInTitle") }} />
       <Stack.Screen name="register" options={{ presentation: "modal", headerShown: false, title: t("auth.registerTitle") }} />
       <Stack.Screen name="pro" options={{ presentation: "modal", headerShown: false }} />
+      <Stack.Screen name="unlock" options={{ presentation: "modal", headerShown: false }} />
       <Stack.Screen name="shams/[surah]" options={{ headerShown: false, gestureEnabled: false }} />
       <Stack.Screen name="radio/now" options={{ presentation: "fullScreenModal", headerShown: false, animation: "slide_from_bottom" }} />
       {/* the learning journey draws its own hero with the back button: never a native header, not even for one frame */}

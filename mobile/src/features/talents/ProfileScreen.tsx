@@ -1,3 +1,5 @@
+import { RareBadge } from "@/features/cosmetics/RareBadge";
+import { ProfileShowcase } from "@/features/cosmetics/ProfileShowcase";
 import { useCallback, useEffect, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from "react";
 import { ProMark } from "./ProMark";
 import { LinearGradient } from "expo-linear-gradient";
@@ -391,7 +393,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         accessibilityLabel={p.liveStory && postingOn ? tt("watchStory") : mode === "local" ? pt("createProfile") : ownish ? pt("changePhoto") : p.name}
         style={{ padding: p.liveStory && postingOn ? 3 : 0, borderRadius: 70, borderWidth: p.liveStory && postingOn ? 2.5 : 0, borderColor: goldButton.from }}>
         {premium ? <PremiumRing kind={premium} size={96} /> : null}
-        {premium ? <TalentAvatar name={p.name} size={96} uri={p.avatar} badge={null} /> : <SharerRing tier={p.sharerTier} size={96}><TalentAvatar name={p.name} size={96} uri={p.avatar} badge={p.badge} /></SharerRing>}
+        {premium ? <TalentAvatar name={p.name} size={96} uri={p.avatar} badge={null} /> : <SharerRing tier={p.sharerTier} size={96}><TalentAvatar name={p.name} size={96} uri={p.avatar} badge={p.badge} frame={p.frame} /></SharerRing>}
         {ownish ? (
           <View style={{ position: "absolute", right: 0, bottom: 0, width: 28, height: 28, borderRadius: 14, backgroundColor: goldButton.to, borderWidth: 2.5, borderColor: bg, alignItems: "center", justifyContent: "center" }}>
             <Icon name="plus" color={goldButton.text} size={15} weight={2.8} />
@@ -406,9 +408,11 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
         {handle || p.name !== title ? <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 17, color: t.ink, writingDirection: handle ? "ltr" : undefined }}>{handle || p.name}</Text> : null}
         <BadgeButton badge={p.badge} size={17} />
         <ProMark pro={p.pro} size={15} />
+        <RareBadge slug={p.showcase?.[0]} size={17} />
         {p.country ? <CountryBadge code={p.country} size={17} /> : null}
         {p.private && variant === "stack" ? <Icon name="lock" color={t.muted} size={14} /> : null}
       </View>
+      <ProfileShowcase showcase={p.showcase} items={p.showcaseItems} mine={ownish} />
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 6 }}>
         <LevelBadge level={p.level} />
         {sj?.level ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.muted }}>{st("levelN", { n: sj.level.level })}</Text> : null}

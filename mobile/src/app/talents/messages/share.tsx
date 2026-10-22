@@ -62,7 +62,7 @@ export default function ShareToChat() {
                     {shown.map((c, i) => (
                       <Pressable key={c.id} onPress={() => void send(c)} accessibilityRole="button" accessibilityState={{ disabled: !!sent[c.id] }} accessibilityLabel={`${mt.send}: ${c.title}`}
                         style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, padding: 12, minHeight: 64, backgroundColor: pressed ? t.bg : t.surface, borderTopWidth: i ? 1 : 0, borderTopColor: t.line })}>
-                        <ThreadAvatar kind={c.kind} title={c.title} photo={c.photo} avatar={c.with?.avatar} size={42} />
+                        <ThreadAvatar kind={c.kind} title={c.title} photo={c.photo} avatar={c.with?.avatar} frame={c.with?.frame} size={42} />
                         <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 15.5, color: t.ink }}>{c.title}</Text>
                         <Icon name={sent[c.id] ? "check" : "send"} size={18} color={sent[c.id] ? t.accent : t.gold} />
                       </Pressable>

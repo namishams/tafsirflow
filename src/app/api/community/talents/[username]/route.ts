@@ -1,3 +1,4 @@
+import { cosmeticsOf, showcaseOf } from "@/lib/store/entitlements";
 import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
@@ -75,6 +76,8 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ user
   return json({
     profile: {
       ...s, followed, mine, blocked: iBlocked, connection, canMessage,
+      // bought avatar frame and the pinned rare stickers (Vitrine); never the verified tick or the PRO capsule
+      frame: cosmeticsOf(c).frame, showcase: Array.isArray(c.showcase) ? c.showcase.slice(0, 3) : [], showcaseItems: await showcaseOf(id, c.showcase),
       ...(badges ? { badges } : {}),
       requested, restricted,
       mashaallahTotal: ach.mashaallah, momentCount: ach.count, moments: ach.moments, momentsMore: ach.more,

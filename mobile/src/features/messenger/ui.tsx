@@ -24,11 +24,11 @@ export const REACTION_ICON: Record<Reaction, IconName> = { mashallah: "starBig",
 export const reactionLabel = (t: MessengerText, r: Reaction) => (r === "mashallah" ? t.r_mashallah : r === "heart" ? t.r_heart : t.r_dua);
 
 /** a group or circle picture (sealed on the server, loaded with the sign-in header) or the person's avatar */
-export function ThreadAvatar({ kind, title, photo, avatar, size = 50 }: { kind: ThreadKind; title: string; photo: string | null; avatar?: string | null; size?: number }) {
+export function ThreadAvatar({ kind, title, photo, avatar, frame, size = 50 }: { kind: ThreadKind; title: string; photo: string | null; avatar?: string | null; frame?: string | null; size?: number }) {
   const t = useTheme();
   const [src, setSrc] = useState<{ uri: string; headers?: Record<string, string> } | null>(null);
   useEffect(() => { let on = true; if (photo) void mediaSource(photo).then((s) => { if (on) setSrc(s); }); else setSrc(null); return () => { on = false; }; }, [photo]);
-  if (kind === "direct") return <TalentAvatar name={title} uri={avatar ?? null} size={size} />;
+  if (kind === "direct") return <TalentAvatar name={title} uri={avatar ?? null} size={size} frame={frame} />;
   return (
     <View accessible={false} style={{ width: size, height: size, borderRadius: size / 2, overflow: "hidden", backgroundColor: "rgb(8,58,44)", alignItems: "center", justifyContent: "center", borderWidth: 1.5, borderColor: t.gold }}>
       {src ? <Image source={src} style={{ width: size, height: size }} /> : <Icon name={kind === "circle" ? "book" : "users"} size={size * 0.44} color="#E2C77F" />}

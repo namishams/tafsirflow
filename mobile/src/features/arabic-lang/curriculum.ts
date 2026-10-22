@@ -1,3 +1,4 @@
+import { freeLevels } from "@/lib/freeLevels";
 import { VOCAB_DECKS, type Word } from "@/web/vocab";
 import { meaning } from "@/web/vocabI18n";
 import { UNITS_A } from "./content1";
@@ -19,7 +20,8 @@ const withTest = (u: Unit): Unit => ({
 
 export const UNITS: Unit[] = [...UNITS_A, ...UNITS_B, ...UNITS_C].map(withTest);
 export const LESSONS: Lesson[] = UNITS.flatMap((u) => u.lessons);
-export const FREE_UNITS = 1;
+/** free units in the app: the central rule of lib/freeLevels.ts */
+export const FREE_UNITS = freeLevels("arabic-lang");
 export const PASS = 0.8;
 
 export const unitOfLesson = (id: string): Unit | undefined => UNITS.find((u) => u.lessons.some((l) => l.id === id));

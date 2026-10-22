@@ -7,7 +7,7 @@ import type { Badge } from "@/features/talents/badges";
 
 // Client for the messenger (website src/app/api/messenger/[...path]). Encrypted in transit (TLS) and at rest on the
 // server; reported messages can be read by the moderators (Apple guideline 1.2). Never "end-to-end encrypted".
-export type Person = { username: string; name: string; level: string; badge: Badge | null; verified: boolean; avatar: string | null };
+export type Person = { username: string; name: string; level: string; badge: Badge | null; verified: boolean; avatar: string | null; frame?: string | null; rare?: string | null };
 export type Reaction = "mashallah" | "heart" | "dua";
 export const REACTIONS: Reaction[] = ["mashallah", "heart", "dua"];
 export type ThreadKind = "direct" | "group" | "circle";

@@ -74,7 +74,7 @@ function ChatRow({ c, sub, onPress, onQuiet, quietLabel }: { c: ThreadRow; sub: 
           style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 16, paddingVertical: 8, minHeight: 76, backgroundColor: pressed ? t.surface : t.bg })}>
           <View>
             <View style={{ padding: 2, borderRadius: 32, borderWidth: 2, borderColor: c.pro ? t.gold : "transparent" }}>
-              <ThreadAvatar kind={c.kind} title={c.title} photo={c.photo} avatar={c.with?.avatar} size={56} />
+              <ThreadAvatar kind={c.kind} title={c.title} photo={c.photo} avatar={c.with?.avatar} frame={c.with?.frame} size={56} />
             </View>
             {c.active ? <View style={{ position: "absolute", right: 3, bottom: 3, width: 15, height: 15, borderRadius: 8, backgroundColor: "rgb(46,170,110)", borderWidth: 2.5, borderColor: t.bg }} /> : null}
           </View>

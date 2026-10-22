@@ -3,6 +3,8 @@ import { currentUser } from "@/lib/auth";
 import { pool } from "@/lib/db";
 import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { DUA_PRODUCTS, IOS_BUNDLE_ID, PREMIUM_PRODUCT, PRO_SUBSCRIPTION, verifyAppleTransaction } from "@/lib/appleIap";
+import { productKind } from "@/lib/store/catalog";
+import { grant, ownedOf } from "@/lib/store/entitlements";
 import { NAME_PRODUCTS, addDuaCredits, addNameCredits, duaCredits, nameCredits } from "@/lib/aiCredits";
 
 export const dynamic = "force-dynamic";
@@ -24,10 +26,34 @@ export async function POST(req: NextRequest) {
   const b = (await req.json().catch(() => ({}))) as { jws?: unknown };
   if (typeof b.jws !== "string" || b.jws.length > 20000) return json({ error: "input" }, 400);
   const tx = verifyAppleTransaction(b.jws);
-  const known = tx && (tx.productId === PREMIUM_PRODUCT || tx.productId === PRO_SUBSCRIPTION || tx.productId in DUA_PRODUCTS || tx.productId in NAME_PRODUCTS);
+  const store = tx ? await productKind(tx.productId) : null;
+  const known = tx && (!!store || tx.productId === PREMIUM_PRODUCT || tx.productId === PRO_SUBSCRIPTION || tx.productId in DUA_PRODUCTS || tx.productId in NAME_PRODUCTS);
   if (!tx || tx.bundleId !== IOS_BUNDLE_ID || !known) return json({ error: "invalid" }, 400);
-  if (tx.revocationDate) return json({ error: "revoked" }, 400);
+  if (tx.revocationDate) {
+    if (store) await p.query("UPDATE iap_entitlements SET revoked_at = now() WHERE transaction_id = $1", [tx.originalTransactionId]).catch(() => undefined);
+    return json({ error: "revoked" }, 400);
+  }
   if (tx.environment !== "Production" && me.role !== "admin" && process.env.IAP_ALLOW_SANDBOX === "0") return json({ premium: me.plan === "premium", sandbox: true });
+
+  // courses, sticker packs, the bundle, rare stickers and frames (non-consumable): owned by this account for good;
+  // a pack bought as a gift becomes a gift waiting to be sent through the messenger (/api/app/store/gift)
+  if (store) {
+    if (store.kind === "gift") {
+      const r = await p.query("INSERT INTO sticker_gifts (transaction_id, from_user, pack, environment) VALUES ($1,$2,$3,$4) ON CONFLICT (transaction_id) DO NOTHING RETURNING id",
+        [tx.transactionId, me.id, store.slug, tx.environment]);
+      const id = r.rows[0]?.id ?? (await p.query("SELECT id FROM sticker_gifts WHERE transaction_id = $1 AND from_user = $2", [tx.transactionId, me.id])).rows[0]?.id;
+      return json({ premium: me.plan === "premium", gift: id ? String(id) : null });
+    }
+    // a non-consumable belongs to the account it was first confirmed for
+    const other = await p.query("SELECT user_id FROM iap_entitlements WHERE transaction_id = $1", [tx.originalTransactionId]);
+    if (other.rows[0] && Number(other.rows[0].user_id) !== me.id) return json({ error: "other_account" }, 409);
+    const c = await p.connect();
+    let g: boolean | "conflict" = false;
+    try { g = await grant(c, me.id, tx.productId, "apple", tx.originalTransactionId, tx.environment); } finally { c.release(); }
+    // a one-of-one someone else got first (should not happen thanks to the reservation): kept on record, revoked,
+    // for a refund by the owner; the app finishes the transaction and says so
+    return json({ premium: me.plan === "premium", owned: (await ownedOf(me.id)).products, ...(g === "conflict" ? { conflict: true } : {}) });
+  }
 
   // personal duas and name reports: a transaction id is credited once, whoever sends it
   if (tx.productId in DUA_PRODUCTS || tx.productId in NAME_PRODUCTS) {

@@ -1,3 +1,4 @@
+import { cosmeticsOf } from "@/lib/store/entitlements";
 import { NextRequest } from "next/server";
 import { pool } from "@/lib/db";
 import { json } from "@/lib/http";
@@ -25,7 +26,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
   if (!post) return json({ error: "not_found" }, 404);
   const before = req.nextUrl.searchParams.get("before");
   const r = await pool()!.query(
-    `SELECT k.id, k.body, k.created_at, k.author_id, c.username, c.display_name, c.verified, c.badge, c.official, c.founder, c.pro_until, c.level, c.shares_total
+    `SELECT k.id, k.body, k.created_at, k.author_id, c.username, c.display_name, c.verified, c.badge, c.official, c.founder, c.pro_until, c.level, c.shares_total, c.frame, c.showcase
        FROM community_post_comments k JOIN community_profiles c ON c.user_id = k.author_id
       WHERE k.post_id = $2 AND k.removed_at IS NULL AND NOT c.suspended AND ${NOT_BLOCKED("k.author_id")}
         AND ($3::bigint IS NULL OR k.id < $3)
@@ -37,7 +38,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
     comments: rows.map((x) => ({
       id: String(x.id), text: x.body, at: x.created_at, mine: Number(x.author_id) === g.me.id,
       canDelete: Number(x.author_id) === g.me.id || Number(post.author_id) === g.me.id,
-      author: { username: x.username, name: x.display_name, verified: !!displayBadge(x), badge: displayBadge(x), pro: proOf(x), level: x.level, sharerTier: sharerTier(Number(x.shares_total ?? 0)) },
+      author: { username: x.username, name: x.display_name, verified: !!displayBadge(x), badge: displayBadge(x), pro: proOf(x), level: x.level, sharerTier: sharerTier(Number(x.shares_total ?? 0)), ...cosmeticsOf(x) },
     })),
     more: r.rows.length > PAGE ? String(rows[0].id) : null,
   }, 200, NO_STORE);

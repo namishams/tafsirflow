@@ -2,6 +2,8 @@ import { useCallback, useMemo } from "react";
 import { FREE, openPro, usePro, type ProFeature } from "./pro";
 import { readJSON, useStored, writeJSON } from "./store";
 import { remoteConfig } from "@/features/feed/remote";
+import { router, type Href } from "expo-router";
+import { courseSlugOf, ownsCourse, readShop, type CourseSlug } from "./shop";
 
 // Free and Pro in one place. Rules:
 // - the feed and the Quran reader are free for everyone
@@ -83,6 +85,9 @@ export function entitlement(feature: EntitlementFeature, pro: boolean): Omit<Ent
     const remaining = Math.max(0, max - u[lim]);
     return { allowed: false, remaining, canUse: remaining > 0 };
   }
+  // a course bought singly (not "academy": that card covers several courses, see features/courses/Screens)
+  const slug = singleCourse(feature);
+  if (slug && ownsCourse(readShop(), slug)) return full(true);
   if (typeof feature === "object") {
     if ("shamsSurah" in feature) return full(FREE.shamsSurah(feature.shamsSurah));
     return full(isUnitFree(feature.course, feature.unit));
@@ -90,13 +95,25 @@ export function entitlement(feature: EntitlementFeature, pro: boolean): Omit<Ent
   return full(false); // any other Pro feature
 }
 
+/** the single course a feature belongs to, when it can be bought on its own */
+function singleCourse(f: EntitlementFeature): CourseSlug | null {
+  const id = typeof f === "string" ? f : "course" in f ? f.course : null;
+  return id && id !== "academy" ? courseSlugOf(id) : null;
+}
+
+/** the unlock sheet: Pro, or this one course as a single purchase */
+export function openUnlock(slug: CourseSlug, feature: ProFeature = "general") {
+  router.push(`/unlock?c=${slug}&f=${feature}` as Href);
+}
+
 /** the entitlement of one feature for the current user (re-renders when Pro or today's usage changes) */
 export function useEntitlement(feature: EntitlementFeature): Entitlement {
   const { pro } = usePro();
   useStored<Usage | null>(USAGE_KEY, null);
+  useStored("qmc.shop.v1", null); // re-render when a single course was bought
   const key = typeof feature === "string" ? feature : JSON.stringify(feature);
   const base = entitlement(feature, pro);
-  const upsell = useCallback(() => openPro(proFeatureOf(feature)), [key]); // eslint-disable-line react-hooks/exhaustive-deps
+  const upsell = useCallback(() => { const slug = singleCourse(feature); if (slug) openUnlock(slug, proFeatureOf(feature)); else openPro(proFeatureOf(feature)); }, [key]); // eslint-disable-line react-hooks/exhaustive-deps
   const consume = useCallback((n = 1) => {
     const lim = limitOf(feature);
     if (pro || !lim) return;

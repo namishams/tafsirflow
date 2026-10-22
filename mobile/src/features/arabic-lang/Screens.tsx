@@ -1,3 +1,4 @@
+import { RewardCard } from "@/features/cosmetics/RewardCard";
 import { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, Pressable, ScrollView, Share, Text, TextInput, View } from "react-native";
 import { router, Stack, type Href } from "expo-router";
@@ -339,6 +340,7 @@ export function LangLessonScreen({ id }: { id: string }) {
             {ex.phase === "recite" || ex.phase === "submitting" ? null : <OutlineButton title={lt("retry")} onPress={begin} />}
             <OutlineButton title={lt("toMap")} onPress={goBack} />
             {unit.n === FREE_UNITS && lesson.test && result.score >= PASS ? <UnlockCard /> : null}
+            {result.score >= PASS || !lesson.test ? <RewardCard session={`arabic:${lesson.id}`} /> : null}
           </StepIn>
         ) : null}
       </ScrollView>

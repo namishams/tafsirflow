@@ -1,3 +1,7 @@
+import { RewardCard } from "@/features/cosmetics/RewardCard";
+import { isLevelFree } from "@/lib/freeLevels";
+import { courseSlugOf, ownsCourse, useShop } from "@/lib/shop";
+import { openUnlock } from "@/lib/entitlements";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
@@ -47,7 +51,12 @@ const COURSE_XP = 100, LESSON_XP = 15;
 /** the lesson's index is free, or the user has Pro */
 function useOpen(course: Course) {
   const ent = useEntitlement(ACADEMY);
-  return { allowed: ent.allowed, upsell: ent.upsell, open: (i: number) => ent.allowed || i < course.free };
+  const { shop } = useShop();
+  const slug = courseSlugOf(course.id);
+  // Pro, or this course bought singly (the Islam courses together, prophet stories together)
+  const allowed = ent.allowed || ownsCourse(shop, slug);
+  const upsell = () => (slug ? openUnlock(slug, "academy") : ent.upsell());
+  return { allowed, upsell, open: (i: number) => allowed || isLevelFree(course.id, i) };
 }
 
 /** card for the academy and other overviews */
@@ -172,7 +181,7 @@ export function CourseScreen({ id }: { id: string }) {
                     {course.id === "names" && names?.[i] ? <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, color: t.muted }} numberOfLines={1}>{names[i].meaning}</Text> : null}
                   </View>
                   {course.id === "names" && names?.[i] ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 20, color: t.gold }}>{names[i].ar}</Text> : null}
-                  {locked ? <Icon name="lock" size={15} color={t.gold} /> : passed ? <Icon name="check" size={16} color={t.accent} /> : i < course.free && !allowed ? <Text style={{ fontFamily: FONT.semibold, fontSize: 11, color: t.accent }}>{c("free")}</Text> : null}
+                  {locked ? <Icon name="lock" size={15} color={t.gold} /> : passed ? <Icon name="check" size={16} color={t.accent} /> : isLevelFree(course.id, i) && !allowed ? <Text style={{ fontFamily: FONT.semibold, fontSize: 11, color: t.accent }}>{c("free")}</Text> : null}
                 </Pressable>
               );
             })}
@@ -301,6 +310,7 @@ export function LessonScreen({ courseId, lessonId }: { courseId: string; lessonI
               onNext={nextL ? () => (open(idx + 1) ? router.replace(`/courses/${course.id}/${nextL.id}` as Href) : upsell()) : undefined}
               onOverview={() => router.replace(`/courses/${course.id}` as Href)} />
           ) : null}
+          {phase === "result" && res ? <RewardCard session={`${course?.id}:${lessonId}`} /> : null}
         </View>
       </Page>
     </>

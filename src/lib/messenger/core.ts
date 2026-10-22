@@ -1,3 +1,4 @@
+import { cosmeticsOf } from "@/lib/store/entitlements";
 import crypto from "node:crypto";
 import { pool } from "../db";
 import { badText } from "../communityProfiles";
@@ -76,10 +77,11 @@ export async function pairProblem(a: number, b: number): Promise<string | null> 
 }
 
 type Profile = { user_id: string; username: string; display_name: string; level: string; verified: boolean; badge: string; official: boolean; founder: boolean; avatar_path: string | null; avatar_version: number; suspended: boolean; message_policy: string };
-const PROFILE = "c.user_id, c.username, c.display_name, c.level, c.verified, c.badge, c.official, c.founder, c.pro_until, c.avatar_path, c.avatar_version, c.suspended, c.message_policy";
+const PROFILE = "c.user_id, c.username, c.display_name, c.level, c.verified, c.badge, c.official, c.founder, c.pro_until, c.avatar_path, c.avatar_version, c.suspended, c.message_policy, c.frame, c.showcase";
 export const person = (c: Partial<Profile> | null | undefined) => c?.username ? {
   username: c.username, name: c.display_name ?? c.username, level: c.level ?? "talent", badge: displayBadge(c as never), pro: proOf(c as never), verified: !!displayBadge(c as never),
   avatar: c.avatar_path ? `/api/community/avatar/${c.username}?v=${Number(c.avatar_version ?? 0)}` : null,
+  ...cosmeticsOf(c as { frame?: string | null; showcase?: string[] | null }),
 } : null;
 
 export async function profileByName(meId: number, username: string) {

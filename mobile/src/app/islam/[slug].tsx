@@ -14,6 +14,9 @@ import { ReadingBar, useReader } from "@/features/library/reader";
 import { STAGE_GOLD, stageGold, useIsl } from "@/features/library/palette";
 import { useChapters, useIslamUi } from "@/features/library/content";
 import { openHref } from "@/features/library/links";
+import { useEntitlement } from "@/lib/entitlements";
+import { freeLevels } from "@/lib/freeLevels";
+import { LevelUpsell } from "@/features/cosmetics/Unlock";
 
 // /islam/[slug] – one chapter, set like an illuminated book: hero with the key facts, the article with numbered
 // sections, questions, sources as a colophon and a domed doorway to the next chapter
@@ -23,6 +26,18 @@ export default function IslamChapter() {
   const d = islamDoc(String(slug));
   if (!d) return <Redirect href={"/islam" as Href} />;
   return <Chapter key={d.slug} slug={d.slug} />;
+}
+
+/** the intro and the first n "## " sections of a markdown body */
+function firstSections(text: string, n: number): string {
+  const lines = text.replace(/\r/g, "").split("\n");
+  let seen = 0;
+  const out: string[] = [];
+  for (const l of lines) {
+    if (l.startsWith("## ") && ++seen > n) break;
+    out.push(l);
+  }
+  return out.join("\n");
 }
 
 function Chapter({ slug }: { slug: string }) {
@@ -36,7 +51,12 @@ function Chapter({ slug }: { slug: string }) {
   const i = ISLAM.indexOf(d);
   const c = all[i];
   const prev = ISLAM[i - 1], next = ISLAM[i + 1];
-  const toc = mdHeadings(c.body);
+  // the Halal and Haram guide in the app: the first FREE_LEVELS sections free, then Pro or the guide on its own
+  const halal = slug === "halal-haram";
+  const ent = useEntitlement("halal-haram");
+  const gated = halal && !ent.allowed;
+  const body = gated ? firstSections(orderSchools(c.body, tradition), freeLevels("halal-haram")) : orderSchools(c.body, tradition);
+  const toc = mdHeadings(body);
   const reader = useReader(toc.length);
   const marbleY = useRef(0);
   const inner = useRef({ y: 0, h: 0 });
@@ -75,7 +95,8 @@ function Chapter({ slug }: { slug: string }) {
             <View onLayout={(e) => { inner.current = { y: e.nativeEvent.layout.y, h: e.nativeEvent.layout.height }; place(); }}>
               {d.needs_review ? <Text accessibilityRole="text" style={{ alignSelf: "flex-start", marginBottom: 20, borderRadius: 999, borderWidth: 1, borderColor: isl.a("goldSoft", 0.5), paddingHorizontal: 12, paddingVertical: 5, fontFamily: FONT.semibold, fontSize: 12.5, color: isl.gold }}>{tradUi(lang).review}</Text> : null}
               {d.en_only && lang !== "de" && lang !== "en" ? <Text style={{ marginBottom: 16, fontFamily: FONT.regular, fontStyle: "italic", fontSize: 13.5, color: isl.a("goldSoft", 0.85) }}>{tradUi(lang).enOnly}</Text> : null}
-              <Article text={orderSchools(c.body, tradition)} onHeading={reader.model.setHeading} />
+              <Article text={body} onHeading={reader.model.setHeading} />
+              {gated ? <LevelUpsell slug="halal-haram" feature="general" /> : null}
             </View>
 
             <IslBreak />

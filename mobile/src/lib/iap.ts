@@ -7,6 +7,7 @@ import { api } from "./api";
 import { PRO_PRODUCT } from "./pro";
 import { DUA_PACK_PRODUCT, DUA_PRODUCT, DUA_PRODUCTS, NAMES_PRODUCT, PRO_YEARLY_SKU } from "./purchases";
 import { writeJSON } from "./store";
+import { isGiftProduct, isStoreProduct, refreshShop } from "./shop";
 import { getToken } from "./storage";
 
 // Store purchases (StoreKit 2 on iOS, Google Play Billing on Android). Every purchase is checked by our server
@@ -86,7 +87,7 @@ export async function loadPrices(): Promise<StorePrices> {
   return out;
 }
 
-type Verified = { ok: boolean; pro?: boolean; until?: number | null; dua?: number; guest?: boolean };
+type Verified = { ok: boolean; pro?: boolean; until?: number | null; dua?: number; guest?: boolean; gift?: string | null };
 /** send the signed transaction to the server; returns what the account has now */
 async function verify(p: Purchase): Promise<Verified> {
   const token = p.purchaseToken;
@@ -104,17 +105,20 @@ async function verify(p: Purchase): Promise<Verified> {
   }
   try {
     const path = Platform.OS === "ios" ? "/api/iap/apple" : "/api/iap/google";
-    const d = await api<{ premium?: boolean; until?: number | null; dua?: number }>(path, { body: Platform.OS === "ios" ? { jws: token } : { token, productId: p.productId } });
+    const d = await api<{ premium?: boolean; until?: number | null; dua?: number; gift?: string | null }>(path, { body: Platform.OS === "ios" ? { jws: token } : { token, productId: p.productId } });
     if (d.premium && d.until) writeJSON("qmc.pro", { until: d.until, source: Platform.OS === "ios" ? "apple" : "google" }, true);
-    return { ok: true, pro: !!d.premium, until: d.until ?? null, dua: d.dua };
+    if (isStoreProduct(p.productId)) void refreshShop();
+    return { ok: true, pro: !!d.premium, until: d.until ?? null, dua: d.dua, gift: d.gift ?? null };
   } catch {
     return { ok: false };
   }
 }
 
 /** consumables: personal duas and personal name reports */
-const isConsumable = (sku: string) => sku in DUA_PRODUCTS || sku === NAMES_PRODUCT;
-const isOurs = (sku: string) => isConsumable(sku) || isPro(sku);
+const isConsumable = (sku: string) => sku in DUA_PRODUCTS || sku === NAMES_PRODUCT || isGiftProduct(sku);
+/** non-consumables of the store (courses, sticker packs, bundle, rare stickers, frames): owned for good */
+const isOwned = (sku: string) => isStoreProduct(sku) && !isGiftProduct(sku);
+const isOurs = (sku: string) => isConsumable(sku) || isPro(sku) || isStoreProduct(sku);
 /** verify one store transaction with the server and finish it only then (finishing acknowledges it on Android, so
  *  Google does not refund it after three days; a dua credit is booked once per transaction by the server) */
 async function settle(p: Purchase): Promise<boolean> {
@@ -157,6 +161,20 @@ export async function purchaseConsumable(sku: string): Promise<boolean> {
 /** the same purchase with the full result (pending, paid but not yet confirmed, cancelled …) */
 export const purchaseConsumableResult = (sku: string): Promise<BuyResult> => buy(sku, "in-app");
 
+/** buy a course, sticker pack, bundle, rare sticker, frame or a pack as a gift (the server confirms it first) */
+export const purchaseStoreProduct = (sku: string): Promise<BuyResult> => buy(sku, "in-app");
+
+/** store prices of in-app products in the buyer's currency; a product without an answer has no entry (no price shown) */
+export async function loadStorePrices(skus: string[]): Promise<Record<string, string>> {
+  if (!skus.length || !(await connect())) return {};
+  try {
+    const items = ((await fetchProducts({ skus, type: "in-app" })) ?? []) as { id: string; displayPrice: string }[];
+    return Object.fromEntries(items.filter((p) => skus.includes(p.id)).map((p) => [p.id, p.displayPrice]));
+  } catch {
+    return {};
+  }
+}
+
 /** "Restore purchases": ask the store, let the server confirm each active one */
 export async function restore(): Promise<"restored" | "none" | "failed"> {
   if (!(await connect())) return "failed";
@@ -165,6 +183,7 @@ export async function restore(): Promise<"restored" | "none" | "failed"> {
     const list = (await getAvailablePurchases()) ?? [];
     let any = false;
     for (const p of list) {
+      if (isOwned(p.productId) && (await getToken())) { const v = await verify(p); if (v.ok) any = true; continue; }
       if (!isPro(p.productId)) continue;
       const v = await verify(p);
       if (v.ok && v.pro) any = true;
@@ -192,7 +211,7 @@ export function settlePending(): Promise<void> {
         return; // everything else is bound to the account: wait until someone is signed in
       }
       const list = ((await getAvailablePurchases()) ?? []).filter((p) => isOurs(p.productId) && !buying.has(p.productId));
-      for (const p of list) if (isConsumable(p.productId)) await settle(p);
+      for (const p of list) if (isConsumable(p.productId) || isOwned(p.productId)) await settle(p);
       // Pro: the newest transaction carries the latest expiry; older renewals only need finishing once it is confirmed
       const pro = list.filter((p) => isPro(p.productId)).sort((a, b) => (b.transactionDate ?? 0) - (a.transactionDate ?? 0));
       if (pro[0] && (await settle(pro[0]))) for (const p of pro.slice(1)) await finishTransaction({ purchase: p, isConsumable: false }).catch(() => undefined);

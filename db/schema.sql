@@ -1746,3 +1746,52 @@ ALTER TABLE msg_report_items ADD COLUMN IF NOT EXISTS media_mime text;
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 -- the waveform of a voice note: up to 64 levels 0-9 measured on the device while recording (no audio content)
 ALTER TABLE msg_messages ADD COLUMN IF NOT EXISTS wave text CHECK (wave IS NULL OR wave ~ '^[0-9]{1,64}$');
+
+-- In-app purchases that are owned for good (owner 22.10.2026): single courses, sticker packs (also the "all packs"
+-- bundle), rare stickers and profile frames. One row per account and product; source says how it was obtained
+-- (apple purchase, a gift from another member, the monthly Pro pack, an album reward). edition: the running number
+-- of a numbered rare sticker ("Nr. 37"), given in order of purchase.
+CREATE TABLE IF NOT EXISTS iap_entitlements (
+  user_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  product_id  text NOT NULL,
+  source      text NOT NULL CHECK (source IN ('apple','google','gift','pro_month','reward','admin')),
+  transaction_id text,
+  environment text,
+  edition     integer,
+  revoked_at  timestamptz,
+  created_at  timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (user_id, product_id)
+);
+CREATE UNIQUE INDEX IF NOT EXISTS iap_entitlements_tx ON iap_entitlements (transaction_id) WHERE transaction_id IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS iap_entitlements_edition ON iap_entitlements (product_id, edition) WHERE edition IS NOT NULL;
+-- sticker packs bought as a gift (consumable): sent through the messenger; the recipient owns the pack from then on
+CREATE TABLE IF NOT EXISTS sticker_gifts (
+  id          bigserial PRIMARY KEY,
+  transaction_id text UNIQUE NOT NULL,
+  from_user   bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  pack        text NOT NULL,
+  to_user     bigint REFERENCES users(id) ON DELETE SET NULL,
+  environment text,
+  sent_at     timestamptz,
+  created_at  timestamptz NOT NULL DEFAULT now()
+);
+-- stickers placed on the garden tree (overlay over the tree art) and every sticker ever placed (albums)
+CREATE TABLE IF NOT EXISTS garden_decor (
+  user_id     bigint PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  items       jsonb NOT NULL DEFAULT '[]',
+  collected   jsonb NOT NULL DEFAULT '[]',
+  updated_at  timestamptz NOT NULL DEFAULT now()
+);
+-- the chosen avatar frame and up to three pinned rare stickers ("Vitrine"); only owned items, checked by the API
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS frame text;
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS showcase text[] NOT NULL DEFAULT '{}';
+-- one-of-one stickers ("Unikate"): a short reservation before the purchase sheet opens, so only one buyer can pay
+CREATE TABLE IF NOT EXISTS store_reservations (
+  product_id  text PRIMARY KEY,
+  user_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  until       timestamptz NOT NULL
+);
+-- a one-of-one is owned by one account only (refunds set revoked_at and release it)
+CREATE UNIQUE INDEX IF NOT EXISTS iap_entitlements_unique_owner ON iap_entitlements (product_id) WHERE revoked_at IS NULL AND product_id LIKE '%.unique.%';
+-- opt-in: show one's numbers and one-of-ones on the "Unikate & Nummern" board
+ALTER TABLE community_profiles ADD COLUMN IF NOT EXISTS show_collection boolean NOT NULL DEFAULT false;

@@ -262,7 +262,7 @@ export default function Chat() {
                   <ProfileMiniCard who={info.with} card={info.card} active={!!info.active} t={mt} />
                 ) : (
                   <>
-                    <ThreadAvatar kind={info.kind} title={info.title} photo={info.photo} size={36} />
+                    <ThreadAvatar kind={info.kind} title={info.title} photo={info.photo} avatar={info.with?.avatar} frame={info.with?.frame} size={36} />
                     <Pressable style={{ flex: 1, minHeight: 40, justifyContent: "center" }} accessibilityRole="link" onPress={() => router.push(`/talents/messages/info/${info.id}` as Href)}>
                       <Text numberOfLines={1} style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.accent }}>{mt.groupInfo}</Text>
                     </Pressable>

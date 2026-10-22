@@ -1,3 +1,4 @@
+import { RareBadge } from "@/features/cosmetics/RareBadge";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ProMark } from "./ProMark";
 import { ActivityIndicator, Alert, FlatList, KeyboardAvoidingView, Modal, Platform, Pressable, Share, Text, TextInput, View, type ListViewToken } from "react-native";
@@ -231,12 +232,13 @@ export function CommentsSheet({ visible, post, onClose, onCount }: { visible: bo
             renderItem={({ item: c }) => (
               <Pressable onLongPress={() => options(c)} delayLongPress={350} accessibilityActions={[{ name: "more", label: tt("more") }]} onAccessibilityAction={() => options(c)}
                 style={{ flexDirection: "row", gap: 10 }}>
-                <TalentAvatar name={c.author?.name ?? "?"} size={36} badge={c.author?.badge} />
+                <TalentAvatar name={c.author?.name ?? "?"} size={36} badge={c.author?.badge} frame={c.author?.frame} />
                 <View style={{ flex: 1, gap: 2 }}>
                   <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
                     <Text style={{ fontFamily: FONT.bold, fontSize: 13.5, color: t.ink }}>{c.author?.name ?? tt("you")}</Text>
                     <BadgeButton badge={c.author?.badge} size={13} />
                     <ProMark pro={c.author?.pro} size={12} />
+                    <RareBadge slug={c.author?.rare} size={14} />
                   </View>
                   <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 21, color: t.ink }}>{c.text}</Text>
                 </View>

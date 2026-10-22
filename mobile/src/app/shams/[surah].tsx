@@ -1,3 +1,4 @@
+import { RewardCard } from "@/features/cosmetics/RewardCard";
 import { DoneShare } from "@/features/share/SharePrompt";
 import { DaysGate } from "@/features/sisters/ui";
 import { GardenBurst } from "@/features/garden/widgets";
@@ -101,6 +102,7 @@ function ShamsSessionScreen() {
         {sum ? <Text style={{ marginTop: 10, color: t.ink, fontFamily: FONT.regular, fontSize: 16 }}>{st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes })}</Text> : null}
         <GoldButton title={st("toToday")} onPress={() => goBack()} style={{ marginTop: 16 }} />
         <View style={{ marginTop: 12 }}><DoneShare kind="lessonDone" title={st("sessionDone")} body={sum ? st("sessionLead", { done: sum.done, fresh: sum.fresh, minutes: sum.minutes }) : undefined} /></View>
+        <RewardCard session="shams-session" />
       </View>
     );
   }
@@ -425,6 +427,7 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
               <ContinueNext onStage surah={chapter.id} />
             </View>
           </Stage>
+          <RewardCard session={`shams:${chapter.id}:${finished}`} />
         </ScrollView>
       </View>
     );

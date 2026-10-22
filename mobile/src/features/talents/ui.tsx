@@ -14,6 +14,7 @@ import { countryName } from "@/lib/countries";
 import { useLang, useT } from "@/i18n";
 import { SharerBadge, SharerRing } from "@/features/share/SharerUI";
 import { DefaultAvatar } from "@/features/community/ui";
+import { FrameRing } from "@/features/cosmetics/art";
 import { REPORT_CATEGORIES, T, errCode, type AgeStatus, type Level, type MeInfo, type ReportCategory, type TalentCard } from "./api";
 import { useTT, type TKey } from "./text";
 import { syncPendingProfile } from "./pendingProfile";
@@ -36,10 +37,11 @@ export function useTalentErr() {
 }
 
 /** avatar: the profile picture or the default silhouette (owner, build 20; also for members under 16); gold rim (thicker for gold and official badges) */
-export function TalentAvatar({ name, size = 52, uri, badge }: { name: string; size?: number; uri?: string | null; badge?: Badge | null }) {
+export function TalentAvatar({ name, size = 52, uri, badge, frame }: { name: string; size?: number; uri?: string | null; badge?: Badge | null; /** bought avatar frame (never instead of the verified tick) */ frame?: string | null }) {
   const [failed, setFailed] = useState(false);
   const strong = badge === "gold" || badge === "official" || badge === "founder";
   const rim = Math.max(2, size * (strong ? 0.06 : 0.035));
+  if (frame) return <FrameRing frame={frame} size={size}><TalentAvatar name={name} size={size} uri={uri} badge={badge} /></FrameRing>;
   return (
     <View accessible={false} importantForAccessibility="no-hide-descendants"
       style={{ width: size, height: size, borderRadius: size / 2, backgroundColor: "rgb(8,58,44)", borderWidth: rim, borderColor: strong ? "#E2C77F" : goldButton.line, alignItems: "center", justifyContent: "center", overflow: "hidden" }}>

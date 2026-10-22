@@ -415,3 +415,15 @@ export function mergeGarden(a0: Garden | undefined, b0: Garden | undefined): Gar
     watered: Math.max(a.watered ?? 0, b.watered ?? 0), lastActive: Math.max(a.lastActive ?? 0, b.lastActive ?? 0),
   };
 }
+
+/** the free reward after a completed learning session (reward card, features/cosmetics/RewardCard): a few growth
+ *  points for the active tree, at most once per finished session; returns the points given (0 without a tree) */
+export function rewardGrowth(n: number, pro: boolean): number {
+  const s = g();
+  const t = activeTree(s, pro);
+  if (!t) return 0;
+  grow(t, n, "learn");
+  s.lastActive = dayNum();
+  save();
+  return n;
+}

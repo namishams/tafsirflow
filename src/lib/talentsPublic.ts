@@ -1,3 +1,4 @@
+import { cosmeticsOf } from "./store/entitlements";
 import { pool } from "./db";
 import { sharerTier } from "./communityProfiles";
 import { displayBadge, proOf, type Badge } from "./talentBadges";
@@ -10,7 +11,7 @@ import { visibleExtras, type ProfileExtras } from "./profileExtras";
 export type PublicPost = { id: string; type: "story" | "post"; verseKey: string | null; durationMs: number | null; hasVideo: boolean; likes: number; comments: number; at: string };
 export type PublicProfile = {
   username: string; name: string; bio: string; country: string | null; rewaya: string; maqam: string; level: string; badge: Badge | null;
-  officialChannel: string | null; founder?: boolean; /** PRO mark: an active Pro subscription */ pro?: boolean; avatar: string | null; private: boolean; sharerTier: number; ijazahChain: string;
+  officialChannel: string | null; founder?: boolean; /** bought avatar frame and pinned rare stickers (Vitrine) */ frame?: string | null; showcase?: string[]; /** PRO mark: an active Pro subscription */ pro?: boolean; avatar: string | null; private: boolean; sharerTier: number; ijazahChain: string;
   followers: number; following: number; posts: number; likes: number;
   progress: { treeStage: number; certJuz: number[] } | null;
   highlights: { id: string; title: string; count: number }[];
@@ -51,7 +52,7 @@ export async function publicProfile(username: string): Promise<PublicProfile | n
   )).rows;
   return {
     username: r.username, name: r.display_name, bio: r.bio, country: r.country, rewaya: r.rewaya ?? "", maqam: r.maqam ?? "", level: r.level ?? "talent",
-    badge: displayBadge(r), pro: proOf(r), officialChannel: r.official ? r.official_channel ?? null : null, founder: !!r.founder,
+    badge: displayBadge(r), pro: proOf(r), frame: cosmeticsOf(r).frame, showcase: r.showcase ?? [], officialChannel: r.official ? r.official_channel ?? null : null, founder: !!r.founder,
     avatar: r.avatar_path ? `/api/community/avatar/${r.username}?v=${Number(r.avatar_version ?? 0)}` : null,
     posting,
     extras: priv ? {} : visibleExtras(r, "other"),

@@ -26,6 +26,8 @@ import { PlantFlow } from "./PlantFlow";
 import { GardenNotifySetting, ProgressBar, StageCinematic, chime, useGardenTick } from "./widgets";
 import { fillG, skyLabel, useAgeText, useGardenText, useSkyText, useStickerLabel } from "./texts";
 import { GiftFlow, NourishButton, StickerBag } from "./GiftFlow";
+import { DecorLayer, DecorSheet } from "@/features/cosmetics/Decor";
+import { useStoreText } from "@/features/cosmetics/texts2";
 
 const SCENE_H = 520;
 
@@ -43,6 +45,8 @@ export default function GardenScreen() {
   const tree = activeTree(s, pro);
   const [planting, setPlanting] = useState(params.plant === "1" || params.plant === "demo" || s.trees.length === 0);
   const [gift, setGift] = useState(false);
+  const [decor, setDecor] = useState(false);
+  const stx = useStoreText();
   const [share, setShare] = useState(params.share === "1");
   const place = useSkyPlace();
   const skyT = useSkyText();
@@ -175,6 +179,7 @@ export default function GardenScreen() {
                 <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 22, color: ink }}>{tx.missionTitle}</Text>
                 <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: ink, opacity: 0.78, marginTop: 1, textShadowColor: "rgba(0,0,0,0.35)", textShadowRadius: 4 }}>{skyLabel(skyT, place === "mecca", sky.next)}</Text>
               </View>
+              <RoundBtn icon="starBig" label={stx.decorate} onPress={() => setDecor(true)} />
               <RoundBtn icon="grid" label={tx.album} onPress={() => router.push("/sticker-collection" as Href)} />
               <RoundBtn icon="send" label={tx.share} onPress={() => setShare(true)} />
             </View>
@@ -225,6 +230,7 @@ export default function GardenScreen() {
         </View>
       </ScrollView>
       {gift ? <GiftFlow onClose={() => setGift(false)} /> : null}
+      {decor ? <DecorSheet visible onClose={() => setDecor(false)} /> : null}
       {__DEV__ && params.cine ? <StageCinematic ev={{ tree, stage: Number(params.cine) || 1 }} onClose={() => router.setParams({ cine: undefined })} /> : null}
       {share ? <ShareSheet visible noDecoration onClose={() => setShare(false)} link="https://quranmasterclass.com/app" message={`${tx.shareMsg}: ${tree.name}, ${tx[`s${p.stage}` as "s0"]}`} renderCard={(f) => <GardenCard format={f} />} /> : null}
     </GestureHandlerRootView>
@@ -257,6 +263,8 @@ function TreePlot({ tr, w, active, s, traits, season, reduce, dust, onEvent }: {
       <View style={{ width: w, height: (TREE_H * w) / TREE_W }}>
         {ripe ? <RipeHalo x={cx} y={cy} r={Math.max(40, g.crown * k * 1.1)} still={reduce} /> : null}
         <TreeArt id={tr.id} type={tr.type} stage={pp.stage} traits={traits} season={season} resting={resting(s)} fruits={tr.fruits} size={w} still={reduce} nudge={nudge} />
+        {/* bought stickers placed on the tree: an overlay, the tree art itself stays as it is */}
+        {active ? <DecorLayer w={w} h={(TREE_H * w) / TREE_W} still={reduce} /> : null}
         {burst && !reduce ? <Burst key={burst.id} kind={burst.kind} cx={cx} cy={cy} by={by} spread={Math.max(30, g.crown * k)} leaf={tr.type === "palm" ? "#3f9a68" : "#7fc48a"} /> : null}
         {burst?.kind === "fruit" ? <FloatText key={`t${burst.id}`} x={cx} y={cy - 30} text={fillG(tx.harvested, { n: burst.xp })} still={reduce} /> : null}
       </View>
@@ -322,7 +330,7 @@ function FloatText({ x, y, text, still }: { x: number; y: number; text: string; 
 
 const todayNum = () => { const t = Date.now(); return Math.floor((t - new Date(t).getTimezoneOffset() * 60000) / 86400000); };
 
-function RoundBtn({ icon, label, onPress }: { icon: "chevronLeft" | "grid" | "send"; label: string; onPress: () => void }) {
+function RoundBtn({ icon, label, onPress }: { icon: "chevronLeft" | "grid" | "send" | "starBig"; label: string; onPress: () => void }) {
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} hitSlop={8}
       style={({ pressed }) => ({ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(8,38,29,0.55)", borderWidth: 1, borderColor: "rgba(233,207,153,0.4)", opacity: pressed ? 0.8 : 1 })}>

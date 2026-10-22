@@ -9,6 +9,7 @@ export type Level = "talent" | "rising" | "master" | "sheikh";
 export const LEVELS: Level[] = ["talent", "rising", "master", "sheikh"];
 export type Connection = "none" | "outgoing" | "incoming" | "connected";
 export type TalentCard = { username: string; name: string; country: string | null; role: string; rewaya: string; level: Level; verified: boolean; badge?: Badge | null; pro?: boolean; sharerTier: number; followers: number; avatar?: string | null; followed?: boolean; mine?: boolean; followsMe?: boolean;
+  /** bought avatar frame and the first pinned rare sticker (store, 22.10.2026) */ frame?: string | null; rare?: string | null; showcase?: string[]; showcaseItems?: { slug: string; tier: string; number: number | null }[];
   /** lists and suggestions (22.10.2026): a follow request to this private account is pending */ requested?: boolean; private?: boolean };
 export type TalentProfile = TalentCard & {
   /** the one founder account (server flag) */
@@ -41,7 +42,7 @@ export type Post = {
   author: { username: string; name: string; verified: boolean; badge?: Badge | null; pro?: boolean; level: Level; sharerTier: number; followed?: boolean; mine?: boolean };
   status?: "pending" | "approved" | "rejected" | "removed"; rejectReason?: string;
 };
-export type Comment = { id: string; text: string; at: string; mine: boolean; canDelete: boolean; author?: { username: string; name: string; verified: boolean; badge?: Badge | null; pro?: boolean; level: Level; sharerTier: number } };
+export type Comment = { id: string; text: string; at: string; mine: boolean; canDelete: boolean; author?: { username: string; name: string; verified: boolean; badge?: Badge | null; pro?: boolean; level: Level; sharerTier: number; frame?: string | null; rare?: string | null } };
 export type Highlight = { id: string; title: string; posts: Post[] };
 export type NotificationKind = "moment_reaction" | "follow" | "follow_request" | "like" | "comment" | "post_approved" | "post_rejected" | "connect_request" | "connect_accepted" | "verified" | "verification_rejected";
 export type Notification = { id: string; kind: NotificationKind; at: string; read: boolean; postId: string | null; verseKey: string | null;
