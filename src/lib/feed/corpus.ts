@@ -14,7 +14,7 @@ export const CORPUS_KINDS: FeedCorpusKind[] = ["verse", "word", "tafsir", "hadit
 const DEFAULT_WEIGHT: Record<FeedCorpusKind, number> = {
   verse: 1.2, word: 0.9, tafsir: 1.2, hadith: 1.4, "shia-hadith": 1.4, name: 0.6, quiz: 1, course: 0.8, wiki: 1, lemma: 0.6, mutashabihat: 0.4, maqasid: 0.8, dua: 1,
   // carousels and wisdom posts (src/lib/feed/carousels, scripts/carousels-load.mjs): a good share of every page
-  carousel: 2.4, wisdom: 2,
+  carousel: 5, wisdom: 2,
 };
 /** what app builds without v=2 can render: verse keys and hadith of al-Bukhari, Muslim, an-Nawawi and Thaqalayn */
 const LEGACY_STREAMS = new Set(["verse", "hadith:bukhari", "hadith:muslim", "hadith:nawawi", "shia-hadith"]);

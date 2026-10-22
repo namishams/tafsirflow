@@ -642,7 +642,7 @@
     "dailyGrowth": 50
   },
   "corpus": {
-    "share": 0.45,
-    "kindWeights": { "verse": 1.2, "word": 0.9, "tafsir": 1.2, "hadith": 1.4, "shia-hadith": 1.4, "name": 0.6, "quiz": 1, "course": 0.8, "wiki": 1, "lemma": 0.6, "mutashabihat": 0.4, "maqasid": 0.8, "dua": 1, "carousel": 2.4, "wisdom": 2 }
+    "share": 0.5,
+    "kindWeights": { "verse": 1.2, "word": 0.9, "tafsir": 1.2, "hadith": 1.4, "shia-hadith": 1.4, "name": 0.6, "quiz": 1, "course": 0.8, "wiki": 1, "lemma": 0.6, "mutashabihat": 0.4, "maqasid": 0.8, "dua": 1, "carousel": 5, "wisdom": 2 }
   }
 }
