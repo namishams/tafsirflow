@@ -60,6 +60,8 @@ const de = {
   cameraDenied: "Bitte erlauben Sie den Zugriff auf die Kamera.", scanWrong: "Das ist kein Profil-Code von Quran Masterclass.",
   compose: "Neue Nachricht", startChat: "Neuen Chat beginnen", emptyLine: "Ihre Gespräche erscheinen hier.", primary: "Chats", seenShort: "Gesehen", sentShort: "Gesendet",
   activeRow: "Gerade aktiv",
+  openShort: "Offen", emptyHint: "Noch keine Chats.", welcomeTitle: "Ihre Nachrichten", welcomeLine: "Schreiben Sie Lernpartnern, Ihrem Lehrer oder Ihrer Lerngruppe.",
+  suggestTitle: "Personen, die Sie kennen könnten", messageBtn: "Nachricht", showSuggest: "Vorschläge anzeigen",
 };
 export type MessengerText = typeof de;
 
@@ -118,6 +120,8 @@ const en: MessengerText = {
   scanWrong: "This is not a Quran Masterclass profile code.",
   compose: "New message", startChat: "Start a new chat", emptyLine: "Your conversations will appear here.", primary: "Primary", seenShort: "Seen", sentShort: "Sent",
   activeRow: "Active now",
+  openShort: "Open", emptyHint: "No chats yet.", welcomeTitle: "Your messages", welcomeLine: "Write to study partners, your teacher or your study group.",
+  suggestTitle: "People you may know", messageBtn: "Message", showSuggest: "Show suggestions",
 };
 
 const ar: Partial<MessengerText> = {
@@ -171,6 +175,8 @@ const ar: Partial<MessengerText> = {
   scanQr: "مسح رمز QR", searchPeople: "البحث عن أشخاص", scanHint: "وجّهوا الكاميرا إلى رمز QR لملف شخصي.", cameraDenied: "يرجى السماح بالوصول إلى الكاميرا.",
   scanWrong: "هذا ليس رمز ملف شخصي من Quran Masterclass.",
   compose: "رسالة جديدة", startChat: "بدء محادثة جديدة", emptyLine: "ستظهر محادثاتكم هنا.", primary: "الرئيسية", seenShort: "شوهدت", sentShort: "أُرسلت", activeRow: "نشطون الآن",
+  openShort: "مفتوحة", emptyHint: "لا توجد محادثات بعد.", welcomeTitle: "رسائلكم", welcomeLine: "راسلوا شركاء التعلّم أو معلّمكم أو مجموعتكم الدراسية.",
+  suggestTitle: "أشخاص قد تعرفونهم", messageBtn: "مراسلة", showSuggest: "عرض الاقتراحات",
 };
 
 const tr: Partial<MessengerText> = {
@@ -226,6 +232,8 @@ const tr: Partial<MessengerText> = {
   scanWrong: "Bu bir Quran Masterclass profil kodu değil.",
   compose: "Yeni mesaj", startChat: "Yeni sohbet başlat", emptyLine: "Sohbetleriniz burada görünecek.", primary: "Birincil", seenShort: "Görüldü", sentShort: "Gönderildi",
   activeRow: "Şu an aktif",
+  openShort: "Açık", emptyHint: "Henüz sohbet yok.", welcomeTitle: "Mesajlarınız", welcomeLine: "Çalışma arkadaşlarınıza, öğretmeninize veya çalışma grubunuza yazın.",
+  suggestTitle: "Tanıyor olabileceğiniz kişiler", messageBtn: "Mesaj", showSuggest: "Önerileri göster",
 };
 
 const ur: Partial<MessengerText> = {
@@ -281,6 +289,8 @@ const ur: Partial<MessengerText> = {
   scanWrong: "یہ Quran Masterclass کا پروفائل کوڈ نہیں ہے۔",
   compose: "نیا پیغام", startChat: "نئی چیٹ شروع کریں", emptyLine: "آپ کی گفتگو یہاں نظر آئے گی۔", primary: "بنیادی", seenShort: "دیکھ لیا", sentShort: "بھیج دیا",
   activeRow: "ابھی فعال",
+  openShort: "کھلی", emptyHint: "ابھی کوئی چیٹ نہیں۔", welcomeTitle: "آپ کے پیغامات", welcomeLine: "اپنے مطالعہ کے ساتھیوں، استاد یا مطالعہ گروپ کو لکھیں۔",
+  suggestTitle: "وہ لوگ جنہیں آپ جانتے ہوں", messageBtn: "پیغام", showSuggest: "تجاویز دکھائیں",
 };
 
 const fa: Partial<MessengerText> = {
@@ -335,6 +345,8 @@ const fa: Partial<MessengerText> = {
   scanWrong: "این کد نمایهٔ Quran Masterclass نیست.",
   compose: "پیام تازه", startChat: "آغاز گفتگوی تازه", emptyLine: "گفتگوهای شما اینجا نمایش داده می‌شود.", primary: "اصلی", seenShort: "دیده شد", sentShort: "فرستاده شد",
   activeRow: "اکنون فعال",
+  openShort: "باز", emptyHint: "هنوز گفتگویی نیست.", welcomeTitle: "پیام‌های شما", welcomeLine: "برای هم‌درس‌ها، استاد یا گروه درسی خود بنویسید.",
+  suggestTitle: "افرادی که شاید بشناسید", messageBtn: "پیام", showSuggest: "نمایش پیشنهادها",
 };
 
 const ps: Partial<MessengerText> = {
@@ -390,6 +402,8 @@ const ps: Partial<MessengerText> = {
   scanWrong: "دا د Quran Masterclass د پروفایل کوډ نه دی.",
   compose: "نوی پیغام", startChat: "نوی چټ پیل کړئ", emptyLine: "ستاسو خبرې اترې به دلته ښکاره شي.", primary: "اصلي", seenShort: "ولیدل شو", sentShort: "ولېږل شو",
   activeRow: "اوس فعال",
+  openShort: "پرانیستې", emptyHint: "لا کوم چټ نشته.", welcomeTitle: "ستاسو پیغامونه", welcomeLine: "خپلو د زده کړې ملګرو، استاذ یا د زده کړې ډلې ته ولیکئ.",
+  suggestTitle: "هغه خلک چې ښايي وپېژنئ", messageBtn: "پیغام", showSuggest: "وړاندیزونه وښایئ",
 };
 
 const fr: Partial<MessengerText> = {
@@ -446,6 +460,9 @@ const fr: Partial<MessengerText> = {
   cameraDenied: "Veuillez autoriser l'accès à l'appareil photo.", scanWrong: "Ce n'est pas un code de profil Quran Masterclass.",
   compose: "Nouveau message", startChat: "Démarrer une discussion", emptyLine: "Vos conversations apparaîtront ici.", primary: "Principal", seenShort: "Vu", sentShort: "Envoyé",
   activeRow: "En ligne",
+  openShort: "En attente", emptyHint: "Aucune discussion pour l'instant.", welcomeTitle: "Vos messages",
+  welcomeLine: "Écrivez à vos partenaires d'étude, à votre enseignant ou à votre groupe.", suggestTitle: "Personnes que vous pourriez connaître", messageBtn: "Message",
+  showSuggest: "Afficher les suggestions",
 };
 
 const es: Partial<MessengerText> = {
@@ -502,6 +519,8 @@ const es: Partial<MessengerText> = {
   scanWrong: "No es un código de perfil de Quran Masterclass.",
   compose: "Nuevo mensaje", startChat: "Iniciar un chat", emptyLine: "Sus conversaciones aparecerán aquí.", primary: "Principal", seenShort: "Visto", sentShort: "Enviado",
   activeRow: "Activos ahora",
+  openShort: "Pendientes", emptyHint: "Aún no hay chats.", welcomeTitle: "Sus mensajes", welcomeLine: "Escriba a sus compañeros de estudio, a su profesor o a su grupo.",
+  suggestTitle: "Personas que quizá conozca", messageBtn: "Mensaje", showSuggest: "Mostrar sugerencias",
 };
 
 const id: Partial<MessengerText> = {
@@ -557,6 +576,8 @@ const id: Partial<MessengerText> = {
   scanWrong: "Ini bukan kode profil Quran Masterclass.",
   compose: "Pesan baru", startChat: "Mulai obrolan baru", emptyLine: "Percakapan Anda akan muncul di sini.", primary: "Utama", seenShort: "Dilihat", sentShort: "Terkirim",
   activeRow: "Aktif sekarang",
+  openShort: "Terbuka", emptyHint: "Belum ada obrolan.", welcomeTitle: "Pesan Anda", welcomeLine: "Tulis kepada teman belajar, guru, atau kelompok belajar Anda.",
+  suggestTitle: "Orang yang mungkin Anda kenal", messageBtn: "Pesan", showSuggest: "Tampilkan saran",
 };
 
 const ms: Partial<MessengerText> = {
@@ -599,6 +620,8 @@ const ms: Partial<MessengerText> = {
   scanWrong: "Ini bukan kod profil Quran Masterclass.",
   compose: "Mesej baharu", startChat: "Mulakan sembang baharu", emptyLine: "Perbualan anda akan dipaparkan di sini.", primary: "Utama", seenShort: "Dilihat", sentShort: "Dihantar",
   activeRow: "Aktif sekarang",
+  openShort: "Terbuka", emptyHint: "Belum ada sembang.", welcomeTitle: "Mesej anda", welcomeLine: "Tulis kepada rakan belajar, guru atau kumpulan belajar anda.",
+  suggestTitle: "Orang yang mungkin anda kenali", messageBtn: "Mesej", showSuggest: "Tunjukkan cadangan",
 };
 
 const bn: Partial<MessengerText> = {
@@ -654,6 +677,8 @@ const bn: Partial<MessengerText> = {
   scanWrong: "এটি Quran Masterclass-এর প্রোফাইল কোড নয়।",
   compose: "নতুন বার্তা", startChat: "নতুন চ্যাট শুরু করুন", emptyLine: "আপনার কথোপকথন এখানে দেখা যাবে।", primary: "প্রধান", seenShort: "দেখা হয়েছে", sentShort: "পাঠানো হয়েছে",
   activeRow: "এখন সক্রিয়",
+  openShort: "খোলা", emptyHint: "এখনও কোনো চ্যাট নেই।", welcomeTitle: "আপনার বার্তা", welcomeLine: "আপনার পড়ার সঙ্গী, শিক্ষক বা পড়ার গ্রুপকে লিখুন।",
+  suggestTitle: "যাঁদের আপনি চিনতে পারেন", messageBtn: "বার্তা", showSuggest: "পরামর্শ দেখান",
 };
 
 const ru: Partial<MessengerText> = {
@@ -709,6 +734,8 @@ const ru: Partial<MessengerText> = {
   scanWrong: "Это не код профиля Quran Masterclass.",
   compose: "Новое сообщение", startChat: "Начать новый чат", emptyLine: "Здесь появятся ваши переписки.", primary: "Основные", seenShort: "Просмотрено", sentShort: "Отправлено",
   activeRow: "Сейчас в сети",
+  openShort: "Ждут", emptyHint: "Чатов пока нет.", welcomeTitle: "Ваши сообщения", welcomeLine: "Пишите партнёрам по учёбе, учителю или учебной группе.",
+  suggestTitle: "Возможно, вы знакомы", messageBtn: "Написать", showSuggest: "Показать рекомендации",
 };
 
 const zh: Partial<MessengerText> = {
@@ -757,6 +784,7 @@ const zh: Partial<MessengerText> = {
   e_pro: "发起聊天、创建群组和发送消息属于 Pro 功能。有人给您写信时，您随时可以回复。", proCta: "查看 Pro",
   scanQr: "扫描二维码", searchPeople: "搜索用户", scanHint: "将相机对准个人资料的二维码。", cameraDenied: "请允许访问相机。", scanWrong: "这不是 Quran Masterclass 的个人资料二维码。",
   compose: "新消息", startChat: "开始新聊天", emptyLine: "您的对话将显示在这里。", primary: "主要", seenShort: "已读", sentShort: "已发送", activeRow: "当前在线",
+  openShort: "待回复", emptyHint: "还没有聊天。", welcomeTitle: "您的消息", welcomeLine: "给学习伙伴、老师或学习小组写信。", suggestTitle: "您可能认识的人", messageBtn: "发消息", showSuggest: "显示推荐",
 };
 
 const TABLE: Record<string, Partial<MessengerText>> = { de, en, ar, tr, ur, fa, ps, fr, es, id, ms, bn, ru, zh };

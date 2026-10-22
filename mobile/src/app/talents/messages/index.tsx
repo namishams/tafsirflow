@@ -15,6 +15,8 @@ import { M, type Person, type SearchHit, type ThreadRow, type Unread } from "@/f
 import { errorText, fill, systemLine } from "@/features/messenger/text";
 import { ThreadAvatar, useMT } from "@/features/messenger/ui";
 import { notifyEnabled, setNotifyEnabled } from "@/features/messenger/useUnread";
+import { readJSON, writeJSON } from "@/lib/store";
+import type { TalentCard } from "@/features/talents/api";
 
 // /talents/messages – the inbox in the Instagram layout (owner 22.10.2026; the website's MessengerWeb is the same):
 // header with the own @username and badge, settings (gear) and compose (pen: new chat with people search, new group,
@@ -87,6 +89,39 @@ function ChatRow({ c, sub, onPress, onQuiet, quietLabel }: { c: ThreadRow; sub: 
           {c.unread ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: t.gold }} /> : null}
         </Pressable>
       </Animated.View>
+    </View>
+  );
+}
+
+/** "Personen, die Sie kennen könnten": the existing social suggestions, only after the member chooses to see them */
+function Suggestions({ onMessage }: { onMessage: (username: string) => void }) {
+  const t = useTheme();
+  const mt = useMT();
+  const [on, setOn] = useState(() => readJSON<boolean>("qmc.msg.suggest", false));
+  const [people, setPeople] = useState<TalentCard[] | null>(null);
+  useEffect(() => { if (on) void T.suggested().then((d) => setPeople(d.talents.slice(0, 8))).catch(() => setPeople([])); }, [on]);
+  if (!on) return <Pressable onPress={() => { setOn(true); writeJSON("qmc.msg.suggest", true); }} accessibilityRole="button" style={{ minHeight: 44, justifyContent: "center" }}>
+    <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: t.accent }}>{mt.showSuggest}</Text></Pressable>;
+  if (!people?.length) return null;
+  return (
+    <View style={{ alignSelf: "stretch", gap: 10, marginTop: 8 }}>
+      <Text accessibilityRole="header" style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.muted }}>{mt.suggestTitle}</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10 }}>
+        {people.map((p) => (
+          <View key={p.username} style={{ width: 128, alignItems: "center", gap: 4, padding: 10, borderRadius: 16, backgroundColor: t.surface, borderWidth: 1, borderColor: t.line }}>
+            <TalentAvatar name={p.name} uri={p.avatar ?? null} size={56} />
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 3, maxWidth: "100%" }}>
+              <Text numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.semibold, fontSize: 13.5, color: t.ink }}>{p.name}</Text>
+              <BadgeButton badge={p.badge ?? (p.verified ? "gold" : null)} size={13} />
+            </View>
+            <Text numberOfLines={1} style={{ fontFamily: FONT.regular, fontSize: 12, color: t.muted }}>@{p.username}</Text>
+            <Pressable onPress={() => onMessage(p.username)} accessibilityRole="button" accessibilityLabel={`${mt.messageBtn}: ${p.name}`}
+              style={{ marginTop: 4, alignSelf: "stretch", height: 32, borderRadius: 16, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: t.gold }}>
+              <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.ink }}>{mt.messageBtn}</Text>
+            </Pressable>
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 }
@@ -203,7 +238,7 @@ export default function Inbox() {
             <Text accessibilityRole="header" numberOfLines={1} style={{ flexShrink: 1, fontFamily: FONT.bold, fontSize: 20, color: t.ink }}>{me ? me.username : mt.title}</Text>
             {me ? <BadgeButton badge={me.badge} size={16} /> : null}
           </View>
-          {ok ? <GlassIconButton size={40} icon="settings" label={mt.settings} onPress={() => setSettings(true)} /> : null}
+          {ok ? <GlassIconButton size={40} icon="gear" label={mt.settings} onPress={() => setSettings(true)} /> : null}
           {ok ? <GlassIconButton size={40} icon="pen" label={mt.compose} onPress={() => { setCompose(true); setPanel("new"); setField(""); setMsg(""); }} /> : null}
         </View>
         <AccessGate a={a}>
@@ -218,7 +253,7 @@ export default function Inbox() {
                 </View>
                 {!hits ? (
                   <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingHorizontal: 16 }} accessibilityRole="tablist">
-                    {pill("inbox", mt.primary)}{pill("requests", mt.requests, unread.requests)}{pill("unread", mt.unreadOnly, unread.inbox)}{pill("unanswered", mt.unanswered)}
+                    {pill("inbox", mt.primary)}{pill("requests", mt.requests, unread.requests)}{pill("unread", mt.unreadOnly, unread.inbox)}{pill("unanswered", mt.openShort)}
                   </ScrollView>
                 ) : null}
                 {!hits && box === "inbox" && activeNow.length ? (
@@ -255,6 +290,7 @@ export default function Inbox() {
                       <GardenArt />
                       <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, color: t.muted, textAlign: "center" }}>{mt.emptyLine}</Text>
                       <GoldButton title={mt.startChat} icon="pen" onPress={() => { setCompose(true); setPanel("new"); }} />
+                      <Suggestions onMessage={(u) => void go(() => M.open(u))} />
                     </View>
                   ) : <View style={{ paddingHorizontal: 16 }}><Muted>{box === "requests" ? mt.emptyRequests : mt.noResults}</Muted></View>
                 ) : shown ? (

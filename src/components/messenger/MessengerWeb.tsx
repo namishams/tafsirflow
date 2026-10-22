@@ -89,9 +89,9 @@ function Tick({ badge }: { badge?: Badge }) {
     </svg>
   );
 }
-function GardenArt() {
+function GardenArt({ size = 150 }: { size?: number }) {
   return (
-    <svg width="150" height="150" viewBox="0 0 150 150" aria-hidden>
+    <svg width={size} height={size} viewBox="0 0 150 150" aria-hidden>
       <circle cx="75" cy="78" r="62" fill="rgb(var(--accent-soft))" />
       <path d="M45 128V70a30 30 0 0 1 60 0v58" fill="none" stroke="rgb(var(--gold))" strokeWidth="3" />
       <path d="M55 128V74a20 20 0 0 1 40 0v54" fill="none" stroke="rgb(var(--gold))" strokeWidth="1.5" opacity=".6" />
@@ -216,8 +216,8 @@ export default function MessengerWeb({ locale }: { locale: string }) {
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t.searchPh} aria-label={t.searchPh} className="min-w-0 flex-1 bg-transparent text-[rgb(var(--ink))] outline-none" />
           </label>
           {!hits ? (
-            <div role="tablist" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
-              {([["inbox", t.primary, 0], ["requests", t.requests, unread.requests], ["unread", t.unreadOnly, unread.inbox], ["unanswered", t.unanswered, 0]] as const).map(([b, label, n]) => (
+            <div role="tablist" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 pe-8 [mask-image:linear-gradient(to_right,#000_calc(100%-2rem),transparent)] [scrollbar-width:none] rtl:[mask-image:linear-gradient(to_left,#000_calc(100%-2rem),transparent)]">
+              {([["inbox", t.primary, 0], ["requests", t.requests, unread.requests], ["unread", t.unreadOnly, unread.inbox], ["unanswered", t.openShort, 0]] as const).map(([b, label, n]) => (
                 <button key={b} role="tab" aria-selected={box === b} className={soft(box === b)} onClick={() => { if ((b === "requests") !== (box === "requests")) setRows(null); setBox(b); }}>
                   {label}{n ? <span className="min-w-[18px] rounded-full bg-[rgb(214,48,60)] px-1.5 text-center text-[11px] font-bold leading-[18px] text-white">{n}</span> : null}
                 </button>
@@ -243,12 +243,11 @@ export default function MessengerWeb({ locale }: { locale: string }) {
               <span className="block font-semibold">{h.title}</span>{h.snippet ? <span className="block truncate text-sm text-muted">{h.snippet}</span> : null}</button></li>
           )) : <li className="p-4 text-center text-muted">{t.noResults}</li>)
             : shown && !shown.length ? (box === "inbox" ? (
-              <li className="flex flex-col items-center gap-3 px-8 pt-6 text-center">
-                <GardenArt />
-                <p className="text-muted">{t.emptyLine}</p>
-                <button className={gold} onClick={() => setCompose("new")}><Ico n="pen" size={16} />{t.startChat}</button>
+              <li className="flex items-center gap-3 px-4 py-3 text-sm text-muted">
+                <span className="flex-1">{t.emptyHint}</span>
+                <button className="font-semibold text-[rgb(var(--accent))] md:hidden" onClick={() => setCompose("new")}>{t.startChat}</button>
               </li>
-            ) : <li className="p-4 text-center text-muted">{box === "requests" ? t.emptyRequests : t.noResults}</li>)
+            ) : <li className="px-4 py-3 text-sm text-muted">{box === "requests" ? t.emptyRequests : t.noResults}</li>)
             : (shown ?? []).map((c) => (
               <li key={c.id}>
                 <button onClick={() => setActive(c.id)} aria-label={`${c.title}${c.unread ? `, ${c.unread}` : ""}, ${sub(c)}`}
@@ -264,9 +263,9 @@ export default function MessengerWeb({ locale }: { locale: string }) {
             ))}
         </ul>
       </aside>
-      <section className={`${active ? "flex" : "hidden md:flex"} min-h-[100dvh] min-w-0 flex-col md:min-h-[75vh] md:rounded-3xl md:ring-1 md:ring-[rgb(var(--line))]`}>
-        {active ? <ChatPane key={active} id={active} t={t} locale={locale} onBack={() => { setActive(null); void loadList(); }} />
-          : <div className="m-auto flex flex-col items-center gap-3 p-8 text-center"><GardenArt /><p className="text-muted">{t.emptyLine}</p></div>}
+      <section className={`${active ? "flex" : "hidden md:flex"} min-h-[100dvh] min-w-0 flex-col overflow-hidden md:sticky md:top-6 md:h-[calc(100dvh-3rem)] md:min-h-[560px] md:rounded-3xl md:ring-1 md:ring-[rgb(var(--line))]`}>
+        {active ? <ChatPane key={active} id={active} t={t} locale={locale} pro={!!rows?.find((r) => r.id === active)?.pro} onBack={() => { setActive(null); void loadList(); }} />
+          : <Welcome t={t} onCompose={() => setCompose("new")} onMessage={(u) => void go(() => call<{ id: string }>("threads", { method: "POST", json: { username: u } }))} />}
       </section>
 
       {compose ? (
@@ -319,7 +318,46 @@ export default function MessengerWeb({ locale }: { locale: string }) {
   );
 }
 
-function ChatPane({ id, t, locale, onBack }: { id: string; t: T; locale: string; onBack: () => void }) {
+/** the right pane when no chat is open (Instagram desktop): illustration, title, one line, "Neue Nachricht", and
+ * people you may know (the existing social suggestions, only after the member chooses to see them) */
+function Welcome({ t, onCompose, onMessage }: { t: T; onCompose: () => void; onMessage: (username: string) => void }) {
+  const KEY = "qmc.msg.suggest";
+  const [on, setOn] = useState(false);
+  const [people, setPeople] = useState<(Person & { country?: string | null })[] | null>(null);
+  useEffect(() => { try { setOn(localStorage.getItem(KEY) === "1"); } catch { /* storage blocked */ } }, []);
+  useEffect(() => {
+    if (!on) return;
+    void fetch("/api/community/suggested", { credentials: "same-origin" }).then((r) => r.json()).then((d: { talents?: (Person & { country?: string | null })[] }) => setPeople((d.talents ?? []).slice(0, 6))).catch(() => setPeople([]));
+  }, [on]);
+  const show = () => { setOn(true); try { localStorage.setItem(KEY, "1"); } catch { /* storage blocked */ } };
+  return (
+    <div className="flex flex-1 flex-col items-center justify-center gap-4 overflow-y-auto p-8 text-center">
+      <GardenArt size={220} />
+      <h2 className="font-display text-3xl">{t.welcomeTitle}</h2>
+      <p className="max-w-sm text-muted">{t.welcomeLine}</p>
+      <button className={gold} onClick={onCompose}><Ico n="pen" size={16} />{t.compose}</button>
+      <div className="mt-6 w-full max-w-lg">
+        {!on ? <button className="text-sm font-semibold text-[rgb(var(--accent))]" onClick={show}>{t.showSuggest}</button> : people && people.length ? (
+          <>
+            <h3 className="mb-3 text-start text-sm font-semibold text-muted">{t.suggestTitle}</h3>
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {people.map((p) => (
+                <li key={p.username} className="flex flex-col items-center gap-1.5 rounded-2xl bg-[rgb(var(--surface))] p-3 ring-1 ring-[rgb(var(--line))]">
+                  <Avatar name={p.name} src={p.avatar} size={56} />
+                  <span className="flex max-w-full items-center gap-1 text-sm font-semibold"><span className="truncate">{p.name}</span><Tick badge={p.badge ?? (p.verified ? "gold" : null)} /></span>
+                  <span className="max-w-full truncate text-xs text-muted">@{p.username}</span>
+                  <button className={`${btn} min-h-8 w-full`} onClick={() => onMessage(p.username)}>{t.messageBtn}</button>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function ChatPane({ id, t, locale, onBack, pro = false }: { id: string; t: T; locale: string; onBack: () => void; pro?: boolean }) {
   const [info, setInfo] = useState<Info | null>(null);
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [more, setMore] = useState<string | null>(null);
@@ -449,9 +487,10 @@ function ChatPane({ id, t, locale, onBack }: { id: string; t: T; locale: string;
         {info ? (
           info.kind === "direct" && info.with ? (
             <a href={`/${locale}/talents/${info.with.username}`} className="flex min-w-0 flex-1 items-center gap-3" aria-label={`${info.with.name}, @${info.with.username}. ${t.viewProfile}`}>
-              <Avatar name={info.title} src={info.with.avatar} size={44} active={!!info.active} />
+              <Avatar name={info.title} src={info.with.avatar} size={44} active={!!info.active} ring={pro} />
               <span className="min-w-0">
                 <span className="flex items-center gap-1.5 font-bold"><span className="truncate">{info.with.name}</span><Tick badge={info.with.badge} />
+                  {pro ? <span className="rounded-full bg-gradient-to-b from-[#E8CF8A] to-[#C6A65E] px-1.5 text-[10px] font-bold leading-4 text-[rgb(40,30,8)]">PRO</span> : null}
                   {info.card?.country ? <span className="rounded border border-[rgb(var(--line))] px-1 text-[10px] font-semibold text-muted">{info.card.country}</span> : null}</span>
                 <span className="block truncate text-xs text-muted">@{info.with.username}{info.card?.mutual ? ` · ${fill(t.mutual, info.card.mutual)}` : ""}{info.active ? ` · ${t.activeNow}` : ""}</span>
               </span>
