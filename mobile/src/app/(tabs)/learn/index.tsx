@@ -4,8 +4,9 @@ import { GardenWidget } from "@/features/garden/widgets";
 import { useEffect, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
-import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
-import { Eyebrow, GoldButton, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, TextButton, gradientColors } from "@/components/brand";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
+import { Sun } from "@/features/library/shamsArt";
+import { Arcade, Eyebrow, GoldButton, GoldCard, GoldProgress, OutlineButton, Poster, PosterGrid, SectionTitle, Stage, StarNumber, SurahBanner, TextButton, gradientColors } from "@/components/brand";
 import { ShamsModeChooser } from "@/features/shams2/ModeChooser";
 import { continueHref, useShamsMode } from "@/features/shams2/mode";
 import { useModeT } from "@/features/shams2/modeText";
@@ -72,8 +73,11 @@ export default function Masterclass() {
         <View style={{ paddingHorizontal: 16, marginTop: insets.top + 12, gap: 28 }}>
           {/* the Shams Method (the former page hero) with the Shams Method 2.0 hub */}
           <Stage rounded={R.card} hairlines={false} style={{ borderWidth: 1, borderColor: "rgba(214,180,108,0.45)" }}>
+            {/* the sun of the Shams Method with the word شمس in gold, as on the /shams page (owner: keep it Islamic) */}
+            <View pointerEvents="none" style={{ alignItems: "center", marginTop: 12, marginBottom: -28 }}><Sun size={170} /></View>
             <View style={{ padding: 20, gap: 12 }}>
               <Eyebrow onStage>{c.heroKicker}</Eyebrow>
+              {lang === "ar" ? null : <Text allowFontScaling={false} accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={{ fontFamily: CALLIG_FONT, fontSize: 26, lineHeight: 42, color: stage.gold, writingDirection: "rtl", alignSelf: "flex-start", marginBottom: -10 }}>{"منهج شمس"}</Text>}
               <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 28, lineHeight: 32, color: "#fff" }}>{c.heroTitle}</Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14.5, lineHeight: 22, color: stage.textSoft }}>{c.heroLead}</Text>
               {c.heroFacts ? (
@@ -90,6 +94,7 @@ export default function Masterclass() {
               <OutlineButton title={lt("about")} onStage onPress={() => router.push("/shams" as Href)} />
               <ShamsModeChooser tone="stage" collapsible />
             </View>
+            <Arcade />
           </Stage>
           <TodayPlanCard secondary />
           <GardenWidget />
