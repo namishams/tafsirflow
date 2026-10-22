@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LOCALE_META } from "@/i18n/locales";
 import Wordmark from "./Wordmark";
@@ -7,6 +7,7 @@ import { CookieSettingsLink } from "./analytics/Analytics";
 import MadeInDubai from "./MadeInDubai";
 import Skyline from "./Skyline";
 import { COMPANY } from "@/lib/company";
+import { HUB_IDS, type KeywordSet } from "@/lib/seo/types";
 
 // Footer columns (owner 22.10.2026): six balanced groups, no duplicates; labels from "nav"
 const FOOTER: { title: string; items: { href: string; key: string }[] }[] = [
@@ -40,6 +41,10 @@ const FOOTER: { title: string; items: { href: string; key: string }[] }[] = [
 // the Dubai signature and the operating company (src/lib/company.ts)
 export default async function SiteFooter() {
   const t = await getTranslations();
+  // the landing guides, labelled with each language's researched focus keyword (src/lib/seo/keywords/<locale>.ts)
+  const kw = ((await import(`@/lib/seo/keywords/${await getLocale()}`).catch(() => null))?.default ?? {}) as Record<string, KeywordSet>;
+  const guides = HUB_IDS.map((id) => ({ href: `/${id}`, label: kw[`/${id}`]?.focus })).filter((g): g is { href: string; label: string } => !!g.label)
+    .map((g) => ({ ...g, label: g.label.charAt(0).toLocaleUpperCase() + g.label.slice(1) }));
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-line bg-surface">
@@ -77,6 +82,13 @@ export default async function SiteFooter() {
             ))}
           </div>
         </div>
+        {guides.length > 0 && (
+          <nav aria-label={t("nav.guides")} className="mt-10 border-t border-line pt-6">
+            <ul className="flex flex-wrap gap-x-4 gap-y-2 text-[13px]">
+              {guides.map((g) => <li key={g.href}><Link href={g.href} className="text-ink/75 transition hover:text-accent">{g.label}</Link></li>)}
+            </ul>
+          </nav>
+        )}
         <nav aria-label={t("home2.fLanguages")} className="mt-10 border-t border-line pt-6">
           <ul className="flex flex-wrap gap-x-4 gap-y-2 text-[13px] text-muted">
             {Object.entries(LOCALE_META).map(([k, v]) => <li key={k}><Link href="/" locale={k} hrefLang={k} className="transition hover:text-ink">{v.label}</Link></li>)}
