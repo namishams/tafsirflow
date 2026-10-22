@@ -27,7 +27,7 @@ export default function TabBar() {
     { href: "/feed", key: "community", Icon: IconReels },
     { href: "/quran", key: "quran", Icon: IconBook },
     { href: "/shams", key: "shams", Icon: IconSun },
-    { href: "/search", key: "search", Icon: IconCompass },
+    { href: "/explore", key: "explore", Icon: IconCompass },
     { href: me ? "/profile" : "/account", key: "account", Icon: IconUser },
   ] as const;
 
@@ -35,7 +35,7 @@ export default function TabBar() {
     <nav className="tab-glass fixed inset-x-0 z-50 flex justify-center px-[18px] lg:hidden" style={{ bottom: "max(calc(env(safe-area-inset-bottom) - 6px), 12px)" }} aria-label={t("main")}>
       <ul className="flex h-[62px] w-full max-w-[460px] items-center rounded-full border border-[rgba(150,116,52,0.3)] bg-[rgba(255,255,255,0.62)] px-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.14)] backdrop-blur-xl backdrop-saturate-150 dark:bg-[rgba(13,33,26,0.62)]">
         {tabs.map(({ href, key, Icon }) => {
-          const on = isActive(path, href);
+          const on = isActive(path, href) || (href === "/explore" && isActive(path, "/search"));
           return (
             <li key={href} className="flex-1">
               <Link href={href} aria-label={t(key)} aria-current={on ? "page" : undefined} className={`relative flex h-[62px] items-center justify-center ${on ? "text-accent" : "text-ink/70"}`}>

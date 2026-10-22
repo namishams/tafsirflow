@@ -347,7 +347,8 @@
     "fSupportCta": "Jadi pendukung",
     "fSupportList": "Lihat pendukung",
     "suggestions": "Saran",
-    "reciterApply": "Untuk qari"
+    "reciterApply": "Untuk qari",
+    "explore": "Jelajahi"
   },
   "today": {
     "title": "Hari ini",
@@ -2746,5 +2747,21 @@
       "cta": "Untuk qari: tulis kepada kami",
       "claimHint": "Qari profesional? Tulis langsung kepada kami"
     }
+  },
+  "explore": {
+    "lead": "Semua kursus, alat, dan bagian di satu tempat: belajar, melantunkan, salat, dan terus menemukan.",
+    "rowLearn": "Belajar dan berlatih",
+    "rowQuran": "Al-Qur'an, tilawah, dan radio",
+    "rowDaily": "Salat dan keseharian",
+    "rowHeritage": "Hadis, kisah, dan warisan",
+    "rowCommunity": "Komunitas dan kemajuan",
+    "reciterPathD": "Belajar membaca langkah demi langkah, dengan unit dan ujian.",
+    "cardsD": "Ulangi kata dan ayat dengan pengulangan berjarak.",
+    "testsD": "Uji pengetahuan Anda dan raih sertifikat.",
+    "abrahamicD": "Nabi, kitab, dan tempat yang sama dengan Yahudi dan Kristen.",
+    "haramainD": "Makkah dan Madinah: Ka'bah, Masjid Nabawi, dan sejarahnya.",
+    "nahjD": "Khutbah, surat, dan ucapan Imam Ali.",
+    "feed": "Feed Al-Qur'an",
+    "feedD": "Ayat, tilawah, dan ilmu untuk digulir."
   }
 }

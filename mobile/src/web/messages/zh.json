@@ -347,7 +347,8 @@
     "fSupportCta": "成为支持者",
     "fSupportList": "查看支持者",
     "suggestions": "建议",
-    "reciterApply": "致诵读者"
+    "reciterApply": "致诵读者",
+    "explore": "发现"
   },
   "today": {
     "title": "今天",
@@ -2746,5 +2747,21 @@
       "cta": "诵读者：联系我们",
       "claimHint": "专业诵读者？直接联系我们"
     }
+  },
+  "explore": {
+    "lead": "所有课程、工具和栏目集中在一处：学习、诵读、礼拜，继续探索。",
+    "rowLearn": "学习与练习",
+    "rowQuran": "古兰经、诵读与电台",
+    "rowDaily": "礼拜与日常",
+    "rowHeritage": "圣训、故事与遗产",
+    "rowCommunity": "社区与进度",
+    "reciterPathD": "通过单元和考试，一步步学习诵读。",
+    "cardsD": "以间隔重复复习词语和经文。",
+    "testsD": "检验您的知识并获得证书。",
+    "abrahamicD": "与犹太教和基督教共有的先知、经典与圣地。",
+    "haramainD": "麦加与麦地那：克尔白、先知寺及其历史。",
+    "nahjD": "伊玛目阿里的演讲、书信与箴言。",
+    "feed": "古兰经动态",
+    "feedD": "可滑动浏览的经文、诵读与知识。"
   }
 }

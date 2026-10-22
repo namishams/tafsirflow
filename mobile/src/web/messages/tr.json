@@ -347,7 +347,8 @@
     "fSupportCta": "Destekçi olun",
     "fSupportList": "Destekçileri görün",
     "suggestions": "Öneriler",
-    "reciterApply": "Kurralar için"
+    "reciterApply": "Kurralar için",
+    "explore": "Keşfet"
   },
   "today": {
     "title": "Bugün",
@@ -2746,5 +2747,21 @@
       "cta": "Kurralar: bize yazın",
       "claimHint": "Profesyonel kâri misiniz? Bize doğrudan yazın"
     }
+  },
+  "explore": {
+    "lead": "Tüm kurslar, araçlar ve bölümler tek yerde: öğrenin, tilavet edin, namaz kılın ve keşfetmeye devam edin.",
+    "rowLearn": "Öğrenin ve çalışın",
+    "rowQuran": "Kur'an, tilavet ve radyo",
+    "rowDaily": "Namaz ve günlük hayat",
+    "rowHeritage": "Hadis, kıssalar ve miras",
+    "rowCommunity": "Topluluk ve ilerleme",
+    "reciterPathD": "Üniteler ve sınavla adım adım okumayı öğrenin.",
+    "cardsD": "Kelimeleri ve ayetleri aralıklı tekrarla pekiştirin.",
+    "testsD": "Bilginizi sınayın ve sertifika kazanın.",
+    "abrahamicD": "Yahudilik ve Hristiyanlıkla ortak peygamberler, kitaplar ve mekânlar.",
+    "haramainD": "Mekke ve Medine: Kâbe, Mescid-i Nebevî ve tarihleri.",
+    "nahjD": "Hz. Ali'nin hutbeleri, mektupları ve sözleri.",
+    "feed": "Kur'an Akışı",
+    "feedD": "Kaydırarak ayetler, tilavetler ve bilgi."
   }
 }

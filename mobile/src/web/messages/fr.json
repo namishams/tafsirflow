@@ -347,7 +347,8 @@
     "fSupportCta": "Devenir soutien",
     "fSupportList": "Voir les soutiens",
     "suggestions": "Suggestions",
-    "reciterApply": "Pour les récitateurs"
+    "reciterApply": "Pour les récitateurs",
+    "explore": "Découvrir"
   },
   "today": {
     "title": "Aujourd'hui",
@@ -2746,5 +2747,21 @@
       "cta": "Récitateurs : écrivez-nous",
       "claimHint": "Récitateur professionnel ? Écrivez-nous directement"
     }
+  },
+  "explore": {
+    "lead": "Tous les cours, outils et rubriques au même endroit : apprenez, récitez, priez et continuez à découvrir.",
+    "rowLearn": "Apprendre et s'exercer",
+    "rowQuran": "Coran, récitation et radio",
+    "rowDaily": "Prière et quotidien",
+    "rowHeritage": "Hadith, récits et patrimoine",
+    "rowCommunity": "Communauté et progrès",
+    "reciterPathD": "Apprenez à réciter pas à pas, avec unités et examen.",
+    "cardsD": "Révisez mots et versets par répétition espacée.",
+    "testsD": "Vérifiez vos connaissances et obtenez des certificats.",
+    "abrahamicD": "Prophètes, livres et lieux partagés avec le judaïsme et le christianisme.",
+    "haramainD": "La Mecque et Médine : la Kaaba, la Mosquée du Prophète et leur histoire.",
+    "nahjD": "Sermons, lettres et paroles de l'imam Ali.",
+    "feed": "Fil du Coran",
+    "feedD": "Versets, récitations et savoir à faire défiler."
   }
 }

@@ -347,7 +347,8 @@
     "fSupportCta": "Hacerse colaborador",
     "fSupportList": "Ver colaboradores",
     "suggestions": "Sugerencias",
-    "reciterApply": "Para recitadores"
+    "reciterApply": "Para recitadores",
+    "explore": "Descubrir"
   },
   "today": {
     "title": "Hoy",
@@ -2746,5 +2747,21 @@
       "cta": "Recitadores: escríbanos",
       "claimHint": "¿Recitador profesional? Escríbanos directamente"
     }
+  },
+  "explore": {
+    "lead": "Todos los cursos, herramientas y secciones en un solo lugar: aprenda, recite, rece y siga descubriendo.",
+    "rowLearn": "Aprender y practicar",
+    "rowQuran": "Corán, recitación y radio",
+    "rowDaily": "Oración y día a día",
+    "rowHeritage": "Hadiz, relatos y patrimonio",
+    "rowCommunity": "Comunidad y progreso",
+    "reciterPathD": "Aprenda a recitar paso a paso, con unidades y examen.",
+    "cardsD": "Repase palabras y aleyas con repetición espaciada.",
+    "testsD": "Compruebe sus conocimientos y obtenga certificados.",
+    "abrahamicD": "Profetas, libros y lugares compartidos con el judaísmo y el cristianismo.",
+    "haramainD": "La Meca y Medina: la Kaaba, la Mezquita del Profeta y su historia.",
+    "nahjD": "Sermones, cartas y dichos del imam Ali.",
+    "feed": "Feed del Corán",
+    "feedD": "Aleyas, recitaciones y saber para desplazarse."
   }
 }
