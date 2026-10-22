@@ -6,10 +6,14 @@ import { PosterGrid, type PosterItem } from "@/components/PosterTiles";
 import { TILES } from "@/lib/tiles";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { IconSearch } from "@/components/Icons";
+import { calText } from "@/lib/hijri";
+import { namesText } from "@/lib/names";
+import { islamDoc, loadChapter } from "@/lib/islam";
 
 // Discover: the website's version of the app's fourth tab (mobile/src/app/(tabs)/library): every course, tool and section as
 // poster cards in the same themed rows, in the same order. Search is the field at the top (/search). Places the app has
-// that the website does not (hadith, qibla, prophet stories) are left out.
+// that the website does not (hadith, qibla, prophet stories) are left out. Calendar, the name finder (/names, the app's
+// "names" tile) and the 99 Names of Allah chapter (/islam/names) take their texts from their own pages.
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
@@ -32,8 +36,8 @@ const EXTRA: Record<string, { href: string; nav?: string; title?: string; desc: 
 const ROWS: { title: string; keys: string[] }[] = [
   { title: "rowLearn", keys: ["shams", "reciterPath", "courses", "arabic", "tajweed", "vocab", "cards", "tests", "plan", "how"] },
   { title: "rowQuran", keys: ["feed", "radio", "reciters", "khatm", "map"] },
-  { title: "rowDaily", keys: ["prayer", "salah", "wudu", "duas", "duagen"] },
-  { title: "rowHeritage", keys: ["nahj", "abrahamic", "haramain", "islam", "secrets", "guides", "world"] },
+  { title: "rowDaily", keys: ["prayer", "calendar", "salah", "wudu", "duas", "duagen", "names"] },
+  { title: "rowHeritage", keys: ["nahj", "abrahamic", "haramain", "islam", "asma", "secrets", "guides", "world"] },
   { title: "rowCommunity", keys: ["community", "ranking", "stats", "assistant"] },
 ];
 
@@ -42,7 +46,17 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
   const open = t("home2.open");
+  const cal = calText(locale).t;
+  const nm = namesText(locale);
+  const asma = await loadChapter(islamDoc("names")!, locale);
+  const own: Record<string, { href: string; title: string; desc: string; ar: string; badge: string; bg: string }> = {
+    calendar: { href: "/calendar", title: cal("title"), desc: cal("lead"), ar: "هجري", badge: "plan", bg: gradient("#2a443c", "#0d0c18") },
+    names: { href: "/names", title: nm("title"), desc: nm("lead"), ar: "أسماء", badge: "library", bg: gradient("#3a2a1c", "#140e09") },
+    asma: { href: "/islam/names", title: asma.title, desc: asma.lead, ar: "الأسماء", badge: "library", bg: gradient("#0f3b2e", "#05170f") },
+  };
   const item = (k: string): PosterItem | null => {
+    const o = own[k];
+    if (o) return { ...o, badge: t(`home2.badge_${o.badge}`), cta: open };
     const x = EXTRA[k];
     if (x) return { href: x.href, title: t(x.nav ? `nav.${x.nav}` : `explore.${x.title}`), desc: t(`explore.${x.desc}`), badge: t(`home2.badge_${x.badge}`), ar: x.ar, bg: x.bg, cta: open };
     const c = TILES[k];
