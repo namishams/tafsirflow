@@ -73,7 +73,7 @@ if (base) {
       if (!d) fail(`${path}: no description`);
       if (!canon || !canon.endsWith(path)) fail(`${path}: canonical ${canon}`);
       if (/noindex/.test(robots)) console.log(`NOTE ${path}: ${robots}`);
-      const hl = [...h.matchAll(/<link rel="alternate" hreflang="([^"]+)"/g)].length;
+      const hl = [...h.matchAll(/<link rel="alternate" hreflang="([^"]+)"/gi)].length;
       if (hl !== locales.length + 1) fail(`${path}: page hreflang ${hl}`);
     }
   }

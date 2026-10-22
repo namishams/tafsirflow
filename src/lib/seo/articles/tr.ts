@@ -22,7 +22,7 @@ const a: Record<string, Article> = {
         h2: "Huzur, sorunsuzluk demek değildir",
         p: [
           "Pek çok kişi huzuru, derdin bittiği bir hal sanır. İslami anlayış daha gerçekçidir: dünya bir imtihan yeridir; zorluk, eksiklik ve kayıp bu hayatın olağan parçalarıdır. Huzur ise bu zorlukların ortasında da Allah'ın bildiği, gördüğü ve yakın olduğu bilgisinden doğan bir güven olarak anlatılır.",
-          "Kuran'ın sabır, tevekkül, şükür ve dünyanın geçiciliği üzerine bu kadar çok konuşması bu yüzden kalple ilişkilendirilir. Bir sıkıntı daha geniş bir çerçeveye yerleştirildiğinde ağırlığı değişebilir; bu, sıkıntının ortadan kalktığı anlamına gelmez, yükü taşıma biçiminizin değişebileceği anlamına gelir. Tefsir geleneğinde kalplerin yatışmasının Allah'ı anmakla ilişkilendirildiği ifade için sık sık Rad suresine işaret edilir; bu sureyi de meal ve varsa tefsir notlarıyla birlikte okuyabilirsiniz.",
+          "Kuran'ın sabır, tevekkül, şükür ve dünyanın geçiciliği üzerine bu kadar çok konuşması bu yüzden kalple ilişkilendirilir. Bir sıkıntı daha geniş bir çerçeveye yerleştirildiğinde ağırlığı değişebilir; bu, sıkıntının ortadan kalktığı anlamına gelmez, yükü taşıma biçiminizin değişebileceği anlamına gelir. Sükûnet ile Allah'ı anma arasındaki bağ konusunda tefsir geleneğinde sık sık Rad suresine işaret edilir; bu sureyi de meal ve varsa tefsir notlarıyla birlikte okuyabilirsiniz.",
           "Bu yazı tıbbi ya da psikolojik bir etki vaat etmiyor. İslami öğretinin manevi bir yönelişi kendi diliyle nasıl anlattığını aktarıyor.",
         ],
         links: [["/surah/13", "Rad suresi"]],
@@ -108,14 +108,14 @@ const a: Record<string, Article> = {
         p: [
           "Hidayet, yol göstermek ve doğru yola ulaştırmak anlamına gelir. İslam ilim geleneğinde sıkça iki şey birbirinden ayrılır: yolu göstermek ile o yolda yürümeyi nasip etmek. Bir haritayı okuyup yine de yola çıkmayan biri olabilir; gerçek rehberlik hem bilgiyi hem de ona göre davranma isteğini ve gücünü içerir ve Müslümanlar bu ikincisini de Allah'ın lütfu olarak görürler.",
           "Fatiha suresinin namazda tekrar tekrar okunması, hidayet isteğinin ibadet hayatının merkezinde durduğunu hatırlatır. Namazın ayrıntıları mezhebe göre değişse de Fatiha'nın merkezi yeri ortaktır. Sureyi mealiyle okuyup hidayet isteğinin surenin içinde nasıl bir yer tuttuğuna kendiniz bakabilirsiniz.",
-          "Bu ayrım, Kuran okumanın neden tek başına yeterli sayılmadığını da açıklar. Öğrenmek zincirin ilk halkasıdır; inanmak ve uygulamak sonraki halkalardır. Kuran okumak ilk halkayı güçlendirir, son halka ise her gün yenilenen küçük kararlara bağlıdır. Bu yüzden rehberliği bir kez ve topluca alınan bir şey olarak değil, her gün yeniden istenen bir şey olarak düşünmek gerekir.",
+          "Yolu bilmek ile o yolda yürümek arasındaki bu ayrım, Kuran okumanın neden tek başına yeterli sayılmadığını da açıklar. Öğrenmek zincirin ilk halkasıdır; inanmak ve uygulamak sonraki halkalardır. Kuran okumak ilk halkayı güçlendirir, son halka ise her gün yenilenen küçük kararlara bağlıdır. Bu yüzden rehberliği bir kez ve topluca alınan bir şey olarak değil, her gün yeniden istenen bir şey olarak düşünmek gerekir.",
         ],
         links: [["/surah/1", "Fatiha suresi (meal ile)"]],
       },
       {
         h2: "Kuran neye doğru yol gösterir?",
         p: [
-          "Bakara suresinin başı, Kuran'ı Allah'a karşı sorumluluk bilincini taşıyanlar için bir hidayet kaynağı olarak tanıtır; bu bölümü mealiyle okuyabilirsiniz. İslami anlayışta bu rehberlik birçok alana yayılır: Allah'ın birliği ve hayatın anlamı, ibadet ve gün düzeni, dürüstlük ve adalet, anne babaya ve komşuya davranış, ölümden sonrası.",
+          "Bakara suresinin başlangıç bölümü Kuran'ın kendini nasıl tanıttığını gösteren yerlerden biridir ve hidayet kavramıyla yakından ilişkilidir; bu bölümü mealiyle okuyabilirsiniz. İslami anlayışta bu rehberlik birçok alana yayılır: Allah'ın birliği ve hayatın anlamı, ibadet ve gün düzeni, dürüstlük ve adalet, anne babaya ve komşuya davranış, ölümden sonrası.",
           "Kuran her durum için ayrı bir kural vermekten çok, bir bakış biçimi kurar: Allah haberdardır, davranışların bir anlamı vardır, sabır ve şükür imanın parçasıdır. Ayrıntılı hükümler ise ilim sahipleri tarafından mezhep geleneği içinde işlenmiştir. Kendi hayatınıza dair somut bir hüküm sorunuz varsa güvendiğiniz bir hocaya ya da imama danışın.",
           "Kuran'ı baştan sona okumak ile konuya göre seçerek okumak arasında bir tercih yapabilirsiniz. Baştan sona okumak anlatının akışını gösterir; konu konu okumak ise hayatınızdaki belirli bir soruya cevap aramanıza imkân verir. Yeni başlayanlar için kısa surelerle ve tanıdık konularla, yani dua, şükür ve sabırla başlamak genellikle daha rahattır.",
         ],
@@ -141,7 +141,7 @@ const a: Record<string, Article> = {
       {
         h2: "Metni kendiniz okuyabildiğinizde rehberlik daha yakın hissedilir",
         p: [
-          "Metni kendi gözünüzle okuyabilmek, sizi özetlere bağımlı olmaktan kurtarır. Arapça okuyamıyorsanız bunu bir eksiklik saymayın; çoğu öğrenici ilk harften başlar. Arapça okuma bölümü harfleri ve harekeleri küçük parçalarda öğretir, tecvid kursu okuyabildiğinizde telaffuzu düzeltmenize yardım eder, Shams Yöntemi ise ayetleri dinle, anla ve hatırla döngüsüyle adım adım size yaklaştırır. Akademi sayfası ise 114 sureden geçen yapılandırılmış bir öğrenme yolu sunar.",
+          "Metni kendi gözünüzle okuyabilmek, sizi özetlere bağımlı olmaktan kurtarır. Arapça okuyamıyorsanız bunu bir eksiklik saymayın; çoğu öğrenici ilk harften başlar. Arapça okuma bölümü harfleri ve harekeleri küçük parçalarda öğretir, tecvid kursu okuyabildiğinizde telaffuzu düzeltmenize yardım eder, Shams Yöntemi ise ayetleri dinle, anla ve hatırla döngüsüyle adım adım size yaklaştırır. Akademi sayfası ayrıca 114 sureden geçen yapılandırılmış bir öğrenme yolu sunar.",
           "Birçok yetişkin utandığı için bu adımı erteler. Gereği yok: Kuran'ı akıcı okuyan herkes bir zamanlar alfabeyi öğrenen biriydi.",
         ],
         links: [["/arabic", "Arapça okuma"], ["/tajweed", "Tecvid kursu"], ["/courses", "Kurslar"], ["/academy", "Akademi"]],
@@ -158,7 +158,7 @@ const a: Record<string, Article> = {
         p: [
           "Kuran'ı tam da sorularla dolu olduğu bir dönemde açan çok insan vardır; samimi sorular İslam ilim geleneğinde hep yer bulmuştur. Sabırla okuyun, sorularınızı not alın, cevabı rastgele yorum bölümlerinde değil tefsirde ya da bilgili bir hocada arayın.",
           "İçinizde bir direnç hissederseniz bunu bir hata değil bir bilgi sayın: neden direniyorum? Anlamadığım bir şey mi var, yorgun muyum, yoksa değiştirmem gereken bir davranışla mı karşılaşıyorum? Dürüst bir cevap hangi adımın gerektiğini gösterir.",
-          "Bağlamından koparılmış tek cümlelere dikkat edin. Kuran en iyi, çevresindeki ayetlerle ve ehil âlimlerin açıklamalarıyla birlikte anlaşılır; bu yaklaşım sizi hem saf okumalardan hem de parçalarla yanıltmak isteyenlerden korur. Kuran'ın İslam içindeki yeri hakkında genel bir bakış için İslam bölümüne uğrayabilirsiniz.",
+          "Bağlamından koparılmış tek cümlelere dikkat edin. Kuran en iyi, çevresindeki ayetlerle ve ehil âlimlerin açıklamalarıyla birlikte anlaşılır; bu yaklaşım sizi hem yüzeysel okumalardan hem de parçalarla yanıltmak isteyenlerden korur. Kuran'ın İslam içindeki yeri hakkında genel bir bakış için İslam bölümüne uğrayabilirsiniz.",
         ],
         links: [["/islam/quran", "İslam'da Kuran"]],
       },
@@ -166,9 +166,9 @@ const a: Record<string, Article> = {
         h2: "Bir haftalık sade başlangıç",
         p: [
           "Yedi gün boyunca günde yedi dakika ayırın: iki dakika bir okuyucuyu dinleyin, üç dakika kısa bir bölümü mealiyle okuyun, iki dakika da ne anladığınızı düşünüp not edin. Haftanın sonunda defterinizdeki cümlelere bakın; hangi kelime ya da fikir sizinle kaldı? Cevap, bir sonraki hafta nereden devam edeceğinizi gösterir.",
-          "Daha uzun vadeli bir çerçeve isterseniz okuma planı günlük bölümlerinizi sizin için belirler; okuyucu sayfası ise sesi size yakın gelen birini bulmanıza yardım eder. Rehberlik dilemek de ibadettir: okuduktan sonra iki cümleyle Allah'tan doğruyu görmeyi ve ona göre davranabilmeyi isteyin.",
+          "Daha uzun vadeli bir çerçeve isterseniz hatim planı Kuran'ı baştan sona okumanız için günlük bölümleri belirler; ezber ve tekrar için ise 365 günlük plan var. Okuyucu sayfası da sesi size yakın gelen birini bulmanıza yardım eder. Rehberlik dilemek de ibadettir: okuduktan sonra iki cümleyle Allah'tan doğruyu görmeyi ve ona göre davranabilmeyi isteyin.",
         ],
-        links: [["/plan", "Okuma planı"], ["/reciters", "Okuyucu seçin"]],
+        links: [["/khatm", "Hatim planı"], ["/plan", "365 günlük plan"], ["/reciters", "Okuyucu seçin"]],
       },
     ],
     faqTitle: "Kuran ve rehberlik hakkında sık sorulanlar",
@@ -182,7 +182,7 @@ const a: Record<string, Article> = {
     linksTitle: "Sıradaki adımlar",
     links: [
       ["/quran", "Kuran meal ile"], ["/surah/1", "Fatiha suresi"], ["/surah/2", "Bakara suresi"], ["/shams", "Shams Yöntemi"], ["/tajweed", "Tecvid kursu"],
-      ["/guides/understanding-the-quran-tafsir", "Tefsir rehberi"], ["/plan", "Okuma planı"], ["/guides/how-to-learn-the-quran", "Kuran nasıl öğrenilir"], ["/islam/quran", "İslam'da Kuran"],
+      ["/guides/understanding-the-quran-tafsir", "Tefsir rehberi"], ["/khatm", "Hatim planı"], ["/guides/how-to-learn-the-quran", "Kuran nasıl öğrenilir"], ["/islam/quran", "İslam'da Kuran"],
     ],
     cta: ["/guides/how-to-learn-the-quran", "Nasıl başlayacağınızı öğrenin"],
     note: "Bu yazı genel İslami öğretiyi anlatır; kişisel durumlara ilişkin hüküm vermez. Kişisel sorularınız için izlediğiniz mezhebin güvenilir bir hocasına ya da imama danışın.",
@@ -219,7 +219,7 @@ const a: Record<string, Article> = {
       {
         h2: "Örnek olarak Hz. Peygamber",
         p: [
-          "Müslümanlar Hz. Muhammed'i (aleyhisselam) Kuran'ın yaşanmış örneği olarak görür. Hayatını, ailesine, komşularına, hatta karşıtlarına davranışını öğrenmek, soyut kalabilecek ilkelere insani bir yüz verir. Sünni gelenek ayrıca sahabeyi, Şii gelenek Ehl-i Beyt'i örnek alır; her iki gelenekte de ahlak merkezi bir yer tutar. Hangi kaynaklara dayanacağınız izlediğiniz mezhebe göre değişir. Her iki durumda da amaç, ahlakı soyut bir ideal olarak değil yaşayan bir model üzerinden öğrenmektir; bir ilkenin bir insanın hayatında nasıl somutlaştığını görmek, onu kendi hayatınızda uygulamayı kolaylaştırır.",
+          "Müslümanlar Hz. Muhammed'i (aleyhisselam) Kuran'ın yaşanmış örneği olarak görür. Hayatını, ailesine, komşularına, hatta karşıtlarına davranışını öğrenmek, soyut kalabilecek ilkelere insani bir yüz verir. Sünni gelenek sahabeyi de örnek alır, Şii gelenek ise Ehl-i Beyt'e özel bir yer verir; her iki gelenekte de ahlak merkezi bir yer tutar. Hangi kaynaklara dayanacağınız izlediğiniz mezhebe göre değişir. Her iki durumda da amaç, ahlakı soyut bir ideal olarak değil yaşayan bir model üzerinden öğrenmektir; bir ilkenin bir insanın hayatında nasıl somutlaştığını görmek, onu kendi hayatınızda uygulamayı kolaylaştırır.",
           "İslam bölümünde Peygamber, iman esasları ve günlük hayat hakkında sade tanıtımlar bulabilirsiniz.",
         ],
         links: [["/islam/prophet", "İslam'da Peygamber"], ["/islam/iman", "İman esasları"]],
@@ -305,7 +305,7 @@ const a: Record<string, Article> = {
         h2: "Beş dakikalık ortak saat",
         p: [
           "Aile için en gerçekçi adım, her gün aynı saatte kısa bir araya gelmektir: akşam yemeğinden sonra, yatsıdan sonra ya da yatmadan önce. Beş dakikayı geçmeyen bir süre, herkesin katılabileceği bir ritim kurar. Sırayla birer ayet okuyabilir ya da bir okuyucudan kısa bir sure dinleyip ardından mealinden tek bir cümleyi konuşabilirsiniz.",
-          "Aile içinde farklı yaşlar ve farklı programlar olduğu için bazı günler aksayacaktır. Önemli olan serinin kesilmemesi değil, kesilince ertesi gün suçlama olmadan devam edebilmektir. Nasıl bir günlük düzen kuracağınıza dair ayrıntılı rehber ve okuyucu sayfası, ev için uygun bir ses bulmanıza yardımcı olur.",
+          "Aile içinde farklı yaşlar ve farklı programlar olduğu için bazı günler aksayacaktır. Önemli olan serinin kesilmemesi değil, kesilince ertesi gün suçlama olmadan devam edebilmektir. Günlük rutin rehberi ayrıntılı örnekler verir, okuyucu sayfası ise ev için uygun bir ses bulmanıza yardımcı olur.",
           "Örnek bir hafta şöyle olabilir: Pazartesi bir sureyi birlikte dinleyin. Salı aynı sureden birer ayeti sırayla okuyun. Çarşamba mealini okuyup herkes bir cümleyle ne anladığını söylesin. Perşembe yalnızca dinleyin. Cuma ise kısa bir aile duasıyla bitirin. Hafta sonu serbest kalsın, çünkü dinlenmek de düzenin parçasıdır.",
         ],
         links: [["/guides/daily-quran-routine", "Günlük Kuran rutini"], ["/reciters", "Kuran okuyucuları"]],
@@ -314,7 +314,7 @@ const a: Record<string, Article> = {
         h2: "Çocuklarla yaşa göre Kuran",
         p: [
           "Küçük çocuklar için amaç öğretmekten çok sevdirmek ve kulağa yerleştirmektir. Fatiha, İhlas, Felak ve Nas gibi kısa sureleri sık dinletmek, ezber baskısı olmadan zamanla kendiliğinden tekrarlanmalarına zemin hazırlayabilir. Okul çağındaki çocuklar için harfleri tanımak, kısa surelerin anlamlarını anlatmak ve hikâye yoluyla ilerlemek daha uygundur. Gençlerle ise soru sormaya yer açan, zorlamayan bir sohbet daha verimlidir.",
-          "Her çocuk farklı bir hızla ilerler; kardeşler arasında kıyaslama yapmamak en önemli kuraldır. Uygulamada çocuklar için ayrı bir mod bulunur. Çocuklar için Kuran rehberi ve Amme cüzü öğrenme planı da uygulanabilir fikirler verir.",
+          "Her çocuk farklı bir hızla ilerler. Uygulamada çocuklar için ayrı bir mod bulunur. Çocuklar için Kuran rehberi ve Amme cüzü öğrenme planı da uygulanabilir fikirler verir.",
           "Kardeşler arasında yarıştırma Kuran sevgisini zedeleyebilir. Okuma ya da ezberde sonuç yerine çabayı ve devamlılığı takdir edin. Çocuğun hata yaptığında utanmaması, Kuran'a bağlılığının korunması açısından özellikle önemlidir.",
         ],
         links: [["/surah/112", "İhlas suresi"], ["/surah/113", "Felak suresi"], ["/surah/114", "Nas suresi"], ["/guides/quran-for-kids", "Çocuklar için Kuran"], ["/guides/juz-amma-learning-plan", "Amme cüzü planı"]],
@@ -322,7 +322,7 @@ const a: Record<string, Article> = {
       {
         h2: "Kuran'daki anlatıları sofra sohbetine taşımak",
         p: [
-          "Kuran'ın anlatıları aile sohbeti için zengin bir malzemedir. Yusuf suresi bir ailenin hikâyesidir: baba ile oğul, kardeşler arası kıskançlık, sabır ve uzun bir ayrılığın ardından gelen yüzleşme. Lokman suresi ise bir babanın oğluna yaptığı öğütlerle bilinir. İkisini de çocuklarla ya da eşinizle bölüm bölüm okuyup, sizce bu kişi neden böyle davrandı, diye sorabilirsiniz.",
+          "Kuran'ın anlatıları aile sohbeti için zengin bir malzemedir. Yusuf suresi bir ailenin hikâyesidir: baba ile oğul, kardeşler arası kıskançlık, sabır ve uzun bir ayrılığın ardından gelen yüzleşme. Lokman suresi ise bir babanın oğluna yaptığı öğütlerle bilinir. İkisini de çocuklarla ya da eşinizle bölüm bölüm okuyup, sizce bu kişi neden böyle davrandı, diye sorabilirsiniz. Küçük çocuklar için anlatıyı kısa cümlelerle aktarmak, büyükler için ise birkaç ayeti birlikte okuyup konuşmak yeterlidir.",
           "Böyle sohbetlerde amaç doğru cevabı bulmak değil, düşünmek ve konuşmaktır. Anlamak istediğiniz yerde tefsir notlarına bakmak sohbeti derinleştirir. Anlatıdan sonra küçük bir soru, örneğin bu hikâyede hangi davranışı kendi evimizde görmek isterdik, çocukların da konuşmaya katılmasını kolaylaştırır.",
         ],
         links: [["/surah/12", "Yusuf suresi"], ["/surah/31", "Lokman suresi"]],
@@ -350,7 +350,7 @@ const a: Record<string, Article> = {
         p: [
           "Evde Kuran, günün ibadet ritmine bağlandığında kolaylaşır. Namaz vakitleri sayfasından bulunduğunuz yere göre vakitlere bakıp okumayı vakitlerden birine bağlayabilirsiniz. Çocuklara abdest ve namazı gösterirken adımları sırayla işleyen sayfaları kullanmak işi oyuna yaklaştırır.",
           "Ayrıntılar mezhepler arasında farklılaşabilir; ailenizin izlediği mezhebe göre ilerleyin ve emin olmadığınız noktalarda bir hocaya danışın.",
-          "Ramazan, ailece Kuran için doğal bir fırsattır: iftardan sonra kısa bir ortak okuma ya da hatim planıyla her gün küçük bir bölüm. Hatim planlayıcı, ailenin kaç günde bitirmek istediğine göre günlük bölümü hesaplar.",
+          "Ramazan, ailece Kuran için doğal bir fırsattır: iftardan sonra kısa bir ortak okuma ya da hatim planıyla her gün küçük bir bölüm. Hatim planlayıcı, ailenin kaç günde bitirmek istediğine göre günlük bölümü hesaplar. Haftada bir günü, ailece biraz daha uzun bir okuma ya da dinleme günü olarak ayırmak da düzeni canlı tutabilir.",
         ],
         links: [["/prayer", "Namaz vakitleri"], ["/wudu", "Abdest alıştırması"], ["/salah", "Namaz"], ["/khatm", "Hatim planı"]],
       },
@@ -417,16 +417,16 @@ const a: Record<string, Article> = {
       {
         h2: "Kötü günler için bir plan yapın",
         p: [
-          "Yolculuk, hastalık, sınav haftası, yeni doğan bir bebek, yoğun iş dönemi: düzenin sınandığı zamanlar kaçınılmazdır. Önceden karar verin: böyle günlerde asgari miktar ne olacak? Belki sadece bir okuyucudan kısa bir sure dinlemek. Belki yolda Kuran radyosunu açmak. Kaçırdığınız günleri telafi etmeye çalışıp kendinizi yorgun düşürmeyin; ertesi gün normal miktarınıza dönün.",
+          "Yolculuk, hastalık, sınav haftası, yeni doğan bir bebek, yoğun iş dönemi: düzenin sınandığı zamanlar kaçınılmazdır. Önceden karar verin: böyle günlerde asgari miktar ne olacak? Belki sadece bir okuyucudan kısa bir sure dinlemek. Belki yolda Kuran radyosunu açmak. Kaçırdığınız günleri telafi etmeye çalışıp kendinizi yorgun düşürmeyin.",
           "Seri takibi sizi motive etmek yerine kaygılandırıyorsa takibi gevşetin. Amaç seriyi korumak değil, Kuran'la ilişkiyi sürdürmektir.",
-          "Telafi etme isteği çoğu zaman suçluluktan doğar. Suçluluk motivasyon gibi görünür ama sürdürülebilir değildir. Bir hafta ayrı kalmış olsanız bile ertesi gün dünmüş gibi devam edin; tek fark olarak asgari miktarı biraz daha küçük tutun, böylece yeniden başlamak kolay olur.",
+          "Telafi etme isteği çoğu zaman suçluluktan doğar. Suçluluk motivasyon gibi görünür ama sürdürülebilir değildir. Bir hafta ayrı kalmış olsanız bile ertesi gün normal miktarınıza dönün, dünmüş gibi devam edin; tek fark olarak asgari miktarı biraz daha küçük tutun, böylece yeniden başlamak kolay olur.",
         ],
         links: [["/radio", "Kuran radyosu"], ["/reciters", "Kuran okuyucuları"]],
       },
       {
         h2: "Araçlar size hizmet etmeli, sizi yönetmemeli",
         p: [
-          "Bugün sayfası, tekrarı gelen ayetleri ve günlük görevlerinizi bir arada gösterir. 365 günlük plan, büyüyen günlük bölümlerle ilerlemenizi aylar üzerinden izlemenizi sağlar. Hatim planlayıcı ise Kuran'ın tamamını seçtiğiniz sürede okumak için günlük bölümü hesaplar; geride kalırsanız ya da öne geçerseniz planı sizin hızınıza uyarlar.",
+          "Bugün sayfası, tekrarı gelen ayetleri ve günlük görevlerinizi bir arada gösterir. 365 günlük plan, ezber ve tekrar için büyüyen günlük bölümler ve ay ay genel bakış sunar. Hatim planlayıcı ise Kuran'ın tamamını seçtiğiniz sürede okumak için günlük bölümü hesaplar; geride kalırsanız ya da öne geçerseniz planı sizin hızınıza uyarlar.",
           "Ezber yapıyorsanız Shams Yöntemi tekrar zamanlarını aralıklı tekrar mantığıyla sizin için ayarlar. Araçların işi, ne yapacağınızı düşünme yükünü almaktır; ölçü ise yine kendi hayatınızdır.",
           "Takip araçlarının bir riski, ibadeti bir performansa dönüştürmesidir. Rakamlara baktıkça niyet sessizce daha çok arayışına kayabilir. Bu yüzden ilerleme göstergelerine haftada bir göz atmak, her gün bakmaktan çoğu zaman daha sağlıklıdır.",
         ],
@@ -472,7 +472,7 @@ const a: Record<string, Article> = {
       ["/guides/daily-quran-routine", "Günlük Kuran rutini"], ["/today", "Bugün"], ["/plan", "365 günlük plan"], ["/khatm", "Hatim planı"], ["/shams", "Shams Yöntemi"],
       ["/prayer", "Namaz vakitleri"], ["/radio", "Kuran radyosu"], ["/surah/103", "Asr suresi"], ["/guides/how-to-memorize-the-quran", "Kuran ezberleme rehberi"],
     ],
-    cta: ["/plan", "Okuma planınızı oluşturun"],
+    cta: ["/khatm", "Hatim planınızı oluşturun"],
     note: "Bu yazı genel İslami öğretiyi ve pratik önerileri içerir. Kişisel hükümler için izlediğiniz mezhebin güvenilir bir hocasına danışın.",
   },
 
@@ -490,7 +490,7 @@ const a: Record<string, Article> = {
         p: [
           "Bereket, kelime olarak artış, süreklilik ve hayır anlamlarını taşır. İslami anlayışta bereket sayıyla ölçülen bir çokluk değil, bir şeyin içine konulan hayırdır: az görünen bir vaktin verimli geçmesi, mütevazı bir sofranın doyurması, kısa bir ilmin faydalı olması bereket olarak düşünülebilir. Aynı şekilde çok olup hayır getirmeyen şey bereketsiz sayılabilir.",
           "Bu bakış, bereketi ölçülebilir bir vaat olarak değil nitelik olarak görmeyi gerektirir. Bu yüzden bereket dilemek, belirli bir miktar istemekten farklıdır; Allah'tan sahip olduğunuz şeyde hayır dilemektir.",
-          "Bu yüzden bereket, ölçüyle değil farkındalıkla ilişkilidir. Aynı gelirle huzur içinde yaşayan biri ile çok daha fazlasına sahip olup sürekli tedirgin olan biri arasındaki farkı çoğumuz gözlemlemişizdir. İslami anlayış bu farkı Allah'ın koyduğu hayırla ilişkilendirebilir, ama kimsenin bunu kesin bir formüle indirgemesine izin vermez.",
+          "Bereket bu anlamda ölçüden çok farkındalıkla ilişkilidir. Aynı gelirle huzur içinde yaşayan biri ile çok daha fazlasına sahip olup sürekli tedirgin olan biri arasındaki farkı çoğumuz gözlemlemişizdir. İslami anlayış bu farkı Allah'ın koyduğu hayırla ilişkilendirebilir, ama kimsenin bunu kesin bir formüle indirgemesine izin vermez.",
         ],
       },
       {
@@ -602,7 +602,7 @@ const a: Record<string, Article> = {
         h2: "İlk gün: tek bir sakin an",
         p: [
           "Bugün için sessiz bir an seçin. Mümkünse abdest alın, rahat oturun ve besmele ile başlayın. Önce Fatiha suresini bir okuyucudan dinleyin, ardından mealine bakın. Fatiha hem Kuran'ın ilk suresidir hem de namazda tekrar tekrar okunur; bu yüzden ona başlamak tanıdık bir kapıdan girmek gibidir.",
-          "Bitirince kendi sözlerinizle dua edin. Doğruysa söyleyin: yorgunum, hata yaptım, geri dönmek istiyorum. Güzel cümleler kurmanız gerekmez; içten olmak yeter.",
+          "Bitirince kendi sözlerinizle dua edin. İçinizden geçeni söyleyin: yorgunum, hata yaptım, geri dönmek istiyorum. Güzel cümleler kurmanız gerekmez; içten olmak yeter.",
           "Okuduktan sonra bir şey yapmanız gerekmediğini hatırlayın. İlk günün amacı, kitapla aranızdaki mesafeyi bir adım kapatmaktır; bir şey öğrenmek ya da hissetmek zorunda değilsiniz. Meali okurken tek bir cümleye takılıp kalırsanız bu normaldir; bir cümlenin gün boyu sizinle kalması, bütün sureyi bitirmekten daha değerli olabilir.",
         ],
         links: [["/surah/1", "Fatiha suresi"], ["/wudu", "Abdest alıştırması"]],
@@ -611,7 +611,7 @@ const a: Record<string, Article> = {
         h2: "İlk hafta: sabit saat, küçük miktar",
         p: [
           "İlk yedi gün için miktarı küçük tutun: her gün aynı saatte beş dakika. Zaten yaptığınız bir şeyin hemen ardına koyun; sabah içeceğinizden sonra ya da bir namazdan sonra gibi. Nasıl hissettiğinizi ölçmeyin, yalnızca randevuya gelin.",
-          "Bir gün aksarsa suçlanacak bir şey yoktur; ertesi gün aynı saatte yeniden oturmanız yeter. Yeniden başlamak tam olarak bu demektir: düşünce yeniden kalkmak. Günlük düzen kurma konusunda ayrıntılı bir rehber ve namaz vakitleri sayfası bu süreçte işinize yarar.",
+          "Bir gün aksarsa suçlanacak bir şey yoktur; ertesi gün aynı saatte yeniden oturmanız yeter. Yeniden başlamak tam olarak bu demektir: düşünce yeniden kalkmak. Ayrıntılı bir günlük düzen rehberi ve konumunuza göre vakit gösteren namaz vakitleri sayfası bu süreçte işinize yarar.",
           "Sabit bir yer de yardımcı olur: oturduğunuz köşede mushafı ya da telefonu hazır bırakın. Başlamak için gereken çaba ne kadar küçükse, devam etme ihtimaliniz o kadar artar.",
         ],
         links: [["/guides/daily-quran-routine", "Günlük Kuran rutini"], ["/prayer", "Namaz vakitleri"]],
@@ -619,7 +619,7 @@ const a: Record<string, Article> = {
       {
         h2: "Arapça okuyamıyorsanız",
         p: [
-          "Birçok yetişkin Arapça okuyamadığı için utanır. Yalnız değilsiniz. Arapça okuma bölümü harflerden ve harekelerden başlar, küçük adımlarla ilerler. Okuyabildiğinizde Shams Yöntemi ayetleri dinle, kelime kelime, anla ve hatırla adımlarıyla birer birer öğrenmenizi sağlar. Bu arada Latin harfleriyle okunuş, meal ve ses eşliğinde metni takip edebilirsiniz.",
+          "Birçok yetişkin Arapça okuyamadığı için utanır. Yalnız değilsiniz. Arapça okuma bölümü harflerden ve harekelerden başlar, küçük adımlarla ilerler. Okuyabildiğinizde Shams Yöntemi, her ayeti dinleme, kelime kelime çalışma, anlam ve hatırlama adımlarıyla tek tek öğrenmenizi sağlar. Bu arada Latin harfleriyle okunuş, meal ve ses eşliğinde metni takip edebilirsiniz.",
           "Öğrenmek de bir dönüş biçimidir. Tamamladığınız her ders, Kuran'ı kendi gözlerinizle okuyabileceğiniz güne doğru atılmış bir adımdır.",
           "Telaffuz ya da tecvid kaygısı da insanı geri tutabilir. Başlangıçta kusursuz okumak gerekmez; zamanla tecvid kursuyla okuyuşunuzu güzelleştirebilirsiniz. Önce bağ kurulur, güzelleştirme sonra gelir. Arapça metin ve mealin yan yana durduğu sure sayfaları, okuduğunuzu anlamaya başlamak için de uygundur.",
         ],
@@ -682,7 +682,7 @@ const a: Record<string, Article> = {
         h2: "Temel mesaj: umudu kesmeyin",
         p: [
           "Merhamet teması İslami öğretide defalarca karşımıza çıkar. Allah, Gafur ve Rahim gibi isimlerle anılır; tövbeleri kabul eden anlamında et-Tevvab ismi de Esmaül Hüsna içinde yer alır. Müslümanlar Allah'ın rahmetinden umut kesmenin kendisinin de kaçınılması gereken bir şey olduğunu öğrenir. Düşen biri bitmiş değildir; dönen kişi onurlandırılır.",
-          "Zümer suresinde Allah'ın rahmetinden umut kesmemeyi anlatan ayet çok bilinir. Sureyi mealiyle okuyup bu çağrının hangi cümlelerle ve hangi bağlamda yapıldığını kendiniz görebilirsiniz.",
+          "Zümer suresi, Allah'ın rahmeti ve bağışlaması teması bakımından sık anılan surelerden biridir. Sureyi mealiyle okuyup bu temanın nasıl işlendiğini ve hangi bağlamda geçtiğini kendiniz görebilirsiniz.",
           "Bu umut sorumluluğu ortadan kaldırmaz; ona güç verir. Umudu olmayan biri düzeltme çabasına girişmez, umudu olan biri küçük bir adımı bile atmaya cesaret eder.",
         ],
         links: [["/surah/39", "Zümer suresi"], ["/names", "Esmaül Hüsna"]],
@@ -690,7 +690,7 @@ const a: Record<string, Article> = {
       {
         h2: "Tövbe neleri içerir?",
         p: [
-          "İlim ehli tövbeyi genellikle birkaç unsurla anlatır: yanlışı yanlış olarak tanımak, pişmanlık duymak, ondan vazgeçmek ve bir daha dönmemeye samimi niyet etmek. Bir başkasına zarar verilmişse hakkını ödemek ya da helallik istemek de meselenin parçasıdır. Tahrim suresinde samimi tövbeyi anlatan nasuh tövbe kavramı geçer; sureyi mealiyle okuyabilirsiniz. Ayrıntılar duruma göre değiştiği için kendi durumunuz için güvendiğiniz bir hocayla ya da imamla gizlice konuşmanız en doğrusudur.",
+          "İlim ehli tövbeyi genellikle birkaç unsurla anlatır: yanlışı yanlış olarak tanımak, pişmanlık duymak, ondan vazgeçmek ve bir daha dönmemeye samimi niyet etmek. Bir başkasına zarar verilmişse hakkını ödemek ya da helallik istemek de meselenin parçasıdır. Tahrim suresinde samimi tövbeyi anlatan nasuh tövbe kavramı geçer; sureyi mealiyle okuyabilirsiniz. Ayrıntılar duruma göre değiştiğinden, kendi durumunuzu güvendiğiniz bir hocayla ya da imamla gizlice konuşmanız en doğrusudur.",
           "Bunların hiçbiri alenen itiraf gerektirmez. İslami öğreti genel olarak mahremiyete değer verir ve günahları açığa vurmaktan uzak durmayı öğütler. Tövbeniz sizinle Allah arasında olabilir.",
           "Tövbenin dilindeki en önemli kelimelerden biri şimdi'dir. Geçmişin bütün ayrıntılarını çözmeden de bugün atılacak bir adım vardır. Hakların iadesi gibi konular zaman ve danışmanlık gerektirebilir; bu kısım için acele etmeyin, ama kalbin dönüşünü de ertelemeyin.",
         ],
@@ -717,7 +717,7 @@ const a: Record<string, Article> = {
         h2: "Namaza ve Kuran'a dönüş",
         p: [
           "Namaz, dönüşün günlük ritmidir. Bırakmışsanız tek bir vakitle başlayıp yavaş yavaş artırabilirsiniz. Hepsini aynı anda kusursuz bilmeniz gerekmez. Adım adım namaz öğrenme sayfası ve konumunuza göre vakitleri gösteren sayfa bu yolda size eşlik eder. Kaçırdığınız namazlar konusunda mezhebinizin âlimine danışın, çünkü görüşler farklıdır.",
-          "Namaz konusunda kendinize ağır bir ölçü koymaktan çekinin; ya kıldığım namaz kabul olmazsa korkusu, hiç kılmamak için bir bahaneye dönüşebilir. İslami öğreti iyi niyetle yapılan küçük amele de değer verir.",
+          "Namaz konusunda kendinize aşırı ağır bir ölçü koymayın; ya kıldığım namaz kabul olmazsa korkusu, hiç kılmamak için bir bahaneye dönüşebilir. İslami öğreti iyi niyetle yapılan küçük amele de değer verir.",
           "Kuran ile bağınızı da tazeleyin. Nasr suresi kısa bir sure olup sonunda istiğfara çağrı içerir; İnşirah suresi ise sıkıntı içindeki kalplere seslenen tonuyla bilinir. İkisini de mealiyle okuyabilirsiniz. Arapça okuyamıyorsanız Shams Yöntemi ve Arapça okuma bölümüyle başlamak başlı başına bir dönüş eylemidir. Mealde anlamadığınız yerler olursa sure sayfalarındaki tefsir notlarına bakın; Allah'ın merhametini ve adaletini birlikte öğrenmek, korku ve umut dengesini besler.",
         ],
         links: [["/learn-salah", "Namaz öğrenme"], ["/prayer", "Namaz vakitleri"], ["/surah/110", "Nasr suresi"], ["/surah/94", "İnşirah suresi"], ["/shams", "Shams Yöntemi"]],
@@ -778,7 +778,7 @@ const a: Record<string, Article> = {
       {
         h2: "Önce utancı bırakın",
         p: [
-          "Utanç, insanları namazdan çoğu zaman her şeyden daha uzun süre uzak tutar. İslami merhamet anlayışı sizi geçmiş yıllara değil, atacağınız bir sonraki adıma bakmaya çağırır. Fırsatı kaçırmadınız; davet hâlâ açık.",
+          "Utanç, insanları namazdan çoğu zaman beklenenden uzun süre uzak tutar. İslami merhamet anlayışı sizi geçmiş yıllara değil, atacağınız bir sonraki adıma bakmaya çağırır. Fırsatı kaçırmadınız; davet hâlâ açık.",
           "Bugün kendinize sert sıfatlarla seslenmemeye karar verin. Onun yerine şunu söyleyin: geri dönüyorum.",
           "Bazı insanlar namaza dönmek için büyük bir kırılma anı bekler. Oysa dönüş çoğu zaman sıradan bir günde, küçük bir niyetle başlar. Duygusal bir an gelmediyse bile başlayabilirsiniz.",
         ],
@@ -786,7 +786,7 @@ const a: Record<string, Article> = {
       {
         h2: "Tek bir vakitle başlayın",
         p: [
-          "Beş vakit birden gözünüzde büyüyorsa birini seçin. Kimi insanlar için en kolay vakit sabahtır, kimisi için akşam ya da yatsı. Bir hafta boyunca yalnızca onu kılmaya çalışın, sonra ikinciyi ekleyin. Beş vakit namaz İslam'ın temel ibadetlerindendir ve hedef budur; ama oraya giden yol kademeli olabilir. Size uygun yolu bir hocaya danışmanız doğru olur. Ani bir sıçrayış üç gün sonra çöker, yavaş büyüme ise kalıcı olur.",
+          "Beş vakit birden gözünüzde büyüyorsa birini seçin. Kimi insanlar için en kolay vakit sabahtır, kimisi için akşam ya da yatsı. Bir hafta boyunca yalnızca onu kılmaya çalışın, sonra ikinciyi ekleyin. Beş vakit namaz İslam'ın temel ibadetlerindendir ve hedef budur; ama oraya giden yol kademeli olabilir. Size uygun yolu bir hocaya danışmanız doğru olur. Ani bir sıçrayış çoğu zaman birkaç gün sonra çöker; yavaş büyüme ise daha kalıcı olma eğilimindedir.",
           "Vaktini kaçırmamak için bulunduğunuz yere göre namaz vakitleri sayfasına bakın. Vakitleri görmek, günü onlara göre planlamanızı kolaylaştırır; sayfada ayrıca kıbleyi ve ezan hatırlatmalarını da bulabilirsiniz.",
           "Kolay vakit seçerken kendinize dürüst olun: hangisi günün akışında en az engelle karşılaşıyor? Çalışıyorsanız öğle arası, evdeyseniz ikindi, geç yatanlar için yatsı daha kolay olabilir. Seçim sizin hayatınızla ilgilidir, bir yarış değildir. İlk hafta sonunda ikinci vakte geçmek için acele etmeyin.",
         ],
@@ -838,7 +838,7 @@ const a: Record<string, Article> = {
         h2: "Dört haftalık sade plan",
         p: [
           "Birinci hafta: günde bir vakit, bildiğiniz kadarıyla. İkinci hafta: abdesti tam öğrenin, ikinci bir vakit ekleyin. Üçüncü hafta: Fatiha'yı anlamıyla öğrenin, üçüncü vakti ekleyin. Dördüncü hafta: kısa bir sure ekleyin ve ilerlemenizi gözden geçirin. Sonrasında kendi hızınızda beş vakte doğru ilerleyin.",
-          "Namazdan sonra bir dakikanızı dua için ayırın; Dualar bölümünden bir af dileme duası öğrenebilirsiniz. Hazır hissettiğinizde birkaç dakika Kuran ekleyin. Küçük ve tekrarlanan adımlar bir yere götürür. Tökezlerseniz dramatize etmeden dönün: kaçırılan bir vakit, bir sonrakini kılmak için nedendir, bırakmak için değil.",
+          "Namazdan sonra bir dakikanızı dua için ayırın; Dualar bölümünden bir af dileme duası öğrenebilirsiniz. Hazır hissettiğinizde birkaç dakika Kuran ekleyin. Küçük ve tekrarlanan adımlar bir yere götürür. Tökezlerseniz büyütmeden dönün: kaçırılan bir vakit, bir sonrakini kılmak için nedendir, bırakmak için değil.",
           "Bu plan bir ölçü değil, bir iskelettir. Hayat bazı haftalarda planı bozacaktır: hastalık, yolculuk, aile işleri. Planı bozulduğu yerden sürdürün; baştan başlamanız gerekmez. Dördüncü haftanın sonunda hangi vaktin sizin için en kolay, hangisinin en zor olduğunu not edin. Zor vakit çoğu zaman bir engeli işaret eder: uyku, iş saati ya da ortam. Engeli küçük bir değişiklikle aşmak çoğu zaman mümkündür.",
         ],
         links: [["/duas", "Dualar"]],
