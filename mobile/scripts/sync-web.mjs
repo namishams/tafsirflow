@@ -73,7 +73,7 @@ const FILES = [
   "verseQuotes", "verseTime", "vocab", "vocabI18n", "vocabStudy", "votd", "wudu",
 ];
 // Folders copied whole, with the translations of every language the website speaks
-const DIRS = ["islam", "names", "reciters", "secrets", "pagecontent", "sisters"];
+const DIRS = ["islam", "names", "reciters", "secrets", "pagecontent", "sisters", "stickerArt"];
 const SKIP_DIRS = new Set();
 
 rmSync(out, { recursive: true, force: true });
