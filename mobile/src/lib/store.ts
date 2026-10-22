@@ -1,4 +1,5 @@
-import { useMemo, useSyncExternalStore } from "react";
+import { useContext, useMemo, useRef, useSyncExternalStore } from "react";
+import { ScreenVisible } from "./freeze";
 import * as kv from "./kv";
 import { PERF, perfLog } from "./perf";
 
@@ -58,9 +59,15 @@ function changed(_key: string) {
 export const storedKeys = () => [...mem.keys()];
 
 const subscribe = (l: () => void) => { listeners.add(l); return () => listeners.delete(l); };
-/** re-render when anything in the store changes (progress, notes, settings) */
+/** re-render when anything in the store changes (progress, notes, settings) – while the screen is visible; a screen
+ *  hidden under others or in a background tab keeps its version and catches up when it is shown (lib/freeze.tsx) */
 export function useStoreVersion(): number {
-  return useSyncExternalStore(subscribe, () => version, () => version);
+  const visible = useContext(ScreenVisible);
+  const seen = useRef(version);
+  const snap = visible ? () => version : () => seen.current;
+  const v = useSyncExternalStore(subscribe, snap, snap);
+  seen.current = v;
+  return v;
 }
 /** a value from the store that updates the screen when it changes. It still re-renders on every write, like
  *  before (screens may read other keys during that render), but the value is parsed once per stored text: the same
