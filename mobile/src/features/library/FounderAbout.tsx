@@ -1,3 +1,4 @@
+import { Image } from "expo-image";
 import { Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
@@ -20,19 +21,17 @@ const LINKS = {
   path: "/mishary",
 };
 
+/** the real cover of the German Nahj al-Balagha, served by the website so the app stays small */
+const COVER_URL = "https://quranmasterclass.com/images/nahjul-balagha-cover.jpg";
+
 export function FounderBook({ small = false }: { small?: boolean }) {
   const t = useWebT("founderAbout");
   const isl = useIsl();
   const open = () => void WebBrowser.openBrowserAsync(BOOK_URL).catch(() => undefined);
-  const w = small ? 66 : 90, h = small ? 92 : 126;
+  const w = small ? 60 : 99, h = small ? 92 : 150;
   return (
     <IslCard onPress={open} accessibilityLabel={`${t("bookTitle")}. ${t("bookCta")}`} style={{ padding: 16, flexDirection: "row", alignItems: "center", gap: 16 }}>
-      <LinearGradient colors={["#0c4a37", "#06221a"]} start={{ x: 0, y: 0 }} end={{ x: 0.6, y: 1 }}
-        style={{ width: w, height: h, borderTopLeftRadius: 4, borderBottomLeftRadius: 4, borderTopRightRadius: 10, borderBottomRightRadius: 10, borderWidth: 1, borderColor: "rgba(217,185,112,0.7)", alignItems: "center", justifyContent: "center" }}>
-        <View pointerEvents="none" style={{ position: "absolute", top: 5, left: 5, right: 5, bottom: 5, borderWidth: 1, borderColor: "rgba(217,185,112,0.45)", borderRadius: 6 }} />
-        <Text style={{ fontFamily: ARABIC_FONT, fontSize: small ? 14 : 19, lineHeight: small ? 24 : 32, color: stage.gold, writingDirection: "rtl", textAlign: "center" }}>نهج البلاغة</Text>
-        <Text style={{ fontFamily: FONT.semibold, fontSize: 8, letterSpacing: 1.4, color: "rgba(217,185,112,0.8)" }}>DEUTSCH</Text>
-      </LinearGradient>
+      <Image source={{ uri: COVER_URL }} accessibilityIgnoresInvertColors contentFit="cover" style={{ width: w, height: h, borderTopLeftRadius: 3, borderBottomLeftRadius: 3, borderTopRightRadius: 8, borderBottomRightRadius: 8 }} />
       <View style={{ flex: 1, minWidth: 0 }}>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: isl.gold }}>{t("bookEyebrow")}</Text>
         <Text style={{ marginTop: 4, fontFamily: SERIF, fontSize: 21, lineHeight: 26, color: isl.ink }}>{t("bookTitle")}</Text>

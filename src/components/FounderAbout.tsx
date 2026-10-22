@@ -14,11 +14,8 @@ export function FounderBook({ small = false }: { small?: boolean }) {
   const t = useTranslations("founderAbout");
   return (
     <a href={FOUNDER_BOOK.url} target="_blank" rel="noopener" className="isl-card isl-card-hover group flex items-center gap-4 p-4 text-start sm:gap-5 sm:p-5">
-      <span aria-hidden className={`relative flex shrink-0 flex-col items-center justify-center rounded-[4px_10px_10px_4px] border border-[#D9B970]/70 bg-[linear-gradient(160deg,#0c4a37_0%,#06221a_100%)] shadow-[4px_6px_14px_rgba(0,0,0,0.25)] ${small ? "h-[92px] w-[66px]" : "h-[132px] w-[94px]"}`}>
-        <span className="absolute inset-[5px] rounded-[2px_7px_7px_2px] border border-[#D9B970]/45" />
-        <span className={`font-arabic leading-tight text-[rgb(233_207_153)] ${small ? "text-[15px]" : "text-[21px]"}`} dir="rtl">نهج البلاغة</span>
-        <span className="mt-1 text-[8px] font-semibold uppercase tracking-[0.18em] text-[#D9B970]/80">Deutsch</span>
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/images/nahjul-balagha-cover.jpg" alt="" aria-hidden width={343} height={522} loading="lazy" className={`shrink-0 rounded-[3px_8px_8px_3px] object-cover shadow-[4px_6px_14px_rgba(0,0,0,0.3)] ${small ? "h-[92px] w-[60px]" : "h-[150px] w-[99px]"}`} />
       <span className="min-w-0">
         <span className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-gold rtl:tracking-normal">{t("bookEyebrow")}</span>
         <span className="font-display mt-1 block text-[22px] leading-tight text-ink">{t("bookTitle")}</span>
