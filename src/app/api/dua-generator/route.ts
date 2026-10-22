@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     const n = s.limits.duaAiAnonPerDay;
     if (!n || rateLimited(`dua:anon:${clientIp(req)}`, n, 24 * 60 * 60_000)) return json({ error: me ? "verify" : "login" }, me ? 403 : 401);
     if (rateLimited("dua:anon:global", anonGlobalPerDay(), 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
-  } else if (rateLimited(`dua:day:${me!.id}`, 30, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
+  } else if (!app && rateLimited(`dua:day:${me!.id}`, 30, 24 * 60 * 60_000)) return json({ error: "limit" }, 429); // paid app duas: no daily cap, each one costs a credit
   if (rateLimited(`dua:min:${clientIp(req)}`, 6, 60_000)) return json({ error: "rate" }, 429);
   const b = (await req.json().catch(() => ({}))) as Record<string, unknown>;
   if (b.v !== 2) {
