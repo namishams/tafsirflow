@@ -32,7 +32,9 @@ export default function PromoBars({ appUrl }: { appUrl: string }) {
   const [support, setSupport] = useState(false);
   useEffect(() => {
     if (inIosApp()) return;
-    setApp(readJSON<number>(APP_KEY, 0) < Date.now());
+    // iOS Safari already shows Apple's own Smart App Banner (apple-itunes-app meta): no second app strip there
+    const ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+    if (!ios) setApp(readJSON<number>(APP_KEY, 0) < Date.now());
     // the support strip waits a little, so nobody is greeted by a request
     const id = window.setTimeout(() => setSupport(readJSON<number>(SUPPORT_KEY, 0) < Date.now()), 12000);
     return () => window.clearTimeout(id);

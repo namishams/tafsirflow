@@ -186,7 +186,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         <AppShowcase locale={locale} />
         <CarouselShowcase locale={locale} appUrl={appStoreUrl()} />
         <SyncSection locale={locale} />
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-5"><AppOnly topics={["stickers", "tree", "messenger", "dua", "celebrations", "widgets", "offline"]} url={appStoreUrl()} /></div>
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-5"><AppOnly topics={["stickers", "tree", "dua", "celebrations", "widgets", "offline"]} url={appStoreUrl()} /></div>
 
         {/* 2c The Talents community and Free vs Pro */}
         <TalentsTeaser locale={locale} />

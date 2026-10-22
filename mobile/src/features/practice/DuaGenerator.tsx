@@ -1,7 +1,7 @@
 import { CardShareSheet } from "@/features/share/ShareKit";
 import { useShareText } from "@/features/share/texts";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ActivityIndicator, Pressable, Share, Text, View } from "react-native";
+import { ActivityIndicator, Platform, Pressable, Share, Text, View } from "react-native";
 import { router } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { FRAME, NAMES, PLAN, TOPICS, WHO, guessTopic, type Topic, type Who } from "@/web/duaGenerator";
@@ -290,7 +290,7 @@ function PersonalDua({ made, names, ai, setAi, goldRgb }: { made: Made; names: s
               <BuyTile title={tx("one")} price={prices.one ?? FALLBACK.one} busy={buying === "one"} disabled={!!buying} onPress={() => void buy(false)} goldRgb={goldRgb} />
               <BuyTile title={tx("pack")} price={prices.pack ?? FALLBACK.pack} note={tx("packNote")} highlight busy={buying === "pack"} disabled={!!buying} onPress={() => void buy(true)} goldRgb={goldRgb} />
             </View>
-            <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 18, color: th.muted }}>{tx("storeNote")}</Text>
+            <Text style={{ fontFamily: FONT.regular, fontSize: 12, lineHeight: 18, color: th.muted }}>{Platform.OS === "android" ? tx("storeNote") : tx("storeNote").replace(/App Store\s+(or|bzw\.|或|atau|یا|veya|o de|или|ou|বা|أو)\s+Google Play/, "App Store")}</Text>
           </>
         )}
         {ai.err ? <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.regular, fontSize: 14, color: th.muted }}>{ai.err}</Text> : null}

@@ -123,7 +123,7 @@ export default function SecurityScreen() {
             <RowGroup>
               {d.sessions.map((s, i) => (
                 <LinkRow key={s.id} first={i === 0} icon={s.client === "web" ? "globe" : "user"}
-                  title={`${tx(`client_${s.client ?? "web"}` as "client_web")}${s.device ? ` · ${s.device}` : ""}`}
+                  title={`${tx(`client_${Platform.OS === "ios" && s.client === "android" ? "app" : s.client ?? "web"}` as "client_web")}${s.device ? ` · ${s.device}` : ""}`}
                   subtitle={`${s.createdAt ? tx("since", { date: date(s.createdAt) }) : tx("earlier")}${s.method ? ` · ${tx(`via_${s.method}` as "via_code")}` : ""}`}
                   right={s.current ? <Badge text={tx("thisDevice")} on /> : undefined}
                   onPress={s.current ? undefined : () => ask(tx("signOutConfirm"), () => void act({ action: "logout-session", id: s.id }, "sess"), false)} />

@@ -12,7 +12,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <AppHeader />
-      <div className="pb-[4.25rem] lg:pb-0"><div className="page-in"><UsernameGuard /><OpenInApp appUrl={appStoreUrl()} />{children}</div><SiteFooter /></div>
+      <div className="pb-[calc(62px+max(env(safe-area-inset-bottom),12px)+16px)] lg:pb-0"><div className="page-in"><UsernameGuard /><OpenInApp appUrl={appStoreUrl()} />{children}</div><SiteFooter /></div>
       <TabBar />
       <Suspense fallback={null}><TutorBubble /></Suspense>
     </>

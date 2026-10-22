@@ -236,7 +236,7 @@ export default function MessengerWeb({ locale, demo = false }: { locale: string;
 
   return (
     <div className="mx-auto grid max-w-6xl md:grid-cols-[380px_1fr] md:gap-5 md:px-4 md:py-6">
-      <aside className={`${active ? "hidden md:flex" : "flex"} min-w-0 flex-col pb-28 md:sticky md:top-6 md:h-[calc(100dvh-3rem)] md:min-h-[560px] md:overflow-hidden md:pb-0 ${shell}`}>
+      <aside className={`${active ? "hidden md:flex" : "flex"} min-w-0 flex-col pb-6 md:sticky md:top-6 md:h-[calc(100dvh-3rem)] md:min-h-[560px] md:overflow-hidden md:pb-0 ${shell}`}>
         <header className="flex items-center gap-1 px-3 pt-3 md:border-b md:border-[rgb(var(--line))] md:px-4 md:pb-3 md:pt-4">
           <h1 className="flex min-w-0 flex-1 items-center gap-1.5 px-1 font-display text-[22px] font-semibold"><span className="truncate">{me ? me.username : t.title}</span><Tick badge={me?.badge} /></h1>
           <button className={iconBtn} aria-label={t.settings} onClick={() => setSettings(true)}><Ico n="gear" /></button>
@@ -281,11 +281,14 @@ export default function MessengerWeb({ locale, demo = false }: { locale: string;
               <span className="block font-semibold">{h.title}</span>{h.snippet ? <span className="block truncate text-sm text-muted">{h.snippet}</span> : null}</button></li>
           )) : <li className="p-4 text-center text-muted">{t.noResults}</li>)
             : shown && !shown.length ? (box === "inbox" ? (
-              <li className="m-2 rounded-xl border border-dashed border-[rgb(var(--line))] p-5 text-center text-sm text-muted">
-                <span className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(var(--accent-soft))] text-[rgb(var(--accent))]"><Ico n="pen" size={18} /></span>
-                <span className="block">{t.emptyHint}</span>
-                <button className="mt-3 font-semibold text-[rgb(var(--accent))] hover:underline" onClick={() => setCompose("new")}>{t.startChat}</button>
-              </li>
+              <>
+                <li className="m-2 hidden rounded-xl border border-dashed border-[rgb(var(--line))] p-5 text-center text-sm text-muted md:block">
+                  <span className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(var(--accent-soft))] text-[rgb(var(--accent))]"><Ico n="pen" size={18} /></span>
+                  <span className="block">{t.emptyHint}</span>
+                  <button className="mt-3 font-semibold text-[rgb(var(--accent))] hover:underline" onClick={() => setCompose("new")}>{t.startChat}</button>
+                </li>
+                <li className="flex md:hidden"><Welcome t={t} onCompose={() => setCompose("new")} onMessage={(u) => void go(() => call<{ id: string }>("threads", { method: "POST", json: { username: u } }))} /></li>
+              </>
             ) : <li className="m-2 rounded-xl border border-dashed border-[rgb(var(--line))] p-5 text-center text-sm text-muted">{box === "requests" ? t.emptyRequests : t.noResults}</li>)
             : (shown ?? []).map((c) => (
               <li key={c.id}>
@@ -650,7 +653,7 @@ function ChatPane({ id, t, locale, onBack, pro = false, demo = false }: { id: st
           </div>
         </div>
       ) : canSend ? (
-        <div className="sticky bottom-0 border-t border-[rgb(var(--line))] bg-[rgb(var(--surface))] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <div className="sticky bottom-[calc(74px+max(env(safe-area-inset-bottom),12px)-12px)] border-t md:bottom-0 border-[rgb(var(--line))] bg-[rgb(var(--surface))] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           {problem === "request_text_only" || (info?.request && !info.request.incoming) ? <p className="pb-2 text-xs text-muted">{t.requestWait}</p> : null}
           {reply || editing ? (
             <p className="flex items-center gap-2 pb-2 text-xs text-muted">

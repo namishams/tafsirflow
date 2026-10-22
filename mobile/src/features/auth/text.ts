@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { Platform } from "react-native";
 import { useLang } from "@/i18n";
 import { moduleText } from "@/i18n/app";
 
@@ -40,7 +41,7 @@ const S = {
     removeConfirm: "Diesen Passkey entfernen? Sie können sich danach nicht mehr damit anmelden. Sie können ihn zusätzlich in Ihrem Passwortmanager löschen.",
     sessions: "Angemeldete Geräte", thisDevice: "Dieses Gerät", since: "Angemeldet am {date}", earlier: "Früher angemeldet",
     via_code: "mit E-Mail-Code", via_passkey: "mit Passkey", via_password: "mit Passwort", via_register: "bei der Registrierung",
-    client_web: "Website", client_ios: "App auf iPhone oder iPad", client_android: "Android-App", client_app: "App",
+    client_web: "Website", client_ios: "App auf iPhone oder iPad", client_android: Platform.OS === "ios" ? "App" : "Android-App", client_app: "App",
     signOut: "Abmelden", signOutConfirm: "Dieses Gerät abmelden?", signOutOthers: "Alle anderen Geräte abmelden",
     othersDone: "Alle anderen Geräte sind abgemeldet.", onlyThis: "Nur dieses Gerät ist angemeldet.",
     deleteByCode: "Ihr Konto hat kein Passwort. Bestätigen Sie das Löschen mit einem Code, den wir an Ihre E-Mail-Adresse senden.",
@@ -79,7 +80,7 @@ const S = {
     removeConfirm: "Remove this passkey? You can then no longer sign in with it. You can also delete it in your password manager.",
     sessions: "Signed-in devices", thisDevice: "This device", since: "Signed in on {date}", earlier: "Signed in earlier",
     via_code: "with an e-mail code", via_passkey: "with a passkey", via_password: "with a password", via_register: "at registration",
-    client_web: "Website", client_ios: "iPhone or iPad app", client_android: "Android app", client_app: "App",
+    client_web: "Website", client_ios: "iPhone or iPad app", client_android: Platform.OS === "ios" ? "App" : "Android app", client_app: "App",
     signOut: "Sign out", signOutConfirm: "Sign out this device?", signOutOthers: "Sign out all other devices",
     othersDone: "All other devices are signed out.", onlyThis: "Only this device is signed in.",
     deleteByCode: "Your account has no password. Confirm the deletion with a code we send to your e-mail address.",
