@@ -9,6 +9,8 @@ import { Rosette } from "@/features/share/ShareTemplates";
 import { StoryGlyph } from "@/features/share/feedShare";
 import { useTemplateText } from "@/features/share/templateTexts";
 import { tick } from "@/features/feed/haptics";
+import { HeartBurst } from "@/features/feed/ui";
+import { useReducedMotionX } from "@/features/extra/motion";
 import { SAVED_KEY, carouselOf, toggleSavedPost, wisdomOf, type SavedPost } from "./registry";
 import { useCarouselTexts, useWisdomText } from "./scripture";
 import { CarouselSlideView, CoverSlide, WisdomCard, slideCount } from "./Slide";
@@ -56,6 +58,8 @@ function Pager({ c, width, texts, at, onAt, onDouble }: { c: CarouselPayload; wi
   const list = useRef<FlatList<number>>(null);
   const size = CARD_SIZE.post;
   const lastTap = useRef(0);
+  const reduce = useReducedMotionX();
+  const [burst, setBurst] = useState(0);
   const go = (i: number) => { const k = Math.max(0, Math.min(total - 1, i)); list.current?.scrollToIndex({ index: k, animated: true }); onAt(k); };
   const onEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => { const i = Math.round(e.nativeEvent.contentOffset.x / width); if (i !== at) { onAt(i); tick(); } };
   return (
@@ -64,18 +68,19 @@ function Pager({ c, width, texts, at, onAt, onDouble }: { c: CarouselPayload; wi
       onAccessibilityAction={(e) => go(at + (e.nativeEvent.actionName === "increment" ? 1 : -1))}>
       <FlatList
         ref={list}
-        horizontal pagingEnabled showsHorizontalScrollIndicator={false} nestedScrollEnabled
+        horizontal pagingEnabled showsHorizontalScrollIndicator={false} nestedScrollEnabled decelerationRate="fast" disableIntervalMomentum
         data={Array.from({ length: total }, (_, i) => i)}
         keyExtractor={(i) => String(i)}
         getItemLayout={(_, i) => ({ length: width, offset: width * i, index: i })}
         onMomentumScrollEnd={onEnd}
-        initialNumToRender={2} windowSize={3} maxToRenderPerBatch={2}
+        initialNumToRender={2} windowSize={5} maxToRenderPerBatch={2}
         renderItem={({ item }) => (
-          <Pressable onPress={() => { const now = Date.now(); if (now - lastTap.current < 280) onDouble?.(); lastTap.current = now; }} accessible={false}>
+          <Pressable onPress={() => { const now = Date.now(); if (now - lastTap.current < 280) { lastTap.current = 0; setBurst((n) => n + 1); onDouble?.(); return; } lastTap.current = now; }} accessible={false}>
             <Scaled w={size.w} h={size.h} width={width}><CarouselSlideView c={c} index={item} format="post" texts={texts} /></Scaled>
           </Pressable>
         )}
       />
+      <HeartBurst n={burst} reduce={reduce} />
     </View>
   );
 }

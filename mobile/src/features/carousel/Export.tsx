@@ -15,6 +15,8 @@ import { statShare } from "@/features/feed/statsStore";
 import { shareMany, shareManyAvailable } from "../../../modules/qmc-share-many";
 import { CarouselSlideView, WisdomCard, slideCount } from "./Slide";
 import { fill, useCarouselText } from "./text";
+import { ChatSendSheet } from "@/features/moments/ChatSend";
+import { useMomentT } from "@/features/moments/texts";
 import type { CarouselPayload, PaletteId, Scripture, WisdomPayload } from "./types";
 
 // Sharing a carousel: every slide is drawn at its fixed size and captured at exactly Instagram's pixels (1080 × 1350
@@ -58,6 +60,10 @@ export function CarouselShareSheet({ c, texts, visible, onClose, onShared }: { c
   const [saved, setSaved] = useState(false);
   const shot = useRef<ComponentRef<typeof View>>(null);
   const total = slideCount(c);
+  const mt = useMomentT();
+  const [chat, setChat] = useState(false);
+  // the in-app messenger gets the cover slide and the title with the app link
+  const coverImage = async () => { setAt(0); await frame(); await frame(); return capturePx(shot, CARD_SIZE[format].px); };
   useEffect(() => { if (visible) { setErr(""); setNote(""); setSaved(false); setAt(0); setPalette(c.palette); } }, [visible, c.palette]);
 
   const size = CARD_SIZE[format];
@@ -171,6 +177,13 @@ export function CarouselShareSheet({ c, texts, visible, onClose, onShared }: { c
 
           {Platform.OS !== "web" ? (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10, paddingHorizontal: 16, paddingTop: 16 }}>
+              <Pressable onPress={() => setChat(true)} disabled={!!busy} accessibilityRole="button" accessibilityLabel={mt("sendChat")}
+                style={({ pressed }) => ({ width: 84, alignItems: "center", gap: 6, opacity: pressed ? 0.7 : 1 })}>
+                <View style={{ width: 54, height: 54, borderRadius: 27, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.08)", borderWidth: 1, borderColor: stage.goldSoft }}>
+                  <Icon name="comment" color={stage.gold} size={21} />
+                </View>
+                <Text numberOfLines={2} style={{ fontFamily: FONT.regular, fontSize: 11.5, lineHeight: 14, color: "#fff", textAlign: "center" }}>{mt("sendChat")}</Text>
+              </Pressable>
               {action("photos", tx.saveAll, "download")}
               {action("single", tx.oneByOne, "share")}
             </ScrollView>
@@ -186,6 +199,7 @@ export function CarouselShareSheet({ c, texts, visible, onClose, onShared }: { c
           </View>
         </ScrollView>
       </View>
+      {chat ? <ChatSendSheet payload={{ text: `${c.cover.title}${c.cover.sub ? `\n${c.cover.sub}` : ""}\n${APP_LINK}`, image: coverImage }} onClose={() => setChat(false)} /> : null}
     </Modal>
   );
 }

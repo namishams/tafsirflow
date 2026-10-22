@@ -1,3 +1,4 @@
+import { createContext, useContext } from "react";
 import { Appearance, I18nManager, Platform, useColorScheme } from "react-native";
 
 // The colours of quranmasterclass.com (src/app/globals.css): light grey canvas, white tiles, hairline borders,
@@ -57,9 +58,15 @@ export const goldHair = "rgba(214,180,108,0.45)";
 export const GARNET = "rgb(150,52,52)";
 
 
+/** the reader's night mode: deep emerald black with the Quran and the text in warm gold */
+export const night: Theme = { ...make(true, { bg: "3 13 10", surface: "8 25 19", ink: "234 214 170", muted: "168 150 112", line: "30 50 41", accent: "214 180 108", accentSoft: "36 40 26", gold: "222 188 116" }), arabic: "rgb(240,214,160)" };
+/** a screen can set its own theme for everything below it (the reader's night mode) */
+export const ThemeOverride = createContext<Theme | null>(null);
+
 export function useTheme(): Theme {
+  const own = useContext(ThemeOverride);
   const scheme = useColorScheme();
-  return scheme === "dark" ? dark : light;
+  return own ?? (scheme === "dark" ? dark : light);
 }
 
 export type AppearanceSetting = "system" | "light" | "dark";

@@ -1,6 +1,7 @@
 import { DoneShare } from "@/features/share/SharePrompt";
 import { DaysGate } from "@/features/sisters/ui";
 import { GardenBurst } from "@/features/garden/widgets";
+import { celebrateMoment } from "@/features/moments/Celebration";
 import { shamsGrow } from "@/features/garden/garden";
 import { dropVerse } from "@/features/garden/catalog";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -174,6 +175,8 @@ function Session({ chapter, verses, startVerse, sessionMode }: { chapter: Chapte
   const [linking, setLinking] = useState(false);
   const [saved, setSaved] = useState<string | null>(null);
   const [finished, setFinished] = useState<"surah" | "session" | null>(null);
+  // a whole surah learned: the tree celebration with its share card (features/moments)
+  useEffect(() => { if (finished === "surah") celebrateMoment({ kind: "surah", surah: chapter.id }); }, [finished]); // eslint-disable-line react-hooks/exhaustive-deps
   // Shams 3.0: quick check ("I know this already"), the placement run, the word check's score, the detailed tafsir on
   // request, the learner's turn in the listen-and-repeat loop, the verses learned in this sitting
   const [quick, setQuick] = useState<null | "ask" | "revealed">(null);

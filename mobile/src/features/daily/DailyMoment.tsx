@@ -12,6 +12,7 @@ import { getVerseByKey, type SingleVerse } from "@/lib/quran";
 import { verseOfDayKey } from "@/web/votd";
 import { moduleText } from "@/i18n/app";
 import { useDuaPrice } from "@/lib/purchases";
+import { afterGreeting } from "@/features/moments/Greeting";
 
 // The daily moment: once a day (never on the first day of use), a calm sheet asks "Have you remembered Allah today?"
 // with verse 13:28 and offers a personal dua for one's concern. One tap closes it; it can also open from the reminder.
@@ -47,9 +48,11 @@ export function DailyMoment() {
     const seen = readJSON<Seen | null>(KEY, null);
     if (!seen) { writeJSON(KEY, { first: d, last: d }, true); return; } // not on the very first day
     if (params.moment === "1" || (seen.last < d && d > seen.first)) {
-      const id = setTimeout(() => setOpen(true), 1200);
+      // after the start greeting (features/moments/Greeting.tsx), never on top of it
+      let id: ReturnType<typeof setTimeout> | undefined;
+      const stop = afterGreeting(() => { id = setTimeout(() => setOpen(true), 1200); });
       writeJSON(KEY, { ...seen, last: d }, true);
-      return () => clearTimeout(id);
+      return () => { stop(); if (id) clearTimeout(id); };
     }
   }, [params.moment]);
 

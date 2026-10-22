@@ -5,6 +5,8 @@ import { Icon, type IconName } from "@/components/icons";
 import { FONT, R, stage, useTheme } from "@/lib/theme";
 import { HEART } from "@/features/extra/SocialBar";
 import { useFeedText } from "./texts";
+import { ARABIC_FONT } from "@/lib/theme";
+import { SESSION_DONE_WORD } from "@/features/today/arabic";
 
 // Small parts shared by every feed page: the round action buttons of the side column and the heart that pops on a
 // double tap.
@@ -23,7 +25,8 @@ export function Action({ icon, color, label, a11y, onPress, filled, selected, di
   );
 }
 
-/** the gold heart of a double tap (a calm fade, no bounce); `n` changes for every burst. Reduce Motion: shown briefly without movement. */
+/** the gold heart of a double tap with a soft "MashaAllah" beneath it (a calm fade and rise, no bounce); `n` changes
+ *  for every burst. Reduce Motion: shown briefly without movement. */
 export function HeartBurst({ n, reduce }: { n: number; reduce: boolean }) {
   const v = useRef(new Animated.Value(0)).current;
   const [on, setOn] = useState(false);
@@ -47,6 +50,10 @@ export function HeartBurst({ n, reduce }: { n: number; reduce: boolean }) {
   return (
     <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0, alignItems: "center", justifyContent: "center" }} accessibilityElementsHidden>
       <Animated.View style={{ opacity, transform: [{ scale }] }}><Icon name="heart" filled color={HEART} size={104} /></Animated.View>
+      <Animated.Text allowFontScaling={false} accessibilityLanguage="ar"
+        style={{ opacity, transform: reduce ? undefined : [{ translateY: v.interpolate({ inputRange: [0, 1, 2], outputRange: [10, 0, -6] }) }], fontFamily: ARABIC_FONT, fontSize: 30, lineHeight: 52, color: "#f3e2b6", textShadowColor: "rgba(0,0,0,0.55)", textShadowRadius: 8, marginTop: -4 }}>
+        {SESSION_DONE_WORD}
+      </Animated.Text>
     </View>
   );
 }

@@ -19,6 +19,8 @@ import { useShareText } from "@/features/share/texts";
 import { useTemplateText } from "@/features/share/templateTexts";
 import { CARD_SIZE, PALETTES, PALETTE_IDS, paletteFor, type PaletteId, type ShareFormat, type ShareOpts, type Sharer } from "@/features/share/formats";
 import { T as TalentApi } from "@/features/talents/api";
+import { ChatSendSheet } from "@/features/moments/ChatSend";
+import { useMomentT } from "@/features/moments/texts";
 
 /** the app download page (redirects to the App Store / Google Play); every shared card and message carries it */
 export const APP_LINK = `${SITE}/app`;
@@ -52,7 +54,7 @@ async function loadSharer(): Promise<Sharer | null> {
 }
 
 type TargetId = "igStory" | "igFeed" | "fbStory" | "tiktok" | "whatsapp" | "waStatus" | "telegram" | "signal" | "viber" | "messenger" | "messages" | "mail" | "snapchat" | "line" | "wechat" | "x" | "threads" | "facebook";
-type ActionId = "copy" | "saveImage" | "saveVideo" | "story" | "more";
+type ActionId = "chat" | "copy" | "saveImage" | "saveVideo" | "story" | "more";
 type Busy = TargetId | ActionId | "storyShare" | "primary";
 /** app targets: the scheme that tells whether the app is installed, the circle's colours and monogram */
 const TARGETS: { id: TargetId; check: string; bg: [string, string]; mono?: string; icon?: IconName }[] = [
@@ -129,6 +131,8 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
   const owned = noDecoration ? [] : STICKERS.filter((x) => gm.stickers[x.id]).sort((a, b) => gm.stickers[b.id] - gm.stickers[a.id]).slice(0, 30);
   const [deco, setDeco] = useState<string | null>(null);
   const quickDone = useRef(false);
+  const mt = useMomentT();
+  const [chat, setChat] = useState(false);
 
   useEffect(() => {
     if (!visible) { quickDone.current = false; return; }
@@ -223,6 +227,7 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
 
   const runAction = async (id: ActionId | "storyShare" | "primary") => {
     switch (id) {
+      case "chat": setChat(true); return;
       case "copy": await Clipboard.setStringAsync(link); setNote(tx.copied); return;
       case "saveImage": return saveToPhotos(await capture(format));
       case "saveVideo": {
@@ -273,6 +278,8 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
   const q = query.trim().toLowerCase();
   const targets = TARGETS.filter((t) => apps.has(t.id) && (!q || label[t.id].toLowerCase().includes(q)));
   const actions: [ActionId, string, IconName][] = [
+    // the in-app messenger first: the image and the link go straight into a conversation
+    ...(Platform.OS !== "web" ? [["chat", mt("sendChat"), "comment"] as [ActionId, string, IconName]] : []),
     ["copy", tx.copyLink, "copy"],
     ...(Platform.OS !== "web" ? [["saveImage", tx.saveImage, "download"] as [ActionId, string, IconName]] : []),
     ...(video && Platform.OS !== "web" ? [["saveVideo", tx.saveVideo, "play"] as [ActionId, string, IconName], ["story", tx.addToStory, "reels"] as [ActionId, string, IconName]] : []),
@@ -421,6 +428,7 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
           </View>
         </ScrollView>
       </Animated.View>
+      {chat ? <ChatSendSheet payload={{ text: `${message}\n${link}`, image: () => capture(format) }} onClose={() => setChat(false)} /> : null}
     </Modal>
   );
 }

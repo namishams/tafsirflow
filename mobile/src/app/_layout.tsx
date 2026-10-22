@@ -26,6 +26,8 @@ import { TutorBubble } from "@/features/tutor/TutorBubble";
 import { NotificationsBridge } from "@/features/daily/NotificationsBridge";
 import { UsernamePromptBridge } from "@/features/talents/usernamePrompt";
 import { DailyMoment } from "@/features/daily/DailyMoment";
+import { StartGreeting } from "@/features/moments/Greeting";
+import { MomentsHost } from "@/features/moments/Celebration";
 import { PerfProbe } from "@/lib/perf";
 import { stackFreezeLayout } from "@/lib/freeze";
 
@@ -89,6 +91,8 @@ export default function RootLayout() {
                 <DailyMoment />
                 <SharerCelebration />
                 <GardenCelebrate />
+                <MomentsHost />
+                <StartGreeting />
               </RewardsHost>
             </ProProvider>
           </AuthProvider>

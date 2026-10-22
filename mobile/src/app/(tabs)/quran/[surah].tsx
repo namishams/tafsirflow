@@ -4,7 +4,7 @@ import { FlatList, Modal, Platform, Pressable, ScrollView, Share, Switch, Text, 
 import { Stack, router, useFocusEffect, useLocalSearchParams, useNavigation, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
+import { ARABIC_FONT, FONT, R, ThemeOverride, night, useTheme } from "@/lib/theme";
 import { useTabBarSpace } from "@/components/TabBar";
 import { Chip, GoldCard } from "@/components/brand";
 import { Icon } from "@/components/icons";
@@ -37,6 +37,8 @@ import { loadText, localVerseUri, removeSurah, saveSurah, saveText, savedInfo } 
 import * as vp from "@/features/reader/versePlayback";
 import { useScreenBarStyle } from "@/features/reader/statusBar";
 import { useAppT } from "@/features/radio/strings";
+import { WordSheet } from "@/features/reader/WordSheet";
+import { useMomentT } from "@/features/moments/texts";
 
 // The surah reader with its player, presented like the website's Player.tsx: the illuminated opening of the surah,
 // the surah picker, compact verse cards with the active verse framed in gold (word highlighting, Read / Practise /
@@ -46,7 +48,7 @@ import { useAppT } from "@/features/radio/strings";
 // background, on the lock screen and after leaving the reader (features/reader/versePlayback.ts + the verse mini bar).
 // memo: the memorising mode and practise level (features/reader/memo.ts), remembered per user; drill: the earlier
 // whole-surah cover value, read once to carry an old choice over
-type Prefs = { translit: boolean; translation: boolean; words: boolean; size: number; repeat: number; speed: number; drill: number; mode: vp.Mode; memo?: Memo };
+type Prefs = { translit: boolean; translation: boolean; words: boolean; night?: boolean; size: number; repeat: number; speed: number; drill: number; mode: vp.Mode; memo?: Memo };
 const PREFS: Prefs = { translit: true, translation: true, words: false, size: 1, repeat: 1, speed: 1, drill: 0, mode: "continuous" };
 // auto-follow pauses this long after the learner scrolled by hand (like Apple Music lyrics)
 const FOLLOW_PAUSE_MS = 5000;
@@ -112,14 +114,16 @@ export default function SurahReader() {
   }, [surah, lang, reciter, base]);
   useEffect(load, [load]);
   const ready = data && data.key === base ? data : null;
+  // night mode: the whole reader (cards, sheets, player) in deep emerald black and warm gold
+  const nightOn = !!useStored<Partial<Prefs>>("qmc.reader", {}).night;
   return (
-    <>
+    <ThemeOverride.Provider value={nightOn ? night : null}>
       <Stack.Screen options={{ headerShown: false }} />
       {failed ? <ErrorState retry={load} /> : !ready ? <Loading /> : (
         <Reader key={surah} chapter={ready.chapter} verses={ready.verses} start={Number(params.v) || 0} openTafsir={params.tafsir === "1"}
           review={params.r === "1"} startMemo={startMemoOf(params.m)} />
       )}
-    </>
+    </ThemeOverride.Provider>
   );
 }
 
@@ -185,6 +189,8 @@ function Reader({ chapter, verses, start, openTafsir, review, startMemo }: { cha
   const [testMarks, setTestMarks] = useState<Record<number, boolean>>({});
   const [testDone, setTestDone] = useState<TestDone | null>(null);
   const [wordKey, setWordKey] = useState<string | null>(null);
+  const [wordInfo, setWordInfo] = useState<{ key: string; pos: number } | null>(null);
+  const mt = useMomentT();
   const [focusOpen, setFocusOpen] = useState(false);
   const [toast, setToast] = useState("");
   const [offline, setOffline] = useState<Offline>(() => { const s = savedInfo(chapter.id, reciter.folder); return s ? { state: "saved", done: s.n, bytes: s.bytes } : { state: "none", done: 0, bytes: 0 }; });
@@ -489,6 +495,8 @@ function Reader({ chapter, verses, start, openTafsir, review, startMemo }: { cha
       if (mine) audio.pause();
       clearGap();
       setWordKey(`${key}:${pos}`);
+      // word by word: meaning, transliteration and root above the player (not while the focus mode covers the reader)
+      if (!focusOpen) setWordInfo({ key, pos });
       clip.play(`https://audio.qurancdn.com/wbw/${s}_${a}_${String(pos).padStart(3, "0")}.mp3`);
     },
     cont: () => advance(),
@@ -645,6 +653,11 @@ function Reader({ chapter, verses, start, openTafsir, review, startMemo }: { cha
         </View>
       ) : null}
 
+      {wordInfo && verses.find((x) => x.verse_key === wordInfo.key) ? (
+        <WordSheet verse={verses.find((x) => x.verse_key === wordInfo.key)!} position={wordInfo.pos} bottom={dockBottom + 92} reduce={reduce}
+          onPlay={() => cardHandlers.playWord(wordInfo.key, wordInfo.pos)} onClose={() => setWordInfo(null)} />
+      ) : null}
+
       <PlayerDock bottom={dockBottom} arabicName={chapter.name_arabic} verse={verse.verse_number} total={verses.length} playing={playing}
         positionMs={positionMs} durationMs={durationMs} sleepMin={sleepMin} reduce={reduce} turn={turn} onSkipTurn={advance}
         error={loadError ? rt("audioError") : null} retryLabel={ra("tryAgain")} onRetry={() => playAt(idx)}
@@ -728,11 +741,12 @@ function Reader({ chapter, verses, start, openTafsir, review, startMemo }: { cha
               </View>
             </Setting>
             <Setting label={w("fontSize")}>
-              <View style={{ flexDirection: "row", gap: 8 }}>
-                {[0.85, 1, 1.2, 1.45].map((n, i) => (
-                  <Pressable key={n} onPress={() => setPref({ size: n })} accessibilityRole="button" accessibilityState={{ selected: prefs.size === n }} accessibilityLabel={`${w("fontSize")} ${Math.round(n * 100)} %`}
+              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                {/* up to large calligraphy (1.8 and 2.2): the verse cards wrap word by word, so nothing is cut */}
+                {[0.85, 1, 1.2, 1.45, 1.8, 2.2].map((n, i) => (
+                  <Pressable key={n} onPress={() => setPref({ size: n })} accessibilityRole="button" accessibilityState={{ selected: prefs.size === n }} accessibilityLabel={mt("sizeLabel", { n: Math.round(n * 100) })}
                     style={{ minWidth: 48, height: 40, borderRadius: R.pill, borderWidth: 1, alignItems: "center", justifyContent: "center", borderColor: prefs.size === n ? "rgb(201,166,94)" : t.line, backgroundColor: prefs.size === n ? "rgba(201,166,94,0.15)" : t.surface }}>
-                    <Text style={{ fontFamily: ARABIC_FONT, fontSize: 14 + i * 3, lineHeight: 30, color: t.ink }}>أ</Text>
+                    <Text style={{ fontFamily: ARABIC_FONT, fontSize: 14 + i * 3, lineHeight: 42, color: t.ink }}>أ</Text>
                   </Pressable>
                 ))}
               </View>
@@ -770,6 +784,14 @@ function Reader({ chapter, verses, start, openTafsir, review, startMemo }: { cha
                   <Stepper value={loop.to} min={loop.from} max={verses.length} disabled={!loop.on} label={`${w("loop")} ${w("loopTo")}`} onChange={(n) => setLoop((l) => ({ ...l, to: n }))} />
                 </View>
               </Setting>
+            <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, paddingHorizontal: 14, paddingVertical: 10, gap: 4 }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+                <Icon name="moon" color={t.gold} size={18} />
+                <Text style={{ fontFamily: FONT.regular, fontSize: 15, color: t.ink, flex: 1 }}>{mt("night")}</Text>
+                <Switch value={!!prefs.night} onValueChange={(on) => setPref({ night: on })} trackColor={{ true: t.accent }} accessibilityLabel={mt("night")} />
+              </View>
+              <Text style={{ fontFamily: FONT.regular, fontSize: 12.5, lineHeight: 17, color: t.muted }}>{mt("nightHint")}</Text>
+            </View>
             <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
               {([["translit", w("transliteration")], ["translation", w("translation")], ["words", w("wordByWord")]] as [keyof Prefs, string][]).map(([k, label], i) => (
                 <View key={k} style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 14, paddingVertical: 10, borderTopWidth: i ? 1 : 0, borderTopColor: t.line }}>
@@ -796,7 +818,7 @@ function Reader({ chapter, verses, start, openTafsir, review, startMemo }: { cha
                 </View>
               ) : (
                 <Pressable onPress={saveOffline} accessibilityRole="button" accessibilityLabel={`${w("offlineSave")}${pro ? "" : ", Pro"}`}
-                  style={({ pressed }) => ({ alignSelf: "flex-start", height: 42, borderRadius: R.pill, borderWidth: 1, borderColor: "rgba(201,166,94,0.6)", backgroundColor: pressed ? "rgba(201,166,94,0.1)" : t.surface, paddingHorizontal: 16, flexDirection: "row", alignItems: "center", gap: 8 })}>
+                  style={({ pressed }) => ({ alignSelf: "flex-start", height: 44, borderRadius: R.pill, borderWidth: 1, borderColor: "rgba(201,166,94,0.6)", backgroundColor: pressed ? "rgba(201,166,94,0.1)" : t.surface, paddingHorizontal: 16, flexDirection: "row", alignItems: "center", gap: 8 })}>
                   <Icon name="download" color={t.ink} size={16} />
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink }}>{w("offlineSave")}</Text>
                   {pro ? null : <ProBadge />}
