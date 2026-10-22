@@ -1,6 +1,7 @@
 "use client";
 import FounderAbout from "@/components/FounderAbout";
 import { ProMark } from "./ProMark";
+import { OpenInAppPill } from "@/components/apppush/OpenInApp";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 import { BadgeIcon, type WebBadge } from "./BadgeIcon";
@@ -21,6 +22,7 @@ import { careerText } from "@/lib/careerWeb";
 import { GIRIH_TILE, PREMIUM, archRing } from "@/lib/badgeShape";
 import { STARS } from "@/lib/usernameFilter";
 import { starText } from "@/lib/starText";
+import { starLinksText } from "@/lib/starLinksText";
 
 // The talent profile on the website, 1:1 with the app (owner, 21.10.2026; mobile/src/features/talents/ProfileScreen.tsx):
 // TikTok structure in emerald and gold. Top bar (own: name with a chevron menu, "+" to share with the QR code, the menu
@@ -310,7 +312,7 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
         {premium === "star" ? <p className="mt-1 text-[14px] font-semibold text-[#0E7A57] dark:text-[#7fd1ad]">{starText(locale).roleLine}{p.country ? ` · ${countryName(p.country, locale)}` : ""}</p> : null}
         {premium === "star" && starReciter ? (
           <Link href={`/reciters/${starReciter}`} className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D9B970]/70 bg-[rgba(14,122,87,0.08)] px-4 py-1.5 text-[13.5px] font-bold text-ink">
-            <svg aria-hidden viewBox="0 0 24 24" className="h-3.5 w-3.5"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>{starText(locale).recitations}
+            <svg aria-hidden viewBox="0 0 24 24" className="h-3.5 w-3.5"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>{starLinksText(locale).reciterProfile}
           </Link>
         ) : null}
         <p className="sr-only">{p.name}</p>
@@ -346,6 +348,8 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
               {square("chevronDown", t.suggestedAccounts, () => setSuggest((x) => !x), suggest)}
             </>
           )}
+          {/* small secondary pill, only on Android phones (iOS has its own system banner) */}
+          {mode === "other" ? <OpenInAppPill appUrl={appUrl} label={tx.openApp} /> : null}
         </div>
         {mode === "other" && conn === "incoming" && !p.blocked ? (
           <button type="button" onClick={() => void run(async () => { await must(`/api/community/connections/${p.username}`, { method: "PATCH", body: JSON.stringify({ action: "decline" }) }); setP({ ...p, connection: "none" }); })}

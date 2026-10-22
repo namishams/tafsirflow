@@ -14,6 +14,14 @@ import { readJSON } from "@/lib/storage";
 import TierEmblem from "@/components/stats/TierEmblem";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ConfirmCode from "@/components/auth/ConfirmCode";
+import Segmented from "@/components/ui/Segmented";
+
+// labels added with the mobile-first rework (owner 22.10.2026); other languages fall back to English
+const EXTRA: Record<string, { progress: string; community: string; proOn: string; proOnText: string; proOff: string; proOffText: string; proCta: string; proManage: string }> = {
+  en: { progress: "Learning", community: "Community", proOn: "PRO is active", proOnText: "Thank you for supporting Quran Masterclass. All PRO features are unlocked on this account.", proOff: "Quran Masterclass PRO", proOffText: "The website stays free. PRO adds extras in the app and supports the project.", proCta: "Learn more", proManage: "Details" },
+  de: { progress: "Lernen", community: "Gemeinschaft", proOn: "PRO ist aktiv", proOnText: "Danke, dass Sie Quran Masterclass unterstützen. Alle PRO-Funktionen sind für dieses Konto freigeschaltet.", proOff: "Quran Masterclass PRO", proOffText: "Die Website bleibt kostenlos. PRO ergänzt Extras in der App und unterstützt das Projekt.", proCta: "Mehr erfahren", proManage: "Details" },
+  ar: { progress: "التعلّم", community: "المجتمع", proOn: "اشتراك PRO مفعّل", proOnText: "شكرًا لدعمكم Quran Masterclass. جميع ميزات PRO مفعّلة لهذا الحساب.", proOff: "Quran Masterclass PRO", proOffText: "يبقى الموقع مجانيًا. يضيف PRO ميزات في التطبيق ويدعم المشروع.", proCta: "اعرف المزيد", proManage: "التفاصيل" },
+};
 
 // The signed-in account page (owner 22.10.2026): a member dashboard instead of four buttons. The server renders this
 // shell with the account's name at once; every card shows a skeleton until its data arrives and an empty state when
@@ -78,6 +86,8 @@ export default function AccountDashboard({ user, demo = false, verifiedNow = fal
   const [d, setD] = useState<Data>(demo ? DEMO : { profile: undefined, stats: undefined, unread: null, circles: null, frame: false, pro: user.plan === "premium", local: null });
   const [resent, setResent] = useState(false);
   const [byCode, setByCode] = useState(false);
+  const [tab, setTab] = useState<"progress" | "community">("progress");
+  const x = EXTRA[locale] ?? EXTRA.en;
 
   useEffect(() => {
     if (demo) return;
@@ -199,35 +209,10 @@ export default function AccountDashboard({ user, demo = false, verifiedNow = fal
             </Card>
           )}
 
-          {/* stat tiles */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-            <Stat label={t("statStreak")} icon={<IcFlame />} tone="gold" loading={!loc} value={loc ? nf.format(loc.streak) : ""} sub={t("days")} />
-            <Stat label={t("statVerses")} icon={<IcBook />} loading={!loc && statsLoading} value={verses !== null ? nf.format(verses) : "–"} sub={t("verses")} />
-            <Stat label={t("statLevel")} icon={<IcStar />} loading={level === null && (statsLoading || !loc)} value={level !== null ? nf.format(level) : "–"} sub={xp !== null ? `${nf.format(xp)} XP` : ""} />
-            <Stat label={t("statRank")} icon={<IcGlobe />} tone="gold" loading={statsLoading} value={rank?.rank ? `#${nf.format(rank.rank)}` : "–"} sub={rank?.pct ? t("rankTop", { pct: nf.format(rank.pct) }) : t("rankNone")} />
-            <Stat label={t("statGarden")} icon={<IcLeaf />} loading={statsLoading} value={tree ? t("stage", { n: tree.stage }) : "–"} sub={tree ? (tree.trees > 1 ? t("trees", { n: tree.trees }) : tree.name || t("gardenGrowing")) : t("gardenNone")} />
-            <Stat label={t("statStickers")} icon={<IcSticker />} loading={statsLoading} value={stickers ? nf.format(stickers.total) : "–"} sub={stickers ? t("ofTotal", { total: nf.format(stickers.catalog) }) : t("stickersNone")} />
-          </div>
-
-          {/* today */}
-          <Card>
-            <CardHead title={t("today")} action={loc && <span className="text-[12px] font-medium text-muted tabular-nums">{t("todayXp", { xp: nf.format(loc.todayXp), goal: nf.format(loc.goal) })}</span>} />
-            <div className="grid gap-px overflow-hidden bg-line sm:grid-cols-3">
-              <TodayCell label={t("nextVerse")} loading={!loc} value={loc?.plan?.next ?? loc?.last ?? "–"} sub={loc?.plan ? t("planDay", { day: loc.plan.day, n: loc.plan.perDay }) : t("noPlan")} />
-              <TodayCell label={t("due")} loading={!loc} value={loc ? nf.format(loc.due) : ""} sub={loc && loc.due > 0 ? t("dueSome") : t("dueNone")} accent={!!loc && loc.due > 0} />
-              <TodayCell label={t("plan")} loading={!loc} value={loc?.plan ? (loc.plan.done ? t("planDone") : t("planOpen", { n: loc.plan.perDay })) : t("planNone")} sub={loc?.plan ? "" : t("planHint")} small />
-            </div>
-            {loc && <div className="h-1 bg-line"><div className="h-full bg-accent transition-all" style={{ width: `${Math.min(100, Math.round((loc.todayXp / Math.max(1, loc.goal)) * 100))}%` }} /></div>}
-            <div className="flex flex-wrap items-center justify-between gap-3 p-5">
-              <p className="text-[13px] text-muted">{loc && loc.due > 0 ? t("ctaReview", { n: nf.format(loc.due) }) : t("ctaHint")}</p>
-              <Link href={nextHref} className="btn-gold inline-flex h-11 items-center gap-2 rounded-lg px-5 text-[14px] font-bold">{t("continue")}<IcArrow /></Link>
-            </div>
-          </Card>
-
           {/* quick actions */}
           <Card>
             <CardHead title={t("quick")} />
-            <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-3 sm:p-4">
+            <div className="grid grid-cols-3 gap-1 p-2 sm:grid-cols-5 sm:gap-2 sm:p-3">
               <Quick href="/today" icon={<IcBook />} label={t("qLearn")} />
               <Quick href="/garden" icon={<IcLeaf />} label={t("qGarden")} />
               <Quick href="/messages" icon={<IcSend />} label={t("qMessages")} badge={d.unread} />
@@ -239,10 +224,52 @@ export default function AccountDashboard({ user, demo = false, verifiedNow = fal
               <Quick href="/app" icon={<IcPhone />} label={t("qApp")} />
             </div>
           </Card>
+          {/* today */}
+          <Card>
+            <CardHead title={t("today")} action={loc && <span className="text-[12px] font-medium text-muted tabular-nums">{t("todayXp", { xp: nf.format(loc.todayXp), goal: nf.format(loc.goal) })}</span>} />
+            <div className="grid grid-cols-2 gap-px overflow-hidden bg-line sm:grid-cols-3">
+              <TodayCell label={t("nextVerse")} loading={!loc} value={loc?.plan?.next ?? loc?.last ?? "–"} sub={loc?.plan ? t("planDay", { day: loc.plan.day, n: loc.plan.perDay }) : t("noPlan")} />
+              <TodayCell label={t("due")} loading={!loc} value={loc ? nf.format(loc.due) : ""} sub={loc && loc.due > 0 ? t("dueSome") : t("dueNone")} accent={!!loc && loc.due > 0} />
+              <TodayCell label={t("plan")} loading={!loc} value={loc?.plan ? (loc.plan.done ? t("planDone") : t("planOpen", { n: loc.plan.perDay })) : t("planNone")} sub={loc?.plan ? "" : t("planHint")} small />
+            </div>
+            {loc && <div className="h-1 bg-line"><div className="h-full bg-accent transition-all" style={{ width: `${Math.min(100, Math.round((loc.todayXp / Math.max(1, loc.goal)) * 100))}%` }} /></div>}
+            <div className="flex flex-wrap items-center justify-between gap-3 p-5">
+              <p className="text-[13px] text-muted">{loc && loc.due > 0 ? t("ctaReview", { n: nf.format(loc.due) }) : t("ctaHint")}</p>
+              <Link href={nextHref} className="btn-gold inline-flex h-11 items-center gap-2 rounded-lg px-5 text-[14px] font-bold">{t("continue")}<IcArrow /></Link>
+            </div>
+          </Card>
+
+          {/* progress in two views, with the segmented control of the surah list */}
+          <section className="grid gap-3">
+            <Segmented full label={`${x.progress} / ${x.community}`} value={tab} onChange={setTab} options={[{ id: "progress", label: x.progress }, { id: "community", label: x.community }]} />
+            <div className="grid grid-cols-3 gap-2 sm:gap-4">
+              {tab === "progress" ? <>
+                <Stat label={t("statStreak")} icon={<IcFlame />} tone="gold" loading={!loc} value={loc ? nf.format(loc.streak) : ""} sub={t("days")} />
+                <Stat label={t("statVerses")} icon={<IcBook />} loading={!loc && statsLoading} value={verses !== null ? nf.format(verses) : "–"} sub={t("verses")} />
+                <Stat label={t("statLevel")} icon={<IcStar />} loading={level === null && (statsLoading || !loc)} value={level !== null ? nf.format(level) : "–"} sub={xp !== null ? `${nf.format(xp)} XP` : ""} />
+              </> : <>
+                <Stat label={t("statRank")} icon={<IcGlobe />} tone="gold" loading={statsLoading} value={rank?.rank ? `#${nf.format(rank.rank)}` : "–"} sub={rank?.pct ? t("rankTop", { pct: nf.format(rank.pct) }) : t("rankNone")} />
+                <Stat label={t("statGarden")} icon={<IcLeaf />} loading={statsLoading} value={tree ? t("stage", { n: tree.stage }) : "–"} sub={tree ? (tree.trees > 1 ? t("trees", { n: tree.trees }) : tree.name || t("gardenGrowing")) : t("gardenNone")} />
+                <Stat label={t("statStickers")} icon={<IcSticker />} loading={statsLoading} value={stickers ? nf.format(stickers.total) : "–"} sub={stickers ? t("ofTotal", { total: nf.format(stickers.catalog) }) : t("stickersNone")} />
+              </>}
+            </div>
+          </section>
+
         </div>
 
         {/* account sidebar */}
         <aside className="grid min-w-0 content-start gap-5">
+          {/* PRO status */}
+          <Card className={`p-5 ${d.pro || prof?.pro ? "border-[#c6a65e]/50" : ""}`}>
+            <div className="flex items-start gap-3">
+              <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${d.pro || prof?.pro ? "bg-[#f6ecd2] text-[#8a6a2c] dark:bg-[#3a2f17] dark:text-[#e9cf99]" : "bg-accent-soft text-accent"}`}><IcStar /></span>
+              <div className="min-w-0">
+                <p className="text-[14px] font-bold text-ink">{d.pro || prof?.pro ? x.proOn : x.proOff}</p>
+                <p className="mt-1 text-[13px] leading-relaxed text-muted">{d.pro || prof?.pro ? x.proOnText : x.proOffText}</p>
+                <Link href="/premium" className="mt-2 inline-flex text-[13px] font-semibold text-accent hover:underline">{d.pro || prof?.pro ? x.proManage : x.proCta}</Link>
+              </div>
+            </div>
+          </Card>
           <Card>
             <CardHead title={t("accountTitle")} />
             <div className="px-5 pb-2">
@@ -290,15 +317,15 @@ function Pill({ tone, children }: { tone: "gold" | "emerald" | "line"; children:
 }
 function Stat({ label, value, sub, icon, tone = "emerald", loading }: { label: string; value: ReactNode; sub?: string; icon: ReactNode; tone?: "emerald" | "gold"; loading?: boolean }) {
   return (
-    <Card className="p-4 sm:p-5">
-      <div className="flex items-start justify-between gap-2">
-        <p className="text-[10.5px] font-bold uppercase tracking-wider text-muted">{label}</p>
+    <Card className="min-w-0 p-3 sm:p-5">
+      <div className="flex flex-col-reverse items-start gap-2 sm:flex-row sm:justify-between">
+        <p className="text-[10.5px] font-bold uppercase leading-tight tracking-wider text-muted [overflow-wrap:anywhere] rtl:tracking-normal">{label}</p>
         <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${tone === "gold" ? "bg-[#f6ecd2] text-[#8a6a2c] dark:bg-[#3a2f17] dark:text-[#e9cf99]" : "bg-accent-soft text-accent"}`}>{icon}</span>
       </div>
       {loading ? <div className="mt-3 grid gap-2"><Bone w="w-16" h="h-7" /><Bone w="w-20" h="h-3" /></div> : (
         <>
-          <p className="mt-2.5 font-display text-[26px] font-semibold leading-none tabular-nums text-ink">{value}</p>
-          {sub && <p className="mt-2 truncate text-[12px] text-muted">{sub}</p>}
+          <p className="mt-2.5 truncate font-display text-[21px] font-semibold leading-none tabular-nums text-ink sm:text-[26px]">{value}</p>
+          {sub && <p className="mt-1.5 truncate text-[11.5px] text-muted sm:text-[12px]">{sub}</p>}
         </>
       )}
     </Card>
@@ -306,7 +333,7 @@ function Stat({ label, value, sub, icon, tone = "emerald", loading }: { label: s
 }
 function TodayCell({ label, value, sub, loading, accent, small }: { label: string; value: string; sub?: string; loading?: boolean; accent?: boolean; small?: boolean }) {
   return (
-    <div className="bg-surface p-5">
+    <div className="min-w-0 bg-surface p-4 last:col-span-2 sm:p-5 sm:last:col-span-1">
       <p className="text-[10.5px] font-bold uppercase tracking-wider text-muted">{label}</p>
       {loading ? <div className="mt-3"><Bone w="w-20" h="h-6" /></div> : (
         <>
@@ -319,13 +346,13 @@ function TodayCell({ label, value, sub, loading, accent, small }: { label: strin
 }
 function Quick({ href, icon, label, badge, hint }: { href: string; icon: ReactNode; label: string; badge?: number | null; hint?: string }) {
   return (
-    <Link href={href} className="group relative flex items-center gap-2.5 rounded-xl border border-transparent p-2.5 sm:gap-3 sm:p-3 transition hover:border-line hover:bg-bg">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent transition group-hover:bg-accent group-hover:text-white">{icon}</span>
-      <span className="min-w-0">
-        <span className="block text-[13.5px] font-semibold leading-tight text-ink [overflow-wrap:anywhere]">{label}</span>
-        {hint && <span className="block truncate text-[11.5px] text-muted">{hint}</span>}
+    <Link href={href} className="group relative flex min-h-[88px] flex-col items-center justify-center gap-1.5 rounded-xl border border-transparent p-2 text-center transition hover:border-line hover:bg-bg">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-accent transition group-hover:bg-accent group-hover:text-white">{icon}</span>
+      <span className="min-w-0 max-w-full">
+        <span className="block text-[12.5px] font-semibold leading-tight text-ink [overflow-wrap:anywhere]">{label}</span>
+        {hint && <span className="block truncate text-[11px] text-muted">{hint}</span>}
       </span>
-      {badge ? <span className="ms-auto min-w-[20px] rounded-full border-[1.5px] border-[#E2C77F] bg-[rgb(196,43,52)] px-1.5 text-center text-[11px] font-bold leading-[17px] text-white">{badge > 99 ? "99+" : badge}</span> : null}
+      {badge ? <span className="absolute end-2 top-2 min-w-[20px] rounded-full border-[1.5px] border-[#E2C77F] bg-[rgb(196,43,52)] px-1.5 text-center text-[11px] font-bold leading-[17px] text-white">{badge > 99 ? "99+" : badge}</span> : null}
     </Link>
   );
 }

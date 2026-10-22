@@ -1,7 +1,10 @@
 import { Link } from "@/i18n/navigation";
 import { bioText, loadBioTexts, COUNTRIES_AR, COUNTRIES_DE, type ReciterBio } from "@/lib/reciters";
 import { starText } from "@/lib/starText";
+import { starLinksText } from "@/lib/starLinksText";
 import StarClaimWeb from "./StarClaimWeb";
+import JsonLd from "@/components/JsonLd";
+import { abs } from "@/lib/site";
 
 // Unclaimed star profile on the website (/talents/<reserved name>, owner 22.10.2026), the same content as the app's
 // StarProfileScreen: name, Arabic name, country, the short biography from the reciters data, the recitations in the
@@ -9,11 +12,23 @@ import StarClaimWeb from "./StarClaimWeb";
 // impersonation); no posts, messages or follower counts. "Is this you?" opens the claim form.
 export default async function StarProfileWeb({ locale, username, reciter }: { locale: string; username: string; reciter: ReciterBio }) {
   const s = starText(locale);
+  const sl = starLinksText(locale);
   const bio = bioText(reciter, locale, await loadBioTexts(locale));
   const country = locale === "de" ? COUNTRIES_DE[reciter.country] ?? reciter.country : locale === "ar" ? COUNTRIES_AR[reciter.country] ?? reciter.country : reciter.country;
   const life = reciter.born || reciter.died ? `${reciter.born ?? "?"}${reciter.died ? ` – ${reciter.died}` : ""}` : "";
+  const url = abs(`/${locale}/talents/${username}`);
+  // ProfilePage about the reciter; "about" points to the reciter page, the full biography (no sameAs: the data holds no
+  // official channels)
+  const ld = [
+    { "@context": "https://schema.org", "@type": "ProfilePage", url, inLanguage: locale, mainEntity: { "@type": "Person", name: reciter.name, alternateName: [reciter.arabic, `@${username}`], nationality: reciter.country, ...(reciter.born ? { birthDate: reciter.born } : {}), ...(reciter.died ? { deathDate: reciter.died } : {}), description: bio.short, url: abs(`/${locale}/reciters/${reciter.slug}`) } },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Quran Talents", item: abs(`/${locale}/talents`) },
+      { "@type": "ListItem", position: 2, name: reciter.name, item: url },
+    ] },
+  ];
   return (
     <div>
+      <JsonLd data={ld} />
       <section className="stage girih relative overflow-hidden text-[#eef0f3]">
         <div className="relative mx-auto max-w-2xl px-5 pb-12 pt-10 text-center sm:pt-14">
           <span className="mx-auto grid h-28 w-28 place-items-center rounded-full bg-[rgb(8,58,44)] ring-2 ring-[rgb(var(--gold))]/70">
@@ -26,21 +41,24 @@ export default async function StarProfileWeb({ locale, username, reciter }: { lo
             <svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4 shrink-0"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.8" /><path d="M12 7.5v5.5M12 16.2v.3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             {s.label}
           </p>
-          <dl className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-2 text-[14px]">
-            <div><dt className="text-white/55">{s.country}</dt><dd className="font-semibold">{country}</dd></div>
-            {life ? <div><dt className="text-white/55">&nbsp;</dt><dd className="font-semibold" dir="ltr">{life}</dd></div> : null}
+          {/* facts with a label each, in a tidy grid (owner 22.10.2026: "1976" stood there without a label) */}
+          <dl className={`mx-auto mt-6 grid max-w-sm gap-2 text-[14px] ${life ? "grid-cols-2" : "grid-cols-1"}`}>
+            <div className="rounded-xl border border-white/15 bg-white/[0.06] px-3 py-2.5"><dt className="text-[12px] uppercase tracking-wide text-white/55 rtl:tracking-normal">{s.country}</dt><dd className="mt-0.5 font-semibold">{country}</dd></div>
+            {life ? <div className="rounded-xl border border-white/15 bg-white/[0.06] px-3 py-2.5"><dt className="text-[12px] uppercase tracking-wide text-white/55 rtl:tracking-normal">{reciter.died ? sl.life : sl.born}</dt><dd className="mt-0.5 font-semibold" dir="ltr">{life}</dd></div> : null}
           </dl>
+          <Link href={`/reciters/${reciter.slug}`} className="btn-gold mt-6 inline-flex h-12 items-center gap-2 rounded-full px-6 text-[15px] font-bold">
+            <svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>{sl.reciterProfile}
+          </Link>
         </div>
       </section>
       <div className="mx-auto grid max-w-2xl gap-5 px-5 py-8">
         <p className="text-[17px] leading-relaxed">{bio.short}</p>
         <div className="flex flex-wrap gap-3">
           {reciter.playerSlug ? (
-            <Link href={`/surah/1?reciter=${reciter.playerSlug}`} className="btn-gold inline-flex h-12 items-center gap-2 rounded-full px-6 text-[15px] font-bold">
+            <Link href={`/surah/1?reciter=${reciter.playerSlug}`} className="inline-flex h-12 items-center gap-2 rounded-full border border-line px-6 text-[15px] font-bold hover:bg-bg">
               <svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>{s.listen}
             </Link>
           ) : null}
-          <Link href={`/reciters/${reciter.slug}`} className="inline-flex h-12 items-center rounded-full border border-line px-6 text-[15px] font-semibold hover:bg-bg">{s.biography}</Link>
         </div>
         <p className="text-[13.5px] leading-relaxed text-muted">{s.labelNote}</p>
         <StarClaimWeb locale={locale} username={username} died={!!reciter.died} />
