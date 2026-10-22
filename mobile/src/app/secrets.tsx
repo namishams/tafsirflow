@@ -6,6 +6,9 @@ import { getResources, getVerseByKey, translationFor } from "@/lib/quran";
 import { MORE_GROUPS, SECTIONS, secretsContent, type SecretsContent, type SectionId, type Verdict } from "@/web/secrets/content";
 import { COUNTS } from "@/web/secrets/counts";
 import { missingRefs, refSegments } from "@/web/secrets/refs";
+import { bundledVerses } from "@/web/secrets/scripture";
+import { HADITH_API_NAME, hadithWording } from "@/web/secrets/hadith";
+import { cachedJSON } from "@/features/hadith/cache";
 import { ArchWindow, Corners, HeroKicker, HeroLead, HeroTitle, IllumFrame, IslBreak, IslCard, IslH2, IslHero, IslamNum, Marble, Rain, RefChip, StageBackground, StarMark, useSaw } from "@/features/library/art";
 import { FramedQuote } from "@/features/library/markdown";
 import { ArchPanel, GoldPill, MoreTiles } from "@/features/library/ui";
@@ -17,8 +20,11 @@ import { WordCounter } from "@/features/library/WordCounter";
 
 // /secrets – "Secrets of the Quran": table of contents, verified counts, popular claims checked (verdict legend), facts
 // and more secrets with tappable verse references, what is promised to those who read the Quran (Arabic and the
-// translation from Quran.com), places of peace, and onward to the Shams Method and the reader
-// (website: src/app/[locale]/(app)/secrets/page.tsx; texts from src/lib/secrets and src/lib/pagecontent/<lang>/secrets.ts)
+// translation from Quran.com, its snapshots while it cannot be reached), places of peace, and onward to the Shams Method
+// and the reader (website: src/app/[locale]/(app)/secrets/page.tsx; texts from src/lib/secrets and
+// src/lib/pagecontent/<lang>/secrets.ts). No Quran or hadith wording is typed (BLUEPRINT §4): verse tokens are resolved
+// by secretsContent(), the hadith quotes come from hadith-api where it has the reader's language (web/secrets/hadith.ts,
+// kept on the device once fetched), otherwise their own-words summary is shown.
 
 type ViewT = ComponentRef<typeof View>;
 type VerseText = { ar: string; tr: string };
@@ -43,6 +49,21 @@ async function translatorOf(lang: string): Promise<string> {
     const t = r.translations.find((x) => x.id === id);
     return t ? t.author_name || t.name : "";
   } catch { return ""; }
+}
+
+const hadithJSON = (url: string) => cachedJSON<unknown>(`secrets-${url.replace(/^https?:\/\//, "")}`, url);
+/** the wording of each hadith quote from hadith-api, null where there is none in this language or it cannot be loaded
+ *  (then the summary stays); undefined while loading */
+function useHadithWording(refs: (string | undefined)[], lang: string): (string | null | undefined)[] {
+  const key = `${lang}|${refs.join(",")}`;
+  const [st, setSt] = useState<{ key: string; v: (string | null)[] } | null>(null);
+  useEffect(() => {
+    let alive = true;
+    Promise.all(refs.map((r) => (r ? hadithWording(r, lang, hadithJSON).catch(() => null) : Promise.resolve(null))))
+      .then((v) => { if (alive) setSt({ key, v }); });
+    return () => { alive = false; };
+  }, [key]); // eslint-disable-line react-hooks/exhaustive-deps
+  return st && st.key === key ? st.v : refs.map(() => undefined);
 }
 
 function badge(isl: Isl, v: Verdict) {
@@ -93,6 +114,8 @@ function Secrets({ c, en, lang }: { c: SecretsContent; en: SecretsContent; lang:
   const [verses, setVerses] = useState<VerseText[]>([]);
   const [translator, setTranslator] = useState("");
   const [word, setWord] = useState<string | null>(null);
+  const said = useHadithWording([...c.hadith.map((h) => h.ref), c.wealthHadith.ref], lang);
+  const wealthSaid = said[c.hadith.length];
   const scrollY = useRef(0);
   const anchors: Anchors = Object.fromEntries(SECTIONS.map((id) => [id, useRef<ViewT>(null)])) as Anchors; // eslint-disable-line react-hooks/rules-of-hooks
   useEffect(() => {
@@ -244,7 +267,10 @@ function Secrets({ c, en, lang }: { c: SecretsContent; en: SecretsContent; lang:
           <IslH2 size={30}>{c.readTitle}</IslH2>
           <Text style={lead}>{c.readLead}</Text>
           <View style={{ marginTop: 40 }}>
-            {grid(c.hadith, cardCols >= 2 ? 2 : 1, (h) => <FramedQuote size={17 / 1.16} cite={h.src} style={{ marginTop: 0, marginBottom: 0, flex: 1 }}>{sw(h.text)}</FramedQuote>, 40)}
+            {grid(c.hadith, cardCols >= 2 ? 2 : 1, (h, i) => {
+              const w = said[i];
+              return <FramedQuote size={17 / 1.16} cite={w ? `${h.src} · ${HADITH_API_NAME}` : h.src} style={{ marginTop: 0, marginBottom: 0, flex: 1 }}>{w === undefined && h.ref ? "" : sw(w ?? h.text)}</FramedQuote>;
+            }, 40)}
           </View>
         </View>
 
@@ -253,9 +279,12 @@ function Secrets({ c, en, lang }: { c: SecretsContent; en: SecretsContent; lang:
           <Text style={lead}>{c.wealthLead}</Text>
           <View style={{ marginTop: 32 }}>
             {grid(c.promises, cardCols >= 2 ? 2 : 1, (p, i) => {
-              const v = verses[i] ?? { ar: "", tr: "" };
-              // the translation from Quran.com; our rendering of the meaning only while it is missing (Arabic: the wording itself)
-              const text = lang === "ar" ? (v.ar ? "" : p.text) : v.tr || p.text;
+              // the verses from Quran.com, else from its snapshots; Arabic shows the wording only
+              const live = verses[i] ?? { ar: "", tr: "" };
+              const b = bundledVerses(p.ref, lang);
+              const v = { ar: live.ar || b.ar, tr: live.tr || b.tr };
+              const text = lang === "ar" ? "" : v.tr;
+              const trName = live.tr ? translator : b.name;
               return (
                 <IslCard fill style={{ padding: 16 }}>
                   <View style={{ flexDirection: "row", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
@@ -269,7 +298,7 @@ function Secrets({ c, en, lang }: { c: SecretsContent; en: SecretsContent; lang:
                   ) : null}
                   {text ? <Text style={{ marginTop: 12, fontFamily: FONT.regular, fontSize: 15, lineHeight: 24.4, color: isl.muted }}>{text}</Text> : null}
                   <View style={{ flex: 1 }} />
-                  {v.tr && lang !== "ar" && translator ? <Text style={{ marginTop: 12, fontFamily: FONT.semibold, fontSize: 11, color: isl.a("gold", 0.8) }}>{translator}</Text> : null}
+                  {v.tr && lang !== "ar" && trName ? <Text style={{ marginTop: 12, fontFamily: FONT.semibold, fontSize: 11, color: isl.a("gold", 0.8) }}>{trName}</Text> : null}
                 </IslCard>
               );
             })}
@@ -277,8 +306,8 @@ function Secrets({ c, en, lang }: { c: SecretsContent; en: SecretsContent; lang:
           <Text style={{ marginTop: 32, fontFamily: FONT.regular, fontSize: 16, lineHeight: 26, color: isl.ink, maxWidth: textW }}>{c.wealthNote}</Text>
           <IslCard style={{ marginTop: 40, paddingHorizontal: 24, paddingVertical: 40, alignItems: "center" }}>
             <Corners />
-            <Text style={{ fontFamily: SERIF, fontSize: 21, lineHeight: 34, color: isl.head, textAlign: "center", maxWidth: textW }}>{sw(c.wealthHadith.text)}</Text>
-            <Text style={{ ...small, fontSize: 12, marginTop: 12, textAlign: "center" }}>{c.wealthHadith.src}</Text>
+            <Text style={{ fontFamily: SERIF, fontSize: 21, lineHeight: 34, color: isl.head, textAlign: "center", maxWidth: textW }}>{wealthSaid === undefined && c.wealthHadith.ref ? "" : sw(wealthSaid ?? c.wealthHadith.text)}</Text>
+            <Text style={{ ...small, fontSize: 12, marginTop: 12, textAlign: "center" }}>{wealthSaid ? `${c.wealthHadith.src} · ${HADITH_API_NAME}` : c.wealthHadith.src}</Text>
           </IslCard>
         </View>
       </Marble>

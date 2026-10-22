@@ -9,6 +9,9 @@ import DonateCTA from "@/components/DonateCTA";
 import { MORE_GROUPS, SECTIONS, secretsContent, type Verdict } from "@/lib/secrets/content";
 import { COUNTS } from "@/lib/secrets/counts";
 import { missingRefs, refPath, refSegments } from "@/lib/secrets/refs";
+import { bundledVerses } from "@/lib/secrets/scripture";
+import { HADITH_API_NAME, hadithWording } from "@/lib/secrets/hadith";
+import { DAY, getJson, memo, withTimeout } from "@/lib/feedWeb/net";
 import { getResources, getVerseByKey, pickTranslation } from "@/lib/quran";
 import { abs, pageMeta } from "@/lib/site";
 import { CalligraphyDraw } from "@/components/Ornaments";
@@ -21,7 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 // A reference like "71:10-12" from Quran.com (through our cache): the Uthmani wording and the translation in the
-// reader's language (none for Arabic); empty if it is not available, then the page shows its own rendering of the meaning
+// reader's language (none for Arabic); empty if it is not available, then the page shows the same verses from the
+// Quran.com snapshots (bundledVerses in lib/secrets/scripture.ts) – never a rendering of our own
 type VerseText = { ar: string; tr: string };
 async function verseOf(ref: string, locale: string, tid: number): Promise<VerseText> {
   const [s, range] = ref.split(":");
@@ -40,6 +44,17 @@ async function translationOf(locale: string): Promise<{ id: number; name: string
     const t = translations.find((x) => x.id === id);
     return { id, name: t ? t.author_name || t.name : "" };
   } catch { return { id: 20, name: "" }; }
+}
+
+// The hadith quotes ("read" and the wealth hadith) in the wording of hadith-api where it has the reader's language
+// (lib/secrets/hadith.ts, cached a week like the home page's hadith); null shows the item's own-words summary instead
+async function hadithJSON(url: string): Promise<unknown> {
+  const v = await memo(`secrets:${url}`, 7 * DAY, () => getJson<unknown>(url));
+  if (v === null) throw new Error("unavailable");
+  return v;
+}
+function wordingOf(ref: string | undefined, locale: string): Promise<string | null> {
+  return ref ? withTimeout(hadithWording(ref, locale, hadithJSON), 9000).catch(() => null) : Promise.resolve(null);
 }
 
 // text with its verse references as gold chips that open the reader
@@ -70,7 +85,11 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
   const c = await secretsContent(locale);
   const en = await secretsContent("en");
   const tr = await translationOf(locale);
-  const verses = await Promise.all(c.promises.map((p) => verseOf(p.ref, locale, tr.id)));
+  const [verses, said, wealthSaid] = await Promise.all([
+    Promise.all(c.promises.map((p) => verseOf(p.ref, locale, tr.id))),
+    Promise.all(c.hadith.map((h) => wordingOf(h.ref, locale))),
+    wordingOf(c.wealthHadith.ref, locale),
+  ]);
   const ld = { "@context": "https://schema.org", "@type": "FAQPage", url: abs(`/${locale}/secrets`), inLanguage: locale, mainEntity: c.claims.map((x) => ({ "@type": "Question", name: x.q, acceptedAnswer: { "@type": "Answer", text: x.a } })) };
   const more = c.more ?? [];
   let n = 0;
@@ -207,8 +226,8 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
               <li key={h.src} className={c.hadith.length % 2 && i === c.hadith.length - 1 ? "sm:col-span-2" : ""}>
                 <figure className="isl-quote !my-0 h-full">
                   <span className="isl-quote-star" aria-hidden>{STAR}</span>
-                  <blockquote className="text-[17px]">{saw(h.text)}</blockquote>
-                  <figcaption><span className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(var(--isl-gold))] rtl:tracking-normal">{h.src}</span></figcaption>
+                  <blockquote className="text-[17px]">{saw(said[i] ?? h.text)}</blockquote>
+                  <figcaption><span className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(var(--isl-gold))] rtl:tracking-normal">{said[i] ? `${h.src} · ${HADITH_API_NAME}` : h.src}</span></figcaption>
                 </figure>
               </li>
             ))}
@@ -220,9 +239,11 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
           <p className="mt-3 text-[16px] leading-relaxed text-ink/75">{c.wealthLead}</p>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {c.promises.map((p, i) => {
-              const v = verses[i];
-              // the translation from Quran.com; our rendering of the meaning only if it is missing (Arabic: the wording itself)
-              const text = locale === "ar" ? (v.ar ? "" : p.text) : v.tr || p.text;
+              // the verses from Quran.com, else from its snapshots; Arabic shows the wording only
+              const b = bundledVerses(p.ref, locale);
+              const v = { ar: verses[i].ar || b.ar, tr: verses[i].tr || b.tr };
+              const text = locale === "ar" ? "" : v.tr;
+              const trName = verses[i].tr ? tr.name : b.name;
               return (
                 <li key={p.ref} className="isl-card flex flex-col p-4 sm:p-5">
                   <div className="flex items-start justify-between gap-3">
@@ -231,7 +252,7 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
                   </div>
                   {v.ar && <p className="font-arabic mt-4 rounded-xl border border-[rgb(var(--isl-gold-soft))]/35 bg-[rgb(var(--isl-gold-soft))]/[0.07] px-3 py-2 text-center text-[21px] leading-[2.1] text-[rgb(var(--isl-head))]" dir="rtl" lang="ar">{v.ar}</p>}
                   {text && <p className="mt-3 text-[15px] leading-relaxed text-muted">{text}</p>}
-                  {v.tr && locale !== "ar" && tr.name && <p className="mt-auto pt-3 text-[11px] font-semibold text-[rgb(var(--isl-gold))]/80">{tr.name}</p>}
+                  {v.tr && locale !== "ar" && trName && <p className="mt-auto pt-3 text-[11px] font-semibold text-[rgb(var(--isl-gold))]/80">{trName}</p>}
                 </li>
               );
             })}
@@ -239,8 +260,8 @@ export default async function SecretsPage({ params }: { params: Promise<{ locale
           <p className="mt-8 text-[16px] leading-relaxed">{c.wealthNote}</p>
           <figure className="isl-card relative mt-10 overflow-hidden px-6 py-10 text-center sm:px-12">
             <IslamCorners />
-            <blockquote className="isl-serif relative text-[21px] leading-relaxed text-[rgb(var(--isl-head))] sm:text-[24px]">{saw(c.wealthHadith.text)}</blockquote>
-            <figcaption className="relative mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(var(--isl-gold))] rtl:tracking-normal">{c.wealthHadith.src}</figcaption>
+            <blockquote className="isl-serif relative text-[21px] leading-relaxed text-[rgb(var(--isl-head))] sm:text-[24px]">{saw(wealthSaid ?? c.wealthHadith.text)}</blockquote>
+            <figcaption className="relative mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-[rgb(var(--isl-gold))] rtl:tracking-normal">{wealthSaid ? `${c.wealthHadith.src} · ${HADITH_API_NAME}` : c.wealthHadith.src}</figcaption>
           </figure>
         </section>
       </div>

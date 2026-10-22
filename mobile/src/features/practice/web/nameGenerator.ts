@@ -20,4 +20,3 @@ export function classicalName(n: BabyName, father: string) {
     arabic: arF ? `${n.ar} ${n.g === "b" ? "بن" : "بنت"} ${arF}` : null,
   };
 }
-export const ABD_HADITH_AR = "إِنَّ أَحَبَّ أَسْمَائِكُمْ إِلَى اللَّهِ عَبْدُ اللَّهِ وَعَبْدُ الرَّحْمَنِ";

@@ -3,8 +3,11 @@ import { guideText, type Guide, type GuideText } from "@/web/guides";
 import { secretsContent, type SecretsContent } from "@/web/secrets/content";
 import { aboutContent, type AboutContent } from "@/web/aboutContent";
 import { loadBioTexts, type BioTexts } from "@/web/reciters";
+import { chapterHadithRefs, fillChapterHadith, hadithQuoteKey, loadHadithTexts } from "@/web/islam/hadithQuote";
+import { sunniHadith } from "@/features/hadith/data";
 import { useLang } from "@/i18n";
 import { useAsyncValue } from "./motion";
+import { useEffect, useMemo, useState } from "react";
 
 // The website's own content modules (mirrored in src/web): German and English live in the chapter files themselves
 // (d.de / d.en, guide.title_de …), exactly as loadChapter() and guideText() return them on the website.
@@ -16,7 +19,29 @@ export function useChapters(): IslamChapter[] {
   const { lang } = useLang();
   const hit = chapters.get(lang);
   const loaded = useAsyncValue(() => (hit ? Promise.resolve(hit) : loadChapters(lang).then((cs) => { chapters.set(lang, cs); return cs; })), [lang]);
-  return hit ?? loaded ?? chapters.get("en")!;
+  return useHadithQuotes(hit ?? loaded ?? chapters.get("en")!);
+}
+
+// Hadith quotes in a chapter ({{hadith …}}, web/islam/hadithQuote.ts, as on the website) are filled in from the
+// published edition, loaded like every hadith of the app (features/hadith/data.ts, kept on the device). The chapter
+// shows at once; "…" stands in for the words until they are there (or while offline).
+const hadithTexts: Record<string, string> = {};
+function useHadithQuotes(cs: IslamChapter[]): IslamChapter[] {
+  const [got, setGot] = useState(0);
+  const missing = useMemo(() => cs.flatMap(chapterHadithRefs).filter((r) => !(hadithQuoteKey(r) in hadithTexts)), [cs, got]);
+  useEffect(() => {
+    if (!missing.length) return;
+    let alive = true;
+    loadHadithTexts(missing, sunniHadith).then((texts) => {
+      let any = false;
+      for (const [k, t] of Object.entries(texts)) if (t) { hadithTexts[k] = t; any = true; }
+      if (alive && any) setGot((n) => n + 1);
+    }).catch(() => undefined);
+    return () => { alive = false; };
+    // the same narrations are asked for again only when the chapters change (a failed one on the next visit)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cs]);
+  return useMemo(() => cs.map((c) => fillChapterHadith(c, hadithTexts)), [cs, got]);
 }
 export const guideOf = (g: Guide, lang: string): GuideText => guideText(g, lang);
 

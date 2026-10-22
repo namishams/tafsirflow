@@ -7,6 +7,8 @@ import Markdown, { mdHeadings } from "@/components/Markdown";
 import { MoreTiles } from "@/components/PosterTiles";
 import DonateCTA from "@/components/DonateCTA";
 import { ISLAM, islamDoc, islamUi, loadChapter, loadChapters, readingMinutes } from "@/lib/islam";
+import { withChapterHadith } from "@/lib/islam/hadithQuote";
+import { sunniHadith } from "@/lib/learn/journey/hadith";
 import { abs, pageMeta } from "@/lib/site";
 import { ArrowBack } from "@/components/Icons";
 import { CalligraphyDraw, Rosette } from "@/components/Ornaments";
@@ -31,7 +33,8 @@ export default async function IslamChapterPage({ params }: { params: Promise<{ l
   setRequestLocale(locale);
   const d = islamDoc(slug);
   if (!d) notFound();
-  const c = await loadChapter(d, locale);
+  // hadith quotes ({{hadith …}}) are filled in from the published edition, never typed (lib/islam/hadithQuote.ts)
+  const c = await withChapterHadith(await loadChapter(d, locale), sunniHadith);
   const u = await islamUi(locale);
   const all = await loadChapters(locale);
   const i = ISLAM.indexOf(d);

@@ -1861,7 +1861,7 @@
     "adab1": "Beginnen Sie mit dem Lob Allahs und dem Segen auf den Propheten ﷺ, dann bitten Sie. (at-Tirmidhi 3477, Abu Dawud 1481)",
     "adab2": "Beten Sie in der Gewissheit, dass Allah antwortet. (at-Tirmidhi 3479)",
     "adab3": "Haben Sie Geduld – sagen Sie nicht: Ich habe gebetet und wurde nicht erhört. (al-Bukhari 6340, Muslim 2735)",
-    "adab4": "Beten Sie für andere, ohne dass sie es wissen – ein Engel sagt: Und dir dasselbe. (Muslim 2732)",
+    "adab4": "Beten Sie für andere, ohne dass sie es wissen. Sinngemäß lehrte der Prophet ﷺ, dass dann ein Engel dasselbe Gute für Sie erbittet. (Muslim 2732)",
     "t_worry": "Sorgen und Angst",
     "t_illness": "Krankheit und Heilung",
     "t_knowledge": "Lernen und Prüfungen",
@@ -1977,12 +1977,14 @@
     "s1Src": "Der Prophet ﷺ · Muslim 1631",
     "s2": "Die Sadaqa mindert den Besitz nicht.",
     "s2Src": "Der Prophet ﷺ · Muslim 2588",
-    "s3": "Der Beste unter euch ist, wer den Quran lernt und ihn lehrt.",
+    "s3": "Sinngemäß: Die Besten sind die, die den Quran lernen und ihn anderen beibringen.",
     "s3Src": "Der Prophet ﷺ · al-Bukhari 5027",
     "s4": "Wer zu etwas Gutem hinführt, erhält den gleichen Lohn wie der, der es tut.",
     "s4Src": "Der Prophet ﷺ · Muslim 1893",
-    "s5": "Allah sagt: Gib, o Sohn Adams, so wird dir gegeben.",
-    "s5Src": "Der Prophet ﷺ · al-Bukhari 5352, Muslim 993"
+    "s5": "Sinngemäß: Allah sagt dem Menschen zu, dass Er ihm gibt, wenn er selbst für andere ausgibt.",
+    "s5Src": "Der Prophet ﷺ · al-Bukhari 5352, Muslim 993",
+    "quote": "„{q}“",
+    "s5Quote": "Allah sagt: „{q}“"
   },
   "premium": {
     "kicker": "Quran Masterclass Pro",

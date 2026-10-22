@@ -14,7 +14,8 @@ import type { QSubject } from "@/features/qbank/types";
 import { CURRICULUM, FACULTIES, DEPARTMENTS, SUBJECT_PLACE, SUBJECTS, hrefOf, stateOf, timetable, titleOf, type FacultyId, type SubjectId } from "@/features/school/model";
 import { schoolText } from "@/features/school/texts";
 import { tajweedFor } from "@/web/tajweed";
-import { EXTRA as RP_EXTRA } from "@/features/reciter-path/content2";
+import { EXTRA as RP_EXTRA, resolveQuotes, type ExtraContent as RpExtra } from "@/features/reciter-path/content2";
+import { moduleText } from "@/i18n/app";
 import { VOCAB_DECKS } from "@/web/vocab";
 import { meaning as vocabMeaning } from "@/web/vocabI18n";
 import { LESSONS as AR_LESSONS } from "@/features/arabic-lang/curriculum";
@@ -260,7 +261,9 @@ const tajweed: Builder = (lang, kt) => tajweedFor(lang).flatMap((l) => l.example
 })));
 
 const maqam: Builder = (lang, kt) => {
-  const ex = RP_EXTRA[cl3(lang)] ?? RP_EXTRA.en;
+  // the same lookup as the Reciter Path (useContent in reciter-path/content.ts): the learner's language (inline, else
+  // "reciterPathExtra" in the language file), else English; verse tokens become the words from the Quran data
+  const ex = resolveQuotes(moduleText("reciterPathExtra", RP_EXTRA as { en: RpExtra } & Record<string, RpExtra | undefined>, lang));
   const out: KnowItem[] = [];
   for (const [unit, verse] of [["7-1", "1:1"], ["7-2", "93:1"]] as const) {
     const u = ex.units[unit];

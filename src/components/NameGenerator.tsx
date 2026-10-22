@@ -6,9 +6,10 @@ import { readJSON, writeJSON } from "@/lib/storage";
 import { fmtHijri, hijriMonthName, toHijri } from "@/lib/hijri";
 import {
   AR_ALPHABET, COUNTS, NAMES, NAME_BY_KEY, ORIGIN_FILTERS, ORIGIN_LABEL, THEMES, THEME_LABEL,
-  findName, hasArabic, langOf, latinOf, lengthOf, letterOf, matchesOrigin, meaningOf, namesText, normArabic, normLatin,
-  type BabyName, type Gender, type Lang, type OriginFilter, type Theme,
+  findName, hasArabic, langOf, latinOf, lengthOf, letterOf, loadAbdHadith, matchesOrigin, meaningOf, namesText, normArabic, normLatin,
+  type AbdHadith, type BabyName, type Gender, type Lang, type OriginFilter, type Theme,
 } from "@/lib/names";
+import { sunniHadith } from "@/lib/learn/journey/hadith";
 import { MONTH_LINKS, bestPool, pickRandom, rankNames, verseFor, type LetterPref, type OriginPick, type Scored } from "@/lib/names/rules";
 import { Rosette } from "./Ornaments";
 import DonateCTA from "./DonateCTA";
@@ -88,7 +89,7 @@ export default function NameGenerator() {
 
       <FavList t={t} l={l} locale={locale} favs={favs} />
       <Loved t={t} l={l} loved={loved} />
-      <Notes t={t} l={l} />
+      <Notes t={t} l={l} locale={locale} />
       {!(tab === "finder" && hasResult) && <DonateCTA variant="slim" className="mt-10" />}
     </div>
   );
@@ -556,15 +557,34 @@ function Loved({ t, l, loved }: { t: Tx; l: Lang; loved: { id: string; n: number
   );
 }
 
-function Notes({ t, l }: { t: Tx; l: Lang }) {
+// the hadith on the most beloved names from the published hadith editions (lib/names: loadAbdHadith, as in the app);
+// undefined while it loads; after 3.5 s without it the notes go on without it (the summary, the words once they come)
+function useAbdHadith(locale: string): AbdHadith | undefined {
+  const [h, setH] = useState<AbdHadith | undefined>(undefined);
+  const [late, setLate] = useState(false);
+  useEffect(() => {
+    let live = true;
+    setH(undefined); setLate(false);
+    const timer = setTimeout(() => { if (live) setLate(true); }, 3500);
+    void loadAbdHadith(sunniHadith, locale).then((r) => { if (live) setH(r); });
+    return () => { live = false; clearTimeout(timer); };
+  }, [locale]);
+  return h ?? (late ? { arabic: null, words: null } : undefined);
+}
+
+function Notes({ t, l, locale }: { t: Tx; l: Lang; locale: string }) {
   const ar = l === "ar";
+  const abd = useAbdHadith(locale);
+  // quoted only as a published edition words it; without one in this language, the summary in our own words (abdSum)
+  const quoted = ar ? abd?.arabic : abd?.words;
   return (
     <section className="mt-12 grid gap-4 md:grid-cols-2">
       <div className="callout rounded-lg p-5">
         <h2 className="font-display text-xl">{t("abdTitle")}</h2>
-        <p className="mt-2 text-[15px] leading-relaxed">{t("abdText")}</p>
-        {!ar && <p className="font-arabic mt-3 text-[22px] leading-[1.9] text-gold" dir="rtl" lang="ar">إِنَّ أَحَبَّ أَسْمَائِكُمْ إِلَى اللَّهِ عَبْدُ اللَّهِ وَعَبْدُ الرَّحْمَنِ</p>}
-        <p className={`mt-2 text-[15px] leading-relaxed ${ar ? "font-arabic text-[22px] text-gold" : "italic"}`}>{t("abdHadith")}</p>
+        <p className="mt-2 text-[15px] leading-relaxed">{t("abdText")}{quoted ? ` ${t("abdSaid")}` : ""}</p>
+        {!ar && abd?.arabic && <p className="font-arabic mt-3 text-[22px] leading-[1.9] text-gold" dir="rtl" lang="ar">{abd.arabic}</p>}
+        {quoted ? <p className={`mt-2 text-[15px] leading-relaxed ${ar ? "font-arabic text-[22px] text-gold" : "italic"}`}>{t("abdQuote", { w: quoted })}</p>
+          : abd && !ar ? <p className="mt-2 text-[15px] leading-relaxed italic">{t("abdSum")}</p> : null}
         <p className="mt-1 text-xs font-semibold text-muted">{t("abdSrc")}</p>
       </div>
       <div className="callout rounded-lg p-5">

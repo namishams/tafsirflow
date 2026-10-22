@@ -205,9 +205,11 @@ const write = (name, body) => writeFileSync(join(out, `${name}.ts`), `${HEAD}${b
 // geometry of the practice art (arch window, stars)
 write("practiceArt", decls(join(site, "src", "components", "art", "PracticeArt.tsx"), ["archPath", "starPath"]));
 // /wudu page: texts, the hadith on the virtue of wudu with their sources, further links
-// (VIRTUE_VERSE: the end of 2:222 from the Quran data, used in every language's list of virtues)
+// (VIRTUE_VERSE: the end of 2:222 from the Quran data, used in every language's list of virtues; PURITY_AR, WUDU_AR and
+// the {{hadith …}} quotes in the texts: words of the published hadith editions, which the app loads and fills in with
+// virtueHadith / shownVirtues, as the website does)
 // (C is typed Record<Lang, Content>: Content comes along, Lang from the app's src/web)
-write("wuduPage", decls(page("wudu"), ["Virtue", "VIRTUE_VERSE", "Content", "C"]));
+write("wuduPage", decls(page("wudu"), ["Virtue", "VIRTUE_VERSE", "PURITY_AR", "WUDU_AR", "QUOTE", "OPENING_MARKS", "fillQuotes", "virtueHadith", "shownVirtues", "Content", "C"]));
 // /salah page
 write("salahPage", decls(page("salah"), ["Content", "C"]));
 // The trainers' language type (Lang) and the prayer trainer's text type (Tx, now L2) moved from the components into
@@ -225,12 +227,9 @@ export type { Lang };`
 write("prayerBoard", decls(comp("PrayerBoard"), ["AR_NAME"]));
 // sunnah duas: reading-mode texts, the Arabic names of the hadith collections for Arabic readers
 write("sunnahDuas", decls(comp("SunnahDuas"), ["UiText", "UI", "SRC_AR", "srcAr"]));
-// name finder: the "father" line of a classical name, the Hijri month of a birth date, the hadith on the most beloved names
-{
-  const ar = arabicJsx(comp("NameGenerator"));
-  if (ar.length !== 1) throw new Error(`NameGenerator: expected one Arabic text, found ${ar.length}`);
-  write("nameGenerator", `${decls(comp("NameGenerator"), ["FAV_KEY", "hijriOfInput", "classicalName"])}\nexport const ABD_HADITH_AR = ${JSON.stringify(ar[0])};`);
-}
+// name finder: the "father" line of a classical name, the Hijri month of a birth date (the hadith on the most beloved
+// names is loaded from the hadith editions by lib/names, loadAbdHadith, which sync-web.mjs mirrors: nothing to copy)
+write("nameGenerator", decls(comp("NameGenerator"), ["FAV_KEY", "hijriOfInput", "classicalName"]));
 // dua generator: the hadith whose etiquette the personal dua follows (named in the head comment of lib/duaGenerator.ts)
 {
   const src = readFileSync(join(site, "src", "lib", "duaGenerator.ts"), "utf8");

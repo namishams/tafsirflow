@@ -1859,7 +1859,7 @@
     "adab1": "Önce Allah'a hamd edin ve Peygamber ﷺ'e salavat getirin, sonra isteyin. (Tirmizî 3477, Ebû Dâvûd 1481)",
     "adab2": "Allah'ın kabul edeceğine yürekten inanarak dua edin. (Tirmizî 3479)",
     "adab3": "Sabırlı olun – “dua ettim ama kabul olmadı” demeyin. (Buhârî 6340, Müslim 2735)",
-    "adab4": "Başkaları için yokluklarında dua edin – bir melek “sana da aynısı olsun” der. (Müslim 2732)",
+    "adab4": "Başkaları için, onlar yokken dua edin. Özetle: Peygamber ﷺ, o zaman bir meleğin aynı hayrı sizin için de dilediğini bildirmiştir. (Müslim 2732)",
     "t_worry": "Dert ve kaygı",
     "t_illness": "Hastalık ve şifa",
     "t_knowledge": "Öğrenim ve sınav",
@@ -1975,12 +1975,14 @@
     "s1Src": "Peygamber ﷺ · Müslim 1631",
     "s2": "Sadaka malı eksiltmez.",
     "s2Src": "Peygamber ﷺ · Müslim 2588",
-    "s3": "Sizin en hayırlınız, Kur'an'ı öğrenen ve öğretendir.",
+    "s3": "Özetle: İnsanların en hayırlısı, Kur'an'ı öğrenen ve başkalarına öğretendir.",
     "s3Src": "Peygamber ﷺ · Buhârî 5027",
     "s4": "Kim bir hayra vesile olursa, onu yapan kimsenin sevabı gibi sevap alır.",
     "s4Src": "Peygamber ﷺ · Müslim 1893",
-    "s5": "Allah şöyle buyurur: Ey Âdemoğlu, infak et ki Ben de sana infak edeyim.",
-    "s5Src": "Peygamber ﷺ · Buhârî 5352, Müslim 993"
+    "s5": "Özetle: Allah, başkaları için harcayana Kendisinin de ona vereceğini vaat eder.",
+    "s5Src": "Peygamber ﷺ · Buhârî 5352, Müslim 993",
+    "quote": "“{q}”",
+    "s5Quote": "Allah şöyle buyurur: “{q}”"
   },
   "premium": {
     "kicker": "Quran Masterclass Pro",

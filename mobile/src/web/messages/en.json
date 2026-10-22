@@ -1861,7 +1861,7 @@
     "adab1": "Begin with praise of Allah and blessings on the Prophet ﷺ, then ask. (at-Tirmidhi 3477, Abu Dawud 1481)",
     "adab2": "Pray with certainty that Allah will answer. (at-Tirmidhi 3479)",
     "adab3": "Be patient – do not say: I prayed and was not answered. (al-Bukhari 6340, Muslim 2735)",
-    "adab4": "Pray for others in their absence – an angel says: and for you the same. (Muslim 2732)",
+    "adab4": "Pray for others in their absence. In essence, the Prophet ﷺ taught that an angel then asks the same good for you. (Muslim 2732)",
     "t_worry": "Worry and anxiety",
     "t_illness": "Illness and healing",
     "t_knowledge": "Study and exams",
@@ -1977,12 +1977,14 @@
     "s1Src": "The Prophet ﷺ · Muslim 1631",
     "s2": "Charity does not decrease wealth.",
     "s2Src": "The Prophet ﷺ · Muslim 2588",
-    "s3": "The best of you are those who learn the Quran and teach it.",
+    "s3": "In essence: the best people are those who learn the Quran and teach it to others.",
     "s3Src": "The Prophet ﷺ · al-Bukhari 5027",
     "s4": "Whoever guides someone to good has a reward like the one who does it.",
     "s4Src": "The Prophet ﷺ · Muslim 1893",
-    "s5": "Allah says: Spend, O son of Adam, and I will spend on you.",
-    "s5Src": "The Prophet ﷺ · al-Bukhari 5352, Muslim 993"
+    "s5": "In essence: Allah promises that whoever spends on others, He will spend on him.",
+    "s5Src": "The Prophet ﷺ · al-Bukhari 5352, Muslim 993",
+    "quote": "“{q}”",
+    "s5Quote": "Allah says: “{q}”"
   },
   "premium": {
     "kicker": "Quran Masterclass Pro",

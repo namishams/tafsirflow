@@ -1859,7 +1859,7 @@
     "adab1": "Mulakan dengan memuji Allah dan berselawat ke atas Nabi ﷺ, kemudian pohonlah. (at-Tirmizi 3477, Abu Dawud 1481)",
     "adab2": "Berdoalah dengan yakin bahawa Allah akan memakbulkannya. (at-Tirmizi 3479)",
     "adab3": "Bersabarlah – jangan berkata: aku sudah berdoa tetapi tidak dimakbulkan. (al-Bukhari 6340, Muslim 2735)",
-    "adab4": "Doakan orang lain di belakang mereka – malaikat berkata: dan untukmu juga seumpamanya. (Muslim 2732)",
+    "adab4": "Doakan orang lain di belakang mereka. Secara ringkas, Nabi ﷺ mengajarkan bahawa malaikat lalu memohon kebaikan yang sama untuk anda. (Muslim 2732)",
     "t_worry": "Kerisauan dan kebimbangan",
     "t_illness": "Sakit dan penyembuhan",
     "t_knowledge": "Belajar dan peperiksaan",
@@ -1975,12 +1975,14 @@
     "s1Src": "Nabi ﷺ · Muslim 1631",
     "s2": "Sedekah tidak mengurangkan harta.",
     "s2Src": "Nabi ﷺ · Muslim 2588",
-    "s3": "Sebaik-baik kamu ialah orang yang mempelajari Quran dan mengajarkannya.",
+    "s3": "Secara ringkas: orang terbaik ialah yang mempelajari Quran dan mengajarkannya kepada orang lain.",
     "s3Src": "Nabi ﷺ · al-Bukhari 5027",
     "s4": "Sesiapa yang menunjukkan kepada kebaikan, dia mendapat pahala seperti pahala orang yang melakukannya.",
     "s4Src": "Nabi ﷺ · Muslim 1893",
-    "s5": "Allah berfirman: Berinfaklah, wahai anak Adam, nescaya Aku akan berinfak kepadamu.",
-    "s5Src": "Nabi ﷺ · al-Bukhari 5352, Muslim 993"
+    "s5": "Secara ringkas: Allah menjanjikan bahawa sesiapa yang berinfak untuk orang lain, Allah akan memberi kepadanya.",
+    "s5Src": "Nabi ﷺ · al-Bukhari 5352, Muslim 993",
+    "quote": "“{q}”",
+    "s5Quote": "Allah berfirman: “{q}”"
   },
   "premium": {
     "kicker": "Quran Masterclass Pro",

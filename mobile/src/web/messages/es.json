@@ -1859,7 +1859,7 @@
     "adab1": "Comience con la alabanza a Allah y las bendiciones sobre el Profeta ﷺ, y luego pida. (at-Tirmidhi 3477, Abu Dawud 1481)",
     "adab2": "Haga dua con la certeza de que Allah responderá. (at-Tirmidhi 3479)",
     "adab3": "Tenga paciencia – no diga: hice dua y no me respondieron. (al-Bujari 6340, Muslim 2735)",
-    "adab4": "Haga dua por los demás en su ausencia – un ángel dice: y para ti lo mismo. (Muslim 2732)",
+    "adab4": "Haga dua por los demás en su ausencia. En esencia, el Profeta ﷺ enseñó que entonces un ángel pide el mismo bien para usted. (Muslim 2732)",
     "t_worry": "Preocupación y ansiedad",
     "t_illness": "Enfermedad y sanación",
     "t_knowledge": "Estudios y exámenes",
@@ -1975,12 +1975,14 @@
     "s1Src": "El Profeta ﷺ · Muslim 1631",
     "s2": "La caridad no disminuye la riqueza.",
     "s2Src": "El Profeta ﷺ · Muslim 2588",
-    "s3": "Los mejores de vosotros son quienes aprenden el Corán y lo enseñan.",
+    "s3": "En esencia: los mejores son quienes aprenden el Corán y lo enseñan a otros.",
     "s3Src": "El Profeta ﷺ · al-Bujari 5027",
     "s4": "Quien guía a alguien hacia el bien obtiene una recompensa semejante a la de quien lo hace.",
     "s4Src": "El Profeta ﷺ · Muslim 1893",
-    "s5": "Allah dice: Gasta, hijo de Adán, y Yo gastaré en ti.",
-    "s5Src": "El Profeta ﷺ · al-Bujari 5352, Muslim 993"
+    "s5": "En esencia: Allah promete dar a quien da a los demás.",
+    "s5Src": "El Profeta ﷺ · al-Bujari 5352, Muslim 993",
+    "quote": "«{q}»",
+    "s5Quote": "Allah dice: «{q}»"
   },
   "premium": {
     "kicker": "Quran Masterclass Pro",

@@ -4228,8 +4228,8 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} Jungennamen",
     girlsN: "{n} Mädchennamen",
     abdTitle: "Namen der Dienerschaft",
-    abdText: "Namen, die die Dienerschaft gegenüber Allah ausdrücken – „Abd“ mit einem Seiner schönen Namen – sind besonders geliebt. Der Prophet ﷺ sagte:",
-    abdHadith: "„Die liebsten eurer Namen bei Allah sind Abdullah und Abdurrahman.“",
+    abdText: "Namen, die die Dienerschaft gegenüber Allah ausdrücken – „Abd“ mit einem Seiner schönen Namen – sind besonders geliebt.",
+    abdSum: "Sinngemäß: Von allen Namen liebt Allah die Namen Abdullah und Abdurrahman am meisten.",
     abdSrc: "Muslim 2132",
     changeTitle: "Gute Namen statt schlechter",
     changeText: "Der Prophet ﷺ änderte Namen mit schlechter Bedeutung in gute: Eine Tochter Umars hieß ʿĀṣiya („die Ungehorsame“, عاصية – nicht zu verwechseln mit Āsiya, der Frau des Pharao), und er nannte sie Jamila („die Schöne“).",
@@ -4334,8 +4334,10 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} boys' names",
     girlsN: "{n} girls' names",
     abdTitle: "Names of servitude",
-    abdText: "Names that express servitude to Allah – “Abd” with one of His beautiful names – are especially beloved. The Prophet ﷺ said:",
-    abdHadith: "“The most beloved of your names to Allah are Abdullah and Abdurrahman.”",
+    abdText: "Names that express servitude to Allah – “Abd” with one of His beautiful names – are especially beloved.",
+    abdSaid: "The Prophet ﷺ said:",
+    abdQuote: "“{w}”",
+    abdSum: "In essence: of all names, Allah loves the names Abdullah and Abdurrahman most.",
     abdSrc: "Muslim 2132",
     changeTitle: "Good names instead of bad ones",
     changeText: "The Prophet ﷺ changed names with a bad meaning into good ones: a daughter of Umar was called ʿĀṣiya (“disobedient”, عاصية – not to be confused with Āsiya, the wife of Pharaoh), and he named her Jamila (“beautiful”).",
@@ -4440,11 +4442,12 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} اسمًا للبنين",
     girlsN: "{n} اسمًا للبنات",
     abdTitle: "أسماء العبودية",
-    abdText: "الأسماء التي تعبّر عن العبودية لله، أي «عبد» مع اسم من أسمائه الحسنى، محبوبة. قال رسول الله ﷺ:",
-    abdHadith: "«إِنَّ أَحَبَّ أَسْمَائِكُمْ إِلَى اللَّهِ عَبْدُ اللَّهِ وَعَبْدُ الرَّحْمَنِ»",
+    abdText: "الأسماء التي تعبّر عن العبودية لله، أي «عبد» مع اسم من أسمائه الحسنى، محبوبة.",
+    abdSaid: "قال رسول الله ﷺ:",
+    abdQuote: "«{w}»",
     abdSrc: "رواه مسلم 2132",
     changeTitle: "تغيير الاسم القبيح إلى الحسن",
-    changeText: "كان النبي ﷺ يغيّر الأسماء القبيحة إلى أسماء حسنة: كانت لعمر ابنة يقال لها «عاصية» (وليست آسية امرأة فرعون)، فسمّاها رسول الله ﷺ «جميلة».",
+    changeText: "كان النبي ﷺ يبدّل الأسماء ذات المعنى السيّئ بأسماء حسنة، ومن ذلك أن إحدى بنات عمر كان اسمها «عاصية» (وليست آسية امرأة فرعون)، فغيّر النبي ﷺ اسمها إلى «جميلة».",
     changeSrc: "رواه مسلم 2139",
     rulesTitle: "ما لا نقترحه أبدًا",
     rule1: "الأسماء الخاصة بالله تعالى، مثل الرحمن والخالق، فلا يُسمّى بها إلا مع «عبد».",
@@ -4546,7 +4549,9 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} erkek ismi",
     girlsN: "{n} kız ismi",
     abdTitle: "Kulluk isimleri",
-    abdText: "Allah'a kulluğu ifade eden isimler – Güzel isimlerinden biriyle “Abd” – özellikle sevilir. Peygamber ﷺ şöyle buyurdu:",
+    abdText: "Allah'a kulluğu ifade eden isimler – Güzel isimlerinden biriyle “Abd” – özellikle sevilir.",
+    abdSaid: "Peygamber ﷺ şöyle buyurdu:",
+    abdSum: "Özetle: Allah, bütün isimler arasında en çok Abdullah ve Abdurrahman isimlerini sever.",
     abdSrc: "Müslim 2132",
     changeTitle: "Kötü isimler yerine iyi isimler",
     changeText: "Peygamber ﷺ kötü anlamlı isimleri güzelleriyle değiştirdi: Ömer'in bir kızının adı ʿĀṣiya idi (“isyankâr”, عاصية – Firavun'un karısı Āsiya ile karıştırılmamalıdır) ve Peygamber ﷺ ona Jamila (“güzel”) adını verdi.",
@@ -4651,7 +4656,10 @@ const T: Record<UiLang, Dict> = {
     boysN: "لڑکوں کے {n} نام",
     girlsN: "لڑکیوں کے {n} نام",
     abdTitle: "بندگی کے نام",
-    abdText: "وہ نام جو اللہ کی بندگی کا اظہار کرتے ہیں – اس کے اچھے ناموں میں سے کسی کے ساتھ «عبد» – خاص طور پر محبوب ہیں۔ نبی ﷺ نے فرمایا:",
+    abdText: "وہ نام جو اللہ کی بندگی کا اظہار کرتے ہیں – اس کے اچھے ناموں میں سے کسی کے ساتھ «عبد» – خاص طور پر محبوب ہیں۔",
+    abdSaid: "نبی ﷺ نے فرمایا:",
+    abdQuote: "«{w}»",
+    abdSum: "مفہوم: تمام ناموں میں سے اللہ کو سب سے زیادہ پسند نام عبد اللہ اور عبد الرحمٰن ہیں۔",
     abdSrc: "مسلم 2132",
     changeTitle: "برے ناموں کی جگہ اچھے نام",
     changeText: "نبی ﷺ نے برے معنی والے ناموں کو اچھے ناموں میں بدلا: عمر کی ایک بیٹی کا نام ʿĀṣiya (“نافرمان”، عاصية – فرعون کی بیوی Āsiya سے خلط نہ کیا جائے) تھا، اور نبی ﷺ نے ان کا نام Jamila (“خوبصورت”) رکھا۔",
@@ -4756,7 +4764,8 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} نام پسرانه",
     girlsN: "{n} نام دخترانه",
     abdTitle: "نام‌های بندگی",
-    abdText: "نام‌هایی که بندگی خدا را بیان می‌کنند – «عبد» همراه یکی از نام‌های زیبای او – بسیار محبوب‌اند. پیامبر ﷺ فرمود:",
+    abdText: "نام‌هایی که بندگی خدا را بیان می‌کنند – «عبد» همراه یکی از نام‌های زیبای او – بسیار محبوب‌اند.",
+    abdSum: "خلاصهٔ معنا: از میان همهٔ نام‌ها، عبدالله و عبدالرحمن نزد خدا محبوب‌ترین نام‌ها هستند.",
     abdSrc: "مسلم 2132",
     changeTitle: "نام‌های نیکو به جای نام‌های ناپسند",
     changeText: "پیامبر ﷺ نام‌های دارای معنای ناپسند را به نام‌های نیکو تغییر می‌داد: یکی از دختران عمر ʿĀṣiya («نافرمان»، عاصية – که نباید با Āsiya، همسر فرعون، اشتباه شود) نام داشت و پیامبر ﷺ او را Jamila («زیبا») نامید.",
@@ -4861,7 +4870,8 @@ const T: Record<UiLang, Dict> = {
     boysN: "د هلکانو {n} نومونه",
     girlsN: "د انجونو {n} نومونه",
     abdTitle: "د بندګۍ نومونه",
-    abdText: "هغه نومونه چې د الله بندګي څرګندوي – د هغه د ښکلو نومونو له یوه سره «عبد» – ډېر ګران دي. پیغمبر ﷺ وفرمایل:",
+    abdText: "هغه نومونه چې د الله بندګي څرګندوي – د هغه د ښکلو نومونو له یوه سره «عبد» – ډېر ګران دي.",
+    abdSum: "لنډیز: د ټولو نومونو له منځه الله ته تر ټولو ګران نومونه عبدالله او عبدالرحمن دي.",
     abdSrc: "مسلم 2132",
     changeTitle: "د بدو نومونو پر ځای ښه نومونه",
     changeText: "پیغمبر ﷺ د بد معنا نومونه په ښو نومونو بدل کړل: د عمر یوې لور ته ʿĀṣiya («نافرماني»، عاصية – چې د فرعون له ښځې Āsiya سره باید ګډوډ نشي) ویل کېدل، او پیغمبر ﷺ هغې ته Jamila («ښکلې») نوم ورکړ.",
@@ -4966,7 +4976,10 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} prénoms de garçons",
     girlsN: "{n} prénoms de filles",
     abdTitle: "Prénoms de servitude",
-    abdText: "Les prénoms qui expriment la servitude envers Allah – « Abd » suivi de l'un de Ses beaux noms – sont particulièrement aimés. Le Prophète ﷺ a dit :",
+    abdText: "Les prénoms qui expriment la servitude envers Allah – « Abd » suivi de l'un de Ses beaux noms – sont particulièrement aimés.",
+    abdSaid: "Le Prophète ﷺ a dit :",
+    abdQuote: "« {w} »",
+    abdSum: "En substance : de tous les prénoms, ceux qu'Allah aime le plus sont Abdullah et Abdurrahman.",
     abdSrc: "Muslim 2132",
     changeTitle: "De bons prénoms à la place des mauvais",
     changeText: "Le Prophète ﷺ changeait les prénoms de mauvais sens en prénoms de bon sens : une fille d'Umar s'appelait ʿĀṣiya (« la désobéissante », عاصية – à ne pas confondre avec Āsiya, l'épouse de Pharaon), et il l'a appelée Jamila (« la belle »).",
@@ -5071,7 +5084,8 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} nombres de niño",
     girlsN: "{n} nombres de niña",
     abdTitle: "Nombres de servidumbre",
-    abdText: "Los nombres que expresan servidumbre hacia Allah («Abd» seguido de uno de Sus nombres hermosos) son especialmente queridos. El Profeta ﷺ dijo:",
+    abdText: "Los nombres que expresan servidumbre hacia Allah («Abd» seguido de uno de Sus nombres hermosos) son especialmente queridos.",
+    abdSum: "En esencia: de todos los nombres, los que Allah más ama son Abdullah y Abdurrahman.",
     abdSrc: "Muslim 2132",
     changeTitle: "Nombres buenos en lugar de malos",
     changeText: "El Profeta ﷺ cambiaba los nombres de mal significado por otros buenos: una hija de Umar se llamaba ʿĀṣiya («la desobediente», عاصية; no debe confundirse con Āsiya, la esposa del faraón), y él la llamó Jamila («la hermosa»).",
@@ -5176,7 +5190,9 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} nama laki-laki",
     girlsN: "{n} nama perempuan",
     abdTitle: "Nama-nama penghambaan",
-    abdText: "Nama yang mengungkapkan penghambaan kepada Allah – “Abd” bersama salah satu nama-Nya yang indah – sangat dicintai. Nabi ﷺ bersabda:",
+    abdText: "Nama yang mengungkapkan penghambaan kepada Allah – “Abd” bersama salah satu nama-Nya yang indah – sangat dicintai.",
+    abdSaid: "Nabi ﷺ bersabda:",
+    abdSum: "Intinya: di antara semua nama, yang paling dicintai Allah adalah Abdullah dan Abdurrahman.",
     abdSrc: "HR. Muslim 2132",
     changeTitle: "Nama yang baik sebagai ganti yang buruk",
     changeText: "Nabi ﷺ mengganti nama-nama yang berarti buruk dengan nama yang baik: seorang putri Umar bernama ʿĀṣiya (“yang durhaka”, عاصية – jangan dikacaukan dengan Āsiya, istri Firaun), dan beliau menamainya Jamila (“yang cantik”).",
@@ -5281,7 +5297,8 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} nama lelaki",
     girlsN: "{n} nama perempuan",
     abdTitle: "Nama-nama penghambaan",
-    abdText: "Nama yang mengungkapkan penghambaan kepada Allah – “Abd” bersama salah satu nama-Nya yang indah – amat disayangi. Nabi ﷺ bersabda:",
+    abdText: "Nama yang mengungkapkan penghambaan kepada Allah – “Abd” bersama salah satu nama-Nya yang indah – amat disayangi.",
+    abdSum: "Secara ringkas: antara semua nama, yang paling disayangi Allah ialah Abdullah dan Abdurrahman.",
     abdSrc: "Riwayat Muslim 2132",
     changeTitle: "Nama yang baik sebagai ganti yang buruk",
     changeText: "Nabi ﷺ menukar nama yang bermakna buruk kepada nama yang baik: seorang puteri Umar bernama ʿĀṣiya (“yang derhaka”, عاصية – jangan dikelirukan dengan Āsiya, isteri Firaun), lalu baginda menamakannya Jamila (“yang cantik”).",
@@ -5386,7 +5403,9 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n}টি ছেলের নাম",
     girlsN: "{n}টি মেয়ের নাম",
     abdTitle: "আল্লাহর বান্দা-নাম",
-    abdText: "আল্লাহর বান্দা হওয়ার পরিচয় প্রকাশ করে এমন নাম – তাঁর সুন্দর নামগুলোর একটির সঙ্গে “আব্দ” – বিশেষভাবে প্রিয়। নবী ﷺ বলেছেন:",
+    abdText: "আল্লাহর বান্দা হওয়ার পরিচয় প্রকাশ করে এমন নাম – তাঁর সুন্দর নামগুলোর একটির সঙ্গে “আব্দ” – বিশেষভাবে প্রিয়।",
+    abdSaid: "নবী ﷺ বলেছেন:",
+    abdSum: "মর্মার্থ: সব নামের মধ্যে আল্লাহর কাছে সবচেয়ে প্রিয় নাম আবদুল্লাহ ও আবদুর রহমান।",
     abdSrc: "মুসলিম 2132",
     changeTitle: "মন্দ নামের বদলে ভালো নাম",
     changeText: "নবী ﷺ মন্দ অর্থের নামগুলো বদলে ভালো নাম রাখতেন: উমরের এক কন্যার নাম ছিল ʿĀṣiya (“অবাধ্য”, عاصية – ফেরাউনের স্ত্রী Āsiya-র সঙ্গে গুলিয়ে ফেলবেন না), আর তিনি তাঁর নাম রাখলেন Jamila (“সুন্দরী”)।",
@@ -5491,7 +5510,10 @@ const T: Record<UiLang, Dict> = {
     boysN: "Мужских имён: {n}",
     girlsN: "Женских имён: {n}",
     abdTitle: "Имена служения",
-    abdText: "Имена, выражающие служение Аллаху, – «Абд» вместе с одним из Его прекрасных имён – особенно любимы. Пророк ﷺ сказал:",
+    abdText: "Имена, выражающие служение Аллаху, – «Абд» вместе с одним из Его прекрасных имён – особенно любимы.",
+    abdSaid: "Пророк ﷺ сказал:",
+    abdQuote: "«{w}»",
+    abdSum: "По смыслу: из всех имён Аллах больше всего любит имена Абдуллах и Абдуррахман.",
     abdSrc: "Муслим 2132",
     changeTitle: "Хорошие имена вместо плохих",
     changeText: "Пророк ﷺ менял имена с плохим значением на хорошие: одну из дочерей Умара звали ʿĀṣiya («непокорная», عاصية – не путать с Āsiya, женой фараона), и он назвал её Jamila («красивая»).",
@@ -5596,7 +5618,8 @@ const T: Record<UiLang, Dict> = {
     boysN: "{n} 个男孩名字",
     girlsN: "{n} 个女孩名字",
     abdTitle: "表示侍奉的名字",
-    abdText: "表示侍奉安拉的名字——“阿卜杜”加上安拉的美名之一——尤其受人喜爱。先知ﷺ说：",
+    abdText: "表示侍奉安拉的名字——“阿卜杜”加上安拉的美名之一——尤其受人喜爱。",
+    abdSum: "大意：在所有名字中，安拉最喜爱的是阿卜杜拉和阿卜杜拉赫曼。",
     abdSrc: "穆斯林圣训集 2132",
     changeTitle: "以好名字取代坏名字",
     changeText: "先知ﷺ把含义不好的名字改成好名字：欧麦尔的一个女儿名叫 ʿĀṣiya（“违逆者”，عاصية——不要与法老的妻子 Āsiya 混淆），先知ﷺ给她改名为 Jamila（“美丽的”）。",
@@ -5648,12 +5671,62 @@ export const ORIGIN_LABEL: Record<UiLang, Record<Origin | OriginFilter, string>>
   zh: { quran: "古兰经中", prophet: "先知", sahabi: "圣门弟子", sahabiyya: "圣门女弟子", companion: "圣门弟子们", "ahl-al-bayt": "先知家属", arabic: "阿拉伯语", other: "波斯语/突厥语" },
 };
 
-// Page text in the reader's language with {placeholders}
+// Page text in the reader's language with {placeholders} (a value is inserted as it is, "$" included)
 export function namesText(locale: string) {
   const d = T[uiLangOf(locale)];
   return (key: string, vars?: Record<string, string | number>) => {
     let s = d[key] ?? T.en[key] ?? key;
-    if (vars) for (const [k, v] of Object.entries(vars)) s = s.replace(`{${k}}`, String(v));
+    if (vars) for (const [k, v] of Object.entries(vars)) s = s.replace(`{${k}}`, () => String(v));
     return s;
+  };
+}
+
+// The hadith on the most beloved names (Sahih Muslim 2132, abdSrc; number 5587 in fawazahmed0/hadith-api, by which
+// the hadith loaders fetch it). Its wording is never typed here (BLUEPRINT: no hand-typed Quran or hadith text): the
+// name finder loads it from the published editions with loadAbdHadith – the Arabic, and the words in the reader's
+// language where an edition has them, introduced by abdSaid and set in abdQuote. Where no edition has them (de, fa,
+// ps, es, ms, ru, zh; or while offline) it shows abdSum instead: a summary in our own words, marked as one, never set
+// as the quoted wording.
+export const ABD_HADITH = { collection: "muslim", n: 5587 } as const;
+
+/** the Prophet's words in a published hadith text, without the chain of narrators: the first passage in quotation
+ *  marks (to the closing mark or the end of the text), else what follows the last colon that introduces speech (the
+ *  English and Bengali editions use no quotation marks; ঃ serves as the colon in Bengali); a closing bracketed note of
+ *  the edition (a cross-reference) is left out. null when the words are not clear. */
+export function hadithWords(text: string | undefined | null): string | null {
+  const s = (text ?? "").replace(/[‎‏]/g, "").replace(/[“”„«»]/g, '"').replace(/\s+/g, " ").trim();
+  let w: string;
+  const a = s.indexOf('"');
+  if (a >= 0) {
+    const b = s.indexOf('"', a + 1);
+    w = b < 0 ? s.slice(a + 1) : s.slice(a + 1, b);
+  } else {
+    // a colon followed by words, not by a closing bracket (the Bengali "(রাযিঃ)" after a name is no colon)
+    const colons = [...s.matchAll(/[:ঃ]\s*(?=[^\s)])/g)];
+    const c = colons[colons.length - 1];
+    if (!c || c.index === undefined) return null;
+    w = s.slice(c.index + c[0].length);
+  }
+  w = w.replace(/\s*\([^()]*\)\s*$/, "").trim();
+  return w.length >= 8 && w.length <= 240 ? w : null;
+}
+
+/** what a hadith loader gives (sunniHadith of the website's lib/learn/journey/hadith.ts and of the app's
+ *  features/hadith/data.ts): the Arabic text, the translation and the language it is in */
+type LoadedHadith = { arabic?: string; text: string; textLang: string } | null;
+export type AbdHadith = { arabic: string | null; words: string | null };
+
+/** the hadith on the most beloved names from the published editions, through the platform's loader: its Arabic
+ *  words, and its words in the reader's language when an edition in that language has them (null otherwise: then
+ *  abdSum is shown). Never fails: what cannot be loaded is null. */
+export async function loadAbdHadith(load: (collection: string, n: number, lang: string) => Promise<LoadedHadith>, locale: string): Promise<AbdHadith> {
+  const lang = uiLangOf(locale);
+  const get = (l: string) => load(ABD_HADITH.collection, ABD_HADITH.n, l).catch(() => null);
+  const h = await get(lang);
+  // an edition with an empty text for this number gives nothing at all: the Arabic is then loaded on its own
+  const a = (h?.arabic || lang === "ar") ? h : await get("ar");
+  return {
+    arabic: hadithWords(a?.arabic),
+    words: lang !== "ar" && h && h.textLang === lang ? hadithWords(h.text) : null,
   };
 }

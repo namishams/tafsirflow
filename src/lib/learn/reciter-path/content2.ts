@@ -2,11 +2,39 @@
 // Levels 7–10 of the Reciter Path (maqamat, breath, qira'at, mutashabihat, longer surahs, Masterclass recital).
 // Written in our own words, in English, German and Arabic; other languages fall back to English. No Quran text: the
 // listening and practice verses are verse keys in curriculum.ts, rendered and played from the word data with the
-// reciter the learner has chosen.
+// reciter the learner has chosen. Where a text names the words of a verse, it holds a token instead of typed words
+// (BLUEPRINT §4): {{imlaei:55:13}} is the whole verse, {{imlaei:2:58:11-12}} its words 11–12. resolveQuotes() below
+// replaces each token with verseQuote() from the Quran.com data (data/verse-quotes.json, written by
+// scripts/gen-verse-quotes.mjs) when useContent() in content.ts reads the texts; the same tokens work in the
+// "reciterPathExtra" texts of the language files.
+import { verseQuote, type QuoteScript } from "@/lib/verseQuotes";
 
 type Mcq = { q: string; options: string[]; answer: number };
 type UnitText = { title: string; intro: string; points: string[]; check: string[]; mcq: Mcq[] };
 export type ExtraContent = { levels: Record<string, { title: string; lead: string }>; units: Record<string, UnitText> };
+
+const QUOTE = /\{\{(uthmani|qpc|imlaei):(\d{1,3}:\d{1,3})(?::(\d{1,3})-(\d{1,3}))?\}\}/g;
+/** a text with its verse tokens replaced by the words from the Quran data; an unknown verse leaves only its key */
+export const withQuotes = (text: string) =>
+  text.replace(QUOTE, (_, script: QuoteScript, key: string, from?: string, to?: string) => {
+    try {
+      return verseQuote(script, key, from ? Number(from) : 1, to ? Number(to) : undefined);
+    } catch {
+      return key;
+    }
+  });
+const resolveAll = (v: unknown): unknown =>
+  typeof v === "string" ? withQuotes(v)
+  : Array.isArray(v) ? v.map(resolveAll)
+  : v && typeof v === "object" ? Object.fromEntries(Object.entries(v).map(([k, w]) => [k, resolveAll(w)]))
+  : v;
+const resolved = new WeakMap<ExtraContent, ExtraContent>();
+/** the texts of one language with every verse token replaced (once per texts object) */
+export function resolveQuotes(x: ExtraContent): ExtraContent {
+  let r = resolved.get(x);
+  if (!r) resolved.set(x, (r = resolveAll(x) as ExtraContent));
+  return r;
+}
 
 const en: ExtraContent = {
   levels: {
@@ -115,7 +143,7 @@ const en: ExtraContent = {
     },
     "9-3": {
       title: "Mutashabihat for hifz: Adam and Bani Israʾil",
-      intro: "Mutashabihat are verses that look almost alike. They are the most common reason for mistakes in memorisation. Compare the pairs here: in al-Baqarah Adam is told “and eat” with waw, in al-Aʿraf “so eat” with fa; the order of “enter the gate” and “say: relief” is reversed between al-Baqarah and al-Aʿraf; and the punishment of Pharaoh's people uses one verb in al-Baqarah and Ibrahim (with an added waw in Ibrahim) and another in al-Aʿraf.",
+      intro: "Mutashabihat are verses that look almost alike. They are the most common reason for mistakes in memorisation. Compare the pairs here: in al-Baqarah Adam is told “and eat” with waw, in al-Aʿraf “so eat” with fa; the order of “{{imlaei:2:58:11-12}}” (entering the gate) and “{{imlaei:2:58:14-15}}” (saying hittah) is reversed between al-Baqarah (2:58) and al-Aʿraf (7:161); and the punishment of Pharaoh's people uses one verb in al-Baqarah and Ibrahim (with an added waw in Ibrahim) and another in al-Aʿraf.",
       points: [
         "Learn pairs together, never one without the other.",
         "Find a hook: a letter, the order of words, the surah's theme.",
@@ -150,7 +178,7 @@ const en: ExtraContent = {
     },
     "10-3": {
       title: "Surah ar-Rahman",
-      intro: "The refrain “Which of the favours of your Lord will you deny?” returns again and again. Keep it identical every time: the same madd, the same melody, the same clear ghunnah.",
+      intro: "The refrain “{{imlaei:55:13}}” (first at 55:13), in essence a question about the Lord's favours, returns again and again. Keep it identical every time: the same madd, the same melody, the same clear ghunnah.",
       points: ["Recite the refrain the same way each time.", "Use the refrain to check your breath: one breath per refrain."],
       check: ["My refrain is identical every time.", "I recite the first section without looking."],
       mcq: [{ q: "What stays identical in the refrain of ar-Rahman?", options: ["Madd, ghunnah and melody", "Only the speed", "Nothing", "The stop sign"], answer: 0 }],
@@ -273,7 +301,7 @@ const de: ExtraContent = {
     },
     "9-3": {
       title: "Mutaschabihat fürs Hifz: Adam und Bani Israʾil",
-      intro: "Mutaschabihat sind Verse, die fast gleich aussehen. Sie sind der häufigste Grund für Fehler beim Auswendiglernen. Vergleichen Sie die Paare hier: In al-Baqara wird Adam „und esst“ mit Waw gesagt, in al-Aʿraf „so esst“ mit Fa; die Reihenfolge von „tretet durch das Tor“ und „sagt: Vergebung“ ist zwischen al-Baqara und al-Aʿraf vertauscht; und die Strafe an Pharaos Leuten steht in al-Baqara und Ibrahim mit einem Verb (in Ibrahim mit zusätzlichem Waw), in al-Aʿraf mit einem anderen.",
+      intro: "Mutaschabihat sind Verse, die fast gleich aussehen. Sie sind der häufigste Grund für Fehler beim Auswendiglernen. Vergleichen Sie die Paare hier: In al-Baqara wird Adam „und esst“ mit Waw gesagt, in al-Aʿraf „so esst“ mit Fa; die Reihenfolge von „{{imlaei:2:58:11-12}}“ (durch das Tor eintreten) und „{{imlaei:2:58:14-15}}“ (Hitta sagen) ist zwischen al-Baqara (2:58) und al-Aʿraf (7:161) vertauscht; und die Strafe an Pharaos Leuten steht in al-Baqara und Ibrahim mit einem Verb (in Ibrahim mit zusätzlichem Waw), in al-Aʿraf mit einem anderen.",
       points: ["Lernen Sie Paare zusammen, nie eines ohne das andere.", "Suchen Sie einen Anker: einen Buchstaben, die Wortfolge, das Thema der Sure.", "Rezitieren Sie beide Verse laut nacheinander und nennen Sie den Surennamen."],
       check: ["Ich rezitiere jedes Paar, ohne es zu verwechseln.", "Ich habe für jedes Paar einen Anker."],
       mcq: [
@@ -304,7 +332,7 @@ const de: ExtraContent = {
     },
     "10-3": {
       title: "Sure ar-Rahman",
-      intro: "Der Kehrvers „Welche der Wohltaten eures Herrn wollt ihr leugnen?“ kehrt immer wieder. Halten Sie ihn jedes Mal gleich: derselbe Madd, dieselbe Melodie, dieselbe klare Ghunna.",
+      intro: "Der Kehrvers „{{imlaei:55:13}}“ (zuerst 55:13), sinngemäß eine Frage nach den Wohltaten des Herrn, kehrt immer wieder. Halten Sie ihn jedes Mal gleich: derselbe Madd, dieselbe Melodie, dieselbe klare Ghunna.",
       points: ["Rezitieren Sie den Kehrvers jedes Mal gleich.", "Nutzen Sie den Kehrvers als Atemprobe: ein Atem pro Kehrvers."],
       check: ["Mein Kehrvers ist jedes Mal gleich.", "Ich rezitiere den ersten Abschnitt ohne hinzusehen."],
       mcq: [{ q: "Was bleibt im Kehrvers von ar-Rahman gleich?", options: ["Madd, Ghunna und Melodie", "Nur das Tempo", "Nichts", "Das Pausenzeichen"], answer: 0 }],
@@ -422,7 +450,7 @@ const ar: ExtraContent = {
     },
     "9-3": {
       title: "المتشابهات للحفظ: آدم وبنو إسرائيل",
-      intro: "المتشابهات آيات تكاد تتطابق، وهي أكثر أسباب الخطأ في الحفظ. قارن بين الأزواج هنا: في البقرة قيل لآدم «وكلا» بالواو، وفي الأعراف «فكلا» بالفاء؛ وترتيب «ادخلوا الباب» و«قولوا حطّة» معكوس بين البقرة والأعراف؛ وعذاب قوم فرعون بفعل في البقرة وإبراهيم (مع واو زائدة في إبراهيم)، وبفعل آخر في الأعراف.",
+      intro: "المتشابهات آيات تكاد تتطابق، وهي أكثر أسباب الخطأ في الحفظ. قارن بين الأزواج هنا: في البقرة قيل لآدم «وكلا» بالواو، وفي الأعراف «فكلا» بالفاء؛ وترتيب «{{imlaei:2:58:11-12}}» و«{{imlaei:2:58:14-15}}» معكوس بين البقرة والأعراف؛ وعذاب قوم فرعون بفعل في البقرة وإبراهيم (مع واو زائدة في إبراهيم)، وبفعل آخر في الأعراف.",
       points: ["احفظ الزوجين معًا، لا أحدهما دون الآخر.", "اجعل لكل زوج علامة: حرفًا أو ترتيبًا أو موضوع السورة.", "اقرأ الآيتين بصوت متتابعتين واذكر اسم السورة."],
       check: ["أقرأ كل زوج دون خلط.", "لكل زوج علامة عندي."],
       mcq: [
@@ -453,7 +481,7 @@ const ar: ExtraContent = {
     },
     "10-3": {
       title: "سورة الرحمن",
-      intro: "تتكرّر «فبأيّ آلاء ربّكما تكذّبان» مرّات كثيرة. اقرأها في كل مرة بالطريقة نفسها: المدّ نفسه، واللحن نفسه، والغنّة الواضحة نفسها.",
+      intro: "تتكرّر «{{imlaei:55:13}}» مرّات كثيرة. اقرأها في كل مرة بالطريقة نفسها: المدّ نفسه، واللحن نفسه، والغنّة الواضحة نفسها.",
       points: ["اقرأ اللازمة بالطريقة نفسها كل مرة.", "اجعل اللازمة اختبارًا للنفَس: نفَس لكل لازمة."],
       check: ["لازمتي متطابقة في كل مرة.", "أقرأ المقطع الأول غيبًا."],
       mcq: [{ q: "ما الذي يبقى ثابتًا في لازمة سورة الرحمن؟", options: ["المدّ والغنّة واللحن", "السرعة فقط", "لا شيء", "علامة الوقف"], answer: 0 }],

@@ -4,6 +4,12 @@
 // Languages: German, English and Arabic are written out in every text; the eleven other site languages are the fourth
 // argument of L(). The Arabic words and their Latin transliteration (ar, translit) are never translated. The meaning
 // lines of the other languages are literal translations of the English line; the source references stay as they are.
+// Quran and hadith wording is never typed by hand (BLUEPRINT §4): the Quran recitations (Al-Fatiha, Al-Ikhlas, the
+// qunut of 2:201) are cut out of the Quran data (lib/verseQuotes, modern spelling as in the other formulas), and where
+// a formula's meaning would be a translation of a hadith or a verse, the meaning line is a short summary in our own
+// words with its reference instead (essence: shown under the label ESSENCE, never as the quoted wording).
+import { verseQuote } from "./verseQuotes";
+
 export const EXTRA_LANGS = ["tr", "ur", "fa", "ps", "fr", "es", "id", "ms", "bn", "ru", "zh"] as const;
 export type ExtraLang = (typeof EXTRA_LANGS)[number];
 export type Lang = "de" | "en" | "ar" | ExtraLang;
@@ -16,9 +22,12 @@ export const langOf = (locale: string): Lang => (isLang(locale) ? locale : "en")
 export type Posture = "stand" | "takbir" | "folded" | "sides" | "qunut" | "ruku" | "sujud" | "sujudTurbah" | "sit" | "tashahhud" | "salamR" | "salamL";
 export type L2 = { de: string; en: string; ar?: string } & Extra;
 // translit = Latin transliteration of the Arabic words (not a language of the site)
-export type Step = { posture: Posture; title: L2; ar?: string; translit?: string; meaning?: L2; note?: L2; rakah: number; aloud?: boolean };
+// essence: the meaning line is a summary in our own words (of a hadith or a verse), not a translation of the wording
+export type Step = { posture: Posture; title: L2; ar?: string; translit?: string; meaning?: L2; essence?: boolean; note?: L2; rakah: number; aloud?: boolean };
 export type Tradition = "sunni" | "shia";
 function L(de: string, en: string, ar: string | undefined, extra: Extra): L2 { return { de, en, ar, ...extra }; }
+/** the label of a meaning line that is a summary (Step.essence) instead of "Meaning" */
+export const ESSENCE: L2 = L("Sinngemäß", "In essence", "المعنى إجمالًا", { tr: "Özetle", ur: "خلاصہ", fa: "به‌طور خلاصه", ps: "لنډیز", fr: "En substance", es: "En esencia", id: "Intinya", ms: "Ringkasnya", bn: "সারকথা", ru: "По смыслу", zh: "大意" });
 export const PRAYERS = [
   { id: "fajr", rakat: 2, name: L("Fadschr", "Fajr", "الفجر", { tr: "Sabah", ur: "فجر", fa: "صبح", ps: "سهار", fr: "Fajr", es: "Fajr", id: "Subuh", ms: "Subuh", bn: "ফজর", ru: "Фаджр", zh: "晨礼" }), ar: "الفجر", aloudAll: true },
   { id: "dhuhr", rakat: 4, name: L("Dhuhr", "Dhuhr", "الظهر", { tr: "Öğle", ur: "ظہر", fa: "ظهر", ps: "ماسپښین", fr: "Dhuhr", es: "Dhuhr", id: "Zuhur", ms: "Zuhur", bn: "যোহর", ru: "Зухр", zh: "晌礼" }), ar: "الظهر", aloudAll: false },
@@ -58,18 +67,18 @@ const T = {
     ru: "Аллах – Величайший.",
     zh: "安拉至大。",
   }) },
-  thana: { ar: "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَى جَدُّكَ، وَلَا إِلَهَ غَيْرُكَ", translit: "Subḥānaka llāhumma wa biḥamdika, wa tabāraka smuka, wa taʿālā jadduka, wa lā ilāha ghayruk", meaning: L("Gepriesen bist du, o Allah, und dir gebührt das Lob. Gesegnet ist dein Name, erhaben deine Majestät, und es gibt keinen Gott außer dir.", "Glory be to You, O Allah, and praise. Blessed is Your name, exalted Your majesty, and there is no god but You.", "أُنزِّهُك يا الله تنزيهًا مقرونًا بحمدك، وعظُمت بركةُ اسمك، وعلا جلالُك وعظمتُك، ولا معبودَ بحقٍّ سواك.", {
-    tr: "Allah'ım, seni tesbih ederim, sana hamd ederim. Adın mübarektir, şanın yücedir, senden başka ilah yoktur.",
-    ur: "اے اللہ، تو پاک ہے اور تیری حمد ہے؛ تیرا نام بابرکت ہے، تیری شان بلند ہے اور تیرے سوا کوئی معبود نہیں۔",
-    fa: "پاک و منزهی ای الله، و ستایش از آنِ توست؛ نام تو پربرکت است، شکوه تو والاست و معبودی جز تو نیست.",
-    ps: "پاکي ستا لپاره ده، ای الله، او ستاینه؛ مبارک دی ستا نوم، لوړه ده ستا عظمت، او له تا پرته بل معبود نشته.",
-    fr: "Gloire à Toi, ô Allah, et louange. Béni soit Ton nom, élevée Ta majesté, et il n'y a pas d'autre dieu que Toi.",
-    es: "Gloria a Ti, oh Allah, y alabanza. Bendito sea Tu nombre, exaltada Tu majestad, y no hay más dios que Tú.",
-    id: "Mahasuci Engkau, ya Allah, dan segala puji bagi-Mu; diberkahi nama-Mu, Mahatinggi keagungan-Mu, dan tiada tuhan selain Engkau.",
-    ms: "Maha Suci Engkau, ya Allah, dan segala puji bagi-Mu. Diberkatilah nama-Mu, Maha Tinggi kebesaran-Mu, dan tiada tuhan selain Engkau.",
-    bn: "হে আল্লাহ, আপনি পবিত্র ও প্রশংসিত; আপনার নাম বরকতময়, আপনার মহিমা সমুন্নত, এবং আপনি ছাড়া কোনো ইলাহ নেই।",
-    ru: "Пречист Ты, о Аллах, и хвала Тебе; благословенно Твоё имя, возвышенно Твоё величие, и нет божества, кроме Тебя.",
-    zh: "安拉啊！赞颂你超绝万物，并赞美你；你的尊名吉祥，你的尊严崇高，除你之外绝无应受崇拜的。",
+  thana: { ar: "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَى جَدُّكَ، وَلَا إِلَهَ غَيْرُكَ", translit: "Subḥānaka llāhumma wa biḥamdika, wa tabāraka smuka, wa taʿālā jadduka, wa lā ilāha ghayruk", essence: true, meaning: L("Sie eröffnen das Gebet, indem Sie Allah preisen und loben und bezeugen, dass niemand außer Ihm angebetet wird (Sunan Abi Dawud 775; Jamiʿ at-Tirmidhi 243).", "You open the prayer by glorifying and praising Allah and affirming that none but He is worshipped (Sunan Abi Dawud 775; Jamiʿ at-Tirmidhi 243).", "أُنزِّهُك يا الله تنزيهًا مقرونًا بحمدك، وعظُمت بركةُ اسمك، وعلا جلالُك وعظمتُك، ولا معبودَ بحقٍّ سواك (سنن أبي داود 775، جامع الترمذي 243).", {
+    tr: "Namazı Allah'ı tesbih ve hamd ederek açar, O'ndan başka ibadete layık kimse olmadığını ikrar edersiniz (Sünen-i Ebû Dâvûd 775; Câmiu't-Tirmizî 243).",
+    ur: "آپ اللہ کی تسبیح و حمد سے نماز کا آغاز کرتے ہیں اور اقرار کرتے ہیں کہ اس کے سوا کوئی عبادت کے لائق نہیں (سنن ابی داود 775؛ جامع ترمذی 243)۔",
+    fa: "نماز را با تسبیح و ستایش الله آغاز می‌کنید و اقرار می‌کنید که جز او کسی سزاوار پرستش نیست (سنن ابی‌داود 775؛ جامع ترمذی 243).",
+    ps: "تاسو لمونځ د الله په تسبیح او ستاینې پیلوئ او اقرار کوئ چې له هغه پرته بل څوک د عبادت وړ نه دی (سنن ابي داود 775؛ جامع الترمذي 243).",
+    fr: "Vous ouvrez la prière en glorifiant et en louant Allah, et en affirmant que nul autre que Lui n'est adoré (Sunan Abi Dawud 775 ; Jamiʿ at-Tirmidhi 243).",
+    es: "Usted abre la oración glorificando y alabando a Allah y afirmando que nadie más que Él es adorado (Sunan Abi Dawud 775; Jamiʿ at-Tirmidhi 243).",
+    id: "Anda membuka shalat dengan menyucikan dan memuji Allah serta mengikrarkan bahwa tiada yang disembah selain Dia (Sunan Abi Dawud 775; Jami' at-Tirmidzi 243).",
+    ms: "Anda membuka solat dengan menyucikan dan memuji Allah serta mengakui bahawa tiada yang disembah selain Dia (Sunan Abi Dawud 775; Jami' at-Tirmizi 243).",
+    bn: "আপনি আল্লাহর পবিত্রতা ও প্রশংসা ঘোষণা করে নামাজ শুরু করেন এবং স্বীকার করেন যে তিনি ছাড়া কেউ ইবাদতের যোগ্য নয় (সুনান আবু দাউদ 775; জামে তিরমিজি 243)।",
+    ru: "Вы начинаете намаз, прославляя и восхваляя Аллаха и признавая, что никто, кроме Него, не достоин поклонения (Сунан Абу Дауда 775; Джами ат-Тирмизи 243).",
+    zh: "您以赞颂和赞美安拉开始礼拜，并承认除祂之外没有应受崇拜的（《艾布·达乌德圣训集》第 775 段；《提尔密济圣训集》第 243 段）。",
   }) },
   taawwudh: { ar: "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ", translit: "Aʿūdhu billāhi mina sh-shayṭāni r-rajīm", meaning: L("Ich nehme Zuflucht bei Allah vor dem verfluchten Satan.", "I seek refuge in Allah from the accursed Satan.", "ألتجئُ إلى الله وأعتصمُ به من الشيطان المطرود من رحمته.", {
     tr: "Kovulmuş şeytandan Allah'a sığınırım.",
@@ -84,7 +93,7 @@ const T = {
     ru: "Прибегаю к Аллаху от проклятого сатаны.",
     zh: "我求安拉护佑，免遭被驱逐的恶魔之害。",
   }) },
-  fatiha: { ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ …", translit: "Bismillāhi r-raḥmāni r-raḥīm. Al-ḥamdu lillāhi rabbi l-ʿālamīn …", meaning: L("Die ganze Al-Fatiha – ohne sie ist kein Gebet gültig. Lernen Sie sie Vers für Vers im Player.", "The whole of Al-Fatiha – no prayer is valid without it. Learn it verse by verse in the player.", "سورةُ الفاتحة كاملةً، فـ«لا صلاةَ لمن لم يقرأ بفاتحة الكتاب». تعلَّمها آيةً آيةً في المشغِّل.", {
+  fatiha: { ar: `${verseQuote("imlaei", "1:1")} ۝ ${verseQuote("imlaei", "1:2")} …`, translit: "Bismillāhi r-raḥmāni r-raḥīm. Al-ḥamdu lillāhi rabbi l-ʿālamīn …", meaning: L("Die ganze Al-Fatiha – ohne sie ist kein Gebet gültig. Lernen Sie sie Vers für Vers im Player.", "The whole of Al-Fatiha – no prayer is valid without it. Learn it verse by verse in the player.", "سورةُ الفاتحة كاملةً، ولا تصحُّ صلاةٌ بدونها (صحيح البخاري 756، صحيح مسلم 394). تعلَّمها آيةً آيةً في المشغِّل.", {
     tr: "Fâtiha'nın tamamı – onsuz hiçbir namaz geçerli değildir. Onu oynatıcıda ayet ayet öğrenin.",
     ur: "پوری سورۂ فاتحہ – اس کے بغیر کوئی نماز درست نہیں۔ پلیئر میں اسے آیت بہ آیت سیکھیں۔",
     fa: "تمام سورهٔ فاتحه – بدون آن هیچ نمازی صحیح نیست. آن را آیه به آیه در پخش‌کننده بیاموزید.",
@@ -97,7 +106,7 @@ const T = {
     ru: "Вся Аль-Фатиха – без неё ни один намаз не действителен. Учите её аят за аятом в плеере.",
     zh: "完整的开端章——没有它，任何礼拜都不成立。在播放器中逐节学习。",
   }) },
-  ikhlas: { ar: "قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ", translit: "Qul huwa llāhu aḥad. Allāhu ṣ-ṣamad. Lam yalid wa lam yūlad. Wa lam yakun lahū kufuwan aḥad.", meaning: L("Zum Beispiel Al-Ikhlas (Sure 112) – jede andere Sure oder einige Verse sind ebenso möglich.", "For example Al-Ikhlas (Surah 112) – any other surah or a few verses are also fine.", "مثلُ سورة الإخلاص (السورة 112)، ويجوز أن تقرأ غيرها من السور أو آياتٍ منها.", {
+  ikhlas: { ar: [1, 2, 3, 4].map((a) => verseQuote("imlaei", `112:${a}`)).join(" ۝ "), translit: "Qul huwa llāhu aḥad. Allāhu ṣ-ṣamad. Lam yalid wa lam yūlad. Wa lam yakun lahū kufuwan aḥad.", meaning: L("Zum Beispiel Al-Ikhlas (Sure 112) – jede andere Sure oder einige Verse sind ebenso möglich.", "For example Al-Ikhlas (Surah 112) – any other surah or a few verses are also fine.", "مثلُ سورة الإخلاص (السورة 112)، ويجوز أن تقرأ غيرها من السور أو آياتٍ منها.", {
     tr: "Örneğin İhlâs (112. sure) – başka herhangi bir sure ya da birkaç ayet de olur.",
     ur: "مثلاً سورۂ اخلاص (سورت 112) – کوئی اور سورت یا چند آیات بھی درست ہیں۔",
     fa: "برای مثال سورهٔ اخلاص (سورهٔ 112) – هر سورهٔ دیگر یا چند آیه نیز رواست.",
@@ -201,31 +210,31 @@ const T = {
     ru: "Прошу прощения у Аллаха, моего Господа, и с покаянием обращаюсь к Нему.",
     zh: "我向安拉——我的主——求恕，并忏悔归向祂。",
   }) },
-  tashSunni: { ar: "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ", translit: "At-taḥiyyātu lillāhi wa ṣ-ṣalawātu wa ṭ-ṭayyibāt. As-salāmu ʿalayka ayyuha n-nabiyyu wa raḥmatu llāhi wa barakātuh. As-salāmu ʿalaynā wa ʿalā ʿibādi llāhi ṣ-ṣāliḥīn. Ash-hadu an lā ilāha illa llāh, wa ash-hadu anna Muḥammadan ʿabduhū wa rasūluh.", meaning: L("Alle Grüße, Gebete und guten Worte gehören Allah. Friede sei mit dir, o Prophet, und Allahs Barmherzigkeit und Segen. Friede sei mit uns und mit den rechtschaffenen Dienern Allahs. Ich bezeuge, dass es keinen Gott gibt außer Allah, und ich bezeuge, dass Muhammad sein Diener und Gesandter ist.", "All greetings, prayers and good words belong to Allah. Peace be upon you, O Prophet, and the mercy of Allah and His blessings. Peace be upon us and upon the righteous servants of Allah. I bear witness that there is no god but Allah, and I bear witness that Muhammad is His servant and Messenger.", "كلُّ ألفاظ التعظيم والصلوات والكلمات الطيبة لله وحده. ثم نُسلِّم على النبي ﷺ وندعو له بالرحمة والبركة، ثم على أنفسنا وعلى عباد الله الصالحين، ثم نشهد لله بالوحدانية، ولمحمدٍ ﷺ بالعبودية والرسالة.", {
-    tr: "Bütün selamlar, dualar ve güzel sözler Allah'a aittir. Selam sana, ey Peygamber, Allah'ın rahmeti ve bereketleri de üzerine olsun. Selam bize ve Allah'ın salih kulları üzerine olsun. Şahitlik ederim ki Allah'tan başka ilah yoktur ve şahitlik ederim ki Muhammed O'nun kulu ve resulüdür.",
-    ur: "تمام تحیات، نمازیں اور پاکیزہ کلمات اللہ کے لیے ہیں۔ اے نبی، آپ پر سلام ہو اور اللہ کی رحمت اور اس کی برکتیں۔ ہم پر اور اللہ کے نیک بندوں پر سلام ہو۔ میں گواہی دیتا/دیتی ہوں کہ اللہ کے سوا کوئی معبود نہیں، اور میں گواہی دیتا/دیتی ہوں کہ محمد اس کے بندے اور رسول ہیں۔",
-    fa: "همهٔ تحیت‌ها، درودها و سخنان پاکیزه از آنِ الله است. سلام بر تو ای پیامبر و رحمت الله و برکات او. سلام بر ما و بر بندگان شایستهٔ الله. گواهی می‌دهم که معبودی جز الله نیست و گواهی می‌دهم که محمد بنده و فرستادهٔ اوست.",
-    ps: "ټولې سلامۍ، لمونځونه او ښې خبرې الله لپاره دي. ای پیغمبره، پر تا دې سلام او د الله رحمت او برکتونه وي. پر موږ او د الله پر صالحو بندګانو دې سلام وي. زه ګواهي ورکوم چې له الله پرته بل معبود نشته، او ګواهي ورکوم چې محمد د هغه بنده او رسول دی.",
-    fr: "Toutes les salutations, les prières et les bonnes paroles appartiennent à Allah. Que la paix soit sur toi, ô Prophète, ainsi que la miséricorde d'Allah et Ses bénédictions. Que la paix soit sur nous et sur les pieux serviteurs d'Allah. J'atteste qu'il n'y a de dieu qu'Allah, et j'atteste que Muhammad est Son serviteur et Son messager.",
-    es: "Todos los saludos, las oraciones y las buenas palabras pertenecen a Allah. La paz sea contigo, oh Profeta, y la misericordia de Allah y Sus bendiciones. La paz sea con nosotros y con los siervos virtuosos de Allah. Atestiguo que no hay más dios que Allah, y atestiguo que Muhammad es Su siervo y Su mensajero.",
-    id: "Segala penghormatan, shalawat, dan kebaikan hanyalah milik Allah. Salam sejahtera atasmu, wahai Nabi, begitu pula rahmat Allah dan berkah-Nya. Salam sejahtera atas kami dan atas hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
-    ms: "Segala penghormatan, selawat dan kata-kata yang baik adalah milik Allah. Salam sejahtera ke atasmu, wahai Nabi, serta rahmat Allah dan keberkatan-Nya. Salam sejahtera ke atas kami dan ke atas hamba-hamba Allah yang soleh. Aku bersaksi bahawa tiada tuhan selain Allah, dan aku bersaksi bahawa Muhammad ialah hamba dan utusan-Nya.",
-    bn: "সমস্ত সম্ভাষণ, নামাজ ও পবিত্র বাক্য আল্লাহরই জন্য। হে নবী, আপনার উপর শান্তি এবং আল্লাহর রহমত ও বরকত বর্ষিত হোক। আমাদের উপর এবং আল্লাহর সৎকর্মশীল বান্দাদের উপর শান্তি বর্ষিত হোক। আমি সাক্ষ্য দিচ্ছি যে আল্লাহ ছাড়া কোনো ইলাহ নেই, এবং আমি সাক্ষ্য দিচ্ছি যে মুহাম্মাদ তাঁর বান্দা ও রাসুল।",
-    ru: "Приветствия, молитвы и благие слова принадлежат Аллаху. Мир тебе, о Пророк, и милость Аллаха, и Его благословения. Мир нам и праведным рабам Аллаха. Свидетельствую, что нет божества, кроме Аллаха, и свидетельствую, что Мухаммад – Его раб и посланник.",
-    zh: "一切问候、礼拜和美好的言辞都属于安拉。先知啊！愿平安、安拉的慈悯和祂的吉庆降临你。愿平安降临我们以及安拉的诸善良仆人。我作证：除安拉外绝无应受崇拜的，我作证：穆罕默德是祂的仆人和使者。",
+  tashSunni: { ar: "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ", translit: "At-taḥiyyātu lillāhi wa ṣ-ṣalawātu wa ṭ-ṭayyibāt. As-salāmu ʿalayka ayyuha n-nabiyyu wa raḥmatu llāhi wa barakātuh. As-salāmu ʿalaynā wa ʿalā ʿibādi llāhi ṣ-ṣāliḥīn. Ash-hadu an lā ilāha illa llāh, wa ash-hadu anna Muḥammadan ʿabduhū wa rasūluh.", essence: true, meaning: L("Sie widmen Allah alle Ehrerbietung, erbitten Frieden für den Propheten ﷺ, für sich selbst und alle rechtschaffenen Diener und bezeugen Allahs Einheit sowie Muhammad als Seinen Diener und Gesandten (Sahih al-Bukhari 831; Sahih Muslim 402).", "You dedicate all reverence to Allah, ask for peace upon the Prophet ﷺ, upon yourself and all righteous servants, and bear witness to Allah's oneness and to Muhammad as His servant and Messenger (Sahih al-Bukhari 831; Sahih Muslim 402).", "كلُّ ألفاظ التعظيم والصلوات والكلمات الطيبة لله وحده. ثم نُسلِّم على النبي ﷺ وندعو له بالرحمة والبركة، ثم على أنفسنا وعلى عباد الله الصالحين، ثم نشهد لله بالوحدانية، ولمحمدٍ ﷺ بالعبودية والرسالة (صحيح البخاري 831، صحيح مسلم 402).", {
+    tr: "Bütün tazimi Allah'a ayırır, Peygamber ﷺ, kendiniz ve bütün salih kullar için selam diler, Allah'ın birliğine ve Muhammed'in O'nun kulu ve resulü olduğuna şahitlik edersiniz (Sahîh-i Buhârî 831; Sahîh-i Müslim 402).",
+    ur: "آپ ہر تعظیم اللہ کے لیے خاص کرتے ہیں، نبی ﷺ، اپنے لیے اور تمام نیک بندوں کے لیے سلامتی مانگتے ہیں، اور اللہ کی وحدانیت اور محمد ﷺ کے اس کے بندے اور رسول ہونے کی گواہی دیتے ہیں (صحیح البخاری 831؛ صحیح مسلم 402)۔",
+    fa: "همهٔ بزرگداشت‌ها را از آنِ الله می‌دانید، برای پیامبر ﷺ، خودتان و همهٔ بندگان شایسته سلامتی می‌خواهید و به یگانگی الله و بندگی و رسالت محمد ﷺ گواهی می‌دهید (صحیح بخاری 831؛ صحیح مسلم 402).",
+    ps: "تاسو ټول درناوی الله ته ځانګړی کوئ، د پیغمبر ﷺ، خپل ځان او ټولو صالحو بندګانو لپاره سلامتي غواړئ، او د الله پر یووالي او د محمد ﷺ پر بندګۍ او رسالت ګواهي ورکوئ (صحیح البخاري 831؛ صحیح مسلم 402).",
+    fr: "Vous consacrez tout hommage à Allah, demandez la paix pour le Prophète ﷺ, pour vous-même et pour tous les serviteurs pieux, et attestez l'unicité d'Allah ainsi que Muhammad comme Son serviteur et Son messager (Sahih al-Bukhari 831 ; Sahih Muslim 402).",
+    es: "Usted dedica toda reverencia a Allah, pide la paz para el Profeta ﷺ, para sí mismo y para todos los siervos virtuosos, y atestigua la unicidad de Allah y que Muhammad es Su siervo y mensajero (Sahih al-Bujari 831; Sahih Muslim 402).",
+    id: "Anda mempersembahkan segala penghormatan kepada Allah, memohon keselamatan bagi Nabi ﷺ, bagi diri Anda dan semua hamba yang saleh, lalu bersaksi atas keesaan Allah dan bahwa Muhammad adalah hamba dan utusan-Nya (Shahih al-Bukhari 831; Shahih Muslim 402).",
+    ms: "Anda mempersembahkan segala penghormatan kepada Allah, memohon kesejahteraan bagi Nabi ﷺ, bagi diri anda dan semua hamba yang soleh, lalu bersaksi atas keesaan Allah dan bahawa Muhammad ialah hamba dan utusan-Nya (Sahih al-Bukhari 831; Sahih Muslim 402).",
+    bn: "আপনি সমস্ত সম্মান আল্লাহর জন্য নিবেদন করেন, নবী ﷺ, নিজের ও সকল নেক বান্দার জন্য শান্তি কামনা করেন, এবং আল্লাহর একত্ব ও মুহাম্মাদ ﷺ তাঁর বান্দা ও রাসুল হওয়ার সাক্ষ্য দেন (সহীহ আল-বুখারী 831; সহীহ মুসলিম 402)।",
+    ru: "Вы посвящаете всё почитание Аллаху, просите мира для Пророка ﷺ, для себя и для всех праведных рабов и свидетельствуете о единстве Аллаха и о том, что Мухаммад – Его раб и посланник (Сахих аль-Бухари 831; Сахих Муслим 402).",
+    zh: "您把一切敬意归于安拉，为先知ﷺ、为自己和一切善良的仆人祈求平安，并作证安拉独一、穆罕默德是祂的仆人和使者（《布哈里圣训实录》第 831 段；《穆斯林圣训实录》第 402 段）。",
   }) },
-  salawat: { ar: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ", translit: "Allāhumma ṣalli ʿalā Muḥammadin wa ʿalā āli Muḥammad, kamā ṣallayta ʿalā Ibrāhīma wa ʿalā āli Ibrāhīm, innaka ḥamīdun majīd. Allāhumma bārik ʿalā Muḥammadin wa ʿalā āli Muḥammad, kamā bārakta ʿalā Ibrāhīma wa ʿalā āli Ibrāhīm, innaka ḥamīdun majīd.", meaning: L("O Allah, segne Muhammad und die Familie Muhammads, wie du Ibrahim und die Familie Ibrahims gesegnet hast – du bist der Lobenswerte, der Ruhmreiche. O Allah, gib Muhammad und der Familie Muhammads Segen, wie du Ibrahim und der Familie Ibrahims Segen gegeben hast – du bist der Lobenswerte, der Ruhmreiche.", "O Allah, send prayers upon Muhammad and the family of Muhammad, as You sent prayers upon Ibrahim and the family of Ibrahim – You are Praiseworthy, Glorious. O Allah, bless Muhammad and the family of Muhammad, as You blessed Ibrahim and the family of Ibrahim – You are Praiseworthy, Glorious.", "نسألُ اللهَ أن يُثنيَ على نبيِّه محمدٍ ﷺ وعلى آله ويُباركَ عليهم، كما أثنى على إبراهيم عليه السلام وآله وبارك عليهم؛ إنه سبحانه المحمودُ في ذاته وصفاته، العظيمُ في مجده.", {
-    tr: "Allah'ım, İbrâhîm'e ve İbrâhîm'in âline salât ettiğin gibi Muhammed'e ve Muhammed'in âline salât et – sen övülmeye layıksın, şanı yüce olansın. Allah'ım, İbrâhîm'e ve İbrâhîm'in âline bereket verdiğin gibi Muhammed'e ve Muhammed'in âline bereket ver – sen övülmeye layıksın, şanı yüce olansın.",
-    ur: "اے اللہ، محمد اور آلِ محمد پر رحمت نازل فرما، جیسے تو نے ابراہیم اور آلِ ابراہیم پر رحمت نازل فرمائی – تو تعریف کے لائق، بزرگی والا ہے۔ اے اللہ، محمد اور آلِ محمد پر برکت نازل فرما، جیسے تو نے ابراہیم اور آلِ ابراہیم پر برکت نازل فرمائی – تو تعریف کے لائق، بزرگی والا ہے۔",
-    fa: "بار الها، بر محمد و خاندان محمد درود فرست، چنان‌که بر ابراهیم و خاندان ابراهیم درود فرستادی – تو ستوده و باشکوهی. بار الها، بر محمد و خاندان محمد برکت ده، چنان‌که به ابراهیم و خاندان ابراهیم برکت دادی – تو ستوده و باشکوهی.",
-    ps: "ای الله، پر محمد او د محمد پر کورنۍ درود ولېږه، لکه څنګه چې تا پر ابراهیم او د ابراهیم پر کورنۍ درود لېږلی دی – ته ستایل شوی، باعظمته یې. ای الله، پر محمد او د محمد پر کورنۍ برکت ورکړه، لکه څنګه چې تا پر ابراهیم او د ابراهیم پر کورنۍ برکت ورکړ – ته ستایل شوی، باعظمته یې.",
-    fr: "Ô Allah, envoie Tes prières sur Muhammad et sur la famille de Muhammad, comme Tu as envoyé Tes prières sur Ibrahim et sur la famille d'Ibrahim – Tu es Digne de louange et de gloire. Ô Allah, bénis Muhammad et la famille de Muhammad, comme Tu as béni Ibrahim et la famille d'Ibrahim – Tu es Digne de louange et de gloire.",
-    es: "Oh Allah, envía Tus oraciones sobre Muhammad y la familia de Muhammad, como enviaste Tus oraciones sobre Ibrahim y la familia de Ibrahim – Tú eres Digno de alabanza, Glorioso. Oh Allah, bendice a Muhammad y a la familia de Muhammad, como bendijiste a Ibrahim y a la familia de Ibrahim – Tú eres Digno de alabanza, Glorioso.",
-    id: "Ya Allah, limpahkanlah shalawat atas Muhammad dan keluarga Muhammad, sebagaimana Engkau melimpahkan shalawat atas Ibrahim dan keluarga Ibrahim – Engkau Maha Terpuji lagi Maha Mulia. Ya Allah, berkahilah Muhammad dan keluarga Muhammad, sebagaimana Engkau memberkahi Ibrahim dan keluarga Ibrahim – Engkau Maha Terpuji lagi Maha Mulia.",
-    ms: "Ya Allah, limpahkanlah selawat ke atas Muhammad dan keluarga Muhammad, sebagaimana Engkau melimpahkan selawat ke atas Ibrahim dan keluarga Ibrahim – Engkau Maha Terpuji lagi Maha Mulia. Ya Allah, berkatilah Muhammad dan keluarga Muhammad, sebagaimana Engkau memberkati Ibrahim dan keluarga Ibrahim – Engkau Maha Terpuji lagi Maha Mulia.",
-    bn: "হে আল্লাহ, মুহাম্মাদ ও মুহাম্মাদের পরিবারের উপর রহমত বর্ষণ করুন, যেমন আপনি ইবরাহিম ও ইবরাহিমের পরিবারের উপর রহমত বর্ষণ করেছেন – আপনি প্রশংসিত, মহিমান্বিত। হে আল্লাহ, মুহাম্মাদ ও মুহাম্মাদের পরিবারকে বরকত দান করুন, যেমন আপনি ইবরাহিম ও ইবরাহিমের পরিবারকে বরকত দান করেছেন – আপনি প্রশংসিত, মহিমান্বিত।",
-    ru: "О Аллах, ниспошли молитву Мухаммаду и семейству Мухаммада, как Ты ниспослал молитву Ибрахиму и семейству Ибрахима – Ты Достохвальный, Славный. О Аллах, благослови Мухаммада и семейство Мухаммада, как Ты благословил Ибрахима и семейство Ибрахима – Ты Достохвальный, Славный.",
-    zh: "安拉啊！求你祝福穆罕默德及其家属，正如你曾祝福易卜拉欣及其家属——你确是受赞颂的，确是尊严的。安拉啊！求你降福穆罕默德及其家属，正如你曾降福易卜拉欣及其家属——你确是受赞颂的，确是尊严的。",
+  salawat: { ar: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ", translit: "Allāhumma ṣalli ʿalā Muḥammadin wa ʿalā āli Muḥammad, kamā ṣallayta ʿalā Ibrāhīma wa ʿalā āli Ibrāhīm, innaka ḥamīdun majīd. Allāhumma bārik ʿalā Muḥammadin wa ʿalā āli Muḥammad, kamā bārakta ʿalā Ibrāhīma wa ʿalā āli Ibrāhīm, innaka ḥamīdun majīd.", essence: true, meaning: L("Sie bitten Allah, Muhammad ﷺ und seine Familie zu segnen, wie Er Ibrahim und seine Familie gesegnet hat, und preisen Ihn als lobenswert und ruhmreich (Sahih al-Bukhari 3370).", "You ask Allah to bless Muhammad ﷺ and his family as He blessed Ibrahim and his family, and praise Him as worthy of praise and glory (Sahih al-Bukhari 3370).", "نسألُ اللهَ أن يُثنيَ على نبيِّه محمدٍ ﷺ وعلى آله ويُباركَ عليهم، كما أثنى على إبراهيم عليه السلام وآله وبارك عليهم؛ إنه سبحانه المحمودُ في ذاته وصفاته، العظيمُ في مجده (صحيح البخاري 3370).", {
+    tr: "Allah'tan, İbrâhîm'e ve ailesine verdiği gibi Muhammed'e ﷺ ve ailesine de rahmet ve bereket vermesini diler, O'nu övgüye ve şana layık olarak anarsınız (Sahîh-i Buhârî 3370).",
+    ur: "آپ اللہ سے دعا کرتے ہیں کہ وہ محمد ﷺ اور ان کی آل پر ویسی ہی رحمت اور برکت نازل فرمائے جیسی ابراہیم اور ان کی آل پر فرمائی، اور اسے حمد و بزرگی کے لائق مانتے ہیں (صحیح البخاری 3370)۔",
+    fa: "از الله می‌خواهید که بر محمد ﷺ و خاندانش همان‌گونه درود و برکت فرستد که بر ابراهیم و خاندانش فرستاد، و او را سزاوار ستایش و شکوه می‌خوانید (صحیح بخاری 3370).",
+    ps: "تاسو له الله غواړئ چې پر محمد ﷺ او د هغه پر کورنۍ هماغسې درود او برکت ولېږي لکه پر ابراهیم او د هغه پر کورنۍ یې چې لېږلی دی، او هغه د ستاینې او عظمت وړ بولئ (صحیح البخاري 3370).",
+    fr: "Vous demandez à Allah de bénir Muhammad ﷺ et sa famille comme Il a béni Ibrahim et sa famille, et Le célébrez comme digne de louange et de gloire (Sahih al-Bukhari 3370).",
+    es: "Usted pide a Allah que bendiga a Muhammad ﷺ y a su familia como bendijo a Ibrahim y a su familia, y Lo alaba como digno de alabanza y de gloria (Sahih al-Bujari 3370).",
+    id: "Anda memohon kepada Allah agar melimpahkan shalawat dan berkah kepada Muhammad ﷺ dan keluarganya sebagaimana kepada Ibrahim dan keluarganya, serta memuji-Nya sebagai Yang layak dipuji dan dimuliakan (Shahih al-Bukhari 3370).",
+    ms: "Anda memohon kepada Allah agar melimpahkan selawat dan keberkatan kepada Muhammad ﷺ dan keluarganya sebagaimana kepada Ibrahim dan keluarganya, serta memuji-Nya sebagai Yang layak dipuji dan dimuliakan (Sahih al-Bukhari 3370).",
+    bn: "আপনি আল্লাহর কাছে প্রার্থনা করেন, তিনি যেন মুহাম্মাদ ﷺ ও তাঁর পরিবারকে তেমনই রহমত ও বরকত দেন যেমন ইবরাহিম ও তাঁর পরিবারকে দিয়েছেন, এবং তাঁকে প্রশংসা ও মহিমার যোগ্য বলে স্বীকার করেন (সহীহ আল-বুখারী 3370)।",
+    ru: "Вы просите Аллаха благословить Мухаммада ﷺ и его семейство так же, как Он благословил Ибрахима и его семейство, и восхваляете Его как достойного хвалы и славы (Сахих аль-Бухари 3370).",
+    zh: "您祈求安拉像赐福易卜拉欣及其家属那样赐福穆罕默德ﷺ及其家属，并赞颂祂配受赞美与尊荣（《布哈里圣训实录》第 3370 段）。",
   }) },
   salam: { ar: "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ", translit: "As-salāmu ʿalaykum wa raḥmatu llāh", meaning: L("Friede sei mit euch und die Barmherzigkeit Allahs.", "Peace be upon you and the mercy of Allah.", "دعاءٌ بالسلامة ورحمة الله لمن حولك.", {
     tr: "Üzerinize selam ve Allah'ın rahmeti olsun.",
@@ -240,31 +249,31 @@ const T = {
     ru: "Мир вам и милость Аллаха.",
     zh: "愿平安与安拉的慈悯降临你们。",
   }) },
-  tashShia: { ar: "أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ، اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ", translit: "Ash-hadu an lā ilāha illa llāhu waḥdahū lā sharīka lah, wa ash-hadu anna Muḥammadan ʿabduhū wa rasūluh. Allāhumma ṣalli ʿalā Muḥammadin wa āli Muḥammad.", meaning: L("Ich bezeuge, dass es keinen Gott gibt außer Allah, dem Einen ohne Teilhaber, und ich bezeuge, dass Muhammad sein Diener und Gesandter ist. O Allah, segne Muhammad und die Familie Muhammads.", "I bear witness that there is no god but Allah, alone without partner, and that Muhammad is His servant and Messenger. O Allah, send prayers upon Muhammad and the family of Muhammad.", "شهادةٌ لله بالوحدانية وأنه لا شريك له، ولمحمدٍ ﷺ بالعبودية والرسالة، ثم الصلاةُ على محمدٍ وآل محمد.", {
-    tr: "Şahitlik ederim ki Allah'tan başka ilah yoktur, O tektir, ortağı yoktur ve Muhammed O'nun kulu ve resulüdür. Allah'ım, Muhammed'e ve Muhammed'in âline salât et.",
-    ur: "میں گواہی دیتا/دیتی ہوں کہ اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، اور یہ کہ محمد اس کے بندے اور رسول ہیں۔ اے اللہ، محمد اور آلِ محمد پر رحمت نازل فرما۔",
-    fa: "گواهی می‌دهم که معبودی جز الله نیست، یگانه و بی‌شریک، و اینکه محمد بنده و فرستادهٔ اوست. بار الها، بر محمد و خاندان محمد درود فرست.",
-    ps: "زه ګواهي ورکوم چې له الله پرته بل معبود نشته، یوازې، بې شریکه، او چې محمد د هغه بنده او رسول دی. ای الله، پر محمد او د محمد پر کورنۍ درود ولېږه.",
-    fr: "J'atteste qu'il n'y a de dieu qu'Allah, Seul, sans associé, et que Muhammad est Son serviteur et Son messager. Ô Allah, envoie Tes prières sur Muhammad et sur la famille de Muhammad.",
-    es: "Atestiguo que no hay más dios que Allah, Único, sin asociado, y que Muhammad es Su siervo y Su mensajero. Oh Allah, envía Tus oraciones sobre Muhammad y la familia de Muhammad.",
-    id: "Aku bersaksi bahwa tiada tuhan selain Allah semata, tiada sekutu bagi-Nya, dan bahwa Muhammad adalah hamba dan utusan-Nya. Ya Allah, limpahkanlah shalawat atas Muhammad dan keluarga Muhammad.",
-    ms: "Aku bersaksi bahawa tiada tuhan selain Allah semata-mata, tiada sekutu bagi-Nya, dan bahawa Muhammad ialah hamba dan utusan-Nya. Ya Allah, limpahkanlah selawat ke atas Muhammad dan keluarga Muhammad.",
-    bn: "আমি সাক্ষ্য দিচ্ছি যে এক আল্লাহ ছাড়া কোনো ইলাহ নেই, তাঁর কোনো শরিক নেই, এবং মুহাম্মাদ তাঁর বান্দা ও রাসুল। হে আল্লাহ, মুহাম্মাদ ও মুহাম্মাদের পরিবারের উপর রহমত বর্ষণ করুন।",
-    ru: "Свидетельствую, что нет божества, кроме Аллаха, Единого, у Которого нет сотоварища, и что Мухаммад – Его раб и посланник. О Аллах, ниспошли молитву Мухаммаду и семейству Мухаммада.",
-    zh: "我作证：除安拉外绝无应受崇拜的，祂是独一的，没有伙伴；穆罕默德是祂的仆人和使者。安拉啊！求你祝福穆罕默德及其家属。",
+  tashShia: { ar: "أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ، اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ", translit: "Ash-hadu an lā ilāha illa llāhu waḥdahū lā sharīka lah, wa ash-hadu anna Muḥammadan ʿabduhū wa rasūluh. Allāhumma ṣalli ʿalā Muḥammadin wa āli Muḥammad.", essence: true, meaning: L("Sie bezeugen, dass Allah allein und ohne Teilhaber angebetet wird und dass Muhammad Sein Diener und Gesandter ist, und bitten um Segen für Muhammad und seine Familie.", "You bear witness that Allah alone, without partner, is worshipped and that Muhammad is His servant and Messenger, and ask for blessings upon Muhammad and his family.", "شهادةٌ لله بالوحدانية وأنه لا شريك له، ولمحمدٍ ﷺ بالعبودية والرسالة، ثم الصلاةُ على محمدٍ وآل محمد.", {
+    tr: "Allah'ın tek ve ortaksız olarak ibadete layık olduğuna, Muhammed'in O'nun kulu ve resulü olduğuna şahitlik eder, Muhammed'e ve ailesine salât istersiniz.",
+    ur: "آپ گواہی دیتے ہیں کہ صرف اللہ ہی، بغیر کسی شریک کے، عبادت کے لائق ہے اور محمد اس کے بندے اور رسول ہیں، اور محمد و آلِ محمد پر درود کی دعا کرتے ہیں۔",
+    fa: "گواهی می‌دهید که تنها الله، بی‌هیچ شریکی، سزاوار پرستش است و محمد بنده و فرستادهٔ اوست، و برای محمد و خاندانش درود می‌خواهید.",
+    ps: "تاسو ګواهي ورکوئ چې یوازې الله، بې له کوم شریک، د عبادت وړ دی او محمد د هغه بنده او رسول دی، او پر محمد او د هغه پر کورنۍ درود غواړئ.",
+    fr: "Vous attestez qu'Allah seul, sans associé, est adoré et que Muhammad est Son serviteur et Son messager, puis demandez des prières sur Muhammad et sa famille.",
+    es: "Usted atestigua que solo Allah, sin asociado, es adorado y que Muhammad es Su siervo y mensajero, y pide bendiciones para Muhammad y su familia.",
+    id: "Anda bersaksi bahwa hanya Allah, tanpa sekutu, yang disembah dan bahwa Muhammad adalah hamba dan utusan-Nya, lalu memohon shalawat bagi Muhammad dan keluarganya.",
+    ms: "Anda bersaksi bahawa hanya Allah, tanpa sekutu, yang disembah dan bahawa Muhammad ialah hamba dan utusan-Nya, lalu memohon selawat bagi Muhammad dan keluarganya.",
+    bn: "আপনি সাক্ষ্য দেন যে শরিকবিহীন এক আল্লাহই ইবাদতের যোগ্য এবং মুহাম্মাদ তাঁর বান্দা ও রাসুল, এবং মুহাম্মাদ ও তাঁর পরিবারের উপর রহমতের দোয়া করেন।",
+    ru: "Вы свидетельствуете, что поклоняются лишь Аллаху, у Которого нет сотоварища, и что Мухаммад – Его раб и посланник, и просите благословения для Мухаммада и его семейства.",
+    zh: "您作证唯有安拉应受崇拜、祂没有伙伴，穆罕默德是祂的仆人和使者，并为穆罕默德及其家属祈求赐福。",
   }) },
-  salamShia: { ar: "السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ", translit: "As-salāmu ʿalayka ayyuha n-nabiyyu wa raḥmatu llāhi wa barakātuh. As-salāmu ʿalaynā wa ʿalā ʿibādi llāhi ṣ-ṣāliḥīn. As-salāmu ʿalaykum wa raḥmatu llāhi wa barakātuh.", meaning: L("Friede sei mit dir, o Prophet, und Allahs Barmherzigkeit und Segen. Friede sei mit uns und mit den rechtschaffenen Dienern Allahs. Friede sei mit euch und Allahs Barmherzigkeit und Segen.", "Peace be upon you, O Prophet, and the mercy of Allah and His blessings. Peace be upon us and upon the righteous servants of Allah. Peace be upon you all and the mercy of Allah and His blessings.", "السلامُ على النبي ﷺ، ثم على المصلّي نفسه وعلى عباد الله الصالحين، ثم على الحاضرين جميعًا، مع رحمة الله وبركاته.", {
-    tr: "Selam sana, ey Peygamber, Allah'ın rahmeti ve bereketleri de üzerine olsun. Selam bize ve Allah'ın salih kulları üzerine olsun. Selam hepinize ve Allah'ın rahmeti ve bereketleri üzerinize olsun.",
-    ur: "اے نبی، آپ پر سلام ہو اور اللہ کی رحمت اور اس کی برکتیں۔ ہم پر اور اللہ کے نیک بندوں پر سلام ہو۔ آپ سب پر سلام ہو اور اللہ کی رحمت اور اس کی برکتیں۔",
-    fa: "سلام بر تو ای پیامبر و رحمت الله و برکات او. سلام بر ما و بر بندگان شایستهٔ الله. سلام بر همهٔ شما و رحمت الله و برکات او.",
-    ps: "ای پیغمبره، پر تا دې سلام او د الله رحمت او برکتونه وي. پر موږ او د الله پر صالحو بندګانو دې سلام وي. پر تاسو ټولو دې سلام او د الله رحمت او برکتونه وي.",
-    fr: "Que la paix soit sur toi, ô Prophète, ainsi que la miséricorde d'Allah et Ses bénédictions. Que la paix soit sur nous et sur les pieux serviteurs d'Allah. Que la paix soit sur vous tous, ainsi que la miséricorde d'Allah et Ses bénédictions.",
-    es: "La paz sea contigo, oh Profeta, y la misericordia de Allah y Sus bendiciones. La paz sea con nosotros y con los siervos virtuosos de Allah. La paz sea con todos vosotros, y la misericordia de Allah y Sus bendiciones.",
-    id: "Salam sejahtera atasmu, wahai Nabi, begitu pula rahmat Allah dan berkah-Nya. Salam sejahtera atas kami dan atas hamba-hamba Allah yang saleh. Salam sejahtera atas kalian semua, begitu pula rahmat Allah dan berkah-Nya.",
-    ms: "Salam sejahtera ke atasmu, wahai Nabi, serta rahmat Allah dan keberkatan-Nya. Salam sejahtera ke atas kami dan ke atas hamba-hamba Allah yang soleh. Salam sejahtera ke atas kamu semua serta rahmat Allah dan keberkatan-Nya.",
-    bn: "হে নবী, আপনার উপর শান্তি এবং আল্লাহর রহমত ও বরকত বর্ষিত হোক। আমাদের উপর এবং আল্লাহর সৎকর্মশীল বান্দাদের উপর শান্তি বর্ষিত হোক। আপনাদের সবার উপর শান্তি এবং আল্লাহর রহমত ও বরকত বর্ষিত হোক।",
-    ru: "Мир тебе, о Пророк, и милость Аллаха, и Его благословения. Мир нам и праведным рабам Аллаха. Мир всем вам, и милость Аллаха, и Его благословения.",
-    zh: "先知啊！愿平安、安拉的慈悯和祂的吉庆降临你。愿平安降临我们以及安拉的诸善良仆人。愿平安、安拉的慈悯和祂的吉庆降临你们大家。",
+  salamShia: { ar: "السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ", translit: "As-salāmu ʿalayka ayyuha n-nabiyyu wa raḥmatu llāhi wa barakātuh. As-salāmu ʿalaynā wa ʿalā ʿibādi llāhi ṣ-ṣāliḥīn. As-salāmu ʿalaykum wa raḥmatu llāhi wa barakātuh.", essence: true, meaning: L("Sie grüßen den Propheten ﷺ, dann sich selbst und die rechtschaffenen Diener Allahs und schließlich alle Anwesenden und erbitten dabei Allahs Barmherzigkeit und Segen.", "You greet the Prophet ﷺ, then yourself and Allah's righteous servants, and finally everyone present, asking for Allah's mercy and blessings.", "السلامُ على النبي ﷺ، ثم على المصلّي نفسه وعلى عباد الله الصالحين، ثم على الحاضرين جميعًا، مع رحمة الله وبركاته.", {
+    tr: "Önce Peygamber'e ﷺ, sonra kendinize ve Allah'ın salih kullarına, en sonunda da orada bulunan herkese selam verir, Allah'ın rahmetini ve bereketini dilersiniz.",
+    ur: "آپ پہلے نبی ﷺ کو، پھر اپنے آپ کو اور اللہ کے نیک بندوں کو، اور آخر میں تمام حاضرین کو سلام کہتے ہیں اور اللہ کی رحمت اور برکت کی دعا کرتے ہیں۔",
+    fa: "ابتدا بر پیامبر ﷺ، سپس بر خودتان و بندگان شایستهٔ الله و در پایان بر همهٔ حاضران سلام می‌فرستید و رحمت و برکت الله را می‌خواهید.",
+    ps: "تاسو لومړی پیغمبر ﷺ ته، بیا خپل ځان او د الله صالحو بندګانو ته، او په پای کې ټولو حاضرینو ته سلام اچوئ او د الله رحمت او برکت غواړئ.",
+    fr: "Vous saluez le Prophète ﷺ, puis vous-même et les pieux serviteurs d'Allah, et enfin toutes les personnes présentes, en demandant la miséricorde et les bénédictions d'Allah.",
+    es: "Usted saluda al Profeta ﷺ, luego a sí mismo y a los siervos virtuosos de Allah y, por último, a todos los presentes, pidiendo la misericordia y las bendiciones de Allah.",
+    id: "Anda memberi salam kepada Nabi ﷺ, lalu kepada diri Anda dan hamba-hamba Allah yang saleh, dan terakhir kepada semua yang hadir, sambil memohon rahmat dan berkah Allah.",
+    ms: "Anda memberi salam kepada Nabi ﷺ, kemudian kepada diri anda dan hamba-hamba Allah yang soleh, dan akhirnya kepada semua yang hadir, sambil memohon rahmat dan keberkatan Allah.",
+    bn: "আপনি প্রথমে নবী ﷺ-কে, তারপর নিজেকে ও আল্লাহর নেক বান্দাদের, এবং শেষে উপস্থিত সবাইকে সালাম দেন এবং আল্লাহর রহমত ও বরকত কামনা করেন।",
+    ru: "Вы приветствуете Пророка ﷺ, затем себя и праведных рабов Аллаха и, наконец, всех присутствующих, прося милости и благословения Аллаха.",
+    zh: "您先向先知ﷺ致平安，再向自己和安拉的善良仆人，最后向在场的所有人致平安，并祈求安拉的慈悯与吉庆。",
   }) },
   tasbihat: { ar: "سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ", translit: "Subḥāna llāhi wa l-ḥamdu lillāhi wa lā ilāha illa llāhu wa llāhu akbar (3×)", meaning: L("Gepriesen sei Allah, alles Lob gebührt Allah, es gibt keinen Gott außer Allah, und Allah ist größer.", "Glory be to Allah, praise be to Allah, there is no god but Allah, and Allah is the Greatest.", "تنزيهُ الله، وحمدُه، وتوحيدُه، وتكبيرُه.", {
     tr: "Allah her eksiklikten uzaktır, hamd Allah'a aittir, Allah'tan başka ilah yoktur ve Allah en büyüktür.",
@@ -279,31 +288,31 @@ const T = {
     ru: "Пречист Аллах, хвала Аллаху, нет божества, кроме Аллаха, и Аллах – Величайший.",
     zh: "赞颂安拉超绝万物，一切赞颂全归于安拉，除安拉外绝无应受崇拜的，安拉至大。",
   }) },
-  qunut: { ar: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ", translit: "Rabbanā ātinā fi d-dunyā ḥasanatan wa fi l-ākhirati ḥasanatan wa qinā ʿadhāba n-nār", meaning: L("Unser Herr, gib uns im Diesseits Gutes und im Jenseits Gutes und bewahre uns vor der Strafe des Feuers (2:201) – jedes Bittgebet ist möglich.", "Our Lord, give us good in this world and good in the Hereafter and protect us from the punishment of the Fire (2:201) – any supplication may be said.", "دعاءٌ جامعٌ لخيرَي الدنيا والآخرة والنجاةِ من النار (البقرة: 201)، ويجوز الدعاءُ بأيِّ دعاءٍ آخر.", {
-    tr: "Rabbimiz, bize dünyada da iyilik ver, âhirette de iyilik ver ve bizi ateş azabından koru (2:201) – herhangi bir dua da edilebilir.",
-    ur: "اے ہمارے رب! ہمیں دنیا میں بھی بھلائی عطا فرما اور آخرت میں بھی بھلائی، اور ہمیں آگ کے عذاب سے بچا (2:201) – کوئی بھی دعا کی جا سکتی ہے۔",
-    fa: "پروردگارا، در دنیا به ما نیکی عطا کن و در آخرت نیز نیکی، و ما را از عذاب آتش نگه دار (2:201) – هر دعایی را می‌توان گفت.",
-    ps: "ای زموږ ربه! موږ ته په دنیا کې هم نېکي راکړه او په آخرت کې هم نېکي، او موږ د اور له عذابه وساته (2:201) – هره دعا ویل کېدای شي.",
-    fr: "Notre Seigneur, accorde-nous une belle part ici-bas et une belle part dans l'au-delà, et protège-nous du châtiment du Feu (2:201) – toute invocation peut être prononcée.",
-    es: "Señor nuestro, concédenos el bien en esta vida y el bien en la Otra, y protégenos del castigo del Fuego (2:201) – se puede decir cualquier súplica.",
-    id: "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka (2:201) – doa apa pun boleh dibaca.",
-    ms: "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami daripada azab neraka (2:201) – mana-mana doa boleh dibaca.",
-    bn: "হে আমাদের রব, আমাদের দুনিয়াতে কল্যাণ দিন, আখিরাতেও কল্যাণ দিন এবং আমাদের আগুনের আযাব থেকে রক্ষা করুন (2:201) – যেকোনো দোয়া পড়া যায়।",
-    ru: "Господь наш! Даруй нам добро в этом мире и добро в Последней жизни и защити нас от мучений Огня (2:201) – можно произнести любую мольбу.",
-    zh: "我们的主啊！求你在今世赐我们美好的生活，在后世也赐我们美好的生活，求你保护我们免受火狱的刑罚（2:201）——也可以念其他任何祈祷词。",
+  qunut: { ar: verseQuote("imlaei", "2:201", 4), translit: "Rabbanā ātinā fi d-dunyā ḥasanatan wa fi l-ākhirati ḥasanatan wa qinā ʿadhāba n-nār", essence: true, meaning: L("Ein Bittgebet aus dem Koran (2:201) um das Gute im Diesseits und im Jenseits und um Schutz vor dem Feuer – jedes Bittgebet ist möglich.", "A supplication from the Quran (2:201) for good in this world and the Hereafter and for protection from the Fire – any supplication may be said.", "دعاءٌ جامعٌ لخيرَي الدنيا والآخرة والنجاةِ من النار (البقرة: 201)، ويجوز الدعاءُ بأيِّ دعاءٍ آخر.", {
+    tr: "Kur'an'dan (2:201) dünya ve âhiretin iyiliği ve ateşten korunmak için bir dua – herhangi bir dua da edilebilir.",
+    ur: "قرآن (2:201) کی ایک دعا جس میں دنیا و آخرت کی بھلائی اور آگ سے حفاظت مانگی جاتی ہے – کوئی بھی دعا کی جا سکتی ہے۔",
+    fa: "دعایی از قرآن (2:201) برای نیکی دنیا و آخرت و رهایی از آتش – هر دعایی را می‌توان گفت.",
+    ps: "د قرآن (2:201) یوه دعا د دنیا او آخرت د نېکۍ او له اوره د ژغورنې لپاره – هره دعا ویل کېدای شي.",
+    fr: "Une invocation tirée du Coran (2:201) pour le bien d'ici-bas et de l'au-delà et la protection contre le Feu – toute invocation peut être prononcée.",
+    es: "Una súplica del Corán (2:201) por el bien de esta vida y de la Otra y la protección del Fuego – se puede decir cualquier súplica.",
+    id: "Doa dari Al-Qur'an (2:201) untuk kebaikan dunia dan akhirat serta perlindungan dari azab neraka – doa apa pun boleh dibaca.",
+    ms: "Doa daripada Quran (2:201) untuk kebaikan dunia dan akhirat serta perlindungan daripada azab neraka – mana-mana doa boleh dibaca.",
+    bn: "কুরআনের (2:201) একটি দোয়া, দুনিয়া ও আখিরাতের কল্যাণ এবং আগুন থেকে রক্ষা চেয়ে – যেকোনো দোয়া পড়া যায়।",
+    ru: "Мольба из Корана (2:201) о благе в этом мире и в Последней жизни и о защите от Огня – можно произнести любую мольбу.",
+    zh: "一段出自古兰经（2:201）的祈祷，祈求今世与后世的美好并免受火狱的刑罚——也可以念其他任何祈祷词。",
   }) },
-  bihawl: { ar: "بِحَوْلِ اللَّهِ وَقُوَّتِهِ أَقُومُ وَأَقْعُدُ", translit: "Biḥawli llāhi wa quwwatihī aqūmu wa aqʿud", meaning: L("Mit Allahs Macht und Kraft stehe ich auf und setze mich.", "By the power and strength of Allah I stand and sit.", "أقومُ وأقعدُ بقدرة الله وقوَّته، لا بحولي ولا بقوَّتي.", {
-    tr: "Allah'ın gücü ve kuvvetiyle kalkar ve otururum.",
-    ur: "اللہ کی طاقت اور قوت سے میں اٹھتا/اٹھتی اور بیٹھتا/بیٹھتی ہوں۔",
-    fa: "به نیرو و توان الله برمی‌خیزم و می‌نشینم.",
-    ps: "د الله په ځواک او قوت زه پاڅېږم او کېنم.",
-    fr: "Par la puissance et la force d'Allah, je me lève et je m'assieds.",
-    es: "Por el poder y la fuerza de Allah me levanto y me siento.",
-    id: "Dengan daya dan kekuatan Allah aku berdiri dan duduk.",
-    ms: "Dengan daya dan kekuatan Allah aku berdiri dan duduk.",
-    bn: "আল্লাহর শক্তি ও ক্ষমতায় আমি উঠি ও বসি।",
-    ru: "С помощью силы и мощи Аллаха я встаю и сажусь.",
-    zh: "凭借安拉的力量和能力，我起立，我坐下。",
+  bihawl: { ar: "بِحَوْلِ اللَّهِ وَقُوَّتِهِ أَقُومُ وَأَقْعُدُ", translit: "Biḥawli llāhi wa quwwatihī aqūmu wa aqʿud", essence: true, meaning: L("Beim Aufstehen bekennen Sie, dass Sie nur durch Allahs Macht und Kraft stehen und sitzen.", "As you rise, you affirm that you stand and sit only through Allah's power and strength.", "أقومُ وأقعدُ بقدرة الله وقوَّته، لا بحولي ولا بقوَّتي.", {
+    tr: "Kalkarken, ancak Allah'ın gücü ve kuvvetiyle kalkıp oturduğunuzu ikrar edersiniz.",
+    ur: "اٹھتے ہوئے آپ اقرار کرتے ہیں کہ آپ صرف اللہ کی طاقت اور قوت سے اٹھتے اور بیٹھتے ہیں۔",
+    fa: "هنگام برخاستن اقرار می‌کنید که تنها با نیرو و توان الله برمی‌خیزید و می‌نشینید.",
+    ps: "د پاڅېدو پر وخت اقرار کوئ چې تاسو یوازې د الله په ځواک او قوت پاڅېږئ او کېنئ.",
+    fr: "En vous levant, vous reconnaissez que vous ne vous levez et ne vous asseyez que par la puissance et la force d'Allah.",
+    es: "Al levantarse, usted reconoce que solo se pone de pie y se sienta por el poder y la fuerza de Allah.",
+    id: "Saat bangkit, Anda mengakui bahwa Anda berdiri dan duduk hanya dengan daya dan kekuatan Allah.",
+    ms: "Semasa bangun, anda mengakui bahawa anda berdiri dan duduk hanya dengan daya dan kekuatan Allah.",
+    bn: "ওঠার সময় আপনি স্বীকার করেন যে কেবল আল্লাহর শক্তি ও ক্ষমতাতেই আপনি ওঠেন ও বসেন।",
+    ru: "Вставая, вы признаёте, что встаёте и садитесь лишь благодаря силе и мощи Аллаха.",
+    zh: "起身时，您承认自己唯凭安拉的力量和能力才能起立和坐下。",
   }) },
 };
 
@@ -687,7 +696,7 @@ const N = {
   }),
 };
 
-const s = (rakah: number, posture: Posture, title: L2, txt?: { ar: string; translit: string; meaning: L2 }, note?: L2, aloud?: boolean): Step => ({ rakah, posture, title, ...(txt ?? {}), note, aloud });
+const s = (rakah: number, posture: Posture, title: L2, txt?: { ar: string; translit: string; meaning: L2; essence?: boolean }, note?: L2, aloud?: boolean): Step => ({ rakah, posture, title, ...(txt ?? {}), note, aloud });
 
 export function buildPrayer(id: (typeof PRAYERS)[number]["id"], tradition: Tradition): Step[] {
   const p = PRAYERS.find((x) => x.id === id)!;

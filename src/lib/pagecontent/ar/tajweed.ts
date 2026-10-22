@@ -1,6 +1,8 @@
 // Arabic tajweed course content. Mirrors the *_en fields of TAJWEED_LESSONS in src/lib/tajweed.ts
 // (same lesson ids, same example and quiz array lengths, quiz options in the same order so `answer` indexes stay valid).
 // Quranic examples (`ar`, `key`) and `answer` are taken from the source lesson and are not repeated here.
+// A Quran quote inside a text is cut out of the Quran data (verseQuote in lib/verseQuotes.ts), never typed.
+import { verseQuote } from "../../verseQuotes";
 
 export type ArTajweedExample = { note: string };
 export type ArTajweedQuestion = { q: string; options: string[]; explain: string };
@@ -906,7 +908,7 @@ const lessons: Record<string, ArTajweedLesson> = {
     title: "الوقف والابتداء",
     summary: "معرفة مواضع الوقف وكيفيته، ومواضع الابتداء، تصون المعنى، وعلامات الوقف الصغيرة في المصحف خير دليل لك.",
     body: `## أهمية الوقف
-الوقف: قطع الصوت عن الكلمة زمنًا يُتنفَّس فيه عادةً بنيّة استئناف القراءة، والابتداء: الشروع في القراءة بعد الوقف. وقد يقطع الوقفُ في غير موضعه الكلامَ حتى يوهم خلاف المراد. ومثاله: الوقف على «لَا تَقْرَبُوا الصَّلَاةَ» دون إتمام الآية (4:43)، فيفسد المعنى.
+الوقف: قطع الصوت عن الكلمة زمنًا يُتنفَّس فيه عادةً بنيّة استئناف القراءة، والابتداء: الشروع في القراءة بعد الوقف. وقد يقطع الوقفُ في غير موضعه الكلامَ حتى يوهم خلاف المراد. ومثاله: الوقف على «${verseQuote("imlaei", "4:43", 5, 7)}» دون إتمام الآية (4:43)، فيفسد المعنى.
 
 ## كيفية الوقف على الكلمة
 - تُسكَّن الحركة الأخيرة: الرَّحِيمِ ← الرَّحِيمْ.

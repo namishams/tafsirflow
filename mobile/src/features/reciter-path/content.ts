@@ -1,7 +1,7 @@
 import { useLang } from "@/i18n";
 import { moduleText } from "@/i18n/app";
 import type { RuleId } from "./curriculum";
-import { EXTRA, type ExtraContent } from "./content2";
+import { EXTRA, resolveQuotes, type ExtraContent } from "./content2";
 
 // Course content of the Reciter Path, written in our own words (established tajweed of the riwaya of Hafs ʿan ʿAsim).
 // English and German here; the other languages can add a "reciterPathContent" entry to src/i18n/app/<lang>.json and
@@ -415,8 +415,9 @@ const mergedCache = new Map<string, Content>();
 export function useContent(): Content {
   const { lang } = useLang();
   const base = moduleText("reciterPathContent", { en, de }, lang);
-  // levels 7–10 (content2.ts): the learner's language (inline, else "reciterPathExtra" in the language file), else English
-  const x = moduleText("reciterPathExtra", EXTRA as { en: ExtraContent } & Record<string, ExtraContent | undefined>, lang);
+  // levels 7–10 (content2.ts): the learner's language (inline, else "reciterPathExtra" in the language file), else English;
+  // verse tokens become the words from the Quran data (resolveQuotes in content2.ts)
+  const x = resolveQuotes(moduleText("reciterPathExtra", EXTRA as { en: ExtraContent } & Record<string, ExtraContent | undefined>, lang));
   const hit = mergedCache.get(lang) as (Content & { _base?: Content; _x?: ExtraContent }) | undefined;
   if (hit && hit._base === base && hit._x === x) return hit;
   const m = { ...base, levels: { ...base.levels, ...x.levels }, units: { ...base.units, ...x.units }, _base: base, _x: x } as Content;

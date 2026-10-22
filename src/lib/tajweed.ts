@@ -1,6 +1,14 @@
 // Tajweed course content (riwayah Hafs ʿan ʿĀsim, Shāṭibiyyah path).
 // Pure data: the UI renders body_* as Markdown ("## " headings, "- " bullets).
 // Verse keys on examples are only given where the exact word/phrase occurs in that verse.
+// Quran wording is never typed by hand (BLUEPRINT §4): every example verse and every Quran phrase of two or more words
+// in the lesson texts, notes and quizzes is cut out of data/verse-quotes.json (Quran.com, text_imlaei) by verse key and
+// word positions – ayah("2:5", 3, 5) = words 3 to 5 of 2:5 (verseQuote in lib/verseQuotes.ts). Single words, letters,
+// the isti'adha and the basmala as formulas and the scholars' memory phrases (خُصَّ ضَغْطٍ قِظْ …) stay as text.
+// A new phrase: `node scripts/gen-verse-quotes.mjs imlaei:<key>`, then quote it with ayah().
+import { verseQuote } from "./verseQuotes";
+
+const ayah = (key: string, from?: number, to?: number) => verseQuote("imlaei", key, from, to);
 
 export type Example = { ar: string; key?: string; note_en: string; note_de: string }; // key = Quran verse key like "2:2" if the example word is taken from that verse
 export type Question = {
@@ -105,19 +113,19 @@ Hören Sie sich eine kurze Sure von einem bekannten Rezitator dreimal an, nehmen
         note_de: "Die Isti'adha vor Beginn der Rezitation. Achten Sie auf das deutliche ع in أَعُوذُ und das schwere ط in الشَّيْطَانِ.",
       },
       {
-        ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+        ar: ayah("1:1"),
         key: "1:1",
         note_en: "The basmala, recited at the start of every surah except at-Tawbah. The lam in اللَّهِ is light here because it follows a kasra.",
         note_de: "Die Basmala, am Anfang jeder Sure außer at-Tauba. Das Lam in اللَّهِ ist hier leicht, weil davor ein Kasra steht.",
       },
       {
-        ar: "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+        ar: ayah("1:2"),
         key: "1:2",
         note_en: "A simple verse to practise calm, clear articulation: distinguish the ح in الْحَمْدُ from a normal h.",
         note_de: "Ein einfacher Vers zum Üben ruhiger, klarer Aussprache: Unterscheiden Sie das ح in الْحَمْدُ von einem gewöhnlichen h.",
       },
       {
-        ar: "قُلْ هُوَ اللَّهُ أَحَدٌ",
+        ar: ayah("112:1"),
         key: "112:1",
         note_en: "Confusing ح with ه here (أَحَدٌ) would be a clear mistake (laḥn jalī) because it changes the word.",
         note_de: "Würde man hier ح mit ه verwechseln (أَحَدٌ), wäre das ein offensichtlicher Fehler (Lahn dschali), weil sich das Wort verändert.",
@@ -245,13 +253,13 @@ Nehmen Sie sich pro Tag einen Bereich vor. Sprechen Sie jeden Buchstaben mit Suk
         note_de: "Rachenbuchstaben aus der Mitte (ع ح) und dem oberen Rachen (خ). Sprechen Sie sie nach einem Hamza, um die Stelle zu spüren.",
       },
       {
-        ar: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
+        ar: ayah("113:1"),
         key: "113:1",
         note_en: "ق from the back of the tongue, ع from the middle of the throat, ف from lip and teeth, ب from both lips.",
         note_de: "ق vom hinteren Zungenteil, ع aus der Rachenmitte, ف mit Lippe und Zähnen, ب mit beiden Lippen.",
       },
       {
-        ar: "مِن شَرِّ مَا خَلَقَ",
+        ar: ayah("113:2"),
         key: "113:2",
         note_en: "ش from the middle of the tongue, خ from the upper throat, ر from the tip of the tongue.",
         note_de: "ش aus der Zungenmitte, خ aus dem oberen Rachen, ر von der Zungenspitze.",
@@ -356,7 +364,7 @@ They are heaviest with fatha, a little less with damma and lightest – but stil
 - when stopping, it follows a ya sakinah or a kasra: خَيْرٌ → خَيْرْ
 
 ## The lam in the name Allah
-- **Heavy** after fatha or damma: قَالَ اللَّهُ، هُوَ اللَّهُ
+- **Heavy** after fatha or damma: ${ayah("5:116", 2, 3)}، ${ayah("112:1", 2, 3)}
 - **Light** after kasra: بِسْمِ اللَّهِ، لِلَّهِ
 - At the very start of reading (اللَّهُ ...), it is heavy.
 All other lams are always light.
@@ -391,7 +399,7 @@ Am schwersten klingen sie mit Fatha, etwas weniger mit Damma und am leichtesten 
 - man beim Anhalten nach einem Ya mit Sukun oder einem Kasra darauf stoppt: خَيْرٌ → خَيْرْ
 
 ## Das Lam im Namen Allah
-- **Schwer** nach Fatha oder Damma: قَالَ اللَّهُ، هُوَ اللَّهُ
+- **Schwer** nach Fatha oder Damma: ${ayah("5:116", 2, 3)}، ${ayah("112:1", 2, 3)}
 - **Leicht** nach Kasra: بِسْمِ اللَّهِ، لِلَّهِ
 - Beginnt man direkt mit اللَّهُ, ist es schwer.
 Alle anderen Lams sind immer leicht.
@@ -405,19 +413,19 @@ Alle anderen Lams sind immer leicht.
 Lesen Sie Paare laut: سَ/صَ، تَ/طَ، دَ/ضَ، ذَ/ظَ، كَ/قَ، هَ/حَ. Lesen Sie dann Sure al-Ichlas und markieren Sie vor dem Rezitieren jedes Lam von Allah als schwer oder leicht.`,
     examples: [
       {
-        ar: "هُوَ اللَّهُ",
+        ar: ayah("112:1", 2, 3),
         key: "112:1",
         note_en: "The lam of Allah follows a fatha (on the waw of هُوَ), so it is heavy.",
         note_de: "Das Lam von Allah folgt auf ein Fatha (auf dem Waw von هُوَ) und ist daher schwer.",
       },
       {
-        ar: "بِسْمِ اللَّهِ",
+        ar: ayah("1:1", 1, 2),
         key: "1:1",
         note_en: "The lam of Allah follows a kasra, so it is light.",
         note_de: "Das Lam von Allah folgt auf ein Kasra und ist daher leicht.",
       },
       {
-        ar: "ارْجِعِي إِلَىٰ رَبِّكِ",
+        ar: ayah("89:28", 1, 3),
         key: "89:28",
         note_en: "The ra in ارْجِعِي is heavy: sukun after a temporary kasra. The ra in رَبِّكِ is heavy because it has fatha.",
         note_de: "Das Ra in ارْجِعِي ist schwer: Sukun nach einem vorübergehenden Kasra. Das Ra in رَبِّكِ ist schwer, weil es Fatha trägt.",
@@ -558,22 +566,22 @@ Die meisten Sonnenbuchstaben werden mit der Zungenspitze oder dem vorderen Zunge
 - Dem Mond-Lam einen Vokal anhängen („ala-qamar“).
 
 ## Übungstipp
-Gehen Sie Sure al-Fatiha und Sure an-Nas durch und unterstreiche jedes ال. Entscheiden Sie jeweils: Sonne oder Mond? Rezitieren Sie dann und hören Sie genau hin, ob Sie die Sonnenbuchstaben verdoppelt haben.`,
+Gehen Sie Sure al-Fatiha und Sure an-Nas durch und unterstreichen Sie jedes ال. Entscheiden Sie jeweils: Sonne oder Mond? Rezitieren Sie dann und hören Sie genau hin, ob Sie die Sonnenbuchstaben verdoppelt haben.`,
     examples: [
       {
-        ar: "الْحَمْدُ لِلَّهِ",
+        ar: ayah("1:2", 1, 2),
         key: "1:2",
         note_en: "Lam qamariyya: the lam before ح is pronounced clearly – al-ḥamdu.",
         note_de: "Lam Qamariyya: Das Lam vor ح wird deutlich gesprochen – al-hamdu.",
       },
       {
-        ar: "الرَّحْمَٰنِ الرَّحِيمِ",
+        ar: ayah("1:3"),
         key: "1:3",
         note_en: "Lam shamsiyya: the lam merges into the ra, which is doubled – ar-raḥmāni r-raḥīm.",
         note_de: "Lam Schamsiyya: Das Lam verschmilzt mit dem Ra, das verdoppelt wird – ar-rahmani r-rahim.",
       },
       {
-        ar: "مَالِكِ يَوْمِ الدِّينِ",
+        ar: ayah("1:4"),
         key: "1:4",
         note_en: "Lam shamsiyya before د: the lam is silent and the dal is doubled.",
         note_de: "Lam Schamsiyya vor د: Das Lam ist stumm, das Dal wird verdoppelt.",
@@ -585,7 +593,7 @@ Gehen Sie Sure al-Fatiha und Sure an-Nas durch und unterstreiche jedes ال. Ent
         note_de: "Lam Qamariyya vor م: Das Lam wird mit Sukun gesprochen.",
       },
       {
-        ar: "مَلِكِ النَّاسِ",
+        ar: ayah("114:2"),
         key: "114:2",
         note_en: "Lam shamsiyya before ن: the nun is doubled (and also carries a ghunnah because of the shaddah).",
         note_de: "Lam Schamsiyya vor ن: Das Nun wird verdoppelt (und erhält wegen der Schadda auch eine Ghunna).",
@@ -671,7 +679,7 @@ Because they sound the same, the same four rules apply to both, depending on the
 The six throat letters:
 - ء ه ع ح غ خ
 
-Izhar happens within one word (يَنْأَوْنَ، مِنْهُمْ) and across two words (مَنْ آمَنَ، عَذَابٌ أَلِيمٌ).
+Izhar happens within one word (يَنْأَوْنَ، مِنْهُمْ) and across two words (${ayah("2:62", 8, 9)}، ${ayah("2:10", 8, 9)}).
 
 ## Why izhar?
 The throat letters are far away from the tip of the tongue where nun is made. Because of this distance there is no reason to merge or hide the nun.
@@ -686,7 +694,7 @@ Touch the tip of the tongue to the gum behind the upper teeth, say a short, clea
 - Weak throat letters after the nun, especially ع and ح.
 
 ## Practice tip
-Read slowly: مِنْ خَوْفٍ – عَذَابٌ أَلِيمٌ – مَنْ آمَنَ. Put a finger on your nose: with izhar you should feel only a short vibration, not a long hum.`,
+Read slowly: ${ayah("106:4", 6, 7)} – ${ayah("2:10", 8, 9)} – ${ayah("2:62", 8, 9)}. Put a finger on your nose: with izhar you should feel only a short vibration, not a long hum.`,
     body_de: `## Nun Sakina und Tanwin
 - **Nun Sakina** ist ein Nun ohne Vokal: مِنْ، عَنْ، أَنْعَمْتَ.
 - **Tanwin** ist der doppelte Vokal am Ende eines Nomens (ـٌ ـً ـٍ). Er wird wie ein Nun Sakina gesprochen: عَلِيمٌ = ʿalimun.
@@ -700,7 +708,7 @@ Weil beide gleich klingen, gelten für beide dieselben vier Regeln – je nachde
 Die sechs Rachenbuchstaben:
 - ء ه ع ح غ خ
 
-Izhar gibt es innerhalb eines Wortes (يَنْأَوْنَ، مِنْهُمْ) und zwischen zwei Wörtern (مَنْ آمَنَ، عَذَابٌ أَلِيمٌ).
+Izhar gibt es innerhalb eines Wortes (يَنْأَوْنَ، مِنْهُمْ) und zwischen zwei Wörtern (${ayah("2:62", 8, 9)}، ${ayah("2:10", 8, 9)}).
 
 ## Warum Izhar?
 Die Rachenbuchstaben liegen weit entfernt von der Zungenspitze, an der das Nun entsteht. Wegen dieses Abstands gibt es keinen Grund, das Nun zu verschmelzen oder zu verbergen.
@@ -715,34 +723,34 @@ Berühren Sie mit der Zungenspitze den Gaumen hinter den oberen Zähnen, spreche
 - Schwache Rachenbuchstaben nach dem Nun, besonders bei ع und ح.
 
 ## Übungstipp
-Lesen Sie langsam: مِنْ خَوْفٍ – عَذَابٌ أَلِيمٌ – مَنْ آمَنَ. Legen Sie einen Finger an die Nase: Bei Izhar spüren Sie nur ein kurzes Vibrieren, kein langes Summen.`,
+Lesen Sie langsam: ${ayah("106:4", 6, 7)} – ${ayah("2:10", 8, 9)} – ${ayah("2:62", 8, 9)}. Legen Sie einen Finger an die Nase: Bei Izhar spüren Sie nur ein kurzes Vibrieren, kein langes Summen.`,
     examples: [
       {
-        ar: "مَنْ آمَنَ",
+        ar: ayah("2:62", 8, 9),
         key: "2:62",
         note_en: "Nun sakinah followed by hamza (آ) in the next word – izhar.",
         note_de: "Nun Sakina, gefolgt von Hamza (آ) im nächsten Wort – Izhar.",
       },
       {
-        ar: "وَلَهُمْ عَذَابٌ أَلِيمٌ",
+        ar: ayah("2:10", 7, 9),
         key: "2:10",
         note_en: "Tanwin on عَذَابٌ followed by hamza – izhar: ʿadhābun alīm.",
         note_de: "Tanwin auf عَذَابٌ, gefolgt von Hamza – Izhar: ʿadhabun alim.",
       },
       {
-        ar: "مِنْ خَوْفٍ",
+        ar: ayah("106:4", 6, 7),
         key: "106:4",
         note_en: "Nun sakinah followed by خ – izhar.",
         note_de: "Nun Sakina, gefolgt von خ – Izhar.",
       },
       {
-        ar: "وَيَنْأَوْنَ عَنْهُ",
+        ar: ayah("6:26", 4, 5),
         key: "6:26",
         note_en: "Izhar within one word twice: ن before ء in يَنْأَوْنَ and ن before ه in عَنْهُ.",
         note_de: "Zweimal Izhar innerhalb eines Wortes: ن vor ء in يَنْأَوْنَ und ن vor ه in عَنْهُ.",
       },
       {
-        ar: "كُفُوًا أَحَدٌ",
+        ar: ayah("112:4", 4, 5),
         key: "112:4",
         note_en: "Tanwin on كُفُوًا followed by hamza – izhar: kufuwan aḥad.",
         note_de: "Tanwin auf كُفُوًا, gefolgt von Hamza – Izhar: kufuwan ahad.",
@@ -770,11 +778,11 @@ Lesen Sie langsam: مِنْ خَوْفٍ – عَذَابٌ أَلِيمٌ – �
       {
         q_en: "Which phrase contains izhar?",
         q_de: "Welcher Ausdruck enthält Izhar?",
-        options_en: ["مِن شَرِّ", "مِنْ خَوْفٍ", "مِن بَعْدِ", "مَن يَقُولُ"],
-        options_de: ["مِن شَرِّ", "مِنْ خَوْفٍ", "مِن بَعْدِ", "مَن يَقُولُ"],
+        options_en: [ayah("113:2", 1, 2), ayah("106:4", 6, 7), ayah("2:27", 5, 6), ayah("2:8", 3, 4)],
+        options_de: [ayah("113:2", 1, 2), ayah("106:4", 6, 7), ayah("2:27", 5, 6), ayah("2:8", 3, 4)],
         answer: 1,
-        explain_en: "خ is a throat letter, so the nun in مِنْ خَوْفٍ is pronounced clearly.",
-        explain_de: "خ ist ein Rachenbuchstabe, daher wird das Nun in مِنْ خَوْفٍ deutlich gesprochen.",
+        explain_en: `خ is a throat letter, so the nun in ${ayah("106:4", 6, 7)} is pronounced clearly.`,
+        explain_de: `خ ist ein Rachenbuchstabe, daher wird das Nun in ${ayah("106:4", 6, 7)} deutlich gesprochen.`,
       },
       {
         q_en: "Why is the nun pronounced clearly before throat letters?",
@@ -835,7 +843,7 @@ Before the four letters of **يَنْمُو**:
 
 The nasal sound is held for **two counts**. Before ن and م the merging is complete. Before ي and و it is incomplete: a trace of the nun remains in the form of the ghunnah while the tongue already moves to ي or و.
 
-Examples: مَن يَقُولُ، هُدًى مِّن، مِن نِّعْمَةٍ، مِن وَالٍ
+Examples: ${ayah("2:8", 3, 4)}، ${ayah("2:5", 3, 4)}، ${ayah("92:19", 4, 5)}، ${ayah("13:11", 34, 35)}
 
 ## 2. Idgham without ghunnah
 Before the two letters:
@@ -843,13 +851,13 @@ Before the two letters:
 
 The nun disappears completely, there is no nasal sound, and the ل or ر is doubled.
 
-Examples: مِّن رَّبِّهِمْ، غَفُورٌ رَّحِيمٌ، يَكُن لَّهُ
+Examples: ${ayah("2:5", 4, 5)}، ${ayah("2:173", 24, 25)}، ${ayah("112:4", 2, 3)}
 
 ## The exceptions
 If nun sakinah and ي or و meet **inside one word**, there is no idgham but **izhar** – otherwise the word would become unrecognisable. In the Quran this occurs in four words:
 - الدُّنْيَا، بُنْيَانٌ، قِنْوَانٌ، صِنْوَانٌ
 
-Also, in Ḥafṣ the nun is read with izhar in يس ۚ وَالْقُرْآنِ and ن ۚ وَالْقَلَمِ.
+Also, in Ḥafṣ the nun is read with izhar in ${ayah("36:1")} ${ayah("36:2", 1, 1)} and ${ayah("68:1", 1, 2)}.
 
 ## Typical mistakes
 - Pronouncing the nun before ل or ر: "min rabbihim" instead of "mir-rabbihim".
@@ -873,7 +881,7 @@ Vor den vier Buchstaben von **يَنْمُو**:
 
 Der Nasalklang wird **zwei Zählzeiten** gehalten. Vor ن und م ist die Verschmelzung vollständig. Vor ي und و ist sie unvollständig: Ein Rest des Nun bleibt als Ghunna hörbar, während die Zunge schon zum ي oder و geht.
 
-Beispiele: مَن يَقُولُ، هُدًى مِّن، مِن نِّعْمَةٍ، مِن وَالٍ
+Beispiele: ${ayah("2:8", 3, 4)}، ${ayah("2:5", 3, 4)}، ${ayah("92:19", 4, 5)}، ${ayah("13:11", 34, 35)}
 
 ## 2. Idgham ohne Ghunna
 Vor den zwei Buchstaben:
@@ -881,13 +889,13 @@ Vor den zwei Buchstaben:
 
 Das Nun verschwindet ganz, es gibt keinen Nasalklang, und ل bzw. ر wird verdoppelt.
 
-Beispiele: مِّن رَّبِّهِمْ، غَفُورٌ رَّحِيمٌ، يَكُن لَّهُ
+Beispiele: ${ayah("2:5", 4, 5)}، ${ayah("2:173", 24, 25)}، ${ayah("112:4", 2, 3)}
 
 ## Die Ausnahmen
 Treffen Nun Sakina und ي oder و **innerhalb eines Wortes** aufeinander, gibt es kein Idgham, sondern **Izhar** – sonst wäre das Wort nicht mehr zu erkennen. Im Koran betrifft das vier Wörter:
 - الدُّنْيَا، بُنْيَانٌ، قِنْوَانٌ، صِنْوَانٌ
 
-Außerdem liest man bei Hafs das Nun in يس ۚ وَالْقُرْآنِ und ن ۚ وَالْقَلَمِ mit Izhar.
+Außerdem liest man bei Hafs das Nun in ${ayah("36:1")} ${ayah("36:2", 1, 1)} und ${ayah("68:1", 1, 2)} mit Izhar.
 
 ## Häufige Fehler
 - Das Nun vor ل oder ر aussprechen: „min rabbihim“ statt „mir-rabbihim“.
@@ -898,37 +906,37 @@ Außerdem liest man bei Hafs das Nun in يس ۚ وَالْقُرْآنِ und ن 
 Schreiben Sie يَرْمَلُونَ auf eine Karte und teilen Sie es auf in يَنْمُو (mit Ghunna) und لر (ohne). Lesen Sie Sure al-Ichlas und Sure az-Zalzala und markieren Sie jedes Idgham, das Sie finden.`,
     examples: [
       {
-        ar: "وَمِنَ النَّاسِ مَن يَقُولُ",
+        ar: ayah("2:8", 1, 4),
         key: "2:8",
         note_en: "Nun sakinah in مَن followed by ي – idgham with ghunnah: may-yaqūlu.",
         note_de: "Nun Sakina in مَن vor ي – Idgham mit Ghunna: may-yaqulu.",
       },
       {
-        ar: "هُدًى مِّن رَّبِّهِمْ",
+        ar: ayah("2:5", 3, 5),
         key: "2:5",
         note_en: "Two rules: tanwin before م – idgham with ghunnah; nun sakinah before ر – idgham without ghunnah: hudam-mir-rabbihim.",
         note_de: "Zwei Regeln: Tanwin vor م – Idgham mit Ghunna; Nun Sakina vor ر – Idgham ohne Ghunna: hudam-mir-rabbihim.",
       },
       {
-        ar: "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ",
+        ar: ayah("99:7"),
         key: "99:7",
-        note_en: "مَن يَعْمَلْ and خَيْرًا يَرَهُ: nun sakinah and tanwin before ي – idgham with ghunnah.",
-        note_de: "مَن يَعْمَلْ und خَيْرًا يَرَهُ: Nun Sakina bzw. Tanwin vor ي – Idgham mit Ghunna.",
+        note_en: `${ayah("99:7", 1, 2)} and ${ayah("99:7", 5, 6)}: nun sakinah and tanwin before ي – idgham with ghunnah.`,
+        note_de: `${ayah("99:7", 1, 2)} und ${ayah("99:7", 5, 6)}: Nun Sakina bzw. Tanwin vor ي – Idgham mit Ghunna.`,
       },
       {
-        ar: "وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
+        ar: ayah("112:4"),
         key: "112:4",
         note_en: "Nun sakinah in يَكُن before ل – idgham without ghunnah: yakul-lahū.",
         note_de: "Nun Sakina in يَكُن vor ل – Idgham ohne Ghunna: yakul-lahu.",
       },
       {
-        ar: "إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ",
+        ar: ayah("2:173", 22, 25),
         key: "2:173",
         note_en: "Tanwin before ر – idgham without ghunnah: ghafūrur-raḥīm.",
         note_de: "Tanwin vor ر – Idgham ohne Ghunna: ghafurur-rahim.",
       },
       {
-        ar: "قِنْوَانٌ دَانِيَةٌ",
+        ar: ayah("6:99", 23, 24),
         key: "6:99",
         note_en: "Exception: nun sakinah and و in the same word – izhar, not idgham.",
         note_de: "Ausnahme: Nun Sakina und و im selben Wort – Izhar, kein Idgham.",
@@ -945,8 +953,8 @@ Schreiben Sie يَرْمَلُونَ auf eine Karte und teilen Sie es auf in ي�
         explain_de: "Die vier Buchstaben von يَنْمُو bewirken Idgham mit Ghunna.",
       },
       {
-        q_en: "How is مِّن رَّبِّهِمْ recited?",
-        q_de: "Wie wird مِّن رَّبِّهِمْ rezitiert?",
+        q_en: `How is ${ayah("2:5", 4, 5)} recited?`,
+        q_de: `Wie wird ${ayah("2:5", 4, 5)} rezitiert?`,
         options_en: ["min rabbihim (clear nun)", "mir-rabbihim (no ghunnah)", "mim-rabbihim (with ghunnah)"],
         options_de: ["min rabbihim (deutliches Nun)", "mir-rabbihim (ohne Ghunna)", "mim-rabbihim (mit Ghunna)"],
         answer: 1,
@@ -984,8 +992,8 @@ Schreiben Sie يَرْمَلُونَ auf eine Karte und teilen Sie es auf in ي�
       {
         q_en: "Which word is one of the four exceptions read with izhar?",
         q_de: "Welches Wort gehört zu den vier Ausnahmen mit Izhar?",
-        options_en: ["مِن وَالٍ", "مَن يَقُولُ", "مِن نِّعْمَةٍ", "صِنْوَانٌ"],
-        options_de: ["مِن وَالٍ", "مَن يَقُولُ", "مِن نِّعْمَةٍ", "صِنْوَانٌ"],
+        options_en: [ayah("13:11", 34, 35), ayah("2:8", 3, 4), ayah("92:19", 4, 5), "صِنْوَانٌ"],
+        options_de: [ayah("13:11", 34, 35), ayah("2:8", 3, 4), ayah("92:19", 4, 5), "صِنْوَانٌ"],
         answer: 3,
         explain_en: "صِنْوَانٌ has nun and waw inside one word, so it is read with izhar.",
         explain_de: "In صِنْوَانٌ stehen Nun und Waw in einem Wort, daher wird es mit Izhar gelesen.",
@@ -1008,7 +1016,7 @@ Schreiben Sie يَرْمَلُونَ auf eine Karte und teilen Sie es auf in ي�
 Only one letter:
 - ب
 
-Iqlab happens both **inside a word** (أَنبِئْهُم، لَيُنبَذَنَّ) and **across two words** (مِن بَعْدِ، سَمِيعٌ بَصِيرٌ).
+Iqlab happens both **inside a word** (أَنبِئْهُم، لَيُنبَذَنَّ) and **across two words** (${ayah("2:27", 5, 6)}، ${ayah("58:1", 17, 18)}).
 
 ## How it looks in the mushaf
 In most printed mushafs a small **mim (ۢ)** is written above the nun or next to the tanwin, and the nun has no sukun. This tells you: do not read n, read m.
@@ -1021,7 +1029,7 @@ Nun with its clear tongue articulation and ب with closed lips are hard to prono
 - Hold the nasal sound for about two counts.
 - Then release into the ب.
 
-So مِن بَعْدِ sounds like "mim-baʿdi" with a soft, humming m.
+So ${ayah("2:27", 5, 6)} sounds like "mim-baʿdi" with a soft, humming m.
 
 ## Typical mistakes
 - Reading a clear n: "min baʿdi".
@@ -1038,7 +1046,7 @@ Look for the small mim sign in your mushaf on one page of Surah al-Baqarah. Ever
 Nur ein einziger Buchstabe:
 - ب
 
-Iqlab gibt es sowohl **innerhalb eines Wortes** (أَنبِئْهُم، لَيُنبَذَنَّ) als auch **zwischen zwei Wörtern** (مِن بَعْدِ، سَمِيعٌ بَصِيرٌ).
+Iqlab gibt es sowohl **innerhalb eines Wortes** (أَنبِئْهُم، لَيُنبَذَنَّ) als auch **zwischen zwei Wörtern** (${ayah("2:27", 5, 6)}، ${ayah("58:1", 17, 18)}).
 
 ## So erkennen Sie es im Mushaf
 In den meisten gedruckten Mushafs steht ein kleines **Mim (ۢ)** über dem Nun bzw. neben dem Tanwin, und das Nun hat kein Sukun. Das heißt: nicht n, sondern m lesen.
@@ -1051,7 +1059,7 @@ Das Nun mit seiner klaren Zungenartikulation und das ب mit geschlossenen Lippen
 - Den Nasalklang etwa zwei Zählzeiten halten.
 - Dann ins ب übergehen.
 
-مِن بَعْدِ klingt also wie „mim-baʿdi“ mit einem weichen, summenden m.
+${ayah("2:27", 5, 6)} klingt also wie „mim-baʿdi“ mit einem weichen, summenden m.
 
 ## Häufige Fehler
 - Ein deutliches n lesen: „min baʿdi“.
@@ -1063,25 +1071,25 @@ Das Nun mit seiner klaren Zungenartikulation und das ب mit geschlossenen Lippen
 Suchen Sie auf einer Seite von Sure al-Baqara das kleine Mim-Zeichen. Jedes Mal, wenn Sie es sehen, summen Sie das m zwei Zählzeiten lang, bevor Sie das ب sprechen. Eine Aufnahme hilft Ihnen zu hören, ob das n wirklich verschwunden ist.`,
     examples: [
       {
-        ar: "مِن بَعْدِ مِيثَاقِهِ",
+        ar: ayah("2:27", 5, 7),
         key: "2:27",
         note_en: "Nun sakinah before ب across two words – iqlab: mim-baʿdi.",
         note_de: "Nun Sakina vor ب zwischen zwei Wörtern – Iqlab: mim-baʿdi.",
       },
       {
-        ar: "أَنبِئْهُم بِأَسْمَائِهِمْ",
+        ar: ayah("2:33", 4, 5),
         key: "2:33",
         note_en: "Iqlab inside one word (أَنبِئْهُم: ambiʾhum). The mim of هُم before ب is also hidden (ikhfa' shafawi).",
         note_de: "Iqlab innerhalb eines Wortes (أَنبِئْهُم: ambiʾhum). Auch das Mim von هُم vor ب wird verborgen (Ikhfa schafawi).",
       },
       {
-        ar: "كَلَّا ۖ لَيُنبَذَنَّ فِي الْحُطَمَةِ",
+        ar: ayah("104:4"),
         key: "104:4",
         note_en: "Iqlab inside the word لَيُنبَذَنَّ: layumbadhanna.",
         note_de: "Iqlab innerhalb des Wortes لَيُنبَذَنَّ: layumbadhanna.",
       },
       {
-        ar: "إِنَّ اللَّهَ سَمِيعٌ بَصِيرٌ",
+        ar: ayah("58:1", 15, 18),
         key: "58:1",
         note_en: "Tanwin before ب – iqlab: samīʿum baṣīr.",
         note_de: "Tanwin vor ب – Iqlab: samiʿum basir.",
@@ -1162,12 +1170,12 @@ All letters that are not used for izhar (6), idgham (6) or iqlab (1):
 
 A classic memory poem uses the first letters of the words: صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا ...
 
-Ikhfa' happens inside a word (الْإِنسَانَ، أَنتُمْ، يَنصُرُكُمْ) and across words (مِن شَرِّ، مِن جُوعٍ، عُمْيٌ فَهُمْ).
+Ikhfa' happens inside a word (الْإِنسَانَ، أَنتُمْ، يَنصُرُكُمْ) and across words (${ayah("113:2", 1, 2)}، ${ayah("106:4", 3, 4)}، ${ayah("2:18", 3, 4)}).
 
 ## Heavy or light ghunnah?
 The ghunnah takes on the colour of the **next** letter:
-- before a heavy letter (ص ض ط ظ ق) it sounds full and deep: يَنصُرُكُمْ، مِن قَبْلِ.
-- before a light letter it sounds light: كُنتُمْ، مِن شَرِّ.
+- before a heavy letter (ص ض ط ظ ق) it sounds full and deep: يَنصُرُكُمْ، ${ayah("2:237", 3, 4)}.
+- before a light letter it sounds light: كُنتُمْ، ${ayah("113:2", 1, 2)}.
 
 ## How it sounds
 - Move the tongue towards the next letter, but do not let it touch firmly yet.
@@ -1183,7 +1191,7 @@ Tip: also watch the vowel before the nun – do not turn "an" into "ang" or "aun
 - Making a heavy ghunnah before a light letter.
 
 ## Practice tip
-Practise pairs: مِنْ خَوْفٍ (izhar) and مِن جُوعٍ (ikhfa') from Surah Quraysh, verse 4. Feel the difference: in the first the tongue touches firmly, in the second it hovers.`,
+Practise pairs: ${ayah("106:4", 6, 7)} (izhar) and ${ayah("106:4", 3, 4)} (ikhfa') from Surah Quraysh, verse 4. Feel the difference: in the first the tongue touches firmly, in the second it hovers.`,
     body_de: `## Was ist Ikhfa?
 *Ikhfa* heißt „verbergen“. Das Nun Sakina oder Tanwin wird weder deutlich gesprochen (Izhar) noch vollständig verschmolzen (Idgham). Stattdessen drückt die Zungenspitze **nicht** fest an die Stelle des Nun; der Klang wandert in die Nase, und die Zunge bereitet schon den nächsten Buchstaben vor. Dieser Zustand wird als Ghunna **zwei Zählzeiten** gehalten.
 
@@ -1195,12 +1203,12 @@ Alle Buchstaben, die nicht zu Izhar (6), Idgham (6) oder Iqlab (1) gehören:
 
 Ein klassisches Merkgedicht nutzt die Anfangsbuchstaben seiner Wörter: صِفْ ذَا ثَنَا كَمْ جَادَ شَخْصٌ قَدْ سَمَا ...
 
-Ikhfa gibt es innerhalb eines Wortes (الْإِنسَانَ، أَنتُمْ، يَنصُرُكُمْ) und zwischen Wörtern (مِن شَرِّ، مِن جُوعٍ، عُمْيٌ فَهُمْ).
+Ikhfa gibt es innerhalb eines Wortes (الْإِنسَانَ، أَنتُمْ، يَنصُرُكُمْ) und zwischen Wörtern (${ayah("113:2", 1, 2)}، ${ayah("106:4", 3, 4)}، ${ayah("2:18", 3, 4)}).
 
 ## Schwere oder leichte Ghunna?
 Die Ghunna übernimmt die Klangfarbe des **folgenden** Buchstabens:
-- vor einem schweren Buchstaben (ص ض ط ظ ق) klingt sie voll und tief: يَنصُرُكُمْ، مِن قَبْلِ.
-- vor einem leichten Buchstaben klingt sie hell: كُنتُمْ، مِن شَرِّ.
+- vor einem schweren Buchstaben (ص ض ط ظ ق) klingt sie voll und tief: يَنصُرُكُمْ، ${ayah("2:237", 3, 4)}.
+- vor einem leichten Buchstaben klingt sie hell: كُنتُمْ، ${ayah("113:2", 1, 2)}.
 
 ## Wie klingt es?
 - Die Zunge in Richtung des nächsten Buchstabens bewegen, aber noch nicht fest aufsetzen.
@@ -1216,28 +1224,28 @@ Achten Sie auch auf den Vokal vor dem Nun – aus „an“ darf kein „ang“ o
 - Vor einem leichten Buchstaben eine schwere Ghunna sprechen.
 
 ## Übungstipp
-Üben Sie das Paar aus Sure Quraisch, Vers 4: مِنْ خَوْفٍ (Izhar) und مِن جُوعٍ (Ikhfa). Spür den Unterschied: Beim ersten setzt die Zunge fest auf, beim zweiten schwebt sie.`,
+Üben Sie das Paar aus Sure Quraisch, Vers 4: ${ayah("106:4", 6, 7)} (Izhar) und ${ayah("106:4", 3, 4)} (Ikhfa). Spüren Sie den Unterschied: Beim ersten setzt die Zunge fest auf, beim zweiten schwebt sie.`,
     examples: [
       {
-        ar: "مِن شَرِّ مَا خَلَقَ",
+        ar: ayah("113:2"),
         key: "113:2",
         note_en: "Nun sakinah before ش – ikhfa' with a light ghunnah of two counts.",
         note_de: "Nun Sakina vor ش – Ikhfa mit leichter Ghunna von zwei Zählzeiten.",
       },
       {
-        ar: "الَّذِي أَطْعَمَهُم مِّن جُوعٍ",
+        ar: ayah("106:4", 1, 4),
         key: "106:4",
         note_en: "Nun sakinah in مِّن before ج – ikhfa'.",
         note_de: "Nun Sakina in مِّن vor ج – Ikhfa.",
       },
       {
-        ar: "إِنَّ الْإِنسَانَ لَفِي خُسْرٍ",
+        ar: ayah("103:2"),
         key: "103:2",
         note_en: "Ikhfa' inside a word: nun sakinah before س in الْإِنسَانَ.",
         note_de: "Ikhfa innerhalb eines Wortes: Nun Sakina vor س in الْإِنسَانَ.",
       },
       {
-        ar: "أَنْعَمْتَ عَلَيْهِمْ",
+        ar: ayah("1:7", 3, 4),
         key: "1:7",
         note_en: "Contrast: here the nun is before ع, so it is izhar – no ikhfa'. Compare with the hidden nun before ت in كُنتُمْ.",
         note_de: "Zum Vergleich: Hier steht das Nun vor ع, also Izhar – kein Ikhfa. Vergleichen Sie mit dem verborgenen Nun vor ت in كُنتُمْ.",
@@ -1261,8 +1269,8 @@ Achten Sie auch auf den Vokal vor dem Nun – aus „an“ darf kein „ang“ o
       {
         q_en: "Which phrase contains ikhfa'?",
         q_de: "Welcher Ausdruck enthält Ikhfa?",
-        options_en: ["مِنْ خَوْفٍ", "مَن يَقُولُ", "مِن بَعْدِ", "مِن جُوعٍ"],
-        options_de: ["مِنْ خَوْفٍ", "مَن يَقُولُ", "مِن بَعْدِ", "مِن جُوعٍ"],
+        options_en: [ayah("106:4", 6, 7), ayah("2:8", 3, 4), ayah("2:27", 5, 6), ayah("106:4", 3, 4)],
+        options_de: [ayah("106:4", 6, 7), ayah("2:8", 3, 4), ayah("2:27", 5, 6), ayah("106:4", 3, 4)],
         answer: 3,
         explain_en: "ج is an ikhfa' letter. The others are izhar (خ), idgham (ي) and iqlab (ب).",
         explain_de: "ج ist ein Ikhfa-Buchstabe. Die anderen sind Izhar (خ), Idgham (ي) und Iqlab (ب).",
@@ -1319,21 +1327,21 @@ A *mīm sākinah* is a mim without a vowel, e.g. in هُمْ، عَلَيْهِ�
 ## 1. Ikhfa' shafawi – before ب
 - Letter: ب
 - The lips close gently on the mim, the ghunnah is held for **two counts**, then the ب follows.
-- Example: تَرْمِيهِم بِحِجَارَةٍ، أَنبِئْهُم بِأَسْمَائِهِمْ
+- Example: ${ayah("105:4", 1, 2)}، ${ayah("2:33", 4, 5)}
 
 Many mushafs show this by leaving the mim without a sukun sign.
 
 ## 2. Idgham shafawi (idgham mithlayn saghir) – before م
 - Letter: م
 - The first mim merges into the second, giving one doubled mim with a **two-count ghunnah**.
-- Example: آمَنَهُم مِّنْ خَوْفٍ، لَهُم مَّا
+- Example: ${ayah("106:4", 5, 7)}، ${ayah("50:35", 1, 2)}
 
 The mushaf shows this with a shaddah on the second mim.
 
 ## 3. Izhar shafawi – before all other letters
 - Letters: all except ب and م (and alif, which never follows a sukun).
 - The mim is pronounced clearly with a light lip closure, **without** stretching the ghunnah.
-- Example: أَلَمْ تَرَ، عَلَيْهِمْ وَلَا، هُمْ فِيهَا
+- Example: ${ayah("105:1", 1, 2)}، ${ayah("1:7", 7, 8)}، ${ayah("2:39", 8, 9)}
 
 Be extra careful before **و** and **ف**: both are also made with the lips, so there is a temptation to hide the mim. Keep it clear.
 
@@ -1354,21 +1362,21 @@ Ein *Mim Sakina* ist ein Mim ohne Vokal, z. B. in هُمْ، عَلَيْهِم�
 ## 1. Ikhfa schafawi – vor ب
 - Buchstabe: ب
 - Die Lippen schließen sich sanft auf dem Mim, die Ghunna wird **zwei Zählzeiten** gehalten, dann folgt das ب.
-- Beispiel: تَرْمِيهِم بِحِجَارَةٍ، أَنبِئْهُم بِأَسْمَائِهِمْ
+- Beispiel: ${ayah("105:4", 1, 2)}، ${ayah("2:33", 4, 5)}
 
 Viele Mushafs zeigen das, indem das Mim kein Sukun-Zeichen trägt.
 
 ## 2. Idgham schafawi (Idgham mithlain saghir) – vor م
 - Buchstabe: م
 - Das erste Mim verschmilzt mit dem zweiten zu einem verdoppelten Mim mit einer **Ghunna von zwei Zählzeiten**.
-- Beispiel: آمَنَهُم مِّنْ خَوْفٍ، لَهُم مَّا
+- Beispiel: ${ayah("106:4", 5, 7)}، ${ayah("50:35", 1, 2)}
 
 Im Mushaf steht dann eine Schadda auf dem zweiten Mim.
 
 ## 3. Izhar schafawi – vor allen anderen Buchstaben
 - Buchstaben: alle außer ب und م (und Alif, das nie auf ein Sukun folgt).
 - Das Mim wird deutlich mit leichtem Lippenschluss gesprochen, **ohne** die Ghunna zu dehnen.
-- Beispiel: أَلَمْ تَرَ، عَلَيْهِمْ وَلَا، هُمْ فِيهَا
+- Beispiel: ${ayah("105:1", 1, 2)}، ${ayah("1:7", 7, 8)}، ${ayah("2:39", 8, 9)}
 
 Besonders aufpassen vor **و** und **ف**: Beide werden auch mit den Lippen gebildet, deshalb ist die Versuchung groß, das Mim zu verbergen. Es muss deutlich bleiben.
 
@@ -1385,31 +1393,31 @@ Ein Mim mit Schadda (ثُمَّ، عَمَّ) hat immer eine volle Ghunna – da
 Lesen Sie Sure al-Fil und Sure Quraisch. Markieren Sie jedes Mim Sakina in drei Farben: eine für ب, eine für م, eine für alles andere. Rezitieren Sie dann und prüfen Sie jede Farbe.`,
     examples: [
       {
-        ar: "تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ",
+        ar: ayah("105:4"),
         key: "105:4",
         note_en: "Mim sakinah before ب – ikhfa' shafawi with a two-count ghunnah. (Also: tanwin before م – idgham with ghunnah; nun before س – ikhfa'.)",
         note_de: "Mim Sakina vor ب – Ikhfa schafawi mit zwei Zählzeiten Ghunna. (Außerdem: Tanwin vor م – Idgham mit Ghunna; Nun vor س – Ikhfa.)",
       },
       {
-        ar: "وَآمَنَهُم مِّنْ خَوْفٍ",
+        ar: ayah("106:4", 5, 7),
         key: "106:4",
         note_en: "Mim sakinah before م – idgham shafawi: one doubled mim with ghunnah.",
         note_de: "Mim Sakina vor م – Idgham schafawi: ein verdoppeltes Mim mit Ghunna.",
       },
       {
-        ar: "أَلَمْ تَرَ كَيْفَ",
+        ar: ayah("105:1", 1, 3),
         key: "105:1",
         note_en: "Mim sakinah before ت – izhar shafawi: a clear mim.",
         note_de: "Mim Sakina vor ت – Izhar schafawi: ein deutliches Mim.",
       },
       {
-        ar: "هُمْ فِيهَا خَالِدُونَ",
+        ar: ayah("2:39", 8, 10),
         key: "2:39",
         note_en: "Mim sakinah before ف – izhar shafawi. Take special care not to hide the mim here.",
         note_de: "Mim Sakina vor ف – Izhar schafawi. Hier besonders darauf achten, das Mim nicht zu verbergen.",
       },
       {
-        ar: "عَلَيْهِمْ وَلَا الضَّالِّينَ",
+        ar: ayah("1:7", 7, 9),
         key: "1:7",
         note_en: "Mim sakinah before و – izhar shafawi, pronounced clearly.",
         note_de: "Mim Sakina vor و – Izhar schafawi, deutlich gesprochen.",
@@ -1426,8 +1434,8 @@ Lesen Sie Sure al-Fil und Sure Quraisch. Markieren Sie jedes Mim Sakina in drei 
         explain_de: "Vor ب wird das Mim mit zwei Zählzeiten Ghunna verborgen: Ikhfa schafawi.",
       },
       {
-        q_en: "Which rule applies in لَهُم مَّا?",
-        q_de: "Welche Regel gilt in لَهُم مَّا?",
+        q_en: `Which rule applies in ${ayah("50:35", 1, 2)}?`,
+        q_de: `Welche Regel gilt in ${ayah("50:35", 1, 2)}?`,
         options_en: ["Idgham shafawi", "Izhar shafawi", "Ikhfa' haqiqi"],
         options_de: ["Idgham schafawi", "Izhar schafawi", "Ikhfa haqiqi"],
         answer: 0,
@@ -1444,8 +1452,8 @@ Lesen Sie Sure al-Fil und Sure Quraisch. Markieren Sie jedes Mim Sakina in drei 
         explain_de: "و und ف sind ebenfalls Lippenbuchstaben; man neigt dazu, das Mim davor zu verbergen – es muss deutlich bleiben.",
       },
       {
-        q_en: "In أَلَمْ تَرَ, how is the mim pronounced?",
-        q_de: "Wie wird das Mim in أَلَمْ تَرَ ausgesprochen?",
+        q_en: `In ${ayah("105:1", 1, 2)}, how is the mim pronounced?`,
+        q_de: `Wie wird das Mim in ${ayah("105:1", 1, 2)} ausgesprochen?`,
         options_en: ["Clearly, without extended ghunnah", "Hidden with two counts of ghunnah", "Merged into the ta"],
         options_de: ["Deutlich, ohne gedehnte Ghunna", "Verborgen mit zwei Zählzeiten Ghunna", "Mit dem Ta verschmolzen"],
         answer: 0,
@@ -1541,31 +1549,31 @@ Eine Schadda steht für zwei Buchstaben: Der erste hat ein Sukun, der zweite ein
 Rezitieren Sie Sure an-Nas. Darin kommt النَّاسِ fünfmal vor, dazu الْخَنَّاسِ und الْجِنَّةِ. Zählen Sie bei jedem نّ innerlich „eins, zwei“.`,
     examples: [
       {
-        ar: "إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
+        ar: ayah("108:1"),
         key: "108:1",
         note_en: "Nun mushaddad in إِنَّا – full ghunnah of two counts.",
         note_de: "Nun mit Schadda in إِنَّا – volle Ghunna von zwei Zählzeiten.",
       },
       {
-        ar: "قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
+        ar: ayah("114:1"),
         key: "114:1",
         note_en: "Nun mushaddad in النَّاسِ – ghunnah of two counts.",
         note_de: "Nun mit Schadda in النَّاسِ – Ghunna von zwei Zählzeiten.",
       },
       {
-        ar: "مِنَ الْجِنَّةِ وَالنَّاسِ",
+        ar: ayah("114:6"),
         key: "114:6",
         note_en: "Two mushaddad nuns: الْجِنَّةِ and النَّاسِ – both with full ghunnah.",
         note_de: "Zwei Nun mit Schadda: الْجِنَّةِ und النَّاسِ – beide mit voller Ghunna.",
       },
       {
-        ar: "عَمَّ يَتَسَاءَلُونَ",
+        ar: ayah("78:1"),
         key: "78:1",
         note_en: "Mim mushaddad in عَمَّ – the lips stay closed for two counts of ghunnah.",
         note_de: "Mim mit Schadda in عَمَّ – die Lippen bleiben für zwei Zählzeiten Ghunna geschlossen.",
       },
       {
-        ar: "إِنَّ الْإِنسَانَ لَفِي خُسْرٍ",
+        ar: ayah("103:2"),
         key: "103:2",
         note_en: "Ghunnah on the nun mushaddad in إِنَّ, then ikhfa' in الْإِنسَانَ – both two counts.",
         note_de: "Ghunna auf dem Nun mit Schadda in إِنَّ, danach Ikhfa in الْإِنسَانَ – beides zwei Zählzeiten.",
@@ -1638,7 +1646,7 @@ Gathered in the phrase **قُطْبُ جَدٍّ**:
 Qalqalah only happens when these letters are **sakin** – either with a written sukun or because you stop on them.
 
 ## The levels
-- **Qalqalah sughra (minor):** the letter has a sukun in the middle of a word or at the end of a word you do not stop on. The bounce is light. Examples: يَقْطَعُونَ، اقْرَأْ، قَدْ أَفْلَحَ.
+- **Qalqalah sughra (minor):** the letter has a sukun in the middle of a word or at the end of a word you do not stop on. The bounce is light. Examples: يَقْطَعُونَ، اقْرَأْ، ${ayah("23:1", 1, 2)}.
 - **Qalqalah kubra (major):** you **stop** on the letter at the end of a word or verse. The bounce is clearer. Examples: الْفَلَقِ → الْفَلَقْ، أَحَدٌ → أَحَدْ.
 - Many teachers add a strongest level when you stop on a qalqalah letter with **shaddah**, e.g. الْحَقُّ or وَتَبَّ. Here the letter is held a moment, then released with a clear bounce.
 
@@ -1665,7 +1673,7 @@ Zusammengefasst im Merkwort **قُطْبُ جَدٍّ**:
 Qalqala gibt es nur, wenn diese Buchstaben **sakin** sind – entweder mit geschriebenem Sukun oder weil man auf ihnen anhält.
 
 ## Die Stufen
-- **Qalqala sughra (klein):** Der Buchstabe hat ein Sukun mitten im Wort oder am Wortende, ohne dass man anhält. Das Nachfedern ist leicht. Beispiele: يَقْطَعُونَ، اقْرَأْ، قَدْ أَفْلَحَ.
+- **Qalqala sughra (klein):** Der Buchstabe hat ein Sukun mitten im Wort oder am Wortende, ohne dass man anhält. Das Nachfedern ist leicht. Beispiele: يَقْطَعُونَ، اقْرَأْ، ${ayah("23:1", 1, 2)}.
 - **Qalqala kubra (groß):** Man **hält** am Wort- oder Versende auf dem Buchstaben an. Das Nachfedern ist deutlicher. Beispiele: الْفَلَقِ → الْفَلَقْ، أَحَدٌ → أَحَدْ.
 - Viele Lehrer nennen eine noch stärkere Stufe, wenn man auf einem Qalqala-Buchstaben **mit Schadda** anhält, z. B. الْحَقُّ oder وَتَبَّ. Der Buchstabe wird kurz gehalten und dann deutlich gelöst.
 
@@ -1684,31 +1692,31 @@ Qalqala gibt es nur, wenn diese Buchstaben **sakin** sind – entweder mit gesch
 Rezitieren Sie Sure al-Ichlas und Sure al-Falaq und halten Sie an jedem Versende an. Fast alle Verse enden auf einem Qalqala-Buchstaben (أَحَدْ، الصَّمَدْ، يُولَدْ، الْفَلَقْ، خَلَقْ، وَقَبْ، الْعُقَدْ، حَسَدْ). Hören Sie einem Rezitator zu und ahme das Nachfedern genau nach.`,
     examples: [
       {
-        ar: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
+        ar: ayah("113:1"),
         key: "113:1",
         note_en: "Stopping on الْفَلَقْ – qalqalah kubra on the ق.",
         note_de: "Anhalten auf الْفَلَقْ – Qalqala kubra auf dem ق.",
       },
       {
-        ar: "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+        ar: ayah("112:3"),
         key: "112:3",
         note_en: "The د in يَلِدْ (continuing) – qalqalah sughra; the د in يُولَدْ (stopping) – qalqalah kubra.",
         note_de: "Das د in يَلِدْ (beim Weiterlesen) – Qalqala sughra; das د in يُولَدْ (beim Anhalten) – Qalqala kubra.",
       },
       {
-        ar: "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ",
+        ar: ayah("96:1"),
         key: "96:1",
         note_en: "ق with sukun in اقْرَأْ – qalqalah sughra; stopping on خَلَقْ – qalqalah kubra.",
         note_de: "ق mit Sukun in اقْرَأْ – Qalqala sughra; Anhalten auf خَلَقْ – Qalqala kubra.",
       },
       {
-        ar: "قَدْ أَفْلَحَ الْمُؤْمِنُونَ",
+        ar: ayah("23:1"),
         key: "23:1",
         note_en: "د with sukun in قَدْ – qalqalah sughra.",
         note_de: "د mit Sukun in قَدْ – Qalqala sughra.",
       },
       {
-        ar: "تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ",
+        ar: ayah("111:1"),
         key: "111:1",
         note_en: "Stopping on وَتَبَّ: a ب with shaddah – the strongest qalqalah.",
         note_de: "Anhalten auf وَتَبَّ: ein ب mit Schadda – die stärkste Qalqala.",
@@ -1792,7 +1800,7 @@ The madd becomes longer because of a **hamza** or a **sukun**.
 
 **Caused by hamza:**
 - **Muttasil (connected)** – hamza in the same word: جَاءَ، السَّمَاءِ، سُوءَ. Obligatory lengthening: **4 or 5 counts**.
-- **Munfasil (separated)** – madd at the end of one word, hamza at the start of the next: إِنَّا أَعْطَيْنَاكَ، يَا أَيُّهَا. In the common path of Ḥafṣ: **4 or 5 counts**.
+- **Munfasil (separated)** – madd at the end of one word, hamza at the start of the next: ${ayah("108:1", 1, 2)}، ${ayah("109:1", 2, 3)}. In the common path of Ḥafṣ: **4 or 5 counts**.
 - **Badal** – hamza comes **before** the madd letter: آمَنُوا، إِيمَانًا، أُوتُوا. **2 counts**.
 
 **Caused by sukun:**
@@ -1827,7 +1835,7 @@ Die Dehnung wird wegen eines **Hamza** oder eines **Sukun** länger.
 
 **Wegen Hamza:**
 - **Muttasil (verbunden)** – Hamza im selben Wort: جَاءَ، السَّمَاءِ، سُوءَ. Pflichtdehnung: **4 oder 5 Zählzeiten**.
-- **Munfasil (getrennt)** – Madd am Ende eines Wortes, Hamza am Anfang des nächsten: إِنَّا أَعْطَيْنَاكَ، يَا أَيُّهَا. Im verbreiteten Weg von Hafs: **4 oder 5 Zählzeiten**.
+- **Munfasil (getrennt)** – Madd am Ende eines Wortes, Hamza am Anfang des nächsten: ${ayah("108:1", 1, 2)}، ${ayah("109:1", 2, 3)}. Im verbreiteten Weg von Hafs: **4 oder 5 Zählzeiten**.
 - **Badal** – das Hamza steht **vor** dem Madd-Buchstaben: آمَنُوا، إِيمَانًا، أُوتُوا. **2 Zählzeiten**.
 
 **Wegen Sukun:**
@@ -1850,37 +1858,37 @@ Wählen Sie für jede Art eine Länge (z. B. 4 für Muttasil und Munfasil, 4 fü
 Tippen Sie beim Rezitieren von Sure an-Nasr für jede Zählzeit mit dem Finger: جَاءَ (Muttasil), أَفْوَاجَا (ʿIwad beim Anhalten), تَوَّابَا (ʿIwad).`,
     examples: [
       {
-        ar: "إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
+        ar: ayah("110:1"),
         key: "110:1",
         note_en: "جَاءَ: madd letter and hamza in the same word – madd muttasil, 4 or 5 counts.",
         note_de: "جَاءَ: Madd-Buchstabe und Hamza im selben Wort – Madd muttasil, 4 oder 5 Zählzeiten.",
       },
       {
-        ar: "قُلْ يَا أَيُّهَا الْكَافِرُونَ",
+        ar: ayah("109:1"),
         key: "109:1",
-        note_en: "يَا أَيُّهَا: alif at the end of يَا, hamza at the start of the next word – madd munfasil. الْكَافِرُونَ at the stop – madd 'arid lis-sukun.",
-        note_de: "يَا أَيُّهَا: Alif am Ende von يَا, Hamza am Anfang des nächsten Wortes – Madd munfasil. الْكَافِرُونَ beim Anhalten – Madd 'arid lis-sukun.",
+        note_en: `${ayah("109:1", 2, 3)}: alif at the end of يَا, hamza at the start of the next word – madd munfasil. الْكَافِرُونَ at the stop – madd 'arid lis-sukun.`,
+        note_de: `${ayah("109:1", 2, 3)}: Alif am Ende von يَا, Hamza am Anfang des nächsten Wortes – Madd munfasil. الْكَافِرُونَ beim Anhalten – Madd 'arid lis-sukun.`,
       },
       {
-        ar: "غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+        ar: ayah("1:7", 5, 9),
         key: "1:7",
         note_en: "الضَّالِّينَ: alif followed by a shaddah (permanent sukun) – madd lazim, 6 counts.",
         note_de: "الضَّالِّينَ: Alif, gefolgt von einer Schadda (festes Sukun) – Madd lazim, 6 Zählzeiten.",
       },
       {
-        ar: "لِإِيلَافِ قُرَيْشٍ",
+        ar: ayah("106:1"),
         key: "106:1",
         note_en: "Stopping on قُرَيْشْ: ya sakinah after fatha – madd lin, 2, 4 or 6 counts.",
         note_de: "Anhalten auf قُرَيْشْ: Ya mit Sukun nach Fatha – Madd lin, 2, 4 oder 6 Zählzeiten.",
       },
       {
-        ar: "يُخَادِعُونَ اللَّهَ وَالَّذِينَ آمَنُوا",
+        ar: ayah("2:9", 1, 4),
         key: "2:9",
         note_en: "آمَنُوا: hamza before the madd letter – madd badal, 2 counts.",
         note_de: "آمَنُوا: Hamza vor dem Madd-Buchstaben – Madd badal, 2 Zählzeiten.",
       },
       {
-        ar: "يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا",
+        ar: ayah("110:2", 3, 7),
         key: "110:2",
         note_en: "Stopping on أَفْوَاجًا → أَفْوَاجَا – madd 'iwad, 2 counts.",
         note_de: "Anhalten auf أَفْوَاجًا → أَفْوَاجَا – Madd 'iwad, 2 Zählzeiten.",
@@ -1961,7 +1969,7 @@ Tippen Sie beim Rezitieren von Sure an-Nasr für jede Zählzeit mit dem Finger: 
     summary_en: "Knowing where and how to stop and where to start again protects the meaning, and the small signs in the mushaf guide you.",
     summary_de: "Wer weiß, wo und wie man anhält und wieder beginnt, bewahrt die Bedeutung – die kleinen Zeichen im Mushaf helfen dabei.",
     body_en: `## Why stopping matters
-*Waqf* means stopping, *ibtidāʾ* means starting again. A stop in the wrong place can cut a sentence so that it seems to say the opposite. Example: stopping after لَا تَقْرَبُوا الصَّلَاةَ ("do not approach prayer") without the rest of the verse (4:43) distorts the meaning.
+*Waqf* means stopping, *ibtidāʾ* means starting again. A stop in the wrong place can cut a sentence so that it seems to say the opposite. Example: stopping after ${ayah("4:43", 5, 7)} ("do not approach prayer") without the rest of the verse (4:43) distorts the meaning.
 
 ## How to stop on a word
 - The last vowel becomes a **sukun**: الرَّحِيمِ → الرَّحِيمْ.
@@ -1980,7 +1988,7 @@ Tippen Sie beim Rezitieren von Sure an-Nasr für jede Zählzeit mit dem Finger: 
 - **۝** (verse end) – stopping at the end of a verse is good practice.
 
 ## Saktah
-In Ḥafṣ there are four places marked with a small **س**: a short pause without taking a breath, e.g. عِوَجًا ۜ قَيِّمًا (18:1–2) and مَنْ ۜ رَاقٍ (75:27).
+In Ḥafṣ there are four places marked with a small **س**: a short pause without taking a breath, e.g. ${ayah("18:1", 11)} ${ayah("18:2", 1, 1)} (18:1–2) and ${ayah("75:27", 2, 3)} (75:27).
 
 ## Starting again
 - Start from a word where the meaning is complete; if you stopped in the middle of a sentence, go back a few words.
@@ -1994,7 +2002,7 @@ In Ḥafṣ there are four places marked with a small **س**: a short pause with
 ## Practice tip
 Choose one page and plan your breaths before reciting: mark each place you will stop. Check that each stop follows the signs and that each new start makes sense.`,
     body_de: `## Warum das Anhalten wichtig ist
-*Waqf* bedeutet Anhalten, *Ibtida* Neubeginnen. Ein Halt an der falschen Stelle kann einen Satz so zerschneiden, dass er scheinbar das Gegenteil sagt. Beispiel: Hält man nach لَا تَقْرَبُوا الصَّلَاةَ („nähert euch nicht dem Gebet“) an, ohne den Rest des Verses (4:43), wird die Bedeutung verfälscht.
+*Waqf* bedeutet Anhalten, *Ibtida* Neubeginnen. Ein Halt an der falschen Stelle kann einen Satz so zerschneiden, dass er scheinbar das Gegenteil sagt. Beispiel: Hält man nach ${ayah("4:43", 5, 7)} („nähert euch nicht dem Gebet“) an, ohne den Rest des Verses (4:43), wird die Bedeutung verfälscht.
 
 ## Wie man auf einem Wort anhält
 - Der letzte Vokal wird zum **Sukun**: الرَّحِيمِ → الرَّحِيمْ.
@@ -2013,7 +2021,7 @@ Choose one page and plan your breaths before reciting: mark each place you will 
 - **۝** (Versende) – am Versende anzuhalten ist gute Praxis.
 
 ## Sakta
-Bei Hafs gibt es vier Stellen mit einem kleinen **س**: eine kurze Pause ohne Atemholen, z. B. عِوَجًا ۜ قَيِّمًا (18:1–2) und مَنْ ۜ رَاقٍ (75:27).
+Bei Hafs gibt es vier Stellen mit einem kleinen **س**: eine kurze Pause ohne Atemholen, z. B. ${ayah("18:1", 11)} ${ayah("18:2", 1, 1)} (18:1–2) und ${ayah("75:27", 2, 3)} (75:27).
 
 ## Neu beginnen
 - Beginnen Sie bei einem Wort, mit dem der Sinn vollständig ist; haben Sie mitten im Satz angehalten, gehen Sie ein paar Wörter zurück.
@@ -2028,31 +2036,31 @@ Bei Hafs gibt es vier Stellen mit einem kleinen **س**: eine kurze Pause ohne At
 Wählen Sie eine Seite und planen Sie vor dem Rezitieren Ihre Atempausen: Markieren Sie jede Stelle, an der Sie anhalten wollen. Prüfen Sie, ob jeder Halt zu den Zeichen passt und jeder Neubeginn sinnvoll ist.`,
     examples: [
       {
-        ar: "إِنَّمَا يَسْتَجِيبُ الَّذِينَ يَسْمَعُونَ ۘ وَالْمَوْتَىٰ يَبْعَثُهُمُ اللَّهُ",
+        ar: ayah("6:36", 1, 7),
         key: "6:36",
         note_en: "Waqf lazim (مـ) after يَسْمَعُونَ: continuing would wrongly join \"the dead\" to those who listen.",
         note_de: "Waqf lazim (مـ) nach يَسْمَعُونَ: Beim Weiterlesen würden „die Toten“ fälschlich zu denen gezählt, die hören.",
       },
       {
-        ar: "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ",
+        ar: ayah("2:2"),
         key: "2:2",
-        note_en: "Mu'anaqa: stop either after لَا رَيْبَ or after فِيهِ – but not at both.",
-        note_de: "Mu'anaqa: entweder nach لَا رَيْبَ oder nach فِيهِ anhalten – aber nicht an beiden Stellen.",
+        note_en: `Mu'anaqa: stop either after ${ayah("2:2", 3, 4)} or after فِيهِ – but not at both.`,
+        note_de: `Mu'anaqa: entweder nach ${ayah("2:2", 3, 4)} oder nach فِيهِ anhalten – aber nicht an beiden Stellen.`,
       },
       {
-        ar: "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَقْرَبُوا الصَّلَاةَ وَأَنتُمْ سُكَارَىٰ",
+        ar: ayah("4:43", 1, 9),
         key: "4:43",
         note_en: "Do not stop after الصَّلَاةَ – the verse continues \"while you are intoxicated\", which completes the meaning.",
         note_de: "Nicht nach الصَّلَاةَ anhalten – der Vers geht weiter mit „während ihr berauscht seid“, was die Bedeutung erst vervollständigt.",
       },
       {
-        ar: "كَلَّا ۖ لَيُنبَذَنَّ فِي الْحُطَمَةِ",
+        ar: ayah("104:4"),
         key: "104:4",
         note_en: "Stopping on الْحُطَمَةِ: the ta marbuta becomes a ha with sukun – al-ḥuṭamah.",
         note_de: "Anhalten auf الْحُطَمَةِ: Das Ta marbuta wird zu einem Ha mit Sukun – al-hutamah.",
       },
       {
-        ar: "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+        ar: ayah("1:6"),
         key: "1:6",
         note_en: "Starting with اهْدِنَا: the connecting hamza is read with kasra (ihdinā) because the third letter has kasra.",
         note_de: "Beginn mit اهْدِنَا: Das Verbindungs-Hamza wird mit Kasra gelesen (ihdina), weil der dritte Buchstabe ein Kasra hat.",
@@ -2144,7 +2152,7 @@ Al-Fatihah is recited in every unit of prayer, so it is the surah most worth per
 
 ## Verse 1–3
 - بِسْمِ اللَّهِ: the lam of Allah is **light** (after kasra).
-- الرَّحْمَٰنِ الرَّحِيمِ: **lam shamsiyya** twice; the ra has fatha, so it is **heavy**; the small alif in الرَّحْمَٰنِ is a natural madd of 2 counts.
+- ${ayah("1:3")}: **lam shamsiyya** twice; the ra has fatha, so it is **heavy**; the small alif in الرَّحْمَٰنِ is a natural madd of 2 counts.
 - الْحَمْدُ: **lam qamariyya**; a clear ح, not h.
 - لِلَّهِ: light lam of Allah. رَبِّ: heavy ra, doubled ب.
 - At the stops الرَّحِيمْ and الْعَالَمِينْ: **madd 'arid lis-sukun** (2, 4 or 6 – stay consistent).
@@ -2163,7 +2171,7 @@ Al-Fatihah is recited in every unit of prayer, so it is the surah most worth per
 
 ## Verse 7
 - أَنْعَمْتَ: nun before ع – **izhar**; mim before ت – **izhar shafawi**.
-- عَلَيْهِمْ غَيْرِ and عَلَيْهِمْ وَلَا: mim sakinah stays clear (izhar shafawi), especially before و.
+- ${ayah("1:7", 4, 5)} and ${ayah("1:7", 7, 8)}: mim sakinah stays clear (izhar shafawi), especially before و.
 - غَيْرِ: ra with kasra – **light**.
 - الْمَغْضُوبِ: heavy غ and ض; take care to pronounce ض correctly and not as د or ظ.
 - الضَّالِّينَ: **madd lazim**, 6 counts.
@@ -2183,7 +2191,7 @@ Al-Fatiha wird in jeder Gebetseinheit rezitiert – keine Sure lohnt sich mehr, 
 
 ## Vers 1–3
 - بِسْمِ اللَّهِ: Das Lam von Allah ist **leicht** (nach Kasra).
-- الرَّحْمَٰنِ الرَّحِيمِ: zweimal **Lam Schamsiyya**; das Ra trägt Fatha und ist **schwer**; das kleine Alif in الرَّحْمَٰنِ ist ein natürlicher Madd von 2 Zählzeiten.
+- ${ayah("1:3")}: zweimal **Lam Schamsiyya**; das Ra trägt Fatha und ist **schwer**; das kleine Alif in الرَّحْمَٰنِ ist ein natürlicher Madd von 2 Zählzeiten.
 - الْحَمْدُ: **Lam Qamariyya**; ein klares ح, kein h.
 - لِلَّهِ: leichtes Lam von Allah. رَبِّ: schweres Ra, verdoppeltes ب.
 - Beim Anhalten auf الرَّحِيمْ und الْعَالَمِينْ: **Madd 'arid lis-sukun** (2, 4 oder 6 – bleiben Sie einheitlich).
@@ -2202,7 +2210,7 @@ Al-Fatiha wird in jeder Gebetseinheit rezitiert – keine Sure lohnt sich mehr, 
 
 ## Vers 7
 - أَنْعَمْتَ: Nun vor ع – **Izhar**; Mim vor ت – **Izhar schafawi**.
-- عَلَيْهِمْ غَيْرِ und عَلَيْهِمْ وَلَا: Das Mim Sakina bleibt deutlich (Izhar schafawi), besonders vor و.
+- ${ayah("1:7", 4, 5)} und ${ayah("1:7", 7, 8)}: Das Mim Sakina bleibt deutlich (Izhar schafawi), besonders vor و.
 - غَيْرِ: Ra mit Kasra – **leicht**.
 - الْمَغْضُوبِ: schweres غ und ض; das ض sorgfältig bilden, nicht wie د oder ظ.
 - الضَّالِّينَ: **Madd lazim**, 6 Zählzeiten.
@@ -2219,31 +2227,31 @@ Nach al-Fatiha ist es Sunna, „Amin“ zu sagen; es gehört nicht zur Sure. Mac
 Nehmen Sie sich eine Woche lang täglich beim Rezitieren von al-Fatiha auf. Prüfen Sie jeden Tag nur einen Vers anhand dieser Liste. Am besten lesen Sie sie einer qualifizierten Lehrkraft vor – so wurde Tajweed schon immer weitergegeben.`,
     examples: [
       {
-        ar: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+        ar: ayah("1:1"),
         key: "1:1",
         note_en: "Light lam of Allah, lam shamsiyya before ر, heavy ra, madd 'arid when stopping on الرَّحِيمْ.",
         note_de: "Leichtes Lam von Allah, Lam Schamsiyya vor ر, schweres Ra, Madd 'arid beim Anhalten auf الرَّحِيمْ.",
       },
       {
-        ar: "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+        ar: ayah("1:5"),
         key: "1:5",
         note_en: "Doubled ي in إِيَّاكَ, qalqalah sughra on the ب of نَعْبُدُ, madd 'arid at the stop.",
         note_de: "Verdoppeltes ي in إِيَّاكَ, Qalqala sughra auf dem ب von نَعْبُدُ, Madd 'arid beim Anhalten.",
       },
       {
-        ar: "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+        ar: ayah("1:6"),
         key: "1:6",
         note_en: "Connecting hamza read \"i\" at the start; heavy ص ر ط; lam shamsiyya then lam qamariyya.",
         note_de: "Verbindungs-Hamza am Anfang mit „i“; schweres ص ر ط; erst Lam Schamsiyya, dann Lam Qamariyya.",
       },
       {
-        ar: "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ",
+        ar: ayah("1:7", 1, 4),
         key: "1:7",
         note_en: "Izhar of nun before ع and izhar shafawi of mim before ت.",
         note_de: "Izhar des Nun vor ع und Izhar schafawi des Mim vor ت.",
       },
       {
-        ar: "غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+        ar: ayah("1:7", 5, 9),
         key: "1:7",
         note_en: "Light ra in غَيْرِ, heavy غ and ض, clear mim before و, madd lazim (6 counts) in الضَّالِّينَ.",
         note_de: "Leichtes Ra in غَيْرِ, schweres غ und ض, deutliches Mim vor و, Madd lazim (6 Zählzeiten) in الضَّالِّينَ.",

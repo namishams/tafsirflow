@@ -69,7 +69,7 @@ const FILES = [
   "aboutContent", "academy", "adhan", "age", "arabic", "arabicQuran", "changelog", "coach", "counts", "countries", "duaGenerator",
   "duas", "featured", "guides", "hadithNumber", "hijri", "journey", "learning", "listen", "mapContent", "plans", "points", "prayer", "quranIndex",
   "recite", "salah", "session", "shamsContent", "stickers", "sunnahDuas", "sunnahDuas2", "tajweed", "tiles",
-  "vocab", "vocabI18n", "vocabStudy", "votd", "wudu",
+  "verseQuotes", "vocab", "vocabI18n", "vocabStudy", "votd", "wudu",
 ];
 // Folders copied whole, with the translations of every language the website speaks
 const DIRS = ["islam", "names", "reciters", "secrets", "pagecontent"];
@@ -140,6 +140,10 @@ for (const f of FILES) {
   copyFile(p, join(out, `${f}.ts`), ADAPT[`${f}.ts`]);
 }
 for (const d of DIRS) copyDir(join(lib, d), join(out, d));
+// the Quran text that verseQuotes.ts cuts quotes out of (written by scripts/gen-verse-quotes.mjs from Quran.com), so the
+// app renders the same words as the website and nothing is typed by hand
+mkdirSync(join(out, "data"), { recursive: true });
+cpSync(join(lib, "data", "verse-quotes.json"), join(out, "data", "verse-quotes.json"));
 
 // UI texts of the website in every language, read by useWebT(), and the list of languages with their direction
 mkdirSync(join(out, "messages"), { recursive: true });

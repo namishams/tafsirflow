@@ -1,6 +1,8 @@
 // Writes src/lib/data/verse-quotes.json: the verses the website quotes as decoration (hero rings, gold verse lines,
-// the calligraphy in the side margins), each in the spelling the design is set in, exactly as Quran.com gives it.
-// Nothing in that file is typed by hand (BLUEPRINT §4); the pages cut the words they show out of it (lib/uiVerses.ts).
+// the calligraphy in the side margins) and the verses its content quotes in Arabic (the vocabulary trainer's example
+// verses in lib/vocab.ts, the Quran quotes in lib/islam), each in the spelling it is set in, exactly as Quran.com gives
+// it. Nothing in that file is typed by hand (BLUEPRINT §4); the pages cut the words they show out of it
+// (verseQuote in lib/verseQuotes.ts). The app gets the same file through mobile/scripts/sync-web.mjs.
 //   uthmani = text_uthmani   (the reader's text)
 //   qpc     = text_qpc_hafs  (King Fahd Complex Hafs mushaf; ends with the verse number, which the pages leave out)
 //   imlaei  = text_imlaei    (modern spelling, for the calligraphy fonts)
@@ -43,11 +45,14 @@ for (const key of keys) {
   await sleep(150);
 }
 
+// keys that another run wrote while this one was fetching are kept, with the text that run fetched
+const now = existsSync(out) ? JSON.parse(readFileSync(out, "utf8")) : {};
 const data = {};
 for (const [s, field] of Object.entries(FIELDS)) {
   data[s] = {};
-  for (const key of [...want[s]].sort(order)) {
-    const t = text[key][field];
+  const late = Object.keys(now[s] ?? {}).filter((k) => !want[s].has(k));
+  for (const key of [...want[s], ...late].sort(order)) {
+    const t = want[s].has(key) ? text[key][field] : now[s][key];
     if (typeof t !== "string" || !t.trim()) { console.error(`no ${field} for ${key}`); process.exit(1); }
     data[s][key] = t;
   }

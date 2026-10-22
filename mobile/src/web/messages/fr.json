@@ -1859,7 +1859,7 @@
     "adab1": "Commencez par la louange d'Allah et les prières sur le Prophète ﷺ, puis demandez. (at-Tirmidhi 3477, Abu Dawud 1481)",
     "adab2": "Invoquez avec la certitude qu'Allah exaucera. (at-Tirmidhi 3479)",
     "adab3": "Soyez patient – ne dites pas : j'ai invoqué et je n'ai pas été exaucé. (al-Bukhari 6340, Muslim 2735)",
-    "adab4": "Invoquez pour les autres en leur absence – un ange dit : « Et pour toi la même chose. » (Muslim 2732)",
+    "adab4": "Invoquez pour les autres en leur absence. En substance, le Prophète ﷺ a enseigné qu'un ange demande alors le même bien pour vous. (Muslim 2732)",
     "t_worry": "Soucis et angoisse",
     "t_illness": "Maladie et guérison",
     "t_knowledge": "Études et examens",
@@ -1975,12 +1975,14 @@
     "s1Src": "Le Prophète ﷺ · Muslim 1631",
     "s2": "L'aumône ne diminue pas la fortune.",
     "s2Src": "Le Prophète ﷺ · Muslim 2588",
-    "s3": "Les meilleurs d'entre vous sont ceux qui apprennent le Coran et l'enseignent.",
+    "s3": "En substance : les meilleurs sont ceux qui apprennent le Coran et l'enseignent aux autres.",
     "s3Src": "Le Prophète ﷺ · al-Bukhari 5027",
     "s4": "Celui qui guide quelqu'un vers le bien obtient une récompense semblable à celle de celui qui l'accomplit.",
     "s4Src": "Le Prophète ﷺ · Muslim 1893",
-    "s5": "Allah dit : Dépense, ô fils d'Adam, et Je dépenserai pour toi.",
-    "s5Src": "Le Prophète ﷺ · al-Bukhari 5352, Muslim 993"
+    "s5": "En substance : Allah promet de dépenser pour celui qui dépense pour les autres.",
+    "s5Src": "Le Prophète ﷺ · al-Bukhari 5352, Muslim 993",
+    "quote": "« {q} »",
+    "s5Quote": "Allah dit au fils d'Adam : « {q} »"
   },
   "premium": {
     "kicker": "Quran Masterclass Pro",

@@ -5,9 +5,10 @@ import Svg, { Path } from "react-native-svg";
 import { fmtHijri, hijriMonthName } from "@/web/hijri";
 import {
   AR_ALPHABET, COUNTS, NAMES, NAME_BY_KEY, ORIGIN_FILTERS, ORIGIN_LABEL, THEMES, THEME_LABEL,
-  hasArabic, langOf, latinOf, lengthOf, letterOf, matchesOrigin, meaningOf, namesText, normArabic, normLatin,
-  type BabyName, type Gender, type Lang, type OriginFilter, type Theme,
+  hasArabic, langOf, latinOf, lengthOf, letterOf, loadAbdHadith, matchesOrigin, meaningOf, namesText, normArabic, normLatin,
+  type AbdHadith, type BabyName, type Gender, type Lang, type OriginFilter, type Theme,
 } from "@/web/names";
+import { sunniHadith } from "@/features/hadith/data";
 import { MONTH_LINKS, bestPool, pickRandom, rankNames, verseFor, type LetterPref, type OriginPick, type Scored } from "@/web/names/rules";
 import { api, SITE } from "@/lib/api";
 import { useStored, writeJSON } from "@/lib/store";
@@ -17,7 +18,7 @@ import { Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { Callout, H2, IllumFrame, Label, LightChip, Rosette, StageButton, go } from "../art";
 import { CheckRow, DateField, Field, SelectField } from "../ui";
-import { ABD_HADITH_AR, FAV_KEY, classicalName, hijriOfInput } from "../web/nameGenerator";
+import { FAV_KEY, classicalName, hijriOfInput } from "../web/nameGenerator";
 import NameReport from "./NameReport";
 
 type Tx = ReturnType<typeof namesText>;
@@ -97,7 +98,7 @@ export default function NameGenerator({ scrollTo }: { scrollTo?: ScrollTo }) {
 
       <FavList t={t} l={l} locale={lang} favs={favs} />
       <Loved t={t} l={l} loved={loved} />
-      <Notes t={t} l={l} />
+      <Notes t={t} l={l} locale={lang} />
     </View>
   );
 }
@@ -548,18 +549,38 @@ function Loved({ t, l, loved }: { t: Tx; l: Lang; loved: { id: string; n: number
   );
 }
 
-function Notes({ t, l }: { t: Tx; l: Lang }) {
+// the hadith on the most beloved names from the published hadith editions (web/names: loadAbdHadith, as on the
+// website; cached on the device by the hadith loader); undefined while it loads; after 3.5 s without it the notes go on
+// without it (the summary, the words once they come)
+function useAbdHadith(locale: string): AbdHadith | undefined {
+  const [h, setH] = useState<AbdHadith | undefined>(undefined);
+  const [late, setLate] = useState(false);
+  useEffect(() => {
+    let live = true;
+    setH(undefined); setLate(false);
+    const timer = setTimeout(() => { if (live) setLate(true); }, 3500);
+    void loadAbdHadith(sunniHadith, locale).then((r) => { if (live) setH(r); });
+    return () => { live = false; clearTimeout(timer); };
+  }, [locale]);
+  return h ?? (late ? { arabic: null, words: null } : undefined);
+}
+
+function Notes({ t, l, locale }: { t: Tx; l: Lang; locale: string }) {
   const th = useTheme();
   const ar = l === "ar";
+  const abd = useAbdHadith(locale);
+  // quoted only as a published edition words it; without one in this language, the summary in our own words (abdSum)
+  const quoted = ar ? abd?.arabic : abd?.words;
   const head = { fontFamily: FONT.display, fontSize: 20, lineHeight: 26, color: th.ink };
   const card = { borderRadius: R.md, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface, padding: 20 };
   return (
     <View style={{ gap: 16, marginTop: 48 }}>
       <Callout style={{ padding: 20 }}>
         <Text accessibilityRole="header" style={head}>{t("abdTitle")}</Text>
-        <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 8 }}>{t("abdText")}</Text>
-        {!ar ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: th.gold, writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 12 }}>{ABD_HADITH_AR}</Text> : null}
-        <Text style={ar ? { fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: th.gold, marginTop: 8 } : { fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 8 }}>{t("abdHadith")}</Text>
+        <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 8 }}>{t("abdText")}{quoted ? ` ${t("abdSaid")}` : ""}</Text>
+        {!ar && abd?.arabic ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: th.gold, writingDirection: "rtl", textAlign: AR_RIGHT, marginTop: 12 }}>{abd.arabic}</Text> : null}
+        {quoted ? <Text style={ar ? { fontFamily: ARABIC_FONT, fontSize: 22, lineHeight: 42, color: th.gold, marginTop: 8 } : { fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 8 }}>{t("abdQuote", { w: quoted })}</Text>
+          : abd && !ar ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: th.ink, marginTop: 8 }}>{t("abdSum")}</Text> : null}
         <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: th.muted, marginTop: 4 }}>{t("abdSrc")}</Text>
       </Callout>
       <Callout style={{ padding: 20 }}>

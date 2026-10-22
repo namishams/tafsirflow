@@ -4,6 +4,8 @@
 // Quran. Nothing is written here; the builders only cut the existing texts into short cards.
 import { getTranslations } from "next-intl/server";
 import { ISLAM, loadChapters } from "@/lib/islam";
+import { withChapterHadith } from "@/lib/islam/hadithQuote";
+import { sunniHadith } from "@/lib/learn/journey/hadith";
 import { secretsContent } from "@/lib/secrets/content";
 import { loadBioTexts } from "@/lib/reciters";
 import { ISLAM_SLUGS, PROPHET_SLUGS, allahNames, chapterGroup, reciterGroups, secretGroups, tipGroups, type AllahName, type Story, type StoryCat, type StoryGroup } from "@/lib/learn/prophet/stories";
@@ -15,7 +17,8 @@ export type StoryRailGroup = { id: string; cat: StoryCat; title: string; arabic:
 export const STORY_CATS: StoryCat[] = ["prophet", "reciters", "islam", "tips", "secrets"];
 
 export async function buildStories(locale: string, knownFor: string): Promise<StoryLibrary> {
-  const [chapters, secrets, ws, bios] = await Promise.all([loadChapters(locale), secretsContent(locale).catch(() => null), getTranslations({ locale, namespace: "shams" }), loadBioTexts(locale)]);
+  // the chapters with their hadith quotes filled in from the published edition (lib/islam/hadithQuote.ts)
+  const [chapters, secrets, ws, bios] = await Promise.all([loadChapters(locale).then((cs) => Promise.all(cs.map((c) => withChapterHadith(c, sunniHadith)))), secretsContent(locale).catch(() => null), getTranslations({ locale, namespace: "shams" }), loadBioTexts(locale)]);
   const chapter = (slug: string) => { const i = ISLAM.findIndex((d) => d.slug === slug); return i >= 0 ? { doc: ISLAM[i], c: chapters[i] } : null; };
   const lib = (slugs: readonly string[], cat: StoryCat) => slugs.map((s) => chapter(s)).filter((x) => !!x?.c).map((x) => chapterGroup(x!.doc.slug, x!.doc.arabic, x!.c, cat)).filter((g) => g.stories.length);
   const t = (k: string) => (ws.has(k) ? ws(k) : k);

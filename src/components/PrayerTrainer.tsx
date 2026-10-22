@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { PRAYERS, buildPrayer, langOf, type L2, type Lang, type Posture, type Tradition } from "@/lib/salah";
+import { ESSENCE, PRAYERS, buildPrayer, langOf, type L2, type Lang, type Posture, type Tradition } from "@/lib/salah";
 import { ArrowBack, ArrowNext } from "./Icons";
 import { PracticeStar, PracticeWindow, starPath } from "./art/PracticeArt";
 
@@ -145,7 +145,8 @@ export default function PrayerTrainer() {
           <h3 className="font-display mt-2 text-3xl leading-tight">{tx(step.title)}</h3>
           {step.ar && <p className="font-arabic mt-5 border-y border-[rgb(214_180_108)]/25 py-3 text-[26px] leading-[2] text-[#fbf3dc] sm:text-[30px]" dir="rtl">{step.ar}</p>}
           {step.translit && lang !== "ar" && <p className="mt-3 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]"><span dir="ltr">{step.translit}</span></p>}
-          {step.meaning && lang !== "ar" && <p className="mt-3 text-[15px] leading-relaxed text-white/80"><span className="font-semibold text-white">{u.meaning}: </span>{tx(step.meaning)}</p>}
+          {/* a summary in own words (of a hadith or a verse) is labelled as such, never as the meaning of the wording */}
+          {step.meaning && lang !== "ar" && <p className="mt-3 text-[15px] leading-relaxed text-white/80"><span className="font-semibold text-white">{step.essence ? tx(ESSENCE) : u.meaning}: </span>{tx(step.meaning)}</p>}
           {step.note && <p className="mt-4 rounded-xl border border-[rgb(214_180_108)]/25 bg-white/[0.05] p-3 text-sm leading-relaxed text-white/75">{tx(step.note)}</p>}
           </div>
           <div className="mt-auto pt-6">

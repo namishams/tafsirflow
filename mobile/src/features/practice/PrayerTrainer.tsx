@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Circle, Defs, G, Line, LinearGradient as SvgLinear, Path, Polyline, Rect, Stop, Text as SvgText } from "react-native-svg";
-import { PRAYERS, buildPrayer, langOf, type Posture, type Tradition } from "@/web/salah";
+import { ESSENCE, PRAYERS, buildPrayer, langOf, type Posture, type Tradition } from "@/web/salah";
 import { useLang } from "@/i18n";
 import { ARABIC_FONT, FONT, R, goldButton, stage, AR_RIGHT } from "@/lib/theme";
 import { Stage } from "@/components/brand";
@@ -122,7 +122,7 @@ export default function PrayerTrainer() {
             </View>
           ) : null}
           {step.translit && l !== "ar" ? <Text style={{ fontFamily: FONT.italic, fontSize: 15, lineHeight: 24, color: stage.gold, marginTop: 12 }}>{rtl ? ltr(step.translit) : step.translit}</Text> : null}
-          {step.meaning && l !== "ar" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 12 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{u.meaning}: </Text>{tx(step.meaning)}</Text> : null}
+          {step.meaning && l !== "ar" ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: "rgba(255,255,255,0.8)", marginTop: 12 }}><Text style={{ fontFamily: FONT.semibold, color: "#ffffff" }}>{step.essence ? tx(ESSENCE) : u.meaning}: </Text>{tx(step.meaning)}</Text> : null}
           {step.note ? <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 22, color: "rgba(255,255,255,0.75)", marginTop: 16, borderRadius: R.card, borderWidth: 1, borderColor: "rgba(214,180,108,0.25)", backgroundColor: "rgba(255,255,255,0.05)", padding: 12, overflow: "hidden" }}>{tx(step.note)}</Text> : null}
         </View>
         <View style={{ flex: 1, minHeight: 24 }} />

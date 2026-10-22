@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { Stack } from "expo-router";
 import { useLang, pick } from "@/i18n";
@@ -7,10 +8,13 @@ import WuduTrainer from "@/features/practice/WuduTrainer";
 import { Callout, Hero, PageScroll, LightChip, LinkList, MoreTiles, PStar, go, useGold } from "@/features/practice/art";
 import { useVerses, verseEnd } from "@/features/practice/verses";
 import { HEROES } from "@/features/practice/web/heroes";
-import { C } from "@/features/practice/web/wuduPage";
+import { C, shownVirtues, virtueHadith } from "@/features/practice/web/wuduPage";
+import { sunniHadith } from "@/features/hadith/data";
+import { hasHadithQuotes, loadHadithTexts } from "@/web/islam/hadithQuote";
 
 // /wudu – the ablution step by step (website: app/[locale]/(app)/wudu): trainer, the wudu verse (5:6) from the
-// Quran store, what breaks wudu, tayammum, the virtue of wudu with its sources
+// Quran store, what breaks wudu, tayammum, the virtue of wudu with its sources (the hadith quoted from the published
+// editions, filled in with shownVirtues as on the website)
 export default function WuduScreen() {
   const { lang } = useLang();
   const c = pick(C, lang);
@@ -21,6 +25,17 @@ export default function WuduScreen() {
   const ar = lang === "ar";
   // the translator line names the German and English translations; other languages read their own (translationFor)
   const showTrBy = lang === "de" || lang === "en";
+  // the hadith among the virtues ({{hadith …}}), loaded from the published editions (kept on the device); undefined
+  // while loading – after 4 s the cards go on without them (summaries, no Arabic) until they come
+  const [texts, setTexts] = useState<Record<string, string | null> | undefined>(undefined);
+  useEffect(() => {
+    let live = true;
+    setTexts(undefined);
+    const late = setTimeout(() => { if (live) setTexts((t) => t ?? {}); }, 4000);
+    void loadHadithTexts(virtueHadith(c.virtues), sunniHadith).then((t) => { if (live) setTexts(t); });
+    return () => { live = false; clearTimeout(late); };
+  }, [lang]); // eslint-disable-line react-hooks/exhaustive-deps
+  const virtues = texts ? shownVirtues(c.virtues, texts, lang) : c.virtues.map((x) => (hasHadithQuotes(`${x.ar}${x.text}`) ? null : x));
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
@@ -73,10 +88,10 @@ export default function WuduScreen() {
 
           <Text accessibilityRole="header" style={{ fontFamily: FONT.display, fontSize: 30, lineHeight: 36, letterSpacing: -0.6, color: th.ink, marginTop: 40 }}>{c.virtueTitle}</Text>
           <View style={{ gap: 16, marginTop: 28 }}>
-            {c.virtues.map((x) => (
+            {virtues.map((x) => x && (
               <GoldCard key={x.src} style={{ padding: 20, paddingTop: 28 }}>
                 {ar && x.text ? <Text style={{ fontFamily: FONT.regular, fontSize: 15, lineHeight: 24, color: th.muted, marginBottom: 4 }}>{x.text}</Text> : null}
-                <Text style={{ fontFamily: ARABIC_FONT, fontSize: 23, lineHeight: 46, color: th.arabic, writingDirection: "rtl", textAlign: AR_RIGHT }}>{x.ar}</Text>
+                {x.ar ? <Text style={{ fontFamily: ARABIC_FONT, fontSize: 23, lineHeight: 46, color: th.arabic, writingDirection: "rtl", textAlign: AR_RIGHT }}>{x.ar}</Text> : null}
                 {!ar ? <Text style={{ fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 25, color: th.ink, opacity: 0.9, marginTop: 8 }}>{x.text}</Text> : null}
                 <Text onPress={x.href ? () => go(x.href!) : undefined} accessibilityRole={x.href ? "link" : "text"} style={{ fontFamily: FONT.semibold, fontSize: 13, color: th.gold, marginTop: 16 }}>{x.src}</Text>
               </GoldCard>
