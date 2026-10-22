@@ -3,6 +3,7 @@
 // Hajj (tamattu'), one step at a time, tick it off, jump with the step bar, go back or start over. Progress is kept
 // under the app's key qmc.haramain.guide.v1. Descriptive only, no rulings. Both guides are open on the website.
 import { useEffect, useRef, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { pick } from "@/lib/learn/i18n";
 import { useStored, writeJSON } from "@/lib/learn/store";
 import { useCK } from "@/lib/learn/abrahamic/kit";
@@ -48,23 +49,9 @@ export default function HajjGuide() {
       <LearnHero uid="hajj" kicker={g("open")} title={g("title")} lead={g("lead")} word="الحج"
         back={{ href: "/haramain", label: pick(UI.title, lang) }} />
       <LearnMain className="space-y-5">
-        <div role="tablist" aria-label={g("title")} className="grid grid-cols-2 gap-2">
-          {modes.map((m) => {
-            const n = (st[m] ?? []).length, total = (m === "umrah" ? UMRAH : HAJJ).length;
-            return (
-              <button key={m} type="button" role="tab" id={`hg-tab-${m}`} aria-selected={mode === m} aria-controls="hg-panel"
-                onClick={() => { setMode(m); setI(0); }}
-                onKeyDown={(e) => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") { const o = m === "umrah" ? "hajj" : "umrah"; setMode(o); setI(0); document.getElementById(`hg-tab-${o}`)?.focus(); } }}
-                tabIndex={mode === m ? 0 : -1}
-                className={cx("flex min-h-12 flex-col items-center justify-center rounded-xl border-[1.5px] px-3 py-2 text-[15px] font-semibold transition",
-                  mode === m ? "border-[rgb(var(--hm-gold))] text-[rgb(var(--hm-gold-d))]" : "border-line hover:border-[rgb(var(--hm-gold))]/60")}>
-                {g(m)}
-                <span className="text-[12px] font-normal tabular-nums text-muted">{`${n}/${total}`}</span>
-              </button>
-            );
-          })}
-        </div>
-        <div id="hg-panel" role="tabpanel" aria-labelledby={`hg-tab-${mode}`} className="space-y-5">
+        <Segmented tabs full label={g("title")} value={mode} onChange={(m) => { setMode(m); setI(0); }}
+          options={modes.map((m) => ({ id: m, label: <>{g(m)} <span className="text-[12px] font-normal tabular-nums text-muted">{`${(st[m] ?? []).length}/${(m === "umrah" ? UMRAH : HAJJ).length}`}</span></> }))} />
+        <div id="hg-panel" role="tabpanel" aria-label={g(mode)} className="space-y-5">
           <ol className="flex gap-1" aria-label={g("step", { n: i + 1, m: steps.length })}>
             {steps.map((_, k) => (
               <li key={k} className="flex-1">

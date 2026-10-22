@@ -3,6 +3,7 @@
 // app's screens (mobile/src/app/nahj.tsx, mobile/src/features/nahj-course/Screens.tsx). The text comes from the server
 // (src/lib/learn/hadith/nahjContent.ts), never from git; the website is free, so there is no Pro preview here.
 import { useEffect, useMemo, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { useRouter } from "@/i18n/navigation";
 import { Ar, Bar, Card, CardLink, GoldButton, GoldLink, Kicker, LearnHero, LearnMain, Note, Option, OutlineButton, OutlineLink, Row, RowList, Spinner, TextButton } from "@/components/learn/ui";
 import { isRTL, useLang } from "@/lib/learn/i18n";
@@ -38,12 +39,8 @@ function ContentState({ status, onRetry }: { status: Exclude<NahjStatus, "ready"
 
 function EditionSwitch({ ed }: { ed: NahjEdition }) {
   return (
-    <div role="tablist" className="inline-flex overflow-hidden rounded-full border border-[rgb(var(--gold))]/40">
-      {(["de", "en"] as const).map((e) => (
-        <button key={e} type="button" role="tab" aria-selected={ed === e} onClick={() => setNahjEdition(e)}
-          className={`h-9 px-4 text-[13px] font-semibold ${ed === e ? "bg-[rgb(var(--gold))]/25 text-white" : "text-white/70"}`}>{e === "de" ? "Deutsch" : "English"}</button>
-      ))}
-    </div>
+    <Segmented tabs size="sm" label="Deutsch / English" value={ed} onChange={setNahjEdition}
+      options={[{ id: "de", label: "Deutsch" }, { id: "en", label: "English" }]} />
   );
 }
 

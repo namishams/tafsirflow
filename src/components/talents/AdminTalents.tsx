@@ -1,5 +1,6 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { BadgeIcon, type WebBadge } from "./BadgeIcon";
 import { starText } from "@/lib/starText";
 
@@ -41,14 +42,11 @@ export default function AdminTalents({ locale, posting = true }: { locale: strin
     try { await fn(); } catch (e) { if ((e as { status?: number }).status === 403 || (e as { status?: number }).status === 401) setForbidden(true); else setMsg(t.error); }
   }, [t.error]);
   if (forbidden) return <p className="callout mt-8 rounded-lg p-6">{t.forbidden}</p>;
+  const tabIds = (["reports", "posts", "members", "invites", "verify", "stars"] as Tab[]).filter((k) => posting || k !== "posts");
   const btn = "h-9 rounded-md border border-line px-3 text-[13.5px] font-semibold hover:bg-bg disabled:opacity-50";
   return (
     <div className="mt-6">
-      <div role="tablist" className="flex flex-wrap gap-2">
-        {(["reports", "posts", "members", "invites", "verify", "stars"] as Tab[]).filter((k) => posting || k !== "posts").map((k) => (
-          <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={`h-10 rounded-full px-4 text-sm font-semibold ${tab === k ? "btn-gold" : "border border-line"}`}>{t[k]}</button>
-        ))}
-      </div>
+      <Segmented tabs scroll label={tabIds.map((k) => t[k]).join(" / ")} value={tab} onChange={setTab} options={tabIds.map((k) => ({ id: k, label: t[k] }))} />
       {msg ? <p role="alert" className="mt-4 text-red-700 dark:text-red-400">{msg}</p> : null}
       <div className="mt-6">
         {tab === "reports" ? <Reports t={t} run={run} btn={btn} /> : tab === "posts" ? <Posts t={t} run={run} btn={btn} /> : tab === "members" ? <Members t={t} run={run} btn={btn} /> : tab === "invites" ? <Invites t={t} run={run} btn={btn} locale={locale} /> : tab === "stars" ? <Stars t={t} run={run} btn={btn} locale={locale} /> : <Verify t={t} run={run} btn={btn} />}

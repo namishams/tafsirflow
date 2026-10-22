@@ -4,6 +4,7 @@
 // stage; stage 5 waits for reviewed recording examples) and statistics. Answers and best scores are stored under the
 // app's key "qmc.mishary.ear" with the app's scoring.
 import { useEffect, useMemo, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { useMt } from "@/lib/learn/mishary/texts";
 import {
   JINS, MAQAMAT, MAQAM_AR, NOTES, PASS, QUESTIONS, STAGES, descKey, nameKey, playJins, recordAnswer, recordStage, reviewedExamples, stageOpen, stopJins, useEarStats,
@@ -30,12 +31,8 @@ export function EarTrainingScreen() {
       <LearnMain className="grid gap-6">
         {drill ? <Drill stage={drill} onClose={() => setDrill(null)} /> : (
           <>
-            <div role="tablist" aria-label={mt("earTitle")} className="flex w-full max-w-md rounded-full border border-line bg-surface p-1">
-              {tabs.map(([k, l]) => (
-                <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)}
-                  className={`h-10 flex-1 rounded-full text-[14px] font-semibold transition ${tab === k ? "bg-accent text-white" : "text-muted hover:text-ink"}`}>{l}</button>
-              ))}
-            </div>
+            <Segmented tabs full className="max-w-md" label={mt("earTitle")} value={tab} onChange={setTab}
+              options={tabs.map(([k, l]) => ({ id: k, label: l }))} />
             <div role="tabpanel">{tab === "lessons" ? <Lessons /> : tab === "drills" ? <Stages onStart={setDrill} /> : <Stats />}</div>
           </>
         )}

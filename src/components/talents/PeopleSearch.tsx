@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { Link, useRouter } from "@/i18n/navigation";
 import { BadgeIcon, type WebBadge } from "./BadgeIcon";
 import { Avatar, Ico, followLabel, type WebIconName } from "./TalentProfileWeb";
@@ -148,14 +149,8 @@ export default function PeopleSearch({ locale, surahs, courses, initialQ = "", i
       </form>
 
       {s ? (
-        <div role="tablist" className="flex border-b border-line">
-          {(["accounts", "top"] as const).map((k) => (
-            <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={`relative grid h-11 flex-1 place-items-center text-[15px] ${tab === k ? "font-bold text-ink" : "font-semibold text-muted"}`}>
-              {k === "accounts" ? t.tabAccounts : t.tabTop}
-              {tab === k ? <span aria-hidden className="absolute bottom-0 h-0.5 w-14 rounded-full bg-[#c6a65e]" /> : null}
-            </button>
-          ))}
-        </div>
+        <Segmented tabs full label={`${t.tabAccounts} / ${t.tabTop}`} value={tab} onChange={setTab}
+          options={[{ id: "accounts", label: t.tabAccounts }, { id: "top", label: t.tabTop }]} />
       ) : null}
 
       {!s ? (

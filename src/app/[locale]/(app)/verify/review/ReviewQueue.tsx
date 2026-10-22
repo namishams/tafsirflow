@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import type { VerifyT } from "../texts";
 
 type Item = {
@@ -36,12 +37,8 @@ export default function ReviewQueue({ t, locale }: { t: VerifyT; locale: string 
   if (state !== "ok") return <p className="text-[15px] text-[rgb(var(--muted))]">{state === "login" ? t.signIn : t.noAccess}</p>;
   return (
     <div className="flex flex-col gap-5">
-      <div role="tablist" className="flex gap-2">
-        {(["open", "done"] as const).map((k) => (
-          <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)}
-            className={`h-10 rounded-full border px-5 text-sm font-semibold ${tab === k ? "border-[rgb(var(--accent))] bg-[rgb(var(--accent-soft))] text-[rgb(var(--accent))]" : "border-[rgb(var(--line))] text-[rgb(var(--ink))]"}`}>{t[k]}</button>
-        ))}
-      </div>
+      <Segmented tabs label={`${t.open} / ${t.done}`} value={tab} onChange={setTab}
+        options={(["open", "done"] as const).map((k) => ({ id: k, label: t[k] }))} />
       {err ? <p role="alert" className="text-sm text-[rgb(190_84_104)]">{err}</p> : null}
       {items === null ? <p className="text-[rgb(var(--muted))]">…</p> : items.length === 0 ? <p className="text-[rgb(var(--muted))]">{t.empty}</p> : items.map((x) => (
         <article key={x.id} className="rounded-xl border border-[rgb(var(--line))] bg-[rgb(var(--surface))] p-5">

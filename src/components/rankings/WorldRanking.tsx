@@ -1,5 +1,6 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { countryName, sortedCountries } from "@/lib/countries";
@@ -99,27 +100,22 @@ export default function WorldRanking({ initial }: { initial: InitialRanking }) {
 
   return (
     <div>
-      <div role="tablist" className="flex flex-wrap gap-1 rounded-md border border-line bg-surface p-1 text-sm font-semibold">
-        {(["world", "country", "friends", "countries"] as Tab[]).map((x) => (
-          <button key={x} role="tab" aria-selected={tab === x} onClick={() => setTab(x)} className={`flex-1 rounded px-3 py-2 ${tab === x ? "bg-ink text-bg" : "text-muted hover:text-ink"}`}>{tx(`tab_${x}` as RwKey)}</button>
-        ))}
-      </div>
+      <Segmented tabs scroll full label={(["world", "country", "friends", "countries"] as Tab[]).map((x) => tx(`tab_${x}` as RwKey)).join(" / ")} value={tab} onChange={setTab}
+        options={(["world", "country", "friends", "countries"] as Tab[]).map((x) => ({ id: x, label: tx(`tab_${x}` as RwKey) }))} />
 
       {tab !== "countries" ? (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {METRICS.map((x) => (
-            <button key={x} onClick={() => setMetric(x)} aria-pressed={metric === x} className={`rounded-full border px-3.5 py-1.5 text-sm font-semibold ${metric === x ? "border-[rgb(var(--gold))] bg-[rgb(var(--gold))]/15 text-ink" : "border-line text-muted hover:text-ink"}`}>{tx(`metric_${x}` as RwKey)}</button>
-          ))}
-        </div>
+        <Segmented scroll size="sm" className="mt-4" label={METRICS.map((x) => tx(`metric_${x}` as RwKey)).join(" / ")} value={metric} onChange={setMetric}
+          options={METRICS.map((x) => ({ id: x, label: tx(`metric_${x}` as RwKey) }))} />
       ) : (
         <div className="mt-4 space-y-3">
           <p className="text-[15px] leading-relaxed text-muted">{tx("countriesLead", { n: data?.minCountryMembers ?? initial.countries.minCountryMembers })}</p>
           <div className="flex flex-wrap gap-2">
-            {(["xp", "stickers", "verses"] as const).map((x) => <button key={x} onClick={() => setCm(x)} aria-pressed={cm === x} className={`rounded-full border px-3.5 py-1.5 text-sm font-semibold ${cm === x ? "border-[rgb(var(--gold))] bg-[rgb(var(--gold))]/15 text-ink" : "border-line text-muted hover:text-ink"}`}>{tx(`cm_${x}` as RwKey)}</button>)}
-            <span className="mx-1 w-px bg-line" />
-            {(["week", "all"] as const).map((x) => <button key={x} onClick={() => setPeriod(x)} aria-pressed={period === x} className={`rounded-full border px-3.5 py-1.5 text-sm font-semibold ${period === x ? "border-[rgb(var(--gold))] bg-[rgb(var(--gold))]/15 text-ink" : "border-line text-muted hover:text-ink"}`}>{tx(`period_${x}` as RwKey)}</button>)}
-            <span className="mx-1 w-px bg-line" />
-            {(["total", "per_capita"] as const).map((x) => <button key={x} onClick={() => setMode(x)} aria-pressed={mode === x} className={`rounded-full border px-3.5 py-1.5 text-sm font-semibold ${mode === x ? "border-[rgb(var(--gold))] bg-[rgb(var(--gold))]/15 text-ink" : "border-line text-muted hover:text-ink"}`}>{tx(`mode_${x}` as RwKey)}</button>)}
+            <Segmented size="sm" label={(["xp", "stickers", "verses"] as const).map((x) => tx(`cm_${x}` as RwKey)).join(" / ")} value={cm} onChange={setCm}
+              options={(["xp", "stickers", "verses"] as const).map((x) => ({ id: x, label: tx(`cm_${x}` as RwKey) }))} />
+            <Segmented size="sm" label={(["week", "all"] as const).map((x) => tx(`period_${x}` as RwKey)).join(" / ")} value={period} onChange={setPeriod}
+              options={(["week", "all"] as const).map((x) => ({ id: x, label: tx(`period_${x}` as RwKey) }))} />
+            <Segmented size="sm" label={(["total", "per_capita"] as const).map((x) => tx(`mode_${x}` as RwKey)).join(" / ")} value={mode} onChange={setMode}
+              options={(["total", "per_capita"] as const).map((x) => ({ id: x, label: tx(`mode_${x}` as RwKey) }))} />
           </div>
         </div>
       )}

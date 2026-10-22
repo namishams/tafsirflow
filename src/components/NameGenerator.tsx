@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { readJSON, writeJSON } from "@/lib/storage";
@@ -74,13 +75,8 @@ export default function NameGenerator() {
 
   return (
     <div>
-      <div role="tablist" aria-label={t("title")} className="grid grid-cols-2 gap-1 rounded-full border border-line bg-surface p-1">
-        {(["finder", "all"] as const).map((k) => (
-          <button key={k} role="tab" type="button" aria-selected={tab === k} onClick={() => setTab(k)} className={`h-11 rounded-full text-[14px] font-bold transition ${tab === k ? "btn-gold" : "text-muted hover:text-ink"}`}>
-            {t(k === "finder" ? "tabFinder" : "tabAll")}
-          </button>
-        ))}
-      </div>
+      <Segmented tabs full label={t("title")} value={tab} onChange={setTab}
+        options={[{ id: "finder", label: t("tabFinder") }, { id: "all", label: t("tabAll") }]} />
       <p className="mt-3 text-center text-xs text-muted">{t("boysN", { n: COUNTS.b })} · {t("girlsN", { n: COUNTS.g })}</p>
 
       <div className="mt-6">
@@ -184,11 +180,8 @@ function Finder({ t, l, locale, favs, onResult }: { t: Tx; l: Lang; locale: stri
             <div className="mt-6 grid gap-6">
               <div>
                 <p className={label}>{t("gender")}</p>
-                <div className="mt-3 grid gap-2 sm:grid-cols-3">
-                  {(["b", "g", "both"] as const).map((g) => (
-                    <button key={g} type="button" aria-pressed={f.gender === g} onClick={() => set("gender", g)} className={`${chip(f.gender === g)} h-12 rounded-xl`}>{t(g === "b" ? "boy" : g === "g" ? "girl" : "both")}</button>
-                  ))}
-                </div>
+                <Segmented full className="mt-3" label={t("gender")} value={f.gender} onChange={(g) => set("gender", g)}
+                  options={(["b", "g", "both"] as const).map((g) => ({ id: g, label: t(g === "b" ? "boy" : g === "g" ? "girl" : "both") }))} />
               </div>
               <label className="grid gap-2">
                 <span className={label}>{t("date")}</span>
@@ -202,9 +195,8 @@ function Finder({ t, l, locale, favs, onResult }: { t: Tx; l: Lang; locale: stri
               {f.siblings.trim() && (
                 <div>
                   <p className={label}>{t("letter")}</p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {(["any", "same", "diff"] as const).map((k) => <button key={k} type="button" aria-pressed={f.letter === k} onClick={() => set("letter", k)} className={chip(f.letter === k)}>{t(k === "any" ? "letterAny" : k === "same" ? "letterSame" : "letterDiff")}</button>)}
-                  </div>
+                  <Segmented scroll className="mt-3" label={t("letter")} value={f.letter} onChange={(k) => set("letter", k)}
+                    options={(["any", "same", "diff"] as const).map((k) => ({ id: k, label: t(k === "any" ? "letterAny" : k === "same" ? "letterSame" : "letterDiff") }))} />
                 </div>
               )}
             </div>
@@ -401,9 +393,8 @@ function Browse({ t, l, favs }: { t: Tx; l: Lang; favs: Favs }) {
   return (
     <div>
       <section className="rounded-2xl border border-[rgb(201_166_94)]/30 bg-surface p-5 sm:p-6">
-        <div className="flex flex-wrap gap-2">
-          {(["all", "b", "g"] as const).map((k) => <button key={k} type="button" aria-pressed={g === k} onClick={() => { setG(k); setLetter(""); }} className={chip(g === k)}>{k === "all" ? t("all") : t(k === "b" ? "boy" : "girl")}</button>)}
-        </div>
+        <Segmented label={t("gender")} value={g} onChange={(k) => { setG(k); setLetter(""); }}
+          options={(["all", "b", "g"] as const).map((k) => ({ id: k, label: k === "all" ? t("all") : t(k === "b" ? "boy" : "girl") }))} />
         <p className={`${label} mt-5`}>{t("theme")}</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <button type="button" aria-pressed={!theme} onClick={() => setTheme("")} className={chip(!theme)}>{t("all")}</button>

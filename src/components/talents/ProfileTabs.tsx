@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, type ReactNode } from "react";
+import Segmented from "@/components/ui/Segmented";
 
 // Tabs of the public talent profile (Achievements grid · Sijill · Badges), like the app. All panels stay in the HTML
 // (indexable); the URL hash (#achievements, #sijill, #badges) selects one, so the badge link in the header still works.
@@ -19,26 +20,12 @@ export default function ProfileTabs({ tabs, sticky }: { tabs: Tab[]; sticky?: bo
   const go = (id: string) => { setCur(id); history.replaceState(null, "", `#${id}`); };
   return (
     <div>
-      <div role="tablist" className={`flex border-b border-line ${sticky ? "sticky top-0 z-10 bg-surface" : ""}`}>
-        {tabs.map((t, i) => (
-          <button key={t.id} id={`tab-${t.id}`} type="button" role="tab" aria-selected={cur === t.id} aria-controls={t.id} tabIndex={cur === t.id ? 0 : -1} onClick={() => go(t.id)}
-            onKeyDown={(e) => {
-              const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-              if (!d) return;
-              const n = tabs[(i + (document.dir === "rtl" ? -d : d) + tabs.length) % tabs.length];
-              go(n.id); document.getElementById(`tab-${n.id}`)?.focus();
-            }}
-            aria-label={t.icon ? t.label : undefined} title={t.icon ? t.label : undefined}
-            className={t.icon
-              ? `relative grid h-12 flex-1 place-items-center ${cur === t.id ? "text-ink" : "text-muted hover:text-ink"}`
-              : `h-12 flex-1 border-b-2 text-[15px] ${cur === t.id ? "border-[rgb(var(--hm-gold))] font-bold" : "border-transparent font-semibold text-muted hover:text-current"}`}>
-            {t.icon ?? t.label}
-            {t.icon && cur === t.id ? <span aria-hidden className="absolute bottom-0 h-0.5 w-11 rounded-full bg-[#c6a65e]" /> : null}
-          </button>
-        ))}
+      <div className={sticky ? "sticky top-0 z-10 bg-surface" : undefined}>
+        <Segmented tabs full label={tabs.map((t) => t.label).join(" / ")} value={cur} onChange={go}
+          options={tabs.map((t) => ({ id: t.id, icon: t.icon, title: t.icon ? t.label : undefined, label: t.icon ? <span className="sr-only">{t.label}</span> : t.label }))} />
       </div>
       {tabs.map((t) => (
-        <section key={t.id} id={t.id} role="tabpanel" aria-labelledby={`tab-${t.id}`} hidden={cur !== t.id} className={`scroll-mt-24 ${t.flush ? "pt-px" : "pt-6"}`}>
+        <section key={t.id} id={t.id} role="tabpanel" aria-label={t.label} hidden={cur !== t.id} className={`scroll-mt-24 ${t.flush ? "pt-px" : "pt-6"}`}>
           {t.panel}
         </section>
       ))}

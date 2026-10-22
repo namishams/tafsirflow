@@ -3,6 +3,7 @@
 // is in the verse reviews of the reader ("tf:srs", src/lib/learning.ts) or is a verse / dua card here. Cell colour =
 // share of verses known × average recall today. A selected cell links to its exam (/tests/juz|surah?ref=N).
 import { useEffect, useMemo, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { useLang } from "@/lib/learn/i18n";
 import { getChapters, type Chapter } from "@/lib/learn/quran";
 import { useHydrated, useStored } from "@/lib/learn/store";
@@ -81,12 +82,8 @@ export function HifzScreen() {
       </LearnHero>
       <LearnMain>
         <div className="grid gap-6">
-          <div role="tablist" aria-label={st("hifz")} className="inline-flex w-fit rounded-full border border-line bg-surface p-1">
-            {([["juz", st("byJuz")], ["surah", st("bySurah")]] as const).map(([m, l]) => (
-              <button key={m} type="button" role="tab" aria-selected={mode === m} onClick={() => { setMode(m); setSel(null); }}
-                className={`min-h-10 rounded-full px-5 text-sm font-semibold transition ${mode === m ? "bg-accent text-white" : "text-muted hover:text-ink"}`}>{l}</button>
-            ))}
-          </div>
+          <Segmented tabs className="w-fit" label={st("hifz")} value={mode} onChange={(m) => { setMode(m); setSel(null); }}
+            options={[{ id: "juz", label: st("byJuz") }, { id: "surah", label: st("bySurah") }]} />
           <div className={`grid gap-1.5 ${mode === "juz" ? "grid-cols-[repeat(auto-fill,minmax(52px,1fr))]" : "grid-cols-[repeat(auto-fill,minmax(38px,1fr))]"}`}>
             {cells.map((c) => (
               <button key={c.id} type="button" onClick={() => setSel(c.id)} aria-pressed={sel === c.id}
