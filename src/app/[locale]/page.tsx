@@ -14,6 +14,7 @@ import JsonLd from "@/components/JsonLd";
 import WhyQuran from "@/components/WhyQuran";
 import AppShowcase from "@/components/AppShowcase";
 import { CarouselShowcase, SyncSection } from "@/components/HomePromo";
+import AppOnly from "@/components/apppush/AppOnly";
 import FeedSection from "@/components/feed/FeedSection";
 import { getChapters } from "@/lib/quran";
 import { BUNDLED_UI_VERSES } from "@/lib/uiVerses";
@@ -185,6 +186,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
         <AppShowcase locale={locale} />
         <CarouselShowcase locale={locale} appUrl={appStoreUrl()} />
         <SyncSection locale={locale} />
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-5"><AppOnly topics={["stickers", "tree", "messenger", "dua", "celebrations", "widgets", "offline"]} url={appStoreUrl()} /></div>
 
         {/* 2c The Talents community and Free vs Pro */}
         <TalentsTeaser locale={locale} />

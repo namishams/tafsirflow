@@ -6,6 +6,7 @@ import RequireAccount from "@/components/RequireAccount";
 import MeEditView from "@/components/talents/MeEditView";
 import TalentProfileWeb from "@/components/talents/TalentProfileWeb";
 import { appStoreUrl } from "@/lib/appstore";
+import AppOnly from "@/components/apppush/AppOnly";
 import { careerText } from "@/lib/careerWeb";
 
 // /profile – the own profile (owner 22.10.2026, app and website 1:1): the TikTok-style profile of the app's Account tab
@@ -37,6 +38,7 @@ export default async function ProfilePage({ params, searchParams }: { params: Pr
   return (
     <div className="px-0 sm:px-5">
       <TalentProfileWeb locale={locale} initial={null} username={null} own appUrl={appStoreUrl()} fallback={<><MeEditView locale={locale} />{details}</>} />
+      <div className="mx-auto max-w-3xl px-4 pb-16"><AppOnly topics={["stickers", "dua", "widgets"]} url={appStoreUrl()} /></div>
     </div>
   );
 }

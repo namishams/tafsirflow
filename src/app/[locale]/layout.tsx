@@ -26,6 +26,7 @@ import Rewards from "@/components/Rewards";
 import StageLight from "@/components/StageLight";
 import Announcement from "@/components/Announcement";
 import PromoBars from "@/components/PromoBars";
+import AppHandoff from "@/components/apppush/AppHandoff";
 import { appStoreUrl } from "@/lib/appstore";
 import NativeBridge from "@/components/NativeBridge";
 import LocalDigits from "@/components/LocalDigits";
@@ -56,7 +57,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
       </head>
       <body className="min-h-screen">
         {/* the browser gets only the texts its components read; folders with their own layout narrow this further */}
-        <ClientMessages route="@root" locale={locale}><RadioProvider><Announcement /><PromoBars appUrl={appStoreUrl()} />{children}<ScrollReveal /><Pwa /><Rewards /><StageLight /><NativeBridge /><LocalDigits locale={locale} /></RadioProvider></ClientMessages>
+        <ClientMessages route="@root" locale={locale}><RadioProvider><Announcement /><PromoBars appUrl={appStoreUrl()} /><AppHandoff url={appStoreUrl()} />{children}<ScrollReveal /><Pwa /><Rewards /><StageLight /><NativeBridge /><LocalDigits locale={locale} /></RadioProvider></ClientMessages>
         <SideCalligraphy />
       </body>
     </html>
