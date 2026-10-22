@@ -1,5 +1,5 @@
 import { Image } from "expo-image";
-import { Pressable, Text, View } from "react-native";
+import { Platform, Pressable, Text, View } from "react-native";
 import Svg, { Rect } from "react-native-svg";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
@@ -28,16 +28,18 @@ const COVER_URL = "https://quranmasterclass.com/images/nahjul-balagha-cover.jpg"
 export function FounderBook({ small = false }: { small?: boolean }) {
   const t = useWebT("founderAbout");
   const isl = useIsl();
-  const open = () => void WebBrowser.openBrowserAsync(BOOK_URL).catch(() => undefined);
+  // iOS: the book card only, no outbound purchase link (App Review 3.1.1); the website keeps the Amazon link
+  const link = Platform.OS !== "ios";
+  const open = link ? () => void WebBrowser.openBrowserAsync(BOOK_URL).catch(() => undefined) : undefined;
   const w = small ? 60 : 99, h = small ? 92 : 150;
   return (
-    <IslCard onPress={open} accessibilityLabel={`${t("bookTitle")}. ${t("bookCta")}`} style={{ padding: 16, flexDirection: "row", alignItems: "center", gap: 16 }}>
+    <IslCard onPress={open} accessibilityLabel={link ? `${t("bookTitle")}. ${t("bookCta")}` : t("bookTitle")} style={{ padding: 16, flexDirection: "row", alignItems: "center", gap: 16 }}>
       <Image source={{ uri: COVER_URL }} accessibilityIgnoresInvertColors contentFit="cover" style={{ width: w, height: h, borderTopLeftRadius: 3, borderBottomLeftRadius: 3, borderTopRightRadius: 8, borderBottomRightRadius: 8 }} />
       <View style={{ flex: 1, minWidth: 0 }}>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: isl.gold }}>{t("bookEyebrow")}</Text>
         <Text style={{ marginTop: 4, fontFamily: SERIF, fontSize: 21, lineHeight: 26, color: isl.ink }}>{t("bookTitle")}</Text>
         <Text style={{ marginTop: 4, fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: isl.muted }}>{t("bookSub")}</Text>
-        <GoldPill small title={t("bookCta")} onPress={open} style={{ marginTop: 10 }} />
+        {open ? <GoldPill small title={t("bookCta")} onPress={open} style={{ marginTop: 10 }} /> : null}
       </View>
     </IslCard>
   );
