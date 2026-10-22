@@ -2460,7 +2460,21 @@
     "nameLabel": "Herkese açık ad",
     "companyLabel": "Firma (isteğe bağlı)",
     "listHint": "Yalnızca ad veya firma ile ay ve yıl gösterilir, tutar asla gösterilmez. İzninizi istediğiniz zaman info@quranmasterclass.com üzerinden geri alabilirsiniz.",
-    "nameErr": "Bu ad gösterilemez. Lütfen başka bir ad seçin."
+    "nameErr": "Bu ad gösterilemez. Lütfen başka bir ad seçin.",
+    "optNone": "Gösterme",
+    "optName": "Yalnızca adı göster",
+    "optCompany": "Ad ve firmayı göster",
+    "companyField": "Firma",
+    "eyebrow": "Teşekkürler",
+    "pageTitle": "Destekçiler",
+    "seoDesc": "Quran Masterclass'ı gönüllü olarak destekleyen ve adının anılmasını isteyen herkes.",
+    "count": "{n, plural, one {destekçi} other {destekçi}}",
+    "cta": "Destekçi olun",
+    "pagination": "Sayfalar",
+    "prev": "Geri",
+    "next": "İleri",
+    "pageOf": "Sayfa {page} / {pages}",
+    "pageNote": "Liste, onaylanan bir ödemeden sonra ve yalnızca ödeme sırasında verilen onayla otomatik oluşur. Tutarlar asla gösterilmez. Gönüllü proje desteği, karşılığı yoktur."
   },
   "founderAbout": {
     "eyebrow": "Kurucu",

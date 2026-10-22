@@ -62,15 +62,22 @@ export async function confirmFromZiina(id: string): Promise<"completed" | "pendi
   return norm;
 }
 
-export async function publicSupporters(limit = 200, showTiers = false): Promise<PublicSupporter[]> {
+export async function publicSupporters(limit = 200, showTiers = false, offset = 0): Promise<PublicSupporter[]> {
   const p = pool();
   if (!p) return [];
   try {
     const r = await p.query(
       `SELECT display_name, company, amount_minor, to_char(paid_at AT TIME ZONE 'Asia/Dubai', 'YYYY-MM') AS month
-         FROM supporters WHERE status = 'paid' AND listed AND NOT hidden ORDER BY paid_at DESC LIMIT $1`, [limit]);
+         FROM supporters WHERE status = 'paid' AND listed AND NOT hidden ORDER BY paid_at DESC, id DESC LIMIT $1 OFFSET $2`, [limit, offset]);
     return r.rows.map((x) => ({ name: x.display_name ?? "", company: x.company ?? "", month: x.month, tier: showTiers ? tierOf(Number(x.amount_minor)) : null }));
   } catch { return []; }
+}
+
+/** number of publicly listed supporters (paid, opted in, not hidden) */
+export async function countSupporters(): Promise<number> {
+  const p = pool();
+  if (!p) return 0;
+  try { const r = await p.query("SELECT count(*)::int AS n FROM supporters WHERE status = 'paid' AND listed AND NOT hidden"); return r.rows[0]?.n ?? 0; } catch { return 0; }
 }
 
 export type AdminSupporter = { id: number; display_name: string | null; company: string | null; listed: boolean; hidden: boolean; amount_minor: number; currency: string; status: string; created_at: string; paid_at: string | null };

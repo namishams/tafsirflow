@@ -10,7 +10,7 @@ import { SUBJECTS as QBANK_SUBJECTS } from "./learn/qbank/bank";
 
 // Sitemap index -> one file per category and language, e.g. /sitemaps/surahs-de.xml
 export const CATEGORIES = {
-  pages: ["", "/shams", "/plan", "/academy", "/tajweed", "/vocab", "/khatm", "/guides", "/about", "/feedback", "/changelog", "/quran", "/islam", "/how", "/arabic", "/salah", "/reciters", "/world", "/secrets", "/app", "/today", "/feed", "/map", "/search", "/prayer", "/radio", "/duas", "/support", "/wudu", "/community", "/ranking", "/assistant", "/dua-generator", "/masterclass", "/talents", "/premium"],
+  pages: ["", "/shams", "/plan", "/academy", "/tajweed", "/vocab", "/khatm", "/guides", "/about", "/feedback", "/changelog", "/quran", "/islam", "/how", "/arabic", "/salah", "/reciters", "/world", "/secrets", "/app", "/today", "/feed", "/map", "/search", "/prayer", "/radio", "/duas", "/support", "/supporters", "/wudu", "/community", "/ranking", "/assistant", "/dua-generator", "/masterclass", "/talents", "/premium"],
   guides: [...ISLAM.map((d) => `/islam/${d.slug}`), ...RECITER_BIOS.map((r) => `/reciters/${r.slug}`), ...GUIDES.map((g) => `/guides/${g.slug}`), ...TAJWEED_LESSONS.map((l) => `/tajweed/${l.id}`)],
   // the courses ported from the app (overview pages; lesson runners and exams are not listed)
   learn: ["/school", "/school/ibtidai", "/school/idadi", "/school/thanawi", "/school/ali", "/courses", ...CATALOG.map((c) => `/courses/${c.id}`), "/arabic/read", "/arabic/lang", "/reciter-path", "/cards", "/swipe",

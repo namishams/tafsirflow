@@ -2472,7 +2472,21 @@
     "nameLabel": "公开显示的名称",
     "companyLabel": "公司（可选）",
     "listHint": "公开显示的仅为姓名或公司以及年月，绝不显示金额。您可随时通过 info@quranmasterclass.com 撤回署名。",
-    "nameErr": "此名称无法显示。请选择其他名称。"
+    "nameErr": "此名称无法显示。请选择其他名称。",
+    "optNone": "不显示",
+    "optName": "仅显示姓名",
+    "optCompany": "显示姓名和公司",
+    "companyField": "公司",
+    "eyebrow": "感谢",
+    "pageTitle": "支持者",
+    "seoDesc": "所有自愿支持 Quran Masterclass 并选择公开署名的个人和公司。",
+    "count": "{n, plural, other {位支持者}}",
+    "cta": "成为支持者",
+    "pagination": "页码",
+    "prev": "上一页",
+    "next": "下一页",
+    "pageOf": "第 {page} 页，共 {pages} 页",
+    "pageNote": "付款经确认后列表自动更新，且仅限付款时同意署名者。从不显示金额。自愿支持项目，无任何回报。"
   },
   "founderAbout": {
     "eyebrow": "创始人",

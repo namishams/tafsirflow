@@ -18,7 +18,8 @@ export default function SupportZiina() {
   const ts = useTranslations("supporters");
   const [pubName, setPubName] = useState("");
   const [company, setCompany] = useState("");
-  const [listed, setListed] = useState(false);
+  const [mode, setMode] = useState<"none" | "name" | "company">("none"); // default: not listed
+  const listed = mode !== "none";
   const qs = useSearchParams();
   const [cfg, setCfg] = useState<{ api: boolean; link: string; qr?: string } | null>(null);
   const [amount, setAmount] = useState(50);
@@ -45,7 +46,7 @@ export default function SupportZiina() {
   const pay = async () => {
     setBusy(true); setErr("");
     try {
-      const r = await fetch("/api/support", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ amount: value, locale, listed, name: listed ? pubName : "", company: listed ? company : "" }) });
+      const r = await fetch("/api/support", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ amount: value, locale, listed, name: listed ? pubName : "", company: mode === "company" ? company : "" }) });
       const d = await r.json();
       if (d.url) { window.location.href = d.url; return; }
       setErr(d.error === "not_configured" ? "off" : d.error === "name" ? "name" : "err");
@@ -79,14 +80,18 @@ export default function SupportZiina() {
           </div>
           <label className="mt-2.5 flex items-center gap-3 rounded-full border border-white/15 px-5"><span className="text-sm text-white/60">{t("custom")}</span><input inputMode="numeric" value={custom} onChange={(e) => setCustom(e.target.value.replace(/\D/g, "").slice(0, 5))} className="h-12 min-w-0 flex-1 bg-transparent text-end text-[16px] font-bold outline-none" placeholder="AED" /></label>
           <fieldset className="mt-5 grid gap-2.5 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <label className="flex items-start gap-3 text-[14px] leading-snug text-white/80"><input type="checkbox" checked={listed} onChange={(e) => setListed(e.target.checked)} className="mt-0.5 h-4 w-4 shrink-0 accent-[rgb(214_180_108)]" />{ts("listLabel")}</label>
+            <legend className="sr-only">{ts("listLabel")}</legend>
+            <p className="text-[14px] font-semibold text-white/85">{ts("listLabel")}</p>
+            {(["company", "name", "none"] as const).map((m) => (
+              <label key={m} className="flex items-start gap-3 text-[14px] leading-snug text-white/80"><input type="radio" name="sup-mode" checked={mode === m} onChange={() => setMode(m)} className="mt-0.5 h-4 w-4 shrink-0 accent-[rgb(214_180_108)]" />{ts(m === "company" ? "optCompany" : m === "name" ? "optName" : "optNone")}</label>
+            ))}
             {listed && (<>
               <input value={pubName} onChange={(e) => setPubName(e.target.value.slice(0, 60))} maxLength={60} autoComplete="name" placeholder={ts("nameLabel")} aria-label={ts("nameLabel")} className="h-11 rounded-full border border-white/15 bg-transparent px-5 text-[16px] outline-none placeholder:text-white/40" />
-              <input value={company} onChange={(e) => setCompany(e.target.value.slice(0, 80))} maxLength={80} autoComplete="organization" placeholder={ts("companyLabel")} aria-label={ts("companyLabel")} className="h-11 rounded-full border border-white/15 bg-transparent px-5 text-[16px] outline-none placeholder:text-white/40" />
+              {mode === "company" && <input value={company} onChange={(e) => setCompany(e.target.value.slice(0, 80))} maxLength={80} autoComplete="organization" placeholder={ts("companyField")} aria-label={ts("companyField")} className="h-11 rounded-full border border-white/15 bg-transparent px-5 text-[16px] outline-none placeholder:text-white/40" />}
               <p className="text-xs leading-relaxed text-white/50">{ts("listHint")}</p>
             </>)}
           </fieldset>
-          <button onClick={pay} disabled={busy || !value || value < 5 || (listed && !pubName.trim() && !company.trim())} className="btn-gold mt-5 h-12 w-full rounded-full text-[15px] font-bold disabled:opacity-50">{busy ? "…" : `${t("pay")} · ${value || 0} AED`}</button>
+          <button onClick={pay} disabled={busy || !value || value < 5 || (listed && !pubName.trim()) || (mode === "company" && !company.trim())} className="btn-gold mt-5 h-12 w-full rounded-full text-[15px] font-bold disabled:opacity-50">{busy ? "…" : `${t("pay")} · ${value || 0} AED`}</button>
           {err && <p role="alert" className="mt-3 text-sm text-red-300">{err === "name" ? ts("nameErr") : t(err === "off" ? "off" : "err")}</p>}
         </div>
       ) : cfg.link ? (

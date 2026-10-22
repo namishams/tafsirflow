@@ -32,14 +32,13 @@ export default async function SupportersList({ compact = false }: { compact?: bo
         <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((s, i) => (
             <li key={i} className="rounded-xl border border-line px-4 py-3">
-              <span className="block font-semibold" dir="auto">{s.name || s.company}</span>
-              {s.name && s.company && <span className="block text-sm text-muted" dir="auto">{s.company}</span>}
+              <span className="block font-semibold" dir="auto">{[s.name, s.company].filter(Boolean).join(" · ")}</span>
               <span className="mt-0.5 block text-xs text-muted">{month(s.month)}{s.tier ? ` · ${t(`tier${s.tier}`)}` : ""}</span>
             </li>
           ))}
         </ul>
       ) : <p className="mt-4 text-sm text-muted">{t("empty")}</p>}
-      {compact && <Link href="/support" className="mt-5 inline-block text-sm font-bold text-accent hover:underline">{t("more")} <ArrowNext /></Link>}
+      {compact && <Link href="/supporters" className="mt-5 inline-block text-sm font-bold text-accent hover:underline">{t("more")} <ArrowNext /></Link>}
     </section>
   );
 }

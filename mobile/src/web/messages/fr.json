@@ -2460,7 +2460,21 @@
     "nameLabel": "Nom affiché publiquement",
     "companyLabel": "Entreprise (facultatif)",
     "listHint": "Seuls le nom ou l’entreprise ainsi que le mois et l’année sont publics, jamais le montant. Vous pouvez retirer la mention à tout moment via info@quranmasterclass.com.",
-    "nameErr": "Ce nom ne peut pas être affiché. Veuillez en choisir un autre."
+    "nameErr": "Ce nom ne peut pas être affiché. Veuillez en choisir un autre.",
+    "optNone": "Ne pas afficher",
+    "optName": "Afficher le nom seulement",
+    "optCompany": "Afficher le nom et l'entreprise",
+    "companyField": "Entreprise",
+    "eyebrow": "Merci",
+    "pageTitle": "Soutiens",
+    "seoDesc": "Toutes les personnes et entreprises qui soutiennent volontairement Quran Masterclass et ont choisi d'être nommées.",
+    "count": "{n, plural, one {soutien} other {soutiens}}",
+    "cta": "Devenir soutien",
+    "pagination": "Pages",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "pageOf": "Page {page} sur {pages}",
+    "pageNote": "La liste se met à jour automatiquement après un paiement confirmé, uniquement avec l'accord donné au paiement. Les montants ne sont jamais affichés. Soutien volontaire au projet, sans contrepartie."
   },
   "founderAbout": {
     "eyebrow": "Le fondateur",

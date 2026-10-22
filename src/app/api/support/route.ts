@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
   const displayName = cleanName(b.name, 60);
   const company = cleanName(b.company, 80);
   const listed = b.listed === true;
-  if (listed && (nameRejected(displayName) || nameRejected(company))) return json({ error: "name" }, 400);
+  if (listed && (!displayName || nameRejected(displayName) || nameRejected(company))) return json({ error: "name" }, 400);
   const aed = Math.round(Number(b.amount));
   if (!Number.isFinite(aed) || aed < MIN_AED || aed > MAX_AED) return json({ error: "amount" }, 400);
   const loc = /^[a-z]{2}$/.test(String(b.locale)) ? String(b.locale) : "en";

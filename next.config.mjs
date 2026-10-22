@@ -63,7 +63,10 @@ export default withNextIntl({
     return ["donate", "spenden", "spende", "unterstuetzen", "support"].flatMap((s) => [
       { source: `/${s}`, destination: "/support", permanent: false },
       { source: `/:locale(de|en|ar|tr|ur|fa|ps|fr|es|id|ms|bn|ru|zh)/${s}`, destination: "/:locale/support", permanent: false },
-    ]).filter((r) => !(r.source === "/support" || r.source.endsWith(")/support")));
+    ]).filter((r) => !(r.source === "/support" || r.source.endsWith(")/support"))).concat(["unterstuetzer", "unterstutzer"].flatMap((s) => [
+      { source: `/${s}`, destination: "/supporters", permanent: true },
+      { source: `/:locale(de|en|ar|tr|ur|fa|ps|fr|es|id|ms|bn|ru|zh)/${s}`, destination: "/:locale/supporters", permanent: true },
+    ]));
   },
   async headers() {
     return [

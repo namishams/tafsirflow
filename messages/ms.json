@@ -2472,7 +2472,21 @@
     "nameLabel": "Nama awam",
     "companyLabel": "Syarikat (pilihan)",
     "listHint": "Hanya nama atau syarikat serta bulan dan tahun dipaparkan, bukan jumlahnya. Anda boleh menarik balik penyebutan pada bila-bila masa melalui info@quranmasterclass.com.",
-    "nameErr": "Nama ini tidak boleh dipaparkan. Sila pilih nama lain."
+    "nameErr": "Nama ini tidak boleh dipaparkan. Sila pilih nama lain.",
+    "optNone": "Jangan paparkan",
+    "optName": "Paparkan nama sahaja",
+    "optCompany": "Paparkan nama dan syarikat",
+    "companyField": "Syarikat",
+    "eyebrow": "Terima kasih",
+    "pageTitle": "Penyokong",
+    "seoDesc": "Semua individu dan syarikat yang menyokong Quran Masterclass secara sukarela dan memilih untuk dinamakan.",
+    "count": "{n, plural, other {penyokong}}",
+    "cta": "Jadi penyokong",
+    "pagination": "Halaman",
+    "prev": "Sebelum",
+    "next": "Seterusnya",
+    "pageOf": "Halaman {page} daripada {pages}",
+    "pageNote": "Senarai dikemas kini secara automatik selepas pembayaran disahkan, hanya dengan persetujuan semasa pembayaran. Jumlah tidak pernah dipaparkan. Sokongan sukarela kepada projek, tanpa balasan."
   },
   "founderAbout": {
     "eyebrow": "Pengasas",
