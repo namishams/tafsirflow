@@ -6,6 +6,7 @@ import { abs, pageMeta } from "@/lib/site";
 import { withSuffix } from "@/components/learn/courses/meta";
 import { CATALOG, catalogCourse, txs } from "@/lib/learn/courses/catalog";
 import CourseScreen from "@/components/learn/courses/CourseScreen";
+import { ShamsPromo } from "@/components/learn/ShamsExplain";
 
 type P = { params: Promise<{ locale: string; course: string }> };
 
@@ -40,6 +41,7 @@ export default async function CoursePage({ params }: P) {
     <>
       <JsonLd data={ld} />
       <CourseScreen id={c.id} />
+      <div className="mx-auto max-w-5xl px-4 pb-28 pt-6 sm:px-5 md:pb-16"><ShamsPromo compact /></div>
     </>
   );
 }

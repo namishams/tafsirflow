@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ShamsPromo } from "@/components/learn/ShamsExplain";
 import { TrustLine } from "@/components/TrustStrip";
 import PosterTiles from "@/components/PosterTiles";
 import { CalligraphyRing, Divider, Ink, Rosette } from "@/components/Ornaments";
@@ -429,6 +430,8 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
             </div>
           </div>
         </section>
+
+        <div className="mx-auto mt-14 max-w-6xl px-4 sm:mt-20 sm:px-5"><ShamsPromo /></div>
 
         {/* 13b Voluntary support – one calm illuminated panel */}
         <div className="mx-auto max-w-6xl px-4 sm:px-5"><DonateCTA className="my-14 sm:my-20" /></div>

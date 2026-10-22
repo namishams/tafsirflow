@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ShamsPromo } from "@/components/learn/ShamsExplain";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Player from "@/components/Player";
@@ -54,6 +55,7 @@ export default async function SurahPage({ params, searchParams }: { params: Prom
     <>
       {ld && <JsonLd data={ld} />}
       <Player key={session ? `${n}:${v}:${shams}` : n} sessionMode={session === "1"} chapterId={n} startVerse={Math.max(1, Number(v) || 1)} startHide={m === "1" ? 1 : m === "2" ? 2 : 0} reviewMode={r === "1"} shamsStart={shams === "1"} initial={initial} />
+      {session !== "1" && shams !== "1" && r !== "1" && <div className="mx-auto max-w-3xl px-4 pb-32 pt-10 sm:px-5 md:pb-16"><ShamsPromo compact /></div>}
     </>
   );
 }

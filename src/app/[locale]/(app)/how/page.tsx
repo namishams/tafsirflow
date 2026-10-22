@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ShamsPromo } from "@/components/learn/ShamsExplain";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { pageMeta } from "@/lib/site";
@@ -120,6 +121,7 @@ export default async function HowPage({ params }: { params: Promise<{ locale: st
           </ol>
         </section>
       </div>
+      <div className="mx-auto max-w-6xl px-5 pt-14"><ShamsPromo /></div>
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-14">
         <h2 className="font-display text-3xl">{c.toolsTitle}</h2>
         <PosterGrid items={tools} className="mt-6" />

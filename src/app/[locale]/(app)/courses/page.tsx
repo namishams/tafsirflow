@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ShamsPromo } from "@/components/learn/ShamsExplain";
 import { setRequestLocale } from "next-intl/server";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
@@ -36,6 +37,7 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
     <>
       <JsonLd data={ld} />
       <CoursesHome />
+      <div className="mx-auto max-w-6xl px-4 pb-28 pt-6 sm:px-5 md:pb-16"><ShamsPromo /></div>
     </>
   );
 }

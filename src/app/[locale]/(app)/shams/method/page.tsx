@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ShamsWalkthrough from "@/components/learn/ShamsWalkthrough";
+import ShamsExplain from "@/components/learn/ShamsExplain";
 import { setRequestLocale } from "next-intl/server";
 import JsonLd from "@/components/JsonLd";
 import { abs, pageMeta } from "@/lib/site";
@@ -17,5 +19,5 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   setRequestLocale(locale);
   const m = s2Meta(locale, "method");
   const ld = { "@context": "https://schema.org", "@type": "Course", name: m.title.split(" | ")[0], description: m.description, url: abs(`/${locale}/shams/method`), inLanguage: locale, isAccessibleForFree: true, provider: { "@type": "Organization", name: "Quran Masterclass", url: abs("") }, hasCourseInstance: { "@type": "CourseInstance", courseMode: "online" } };
-  return (<><JsonLd data={ld} /><HubScreen /></>);
+  return (<><JsonLd data={ld} /><HubScreen /><ShamsWalkthrough className="mx-auto max-w-5xl px-4 pt-12 sm:px-5" /><ShamsExplain className="mx-auto max-w-5xl px-4 pb-32 pt-12 sm:px-5 md:pb-16" /></>);
 }

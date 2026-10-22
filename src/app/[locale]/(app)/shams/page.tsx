@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ShamsWalkthrough from "@/components/learn/ShamsWalkthrough";
+import ShamsExplain from "@/components/learn/ShamsExplain";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
@@ -162,6 +164,8 @@ export default async function ShamsPage({ params }: { params: Promise<{ locale: 
       <div className="isl-marble isl-under">
         {/* the two ways to learn with Shams: classic and 2.0 */}
         <section className="mx-auto max-w-6xl px-5 pt-14 sm:pt-20"><ShamsVersions className="mb-10" /><ShamsModeChooser /><div className="mt-6"><ShamsEntries /></div></section>
+        <ShamsWalkthrough className="mx-auto max-w-6xl px-5 pt-14 sm:pt-20" />
+        <ShamsExplain className="mx-auto max-w-6xl px-5 pt-14 sm:pt-20" />
 
         {/* Why "Shams" */}
         {c.name && (
