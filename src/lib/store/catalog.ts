@@ -42,6 +42,8 @@ export type PackDef = {
   stickers: StickerSpec[];
   /** the drawn art (src/lib/stickerArt) by sticker id; when set it replaces `stickers` */
   art?: string[];
+  /** the art replaces only the first art.length placeholders, the rest stay (a pack whose art is still growing) */
+  artLead?: boolean;
 };
 export const packProduct = (slug: string) => `${APP}.stickers.${pid(slug)}`;
 /** the same pack bought for someone else (consumable: one gift per purchase, sent through the messenger) */
@@ -53,8 +55,8 @@ const S = (pack: string, list: [Motif, string, Tone, Shape, Partial<StickerSpec>
 const W = (script: Script) => ({ script, sacred: true });
 
 // store packs made of the drawn art: whole art packs or chosen subsets (an art sticker may sit in several packs;
-// owning any of them lets it be placed). Packs without matching art keep the generated placeholder art:
-// muharram, asma-ul-husna, strong-women.
+// owning any of them lets it be placed). Muharram, Strong Women and the first 33 of the 99 Names have drawn art
+// (src/lib/stickerArt muharram.ts, namen.ts); the Names 34-99 keep the generated placeholder until their art lands.
 const ids = (pack: string) => STICKER_PACKS.find((p) => p.id === pack)?.stickers.map((s) => s.id) ?? [];
 const ART = {
   ramadan: ["halbmond-juwelen", "laterne-gold", "laterne-haengend", "laterne-smaragd", "dattel-rispe", "dattel-gold", "dallah", "kalligrafie-ramadan-kareem", "mushaf", "misbaha", "juwelen-stern", "rehal"],
@@ -104,7 +106,7 @@ const BUILT_IN: PackDef[] = [
     ["arch", "الصفا", "sea", "arch"], ["arch", "المروة", "emerald", "arch"], ["minaret", "مئذنة", "emerald", "arch"], ["palm", "طريق", "leaf", "circle"],
     ["star8", "مزدلفة", "night", "star"], ["ribbon", "إحرام", "gold", "hex"], ["text", "لبيك", "gold", "rosette", W("thuluth")], ["text", "حج مبرور", "emerald", "rosette", W("diwani")],
   ]) },
-  { slug: "muharram", order: 8, rotation: false, season: "muharram", tradition: "shia", title: { en: "Muharram Remembrance", de: "Gedenken an Muharram", ar: "ذكرى محرم" }, stickers: S("muharram", [
+  { slug: "muharram", art: ids("muharram"), order: 8, rotation: false, season: "muharram", tradition: "shia", title: { en: "Muharram Remembrance", de: "Gedenken an Muharram", ar: "ذكرى محرم" }, stickers: S("muharram", [
     ["dome", "كربلاء", "night", "arch"], ["candle", "شمعة", "night", "hex"], ["drop", "ماء", "sea", "circle"], ["flag", "راية", "emerald", "circle"],
     ["lamp", "قنديل", "night", "arch"], ["book", "زيارة", "emerald", "rosette"], ["palm", "نخيل", "leaf", "circle"], ["mihrab", "محراب", "night", "arch"],
     ["star8", "صبر", "night", "star"], ["crescent", "محرم", "night", "circle"], ["text", "يا حسين", "night", "rosette", W("thuluth")], ["text", "السلام عليك", "emerald", "rosette", W("thuluth")],
@@ -140,7 +142,7 @@ const BUILT_IN: PackDef[] = [
     ["mashrabiya", "نافذة", "ivory", "arch"], ["pearl", "عقد", "rosegold", "hex"], ["crescent", "ليل", "night", "circle"], ["candle", "شمعة", "rosegold", "hex"],
   ]) },
   // names only, as calligraphy cartouches: no depiction of these women in any form
-  { slug: "strong-women", order: 14, rotation: true, featured: "sister", title: { en: "Strong Women in Islam", de: "Starke Frauen im Islam", ar: "نساء عظيمات في الإسلام" }, stickers: S("strong-women", [
+  { slug: "strong-women", art: ids("strong_women"), order: 14, rotation: true, featured: "sister", title: { en: "Strong Women in Islam", de: "Starke Frauen im Islam", ar: "نساء عظيمات في الإسلام" }, stickers: S("strong-women", [
     ["cartouche", "خديجة", "gold", "rosette", W("thuluth")], ["cartouche", "فاطمة الزهراء", "emerald", "rosette", W("thuluth")], ["cartouche", "عائشة", "gold", "circle", W("diwani")],
     ["cartouche", "مريم", "rosegold", "rosette", W("thuluth")], ["cartouche", "آسية", "emerald", "circle", W("diwani")], ["cartouche", "زينب", "gold", "rosette", W("kufi")],
     ["cartouche", "خديجة", "ivory", "hex", W("kufi")], ["cartouche", "فاطمة الزهراء", "rosegold", "hex", W("diwani")], ["cartouche", "عائشة", "emerald", "hex", W("kufi")],
@@ -159,7 +161,7 @@ function namesPack(): PackDef | null {
   const tones: Tone[] = ["gold", "emerald", "night"];
   const scripts: Script[] = ["thuluth", "kufi", "diwani"];
   return {
-    slug: "asma-ul-husna", order: 9, rotation: false, title: { en: "The 99 Names of Allah", de: "Die 99 Namen Allahs", ar: "أسماء الله الحسنى" },
+    slug: "asma-ul-husna", art: ids("asma_ul_husna"), artLead: true, order: 9, rotation: false, title: { en: "The 99 Names of Allah", de: "Die 99 Namen Allahs", ar: "أسماء الله الحسنى" },
     stickers: out.slice(0, 99).map((ar, i) => ({ id: `asma-ul-husna-${String(i + 1).padStart(2, "0")}`, ar, motif: "text", tone: tones[i % 3], shape: i % 2 ? "rosette" : "circle", script: scripts[i % 3], sacred: true })),
   };
 }
@@ -180,22 +182,22 @@ export const rareProduct = (slug: string) => `${APP}.rare.${pid(slug)}`;
 export const founderProduct = (slug: string) => `${APP}.rare.${pid(slug)}.founder`;
 export const uniqueProduct = (slug: string) => `${APP}.unique.${pid(slug)}`;
 export const earnedProduct = (slug: string) => `${APP}.earned.${pid(slug)}`;
-const R = (slug: string, en: string, de: string, ar: string, sticker: Omit<StickerSpec, "id">): SpecialDef => ({ slug, tier: "rare", edition: EDITION, title: { en, de, ar }, sticker: { id: `rare-${slug}`, glow: true, ...sticker } });
+const R = (slug: string, en: string, de: string, ar: string, sticker: Omit<StickerSpec, "id">, art?: string): SpecialDef => ({ slug, tier: "rare", edition: EDITION, title: { en, de, ar }, sticker: { id: art ?? `rare-${slug}`, glow: true, ...sticker, sacred: !!sticker.sacred || (art ? !!stickerArt(art)?.sacred : false) }, art });
 const U = (slug: string, en: string, de: string, ar: string, sticker: Omit<StickerSpec, "id">, art?: string): SpecialDef => ({ slug, tier: "unique", edition: 1, title: { en, de, ar }, sticker: { id: art ?? `unique-${slug}`, glow: true, ...sticker, sacred: art ? !!stickerArt(art)?.sacred : sticker.sacred }, art });
 const E = (slug: string, en: string, de: string, ar: string, sticker: Omit<StickerSpec, "id">, art?: string): SpecialDef => ({ slug, tier: "earned", edition: null, title: { en, de, ar }, sticker: { id: art ?? `earned-${slug}`, glow: true, ...sticker, sacred: art ? !!stickerArt(art)?.sacred : sticker.sacred }, art });
 export const SPECIALS: SpecialDef[] = [
-  R("kaaba-seal", "Kaaba Gold Seal", "Goldsiegel der Kaaba", "ختم الكعبة الذهبي", { ar: "الكعبة المشرفة", motif: "kaaba", tone: "foil", shape: "rosette", sacred: true }),
-  R("qalam-medallion", "Burj al-Qalam Medallion", "Medaillon Burj al-Qalam", "وسام برج القلم", { ar: "القلم", motif: "pen", tone: "foil", shape: "star" }),
-  R("nabawi-dome", "Golden Dome of al-Masjid an-Nabawi", "Goldene Kuppel der Prophetenmoschee", "قبة المسجد النبوي الذهبية", { ar: "المسجد النبوي", motif: "dome", tone: "foil", shape: "arch", sacred: true }),
-  R("qadr-star", "Star of the Night of Qadr", "Stern der Nacht der Bestimmung", "نجمة ليلة القدر", { ar: "ليلة القدر", motif: "star8", tone: "foil", shape: "star", sacred: true }),
-  R("rose-gold-rose", "Rose Gold Damask Rose", "Damaszenerrose in Roségold", "الوردة الدمشقية بالذهب الوردي", { ar: "الوردة الدمشقية", motif: "damask", tone: "rosefoil", shape: "rosette" }),
-  R("golden-gulf-pearl", "Golden Gulf Pearl", "Goldene Golfperle", "لؤلؤة الخليج الذهبية", { ar: "دانة", motif: "pearl3d", tone: "foil", shape: "circle", gem: "#e7c873" }),
-  R("royal-sapphire", "Royal Sapphire", "Königlicher Saphir", "الياقوت الأزرق الملكي", { ar: "ياقوت", motif: "gem", tone: "foil", shape: "hex", gem: "#2a55c9" }),
-  R("dhow-of-gold", "Golden Pearl Dhow", "Goldene Perlen-Dau", "سفينة اللؤلؤ الذهبية", { ar: "محمل", motif: "dhow", tone: "foil", shape: "circle" }),
+  R("kaaba-seal", "Kaaba Gold Seal", "Goldsiegel der Kaaba", "ختم الكعبة الذهبي", { ar: "الكعبة المشرفة", motif: "kaaba", tone: "foil", shape: "rosette", sacred: true }, "kaaba_seal"),
+  R("qalam-medallion", "Burj al-Qalam Medallion", "Medaillon Burj al-Qalam", "وسام برج القلم", { ar: "القلم", motif: "pen", tone: "foil", shape: "star" }, "qalam_medallion"),
+  R("nabawi-dome", "Golden Dome of al-Masjid an-Nabawi", "Goldene Kuppel der Prophetenmoschee", "قبة المسجد النبوي الذهبية", { ar: "المسجد النبوي", motif: "dome", tone: "foil", shape: "arch", sacred: true }, "nabawi_dome"),
+  R("qadr-star", "Star of the Night of Qadr", "Stern der Nacht der Bestimmung", "نجمة ليلة القدر", { ar: "ليلة القدر", motif: "star8", tone: "foil", shape: "star", sacred: true }, "qadr_star"),
+  R("rose-gold-rose", "Rose Gold Damask Rose", "Damaszenerrose in Roségold", "الوردة الدمشقية بالذهب الوردي", { ar: "الوردة الدمشقية", motif: "damask", tone: "rosefoil", shape: "rosette" }, "rose_gold_rose"),
+  R("golden-gulf-pearl", "Golden Gulf Pearl", "Goldene Golfperle", "لؤلؤة الخليج الذهبية", { ar: "دانة", motif: "pearl3d", tone: "foil", shape: "circle", gem: "#e7c873" }, "golden_gulf_pearl"),
+  R("royal-sapphire", "Royal Sapphire", "Königlicher Saphir", "الياقوت الأزرق الملكي", { ar: "ياقوت", motif: "gem", tone: "foil", shape: "hex", gem: "#2a55c9" }, "royal_sapphire"),
+  R("dhow-of-gold", "Golden Pearl Dhow", "Goldene Perlen-Dau", "سفينة اللؤلؤ الذهبية", { ar: "محمل", motif: "dhow", tone: "foil", shape: "circle" }, "dhow_of_gold"),
   U("black-pearl", "The Black Pearl of the Gulf", "Die Schwarze Perle des Golfs", "اللؤلؤة السوداء للخليج", { ar: "الدانة السوداء", motif: "pearl3d", tone: "foil", shape: "rosette", gem: "#2b2f3a" }, "schwarze-perle-golf"),
   U("emerald-haramain", "The Emerald of the Haramain", "Der Smaragd der Haramain", "زمرد الحرمين", { ar: "زمرد", motif: "gem", tone: "foil", shape: "arch", gem: "#13a065" }, "smaragd-haramain"),
   U("gold-falcon", "The Gold Falcon", "Der Goldfalke", "الصقر الذهبي", { ar: "الصقر", motif: "falcon", tone: "foil", shape: "star" }, "goldfalke"),
-  U("qalam-masterpiece", "Burj al-Qalam Masterpiece", "Meisterstück Burj al-Qalam", "تحفة برج القلم", { ar: "تحفة القلم", motif: "medallion", tone: "foil", shape: "star" }),
+  U("qalam-masterpiece", "Burj al-Qalam Masterpiece", "Meisterstück Burj al-Qalam", "تحفة برج القلم", { ar: "تحفة القلم", motif: "medallion", tone: "foil", shape: "star" }, "qalam_masterpiece"),
   E("hafiz-pearl", "Hafiz Pearl", "Hafiz-Perle", "لؤلؤة الحافظ", { ar: "حافظ", motif: "pearl3d", tone: "pearlsea", shape: "rosette", gem: "#f4efe6" }, "hafiz-perle"),
   E("khatm-emerald", "Khatm Emerald", "Khatm-Smaragd", "زمرد الختمة", { ar: "ختمة", motif: "gem", tone: "pearlsea", shape: "rosette", gem: "#11a36a" }, "khatm-smaragd"),
   E("qadr-nights-star", "Star of Laylat al-Qadr", "Laylat-al-Qadr-Stern", "نجمة ليلة القدر", { ar: "العشر الأواخر", motif: "star8", tone: "night", shape: "star" }, "stern-laylat-al-qadr"),
@@ -284,16 +286,19 @@ export async function productKind(id: string): Promise<ProductKind | null> {
 /** one sticker for the app: drawn art when there is some, else the placeholder; tier and shimmer drive the gloss */
 export type PublicSticker = { id: string; ar: string; sacred: boolean; glow: boolean; tier: "common" | "edel" | "selten" | "unikat"; shimmer: boolean; svg: string };
 export function packStickers(p: PackDef): PublicSticker[] {
+  const placeholder = (s: StickerSpec): PublicSticker => ({ id: s.id, ar: s.ar, sacred: !!s.sacred, glow: !!s.glow, tier: "edel" as const, shimmer: false, svg: stickerSvg(s) });
   if (p.art?.length) {
-    return p.art.map((id) => stickerArt(id)).filter((a) => !!a).map((a) => ({
+    const drawn = p.art.map((id) => stickerArt(id)).filter((a) => !!a).map((a): PublicSticker => ({
       id: a.id, ar: a.name, sacred: !!a.sacred, glow: a.pack === "perlen" || a.pack === "edelsteine" || !!a.shimmer, tier: a.tier, shimmer: !!a.shimmer, svg: artSvg(a),
     }));
+    return p.artLead ? [...drawn, ...p.stickers.slice(drawn.length).map(placeholder)] : drawn;
   }
-  return p.stickers.map((s) => ({ id: s.id, ar: s.ar, sacred: !!s.sacred, glow: !!s.glow, tier: "edel" as const, shimmer: false, svg: stickerSvg(s) }));
+  return p.stickers.map(placeholder);
 }
 export function specialSticker(x: SpecialDef): PublicSticker {
   const a = x.art ? stickerArt(x.art) : undefined;
-  if (a) return { id: a.id, ar: a.name, sacred: !!a.sacred, glow: true, tier: a.tier, shimmer: true, svg: artSvg(a) };
+  // sacred when the art or the special itself says so (e.g. the Kaaba seal, the Night of Qadr): crown or arch only
+  if (a) return { id: a.id, ar: a.name, sacred: !!a.sacred || !!x.sticker.sacred, glow: true, tier: a.tier, shimmer: true, svg: artSvg(a) };
   return { id: x.sticker.id, ar: x.sticker.ar, sacred: !!x.sticker.sacred, glow: true, tier: x.tier === "unique" ? "unikat" : "selten", shimmer: true, svg: stickerSvg(x.sticker) };
 }
 /** the gold number-plate frame for numbered editions (drawn art; the number goes into its dark field) */

@@ -144,7 +144,13 @@ export async function stickerIndex(): Promise<Map<string, { packs: string[]; rar
     const e = m.get(s.id);
     if (e) e.packs.push(p.slug); else m.set(s.id, { packs: [p.slug], rare: null, sacred: s.sacred });
   }
-  for (const r of SPECIALS) { const s = specialSticker(r); m.set(s.id, { packs: [], rare: r.slug, sacred: s.sacred }); }
+  for (const r of SPECIALS) {
+    const s = specialSticker(r);
+    m.set(s.id, { packs: [], rare: r.slug, sacred: s.sacred });
+    // decorations saved before the drawn art replaced the placeholder keep working under the old id
+    const legacy = `${r.tier}-${r.slug}`;
+    if (legacy !== s.id && !m.has(legacy)) m.set(legacy, { packs: [], rare: r.slug, sacred: s.sacred });
+  }
   return m;
 }
 
