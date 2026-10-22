@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Animated, Pressable, ScrollView, Text, View } from "react-native";
 import { router, Stack, type Href } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { SOC } from "@/features/social/api";
 import { Arcade, GoldButton, GoldCard, OutlineButton, SmallStar, Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { goBack } from "@/components/page";
@@ -436,6 +437,8 @@ function JuzSurahScreen({ surah, id }: { surah: number; id: string }) {
     const vals = [...scores.current.values()];
     const pct = vals.length ? Math.round((vals.reduce((a, b) => a + b, 0) / vals.length) * 100) : 100;
     saveLesson(id, Math.max(70, pct), [], []);
+    // a milestone for friends, stored only when the member shares milestones (16+, own profile; errors are ignored)
+    void SOC.reportSurah(surah).catch(() => undefined);
     router.replace("/arabic/read" as Href);
   };
 

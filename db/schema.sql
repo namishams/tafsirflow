@@ -1400,3 +1400,132 @@ ALTER TABLE community_profiles DROP CONSTRAINT IF EXISTS community_profiles_badg
 ALTER TABLE community_profiles ADD CONSTRAINT community_profiles_badge CHECK (badge IN ('none','emerald','gold','star'));
 GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+-- Together social 2 (owner 22.10.2026, next app update after Build 25): khatm groups, live halaqa (text and presence
+-- only), weekly recap, mutashabihat duels, teacher classes and the friends' milestone feed. All 16+, opt-in, no free
+-- text between members (only teacher announcements, moderated), blocked members are hidden everywhere.
+CREATE TABLE IF NOT EXISTS social_settings (
+  user_id     bigint PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  feed        boolean NOT NULL DEFAULT false,  -- my milestones appear in my friends' feed
+  duels       boolean NOT NULL DEFAULT false,  -- friends may invite me to a duel
+  updated_at  timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS social_khatms (
+  id           bigserial PRIMARY KEY,
+  name         text NOT NULL CHECK (char_length(name) BETWEEN 2 AND 40),
+  owner_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  code         text UNIQUE NOT NULL,
+  circle_id    bigint REFERENCES together_circles(id) ON DELETE SET NULL,
+  intention    text NOT NULL DEFAULT 'general' CHECK (intention IN ('general','ramadan','deceased','sick','family','ummah')),
+  completed_at timestamptz,
+  suspended_at timestamptz,
+  created_at   timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS social_khatm_members (
+  khatm_id  bigint NOT NULL REFERENCES social_khatms(id) ON DELETE CASCADE,
+  user_id   bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  joined_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (khatm_id, user_id)
+);
+CREATE INDEX IF NOT EXISTS social_khatm_members_user ON social_khatm_members(user_id);
+CREATE TABLE IF NOT EXISTS social_khatm_parts (
+  khatm_id   bigint NOT NULL REFERENCES social_khatms(id) ON DELETE CASCADE,
+  juz        smallint NOT NULL CHECK (juz BETWEEN 1 AND 30),
+  user_id    bigint REFERENCES users(id) ON DELETE SET NULL,
+  claimed_at timestamptz,
+  done_at    timestamptz,
+  PRIMARY KEY (khatm_id, juz)
+);
+CREATE TABLE IF NOT EXISTS social_halaqa (
+  circle_id  bigint PRIMARY KEY REFERENCES together_circles(id) ON DELETE CASCADE,
+  leader_id  bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  surah      smallint NOT NULL DEFAULT 1 CHECK (surah BETWEEN 1 AND 114),
+  ayah       smallint NOT NULL DEFAULT 1 CHECK (ayah BETWEEN 1 AND 286),
+  started_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now(),
+  ended_at   timestamptz
+);
+CREATE TABLE IF NOT EXISTS social_halaqa_presence (
+  circle_id bigint NOT NULL REFERENCES together_circles(id) ON DELETE CASCADE,
+  user_id   bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  seen_at   timestamptz NOT NULL DEFAULT now(),
+  hand_at   timestamptz,
+  PRIMARY KEY (circle_id, user_id)
+);
+CREATE TABLE IF NOT EXISTS social_duels (
+  id          bigserial PRIMARY KEY,
+  from_id     bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  to_id       bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  questions   jsonb NOT NULL,                 -- [{group, key, options}] chosen by the server; the answer stays on the server
+  from_answers jsonb, to_answers jsonb,
+  from_score  smallint, to_score smallint,
+  status      text NOT NULL DEFAULT 'open' CHECK (status IN ('open','declined','done','expired')),
+  created_at  timestamptz NOT NULL DEFAULT now(),
+  done_at     timestamptz
+);
+CREATE INDEX IF NOT EXISTS social_duels_from ON social_duels(from_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS social_duels_to ON social_duels(to_id, created_at DESC);
+CREATE TABLE IF NOT EXISTS social_classes (
+  id           bigserial PRIMARY KEY,
+  name         text NOT NULL CHECK (char_length(name) BETWEEN 2 AND 40),
+  teacher_id   bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  code         text UNIQUE NOT NULL,
+  target_kind  text NOT NULL DEFAULT 'verses' CHECK (target_kind IN ('verses','days','xp')),
+  target       integer NOT NULL DEFAULT 10 CHECK (target > 0),
+  suspended_at timestamptz,
+  created_at   timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS social_class_members (
+  class_id   bigint NOT NULL REFERENCES social_classes(id) ON DELETE CASCADE,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  consent_at timestamptz NOT NULL DEFAULT now(), -- consent to show weekly progress to the teacher
+  joined_at  timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (class_id, user_id)
+);
+CREATE INDEX IF NOT EXISTS social_class_members_user ON social_class_members(user_id);
+CREATE TABLE IF NOT EXISTS social_class_posts (
+  id         bigserial PRIMARY KEY,
+  class_id   bigint NOT NULL REFERENCES social_classes(id) ON DELETE CASCADE,
+  body       text NOT NULL CHECK (char_length(body) BETWEEN 2 AND 500),
+  status     text NOT NULL DEFAULT 'live' CHECK (status IN ('live','review','removed')),
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS social_class_posts_class ON social_class_posts(class_id, created_at DESC);
+CREATE TABLE IF NOT EXISTS social_events (
+  id         bigserial PRIMARY KEY,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind       text NOT NULL CHECK (kind IN ('surah','khatm','juz','class_week')),
+  ref        text NOT NULL DEFAULT '' CHECK (char_length(ref) <= 40),
+  created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE (user_id, kind, ref)
+);
+CREATE INDEX IF NOT EXISTS social_events_created ON social_events(created_at DESC);
+CREATE TABLE IF NOT EXISTS social_event_reactions (
+  event_id   bigint NOT NULL REFERENCES social_events(id) ON DELETE CASCADE,
+  user_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (event_id, user_id)
+);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO tafsirflow;
+
+-- Together social 2, network layer (owner 22.10.2026): "people you may know" and the anonymous profile view count are
+-- opt-in; endorsements of skills only between accepted connections (tajweed, hifz, makharij or one surah).
+ALTER TABLE social_settings ADD COLUMN IF NOT EXISTS suggest boolean NOT NULL DEFAULT false;
+ALTER TABLE social_settings ADD COLUMN IF NOT EXISTS views boolean NOT NULL DEFAULT false;
+CREATE TABLE IF NOT EXISTS social_endorsements (
+  from_id    bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  to_id      bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  skill      text NOT NULL CHECK (skill IN ('tajweed','hifz','makharij','surah')),
+  ref        smallint NOT NULL DEFAULT 0 CHECK (ref BETWEEN 0 AND 114),
+  created_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (from_id, to_id, skill, ref),
+  CHECK (from_id <> to_id)
+);
+CREATE INDEX IF NOT EXISTS social_endorsements_to ON social_endorsements(to_id);
+CREATE TABLE IF NOT EXISTS social_profile_views (
+  viewed_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  viewer_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  day       date NOT NULL DEFAULT ((now() AT TIME ZONE 'UTC')::date),
+  PRIMARY KEY (viewed_id, viewer_id, day)
+);
+GRANT ALL ON ALL TABLES IN SCHEMA public TO tafsirflow;

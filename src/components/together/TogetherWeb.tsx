@@ -10,6 +10,7 @@ import type { SwKey } from "@/lib/sijillWeb";
 import { fill, type TgKey } from "@/lib/togetherWeb";
 import { demoAllowed, demoMoments, demoReply } from "@/lib/togetherSample";
 import { readIdentity } from "@/lib/identity";
+import { socialTable } from "@/lib/socialDict";
 
 // "Together" on the website (owner 22.10.2026), 1:1 with the app's /together screens (mobile/src/app/together/*):
 // friends today, weekly friend league, study circles (no chat), challenges between two friends, learn-together sessions,
@@ -220,6 +221,8 @@ function Hub(c: Ctx & { onOk: () => void }) {
           {box.joinRequests ? <Link href="/together/circles" className="block"><Tile>{tx("joinRequestsN", { n: box.joinRequests })}</Tile></Link> : null}
         </Section>
       ) : null}
+
+      <SocialEntry locale={c.locale} />
 
       <Section title={tx("friendsToday")} action={f.sharing ? <button type="button" onClick={() => setFull((x) => !x)} className="text-[14px] font-semibold text-accent">{tx(full ? "done" : "seeAll")}</button> : null}>
         <FriendsTodayCard f={f} tx={tx} nf={nf} />
@@ -562,6 +565,7 @@ function CircleView(c: Ctx) {
     <>
       <h2 className="font-display mt-8 text-3xl">{d.name}</h2>
       <p className="text-muted">{tx(`kind_${d.kind}` as TgKey)} · {tx("membersN", { n: d.members.length })}</p>
+      {d.status === "member" && !d.suspended ? <Link href={`/together/social?v=halaqa&id=${d.id}`} className={`mt-4 inline-flex h-10 items-center rounded-full px-4 text-[14px] font-semibold ${soft}`}>{socialTable(c.locale).halaqa}</Link> : null}
       <div className="mt-5"><StageCard>
         <p className="text-[12.5px] font-semibold tracking-[0.1em] text-[rgb(214,180,108)]">{tx("weekGoal")}</p>
         <p className="font-display mt-1 text-2xl">{nf(d.progress)} / {tx(`goalN_${d.goalKind}` as TgKey, { n: nf(d.goal) })}</p>
@@ -759,5 +763,17 @@ export function TogetherStatsWeb({ username, t, locale }: { username: string; t:
         {d.challengesDone !== null ? cell(tx("stat_challenges"), d.challengesDone.toLocaleString(locale)) : null}
       </div>
     </div>
+  );
+}
+
+/** entry to "Together, deeper" (/together/social) */
+function SocialEntry({ locale }: { locale: string }) {
+  const sx = socialTable(locale);
+  return (
+    <Link href="/together/social" className="mt-8 block rounded-xl border border-line bg-surface p-4 hover:border-[#c6a65e]">
+      <p className="font-display text-xl">{sx.hubTitle}</p>
+      <p className="mt-1 text-[14px] text-muted">{sx.hubLead}</p>
+      <p className="mt-2 text-[13px] font-semibold text-gold">{[sx.khatm, sx.halaqa, sx.recap, sx.duels, sx.classes].join(" · ")}</p>
+    </Link>
   );
 }
