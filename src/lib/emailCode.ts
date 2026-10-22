@@ -10,10 +10,10 @@ import { sendMail } from "./mail";
 export type CodePurpose = "signin" | "confirm";
 export const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
 export const normEmail = (v: unknown) => String(v ?? "").trim().toLowerCase();
-export const CODE_TTL_MIN = 10;
+export const CODE_TTL_MIN = 20;
 export const MAX_ATTEMPTS = 5;
 const PER_HOUR = 5;
-export const RESEND_SECONDS = 30;
+export const RESEND_SECONDS = 60;
 
 const key = () => process.env.AUTH_CODE_SECRET || process.env.CERT_SECRET || "quran-masterclass-email-code";
 const hmac = (salt: string, email: string, purpose: string, code: string) =>
