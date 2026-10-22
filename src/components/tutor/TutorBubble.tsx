@@ -6,6 +6,7 @@ import { readJSON } from "@/lib/storage";
 import { BUBBLE_KEY, screenContext } from "@/lib/tutor/next";
 import { TutorFace } from "./TutorChat";
 import { useStorageVersion, useTutor } from "./state";
+import { useAuth } from "@/lib/learn/auth";
 
 // "Ask the tutor" on every learning screen (app: mobile/src/features/tutor/TutorBubble.tsx): a small glass tab with the
 // tutor's face, snapped to the trailing edge at mid height – never over the tab bar, docks or the primary buttons at
@@ -16,10 +17,12 @@ export default function TutorBubble() {
   const sp = useSearchParams();
   const v = useStorageVersion();
   const { ui, f, persona } = useTutor();
+  const { user } = useAuth();
   const [hidden, setHidden] = useState(true);
   useEffect(() => { setHidden(readJSON<{ hidden?: boolean }>(BUBBLE_KEY, {}).hidden === true); }, [v]);
   const ctx = screenContext(path, { v: sp.get("v") ?? undefined, s: sp.get("s") ?? undefined });
-  if (hidden || !ctx) return null;
+  // only for signed-in learners: public pages never show the tutor bubble
+  if (!user || hidden || !ctx) return null;
   const label = f(ui.ask);
   return (
     <Link href={{ pathname: "/assistant", query: { ctx: JSON.stringify(ctx) } }} aria-label={`${label} (${ui.ai})`} title={`${label} (${ui.ai})`}
