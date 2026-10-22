@@ -26,7 +26,8 @@ export function courseSlugOf(course: string): CourseSlug | null {
   return null;
 }
 
-export type ShopSticker = { id: string; ar: string; sacred: boolean; svg: string; glow?: boolean };
+/** tier and shimmer come from the drawn art (src/lib/stickerArt): "edel" gets a gentle gloss, shimmer the rare light */
+export type ShopSticker = { id: string; ar: string; sacred: boolean; svg: string; glow?: boolean; tier?: "common" | "edel" | "selten" | "unikat"; shimmer?: boolean };
 export type ShopPack = {
   slug: string; title: Record<string, string>; season: string | null; tradition: "shia" | null; featured?: "sister" | null; rotation: boolean;
   product: string; gift: string; stickers: ShopSticker[];
@@ -41,6 +42,8 @@ export type ShopMe = {
 };
 export type Shop = {
   freeLevels: number; proPack: string | null; bundle: string;
+  /** the gold licence-plate frame (art "kennzeichen-rahmen") for numbered editions */
+  plate?: string | null;
   courses: { slug: CourseSlug; product: string }[];
   frames: { slug: string; product: string; reward: boolean }[];
   packs: ShopPack[]; rare: ShopRare[]; editionsLeft: Record<string, EditionState>;
@@ -80,10 +83,13 @@ export const ownsCourseNow = (course: string) => ownsCourse(readShop(), courseSl
 /** every sticker the account may place (owned packs and rare stickers) */
 export function ownedStickers(s: Shop | null): (ShopSticker & { pack: string | null; rare: boolean })[] {
   if (!s) return [];
-  return [
-    ...s.packs.filter((p) => ownsPack(s, p)).flatMap((p) => p.stickers.map((x) => ({ ...x, pack: p.slug, rare: false }))),
-    ...s.rare.filter((r) => ownsRare(s, r)).map((r) => ({ ...r.sticker, pack: null, rare: true })),
+  const all = [
+    ...s.packs.filter((p) => ownsPack(s, p)).flatMap((p) => p.stickers.map((x) => ({ ...x, pack: p.slug as string | null, rare: false }))),
+    ...s.rare.filter((r) => ownsRare(s, r) || owns(s, r.product)).map((r) => ({ ...r.sticker, pack: null, rare: true })),
   ];
+  // an art sticker can sit in several packs: list it once
+  const seen = new Set<string>();
+  return all.filter((x) => (seen.has(x.id) ? false : (seen.add(x.id), true)));
 }
 export function stickerById(s: Shop | null, id: string): (ShopSticker & { rare: boolean }) | null {
   if (!s) return null;

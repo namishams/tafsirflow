@@ -83,7 +83,7 @@ export const RAR: StickerPack = {
       ], [...G, lin("d", [[0, "#e9c66e"], [0.5, "#a8782a"], [1, "#6e4a14"]], 0, 0, 1, 1)]),
       sparkles([[150, 46, 8], [44, 120, 5]], "#fff6d8")),
     // the night of Laylat al-Qadr: a radiant star, a crescent and a sky of small stars
-    sticker({ id: "stern-laylat-al-qadr", pack: P, name: "Stern der Laylat al-Qadr", tier: "unikat", shimmer: true },
+    sticker({ id: "stern-laylat-al-qadr", pack: P, name: "Stern der Laylat al-Qadr", tier: "unikat", shimmer: true, sacred: true },
       part([
         L(circ(100, 100, 90), "@m", { stroke: "#6e4a14", sw: 0.8 }),
         L(circ(100, 100, 84), "@sky"),

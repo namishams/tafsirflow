@@ -2,7 +2,7 @@ import type { PoolClient } from "pg";
 import { pool } from "@/lib/db";
 import {
   BUNDLE_PRODUCT, EDITION, FOUNDER_MAX, FRAME_SLUGS, REWARD_FRAME, SPECIALS, UNIQUE, allPacks, courseProduct, founderProduct, frameProduct, monthKey, packProduct,
-  productsOfSpecial, proPackOf, rareProduct, uniqueProduct, type CourseSlug,
+  packStickers, productsOfSpecial, proPackOf, specialSticker, rareProduct, uniqueProduct, type CourseSlug,
 } from "./catalog";
 
 // Owned products of an account (iap_entitlements). Pro itself stays in users.plan; Pro does NOT include the packs:
@@ -125,10 +125,14 @@ export type Placed = { id: string; x: number; y: number; s: number; spot: "crown
 const HIGH = new Set(["crown", "arch"]);
 export const MAX_PLACED = 60;
 
-export async function stickerIndex(): Promise<Map<string, { pack: string | null; rare: string | null; sacred: boolean }>> {
-  const m = new Map<string, { pack: string | null; rare: string | null; sacred: boolean }>();
-  for (const p of await allPacks()) for (const s of p.stickers) m.set(s.id, { pack: p.slug, rare: null, sacred: !!s.sacred });
-  for (const r of SPECIALS) m.set(r.sticker.id, { pack: null, rare: r.slug, sacred: !!r.sticker.sacred });
+/** every placeable sticker: the store packs that contain it (an art sticker can sit in several), or its special */
+export async function stickerIndex(): Promise<Map<string, { packs: string[]; rare: string | null; sacred: boolean }>> {
+  const m = new Map<string, { packs: string[]; rare: string | null; sacred: boolean }>();
+  for (const p of await allPacks()) for (const s of packStickers(p)) {
+    const e = m.get(s.id);
+    if (e) e.packs.push(p.slug); else m.set(s.id, { packs: [p.slug], rare: null, sacred: s.sacred });
+  }
+  for (const r of SPECIALS) { const s = specialSticker(r); m.set(s.id, { packs: [], rare: r.slug, sacred: s.sacred }); }
   return m;
 }
 
@@ -143,7 +147,7 @@ export async function saveDecor(userId: number, raw: unknown): Promise<{ items: 
   for (const x of raw.slice(0, MAX_PLACED) as Partial<Placed>[]) {
     const info = typeof x?.id === "string" ? idx.get(x.id) : undefined;
     if (!info) continue;
-    if (info.pack && !ownsPack(o, info.pack)) continue;
+    if (!info.rare && !info.packs.some((pk) => ownsPack(o, pk))) continue;
     if (info.rare && !ownsSpecial(o, info.rare)) continue;
     const spot = x.spot === "crown" || x.spot === "arch" || x.spot === "branch" || x.spot === "ground" ? x.spot : "branch";
     if (info.sacred && !HIGH.has(spot)) return { error: "sacred_spot" };
@@ -168,7 +172,7 @@ export async function saveDecor(userId: number, raw: unknown): Promise<{ items: 
 /** packs whose every sticker has been placed at least once */
 export async function completedAlbums(collected: string[]): Promise<string[]> {
   const have = new Set(collected);
-  return (await allPacks()).filter((p) => p.stickers.length && p.stickers.every((s) => have.has(s.id))).map((p) => p.slug);
+  return (await allPacks()).filter((p) => { const st = packStickers(p); return st.length > 0 && st.every((s) => have.has(s.id)); }).map((p) => p.slug);
 }
 
 export async function decorOf(userId: number): Promise<{ items: Placed[]; collected: string[] }> {

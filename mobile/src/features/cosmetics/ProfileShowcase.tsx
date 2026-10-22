@@ -31,7 +31,7 @@ export function ProfileShowcase({ showcase, items, mine }: { showcase: string[] 
             return (
               <View key={r.slug} style={{ alignItems: "center", gap: 4 }}>
                 <StickerView svg={r.sticker.svg} size={52} shimmer label={titleOf(r.title, lang)} />
-                {it?.number && (it.tier === "unique" || it.number <= 10) ? <NumberPlate n={it.number} unique={it.tier === "unique"} /> : null}
+                {it?.number && (it.tier === "unique" || it.number <= 10) ? <NumberPlate n={it.number} unique={it.tier === "unique"} frame={shop?.plate} /> : null}
               </View>
             );
           })}

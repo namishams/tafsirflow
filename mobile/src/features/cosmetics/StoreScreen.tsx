@@ -150,7 +150,7 @@ export default function StoreScreen() {
 function PackPreview({ pack, n = 6 }: { pack: ShopPack; n?: number }) {
   return (
     <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
-      {pack.stickers.slice(0, n).map((st) => <StickerView key={st.id} svg={st.svg} size={46} gloss label={st.ar} />)}
+      {pack.stickers.slice(0, n).map((st) => <StickerView key={st.id} svg={st.svg} size={46} shimmer={st.shimmer} gloss={st.tier === "edel"} label={st.ar} />)}
     </View>
   );
 }
@@ -207,7 +207,7 @@ function AlbumModal({ pack, shop, onClose }: { pack: ShopPack | null; shop: Shop
               const filled = !mine || have.has(st.id);
               return (
                 <View key={st.id} style={{ width: size, alignItems: "center", gap: 4, padding: 4, borderRadius: R.md, borderWidth: 1, borderStyle: filled ? "solid" : "dashed", borderColor: filled ? "transparent" : t.line, opacity: filled ? 1 : 0.45 }}>
-                  <StickerView svg={st.svg} size={size - 12} gloss={filled} label={st.ar} />
+                  <StickerView svg={st.svg} size={size - 12} shimmer={filled && st.shimmer} gloss={filled && st.tier === "edel"} label={st.ar} />
                   {st.sacred ? <Icon name="starBig" size={11} color={t.gold} /> : null}
                 </View>
               );
@@ -246,7 +246,7 @@ function RareCard({ r, shop, prices, buy, busy }: { r: ShopRare; shop: Shop; pri
           {r.tier === "rare" && st ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: t.muted }}>{fill(s.edition, { n: r.edition ?? 300 })} · {st.left > 0 ? fill(s.left, { n: st.left, m: (r.edition ?? 300) - 10 }) : s.soldOut}</Text> : null}
           {r.tier === "unique" && st?.owner ? <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: t.ink }}>{fill(l.owner, { u: st.owner })}</Text> : null}
           {r.tier === "earned" ? <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted }}>{l.notForSale} · {EARN_HOW(l)[r.slug] ?? ""}</Text> : null}
-          {mine && nr ? <NumberPlate n={nr} unique={r.tier === "unique"} /> : null}
+          {mine && nr ? <NumberPlate n={nr} unique={r.tier === "unique"} frame={shop.plate} /> : null}
         </View>
       </View>
       <View style={{ flexDirection: "row", gap: 8, marginTop: 10, flexWrap: "wrap" }}>

@@ -24,15 +24,16 @@ export function DecorLayer({ w, h, still }: { w: number; h: number; still?: bool
   const items = shop?.me?.decor.items ?? [];
   if (!items.length) return null;
   const last = items[items.length - 1]?.id;
+  const gems = new Set(shop?.packs.find((p) => p.slug === "pearls-gems")?.stickers.map((x) => x.id) ?? []);
   return (
     <View pointerEvents="none" style={{ position: "absolute", left: 0, top: 0, width: w, height: h }}>
       {items.map((p, i) => {
         const st = stickerById(shop, p.id);
         if (!st) return null;
         const size = Math.round(Math.max(22, w * 0.085) * p.s);
-        return <Placed key={`${p.id}-${i}`} svg={st.svg} rare={st.rare} glow={!!st.glow || st.rare} size={size} x={p.x * w - size / 2} y={p.y * h - size / 2} fresh={!still && p.id === last && i === items.length - 1} />;
+        return <Placed key={`${p.id}-${i}`} svg={st.svg} rare={st.rare || !!st.shimmer} edel={st.tier === "edel"} glow={!!st.glow || st.rare} size={size} x={p.x * w - size / 2} y={p.y * h - size / 2} fresh={!still && p.id === last && i === items.length - 1} />;
       })}
-      <Necklace w={w} h={h} n={items.filter((p) => p.id.startsWith("pearls-gems-")).length} />
+      <Necklace w={w} h={h} n={items.filter((p) => gems.has(p.id)).length} />
     </View>
   );
 }
@@ -54,7 +55,7 @@ function Necklace({ w, h, n }: { w: number; h: number; n: number }) {
   );
 }
 
-function Placed({ svg, rare, glow: lit, size, x, y, fresh }: { svg: string; rare: boolean; glow: boolean; size: number; x: number; y: number; fresh: boolean }) {
+function Placed({ svg, rare, edel, glow: lit, size, x, y, fresh }: { svg: string; rare: boolean; edel: boolean; glow: boolean; size: number; x: number; y: number; fresh: boolean }) {
   const k = useSharedValue(fresh ? 0 : 1);
   // gems, pearls and rare stickers keep a soft glow on the tree, like lit ornaments
   const glow = useSharedValue(lit ? 0.35 : 0);
@@ -68,7 +69,7 @@ function Placed({ svg, rare, glow: lit, size, x, y, fresh }: { svg: string; rare
   return (
     <Animated.View style={[{ position: "absolute", left: x, top: y, width: size, height: size }, st]}>
       <Animated.View style={[{ position: "absolute", left: -size * 0.25, top: -size * 0.25, width: size * 1.5, height: size * 1.5, borderRadius: size, backgroundColor: "rgba(255,226,150,0.45)" }, gl]} />
-      <StickerView svg={svg} size={size} shimmer={rare} gloss={!rare} />
+      <StickerView svg={svg} size={size} shimmer={rare} gloss={!rare && edel} />
     </Animated.View>
   );
 }
@@ -119,7 +120,7 @@ export function DecorSheet({ visible, onClose }: { visible: boolean; onClose: ()
             {owned.map((o) => (
               <Pressable key={o.id} onPress={() => { setPick(o.id); setMsg(null); }} accessibilityRole="button" accessibilityState={{ selected: pick === o.id }} accessibilityLabel={o.ar}
                 style={{ padding: 4, borderRadius: R.md, borderWidth: 2, borderColor: pick === o.id ? t.gold : "transparent" }}>
-                <StickerView svg={o.svg} size={52} shimmer={o.rare} />
+                <StickerView svg={o.svg} size={52} shimmer={o.rare || !!o.shimmer} gloss={o.tier === "edel"} />
               </Pressable>
             ))}
           </View>

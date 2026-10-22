@@ -135,8 +135,20 @@ export function RareMark({ svg, size = 16, label }: { svg: string | null | undef
 
 const AR_DIGITS = "٠١٢٣٤٥٦٧٨٩";
 /** a gold number plate (like a licence plate): the number in Arabic and Latin digits, for one-of-ones and numbers */
-export function NumberPlate({ n, unique }: { n: number; unique?: boolean }) {
+export function NumberPlate({ n, unique, frame }: { n: number; unique?: boolean; /** the drawn gold plate (art "kennzeichen-rahmen", 320 x 120, dark field 60..260 x 30..90) */ frame?: string | null }) {
   const ar = String(n).replace(/\d/g, (d) => AR_DIGITS[Number(d)]);
+  if (frame) {
+    const W = 132, H = W * (120 / 320);
+    return (
+      <View accessible accessibilityLabel={unique ? "1/1" : `No. ${n}`} style={{ width: W, height: H }}>
+        <SvgXml xml={frame} width={W} height={H} />
+        <View style={{ position: "absolute", left: W * (60 / 320), top: H * (30 / 120), width: W * (200 / 320), height: H * (60 / 120), flexDirection: "row", alignItems: "center", justifyContent: "space-around" }}>
+          <Text style={{ fontWeight: "700", fontSize: 12, color: "#f3e2b6" }}>{ar}</Text>
+          <Text style={{ fontWeight: "800", fontSize: 13, letterSpacing: 1, color: "#f8ecc8" }}>{unique ? "1/1" : String(n)}</Text>
+        </View>
+      </View>
+    );
+  }
   return (
     <LinearGradient colors={unique ? ["#fff3c4", "#d6aa4a", "#8f6418"] : ["#f8ecc8", "#c9a65e", "#a07a32"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
       style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", borderRadius: 6, borderWidth: 1.5, borderColor: "#5a4518", overflow: "hidden" }}>
