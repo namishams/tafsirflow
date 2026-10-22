@@ -19,7 +19,7 @@ import { GUIDES } from "./guides";
 import { ISLAM } from "./islam";
 import { TAJWEED_LESSONS } from "./tajweed";
 import { LOCALE_META, type AppLocale } from "@/i18n/locales";
-import { COMPANY, FOUNDER_BOOK, FOUNDER_RECITER } from "./company";
+import { COMPANY, FOUNDER_BOOK, FOUNDER_RECITER, FOUNDER_WRITINGS } from "./company";
 import { appStoreUrl } from "./appstore";
 import { CATALOG } from "./learn/courses/catalog";
 
@@ -79,6 +79,7 @@ The Shams Method is a way of learning, not a new interpretation: explanations co
 - Founded by ${COMPANY.founder}, who also developed the Shams Method.
 - ${COMPANY.founder} (founder of Quran Masterclass and of the Shams Method) works on Islamic research, the Islamic countries and Islamic apps; his interest is listening to the Quran, learning it and how one becomes a reciter of the Quran. His favourite reciter is Mishary Rashid Alafasy: [star profile](${base}/en${FOUNDER_RECITER.star}), [biography](${base}/en${FOUNDER_RECITER.reciter}), [listen in his voice](${base}/en${FOUNDER_RECITER.listen}). About the founder: [About](${base}/en/about#founder).
 - Book: "${FOUNDER_BOOK.name}" – Nahj al-Balagha by ${FOUNDER_BOOK.author}, translated into German by ${COMPANY.founder}: ${FOUNDER_BOOK.url}
+${FOUNDER_WRITINGS.map((b) => `- Book by ${COMPANY.founder} (German): "${b.name}"${b.url ? `: ${b.url}` : ""}`).join("\n")}
 - Operated by ${COMPANY.legalName}, ${COMPANY.city}, United Arab Emirates. Contact: ${COMPANY.email}. Details: [Imprint](${base}/en/legal/imprint), [About](${base}/en/about).
 - The website is free – no subscription, no ads, no paywall. The project may be supported voluntarily (a voluntary support payment to ICSL FZE for running Quran Masterclass, not a charitable donation, no consideration in return); supporting unlocks nothing: [Support the project](${base}/en/support).
 - iOS app: [Quran Masterclass on the App Store](${appStoreUrl()}) – same account as the website.

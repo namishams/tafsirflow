@@ -29,6 +29,11 @@ export const FOUNDER_BOOK = {
   url: "https://www.amazon.com/dp/B0D13DKT9T",
   author: "Imam Ali ibn Abi Talib",
 } as const;
+/** the founder's own books (owner, 23.10.2026); `url` stays null until the owner sends the Amazon links */
+export const FOUNDER_WRITINGS = [
+  { key: "writingBaqara", name: "Tafsir Sure al-Baqara (Die Kuh)", cover: "/images/books/tafsir-al-baqara.jpg", url: null as string | null },
+  { key: "writingImamAli", name: "Imam Ali: Höhepunkte aus der Biographie des größten Führers, geformt durch den Heiligen Propheten", cover: "/images/books/imam-ali.jpg", url: null as string | null },
+] as const;
 /** Mishary Rashid Alafasy on the platform: star profile (reserved username), reciter biography, the player in his voice */
 export const FOUNDER_RECITER = {
   star: "/talents/mishary.alafasy",
@@ -58,6 +63,17 @@ export function founderBookLd(abs: (p: string) => string) {
     author: { "@type": "Person", name: FOUNDER_BOOK.author },
     translator: { "@id": abs("/#founder"), "@type": "Person", name: COMPANY.founder },
   };
+}
+/** schema.org Book for each of the founder's own books */
+export function founderWritingsLd(abs: (p: string) => string) {
+  return FOUNDER_WRITINGS.map((b) => ({
+    "@type": "Book",
+    name: b.name,
+    inLanguage: "de",
+    image: abs(b.cover),
+    ...(b.url ? { url: b.url } : {}),
+    author: { "@id": abs("/#founder"), "@type": "Person", name: COMPANY.founder },
+  }));
 }
 
 /** schema.org Organization for Quran Masterclass (pass the site's absolute-URL helper) */

@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { FOUNDER_BOOK, FOUNDER_RECITER } from "@/lib/company";
+import { FOUNDER_BOOK, FOUNDER_RECITER, FOUNDER_WRITINGS } from "@/lib/company";
 import { IslamCorners } from "@/components/art/IslamArt";
 import Skyline from "@/components/Skyline";
 
@@ -24,6 +24,35 @@ export function FounderBook({ small = false }: { small?: boolean }) {
         <span className="btn-gold mt-3 inline-flex h-9 items-center rounded-full px-4 text-[13px] font-bold">{t("bookCta")}</span>
       </span>
     </a>
+  );
+}
+
+/** the founder's own books (Tafsir al-Baqara, Imam Ali): cover, title, short line; linked once the Amazon URL is set */
+export function FounderWritings({ small = false }: { small?: boolean }) {
+  const t = useTranslations("founderAbout");
+  return (
+    <div>
+      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold rtl:tracking-normal">{t("writingsTitle")}</p>
+      <div className={`mt-3 grid gap-3 ${small ? "" : "sm:grid-cols-2"}`}>
+        {FOUNDER_WRITINGS.map((b) => {
+          const inner = (
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={b.cover} alt="" aria-hidden width={100} height={160} loading="lazy" className="h-[92px] w-[60px] shrink-0 rounded-[3px_8px_8px_3px] object-cover shadow-[4px_6px_14px_rgba(0,0,0,0.3)]" />
+              <span className="min-w-0">
+                <span className="block text-[11px] font-semibold uppercase tracking-[0.16em] text-muted rtl:tracking-normal">{t("writingsRole")}</span>
+                <span className="mt-0.5 block text-[15.5px] font-bold leading-snug text-ink">{b.name}</span>
+                <span className="mt-1 block text-[13.5px] leading-snug text-muted">{t(b.key)}</span>
+              </span>
+            </>
+          );
+          const cls = "isl-card flex items-center gap-4 p-4 text-start";
+          return b.url
+            ? <a key={b.key} href={b.url} target="_blank" rel="noopener" className={`${cls} isl-card-hover`}>{inner}</a>
+            : <div key={b.key} className={cls}>{inner}</div>;
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -85,6 +114,7 @@ export default function FounderAbout({ variant = "full" }: { variant?: "full" | 
         <h2 id="founder-about" className="font-display relative text-[20px] leading-tight text-ink">{t("profileTitle")}</h2>
         <p className="relative mt-2 text-[14.5px] leading-relaxed text-muted">{t("profileShort")}</p>
         <div className="relative mt-4"><FounderBook small /></div>
+        <div className="relative mt-4"><FounderWritings small /></div>
         <ReciterLinks className="relative mt-4" />
         <Link href="/about#founder" className="relative mt-4 inline-block text-[14px] font-semibold text-accent hover:underline">{t("more")}</Link>
       </section>
@@ -108,6 +138,7 @@ export default function FounderAbout({ variant = "full" }: { variant?: "full" | 
           <div className="grid content-start gap-5">
             <FounderBook />
             <p className="text-[14.5px] leading-relaxed text-muted">{t("bookText")}</p>
+            <FounderWritings />
           </div>
         </div>
         <div className="stage relative mt-12 overflow-hidden rounded-2xl px-6 py-8 text-[#eef0f3] sm:px-10">

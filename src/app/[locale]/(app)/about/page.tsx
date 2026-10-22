@@ -6,7 +6,7 @@ import Markdown from "@/components/Markdown";
 import JsonLd from "@/components/JsonLd";
 import { aboutContent } from "@/lib/aboutContent";
 import { abs, pageMeta } from "@/lib/site";
-import { founderBookLd, founderLd, organizationLd } from "@/lib/company";
+import { founderBookLd, founderLd, founderWritingsLd, organizationLd } from "@/lib/company";
 import FounderAbout from "@/components/FounderAbout";
 import { MoreTiles } from "@/components/PosterTiles";
 import { CalligraphyDraw } from "@/components/Ornaments";
@@ -28,7 +28,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const tn = await getTranslations("nav");
   const tl = await getTranslations("legal");
   const ld = { "@context": "https://schema.org", "@type": "AboutPage", url: abs(`/${locale}/about`), inLanguage: locale, mainEntity: organizationLd(abs) };
-  const founder = { "@context": "https://schema.org", "@graph": [founderLd(abs), founderBookLd(abs)] };
+  const founder = { "@context": "https://schema.org", "@graph": [founderLd(abs), founderBookLd(abs), ...founderWritingsLd(abs)] };
   return (
     <div>
       <JsonLd data={ld} />
