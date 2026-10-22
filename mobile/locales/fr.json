@@ -4,8 +4,8 @@
     "NSLocationWhenInUseUsageDescription": "Quran Masterclass utilise votre position pour calculer les horaires de prière, la direction de la qibla et le ciel de votre jardin là où vous vous trouvez. Vos coordonnées restent sur cet appareil et ne nous sont jamais envoyées. Seulement si vous choisissez d’afficher votre ville sur votre profil, le nom de la ville est enregistré avec votre profil.",
     "NSMicrophoneUsageDescription": "Quran Masterclass utilise le micro uniquement lorsque vous lancez un enregistrement, la vérification de la récitation ou la vérification des mots. Un enregistrement reste sur cet appareil, sauf si vous choisissez de l’envoyer ou de le publier.",
     "NSSpeechRecognitionUsageDescription": "Quran Masterclass reconnaît sur cet appareil les mots arabes que vous récitez, dans les exercices, les tests et la vérification des mots, pour indiquer quels mots ont été entendus. Ce n’est pas une évaluation du tajwid et rien n’est envoyé.",
-    "NSCameraUsageDescription": "Quran Masterclass utilise l’appareil photo uniquement lorsque vous prenez une photo de profil ou, lorsque c’est proposé, activez la vidéo pour un extrait de récitation. Rien n’est enregistré avant que vous ne commenciez.",
-    "NSPhotoLibraryUsageDescription": "Quran Masterclass ouvre vos photos uniquement lorsque vous choisissez une photo de profil. Seule l’image choisie est envoyée, sans données de localisation.",
+    "NSCameraUsageDescription": "Quran Masterclass n'utilise l'appareil photo que lorsque vous prenez une photo de profil, scannez le code QR d'un profil ou, là où c'est proposé, activez la vidéo pour un clip de récitation. Rien n'est enregistré avant que vous ne commenciez.",
+    "NSPhotoLibraryUsageDescription": "Quran Masterclass n'ouvre vos photos que lorsque vous choisissez une photo de profil ou une photo ou vidéo à envoyer dans une discussion. Seul ce que vous choisissez est envoyé, sans données de localisation.",
     "NSPhotoLibraryAddUsageDescription": "Quran Masterclass enregistre dans votre photothèque les images et vidéos de versets que vous choisissez."
   }
 }

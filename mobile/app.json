@@ -248,7 +248,7 @@
       [
         "expo-media-library",
         {
-          "photosPermission": "Quran Masterclass opens your photos only when you choose a profile picture. Only the picture you pick is uploaded, without its location data.",
+          "photosPermission": "Quran Masterclass opens your photos only when you choose a profile picture or a photo or video to send in a chat. Only what you pick is uploaded, without its location data.",
           "savePhotosPermission": "Quran Masterclass saves the verse images and videos you choose to your photo library.",
           "isAccessMediaLocationEnabled": false,
           "granularPermissions": [
@@ -268,7 +268,7 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Quran Masterclass uses the camera only when you take a profile picture or, where offered, switch on video for a recitation clip. Nothing is recorded until you start.",
+          "cameraPermission": "Quran Masterclass uses the camera only when you take a profile picture, scan a profile QR code or, where offered, switch on video for a recitation clip. Nothing is recorded until you start.",
           "microphonePermission": "Quran Masterclass uses the microphone only when you start a recording, the recitation check or the word check. A recording stays on this device unless you choose to send or publish it.",
           "recordAudioAndroid": true
         }
@@ -276,8 +276,8 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Quran Masterclass opens your photos only when you choose a profile picture. Only the picture you pick is uploaded, without its location data.",
-          "cameraPermission": "Quran Masterclass uses the camera only when you take a profile picture or, where offered, switch on video for a recitation clip. Nothing is recorded until you start.",
+          "photosPermission": "Quran Masterclass opens your photos only when you choose a profile picture or a photo or video to send in a chat. Only what you pick is uploaded, without its location data.",
+          "cameraPermission": "Quran Masterclass uses the camera only when you take a profile picture, scan a profile QR code or, where offered, switch on video for a recitation clip. Nothing is recorded until you start.",
           "microphonePermission": false
         }
       ],

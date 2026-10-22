@@ -4,8 +4,8 @@
     "NSLocationWhenInUseUsageDescription": "Quran Masterclass konumunuzu, bulunduğunuz yer için namaz vakitlerini, kıble yönünü ve bahçenizdeki gökyüzünü hesaplamak üzere kullanır. Koordinatlarınız bu cihazda kalır ve bize asla gönderilmez. Şehrinizi profilinizde göstermeyi seçerseniz yalnızca şehrin adı profilinizle birlikte kaydedilir.",
     "NSMicrophoneUsageDescription": "Quran Masterclass mikrofonu yalnızca bir kayıt, tilavet kontrolü veya kelime kontrolü başlattığınızda kullanır. Kayıt, göndermeyi veya yayınlamayı seçmediğiniz sürece bu cihazda kalır.",
     "NSSpeechRecognitionUsageDescription": "Quran Masterclass, hangi kelimelerin duyulduğunu göstermek için alıştırmalarda, testlerde ve kelime kontrolünde okuduğunuz Arapça kelimeleri bu cihazda tanır. Bu bir tecvit değerlendirmesi değildir ve hiçbir şey yüklenmez.",
-    "NSCameraUsageDescription": "Quran Masterclass kamerayı yalnızca bir profil fotoğrafı çektiğinizde veya sunulduğu yerlerde bir tilavet klibi için videoyu açtığınızda kullanır. Siz başlatana kadar hiçbir şey kaydedilmez.",
-    "NSPhotoLibraryUsageDescription": "Quran Masterclass fotoğraflarınızı yalnızca bir profil fotoğrafı seçtiğinizde açar. Yalnızca seçtiğiniz fotoğraf, konum verileri olmadan yüklenir.",
+    "NSCameraUsageDescription": "Quran Masterclass kamerayı yalnızca profil fotoğrafı çektiğinizde, bir profil QR kodunu taradığınızda veya sunulduğu yerde bir tilavet klibi için videoyu açtığınızda kullanır. Siz başlatana kadar kayıt yapılmaz.",
+    "NSPhotoLibraryUsageDescription": "Quran Masterclass fotoğraflarınızı yalnızca bir profil fotoğrafı ya da sohbette göndermek için bir fotoğraf veya video seçtiğinizde açar. Yalnızca seçtiğiniz içerik, konum bilgisi olmadan yüklenir.",
     "NSPhotoLibraryAddUsageDescription": "Quran Masterclass seçtiğiniz ayet görsellerini ve videolarını fotoğraf arşivinize kaydeder."
   }
 }

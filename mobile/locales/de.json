@@ -4,8 +4,8 @@
     "NSLocationWhenInUseUsageDescription": "Quran Masterclass nutzt Ihren Standort, um Gebetszeiten, die Qibla-Richtung und den Himmel in Ihrem Garten für Ihren Ort zu berechnen. Ihre Koordinaten bleiben auf diesem Gerät und werden nie an uns übertragen. Nur wenn Sie Ihre Stadt im Profil zeigen möchten, wird der Name der Stadt mit Ihrem Profil gespeichert.",
     "NSMicrophoneUsageDescription": "Quran Masterclass nutzt das Mikrofon nur, wenn Sie eine Aufnahme, die Rezitationsprüfung oder die Wortprüfung starten. Eine Aufnahme bleibt auf diesem Gerät, außer Sie entscheiden sich, sie zu senden oder zu veröffentlichen.",
     "NSSpeechRecognitionUsageDescription": "Quran Masterclass erkennt die arabischen Wörter, die Sie rezitieren, auf diesem Gerät, in Übungen, Tests und der Wortprüfung, um zu zeigen, welche Wörter gehört wurden. Das ist keine Tadschwid-Bewertung, und es wird nichts hochgeladen.",
-    "NSCameraUsageDescription": "Quran Masterclass nutzt die Kamera nur, wenn Sie ein Profilbild aufnehmen oder, wo angeboten, Video für einen Rezitationsclip einschalten. Es wird erst aufgenommen, wenn Sie starten.",
-    "NSPhotoLibraryUsageDescription": "Quran Masterclass öffnet Ihre Fotos nur, wenn Sie ein Profilbild auswählen. Nur das gewählte Bild wird hochgeladen, ohne Standortdaten.",
+    "NSCameraUsageDescription": "Quran Masterclass nutzt die Kamera nur, wenn Sie ein Profilbild aufnehmen, einen Profil-QR-Code scannen oder, wo angeboten, Video für einen Rezitationsclip einschalten. Es wird erst aufgenommen, wenn Sie starten.",
+    "NSPhotoLibraryUsageDescription": "Quran Masterclass öffnet Ihre Fotos nur, wenn Sie ein Profilbild oder ein Foto oder Video für einen Chat auswählen. Nur was Sie wählen, wird hochgeladen, ohne Standortdaten.",
     "NSPhotoLibraryAddUsageDescription": "Quran Masterclass speichert die Versbilder und Videos, die Sie auswählen, in Ihrer Fotomediathek."
   }
 }

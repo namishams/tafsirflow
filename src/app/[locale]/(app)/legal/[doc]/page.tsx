@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { pageMeta } from "@/lib/site";
 import { COMPANY, founderName } from "@/lib/company";
 import { ArrowBack } from "@/components/Icons";
+import { messengerText } from "@/lib/messenger/text";
 
 const DOCS = ["privacy", "terms", "imprint"] as const;
 type Doc = (typeof DOCS)[number];
@@ -53,6 +54,10 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
           <>
             <p className="mt-2 text-sm text-muted">{t("updated")}</p>
             <Body text={t(`${d}Body`)} />
+            {/* the messenger's privacy note lives here (owner 22.10.2026), not in the inbox */}
+            {d === "privacy" ? (() => { const m = messengerText(locale); return (
+              <section id="messenger"><h2 className="mt-8 text-lg font-bold">{m.title}</h2>{para(m.privacy, "m1")}{para(m.viewOnceHint, "m2")}</section>
+            ); })() : null}
           </>
         ) : (
           <div className="mt-6 grid gap-6">

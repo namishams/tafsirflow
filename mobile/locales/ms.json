@@ -4,8 +4,8 @@
     "NSLocationWhenInUseUsageDescription": "Quran Masterclass menggunakan lokasi anda untuk mengira waktu solat, arah kiblat dan langit di taman anda mengikut tempat anda. Koordinat anda kekal pada peranti ini dan tidak pernah dihantar kepada kami. Hanya jika anda memilih untuk memaparkan bandar anda pada profil, nama bandar disimpan bersama profil anda.",
     "NSMicrophoneUsageDescription": "Quran Masterclass menggunakan mikrofon hanya apabila anda memulakan rakaman, semakan bacaan atau semakan perkataan. Rakaman kekal pada peranti ini melainkan anda memilih untuk menghantar atau menerbitkannya.",
     "NSSpeechRecognitionUsageDescription": "Quran Masterclass mengecam perkataan Arab yang anda baca pada peranti ini, dalam latihan, ujian dan semakan perkataan, untuk menunjukkan perkataan yang didengar. Ini bukan penilaian tajwid dan tiada apa-apa dimuat naik.",
-    "NSCameraUsageDescription": "Quran Masterclass menggunakan kamera hanya apabila anda mengambil gambar profil atau, jika ditawarkan, menghidupkan video untuk klip bacaan. Tiada apa-apa dirakam sehingga anda memulakannya.",
-    "NSPhotoLibraryUsageDescription": "Quran Masterclass membuka foto anda hanya apabila anda memilih gambar profil. Hanya gambar yang dipilih dimuat naik, tanpa data lokasi.",
+    "NSCameraUsageDescription": "Quran Masterclass hanya menggunakan kamera apabila anda mengambil gambar profil, mengimbas kod QR profil atau, jika ditawarkan, menghidupkan video untuk klip bacaan. Tiada apa-apa dirakam sehingga anda mula.",
+    "NSPhotoLibraryUsageDescription": "Quran Masterclass hanya membuka foto anda apabila anda memilih gambar profil atau foto atau video untuk dihantar dalam sembang. Hanya yang anda pilih dimuat naik, tanpa data lokasi.",
     "NSPhotoLibraryAddUsageDescription": "Quran Masterclass menyimpan imej dan video ayat yang anda pilih ke pustaka foto anda."
   }
 }

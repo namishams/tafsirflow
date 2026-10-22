@@ -37,6 +37,7 @@ import { ShamsMethodSetting } from "@/features/shams2/ModeChooser";
 import { useModeT } from "@/features/shams2/modeText";
 import { TutorSetting } from "@/features/tutor/Settings";
 import { APP_STORE_URL, rateApp } from "@/lib/review";
+import { PermissionsSection } from "@/features/messenger/Permissions";
 
 // /account/settings – everything the Account tab showed before it became the own profile (owner, 21.10.2026: the last tab
 // is the Instagram/TikTok profile; the menu button opens this screen). Unchanged content: Pro, sign-in, confirm the
@@ -191,6 +192,8 @@ export default function AccountSettingsScreen() {
             <LinkRow title={sct("title")} subtitle={sct("certificates")} icon="cap" onPress={() => go("/school")} />
             <LinkRow title={t("account.map")} icon="map" onPress={() => go("/map")} />
           </RowGroup>
+
+          <PermissionsSection />
 
           <Section title={t("account.legal")}>
             <RowGroup>
