@@ -70,6 +70,7 @@ function SpacingCurve({ review, day, none, withR }: { review: string; day: strin
   let flat = "";
   for (let d = 0; d <= 34; d += 0.25) flat += `${flat ? "L" : "M"}${X(d).toFixed(1)},${Y(0.18 + 0.82 * Math.exp(-d / 1.8)).toFixed(1)} `;
   return (
+    <>
     <svg viewBox="0 0 340 200" className="w-full" role="img" aria-label={`${withR} / ${none}`}>
       <line x1="30" y1="170" x2="332" y2="170" stroke="currentColor" strokeOpacity=".25" />
       <line x1="30" y1="14" x2="30" y2="170" stroke="currentColor" strokeOpacity=".25" />
@@ -82,9 +83,12 @@ function SpacingCurve({ review, day, none, withR }: { review: string; day: strin
         </g>
       ))}
       <text x="332" y="198" textAnchor="end" fontSize="10" fill="currentColor" fillOpacity=".55">{day}</text>
-      <g fontSize="10.5"><circle cx="210" cy="24" r="4" fill="rgb(var(--gold))" /><text x="219" y="28" fill="currentColor">{review}</text>
-        <line x1="205" y1="42" x2="216" y2="42" stroke="currentColor" strokeOpacity=".4" strokeDasharray="2 2" /><text x="219" y="45" fill="currentColor" fillOpacity=".7">{none}</text></g>
     </svg>
+    <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[12px]">
+      <span className="inline-flex items-center gap-1.5"><span className="h-[3px] w-4 rounded bg-[rgb(var(--gold))]" />{withR}<span className="h-2 w-2 rounded-full bg-[rgb(var(--gold))]" />{review}</span>
+      <span className="inline-flex items-center gap-1.5 opacity-70"><span className="h-[2px] w-4 rounded bg-current opacity-40" />{none}</span>
+    </p>
+    </>
   );
 }
 
