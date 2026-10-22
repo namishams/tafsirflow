@@ -12,7 +12,7 @@ import { readCached, writeCached } from "./cache";
 // each kind, marked preview: true). A preview is kept in memory only and fetched again in full once Pro is active.
 export type NahjFile = "ar" | "de" | "en" | "study-de" | "study-en" | "study-course";
 export const NAHJ_FILES: NahjFile[] = ["ar", "de", "en", "study-de", "study-en", "study-course"];
-const CACHE_VERSION = 1; // raise when the server files change shape, so devices fetch them again
+const CACHE_VERSION = 2; // raise when the server files change shape, so devices fetch them again
 
 const data = new Map<NahjFile, unknown>();
 const failed = new Set<NahjFile>();
