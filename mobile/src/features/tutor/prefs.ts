@@ -1,5 +1,6 @@
 import { readJSON, useStored, writeJSON } from "@/lib/store";
 import { readIdentity, saveIdentity, useIdentity, type Gender } from "@/lib/identity";
+import type { OpenPlace } from "./next";
 
 // The tutor's settings on this device: the consent (Apple 5.1.2(i): questions go to OpenAI), the chosen tutor and the
 // conversation. Brother / sister is NOT kept here: it is the learner's identity (lib/identity.ts, one synced key for
@@ -19,7 +20,7 @@ export type ChatMsg = {
   content: string;
   at: number;
   // assistant only
-  id?: string; status?: string; notice?: string | null; sources?: Cite[]; related?: Cite[]; followups?: string[]; scripture?: Scripture; persona?: Persona;
+  id?: string; status?: string; notice?: string | null; sources?: Cite[]; related?: Cite[]; followups?: string[]; scripture?: Scripture; persona?: Persona; open?: OpenPlace[];
   /** a fixed message of the app (offline, limit …), never sent back as history */
   local?: boolean;
 };

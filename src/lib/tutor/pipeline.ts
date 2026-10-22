@@ -3,6 +3,7 @@ import { learnerDoc } from "./learner";
 import type { Doc } from "./corpus";
 import { DUA_REQUEST, duaMsg, generalLabel, tutorMsg } from "./messages";
 import { VERSE_COUNTS } from "../counts";
+import { NAV_VERBS, navIntent } from "./nav";
 import type { ChatCall, ModerationCall } from "./openai";
 import { QuotaError } from "./openai";
 import { ANSWER_SCHEMA, PLAN_RULES, PLAN_SCHEMA, answerRules, contextBlock, generalRules, sourcesBlock, type Plan, type PlanCategory } from "./prompt";
@@ -35,7 +36,8 @@ export type TutorInput = {
   memory?: string[];
 };
 export type TutorSource = { n: number; title: string; link: string; kind: string };
-export type TutorStatus = "answered" | "views" | "general" | "dua" | "not_found" | "greeting" | "refused" | "crisis" | "flagged";
+const NAV_TEXT: Record<string, string> = { en: "Here is what I found in the app:", de: "Das habe ich in der App gefunden:", ar: "هذا ما وجدته في التطبيق:", tr: "Uygulamada bulduklarım:", ur: "ایپ میں مجھے یہ ملا:", fa: "این را در برنامه یافتم:", ps: "ما دا په اپ کې وموندل:", fr: "Voici ce que j'ai trouvé dans l'application :", es: "Esto es lo que he encontrado en la aplicación:", id: "Ini yang saya temukan di aplikasi:", ms: "Ini yang saya temui dalam aplikasi:", bn: "অ্যাপে আমি এটি পেয়েছি:", ru: "Вот что я нашёл в приложении:", zh: "这是我在应用中找到的：" };
+export type TutorStatus = "nav" | "answered" | "views" | "general" | "dua" | "not_found" | "greeting" | "refused" | "crisis" | "flagged";
 const DUA_TITLE: Record<string, string> = { en: "Personal Dua", de: "Persönliche Dua", ar: "الدعاء الشخصي", tr: "Kişisel Dua", ur: "ذاتی دعا", fa: "دعای شخصی", ps: "شخصي دعا", fr: "Dua personnelle", es: "Dua personal", id: "Doa Pribadi", ms: "Doa Peribadi", bn: "ব্যক্তিগত দোয়া", ru: "Личная дуа", zh: "个人杜阿" };
 const GENERAL_CATS = new Set<PlanCategory>(["islam", "quran", "fiqh_ruling"]);
 
@@ -87,6 +89,10 @@ export type TutorResult = {
   tokensOut: number;
   /** the scrubbed question (for a report) */
   asked: string;
+  /** places to open (navigation intent): shown as gold "Öffnen" cards */
+  open?: { title: string; desc: string; link: string; appOnly: boolean }[];
+  /** exactly one confident match and the learner said "öffne": the client opens it after a short visible moment */
+  auto?: boolean;
 };
 export type TutorDeps = {
   chat: ChatCall;
@@ -138,6 +144,11 @@ export async function askTutor(i: TutorInput, deps: TutorDeps): Promise<TutorRes
   if (mod?.selfHarm) return fixed("crisis", m.crisis, asked, { category: "crisis" });
   if (mod?.flagged) return fixed("refused", m.harmful, asked, { category: "harmful" });
   // a personal dua is not composed by the tutor (owner rule: it is its own product): point to "Persönliche Dua"
+  // "öffne Sure al-Mulk", "wo ist der Wudu-Trainer", "Bukhari 1": found in the route index, no model call
+  if (!history.length || NAV_VERBS.test(asked)) {
+    const nav = navIntent(asked, await deps.corpus().catch(() => []));
+    if (nav) return fixed("nav", NAV_TEXT[i.lang] ?? NAV_TEXT.en, asked, { open: nav.hits.map((h) => ({ title: h.title, desc: h.desc, link: h.link, appOnly: !!h.appOnly })), auto: nav.auto, related: [] });
+  }
   if (DUA_REQUEST.test(asked)) return fixed("dua", duaMsg(i.lang), asked, { related: [{ n: 1, title: DUA_TITLE[i.lang] ?? DUA_TITLE.en, link: "/dua-generator", kind: "dua" }] });
 
   // 2. cache (first questions only: a follow-up depends on the conversation)

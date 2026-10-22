@@ -158,6 +158,13 @@ export function goalIn(question: string): string | null {
   return m ? cleanMemoryText(m[0]) : null;
 }
 
+// ---------------------------------------------------------------- places the tutor found ("öffne …"), shown as gold cards
+export type OpenPlace = { title: string; desc: string; link: string; appOnly: boolean };
+/** ms the found place stays visible before it opens on its own (one confident match after "öffne") */
+export const AUTO_OPEN_MS = 1400;
+export const OPEN_LABEL: Record<string, string> = { en: "Open", de: "Öffnen", ar: "فتح", tr: "Aç", ur: "کھولیں", fa: "باز کردن", ps: "پرانیزئ", fr: "Ouvrir", es: "Abrir", id: "Buka", ms: "Buka", bn: "খুলুন", ru: "Открыть", zh: "打开" };
+export const APP_ONLY: Record<string, string> = { en: "In the app", de: "In der App", ar: "في التطبيق", tr: "Uygulamada", ur: "ایپ میں", fa: "در برنامه", ps: "په اپ کې", fr: "Dans l'application", es: "En la aplicación", id: "Di aplikasi", ms: "Dalam aplikasi", bn: "অ্যাপে", ru: "В приложении", zh: "在应用中" };
+
 // ---------------------------------------------------------------- follow-up chips into the app
 export type Chip = { label: string; href: string };
 type CiteLike = { title: string; link: string; kind: string };

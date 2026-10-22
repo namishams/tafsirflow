@@ -4,6 +4,7 @@ import { useLocale } from "next-intl";
 import { readJSON, storageVersion, subscribeStorage, writeJSON } from "@/lib/storage";
 import { readIdentity, saveIdentity, type Gender } from "@/lib/identity";
 import { fillUi, tutorUi, type TutorUi } from "@/lib/tutor/ui";
+import type { OpenPlace } from "@/lib/tutor/next";
 import { useShams2 } from "@/lib/learn/shams2/model";
 import { DIMS, type Dim } from "@/lib/learn/shams2/mastery";
 import { readSrsState, streakOf } from "@/lib/learn/srs/store";
@@ -21,7 +22,7 @@ export type Scripture = {
 };
 export type ChatMsg = {
   role: "user" | "assistant"; content: string; at: number;
-  id?: string; status?: string; notice?: string | null; sources?: Cite[]; related?: Cite[]; followups?: string[]; scripture?: Scripture; persona?: Persona; local?: boolean;
+  id?: string; status?: string; notice?: string | null; sources?: Cite[]; related?: Cite[]; followups?: string[]; scripture?: Scripture; persona?: Persona; local?: boolean; open?: OpenPlace[];
 };
 export type TutorContext = {
   kind: "lesson" | "quiz" | "shams" | "verse" | "carousel" | "tajweed" | "guide" | "onboarding" | "progress" | "general";

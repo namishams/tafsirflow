@@ -1,6 +1,7 @@
 import { ApiError, api } from "@/lib/api";
 import { readTradition } from "@/lib/tradition";
 import type { ChatMsg, Cite, Consent, Persona, Scripture } from "./prefs";
+import type { OpenPlace } from "./next";
 
 // The tutor's server calls (the website's /api/assistant, the same route for app and website).
 
@@ -11,7 +12,7 @@ export type TutorContext = {
 export type TutorStatus = { enabled: boolean; consentVersion: number; quota: { limit: number; left: number; pro: boolean; signedIn: boolean } };
 export type TutorAnswer = {
   id: string; status: string; answer: string; notice: string | null; sources: Cite[]; related: Cite[]; followups: string[];
-  verses: string[]; hadith: string[]; scripture: Scripture; quota: { limit: number; left: number; pro: boolean };
+  verses: string[]; hadith: string[]; scripture: Scripture; open?: OpenPlace[] | null; auto?: boolean; quota: { limit: number; left: number; pro: boolean };
 };
 export type AskError = "offline" | "off" | "busy" | "limit" | "pro" | "login" | "verify" | "consent" | "age" | "rate" | "error";
 

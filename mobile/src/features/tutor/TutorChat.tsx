@@ -19,7 +19,8 @@ import { useTutorProgress } from "./progress";
 import { useCoachInput } from "./coach";
 import { readMemory, saveMemory, useMemory } from "./memory";
 import { useStored, writeJSON } from "@/lib/store";
-import { BUBBLE_KEY, bubbleSetting, addMemory, coachFacts, fillNext, goalIn, memoryForServer, nextUi, removeMemory, type MemoryState } from "./next";
+import { openHref } from "@/features/library/links";
+import { AUTO_OPEN_MS, BUBBLE_KEY, bubbleSetting, addMemory, coachFacts, fillNext, goalIn, memoryForServer, nextUi, removeMemory, type MemoryState } from "./next";
 import { useDictation } from "./voice";
 
 // Dalil / Hidaya – the tutor's one chat screen (app). The conversation is kept only on this device (prefs.ts). Entry
@@ -83,9 +84,12 @@ export function TutorChat({ context, initial }: { context?: TutorContext | null;
       const a = await askTutor({ question, history: before, lang, context: ctx, address, persona, consent: p.consent, progress: { ...(progress ?? {}), ...(coach ? coachFacts(coach) : {}) }, memory: memoryForServer(mem) });
       saveChat([...next, {
         role: "assistant", content: a.answer, at: Date.now(), id: a.id, status: a.status, notice: a.notice, sources: a.sources, related: a.related,
-        followups: a.followups, scripture: a.scripture, persona,
+        followups: a.followups, scripture: a.scripture, persona, open: a.open ?? undefined,
       }]);
       setStatus((s) => (s ? { ...s, quota: { ...s.quota, ...a.quota } } : s));
+      // "öffne …" with one confident match: visible for a moment, then opened (router.push through openHref)
+      const one = a.open?.length === 1 ? a.open[0] : null;
+      if (a.auto && one) setTimeout(() => openHref(one.link), AUTO_OPEN_MS);
     } catch (e) {
       const k = askError(e);
       setErr(k);

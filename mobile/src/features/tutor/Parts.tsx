@@ -13,7 +13,7 @@ import { TutorFace } from "./Face";
 import { useTutor } from "./hooks";
 import { giveConsent, saveAddress, savePersona, type ChatMsg, type Consent, type Persona } from "./prefs";
 import type { Progress } from "./progress";
-import { appChips, nextUi } from "./next";
+import { OPEN_LABEL, appChips, nextUi } from "./next";
 import { useSpeak } from "./voice";
 
 // The parts of the tutor's chat: consent card, tutor and address choice, today's card, an answer with its sources and
@@ -136,6 +136,21 @@ export function Answer({ m, question, onFollow, md }: { m: ChatMsg; question?: s
         {md(m.content)}
         {m.notice ? <Text style={{ marginTop: 10, fontFamily: FONT.medium, fontSize: 13, lineHeight: 19, color: goldButton.line }}>{m.notice}</Text> : null}
       </View>
+      {m.open?.map((o) => (
+        <Pressable key={o.link} onPress={() => openHref(o.link)} accessibilityRole="link" accessibilityLabel={`${OPEN_LABEL[lang] ?? OPEN_LABEL.en}: ${o.title}`}>
+          <GlassCard gold>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
+              <View style={{ flex: 1 }}>
+                <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }}>{o.title}</Text>
+                <Text numberOfLines={2} style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 18, color: t.muted, marginTop: 2 }}>{o.desc}</Text>
+              </View>
+              <View style={{ borderRadius: R.pill, backgroundColor: goldButton.to, paddingHorizontal: 14, paddingVertical: 8 }}>
+                <Text style={{ fontFamily: FONT.bold, fontSize: 13, color: goldButton.text }}>{OPEN_LABEL[lang] ?? OPEN_LABEL.en}</Text>
+              </View>
+            </View>
+          </GlassCard>
+        </Pressable>
+      ))}
       {m.scripture?.verses.map((v) => (
         <Pressable key={v.key} onPress={() => openHref(`/surah/${v.key.split(":")[0]}?v=${v.key.split(":")[1]}`)} accessibilityRole="link" accessibilityLabel={`${ui.quran} ${v.key}`}>
           <GlassCard>

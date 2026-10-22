@@ -150,14 +150,17 @@ export async function POST(req: NextRequest) {
     return json({ error: quota ? "busy" : "ai" }, quota ? 503 : 502);
   }
   if (!r.cached && r.tokensIn) globalDay.n += 1;
+  // finding a place or pointing to "Persönliche Dua" uses no model: it does not count as a question
+  const free = r.status === "nav" || r.status === "dua";
+  if (free) await refund();
   void logQuestion({ source: app ? "app" : "web", locale, context: context?.kind, category: r.category, outcome: r.status, cached: r.cached, passages: r.passages, tokensIn: r.tokensIn, tokensOut: r.tokensOut, ms: Date.now() - started, model: tutorModel() });
 
   const scripture = r.verses.length || r.hadith.length ? await resolveScripture(r.verses, r.hadith, locale).catch(() => ({ verses: [], hadith: [] })) : { verses: [], hadith: [] };
-  const left = Math.max(0, q.limit - q.used - 1);
+  const left = Math.max(0, q.limit - q.used - (free ? 0 : 1));
   if (v2) {
     return json({
       id: r.id, status: r.status, answer: r.answer, notice: r.notice ?? null, sources: r.sources, related: r.related, followups: r.followups,
-      verses: r.verses, hadith: r.hadith, scripture, cached: !!r.cached, quota: { limit: q.limit, left, pro: q.pro },
+      verses: r.verses, hadith: r.hadith, scripture, open: r.open ?? null, auto: !!r.auto, cached: !!r.cached, quota: { limit: q.limit, left, pro: q.pro },
     });
   }
   // v1 clients render one Markdown text: sources and the scholar note are written under the answer

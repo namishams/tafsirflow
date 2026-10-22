@@ -1,13 +1,13 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import Markdown from "@/components/Markdown";
 import { readTradition } from "@/lib/learn/tradition";
 import TutorAvatar from "./TutorAvatar";
 import TutorAvatarHidaya from "./TutorAvatarHidaya";
 import { readJSON, writeJSON } from "@/lib/storage";
-import { BUBBLE_KEY, bubbleSetting, addMemory, appChips, coachFacts, fillNext, goalIn, memoryForServer, nextUi, removeMemory, type MemoryState } from "@/lib/tutor/next";
+import { APP_ONLY, AUTO_OPEN_MS, OPEN_LABEL, BUBBLE_KEY, bubbleSetting, addMemory, appChips, coachFacts, fillNext, goalIn, memoryForServer, nextUi, removeMemory, type MemoryState } from "@/lib/tutor/next";
 import { useCoachInput } from "./coach";
 import { readMemory, saveMemory } from "./memory";
 import { useDictation, useSpeak } from "./voice";
@@ -66,6 +66,7 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
   const end = useRef<HTMLDivElement>(null);
   const consented = mounted && hasConsent(prefs);
   const nx = nextUi(locale);
+  const router = useRouter();
   const coach = useCoachInput();
   const [memory, setMemory] = useState<MemoryState | null>(null);
   const [goal, setGoal] = useState<string | null>(null);
@@ -116,8 +117,11 @@ export default function TutorChat({ context, initial }: { context?: TutorContext
         setErr(r.status === 402 || c === "pro" ? "pro" : r.status === 428 ? "consent" : c === "age" ? "age" : c === "verify" ? "verify" : r.status === 401 || c === "login" ? "login" : c === "limit" ? "limit" : c === "rate" ? "rate" : c === "off" ? "off" : r.status === 503 ? "busy" : "error");
         return;
       }
-      const all: ChatMsg[] = [...next, { role: "assistant", content: d.answer, at: Date.now(), id: d.id, status: d.status, notice: d.notice, sources: d.sources, related: d.related, followups: d.followups, scripture: d.scripture, persona }];
+      const all: ChatMsg[] = [...next, { role: "assistant", content: d.answer, at: Date.now(), id: d.id, status: d.status, notice: d.notice, sources: d.sources, related: d.related, followups: d.followups, scripture: d.scripture, persona, open: d.open ?? undefined }];
       setMsgs(all); saveChat(all);
+      // "öffne …" with one confident match: visible for a moment, then opened
+      const one = Array.isArray(d.open) && d.open.length === 1 ? d.open[0] : null;
+      if (d.auto && one && !one.appOnly) setTimeout(() => router.push(one.link), AUTO_OPEN_MS);
       setStatus((s) => (s ? { ...s, quota: { ...s.quota, ...d.quota } } : s));
     } catch { setErr("offline"); } finally { setBusy(false); }
   }, [busy, locale, address, persona, progress, coach, dictation]);
@@ -332,6 +336,16 @@ function AnswerView({ m, id, question, onFollow }: { m: ChatMsg; id: string; que
         <Markdown text={m.content} />
         {m.notice ? <p className="mb-3 text-[13px] font-medium text-[rgb(var(--gold))]">{m.notice}</p> : null}
       </div>
+      {m.open?.map((o) => {
+        const inner = (
+          <>
+            <span className="min-w-0 flex-1"><span className="block font-semibold">{o.title}</span><span className="block text-[13px] text-muted">{o.desc}</span></span>
+            <span className="btn-gold inline-flex h-9 shrink-0 items-center rounded-full px-4 text-[13px] font-bold">{o.appOnly ? (APP_ONLY[locale] ?? APP_ONLY.en) : (OPEN_LABEL[locale] ?? OPEN_LABEL.en)}</span>
+          </>
+        );
+        const cls = `flex items-center gap-3 rounded-3xl border border-[rgb(var(--gold)/0.7)] p-4 ${glass}`;
+        return o.appOnly ? <div key={o.link} className={cls}>{inner}</div> : <Link key={o.link} href={o.link} className={`${cls} transition hover:border-[rgb(var(--gold))]`}>{inner}</Link>;
+      })}
       {m.scripture?.verses.map((v) => (
         <Link key={v.key} href={`/surah/${v.key.split(":")[0]}?v=${v.key.split(":")[1]}`} className={`block rounded-3xl p-4 ${glass}`}>
           <p dir="rtl" lang="ar" className="font-arabic text-[22px] leading-[2]">{v.arabic}</p>

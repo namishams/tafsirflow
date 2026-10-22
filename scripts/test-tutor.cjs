@@ -210,6 +210,34 @@ const SAMPLES = [
     ok(chips.length === 1 && chips[0].href === "/tajweed/ikhfa" && chips[0].label.startsWith("Tajwid üben"), "chips link into the app, one per page, no outside links", JSON.stringify(chips));
   }
 
+  console.log("\n# find and open (navigation, no model)");
+  {
+    const { navIntent } = require("../src/lib/tutor/nav.ts");
+    for (const [q, want, auto] of [
+      ["öffne Sure al-Mulk", "/surah/67", true],
+      ["Öffne Surah 18", "/surah/18", true],
+      ["zeig mir Halal und Haram", "/shams/adab", false],
+      ["wo ist der Wudu-Trainer", "/wudu", false],
+      ["meine Nachrichten", "/together", false],
+      ["Sticker-Laden", "/sticker-collection", false],
+      ["Nahj Predigt 1", "/nahj?n=1", false],
+      ["Bukhari 1", "/hadith/bukhari?n=1", false],
+      ["Vers 2:255", "/surah/2?v=255", false],
+      ["Mishary", "/mishary", false],
+      ["Kurs Arabisch", "/arabic", false],
+      ["open the Qibla compass", "/qibla", true],
+      ["wo finde ich die 99 Namen Allahs", "/names", false],
+      ["öffne Ayat 300:1", null, false],
+      ["Was ist Ikhfa im Tajwid?", null, false],
+    ]) {
+      const r = navIntent(q, docs);
+      const pass = want === null ? r === null || !r.hits.length : !!r && r.hits.some((h) => (want === "/" ? h.link.length > 1 : h.link === want)) && (!auto || r.auto);
+      ok(pass, `nav: "${q}" → ${want ?? "no navigation"}`, r ? `${r.auto ? "auto " : ""}${r.hits.map((h) => `${h.link} ${h.score.toFixed(1)}`).join(", ")}` : "none");
+    }
+    const r = await askTutor({ question: "öffne Sure al-Mulk", history: [], lang: "de", address: null, tradition: "all", context: null }, { chat: async () => { throw new Error("no model for navigation"); }, moderate: mockModeration, corpus });
+    ok(r.status === "nav" && r.open?.[0]?.link === "/surah/67" && r.auto === true && r.tokensIn === 0, "nav: pipeline answers with an Öffnen card and no model call");
+  }
+
   console.log("\n# validation");
   const d0 = docs.find((d) => d.verses.length && d.kind === "course");
   ok(!checkAnswer({ status: "answered", answer: "Something without any source marker at all.", sources: [], verses: [], hadith: [], followups: [] }, [d0]).ok, "answer without sources is rejected");
