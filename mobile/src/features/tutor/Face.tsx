@@ -27,8 +27,7 @@ export function TutorFace({ persona, size = 40, still, speaking, thinking }: { p
 }
 
 /** the premium finish over both portraits (same geometry as the website's TutorChat.tsx FaceSheen): a soft rim light
- *  from the upper left, a gold ornament halo of sixteen small lozenges inside the ring, and a gentle vignette */
-const HALO = Array.from({ length: 16 }, (_, i) => { const a = (i / 16) * Math.PI * 2, r = 88.5, x = 100 + r * Math.cos(a), y = 100 + r * Math.sin(a); return `M${x.toFixed(1)} ${(y - 2.4).toFixed(1)}L${(x + 1.6).toFixed(1)} ${y.toFixed(1)}L${x.toFixed(1)} ${(y + 2.4).toFixed(1)}L${(x - 1.6).toFixed(1)} ${y.toFixed(1)}Z`; }).join("");
+ *  from the upper left, and a gentle vignette */
 function Sheen({ size }: { size: number }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 200 200" style={{ position: "absolute" }} pointerEvents="none">
@@ -38,7 +37,6 @@ function Sheen({ size }: { size: number }) {
       </Defs>
       <Circle cx="100" cy="100" r="94" fill="url(#sheenV)" />
       <Path d="M22 100A78 78 0 0 1 100 22" fill="none" stroke="url(#sheenRim)" strokeWidth={5} strokeLinecap="round" />
-      {size >= 40 ? <Path d={HALO} fill="#e8c877" opacity={0.55} /> : null}
     </Svg>
   );
 }

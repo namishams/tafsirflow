@@ -33,8 +33,7 @@ export function TutorFace({ persona, size = 40, speaking, still, thinking }: { p
 }
 
 /** the premium finish over both portraits (same geometry as the app's Face.tsx Sheen): a soft rim light from the
- *  upper left, a gold ornament halo of sixteen small lozenges inside the ring, and a gentle vignette */
-const HALO = Array.from({ length: 16 }, (_, i) => { const a = (i / 16) * Math.PI * 2, r = 88.5, x = 100 + r * Math.cos(a), y = 100 + r * Math.sin(a); return `M${x.toFixed(1)} ${(y - 2.4).toFixed(1)}L${(x + 1.6).toFixed(1)} ${y.toFixed(1)}L${x.toFixed(1)} ${(y + 2.4).toFixed(1)}L${(x - 1.6).toFixed(1)} ${y.toFixed(1)}Z`; }).join("");
+ *  upper left, and a gentle vignette */
 function FaceSheen({ size }: { size: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 200 200" aria-hidden className="pointer-events-none absolute inset-0">
@@ -44,7 +43,6 @@ function FaceSheen({ size }: { size: number }) {
       </defs>
       <circle cx="100" cy="100" r="94" fill="url(#tutor-sheen-v)" />
       <path d="M22 100A78 78 0 0 1 100 22" fill="none" stroke="url(#tutor-sheen-rim)" strokeWidth={5} strokeLinecap="round" />
-      {size >= 40 ? <path d={HALO} fill="#e8c877" opacity={0.55} /> : null}
     </svg>
   );
 }
