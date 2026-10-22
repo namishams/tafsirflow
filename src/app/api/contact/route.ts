@@ -4,16 +4,21 @@ import { clientIp, json, rateLimited, sameOrigin } from "@/lib/http";
 import { checkCaptchaStrict } from "@/lib/captcha";
 import { moderate } from "@/lib/moderation";
 import { sendMail } from "@/lib/mail";
+import { COUNTRY_CODES, countryName } from "@/lib/countries";
 import { emailRateLimited, isDisposableEmail } from "@/lib/botguard";
 
 export const dynamic = "force-dynamic";
 
-// Contact forms (owner 22.10.2026): /suggestions ("suggestion") and /reciters/apply ("reciter"). The message goes by
+// Contact forms (owner 22.10.2026): /suggestions ("suggestion") and /reciters/apply ("reciter"); since 23.10.2026
+// /partners ("partner": partnership and investment inquiries for Blueprint Shams 4.0, subject "[Partner]"). The message goes by
 // e-mail to info@ (reply-to the sender when given) and is kept in contact_messages as a backup; nothing goes to third
 // parties. Protection: same origin, honeypot, reCAPTCHA v2 checkbox + v3 score, per-IP limit, word filter.
 const TO = process.env.CONTACT_TO ?? "info@quranmasterclass.com";
 const SUGGEST_CATS = ["feature", "content", "bug", "other"];
 const WANTS = ["cooperation", "verify", "teach", "other"];
+const PARTNER_TYPES = ["strategic", "bank", "media", "sponsor", "content", "foundation", "other"];
+const TICKETS: Record<string, string> = { none: "nicht angegeben", t1: "bis USD 50.000", t2: "USD 50.000 – 250.000", t3: "USD 250.000 – 1 Mio.", t4: "über USD 1 Mio.", inkind: "Sachleistung (Studio, Medien, Sendezeit, Know-how)" };
+const PARTNER_LABEL: Record<string, string> = { strategic: "Strategisches Unternehmen", bank: "Islamische Bank / Investor", media: "Medienpartner", sponsor: "Sponsor einer Reihe", content: "Rezitator / Lehrkraft", foundation: "Stiftung / Institution", other: "Sonstiges" };
 const EMAIL = /^[^\s@<>"]{1,64}@[^\s@<>"]{1,190}\.[a-z]{2,}$/i;
 const LINK_HOSTS = /^(www\.|m\.|music\.)?(youtube\.com|youtu\.be|soundcloud\.com|on\.soundcloud\.com)$/i;
 
@@ -38,7 +43,7 @@ export async function POST(req: NextRequest) {
   const ip = clientIp(req);
   // honeypot: bots fill every field; answer as if it worked
   if (clean(b.website, 200)) return json({ ok: true }, 201);
-  const kind = b.kind === "reciter" ? "reciter" : b.kind === "suggestion" ? "suggestion" : null;
+  const kind = b.kind === "reciter" ? "reciter" : b.kind === "suggestion" ? "suggestion" : b.kind === "partner" ? "partner" : null;
   if (!kind) return json({ error: "invalid" }, 400);
   if (rateLimited(`contact:${ip}`, 5, 60 * 60_000)) return json({ error: "rate" }, 429);
   if (b.consent !== true) return json({ error: "consent" }, 400);
@@ -54,6 +59,13 @@ export async function POST(req: NextRequest) {
   if (kind === "suggestion") {
     category = String(b.category);
     if (!SUGGEST_CATS.includes(category)) return json({ error: "invalid" }, 400);
+  } else if (kind === "partner") {
+    // company, contact person, e-mail, country, type and the acknowledgement (no public offer, no advice) are required
+    const company = oneLine(clean(b.company, 160)), country = String(b.country ?? "").toUpperCase(), ticket = String(b.ticket ?? "none");
+    category = String(b.ptype);
+    if (company.length < 2 || name.length < 2 || !email || !COUNTRY_CODES.includes(country) || !PARTNER_TYPES.includes(category) || !Object.hasOwn(TICKETS, ticket)) return json({ error: "invalid" }, 400);
+    if (b.ack !== true) return json({ error: "consent" }, 400);
+    extra = { company, country, ticket };
   } else {
     if (name.length < 2 || !email) return json({ error: "invalid" }, 400);
     category = String(b.want);
@@ -70,8 +82,8 @@ export async function POST(req: NextRequest) {
     };
   }
 
-  if (!(await checkCaptchaStrict(b, kind === "reciter" ? "reciter_apply" : "suggestion", ip))) return json({ error: "captcha" }, 400);
-  if (await bad([name, message, String(extra.chain ?? "")].join("\n"))) return json({ error: "rejected" }, 422);
+  if (!(await checkCaptchaStrict(b, kind === "reciter" ? "reciter_apply" : kind === "partner" ? "partner_inquiry" : "suggestion", ip))) return json({ error: "captcha" }, 400);
+  if (await bad([name, message, String(extra.chain ?? ""), String(extra.company ?? "")].join("\n"))) return json({ error: "rejected" }, 422);
 
   const p = pool();
   let id: number | null = null;
@@ -81,10 +93,12 @@ export async function POST(req: NextRequest) {
     id = r ? Number(r.rows[0].id) : null;
   }
 
-  const lines = kind === "reciter"
+  const lines = kind === "partner"
+    ? [`Firma/Organisation: ${extra.company}`, `Ansprechperson: ${name}`, `E-Mail: ${email}`, `Land: ${countryName(String(extra.country), "de")} (${extra.country})`, `Art: ${PARTNER_LABEL[category] ?? category}`, `Größenordnung (unverbindlich): ${TICKETS[String(extra.ticket)]}`, "Hinweis bestätigt: kein öffentliches Angebot, keine Anlageberatung, keine Renditezusagen"]
+    : kind === "reciter"
     ? [`Name: ${name}`, `E-Mail: ${email}`, `Land: ${extra.country || "-"}`, `Riwaya: ${extra.riwaya || "-"}`, `Ijazah: ${extra.ijazah ? "ja" : "nein"}`, `Kette/Lehrer: ${extra.chain || "-"}`, `Anliegen: ${category}`, `Links:\n${(extra.links as string[]).join("\n") || "-"}`]
     : [`Name: ${name || "-"}`, `E-Mail: ${email || "-"}`, `Kategorie: ${category}`];
-  const subject = kind === "reciter" ? `[Rezitator] ${category}: ${name}` : `[Vorschlag] ${category}${name ? `: ${name}` : ""}`;
+  const subject = kind === "partner" ? `[Partner] ${PARTNER_LABEL[category] ?? category}: ${extra.company}` : kind === "reciter" ? `[Rezitator] ${category}: ${name}` : `[Vorschlag] ${category}${name ? `: ${name}` : ""}`;
   const text = `${lines.join("\n")}\n\nNachricht:\n${message}\n\n${id ? `#${id} ` : ""}${new Date().toISOString()}`;
   let mailed = false;
   try { mailed = await sendMail(TO, subject.slice(0, 180), text, undefined, email || undefined); } catch (e) { console.error("contact mail", e); }

@@ -1,0 +1,888 @@
+{
+  "nav": {
+    "label": "Blueprint Shams 4.0",
+    "footer": "Blueprint Shams 4.0",
+    "aboutLink": "Ortaklar için Blueprint Shams 4.0",
+    "supportLink": "Planın tamamını okuyun: Blueprint Shams 4.0",
+    "overview": "Genel bakış",
+    "studio": "Stüdyo",
+    "live": "Canlı okul",
+    "academy": "Akademi",
+    "partners": "Ortak olun"
+  },
+  "common": {
+    "kicker": "Blueprint · Shams 4.0",
+    "operator": "{company} tarafından işletilmektedir, Şarika (SPC Free Zone, Şarika, Birleşik Arap Emirlikleri). Kurucu: {founder}.",
+    "illustration": "Çizim · planlanıyor",
+    "example": "Örnek",
+    "built": "Hazır",
+    "planned": "Planlanan",
+    "ctaPartner": "Ortak olun",
+    "ctaRead": "Planı okuyun",
+    "ctaOverview": "Genel bakışa dönün",
+    "ctaSupport": "Gönüllü destek verin",
+    "nextPage": "İleri",
+    "legalTitle": "Önemli uyarı",
+    "legal": "Bu sayfalar, menkul kıymet veya şirket payı edinilmesine yönelik kamuya açık bir teklif değildir ve yatırım tavsiyesi niteliği taşımaz. Görüşmeler yalnızca bireysel olarak yapılır. Getiri vaadi verilmez.",
+    "shariah": "Şeriata uygun ortaklık modelleri bireysel olarak görüşülebilir. Herhangi bir şeriat uygunluk sertifikası iddiasında bulunmuyoruz.",
+    "noCrypto": "Kripto yok, garanti edilmiş getiri yok, değerleme yok.",
+    "bank": "Daha yüksek tutarlar, ICSL FZE şirketinin şirket hesabına banka havalesiyle aktarılabilir. Hesap bilgileri, inceleme sonrasında talep üzerine verilir.",
+    "mockNote": "Bu sayfalardaki tüm cihaz görünümleri, planlanan özelliklerin çizimleridir. İçlerindeki adlar, sayılar ve değerler örnektir, gerçek veri değildir.",
+    "breadcrumbHome": "Ana sayfa"
+  },
+  "seo": {
+    "overview": {
+      "title": "Blueprint Shams 4.0: İslami Eğitim Teknolojisi | Quran Masterclass",
+      "desc": "Shams 4.0: Kur'an'ın tamamı için video Masterclass, stüdyo, canlı dersler ve kâri akademisi. İslami eğitim teknolojisi için ortaklık ve yatırım başvurusu.",
+      "keywords": "İslami eğitim teknolojisi yatırımı, Kuran eğitimi ortaklığı, İslami medya sponsorluğu, Kur'an video kursu, İslami edtech Körfez, şeriata uygun ortaklık, Quran Masterclass, Shams Metodu"
+    },
+    "studio": {
+      "title": "Shams Stüdyosu: Kur'an Video Yapımı | Blueprint Shams 4.0",
+      "desc": "Planlanan Shams Stüdyosu: Kur'an'ın tamamı için video Masterclass'ın kamera, ses, ışık ve kurgusu – tilavet, tecvid ve tefsir. Bir seriye veya stüdyoya sponsor olun.",
+      "keywords": "Kur'an video yapımı, İslami medya sponsorluğu, Kur'an stüdyosu, tecvid video kursu, tefsir videoları, İslami medya ortaklığı"
+    },
+    "live": {
+      "title": "Canlı Kur'an Dersleri ve Konferanslar | Blueprint Shams 4.0",
+      "desc": "Quran Masterclass'ın planlanan canlı okulu: yetkin öğretmenlerle canlı Kur'an dersleri, kız kardeşler ve çocuk sınıfları, altyazılı Kur'an konferansları.",
+      "keywords": "online canlı Kur'an dersi, online Kur'an okulu, canlı Kur'an hocası, Kur'an konferansı, uzaktan Kuran kursu, İslami online eğitim ortaklığı"
+    },
+    "academy": {
+      "title": "Kâri Akademisi ve Kur'an Yarışmaları | Blueprint Shams 4.0",
+      "desc": "Shams 4.0'ın ardından: yeni Kur'an kârileri yetiştiren bir akademi ve iyilikte yarış anlayışıyla kâri yarışmaları – kör değerlendirme, yaş grubu ve ülke bazında.",
+      "keywords": "Kur'an kâri akademisi, Kur'an tilavet yarışması, Kur'an kârisi yetiştirme, İslami yetenekler Körfez, Kuran eğitimi yatırımı"
+    },
+    "partners": {
+      "title": "Ortaklık ve Yatırım Başvurusu: İslami Eğitim | Quran Masterclass",
+      "desc": "Stratejik İslami şirketler, İslami bankalar, etki yatırımcıları, medya kuruluşları, kurs serisi sponsorları ve tanınmış kâriler için Shams 4.0 ortaklık başvurusu.",
+      "keywords": "İslami eğitim teknolojisi yatırımı, Kuran eğitimi ortaklığı, İslami banka ortaklığı, İslami medya sponsorluğu, Kur'an kursu sponsorluğu, İslami eğitimde etki yatırımı"
+    }
+  },
+  "overview": {
+    "heroTitle": "Shams 4.0: Kur'an'ın tamamı için video Masterclass",
+    "heroLead": "Quran Masterclass, Shams Metodu ile okumayı, dinlemeyi, ezberlemeyi ve anlamayı şimdiden öğretiyor. Shams 4.0 hâlâ eksik olanı ekliyor: videoyu. Bütün Kur'an için eksiksiz bir video Masterclass – tilavet, tecvid ve tefsir – hadis, Şii öğrenciler için Nehcü'l-Belâğa, gerçek bir stüdyo, öğretmenlerle canlı dersler ve yarının kârileri için bir akademi.",
+    "heroFree": "Web sitesi sonsuza dek ücretsiz kalır ve videoları da barındıracaktır.",
+    "heroScene": "Planlanan özelliklerin çizimi: dizüstü bilgisayarda video ders, telefonda ders, tablette canlı sınıf ve Android'de yarışma.",
+    "factSurahs": "sure, her ayet sesli ve tefsirli",
+    "factLangs": "dil, Arapça ve sağdan sola yazılan dört dil daha",
+    "factSteps": "Shams Metodu'nun ayet başına adımı",
+    "factAccount": "web sitesi ve uygulama için tek hesap",
+    "visionKicker": "Vizyon",
+    "visionTitle": "Okumaktan ve dinlemekten görmeye ve öğrenmeye",
+    "visionLead": "Quran Masterclass bugüne kadar okuduğunuz ve dinlediğiniz bir okuldu. Shams 4.0 onu görebileceğiniz bir okula dönüştürüyor: okuyan, açıklayan ve düzelten bir öğretmen – her sure için, sizin dilinizde, sizin temponuzda.",
+    "todayTitle": "Bugün: Shams 1'den 3'e",
+    "todayBody": "Sesli Kur'an okuyucusu, Shams Metodu, kurslar, sınavlar ve sertifikalar, öğretmen bağlantısı, bir topluluk ve yapay zekâ destekli bir eğitmen – quranmasterclass.com'da ve iOS uygulamasında yayında.",
+    "nextTitle": "Shams 4.0",
+    "nextBody": "Bütün Kur'an için video dersler, hadis ve Nehcü'l-Belâğa, bir stüdyo, canlı dersler ve konferanslar, bir kâri akademisi, iyilikte yarışlar ve birçok kârinin video serileri.",
+    "ytTitle": "Neden sadece YouTube değil?",
+    "ytLead": "İnternette pek çok güzel Kur'an videosu var. Ama tek başına bir video, bir okul değildir.",
+    "ytColTopic": "Konu",
+    "ytColA": "Genel video platformları",
+    "ytColB": "Shams 4.0 ile Quran Masterclass",
+    "yt": [
+      {
+        "k": "Müfredat",
+        "a": "Belirli bir sırası olmayan tek tek videolar",
+        "b": "Belirli bir sırayla dersler, ilk harften Masterclass tilavetine kadar"
+      },
+      {
+        "k": "İlerleme",
+        "a": "Takip edilmez",
+        "b": "Her ders, ayet ve tekrar kaydedilir – web sitesinde ve uygulamada"
+      },
+      {
+        "k": "Yöntem",
+        "a": "Yalnızca izlemek",
+        "b": "Shams Metodu: dinleyin, adım adım kurun, anlayın, okuyun, tekrar edin"
+      },
+      {
+        "k": "Dikkat dağınıklığı",
+        "a": "Reklamlar, otomatik oynatma ve öneriler",
+        "b": "Reklam yok, alakasız içeriğe otomatik geçiş yok"
+      },
+      {
+        "k": "Öğretmen",
+        "a": "En iyi ihtimalle yorumlar",
+        "b": "Öğretmeninize geri bildirimli kayıtlar; canlı dersler planlanıyor"
+      },
+      {
+        "k": "Sertifikalar",
+        "a": "Yok",
+        "b": "Sınavlar ve doğrulanabilir sertifikalar"
+      },
+      {
+        "k": "Çocuklar",
+        "a": "Herkese açık bir platform",
+        "b": "Çocuk modu, yaş kuralları ve moderasyon"
+      },
+      {
+        "k": "Dil",
+        "a": "Çoğunlukla İngilizce veya Arapça",
+        "b": "14 dil; videolar için altyazı planlanıyor"
+      }
+    ],
+    "whoTitle": "Kur'an okuluna gidemeyen herkes için",
+    "whoLead": "Video Masterclass, uzaklık, iş, aile veya sağlık nedeniyle Kur'an okuluna ulaşamayan insanlara ulaşır.",
+    "who": [
+      {
+        "t": "Uzak bölgeler",
+        "d": "Yakınında yetkin bir öğretmen bulunmayan köyler ve kasabalar."
+      },
+      {
+        "t": "Kadınlar ve kız kardeşler",
+        "d": "Evde, kadın öğretmenlerle ve kız kardeşler için sınıflarla öğrenmek."
+      },
+      {
+        "t": "Çalışanlar",
+        "d": "Vardiyalı çalışanlar ve iş çıkışı günde on beş dakika öğrenen ebeveynler."
+      },
+      {
+        "t": "Yeni Müslümanlar",
+        "d": "İlk harften başlayarak, kendi dillerinde, çekinmeden."
+      },
+      {
+        "t": "Diaspora",
+        "d": "Arapça konuşan öğretmenlerden uzakta yaşayan aileler: Avrupa'da, Amerika'da ve Asya'da."
+      },
+      {
+        "t": "Engelli kişiler",
+        "d": "Altyazı, ayarlanabilir hız, büyük yazı ve evden öğrenme."
+      },
+      {
+        "t": "Ebeveynleriyle çocuklar",
+        "d": "Çocuk modu, kısa dersler ve birlikte izleyen ebeveynler."
+      }
+    ],
+    "pillarsKicker": "Plan",
+    "pillarsTitle": "Shams 4.0'ın altı sütunu",
+    "pillarsLead": "Her şey bugün zaten işleyen yapının üzerine kurulur: Shams Metodu, müfredat ve topluluk.",
+    "pillars": [
+      {
+        "t": "Video Masterclass",
+        "d": "Bütün Kur'an video üzerinde – tilavet, tecvid ve tefsir, sure sure, birbirini tamamlayan derslerle. Şii öğrenciler için hadis ve Nehcü'l-Belâğa ile birlikte.",
+        "cta": "Stüdyo ve yapım"
+      },
+      {
+        "t": "Stüdyo",
+        "d": "Kamera, ses, ışık ve kurgu donanımına sahip kendi stüdyomuz; her dersin Kur'an'a yakışır görünmesi ve duyulması için.",
+        "cta": "Stüdyoyu görün"
+      },
+      {
+        "t": "Canlı okul",
+        "d": "Yetkin öğretmenlerle canlı dersler – örneğin canlı ders veren bir Arap öğretmen – ve altyazılı Kur'an konferansları.",
+        "cta": "Canlı okulu görün"
+      },
+      {
+        "t": "Kâri akademisi",
+        "d": "4.0'dan sonra: seviyeler, stüdyo oturumları ve ustalar tarafından değerlendirme ile yeni Kur'an kârileri yetiştirmek – ve birçok kârinin video serileri.",
+        "cta": "Akademiyi görün"
+      },
+      {
+        "t": "İyilikte yarışlar",
+        "d": "Yaş grubuna ve ülkeye göre kâri yarışmaları, sabit bir değerlendirme ölçütüyle kör olarak değerlendirilir. Hiçbir şey ortaya konmaz, hiçbir şey şansa bağlı değildir.",
+        "cta": "Yarışmaları görün"
+      },
+      {
+        "t": "Sadece Kur'an için sosyal ağ",
+        "d": "Profiller, başarılar, çalışma halkaları ve mesajlar – yalnızca Kur'an çevresinde, reklamsız ve alakasız içeriksiz.",
+        "cta": "Topluluğu görün"
+      }
+    ],
+    "productKicker": "Hâlihazırda hazır",
+    "productTitle": "Bugünkü ürün",
+    "productLead": "Shams 4.0 sıfırdan başlamıyor. Bu bölümler hazır ve yayında – quranmasterclass.com'da ve iOS uygulamasında (uygulamanın gerçek ekran görüntüleri).",
+    "shotsNote": "iOS uygulamasının gerçek ekran görüntüleri (Almanca arayüz).",
+    "shots": {
+      "shams": "Shams Metodu",
+      "swipe": "Öğrenme kartları",
+      "hadith": "Hadis",
+      "nahj": "Nehcü'l-Belâğa",
+      "stickers": "Başarılar",
+      "feed": "Akış"
+    },
+    "builtTitle": "Hazır ve yayında",
+    "built": [
+      {
+        "t": "Shams Metodu",
+        "d": "Ayet başına yedi adım ve 1, 3, 7, 14, 30 ve 90 gün sonra tekrarlı kişisel bir hafıza modeli."
+      },
+      {
+        "t": "Kur'an okuyucusu",
+        "d": "114 surenin tamamı ayet ayet, birden çok kâri, kelime vurgulama, kelime kelime anlam ve kaynağıyla tefsir."
+      },
+      {
+        "t": "Masterclass müfredatı",
+        "d": "Dört okul aşaması, Masterclass tilavetine giden Kâri Yolu, Arapça A1'den C1'e, tecvid ve hıfz."
+      },
+      {
+        "t": "Sınavlar ve sertifikalar",
+        "d": "Her sınavı sunucu denetler; sertifikalar QR kodu taşır ve herkese açık biçimde doğrulanabilir. En yüksek seviyeler yalnızca bir insan dinledikten sonra."
+      },
+      {
+        "t": "Yapay zekâ eğitmenleri",
+        "d": "Dalil ve kız kardeşler için Hidaya: kaynaklara sıkı sıkıya bağlı, fetva yok, yalnızca onay ve oturum açma sonrasında."
+      },
+      {
+        "t": "Kâri profilleri ve Talents",
+        "d": "Tanınmış kârilerin biyografileri ve rozet, seviye ve başarılar içeren doğrulanmış üye profilleri."
+      },
+      {
+        "t": "Mesajlaşma",
+        "d": "Birebir ve 256 üyeye kadar gruplar; metin, resim, sesli ve görüntülü mesajlar; sunucuda şifreli (AES-256-GCM), her yerde bildirme ve engelleme, 16+."
+      },
+      {
+        "t": "Öğretmen bağlantısı",
+        "d": "Öğrenciler kayıtlarını öğretmenlerine gönderir ve ölçütle geri bildirim alır: mahreç, tecvid, vakf ve tempo."
+      },
+      {
+        "t": "Birlikte",
+        "d": "İyilikte yarış anlayışıyla çalışma halkaları ve bir lig – her özellik isteğe bağlı."
+      },
+      {
+        "t": "Sıralama",
+        "d": "Dünya genelinde ve ülke bazında en iyi öğrenciler, teşvik olarak görünür."
+      },
+      {
+        "t": "Nehcü'l-Belâğa ve hadis",
+        "d": "Nehcü'l-Belâğa okuyucusu ve çalışmaları, ve hadis ilimleri üzerine bir kurs."
+      },
+      {
+        "t": "Destekçiler",
+        "d": "Ziina (BAE) üzerinden gönüllü destek ve herkese açık bir destekçi listesi."
+      },
+      {
+        "t": "14 dil",
+        "d": "Arapça, Urduca, Farsça/Dari ve Peştuca dahil sağdan sola yazılan diller ve bir çocuk modu."
+      },
+      {
+        "t": "iOS uygulaması",
+        "d": "iPhone ve iPad, web sitesiyle aynı hesap, Pro ve uygulama içi satın alımlarla finanse edilir. App Store yayını beklemede."
+      }
+    ],
+    "plannedTitle": "Shams 4.0 ile planlananlar",
+    "planned": [
+      "Bölümler ve ders başına ilerleme gösteren ders video oynatıcısı",
+      "Yayın altyapısı: depolama, uyarlanabilir yayın ve dünya çapında dağıtım",
+      "Her videonun 14 dile altyazısı ve çevirisi",
+      "Kamera, ses, ışık ve kurgu donanımlı Shams Stüdyosu",
+      "Canlı dersler, bekleme odası, ders programı ve konferanslar",
+      "Kâri akademisi, seçmeler ve stüdyo oturumları",
+      "Yaş grubu ve ülke bazında, kör değerlendirilen yarışmalar",
+      "Birçok kârinin video serileri – yalnızca yazılı izinleriyle"
+    ],
+    "roadKicker": "Yol haritası",
+    "roadTitle": "Beş aşama",
+    "roadLead": "Bir takvim değil, bir sıra. Her aşama, ortakları, öğretmenleri ve âlimleri yerine oturunca başlar.",
+    "road": [
+      {
+        "t": "Video Masterclass",
+        "d": "İlk video dersler – örneğin tilavet, tecvid ve tefsirle Amme Cüzü – bölümler, ilerleme ve altyazı sunan bir oynatıcıda. Ardından sure sure, hadis ve Nehcü'l-Belâğa."
+      },
+      {
+        "t": "Stüdyo",
+        "d": "Birden çok kameralı, sesli, ışıklı ve kurgulu kendi stüdyomuz ve bir şey yayımlanmadan önce ilmî denetimden geçen bir yapım hattı."
+      },
+      {
+        "t": "Canlı okul",
+        "d": "Öğretmenlerle canlı dersler, bir ders programı, kız kardeşler ve çocuklar için sınıflar ve ilk Kur'an konferansları."
+      },
+      {
+        "t": "Kâri akademisi",
+        "d": "Yeni kâri yetiştirme: seviyeler, seçmeler, stüdyo oturumları, ustalar tarafından değerlendirme ve birçok kârinin video serileri."
+      },
+      {
+        "t": "Yarışmalar ve konferanslar",
+        "d": "Yaş grubu ve ülke bazında, kör değerlendirilen kâri yarışmaları ve yıllık bir konferans – iyilikte yarış anlayışıyla."
+      }
+    ],
+    "fundKicker": "Finansman",
+    "fundTitle": "Shams 4.0 nasıl finanse edilir",
+    "fundLead": "Öğrenme web sitesinde ücretsiz kalır. Uygulama kendi masrafını çıkarır. Ortaklar büyük yatırımları mümkün kılar.",
+    "fund": [
+      {
+        "t": "Web sitesi: sonsuza dek ücretsiz",
+        "d": "Web sitesi herkes için ücretsiz kalır ve videoları da barındıracaktır. Reklam yok, veri satışı yok. Gönüllü destek memnuniyetle karşılanır."
+      },
+      {
+        "t": "iOS uygulaması: Pro ve uygulama içi satın alımlar",
+        "d": "Uygulama, Quran Masterclass Pro ve uygulama içi satın alımlarla finanse edilir. Bunlar platformun işletme masraflarını karşılar."
+      },
+      {
+        "t": "Ortaklar: yapım ve altyapı",
+        "d": "Video yapımı, stüdyo, öğretmenler, yayın sunucuları ve çeviri ciddi maliyetlidir. Ortaklar tam olarak bunu mümkün kılar."
+      }
+    ],
+    "flowPartners": "Ortaklar",
+    "flowProduction": "Videolar, stüdyo, öğretmenler",
+    "flowWeb": "Web sitesinde ücretsiz",
+    "flowApp": "Uygulamada Pro",
+    "useKicker": "Fonların kullanımı",
+    "useTitle": "Ortak katkıları nereye gider",
+    "useLead": "Tutarları değil, kategorileri belirtiyoruz. Bütçeler bireysel olarak ve yazılı biçimde görüşülür.",
+    "use": [
+      {
+        "t": "Video yapımı",
+        "d": "Her ders için ekip, çekim, kurgu, renk ve ses miksajı."
+      },
+      {
+        "t": "Stüdyo",
+        "d": "Kameralar, mikrofonlar, akustik, aydınlatma ve sakin bir plato."
+      },
+      {
+        "t": "Öğretmenler ve kâriler",
+        "d": "Öğretmenlere, kârilere ve inceleyen âlimlere adil ücretler."
+      },
+      {
+        "t": "İlmî denetim",
+        "d": "Her ders yayımlanmadan önce kontrol edilir."
+      },
+      {
+        "t": "Yayın altyapısı",
+        "d": "Sunucular, depolama, uyarlanabilir yayın ve dünya çapında dağıtım."
+      },
+      {
+        "t": "Çeviri ve altyazı",
+        "d": "Her video 14 dilde, önce Arapça."
+      },
+      {
+        "t": "Canlı okul",
+        "d": "Sınıf yazılımı, moderasyon, ders programı ve destek."
+      },
+      {
+        "t": "Güvenlik ve erişilebilirlik",
+        "d": "Çocuk modu, moderasyon, veri koruma ve herkes için altyazı."
+      }
+    ],
+    "useNote": "Burada hiçbir tutar yayımlanmaz. Her bütçe bireysel bir görüşmenin parçasıdır.",
+    "gccKicker": "Neden Körfez",
+    "gccTitle": "Yetenekler burada yetişmeli",
+    "gccLead": "Körfez'in âlimleri, kârileri, İslami bankaları ve medya kuruluşları var – ve bununla birlikte, yeni neslin Kur'an'ı burada ve dünya genelinde nasıl öğreneceği konusunda bir sorumluluk.",
+    "gccCall": "Birleşik Arap Emirlikleri, Suudi Arabistan, Kuveyt, Katar, Bahreyn ve Umman'daki – ve dünya genelinde Endonezya, Malezya, Türkiye, Pakistan ve ötesindeki – İslami bankaları, İslami şirketleri, medya kuruluşlarını ve vakıfları Shams 4.0'a destek vermeye çağırıyoruz.",
+    "gccDedication": "Allah için, İslam için, Kur'an için ve Peygamber'in ﷺ sözleri için.",
+    "gccWorld": "Ve dünya genelinde",
+    "nowKicker": "Neden şimdi",
+    "nowTitle": "Neden şimdi",
+    "now": [
+      {
+        "t": "Platform mevcut",
+        "d": "Yazılımın zor kısmı hazır ve yayında: yöntem, müfredat, sınavlar, topluluk, 14 dil. Ortak katkıları deneylere değil, içeriğe gider."
+      },
+      {
+        "t": "Video, bir neslin öğrenme biçimi",
+        "d": "Gençler video ile öğreniyor. Orada yapılandırılmış bir Kur'an okulu bulamazlarsa, dikkat dağıtıcı şeyler bulurlar."
+      },
+      {
+        "t": "Önce Arapça, ilk günden küresel",
+        "d": "Sağdan sola yazılan diller, Arapça yazı tipleri ve hat sanatı tasarımın parçasıdır, sonradan eklenmiş bir şey değil."
+      },
+      {
+        "t": "Emirliklerden",
+        "d": "Dubai'de geliştirildi, Şarika'dan işletiliyor – bölgenin âlimlerine, kârilerine ve ortaklarına yakın."
+      }
+    ],
+    "founderKicker": "Kurucu",
+    "founderTitle": "Nami Shams",
+    "founderBody": "Nami Shams, Quran Masterclass'ın kurucusu ve Shams Metodu'nun geliştiricisidir. İslami araştırmalar ve İslami uygulamalar üzerinde çalışır, Nehcü'l-Belâğa'yı Almancaya çevirmiş, Bakara Suresi'nin tefsiri ve İmam Ali üzerine kitaplar yazmıştır.",
+    "founderLink": "Kurucu hakkında daha fazlası",
+    "operatorTitle": "Şirket",
+    "partnerKicker": "Ortaklık",
+    "partnerTitle": "Kimleri arıyoruz",
+    "partnerLead": "Stratejik İslami şirketler, İslami bankalar ve etki yatırımcıları, medya kuruluşları, kurs serisi sponsorları, vakıflar – ve içerik ortağı olarak tanınmış kâriler ve öğretmenler.",
+    "ctaTitle": "Shams 4.0'ı bizimle birlikte kurun",
+    "ctaLead": "Bir şirket, banka, medya kuruluşu, vakıf, kâri veya öğretmen olarak bize yazın. Ciddi her başvuruyu kişisel olarak yanıtlıyoruz."
+  },
+  "studio": {
+    "heroTitle": "Shams Stüdyosu",
+    "heroLead": "Tek bir amaç için kurulmuş bir stüdyo: Kur'an'ı ve öğretilmesini hak ettiği vakarla kaydetmek – net ses, sakin ışık ve dikkat dağıtmayan bir görüntü.",
+    "heroScene": "Çizim: dizüstü bilgisayarda bir dersin kurgusu ve tablette çekim planı.",
+    "planKicker": "Kat planı",
+    "planTitle": "Tilavet için bir oda, zanaat için bir oda",
+    "planLead": "Kayıt salonu sessiz ve sadedir: bir öğretmen, bir rahle, karşısında bir öğrenci. Üç kamera, yumuşak ışık, mikrofon sese yakın. Yan tarafta kontrol odası ve kurgu.",
+    "planCaption": "Olası bir kat planının çizimi. Ölçeksizdir.",
+    "legend": [
+      "Kamera A – öğretmenin geniş planı",
+      "Kamera B – yüzün ve mahreç için ağzın yakın planı",
+      "Kamera C – mushafa yukarıdan",
+      "Ana ışık – yumuşak ve önden",
+      "Dolgu ışığı – sert gölge yok",
+      "Arka ışık – öğretmeni arka plandan ayırır",
+      "Mikrofon – sese yakın",
+      "Öğretmen ve rahle",
+      "Karşıda öğrenci",
+      "Mihrap biçimli fon",
+      "Akustik paneller",
+      "Kontrol odası",
+      "Kurgu odası",
+      "Abdest ve namaz alanı"
+    ],
+    "kitKicker": "Donanım",
+    "kitTitle": "Bir ders neye ihtiyaç duyar",
+    "kitLead": "Burada marka ve fiyat yok – yalnızca kayıtların ihtiyaç duyduğu şeyler.",
+    "kit": [
+      {
+        "t": "Kameralar",
+        "d": "Aynı anda birden çok kamera: geniş plan, mahreç için yakın plan ve mushafa yukarıdan."
+      },
+      {
+        "t": "Ses",
+        "d": "Tilavet önce gelir: stüdyo mikrofonları, akustik düzenlemeli bir oda, müzik ve efekt yok."
+      },
+      {
+        "t": "Işık",
+        "d": "Sert gölgesiz, yumuşak ve sıcak ışık – saatlerce izlerken göze rahat."
+      },
+      {
+        "t": "Plato",
+        "d": "Sakin bir İslami plato: mihrap biçimli fon, ahşap, bir rahle, dikkat dağıtan hiçbir şey yok."
+      },
+      {
+        "t": "Kurgu ve renk",
+        "d": "Birden çok açı, temiz kesmeler, bölümler ve Masterclass tasarımında alt yazı bantları."
+      },
+      {
+        "t": "Arşiv",
+        "d": "Her kayıt iki kez güvenle saklanır; böylece dersler daha sonra iyileştirilebilir ve çevrilebilir."
+      }
+    ],
+    "lineKicker": "Yapım hattı",
+    "lineTitle": "Müfredattan ücretsiz derse",
+    "line": [
+      {
+        "t": "Müfredat ve senaryo",
+        "d": "Dersin ne öğrettiği ve kursta nerede durduğu."
+      },
+      {
+        "t": "İlmî denetim",
+        "d": "Senaryo, herhangi bir şey kaydedilmeden önce kontrol edilir."
+      },
+      {
+        "t": "Kayıt",
+        "d": "Stüdyoda, birden çok kamera ve temiz sesle."
+      },
+      {
+        "t": "Kurgu",
+        "d": "Kesmeler, bölümler, Kur'an verilerinden ekrana gelen ayet – asla elle yazılmaz."
+      },
+      {
+        "t": "Altyazı",
+        "d": "14 dile çeviri, önce Arapça."
+      },
+      {
+        "t": "Son kontrol",
+        "d": "Bitmiş videonun ikinci bir denetimi."
+      },
+      {
+        "t": "Yayın",
+        "d": "Web sitesinde ücretsiz; uygulamada çevrimdışı kullanım gibi Pro özellikleriyle."
+      }
+    ],
+    "rulesKicker": "İlkeler",
+    "rulesTitle": "Nasıl kayıt yapıyoruz",
+    "rules": [
+      "Önce ses: tilavetin her harfi net duyulmalıdır.",
+      "Kur'an'dan dikkati dağıtan müzik ve efekt yok.",
+      "Kız kardeşler için kadın öğretmenlerle kayıtlar; talep halinde kadın ekiple.",
+      "Her öğretmen ve kâri yazılı bir sözleşme çerçevesinde kayıt yapar; izin olmadan hiçbir şey yayımlanmaz.",
+      "Ekrandaki Kur'an metni yalnızca Kur'an verilerinden ve kaynağıyla birlikte gösterilir."
+    ],
+    "sponsorTitle": "Stüdyoya veya bir seriye sponsor olun",
+    "sponsorLead": "Bir ortak stüdyoyu mümkün kılabilir – ya da eksiksiz bir kurs serisini, örneğin Amme Cüzü, tecvid veya Nehcü'l-Belâğa."
+  },
+  "live": {
+    "heroTitle": "Canlı okul ve konferanslar",
+    "heroLead": "Bir sınıfın önünde bir öğretmen – canlı, stüdyodan veya evden. Öğrenciler sırayla okur, öğretmen dinler ve düzeltir. Yakınında Kur'an okulu bulunmayan herkes için.",
+    "heroScene": "Çizim: dizüstü bilgisayarda canlı bir ders, telefonda öğrencinin sırası ve Android'de bekleme odası.",
+    "formatsKicker": "Biçimler",
+    "formatsTitle": "Her öğrenci için dersler",
+    "formats": [
+      {
+        "t": "Halka",
+        "d": "Sırayla okuyan altı ila on öğrenciden oluşan küçük bir halka; öğretmen her birini dinler."
+      },
+      {
+        "t": "Anlatımlı ders",
+        "d": "Tefsir, hadis ve Nehcü'l-Belâğa – öğretmen anlatır, sınıf sorar."
+      },
+      {
+        "t": "Kız kardeşler için sınıflar",
+        "d": "Kız kardeşler için kadın öğretmenler, kapalı bir sınıfta."
+      },
+      {
+        "t": "Çocuk sınıfları",
+        "d": "Kısa, neşeli dersler; ebeveynler hazır bulunur."
+      },
+      {
+        "t": "Arapça dersler",
+        "d": "Örneğin canlı ders veren bir Arap öğretmen – Arapçayı hâlâ öğrenenler için altyazılı."
+      },
+      {
+        "t": "Konferanslar",
+        "d": "Ramazan'da ve sonrasında: birçok dilde altyazılı konuşmalar ve tilavet."
+      }
+    ],
+    "flowKicker": "Bir ders",
+    "flowTitle": "Canlı bir ders nasıl işler",
+    "flow": [
+      {
+        "t": "Bekleme odası",
+        "d": "Öğrenciler, öğretmen içeri alana kadar bekler."
+      },
+      {
+        "t": "Sırayla okuma",
+        "d": "Öğretmen her öğrenciyi sırayla dinler."
+      },
+      {
+        "t": "Düzeltme",
+        "d": "Sabit bir ölçütle: mahreç, tecvid, vakf ve tempo."
+      },
+      {
+        "t": "Ödev",
+        "d": "Ayetler doğrudan öğrencinin Shams tekrarına girer."
+      },
+      {
+        "t": "Kayıt",
+        "d": "Yalnızca herkes onay verdiğinde."
+      }
+    ],
+    "timetableKicker": "Ders programı",
+    "timetableTitle": "Bir okul haftası",
+    "timetableLead": "Sabit saatler haftaya bir düzen verir – gerçek bir Kur'an okulu gibi, yalnızca bütün dünyaya açık.",
+    "timetableScene": "Çizim: tablette canlı okulun haftalık ders programı.",
+    "confKicker": "Konferanslar",
+    "confTitle": "Altyazılı Kur'an konferansları",
+    "confLead": "Stüdyodan konuşmalar ve tilavet, dünya çapında yayınlanır; izleyicilerin dillerinde altyazılarla.",
+    "confScene": "Çizim: bir stüdyo ekranında Kur'an konferansı.",
+    "safeKicker": "Güvenlik",
+    "safeTitle": "Tasarımdan itibaren korunan",
+    "safe": [
+      "Bugünküyle aynı yaş kuralları: mesajlaşma ve bağlantılar yalnızca her iki tarafın da 16 yaşından itibaren.",
+      "Yalnızca kız kardeşlere ve yalnızca erkek kardeşlere özel sınıflar.",
+      "Her sınıfta bildirme ve engelleme, moderasyon okul tarafından yapılır.",
+      "Telefon numaraları veya e-posta adresleri diğer üyelere gösterilmez.",
+      "Çocuklar yalnızca bir ebeveyn veya veli ile."
+    ],
+    "basisTitle": "Neye dayanır",
+    "basis": [
+      "Kayıtlar ve ölçütle geri bildirimli öğretmen bağlantısı",
+      "256 üyeye kadar mesajlaşma grupları",
+      "Birlikte bölümündeki çalışma halkaları",
+      "Sınavlar ve doğrulanabilir sertifikalar"
+    ]
+  },
+  "academy": {
+    "heroTitle": "Kâri akademisi ve yarışmalar",
+    "heroLead": "Shams 4.0'ın ardından sıradaki adım gelir: yeni Kur'an kârileri yetiştirmek. Yetenekler burada, Körfez'de – ve Kur'an'ın sevildiği her yerde – yetişmeli.",
+    "heroScene": "Çizim: telefonda bir sıralama, dizüstü bilgisayarda kör jüri, tablette öğrenen çocuklar ve Android'de akademi seviyeleri.",
+    "pathKicker": "Yol",
+    "pathTitle": "Öğrenciden kâriye",
+    "path": [
+      {
+        "t": "Kâri Yolu",
+        "d": "Sınavlı ve kayıtlı on seviye; en yüksek seviyeler yalnızca bir insan dinledikten sonra.",
+        "built": true
+      },
+      {
+        "t": "Seçme",
+        "d": "Gelecek vaat eden öğrenciler bir heyetin önünde okur – çevrimiçi veya stüdyoda.",
+        "built": false
+      },
+      {
+        "t": "Mentorluk",
+        "d": "Deneyimli kâriler ve öğretmenlerle düzenli oturumlar.",
+        "built": false
+      },
+      {
+        "t": "Stüdyo oturumları",
+        "d": "Stüdyoda kayıt; ses, nefes ve makam üzerine geri bildirimle.",
+        "built": false
+      },
+      {
+        "t": "Video serisi",
+        "d": "Mezunlar kendi serilerini kaydeder – yazılı bir sözleşmeyle.",
+        "built": false
+      }
+    ],
+    "pathLink": "Kâri Yolu'nu açın",
+    "mentorsTitle": "Mentor olarak tanınmış kâriler",
+    "mentorsLead": "Tanınmış kârileri mentor ve içerik ortağı olarak kazanmak istiyoruz. İsimler yalnızca sözleşme imzalandıktan sonra yayımlanır.",
+    "compKicker": "Yarışmalar",
+    "compTitle": "İyilikte yarışmak",
+    "compLead": "Kur'an'ı onurlandıran yarışmalar: adil, şeffaf ve kumara benzeyen hiçbir unsur içermeyen.",
+    "compRules": [
+      {
+        "t": "Kör değerlendirme",
+        "d": "Jüri bir numara duyar; ne isim ne ülke."
+      },
+      {
+        "t": "Sabit bir ölçüt",
+        "d": "Mahreç, tecvid, vakf ve tempo – öğretmen bağlantısındaki ölçütün aynısı."
+      },
+      {
+        "t": "Adil gruplar",
+        "d": "Çocuklar, gençler ve yetişkinler; kız ve erkek kardeşler; ülke bazında ve dünya genelinde."
+      },
+      {
+        "t": "Hiçbir şey ortaya konmaz",
+        "d": "Şans için ücret yok, rastgelelik yok. Sertifikalarla ve stüdyoya davetle takdir."
+      }
+    ],
+    "verseRef": "Kur'an 83:26",
+    "verseNote": "Ayet, iyilik için çabalayanlardan söz eder – buradaki her yarışmanın ruhu.",
+    "kidsKicker": "Çocuklar",
+    "kidsTitle": "Gelecek nesil küçükten başlar",
+    "kidsLead": "Çocuk modu zaten mevcut. Shams 4.0 ile çocuklar tablette kısa video dersler alır – harfler, kısa sureler ve birlikte izleyen ebeveynler.",
+    "kidsScene": "Çizim: tablette öğrenen çocuklar.",
+    "seriesTitle": "Birçok kâri için uygulamalar ve video serileri",
+    "seriesLead": "Kaydedilen her kâri kendi serisine sahip olabilir – Masterclass içinde ve ayrı bir uygulama olarak. Daima kârinin yazılı izniyle."
+  },
+  "partners": {
+    "heroTitle": "Ortaklık ve yatırım başvurusu",
+    "heroLead": "Shams 4.0, Kur'an'ı yeni nesle taşımak isteyen ortaklara ihtiyaç duyar – sermaye, medya, uzmanlık veya içerikle.",
+    "typesKicker": "Ortaklar",
+    "typesTitle": "Birlikte çalışma biçimleri",
+    "types": [
+      {
+        "t": "Stratejik İslami şirketler",
+        "d": "Kur'an eğitiminin arkasında durmak isteyen şirketler: stratejik ortaklık, teknoloji, serilerde ortak markalama."
+      },
+      {
+        "t": "İslami bankalar ve etki yatırımcıları",
+        "d": "İslami bankalar, aile ofisleri ve etki yatırımcıları. Şeriata uygun modeller bireysel olarak görüşülebilir."
+      },
+      {
+        "t": "Medya ortakları",
+        "d": "TV kanalları, yayın platformları ve yayıncılar: ortak yapım, dağıtım ve yayın süresi."
+      },
+      {
+        "t": "Kurs serisi sponsorları",
+        "d": "Eksiksiz bir seriye sponsor olun – örneğin video olarak Amme Cüzü, tecvid veya Nehcü'l-Belâğa."
+      },
+      {
+        "t": "Kâriler ve öğretmenler",
+        "d": "İçerik ortağı olarak tanınmış kâriler ve yetkin öğretmenler – videoda veya canlı."
+      },
+      {
+        "t": "Vakıflar ve kurumlar",
+        "d": "Hedefi paylaşan vakıflar, üniversiteler ve Kur'an enstitüleri."
+      }
+    ],
+    "stepsKicker": "Süreç",
+    "stepsTitle": "Bir başvuru nasıl ilerler",
+    "steps": [
+      {
+        "t": "Başvuru",
+        "d": "Aşağıdaki formla bize yazarsınız."
+      },
+      {
+        "t": "Kişisel yanıt",
+        "d": "E-postayla yanıt verir ve ilk görüşmeyi öneririz."
+      },
+      {
+        "t": "İnceleme",
+        "d": "İki taraf birbirini tanır; gerekirse gizlilik sözleşmesi."
+      },
+      {
+        "t": "Yazılı sözleşme",
+        "d": "Her ortaklık bireysel olarak yazılı biçimde kararlaştırılır."
+      }
+    ],
+    "formKicker": "Başvuru",
+    "formTitle": "Bize yazın",
+    "formLead": "Kim olduğunuzu ve aklınızda ne olduğunu bize anlatın. Büyüklük dışındaki tüm alanlar gereklidir.",
+    "faqTitle": "Sorular",
+    "faq": [
+      {
+        "q": "Bu, pay veya menkul kıymet teklifi midir?",
+        "a": "Hayır. Bu sayfalar, menkul kıymet veya şirket payı edinilmesine yönelik kamuya açık bir teklif ve yatırım tavsiyesi değildir. Görüşmeler yalnızca bireysel olarak yapılır."
+      },
+      {
+        "q": "Getiri vaat ediyor musunuz?",
+        "a": "Hayır. Getiri vaadinde bulunmuyoruz ve değerleme yayımlamıyoruz."
+      },
+      {
+        "q": "Bir ortaklık şeriata uygun olabilir mi?",
+        "a": "Şeriata uygun modeller bireysel olarak görüşülebilir. Herhangi bir şeriat uygunluk sertifikası iddiasında bulunmuyoruz."
+      },
+      {
+        "q": "Web sitesi ücretsiz kalacak mı?",
+        "a": "Evet. Web sitesi sonsuza dek ücretsiz kalır ve videoları da barındıracaktır. iOS uygulaması Pro ve uygulama içi satın alımlarla finanse edilir."
+      },
+      {
+        "q": "Daha yüksek tutarlar nasıl aktarılabilir?",
+        "a": "ICSL FZE şirketinin şirket hesabına banka havalesiyle. Hesap bilgileri inceleme sonrasında talep üzerine verilir – asla bu web sitesinde değil."
+      },
+      {
+        "q": "Küçük bir tutarla da destek olabilir miyim?",
+        "a": "Evet, destek sayfasında – gönüllü olarak, karşılığında hiçbir şey beklemeden."
+      },
+      {
+        "q": "Quran Masterclass'ı kim işletiyor?",
+        "a": "ICSL FZE – Islamic Coding & Software Lab, Şarika (SPC Free Zone, Şarika, Birleşik Arap Emirlikleri). Kurucu: Nami Shams."
+      }
+    ],
+    "reciterNote": "Kâri misiniz? Kâriler için hazırlanan formu da kullanabilirsiniz.",
+    "reciterLink": "Kâriler için form"
+  },
+  "form": {
+    "company": "Şirket veya kuruluş",
+    "contact": "İlgili kişi",
+    "email": "E-posta",
+    "country": "Ülke",
+    "countryPick": "Lütfen seçin",
+    "type": "Ortaklık türü",
+    "types": {
+      "strategic": "Stratejik şirket",
+      "bank": "İslami banka veya yatırımcı",
+      "media": "Medya ortağı",
+      "sponsor": "Bir seri sponsoru",
+      "content": "Kâri veya öğretmen",
+      "foundation": "Vakıf veya kurum",
+      "other": "Diğer"
+    },
+    "ticket": "Tahmini büyüklük (isteğe bağlı)",
+    "ticketHint": "Yalnızca yönlendirme amaçlıdır. Teklif değildir ve bağlayıcı değildir.",
+    "tickets": {
+      "none": "Belirtilmedi",
+      "t1": "50.000 USD'ye kadar",
+      "t2": "50.000 – 250.000 USD",
+      "t3": "250.000 USD – 1 milyon USD",
+      "t4": "1 milyon USD üzeri",
+      "inkind": "Ayni (stüdyo, medya, yayın süresi, uzmanlık)"
+    },
+    "message": "Mesajınız",
+    "messageHint": "Kim olduğunuz, aklınızdaki fikir ve Shams 4.0'ın hangi bölümüyle ilgilendiğiniz.",
+    "ack": "Bunun, menkul kıymet veya şirket payı edinilmesine yönelik kamuya açık bir teklif ve yatırım tavsiyesi olmadığını, ayrıca hiçbir getiri vaat edilmediğini anlıyorum.",
+    "sent": "Teşekkür ederiz. Başvurunuz bize ulaştı. E-postayla kişisel olarak yanıt vereceğiz."
+  },
+  "mock": {
+    "brand": "Quran Masterclass",
+    "lessonOf": "Ders {n}",
+    "module": "Amme Cüzü · Modül 3",
+    "lessonTitle": "Tecvid: uzatma (med)",
+    "teacher": "Öğretmen",
+    "teacherName": "Hoca · örnek",
+    "teacherSister": "Hocahanım · örnek",
+    "subtitles": "Altyazı",
+    "speed": "Hız",
+    "repeat": "Tekrar ×3",
+    "chapters": "Bölümler",
+    "chapterList": [
+      "Dinleyin",
+      "Kural",
+      "Örnekler",
+      "Birlikte okuyun"
+    ],
+    "progress": "Kurs ilerlemesi",
+    "next": "Sonraki ders",
+    "ask": "Öğretmeninize sorun",
+    "step": "Shams adımı {a}/{b}",
+    "noAds": "Reklam yok · otomatik oynatma yok",
+    "lessons": [
+      "Med harfleri",
+      "Tabii med: iki hareke",
+      "Muttasıl med",
+      "Munfasıl med",
+      "Tekrar ve test"
+    ],
+    "done": "Bitti",
+    "now": "Şimdi",
+    "minutes": "{n} dk",
+    "continue": "Devam",
+    "live": "CANLI",
+    "halaqa": "Halka · Mülk Suresi",
+    "sistersClass": "Kız kardeşler sınıfı",
+    "yourTurn": "Sıra sizde",
+    "reciting": "Şimdi okuyor",
+    "queue": "Sıradaki",
+    "raise": "Söz talebi",
+    "mic": "Mikrofon",
+    "cam": "Kamera",
+    "leave": "Ayrıl",
+    "feedback": "Geri bildirim",
+    "rubric": [
+      "Mahreç",
+      "Tecvid",
+      "Vakf",
+      "Tempo"
+    ],
+    "note": "Çok güzel. 3. ayetteki medi biraz daha uzatın.",
+    "waiting": "Bekleme odası",
+    "waitingText": "Öğretmen sizi birazdan içeri alacak.",
+    "admit": "İçeri al",
+    "students": "{n} öğrenci",
+    "consent": "Kayıt yalnızca onayla",
+    "names": [
+      "Yusuf",
+      "Meryem",
+      "İbrahim",
+      "Hatice",
+      "Hamza",
+      "Zeynep",
+      "İdris",
+      "Emine"
+    ],
+    "conference": "Kur'an konferansı",
+    "panel": "Yeni nesle Kur'an öğretmek",
+    "liveSubs": "Canlı altyazı",
+    "speaker": "Konuşmacı",
+    "viewers": "İzleyici",
+    "timetable": "Ders programı",
+    "classes": [
+      "Tecvid A1",
+      "Hıfz halkası",
+      "Amme Cüzü tefsiri",
+      "Kur'an için Arapça",
+      "Nehcü'l-Belâğa",
+      "Çocuk sınıfı",
+      "Kız kardeşler halkası",
+      "Hadis"
+    ],
+    "edit": "Kurgu · ders 12",
+    "tracks": [
+      "Kamera A",
+      "Kamera B",
+      "Kamera C",
+      "Tilavet",
+      "Altyazı"
+    ],
+    "review": "İlmî denetim",
+    "approved": "Onaylandı",
+    "pending": "Bekliyor",
+    "export": "Dışa aktar",
+    "plan": "Çekim planı",
+    "shots": [
+      "Nebe Suresi · ayet 1–16",
+      "Mahreç için yakın planlar",
+      "Yukarıdan mushaf",
+      "Öğretmenin girişi"
+    ],
+    "recorded": "Kaydedildi",
+    "today": "Bugün",
+    "planned": "Planlandı",
+    "board": "İyilikte yarışmak",
+    "comp": "Amme Cüzü tilaveti",
+    "world": "Dünya geneli",
+    "country": "Ülkeye göre",
+    "youth": "Gençler 13–17",
+    "score": "Puan",
+    "you": "Siz",
+    "blind": "Kör değerlendirme",
+    "jury": "Jüri · kör değerlendirme",
+    "participant": "Katılımcı {n}",
+    "submit": "Puanı gönder",
+    "average": "Ortalama",
+    "kids": "Birlikte öğrenelim",
+    "letters": "Harfler",
+    "listen": "Dinleyin",
+    "again": "Tekrar",
+    "parents": "Ebeveynler birlikte izler",
+    "surahKids": "İhlas Suresi",
+    "academy": "Kâri akademisi",
+    "level": "Seviye {n}",
+    "audition": "Seçme",
+    "mentor": "Mentorluk oturumu",
+    "studio": "Stüdyo oturumu",
+    "master": "Usta değerlendirmesi",
+    "certificate": "Sertifika",
+    "open": "Aç"
+  }
+}

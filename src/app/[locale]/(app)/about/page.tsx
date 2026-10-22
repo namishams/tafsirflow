@@ -11,6 +11,7 @@ import FounderAbout from "@/components/FounderAbout";
 import { MoreTiles } from "@/components/PosterTiles";
 import { CalligraphyDraw } from "@/components/Ornaments";
 import { IslamArcadeLine, IslamBreak, IslamCorners, IslamMosque, IslamNum, IslamRain } from "@/components/art/IslamArt";
+import { bpText } from "@/lib/blueprint/text";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -27,6 +28,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const tc = await getTranslations("company");
   const tn = await getTranslations("nav");
   const tl = await getTranslations("legal");
+  const bp = await bpText(locale);
   const ld = { "@context": "https://schema.org", "@type": "AboutPage", url: abs(`/${locale}/about`), inLanguage: locale, mainEntity: organizationLd(abs) };
   const founder = { "@context": "https://schema.org", "@graph": [founderLd(abs), founderBookLd(abs), ...founderWritingsLd(abs)] };
   return (
@@ -146,6 +148,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <Link href="/shams" className="btn-gold inline-flex h-11 items-center rounded-full px-5 text-sm font-bold">{t("ctaShams")}</Link>
           <Link href="/feedback" className="inline-flex h-11 items-center rounded-full border border-[rgb(var(--isl-gold-soft))]/50 px-5 text-sm font-bold hover:border-[rgb(var(--isl-gold-soft))]">{t("ctaFeedback")}</Link>
           <Link href="/support" className="inline-flex h-11 items-center rounded-full border border-[rgb(var(--isl-gold-soft))]/50 px-5 text-sm font-bold hover:border-[rgb(var(--isl-gold-soft))]">{tn("support")}</Link>
+          <Link href="/blueprint" className="inline-flex h-11 items-center rounded-full border border-[rgb(var(--isl-gold-soft))]/50 px-5 text-sm font-bold hover:border-[rgb(var(--isl-gold-soft))]">{bp.nav.aboutLink}</Link>
         </div>
       </section>
       </div>

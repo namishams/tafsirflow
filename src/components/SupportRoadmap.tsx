@@ -1,4 +1,6 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { bpText } from "@/lib/blueprint/text";
 
 // "The future of Quran Masterclass": plans only (no dates, no promises). Shown on /support to explain what voluntary
 // project support helps to build. Self-contained; texts in messages → supporters.road*.
@@ -9,6 +11,7 @@ const ICONS = [
 ];
 export default async function SupportRoadmap() {
   const t = await getTranslations("supporters");
+  const bp = await bpText(await getLocale());
   const cols = [["roadNowT", "roadNow"], ["roadNextT", "roadNext"], ["roadVisT", "roadVis"]] as const;
   return (
     <section className="mt-16" aria-labelledby="road-title">
@@ -26,6 +29,8 @@ export default async function SupportRoadmap() {
         ))}
       </ol>
       <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-ink/85">{t("roadFund")}</p>
+      {/* the full plan for partners and investors (Blueprint Shams 4.0) */}
+      <Link href="/blueprint" className="mt-4 inline-flex items-center gap-2 text-[15px] font-bold text-accent hover:underline">{bp.nav.supportLink} <span aria-hidden className="inline-block rtl:-scale-x-100">→</span></Link>
     </section>
   );
 }

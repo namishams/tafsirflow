@@ -1,0 +1,888 @@
+{
+  "nav": {
+    "label": "Blueprint Shams 4.0",
+    "footer": "Blueprint Shams 4.0",
+    "aboutLink": "Blueprint Shams 4.0 pour les partenaires",
+    "supportLink": "Lire le plan complet : Blueprint Shams 4.0",
+    "overview": "Vue d'ensemble",
+    "studio": "Studio",
+    "live": "École en direct",
+    "academy": "Académie",
+    "partners": "Devenir partenaire"
+  },
+  "common": {
+    "kicker": "Blueprint · Shams 4.0",
+    "operator": "Exploité par {company}, Charjah (SPC Free Zone, Charjah, Émirats arabes unis). Fondateur : {founder}.",
+    "illustration": "Illustration · prévu",
+    "example": "Exemple",
+    "built": "Réalisé",
+    "planned": "Prévu",
+    "ctaPartner": "Devenir partenaire",
+    "ctaRead": "Lire le plan",
+    "ctaOverview": "Retour à la vue d'ensemble",
+    "ctaSupport": "Soutenir volontairement",
+    "nextPage": "Suivant",
+    "legalTitle": "Avis important",
+    "legal": "Ces pages ne constituent ni une offre publique d'acquisition de valeurs mobilières ou de parts de la société, ni un conseil en investissement. Les échanges ont lieu uniquement à titre individuel. Aucune promesse de rendement.",
+    "shariah": "Des modèles de partenariat conformes à la charia peuvent être discutés au cas par cas. Nous ne revendiquons aucune certification charia.",
+    "noCrypto": "Pas de cryptomonnaies, pas de rendement garanti, pas de valorisation.",
+    "bank": "Des montants plus importants sont possibles par virement bancaire sur le compte de la société ICSL FZE. Coordonnées bancaires communiquées sur demande après examen.",
+    "mockNote": "Toutes les vues d'appareils de ces pages sont des illustrations de fonctionnalités prévues. Les noms, chiffres et valeurs qu'elles contiennent sont des exemples, non des données.",
+    "breadcrumbHome": "Accueil"
+  },
+  "seo": {
+    "overview": {
+      "title": "Blueprint Shams 4.0 : edtech islamique | Quran Masterclass",
+      "desc": "Shams 4.0 : Masterclass vidéo du Coran entier, studio, cours en direct et académie de récitateurs. Demandes de partenariat et d'investissement pour l'edtech islamique.",
+      "keywords": "investissement edtech islamique, partenariat éducation coranique, sponsoring média islamique, cours vidéo du Coran, edtech islamique Golfe, partenariat conforme à la charia, Quran Masterclass, méthode Shams"
+    },
+    "studio": {
+      "title": "Studio Shams : production vidéo du Coran | Blueprint Shams 4.0",
+      "desc": "Le futur studio Shams : caméras, son, lumière et montage pour une Masterclass vidéo du Coran entier – récitation, tajwid et tafsir. Parrainez une série ou le studio.",
+      "keywords": "production vidéo coranique, sponsoring média islamique, studio coranique, cours vidéo de tajwid, tafsir en vidéo, partenariat média islamique"
+    },
+    "live": {
+      "title": "Cours de Coran en direct et conférences | Blueprint Shams 4.0",
+      "desc": "École en direct prévue de Quran Masterclass : cours de Coran en direct avec des enseignants qualifiés, classes pour sœurs et enfants, conférences sous-titrées.",
+      "keywords": "cours de Coran en direct en ligne, école coranique en ligne, professeur de Coran en direct, conférence coranique, partenariat éducation islamique en ligne"
+    },
+    "academy": {
+      "title": "Académie de récitateurs et concours de Coran | Blueprint Shams 4.0",
+      "desc": "Après Shams 4.0 : une académie qui forme de nouveaux récitateurs du Coran et des concours de récitation – émulation dans le bien, jugés à l'aveugle.",
+      "keywords": "académie de récitateurs du Coran, concours de récitation du Coran, former des récitateurs du Coran, talents islamiques Golfe, investissement éducation coranique"
+    },
+    "partners": {
+      "title": "Partenariat et investissement : edtech islamique | Quran Masterclass",
+      "desc": "Pour entreprises islamiques, banques islamiques, investisseurs à impact, médias, parrains de séries et récitateurs de renom : construisons Shams 4.0 ensemble.",
+      "keywords": "investissement edtech islamique, partenariat éducation coranique, partenariat banque islamique, sponsoring média islamique, parrainer un cours de Coran, investissement à impact éducation islamique"
+    }
+  },
+  "overview": {
+    "heroTitle": "Shams 4.0 : la Masterclass vidéo du Coran entier",
+    "heroLead": "Quran Masterclass enseigne déjà à lire, écouter, mémoriser et comprendre avec la Méthode Shams. Shams 4.0 ajoute ce qui manque encore : la vidéo. Une Masterclass vidéo complète du Coran entier – récitation, tajwid et tafsir – avec le hadith, le Nahj al-Balagha pour les apprenants chiites, un vrai studio, des cours en direct avec des enseignants et une académie pour les récitateurs de demain.",
+    "heroFree": "Le site reste gratuit pour toujours et hébergera les vidéos.",
+    "heroScene": "Illustration de fonctionnalités prévues : la leçon vidéo sur un ordinateur portable, la leçon sur un téléphone, un cours en direct sur une tablette et un concours sur Android.",
+    "factSurahs": "sourates, chaque verset avec audio et tafsir",
+    "factLangs": "langues, l'arabe et quatre autres de droite à gauche",
+    "factSteps": "étapes de la Méthode Shams par verset",
+    "factAccount": "compte pour le site et l'application",
+    "visionKicker": "Vision",
+    "visionTitle": "De la lecture et de l'écoute à la vue et à l'apprentissage",
+    "visionLead": "Jusqu'ici, Quran Masterclass est une école que l'on lit et que l'on écoute. Shams 4.0 en fait une école que l'on voit : un enseignant qui récite, explique et corrige – pour chaque sourate, dans votre langue, à votre rythme.",
+    "todayTitle": "Aujourd'hui : Shams 1 à 3",
+    "todayBody": "Lecteur du Coran avec audio, Méthode Shams, cours, examens et certificats, lien avec l'enseignant, communauté et tuteur IA – en ligne sur quranmasterclass.com et dans l'application iOS.",
+    "nextTitle": "Shams 4.0",
+    "nextBody": "Leçons vidéo pour le Coran entier, hadith et Nahj al-Balagha, un studio, cours en direct et conférences, une académie de récitateurs, des concours d'émulation dans le bien et des séries vidéo de nombreux récitateurs.",
+    "ytTitle": "Pourquoi pas simplement YouTube ?",
+    "ytLead": "Il existe en ligne de nombreuses belles vidéos du Coran. Mais une vidéo seule ne fait pas une école.",
+    "ytColTopic": "Sujet",
+    "ytColA": "Plateformes vidéo généralistes",
+    "ytColB": "Quran Masterclass avec Shams 4.0",
+    "yt": [
+      {
+        "k": "Programme",
+        "a": "Vidéos isolées, sans ordre",
+        "b": "Leçons dans un ordre fixe, de la première lettre à la récitation Masterclass"
+      },
+      {
+        "k": "Progression",
+        "a": "Non suivie",
+        "b": "Chaque leçon, verset et révision est enregistré – sur le site et dans l'application"
+      },
+      {
+        "k": "Méthode",
+        "a": "Simple visionnage",
+        "b": "La Méthode Shams : écouter, construire, comprendre, réciter, réviser"
+      },
+      {
+        "k": "Distraction",
+        "a": "Publicités, lecture automatique et recommandations",
+        "b": "Pas de publicité, pas de lecture automatique vers des contenus sans rapport"
+      },
+      {
+        "k": "Enseignant",
+        "a": "Des commentaires, au mieux",
+        "b": "Enregistrements envoyés à votre enseignant avec retour ; cours en direct prévus"
+      },
+      {
+        "k": "Certificats",
+        "a": "Aucun",
+        "b": "Examens et certificats vérifiables"
+      },
+      {
+        "k": "Enfants",
+        "a": "Une plateforme ouverte",
+        "b": "Mode enfants, règles d'âge et modération"
+      },
+      {
+        "k": "Langue",
+        "a": "Surtout anglais ou arabe",
+        "b": "14 langues ; sous-titres des vidéos prévus"
+      }
+    ],
+    "whoTitle": "Pour tous ceux qui ne peuvent pas aller à une école coranique",
+    "whoLead": "Une Masterclass en vidéo touche les personnes pour qui l'école coranique est hors de portée – à cause de la distance, du travail, de la famille ou de la santé.",
+    "who": [
+      {
+        "t": "Régions isolées",
+        "d": "Villages et villes sans enseignant qualifié à proximité."
+      },
+      {
+        "t": "Femmes et sœurs",
+        "d": "Apprendre à la maison, avec des enseignantes et des classes pour sœurs."
+      },
+      {
+        "t": "Personnes actives",
+        "d": "Travailleurs en horaires décalés et parents qui apprennent après le travail, quinze minutes par jour."
+      },
+      {
+        "t": "Nouveaux musulmans",
+        "d": "Partir de la première lettre, dans leur propre langue, sans gêne."
+      },
+      {
+        "t": "Diaspora",
+        "d": "Des familles éloignées d'enseignants arabophones, en Europe, dans les Amériques et en Asie."
+      },
+      {
+        "t": "Personnes en situation de handicap",
+        "d": "Sous-titres, vitesse réglable, grands caractères et apprentissage à domicile."
+      },
+      {
+        "t": "Enfants avec leurs parents",
+        "d": "Mode enfants, leçons courtes et parents qui regardent avec eux."
+      }
+    ],
+    "pillarsKicker": "Le plan",
+    "pillarsTitle": "Les six piliers de Shams 4.0",
+    "pillarsLead": "Tout repose sur ce qui fonctionne déjà aujourd'hui : la Méthode Shams, le programme et la communauté.",
+    "pillars": [
+      {
+        "t": "Masterclass vidéo",
+        "d": "Le Coran entier en vidéo – récitation, tajwid et tafsir, sourate par sourate, en leçons qui se complètent. Avec le hadith et le Nahj al-Balagha pour les apprenants chiites.",
+        "cta": "Studio et production"
+      },
+      {
+        "t": "Le studio",
+        "d": "Un studio à nous, avec caméras, son, lumière et montage, pour que chaque leçon soit vue et entendue d'une manière digne du Coran.",
+        "cta": "Voir le studio"
+      },
+      {
+        "t": "École en direct",
+        "d": "Cours en direct avec des enseignants qualifiés – par exemple un enseignant arabe qui enseigne en direct – et conférences coraniques sous-titrées.",
+        "cta": "Voir l'école en direct"
+      },
+      {
+        "t": "Académie de récitateurs",
+        "d": "Après la 4.0 : former de nouveaux récitateurs du Coran, avec des niveaux, des sessions en studio et la relecture par des maîtres – et des séries vidéo de nombreux récitateurs.",
+        "cta": "Voir l'académie"
+      },
+      {
+        "t": "Concours dans le bien",
+        "d": "Concours de récitation par tranche d'âge et par pays, jugés à l'aveugle selon une grille fixe. Rien n'est misé, rien n'est aléatoire.",
+        "cta": "Voir les concours"
+      },
+      {
+        "t": "Un réseau social uniquement pour le Coran",
+        "d": "Profils, réussites, cercles et messages – uniquement autour du Coran, sans publicité et sans contenu étranger.",
+        "cta": "Voir la communauté"
+      }
+    ],
+    "productKicker": "Déjà réalisé",
+    "productTitle": "Le produit aujourd'hui",
+    "productLead": "Shams 4.0 ne part pas de zéro. Ces éléments sont réalisés et en ligne – sur quranmasterclass.com et dans l'application iOS (captures d'écran réelles de l'application).",
+    "shotsNote": "Captures d'écran réelles de l'application iOS (interface en allemand).",
+    "shots": {
+      "shams": "La Méthode Shams",
+      "swipe": "Cartes d'apprentissage",
+      "hadith": "Hadith",
+      "nahj": "Nahj al-Balagha",
+      "stickers": "Réussites",
+      "feed": "Fil"
+    },
+    "builtTitle": "Réalisé et en ligne",
+    "built": [
+      {
+        "t": "Méthode Shams",
+        "d": "Sept étapes par verset et un modèle de mémoire personnel avec révisions après 1, 3, 7, 14, 30 et 90 jours."
+      },
+      {
+        "t": "Lecteur du Coran",
+        "d": "Les 114 sourates verset par verset, plusieurs récitateurs, mise en évidence des mots, sens mot à mot et tafsir avec sa source."
+      },
+      {
+        "t": "Programme Masterclass",
+        "d": "Quatre niveaux scolaires, le Parcours du récitant jusqu'à la récitation Masterclass, arabe de A1 à C1, tajwid et hifz."
+      },
+      {
+        "t": "Examens et certificats",
+        "d": "Le serveur contrôle chaque examen ; les certificats portent un code QR et sont vérifiables publiquement. Les niveaux les plus élevés seulement après l'écoute d'une personne."
+      },
+      {
+        "t": "Tuteurs IA",
+        "d": "Dalil, et Hidaya pour les sœurs : strictement liés aux sources, pas de fatwas, seulement après consentement et connexion."
+      },
+      {
+        "t": "Profils de récitateurs et Talents",
+        "d": "Biographies de récitateurs de renom et profils de membres vérifiés avec badges, niveaux et réussites."
+      },
+      {
+        "t": "Messagerie",
+        "d": "En tête-à-tête et en groupes jusqu'à 256 membres, avec texte, images, messages vocaux et vidéo ; chiffrés sur le serveur (AES-256-GCM), signalement et blocage partout, 16 ans et plus."
+      },
+      {
+        "t": "Lien avec l'enseignant",
+        "d": "Les apprenants envoient des enregistrements à leur enseignant et reçoivent un retour selon une grille : makharij, tajwid, waqf et rythme."
+      },
+      {
+        "t": "Ensemble",
+        "d": "Cercles d'apprentissage et ligue, dans l'émulation dans le bien – chaque fonction est facultative."
+      },
+      {
+        "t": "Classements",
+        "d": "Les meilleurs apprenants dans le monde et par pays, visibles comme encouragement."
+      },
+      {
+        "t": "Nahj al-Balagha et hadith",
+        "d": "Lecteur et études du Nahj al-Balagha, et un cours sur les sciences du hadith."
+      },
+      {
+        "t": "Soutiens",
+        "d": "Soutien volontaire via Ziina (EAU) et liste publique des soutiens."
+      },
+      {
+        "t": "14 langues",
+        "d": "Dont l'arabe, l'ourdou, le persan/dari et le pachtoune, de droite à gauche, et un mode enfants."
+      },
+      {
+        "t": "Application iOS",
+        "d": "iPhone et iPad, même compte que le site, financée par Pro et les achats intégrés. La publication sur l'App Store est en attente."
+      }
+    ],
+    "plannedTitle": "Prévu avec Shams 4.0",
+    "planned": [
+      "Lecteur vidéo pour les leçons, avec chapitres et progression par leçon",
+      "Infrastructure de diffusion : stockage, streaming adaptatif et diffusion mondiale",
+      "Sous-titres et traduction de chaque vidéo dans 14 langues",
+      "Le studio Shams, avec caméras, son, lumière et montage",
+      "Cours en direct, salle d'attente, emploi du temps et conférences",
+      "Académie de récitateurs, auditions et sessions en studio",
+      "Concours par tranche d'âge et par pays, jugés à l'aveugle",
+      "Séries vidéo de nombreux récitateurs – uniquement avec leur autorisation écrite"
+    ],
+    "roadKicker": "Feuille de route",
+    "roadTitle": "Cinq phases",
+    "roadLead": "Un ordre, pas un calendrier. Chaque phase commence lorsque ses partenaires, enseignants et savants sont réunis.",
+    "road": [
+      {
+        "t": "Masterclass vidéo",
+        "d": "Premières leçons vidéo – par exemple le Juz ʿAmma avec récitation, tajwid et tafsir – dans un lecteur avec chapitres, progression et sous-titres. Puis sourate par sourate, le hadith et le Nahj al-Balagha."
+      },
+      {
+        "t": "Studio",
+        "d": "Le studio propre, avec plusieurs caméras, son, lumière et montage, et une chaîne de production avec relecture savante avant toute publication."
+      },
+      {
+        "t": "École en direct",
+        "d": "Cours en direct avec des enseignants, un emploi du temps, des classes pour sœurs et pour enfants et les premières conférences coraniques."
+      },
+      {
+        "t": "Académie de récitateurs",
+        "d": "Former de nouveaux récitateurs : niveaux, auditions, sessions en studio, relecture par des maîtres et séries vidéo de nombreux récitateurs."
+      },
+      {
+        "t": "Concours et conférences",
+        "d": "Concours de récitation par tranche d'âge et par pays, jugés à l'aveugle, et une conférence annuelle – dans l'émulation dans le bien."
+      }
+    ],
+    "fundKicker": "Financement",
+    "fundTitle": "Comment Shams 4.0 est financé",
+    "fundLead": "L'apprentissage reste gratuit sur le site. L'application couvre ses propres frais. Les partenaires rendent possibles les grands investissements.",
+    "fund": [
+      {
+        "t": "Site web : gratuit pour toujours",
+        "d": "Le site reste gratuit pour tous et hébergera les vidéos. Pas de publicité, pas de vente de données. Le soutien volontaire est le bienvenu."
+      },
+      {
+        "t": "Application iOS : Pro et achats intégrés",
+        "d": "L'application est financée par Quran Masterclass Pro et les achats intégrés. Ils paient le fonctionnement de la plateforme."
+      },
+      {
+        "t": "Partenaires : production et infrastructure",
+        "d": "La production vidéo, le studio, les enseignants, les serveurs de streaming et la traduction coûtent cher. C'est ce que les partenaires rendent possible."
+      }
+    ],
+    "flowPartners": "Partenaires",
+    "flowProduction": "Vidéos, studio, enseignants",
+    "flowWeb": "Gratuit sur le site",
+    "flowApp": "Pro dans l'application",
+    "useKicker": "Utilisation des fonds",
+    "useTitle": "Où va l'argent des partenaires",
+    "useLead": "Nous nommons des catégories, pas des montants. Les budgets se discutent individuellement et par écrit.",
+    "use": [
+      {
+        "t": "Production vidéo",
+        "d": "Équipe, tournage, montage, étalonnage et mixage son pour chaque leçon."
+      },
+      {
+        "t": "Studio",
+        "d": "Caméras, microphones, acoustique, éclairage et un décor serein."
+      },
+      {
+        "t": "Enseignants et récitateurs",
+        "d": "Honoraires équitables pour les enseignants, les récitateurs et les savants qui relisent."
+      },
+      {
+        "t": "Relecture savante",
+        "d": "Chaque leçon est vérifiée avant publication."
+      },
+      {
+        "t": "Infrastructure de diffusion",
+        "d": "Serveurs, stockage, streaming adaptatif et diffusion dans le monde entier."
+      },
+      {
+        "t": "Traduction et sous-titres",
+        "d": "Chaque vidéo en 14 langues, l'arabe d'abord."
+      },
+      {
+        "t": "École en direct",
+        "d": "Logiciel de classe, modération, emploi du temps et assistance."
+      },
+      {
+        "t": "Sécurité et accessibilité",
+        "d": "Mode enfants, modération, protection des données et sous-titres pour tous."
+      }
+    ],
+    "useNote": "Aucun montant n'est publié ici. Tout budget fait partie d'un échange individuel.",
+    "gccKicker": "Pourquoi le Golfe",
+    "gccTitle": "Les talents doivent émerger ici",
+    "gccLead": "Le Golfe compte les savants, les récitateurs, les banques islamiques et les groupes de médias – et, avec eux, une responsabilité quant à la manière dont la prochaine génération apprend le Coran, ici et dans le monde.",
+    "gccCall": "Nous appelons les banques islamiques, les entreprises islamiques, les groupes de médias et les fondations des Émirats arabes unis, d'Arabie saoudite, du Koweït, du Qatar, de Bahreïn et d'Oman – et du monde entier, d'Indonésie, de Malaisie, de Türkiye, du Pakistan et d'ailleurs – à soutenir Shams 4.0.",
+    "gccDedication": "Pour Allah, pour l'islam, pour le Coran et pour les paroles du Prophète ﷺ.",
+    "gccWorld": "Et dans le monde entier",
+    "nowKicker": "Pourquoi maintenant",
+    "nowTitle": "Pourquoi maintenant",
+    "now": [
+      {
+        "t": "La plateforme existe",
+        "d": "La partie difficile du logiciel est réalisée et en ligne : méthode, programme, examens, communauté, 14 langues. L'argent des partenaires va au contenu, pas à des expériences."
+      },
+      {
+        "t": "La vidéo, c'est ainsi qu'une génération apprend",
+        "d": "Les jeunes apprennent par la vidéo. S'ils n'y trouvent pas d'école coranique structurée, ils y trouvent de la distraction."
+      },
+      {
+        "t": "L'arabe d'abord, mondial dès le premier jour",
+        "d": "Les langues de droite à gauche, les polices arabes et la calligraphie font partie de la conception, pas d'un ajout tardif."
+      },
+      {
+        "t": "Depuis les Émirats",
+        "d": "Développé à Dubaï, exploité depuis Charjah – près des savants, des récitateurs et des partenaires de la région."
+      }
+    ],
+    "founderKicker": "Le fondateur",
+    "founderTitle": "Nami Shams",
+    "founderBody": "Nami Shams est le fondateur de Quran Masterclass et le concepteur de la Méthode Shams. Il travaille sur la recherche islamique et les applications islamiques, a traduit le Nahj al-Balagha en allemand et écrit des ouvrages sur le tafsir de la sourate Al-Baqara et sur l'imam Ali.",
+    "founderLink": "En savoir plus sur le fondateur",
+    "operatorTitle": "La société",
+    "partnerKicker": "Partenariat",
+    "partnerTitle": "Qui nous recherchons",
+    "partnerLead": "Des entreprises islamiques stratégiques, des banques islamiques et investisseurs à impact, des groupes de médias, des parrains de séries de cours, des fondations – et des récitateurs et enseignants de renom comme partenaires de contenu.",
+    "ctaTitle": "Construisez Shams 4.0 avec nous",
+    "ctaLead": "Écrivez-nous en tant qu'entreprise, banque, groupe de médias, fondation, récitateur ou enseignant. Nous répondons personnellement à chaque demande sérieuse."
+  },
+  "studio": {
+    "heroTitle": "Le studio Shams",
+    "heroLead": "Un studio conçu dans un seul but : enregistrer le Coran et son enseignement avec la dignité qu'ils méritent – un son clair, une lumière calme et une image qui ne distrait pas.",
+    "heroScene": "Illustration : montage d'une leçon sur un ordinateur portable et plan de tournage sur une tablette.",
+    "planKicker": "Plan",
+    "planTitle": "Une salle pour la récitation, une pour l'artisanat",
+    "planLead": "La salle d'enregistrement est calme et sobre : un enseignant, un pupitre pour le Coran, un élève en face. Trois caméras, une lumière douce, le microphone près de la voix. À côté, la régie et le montage.",
+    "planCaption": "Illustration d'un plan possible. Pas à l'échelle.",
+    "legend": [
+      "Caméra A – plan large de l'enseignant",
+      "Caméra B – gros plan du visage et de la bouche pour les makharij",
+      "Caméra C – vue du dessus sur le mushaf",
+      "Lumière principale – douce et de face",
+      "Lumière d'appoint – pas d'ombres dures",
+      "Contre-jour – détache l'enseignant du fond",
+      "Microphone – près de la voix",
+      "Enseignant et pupitre du Coran",
+      "Élève en face",
+      "Fond en forme de mihrab",
+      "Panneaux acoustiques",
+      "Régie",
+      "Salle de montage",
+      "Espace d'ablutions (wudu) et de prière"
+    ],
+    "kitKicker": "Équipement",
+    "kitTitle": "Ce dont une leçon a besoin",
+    "kitLead": "Ni marques ni prix ici – seulement ce dont les enregistrements ont besoin.",
+    "kit": [
+      {
+        "t": "Caméras",
+        "d": "Plusieurs caméras à la fois : plan large, gros plan pour les makharij et vue du dessus sur le mushaf."
+      },
+      {
+        "t": "Son",
+        "d": "La récitation d'abord : microphones de studio, salle traitée, ni musique ni effets."
+      },
+      {
+        "t": "Lumière",
+        "d": "Une lumière douce et chaude, sans ombres dures – reposante pendant des heures de visionnage."
+      },
+      {
+        "t": "Décor",
+        "d": "Un décor islamique serein : fond en forme de mihrab, bois, pupitre pour le Coran, rien qui distrait."
+      },
+      {
+        "t": "Montage et étalonnage",
+        "d": "Plusieurs angles, coupes nettes, chapitres et bandeaux dans le design Masterclass."
+      },
+      {
+        "t": "Archives",
+        "d": "Chaque enregistrement conservé en double en toute sécurité, afin d'améliorer et de traduire les leçons plus tard."
+      }
+    ],
+    "lineKicker": "Chaîne de production",
+    "lineTitle": "Du programme à la leçon gratuite",
+    "line": [
+      {
+        "t": "Programme et script",
+        "d": "Ce que la leçon enseigne et où elle se situe dans le cours."
+      },
+      {
+        "t": "Relecture savante",
+        "d": "Le script est vérifié avant tout enregistrement."
+      },
+      {
+        "t": "Enregistrement",
+        "d": "En studio, avec plusieurs caméras et un son propre."
+      },
+      {
+        "t": "Montage",
+        "d": "Coupes, chapitres, le verset à l'écran issu des données du Coran – jamais saisi à la main."
+      },
+      {
+        "t": "Sous-titres",
+        "d": "Traduction en 14 langues, l'arabe d'abord."
+      },
+      {
+        "t": "Contrôle final",
+        "d": "Une seconde relecture de la vidéo terminée."
+      },
+      {
+        "t": "Publication",
+        "d": "Gratuit sur le site ; dans l'application avec des fonctions Pro comme l'usage hors ligne."
+      }
+    ],
+    "rulesKicker": "Principes",
+    "rulesTitle": "Comment nous enregistrons",
+    "rules": [
+      "Le son d'abord : chaque lettre de la récitation doit s'entendre clairement.",
+      "Ni musique ni effets qui détournent du Coran.",
+      "Enregistrements avec des enseignantes pour les sœurs, avec une équipe féminine sur demande.",
+      "Chaque enseignant et chaque récitateur enregistre sous accord écrit ; rien n'est publié sans autorisation.",
+      "Le texte du Coran à l'écran provient uniquement des données du Coran, avec sa source."
+    ],
+    "sponsorTitle": "Parrainer le studio ou une série",
+    "sponsorLead": "Un partenaire peut rendre le studio possible – ou une série de cours complète, par exemple le Juz ʿAmma, le tajwid ou le Nahj al-Balagha."
+  },
+  "live": {
+    "heroTitle": "École en direct et conférences",
+    "heroLead": "Un enseignant devant une classe – en direct, depuis le studio ou depuis chez lui. Les élèves récitent à tour de rôle, l'enseignant écoute et corrige. Pour tous ceux qui n'ont pas d'école coranique à proximité.",
+    "heroScene": "Illustration : un cours en direct sur un ordinateur portable, le tour de l'élève sur un téléphone et la salle d'attente sur Android.",
+    "formatsKicker": "Formats",
+    "formatsTitle": "Des cours pour chaque apprenant",
+    "formats": [
+      {
+        "t": "Halaqa",
+        "d": "Un petit cercle de six à dix apprenants qui récitent à tour de rôle ; l'enseignant entend chacun."
+      },
+      {
+        "t": "Cours magistral",
+        "d": "Tafsir, hadith et Nahj al-Balagha – un enseignant explique, la classe pose des questions."
+      },
+      {
+        "t": "Classes pour sœurs",
+        "d": "Des enseignantes pour les sœurs, dans une classe fermée."
+      },
+      {
+        "t": "Classes pour enfants",
+        "d": "Leçons courtes et joyeuses ; les parents sont présents."
+      },
+      {
+        "t": "Cours en arabe",
+        "d": "Par exemple un enseignant arabe qui enseigne en direct – avec sous-titres pour ceux qui apprennent encore l'arabe."
+      },
+      {
+        "t": "Conférences",
+        "d": "Pendant le Ramadan et au-delà : exposés et récitation avec sous-titres en plusieurs langues."
+      }
+    ],
+    "flowKicker": "Une leçon",
+    "flowTitle": "Déroulement d'un cours en direct",
+    "flow": [
+      {
+        "t": "Salle d'attente",
+        "d": "Les apprenants attendent que l'enseignant les fasse entrer."
+      },
+      {
+        "t": "Réciter à tour de rôle",
+        "d": "L'enseignant écoute chaque apprenant, l'un après l'autre."
+      },
+      {
+        "t": "Correction",
+        "d": "Selon une grille fixe : makharij, tajwid, waqf et rythme."
+      },
+      {
+        "t": "Devoirs",
+        "d": "Les versets entrent directement dans la révision Shams de l'apprenant."
+      },
+      {
+        "t": "Enregistrement",
+        "d": "Seulement si tous ont donné leur accord."
+      }
+    ],
+    "timetableKicker": "Emploi du temps",
+    "timetableTitle": "Une semaine d'école",
+    "timetableLead": "Des horaires fixes donnent une forme à la semaine – comme dans une vraie école coranique, mais ouverte au monde entier.",
+    "timetableScene": "Illustration : l'emploi du temps hebdomadaire de l'école en direct sur une tablette.",
+    "confKicker": "Conférences",
+    "confTitle": "Conférences coraniques sous-titrées",
+    "confLead": "Exposés et récitation depuis le studio, diffusés dans le monde entier, avec des sous-titres dans les langues du public.",
+    "confScene": "Illustration : une conférence coranique sur un écran de studio.",
+    "safeKicker": "Sécurité",
+    "safeTitle": "Protégé dès la conception",
+    "safe": [
+      "Règles d'âge comme aujourd'hui : messages et contacts uniquement à partir de 16 ans des deux côtés.",
+      "Classes réservées aux sœurs et classes réservées aux frères.",
+      "Signalement et blocage dans chaque classe, modération par l'école.",
+      "Aucun numéro de téléphone ni adresse e-mail n'est montré aux autres membres.",
+      "Enfants uniquement avec un parent ou un tuteur."
+    ],
+    "basisTitle": "Sur quoi cela repose",
+    "basis": [
+      "Lien avec l'enseignant : enregistrements et retours selon une grille",
+      "Groupes de messagerie jusqu'à 256 membres",
+      "Cercles d'apprentissage dans Ensemble",
+      "Examens et certificats vérifiables"
+    ]
+  },
+  "academy": {
+    "heroTitle": "Académie de récitateurs et concours",
+    "heroLead": "Après Shams 4.0 vient l'étape suivante : former de nouveaux récitateurs du Coran. Les talents doivent émerger ici, dans le Golfe – et partout où le Coran est aimé.",
+    "heroScene": "Illustration : un classement sur un téléphone, le jury à l'aveugle sur un ordinateur portable, des enfants qui apprennent sur une tablette et les niveaux de l'académie sur Android.",
+    "pathKicker": "Le parcours",
+    "pathTitle": "De l'apprenant au récitateur",
+    "path": [
+      {
+        "t": "Parcours du récitant",
+        "d": "Dix niveaux avec examens et enregistrements ; les niveaux les plus élevés seulement après l'écoute d'une personne.",
+        "built": true
+      },
+      {
+        "t": "Audition",
+        "d": "Les apprenants prometteurs récitent devant un jury – en ligne ou en studio.",
+        "built": false
+      },
+      {
+        "t": "Mentorat",
+        "d": "Sessions régulières avec des récitateurs et des enseignants expérimentés.",
+        "built": false
+      },
+      {
+        "t": "Sessions en studio",
+        "d": "Enregistrement en studio, avec retours sur la voix, le souffle et le maqam.",
+        "built": false
+      },
+      {
+        "t": "Série vidéo",
+        "d": "Les diplômés enregistrent leur propre série – avec un accord écrit.",
+        "built": false
+      }
+    ],
+    "pathLink": "Ouvrir le Parcours du récitant",
+    "mentorsTitle": "Des récitateurs de renom comme mentors",
+    "mentorsLead": "Nous souhaitons rallier des récitateurs de renom comme mentors et partenaires de contenu. Les noms ne sont publiés qu'après la signature d'un accord.",
+    "compKicker": "Concours",
+    "compTitle": "Rivaliser dans le bien",
+    "compLead": "Des concours qui honorent le Coran : équitables, transparents et sans rien qui ressemble à un jeu d'argent.",
+    "compRules": [
+      {
+        "t": "Jugement à l'aveugle",
+        "d": "Le jury entend un numéro, ni un nom ni un pays."
+      },
+      {
+        "t": "Une grille fixe",
+        "d": "Makharij, tajwid, waqf et rythme – la même grille que dans le lien avec l'enseignant."
+      },
+      {
+        "t": "Des groupes équitables",
+        "d": "Enfants, jeunes et adultes ; sœurs et frères ; par pays et dans le monde."
+      },
+      {
+        "t": "Rien n'est misé",
+        "d": "Pas de frais pour tenter sa chance, rien d'aléatoire. Reconnaissance par des certificats et une invitation au studio."
+      }
+    ],
+    "verseRef": "Coran 83:26",
+    "verseNote": "Le verset parle de ceux qui s'efforcent vers le bien – l'esprit de chaque concours ici.",
+    "kidsKicker": "Enfants",
+    "kidsTitle": "La prochaine génération commence petit",
+    "kidsLead": "Le mode enfants existe déjà. Avec Shams 4.0, les enfants reçoivent de courtes leçons vidéo sur tablette – lettres, courtes sourates, et des parents qui regardent avec eux.",
+    "kidsScene": "Illustration : des enfants qui apprennent sur une tablette.",
+    "seriesTitle": "Applications et séries vidéo pour de nombreux récitateurs",
+    "seriesLead": "Chaque récitateur enregistré peut avoir sa propre série – dans la Masterclass et sous forme d'application distincte. Toujours avec l'autorisation écrite du récitateur."
+  },
+  "partners": {
+    "heroTitle": "Demande de partenariat et d'investissement",
+    "heroLead": "Shams 4.0 a besoin de partenaires qui veulent porter le Coran jusqu'à la prochaine génération – par le capital, les médias, l'expertise ou le contenu.",
+    "typesKicker": "Partenaires",
+    "typesTitle": "Façons de collaborer",
+    "types": [
+      {
+        "t": "Entreprises islamiques stratégiques",
+        "d": "Des entreprises qui veulent soutenir l'enseignement du Coran : partenariat stratégique, technologie, co-marquage de séries."
+      },
+      {
+        "t": "Banques islamiques et investisseurs à impact",
+        "d": "Banques islamiques, family offices et investisseurs à impact. Des modèles conformes à la charia peuvent être discutés au cas par cas."
+      },
+      {
+        "t": "Partenaires médias",
+        "d": "Chaînes de télévision, plateformes de streaming et éditeurs : coproduction, distribution et temps d'antenne."
+      },
+      {
+        "t": "Parrains de séries de cours",
+        "d": "Parrainer une série complète – par exemple le Juz ʿAmma en vidéo, le tajwid ou le Nahj al-Balagha."
+      },
+      {
+        "t": "Récitateurs et enseignants",
+        "d": "Récitateurs de renom et enseignants qualifiés comme partenaires de contenu – en vidéo ou en direct."
+      },
+      {
+        "t": "Fondations et institutions",
+        "d": "Fondations, universités et instituts coraniques qui partagent l'objectif."
+      }
+    ],
+    "stepsKicker": "Processus",
+    "stepsTitle": "Comment se poursuit une demande",
+    "steps": [
+      {
+        "t": "Demande",
+        "d": "Vous nous écrivez avec le formulaire ci-dessous."
+      },
+      {
+        "t": "Réponse personnelle",
+        "d": "Nous répondons par e-mail et proposons un premier entretien."
+      },
+      {
+        "t": "Examen",
+        "d": "Chaque partie apprend à connaître l'autre ; accord de confidentialité si nécessaire."
+      },
+      {
+        "t": "Accord écrit",
+        "d": "Chaque partenariat est convenu par écrit, au cas par cas."
+      }
+    ],
+    "formKicker": "Demande",
+    "formTitle": "Écrivez-nous",
+    "formLead": "Dites-nous qui vous êtes et ce que vous avez en tête. Tous les champs sont obligatoires, sauf l'ordre de grandeur.",
+    "faqTitle": "Questions",
+    "faq": [
+      {
+        "q": "S'agit-il d'une offre d'actions ou de valeurs mobilières ?",
+        "a": "Non. Ces pages ne constituent ni une offre publique d'acquisition de valeurs mobilières ou de parts de la société, ni un conseil en investissement. Les échanges ont lieu uniquement à titre individuel."
+      },
+      {
+        "q": "Promettez-vous des rendements ?",
+        "a": "Non. Nous ne faisons aucune promesse de rendement et ne publions aucune valorisation."
+      },
+      {
+        "q": "Un partenariat peut-il être conforme à la charia ?",
+        "a": "Des modèles conformes à la charia peuvent être discutés au cas par cas. Nous ne revendiquons aucune certification charia."
+      },
+      {
+        "q": "Le site restera-t-il gratuit ?",
+        "a": "Oui. Le site reste gratuit pour toujours et hébergera les vidéos. L'application iOS est financée par Pro et les achats intégrés."
+      },
+      {
+        "q": "Comment transférer des montants plus importants ?",
+        "a": "Par virement bancaire sur le compte de la société ICSL FZE. Coordonnées bancaires communiquées sur demande après examen – jamais sur ce site."
+      },
+      {
+        "q": "Puis-je aussi soutenir avec un petit montant ?",
+        "a": "Oui, sur la page de soutien – volontairement, sans contrepartie."
+      },
+      {
+        "q": "Qui exploite Quran Masterclass ?",
+        "a": "ICSL FZE – Islamic Coding & Software Lab, Charjah (SPC Free Zone, Charjah, Émirats arabes unis). Fondateur : Nami Shams."
+      }
+    ],
+    "reciterNote": "Vous êtes récitateur ? Vous pouvez aussi utiliser le formulaire pour récitateurs.",
+    "reciterLink": "Formulaire pour récitateurs"
+  },
+  "form": {
+    "company": "Entreprise ou organisation",
+    "contact": "Personne de contact",
+    "email": "E-mail",
+    "country": "Pays",
+    "countryPick": "Veuillez choisir",
+    "type": "Type de partenariat",
+    "types": {
+      "strategic": "Entreprise stratégique",
+      "bank": "Banque islamique ou investisseur",
+      "media": "Partenaire média",
+      "sponsor": "Parrain d'une série",
+      "content": "Récitateur ou enseignant",
+      "foundation": "Fondation ou institution",
+      "other": "Autre"
+    },
+    "ticket": "Ordre de grandeur indicatif (facultatif)",
+    "ticketHint": "À titre d'orientation seulement. Ni une offre, ni un engagement.",
+    "tickets": {
+      "none": "Non précisé",
+      "t1": "Jusqu'à 50 000 USD",
+      "t2": "50 000 – 250 000 USD",
+      "t3": "250 000 USD – 1 million USD",
+      "t4": "Plus de 1 million USD",
+      "inkind": "En nature (studio, médias, temps d'antenne, expertise)"
+    },
+    "message": "Votre message",
+    "messageHint": "Qui vous êtes, ce que vous avez en tête et quelle partie de Shams 4.0 vous intéresse.",
+    "ack": "Je comprends qu'il ne s'agit ni d'une offre publique de valeurs mobilières ou de parts de la société, ni d'un conseil en investissement, et qu'aucun rendement n'est promis.",
+    "sent": "Merci. Votre demande nous est bien parvenue. Nous vous répondrons personnellement par e-mail."
+  },
+  "mock": {
+    "brand": "Quran Masterclass",
+    "lessonOf": "Leçon {n}",
+    "module": "Juz ʿAmma · Module 3",
+    "lessonTitle": "Tajwid : l'allongement (madd)",
+    "teacher": "Enseignant",
+    "teacherName": "Ustadh · exemple",
+    "teacherSister": "Ustadha · exemple",
+    "subtitles": "Sous-titres",
+    "speed": "Vitesse",
+    "repeat": "Répéter ×3",
+    "chapters": "Chapitres",
+    "chapterList": [
+      "Écouter",
+      "La règle",
+      "Exemples",
+      "Réciter avec"
+    ],
+    "progress": "Progression du cours",
+    "next": "Leçon suivante",
+    "ask": "Demandez à votre enseignant",
+    "step": "Étape Shams {a} sur {b}",
+    "noAds": "Sans pub · sans lecture auto",
+    "lessons": [
+      "Lettres du madd",
+      "Madd naturel : deux temps",
+      "Madd lié",
+      "Madd séparé",
+      "Révision et test"
+    ],
+    "done": "Terminé",
+    "now": "En cours",
+    "minutes": "{n} min",
+    "continue": "Continuer",
+    "live": "EN DIRECT",
+    "halaqa": "Halaqa · Sourate Al-Mulk",
+    "sistersClass": "Classe des sœurs",
+    "yourTurn": "À vous",
+    "reciting": "Récite en ce moment",
+    "queue": "À suivre",
+    "raise": "Lever la main",
+    "mic": "Microphone",
+    "cam": "Caméra",
+    "leave": "Quitter",
+    "feedback": "Retour",
+    "rubric": [
+      "Makharij",
+      "Tajwid",
+      "Waqf",
+      "Rythme"
+    ],
+    "note": "Très bien. Tenez un peu plus longtemps le madd au verset 3.",
+    "waiting": "Salle d'attente",
+    "waitingText": "L'enseignant va vous faire entrer dans un instant.",
+    "admit": "Admettre",
+    "students": "{n} apprenants",
+    "consent": "Enregistrement seulement avec accord",
+    "names": [
+      "Yusuf",
+      "Maryam",
+      "Ibrahim",
+      "Khadija",
+      "Hamza",
+      "Zainab",
+      "Idris",
+      "Amina"
+    ],
+    "conference": "Conférence coranique",
+    "panel": "Enseigner le Coran à la prochaine génération",
+    "liveSubs": "Sous-titres en direct",
+    "speaker": "Intervenant",
+    "viewers": "Spectateurs",
+    "timetable": "Emploi du temps",
+    "classes": [
+      "Tajwid A1",
+      "Cercle de hifz",
+      "Tafsir du Juz ʿAmma",
+      "Arabe pour le Coran",
+      "Nahj al-Balagha",
+      "Classe des enfants",
+      "Halaqa des sœurs",
+      "Hadith"
+    ],
+    "edit": "Montage · leçon 12",
+    "tracks": [
+      "Caméra A",
+      "Caméra B",
+      "Caméra C",
+      "Récitation",
+      "Sous-titres"
+    ],
+    "review": "Relecture savante",
+    "approved": "Approuvé",
+    "pending": "En attente",
+    "export": "Exporter",
+    "plan": "Plan de tournage",
+    "shots": [
+      "Sourate An-Naba · versets 1–16",
+      "Gros plans pour les makharij",
+      "Mushaf vu du dessus",
+      "Introduction de l'enseignant"
+    ],
+    "recorded": "Enregistré",
+    "today": "Aujourd'hui",
+    "planned": "Prévu",
+    "board": "Rivaliser dans le bien",
+    "comp": "Récitation du Juz ʿAmma",
+    "world": "Dans le monde",
+    "country": "Par pays",
+    "youth": "Jeunes 13–17",
+    "score": "Note",
+    "you": "Vous",
+    "blind": "Jugé à l'aveugle",
+    "jury": "Jury · jugement à l'aveugle",
+    "participant": "Participant {n}",
+    "submit": "Envoyer la note",
+    "average": "Moyenne",
+    "kids": "Apprenons ensemble",
+    "letters": "Lettres",
+    "listen": "Écouter",
+    "again": "Encore",
+    "parents": "Les parents regardent aussi",
+    "surahKids": "Sourate Al-Ikhlas",
+    "academy": "Académie de récitateurs",
+    "level": "Niveau {n}",
+    "audition": "Audition",
+    "mentor": "Session de mentorat",
+    "studio": "Session en studio",
+    "master": "Relecture par un maître",
+    "certificate": "Certificat",
+    "open": "Ouvrir"
+  }
+}

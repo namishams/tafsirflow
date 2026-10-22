@@ -1,0 +1,888 @@
+{
+  "nav": {
+    "label": "Blueprint Shams 4.0",
+    "footer": "Blueprint Shams 4.0",
+    "aboutLink": "Blueprint Shams 4.0 untuk rakan kerjasama",
+    "supportLink": "Baca keseluruhan pelan: Blueprint Shams 4.0",
+    "overview": "Gambaran keseluruhan",
+    "studio": "Studio",
+    "live": "Sekolah langsung",
+    "academy": "Akademi",
+    "partners": "Jadi rakan kerjasama"
+  },
+  "common": {
+    "kicker": "Blueprint · Shams 4.0",
+    "operator": "Dikendalikan oleh {company}, Sharjah (SPC Free Zone, Sharjah, Emiriah Arab Bersatu). Pengasas: {founder}.",
+    "illustration": "Ilustrasi · dirancang",
+    "example": "Contoh",
+    "built": "Telah dibina",
+    "planned": "Dirancang",
+    "ctaPartner": "Jadi rakan kerjasama",
+    "ctaRead": "Baca blueprint",
+    "ctaOverview": "Kembali ke gambaran keseluruhan",
+    "ctaSupport": "Sokong secara sukarela",
+    "nextPage": "Seterusnya",
+    "legalTitle": "Notis penting",
+    "legal": "Halaman-halaman ini bukan tawaran awam untuk memperoleh sekuriti atau saham syarikat dan bukan nasihat pelaburan. Perbincangan hanya dijalankan secara individu. Tiada sebarang janji pulangan.",
+    "shariah": "Model kerjasama yang patuh syariah boleh dibincangkan secara individu. Kami tidak mendakwa memiliki sebarang pensijilan syariah.",
+    "noCrypto": "Tiada kripto, tiada pulangan yang dijamin, tiada penilaian syarikat.",
+    "bank": "Jumlah yang lebih besar boleh dipindahkan melalui pemindahan bank ke akaun syarikat ICSL FZE. Butiran akaun diberikan atas permintaan selepas semakan.",
+    "mockNote": "Semua paparan peranti pada halaman ini ialah ilustrasi ciri yang dirancang. Nama, nombor dan nilai di dalamnya hanyalah contoh, bukan data.",
+    "breadcrumbHome": "Laman utama"
+  },
+  "seo": {
+    "overview": {
+      "title": "Blueprint Shams 4.0: Edtech Islam & Kerjasama | Quran Masterclass",
+      "desc": "Shams 4.0: Masterclass video seluruh al-Quran, studio, kelas langsung dan akademi qari. Pertanyaan kerjasama dan pelaburan edtech Islam dari Teluk dan seluruh dunia.",
+      "keywords": "pelaburan edtech Islam, perkongsian pendidikan al-Quran, penajaan media Islam, kursus video al-Quran, edtech Islam Teluk, kerjasama patuh syariah, Quran Masterclass, Kaedah Shams"
+    },
+    "studio": {
+      "title": "Studio Shams: Pengeluaran Video al-Quran | Blueprint Shams 4.0",
+      "desc": "Studio Shams (dirancang): kamera, bunyi, pencahayaan dan suntingan untuk Masterclass video seluruh al-Quran – bacaan, tajwid, tafsir. Taja satu siri atau studio ini.",
+      "keywords": "pengeluaran video al-Quran, penajaan media Islam, studio al-Quran, kursus video tajwid, video tafsir, kerjasama media Islam"
+    },
+    "live": {
+      "title": "Kelas al-Quran Secara Langsung & Persidangan | Blueprint Shams 4.0",
+      "desc": "Sekolah langsung Quran Masterclass (dirancang): kelas al-Quran dalam talian bersama guru berkelayakan, kelas saudari dan kanak-kanak, serta persidangan bersari kata.",
+      "keywords": "kelas al-Quran dalam talian secara langsung, sekolah al-Quran dalam talian, guru al-Quran online, belajar mengaji online, persidangan al-Quran, kerjasama pendidikan Islam dalam talian"
+    },
+    "academy": {
+      "title": "Akademi Qari & Pertandingan Tilawah al-Quran | Blueprint Shams 4.0",
+      "desc": "Selepas Shams 4.0: akademi melatih qari baharu dan pertandingan tilawah sebagai berlumba-lumba dalam kebaikan – dinilai secara buta, mengikut umur dan negara.",
+      "keywords": "akademi qari, pertandingan tilawah al-Quran, latihan qari, musabaqah tilawah al-Quran, bakat Islam Teluk, pelaburan pendidikan al-Quran"
+    },
+    "partners": {
+      "title": "Kerjasama & Pelaburan: Edtech Islam | Quran Masterclass",
+      "desc": "Pertanyaan daripada syarikat Islam strategik, bank Islam, pelabur impak, syarikat media, penaja siri kursus dan qari terkenal yang ingin membina Shams 4.0.",
+      "keywords": "pelaburan edtech Islam, perkongsian pendidikan al-Quran, kerjasama bank Islam, penajaan media Islam, penaja kursus al-Quran, pelaburan impak pendidikan Islam"
+    }
+  },
+  "overview": {
+    "heroTitle": "Shams 4.0: Masterclass video bagi keseluruhan al-Quran",
+    "heroLead": "Quran Masterclass sudah mengajar bacaan, mendengar, menghafaz dan memahami dengan Kaedah Shams. Shams 4.0 menambah apa yang masih kurang: video. Sebuah Masterclass video yang lengkap bagi seluruh al-Quran – bacaan, tajwid dan tafsir – berserta hadis, Nahjul Balaghah untuk pelajar Syiah, sebuah studio sebenar, kelas langsung bersama guru dan akademi untuk qari masa depan.",
+    "heroFree": "Laman web kekal percuma selamanya dan akan memaparkan video-video tersebut.",
+    "heroScene": "Ilustrasi ciri yang dirancang: pelajaran video pada komputer riba, pelajaran pada telefon, kelas langsung pada tablet dan pertandingan pada Android.",
+    "factSurahs": "surah, setiap ayat dengan audio dan tafsir",
+    "factLangs": "bahasa, Arab dan empat lagi dari kanan ke kiri",
+    "factSteps": "langkah Kaedah Shams bagi setiap ayat",
+    "factAccount": "akaun untuk laman web dan aplikasi",
+    "visionKicker": "Wawasan",
+    "visionTitle": "Daripada membaca dan mendengar kepada melihat dan belajar",
+    "visionLead": "Sehingga kini, Quran Masterclass ialah sekolah yang anda baca dan dengar. Shams 4.0 menjadikannya sekolah yang dapat anda lihat: seorang guru yang membaca, menerangkan dan membetulkan – bagi setiap surah, dalam bahasa anda, mengikut kadar anda sendiri.",
+    "todayTitle": "Hari ini: Shams 1 hingga 3",
+    "todayBody": "Pembaca al-Quran dengan audio, Kaedah Shams, kursus, ujian dan sijil, pautan guru, komuniti dan tutor AI – sudah beroperasi di quranmasterclass.com dan dalam aplikasi iOS.",
+    "nextTitle": "Shams 4.0",
+    "nextBody": "Pelajaran video bagi seluruh al-Quran, hadis dan Nahjul Balaghah, sebuah studio, kelas dan persidangan langsung, akademi qari, pertandingan dalam kebaikan serta siri video daripada ramai qari.",
+    "ytTitle": "Mengapa tidak cukup dengan YouTube sahaja?",
+    "ytLead": "Terdapat banyak video al-Quran yang indah di internet. Tetapi video semata-mata bukanlah sebuah sekolah.",
+    "ytColTopic": "Perkara",
+    "ytColA": "Platform video umum",
+    "ytColB": "Quran Masterclass dengan Shams 4.0",
+    "yt": [
+      {
+        "k": "Kurikulum",
+        "a": "Video tunggal tanpa susunan",
+        "b": "Pelajaran dalam susunan tetap, dari huruf pertama hingga bacaan Masterclass"
+      },
+      {
+        "k": "Kemajuan",
+        "a": "Tidak dijejaki",
+        "b": "Setiap pelajaran, ayat dan ulang kaji disimpan – di laman web dan dalam aplikasi"
+      },
+      {
+        "k": "Kaedah",
+        "a": "Menonton sahaja",
+        "b": "Kaedah Shams: dengar, bina, fahami, bacakan, ulang kaji"
+      },
+      {
+        "k": "Gangguan",
+        "a": "Iklan, main automatik dan cadangan",
+        "b": "Tiada iklan, tiada main automatik ke kandungan yang tidak berkaitan"
+      },
+      {
+        "k": "Guru",
+        "a": "Paling banyak ruang komen",
+        "b": "Rakaman kepada guru anda disertai maklum balas; kelas langsung dirancang"
+      },
+      {
+        "k": "Sijil",
+        "a": "Tiada",
+        "b": "Ujian dan sijil yang boleh disahkan"
+      },
+      {
+        "k": "Kanak-kanak",
+        "a": "Platform terbuka",
+        "b": "Mod kanak-kanak, peraturan umur dan moderasi"
+      },
+      {
+        "k": "Bahasa",
+        "a": "Kebanyakannya bahasa Inggeris atau Arab",
+        "b": "14 bahasa; sari kata untuk video dirancang"
+      }
+    ],
+    "whoTitle": "Untuk semua yang tidak dapat pergi ke sekolah al-Quran",
+    "whoLead": "Masterclass dalam bentuk video menjangkau mereka yang sukar ke sekolah al-Quran – kerana jarak, pekerjaan, keluarga atau kesihatan.",
+    "who": [
+      {
+        "t": "Kawasan pedalaman",
+        "d": "Kampung dan pekan tanpa guru berkelayakan berhampiran."
+      },
+      {
+        "t": "Wanita dan saudari",
+        "d": "Belajar di rumah, bersama guru wanita dan kelas khas saudari."
+      },
+      {
+        "t": "Mereka yang bekerja",
+        "d": "Pekerja syif dan ibu bapa yang belajar selepas waktu kerja, lima belas minit sehari."
+      },
+      {
+        "t": "Saudara baru",
+        "d": "Bermula daripada huruf pertama, dalam bahasa sendiri, tanpa rasa malu."
+      },
+      {
+        "t": "Diaspora",
+        "d": "Keluarga yang jauh daripada guru berbahasa Arab, di Eropah, Amerika dan Asia."
+      },
+      {
+        "t": "Orang kurang upaya",
+        "d": "Sari kata, kelajuan boleh laras, teks besar dan belajar dari rumah."
+      },
+      {
+        "t": "Kanak-kanak bersama ibu bapa",
+        "d": "Mod kanak-kanak, pelajaran pendek dan ibu bapa yang menonton bersama."
+      }
+    ],
+    "pillarsKicker": "Pelan",
+    "pillarsTitle": "Enam tonggak Shams 4.0",
+    "pillarsLead": "Semuanya dibina di atas apa yang sudah berjaya hari ini: Kaedah Shams, kurikulum dan komuniti.",
+    "pillars": [
+      {
+        "t": "Masterclass video",
+        "d": "Seluruh al-Quran dalam video – bacaan, tajwid dan tafsir, surah demi surah, dalam pelajaran yang saling berkait. Dengan hadis dan Nahjul Balaghah untuk pelajar Syiah.",
+        "cta": "Studio dan pengeluaran"
+      },
+      {
+        "t": "Studio",
+        "d": "Studio sendiri dengan kamera, bunyi, pencahayaan dan suntingan, supaya setiap pelajaran kelihatan dan kedengaran selayaknya bagi al-Quran.",
+        "cta": "Lihat studio"
+      },
+      {
+        "t": "Sekolah langsung",
+        "d": "Kelas langsung bersama guru berkelayakan – contohnya seorang guru Arab mengajar secara langsung – serta persidangan al-Quran dengan sari kata.",
+        "cta": "Lihat sekolah langsung"
+      },
+      {
+        "t": "Akademi qari",
+        "d": "Selepas 4.0: melatih qari al-Quran baharu dengan peringkat, sesi studio dan semakan oleh guru pakar – serta siri video ramai qari.",
+        "cta": "Lihat akademi"
+      },
+      {
+        "t": "Berlumba-lumba dalam kebaikan",
+        "d": "Pertandingan qari mengikut kumpulan umur dan negara, dinilai secara buta berdasarkan rubrik tetap. Tiada apa-apa yang dipertaruhkan, tiada apa-apa yang rawak.",
+        "cta": "Lihat pertandingan"
+      },
+      {
+        "t": "Sosial hanya untuk al-Quran",
+        "d": "Profil, pencapaian, halaqah belajar dan mesej – hanya berkisar tentang al-Quran, tanpa iklan dan tanpa kandungan yang tidak berkaitan.",
+        "cta": "Lihat komuniti"
+      }
+    ],
+    "productKicker": "Telah dibina",
+    "productTitle": "Produk hari ini",
+    "productLead": "Shams 4.0 tidak bermula dari kosong. Bahagian-bahagian ini telah dibina dan beroperasi – di quranmasterclass.com dan dalam aplikasi iOS (tangkap layar sebenar aplikasi).",
+    "shotsNote": "Tangkap layar sebenar aplikasi iOS (antara muka bahasa Jerman).",
+    "shots": {
+      "shams": "Kaedah Shams",
+      "swipe": "Kad pembelajaran",
+      "hadith": "Hadis",
+      "nahj": "Nahjul Balaghah",
+      "stickers": "Pencapaian",
+      "feed": "Suapan"
+    },
+    "builtTitle": "Telah dibina dan beroperasi",
+    "built": [
+      {
+        "t": "Kaedah Shams",
+        "d": "Tujuh langkah bagi setiap ayat dan model ingatan peribadi dengan ulang kaji selepas 1, 3, 7, 14, 30 dan 90 hari."
+      },
+      {
+        "t": "Pembaca al-Quran",
+        "d": "Kesemua 114 surah ayat demi ayat, beberapa qari, penyerlahan perkataan, makna perkataan demi perkataan, dan tafsir berserta sumbernya."
+      },
+      {
+        "t": "Kurikulum Masterclass",
+        "d": "Empat peringkat sekolah, Laluan Qari menuju bacaan Masterclass, bahasa Arab A1 hingga C1, tajwid dan hifz."
+      },
+      {
+        "t": "Ujian dan sijil",
+        "d": "Pelayan menyemak setiap ujian; sijil mengandungi kod QR dan boleh disahkan secara awam. Peringkat tertinggi hanya selepas seorang insan mendengar bacaan itu."
+      },
+      {
+        "t": "Tutor AI",
+        "d": "Dalil, dan Hidaya untuk saudari: terikat ketat pada sumber, tanpa fatwa, hanya selepas persetujuan dan log masuk."
+      },
+      {
+        "t": "Profil qari dan Talents",
+        "d": "Biografi qari terkenal dan profil ahli yang disahkan dengan lencana, peringkat dan pencapaian."
+      },
+      {
+        "t": "Mesej",
+        "d": "Satu lawan satu dan kumpulan sehingga 256 ahli dengan teks, imej, mesej suara dan video; disulitkan pada pelayan (AES-256-GCM), laporkan dan sekat di mana-mana, 16+."
+      },
+      {
+        "t": "Pautan guru",
+        "d": "Pelajar menghantar rakaman kepada guru dan menerima maklum balas mengikut rubrik: makhraj, tajwid, waqaf dan rentak."
+      },
+      {
+        "t": "Belajar bersama",
+        "d": "Halaqah belajar dan liga sebagai berlumba-lumba dalam kebaikan – setiap ciri adalah pilihan."
+      },
+      {
+        "t": "Kedudukan",
+        "d": "Pelajar terbaik di seluruh dunia dan mengikut negara, dipaparkan sebagai galakan."
+      },
+      {
+        "t": "Nahjul Balaghah dan hadis",
+        "d": "Pembaca dan kajian Nahjul Balaghah, serta kursus dalam ilmu hadis."
+      },
+      {
+        "t": "Penyokong",
+        "d": "Sokongan sukarela melalui Ziina (UAE) dan senarai penyokong yang terbuka kepada umum."
+      },
+      {
+        "t": "14 bahasa",
+        "d": "Termasuk Arab, Urdu, Parsi/Dari dan Pashto dari kanan ke kiri, serta mod kanak-kanak."
+      },
+      {
+        "t": "Aplikasi iOS",
+        "d": "iPhone dan iPad, akaun yang sama dengan laman web, dibiayai oleh Pro dan pembelian dalam aplikasi. Pelancaran di App Store masih menunggu."
+      }
+    ],
+    "plannedTitle": "Dirancang bersama Shams 4.0",
+    "planned": [
+      "Pemain video untuk pelajaran dengan bab dan kemajuan bagi setiap pelajaran",
+      "Infrastruktur penstriman: storan, penstriman adaptif dan penghantaran ke seluruh dunia",
+      "Sari kata dan terjemahan setiap video ke dalam 14 bahasa",
+      "Studio Shams dengan kamera, bunyi, pencahayaan dan suntingan",
+      "Kelas langsung, ruang menunggu, jadual waktu dan persidangan",
+      "Akademi qari, uji bakat dan sesi studio",
+      "Pertandingan mengikut kumpulan umur dan negara, dinilai secara buta",
+      "Siri video ramai qari – hanya dengan kebenaran bertulis mereka"
+    ],
+    "roadKicker": "Pelan hala tuju",
+    "roadTitle": "Lima fasa",
+    "roadLead": "Satu urutan, bukan kalendar. Setiap fasa bermula apabila rakan kerjasama, guru dan ulamanya sudah bersedia.",
+    "road": [
+      {
+        "t": "Masterclass video",
+        "d": "Pelajaran video pertama – contohnya Juzuk ʿAmma dengan bacaan, tajwid dan tafsir – dalam pemain dengan bab, kemajuan dan sari kata. Kemudian surah demi surah, hadis dan Nahjul Balaghah."
+      },
+      {
+        "t": "Studio",
+        "d": "Studio sendiri dengan beberapa kamera, bunyi, cahaya dan suntingan, serta talian pengeluaran dengan semakan ulama sebelum apa-apa diterbitkan."
+      },
+      {
+        "t": "Sekolah langsung",
+        "d": "Kelas langsung bersama guru, jadual waktu, kelas saudari dan kanak-kanak serta persidangan al-Quran yang pertama."
+      },
+      {
+        "t": "Akademi qari",
+        "d": "Melatih qari baharu: peringkat, uji bakat, sesi studio, semakan oleh guru pakar dan siri video ramai qari."
+      },
+      {
+        "t": "Pertandingan dan persidangan",
+        "d": "Pertandingan qari mengikut kumpulan umur dan negara, dinilai secara buta, serta persidangan tahunan – sebagai berlumba-lumba dalam kebaikan."
+      }
+    ],
+    "fundKicker": "Pembiayaan",
+    "fundTitle": "Bagaimana Shams 4.0 dibiayai",
+    "fundLead": "Pembelajaran kekal percuma di laman web. Aplikasi menampung dirinya sendiri. Rakan kerjasama memungkinkan pelaburan yang besar.",
+    "fund": [
+      {
+        "t": "Laman web: percuma selamanya",
+        "d": "Laman web kekal percuma untuk semua orang dan akan memaparkan video. Tiada iklan, tiada penjualan data. Sokongan sukarela amat dialu-alukan."
+      },
+      {
+        "t": "Aplikasi iOS: Pro dan pembelian dalam aplikasi",
+        "d": "Aplikasi dibiayai oleh Quran Masterclass Pro dan pembelian dalam aplikasi. Kedua-duanya menampung operasi platform."
+      },
+      {
+        "t": "Rakan kerjasama: pengeluaran dan infrastruktur",
+        "d": "Pengeluaran video, studio, guru, pelayan penstriman dan terjemahan memerlukan kos yang besar. Inilah yang dimungkinkan oleh rakan kerjasama."
+      }
+    ],
+    "flowPartners": "Rakan kerjasama",
+    "flowProduction": "Video, studio, guru",
+    "flowWeb": "Percuma di laman web",
+    "flowApp": "Pro dalam aplikasi",
+    "useKicker": "Penggunaan dana",
+    "useTitle": "Ke mana dana rakan kerjasama disalurkan",
+    "useLead": "Kami menyebut kategori, bukan jumlah. Belanjawan dibincangkan secara individu dan secara bertulis.",
+    "use": [
+      {
+        "t": "Pengeluaran video",
+        "d": "Kru, rakaman, suntingan, penggredan warna dan campuran bunyi bagi setiap pelajaran."
+      },
+      {
+        "t": "Studio",
+        "d": "Kamera, mikrofon, akustik, pencahayaan dan set yang tenang."
+      },
+      {
+        "t": "Guru dan qari",
+        "d": "Honorarium yang adil untuk guru, qari dan ulama yang membuat semakan."
+      },
+      {
+        "t": "Semakan ulama",
+        "d": "Setiap pelajaran disemak sebelum diterbitkan."
+      },
+      {
+        "t": "Infrastruktur penstriman",
+        "d": "Pelayan, storan, penstriman adaptif dan penghantaran ke seluruh dunia."
+      },
+      {
+        "t": "Terjemahan dan sari kata",
+        "d": "Setiap video dalam 14 bahasa, bermula dengan bahasa Arab."
+      },
+      {
+        "t": "Sekolah langsung",
+        "d": "Perisian bilik darjah, moderasi, jadual waktu dan sokongan."
+      },
+      {
+        "t": "Keselamatan dan kebolehcapaian",
+        "d": "Mod kanak-kanak, moderasi, perlindungan data dan sari kata untuk semua."
+      }
+    ],
+    "useNote": "Tiada jumlah diterbitkan di sini. Sebarang belanjawan menjadi sebahagian daripada perbincangan secara individu.",
+    "gccKicker": "Mengapa Teluk",
+    "gccTitle": "Bakat sepatutnya lahir di sini",
+    "gccLead": "Teluk memiliki para ulama, para qari, bank Islam dan syarikat media – dan bersama semua itu, tanggungjawab terhadap cara generasi akan datang mempelajari al-Quran, di sini dan di seluruh dunia.",
+    "gccCall": "Kami menyeru bank Islam, syarikat Islam, syarikat media dan yayasan di Emiriah Arab Bersatu, Arab Saudi, Kuwait, Qatar, Bahrain dan Oman – serta di seluruh dunia, di Indonesia, Malaysia, Türkiye, Pakistan dan seterusnya – untuk menyokong Shams 4.0.",
+    "gccDedication": "Untuk Allah, untuk Islam, untuk al-Quran dan untuk sabda Nabi ﷺ.",
+    "gccWorld": "Dan di seluruh dunia",
+    "nowKicker": "Mengapa sekarang",
+    "nowTitle": "Mengapa sekarang",
+    "now": [
+      {
+        "t": "Platformnya sudah wujud",
+        "d": "Bahagian perisian yang paling sukar sudah dibina dan beroperasi: kaedah, kurikulum, ujian, komuniti, 14 bahasa. Dana rakan kerjasama disalurkan ke dalam kandungan, bukan eksperimen."
+      },
+      {
+        "t": "Video ialah cara satu generasi belajar",
+        "d": "Golongan muda belajar melalui video. Jika di situ mereka tidak menemui sekolah al-Quran yang berstruktur, mereka akan menemui gangguan."
+      },
+      {
+        "t": "Arab dahulu, global sejak hari pertama",
+        "d": "Bahasa kanan ke kiri, fon Arab dan kaligrafi merupakan sebahagian daripada reka bentuk, bukan tambahan kemudian."
+      },
+      {
+        "t": "Dari Emiriah",
+        "d": "Dibangunkan di Dubai, dikendalikan dari Sharjah – dekat dengan ulama, qari dan rakan kerjasama di rantau ini."
+      }
+    ],
+    "founderKicker": "Pengasas",
+    "founderTitle": "Nami Shams",
+    "founderBody": "Nami Shams ialah pengasas Quran Masterclass dan pembangun Kaedah Shams. Beliau menumpukan usaha pada penyelidikan Islam dan aplikasi Islam, menterjemah Nahjul Balaghah ke dalam bahasa Jerman serta menulis buku tentang tafsir Surah al-Baqarah dan tentang Imam Ali.",
+    "founderLink": "Lebih lanjut tentang pengasas",
+    "operatorTitle": "Syarikat",
+    "partnerKicker": "Kerjasama",
+    "partnerTitle": "Siapa yang kami cari",
+    "partnerLead": "Syarikat Islam strategik, bank Islam dan pelabur impak, syarikat media, penaja siri kursus, yayasan – serta qari dan guru terkenal sebagai rakan kandungan.",
+    "ctaTitle": "Bina Shams 4.0 bersama kami",
+    "ctaLead": "Hubungi kami sebagai syarikat, bank, syarikat media, yayasan, qari atau guru. Kami menjawab setiap pertanyaan yang bersungguh-sungguh secara peribadi."
+  },
+  "studio": {
+    "heroTitle": "Studio Shams",
+    "heroLead": "Sebuah studio yang dibina untuk satu tujuan: merakam al-Quran dan pengajarannya dengan kemuliaan yang selayaknya – bunyi yang jernih, cahaya yang tenang dan gambar yang tidak mengganggu.",
+    "heroScene": "Ilustrasi: menyunting pelajaran pada komputer riba dan pelan rakaman pada tablet.",
+    "planKicker": "Pelan lantai",
+    "planTitle": "Satu bilik untuk bacaan, satu lagi untuk kerja pembikinan",
+    "planLead": "Dewan rakaman dibuat tenang dan ringkas: seorang guru, sebuah rehal al-Quran, seorang murid di hadapannya. Tiga kamera, cahaya lembut, mikrofon dekat dengan suara. Bersebelahan ialah bilik kawalan dan penyuntingan.",
+    "planCaption": "Ilustrasi pelan lantai yang mungkin. Bukan mengikut skala.",
+    "legend": [
+      "Kamera A – syot lebar guru",
+      "Kamera B – syot dekat muka dan mulut untuk makhraj",
+      "Kamera C – dari atas ke arah mushaf",
+      "Lampu utama – lembut dan dari hadapan",
+      "Lampu pengisi – tanpa bayang-bayang keras",
+      "Lampu belakang – memisahkan guru daripada latar belakang",
+      "Mikrofon – dekat dengan suara",
+      "Guru dan rehal al-Quran",
+      "Murid di hadapan",
+      "Latar berbentuk mihrab",
+      "Panel akustik",
+      "Bilik kawalan",
+      "Bilik penyuntingan",
+      "Ruang wudhu dan solat"
+    ],
+    "kitKicker": "Peralatan",
+    "kitTitle": "Apa yang diperlukan oleh sesebuah pelajaran",
+    "kitLead": "Tiada jenama dan tiada harga di sini – hanya apa yang diperlukan oleh rakaman.",
+    "kit": [
+      {
+        "t": "Kamera",
+        "d": "Beberapa kamera serentak: lebar, dekat untuk makhraj, dan dari atas ke arah mushaf."
+      },
+      {
+        "t": "Bunyi",
+        "d": "Bacaan diutamakan: mikrofon studio, bilik yang dirawat akustiknya, tiada muzik dan tiada kesan."
+      },
+      {
+        "t": "Cahaya",
+        "d": "Cahaya lembut dan hangat tanpa bayang-bayang keras – menenangkan untuk berjam-jam menonton."
+      },
+      {
+        "t": "Set",
+        "d": "Set Islam yang tenang: latar berbentuk mihrab, kayu, rehal al-Quran, tiada apa-apa yang mengganggu."
+      },
+      {
+        "t": "Suntingan dan warna",
+        "d": "Beberapa sudut, potongan yang kemas, bab dan kapsyen skrin dalam reka bentuk Masterclass."
+      },
+      {
+        "t": "Arkib",
+        "d": "Setiap rakaman disimpan dengan selamat dua kali, supaya pelajaran boleh diperbaiki dan diterjemah kemudian."
+      }
+    ],
+    "lineKicker": "Talian pengeluaran",
+    "lineTitle": "Daripada kurikulum kepada pelajaran percuma",
+    "line": [
+      {
+        "t": "Kurikulum dan skrip",
+        "d": "Apa yang diajar oleh pelajaran dan kedudukannya dalam kursus."
+      },
+      {
+        "t": "Semakan ulama",
+        "d": "Skrip disemak sebelum apa-apa dirakam."
+      },
+      {
+        "t": "Rakaman",
+        "d": "Di studio, dengan beberapa kamera dan bunyi yang bersih."
+      },
+      {
+        "t": "Suntingan",
+        "d": "Potongan, bab, ayat di skrin daripada data al-Quran – tidak pernah ditaip secara manual."
+      },
+      {
+        "t": "Sari kata",
+        "d": "Terjemahan ke dalam 14 bahasa, bermula dengan bahasa Arab."
+      },
+      {
+        "t": "Semakan akhir",
+        "d": "Semakan kedua bagi video yang siap."
+      },
+      {
+        "t": "Penerbitan",
+        "d": "Percuma di laman web; dalam aplikasi dengan ciri Pro seperti penggunaan luar talian."
+      }
+    ],
+    "rulesKicker": "Prinsip",
+    "rulesTitle": "Cara kami merakam",
+    "rules": [
+      "Bunyi diutamakan: setiap huruf bacaan mesti kedengaran dengan jelas.",
+      "Tiada muzik dan tiada kesan yang mengalihkan perhatian daripada al-Quran.",
+      "Rakaman bersama guru wanita untuk saudari, dengan pasukan wanita apabila diminta.",
+      "Setiap guru dan qari merakam di bawah perjanjian bertulis; tiada apa-apa diterbitkan tanpa kebenaran.",
+      "Teks al-Quran di skrin hanya daripada data al-Quran, berserta sumbernya."
+    ],
+    "sponsorTitle": "Taja studio atau satu siri",
+    "sponsorLead": "Seorang rakan kerjasama boleh merealisasikan studio ini – atau sebuah siri kursus yang lengkap, contohnya Juzuk ʿAmma, tajwid atau Nahjul Balaghah."
+  },
+  "live": {
+    "heroTitle": "Sekolah langsung dan persidangan",
+    "heroLead": "Seorang guru di hadapan kelas – secara langsung, dari studio atau dari rumah. Murid membaca bergilir-gilir, guru mendengar dan membetulkan. Untuk sesiapa yang tiada sekolah al-Quran berhampiran.",
+    "heroScene": "Ilustrasi: kelas langsung pada komputer riba, giliran murid pada telefon dan ruang menunggu pada Android.",
+    "formatsKicker": "Format",
+    "formatsTitle": "Kelas untuk setiap pelajar",
+    "formats": [
+      {
+        "t": "Halaqah",
+        "d": "Bulatan kecil enam hingga sepuluh pelajar yang membaca bergilir-gilir; guru mendengar setiap seorang."
+      },
+      {
+        "t": "Kuliah",
+        "d": "Tafsir, hadis dan Nahjul Balaghah – guru menerangkan, kelas bertanya."
+      },
+      {
+        "t": "Kelas saudari",
+        "d": "Guru wanita untuk saudari, dalam kelas tertutup."
+      },
+      {
+        "t": "Kelas kanak-kanak",
+        "d": "Pelajaran pendek dan menggembirakan; ibu bapa hadir."
+      },
+      {
+        "t": "Kelas dalam bahasa Arab",
+        "d": "Contohnya seorang guru Arab mengajar secara langsung – dengan sari kata bagi mereka yang masih belajar bahasa Arab."
+      },
+      {
+        "t": "Persidangan",
+        "d": "Pada bulan Ramadan dan seterusnya: ceramah dan bacaan dengan sari kata dalam banyak bahasa."
+      }
+    ],
+    "flowKicker": "Satu pelajaran",
+    "flowTitle": "Bagaimana pelajaran langsung berjalan",
+    "flow": [
+      {
+        "t": "Ruang menunggu",
+        "d": "Pelajar menunggu sehingga guru membenarkan mereka masuk."
+      },
+      {
+        "t": "Membaca bergilir-gilir",
+        "d": "Guru mendengar setiap pelajar, seorang demi seorang."
+      },
+      {
+        "t": "Pembetulan",
+        "d": "Mengikut rubrik tetap: makhraj, tajwid, waqaf dan rentak."
+      },
+      {
+        "t": "Kerja rumah",
+        "d": "Ayat-ayat itu terus masuk ke dalam ulang kaji Shams pelajar."
+      },
+      {
+        "t": "Rakaman",
+        "d": "Hanya apabila semua orang bersetuju."
+      }
+    ],
+    "timetableKicker": "Jadual waktu",
+    "timetableTitle": "Seminggu di sekolah",
+    "timetableLead": "Waktu yang tetap memberi bentuk kepada minggu – seperti sekolah al-Quran sebenar, cuma terbuka kepada seluruh dunia.",
+    "timetableScene": "Ilustrasi: jadual waktu mingguan sekolah langsung pada tablet.",
+    "confKicker": "Persidangan",
+    "confTitle": "Persidangan al-Quran dengan sari kata",
+    "confLead": "Ceramah dan bacaan dari studio, disiarkan ke seluruh dunia, dengan sari kata dalam bahasa para hadirin.",
+    "confScene": "Ilustrasi: sebuah persidangan al-Quran pada paparan studio.",
+    "safeKicker": "Keselamatan",
+    "safeTitle": "Dilindungi sejak direka",
+    "safe": [
+      "Peraturan umur seperti sekarang: mesej dan sambungan hanya bagi mereka berumur 16 tahun ke atas di kedua-dua pihak.",
+      "Kelas khas saudari dan kelas khas saudara.",
+      "Laporkan dan sekat dalam setiap kelas, moderasi oleh pihak sekolah.",
+      "Nombor telefon dan alamat e-mel tidak dipaparkan kepada ahli lain.",
+      "Kanak-kanak hanya bersama ibu bapa atau penjaga."
+    ],
+    "basisTitle": "Atas apa ia dibina",
+    "basis": [
+      "Pautan guru dengan rakaman dan maklum balas mengikut rubrik",
+      "Kumpulan mesej sehingga 256 ahli",
+      "Halaqah belajar dalam Belajar bersama",
+      "Ujian dan sijil yang boleh disahkan"
+    ]
+  },
+  "academy": {
+    "heroTitle": "Akademi qari dan pertandingan",
+    "heroLead": "Selepas Shams 4.0 tibalah langkah seterusnya: melatih qari al-Quran yang baharu. Bakat sepatutnya lahir di sini, di Teluk – dan di mana sahaja al-Quran dicintai.",
+    "heroScene": "Ilustrasi: papan kedudukan pada telefon, juri buta pada komputer riba, kanak-kanak belajar pada tablet dan peringkat akademi pada Android.",
+    "pathKicker": "Perjalanan",
+    "pathTitle": "Daripada pelajar kepada qari",
+    "path": [
+      {
+        "t": "Laluan Qari",
+        "d": "Sepuluh peringkat dengan ujian dan rakaman; peringkat tertinggi hanya selepas seorang insan mendengar bacaan itu.",
+        "built": true
+      },
+      {
+        "t": "Uji bakat",
+        "d": "Pelajar yang berpotensi membaca di hadapan panel – dalam talian atau di studio.",
+        "built": false
+      },
+      {
+        "t": "Bimbingan",
+        "d": "Sesi tetap bersama qari dan guru yang berpengalaman.",
+        "built": false
+      },
+      {
+        "t": "Sesi studio",
+        "d": "Merakam di studio, dengan maklum balas tentang suara, nafas dan maqam.",
+        "built": false
+      },
+      {
+        "t": "Siri video",
+        "d": "Graduan merakam siri mereka sendiri – dengan perjanjian bertulis.",
+        "built": false
+      }
+    ],
+    "pathLink": "Buka Laluan Qari",
+    "mentorsTitle": "Qari terkenal sebagai pembimbing",
+    "mentorsLead": "Kami ingin menggandingkan qari terkenal sebagai pembimbing dan rakan kandungan. Nama hanya diumumkan selepas perjanjian ditandatangani.",
+    "compKicker": "Pertandingan",
+    "compTitle": "Berlumba-lumba dalam kebaikan",
+    "compLead": "Pertandingan yang memuliakan al-Quran: adil, telus dan tanpa sebarang unsur yang menyerupai judi.",
+    "compRules": [
+      {
+        "t": "Dinilai secara buta",
+        "d": "Juri mendengar satu nombor, bukan nama atau negara."
+      },
+      {
+        "t": "Rubrik tetap",
+        "d": "Makhraj, tajwid, waqaf dan rentak – rubrik yang sama seperti dalam pautan guru."
+      },
+      {
+        "t": "Kumpulan yang adil",
+        "d": "Kanak-kanak, remaja dan dewasa; saudari dan saudara; mengikut negara dan seluruh dunia."
+      },
+      {
+        "t": "Tiada apa yang dipertaruhkan",
+        "d": "Tiada yuran untuk peluang, tiada unsur rawak. Penghargaan melalui sijil dan jemputan ke studio."
+      }
+    ],
+    "verseRef": "al-Quran 83:26",
+    "verseNote": "Ayat ini bercakap tentang mereka yang bersungguh-sungguh dalam kebaikan – semangat setiap pertandingan di sini.",
+    "kidsKicker": "Kanak-kanak",
+    "kidsTitle": "Generasi akan datang bermula dengan kecil",
+    "kidsLead": "Mod kanak-kanak sudah wujud. Dengan Shams 4.0 kanak-kanak mendapat pelajaran video pendek pada tablet – huruf, surah pendek dan ibu bapa yang menonton bersama.",
+    "kidsScene": "Ilustrasi: kanak-kanak belajar pada tablet.",
+    "seriesTitle": "Aplikasi dan siri video untuk ramai qari",
+    "seriesLead": "Setiap qari yang dirakam boleh mempunyai siri sendiri – dalam Masterclass dan sebagai aplikasi berasingan. Sentiasa dengan kebenaran bertulis qari berkenaan."
+  },
+  "partners": {
+    "heroTitle": "Pertanyaan kerjasama dan pelaburan",
+    "heroLead": "Shams 4.0 memerlukan rakan kerjasama yang ingin membawa al-Quran kepada generasi akan datang – dengan modal, media, kepakaran atau kandungan.",
+    "typesKicker": "Rakan kerjasama",
+    "typesTitle": "Cara bekerjasama",
+    "types": [
+      {
+        "t": "Syarikat Islam strategik",
+        "d": "Syarikat yang ingin berada di belakang pendidikan al-Quran: kerjasama strategik, teknologi, penjenamaan bersama siri."
+      },
+      {
+        "t": "Bank Islam dan pelabur impak",
+        "d": "Bank Islam, family office dan pelabur impak. Model yang patuh syariah boleh dibincangkan secara individu."
+      },
+      {
+        "t": "Rakan media",
+        "d": "Saluran TV, platform penstriman dan penerbit: pengeluaran bersama, pengedaran dan masa siaran."
+      },
+      {
+        "t": "Penaja siri kursus",
+        "d": "Taja satu siri yang lengkap – contohnya Juzuk ʿAmma dalam video, tajwid atau Nahjul Balaghah."
+      },
+      {
+        "t": "Qari dan guru",
+        "d": "Qari terkenal dan guru berkelayakan sebagai rakan kandungan – dalam video atau secara langsung."
+      },
+      {
+        "t": "Yayasan dan institusi",
+        "d": "Yayasan, universiti dan institut al-Quran yang berkongsi matlamat yang sama."
+      }
+    ],
+    "stepsKicker": "Proses",
+    "stepsTitle": "Bagaimana pertanyaan diteruskan",
+    "steps": [
+      {
+        "t": "Pertanyaan",
+        "d": "Anda menulis kepada kami menggunakan borang di bawah."
+      },
+      {
+        "t": "Balasan peribadi",
+        "d": "Kami membalas melalui e-mel dan mencadangkan perbincangan pertama."
+      },
+      {
+        "t": "Semakan",
+        "d": "Kedua-dua pihak saling mengenali; perjanjian kerahsiaan jika perlu."
+      },
+      {
+        "t": "Perjanjian bertulis",
+        "d": "Setiap kerjasama dipersetujui secara bertulis dan secara individu."
+      }
+    ],
+    "formKicker": "Pertanyaan",
+    "formTitle": "Tulis kepada kami",
+    "formLead": "Beritahu kami siapa anda dan apa yang anda fikirkan. Semua medan diperlukan kecuali anggaran saiz.",
+    "faqTitle": "Soalan lazim",
+    "faq": [
+      {
+        "q": "Adakah ini tawaran saham atau sekuriti?",
+        "a": "Tidak. Halaman-halaman ini bukan tawaran awam untuk memperoleh sekuriti atau saham syarikat dan bukan nasihat pelaburan. Perbincangan hanya dijalankan secara individu."
+      },
+      {
+        "q": "Adakah anda menjanjikan pulangan?",
+        "a": "Tidak. Kami tidak menjanjikan sebarang pulangan dan tidak menerbitkan sebarang penilaian syarikat."
+      },
+      {
+        "q": "Bolehkah kerjasama ini patuh syariah?",
+        "a": "Model yang patuh syariah boleh dibincangkan secara individu. Kami tidak mendakwa memiliki sebarang pensijilan syariah."
+      },
+      {
+        "q": "Adakah laman web akan kekal percuma?",
+        "a": "Ya. Laman web kekal percuma selamanya dan akan memaparkan video. Aplikasi iOS dibiayai oleh Pro dan pembelian dalam aplikasi."
+      },
+      {
+        "q": "Bagaimanakah jumlah yang lebih besar boleh dipindahkan?",
+        "a": "Melalui pemindahan bank ke akaun syarikat ICSL FZE. Butiran akaun diberikan atas permintaan selepas semakan – tidak pernah di laman web ini."
+      },
+      {
+        "q": "Bolehkah saya menyokong dengan jumlah yang kecil juga?",
+        "a": "Ya, di halaman sokongan – secara sukarela, tanpa sebarang balasan."
+      },
+      {
+        "q": "Siapakah yang mengendalikan Quran Masterclass?",
+        "a": "ICSL FZE – Islamic Coding & Software Lab, Sharjah (SPC Free Zone, Sharjah, Emiriah Arab Bersatu). Pengasas: Nami Shams."
+      }
+    ],
+    "reciterNote": "Adakah anda seorang qari? Anda juga boleh menggunakan borang untuk qari.",
+    "reciterLink": "Borang untuk qari"
+  },
+  "form": {
+    "company": "Syarikat atau organisasi",
+    "contact": "Orang untuk dihubungi",
+    "email": "E-mel",
+    "country": "Negara",
+    "countryPick": "Sila pilih",
+    "type": "Jenis kerjasama",
+    "types": {
+      "strategic": "Syarikat strategik",
+      "bank": "Bank Islam atau pelabur",
+      "media": "Rakan media",
+      "sponsor": "Penaja siri",
+      "content": "Qari atau guru",
+      "foundation": "Yayasan atau institusi",
+      "other": "Lain-lain"
+    },
+    "ticket": "Anggaran saiz (pilihan)",
+    "ticketHint": "Sebagai panduan sahaja. Bukan tawaran dan tidak mengikat.",
+    "tickets": {
+      "none": "Tidak dinyatakan",
+      "t1": "Sehingga USD 50,000",
+      "t2": "USD 50,000 – 250,000",
+      "t3": "USD 250,000 – 1 juta",
+      "t4": "Melebihi USD 1 juta",
+      "inkind": "Dalam bentuk bukan tunai (studio, media, masa siaran, kepakaran)"
+    },
+    "message": "Mesej anda",
+    "messageHint": "Siapa anda, apa yang anda fikirkan dan bahagian Shams 4.0 yang manakah menarik minat anda.",
+    "ack": "Saya faham bahawa ini bukan tawaran awam sekuriti atau saham syarikat dan bukan nasihat pelaburan, dan bahawa tiada pulangan yang dijanjikan.",
+    "sent": "Terima kasih. Pertanyaan anda telah sampai kepada kami. Kami akan membalas secara peribadi melalui e-mel."
+  },
+  "mock": {
+    "brand": "Quran Masterclass",
+    "lessonOf": "Pelajaran {n}",
+    "module": "Juzuk ʿAmma · Modul 3",
+    "lessonTitle": "Tajwid: pemanjangan bacaan (mad)",
+    "teacher": "Guru",
+    "teacherName": "Ustaz · contoh",
+    "teacherSister": "Ustazah · contoh",
+    "subtitles": "Sari kata",
+    "speed": "Kelajuan",
+    "repeat": "Ulang ×3",
+    "chapters": "Bab",
+    "chapterList": [
+      "Dengar",
+      "Hukumnya",
+      "Contoh",
+      "Bacakan bersama"
+    ],
+    "progress": "Kemajuan kursus",
+    "next": "Pelajaran seterusnya",
+    "ask": "Tanya guru anda",
+    "step": "Langkah Shams {a} daripada {b}",
+    "noAds": "Tiada iklan · tiada main automatik",
+    "lessons": [
+      "Huruf mad",
+      "Mad asli: dua harakat",
+      "Mad wajib muttasil",
+      "Mad jaiz munfasil",
+      "Ulang kaji dan ujian"
+    ],
+    "done": "Selesai",
+    "now": "Sekarang",
+    "minutes": "{n} min",
+    "continue": "Teruskan",
+    "live": "LANGSUNG",
+    "halaqa": "Halaqah · Surah al-Mulk",
+    "sistersClass": "Kelas saudari",
+    "yourTurn": "Giliran anda",
+    "reciting": "Sedang membaca",
+    "queue": "Seterusnya",
+    "raise": "Angkat tangan",
+    "mic": "Mikrofon",
+    "cam": "Kamera",
+    "leave": "Keluar",
+    "feedback": "Maklum balas",
+    "rubric": [
+      "Makhraj",
+      "Tajwid",
+      "Waqaf",
+      "Rentak"
+    ],
+    "note": "Sangat baik. Panjangkan mad pada ayat 3 sedikit lagi.",
+    "waiting": "Ruang menunggu",
+    "waitingText": "Guru akan membenarkan anda masuk sebentar lagi.",
+    "admit": "Benarkan masuk",
+    "students": "{n} pelajar",
+    "consent": "Rakaman hanya dengan persetujuan",
+    "names": [
+      "Yusuf",
+      "Maryam",
+      "Ibrahim",
+      "Khadijah",
+      "Hamzah",
+      "Zainab",
+      "Idris",
+      "Aminah"
+    ],
+    "conference": "Persidangan al-Quran",
+    "panel": "Mengajar al-Quran kepada generasi akan datang",
+    "liveSubs": "Sari kata langsung",
+    "speaker": "Penceramah",
+    "viewers": "Penonton",
+    "timetable": "Jadual waktu",
+    "classes": [
+      "Tajwid A1",
+      "Halaqah hafazan",
+      "Tafsir Juzuk ʿAmma",
+      "Bahasa Arab untuk al-Quran",
+      "Nahjul Balaghah",
+      "Kelas kanak-kanak",
+      "Halaqah saudari",
+      "Hadis"
+    ],
+    "edit": "Suntingan · pelajaran 12",
+    "tracks": [
+      "Kamera A",
+      "Kamera B",
+      "Kamera C",
+      "Bacaan",
+      "Sari kata"
+    ],
+    "review": "Semakan ulama",
+    "approved": "Diluluskan",
+    "pending": "Menunggu",
+    "export": "Eksport",
+    "plan": "Pelan rakaman",
+    "shots": [
+      "Surah an-Naba' · ayat 1–16",
+      "Syot dekat untuk makhraj",
+      "Mushaf dari atas",
+      "Pengenalan oleh guru"
+    ],
+    "recorded": "Telah dirakam",
+    "today": "Hari ini",
+    "planned": "Dirancang",
+    "board": "Berlumba-lumba dalam kebaikan",
+    "comp": "Bacaan Juzuk ʿAmma",
+    "world": "Seluruh dunia",
+    "country": "Mengikut negara",
+    "youth": "Remaja 13–17",
+    "score": "Skor",
+    "you": "Anda",
+    "blind": "Dinilai secara buta",
+    "jury": "Juri · penilaian buta",
+    "participant": "Peserta {n}",
+    "submit": "Hantar skor",
+    "average": "Purata",
+    "kids": "Belajar bersama saya",
+    "letters": "Huruf",
+    "listen": "Dengar",
+    "again": "Sekali lagi",
+    "parents": "Ibu bapa menonton bersama",
+    "surahKids": "Surah al-Ikhlas",
+    "academy": "Akademi qari",
+    "level": "Peringkat {n}",
+    "audition": "Uji bakat",
+    "mentor": "Sesi bimbingan",
+    "studio": "Sesi studio",
+    "master": "Disemak oleh guru pakar",
+    "certificate": "Sijil",
+    "open": "Buka"
+  }
+}

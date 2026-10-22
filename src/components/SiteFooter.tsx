@@ -8,6 +8,7 @@ import MadeInDubai from "./MadeInDubai";
 import Skyline from "./Skyline";
 import { COMPANY } from "@/lib/company";
 import { HUB_IDS, type KeywordSet } from "@/lib/seo/types";
+import { bpText } from "@/lib/blueprint/text";
 
 // Footer columns (owner 22.10.2026): six balanced groups, no duplicates; labels from "nav"
 const FOOTER: { title: string; items: { href: string; key: string }[] }[] = [
@@ -34,6 +35,8 @@ const FOOTER: { title: string; items: { href: string; key: string }[] }[] = [
   { title: "groupMore", items: [
     { href: "/how", key: "how" }, { href: "/app", key: "fAppStickers" }, { href: "/premium", key: "premium" }, { href: "/about", key: "about" },
     { href: "/support", key: "support" }, { href: "/feedback", key: "feedback" }, { href: "/suggestions", key: "suggestions" }, { href: "/reciters/apply", key: "reciterApply" }, { href: "/changelog", key: "changelog" },
+    // Blueprint Shams 4.0 for partners and investors (owner 23.10.2026); label from src/lib/blueprint
+    { href: "/blueprint", key: "@blueprint" },
   ] },
 ];
 
@@ -45,6 +48,8 @@ export default async function SiteFooter() {
   const kw = ((await import(`@/lib/seo/keywords/${await getLocale()}`).catch(() => null))?.default ?? {}) as Record<string, KeywordSet>;
   const guides = HUB_IDS.map((id) => ({ href: `/${id}`, label: kw[`/${id}`]?.focus })).filter((g): g is { href: string; label: string } => !!g.label)
     .map((g) => ({ ...g, label: g.label.charAt(0).toLocaleUpperCase() + g.label.slice(1) }));
+  const bp = await bpText(await getLocale());
+  const label = (key: string) => (key === "@blueprint" ? bp.nav.footer : t(`nav.${key}`));
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-line bg-surface">
@@ -62,7 +67,7 @@ export default async function SiteFooter() {
               <nav key={g.title} aria-label={t(`nav.${g.title}`)} className="min-w-0">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">{t(`nav.${g.title}`)}</p>
                 <ul className="mt-3 grid gap-2 text-sm">
-                  {g.items.map((i) => <li key={i.href}><Link href={i.href} className="text-ink/80 transition hover:text-accent">{t(`nav.${i.key}`)}</Link></li>)}
+                  {g.items.map((i) => <li key={i.href}><Link href={i.href} className="text-ink/80 transition hover:text-accent">{label(i.key)}</Link></li>)}
                 </ul>
               </nav>
             ))}
@@ -76,7 +81,7 @@ export default async function SiteFooter() {
                   <svg aria-hidden width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-muted transition group-open:rotate-180"><path d="m6 9 6 6 6-6" /></svg>
                 </summary>
                 <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 pb-4 text-sm">
-                  {g.items.map((i) => <li key={i.href}><Link href={i.href} className="text-ink/80 transition hover:text-accent">{t(`nav.${i.key}`)}</Link></li>)}
+                  {g.items.map((i) => <li key={i.href}><Link href={i.href} className="text-ink/80 transition hover:text-accent">{label(i.key)}</Link></li>)}
                 </ul>
               </details>
             ))}
