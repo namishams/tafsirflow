@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { FOUNDER_BOOK, FOUNDER_RECITER } from "@/lib/company";
 import { IslamCorners } from "@/components/art/IslamArt";
+import Skyline from "@/components/Skyline";
 
 // The founder, Nami Shams (owner's own statements, 22.10.2026; texts in messages → founderAbout):
 //   "full"    – the section on the About page (focus, the book card, why Quran Masterclass, Mishary Alafasy, links)
@@ -37,6 +38,40 @@ function ReciterLinks({ className = "" }: { className?: string }) {
       <Link href={FOUNDER_RECITER.star} className={pill}>{t("linkStar")}</Link>
       <Link href={FOUNDER_RECITER.reciter} className={pill}>{t("linkReciter")}</Link>
       <Link href={FOUNDER_RECITER.path} className={pill}>{t("linkPath")}</Link>
+    </div>
+  );
+}
+
+/** small UAE flag as a tasteful accent (no emblems, no logos) */
+function UaeFlag() {
+  return (
+    <svg aria-hidden viewBox="0 0 30 20" className="h-5 w-[30px] shrink-0 rounded-[3px] shadow-sm">
+      <rect width="30" height="20" fill="#fff" />
+      <rect width="30" height="6.67" fill="#00732f" />
+      <rect y="13.33" width="30" height="6.67" fill="#000" />
+      <rect width="8" height="20" fill="#ce1126" />
+    </svg>
+  );
+}
+
+/** the founder's personal thanks; explicitly no endorsement, sponsorship or partnership */
+function UaeThanks() {
+  const t = useTranslations("founderAbout");
+  return (
+    <div className="relative mt-8 overflow-hidden rounded-2xl border border-[rgb(var(--isl-gold-soft))]/40 bg-gradient-to-br from-[#0c4a37] to-[#06221a] px-6 pb-4 pt-8 text-[#eef0f3] sm:px-10">
+      <div className="flex items-center gap-3">
+        <UaeFlag />
+        <h3 className="font-display text-2xl leading-tight sm:text-3xl">{t("uaTitle")}</h3>
+      </div>
+      <div className="isl-serif mt-4 max-w-3xl space-y-3 text-[16px] leading-relaxed text-white/80">
+        <p>{t("uaP1")}</p>
+        <p>{t("uaP2")}</p>
+        <p>{t("uaP3")}</p>
+        <p className="text-[rgb(233_207_153)]">{t("uaP4")}</p>
+      </div>
+      <p className="mt-4 text-[13px] font-semibold text-[rgb(233_207_153)]">{t("uaSign")}</p>
+      <p className="mt-2 max-w-3xl text-[12.5px] leading-snug text-white/55">{t("uaNote")}</p>
+      <div className="mt-4 opacity-60"><Skyline /></div>
     </div>
   );
 }
@@ -81,6 +116,7 @@ export default function FounderAbout({ variant = "full" }: { variant?: "full" | 
           <p className="mt-3 max-w-2xl text-[16px] leading-relaxed text-white/75">{t("mishary")}</p>
           <ReciterLinks className="mt-6 [&_a:not(.btn-gold)]:text-[#eef0f3]" />
         </div>
+        <UaeThanks />
       </div>
     </section>
   );

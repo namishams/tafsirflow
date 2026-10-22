@@ -2483,7 +2483,14 @@
     "linkPath": "Le parcours Mishary",
     "profileTitle": "À propos du fondateur",
     "profileShort": "Nami Shams a fondé la méthode Shams et Quran Masterclass. Il se consacre à la recherche islamique, aux pays islamiques et aux applications islamiques, a traduit Nahj al-Balagha en allemand, et son récitateur préféré est Mishary Rashid Alafasy.",
-    "more": "En savoir plus sur le fondateur"
+    "more": "En savoir plus sur le fondateur",
+    "uaTitle": "Merci aux Émirats arabes unis",
+    "uaP1": "Je vis aux Émirats arabes unis et je leur en suis profondément reconnaissant. La sécurité qui y règne, la tolérance entre des personnes de nombreuses origines et religions, ainsi que l'amour du savoir et du Saint Coran rendent possible un projet comme Quran Masterclass.",
+    "uaP2": "Mon respect et mes remerciements vont à Son Altesse le Cheikh Mohamed bin Zayed Al Nahyan, président des Émirats arabes unis, à Son Altesse le Cheikh Mohammed bin Rashid Al Maktoum, vice-président et Premier ministre des Émirats arabes unis et dirigeant de Dubaï, et à Son Altesse le Cheikh Dr Sultan bin Muhammad Al Qasimi, dirigeant de Sharjah, connu pour son dévouement à la culture et aux livres.",
+    "uaP3": "J'admire les villes de Dubaï et de Sharjah, où le savoir a sa maison. J'ai une affection particulière pour la bibliothèque Mohammed bin Rashid de Dubaï, un lieu qui montre combien ce pays estime les livres, la lecture et l'étude.",
+    "uaP4": "Je suis fier d'être résident des Émirats arabes unis. Merci.",
+    "uaNote": "Ceci est mon remerciement personnel. Il ne signifie pas qu'un dirigeant, un organisme public ou une institution soutient ou parraine Quran Masterclass, ni en est partenaire.",
+    "uaSign": "Nami Shams, fondateur"
   },
   "dashboard": {
     "eyebrow": "Votre espace",

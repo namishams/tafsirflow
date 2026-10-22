@@ -1,5 +1,6 @@
 import { Image } from "expo-image";
 import { Pressable, Text, View } from "react-native";
+import Svg, { Rect } from "react-native-svg";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
@@ -54,6 +55,17 @@ function ReciterLinks({ onStage }: { onStage?: boolean }) {
   );
 }
 
+function UaeFlag() {
+  return (
+    <Svg width={30} height={20} viewBox="0 0 30 20" accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+      <Rect width={30} height={20} fill="#fff" />
+      <Rect width={30} height={6.67} fill="#00732f" />
+      <Rect y={13.33} width={30} height={6.67} fill="#000" />
+      <Rect width={8} height={20} fill="#ce1126" />
+    </Svg>
+  );
+}
+
 export default function FounderAbout({ variant = "full" }: { variant?: "full" | "compact" }) {
   const t = useWebT("founderAbout");
   const isl = useIsl();
@@ -94,6 +106,20 @@ export default function FounderAbout({ variant = "full" }: { variant?: "full" | 
           <Text style={{ marginTop: 6, fontFamily: FONT.display, fontSize: 26, lineHeight: 32, color: "#eef0f3" }}>{t("misharyTitle")}</Text>
           <Text style={{ marginTop: 10, fontFamily: FONT.regular, fontSize: 15.5, lineHeight: 25, color: "rgba(255,255,255,0.75)" }}>{t("mishary")}</Text>
           <View style={{ marginTop: 18 }}><ReciterLinks onStage /></View>
+        </StageCard>
+      </LinearGradient>
+      <LinearGradient colors={["#0c4a37", "#06221a"]} style={{ marginTop: 20, borderRadius: 16, overflow: "hidden", borderWidth: 1, borderColor: "rgba(201,166,94,0.4)" }}>
+        <StageCard style={{ padding: 22 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
+            <UaeFlag />
+            <Text accessibilityRole="header" style={{ flex: 1, fontFamily: FONT.display, fontSize: 24, lineHeight: 30, color: "#eef0f3" }}>{t("uaTitle")}</Text>
+          </View>
+          <Text style={{ marginTop: 14, fontFamily: SERIF, fontSize: 15.5, lineHeight: 25, color: "rgba(255,255,255,0.8)" }}>{t("uaP1")}</Text>
+          <Text style={{ marginTop: 10, fontFamily: SERIF, fontSize: 15.5, lineHeight: 25, color: "rgba(255,255,255,0.8)" }}>{t("uaP2")}</Text>
+          <Text style={{ marginTop: 10, fontFamily: SERIF, fontSize: 15.5, lineHeight: 25, color: "rgba(255,255,255,0.8)" }}>{t("uaP3")}</Text>
+          <Text style={{ marginTop: 10, fontFamily: SERIF, fontSize: 15.5, lineHeight: 25, color: stage.gold }}>{t("uaP4")}</Text>
+          <Text style={{ marginTop: 14, fontFamily: FONT.semibold, fontSize: 13, color: stage.gold }}>{t("uaSign")}</Text>
+          <Text style={{ marginTop: 8, fontFamily: FONT.regular, fontSize: 12, lineHeight: 17, color: "rgba(255,255,255,0.55)" }}>{t("uaNote")}</Text>
         </StageCard>
       </LinearGradient>
     </View>
