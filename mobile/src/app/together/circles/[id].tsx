@@ -14,6 +14,7 @@ import type { TalentCard } from "@/features/talents/api";
 import { TG, type Circle } from "@/features/together/api";
 import { demoOn } from "@/features/together/sample";
 import { useTg, type TgKey } from "@/features/together/text";
+import { HalaqaButton } from "@/features/social/Entry";
 import { Body, InviteSheet, MemberRow, NudgeSheet, ReportCircleSheet, Section, Tile, TogetherGate, nf, useTgErr, useTogetherAccess } from "@/features/together/ui";
 
 // /together/circles/<id> – one study circle: this week's shared goal and the group streak, the progress board (week
@@ -72,6 +73,7 @@ export default function TogetherCircle() {
                       ) : null}
                     </View>
                   </Stage>
+                  <HalaqaButton circleId={c.id} />
 
                   <Section title={tg("members")} icon="user">
                     <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, overflow: "hidden" }}>

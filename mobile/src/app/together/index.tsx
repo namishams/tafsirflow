@@ -14,6 +14,7 @@ import { BadgeSheetHost } from "@/features/talents/badges";
 import { SafetyBar } from "@/features/talents/ui";
 import { TG, type Challenge, type Community, type Inbox, type Invite, type League, type Pulse } from "@/features/together/api";
 import { demoMoments, demoOn, setDemo } from "@/features/together/sample";
+import { SocialEntryCard } from "@/features/social/Entry";
 import { useTg, type TgKey } from "@/features/together/text";
 import {
   Body, ChallengeCard, ChallengeSheet, CommunityGoalCard, FriendsTodayCard, InviteCard, InviteSheet, LeagueBadge, MemberRow, Progress, Section, Tile, TogetherGate, nf, useTgErr, useTogetherAccess,
@@ -103,6 +104,8 @@ export default function TogetherHub() {
                   ) : null}
                 </Section>
               ) : null}
+
+              {!demoOn() ? <SocialEntryCard /> : null}
 
               {/* friends today */}
               {pulse ? (
