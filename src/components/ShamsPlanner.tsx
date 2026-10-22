@@ -1,14 +1,16 @@
 "use client";
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { rangeMinutes, surahRanges } from "@/lib/verseTime";
 
-// How long a goal takes at a given daily amount (new verses per day; reviews come on top)
+// How long a goal takes at a given daily amount (new verses per day; reviews come on top). `surahs`: first and last surah
+// of the goal, for the time per new verse (estimated from the length of its verses, lib/verseTime.ts)
 const GOALS = [
-  { id: "fatiha", verses: 7 },
-  { id: "juzamma", verses: 564 },
-  { id: "mulk", verses: 30 },
-  { id: "baqarah", verses: 286 },
-  { id: "quran", verses: 6236 },
+  { id: "fatiha", verses: 7, surahs: [1, 1] },
+  { id: "juzamma", verses: 564, surahs: [78, 114] },
+  { id: "mulk", verses: 30, surahs: [67, 67] },
+  { id: "baqarah", verses: 286, surahs: [2, 2] },
+  { id: "quran", verses: 6236, surahs: [1, 114] },
 ] as const;
 const PER_DAY = [1, 3, 5, 10, 20];
 
@@ -19,7 +21,8 @@ export default function ShamsPlanner() {
   const [per, setPer] = useState(3);
   const g = GOALS.find((x) => x.id === goal)!;
   const days = Math.ceil(g.verses / per);
-  const minutes = per * 4 + 5; // ~4 minutes per new verse in seven steps + ~5 minutes of review
+  // the new verses in seven steps (the goal's average verse, by length) + ~5 minutes of review
+  const minutes = Math.round(per * (rangeMinutes(surahRanges(g.surahs[0], g.surahs[1])) / g.verses) + 5);
   const span = days < 60 ? t("planDays", { n: days }) : days < 730 ? t("planMonths", { n: Math.round(days / 30.4) }) : t("planYears", { n: (days / 365).toFixed(1) });
   const chip = (on: boolean) => `h-10 rounded-full border px-4 text-sm font-semibold transition ${on ? "border-[rgb(201_166_94)] bg-[rgb(201_166_94)]/15 text-ink shadow-[inset_0_0_0_1px_rgb(201_166_94)]" : "border-line bg-surface/70 hover:border-[rgb(201_166_94)]/70"}`;
   return (

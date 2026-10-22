@@ -2,8 +2,8 @@
   "id": "reflect-ayat-al-kursi",
   "kind": "verse",
   "verseKey": "2:255",
-  "title": { "de": "Ayat al-Kursi", "en": "Ayat al-Kursi" },
-  "body": { "de": "Der Thronvers beschreibt Allahs Wissen und Herrschaft. Lesen Sie heute den Tafsir dazu.", "en": "The Throne Verse describes Allah's knowledge and dominion. Read its tafsir today." },
+  "title": { "de": "Ayat al-Kursi", "en": "Ayat al-Kursi", "ar": "آية الكرسي", "tr": "Âyetü'l-Kürsî", "ur": "آیت الکرسی", "fa": "آیت‌الکرسی", "ps": "آیت الکرسي", "fr": "Ayat al-Kursi", "es": "Ayat al-Kursi", "id": "Ayat Kursi", "ms": "Ayat al-Kursi", "bn": "আয়াতুল কুরসি", "ru": "Аят аль-Курси", "zh": "宝座经文" },
+  "body": { "de": "Der Thronvers beschreibt Allahs Wissen und Herrschaft. Lesen Sie heute den Tafsir dazu.", "en": "The Throne Verse describes Allah's knowledge and dominion. Read its tafsir today.", "ar": "تصف آية الكرسي علم الله وملكه. اقرأ تفسيرها اليوم.", "tr": "Kürsî Âyeti, Allah'ın ilmini ve hükümranlığını anlatır. Bugün tefsirini okuyun.", "ur": "آیت الکرسی اللہ کے علم اور بادشاہی کو بیان کرتی ہے۔ آج اس کی تفسیر پڑھیں۔", "fa": "آیت‌الکرسی علم و فرمانروایی الله را بیان می‌کند. امروز تفسیر آن را بخوانید.", "ps": "آیت الکرسي د الله پوهه او واکمني بیانوي. نن یې تفسیر ولولئ.", "fr": "Le verset du Trône décrit la science et la souveraineté d'Allah. Lisez son tafsir aujourd'hui.", "es": "La aleya del Trono describe el conocimiento y el dominio de Allah. Lea hoy su tafsir.", "id": "Ayat Kursi menggambarkan ilmu dan kekuasaan Allah. Bacalah tafsirnya hari ini.", "ms": "Ayat al-Kursi menggambarkan ilmu dan kekuasaan Allah. Bacalah tafsirnya hari ini.", "bn": "আয়াতুল কুরসি আল্লাহর জ্ঞান ও সার্বভৌমত্বের বর্ণনা দেয়। আজই এর তাফসির পড়ুন।", "ru": "Аят аль-Курси описывает знание и власть Аллаха. Прочитайте его тафсир сегодня.", "zh": "宝座经文描述了安拉的知识与主权。今天就读一读它的经注吧。" },
   "source": "Quran.com", "sourceUrl": "https://quran.com/2/255",
   "tradition": "all", "publishAt": "2026-10-21T00:00:00Z", "expiresAt": "2026-12-31T00:00:00Z"
 }

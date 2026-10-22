@@ -8,17 +8,23 @@ const n = (x: unknown) => (typeof x === "number" && Number.isFinite(x) ? x : 0);
 
 /** per key the larger number */
 const maxMap = (a: unknown, b: unknown) => { const out: Record<string, number> = { ...(o(b) as Record<string, number>) }; for (const [k, v] of Object.entries(o(a))) out[k] = Math.max(n(out[k]), n(v)); return out; };
-/** per key: every number field takes the larger value, other fields come from the entry with the newer `last` */
-function statMap(a: unknown, b: unknown, ts = "last"): Record<string, Obj> {
+/** per key: every number field takes the larger value, other fields come from the entry with the newer `last`;
+ *  fields in `fromNewer` (a Leitner box, the latest own rating) come from the newer entry too, or the other one if it lacks them */
+function statMap(a: unknown, b: unknown, ts = "last", fromNewer: string[] = []): Record<string, Obj> {
   const out: Record<string, Obj> = { ...(o(b) as Record<string, Obj>) };
   for (const [k, v] of Object.entries(o(a))) {
     const x = o(v), y = out[k];
     if (!y) { out[k] = x; continue; }
-    const base = n(x[ts]) >= n(y[ts]) ? x : y;
-    out[k] = { ...base, ...Object.fromEntries([...new Set([...Object.keys(x), ...Object.keys(y)])].filter((f) => typeof x[f] === "number" || typeof y[f] === "number").map((f) => [f, Math.max(n(x[f]), n(y[f]))])) };
+    const [base, other] = n(x[ts]) >= n(y[ts]) ? [x, y] : [y, x];
+    out[k] = { ...base, ...Object.fromEntries([...new Set([...Object.keys(x), ...Object.keys(y)])].filter((f) => typeof x[f] === "number" || typeof y[f] === "number").map((f) => [f, fromNewer.includes(f) ? (typeof base[f] === "number" ? base[f] : other[f]) : Math.max(n(x[f]), n(y[f]))])) };
   }
   return out;
 }
+/** keeps the `max` entries with the newest time */
+const newestN = (m: Record<string, Obj>, max: number, at: (x: Obj) => number = (x) => n(x.last)) => {
+  const ks = Object.keys(m);
+  return ks.length <= max ? m : Object.fromEntries(ks.sort((p, q) => at(m[q]) - at(m[p])).slice(0, max).map((k) => [k, m[k]]));
+};
 /** the entry with the larger value of `field` (ties: first) */
 const higher = (a: unknown, b: unknown, field: string) => (n(o(a)[field]) >= n(o(b)[field]) ? o(a) : o(b));
 const newest = <T extends Obj>(list: T[], at: string) => list.reduce((m, x) => Math.max(m, n(x[at])), 0);
@@ -27,9 +33,14 @@ export const EXTRA_KEYS = [
   "qmc.shams2.settings.v1", "qmc.shams2.log.v1", "qmc.shams2.words.v1", "qmc.shams2.checks.v1", "qmc.shams2.mut.v1", "qmc.shams2.grade.v1", "qmc.shams2.weeks.v1",
   "qmc.qbank.v1", "qmc.nahjCourse.v1",
   "qmc.shamsMode.v1",
+  // Shams 3.0 (features/shams2/store2.ts): transitions, comprehension, pronunciation rubric, makhraj coach, own pace,
+  // today's minutes, settings of the flexible classic path
+  "qmc.shams2.links.v1", "qmc.shams2.understand.v1", "qmc.shams2.rubric.v1", "qmc.shams2.makhraj.v1", "qmc.shams2.pace.v1", "qmc.shams2.today.v1",
+  "qmc.shams.flex.v1",
 ] as const;
 // Not synced on purpose: qmc.shams2.teacher.v1 (links and other people's student snapshots stay on the device),
-// qmc.shams2.pages.v1 (cache from the Quran API), qmc.shams2.onboarded.v1 (per device).
+// qmc.shams2.pages.v1 (cache from the Quran API), qmc.shams2.onboarded.v1 (per device), qmc.shams2.takes.v1 (index of
+// recordings that stay on the device), qmc.teacher.recitations.v1 (cache of the server's list).
 
 export const EXTRA_MERGE: Record<(typeof EXTRA_KEYS)[number], (a: unknown, b: unknown) => unknown> = {
   // settings carry no timestamp: this device's choice wins, missing fields come from the account
@@ -55,6 +66,26 @@ export const EXTRA_MERGE: Record<(typeof EXTRA_KEYS)[number], (a: unknown, b: un
   "qmc.shams2.words.v1": (a, b) => { const out: Record<string, Record<string, Obj>> = {}; const A = o(a), B = o(b); for (const k of new Set([...Object.keys(A), ...Object.keys(B)])) out[k] = statMap(A[k], B[k]); return out; },
   "qmc.shams2.checks.v1": (a, b) => statMap(a, b),
   "qmc.shams2.mut.v1": (a, b) => statMap(a, b),
+  // Shams 3.0, same limits as store2.ts LIMITS: counters max, the Leitner box and the latest own rating from the newer entry
+  "qmc.shams2.links.v1": (a, b) => newestN(statMap(a, b, "last", ["box"]), 1500),
+  "qmc.shams2.understand.v1": (a, b) => newestN(statMap(a, b), 1500),
+  "qmc.shams2.makhraj.v1": (a, b) => newestN(statMap(a, b, "last", ["self"]), 64),
+  // per verse and side (self, teacher) the newer rating
+  "qmc.shams2.rubric.v1": (a, b) => {
+    const out: Record<string, Obj> = { ...(o(b) as Record<string, Obj>) };
+    for (const [k, v] of Object.entries(o(a))) {
+      const x = o(v), y = o(out[k]), m: Obj = {};
+      for (const side of ["self", "teacher"]) { const p = x[side], q = y[side]; const w = p === undefined ? q : q === undefined ? p : n(o(p).at) >= n(o(q).at) ? p : q; if (w !== undefined) m[side] = w; }
+      out[k] = m;
+    }
+    return newestN(out, 500, (e) => Math.max(n(o(e.self).at), n(o(e.teacher).at)));
+  },
+  // the newer list of samples (at most 30)
+  "qmc.shams2.pace.v1": (a, b) => { const x = n(o(a).at) >= n(o(b).at) ? o(a) : o(b); return { ...x, newMsPerWord: (Array.isArray(x.newMsPerWord) ? (x.newMsPerWord as unknown[]) : []).filter((v) => typeof v === "number").slice(-30), at: n(x.at) }; },
+  // the later day, on the same day the newer choice
+  "qmc.shams2.today.v1": (a, b) => { const x = o(a), y = o(b); return n(x.day) > n(y.day) || (n(x.day) === n(y.day) && n(x.at) >= n(y.at)) ? x : y; },
+  // settings carry no timestamp: this device's choice wins, missing fields come from the account
+  "qmc.shams.flex.v1": (a, b) => ({ ...o(b), ...o(a) }),
   "qmc.shams2.weeks.v1": (a, b) => { const out: Record<string, Obj> = { ...(o(b) as Record<string, Obj>) }; for (const [k, v] of Object.entries(o(a))) out[k] = out[k] ? higher(v, out[k], "count") : o(v); return out; },
   "qmc.shams2.grade.v1": (a, b) => {
     const top = higher(a, b, "grade");

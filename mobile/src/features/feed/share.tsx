@@ -297,7 +297,7 @@ export function ShareSheet({ visible, onClose, renderCard, link, message, onShar
         <ScrollView bounces={false} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
           {/* the image as it will be shared, scaled down; the snapshot is taken from the unscaled inner view */}
           <View accessible accessibilityRole="image" accessibilityLabel={format === "story" ? tx.storyPreview : tx.previewLabel}
-            style={{ alignSelf: "center", width: size.w * scale, height: size.h * scale, borderRadius: 14, overflow: "hidden", borderWidth: 1, borderColor: stage.goldSoft, shadowColor: "#000", shadowOpacity: 0.35, shadowRadius: 18, shadowOffset: { width: 0, height: 8 } }}>
+            style={{ alignSelf: "center", width: size.w * scale, height: size.h * scale, borderRadius: 14, overflow: "hidden", borderWidth: 1, borderColor: stage.goldSoft, backgroundColor: stage.bg, shadowColor: "#000", shadowOpacity: 0.35, shadowRadius: 18, shadowOffset: { width: 0, height: 8 } }}>
             <View style={{ width: size.w, height: size.h, transform: [{ translateX: (size.w / 2) * (scale - 1) }, { translateY: (size.h / 2) * (scale - 1) }, { scale }] }}>
               <View ref={shot} collapsable={false} style={{ width: size.w, height: size.h }}>
                 {visible ? renderCard(format, opts) : null}

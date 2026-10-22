@@ -382,7 +382,7 @@ function PlayDisc() {
   return (
     <View style={{ width: 60, height: 60, alignItems: "center", justifyContent: "center", marginHorizontal: -6 }}>
       <Svg width={60} height={60} style={StyleSheet.absoluteFill}><Circle cx={30} cy={30} r={29.5} fill="none" stroke="rgba(233,207,153,0.55)" strokeWidth={1} strokeDasharray="3 3" /></Svg>
-      <View style={{ width: 48, height: 48, borderRadius: 24, shadowColor: "rgb(214,180,108)", shadowOffset: { width: 0, height: 6 }, shadowRadius: 9, shadowOpacity: 0.5 }}>
+      <View style={{ width: 48, height: 48, borderRadius: 24, backgroundColor: "#c6a65e", shadowColor: "rgb(214,180,108)", shadowOffset: { width: 0, height: 6 }, shadowRadius: 9, shadowOpacity: 0.5 }}>
         <LinearGradient colors={["#e6cd92", "#c6a65e"]} style={{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center" }}>
           <Svg width={20} height={20} viewBox="0 0 24 24"><Path d="M8 5.5v13l10.5-6.5z" fill="rgb(8,38,29)" /></Svg>
         </LinearGradient>
@@ -618,7 +618,7 @@ const s_ = StyleSheet.create({
   chip: { flexDirection: "row", alignItems: "center", gap: 7, maxWidth: "100%", paddingHorizontal: 12, borderRadius: 999, borderWidth: 1 },
   segOn: { borderRadius: 999, borderWidth: 1, borderColor: "rgba(214,180,108,0.5)", overflow: "hidden" },
   segOff: { borderRadius: 999, borderWidth: 1, borderColor: "transparent" },
-  segShadow: { shadowColor: "rgb(6,36,27)", shadowOffset: { width: 0, height: 6 }, shadowRadius: 6, shadowOpacity: 0.35 },
+  segShadow: { backgroundColor: "rgb(6,36,27)", shadowColor: "rgb(6,36,27)", shadowOffset: { width: 0, height: 6 }, shadowRadius: 6, shadowOpacity: 0.35 },
   tile: { borderRadius: 12, borderWidth: 1 },
   innerRing: { position: "absolute", top: 3, left: 3, right: 3, bottom: 3, borderRadius: 8, borderWidth: 1 },
   hereRing: { position: "absolute", top: -4, left: -4, right: -4, bottom: -4, borderRadius: 15, borderWidth: 3, borderColor: "rgba(201,166,94,0.12)" },

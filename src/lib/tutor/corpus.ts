@@ -1,0 +1,186 @@
+import { COURSES } from "../learn/courses";
+import { TAJWEED_LESSONS } from "../tajweed";
+import { GUIDES } from "../guides";
+import { ISLAM } from "../islam";
+import { PRINCIPLES } from "../learn/shams2/handbook";
+import { SOURCES, TERMS } from "../learn/shams2/sources";
+import { carouselPayload, carouselStore } from "../feed/carousels/store";
+import { hadithRefsIn, isHadithRef, isVerseKey, verseRefsIn } from "./text";
+
+// The tutor's library: only the platform's own reviewed content. Every passage knows where it comes from (a link inside
+// the platform), which verses and hadith it names, and for which tradition it was written. The model may only explain
+// with these passages; scripture is shown from its source by reference (feed/resolve.ts), never written by the model.
+
+export type DocKind = "course" | "tajweed" | "guide" | "islam" | "handbook" | "glossary" | "carousel" | "tafsir";
+export type Lang = "en" | "de" | "ar";
+export type Doc = {
+  /** unique per passage ("course:aqidah:a01#0@en") */
+  id: string;
+  /** the same passage in every language ("course:aqidah:a01#0") */
+  base: string;
+  kind: DocKind;
+  lang: Lang;
+  title: string;
+  text: string;
+  /** the page inside the platform (website path without locale; the app maps it to its own route) */
+  link: string;
+  verses: string[];
+  hadith: string[];
+  tradition: "sunni" | "shia" | "all";
+};
+
+const MAX_CHUNK = 1400;
+
+/** splits a Markdown body at "## " headings, long sections again at paragraphs */
+function chunks(body: string): { head: string; text: string }[] {
+  const out: { head: string; text: string }[] = [];
+  const parts = body.split(/\n(?=##\s)/);
+  for (const part of parts) {
+    const m = /^##+\s+(.+)\n?/.exec(part);
+    const head = m ? m[1].trim() : "";
+    const rest = (m ? part.slice(m[0].length) : part).trim();
+    if (!rest) continue;
+    let cur = "";
+    for (const p of rest.split(/\n{2,}/)) {
+      if (cur && cur.length + p.length > MAX_CHUNK) { out.push({ head, text: cur.trim() }); cur = ""; }
+      cur += (cur ? "\n\n" : "") + p;
+    }
+    if (cur.trim()) out.push({ head, text: cur.trim() });
+  }
+  return out;
+}
+
+const uniq = (a: string[]) => [...new Set(a)];
+const clean = (s: string) => s.replace(/\r/g, "").trim();
+
+function push(out: Doc[], d: Omit<Doc, "id" | "verses" | "hadith"> & { verses?: string[]; hadith?: string[] }) {
+  const text = clean(d.text);
+  if (text.length < 40) return;
+  out.push({
+    ...d,
+    text,
+    id: `${d.base}@${d.lang}`,
+    verses: uniq([...(d.verses ?? []).filter(isVerseKey), ...verseRefsIn(text)]),
+    hadith: uniq([...(d.hadith ?? []).filter(isHadithRef), ...hadithRefsIn(text)]),
+  });
+}
+
+function courseDocs(out: Doc[]) {
+  for (const c of COURSES) {
+    if (c.id === "names") continue; // the 99 names come from the Islam chapter "names" below
+    for (const l of c.lessons) {
+      const tradition = l.tags?.includes("jafari") && !l.tags.some((t) => t === "hanafi" || t === "maliki" || t === "shafii" || t === "hanbali") ? "shia" : "all";
+      for (const lang of ["en", "de", "ar"] as const) {
+        const body = l.body[lang];
+        if (!body) continue;
+        const title = `${c.title[lang] || c.title.en} · ${l.title[lang] || l.title.en}`;
+        chunks(body).forEach((ch, i) => push(out, {
+          base: `course:${c.id}:${l.id}#${i}`, kind: "course", lang, title: ch.head ? `${title} – ${ch.head}` : title,
+          text: (c.note && i === 0 ? `${c.note[lang] || c.note.en}\n\n` : "") + ch.text,
+          link: `/courses/${c.id}/${l.id}`, verses: l.verses, hadith: l.hadith, tradition,
+        }));
+        // the quiz explanations are reviewed teaching text as well ("why is this answer wrong?")
+        const ex = l.quiz.map((q) => (q.explain ? `${q.q[lang] || q.q.en} – ${q.options[q.answer]?.[lang] || q.options[q.answer]?.en}: ${q.explain[lang] || q.explain.en}` : "")).filter(Boolean).join("\n");
+        if (ex) push(out, { base: `course:${c.id}:${l.id}#quiz`, kind: "course", lang, title: `${title} – Quiz`, text: ex, link: `/courses/${c.id}/${l.id}`, verses: l.verses, hadith: l.hadith, tradition });
+      }
+    }
+  }
+}
+
+function tajweedDocs(out: Doc[]) {
+  for (const l of TAJWEED_LESSONS) {
+    for (const lang of ["en", "de"] as const) {
+      const title = lang === "de" ? l.title_de : l.title_en;
+      const body = `${lang === "de" ? l.summary_de : l.summary_en}\n\n${lang === "de" ? l.body_de : l.body_en}`;
+      const verses = l.examples.map((e) => e.key).filter((k): k is string => !!k);
+      chunks(body).forEach((ch, i) => push(out, { base: `tajweed:${l.id}#${i}`, kind: "tajweed", lang, title: ch.head ? `${title} – ${ch.head}` : title, text: ch.text, link: `/tajweed/${l.id}`, verses, tradition: "all" }));
+      const ex = l.quiz.map((q) => `${lang === "de" ? q.q_de : q.q_en} – ${(lang === "de" ? q.options_de : q.options_en)[q.answer]}: ${lang === "de" ? q.explain_de : q.explain_en}`).join("\n");
+      if (ex) push(out, { base: `tajweed:${l.id}#quiz`, kind: "tajweed", lang, title: `${title} – Quiz`, text: ex, link: `/tajweed/${l.id}`, tradition: "all" });
+    }
+  }
+}
+
+function guideDocs(out: Doc[]) {
+  for (const g of GUIDES) {
+    for (const lang of ["en", "de"] as const) {
+      const title = lang === "de" ? g.title_de : g.title_en;
+      chunks(lang === "de" ? g.body_de : g.body_en).forEach((ch, i) => push(out, { base: `guide:${g.slug}#${i}`, kind: "guide", lang, title: ch.head ? `${title} – ${ch.head}` : title, text: ch.text, link: `/guides/${g.slug}`, tradition: "all" }));
+      const faq = g.faq.map((f) => `${lang === "de" ? f.q_de : f.q_en}\n${lang === "de" ? f.a_de : f.a_en}`).join("\n\n");
+      if (faq) push(out, { base: `guide:${g.slug}#faq`, kind: "guide", lang, title: `${title} – FAQ`, text: faq, link: `/guides/${g.slug}`, tradition: "all" });
+    }
+  }
+}
+
+const SHIA_DOCS = new Set(["prayer-shia", "jafari", "zaydi"]);
+const SUNNI_DOCS = new Set(["prayer-sunni", "hanafi", "maliki", "shafii", "hanbali", "zahiri"]);
+function islamDocs(out: Doc[]) {
+  for (const d of ISLAM) {
+    const tradition = SHIA_DOCS.has(d.slug) ? "shia" : SUNNI_DOCS.has(d.slug) ? "sunni" : "all";
+    for (const lang of ["en", "de"] as const) {
+      const ch = d[lang];
+      const link = d.slug === "names" ? "/names" : `/islam/${d.slug}`;
+      push(out, { base: `islam:${d.slug}#lead`, kind: "islam", lang, title: ch.title, text: `${ch.lead}\n\n${ch.facts.map((f) => `${f.n}: ${f.l}`).join("\n")}\n\n${lang === "de" ? "Quellen" : "Sources"}: ${ch.sources.join("; ")}`, link, tradition });
+      chunks(ch.body).forEach((c, i) => push(out, { base: `islam:${d.slug}#${i}`, kind: "islam", lang, title: c.head ? `${ch.title} – ${c.head}` : ch.title, text: c.text, link, tradition }));
+      const faq = ch.faq.map((f) => `${f.q}\n${f.a}`).join("\n\n");
+      if (faq) push(out, { base: `islam:${d.slug}#faq`, kind: "islam", lang, title: `${ch.title} – FAQ`, text: faq, link, tradition });
+    }
+  }
+}
+
+function handbookDocs(out: Doc[]) {
+  const label = (refs: readonly string[]) => refs.map((r) => SOURCES[r as keyof typeof SOURCES]?.label).filter(Boolean).join("; ");
+  for (const p of PRINCIPLES) {
+    for (const lang of ["en", "de", "ar"] as const) {
+      push(out, { base: `handbook:${p.id}`, kind: "handbook", lang, title: `${lang === "de" ? "Shams-Methode" : lang === "ar" ? "منهج شمس" : "Shams Method"} – ${p.title[lang]}`, text: `${p.body[lang]}\n\n(${label(p.src)})`, link: "/shams/handbook", tradition: "all" });
+    }
+  }
+  // the glossary of classical terms, a few terms per passage
+  for (let i = 0; i < TERMS.length; i += 6) {
+    const part = TERMS.slice(i, i + 6);
+    for (const lang of ["en", "de", "ar"] as const) {
+      const text = part.map((t) => `${t.ar} (${t.tr}): ${lang === "de" ? t.de : lang === "ar" ? t.arDef : t.en}`).join("\n");
+      push(out, { base: `glossary:${i / 6}`, kind: "glossary", lang, title: lang === "de" ? "Glossar der Shams-Methode" : lang === "ar" ? "مصطلحات منهج شمس" : "Shams Method glossary", text, link: "/shams/handbook", tradition: "all" });
+    }
+  }
+}
+
+async function carouselDocs(out: Doc[]) {
+  try {
+    const st = await carouselStore();
+    for (const [, e] of st.carousels) {
+      for (const lang of ["en", "de", "ar"] as const) {
+        const p = carouselPayload(st, e, lang);
+        if (p.lang !== lang) continue;
+        const verses: string[] = [], hadith: string[] = [];
+        const body = p.slides.map((s) => {
+          if (s.key) verses.push(s.key);
+          if (s.keys) verses.push(...s.keys);
+          if (s.c && s.num) hadith.push(`${s.c}:${s.num}`);
+          return [s.title, s.body, ...(s.list ?? [])].filter(Boolean).join(" – ");
+        }).filter(Boolean).join("\n");
+        push(out, {
+          base: `carousel:${p.id}`, kind: "carousel", lang, title: `${p.seriesLabel} – ${p.cover.title}`,
+          text: `${p.cover.sub ? `${p.cover.sub}\n` : ""}${body}\n\n${p.sources.map((s) => s.label).join("; ")}`.slice(0, 2600),
+          link: `/carousels/${p.id}`, verses, hadith, tradition: p.tradition,
+        });
+      }
+    }
+  } catch (e) {
+    console.error("tutor corpus: carousels", e);
+  }
+}
+
+let built: Promise<Doc[]> | null = null;
+let builtAt = 0;
+/** the whole library (built once, refreshed every 6 hours so new carousels and courses are found) */
+export function corpus(): Promise<Doc[]> {
+  if (built && Date.now() - builtAt < 6 * 60 * 60_000) return built;
+  builtAt = Date.now();
+  built = (async () => {
+    const out: Doc[] = [];
+    courseDocs(out); tajweedDocs(out); guideDocs(out); islamDocs(out); handbookDocs(out);
+    await carouselDocs(out);
+    return out;
+  })().catch((e) => { built = null; throw e; });
+  return built;
+}

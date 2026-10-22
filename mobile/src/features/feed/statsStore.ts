@@ -1,7 +1,15 @@
 import { useEffect, useRef } from "react";
 import { AppState } from "react-native";
 import { readJSON, useStored, writeJSON } from "@/lib/store";
-import { gEvent, isFrozen } from "./gamify";
+import type { GEvent } from "./gamify";
+
+// gamify.ts imports this module (days, totals, streaks); it is loaded on first use here instead of at the top, so the
+// two do not form a require cycle when the app starts (Metro warned twice on every launch, 22.10.2026)
+type GamifyModule = typeof import("./gamify");
+let gamifyMod: GamifyModule | null = null;
+const gamify = (): GamifyModule => (gamifyMod ??= require("./gamify") as GamifyModule); // eslint-disable-line @typescript-eslint/no-require-imports
+const gEvent = (e: GEvent) => gamify().gEvent(e);
+const isFrozen = (d: number) => gamify().isFrozen(d);
 
 // Statistics of the feed (kept on this device; synced with the account when signed in, see feedSync.ts): time in the feed (counted only while a feed
 // screen is focused and the app is active), posts seen, verses heard, words learned, what was read per kind, likes,

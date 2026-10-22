@@ -16,6 +16,7 @@ import { CoachCard } from "./ProgressPanel";
 import { SessionDone, SessionStart } from "./SessionStart";
 import Onboarding from "./Onboarding";
 import { TodayPlanCard } from "./learn/plan/TodayPlanCard";
+import { GardenEntryCard } from "./learn/garden/EntryCard";
 import Heatmap from "./Heatmap";
 import RewardsCard from "./RewardsCard";
 import PosterTiles from "./PosterTiles";
@@ -124,6 +125,7 @@ export default function TodayDashboard() {
         <Onboarding />
         {/* the personal 30-day plan of the app's onboarding (made on /start or in the app) */}
         <TodayPlanCard className="mt-6" />
+        <GardenEntryCard className="mt-6" />
         <RewardsCard />
         {/* checklist */}
         <section className="mt-10">

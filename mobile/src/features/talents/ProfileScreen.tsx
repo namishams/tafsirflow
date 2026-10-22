@@ -37,6 +37,8 @@ import * as Haptics from "expo-haptics";
 import { ExtrasChips } from "./ExtrasEditor";
 import { useGoalLabels, useTravel } from "./travel";
 import { readV2 } from "@/features/plan/v2";
+import { CareerStats } from "@/features/stats/CareerStats";
+import { useCT } from "@/features/stats/text";
 
 // The talent profile, one layout for the own profile (Account tab, owner 21.10.2026: "the last tab IS your profile")
 // and for everybody else (/talents/u/<username>). TikTok structure in emerald and gold: top bar (own: name with a
@@ -156,7 +158,7 @@ export function useProfileData(username: string | null | undefined, opts: { enab
   };
 }
 
-type Tab = "posts" | "saved" | "awards" | "sijill" | "moments";
+type Tab = "posts" | "saved" | "awards" | "sijill" | "moments" | "stats";
 type Opt = { label: string; onPress: () => void; destructive?: boolean };
 
 /** the whole profile screen: top bar, header, tabs, grid and the sheets */
@@ -181,6 +183,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   const pt = usePT();
   const st = useST();
   const tr = useT();
+  const ct = useCT();
   const err = useTalentErr();
   const { lang } = useLang();
   const insets = useSafeAreaInsets();
@@ -208,7 +211,9 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   const [sheet, setSheet] = useState<{ title?: string; opts: Opt[] } | null>(null);
   // development only, like Page: `?auditY=900` scrolls the profile for screenshot audits of a headless simulator
   const scrollRef = useRef<ScrollViewInstance>(null);
-  const { auditY } = useGlobalSearchParams<{ auditY?: string }>();
+  const { auditY, tab: tabParam, demo: demoParam } = useGlobalSearchParams<{ auditY?: string; tab?: string; demo?: string }>();
+  // development only, for screenshot audits: `?tab=stats` opens the statistics tab, `&demo=stats` with sample data
+  useEffect(() => { if (__DEV__ && tabParam === "stats") setTab("stats"); }, [tabParam]);
   useEffect(() => {
     if (!__DEV__ || !auditY || d.state !== "ok") return;
     const id = setTimeout(() => scrollRef.current?.scrollTo({ y: Number(auditY) || 0, animated: false }), 900);
@@ -511,7 +516,7 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
   // ---------- tabs (icons, TikTok) ----------
   const tabs: [Tab, string, ProfileIconName | IconName][] = postingOn
     ? [["posts", tt("tabClips"), "gridTab"], ...(p.mine ? [["saved", tt("tabSaved"), "bookmark"] as [Tab, string, IconName]] : []), ["awards", tt("tabAwards"), "rosette"]]
-    : [["moments", pt("tabAchievements"), "gridTab"], ["sijill", st("tabSijill"), "record"], ["awards", pt("tabBadges"), "rosette"]];
+    : [["moments", pt("tabAchievements"), "gridTab"], ["sijill", st("tabSijill"), "record"], ["awards", pt("tabBadges"), "rosette"], ["stats", ct("tabStats"), "chart"]];
   // (a sticky header child loses its own style to the sticky wrapper, so the row sits one level deeper)
   const tabBar = (
     <View style={{ backgroundColor: bg, paddingTop: 6 }}>
@@ -530,7 +535,10 @@ export function ProfileScreenView({ d, variant, title, canInteract, signedIn, re
     </View>
     </View>
   );
-  const body = tab === "sijill" ? (
+  // owner 22.10.2026: the progress profile (career card, places, Shams, courses, exams, milestones, boards)
+  const body = tab === "stats" ? (
+    <CareerStats username={mode === "local" ? null : p.username} own={mode !== "other"} local={mode === "local" || d.source === "cache"} name={p.name} demo={__DEV__ && (demoParam === "stats" || demoParam === "own" || demoParam === "other")} />
+  ) : tab === "sijill" ? (
     <View style={{ padding: 16 }}>
       {sijill === null ? <Loading /> : sijill === "restricted" ? <Muted>{st("restricted")}</Muted>
         : <SijillShowcase s={sijill} mine={mode === "own"} name={p.name} username={p.username} />}
@@ -605,7 +613,7 @@ function ProfileSkeleton({ width }: { width: number }) {
   );
 }
 
-const isPIcon = (n: string): n is ProfileIconName => ["plusSquare", "userPlus", "dots", "gridTab", "record", "rosette", "userCheck"].includes(n);
+const isPIcon = (n: string): n is ProfileIconName => ["plusSquare", "userPlus", "dots", "gridTab", "record", "rosette", "userCheck", "chart"].includes(n);
 
 /** one counter: the number bold above the grey label (the MashaAllah label with a gold heart) */
 function Stat({ n, label, onPress, heart }: { n: string; label: string; onPress?: () => void; heart?: boolean }) {

@@ -15,6 +15,7 @@ import { gEvent } from "@/lib/learn/feed/gamify";
 import { GRADES, checkPromotion, nextRequirements, pickItems, recordTest, type Grade, type TestKind } from "@/lib/learn/shams2/grades";
 import { useShams2 } from "@/lib/learn/shams2/model";
 import { noteCheck, noteWords } from "@/lib/learn/shams2/store";
+import { noteLink } from "@/lib/learn/shams2/store2";
 import { useS2 } from "@/lib/learn/shams2/text";
 import { Bar, Card, GoldButton, LearnHero, LearnMain, Spinner } from "@/components/learn/ui";
 import { PromptedWords, SpeechCheck, type CheckResult } from "./recite";
@@ -174,6 +175,8 @@ function Item({ k, onDone }: { k: string; onDone: (score: number) => void }) {
   const cue = prev?.data ? (m.grade.prompt === "hidden" ? prev.data.words.slice(-3) : prev.data.words) : [];
   const finish = (score: number) => {
     if (score < 1) noteMistake(k);
+    // the item asks for the transition from the previous verse into this one (Shams 3.0, links.v1): held only when it sat
+    if (prevKey) noteLink(k, score >= 1);
     if (check) { noteWords(k, words.map((x, i) => ({ position: x.position, ok: !!check.ok[i] }))); noteCheck(k, check.ok.filter(Boolean).length, check.ok.length); }
     onDone(score);
   };

@@ -6,6 +6,9 @@ import { getResources, getVerseByKey, pickTranslation } from "@/lib/quran";
 import { getSettings } from "@/lib/settings";
 import { refundDua, spendDua, type Spent } from "@/lib/aiCredits";
 import { localeMeta } from "@/i18n/locales";
+import { DIRECTIONS, LENGTHS, OCCASIONS, WHO_J, isDuaLang, topicFor, type Direction, type DuaLength, type Occasion, type WhoJ } from "@/lib/duaJourney";
+import { NAMES } from "@/lib/duaGenerator";
+import { composePersonal, requestOk } from "@/lib/duaAi";
 
 export const dynamic = "force-dynamic";
 
@@ -35,7 +38,9 @@ export async function POST(req: NextRequest) {
     if (!n || rateLimited(`dua:anon:${clientIp(req)}`, n, 24 * 60 * 60_000)) return json({ error: me ? "verify" : "login" }, me ? 403 : 401);
   } else if (rateLimited(`dua:day:${me!.id}`, 30, 24 * 60 * 60_000)) return json({ error: "limit" }, 429);
   if (rateLimited(`dua:min:${clientIp(req)}`, 6, 60_000)) return json({ error: "rate" }, 429);
-  const b = (await req.json().catch(() => ({}))) as { text?: string; topic?: string; who?: string; locale?: string; names?: string[] };
+  const b = (await req.json().catch(() => ({}))) as { text?: string; topic?: string; who?: string; locale?: string; names?: string[]; v?: number; occasion?: string; direction?: string; length?: string; lang?: string; arabic?: boolean };
+  // the guided journey (v 2): validated answers, moderation before a credit is used, JSON answer checked on the server
+  if (b.v === 2) return journey(req, key, b, app, me);
   const text = String(b.text ?? "").replace(/\s+/g, " ").trim().slice(0, 300);
   const locale = /^[a-z]{2}$/.test(String(b.locale)) ? String(b.locale) : "en";
   if (text.length < 3 && !TOPICS.includes(b.topic as Topic)) return json({ error: "empty" }, 400);
@@ -50,7 +55,7 @@ export async function POST(req: NextRequest) {
 Rules: Write only the personal request part, 3 to 6 short sentences, warm, humble and sincere, addressed to Allah ("O Allah" in that language). You may call on these beautiful names of Allah: ${names || "Ar-Rahman, Ar-Rahim"}.
 The authentic duas from the Quran and the Sunnah are shown separately from their sources; you never write them. Never quote, paraphrase or invent Quran verses or hadith, never attribute any words to the Prophet ﷺ, the Quran or a scholar, never invent rulings, promises, virtues or numbers. No Arabic script unless the language is Arabic, no emojis, no headings, no lists. Do not mention artificial intelligence.
 If the request asks for something harmful or for harm to others, write instead a short dua for guidance, patience and good for everyone.
-The person is praying for: ${b.who && b.who !== "me" ? b.who : "themselves"}.`;
+The person is praying for: ${b.who && b.who !== "me" && (WHO_J as readonly string[]).includes(b.who) ? b.who : "themselves"}.`;
   try {
     const r = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -66,4 +71,32 @@ The person is praying for: ${b.who && b.who !== "me" ? b.who : "themselves"}.`;
     if (app) await refundDua(me!.id, spent);
     return json({ error: "ai" }, 502);
   }
+}
+
+type Me = Awaited<ReturnType<typeof currentUser>>;
+const pick = <T extends string>(list: readonly T[], v: unknown, fallback: T): T => ((list as readonly string[]).includes(String(v)) ? (v as T) : fallback);
+
+async function journey(req: NextRequest, key: string, b: Record<string, unknown>, app: boolean, me: Me) {
+  const direction = pick<Direction>(DIRECTIONS, b.direction, "heart");
+  const who = pick<WhoJ>(WHO_J, b.who, "me");
+  const occasion = pick<Occasion>(OCCASIONS, b.occasion, "closer");
+  const len = pick<DuaLength>(LENGTHS, b.length, "medium");
+  const lang = isDuaLang(String(b.lang)) ? String(b.lang) : isDuaLang(String(b.locale)) ? String(b.locale) : "en";
+  const text = String(b.text ?? "").replace(/\s+/g, " ").trim().slice(0, 300);
+  const names = (Array.isArray(b.names) ? b.names : []).map(String).filter((n) => n in NAMES).slice(0, 3);
+  const topic = topicFor(direction, who);
+  // a request for harm is refused before anything is charged
+  if (!(await requestOk(key, text))) return json({ error: "refused" }, 422);
+  let spent: Spent = null;
+  if (app) {
+    spent = await spendDua(me!.id, me!.plan === "premium");
+    if (!spent) return json({ error: "credits" }, 402);
+  }
+  const out = await composePersonal(key, { occasion, who, direction, topic, text, len, lang, arabic: !!b.arabic && lang !== "ar", names, user: me ? `qm-${me.id}` : "qm-visitor" }).catch(() => ({ ok: false as const, error: "ai" as const }));
+  if (!out.ok) {
+    if (app) await refundDua(me!.id, spent);
+    return json({ error: out.error }, out.error === "refused" ? 422 : 502);
+  }
+  // text: the personal words (same field as before); arabic: the optional Arabic version; ai: always composed with AI
+  return json({ v: 2, text: out.personal, arabic: out.arabic ?? null, ai: true, topic, lang });
 }

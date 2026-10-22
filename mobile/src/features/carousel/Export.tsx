@@ -23,11 +23,13 @@ import type { CarouselPayload, PaletteId, Scripture, WisdomPayload } from "./typ
 // save all slides to Photos instead (Instagram picks them up as a carousel) or share them one by one. One slide as a
 // story (1080 × 1920, safe zones kept) goes through the app's usual share sheet with its formats and designs.
 
-/** the child (drawn at w × h points) scaled to `width` */
+/** the child (drawn at w × h points) scaled to `width`. Always laid out left to right: in an RTL app the wider child
+ *  would start at the right edge and the scale would push it out of the frame (Arabic gallery tiles showed a strip);
+ *  the slides handle Arabic themselves (fontsFor in Slide.tsx). */
 export function Scaled({ w, h, width, children }: { w: number; h: number; width: number; children: ReactNode }) {
   const k = width / w;
   return (
-    <View style={{ width, height: h * k, overflow: "hidden" }}>
+    <View style={{ width, height: h * k, overflow: "hidden", direction: "ltr" }}>
       <View style={{ width: w, height: h, transform: [{ translateX: (w / 2) * (k - 1) }, { translateY: (h / 2) * (k - 1) }, { scale: k }] }}>{children}</View>
     </View>
   );

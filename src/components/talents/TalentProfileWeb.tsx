@@ -11,6 +11,9 @@ import { talentsText } from "@/lib/talentsWeb";
 import { sijillText } from "@/lib/sijillWeb";
 import { countryName } from "@/lib/countries";
 import type { Sijill } from "@/lib/sijill";
+import { maybeSignedIn } from "@/lib/sync";
+import CareerStatsWeb from "@/components/stats/CareerStatsWeb";
+import { careerText } from "@/lib/careerWeb";
 
 // The talent profile on the website, 1:1 with the app (owner, 21.10.2026; mobile/src/features/talents/ProfileScreen.tsx):
 // TikTok structure in emerald and gold. Top bar (own: name with a chevron menu, "+" to share with the QR code, the menu
@@ -72,6 +75,7 @@ const I = {
   search: <><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4 4" /></>,
   map: <><path d="M9 4.5L3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z" /><path d="M9 4.5v13M15 6.5v13" /></>,
   compass: <><circle cx="12" cy="12" r="8.5" /><path d="M15.5 8.5l-2 5-5 2 2-5z" /></>,
+  chart: <><path d="M4 20h16" /><path d="M6.5 16.5V11M11 16.5V6M15.5 16.5v-4M20 16.5V8.5" /></>,
 };
 export type WebIconName = keyof typeof I;
 export function Ico({ n, size = 24, sw = 1.7, className = "" }: { n: WebIconName; size?: number; sw?: number; className?: string }) {
@@ -128,6 +132,8 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
 
   const load = useCallback(async () => {
     let u = username;
+    // signed-out visitors see the server-rendered profile; the member calls below would only answer 401 (console errors)
+    if (!(await maybeSignedIn())) { setViewer("out"); if (own) setState(initial ? "ok" : "none"); return; }
     if (own) {
       const m = await call<{ profile: { username: string } | null; talent?: { canInteract?: boolean } }>("/api/community/me").catch(() => null);
       if (!m || !m.ok) { setViewer("out"); setState(initial ? "ok" : m && (m.status === 401 || m.status === 403) ? "none" : "error"); return; }
@@ -244,6 +250,7 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
                   { label: t.editProfile, href: "/talents/me/edit" },
                   { label: t.shareProfile, onClick: () => void share() },
                   { label: t.menuLabel, href: "/account" },
+                  { label: careerText(locale).menuDetails, href: "/profile/details" },
                 ]} />
               ) : null}
             </div>
@@ -403,6 +410,8 @@ export default function TalentProfileWeb({ locale, initial, username, own, place
             { id: "achievements", label: t.tabAchievements, icon: <Ico n="gridTab" size={23} />, flush: true, panel: <MomentGrid edge username={p.username} locale={locale} initial={moments} empty={mode === "own" ? t.noMomentsMine : t.noMoments} /> },
             { id: "sijill", label: sx.tabSijill, icon: <Ico n="record" size={23} />, panel: <div className="px-4">{sijillPanel ?? (record ? <SijillShowcase s={record} moments={[]} locale={locale} /> : <p className="text-muted">{mode === "own" ? sx.notSynced ?? "" : sx.hiddenAll}</p>)}</div> },
             { id: "badges", label: t.tabBadges, icon: <Ico n="rosette" size={23} />, panel: <div className="px-4"><BadgesPanel p={p} tx={tx} own={mode === "own"} /></div> },
+            // owner 22.10.2026: the progress profile (career card, places, Shams, courses, exams, milestones, boards)
+            { id: "stats", label: careerText(locale).tabStats, icon: <Ico n="chart" size={23} />, flush: true, panel: <CareerStatsWeb locale={locale} username={p.username} own={mode === "own"} /> },
           ]} />
         )}
       </div>

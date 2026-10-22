@@ -23,6 +23,7 @@ import { RewardsHost } from "@/features/progress";
 import { NowPlayingBar } from "@/features/radio/MiniPlayer";
 import { NotificationsBridge } from "@/features/daily/NotificationsBridge";
 import { DailyMoment } from "@/features/daily/DailyMoment";
+import { PerfProbe } from "@/lib/perf";
 
 SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
@@ -75,7 +76,7 @@ export default function RootLayout() {
               <SyncBridge />
               <StatusBar style="light" />
               <RewardsHost>
-                <Routes />
+                <PerfProbe><Routes /></PerfProbe>
                 <NowPlayingBar />
                 <NotificationsBridge />
                 <DailyMoment />

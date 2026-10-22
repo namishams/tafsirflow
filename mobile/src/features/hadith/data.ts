@@ -104,12 +104,19 @@ export async function sunniSection(key: string, section: number, lang: string): 
 export async function sunniHadith(key: string, n: number, lang: string): Promise<HadithItem | null> {
   const c = sunniCollection(key);
   if (!c) return null;
-  const trEd = translationEdition(c, lang);
+  let trEd = translationEdition(c, lang);
   const url = (ed: string) => `${SUNNAH_CDN}/editions/${ed}/${n}.min.json`;
-  const [ar, tr] = await Promise.all([
+  const [ar, local] = await Promise.all([
     cachedJSON<SunnahDoc>(`ara-${key}-${n}`, url(`ara-${key}`)).catch(() => null),
     trEd ? cachedJSON<SunnahDoc>(`${trEd}-${n}`, url(trEd)).catch(() => null) : Promise.resolve(null),
   ]);
+  let tr = local;
+  // the partial translation editions (tur-muslim 879, rus-muslim 4223 …) carry hadiths with an empty text: then the
+  // English edition, as for a language without its own edition (website: resolveHadith in src/lib/feed/resolve.ts)
+  if (trEd && !trEd.startsWith("eng-") && !(tr?.hadiths[0]?.text ?? "").trim()) {
+    const eng = await cachedJSON<SunnahDoc>(`eng-${key}-${n}`, url(`eng-${key}`)).catch(() => null);
+    if ((eng?.hadiths[0]?.text ?? "").trim()) { tr = eng; trEd = `eng-${key}`; }
+  }
   if (!ar && !tr) throw new Error("offline");
   const chapter = Object.values((tr ?? ar)?.metadata.section ?? {})[0];
   const item = sunniItem(c, ar?.hadiths[0], tr?.hadiths[0], tr ? trEd : null, chapter);

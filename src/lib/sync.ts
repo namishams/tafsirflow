@@ -18,6 +18,17 @@ export async function fetchMe(): Promise<{ user: Me | null; available: boolean; 
   }
 }
 
+// "could anybody be signed in?" – one /api/auth/me per page (asked again after a sign-in, "tf-auth"). Member-only calls
+// (Quran Talents, moments, the sharer's name) skip the request for signed-out visitors instead of collecting a 401 that
+// the browser logs as a console error. Unknown (offline, no answer) counts as yes, so the call still runs as before.
+let session: Promise<boolean> | null = null;
+export function maybeSignedIn(): Promise<boolean> {
+  if (!session && typeof window !== "undefined") window.addEventListener("tf-auth", () => { session = null; }, { once: true });
+  return (session ??= fetch("/api/auth/me", { cache: "no-store" })
+    .then(async (r) => (r.ok ? !!((await r.json()) as { user?: unknown }).user : true))
+    .catch(() => true));
+}
+
 const bestScores = (a: unknown, b: unknown) => {
   const out: Record<string, number> = { ...((b as Record<string, number>) ?? {}) };
   for (const [k, v] of Object.entries((a as Record<string, number>) ?? {})) out[k] = Math.max(out[k] ?? 0, v);

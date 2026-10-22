@@ -16,6 +16,7 @@ import { PASS as QAIDA_PASS } from "@/features/qaida/curriculum";
 import { readProgress as readLang } from "@/features/arabic-lang/progress";
 import { PASS as LANG_PASS } from "@/features/arabic-lang/curriculum";
 import { currentStage, overallGrade, stageState, subjectGrades } from "@/features/school/model";
+import { getToken } from "@/lib/storage";
 import { sijillApi, type Summary } from "./api";
 import { collectReceived } from "./received";
 
@@ -122,6 +123,7 @@ export function syncSijill(pro: boolean, force = false): Promise<boolean> {
   void collectReceived(); // encouragements received since last time (throttled inside)
   inflight = (async () => {
     try {
+      if (!(await getToken())) return false; // signed out: nothing to send (the server would answer 401)
       const s = buildSummary(pro);
       const body = JSON.stringify(s);
       const last = readJSON<{ at: number; body: string }>(LAST_KEY, { at: 0, body: "" });

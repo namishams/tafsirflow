@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 import { api } from "./api";
 import { getToken, setToken } from "./storage";
 import { writeJSON } from "./store";
+import { clearTakeFiles } from "@/features/shams2/take";
 
 export type User = { id: number; email: string; name: string | null; plan: string; emailVerified: boolean; role: "user" | "admin"; birthYear?: number | null };
 export type RegisterInput = {
@@ -58,6 +59,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     logout: async () => {
       await api("/api/auth/logout", { body: {} }).catch(() => undefined);
       await setToken(null);
+      clearTakeFiles(); // own recitation recordings stay with the person who made them
       setUser(null);
     },
     adopt: async (d) => {
@@ -68,6 +70,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     deleteAccount: async (password) => {
       await api("/api/account", { body: { action: "delete", current: password ?? "" } });
       await setToken(null);
+      clearTakeFiles();
       setUser(null);
     },
   }), [user, ready, refresh, signIn]);

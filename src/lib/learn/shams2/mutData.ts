@@ -54,3 +54,25 @@ export function distinctPositions(words: VWord[], others: VWord[][]): number[] {
   const out = words.map((w, i) => (best?.has(i) ? -1 : w.position)).filter((p) => p >= 0);
   return out.length ? out : words.slice(-2).map((w) => w.position);
 }
+
+// ---------- Shams 3.0: due groups and automatically found pairs ----------
+export { MUT_CANDIDATES } from "./mutCandidates";
+export const MUT_DUE_DAYS = 14;
+type MutAnswers = Record<string, { ok: number; miss: number; last: number }>;
+/** groups with a memorised verse that are due: confused more often than answered right (summed over the group), or
+ *  last practised `days` or more days ago (never practised counts as due); the most confused first */
+export function dueMutGroups(groups: MutGroup[], mut: MutAnswers, known: { has: (k: string) => boolean }, now = Date.now(), days = MUT_DUE_DAYS): MutGroup[] {
+  const out: { g: MutGroup; worse: number; last: number }[] = [];
+  for (const g of groups) {
+    if (!g.keys.some((k) => known.has(k))) continue;
+    let ok = 0, miss = 0, last = 0;
+    for (const k of g.keys) { const m = mut[k]; if (!m) continue; ok += m.ok || 0; miss += m.miss || 0; last = Math.max(last, m.last || 0); }
+    if (miss > ok || now - last >= days * 86_400_000) out.push({ g, worse: miss - ok, last });
+  }
+  return out.sort((a, b) => b.worse - a.worse || a.last - b.last).map((x) => x.g);
+}
+/** an automatically found pair as a group for study and drill (marked as not reviewed by its id prefix "auto-") */
+export function candidateGroup(a: string, b: string, topic: MutGroup["topic"]): MutGroup {
+  return { id: `auto-${a}-${b}`, keys: [a, b], topic };
+}
+export const isCandidate = (g: MutGroup) => g.id.startsWith("auto-");

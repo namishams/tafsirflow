@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { PRIMARY, isActive } from "@/lib/nav";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -11,12 +11,15 @@ import Wordmark from "./Wordmark";
 export default function AppHeader() {
   const t = useTranslations("nav");
   const path = usePathname();
+  const latin = useLocale() !== "ar"; // Wordmark shows the Arabic lockup (about 5× as wide as high) on Arabic pages
   return (
     <header data-top-bar className="header-gold sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/85">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-5">
         <div className="flex min-w-0 items-center gap-5">
           <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2.5" aria-label="Quran Masterclass">
-            <Wordmark height={30} svgClassName="h-[24px] w-auto sm:h-[30px] lg:h-[22px] xl:h-[28px]" />
+            {/* the Latin lockup is 9× as wide as high: on phones ≤ 400 px it shrinks with the screen so it never runs
+                under the language, account and menu buttons (≈ 140 px + paddings) */}
+            <Wordmark height={30} svgClassName={`${latin ? "h-[min(24px,calc((100vw_-_198px)/9))]" : "h-[24px]"} w-auto sm:h-[30px] lg:h-[22px] xl:h-[28px]`} />
           </Link>
           <nav className="hidden items-center gap-0.5 lg:flex" aria-label={t("main")}>
             {PRIMARY.map((n, i) => {

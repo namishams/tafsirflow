@@ -6,7 +6,7 @@ import { Icon } from "@/components/icons";
 import { FONT, R, useTheme } from "@/lib/theme";
 import { usePro } from "@/lib/pro";
 import { useEntitlement } from "@/lib/entitlements";
-import { rate, stats } from "@/web/learning";
+import { rateGrade, stats } from "@/web/learning";
 import { award } from "@/web/points";
 import { shamsGrow } from "@/features/garden/garden";
 import { gEvent } from "@/features/feed/gamify";
@@ -23,9 +23,12 @@ import { ContinueNext } from "./Continue";
 import { DueChecks } from "./Darajat";
 import { Briefing } from "./Tadabbur";
 import { TeacherAssigned } from "@/features/teacher/Inbox";
+import { noteLinks } from "./store2";
+import { StripToggle, TathbitCard, TodayMinutes } from "./review/WirdExtras";
 
 // /shams/wird – today's wird: sabaq (new), sabqi (recent), manzil (long term), one tap opens the existing Shams session
-// or the reader at the right verse; after reciting, a self-assessment (tathbīt) updates the verse reviews.
+// or the reader at the right verse; after reciting, a self-assessment (tathbīt) updates the verse reviews. Shams 3.0:
+// today's minutes, single verses and transitions rated in a verse strip, and the tathbīt block (review/WirdExtras.tsx).
 export const openRange = (kind: Block, r: Range) => router.push((kind === "sabaq" ? `/shams/${r.s}?v=${r.from}` : `/surah/${r.s}?v=${r.from}`) as Href);
 
 export function rewardBlock(pro: boolean, verses: number) {
@@ -46,8 +49,11 @@ function BlockCard({ b, done, onDone, ratings, known, locked }: { b: WirdBlock; 
       const key = `${r.s}:${v}`;
       const k = known.get(key);
       if (!k) continue;
-      rate(key, g === "fluent" ? "good" : g === "weak" ? "again" : k.recall < 0.6 ? "again" : "good");
+      // held = Good (3), hesitated = Hard (2), shaky = Again (1)
+      rateGrade(key, g === "fluent" ? 3 : g === "hesitant" ? 2 : 1);
     }
+    // a range recited fluently: every transition inside it held
+    if (g === "fluent") noteLinks(Array.from({ length: r.to - r.from }, (_, i) => ({ key: `${r.s}:${r.from + i + 1}`, ok: true })));
     rateRange(rangeId(r), g);
   };
   return (
@@ -73,6 +79,7 @@ function BlockCard({ b, done, onDone, ratings, known, locked }: { b: WirdBlock; 
                 <Chip key={g} label={s(`rate_${g}` as never)} selected={rated === g} onPress={() => onRate(r, g)} />
               )) : null}
             </View>
+            {reviewKind ? <StripToggle r={r} known={known} marks={ratings} /> : null}
           </View>
         );
       })}
@@ -98,7 +105,8 @@ export function WirdScreen() {
   const { s } = useS2();
   const nf = useIntl();
   const { pro } = usePro();
-  const { wird, settings, day, grade, known } = useShams2();
+  const m = useShams2();
+  const { wird, settings, day, grade, known } = m;
   const log = useLog();
   const today = log[day] ?? {};
   const streak = Math.max(wirdStreak(log, day), 0);
@@ -120,6 +128,7 @@ export function WirdScreen() {
               </View>
             ))}
           </View>
+          <TodayMinutes m={m} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: t.gold, textAlign: "left" }}>{s("wirdGrade", { g: grade.tr, m: nf(grade.minutesMin), d: nf(settings.manzilDays || grade.manzilDays) })}</Text>
           <DueChecks />
           <TeacherAssigned />
@@ -128,6 +137,7 @@ export function WirdScreen() {
           {(["sabaq", "sabqi", "manzil"] as const).map((k, i) => (
             <StepIn key={k} delay={i * 60}><BlockCard b={wird[k]} done={done(k)} onDone={() => finish(wird[k])} ratings={today.r ?? {}} known={known} locked={k === "sabaq" ? wird.locked : null} /></StepIn>
           ))}
+          <StepIn delay={180}><TathbitCard tb={wird.tathbit} marks={today.r ?? {}} /></StepIn>
           {allDone ? <Card gold><Text style={{ fontFamily: FONT.bold, fontSize: 17, color: t.ink }}>{s("wirdDone")}</Text><ContinueNext /></Card> : null}
           <Card>
             <Text accessibilityRole="header" style={{ fontFamily: FONT.bold, fontSize: 16, color: t.ink }}>{s("settings")}</Text>

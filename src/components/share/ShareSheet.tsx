@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent a
 import { createPortal } from "react-dom";
 import { useFeedTexts } from "@/lib/feedWeb/useTexts";
 import { readJSON, writeJSON } from "@/lib/learn/store";
+import { maybeSignedIn } from "@/lib/sync";
 import { APP_LINK, CARD_SIZE, PALETTES, PALETTE_IDS, paletteFor, type PaletteId, type ShareFormat, type ShareOpts, type ShareSpec, type Sharer } from "@/lib/share/formats";
 import { previewShareImage, renderShareImage } from "@/lib/share/render";
 
@@ -29,6 +30,7 @@ let sharerCache: Sharer | null | undefined;
 async function loadSharer(): Promise<Sharer | null> {
   if (sharerCache !== undefined) return sharerCache;
   try {
+    if (!(await maybeSignedIn())) return (sharerCache = null); // signed out: no profile, and no 401 in the console
     const r = await fetch("/api/community/me", { cache: "no-store", credentials: "same-origin" });
     if (r.status === 401 || r.status === 403) return (sharerCache = null);
     if (!r.ok) return null;

@@ -18,6 +18,7 @@ import { useShams2 } from "./model";
 import { useSurahNames } from "./names";
 import { PromptedWords, SpeechCheck, type CheckResult } from "./recite";
 import { noteCheck, noteWords } from "./store";
+import { noteLink } from "./store2";
 import { useS2 } from "./text";
 import { Btn, Card, SourceNote, Term } from "./ui";
 import { ContinueNext } from "./Continue";
@@ -170,6 +171,8 @@ function Item({ k, onDone }: { k: string; onDone: (score: number) => void }) {
   const cue = prev?.data ? (m.grade.prompt === "hidden" ? prev.data.words.slice(-3) : prev.data.words) : [];
   const finish = (score: number) => {
     if (score < 1) noteMistake(k);
+    // the item asks for the transition from the previous verse into this one (Shams 3.0, links.v1): held only when it sat
+    if (prevKey) noteLink(k, score >= 1);
     if (check) { noteWords(k, words.map((w, i) => ({ position: w.position, ok: !!check.ok[i] }))); noteCheck(k, check.ok.filter(Boolean).length, check.ok.length); }
     onDone(score);
   };

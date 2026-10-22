@@ -8,6 +8,7 @@ import { IslCard, starPath, useSvgId } from "./art";
 import { STAGE_GOLD, stageGold, useIsl } from "./palette";
 import { useReducedMotion } from "./motion";
 import { GOALS, PER_DAY } from "./content/shams";
+import { rangeMinutes, surahRanges } from "@/web/verseTime";
 
 // The pictures of the Shams Method page (src/components/art/IslamShams.tsx, IslamShamsDemo.tsx, ShamsPlanner.tsx and the
 // Curve / Ladder / PrincipleIcon / DayIcon drawings of src/app/[locale]/(app)/shams/page.tsx), drawn with react-native-svg.
@@ -206,7 +207,7 @@ export function Curve({ c }: { c: ShamsContent }) {
   );
 }
 
-/** the review ladder: the gaps a verse travels through when every review succeeds (days, log scale) (Ladder) */
+/** the review ladder: an example of the gaps a verse can travel through (days, log scale; the real gaps come from the memory model) (Ladder) */
 export function Ladder({ day }: { day: string }) {
   const gaps = [1, 3, 7, 14, 30, 90];
   const X = (d: number) => 40 + (Math.log(d + 1) / Math.log(91)) * 530;
@@ -310,7 +311,8 @@ export function ShamsPlanner({ lang }: { lang: string }) {
   const [per, setPer] = useState(3);
   const g = GOALS.find((x) => x.id === goal)!;
   const days = Math.ceil(g.verses / per);
-  const minutes = per * 4 + 5; // ~4 minutes per new verse in seven steps + ~5 minutes of review
+  // the new verses in seven steps (the goal's average verse, by length) + ~5 minutes of review
+  const minutes = Math.round(per * (rangeMinutes(surahRanges(g.surahs[0], g.surahs[1])) / g.verses) + 5);
   const span = days < 60 ? t("planDays", { n: days }) : days < 730 ? t("planMonths", { n: Math.round(days / 30.4) }) : t("planYears", { n: (days / 365).toFixed(1) });
   const chip = (on: boolean, label: string, onPress: () => void, key: string | number) => (
     <Pressable key={key} onPress={onPress} accessibilityRole="button" accessibilityState={{ selected: on }} accessibilityLabel={label}

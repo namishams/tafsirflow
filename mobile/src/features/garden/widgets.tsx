@@ -20,6 +20,7 @@ import { TreeArt } from "./Tree";
 import { Motes, Panorama, SKIES } from "./Landscape";
 import { CatalogArt } from "./CatalogArt";
 import { fillG, useAgeText, useGardenText } from "./texts";
+import { GardenEntry, SeedEntry } from "./EntryCard";
 
 /** keeps the garden up to date with learning (on mount and whenever feed XP or quests change) */
 export function useGardenTick() {
@@ -45,53 +46,15 @@ export function ProgressBar({ frac, color = "#c6a65e", track }: { frac: number; 
   );
 }
 
-/** the small tree card for the Masterclass tab, Account and the Shams page; a seed card before planting */
+/** the tree card for the Masterclass tab, Account and the Shams page; a seed card before planting
+ *  (redesign 22.10.2026: the card itself lives in EntryCard.tsx, website mirror src/components/learn/garden/EntryCard.tsx) */
 export function GardenWidget({ lead }: { lead?: string }) {
   useGardenTick();
-  const tx = useGardenText();
-  const ageTx = useAgeText();
-  const s = useGarden();
-  const { pro } = usePro();
-  const reduce = useReducedMotion();
-  const tree = activeTree(s, pro);
-  if (!tree) return <SeedCard />;
-  const p = progressOf(tree, pro);
-  return (
-    <Pressable onPress={() => router.push("/garden" as Href)} accessibilityRole="button" accessibilityLabel={`${tx.title}: ${tree.name}, ${fillG(tx.stageN, { n: p.stage, m: MAX_STAGE })}`}
-      style={({ pressed }) => ({ borderRadius: R.card, overflow: "hidden", borderWidth: 1, borderColor: "rgba(214,178,106,0.3)", opacity: pressed ? 0.92 : 1 })}>
-      <LinearGradient colors={["#0b3d2e", "#08261d"]} style={{ flexDirection: "row", alignItems: "center", gap: 12, padding: 14 }}>
-        <TreeArt id={tree.id} type={tree.type} stage={p.stage} traits={s.traits} season={seasonNow()} resting={resting(s)} fruits={tree.fruits} size={96} still={reduce} />
-        <View style={{ flex: 1, gap: 4 }}>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.8, textTransform: "uppercase", color: stageC.gold }}>{tx.title}</Text>
-          <Text numberOfLines={1} style={{ fontFamily: FONT.display, fontSize: 19, color: "#fff" }}>{tree.name || tx[`t_${tree.type}`]}</Text>
-          <Text style={{ fontFamily: FONT.regular, fontSize: 13, color: stageC.textSoft }}>{tx[`s${p.stage}` as "s0"]} · {fillG(tx.stageN, { n: p.stage, m: MAX_STAGE })}</Text>
-          <ProgressBar frac={p.frac} track="rgba(255,255,255,0.14)" />
-          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: stageC.textMuted }}>{p.held ? tx.held : p.left ? fillG(tx.next, { n: p.left }) : p.wait ? ageTx(p.age, p.wait).wait : tx.maxed}</Text>
-          <Text style={{ fontFamily: FONT.regular, fontSize: 12, color: stageC.textMuted }}>{ageTx(p.age, 0).age}</Text>
-          {lead ? <Text style={{ fontFamily: FONT.italic, fontSize: 12.5, color: stageC.gold }}>{lead}</Text> : null}
-          {tree.fruits > 0 ? <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: "#f3b14a" }}>{fillG(tx.fruitsReady, { n: tree.fruits })}</Text> : null}
-        </View>
-      </LinearGradient>
-    </Pressable>
-  );
+  return <GardenEntry lead={lead} />;
 }
 
 export function SeedCard() {
-  const tx = useGardenText();
-  return (
-    <Pressable onPress={() => router.push("/garden?plant=1" as Href)} accessibilityRole="button" accessibilityLabel={`${tx.seedTitle}. ${tx.seedLead}`}
-      style={({ pressed }) => ({ borderRadius: R.card, overflow: "hidden", borderWidth: 1, borderColor: "rgba(214,178,106,0.35)", opacity: pressed ? 0.92 : 1 })}>
-      <LinearGradient colors={["#0b3d2e", "#08261d"]} style={{ flexDirection: "row", alignItems: "center", gap: 14, padding: 16 }}>
-        <TreeArt id="seed" type="olive" stage={0} size={72} still />
-        <View style={{ flex: 1, gap: 4 }}>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 11, letterSpacing: 1.8, textTransform: "uppercase", color: stageC.gold }}>{tx.missionKicker}</Text>
-          <Text style={{ fontFamily: FONT.display, fontSize: 19, color: "#fff" }}>{tx.seedTitle}</Text>
-          <Text style={{ fontFamily: FONT.regular, fontSize: 13.5, lineHeight: 19, color: stageC.textSoft }}>{tx.seedLead}</Text>
-          <Text style={{ fontFamily: FONT.semibold, fontSize: 13.5, color: stageC.gold, marginTop: 4 }}>{tx.plant}</Text>
-        </View>
-      </LinearGradient>
-    </Pressable>
-  );
+  return <SeedEntry />;
 }
 
 /** "Your tree grew +N" on the Shams completion screen: counts the session, then a bloom of light around the tree */

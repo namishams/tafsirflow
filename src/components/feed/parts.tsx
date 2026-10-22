@@ -142,8 +142,8 @@ export function VerseBlock({ verse, mark, find, full, onFound, label }: { verse:
         </p>
       )}
       {verse.translation && !find ? <p className="line-clamp-5 text-center text-[12.5px] leading-[1.45] text-white/70">{verse.translation}</p> : null}
-      <p className="text-center text-[11px] font-semibold tracking-[0.04em]" dir="ltr" style={{ color: "rgba(214,180,108,0.9)" }}>
-        {label ?? "Quran"} {verse.key}{tapped !== null && find ? ` · ${solved ? T.know.right : T.know.wrong}` : ""}
+      <p className="text-center text-[11px] font-semibold tracking-[0.04em]" dir="auto" style={{ color: "rgba(214,180,108,0.9)" }}>
+        {label ?? T.feed.verseLabel} {verse.key}{tapped !== null && find ? ` · ${solved ? T.know.right : T.know.wrong}` : ""}
       </p>
     </div>
   );

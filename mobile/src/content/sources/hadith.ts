@@ -51,8 +51,16 @@ export async function sunniHadith(book: string, n: number, lang: string): Promis
   const b = BOOKS[book];
   if (!b) return null;
   const want = ISO3[lang];
-  const l3 = want && b.langs.includes(want) && want !== "ara" ? want : "eng";
-  const [tr, ar] = await Promise.all([fetchOne(`${l3}-${book}`, n), fetchOne(`ara-${book}`, n).catch(() => null)]);
+  let l3 = want && b.langs.includes(want) && want !== "ara" ? want : "eng";
+  const [local, ar] = await Promise.all([fetchOne(`${l3}-${book}`, n), fetchOne(`ara-${book}`, n).catch(() => null)]);
+  let tr = local;
+  // the partial translation editions (tur-muslim 879, rus-muslim 4223, ind-muslim, fra-muslim 6918, urd-bukhari 5641 …)
+  // carry hadiths with an empty text (fetchOne gives null): then the English edition, as for a language without its own
+  // edition (the website does the same in resolveHadith); before, the post was dropped
+  if (!tr && l3 !== "eng" && lang !== "ar") {
+    tr = await fetchOne(`eng-${book}`, n).catch(() => null);
+    if (tr) l3 = "eng";
+  }
   const main = tr ?? (lang === "ar" ? ar : null);
   if (!main) return null;
   const body = main.grade ? `${main.text}\n\nGrade: ${main.grade}` : main.text;

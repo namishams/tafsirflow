@@ -8,7 +8,7 @@ import { Icon } from "@/components/icons";
 import { pageLang } from "./lang";
 import { isRTL, useLang } from "@/i18n";
 import { FREE, openPro, usePro } from "@/lib/pro";
-import { ARABIC_FONT, CALLIG_FONT, FONT, R, useTheme, AR_RIGHT, FWD } from "@/lib/theme";
+import { ARABIC_FONT, CALLIG_FONT, FONT, R, stage, useTheme, AR_RIGHT, FWD } from "@/lib/theme";
 import {
   LESSONS, PASS_PCT, PLACEMENT_UNITS, UNITS, buildLesson, lessonById, nextArabic, placementResult, saveArabic, savePlacement, starsFor,
   verseAudioUrl, wordAudioUrl, type Ex, type Lesson, type PlacementResult,
@@ -509,7 +509,7 @@ function ListenCard({ ex, T, isRetry, canSpeak, speak }: { ex: Extract<Ex, { t: 
               opacity: ping.interpolate({ inputRange: [0, 1], outputRange: [0.8, 0] }), transform: [{ scale: ping.interpolate({ inputRange: [0, 1], outputRange: [1, 1.5] }) }] }} />
           ) : null}
           <Pressable onPress={play} accessibilityRole="button" accessibilityLabel={T.listen}
-            style={({ pressed }) => ({ width: 96, height: 96, borderRadius: 48, overflow: "hidden", transform: [{ scale: pressed ? 0.95 : 1 }],
+            style={({ pressed }) => ({ width: 96, height: 96, borderRadius: 48, overflow: "hidden", backgroundColor: stage.bg, transform: [{ scale: pressed ? 0.95 : 1 }],
               shadowColor: "rgb(6,58,44)", shadowOpacity: 0.9, shadowRadius: 14, shadowOffset: { width: 0, height: 12 } })}>
             <Stage rounded={48} hairlines={false} style={{ width: 96, height: 96, alignItems: "center", justifyContent: "center" }}>
               {clip.state === "loading" ? <ActivityIndicator color="#f3e2b6" /> : <Icon name={clip.state === "playing" ? "speaker" : "play"} size={36} color="#f3e2b6" />}

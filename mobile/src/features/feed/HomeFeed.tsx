@@ -46,7 +46,7 @@ import { SAVED_KEY as HADITH_SAVED_KEY, toggleSaved as toggleSavedHadith, type H
 import { readTradition } from "@/lib/tradition";
 import { FeedEmpty, HeartBurst, useStalled, useTapGestures } from "./ui";
 import { LIB_TOPICS, LibScheduler, isLibId, onLibData, takeRemoteNew, type LibTopic } from "./library";
-import { flagOn, loadRemoteConfig, updateAvailable, useRemoteConfig } from "./remote";
+import { flagOn, loadRemoteConfig, remoteConfigLang, updateAvailable, useRemoteConfig } from "./remote";
 import Constants from "expo-constants";
 import { statListen, statLike, statPost, statSave, statVerse, kindOfItem, useFeedTimer } from "./statsStore";
 import { LIB } from "./library";
@@ -491,8 +491,9 @@ export function HomeFeed({ tab, onTab, inTab, bottomSpace = 0, onOpen }: { tab: 
 
   const topicLabel: Record<Topic, string> = { all: tx.topicAll, verses: pt.catVerses, names: tx.topicNames, stories: tx.topicStories, hadith: tx.hadith,
     ...(Object.fromEntries(LIB_TOPICS.filter((x) => x !== "hadith").map((x) => [x, libTopicLabel(tx, x)])) as Record<Exclude<LibTopic, "hadith">, string>),
-    // labels of the remote topic chip groups (same ids as the app's topics) win
-    ...(Object.fromEntries((remote?.topicChipGroups ?? []).filter((g) => g.label && (TOPICS as string[]).includes(g.id)).map((g) => [g.id, g.label])) as Partial<Record<Topic, string>>) };
+    // labels of the remote topic chip groups (same ids as the app's topics) win – only in the language they were loaded
+    // in: right after a language switch the old config (e.g. Turkish "Dualar") is still there until the new one arrives
+    ...(Object.fromEntries((remoteConfigLang() === lang ? remote?.topicChipGroups ?? [] : []).filter((g) => g.label && (TOPICS as string[]).includes(g.id)).map((g) => [g.id, g.label])) as Partial<Record<Topic, string>>) };
   const showUpdate = updateAvailable(remote) && !updateHidden;
   const header = (
     <View style={{ paddingTop: 8, paddingBottom: 12, marginBottom: 6 }}>

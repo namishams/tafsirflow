@@ -5,6 +5,7 @@ import { sijillText, type SwKey } from "@/lib/sijillWeb";
 import { momentLine } from "@/lib/sijillMoment";
 import { fill } from "@/lib/talentsWeb";
 import { profileText, type PwKey } from "@/lib/profileWeb";
+import { maybeSignedIn } from "@/lib/sync";
 
 // Achievement "posts" on the public website profile (same structure as the app): a three-column grid of generated
 // achievement cards with the MashaAllah count, and a full-screen vertical feed (scroll snap) of the same moments.
@@ -66,9 +67,9 @@ export default function MomentGrid({ username, locale, initial, edge, empty }: {
   }, []);
   const nf = new Intl.NumberFormat(locale, { notation: "compact", maximumFractionDigits: 1 });
   useEffect(() => {
-    // signed in: the viewer-aware list (own moments, own reactions)
-    fetch(`/api/community/moments?scope=user&u=${encodeURIComponent(username)}&locale=${locale}`, { cache: "no-store" })
-      .then(async (r) => { if (r.ok) { const d = (await r.json()) as { moments?: GridMoment[] }; if (d.moments) setList(d.moments); } })
+    // signed in: the viewer-aware list (own moments, own reactions); signed out keeps the server list (no 401 request)
+    maybeSignedIn().then((maybe) => (maybe ? fetch(`/api/community/moments?scope=user&u=${encodeURIComponent(username)}&locale=${locale}`, { cache: "no-store" }) : null))
+      .then(async (r) => { if (r?.ok) { const d = (await r.json()) as { moments?: GridMoment[] }; if (d.moments) setList(d.moments); } })
       .catch(() => undefined);
   }, [username, locale]);
   const change = useCallback((m: GridMoment) => {

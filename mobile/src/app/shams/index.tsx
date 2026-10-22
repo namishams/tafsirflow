@@ -129,7 +129,7 @@ export default function ShamsPage() {
           <View style={{ marginTop: 56, gap: 22 }}>
             <View pointerEvents="none" style={{ position: "absolute", top: 28, bottom: 28, left: 27, width: 2, borderRadius: 2, backgroundColor: stageGold(0.14) }} />
             <LinearGradient pointerEvents="none" colors={[stageGold(0.35), STAGE_GOLD, "rgb(255,236,190)"]} locations={[0, 0.7, 1]}
-              style={{ position: "absolute", top: 28, bottom: 28, left: 27, width: 2, borderRadius: 2, shadowColor: STAGE_GOLD, shadowOpacity: 0.45, shadowRadius: 6 }} />
+              style={{ position: "absolute", top: 28, bottom: 28, left: 27, width: 2, borderRadius: 2, boxShadow: `0px 0px 12px ${stageGold(0.45)}` }} />
             {c.steps.map((s, i) => (
               <View key={i} style={{ flexDirection: "row", gap: 14, alignItems: "flex-start" }}>
                 <View style={{ width: 56, height: 56, alignItems: "center", justifyContent: "center" }}>

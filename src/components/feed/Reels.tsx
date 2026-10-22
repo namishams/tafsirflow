@@ -93,8 +93,10 @@ function VersePage({ card, active }: { card: WebCard; active: boolean }) {
       {active ? <div aria-hidden className="pointer-events-none absolute inset-x-3.5 top-[88px] z-10 h-[2.5px] overflow-hidden rounded-full" style={{ background: "rgba(255,255,255,0.18)" }}><div className="h-full" style={{ width: `${pct * 100}%`, background: STAGE.gold }} /></div> : null}
       <div className="relative flex h-full w-full">
         <div className="flex min-w-0 flex-1 flex-col items-center">
-          <div className="flex min-h-0 w-full max-w-[680px] flex-1 items-center overflow-y-auto ps-[22px] pe-3 pb-2 pt-[110px]">
-            <button type="button" onClick={tap} className="block w-full text-start" aria-label={`${ref}. ${verse.translation}`}>
+          {/* centred with auto margins, not items-center: a long verse with its translation (2:255) then starts below the
+              top bar and scrolls, instead of overflowing upwards under the chips where it can never be scrolled to */}
+          <div className="flex min-h-0 w-full max-w-[680px] flex-1 overflow-y-auto ps-[22px] pe-3 pb-2 pt-[110px]">
+            <button type="button" onClick={tap} className="my-auto block w-full text-start" aria-label={`${ref}. ${verse.translation}`}>
               <h2 className="mb-[18px] text-[12px] font-semibold uppercase tracking-[0.16em] rtl:tracking-normal" style={{ color: STAGE.gold }}>{word ? `${T.feed.wordTitle} · ${ref}` : ref}</h2>
               {word ? (
                 <div className="mb-[26px]">

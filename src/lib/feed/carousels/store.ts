@@ -86,7 +86,12 @@ async function build(sig: string): Promise<Store> {
     const m = new Map<string, Record<string, string | string[]>>();
     for (const f of await jsonFiles(path.join(BASE, "i18n", l))) {
       const d = await readJson<Flat>(path.join(BASE, "i18n", l, f));
-      if (d && typeof d === "object") for (const [id, v] of Object.entries(d)) if (v && typeof v === "object") m.set(f === "labels.json" ? `label:${id}` : id, f === "labels.json" ? { t: v as unknown as string } : v);
+      // labels.json maps series → label as plain strings ({ "akhlaq": "Le bon caractère" }); the object test of the
+      // other files skipped every one of them, so all series labels outside de/en/ar stayed English
+      if (d && typeof d === "object") for (const [id, v] of Object.entries(d as Record<string, unknown>)) {
+        if (f === "labels.json") { if (typeof v === "string" && v.trim()) m.set(`label:${id}`, { t: v }); }
+        else if (v && typeof v === "object") m.set(id, v as Record<string, string | string[]>);
+      }
     }
     if (m.size) i18n.set(l, m);
   }

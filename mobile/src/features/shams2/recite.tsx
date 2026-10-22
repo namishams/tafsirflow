@@ -5,13 +5,17 @@ import { ARABIC_FONT, FONT, R, useTheme } from "@/lib/theme";
 import { firstLetter } from "@/features/shams/memory";
 import { align } from "@/web/recite";
 import type { Prompt } from "./grades";
+import { addTake, type TakeKind } from "./store2";
+import { deleteTakeFile, takeDir } from "./take";
 import { useS2 } from "./text";
 
 // Recitation from memory, shared by talaqqi, weak-spot drills and ʿarḍ tests:
 //   PromptedWords – the verse as the grade allows it: full text, first letters only, or hidden (with "show once");
 //   SpeechCheck   – on-device Arabic recognition (same engine and scoring as the reciter path's word check, which is
 //                   not changed); here the result is reported back, compared with the grade's pass mark and, when the
-//                   reciter's time is known, with the pace target. It never judges tajwīd.
+//                   reciter's time is known, with the pace target. It never judges tajwīd. Optional (Shams 3.0):
+//                   `strict` counts only the same word after normalisation; `persist` keeps the audio of the check as
+//                   an own take on this device (index in store2.ts).
 export type W = { position: number; text: string };
 /** identity of a list of words (positions and text), stable across renders that rebuild the array */
 export const wordsKey = (ws: W[]) => ws.map((w) => `${w.position}:${w.text}`).join("|");
@@ -61,7 +65,8 @@ function speech(): SR | null {
 
 export type CheckResult = { ok: boolean[]; share: number; pass: boolean; ms: number; paceOk: boolean | null };
 
-export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { words: W[]; pass: number; targetMs?: number | null; onResult: (r: CheckResult) => void; compact?: boolean }) {
+export type PersistTake = { kind: TakeKind; s?: number; from?: number; to?: number };
+export function SpeechCheck({ words, pass, targetMs, onResult, compact, strict, persist }: { words: W[]; pass: number; targetMs?: number | null; onResult: (r: CheckResult) => void; compact?: boolean; strict?: boolean; persist?: PersistTake }) {
   const t = useTheme();
   const { s, nf } = useS2();
   const [state, setState] = useState<"idle" | "listening" | "done" | "unavailable">("idle");
@@ -72,6 +77,8 @@ export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { word
   const live = useRef(false);
   const subs = useRef<{ remove: () => void }[]>([]);
   const report = useRef(onResult); report.current = onResult;
+  const opts = useRef({ strict, persist }); opts.current = { strict, persist };
+  const file = useRef<string | null>(null);
   useEffect(() => () => { subs.current.forEach((x) => x.remove()); try { speech()?.ExpoSpeechRecognitionModule.abort(); } catch { /* not running */ } }, []);
   // a new verse resets the result; a parent re-render with the same words (e.g. after onResult) keeps it
   const key = wordsKey(words);
@@ -83,9 +90,13 @@ export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { word
   }, [key]);
 
   const finish = () => {
-    const res = align(wordsRef.current.map((w) => w.text), heard.current).ok;
+    const res = align(wordsRef.current.map((w) => w.text), heard.current, { strict: !!opts.current.strict }).ok;
     const share = res.length ? res.filter(Boolean).length / res.length : 0;
     const took = Date.now() - started.current;
+    const keep = opts.current.persist, uri = file.current;
+    file.current = null;
+    if (keep && uri) { const { dropped } = addTake({ uri, kind: keep.kind, ms: took, s: keep.s, from: keep.from, to: keep.to }); dropped.forEach((d) => deleteTakeFile(d.uri)); }
+    else if (uri) deleteTakeFile(uri);
     setMs(took); setOk(res); setState("done");
     report.current({ ok: res, share, pass: share >= pass, ms: took, paceOk: targetMs ? took <= targetMs : null });
   };
@@ -98,13 +109,17 @@ export function SpeechCheck({ words, pass, targetMs, onResult, compact }: { word
       heard.current = ""; setOk(null);
       subs.current.forEach((x) => x.remove());
       subs.current = [
-        m.addListener("result", (e) => { heard.current = e.results[0]?.transcript ?? heard.current; setOk(align(wordsRef.current.map((w) => w.text), heard.current).ok); }),
+        m.addListener("result", (e) => { heard.current = e.results[0]?.transcript ?? heard.current; setOk(align(wordsRef.current.map((w) => w.text), heard.current, { strict: !!opts.current.strict }).ok); }),
+        m.addListener("audiostart", (e) => { if (e.uri) file.current = e.uri; }),
         m.addListener("end", () => { if (live.current) { live.current = false; finish(); } }),
         m.addListener("error", () => { if (live.current) { live.current = false; finish(); } }),
       ];
       started.current = Date.now();
       live.current = true;
-      m.start({ lang: "ar-SA", interimResults: true, continuous: true, requiresOnDeviceRecognition: true, addsPunctuation: false });
+      file.current = null;
+      const keep = opts.current.persist;
+      m.start({ lang: "ar-SA", interimResults: true, continuous: true, requiresOnDeviceRecognition: true, addsPunctuation: false,
+        recordingOptions: keep ? { persist: true, outputDirectory: takeDir().uri } : undefined });
       setState("listening");
     } catch { setState("unavailable"); }
   };

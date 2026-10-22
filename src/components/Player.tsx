@@ -24,7 +24,14 @@ import {
   type Chapter, type Reciter, type Resource, type TafsirResult, type Verse,
 } from "@/lib/quran";
 import { readJSON, writeJSON } from "@/lib/storage";
-import { dueVerses, rate, readSrs, stats, type Rating } from "@/lib/learning";
+import { dueVerses, rate, rateGrade, readSrs, stats, type Rating } from "@/lib/learning";
+import { paceSample } from "@/lib/verseTime";
+import { notePace, readFlex, useFlex } from "@/lib/learn/shams2/store2";
+import { noteCheck, noteWords } from "@/lib/learn/shams2/store";
+import { chainUnits, placement, repeatPauseMs, sittingRange, suggestRating, unitStarts } from "@/lib/shamsFlex";
+import { useVerseRoots } from "@/lib/learn/wordRoots";
+import { useFlexT } from "@/lib/learn/shamsflex/text";
+import { AlwaysFullSwitch, BlindCard, Comprehension, LinkChips, NextUp, QuickCheck, RootLine, RootSource, ShortTafsir, WordLoopBar, hasShortTafsir } from "./learn/shamsflex/Parts";
 import { versePlan, stepCount, type VersePlan } from "@/lib/coach";
 import * as vp from "@/lib/versePlayback";
 // the basmala is verse 1:1 from the Quran data (snapshot in lib/data/ui-verses.json), never typed by hand
@@ -110,12 +117,17 @@ function hooks(v: Verse, next?: Verse) {
 
 type Initial = { chapter: Chapter; verses: Verse[]; translationId: number };
 
+// Shams 3.0: quick checks passed in a row (placement), per surah, while the page is open
+const placementRun = { s: 0, n: 0 };
+
 export default function Player({ chapterId, startVerse, startHide = 0, reviewMode = false, shamsStart = false, sessionMode = false, initial }: { chapterId: number; startVerse: number; startHide?: number; reviewMode?: boolean; shamsStart?: boolean; sessionMode?: boolean; initial?: Initial }) {
   const router = useRouter();
   const t = useTranslations("player");
   const th = useTranslations("home");
   const ta = useTranslations("account");
   const ts = useTranslations("shams");
+  const f = useFlexT(); // texts of the flexible classic path (Shams 3.0)
+  const flex = useFlex();
   const rt = useTranslations("reader"); // the app reader's memorising modes and focus mode (messages "reader")
   const locale = useLocale();
   const meta = localeMeta(locale);
@@ -148,7 +160,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const gapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const setGap = (g: number) => { setGapState(g); writeJSON("tf:gap", g, true); };
   const setSleep = (m: number) => setSleepState({ mode: m, until: m > 0 ? Date.now() + m * 60_000 : 0 });
-  const clearGap = () => { if (gapTimer.current) { clearTimeout(gapTimer.current); gapTimer.current = null; } setTurn(null); };
+  const clearGap = () => { if (gapTimer.current) { clearTimeout(gapTimer.current); gapTimer.current = null; } setTurn(null); turnNext.current = null; };
   const [activeWord, setActiveWord] = useState<number | null>(null);
   const [useRemote, setUseRemote] = useState(false); // local file failed -> Quran.com audio
   const [timingsOk, setTimingsOk] = useState(true);
@@ -197,6 +209,21 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const linkQ = useRef<string[]>([]);
   const [chain, setChain] = useState<number | null>(null); // backward build-up: index of the first word segment being played
   const [chainDone, setChainDone] = useState(false);
+  // Shams 3.0 (flexible classic path): quick check "I know this already" and the placement run, the detailed tafsir on
+  // request, the word loop, the listen-and-repeat loop of short verses, the verses learned in this sitting, own pace
+  const [quick, setQuick] = useState<null | "ask" | "revealed">(null);
+  const quickRef = useRef(quick);
+  quickRef.current = quick;
+  const [placing, setPlacing] = useState(false);
+  const [quickNote, setQuickNote] = useState<string | null>(null);
+  const [fullTafsir, setFullTafsir] = useState(false);
+  const [wordLoopOn, setWordLoopOn] = useState(false);
+  const repeatLoop = useRef(false);
+  const turnNext = useRef<(() => void) | null>(null);
+  const [sitting, setSitting] = useState<number[]>([]);
+  const [doneRange, setDoneRange] = useState<{ s: number; from: number; to: number } | null>(null);
+  const t0 = useRef(0);
+  const paceKey = useRef("");
   const [mnemos, setMnemos] = useState<Record<string, string>>({});
   useEffect(() => { setMnemos(readJSON<Record<string, string>>("tf:mnemo", {})); }, []);
   const saveMnemo = (key: string, text: string) => { const n = { ...mnemos }; if (text.trim()) n[key] = text.trim(); else delete n[key]; setMnemos(n); writeJSON("tf:mnemo", n); };
@@ -219,14 +246,24 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   // tap a word: hear it on its own (word-by-word recordings of Quran.com)
   const wordAudio = useRef<HTMLAudioElement | null>(null);
   const [wordOn, setWordOn] = useState<string | null>(null);
-  const playWord = (key: string, pos: number) => {
+  const wordTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // `times` > 1: the word loop of the Shams coach (step 2) – the word again after a pause as long as the word took
+  const playWord = (key: string, pos: number, times = 1) => {
     const [s, a] = key.split(":").map((n) => n.padStart(3, "0"));
     audioRef.current?.pause();
+    if (wordTimer.current) { clearTimeout(wordTimer.current); wordTimer.current = null; }
     wordAudio.current ??= new Audio();
     const el = wordAudio.current;
+    const id = `${key}:${pos}`;
     el.src = `https://audio.qurancdn.com/wbw/${s}_${a}_${String(pos).padStart(3, "0")}.mp3`;
-    el.onended = () => setWordOn(null);
-    setWordOn(`${key}:${pos}`);
+    let left = Math.max(1, times);
+    let started = Date.now();
+    el.onended = () => {
+      left -= 1;
+      if (left <= 0) { setWordOn(null); return; }
+      wordTimer.current = setTimeout(() => { wordTimer.current = null; started = Date.now(); el.currentTime = 0; el.play().catch(() => setWordOn(null)); }, repeatPauseMs(Date.now() - started));
+    };
+    setWordOn(id);
     window.dispatchEvent(new Event("tf-audio-start"));
     el.play().catch(() => setWordOn(null));
   };
@@ -433,20 +470,44 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     setActiveWord(s ? s.word : null);
   };
 
-  // Backward build-up (Shams method): last word, last two words, … up to the whole verse, using the word timings
-  const chainSegs = useMemo(() => (verse ? [...verse.segments].sort((a, b) => a.start - b.start) : []), [verse]);
-  const chainStep = Math.max(1, Math.ceil(chainSegs.length / 6));
+  // Backward build-up (Shams method): the last phrase unit, the last two, … up to the whole verse, using the word
+  // timings. Units are split at the pause marks (at most four words, lib/shamsFlex.ts chainUnits); without matching
+  // timings the even chunks of before; short verses (three words or fewer) are heard and repeated whole instead.
+  const flexWords = useMemo(() => (verse ? verse.words.filter((w) => w.char_type_name === "word").map((w) => ({ position: w.position, text: w.text_uthmani })) : []), [verse]);
+  const units = useMemo(() => chainUnits(flexWords), [flexWords]);
+  const chainPts = useMemo(() => {
+    if (!verse) return [];
+    const starts = unitStarts(units, verse.segments);
+    if (starts) return units.map((u, k) => ({ ms: starts[k], word: u.from }));
+    if (!units.length) return [];
+    const segs = [...verse.segments].sort((a, b) => a.start - b.start);
+    const stepN = Math.max(1, Math.ceil(segs.length / 6));
+    const pts: { ms: number; word: number }[] = [];
+    for (let k = 0; k < segs.length; k += stepN) pts.push({ ms: segs[k].start, word: segs[k].word });
+    return pts;
+  }, [units, verse]);
+  const byUnits = units.length >= 2 && chainPts.length === units.length;
   const playFrom = (k: number) => {
     const a = audioRef.current;
-    if (!a || !chainSegs[k]) return;
-    a.currentTime = chainSegs[k].start / 1000;
+    if (!a || !chainPts[k]) return;
+    a.currentTime = chainPts[k].ms / 1000;
     a.playbackRate = speed;
     a.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
   };
+  // listen and repeat: after each listening a pause as long as the verse for the learner's own turn
+  const turnPause = (next: () => void) => {
+    const a = audioRef.current;
+    const ms = repeatPauseMs(((a && isFinite(a.duration) ? a.duration : 3) / (a?.playbackRate || 1)) * 1000);
+    turnNext.current = next;
+    setTurn({ ms, key: Date.now() });
+    gapTimer.current = setTimeout(() => { gapTimer.current = null; turnNext.current = null; setTurn(null); next(); }, ms);
+  };
+  const startRepeat = () => { clearGap(); setChain(null); setChainDone(false); repeatLoop.current = true; setRepeat(3); goTo(idx, true); };
   const startChain = () => {
     setChainDone(false);
-    if (chainSegs.length < 2) { setChain(null); goTo(idx, true); return; } // no word timings: plain slow repetition
-    const k = Math.max(0, chainSegs.length - chainStep);
+    if (chainPts.length < 2) { startRepeat(); return; } // short verse or no word timings: listen and repeat
+    repeatLoop.current = false;
+    const k = chainPts.length - 1;
     setChain(k);
     playFrom(k);
   };
@@ -456,11 +517,11 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   const continueChain = () => {
     if (chain === null) return;
     if (chain === 0) { setChain(null); setChainDone(true); setPlaying(false); if (shams === 1) autoNext(1); return; }
-    const k = Math.max(0, chain - chainStep);
+    const k = chain - 1;
     setChain(k);
     playFrom(k);
   };
-  const chainFrom = chain !== null ? chainSegs[chain]?.word ?? 0 : null;
+  const chainFrom = chain !== null ? chainPts[chain]?.word ?? 0 : null;
 
   const advance = () => {
     if (sleep.mode === -1 && idx >= verses.length - 1) { setSleepState({ mode: 0, until: 0 }); return; } // sleep timer: end of surah
@@ -485,6 +546,12 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     playsDone.current += 1;
     setActiveWord(null);
     if (sleeping()) { setPlaying(false); setSleepState({ mode: 0, until: 0 }); return; } // sleep timer reached
+    if (shams === 1 && repeatLoop.current) { // listen and repeat (short verses): the learner's turn after every listening
+      setPlaying(false);
+      if (playsDone.current < repeat) { turnPause(play); return; }
+      turnPause(() => { repeatLoop.current = false; setChainDone(true); if (shamsRef.current === 1) keys.current.next(); });
+      return;
+    }
     if (playsDone.current < repeat) { if (shams !== null) play(); else afterGap(play); return; }
     setPlaying(false);
     if (shams !== null) { if (shams === 0) autoNext(0); return; } // Shams method: the coach decides when to move on
@@ -506,12 +573,15 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     if (shams === null) return;
     const replay = () => goTo(idx, true);
     const ap = ageProfile(); // children and seniors: slower and more repetitions
+    if (shams !== 1) { repeatLoop.current = false; clearGap(); }
     switch (shams) {
-      case 0: setMode("learn"); setRepeat(plan?.listen ?? ap.listen); setSpeed(ap.speed); setShowWords(false); setShowTranslit(false); setShowTranslation(false); setHide(0); setSheetOpen(false); replay(); break;
-      case 1: setRepeat(1); setSpeed(Math.min(ap.speed, hasTimings ? 0.85 : 0.75)); setShowTranslit(true); if (hasTimings) startChain(); else { setRepeat(3); replay(); } break;
+      case 0: setMode("learn"); setRepeat(plan?.listen ?? ap.listen); setSpeed(ap.speed); setShowWords(false); setShowTranslit(false); setShowTranslation(false); setSheetOpen(false);
+        if (quickRef.current) { audioRef.current?.pause(); setHide(2); } else { setHide(0); replay(); } break; // quick check: covered, no audio
+      case 1: setRepeat(1); setSpeed(Math.min(ap.speed, 0.85)); setShowTranslit(true); if (hasTimings && chainPts.length >= 2) startChain(); else startRepeat(); break;
       case 2: setChain(null); setRepeat(1); setSpeed(ap.speed); setShowWords(true); setShowTranslit(true); break;
       case 3: setShowWords(false); setShowTranslation(true); break;
-      case 4: if (!isDesktop) setSheetOpen(true); break;
+      // the short version first (maqāṣid section on the coach card); the sheet opens right away only with "always detailed"
+      case 4: if (!isDesktop && verse && (readFlex().tafsir === "full" || !hasShortTafsir(chapterId, verse.verse_number))) setSheetOpen(true); break;
       case 5: setSheetOpen(false); setShowTranslation(false); setShowTranslit(false); setHide(3); break;
       case 6: setHide(0); setShowTranslation(true); setNoteOpen(verse?.verse_key ?? null); break;
       case 7: setHide(0); setShowTranslation(false); setShowTranslit(false); setSheetOpen(false); startLink(); break;
@@ -544,6 +614,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     const p = planFor(i, full);
     if (!p) return;
     stopLink();
+    repeatLoop.current = false; clearGap();
+    setFullTafsir(false); setQuickNote(null); setWordLoopOn(false);
+    // placement: after passed quick checks in a row, a new verse starts with the quick check right away
+    const pl = placement(p.kind, placementRun.s === chapterId ? placementRun.n : 0, kids);
+    setQuick(pl === "start" ? "ask" : null);
+    setPlacing(pl === "start");
+    const key = verses[i]?.verse_key ?? "";
+    if (paceKey.current !== key) { paceKey.current = key; t0.current = Date.now(); }
     setPlan(p);
     setShams(-1);
     setTimeout(() => setShams(p.steps[0]), 0);
@@ -557,7 +635,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
   }, [idx]); // eslint-disable-line react-hooks/exhaustive-deps
   const shamsAuto = useRef(shamsStart);
   useEffect(() => { if (shamsAuto.current && verse) { shamsAuto.current = false; beginPlan(idx); } }, [verse]); // eslint-disable-line react-hooks/exhaustive-deps
-  const stopShams = () => { stopLink(); setShams(null); setPlan(null); setFullPath(false); setChain(null); setMode("continuous"); setRepeat(1); setSpeed(1); setShowWords(false); setShowTranslit(true); setShowTranslation(true); setHide(0); };
+  const stopShams = () => { stopLink(); repeatLoop.current = false; clearGap(); setQuick(null); setShams(null); setPlan(null); setFullPath(false); setChain(null); setMode("continuous"); setRepeat(1); setSpeed(1); setShowWords(false); setShowTranslit(true); setShowTranslation(true); setHide(0); };
   shamsRef.current = shams;
   shamsOnRef.current = shams !== null;
   useEffect(() => {
@@ -578,12 +656,42 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     audioRef.current?.pause();
     router.push(next ? itemUrl(next) : "/today?session=done");
   };
+  // a verse is done: next verse, next session item, or the end of the surah (with today's verses in one go)
+  const finishVerse = () => {
+    if (!verse) return;
+    const all = sitting.includes(verse.verse_number) ? sitting : [...sitting, verse.verse_number];
+    setSitting(all);
+    if (sessionMode) { goSession(true); return; }
+    if (idx < verses.length - 1) { goTo(idx + 1, false); return; }
+    stopShams();
+    const r = sittingRange(chapterId, all);
+    if (r) { setDoneRange(r); window.setTimeout(() => document.getElementById("shams-done")?.scrollIntoView({ behavior: "smooth", block: "center" }), 120); }
+  };
   const nextShams = () => {
     if (shams === null || !plan) return;
     stopLink();
     if (!lastStep) { setShams(plan.steps[stepPos + 1]); return; }
-    if (sessionMode) { goSession(true); return; }
-    if (idx < verses.length - 1) goTo(idx + 1, false); else stopShams();
+    // own pace: the time this new verse took on the full path (a sample scaled to a verse of average length)
+    if (plan.kind === "new" && t0.current) { notePace(paceSample(Date.now() - t0.current, Math.max(1, plan.words)), 1); t0.current = 0; }
+    finishVerse();
+  };
+  // quick check: the verse sits already -> rated "good" (FSRS 3) and planned as a known verse; otherwise the full path
+  const startQuick = () => { audioRef.current?.pause(); setQuick("ask"); setHide(2); };
+  const quickPass = () => {
+    if (!verse) return;
+    const days = rateGrade(verse.verse_key, 3);
+    placementRun.n = placementRun.s === chapterId ? placementRun.n + 1 : 1;
+    placementRun.s = chapterId;
+    t0.current = 0;
+    setCelebrate(verse.verse_key);
+    setQuickNote(`${f("quickPassed")} ${days ? t("saved", { days }) : t("savedToday")}`);
+    window.setTimeout(finishVerse, 900);
+  };
+  const quickFail = () => {
+    placementRun.s = chapterId; placementRun.n = 0;
+    setQuick(null); setPlacing(false); setHide(0);
+    t0.current = Date.now();
+    goTo(idx, true);
   };
 
   // wire the shared audio element to this page
@@ -706,6 +814,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
     window.addEventListener("keydown", h);
     return () => window.removeEventListener("keydown", h);
   }, []);
+  const roots = useVerseRoots(chapterId, verse?.verse_number ?? 1, shams === 2 && !!verse);
   if (error) return <p className="p-6">{t("error")}</p>;
   if (!verse || !chapter) return <p className="p-6 text-muted">{t("loading")}</p>;
 
@@ -735,6 +844,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
           )}
           {/* HTML comes from the Quran.com API */}
           <div className="tafsir-html" dir={source?.language_name?.toLowerCase() === localeMeta(locale).resourceLang ? meta.dir : "ltr"} dangerouslySetInnerHTML={{ __html: tafsir.text }} />
+          {shams === 4 && <AlwaysFullSwitch className="mt-4" />}
           {source && (
             <p className="mt-4 border-t border-line pt-2 text-xs text-muted">
               {t("source")}: {source.name}{source.author_name ? ` — ${source.author_name}` : ""}{source.id === OWN_TAFSIR_ID ? "" : " (Quran.com)"}
@@ -951,7 +1061,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                           const mark = hide === 6 ? testMarks[wi] : undefined;
                           const outOfChain = chainFrom !== null && w.position < chainFrom;
                           return (
-                          <span key={w.position} className="text-center" onClick={covered || soft || cueOnly ? undefined : (e) => { e.stopPropagation(); playWord(v.verse_key, w.position); }}>
+                          <span key={w.position} className="text-center" onClick={covered || soft || cueOnly ? undefined : (e) => { e.stopPropagation(); playWord(v.verse_key, w.position, shams === 2 && wordLoopOn ? flex.wordLoop : 1); }}>
                             <span className={`block cursor-pointer rounded-lg px-1.5 transition ${wordOn === `${v.verse_key}:${w.position}` ? "bg-gold/15 text-gold" : ""} ${covered ? "select-none bg-line text-transparent blur-sm" : ""} ${soft ? "select-none opacity-40 blur-[3px]" : ""} ${mark === true ? "text-accent" : mark === false ? "text-red-600 underline decoration-2 underline-offset-8" : ""} ${hide === 6 && wi === testPos && !revealed ? "ring-2 ring-gold" : ""} ${cueOnly ? "text-gold" : ""} ${outOfChain ? "opacity-25" : ""} ${!covered && hasTimings && activeWord === w.position ? "bg-accent-soft text-accent" : ""}`}>{cueOnly ? firstLetter(w.text_uthmani) : w.text_uthmani}</span>
                             {showWords && !covered && (
                               <span className="block font-sans text-[11px] leading-tight text-muted" dir="ltr">
@@ -959,6 +1069,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                                 {w.translation?.text}
                               </span>
                             )}
+                            {shams === 2 && !covered && <RootLine root={roots[w.position]} />}
                           </span>
                           );
                         })}
@@ -998,15 +1109,25 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                             {plan.kind !== "new" && !fullPath && <button onClick={() => { setFullPath(true); beginPlan(idx, true); }} className="ms-2 font-semibold text-[rgb(var(--gold))] underline-offset-2 hover:underline">{ts("fullPath")}</button>}
                           </p>
                         )}
+                        {quick && shams === 0 ? (
+                          <QuickCheck revealed={quick === "revealed"} placement={placing} saved={quickNote} onReveal={() => { setQuick("revealed"); setRevealed(true); }} onPass={quickPass} onFail={quickFail} />
+                        ) : (
                         <div key={`${v.verse_key}-${shams}`} className="step-in">
                           <h3 className="font-display mt-4 text-2xl leading-tight">{ts(`s${shams + 1}`)}</h3>
                           <p className="mt-2 text-[15px] leading-relaxed text-white/75">{shams === 0 && plan ? ts("d1n", { n: plan.listen }) : ts(`d${shams + 1}`)}</p>
+                          {shams === 1 && <p className="mt-2 text-sm leading-relaxed text-white/70">{byUnits ? f("unitsLead", { n: units.length }) : f("shortLoop")}</p>}
                         </div>
+                        )}
+                        {shams === 2 && <><WordLoopBar on={wordLoopOn} onToggle={() => setWordLoopOn((x) => !x)} /><div className="[&>p]:text-white/50"><RootSource /></div></>}
+                        {shams === 4 && flex.tafsir !== "full" && !fullTafsir && hasShortTafsir(chapterId, v.verse_number) && (
+                          <ShortTafsir surah={chapterId} verse={v.verse_number} onFull={() => { setFullTafsir(true); if (!isDesktop) setSheetOpen(true); else document.getElementById("tafsir-aside")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />
+                        )}
                         {shams === 7 && (
                           <div className="mt-3 rounded-lg border border-white/10 p-3">
                             {verses[i - 1] && <p className="font-arabic text-xl leading-loose text-white/60" dir="rtl">{verses[i - 1].text_uthmani}</p>}
                             <p className="font-arabic text-xl leading-loose" dir="rtl">{v.text_uthmani}</p>
                             <p className="mt-2 text-sm text-white/70">{linking ? ts("linkNow") : ts("linkRecite")}</p>
+                            {!linking && <LinkChips surah={chapterId} verse={v.verse_number} />}
                           </div>
                         )}
                         {shams === 3 && (() => {
@@ -1018,23 +1139,29 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                               {h.rhymeWord && <p><span className="font-semibold">{ts("hRhyme")}:</span> <span className="font-arabic text-xl" dir="rtl">…{h.rhyme}</span>{h.rhymeWord.transliteration?.text ? ` (${h.rhymeWord.transliteration.text})` : ""} · {ts("hRhymeN", { n: sameRhyme, total: verses.length })}</p>}
                               {h.bridge && h.bridge.from && h.bridge.to && <p><span className="font-semibold">{ts("hBridge")}:</span> <span className="font-arabic mt-1 block text-xl" dir="rtl">{h.bridge.from.text_uthmani} ← {h.bridge.to.text_uthmani}</span></p>}
                               <p><span className="font-semibold">{ts("hAcrostic")}:</span> <span className="font-arabic text-xl text-gold" dir="rtl">{h.acrostic}</span></p>
+                              <NextUp surah={chapterId} verse={v.verse_number} next={verses[i + 1]} />
                               <label className="mt-1 grid gap-1"><span className="font-semibold">{ts("hOwn")}</span>
                                 <textarea rows={2} defaultValue={mnemos[v.verse_key] ?? ""} onBlur={(e) => saveMnemo(v.verse_key, e.target.value)} placeholder={ts("hOwnPh")} className="rounded-md border border-line bg-surface p-2 text-sm text-ink" />
                               </label>
                             </div>
                           );
                         })()}
-                        {shams === 6 && <ul className="mt-2 grid gap-1 text-sm text-white/70">{["q1", "q2", "q3"].map((q) => <li key={q}>– {ts(q)}</li>)}</ul>}
-                        <div className="mt-5 flex flex-wrap items-center gap-2">
-                          {(shams === 0 || (shams === 1 && !hasTimings)) && <button onClick={() => goTo(idx, true)} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("again")}</button>}
+                        {shams === 6 && <Comprehension verses={verses} idx={i} />}
+                        {shams === 6 && <ul className="mt-4 grid gap-1 text-sm text-white/70">{["q1", "q2", "q3"].map((q) => <li key={q}>– {ts(q)}</li>)}</ul>}
+                        {!(quick && shams === 0) && <div className="mt-5 flex flex-wrap items-center gap-2">
+                          {shams === 0 && plan && placement(plan.kind, 0, kids) !== "off" && <button onClick={startQuick} className="h-11 rounded-full border border-white/25 bg-white/[0.06] px-4 text-sm font-semibold backdrop-blur hover:border-white">{f("quickOffer")}</button>}
+                          {shams === 0 && <button onClick={() => goTo(idx, true)} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("again")}</button>}
+                          {shams === 1 && !(hasTimings && chainPts.length >= 2) && <button onClick={startRepeat} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("again")}</button>}
                           {shams === 7 && !linking && <button onClick={startLink} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("linkAgain")}</button>}
                           {shams !== 5 && <button onClick={nextShams} className="btn-gold h-11 rounded-full px-6 text-sm font-bold">{lastStep ? (idx < verses.length - 1 ? ts("nextVerse") : ts("finish")) : ts("next")}</button>}
-                          {shams === 1 && hasTimings && <button onClick={startChain} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("chainAgain")}</button>}
-                          {shams === 1 && chain !== null && <span className="text-sm text-white/70">{ts("chainNow")}</span>}
+                          {shams === 1 && hasTimings && chainPts.length >= 2 && <button onClick={startChain} className="h-11 rounded-full border border-white/25 px-4 text-sm font-semibold hover:border-white">{ts("chainAgain")}</button>}
+                          {shams === 1 && chain !== null && <span className="text-sm text-white/70">{byUnits ? `${f("unitOf", { k: chainPts.length - chain, n: chainPts.length })} · ` : ""}{ts("chainNow")}</span>}
+                          {shams === 1 && turn && <span className="text-sm font-bold text-[rgb(var(--gold))]" role="status">{f("yourTurn")}</span>}
                           {shams === 1 && chainDone && <span className="text-sm font-semibold text-[rgb(var(--gold))]">{ts("chainDone")}</span>}
                           {shams === 5 && hide === 3 && !revealed && <button onClick={() => setHide(2)} className="btn-gold h-11 rounded-full px-6 text-sm font-bold">{ts("noCues")}</button>}
                           {shams === 5 && !revealed && <span className="text-sm text-white/70">{hide === 3 ? ts("cueHint") : ts("recallHint")}</span>}
-                        </div>
+                        </div>}
+                        {!sessionMode && sitting.length >= 2 && (() => { const r = sittingRange(chapterId, sitting); return r ? <BlindCard onStage s={r.s} from={r.from} to={r.to} /> : null; })()}
                       </div>
                     )}
                     {active && shams === null && (
@@ -1105,7 +1232,14 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                         )}
                         {!revealed && !kids && (
                           <div className="mt-3">
-                            <ReciteCheck words={words.map((w) => w.text_uthmani)} onResult={(score) => { setReciteScore(score); setRevealed(true); }} onPlayReciter={() => goTo(idx, true)} pauseOthers={() => audioRef.current?.pause()} />
+                            <ReciteCheck words={words.map((w) => w.text_uthmani)} onPlayReciter={() => goTo(idx, true)} pauseOthers={() => audioRef.current?.pause()}
+                              onResult={(score, ok) => {
+                                setReciteScore(score);
+                                // the words heard (on-device / browser speech recognition, not a pronunciation score)
+                                noteWords(v.verse_key, ok.map((o, k) => ({ position: words[k]?.position ?? k + 1, ok: o })));
+                                noteCheck(v.verse_key, ok.filter(Boolean).length, ok.length);
+                                setRevealed(true);
+                              }} />
                           </div>
                         )}
                         {revealed && (
@@ -1113,14 +1247,17 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
                             <p className="mb-3 font-semibold">{t("rateQ")}</p>
                             {(() => {
                               // after "recite & check" the coach suggests a rating (the learner still decides)
-                              const tip = reciteScore === null ? null : reciteScore >= 0.95 ? "easy" : reciteScore >= 0.75 ? "good" : "again";
+                              const tip = suggestRating(reciteScore);
                               const ring = (r: string) => (tip === r ? "ring-2 ring-offset-2 ring-[rgb(var(--gold))] ring-offset-surface" : "");
                               return (
+                                <>
+                                {tip && <p className="mb-2 text-xs text-gold">{f("suggested")}: {t(tip)}</p>}
                                 <div className={`grid grid-cols-3 gap-2 ${kids ? "text-base [&>button]:h-14" : ""}`}>
                                   <button className={`h-11 rounded-lg border border-red-300 bg-surface font-semibold text-red-700 transition hover:bg-red-50 dark:border-red-500/40 dark:text-red-300 dark:hover:bg-red-500/10 ${ring("again")}`} onClick={() => onRate("again")}>↺ {t("again")}</button>
                                   <button className={`h-11 rounded-lg bg-accent font-bold text-white transition hover:brightness-110 ${ring("good")}`} onClick={() => onRate("good")}>✓ {t("good")}</button>
                                   <button className={`btn-gold h-11 rounded-lg font-bold ${ring("easy")}`} onClick={() => onRate("easy")}>★ {t("easy")}</button>
                                 </div>
+                                </>
                               );
                             })()}
                           </div>
@@ -1155,12 +1292,13 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             })}
           </ol>
           )}
+          {doneRange && shams === null && <div id="shams-done"><BlindCard s={doneRange.s} from={doneRange.from} to={doneRange.to} /></div>}
           {showDebug && <p className="mt-6 text-center text-[11px] text-muted">{useRemote ? "quran.com" : "self-hosted"} · {verse.verse_key} · {dbg || "ok"}</p>}
           <DonateCTA variant="slim" className="mt-10" />
           {lock &&<PremiumLock kind={lock} freeOffline={prem.freeOffline} onClose={() => setLock(null)} />}
         </main>
 
-        {!kids && <aside className="sticky top-20 my-5 hidden max-h-[calc(100vh-6rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">
+        {!kids && <aside id="tafsir-aside" className="sticky top-20 my-5 hidden max-h-[calc(100vh-6rem)] self-start overflow-y-auto rounded-2xl border border-line bg-surface p-5 shadow-card lg:block">
           <h2 className="mb-3 font-display text-lg font-semibold">{t("tafsir")} · {verse.verse_key}</h2>
           {tafsirBody}
         </aside>}
@@ -1188,7 +1326,7 @@ export default function Player({ chapterId, startVerse, startHide = 0, reviewMod
             <div key={turn.key} className="flex items-center justify-center gap-2 bg-[rgb(201_166_94)]/15 px-4 py-1.5 text-[12px] font-semibold text-[rgb(233_207_153)]">
               <span className="relative h-1.5 w-24 overflow-hidden rounded-full bg-white/10"><span className="turn-bar absolute inset-y-0 start-0 rounded-full bg-[rgb(201_166_94)]" style={{ animationDuration: `${turn.ms}ms` }} /></span>
               {t("yourTurn")}
-              <button onClick={() => { clearGap(); advance(); }} className="ms-1 rounded-full border border-white/20 px-2 py-0.5 text-[11px] text-white/80 hover:border-white">{t("skip")}</button>
+              <button onClick={() => { const n = turnNext.current; clearGap(); if (shams !== null) n?.(); else advance(); }} className="ms-1 rounded-full border border-white/20 px-2 py-0.5 text-[11px] text-white/80 hover:border-white">{t("skip")}</button>
             </div>
           )}
           <div className="h-[3px] bg-white/10"><div className="h-full bg-gradient-to-r from-[rgb(201_166_94)]/60 via-[rgb(233_207_153)] to-[rgb(201_166_94)] transition-all duration-500" style={{ width: `${((idx + 1) / verses.length) * 100}%` }} /></div>

@@ -4,7 +4,8 @@ import { router, useGlobalSearchParams, type Href } from "expo-router";
 import { FONT, R, goldButton, stage, useTheme } from "@/lib/theme";
 import { Icon } from "@/components/icons";
 import { usePT } from "./profileText";
-import { isHaramain, setTravel, useTravel } from "./travel";
+import { useLang } from "@/i18n";
+import { isHaramain, matchCity, setTravel, useTravel } from "./travel";
 import { T } from "./api";
 
 // Travel mode on the prayer page and in the feed (owner, 21.10.2026). Only while travel mode is on.
@@ -12,6 +13,14 @@ import { T } from "./api";
 // the twelve translations) is new religious content and must be checked by a scholar before release (BLUEPRINT 4). It
 // only describes the schools (qasr for the four schools; jam' in the Shafi'i, Maliki and Hanbali schools; Hanafi jam'
 // only at Arafa and Muzdalifa) without distances or durations and sends questions to scholars; it is not a fatwa.
+
+/** a destination from the prayer list in the reader's language (Makkah → Mekke, مكة المكرمة; 22.10.2026 the Turkish and
+ *  Arabic feed showed "Makkah"); a name that is not on the list stays as it was typed */
+function useCityLabel(city?: string) {
+  const { lang } = useLang();
+  if (!city) return city;
+  return matchCity(city)?.names[lang] || city;
+}
 
 /** the prayer-page card: where the times apply, the note on qasr and jam' by school, travel duas, Umrah and Hajj */
 export function TravelPrayerCard({ hanafi }: { /** the Asr setting or the city's custom is Hanafi */ hanafi: boolean }) {
@@ -37,12 +46,13 @@ export function TravelPrayerCard({ hanafi }: { /** the Asr setting or the city's
 export function TravelFeedBanner() {
   const pt = usePT();
   const trip = useTravel();
+  const city = useCityLabel(trip.city);
   if (!trip.on) return null;
   return (
     <View style={{ marginHorizontal: 14, marginTop: 12, padding: 12, borderRadius: R.card, borderWidth: 1, borderColor: goldButton.line, backgroundColor: stage.bg, gap: 10 }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
         <Icon name="compass" color={stage.gold} size={17} />
-        <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.bold, fontSize: 14.5, color: stage.cream }}>{trip.city ? pt("travellingTo", { c: trip.city }) : pt("travelling")}</Text>
+        <Text numberOfLines={1} style={{ flex: 1, fontFamily: FONT.bold, fontSize: 14.5, color: stage.cream }}>{city ? pt("travellingTo", { c: city }) : pt("travelling")}</Text>
       </View>
       <TravelLinks city={trip.city} onStage />
     </View>
@@ -69,9 +79,10 @@ function TravelLinks({ city, onStage }: { city: string; onStage?: boolean }) {
 }
 
 /** the small "Travelling · City" badge (profile header, prayer card) */
-export function TravelBadge({ city }: { city?: string }) {
+export function TravelBadge({ city: typed }: { city?: string }) {
   const t = useTheme();
   const pt = usePT();
+  const city = useCityLabel(typed);
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: 9, paddingVertical: 3, borderRadius: R.pill, backgroundColor: "rgba(201,166,94,0.14)", borderWidth: 1, borderColor: goldButton.line, flexShrink: 1 }}>
       <Icon name="compass" color={t.gold} size={12} />

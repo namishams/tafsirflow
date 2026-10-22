@@ -3,8 +3,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ESSENCE, PRAYERS, buildPrayer, langOf, type L2, type Lang, type Posture, type Tradition } from "@/lib/salah";
-import { ArrowBack, ArrowNext } from "./Icons";
-import { PracticeStar, PracticeWindow, starPath } from "./art/PracticeArt";
+import { ArrowNext } from "./Icons";
+import { PracticeStar, starPath } from "./art/PracticeArt";
+import { Courtyard, FigureArt, Glyph, Mat, Motes, TS_CSS, TsDefs, useTsId } from "./art/TrainerScene";
+import { TA, figureParts } from "./art/trainerArt";
 
 type UiKey = "sunni" | "shia" | "rakah" | "of" | "play" | "pause" | "prev" | "next" | "steps" | "aloud" | "silent" | "qibla" | "meaning" | "restart" | "note" | "learnFatiha";
 const UI: Record<Lang, Record<UiKey, string>> = {
@@ -64,30 +66,23 @@ function usePoseAnimation(target: Posture) {
   }, [target]);
   return pose;
 }
-const line = (...pts: P[]) => pts.map((p) => p.join(",")).join(" ");
-
+// the figure in the painted courtyard: the garden's light, the terrace, the prayer mat and the qibla on the horizon
 function Figure({ posture, qibla, label }: { posture: Posture; qibla: string; label: string }) {
   const p = usePoseAnimation(posture);
+  const u = useTsId("sl");
+  const f = figureParts(p);
   return (
-    <svg viewBox="0 0 240 230" className="h-full w-full" role="img" aria-label={label}>
-      <defs><linearGradient id="mat" x1="0" x2="1"><stop offset="0" stopColor="rgb(214 180 108 / 0.35)" /><stop offset="1" stopColor="rgb(214 180 108 / 0.15)" /></linearGradient></defs>
-      {/* prayer mat and qibla */}
-      <rect x="40" y="209" width="160" height="7" rx="2" fill="url(#mat)" />
-      <rect x="44" y="211" width="152" height="3" rx="1" fill="none" stroke="rgb(214 180 108 / 0.5)" strokeWidth="0.6" strokeDasharray="3 2" />
-      <g transform="translate(212 178)"><rect width="18" height="20" rx="1.5" fill="#111" /><rect y="5" width="18" height="2.4" fill="rgb(214 180 108)" /><text x="9" y="32" textAnchor="middle" fontSize="8" fill="currentColor" fillOpacity=".6">{qibla}</text></g>
-      <path d="M196 188 l9 0 m-3 -3 l3 3 l-3 3" stroke="rgb(214 180 108 / 0.7)" strokeWidth="1.4" fill="none" strokeLinecap="round" />
-      {posture === "sujudTurbah" && <rect x="166" y="205" width="16" height="4" rx="1" fill="#8a6b45" />}
-      {/* body */}
-      <g fill="none" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor">
-        <polyline points={line(p.hip, p.knee, p.ankle, p.toe)} strokeWidth="15" strokeOpacity=".92" />
-        <polyline points={line(p.neck, p.hip)} strokeWidth="19" />
-        <polyline points={line(p.shoulder, p.elbow, p.hand)} strokeWidth="10" stroke="rgb(214 180 108)" />
-      </g>
-      <circle cx={p.head[0]} cy={p.head[1]} r="13" fill="currentColor" />
-      {posture === "tashahhud" && <line x1={p.hand[0]} y1={p.hand[1]} x2={p.hand[0] + 10} y2={p.hand[1] - 5} stroke="rgb(214 180 108)" strokeWidth="3" strokeLinecap="round" />}
-      {(posture === "salamR" || posture === "salamL") && (
-        <path d={posture === "salamR" ? `M${p.head[0] - 10} ${p.head[1] - 22} q12 -10 24 0 m-4 -5 l4 5 l-6 2` : `M${p.head[0] + 12} ${p.head[1] - 22} q-12 -10 -24 0 m4 -5 l-4 5 l6 2`} stroke="rgb(214 180 108)" strokeWidth="2" fill="none" strokeLinecap="round" />
-      )}
+    <svg viewBox="0 -36 240 290" className="h-full w-full" role="img" aria-label={label}>
+      <TsDefs u={u} />
+      <Courtyard u={u} H={254} G={209} qibla={qibla}>
+        <circle cx="118" cy="128" r="100" fill={`url(#${u}aura)`} className="ts-breathe" />
+        <Mat u={u} />
+        <FigureArt u={u} f={f} finger={posture === "tashahhud"} turbah={posture === "sujudTurbah"} />
+        {(posture === "salamR" || posture === "salamL") && (
+          <path d={posture === "salamR" ? `M${p.head[0] - 10} ${p.head[1] - 24} q12 -10 24 0 m-4 -5 l4 5 l-6 2` : `M${p.head[0] + 12} ${p.head[1] - 24} q-12 -10 -24 0 m4 -5 l-4 5 l6 2`} stroke={TA.goldHi} strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="ts-in" />
+        )}
+        <Motes />
+      </Courtyard>
     </svg>
   );
 }
@@ -113,58 +108,70 @@ export default function PrayerTrainer() {
     const id = setTimeout(() => setI((n) => n + 1), ms);
     return () => clearTimeout(id);
   }, [auto, i, steps.length, step]);
-
-  const chip = (on: boolean) => `pa-chip pa-chip-dark ${on ? "is-on" : ""}`;
+  const last = i >= steps.length - 1;
 
   return (
-    <div className="stage girih relative overflow-hidden rounded-2xl border border-[rgb(214_180_108)]/30 text-[#eef0f3] shadow-[0_40px_80px_-50px_rgba(4,30,22,.9)]">
-      <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-[rgb(214_180_108)]/20 p-4 sm:p-5">
-        <div className="flex flex-wrap gap-2" role="tablist">
-          {(["sunni", "shia"] as const).map((t) => <button key={t} role="tab" aria-selected={tradition === t} onClick={() => setTradition(t)} className={chip(tradition === t)}>{u[t]}</button>)}
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {PRAYERS.map((p) => <button key={p.id} aria-pressed={prayer === p.id} onClick={() => setPrayer(p.id)} className={chip(prayer === p.id)}>{tx(p.name)} · {p.rakat}</button>)}
-        </div>
-      </div>
-
-      <div className="relative grid gap-0 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <div className="relative border-b border-[rgb(214_180_108)]/20 p-4 md:border-b-0 md:border-e">
-          <div className="absolute start-4 top-4 z-[1] rounded-full border border-[rgb(214_180_108)]/45 bg-[rgb(5_28_21)]/60 px-3 py-1 text-xs font-bold text-[#f3e2b6]">{u.rakah} {Math.min(step.rakah, rakat)} {u.of} {rakat}</div>
-          <div className="relative mx-auto aspect-square max-w-[360px] text-white">
-            <PracticeWindow uid="salah-w" lamp className="absolute left-1/2 top-0 h-full w-auto -translate-x-1/2 opacity-45" />
-            <div className="relative h-full w-full"><Figure posture={step.posture} qibla={u.qibla} label={tx(step.title)} /></div>
+    <div className="relative overflow-hidden rounded-[28px] bg-[#04201a] text-[#eef0f3] shadow-[0_40px_80px_-50px_rgba(4,30,22,.9)] ring-1 ring-[rgb(214_180_108)]/25">
+      <style>{TS_CSS}</style>
+      <div className="relative grid md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
+        {/* the picture, with the glass controls floating over its sky and terrace */}
+        <div className="relative aspect-[240/290] w-full bg-[#041d16]">
+          <div className="absolute inset-0"><Figure posture={step.posture} qibla={u.qibla} label={tx(step.title)} /></div>
+          <div className="absolute inset-x-3 top-3 flex items-start justify-between gap-2 sm:inset-x-4 sm:top-4">
+            <div role="tablist" className="tg-glass tg-dark flex rounded-full p-1">
+              {(["sunni", "shia"] as const).map((t) => (
+                <button key={t} role="tab" aria-selected={tradition === t} onClick={() => setTradition(t)}
+                  className={`tg-btn min-h-9 rounded-full px-3.5 text-[13px] font-semibold sm:px-4 ${tradition === t ? "tg-lens" : "text-white/85"}`}>{u[t]}</button>
+              ))}
+            </div>
+            <div className="tg-glass tg-dark flex shrink-0 flex-col items-center gap-1 rounded-[18px] px-3 py-2">
+              <span className="text-[11px] font-bold text-[#f3e2b6]">{u.rakah} {Math.min(step.rakah, rakat)} {u.of} {rakat}</span>
+              <span className="flex gap-1" aria-hidden>{Array.from({ length: rakat }, (_, k) => (
+                <svg key={k} viewBox="0 0 24 24" className="h-3.5 w-3.5"><path d={starPath(12, 12, 11, 5.2)} fill={k + 1 < step.rakah ? "#d6b46c" : k + 1 === step.rakah ? "#fff" : "rgb(255 255 255 / .2)"} stroke={k + 1 === step.rakah ? "#d6b46c" : "none"} strokeWidth="1" /></svg>
+              ))}</span>
+            </div>
           </div>
-          <div className="mt-3 flex justify-center gap-2" aria-hidden>{Array.from({ length: rakat }, (_, k) => (
-            <svg key={k} viewBox="0 0 24 24" className="h-5 w-5"><path d={starPath(12, 12, 11, 5.2)} fill={k + 1 < step.rakah ? "#d6b46c" : k + 1 === step.rakah ? "#fff" : "rgb(255 255 255 / .14)"} stroke={k + 1 === step.rakah ? "#d6b46c" : "none"} strokeWidth="1" /></svg>
-          ))}</div>
+          <div className="absolute inset-x-3 bottom-3 sm:inset-x-4 sm:bottom-4">
+            <div className="tg-glass tg-dark tg-scroll flex gap-1 overflow-x-auto rounded-full p-1">
+              {PRAYERS.map((p) => (
+                <button key={p.id} aria-pressed={prayer === p.id} onClick={() => setPrayer(p.id)}
+                  className={`tg-btn min-h-9 shrink-0 grow rounded-full px-3 text-[13px] font-semibold ${prayer === p.id ? "tg-lens" : "text-white/85"}`}>{tx(p.name)} <span className="opacity-60">{p.rakat}</span></button>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="flex min-h-[420px] flex-col p-5 sm:p-7">
+        {/* the words of the step, then the controls: they stay at the bottom of the screen while the trainer is in view */}
+        <div className="relative flex min-h-[460px] flex-col bg-[radial-gradient(120%_80%_at_0%_0%,rgba(47,125,102,.28),transparent_60%)] p-5 sm:p-7">
           <div key={`${prayer}-${tradition}-${i}`} className="step-in">
-          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal"><PracticeStar size={10} /><span dir="ltr">{i + 1} / {steps.length}</span>{step.aloud !== undefined && step.ar ? ` · ${step.aloud ? u.aloud : u.silent}` : ""}</p>
-          <h3 className="font-display mt-2 text-3xl leading-tight">{tx(step.title)}</h3>
-          {step.ar && <p className="font-arabic mt-5 border-y border-[rgb(214_180_108)]/25 py-3 text-[26px] leading-[2] text-[#fbf3dc] sm:text-[30px]" dir="rtl">{step.ar}</p>}
-          {step.translit && lang !== "ar" && <p className="mt-3 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]"><span dir="ltr">{step.translit}</span></p>}
-          {/* a summary in own words (of a hadith or a verse) is labelled as such, never as the meaning of the wording */}
-          {step.meaning && lang !== "ar" && <p className="mt-3 text-[15px] leading-relaxed text-white/80"><span className="font-semibold text-white">{step.essence ? tx(ESSENCE) : u.meaning}: </span>{tx(step.meaning)}</p>}
-          {step.note && <p className="mt-4 rounded-xl border border-[rgb(214_180_108)]/25 bg-white/[0.05] p-3 text-sm leading-relaxed text-white/75">{tx(step.note)}</p>}
+            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[rgb(var(--gold))] rtl:tracking-normal"><PracticeStar size={10} /><span dir="ltr">{i + 1} / {steps.length}</span>{step.aloud !== undefined && step.ar ? ` · ${step.aloud ? u.aloud : u.silent}` : ""}</p>
+            <h3 className="font-display mt-2 text-3xl leading-tight">{tx(step.title)}</h3>
+            {step.ar && <p className="font-arabic tg-glass mt-5 rounded-[22px] px-4 py-3 text-[26px] leading-[2] text-[#fbf3dc] sm:text-[30px]" dir="rtl">{step.ar}</p>}
+            {step.translit && lang !== "ar" && <p className="mt-3 text-[15px] italic leading-relaxed text-[rgb(var(--gold))]"><span dir="ltr">{step.translit}</span></p>}
+            {/* a summary in own words (of a hadith or a verse) is labelled as such, never as the meaning of the wording */}
+            {step.meaning && lang !== "ar" && <p className="mt-3 text-[15px] leading-relaxed text-white/80"><span className="font-semibold text-white">{step.essence ? tx(ESSENCE) : u.meaning}: </span>{tx(step.meaning)}</p>}
+            {step.note && <p className="tg-glass mt-4 rounded-[18px] p-3.5 text-sm leading-relaxed text-white/80">{tx(step.note)}</p>}
           </div>
-          <div className="mt-auto pt-6">
-            <div className="h-1.5 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-gradient-to-r from-[#c6a65e] to-[#ecd7a2] transition-all duration-500 rtl:bg-gradient-to-l" style={{ width: `${((i + 1) / steps.length) * 100}%` }} /></div>
-            <div className="mt-4 flex items-center gap-2">
-              <button onClick={() => { setAuto(false); setI((n) => Math.max(0, n - 1)); }} disabled={i === 0} aria-label={u.prev} title={u.prev} className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-white/25 text-lg transition hover:border-white/60 disabled:opacity-30"><ArrowBack /></button>
-              <button onClick={() => (i >= steps.length - 1 ? (setI(0), setAuto(true)) : setAuto((a) => !a))} className="btn-gold h-12 flex-1 rounded-full text-sm font-bold">{i >= steps.length - 1 ? u.restart : auto ? u.pause : u.play}</button>
-              <button onClick={() => { setAuto(false); setI((n) => Math.min(steps.length - 1, n + 1)); }} disabled={i >= steps.length - 1} aria-label={u.next} title={u.next} className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-white/25 text-lg transition hover:border-white/60 disabled:opacity-30"><ArrowNext /></button>
+          <div className="sticky bottom-4 z-[2] mt-auto pt-6">
+            <div className="tg-glass tg-dark rounded-[30px] p-2">
+              <div className="mx-3 mb-2 mt-1 h-1 overflow-hidden rounded-full bg-white/10" role="progressbar" aria-valuemin={1} aria-valuemax={steps.length} aria-valuenow={i + 1}>
+                <div className="h-full rounded-full bg-gradient-to-r from-[#c6a65e] to-[#f2dfaa] transition-all duration-500 rtl:bg-gradient-to-l" style={{ width: `${((i + 1) / steps.length) * 100}%` }} />
+              </div>
+              <div className="flex items-center gap-2">
+                <button onClick={() => { setAuto(false); setI((n) => Math.max(0, n - 1)); }} disabled={i === 0} aria-label={u.prev} title={u.prev} className="tg-btn tg-glass grid h-12 w-12 shrink-0 place-items-center rounded-full text-white"><Glyph name="prev" /></button>
+                <button onClick={() => (last ? (setI(0), setAuto(true)) : setAuto((a) => !a))} className="tg-btn tg-lens inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full text-sm font-bold"><Glyph name={last ? "restart" : auto ? "pause" : "play"} className="h-4 w-4" />{last ? u.restart : auto ? u.pause : u.play}</button>
+                <button onClick={() => { setAuto(false); setI((n) => Math.min(steps.length - 1, n + 1)); }} disabled={last} aria-label={u.next} title={u.next} className="tg-btn tg-glass grid h-12 w-12 shrink-0 place-items-center rounded-full text-white"><Glyph name="next" /></button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="relative border-t border-[rgb(214_180_108)]/20 p-4 sm:p-5">
-        <button onClick={() => setList((v) => !v)} aria-expanded={list} className="inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-white/80 hover:text-white"><svg viewBox="0 0 12 12" className={`h-3 w-3 transition rtl:-scale-x-100 ${list ? "rotate-90 rtl:-rotate-90" : ""}`} aria-hidden><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>{u.steps}</button>
+      <div className="relative border-t border-white/10 p-4 sm:p-5">
+        <button onClick={() => setList((v) => !v)} aria-expanded={list} className="tg-btn tg-glass inline-flex min-h-10 items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-white/85"><Glyph name="chevron" className={`h-3.5 w-3.5 transition ${list ? "rotate-90 rtl:-rotate-90" : ""}`} />{u.steps}</button>
         {list && (
-          <ol className="mt-3 grid gap-1 text-sm sm:grid-cols-2">
-            {steps.map((s, k) => <li key={k}><button onClick={() => { setAuto(false); setI(k); }} className={`min-h-10 w-full rounded-lg px-2 py-1.5 text-start ${k === i ? "bg-[rgb(214_180_108)]/15 font-bold text-white" : "text-white/70 hover:bg-white/5"}`}>{k + 1}. {tx(s.title)} <span className="text-white/40">· {u.rakah} {Math.min(s.rakah, rakat)}</span></button></li>)}
+          <ol className="tg-glass mt-3 grid gap-1 rounded-[22px] p-2 text-sm sm:grid-cols-2">
+            {steps.map((s, k) => <li key={k}><button onClick={() => { setAuto(false); setI(k); }} className={`tg-btn min-h-10 w-full rounded-[14px] px-3 py-1.5 text-start ${k === i ? "bg-[rgb(214_180_108)]/20 font-bold text-white" : "text-white/75 hover:bg-white/5"}`}>{k + 1}. {tx(s.title)} <span className="text-white/40">· {u.rakah} {Math.min(s.rakah, rakat)}</span></button></li>)}
           </ol>
         )}
         <p className="mt-4 text-xs leading-relaxed text-white/55">{u.note} <Link href="/surah/1?shams=1" className="font-semibold text-[rgb(var(--gold))] underline-offset-2 hover:underline">{u.learnFatiha} <ArrowNext /></Link></p>

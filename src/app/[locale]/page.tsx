@@ -7,6 +7,8 @@ import { HOME_TILES, TILES } from "@/lib/tiles";
 import AppHeader from "@/components/AppHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import JsonLd from "@/components/JsonLd";
 import WhyQuran from "@/components/WhyQuran";
@@ -49,6 +51,7 @@ const HERO_RING = quoteRing([verseQuote("uthmani", "96:1"), verseQuote("uthmani"
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) return {}; // /favicon.ico, /wp-login.php …: the layout answers 404
   const t = await getTranslations({ locale, namespace: "seo" });
   return pageMeta(locale, "", t("homeTitle"), t("homeDesc", { n: routing.locales.length }), t("keywords"));
 }
@@ -56,6 +59,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function Landing({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  // a single unknown segment with a dot (/favicon.ico, /wp-login.php) skips the middleware and lands here: 404 before
+  // anything below runs (toLocaleString threw "Incorrect locale information" for every such request)
+  if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
   const n = routing.locales.length;

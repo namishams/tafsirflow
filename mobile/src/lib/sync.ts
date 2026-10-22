@@ -72,22 +72,55 @@ const snapshot = (): Record<string, unknown> => {
 };
 
 let timer: ReturnType<typeof setTimeout> | null = null;
-// the server accepts at most 400 KB per request: the snapshot goes out in parts below 300 KB (a large question bank alone can come close)
-const push = async () => {
-  const snap = snapshot();
-  const parts: Record<string, unknown>[] = [{}];
+let retry: ReturnType<typeof setTimeout> | null = null;
+let retries = 0;
+// what the server accepted in this session, per key (the JSON sent): a push after a change sends only the keys that
+// changed, so the request stays small. The server stores each key on its own (upsert per key, src/app/api/sync/route.ts).
+// startSync forgets it, so after every pull everything goes out once, as before.
+const sent = new Map<string, string>();
+let running: Promise<void> | null = null;
+let again = false;
+
+// the server accepts at most 400 KB per request: the changed keys go out in parts below 300 KB (a large question bank
+// alone can come close). Never an empty part, never two pushes at once (the write hook, the move to the background and
+// startSync used to overlap), and a part that fails stays unsent and is retried (5 s, 30 s, 2 min) instead of dropped.
+// Before (22.10.2026), PUT /api/sync sometimes reached the server with an empty or cut-off body (400, 408): the whole
+// snapshot was sent again when the app went to the background and iOS suspended it during the upload.
+async function pushOnce(): Promise<boolean> {
+  const parts: { body: Record<string, unknown>; json: Record<string, string> }[] = [];
+  let cur: (typeof parts)[number] = { body: {}, json: {} };
   let size = 0;
-  for (const [k, v] of Object.entries(snap)) {
-    const len = JSON.stringify(v).length;
-    if (size + len > 300_000 && size > 0) { parts.push({}); size = 0; }
-    parts[parts.length - 1][k] = v; size += len;
+  for (const [k, v] of Object.entries(snapshot())) {
+    const s = JSON.stringify(v);
+    if (s === undefined || sent.get(k) === s) continue;
+    if (size + s.length > 300_000 && size > 0) { parts.push(cur); cur = { body: {}, json: {} }; size = 0; }
+    cur.body[k] = v; cur.json[k] = s; size += s.length;
   }
-  for (const body of parts) await api("/api/sync", { method: "PUT", body }).catch(() => undefined);
+  if (size > 0) parts.push(cur);
+  for (const p of parts) {
+    try { await api("/api/sync", { method: "PUT", body: p.body }); } catch { return false; }
+    for (const [k, s] of Object.entries(p.json)) sent.set(k, s);
+  }
+  return true;
+}
+const push = (): Promise<void> => {
+  if (running) { again = true; return running; }
+  running = (async () => {
+    try {
+      let ok = true;
+      do { again = false; ok = await pushOnce(); } while (ok && again);
+      if (retry) { clearTimeout(retry); retry = null; }
+      if (ok) retries = 0;
+      else if (retries < 3 && AppState.currentState === "active") retry = setTimeout(() => { retry = null; void push(); }, [5000, 30000, 120000][retries++]);
+    } finally { running = null; }
+  })();
+  return running;
 };
 
 export async function startSync(): Promise<boolean> {
   try {
     const remote = await api<Record<string, unknown>>("/api/sync");
+    sent.clear(); retries = 0;
     const local = snapshot();
     // the garden: max growth per tree, union of decorations; the sticker collection: union of verses, max counts
     const merged: Record<string, unknown> = { ...merge(local, remote), ...extraMerge(local, remote), ...mergeFeed(local, remote), [GARDEN_KEY]: mergeGarden(local[GARDEN_KEY] as Garden | undefined, remote[GARDEN_KEY] as Garden | undefined), [CATALOG_KEY]: mergeCatalog(local[CATALOG_KEY] as Parameters<typeof mergeCatalog>[0], remote[CATALOG_KEY] as Parameters<typeof mergeCatalog>[0]), [JOURNEY_KEY]: mergeJourney(local[JOURNEY_KEY], remote[JOURNEY_KEY]) };

@@ -21,7 +21,7 @@ export function RoundButton({ icon, label, onPress, size = 48, disabled, fixed }
 export function GoldPlay({ playing, onPress, labels, size = 64 }: { playing: boolean; onPress: () => void; labels: [string, string]; size?: number }) {
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={playing ? labels[0] : labels[1]} accessibilityState={{ selected: playing }}
-      style={({ pressed }) => ({ transform: [{ scale: pressed ? 0.97 : 1 }], shadowColor: "#000", shadowOpacity: 0.35, shadowRadius: 12, shadowOffset: { width: 0, height: 6 } })}>
+      style={({ pressed }) => ({ transform: [{ scale: pressed ? 0.97 : 1 }], width: size, height: size, borderRadius: size / 2, backgroundColor: stage.gold, shadowColor: "#000", shadowOpacity: 0.35, shadowRadius: 12, shadowOffset: { width: 0, height: 6 } })}>
       <LinearGradient colors={["#e6cd92", stage.gold]} style={{ width: size, height: size, borderRadius: size / 2, alignItems: "center", justifyContent: "center" }}>
         <Icon name={playing ? "pause" : "play"} color={goldButton.text} size={size * 0.4} />
       </LinearGradient>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Animated, Easing, Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { CALLIG_FONT, FONT, goldButton } from "@/lib/theme";
+import { CALLIG_FONT, FONT, goldButton, stage } from "@/lib/theme";
 import { Stage } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { useWebT } from "@/i18n/web";
@@ -28,7 +28,7 @@ export function PlayerDock({ bottom, arabicName, verse, total, playing, position
   const pos = durationMs > 0 ? Math.min(1, positionMs / durationMs) : 0;
   return (
     <View pointerEvents="box-none" style={{ position: "absolute", left: 12, right: 12, bottom }}>
-      <View style={{ borderRadius: 24, shadowColor: "rgb(3,25,18)", shadowOpacity: 0.45, shadowRadius: 22, shadowOffset: { width: 0, height: 14 }, elevation: 10 }}>
+      <View style={{ borderRadius: 24, backgroundColor: stage.bg, shadowColor: "rgb(3,25,18)", shadowOpacity: 0.45, shadowRadius: 22, shadowOffset: { width: 0, height: 14 }, elevation: 10 }}>
         <Stage rounded={24} hairlines={false} style={{ borderWidth: 1, borderColor: "rgba(201,166,94,0.35)" }}>
           {error && onRetry ? <ErrorBar text={error} retry={retryLabel ?? ""} onRetry={onRetry} /> : turn ? <TurnBar turn={turn} reduce={reduce} label={w("yourTurn")} skip={w("skip")} onSkip={onSkipTurn} /> : null}
           {/* how far through the surah */}

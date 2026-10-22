@@ -172,6 +172,8 @@ let config: FeedConfig | null = null;
 let configLang = "";
 const subs = new Set<() => void>();
 export const remoteConfig = () => config;
+/** the language the current config was loaded in (its chip labels are in this language) */
+export const remoteConfigLang = () => configLang;
 export const onRemoteConfig = (f: () => void) => { subs.add(f); return () => { subs.delete(f); }; };
 export function useRemoteConfig(): FeedConfig | null {
   const [c, set] = useState(config);

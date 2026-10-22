@@ -33,10 +33,12 @@ function fsrs(prev: Entry | undefined, g: number, t: number): { s: number; d: nu
   const d = clampD(W[7] * d0(4) + (1 - W[7]) * (m.d - W[6] * (g - 3)));
   const s = g === 1
     ? W[11] * Math.pow(d, -W[12]) * (Math.pow(m.s + 1, W[13]) - 1) * Math.exp(W[14] * (1 - r))
-    : m.s * (Math.exp(W[8]) * (11 - d) * Math.pow(m.s, -W[9]) * (Math.exp(W[10] * (1 - r)) - 1) * (g === 4 ? W[16] : 1) + 1);
+    : m.s * (Math.exp(W[8]) * (11 - d) * Math.pow(m.s, -W[9]) * (Math.exp(W[10] * (1 - r)) - 1) * (g === 2 ? W[15] : g === 4 ? W[16] : 1) + 1);
   return { s: Math.max(0.1, g === 1 ? Math.min(s, m.s) : s), d };
 }
 export type Rating = "again" | "good" | "easy";
+/** the four FSRS grades: 1 again (forgotten), 2 hard (recalled, but hesitantly), 3 good, 4 easy */
+export type Rating4 = 1 | 2 | 3 | 4;
 
 const SRS_KEY = "tf:srs";
 const DAYS_KEY = "tf:days";
@@ -49,14 +51,22 @@ export function today(): number {
 export const readSrs = () => readJSON<Srs>(SRS_KEY, {});
 
 export function rate(verseKey: string, rating: Rating): number {
+  return rateGrade(verseKey, GRADE[rating]);
+}
+
+/** a review with one of the four FSRS grades (2 = hard, e.g. "recited, but hesitantly"); returns the days until the
+ *  next review. rate() is this function with grades 1, 3 and 4. */
+export function rateGrade(verseKey: string, grade: Rating4): number {
+  const g = Math.min(4, Math.max(1, Math.round(grade) || 3)) as Rating4;
   const srs = readSrs();
   const prev = srs[verseKey];
   let ease = prev?.ease ?? 1; // personal memory factor, read by the coach
-  if (rating === "again") ease = Math.max(0.5, ease * 0.8);
-  if (rating === "easy") ease = Math.min(2.5, ease * 1.15);
-  const m = fsrs(prev, GRADE[rating], prev?.last !== undefined ? today() - prev.last : 0);
-  const gap = rating === "again" ? 0 : intervalOf(m.s); // "again": practise it once more today
-  srs[verseKey] = { stage: stageOf(m.s), due: today() + gap, at: Date.now(), ease, lapses: (prev?.lapses ?? 0) + (rating === "again" ? 1 : 0), last: today(), n: (prev?.n ?? 0) + 1, first: prev?.first ?? today(), s: m.s, d: m.d };
+  if (g === 1) ease = Math.max(0.5, ease * 0.8);
+  if (g === 2) ease = Math.max(0.5, ease * 0.85);
+  if (g === 4) ease = Math.min(2.5, ease * 1.15);
+  const m = fsrs(prev, g, prev?.last !== undefined ? today() - prev.last : 0);
+  const gap = g === 1 ? 0 : intervalOf(m.s); // "again": practise it once more today
+  srs[verseKey] = { stage: stageOf(m.s), due: today() + gap, at: Date.now(), ease, lapses: (prev?.lapses ?? 0) + (g === 1 ? 1 : 0), last: today(), n: (prev?.n ?? 0) + 1, first: prev?.first ?? today(), s: m.s, d: m.d };
   writeJSON(SRS_KEY, srs);
   logDay();
   award("review");
