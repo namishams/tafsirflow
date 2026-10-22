@@ -2,7 +2,7 @@ import { memo, useCallback, useEffect, useRef, useState } from "react";
 import { ActivityIndicator, FlatList, Linking, Pressable, Text, View, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router, type Href } from "expo-router";
-import { Poster, SectionTitle, gradientColors } from "@/components/brand";
+import { GlassButton, Poster, SectionTitle, gradientColors } from "@/components/brand";
 import { ARABIC_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
@@ -188,9 +188,7 @@ export function DiscoverStream({ s }: { s: ReturnType<typeof useDiscoverStream> 
       </View>
       <View style={{ paddingVertical: 24, alignItems: "center" }} accessibilityLiveRegion="polite">
         {s.busy ? <ActivityIndicator color={t.gold} accessibilityLabel={d.loading} /> : (
-          <Pressable onPress={() => void s.more()} accessibilityRole="button" hitSlop={10}>
-            <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.accent }}>{d.rowStream}</Text>
-          </Pressable>
+          <GlassButton compact title={d.rowStream} onPress={() => void s.more()} />
         )}
       </View>
     </View>
@@ -208,7 +206,7 @@ const StreamCard = memo(function StreamCard({ item }: { item: Item }) {
   const open = () => { tick(); if (item.sourceUrl) void Linking.openURL(item.sourceUrl); };
   return (
     <Pressable onPress={open} accessibilityRole="link" accessibilityLabel={`${label}. ${item.title}`}
-      style={({ pressed }) => ({ borderRadius: R.card, overflow: "hidden", borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, transform: [{ scale: pressed ? 0.99 : 1 }] })}>
+      style={({ pressed }) => ({ borderRadius: 18, overflow: "hidden", borderWidth: 1, borderColor: t.line, backgroundColor: t.surface, transform: [{ scale: pressed ? 0.99 : 1 }] })}>
       {ex.image ? (
         <LinearGradient colors={tone} style={{ height: 190 }}>
           <RemoteImage uri={ex.image} style={{ flex: 1 }} />

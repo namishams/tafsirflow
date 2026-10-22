@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Stack, router, type Href } from "expo-router";
 import { Page, PageHero, useWide } from "@/components/page";
-import { Eyebrow, GoldButton, GoldProgress, OutlineButton, SmallStar } from "@/components/brand";
+import { Eyebrow, GlassSurface, GoldButton, GoldProgress, OutlineButton, SmallStar } from "@/components/brand";
 import { Icon } from "@/components/icons";
 import { isRTL, useLang } from "@/i18n";
 import { ARABIC_FONT, CALLIG_FONT, FONT, FWD, R, useTheme } from "@/lib/theme";
@@ -113,9 +113,9 @@ function TagChips({ tags }: { tags?: Tag[] }) {
       <Eyebrow>{c("tagsTitle")}</Eyebrow>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
         {tags.map((g) => (
-          <View key={g} style={{ paddingHorizontal: 10, paddingVertical: 5, borderRadius: R.pill, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
+          <GlassSurface key={g} style={{ paddingHorizontal: 10, paddingVertical: 5, borderRadius: R.pill }}>
             <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: t.muted }}>{c(`tag_${g}` as never)}</Text>
-          </View>
+          </GlassSurface>
         ))}
       </View>
     </View>
@@ -163,7 +163,7 @@ export function CourseScreen({ id }: { id: string }) {
               return (
                 <Pressable key={l.id} onPress={() => (locked ? upsell() : router.push(`/courses/${course.id}/${l.id}` as Href))} accessibilityRole="button"
                   accessibilityLabel={`${c("lesson")} ${i + 1}: ${title(l, i)}${passed ? `, ${c("done")}` : ""}${locked ? ", Pro" : ""}`}
-                  style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, padding: 12, borderRadius: R.md, borderWidth: 1, borderColor: i === next ? "rgba(150,116,52,0.55)" : "rgba(150,116,52,0.22)", backgroundColor: t.surface, opacity: pressed ? 0.85 : 1 })}>
+                  style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 12, padding: 12, borderRadius: 18, borderWidth: 1, borderColor: i === next ? "rgba(150,116,52,0.55)" : "rgba(150,116,52,0.22)", backgroundColor: t.surface, transform: [{ scale: pressed ? 0.985 : 1 }] })}>
                   <StarBadge size={32} tone={passed ? "emerald" : i === next ? "gold" : "light"}>{i + 1}</StarBadge>
                   <View style={{ flex: 1 }}>
                     <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: t.ink }} numberOfLines={2}>{title(l, i)}</Text>
@@ -281,9 +281,9 @@ export function LessonScreen({ courseId, lessonId }: { courseId: string; lessonI
                   <Eyebrow>{c("hadith")}</Eyebrow>
                   <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
                     {lesson.hadith.map((h) => (
-                      <View key={h} style={{ paddingHorizontal: 10, paddingVertical: 6, borderRadius: R.pill, borderWidth: 1, borderColor: t.line, backgroundColor: t.surface }}>
+                      <GlassSurface key={h} style={{ paddingHorizontal: 10, paddingVertical: 6, borderRadius: R.pill }}>
                         <Text style={{ fontFamily: FONT.semibold, fontSize: 12.5, color: t.ink }}>{hadithLabel(h)}</Text>
-                      </View>
+                      </GlassSurface>
                     ))}
                   </View>
                 </View>
@@ -350,7 +350,7 @@ export function Quiz({ qs, onDone, header, ctx }: { qs: RunQ[]; onDone: (right: 
           const isRight = pick !== null && k === q.answer, isWrong = pick === k && k !== q.answer;
           return (
             <Pressable key={k} onPress={() => choose(k)} accessibilityRole="button" accessibilityState={{ selected: pick === k, disabled: pick !== null }} accessibilityLabel={o}
-              style={{ padding: 14, borderRadius: R.md, borderWidth: 1.5, borderColor: isRight ? t.accent : isWrong ? "rgb(160,58,52)" : t.line, backgroundColor: isRight ? t.accentSoft : t.surface }}>
+              style={({ pressed }) => ({ padding: 14, borderRadius: 18, transform: [{ scale: pressed && pick === null ? 0.985 : 1 }], borderWidth: 1.5, borderColor: isRight ? t.accent : isWrong ? "rgb(160,58,52)" : t.line, backgroundColor: isRight ? t.accentSoft : t.surface })}>
               <Text style={{ fontFamily: FONT.semibold, fontSize: 15.5, lineHeight: 22, color: t.ink }}>{o}</Text>
             </Pressable>
           );

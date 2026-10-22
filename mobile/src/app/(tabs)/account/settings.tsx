@@ -153,7 +153,7 @@ export default function AccountSettingsScreen() {
           </Section>
 
           <Section title={t("account.dailyTitle")}>
-            <View style={{ borderRadius: R.lg, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 14, gap: 12 }}>
+            <View style={{ borderRadius: 18, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 14, gap: 12 }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: theme.ink }}>{t("account.dailyQuestion")}</Text>
@@ -208,7 +208,7 @@ export default function AccountSettingsScreen() {
           ) : null}
 
           {user && deleting ? (
-            <View style={{ gap: 12, borderRadius: R.lg, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 16 }}>
+            <View style={{ gap: 12, borderRadius: 18, borderWidth: 1, borderColor: theme.line, backgroundColor: theme.surface, padding: 16 }}>
               <Text style={{ fontFamily: FONT.display, fontSize: 18, color: theme.ink }}>{t("account.deleteTitle")}</Text>
               <Text style={{ fontFamily: FONT.regular, fontSize: 14, lineHeight: 21, color: theme.muted }}>{t("account.deleteBody")}</Text>
               {codeWay ? (
@@ -220,7 +220,7 @@ export default function AccountSettingsScreen() {
               ) : (
                 <>
                   <TextInput value={password} onChangeText={setPassword} secureTextEntry autoComplete="current-password" textContentType="password" placeholder={t("account.currentPassword")} placeholderTextColor={theme.muted} accessibilityLabel={t("account.currentPassword")}
-                    style={{ height: 48, borderRadius: R.md, borderWidth: 1, borderColor: theme.line, paddingHorizontal: 14, fontFamily: FONT.regular, fontSize: 16, color: theme.ink, backgroundColor: theme.bg }} />
+                    style={{ height: 48, borderRadius: 14, borderWidth: 1, borderColor: theme.line, paddingHorizontal: 14, fontFamily: FONT.regular, fontSize: 16, color: theme.ink, backgroundColor: theme.bg }} />
                   <TextLink title={tx("verifyByCode")} onPress={() => { setByCode(true); setError(""); }} style={{ fontSize: 14, paddingVertical: 2 }} />
                 </>
               )}
@@ -232,7 +232,7 @@ export default function AccountSettingsScreen() {
             </View>
           ) : null}
           {deleted && !user ? (
-            <View accessibilityLiveRegion="polite" style={{ flexDirection: "row", alignItems: "center", gap: 10, borderRadius: R.lg, backgroundColor: theme.accentSoft, padding: 16 }}>
+            <View accessibilityLiveRegion="polite" style={{ flexDirection: "row", alignItems: "center", gap: 10, borderRadius: 18, backgroundColor: theme.accentSoft, padding: 16 }}>
               <Icon name="checkCircle" color={theme.accent} size={20} />
               <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 15, lineHeight: 22, color: theme.ink }}>{t("account.deleted")}</Text>
             </View>
