@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
+import Segmented from "@/components/ui/Segmented";
 import { initGamify } from "@/lib/learn/feed/gamify";
 import { useFeedTimer } from "@/lib/learn/feed/statsStore";
 import type { WebCard, WebFeedPage } from "@/lib/feedWeb/types";
@@ -63,22 +64,10 @@ function FeedBody({ locale, initial }: { locale: string; initial: WebFeedPage | 
 
   return (
     <div>
-      <div role="tablist" aria-label={T.feed.title} className="sticky top-[57px] z-30 border-b border-line bg-bg/90 backdrop-blur supports-[backdrop-filter]:bg-bg/80">
-        <div className="mx-auto flex h-12 max-w-[560px] items-stretch">
-          {TABS.map((k) => {
-            const on = tab === k;
-            return (
-              <button key={k} type="button" role="tab" aria-selected={on} onClick={() => select(k)} className="relative flex-1 text-[14px] tracking-[0.3px] transition" style={{ fontWeight: on ? 600 : 500, color: on ? undefined : "rgb(var(--muted))" }}>
-                {k === "home" ? T.feed.home : k === "reels" ? T.feed.reels : T.feed.explore}
-                {on ? (
-                  <span aria-hidden className="absolute inset-x-0 bottom-0 mx-auto flex h-[7px] w-16 items-center justify-center">
-                    <span className="absolute inset-x-0 h-[1.5px]" style={{ background: "linear-gradient(90deg, rgba(214,180,108,0), rgb(201,166,94), rgba(214,180,108,0))" }} />
-                    <span className="h-[5px] w-[5px] rotate-45" style={{ background: "rgb(201,166,94)" }} />
-                  </span>
-                ) : null}
-              </button>
-            );
-          })}
+      <div className="sticky top-[57px] z-30 border-b border-line bg-bg/90 backdrop-blur supports-[backdrop-filter]:bg-bg/80">
+        <div className="mx-auto flex h-12 max-w-[560px] items-center gap-2 px-2">
+          <Segmented tabs full size="sm" className="min-w-0 flex-1" label={T.feed.title} value={tab} onChange={select}
+            options={TABS.map((k) => ({ id: k, label: k === "home" ? T.feed.home : k === "reels" ? T.feed.reels : T.feed.explore }))} />
           <span className="ms-1 flex items-center gap-0.5">
             <Link href="/talents/search" aria-label={T.feed.search} title={T.feed.search} className="grid h-10 w-10 place-items-center rounded-full hover:bg-accent-soft/60"><AppIcon name="search" size={21} /></Link>
             <Link href="/stats" aria-label={T.feed.statsOpen} title={T.feed.statsOpen} className="grid h-10 w-10 place-items-center rounded-full hover:bg-accent-soft/60"><AppIcon name="trophy" size={21} /></Link>

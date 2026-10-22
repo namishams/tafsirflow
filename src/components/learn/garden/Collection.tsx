@@ -7,6 +7,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useRouter } from "@/i18n/navigation";
 import { ArrowBack } from "@/components/Icons";
+import Segmented from "@/components/ui/Segmented";
 import { useHydrated } from "@/lib/learn/store";
 import { useLang } from "@/lib/learn/i18n";
 import { readTradition, showsShia } from "@/lib/learn/tradition";
@@ -73,29 +74,17 @@ export function Collection() {
         </div>
       </section>
       <LearnMain wide>
-        <div role="tablist" aria-label={tx.album} className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2">
-          {SERIES.map((se) => {
+        <Segmented tabs scroll label={tx.album} value={series} onChange={setSeries}
+          options={SERIES.map((se) => {
             const own = hydrated ? seriesOwned(se) : 0, size = se === "seasonal" ? visibleSeasonal(shia).length : SERIES_SIZE[se];
-            const on = series === se;
-            return (
-              <button key={se} type="button" role="tab" aria-selected={on} onClick={() => setSeries(se)}
-                className={`shrink-0 rounded-xl border px-3 py-2 text-start transition ${on ? "border-[rgb(var(--hm-gold))] bg-accent-soft" : "border-line bg-surface hover:border-[rgb(var(--hm-gold))]/60"}`}>
-                <span className="block text-[13.5px] font-semibold">{tx[`ser_${se}`]}</span>
-                <span className="block text-[11.5px] tabular-nums text-muted">{own} / {size}</span>
-              </button>
-            );
-          })}
-        </div>
+            return { id: se, label: <>{tx[`ser_${se}`]} <span className="ms-1 tabular-nums opacity-70">{own} / {size}</span></> };
+          })} />
         <p className="mt-2 text-[13px] text-muted">{fillG(tx.seriesReward, { n: completionGp(series) })}</p>
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={tx.search} aria-label={tx.search}
             className="min-w-0 flex-1 rounded-xl border border-line bg-surface px-3 py-2 text-[15px] focus:outline-none focus:ring-2 focus:ring-accent/40" />
-          {(["all", "owned", "missing"] as Filter[]).map((f) => (
-            <button key={f} type="button" aria-pressed={filter === f} onClick={() => setFilter(f)}
-              className={`rounded-full px-3 py-2 text-[13px] font-semibold transition ${filter === f ? "bg-accent text-white" : "hover:bg-accent-soft"}`}>
-              {f === "all" ? tx.all : f === "owned" ? tx.owned : tx.missing}
-            </button>
-          ))}
+          <Segmented size="sm" label={tx.search} value={filter} onChange={setFilter}
+            options={(["all", "owned", "missing"] as Filter[]).map((f) => ({ id: f, label: f === "all" ? tx.all : f === "owned" ? tx.owned : tx.missing }))} />
         </div>
         {/* odds, clearly stated: packs are only earned, never bought (readable text, the rim colour as a small swatch) */}
         <p className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-[12.5px] text-muted">

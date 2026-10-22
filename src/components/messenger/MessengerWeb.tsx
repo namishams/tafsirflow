@@ -1,5 +1,6 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { errorText, fill, messengerText, systemLine } from "@/lib/messenger/text";
 
 // The messenger on the website, the same layout and rules as the app (src/app/api/messenger/[...path]; the inbox
@@ -248,13 +249,10 @@ export default function MessengerWeb({ locale, demo = false }: { locale: string;
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t.searchPh} aria-label={t.searchPh} className="min-w-0 flex-1 bg-transparent text-[rgb(var(--ink))] outline-none" />
           </label>
           {!hits ? (
-            <div role="tablist" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 pe-8 [mask-image:linear-gradient(to_right,#000_calc(100%-2rem),transparent)] [scrollbar-width:none] rtl:[mask-image:linear-gradient(to_left,#000_calc(100%-2rem),transparent)]">
-              {([["inbox", t.primary, 0], ["requests", t.requests, unread.requests], ["unread", t.unreadOnly, unread.inbox], ["unanswered", t.openShort, 0]] as const).map(([b, label, n]) => (
-                <button key={b} role="tab" aria-selected={box === b} className={soft(box === b)} onClick={() => { if ((b === "requests") !== (box === "requests")) setRows(null); setBox(b); }}>
-                  {label}{n ? <span className="min-w-[18px] rounded-full bg-[rgb(214,48,60)] px-1.5 text-center text-[11px] font-bold leading-[18px] text-white">{n}</span> : null}
-                </button>
-              ))}
-            </div>
+            <Segmented tabs scroll label={t.title} value={box} onChange={(b) => { if ((b === "requests") !== (box === "requests")) setRows(null); setBox(b); }}
+              options={([["inbox", t.primary, 0], ["requests", t.requests, unread.requests], ["unread", t.unreadOnly, unread.inbox], ["unanswered", t.openShort, 0]] as const).map(([id, label, n]) => ({
+                id, label: <>{label}{n ? <span className="ms-1.5 min-w-[18px] rounded-full bg-[rgb(214,48,60)] px-1.5 text-center text-[11px] font-bold leading-[18px] text-white">{n}</span> : null}</>,
+              }))} />
           ) : null}
           {!hits && box === "inbox" && activeNow.length ? (
             <div aria-label={t.activeRow} className="-mx-4 flex gap-3.5 overflow-x-auto px-4">

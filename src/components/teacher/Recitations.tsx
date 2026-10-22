@@ -5,6 +5,7 @@
 // recordings of active links, listen, tap the words that need work (word data, never typed), rate 1–5 per area
 // (each optional), a short note. Report and block on both sides (App Store guideline 1.2, same queue as the app).
 import { useCallback, useEffect, useMemo, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { useSurahVerses, wordsOf } from "@/lib/learn/reciter-path/useVerse";
 import { noteWords } from "@/lib/learn/shams2/store";
 import { RUBRIC_FIELDS, noteRubric, readRecitations, saveRecitations, type RubricField } from "@/lib/learn/shams2/store2";
@@ -70,9 +71,7 @@ export default function Recitations({ locale }: { locale: string }) {
     <section className="grid gap-3">
       <h2 className="font-display text-2xl">{rt("recT")}</h2>
       <p className="text-[14px] text-muted">{rt("recLead")}</p>
-      <div role="group" className="flex rounded-full border border-line bg-surface p-1">
-        {(["mine", "inbox"] as const).map((k) => <button key={k} type="button" aria-pressed={box === k} onClick={() => setBox(k)} className={cx("min-h-9 flex-1 rounded-full px-3 text-[13.5px] font-semibold", box === k ? "bg-accent text-white" : "text-muted")}>{rt(k)}</button>)}
-      </div>
+      <Segmented full label={rt("recT")} value={box} onChange={setBox} options={(["mine", "inbox"] as const).map((k) => ({ id: k, label: rt(k) }))} />
       {note ? <p role="status" className="text-[13.5px] font-semibold text-gold">{note}</p> : null}
       {rows === null ? <div className="h-24 animate-pulse rounded-lg bg-line/40" /> : !rows.length ? <p className="text-muted">{rt(box === "mine" ? "none" : "noneInbox")}</p> : rows.map((r) => {
         const who = box === "mine" ? r.teacher : r.student;

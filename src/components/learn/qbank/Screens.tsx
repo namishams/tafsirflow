@@ -4,6 +4,7 @@
 // src/lib/learn/exam/integrity.ts, same server verdict as the app), statistics and bookmarks. On the website every
 // mode, stage and tier the learner has opened is free: no daily allowance, no Pro. Progress uses the app's key
 // (qmc.qbank.v1) and follows the account.
+import Segmented from "@/components/ui/Segmented";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Link, useRouter } from "@/i18n/navigation";
@@ -151,12 +152,7 @@ function QuestionLangPicker() {
   return (
     <section className="grid gap-3">
       <SectionTitle title={qt("questionLang")} />
-      <div role="group" aria-label={qt("questionLang")} className="flex flex-wrap gap-2">
-        {opts.map(([k, l]) => (
-          <button key={k} type="button" aria-pressed={cur === k} onClick={() => setQuestionLang(k)}
-            className={cx("inline-flex h-10 items-center rounded-full border px-4 text-[14px] font-semibold", cur === k ? "border-[rgb(var(--hm-gold))] bg-[rgb(var(--hm-gold))]/15" : "border-line text-muted hover:border-[rgb(var(--hm-gold))]/60")}>{l}</button>
-        ))}
-      </div>
+      <Segmented scroll label={qt("questionLang")} value={cur} onChange={setQuestionLang} options={opts.map(([k, l]) => ({ id: k, label: l }))} />
     </section>
   );
 }

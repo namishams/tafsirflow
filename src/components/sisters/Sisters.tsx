@@ -3,6 +3,7 @@
 // "Meine Tage" card, the listening and understanding days and the gate on recitation pages. Texts, sources and rules:
 // src/lib/sisters. Everything she chooses stays in this browser (never synced).
 import { useEffect, useMemo, useState, type ReactNode } from "react";
+import Segmented from "@/components/ui/Segmented";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useStored } from "@/lib/learn/store";
@@ -60,7 +61,7 @@ export function SistersSetup({ dark, onDone }: { dark?: boolean; onDone?: (agree
     <div className="grid gap-3">
       <h2 className="font-display text-[22px] leading-tight">{tx.setup.madhhabTitle}</h2>
       <p className={soft}>{tx.setup.madhhabLead}</p>
-      <div className="flex flex-wrap gap-2">{MADHHABS.map((m) => <button key={m} type="button" aria-pressed={st.madhhab === m} onClick={() => saveSisters({ madhhab: m })} className={chip(st.madhhab === m)}>{tx.setup.madhhabs[m]}</button>)}</div>
+      <Segmented scroll label={tx.setup.madhhabTitle} value={st.madhhab ?? ("" as (typeof MADHHABS)[number])} onChange={(m) => saveSisters({ madhhab: m })} options={MADHHABS.map((m) => ({ id: m, label: tx.setup.madhhabs[m] }))} />
       {st.madhhab ? <p className={`text-[13.5px] ${soft}`}>{tx.days.rules[st.madhhab]}</p> : null}
       <p className={`text-[12.5px] ${soft}`}>{tx.setup.later}</p>
       {onDone ? <GoldButton disabled={!st.madhhab} onClick={() => onDone(true)}>{tx.setup.done}</GoldButton> : null}

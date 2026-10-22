@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Segmented from "@/components/ui/Segmented";
 
 // "One verse, four stages": the same verse (1:2) as it moves from listening to recalling it from memory.
 // Plays through the stages on its own until the visitor picks one; reduced motion shows the first stage still.
@@ -37,16 +38,8 @@ export default function IslamShamsDemo({ words, cues, stages, title }: { words: 
   return (
     <div ref={box} className="isl-card overflow-hidden p-4 sm:p-6">
       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[rgb(var(--isl-gold))]">{title} · 1:2</p>
-      <div role="tablist" className="mt-3 grid grid-cols-2 gap-1.5 sm:grid-cols-4">
-        {stages.map((s, i) => (
-          <button key={s} role="tab" aria-selected={stage === i} onClick={() => pick(i)}
-            className={`relative flex items-center gap-2 overflow-hidden rounded-lg border px-2.5 py-2 text-start text-[12.5px] font-semibold leading-tight transition hyphens-auto [overflow-wrap:anywhere] ${stage === i ? "border-[rgb(var(--isl-gold-soft))] bg-[rgb(var(--isl-gold-soft))]/15 text-ink" : "border-line/80 text-muted hover:border-[rgb(var(--isl-gold-soft))]/60 hover:text-ink"}`}>
-            <span className={`grid h-5 w-5 shrink-0 place-items-center rounded-full text-[10px] tabular-nums ${stage === i ? "bg-[rgb(var(--isl-gold-soft))] text-white" : "bg-line/70"}`}>{i + 1}</span>
-            <span className="min-w-0">{s}</span>
-            {stage === i && auto && <span aria-hidden className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-[rgb(var(--isl-gold-soft))] rtl:origin-right" style={{ transform: `scaleX(${(local + 1) / 6})`, transition: "transform .9s linear" }} />}
-          </button>
-        ))}
-      </div>
+      <Segmented tabs scroll className="mt-3" label={title} value={String(stage)} onChange={(v) => pick(Number(v))}
+        options={stages.map((s, i) => ({ id: String(i), label: <><span className="me-1.5 tabular-nums opacity-70">{i + 1}</span>{s}</> }))} />
 
       <div className="relative mt-4 grid min-h-[168px] place-items-center rounded-xl border border-[rgb(var(--isl-gold-soft))]/25 bg-[rgb(var(--stage))] px-3 py-5 text-[#f3ead6] sm:min-h-[190px]">
         <span aria-hidden className="pointer-events-none absolute inset-[5px] rounded-lg border border-[rgb(233_207_153)]/15" />
