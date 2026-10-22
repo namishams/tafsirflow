@@ -32,7 +32,7 @@ export async function getJSON<T>(url: string): Promise<T> {
   const wait = last + 200 - Date.now(); // at most ~5 requests per second, well inside Wikimedia's limits
   if (wait > 0) await new Promise((r) => setTimeout(r, wait));
   last = Date.now();
-  const res = await fetch(url, { headers: { "Api-User-Agent": UA, "User-Agent": UA, Accept: "application/json" } });
+  const res = await fetch(url, { headers: { "Api-User-Agent": UA, Accept: "application/json" } });
   if (!res.ok) throw new Error(`${res.status} ${url}`);
   return (await res.json()) as T;
 }
