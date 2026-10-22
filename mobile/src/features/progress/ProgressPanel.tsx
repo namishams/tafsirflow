@@ -3,7 +3,7 @@ import { Pressable, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Stage } from "@/components/brand";
 import { ProBadge } from "@/components/page";
-import { CALLIG_FONT, FONT, R, useTheme } from "@/lib/theme";
+import { CALLIG_FONT, FONT, R, stage, useTheme } from "@/lib/theme";
 import { useLang } from "@/i18n";
 import { useWebT } from "@/i18n/web";
 import { openPro, usePro } from "@/lib/pro";
@@ -59,7 +59,7 @@ function ForecastBlock({ days, dark = false }: { days: number[]; dark?: boolean 
   if (pro) {
     return (
       <View>
-        {dark ? <Kicker color="rgb(214,180,108)" style={{ marginBottom: 8 }}>{title}</Kicker> : <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: t.muted, marginBottom: 8 }}>{title}</Text>}
+        {dark ? <Kicker color={stage.gold} style={{ marginBottom: 8 }}>{title}</Kicker> : <Text style={{ fontFamily: FONT.semibold, fontSize: 12, color: t.muted, marginBottom: 8 }}>{title}</Text>}
         <Forecast days={days} dark={dark} />
       </View>
     );
@@ -67,7 +67,7 @@ function ForecastBlock({ days, dark = false }: { days: number[]; dark?: boolean 
   return (
     <Pressable onPress={() => openPro("stats")} accessibilityRole="button" accessibilityLabel={`${title}, Pro`}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 8 }}>
-        {dark ? <Kicker color="rgb(214,180,108)" style={{ flex: 1 }}>{title}</Kicker> : <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 12, color: t.muted }}>{title}</Text>}
+        {dark ? <Kicker color={stage.gold} style={{ flex: 1 }}>{title}</Kicker> : <Text style={{ flex: 1, fontFamily: FONT.semibold, fontSize: 12, color: t.muted }}>{title}</Text>}
         <ProBadge onStage={dark} />
       </View>
       <View style={{ opacity: 0.35 }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
@@ -245,7 +245,7 @@ export function MapInsights() {
   const name = useChapterNames();
   const { L } = useCoach();
   if (L.learned === 0) return null;
-  const gold = "rgb(214,180,108)";
+  const gold = stage.gold;
   return (
     <View style={{ marginTop: 24, gap: 12 }}>
       <StageBox onPress={() => go(verseHref(L.next.surah, L.next.verse))} label={tr("nextBody", { surah: name(L.next.surah), v: L.next.verse })}>

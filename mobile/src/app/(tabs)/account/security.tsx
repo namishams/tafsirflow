@@ -96,7 +96,7 @@ export default function SecurityScreen() {
                 {d.passkeys.map((k, i) => editing === k.id ? (
                   <View key={k.id} style={{ padding: 14, gap: 10, borderTopWidth: i ? 1 : 0, borderTopColor: theme.line }}>
                     <TextInput value={name} onChangeText={setName} maxLength={60} autoFocus accessibilityLabel={tx("name")} placeholder={tx("name")} placeholderTextColor={theme.muted}
-                      style={{ height: 46, borderRadius: R.md, borderWidth: 1, borderColor: theme.line, paddingHorizontal: 12, fontFamily: FONT.regular, fontSize: 16, color: theme.ink, backgroundColor: theme.bg }} />
+                      style={{ height: 48, borderRadius: R.md, borderWidth: 1, borderColor: theme.line, paddingHorizontal: 12, fontFamily: FONT.regular, fontSize: 16, color: theme.ink, backgroundColor: theme.bg }} />
                     <View style={{ flexDirection: "row", gap: 10 }}>
                       <OutlineButton compact title={tx("save")} disabled={busy || !name.trim()} onPress={() => void act({ action: "passkey-rename", id: k.id, name }, "pk").then((ok) => { if (ok) setEditing(null); })} />
                       <OutlineButton compact title={tx("cancel")} onPress={() => setEditing(null)} />

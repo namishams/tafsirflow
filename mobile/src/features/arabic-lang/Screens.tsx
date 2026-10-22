@@ -126,7 +126,7 @@ export function LangPathScreen() {
             <View accessibilityRole="radiogroup" style={{ flexDirection: "row", gap: 8, marginTop: 12 }}>
               {[1, 2, 3].map((n) => (
                 <Pressable key={n} onPress={() => setGoal(n)} accessibilityRole="radio" accessibilityState={{ selected: p.goal === n }}
-                  style={{ flex: 1, height: 38, borderRadius: R.pill, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: p.goal === n ? t.accent : t.line, backgroundColor: p.goal === n ? t.accentSoft : t.surface }}>
+                  style={{ flex: 1, height: 40, borderRadius: R.pill, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: p.goal === n ? t.accent : t.line, backgroundColor: p.goal === n ? t.accentSoft : t.surface }}>
                   <Text style={{ fontFamily: FONT.semibold, fontSize: 13, color: p.goal === n ? t.accent : t.muted }}>{lt("goalN", { n })}</Text>
                 </Pressable>
               ))}
@@ -347,7 +347,7 @@ export function LangLessonScreen({ id }: { id: string }) {
         <View accessibilityLiveRegion="polite" style={{ position: "absolute", left: 0, right: 0, bottom: 0, paddingHorizontal: 16, paddingTop: 14, paddingBottom: insets.bottom + 14, backgroundColor: fb.ok ? t.accentSoft : t.surface, borderTopWidth: 2, borderColor: fb.ok ? t.accent : RED, gap: 8 }}>
           <Text style={{ fontFamily: FONT.bold, fontSize: 17, color: fb.ok ? t.accent : RED }}>{fb.ok ? lt("right") : lt("wrong")}</Text>
           {!fb.ok && fb.correct ? <View style={nudge.style}><Ar size={24}>{fb.correct}</Ar></View> : null}
-          <Pressable onPress={advance} accessibilityRole="button" style={{ height: 50, borderRadius: R.pill, alignItems: "center", justifyContent: "center", backgroundColor: fb.ok ? t.accent : RED }}>
+          <Pressable onPress={advance} accessibilityRole="button" style={{ height: 52, borderRadius: R.pill, alignItems: "center", justifyContent: "center", backgroundColor: fb.ok ? t.accent : RED }}>
             <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: "#fff" }}>{lt("next")}</Text>
           </Pressable>
         </View>

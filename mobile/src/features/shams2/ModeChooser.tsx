@@ -85,7 +85,7 @@ function MethodCard({ mode, chosen, suggested, nested, side, onPick }: { mode: S
       <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: stage.textMuted, textAlign: "left" }}>{forWhom}</Text>
       {chosen ? (mode === "v2" ? <V2Today /> : <ClassicNext m={m} />) : null}
       <Pressable onPress={() => onPick(mode)} accessibilityRole="button" accessibilityLabel={`${chosen ? m("open") : m("choose")}: ${title}`}
-        style={({ pressed }) => ({ marginTop: 6, minHeight: 46, borderRadius: R.pill, borderWidth: 1, borderColor: chosen ? stage.gold : "rgba(255,255,255,0.28)", alignItems: "center", justifyContent: "center", paddingHorizontal: 18, opacity: pressed ? 0.8 : 1 })}>
+        style={({ pressed }) => ({ marginTop: 6, minHeight: 48, borderRadius: R.pill, borderWidth: 1, borderColor: chosen ? stage.gold : "rgba(255,255,255,0.28)", alignItems: "center", justifyContent: "center", paddingHorizontal: 18, opacity: pressed ? 0.8 : 1 })}>
         <Text style={{ fontFamily: FONT.semibold, fontSize: 15, color: chosen ? stage.gold : "#ffffff" }}>{chosen ? m("open") : m("choose")}</Text>
       </Pressable>
     </View>

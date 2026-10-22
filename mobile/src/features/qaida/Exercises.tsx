@@ -275,7 +275,7 @@ export function ReadCard({ words, onResult, highlight }: { words: QWord[]; onRes
       <Text style={{ fontFamily: FONT.regular, fontSize: 13, lineHeight: 19, color: t.muted, textAlign: "center" }}>{state === "unavailable" ? qt("unavailable") : qt("readLead")}</Text>
       {state !== "unavailable" ? (
         <Pressable onPress={() => (state === "listening" ? stop() : void start())} accessibilityRole="button"
-          style={{ alignSelf: "center", height: 46, paddingHorizontal: 20, borderRadius: R.pill, backgroundColor: state === "listening" ? RED : t.accent, flexDirection: "row", alignItems: "center", gap: 8 }}>
+          style={{ alignSelf: "center", height: 48, paddingHorizontal: 20, borderRadius: R.pill, backgroundColor: state === "listening" ? RED : t.accent, flexDirection: "row", alignItems: "center", gap: 8 }}>
           {state === "listening" ? <ActivityIndicator color="#fff" size="small" /> : <Icon name="speaker" size={16} color="#fff" />}
           <Text style={{ fontFamily: FONT.bold, fontSize: 14, color: "#fff" }}>{state === "listening" ? qt("stopCheck") : qt("startCheck")}</Text>
         </Pressable>
@@ -314,7 +314,7 @@ export function SpeedCard({ ex, onDone }: { ex: Extract<Ex, { t: "speed" }>; onD
       <Text accessibilityLiveRegion="polite" style={{ fontFamily: FONT.display, fontSize: 34, color: result === null ? t.ink : result <= ex.targetMs ? t.accent : RED, textAlign: "center" }}>{qt("seconds", { s: s(result ?? now) })}</Text>
       {result !== null ? <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.muted, textAlign: "center" }}>{result <= ex.targetMs ? qt("fast") : qt("slow")}</Text> : (
         <Pressable onPress={() => (start === null ? (setStart(Date.now()), setNow(0)) : finish())} accessibilityRole="button"
-          style={{ alignSelf: "center", height: 50, paddingHorizontal: 28, borderRadius: R.pill, backgroundColor: start === null ? t.accent : t.gold, alignItems: "center", justifyContent: "center" }}>
+          style={{ alignSelf: "center", height: 52, paddingHorizontal: 28, borderRadius: R.pill, backgroundColor: start === null ? t.accent : t.gold, alignItems: "center", justifyContent: "center" }}>
           <Text style={{ fontFamily: FONT.bold, fontSize: 15, color: start === null ? t.onAccent : "#1b1406" }}>{start === null ? qt("go") : qt("stop")}</Text>
         </Pressable>
       )}

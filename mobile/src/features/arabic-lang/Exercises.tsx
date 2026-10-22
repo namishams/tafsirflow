@@ -61,7 +61,7 @@ function CheckButton({ disabled, onPress, label }: { disabled?: boolean; onPress
   const lt = useLT();
   return (
     <Pressable onPress={onPress} disabled={disabled} accessibilityRole="button" accessibilityState={{ disabled: !!disabled }}
-      style={{ marginTop: 8, height: 50, borderRadius: R.pill, alignItems: "center", justifyContent: "center", backgroundColor: disabled ? t.line : t.accent }}>
+      style={{ marginTop: 8, height: 52, borderRadius: R.pill, alignItems: "center", justifyContent: "center", backgroundColor: disabled ? t.line : t.accent }}>
       <Text style={{ fontFamily: FONT.bold, fontSize: 16, color: disabled ? t.muted : "#fff" }}>{label ?? lt("check")}</Text>
     </Pressable>
   );

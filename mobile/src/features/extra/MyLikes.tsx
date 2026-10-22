@@ -40,7 +40,7 @@ export function MyLikes() {
     <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
       {list.map((x) => (
         <Pressable key={x.key} onPress={() => openVerse(x.key)} accessibilityRole="button" accessibilityLabel={`Quran ${x.key}`}
-          style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 6, height: 38, paddingHorizontal: 14, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? "rgba(176,64,56,0.5)" : t.line, backgroundColor: t.surface })}>
+          style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 6, height: 40, paddingHorizontal: 14, borderRadius: R.pill, borderWidth: 1, borderColor: pressed ? "rgba(176,64,56,0.5)" : t.line, backgroundColor: t.surface })}>
           <Icon name="heart" filled color={HEART} size={14} />
           <Text style={{ fontFamily: FONT.semibold, fontSize: 14, color: t.ink, fontVariant: ["tabular-nums"] }}>{x.key}</Text>
         </Pressable>

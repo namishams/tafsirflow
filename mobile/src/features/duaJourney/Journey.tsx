@@ -297,7 +297,7 @@ export default function DuaJourney({ initialTopic, demo, demoStep }: { initialTo
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
                 {DUA_LANGS.map(([c, n]) => (
                   <Pressable key={c} onPress={() => { setLang(c); tick(); }} accessibilityRole="button" accessibilityState={{ selected: lang === c }}
-                    style={{ paddingHorizontal: 14, height: 42, borderRadius: R.pill, borderWidth: 1, justifyContent: "center", borderColor: lang === c ? stage.gold : alpha(stage.gold, 0.3), backgroundColor: lang === c ? alpha(stage.gold, 0.16) : "rgba(6,30,23,0.62)" }}>
+                    style={{ paddingHorizontal: 14, height: 44, borderRadius: R.pill, borderWidth: 1, justifyContent: "center", borderColor: lang === c ? stage.gold : alpha(stage.gold, 0.3), backgroundColor: lang === c ? alpha(stage.gold, 0.16) : "rgba(6,30,23,0.62)" }}>
                     <Text style={{ fontFamily: FONT.semibold, fontSize: 14.5, color: "#ffffff" }}>{n}</Text>
                   </Pressable>
                 ))}

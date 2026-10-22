@@ -298,7 +298,7 @@ function QuizBody({ card, p, answer, onAnswer }: CardProps & { p: Palette }) {
           return (
             <Pressable key={i} onPress={() => !shown && onAnswer(i)} disabled={shown} accessibilityRole="button"
               accessibilityState={{ selected: chosen, disabled: shown }} accessibilityLabel={shown && right ? `${o}, ${st("correct")}` : o}
-              style={({ pressed }) => ({ minHeight: 46, borderRadius: R.lg, borderWidth: 1, borderColor: border, paddingHorizontal: 14, paddingVertical: 10, justifyContent: "center",
+              style={({ pressed }) => ({ minHeight: 48, borderRadius: R.lg, borderWidth: 1, borderColor: border, paddingHorizontal: 14, paddingVertical: 10, justifyContent: "center",
                 backgroundColor: shown && right ? "rgba(214,180,108,0.16)" : pressed ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.04)" })}>
               <Text style={{ fontFamily: shown && right ? FONT.bold : FONT.medium, fontSize: 15, lineHeight: 21, color: p.ink, textAlign: "left" }}>{o}</Text>
             </Pressable>
