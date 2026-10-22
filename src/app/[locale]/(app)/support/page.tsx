@@ -14,7 +14,7 @@ import { COMPANY } from "@/lib/company";
 // Voluntary support payment to ICSL FZE for running Quran Masterclass – expressly not a charitable donation (UAE rules on
 // collecting donations). The website stays free; supporting unlocks nothing. Texts: messages/*.json → "support", "donate".
 export const revalidate = 300; // the supporters list refreshes every five minutes
-const FOR = [1, 2, 3, 4] as const;
+const FOR = [1, 2, 3, 4, 5, 6, 7] as const;
 const PROMISES = [1, 2, 3, 4] as const;
 const FAQ = [1, 2, 3, 4, 5, 6] as const;
 const WAYS: { n: number; href: string }[] = [{ n: 1, href: "" }, { n: 2, href: "/how" }, { n: 3, href: "/feedback" }, { n: 4, href: `mailto:${COMPANY.email}` }];
